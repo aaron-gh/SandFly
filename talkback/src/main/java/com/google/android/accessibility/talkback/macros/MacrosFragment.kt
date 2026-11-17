@@ -423,6 +423,7 @@ class MacroFragment : MacroEditorFragment() {
         R.string.macro_step_command,
         R.string.macro_step_tap,
         R.string.macro_step_tap_position,
+        R.string.macro_step_touch_hold,
         R.string.macro_step_focus,
         R.string.macro_step_speak_item,
         R.string.macro_step_speak_text,
@@ -450,6 +451,7 @@ class MacroFragment : MacroEditorFragment() {
         R.string.macro_step_command -> chooseCommand(add)
         R.string.macro_step_tap -> askTap(null, add)
         R.string.macro_step_tap_position -> askTapPosition(null, add)
+        R.string.macro_step_touch_hold -> askTouchHold(null, add)
         R.string.macro_step_focus -> askTap(null, add, R.string.macro_step_focus)
         R.string.macro_step_speak_item -> askTap(null, add, R.string.macro_step_speak_item)
         R.string.macro_step_speak_text -> askSpeakText(null, add)
@@ -481,6 +483,7 @@ class MacroFragment : MacroEditorFragment() {
       is Macros.Wait -> askWait(step, replace)
       is Macros.Tap -> askTap(step, replace)
       is Macros.TapPosition -> askTapPosition(step, replace)
+      is Macros.TouchHold -> askTouchHold(step, replace)
       is Macros.FocusItem ->
         askTap(
           Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field),
@@ -634,6 +637,75 @@ class MacroFragment : MacroEditorFragment() {
       } else {
         then(Macros.TapPosition(x, y))
         null
+      }
+    }
+  }
+
+  /**
+   * Asks for the values of a Touch and hold item step: the item, how long to hold, and whether and
+   * how far the touch slides before it lifts.
+   */
+  private fun askTouchHold(step: Macros.TouchHold?, then: (Macros.Step) -> Unit) {
+    val fields = fieldChoice(step?.field)
+    askText(
+      getString(R.string.macro_step_touch_hold),
+      text = step?.label.orEmpty(),
+      hint = getString(R.string.macro_tap_label),
+      secondHint = getString(R.string.macro_hold_seconds),
+      secondText = Macros.secondsText(step?.holdMillis ?: Macros.DEFAULT_HOLD_MS),
+      checkLabels = listOf(getString(R.string.macro_regex)),
+      checked = listOf(step?.regex == true),
+      inputType = InputType.TYPE_CLASS_TEXT,
+      secondInputType = SECONDS_INPUT,
+      choice = fields,
+    ) { label, holdText, checked ->
+      val regex = checked.firstOrNull() == true
+      val hold = Macros.parseSeconds(holdText)
+      when {
+        label.isEmpty() -> ""
+        regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
+        hold == null -> getString(R.string.macro_invalid_seconds, (Macros.MAX_HOLD_MS / 1000).toInt())
+        else -> {
+          val held =
+            Macros.TouchHold(
+              label.take(Macros.MAX_LABEL),
+              hold.coerceIn(Macros.MIN_HOLD_MS, Macros.MAX_HOLD_MS),
+              step?.slide,
+              step?.slideDp ?: Macros.DEFAULT_SLIDE_DP,
+              step?.timeoutMillis ?: Macros.DEFAULT_TAP_TIMEOUT_MS,
+              regex,
+              chosenField(fields),
+            )
+          askSlide(held, then)
+          null
+        }
+      }
+    }
+  }
+
+  /** Asks whether and how far the touch of [step] slides before it lifts, and gives the step to [then]. */
+  private fun askSlide(step: Macros.TouchHold, then: (Macros.Step) -> Unit) {
+    val directions: List<Macros.Direction?> = listOf(null) + Macros.Direction.entries
+    val names = directions.map { getString(it?.title ?: R.string.macro_slide_none) }
+    choose(getString(R.string.macro_slide), names, directions.indexOf(step.slide)) { chosen ->
+      val direction = directions[chosen]
+      if (direction == null) {
+        then(step.copy(slide = null, slideDp = Macros.DEFAULT_SLIDE_DP))
+        return@choose
+      }
+      askText(
+        getString(direction.title),
+        text = step.slideDp.toString(),
+        hint = getString(R.string.macro_slide_distance),
+        inputType = InputType.TYPE_CLASS_NUMBER,
+      ) { text, _, _ ->
+        val distance = text.trim().toIntOrNull()?.takeIf { it in Macros.MIN_SLIDE_DP..Macros.MAX_SLIDE_DP }
+        if (distance == null) {
+          getString(R.string.macro_invalid_times, Macros.MAX_SLIDE_DP)
+        } else {
+          then(step.copy(slide = direction, slideDp = distance))
+          null
+        }
       }
     }
   }

@@ -69,6 +69,22 @@ object Macros {
   data class TapPosition(val x: Int, val y: Int) : Step()
 
   /**
+   * Touches the item a [Tap] with the same values would click, at the centre of its bounds, for
+   * [holdMillis], then slides [slideDp] towards [slide] when that isn't null, and lifts the touch.
+   * Waits up to [timeoutMillis] for the item to appear. For buttons that act while they are held,
+   * such as the voice message button of a chat app.
+   */
+  data class TouchHold(
+    val label: String,
+    val holdMillis: Long = DEFAULT_HOLD_MS,
+    val slide: Direction? = null,
+    val slideDp: Int = DEFAULT_SLIDE_DP,
+    val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
+    val regex: Boolean = false,
+    val field: Field? = null,
+  ) : Step()
+
+  /**
    * Moves accessibility focus to the item a [Tap] with the same values would click, which is then
    * spoken, waiting up to [timeoutMillis] for it to appear.
    */
@@ -145,6 +161,21 @@ object Macros {
 
     companion object {
       fun of(key: String?): Kind? = entries.firstOrNull { it.key == key }
+    }
+  }
+
+  /**
+   * A direction a [TouchHold] slides in, by [dx] and [dy] on the screen. [key] is saved and must
+   * never change once released.
+   */
+  enum class Direction(val key: String, @StringRes val title: Int, val dx: Int, val dy: Int) {
+    UP("up", R.string.macro_slide_up, 0, -1),
+    DOWN("down", R.string.macro_slide_down, 0, 1),
+    LEFT("left", R.string.macro_slide_left, -1, 0),
+    RIGHT("right", R.string.macro_slide_right, 1, 0);
+
+    companion object {
+      fun of(key: String?): Direction? = entries.firstOrNull { it.key == key }
     }
   }
 
@@ -281,6 +312,16 @@ object Macros {
   /** The most characters of text a step types or speaks. */
   const val MAX_TEXT = 10_000
 
+  /** How long a Touch and hold step holds by default, and at least and at most. */
+  const val DEFAULT_HOLD_MS = 1_000L
+  const val MIN_HOLD_MS = 100L
+  const val MAX_HOLD_MS = MAX_WAIT_MS
+
+  /** How far a Touch and hold step slides by default, and at least and at most, in dp. */
+  const val DEFAULT_SLIDE_DP = 100
+  const val MIN_SLIDE_DP = 1
+  const val MAX_SLIDE_DP = 1_000
+
   /** The largest X or Y of a Tap at position step, in pixels. */
   const val MAX_COORDINATE = 10_000
 
@@ -291,6 +332,7 @@ object Macros {
   private const val TYPE_WAIT = "wait"
   private const val TYPE_TAP = "tap"
   private const val TYPE_TAP_POSITION = "tap_position"
+  private const val TYPE_TOUCH_HOLD = "touch_hold"
   private const val TYPE_FOCUS_ITEM = "focus_item"
   private const val TYPE_SPEAK_ITEM = "speak_item"
   private const val TYPE_SPEAK_TEXT = "speak_text"
@@ -418,6 +460,19 @@ object Macros {
       is Wait -> waitText(context, step.millis)
       is Tap -> context.getString(R.string.macro_step_tap_value, labelText(context, step.label, step.regex, step.field))
       is TapPosition -> context.getString(R.string.macro_step_tap_position_value, step.x, step.y)
+      is TouchHold -> {
+        val label = labelText(context, step.label, step.regex, step.field)
+        val seconds = secondsText(step.holdMillis)
+        step.slide?.let {
+          context.getString(
+            R.string.macro_step_touch_hold_slide_value,
+            label,
+            seconds,
+            context.getString(it.title),
+            step.slideDp,
+          )
+        } ?: context.getString(R.string.macro_step_touch_hold_value, label, seconds)
+      }
       is FocusItem ->
         context.getString(R.string.macro_step_focus_value, labelText(context, step.label, step.regex, step.field))
       is SpeakItem ->
@@ -841,6 +896,15 @@ object Macros {
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
       is TapPosition -> JSONObject().put("type", TYPE_TAP_POSITION).put("x", step.x).put("y", step.y)
+      is TouchHold ->
+        JSONObject()
+          .put("type", TYPE_TOUCH_HOLD)
+          .put("label", step.label)
+          .put("hold", step.holdMillis)
+          .apply { step.slide?.let { put("slide", it.key).put("distance", step.slideDp) } }
+          .put("timeout", step.timeoutMillis)
+          .apply { if (step.regex) put("regex", true) }
+          .apply { step.field?.let { put("field", it.key) } }
       is FocusItem ->
         JSONObject()
           .put("type", TYPE_FOCUS_ITEM)
@@ -997,6 +1061,18 @@ object Macros {
         val y = coordinateOf(item, "y")
         if (x != null && y != null) TapPosition(x, y) else null
       }
+      TYPE_TOUCH_HOLD ->
+        item.optString("label").takeIf { it.isNotBlank() }?.let {
+          TouchHold(
+            it,
+            item.optLong("hold", DEFAULT_HOLD_MS).coerceIn(MIN_HOLD_MS, MAX_HOLD_MS),
+            Direction.of(item.optString("slide")),
+            item.optInt("distance", DEFAULT_SLIDE_DP).coerceIn(MIN_SLIDE_DP, MAX_SLIDE_DP),
+            item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
+            item.optBoolean("regex", false),
+            Field.of(item.optString("field")),
+          )
+        }
       TYPE_FOCUS_ITEM ->
         item.optString("label").takeIf { it.isNotBlank() }?.let {
           FocusItem(

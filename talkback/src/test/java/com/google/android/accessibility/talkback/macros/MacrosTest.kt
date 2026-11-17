@@ -33,6 +33,7 @@ import com.google.android.accessibility.talkback.macros.Macros.SpeakItem
 import com.google.android.accessibility.talkback.macros.Macros.SpeakText
 import com.google.android.accessibility.talkback.macros.Macros.Tap
 import com.google.android.accessibility.talkback.macros.Macros.TapPosition
+import com.google.android.accessibility.talkback.macros.Macros.TouchHold
 import com.google.android.accessibility.talkback.macros.Macros.TypeText
 import com.google.android.accessibility.talkback.macros.Macros.Wait
 import com.google.android.accessibility.utils.FormFactorUtils
@@ -85,6 +86,9 @@ class MacrosTest {
           Tap("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
           TapPosition(540, 1200),
           TapPosition(0, 0),
+          TouchHold("Voice message"),
+          TouchHold("Record", 2_500, Macros.Direction.UP, 120, 5_000),
+          TouchHold("mic.*", 600, Macros.Direction.LEFT, 80, 4_000, regex = true, field = Macros.Field.DESCRIPTION),
           FocusItem("Send", 5_000),
           FocusItem("^Reply", 5_000, regex = true, field = Macros.Field.DESCRIPTION),
           SpeakItem("Unread", 5_000),
@@ -96,6 +100,63 @@ class MacrosTest {
         ),
       )
     assertEquals(listOf(macro), Macros.fromJson(Macros.toJson(listOf(macro))))
+  }
+
+  @Test
+  fun touchHoldValuesAreKeptWithinLimits() {
+    val steps =
+      JSONArray()
+        .put(JSONObject().put("type", "touch_hold").put("label", "Mic"))
+        .put(JSONObject().put("type", "touch_hold").put("label", "Mic").put("hold", 1))
+        .put(JSONObject().put("type", "touch_hold").put("label", "Mic").put("hold", 99_999_999L))
+        .put(JSONObject().put("type", "touch_hold").put("label", "Mic").put("slide", "up").put("distance", 0))
+        .put(JSONObject().put("type", "touch_hold").put("label", "Mic").put("slide", "down").put("distance", 99_999))
+        .put(JSONObject().put("type", "touch_hold").put("label", "Mic").put("slide", "sideways"))
+        .put(JSONObject().put("type", "touch_hold").put("label", "Mic").put("timeout", 1))
+        .put(JSONObject().put("type", "touch_hold").put("label", " "))
+        .put(JSONObject().put("type", "touch_hold"))
+    val json =
+      JSONArray().put(JSONObject().put("id", "a").put("name", "A").put("steps", steps)).toString()
+    assertEquals(
+      listOf(
+        TouchHold("Mic"),
+        TouchHold("Mic", Macros.MIN_HOLD_MS),
+        TouchHold("Mic", Macros.MAX_HOLD_MS),
+        TouchHold("Mic", slide = Macros.Direction.UP, slideDp = Macros.MIN_SLIDE_DP),
+        TouchHold("Mic", slide = Macros.Direction.DOWN, slideDp = Macros.MAX_SLIDE_DP),
+        TouchHold("Mic"),
+        TouchHold("Mic", timeoutMillis = Macros.MIN_TAP_TIMEOUT_MS),
+      ),
+      Macros.fromJson(json).single().steps,
+    )
+  }
+
+  @Test
+  fun touchHoldIsHeldInPartsThenSlid() {
+    val held = TouchSegment.plan(10f, 20f, 10f, 20f, 2_500)
+    assertEquals(
+      listOf(
+        TouchSegment(10f, 20f, 10f, 20f, 1_000, true),
+        TouchSegment(10f, 20f, 10f, 20f, 1_000, true),
+        TouchSegment(10f, 20f, 10f, 20f, 500, false),
+      ),
+      held,
+    )
+    val slid = TouchSegment.plan(10f, 300f, 10f, 0f, 600)
+    assertEquals(
+      listOf(
+        TouchSegment(10f, 300f, 10f, 300f, 600, true),
+        TouchSegment(10f, 300f, 10f, 0f, TouchSegment.SLIDE_MS, false),
+      ),
+      slid,
+    )
+    assertTrue(slid.last().moves)
+    assertFalse(held.first().moves)
+    // Each part starts where the one before ends, as a continued stroke has to.
+    for (plan in listOf(held, slid)) {
+      plan.zipWithNext { a, b -> assertEquals(a.toX to a.toY, b.fromX to b.fromY) }
+    }
+    assertEquals(TouchSegment(10f, 0f, 10f, 0f, TouchSegment.LIFT_MS, false), slid.last().lift())
   }
 
   @Test
@@ -265,6 +326,11 @@ class MacrosTest {
     assertEquals("Tap Send", Macros.describe(context, Tap("Send")))
     assertEquals("Tap ^Re (regular expression)", Macros.describe(context, Tap("^Re", regex = true)))
     assertEquals("Tap at 540, 1200", Macros.describe(context, TapPosition(540, 1200)))
+    assertEquals("Touch and hold Mic for 1.5 s", Macros.describe(context, TouchHold("Mic", 1_500)))
+    assertEquals(
+      "Touch and hold Mic for 1 s. Slide up 100 dp",
+      Macros.describe(context, TouchHold("Mic", 1_000, Macros.Direction.UP, 100)),
+    )
     assertEquals("Focus Send", Macros.describe(context, FocusItem("Send")))
     assertEquals("Focus ^Re (regular expression)", Macros.describe(context, FocusItem("^Re", regex = true)))
     assertEquals("Speak Send", Macros.describe(context, SpeakItem("Send")))
