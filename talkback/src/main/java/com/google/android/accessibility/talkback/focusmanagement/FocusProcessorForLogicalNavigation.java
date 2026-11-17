@@ -3220,6 +3220,22 @@ public class FocusProcessorForLogicalNavigation {
       return NavigationResult.create(NavigationResult.Type.EXCEPTION);
     }
 
+    // Swipes don't go into the navigation bar or the status bar, so focus there, after Back or a
+    // touch, goes on into the app at the bar's end instead of around the bar.
+    if ((logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
+            || logicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD)
+        && !windowFilter.accept(currentWindow)
+        && WindowUtils.isSystemBar(service, currentWindow)) {
+      return findTargetLeavingSystemBar(
+          pivot,
+          currentWindow,
+          windowTraversal,
+          windowFilter,
+          navigationAction,
+          logicalDirection,
+          eventId);
+    }
+
     // Skip one swipe if it's the last element in the last window. Without wrapping, stop there on every swipe, rather than going on to the first window.
     if ((!reachEdge || !wrapAround)
         && (!windowFilter.accept(currentWindow)
@@ -3273,6 +3289,135 @@ public class FocusProcessorForLogicalNavigation {
       }
     }
     return NavigationResult.create(target);
+  }
+
+  /**
+   * Moves on from the first or last item of the navigation bar or the status bar into the app. The
+   * status bar comes before the app and the navigation bar after it, so going forward from the
+   * navigation bar or back from the status bar passes the end of the screen, where Wrap around and
+   * Stop at the last item before wrapping apply as at the last window.
+   */
+  private @NonNull NavigationResult findTargetLeavingSystemBar(
+      AccessibilityNodeInfoCompat pivot,
+      AccessibilityWindowInfo barWindow,
+      WindowTraversal windowTraversal,
+      Filter<AccessibilityWindowInfo> windowFilter,
+      NavigationAction navigationAction,
+      @SearchDirection int logicalDirection,
+      EventId eventId) {
+    boolean forward = logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD;
+    boolean pastScreenEnd = forward != WindowUtils.isStatusBar(service, barWindow);
+    if (stopsLeavingSystemBar(pastScreenEnd, navigationAction.shouldWrap)) {
+      logEdge(pivot, navigationAction);
+      announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
+      return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
+    }
+    List<AccessibilityWindowInfo> appWindows =
+        appWindowsNextToSystemBar(
+            AccessibilityServiceCompatUtils.getWindows(service),
+            windowTraversal,
+            windowFilter,
+            barWindow,
+            forward);
+    for (AccessibilityWindowInfo window : appWindows) {
+      @Nullable AccessibilityNodeInfoCompat root = AccessibilityWindowInfoUtils.getRootCompat(window);
+      if (root == null) {
+        continue;
+      }
+      TraversalStrategy strategy =
+          TraversalStrategyUtils.getTraversalStrategy(
+              root, focusFinder, navigationAction.searchDirection);
+      NavigationResult result =
+          findTargetForWrapAround(root, navigationAction, strategy, eventId);
+      if (result.isEmpty()) {
+        continue;
+      }
+      if (result.isWebElement()) {
+        // The page moves focus itself; the edge was passed.
+        reachEdge = false;
+      }
+      LogUtils.d(TAG, "Leaving a system bar into window %d", window.getId());
+      return result;
+    }
+    return NavigationResult.create(NavigationResult.Type.EMPTY);
+  }
+
+  /**
+   * Whether a swipe leaving a system bar stops at the bar's last or first item. Only a swipe that
+   * passes the end of the screen ({@code pastScreenEnd}) stops: always with Wrap around off or
+   * for a navigation that doesn't wrap, and once before going on with Stop at the last item before
+   * wrapping on.
+   */
+  @VisibleForTesting
+  boolean stopsLeavingSystemBar(boolean pastScreenEnd, boolean shouldWrap) {
+    if (!pastScreenEnd) {
+      return false;
+    }
+    if (reachEdge && wrapAround && shouldWrap) {
+      // The swipe after the one that stopped.
+      return false;
+    }
+    reachEdge = true;
+    if (stopsAtEdge() || !shouldWrap) {
+      stoppedAtEdge = !wrapAround;
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * The windows a swipe leaving the system bar {@code barWindow} tries, in order: the app window
+   * with input focus, the active app window, then the next window swipes go to in the direction of
+   * the swipe.
+   */
+  @VisibleForTesting
+  static List<AccessibilityWindowInfo> appWindowsNextToSystemBar(
+      List<AccessibilityWindowInfo> windows,
+      WindowTraversal windowTraversal,
+      Filter<AccessibilityWindowInfo> windowFilter,
+      AccessibilityWindowInfo barWindow,
+      boolean forward) {
+    List<AccessibilityWindowInfo> result = new ArrayList<>();
+    for (AccessibilityWindowInfo window : windows) {
+      if (window.isFocused() && isAppWindowOutsideBar(window, windowFilter, barWindow)) {
+        result.add(window);
+        break;
+      }
+    }
+    for (AccessibilityWindowInfo window : windows) {
+      if (window.isActive()
+          && !result.contains(window)
+          && isAppWindowOutsideBar(window, windowFilter, barWindow)) {
+        result.add(window);
+        break;
+      }
+    }
+    @Nullable AccessibilityWindowInfo window = barWindow;
+    for (int i = 0; i < windows.size(); i++) {
+      window =
+          forward
+              ? windowTraversal.getNextWindow(window)
+              : windowTraversal.getPreviousWindow(window);
+      if (window == null || window.equals(barWindow)) {
+        break;
+      }
+      if (windowFilter.accept(window)) {
+        if (!result.contains(window)) {
+          result.add(window);
+        }
+        break;
+      }
+    }
+    return result;
+  }
+
+  private static boolean isAppWindowOutsideBar(
+      AccessibilityWindowInfo window,
+      Filter<AccessibilityWindowInfo> windowFilter,
+      AccessibilityWindowInfo barWindow) {
+    return !window.equals(barWindow)
+        && AccessibilityWindowInfoUtils.getType(window) == AccessibilityWindowInfo.TYPE_APPLICATION
+        && windowFilter.accept(window);
   }
 
   /**
