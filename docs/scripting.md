@@ -36,8 +36,11 @@ Scripts run in [Lua 5.4](https://www.lua.org/manual/5.4/) through [LuaJava](http
 *   **Apps**: the apps it runs in, each optionally limited to an activity or a window title. With none, it runs in all apps.
 *   **Rules**: each names an item, with the same tests as a macro's Item on screen (text with **Match in** and **Regular expression**, item types), plus resource ID, class name, role, **Inside an item** and **Has an item inside**. **Use the inspected item** fills them in from the item last shown by **Inspect focused item** or **Copy item details**. A rule sets any of the [rule fields](#rules), such as Label, Hide, **Read as one item** (`group`) and Reading order, and adds actions to the item's Actions menu.
 *   **Reading controls**: [navigation](#navigation) entries.
+*   **Commands**: each runs steps, made in the same editor as macros, with the same steps and **Run only when**. The user assigns them under **Commands** > **Scripts**, or on the script's page.
+*   **Triggers**: steps that run by themselves when focus moves to an item, when one of the script's apps opens, when a window changes, or when an app's announcement has a text.
+*   **Code**: **Lua code** added to the end of the script, and **Extra permissions** it needs, such as `java` for [LuaJava](#java).
 
-Each change is saved and applies at once. The builder writes `main.lua` with a manifest and no code, and asks only for the permissions its rules and reading controls need. A rule or reading control that isn't finished shows what it needs and is left out until it is. The script's page has **Edit in script builder**.
+Each change is saved and applies at once. The builder writes `main.lua` with the manifest, a line of code for each command and trigger, and the Lua code, and keeps each command's and trigger's steps in a file in `macros/` that [`sf.macros.run`](#macros) runs. It asks for the permissions the parts need. Permissions the script already asked for keep what the user chose on its page. A rule, reading control or trigger that isn't finished shows what it needs and is left out until it is. The script's page has **Edit in script builder**. **Export script** saves the script as a .zip, which **Import script** installs, still editable in the builder.
 
 ## A first script
 
@@ -441,6 +444,10 @@ local manifest = {
 sf.keys.passAll()
 sf.message('Keys go to the game')
 ```
+
+### Macros
+
+*Version 6.* `sf.macros.run(file)` runs the macro in a file of the script, such as `'macros/reply.json'`, as SandFly runs the user's macros: a list with one macro, `{ id, name, steps, condition }`, in the format of the macros in **Export to file**. It stops the macro running, if any, and gives `true` at once; the steps run after the script carries on, so it can be called from any hook. `sf.macros.stop()` stops a macro this script started. It needs `input`, `actions` and `screen`, and the permissions of the commands its steps run, as `sf.commands.run` does, and `system` to open apps. It doesn't work on SandFly's own screens.
 
 ### SandFly's commands
 

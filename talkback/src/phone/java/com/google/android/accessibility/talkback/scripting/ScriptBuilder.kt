@@ -64,14 +64,21 @@ object ScriptBuilder {
   @Throws(IOException::class)
   fun save(context: Context, draft: JSONObject) {
     val manifestJson = manifestOf(context, draft)
-    val main = "local manifest = ${lua(manifestJson)}\n"
+    val main = "local manifest = ${lua(manifestJson)}\n" + code(draft)
     val files =
       mapOf(
         ScriptPackage.MAIN to main.encodeToByteArray(),
         DRAFT_FILE to draft.toString(1).encodeToByteArray(),
-      )
+      ) + macroFiles(draft)
     val manifest = ScriptManifest.parse(ManifestReader.read(main))
-    ScriptStore.get(context).install(ScriptPackage(files, manifest), manifest.permissions)
+    val store = ScriptStore.get(context)
+    // Permissions the script already asked for keep the user's choice on its page; ones its new
+    // parts need are allowed, as the user added those parts.
+    val existing = store.find(manifest.id)
+    val granted =
+      if (existing == null) manifest.permissions
+      else manifest.permissions.filter { it in existing.granted || it !in existing.manifest.permissions }.toSet()
+    store.install(ScriptPackage(files, manifest), granted)
   }
 
   /** What is wrong with the rule [rule], or null when it is finished. */
@@ -115,8 +122,19 @@ object ScriptBuilder {
         .put("author", context.getString(R.string.script_builder_author))
     val apps = draft.optJSONArray("apps")
     if (apps != null && apps.length() > 0) manifest.put("apps", apps)
-    val permissions = permissionsOf(rules, navigation)
+    val permissions =
+      permissionsOf(rules, navigation) + macroPermissionsOf(draft) +
+        draft.optJSONArray("permissions").let { list ->
+          (0 until (list?.length() ?: 0)).mapNotNull { ScriptPermission.fromKey(list!!.optString(it)) }
+        }
     if (permissions.isNotEmpty()) manifest.put("permissions", JSONArray(permissions.map { it.key }))
+    val commands = draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects()
+    if (commands.isNotEmpty()) {
+      manifest.put(
+        "commands",
+        JSONArray(commands.map { JSONObject().put("id", it.getString("id")).put("title", it.optString("title").ifBlank { it.getString("id") }) }),
+      )
+    }
     if (rules.isNotEmpty()) manifest.put("rules", JSONArray(rules))
     if (navigation.isNotEmpty()) manifest.put("navigation", JSONArray(navigation))
     return manifest
@@ -138,6 +156,114 @@ object ScriptBuilder {
     }
     return needed
   }
+
+  /** The permissions the commands and triggers of [draft] need to run their steps. */
+  fun macroPermissionsOf(draft: JSONObject): Set<ScriptPermission> {
+    val needed = mutableSetOf<ScriptPermission>()
+    if (draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects().isNotEmpty()) needed += ScriptPermission.INPUT
+    for (entry in runnable(draft)) {
+      BuiltScriptMacros.macroOf(entry)?.let { needed += ScriptRuntime.macroPermissions(it) }
+    }
+    return needed
+  }
+
+  /** The commands, and the finished triggers, of [draft] that have steps. */
+  private fun runnable(draft: JSONObject): List<JSONObject> =
+    draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects().filter { hasSteps(it) } +
+      draft.optJSONArray(BuiltScriptMacros.TRIGGERS).objects().filter { hasSteps(it) && triggerProblem(it) == null }
+
+  private fun hasSteps(entry: JSONObject): Boolean = BuiltScriptMacros.macroOf(entry)?.steps?.isNotEmpty() == true
+
+  private fun macroFile(entry: JSONObject): String = "macros/${entry.getString("id")}.json"
+
+  private fun macroFiles(draft: JSONObject): Map<String, ByteArray> =
+    runnable(draft).associate { entry ->
+      val macro = BuiltScriptMacros.macroOf(entry)!!.copy(id = entry.getString("id"))
+      macroFile(entry) to com.google.android.accessibility.talkback.macros.Macros.macroToJson(macro).encodeToByteArray()
+    }
+
+  /** What is wrong with the trigger [trigger], or null when it is finished. */
+  fun triggerProblem(trigger: JSONObject): String? =
+    when (trigger.optString("when")) {
+      WHEN_FOCUS -> {
+        val match = trigger.optJSONObject("match")
+        when {
+          match == null || match.length() == 0 -> "A match needs at least one field"
+          else ->
+            try {
+              NodeQuery.problem(match) ?: NodeQuery.of(match).let { null }
+            } catch (e: ScriptApiException) {
+              e.message
+            }
+        }
+      }
+      WHEN_ANNOUNCEMENT -> if (trigger.optString("text").isBlank()) "The text is empty" else null
+      WHEN_APP, WHEN_WINDOW -> null
+      else -> "Unknown trigger"
+    }
+
+  /**
+   * The code of [draft]: each command and trigger runs its macro file, then the Lua the user wrote
+   * in the builder's Code, if any.
+   */
+  fun code(draft: JSONObject): String = generatedCode(draft) + draft.optString("code").let { if (it.isBlank()) "" else "\n$it\n" }
+
+  private fun generatedCode(draft: JSONObject): String = buildString {
+    val runnable = runnable(draft).toSet()
+    for (command in draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects()) {
+      if (command !in runnable) continue
+      append("sf.onCommand(${lua(command.getString("id"))}, function() sf.macros.run(${lua(macroFile(command))}) end)\n")
+    }
+    for (trigger in draft.optJSONArray(BuiltScriptMacros.TRIGGERS).objects()) {
+      if (trigger !in runnable) continue
+      val run = "sf.macros.run(${lua(macroFile(trigger))})"
+      when (trigger.optString("when")) {
+        WHEN_FOCUS -> {
+          val query = lua(trigger.getJSONObject("match"), "  ")
+          append("do\n  local query = $query\n")
+          append("  sf.onFocus(function(item) if item:find(query) then $run end end)\nend\n")
+        }
+        WHEN_APP -> append("sf.onAppEnter(function() $run end)\n")
+        WHEN_WINDOW -> append("sf.onWindowChange(function() $run end)\n")
+        WHEN_ANNOUNCEMENT -> {
+          val text = lua(trigger.getString("text").lowercase())
+          append("sf.onAnnouncement(function(a) if a.text and string.find(string.lower(a.text), $text, 1, true) then $run end end)\n")
+        }
+      }
+    }
+  }
+
+  /** What makes [trigger] run, in words. */
+  fun triggerText(context: Context, trigger: JSONObject): String =
+    when (trigger.optString("when")) {
+      WHEN_FOCUS ->
+        context.getString(
+          R.string.script_builder_when_focus_value,
+          ScriptBuilderFragment.describeQuery(context, trigger.optJSONObject("match")),
+        )
+      WHEN_APP -> context.getString(R.string.script_builder_when_app)
+      WHEN_WINDOW -> context.getString(R.string.script_builder_when_window)
+      WHEN_ANNOUNCEMENT -> context.getString(R.string.script_builder_when_announcement_value, trigger.optString("text"))
+      else -> trigger.optString("when")
+    }
+
+  /** Writes the files of the installed script [id] as a zip to [out]. */
+  @Throws(IOException::class)
+  fun exportZip(store: ScriptStore, id: String, out: java.io.OutputStream) {
+    val root = store.file(id, ScriptPackage.MAIN)?.parentFile ?: throw IOException("No script $id")
+    java.util.zip.ZipOutputStream(out).use { zip ->
+      root.walkTopDown().filter { it.isFile }.forEach { file ->
+        zip.putNextEntry(java.util.zip.ZipEntry(file.relativeTo(root).invariantSeparatorsPath))
+        file.inputStream().use { it.copyTo(zip) }
+        zip.closeEntry()
+      }
+    }
+  }
+
+  const val WHEN_FOCUS = "focus"
+  const val WHEN_APP = "app"
+  const val WHEN_WINDOW = "window"
+  const val WHEN_ANNOUNCEMENT = "announcement"
 
   private fun baseManifest(id: String, name: String): JSONObject =
     JSONObject()

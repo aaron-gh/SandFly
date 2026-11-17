@@ -333,16 +333,20 @@ class MacroFragment : MacroEditorFragment() {
         else Macros.describe(context, step)
       list.addPreference(StepRow(context, macro.steps, index, name, flow.level[index]))
     }
-    screen.link(getString(R.string.menu_assign), null, CommandFragment::class.java) {
-      putString(CommandFragment.ARG_COMMAND, Macros.commandOf(macro.id))
+    // A script's commands are assigned on the script's page.
+    val external = Macros.isExternal(macro.id)
+    if (!external) {
+      screen.link(getString(R.string.menu_assign), null, CommandFragment::class.java) {
+        putString(CommandFragment.ARG_COMMAND, Macros.commandOf(macro.id))
+      }
     }
-    screen.action(getString(R.string.menu_rename)) { rename() }
-    if (ItemFileLauncher.isAvailable) {
+    if (Macros.canRename(macro.id)) screen.action(getString(R.string.menu_rename)) { rename() }
+    if (ItemFileLauncher.isAvailable && !external) {
       screen.action(getString(R.string.item_file_export)) {
         files.export(macro.name) { ItemFiles.exportMacros(it, setOf(macro.id)) }
       }
     }
-    screen.action(getString(R.string.macro_delete)) { confirmDelete() }
+    screen.action(getString(if (external) R.string.menu_delete else R.string.macro_delete)) { confirmDelete() }
   }
 
   /** Says where Add step adds a step: at the end, at the start or after a step. */
