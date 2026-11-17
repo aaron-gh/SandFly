@@ -2318,6 +2318,17 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
+   * Returns {@code true} if {@code setting} is in the user's reading control list and not hidden
+   * on this device, whatever the focused node.
+   */
+  public boolean isSettingInList(Setting setting) {
+    return !hiddenSettings.contains(setting)
+        && prefs.getBoolean(
+            context.getString(setting.prefKeyResId),
+            context.getResources().getBoolean(setting.defaultValueResId));
+  }
+
+  /**
    * Filter settings based on device and the focused node. Filter out the settings turned off by
    * users in selector preferences.
    */

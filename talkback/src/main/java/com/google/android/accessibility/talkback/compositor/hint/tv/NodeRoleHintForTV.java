@@ -93,13 +93,9 @@ public class NodeRoleHintForTV extends NodeRoleHint {
     joinList.add(longClickableHint.getHint(node));
 
     // Prepare typo hint.
-    int typoCount = AccessibilityNodeInfoUtils.getTypoCount(context, node);
-    if (typoCount > 0 && TalkbackFeatureSupport.supportTextSuggestion()) {
+    if (TalkbackFeatureSupport.supportTextSuggestion() && globalVariables.isTypoHintOn()) {
       joinList.add(
-          context.getString(
-              R.string.template_hint_edit_text_containing_typo,
-              typoCount,
-              globalVariables.getGestureStringForReadingMenuNextSetting()));
+          globalVariables.getTypoHint(AccessibilityNodeInfoUtils.getTypoCount(context, node)));
     }
 
     return CompositorUtils.joinCharSequences(joinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);

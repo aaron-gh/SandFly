@@ -22,7 +22,6 @@ import static com.google.android.accessibility.utils.Role.ROLE_SEEK_CONTROL;
 
 import android.content.Context;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
-import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
@@ -111,13 +110,9 @@ public class NodeRoleHint {
     joinList.add(longClickableHint.getHint(node));
 
     // Prepare typo hint.
-    int typoCount = AccessibilityNodeInfoUtils.getTypoCount(context, node);
-    if (typoCount > 0 && TalkbackFeatureSupport.supportTextSuggestion()) {
+    if (TalkbackFeatureSupport.supportTextSuggestion() && globalVariables.isTypoHintOn()) {
       joinList.add(
-          context.getString(
-              R.string.template_hint_edit_text_containing_typo,
-              typoCount,
-              globalVariables.getGestureStringForReadingMenuNextSetting()));
+          globalVariables.getTypoHint(AccessibilityNodeInfoUtils.getTypoCount(context, node)));
     }
 
     return CompositorUtils.joinCharSequences(joinList, CompositorUtils.getSeparator(), PRUNE_EMPTY);
