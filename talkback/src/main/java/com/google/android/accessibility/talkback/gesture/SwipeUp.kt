@@ -42,12 +42,13 @@ class SwipeUp(private val service: AccessibilityService) {
   }
 
   /**
-   * Returns whether the home screen is the app in front and its window is active, not covered by
-   * the lock screen, the notification shade or quick settings.
+   * Returns whether a home app is the app in front and its window is active, not covered by the
+   * lock screen, the notification shade or quick settings. Any home app counts, as Android may not
+   * name the one in use while more than one is installed.
    */
   fun isHomeScreenShown(): Boolean =
-    HomeScreenPages.isHomePackage(service, AppGestures.appShown()) &&
-      HomeScreenPages.isHomePackage(service, service.rootInActiveWindow?.packageName)
+    HomeScreenPages.isLauncherPackage(service, AppGestures.appShown()) &&
+      HomeScreenPages.isLauncherPackage(service, service.rootInActiveWindow?.packageName)
 
   /**
    * Swipes up with [fingers] fingers, one or two, in the middle of the screen. Returns whether it

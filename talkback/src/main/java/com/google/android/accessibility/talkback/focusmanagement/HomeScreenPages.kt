@@ -20,8 +20,10 @@ import android.app.KeyguardManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.pm.ResolveInfo
 import android.graphics.Rect
 import android.os.SystemClock
+import androidx.annotation.VisibleForTesting
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Filter
@@ -34,9 +36,13 @@ import com.google.android.accessibility.utils.Filter
 object HomeScreenPages {
   private const val HOME_CHECK_INTERVAL_MS = 60_000L
   private const val SYSTEM_UI_PACKAGE = "com.android.systemui"
+  /** The package of Android's app chooser, which resolves the home intent with no default set. */
+  private const val ANDROID_PACKAGE = "android"
 
   private var homePackage: String? = null
   private var homeCheckedAt = 0L
+  private var launcherPackages: Set<String> = emptySet()
+  private var launchersCheckedAt = 0L
 
   /**
    * Whether [node] can't be clicked and either belongs to the home app and holds items that can
@@ -80,6 +86,45 @@ object HomeScreenPages {
   @JvmStatic
   fun isHomePackage(context: Context, packageName: CharSequence?): Boolean =
     packageName != null && packageName.toString() == homePackage(context)
+
+  /**
+   * Whether [packageName] is the home app's or that of another installed home app. With more than
+   * one home app installed, resolving the home intent can name Android's app chooser or an earlier
+   * default instead of the home app in use.
+   */
+  @JvmStatic
+  fun isLauncherPackage(context: Context, packageName: CharSequence?): Boolean =
+    packageName != null &&
+      (isHomePackage(context, packageName) ||
+        packageName.toString() in launcherPackages(context))
+
+  private fun launcherPackages(context: Context): Set<String> {
+    val now = SystemClock.uptimeMillis()
+    if (launchersCheckedAt == 0L || now - launchersCheckedAt > HOME_CHECK_INTERVAL_MS) {
+      launchersCheckedAt = now
+      launcherPackages =
+        launcherPackages(
+          context.packageManager.queryIntentActivities(
+            Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME),
+            PackageManager.MATCH_DEFAULT_ONLY,
+          )
+        )
+    }
+    return launcherPackages
+  }
+
+  /**
+   * Returns the packages of [homeActivities] that can be the home app. Activities with a negative
+   * priority, such as the Settings app's FallbackHome, only stand in while no home app runs.
+   */
+  @VisibleForTesting
+  @JvmStatic
+  fun launcherPackages(homeActivities: List<ResolveInfo>): Set<String> =
+    homeActivities
+      .filter { it.priority >= 0 }
+      .mapNotNull { it.activityInfo?.packageName }
+      .filter { it != ANDROID_PACKAGE }
+      .toSet()
 
   private fun homePackage(context: Context): String? {
     val now = SystemClock.uptimeMillis()
