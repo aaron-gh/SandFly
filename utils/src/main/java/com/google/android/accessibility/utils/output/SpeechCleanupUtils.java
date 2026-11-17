@@ -373,16 +373,17 @@ public final class SpeechCleanupUtils {
         : cleanUp(context, text);
   }
 
-  /** Whether the speech dictionary says a character, on its own, as other text. */
+  /** The text the symbol dictionary says a character as, in place of its name. */
   public interface CharacterReplacement {
-    boolean replaces(char key);
+    /** The text {@code key} is said as, or null if it keeps its name. Never blank. */
+    @Nullable String replacementFor(char key);
   }
 
   private static volatile @Nullable CharacterReplacement characterReplacement;
 
   /**
-   * Sets the characters that keep their own text instead of their name, so that the speech
-   * dictionary, applied to speech after this, replaces them. Null when the dictionary is empty.
+   * Sets the text that characters are named with in place of their names, such as when moving by
+   * character or deleting one. Null when the symbol dictionary is empty.
    */
   public static void setCharacterReplacement(@Nullable CharacterReplacement replacement) {
     characterReplacement = replacement;
@@ -404,15 +405,20 @@ public final class SpeechCleanupUtils {
     return pair != null && key != ' ' && pair.second < spokenPunctuationVerbosity;
   }
 
-  private static boolean isReplaced(char key) {
+  /** The symbol dictionary's text for {@code key}, or null if it keeps its name. */
+  private static @Nullable String replacementFor(char key) {
     @Nullable CharacterReplacement replacement = characterReplacement;
-    return replacement != null && replacement.replaces(key);
+    return replacement == null ? null : replacement.replacementFor(key);
   }
 
   /** Returns the "clean" value for the specified character. */
   public static String getCleanValueFor(Context context, char key) {
     Pair<Integer, Integer> pair = TALKBACK_PUNCTUATION_AND_SYMBOL.get(key);
-    if (pair != null && !isReplaced(key)) {
+    if (pair != null) {
+      @Nullable String replacement = replacementFor(key);
+      if (replacement != null) {
+        return replacement;
+      }
       final int resId = pair.first;
 
       if (resId != 0) {
@@ -438,11 +444,15 @@ public final class SpeechCleanupUtils {
   public static @Nullable String characterToName(
       Context context, char key, int punctuationVerbosity) {
     Pair<Integer, Integer> pair = TALKBACK_PUNCTUATION_AND_SYMBOL.get(key);
-    if (pair == null || isReplaced(key)) {
+    if (pair == null) {
       return null;
     } else if (key != ' ') {
       if (pair.second < punctuationVerbosity) {
         return null;
+      }
+      @Nullable String replacement = replacementFor(key);
+      if (replacement != null) {
+        return replacement;
       }
     }
     final int resId = pair.first;

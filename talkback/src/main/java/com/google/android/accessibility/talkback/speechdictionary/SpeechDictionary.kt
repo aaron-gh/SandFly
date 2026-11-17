@@ -82,7 +82,7 @@ object SpeechDictionary {
       if (empty) null else SpeechControllerImpl.SpeechFilter(::apply)
     )
     SpeechCleanupUtils.setCharacterReplacement(
-      if (SymbolDictionary.isEmpty) null else SpeechCleanupUtils.CharacterReplacement(::replaces)
+      if (SymbolDictionary.isEmpty) null else SpeechCleanupUtils.CharacterReplacement(::replacement)
     )
   }
 
@@ -101,23 +101,26 @@ object SpeechDictionary {
     app = shown
   }
 
-  // Whether each character asked about is replaced in the app shown last. At most one entry for
-  // each character that has a spoken name.
-  private val replacedCharacters = ConcurrentHashMap<Char, Boolean>()
+  // The symbol dictionary's text for each character asked about in the app shown last, or "" for
+  // none. At most one entry for each character that has a spoken name.
+  private val replacedCharacters = ConcurrentHashMap<Char, String>()
 
   /**
-   * Whether the symbol dictionary says [key] as text that is not blank, so that it is spoken as
-   * itself and replaced here instead of by its name, such as when moving by character. Symbol
-   * entries replace a character wherever it is; a speech dictionary entry may match the character
-   * only on its own, so its name stays. An entry that removes a character from speech leaves its
-   * name for when it is on its own.
+   * The text the symbol dictionary says [key] as, in place of its name, where SandFly names it, such
+   * as when moving by character or deleting it; or null if it keeps its name. Symbol entries
+   * replace a character wherever it is; a speech dictionary entry may match the character only on
+   * its own, so its name stays. An entry that removes a character from speech leaves its name for
+   * when it is on its own.
    */
   @JvmStatic
-  fun replaces(key: Char): Boolean =
-    replacedCharacters.getOrPut(key) {
-      val app = app
-      (app != ownPackage || appliesInOwnWindows) && SymbolDictionary.apply(key.toString(), app)?.isNotBlank() == true
-    }
+  fun replacement(key: Char): String? =
+    replacedCharacters
+      .getOrPut(key) {
+        val app = app
+        if (app == ownPackage && !appliesInOwnWindows) ""
+        else SymbolDictionary.apply(key.toString(), app)?.toString()?.takeIf { it.isNotBlank() }.orEmpty()
+      }
+      .ifEmpty { null }
 
   /** Returns [text] with the entries applied, or null when none changed it. */
   @JvmStatic

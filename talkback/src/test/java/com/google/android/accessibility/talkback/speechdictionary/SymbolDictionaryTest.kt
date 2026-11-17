@@ -20,6 +20,7 @@ import android.content.Context
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.LocaleSpan
+import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.notifications.Replacement
 import com.google.android.accessibility.utils.output.SpeechCleanupUtils
 import java.util.Locale
@@ -167,8 +168,10 @@ class SymbolDictionaryTest {
     SpeechDictionary.load(context, prefs)
     SpeechDictionary.onWindowShown("com.example")
 
-    assertEquals("#", SpeechCleanupUtils.getCleanValueFor(context, '#'))
-    assertNull(SpeechCleanupUtils.characterToName(context, '#'))
+    // Where SandFly names the character, it says the entry's text instead.
+    assertEquals("hashmark", SpeechCleanupUtils.getCleanValueFor(context, '#'))
+    assertEquals("hashmark", SpeechCleanupUtils.characterToName(context, '#'))
+    assertEquals("hashmark", SpeechCleanupUtils.cleanUp(context, "#").toString())
     assertEquals("hashmark", SpeechDictionary.apply("#").toString())
     // An entry that removes the character from speech leaves its name.
     assertEquals(SpeechCleanupUtils.characterToName(context, '.'), SpeechCleanupUtils.getCleanValueFor(context, '.'))
@@ -186,13 +189,58 @@ class SymbolDictionaryTest {
     SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.SOME)
     try {
       assertNull(SpeechDictionary.apply("Hello!"))
-      assertEquals("bang", SpeechDictionary.apply("!").toString())
+      // On its own, such as when moving by character, the character is named with the entry.
+      assertEquals("bang", SpeechCleanupUtils.cleanUp(context, "!").toString())
+      assertEquals("bang", SpeechCleanupUtils.getCleanValueFor(context, '!'))
+      // The verbosity doesn't name it in text.
+      assertNull(SpeechCleanupUtils.characterToName(context, '!', SpeechCleanupUtils.SOME))
       // Braille text keeps the entry.
       assertEquals("Hello bang", SymbolDictionary.apply("Hello !", "com.example")?.toString())
     } finally {
       SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.ALL)
     }
     assertEquals("Hellobang", SpeechDictionary.apply("Hello!").toString())
+  }
+
+  @Test
+  fun deletedHiddenSymbolIsNamedWithItsEntry() {
+    val context = RuntimeEnvironment.getApplication()
+    SymbolDictionary.write(prefs, listOf(entry("!", "bang")))
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown("com.example")
+    SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.SOME)
+    try {
+      // As the compositor says a deleted character: its clean value in "%1$s deleted".
+      val deleted =
+        context.getString(
+          R.string.template_text_removed,
+          SpeechCleanupUtils.cleanUp(context, "!"),
+        )
+      val spoken = SpeechDictionary.apply(deleted) ?: deleted
+
+      assertEquals(context.getString(R.string.template_text_removed, "bang"), spoken.toString())
+    } finally {
+      SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.ALL)
+    }
+  }
+
+  @Test
+  fun symbolsThatEnginesSayKeepTheirEntriesInText() {
+    val context = RuntimeEnvironment.getApplication()
+    SymbolDictionary.write(prefs, listOf(entry("%", " per cent"), entry("@", " at ")))
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown("com.example")
+    SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.SOME)
+    try {
+      assertEquals("50 per cent", SpeechDictionary.apply("50%").toString())
+      assertEquals("me at example", SpeechDictionary.apply("me@example").toString())
+    } finally {
+      SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.ALL)
+    }
   }
 
   @Test

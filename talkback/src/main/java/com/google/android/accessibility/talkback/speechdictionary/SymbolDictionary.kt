@@ -65,16 +65,15 @@ object SymbolDictionary {
     if (entries.isEmpty()) return null
     var builder: SpannableStringBuilder? = null
     var subject = text.toString()
-    // A symbol on its own, such as when moving by character, is said whatever the punctuation
-    // verbosity, so its entry still applies.
-    val inText = forSpeech && subject.trim().length > 1
     for (entry in entries) {
       if (entry.app.isNotEmpty() && entry.app != app) continue
       val find = entry.replacement.find
       val replace = entry.replacement.replace
       if (find.isEmpty()) continue
-      // A symbol in text that the punctuation verbosity leaves out of speech stays out.
-      if (inText && find.length == 1 && SpeechCleanupUtils.isHiddenByVerbosity(find[0])) continue
+      // Punctuation that the punctuation verbosity leaves out of speech, and that engines don't
+      // read aloud, stays out. Where SandFly names the character, such as when moving by character
+      // or deleting it, SpeechCleanupUtils has already put in the entry's text.
+      if (forSpeech && find.length == 1 && isSilentWhenHidden(find[0])) continue
       val starts = ArrayList<Int>()
       var index = subject.indexOf(find)
       while (index >= 0) {
@@ -93,4 +92,16 @@ object SymbolDictionary {
     }
     return builder
   }
+
+  /**
+   * Whether [symbol] is punctuation that engines don't read aloud, which the punctuation verbosity
+   * leaves out of speech now. Symbols such as % @ & * #, which engines say themselves, keep their
+   * entries.
+   */
+  private fun isSilentWhenHidden(symbol: Char): Boolean =
+    symbol in ENGINE_SILENT_PUNCTUATION && SpeechCleanupUtils.isHiddenByVerbosity(symbol)
+
+  /** Punctuation that engines leave unsaid in text, pausing for it at most. */
+  private const val ENGINE_SILENT_PUNCTUATION =
+    ".,!?'\";:()[]{}-\u2013\u2014\u2026\u2018\u2019\u201C\u201D"
 }
