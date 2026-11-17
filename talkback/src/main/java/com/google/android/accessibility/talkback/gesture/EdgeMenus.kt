@@ -27,7 +27,7 @@ import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEd
  */
 object EdgeMenus {
   /** The most commands a menu has. */
-  const val MAX_ITEMS = 10
+  const val MAX_ITEMS = 20
 
   private const val PREFIX = "pref_edge_menu_"
 
