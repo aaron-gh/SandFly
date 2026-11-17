@@ -265,4 +265,18 @@
     <string name="script_builder_step_long_click_in_item">Ilgi nospiest %1$s vienumā</string>
     <string name="script_builder_step_click_screen">Nospiest %1$s</string>
     <string name="script_builder_step_long_click_screen">Ilgi nospiest %1$s</string>
+    <string name="script_builder_button_actions">Iekšējās pogas kā darbības</string>
+    <string name="script_builder_skip_buttons">Izlaižamās pogas</string>
+    <string name="script_builder_skip_buttons_hint">Teksti, atdalīti ar komatiem</string>
+    <string name="script_builder_read">Iestatīt, kas tiek lasīts</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="zero">%1$d daļu</item>
+        <item quantity="one">%1$d daļa</item>
+        <item quantity="other">%1$d daļas</item>
+    </plurals>
+    <string name="script_builder_read_add">Pievienot daļu</string>
+    <string name="script_builder_read_own">Paša vienuma teksts</string>
+    <string name="script_builder_read_place">Vienums %1$s tajā</string>
+    <string name="script_builder_read_text_before">Teksts pirms tās</string>
+    <string name="script_builder_read_above">Ja tukšs, izmantot vienumu augstāk</string>
 </resources>

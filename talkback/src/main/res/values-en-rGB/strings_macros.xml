@@ -188,4 +188,13 @@
     <string name="macro_do_camera_video">Video</string>
     <string name="macro_do_set_timer_short">Set timer: %1$s s</string>
     <string name="macro_do_set_alarm_short">Set alarm: %1$s</string>
+    <string name="macro_step_act_item">Long-press or scroll an item</string>
+    <string name="macro_act_long_press">Long-press</string>
+    <string name="macro_act_scroll_forward">Scroll forward</string>
+    <string name="macro_act_scroll_backward">Scroll backward</string>
+    <string name="macro_step_act_value"><xliff:g id="act" example="Long-press">%1$s</xliff:g>: <xliff:g id="label" example="Send">%2$s</xliff:g></string>
+    <string name="macro_step_act_times_value"><xliff:g id="act" example="Scroll forward">%1$s</xliff:g>: <xliff:g id="label" example="Seek bar">%2$s</xliff:g>, <xliff:g id="times" example="5">%3$d</xliff:g> times</string>
+    <string name="macro_test_focus_inside">Focus is inside an item</string>
+    <string name="macro_test_focus_inside_value">Focus inside: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
+    <string name="macro_test_not_focus_inside_value">Focus not inside: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
 </resources>

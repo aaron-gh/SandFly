@@ -253,4 +253,16 @@
     <string name="script_builder_step_long_click_in_item">长按项目中的“%1$s”</string>
     <string name="script_builder_step_click_screen">按下“%1$s”</string>
     <string name="script_builder_step_long_click_screen">长按“%1$s”</string>
+    <string name="script_builder_button_actions">内部按钮作为操作</string>
+    <string name="script_builder_skip_buttons">要省略的按钮</string>
+    <string name="script_builder_skip_buttons_hint">文字，以逗号分隔</string>
+    <string name="script_builder_read">安排朗读内容</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">%1$d 个部分</item>
+    </plurals>
+    <string name="script_builder_read_add">添加部分</string>
+    <string name="script_builder_read_own">项目自身的文字</string>
+    <string name="script_builder_read_place">其中的项目 %1$s</string>
+    <string name="script_builder_read_text_before">部分前的文字</string>
+    <string name="script_builder_read_above">如为空，使用上方项目</string>
 </resources>

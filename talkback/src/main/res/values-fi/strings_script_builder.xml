@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Paina pitkään %1$s kohteessa</string>
     <string name="script_builder_step_click_screen">Paina %1$s</string>
     <string name="script_builder_step_long_click_screen">Paina pitkään %1$s</string>
+    <string name="script_builder_button_actions">Sisällä olevat painikkeet toimintoina</string>
+    <string name="script_builder_skip_buttons">Pois jätettävät painikkeet</string>
+    <string name="script_builder_skip_buttons_hint">Tekstit pilkuilla erotettuina</string>
+    <string name="script_builder_read">Järjestä, mitä luetaan</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d osa</item>
+        <item quantity="other">%1$d osaa</item>
+    </plurals>
+    <string name="script_builder_read_add">Lisää osa</string>
+    <string name="script_builder_read_own">Kohteen oma teksti</string>
+    <string name="script_builder_read_place">Kohde %1$s sen sisällä</string>
+    <string name="script_builder_read_text_before">Teksti ennen sitä</string>
+    <string name="script_builder_read_above">Jos tyhjä, käytä yllä olevaa kohdetta</string>
 </resources>

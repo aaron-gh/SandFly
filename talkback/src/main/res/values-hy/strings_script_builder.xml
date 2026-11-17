@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Երկար սեղմել %1$s տարրի ներսում</string>
     <string name="script_builder_step_click_screen">Սեղմել %1$s</string>
     <string name="script_builder_step_long_click_screen">Երկար սեղմել %1$s</string>
+    <string name="script_builder_button_actions">Ներսի կոճակները որպես գործողություններ</string>
+    <string name="script_builder_skip_buttons">Բաց թողնվող կոճակներ</string>
+    <string name="script_builder_skip_buttons_hint">Տեքստեր՝ ստորակետերով բաժանված</string>
+    <string name="script_builder_read">Կազմակերպել կարդացվողը</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d մաս</item>
+        <item quantity="other">%1$d մաս</item>
+    </plurals>
+    <string name="script_builder_read_add">Ավելացնել մաս</string>
+    <string name="script_builder_read_own">Տարրի սեփական տեքստը</string>
+    <string name="script_builder_read_place">Ներսի տարր %1$s</string>
+    <string name="script_builder_read_text_before">Տեքստ դրանից առաջ</string>
+    <string name="script_builder_read_above">Եթե դատարկ է, օգտագործել վերևի տարրը</string>
 </resources>

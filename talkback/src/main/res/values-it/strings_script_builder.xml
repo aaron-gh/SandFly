@@ -265,4 +265,17 @@
     <string name="script_builder_step_long_click_in_item">Premi a lungo %1$s nell\'elemento</string>
     <string name="script_builder_step_click_screen">Premi %1$s</string>
     <string name="script_builder_step_long_click_screen">Premi a lungo %1$s</string>
+    <string name="script_builder_button_actions">Pulsanti interni come azioni</string>
+    <string name="script_builder_skip_buttons">Pulsanti da escludere</string>
+    <string name="script_builder_skip_buttons_hint">Testi separati da virgole</string>
+    <string name="script_builder_read">Organizza ciò che viene letto</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d parte</item>
+        <item quantity="other">%1$d parti</item>
+    </plurals>
+    <string name="script_builder_read_add">Aggiungi una parte</string>
+    <string name="script_builder_read_own">Testo proprio dell\'elemento</string>
+    <string name="script_builder_read_place">Elemento %1$s al suo interno</string>
+    <string name="script_builder_read_text_before">Testo prima</string>
+    <string name="script_builder_read_above">Se vuoto, usa l\'elemento sopra</string>
 </resources>

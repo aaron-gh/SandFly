@@ -271,4 +271,19 @@
     <string name="script_builder_step_long_click_in_item">Dlouze stisknout %1$s v položce</string>
     <string name="script_builder_step_click_screen">Stisknout %1$s</string>
     <string name="script_builder_step_long_click_screen">Dlouze stisknout %1$s</string>
+    <string name="script_builder_button_actions">Tlačítka uvnitř jako akce</string>
+    <string name="script_builder_skip_buttons">Vynechaná tlačítka</string>
+    <string name="script_builder_skip_buttons_hint">Texty oddělené čárkami</string>
+    <string name="script_builder_read">Uspořádat, co se čte</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d část</item>
+        <item quantity="few">%1$d části</item>
+        <item quantity="many">%1$d části</item>
+        <item quantity="other">%1$d částí</item>
+    </plurals>
+    <string name="script_builder_read_add">Přidat část</string>
+    <string name="script_builder_read_own">Vlastní text položky</string>
+    <string name="script_builder_read_place">Položka %1$s v ní</string>
+    <string name="script_builder_read_text_before">Text před ní</string>
+    <string name="script_builder_read_above">Pokud je prázdné, použít položku nad</string>
 </resources>

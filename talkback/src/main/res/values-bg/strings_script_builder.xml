@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Продължително натискане на %1$s в елемента</string>
     <string name="script_builder_step_click_screen">Натискане на %1$s</string>
     <string name="script_builder_step_long_click_screen">Продължително натискане на %1$s</string>
+    <string name="script_builder_button_actions">Вътрешните бутони като действия</string>
+    <string name="script_builder_skip_buttons">Бутони за пропускане</string>
+    <string name="script_builder_skip_buttons_hint">Текстове, разделени със запетаи</string>
+    <string name="script_builder_read">Подреждане на прочитаното</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d част</item>
+        <item quantity="other">%1$d части</item>
+    </plurals>
+    <string name="script_builder_read_add">Добавяне на част</string>
+    <string name="script_builder_read_own">Собственият текст на елемента</string>
+    <string name="script_builder_read_place">Елемент %1$s в него</string>
+    <string name="script_builder_read_text_before">Текст преди него</string>
+    <string name="script_builder_read_above">Ако е празно, да се използва елементът отгоре</string>
 </resources>

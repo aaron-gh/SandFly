@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Trykk lenge på %1$s i elementet</string>
     <string name="script_builder_step_click_screen">Trykk på %1$s</string>
     <string name="script_builder_step_long_click_screen">Trykk lenge på %1$s</string>
+    <string name="script_builder_button_actions">Knapper inni som handlinger</string>
+    <string name="script_builder_skip_buttons">Knapper som utelates</string>
+    <string name="script_builder_skip_buttons_hint">Tekster, atskilt med komma</string>
+    <string name="script_builder_read">Ordne det som leses</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d del</item>
+        <item quantity="other">%1$d deler</item>
+    </plurals>
+    <string name="script_builder_read_add">Legg til en del</string>
+    <string name="script_builder_read_own">Elementets egen tekst</string>
+    <string name="script_builder_read_place">Element %1$s i det</string>
+    <string name="script_builder_read_text_before">Tekst foran</string>
+    <string name="script_builder_read_above">Hvis tom, bruk elementet over</string>
 </resources>

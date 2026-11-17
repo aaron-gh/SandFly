@@ -262,4 +262,18 @@
     <string name="script_builder_step_long_click_in_item">Dar um toque longo em %1$s no item</string>
     <string name="script_builder_step_click_screen">Pressionar %1$s</string>
     <string name="script_builder_step_long_click_screen">Dar um toque longo em %1$s</string>
+    <string name="script_builder_button_actions">Botões internos como ações</string>
+    <string name="script_builder_skip_buttons">Botões a omitir</string>
+    <string name="script_builder_skip_buttons_hint">Textos separados por vírgulas</string>
+    <string name="script_builder_read">Organizar o que é lido</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d parte</item>
+        <item quantity="many">%1$d de partes</item>
+        <item quantity="other">%1$d partes</item>
+    </plurals>
+    <string name="script_builder_read_add">Adicionar uma parte</string>
+    <string name="script_builder_read_own">Texto do próprio item</string>
+    <string name="script_builder_read_place">Item %1$s dentro dele</string>
+    <string name="script_builder_read_text_before">Texto antes dela</string>
+    <string name="script_builder_read_above">Se vazia, usar o item acima</string>
 </resources>

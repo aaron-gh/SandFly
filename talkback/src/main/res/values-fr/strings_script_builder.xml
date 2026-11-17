@@ -265,4 +265,17 @@
     <string name="script_builder_step_long_click_in_item">Appui prolongé sur %1$s dans l\'élément</string>
     <string name="script_builder_step_click_screen">Appuyer sur %1$s</string>
     <string name="script_builder_step_long_click_screen">Appui prolongé sur %1$s</string>
+    <string name="script_builder_button_actions">Boutons internes comme actions</string>
+    <string name="script_builder_skip_buttons">Boutons à exclure</string>
+    <string name="script_builder_skip_buttons_hint">Textes séparés par des virgules</string>
+    <string name="script_builder_read">Organiser ce qui est lu</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d partie</item>
+        <item quantity="other">%1$d parties</item>
+    </plurals>
+    <string name="script_builder_read_add">Ajouter une partie</string>
+    <string name="script_builder_read_own">Texte propre de l\'élément</string>
+    <string name="script_builder_read_place">Élément %1$s qu\'il contient</string>
+    <string name="script_builder_read_text_before">Texte avant</string>
+    <string name="script_builder_read_above">Si vide, utiliser l\'élément au-dessus</string>
 </resources>

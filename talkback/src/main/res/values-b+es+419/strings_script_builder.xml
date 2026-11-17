@@ -265,4 +265,17 @@
     <string name="script_builder_step_long_click_in_item">Mantener presionado %1$s en el elemento</string>
     <string name="script_builder_step_click_screen">Presionar %1$s</string>
     <string name="script_builder_step_long_click_screen">Mantener presionado %1$s</string>
+    <string name="script_builder_button_actions">Botones internos como acciones</string>
+    <string name="script_builder_skip_buttons">Botones que se omiten</string>
+    <string name="script_builder_skip_buttons_hint">Textos separados por comas</string>
+    <string name="script_builder_read">Organizar lo que se lee</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d parte</item>
+        <item quantity="other">%1$d partes</item>
+    </plurals>
+    <string name="script_builder_read_add">Agregar una parte</string>
+    <string name="script_builder_read_own">Texto propio del elemento</string>
+    <string name="script_builder_read_place">Elemento %1$s dentro de él</string>
+    <string name="script_builder_read_text_before">Texto antes</string>
+    <string name="script_builder_read_above">Si está vacío, usar el elemento de arriba</string>
 </resources>

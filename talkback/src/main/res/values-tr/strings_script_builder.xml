@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Öğe içinde %1$s öğesine uzun bas</string>
     <string name="script_builder_step_click_screen">%1$s öğesine bas</string>
     <string name="script_builder_step_long_click_screen">%1$s öğesine uzun bas</string>
+    <string name="script_builder_button_actions">İçindeki düğmeler işlem olarak</string>
+    <string name="script_builder_skip_buttons">Atlanacak düğmeler</string>
+    <string name="script_builder_skip_buttons_hint">Virgülle ayrılmış metinler</string>
+    <string name="script_builder_read">Okunanı düzenle</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d bölüm</item>
+        <item quantity="other">%1$d bölüm</item>
+    </plurals>
+    <string name="script_builder_read_add">Bölüm ekle</string>
+    <string name="script_builder_read_own">Öğenin kendi metni</string>
+    <string name="script_builder_read_place">İçindeki %1$s öğesi</string>
+    <string name="script_builder_read_text_before">Önündeki metin</string>
+    <string name="script_builder_read_above">Boşsa üstteki öğeyi kullan</string>
 </resources>

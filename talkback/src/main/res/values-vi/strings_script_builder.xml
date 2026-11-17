@@ -253,4 +253,16 @@
     <string name="script_builder_step_long_click_in_item">Nhấn và giữ %1$s trong mục</string>
     <string name="script_builder_step_click_screen">Nhấn %1$s</string>
     <string name="script_builder_step_long_click_screen">Nhấn và giữ %1$s</string>
+    <string name="script_builder_button_actions">Các nút bên trong làm thao tác</string>
+    <string name="script_builder_skip_buttons">Các nút cần bỏ qua</string>
+    <string name="script_builder_skip_buttons_hint">Văn bản, phân tách bằng dấu phẩy</string>
+    <string name="script_builder_read">Sắp xếp nội dung được đọc</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">%1$d phần</item>
+    </plurals>
+    <string name="script_builder_read_add">Thêm phần</string>
+    <string name="script_builder_read_own">Văn bản của chính mục</string>
+    <string name="script_builder_read_place">Mục %1$s bên trong</string>
+    <string name="script_builder_read_text_before">Văn bản trước phần</string>
+    <string name="script_builder_read_above">Nếu trống, dùng mục bên trên</string>
 </resources>

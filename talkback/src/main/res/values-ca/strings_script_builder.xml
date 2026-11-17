@@ -262,4 +262,17 @@
     <string name="script_builder_step_long_click_in_item">Mantén premut %1$s a l\'element</string>
     <string name="script_builder_step_click_screen">Prem %1$s</string>
     <string name="script_builder_step_long_click_screen">Mantén premut %1$s</string>
+    <string name="script_builder_button_actions">Botons interns com a accions</string>
+    <string name="script_builder_skip_buttons">Botons que s\'ometen</string>
+    <string name="script_builder_skip_buttons_hint">Textos separats per comes</string>
+    <string name="script_builder_read">Organitza el que es llegeix</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d part</item>
+        <item quantity="other">%1$d parts</item>
+    </plurals>
+    <string name="script_builder_read_add">Afegeix una part</string>
+    <string name="script_builder_read_own">Text propi de l\'element</string>
+    <string name="script_builder_read_place">Element %1$s de dins</string>
+    <string name="script_builder_read_text_before">Text abans</string>
+    <string name="script_builder_read_above">Si és buit, fes servir l\'element de dalt</string>
 </resources>

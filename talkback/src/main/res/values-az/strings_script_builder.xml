@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Elementdə %1$s üzərinə uzun basın</string>
     <string name="script_builder_step_click_screen">%1$s üzərinə basın</string>
     <string name="script_builder_step_long_click_screen">%1$s üzərinə uzun basın</string>
+    <string name="script_builder_button_actions">İçindəki düymələr əməliyyat kimi</string>
+    <string name="script_builder_skip_buttons">Çıxarılacaq düymələr</string>
+    <string name="script_builder_skip_buttons_hint">Mətnlər, vergüllə ayrılmış</string>
+    <string name="script_builder_read">Oxunanı tənzimləyin</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d hissə</item>
+        <item quantity="other">%1$d hissə</item>
+    </plurals>
+    <string name="script_builder_read_add">Hissə əlavə edin</string>
+    <string name="script_builder_read_own">Elementin öz mətni</string>
+    <string name="script_builder_read_place">İçindəki element %1$s</string>
+    <string name="script_builder_read_text_before">Ondan əvvəlki mətn</string>
+    <string name="script_builder_read_above">Boşdursa, yuxarıdakı elementi istifadə edin</string>
 </resources>

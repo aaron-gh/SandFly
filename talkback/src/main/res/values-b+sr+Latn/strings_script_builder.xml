@@ -265,4 +265,18 @@
     <string name="script_builder_step_long_click_in_item">Dugo pritisni %1$s u stavci</string>
     <string name="script_builder_step_click_screen">Pritisni %1$s</string>
     <string name="script_builder_step_long_click_screen">Dugo pritisni %1$s</string>
+    <string name="script_builder_button_actions">Dugmad unutar kao radnje</string>
+    <string name="script_builder_skip_buttons">Dugmad koja se izostavljaju</string>
+    <string name="script_builder_skip_buttons_hint">Tekstovi, razdvojeni zarezima</string>
+    <string name="script_builder_read">Rasporedi šta se čita</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d deo</item>
+        <item quantity="few">%1$d dela</item>
+        <item quantity="other">%1$d delova</item>
+    </plurals>
+    <string name="script_builder_read_add">Dodaj deo</string>
+    <string name="script_builder_read_own">Sopstveni tekst stavke</string>
+    <string name="script_builder_read_place">Stavka %1$s u njoj</string>
+    <string name="script_builder_read_text_before">Tekst pre njega</string>
+    <string name="script_builder_read_above">Ako je prazno, koristi stavku iznad</string>
 </resources>

@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Long-press %1$s in the item</string>
     <string name="script_builder_step_click_screen">Press %1$s</string>
     <string name="script_builder_step_long_click_screen">Long-press %1$s</string>
+    <string name="script_builder_button_actions">Buttons inside as actions</string>
+    <string name="script_builder_skip_buttons">Buttons to leave out</string>
+    <string name="script_builder_skip_buttons_hint">Texts, separated by commas</string>
+    <string name="script_builder_read">Arrange what is read</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d part</item>
+        <item quantity="other">%1$d parts</item>
+    </plurals>
+    <string name="script_builder_read_add">Add a part</string>
+    <string name="script_builder_read_own">The item\'s own text</string>
+    <string name="script_builder_read_place">Item %1$s in it</string>
+    <string name="script_builder_read_text_before">Text before it</string>
+    <string name="script_builder_read_above">If empty, use the item above</string>
 </resources>

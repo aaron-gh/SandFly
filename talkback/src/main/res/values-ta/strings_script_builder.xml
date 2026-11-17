@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">உருப்படியில் உள்ள %1$s ஐ நீண்ட நேரம் அழுத்து</string>
     <string name="script_builder_step_click_screen">%1$s ஐ அழுத்து</string>
     <string name="script_builder_step_long_click_screen">%1$s ஐ நீண்ட நேரம் அழுத்து</string>
+    <string name="script_builder_button_actions">உள்ளிருக்கும் பட்டன்கள் செயல்களாக</string>
+    <string name="script_builder_skip_buttons">தவிர்க்க வேண்டிய பட்டன்கள்</string>
+    <string name="script_builder_skip_buttons_hint">காற்புள்ளிகளால் பிரிக்கப்பட்ட உரைகள்</string>
+    <string name="script_builder_read">படிக்கப்படுவதை அமை</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d பகுதி</item>
+        <item quantity="other">%1$d பகுதிகள்</item>
+    </plurals>
+    <string name="script_builder_read_add">பகுதியைச் சேர்</string>
+    <string name="script_builder_read_own">உருப்படியின் சொந்த உரை</string>
+    <string name="script_builder_read_place">அதிலுள்ள உருப்படி %1$s</string>
+    <string name="script_builder_read_text_before">அதற்கு முன் உரை</string>
+    <string name="script_builder_read_above">காலியாக இருந்தால், மேலுள்ள உருப்படியைப் பயன்படுத்து</string>
 </resources>

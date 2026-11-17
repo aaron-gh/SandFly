@@ -271,4 +271,19 @@
     <string name="script_builder_step_long_click_in_item">Довго натиснути %1$s в елементі</string>
     <string name="script_builder_step_click_screen">Натиснути %1$s</string>
     <string name="script_builder_step_long_click_screen">Довго натиснути %1$s</string>
+    <string name="script_builder_button_actions">Кнопки всередині як дії</string>
+    <string name="script_builder_skip_buttons">Кнопки, які пропускати</string>
+    <string name="script_builder_skip_buttons_hint">Тексти через кому</string>
+    <string name="script_builder_read">Налаштувати, що читається</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d частина</item>
+        <item quantity="few">%1$d частини</item>
+        <item quantity="many">%1$d частин</item>
+        <item quantity="other">%1$d частини</item>
+    </plurals>
+    <string name="script_builder_read_add">Додати частину</string>
+    <string name="script_builder_read_own">Власний текст елемента</string>
+    <string name="script_builder_read_place">Елемент %1$s у ньому</string>
+    <string name="script_builder_read_text_before">Текст перед нею</string>
+    <string name="script_builder_read_above">Якщо порожньо, взяти елемент вище</string>
 </resources>

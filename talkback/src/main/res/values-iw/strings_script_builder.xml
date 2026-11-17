@@ -265,4 +265,18 @@
     <string name="script_builder_step_long_click_in_item">לחיצה ארוכה על %1$s בתוך הפריט</string>
     <string name="script_builder_step_click_screen">לחיצה על %1$s</string>
     <string name="script_builder_step_long_click_screen">לחיצה ארוכה על %1$s</string>
+    <string name="script_builder_button_actions">כפתורים פנימיים כפעולות</string>
+    <string name="script_builder_skip_buttons">כפתורים להשמטה</string>
+    <string name="script_builder_skip_buttons_hint">טקסטים, מופרדים בפסיקים</string>
+    <string name="script_builder_read">סידור התוכן שנקרא</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">חלק אחד</item>
+        <item quantity="two">שני חלקים</item>
+        <item quantity="other">%1$d חלקים</item>
+    </plurals>
+    <string name="script_builder_read_add">הוספת חלק</string>
+    <string name="script_builder_read_own">הטקסט של הפריט עצמו</string>
+    <string name="script_builder_read_place">פריט %1$s שבתוכו</string>
+    <string name="script_builder_read_text_before">טקסט לפניו</string>
+    <string name="script_builder_read_above">אם ריק, שימוש בפריט שמעליו</string>
 </resources>

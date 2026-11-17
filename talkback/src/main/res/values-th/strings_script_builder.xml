@@ -253,4 +253,16 @@
     <string name="script_builder_step_long_click_in_item">กดค้าง %1$s ในรายการ</string>
     <string name="script_builder_step_click_screen">กด %1$s</string>
     <string name="script_builder_step_long_click_screen">กดค้าง %1$s</string>
+    <string name="script_builder_button_actions">ปุ่มภายในเป็นการดำเนินการ</string>
+    <string name="script_builder_skip_buttons">ปุ่มที่จะข้าม</string>
+    <string name="script_builder_skip_buttons_hint">ข้อความ คั่นด้วยเครื่องหมายจุลภาค</string>
+    <string name="script_builder_read">จัดสิ่งที่อ่าน</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">%1$d ส่วน</item>
+    </plurals>
+    <string name="script_builder_read_add">เพิ่มส่วน</string>
+    <string name="script_builder_read_own">ข้อความของรายการเอง</string>
+    <string name="script_builder_read_place">รายการ %1$s ภายใน</string>
+    <string name="script_builder_read_text_before">ข้อความก่อนหน้า</string>
+    <string name="script_builder_read_above">หากว่าง ใช้รายการด้านบน</string>
 </resources>

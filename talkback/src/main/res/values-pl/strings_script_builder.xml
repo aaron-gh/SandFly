@@ -271,4 +271,19 @@
     <string name="script_builder_step_long_click_in_item">Przytrzymaj %1$s w elemencie</string>
     <string name="script_builder_step_click_screen">Naciśnij %1$s</string>
     <string name="script_builder_step_long_click_screen">Przytrzymaj %1$s</string>
+    <string name="script_builder_button_actions">Przyciski w środku jako czynności</string>
+    <string name="script_builder_skip_buttons">Przyciski do pominięcia</string>
+    <string name="script_builder_skip_buttons_hint">Teksty oddzielone przecinkami</string>
+    <string name="script_builder_read">Ustal, co jest czytane</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d część</item>
+        <item quantity="few">%1$d części</item>
+        <item quantity="many">%1$d części</item>
+        <item quantity="other">%1$d części</item>
+    </plurals>
+    <string name="script_builder_read_add">Dodaj część</string>
+    <string name="script_builder_read_own">Własny tekst elementu</string>
+    <string name="script_builder_read_place">Element %1$s w nim</string>
+    <string name="script_builder_read_text_before">Tekst przed nią</string>
+    <string name="script_builder_read_above">Jeśli pusta, użyj elementu powyżej</string>
 </resources>

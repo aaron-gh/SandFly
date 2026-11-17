@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">%1$s hosszú megnyomása az elemben</string>
     <string name="script_builder_step_click_screen">%1$s megnyomása</string>
     <string name="script_builder_step_long_click_screen">%1$s hosszú megnyomása</string>
+    <string name="script_builder_button_actions">Belső gombok műveletként</string>
+    <string name="script_builder_skip_buttons">Kihagyandó gombok</string>
+    <string name="script_builder_skip_buttons_hint">Szövegek vesszővel elválasztva</string>
+    <string name="script_builder_read">A felolvasott tartalom elrendezése</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d rész</item>
+        <item quantity="other">%1$d rész</item>
+    </plurals>
+    <string name="script_builder_read_add">Rész hozzáadása</string>
+    <string name="script_builder_read_own">Az elem saját szövege</string>
+    <string name="script_builder_read_place">Benne lévő elem: %1$s</string>
+    <string name="script_builder_read_text_before">Előtte lévő szöveg</string>
+    <string name="script_builder_read_above">Ha üres, a fenti elem használata</string>
 </resources>

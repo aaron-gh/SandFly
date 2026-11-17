@@ -253,4 +253,16 @@
     <string name="script_builder_step_long_click_in_item">항목에서 %1$s 길게 누르기</string>
     <string name="script_builder_step_click_screen">%1$s 누르기</string>
     <string name="script_builder_step_long_click_screen">%1$s 길게 누르기</string>
+    <string name="script_builder_button_actions">내부 버튼을 작업으로</string>
+    <string name="script_builder_skip_buttons">제외할 버튼</string>
+    <string name="script_builder_skip_buttons_hint">텍스트(쉼표로 구분)</string>
+    <string name="script_builder_read">읽을 내용 구성</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">부분 %1$d개</item>
+    </plurals>
+    <string name="script_builder_read_add">부분 추가</string>
+    <string name="script_builder_read_own">항목 자체의 텍스트</string>
+    <string name="script_builder_read_place">내부 항목 %1$s</string>
+    <string name="script_builder_read_text_before">앞에 붙일 텍스트</string>
+    <string name="script_builder_read_above">비어 있으면 위 항목 사용</string>
 </resources>

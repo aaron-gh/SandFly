@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">فشار طولانی روی %1$s در مورد</string>
     <string name="script_builder_step_click_screen">فشار دادن %1$s</string>
     <string name="script_builder_step_long_click_screen">فشار طولانی روی %1$s</string>
+    <string name="script_builder_button_actions">دکمه‌های درونی به‌عنوان کنش</string>
+    <string name="script_builder_skip_buttons">دکمه‌های کنارگذاشته‌شده</string>
+    <string name="script_builder_skip_buttons_hint">متن‌ها، جداشده با ویرگول</string>
+    <string name="script_builder_read">تنظیم آنچه خوانده می‌شود</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d بخش</item>
+        <item quantity="other">%1$d بخش</item>
+    </plurals>
+    <string name="script_builder_read_add">افزودن بخش</string>
+    <string name="script_builder_read_own">متن خود مورد</string>
+    <string name="script_builder_read_place">مورد %1$s درون آن</string>
+    <string name="script_builder_read_text_before">متن پیش از آن</string>
+    <string name="script_builder_read_above">اگر خالی است، از مورد بالایی استفاده شود</string>
 </resources>

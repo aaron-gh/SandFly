@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">আইটেমের মধ্যে %1$s বেশিক্ষণ প্রেস করুন</string>
     <string name="script_builder_step_click_screen">%1$s প্রেস করুন</string>
     <string name="script_builder_step_long_click_screen">%1$s বেশিক্ষণ প্রেস করুন</string>
+    <string name="script_builder_button_actions">ভিতরের বোতামগুলি অ্যাকশন হিসেবে</string>
+    <string name="script_builder_skip_buttons">বাদ দেওয়ার বোতাম</string>
+    <string name="script_builder_skip_buttons_hint">টেক্সট, কমা দিয়ে আলাদা করা</string>
+    <string name="script_builder_read">কী পড়া হবে সাজান</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$dটি অংশ</item>
+        <item quantity="other">%1$dটি অংশ</item>
+    </plurals>
+    <string name="script_builder_read_add">একটি অংশ যোগ করুন</string>
+    <string name="script_builder_read_own">আইটেমের নিজস্ব টেক্সট</string>
+    <string name="script_builder_read_place">এর ভিতরের আইটেম %1$s</string>
+    <string name="script_builder_read_text_before">এর আগের টেক্সট</string>
+    <string name="script_builder_read_above">খালি থাকলে উপরের আইটেম ব্যবহার করুন</string>
 </resources>

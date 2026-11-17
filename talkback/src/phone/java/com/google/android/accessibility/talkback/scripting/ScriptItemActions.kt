@@ -64,7 +64,12 @@ class ScriptItemActions(
   private fun fromRules(
     node: AccessibilityNodeInfoCompat,
     rules: ScriptRules,
-  ): List<ScriptItemAction> = fromSteps(node, rules) + fromButtons(node, rules)
+  ): List<ScriptItemAction> {
+    val own = fromSteps(node, rules)
+    // A rule's own action for a button comes first; the button isn't listed again.
+    val titles = own.map { it.title.toString().lowercase() }.toSet()
+    return own + fromButtons(node, rules).filter { it.title.toString().lowercase() !in titles }
+  }
 
   /**
    * An action for each button in [node], for rules with buttonActions: named by its description,

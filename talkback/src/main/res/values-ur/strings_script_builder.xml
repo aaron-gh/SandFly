@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">آئٹم میں %1$s دیر تک دبائیں</string>
     <string name="script_builder_step_click_screen">%1$s دبائیں</string>
     <string name="script_builder_step_long_click_screen">%1$s دیر تک دبائیں</string>
+    <string name="script_builder_button_actions">اندر کے بٹن کارروائیوں کے طور پر</string>
+    <string name="script_builder_skip_buttons">چھوڑے جانے والے بٹن</string>
+    <string name="script_builder_skip_buttons_hint">کوما سے الگ کیے گئے متن</string>
+    <string name="script_builder_read">جو پڑھا جاتا ہے اسے ترتیب دیں</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d حصہ</item>
+        <item quantity="other">%1$d حصے</item>
+    </plurals>
+    <string name="script_builder_read_add">حصہ شامل کریں</string>
+    <string name="script_builder_read_own">آئٹم کا اپنا متن</string>
+    <string name="script_builder_read_place">اس میں آئٹم %1$s</string>
+    <string name="script_builder_read_text_before">اس سے پہلے کا متن</string>
+    <string name="script_builder_read_above">خالی ہونے پر، اوپر والا آئٹم استعمال کریں</string>
 </resources>

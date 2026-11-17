@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">%1$s in het item lang indrukken</string>
     <string name="script_builder_step_click_screen">%1$s indrukken</string>
     <string name="script_builder_step_long_click_screen">%1$s lang indrukken</string>
+    <string name="script_builder_button_actions">Knoppen erin als acties</string>
+    <string name="script_builder_skip_buttons">Knoppen om weg te laten</string>
+    <string name="script_builder_skip_buttons_hint">Teksten, gescheiden door komma\'s</string>
+    <string name="script_builder_read">Indelen wat wordt gelezen</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d deel</item>
+        <item quantity="other">%1$d delen</item>
+    </plurals>
+    <string name="script_builder_read_add">Een deel toevoegen</string>
+    <string name="script_builder_read_own">Eigen tekst van het item</string>
+    <string name="script_builder_read_place">Item %1$s erin</string>
+    <string name="script_builder_read_text_before">Tekst ervoor</string>
+    <string name="script_builder_read_above">Indien leeg, het item erboven gebruiken</string>
 </resources>

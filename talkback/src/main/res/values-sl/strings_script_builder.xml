@@ -271,4 +271,19 @@
     <string name="script_builder_step_long_click_in_item">Dolgo pritisni %1$s v elementu</string>
     <string name="script_builder_step_click_screen">Pritisni %1$s</string>
     <string name="script_builder_step_long_click_screen">Dolgo pritisni %1$s</string>
+    <string name="script_builder_button_actions">Gumbi v njem kot dejanja</string>
+    <string name="script_builder_skip_buttons">Gumbi, ki se izpustijo</string>
+    <string name="script_builder_skip_buttons_hint">Besedila, ločena z vejicami</string>
+    <string name="script_builder_read">Uredi, kaj se bere</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d del</item>
+        <item quantity="two">%1$d dela</item>
+        <item quantity="few">%1$d deli</item>
+        <item quantity="other">%1$d delov</item>
+    </plurals>
+    <string name="script_builder_read_add">Dodaj del</string>
+    <string name="script_builder_read_own">Lastno besedilo elementa</string>
+    <string name="script_builder_read_place">Element %1$s v njem</string>
+    <string name="script_builder_read_text_before">Besedilo pred njim</string>
+    <string name="script_builder_read_above">Če je prazen, uporabi element zgoraj</string>
 </resources>

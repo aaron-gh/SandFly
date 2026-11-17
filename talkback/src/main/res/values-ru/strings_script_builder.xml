@@ -271,4 +271,19 @@
     <string name="script_builder_step_long_click_in_item">Долго нажать %1$s в объекте</string>
     <string name="script_builder_step_click_screen">Нажать %1$s</string>
     <string name="script_builder_step_long_click_screen">Долго нажать %1$s</string>
+    <string name="script_builder_button_actions">Кнопки внутри как действия</string>
+    <string name="script_builder_skip_buttons">Пропускаемые кнопки</string>
+    <string name="script_builder_skip_buttons_hint">Тексты через запятую</string>
+    <string name="script_builder_read">Настроить, что читается</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d часть</item>
+        <item quantity="few">%1$d части</item>
+        <item quantity="many">%1$d частей</item>
+        <item quantity="other">%1$d части</item>
+    </plurals>
+    <string name="script_builder_read_add">Добавить часть</string>
+    <string name="script_builder_read_own">Собственный текст объекта</string>
+    <string name="script_builder_read_place">Объект %1$s в нём</string>
+    <string name="script_builder_read_text_before">Текст перед ней</string>
+    <string name="script_builder_read_above">Если пусто, взять объект выше</string>
 </resources>

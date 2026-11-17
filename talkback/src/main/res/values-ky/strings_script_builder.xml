@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">Объекттеги %1$s узак басуу</string>
     <string name="script_builder_step_click_screen">%1$s басуу</string>
     <string name="script_builder_step_long_click_screen">%1$s узак басуу</string>
+    <string name="script_builder_button_actions">Ичиндеги баскычтар аракет катары</string>
+    <string name="script_builder_skip_buttons">Өткөрүлүп жиберилүүчү баскычтар</string>
+    <string name="script_builder_skip_buttons_hint">Тексттер, үтүр менен бөлүнгөн</string>
+    <string name="script_builder_read">Окулуучу мазмунду иреттөө</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d бөлүк</item>
+        <item quantity="other">%1$d бөлүк</item>
+    </plurals>
+    <string name="script_builder_read_add">Бөлүк кошуу</string>
+    <string name="script_builder_read_own">Объекттин өз тексти</string>
+    <string name="script_builder_read_place">Ичиндеги %1$s объекти</string>
+    <string name="script_builder_read_text_before">Алдындагы текст</string>
+    <string name="script_builder_read_above">Бош болсо, жогорудагы объектти колдонуу</string>
 </resources>

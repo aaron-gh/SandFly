@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">I-long press ang %1$s sa item</string>
     <string name="script_builder_step_click_screen">Pindutin ang %1$s</string>
     <string name="script_builder_step_long_click_screen">I-long press ang %1$s</string>
+    <string name="script_builder_button_actions">Mga button sa loob bilang mga pagkilos</string>
+    <string name="script_builder_skip_buttons">Mga button na hindi isasama</string>
+    <string name="script_builder_skip_buttons_hint">Mga text, pinaghihiwalay ng kuwit</string>
+    <string name="script_builder_read">Ayusin ang binabasa</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d bahagi</item>
+        <item quantity="other">%1$d na bahagi</item>
+    </plurals>
+    <string name="script_builder_read_add">Magdagdag ng bahagi</string>
+    <string name="script_builder_read_own">Sariling text ng item</string>
+    <string name="script_builder_read_place">Item %1$s sa loob nito</string>
+    <string name="script_builder_read_text_before">Text bago nito</string>
+    <string name="script_builder_read_above">Kung walang laman, gamitin ang item sa itaas</string>
 </resources>

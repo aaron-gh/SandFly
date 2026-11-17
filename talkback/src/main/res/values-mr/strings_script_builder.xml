@@ -259,4 +259,17 @@
     <string name="script_builder_step_long_click_in_item">आयटममधील %1$s दीर्घ दाबा</string>
     <string name="script_builder_step_click_screen">%1$s दाबा</string>
     <string name="script_builder_step_long_click_screen">%1$s दीर्घ दाबा</string>
+    <string name="script_builder_button_actions">आतील बटणे कृती म्हणून</string>
+    <string name="script_builder_skip_buttons">वगळायची बटणे</string>
+    <string name="script_builder_skip_buttons_hint">स्वल्पविरामांनी वेगळे केलेले मजकूर</string>
+    <string name="script_builder_read">काय वाचले जाते ते ठरवा</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d भाग</item>
+        <item quantity="other">%1$d भाग</item>
+    </plurals>
+    <string name="script_builder_read_add">भाग जोडा</string>
+    <string name="script_builder_read_own">आयटमचा स्वतःचा मजकूर</string>
+    <string name="script_builder_read_place">त्यातील आयटम %1$s</string>
+    <string name="script_builder_read_text_before">त्याआधीचा मजकूर</string>
+    <string name="script_builder_read_above">रिकामे असल्यास, वरचा आयटम वापरा</string>
 </resources>
