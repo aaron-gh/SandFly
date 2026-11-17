@@ -65,13 +65,16 @@ object SymbolDictionary {
     if (entries.isEmpty()) return null
     var builder: SpannableStringBuilder? = null
     var subject = text.toString()
+    // A symbol on its own, such as when moving by character, is said whatever the punctuation
+    // verbosity, so its entry still applies.
+    val inText = forSpeech && subject.trim().length > 1
     for (entry in entries) {
       if (entry.app.isNotEmpty() && entry.app != app) continue
       val find = entry.replacement.find
       val replace = entry.replacement.replace
       if (find.isEmpty()) continue
-      // A symbol that the punctuation verbosity leaves out of speech stays out.
-      if (forSpeech && find.length == 1 && SpeechCleanupUtils.isHiddenByVerbosity(find[0])) continue
+      // A symbol in text that the punctuation verbosity leaves out of speech stays out.
+      if (inText && find.length == 1 && SpeechCleanupUtils.isHiddenByVerbosity(find[0])) continue
       val starts = ArrayList<Int>()
       var index = subject.indexOf(find)
       while (index >= 0) {
