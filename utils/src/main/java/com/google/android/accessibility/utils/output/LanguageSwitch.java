@@ -121,6 +121,17 @@ public final class LanguageSwitch {
     return chosen != null ? chosen : voiceLanguage;
   }
 
+  /** Tells the language guesser that the texts of a new utterance follow. */
+  static void startUtterance() {
+    if (!switchLanguages) {
+      return;
+    }
+    @Nullable LanguageGuesser guesser = LanguageVoices.getGuesser();
+    if (guesser != null) {
+      guesser.startUtterance();
+    }
+  }
+
   /**
    * Returns {@code text} with the languages {@link LanguageDetector} finds marked, where the app
    * marked none. Returns {@code text} itself if it finds none, or language switching is off.

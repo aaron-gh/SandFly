@@ -16,8 +16,11 @@
 
 package com.google.android.accessibility.talkback.translation
 
+import java.util.concurrent.CountDownLatch
+import java.util.concurrent.TimeUnit
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -54,6 +57,71 @@ class WordLanguageGuesserTest {
     assertNull(guesser.guess("Hola", candidates))
     assertNull(guesser.guess("Adiós", candidates))
     assertEquals(1, started.size)
+  }
+
+  /**
+   * A guesser whose identification answers Portuguese from another thread after [millis], and
+   * releases [answers] each time it has answered.
+   */
+  private fun answeringAfter(millis: Long, answers: CountDownLatch) =
+    WordLanguageGuesser { _, done ->
+      Thread {
+          Thread.sleep(millis)
+          done(listOf("pt" to 0.9f))
+          answers.countDown()
+        }
+        .start()
+      true
+    }
+
+  @Test
+  fun guess_waitsInTheUtterance_onceIdentificationHasAnswered() {
+    val answers = CountDownLatch(1)
+    val quick = answeringAfter(millis = 1, answers)
+    // The first answer loads the model, so speech doesn't wait for it.
+    quick.startUtterance()
+    assertNull(quick.guess("Olá", candidates))
+    assertTrue(answers.await(1, TimeUnit.SECONDS))
+
+    quick.startUtterance()
+    assertEquals("pt", quick.guess("Olá, tudo bem?", candidates))
+  }
+
+  @Test
+  fun guess_withoutAnUtterance_doesNotWait() {
+    val answers = CountDownLatch(2)
+    val quick = answeringAfter(millis = 1, answers)
+    quick.guess("Olá", candidates)
+    quick.guess("Olá, tudo bem?", candidates)
+    assertTrue(answers.await(1, TimeUnit.SECONDS))
+    assertNull(quick.guess("Bom dia", candidates))
+  }
+
+  @Test
+  fun guess_waitsAtMostTheUtterancesTimeInAll() {
+    var calls = 0
+    val firstAnswersAtOnce =
+      WordLanguageGuesser { _, done ->
+        if (calls++ == 0) {
+          done(listOf("pt" to 0.9f))
+        } else {
+          Thread {
+              Thread.sleep(1_000)
+              done(listOf("es" to 0.9f))
+            }
+            .start()
+        }
+        true
+      }
+    firstAnswersAtOnce.guess("Olá", candidates)
+    firstAnswersAtOnce.startUtterance()
+
+    var start = System.nanoTime()
+    assertNull(firstAnswersAtOnce.guess("Hola, ¿qué tal?", candidates))
+    assertTrue(System.nanoTime() - start < TimeUnit.MILLISECONDS.toNanos(500))
+    start = System.nanoTime()
+    assertNull(firstAnswersAtOnce.guess("Buenos días", candidates))
+    assertTrue(System.nanoTime() - start < TimeUnit.MILLISECONDS.toNanos(10))
   }
 
   @Test

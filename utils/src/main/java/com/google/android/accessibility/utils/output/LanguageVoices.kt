@@ -19,7 +19,9 @@ package com.google.android.accessibility.utils.output
 import android.content.SharedPreferences
 import androidx.core.content.edit
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile
+import java.util.IllformedLocaleException
 import java.util.Locale
+import java.util.MissingResourceException
 
 /**
  * The languages the user reads, each spoken with SandFly default's voice for it or with a voice
@@ -93,8 +95,8 @@ object LanguageVoices {
   @JvmStatic
   fun add(prefs: SharedPreferences, tag: String) {
     val tags = languages(prefs)
-    val language = Locale.forLanguageTag(tag).language
-    if (tags.any { Locale.forLanguageTag(it).language == language }) return
+    val language = languageCode(Locale.forLanguageTag(tag).language)
+    if (tags.any { languageCode(Locale.forLanguageTag(it).language) == language }) return
     prefs.edit { putString(PREF_LANGUAGES, (tags + tag).joinToString(",")) }
   }
 
@@ -120,9 +122,10 @@ object LanguageVoices {
     val languages = ArrayList<Locale>()
     val profiles = HashMap<String, VoiceProfile>()
     for (tag in tags) {
-      val locale = Locale.forLanguageTag(tag)
+      val locale = normalized(Locale.forLanguageTag(tag))
       if (locale.language.isEmpty()) continue
-      languages += locale
+      // An engine that lists "eng" and another that lists "en" add the same language twice.
+      if (languages.none { it.language == locale.language }) languages += locale
       val id = profileId(prefs, tag)
       if (id.isNotEmpty() && id in profileIds) profiles[locale.language] = VoiceProfiles.read(prefs, id)
     }
@@ -147,13 +150,80 @@ object LanguageVoices {
   @JvmStatic
   fun profileFor(locale: Locale?): VoiceProfile? {
     if (locale == null) return null
-    val profile = state.profiles[locale.language] ?: return null
+    val profile = state.profiles[languageCode(locale.language)] ?: return null
     return if (profile.sameVoiceAs(VoiceProfiles.active())) null else profile
   }
 
   /** The voice profiles languages are said with, once each. */
   @JvmStatic
   fun profiles(): Collection<VoiceProfile> = state.profiles.values.associateBy { it.id() }.values
+
+  /** ISO 639-2 language codes, such as "eng" and "ger", by the two-letter code of the language. */
+  private val twoLetterLanguages: Map<String, String> by lazy {
+    val codes = HashMap<String, String>()
+    for (code in Locale.getISOLanguages()) {
+      try {
+        val locale = Locale(code)
+        // The language as this Locale writes it, such as "iw" for Hebrew on older versions.
+        codes[locale.isO3Language] = locale.language
+      } catch (e: MissingResourceException) {
+        // No three-letter code.
+      }
+    }
+    // Bibliographic codes, which some engines use instead of the terminology ones listed above.
+    val bibliographic =
+      mapOf(
+        "alb" to "sq", "arm" to "hy", "baq" to "eu", "bur" to "my", "chi" to "zh", "cze" to "cs",
+        "dut" to "nl", "fre" to "fr", "geo" to "ka", "ger" to "de", "gre" to "el", "ice" to "is",
+        "mac" to "mk", "mao" to "mi", "may" to "ms", "per" to "fa", "rum" to "ro", "slo" to "sk",
+        "tib" to "bo", "wel" to "cy",
+      )
+    for ((code, language) in bibliographic) codes.putIfAbsent(code, language)
+    codes
+  }
+
+  /** ISO 3166 three-letter region codes, such as "POL", by their two-letter code. */
+  private val twoLetterRegions: Map<String, String> by lazy {
+    val codes = HashMap<String, String>()
+    for (code in Locale.getISOCountries()) {
+      try {
+        codes[Locale("", code).isO3Country] = code
+      } catch (e: MissingResourceException) {
+        // No three-letter code.
+      }
+    }
+    codes
+  }
+
+  /**
+   * The two-letter code of [language] where it has one, so that "eng", which engines such as
+   * eSpeak and RHVoice list, is the same language as "en".
+   */
+  @JvmStatic
+  fun languageCode(language: String): String {
+    if (language.length != 3) return language
+    return twoLetterLanguages[language.lowercase(Locale.ROOT)] ?: language
+  }
+
+  /** [locale] with two-letter language and region codes where they have them. */
+  @JvmStatic
+  fun normalized(locale: Locale): Locale {
+    val language = languageCode(locale.language)
+    val region =
+      if (locale.country.length == 3 && locale.country.all { it.isLetter() }) {
+        twoLetterRegions[locale.country.uppercase(Locale.ROOT)] ?: locale.country
+      } else {
+        locale.country
+      }
+    if (language == locale.language && region == locale.country) return locale
+    return try {
+      // Keeps the script, such as Latin for Serbian.
+      Locale.Builder().setLocale(locale).setLanguage(language).setRegion(region).build()
+    } catch (e: IllformedLocaleException) {
+      // Such as a three-letter region, which a language tag can't have.
+      Locale(language, region, locale.variant)
+    }
+  }
 }
 
 /** Tells which of several languages written in the same script some text is in. */
@@ -163,4 +233,7 @@ fun interface LanguageGuesser {
    * none is likely enough. Called on the main thread, so it must return quickly.
    */
   fun guess(text: String, candidates: List<String>): String?
+
+  /** Called on the main thread before the texts of one utterance are guessed. */
+  fun startUtterance() {}
 }

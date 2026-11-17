@@ -51,16 +51,18 @@ object LanguageDetector {
   private val scriptLanguages = ConcurrentHashMap<String, String>()
 
   /**
-   * Returns the runs of [text] in another language than [voice], each with the language it is in.
-   * Text in the voice's language, and text with no letters, are in no run.
+   * Returns the runs of [text] in another language than the voice's, [voiceLocale], each with the
+   * language it is in. Text in the voice's language, and text with no letters, are in no run.
    */
   @JvmStatic
   fun detect(
     text: CharSequence,
-    voice: Locale,
+    voiceLocale: Locale,
     state: LanguageVoices.State,
     guesser: LanguageGuesser?,
   ): List<LanguageSwitch.Run> {
+    // An engine's voice can be in "pol" rather than "pl".
+    val voice = LanguageVoices.normalized(voiceLocale)
     val tokens = tokens(text)
     if (tokens.isEmpty()) return emptyList()
     val pieces = pieces(text, tokens)

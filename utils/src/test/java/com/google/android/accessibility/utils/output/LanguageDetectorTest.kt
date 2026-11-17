@@ -135,6 +135,36 @@ class LanguageDetectorTest {
   }
 
   @Test
+  fun threeLetterCodesAreTheirTwoLetterLanguages() {
+    assertEquals("en", LanguageVoices.languageCode("eng"))
+    assertEquals("de", LanguageVoices.languageCode("ger"))
+    assertEquals("de", LanguageVoices.languageCode("deu"))
+    assertEquals("fil", LanguageVoices.languageCode("fil"))
+    assertEquals("pl", LanguageVoices.languageCode("pl"))
+    assertEquals("pl-PL", LanguageVoices.normalized(Locale("pol", "POL")).toLanguageTag())
+    assertEquals("sr-Latn-RS", LanguageVoices.normalized(Locale.forLanguageTag("srp-Latn-RS")).toLanguageTag())
+  }
+
+  @Test
+  fun voiceWithThreeLetterCodeIsItsLanguage() {
+    // Such as RHVoice's Polish voice, which is in "pol".
+    val polish = Locale("pol", "POL")
+    val guesser =
+      LanguageGuesser { text, candidates ->
+        (if (text.startsWith("Hello")) "en" else "pl").takeIf { it in candidates }
+      }
+    val identify = state("en", identify = true)
+    assertEquals(
+      listOf<String>(),
+      detect("Dzisiaj jest bardzo ladna pogoda", voice = polish, state = identify, guesser = guesser),
+    )
+    assertEquals(
+      listOf("Hello there, how are you today=en"),
+      detect("Hello there, how are you today", voice = polish, state = identify, guesser = guesser),
+    )
+  }
+
+  @Test
   fun kanaMakeChineseCharactersJapanese() {
     assertEquals(listOf("東京へ行く=ja"), detect("東京へ行く"))
     assertEquals(listOf("北京欢迎你=zh"), detect("北京欢迎你"))
