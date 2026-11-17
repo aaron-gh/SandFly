@@ -33,13 +33,16 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
+import androidx.core.view.ViewCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline.FeedbackReturner;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
+import com.google.android.accessibility.talkback.granularediting.RangeSelection;
 import com.google.android.accessibility.talkback.menurules.TextEntityMenu;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -60,12 +63,14 @@ import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import kotlin.ranges.IntRange;
 
 /**
  * Dialog that allows selecting and copying text from the entire screen
  * with granularity options (addresses and numbers, characters, words, and paragraphs),
  * selecting words individually from the last spoken phrase, or choosing which of the texts that
- * Continuous copy collected to save.
+ * Continuous copy collected to save. Long pressing an item, or its Start selection and End
+ * selection actions, checks every item between two.
  */
 public class WordSelectionDialog extends BaseDialog {
 
@@ -179,6 +184,7 @@ public class WordSelectionDialog extends BaseDialog {
   private boolean listTruncated;
   @Nullable private TextView truncatedNotice;
   private final BitSet checked = new BitSet();
+  private final RangeSelection range = new RangeSelection();
   @Nullable private final FeedbackReturner pipeline;
   private Granularity currentGranularity = Granularity.WORDS;
   @Nullable private RecyclerView wordsRecyclerView;
@@ -215,6 +221,7 @@ public class WordSelectionDialog extends BaseDialog {
   public void handleDialogDismiss() {
     tokens.clear();
     checked.clear();
+    range.clear();
     adapter = null;
     wordsRecyclerView = null;
     truncatedNotice = null;
@@ -289,6 +296,7 @@ public class WordSelectionDialog extends BaseDialog {
     tokens.addAll(extracted.items);
     listTruncated = textTruncated || extracted.truncated;
     checked.clear();
+    range.clear();
     if (checkedAtFirst) {
       checked.set(0, tokens.size());
     }
@@ -484,6 +492,45 @@ public class WordSelectionDialog extends BaseDialog {
     return dialog;
   }
 
+  /** Checks the item and marks it as the start of a range that End selection checks. */
+  private void startSelection(int index) {
+    if (index < 0 || index >= tokens.size()) {
+      return;
+    }
+    range.start(index);
+    checked.set(index);
+    // Every item now offers End selection.
+    if (adapter != null) {
+      adapter.notifyDataSetChanged();
+    }
+    if (pipeline != null) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(context.getString(R.string.selection_range_started)));
+    }
+  }
+
+  /** Checks every item from the one Start selection marked to this one. */
+  private void endSelection(int index) {
+    if (index < 0 || index >= tokens.size()) {
+      return;
+    }
+    IntRange chosen = range.end(index);
+    checked.set(chosen.getFirst(), chosen.getLast() + 1);
+    if (adapter != null) {
+      adapter.notifyDataSetChanged();
+    }
+    if (pipeline != null) {
+      int count = chosen.getLast() - chosen.getFirst() + 1;
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              context
+                  .getResources()
+                  .getQuantityString(R.plurals.selection_range_selected, count, count)));
+    }
+  }
+
   private void toggleSelectAll() {
     boolean anyUnchecked = checked.cardinality() < tokens.size();
     if (anyUnchecked) {
@@ -491,6 +538,7 @@ public class WordSelectionDialog extends BaseDialog {
     } else {
       checked.clear();
     }
+    range.clear();
     if (adapter != null) {
       adapter.notifyDataSetChanged();
     }
@@ -781,6 +829,43 @@ public class WordSelectionDialog extends BaseDialog {
               checked.set(at, isChecked);
             }
           });
+      // Long press starts a range, and once one is started, ends it. Start selection stays
+      // available as an action to move the start.
+      boolean started = range.isStarted();
+      holder.checkBox.setOnLongClickListener(
+          v -> {
+            int at = holder.getBindingAdapterPosition();
+            if (at != RecyclerView.NO_POSITION) {
+              if (range.isStarted()) {
+                endSelection(at);
+              } else {
+                startSelection(at);
+              }
+            }
+            return true;
+          });
+      ViewCompat.replaceAccessibilityAction(
+          holder.checkBox,
+          AccessibilityActionCompat.ACTION_LONG_CLICK,
+          context.getString(started ? R.string.selection_range_end : R.string.selection_range_start),
+          null);
+      if (holder.startActionId != View.NO_ID) {
+        ViewCompat.removeAccessibilityAction(holder.checkBox, holder.startActionId);
+        holder.startActionId = View.NO_ID;
+      }
+      if (started) {
+        holder.startActionId =
+            ViewCompat.addAccessibilityAction(
+                holder.checkBox,
+                context.getString(R.string.selection_range_start),
+                (view, arguments) -> {
+                  int at = holder.getBindingAdapterPosition();
+                  if (at != RecyclerView.NO_POSITION) {
+                    startSelection(at);
+                  }
+                  return true;
+                });
+      }
     }
 
     @Override
@@ -791,6 +876,8 @@ public class WordSelectionDialog extends BaseDialog {
 
   private static class TokenViewHolder extends RecyclerView.ViewHolder {
     final CheckBox checkBox;
+    /** The Start selection action added while a range is started, or {@link View#NO_ID}. */
+    int startActionId = View.NO_ID;
 
     TokenViewHolder(CheckBox itemView) {
       super(itemView);

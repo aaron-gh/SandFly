@@ -5304,4 +5304,15 @@
     <item quantity="one">Copied <xliff:g id="count" example="1">%1$d</xliff:g> item</item>
     <item quantity="other">Copied <xliff:g id="count" example="5">%1$d</xliff:g> items</item>
   </plurals>
+  <!-- Action on an item of Granular editing, Copy text from screen or Select last spoken phrase word by word that marks the first item of a range to select. [CHAR_LIMIT=40] -->
+  <string name="selection_range_start" tools:ignore="MissingTranslation">Start selection</string>
+  <!-- Action on an item of the same lists that selects every item from the one Start selection marked to this one. [CHAR_LIMIT=40] -->
+  <string name="selection_range_end" tools:ignore="MissingTranslation">End selection</string>
+  <!-- Spoken after Start selection. [CHAR_LIMIT=NONE] -->
+  <string name="selection_range_started" tools:ignore="MissingTranslation">Selection start marked</string>
+  <!-- Spoken after End selection: how many items it selected. [CHAR_LIMIT=NONE] -->
+  <plurals name="selection_range_selected" tools:ignore="MissingTranslation">
+    <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> item selected</item>
+    <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> items selected</item>
+  </plurals>
 </resources>
