@@ -239,6 +239,9 @@ public class GestureController {
   // Whether an open training page, such as Practice gestures, takes back-and-forth or angle
   // gestures, so that swipes wait for the lift as if those gestures had commands.
   private static volatile boolean trainingTakesTwoDirectionSwipes;
+  // Whether an open training page takes any gesture, so that multi-finger taps wait for a further
+  // tap as if the gestures that go on after them had commands.
+  private static volatile boolean trainingTakesGestures;
   private final @NonNull Map<Integer, Integer> captureFingerprintGestureIdToAnnouncements =
       new HashMap<>();
   // Whether the action being performed is that of the one-finger double tap.
@@ -1396,6 +1399,15 @@ public class GestureController {
       }
     }
     trainingTakesTwoDirectionSwipes = takes;
+    trainingTakesGestures = open && !captureGestureIdToAnnouncements.isEmpty();
+  }
+
+  /**
+   * Returns whether an open training page takes gestures, which then need multi-finger taps to wait
+   * for a further tap.
+   */
+  public static boolean trainingTakesGestures() {
+    return trainingTakesGestures;
   }
 
   /**

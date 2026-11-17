@@ -44,6 +44,15 @@ class ScriptInputGestureTest {
   }
 
   @Test
+  fun tapThenSwipeGesturesHaveNames() {
+    assertTrue(ScriptInput.isGesture("twoFingerTapThenSwipeUp"))
+    assertEquals(
+      "fourFingerTripleTapThenSwipeRight",
+      ScriptInput.gestureName(GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT),
+    )
+  }
+
+  @Test
   fun everyGestureNameIsUnique() {
     assertEquals(ScriptInput.gestureNames.size, ScriptInput.gestureNames.toSet().size)
   }

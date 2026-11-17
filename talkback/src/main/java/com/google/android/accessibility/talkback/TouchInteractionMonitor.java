@@ -561,6 +561,12 @@ public class TouchInteractionMonitor
                 return swipesBeforeLiftSupported
                     && !GestureController.trainingTakesTwoDirectionSwipes();
               }
+
+              @Override
+              public boolean tapsRunWhenNothingFollows() {
+                // Practice gestures says every gesture performed, assigned or not.
+                return !GestureController.trainingTakesGestures();
+              }
             },
             logger,
             displayId,
