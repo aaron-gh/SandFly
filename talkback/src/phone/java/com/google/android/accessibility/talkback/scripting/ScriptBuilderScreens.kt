@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.scripting
 import android.content.Context
 import android.os.Bundle
 import android.text.InputType
+import android.content.Intent
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.preference.Preference
@@ -868,6 +869,13 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
       actions.action(action.optString("title"), actionText(context, action)) { editAction(actionIndex) }
     }
     actions.action(getString(R.string.script_builder_add_action)) { addAction() }
+    actions.action(getString(R.string.script_builder_record_action)) {
+      askText(getString(R.string.script_builder_record_action), hint = getString(R.string.script_builder_title_field)) { title, _, _ ->
+        if (title.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+        startRecording(title)
+        null
+      }
+    }
 
     val manage = screen.category(R.string.script_builder_rule)
     manage.action(getString(R.string.script_move_up)) { edit { move(it.getJSONArray("rules"), index, -1) }.also { parentFragmentManager.popBackStack() } }
@@ -1181,8 +1189,52 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
     }
   }
 
+  override fun onResume() {
+    super.onResume()
+    // Coming back from the app ends a recording of one of this rule's actions.
+    val recording = ScriptActionRecorder.recordingFor(scriptId, index) ?: return
+    val steps = ScriptActionRecorder.stop(requireContext())
+    if (steps.isEmpty()) {
+      Toast.makeText(requireContext(), R.string.script_builder_nothing_recorded, Toast.LENGTH_LONG).show()
+      return
+    }
+    val title = recording.title
+    dialog()
+      .setTitle(title)
+      .setMessage(steps.joinToString("\n") { stepText(requireContext(), it) })
+      .setPositiveButton(R.string.script_builder_save) { _, _ ->
+        edit { draft ->
+          draft.getJSONArray("rules").getJSONObject(index).getOrPutArray("actions")
+            .put(JSONObject().put("title", title).put("steps", JSONArray(steps)))
+        }
+      }
+      .setNeutralButton(R.string.script_builder_record_again) { _, _ -> startRecording(title) }
+      .setNegativeButton(android.R.string.cancel, null)
+      .show()
+  }
+
+  /**
+   * Records the action [title] as the user does it in the rule's app, which is opened. The
+   * recording ends when this screen is opened again, from its notification or by going back.
+   */
+  private fun startRecording(title: String) {
+    val context = requireContext()
+    val match = rule()?.optJSONObject("match") ?: return
+    try {
+      ScriptActionRecorder.start(context, scriptId, index, title, match)
+    } catch (e: ManifestException) {
+      Toast.makeText(context, getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
+      return
+    }
+    Toast.makeText(context, R.string.script_builder_recording_toast, Toast.LENGTH_LONG).show()
+    val apps = draft()?.optJSONArray("apps")
+    val app = apps?.opt(0)?.let { (it as? JSONObject)?.optString("package") ?: it.toString() }?.ifEmpty { null } ?: return
+    context.packageManager.getLaunchIntentForPackage(app)?.let { startActivity(it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
+  }
+
   private fun editAction(actionIndex: Int) {
     val action = rule()?.optJSONArray("actions")?.optJSONObject(actionIndex) ?: return
+    if (action.has("steps")) return editStepsAction(actionIndex, action)
     val target = actionTargetPath(action)
     val options =
       listOfNotNull(
@@ -1209,6 +1261,85 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
     }
   }
 
+  /** The options of an action made of steps: each step's item, recording it again, and the rest. */
+  private fun editStepsAction(actionIndex: Int, action: JSONObject) {
+    val steps = action.optJSONArray("steps").objects()
+    val options =
+      listOf(getString(R.string.script_builder_rename)) +
+        steps.map { stepText(requireContext(), it) } +
+        listOf(
+          getString(R.string.script_builder_record_again),
+          getString(if (action.optBoolean("first")) R.string.script_builder_action_after_app else R.string.script_builder_action_first),
+          getString(R.string.script_builder_remove),
+        )
+    choose(action.optString("title"), options) { which ->
+      val stepIndex = which - 1
+      when {
+        which == 0 ->
+          askText(getString(R.string.script_builder_rename), action.optString("title")) { title, _, _ ->
+            if (title.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+            edit { actionAt(it, actionIndex).put("title", title) }
+            null
+          }
+        stepIndex < steps.size -> editStep(actionIndex, stepIndex, steps[stepIndex])
+        stepIndex == steps.size -> {
+          edit { it.getJSONArray("rules").getJSONObject(index).getJSONArray("actions").removeAt(actionIndex) }
+          startRecording(action.optString("title"))
+        }
+        stepIndex == steps.size + 1 -> edit { actionAt(it, actionIndex).putOrRemove("first", if (action.optBoolean("first")) null else true) }
+        else -> edit { it.getJSONArray("rules").getJSONObject(index).getJSONArray("actions").removeAt(actionIndex) }
+      }
+    }
+  }
+
+  /** A step's item, which can be changed, or the step removed. */
+  private fun editStep(actionIndex: Int, stepIndex: Int, step: JSONObject) {
+    val verb = ScriptBuilder.ACTION_KINDS.firstOrNull { it != "speak" && step.has(it) } ?: return
+    choose(stepText(requireContext(), step), listOf(getString(R.string.script_builder_item), getString(R.string.script_builder_remove))) {
+      if (it == 0) {
+        // Alternatives are kept as a list; the screen changes the first.
+        val target: List<Any> = if (step.opt(verb) is JSONArray) listOf(verb, 0) else listOf(verb)
+        openQuery(path("actions", actionIndex, "steps", stepIndex, *target.toTypedArray()))
+      } else {
+        edit { draft ->
+          val steps = actionAt(draft, actionIndex).getJSONArray("steps")
+          steps.removeAt(stepIndex)
+          if (steps.length() == 0) draft.getJSONArray("rules").getJSONObject(index).getJSONArray("actions").removeAt(actionIndex)
+        }
+      }
+    }
+  }
+
+  /** A step of an action, in words: "Long-press the item", "Press Add to queue". */
+  private fun stepText(context: Context, step: JSONObject): String {
+    val verb = ScriptBuilder.ACTION_KINDS.firstOrNull { it != "speak" && step.has(it) } ?: return notSet()
+    val queries =
+      when (val target = step.opt(verb)) {
+        is JSONArray -> target.objects()
+        is JSONObject -> listOf(target)
+        else -> emptyList()
+      }
+    val onScreen = step.optString("where") == "screen"
+    val long = verb == "longClick"
+    if (!onScreen && queries.singleOrNull()?.length() == 0) {
+      return getString(if (long) R.string.script_builder_step_long_click_item else R.string.script_builder_step_click_item)
+    }
+    val name = queries.joinToString(" / ") { ScriptBuilderFragment.describeQuery(context, it) }
+    return when (verb) {
+      "click", "longClick" ->
+        getString(
+          when {
+            onScreen && long -> R.string.script_builder_step_long_click_screen
+            onScreen -> R.string.script_builder_step_click_screen
+            long -> R.string.script_builder_step_long_click_in_item
+            else -> R.string.script_builder_step_click_in_item
+          },
+          name,
+        )
+      else -> "${actionKinds()[ScriptBuilder.ACTION_KINDS.indexOf(verb)]}: $name"
+    }
+  }
+
   private fun actionAt(draft: JSONObject, actionIndex: Int): JSONObject =
     draft.getJSONArray("rules").getJSONObject(index).getJSONArray("actions").getJSONObject(actionIndex)
 
@@ -1223,6 +1354,10 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
   }
 
   private fun actionText(context: Context, action: JSONObject): String {
+    if (action.has("steps")) {
+      val steps = action.optJSONArray("steps").objects().joinToString("; ") { stepText(context, it) }
+      return if (action.optBoolean("first")) "$steps, ${getString(R.string.script_builder_action_first)}" else steps
+    }
     val key = ScriptBuilder.ACTION_KINDS.firstOrNull(action::has) ?: return notSet()
     val kind = actionKinds()[ScriptBuilder.ACTION_KINDS.indexOf(key) + if (key == "speak" && action.opt("speak") is JSONObject) 1 else 0]
     val target = actionTargetPath(action)?.let { Paths.get(action, it) as? JSONObject }

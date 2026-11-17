@@ -52,6 +52,18 @@ public class PerformActionUtils {
     return lastActionOutsideKeyboard;
   }
 
+  /** Told of each action the screen reader performs on an item, such as a click. */
+  public interface ActionListener {
+    void onActionPerformed(AccessibilityNodeInfoCompat node, int action);
+  }
+
+  private static volatile @Nullable ActionListener actionListener;
+
+  /** Sets the one listener told of actions performed, or none for null. */
+  public static void setActionListener(@Nullable ActionListener listener) {
+    actionListener = listener;
+  }
+
   public static boolean performAction(
       @Nullable AccessibilityNodeInfoCompat node, int action, @Nullable EventId eventId) {
     return performAction(node, action, null /* args */, eventId);
@@ -69,6 +81,10 @@ public class PerformActionUtils {
     boolean result = node.performAction(action, args);
     if (result && changesTextOrCursor(action) && !AccessibilityNodeInfoUtils.isKeyboard(node)) {
       lastActionOutsideKeyboard = SystemClock.uptimeMillis();
+    }
+    @Nullable ActionListener listener = actionListener;
+    if (result && listener != null) {
+      listener.onActionPerformed(node, action);
     }
     LogUtils.d(
         TAG,

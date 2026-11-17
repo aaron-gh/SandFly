@@ -62,7 +62,18 @@ class ScriptManager(
     !closed && speechStateVersion == appliedSpeechStateVersion
   }
   private val events = ScriptEventDelivery(scriptHandler) { loaded.values }
-  private val actions = ScriptItemActions(scriptHandler, feedback)
+  private val actions =
+    ScriptItemActions(
+      scriptHandler,
+      feedback,
+      windowRoots = {
+        service.windows
+          .filter { it.root?.packageName?.toString() != service.packageName }
+          .sortedByDescending { it.layer }
+          .mapNotNull { window -> window.root?.let(AccessibilityNodeInfoCompat::wrap) }
+      },
+      back = { service.performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK) },
+    )
   private val navigator = ScriptNavigator(this)
   private val errors = ErrorCounter()
   private val compatibilityWarned = HashSet<String>()
@@ -98,6 +109,7 @@ class ScriptManager(
   }
 
   override fun onAccessibilityEvent(event: AccessibilityEvent) {
+    ScriptActionRecorder.onEvent(event)
     when (event.eventType) {
       AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED -> {
         activation.onWindowStateChanged(event)

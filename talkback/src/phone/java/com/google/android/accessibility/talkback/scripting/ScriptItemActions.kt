@@ -23,7 +23,16 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import org.json.JSONObject
 
-class ScriptItemActions(private val handler: Handler, private val feedback: ScriptFeedback) {
+/**
+ * The actions scripts add to an item's Actions menu. [windowRoots] gives the top item of each app
+ * window, top first, where a step finds a menu entry; [back] presses Back.
+ */
+class ScriptItemActions(
+  private val handler: Handler,
+  private val feedback: ScriptFeedback,
+  private val windowRoots: () -> List<AccessibilityNodeInfoCompat> = { emptyList() },
+  private val back: () -> Unit = {},
+) {
   private class Offered(
     val node: AccessibilityNodeInfoCompat,
     val time: Long,
@@ -99,6 +108,7 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
     action: RuleItemAction,
     node: AccessibilityNodeInfoCompat,
   ) {
+    if (action.steps.isNotEmpty()) return runSteps(runtime, action, node)
     val target = action.target?.let { find(node, it) ?: return missing(runtime, action) }
     when (action.verb) {
       RuleItemAction.Verb.SPEAK -> {
@@ -111,6 +121,52 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
         target?.let { doerOf(it, id) }?.performAction(id)
       }
     }
+  }
+
+  /**
+   * Does the steps of [action] in order. A step waits up to [STEP_WAIT_MS] for its item, such as an
+   * entry of the menu the step before opened. When one isn't found, what the steps opened is closed
+   * with Back.
+   */
+  private fun runSteps(runtime: ScriptRuntime, action: RuleItemAction, node: AccessibilityNodeInfoCompat) {
+    // SandFly's Actions menu closes first; a long click under it would not reach the app.
+    Thread.sleep(MENU_CLOSE_MS)
+    action.steps.forEachIndexed { index, step ->
+      val deadline = SystemClock.uptimeMillis() + STEP_WAIT_MS
+      var found: AccessibilityNodeInfoCompat?
+      while (true) {
+        found = step.targets.firstNotNullOfOrNull { query -> findForStep(node, step, query) }
+        if (found != null || SystemClock.uptimeMillis() >= deadline) break
+        Thread.sleep(STEP_POLL_MS)
+      }
+      val target = found
+      if (target == null) {
+        ScriptLog.add(runtime.id, ScriptLog.Level.WARN, "${action.title}: step ${index + 1} found no ${step.targets.joinToString(" or ")}")
+        feedback.playSound(R.raw.complete)
+        if (index > 0) back()
+        return
+      }
+      when (step.verb) {
+        RuleItemAction.Verb.FOCUS -> feedback.focus(target) {}
+        else -> {
+          val id = NodeBridge.ACTIONS.getValue(step.verb.key)
+          doerOf(target, id).performAction(id)
+        }
+      }
+    }
+  }
+
+  private fun findForStep(
+    node: AccessibilityNodeInfoCompat,
+    step: RuleItemAction.Step,
+    query: NodeQuery,
+  ): AccessibilityNodeInfoCompat? {
+    val deadline = SystemClock.uptimeMillis() + FIND_LIMIT_MS
+    if (!step.onScreen) {
+      node.refresh()
+      return query.firstIn(node, deadline)
+    }
+    return windowRoots().firstNotNullOfOrNull { root -> query.firstIn(root, deadline) }
   }
 
   /**
@@ -145,5 +201,8 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
     const val REUSE_MS = 1000L
     const val FIND_LIMIT_MS = 1000L
     const val MAX_PARENTS = 6
+    const val MENU_CLOSE_MS = 400L
+    const val STEP_WAIT_MS = 2000L
+    const val STEP_POLL_MS = 100L
   }
 }

@@ -149,7 +149,18 @@ data class RuleItemAction(
   val text: String? = null,
   /** Whether the action goes before the app's own actions in the Actions menu. */
   val first: Boolean = false,
+  /**
+   * Steps done in order instead of [verb] on [target]: each presses an item in the action's item,
+   * or on screen, such as an entry of the menu an earlier step opened.
+   */
+  val steps: List<Step> = emptyList(),
 ) {
+  /**
+   * A step of an action: [verb] on the first item found by one of [targets], in the action's item,
+   * or anywhere on screen for [onScreen]. An empty query is the action's item itself.
+   */
+  data class Step(val verb: Verb, val targets: List<NodeQuery>, val onScreen: Boolean)
+
   enum class Verb(val key: String) {
     CLICK("click"),
     LONG_CLICK("longClick"),
@@ -162,7 +173,7 @@ data class RuleItemAction(
   val permission: ScriptPermission?
     get() =
       when {
-        verb != Verb.SPEAK -> ScriptPermission.ACTIONS
+        steps.isNotEmpty() || verb != Verb.SPEAK -> ScriptPermission.ACTIONS
         target != null -> ScriptPermission.SCREEN
         else -> null
       }

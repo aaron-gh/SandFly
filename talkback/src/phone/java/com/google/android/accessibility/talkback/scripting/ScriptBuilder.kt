@@ -154,6 +154,7 @@ object ScriptBuilder {
   fun ruleProblemText(context: Context, rule: JSONObject): String? {
     val problem = ruleProblem(rule) ?: return null
     val action = rule.optJSONArray("actions").objects().firstOrNull { action ->
+      if (action.has("steps")) return@firstOrNull action.optJSONArray("steps").objects().isEmpty()
       val key = ACTION_KINDS.firstOrNull(action::has)
       val target = when {
         key == null -> null
@@ -258,8 +259,12 @@ object ScriptBuilder {
     }
     val actions = rules.flatMap { it.optJSONArray("actions").objects() }
     if (actions.isNotEmpty() || navigation.isNotEmpty()) needed += ScriptPermission.INPUT
-    if (actions.any { action -> ACTION_KINDS.any { it != "speak" && action.has(it) } }) {
+    if (actions.any { action -> action.has("steps") || ACTION_KINDS.any { it != "speak" && action.has(it) } }) {
       needed += ScriptPermission.ACTIONS
+    }
+    // Steps find menu entries on screen.
+    if (actions.any { action -> action.optJSONArray("steps").objects().any { it.optString("where") == "screen" } }) {
+      needed += ScriptPermission.SCREEN
     }
     if (actions.any { it.optJSONObject("speak")?.has("textOf") == true }) {
       needed += ScriptPermission.SCREEN

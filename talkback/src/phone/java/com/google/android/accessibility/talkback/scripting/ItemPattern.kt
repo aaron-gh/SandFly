@@ -118,6 +118,22 @@ object ItemPattern {
     return exact + partial
   }
 
+  /**
+   * A query that finds [inner], an item in [row] or a menu entry it opened, in any item like [row]:
+   * by its id, or else by its text, without the parts of it that name [row], such as the person in
+   * "Remove Chloe McCarthy". An item without text is found by the first text in it. Null when it
+   * has neither.
+   */
+  fun target(row: JSONObject?, inner: JSONObject): JSONObject? {
+    inner.optString("id").takeIf { it.isNotEmpty() }?.let { return JSONObject().put("id", it) }
+    val named = if (label(inner) != null) inner else inners(inner).firstOrNull { label(it.json) != null }?.json ?: return null
+    val value = label(named)!!
+    val field = fieldOf(named)
+    val pattern = row?.let { pattern(value, emptyList(), names(it, inner)) } ?: exact(value)
+    return if (pattern.exact != null) JSONObject().put(field, pattern.exact)
+    else JSONObject().put("matches", pattern.regex).put("field", field)
+  }
+
   /** How many of the inspected item and the items like it [query] names. */
   fun count(query: JSONObject?, sample: JSONObject?): Int {
     val item = item(sample) ?: return 0
