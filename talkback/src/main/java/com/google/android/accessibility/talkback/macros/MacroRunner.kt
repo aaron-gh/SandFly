@@ -449,12 +449,12 @@ object MacroRunner {
      */
     private fun touch(index: Int, step: Macros.Step, segments: List<TouchSegment>) {
       if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
-        fail(index, step, "touch needs Android 11")
+        fail(index, step, "touch needs Android 11", found = true)
         return
       }
       val pipeline = service.feedbackReturner
       if (pipeline == null) {
-        fail(index, step, "no feedback pipeline")
+        fail(index, step, "no feedback pipeline", found = true)
         return
       }
       if (segments.isEmpty()) {
@@ -473,7 +473,7 @@ object MacroRunner {
           pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
           ifActive {
             if (performed) later(STEP_GAP_MS) { runStep(index + 1) }
-            else fail(index, step, "touch not performed")
+            else fail(index, step, "touch not performed", found = true)
           }
         }
       }
