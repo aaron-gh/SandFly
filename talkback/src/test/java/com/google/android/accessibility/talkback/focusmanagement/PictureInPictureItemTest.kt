@@ -59,6 +59,40 @@ class PictureInPictureItemTest {
   }
 
   @Test
+  fun smallerSystemWindowsOverIt_withoutSystemUiMenuRoot_areTheirOwn() {
+    // Another app's floating button, and the volume dialog, with their centres in the window.
+    val bubble = window(6, AccessibilityWindowInfo.TYPE_SYSTEM, Rect(780, 1680, 860, 1760))
+    val volume =
+      window(7, AccessibilityWindowInfo.TYPE_SYSTEM, Rect(940, 1500, 1060, 1900), "VolumeDialog")
+    assertFalse(PictureInPictureItem.liesOver(bubble, pip))
+    assertFalse(PictureInPictureItem.liesOver(volume, pip))
+    assertTrue(PictureInPictureItem.overlayWindowIds(listOf(pip, bubble, volume, home)).isEmpty())
+  }
+
+  @Test
+  fun menuWindowWithSlightlyDifferentBounds_belongsToIt() {
+    val shifted = window(8, AccessibilityWindowInfo.TYPE_SYSTEM, Rect(596, 1604, 1044, 1846))
+    assertTrue(PictureInPictureItem.liesOver(shifted, pip))
+  }
+
+  @Test
+  fun roughlyEqual_allowsATenthOfTheShorterSide() {
+    val pipBounds = Rect(600, 1600, 1040, 1850)
+    assertTrue(PictureInPictureItem.roughlyEqual(Rect(625, 1600, 1040, 1850), pipBounds))
+    assertFalse(PictureInPictureItem.roughlyEqual(Rect(626, 1600, 1040, 1850), pipBounds))
+  }
+
+  @Test
+  fun menuChecks_titleAndPackage() {
+    assertTrue(PictureInPictureItem.isMenuTitle(null))
+    assertTrue(PictureInPictureItem.isMenuTitle("PipMenuView"))
+    assertFalse(PictureInPictureItem.isMenuTitle("VolumeDialog"))
+    assertTrue(PictureInPictureItem.isMenuPackage("com.android.systemui"))
+    assertFalse(PictureInPictureItem.isMenuPackage("com.facebook.orca"))
+    assertFalse(PictureInPictureItem.isMenuPackage(null))
+  }
+
+  @Test
   fun withoutPictureInPicture_nothingBelongsToIt() {
     val noPip = listOf(menu, home)
     assertNull(PictureInPictureItem.pipWindowFor(noPip, menu.id))
@@ -69,6 +103,7 @@ class PictureInPictureItemTest {
     id: Int,
     type: Int,
     bounds: Rect,
+    title: CharSequence? = null,
     pip: Boolean = false,
   ): AccessibilityWindowInfo {
     val window = AccessibilityWindowInfo.obtain()
@@ -78,6 +113,9 @@ class PictureInPictureItemTest {
     c.getDeclaredMethod("setRegionInScreen", Region::class.java).invoke(window, Region(bounds))
     c.getDeclaredMethod("setPictureInPicture", Boolean::class.javaPrimitiveType)
       .invoke(window, pip)
+    if (title != null) {
+      c.getDeclaredMethod("setTitle", CharSequence::class.java).invoke(window, title)
+    }
     return window
   }
 }

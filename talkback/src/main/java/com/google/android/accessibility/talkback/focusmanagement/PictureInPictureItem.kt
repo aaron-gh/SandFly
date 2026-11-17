@@ -37,6 +37,10 @@ import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils
 object PictureInPictureItem {
   private const val MAX_CONTROLS = 40
   private const val MAX_NODES = 400
+  private const val MIN_SLACK_PX = 8
+  private const val SYSTEM_UI_PACKAGE = "com.android.systemui"
+  // The title of System UI's picture-in-picture menu window, from Android 12.
+  private const val PIP_MENU_TITLE = "PipMenuView"
 
   /** A control of the picture-in-picture window, offered as an action of its item. */
   class Control(val label: CharSequence, val node: AccessibilityNodeInfoCompat)
@@ -64,7 +68,9 @@ object PictureInPictureItem {
 
   /**
    * Whether [window] is a system window over the picture-in-picture window [pip], such as its menu:
-   * its centre lies in [pip] and it is at most twice as big.
+   * it has about the bounds of [pip], or it is System UI's picture-in-picture menu with its centre
+   * in [pip]. Other system windows over it, such as the volume dialog or another app's floating
+   * button, are their own.
    */
   @VisibleForTesting
   @JvmStatic
@@ -73,15 +79,42 @@ object PictureInPictureItem {
     val pipBounds = Rect().also { pip.getBoundsInScreen(it) }
     val bounds = Rect().also { window.getBoundsInScreen(it) }
     if (bounds.isEmpty || pipBounds.isEmpty) return false
-    return pipBounds.contains(bounds.centerX(), bounds.centerY()) &&
-      bounds.width().toLong() * bounds.height() <=
-        2L * pipBounds.width().toLong() * pipBounds.height()
+    if (roughlyEqual(bounds, pipBounds)) return true
+    if (!pipBounds.contains(bounds.centerX(), bounds.centerY())) return false
+    if (!isMenuTitle(window.title)) return false
+    // Only now, for a window over the picture-in-picture window, ask for its root.
+    return isMenuPackage(AccessibilityWindowInfoUtils.getRoot(window)?.packageName)
   }
+
+  /** Whether [bounds] differ from [pipBounds] by at most a tenth of its shorter side at each edge. */
+  @VisibleForTesting
+  @JvmStatic
+  fun roughlyEqual(bounds: Rect, pipBounds: Rect): Boolean {
+    val slack = maxOf(MIN_SLACK_PX, minOf(pipBounds.width(), pipBounds.height()) / 10)
+    return Math.abs(bounds.left - pipBounds.left) <= slack &&
+      Math.abs(bounds.top - pipBounds.top) <= slack &&
+      Math.abs(bounds.right - pipBounds.right) <= slack &&
+      Math.abs(bounds.bottom - pipBounds.bottom) <= slack
+  }
+
+  /** Whether a window titled [title] can be the menu: titled as System UI's menu, or untitled. */
+  @VisibleForTesting
+  @JvmStatic
+  fun isMenuTitle(title: CharSequence?): Boolean =
+    title.isNullOrEmpty() || title.toString() == PIP_MENU_TITLE
+
+  /** Whether a window whose root has [packageName] can be the menu: System UI's. */
+  @VisibleForTesting
+  @JvmStatic
+  fun isMenuPackage(packageName: CharSequence?): Boolean =
+    packageName != null && packageName.toString() == SYSTEM_UI_PACKAGE
 
   /** Whether [node] is the root of a picture-in-picture window, which swipes focus as one item. */
   @JvmStatic
   fun isItem(node: AccessibilityNodeInfoCompat?): Boolean =
-    node != null && node.parent == null && AccessibilityNodeInfoUtils.isPictureInPicture(node)
+    // The window check comes first: it is usually answered from the window cache, and most nodes
+    // fail it, so their parents aren't fetched.
+    node != null && AccessibilityNodeInfoUtils.isPictureInPicture(node) && node.parent == null
 
   /** "<app> picture in picture" for the item, or null when [node] isn't one. */
   @JvmStatic
