@@ -258,4 +258,32 @@
     <string name="script_builder_one_item_actions">Číst jako jednu položku, s jejími tlačítky jako akcemi</string>
     <string name="script_builder_actions_value">Akce: %1$s</string>
     <string name="script_builder_choose_read">Zvolte, co se čte</string>
+    <string name="script_builder_record_action">Nahrát akci</string>
+    <string name="script_builder_recording_toast">Nahrávání. Proveďte kroky na jedné položce a potom otevřete oznámení Nahrávání akce.</string>
+    <string name="script_builder_recording_notification">Nahrávání akce: %1$s</string>
+    <string name="script_builder_recording_notification_text">Otevřením uložíte kroky.</string>
+    <string name="script_builder_save">Uložit</string>
+    <string name="script_builder_record_again">Nahrát znovu</string>
+    <string name="script_builder_nothing_recorded">Nebyly nahrány žádné kroky</string>
+    <string name="script_builder_step_click_item">Stisknout položku</string>
+    <string name="script_builder_step_long_click_item">Dlouze stisknout položku</string>
+    <string name="script_builder_step_click_in_item">Stisknout %1$s v položce</string>
+    <string name="script_builder_step_long_click_in_item">Dlouze stisknout %1$s v položce</string>
+    <string name="script_builder_step_click_screen">Stisknout %1$s</string>
+    <string name="script_builder_step_long_click_screen">Dlouze stisknout %1$s</string>
+    <string name="script_builder_button_actions">Tlačítka uvnitř jako akce</string>
+    <string name="script_builder_skip_buttons">Vynechaná tlačítka</string>
+    <string name="script_builder_skip_buttons_hint">Texty oddělené čárkami</string>
+    <string name="script_builder_read">Uspořádat, co se čte</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d část</item>
+        <item quantity="few">%1$d části</item>
+        <item quantity="many">%1$d části</item>
+        <item quantity="other">%1$d částí</item>
+    </plurals>
+    <string name="script_builder_read_add">Přidat část</string>
+    <string name="script_builder_read_own">Vlastní text položky</string>
+    <string name="script_builder_read_place">Položka %1$s v ní</string>
+    <string name="script_builder_read_text_before">Text před ní</string>
+    <string name="script_builder_read_above">Pokud je prázdné, použít položku nad</string>
 </resources>

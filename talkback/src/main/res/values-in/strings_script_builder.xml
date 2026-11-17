@@ -240,4 +240,29 @@
     <string name="script_builder_one_item_actions">Baca sebagai satu item, dengan tombolnya sebagai tindakan</string>
     <string name="script_builder_actions_value">Tindakan: %1$s</string>
     <string name="script_builder_choose_read">Pilih yang dibaca</string>
+    <string name="script_builder_record_action">Rekam tindakan</string>
+    <string name="script_builder_recording_toast">Merekam. Lakukan langkah-langkah pada satu item, lalu buka notifikasi Merekam tindakan.</string>
+    <string name="script_builder_recording_notification">Merekam tindakan: %1$s</string>
+    <string name="script_builder_recording_notification_text">Buka untuk menyimpan langkah.</string>
+    <string name="script_builder_save">Simpan</string>
+    <string name="script_builder_record_again">Rekam lagi</string>
+    <string name="script_builder_nothing_recorded">Tidak ada langkah yang direkam</string>
+    <string name="script_builder_step_click_item">Tekan item</string>
+    <string name="script_builder_step_long_click_item">Tekan lama item</string>
+    <string name="script_builder_step_click_in_item">Tekan %1$s di item</string>
+    <string name="script_builder_step_long_click_in_item">Tekan lama %1$s di item</string>
+    <string name="script_builder_step_click_screen">Tekan %1$s</string>
+    <string name="script_builder_step_long_click_screen">Tekan lama %1$s</string>
+    <string name="script_builder_button_actions">Tombol di dalam sebagai tindakan</string>
+    <string name="script_builder_skip_buttons">Tombol yang dikecualikan</string>
+    <string name="script_builder_skip_buttons_hint">Teks, dipisahkan koma</string>
+    <string name="script_builder_read">Atur yang dibaca</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">%1$d bagian</item>
+    </plurals>
+    <string name="script_builder_read_add">Tambahkan bagian</string>
+    <string name="script_builder_read_own">Teks item itu sendiri</string>
+    <string name="script_builder_read_place">Item %1$s di dalamnya</string>
+    <string name="script_builder_read_text_before">Teks sebelumnya</string>
+    <string name="script_builder_read_above">Jika kosong, gunakan item di atasnya</string>
 </resources>

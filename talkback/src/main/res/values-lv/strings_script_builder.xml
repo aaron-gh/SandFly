@@ -252,4 +252,31 @@
     <string name="script_builder_one_item_actions">Lasīt kā vienu vienumu, ar tā pogām kā darbībām</string>
     <string name="script_builder_actions_value">Darbības: %1$s</string>
     <string name="script_builder_choose_read">Izvēlēties, kas tiek lasīts</string>
+    <string name="script_builder_record_action">Ierakstīt darbību</string>
+    <string name="script_builder_recording_toast">Notiek ierakstīšana. Veiciet soļus ar vienu vienumu, pēc tam atveriet paziņojumu “Notiek darbības ierakstīšana”.</string>
+    <string name="script_builder_recording_notification">Notiek darbības ierakstīšana: %1$s</string>
+    <string name="script_builder_recording_notification_text">Atveriet, lai saglabātu soļus.</string>
+    <string name="script_builder_save">Saglabāt</string>
+    <string name="script_builder_record_again">Ierakstīt vēlreiz</string>
+    <string name="script_builder_nothing_recorded">Nav ierakstīts neviens solis</string>
+    <string name="script_builder_step_click_item">Nospiest vienumu</string>
+    <string name="script_builder_step_long_click_item">Ilgi nospiest vienumu</string>
+    <string name="script_builder_step_click_in_item">Nospiest %1$s vienumā</string>
+    <string name="script_builder_step_long_click_in_item">Ilgi nospiest %1$s vienumā</string>
+    <string name="script_builder_step_click_screen">Nospiest %1$s</string>
+    <string name="script_builder_step_long_click_screen">Ilgi nospiest %1$s</string>
+    <string name="script_builder_button_actions">Iekšējās pogas kā darbības</string>
+    <string name="script_builder_skip_buttons">Izlaižamās pogas</string>
+    <string name="script_builder_skip_buttons_hint">Teksti, atdalīti ar komatiem</string>
+    <string name="script_builder_read">Iestatīt, kas tiek lasīts</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="zero">%1$d daļu</item>
+        <item quantity="one">%1$d daļa</item>
+        <item quantity="other">%1$d daļas</item>
+    </plurals>
+    <string name="script_builder_read_add">Pievienot daļu</string>
+    <string name="script_builder_read_own">Paša vienuma teksts</string>
+    <string name="script_builder_read_place">Vienums %1$s tajā</string>
+    <string name="script_builder_read_text_before">Teksts pirms tās</string>
+    <string name="script_builder_read_above">Ja tukšs, izmantot vienumu augstāk</string>
 </resources>

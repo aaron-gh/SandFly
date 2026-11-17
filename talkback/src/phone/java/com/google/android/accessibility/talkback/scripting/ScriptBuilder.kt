@@ -154,6 +154,7 @@ object ScriptBuilder {
   fun ruleProblemText(context: Context, rule: JSONObject): String? {
     val problem = ruleProblem(rule) ?: return null
     val action = rule.optJSONArray("actions").objects().firstOrNull { action ->
+      if (action.has("steps")) return@firstOrNull action.optJSONArray("steps").objects().isEmpty()
       val key = ACTION_KINDS.firstOrNull(action::has)
       val target = when {
         key == null -> null
@@ -167,7 +168,8 @@ object ScriptBuilder {
       listOf("readBefore", "readAfter", "activate").any { rule.has(it) && isEmptyQuery(rule.optJSONObject(it)) } ->
         context.getString(R.string.script_builder_problem_other_item)
       action != null -> context.getString(R.string.script_builder_problem_action, action.optString("title"))
-      rule.keys().asSequence().none { it in CHANGES } && rule.optJSONArray("actions").objects().isEmpty() ->
+      rule.keys().asSequence().none { it in CHANGES } && rule.optJSONArray("actions").objects().isEmpty() &&
+        !rule.optBoolean("buttonActions") ->
         context.getString(R.string.script_builder_problem_change)
       else -> problem
     }
@@ -258,8 +260,13 @@ object ScriptBuilder {
     }
     val actions = rules.flatMap { it.optJSONArray("actions").objects() }
     if (actions.isNotEmpty() || navigation.isNotEmpty()) needed += ScriptPermission.INPUT
-    if (actions.any { action -> ACTION_KINDS.any { it != "speak" && action.has(it) } }) {
+    if (rules.any { it.optBoolean("buttonActions") }) needed += setOf(ScriptPermission.INPUT, ScriptPermission.ACTIONS)
+    if (actions.any { action -> action.has("steps") || ACTION_KINDS.any { it != "speak" && action.has(it) } }) {
       needed += ScriptPermission.ACTIONS
+    }
+    // Steps find menu entries on screen.
+    if (actions.any { action -> action.optJSONArray("steps").objects().any { it.optString("where") == "screen" } }) {
+      needed += ScriptPermission.SCREEN
     }
     if (actions.any { it.optJSONObject("speak")?.has("textOf") == true }) {
       needed += ScriptPermission.SCREEN
@@ -667,6 +674,7 @@ end
     setOf(
       "label", "speak", "hide", "silence", "role", "state", "hint", "heading", "group",
       "readBefore", "readAfter", "activate", "liftToActivate", "longPressAfter", "touchToActivate",
+      "read",
     )
 
   /** The kinds of rule action, each the key that holds what it acts on. */

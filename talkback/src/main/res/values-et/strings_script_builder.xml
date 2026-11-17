@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Loe ühe üksusena, selle nupud toimingutena</string>
     <string name="script_builder_actions_value">Toimingud: %1$s</string>
     <string name="script_builder_choose_read">Valige, mida loetakse</string>
+    <string name="script_builder_record_action">Lindista toiming</string>
+    <string name="script_builder_recording_toast">Lindistamine. Tehke sammud ühel üksusel ja seejärel avage märguanne Toimingu lindistamine.</string>
+    <string name="script_builder_recording_notification">Toimingu lindistamine: %1$s</string>
+    <string name="script_builder_recording_notification_text">Avage sammude salvestamiseks.</string>
+    <string name="script_builder_save">Salvesta</string>
+    <string name="script_builder_record_again">Lindista uuesti</string>
+    <string name="script_builder_nothing_recorded">Ühtegi sammu ei lindistatud</string>
+    <string name="script_builder_step_click_item">Vajuta üksust</string>
+    <string name="script_builder_step_long_click_item">Vajuta üksust pikalt</string>
+    <string name="script_builder_step_click_in_item">Vajuta üksuses %1$s</string>
+    <string name="script_builder_step_long_click_in_item">Vajuta üksuses pikalt %1$s</string>
+    <string name="script_builder_step_click_screen">Vajuta %1$s</string>
+    <string name="script_builder_step_long_click_screen">Vajuta pikalt %1$s</string>
+    <string name="script_builder_button_actions">Sisemised nupud toimingutena</string>
+    <string name="script_builder_skip_buttons">Välja jäetavad nupud</string>
+    <string name="script_builder_skip_buttons_hint">Tekstid, komadega eraldatud</string>
+    <string name="script_builder_read">Korralda, mida loetakse</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d osa</item>
+        <item quantity="other">%1$d osa</item>
+    </plurals>
+    <string name="script_builder_read_add">Lisa osa</string>
+    <string name="script_builder_read_own">Üksuse enda tekst</string>
+    <string name="script_builder_read_place">Üksus %1$s selle sees</string>
+    <string name="script_builder_read_text_before">Tekst enne seda</string>
+    <string name="script_builder_read_above">Kui tühi, kasuta ülemist üksust</string>
 </resources>

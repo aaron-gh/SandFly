@@ -249,4 +249,31 @@
     <string name="script_builder_one_item_actions">Ler como um único item, com os botões como ações</string>
     <string name="script_builder_actions_value">Ações: %1$s</string>
     <string name="script_builder_choose_read">Escolher o que é lido</string>
+    <string name="script_builder_record_action">Gravar uma ação</string>
+    <string name="script_builder_recording_toast">A gravar. Execute os passos num item e, em seguida, abra a notificação «A gravar uma ação».</string>
+    <string name="script_builder_recording_notification">A gravar uma ação: %1$s</string>
+    <string name="script_builder_recording_notification_text">Abra para guardar os passos.</string>
+    <string name="script_builder_save">Guardar</string>
+    <string name="script_builder_record_again">Gravar novamente</string>
+    <string name="script_builder_nothing_recorded">Nenhum passo gravado</string>
+    <string name="script_builder_step_click_item">Premir o item</string>
+    <string name="script_builder_step_long_click_item">Toque prolongado no item</string>
+    <string name="script_builder_step_click_in_item">Premir %1$s no item</string>
+    <string name="script_builder_step_long_click_in_item">Toque prolongado em %1$s no item</string>
+    <string name="script_builder_step_click_screen">Premir %1$s</string>
+    <string name="script_builder_step_long_click_screen">Toque prolongado em %1$s</string>
+    <string name="script_builder_button_actions">Botões internos como ações</string>
+    <string name="script_builder_skip_buttons">Botões a omitir</string>
+    <string name="script_builder_skip_buttons_hint">Textos separados por vírgulas</string>
+    <string name="script_builder_read">Organizar o que é lido</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d parte</item>
+        <item quantity="many">%1$d de partes</item>
+        <item quantity="other">%1$d partes</item>
+    </plurals>
+    <string name="script_builder_read_add">Adicionar uma parte</string>
+    <string name="script_builder_read_own">Texto do próprio item</string>
+    <string name="script_builder_read_place">Item %1$s dentro dele</string>
+    <string name="script_builder_read_text_before">Texto antes dela</string>
+    <string name="script_builder_read_above">Se estiver vazia, usar o item acima</string>
 </resources>

@@ -399,4 +399,22 @@
     <string name="macro_do_set_timer_short">Set timer: %1$s s</string>
     <!-- A Set alarm step with no label. %1$s is the time. [CHAR LIMIT=NONE] -->
     <string name="macro_do_set_alarm_short">Set alarm: %1$s</string>
+    <!-- Macro step that long-presses or scrolls an item. -->
+    <string name="macro_step_act_item">Long-press or scroll an item</string>
+    <!-- What a Long-press or scroll an item step does. -->
+    <string name="macro_act_long_press">Long-press</string>
+    <!-- What a Long-press or scroll an item step does, such as moving a seek bar on. -->
+    <string name="macro_act_scroll_forward">Scroll forward</string>
+    <!-- What a Long-press or scroll an item step does, such as moving a seek bar back. -->
+    <string name="macro_act_scroll_backward">Scroll backward</string>
+    <!-- A Long-press or scroll an item step. %1$s: Long-press, Scroll forward or Scroll backward; %2$s: the item. -->
+    <string name="macro_step_act_value"><xliff:g id="act" example="Long-press">%1$s</xliff:g>: <xliff:g id="label" example="Send">%2$s</xliff:g></string>
+    <!-- A Long-press or scroll an item step done more than once. %3$d: how many times. -->
+    <string name="macro_step_act_times_value"><xliff:g id="act" example="Scroll forward">%1$s</xliff:g>: <xliff:g id="label" example="Seek bar">%2$s</xliff:g>, <xliff:g id="times" example="5">%3$d</xliff:g> times</string>
+    <!-- Kind of condition test: the focused item is inside an item, such as a video player. -->
+    <string name="macro_test_focus_inside">Focus is inside an item</string>
+    <!-- A Focus is inside an item test. %1$s: the item. -->
+    <string name="macro_test_focus_inside_value">Focus inside: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
+    <!-- A Focus is inside an item test, reversed. %1$s: the item. -->
+    <string name="macro_test_not_focus_inside_value">Focus not inside: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
 </resources>

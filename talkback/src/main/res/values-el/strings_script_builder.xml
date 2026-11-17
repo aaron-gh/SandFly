@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Ανάγνωση ως ένα στοιχείο, με τα κουμπιά του ως ενέργειες</string>
     <string name="script_builder_actions_value">Ενέργειες: %1$s</string>
     <string name="script_builder_choose_read">Επιλογή του τι διαβάζεται</string>
+    <string name="script_builder_record_action">Εγγραφή ενέργειας</string>
+    <string name="script_builder_recording_toast">Εγγραφή σε εξέλιξη. Εκτελέστε τα βήματα σε ένα στοιχείο και, στη συνέχεια, ανοίξτε την ειδοποίηση \"Εγγραφή ενέργειας\".</string>
+    <string name="script_builder_recording_notification">Εγγραφή ενέργειας: %1$s</string>
+    <string name="script_builder_recording_notification_text">Ανοίξτε για αποθήκευση των βημάτων.</string>
+    <string name="script_builder_save">Αποθήκευση</string>
+    <string name="script_builder_record_again">Επανάληψη εγγραφής</string>
+    <string name="script_builder_nothing_recorded">Δεν καταγράφηκαν βήματα</string>
+    <string name="script_builder_step_click_item">Πάτημα του στοιχείου</string>
+    <string name="script_builder_step_long_click_item">Παρατεταμένο πάτημα του στοιχείου</string>
+    <string name="script_builder_step_click_in_item">Πάτημα %1$s στο στοιχείο</string>
+    <string name="script_builder_step_long_click_in_item">Παρατεταμένο πάτημα %1$s στο στοιχείο</string>
+    <string name="script_builder_step_click_screen">Πάτημα %1$s</string>
+    <string name="script_builder_step_long_click_screen">Παρατεταμένο πάτημα %1$s</string>
+    <string name="script_builder_button_actions">Εσωτερικά κουμπιά ως ενέργειες</string>
+    <string name="script_builder_skip_buttons">Κουμπιά που παραλείπονται</string>
+    <string name="script_builder_skip_buttons_hint">Κείμενα, διαχωρισμένα με κόμματα</string>
+    <string name="script_builder_read">Οργάνωση όσων διαβάζονται</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d τμήμα</item>
+        <item quantity="other">%1$d τμήματα</item>
+    </plurals>
+    <string name="script_builder_read_add">Προσθήκη τμήματος</string>
+    <string name="script_builder_read_own">Το κείμενο του ίδιου του στοιχείου</string>
+    <string name="script_builder_read_place">Στοιχείο %1$s μέσα σε αυτό</string>
+    <string name="script_builder_read_text_before">Κείμενο πριν από αυτό</string>
+    <string name="script_builder_read_above">Αν είναι κενό, χρήση του στοιχείου από πάνω</string>
 </resources>

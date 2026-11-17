@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Четене като един елемент, с бутоните му като действия</string>
     <string name="script_builder_actions_value">Действия: %1$s</string>
     <string name="script_builder_choose_read">Избор на това какво се чете</string>
+    <string name="script_builder_record_action">Записване на действие</string>
+    <string name="script_builder_recording_toast">Записва се. Изпълнете стъпките върху един елемент, след което отворете известието „Записване на действие“.</string>
+    <string name="script_builder_recording_notification">Записване на действие: %1$s</string>
+    <string name="script_builder_recording_notification_text">Отворете, за да запазите стъпките.</string>
+    <string name="script_builder_save">Запазване</string>
+    <string name="script_builder_record_again">Повторно записване</string>
+    <string name="script_builder_nothing_recorded">Няма записани стъпки</string>
+    <string name="script_builder_step_click_item">Натискане на елемента</string>
+    <string name="script_builder_step_long_click_item">Продължително натискане на елемента</string>
+    <string name="script_builder_step_click_in_item">Натискане на %1$s в елемента</string>
+    <string name="script_builder_step_long_click_in_item">Продължително натискане на %1$s в елемента</string>
+    <string name="script_builder_step_click_screen">Натискане на %1$s</string>
+    <string name="script_builder_step_long_click_screen">Продължително натискане на %1$s</string>
+    <string name="script_builder_button_actions">Вътрешните бутони като действия</string>
+    <string name="script_builder_skip_buttons">Бутони за пропускане</string>
+    <string name="script_builder_skip_buttons_hint">Текстове, разделени със запетаи</string>
+    <string name="script_builder_read">Подреждане на прочитаното</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d част</item>
+        <item quantity="other">%1$d части</item>
+    </plurals>
+    <string name="script_builder_read_add">Добавяне на част</string>
+    <string name="script_builder_read_own">Собственият текст на елемента</string>
+    <string name="script_builder_read_place">Елемент %1$s в него</string>
+    <string name="script_builder_read_text_before">Текст преди него</string>
+    <string name="script_builder_read_above">Ако е празно, да се използва елементът отгоре</string>
 </resources>

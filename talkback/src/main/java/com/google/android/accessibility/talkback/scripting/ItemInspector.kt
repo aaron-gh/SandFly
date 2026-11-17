@@ -187,7 +187,10 @@ object ItemInspector {
   }
 
   /** [node] as JSON: its class, id, texts and whether it can be clicked, and the items in it. */
-  private fun sampleItem(node: AccessibilityNodeInfoCompat): JSONObject {
+  @JvmStatic
+  fun snapshot(node: AccessibilityNodeInfoCompat, maxDepth: Int = MAX_SAMPLE_DEPTH): JSONObject = sampleItem(node, maxDepth)
+
+  private fun sampleItem(node: AccessibilityNodeInfoCompat, maxDepth: Int = MAX_SAMPLE_DEPTH): JSONObject {
     var count = 0
     fun describe(item: AccessibilityNodeInfoCompat, depth: Int): JSONObject =
       JSONObject().apply {
@@ -197,7 +200,7 @@ object ItemInspector {
         putOpt("text", item.text?.toString()?.trim()?.takeIf { it.isNotEmpty() && !item.isPassword })
         putOpt("description", item.contentDescription?.toString()?.trim()?.ifEmpty { null })
         if (item.isClickable) put("clickable", true)
-        if (depth < MAX_SAMPLE_DEPTH) {
+        if (depth < maxDepth) {
           val children =
             item.childrenInReadingOrder().filter { it.isVisibleToUser }.takeWhile { count < MAX_SAMPLE_ITEMS }
           putList("children", children.map { describe(it, depth + 1) }.toList())

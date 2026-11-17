@@ -240,4 +240,29 @@
     <string name="script_builder_one_item_actions">Đọc như một mục, với các nút của mục làm thao tác</string>
     <string name="script_builder_actions_value">Thao tác: %1$s</string>
     <string name="script_builder_choose_read">Chọn nội dung được đọc</string>
+    <string name="script_builder_record_action">Ghi một thao tác</string>
+    <string name="script_builder_recording_toast">Đang ghi. Thực hiện các bước trên một mục, sau đó mở thông báo “Đang ghi thao tác”.</string>
+    <string name="script_builder_recording_notification">Đang ghi thao tác: %1$s</string>
+    <string name="script_builder_recording_notification_text">Mở để lưu các bước.</string>
+    <string name="script_builder_save">Lưu</string>
+    <string name="script_builder_record_again">Ghi lại lần nữa</string>
+    <string name="script_builder_nothing_recorded">Chưa ghi bước nào</string>
+    <string name="script_builder_step_click_item">Nhấn mục</string>
+    <string name="script_builder_step_long_click_item">Nhấn và giữ mục</string>
+    <string name="script_builder_step_click_in_item">Nhấn %1$s trong mục</string>
+    <string name="script_builder_step_long_click_in_item">Nhấn và giữ %1$s trong mục</string>
+    <string name="script_builder_step_click_screen">Nhấn %1$s</string>
+    <string name="script_builder_step_long_click_screen">Nhấn và giữ %1$s</string>
+    <string name="script_builder_button_actions">Các nút bên trong làm thao tác</string>
+    <string name="script_builder_skip_buttons">Các nút cần bỏ qua</string>
+    <string name="script_builder_skip_buttons_hint">Văn bản, phân tách bằng dấu phẩy</string>
+    <string name="script_builder_read">Sắp xếp nội dung được đọc</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">%1$d phần</item>
+    </plurals>
+    <string name="script_builder_read_add">Thêm phần</string>
+    <string name="script_builder_read_own">Văn bản của chính mục</string>
+    <string name="script_builder_read_place">Mục %1$s bên trong</string>
+    <string name="script_builder_read_text_before">Văn bản trước phần</string>
+    <string name="script_builder_read_above">Nếu trống, dùng mục bên trên</string>
 </resources>

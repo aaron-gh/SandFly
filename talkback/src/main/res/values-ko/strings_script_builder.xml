@@ -240,4 +240,29 @@
     <string name="script_builder_one_item_actions">하나의 항목으로 읽기, 버튼은 작업으로</string>
     <string name="script_builder_actions_value">작업: %1$s</string>
     <string name="script_builder_choose_read">읽을 내용 선택</string>
+    <string name="script_builder_record_action">작업 기록</string>
+    <string name="script_builder_recording_toast">기록 중입니다. 항목 하나에서 단계를 실행한 다음 \'작업 기록 중\' 알림을 여세요.</string>
+    <string name="script_builder_recording_notification">작업 기록 중: %1$s</string>
+    <string name="script_builder_recording_notification_text">단계를 저장하려면 여세요.</string>
+    <string name="script_builder_save">저장</string>
+    <string name="script_builder_record_again">다시 기록</string>
+    <string name="script_builder_nothing_recorded">기록된 단계 없음</string>
+    <string name="script_builder_step_click_item">항목 누르기</string>
+    <string name="script_builder_step_long_click_item">항목 길게 누르기</string>
+    <string name="script_builder_step_click_in_item">항목에서 %1$s 누르기</string>
+    <string name="script_builder_step_long_click_in_item">항목에서 %1$s 길게 누르기</string>
+    <string name="script_builder_step_click_screen">%1$s 누르기</string>
+    <string name="script_builder_step_long_click_screen">%1$s 길게 누르기</string>
+    <string name="script_builder_button_actions">내부 버튼을 작업으로</string>
+    <string name="script_builder_skip_buttons">제외할 버튼</string>
+    <string name="script_builder_skip_buttons_hint">텍스트(쉼표로 구분)</string>
+    <string name="script_builder_read">읽을 내용 구성</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">부분 %1$d개</item>
+    </plurals>
+    <string name="script_builder_read_add">부분 추가</string>
+    <string name="script_builder_read_own">항목 자체의 텍스트</string>
+    <string name="script_builder_read_place">내부 항목 %1$s</string>
+    <string name="script_builder_read_text_before">앞에 붙일 텍스트</string>
+    <string name="script_builder_read_above">비어 있으면 위 항목 사용</string>
 </resources>

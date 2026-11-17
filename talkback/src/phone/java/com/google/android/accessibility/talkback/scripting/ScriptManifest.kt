@@ -86,6 +86,19 @@ enum class Hide {
   ALL,
 }
 
+/**
+ * A part of what is read for a rule's item: the text of the item at [path], child numbers from 1,
+ * counting the shown items in reading order, down from the rule's item, or else the first item [from] finds in it (an empty query is the
+ * item's own text), with [before] said first. With [fromAbove], an empty part is taken from the
+ * nearest of the items above in the same list that has it, such as the sender of a chat message.
+ */
+data class ReadPart(
+  val from: NodeQuery? = null,
+  val path: List<Int>? = null,
+  val before: String? = null,
+  val fromAbove: Boolean = false,
+)
+
 data class ScriptRule(
   val id: String? = null,
   val match: NodeQuery? = null,
@@ -114,6 +127,12 @@ data class ScriptRule(
   val longPressAfter: Int? = null,
   /** Whether activating the item touches it on the screen instead of clicking it. */
   val touchToActivate: Boolean = false,
+  /** Whether each button in the item is an action of it, found when its actions are listed. */
+  val buttonActions: Boolean = false,
+  /** Texts of buttons left out of [buttonActions]: a button whose name contains one is skipped. */
+  val skipButtons: List<String> = emptyList(),
+  /** What is read for the item instead of what it says: parts taken from it, in order. */
+  val read: List<ReadPart> = emptyList(),
 ) {
   val target: String
     get() = id ?: match.toString()
@@ -133,6 +152,7 @@ data class ScriptRule(
           longPressAfter,
         )
         .any { it != null } ||
+        read.isNotEmpty() ||
         hide != Hide.NONE ||
         silence != Hide.NONE ||
         group ||
@@ -149,7 +169,18 @@ data class RuleItemAction(
   val text: String? = null,
   /** Whether the action goes before the app's own actions in the Actions menu. */
   val first: Boolean = false,
+  /**
+   * Steps done in order instead of [verb] on [target]: each presses an item in the action's item,
+   * or on screen, such as an entry of the menu an earlier step opened.
+   */
+  val steps: List<Step> = emptyList(),
 ) {
+  /**
+   * A step of an action: [verb] on the first item found by one of [targets], in the action's item,
+   * or anywhere on screen for [onScreen]. An empty query is the action's item itself.
+   */
+  data class Step(val verb: Verb, val targets: List<NodeQuery>, val onScreen: Boolean)
+
   enum class Verb(val key: String) {
     CLICK("click"),
     LONG_CLICK("longClick"),
@@ -162,7 +193,7 @@ data class RuleItemAction(
   val permission: ScriptPermission?
     get() =
       when {
-        verb != Verb.SPEAK -> ScriptPermission.ACTIONS
+        steps.isNotEmpty() || verb != Verb.SPEAK -> ScriptPermission.ACTIONS
         target != null -> ScriptPermission.SCREEN
         else -> null
       }

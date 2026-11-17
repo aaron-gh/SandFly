@@ -240,4 +240,29 @@
     <string name="script_builder_one_item_actions">1 つの項目として読み上げ、ボタンを操作として使用</string>
     <string name="script_builder_actions_value">操作: %1$s</string>
     <string name="script_builder_choose_read">読み上げる内容を選択</string>
+    <string name="script_builder_record_action">操作を記録</string>
+    <string name="script_builder_recording_toast">記録中です。1 つの項目でステップを実行してから、「操作を記録中」の通知を開いてください。</string>
+    <string name="script_builder_recording_notification">操作を記録中: %1$s</string>
+    <string name="script_builder_recording_notification_text">ステップを保存するには開いてください。</string>
+    <string name="script_builder_save">保存</string>
+    <string name="script_builder_record_again">もう一度記録</string>
+    <string name="script_builder_nothing_recorded">記録されたステップはありません</string>
+    <string name="script_builder_step_click_item">項目を押す</string>
+    <string name="script_builder_step_long_click_item">項目を長押し</string>
+    <string name="script_builder_step_click_in_item">項目内の%1$sを押す</string>
+    <string name="script_builder_step_long_click_in_item">項目内の%1$sを長押し</string>
+    <string name="script_builder_step_click_screen">%1$sを押す</string>
+    <string name="script_builder_step_long_click_screen">%1$sを長押し</string>
+    <string name="script_builder_button_actions">内部のボタンを操作として扱う</string>
+    <string name="script_builder_skip_buttons">除外するボタン</string>
+    <string name="script_builder_skip_buttons_hint">テキスト (カンマ区切り)</string>
+    <string name="script_builder_read">読み上げ内容の構成</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">%1$d 個の部分</item>
+    </plurals>
+    <string name="script_builder_read_add">部分を追加</string>
+    <string name="script_builder_read_own">項目自体のテキスト</string>
+    <string name="script_builder_read_place">内部の項目 %1$s</string>
+    <string name="script_builder_read_text_before">前に付けるテキスト</string>
+    <string name="script_builder_read_above">空の場合は上の項目を使用</string>
 </resources>

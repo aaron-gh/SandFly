@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Irakurri elementu bakar gisa, haren botoiak ekintza gisa</string>
     <string name="script_builder_actions_value">Ekintzak: %1$s</string>
     <string name="script_builder_choose_read">Aukeratu zer irakurtzen den</string>
+    <string name="script_builder_record_action">Grabatu ekintza bat</string>
+    <string name="script_builder_recording_toast">Grabatzen. Egin urratsak elementu batean eta, ondoren, ireki \"Ekintza bat grabatzen\" jakinarazpena.</string>
+    <string name="script_builder_recording_notification">Ekintza bat grabatzen: %1$s</string>
+    <string name="script_builder_recording_notification_text">Ireki urratsak gordetzeko.</string>
+    <string name="script_builder_save">Gorde</string>
+    <string name="script_builder_record_again">Grabatu berriro</string>
+    <string name="script_builder_nothing_recorded">Ez da urratsik grabatu</string>
+    <string name="script_builder_step_click_item">Sakatu elementua</string>
+    <string name="script_builder_step_long_click_item">Sakatu luze elementua</string>
+    <string name="script_builder_step_click_in_item">Sakatu %1$s elementuan</string>
+    <string name="script_builder_step_long_click_in_item">Sakatu luze %1$s elementuan</string>
+    <string name="script_builder_step_click_screen">Sakatu %1$s</string>
+    <string name="script_builder_step_long_click_screen">Sakatu luze %1$s</string>
+    <string name="script_builder_button_actions">Barruko botoiak ekintza gisa</string>
+    <string name="script_builder_skip_buttons">Kanpoan utzitako botoiak</string>
+    <string name="script_builder_skip_buttons_hint">Testuak, komaz bereizita</string>
+    <string name="script_builder_read">Antolatu irakurtzen dena</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d zati</item>
+        <item quantity="other">%1$d zati</item>
+    </plurals>
+    <string name="script_builder_read_add">Gehitu zati bat</string>
+    <string name="script_builder_read_own">Elementuaren beraren testua</string>
+    <string name="script_builder_read_place">Barruko %1$s elementua</string>
+    <string name="script_builder_read_text_before">Aurreko testua</string>
+    <string name="script_builder_read_above">Hutsik badago, erabili goiko elementua</string>
 </resources>

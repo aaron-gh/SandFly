@@ -252,4 +252,31 @@
     <string name="script_builder_one_item_actions">Читај као једну ставку, са њеним дугмадима као радњама</string>
     <string name="script_builder_actions_value">Радње: %1$s</string>
     <string name="script_builder_choose_read">Изабери шта се чита</string>
+    <string name="script_builder_record_action">Сними радњу</string>
+    <string name="script_builder_recording_toast">Снима се. Изведите кораке на једној ставци, а затим отворите обавештење „Снимање радње“.</string>
+    <string name="script_builder_recording_notification">Снимање радње: %1$s</string>
+    <string name="script_builder_recording_notification_text">Отворите да бисте сачували кораке.</string>
+    <string name="script_builder_save">Сачувај</string>
+    <string name="script_builder_record_again">Сними поново</string>
+    <string name="script_builder_nothing_recorded">Нема снимљених корака</string>
+    <string name="script_builder_step_click_item">Притисни ставку</string>
+    <string name="script_builder_step_long_click_item">Дуго притисни ставку</string>
+    <string name="script_builder_step_click_in_item">Притисни %1$s у ставци</string>
+    <string name="script_builder_step_long_click_in_item">Дуго притисни %1$s у ставци</string>
+    <string name="script_builder_step_click_screen">Притисни %1$s</string>
+    <string name="script_builder_step_long_click_screen">Дуго притисни %1$s</string>
+    <string name="script_builder_button_actions">Дугмад унутра као радње</string>
+    <string name="script_builder_skip_buttons">Дугмад која се изостављају</string>
+    <string name="script_builder_skip_buttons_hint">Текстови, одвојени зарезима</string>
+    <string name="script_builder_read">Подеси шта се чита</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d део</item>
+        <item quantity="few">%1$d дела</item>
+        <item quantity="other">%1$d делова</item>
+    </plurals>
+    <string name="script_builder_read_add">Додај део</string>
+    <string name="script_builder_read_own">Сопствени текст ставке</string>
+    <string name="script_builder_read_place">Ставка %1$s у њој</string>
+    <string name="script_builder_read_text_before">Текст пре њега</string>
+    <string name="script_builder_read_above">Ако је празан, користи ставку изнад</string>
 </resources>

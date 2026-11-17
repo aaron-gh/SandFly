@@ -252,4 +252,31 @@
     <string name="script_builder_one_item_actions">קריאה כפריט אחד, עם הכפתורים שלו כפעולות</string>
     <string name="script_builder_actions_value">פעולות: %1$s</string>
     <string name="script_builder_choose_read">בחירת מה שיוקרא</string>
+    <string name="script_builder_record_action">הקלטת פעולה</string>
+    <string name="script_builder_recording_toast">מתבצעת הקלטה. יש לבצע את השלבים על פריט אחד ואז לפתוח את ההתראה \'הקלטת פעולה\'.</string>
+    <string name="script_builder_recording_notification">הקלטת פעולה: %1$s</string>
+    <string name="script_builder_recording_notification_text">יש לפתוח כדי לשמור את השלבים.</string>
+    <string name="script_builder_save">שמירה</string>
+    <string name="script_builder_record_again">הקלטה מחדש</string>
+    <string name="script_builder_nothing_recorded">לא הוקלטו שלבים</string>
+    <string name="script_builder_step_click_item">לחיצה על הפריט</string>
+    <string name="script_builder_step_long_click_item">לחיצה ארוכה על הפריט</string>
+    <string name="script_builder_step_click_in_item">לחיצה על %1$s בתוך הפריט</string>
+    <string name="script_builder_step_long_click_in_item">לחיצה ארוכה על %1$s בתוך הפריט</string>
+    <string name="script_builder_step_click_screen">לחיצה על %1$s</string>
+    <string name="script_builder_step_long_click_screen">לחיצה ארוכה על %1$s</string>
+    <string name="script_builder_button_actions">כפתורים פנימיים כפעולות</string>
+    <string name="script_builder_skip_buttons">כפתורים להשמטה</string>
+    <string name="script_builder_skip_buttons_hint">טקסטים, מופרדים בפסיקים</string>
+    <string name="script_builder_read">סידור התוכן שנקרא</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">חלק אחד</item>
+        <item quantity="two">שני חלקים</item>
+        <item quantity="other">%1$d חלקים</item>
+    </plurals>
+    <string name="script_builder_read_add">הוספת חלק</string>
+    <string name="script_builder_read_own">הטקסט של הפריט עצמו</string>
+    <string name="script_builder_read_place">פריט %1$s שבתוכו</string>
+    <string name="script_builder_read_text_before">טקסט לפניו</string>
+    <string name="script_builder_read_above">אם ריק, שימוש בפריט שמעליו</string>
 </resources>

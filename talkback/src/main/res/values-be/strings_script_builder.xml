@@ -258,4 +258,32 @@
     <string name="script_builder_one_item_actions">Чытаць як адзін элемент, з яго кнопкамі як дзеяннямі</string>
     <string name="script_builder_actions_value">Дзеянні: %1$s</string>
     <string name="script_builder_choose_read">Выбар таго, што чытаецца</string>
+    <string name="script_builder_record_action">Запісаць дзеянне</string>
+    <string name="script_builder_recording_toast">Ідзе запіс. Выканайце крокі на адным элеменце, потым адкрыйце апавяшчэнне \"Запіс дзеяння\".</string>
+    <string name="script_builder_recording_notification">Запіс дзеяння: %1$s</string>
+    <string name="script_builder_recording_notification_text">Адкрыйце, каб захаваць крокі.</string>
+    <string name="script_builder_save">Захаваць</string>
+    <string name="script_builder_record_again">Запісаць зноў</string>
+    <string name="script_builder_nothing_recorded">Крокі не запісаны</string>
+    <string name="script_builder_step_click_item">Націснуць элемент</string>
+    <string name="script_builder_step_long_click_item">Доўга націснуць элемент</string>
+    <string name="script_builder_step_click_in_item">Націснуць %1$s у элеменце</string>
+    <string name="script_builder_step_long_click_in_item">Доўга націснуць %1$s у элеменце</string>
+    <string name="script_builder_step_click_screen">Націснуць %1$s</string>
+    <string name="script_builder_step_long_click_screen">Доўга націснуць %1$s</string>
+    <string name="script_builder_button_actions">Кнопкі ўнутры як дзеянні</string>
+    <string name="script_builder_skip_buttons">Кнопкі, якія прапускаюцца</string>
+    <string name="script_builder_skip_buttons_hint">Тэксты праз коску</string>
+    <string name="script_builder_read">Наладзіць, што чытаецца</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d частка</item>
+        <item quantity="few">%1$d часткі</item>
+        <item quantity="many">%1$d частак</item>
+        <item quantity="other">%1$d часткі</item>
+    </plurals>
+    <string name="script_builder_read_add">Дадаць частку</string>
+    <string name="script_builder_read_own">Уласны тэкст элемента</string>
+    <string name="script_builder_read_place">Элемент %1$s унутры</string>
+    <string name="script_builder_read_text_before">Тэкст перад ім</string>
+    <string name="script_builder_read_above">Калі пуста, узяць элемент вышэй</string>
 </resources>

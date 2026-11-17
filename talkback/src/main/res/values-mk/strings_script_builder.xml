@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Читај како една ставка, со нејзините копчиња како дејства</string>
     <string name="script_builder_actions_value">Дејства: %1$s</string>
     <string name="script_builder_choose_read">Избери што се чита</string>
+    <string name="script_builder_record_action">Сними дејство</string>
+    <string name="script_builder_recording_toast">Се снима. Направете ги чекорите на една ставка, потоа отворете го известувањето „Снимање дејство“.</string>
+    <string name="script_builder_recording_notification">Снимање дејство: %1$s</string>
+    <string name="script_builder_recording_notification_text">Отворете за да ги зачувате чекорите.</string>
+    <string name="script_builder_save">Зачувај</string>
+    <string name="script_builder_record_again">Сними повторно</string>
+    <string name="script_builder_nothing_recorded">Нема снимени чекори</string>
+    <string name="script_builder_step_click_item">Притисни ја ставката</string>
+    <string name="script_builder_step_long_click_item">Долго притисни ја ставката</string>
+    <string name="script_builder_step_click_in_item">Притисни %1$s во ставката</string>
+    <string name="script_builder_step_long_click_in_item">Долго притисни %1$s во ставката</string>
+    <string name="script_builder_step_click_screen">Притисни %1$s</string>
+    <string name="script_builder_step_long_click_screen">Долго притисни %1$s</string>
+    <string name="script_builder_button_actions">Копчињата внатре како дејства</string>
+    <string name="script_builder_skip_buttons">Копчиња за изоставување</string>
+    <string name="script_builder_skip_buttons_hint">Текстови, одделени со запирки</string>
+    <string name="script_builder_read">Уреди што се чита</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d дел</item>
+        <item quantity="other">%1$d делови</item>
+    </plurals>
+    <string name="script_builder_read_add">Додај дел</string>
+    <string name="script_builder_read_own">Сопствениот текст на ставката</string>
+    <string name="script_builder_read_place">Ставка %1$s во неа</string>
+    <string name="script_builder_read_text_before">Текст пред него</string>
+    <string name="script_builder_read_above">Ако е празно, користи ја ставката погоре</string>
 </resources>

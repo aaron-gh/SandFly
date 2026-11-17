@@ -249,4 +249,30 @@
     <string name="script_builder_one_item_actions">Llegeix com un sol element, amb els seus botons com a accions</string>
     <string name="script_builder_actions_value">Accions: %1$s</string>
     <string name="script_builder_choose_read">Tria què es llegeix</string>
+    <string name="script_builder_record_action">Enregistra una acció</string>
+    <string name="script_builder_recording_toast">S\'està enregistrant. Fes els passos en un element i, després, obre la notificació Enregistrament d\'una acció.</string>
+    <string name="script_builder_recording_notification">Enregistrament d\'una acció: %1$s</string>
+    <string name="script_builder_recording_notification_text">Obre per desar els passos.</string>
+    <string name="script_builder_save">Desa</string>
+    <string name="script_builder_record_again">Torna a enregistrar</string>
+    <string name="script_builder_nothing_recorded">No s\'ha enregistrat cap pas</string>
+    <string name="script_builder_step_click_item">Prem l\'element</string>
+    <string name="script_builder_step_long_click_item">Mantén premut l\'element</string>
+    <string name="script_builder_step_click_in_item">Prem %1$s a l\'element</string>
+    <string name="script_builder_step_long_click_in_item">Mantén premut %1$s a l\'element</string>
+    <string name="script_builder_step_click_screen">Prem %1$s</string>
+    <string name="script_builder_step_long_click_screen">Mantén premut %1$s</string>
+    <string name="script_builder_button_actions">Botons interns com a accions</string>
+    <string name="script_builder_skip_buttons">Botons que s\'ometen</string>
+    <string name="script_builder_skip_buttons_hint">Textos separats per comes</string>
+    <string name="script_builder_read">Organitza el que es llegeix</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d part</item>
+        <item quantity="other">%1$d parts</item>
+    </plurals>
+    <string name="script_builder_read_add">Afegeix una part</string>
+    <string name="script_builder_read_own">Text propi de l\'element</string>
+    <string name="script_builder_read_place">Element %1$s de dins</string>
+    <string name="script_builder_read_text_before">Text abans</string>
+    <string name="script_builder_read_above">Si és buit, fes servir l\'element de dalt</string>
 </resources>

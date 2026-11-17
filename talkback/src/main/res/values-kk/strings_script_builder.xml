@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Бір элемент ретінде оқу, оның түймелері әрекеттер ретінде</string>
     <string name="script_builder_actions_value">Әрекеттер: %1$s</string>
     <string name="script_builder_choose_read">Не оқылатынын таңдау</string>
+    <string name="script_builder_record_action">Әрекетті жазу</string>
+    <string name="script_builder_recording_toast">Жазылып жатыр. Қадамдарды бір элементте орындаңыз, содан кейін «Әрекет жазылып жатыр» хабарландыруын ашыңыз.</string>
+    <string name="script_builder_recording_notification">Әрекет жазылып жатыр: %1$s</string>
+    <string name="script_builder_recording_notification_text">Қадамдарды сақтау үшін ашыңыз.</string>
+    <string name="script_builder_save">Сақтау</string>
+    <string name="script_builder_record_again">Қайта жазу</string>
+    <string name="script_builder_nothing_recorded">Ешқандай қадам жазылмады</string>
+    <string name="script_builder_step_click_item">Элементті басу</string>
+    <string name="script_builder_step_long_click_item">Элементті ұзақ басу</string>
+    <string name="script_builder_step_click_in_item">Элементтегі %1$s басу</string>
+    <string name="script_builder_step_long_click_in_item">Элементтегі %1$s ұзақ басу</string>
+    <string name="script_builder_step_click_screen">%1$s басу</string>
+    <string name="script_builder_step_long_click_screen">%1$s ұзақ басу</string>
+    <string name="script_builder_button_actions">Ішкі түймелер әрекет ретінде</string>
+    <string name="script_builder_skip_buttons">Өткізіп жіберілетін түймелер</string>
+    <string name="script_builder_skip_buttons_hint">Мәтіндер, үтірмен бөлінген</string>
+    <string name="script_builder_read">Оқылатын мазмұнды реттеу</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d бөлік</item>
+        <item quantity="other">%1$d бөлік</item>
+    </plurals>
+    <string name="script_builder_read_add">Бөлік қосу</string>
+    <string name="script_builder_read_own">Элементтің өз мәтіні</string>
+    <string name="script_builder_read_place">Ішіндегі %1$s элементі</string>
+    <string name="script_builder_read_text_before">Алдындағы мәтін</string>
+    <string name="script_builder_read_above">Бос болса, жоғарыдағы элементті пайдалану</string>
 </resources>

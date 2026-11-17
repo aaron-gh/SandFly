@@ -466,6 +466,7 @@ object MacroRunner {
           is Macros.TapPosition -> tapAt(index, step)
           is Macros.TouchHold -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.FocusItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
+          is Macros.ActOnItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakText -> {
             speak(fill(step.text))
@@ -763,6 +764,7 @@ object MacroRunner {
           is Macros.FocusItem -> step.field
           is Macros.SpeakItem -> step.field
           is Macros.TouchHold -> step.field
+          is Macros.ActOnItem -> step.field
           else -> null
         }
       // The item to focus or speak, the point to touch, whether the click was performed, or null
@@ -775,6 +777,7 @@ object MacroRunner {
           node?.let {
             when (step) {
               is Macros.FocusItem -> focusTarget(it)
+              is Macros.ActOnItem -> act(it, step)
               is Macros.SpeakItem -> ItemToSpeak(AccessibilityNodeInfoCompat.wrap(it), innerText(it))
               is Macros.TouchHold -> {
                 val bounds = Rect()
@@ -877,6 +880,7 @@ object MacroRunner {
           is Macros.FocusItem -> step.label
           is Macros.SpeakItem -> step.label
           is Macros.TouchHold -> step.label
+          is Macros.ActOnItem -> step.label
           else -> null
         }
       val text =
@@ -1025,6 +1029,12 @@ object MacroRunner {
           (test.kind == null || isKind(focused, test.kind)) &&
           (label.isEmpty || containsText(focused, label, test.field))
       }
+      is Macros.FocusInside -> {
+        val label = LabelMatch(test.label, test.regex)
+        generateSequence(service.findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)) { it.parent }
+          .take(MAX_CLICK_PARENTS * 5)
+          .any { node -> (if (test.field != null) texts(node, test.field) else texts(node)).any { label.isIn(it) } }
+      }
       is Macros.AppInFront -> activePackage(service) == test.packageName
       Macros.KeyboardShown -> service.windows.any { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD }
       Macros.ScreenLocked -> service.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true
@@ -1162,6 +1172,22 @@ object MacroRunner {
   }
 
   /** Clicks [node], or the nearest item above it that can be clicked. Returns whether it did. */
+  /**
+   * Long-presses or scrolls [node], or the nearest item around it that can be, [ActOnItem.times]
+   * times.
+   */
+  private fun act(node: AccessibilityNodeInfo, step: Macros.ActOnItem): Boolean {
+    var candidate: AccessibilityNodeInfo? = node
+    repeat(MAX_CLICK_PARENTS + 1) {
+      val item = candidate ?: return@repeat
+      if (item.actionList.any { it.id == step.act.action }) {
+        return (1..step.times).map { item.performAction(step.act.action) }.all { it }
+      }
+      candidate = item.parent
+    }
+    return node.performAction(step.act.action)
+  }
+
   private fun click(node: AccessibilityNodeInfo): Boolean {
     var candidate: AccessibilityNodeInfo? = node
     repeat(MAX_CLICK_PARENTS + 1) {

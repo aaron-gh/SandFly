@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Ler como un só elemento, cos seus botóns como accións</string>
     <string name="script_builder_actions_value">Accións: %1$s</string>
     <string name="script_builder_choose_read">Escolle o que se le</string>
+    <string name="script_builder_record_action">Gravar unha acción</string>
+    <string name="script_builder_recording_toast">Gravando. Fai os pasos nun elemento e, despois, abre a notificación Gravando unha acción.</string>
+    <string name="script_builder_recording_notification">Gravando unha acción: %1$s</string>
+    <string name="script_builder_recording_notification_text">Abre para gardar os pasos.</string>
+    <string name="script_builder_save">Gardar</string>
+    <string name="script_builder_record_again">Gravar de novo</string>
+    <string name="script_builder_nothing_recorded">Non se gravou ningún paso</string>
+    <string name="script_builder_step_click_item">Premer o elemento</string>
+    <string name="script_builder_step_long_click_item">Manter premido o elemento</string>
+    <string name="script_builder_step_click_in_item">Premer %1$s no elemento</string>
+    <string name="script_builder_step_long_click_in_item">Manter premido %1$s no elemento</string>
+    <string name="script_builder_step_click_screen">Premer %1$s</string>
+    <string name="script_builder_step_long_click_screen">Manter premido %1$s</string>
+    <string name="script_builder_button_actions">Botóns internos como accións</string>
+    <string name="script_builder_skip_buttons">Botóns que se omiten</string>
+    <string name="script_builder_skip_buttons_hint">Textos separados por comas</string>
+    <string name="script_builder_read">Organizar o que se le</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d parte</item>
+        <item quantity="other">%1$d partes</item>
+    </plurals>
+    <string name="script_builder_read_add">Engadir unha parte</string>
+    <string name="script_builder_read_own">Texto propio do elemento</string>
+    <string name="script_builder_read_place">Elemento %1$s dentro del</string>
+    <string name="script_builder_read_text_before">Texto antes</string>
+    <string name="script_builder_read_above">Se está baleiro, usar o elemento de arriba</string>
 </resources>

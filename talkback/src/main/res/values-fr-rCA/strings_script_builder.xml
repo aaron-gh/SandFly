@@ -252,4 +252,30 @@
     <string name="script_builder_one_item_actions">Lire comme un seul élément, avec ses boutons comme actions</string>
     <string name="script_builder_actions_value">Actions : %1$s</string>
     <string name="script_builder_choose_read">Choisir ce qui est lu</string>
+    <string name="script_builder_record_action">Enregistrer une action</string>
+    <string name="script_builder_recording_toast">Enregistrement en cours. Effectuez les étapes sur un élément, puis ouvrez la notification Enregistrement d\'une action.</string>
+    <string name="script_builder_recording_notification">Enregistrement d\'une action : %1$s</string>
+    <string name="script_builder_recording_notification_text">Ouvrir pour enregistrer les étapes.</string>
+    <string name="script_builder_save">Enregistrer</string>
+    <string name="script_builder_record_again">Recommencer l\'enregistrement</string>
+    <string name="script_builder_nothing_recorded">Aucune étape enregistrée</string>
+    <string name="script_builder_step_click_item">Appuyer sur l\'élément</string>
+    <string name="script_builder_step_long_click_item">Maintenir le doigt sur l\'élément</string>
+    <string name="script_builder_step_click_in_item">Appuyer sur %1$s dans l\'élément</string>
+    <string name="script_builder_step_long_click_in_item">Maintenir le doigt sur %1$s dans l\'élément</string>
+    <string name="script_builder_step_click_screen">Appuyer sur %1$s</string>
+    <string name="script_builder_step_long_click_screen">Maintenir le doigt sur %1$s</string>
+    <string name="script_builder_button_actions">Boutons internes comme actions</string>
+    <string name="script_builder_skip_buttons">Boutons à exclure</string>
+    <string name="script_builder_skip_buttons_hint">Textes séparés par des virgules</string>
+    <string name="script_builder_read">Organiser ce qui est lu</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d partie</item>
+        <item quantity="other">%1$d parties</item>
+    </plurals>
+    <string name="script_builder_read_add">Ajouter une partie</string>
+    <string name="script_builder_read_own">Texte propre de l\'élément</string>
+    <string name="script_builder_read_place">Élément %1$s qu\'il contient</string>
+    <string name="script_builder_read_text_before">Texte avant</string>
+    <string name="script_builder_read_above">Si vide, utiliser l\'élément au-dessus</string>
 </resources>

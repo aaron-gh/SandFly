@@ -270,4 +270,34 @@
     <string name="script_builder_one_item_actions">القراءة كعنصر واحد، مع أزراره كإجراءات</string>
     <string name="script_builder_actions_value">الإجراءات: %1$s</string>
     <string name="script_builder_choose_read">اختيار ما تتم قراءته</string>
+    <string name="script_builder_record_action">تسجيل إجراء</string>
+    <string name="script_builder_recording_toast">جارٍ التسجيل. نفّذ الخطوات على عنصر واحد، ثم افتح إشعار \"جارٍ تسجيل إجراء\".</string>
+    <string name="script_builder_recording_notification">جارٍ تسجيل إجراء: %1$s</string>
+    <string name="script_builder_recording_notification_text">افتح الإشعار لحفظ الخطوات.</string>
+    <string name="script_builder_save">حفظ</string>
+    <string name="script_builder_record_again">إعادة التسجيل</string>
+    <string name="script_builder_nothing_recorded">لم يتم تسجيل أي خطوات</string>
+    <string name="script_builder_step_click_item">الضغط على العنصر</string>
+    <string name="script_builder_step_long_click_item">ضغطة مطوّلة على العنصر</string>
+    <string name="script_builder_step_click_in_item">الضغط على %1$s في العنصر</string>
+    <string name="script_builder_step_long_click_in_item">ضغطة مطوّلة على %1$s في العنصر</string>
+    <string name="script_builder_step_click_screen">الضغط على %1$s</string>
+    <string name="script_builder_step_long_click_screen">ضغطة مطوّلة على %1$s</string>
+    <string name="script_builder_button_actions">الأزرار الداخلية كإجراءات</string>
+    <string name="script_builder_skip_buttons">الأزرار المستبعدة</string>
+    <string name="script_builder_skip_buttons_hint">نصوص مفصولة بفواصل</string>
+    <string name="script_builder_read">تنظيم ما تتم قراءته</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="zero">%1$d جزء</item>
+        <item quantity="one">جزء واحد</item>
+        <item quantity="two">جزآن</item>
+        <item quantity="few">%1$d أجزاء</item>
+        <item quantity="many">%1$d جزءًا</item>
+        <item quantity="other">%1$d جزء</item>
+    </plurals>
+    <string name="script_builder_read_add">إضافة جزء</string>
+    <string name="script_builder_read_own">نص العنصر نفسه</string>
+    <string name="script_builder_read_place">العنصر %1$s بداخله</string>
+    <string name="script_builder_read_text_before">نص قبله</string>
+    <string name="script_builder_read_above">إذا كان فارغًا، استخدام العنصر الذي فوقه</string>
 </resources>

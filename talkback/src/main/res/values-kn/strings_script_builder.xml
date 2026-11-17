@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">ಒಂದೇ ಐಟಂ ಆಗಿ ಓದಿ, ಅದರ ಬಟನ್‌ಗಳನ್ನು ಕ್ರಿಯೆಗಳಾಗಿ</string>
     <string name="script_builder_actions_value">ಕ್ರಿಯೆಗಳು: %1$s</string>
     <string name="script_builder_choose_read">ಏನನ್ನು ಓದಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ಆರಿಸಿ</string>
+    <string name="script_builder_record_action">ಕ್ರಿಯೆಯನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಿ</string>
+    <string name="script_builder_recording_toast">ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ. ಒಂದು ಐಟಂನಲ್ಲಿ ಹಂತಗಳನ್ನು ಮಾಡಿ, ನಂತರ \"ಕ್ರಿಯೆಯನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ\" ನೋಟಿಫಿಕೇಶನ್ ತೆರೆಯಿರಿ.</string>
+    <string name="script_builder_recording_notification">ಕ್ರಿಯೆಯನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ: %1$s</string>
+    <string name="script_builder_recording_notification_text">ಹಂತಗಳನ್ನು ಸೇವ್ ಮಾಡಲು ತೆರೆಯಿರಿ.</string>
+    <string name="script_builder_save">ಸೇವ್ ಮಾಡಿ</string>
+    <string name="script_builder_record_again">ಮತ್ತೆ ರೆಕಾರ್ಡ್ ಮಾಡಿ</string>
+    <string name="script_builder_nothing_recorded">ಯಾವುದೇ ಹಂತಗಳನ್ನು ರೆಕಾರ್ಡ್ ಮಾಡಲಾಗಿಲ್ಲ</string>
+    <string name="script_builder_step_click_item">ಐಟಂ ಅನ್ನು ಒತ್ತಿ</string>
+    <string name="script_builder_step_long_click_item">ಐಟಂ ಅನ್ನು ದೀರ್ಘವಾಗಿ ಒತ್ತಿ</string>
+    <string name="script_builder_step_click_in_item">ಐಟಂನಲ್ಲಿ %1$s ಅನ್ನು ಒತ್ತಿ</string>
+    <string name="script_builder_step_long_click_in_item">ಐಟಂನಲ್ಲಿ %1$s ಅನ್ನು ದೀರ್ಘವಾಗಿ ಒತ್ತಿ</string>
+    <string name="script_builder_step_click_screen">%1$s ಅನ್ನು ಒತ್ತಿ</string>
+    <string name="script_builder_step_long_click_screen">%1$s ಅನ್ನು ದೀರ್ಘವಾಗಿ ಒತ್ತಿ</string>
+    <string name="script_builder_button_actions">ಒಳಗಿನ ಬಟನ್‌ಗಳು ಕ್ರಿಯೆಗಳಾಗಿ</string>
+    <string name="script_builder_skip_buttons">ಹೊರಗಿಡುವ ಬಟನ್‌ಗಳು</string>
+    <string name="script_builder_skip_buttons_hint">ಪಠ್ಯಗಳು, ಅಲ್ಪವಿರಾಮದಿಂದ ಪ್ರತ್ಯೇಕಿಸಲಾಗಿದೆ</string>
+    <string name="script_builder_read">ಏನನ್ನು ಓದಲಾಗುತ್ತದೆ ಎಂಬುದನ್ನು ಜೋಡಿಸಿ</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d ಭಾಗ</item>
+        <item quantity="other">%1$d ಭಾಗಗಳು</item>
+    </plurals>
+    <string name="script_builder_read_add">ಭಾಗವನ್ನು ಸೇರಿಸಿ</string>
+    <string name="script_builder_read_own">ಐಟಂನ ಸ್ವಂತ ಪಠ್ಯ</string>
+    <string name="script_builder_read_place">ಇದರೊಳಗಿನ ಐಟಂ %1$s</string>
+    <string name="script_builder_read_text_before">ಇದರ ಮೊದಲಿನ ಪಠ್ಯ</string>
+    <string name="script_builder_read_above">ಖಾಲಿಯಾಗಿದ್ದರೆ, ಮೇಲಿನ ಐಟಂ ಬಳಸಿ</string>
 </resources>

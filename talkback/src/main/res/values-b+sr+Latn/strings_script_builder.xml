@@ -252,4 +252,31 @@
     <string name="script_builder_one_item_actions">Čitaj kao jednu stavku, sa njenim dugmadima kao radnjama</string>
     <string name="script_builder_actions_value">Radnje: %1$s</string>
     <string name="script_builder_choose_read">Odaberite šta se čita</string>
+    <string name="script_builder_record_action">Snimi radnju</string>
+    <string name="script_builder_recording_toast">Snimanje. Izvršite korake na jednoj stavci, a zatim otvorite obaveštenje Snimanje radnje.</string>
+    <string name="script_builder_recording_notification">Snimanje radnje: %1$s</string>
+    <string name="script_builder_recording_notification_text">Otvorite da biste sačuvali korake.</string>
+    <string name="script_builder_save">Sačuvaj</string>
+    <string name="script_builder_record_again">Snimi ponovo</string>
+    <string name="script_builder_nothing_recorded">Nijedan korak nije snimljen</string>
+    <string name="script_builder_step_click_item">Pritisni stavku</string>
+    <string name="script_builder_step_long_click_item">Dugo pritisni stavku</string>
+    <string name="script_builder_step_click_in_item">Pritisni %1$s u stavci</string>
+    <string name="script_builder_step_long_click_in_item">Dugo pritisni %1$s u stavci</string>
+    <string name="script_builder_step_click_screen">Pritisni %1$s</string>
+    <string name="script_builder_step_long_click_screen">Dugo pritisni %1$s</string>
+    <string name="script_builder_button_actions">Dugmad unutar kao radnje</string>
+    <string name="script_builder_skip_buttons">Dugmad koja se izostavljaju</string>
+    <string name="script_builder_skip_buttons_hint">Tekstovi, razdvojeni zarezima</string>
+    <string name="script_builder_read">Rasporedi šta se čita</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d deo</item>
+        <item quantity="few">%1$d dela</item>
+        <item quantity="other">%1$d delova</item>
+    </plurals>
+    <string name="script_builder_read_add">Dodaj deo</string>
+    <string name="script_builder_read_own">Sopstveni tekst stavke</string>
+    <string name="script_builder_read_place">Stavka %1$s u njoj</string>
+    <string name="script_builder_read_text_before">Tekst pre njega</string>
+    <string name="script_builder_read_above">Ako je prazno, koristi stavku iznad</string>
 </resources>

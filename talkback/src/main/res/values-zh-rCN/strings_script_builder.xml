@@ -240,4 +240,29 @@
     <string name="script_builder_one_item_actions">作为一个项目朗读，其按钮作为操作</string>
     <string name="script_builder_actions_value">操作：%1$s</string>
     <string name="script_builder_choose_read">选择朗读的内容</string>
+    <string name="script_builder_record_action">录制操作</string>
+    <string name="script_builder_recording_toast">正在录制。在一个项目上完成各步骤，然后打开“正在录制操作”通知。</string>
+    <string name="script_builder_recording_notification">正在录制操作：%1$s</string>
+    <string name="script_builder_recording_notification_text">打开以保存步骤。</string>
+    <string name="script_builder_save">保存</string>
+    <string name="script_builder_record_again">重新录制</string>
+    <string name="script_builder_nothing_recorded">未录制任何步骤</string>
+    <string name="script_builder_step_click_item">按下项目</string>
+    <string name="script_builder_step_long_click_item">长按项目</string>
+    <string name="script_builder_step_click_in_item">按下项目中的“%1$s”</string>
+    <string name="script_builder_step_long_click_in_item">长按项目中的“%1$s”</string>
+    <string name="script_builder_step_click_screen">按下“%1$s”</string>
+    <string name="script_builder_step_long_click_screen">长按“%1$s”</string>
+    <string name="script_builder_button_actions">内部按钮作为操作</string>
+    <string name="script_builder_skip_buttons">要省略的按钮</string>
+    <string name="script_builder_skip_buttons_hint">文字，以逗号分隔</string>
+    <string name="script_builder_read">安排朗读内容</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="other">%1$d 个部分</item>
+    </plurals>
+    <string name="script_builder_read_add">添加部分</string>
+    <string name="script_builder_read_own">项目自身的文字</string>
+    <string name="script_builder_read_place">其中的项目 %1$s</string>
+    <string name="script_builder_read_text_before">部分前的文字</string>
+    <string name="script_builder_read_above">如为空，使用上方项目</string>
 </resources>

@@ -252,4 +252,31 @@
     <string name="script_builder_one_item_actions">Citește ca un singur element, cu butoanele sale ca acțiuni</string>
     <string name="script_builder_actions_value">Acțiuni: %1$s</string>
     <string name="script_builder_choose_read">Alege ce se citește</string>
+    <string name="script_builder_record_action">Înregistrează o acțiune</string>
+    <string name="script_builder_recording_toast">Se înregistrează. Execută pașii pe un singur element, apoi deschide notificarea „Se înregistrează o acțiune”.</string>
+    <string name="script_builder_recording_notification">Se înregistrează o acțiune: %1$s</string>
+    <string name="script_builder_recording_notification_text">Deschide pentru a salva pașii.</string>
+    <string name="script_builder_save">Salvează</string>
+    <string name="script_builder_record_again">Înregistrează din nou</string>
+    <string name="script_builder_nothing_recorded">Niciun pas înregistrat</string>
+    <string name="script_builder_step_click_item">Apasă elementul</string>
+    <string name="script_builder_step_long_click_item">Apasă lung elementul</string>
+    <string name="script_builder_step_click_in_item">Apasă %1$s din element</string>
+    <string name="script_builder_step_long_click_in_item">Apasă lung %1$s din element</string>
+    <string name="script_builder_step_click_screen">Apasă %1$s</string>
+    <string name="script_builder_step_long_click_screen">Apasă lung %1$s</string>
+    <string name="script_builder_button_actions">Butoanele din interior ca acțiuni</string>
+    <string name="script_builder_skip_buttons">Butoane de omis</string>
+    <string name="script_builder_skip_buttons_hint">Texte, separate prin virgule</string>
+    <string name="script_builder_read">Aranjează ce se citește</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d parte</item>
+        <item quantity="few">%1$d părți</item>
+        <item quantity="other">%1$d de părți</item>
+    </plurals>
+    <string name="script_builder_read_add">Adaugă o parte</string>
+    <string name="script_builder_read_own">Textul propriu al elementului</string>
+    <string name="script_builder_read_place">Elementul %1$s din el</string>
+    <string name="script_builder_read_text_before">Text înainte de ea</string>
+    <string name="script_builder_read_above">Dacă e goală, folosește elementul de mai sus</string>
 </resources>

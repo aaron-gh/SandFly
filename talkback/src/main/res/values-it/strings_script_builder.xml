@@ -252,4 +252,30 @@
     <string name="script_builder_one_item_actions">Leggi come un unico elemento, con i suoi pulsanti come azioni</string>
     <string name="script_builder_actions_value">Azioni: %1$s</string>
     <string name="script_builder_choose_read">Scegli cosa viene letto</string>
+    <string name="script_builder_record_action">Registra un\'azione</string>
+    <string name="script_builder_recording_toast">Registrazione in corso. Esegui i passaggi su un elemento, poi apri la notifica Registrazione di un\'azione.</string>
+    <string name="script_builder_recording_notification">Registrazione di un\'azione: %1$s</string>
+    <string name="script_builder_recording_notification_text">Apri per salvare i passaggi.</string>
+    <string name="script_builder_save">Salva</string>
+    <string name="script_builder_record_again">Registra di nuovo</string>
+    <string name="script_builder_nothing_recorded">Nessun passaggio registrato</string>
+    <string name="script_builder_step_click_item">Premi l\'elemento</string>
+    <string name="script_builder_step_long_click_item">Premi a lungo l\'elemento</string>
+    <string name="script_builder_step_click_in_item">Premi %1$s nell\'elemento</string>
+    <string name="script_builder_step_long_click_in_item">Premi a lungo %1$s nell\'elemento</string>
+    <string name="script_builder_step_click_screen">Premi %1$s</string>
+    <string name="script_builder_step_long_click_screen">Premi a lungo %1$s</string>
+    <string name="script_builder_button_actions">Pulsanti interni come azioni</string>
+    <string name="script_builder_skip_buttons">Pulsanti da escludere</string>
+    <string name="script_builder_skip_buttons_hint">Testi separati da virgole</string>
+    <string name="script_builder_read">Organizza ciò che viene letto</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d parte</item>
+        <item quantity="other">%1$d parti</item>
+    </plurals>
+    <string name="script_builder_read_add">Aggiungi una parte</string>
+    <string name="script_builder_read_own">Testo proprio dell\'elemento</string>
+    <string name="script_builder_read_place">Elemento %1$s al suo interno</string>
+    <string name="script_builder_read_text_before">Testo prima</string>
+    <string name="script_builder_read_above">Se vuoto, usa l\'elemento sopra</string>
 </resources>

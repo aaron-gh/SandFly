@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Lexo si një artikull, me butonat e tij si veprime</string>
     <string name="script_builder_actions_value">Veprimet: %1$s</string>
     <string name="script_builder_choose_read">Zgjidh çfarë lexohet</string>
+    <string name="script_builder_record_action">Regjistro një veprim</string>
+    <string name="script_builder_recording_toast">Po regjistrohet. Kryeni hapat në një artikull, pastaj hapni njoftimin “Po regjistrohet një veprim”.</string>
+    <string name="script_builder_recording_notification">Po regjistrohet një veprim: %1$s</string>
+    <string name="script_builder_recording_notification_text">Hapeni për të ruajtur hapat.</string>
+    <string name="script_builder_save">Ruaj</string>
+    <string name="script_builder_record_again">Regjistro përsëri</string>
+    <string name="script_builder_nothing_recorded">Nuk u regjistrua asnjë hap</string>
+    <string name="script_builder_step_click_item">Shtyp artikullin</string>
+    <string name="script_builder_step_long_click_item">Shtyp gjatë artikullin</string>
+    <string name="script_builder_step_click_in_item">Shtyp %1$s në artikull</string>
+    <string name="script_builder_step_long_click_in_item">Shtyp gjatë %1$s në artikull</string>
+    <string name="script_builder_step_click_screen">Shtyp %1$s</string>
+    <string name="script_builder_step_long_click_screen">Shtyp gjatë %1$s</string>
+    <string name="script_builder_button_actions">Butonat brenda si veprime</string>
+    <string name="script_builder_skip_buttons">Butonat për t\'u anashkaluar</string>
+    <string name="script_builder_skip_buttons_hint">Tekste, të ndara me presje</string>
+    <string name="script_builder_read">Rregullo çfarë lexohet</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d pjesë</item>
+        <item quantity="other">%1$d pjesë</item>
+    </plurals>
+    <string name="script_builder_read_add">Shto një pjesë</string>
+    <string name="script_builder_read_own">Teksti i vetë artikullit</string>
+    <string name="script_builder_read_place">Artikulli %1$s në të</string>
+    <string name="script_builder_read_text_before">Teksti para saj</string>
+    <string name="script_builder_read_above">Nëse është bosh, përdor artikullin më sipër</string>
 </resources>

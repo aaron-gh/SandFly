@@ -258,4 +258,32 @@
     <string name="script_builder_one_item_actions">Beri kot en element, z njegovimi gumbi kot dejanji</string>
     <string name="script_builder_actions_value">Dejanja: %1$s</string>
     <string name="script_builder_choose_read">Izberi, kaj se bere</string>
+    <string name="script_builder_record_action">Posnemi dejanje</string>
+    <string name="script_builder_recording_toast">Snemanje. Izvedite korake na enem elementu, nato odprite obvestilo »Snemanje dejanja«.</string>
+    <string name="script_builder_recording_notification">Snemanje dejanja: %1$s</string>
+    <string name="script_builder_recording_notification_text">Odprite, da shranite korake.</string>
+    <string name="script_builder_save">Shrani</string>
+    <string name="script_builder_record_again">Posnemi znova</string>
+    <string name="script_builder_nothing_recorded">Ni posnetih korakov</string>
+    <string name="script_builder_step_click_item">Pritisni element</string>
+    <string name="script_builder_step_long_click_item">Dolgo pritisni element</string>
+    <string name="script_builder_step_click_in_item">Pritisni %1$s v elementu</string>
+    <string name="script_builder_step_long_click_in_item">Dolgo pritisni %1$s v elementu</string>
+    <string name="script_builder_step_click_screen">Pritisni %1$s</string>
+    <string name="script_builder_step_long_click_screen">Dolgo pritisni %1$s</string>
+    <string name="script_builder_button_actions">Gumbi v njem kot dejanja</string>
+    <string name="script_builder_skip_buttons">Gumbi, ki se izpustijo</string>
+    <string name="script_builder_skip_buttons_hint">Besedila, ločena z vejicami</string>
+    <string name="script_builder_read">Uredi, kaj se bere</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d del</item>
+        <item quantity="two">%1$d dela</item>
+        <item quantity="few">%1$d deli</item>
+        <item quantity="other">%1$d delov</item>
+    </plurals>
+    <string name="script_builder_read_add">Dodaj del</string>
+    <string name="script_builder_read_own">Lastno besedilo elementa</string>
+    <string name="script_builder_read_place">Element %1$s v njem</string>
+    <string name="script_builder_read_text_before">Besedilo pred njim</string>
+    <string name="script_builder_read_above">Če je prazen, uporabi element zgoraj</string>
 </resources>

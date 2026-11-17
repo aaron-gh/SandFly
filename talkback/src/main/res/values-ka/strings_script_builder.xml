@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">წაკითხვა ერთ ერთეულად, მისი ღილაკებით მოქმედებებად</string>
     <string name="script_builder_actions_value">მოქმედებები: %1$s</string>
     <string name="script_builder_choose_read">აირჩიეთ, რა წაიკითხება</string>
+    <string name="script_builder_record_action">მოქმედების ჩაწერა</string>
+    <string name="script_builder_recording_toast">მიმდინარეობს ჩაწერა. შეასრულეთ ნაბიჯები ერთ ერთეულზე, შემდეგ გახსენით შეტყობინება „მოქმედების ჩაწერა“.</string>
+    <string name="script_builder_recording_notification">მოქმედების ჩაწერა: %1$s</string>
+    <string name="script_builder_recording_notification_text">გახსენით ნაბიჯების შესანახად.</string>
+    <string name="script_builder_save">შენახვა</string>
+    <string name="script_builder_record_again">ხელახლა ჩაწერა</string>
+    <string name="script_builder_nothing_recorded">ნაბიჯები არ ჩაიწერა</string>
+    <string name="script_builder_step_click_item">ერთეულზე დაჭერა</string>
+    <string name="script_builder_step_long_click_item">ერთეულზე ხანგრძლივად დაჭერა</string>
+    <string name="script_builder_step_click_in_item">ერთეულში %1$s-ზე დაჭერა</string>
+    <string name="script_builder_step_long_click_in_item">ერთეულში %1$s-ზე ხანგრძლივად დაჭერა</string>
+    <string name="script_builder_step_click_screen">%1$s-ზე დაჭერა</string>
+    <string name="script_builder_step_long_click_screen">%1$s-ზე ხანგრძლივად დაჭერა</string>
+    <string name="script_builder_button_actions">შიდა ღილაკები მოქმედებებად</string>
+    <string name="script_builder_skip_buttons">გამოსატოვებელი ღილაკები</string>
+    <string name="script_builder_skip_buttons_hint">ტექსტები, მძიმეებით გამოყოფილი</string>
+    <string name="script_builder_read">წასაკითხის მოწყობა</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d ნაწილი</item>
+        <item quantity="other">%1$d ნაწილი</item>
+    </plurals>
+    <string name="script_builder_read_add">ნაწილის დამატება</string>
+    <string name="script_builder_read_own">ერთეულის საკუთარი ტექსტი</string>
+    <string name="script_builder_read_place">შიდა ერთეული %1$s</string>
+    <string name="script_builder_read_text_before">ტექსტი მის წინ</string>
+    <string name="script_builder_read_above">თუ ცარიელია, ზემოთ მდებარე ერთეულის გამოყენება</string>
 </resources>

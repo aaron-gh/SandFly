@@ -476,4 +476,53 @@
     <string name="script_builder_actions_value">Actions: %1$s</string>
     <!-- Script builder: a list of the parts SandFly reads for an item, to choose which are read. -->
     <string name="script_builder_choose_read">Choose what is read</string>
+    <!-- Script builder: adds an action to a rule by recording what the user presses in the app. -->
+    <string name="script_builder_record_action">Record an action</string>
+    <!-- Script builder: shown when recording an action starts and the app opens. -->
+    <string name="script_builder_recording_toast">Recording. Do the steps on one item, then open the Recording an action notification.</string>
+    <!-- Script builder: title of the notification shown while an action is recorded. %1$s: the action's title. -->
+    <string name="script_builder_recording_notification">Recording an action: %1$s</string>
+    <!-- Script builder: text of the notification shown while an action is recorded. -->
+    <string name="script_builder_recording_notification_text">Open to save the steps.</string>
+    <!-- Script builder: button that saves a recorded action. -->
+    <string name="script_builder_save">Save</string>
+    <!-- Script builder: button that records an action again. -->
+    <string name="script_builder_record_again">Record again</string>
+    <!-- Script builder: shown when a recording ended with no item pressed. -->
+    <string name="script_builder_nothing_recorded">No steps recorded</string>
+    <!-- Script builder: a step of an action that presses the item the rule names. -->
+    <string name="script_builder_step_click_item">Press the item</string>
+    <!-- Script builder: a step of an action that long-presses the item the rule names. -->
+    <string name="script_builder_step_long_click_item">Long-press the item</string>
+    <!-- Script builder: a step that presses an item inside the rule's item. %1$s: the item. -->
+    <string name="script_builder_step_click_in_item">Press %1$s in the item</string>
+    <!-- Script builder: a step that long-presses an item inside the rule's item. %1$s: the item. -->
+    <string name="script_builder_step_long_click_in_item">Long-press %1$s in the item</string>
+    <!-- Script builder: a step that presses an item on screen, such as a menu entry. %1$s: the item. -->
+    <string name="script_builder_step_click_screen">Press %1$s</string>
+    <!-- Script builder: a step that long-presses an item on screen. %1$s: the item. -->
+    <string name="script_builder_step_long_click_screen">Long-press %1$s</string>
+    <!-- Script builder: switch that makes each button in the rule's item an action of it, whatever buttons it has. -->
+    <string name="script_builder_button_actions">Buttons inside as actions</string>
+    <!-- Script builder: texts of buttons left out of Buttons inside as actions. -->
+    <string name="script_builder_skip_buttons">Buttons to leave out</string>
+    <!-- Script builder: hint of the Buttons to leave out field. -->
+    <string name="script_builder_skip_buttons_hint">Texts, separated by commas</string>
+    <!-- Script builder: screen and row that set what is read for a rule's item, in parts taken from it. -->
+    <string name="script_builder_read">Arrange what is read</string>
+    <!-- Script builder: how many parts are read for a rule's item. -->
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d part</item>
+        <item quantity="other">%1$d parts</item>
+    </plurals>
+    <!-- Script builder: adds a part to what is read for a rule's item. -->
+    <string name="script_builder_read_add">Add a part</string>
+    <!-- Script builder: a part of what is read that is the item's own description or text. -->
+    <string name="script_builder_read_own">The item\'s own text</string>
+    <!-- Script builder: a part of what is read taken from a place in the item. %1$s: child numbers, such as 2.1. -->
+    <string name="script_builder_read_place">Item %1$s in it</string>
+    <!-- Script builder: text said before a part, such as "in reply to". -->
+    <string name="script_builder_read_text_before">Text before it</string>
+    <!-- Script builder: an empty part is taken from the nearest item above in the same list, such as a message's sender. -->
+    <string name="script_builder_read_above">If empty, use the item above</string>
 </resources>

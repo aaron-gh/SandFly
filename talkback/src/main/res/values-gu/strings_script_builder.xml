@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">એક આઇટમ તરીકે વાંચો, તેનાં બટનને ક્રિયાઓ તરીકે</string>
     <string name="script_builder_actions_value">ક્રિયાઓ: %1$s</string>
     <string name="script_builder_choose_read">શું વાંચવામાં આવે તે પસંદ કરો</string>
+    <string name="script_builder_record_action">ક્રિયા રેકોર્ડ કરો</string>
+    <string name="script_builder_recording_toast">રેકોર્ડ થઈ રહ્યું છે. એક આઇટમ પર પગલાં કરો, પછી \"ક્રિયા રેકોર્ડ થઈ રહી છે\" નોટિફિકેશન ખોલો.</string>
+    <string name="script_builder_recording_notification">ક્રિયા રેકોર્ડ થઈ રહી છે: %1$s</string>
+    <string name="script_builder_recording_notification_text">પગલાં સાચવવા માટે ખોલો.</string>
+    <string name="script_builder_save">સાચવો</string>
+    <string name="script_builder_record_again">ફરીથી રેકોર્ડ કરો</string>
+    <string name="script_builder_nothing_recorded">કોઈ પગલાં રેકોર્ડ થયા નથી</string>
+    <string name="script_builder_step_click_item">આઇટમ દબાવો</string>
+    <string name="script_builder_step_long_click_item">આઇટમ લાંબો સમય દબાવો</string>
+    <string name="script_builder_step_click_in_item">આઇટમમાં %1$s દબાવો</string>
+    <string name="script_builder_step_long_click_in_item">આઇટમમાં %1$s લાંબો સમય દબાવો</string>
+    <string name="script_builder_step_click_screen">%1$s દબાવો</string>
+    <string name="script_builder_step_long_click_screen">%1$s લાંબો સમય દબાવો</string>
+    <string name="script_builder_button_actions">અંદરના બટન ક્રિયાઓ તરીકે</string>
+    <string name="script_builder_skip_buttons">છોડી દેવાના બટન</string>
+    <string name="script_builder_skip_buttons_hint">ટેક્સ્ટ, અલ્પવિરામથી અલગ કરેલા</string>
+    <string name="script_builder_read">શું વંચાય છે તે ગોઠવો</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d ભાગ</item>
+        <item quantity="other">%1$d ભાગ</item>
+    </plurals>
+    <string name="script_builder_read_add">ભાગ ઉમેરો</string>
+    <string name="script_builder_read_own">આઇટમની પોતાની ટેક્સ્ટ</string>
+    <string name="script_builder_read_place">તેની અંદરની આઇટમ %1$s</string>
+    <string name="script_builder_read_text_before">તેની પહેલાંની ટેક્સ્ટ</string>
+    <string name="script_builder_read_above">ખાલી હોય, તો ઉપરની આઇટમનો ઉપયોગ કરો</string>
 </resources>

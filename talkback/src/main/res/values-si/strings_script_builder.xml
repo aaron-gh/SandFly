@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">එක් අයිතමයක් ලෙස කියවන්න, එහි බොත්තම් ක්‍රියා ලෙස</string>
     <string name="script_builder_actions_value">ක්‍රියා: %1$s</string>
     <string name="script_builder_choose_read">කියවන දේ තෝරන්න</string>
+    <string name="script_builder_record_action">ක්‍රියාවක් පටිගත කරන්න</string>
+    <string name="script_builder_recording_toast">පටිගත කරමින්. එක් අයිතමයක පියවර සිදු කර, ඉන්පසු “ක්‍රියාවක් පටිගත කරමින්” දැනුම්දීම විවෘත කරන්න.</string>
+    <string name="script_builder_recording_notification">ක්‍රියාවක් පටිගත කරමින්: %1$s</string>
+    <string name="script_builder_recording_notification_text">පියවර සුරැකීමට විවෘත කරන්න.</string>
+    <string name="script_builder_save">සුරකින්න</string>
+    <string name="script_builder_record_again">නැවත පටිගත කරන්න</string>
+    <string name="script_builder_nothing_recorded">පියවර කිසිවක් පටිගත නොකෙරිණි</string>
+    <string name="script_builder_step_click_item">අයිතමය ඔබන්න</string>
+    <string name="script_builder_step_long_click_item">අයිතමය දිගු ඔබන්න</string>
+    <string name="script_builder_step_click_in_item">අයිතමයේ ඇති %1$s ඔබන්න</string>
+    <string name="script_builder_step_long_click_in_item">අයිතමයේ ඇති %1$s දිගු ඔබන්න</string>
+    <string name="script_builder_step_click_screen">%1$s ඔබන්න</string>
+    <string name="script_builder_step_long_click_screen">%1$s දිගු ඔබන්න</string>
+    <string name="script_builder_button_actions">ඇතුළත බොත්තම් ක්‍රියා ලෙස</string>
+    <string name="script_builder_skip_buttons">මඟ හරින බොත්තම්</string>
+    <string name="script_builder_skip_buttons_hint">කොමා මගින් වෙන් කළ පෙළ</string>
+    <string name="script_builder_read">කියවන දේ සකසන්න</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">කොටස් %1$d</item>
+        <item quantity="other">කොටස් %1$d</item>
+    </plurals>
+    <string name="script_builder_read_add">කොටසක් එක් කරන්න</string>
+    <string name="script_builder_read_own">අයිතමයේම පෙළ</string>
+    <string name="script_builder_read_place">එහි ඇති අයිතමය %1$s</string>
+    <string name="script_builder_read_text_before">එයට පෙර පෙළ</string>
+    <string name="script_builder_read_above">හිස් නම්, ඉහළ අයිතමය භාවිත කරන්න</string>
 </resources>

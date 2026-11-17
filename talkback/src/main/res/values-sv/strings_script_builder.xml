@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Läs som ett objekt, med knapparna som åtgärder</string>
     <string name="script_builder_actions_value">Åtgärder: %1$s</string>
     <string name="script_builder_choose_read">Välj vad som läses</string>
+    <string name="script_builder_record_action">Spela in en åtgärd</string>
+    <string name="script_builder_recording_toast">Spelar in. Utför stegen på ett objekt och öppna sedan aviseringen ”Spelar in en åtgärd”.</string>
+    <string name="script_builder_recording_notification">Spelar in en åtgärd: %1$s</string>
+    <string name="script_builder_recording_notification_text">Öppna för att spara stegen.</string>
+    <string name="script_builder_save">Spara</string>
+    <string name="script_builder_record_again">Spela in igen</string>
+    <string name="script_builder_nothing_recorded">Inga steg inspelade</string>
+    <string name="script_builder_step_click_item">Tryck på objektet</string>
+    <string name="script_builder_step_long_click_item">Tryck länge på objektet</string>
+    <string name="script_builder_step_click_in_item">Tryck på %1$s i objektet</string>
+    <string name="script_builder_step_long_click_in_item">Tryck länge på %1$s i objektet</string>
+    <string name="script_builder_step_click_screen">Tryck på %1$s</string>
+    <string name="script_builder_step_long_click_screen">Tryck länge på %1$s</string>
+    <string name="script_builder_button_actions">Knappar inuti som åtgärder</string>
+    <string name="script_builder_skip_buttons">Knappar som utelämnas</string>
+    <string name="script_builder_skip_buttons_hint">Texter, avgränsade med kommatecken</string>
+    <string name="script_builder_read">Ordna det som läses</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d del</item>
+        <item quantity="other">%1$d delar</item>
+    </plurals>
+    <string name="script_builder_read_add">Lägg till en del</string>
+    <string name="script_builder_read_own">Objektets egen text</string>
+    <string name="script_builder_read_place">Objekt %1$s i det</string>
+    <string name="script_builder_read_text_before">Text före</string>
+    <string name="script_builder_read_above">Om tom, använd objektet ovanför</string>
 </resources>

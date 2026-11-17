@@ -252,4 +252,31 @@
     <string name="script_builder_one_item_actions">Čitaj kao jednu stavku, s njezinim gumbima kao radnjama</string>
     <string name="script_builder_actions_value">Radnje: %1$s</string>
     <string name="script_builder_choose_read">Odaberite što se čita</string>
+    <string name="script_builder_record_action">Snimi radnju</string>
+    <string name="script_builder_recording_toast">Snimanje. Izvršite korake na jednoj stavci, a zatim otvorite obavijest Snimanje radnje.</string>
+    <string name="script_builder_recording_notification">Snimanje radnje: %1$s</string>
+    <string name="script_builder_recording_notification_text">Otvorite da biste spremili korake.</string>
+    <string name="script_builder_save">Spremi</string>
+    <string name="script_builder_record_again">Snimi ponovo</string>
+    <string name="script_builder_nothing_recorded">Nije snimljen nijedan korak</string>
+    <string name="script_builder_step_click_item">Pritisni stavku</string>
+    <string name="script_builder_step_long_click_item">Dugo pritisni stavku</string>
+    <string name="script_builder_step_click_in_item">Pritisni %1$s u stavci</string>
+    <string name="script_builder_step_long_click_in_item">Dugo pritisni %1$s u stavci</string>
+    <string name="script_builder_step_click_screen">Pritisni %1$s</string>
+    <string name="script_builder_step_long_click_screen">Dugo pritisni %1$s</string>
+    <string name="script_builder_button_actions">Gumbi unutar kao radnje</string>
+    <string name="script_builder_skip_buttons">Gumbi koji se izostavljaju</string>
+    <string name="script_builder_skip_buttons_hint">Tekstovi, odvojeni zarezima</string>
+    <string name="script_builder_read">Rasporedi što se čita</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d dio</item>
+        <item quantity="few">%1$d dijela</item>
+        <item quantity="other">%1$d dijelova</item>
+    </plurals>
+    <string name="script_builder_read_add">Dodaj dio</string>
+    <string name="script_builder_read_own">Vlastiti tekst stavke</string>
+    <string name="script_builder_read_place">Stavka %1$s u njoj</string>
+    <string name="script_builder_read_text_before">Tekst prije njega</string>
+    <string name="script_builder_read_above">Ako je prazno, upotrijebi stavku iznad</string>
 </resources>

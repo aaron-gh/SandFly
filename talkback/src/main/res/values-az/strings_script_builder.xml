@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Bir element kimi oxuyun, düymələri əməliyyat kimi</string>
     <string name="script_builder_actions_value">Əməliyyatlar: %1$s</string>
     <string name="script_builder_choose_read">Nəyin oxunduğunu seçin</string>
+    <string name="script_builder_record_action">Əməliyyat qeydə alın</string>
+    <string name="script_builder_recording_toast">Qeydə alınır. Addımları bir element üzərində edin, sonra \"Əməliyyat qeydə alınır\" bildirişini açın.</string>
+    <string name="script_builder_recording_notification">Əməliyyat qeydə alınır: %1$s</string>
+    <string name="script_builder_recording_notification_text">Addımları yadda saxlamaq üçün açın.</string>
+    <string name="script_builder_save">Yadda saxla</string>
+    <string name="script_builder_record_again">Yenidən qeydə alın</string>
+    <string name="script_builder_nothing_recorded">Heç bir addım qeydə alınmayıb</string>
+    <string name="script_builder_step_click_item">Elementə basın</string>
+    <string name="script_builder_step_long_click_item">Elementə uzun basın</string>
+    <string name="script_builder_step_click_in_item">Elementdə %1$s üzərinə basın</string>
+    <string name="script_builder_step_long_click_in_item">Elementdə %1$s üzərinə uzun basın</string>
+    <string name="script_builder_step_click_screen">%1$s üzərinə basın</string>
+    <string name="script_builder_step_long_click_screen">%1$s üzərinə uzun basın</string>
+    <string name="script_builder_button_actions">İçindəki düymələr əməliyyat kimi</string>
+    <string name="script_builder_skip_buttons">Çıxarılacaq düymələr</string>
+    <string name="script_builder_skip_buttons_hint">Mətnlər, vergüllə ayrılmış</string>
+    <string name="script_builder_read">Oxunanı tənzimləyin</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d hissə</item>
+        <item quantity="other">%1$d hissə</item>
+    </plurals>
+    <string name="script_builder_read_add">Hissə əlavə edin</string>
+    <string name="script_builder_read_own">Elementin öz mətni</string>
+    <string name="script_builder_read_place">İçindəki element %1$s</string>
+    <string name="script_builder_read_text_before">Ondan əvvəlki mətn</string>
+    <string name="script_builder_read_above">Boşdursa, yuxarıdakı elementi istifadə edin</string>
 </resources>

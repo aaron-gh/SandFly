@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Lesa sem eitt atriði, með hnappa þess sem aðgerðir</string>
     <string name="script_builder_actions_value">Aðgerðir: %1$s</string>
     <string name="script_builder_choose_read">Veldu hvað er lesið</string>
+    <string name="script_builder_record_action">Taka upp aðgerð</string>
+    <string name="script_builder_recording_toast">Upptaka í gangi. Framkvæmdu skrefin á einu atriði og opnaðu síðan tilkynninguna Tekur upp aðgerð.</string>
+    <string name="script_builder_recording_notification">Tekur upp aðgerð: %1$s</string>
+    <string name="script_builder_recording_notification_text">Opnaðu til að vista skrefin.</string>
+    <string name="script_builder_save">Vista</string>
+    <string name="script_builder_record_again">Taka upp aftur</string>
+    <string name="script_builder_nothing_recorded">Engin skref tekin upp</string>
+    <string name="script_builder_step_click_item">Ýta á atriðið</string>
+    <string name="script_builder_step_long_click_item">Halda atriðinu inni</string>
+    <string name="script_builder_step_click_in_item">Ýta á %1$s í atriðinu</string>
+    <string name="script_builder_step_long_click_in_item">Halda %1$s inni í atriðinu</string>
+    <string name="script_builder_step_click_screen">Ýta á %1$s</string>
+    <string name="script_builder_step_long_click_screen">Halda %1$s inni</string>
+    <string name="script_builder_button_actions">Hnappar inni sem aðgerðir</string>
+    <string name="script_builder_skip_buttons">Hnappar sem sleppt er</string>
+    <string name="script_builder_skip_buttons_hint">Textar, aðskildir með kommum</string>
+    <string name="script_builder_read">Raða því sem er lesið</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d hluti</item>
+        <item quantity="other">%1$d hlutar</item>
+    </plurals>
+    <string name="script_builder_read_add">Bæta við hluta</string>
+    <string name="script_builder_read_own">Eigin texti atriðisins</string>
+    <string name="script_builder_read_place">Atriði %1$s inni í því</string>
+    <string name="script_builder_read_text_before">Texti á undan</string>
+    <string name="script_builder_read_above">Ef autt, nota atriðið fyrir ofan</string>
 </resources>

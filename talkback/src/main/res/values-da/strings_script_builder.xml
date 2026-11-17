@@ -246,4 +246,30 @@
     <string name="script_builder_one_item_actions">Læs som ét element, med dets knapper som handlinger</string>
     <string name="script_builder_actions_value">Handlinger: %1$s</string>
     <string name="script_builder_choose_read">Vælg, hvad der læses</string>
+    <string name="script_builder_record_action">Optag en handling</string>
+    <string name="script_builder_recording_toast">Optager. Udfør trinnene på ét element, og åbn derefter notifikationen Optager en handling.</string>
+    <string name="script_builder_recording_notification">Optager en handling: %1$s</string>
+    <string name="script_builder_recording_notification_text">Åbn for at gemme trinnene.</string>
+    <string name="script_builder_save">Gem</string>
+    <string name="script_builder_record_again">Optag igen</string>
+    <string name="script_builder_nothing_recorded">Ingen trin optaget</string>
+    <string name="script_builder_step_click_item">Tryk på elementet</string>
+    <string name="script_builder_step_long_click_item">Langt tryk på elementet</string>
+    <string name="script_builder_step_click_in_item">Tryk på %1$s i elementet</string>
+    <string name="script_builder_step_long_click_in_item">Langt tryk på %1$s i elementet</string>
+    <string name="script_builder_step_click_screen">Tryk på %1$s</string>
+    <string name="script_builder_step_long_click_screen">Langt tryk på %1$s</string>
+    <string name="script_builder_button_actions">Knapper indeni som handlinger</string>
+    <string name="script_builder_skip_buttons">Knapper, der udelades</string>
+    <string name="script_builder_skip_buttons_hint">Tekster adskilt med kommaer</string>
+    <string name="script_builder_read">Arrangér det, der læses</string>
+    <plurals name="script_builder_read_parts">
+        <item quantity="one">%1$d del</item>
+        <item quantity="other">%1$d dele</item>
+    </plurals>
+    <string name="script_builder_read_add">Tilføj en del</string>
+    <string name="script_builder_read_own">Elementets egen tekst</string>
+    <string name="script_builder_read_place">Element %1$s i det</string>
+    <string name="script_builder_read_text_before">Tekst før det</string>
+    <string name="script_builder_read_above">Hvis tom, brug elementet ovenfor</string>
 </resources>
