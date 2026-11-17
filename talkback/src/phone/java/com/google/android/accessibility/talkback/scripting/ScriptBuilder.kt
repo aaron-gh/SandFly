@@ -94,6 +94,42 @@ object ScriptBuilder {
       e.message
     }
 
+  /**
+   * What the user still has to do for [rule], in words, or null when it is finished. Problems the
+   * builder knows are named plainly; others are the manifest's own message.
+   */
+  fun ruleProblemText(context: Context, rule: JSONObject): String? {
+    val problem = ruleProblem(rule) ?: return null
+    val action = rule.optJSONArray("actions").objects().firstOrNull { action ->
+      val key = ACTION_KINDS.firstOrNull(action::has)
+      val target = when {
+        key == null -> null
+        key == "speak" -> (action.opt("speak") as? JSONObject)?.optJSONObject("textOf")
+        else -> action.optJSONObject(key)
+      }
+      key == null || (target != null && target.length() == 0)
+    }
+    return when {
+      isEmptyQuery(rule.optJSONObject("match")) -> context.getString(R.string.script_builder_problem_item)
+      listOf("readBefore", "readAfter", "activate").any { rule.has(it) && isEmptyQuery(rule.optJSONObject(it)) } ->
+        context.getString(R.string.script_builder_problem_other_item)
+      action != null -> context.getString(R.string.script_builder_problem_action, action.optString("title"))
+      rule.keys().asSequence().none { it in CHANGES } && rule.optJSONArray("actions").objects().isEmpty() ->
+        context.getString(R.string.script_builder_problem_change)
+      else -> problem
+    }
+  }
+
+  /** What the user still has to do for the reading control or trigger [entry], or null. */
+  fun entryProblemText(context: Context, entry: JSONObject, problem: String?): String? =
+    when {
+      problem == null -> null
+      entry.has("match") && isEmptyQuery(entry.optJSONObject("match")) -> context.getString(R.string.script_builder_problem_item)
+      else -> problem
+    }
+
+  private fun isEmptyQuery(query: JSONObject?): Boolean = query == null || query.length() == 0
+
   /** What is wrong with the reading control [item], or null when it is finished. */
   fun navigationProblem(item: JSONObject): String? {
     val manifest =

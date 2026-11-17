@@ -144,4 +144,34 @@ class ScriptBuilderScreensTest {
     assertEquals("New post", installed.rules[0].match!!.contains)
     assertEquals(setOf(ScriptPermission.SPEECH), installed.permissions)
   }
+
+  @Test
+  fun addRuleForInspectedItem_makesAScriptForItsApp() {
+    val button =
+      AccessibilityNodeInfo.obtain().apply {
+        contentDescription = "New post"
+        isClickable = true
+        isVisibleToUser = true
+        packageName = "com.example.social"
+      }
+    ItemInspector.report(context, AccessibilityNodeInfoCompat.wrap(button))
+
+    val pick = open(ScriptRulePickFragment::class.java, Bundle())
+    pick.click("New script for com.example.social")
+    assertTrue(current() is ScriptRuleFragment)
+    current().click("Label")
+    enterText("Compose")
+
+    val script = ScriptStore.get(context).all().first { it.manifest.name == "com.example.social" }
+    assertEquals(listOf("com.example.social"), script.manifest.apps.map { it.packageName })
+    assertEquals("Compose", script.manifest.rules.single().label)
+    assertEquals("New post", script.manifest.rules.single().match!!.contains)
+  }
+
+  @Test
+  fun unfinishedRule_saysWhatItNeeds() {
+    val page = open(ScriptBuilderFragment::class.java, Bundle().apply { putString(ScriptScreenFragment.ARG_ID, id) })
+    page.click("Add rule")
+    assertTrue(all(current().preferenceScreen).any { it.title?.toString() == "Not used: set the item" })
+  }
 }

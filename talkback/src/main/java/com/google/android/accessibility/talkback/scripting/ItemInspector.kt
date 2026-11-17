@@ -70,6 +70,7 @@ object ItemInspector {
     SharedPreferencesUtils.getSharedPreferences(context)
       .edit()
       .putString(PREF_LAST_QUERY, scriptQuery(node).toString())
+      .putString(PREF_LAST_APP, node.packageName?.toString())
       .apply()
     val role = ScriptRoles.role(node)
     val script =
@@ -136,6 +137,11 @@ object ItemInspector {
         null
       }
     }
+
+  /** The package of the app of the item last inspected, or null. */
+  @JvmStatic
+  fun lastApp(context: Context): String? =
+    SharedPreferencesUtils.getSharedPreferences(context).getString(PREF_LAST_APP, null)
 
   /** [sections] as text: each heading, then its lines, with a blank line between parts. */
   fun plainText(context: Context, sections: List<Section>): String =
@@ -245,6 +251,7 @@ object ItemInspector {
     ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue<Runnable>())
   }
   private const val PREF_LAST_QUERY = "item_inspector_last_query"
+  private const val PREF_LAST_APP = "item_inspector_last_app"
   private const val MAX_DEPTH = 60
   private const val MAX_ITEMS = 2000
   /** The most items in the inspected item whose texts Inspect focused item reads. */
