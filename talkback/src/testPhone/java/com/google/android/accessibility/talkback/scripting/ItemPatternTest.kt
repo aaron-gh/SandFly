@@ -177,4 +177,26 @@ class ItemInspectorSampleTest {
     assertEquals(3, sample.getJSONObject("item").getJSONArray("children").length())
     assertEquals(listOf("Add Friend", "Remove"), ItemPattern.buttons(sample).map { it.title })
   }
+
+  @Test
+  fun itemsInside_showEachItemsLevelAndClass() {
+    val list = node("androidx.recyclerview.widget.RecyclerView")
+    val row = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrap(row(list, "Allison Broderick"))
+    val inside =
+      ItemInspector.report(RuntimeEnvironmentHolder.context, row)
+        .first { it.title == com.google.android.accessibility.talkback.R.string.item_details_inside }
+        .lines
+    assertEquals(
+      listOf(
+        "level 1: TextView; text: Allison Broderick",
+        "level 1: Button; clickable; description: Add Friend",
+        "level 1: Button; clickable; description: Remove Allison Broderick",
+      ),
+      inside.map { ItemInspector.lineText(it) },
+    )
+  }
+}
+
+private object RuntimeEnvironmentHolder {
+  val context: android.content.Context get() = org.robolectric.RuntimeEnvironment.getApplication()
 }
