@@ -176,6 +176,26 @@ class SymbolDictionaryTest {
   }
 
   @Test
+  fun hiddenSymbolInTextIsLeftOutOfSpeechButSaidOnItsOwn() {
+    val context = RuntimeEnvironment.getApplication()
+    SymbolDictionary.write(prefs, listOf(entry("!", "bang")))
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown("com.example")
+    SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.SOME)
+    try {
+      assertNull(SpeechDictionary.apply("Hello!"))
+      assertEquals("bang", SpeechDictionary.apply("!").toString())
+      // Braille text keeps the entry.
+      assertEquals("Hello bang", SymbolDictionary.apply("Hello !", "com.example")?.toString())
+    } finally {
+      SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.ALL)
+    }
+    assertEquals("Hellobang", SpeechDictionary.apply("Hello!").toString())
+  }
+
+  @Test
   fun characterInSandFlyWindowsKeepsItsName() {
     val context = RuntimeEnvironment.getApplication()
     SymbolDictionary.write(prefs, listOf(entry("#", "hashmark")))

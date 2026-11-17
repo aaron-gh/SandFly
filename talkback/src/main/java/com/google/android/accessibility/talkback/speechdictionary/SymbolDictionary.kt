@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.speechdictionary
 
 import android.content.SharedPreferences
 import android.text.SpannableStringBuilder
+import com.google.android.accessibility.utils.output.SpeechCleanupUtils
 
 /**
  * Symbol dictionary: symbols and symbol sequences replaced in speech and on a braille display. An
@@ -52,17 +53,28 @@ object SymbolDictionary {
   }
 
   /** Returns [text] with the entries applied for [app], or null when none changed it. */
-  fun apply(text: CharSequence, app: String): CharSequence? = apply(text, entries, app)
+  fun apply(text: CharSequence, app: String, forSpeech: Boolean = false): CharSequence? =
+    apply(text, entries, app, forSpeech)
 
-  internal fun apply(text: CharSequence, entries: List<DictionaryEntry>, app: String): CharSequence? {
+  internal fun apply(
+    text: CharSequence,
+    entries: List<DictionaryEntry>,
+    app: String,
+    forSpeech: Boolean = false,
+  ): CharSequence? {
     if (entries.isEmpty()) return null
     var builder: SpannableStringBuilder? = null
     var subject = text.toString()
+    // A symbol on its own, such as when moving by character, is said whatever the punctuation
+    // verbosity, so its entry still applies.
+    val inText = forSpeech && subject.trim().length > 1
     for (entry in entries) {
       if (entry.app.isNotEmpty() && entry.app != app) continue
       val find = entry.replacement.find
       val replace = entry.replacement.replace
       if (find.isEmpty()) continue
+      // A symbol in text that the punctuation verbosity leaves out of speech stays out.
+      if (inText && find.length == 1 && SpeechCleanupUtils.isHiddenByVerbosity(find[0])) continue
       val starts = ArrayList<Int>()
       var index = subject.indexOf(find)
       while (index >= 0) {
