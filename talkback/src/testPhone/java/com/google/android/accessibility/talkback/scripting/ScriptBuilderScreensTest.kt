@@ -114,6 +114,14 @@ class ScriptBuilderScreensTest {
     idle()
   }
 
+  private fun chooseRow(title: String) {
+    val dialog = ShadowDialog.getLatestDialog() as AlertDialog
+    val list = dialog.listView
+    val index = (0 until list.adapter.count).first { list.adapter.getItem(it).toString() == title }
+    list.performItemClick(list.adapter.getView(index, null, list), index, index.toLong())
+    idle()
+  }
+
   @Test
   fun ruleMadeFromTheInspectedItemIsInstalled() {
     val button =
@@ -209,5 +217,40 @@ class ScriptBuilderScreensTest {
     query.row("States")
     query.row("Add item it is inside")
     open(ScriptRuleFragment::class.java, args { putInt(ScriptRuleFragment.ARG_INDEX, 0) }).row("Duplicate rule")
+  }
+
+  @Test
+  fun conditionsFromTheInspectedItemCanBeUnset() {
+    val button =
+      AccessibilityNodeInfo.obtain().apply {
+        contentDescription = "New post"
+        isClickable = true
+        isVisibleToUser = true
+      }
+    ItemInspector.report(context, AccessibilityNodeInfoCompat.wrap(button))
+    val page = open(ScriptBuilderFragment::class.java, Bundle().apply { putString(ScriptScreenFragment.ARG_ID, id) })
+    page.click("Add rule")
+    current().click("Item")
+    current().click("Use the inspected item")
+    fun match() = ScriptBuilder.draft(ScriptStore.get(context), id)!!.getJSONArray("rules").getJSONObject(0).getJSONObject("match")
+    assertEquals("contentDescription", match().optString("field"))
+    assertEquals("clickable", match().optString("kind"))
+
+    current().click("Item type")
+    chooseRow("Remove")
+    assertTrue(match().toString(), !match().has("kind"))
+
+    current().click("Text")
+    chooseRow("Remove")
+    assertTrue(match().toString(), !match().has("contains") && !match().has("field"))
+
+    // An unset condition opens its dialog at once.
+    current().click("Text")
+    enterText("Post")
+    assertEquals("Post", match().optString("contains"))
+    current().click("Text")
+    chooseRow("Edit")
+    enterText("")
+    assertTrue(match().toString(), !match().has("contains"))
   }
 }
