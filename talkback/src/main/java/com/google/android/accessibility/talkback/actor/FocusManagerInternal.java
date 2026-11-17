@@ -367,6 +367,10 @@ public class FocusManagerInternal {
       return true;
     }
 
+    if (keepFocusOnSheetsCell(eventId)) {
+      return true;
+    }
+
     if (!FocusProcessorForScreenStateChange.focusesNewWindows()) {
       // Only replace focus that was lost on this screen, such as when the focused item is removed.
       return focusedSinceScreenChange(state) && requestA11yFocusFromLastFocusRecord(eventId);
@@ -398,6 +402,44 @@ public class FocusManagerInternal {
         toFeedbackPart(INITIAL_FOCUS_FIRST_CONTENT, screenState.getStableScreenState()));
 
     return pipeline.returnFeedback(Feedback.create(eventId, feedbackFailovers));
+  }
+
+  /**
+   * Keeps focus on a Google Sheets cell Sheets stopped listing for a moment, instead of letting
+   * focus fall back to the grid's range label. While a Sheets move is in progress, focus is left to
+   * the move.
+   *
+   * @return true if focus was left alone or placed on the cell, without speaking
+   */
+  private boolean keepFocusOnSheetsCell(EventId eventId) {
+    @Nullable FocusActionRecord record = history.getLastFocusActionRecord();
+    if (record == null) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat lastFocus = record.getFocusedNode();
+    if (!SheetsGrid.isCell(lastFocus)) {
+      return false;
+    }
+    if (SheetsGrid.isMoving()) {
+      LogUtils.d(TAG, "EnsureOnScreen: Return, a Sheets move is in progress.");
+      return true;
+    }
+    AccessibilityNodeInfoCompat cell = SheetsGrid.sameCellListedAgain(lastFocus);
+    if (cell == null) {
+      return false;
+    }
+    LogUtils.d(TAG, "EnsureOnScreen: Focus returns to the Sheets cell.");
+    FocusActionInfo focusActionInfo =
+        FocusActionInfo.builder()
+            .setForceMuteFeedback(true)
+            .setSourceAction(FocusActionInfo.ENSURE_ON_SCREEN)
+            .build();
+    return pipeline.returnFeedback(
+        eventId,
+        Focus.builder()
+            .setAction(Focus.Action.FOCUS)
+            .setFocusActionInfo(focusActionInfo)
+            .setTarget(cell));
   }
 
   /**
