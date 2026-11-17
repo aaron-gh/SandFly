@@ -131,4 +131,26 @@ class ScriptBuilderLuaTest {
     engine.close()
     assertEquals("Battery low x", JSONObject(answer!!).getString("text"))
   }
+
+  @Test
+  fun deviceAndSystemCalls_reachSandFly() {
+    val host = Host()
+    val engine = LuaEngine(host, false)
+    engine.start(prelude, 32L * 1024 * 1024)
+
+    engine.runMain(
+      "local manifest = {}\n" +
+        "sf.device.get('wifi')\nsf.device.media('playPause')\nsf.system.setTimer(60, 'Tea')\n" +
+        "sf.system.setAlarm(7, 30)\nsf.system.call('123')\nsf.system.message('123', 'Hi')\nsf.system.camera(true)",
+      "main.lua",
+    )
+
+    assertEquals(emptyList<String>(), host.errors)
+    val calls = host.calls.map { it.first }
+    for (name in listOf("device.get", "device.media", "system.setTimer", "system.setAlarm", "system.call", "system.message", "system.camera")) {
+      assertTrue("$name in $calls", name in calls)
+    }
+    assertEquals(60, host.calls.first { it.first == "system.setTimer" }.second!!.getInt("seconds"))
+    engine.close()
+  }
 }

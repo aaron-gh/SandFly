@@ -414,4 +414,12 @@ class ManifestParserTest {
     assertEquals(ScriptSetting.Type.SWITCH, setting.type)
     assertEquals("false", setting.defaultJson)
   }
+
+  @Test
+  fun commandsTheUserAssigns_needNoInputPermission() {
+    val plain = parse(""","commands":[{"id":"torch","title":"Torch"}]""")
+    assertEquals(listOf("torch"), plain.commands.map { it.id })
+    assertTrue(rejects(""","commands":[{"id":"torch","title":"Torch","gesture":"swipeUpThenRight"}]""").contains("input"))
+    assertTrue(rejects(""","commands":[{"id":"torch","title":"Torch","menu":true}]""").contains("input"))
+  }
 }

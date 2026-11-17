@@ -349,7 +349,7 @@ commands = {
 *   `menu = true` adds the command to the SandFly menu.
 *   `control = true` adds it to the reading controls. Swiping up or down with the control selected runs the command with `direction` set to `'previous'` or `'next'`.
 
-Commands need the `input` permission. The user can turn each gesture and key off on the script's page, or assign others. While a script runs, its gestures and keys come before SandFly's own, except for the gesture assigned to **Turn all scripts on or off**.
+A command needs no permission of its own: the user assigns it in **Commands**, so a script that only does a task when its command runs, such as turning on the flashlight, asks only for what the task needs. *Version 6:* a command with its own `gesture`, `keys`, `menu` or `control` needs the `input` permission; before, every command did. The user can turn each gesture and key off on the script's page, or assign others. While a script runs, its gestures and keys come before SandFly's own, except for the gesture assigned to **Turn all scripts on or off**.
 
 ```lua
 sf.onCommand('unread', function(event)
@@ -535,6 +535,7 @@ The form has `form:get(id)`, `form:values()`, `form:set(id, { value, label, item
 *   `sf.clipboard.get()` and `sf.clipboard.set(text)`.
 *   `sf.system.back()`, `home()`, `recents()`, `notifications()`, `quickSettings()`, `powerDialog()`, `lockScreen()`, `takeScreenshot()` and `allApps()`. `takeScreenshot()` takes Android's own screenshot, and the image doesn't reach the script.
 *   `sf.system.openApp(packageName)`.
+*   *Version 6.* `sf.system.setTimer(seconds, label)` and `sf.system.setAlarm(hour, minute, label)` start a timer or set an alarm in the clock app, without opening it where the app allows. `sf.system.call(number)` calls a number, or opens the dialler when SandFly may not call. `sf.system.message(number, text)` opens the messaging app with a message, to send. `sf.system.camera(video)` opens the camera, for a video when `video` is `true`. Each gives whether an app took it.
 *   `sf.system.apps()` *Version 2* lists the apps with a launcher icon: `{ package, label }`, by name.
 *   `sf.system.openUrl(url)` *Version 2* opens an `http`, `https`, `mailto`, `tel`, `sms`, `smsto`, `geo` or `market` address in the app for it.
 *   `sf.system.share(text, { title, subject })` *Version 2* opens Android's share sheet with the text.
@@ -552,6 +553,8 @@ The form has `form:get(id)`, `form:values()`, `form:set(id, { value, label, item
 *   `sf.device.network()` is `{ connected, wifi, cellular, ethernet, vpn, metered }`.
 *   `sf.device.volume(stream)` is `{ level, min, max, muted }` for `'media'`, `'ring'`, `'notification'`, `'alarm'`, `'call'`, `'system'` or `'accessibility'`. The stream is `'media'` if left out. `sf.device.setVolume(stream, level)` changes it, and needs `system`.
 *   `sf.device.ringerMode()` is `'normal'`, `'vibrate'` or `'silent'`. `sf.device.setRingerMode(mode)` changes it, and needs `system`. Android refuses some changes while Do Not Disturb is on, and the call raises an error then.
+*   *Version 6.* `sf.device.controls()` lists the device's controls of SandFly's quick settings panel by name: `wifi`, `bluetooth`, `mobileData`, `hotspot`, `airplaneMode`, `dataSaver`, `doNotDisturb`, `soundMode`, `flashlight`, `flashlightBrightness`, `location`, `autoRotate`, `batterySaver`, `darkTheme`, `nightLight`, `extraDim`, `colorInversion`, `colorCorrection`, `nfc`, `microphoneAccess`, `cameraAccess`, `brightness`, `adaptiveBrightness`, `screenTimeout`, `fontSize` and the volumes `mediaVolume`, `callVolume`, `ringVolume`, `notificationVolume`, `alarmVolume`, `accessibilityVolume` and `systemVolume`. `sf.device.get(name)` reads one: `true` or `false` for a switch, `{ value, min, max }` for a slider, `{ value, label, options }` for a choice, or `nil`. `sf.device.set(name, value)` [waits](#waiting) and changes it: a switch to `true`, `false`, `'on'`, `'off'` or `'toggle'`; a slider to a number, a percent such as `'50%'`, or `'+1'` or `'-1'`; a choice to an option's value or label, or `'next'`. It gives `true`, or `false` when it couldn't, such as Wi-Fi without Shizuku, or a setting whose permission SandFly doesn't have, when Android's page for it opens. It needs `system`.
+*   *Version 6.* `sf.device.media(key)` presses a media key for the app that plays media: `'playPause'`, `'play'`, `'pause'`, `'next'`, `'previous'`, `'stop'`, `'rewind'` or `'fastForward'`. It needs `system`.
 
 ### Translating text
 

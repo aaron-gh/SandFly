@@ -309,8 +309,11 @@ class ManifestParser(private val strict: Boolean) {
 
   private fun commands(array: JSONArray?, permissions: Set<ScriptPermission>): List<ScriptCommand> {
     val list = array.objects("command", MAX_COMMANDS)
-    manifestCheck(list.isEmpty() || ScriptPermission.INPUT in permissions) {
-      "Commands need the input permission"
+    // A command the user assigns in Commands needs nothing; one that brings its own gesture, keys,
+    // menu item or reading control adds to SandFly's input.
+    val bindsItself = list.any { command -> BINDING_KEYS.any { command.has(it) && !command.isNull(it) && command.opt(it) != false } }
+    manifestCheck(!bindsItself || ScriptPermission.INPUT in permissions) {
+      "Commands with a gesture, keys, menu or control need the input permission"
     }
     val ids = HashSet<String>()
     return list.map { command ->
@@ -403,6 +406,7 @@ class ManifestParser(private val strict: Boolean) {
     const val MIN_LONG_PRESS_AFTER = 100
     const val MAX_LONG_PRESS_AFTER = 10_000
     val NAVIGATION_KEYS = setOf("title", "id", "match")
+    val BINDING_KEYS = listOf("gesture", "keys", "menu", "control")
     val RULE_KEYS =
       setOf(
         "id",

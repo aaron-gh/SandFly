@@ -793,6 +793,92 @@ class MacroFragment : MacroEditorFragment() {
       Macros.DoKind.PLAY_TONE -> number(880, 20..20_000) { then(Macros.Do(kind, number = it)) }
       Macros.DoKind.OPEN_SETTINGS -> pick(Macros.SETTINGS_PAGES) { then(Macros.Do(kind, it)) }
       Macros.DoKind.SET_RINGER -> pick(Macros.RINGER_MODES) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.DEVICE_CONTROL -> {
+        val names = DeviceActions.availableControls(requireContext())
+        choose(title, names.map { controlTitle(it) }, names.indexOf(old?.name)) { chosen ->
+          val name = names[chosen]
+          when (DeviceActions.kindOf(name)) {
+            com.google.android.accessibility.talkback.quicksettings.QuickControl.Kind.SWITCH -> {
+              val values = listOf("on", "off", "toggle")
+              val labels = listOf(R.string.macro_do_turn_on, R.string.macro_do_turn_off, R.string.macro_do_toggle).map { getString(it) }
+              choose(controlTitle(name), labels, values.indexOf(old?.text)) { then(Macros.Do(kind, values[it], name)) }
+            }
+            else ->
+              askText(
+                controlTitle(name),
+                text = old?.takeIf { it.name == name }?.text.orEmpty(),
+                message = getString(
+                  if (DeviceActions.kindOf(name) == com.google.android.accessibility.talkback.quicksettings.QuickControl.Kind.SLIDER) {
+                    R.string.macro_do_slider_help
+                  } else {
+                    R.string.macro_do_choice_help
+                  }
+                ),
+                inputType = InputType.TYPE_CLASS_TEXT,
+              ) { value, _, _ ->
+                if (value.isBlank()) "" else null.also { then(Macros.Do(kind, value, name)) }
+              }
+          }
+        }
+      }
+      Macros.DoKind.MEDIA -> {
+        val keys = DeviceActions.MEDIA_KEYS.keys.toList()
+        val labels =
+          listOf(
+              R.string.macro_media_play_pause, R.string.macro_media_play, R.string.macro_media_pause,
+              R.string.macro_media_next, R.string.macro_media_previous, R.string.macro_media_stop,
+              R.string.macro_media_rewind, R.string.macro_media_fast_forward,
+            )
+            .map { getString(it) }
+        choose(title, labels, keys.indexOf(old?.text)) { then(Macros.Do(kind, keys[it])) }
+      }
+      Macros.DoKind.SET_TIMER ->
+        askText(
+          title,
+          text = old?.number?.takeIf { it > 0 }?.let { Macros.secondsText(it * 1000L) }.orEmpty(),
+          hint = getString(R.string.macro_do_timer_seconds),
+          secondHint = getString(R.string.macro_do_label),
+          secondText = old?.text.orEmpty(),
+          inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL,
+        ) { seconds, label, _ ->
+          val ms = Macros.parseSeconds(seconds)?.takeIf { it in 1_000L..86_400_000L }
+            ?: return@askText getString(R.string.macro_number_range, 1, 86_400)
+          null.also { then(Macros.Do(kind, label.trim(), number = (ms / 1000).toInt())) }
+        }
+      Macros.DoKind.SET_ALARM ->
+        askText(
+          title,
+          text = old?.let { "%02d:%02d".format(it.number / 60, it.number % 60) }.orEmpty(),
+          hint = getString(R.string.script_builder_time),
+          secondHint = getString(R.string.macro_do_label),
+          secondText = old?.text.orEmpty(),
+          inputType = InputType.TYPE_CLASS_DATETIME or InputType.TYPE_DATETIME_VARIATION_TIME,
+        ) { time, label, _ ->
+          val match = Regex("^(\\d{1,2}):(\\d{2})$").find(time.trim())
+          val hour = match?.groupValues?.get(1)?.toInt()
+          val minute = match?.groupValues?.get(2)?.toInt()
+          if (hour == null || minute == null || hour > 23 || minute > 59) return@askText getString(R.string.script_builder_time_error)
+          null.also { then(Macros.Do(kind, label.trim(), number = hour * 60 + minute)) }
+        }
+      Macros.DoKind.CALL -> text(R.string.macro_do_number) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.SEND_MESSAGE ->
+        askText(
+          title,
+          text = old?.name.orEmpty(),
+          hint = getString(R.string.macro_do_number),
+          message = getString(R.string.macro_values_help),
+          secondHint = getString(R.string.macro_text),
+          secondText = old?.text.orEmpty(),
+          inputType = InputType.TYPE_CLASS_PHONE,
+        ) { number, message, _ ->
+          if (number.isBlank()) "" else null.also { then(Macros.Do(kind, message, number.trim().take(64))) }
+        }
+      Macros.DoKind.OPEN_CAMERA -> {
+        val modes = listOf("photo", "video")
+        choose(title, listOf(getString(R.string.macro_do_camera_photo), getString(R.string.macro_do_camera_video)), modes.indexOf(old?.text)) {
+          then(Macros.Do(kind, modes[it]))
+        }
+      }
       Macros.DoKind.SET_VOLUME ->
         choose(title, Macros.VOLUME_STREAMS, Macros.VOLUME_STREAMS.indexOf(old?.name)) { stream ->
           number(50, 0..100) { then(Macros.Do(kind, name = Macros.VOLUME_STREAMS[stream], number = it)) }
@@ -819,6 +905,10 @@ class MacroFragment : MacroEditorFragment() {
         }
     }
   }
+
+  /** The title of the device control [name], as the quick settings panel names it. */
+  private fun controlTitle(name: String): String =
+    DeviceActions.CONTROLS[name]?.let { getString(it.title) } ?: name
 
   private fun askSpeakText(step: Macros.SpeakText?, then: (Macros.Step) -> Unit) {
     askText(

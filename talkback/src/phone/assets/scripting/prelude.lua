@@ -1466,6 +1466,21 @@ end
 function system.openSettings(page, package_name)
   return call('system.openSettings', { page = page or 'settings', package = text_or_nil(package_name) })
 end
+function system.setTimer(seconds, label)
+  return call('system.setTimer', { seconds = tonumber(seconds) or 0, label = text_or_nil(label) })
+end
+function system.setAlarm(hour, minute, label)
+  return call('system.setAlarm', { hour = tonumber(hour) or 0, minute = tonumber(minute) or 0, label = text_or_nil(label) })
+end
+function system.call(number)
+  return call('system.call', { number = tostring(number) })
+end
+function system.message(number, text)
+  return call('system.message', { number = tostring(number), text = text_or_nil(text) })
+end
+function system.camera(video)
+  return call('system.camera', { video = video == true })
+end
 function system.startActivity(intent)
   return call('system.startActivity', intent or {})
 end
@@ -1581,6 +1596,12 @@ local device = {
   end,
   ringerMode = function() return call('device.ringerMode') end,
   setRingerMode = function(mode) send('device.setRingerMode', { mode = tostring(mode) }) end,
+  controls = function() return call('device.controls') end,
+  get = function(name) return call('device.get', { name = tostring(name) }) end,
+  set = function(name, value)
+    return await(call('device.set', { name = tostring(name), value = value }), true)
+  end,
+  media = function(key) return call('device.media', { key = tostring(key) }) end,
 }
 
 local sf_log = setmetatable({

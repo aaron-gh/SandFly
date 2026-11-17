@@ -27,6 +27,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.AppShortcutActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
+import com.google.android.accessibility.talkback.macros.DeviceActions
 import com.google.android.accessibility.talkback.macros.MacroRunner
 import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.talkback.translation.Translator
@@ -248,7 +249,8 @@ class ScriptRuntime(
         ?.let(::requirePermission)
       promise { settle -> manager.feedback.runCommand(value) { settle(true, it) } }
     }
-    on("macros.run", INPUT) { args ->
+    // The permissions a macro needs are those of its steps, checked below.
+    on("macros.run") { args ->
       apiCheck(!manager.inBacktalk) { "Scripts can't run macros on SandFly's own screens" }
       val path = args.optString("file")
       apiCheck(path.isNotEmpty() && !path.startsWith("/")) { "macros.run needs a path in the script" }
@@ -268,7 +270,7 @@ class ScriptRuntime(
       android.os.Handler(android.os.Looper.getMainLooper()).post { MacroRunner.runMacro(scriptMacro, values) }
       true
     }
-    on("macros.stop", INPUT) {
+    on("macros.stop") {
       android.os.Handler(android.os.Looper.getMainLooper()).post {
         if (MacroRunner.runningId()?.startsWith(Macros.EXTERNAL_PREFIX + id + ":") == true) MacroRunner.stop()
       }
@@ -315,6 +317,53 @@ class ScriptRuntime(
     on("device.setVolume", SYSTEM) { manager.device.setVolume(it) }
     on("device.ringerMode") { manager.device.ringerMode() }
     on("device.setRingerMode", SYSTEM) { manager.device.setRingerMode(it) }
+    on("device.controls") { JSONArray(DeviceActions.availableControls(manager.service)) }
+    on("device.get") { args ->
+      when (val state = DeviceActions.state(manager.service, args.optString("name"))) {
+        null -> JSONObject.NULL
+        is DeviceActions.State.Switch -> state.on
+        is DeviceActions.State.Slider ->
+          jsonObject("value" to state.value, "min" to state.min, "max" to state.max)
+        is DeviceActions.State.Choice ->
+          jsonObject(
+            "value" to state.value,
+            "label" to state.label,
+            "options" to JSONArray(state.options.map { (value, label) -> jsonObject("value" to value, "label" to label) }),
+          )
+      }
+    }
+    on("device.set", SYSTEM) { args ->
+      val name = args.optString("name")
+      apiCheck(name in DeviceActions.CONTROLS) {
+        "Unknown control $name. Controls: ${DeviceActions.CONTROLS.keys.joinToString()}"
+      }
+      val value = args.opt("value").let { if (it is Boolean) (if (it) "on" else "off") else it?.toString().orEmpty() }
+      promise { settle ->
+        manager.feedback.onMain { DeviceActions.set(manager.service, name, value) { worked, why -> settle(worked, why ?: true) } }
+      }
+    }
+    on("device.media", SYSTEM) { args ->
+      val key = args.optString("key")
+      apiCheck(key in DeviceActions.MEDIA_KEYS) { "Unknown media key $key. Keys: ${DeviceActions.MEDIA_KEYS.keys.joinToString()}" }
+      DeviceActions.media(manager.service, key)
+    }
+    on("system.setTimer", SYSTEM) { args ->
+      DeviceActions.setTimer(manager.service, args.optInt("seconds"), args.optString("label").ifEmpty { null })
+    }
+    on("system.setAlarm", SYSTEM) { args ->
+      DeviceActions.setAlarm(manager.service, args.optInt("hour"), args.optInt("minute"), args.optString("label").ifEmpty { null })
+    }
+    on("system.call", SYSTEM) { args ->
+      val number = args.optString("number")
+      apiCheck(number.isNotBlank()) { "call needs a number" }
+      DeviceActions.call(manager.service, number)
+    }
+    on("system.message", SYSTEM) { args ->
+      val number = args.optString("number")
+      apiCheck(number.isNotBlank()) { "message needs a number" }
+      DeviceActions.message(manager.service, number, args.optString("text").ifEmpty { null })
+    }
+    on("system.camera", SYSTEM) { args -> DeviceActions.camera(manager.service, args.optBoolean("video")) }
     on("system.openUrl", SYSTEM) { manager.device.openUrl(it) }
     on("system.share", SYSTEM) { manager.device.share(it) }
     on("system.openSettings", SYSTEM) { manager.device.openSettings(it) }
@@ -773,25 +822,47 @@ class ScriptRuntime(
      * acting on it, as its steps do, and those of the commands it runs and of opening apps.
      */
     fun macroPermissions(macro: Macros.Macro): Set<ScriptPermission> {
-      val needed = mutableSetOf(INPUT, ACTIONS, SCREEN)
+      val needed = mutableSetOf<ScriptPermission>()
+      fun test(condition: Macros.Condition?) {
+        condition?.clauses?.forEach { clause ->
+          when (clause.test) {
+            is Macros.ItemOnScreen, is Macros.FocusedItem, is Macros.AppInFront, Macros.KeyboardShown ->
+              needed += SCREEN
+            else -> {}
+          }
+        }
+      }
+      test(macro.condition)
       for (step in macro.steps) {
+        test(Macros.conditionOf(step))
         when (step) {
-          is Macros.RunCommand ->
+          is Macros.RunCommand -> {
+            needed += INPUT
             (if (step.value.startsWith(SANDFLY_PRO_COMMAND_PREFIX)) SYSTEM else COMMAND_PERMISSIONS[step.value])
               ?.let(needed::add)
+          }
+          is Macros.Tap, is Macros.TouchHold, is Macros.FocusItem -> needed += setOf(SCREEN, ACTIONS)
+          is Macros.TapPosition, is Macros.TypeText -> needed += ACTIONS
+          is Macros.SpeakItem -> needed += setOf(SCREEN, SPEECH)
+          is Macros.SpeakText -> needed += SPEECH
           is Macros.OpenApp -> needed += SYSTEM
           is Macros.Do ->
             when (step.kind) {
               Macros.DoKind.COPY_TEXT -> needed += CLIPBOARD
               Macros.DoKind.OPEN_LINK, Macros.DoKind.OPEN_SETTINGS, Macros.DoKind.SHARE_TEXT,
-              Macros.DoKind.SET_VOLUME, Macros.DoKind.SET_RINGER -> needed += SYSTEM
+              Macros.DoKind.SET_VOLUME, Macros.DoKind.SET_RINGER, Macros.DoKind.DEVICE_CONTROL,
+              Macros.DoKind.MEDIA, Macros.DoKind.SET_TIMER, Macros.DoKind.SET_ALARM, Macros.DoKind.CALL,
+              Macros.DoKind.SEND_MESSAGE, Macros.DoKind.OPEN_CAMERA -> needed += SYSTEM
+              Macros.DoKind.PRESS_KEYS -> needed += ACTIONS
               Macros.DoKind.SHOW_MESSAGE -> needed += DIALOGS
               Macros.DoKind.FETCH, Macros.DoKind.TRANSLATE -> needed += NETWORK
               else -> {}
             }
           else -> {}
         }
-        if ("{clipboard}" in Macros.describeRaw(step)) needed += CLIPBOARD
+        val texts = Macros.describeRaw(step)
+        if ("{clipboard}" in texts) needed += CLIPBOARD
+        if ("{item}" in texts) needed += SCREEN
       }
       return needed
     }

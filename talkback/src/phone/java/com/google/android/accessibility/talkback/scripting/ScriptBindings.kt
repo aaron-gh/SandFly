@@ -45,12 +45,17 @@ private constructor(
       val all = HashMap<String, BoundCommand>()
       for (runtime in runtimes) {
         val commands = runtime.script.manifest.commands.filter { it.id in runtime.commands }
-        if (commands.isEmpty() || !runtime.allowed(ScriptPermission.INPUT, "Commands")) continue
+        if (commands.isEmpty()) continue
+        // The gestures, keys and menus a script gives its own commands need input; those the user
+        // assigns, in Commands or on the script's page, don't.
+        val ownBindings =
+          commands.any { it.bindings.isNotEmpty() } && runtime.allowed(ScriptPermission.INPUT, "Commands")
         for (command in commands) {
           val bound = BoundCommand(runtime, command)
           all[ScriptCommands.valueOf(runtime.id, command.id)] = bound
           for (binding in store.bindingsOf(runtime.id, command)) {
             if (!store.isBindingOn(runtime.id, command.id, binding)) continue
+            if (command.isDefault(binding) && !ownBindings) continue
             when (binding) {
               is CommandBinding.Gesture -> gestures.putIfAbsent(binding.name, bound)
               is CommandBinding.KeyCombo -> keys.putIfAbsent(binding.keys, bound)

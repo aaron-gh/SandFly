@@ -270,10 +270,26 @@ object ScriptBuilder {
   /** The permissions the commands, triggers and speech changes of [draft] need. */
   fun macroPermissionsOf(draft: JSONObject): Set<ScriptPermission> {
     val needed = mutableSetOf<ScriptPermission>()
-    if (draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects().isNotEmpty()) needed += ScriptPermission.INPUT
+    // Commands the user assigns need nothing; their own gesture, keys, menu or control need input.
+    val binds = draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects().any { command ->
+      COMMAND_FIELDS.any { key ->
+        when (val value = command.opt(key)) {
+          is String -> value.isNotBlank()
+          is Boolean -> value
+          else -> false
+        }
+      }
+    }
+    if (binds) needed += ScriptPermission.INPUT
     for (entry in runnable(draft)) {
       BuiltScriptMacros.macroOf(entry)?.let { needed += ScriptRuntime.macroPermissions(it) }
-      if (entry.optString("when") == WHEN_NOTIFICATION) needed += ScriptPermission.NOTIFICATIONS
+      when (entry.optString("when")) {
+        "" -> {}
+        WHEN_NOTIFICATION -> needed += ScriptPermission.NOTIFICATIONS
+        // Timers and buttons read nothing on screen; the other triggers' hooks do.
+        WHEN_EVERY, WHEN_DAILY, WHEN_BUTTON -> {}
+        else -> needed += ScriptPermission.SCREEN
+      }
     }
     for (change in draft.optJSONArray(SPEECH).objects().filter { speechProblem(it) == null }) {
       needed += ScriptPermission.SPEECH
