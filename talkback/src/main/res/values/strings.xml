@@ -636,6 +636,10 @@
     <string name="permission_speak_label">speak through SandFly</string>
     <!-- Description of that permission. [CHAR LIMIT=NONE] -->
     <string name="permission_speak_description">Lets the app ask to say text in your SandFly voice. SandFly asks you before the app can speak.</string>
+    <!-- Name of the permission that apps ask for to choose where they get direct touch in SandFly, shown in the app's permission list. [CHAR LIMIT=NONE] -->
+    <string name="permission_direct_touch_label">choose where SandFly gives the app direct touch</string>
+    <!-- Description of that permission. [CHAR LIMIT=NONE] -->
+    <string name="permission_direct_touch_description">Lets the app turn SandFly direct touch on or off for parts of its screen while it is in front. You can turn direct touch off for the app in SandFly settings.</string>
     <!-- Name of the permission that an app needs to ask to be a braille display for SandFly, shown in the app's permission list. [CHAR LIMIT=NONE] -->
     <string name="permission_braille_display_label">ask to be a braille display for SandFly</string>
     <!-- Description of that permission. [CHAR LIMIT=NONE] -->

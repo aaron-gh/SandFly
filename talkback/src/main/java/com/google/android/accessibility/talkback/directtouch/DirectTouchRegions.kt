@@ -80,4 +80,15 @@ object DirectTouchRegions {
     excluded.forEach { region.op(it, Region.Op.DIFFERENCE) }
     return region
   }
+
+  /**
+   * The [areas] within [window], minus the [excluded] rectangles, or null when nothing is left.
+   */
+  fun areasRegion(window: Rect, areas: List<Rect>, excluded: List<Rect>): Region? {
+    val region = Region()
+    areas.forEach { region.op(it, Region.Op.UNION) }
+    region.op(window, Region.Op.INTERSECT)
+    excluded.forEach { region.op(it, Region.Op.DIFFERENCE) }
+    return region.takeUnless { it.isEmpty }
+  }
 }

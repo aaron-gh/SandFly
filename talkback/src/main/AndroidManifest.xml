@@ -149,6 +149,15 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="${applicationId}.permission.BIND_BRAILLE_DISPLAY" />
 
+    <!-- Held by an app that chooses where it gets direct touch while it runs. Direct touch is
+         turned on for it the first time SandFly sees it, and the user can turn it off. See
+         docs/direct-touch-api.md. Named after the app ID, as SPEAK is. -->
+    <permission
+        android:name="${applicationId}.permission.DIRECT_TOUCH"
+        android:label="@string/permission_direct_touch_label"
+        android:description="@string/permission_direct_touch_description"
+        android:protectionLevel="normal" />
+
     <!-- Granted by the user with adb, to move the accessibility shortcut and the braille keyboard
          from the old app ID and turn the old screen reader off. -->
     <uses-permission
@@ -630,6 +639,14 @@
             android:permission="${applicationId}.permission.SPEAK">
             <intent-filter>
                 <action android:name="fyi.quin.backtalk.action.SPEECH_CONTROL" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.google.android.accessibility.talkback.directtouch.DirectTouchService"
+            android:exported="true"
+            android:permission="${applicationId}.permission.DIRECT_TOUCH">
+            <intent-filter>
+                <action android:name="fyi.quin.backtalk.action.DIRECT_TOUCH" />
             </intent-filter>
         </service>
 

@@ -922,6 +922,8 @@ If you develop a game, add this `<meta-data>` element inside your `<application>
     android:value="true" />
 ```
 
+A game can also take direct touch only on parts of the screen, such as its board, while explore by touch works on the rest. It can declare the areas in its manifest for each activity and for states that it sets, ask for areas or the whole screen while it runs, and stop direct touch for itself. [Choosing where your app gets direct touch](docs/direct-touch-api.md) describes the API.
+
 ## Granular editing
 
 **Granular editing** opens the text of the focused text field, or of any focused item with text, in a screen of its own, split into pieces: characters, words, sentences, lines or paragraphs, chosen with **Split by**. It is in the **Editing** actions of a text field, and is a gesture action under **Text editing**.
