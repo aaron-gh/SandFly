@@ -35,6 +35,7 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.talkback.imagecaption.Result;
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
+import com.google.android.accessibility.talkback.focusmanagement.PictureInPictureItem;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -136,6 +137,10 @@ public class AccessibilityNodeFeedbackUtils {
     CharSequence recognizedLabel = ScreenElements.label(node);
     if (recognizedLabel != null) {
       return recognizedLabel;
+    }
+    CharSequence pictureInPictureLabel = PictureInPictureItem.label(context, node);
+    if (pictureInPictureLabel != null) {
+      return pictureInPictureLabel;
     }
     CharSequence contentAndSupplementalDescription =
         getNodeContentAndSupplementalDescription(node, context, globalVariables);
