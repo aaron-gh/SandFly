@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">මැක්‍රෝව නැවතුණි. වාර <xliff:g id="count" example="1000">%1$d</xliff:g> ක් නැවත කෙරුණි: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">මැක්‍රෝව නැවතුණි. කාලය ඉකුත් විය: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">මැක්‍රෝව ක්‍රියාත්මක නොවීය. ක්‍රියාත්මක කරන්නේ මෙයට පමණි: කොන්දේසිය සපුරා නැත</string>
+    <string name="macro_step_more">තවත් පියවර</string>
+    <string name="macro_do_play_sound">ශබ්දය වාදනය කරන්න</string>
+    <string name="macro_do_vibrate">කම්පනය කරන්න</string>
+    <string name="macro_do_play_tone">ස්වරය වාදනය කරන්න</string>
+    <string name="macro_do_copy_text">පෙළ පිටපත් කරන්න</string>
+    <string name="macro_do_open_link">සබැඳිය විවෘත කරන්න</string>
+    <string name="macro_do_open_settings">සැකසීම් පිටුව විවෘත කරන්න</string>
+    <string name="macro_do_share_text">පෙළ බෙදා ගන්න</string>
+    <string name="macro_do_set_volume">හඬ පරිමාව සකසන්න</string>
+    <string name="macro_do_set_ringer">නාද කිරීමේ මාදිලිය සකසන්න</string>
+    <string name="macro_do_press_keys">යතුරු ඔබන්න</string>
+    <string name="macro_do_show_message">පණිවිඩය පෙන්වන්න</string>
+    <string name="macro_do_set_value">අගය සකසන්න</string>
+    <string name="macro_do_fetch">සබැඳිය ලබා ගන්න</string>
+    <string name="macro_do_translate">පෙළ පරිවර්තනය කරන්න</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s වෙත</string>
+    <string name="macro_do_vibrate_value">කම්පනය %1$d ms</string>
+    <string name="macro_do_play_tone_value">ස්වරය වාදනය %1$d Hz</string>
+    <string name="macro_do_set_volume_value">%1$s හඬ පරිමාව %2$d%% ලෙස සකසන්න</string>
+    <string name="macro_do_link_hint">ලිපිනය</string>
+    <string name="macro_do_keys_hint">යතුරු, උදා: tab enter</string>
+    <string name="macro_number_range">%1$d සිට %2$d දක්වා ඇතුළත් කරන්න</string>
+    <string name="macro_values_help">අගයන් {name} ලෙස ඇතුළත් වේ. {item}, {clipboard}, {time} සහ {date} ද.</string>
+    <string name="macro_value_name">අගයේ නම</string>
+    <string name="macro_value_name_invalid">අකුරු, ඉලක්කම්, තිත්, ඉරි හෝ යටි ඉරි භාවිත කරන්න</string>
+    <string name="macro_test_value">අගය</string>
+    <string name="macro_test_value_label">අඩංගු වේ (හිස්: ඕනෑම අගයක්)</string>
+    <string name="macro_test_value_set">%1$s අගය සකසා ඇත</string>
+    <string name="macro_test_value_value">%1$s අගයේ %2$s ඇත</string>
+    <string name="macro_test_not">නොවේ: %1$s</string>
 </resources>

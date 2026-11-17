@@ -132,4 +132,35 @@
     <string name="macro_stopped_repeats">Макрас спынены. Паўторана <xliff:g id="count" example="1000">%1$d</xliff:g> раз: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Макрас спынены. Час чакання скончыўся: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Макрас не выкананы. Выконваць толькі калі: умова не выканана</string>
+    <string name="macro_step_more">Іншыя крокі</string>
+    <string name="macro_do_play_sound">Прайграць гук</string>
+    <string name="macro_do_vibrate">Вібрацыя</string>
+    <string name="macro_do_play_tone">Прайграць тон</string>
+    <string name="macro_do_copy_text">Скапіраваць тэкст</string>
+    <string name="macro_do_open_link">Адкрыць спасылку</string>
+    <string name="macro_do_open_settings">Адкрыць старонку налад</string>
+    <string name="macro_do_share_text">Абагуліць тэкст</string>
+    <string name="macro_do_set_volume">Задаць гучнасць</string>
+    <string name="macro_do_set_ringer">Задаць рэжым выклікаў</string>
+    <string name="macro_do_press_keys">Націснуць клавішы</string>
+    <string name="macro_do_show_message">Паказаць паведамленне</string>
+    <string name="macro_do_set_value">Задаць значэнне</string>
+    <string name="macro_do_fetch">Загрузіць па спасылцы</string>
+    <string name="macro_do_translate">Перакласці тэкст</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, у %3$s</string>
+    <string name="macro_do_vibrate_value">Вібрацыя %1$d мс</string>
+    <string name="macro_do_play_tone_value">Прайграць тон %1$d Гц</string>
+    <string name="macro_do_set_volume_value">Задаць гучнасць %1$s: %2$d%%</string>
+    <string name="macro_do_link_hint">Адрас</string>
+    <string name="macro_do_keys_hint">Клавішы, напрыклад tab enter</string>
+    <string name="macro_number_range">Увядзіце ад %1$d да %2$d</string>
+    <string name="macro_values_help">Значэнні ўстаўляюцца як {name}. Таксама {item}, {clipboard}, {time} і {date}.</string>
+    <string name="macro_value_name">Назва значэння</string>
+    <string name="macro_value_name_invalid">Выкарыстоўвайце літары, лічбы, кропкі, злучкі або падкрэсліванні</string>
+    <string name="macro_test_value">Значэнне</string>
+    <string name="macro_test_value_label">Змяшчае (пуста: любое значэнне)</string>
+    <string name="macro_test_value_set">Значэнне %1$s зададзена</string>
+    <string name="macro_test_value_value">Значэнне %1$s змяшчае %2$s</string>
+    <string name="macro_test_not">Не: %1$s</string>
 </resources>

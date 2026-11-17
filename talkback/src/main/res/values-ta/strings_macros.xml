@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">மேக்ரோ நிறுத்தப்பட்டது. <xliff:g id="count" example="1000">%1$d</xliff:g> முறை மீண்டும் செய்யப்பட்டது: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">மேக்ரோ நிறுத்தப்பட்டது. நேரம் முடிந்தது: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">மேக்ரோ இயக்கப்படவில்லை. இயக்க வேண்டிய நிபந்தனை: பூர்த்தியாகவில்லை</string>
+    <string name="macro_step_more">மேலும் படிகள்</string>
+    <string name="macro_do_play_sound">ஒலியை இயக்கு</string>
+    <string name="macro_do_vibrate">அதிர்வு செய்</string>
+    <string name="macro_do_play_tone">டோனை இயக்கு</string>
+    <string name="macro_do_copy_text">உரையை நகலெடு</string>
+    <string name="macro_do_open_link">இணைப்பைத் திற</string>
+    <string name="macro_do_open_settings">அமைப்புகள் பக்கத்தைத் திற</string>
+    <string name="macro_do_share_text">உரையைப் பகிர்</string>
+    <string name="macro_do_set_volume">ஒலியளவை அமை</string>
+    <string name="macro_do_set_ringer">ரிங்கர் முறையை அமை</string>
+    <string name="macro_do_press_keys">விசைகளை அழுத்து</string>
+    <string name="macro_do_show_message">செய்தியைக் காட்டு</string>
+    <string name="macro_do_set_value">மதிப்பை அமை</string>
+    <string name="macro_do_fetch">இணைப்பைப் பெறு</string>
+    <string name="macro_do_translate">உரையை மொழிபெயர்</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s இல்</string>
+    <string name="macro_do_vibrate_value">%1$d ms அதிர்வு செய்</string>
+    <string name="macro_do_play_tone_value">%1$d Hz டோனை இயக்கு</string>
+    <string name="macro_do_set_volume_value">%1$s ஒலியளவை %2$d%% ஆக அமை</string>
+    <string name="macro_do_link_hint">முகவரி</string>
+    <string name="macro_do_keys_hint">விசைகள், எ.கா. tab enter</string>
+    <string name="macro_number_range">%1$d முதல் %2$d வரை உள்ளிடவும்</string>
+    <string name="macro_values_help">மதிப்புகளை {name} என உள்ளிடலாம். {item}, {clipboard}, {time}, {date} ஆகியவையும் உள்ளன.</string>
+    <string name="macro_value_name">மதிப்பின் பெயர்</string>
+    <string name="macro_value_name_invalid">எழுத்துகள், எண்கள், புள்ளிகள், கோடுகள் அல்லது அடிக்கோடுகளைப் பயன்படுத்தவும்</string>
+    <string name="macro_test_value">மதிப்பு</string>
+    <string name="macro_test_value_label">உள்ளடக்கியது (காலி: எந்த மதிப்பும்)</string>
+    <string name="macro_test_value_set">%1$s மதிப்பு அமைக்கப்பட்டுள்ளது</string>
+    <string name="macro_test_value_value">%1$s மதிப்பில் %2$s உள்ளது</string>
+    <string name="macro_test_not">அல்ல: %1$s</string>
 </resources>

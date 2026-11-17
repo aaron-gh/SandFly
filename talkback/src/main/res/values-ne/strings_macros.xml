@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">म्याक्रो रोकियो। <xliff:g id="count" example="1000">%1$d</xliff:g> पटक दोहोरियो: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">म्याक्रो रोकियो। समय सकियो: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">म्याक्रो चलेन। यसो हुँदा मात्र चलाउनुहोस्: सर्त पूरा भएन</string>
+    <string name="macro_step_more">थप चरणहरू</string>
+    <string name="macro_do_play_sound">साउन्ड बजाउनुहोस्</string>
+    <string name="macro_do_vibrate">कम्पन गर्नुहोस्</string>
+    <string name="macro_do_play_tone">टोन बजाउनुहोस्</string>
+    <string name="macro_do_copy_text">टेक्स्ट कपी गर्नुहोस्</string>
+    <string name="macro_do_open_link">लिंक खोल्नुहोस्</string>
+    <string name="macro_do_open_settings">सेटिङ पेज खोल्नुहोस्</string>
+    <string name="macro_do_share_text">टेक्स्ट सेयर गर्नुहोस्</string>
+    <string name="macro_do_set_volume">भोल्युम सेट गर्नुहोस्</string>
+    <string name="macro_do_set_ringer">घण्टी मोड सेट गर्नुहोस्</string>
+    <string name="macro_do_press_keys">कुञ्जीहरू थिच्नुहोस्</string>
+    <string name="macro_do_show_message">सन्देश देखाउनुहोस्</string>
+    <string name="macro_do_set_value">मान सेट गर्नुहोस्</string>
+    <string name="macro_do_fetch">लिंकबाट टेक्स्ट ल्याउनुहोस्</string>
+    <string name="macro_do_translate">टेक्स्ट अनुवाद गर्नुहोस्</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s मा</string>
+    <string name="macro_do_vibrate_value">%1$d ms कम्पन गर्नुहोस्</string>
+    <string name="macro_do_play_tone_value">%1$d Hz टोन बजाउनुहोस्</string>
+    <string name="macro_do_set_volume_value">%1$s भोल्युम %2$d%% मा सेट गर्नुहोस्</string>
+    <string name="macro_do_link_hint">ठेगाना</string>
+    <string name="macro_do_keys_hint">कुञ्जीहरू, जस्तै tab enter</string>
+    <string name="macro_number_range">%1$d देखि %2$d सम्म प्रविष्ट गर्नुहोस्</string>
+    <string name="macro_values_help">मानहरू {name} का रूपमा राखिन्छन्। साथै {item}, {clipboard}, {time} र {date}।</string>
+    <string name="macro_value_name">मानको नाम</string>
+    <string name="macro_value_name_invalid">अक्षर, अङ्क, थोप्ला, ड्यास वा अन्डरस्कोर प्रयोग गर्नुहोस्</string>
+    <string name="macro_test_value">मान</string>
+    <string name="macro_test_value_label">समावेश छ (खाली: कुनै पनि मान)</string>
+    <string name="macro_test_value_set">मान %1$s सेट गरिएको छ</string>
+    <string name="macro_test_value_value">मान %1$s मा %2$s छ</string>
+    <string name="macro_test_not">होइन: %1$s</string>
 </resources>

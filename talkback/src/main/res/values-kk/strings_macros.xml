@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Макрос тоқтады. <xliff:g id="count" example="1000">%1$d</xliff:g> рет қайталанды: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Макрос тоқтады. Уақыт бітті: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Макрос орындалмады. Тек мына жағдайда орындау: шарт орындалмады</string>
+    <string name="macro_step_more">Басқа қадамдар</string>
+    <string name="macro_do_play_sound">Дыбысты ойнату</string>
+    <string name="macro_do_vibrate">Дірілдеу</string>
+    <string name="macro_do_play_tone">Сигнал ойнату</string>
+    <string name="macro_do_copy_text">Мәтінді көшіру</string>
+    <string name="macro_do_open_link">Сілтемені ашу</string>
+    <string name="macro_do_open_settings">Параметрлер бетін ашу</string>
+    <string name="macro_do_share_text">Мәтінді бөлісу</string>
+    <string name="macro_do_set_volume">Дыбыс деңгейін орнату</string>
+    <string name="macro_do_set_ringer">Қоңырау режимін орнату</string>
+    <string name="macro_do_press_keys">Пернелерді басу</string>
+    <string name="macro_do_show_message">Хабар көрсету</string>
+    <string name="macro_do_set_value">Мән орнату</string>
+    <string name="macro_do_fetch">Сілтемені жүктеу</string>
+    <string name="macro_do_translate">Мәтінді аудару</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s мәніне</string>
+    <string name="macro_do_vibrate_value">Дірілдеу %1$d ms</string>
+    <string name="macro_do_play_tone_value">Сигнал %1$d Hz</string>
+    <string name="macro_do_set_volume_value">%1$s дыбыс деңгейін %2$d%% етіп орнату</string>
+    <string name="macro_do_link_hint">Мекенжай</string>
+    <string name="macro_do_keys_hint">Пернелер, мысалы tab enter</string>
+    <string name="macro_number_range">%1$d мен %2$d арасында енгізіңіз</string>
+    <string name="macro_values_help">Мәндер {name} түрінде қойылады. Сондай-ақ {item}, {clipboard}, {time} және {date}.</string>
+    <string name="macro_value_name">Мән атауы</string>
+    <string name="macro_value_name_invalid">Әріптерді, сандарды, нүктелерді, сызықшаларды немесе астын сызу белгілерін пайдаланыңыз</string>
+    <string name="macro_test_value">Мән</string>
+    <string name="macro_test_value_label">Құрамында (бос: кез келген мән)</string>
+    <string name="macro_test_value_set">%1$s мәні орнатылған</string>
+    <string name="macro_test_value_value">%1$s мәнінде %2$s бар</string>
+    <string name="macro_test_not">Емес: %1$s</string>
 </resources>

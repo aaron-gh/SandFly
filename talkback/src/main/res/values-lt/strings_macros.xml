@@ -132,4 +132,35 @@
     <string name="macro_stopped_repeats">Makrokomanda sustabdyta. Pakartota <xliff:g id="count" example="1000">%1$d</xliff:g> k.: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makrokomanda sustabdyta. Baigėsi laikas: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makrokomanda nevykdyta. Vykdyti tik tada, kai: sąlyga neįvykdyta</string>
+    <string name="macro_step_more">Daugiau veiksmų</string>
+    <string name="macro_do_play_sound">Leisti garsą</string>
+    <string name="macro_do_vibrate">Vibruoti</string>
+    <string name="macro_do_play_tone">Leisti toną</string>
+    <string name="macro_do_copy_text">Kopijuoti tekstą</string>
+    <string name="macro_do_open_link">Atidaryti nuorodą</string>
+    <string name="macro_do_open_settings">Atidaryti nustatymų puslapį</string>
+    <string name="macro_do_share_text">Bendrinti tekstą</string>
+    <string name="macro_do_set_volume">Nustatyti garsumą</string>
+    <string name="macro_do_set_ringer">Nustatyti skambučio režimą</string>
+    <string name="macro_do_press_keys">Spausti klavišus</string>
+    <string name="macro_do_show_message">Rodyti pranešimą</string>
+    <string name="macro_do_set_value">Nustatyti reikšmę</string>
+    <string name="macro_do_fetch">Gauti nuorodos turinį</string>
+    <string name="macro_do_translate">Versti tekstą</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, į %3$s</string>
+    <string name="macro_do_vibrate_value">Vibruoti %1$d ms</string>
+    <string name="macro_do_play_tone_value">Leisti toną %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Nustatyti %1$s garsumą: %2$d%%</string>
+    <string name="macro_do_link_hint">Adresas</string>
+    <string name="macro_do_keys_hint">Klavišai, pvz., tab enter</string>
+    <string name="macro_number_range">Įveskite nuo %1$d iki %2$d</string>
+    <string name="macro_values_help">Reikšmės įterpiamos kaip {name}. Taip pat {item}, {clipboard}, {time} ir {date}.</string>
+    <string name="macro_value_name">Reikšmės pavadinimas</string>
+    <string name="macro_value_name_invalid">Naudokite raides, skaitmenis, taškus, brūkšnelius arba pabraukimo brūkšnius</string>
+    <string name="macro_test_value">Reikšmė</string>
+    <string name="macro_test_value_label">Yra (tuščia: bet kokia reikšmė)</string>
+    <string name="macro_test_value_set">Reikšmė %1$s nustatyta</string>
+    <string name="macro_test_value_value">Reikšmėje %1$s yra %2$s</string>
+    <string name="macro_test_not">Ne: %1$s</string>
 </resources>

@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makroja u ndal. U përsërit <xliff:g id="count" example="1000">%1$d</xliff:g> herë: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makroja u ndal. Koha skadoi: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makroja nuk u ekzekutua. Ekzekuto vetëm kur: nuk plotësohet</string>
+    <string name="macro_step_more">Më shumë hapa</string>
+    <string name="macro_do_play_sound">Luaj tingullin</string>
+    <string name="macro_do_vibrate">Dridhu</string>
+    <string name="macro_do_play_tone">Luaj ton</string>
+    <string name="macro_do_copy_text">Kopjo tekstin</string>
+    <string name="macro_do_open_link">Hap lidhjen</string>
+    <string name="macro_do_open_settings">Hap faqen e cilësimeve</string>
+    <string name="macro_do_share_text">Ndaj tekstin</string>
+    <string name="macro_do_set_volume">Cakto volumin</string>
+    <string name="macro_do_set_ringer">Cakto modalitetin e ziles</string>
+    <string name="macro_do_press_keys">Shtyp tastet</string>
+    <string name="macro_do_show_message">Shfaq mesazhin</string>
+    <string name="macro_do_set_value">Cakto vlerën</string>
+    <string name="macro_do_fetch">Shkarko lidhjen</string>
+    <string name="macro_do_translate">Përkthe tekstin</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, në %3$s</string>
+    <string name="macro_do_vibrate_value">Dridhu %1$d ms</string>
+    <string name="macro_do_play_tone_value">Luaj ton %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Cakto volumin e %1$s në %2$d%%</string>
+    <string name="macro_do_link_hint">Adresa</string>
+    <string name="macro_do_keys_hint">Tastet, si tab enter</string>
+    <string name="macro_number_range">Shkruaj nga %1$d deri në %2$d</string>
+    <string name="macro_values_help">Vlerat futen si {name}. Gjithashtu {item}, {clipboard}, {time} dhe {date}.</string>
+    <string name="macro_value_name">Emri i vlerës</string>
+    <string name="macro_value_name_invalid">Përdor shkronja, shifra, pika, viza ose nënvizime</string>
+    <string name="macro_test_value">Vlera</string>
+    <string name="macro_test_value_label">Përmban (bosh: çdo vlerë)</string>
+    <string name="macro_test_value_set">Vlera %1$s është caktuar</string>
+    <string name="macro_test_value_value">Vlera %1$s ka %2$s</string>
+    <string name="macro_test_not">Jo: %1$s</string>
 </resources>

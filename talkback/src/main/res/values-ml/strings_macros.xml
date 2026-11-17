@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">മാക്രോ നിർത്തി. <xliff:g id="count" example="1000">%1$d</xliff:g> തവണ ആവർത്തിച്ചു: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">മാക്രോ നിർത്തി. സമയം കഴിഞ്ഞു: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">മാക്രോ പ്രവർത്തിച്ചില്ല. ഇതായിരിക്കുമ്പോൾ മാത്രം പ്രവർത്തിപ്പിക്കുക: വ്യവസ്ഥ പാലിച്ചില്ല</string>
+    <string name="macro_step_more">കൂടുതൽ ഘട്ടങ്ങൾ</string>
+    <string name="macro_do_play_sound">ശബ്‌ദം പ്ലേ ചെയ്യുക</string>
+    <string name="macro_do_vibrate">വൈബ്രേറ്റ് ചെയ്യുക</string>
+    <string name="macro_do_play_tone">ടോൺ പ്ലേ ചെയ്യുക</string>
+    <string name="macro_do_copy_text">ടെക്‌സ്റ്റ് പകർത്തുക</string>
+    <string name="macro_do_open_link">ലിങ്ക് തുറക്കുക</string>
+    <string name="macro_do_open_settings">ക്രമീകരണ പേജ് തുറക്കുക</string>
+    <string name="macro_do_share_text">ടെക്‌സ്റ്റ് പങ്കിടുക</string>
+    <string name="macro_do_set_volume">വോളിയം സജ്ജമാക്കുക</string>
+    <string name="macro_do_set_ringer">റിംഗർ മോഡ് സജ്ജമാക്കുക</string>
+    <string name="macro_do_press_keys">കീകൾ അമർത്തുക</string>
+    <string name="macro_do_show_message">സന്ദേശം കാണിക്കുക</string>
+    <string name="macro_do_set_value">മൂല്യം സജ്ജമാക്കുക</string>
+    <string name="macro_do_fetch">ലിങ്ക് ലഭ്യമാക്കുക</string>
+    <string name="macro_do_translate">ടെക്‌സ്റ്റ് വിവർത്തനം ചെയ്യുക</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s-ലേക്ക്</string>
+    <string name="macro_do_vibrate_value">%1$d ms വൈബ്രേറ്റ് ചെയ്യുക</string>
+    <string name="macro_do_play_tone_value">%1$d Hz ടോൺ പ്ലേ ചെയ്യുക</string>
+    <string name="macro_do_set_volume_value">%1$s വോളിയം %2$d%% ആക്കുക</string>
+    <string name="macro_do_link_hint">വിലാസം</string>
+    <string name="macro_do_keys_hint">കീകൾ, ഉദാ. tab enter</string>
+    <string name="macro_number_range">%1$d മുതൽ %2$d വരെ നൽകുക</string>
+    <string name="macro_values_help">മൂല്യങ്ങൾ {name} ആയി ചേർക്കുക. {item}, {clipboard}, {time}, {date} എന്നിവയും.</string>
+    <string name="macro_value_name">മൂല്യത്തിന്റെ പേര്</string>
+    <string name="macro_value_name_invalid">അക്ഷരങ്ങൾ, അക്കങ്ങൾ, ഡോട്ടുകൾ, ഡാഷുകൾ, അണ്ടർസ്കോറുകൾ എന്നിവ ഉപയോഗിക്കുക</string>
+    <string name="macro_test_value">മൂല്യം</string>
+    <string name="macro_test_value_label">അടങ്ങിയത് (ശൂന്യം: ഏത് മൂല്യവും)</string>
+    <string name="macro_test_value_set">മൂല്യം %1$s സജ്ജമാക്കിയിട്ടുണ്ട്</string>
+    <string name="macro_test_value_value">മൂല്യം %1$s-ൽ %2$s ഉണ്ട്</string>
+    <string name="macro_test_not">അല്ല: %1$s</string>
 </resources>

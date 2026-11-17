@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Макрото запре. Повторено <xliff:g id="count" example="1000">%1$d</xliff:g> пати: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Макрото запре. Времето истече: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Макрото не е извршено. Изврши само кога: не е исполнето</string>
+    <string name="macro_step_more">Повеќе чекори</string>
+    <string name="macro_do_play_sound">Пушти звук</string>
+    <string name="macro_do_vibrate">Вибрирај</string>
+    <string name="macro_do_play_tone">Пушти тон</string>
+    <string name="macro_do_copy_text">Копирај текст</string>
+    <string name="macro_do_open_link">Отвори врска</string>
+    <string name="macro_do_open_settings">Отвори страница со поставки</string>
+    <string name="macro_do_share_text">Сподели текст</string>
+    <string name="macro_do_set_volume">Постави јачина на звук</string>
+    <string name="macro_do_set_ringer">Постави режим на ѕвонење</string>
+    <string name="macro_do_press_keys">Притисни копчиња</string>
+    <string name="macro_do_show_message">Прикажи порака</string>
+    <string name="macro_do_set_value">Постави вредност</string>
+    <string name="macro_do_fetch">Преземи врска</string>
+    <string name="macro_do_translate">Преведи текст</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, во %3$s</string>
+    <string name="macro_do_vibrate_value">Вибрирај %1$d ms</string>
+    <string name="macro_do_play_tone_value">Пушти тон %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Постави јачина на %1$s на %2$d%%</string>
+    <string name="macro_do_link_hint">Адреса</string>
+    <string name="macro_do_keys_hint">Копчиња, на пр. tab enter</string>
+    <string name="macro_number_range">Внесете од %1$d до %2$d</string>
+    <string name="macro_values_help">Вредностите се внесуваат како {name}. Исто така {item}, {clipboard}, {time} и {date}.</string>
+    <string name="macro_value_name">Име на вредноста</string>
+    <string name="macro_value_name_invalid">Користете букви, цифри, точки, цртички или долни црти</string>
+    <string name="macro_test_value">Вредност</string>
+    <string name="macro_test_value_label">Содржи (празно: која било вредност)</string>
+    <string name="macro_test_value_set">Вредноста %1$s е поставена</string>
+    <string name="macro_test_value_value">Вредноста %1$s содржи %2$s</string>
+    <string name="macro_test_not">Не: %1$s</string>
 </resources>

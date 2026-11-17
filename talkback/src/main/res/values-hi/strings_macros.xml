@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">मैक्रो रुक गया. <xliff:g id="count" example="1000">%1$d</xliff:g> बार दोहराया गया: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">मैक्रो रुक गया. समय सीमा खत्म: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">मैक्रो नहीं चला. केवल तभी चलाएं जब: शर्त पूरी नहीं हुई</string>
+    <string name="macro_step_more">और चरण</string>
+    <string name="macro_do_play_sound">आवाज़ चलाएं</string>
+    <string name="macro_do_vibrate">वाइब्रेट करें</string>
+    <string name="macro_do_play_tone">टोन चलाएं</string>
+    <string name="macro_do_copy_text">टेक्स्ट कॉपी करें</string>
+    <string name="macro_do_open_link">लिंक खोलें</string>
+    <string name="macro_do_open_settings">सेटिंग पेज खोलें</string>
+    <string name="macro_do_share_text">टेक्स्ट शेयर करें</string>
+    <string name="macro_do_set_volume">वॉल्यूम सेट करें</string>
+    <string name="macro_do_set_ringer">रिंगर मोड सेट करें</string>
+    <string name="macro_do_press_keys">कुंजियां दबाएं</string>
+    <string name="macro_do_show_message">मैसेज दिखाएं</string>
+    <string name="macro_do_set_value">वैल्यू सेट करें</string>
+    <string name="macro_do_fetch">लिंक फ़ेच करें</string>
+    <string name="macro_do_translate">टेक्स्ट का अनुवाद करें</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s में</string>
+    <string name="macro_do_vibrate_value">%1$d ms वाइब्रेट करें</string>
+    <string name="macro_do_play_tone_value">%1$d Hz टोन चलाएं</string>
+    <string name="macro_do_set_volume_value">%1$s वॉल्यूम %2$d%% पर सेट करें</string>
+    <string name="macro_do_link_hint">पता</string>
+    <string name="macro_do_keys_hint">कुंजियां, जैसे tab enter</string>
+    <string name="macro_number_range">%1$d से %2$d तक डालें</string>
+    <string name="macro_values_help">वैल्यू {name} के तौर पर डाली जाती हैं. {item}, {clipboard}, {time} और {date} भी.</string>
+    <string name="macro_value_name">वैल्यू का नाम</string>
+    <string name="macro_value_name_invalid">अक्षर, अंक, बिंदु, डैश या अंडरस्कोर इस्तेमाल करें</string>
+    <string name="macro_test_value">वैल्यू</string>
+    <string name="macro_test_value_label">इसमें है (खाली: कोई भी वैल्यू)</string>
+    <string name="macro_test_value_set">वैल्यू %1$s सेट है</string>
+    <string name="macro_test_value_value">वैल्यू %1$s में %2$s है</string>
+    <string name="macro_test_not">नहीं: %1$s</string>
 </resources>

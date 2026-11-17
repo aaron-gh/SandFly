@@ -129,4 +129,35 @@
     <string name="macro_stopped_repeats">המאקרו נעצר. חזר <xliff:g id="count" example="1000">%1$d</xliff:g> פעמים: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">המאקרו נעצר. תם הזמן: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">המאקרו לא הופעל. הפעלה רק כאשר: התנאי לא מתקיים</string>
+    <string name="macro_step_more">שלבים נוספים</string>
+    <string name="macro_do_play_sound">השמעת צליל</string>
+    <string name="macro_do_vibrate">רטט</string>
+    <string name="macro_do_play_tone">השמעת טון</string>
+    <string name="macro_do_copy_text">העתקת טקסט</string>
+    <string name="macro_do_open_link">פתיחת קישור</string>
+    <string name="macro_do_open_settings">פתיחת דף הגדרות</string>
+    <string name="macro_do_share_text">שיתוף טקסט</string>
+    <string name="macro_do_set_volume">הגדרת עוצמת קול</string>
+    <string name="macro_do_set_ringer">הגדרת מצב צלצול</string>
+    <string name="macro_do_press_keys">לחיצה על מקשים</string>
+    <string name="macro_do_show_message">הצגת הודעה</string>
+    <string name="macro_do_set_value">הגדרת ערך</string>
+    <string name="macro_do_fetch">הורדת קישור</string>
+    <string name="macro_do_translate">תרגום טקסט</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, אל %3$s</string>
+    <string name="macro_do_vibrate_value">רטט %1$d ms</string>
+    <string name="macro_do_play_tone_value">השמעת טון %1$d Hz</string>
+    <string name="macro_do_set_volume_value">הגדרת עוצמת הקול של %1$s ל-%2$d%%</string>
+    <string name="macro_do_link_hint">כתובת</string>
+    <string name="macro_do_keys_hint">מקשים, כמו tab enter</string>
+    <string name="macro_number_range">יש להזין %1$d עד %2$d</string>
+    <string name="macro_values_help">ערכים מוכנסים בתור {name}. וגם {item}, {clipboard}, {time} ו-{date}.</string>
+    <string name="macro_value_name">שם הערך</string>
+    <string name="macro_value_name_invalid">יש להשתמש באותיות, ספרות, נקודות, מקפים או קווים תחתונים</string>
+    <string name="macro_test_value">ערך</string>
+    <string name="macro_test_value_label">מכיל (ריק: כל ערך)</string>
+    <string name="macro_test_value_set">הערך %1$s מוגדר</string>
+    <string name="macro_test_value_value">הערך %1$s מכיל %2$s</string>
+    <string name="macro_test_not">לא: %1$s</string>
 </resources>

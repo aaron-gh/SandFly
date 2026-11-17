@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Макросът е спрян. Повторено <xliff:g id="count" example="1000">%1$d</xliff:g> пъти: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Макросът е спрян. Времето изтече: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Макросът не е изпълнен. Изпълняване само когато: условието не е изпълнено</string>
+    <string name="macro_step_more">Още стъпки</string>
+    <string name="macro_do_play_sound">Възпроизвеждане на звук</string>
+    <string name="macro_do_vibrate">Вибриране</string>
+    <string name="macro_do_play_tone">Възпроизвеждане на тон</string>
+    <string name="macro_do_copy_text">Копиране на текст</string>
+    <string name="macro_do_open_link">Отваряне на връзка</string>
+    <string name="macro_do_open_settings">Отваряне на страница с настройки</string>
+    <string name="macro_do_share_text">Споделяне на текст</string>
+    <string name="macro_do_set_volume">Задаване на сила на звука</string>
+    <string name="macro_do_set_ringer">Задаване на режим на звънене</string>
+    <string name="macro_do_press_keys">Натискане на клавиши</string>
+    <string name="macro_do_show_message">Показване на съобщение</string>
+    <string name="macro_do_set_value">Задаване на стойност</string>
+    <string name="macro_do_fetch">Изтегляне от връзка</string>
+    <string name="macro_do_translate">Превод на текст</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, в %3$s</string>
+    <string name="macro_do_vibrate_value">Вибриране %1$d ms</string>
+    <string name="macro_do_play_tone_value">Възпроизвеждане на тон %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Задаване на сила на звука за %1$s на %2$d%%</string>
+    <string name="macro_do_link_hint">Адрес</string>
+    <string name="macro_do_keys_hint">Клавиши, например tab enter</string>
+    <string name="macro_number_range">Въведете от %1$d до %2$d</string>
+    <string name="macro_values_help">Стойностите се вмъкват като {name}. Също {item}, {clipboard}, {time} и {date}.</string>
+    <string name="macro_value_name">Име на стойността</string>
+    <string name="macro_value_name_invalid">Използвайте букви, цифри, точки, тирета или долни черти</string>
+    <string name="macro_test_value">Стойност</string>
+    <string name="macro_test_value_label">Съдържа (празно: всяка стойност)</string>
+    <string name="macro_test_value_set">Стойността %1$s е зададена</string>
+    <string name="macro_test_value_value">Стойността %1$s съдържа %2$s</string>
+    <string name="macro_test_not">Не: %1$s</string>
 </resources>

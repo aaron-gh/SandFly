@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makro dayandı. <xliff:g id="count" example="1000">%1$d</xliff:g> dəfə təkrarlandı: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro dayandı. Vaxt bitdi: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro icra olunmadı. Yalnız bu halda icra edin: şərt ödənmir</string>
+    <string name="macro_step_more">Digər addımlar</string>
+    <string name="macro_do_play_sound">Səs oxudun</string>
+    <string name="macro_do_vibrate">Vibrasiya edin</string>
+    <string name="macro_do_play_tone">Siqnal oxudun</string>
+    <string name="macro_do_copy_text">Mətni kopyalayın</string>
+    <string name="macro_do_open_link">Linki açın</string>
+    <string name="macro_do_open_settings">Ayarlar səhifəsini açın</string>
+    <string name="macro_do_share_text">Mətni paylaşın</string>
+    <string name="macro_do_set_volume">Səs səviyyəsini təyin edin</string>
+    <string name="macro_do_set_ringer">Zəng rejimini təyin edin</string>
+    <string name="macro_do_press_keys">Düymələri basın</string>
+    <string name="macro_do_show_message">Mesaj göstərin</string>
+    <string name="macro_do_set_value">Dəyər təyin edin</string>
+    <string name="macro_do_fetch">Linki yükləyin</string>
+    <string name="macro_do_translate">Mətni tərcümə edin</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s dəyərinə</string>
+    <string name="macro_do_vibrate_value">Vibrasiya %1$d ms</string>
+    <string name="macro_do_play_tone_value">Siqnal %1$d Hz</string>
+    <string name="macro_do_set_volume_value">%1$s səs səviyyəsini %2$d%% edin</string>
+    <string name="macro_do_link_hint">Ünvan</string>
+    <string name="macro_do_keys_hint">Düymələr, məsələn tab enter</string>
+    <string name="macro_number_range">%1$d ilə %2$d arasında daxil edin</string>
+    <string name="macro_values_help">Dəyərlər {name} kimi daxil edilir. Həmçinin {item}, {clipboard}, {time} və {date}.</string>
+    <string name="macro_value_name">Dəyər adı</string>
+    <string name="macro_value_name_invalid">Hərf, rəqəm, nöqtə, defis və ya alt xətt istifadə edin</string>
+    <string name="macro_test_value">Dəyər</string>
+    <string name="macro_test_value_label">Tərkibində (boş: istənilən dəyər)</string>
+    <string name="macro_test_value_set">%1$s dəyəri təyin edilib</string>
+    <string name="macro_test_value_value">%1$s dəyərində %2$s var</string>
+    <string name="macro_test_not">Deyil: %1$s</string>
 </resources>

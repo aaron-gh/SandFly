@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Macro arrêtée. Répété <xliff:g id="count" example="1000">%1$d</xliff:g> fois : <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Macro arrêtée. Délai dépassé : <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Macro non exécutée. Exécuter uniquement si : condition non remplie</string>
+    <string name="macro_step_more">Autres étapes</string>
+    <string name="macro_do_play_sound">Faire jouer un son</string>
+    <string name="macro_do_vibrate">Vibrer</string>
+    <string name="macro_do_play_tone">Faire jouer une tonalité</string>
+    <string name="macro_do_copy_text">Copier un texte</string>
+    <string name="macro_do_open_link">Ouvrir un lien</string>
+    <string name="macro_do_open_settings">Ouvrir une page de paramètres</string>
+    <string name="macro_do_share_text">Partager un texte</string>
+    <string name="macro_do_set_volume">Régler le volume</string>
+    <string name="macro_do_set_ringer">Régler le mode de sonnerie</string>
+    <string name="macro_do_press_keys">Appuyer sur des touches</string>
+    <string name="macro_do_show_message">Afficher un message</string>
+    <string name="macro_do_set_value">Définir une valeur</string>
+    <string name="macro_do_fetch">Récupérer un lien</string>
+    <string name="macro_do_translate">Traduire un texte</string>
+    <string name="macro_do_value">%1$s : %2$s</string>
+    <string name="macro_do_into_value">%1$s : %2$s, dans %3$s</string>
+    <string name="macro_do_vibrate_value">Vibrer %1$d ms</string>
+    <string name="macro_do_play_tone_value">Faire jouer une tonalité de %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Régler le volume %1$s à %2$d %%</string>
+    <string name="macro_do_link_hint">Adresse</string>
+    <string name="macro_do_keys_hint">Touches, par exemple tab enter</string>
+    <string name="macro_number_range">Entrez une valeur de %1$d à %2$d</string>
+    <string name="macro_values_help">Insérez les valeurs avec {name}. Aussi {item}, {clipboard}, {time} et {date}.</string>
+    <string name="macro_value_name">Nom de la valeur</string>
+    <string name="macro_value_name_invalid">Utilisez des lettres, des chiffres, des points, des tirets ou des traits de soulignement</string>
+    <string name="macro_test_value">Valeur</string>
+    <string name="macro_test_value_label">Contient (vide : toute valeur)</string>
+    <string name="macro_test_value_set">La valeur %1$s est définie</string>
+    <string name="macro_test_value_value">La valeur %1$s contient %2$s</string>
+    <string name="macro_test_not">Non : %1$s</string>
 </resources>

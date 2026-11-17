@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">मॅक्रो थांबला. <xliff:g id="count" example="1000">%1$d</xliff:g> वेळा पुन्हा केले: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">मॅक्रो थांबला. वेळ संपली: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">मॅक्रो चालवला नाही. फक्त तेव्हाच चालवा: अट पूर्ण नाही</string>
+    <string name="macro_step_more">आणखी पायऱ्या</string>
+    <string name="macro_do_play_sound">आवाज प्ले करा</string>
+    <string name="macro_do_vibrate">व्हायब्रेट करा</string>
+    <string name="macro_do_play_tone">टोन प्ले करा</string>
+    <string name="macro_do_copy_text">मजकूर कॉपी करा</string>
+    <string name="macro_do_open_link">लिंक उघडा</string>
+    <string name="macro_do_open_settings">सेटिंग्ज पेज उघडा</string>
+    <string name="macro_do_share_text">मजकूर शेअर करा</string>
+    <string name="macro_do_set_volume">व्हॉल्यूम सेट करा</string>
+    <string name="macro_do_set_ringer">रिंगर मोड सेट करा</string>
+    <string name="macro_do_press_keys">की दाबा</string>
+    <string name="macro_do_show_message">मेसेज दाखवा</string>
+    <string name="macro_do_set_value">मूल्य सेट करा</string>
+    <string name="macro_do_fetch">लिंक आणा</string>
+    <string name="macro_do_translate">मजकुराचे भाषांतर करा</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s मध्ये</string>
+    <string name="macro_do_vibrate_value">%1$d ms व्हायब्रेट करा</string>
+    <string name="macro_do_play_tone_value">%1$d Hz टोन प्ले करा</string>
+    <string name="macro_do_set_volume_value">%1$s व्हॉल्यूम %2$d%% वर सेट करा</string>
+    <string name="macro_do_link_hint">पत्ता</string>
+    <string name="macro_do_keys_hint">की, उदा. tab enter</string>
+    <string name="macro_number_range">%1$d ते %2$d टाका</string>
+    <string name="macro_values_help">मूल्ये {name} म्हणून घातली जातात. तसेच {item}, {clipboard}, {time} आणि {date}.</string>
+    <string name="macro_value_name">मूल्याचे नाव</string>
+    <string name="macro_value_name_invalid">अक्षरे, अंक, पूर्णविराम, डॅश किंवा अंडरस्कोअर वापरा</string>
+    <string name="macro_test_value">मूल्य</string>
+    <string name="macro_test_value_label">समाविष्ट (रिक्त: कोणतेही मूल्य)</string>
+    <string name="macro_test_value_set">%1$s मूल्य सेट आहे</string>
+    <string name="macro_test_value_value">%1$s मूल्यामध्ये %2$s आहे</string>
+    <string name="macro_test_not">नाही: %1$s</string>
 </resources>
