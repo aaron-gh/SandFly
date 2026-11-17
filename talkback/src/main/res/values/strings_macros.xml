@@ -253,4 +253,26 @@
     <string name="macro_stopped_timeout">Macro stopped. Timed out: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <!-- Spoken when Run now is pressed and the macro's Run only when condition is not met. [CHAR LIMIT=NONE] -->
     <string name="macro_not_met">Macro not run. Run only when: not met</string>
+    <!-- Kind of macro step: touches an item and holds the touch, optionally sliding before it lifts. [CHAR LIMIT=40] -->
+    <string name="macro_step_touch_hold">Touch and hold item</string>
+    <!-- A Touch and hold item step in a macro's list of steps. label is the item's text, seconds how long the touch is held. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_touch_hold_value">Touch and hold <xliff:g id="label" example="Voice message">%1$s</xliff:g> for <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <!-- A Touch and hold item step that slides before the touch lifts. label is the item's text, seconds how long the touch is held, slide one of the macro_slide texts, distance the distance in dp. [CHAR LIMIT=NONE] -->
+    <string name="macro_step_touch_hold_slide_value">Touch and hold <xliff:g id="label" example="Voice message">%1$s</xliff:g> for <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <!-- Label of the field for how long a Touch and hold item step holds the touch. [CHAR LIMIT=40] -->
+    <string name="macro_hold_seconds">Seconds to hold</string>
+    <!-- Title of the list of what a Touch and hold item step does before the touch lifts. [CHAR LIMIT=40] -->
+    <string name="macro_slide">Before lifting</string>
+    <!-- Choice of a Touch and hold item step: the touch lifts where it is. [CHAR LIMIT=40] -->
+    <string name="macro_slide_none">Lift in place</string>
+    <!-- Choice of a Touch and hold item step: the touch slides up before it lifts. [CHAR LIMIT=40] -->
+    <string name="macro_slide_up">Slide up</string>
+    <!-- Choice of a Touch and hold item step: the touch slides down before it lifts. [CHAR LIMIT=40] -->
+    <string name="macro_slide_down">Slide down</string>
+    <!-- Choice of a Touch and hold item step: the touch slides left before it lifts. [CHAR LIMIT=40] -->
+    <string name="macro_slide_left">Slide left</string>
+    <!-- Choice of a Touch and hold item step: the touch slides right before it lifts. [CHAR LIMIT=40] -->
+    <string name="macro_slide_right">Slide right</string>
+    <!-- Hint of the field for how far a Touch and hold item step slides, in density-independent pixels. [CHAR LIMIT=40] -->
+    <string name="macro_slide_distance">Distance in dp</string>
 </resources>

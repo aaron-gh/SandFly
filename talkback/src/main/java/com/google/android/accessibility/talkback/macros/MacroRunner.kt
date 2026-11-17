@@ -20,6 +20,7 @@ import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
 import android.app.KeyguardManager
 import android.graphics.Path
+import android.graphics.Rect
 import android.graphics.Region
 import android.os.Build
 import android.os.Bundle
@@ -258,6 +259,7 @@ object MacroRunner {
           is Macros.TypeText -> typeText(index, step, SystemClock.uptimeMillis() + FIELD_TIMEOUT_MS)
           is Macros.Tap -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.TapPosition -> tapAt(index, step)
+          is Macros.TouchHold -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.FocusItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakText -> {
@@ -404,19 +406,50 @@ object MacroRunner {
       return true
     }
 
-    /**
-     * Taps the screen at the position of [step], with touch passed through to the app while the tap
-     * runs, as touch exploration would take it as a touch of its own. Fails when the position is
-     * outside the screen.
-     */
+    /** Taps the screen at the position of [step]. Fails when the position is outside the screen. */
     private fun tapAt(index: Int, step: Macros.TapPosition) {
-      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
-        fail(index, step, "tap needs Android 11")
-        return
-      }
       val size = ScreenUtils.getRealScreenSize(service)
       if (step.x !in 0 until size.x || step.y !in 0 until size.y) {
         fail(index, step, "position outside the screen of ${size.x} x ${size.y}")
+        return
+      }
+      val x = step.x.toFloat()
+      val y = step.y.toFloat()
+      touch(index, step, listOf(TouchSegment(x, y, x, y, ViewConfiguration.getTapTimeout().toLong(), false)))
+    }
+
+    /**
+     * Touches the centre of the part of [bounds], those of the item of [step], on the screen, holds,
+     * slides when the step does, and lifts. The end of a slide is kept on the screen.
+     */
+    private fun touchHold(index: Int, step: Macros.TouchHold, bounds: Rect) {
+      val size = ScreenUtils.getRealScreenSize(service)
+      val visible = Rect(bounds)
+      if (!visible.intersect(0, 0, size.x, size.y)) {
+        fail(index, step, "item not on the screen", found = true)
+        return
+      }
+      val x = visible.exactCenterX().coerceIn(0f, (size.x - 1).toFloat())
+      val y = visible.exactCenterY().coerceIn(0f, (size.y - 1).toFloat())
+      var toX = x
+      var toY = y
+      step.slide?.let {
+        val distance = step.slideDp * service.resources.displayMetrics.density
+        toX = (x + it.dx * distance).coerceIn(0f, (size.x - 1).toFloat())
+        toY = (y + it.dy * distance).coerceIn(0f, (size.y - 1).toFloat())
+      }
+      touch(index, step, TouchSegment.plan(x, y, toX, toY, step.holdMillis))
+    }
+
+    /**
+     * Performs [segments] as one touch, each segment dispatched when the one before ends, with
+     * touch passed through to the app while it runs, as touch exploration would take it as a touch
+     * of its own. Goes on to the next step when the touch ends. When the run is stopped while the
+     * touch is down, the touch is lifted where it is.
+     */
+    private fun touch(index: Int, step: Macros.Step, segments: List<TouchSegment>) {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+        fail(index, step, "touch needs Android 11")
         return
       }
       val pipeline = service.feedbackReturner
@@ -424,11 +457,11 @@ object MacroRunner {
         fail(index, step, "no feedback pipeline")
         return
       }
-      val path = Path().apply { moveTo(step.x.toFloat(), step.y.toFloat()) }
-      val gesture =
-        GestureDescription.Builder()
-          .addStroke(GestureDescription.StrokeDescription(path, 0, ViewConfiguration.getTapTimeout().toLong()))
-          .build()
+      if (segments.isEmpty()) {
+        runStep(index + 1)
+        return
+      }
+      val size = ScreenUtils.getRealScreenSize(service)
       pipeline.returnFeedback(
         EVENT_ID_UNTRACKED,
         Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, size.x, size.y)),
@@ -440,29 +473,62 @@ object MacroRunner {
           pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
           ifActive {
             if (performed) later(STEP_GAP_MS) { runStep(index + 1) }
-            else fail(index, step, "tap not performed")
+            else fail(index, step, "touch not performed")
           }
         }
       }
-      val callback =
-        object : AccessibilityService.GestureResultCallback() {
-          override fun onCompleted(description: GestureDescription) = end(true)
-
-          override fun onCancelled(description: GestureDescription) = end(false)
-        }
-      // Posted without the run as token, so that pass-through also ends when the run is stopped.
-      // Android applies the pass-through region a moment later.
-      mainHandler.postDelayed(
-        {
-          try {
-            if (!active || !service.dispatchGesture(gesture, callback, mainHandler)) end(false)
-          } catch (e: RuntimeException) {
-            LogUtils.w(TAG, "Cannot tap: %s", e)
-            end(false)
+      // The stroke and segment that ended last, which the next one continues.
+      var previous: GestureDescription.StrokeDescription? = null
+      var previousSegment: TouchSegment? = null
+      lateinit var dispatch: (Int) -> Unit
+      dispatch = dispatch@{ i ->
+        val stopped = !active
+        val last = previousSegment
+        val segment =
+          when {
+            !stopped -> segments[i]
+            // Stopped before the touch went down.
+            last == null -> null
+            else -> last.lift()
           }
-        },
-        PASS_THROUGH_WAIT_MS,
-      )
+        if (segment == null) {
+          end(false)
+          return@dispatch
+        }
+        val continues = segment.willContinue && !stopped
+        val path =
+          Path().apply {
+            moveTo(segment.fromX, segment.fromY)
+            if (segment.moves) lineTo(segment.toX, segment.toY)
+          }
+        val stroke =
+          previous?.continueStroke(path, 0, segment.durationMs, continues)
+            ?: GestureDescription.StrokeDescription(path, 0, segment.durationMs, continues)
+        val callback =
+          object : AccessibilityService.GestureResultCallback() {
+            override fun onCompleted(description: GestureDescription) {
+              previous = stroke
+              previousSegment = segment
+              when {
+                stopped -> end(false)
+                continues -> dispatch(i + 1)
+                else -> end(true)
+              }
+            }
+
+            override fun onCancelled(description: GestureDescription) = end(false)
+          }
+        try {
+          val gesture = GestureDescription.Builder().addStroke(stroke).build()
+          if (!service.dispatchGesture(gesture, callback, mainHandler)) end(false)
+        } catch (e: RuntimeException) {
+          LogUtils.w(TAG, "Cannot touch: %s", e)
+          end(false)
+        }
+      }
+      // Posted without the run as token, so that a touch that is down is lifted and pass-through
+      // ends also when the run is stopped. Android applies the pass-through region a moment later.
+      mainHandler.postDelayed({ dispatch(0) }, PASS_THROUGH_WAIT_MS)
     }
 
     /**
@@ -490,10 +556,11 @@ object MacroRunner {
           is Macros.Tap -> step.field
           is Macros.FocusItem -> step.field
           is Macros.SpeakItem -> step.field
+          is Macros.TouchHold -> step.field
           else -> null
         }
-      // The item to focus or speak, whether the click was performed, or null when the item isn't
-      // there.
+      // The item to focus or speak, the point to touch, whether the click was performed, or null
+      // when the item isn't there.
       val result: Any? =
         try {
           val node = findItem(service, label, field = field)
@@ -503,6 +570,11 @@ object MacroRunner {
             when (step) {
               is Macros.FocusItem -> focusTarget(it)
               is Macros.SpeakItem -> ItemToSpeak(AccessibilityNodeInfoCompat.wrap(it), innerText(it))
+              is Macros.TouchHold -> {
+                val bounds = Rect()
+                it.getBoundsInScreen(bounds)
+                if (bounds.isEmpty) NO_POSITION else bounds
+              }
               else -> click(it)
             }
           }
@@ -513,6 +585,10 @@ object MacroRunner {
       when {
         result is AccessibilityNodeInfoCompat -> mainHandler.post { ifActive { focus(index, step, result) } }
         result is ItemToSpeak -> mainHandler.post { ifActive { speakItem(index, step, result) } }
+        result is Rect && step is Macros.TouchHold ->
+          mainHandler.post { ifActive { touchHold(index, step, result) } }
+        result === NO_POSITION ->
+          mainHandler.post { ifActive { fail(index, step, "item not on the screen", found = true) } }
         result == true -> mainHandler.post { ifActive { later(STEP_GAP_MS) { runStep(index + 1) } } }
         result == false -> mainHandler.post { ifActive { fail(index, step, "click not performed", found = true) } }
         SystemClock.uptimeMillis() + POLL_MS <= deadline ->
@@ -589,6 +665,7 @@ object MacroRunner {
           is Macros.Tap -> step.label
           is Macros.FocusItem -> step.label
           is Macros.SpeakItem -> step.label
+          is Macros.TouchHold -> step.label
           else -> null
         }
       val text =
@@ -853,6 +930,9 @@ object MacroRunner {
     return texts.joinToString(", ").takeIf { it.isNotEmpty() }
   }
 
+  /** Found by a Touch and hold item step: an item with no part on the screen. */
+  private val NO_POSITION = Any()
+
   /**
    * [node], or the nearest item above it that SandFly moves accessibility focus to, or [node] when
    * there is none. Called on the search thread.
@@ -879,6 +959,55 @@ object MacroRunner {
     }
     return node.performAction(AccessibilityNodeInfo.ACTION_CLICK).also {
       if (!it) Log.w(TAG, "No clickable item: ${node.className} in ${node.packageName}")
+    }
+  }
+}
+
+/**
+ * A part of a touch that a macro step performs: from one point to another, or staying at one, for
+ * [durationMs]. With [willContinue], the touch stays down for the next part.
+ */
+internal data class TouchSegment(
+  val fromX: Float,
+  val fromY: Float,
+  val toX: Float,
+  val toY: Float,
+  val durationMs: Long,
+  val willContinue: Boolean,
+) {
+  val moves: Boolean
+    get() = fromX != toX || fromY != toY
+
+  /** A short part, where this one ends, that lifts the touch. */
+  fun lift(): TouchSegment = TouchSegment(toX, toY, toX, toY, LIFT_MS, false)
+
+  companion object {
+    /**
+     * The longest part of a hold. A macro stopped while a touch is held lifts it when the part ends,
+     * and a gesture can't be longer than a minute.
+     */
+    const val HOLD_PART_MS = 1_000L
+
+    /** How long a slide takes. */
+    const val SLIDE_MS = 300L
+
+    const val LIFT_MS = 10L
+
+    /**
+     * The parts of a touch at [x], [y] held for [holdMs], then slid to [toX], [toY] when that is
+     * another point, and lifted.
+     */
+    fun plan(x: Float, y: Float, toX: Float, toY: Float, holdMs: Long): List<TouchSegment> {
+      val slides = x != toX || y != toY
+      val parts = ArrayList<TouchSegment>()
+      var left = holdMs.coerceAtLeast(1L)
+      while (left > 0) {
+        val part = minOf(left, HOLD_PART_MS)
+        left -= part
+        parts += TouchSegment(x, y, x, y, part, left > 0 || slides)
+      }
+      if (slides) parts += TouchSegment(x, y, toX, toY, SLIDE_MS, false)
+      return parts
     }
   }
 }
