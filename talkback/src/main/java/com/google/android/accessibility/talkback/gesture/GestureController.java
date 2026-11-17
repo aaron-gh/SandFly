@@ -1277,18 +1277,21 @@ public class GestureController {
         && swipeUp.swipeUp(/* fingers= */ 1)) {
       return;
     }
-    // A gesture profile's own gestures come before row and column navigation and scripts.
+    // A gesture profile's own gestures come before scripts.
     boolean fromProfile = gestureShortcutMapping.getProfileActionKeyFromGestureId(gestureId) != null;
     String action = gestureShortcutMapping.getActionKeyFromGestureId(gestureId);
-    // Override the action if the current granularity is row/column.
-    if (!fromProfile
-        && actorState.getDirectionNavigation().getCurrentGranularity()
-            == CursorGranularity.ROW_COLUMN) {
-      if (gestureId == AccessibilityService.GESTURE_SWIPE_LEFT) {
-        action = service.getString(R.string.shortcut_value_column_left);
-      } else if (gestureId == AccessibilityService.GESTURE_SWIPE_RIGHT) {
-        action = service.getString(R.string.shortcut_value_column_right);
-      }
+    // Rows and columns, the table reading control, always takes Swipe left and Swipe right, whatever
+    // a gesture profile, an app or a script gives them.
+    boolean columnSwipe =
+        actorState.getDirectionNavigation().getCurrentGranularity() == CursorGranularity.ROW_COLUMN
+            && (gestureId == AccessibilityService.GESTURE_SWIPE_LEFT
+                || gestureId == AccessibilityService.GESTURE_SWIPE_RIGHT);
+    if (columnSwipe) {
+      action =
+          service.getString(
+              gestureId == AccessibilityService.GESTURE_SWIPE_LEFT
+                  ? R.string.shortcut_value_column_left
+                  : R.string.shortcut_value_column_right);
     }
     LogUtils.v(
         LOG_TAG,
@@ -1304,6 +1307,7 @@ public class GestureController {
     boolean doubleTap = gestureId == GESTURE_DOUBLE_TAP;
     // A script can hand the gesture back later, so the fallback keeps whether it was a double tap.
     if (!fromProfile
+        && !columnSwipe
         && !turnsScriptsOff(action)
         && Scripts.onGesture(
             gestureId, () -> performGestureAction(fallbackAction, eventId, doubleTap))) {
