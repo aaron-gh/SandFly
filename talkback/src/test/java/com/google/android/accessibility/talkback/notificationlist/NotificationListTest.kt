@@ -55,4 +55,42 @@ class NotificationListTest {
 
     assertEquals(listOf(player.key), keys)
   }
+
+  private fun message(title: String, time: Long, group: String? = null, summary: Boolean = false): Notification =
+    Notification.Builder(context, "messages")
+      .setContentTitle(title)
+      .setWhen(time)
+      .setShowWhen(true)
+      .apply {
+        group?.let { setGroup(it) }
+        setGroupSummary(summary)
+      }
+      .build()
+
+  @Test
+  fun byTime_listsEveryNotificationNewestFirstWithoutSummaries() {
+    val adam = posted("com.example.chat", 1, message("Adam", 1_000L, group = "chats"))
+    val ben = posted("com.example.chat", 2, message("Ben", 3_000L, group = "chats"))
+    val summary = posted("com.example.chat", 3, message("2 chats", 3_000L, group = "chats", summary = true))
+    val dad = posted("com.example.sms", 4, message("Dad", 2_000L))
+    NotificationList.onConnected(arrayOf(adam, ben, summary, dad), null)
+
+    val byTime = NotificationList.itemsByTime(context)
+
+    assertEquals(listOf(ben.key, dad.key, adam.key), byTime.flatMap { it.entries }.map { it.key })
+    assertEquals(3, byTime.filterIsInstance<NotificationItem.Single>().size)
+  }
+
+  @Test
+  fun grouped_keepsTheGroup() {
+    val adam = posted("com.example.chat", 1, message("Adam", 1_000L, group = "chats"))
+    val ben = posted("com.example.chat", 2, message("Ben", 3_000L, group = "chats"))
+    val summary = posted("com.example.chat", 3, message("2 chats", 3_000L, group = "chats", summary = true))
+    NotificationList.onConnected(arrayOf(adam, ben, summary), null)
+
+    val items = NotificationList.items(context)
+
+    assertEquals(1, items.size)
+    assertEquals(2, (items.single() as NotificationItem.Group).entries.size)
+  }
 }

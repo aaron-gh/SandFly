@@ -950,6 +950,8 @@
     <string name="summary_pref_show_exit_watermark">When SandFly turns on, show how to turn it off</string>
     <!-- Title of the switch that makes the Notifications action open SandFly's own list of notifications instead of the system's notification shade. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_notification_list">Use SandFly\'s notification list</string>
+    <!-- Title of the switch that makes SandFly's notification list show every notification on its own, newest first, as "App, time, title, text", instead of in groups in the system's order. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_notification_list_by_time" tools:ignore="MissingTranslation">List notifications newest first, without groups</string>
     <!-- Title of the screen that chooses which parts of a notification SandFly's notification list speaks, and their order. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_notification_parts">Notification details</string>
     <!-- Title of the switch that makes Android record Google Play as having installed SandFly. [CHAR_LIMIT=NONE] -->

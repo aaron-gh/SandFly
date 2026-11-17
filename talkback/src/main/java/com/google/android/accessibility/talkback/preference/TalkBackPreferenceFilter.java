@@ -269,6 +269,7 @@ public class TalkBackPreferenceFilter {
     STATUS_READOUT(R.string.pref_status_readout_key, HIDDEN_ON_TV),
     // A TV has no notification shade for Backtalk's list to replace.
     NOTIFICATION_LIST(R.string.pref_notification_list_key, HIDDEN_ON_TV),
+    NOTIFICATION_LIST_BY_TIME(R.string.pref_notification_list_by_time_key, HIDDEN_ON_TV),
     NOTIFICATION_PARTS(R.string.pref_notification_parts_key, HIDDEN_ON_TV),
     // A TV's launcher has its own recent apps.
     OVERVIEW(R.string.pref_overview_key, HIDDEN_ON_TV),
