@@ -28,12 +28,18 @@ import kotlin.math.sign
  * The middle of the two fingers is followed from the moment the second finger lands. The first
  * stroke is a movement of [strokePx] across the screen, and the stroke back the other way needs
  * [RETURN_FRACTION] of that. The second stroke completes the scrub, which is reported at once, while
- * the fingers are still down. Movement up or down, a pinch, a third finger, a stroke that stops
- * moving out for longer than [MAX_STROKE_MILLIS] before it turns back, or a scrub that takes longer
- * than [MAX_MILLIS] from when the fingers start to move is not a scrub.
+ * the fingers are still down. A pinch, a third finger, a stroke that stops moving out for longer
+ * than [MAX_STROKE_MILLIS] before it turns back, or a scrub that takes longer than [MAX_MILLIS] from
+ * when the fingers start to move is not a scrub.
+ *
+ * Strokes go left and right, and movement up or down first is not a scrub, unless [anyDirection]
+ * returns true when the fingers land. Then strokes may go any way, such as up and down or
+ * diagonally, and a first stroke that turns aside, such as a slide in from the top edge followed by
+ * a stroke sideways, starts the scrub again from the turn.
  */
 class TwoFingerScrubTracker(
   private val strokePx: Float,
+  private val anyDirection: () -> Boolean = { false },
   private val listener: Listener,
 ) {
 
@@ -56,10 +62,14 @@ class TwoFingerScrubTracker(
   private var startX = 0f
   private var startY = 0f
   private var startDistance = 0f
-  // 1 while moving right, -1 while moving left, 0 before the first stroke.
-  private var direction = 0
-  // The furthest point of the current stroke.
-  private var extreme = 0f
+  // Whether strokes may go any way for the current touch, not only left and right.
+  private var anyWay = false
+  // The unit vector of the current stroke's direction, set from the first stroke.
+  private var directionX = 0f
+  private var directionY = 0f
+  // The furthest point of the current stroke along its direction.
+  private var extremeX = 0f
+  private var extremeY = 0f
   private var strokes = 0
   private var strokeTime = 0L
 
@@ -76,7 +86,6 @@ class TwoFingerScrubTracker(
     state = State.IDLE
     firstId = INVALID_ID
     secondId = INVALID_ID
-    direction = 0
     strokes = 0
   }
 
@@ -114,9 +123,20 @@ class TwoFingerScrubTracker(
     startX = (event.getX(0) + event.getX(1)) / 2
     startY = (event.getY(0) + event.getY(1)) / 2
     startDistance = hypot(event.getX(1) - event.getX(0), event.getY(1) - event.getY(0))
-    direction = 0
+    anyWay = anyDirection()
     strokes = 0
     state = State.TRACKING
+  }
+
+  /** Starts the first stroke at ([x], [y]), going the way of ([dx], [dy]). */
+  private fun startFirstStroke(dx: Float, dy: Float, x: Float, y: Float, time: Long) {
+    val length = hypot(dx, dy)
+    directionX = dx / length
+    directionY = dy / length
+    extremeX = x
+    extremeY = y
+    strokes = 1
+    strokeTime = time
   }
 
   private fun onTrackingMove(event: MotionEvent) {
@@ -134,7 +154,7 @@ class TwoFingerScrubTracker(
     val y = (y0 + y1) / 2
     val time = event.eventTime
     // The time limit starts when the fingers start to move, not when they land.
-    if (direction == 0 && hypot(x - startX, y - startY) < strokePx * START_FRACTION) {
+    if (strokes == 0 && hypot(x - startX, y - startY) < strokePx * START_FRACTION) {
       startTime = time
     }
     if (time - startTime > MAX_MILLIS) {
@@ -145,24 +165,33 @@ class TwoFingerScrubTracker(
       reject("pinch")
       return
     }
-    if (direction == 0) {
+    if (strokes == 0) {
       val dx = x - startX
-      if (abs(dx) >= strokePx) {
-        direction = sign(dx).toInt()
-        extreme = x
-        strokes = 1
-        strokeTime = time
-      } else if (abs(y - startY) > strokePx) {
+      val dy = y - startY
+      if (anyWay) {
+        if (hypot(dx, dy) >= strokePx) {
+          startFirstStroke(dx, dy, x, y, time)
+        }
+      } else if (abs(dx) >= strokePx) {
+        startFirstStroke(sign(dx), 0f, x, y, time)
+      } else if (abs(dy) > strokePx) {
         reject("moving up or down")
       }
       return
     }
-    if ((x - extreme) * direction > 0) {
-      extreme = x
+    // How far the fingers are from the furthest point of the stroke, along the stroke and across it.
+    val along = (x - extremeX) * directionX + (y - extremeY) * directionY
+    val across = abs((x - extremeX) * directionY - (y - extremeY) * directionX)
+    if (along > 0) {
+      extremeX += along * directionX
+      extremeY += along * directionY
       strokeTime = time
-    } else if ((extreme - x) * direction >= strokePx * RETURN_FRACTION) {
-      direction = -direction
-      extreme = x
+    }
+    if (-along >= strokePx * RETURN_FRACTION) {
+      directionX = -directionX
+      directionY = -directionY
+      extremeX = x
+      extremeY = y
       strokes++
       strokeTime = time
       if (strokes >= STROKES) {
@@ -173,6 +202,15 @@ class TwoFingerScrubTracker(
         listener.onScrub()
         return
       }
+    } else if (
+      anyWay && strokes == 1 && across >= strokePx && -along < strokePx * TURN_FRACTION
+    ) {
+      // The fingers turned aside without coming back, so the scrub starts at the turn.
+      if (GestureLog.enabled) {
+        Log.d(DEBUG_TAG, "Two-finger scrub: first stroke turned aside, starting again")
+      }
+      startFirstStroke(x - extremeX, y - extremeY, x, y, time)
+      startTime = time
     }
     if (time - strokeTime > MAX_STROKE_MILLIS) {
       reject("stroke didn't turn back")
@@ -206,6 +244,12 @@ class TwoFingerScrubTracker(
 
     /** The part of a stroke the fingers move before the time limit starts. */
     private const val START_FRACTION = 0.25f
+
+    /**
+     * The part of a stroke the fingers may come back while turning aside, when strokes may go any
+     * way, for the turn to start the scrub again rather than be a stroke back.
+     */
+    private const val TURN_FRACTION = 0.3f
 
     private const val DEBUG_TAG = "BacktalkGesture"
   }

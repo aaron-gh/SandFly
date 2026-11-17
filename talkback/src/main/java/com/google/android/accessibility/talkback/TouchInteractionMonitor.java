@@ -605,7 +605,13 @@ public class TouchInteractionMonitor
     readCornerSettings(prefs);
     readEdgeScrolls(prefs);
     readEdgeMenus(prefs);
-    scrubTracker = new TwoFingerScrubTracker(pixelsPerCm * SCRUB_STROKE_CM, this::onScrub);
+    // While SandFly takes two-finger swipes, up and down strokes have no other use, so a scrub may
+    // go any way. Otherwise they scroll the app.
+    scrubTracker =
+        new TwoFingerScrubTracker(
+            pixelsPerCm * SCRUB_STROKE_CM,
+            () -> !gestureDetector.isTwoFingerPassthroughEnabled(),
+            this::onScrub);
     pinchTracker =
         new PinchTracker(pixelsPerCm * PINCH_CHANGE_CM, this::isPinchCountInUse, this::onPinch);
     tapToTypeTracker = new TapToTypeTracker(touchSlop);
