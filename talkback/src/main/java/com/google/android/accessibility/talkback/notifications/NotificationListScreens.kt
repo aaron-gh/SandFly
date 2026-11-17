@@ -22,6 +22,8 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.InputType
 import android.text.format.DateFormat
 import android.view.KeyEvent
@@ -192,7 +194,8 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
 
   /**
    * Asks for a text, with [text] filled in, and an optional switch such as "Regular expression".
-   * [onDone] gets the text and the switch, and returns an error to show, or null to close.
+   * [onDone] gets the text and the switch, and returns an error to show, or null. The dialog
+   * closes before [onDone] runs, and opens again with the error shown if there is one.
    * [inputType] and [secondInputType] are the input types of the text fields.
    */
   protected fun askText(
@@ -207,6 +210,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     inputType: Int = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE,
     secondInputType: Int = InputType.TYPE_CLASS_TEXT,
     choice: DialogChoice? = null,
+    error: CharSequence? = null,
     onDone: (String, String, List<Boolean>) -> String?,
   ) {
     val context = requireContext()
@@ -280,8 +284,31 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     dialog.setOnShowListener {
       val ok = dialog.getButton(AlertDialog.BUTTON_POSITIVE)
       ok?.setOnClickListener {
-        val error = onDone(edit.text.toString().trim(), second?.text?.toString().orEmpty(), boxes.map { it.isChecked })
-        if (error == null) dialog.dismiss() else edit.error = error
+        val entered = edit.text.toString()
+        val secondEntered = second?.text?.toString().orEmpty()
+        val checks = boxes.map { it.isChecked }
+        // The dialog and the keyboard close first. Saving and rebuilding the screen while the
+        // keyboard was still shown held up the main thread, and with it the keyboard and speech.
+        dialog.dismiss()
+        Handler(Looper.getMainLooper()).post {
+          if (!isAdded) return@post
+          val newError = onDone(entered.trim(), secondEntered, checks) ?: return@post
+          askText(
+            title = title,
+            text = entered,
+            hint = hint,
+            message = message,
+            checkLabels = checkLabels,
+            checked = checks,
+            secondHint = secondHint,
+            secondText = secondEntered,
+            inputType = inputType,
+            secondInputType = secondInputType,
+            choice = choice,
+            error = newError,
+            onDone = onDone,
+          )
+        }
       }
       if (enterPressesOk) {
         edit.setOnEditorActionListener { _, actionId, event ->
@@ -301,6 +328,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     }
     dialog.show()
     edit.requestFocus()
+    if (error != null) edit.error = error
   }
 
   /** Adds [text] to [layout] as the label shown above [view], which it names for screen readers. */
