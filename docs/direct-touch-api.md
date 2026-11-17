@@ -41,6 +41,9 @@ In `res/xml/direct_touch.xml`, each element inside `<direct-touch>` is a rule:
     <!-- The bottom half of the window in MainActivity while the state is "playing". -->
     <area activity=".MainActivity" state="playing" top="50%" />
 
+    <!-- A strip 200 dp tall along the bottom of the window while the state is "racing". -->
+    <area state="racing" bottom="100%" height="200dp" />
+
     <!-- The whole screen in any activity while the state is "racing". -->
     <screen state="racing" />
 </direct-touch>
@@ -50,7 +53,7 @@ In `res/xml/direct_touch.xml`, each element inside `<direct-touch>` is a rule:
 | --- | --- |
 | `<screen>` | The whole screen. |
 | `<area>` with `view` | The view with that resource ID, wherever it is on screen, while it's shown. Write `@id/board`, `board` or `com.example.game:id/board`. |
-| `<area>` with edges | Part of your app's window. `left`, `top`, `right` and `bottom` are fractions of the window, as `50%` or `0.5`. They default to the window's edges, so `<area top="50%" />` is the bottom half. |
+| `<area>` with edges | Part of your app's window, described in [Areas of the window](#areas-of-the-window). |
 
 Each rule can have these conditions. A rule without one applies in every activity or every state.
 
@@ -58,6 +61,31 @@ Each rule can have these conditions. A rule without one applies in every activit
 | --- | --- |
 | `activity` | The activity in front, as the manifest writes it: `.GameActivity`, `GameActivity` or `com.example.game.GameActivity`. `*` matches any activity. |
 | `state` | The state your app last set with `setState`. A rule with a state doesn't match until your app sets that state. |
+
+### Areas of the window
+
+An `<area>` without `view` takes these attributes, all optional:
+
+| Attribute | Meaning |
+| --- | --- |
+| `left`, `right` | Distance from the window's left edge. |
+| `top`, `bottom` | Distance from the window's top edge. |
+| `width`, `height` | Size, for an area that has only one edge on that axis, or none. |
+
+Each value is a fraction of the window's width or height, as `30%` or `0.3`, a size in dp, as `48dp`, or a size in pixels, as `120px`. Fractions above 100% count as 100%, and values can't be negative.
+
+Every edge is measured from the window's top left corner, not from the opposite side, and an edge that is left out is the window's own edge:
+
+| Declaration | Area |
+| --- | --- |
+| `top="30%"` | From 30% of the way down to the bottom. |
+| `bottom="30%"` | The top 30%. |
+| `left="30%" right="70%"` | The middle 40% of the width, the full height. |
+| `bottom="100%" height="200dp"` | A strip 200 dp tall along the bottom. |
+| `left="100%" width="80dp"` | Nothing: the area starts at the right edge. Use `right="100%" width="80dp"` for a strip along the right side. |
+| `width="150px" height="150px"` | A square of 150 pixels in the top left corner. |
+
+With an edge on each side of an axis, `width` or `height` is ignored. Measurements are from your app's window, which can start below the status bar, not from the screen. Areas are cut off at the window's edges. dp scale with the display's density, and pixels don't, so pixels suit only a known screen size.
 
 When rules for the whole screen and for areas both match, the whole screen applies. Otherwise the matching areas add up. SandFly reads up to 64 rules and skips elements it doesn't know.
 

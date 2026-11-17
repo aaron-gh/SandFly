@@ -22,7 +22,6 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.graphics.Rect
-import android.graphics.RectF
 import android.os.Binder
 import android.os.Bundle
 import android.os.Looper
@@ -302,7 +301,12 @@ class DirectTouchControllerTest {
         true,
         DirectTouchDeclaration(
           listOf(
-            DirectTouchRule(GAME_ACTIVITY, null, screen = false, windowArea = RectF(0f, 0.5f, 1f, 1f)),
+            DirectTouchRule(
+              GAME_ACTIVITY,
+              null,
+              screen = false,
+              windowArea = WindowArea(top = AreaLength(0.5f, AreaLength.Unit.FRACTION)),
+            ),
             DirectTouchRule(null, "playing", screen = true),
           )
         ),
