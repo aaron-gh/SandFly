@@ -64,6 +64,10 @@ object AppGestures {
   // Tells whether a window of System UI is the active window.
   @Volatile private var systemUiActive: BooleanSupplier? = null
 
+  // The app whose gestures apply, set by [withApp] for lookups on the main thread that take it
+  // from there instead of from the window list.
+  private var heldApp: String? = null
+
   /** Sets what takes the app in front from the window list, or null when nothing does. */
   @JvmStatic
   fun setFrontAppRefresh(refresh: Runnable?) {
@@ -142,8 +146,37 @@ object AppGestures {
     if (gestureKey == null) return null
     val apps = apps
     if (apps.isEmpty()) return null
+    val held = if (Looper.myLooper() == Looper.getMainLooper()) heldApp else null
+    if (held != null) return apps[held]?.gestures?.get(gestureKey)
     refreshFrontApp()
     return apps[appInUse(apps)]?.gestures?.get(gestureKey)
+  }
+
+  /**
+   * The package whose gestures apply now, taken from the window list, for [withApp]. Call on the
+   * main thread.
+   */
+  @JvmStatic
+  fun appForGestures(): String {
+    val apps = apps
+    if (apps.isEmpty()) return app
+    refreshFrontApp()
+    return appInUse(apps)
+  }
+
+  /**
+   * Runs [lookUp] on the main thread with [app] as the app whose gestures apply, so that its
+   * lookups don't read the window list again.
+   */
+  @JvmStatic
+  fun withApp(app: String, lookUp: BooleanSupplier): Boolean {
+    val previous = heldApp
+    heldApp = app
+    try {
+      return lookUp.asBoolean
+    } finally {
+      heldApp = previous
+    }
   }
 
   /** Whether any app gives the gesture of preference key [gestureKey] a command of its own. */

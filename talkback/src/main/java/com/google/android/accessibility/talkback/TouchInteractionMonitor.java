@@ -89,6 +89,7 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
@@ -112,6 +113,7 @@ import com.google.android.accessibility.talkback.gesture.EdgeMenus;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge;
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge;
+import com.google.android.accessibility.talkback.gesture.AppGestures;
 import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureLog;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
@@ -253,6 +255,11 @@ public class TouchInteractionMonitor
   // Whether a gesture other than a two-finger swipe started. A two-finger swipe starts as soon as
   // one finger moves, which must not stop a rotation, which starts later.
   private boolean nonSwipeGestureStarted = false;
+
+  // Whether each gesture runs a command, as gesture matching found during the current interaction,
+  // and the app whose gestures applied then. Cleared as each interaction starts.
+  private final SparseBooleanArray assignedThisInteraction = new SparseBooleanArray();
+  private @Nullable String gestureAppThisInteraction;
   // Whether a gesture was performed while fingers were still down, such as a double tap and hold,
   // so that the rest of the touch follows the circle menu instead of being a gesture. The offset
   // keeps the followed point from jumping when one of the fingers lifts.
@@ -548,7 +555,7 @@ public class TouchInteractionMonitor
 
               @Override
               public boolean isGestureAssigned(int gestureId) {
-                return TouchInteractionMonitor.this.isGestureAssigned(gestureId);
+                return isGestureAssignedForMatching(gestureId);
               }
 
               @Override
@@ -1273,6 +1280,8 @@ public class TouchInteractionMonitor
   }
 
   private void clear() {
+    assignedThisInteraction.clear();
+    gestureAppThisInteraction = null;
     passingSyntheticTouch = false;
     gestureStarted = false;
     nonSwipeGestureStarted = false;
@@ -2136,6 +2145,25 @@ public class TouchInteractionMonitor
                 GestureManifold.GESTURE_CORNER_BOTTOM_RIGHT_TRIPLE_TAP_AND_HOLD;
           };
     };
+  }
+
+  /**
+   * Returns whether the gesture runs a command, for gesture matching. Each gesture is looked up
+   * once in an interaction, and the app whose gestures apply is taken from the window list once,
+   * as the taps of multi-finger gestures ask for many gestures at each lift.
+   */
+  private boolean isGestureAssignedForMatching(int gestureId) {
+    int index = assignedThisInteraction.indexOfKey(gestureId);
+    if (index >= 0) {
+      return assignedThisInteraction.valueAt(index);
+    }
+    if (gestureAppThisInteraction == null) {
+      gestureAppThisInteraction = AppGestures.appForGestures();
+    }
+    boolean assigned =
+        AppGestures.withApp(gestureAppThisInteraction, () -> isGestureAssigned(gestureId));
+    assignedThisInteraction.put(gestureId, assigned);
+    return assigned;
   }
 
   /** Returns whether the gesture runs a command, or a running script binds it. */
