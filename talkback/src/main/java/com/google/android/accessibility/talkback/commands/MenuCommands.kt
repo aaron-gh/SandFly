@@ -374,6 +374,12 @@ object MenuCommands {
       R.id.inspect_item,
     )
     command(
+      R.string.pref_show_context_menu_copy_item_details_setting_key,
+      R.bool.pref_show_context_menu_copy_item_details_default,
+      R.string.shortcut_value_copy_item_details,
+      R.id.copy_item_details,
+    )
+    command(
       R.string.pref_show_context_menu_copy_screen_tree_setting_key,
       R.bool.pref_show_context_menu_copy_screen_tree_default,
       R.string.shortcut_value_copy_screen_tree,

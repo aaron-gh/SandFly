@@ -20,6 +20,7 @@ import android.accessibilityservice.AccessibilityService
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
+import androidx.annotation.StringRes
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.macros.MacroRunner
@@ -34,33 +35,80 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 object ItemInspector {
+  /** A part of an item's details: a heading and its lines, each a name and a value. */
+  data class Section(@StringRes val title: Int, val lines: List<Pair<String, String>>)
+
   /**
-   * Says and copies the details of [node]: the texts and item types macro tests match, the id and
-   * role scripts match, and the texts of the items in it.
+   * Opens a window with the details of [node], under a heading for each part. Returns what to say
+   * instead when there is no item.
    */
   @JvmStatic
-  fun inspect(context: Context, node: AccessibilityNodeInfoCompat?): String {
+  fun show(context: Context, node: AccessibilityNodeInfoCompat?): String? {
     node ?: return context.getString(R.string.script_inspect_no_item)
-    val details =
-      (texts(node) +
-          listOf(
-            "item types" to itemTypes(context, node),
-            "id" to node.viewIdResourceName,
-            "role" to ScriptRoles.role(node),
-            "appRole" to ScriptRoles.appRole(node).takeIf { it != ScriptRoles.role(node) },
-            "className" to node.className,
+    context.startActivity(ItemDetailsActivity.intent(context, report(context, node)))
+    return null
+  }
+
+  /** Copies the details of [node] as text, and returns what to say. */
+  @JvmStatic
+  fun copy(context: Context, node: AccessibilityNodeInfoCompat?): String {
+    node ?: return context.getString(R.string.script_inspect_no_item)
+    context.copyToClipboard(
+      context.getString(R.string.script_inspect_clip_label),
+      plainText(context, report(context, node)),
+    )
+    return context.getString(R.string.item_details_copied_all)
+  }
+
+  /**
+   * The details of [node]: the texts and item types macro tests match, the texts of the items in
+   * it, the id and role scripts match, and the app it is in. Parts with nothing in them are left
+   * out.
+   */
+  fun report(context: Context, node: AccessibilityNodeInfoCompat): List<Section> {
+    val role = ScriptRoles.role(node)
+    val script =
+      lines(
+        "id" to node.viewIdResourceName,
+        "role" to role,
+        "appRole" to ScriptRoles.appRole(node).takeIf { it != role },
+        "className" to node.className,
+        "rules" to Scripts.rule(node)?.sources?.joinToString("; "),
+      ) +
+        listOfNotNull(
+          ("" to context.getString(R.string.item_details_no_id)).takeIf {
+            node.viewIdResourceName == null
+          }
+        )
+    return listOf(
+        Section(R.string.item_details_texts, lines(*texts(node).toTypedArray())),
+        Section(R.string.item_details_types, itemTypes(context, node).map { "" to it }),
+        Section(R.string.item_details_inside, innerTexts(node)),
+        Section(R.string.item_details_script, script),
+        Section(
+          R.string.item_details_app,
+          lines(
             "app" to node.packageName,
             "activity" to Scripts.currentActivity(),
             "window" to Scripts.currentWindowTitle(),
-            "rules" to Scripts.rule(node)?.sources?.joinToString("; "),
-          ) +
-          innerTexts(node))
-        .filterNot { it.second.isNullOrEmpty() }
-        .joinToString("\n") { (name, value) -> "$name: $value" }
-    context.copyToClipboard(context.getString(R.string.script_inspect_clip_label), details)
-    val message = node.viewIdResourceName?.let { R.string.script_inspect_copied }
-    return context.getString(message ?: R.string.script_inspect_no_id, details)
+          ),
+        ),
+      )
+      .filter { it.lines.isNotEmpty() }
   }
+
+  /** [sections] as text: each heading, then its lines, with a blank line between parts. */
+  fun plainText(context: Context, sections: List<Section>): String =
+    sections.joinToString("\n\n") { section ->
+      (listOf(context.getString(section.title)) + section.lines.map(::lineText)).joinToString("\n")
+    }
+
+  /** A line of a part: "name: value", or the value alone when it has no name. */
+  fun lineText(line: Pair<String, String>): String =
+    if (line.first.isEmpty()) line.second else "${line.first}: ${line.second}"
+
+  private fun lines(vararg values: Pair<String, CharSequence?>): List<Pair<String, String>> =
+    values.mapNotNull { (name, value) -> value?.toString()?.takeIf { it.isNotEmpty() }?.let { name to it } }
 
   /** The texts of [node] a macro's Match in can name, by the names in its list. */
   private fun texts(node: AccessibilityNodeInfoCompat): List<Pair<String, CharSequence?>> =
@@ -72,26 +120,24 @@ object ItemInspector {
     )
 
   /** The macro item types [node] is, by their titles in a test's Item type list. */
-  private fun itemTypes(context: Context, node: AccessibilityNodeInfoCompat): String =
+  private fun itemTypes(context: Context, node: AccessibilityNodeInfoCompat): List<String> =
     Macros.Kind.entries
       .filter { MacroRunner.isKind(node.unwrap(), it) }
-      .joinToString(", ") { context.getString(it.title) }
+      .map { context.getString(it.title) }
 
   /**
-   * The texts of the items in [node], each as "inside text" and so on, up to [MAX_INNER_TEXTS]. A
-   * Focused item test matches these too; an Item on screen test matches the inner item itself.
+   * The texts of the items in [node], up to [MAX_INNER_TEXTS]. A Focused item test matches these
+   * too; an Item on screen test matches the inner item itself.
    */
-  private fun innerTexts(node: AccessibilityNodeInfoCompat): List<Pair<String, CharSequence?>> {
-    val found = mutableListOf<Pair<String, CharSequence?>>()
+  private fun innerTexts(node: AccessibilityNodeInfoCompat): List<Pair<String, String>> {
+    val found = mutableListOf<Pair<String, String>>()
     val queue = ArrayDeque(node.children())
     var count = 0
     while (queue.isNotEmpty() && count < MAX_INNER_ITEMS && found.size < MAX_INNER_TEXTS) {
       val item = queue.removeFirst()
       count++
       if (!item.isVisibleToUser) continue
-      texts(item)
-        .filterNot { it.second.isNullOrEmpty() }
-        .forEach { (name, value) -> found.add("inside $name" to value) }
+      found.addAll(lines(*texts(item).toTypedArray()))
       queue.addAll(item.children())
     }
     return found.take(MAX_INNER_TEXTS)

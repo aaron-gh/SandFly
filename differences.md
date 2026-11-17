@@ -239,7 +239,7 @@ A window name that a key stopped isn't spoken later. Pressing Ctrl alone pauses 
 
 ### Speech while an app records
 
-While another app records from the microphone without headphones, and during calls, TalkBack dropped announcements that you asked for with a gesture or key. SandFly speaks them: the time and date, the battery, the status, the window title, phonetic letters, **Inspect focused item**, and turning scripts on or off.
+While another app records from the microphone without headphones, and during calls, TalkBack dropped announcements that you asked for with a gesture or key. SandFly speaks them: the time and date, the battery, the status, the window title, phonetic letters, **Copy item details**, and turning scripts on or off.
 
 With **Text-to-speech** > **Quiet while recording** on, SandFly stays quiet while an app records without headphones, except for speech within two seconds of a touch, gesture, key or braille input, so that notifications and other speech you didn't ask for aren't recorded. It's off by default.
 
@@ -1215,9 +1215,9 @@ Apps can ask SandFly to say text in your own SandFly voice, for example a game, 
 
 The first time an app asks, SandFly posts a notification that asks whether to allow it, and nothing the app sends is said until you choose **Allow**. You can allow or block each app later in **Let other apps speak**. To hear a short sound before each thing another app says, so that you can tell it apart from SandFly, turn on **Play a sound before other apps speak**. Nothing is said while the device is locked unless the app declares that it speaks while locked and you allow that separately, with the app's **while the device is locked** switch or the notification SandFly posts the first time; an app can speak only a few times in a row, and apps can never stop or cut off SandFly's own speech. [Speaking through SandFly from another app](docs/speech-api.md) describes the API for app developers.
 
-### Inspect focused item and Copy screen tree
+### Inspect focused item, Copy item details and Copy screen tree
 
-**Inspect focused item** says the focused item's id, class, role, app, activity and window, and copies them, so that scripts can name the item. **Copy screen tree** copies every item on screen as JSON. Assign either to a gesture in gesture settings, or add it to the SandFly menu in **SandFly menu**, under **Controls**.
+**Inspect focused item** opens a window with the focused item's details under headings: Texts (text, description, hint and state, as a macro's **Match in** list names them), Item types (the macro item types it is, such as Clickable or Heading), Items inside, Script details (id, role, class and rules) and App (app, activity and window). **Copy all** copies them as text; activating a line copies its value. **Copy item details** copies the same details without opening the window. **Copy screen tree** copies every item on screen as JSON. Assign any of them to a gesture in gesture settings, or add them to the SandFly menu in **SandFly menu**, under **Controls**.
 
 ## Settings
 

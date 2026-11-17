@@ -504,6 +504,16 @@
             android:theme="@style/NotificationListTheme"
             android:windowSoftInputMode="adjustResize" />
 
+        <!-- Inspect focused item: the details of an item, under a heading for each part. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.scripting.ItemDetailsActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:label="@string/script_inspect_clip_label"
+            android:taskAffinity="com.google.android.accessibility.talkback.ItemDetailsAffinity"
+            android:theme="@style/NotificationListTheme" />
+
         <!-- SandFly's own quick settings panel, opened instead of the system's quick settings. -->
         <activity
             android:name="com.google.android.accessibility.talkback.quicksettings.QuickSettingsActivity"
