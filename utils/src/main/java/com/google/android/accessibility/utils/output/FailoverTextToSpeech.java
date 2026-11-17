@@ -422,6 +422,45 @@ public class FailoverTextToSpeech {
   /** Utterances the engine has taken but not yet reported finishing, stopping or failing. */
   private final Set<String> unfinishedUtterances = ConcurrentHashMap.newKeySet();
 
+  /** Speech given to the engine since it last reported on any. */
+  private final UnansweredSpeech unansweredSpeech = new UnansweredSpeech();
+
+  /**
+   * Speech given to the engine since it last reported on any: when the first of it was given, and
+   * how many times speech flushed the queue since. Speech that flushes the queue starts its own
+   * wait for the engine, unless the engine has reported on none of {@link
+   * #FLUSHES_BEFORE_KEEPING_WAIT} flushes in a row, as when it hangs while the user keeps moving.
+   */
+  @VisibleForTesting
+  static final class UnansweredSpeech {
+    static final int FLUSHES_BEFORE_KEEPING_WAIT = 3;
+
+    private long firstAt;
+    private int flushes;
+
+    /**
+     * Notes speech given to the engine at {@code now}, which flushes the queue or not. Returns when
+     * the wait for the engine runs from after a flush: when the first unanswered speech was given,
+     * after enough flushes with no report, else 0 for a new wait.
+     */
+    synchronized long onSpeech(long now, boolean flush) {
+      if (firstAt == 0) {
+        firstAt = now;
+      }
+      if (!flush) {
+        return 0;
+      }
+      flushes++;
+      return flushes >= FLUSHES_BEFORE_KEEPING_WAIT ? firstAt : 0;
+    }
+
+    /** Notes that the engine reported on speech, or that the wait for it ended. */
+    synchronized void reset() {
+      firstAt = 0;
+      flushes = 0;
+    }
+  }
+
   private final Runnable checkEngineHang = this::checkEngineHang;
 
   /** What each low-latency utterance said, to say it again the usual way if it gives no audio. */
@@ -2488,6 +2527,7 @@ public class FailoverTextToSpeech {
     dropHeldSpeech();
     mHandler.removeCallbacks(checkEngineHang);
     engineQuietSince = 0;
+    unansweredSpeech.reset();
     unfinishedUtterances.clear();
     boolean speaking = !lowLatencyStreams.isEmpty();
     LowLatencyAudio.shutdownAll();
@@ -2517,6 +2557,7 @@ public class FailoverTextToSpeech {
     stalledEnds.clear();
     mHandler.removeCallbacks(checkEngineHang);
     engineQuietSince = 0;
+    unansweredSpeech.reset();
     unfinishedUtterances.clear();
     LowLatencyAudio.shutdownAll();
   }
@@ -2635,11 +2676,19 @@ public class FailoverTextToSpeech {
       return;
     }
     boolean idle = queueMode != QUEUE_ADD || unfinishedUtterances.isEmpty();
+    long now = SystemClock.uptimeMillis();
+    long keptSince = unansweredSpeech.onSpeech(now, queueMode != QUEUE_ADD);
     if (queueMode != QUEUE_ADD) {
       // The engine may never report on the speech this flushes, so the wait for it ends, and the
       // flushing speech starts its own, rather than inheriting how long the flushed speech waited.
+      // After several flushes with no report, the wait goes on from the first of them.
       unfinishedUtterances.clear();
-      engineQuietSince = 0;
+      engineQuietSince = keptSince;
+      if (keptSince != 0) {
+        engineQuietUtteranceId = utteranceId;
+        mHandler.removeCallbacks(checkEngineHang);
+        mHandler.postDelayed(checkEngineHang, Math.max(0, ENGINE_HANG_MS - (now - keptSince)));
+      }
     }
     unfinishedUtterances.add(utteranceId);
     if (idle && engineQuietSince == 0) {
@@ -2662,6 +2711,7 @@ public class FailoverTextToSpeech {
   /** Notes that the engine said something about {@code utteranceId}, so it is not hung. */
   private void engineResponded(String utteranceId, boolean finished) {
     engineQuietSince = 0;
+    unansweredSpeech.reset();
     if (finished) {
       unfinishedUtterances.remove(utteranceId);
     }
@@ -2697,6 +2747,7 @@ public class FailoverTextToSpeech {
     @Nullable String hungUtteranceId = engineQuietUtteranceId;
     LogUtils.e(TAG, "TTS engine %s said nothing for %d ms, so it is hung", ttsEngine, quiet);
     engineQuietSince = 0;
+    unansweredSpeech.reset();
     unfinishedUtterances.clear();
     boolean lowLatency = hungUtteranceId != null && lowLatencyRequests.containsKey(hungUtteranceId);
     // Speech waiting on the hung engine stops, so that it holds up nothing.
@@ -3269,6 +3320,7 @@ public class FailoverTextToSpeech {
     LowLatencyAudio.stopAllStreams();
     mHandler.removeCallbacks(checkEngineHang);
     engineQuietSince = 0;
+    unansweredSpeech.reset();
     unfinishedUtterances.clear();
 
     tts = newTts;
