@@ -807,6 +807,14 @@ object Commands {
           R.string.shortcut_value_write_reading_control,
           R.string.shortcut_write_reading_control,
         )
+        gesture(
+          R.string.shortcut_value_next_reading_control_list,
+          R.string.shortcut_next_reading_control_list,
+        )
+        gesture(
+          R.string.shortcut_value_previous_reading_control_list,
+          R.string.shortcut_previous_reading_control_list,
+        )
         val prefs = SharedPreferencesUtils.getSharedPreferences(context)
         for (selection in ReadingControlCommands.selections(context, prefs)) {
           commands.add(Command(selection.value, selection.label, keyboardAction = null))

@@ -1963,6 +1963,11 @@ public class SelectorController implements UserInputEventListener {
    * scripts come last.
    */
   private List<Object> rotorEntries() {
+    @Nullable List<Setting> inList =
+        listInUseSettings(accessibilityFocusMonitor.getAccessibilityFocus(false));
+    if (inList != null && !inList.isEmpty()) {
+      return new ArrayList<>(inList);
+    }
     List<Setting> settings = getFilteredSettings();
     List<ScriptReadingControl> custom = customControls();
     List<Object> entries = new ArrayList<>();
@@ -2057,6 +2062,17 @@ public class SelectorController implements UserInputEventListener {
    * setting.
    */
   private void selectFirstAvailableSetting() {
+    @Nullable List<Setting> inList =
+        listInUseSettings(accessibilityFocusMonitor.getAccessibilityFocus(false));
+    if (inList != null && !inList.isEmpty()) {
+      applyPendingSwitch();
+      setCurrentSetting(
+          EVENT_ID_UNTRACKED,
+          firstAutomaticSetting(inList),
+          AnnounceType.SILENCE,
+          /* showOverlay= */ false);
+      return;
+    }
     List<Setting> settings = getFilteredSettings();
     if (!settings.isEmpty()) {
       selectSetting(firstAutomaticSetting(settings), AnnounceType.SILENCE, false);
@@ -2108,7 +2124,10 @@ public class SelectorController implements UserInputEventListener {
 
   /** Returns whether {@code setting}, replaced automatically, can be current again. */
   private boolean canRestore(Setting setting) {
-    return setting == settingFromReadingControlList
+    @Nullable ReadingControlLists.ControlList inUse = ReadingControlLists.inUse(prefs);
+    boolean inListInUse =
+        inUse != null && inUse.getControls().contains(context.getString(setting.prefKeyResId));
+    return setting == settingFromReadingControlList || inListInUse
         ? !hiddenSettings.contains(setting) && availableHere(setting, /* node= */ null)
         : allowedSetting(setting);
   }
@@ -2310,6 +2329,83 @@ public class SelectorController implements UserInputEventListener {
         return true;
       }
     }
+  }
+
+  /**
+   * The reading controls of the reading control list in use that can be used now, in the list's
+   * order, or null while the main list is in use.
+   */
+  private @Nullable List<Setting> listInUseSettings(@Nullable AccessibilityNodeInfoCompat node) {
+    @Nullable ReadingControlLists.ControlList inUse = ReadingControlLists.inUse(prefs);
+    if (inUse == null) {
+      return null;
+    }
+    Map<String, Setting> byKey = new HashMap<>();
+    for (Setting setting : SELECTOR_SETTINGS) {
+      byKey.put(context.getString(setting.prefKeyResId), setting);
+    }
+    List<Setting> settings = new ArrayList<>();
+    for (String key : inUse.getControls()) {
+      @Nullable Setting setting = byKey.get(key);
+      if (setting != null
+          && !settings.contains(setting)
+          && !hiddenSettings.contains(setting)
+          && availableHere(setting, node)) {
+        settings.add(setting);
+      }
+    }
+    return settings;
+  }
+
+  /**
+   * Changes the reading control list that next and previous reading control go through to the next
+   * or previous one, with Reading controls first, and says its name. When the selected reading
+   * control is not in the new list, the list's first one is selected and its name said too.
+   */
+  public void changeReadingControlList(EventId eventId, boolean isNext) {
+    applyPendingSwitch();
+    String displayText;
+    if (ReadingControlLists.read(prefs).isEmpty()) {
+      displayText = context.getString(R.string.no_reading_control_lists);
+    } else {
+      ReadingControlLists.setInUse(prefs, ReadingControlLists.adjacentId(prefs, isNext));
+      @Nullable ReadingControlLists.ControlList inUse = ReadingControlLists.inUse(prefs);
+      displayText =
+          inUse != null
+              ? inUse.getName()
+              : context.getString(R.string.title_pref_category_selector_menu);
+      List<Object> entries = rotorEntries();
+      if (!entries.isEmpty() && currentRotorIndex(entries) < 0) {
+        Object first = entries.get(0);
+        if (first instanceof Setting) {
+          List<Setting> settings = new ArrayList<>();
+          for (Object entry : entries) {
+            if (entry instanceof Setting setting) {
+              settings.add(setting);
+            }
+          }
+          first = firstAutomaticSetting(settings);
+        }
+        CharSequence controlName;
+        if (first instanceof Setting setting) {
+          setCurrentSetting(eventId, setting, AnnounceType.SILENCE, /* showOverlay= */ false);
+          controlName = getSettingActionDescriptionAndHint(setting, EVENT_ID_UNTRACKED).description;
+        } else {
+          ScriptReadingControl control = (ScriptReadingControl) first;
+          selectScriptControl(eventId, control, AnnounceType.SILENCE, /* showOverlay= */ false);
+          controlName = control.getTitle();
+        }
+        if (!TextUtils.isEmpty(controlName)) {
+          displayText =
+              context.getString(R.string.reading_control_list_changed, displayText, controlName);
+        }
+      }
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
+    }
+    announceSetting(eventId, displayText, /* hint= */ null);
+    showQuickMenuActionOverlay(eventId, displayText);
   }
 
   /** Returns {@code true} if the reading control contains the {@code setting}. */
