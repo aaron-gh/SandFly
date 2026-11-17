@@ -47,7 +47,22 @@ object ItemPattern {
 
   fun item(sample: JSONObject?): JSONObject? = sample?.optJSONObject("item")
 
-  private fun similar(sample: JSONObject): List<JSONObject> = sample.optJSONArray("similar").objectList()
+  /**
+   * The items like the inspected item, without the ones built differently, such as a heading row of
+   * the same class in the same list.
+   */
+  private fun similar(sample: JSONObject): List<JSONObject> {
+    val item = item(sample) ?: return emptyList()
+    val shape = inners(item).map { it.path to it.json.optString("class") }
+    return sample.optJSONArray("similar").objectList().filter { other ->
+      val alike = shape.count { (path, className) -> at(other, path)?.optString("class") == className }
+      alike * ALIKE_PARTS >= shape.size * ALIKE_OF && inners(other).size * ALIKE_PARTS <= shape.size * ALIKE_PARTS * 2
+    }
+  }
+
+  /** At least [ALIKE_OF] in [ALIKE_PARTS] of the items in an item like it are in the same place. */
+  private const val ALIKE_OF = 3
+  private const val ALIKE_PARTS = 4
 
   /**
    * A query that names the inspected item and the items like it, or null when the sample has
@@ -185,7 +200,11 @@ object ItemPattern {
       val field = fieldOf(named)
       val others = similar.map { other -> at(other, path)?.takeIf { fieldOf(it) == field }?.let(::label) }
       val known = if (others.all { it != null }) others else emptyList()
-      val pattern = pattern(value, known, if (known.isEmpty()) names(item, button.json) else emptyList()) ?: continue
+      // A button the other items have with another text, such as Cancel request, keeps its own.
+      val pattern =
+        pattern(value, known, if (known.isEmpty()) names(item, button.json) else emptyList())
+          ?: pattern(value, emptyList(), names(item, button.json))
+          ?: continue
       val title = pattern.core.trim { !it.isLetterOrDigit() }.ifEmpty { continue }
       if (buttons.any { it.title.equals(title, ignoreCase = true) }) continue
       val target =
@@ -261,9 +280,12 @@ object ItemPattern {
       if (all.all { it.equals(value, ignoreCase = true) }) return exact(value)
       val prefix = wordPrefix(all)
       val suffix = wordSuffix(all)
+      // Something follows a shared start, so that "Remove Chloe McCarthy" gives "^Remove.+", which
+      // the text "Remove" inside the Remove button doesn't match.
+      val more = { core: String -> if (all.all { it.trim().length > core.length }) ".+" else "" }
       return when {
-        prefix.length >= MIN_CORE && prefix.length >= suffix.length -> Pattern("^" + quote(prefix), null, prefix)
-        suffix.length >= MIN_CORE -> Pattern(quote(suffix) + "$", null, suffix)
+        prefix.length >= MIN_CORE && prefix.length >= suffix.length -> Pattern("^" + quote(prefix) + more(prefix), null, prefix)
+        suffix.length >= MIN_CORE -> Pattern(more(suffix) + quote(suffix) + "$", null, suffix)
         else -> commonWords(all)?.let { Pattern(quote(it), null, it) }
       }
     }
@@ -278,8 +300,8 @@ object ItemPattern {
     val after = value.substring(start + name.length).trim()
     return when {
       before.isEmpty() && after.isEmpty() -> null
-      before.isEmpty() -> Pattern(quote(after) + "$", null, after)
-      after.isEmpty() -> Pattern("^" + quote(before), null, before)
+      before.isEmpty() -> Pattern(".+" + quote(after) + "$", null, after)
+      after.isEmpty() -> Pattern("^" + quote(before) + ".+", null, before)
       else -> Pattern("^" + quote(before) + ".*" + quote(after) + "$", null, before)
     }
   }

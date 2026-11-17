@@ -277,7 +277,7 @@ object ItemInspector {
   /**
    * The items in [node] in reading order, each under the item it is in: its level (1 for the items
    * directly in [node]), class, whether it can be clicked, and its texts. Items with no text that
-   * can't be clicked are left out, but the items in them are listed.
+   * can't be clicked are listed when items are in them, so the levels show what holds what.
    */
   private fun innerTree(node: AccessibilityNodeInfoCompat): List<Pair<String, String>> {
     val lines = mutableListOf<Pair<String, String>>()
@@ -289,7 +289,7 @@ object ItemInspector {
         if (!child.isVisibleToUser) continue
         val texts = texts(child).mapNotNull { (name, value) -> value?.toString()?.takeIf { it.isNotEmpty() }?.let { "$name: $it" } }
         val clickable = listOfNotNull("clickable".takeIf { child.isClickable }, "longClickable".takeIf { child.isLongClickable })
-        if (texts.isNotEmpty() || clickable.isNotEmpty()) {
+        if (texts.isNotEmpty() || clickable.isNotEmpty() || child.childCount > 0) {
           val parts = listOfNotNull(child.className?.toString()?.substringAfterLast('.')) + clickable + texts
           lines += "level $level" to parts.joinToString("; ")
         }
@@ -379,7 +379,7 @@ object ItemInspector {
   private const val MAX_INNER_TEXTS = 10
   /** How many items in the inspected item Items inside looks at and lists, and how deep. */
   private const val MAX_TREE_ITEMS = 120
-  private const val MAX_TREE_LINES = 40
+  private const val MAX_TREE_LINES = 60
   private const val MAX_TREE_LEVEL = 8
 
   private val FLAGS: List<Pair<String, (AccessibilityNodeInfoCompat) -> Boolean>> =
