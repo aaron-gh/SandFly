@@ -314,9 +314,9 @@ class EdgeSwipeTrackerTest {
   @Test
   fun menuOfTwentyItemsHasAnItemEvery50Pixels() {
     menus = mapOf(MenuEdge.LEFT to 20)
-    slideThrough(5f, 100f, 5f, 120f, 6f, 175f, 4f, 990f)
+    slideThrough(5f, 100f, 5f, 120f, 5f, 210f, 6f, 260f, 4f, 990f)
     assertEquals(
-      listOf("start", "LEFT -1>2", "LEFT 2>3", "LEFT 3>19", "LEFT chose 19"),
+      listOf("start", "LEFT -1>4", "LEFT 4>5", "LEFT 5>19", "LEFT chose 19"),
       events,
     )
   }
