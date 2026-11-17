@@ -2625,6 +2625,18 @@ public class FailoverTextToSpeech {
         }
 
         @Override
+        public void onEngineQuiet(String id) {
+          // Any call to the engine unfreezes a frozen engine process, which then goes on making
+          // the speech.
+          mHandler.post(
+              () -> {
+                if (tts != null) {
+                  isEngineSpeaking();
+                }
+              });
+        }
+
+        @Override
         public void onPlayedByEngine(String id) {
           // It was heard, so it is not said again. This engine speaks the usual way from now on,
           // which also applies the equalizer if the engine passes the audio session on.
