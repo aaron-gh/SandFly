@@ -2352,7 +2352,9 @@ public class SelectorController implements UserInputEventListener {
       byKey.put(context.getString(setting.prefKeyResId), setting);
     }
     List<Setting> settings = new ArrayList<>();
-    for (String key : inUse.getControls()) {
+    // In the list's own order, or the main list's for a list never ordered in settings.
+    @Nullable List<String> keys = ReadingControlLists.controls(context, prefs, inUse.getId());
+    for (String key : keys != null ? keys : inUse.getControls()) {
       @Nullable Setting setting = byKey.get(key);
       if (setting != null
           && !settings.contains(setting)
