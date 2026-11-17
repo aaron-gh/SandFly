@@ -167,6 +167,9 @@ class TutorialActivity : AppCompatActivity() {
         handler.post { onInput(TutorialInput.BrowseMode(enabled)) }
       }
 
+      override fun takesAllGestures(): Boolean =
+        hasWindowFocus() && lesson?.id == TutorialLessons.PRACTICE_LESSON && !lessonDone
+
       /** A gesture or keys ran [action]: [inputName] names them, for practice. */
       private fun onCommand(action: String, inputName: () -> String?): Boolean {
         userActed()

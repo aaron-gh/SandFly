@@ -48,6 +48,12 @@ object TutorialHooks {
     fun onBrowseMode(enabled: Boolean)
 
     fun onContinuousReading(active: Boolean)
+
+    /**
+     * Whether the tutorial says every gesture made, with a command or not, so that gestures are
+     * matched as if every gesture had a command.
+     */
+    fun takesAllGestures(): Boolean = false
   }
 
   /** Keys that Android acts on with the Meta key: Back, Home, recent apps and notifications. */
@@ -64,6 +70,9 @@ object TutorialHooks {
   @JvmStatic
   fun onGesture(gestureId: Int, action: String): Boolean =
     listener?.onGesture(gestureId, action) ?: false
+
+  /** Whether the tutorial on screen says every gesture made, with a command or not. */
+  @JvmStatic fun takesAllGestures(): Boolean = listener?.takesAllGestures() ?: false
 
   @JvmStatic
   fun onKeys(keys: String?, command: String): Boolean = listener?.onKeys(keys, command) ?: false

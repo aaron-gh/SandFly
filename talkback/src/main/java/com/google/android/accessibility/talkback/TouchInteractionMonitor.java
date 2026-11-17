@@ -565,8 +565,10 @@ public class TouchInteractionMonitor
 
               @Override
               public boolean tapsRunWhenNothingFollows() {
-                // Practice gestures says every gesture performed, assigned or not.
-                return !GestureController.trainingTakesGestures();
+                // Practice gestures and the tutorial's practice lesson say every gesture
+                // performed, assigned or not.
+                return !GestureController.trainingTakesGestures()
+                    && !TutorialHooks.takesAllGestures();
               }
             },
             logger,
