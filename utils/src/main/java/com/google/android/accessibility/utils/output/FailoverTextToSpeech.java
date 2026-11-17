@@ -1743,9 +1743,23 @@ public class FailoverTextToSpeech {
     return toSpeak;
   }
 
-  /** Tells LanguageSwitch the language attemptRestorePreferredLocale speaks unmarked text in. */
+  /**
+   * The language of the voice profile's voice, once set, or of its language setting until then.
+   * Null when it has neither.
+   */
+  private volatile @Nullable Locale profileVoiceLanguage;
+
+  /**
+   * Tells LanguageSwitch the language unmarked text is spoken in: the voice profile's, while one
+   * is in use, else the one attemptRestorePreferredLocale sets.
+   */
   private void updateVoiceLanguage() {
-    LanguageSwitch.setVoiceLanguage(mDefaultLocale != null ? mDefaultLocale : mSystemLocale);
+    @Nullable Locale profileLanguage =
+        VoiceProfiles.isProfileActive() ? profileVoiceLanguage : null;
+    LanguageSwitch.setVoiceLanguage(
+        profileLanguage != null
+            ? profileLanguage
+            : (mDefaultLocale != null ? mDefaultLocale : mSystemLocale));
   }
 
   /** The current engine's voices, for {@link #findVoice}, or null until they're needed. */
@@ -1843,6 +1857,12 @@ public class FailoverTextToSpeech {
     synchronized (ttsLock) {
       clearUnsetProfileVoice();
     }
+    // Until its engine sets its voice.
+    profileVoiceLanguage =
+        profile == null || profile.language().isEmpty()
+            ? null
+            : LanguageVoices.normalized(Locale.forLanguageTag(profile.language()));
+    updateVoiceLanguage();
     if (profile != null && speechCacheManager != null) {
       // Speech from the cache was made in the voice in use until now, and speech queued behind it
       // would set its language over the profile's voice.
@@ -1891,6 +1911,18 @@ public class FailoverTextToSpeech {
    * @return the voice's language, or null if no voice could be set
    */
   private @Nullable Locale attemptSetProfileVoice(VoiceProfile profile) {
+    @Nullable Locale language = setProfileVoice(profile);
+    if (language != null) {
+      // Language detection compares text with the language the profile's voice speaks, not with
+      // SandFly default's.
+      profileVoiceLanguage = LanguageVoices.normalized(language);
+      updateVoiceLanguage();
+    }
+    return language;
+  }
+
+  /** Does the work of {@link #attemptSetProfileVoice}. */
+  private @Nullable Locale setProfileVoice(VoiceProfile profile) {
     if (tts == null) {
       return null;
     }
