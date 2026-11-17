@@ -225,6 +225,14 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
     default boolean swipesBeforeLiftWhenNothingFollows() {
       return false;
     }
+
+    /**
+     * Returns whether a multi-finger tap gesture runs at its last tap, without waiting for another
+     * tap, while no gesture that goes on after its taps has an action.
+     */
+    default boolean tapsRunWhenNothingFollows() {
+      return false;
+    }
   }
 
   public GestureManifold(
@@ -263,6 +271,7 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
         }
       }
     }
+    setFollowingTapGestures(configResolver);
     if (configResolver.useMultipleGestureSet()) {
       gestures.add(
           new TwoFingerSecondFingerMultiTap(
@@ -280,6 +289,31 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
               GESTURE_TAP_HOLD_AND_2ND_FINGER_BACKWARD_DOUBLE_TAP,
               this,
               logger));
+    }
+  }
+
+  /**
+   * Gives each plain multi-finger multi-tap the gestures that start with its taps and go on after
+   * them, such as more taps or a tap and hold with as many fingers.
+   */
+  private void setFollowingTapGestures(GestureConfigProvider configResolver) {
+    for (GestureMatcher matcher : multiFingerGestures) {
+      if (matcher.getClass() != MultiFingerMultiTap.class) {
+        continue;
+      }
+      MultiFingerMultiTap taps = (MultiFingerMultiTap) matcher;
+      List<Integer> following = new ArrayList<>();
+      for (GestureMatcher other : multiFingerGestures) {
+        if (other instanceof MultiFingerMultiTap longer
+            && longer.continuesAfterTaps(taps.targetFingerCount, taps.mTargetTapCount)) {
+          following.add(other.getGestureId());
+        }
+      }
+      int[] gestureIds = new int[following.size()];
+      for (int i = 0; i < gestureIds.length; i++) {
+        gestureIds[i] = following.get(i);
+      }
+      taps.setFollowingGestures(configResolver, gestureIds);
     }
   }
 

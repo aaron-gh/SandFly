@@ -23,6 +23,7 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import androidx.annotation.Nullable;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -53,6 +54,10 @@ class MultiFingerMultiTap extends GestureMatcher {
   private ArrayList<PointF> excludedPointsForDownSlopChecked;
   private long lastDownTime;
   private long lastUpTime;
+  // The gestures that start with this gesture's taps and go on after them, which a plain multi-tap
+  // waits for after its last tap only while one of them has an action. Set by GestureManifold.
+  @Nullable private GestureConfigProvider configProvider;
+  private int[] followingGestureIds = new int[0];
 
   /**
    * @throws IllegalArgumentException if <code>fingers<code/> is less than 2
@@ -91,6 +96,36 @@ class MultiFingerMultiTap extends GestureMatcher {
     lastDownTime = Long.MAX_VALUE;
     lastUpTime = Long.MAX_VALUE;
     super.clear();
+  }
+
+  /**
+   * Sets the gestures that start with this gesture's taps and go on after them. While none of them
+   * has an action, this gesture runs at its last tap instead of waiting for another.
+   */
+  void setFollowingGestures(GestureConfigProvider configProvider, int[] gestureIds) {
+    this.configProvider = configProvider;
+    followingGestureIds = gestureIds;
+  }
+
+  /**
+   * Returns whether this matcher's gesture starts with {@code taps} taps of {@code fingers} fingers
+   * and goes on after them, with another tap or a hold.
+   */
+  boolean continuesAfterTaps(int fingers, int taps) {
+    return targetFingerCount == fingers && mTargetTapCount > taps;
+  }
+
+  /** Returns whether no gesture that goes on after this gesture's taps has an action. */
+  private boolean nothingFollows() {
+    if (configProvider == null || !configProvider.tapsRunWhenNothingFollows()) {
+      return false;
+    }
+    for (int gestureId : followingGestureIds) {
+      if (configProvider.isGestureAssigned(gestureId)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override
@@ -155,8 +190,13 @@ class MultiFingerMultiTap extends GestureMatcher {
         startGesture(event);
       }
       if (completedTapCount == mTargetTapCount) {
-        // Done.
-        completeAfterDoubleTapTimeout(eventId, event);
+        // Done. Another tap can only make a gesture that goes on after these taps, so without one
+        // that has an action there is nothing to wait for.
+        if (nothingFollows()) {
+          completeGesture(eventId, event);
+        } else {
+          completeAfterDoubleTapTimeout(eventId, event);
+        }
       }
     } else {
       // Either too many taps or nonsensical event stream.

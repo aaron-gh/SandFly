@@ -686,6 +686,10 @@ By default, SandFly recognizes gestures itself instead of leaving this to Androi
 
 To let Android recognize gestures again, turn off **Advanced settings** > **Developer settings** > **Handle gestures in SandFly**, and then turn SandFly off and on again. When this setting is off, the rotor, the edge gestures, the scrub and the quadruple-tap with three fingers don't work, and **Time between one-finger taps** is hidden.
 
+### Multi-finger taps without the wait
+
+A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no gesture of more taps, or more taps and hold, with as many fingers has a command. TalkBack waited about 0.3 seconds for a further tap. A triple-tap with two or four fingers and a quadruple-tap with three fingers always run at once. In the tutorial, these taps still wait. This requires **Handle gestures in SandFly**.
+
 ## Navigation
 
 ### Reading place kept when an item disappears
