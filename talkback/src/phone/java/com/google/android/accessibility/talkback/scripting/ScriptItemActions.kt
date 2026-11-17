@@ -106,8 +106,25 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
         feedback.speak(text?.toString().orEmpty(), interrupt = true)
       }
       RuleItemAction.Verb.FOCUS -> target?.let { feedback.focus(it) {} }
-      else -> target?.performAction(NodeBridge.ACTIONS.getValue(action.verb.key))
+      else -> {
+        val id = NodeBridge.ACTIONS.getValue(action.verb.key)
+        target?.let { doerOf(it, id) }?.performAction(id)
+      }
     }
+  }
+
+  /**
+   * [node], or the nearest item around it, up to [MAX_PARENTS] levels up, that has the action [id]:
+   * the text of a button is often an item in it, which can't be clicked itself.
+   */
+  private fun doerOf(node: AccessibilityNodeInfoCompat, id: Int): AccessibilityNodeInfoCompat {
+    var item: AccessibilityNodeInfoCompat? = node
+    repeat(MAX_PARENTS + 1) {
+      val current = item ?: return node
+      if (current.actionList.any { it.id == id }) return current
+      item = current.parent
+    }
+    return node
   }
 
   private fun missing(runtime: ScriptRuntime, action: RuleItemAction) {
@@ -127,5 +144,6 @@ class ScriptItemActions(private val handler: Handler, private val feedback: Scri
     const val LIMIT_MS = 250L
     const val REUSE_MS = 1000L
     const val FIND_LIMIT_MS = 1000L
+    const val MAX_PARENTS = 6
   }
 }
