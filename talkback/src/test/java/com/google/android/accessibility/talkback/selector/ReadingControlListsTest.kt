@@ -53,4 +53,23 @@ class ReadingControlListsTest {
   fun badJson_isEmpty() {
     assertEquals(emptyList<ReadingControlLists.ControlList>(), ReadingControlLists.fromJson("{"))
   }
+
+  @Test
+  fun listSavedBeforeItsOwnOrder_isNotOrdered() {
+    val lists = ReadingControlLists.fromJson("""[{"id":"1","name":"Speech","controls":["b","a"]}]""")
+    assertFalse(lists.single().ordered)
+    val sorted = ReadingControlLists.inOrder(lists.single(), listOf("a", "c", "b"))
+    assertEquals(listOf("a", "b"), sorted.controls)
+    assertTrue(sorted.ordered)
+    assertTrue(ReadingControlLists.fromJson(ReadingControlLists.toJson(listOf(sorted))).single().ordered)
+  }
+
+  @Test
+  fun moved_movesOneControlUpOrDown() {
+    val controls = listOf("a", "b", "c")
+    assertEquals(listOf("b", "a", "c"), ReadingControlLists.moved(controls, 1, 0))
+    assertEquals(listOf("a", "c", "b"), ReadingControlLists.moved(controls, 1, 2))
+    assertEquals(null, ReadingControlLists.moved(controls, 0, -1))
+    assertEquals(null, ReadingControlLists.moved(controls, 2, 3))
+  }
 }

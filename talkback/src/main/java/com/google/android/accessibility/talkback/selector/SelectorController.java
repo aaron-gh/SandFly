@@ -1790,7 +1790,8 @@ public class SelectorController implements UserInputEventListener {
 
   /**
    * Selects the next or previous reading control of the list with the preference keys {@code
-   * controls}, as the current reading control. A list's controls need not be in the main list.
+   * controls}, in their order, as the current reading control. A list's controls need not be in the
+   * main list.
    *
    * @return {@code false} if the list has no control that can be used now.
    */
@@ -1799,9 +1800,15 @@ public class SelectorController implements UserInputEventListener {
     applyPendingSwitch();
     @Nullable AccessibilityNodeInfoCompat node =
         accessibilityFocusMonitor.getAccessibilityFocus(false);
+    Map<String, Setting> byKey = new HashMap<>();
+    for (Setting setting : SELECTOR_SETTINGS) {
+      byKey.put(context.getString(setting.prefKeyResId), setting);
+    }
     List<Setting> settings = new ArrayList<>();
-    for (Setting setting : orderedSettings()) {
-      if (controls.contains(context.getString(setting.prefKeyResId))
+    for (String key : controls) {
+      @Nullable Setting setting = byKey.get(key);
+      if (setting != null
+          && !settings.contains(setting)
           && !hiddenSettings.contains(setting)
           && availableHere(setting, node)) {
         settings.add(setting);
