@@ -4224,27 +4224,32 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /**
-   * Returns whether {@code node} scrolls left and right: a pager, a horizontal scroll view, a node
-   * with left or right scroll or page actions, or a collection of one row.
+   * Whether the item of {@code scrollable} that holds {@code pivot} is at least nine tenths as wide
+   * as {@code scrollable}, as a page of a carousel is. A scroll view's only child holds all of its
+   * content and its bounds are cut to the scroll view's, so its items are that child's children
+   * (report 449, Tasker's project bar).
    */
   @VisibleForTesting
-  /**
-   * Whether the item of {@code scrollable} that holds {@code pivot} is at least nine tenths as wide
-   * as {@code scrollable}, as a page of a carousel is.
-   */
-  private static boolean showsOnePage(
+  static boolean showsOnePage(
       AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot) {
+    boolean scrollView = OffscreenContent.keepsAllContent(scrollable);
+    int maxDepth = scrollView ? MAX_ITEM_DEPTH + 1 : MAX_ITEM_DEPTH;
     AccessibilityNodeInfoCompat item = pivot;
+    AccessibilityNodeInfoCompat belowItem = null;
     AccessibilityNodeInfoCompat parent = pivot.getParent();
     for (int depth = 0; parent != null && !parent.equals(scrollable); depth++) {
-      if (depth >= MAX_ITEM_DEPTH) {
+      if (depth >= maxDepth) {
         return false;
       }
+      belowItem = item;
       item = parent;
       parent = parent.getParent();
     }
     if (parent == null) {
       return false;
+    }
+    if (scrollView && belowItem != null) {
+      item = belowItem;
     }
     Rect list = new Rect();
     scrollable.getBoundsInScreen(list);
@@ -4253,6 +4258,11 @@ public class FocusProcessorForLogicalNavigation {
     return !list.isEmpty() && itemBounds.width() * 10 >= list.width() * 9;
   }
 
+  /**
+   * Returns whether {@code node} scrolls left and right: a pager, a horizontal scroll view, a node
+   * with left or right scroll or page actions, or a collection of one row.
+   */
+  @VisibleForTesting
   static boolean scrollsSideways(AccessibilityNodeInfoCompat node) {
     int role = Role.getRole(node);
     if (role == Role.ROLE_PAGER || role == Role.ROLE_HORIZONTAL_SCROLL_VIEW) {
