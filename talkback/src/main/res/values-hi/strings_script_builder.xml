@@ -213,4 +213,28 @@
         <item quantity="one">हर मिनट</item>
         <item quantity="other">हर %1$d मिनट में</item>
     </plurals>
+    <string name="script_builder_has_depth">नीचे के स्तर</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">%1$d स्तर तक</item>
+        <item quantity="other">%1$d स्तरों तक</item>
+    </plurals>
+    <string name="script_builder_change_speech">बोली बदलें</string>
+    <string name="script_builder_change_speech_summary">आइटम के लिए SandFly जो बोलता है, उसे हटाएं, बदलें या फिर से क्रम में लगाएं</string>
+    <string name="script_builder_edits">संपादन</string>
+    <string name="script_builder_add_edit">संपादन जोड़ें</string>
+    <string name="script_builder_edit_remove">टेक्स्ट हटाएं</string>
+    <string name="script_builder_edit_replace">टेक्स्ट बदलें</string>
+    <string name="script_builder_edit_remove_repeats">दोहराए गए हिस्से हटाएं</string>
+    <string name="script_builder_edit_remove_parts">टेक्स्ट वाले हिस्से हटाएं</string>
+    <string name="script_builder_edit_keep_parts">शुरुआती हिस्से रखें</string>
+    <string name="script_builder_edit_remove_value">हटाएं: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">इस टेक्स्ट वाले हिस्से हटाएं: %1$s</string>
+    <string name="script_builder_parts_help">हिस्से, कॉमा के बीच के टुकड़े होते हैं.</string>
+    <string name="script_builder_regex_help">रेगुलर एक्सप्रेशन के साथ, नए टेक्स्ट में $1 ब्रैकेट में मौजूद पहला ग्रुप है.</string>
+    <string name="script_builder_preview">जांचे गए आइटम पर झलक</string>
+    <string name="script_builder_preview_silent">कुछ नहीं बोलता</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">शुरुआती %1$d हिस्सा रखें</item>
+        <item quantity="other">शुरुआती %1$d हिस्से रखें</item>
+    </plurals>
 </resources>

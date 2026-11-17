@@ -213,4 +213,28 @@
         <item quantity="one">दर मिनिटाला</item>
         <item quantity="other">दर %1$d मिनिटांनी</item>
     </plurals>
+    <string name="script_builder_has_depth">खालील स्तर</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">थेट आत</item>
+        <item quantity="other">%1$d स्तरांपर्यंत</item>
+    </plurals>
+    <string name="script_builder_change_speech">स्पीच बदला</string>
+    <string name="script_builder_change_speech_summary">आयटमसाठी SandFly जे म्हणते ते काढा, बदला किंवा पुन्हा क्रमाने लावा</string>
+    <string name="script_builder_edits">संपादने</string>
+    <string name="script_builder_add_edit">संपादन जोडा</string>
+    <string name="script_builder_edit_remove">मजकूर काढा</string>
+    <string name="script_builder_edit_replace">मजकूर बदला</string>
+    <string name="script_builder_edit_remove_repeats">पुनरावृत्त भाग काढा</string>
+    <string name="script_builder_edit_remove_parts">मजकूर असलेले भाग काढा</string>
+    <string name="script_builder_edit_keep_parts">पहिले भाग ठेवा</string>
+    <string name="script_builder_edit_remove_value">काढा: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">हे असलेले भाग काढा: %1$s</string>
+    <string name="script_builder_parts_help">स्वल्पविरामांमधील तुकडे म्हणजे भाग.</string>
+    <string name="script_builder_regex_help">रेग्युलर एक्स्प्रेशन वापरल्यास, नवीन मजकुरातील $1 हा कंसातील पहिला गट असतो.</string>
+    <string name="script_builder_preview">तपासलेल्या आयटमवर पूर्वावलोकन</string>
+    <string name="script_builder_preview_silent">काहीही म्हणत नाही</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">पहिला भाग ठेवा</item>
+        <item quantity="other">पहिले %1$d भाग ठेवा</item>
+    </plurals>
 </resources>

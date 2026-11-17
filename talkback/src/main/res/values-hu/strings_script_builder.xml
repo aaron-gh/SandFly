@@ -213,4 +213,28 @@
         <item quantity="one">Percenként</item>
         <item quantity="other">%1$d percenként</item>
     </plurals>
+    <string name="script_builder_has_depth">Szintek lefelé</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Közvetlenül benne</item>
+        <item quantity="other">Legfeljebb %1$d szint</item>
+    </plurals>
+    <string name="script_builder_change_speech">Beszéd módosítása</string>
+    <string name="script_builder_change_speech_summary">A SandFly által az elemhez mondott szöveg eltávolítása, cseréje vagy átrendezése</string>
+    <string name="script_builder_edits">Szerkesztések</string>
+    <string name="script_builder_add_edit">Szerkesztés hozzáadása</string>
+    <string name="script_builder_edit_remove">Szöveg eltávolítása</string>
+    <string name="script_builder_edit_replace">Szöveg cseréje</string>
+    <string name="script_builder_edit_remove_repeats">Ismétlődő részek eltávolítása</string>
+    <string name="script_builder_edit_remove_parts">Szöveget tartalmazó részek eltávolítása</string>
+    <string name="script_builder_edit_keep_parts">Első részek megtartása</string>
+    <string name="script_builder_edit_remove_value">Eltávolítás: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Ezt tartalmazó részek eltávolítása: %1$s</string>
+    <string name="script_builder_parts_help">A részek a vesszők közötti szakaszok.</string>
+    <string name="script_builder_regex_help">Reguláris kifejezés esetén az új szövegben a $1 az első zárójeles csoport.</string>
+    <string name="script_builder_preview">Előnézet a megvizsgált elemen</string>
+    <string name="script_builder_preview_silent">Nem mond semmit</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Az első rész megtartása</item>
+        <item quantity="other">Az első %1$d rész megtartása</item>
+    </plurals>
 </resources>

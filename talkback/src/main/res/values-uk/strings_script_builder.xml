@@ -219,4 +219,32 @@
         <item quantity="many">Кожні %1$d хвилин</item>
         <item quantity="other">Кожні %1$d хвилини</item>
     </plurals>
+    <string name="script_builder_has_depth">Рівнів углиб</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">До %1$d рівня</item>
+        <item quantity="few">До %1$d рівнів</item>
+        <item quantity="many">До %1$d рівнів</item>
+        <item quantity="other">До %1$d рівня</item>
+    </plurals>
+    <string name="script_builder_change_speech">Змінити мовлення</string>
+    <string name="script_builder_change_speech_summary">Видалити, замінити або переставити те, що SandFly промовляє для елемента</string>
+    <string name="script_builder_edits">Правки</string>
+    <string name="script_builder_add_edit">Додати правку</string>
+    <string name="script_builder_edit_remove">Видалити текст</string>
+    <string name="script_builder_edit_replace">Замінити текст</string>
+    <string name="script_builder_edit_remove_repeats">Видалити повторювані частини</string>
+    <string name="script_builder_edit_remove_parts">Видалити частини з текстом</string>
+    <string name="script_builder_edit_keep_parts">Залишити перші частини</string>
+    <string name="script_builder_edit_remove_value">Видалити: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Видалити частини з текстом: %1$s</string>
+    <string name="script_builder_parts_help">Частини — це фрагменти між комами.</string>
+    <string name="script_builder_regex_help">З параметром «Регулярний вираз» $1 у новому тексті — це перша група в дужках.</string>
+    <string name="script_builder_preview">Попередній перегляд на дослідженому елементі</string>
+    <string name="script_builder_preview_silent">Нічого не промовляє</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Залишити першу %1$d частину</item>
+        <item quantity="few">Залишити перші %1$d частини</item>
+        <item quantity="many">Залишити перші %1$d частин</item>
+        <item quantity="other">Залишити перші %1$d частини</item>
+    </plurals>
 </resources>

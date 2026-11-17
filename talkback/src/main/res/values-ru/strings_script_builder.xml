@@ -219,4 +219,32 @@
         <item quantity="many">Каждые %1$d минут</item>
         <item quantity="other">Каждые %1$d минуты</item>
     </plurals>
+    <string name="script_builder_has_depth">Уровней вглубь</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">До %1$d уровня</item>
+        <item quantity="few">До %1$d уровней</item>
+        <item quantity="many">До %1$d уровней</item>
+        <item quantity="other">До %1$d уровня</item>
+    </plurals>
+    <string name="script_builder_change_speech">Изменить речь</string>
+    <string name="script_builder_change_speech_summary">Удалить, заменить или переставить то, что SandFly говорит для объекта</string>
+    <string name="script_builder_edits">Правки</string>
+    <string name="script_builder_add_edit">Добавить правку</string>
+    <string name="script_builder_edit_remove">Удалить текст</string>
+    <string name="script_builder_edit_replace">Заменить текст</string>
+    <string name="script_builder_edit_remove_repeats">Удалить повторяющиеся части</string>
+    <string name="script_builder_edit_remove_parts">Удалить части с текстом</string>
+    <string name="script_builder_edit_keep_parts">Оставить первые части</string>
+    <string name="script_builder_edit_remove_value">Удалить: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Удалить части с текстом: %1$s</string>
+    <string name="script_builder_parts_help">Части — это фрагменты между запятыми.</string>
+    <string name="script_builder_regex_help">С параметром «Регулярное выражение» $1 в новом тексте — это первая группа в скобках.</string>
+    <string name="script_builder_preview">Предпросмотр на исследованном объекте</string>
+    <string name="script_builder_preview_silent">Ничего не говорит</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Оставить первую %1$d часть</item>
+        <item quantity="few">Оставить первые %1$d части</item>
+        <item quantity="many">Оставить первые %1$d частей</item>
+        <item quantity="other">Оставить первые %1$d части</item>
+    </plurals>
 </resources>

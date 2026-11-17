@@ -213,4 +213,28 @@
         <item quantity="one">દર મિનિટે</item>
         <item quantity="other">દર %1$d મિનિટે</item>
     </plurals>
+    <string name="script_builder_has_depth">નીચેના સ્તરો</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">%1$d સ્તર સુધી</item>
+        <item quantity="other">%1$d સ્તર સુધી</item>
+    </plurals>
+    <string name="script_builder_change_speech">સ્પીચ બદલો</string>
+    <string name="script_builder_change_speech_summary">આઇટમ માટે SandFly જે બોલે છે તેને દૂર કરો, બદલો અથવા ફરીથી ક્રમમાં ગોઠવો</string>
+    <string name="script_builder_edits">સંપાદનો</string>
+    <string name="script_builder_add_edit">સંપાદન ઉમેરો</string>
+    <string name="script_builder_edit_remove">ટેક્સ્ટ દૂર કરો</string>
+    <string name="script_builder_edit_replace">ટેક્સ્ટ બદલો</string>
+    <string name="script_builder_edit_remove_repeats">પુનરાવર્તિત ભાગો દૂર કરો</string>
+    <string name="script_builder_edit_remove_parts">ટેક્સ્ટ ધરાવતા ભાગો દૂર કરો</string>
+    <string name="script_builder_edit_keep_parts">પહેલા ભાગો રાખો</string>
+    <string name="script_builder_edit_remove_value">દૂર કરો: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">આ ધરાવતા ભાગો દૂર કરો: %1$s</string>
+    <string name="script_builder_parts_help">ભાગો એટલે અલ્પવિરામ વચ્ચેના ટુકડા.</string>
+    <string name="script_builder_regex_help">રેગ્યુલર એક્સપ્રેશન સાથે, નવા ટેક્સ્ટમાં $1 એ કૌંસમાંનું પહેલું જૂથ છે.</string>
+    <string name="script_builder_preview">નિરીક્ષણ કરેલી આઇટમ પર પ્રીવ્યૂ</string>
+    <string name="script_builder_preview_silent">કંઈ બોલતું નથી</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">પહેલો %1$d ભાગ રાખો</item>
+        <item quantity="other">પહેલા %1$d ભાગ રાખો</item>
+    </plurals>
 </resources>

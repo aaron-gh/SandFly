@@ -213,4 +213,28 @@
         <item quantity="one">Әр минут сайын</item>
         <item quantity="other">Әр %1$d минут сайын</item>
     </plurals>
+    <string name="script_builder_has_depth">Төмендегі деңгейлер</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Тікелей ішінде</item>
+        <item quantity="other">%1$d деңгейге дейін</item>
+    </plurals>
+    <string name="script_builder_change_speech">Сөйлеуді өзгерту</string>
+    <string name="script_builder_change_speech_summary">SandFly элемент үшін айтатын мәтінді жою, ауыстыру не ретін өзгерту</string>
+    <string name="script_builder_edits">Өңдеулер</string>
+    <string name="script_builder_add_edit">Өңдеу қосу</string>
+    <string name="script_builder_edit_remove">Мәтінді жою</string>
+    <string name="script_builder_edit_replace">Мәтінді ауыстыру</string>
+    <string name="script_builder_edit_remove_repeats">Қайталанатын бөліктерді жою</string>
+    <string name="script_builder_edit_remove_parts">Мәтіні бар бөліктерді жою</string>
+    <string name="script_builder_edit_keep_parts">Алғашқы бөліктерді қалдыру</string>
+    <string name="script_builder_edit_remove_value">Жою: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Мынасы бар бөліктерді жою: %1$s</string>
+    <string name="script_builder_parts_help">Бөліктер — үтірлер арасындағы үзінділер.</string>
+    <string name="script_builder_regex_help">Тұрақты өрнек таңдалса, жаңа мәтіндегі $1 — жақшадағы бірінші топ.</string>
+    <string name="script_builder_preview">Тексерілген элементтегі алдын ала қарау</string>
+    <string name="script_builder_preview_silent">Ештеңе айтпайды</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Алғашқы бөлікті қалдыру</item>
+        <item quantity="other">Алғашқы %1$d бөлікті қалдыру</item>
+    </plurals>
 </resources>

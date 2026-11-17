@@ -213,4 +213,28 @@
         <item quantity="one">ಪ್ರತಿ ನಿಮಿಷ</item>
         <item quantity="other">ಪ್ರತಿ %1$d ನಿಮಿಷಗಳಿಗೊಮ್ಮೆ</item>
     </plurals>
+    <string name="script_builder_has_depth">ಕೆಳಗಿನ ಹಂತಗಳು</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">%1$d ಹಂತದವರೆಗೆ</item>
+        <item quantity="other">%1$d ಹಂತಗಳವರೆಗೆ</item>
+    </plurals>
+    <string name="script_builder_change_speech">ಮಾತು ಬದಲಿಸಿ</string>
+    <string name="script_builder_change_speech_summary">ಐಟಂಗಾಗಿ SandFly ಹೇಳುವುದನ್ನು ತೆಗೆದುಹಾಕಿ, ಬದಲಿಸಿ ಅಥವಾ ಮರುಕ್ರಮಗೊಳಿಸಿ</string>
+    <string name="script_builder_edits">ಸಂಪಾದನೆಗಳು</string>
+    <string name="script_builder_add_edit">ಸಂಪಾದನೆ ಸೇರಿಸಿ</string>
+    <string name="script_builder_edit_remove">ಪಠ್ಯ ತೆಗೆದುಹಾಕಿ</string>
+    <string name="script_builder_edit_replace">ಪಠ್ಯ ಬದಲಿಸಿ</string>
+    <string name="script_builder_edit_remove_repeats">ಪುನರಾವರ್ತಿತ ಭಾಗಗಳನ್ನು ತೆಗೆದುಹಾಕಿ</string>
+    <string name="script_builder_edit_remove_parts">ಪಠ್ಯ ಇರುವ ಭಾಗಗಳನ್ನು ತೆಗೆದುಹಾಕಿ</string>
+    <string name="script_builder_edit_keep_parts">ಮೊದಲ ಭಾಗಗಳನ್ನು ಇರಿಸಿ</string>
+    <string name="script_builder_edit_remove_value">ತೆಗೆದುಹಾಕಿ: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ಇದು ಇರುವ ಭಾಗಗಳನ್ನು ತೆಗೆದುಹಾಕಿ: %1$s</string>
+    <string name="script_builder_parts_help">ಭಾಗಗಳು ಎಂದರೆ ಅಲ್ಪವಿರಾಮಗಳ ನಡುವಿನ ತುಣುಕುಗಳು.</string>
+    <string name="script_builder_regex_help">ರೆಗ್ಯುಲರ್ ಎಕ್ಸ್‌ಪ್ರೆಶನ್ ಜೊತೆಗೆ, ಹೊಸ ಪಠ್ಯದಲ್ಲಿನ $1 ಆವರಣದೊಳಗಿನ ಮೊದಲ ಗುಂಪು.</string>
+    <string name="script_builder_preview">ಪರೀಕ್ಷಿಸಿದ ಐಟಂನಲ್ಲಿ ಪೂರ್ವವೀಕ್ಷಣೆ</string>
+    <string name="script_builder_preview_silent">ಏನನ್ನೂ ಹೇಳುವುದಿಲ್ಲ</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">ಮೊದಲ %1$d ಭಾಗವನ್ನು ಇರಿಸಿ</item>
+        <item quantity="other">ಮೊದಲ %1$d ಭಾಗಗಳನ್ನು ಇರಿಸಿ</item>
+    </plurals>
 </resources>

@@ -213,4 +213,28 @@
         <item quantity="one">Minutuero</item>
         <item quantity="other">%1$d minuturo</item>
     </plurals>
+    <string name="script_builder_has_depth">Beherako mailak</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Zuzenean barruan</item>
+        <item quantity="other">Gehienez %1$d maila</item>
+    </plurals>
+    <string name="script_builder_change_speech">Aldatu hizketa</string>
+    <string name="script_builder_change_speech_summary">Kendu, ordeztu edo berrantolatu SandFly-k elementuari buruz esaten duena</string>
+    <string name="script_builder_edits">Edizioak</string>
+    <string name="script_builder_add_edit">Gehitu edizioa</string>
+    <string name="script_builder_edit_remove">Kendu testua</string>
+    <string name="script_builder_edit_replace">Ordeztu testua</string>
+    <string name="script_builder_edit_remove_repeats">Kendu errepikatutako zatiak</string>
+    <string name="script_builder_edit_remove_parts">Kendu testu bat duten zatiak</string>
+    <string name="script_builder_edit_keep_parts">Mantendu lehen zatiak</string>
+    <string name="script_builder_edit_remove_value">Kendu: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Kendu hau duten zatiak: %1$s</string>
+    <string name="script_builder_parts_help">Zatiak komen arteko puskak dira.</string>
+    <string name="script_builder_regex_help">Adierazpen erregularra erabilita, testu berriko $1 parentesi arteko lehen taldea da.</string>
+    <string name="script_builder_preview">Aurrebista ikuskatutako elementuan</string>
+    <string name="script_builder_preview_silent">Ez du ezer esaten</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Mantendu lehen zatia</item>
+        <item quantity="other">Mantendu lehen %1$d zatiak</item>
+    </plurals>
 </resources>

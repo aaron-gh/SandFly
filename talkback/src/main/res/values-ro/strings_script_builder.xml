@@ -216,4 +216,30 @@
         <item quantity="few">La fiecare %1$d minute</item>
         <item quantity="other">La fiecare %1$d de minute</item>
     </plurals>
+    <string name="script_builder_has_depth">Niveluri în jos</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Direct în interior</item>
+        <item quantity="few">Până la %1$d niveluri</item>
+        <item quantity="other">Până la %1$d de niveluri</item>
+    </plurals>
+    <string name="script_builder_change_speech">Modifică vorbirea</string>
+    <string name="script_builder_change_speech_summary">Elimină, înlocuiește sau reordonează ce spune SandFly pentru element</string>
+    <string name="script_builder_edits">Editări</string>
+    <string name="script_builder_add_edit">Adaugă o editare</string>
+    <string name="script_builder_edit_remove">Elimină textul</string>
+    <string name="script_builder_edit_replace">Înlocuiește textul</string>
+    <string name="script_builder_edit_remove_repeats">Elimină părțile repetate</string>
+    <string name="script_builder_edit_remove_parts">Elimină părțile care conțin un text</string>
+    <string name="script_builder_edit_keep_parts">Păstrează primele părți</string>
+    <string name="script_builder_edit_remove_value">Elimină: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Elimină părțile cu: %1$s</string>
+    <string name="script_builder_parts_help">Părțile sunt fragmentele dintre virgule.</string>
+    <string name="script_builder_regex_help">Cu Expresie regulată, $1 din textul nou este primul grup dintre paranteze.</string>
+    <string name="script_builder_preview">Previzualizare pe elementul inspectat</string>
+    <string name="script_builder_preview_silent">Nu spune nimic</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Păstrează prima parte</item>
+        <item quantity="few">Păstrează primele %1$d părți</item>
+        <item quantity="other">Păstrează primele %1$d de părți</item>
+    </plurals>
 </resources>

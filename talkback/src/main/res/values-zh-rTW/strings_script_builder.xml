@@ -210,4 +210,26 @@
     <plurals name="script_builder_when_every_value">
         <item quantity="other">每 %1$d 分鐘</item>
     </plurals>
+    <string name="script_builder_has_depth">向下層數</string>
+    <plurals name="script_builder_levels">
+        <item quantity="other">最多%1$d層</item>
+    </plurals>
+    <string name="script_builder_change_speech">變更語音</string>
+    <string name="script_builder_change_speech_summary">移除、取代或重新排列 SandFly 為項目說出的內容</string>
+    <string name="script_builder_edits">編輯</string>
+    <string name="script_builder_add_edit">新增編輯</string>
+    <string name="script_builder_edit_remove">移除文字</string>
+    <string name="script_builder_edit_replace">取代文字</string>
+    <string name="script_builder_edit_remove_repeats">移除重複部分</string>
+    <string name="script_builder_edit_remove_parts">移除包含文字的部分</string>
+    <string name="script_builder_edit_keep_parts">保留前幾個部分</string>
+    <string name="script_builder_edit_remove_value">移除：%1$s</string>
+    <string name="script_builder_edit_remove_parts_value">移除包含以下內容的部分：%1$s</string>
+    <string name="script_builder_parts_help">部分是指逗號之間的片段。</string>
+    <string name="script_builder_regex_help">使用正規表示式時，新文字中的 $1 是括號內的第一組。</string>
+    <string name="script_builder_preview">在已檢查的項目上預覽</string>
+    <string name="script_builder_preview_silent">不說出任何內容</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="other">保留前%1$d個部分</item>
+    </plurals>
 </resources>

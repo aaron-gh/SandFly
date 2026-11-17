@@ -213,4 +213,28 @@
         <item quantity="one">Ամեն րոպե</item>
         <item quantity="other">%1$d րոպեն մեկ</item>
     </plurals>
+    <string name="script_builder_has_depth">Մակարդակներ դեպի ներքև</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Մինչև %1$d մակարդակ</item>
+        <item quantity="other">Մինչև %1$d մակարդակ</item>
+    </plurals>
+    <string name="script_builder_change_speech">Փոխել խոսքը</string>
+    <string name="script_builder_change_speech_summary">Հեռացնել, փոխարինել կամ վերադասավորել այն, ինչ SandFly-ն ասում է տարրի համար</string>
+    <string name="script_builder_edits">Խմբագրումներ</string>
+    <string name="script_builder_add_edit">Ավելացնել խմբագրում</string>
+    <string name="script_builder_edit_remove">Հեռացնել տեքստը</string>
+    <string name="script_builder_edit_replace">Փոխարինել տեքստը</string>
+    <string name="script_builder_edit_remove_repeats">Հեռացնել կրկնվող մասերը</string>
+    <string name="script_builder_edit_remove_parts">Հեռացնել տեքստ պարունակող մասերը</string>
+    <string name="script_builder_edit_keep_parts">Պահել առաջին մասերը</string>
+    <string name="script_builder_edit_remove_value">Հեռացնել՝ %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Հեռացնել մասերը, որոնք պարունակում են՝ %1$s</string>
+    <string name="script_builder_parts_help">Մասերը ստորակետների միջև եղած հատվածներն են։</string>
+    <string name="script_builder_regex_help">Երբ ընտրված է «Կանոնավոր արտահայտություն», նոր տեքստում $1-ը փակագծերի մեջ առաջին խումբն է։</string>
+    <string name="script_builder_preview">Նախադիտում զննված տարրի վրա</string>
+    <string name="script_builder_preview_silent">Ոչինչ չի ասում</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Պահել առաջին %1$d մասը</item>
+        <item quantity="other">Պահել առաջին %1$d մասը</item>
+    </plurals>
 </resources>

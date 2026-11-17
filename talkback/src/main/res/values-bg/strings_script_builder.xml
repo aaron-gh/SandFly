@@ -213,4 +213,28 @@
         <item quantity="one">Всяка минута</item>
         <item quantity="other">На всеки %1$d минути</item>
     </plurals>
+    <string name="script_builder_has_depth">Нива надолу</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Директно вътре</item>
+        <item quantity="other">До %1$d нива</item>
+    </plurals>
+    <string name="script_builder_change_speech">Промяна на говора</string>
+    <string name="script_builder_change_speech_summary">Премахване, замяна или пренареждане на това, което SandFly казва за елемента</string>
+    <string name="script_builder_edits">Редакции</string>
+    <string name="script_builder_add_edit">Добавяне на редакция</string>
+    <string name="script_builder_edit_remove">Премахване на текст</string>
+    <string name="script_builder_edit_replace">Замяна на текст</string>
+    <string name="script_builder_edit_remove_repeats">Премахване на повторени части</string>
+    <string name="script_builder_edit_remove_parts">Премахване на части с текст</string>
+    <string name="script_builder_edit_keep_parts">Запазване на първите части</string>
+    <string name="script_builder_edit_remove_value">Премахване: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Премахване на части с: %1$s</string>
+    <string name="script_builder_parts_help">Частите са откъсите между запетаите.</string>
+    <string name="script_builder_regex_help">С „Регулярен израз“ $1 в новия текст е първата група в скоби.</string>
+    <string name="script_builder_preview">Визуализация за проверения елемент</string>
+    <string name="script_builder_preview_silent">Не казва нищо</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Запазване на първата част</item>
+        <item quantity="other">Запазване на първите %1$d части</item>
+    </plurals>
 </resources>

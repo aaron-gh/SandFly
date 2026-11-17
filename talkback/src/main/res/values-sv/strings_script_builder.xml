@@ -213,4 +213,28 @@
         <item quantity="one">Varje minut</item>
         <item quantity="other">Med %1$d minuters mellanrum</item>
     </plurals>
+    <string name="script_builder_has_depth">Nivåer nedåt</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Direkt inuti</item>
+        <item quantity="other">Upp till %1$d nivåer</item>
+    </plurals>
+    <string name="script_builder_change_speech">Ändra tal</string>
+    <string name="script_builder_change_speech_summary">Ta bort, ersätt eller ändra ordning på det SandFly säger för objektet</string>
+    <string name="script_builder_edits">Redigeringar</string>
+    <string name="script_builder_add_edit">Lägg till redigering</string>
+    <string name="script_builder_edit_remove">Ta bort text</string>
+    <string name="script_builder_edit_replace">Ersätt text</string>
+    <string name="script_builder_edit_remove_repeats">Ta bort upprepade delar</string>
+    <string name="script_builder_edit_remove_parts">Ta bort delar som har en text</string>
+    <string name="script_builder_edit_keep_parts">Behåll de första delarna</string>
+    <string name="script_builder_edit_remove_value">Ta bort: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Ta bort delar med: %1$s</string>
+    <string name="script_builder_parts_help">Delar är avsnitten mellan kommatecken.</string>
+    <string name="script_builder_regex_help">Med Reguljärt uttryck är $1 i den nya texten den första gruppen inom parentes.</string>
+    <string name="script_builder_preview">Förhandsgranskning på det inspekterade objektet</string>
+    <string name="script_builder_preview_silent">Säger ingenting</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Behåll den första delen</item>
+        <item quantity="other">Behåll de första %1$d delarna</item>
+    </plurals>
 </resources>

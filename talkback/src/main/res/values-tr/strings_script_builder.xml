@@ -213,4 +213,28 @@
         <item quantity="one">Her dakika</item>
         <item quantity="other">%1$d dakikada bir</item>
     </plurals>
+    <string name="script_builder_has_depth">Aşağı düzey sayısı</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Doğrudan içinde</item>
+        <item quantity="other">En fazla %1$d düzey</item>
+    </plurals>
+    <string name="script_builder_change_speech">Konuşmayı değiştir</string>
+    <string name="script_builder_change_speech_summary">SandFly\'ın öğe için söylediklerini kaldır, değiştir veya yeniden sırala</string>
+    <string name="script_builder_edits">Düzenlemeler</string>
+    <string name="script_builder_add_edit">Düzenleme ekle</string>
+    <string name="script_builder_edit_remove">Metni kaldır</string>
+    <string name="script_builder_edit_replace">Metni değiştir</string>
+    <string name="script_builder_edit_remove_repeats">Tekrarlanan bölümleri kaldır</string>
+    <string name="script_builder_edit_remove_parts">Bir metin içeren bölümleri kaldır</string>
+    <string name="script_builder_edit_keep_parts">İlk bölümleri tut</string>
+    <string name="script_builder_edit_remove_value">Kaldır: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Şunu içeren bölümleri kaldır: %1$s</string>
+    <string name="script_builder_parts_help">Bölümler, virgüller arasındaki parçalardır.</string>
+    <string name="script_builder_regex_help">Düzenli ifade ile yeni metindeki $1, parantez içindeki ilk gruptur.</string>
+    <string name="script_builder_preview">İncelenen öğede önizleme</string>
+    <string name="script_builder_preview_silent">Hiçbir şey söylemez</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">İlk bölümü tut</item>
+        <item quantity="other">İlk %1$d bölümü tut</item>
+    </plurals>
 </resources>

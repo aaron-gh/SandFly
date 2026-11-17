@@ -213,4 +213,28 @@
         <item quantity="one">සෑම මිනිත්තුවකටම</item>
         <item quantity="other">සෑම මිනිත්තු %1$d කටම</item>
     </plurals>
+    <string name="script_builder_has_depth">පහළට මට්ටම්</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">මට්ටම් %1$d දක්වා</item>
+        <item quantity="other">මට්ටම් %1$d දක්වා</item>
+    </plurals>
+    <string name="script_builder_change_speech">කථනය වෙනස් කරන්න</string>
+    <string name="script_builder_change_speech_summary">අයිතමය සඳහා SandFly කියන දේ ඉවත් කරන්න, ප්‍රතිස්ථාපනය කරන්න හෝ නැවත පිළිවෙළ කරන්න</string>
+    <string name="script_builder_edits">සංස්කරණ</string>
+    <string name="script_builder_add_edit">සංස්කරණයක් එක් කරන්න</string>
+    <string name="script_builder_edit_remove">පෙළ ඉවත් කරන්න</string>
+    <string name="script_builder_edit_replace">පෙළ ප්‍රතිස්ථාපනය කරන්න</string>
+    <string name="script_builder_edit_remove_repeats">පුනරාවර්තන කොටස් ඉවත් කරන්න</string>
+    <string name="script_builder_edit_remove_parts">පෙළක් ඇති කොටස් ඉවත් කරන්න</string>
+    <string name="script_builder_edit_keep_parts">පළමු කොටස් තබා ගන්න</string>
+    <string name="script_builder_edit_remove_value">ඉවත් කරන්න: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">මෙය ඇති කොටස් ඉවත් කරන්න: %1$s</string>
+    <string name="script_builder_parts_help">කොටස් යනු කොමා අතර ඇති පෙළ කොටස් වේ.</string>
+    <string name="script_builder_regex_help">Regular expression සමඟ, නව පෙළෙහි $1 යනු වරහන් තුළ ඇති පළමු කාණ්ඩයයි.</string>
+    <string name="script_builder_preview">පරීක්ෂා කළ අයිතමයේ පෙරදසුන</string>
+    <string name="script_builder_preview_silent">කිසිවක් නොකියයි</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">පළමු කොටස් %1$d තබා ගන්න</item>
+        <item quantity="other">පළමු කොටස් %1$d තබා ගන්න</item>
+    </plurals>
 </resources>

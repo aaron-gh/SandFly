@@ -213,4 +213,30 @@
         <item quantity="one">Cada minut</item>
         <item quantity="other">Cada %1$d minuts</item>
     </plurals>
+    <string name="script_builder_has_depth">Nivells cap avall</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Directament a dins</item>
+        <item quantity="many">Fins a %1$d nivells</item>
+        <item quantity="other">Fins a %1$d nivells</item>
+    </plurals>
+    <string name="script_builder_change_speech">Canvia la veu</string>
+    <string name="script_builder_change_speech_summary">Suprimeix, substitueix o reordena el que diu SandFly de l\'element</string>
+    <string name="script_builder_edits">Edicions</string>
+    <string name="script_builder_add_edit">Afegeix una edició</string>
+    <string name="script_builder_edit_remove">Suprimeix text</string>
+    <string name="script_builder_edit_replace">Substitueix text</string>
+    <string name="script_builder_edit_remove_repeats">Suprimeix les parts repetides</string>
+    <string name="script_builder_edit_remove_parts">Suprimeix les parts amb un text</string>
+    <string name="script_builder_edit_keep_parts">Conserva les primeres parts</string>
+    <string name="script_builder_edit_remove_value">Suprimeix: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Suprimeix les parts amb: %1$s</string>
+    <string name="script_builder_parts_help">Les parts són els fragments entre comes.</string>
+    <string name="script_builder_regex_help">Amb Expressió regular, $1 al text nou és el primer grup entre parèntesis.</string>
+    <string name="script_builder_preview">Previsualització a l\'element inspeccionat</string>
+    <string name="script_builder_preview_silent">No diu res</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Conserva la primera part</item>
+        <item quantity="many">Conserva les primeres %1$d parts</item>
+        <item quantity="other">Conserva les primeres %1$d parts</item>
+    </plurals>
 </resources>

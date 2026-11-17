@@ -213,4 +213,28 @@
         <item quantity="one">Κάθε λεπτό</item>
         <item quantity="other">Κάθε %1$d λεπτά</item>
     </plurals>
+    <string name="script_builder_has_depth">Επίπεδα προς τα κάτω</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Απευθείας μέσα</item>
+        <item quantity="other">Έως %1$d επίπεδα</item>
+    </plurals>
+    <string name="script_builder_change_speech">Αλλαγή της ομιλίας</string>
+    <string name="script_builder_change_speech_summary">Κατάργηση, αντικατάσταση ή αναδιάταξη όσων εκφωνεί το SandFly για το στοιχείο</string>
+    <string name="script_builder_edits">Επεξεργασίες</string>
+    <string name="script_builder_add_edit">Προσθήκη επεξεργασίας</string>
+    <string name="script_builder_edit_remove">Κατάργηση κειμένου</string>
+    <string name="script_builder_edit_replace">Αντικατάσταση κειμένου</string>
+    <string name="script_builder_edit_remove_repeats">Κατάργηση επαναλαμβανόμενων τμημάτων</string>
+    <string name="script_builder_edit_remove_parts">Κατάργηση τμημάτων με κείμενο</string>
+    <string name="script_builder_edit_keep_parts">Διατήρηση των πρώτων τμημάτων</string>
+    <string name="script_builder_edit_remove_value">Κατάργηση: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Κατάργηση τμημάτων με: %1$s</string>
+    <string name="script_builder_parts_help">Τμήματα είναι τα κομμάτια ανάμεσα στα κόμματα.</string>
+    <string name="script_builder_regex_help">Με την «Κανονική έκφραση», το $1 στο νέο κείμενο είναι η πρώτη ομάδα σε παρενθέσεις.</string>
+    <string name="script_builder_preview">Προεπισκόπηση στο στοιχείο που επιθεωρήθηκε</string>
+    <string name="script_builder_preview_silent">Δεν εκφωνεί τίποτα</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Διατήρηση του πρώτου τμήματος</item>
+        <item quantity="other">Διατήρηση των πρώτων %1$d τμημάτων</item>
+    </plurals>
 </resources>

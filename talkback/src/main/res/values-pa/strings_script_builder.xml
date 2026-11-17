@@ -213,4 +213,28 @@
         <item quantity="one">ਹਰ ਮਿੰਟ</item>
         <item quantity="other">ਹਰ %1$d ਮਿੰਟ ਬਾਅਦ</item>
     </plurals>
+    <string name="script_builder_has_depth">ਹੇਠਾਂ ਪੱਧਰ</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">%1$d ਪੱਧਰ ਤੱਕ</item>
+        <item quantity="other">%1$d ਪੱਧਰਾਂ ਤੱਕ</item>
+    </plurals>
+    <string name="script_builder_change_speech">ਬੋਲੀ ਬਦਲੋ</string>
+    <string name="script_builder_change_speech_summary">ਆਈਟਮ ਲਈ SandFly ਜੋ ਕਹਿੰਦਾ ਹੈ, ਉਸਨੂੰ ਹਟਾਓ, ਬਦਲੋ ਜਾਂ ਮੁੜ-ਕ੍ਰਮਬੱਧ ਕਰੋ</string>
+    <string name="script_builder_edits">ਸੰਪਾਦਨ</string>
+    <string name="script_builder_add_edit">ਸੰਪਾਦਨ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="script_builder_edit_remove">ਲਿਖਤ ਹਟਾਓ</string>
+    <string name="script_builder_edit_replace">ਲਿਖਤ ਬਦਲੋ</string>
+    <string name="script_builder_edit_remove_repeats">ਦੁਹਰਾਏ ਗਏ ਹਿੱਸੇ ਹਟਾਓ</string>
+    <string name="script_builder_edit_remove_parts">ਲਿਖਤ ਵਾਲੇ ਹਿੱਸੇ ਹਟਾਓ</string>
+    <string name="script_builder_edit_keep_parts">ਪਹਿਲੇ ਹਿੱਸੇ ਰੱਖੋ</string>
+    <string name="script_builder_edit_remove_value">ਹਟਾਓ: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ਇਸ ਵਾਲੇ ਹਿੱਸੇ ਹਟਾਓ: %1$s</string>
+    <string name="script_builder_parts_help">ਹਿੱਸੇ ਕਾਮਿਆਂ ਵਿਚਕਾਰਲੇ ਟੁਕੜੇ ਹਨ।</string>
+    <string name="script_builder_regex_help">ਰੈਗੂਲਰ ਐਕਸਪ੍ਰੈਸ਼ਨ ਨਾਲ, ਨਵੀਂ ਲਿਖਤ ਵਿੱਚ $1 ਬਰੈਕਟਾਂ ਵਿਚਲਾ ਪਹਿਲਾ ਗਰੁੱਪ ਹੈ।</string>
+    <string name="script_builder_preview">ਜਾਂਚੀ ਗਈ ਆਈਟਮ \'ਤੇ ਪੂਰਵ-ਝਲਕ</string>
+    <string name="script_builder_preview_silent">ਕੁਝ ਨਹੀਂ ਕਹਿੰਦਾ</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">ਪਹਿਲਾ %1$d ਹਿੱਸਾ ਰੱਖੋ</item>
+        <item quantity="other">ਪਹਿਲੇ %1$d ਹਿੱਸੇ ਰੱਖੋ</item>
+    </plurals>
 </resources>

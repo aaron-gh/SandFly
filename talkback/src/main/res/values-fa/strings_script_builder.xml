@@ -213,4 +213,28 @@
         <item quantity="one">هر دقیقه</item>
         <item quantity="other">هر %1$d دقیقه</item>
     </plurals>
+    <string name="script_builder_has_depth">تعداد سطح به پایین</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">تا %1$d سطح</item>
+        <item quantity="other">تا %1$d سطح</item>
+    </plurals>
+    <string name="script_builder_change_speech">تغییر دادن گفتار</string>
+    <string name="script_builder_change_speech_summary">برداشتن، جایگزینی یا تغییر ترتیب آنچه SandFly برای مورد می‌گوید</string>
+    <string name="script_builder_edits">ویرایش‌ها</string>
+    <string name="script_builder_add_edit">افزودن ویرایش</string>
+    <string name="script_builder_edit_remove">برداشتن نوشتار</string>
+    <string name="script_builder_edit_replace">جایگزینی نوشتار</string>
+    <string name="script_builder_edit_remove_repeats">برداشتن بخش‌های تکراری</string>
+    <string name="script_builder_edit_remove_parts">برداشتن بخش‌های دارای یک نوشتار</string>
+    <string name="script_builder_edit_keep_parts">نگه داشتن بخش‌های اول</string>
+    <string name="script_builder_edit_remove_value">برداشتن: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">برداشتن بخش‌های دارای: %1$s</string>
+    <string name="script_builder_parts_help">بخش‌ها تکه‌های میان ویرگول‌ها هستند.</string>
+    <string name="script_builder_regex_help">با «عبارت باقاعده»، $1 در نوشتار جدید نخستین گروه درون پرانتز است.</string>
+    <string name="script_builder_preview">پیش‌نمایش روی مورد بررسی‌شده</string>
+    <string name="script_builder_preview_silent">چیزی نمی‌گوید</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">نگه داشتن %1$d بخش اول</item>
+        <item quantity="other">نگه داشتن %1$d بخش اول</item>
+    </plurals>
 </resources>

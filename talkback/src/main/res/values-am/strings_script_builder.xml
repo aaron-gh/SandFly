@@ -213,4 +213,28 @@
         <item quantity="one">በየደቂቃው</item>
         <item quantity="other">በየ%1$d ደቂቃው</item>
     </plurals>
+    <string name="script_builder_has_depth">ወደ ታች ያሉ ደረጃዎች</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">እስከ %1$d ደረጃ</item>
+        <item quantity="other">እስከ %1$d ደረጃዎች</item>
+    </plurals>
+    <string name="script_builder_change_speech">ንግግር ቀይር</string>
+    <string name="script_builder_change_speech_summary">SandFly ለንጥሉ የሚናገረውን አስወግድ፣ ተካ ወይም ቅደም ተከተሉን ቀይር</string>
+    <string name="script_builder_edits">አርትዖቶች</string>
+    <string name="script_builder_add_edit">አርትዖት አክል</string>
+    <string name="script_builder_edit_remove">ጽሑፍ አስወግድ</string>
+    <string name="script_builder_edit_replace">ጽሑፍ ተካ</string>
+    <string name="script_builder_edit_remove_repeats">የተደጋገሙ ክፍሎችን አስወግድ</string>
+    <string name="script_builder_edit_remove_parts">ጽሑፍ ያላቸውን ክፍሎች አስወግድ</string>
+    <string name="script_builder_edit_keep_parts">የመጀመሪያዎቹን ክፍሎች አቆይ</string>
+    <string name="script_builder_edit_remove_value">አስወግድ፦ %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ይህ ያላቸውን ክፍሎች አስወግድ፦ %1$s</string>
+    <string name="script_builder_parts_help">ክፍሎች በኮማዎች መካከል ያሉ ቁርጥራጮች ናቸው።</string>
+    <string name="script_builder_regex_help">በመደበኛ አገላለጽ፣ በአዲሱ ጽሑፍ ውስጥ ያለው $1 በቅንፍ ውስጥ ያለው የመጀመሪያው ቡድን ነው።</string>
+    <string name="script_builder_preview">በተመረመረው ንጥል ላይ ቅድመ እይታ</string>
+    <string name="script_builder_preview_silent">ምንም አይናገርም</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">የመጀመሪያውን %1$d ክፍል አቆይ</item>
+        <item quantity="other">የመጀመሪያዎቹን %1$d ክፍሎች አቆይ</item>
+    </plurals>
 </resources>

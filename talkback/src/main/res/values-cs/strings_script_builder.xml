@@ -219,4 +219,32 @@
         <item quantity="many">Každé %1$d minuty</item>
         <item quantity="other">Každých %1$d minut</item>
     </plurals>
+    <string name="script_builder_has_depth">Počet úrovní dolů</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Přímo uvnitř</item>
+        <item quantity="few">Až %1$d úrovně</item>
+        <item quantity="many">Až %1$d úrovně</item>
+        <item quantity="other">Až %1$d úrovní</item>
+    </plurals>
+    <string name="script_builder_change_speech">Změnit řeč</string>
+    <string name="script_builder_change_speech_summary">Odebrat, nahradit nebo přeuspořádat, co SandFly pro položku říká</string>
+    <string name="script_builder_edits">Úpravy</string>
+    <string name="script_builder_add_edit">Přidat úpravu</string>
+    <string name="script_builder_edit_remove">Odebrat text</string>
+    <string name="script_builder_edit_replace">Nahradit text</string>
+    <string name="script_builder_edit_remove_repeats">Odebrat opakované části</string>
+    <string name="script_builder_edit_remove_parts">Odebrat části s textem</string>
+    <string name="script_builder_edit_keep_parts">Ponechat první části</string>
+    <string name="script_builder_edit_remove_value">Odebrat: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Odebrat části s: %1$s</string>
+    <string name="script_builder_parts_help">Části jsou úseky mezi čárkami.</string>
+    <string name="script_builder_regex_help">S volbou Regulární výraz je $1 v novém textu první skupina v závorkách.</string>
+    <string name="script_builder_preview">Náhled na prozkoumané položce</string>
+    <string name="script_builder_preview_silent">Neříká nic</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Ponechat první část</item>
+        <item quantity="few">Ponechat první %1$d části</item>
+        <item quantity="many">Ponechat první %1$d části</item>
+        <item quantity="other">Ponechat prvních %1$d částí</item>
+    </plurals>
 </resources>

@@ -213,4 +213,28 @@
         <item quantity="one">ஒவ்வொரு நிமிடமும்</item>
         <item quantity="other">%1$d நிமிடங்களுக்கு ஒருமுறை</item>
     </plurals>
+    <string name="script_builder_has_depth">கீழ் நிலைகள்</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">நேரடியாக உள்ளே</item>
+        <item quantity="other">%1$d நிலைகள் வரை</item>
+    </plurals>
+    <string name="script_builder_change_speech">பேச்சை மாற்று</string>
+    <string name="script_builder_change_speech_summary">உருப்படிக்கு SandFly சொல்வதை அகற்று, மாற்று அல்லது மறுவரிசைப்படுத்து</string>
+    <string name="script_builder_edits">திருத்தங்கள்</string>
+    <string name="script_builder_add_edit">திருத்தத்தைச் சேர்</string>
+    <string name="script_builder_edit_remove">உரையை அகற்று</string>
+    <string name="script_builder_edit_replace">உரையை மாற்று</string>
+    <string name="script_builder_edit_remove_repeats">திரும்ப வரும் பகுதிகளை அகற்று</string>
+    <string name="script_builder_edit_remove_parts">உரை உள்ள பகுதிகளை அகற்று</string>
+    <string name="script_builder_edit_keep_parts">முதல் பகுதிகளை வைத்திரு</string>
+    <string name="script_builder_edit_remove_value">அகற்று: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">இது உள்ள பகுதிகளை அகற்று: %1$s</string>
+    <string name="script_builder_parts_help">பகுதிகள் என்பவை காற்புள்ளிகளுக்கு இடையிலான துண்டுகள்.</string>
+    <string name="script_builder_regex_help">ஒழுங்கு கோவை இயக்கத்தில் இருந்தால், புதிய உரையில் உள்ள $1 என்பது அடைப்புக்குறிகளில் உள்ள முதல் குழு.</string>
+    <string name="script_builder_preview">சரிபார்த்த உருப்படியில் முன்னோட்டம்</string>
+    <string name="script_builder_preview_silent">எதுவும் சொல்லாது</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">முதல் பகுதியை வைத்திரு</item>
+        <item quantity="other">முதல் %1$d பகுதிகளை வைத்திரு</item>
+    </plurals>
 </resources>

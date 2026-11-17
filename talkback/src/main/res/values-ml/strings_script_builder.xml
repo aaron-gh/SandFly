@@ -213,4 +213,28 @@
         <item quantity="one">എല്ലാ മിനിറ്റിലും</item>
         <item quantity="other">ഓരോ %1$d മിനിറ്റിലും</item>
     </plurals>
+    <string name="script_builder_has_depth">താഴേക്കുള്ള ലെവലുകൾ</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">നേരിട്ട് ഉള്ളിൽ</item>
+        <item quantity="other">%1$d ലെവലുകൾ വരെ</item>
+    </plurals>
+    <string name="script_builder_change_speech">സംഭാഷണം മാറ്റുക</string>
+    <string name="script_builder_change_speech_summary">ഇനത്തിനായി SandFly പറയുന്നത് നീക്കം ചെയ്യുക, മാറ്റിസ്ഥാപിക്കുക അല്ലെങ്കിൽ പുനഃക്രമീകരിക്കുക</string>
+    <string name="script_builder_edits">എഡിറ്റുകൾ</string>
+    <string name="script_builder_add_edit">എഡിറ്റ് ചേർക്കുക</string>
+    <string name="script_builder_edit_remove">ടെക്‌സ്റ്റ് നീക്കം ചെയ്യുക</string>
+    <string name="script_builder_edit_replace">ടെക്‌സ്റ്റ് മാറ്റിസ്ഥാപിക്കുക</string>
+    <string name="script_builder_edit_remove_repeats">ആവർത്തിച്ച ഭാഗങ്ങൾ നീക്കം ചെയ്യുക</string>
+    <string name="script_builder_edit_remove_parts">ടെക്‌സ്റ്റ് ഉള്ള ഭാഗങ്ങൾ നീക്കം ചെയ്യുക</string>
+    <string name="script_builder_edit_keep_parts">ആദ്യ ഭാഗങ്ങൾ നിലനിർത്തുക</string>
+    <string name="script_builder_edit_remove_value">നീക്കം ചെയ്യുക: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">ഇതുള്ള ഭാഗങ്ങൾ നീക്കം ചെയ്യുക: %1$s</string>
+    <string name="script_builder_parts_help">കോമകൾക്കിടയിലുള്ള ഖണ്ഡങ്ങളാണ് ഭാഗങ്ങൾ.</string>
+    <string name="script_builder_regex_help">റെഗുലർ എക്സ്പ്രഷൻ ഉപയോഗിക്കുമ്പോൾ, പുതിയ ടെക്‌സ്റ്റിലെ $1 ബ്രാക്കറ്റിലെ ആദ്യ ഗ്രൂപ്പാണ്.</string>
+    <string name="script_builder_preview">പരിശോധിച്ച ഇനത്തിൽ പ്രിവ്യൂ</string>
+    <string name="script_builder_preview_silent">ഒന്നും പറയുന്നില്ല</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">ആദ്യ ഭാഗം നിലനിർത്തുക</item>
+        <item quantity="other">ആദ്യ %1$d ഭാഗങ്ങൾ നിലനിർത്തുക</item>
+    </plurals>
 </resources>

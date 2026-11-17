@@ -213,4 +213,28 @@
         <item quantity="one">Every minute</item>
         <item quantity="other">Every %1$d minutes</item>
     </plurals>
+    <string name="script_builder_has_depth">Levels down</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Directly inside</item>
+        <item quantity="other">Up to %1$d levels</item>
+    </plurals>
+    <string name="script_builder_change_speech">Change speech</string>
+    <string name="script_builder_change_speech_summary">Remove, replace or reorder what SandFly says for the item</string>
+    <string name="script_builder_edits">Edits</string>
+    <string name="script_builder_add_edit">Add edit</string>
+    <string name="script_builder_edit_remove">Remove text</string>
+    <string name="script_builder_edit_replace">Replace text</string>
+    <string name="script_builder_edit_remove_repeats">Remove repeated parts</string>
+    <string name="script_builder_edit_remove_parts">Remove parts that have a text</string>
+    <string name="script_builder_edit_keep_parts">Keep the first parts</string>
+    <string name="script_builder_edit_remove_value">Remove: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Remove parts with: %1$s</string>
+    <string name="script_builder_parts_help">Parts are the pieces between commas.</string>
+    <string name="script_builder_regex_help">With Regular expression, $1 in the new text is the first group in brackets.</string>
+    <string name="script_builder_preview">Preview on the inspected item</string>
+    <string name="script_builder_preview_silent">Says nothing</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Keep the first part</item>
+        <item quantity="other">Keep the first %1$d parts</item>
+    </plurals>
 </resources>

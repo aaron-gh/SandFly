@@ -213,4 +213,28 @@
         <item quantity="one">Bawat minuto</item>
         <item quantity="other">Bawat %1$d minuto</item>
     </plurals>
+    <string name="script_builder_has_depth">Mga antas pababa</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Hanggang %1$d antas</item>
+        <item quantity="other">Hanggang %1$d antas</item>
+    </plurals>
+    <string name="script_builder_change_speech">Baguhin ang pagsasalita</string>
+    <string name="script_builder_change_speech_summary">Alisin, palitan, o ayusin muli ang sinasabi ng SandFly para sa item</string>
+    <string name="script_builder_edits">Mga edit</string>
+    <string name="script_builder_add_edit">Magdagdag ng edit</string>
+    <string name="script_builder_edit_remove">Alisin ang text</string>
+    <string name="script_builder_edit_replace">Palitan ang text</string>
+    <string name="script_builder_edit_remove_repeats">Alisin ang mga umuulit na bahagi</string>
+    <string name="script_builder_edit_remove_parts">Alisin ang mga bahaging may text</string>
+    <string name="script_builder_edit_keep_parts">Panatilihin ang mga unang bahagi</string>
+    <string name="script_builder_edit_remove_value">Alisin: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Alisin ang mga bahaging may: %1$s</string>
+    <string name="script_builder_parts_help">Ang mga bahagi ay ang mga piraso sa pagitan ng mga kuwit.</string>
+    <string name="script_builder_regex_help">Kapag naka-check ang Regular expression, ang $1 sa bagong text ay ang unang grupo sa loob ng bracket.</string>
+    <string name="script_builder_preview">Preview sa na-inspect na item</string>
+    <string name="script_builder_preview_silent">Walang sinasabi</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Panatilihin ang unang %1$d bahagi</item>
+        <item quantity="other">Panatilihin ang unang %1$d bahagi</item>
+    </plurals>
 </resources>

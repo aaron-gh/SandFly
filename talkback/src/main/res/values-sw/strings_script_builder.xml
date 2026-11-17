@@ -213,4 +213,28 @@
         <item quantity="one">Kila dakika</item>
         <item quantity="other">Kila dakika %1$d</item>
     </plurals>
+    <string name="script_builder_has_depth">Viwango kwenda ndani</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Moja kwa moja ndani</item>
+        <item quantity="other">Hadi viwango %1$d</item>
+    </plurals>
+    <string name="script_builder_change_speech">Badilisha matamshi</string>
+    <string name="script_builder_change_speech_summary">Ondoa, badilisha au panga upya kile SandFly inachosema kwa kipengee</string>
+    <string name="script_builder_edits">Uhariri</string>
+    <string name="script_builder_add_edit">Ongeza uhariri</string>
+    <string name="script_builder_edit_remove">Ondoa maandishi</string>
+    <string name="script_builder_edit_replace">Badilisha maandishi</string>
+    <string name="script_builder_edit_remove_repeats">Ondoa sehemu zinazojirudia</string>
+    <string name="script_builder_edit_remove_parts">Ondoa sehemu zenye maandishi</string>
+    <string name="script_builder_edit_keep_parts">Weka sehemu za kwanza</string>
+    <string name="script_builder_edit_remove_value">Ondoa: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Ondoa sehemu zenye: %1$s</string>
+    <string name="script_builder_parts_help">Sehemu ni vipande kati ya koma.</string>
+    <string name="script_builder_regex_help">Ukiwa na Kielezo cha kawaida, $1 katika maandishi mapya ni kundi la kwanza ndani ya mabano.</string>
+    <string name="script_builder_preview">Onyesho la kukagua kwenye kipengee kilichokaguliwa</string>
+    <string name="script_builder_preview_silent">Haisemi chochote</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Weka sehemu ya kwanza</item>
+        <item quantity="other">Weka sehemu %1$d za kwanza</item>
+    </plurals>
 </resources>

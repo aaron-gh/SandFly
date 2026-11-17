@@ -213,4 +213,28 @@
         <item quantity="one">Ар бир мүнөт сайын</item>
         <item quantity="other">Ар %1$d мүнөт сайын</item>
     </plurals>
+    <string name="script_builder_has_depth">Ички деңгээлдер</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Түздөн-түз ичинде</item>
+        <item quantity="other">%1$d деңгээлге чейин</item>
+    </plurals>
+    <string name="script_builder_change_speech">Кепти өзгөртүү</string>
+    <string name="script_builder_change_speech_summary">SandFly объект үчүн айткан кепти алып салуу, алмаштыруу же кайра иреттөө</string>
+    <string name="script_builder_edits">Түзөтүүлөр</string>
+    <string name="script_builder_add_edit">Түзөтүү кошуу</string>
+    <string name="script_builder_edit_remove">Текстти алып салуу</string>
+    <string name="script_builder_edit_replace">Текстти алмаштыруу</string>
+    <string name="script_builder_edit_remove_repeats">Кайталанган бөлүктөрдү алып салуу</string>
+    <string name="script_builder_edit_remove_parts">Текст камтыган бөлүктөрдү алып салуу</string>
+    <string name="script_builder_edit_keep_parts">Алгачкы бөлүктөрдү калтыруу</string>
+    <string name="script_builder_edit_remove_value">Алып салуу: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Камтыган бөлүктөрдү алып салуу: %1$s</string>
+    <string name="script_builder_parts_help">Бөлүктөр — үтүрлөрдүн ортосундагы үзүндүлөр.</string>
+    <string name="script_builder_regex_help">«Туруктуу туюнтма» менен жаңы тексттеги $1 — кашаадагы биринчи топ.</string>
+    <string name="script_builder_preview">Текшерилген объектте алдын ала көрүү</string>
+    <string name="script_builder_preview_silent">Эч нерсе айтылбайт</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Алгачкы бөлүктү калтыруу</item>
+        <item quantity="other">Алгачкы %1$d бөлүктү калтыруу</item>
+    </plurals>
 </resources>

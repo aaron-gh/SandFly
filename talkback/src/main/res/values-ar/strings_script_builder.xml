@@ -225,4 +225,36 @@
         <item quantity="many">كل %1$d دقيقة</item>
         <item quantity="other">كل %1$d دقيقة</item>
     </plurals>
+    <string name="script_builder_has_depth">عدد المستويات إلى الأسفل</string>
+    <plurals name="script_builder_levels">
+        <item quantity="zero">حتى %1$d مستوى</item>
+        <item quantity="one">داخله مباشرةً</item>
+        <item quantity="two">حتى مستويين</item>
+        <item quantity="few">حتى %1$d مستويات</item>
+        <item quantity="many">حتى %1$d مستوى</item>
+        <item quantity="other">حتى %1$d مستوى</item>
+    </plurals>
+    <string name="script_builder_change_speech">تغيير الكلام</string>
+    <string name="script_builder_change_speech_summary">إزالة ما يقوله SandFly للعنصر أو استبداله أو إعادة ترتيبه</string>
+    <string name="script_builder_edits">التعديلات</string>
+    <string name="script_builder_add_edit">إضافة تعديل</string>
+    <string name="script_builder_edit_remove">إزالة نص</string>
+    <string name="script_builder_edit_replace">استبدال نص</string>
+    <string name="script_builder_edit_remove_repeats">إزالة الأجزاء المكررة</string>
+    <string name="script_builder_edit_remove_parts">إزالة الأجزاء التي تحتوي على نص</string>
+    <string name="script_builder_edit_keep_parts">الإبقاء على الأجزاء الأولى</string>
+    <string name="script_builder_edit_remove_value">إزالة: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">إزالة الأجزاء التي تحتوي على: %1$s</string>
+    <string name="script_builder_parts_help">الأجزاء هي المقاطع الواقعة بين الفواصل.</string>
+    <string name="script_builder_regex_help">مع تفعيل تعبير نمطي، يمثّل $1 في النص الجديد المجموعة الأولى بين قوسين.</string>
+    <string name="script_builder_preview">معاينة على العنصر الذي تم فحصه</string>
+    <string name="script_builder_preview_silent">لا يُنطق أي شيء</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="zero">الإبقاء على أول %1$d جزء</item>
+        <item quantity="one">الإبقاء على الجزء الأول</item>
+        <item quantity="two">الإبقاء على أول جزأين</item>
+        <item quantity="few">الإبقاء على أول %1$d أجزاء</item>
+        <item quantity="many">الإبقاء على أول %1$d جزءًا</item>
+        <item quantity="other">الإبقاء على أول %1$d جزء</item>
+    </plurals>
 </resources>

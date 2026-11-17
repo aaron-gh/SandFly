@@ -216,4 +216,30 @@
         <item quantity="few">На свака %1$d минута</item>
         <item quantity="other">На сваких %1$d минута</item>
     </plurals>
+    <string name="script_builder_has_depth">Нивоа надоле</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">До %1$d нивоа</item>
+        <item quantity="few">До %1$d нивоа</item>
+        <item quantity="other">До %1$d нивоа</item>
+    </plurals>
+    <string name="script_builder_change_speech">Промени говор</string>
+    <string name="script_builder_change_speech_summary">Уклони, замени или промени редослед онога што SandFly изговара за ставку</string>
+    <string name="script_builder_edits">Измене</string>
+    <string name="script_builder_add_edit">Додај измену</string>
+    <string name="script_builder_edit_remove">Уклони текст</string>
+    <string name="script_builder_edit_replace">Замени текст</string>
+    <string name="script_builder_edit_remove_repeats">Уклони поновљене делове</string>
+    <string name="script_builder_edit_remove_parts">Уклони делове са текстом</string>
+    <string name="script_builder_edit_keep_parts">Задржи прве делове</string>
+    <string name="script_builder_edit_remove_value">Уклони: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Уклони делове са: %1$s</string>
+    <string name="script_builder_parts_help">Делови су одсеци између зареза.</string>
+    <string name="script_builder_regex_help">Са опцијом Регуларни израз, $1 у новом тексту је прва група у заградама.</string>
+    <string name="script_builder_preview">Приказ за прегледану ставку</string>
+    <string name="script_builder_preview_silent">Не изговара ништа</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Задржи први %1$d део</item>
+        <item quantity="few">Задржи прва %1$d дела</item>
+        <item quantity="other">Задржи првих %1$d делова</item>
+    </plurals>
 </resources>

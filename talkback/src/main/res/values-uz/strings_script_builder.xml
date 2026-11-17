@@ -213,4 +213,28 @@
         <item quantity="one">Har daqiqada</item>
         <item quantity="other">Har %1$d daqiqada</item>
     </plurals>
+    <string name="script_builder_has_depth">Pastga darajalar</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Bevosita ichida</item>
+        <item quantity="other">%1$d darajagacha</item>
+    </plurals>
+    <string name="script_builder_change_speech">Nutqni oʻzgartirish</string>
+    <string name="script_builder_change_speech_summary">SandFly element uchun aytadigan narsani olib tashlash, almashtirish yoki tartibini oʻzgartirish</string>
+    <string name="script_builder_edits">Tahrirlar</string>
+    <string name="script_builder_add_edit">Tahrir qoʻshish</string>
+    <string name="script_builder_edit_remove">Matnni olib tashlash</string>
+    <string name="script_builder_edit_replace">Matnni almashtirish</string>
+    <string name="script_builder_edit_remove_repeats">Takrorlangan qismlarni olib tashlash</string>
+    <string name="script_builder_edit_remove_parts">Matnli qismlarni olib tashlash</string>
+    <string name="script_builder_edit_keep_parts">Birinchi qismlarni qoldirish</string>
+    <string name="script_builder_edit_remove_value">Olib tashlash: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Tarkibida bor qismlarni olib tashlash: %1$s</string>
+    <string name="script_builder_parts_help">Qismlar — vergullar orasidagi boʻlaklar.</string>
+    <string name="script_builder_regex_help">Muntazam ifoda yoqilganda, yangi matndagi $1 qavs ichidagi birinchi guruhdir.</string>
+    <string name="script_builder_preview">Tekshirilgan elementda oldindan koʻrish</string>
+    <string name="script_builder_preview_silent">Hech narsa aytmaydi</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Birinchi qismni qoldirish</item>
+        <item quantity="other">Birinchi %1$d qismni qoldirish</item>
+    </plurals>
 </resources>

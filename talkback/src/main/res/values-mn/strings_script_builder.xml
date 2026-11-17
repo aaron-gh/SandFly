@@ -213,4 +213,28 @@
         <item quantity="one">Минут тутам</item>
         <item quantity="other">%1$d минут тутам</item>
     </plurals>
+    <string name="script_builder_has_depth">Доош түвшин</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Шууд дотор</item>
+        <item quantity="other">%1$d түвшин хүртэл</item>
+    </plurals>
+    <string name="script_builder_change_speech">Яриаг өөрчлөх</string>
+    <string name="script_builder_change_speech_summary">SandFly-ийн тухайн зүйлд хэлдэг яриаг хасах, солих эсвэл дарааллыг нь өөрчлөх</string>
+    <string name="script_builder_edits">Засварууд</string>
+    <string name="script_builder_add_edit">Засвар нэмэх</string>
+    <string name="script_builder_edit_remove">Текст хасах</string>
+    <string name="script_builder_edit_replace">Текст солих</string>
+    <string name="script_builder_edit_remove_repeats">Давтагдсан хэсгүүдийг хасах</string>
+    <string name="script_builder_edit_remove_parts">Текст агуулсан хэсгүүдийг хасах</string>
+    <string name="script_builder_edit_keep_parts">Эхний хэсгүүдийг үлдээх</string>
+    <string name="script_builder_edit_remove_value">Хасах: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Агуулсан хэсгүүдийг хасах: %1$s</string>
+    <string name="script_builder_parts_help">Хэсгүүд нь таслалуудын хоорондох текст юм.</string>
+    <string name="script_builder_regex_help">Регуляр илэрхийлэл ашиглах үед шинэ текст дэх $1 нь хаалтан доторх эхний бүлэг юм.</string>
+    <string name="script_builder_preview">Шалгасан зүйл дээр урьдчилан харах</string>
+    <string name="script_builder_preview_silent">Юу ч хэлэхгүй</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Эхний хэсгийг үлдээх</item>
+        <item quantity="other">Эхний %1$d хэсгийг үлдээх</item>
+    </plurals>
 </resources>

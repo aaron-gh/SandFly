@@ -213,4 +213,28 @@
         <item quantity="one">প্ৰতি মিনিটত</item>
         <item quantity="other">প্ৰতি %1$d মিনিটত</item>
     </plurals>
+    <string name="script_builder_has_depth">তললৈ স্তৰ</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">%1$d টা স্তৰলৈকে</item>
+        <item quantity="other">%1$d টা স্তৰলৈকে</item>
+    </plurals>
+    <string name="script_builder_change_speech">কথন সলনি কৰক</string>
+    <string name="script_builder_change_speech_summary">বস্তুটোৰ বাবে SandFly এ কোৱা কথা আঁতৰাওক, সলনি কৰক বা পুনৰ সজাওক</string>
+    <string name="script_builder_edits">সম্পাদনাসমূহ</string>
+    <string name="script_builder_add_edit">সম্পাদনা যোগ দিয়ক</string>
+    <string name="script_builder_edit_remove">পাঠ আঁতৰাওক</string>
+    <string name="script_builder_edit_replace">পাঠ সলনি কৰক</string>
+    <string name="script_builder_edit_remove_repeats">পুনৰাবৃত্ত অংশ আঁতৰাওক</string>
+    <string name="script_builder_edit_remove_parts">পাঠ থকা অংশ আঁতৰাওক</string>
+    <string name="script_builder_edit_keep_parts">প্ৰথম অংশবোৰ ৰাখক</string>
+    <string name="script_builder_edit_remove_value">আঁতৰাওক: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">এইটো থকা অংশ আঁতৰাওক: %1$s</string>
+    <string name="script_builder_parts_help">অংশ মানে কমাৰ মাজৰ টুকুৰাবোৰ।</string>
+    <string name="script_builder_regex_help">ৰেগুলাৰ এক্সপ্ৰেছনৰ সৈতে, নতুন পাঠত $1 হৈছে বন্ধনীৰ ভিতৰৰ প্ৰথম গোট।</string>
+    <string name="script_builder_preview">পৰীক্ষা কৰা বস্তুটোত পূৰ্বদৰ্শন</string>
+    <string name="script_builder_preview_silent">একো নকয়</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">প্ৰথম %1$d টা অংশ ৰাখক</item>
+        <item quantity="other">প্ৰথম %1$d টা অংশ ৰাখক</item>
+    </plurals>
 </resources>

@@ -219,4 +219,32 @@
         <item quantity="many">Co %1$d minut</item>
         <item quantity="other">Co %1$d minuty</item>
     </plurals>
+    <string name="script_builder_has_depth">Poziomy w dół</string>
+    <plurals name="script_builder_levels">
+        <item quantity="one">Bezpośrednio wewnątrz</item>
+        <item quantity="few">Do %1$d poziomów</item>
+        <item quantity="many">Do %1$d poziomów</item>
+        <item quantity="other">Do %1$d poziomu</item>
+    </plurals>
+    <string name="script_builder_change_speech">Zmień mowę</string>
+    <string name="script_builder_change_speech_summary">Usuń, zastąp lub zmień kolejność tego, co SandFly mówi dla elementu</string>
+    <string name="script_builder_edits">Edycje</string>
+    <string name="script_builder_add_edit">Dodaj edycję</string>
+    <string name="script_builder_edit_remove">Usuń tekst</string>
+    <string name="script_builder_edit_replace">Zastąp tekst</string>
+    <string name="script_builder_edit_remove_repeats">Usuń powtarzające się części</string>
+    <string name="script_builder_edit_remove_parts">Usuń części zawierające tekst</string>
+    <string name="script_builder_edit_keep_parts">Zachowaj pierwsze części</string>
+    <string name="script_builder_edit_remove_value">Usuń: %1$s</string>
+    <string name="script_builder_edit_remove_parts_value">Usuń części z: %1$s</string>
+    <string name="script_builder_parts_help">Części to fragmenty między przecinkami.</string>
+    <string name="script_builder_regex_help">Przy opcji Wyrażenie regularne $1 w nowym tekście to pierwsza grupa w nawiasach.</string>
+    <string name="script_builder_preview">Podgląd na sprawdzonym elemencie</string>
+    <string name="script_builder_preview_silent">Nic nie mówi</string>
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Zachowaj pierwszą część</item>
+        <item quantity="few">Zachowaj pierwsze %1$d części</item>
+        <item quantity="many">Zachowaj pierwszych %1$d części</item>
+        <item quantity="other">Zachowaj pierwsze %1$d części</item>
+    </plurals>
 </resources>
