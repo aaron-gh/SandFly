@@ -137,4 +137,24 @@ class ScriptBuilderTest {
     assertEquals("""{"contains":"New post","field":"contentDescription","kind":"clickable"}""", query.toString())
     assertTrue(NodeQuery.of(query).matches(AccessibilityNodeInfoCompat.wrap(button)))
   }
+
+  @Test
+  fun inspectedRowWithoutOwnText_isNamedByTheTextInIt() {
+    val row = AccessibilityNodeInfo.obtain().apply {
+      isClickable = true
+      isVisibleToUser = true
+    }
+    val title = AccessibilityNodeInfo.obtain().apply {
+      text = "Location"
+      isVisibleToUser = true
+    }
+    org.robolectric.Shadows.shadowOf(row).addChild(title)
+
+    ItemInspector.report(context, AccessibilityNodeInfoCompat.wrap(row))
+
+    assertEquals(
+      """{"has":{"contains":"Location","field":"text"},"kind":"clickable"}""",
+      ItemInspector.lastQuery(context).toString(),
+    )
+  }
 }
