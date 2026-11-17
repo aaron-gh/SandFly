@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">Macro đã dừng. Đã lặp lại <xliff:g id="count" example="1000">%1$d</xliff:g> lần: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Macro đã dừng. Hết thời gian chờ: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Macro không chạy. Chỉ chạy khi: chưa đáp ứng</string>
+    <string name="macro_step_more">Bước khác</string>
+    <string name="macro_do_play_sound">Phát âm thanh</string>
+    <string name="macro_do_vibrate">Rung</string>
+    <string name="macro_do_play_tone">Phát âm báo</string>
+    <string name="macro_do_copy_text">Sao chép văn bản</string>
+    <string name="macro_do_open_link">Mở đường liên kết</string>
+    <string name="macro_do_open_settings">Mở trang cài đặt</string>
+    <string name="macro_do_share_text">Chia sẻ văn bản</string>
+    <string name="macro_do_set_volume">Đặt âm lượng</string>
+    <string name="macro_do_set_ringer">Đặt chế độ chuông</string>
+    <string name="macro_do_press_keys">Nhấn phím</string>
+    <string name="macro_do_show_message">Hiện thông điệp</string>
+    <string name="macro_do_set_value">Đặt giá trị</string>
+    <string name="macro_do_fetch">Tải đường liên kết</string>
+    <string name="macro_do_translate">Dịch văn bản</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, vào %3$s</string>
+    <string name="macro_do_vibrate_value">Rung %1$d ms</string>
+    <string name="macro_do_play_tone_value">Phát âm báo %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Đặt âm lượng %1$s thành %2$d%%</string>
+    <string name="macro_do_link_hint">Địa chỉ</string>
+    <string name="macro_do_keys_hint">Phím, ví dụ tab enter</string>
+    <string name="macro_number_range">Nhập từ %1$d đến %2$d</string>
+    <string name="macro_values_help">Giá trị được chèn dưới dạng {name}. Ngoài ra còn có {item}, {clipboard}, {time} và {date}.</string>
+    <string name="macro_value_name">Tên giá trị</string>
+    <string name="macro_value_name_invalid">Dùng chữ cái, chữ số, dấu chấm, dấu gạch ngang hoặc dấu gạch dưới</string>
+    <string name="macro_test_value">Giá trị</string>
+    <string name="macro_test_value_label">Chứa (để trống: mọi giá trị)</string>
+    <string name="macro_test_value_set">Đã đặt giá trị %1$s</string>
+    <string name="macro_test_value_value">Giá trị %1$s chứa %2$s</string>
+    <string name="macro_test_not">Không: %1$s</string>
 </resources>

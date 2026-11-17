@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">ማክሮ ቆሟል። <xliff:g id="count" example="1000">%1$d</xliff:g> ጊዜ ተደግሟል፦ <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">ማክሮ ቆሟል። ጊዜው አብቅቷል፦ <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">ማክሮ አልሄደም። የሚሄደው ሲሆን ብቻ፦ አልተሟላም</string>
+    <string name="macro_step_more">ተጨማሪ እርምጃዎች</string>
+    <string name="macro_do_play_sound">ድምፅ አጫውት</string>
+    <string name="macro_do_vibrate">ንዝረት</string>
+    <string name="macro_do_play_tone">ቃና አጫውት</string>
+    <string name="macro_do_copy_text">ጽሑፍ ቅዳ</string>
+    <string name="macro_do_open_link">አገናኝ ክፈት</string>
+    <string name="macro_do_open_settings">የቅንብሮች ገጽ ክፈት</string>
+    <string name="macro_do_share_text">ጽሑፍ አጋራ</string>
+    <string name="macro_do_set_volume">የድምፅ መጠን አዘጋጅ</string>
+    <string name="macro_do_set_ringer">የመጥሪያ ሁነታ አዘጋጅ</string>
+    <string name="macro_do_press_keys">ቁልፎችን ተጫን</string>
+    <string name="macro_do_show_message">መልዕክት አሳይ</string>
+    <string name="macro_do_set_value">እሴት አዘጋጅ</string>
+    <string name="macro_do_fetch">አገናኝ አምጣ</string>
+    <string name="macro_do_translate">ጽሑፍ ተርጉም</string>
+    <string name="macro_do_value">%1$s፦ %2$s</string>
+    <string name="macro_do_into_value">%1$s፦ %2$s፣ ወደ %3$s</string>
+    <string name="macro_do_vibrate_value">ንዝረት %1$d ms</string>
+    <string name="macro_do_play_tone_value">ቃና አጫውት %1$d Hz</string>
+    <string name="macro_do_set_volume_value">የ%1$s የድምፅ መጠንን ወደ %2$d%% አዘጋጅ</string>
+    <string name="macro_do_link_hint">አድራሻ</string>
+    <string name="macro_do_keys_hint">ቁልፎች፣ ለምሳሌ tab enter</string>
+    <string name="macro_number_range">ከ%1$d እስከ %2$d ያለ ቁጥር ያስገቡ</string>
+    <string name="macro_values_help">እሴቶች እንደ {name} ይገባሉ። እንዲሁም {item}፣ {clipboard}፣ {time} እና {date}።</string>
+    <string name="macro_value_name">የእሴት ስም</string>
+    <string name="macro_value_name_invalid">ፊደሎችን፣ አሃዞችን፣ ነጥቦችን፣ ሰረዞችን ወይም የታች ሰረዞችን ይጠቀሙ</string>
+    <string name="macro_test_value">እሴት</string>
+    <string name="macro_test_value_label">ይዟል (ባዶ፦ ማንኛውም እሴት)</string>
+    <string name="macro_test_value_set">እሴት %1$s ተዘጋጅቷል</string>
+    <string name="macro_test_value_value">እሴት %1$s %2$s ይዟል</string>
+    <string name="macro_test_not">አይደለም፦ %1$s</string>
 </resources>

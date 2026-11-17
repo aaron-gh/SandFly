@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">มาโครหยุดแล้ว ทำซ้ำ <xliff:g id="count" example="1000">%1$d</xliff:g> ครั้ง: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">มาโครหยุดแล้ว หมดเวลา: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">ไม่ได้เรียกใช้มาโคร เรียกใช้เฉพาะเมื่อ: ไม่เป็นไปตามเงื่อนไข</string>
+    <string name="macro_step_more">ขั้นตอนเพิ่มเติม</string>
+    <string name="macro_do_play_sound">เปิดเสียง</string>
+    <string name="macro_do_vibrate">สั่น</string>
+    <string name="macro_do_play_tone">เล่นโทนเสียง</string>
+    <string name="macro_do_copy_text">คัดลอกข้อความ</string>
+    <string name="macro_do_open_link">เปิดลิงก์</string>
+    <string name="macro_do_open_settings">เปิดหน้าการตั้งค่า</string>
+    <string name="macro_do_share_text">แชร์ข้อความ</string>
+    <string name="macro_do_set_volume">ตั้งระดับเสียง</string>
+    <string name="macro_do_set_ringer">ตั้งโหมดเสียงเรียกเข้า</string>
+    <string name="macro_do_press_keys">กดปุ่ม</string>
+    <string name="macro_do_show_message">แสดงข้อความ</string>
+    <string name="macro_do_set_value">กำหนดค่า</string>
+    <string name="macro_do_fetch">ดึงข้อมูลจากลิงก์</string>
+    <string name="macro_do_translate">แปลข้อความ</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s ไปยัง %3$s</string>
+    <string name="macro_do_vibrate_value">สั่น %1$d ms</string>
+    <string name="macro_do_play_tone_value">เล่นโทนเสียง %1$d Hz</string>
+    <string name="macro_do_set_volume_value">ตั้งระดับเสียง%1$s เป็น %2$d%%</string>
+    <string name="macro_do_link_hint">ที่อยู่</string>
+    <string name="macro_do_keys_hint">ปุ่ม เช่น tab enter</string>
+    <string name="macro_number_range">ป้อน %1$d ถึง %2$d</string>
+    <string name="macro_values_help">ใส่ค่าเป็น {name} และใช้ {item}, {clipboard}, {time} และ {date} ได้ด้วย</string>
+    <string name="macro_value_name">ชื่อค่า</string>
+    <string name="macro_value_name_invalid">ใช้ตัวอักษร ตัวเลข จุด ขีดกลาง หรือขีดล่าง</string>
+    <string name="macro_test_value">ค่า</string>
+    <string name="macro_test_value_label">มี (ว่าง: ค่าใดก็ได้)</string>
+    <string name="macro_test_value_set">กำหนดค่า %1$s แล้ว</string>
+    <string name="macro_test_value_value">ค่า %1$s มี %2$s</string>
+    <string name="macro_test_not">ไม่: %1$s</string>
 </resources>

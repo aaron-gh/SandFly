@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">巨集已停止。已重複 <xliff:g id="count" example="1000">%1$d</xliff:g> 次：<xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">巨集已停止。逾時：<xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">巨集未執行。僅在以下情況執行：條件不符</string>
+    <string name="macro_step_more">更多步驟</string>
+    <string name="macro_do_play_sound">播放音效</string>
+    <string name="macro_do_vibrate">振動</string>
+    <string name="macro_do_play_tone">播放音調</string>
+    <string name="macro_do_copy_text">複製文字</string>
+    <string name="macro_do_open_link">開啟連結</string>
+    <string name="macro_do_open_settings">開啟設定頁面</string>
+    <string name="macro_do_share_text">分享文字</string>
+    <string name="macro_do_set_volume">設定音量</string>
+    <string name="macro_do_set_ringer">設定鈴聲模式</string>
+    <string name="macro_do_press_keys">按下按鍵</string>
+    <string name="macro_do_show_message">顯示訊息</string>
+    <string name="macro_do_set_value">設定值</string>
+    <string name="macro_do_fetch">擷取連結</string>
+    <string name="macro_do_translate">翻譯文字</string>
+    <string name="macro_do_value">%1$s：%2$s</string>
+    <string name="macro_do_into_value">%1$s：%2$s，存入 %3$s</string>
+    <string name="macro_do_vibrate_value">振動 %1$d 毫秒</string>
+    <string name="macro_do_play_tone_value">播放音調 %1$d Hz</string>
+    <string name="macro_do_set_volume_value">將%1$s音量設為 %2$d%%</string>
+    <string name="macro_do_link_hint">網址</string>
+    <string name="macro_do_keys_hint">按鍵，例如 tab enter</string>
+    <string name="macro_number_range">請輸入 %1$d 到 %2$d</string>
+    <string name="macro_values_help">值以 {name} 插入。另有 {item}、{clipboard}、{time} 和 {date}。</string>
+    <string name="macro_value_name">值的名稱</string>
+    <string name="macro_value_name_invalid">請使用字母、數字、句點、連字號或底線</string>
+    <string name="macro_test_value">值</string>
+    <string name="macro_test_value_label">包含 (留空：任何值)</string>
+    <string name="macro_test_value_set">已設定值 %1$s</string>
+    <string name="macro_test_value_value">值 %1$s 包含%2$s</string>
+    <string name="macro_test_not">非：%1$s</string>
 </resources>

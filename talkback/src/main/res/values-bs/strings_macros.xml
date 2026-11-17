@@ -129,4 +129,35 @@
     <string name="macro_stopped_repeats">Makro je zaustavljen. Ponovljeno <xliff:g id="count" example="1000">%1$d</xliff:g> puta: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro je zaustavljen. Isteklo je vrijeme: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro nije pokrenut. Pokreni samo kada: nije ispunjeno</string>
+    <string name="macro_step_more">Više koraka</string>
+    <string name="macro_do_play_sound">Reproduciraj zvuk</string>
+    <string name="macro_do_vibrate">Vibriraj</string>
+    <string name="macro_do_play_tone">Reproduciraj ton</string>
+    <string name="macro_do_copy_text">Kopiraj tekst</string>
+    <string name="macro_do_open_link">Otvori link</string>
+    <string name="macro_do_open_settings">Otvori stranicu postavki</string>
+    <string name="macro_do_share_text">Podijeli tekst</string>
+    <string name="macro_do_set_volume">Postavi jačinu zvuka</string>
+    <string name="macro_do_set_ringer">Postavi način zvona</string>
+    <string name="macro_do_press_keys">Pritisni tipke</string>
+    <string name="macro_do_show_message">Prikaži poruku</string>
+    <string name="macro_do_set_value">Postavi vrijednost</string>
+    <string name="macro_do_fetch">Preuzmi link</string>
+    <string name="macro_do_translate">Prevedi tekst</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, u %3$s</string>
+    <string name="macro_do_vibrate_value">Vibriraj %1$d ms</string>
+    <string name="macro_do_play_tone_value">Reproduciraj ton %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Postavi jačinu zvuka %1$s na %2$d%%</string>
+    <string name="macro_do_link_hint">Adresa</string>
+    <string name="macro_do_keys_hint">Tipke, npr. tab enter</string>
+    <string name="macro_number_range">Unesite od %1$d do %2$d</string>
+    <string name="macro_values_help">Vrijednosti se umeću kao {name}. Također {item}, {clipboard}, {time} i {date}.</string>
+    <string name="macro_value_name">Naziv vrijednosti</string>
+    <string name="macro_value_name_invalid">Koristite slova, cifre, tačke, crtice ili donje crte</string>
+    <string name="macro_test_value">Vrijednost</string>
+    <string name="macro_test_value_label">Sadrži (prazno: bilo koja vrijednost)</string>
+    <string name="macro_test_value_set">Vrijednost %1$s je postavljena</string>
+    <string name="macro_test_value_value">Vrijednost %1$s sadrži %2$s</string>
+    <string name="macro_test_not">Nije: %1$s</string>
 </resources>

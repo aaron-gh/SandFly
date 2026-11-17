@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">매크로가 중지되었습니다. <xliff:g id="count" example="1000">%1$d</xliff:g>회 반복함: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">매크로가 중지되었습니다. 시간 초과: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">매크로가 실행되지 않았습니다. 다음일 때만 실행: 조건을 충족하지 않음</string>
+    <string name="macro_step_more">추가 단계</string>
+    <string name="macro_do_play_sound">소리 재생</string>
+    <string name="macro_do_vibrate">진동</string>
+    <string name="macro_do_play_tone">톤 재생</string>
+    <string name="macro_do_copy_text">텍스트 복사</string>
+    <string name="macro_do_open_link">링크 열기</string>
+    <string name="macro_do_open_settings">설정 페이지 열기</string>
+    <string name="macro_do_share_text">텍스트 공유</string>
+    <string name="macro_do_set_volume">볼륨 설정</string>
+    <string name="macro_do_set_ringer">벨소리 모드 설정</string>
+    <string name="macro_do_press_keys">키 누르기</string>
+    <string name="macro_do_show_message">메시지 표시</string>
+    <string name="macro_do_set_value">값 설정</string>
+    <string name="macro_do_fetch">링크 가져오기</string>
+    <string name="macro_do_translate">텍스트 번역</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, 저장 위치 %3$s</string>
+    <string name="macro_do_vibrate_value">진동 %1$d ms</string>
+    <string name="macro_do_play_tone_value">톤 재생 %1$d Hz</string>
+    <string name="macro_do_set_volume_value">%1$s 볼륨을 %2$d%%로 설정</string>
+    <string name="macro_do_link_hint">주소</string>
+    <string name="macro_do_keys_hint">키(예: tab enter)</string>
+    <string name="macro_number_range">%1$d~%2$d 사이로 입력하세요</string>
+    <string name="macro_values_help">값은 {name} 형식으로 넣습니다. {item}, {clipboard}, {time}, {date}도 사용할 수 있습니다.</string>
+    <string name="macro_value_name">값 이름</string>
+    <string name="macro_value_name_invalid">문자, 숫자, 점, 대시 또는 밑줄을 사용하세요</string>
+    <string name="macro_test_value">값</string>
+    <string name="macro_test_value_label">포함할 텍스트(비어 있으면 모든 값)</string>
+    <string name="macro_test_value_set">값 %1$s 설정됨</string>
+    <string name="macro_test_value_value">값 %1$s에 %2$s 포함</string>
+    <string name="macro_test_not">아님: %1$s</string>
 </resources>

@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">મેક્રો અટક્યો. <xliff:g id="count" example="1000">%1$d</xliff:g> વાર પુનરાવર્તન થયું: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">મેક્રો અટક્યો. સમય પૂરો થયો: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">મેક્રો ચલાવ્યો નથી. ફક્ત ત્યારે જ ચલાવો: શરત પૂરી થઈ નથી</string>
+    <string name="macro_step_more">વધુ પગલાં</string>
+    <string name="macro_do_play_sound">સાઉન્ડ વગાડો</string>
+    <string name="macro_do_vibrate">વાઇબ્રેટ કરો</string>
+    <string name="macro_do_play_tone">ટોન વગાડો</string>
+    <string name="macro_do_copy_text">ટેક્સ્ટ કૉપિ કરો</string>
+    <string name="macro_do_open_link">લિંક ખોલો</string>
+    <string name="macro_do_open_settings">સેટિંગનું પેજ ખોલો</string>
+    <string name="macro_do_share_text">ટેક્સ્ટ શેર કરો</string>
+    <string name="macro_do_set_volume">વૉલ્યૂમ સેટ કરો</string>
+    <string name="macro_do_set_ringer">રિંગર મોડ સેટ કરો</string>
+    <string name="macro_do_press_keys">કી દબાવો</string>
+    <string name="macro_do_show_message">મેસેજ બતાવો</string>
+    <string name="macro_do_set_value">મૂલ્ય સેટ કરો</string>
+    <string name="macro_do_fetch">લિંક મેળવો</string>
+    <string name="macro_do_translate">ટેક્સ્ટનો અનુવાદ કરો</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$sમાં</string>
+    <string name="macro_do_vibrate_value">%1$d ms વાઇબ્રેટ કરો</string>
+    <string name="macro_do_play_tone_value">%1$d Hz ટોન વગાડો</string>
+    <string name="macro_do_set_volume_value">%1$s વૉલ્યૂમ %2$d%% પર સેટ કરો</string>
+    <string name="macro_do_link_hint">સરનામું</string>
+    <string name="macro_do_keys_hint">કી, જેમ કે tab enter</string>
+    <string name="macro_number_range">%1$d થી %2$d દાખલ કરો</string>
+    <string name="macro_values_help">મૂલ્યો {name} તરીકે મૂકાય છે. ઉપરાંત {item}, {clipboard}, {time} અને {date}.</string>
+    <string name="macro_value_name">મૂલ્યનું નામ</string>
+    <string name="macro_value_name_invalid">અક્ષરો, અંકો, ટપકાં, ડૅશ અથવા અન્ડરસ્કોરનો ઉપયોગ કરો</string>
+    <string name="macro_test_value">મૂલ્ય</string>
+    <string name="macro_test_value_label">સમાવે છે (ખાલી: કોઈપણ મૂલ્ય)</string>
+    <string name="macro_test_value_set">મૂલ્ય %1$s સેટ છે</string>
+    <string name="macro_test_value_value">મૂલ્ય %1$s %2$s ધરાવે છે</string>
+    <string name="macro_test_not">નહીં: %1$s</string>
 </resources>

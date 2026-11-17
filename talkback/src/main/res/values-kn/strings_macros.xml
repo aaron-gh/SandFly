@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">ಮ್ಯಾಕ್ರೋ ನಿಂತಿದೆ. <xliff:g id="count" example="1000">%1$d</xliff:g> ಬಾರಿ ಪುನರಾವರ್ತನೆಯಾಗಿದೆ: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">ಮ್ಯಾಕ್ರೋ ನಿಂತಿದೆ. ಸಮಯ ಮೀರಿದೆ: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">ಮ್ಯಾಕ್ರೋ ರನ್ ಆಗಿಲ್ಲ. ಇದ್ದಾಗ ಮಾತ್ರ ರನ್ ಮಾಡಿ: ಷರತ್ತು ಪೂರೈಸಿಲ್ಲ</string>
+    <string name="macro_step_more">ಇನ್ನಷ್ಟು ಹಂತಗಳು</string>
+    <string name="macro_do_play_sound">ಧ್ವನಿ ಪ್ಲೇ ಮಾಡಿ</string>
+    <string name="macro_do_vibrate">ವೈಬ್ರೇಟ್ ಮಾಡಿ</string>
+    <string name="macro_do_play_tone">ಟೋನ್ ಪ್ಲೇ ಮಾಡಿ</string>
+    <string name="macro_do_copy_text">ಪಠ್ಯ ನಕಲಿಸಿ</string>
+    <string name="macro_do_open_link">ಲಿಂಕ್ ತೆರೆಯಿರಿ</string>
+    <string name="macro_do_open_settings">ಸೆಟ್ಟಿಂಗ್ ಪುಟ ತೆರೆಯಿರಿ</string>
+    <string name="macro_do_share_text">ಪಠ್ಯ ಹಂಚಿಕೊಳ್ಳಿ</string>
+    <string name="macro_do_set_volume">ವಾಲ್ಯೂಮ್ ಹೊಂದಿಸಿ</string>
+    <string name="macro_do_set_ringer">ರಿಂಗರ್ ಮೋಡ್ ಹೊಂದಿಸಿ</string>
+    <string name="macro_do_press_keys">ಕೀಗಳನ್ನು ಒತ್ತಿ</string>
+    <string name="macro_do_show_message">ಸಂದೇಶ ತೋರಿಸಿ</string>
+    <string name="macro_do_set_value">ಮೌಲ್ಯ ಹೊಂದಿಸಿ</string>
+    <string name="macro_do_fetch">ಲಿಂಕ್ ಪಡೆಯಿರಿ</string>
+    <string name="macro_do_translate">ಪಠ್ಯ ಅನುವಾದಿಸಿ</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s ಗೆ</string>
+    <string name="macro_do_vibrate_value">%1$d ms ವೈಬ್ರೇಟ್ ಮಾಡಿ</string>
+    <string name="macro_do_play_tone_value">%1$d Hz ಟೋನ್ ಪ್ಲೇ ಮಾಡಿ</string>
+    <string name="macro_do_set_volume_value">%1$s ವಾಲ್ಯೂಮ್ ಅನ್ನು %2$d%% ಗೆ ಹೊಂದಿಸಿ</string>
+    <string name="macro_do_link_hint">ವಿಳಾಸ</string>
+    <string name="macro_do_keys_hint">ಕೀಗಳು, ಉದಾಹರಣೆಗೆ tab enter</string>
+    <string name="macro_number_range">%1$d ರಿಂದ %2$d ನಮೂದಿಸಿ</string>
+    <string name="macro_values_help">ಮೌಲ್ಯಗಳನ್ನು {name} ಆಗಿ ಸೇರಿಸಿ. {item}, {clipboard}, {time} ಮತ್ತು {date} ಸಹ.</string>
+    <string name="macro_value_name">ಮೌಲ್ಯದ ಹೆಸರು</string>
+    <string name="macro_value_name_invalid">ಅಕ್ಷರಗಳು, ಅಂಕಿಗಳು, ಚುಕ್ಕೆಗಳು, ಡ್ಯಾಶ್‌ಗಳು ಅಥವಾ ಅಂಡರ್‌ಸ್ಕೋರ್‌ಗಳನ್ನು ಬಳಸಿ</string>
+    <string name="macro_test_value">ಮೌಲ್ಯ</string>
+    <string name="macro_test_value_label">ಒಳಗೊಂಡಿದೆ (ಖಾಲಿ: ಯಾವುದೇ ಮೌಲ್ಯ)</string>
+    <string name="macro_test_value_set">ಮೌಲ್ಯ %1$s ಹೊಂದಿಸಲಾಗಿದೆ</string>
+    <string name="macro_test_value_value">ಮೌಲ್ಯ %1$s ನಲ್ಲಿ %2$s ಇದೆ</string>
+    <string name="macro_test_not">ಅಲ್ಲ: %1$s</string>
 </resources>

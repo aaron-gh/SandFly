@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makro gestop. <xliff:g id="count" example="1000">%1$d</xliff:g> keer herhaal: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro gestop. Tydsverloop: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro nie uitgevoer nie. Voer slegs uit wanneer: nie nagekom nie</string>
+    <string name="macro_step_more">Meer stappe</string>
+    <string name="macro_do_play_sound">Speel klank</string>
+    <string name="macro_do_vibrate">Vibreer</string>
+    <string name="macro_do_play_tone">Speel toon</string>
+    <string name="macro_do_copy_text">Kopieer teks</string>
+    <string name="macro_do_open_link">Maak skakel oop</string>
+    <string name="macro_do_open_settings">Maak instellingsbladsy oop</string>
+    <string name="macro_do_share_text">Deel teks</string>
+    <string name="macro_do_set_volume">Stel volume</string>
+    <string name="macro_do_set_ringer">Stel luimodus</string>
+    <string name="macro_do_press_keys">Druk sleutels</string>
+    <string name="macro_do_show_message">Wys boodskap</string>
+    <string name="macro_do_set_value">Stel waarde</string>
+    <string name="macro_do_fetch">Haal skakel af</string>
+    <string name="macro_do_translate">Vertaal teks</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, in %3$s</string>
+    <string name="macro_do_vibrate_value">Vibreer %1$d ms</string>
+    <string name="macro_do_play_tone_value">Speel toon %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Stel %1$s-volume na %2$d%%</string>
+    <string name="macro_do_link_hint">Adres</string>
+    <string name="macro_do_keys_hint">Sleutels, soos tab enter</string>
+    <string name="macro_number_range">Voer %1$d tot %2$d in</string>
+    <string name="macro_values_help">Waardes word as {name} ingevoeg. Ook {item}, {clipboard}, {time} en {date}.</string>
+    <string name="macro_value_name">Waardenaam</string>
+    <string name="macro_value_name_invalid">Gebruik letters, syfers, punte, koppeltekens of onderstrepe</string>
+    <string name="macro_test_value">Waarde</string>
+    <string name="macro_test_value_label">Bevat (leeg: enige waarde)</string>
+    <string name="macro_test_value_set">Waarde %1$s is gestel</string>
+    <string name="macro_test_value_value">Waarde %1$s bevat %2$s</string>
+    <string name="macro_test_not">Nie: %1$s</string>
 </resources>

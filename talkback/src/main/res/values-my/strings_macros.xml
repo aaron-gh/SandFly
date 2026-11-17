@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">မက်ခရို ရပ်သွားသည်။ <xliff:g id="count" example="1000">%1$d</xliff:g> ကြိမ် ထပ်လုပ်ပြီး- <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">မက်ခရို ရပ်သွားသည်။ အချိန်ကုန်သွားသည်- <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">မက်ခရိုကို မလုပ်ဆောင်ပါ။ ဤအခါမှသာ လုပ်ဆောင်ရန်- မကိုက်ညီပါ</string>
+    <string name="macro_step_more">နောက်ထပ် အဆင့်များ</string>
+    <string name="macro_do_play_sound">အသံဖွင့်ရန်</string>
+    <string name="macro_do_vibrate">တုန်ခါရန်</string>
+    <string name="macro_do_play_tone">သံစဉ် ဖွင့်ရန်</string>
+    <string name="macro_do_copy_text">စာသား ကူးရန်</string>
+    <string name="macro_do_open_link">လင့်ခ် ဖွင့်ရန်</string>
+    <string name="macro_do_open_settings">ဆက်တင် စာမျက်နှာ ဖွင့်ရန်</string>
+    <string name="macro_do_share_text">စာသား မျှဝေရန်</string>
+    <string name="macro_do_set_volume">အသံအတိုးအကျယ် သတ်မှတ်ရန်</string>
+    <string name="macro_do_set_ringer">ဖုန်းမြည်သံမုဒ် သတ်မှတ်ရန်</string>
+    <string name="macro_do_press_keys">ခလုတ်များ နှိပ်ရန်</string>
+    <string name="macro_do_show_message">မက်ဆေ့ဂျ် ပြရန်</string>
+    <string name="macro_do_set_value">တန်ဖိုး သတ်မှတ်ရန်</string>
+    <string name="macro_do_fetch">လင့်ခ်မှ ရယူရန်</string>
+    <string name="macro_do_translate">စာသား ဘာသာပြန်ရန်</string>
+    <string name="macro_do_value">%1$s- %2$s</string>
+    <string name="macro_do_into_value">%1$s- %2$s၊ %3$s ထဲသို့</string>
+    <string name="macro_do_vibrate_value">%1$d ms တုန်ခါရန်</string>
+    <string name="macro_do_play_tone_value">%1$d Hz သံစဉ် ဖွင့်ရန်</string>
+    <string name="macro_do_set_volume_value">%1$s အသံအတိုးအကျယ်ကို %2$d%% သို့ သတ်မှတ်ရန်</string>
+    <string name="macro_do_link_hint">လိပ်စာ</string>
+    <string name="macro_do_keys_hint">ခလုတ်များ၊ ဥပမာ tab enter</string>
+    <string name="macro_number_range">%1$d မှ %2$d အထိ ထည့်ပါ</string>
+    <string name="macro_values_help">တန်ဖိုးများကို {name} အဖြစ် ထည့်ပါ။ {item}၊ {clipboard}၊ {time} နှင့် {date} ကိုလည်း သုံးနိုင်သည်။</string>
+    <string name="macro_value_name">တန်ဖိုး အမည်</string>
+    <string name="macro_value_name_invalid">စာလုံး၊ ဂဏန်း၊ အစက်၊ တုံးတို သို့မဟုတ် underscore များကို သုံးပါ</string>
+    <string name="macro_test_value">တန်ဖိုး</string>
+    <string name="macro_test_value_label">ပါဝင်သည် (ဗလာ- မည်သည့်တန်ဖိုးမဆို)</string>
+    <string name="macro_test_value_set">တန်ဖိုး %1$s သတ်မှတ်ထားသည်</string>
+    <string name="macro_test_value_value">တန်ဖိုး %1$s တွင် %2$s ပါသည်</string>
+    <string name="macro_test_not">မဟုတ်- %1$s</string>
 </resources>

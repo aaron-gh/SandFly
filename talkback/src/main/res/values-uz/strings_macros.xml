@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makro toʻxtadi. <xliff:g id="count" example="1000">%1$d</xliff:g> marta takrorlandi: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro toʻxtadi. Vaqt tugadi: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro bajarilmadi. Faqat shunda bajarish: shart bajarilmadi</string>
+    <string name="macro_step_more">Boshqa qadamlar</string>
+    <string name="macro_do_play_sound">Tovush ijro etish</string>
+    <string name="macro_do_vibrate">Tebranish</string>
+    <string name="macro_do_play_tone">Signal ijro etish</string>
+    <string name="macro_do_copy_text">Matnni nusxalash</string>
+    <string name="macro_do_open_link">Havolani ochish</string>
+    <string name="macro_do_open_settings">Sozlamalar sahifasini ochish</string>
+    <string name="macro_do_share_text">Matnni ulashish</string>
+    <string name="macro_do_set_volume">Ovoz balandligini belgilash</string>
+    <string name="macro_do_set_ringer">Qoʻngʻiroq rejimini belgilash</string>
+    <string name="macro_do_press_keys">Tugmalarni bosish</string>
+    <string name="macro_do_show_message">Xabarni koʻrsatish</string>
+    <string name="macro_do_set_value">Qiymatni belgilash</string>
+    <string name="macro_do_fetch">Havolani yuklab olish</string>
+    <string name="macro_do_translate">Matnni tarjima qilish</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s ga</string>
+    <string name="macro_do_vibrate_value">Tebranish %1$d ms</string>
+    <string name="macro_do_play_tone_value">Signal ijro etish %1$d Hz</string>
+    <string name="macro_do_set_volume_value">%1$s ovoz balandligini %2$d%% qilish</string>
+    <string name="macro_do_link_hint">Manzil</string>
+    <string name="macro_do_keys_hint">Tugmalar, masalan, tab enter</string>
+    <string name="macro_number_range">%1$d dan %2$d gacha kiriting</string>
+    <string name="macro_values_help">Qiymatlar {name} sifatida qoʻyiladi. Shuningdek, {item}, {clipboard}, {time} va {date}.</string>
+    <string name="macro_value_name">Qiymat nomi</string>
+    <string name="macro_value_name_invalid">Harflar, raqamlar, nuqtalar, chiziqchalar yoki pastki chiziqlardan foydalaning</string>
+    <string name="macro_test_value">Qiymat</string>
+    <string name="macro_test_value_label">Tarkibida (boʻsh: istalgan qiymat)</string>
+    <string name="macro_test_value_set">%1$s qiymati belgilangan</string>
+    <string name="macro_test_value_value">%1$s qiymatida %2$s bor</string>
+    <string name="macro_test_not">Emas: %1$s</string>
 </resources>

@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Макро зогслоо. <xliff:g id="count" example="1000">%1$d</xliff:g> удаа давтагдсан: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Макро зогслоо. Хугацаа хэтэрсэн: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Макро ажиллаагүй. Зөвхөн дараахад ажиллуулах: биелээгүй</string>
+    <string name="macro_step_more">Бусад алхам</string>
+    <string name="macro_do_play_sound">Дуу тоглуулах</string>
+    <string name="macro_do_vibrate">Чичиргэх</string>
+    <string name="macro_do_play_tone">Дохио тоглуулах</string>
+    <string name="macro_do_copy_text">Текст хуулах</string>
+    <string name="macro_do_open_link">Холбоос нээх</string>
+    <string name="macro_do_open_settings">Тохиргооны хуудас нээх</string>
+    <string name="macro_do_share_text">Текст хуваалцах</string>
+    <string name="macro_do_set_volume">Дууны түвшин тохируулах</string>
+    <string name="macro_do_set_ringer">Хонхны горим тохируулах</string>
+    <string name="macro_do_press_keys">Товч дарах</string>
+    <string name="macro_do_show_message">Мессеж харуулах</string>
+    <string name="macro_do_set_value">Утга тохируулах</string>
+    <string name="macro_do_fetch">Холбоос татах</string>
+    <string name="macro_do_translate">Текст орчуулах</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s руу</string>
+    <string name="macro_do_vibrate_value">%1$d ms чичиргэх</string>
+    <string name="macro_do_play_tone_value">%1$d Hz дохио тоглуулах</string>
+    <string name="macro_do_set_volume_value">%1$s дууны түвшинг %2$d%% болгох</string>
+    <string name="macro_do_link_hint">Хаяг</string>
+    <string name="macro_do_keys_hint">Товчлуурууд, жишээ нь tab enter</string>
+    <string name="macro_number_range">%1$d-%2$d хооронд оруулна уу</string>
+    <string name="macro_values_help">Утгыг {name} хэлбэрээр оруулна. Мөн {item}, {clipboard}, {time}, {date}.</string>
+    <string name="macro_value_name">Утгын нэр</string>
+    <string name="macro_value_name_invalid">Үсэг, цифр, цэг, зураас эсвэл доогуур зураас ашиглана уу</string>
+    <string name="macro_test_value">Утга</string>
+    <string name="macro_test_value_label">Агуулах (хоосон: дурын утга)</string>
+    <string name="macro_test_value_set">%1$s утга тохируулагдсан</string>
+    <string name="macro_test_value_value">%1$s утга %2$s агуулсан</string>
+    <string name="macro_test_not">Биш: %1$s</string>
 </resources>

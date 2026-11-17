@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Մակրոն դադարեց։ Կրկնվեց <xliff:g id="count" example="1000">%1$d</xliff:g> անգամ՝ <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Մակրոն դադարեց։ Ժամանակը սպառվեց՝ <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Մակրոն չկատարվեց։ Կատարել միայն երբ՝ պայմանը չի բավարարվել</string>
+    <string name="macro_step_more">Այլ քայլեր</string>
+    <string name="macro_do_play_sound">Նվագարկել ձայն</string>
+    <string name="macro_do_vibrate">Թրթռալ</string>
+    <string name="macro_do_play_tone">Նվագարկել ազդանշան</string>
+    <string name="macro_do_copy_text">Պատճենել տեքստ</string>
+    <string name="macro_do_open_link">Բացել հղում</string>
+    <string name="macro_do_open_settings">Բացել կարգավորումների էջ</string>
+    <string name="macro_do_share_text">Կիսվել տեքստով</string>
+    <string name="macro_do_set_volume">Սահմանել ձայնի ուժգնությունը</string>
+    <string name="macro_do_set_ringer">Սահմանել զանգի ռեժիմը</string>
+    <string name="macro_do_press_keys">Սեղմել ստեղներ</string>
+    <string name="macro_do_show_message">Ցուցադրել հաղորդագրություն</string>
+    <string name="macro_do_set_value">Սահմանել արժեք</string>
+    <string name="macro_do_fetch">Ներբեռնել հղումը</string>
+    <string name="macro_do_translate">Թարգմանել տեքստ</string>
+    <string name="macro_do_value">%1$s՝ %2$s</string>
+    <string name="macro_do_into_value">%1$s՝ %2$s, %3$s-ի մեջ</string>
+    <string name="macro_do_vibrate_value">Թրթռալ %1$d մվ</string>
+    <string name="macro_do_play_tone_value">Նվագարկել ազդանշան %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Սահմանել %1$s ձայնի ուժգնությունը %2$d%%</string>
+    <string name="macro_do_link_hint">Հասցե</string>
+    <string name="macro_do_keys_hint">Ստեղներ, օրինակ՝ tab enter</string>
+    <string name="macro_number_range">Մուտքագրեք %1$d-ից %2$d</string>
+    <string name="macro_values_help">Արժեքները տեղադրվում են որպես {name}։ Նաև {item}, {clipboard}, {time} և {date}։</string>
+    <string name="macro_value_name">Արժեքի անուն</string>
+    <string name="macro_value_name_invalid">Օգտագործեք տառեր, թվանշաններ, կետեր, գծիկներ կամ ընդգծման նշաններ</string>
+    <string name="macro_test_value">Արժեք</string>
+    <string name="macro_test_value_label">Պարունակում է (դատարկ՝ ցանկացած արժեք)</string>
+    <string name="macro_test_value_set">%1$s արժեքը սահմանված է</string>
+    <string name="macro_test_value_value">%1$s արժեքը պարունակում է %2$s</string>
+    <string name="macro_test_not">Ոչ՝ %1$s</string>
 </resources>

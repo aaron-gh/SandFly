@@ -117,4 +117,35 @@
     <string name="macro_stopped_repeats">Макрос зупинено. Повторено <xliff:g id="count" example="1000">%1$d</xliff:g> разів: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Макрос зупинено. Час очікування вичерпано: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Макрос не запущено. Запускати лише коли: умову не виконано</string>
+    <string name="macro_step_more">Інші кроки</string>
+    <string name="macro_do_play_sound">Відтворити звук</string>
+    <string name="macro_do_vibrate">Вібрувати</string>
+    <string name="macro_do_play_tone">Відтворити тон</string>
+    <string name="macro_do_copy_text">Копіювати текст</string>
+    <string name="macro_do_open_link">Відкрити посилання</string>
+    <string name="macro_do_open_settings">Відкрити сторінку налаштувань</string>
+    <string name="macro_do_share_text">Поділитися текстом</string>
+    <string name="macro_do_set_volume">Установити гучність</string>
+    <string name="macro_do_set_ringer">Установити режим дзвінка</string>
+    <string name="macro_do_press_keys">Натиснути клавіші</string>
+    <string name="macro_do_show_message">Показати повідомлення</string>
+    <string name="macro_do_set_value">Установити значення</string>
+    <string name="macro_do_fetch">Завантажити за посиланням</string>
+    <string name="macro_do_translate">Перекласти текст</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, у %3$s</string>
+    <string name="macro_do_vibrate_value">Вібрувати %1$d ms</string>
+    <string name="macro_do_play_tone_value">Відтворити тон %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Установити гучність %1$s на %2$d%%</string>
+    <string name="macro_do_link_hint">Адреса</string>
+    <string name="macro_do_keys_hint">Клавіші, наприклад tab enter</string>
+    <string name="macro_number_range">Введіть від %1$d до %2$d</string>
+    <string name="macro_values_help">Значення вставляються як {name}. Також {item}, {clipboard}, {time} і {date}.</string>
+    <string name="macro_value_name">Назва значення</string>
+    <string name="macro_value_name_invalid">Використовуйте літери, цифри, крапки, дефіси або підкреслення</string>
+    <string name="macro_test_value">Значення</string>
+    <string name="macro_test_value_label">Містить (порожньо: будь-яке значення)</string>
+    <string name="macro_test_value_set">Значення %1$s встановлено</string>
+    <string name="macro_test_value_value">Значення %1$s містить %2$s</string>
+    <string name="macro_test_not">Не: %1$s</string>
 </resources>

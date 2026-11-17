@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">میکرو رک گیا۔ <xliff:g id="count" example="1000">%1$d</xliff:g> بار دہرایا گیا: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">میکرو رک گیا۔ وقت ختم ہو گیا: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">میکرو نہیں چلا۔ صرف تب چلائیں جب: پوری نہیں ہوئی</string>
+    <string name="macro_step_more">مزید مراحل</string>
+    <string name="macro_do_play_sound">آواز چلائیں</string>
+    <string name="macro_do_vibrate">وائبریٹ کریں</string>
+    <string name="macro_do_play_tone">ٹون چلائیں</string>
+    <string name="macro_do_copy_text">متن کاپی کریں</string>
+    <string name="macro_do_open_link">لنک کھولیں</string>
+    <string name="macro_do_open_settings">ترتیبات کا صفحہ کھولیں</string>
+    <string name="macro_do_share_text">متن شیئر کریں</string>
+    <string name="macro_do_set_volume">والیوم سیٹ کریں</string>
+    <string name="macro_do_set_ringer">رنگر موڈ سیٹ کریں</string>
+    <string name="macro_do_press_keys">کیز دبائیں</string>
+    <string name="macro_do_show_message">پیغام دکھائیں</string>
+    <string name="macro_do_set_value">قدر سیٹ کریں</string>
+    <string name="macro_do_fetch">لنک حاصل کریں</string>
+    <string name="macro_do_translate">متن کا ترجمہ کریں</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s، %3$s میں</string>
+    <string name="macro_do_vibrate_value">%1$d ms وائبریٹ کریں</string>
+    <string name="macro_do_play_tone_value">%1$d Hz ٹون چلائیں</string>
+    <string name="macro_do_set_volume_value">%1$s والیوم %2$d%% پر سیٹ کریں</string>
+    <string name="macro_do_link_hint">پتہ</string>
+    <string name="macro_do_keys_hint">کیز، جیسے tab enter</string>
+    <string name="macro_number_range">%1$d سے %2$d درج کریں</string>
+    <string name="macro_values_help">قدریں {name} کے طور پر شامل ہوتی ہیں۔ نیز {item}، {clipboard}، {time} اور {date}۔</string>
+    <string name="macro_value_name">قدر کا نام</string>
+    <string name="macro_value_name_invalid">حروف، ہندسے، نقطے، ڈیش یا انڈر اسکور استعمال کریں</string>
+    <string name="macro_test_value">قدر</string>
+    <string name="macro_test_value_label">شامل ہے (خالی: کوئی بھی قدر)</string>
+    <string name="macro_test_value_set">قدر %1$s سیٹ ہے</string>
+    <string name="macro_test_value_value">قدر %1$s میں %2$s ہے</string>
+    <string name="macro_test_not">نہیں: %1$s</string>
 </resources>

@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makro beendet. <xliff:g id="count" example="1000">%1$d</xliff:g> Mal wiederholt: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro beendet. Zeitüberschreitung: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro nicht ausgeführt. Nur ausführen, wenn: nicht erfüllt</string>
+    <string name="macro_step_more">Weitere Schritte</string>
+    <string name="macro_do_play_sound">Ton abspielen</string>
+    <string name="macro_do_vibrate">Vibrieren</string>
+    <string name="macro_do_play_tone">Frequenzton abspielen</string>
+    <string name="macro_do_copy_text">Text kopieren</string>
+    <string name="macro_do_open_link">Link öffnen</string>
+    <string name="macro_do_open_settings">Einstellungsseite öffnen</string>
+    <string name="macro_do_share_text">Text teilen</string>
+    <string name="macro_do_set_volume">Lautstärke festlegen</string>
+    <string name="macro_do_set_ringer">Klingeltonmodus festlegen</string>
+    <string name="macro_do_press_keys">Tasten drücken</string>
+    <string name="macro_do_show_message">Meldung anzeigen</string>
+    <string name="macro_do_set_value">Wert festlegen</string>
+    <string name="macro_do_fetch">Link abrufen</string>
+    <string name="macro_do_translate">Text übersetzen</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, in %3$s</string>
+    <string name="macro_do_vibrate_value">%1$d ms vibrieren</string>
+    <string name="macro_do_play_tone_value">Frequenzton %1$d Hz abspielen</string>
+    <string name="macro_do_set_volume_value">Lautstärke %1$s auf %2$d %% festlegen</string>
+    <string name="macro_do_link_hint">Adresse</string>
+    <string name="macro_do_keys_hint">Tasten, z. B. tab enter</string>
+    <string name="macro_number_range">Gib %1$d bis %2$d ein</string>
+    <string name="macro_values_help">Werte werden als {name} eingefügt. Außerdem {item}, {clipboard}, {time} und {date}.</string>
+    <string name="macro_value_name">Name des Werts</string>
+    <string name="macro_value_name_invalid">Nur Buchstaben, Ziffern, Punkte, Bindestriche oder Unterstriche verwenden</string>
+    <string name="macro_test_value">Wert</string>
+    <string name="macro_test_value_label">Enthält (leer: beliebiger Wert)</string>
+    <string name="macro_test_value_set">Wert %1$s ist festgelegt</string>
+    <string name="macro_test_value_value">Wert %1$s enthält %2$s</string>
+    <string name="macro_test_not">Nicht: %1$s</string>
 </resources>

@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makroen stoppet. Gjentatt <xliff:g id="count" example="1000">%1$d</xliff:g> ganger: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makroen stoppet. Tidsavbrudd: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makroen ble ikke kjørt. Kjør bare når: ikke oppfylt</string>
+    <string name="macro_step_more">Flere trinn</string>
+    <string name="macro_do_play_sound">Spill av lyd</string>
+    <string name="macro_do_vibrate">Vibrer</string>
+    <string name="macro_do_play_tone">Spill av tone</string>
+    <string name="macro_do_copy_text">Kopiér tekst</string>
+    <string name="macro_do_open_link">Åpne lenke</string>
+    <string name="macro_do_open_settings">Åpne innstillingsside</string>
+    <string name="macro_do_share_text">Del tekst</string>
+    <string name="macro_do_set_volume">Angi volum</string>
+    <string name="macro_do_set_ringer">Angi ringemodus</string>
+    <string name="macro_do_press_keys">Trykk på taster</string>
+    <string name="macro_do_show_message">Vis melding</string>
+    <string name="macro_do_set_value">Angi verdi</string>
+    <string name="macro_do_fetch">Hent lenke</string>
+    <string name="macro_do_translate">Oversett tekst</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, til %3$s</string>
+    <string name="macro_do_vibrate_value">Vibrer %1$d ms</string>
+    <string name="macro_do_play_tone_value">Spill av tone %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Angi volum for %1$s til %2$d %%</string>
+    <string name="macro_do_link_hint">Adresse</string>
+    <string name="macro_do_keys_hint">Taster, for eksempel tab enter</string>
+    <string name="macro_number_range">Skriv inn %1$d til %2$d</string>
+    <string name="macro_values_help">Verdier settes inn som {name}. Også {item}, {clipboard}, {time} og {date}.</string>
+    <string name="macro_value_name">Verdinavn</string>
+    <string name="macro_value_name_invalid">Bruk bokstaver, sifre, punktum, bindestreker eller understreker</string>
+    <string name="macro_test_value">Verdi</string>
+    <string name="macro_test_value_label">Inneholder (tom: hvilken som helst verdi)</string>
+    <string name="macro_test_value_set">Verdien %1$s er angitt</string>
+    <string name="macro_test_value_value">Verdien %1$s har %2$s</string>
+    <string name="macro_test_not">Ikke: %1$s</string>
 </resources>

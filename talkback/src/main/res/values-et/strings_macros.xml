@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makro peatus. Korratud <xliff:g id="count" example="1000">%1$d</xliff:g> korda: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro peatus. Aegus: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makrot ei käivitatud. Käivita ainult siis, kui: ei ole täidetud</string>
+    <string name="macro_step_more">Rohkem samme</string>
+    <string name="macro_do_play_sound">Esita heli</string>
+    <string name="macro_do_vibrate">Vibreeri</string>
+    <string name="macro_do_play_tone">Esita toon</string>
+    <string name="macro_do_copy_text">Kopeeri tekst</string>
+    <string name="macro_do_open_link">Ava link</string>
+    <string name="macro_do_open_settings">Ava seadete leht</string>
+    <string name="macro_do_share_text">Jaga teksti</string>
+    <string name="macro_do_set_volume">Määra helitugevus</string>
+    <string name="macro_do_set_ringer">Määra helinarežiim</string>
+    <string name="macro_do_press_keys">Vajuta klahve</string>
+    <string name="macro_do_show_message">Kuva sõnum</string>
+    <string name="macro_do_set_value">Määra väärtus</string>
+    <string name="macro_do_fetch">Laadi link alla</string>
+    <string name="macro_do_translate">Tõlgi tekst</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, väärtusesse %3$s</string>
+    <string name="macro_do_vibrate_value">Vibreeri %1$d ms</string>
+    <string name="macro_do_play_tone_value">Esita toon %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Määra %1$s helitugevuseks %2$d%%</string>
+    <string name="macro_do_link_hint">Aadress</string>
+    <string name="macro_do_keys_hint">Klahvid, nt tab enter</string>
+    <string name="macro_number_range">Sisestage %1$d kuni %2$d</string>
+    <string name="macro_values_help">Väärtused lisatakse kujul {name}. Lisaks {item}, {clipboard}, {time} ja {date}.</string>
+    <string name="macro_value_name">Väärtuse nimi</string>
+    <string name="macro_value_name_invalid">Kasutage tähti, numbreid, punkte, sidekriipse või allkriipse</string>
+    <string name="macro_test_value">Väärtus</string>
+    <string name="macro_test_value_label">Sisaldab (tühi: mis tahes väärtus)</string>
+    <string name="macro_test_value_set">Väärtus %1$s on määratud</string>
+    <string name="macro_test_value_value">Väärtus %1$s sisaldab: %2$s</string>
+    <string name="macro_test_not">Mitte: %1$s</string>
 </resources>

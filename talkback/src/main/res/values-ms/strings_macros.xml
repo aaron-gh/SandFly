@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">Makro dihentikan. Diulang <xliff:g id="count" example="1000">%1$d</xliff:g> kali: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro dihentikan. Tamat masa: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro tidak dijalankan. Jalankan hanya apabila: tidak dipenuhi</string>
+    <string name="macro_step_more">Langkah lain</string>
+    <string name="macro_do_play_sound">Mainkan bunyi</string>
+    <string name="macro_do_vibrate">Bergetar</string>
+    <string name="macro_do_play_tone">Mainkan nada</string>
+    <string name="macro_do_copy_text">Salin teks</string>
+    <string name="macro_do_open_link">Buka pautan</string>
+    <string name="macro_do_open_settings">Buka halaman tetapan</string>
+    <string name="macro_do_share_text">Kongsi teks</string>
+    <string name="macro_do_set_volume">Tetapkan kelantangan</string>
+    <string name="macro_do_set_ringer">Tetapkan mod dering</string>
+    <string name="macro_do_press_keys">Tekan kekunci</string>
+    <string name="macro_do_show_message">Tunjukkan mesej</string>
+    <string name="macro_do_set_value">Tetapkan nilai</string>
+    <string name="macro_do_fetch">Ambil pautan</string>
+    <string name="macro_do_translate">Terjemahkan teks</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, ke dalam %3$s</string>
+    <string name="macro_do_vibrate_value">Bergetar %1$d ms</string>
+    <string name="macro_do_play_tone_value">Mainkan nada %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Tetapkan kelantangan %1$s kepada %2$d%%</string>
+    <string name="macro_do_link_hint">Alamat</string>
+    <string name="macro_do_keys_hint">Kekunci, seperti tab enter</string>
+    <string name="macro_number_range">Masukkan %1$d hingga %2$d</string>
+    <string name="macro_values_help">Nilai dimasukkan sebagai {name}. Juga {item}, {clipboard}, {time} dan {date}.</string>
+    <string name="macro_value_name">Nama nilai</string>
+    <string name="macro_value_name_invalid">Gunakan huruf, digit, titik, sengkang atau garis bawah</string>
+    <string name="macro_test_value">Nilai</string>
+    <string name="macro_test_value_label">Mengandungi (kosong: sebarang nilai)</string>
+    <string name="macro_test_value_set">Nilai %1$s ditetapkan</string>
+    <string name="macro_test_value_value">Nilai %1$s mengandungi %2$s</string>
+    <string name="macro_test_not">Bukan: %1$s</string>
 </resources>

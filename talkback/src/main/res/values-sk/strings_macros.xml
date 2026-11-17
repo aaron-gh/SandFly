@@ -132,4 +132,35 @@
     <string name="macro_stopped_repeats">Makro sa zastavilo. Opakované <xliff:g id="count" example="1000">%1$d</xliff:g>-krát: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro sa zastavilo. Čas vypršal: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro sa nespustilo. Spustiť iba keď: nie je splnené</string>
+    <string name="macro_step_more">Ďalšie kroky</string>
+    <string name="macro_do_play_sound">Prehrať zvuk</string>
+    <string name="macro_do_vibrate">Vibrovať</string>
+    <string name="macro_do_play_tone">Prehrať tón</string>
+    <string name="macro_do_copy_text">Kopírovať text</string>
+    <string name="macro_do_open_link">Otvoriť odkaz</string>
+    <string name="macro_do_open_settings">Otvoriť stránku nastavení</string>
+    <string name="macro_do_share_text">Zdieľať text</string>
+    <string name="macro_do_set_volume">Nastaviť hlasitosť</string>
+    <string name="macro_do_set_ringer">Nastaviť režim zvonenia</string>
+    <string name="macro_do_press_keys">Stlačiť klávesy</string>
+    <string name="macro_do_show_message">Zobraziť správu</string>
+    <string name="macro_do_set_value">Nastaviť hodnotu</string>
+    <string name="macro_do_fetch">Načítať odkaz</string>
+    <string name="macro_do_translate">Preložiť text</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, do %3$s</string>
+    <string name="macro_do_vibrate_value">Vibrovať %1$d ms</string>
+    <string name="macro_do_play_tone_value">Prehrať tón %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Nastaviť hlasitosť %1$s na %2$d %%</string>
+    <string name="macro_do_link_hint">Adresa</string>
+    <string name="macro_do_keys_hint">Klávesy, napríklad tab enter</string>
+    <string name="macro_number_range">Zadajte %1$d až %2$d</string>
+    <string name="macro_values_help">Hodnoty sa vkladajú ako {name}. Tiež {item}, {clipboard}, {time} a {date}.</string>
+    <string name="macro_value_name">Názov hodnoty</string>
+    <string name="macro_value_name_invalid">Použite písmená, číslice, bodky, pomlčky alebo podčiarkovníky</string>
+    <string name="macro_test_value">Hodnota</string>
+    <string name="macro_test_value_label">Obsahuje (prázdne: akákoľvek hodnota)</string>
+    <string name="macro_test_value_set">Hodnota %1$s je nastavená</string>
+    <string name="macro_test_value_value">Hodnota %1$s obsahuje %2$s</string>
+    <string name="macro_test_not">Nie: %1$s</string>
 </resources>

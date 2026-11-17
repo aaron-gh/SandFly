@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">ماکرو متوقف شد. <xliff:g id="count" example="1000">%1$d</xliff:g> بار تکرار شد: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">ماکرو متوقف شد. زمان به پایان رسید: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">ماکرو اجرا نشد. اجرا فقط وقتی: برقرار نیست</string>
+    <string name="macro_step_more">مرحله‌های بیشتر</string>
+    <string name="macro_do_play_sound">پخش صدا</string>
+    <string name="macro_do_vibrate">لرزش</string>
+    <string name="macro_do_play_tone">پخش آهنگ کوتاه</string>
+    <string name="macro_do_copy_text">کپی نوشتار</string>
+    <string name="macro_do_open_link">باز کردن پیوند</string>
+    <string name="macro_do_open_settings">باز کردن صفحه تنظیمات</string>
+    <string name="macro_do_share_text">هم‌رسانی نوشتار</string>
+    <string name="macro_do_set_volume">تنظیم میزان صدا</string>
+    <string name="macro_do_set_ringer">تنظیم حالت زنگ</string>
+    <string name="macro_do_press_keys">فشار دادن کلیدها</string>
+    <string name="macro_do_show_message">نمایش پیام</string>
+    <string name="macro_do_set_value">تنظیم مقدار</string>
+    <string name="macro_do_fetch">دریافت پیوند</string>
+    <string name="macro_do_translate">ترجمه نوشتار</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s، در %3$s</string>
+    <string name="macro_do_vibrate_value">لرزش %1$d ms</string>
+    <string name="macro_do_play_tone_value">پخش آهنگ کوتاه %1$d Hz</string>
+    <string name="macro_do_set_volume_value">تنظیم میزان صدای %1$s روی %2$d%%</string>
+    <string name="macro_do_link_hint">آدرس</string>
+    <string name="macro_do_keys_hint">کلیدها، مانند tab enter</string>
+    <string name="macro_number_range">عددی از %1$d تا %2$d وارد کنید</string>
+    <string name="macro_values_help">مقدارها به‌صورت {name} وارد می‌شوند. همچنین {item}، {clipboard}، {time} و {date}.</string>
+    <string name="macro_value_name">نام مقدار</string>
+    <string name="macro_value_name_invalid">از حرف، رقم، نقطه، خط تیره یا زیرخط استفاده کنید</string>
+    <string name="macro_test_value">مقدار</string>
+    <string name="macro_test_value_label">شامل (خالی: هر مقداری)</string>
+    <string name="macro_test_value_set">مقدار %1$s تنظیم شده است</string>
+    <string name="macro_test_value_value">مقدار %1$s شامل %2$s است</string>
+    <string name="macro_test_not">نه: %1$s</string>
 </resources>

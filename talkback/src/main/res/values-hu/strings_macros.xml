@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">A makró leállt. <xliff:g id="count" example="1000">%1$d</xliff:g> ismétlés: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">A makró leállt. Időtúllépés: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">A makró nem futott. Futtatás csak ekkor: feltétel nem teljesül</string>
+    <string name="macro_step_more">További lépések</string>
+    <string name="macro_do_play_sound">Hang lejátszása</string>
+    <string name="macro_do_vibrate">Rezgés</string>
+    <string name="macro_do_play_tone">Hangjelzés lejátszása</string>
+    <string name="macro_do_copy_text">Szöveg másolása</string>
+    <string name="macro_do_open_link">Link megnyitása</string>
+    <string name="macro_do_open_settings">Beállításoldal megnyitása</string>
+    <string name="macro_do_share_text">Szöveg megosztása</string>
+    <string name="macro_do_set_volume">Hangerő beállítása</string>
+    <string name="macro_do_set_ringer">Csengési mód beállítása</string>
+    <string name="macro_do_press_keys">Billentyűk lenyomása</string>
+    <string name="macro_do_show_message">Üzenet megjelenítése</string>
+    <string name="macro_do_set_value">Érték beállítása</string>
+    <string name="macro_do_fetch">Link letöltése</string>
+    <string name="macro_do_translate">Szöveg fordítása</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, ide: %3$s</string>
+    <string name="macro_do_vibrate_value">Rezgés: %1$d ms</string>
+    <string name="macro_do_play_tone_value">Hangjelzés lejátszása: %1$d Hz</string>
+    <string name="macro_do_set_volume_value">%1$s hangereje: %2$d%%</string>
+    <string name="macro_do_link_hint">Cím</string>
+    <string name="macro_do_keys_hint">Billentyűk, például tab enter</string>
+    <string name="macro_number_range">Adjon meg %1$d és %2$d közötti számot</string>
+    <string name="macro_values_help">Az értékek {name} formában illeszthetők be. Továbbá {item}, {clipboard}, {time} és {date}.</string>
+    <string name="macro_value_name">Érték neve</string>
+    <string name="macro_value_name_invalid">Betűket, számjegyeket, pontokat, kötőjeleket vagy aláhúzásjeleket használjon</string>
+    <string name="macro_test_value">Érték</string>
+    <string name="macro_test_value_label">Tartalmazza (üres: bármely érték)</string>
+    <string name="macro_test_value_set">A(z) %1$s érték be van állítva</string>
+    <string name="macro_test_value_value">A(z) %1$s érték tartalmazza: %2$s</string>
+    <string name="macro_test_not">Nem: %1$s</string>
 </resources>

@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">ມາໂຄຣຢຸດແລ້ວ. ເຮັດຊ້ຳ <xliff:g id="count" example="1000">%1$d</xliff:g> ເທື່ອ: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">ມາໂຄຣຢຸດແລ້ວ. ໝົດເວລາ: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">ບໍ່ໄດ້ແລ່ນມາໂຄຣ. ແລ່ນສະເພາະເມື່ອ: ບໍ່ຕົງເງື່ອນໄຂ</string>
+    <string name="macro_step_more">ຂັ້ນຕອນເພີ່ມເຕີມ</string>
+    <string name="macro_do_play_sound">ຫຼິ້ນສຽງ</string>
+    <string name="macro_do_vibrate">ສັ່ນ</string>
+    <string name="macro_do_play_tone">ຫຼິ້ນໂທນ</string>
+    <string name="macro_do_copy_text">ສຳເນົາຂໍ້ຄວາມ</string>
+    <string name="macro_do_open_link">ເປີດລິ້ງ</string>
+    <string name="macro_do_open_settings">ເປີດໜ້າການຕັ້ງຄ່າ</string>
+    <string name="macro_do_share_text">ແບ່ງປັນຂໍ້ຄວາມ</string>
+    <string name="macro_do_set_volume">ຕັ້ງລະດັບສຽງ</string>
+    <string name="macro_do_set_ringer">ຕັ້ງໂໝດສຽງ</string>
+    <string name="macro_do_press_keys">ກົດປຸ່ມ</string>
+    <string name="macro_do_show_message">ສະແດງຂໍ້ຄວາມ</string>
+    <string name="macro_do_set_value">ຕັ້ງຄ່າ</string>
+    <string name="macro_do_fetch">ດຶງລິ້ງ</string>
+    <string name="macro_do_translate">ແປຂໍ້ຄວາມ</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, ໃສ່ %3$s</string>
+    <string name="macro_do_vibrate_value">ສັ່ນ %1$d ms</string>
+    <string name="macro_do_play_tone_value">ຫຼິ້ນໂທນ %1$d Hz</string>
+    <string name="macro_do_set_volume_value">ຕັ້ງລະດັບສຽງ %1$s ເປັນ %2$d%%</string>
+    <string name="macro_do_link_hint">ທີ່ຢູ່</string>
+    <string name="macro_do_keys_hint">ປຸ່ມ ເຊັ່ນ tab enter</string>
+    <string name="macro_number_range">ໃສ່ %1$d ຫາ %2$d</string>
+    <string name="macro_values_help">ຄ່າຖືກໃສ່ເປັນ {name}. ນອກຈາກນີ້ {item}, {clipboard}, {time} ແລະ {date}.</string>
+    <string name="macro_value_name">ຊື່ຄ່າ</string>
+    <string name="macro_value_name_invalid">ໃຊ້ຕົວອັກສອນ, ຕົວເລກ, ຈຸດ, ຂີດ ຫຼື ຂີດກ້ອງ</string>
+    <string name="macro_test_value">ຄ່າ</string>
+    <string name="macro_test_value_label">ມີ (ຫວ່າງ: ຄ່າໃດກໍໄດ້)</string>
+    <string name="macro_test_value_set">ຕັ້ງຄ່າ %1$s ແລ້ວ</string>
+    <string name="macro_test_value_value">ຄ່າ %1$s ມີ %2$s</string>
+    <string name="macro_test_not">ບໍ່: %1$s</string>
 </resources>

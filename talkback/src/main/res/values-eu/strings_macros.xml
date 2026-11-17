@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makroa gelditu da. <xliff:g id="count" example="1000">%1$d</xliff:g> aldiz errepikatu da: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makroa gelditu da. Denbora-muga amaitu da: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makroa ez da exekutatu. Exekutatu hau betetzen bada soilik: ez da bete</string>
+    <string name="macro_step_more">Urrats gehiago</string>
+    <string name="macro_do_play_sound">Erreproduzitu soinua</string>
+    <string name="macro_do_vibrate">Egin dar-dar</string>
+    <string name="macro_do_play_tone">Erreproduzitu tonua</string>
+    <string name="macro_do_copy_text">Kopiatu testua</string>
+    <string name="macro_do_open_link">Ireki esteka</string>
+    <string name="macro_do_open_settings">Ireki ezarpenen orria</string>
+    <string name="macro_do_share_text">Partekatu testua</string>
+    <string name="macro_do_set_volume">Ezarri bolumena</string>
+    <string name="macro_do_set_ringer">Ezarri tonu-jotzailearen modua</string>
+    <string name="macro_do_press_keys">Sakatu teklak</string>
+    <string name="macro_do_show_message">Erakutsi mezua</string>
+    <string name="macro_do_set_value">Ezarri balioa</string>
+    <string name="macro_do_fetch">Eskuratu esteka</string>
+    <string name="macro_do_translate">Itzuli testua</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, hemen: %3$s</string>
+    <string name="macro_do_vibrate_value">Egin dar-dar %1$d ms</string>
+    <string name="macro_do_play_tone_value">Erreproduzitu tonua: %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Ezarri bolumena (%1$s): %%%2$d</string>
+    <string name="macro_do_link_hint">Helbidea</string>
+    <string name="macro_do_keys_hint">Teklak; adibidez, tab enter</string>
+    <string name="macro_number_range">Sartu %1$d eta %2$d arteko zenbaki bat</string>
+    <string name="macro_values_help">Balioak {name} gisa txertatzen dira. Baita {item}, {clipboard}, {time} eta {date} ere.</string>
+    <string name="macro_value_name">Balioaren izena</string>
+    <string name="macro_value_name_invalid">Erabili letrak, digituak, puntuak, marratxoak edo azpimarrak</string>
+    <string name="macro_test_value">Balioa</string>
+    <string name="macro_test_value_label">Dauka (hutsik: edozein balio)</string>
+    <string name="macro_test_value_set">%1$s balioa ezarrita dago</string>
+    <string name="macro_test_value_value">%1$s balioak hau dauka: %2$s</string>
+    <string name="macro_test_not">Ez: %1$s</string>
 </resources>

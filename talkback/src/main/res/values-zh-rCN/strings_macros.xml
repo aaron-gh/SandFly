@@ -123,4 +123,35 @@
     <string name="macro_stopped_repeats">宏已停止。已重复 <xliff:g id="count" example="1000">%1$d</xliff:g> 次：<xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">宏已停止。超时：<xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">宏未运行。仅在以下情况运行：条件不满足</string>
+    <string name="macro_step_more">更多步骤</string>
+    <string name="macro_do_play_sound">播放声音</string>
+    <string name="macro_do_vibrate">振动</string>
+    <string name="macro_do_play_tone">播放音调</string>
+    <string name="macro_do_copy_text">复制文字</string>
+    <string name="macro_do_open_link">打开链接</string>
+    <string name="macro_do_open_settings">打开设置页面</string>
+    <string name="macro_do_share_text">分享文字</string>
+    <string name="macro_do_set_volume">设置音量</string>
+    <string name="macro_do_set_ringer">设置铃声模式</string>
+    <string name="macro_do_press_keys">按下按键</string>
+    <string name="macro_do_show_message">显示消息</string>
+    <string name="macro_do_set_value">设置值</string>
+    <string name="macro_do_fetch">获取链接</string>
+    <string name="macro_do_translate">翻译文字</string>
+    <string name="macro_do_value">%1$s：%2$s</string>
+    <string name="macro_do_into_value">%1$s：%2$s，存入 %3$s</string>
+    <string name="macro_do_vibrate_value">振动 %1$d ms</string>
+    <string name="macro_do_play_tone_value">播放音调 %1$d Hz</string>
+    <string name="macro_do_set_volume_value">将%1$s音量设为 %2$d%%</string>
+    <string name="macro_do_link_hint">地址</string>
+    <string name="macro_do_keys_hint">按键，例如 tab enter</string>
+    <string name="macro_number_range">请输入 %1$d 到 %2$d</string>
+    <string name="macro_values_help">以 {name} 插入值。也可使用 {item}、{clipboard}、{time} 和 {date}。</string>
+    <string name="macro_value_name">值名称</string>
+    <string name="macro_value_name_invalid">请使用字母、数字、点、短划线或下划线</string>
+    <string name="macro_test_value">值</string>
+    <string name="macro_test_value_label">包含（留空：任意值）</string>
+    <string name="macro_test_value_set">值 %1$s 已设置</string>
+    <string name="macro_test_value_value">值 %1$s 包含%2$s</string>
+    <string name="macro_test_not">非：%1$s</string>
 </resources>

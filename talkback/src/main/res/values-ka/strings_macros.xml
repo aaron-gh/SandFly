@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">მაკრო შეჩერდა. გამეორდა <xliff:g id="count" example="1000">%1$d</xliff:g>-ჯერ: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">მაკრო შეჩერდა. დრო ამოიწურა: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">მაკრო არ გაეშვა. გაშვება მხოლოდ მაშინ, როცა: პირობა არ სრულდება</string>
+    <string name="macro_step_more">სხვა ნაბიჯები</string>
+    <string name="macro_do_play_sound">ხმის დაკვრა</string>
+    <string name="macro_do_vibrate">ვიბრაცია</string>
+    <string name="macro_do_play_tone">ტონის დაკვრა</string>
+    <string name="macro_do_copy_text">ტექსტის კოპირება</string>
+    <string name="macro_do_open_link">ბმულის გახსნა</string>
+    <string name="macro_do_open_settings">პარამეტრების გვერდის გახსნა</string>
+    <string name="macro_do_share_text">ტექსტის გაზიარება</string>
+    <string name="macro_do_set_volume">ხმის დონის დაყენება</string>
+    <string name="macro_do_set_ringer">ზარის რეჟიმის დაყენება</string>
+    <string name="macro_do_press_keys">კლავიშებზე დაჭერა</string>
+    <string name="macro_do_show_message">შეტყობინების ჩვენება</string>
+    <string name="macro_do_set_value">მნიშვნელობის დაყენება</string>
+    <string name="macro_do_fetch">ბმულის ჩამოტვირთვა</string>
+    <string name="macro_do_translate">ტექსტის თარგმნა</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, მნიშვნელობაში %3$s</string>
+    <string name="macro_do_vibrate_value">ვიბრაცია %1$d ms</string>
+    <string name="macro_do_play_tone_value">ტონის დაკვრა %1$d Hz</string>
+    <string name="macro_do_set_volume_value">ხმის დონე (%1$s): %2$d%%</string>
+    <string name="macro_do_link_hint">მისამართი</string>
+    <string name="macro_do_keys_hint">კლავიშები, მაგალითად tab enter</string>
+    <string name="macro_number_range">შეიყვანეთ %1$d-დან %2$d-მდე</string>
+    <string name="macro_values_help">მნიშვნელობები ჩაისმება როგორც {name}. ასევე {item}, {clipboard}, {time} და {date}.</string>
+    <string name="macro_value_name">მნიშვნელობის სახელი</string>
+    <string name="macro_value_name_invalid">გამოიყენეთ ასოები, ციფრები, წერტილები, დეფისები ან ქვედა ტირეები</string>
+    <string name="macro_test_value">მნიშვნელობა</string>
+    <string name="macro_test_value_label">შეიცავს (ცარიელი: ნებისმიერი მნიშვნელობა)</string>
+    <string name="macro_test_value_set">მნიშვნელობა %1$s დაყენებულია</string>
+    <string name="macro_test_value_value">მნიშვნელობა %1$s შეიცავს %2$s</string>
+    <string name="macro_test_not">არა: %1$s</string>
 </resources>

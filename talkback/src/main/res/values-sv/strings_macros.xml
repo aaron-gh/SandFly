@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">Makrot stoppades. Upprepat <xliff:g id="count" example="1000">%1$d</xliff:g> gånger: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makrot stoppades. Tidsgränsen överskreds: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makrot kördes inte. Kör bara när: inte uppfyllt</string>
+    <string name="macro_step_more">Fler steg</string>
+    <string name="macro_do_play_sound">Spela upp ljud</string>
+    <string name="macro_do_vibrate">Vibrera</string>
+    <string name="macro_do_play_tone">Spela upp ton</string>
+    <string name="macro_do_copy_text">Kopiera text</string>
+    <string name="macro_do_open_link">Öppna länk</string>
+    <string name="macro_do_open_settings">Öppna inställningssida</string>
+    <string name="macro_do_share_text">Dela text</string>
+    <string name="macro_do_set_volume">Ställ in volym</string>
+    <string name="macro_do_set_ringer">Ställ in ringsignalläge</string>
+    <string name="macro_do_press_keys">Tryck på tangenter</string>
+    <string name="macro_do_show_message">Visa meddelande</string>
+    <string name="macro_do_set_value">Ange värde</string>
+    <string name="macro_do_fetch">Hämta länk</string>
+    <string name="macro_do_translate">Översätt text</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, till %3$s</string>
+    <string name="macro_do_vibrate_value">Vibrera %1$d ms</string>
+    <string name="macro_do_play_tone_value">Spela upp ton %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Ställ in volymen för %1$s på %2$d %%</string>
+    <string name="macro_do_link_hint">Adress</string>
+    <string name="macro_do_keys_hint">Tangenter, till exempel tab enter</string>
+    <string name="macro_number_range">Ange %1$d till %2$d</string>
+    <string name="macro_values_help">Värden infogas som {name}. Även {item}, {clipboard}, {time} och {date}.</string>
+    <string name="macro_value_name">Värdenamn</string>
+    <string name="macro_value_name_invalid">Använd bokstäver, siffror, punkter, bindestreck eller understreck</string>
+    <string name="macro_test_value">Värde</string>
+    <string name="macro_test_value_label">Innehåller (tomt: valfritt värde)</string>
+    <string name="macro_test_value_set">Värdet %1$s är angivet</string>
+    <string name="macro_test_value_value">Värdet %1$s har %2$s</string>
+    <string name="macro_test_not">Inte: %1$s</string>
 </resources>

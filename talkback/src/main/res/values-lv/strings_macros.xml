@@ -117,4 +117,35 @@
     <string name="macro_stopped_repeats">Makro apturēts. Atkārtots <xliff:g id="count" example="1000">%1$d</xliff:g> reizes: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">Makro apturēts. Noildze: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">Makro nav palaists. Palaist tikai tad, ja: nav izpildīts</string>
+    <string name="macro_step_more">Citi soļi</string>
+    <string name="macro_do_play_sound">Atskaņot skaņu</string>
+    <string name="macro_do_vibrate">Vibrēt</string>
+    <string name="macro_do_play_tone">Atskaņot signālu</string>
+    <string name="macro_do_copy_text">Kopēt tekstu</string>
+    <string name="macro_do_open_link">Atvērt saiti</string>
+    <string name="macro_do_open_settings">Atvērt iestatījumu lapu</string>
+    <string name="macro_do_share_text">Kopīgot tekstu</string>
+    <string name="macro_do_set_volume">Iestatīt skaļumu</string>
+    <string name="macro_do_set_ringer">Iestatīt zvana režīmu</string>
+    <string name="macro_do_press_keys">Nospiest taustiņus</string>
+    <string name="macro_do_show_message">Rādīt ziņojumu</string>
+    <string name="macro_do_set_value">Iestatīt vērtību</string>
+    <string name="macro_do_fetch">Ielādēt saiti</string>
+    <string name="macro_do_translate">Tulkot tekstu</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, vērtībā %3$s</string>
+    <string name="macro_do_vibrate_value">Vibrēt %1$d ms</string>
+    <string name="macro_do_play_tone_value">Atskaņot signālu %1$d Hz</string>
+    <string name="macro_do_set_volume_value">Iestatīt skaļumu (%1$s) uz %2$d%%</string>
+    <string name="macro_do_link_hint">Adrese</string>
+    <string name="macro_do_keys_hint">Taustiņi, piemēram, tab enter</string>
+    <string name="macro_number_range">Ievadiet no %1$d līdz %2$d</string>
+    <string name="macro_values_help">Vērtības ievieto kā {name}. Arī {item}, {clipboard}, {time} un {date}.</string>
+    <string name="macro_value_name">Vērtības nosaukums</string>
+    <string name="macro_value_name_invalid">Izmantojiet burtus, ciparus, punktus, defises vai pasvītras</string>
+    <string name="macro_test_value">Vērtība</string>
+    <string name="macro_test_value_label">Satur (tukšs: jebkura vērtība)</string>
+    <string name="macro_test_value_set">Vērtība %1$s ir iestatīta</string>
+    <string name="macro_test_value_value">Vērtība %1$s satur %2$s</string>
+    <string name="macro_test_not">Ne: %1$s</string>
 </resources>

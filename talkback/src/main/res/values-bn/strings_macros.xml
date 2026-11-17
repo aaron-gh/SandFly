@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">ম্যাক্রো থেমে গেছে। <xliff:g id="count" example="1000">%1$d</xliff:g> বার পুনরাবৃত্তি হয়েছে: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">ম্যাক্রো থেমে গেছে। সময় শেষ: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">ম্যাক্রো চালানো হয়নি। শুধু তখনই চালান যখন: শর্ত পূরণ হয়নি</string>
+    <string name="macro_step_more">আরও ধাপ</string>
+    <string name="macro_do_play_sound">সাউন্ড চালান</string>
+    <string name="macro_do_vibrate">ভাইব্রেট করুন</string>
+    <string name="macro_do_play_tone">টোন চালান</string>
+    <string name="macro_do_copy_text">টেক্সট কপি করুন</string>
+    <string name="macro_do_open_link">লিঙ্ক খুলুন</string>
+    <string name="macro_do_open_settings">সেটিংসের পেজ খুলুন</string>
+    <string name="macro_do_share_text">টেক্সট শেয়ার করুন</string>
+    <string name="macro_do_set_volume">ভলিউম সেট করুন</string>
+    <string name="macro_do_set_ringer">রিঙ্গার মোড সেট করুন</string>
+    <string name="macro_do_press_keys">কী প্রেস করুন</string>
+    <string name="macro_do_show_message">মেসেজ দেখান</string>
+    <string name="macro_do_set_value">মান সেট করুন</string>
+    <string name="macro_do_fetch">লিঙ্ক থেকে আনুন</string>
+    <string name="macro_do_translate">টেক্সট অনুবাদ করুন</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$s-এ</string>
+    <string name="macro_do_vibrate_value">%1$d ms ভাইব্রেট করুন</string>
+    <string name="macro_do_play_tone_value">%1$d Hz টোন চালান</string>
+    <string name="macro_do_set_volume_value">%1$s ভলিউম %2$d%% করুন</string>
+    <string name="macro_do_link_hint">ঠিকানা</string>
+    <string name="macro_do_keys_hint">কী, যেমন tab enter</string>
+    <string name="macro_number_range">%1$d থেকে %2$d লিখুন</string>
+    <string name="macro_values_help">মান {name} হিসেবে বসে। এছাড়া {item}, {clipboard}, {time} ও {date}।</string>
+    <string name="macro_value_name">মানের নাম</string>
+    <string name="macro_value_name_invalid">অক্ষর, সংখ্যা, ডট, ড্যাশ বা আন্ডারস্কোর ব্যবহার করুন</string>
+    <string name="macro_test_value">মান</string>
+    <string name="macro_test_value_label">আছে (খালি: যেকোনও মান)</string>
+    <string name="macro_test_value_set">%1$s মান সেট করা আছে</string>
+    <string name="macro_test_value_value">%1$s মানে %2$s আছে</string>
+    <string name="macro_test_not">নয়: %1$s</string>
 </resources>

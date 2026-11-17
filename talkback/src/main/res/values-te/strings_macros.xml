@@ -126,4 +126,35 @@
     <string name="macro_stopped_repeats">మాక్రో ఆగిపోయింది. <xliff:g id="count" example="1000">%1$d</xliff:g> సార్లు పునరావృతమైంది: <xliff:g id="step" example="Repeat while Item on screen: Load more">%2$s</xliff:g></string>
     <string name="macro_stopped_timeout">మాక్రో ఆగిపోయింది. సమయం ముగిసింది: <xliff:g id="step" example="Wait until Item on screen: Send">%1$s</xliff:g></string>
     <string name="macro_not_met">మాక్రో రన్ కాలేదు. దీనికి మాత్రమే రన్ చేయండి: షరతు తీరలేదు</string>
+    <string name="macro_step_more">మరిన్ని దశలు</string>
+    <string name="macro_do_play_sound">శబ్దాన్ని ప్లే చేయండి</string>
+    <string name="macro_do_vibrate">వైబ్రేట్ చేయండి</string>
+    <string name="macro_do_play_tone">టోన్‌ను ప్లే చేయండి</string>
+    <string name="macro_do_copy_text">టెక్స్ట్‌ను కాపీ చేయండి</string>
+    <string name="macro_do_open_link">లింక్‌ను తెరవండి</string>
+    <string name="macro_do_open_settings">సెట్టింగ్‌ల పేజీని తెరవండి</string>
+    <string name="macro_do_share_text">టెక్స్ట్‌ను షేర్ చేయండి</string>
+    <string name="macro_do_set_volume">వాల్యూమ్‌ను సెట్ చేయండి</string>
+    <string name="macro_do_set_ringer">రింగర్ మోడ్‌ను సెట్ చేయండి</string>
+    <string name="macro_do_press_keys">కీలను నొక్కండి</string>
+    <string name="macro_do_show_message">సందేశాన్ని చూపండి</string>
+    <string name="macro_do_set_value">విలువను సెట్ చేయండి</string>
+    <string name="macro_do_fetch">లింక్‌ను డౌన్‌లోడ్ చేయండి</string>
+    <string name="macro_do_translate">టెక్స్ట్‌ను అనువదించండి</string>
+    <string name="macro_do_value">%1$s: %2$s</string>
+    <string name="macro_do_into_value">%1$s: %2$s, %3$sలోకి</string>
+    <string name="macro_do_vibrate_value">%1$d ms వైబ్రేట్ చేయండి</string>
+    <string name="macro_do_play_tone_value">%1$d Hz టోన్‌ను ప్లే చేయండి</string>
+    <string name="macro_do_set_volume_value">%1$s వాల్యూమ్‌ను %2$d%%కు సెట్ చేయండి</string>
+    <string name="macro_do_link_hint">అడ్రస్</string>
+    <string name="macro_do_keys_hint">కీలు, ఉదా. tab enter</string>
+    <string name="macro_number_range">%1$d నుండి %2$d నమోదు చేయండి</string>
+    <string name="macro_values_help">విలువలు {name}గా వస్తాయి. అలాగే {item}, {clipboard}, {time}, {date}.</string>
+    <string name="macro_value_name">విలువ పేరు</string>
+    <string name="macro_value_name_invalid">అక్షరాలు, అంకెలు, చుక్కలు, డాష్‌లు లేదా అండర్‌స్కోర్‌లను ఉపయోగించండి</string>
+    <string name="macro_test_value">విలువ</string>
+    <string name="macro_test_value_label">కలిగి ఉంది (ఖాళీ: ఏదైనా విలువ)</string>
+    <string name="macro_test_value_set">విలువ %1$s సెట్ చేయబడింది</string>
+    <string name="macro_test_value_value">విలువ %1$sలో %2$s ఉంది</string>
+    <string name="macro_test_not">కాదు: %1$s</string>
 </resources>
