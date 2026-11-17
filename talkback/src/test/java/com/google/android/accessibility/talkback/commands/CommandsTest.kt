@@ -24,6 +24,7 @@ import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.preference.ItemOrder
 import com.google.android.accessibility.talkback.recognition.RecognitionMode
 import com.google.android.accessibility.talkback.selector.ReadingControlCommands
+import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
@@ -74,6 +75,7 @@ class CommandsTest {
         R.string.shortcut_value_text_entities,
         R.string.shortcut_value_toggle_auto_translation,
         R.string.shortcut_value_toggle_equalizer,
+        R.string.shortcut_value_toggle_focus_indicator,
         R.string.shortcut_value_settings_profiles,
         R.string.shortcut_value_next_settings_profile,
         R.string.shortcut_value_previous_settings_profile,
@@ -86,6 +88,18 @@ class CommandsTest {
       )) {
       assertTrue(context.getString(res) in values)
     }
+  }
+
+  @Test
+  fun focusIndicatorCommandTurnsTheSettingOnAndOff() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    val res = context.resources
+    prefs.edit().remove(context.getString(R.string.pref_show_focus_indicator_key)).commit()
+    assertTrue(FocusIndicatorUtils.isFocusIndicatorShown(prefs, res))
+    assertFalse(FocusIndicatorUtils.toggleFocusIndicatorShown(prefs, res))
+    assertFalse(FocusIndicatorUtils.isFocusIndicatorShown(prefs, res))
+    assertTrue(FocusIndicatorUtils.toggleFocusIndicatorShown(prefs, res))
+    assertTrue(FocusIndicatorUtils.isFocusIndicatorShown(prefs, res))
   }
 
   @Test
