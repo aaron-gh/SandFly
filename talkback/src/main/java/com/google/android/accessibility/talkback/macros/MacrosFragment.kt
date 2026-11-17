@@ -339,6 +339,19 @@ class MacroFragment : MacroEditorFragment() {
       screen.link(getString(R.string.menu_assign), null, CommandFragment::class.java) {
         putString(CommandFragment.ARG_COMMAND, Macros.commandOf(macro.id))
       }
+    } else {
+      Macros.assignScreen(macro.id)?.let { (fragmentName, arguments) ->
+        screen.addPreference(
+          Preference(context).apply {
+            title = getString(R.string.menu_assign)
+            isPersistent = false
+            isIconSpaceReserved = false
+            layoutResource = R.layout.listitem_2texts
+            fragment = fragmentName
+            extras.putAll(arguments)
+          }
+        )
+      }
     }
     if (Macros.canRename(macro.id)) screen.action(getString(R.string.menu_rename)) { rename() }
     if (ItemFileLauncher.isAvailable && !external) {

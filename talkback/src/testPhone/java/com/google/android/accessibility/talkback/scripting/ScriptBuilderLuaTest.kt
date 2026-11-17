@@ -63,7 +63,8 @@ class ScriptBuilderLuaTest {
           JSONArray()
             .put(JSONObject().put("id", "t1").put("when", "focus").put("match", JSONObject().put("contains", "a \"quoted\" text")).put("macro", macro))
             .put(JSONObject().put("id", "t2").put("when", "app").put("macro", macro))
-            .put(JSONObject().put("id", "t3").put("when", "announcement").put("text", "Sent").put("macro", macro)),
+            .put(JSONObject().put("id", "t3").put("when", "announcement").put("text", "Sent").put("macro", macro))
+            .put(JSONObject().put("id", "t4").put("when", "notification").put("text", "New message").put("macro", macro)),
         )
         .put("code", "sf.macros.run('macros/c1.json')")
     val host = Host()

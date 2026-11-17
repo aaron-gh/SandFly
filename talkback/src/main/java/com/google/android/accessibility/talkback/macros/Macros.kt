@@ -413,7 +413,16 @@ object Macros {
 
     /** Whether the macro [id] has a name the user can change, such as a command's title. */
     fun canRename(id: String): Boolean = true
+
+    /**
+     * The screen that assigns the macro [id] to gestures and keys, as its fragment's class name
+     * and arguments, or null when it has none.
+     */
+    fun assignScreen(id: String): Pair<String, android.os.Bundle>? = null
   }
+
+  /** The screen that assigns the external macro [id], or null. */
+  @JvmStatic fun assignScreen(id: String): Pair<String, android.os.Bundle>? = if (isExternal(id)) external()?.assignScreen(id) else null
 
   /** Whether the macro [id] has a name the user can change. */
   @JvmStatic fun canRename(id: String): Boolean = !isExternal(id) || external()?.canRename(id) == true

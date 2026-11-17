@@ -151,4 +151,23 @@ class ScriptBuilderCommandsTest {
     assertTrue(ScriptBuilder.DRAFT_FILE in pkg.files)
     assertTrue("macros/c1.json" in pkg.files)
   }
+
+  @Test
+  fun notificationTrigger_needsTheNotificationsPermission_andCommandsHaveAnAssignScreen() {
+    val id = ScriptBuilder.create(context, "Mail")
+    val draft = ScriptBuilder.draft(store, id)!!
+    draft.put(
+      "triggers",
+      JSONArray().put(JSONObject().put("id", "t1").put("when", ScriptBuilder.WHEN_NOTIFICATION).put("text", "Invoice").put("macro", macroJson(Macros.SpeakText("Invoice")))),
+    )
+    draft.put("commands", JSONArray().put(JSONObject().put("id", "c1").put("title", "Read")))
+    ScriptBuilder.save(context, draft)
+
+    assertTrue(ScriptPermission.NOTIFICATIONS in store.find(id)!!.manifest.permissions)
+    assertTrue(store.readFile(id, ScriptPackage.MAIN)!!.decodeToString().contains("sf.onNotification("))
+    val (screen, args) = Macros.assignScreen(BuiltScriptMacros.idOf(id, BuiltScriptMacros.COMMANDS, "c1"))!!
+    assertEquals(ScriptCommandFragment::class.java.name, screen)
+    assertEquals("c1", args.getString(ScriptCommandFragment.ARG_COMMAND))
+    assertNull(Macros.assignScreen(BuiltScriptMacros.idOf(id, BuiltScriptMacros.TRIGGERS, "t1")))
+  }
 }
