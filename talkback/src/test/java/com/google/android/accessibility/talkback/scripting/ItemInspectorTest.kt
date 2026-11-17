@@ -60,7 +60,7 @@ class ItemInspectorTest {
 
     val text = ItemInspector.plainText(context, ItemInspector.report(context, AccessibilityNodeInfoCompat.wrap(button)))
 
-    assertTrue(text, text.startsWith("Texts\ndescription: New post\n\nItem types\nClickable\nEnabled\n\nItems inside\ntext: Plus\n\nScript details\n"))
+    assertTrue(text, text.startsWith("Texts\ndescription: New post\n\nItem types\nClickable\nEnabled\n\nItems inside\nlevel 1: text: Plus\n\nScript details\n"))
     assertTrue(text, text.contains("kind: clickable, enabled"))
     assertFalse(text, text.contains("\ntext: New post"))
   }

@@ -87,7 +87,7 @@ object ItemInspector {
     return listOf(
         Section(R.string.item_details_texts, lines(*texts(node).toTypedArray())),
         Section(R.string.item_details_types, itemTypes(context, node).map { "" to it }),
-        Section(R.string.item_details_inside, innerTexts(node)),
+        Section(R.string.item_details_inside, innerTree(node)),
         Section(R.string.item_details_script, script),
         Section(
           R.string.item_details_app,
@@ -275,6 +275,32 @@ object ItemInspector {
   }
 
   /**
+   * The items in [node] in reading order, each under the item it is in: its level (1 for the items
+   * directly in [node]), class, whether it can be clicked, and its texts. Items with no text that
+   * can't be clicked are left out, but the items in them are listed.
+   */
+  private fun innerTree(node: AccessibilityNodeInfoCompat): List<Pair<String, String>> {
+    val lines = mutableListOf<Pair<String, String>>()
+    var count = 0
+    fun visit(item: AccessibilityNodeInfoCompat, level: Int) {
+      for (child in item.childrenInReadingOrder()) {
+        if (count >= MAX_TREE_ITEMS || lines.size >= MAX_TREE_LINES) return
+        count++
+        if (!child.isVisibleToUser) continue
+        val texts = texts(child).mapNotNull { (name, value) -> value?.toString()?.takeIf { it.isNotEmpty() }?.let { "$name: $it" } }
+        val clickable = listOfNotNull("clickable".takeIf { child.isClickable }, "longClickable".takeIf { child.isLongClickable })
+        if (texts.isNotEmpty() || clickable.isNotEmpty()) {
+          val parts = listOfNotNull(child.className?.toString()?.substringAfterLast('.')) + clickable + texts
+          lines += "level $level" to parts.joinToString("; ")
+        }
+        if (level < MAX_TREE_LEVEL) visit(child, level + 1)
+      }
+    }
+    visit(node, 1)
+    return lines
+  }
+
+  /**
    * Copies every item on screen as JSON, then gives [done] what to say. Reading the screen asks the
    * app about each item in turn, so it happens off the main thread.
    */
@@ -351,6 +377,10 @@ object ItemInspector {
   private const val MAX_INNER_ITEMS = 30
   /** The most texts of items in the inspected item that Inspect focused item gives. */
   private const val MAX_INNER_TEXTS = 10
+  /** How many items in the inspected item Items inside looks at and lists, and how deep. */
+  private const val MAX_TREE_ITEMS = 120
+  private const val MAX_TREE_LINES = 40
+  private const val MAX_TREE_LEVEL = 8
 
   private val FLAGS: List<Pair<String, (AccessibilityNodeInfoCompat) -> Boolean>> =
     listOf(
