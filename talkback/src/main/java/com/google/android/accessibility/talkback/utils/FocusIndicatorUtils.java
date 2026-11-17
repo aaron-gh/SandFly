@@ -62,6 +62,16 @@ public class FocusIndicatorUtils {
   }
 
   /**
+   * Turns Show the focus indicator on or off and returns the new value. The service applies it when
+   * the setting changes.
+   */
+  public static boolean toggleFocusIndicatorShown(SharedPreferences prefs, Resources res) {
+    boolean shown = !isFocusIndicatorShown(prefs, res);
+    prefs.edit().putBoolean(res.getString(R.string.pref_show_focus_indicator_key), shown).apply();
+    return shown;
+  }
+
+  /**
    * Hides the focus indicator, so that a screenshot doesn't show it. Returns false when the focus
    * indicator can't be changed. {@link #restoreAfterScreenshot} shows it again.
    */

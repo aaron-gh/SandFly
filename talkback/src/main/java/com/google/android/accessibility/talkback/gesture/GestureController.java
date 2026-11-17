@@ -788,6 +788,13 @@ public class GestureController {
       } else {
         result = pipeline.returnFeedback(eventId, Feedback.dimScreen(DIM));
       }
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_focus_indicator))) {
+      boolean shown =
+          FocusIndicatorUtils.toggleFocusIndicatorShown(
+              SharedPreferencesUtils.getSharedPreferences(service), service.getResources());
+      speak(
+          service.getString(
+              shown ? R.string.focus_indicator_now_on : R.string.focus_indicator_now_off));
     } else if (action.equals(service.getString(R.string.shortcut_value_pause_backtalk))) {
       if (service.getPauseController() != null) {
         service.getPauseController().requestPause();

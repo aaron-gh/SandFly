@@ -1077,6 +1077,11 @@ object Commands {
           Key.HIDE_OR_SHOW_SCREEN,
         )
         gesture(
+          R.string.shortcut_value_toggle_focus_indicator,
+          R.string.title_pref_show_focus_indicator,
+          available = FeatureSupport.supportCustomizingFocusIndicator(),
+        )
+        gesture(
           R.string.shortcut_value_screen_search,
           R.string.title_show_screen_search,
           Key.SEARCH_SCREEN_FOR_ITEM,

@@ -4682,6 +4682,10 @@
   Source: Title for the switch that shows or hides the focus indicator. [CHAR_LIMIT=NONE]
   -->
   <string name="title_pref_show_focus_indicator">Show the focus indicator</string>
+  <!-- Spoken when the Show the focus indicator command turns the focus indicator on. [CHAR_LIMIT=NONE] -->
+  <string name="focus_indicator_now_on">Focus indicator on</string>
+  <!-- Spoken when the Show the focus indicator command turns the focus indicator off. [CHAR_LIMIT=NONE] -->
+  <string name="focus_indicator_now_off">Focus indicator off</string>
   <!--
   Source: Title for the thick border setting.
   Description: The user can customize the border thickness. [CHAR_LIMIT=NONE]
