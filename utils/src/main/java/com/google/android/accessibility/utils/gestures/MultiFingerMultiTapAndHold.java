@@ -17,13 +17,16 @@
 package com.google.android.accessibility.utils.gestures;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.MotionEvent;
+import androidx.annotation.RequiresApi;
 import com.google.android.accessibility.utils.Performance.EventId;
 
 /**
  * This class matches gestures of the form multi-finger multi-tap and hold. The number of fingers
  * and taps for each instance is specified in the constructor.
  */
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class MultiFingerMultiTapAndHold extends MultiFingerMultiTap {
 
   MultiFingerMultiTapAndHold(
