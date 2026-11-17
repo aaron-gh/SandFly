@@ -196,6 +196,7 @@
     <string name="pref_interrupt_enter_key" translatable="false">pref_interrupt_enter</string>
     <string name="pref_node_desc_order_key">pref_node_desc_order_key</string>
     <string name="pref_time_feedback_format_key">pref_time_feedback_format_key</string>
+    <string name="pref_time_seconds_key">pref_time_seconds_key</string>
     <string name="pref_speak_element_ids_key">pref_element_ids_key</string>
     <string name="pref_speak_notifications_key">pref_speak_notifications</string>
     <string name="pref_sandfly_wallpaper_key" translatable="false">pref_sandfly_wallpaper</string>
@@ -2164,6 +2165,7 @@
     <bool name="pref_speak_grid_positions_default">true</bool>
     <bool name="pref_table_speak_row_column_numbers_default">true</bool>
     <bool name="pref_tell_time_default">true</bool>
+    <bool name="pref_time_seconds_default">false</bool>
     <bool name="pref_speak_roles_default">true</bool>
     <bool name="pref_speak_role_without_pause_default">false</bool>
     <bool name="pref_speak_system_window_titles_default">true</bool>

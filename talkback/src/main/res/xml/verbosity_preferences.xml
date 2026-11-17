@@ -150,6 +150,10 @@
         android:key="@string/pref_time_feedback_format_key"
         android:summary="%s"
         android:title="@string/pref_time_feedback_format_title"/>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_time_seconds_default"
+        android:key="@string/pref_time_seconds_key"
+        android:title="@string/title_pref_time_seconds" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.status.StatusReadoutFragment"
         android:key="@string/pref_status_readout_key"
