@@ -29,6 +29,7 @@ import android.view.Display
 import android.view.KeyEvent
 import android.view.ViewConfiguration
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.report.VolumeKeyLog
 import com.google.android.accessibility.utils.monitor.ScreenMonitor
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 
@@ -73,7 +74,10 @@ class VolumeKeyCommands(
         }
       },
       object : VolumeKeyPresses.Callbacks {
-        override fun perform(command: String) = perform(command)
+        override fun perform(command: String) {
+          VolumeKeyLog.note("Volume key press command: $command")
+          perform(command)
+        }
 
         override fun adjustVolume(keyCode: Int, repeated: Boolean) {
           volume.adjust(keyCode, repeated, suggestedStream(), showUi = !hidesVolumePanel)
@@ -182,8 +186,17 @@ class VolumeKeyCommands(
    * so that a report shows why the presses changed the volume instead.
    */
   private fun logOff(keyCode: Int, reason: String) {
-    Log.i(TAG, "Volume key presses off for ${KeyEvent.keyCodeToString(keyCode)}: $reason")
+    val text = "Volume key presses off for ${KeyEvent.keyCodeToString(keyCode)}: $reason"
+    Log.i(TAG, text)
+    VolumeKeyLog.note(text)
   }
+
+  /**
+   * The state of the presses, for problem reports: whether any press has a command, the presses
+   * being counted and the volume keys down.
+   */
+  fun describeState(): String =
+    (if (presses.isUsed) "" else "no press commands; ") + presses.describe()
 
   /** Whether a single, double, triple or long press of [keyCode] has [command]. */
   fun hasCommand(keyCode: Int, command: String): Boolean = presses.hasCommand(keyCode, command)

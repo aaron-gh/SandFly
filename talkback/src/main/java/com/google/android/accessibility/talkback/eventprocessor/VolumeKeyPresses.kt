@@ -377,6 +377,25 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     canUse = { false }
   }
 
+  /**
+   * The presses being counted and the volume keys down, for problem reports, such as "presses: down
+   * LONG_PRESS_DONE, 0 ended, held; keys down: down".
+   */
+  fun describe(): String {
+    val counting =
+      if (key == 0) "none"
+      else "${keyName(key)} $state, $presses ended" + (if (held) ", held" else "")
+    val down = listOfNotNull("up".takeIf { volumeUpDown }, "down".takeIf { volumeDownDown })
+    return "presses: $counting; keys down: ${down.joinToString(" ").ifEmpty { "none" }}"
+  }
+
+  private fun keyName(keyCode: Int): String =
+    when (keyCode) {
+      KeyEvent.KEYCODE_VOLUME_UP -> "up"
+      KeyEvent.KEYCODE_VOLUME_DOWN -> "down"
+      else -> keyCode.toString()
+    }
+
   private fun isDown(keyCode: Int): Boolean =
     when (keyCode) {
       KeyEvent.KEYCODE_VOLUME_UP -> volumeUpDown
