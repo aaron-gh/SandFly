@@ -61,7 +61,9 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * system's shade. The list is Backtalk's, so moving through it does not wait for the system's
  * notification shade, which on some phones redraws all the time.
  *
- * Double tapping a notification opens it. Dismissing one is an accessibility action.
+ * Double tapping a notification opens it. Dismissing one is an accessibility action. With List
+ * notifications newest first, without groups, every notification is a row of its own, newest
+ * first, read as app, time, title and text.
  */
 class NotificationListActivity : AppCompatActivity(), NotificationList.Listener {
   private lateinit var column: LinearLayout
@@ -89,6 +91,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
   /** The parts of a notification to speak, read when the list opens. */
   private var parts: List<NotificationPart> = NotificationPart.entries
+
+  /** Whether every notification is listed on its own, newest first, read when the list opens. */
+  private var byTime = false
 
   /** The groups the user has expanded while the list is open. */
   private val expandedGroups = HashSet<String>()
@@ -154,7 +159,9 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
     SpeechDictionary.setAppliesInOwnWindows(true)
     NotificationList.addListener(this)
     opening = true
-    parts = NotificationParts.enabledParts(SharedPreferencesUtils.getSharedPreferences(this))
+    val enabledParts = NotificationParts.enabledParts(SharedPreferencesUtils.getSharedPreferences(this))
+    byTime = NotificationList.isByTime(this)
+    parts = if (byTime) BY_TIME_PARTS.filter { it in enabledParts } else enabledParts
     waitingForList = !NotificationList.isConnected
     if (NotificationList.isAccessGranted(this) && !NotificationList.isConnected) {
       NotificationListService.rebind(this)
@@ -186,7 +193,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       views.add(message)
       views.add(grantAccess)
     } else {
-      val items = NotificationList.items(this)
+      val items = if (byTime) NotificationList.itemsByTime(this) else NotificationList.items(this)
       val keys = HashSet<String>()
       if (items.isEmpty()) {
         message.setText(R.string.notification_list_empty)
@@ -623,6 +630,19 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
 
     /** How many characters of a notification's text a row shows until the user shows all. */
     private const val SHORT_TEXT_LENGTH = 160
+
+    /**
+     * The order of a notification's details when the list is newest first, such as "Telegram,
+     * 12:30, Adam, Hey." Details turned off in Notification details are left out.
+     */
+    private val BY_TIME_PARTS =
+      listOf(
+        NotificationPart.APP,
+        NotificationPart.TIME,
+        NotificationPart.TITLE,
+        NotificationPart.TEXT,
+        NotificationPart.PLAYBACK,
+      )
 
     /** Keeps group keys apart from notification keys in the row map. */
     private const val GROUP_PREFIX = "group:"

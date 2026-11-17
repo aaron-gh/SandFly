@@ -56,6 +56,14 @@ object NotificationList {
         context.resources.getBoolean(R.bool.pref_notification_list_default),
       )
 
+  /** Whether the list shows every notification on its own, newest first. */
+  fun isByTime(context: Context): Boolean =
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .getBoolean(
+        context.getString(R.string.pref_notification_list_by_time_key),
+        context.resources.getBoolean(R.bool.pref_notification_list_by_time_default),
+      )
+
   /** Whether the user has given Backtalk notification access. */
   fun isAccessGranted(context: Context): Boolean =
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
@@ -79,6 +87,21 @@ object NotificationList {
   /** The notifications to show, in order. */
   fun items(context: Context): List<NotificationItem> =
     cached ?: build(context).also { cached = it }
+
+  /**
+   * Every notification as an item of its own, newest first by the time it shows. A group's summary
+   * is left out where [items] leaves it out, as it repeats the group's members.
+   */
+  fun itemsByTime(context: Context): List<NotificationItem> = byTime(items(context))
+
+  internal fun byTime(items: List<NotificationItem>): List<NotificationItem> =
+    items
+      .flatMap { it.entries }
+      .sortedWith(
+        compareByDescending<NotificationEntry> { it.timeMillis }
+          .thenByDescending { it.notification.postTime }
+      )
+      .map { NotificationItem.Single(it) }
 
   internal fun onConnected(active: Array<StatusBarNotification>?, ranking: RankingMap?) {
     isConnected = true
