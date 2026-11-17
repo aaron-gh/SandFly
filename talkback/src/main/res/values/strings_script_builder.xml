@@ -426,4 +426,39 @@
         <item quantity="one">Directly inside</item>
         <item quantity="other">Up to %1$d levels</item>
     </plurals>
+    <!-- Action on a rule that adds a speech change for the rule's item, to edit what SandFly says for it. [CHAR LIMIT=40] -->
+    <string name="script_builder_change_speech">Change speech</string>
+    <!-- Summary of Change speech. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_change_speech_summary">Remove, replace or reorder what SandFly says for the item</string>
+    <!-- Heading of the edits of a speech change, applied in order. [CHAR LIMIT=40] -->
+    <string name="script_builder_edits">Edits</string>
+    <!-- Action that adds an edit to a speech change. [CHAR LIMIT=40] -->
+    <string name="script_builder_add_edit">Add edit</string>
+    <!-- Kind of edit: removes a text from the speech. [CHAR LIMIT=40] -->
+    <string name="script_builder_edit_remove">Remove text</string>
+    <!-- Kind of edit: replaces a text in the speech. [CHAR LIMIT=40] -->
+    <string name="script_builder_edit_replace">Replace text</string>
+    <!-- Kind of edit: says each part between commas once. [CHAR LIMIT=40] -->
+    <string name="script_builder_edit_remove_repeats">Remove repeated parts</string>
+    <!-- Kind of edit: removes the parts between commas that contain a text. [CHAR LIMIT=40] -->
+    <string name="script_builder_edit_remove_parts">Remove parts that have a text</string>
+    <!-- Kind of edit: keeps only the first parts between commas. [CHAR LIMIT=40] -->
+    <string name="script_builder_edit_keep_parts">Keep the first parts</string>
+    <!-- An edit. %1$s is the text. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_edit_remove_value">Remove: %1$s</string>
+    <!-- An edit. %1$s is the text. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_edit_remove_parts_value">Remove parts with: %1$s</string>
+    <!-- Message of the dialogs of edits that work on parts. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_parts_help">Parts are the pieces between commas.</string>
+    <!-- Message of the Remove text and Replace text dialogs. Keep $1. [CHAR LIMIT=NONE] -->
+    <string name="script_builder_regex_help">With Regular expression, $1 in the new text is the first group in brackets.</string>
+    <!-- What the edits make of the text of the item last inspected with Inspect focused item. [CHAR LIMIT=60] -->
+    <string name="script_builder_preview">Preview on the inspected item</string>
+    <!-- Preview result when the edits leave nothing to say. [CHAR LIMIT=40] -->
+    <string name="script_builder_preview_silent">Says nothing</string>
+    <!-- A Keep the first parts edit. %1$d is the number of parts. [CHAR LIMIT=NONE] -->
+    <plurals name="script_builder_edit_keep_parts_value">
+        <item quantity="one">Keep the first part</item>
+        <item quantity="other">Keep the first %1$d parts</item>
+    </plurals>
 </resources>

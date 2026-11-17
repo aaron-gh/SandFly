@@ -828,6 +828,21 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
       change("touchToActivate", if (it) true else null)
     }
 
+    changes.action(getString(R.string.script_builder_change_speech), getString(R.string.script_builder_change_speech_summary)) {
+      // A speech change for this rule's item, which edits what SandFly says for it.
+      edit { draft ->
+        draft.getOrPutArray(ScriptBuilder.SPEECH)
+          .put(
+            JSONObject()
+              .put("when", ScriptBuilder.WHEN_FOCUS)
+              .put("match", JSONObject((rule.optJSONObject("match") ?: JSONObject()).toString()))
+              .put("edits", JSONArray())
+          )
+      }
+      val speechIndex = draft()?.optJSONArray(ScriptBuilder.SPEECH)?.length()?.minus(1) ?: return@action
+      open(ScriptSpeechChangeFragment::class.java) { putInt(ScriptSpeechChangeFragment.ARG_INDEX, speechIndex) }
+    }
+
     val actions = screen.category(R.string.script_builder_actions)
     rule.optJSONArray("actions").objects().forEachIndexed { actionIndex, action ->
       actions.action(action.optString("title"), actionText(context, action)) { editAction(actionIndex) }
@@ -1561,35 +1576,42 @@ class ScriptSpeechChangeFragment : ScriptBuilderBaseFragment() {
       askOptional(getString(R.string.script_builder_has_text_optional), has) { change("has", it) }
     }
 
-    val changes = ScriptBuilder.SPEECH_CHANGES
-    val changeNames =
-      listOf(
-        R.string.script_builder_change_say,
-        R.string.script_builder_change_before,
-        R.string.script_builder_change_after,
-        R.string.script_builder_change_silence,
-        R.string.script_builder_change_replace_part,
-      ).map { getString(it) }
-    val chosen = speech.optString("change")
-    val changeCategory = screen.category(R.string.script_builder_changes)
-    changeCategory.action(getString(R.string.script_builder_speech_how), changeNames.getOrNull(changes.indexOf(chosen)) ?: notSet()) {
-      choose(getString(R.string.script_builder_speech_how), changeNames, changes.indexOf(chosen)) { change("change", changes[it]) }
-    }
-    if (chosen == ScriptBuilder.CHANGE_REPLACE_PART) {
-      val find = speech.optString("find").ifEmpty { null }
-      changeCategory.action(getString(R.string.script_builder_speech_find), find ?: notSet()) {
-        askOptional(getString(R.string.script_builder_speech_find), find) { change("find", it) }
-      }
-    }
-    if (chosen != ScriptBuilder.CHANGE_SILENCE) {
-      val text = speech.optString("text").ifEmpty { null }
-      val title = getString(if (chosen == ScriptBuilder.CHANGE_REPLACE_PART) R.string.script_builder_speech_replace_with else R.string.script_builder_speech_text)
-      changeCategory.action(title, text ?: notSet()) {
-        askText(title, text.orEmpty(), message = getString(R.string.script_builder_speech_text_help), inputType = InputType.TYPE_CLASS_TEXT) { value, _, _ ->
-          change("text", value.ifEmpty { null })
-          null
+    val edits = ScriptBuilder.editsOf(speech)
+    val editsCategory = screen.category(R.string.script_builder_edits)
+    edits.objects().forEachIndexed { i, edit ->
+      val problem = SpeechEdits.problem(edit)
+      editsCategory.action(editText(context, edit), problem?.let { getString(R.string.script_builder_not_used, it) }) {
+        val choices =
+          listOf(
+            getString(R.string.notification_edit),
+            getString(R.string.action_move_up),
+            getString(R.string.action_move_down),
+            getString(R.string.script_builder_remove),
+          )
+        choose(editText(context, edit), choices) { which ->
+          when (which) {
+            0 -> askEdit(edit.optString("op"), edit) { changed -> changeEdits { it.put(i, changed) } }
+            1 -> changeEdits { move(it, i, -1) }
+            2 -> changeEdits { move(it, i, 1) }
+            else -> changeEdits { it.removeAt(i) }
+          }
         }
       }
+    }
+    editsCategory.action(getString(R.string.script_builder_add_edit)) {
+      val ops = SpeechEdits.OPS
+      choose(getString(R.string.script_builder_add_edit), ops.map { getString(opTitle(it)) }) { which ->
+        askEdit(ops[which], null) { added -> changeEdits { it.put(added) } }
+      }
+    }
+    ItemInspector.lastText(context)?.let { sample ->
+      val result =
+        when (val applied = SpeechEdits.apply(sample, edits)) {
+          is SpeechEdits.Result.Speak -> applied.text
+          SpeechEdits.Result.Silent -> getString(R.string.script_builder_preview_silent)
+          SpeechEdits.Result.Unchanged -> sample
+        }
+      editsCategory.action(getString(R.string.script_builder_preview), result) {}.isSelectable = false
     }
     screen.category(R.string.script_builder_script).action(getString(R.string.script_builder_remove)) {
       edit { it.getJSONArray(ScriptBuilder.SPEECH).removeAt(index) }
@@ -1597,17 +1619,94 @@ class ScriptSpeechChangeFragment : ScriptBuilderBaseFragment() {
     }
   }
 
+  /** Changes the edits of this speech change, which then keep only edits, not the old single change. */
+  private fun changeEdits(block: (JSONArray) -> Unit) = edit { draft ->
+    val speech = draft.getJSONArray(ScriptBuilder.SPEECH).getJSONObject(index)
+    val edits = ScriptBuilder.editsOf(speech)
+    block(edits)
+    speech.put("edits", edits)
+    listOf("change", "text", "find").forEach(speech::remove)
+  }
+
+  /** Asks for the values of an edit of [op], with [old] filled in, and gives it to [then]. */
+  private fun askEdit(op: String, old: JSONObject?, then: (JSONObject) -> Unit) {
+    val title = getString(opTitle(op))
+    val edit = JSONObject().put("op", op)
+    fun findDialog(withSecond: Boolean, hint: Int) =
+      askText(
+        title,
+        old?.optString("find").orEmpty(),
+        hint = getString(hint),
+        message = getString(if (op == SpeechEdits.REMOVE_PARTS) R.string.script_builder_parts_help else R.string.script_builder_regex_help),
+        checkLabels = listOf(getString(R.string.macro_regex)),
+        checked = listOf(old?.optBoolean("regex") == true),
+        secondHint = if (withSecond) getString(R.string.script_builder_speech_replace_with) else null,
+        secondText = old?.optString("with").orEmpty(),
+        inputType = InputType.TYPE_CLASS_TEXT,
+      ) { find, with, checks ->
+        val regex = checks.firstOrNull() == true
+        when {
+          find.isEmpty() -> ""
+          regex && Macros.compilePattern(find) == null -> getString(R.string.macro_invalid_regex)
+          else -> null.also {
+            edit.put("find", find)
+            if (regex) edit.put("regex", true)
+            if (withSecond) edit.put("with", with)
+            then(edit)
+          }
+        }
+      }
+    when (op) {
+      SpeechEdits.REMOVE -> findDialog(false, R.string.script_builder_speech_find)
+      SpeechEdits.REPLACE -> findDialog(true, R.string.script_builder_speech_find)
+      SpeechEdits.REMOVE_PARTS -> findDialog(false, R.string.script_builder_text)
+      SpeechEdits.KEEP_PARTS ->
+        askText(title, old?.optInt("count")?.takeIf { it > 0 }?.toString() ?: "1", message = getString(R.string.script_builder_parts_help), inputType = InputType.TYPE_CLASS_NUMBER) { text, _, _ ->
+          val count = text.toIntOrNull()?.takeIf { it in 1..100 } ?: return@askText getString(R.string.macro_number_range, 1, 100)
+          null.also { then(edit.put("count", count)) }
+        }
+      SpeechEdits.SAY, SpeechEdits.BEFORE, SpeechEdits.AFTER ->
+        askText(title, old?.optString("text").orEmpty(), message = getString(R.string.script_builder_speech_text_help), inputType = InputType.TYPE_CLASS_TEXT) { text, _, _ ->
+          if (text.isEmpty()) "" else null.also { then(edit.put("text", text)) }
+        }
+      else -> then(edit)
+    }
+  }
+
   companion object {
     const val ARG_INDEX = "speech_index"
 
-    /** What [change] does to speech, in words. */
+    /** What [change] does to speech, in words: its edits. */
     fun changeText(context: Context, change: JSONObject): String =
-      when (change.optString("change")) {
-        ScriptBuilder.CHANGE_SAY -> context.getString(R.string.script_builder_change_say_value, change.optString("text"))
-        ScriptBuilder.CHANGE_BEFORE -> context.getString(R.string.script_builder_change_before_value, change.optString("text"))
-        ScriptBuilder.CHANGE_AFTER -> context.getString(R.string.script_builder_change_after_value, change.optString("text"))
-        ScriptBuilder.CHANGE_SILENCE -> context.getString(R.string.script_builder_change_silence)
-        else -> context.getString(R.string.script_builder_change_replace_value, change.optString("find"), change.optString("text"))
+      ScriptBuilder.editsOf(change).objects().joinToString("; ") { editText(context, it) }
+
+    fun opTitle(op: String): Int =
+      when (op) {
+        SpeechEdits.REMOVE -> R.string.script_builder_edit_remove
+        SpeechEdits.REPLACE -> R.string.script_builder_edit_replace
+        SpeechEdits.REMOVE_REPEATS -> R.string.script_builder_edit_remove_repeats
+        SpeechEdits.REMOVE_PARTS -> R.string.script_builder_edit_remove_parts
+        SpeechEdits.KEEP_PARTS -> R.string.script_builder_edit_keep_parts
+        SpeechEdits.SAY -> R.string.script_builder_change_say
+        SpeechEdits.BEFORE -> R.string.script_builder_change_before
+        SpeechEdits.AFTER -> R.string.script_builder_change_after
+        else -> R.string.script_builder_change_silence
       }
+
+    /** What [edit] does, in words. */
+    fun editText(context: Context, edit: JSONObject): String {
+      val find = edit.optString("find").let { if (edit.optBoolean("regex")) context.getString(R.string.macro_regex_value, it) else it }
+      return when (edit.optString("op")) {
+        SpeechEdits.REMOVE -> context.getString(R.string.script_builder_edit_remove_value, find)
+        SpeechEdits.REPLACE -> context.getString(R.string.script_builder_change_replace_value, find, edit.optString("with"))
+        SpeechEdits.REMOVE_PARTS -> context.getString(R.string.script_builder_edit_remove_parts_value, find)
+        SpeechEdits.KEEP_PARTS ->
+          context.resources.getQuantityString(R.plurals.script_builder_edit_keep_parts_value, edit.optInt("count"), edit.optInt("count"))
+        SpeechEdits.SAY -> context.getString(R.string.script_builder_change_say_value, edit.optString("text"))
+        SpeechEdits.BEFORE -> context.getString(R.string.script_builder_change_before_value, edit.optString("text"))
+        SpeechEdits.AFTER -> context.getString(R.string.script_builder_change_after_value, edit.optString("text"))
+        else -> context.getString(opTitle(edit.optString("op")))
+      }
+    }
   }
 }

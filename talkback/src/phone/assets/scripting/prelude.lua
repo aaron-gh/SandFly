@@ -1688,6 +1688,13 @@ local sf = {
     return await(call('translate', { text = tostring(text), from = text_or_nil(opts.from), to = text_or_nil(opts.to) }))
   end,
   readFile = function(path) return call('files.read', { path = tostring(path) }) end,
+  text = {
+    edit = function(text, edits) return call('text.edit', { text = tostring(text or ''), edits = edits }) end,
+    replace = function(text, pattern, with)
+      return call('text.replace', { text = tostring(text or ''), pattern = tostring(pattern), with = tostring(with or '') })
+    end,
+    find = function(text, pattern) return call('text.find', { text = tostring(text or ''), pattern = tostring(pattern) }) end,
+  },
   clock = function() return call('clock') end,
   playAudio = play_audio,
   playTone = function(frequency, ms, opts)

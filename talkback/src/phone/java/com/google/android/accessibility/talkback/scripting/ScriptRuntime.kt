@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.scripting.ScriptPermission.SYST
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Future
 import java.util.concurrent.atomic.AtomicInteger
+import com.google.android.accessibility.talkback.scripting.ScriptBuilder.objects
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -317,6 +318,21 @@ class ScriptRuntime(
     on("device.setVolume", SYSTEM) { manager.device.setVolume(it) }
     on("device.ringerMode") { manager.device.ringerMode() }
     on("device.setRingerMode", SYSTEM) { manager.device.setRingerMode(it) }
+    on("text.edit") { args ->
+      val edits = args.optJSONArray("edits") ?: JSONArray()
+      edits.objects().firstNotNullOfOrNull { SpeechEdits.problem(it) }?.let { apiError(it) }
+      SpeechEdits.hookResult(SpeechEdits.apply(args.optString("text"), edits))
+    }
+    on("text.replace") { args ->
+      val find = args.optString("pattern")
+      apiCheck(Macros.compilePattern(find) != null) { "Not a usable regular expression: $find" }
+      SpeechEdits.replace(args.optString("text").take(MAX_TEXT_EDIT), find, args.optString("with"), regex = true)
+    }
+    on("text.find") { args ->
+      val find = args.optString("pattern")
+      apiCheck(Macros.compilePattern(find) != null) { "Not a usable regular expression: $find" }
+      SpeechEdits.has(args.optString("text").take(MAX_TEXT_EDIT), find, regex = true)
+    }
     on("device.controls") { JSONArray(DeviceActions.availableControls(manager.service)) }
     on("device.get") { args ->
       when (val state = DeviceActions.state(manager.service, args.optString("name"))) {
@@ -813,6 +829,7 @@ class ScriptRuntime(
     private const val MAX_BRAILLE_CHARS = 1000
     private const val MAX_RECOGNITIONS = 2
     private const val MAX_FILE_BYTES = 1024L * 1024
+    private const val MAX_TEXT_EDIT = 10_000
     // A script passes keys with sf.keys.passAll, which ends when the script unloads.
     private val REFUSED_COMMANDS =
       setOf("TOGGLE_SCRIPTS", "KEYCOMBO:keycombo_shortcut_toggle_keyboard_input")

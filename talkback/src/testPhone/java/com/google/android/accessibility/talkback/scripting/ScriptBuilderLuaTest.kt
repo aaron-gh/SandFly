@@ -43,6 +43,7 @@ class ScriptBuilderLuaTest {
         "apiVersion" -> "6"
         "manifest" -> """{"commands":[{"id":"c1"}]}"""
         "macros.run" -> "true"
+        "text.edit" -> SpeechEdits.hookResult(SpeechEdits.apply(args!!.getString("text"), args.getJSONArray("edits"))).toString()
         else -> null
       }
     }
@@ -117,7 +118,7 @@ class ScriptBuilderLuaTest {
       JSONObject(engine.dispatch(JSONObject().put("type", "speech").put("data", JSONObject().put("text", text)).toString())!!)
     assertEquals("wireless on", speech("Wi-Fi on").getString("text"))
     val battery = speech("Battery low")
-    assertEquals(battery.toString(), "Battery low check Battery low", battery.optString("text"))
+    assertEquals(battery.toString(), "Battery low, check Battery low", battery.optString("text"))
     engine.close()
   }
 
