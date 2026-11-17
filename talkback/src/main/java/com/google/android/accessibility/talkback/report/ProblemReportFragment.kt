@@ -30,7 +30,7 @@ import androidx.preference.EditTextPreference
 import androidx.preference.ListPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceDataStore
-import androidx.preference.SwitchPreferenceCompat
+import androidx.preference.TwoStatePreference
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
@@ -51,8 +51,10 @@ class ProblemReportFragment : TalkbackBaseFragment(R.xml.problem_report_preferen
   private lateinit var description: EditTextPreference
   private lateinit var steps: EditTextPreference
   private lateinit var email: EditTextPreference
-  private lateinit var device: SwitchPreferenceCompat
-  private lateinit var log: SwitchPreferenceCompat
+  // TwoStatePreference: the switches are SwitchPreferenceCompat on phones and SwitchPreference on
+  // watches.
+  private lateinit var device: TwoStatePreference
+  private lateinit var log: TwoStatePreference
   private lateinit var send: Preference
 
   private val store by lazy { ReportStore.get(requireContext()) }
