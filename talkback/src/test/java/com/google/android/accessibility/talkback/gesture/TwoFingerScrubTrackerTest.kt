@@ -29,8 +29,10 @@ import org.robolectric.annotation.Config
 @Config(sdk = [34])
 class TwoFingerScrubTrackerTest {
   private var scrubs = 0
-  private val tracker = TwoFingerScrubTracker(STROKE) { scrubs++ }
+  private var anyDirection = false
+  private val tracker = TwoFingerScrubTracker(STROKE, { anyDirection }) { scrubs++ }
   private var time = 0L
+  private var y = 500f
 
   /** Lands two fingers 100 px apart around [x]. */
   private fun land(x: Float) {
@@ -41,6 +43,16 @@ class TwoFingerScrubTrackerTest {
   private fun moveTo(x: Float, afterMillis: Long = 20) {
     time += afterMillis
     tracker.onMotionEvent(event(MotionEvent.ACTION_MOVE, x, 2))
+  }
+
+  /** Moves the fingers at [x] from [from] to [to] up or down in steps of 10 px, 10 ms apart. */
+  private fun slideVertically(x: Float, from: Float, to: Float) {
+    val step = if (to > from) 10f else -10f
+    y = from
+    while ((to - y) * step > 0) {
+      y += step
+      moveTo(x, afterMillis = 10)
+    }
   }
 
   /** Moves from [from] to [to] in steps of 10 px, [stepMillis] apart. */
@@ -59,7 +71,7 @@ class TwoFingerScrubTrackerTest {
       Array(count) {
         MotionEvent.PointerCoords().apply {
           this.x = x - 50 + it * 100
-          y = 500f
+          this.y = this@TwoFingerScrubTrackerTest.y
         }
       }
     val props = Array(count) { i -> MotionEvent.PointerProperties().apply { id = ids[i] } }
@@ -118,6 +130,53 @@ class TwoFingerScrubTrackerTest {
     assertTrue(tracker.isTracking)
     tracker.onMotionEvent(event(MotionEvent.ACTION_UP, 800f, 1))
     assertFalse(tracker.isTracking)
+  }
+
+  @Test
+  fun downAndBack_isNotAScrubWhenOnlySidewaysCounts() {
+    land(500f)
+    slideVertically(500f, 500f, 650f)
+    slideVertically(500f, 650f, 500f)
+    assertEquals(0, scrubs)
+    assertFalse(tracker.isTracking)
+  }
+
+  @Test
+  fun downAndBack_scrubsWhenAnyDirectionCounts() {
+    anyDirection = true
+    land(500f)
+    slideVertically(500f, 500f, 650f)
+    slideVertically(500f, 650f, 500f)
+    assertEquals(1, scrubs)
+  }
+
+  @Test
+  fun outAndBack_stillScrubsWhenAnyDirectionCounts() {
+    anyDirection = true
+    land(500f)
+    slide(500f, 650f)
+    slide(650f, 500f)
+    assertEquals(1, scrubs)
+  }
+
+  @Test
+  fun slideDownThenOutAndBack_scrubsWhenAnyDirectionCounts() {
+    anyDirection = true
+    land(500f)
+    slideVertically(500f, 500f, 700f)
+    slide(500f, 650f)
+    slide(650f, 500f)
+    assertEquals(1, scrubs)
+  }
+
+  @Test
+  fun straightSwipeDown_isNotAScrubWhenAnyDirectionCounts() {
+    anyDirection = true
+    land(500f)
+    slideVertically(500f, 500f, 1000f)
+    assertEquals(0, scrubs)
+    tracker.onMotionEvent(event(MotionEvent.ACTION_UP, 500f, 1))
+    assertEquals(0, scrubs)
   }
 
   private companion object {
