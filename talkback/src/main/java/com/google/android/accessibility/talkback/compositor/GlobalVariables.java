@@ -994,7 +994,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     return mContext.getString(R.string.template_hint_wear_input_focused_adjustable);
   }
 
-  /** Returns whether Proofread is in the reading control list, so typo hints are spoken. */
+  /** Whether Proofread is in the reading control list in use, so typo hints are spoken. */
   public boolean isTypoHintOn() {
     return selectorController != null
         && selectorController.isSettingInList(Setting.GRANULARITY_TYPO);

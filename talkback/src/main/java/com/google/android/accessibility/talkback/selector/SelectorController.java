@@ -2445,14 +2445,19 @@ public class SelectorController implements UserInputEventListener {
   }
 
   /**
-   * Returns {@code true} if {@code setting} is in the user's reading control list and not hidden
-   * on this device, whatever the focused node.
+   * Returns {@code true} if {@code setting} is in the reading control list in use, or the main
+   * list while no other is in use, and not hidden on this device, whatever the focused node.
    */
   public boolean isSettingInList(Setting setting) {
-    return !hiddenSettings.contains(setting)
-        && prefs.getBoolean(
-            context.getString(setting.prefKeyResId),
-            context.getResources().getBoolean(setting.defaultValueResId));
+    if (hiddenSettings.contains(setting)) {
+      return false;
+    }
+    String key = context.getString(setting.prefKeyResId);
+    ReadingControlLists.@Nullable ControlList inUse = ReadingControlLists.inUse(prefs);
+    if (inUse != null) {
+      return inUse.getControls().contains(key);
+    }
+    return prefs.getBoolean(key, context.getResources().getBoolean(setting.defaultValueResId));
   }
 
   /**
