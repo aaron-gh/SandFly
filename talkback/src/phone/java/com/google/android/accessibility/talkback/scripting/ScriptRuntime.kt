@@ -259,9 +259,13 @@ class ScriptRuntime(
       val refused = macro!!.steps.firstOrNull { it is Macros.RunCommand && it.value in REFUSED_COMMANDS }
       apiCheck(refused == null) { "Scripts can't run ${(refused as Macros.RunCommand).value}" }
       macroPermissions(macro).forEach(::requirePermission)
+      val given = args.optJSONObject("values")
+      val values =
+        given?.keys()?.asSequence()?.filter { Macros.VALUE_NAME.matches(it) }?.take(Macros.MAX_VALUES)
+          ?.associateWith { given.opt(it)?.toString().orEmpty().take(Macros.MAX_VALUE_CHARS) }.orEmpty()
       // The macro runs on the main thread, after the script carries on.
       val scriptMacro = macro.copy(id = Macros.EXTERNAL_PREFIX + id + ":" + path)
-      android.os.Handler(android.os.Looper.getMainLooper()).post { MacroRunner.runMacro(scriptMacro) }
+      android.os.Handler(android.os.Looper.getMainLooper()).post { MacroRunner.runMacro(scriptMacro, values) }
       true
     }
     on("macros.stop", INPUT) {
@@ -776,8 +780,18 @@ class ScriptRuntime(
             (if (step.value.startsWith(SANDFLY_PRO_COMMAND_PREFIX)) SYSTEM else COMMAND_PERMISSIONS[step.value])
               ?.let(needed::add)
           is Macros.OpenApp -> needed += SYSTEM
+          is Macros.Do ->
+            when (step.kind) {
+              Macros.DoKind.COPY_TEXT -> needed += CLIPBOARD
+              Macros.DoKind.OPEN_LINK, Macros.DoKind.OPEN_SETTINGS, Macros.DoKind.SHARE_TEXT,
+              Macros.DoKind.SET_VOLUME, Macros.DoKind.SET_RINGER -> needed += SYSTEM
+              Macros.DoKind.SHOW_MESSAGE -> needed += DIALOGS
+              Macros.DoKind.FETCH, Macros.DoKind.TRANSLATE -> needed += NETWORK
+              else -> {}
+            }
           else -> {}
         }
+        if ("{clipboard}" in Macros.describeRaw(step)) needed += CLIPBOARD
       }
       return needed
     }

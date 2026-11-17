@@ -127,6 +127,7 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
         R.string.macro_test_app,
         R.string.macro_test_keyboard,
         R.string.macro_test_locked,
+        R.string.macro_test_value,
       )
     val checked =
       when (old) {
@@ -135,6 +136,7 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
         is Macros.AppInFront -> 2
         Macros.KeyboardShown -> 3
         Macros.ScreenLocked -> 4
+        is Macros.ValueIs -> 5
         null -> -1
       }
     choose(getString(R.string.macro_choose_test), kinds.map { getString(it) }, checked) { chosen ->
@@ -194,6 +196,27 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
           }
         R.string.macro_test_keyboard -> then(Macros.KeyboardShown)
         R.string.macro_test_locked -> then(Macros.ScreenLocked)
+        R.string.macro_test_value -> {
+          val value = old as? Macros.ValueIs
+          askText(
+            getString(R.string.macro_test_value),
+            text = value?.name.orEmpty(),
+            hint = getString(R.string.macro_value_name),
+            secondHint = getString(R.string.macro_test_value_label),
+            secondText = value?.label.orEmpty(),
+            checkLabels = listOf(getString(R.string.macro_regex)),
+            checked = listOf(value?.regex == true),
+            inputType = InputType.TYPE_CLASS_TEXT,
+          ) { name, label, checked ->
+            val text = label.trim().take(Macros.MAX_LABEL)
+            val regex = text.isNotEmpty() && checked.firstOrNull() == true
+            when {
+              !Macros.VALUE_NAME.matches(name) -> getString(R.string.macro_value_name_invalid)
+              regex && Macros.compilePattern(text) == null -> getString(R.string.macro_invalid_regex)
+              else -> null.also { then(Macros.ValueIs(name, text, regex)) }
+            }
+          }
+        }
       }
     }
   }
@@ -446,6 +469,7 @@ class MacroFragment : MacroEditorFragment() {
         R.string.macro_step_speak_text,
         R.string.macro_step_type,
         R.string.shortcut_title_open_app,
+        R.string.macro_step_more,
         R.string.macro_step_wait,
         R.string.macro_step_wait_until,
         R.string.macro_step_if,
@@ -474,6 +498,10 @@ class MacroFragment : MacroEditorFragment() {
         R.string.macro_step_speak_text -> askSpeakText(null, add)
         R.string.macro_step_type -> askTypeText(null, add)
         R.string.shortcut_title_open_app -> chooseOpenApp(add)
+        R.string.macro_step_more ->
+          choose(getString(R.string.macro_step_more), Macros.DoKind.entries.map { getString(it.title) }) {
+            askDo(Macros.DoKind.entries[it], null, add)
+          }
         R.string.macro_step_wait -> askWait(null, add)
         R.string.macro_step_wait_until -> askTest(null) { add(Macros.WaitUntil(condition(it))) }
         R.string.macro_step_if ->
@@ -516,6 +544,7 @@ class MacroFragment : MacroEditorFragment() {
       is Macros.SpeakText -> askSpeakText(step, replace)
       is Macros.OpenApp -> chooseOpenApp(replace)
       is Macros.TypeText -> askTypeText(step, replace)
+      is Macros.Do -> askDo(step.kind, step, replace)
       is Macros.RepeatTimes -> askTimes(step.count) { placeStep(index, Macros.RepeatTimes(it)) }
       is Macros.If, is Macros.ElseIf, is Macros.RepeatWhile, is Macros.WaitUntil ->
         open(MacroConditionFragment::class.java) {
@@ -744,11 +773,59 @@ class MacroFragment : MacroEditorFragment() {
     }
   }
 
+  /** Asks for what the [Macros.Do] step of [kind] does, with [old] filled in. */
+  private fun askDo(kind: Macros.DoKind, old: Macros.Do?, then: (Macros.Step) -> Unit) {
+    val title = getString(kind.title)
+    fun pick(options: List<String>, done: (String) -> Unit) =
+      choose(title, options, options.indexOf(old?.text)) { done(options[it]) }
+    fun number(default: Int, range: IntRange, done: (Int) -> Unit) =
+      askText(title, text = (old?.number?.takeIf { it != 0 } ?: default).toString(), inputType = InputType.TYPE_CLASS_NUMBER) { text, _, _ ->
+        val value = text.toIntOrNull()?.takeIf { it in range }
+        if (value == null) getString(R.string.macro_number_range, range.first, range.last) else null.also { done(value) }
+      }
+    fun text(hint: Int, done: (String) -> Unit) =
+      askText(title, text = old?.text.orEmpty(), hint = getString(hint), message = getString(R.string.macro_values_help)) { text, _, _ ->
+        if (text.isBlank()) "" else null.also { done(text.take(Macros.MAX_TEXT)) }
+      }
+    when (kind) {
+      Macros.DoKind.PLAY_SOUND -> pick(Macros.SOUNDS) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.VIBRATE -> number(200, 1..5_000) { then(Macros.Do(kind, number = it)) }
+      Macros.DoKind.PLAY_TONE -> number(880, 20..20_000) { then(Macros.Do(kind, number = it)) }
+      Macros.DoKind.OPEN_SETTINGS -> pick(Macros.SETTINGS_PAGES) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.SET_RINGER -> pick(Macros.RINGER_MODES) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.SET_VOLUME ->
+        choose(title, Macros.VOLUME_STREAMS, Macros.VOLUME_STREAMS.indexOf(old?.name)) { stream ->
+          number(50, 0..100) { then(Macros.Do(kind, name = Macros.VOLUME_STREAMS[stream], number = it)) }
+        }
+      Macros.DoKind.OPEN_LINK -> text(R.string.macro_do_link_hint) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.PRESS_KEYS -> text(R.string.macro_do_keys_hint) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.COPY_TEXT, Macros.DoKind.SHARE_TEXT, Macros.DoKind.SHOW_MESSAGE ->
+        text(R.string.macro_text) { then(Macros.Do(kind, it)) }
+      Macros.DoKind.SET_VALUE, Macros.DoKind.FETCH, Macros.DoKind.TRANSLATE ->
+        askText(
+          title,
+          text = old?.text.orEmpty(),
+          hint = getString(if (kind == Macros.DoKind.FETCH) R.string.macro_do_link_hint else R.string.macro_text),
+          message = getString(R.string.macro_values_help),
+          secondHint = getString(R.string.macro_value_name),
+          secondText = old?.name.orEmpty(),
+          inputType = InputType.TYPE_CLASS_TEXT,
+        ) { text, name, _ ->
+          when {
+            kind != Macros.DoKind.SET_VALUE && text.isBlank() -> ""
+            !Macros.VALUE_NAME.matches(name.trim()) -> getString(R.string.macro_value_name_invalid)
+            else -> null.also { then(Macros.Do(kind, text.take(Macros.MAX_TEXT), name.trim())) }
+          }
+        }
+    }
+  }
+
   private fun askSpeakText(step: Macros.SpeakText?, then: (Macros.Step) -> Unit) {
     askText(
       getString(R.string.macro_step_speak_text),
       text = step?.text.orEmpty(),
       hint = getString(R.string.macro_text),
+      message = getString(R.string.macro_values_help),
     ) { text, _, _ ->
       if (text.isBlank()) {
         ""

@@ -142,6 +142,138 @@ object Macros {
   /** Stops the macro. */
   data object StopMacro : Step()
 
+  /**
+   * A step that acts outside the items on screen, such as playing a sound, copying text or
+   * opening a link, or that keeps a value. What [text], [name] and [number] hold depends on
+   * [kind]. Texts can hold values, as {name}.
+   */
+  data class Do(val kind: DoKind, val text: String = "", val name: String = "", val number: Int = 0) : Step()
+
+  /** What a [Do] step does. [key] is saved and must never change once released. */
+  enum class DoKind(val key: String, @StringRes val title: Int) {
+    PLAY_SOUND("play_sound", R.string.macro_do_play_sound),
+    VIBRATE("vibrate", R.string.macro_do_vibrate),
+    PLAY_TONE("play_tone", R.string.macro_do_play_tone),
+    COPY_TEXT("copy_text", R.string.macro_do_copy_text),
+    OPEN_LINK("open_link", R.string.macro_do_open_link),
+    OPEN_SETTINGS("open_settings", R.string.macro_do_open_settings),
+    SHARE_TEXT("share_text", R.string.macro_do_share_text),
+    SET_VOLUME("set_volume", R.string.macro_do_set_volume),
+    SET_RINGER("set_ringer", R.string.macro_do_set_ringer),
+    PRESS_KEYS("press_keys", R.string.macro_do_press_keys),
+    SHOW_MESSAGE("show_message", R.string.macro_do_show_message),
+    SET_VALUE("set_value", R.string.macro_do_set_value),
+    FETCH("fetch", R.string.macro_do_fetch),
+    TRANSLATE("translate", R.string.macro_do_translate);
+
+    /** Whether the step keeps its result as the value [Do.name]. */
+    val setsValue: Boolean
+      get() = this == SET_VALUE || this == FETCH || this == TRANSLATE
+
+    companion object {
+      fun of(key: String?): DoKind? = entries.firstOrNull { it.key == key }
+    }
+  }
+
+  /** SandFly's sounds a Play sound step plays, by the names scripts give them. */
+  val SOUNDS = listOf("focus", "actionable", "click", "longClick", "scroll", "listEnter", "listExit", "end", "enter", "typo", "beep")
+
+  /** The streams a Set volume step changes, by the names scripts give them. */
+  val VOLUME_STREAMS = listOf("media", "ring", "notification", "alarm", "call", "system", "accessibility")
+
+  /** The ringer modes of a Set ringer mode step. */
+  val RINGER_MODES = listOf("normal", "vibrate", "silent")
+
+  /** The pages of Android's settings an Open settings page step opens, by the names scripts give them. */
+  val SETTINGS_PAGES =
+    listOf(
+      "settings", "wifi", "bluetooth", "mobileData", "airplaneMode", "nfc", "location", "sound", "display",
+      "battery", "batterySaver", "accessibility", "apps", "defaultApps", "notifications", "doNotDisturb",
+      "dateTime", "language", "keyboard", "storage", "security", "privacy", "developer", "about", "castScreen",
+      "hotspot",
+    )
+
+  /**
+   * Fills the values in [text]: each {name} becomes the value [values] has for it, and names
+   * without a value are left as they are.
+   */
+  @JvmStatic
+  fun fill(text: String, values: Map<String, String>): String =
+    if ('{' !in text) text
+    else VALUE_PATTERN.matcher(text).let { matcher ->
+      val out = StringBuffer()
+      while (matcher.find()) {
+        val value = values[matcher.group(1)] ?: matcher.group(0)
+        matcher.appendReplacement(out, java.util.regex.Matcher.quoteReplacement(value))
+      }
+      matcher.appendTail(out)
+      out.toString().take(MAX_TEXT)
+    }
+
+  private val VALUE_PATTERN: Pattern = Pattern.compile("\\{([A-Za-z0-9_.\\-]{1,64})\\}")
+
+  /** The most values a set of macros keeps, and characters in each. */
+  const val MAX_VALUES = 200
+  const val MAX_VALUE_CHARS = 10_000
+
+  private const val KEY_VALUES = "pref_macro_values"
+
+  /** The values kept for the macros of [scope]: the user's own macros, or one script's. */
+  @JvmStatic
+  fun values(prefs: SharedPreferences, scope: String): Map<String, String> {
+    val all = prefs.getString(KEY_VALUES, null)?.let { runCatching { JSONObject(it) }.getOrNull() } ?: return emptyMap()
+    val obj = all.optJSONObject(scope) ?: return emptyMap()
+    return obj.keys().asSequence().associateWith { obj.optString(it) }
+  }
+
+  /** Keeps [value] as [name] for the macros of [scope], or forgets it when it is null. */
+  @JvmStatic
+  fun setValue(prefs: SharedPreferences, scope: String, name: String, value: String?) {
+    val all = prefs.getString(KEY_VALUES, null)?.let { runCatching { JSONObject(it) }.getOrNull() } ?: JSONObject()
+    val obj = all.optJSONObject(scope) ?: JSONObject().also { all.put(scope, it) }
+    if (value == null) obj.remove(name)
+    else if (obj.has(name) || obj.length() < MAX_VALUES) obj.put(name, value.take(MAX_VALUE_CHARS))
+    prefs.edit { putString(KEY_VALUES, all.toString()) }
+  }
+
+  /** Forgets the values kept for the macros of [scope]. */
+  @JvmStatic
+  fun clearValues(prefs: SharedPreferences, scope: String) {
+    val all = prefs.getString(KEY_VALUES, null)?.let { runCatching { JSONObject(it) }.getOrNull() } ?: return
+    all.remove(scope)
+    prefs.edit { putString(KEY_VALUES, all.toString()) }
+  }
+
+  /** The scope of the values of the macro [id]: its script, or the user's own macros. */
+  @JvmStatic
+  fun valueScope(id: String): String =
+    if (isExternal(id)) id.removePrefix(EXTERNAL_PREFIX).substringBefore(':').let { EXTERNAL_PREFIX + it } else USER_SCOPE
+
+  const val USER_SCOPE = "user"
+
+  /**
+   * Steps that need more than SandFly's own screen code: Android's settings pages, volume, keys
+   * through Shizuku, messages, fetching and translating. The phone build sets them up when they
+   * are first needed. [done] gets whether the step worked, and the value it gives, if any.
+   */
+  interface DeviceSteps {
+    fun run(service: android.accessibilityservice.AccessibilityService, step: Do, text: String, done: (Boolean, String?) -> Unit)
+  }
+
+  @Volatile private var deviceStepsHolder: DeviceSteps? = null
+
+  @JvmStatic
+  fun deviceSteps(): DeviceSteps? {
+    deviceStepsHolder?.let { return it }
+    return try {
+      (Class.forName(DEVICE_STEPS_CLASS).getField("INSTANCE").get(null) as? DeviceSteps)?.also { deviceStepsHolder = it }
+    } catch (e: ReflectiveOperationException) {
+      null
+    }
+  }
+
+  private const val DEVICE_STEPS_CLASS = "com.google.android.accessibility.talkback.scripting.MacroDeviceSteps"
+
   /** Waits until [condition] is met, up to [timeoutMillis]; the macro stops after that. */
   data class WaitUntil(val condition: Condition, val timeoutMillis: Long = DEFAULT_WAIT_UNTIL_MS) :
     Step()
@@ -223,6 +355,12 @@ object Macros {
     val field: Field? = null,
   ) : Test()
 
+  /**
+   * The value [name] contains [label], ignoring case, or matches it as a regular expression for
+   * [regex]; or, when [label] is empty, the value isn't empty.
+   */
+  data class ValueIs(val name: String, val label: String, val regex: Boolean = false) : Test()
+
   /** The app of the active window is [packageName]. */
   data class AppInFront(val packageName: String) : Test()
 
@@ -299,6 +437,9 @@ object Macros {
   /** The longest wait, 10 minutes. */
   const val MAX_WAIT_MS = 600_000L
 
+  /** The largest number a [Do] step keeps, such as milliseconds of vibration or a tone's hertz. */
+  const val MAX_DO_NUMBER = 20_000
+
   const val DEFAULT_WAIT_UNTIL_MS = 10_000L
 
   /** The most times a repeat runs its steps in one run of a macro. */
@@ -358,6 +499,11 @@ object Macros {
   private const val TEST_APP = "app"
   private const val TEST_KEYBOARD = "keyboard"
   private const val TEST_LOCKED = "locked"
+  private const val TEST_VALUE = "value"
+  private const val TYPE_DO = "do"
+
+  /** What a value can be named: letters, digits, dots, dashes and underscores. */
+  val VALUE_NAME = Regex("^[A-Za-z0-9_.\\-]{1,64}$")
 
   @JvmStatic fun newId(): String = UUID.randomUUID().toString()
 
@@ -558,6 +704,7 @@ object Macros {
       StopMacro -> context.getString(R.string.shortcut_stop_macro)
       is WaitUntil ->
         context.getString(R.string.macro_step_wait_until_value, describe(context, step.condition))
+      is Do -> doText(context, step)
     }
 
   /** Returns [condition] as its tests joined with "and" and "or", or "No tests". */
@@ -600,8 +747,35 @@ object Macros {
         context.getString(if (not) R.string.macro_test_keyboard_hidden else R.string.macro_test_keyboard)
       ScreenLocked ->
         context.getString(if (not) R.string.macro_test_unlocked else R.string.macro_test_locked)
+      is ValueIs -> {
+        val what =
+          if (test.label.isEmpty()) context.getString(R.string.macro_test_value_set, test.name)
+          else context.getString(R.string.macro_test_value_value, test.name, labelText(context, test.label, test.regex, null))
+        if (not) context.getString(R.string.macro_test_not, what) else what
+      }
     }
   }
+
+  /** The texts [step] holds, joined, as saved: for finding the values it uses. */
+  @JvmStatic
+  fun describeRaw(step: Step): String =
+    when (step) {
+      is SpeakText -> step.text
+      is TypeText -> step.text
+      is Do -> step.text
+      else -> ""
+    }
+
+  /** Returns what the [Do] step [step] does, with its values. */
+  private fun doText(context: Context, step: Do): String =
+    when (step.kind) {
+      DoKind.VIBRATE -> context.getString(R.string.macro_do_vibrate_value, step.number)
+      DoKind.PLAY_TONE -> context.getString(R.string.macro_do_play_tone_value, step.number)
+      DoKind.SET_VOLUME -> context.getString(R.string.macro_do_set_volume_value, step.name, step.number)
+      DoKind.SET_VALUE, DoKind.FETCH, DoKind.TRANSLATE ->
+        context.getString(R.string.macro_do_into_value, context.getString(step.kind.title), step.text, step.name)
+      else -> context.getString(R.string.macro_do_value, context.getString(step.kind.title), step.text)
+    }
 
   /** Returns [label], with the [field] it is looked in, and said to be a regular expression for [regex]. */
   private fun labelText(context: Context, label: String, regex: Boolean, field: Field?): String =
@@ -986,6 +1160,13 @@ object Macros {
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
       is SpeakText -> JSONObject().put("type", TYPE_SPEAK_TEXT).put("text", step.text)
+      is Do ->
+        JSONObject()
+          .put("type", TYPE_DO)
+          .put("do", step.kind.key)
+          .apply { if (step.text.isNotEmpty()) put("text", step.text) }
+          .apply { if (step.name.isNotEmpty()) put("name", step.name) }
+          .apply { if (step.number != 0) put("number", step.number) }
       is OpenApp -> JSONObject().put("type", TYPE_OPEN_APP).put("app", step.value)
       is TypeText ->
         JSONObject().put("type", TYPE_TYPE_TEXT).put("text", step.text).put("replace", step.replace)
@@ -1028,6 +1209,12 @@ object Macros {
             is AppInFront -> JSONObject().put("test", TEST_APP).put("package", test.packageName)
             KeyboardShown -> JSONObject().put("test", TEST_KEYBOARD)
             ScreenLocked -> JSONObject().put("test", TEST_LOCKED)
+            is ValueIs ->
+              JSONObject()
+                .put("test", TEST_VALUE)
+                .put("name", test.name)
+                .put("label", test.label)
+                .apply { if (test.regex) put("regex", true) }
           }
         if (clause.not) item.put("not", true)
         if (clause.or) item.put("or", true)
@@ -1068,6 +1255,11 @@ object Macros {
               TEST_APP -> item.optString("package").takeIf { it.isNotEmpty() }?.let { AppInFront(it) }
               TEST_KEYBOARD -> KeyboardShown
               TEST_LOCKED -> ScreenLocked
+              TEST_VALUE ->
+                item.optString("name").takeIf { VALUE_NAME.matches(it) }?.let {
+                  val label = item.optString("label").take(MAX_LABEL).trim()
+                  ValueIs(it, label, label.isNotEmpty() && item.optBoolean("regex", false))
+                }
               else -> null
             } ?: return@mapNotNull null
           Clause(test, item.optBoolean("not", false), item.optBoolean("or", false))
@@ -1158,6 +1350,12 @@ object Macros {
           )
         }
       TYPE_SPEAK_TEXT -> item.optString("text").takeIf { it.isNotBlank() }?.let { SpeakText(it.take(MAX_TEXT)) }
+      TYPE_DO ->
+        DoKind.of(item.optString("do"))?.let { kind ->
+          val name = item.optString("name")
+          if (kind.setsValue && !VALUE_NAME.matches(name)) null
+          else Do(kind, item.optString("text").take(MAX_TEXT), name.take(64), item.optInt("number").coerceIn(0, MAX_DO_NUMBER))
+        }
       TYPE_OPEN_APP -> item.optString("app").takeIf { OpenAppActions.isAction(it) }?.let { OpenApp(it) }
       TYPE_TYPE_TEXT ->
         item.optString("text").takeIf { it.isNotEmpty() }?.let {

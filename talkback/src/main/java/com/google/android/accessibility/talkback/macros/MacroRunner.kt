@@ -135,13 +135,35 @@ object MacroRunner {
    * condition is met, stopping the macro running. Returns false when SandFly isn't running.
    */
   @JvmStatic
-  fun runMacro(macro: Macros.Macro): Boolean {
+  @JvmOverloads
+  fun runMacro(macro: Macros.Macro, values: Map<String, String> = emptyMap()): Boolean {
     val service = TalkBackService.getInstance() ?: return false
-    start(service, macro, sayNotMet = false, onDone = null)
+    start(service, macro, sayNotMet = false, onDone = null, values = values)
     return true
   }
 
   private const val UNSAVED_ID = ""
+
+  private const val TONE_MS = 200
+
+  /** The kinds of address an Open link step opens. */
+  private val LINK_SCHEMES = setOf("http", "https", "mailto", "tel", "sms", "smsto", "geo", "market")
+
+  /** SandFly's sounds a Play sound step plays, by [Macros.SOUNDS] names. */
+  private val SOUNDS: Map<String, Int> =
+    mapOf(
+      "focus" to R.raw.focus,
+      "actionable" to R.raw.focus_actionable,
+      "click" to R.raw.tick,
+      "longClick" to R.raw.long_clicked,
+      "scroll" to R.raw.scroll_tone,
+      "listEnter" to R.raw.chime_up,
+      "listExit" to R.raw.chime_down,
+      "end" to R.raw.complete,
+      "enter" to R.raw.view_entered,
+      "typo" to R.raw.typo,
+      "beep" to R.raw.volume_beep,
+    )
 
   private fun start(
     service: TalkBackService,
@@ -149,9 +171,10 @@ object MacroRunner {
     sayNotMet: Boolean,
     onDone: ((Boolean) -> Unit)?,
     quiet: Boolean = false,
+    values: Map<String, String> = emptyMap(),
   ) {
     stop()
-    val run = Run(service, macro, onDone, quiet)
+    val run = Run(service, macro, onDone, quiet, values)
     current = run
     run.later(0) { run.start(sayNotMet) }
   }
@@ -169,8 +192,144 @@ object MacroRunner {
     val macro: Macros.Macro,
     private var onDone: ((Boolean) -> Unit)?,
     private val quiet: Boolean = false,
+    given: Map<String, String> = emptyMap(),
   ) {
     @Volatile var finished = false
+
+    private val prefs = SharedPreferencesUtils.getSharedPreferences(service)
+    private val scope = Macros.valueScope(macro.id)
+
+    // The values of the run: those kept for its macros, then those it was given, such as the text
+    // of the notification that started it. Read on the search thread too.
+    private val values: MutableMap<String, String> =
+      java.util.concurrent.ConcurrentHashMap(Macros.values(prefs, scope) + given)
+
+    /** [text] with its values filled in, and the values every run has, such as {item}. */
+    private fun fill(text: String): String {
+      if ('{' !in text) return text
+      val all = HashMap(values)
+      if ("{item}" in text) all["item"] = focusedText()
+      if ("{clipboard}" in text) {
+        all["clipboard"] =
+          service.getSystemService(android.content.ClipboardManager::class.java)
+            ?.primaryClip?.takeIf { it.itemCount > 0 }?.getItemAt(0)?.coerceToText(service)?.toString().orEmpty()
+      }
+      val now = java.util.Date()
+      all.putIfAbsent("time", android.text.format.DateFormat.getTimeFormat(service).format(now))
+      all.putIfAbsent("date", android.text.format.DateFormat.getLongDateFormat(service).format(now))
+      return Macros.fill(text, all)
+    }
+
+    private fun focusedText(): String =
+      try {
+        service.findFocus(AccessibilityNodeInfo.FOCUS_ACCESSIBILITY)?.let { node ->
+          (node.contentDescription?.takeIf { it.isNotBlank() } ?: node.text)?.toString() ?: innerText(node)
+        }.orEmpty()
+      } catch (e: RuntimeException) {
+        ""
+      }
+
+    private fun keep(name: String, value: String) {
+      values[name] = value.take(Macros.MAX_VALUE_CHARS)
+      Macros.setValue(prefs, scope, name, value)
+    }
+
+    /** Runs the [Macros.Do] step [step] at [index]. */
+    private fun runDo(index: Int, step: Macros.Do) {
+      val text = fill(step.text)
+      val next = { later(STEP_GAP_MS) { runStep(index + 1) } }
+      when (step.kind) {
+        Macros.DoKind.SET_VALUE -> {
+          keep(step.name, text)
+          runStep(index + 1)
+        }
+        Macros.DoKind.PLAY_SOUND -> {
+          SOUNDS[step.text]?.let { service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(it)) }
+            ?: return fail(index, step, "no sound ${step.text}")
+          runStep(index + 1)
+        }
+        Macros.DoKind.VIBRATE -> {
+          val vibrator = service.getSystemService(android.os.Vibrator::class.java)
+          vibrator?.vibrate(
+            android.os.VibrationEffect.createOneShot(step.number.coerceIn(1, 5_000).toLong(), android.os.VibrationEffect.DEFAULT_AMPLITUDE)
+          )
+          runStep(index + 1)
+        }
+        Macros.DoKind.PLAY_TONE -> {
+          playTone(step.number.coerceIn(20, 20_000))
+          runStep(index + 1)
+        }
+        Macros.DoKind.COPY_TEXT -> {
+          service.getSystemService(android.content.ClipboardManager::class.java)
+            ?.setPrimaryClip(android.content.ClipData.newPlainText(macro.name, text))
+          next()
+        }
+        Macros.DoKind.OPEN_LINK -> {
+          val uri = android.net.Uri.parse(text.trim())
+          if (uri.scheme?.lowercase() !in LINK_SCHEMES) return fail(index, step, "not a link: $text")
+          try {
+            service.startActivity(
+              android.content.Intent(android.content.Intent.ACTION_VIEW, uri).addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+            )
+          } catch (e: android.content.ActivityNotFoundException) {
+            return fail(index, step, "no app opens $text")
+          }
+          next()
+        }
+        Macros.DoKind.SHARE_TEXT -> {
+          val send =
+            android.content.Intent(android.content.Intent.ACTION_SEND).setType("text/plain").putExtra(android.content.Intent.EXTRA_TEXT, text)
+          service.startActivity(
+            android.content.Intent.createChooser(send, null).addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
+          )
+          next()
+        }
+        else -> {
+          val device = Macros.deviceSteps() ?: return fail(index, step, "not in this build")
+          device.run(service, step, text) { worked, value ->
+            mainHandler.post {
+              ifActive {
+                if (!worked) {
+                  fail(index, step, value ?: "failed")
+                } else {
+                  if (step.kind.setsValue) keep(step.name, value.orEmpty())
+                  next()
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    private fun playTone(frequency: Int) {
+      val rate = 22_050
+      val samples = ShortArray(rate * TONE_MS / 1000) { i ->
+        val fade = minOf(1.0, minOf(i, rate * TONE_MS / 1000 - i) / 200.0)
+        (Math.sin(2 * Math.PI * frequency * i / rate) * 0.4 * fade * Short.MAX_VALUE).toInt().toShort()
+      }
+      val track =
+        android.media.AudioTrack.Builder()
+          .setAudioAttributes(
+            android.media.AudioAttributes.Builder()
+              .setUsage(android.media.AudioAttributes.USAGE_ASSISTANCE_ACCESSIBILITY)
+              .setContentType(android.media.AudioAttributes.CONTENT_TYPE_SONIFICATION)
+              .build()
+          )
+          .setAudioFormat(
+            android.media.AudioFormat.Builder()
+              .setSampleRate(rate)
+              .setEncoding(android.media.AudioFormat.ENCODING_PCM_16BIT)
+              .setChannelMask(android.media.AudioFormat.CHANNEL_OUT_MONO)
+              .build()
+          )
+          .setTransferMode(android.media.AudioTrack.MODE_STATIC)
+          .setBufferSizeInBytes(samples.size * 2)
+          .build()
+      track.write(samples, 0, samples.size)
+      track.play()
+      mainHandler.postDelayed({ track.release() }, TONE_MS + 200L)
+    }
 
     // Whether a step failed or the condition wasn't met.
     private var failed = false
@@ -267,16 +426,18 @@ object MacroRunner {
             }
             later(STEP_GAP_MS) { runStep(index + 1) }
           }
-          is Macros.TypeText -> typeText(index, step, SystemClock.uptimeMillis() + FIELD_TIMEOUT_MS)
+          is Macros.TypeText ->
+            typeText(index, step.copy(text = fill(step.text)), SystemClock.uptimeMillis() + FIELD_TIMEOUT_MS)
           is Macros.Tap -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.TapPosition -> tapAt(index, step)
           is Macros.TouchHold -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.FocusItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakText -> {
-            speak(step.text)
+            speak(fill(step.text))
             runStep(index + 1)
           }
+          is Macros.Do -> runDo(index, step)
         }
       } catch (e: RuntimeException) {
         fail(index, step, e.toString())
@@ -350,7 +511,7 @@ object MacroRunner {
         if (finished) return@post
         val met =
           try {
-            condition.isMet { check(service, it) }
+            condition.isMet { check(service, it, values) }
           } catch (e: RuntimeException) {
             LogUtils.w(TAG, "Cannot check a macro condition: %s", e)
             false
@@ -815,8 +976,12 @@ object MacroRunner {
   }
 
   /** Returns whether the macro condition test [test] is met. Called on the search thread. */
-  private fun check(service: TalkBackService, test: Macros.Test): Boolean =
+  private fun check(service: TalkBackService, test: Macros.Test, values: Map<String, String>): Boolean =
     when (test) {
+      is Macros.ValueIs -> {
+        val value = values[test.name].orEmpty()
+        if (test.label.isEmpty()) value.isNotEmpty() else LabelMatch(test.label, test.regex).isIn(value)
+      }
       is Macros.ItemOnScreen ->
         findItem(service, LabelMatch(test.label, test.regex), test.kind, anyMatch = true, field = test.field) != null
       is Macros.FocusedItem -> {

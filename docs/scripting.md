@@ -447,7 +447,7 @@ sf.message('Keys go to the game')
 
 ### Macros
 
-*Version 6.* `sf.macros.run(file)` runs the macro in a file of the script, such as `'macros/reply.json'`, as SandFly runs the user's macros: a list with one macro, `{ id, name, steps, condition }`, in the format of the macros in **Export to file**. It stops the macro running, if any, and gives `true` at once; the steps run after the script carries on, so it can be called from any hook. `sf.macros.stop()` stops a macro this script started. It needs `input`, `actions` and `screen`, and the permissions of the commands its steps run, as `sf.commands.run` does, and `system` to open apps. It doesn't work on SandFly's own screens.
+*Version 6.* `sf.macros.run(file, values)` runs the macro in a file of the script, such as `'macros/reply.json'`, as SandFly runs the user's macros: a list with one macro, `{ id, name, steps, condition }`, in the format of the macros in **Export to file**. It stops the macro running, if any, and gives `true` at once; the steps run after the script carries on, so it can be called from any hook. `values` is a table of texts the steps use as `{name}`, such as `{ text = a.text }`; the macro also has the values its script's macros kept with **Set value**, **Fetch link** and **Translate text**. `sf.macros.stop()` stops a macro this script started. It needs `input`, `actions` and `screen`, and the permissions of the commands its steps run, as `sf.commands.run` does: `system` to open apps, links, settings pages and the share sheet and to set the volume or ringer mode, `clipboard` to copy text or use `{clipboard}`, `dialogs` to show a message, and `network` to fetch or translate. It doesn't work on SandFly's own screens.
 
 ### SandFly's commands
 
