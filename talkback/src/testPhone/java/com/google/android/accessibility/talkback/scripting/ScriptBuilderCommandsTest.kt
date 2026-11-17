@@ -86,10 +86,10 @@ class ScriptBuilderCommandsTest {
       installed.manifest.permissions,
     )
     val main = store.readFile(id, ScriptPackage.MAIN)!!.decodeToString()
-    assertTrue(main, main.contains("""sf.onCommand("c1", function() sf.macros.run("macros/c1.json") end)"""))
+    assertTrue(main, main.contains("""sf.onCommand("c1", function(e) __sf_brun("macros/c1.json","""))
     assertFalse(main, main.contains("sf.onCommand(\"c2\""))
-    assertTrue(main, main.contains("sf.onFocus(function(item) if item:find(query) then sf.macros.run(\"macros/t1.json\") end end)"))
-    assertTrue(main, main.contains("string.find(string.lower(a.text), \"sent\", 1, true)"))
+    assertTrue(main, main.contains("sf.onFocus(function(item) if item:find(query) then __sf_brun(\"macros/t1.json\""))
+    assertTrue(main, main.contains("__sf_bhas(a.text, \"sent\")"))
     assertFalse(main, main.contains("t3"))
     val file = Macros.macroFromJson(store.readFile(id, "macros/c1.json")!!.decodeToString())!!
     assertEquals(listOf(Macros.SpeakText("Replying"), Macros.RunCommand("NEXT")), file.steps)
@@ -169,5 +169,83 @@ class ScriptBuilderCommandsTest {
     assertEquals(ScriptCommandFragment::class.java.name, screen)
     assertEquals("c1", args.getString(ScriptCommandFragment.ARG_COMMAND))
     assertNull(Macros.assignScreen(BuiltScriptMacros.idOf(id, BuiltScriptMacros.TRIGGERS, "t1")))
+  }
+
+  @Test
+  fun settingsCommandOptionsAboutAndSpeechChanges_reachTheManifest() {
+    val id = ScriptBuilder.create(context, "Full")
+    val draft = ScriptBuilder.draft(store, id)!!
+    draft
+      .put("description", "Does things")
+      .put("version", "1.2")
+      .put("homepage", "https://example.com")
+      .put("keepLoaded", true)
+      .put(
+        "settings",
+        JSONArray()
+          .put(JSONObject().put("key", "s1").put("type", "switch").put("title", "Loud").put("default", true))
+          .put(JSONObject().put("key", "s2").put("type", "button").put("title", "Reset")),
+      )
+      .put(
+        "commands",
+        JSONArray().put(
+          JSONObject().put("id", "c1").put("title", "Next").put("menu", true).put("control", true).put("gesture", "swipeUpThenRight").put("keys", "sf+n")
+            .put("macro", macroJson(Macros.SpeakText("{direction}")))
+        ),
+      )
+      .put("speech", JSONArray().put(JSONObject().put("when", "focus").put("match", JSONObject().put("id", "row")).put("change", "before").put("text", "Row")))
+      .put(
+        "rules",
+        JSONArray().put(
+          JSONObject()
+            .put("match", JSONObject().put("text", "OK").put("parentId", "bar").put("checked", false).put("inside", JSONArray().put(JSONObject().put("id", "a")).put(JSONObject().put("id", "b"))))
+            .put("label", "Confirm")
+        ),
+      )
+    ScriptBuilder.save(context, draft)
+
+    val manifest = store.find(id)!!.manifest
+    assertEquals("Does things", manifest.description)
+    assertEquals("1.2", manifest.version)
+    assertTrue(manifest.keepLoaded)
+    assertEquals(listOf("s1", "s2"), manifest.settings.map { it.key })
+    val command = manifest.commands.single()
+    assertTrue(command.menu)
+    assertTrue(command.control)
+    assertEquals(1, manifest.rules.size)
+    assertTrue(ScriptPermission.SPEECH in manifest.permissions)
+    assertTrue(ScriptPermission.SCREEN in manifest.permissions)
+    assertTrue(store.readFile(id, ScriptPackage.MAIN)!!.decodeToString().contains("sf.onFocus(function(item, said)"))
+  }
+
+  @Test
+  fun copyToBuilder_keepsManifestCodeAndFiles_andDuplicateGetsANewId() {
+    val source =
+      """local manifest = { id = 'plain', name = 'Plain', author = 'a', minApiVersion = 1, testedApiVersion = 1,
+        |  permissions = { 'speech', 'input' }, rules = { { id = 'send', label = 'Send' } }, commands = { { id = 'go', title = 'Go' } } }
+        |sf.onCommand('go', function() sf.speak(sf.readFile('data/word.txt')) end)
+        |""".trimMargin()
+    val pkg = ScriptPackage(mapOf("main.lua" to source.encodeToByteArray(), "data/word.txt" to "hi".encodeToByteArray()), ScriptManifest.parse(ManifestReader.read(source)))
+    store.install(pkg, setOf(ScriptPermission.SPEECH, ScriptPermission.INPUT))
+
+    val id = ScriptBuilder.copyToBuilder(context, store.find("plain")!!)
+
+    val copy = store.find(id)!!
+    assertEquals("Plain copy", copy.manifest.name)
+    assertEquals(listOf("go"), copy.manifest.commands.map { it.id })
+    assertEquals("Send", copy.manifest.rules.single().label)
+    assertEquals("hi", store.readFile(id, "data/word.txt")!!.decodeToString())
+    val main = store.readFile(id, ScriptPackage.MAIN)!!.decodeToString()
+    assertTrue(main, main.contains("sf.onCommand('go'"))
+
+    val again = ScriptBuilder.createFrom(context, ScriptBuilder.draft(store, id)!!, id)
+    assertTrue(again != id)
+    assertEquals("hi", store.readFile(again, "data/word.txt")!!.decodeToString())
+  }
+
+  @Test
+  fun luaSyntaxErrors_areFound() {
+    assertNull(LuaEngine.syntaxError("local x = 1\nsf.speak(x)"))
+    assertTrue(LuaEngine.syntaxError("if then end")!!.isNotEmpty())
   }
 }

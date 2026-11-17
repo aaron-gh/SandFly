@@ -79,4 +79,56 @@ class ScriptBuilderLuaTest {
     assertTrue(host.calls.map { it.first }.toString(), host.calls.any { it.first.startsWith("hook") || it.first.contains("on") })
     engine.close()
   }
+
+  @Test
+  fun everyTriggerAndSpeechChangeRuns_andSpeechChangesChangeSpeech() {
+    val macro = JSONObject(BuiltScriptMacros.macroJson(Macros.Macro("m", "", listOf(Macros.SpeakText("Hi")))))
+    val triggers = JSONArray()
+    val kinds =
+      listOf("app", "appLeave", "window", "textChange", "contentChange", "scroll", "selection", "click", "longClick", "inputFocus")
+    kinds.forEachIndexed { i, kind -> triggers.put(JSONObject().put("id", "t$i").put("when", kind).put("macro", macro)) }
+    triggers.put(JSONObject().put("id", "e").put("when", "every").put("minutes", 5).put("macro", macro))
+    triggers.put(JSONObject().put("id", "d").put("when", "daily").put("time", "08:30").put("macro", macro))
+    triggers.put(JSONObject().put("id", "b").put("when", "button").put("setting", "s1").put("macro", macro))
+    triggers.put(JSONObject().put("id", "c").put("when", "click").put("match", JSONObject().put("contains", "Send")).put("macro", macro))
+    val draft =
+      JSONObject()
+        .put("triggers", triggers)
+        .put(
+          "speech",
+          JSONArray()
+            .put(JSONObject().put("when", "speech").put("change", "replacePart").put("find", "Wi-Fi").put("text", "wireless"))
+            .put(JSONObject().put("when", "speech").put("has", "battery").put("change", "after").put("text", "check {text}"))
+            .put(JSONObject().put("when", "notification").put("app", "com.example.mail").put("change", "silence")),
+        )
+    val host = Host()
+    val engine = LuaEngine(host, false)
+    engine.start(prelude, 32L * 1024 * 1024)
+
+    engine.runMain("local manifest = {}\n" + ScriptBuilder.code(draft), "main.lua")
+
+    assertEquals(emptyList<String>(), host.errors)
+    val hooks = host.calls.last { it.first == "hooks" }.second!!.getJSONArray("names")
+    val names = (0 until hooks.length()).map { hooks.getString(it) }.toSet()
+    for (hook in listOf("appEnter", "appLeave", "windowChange", "textChange", "contentChange", "scroll", "selectionChange", "click", "longClick", "inputFocus", "button", "speech", "notification")) {
+      assertTrue("$hook in $names", hook in names)
+    }
+    fun speech(text: String) =
+      JSONObject(engine.dispatch(JSONObject().put("type", "speech").put("data", JSONObject().put("text", text)).toString())!!)
+    assertEquals("wireless on", speech("Wi-Fi on").getString("text"))
+    val battery = speech("Battery low")
+    assertEquals(battery.toString(), "Battery low check Battery low", battery.optString("text"))
+    engine.close()
+  }
+
+  @Test
+  fun afterAlone_addsToTheSpeech() {
+    val host = Host()
+    val engine = LuaEngine(host, false)
+    engine.start(prelude, 32L * 1024 * 1024)
+    engine.runMain("local manifest = {}\nsf.onSpeech(function(said) return { after = 'x' } end)", "main.lua")
+    val answer = engine.dispatch(JSONObject().put("type", "speech").put("data", JSONObject().put("text", "Battery low")).toString())
+    engine.close()
+    assertEquals("Battery low x", JSONObject(answer!!).getString("text"))
+  }
 }

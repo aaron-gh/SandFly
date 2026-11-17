@@ -44,6 +44,15 @@ object ManifestReader {
     }
   }
 
+  /** The code of [source] after its manifest's table, or all of it when there is no manifest. */
+  fun codeAfter(source: String): String {
+    val lexer = Lexer(source)
+    val start = findStart(lexer) ?: return source
+    lexer.position = start
+    Parser(lexer).table(0)
+    return source.substring(lexer.position)
+  }
+
   /** The position of the `{` of the first `manifest = {`, or null if there is none. */
   private fun findStart(lexer: Lexer): Int? {
     // The last three tokens, newest first.

@@ -46,6 +46,26 @@ class ScriptDetailFragment : ScriptScreenFragment() {
     screen.info(manifest.name, context.scriptAbout(manifest))
     if (ScriptBuilder.isBuilt(store, scriptId)) {
       screen.link(getString(R.string.script_builder_edit), null, ScriptBuilderFragment::class.java, scriptId)
+    } else {
+      screen.action(getString(R.string.script_builder_copy_to_builder)) {
+        val id =
+          try {
+            ScriptBuilder.copyToBuilder(context, script)
+          } catch (e: java.io.IOException) {
+            toast(getString(R.string.script_builder_save_failed, e.message))
+            return@action
+          } catch (e: ManifestException) {
+            toast(getString(R.string.script_builder_save_failed, e.message))
+            return@action
+          }
+        toast(getString(R.string.script_builder_copied, store.find(id)?.manifest?.name.orEmpty()))
+        onPreferenceTreeClick(
+          androidx.preference.Preference(context).apply {
+            fragment = ScriptBuilderFragment::class.java.name
+            extras.putString(ARG_ID, id)
+          }
+        )
+      }
     }
     manifest.compatibilityWarning(context)?.let {
       screen.info(getString(R.string.script_compatibility_title), it)

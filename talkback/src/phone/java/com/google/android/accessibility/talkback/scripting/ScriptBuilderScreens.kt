@@ -50,6 +50,9 @@ abstract class ScriptBuilderBaseFragment : NotificationCodeFragment(R.string.scr
       ScriptBuilder.save(requireContext(), draft)
     } catch (e: IOException) {
       Toast.makeText(requireContext(), getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
+    } catch (e: ManifestException) {
+      // The script stays as it was: the change makes a manifest SandFly refuses.
+      Toast.makeText(requireContext(), getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
     }
     rebuild()
   }
@@ -162,9 +165,10 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     BuiltScriptMacros.init(context)
     val commands = draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects()
     val commandsCategory = screen.category(R.string.script_builder_commands)
-    for (command in commands) {
-      commandsCategory.link(command.optString("title"), stepsText(command), MacroFragment::class.java) {
-        putString(MacroFragment.ARG_MACRO, BuiltScriptMacros.idOf(scriptId, BuiltScriptMacros.COMMANDS, command.getString("id")))
+    commands.forEachIndexed { index, command ->
+      commandsCategory.link(command.optString("title"), stepsText(command), ScriptBuiltCommandFragment::class.java) {
+        putString(ScriptScreenFragment.ARG_ID, scriptId)
+        putInt(ScriptBuiltCommandFragment.ARG_INDEX, index)
       }
     }
     commandsCategory.action(getString(R.string.script_builder_add_command)) {
@@ -182,9 +186,63 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     triggers.forEachIndexed { index, trigger ->
       val problem = ScriptBuilder.entryProblemText(context, trigger, ScriptBuilder.triggerProblem(trigger))
       val summary = if (problem != null) getString(R.string.script_builder_not_used, problem) else stepsText(trigger)
-      triggersCategory.action(ScriptBuilder.triggerText(context, trigger), summary) { editTrigger(index) }
+      val title =
+        if (trigger.optString("when") == ScriptBuilder.WHEN_BUTTON) {
+          getString(R.string.script_builder_when_button_value, ScriptBuilder.settingTitle(trigger.optString("setting"), draft))
+        } else {
+          ScriptBuilder.triggerText(context, trigger)
+        }
+      triggersCategory.action(title, summary) { editTrigger(index) }
     }
     triggersCategory.action(getString(R.string.script_builder_add_trigger)) { addTrigger() }
+
+    val speech = draft.optJSONArray(ScriptBuilder.SPEECH).objects()
+    val speechCategory = screen.category(R.string.script_builder_speech_changes)
+    speech.forEachIndexed { index, change ->
+      val problem = ScriptBuilder.entryProblemText(context, change, ScriptBuilder.speechProblem(change))
+      speechCategory.link(
+        ScriptBuilder.speechText(context, change),
+        problem?.let { getString(R.string.script_builder_not_used, it) } ?: ScriptSpeechChangeFragment.changeText(context, change),
+        ScriptSpeechChangeFragment::class.java,
+      ) {
+        putString(ScriptScreenFragment.ARG_ID, scriptId)
+        putInt(ScriptSpeechChangeFragment.ARG_INDEX, index)
+      }
+    }
+    speechCategory.action(getString(R.string.script_builder_add_speech_change)) {
+      edit {
+        it.getOrPutArray(ScriptBuilder.SPEECH)
+          .put(JSONObject().put("when", ScriptBuilder.WHEN_SPEECH).put("change", ScriptBuilder.CHANGE_SAY))
+      }
+      val index = draft()?.optJSONArray(ScriptBuilder.SPEECH)?.length()?.minus(1) ?: return@action
+      open(ScriptSpeechChangeFragment::class.java) { putInt(ScriptSpeechChangeFragment.ARG_INDEX, index) }
+    }
+
+    val settings = draft.optJSONArray("settings").objects()
+    val settingsCategory = screen.category(R.string.script_builder_settings)
+    settings.forEachIndexed { index, setting ->
+      settingsCategory.action(setting.optString("title"), settingText(setting)) { editSetting(index) }
+    }
+    settingsCategory.action(getString(R.string.script_builder_add_setting)) { addSetting() }
+
+    val about = screen.category(R.string.script_builder_about)
+    for ((key, title) in
+      listOf(
+        "description" to R.string.script_builder_description,
+        "version" to R.string.script_builder_version,
+        "homepage" to R.string.script_builder_homepage,
+      )) {
+      val old = draft.optString(key).ifEmpty { null }
+      about.action(getString(title), old ?: notSet()) {
+        askOptional(getString(title), old) { value -> edit { it.putOrRemove(key, value) } }
+      }
+    }
+    about.switch(getString(R.string.script_builder_on_demand), draft.optBoolean("onDemand")) { on ->
+      edit { it.putOrRemove("onDemand", if (on) true else null) }
+    }
+    about.switch(getString(R.string.script_keep_running), draft.optBoolean("keepLoaded")) { on ->
+      edit { it.putOrRemove("keepLoaded", if (on) true else null) }
+    }
 
     val codeCategory = screen.category(R.string.script_builder_code_category)
     val code = draft.optString("code")
@@ -197,6 +255,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
         code,
         inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS,
       ) { text, _, _ ->
+        LuaEngine.syntaxError(text)?.let { return@askText getString(R.string.script_builder_code_error, it) }
         edit { it.putOrRemove("code", text.ifBlank { null }) }
         null
       }
@@ -224,6 +283,19 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     val scriptCategory = screen.category(R.string.script_builder_script)
     scriptCategory.action(getString(R.string.script_builder_export)) {
       exportFile.launch(draft.optString("name").ifBlank { scriptId } + ".zip")
+    }
+    scriptCategory.action(getString(R.string.script_builder_duplicate_script)) {
+      val copy = JSONObject(draft.toString())
+      copy.put("name", getString(R.string.script_builder_copy_name, draft.optString("name")))
+      val id =
+        try {
+          ScriptBuilder.createFrom(requireContext(), copy, scriptId)
+        } catch (e: IOException) {
+          Toast.makeText(requireContext(), getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
+          return@action
+        }
+      Toast.makeText(requireContext(), getString(R.string.script_builder_copied, copy.optString("name")), Toast.LENGTH_SHORT).show()
+      open(ScriptBuilderFragment::class.java) { putString(ScriptScreenFragment.ARG_ID, id) }
     }
     scriptCategory.action(getString(R.string.script_remove)) {
       confirm(getString(R.string.script_remove_title, draft.optString("name")), R.string.script_remove) {
@@ -260,68 +332,243 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     open(MacroFragment::class.java) { putString(MacroFragment.ARG_MACRO, BuiltScriptMacros.idOf(scriptId, list, entryId)) }
   }
 
+  /** The kinds of trigger, in the order Add trigger lists them, with their names. */
+  private fun triggerKinds(): List<Pair<String, String>> =
+    listOf(
+      ScriptBuilder.WHEN_FOCUS to getString(R.string.script_builder_when_focus),
+      ScriptBuilder.WHEN_APP to getString(R.string.script_builder_when_app),
+      ScriptBuilder.WHEN_APP_LEAVE to getString(R.string.script_builder_when_app_leave),
+      ScriptBuilder.WHEN_WINDOW to getString(R.string.script_builder_when_window),
+      ScriptBuilder.WHEN_ANNOUNCEMENT to getString(R.string.script_builder_when_announcement),
+      ScriptBuilder.WHEN_NOTIFICATION to getString(R.string.script_builder_when_notification),
+    ) +
+      ScriptBuilder.NODE_TRIGGER_TITLES.map { (kind, title) -> kind to getString(title) } +
+      listOf(
+        ScriptBuilder.WHEN_EVERY to getString(R.string.script_builder_when_every),
+        ScriptBuilder.WHEN_DAILY to getString(R.string.script_builder_when_daily),
+        ScriptBuilder.WHEN_BUTTON to getString(R.string.script_builder_when_button),
+      )
+
   private fun addTrigger() {
-    val kinds =
-      listOf(
-        ScriptBuilder.WHEN_FOCUS,
-        ScriptBuilder.WHEN_APP,
-        ScriptBuilder.WHEN_WINDOW,
-        ScriptBuilder.WHEN_ANNOUNCEMENT,
-        ScriptBuilder.WHEN_NOTIFICATION,
-      )
-    val names =
-      listOf(
-        getString(R.string.script_builder_when_focus),
-        getString(R.string.script_builder_when_app),
-        getString(R.string.script_builder_when_window),
-        getString(R.string.script_builder_when_announcement),
-        getString(R.string.script_builder_when_notification),
-      )
-    choose(getString(R.string.script_builder_add_trigger), names) { which ->
+    val kinds = triggerKinds()
+    choose(getString(R.string.script_builder_add_trigger), kinds.map { it.second }) { which ->
+      val (kind, name) = kinds[which]
       val entryId = newEntryId("t")
-      val trigger = JSONObject().put("id", entryId).put("when", kinds[which])
-      when (kinds[which]) {
+      val trigger = JSONObject().put("id", entryId).put("when", kind)
+      fun add(then: () -> Unit = { openSteps(BuiltScriptMacros.TRIGGERS, entryId) }) {
+        edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger) }
+        then()
+      }
+      when (kind) {
         ScriptBuilder.WHEN_FOCUS -> {
-          edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger.put("match", JSONObject())) }
-          val index = draft()?.optJSONArray(BuiltScriptMacros.TRIGGERS)?.length()?.minus(1) ?: return@choose
-          openQuery(listOf(BuiltScriptMacros.TRIGGERS, index, "match"))
+          trigger.put("match", JSONObject())
+          add {
+            val index = draft()?.optJSONArray(BuiltScriptMacros.TRIGGERS)?.length()?.minus(1) ?: return@add
+            openQuery(listOf(BuiltScriptMacros.TRIGGERS, index, "match"))
+          }
         }
         ScriptBuilder.WHEN_ANNOUNCEMENT, ScriptBuilder.WHEN_NOTIFICATION ->
-          askText(names[which], hint = getString(R.string.script_builder_text)) { text, _, _ ->
-            if (text.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
-            edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger.put("text", text)) }
-            openSteps(BuiltScriptMacros.TRIGGERS, entryId)
+          askText(name, hint = getString(R.string.script_builder_has_text_optional), inputType = InputType.TYPE_CLASS_TEXT) { text, _, _ ->
+            trigger.put("text", text)
+            add()
             null
           }
-        else -> {
-          edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger) }
-          openSteps(BuiltScriptMacros.TRIGGERS, entryId)
-        }
+        ScriptBuilder.WHEN_EVERY -> askMinutes(null) { trigger.put("minutes", it); add() }
+        ScriptBuilder.WHEN_DAILY -> askTime(null) { trigger.put("time", it); add() }
+        ScriptBuilder.WHEN_BUTTON -> chooseButton(null) { trigger.put("setting", it); add() }
+        else -> add()
       }
+    }
+  }
+
+  private fun askMinutes(old: Int?, then: (Int) -> Unit) =
+    askText(getString(R.string.script_builder_minutes), old?.toString().orEmpty(), inputType = InputType.TYPE_CLASS_NUMBER) { text, _, _ ->
+      val minutes = text.toIntOrNull()?.takeIf { it in 1..1440 } ?: return@askText getString(R.string.macro_number_range, 1, 1440)
+      then(minutes)
+      null
+    }
+
+  private fun askTime(old: String?, then: (String) -> Unit) =
+    askText(getString(R.string.script_builder_time), old.orEmpty(), hint = "08:30", inputType = InputType.TYPE_CLASS_DATETIME or InputType.TYPE_DATETIME_VARIATION_TIME) { text, _, _ ->
+      val time = Regex("^(\\d{1,2}):(\\d{2})$").find(text.trim())?.let { m ->
+        val hour = m.groupValues[1].toInt()
+        val minute = m.groupValues[2].toInt()
+        if (hour in 0..23 && minute in 0..59) "%02d:%02d".format(hour, minute) else null
+      } ?: return@askText getString(R.string.script_builder_time_error)
+      then(time)
+      null
+    }
+
+  /** Asks for one of the draft's button settings, making one first when there is none. */
+  private fun chooseButton(old: String?, then: (String) -> Unit) {
+    val buttons = draft()?.optJSONArray("settings").objects().filter { it.optString("type") == "button" }
+    if (buttons.isNullOrEmpty()) {
+      askText(getString(R.string.script_builder_add_setting), hint = getString(R.string.script_builder_title_field)) { title, _, _ ->
+        if (title.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+        val key = newEntryId("s")
+        edit { it.getOrPutArray("settings").put(JSONObject().put("key", key).put("type", "button").put("title", title)) }
+        then(key)
+        null
+      }
+      return
+    }
+    choose(getString(R.string.script_builder_when_button), buttons.map { it.optString("title") }, buttons.indexOfFirst { it.optString("key") == old }) {
+      then(buttons[it].optString("key"))
     }
   }
 
   private fun editTrigger(index: Int) {
     val trigger = draft()?.optJSONArray(BuiltScriptMacros.TRIGGERS)?.optJSONObject(index) ?: return
     val entryId = trigger.optString("id")
-    val options = mutableListOf(getString(R.string.script_builder_steps))
-    when (trigger.optString("when")) {
-      ScriptBuilder.WHEN_FOCUS -> options += getString(R.string.script_builder_item)
-      ScriptBuilder.WHEN_ANNOUNCEMENT, ScriptBuilder.WHEN_NOTIFICATION -> options += getString(R.string.script_builder_text)
+    val kind = trigger.optString("when")
+    val steps = getString(R.string.script_builder_steps)
+    val item = getString(R.string.script_builder_item)
+    val anyItem = getString(R.string.script_builder_any_item)
+    val text = getString(R.string.script_builder_text)
+    val minutes = getString(R.string.script_builder_minutes)
+    val time = getString(R.string.script_builder_time)
+    val button = getString(R.string.script_builder_when_button)
+    val remove = getString(R.string.script_builder_remove)
+    val options = mutableListOf(steps)
+    when (kind) {
+      ScriptBuilder.WHEN_FOCUS -> options += item
+      in ScriptBuilder.NODE_TRIGGERS -> {
+        options += item
+        if ((trigger.optJSONObject("match")?.length() ?: 0) > 0) options += anyItem
+      }
+      ScriptBuilder.WHEN_ANNOUNCEMENT, ScriptBuilder.WHEN_NOTIFICATION -> options += text
+      ScriptBuilder.WHEN_EVERY -> options += minutes
+      ScriptBuilder.WHEN_DAILY -> options += time
+      ScriptBuilder.WHEN_BUTTON -> options += button
     }
-    options += getString(R.string.script_builder_remove)
+    options += remove
+    fun change(block: (JSONObject) -> Unit) = edit { block(it.getJSONArray(BuiltScriptMacros.TRIGGERS).getJSONObject(index)) }
     choose(ScriptBuilder.triggerText(requireContext(), trigger), options) { which ->
       when (options[which]) {
-        getString(R.string.script_builder_steps) -> openSteps(BuiltScriptMacros.TRIGGERS, entryId)
-        getString(R.string.script_builder_item) -> openQuery(listOf(BuiltScriptMacros.TRIGGERS, index, "match"))
-        getString(R.string.script_builder_text) ->
-          askText(getString(R.string.script_builder_text), trigger.optString("text")) { text, _, _ ->
-            if (text.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
-            edit { it.getJSONArray(BuiltScriptMacros.TRIGGERS).getJSONObject(index).put("text", text) }
+        steps -> openSteps(BuiltScriptMacros.TRIGGERS, entryId)
+        item -> openQuery(listOf(BuiltScriptMacros.TRIGGERS, index, "match"))
+        anyItem -> change { it.remove("match") }
+        text ->
+          askText(text, trigger.optString("text"), hint = getString(R.string.script_builder_has_text_optional), inputType = InputType.TYPE_CLASS_TEXT) { value, _, _ ->
+            change { it.put("text", value) }
             null
           }
+        minutes -> askMinutes(trigger.optInt("minutes")) { value -> change { it.put("minutes", value) } }
+        time -> askTime(trigger.optString("time")) { value -> change { it.put("time", value) } }
+        button -> chooseButton(trigger.optString("setting")) { value -> change { it.put("setting", value) } }
         else -> edit { it.getJSONArray(BuiltScriptMacros.TRIGGERS).removeAt(index) }
       }
+    }
+  }
+
+  private fun settingText(setting: JSONObject): String {
+    val type =
+      getString(
+        when (setting.optString("type")) {
+          "switch" -> R.string.script_builder_setting_switch
+          "list" -> R.string.script_builder_setting_list
+          "text" -> R.string.script_builder_setting_text
+          "number" -> R.string.script_builder_setting_number
+          else -> R.string.script_builder_setting_button
+        }
+      )
+    return if (setting.optString("type") == "button") type
+    else getString(R.string.script_builder_setting_value, type, "{setting.${setting.optString("key")}}")
+  }
+
+  private fun addSetting() {
+    val types = listOf("switch", "list", "text", "number", "button")
+    val names =
+      listOf(
+        R.string.script_builder_setting_switch,
+        R.string.script_builder_setting_list,
+        R.string.script_builder_setting_text,
+        R.string.script_builder_setting_number,
+        R.string.script_builder_setting_button,
+      ).map { getString(it) }
+    choose(getString(R.string.script_builder_add_setting), names) { which ->
+      askText(names[which], hint = getString(R.string.script_builder_title_field), inputType = InputType.TYPE_CLASS_TEXT) { title, _, _ ->
+        if (title.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+        val setting = JSONObject().put("key", newEntryId("s")).put("type", types[which]).put("title", title)
+        when (types[which]) {
+          "switch" -> setting.put("default", false)
+          "list" -> setting.put("options", JSONArray().put(getString(R.string.script_builder_option_one)))
+        }
+        edit { it.getOrPutArray("settings").put(setting) }
+        if (types[which] == "list") editOptions(draft()?.optJSONArray("settings")?.length()?.minus(1) ?: return@askText null)
+        null
+      }
+    }
+  }
+
+  private fun editSetting(index: Int) {
+    val setting = draft()?.optJSONArray("settings")?.optJSONObject(index) ?: return
+    val rename = getString(R.string.script_builder_rename)
+    val summary = getString(R.string.script_builder_setting_summary)
+    val default = getString(R.string.script_builder_setting_default)
+    val options = getString(R.string.script_builder_setting_options)
+    val remove = getString(R.string.script_builder_remove)
+    val type = setting.optString("type")
+    val choices =
+      listOfNotNull(
+        rename,
+        summary,
+        default.takeIf { type != "button" },
+        options.takeIf { type == "list" },
+        remove,
+      )
+    fun change(block: (JSONObject) -> Unit) = edit { block(it.getJSONArray("settings").getJSONObject(index)) }
+    choose(setting.optString("title"), choices) { which ->
+      when (choices[which]) {
+        rename ->
+          askText(rename, setting.optString("title")) { title, _, _ ->
+            if (title.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+            change { it.put("title", title) }
+            null
+          }
+        summary -> askOptional(summary, setting.optString("summary").ifEmpty { null }) { value -> change { it.putOrRemove("summary", value) } }
+        default ->
+          when (type) {
+            "switch" -> {
+              val names = listOf(getString(R.string.script_state_off), getString(R.string.script_state_on))
+              choose(default, names, if (setting.optBoolean("default")) 1 else 0) { on -> change { it.put("default", on == 1) } }
+            }
+            "list" -> {
+              val values = optionValues(setting)
+              choose(default, values, values.indexOf(setting.optString("default"))) { chosen -> change { it.put("default", values[chosen]) } }
+            }
+            "number" ->
+              askText(default, setting.opt("default")?.toString().orEmpty(), inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_SIGNED or InputType.TYPE_NUMBER_FLAG_DECIMAL) { text, _, _ ->
+                change { it.putOrRemove("default", text.toDoubleOrNull()?.let { n -> if (n % 1.0 == 0.0) n.toLong() else n }) }
+                null
+              }
+            else -> askOptional(default, setting.optString("default").ifEmpty { null }) { value -> change { it.putOrRemove("default", value) } }
+          }
+        options -> editOptions(index)
+        else -> edit { it.getJSONArray("settings").removeAt(index) }
+      }
+    }
+  }
+
+  private fun optionValues(setting: JSONObject): List<String> =
+    setting.optJSONArray("options")?.let { list -> (0 until list.length()).map { list.optString(it) } }.orEmpty()
+
+  /** Asks for the options of the list setting at [index], one a line. */
+  private fun editOptions(index: Int) {
+    val setting = draft()?.optJSONArray("settings")?.optJSONObject(index) ?: return
+    askText(
+      getString(R.string.script_builder_setting_options),
+      optionValues(setting).joinToString("\n"),
+      message = getString(R.string.script_builder_setting_options_help),
+    ) { text, _, _ ->
+      val values = text.lines().map { it.trim() }.filter { it.isNotEmpty() }.distinct()
+      if (values.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+      edit { draft ->
+        val edited = draft.getJSONArray("settings").getJSONObject(index)
+        edited.put("options", JSONArray(values))
+        if (edited.optString("default") !in values) edited.remove("default")
+      }
+      null
     }
   }
 
@@ -432,9 +679,15 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
         kindsOf(query).forEach { add(context.getString(it.title)) }
         query.optString("className").ifEmpty { null }?.let { add(context.getString(R.string.script_builder_class_value, it)) }
         query.optString("role").ifEmpty { null }?.let { add(context.getString(R.string.script_builder_role_value, it)) }
-        query.optJSONObject("inside")?.let {
-          add(context.getString(R.string.script_builder_inside_value, describeQuery(context, it)))
+        when (val inside = query.opt("inside")) {
+          is JSONObject -> add(context.getString(R.string.script_builder_inside_value, describeQuery(context, inside)))
+          is JSONArray ->
+            inside.objects().forEach { add(context.getString(R.string.script_builder_inside_value, describeQuery(context, it))) }
         }
+        listOf("text", "contentDescription", "hint", "stateDescription").forEach { key ->
+          query.optString(key).ifEmpty { null }?.let { add(context.getString(R.string.script_builder_exact_value, it)) }
+        }
+        query.optString("parentId").ifEmpty { null }?.let { add(context.getString(R.string.script_builder_parent_value, it)) }
         query.optJSONObject("has")?.let {
           add(context.getString(R.string.script_builder_has_value, describeQuery(context, it)))
         }
@@ -584,6 +837,36 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
     val manage = screen.category(R.string.script_builder_rule)
     manage.action(getString(R.string.script_move_up)) { edit { move(it.getJSONArray("rules"), index, -1) }.also { parentFragmentManager.popBackStack() } }
     manage.action(getString(R.string.script_move_down)) { edit { move(it.getJSONArray("rules"), index, 1) }.also { parentFragmentManager.popBackStack() } }
+    manage.action(getString(R.string.script_builder_duplicate_rule)) {
+      edit { draft ->
+        val rules = draft.getJSONArray("rules")
+        val copy = JSONObject(rules.getJSONObject(index).toString())
+        // The copy goes right after the rule.
+        val list = (0 until rules.length()).map { rules.get(it) }.toMutableList().apply { add(index + 1, copy) }
+        draft.put("rules", JSONArray(list))
+      }
+      parentFragmentManager.popBackStack()
+    }
+    manage.action(getString(R.string.script_builder_copy_rule)) {
+      val others = store.all().filter { it.id != scriptId && ScriptBuilder.isBuilt(store, it.id) }
+      if (others.isEmpty()) {
+        Toast.makeText(requireContext(), R.string.script_builder_no_other_scripts, Toast.LENGTH_SHORT).show()
+        return@action
+      }
+      choose(getString(R.string.script_builder_copy_rule), others.map { it.manifest.name }) { which ->
+        val target = others[which]
+        val draft = ScriptBuilder.draft(store, target.id) ?: return@choose
+        draft.getOrPutArray("rules").put(JSONObject(rule.toString()))
+        try {
+          ScriptBuilder.save(requireContext(), draft)
+          Toast.makeText(requireContext(), getString(R.string.script_builder_copied, target.manifest.name), Toast.LENGTH_SHORT).show()
+        } catch (e: IOException) {
+          Toast.makeText(requireContext(), getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
+        } catch (e: ManifestException) {
+          Toast.makeText(requireContext(), getString(R.string.script_builder_save_failed, e.message), Toast.LENGTH_LONG).show()
+        }
+      }
+    }
     manage.action(getString(R.string.script_builder_delete_rule)) {
       confirm(getString(R.string.script_builder_delete_rule), R.string.script_builder_delete) {
         edit { it.getJSONArray("rules").removeAt(index) }
@@ -780,7 +1063,7 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
 
   /** inside and has hold a query that can't hold inside or has. */
   private val nested: Boolean
-    get() = path.lastOrNull() == "inside" || path.lastOrNull() == "has"
+    get() = path.any { it == "inside" || it == "has" }
 
   private fun query(): JSONObject? = Paths.get(draft(), path) as? JSONObject
 
@@ -812,8 +1095,25 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
     screen.action(getString(R.string.macro_item_kind), ScriptBuilderFragment.kindsOf(query).joinToString(", ") { getString(it.title) }.ifEmpty { notSet() }) {
       askKinds(query)
     }
+    val exact = EXACT_FIELDS.filter { (key, _) -> query.optString(key).isNotEmpty() }
+    screen.action(
+      getString(R.string.script_builder_exact_text),
+      exact.joinToString(", ") { (key, field) -> getString(R.string.macro_field_value, query.optString(key), getString(field.title)) }.ifEmpty { notSet() },
+    ) {
+      askExactText(query)
+    }
     textRow(screen, query, "id", R.string.script_builder_id)
+    textRow(screen, query, "parentId", R.string.script_builder_parent_id)
     textRow(screen, query, "className", R.string.script_builder_class)
+    val states = STATE_TITLES.filter { (key, _) -> query.has(key) }
+    screen.action(
+      getString(R.string.script_builder_states),
+      states.joinToString(", ") { (key, title) ->
+        getString(if (query.optBoolean(key)) R.string.script_builder_state_yes else R.string.script_builder_state_no, getString(title))
+      }.ifEmpty { notSet() },
+    ) {
+      askState(query)
+    }
     screen.action(getString(R.string.script_builder_role), query.optString("role").ifEmpty { notSet() }) {
       val roles = ScriptRoles.names.sorted()
       choose(getString(R.string.script_builder_role), listOf(notSet()) + roles, roles.indexOf(query.optString("role")) + 1) {
@@ -821,8 +1121,89 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
       }
     }
     if (!nested) {
-      subQueryRow(screen, query, "inside", R.string.script_builder_inside)
+      insideRows(screen, query)
       subQueryRow(screen, query, "has", R.string.script_builder_has)
+    }
+  }
+
+  /** A row for each item the item is inside, and one that adds another, up to four. */
+  private fun insideRows(group: PreferenceGroup, query: JSONObject) {
+    val inside: List<JSONObject> =
+      when (val value = query.opt("inside")) {
+        is JSONObject -> listOf(value)
+        is JSONArray -> value.objects()
+        else -> emptyList()
+      }
+    inside.forEachIndexed { i, sub ->
+      group.action(getString(R.string.script_builder_inside), ScriptBuilderFragment.describeQuery(requireContext(), sub)) {
+        choose(getString(R.string.script_builder_inside), listOf(getString(R.string.script_builder_item), getString(R.string.script_builder_remove))) {
+          if (it == 0) {
+            insideAsList()
+            openQuery(path + "inside" + i)
+          } else {
+            edit { draft ->
+              val target = Paths.get(draft, path) as? JSONObject ?: return@edit
+              val list = (target.opt("inside") as? JSONArray)?.objects() ?: listOfNotNull(target.optJSONObject("inside"))
+              val left = list.filterIndexed { j, _ -> j != i }
+              if (left.isEmpty()) target.remove("inside") else target.put("inside", JSONArray(left))
+            }
+          }
+        }
+      }
+    }
+    if (inside.size < MAX_INSIDE) {
+      group.action(getString(R.string.script_builder_add_inside)) {
+        insideAsList()
+        openQuery(path + "inside" + inside.size)
+      }
+    }
+  }
+
+  /** Keeps the items the item is inside as a list, so that each has an index in the path. */
+  private fun insideAsList() {
+    val query = query() ?: return
+    if (query.opt("inside") is JSONObject) edit { draft ->
+      val target = Paths.get(draft, path) as? JSONObject ?: return@edit
+      target.put("inside", JSONArray().put(target.getJSONObject("inside")))
+    }
+    if (query.opt("inside") == null) edit { draft -> (Paths.get(draft, path) as? JSONObject)?.put("inside", JSONArray()) }
+  }
+
+  /** Asks for a text the item has exactly, in one of its texts; an empty text clears that one. */
+  private fun askExactText(query: JSONObject) {
+    val fields = EXACT_FIELDS.map { it.second }
+    val first = EXACT_FIELDS.firstOrNull { (key, _) -> query.optString(key).isNotEmpty() }
+    val choice =
+      DialogChoice(getString(R.string.macro_match_in), fields.map { getString(it.title) }, EXACT_FIELDS.indexOf(first).coerceAtLeast(0))
+    askText(
+      getString(R.string.script_builder_exact_text),
+      first?.let { query.optString(it.first) }.orEmpty(),
+      hint = getString(R.string.script_builder_text),
+      choice = choice,
+      inputType = InputType.TYPE_CLASS_TEXT,
+    ) { text, _, _ ->
+      change(EXACT_FIELDS[choice.selected].first, text.ifEmpty { null })
+      null
+    }
+  }
+
+  /** Asks for a state and whether the item must have it. */
+  private fun askState(query: JSONObject) {
+    val names = STATE_TITLES.map { (key, title) ->
+      val value =
+        when {
+          !query.has(key) -> notSet()
+          query.optBoolean(key) -> getString(R.string.script_builder_yes)
+          else -> getString(R.string.script_builder_no)
+        }
+      getString(R.string.script_builder_state_choice, getString(title), value)
+    }
+    choose(getString(R.string.script_builder_states), names) { which ->
+      val (key, title) = STATE_TITLES[which]
+      val values = listOf(null, true, false)
+      val labels = listOf(notSet(), getString(R.string.script_builder_yes), getString(R.string.script_builder_no))
+      val current = if (query.has(key)) query.optBoolean(key) else null
+      choose(getString(title), labels, values.indexOf(current)) { change(key, values[it]) }
     }
   }
 
@@ -913,7 +1294,36 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
     const val ARG_PATH = "query_path"
 
     /** The fields of a query this screen sets, and Use the inspected item replaces. */
-    private val QUERY_KEYS = listOf("id", "contains", "matches", "field", "kind", "className", "role")
+    private val QUERY_KEYS = listOf("id", "contains", "matches", "field", "kind", "className", "role", "has")
+
+    /** The texts an item can have exactly, by their query fields. */
+    private val EXACT_FIELDS =
+      listOf(
+        "text" to Macros.Field.TEXT,
+        "contentDescription" to Macros.Field.DESCRIPTION,
+        "hint" to Macros.Field.HINT,
+        "stateDescription" to Macros.Field.STATE,
+      )
+
+    /** The states a query can require, by their query fields. */
+    private val STATE_TITLES =
+      listOf(
+        "clickable" to R.string.macro_kind_clickable,
+        "longClickable" to R.string.macro_kind_long_clickable,
+        "checkable" to R.string.macro_kind_checkable,
+        "checked" to R.string.macro_kind_checked,
+        "selected" to R.string.macro_kind_selected,
+        "enabled" to R.string.macro_kind_enabled,
+        "editable" to R.string.macro_kind_editable,
+        "scrollable" to R.string.macro_kind_scrollable,
+        "heading" to R.string.macro_kind_heading,
+        "focusable" to R.string.script_builder_state_focusable,
+        "focused" to R.string.script_builder_state_focused,
+        "visible" to R.string.script_builder_state_visible,
+        "password" to R.string.script_builder_state_password,
+      )
+
+    private const val MAX_INSIDE = 4
   }
 }
 
@@ -1010,5 +1420,185 @@ class ScriptRulePickFragment : NotificationCodeFragment(R.string.script_builder_
         extras.putInt(ScriptRuleFragment.ARG_INDEX, index)
       }
     )
+  }
+}
+
+/** A command of a built script: its steps, and how it is offered by default. */
+class ScriptBuiltCommandFragment : ScriptBuilderBaseFragment() {
+  private val index: Int by lazy { requireArguments().getInt(ARG_INDEX) }
+
+  private fun command(): JSONObject? = draft()?.optJSONArray(BuiltScriptMacros.COMMANDS)?.optJSONObject(index)
+
+  private fun change(key: String, value: Any?) = edit { draft ->
+    draft.getJSONArray(BuiltScriptMacros.COMMANDS).getJSONObject(index).putOrRemove(key, value)
+  }
+
+  override fun getTitle(): CharSequence = command()?.optString("title") ?: getText(R.string.script_builder_commands)
+
+  override fun build(screen: PreferenceGroup) {
+    val command = command() ?: return
+    val context = requireContext()
+    BuiltScriptMacros.init(context)
+    val macroId = BuiltScriptMacros.idOf(scriptId, BuiltScriptMacros.COMMANDS, command.optString("id"))
+    screen.link(getString(R.string.script_builder_steps), null, MacroFragment::class.java) {
+      putString(MacroFragment.ARG_MACRO, macroId)
+    }
+    screen.link(getString(R.string.menu_assign), null, ScriptCommandFragment::class.java) {
+      putString(ScriptScreenFragment.ARG_ID, scriptId)
+      putString(ScriptCommandFragment.ARG_COMMAND, command.optString("id"))
+    }
+    val defaults = screen.category(R.string.script_builder_command_defaults)
+    defaults.switch(getString(R.string.script_builder_command_menu), command.optBoolean("menu")) { change("menu", if (it) true else null) }
+    defaults.switch(getString(R.string.script_builder_command_control), command.optBoolean("control")) {
+      change("control", if (it) true else null)
+    }
+    val gesture = command.optString("gesture").ifEmpty { null }
+    defaults.action(
+      getString(R.string.script_builder_command_gesture),
+      gesture?.let { ScriptInput.gestureTitle(context, it) } ?: notSet(),
+    ) {
+      val names = ScriptInput.gestureNames
+      choose(
+        getString(R.string.script_builder_command_gesture),
+        listOf(notSet()) + names.map { ScriptInput.gestureTitle(context, it) },
+        names.indexOf(gesture) + 1,
+      ) {
+        change("gesture", names.getOrNull(it - 1))
+      }
+    }
+    val keys = command.optString("keys").ifEmpty { null }
+    defaults.action(getString(R.string.script_builder_command_keys), keys ?: notSet()) {
+      askOptional(getString(R.string.script_builder_command_keys), keys) { change("keys", it) }
+    }
+    val manage = screen.category(R.string.script_builder_script)
+    manage.action(getString(R.string.script_builder_rename)) {
+      askText(getString(R.string.script_builder_rename), command.optString("title")) { title, _, _ ->
+        if (title.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+        change("title", title)
+        activity?.title = title
+        null
+      }
+    }
+    manage.action(getString(R.string.menu_delete)) {
+      confirm(getString(R.string.macro_delete_confirm, command.optString("title")), R.string.menu_delete) {
+        edit { it.getJSONArray(BuiltScriptMacros.COMMANDS).removeAt(index) }
+        parentFragmentManager.popBackStack()
+      }
+    }
+  }
+
+  companion object {
+    const val ARG_INDEX = "command_index"
+  }
+}
+
+/** A speech change of a built script: what speech it changes, and how. */
+class ScriptSpeechChangeFragment : ScriptBuilderBaseFragment() {
+  private val index: Int by lazy { requireArguments().getInt(ARG_INDEX) }
+
+  private fun speech(): JSONObject? = draft()?.optJSONArray(ScriptBuilder.SPEECH)?.optJSONObject(index)
+
+  private fun change(key: String, value: Any?) = edit { draft ->
+    draft.getJSONArray(ScriptBuilder.SPEECH).getJSONObject(index).putOrRemove(key, value)
+  }
+
+  override fun getTitle(): CharSequence = getText(R.string.script_builder_speech_change)
+
+  override fun build(screen: PreferenceGroup) {
+    val speech = speech() ?: return
+    val context = requireContext()
+    ScriptBuilder.entryProblemText(context, speech, ScriptBuilder.speechProblem(speech))?.let {
+      screen.action(getString(R.string.script_builder_not_used, it)) {}.isSelectable = false
+    }
+    val whenKinds = ScriptBuilder.SPEECH_WHEN
+    val whenNames =
+      listOf(
+        R.string.script_builder_speech_focus,
+        R.string.script_builder_speech_notifications,
+        R.string.script_builder_speech_announcements,
+        R.string.script_builder_speech_all,
+      ).map { getString(it) }
+    val kind = speech.optString("when")
+    screen.action(getString(R.string.script_builder_speech_which), whenNames.getOrNull(whenKinds.indexOf(kind)) ?: notSet()) {
+      choose(getString(R.string.script_builder_speech_which), whenNames, whenKinds.indexOf(kind)) { which ->
+        edit { draft ->
+          val edited = draft.getJSONArray(ScriptBuilder.SPEECH).getJSONObject(index)
+          edited.put("when", whenKinds[which])
+          if (whenKinds[which] == ScriptBuilder.WHEN_FOCUS) {
+            if (edited.optJSONObject("match") == null) edited.put("match", JSONObject())
+          } else {
+            edited.remove("match")
+          }
+          if (whenKinds[which] != ScriptBuilder.WHEN_NOTIFICATION && whenKinds[which] != ScriptBuilder.WHEN_ANNOUNCEMENT) {
+            edited.remove("app")
+          }
+        }
+      }
+    }
+    when (kind) {
+      ScriptBuilder.WHEN_FOCUS ->
+        screen.action(getString(R.string.script_builder_item), ScriptBuilderFragment.describeQuery(context, speech.optJSONObject("match"))) {
+          openQuery(listOf(ScriptBuilder.SPEECH, index, "match"))
+        }
+      ScriptBuilder.WHEN_NOTIFICATION, ScriptBuilder.WHEN_ANNOUNCEMENT -> {
+        val app = speech.optString("app").ifEmpty { null }
+        screen.action(getString(R.string.script_builder_speech_app), app?.let { ScriptBuilderFragment.appText(context, it) } ?: getString(R.string.script_builder_all_apps)) {
+          chooseApp(getString(R.string.script_builder_all_apps)) { packageName, _ -> change("app", packageName.ifEmpty { null }) }
+        }
+      }
+    }
+    val has = speech.optString("has").ifEmpty { null }
+    screen.action(getString(R.string.script_builder_has_text_optional), has ?: notSet()) {
+      askOptional(getString(R.string.script_builder_has_text_optional), has) { change("has", it) }
+    }
+
+    val changes = ScriptBuilder.SPEECH_CHANGES
+    val changeNames =
+      listOf(
+        R.string.script_builder_change_say,
+        R.string.script_builder_change_before,
+        R.string.script_builder_change_after,
+        R.string.script_builder_change_silence,
+        R.string.script_builder_change_replace_part,
+      ).map { getString(it) }
+    val chosen = speech.optString("change")
+    val changeCategory = screen.category(R.string.script_builder_changes)
+    changeCategory.action(getString(R.string.script_builder_speech_how), changeNames.getOrNull(changes.indexOf(chosen)) ?: notSet()) {
+      choose(getString(R.string.script_builder_speech_how), changeNames, changes.indexOf(chosen)) { change("change", changes[it]) }
+    }
+    if (chosen == ScriptBuilder.CHANGE_REPLACE_PART) {
+      val find = speech.optString("find").ifEmpty { null }
+      changeCategory.action(getString(R.string.script_builder_speech_find), find ?: notSet()) {
+        askOptional(getString(R.string.script_builder_speech_find), find) { change("find", it) }
+      }
+    }
+    if (chosen != ScriptBuilder.CHANGE_SILENCE) {
+      val text = speech.optString("text").ifEmpty { null }
+      val title = getString(if (chosen == ScriptBuilder.CHANGE_REPLACE_PART) R.string.script_builder_speech_replace_with else R.string.script_builder_speech_text)
+      changeCategory.action(title, text ?: notSet()) {
+        askText(title, text.orEmpty(), message = getString(R.string.script_builder_speech_text_help), inputType = InputType.TYPE_CLASS_TEXT) { value, _, _ ->
+          change("text", value.ifEmpty { null })
+          null
+        }
+      }
+    }
+    screen.category(R.string.script_builder_script).action(getString(R.string.script_builder_remove)) {
+      edit { it.getJSONArray(ScriptBuilder.SPEECH).removeAt(index) }
+      parentFragmentManager.popBackStack()
+    }
+  }
+
+  companion object {
+    const val ARG_INDEX = "speech_index"
+
+    /** What [change] does to speech, in words. */
+    fun changeText(context: Context, change: JSONObject): String =
+      when (change.optString("change")) {
+        ScriptBuilder.CHANGE_SAY -> context.getString(R.string.script_builder_change_say_value, change.optString("text"))
+        ScriptBuilder.CHANGE_BEFORE -> context.getString(R.string.script_builder_change_before_value, change.optString("text"))
+        ScriptBuilder.CHANGE_AFTER -> context.getString(R.string.script_builder_change_after_value, change.optString("text"))
+        ScriptBuilder.CHANGE_SILENCE -> context.getString(R.string.script_builder_change_silence)
+        else -> context.getString(R.string.script_builder_change_replace_value, change.optString("find"), change.optString("text"))
+      }
   }
 }

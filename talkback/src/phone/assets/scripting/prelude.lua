@@ -889,8 +889,9 @@ local function speech_of(result, text)
   elseif type(result.speak) == 'string' then
     return result.speak
   end
+  -- Not ipairs: it would stop at a missing before, and drop the text and after.
   local parts = {}
-  for _, part in ipairs({ result.before, text, result.after }) do
+  for _, part in ipairs({ result.before or false, text or false, result.after or false }) do
     if type(part) == 'string' then
       parts[#parts + 1] = part
     end
