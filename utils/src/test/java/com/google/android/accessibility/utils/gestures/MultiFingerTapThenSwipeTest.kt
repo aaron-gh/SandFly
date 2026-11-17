@@ -95,7 +95,7 @@ class MultiFingerTapThenSwipeTest {
   private val fingerGap = pixelsPerCm
   private var downTime = 0L
 
-  private fun wait(ms: Long) = ShadowLooper.idleMainLooper(ms, TimeUnit.MILLISECONDS)
+  private fun idle(ms: Long) = ShadowLooper.idleMainLooper(ms, TimeUnit.MILLISECONDS)
 
   /** Sends [action] for the first [count] fingers, each moved by [dx] and [dy] pixels. */
   private fun send(action: Int, actionIndex: Int, count: Int, dx: Float = 0f, dy: Float = 0f) {
@@ -146,7 +146,7 @@ class MultiFingerTapThenSwipeTest {
     downTime = SystemClock.uptimeMillis()
     send(ACTION_DOWN, 0, 1)
     for (i in 1 until fingers) {
-      wait(5)
+      idle(5)
       send(ACTION_POINTER_DOWN, i, i + 1)
     }
   }
@@ -154,7 +154,7 @@ class MultiFingerTapThenSwipeTest {
   private fun fingersUp(fingers: Int, dx: Float = 0f, dy: Float = 0f) {
     for (i in fingers - 1 downTo 1) {
       send(ACTION_POINTER_UP, i, i + 1, dx, dy)
-      wait(5)
+      idle(5)
     }
     send(ACTION_UP, 0, 1, dx, dy)
   }
@@ -163,9 +163,9 @@ class MultiFingerTapThenSwipeTest {
   private fun taps(fingers: Int, taps: Int) {
     repeat(taps) {
       fingersDown(fingers)
-      wait(50)
+      idle(50)
       fingersUp(fingers)
-      wait(100)
+      idle(100)
     }
   }
 
@@ -175,7 +175,7 @@ class MultiFingerTapThenSwipeTest {
     var dx = 0f
     var dy = 0f
     repeat(10) {
-      wait(10)
+      idle(10)
       dx += dxCm * 0.3f * pixelsPerCm
       dy += dyCm * 0.3f * pixelsPerCm
       send(ACTION_MOVE, 0, fingers, dx, dy)
@@ -212,7 +212,7 @@ class MultiFingerTapThenSwipeTest {
     assigned += GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP
     taps(fingers = 2, taps = 2)
     swipe(fingers = 2, dxCm = 1f, dyCm = 0f)
-    wait(1000)
+    idle(1000)
     assertEquals(listOf<Int>(), completed)
   }
 
@@ -221,7 +221,7 @@ class MultiFingerTapThenSwipeTest {
     assigned += GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP
     taps(fingers = 2, taps = 1)
     swipe(fingers = 2, dxCm = 0f, dyCm = -1f)
-    wait(1000)
+    idle(1000)
     assertEquals(false, GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP in completed)
   }
 
@@ -229,7 +229,7 @@ class MultiFingerTapThenSwipeTest {
   fun lateSwipeIsNotTheGesture() {
     assigned += listOf(GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP, GESTURE_2_FINGER_DOUBLE_TAP)
     taps(fingers = 2, taps = 2)
-    wait(1000)
+    idle(1000)
     swipe(fingers = 2, dxCm = 0f, dyCm = -1f)
     assertEquals(listOf(GESTURE_2_FINGER_DOUBLE_TAP), completed)
   }
@@ -238,14 +238,14 @@ class MultiFingerTapThenSwipeTest {
   fun doubleTapWaitsForASwipeThatHasAnAction() {
     assigned += listOf(GESTURE_2_FINGER_DOUBLE_TAP, GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP)
     fingersDown(2)
-    wait(50)
+    idle(50)
     fingersUp(2)
-    wait(100)
+    idle(100)
     fingersDown(2)
-    wait(50)
+    idle(50)
     fingersUp(2)
     assertEquals(listOf<Int>(), completed)
-    wait(1000)
+    idle(1000)
     assertEquals(listOf(GESTURE_2_FINGER_DOUBLE_TAP), completed)
   }
 
@@ -254,11 +254,11 @@ class MultiFingerTapThenSwipeTest {
     // Only a swipe after a single tap has an action, which can't follow a double tap.
     assigned += listOf(GESTURE_2_FINGER_DOUBLE_TAP, GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT)
     fingersDown(2)
-    wait(50)
+    idle(50)
     fingersUp(2)
-    wait(100)
+    idle(100)
     fingersDown(2)
-    wait(50)
+    idle(50)
     fingersUp(2)
     assertEquals(listOf(GESTURE_2_FINGER_DOUBLE_TAP), completed)
   }
@@ -267,10 +267,10 @@ class MultiFingerTapThenSwipeTest {
   fun singleTapWaitsForASwipeThatHasAnAction() {
     assigned += listOf(GESTURE_2_FINGER_SINGLE_TAP, GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT)
     fingersDown(2)
-    wait(50)
+    idle(50)
     fingersUp(2)
     assertEquals(listOf<Int>(), completed)
-    wait(1000)
+    idle(1000)
     assertEquals(listOf(GESTURE_2_FINGER_SINGLE_TAP), completed)
   }
 }
