@@ -73,6 +73,7 @@ object ItemInspector {
         "role" to role,
         "appRole" to ScriptRoles.appRole(node).takeIf { it != role },
         "className" to node.className,
+        "kind" to kinds(node).joinToString(", ") { it.scriptName },
         "rules" to Scripts.rule(node)?.sources?.joinToString("; "),
       ) +
         listOfNotNull(
@@ -121,9 +122,10 @@ object ItemInspector {
 
   /** The macro item types [node] is, by their titles in a test's Item type list. */
   private fun itemTypes(context: Context, node: AccessibilityNodeInfoCompat): List<String> =
-    Macros.Kind.entries
-      .filter { MacroRunner.isKind(node.unwrap(), it) }
-      .map { context.getString(it.title) }
+    kinds(node).map { context.getString(it.title) }
+
+  private fun kinds(node: AccessibilityNodeInfoCompat): List<Macros.Kind> =
+    Macros.Kind.entries.filter { MacroRunner.isKind(node.unwrap(), it) }
 
   /**
    * The texts of the items in [node], up to [MAX_INNER_TEXTS]. A Focused item test matches these

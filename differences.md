@@ -1217,7 +1217,7 @@ The first time an app asks, SandFly posts a notification that asks whether to al
 
 ### Inspect focused item, Copy item details and Copy screen tree
 
-**Inspect focused item** opens a window with the focused item's details under headings: Texts (text, description, hint and state, as a macro's **Match in** list names them), Item types (the macro item types it is, such as Clickable or Heading), Items inside, Script details (id, role, class and rules) and App (app, activity and window). **Copy all** copies them as text; activating a line copies its value. **Copy item details** copies the same details without opening the window. **Copy screen tree** copies every item on screen as JSON. Assign any of them to a gesture in gesture settings, or add them to the SandFly menu in **SandFly menu**, under **Controls**.
+**Inspect focused item** opens a window with the focused item's details under headings: Texts (text, description, hint and state, as a macro's **Match in** list names them), Item types (the macro item types it is, such as Clickable or Heading), Items inside, Script details (id, role, class, the item types by their script names, and rules) and App (app, activity and window). **Copy all** copies them as text; activating a line copies its value. **Copy item details** copies the same details without opening the window. **Copy screen tree** copies every item on screen as JSON. Assign any of them to a gesture in gesture settings, or add them to the SandFly menu in **SandFly menu**, under **Controls**.
 
 ## Settings
 

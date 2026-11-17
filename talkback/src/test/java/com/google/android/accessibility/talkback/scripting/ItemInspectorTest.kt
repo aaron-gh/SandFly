@@ -62,6 +62,7 @@ class ItemInspectorTest {
 
     assertTrue(text, text.startsWith("Texts\ndescription: New post\n\nItem types\nClickable\nEnabled\n\nItems inside\ntext: Plus\n\nScript details\n"))
     assertTrue(text, text.contains("No id, so script rules can't name it"))
+    assertTrue(text, text.contains("kind: clickable, enabled"))
     assertFalse(text, text.contains("\ntext: New post"))
   }
 
