@@ -1394,6 +1394,7 @@ public abstract class Feedback {
     public enum Action {
       START_AT_TOP,
       START_AT_CURSOR,
+      START_AT_CURSOR_BY_READING_CONTROL,
       READ_FOCUSED_CONTENT,
       INTERRUPT,
       IGNORE,

@@ -2416,6 +2416,8 @@
      Description: Looks for keyword "read from cursor item" or "read from cursor" to see if user has asked to read from cursor. [CHAR LIMIT=40]
     -->
     <string name="shortcut_read_from_current">Read from focused item</string>
+    <!-- Command that reads continuously from the focused item, moving only to items of the selected reading control, such as headings, links or controls. [CHAR_LIMIT=60] -->
+    <string name="shortcut_read_from_current_by_reading_control">Read from focused item by reading control</string>
     <!-- Label for the shortcut that prints the node tree to LogCat. [CHAR_LIMIT=40] -->
     <string name="shortcut_print_node_tree">Print node tree</string>
     <!-- Label for the shortcut that prints performance statistics to LogCat. [CHAR_LIMIT=40] -->

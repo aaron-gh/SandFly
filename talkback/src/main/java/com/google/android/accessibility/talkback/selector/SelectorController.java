@@ -1498,6 +1498,28 @@ public class SelectorController implements UserInputEventListener {
     }
   }
 
+  /**
+   * The granularity that Read from focused item by reading control moves by: that of the selected
+   * reading control when it moves between items of one kind, such as headings, links or controls;
+   * otherwise {@link CursorGranularity#DEFAULT}, every item.
+   */
+  public static CursorGranularity readingGranularity(Context context) {
+    return readingGranularityOf(getCurrentSetting(context));
+  }
+
+  /** {@link #readingGranularity(Context)} for the reading control {@code setting}. */
+  @VisibleForTesting
+  static CursorGranularity readingGranularityOf(Setting setting) {
+    for (Granularity granularity : Granularity.getFromSetting(setting)) {
+      CursorGranularity cursorGranularity = granularity.cursorGranularity;
+      if (cursorGranularity.isNativeMacroGranularity()
+          || cursorGranularity.isWebOnlyGranularity()) {
+        return cursorGranularity;
+      }
+    }
+    return CursorGranularity.DEFAULT;
+  }
+
   /** Gets the current setting from the preference. */
   public static Setting getCurrentSetting(Context context) {
     return getCurrentSetting(context, SharedPreferencesUtils.getSharedPreferences(context));

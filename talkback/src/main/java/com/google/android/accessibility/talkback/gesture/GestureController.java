@@ -24,6 +24,7 @@ import static com.google.android.accessibility.talkback.Feedback.AdjustVolume.Ac
 import static com.google.android.accessibility.talkback.Feedback.AdjustVolume.StreamType.STREAM_TYPE_ACCESSIBILITY;
 import static com.google.android.accessibility.talkback.Feedback.BrailleDisplay.Action.TOGGLE_BRAILLE_DISPLAY_ON_OR_OFF;
 import static com.google.android.accessibility.talkback.Feedback.ContinuousRead.Action.START_AT_CURSOR;
+import static com.google.android.accessibility.talkback.Feedback.ContinuousRead.Action.START_AT_CURSOR_BY_READING_CONTROL;
 import static com.google.android.accessibility.talkback.Feedback.ContinuousRead.Action.START_AT_TOP;
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.BRIGHTEN;
 import static com.google.android.accessibility.talkback.Feedback.DimScreen.Action.DIM;
@@ -736,6 +737,11 @@ public class GestureController {
       result = pipeline.returnFeedback(eventId, Feedback.continuousRead(START_AT_TOP));
     } else if (action.equals(service.getString(R.string.shortcut_value_read_from_current))) {
       result = pipeline.returnFeedback(eventId, Feedback.continuousRead(START_AT_CURSOR));
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_read_from_current_by_reading_control))) {
+      result =
+          pipeline.returnFeedback(
+              eventId, Feedback.continuousRead(START_AT_CURSOR_BY_READING_CONTROL));
     } else if (action.equals(service.getString(R.string.shortcut_value_print_node_tree))) {
       TreeDebugRenderer.FocusIndicatorSpec focusIndicatorSpec = null;
       if (DebugProperties.includeScreenshotWithTreeDebug(service)) {
