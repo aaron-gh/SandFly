@@ -37,11 +37,11 @@ import kotlin.math.hypot
 /**
  * Opens an app by the start of its name, written on the screen. Each piece of writing adds to the
  * letters, and SandFly says the first app whose name, or a word of it, starts with them, and how
- * many apps do. Two-finger gestures work as on the handwriting keyboard: swipe up for the
- * next app, down to open it, left to delete the last letter, and tap to hear the app again. A
- * two-finger swipe right switches between the device's language and English, for app names
- * written in Latin letters. A three-finger swipe down opens the app in split screen. A double tap
- * with one finger opens the app said; a tap with one finger closes the surface.
+ * many apps do. Two-finger swipes up and down go to the next and previous app, left deletes the
+ * last letter, and a two-finger tap says the app again. A two-finger swipe right switches between
+ * the device's language and English, for app names written in Latin letters. A three-finger swipe
+ * down opens the app in split screen. A double tap with one finger opens the app said; a tap with
+ * one finger closes the surface.
  */
 class HandwritingAppLauncher(
   private val service: AccessibilityService,
@@ -266,7 +266,7 @@ class HandwritingAppLauncher(
     }
     when {
       abs(dx) > abs(dy) -> if (dx < 0) deleteLetter() else switchLanguage()
-      dy > 0 -> search.open()
+      dy > 0 -> search.nextApp(forward = false)
       else -> search.nextApp()
     }
   }
