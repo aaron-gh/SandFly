@@ -1707,6 +1707,10 @@ public class NewKeyComboModel implements KeyComboModel {
     if (value == null) {
       return null;
     }
+    // Open keyboard shortcuts settings, saved as the prefix alone before it had a key.
+    if (value.equals(Commands.KEYBOARD_PREFIX)) {
+      return context.getString(R.string.keycombo_shortcut_open_manage_keyboard_shortcuts);
+    }
     // A command only the keyboard code performs.
     if (value.startsWith(Commands.KEYBOARD_PREFIX)) {
       return value.substring(Commands.KEYBOARD_PREFIX.length());
