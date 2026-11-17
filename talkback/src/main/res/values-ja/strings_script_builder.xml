@@ -232,4 +232,12 @@
     <plurals name="script_builder_edit_keep_parts_value">
         <item quantity="other">先頭の %1$d 個の部分を残す</item>
     </plurals>
+    <string name="script_builder_like_inspected">検査した項目と同様の項目</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="other">検査した項目と、同様の %1$d 個の項目に一致</item>
+    </plurals>
+    <string name="script_builder_inspected_category">検査した項目</string>
+    <string name="script_builder_one_item_actions">1 つの項目として読み上げ、ボタンを操作として使用</string>
+    <string name="script_builder_actions_value">操作: %1$s</string>
+    <string name="script_builder_choose_read">読み上げる内容を選択</string>
 </resources>

@@ -242,4 +242,14 @@
         <item quantity="many">Garder les %1$d premières parties</item>
         <item quantity="other">Garder les %1$d premières parties</item>
     </plurals>
+    <string name="script_builder_like_inspected">Éléments semblables à l\'élément inspecté</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Correspond à l\'élément inspecté et à %1$d élément semblable</item>
+        <item quantity="many">Correspond à l\'élément inspecté et à %1$d éléments semblables</item>
+        <item quantity="other">Correspond à l\'élément inspecté et à %1$d éléments semblables</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Élément inspecté</string>
+    <string name="script_builder_one_item_actions">Lire comme un seul élément, avec ses boutons comme actions</string>
+    <string name="script_builder_actions_value">Actions : %1$s</string>
+    <string name="script_builder_choose_read">Choisir ce qui est lu</string>
 </resources>

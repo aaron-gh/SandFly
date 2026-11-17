@@ -247,4 +247,15 @@
         <item quantity="many">Ponechat první %1$d části</item>
         <item quantity="other">Ponechat prvních %1$d částí</item>
     </plurals>
+    <string name="script_builder_like_inspected">Položky jako prozkoumaná položka</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Odpovídá prozkoumané položce a %1$d podobné položce</item>
+        <item quantity="few">Odpovídá prozkoumané položce a %1$d podobným položkám</item>
+        <item quantity="many">Odpovídá prozkoumané položce a %1$d podobným položkám</item>
+        <item quantity="other">Odpovídá prozkoumané položce a %1$d podobným položkám</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Prozkoumaná položka</string>
+    <string name="script_builder_one_item_actions">Číst jako jednu položku, s jejími tlačítky jako akcemi</string>
+    <string name="script_builder_actions_value">Akce: %1$s</string>
+    <string name="script_builder_choose_read">Zvolte, co se čte</string>
 </resources>

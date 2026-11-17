@@ -461,4 +461,19 @@
         <item quantity="one">Keep the first part</item>
         <item quantity="other">Keep the first %1$d parts</item>
     </plurals>
+    <!-- Script builder: Item screen row that names the inspected item and the items like it, such as every row of a list. -->
+    <string name="script_builder_like_inspected">Items like the inspected item</string>
+    <!-- Script builder: how many items a rule names, of the inspected item and the items like it on the screen when it was inspected. -->
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Matches the inspected item and %1$d item like it</item>
+        <item quantity="other">Matches the inspected item and %1$d items like it</item>
+    </plurals>
+    <!-- Script builder: rule screen heading for changes worked out from the inspected item. -->
+    <string name="script_builder_inspected_category">Inspected item</string>
+    <!-- Script builder: makes the item one item and adds an action for each button in it. -->
+    <string name="script_builder_one_item_actions">Read as one item, with its buttons as actions</string>
+    <!-- Script builder: the actions Read as one item, with its buttons as actions adds. %1$s: their titles. -->
+    <string name="script_builder_actions_value">Actions: %1$s</string>
+    <!-- Script builder: a list of the parts SandFly reads for an item, to choose which are read. -->
+    <string name="script_builder_choose_read">Choose what is read</string>
 </resources>

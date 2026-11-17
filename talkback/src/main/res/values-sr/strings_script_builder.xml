@@ -242,4 +242,14 @@
         <item quantity="few">Задржи прва %1$d дела</item>
         <item quantity="other">Задржи првих %1$d делова</item>
     </plurals>
+    <string name="script_builder_like_inspected">Ставке сличне прегледаној ставци</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Обухвата прегледану ставку и %1$d сличну ставку</item>
+        <item quantity="few">Обухвата прегледану ставку и %1$d сличне ставке</item>
+        <item quantity="other">Обухвата прегледану ставку и %1$d сличних ставки</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Прегледана ставка</string>
+    <string name="script_builder_one_item_actions">Читај као једну ставку, са њеним дугмадима као радњама</string>
+    <string name="script_builder_actions_value">Радње: %1$s</string>
+    <string name="script_builder_choose_read">Изабери шта се чита</string>
 </resources>

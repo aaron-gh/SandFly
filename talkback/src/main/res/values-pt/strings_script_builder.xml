@@ -237,4 +237,13 @@
         <item quantity="one">Manter %1$d primeira parte</item>
         <item quantity="other">Manter as %1$d primeiras partes</item>
     </plurals>
+    <string name="script_builder_like_inspected">Itens como o item inspecionado</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Corresponde ao item inspecionado e a %1$d item semelhante</item>
+        <item quantity="other">Corresponde ao item inspecionado e a %1$d itens semelhantes</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Item inspecionado</string>
+    <string name="script_builder_one_item_actions">Ler como um só item, com os botões como ações</string>
+    <string name="script_builder_actions_value">Ações: %1$s</string>
+    <string name="script_builder_choose_read">Escolher o que é lido</string>
 </resources>

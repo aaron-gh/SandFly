@@ -247,4 +247,15 @@
         <item quantity="many">Оставить первые %1$d частей</item>
         <item quantity="other">Оставить первые %1$d части</item>
     </plurals>
+    <string name="script_builder_like_inspected">Объекты, похожие на исследованный объект</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Соответствует исследованному объекту и %1$d похожему объекту</item>
+        <item quantity="few">Соответствует исследованному объекту и %1$d похожим объектам</item>
+        <item quantity="many">Соответствует исследованному объекту и %1$d похожим объектам</item>
+        <item quantity="other">Соответствует исследованному объекту и %1$d похожим объектам</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Исследованный объект</string>
+    <string name="script_builder_one_item_actions">Читать как один объект, с его кнопками как действиями</string>
+    <string name="script_builder_actions_value">Действия: %1$s</string>
+    <string name="script_builder_choose_read">Выбрать, что читается</string>
 </resources>

@@ -253,4 +253,44 @@ class ScriptBuilderScreensTest {
     enterText("")
     assertTrue(match().toString(), !match().has("contains"))
   }
+
+  @Test
+  fun inspectedRows_makeOneItemWithActionsAndChooseWhatIsRead() {
+    com.google.android.accessibility.utils.SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString("item_inspector_last_sample", ItemPatternTest.friends.toString())
+      .commit()
+    id = ScriptBuilder.create(context, "Friends tab")
+    val pick = open(ScriptRulePickFragment::class.java, Bundle())
+    assertTrue(all(pick.preferenceScreen).any { it.summary?.toString()?.contains("Matches the inspected item and 2 items like it") == true })
+    pick.click("Friends tab")
+    val rule = current()
+    assertTrue(rule is ScriptRuleFragment)
+    rule.click("Read as one item, with its buttons as actions")
+
+    val draft = ScriptBuilder.draft(ScriptStore.get(context), id)!!
+    val saved = draft.getJSONArray("rules").getJSONObject(0)
+    assertEquals(true, saved.getBoolean("group"))
+    assertEquals(listOf("Add Friend", "Remove"), saved.getJSONArray("actions").let { a -> (0 until a.length()).map { a.getJSONObject(it).getString("title") } })
+    assertEquals("Natalie Anderson, 3 mutual friends", current().row("Choose what is read").summary.toString())
+
+    current().click("Choose what is read")
+    val dialog = ShadowDialog.getLatestDialog() as AlertDialog
+    dialog.listView.performItemClick(dialog.listView, 1, 1)
+    dialog.getButton(AlertDialog.BUTTON_POSITIVE).performClick()
+    idle()
+    assertEquals("Natalie Anderson", current().row("Choose what is read").summary.toString())
+
+    val installed = ScriptStore.get(context).find(id)!!.manifest
+    assertEquals(1, installed.rules.size)
+
+    // The speech change follows the rule's item when it changes.
+    current().click("Item")
+    current().click("Class name")
+    chooseRow("Remove")
+    val changed = ScriptBuilder.draft(ScriptStore.get(context), id)!!
+    val match = changed.getJSONArray("rules").getJSONObject(0).getJSONObject("match")
+    assertTrue(!match.has("className"))
+    assertEquals(match.toString(), changed.getJSONArray("speech").getJSONObject(0).getJSONObject("match").toString())
+  }
 }

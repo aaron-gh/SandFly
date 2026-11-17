@@ -242,4 +242,14 @@
         <item quantity="two">השארת %1$d החלקים הראשונים</item>
         <item quantity="other">השארת %1$d החלקים הראשונים</item>
     </plurals>
+    <string name="script_builder_like_inspected">פריטים כמו הפריט שנבדק</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">תואם לפריט שנבדק ולפריט דומה אחד</item>
+        <item quantity="two">תואם לפריט שנבדק ול-%1$d פריטים דומים</item>
+        <item quantity="other">תואם לפריט שנבדק ול-%1$d פריטים דומים</item>
+    </plurals>
+    <string name="script_builder_inspected_category">הפריט שנבדק</string>
+    <string name="script_builder_one_item_actions">קריאה כפריט אחד, עם הכפתורים שלו כפעולות</string>
+    <string name="script_builder_actions_value">פעולות: %1$s</string>
+    <string name="script_builder_choose_read">בחירת מה שיוקרא</string>
 </resources>

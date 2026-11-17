@@ -247,4 +247,15 @@
         <item quantity="many">Palikti %1$d pirmosios dalies</item>
         <item quantity="other">Palikti %1$d pirmųjų dalių</item>
     </plurals>
+    <string name="script_builder_like_inspected">Elementai, panašūs į patikrintą elementą</string>
+    <plurals name="script_builder_like_count">
+        <item quantity="one">Atitinka patikrintą elementą ir %1$d panašų elementą</item>
+        <item quantity="few">Atitinka patikrintą elementą ir %1$d panašius elementus</item>
+        <item quantity="many">Atitinka patikrintą elementą ir %1$d panašaus elemento</item>
+        <item quantity="other">Atitinka patikrintą elementą ir %1$d panašių elementų</item>
+    </plurals>
+    <string name="script_builder_inspected_category">Patikrintas elementas</string>
+    <string name="script_builder_one_item_actions">Skaityti kaip vieną elementą, su jo mygtukais kaip veiksmais</string>
+    <string name="script_builder_actions_value">Veiksmai: %1$s</string>
+    <string name="script_builder_choose_read">Pasirinkti, kas skaitoma</string>
 </resources>

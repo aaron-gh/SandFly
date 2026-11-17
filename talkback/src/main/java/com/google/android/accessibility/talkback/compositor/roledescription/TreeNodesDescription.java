@@ -549,9 +549,15 @@ public class TreeNodesDescription {
       AccessibilityEvent event,
       List<AccessibilityNodeInfoCompat> items) {
     List<CharSequence> joinList = new ArrayList<>();
+    // An item with its own description or text is read by it, as it would be without the group;
+    // the texts of the items in it would repeat it.
+    boolean named =
+        !TextUtils.isEmpty(node.getContentDescription()) || !TextUtils.isEmpty(node.getText());
     for (AccessibilityNodeInfoCompat item : items) {
-      joinList.add(
-          AccessibilityNodeFeedbackUtils.getNodeTextDescription(item, context, globalVariables));
+      if (!named) {
+        joinList.add(
+            AccessibilityNodeFeedbackUtils.getNodeTextDescription(item, context, globalVariables));
+      }
       joinList.add(
           AccessibilityNodeFeedbackUtils.getNodeStateDescription(item, context, globalVariables));
       joinList.add(nodeStatusDescription(item));
