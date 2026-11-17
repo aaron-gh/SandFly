@@ -91,6 +91,44 @@ class TextInsideItemsFocusTest {
     assertTrue(accepts(item))
   }
 
+  @Test fun onASelectedTabKeepsFocus() {
+    AccessibilityNodeInfoUtils.setFocusTextInsideItems(true)
+    val tab = row(node("Chats")).apply { isSelected = true }
+    assertTrue(accepts(tab))
+  }
+
+  @Test fun onAnItemWithARoleDescriptionKeepsFocus() {
+    AccessibilityNodeInfoUtils.setFocusTextInsideItems(true)
+    val tab = row(node("Calls"))
+    AccessibilityNodeInfoCompat.wrap(tab).roleDescription = "Tab"
+    assertTrue(accepts(tab))
+  }
+
+  @Test fun onAHeadingItemKeepsFocus() {
+    AccessibilityNodeInfoUtils.setFocusTextInsideItems(true)
+    val item = row(node("Network")).apply { isHeading = true }
+    assertTrue(accepts(item))
+  }
+
+  @Suppress("DEPRECATION")
+  @Test fun onASelectedCollectionItemKeepsFocus() {
+    AccessibilityNodeInfoUtils.setFocusTextInsideItems(true)
+    val item =
+      row(node("Inbox")).apply {
+        collectionItemInfo =
+          AccessibilityNodeInfo.CollectionItemInfo.obtain(0, 1, 0, 1, false, /* selected= */ true)
+      }
+    assertTrue(accepts(item))
+  }
+
+  @Test fun onTextPastTheNodeLimitLeavesTheRowAsOneItem() {
+    AccessibilityNodeInfoUtils.setFocusTextInsideItems(true)
+    val wrappers =
+      Array(AccessibilityNodeInfoUtils.MAX_TEXT_INSIDE_NODES) { node().apply { text = null } }
+    val item = row(*wrappers, node("Battery"))
+    assertTrue(accepts(item))
+  }
+
   @Test fun onAStateInsideTheRowIsAnItem() {
     AccessibilityNodeInfoUtils.setFocusTextInsideItems(true)
     val toggle = node().apply {

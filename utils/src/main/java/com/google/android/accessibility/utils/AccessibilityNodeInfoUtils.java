@@ -1119,6 +1119,9 @@ public class AccessibilityNodeInfoUtils {
   /** Bounds the descent through text-less wrappers while looking for text inside an item. */
   private static final int MAX_TEXT_INSIDE_DEPTH = 16;
 
+  /** Bounds the nodes looked at while looking for text inside an item. */
+  @VisibleForTesting static final int MAX_TEXT_INSIDE_NODES = 200;
+
   /** Actions that a focused child reaches through its item: activation, focus and scrolling. */
   private static final ImmutableSet<Integer> ACTIONS_REACHED_FROM_INSIDE =
       ImmutableSet.of(
@@ -1142,11 +1145,21 @@ public class AccessibilityNodeInfoUtils {
 
   /**
    * Whether an item keeps focus while the text inside it is focused separately: it has text or a
-   * state of its own, is editable, or has actions, such as custom actions, that its text doesn't
-   * reach.
+   * state of its own, is selected, is editable, has a role description, is a heading or a selected
+   * collection item, or has actions, such as custom actions, that its text doesn't reach. A tab
+   * keeps its selected state, its role and its position this way.
    */
   private static boolean hasOwnContentOrActions(AccessibilityNodeInfoCompat node) {
-    if (hasText(node) || hasStateDescription(node) || node.isEditable()) {
+    if (hasText(node)
+        || hasStateDescription(node)
+        || node.isEditable()
+        || node.isSelected()
+        || node.isHeading()
+        || !TextUtils.isEmpty(node.getRoleDescription())) {
+      return true;
+    }
+    @Nullable CollectionItemInfoCompat itemInfo = node.getCollectionItemInfo();
+    if (itemInfo != null && itemInfo.isSelected()) {
       return true;
     }
     List<AccessibilityActionCompat> actions = node.getActionList();
@@ -1170,6 +1183,9 @@ public class AccessibilityNodeInfoUtils {
       return false;
     }
     for (int i = 0, count = node.getChildCount(); i < count; i++) {
+      if (visited.size() >= MAX_TEXT_INSIDE_NODES) {
+        return false;
+      }
       AccessibilityNodeInfoCompat child = node.getChild(i);
       if (child == null
           || !visited.add(child)
