@@ -210,7 +210,7 @@ Each action has a `title` and one of `click`, `longClick`, `focus`, `scrollForwa
 
 A script's actions come after the app's own actions in the Actions menu. *Version 5.* `first = true` puts an action before the app's actions: `{ title = 'Archive', click = 'archive_button', first = true }`.
 
-SandFly looks for the item inside the focused item first, and then on the whole screen. In a list where every row has the same button, the second search finds the first row's button, so use the [`onActions` hook](#hooks) there and search from the row yourself.
+SandFly looks for the item inside the focused item first, and then on the whole screen. When the item can't do the action, such as the text of a button, the nearest item around it, up to 6 levels up, that can does it. In a list where every row has the same button, the second search finds the first row's button, so use the [`onActions` hook](#hooks) there and search from the row yourself.
 
 ## Queries
 
