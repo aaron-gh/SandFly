@@ -242,6 +242,28 @@ class LuaEngine(private val host: Host, private val withJava: Boolean) : Closeab
 
     private val LIBRARIES = listOf("base", "coroutine", "table", "string", "math", "utf8", "os", "debug")
 
+    /**
+     * The message of the syntax error in [source], or null when it has none or Lua can't be loaded
+     * here. The code isn't run.
+     */
+    fun syntaxError(source: String): String? {
+      if (source.isBlank()) return null
+      return try {
+        val state = Lua54()
+        try {
+          val bytes = source.toByteArray()
+          state.load(java.nio.ByteBuffer.allocateDirect(bytes.size).put(bytes).also { it.flip() }, "code")
+          null
+        } catch (e: party.iroiro.luajava.LuaException) {
+          e.message.orEmpty().ifEmpty { "syntax error" }
+        } finally {
+          state.close()
+        }
+      } catch (e: LinkageError) {
+        null
+      }
+    }
+
     /** Throws a [LinkageError] if Lua's native library can't be loaded. */
     fun checkAvailable() {
       Lua54().close()

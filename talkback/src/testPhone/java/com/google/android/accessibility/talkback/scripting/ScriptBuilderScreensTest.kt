@@ -174,4 +174,40 @@ class ScriptBuilderScreensTest {
     page.click("Add rule")
     assertTrue(all(current().preferenceScreen).any { it.title?.toString() == "Not used: set the item" })
   }
+
+  @Test
+  fun everyBuilderScreenShowsAFullDraft() {
+    val store = ScriptStore.get(context)
+    val draft = ScriptBuilder.draft(store, id)!!
+    val macro = org.json.JSONObject(BuiltScriptMacros.macroJson(com.google.android.accessibility.talkback.macros.Macros.Macro("m", "", emptyList())))
+    draft
+      .put("settings", org.json.JSONArray().put(org.json.JSONObject().put("key", "s1").put("type", "list").put("title", "Mode").put("options", org.json.JSONArray().put("a").put("b"))))
+      .put("commands", org.json.JSONArray().put(org.json.JSONObject().put("id", "c1").put("title", "Go").put("gesture", "swipeUpThenRight").put("macro", macro)))
+      .put(
+        "triggers",
+        org.json.JSONArray()
+          .put(org.json.JSONObject().put("id", "t1").put("when", "daily").put("time", "08:30").put("macro", macro))
+          .put(org.json.JSONObject().put("id", "t2").put("when", "click").put("macro", macro)),
+      )
+      .put("speech", org.json.JSONArray().put(org.json.JSONObject().put("when", "notification").put("change", "replacePart").put("find", "a").put("text", "b")))
+      .put(
+        "rules",
+        org.json.JSONArray().put(
+          org.json.JSONObject().put("match", org.json.JSONObject().put("text", "OK").put("checked", true).put("inside", org.json.JSONArray().put(org.json.JSONObject().put("id", "x")))).put("label", "L")
+        ),
+      )
+      .put("description", "D")
+    ScriptBuilder.save(context, draft)
+    fun args(block: Bundle.() -> Unit) = Bundle().apply { putString(ScriptScreenFragment.ARG_ID, id); block() }
+
+    val page = open(ScriptBuilderFragment::class.java, args {})
+    for (title in listOf("Every day at 08:30", "When an item is clicked", "Mode", "Go", "Description", "Lua code", "Duplicate script")) page.row(title)
+    open(ScriptBuiltCommandFragment::class.java, args { putInt(ScriptBuiltCommandFragment.ARG_INDEX, 0) }).row("Gesture")
+    open(ScriptSpeechChangeFragment::class.java, args { putInt(ScriptSpeechChangeFragment.ARG_INDEX, 0) }).row("Text to replace")
+    val query = open(ScriptQueryFragment::class.java, args { putString(ScriptQueryFragment.ARG_PATH, Paths.encode(listOf("rules", 0, "match"))) })
+    query.row("Exact text")
+    query.row("States")
+    query.row("Add item it is inside")
+    open(ScriptRuleFragment::class.java, args { putInt(ScriptRuleFragment.ARG_INDEX, 0) }).row("Duplicate rule")
+  }
 }
