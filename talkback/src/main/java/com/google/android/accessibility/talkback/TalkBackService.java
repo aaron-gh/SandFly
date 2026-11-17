@@ -2903,6 +2903,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         new AccessibilityFocusInterpreter(
             this, accessibilityFocusMonitor, screenStateMonitor.state, touchMonitor, analytics);
     accessibilityFocusInterpreter.setLiftCancelledFeedback(this::playLiftCancelledFeedback);
+    accessibilityFocusInterpreter.setKeyHolder(this::holdFocusedItemDown);
 
     inputFocusInterpreter =
         new InputFocusInterpreter(accessibilityFocusInterpreter, focusFinder, globalVariables);
@@ -4495,6 +4496,9 @@ public class TalkBackService extends AccessibilityServiceCompat
             res,
             R.string.pref_typing_long_press_duration_key,
             R.string.pref_typing_long_press_duration_default));
+    accessibilityFocusInterpreter.setHoldKeysDown(
+        getBooleanPref(
+            R.string.pref_typing_hold_keys_down_key, R.bool.pref_typing_hold_keys_down_default));
     TwoFingerRotationTracker.setStepDegrees(
         SharedPreferencesUtils.getIntFromStringPref(
             prefs,
@@ -4938,6 +4942,23 @@ public class TalkBackService extends AccessibilityServiceCompat
     FocusIndicatorUtils.applyFocusAppearancePreference(this, prefs, res);
 
     enableCacheTextEntryKeyIfNeeded(key);
+  }
+
+  /**
+   * Presses down the item with accessibility focus for the rest of the touch on the display where a
+   * finger is exploring by touch. Returns whether it is held down.
+   */
+  private boolean holdFocusedItemDown() {
+    // TouchInteractionMonitor can't be loaded before Android 13.
+    if (!FeatureSupport.supportGestureDetection()) {
+      return false;
+    }
+    for (int i = 0; i < displayIdToTouchInteractionMonitors.size(); i++) {
+      if (displayIdToTouchInteractionMonitors.valueAt(i).holdFocusedItemDown()) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private void enableCacheTextEntryKeyIfNeeded(@Nullable String key) {

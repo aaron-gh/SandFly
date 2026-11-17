@@ -1899,6 +1899,8 @@
       Description: This preference that shows current delay for touch and hold. [CHAR_LIMIT=96]
     -->
     <string name="title_pref_typing_long_tap_duration">Touch and hold delay when typing</string>
+    <!-- Title of the switch that makes touching and holding a keyboard key until the touch and hold delay ends press the key down until the finger lifts, so that keys such as Delete repeat. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_typing_hold_keys_down">Hold keys down after the touch and hold delay</string>
     <!--
       Source: Preference title.
       Description: This preference that shows current touch explore time out to exploration. [CHAR_LIMIT=60]

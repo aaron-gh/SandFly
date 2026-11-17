@@ -971,6 +971,16 @@ public class AccessibilityFocusInterpreter
     focusProcessorForTapAndTouchExploration.setTypingLongPressDurationMs(duration);
   }
 
+  /** Sets whether a key touched until the hold delay ends is pressed down until the finger lifts. */
+  public void setHoldKeysDown(boolean holdKeysDown) {
+    focusProcessorForTapAndTouchExploration.setHoldKeysDown(holdKeysDown);
+  }
+
+  /** Sets what presses a key down when keys are held down. */
+  public void setKeyHolder(FocusProcessorForTapAndTouchExploration.@Nullable KeyHolder keyHolder) {
+    focusProcessorForTapAndTouchExploration.setKeyHolder(keyHolder);
+  }
+
   /**
    * Gets whether single-tap activation is enabled.
    *
