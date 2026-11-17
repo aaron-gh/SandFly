@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Address</string>
     <string name="macro_do_keys_hint">Keys, such as tab enter</string>
     <string name="macro_number_range">Enter %1$d to %2$d</string>
-    <string name="macro_values_help">Values go in as {name}. Also {item}, {clipboard}, {time} and {date}.</string>
     <string name="macro_value_name">Value name</string>
     <string name="macro_value_name_invalid">Use letters, digits, dots, dashes or underscores</string>
     <string name="macro_test_value">Value</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Value %1$s is set</string>
     <string name="macro_test_value_value">Value %1$s has %2$s</string>
     <string name="macro_test_not">Not: %1$s</string>
+    <string name="macro_values_help">Values go in as {name}. Also {item}, {clipboard}, {time}, {date}, {battery} and {device.wifi}.</string>
+    <string name="macro_do_device_control">Device setting</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Turn on</string>
+    <string name="macro_do_turn_off">Turn off</string>
+    <string name="macro_do_toggle">Turn on or off</string>
+    <string name="macro_do_slider_help" formatted="false">A number, a percent such as 50%, or +1 or -1.</string>
+    <string name="macro_do_choice_help">An option, such as Vibrate, or next.</string>
+    <string name="macro_do_media">Media key</string>
+    <string name="macro_media_play_pause">Play or pause</string>
+    <string name="macro_media_play">Play</string>
+    <string name="macro_media_pause">Pause</string>
+    <string name="macro_media_next">Next</string>
+    <string name="macro_media_previous">Previous</string>
+    <string name="macro_media_stop">Stop</string>
+    <string name="macro_media_rewind">Rewind</string>
+    <string name="macro_media_fast_forward">Fast forward</string>
+    <string name="macro_do_set_timer">Set timer</string>
+    <string name="macro_do_set_timer_value">Set timer: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Seconds</string>
+    <string name="macro_do_label">Label (optional)</string>
+    <string name="macro_do_set_alarm">Set alarm</string>
+    <string name="macro_do_set_alarm_value">Set alarm: %1$s, %2$s</string>
+    <string name="macro_do_call">Call</string>
+    <string name="macro_do_number">Phone number</string>
+    <string name="macro_do_send_message">Send message</string>
+    <string name="macro_do_send_message_value">Message to %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Open camera</string>
+    <string name="macro_do_camera_photo">Photo</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Set timer: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Set alarm: %1$s</string>
 </resources>

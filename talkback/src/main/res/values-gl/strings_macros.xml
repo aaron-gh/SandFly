@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Enderezo</string>
     <string name="macro_do_keys_hint">Teclas, como tab enter</string>
     <string name="macro_number_range">Introduce de %1$d a %2$d</string>
-    <string name="macro_values_help">Os valores insírense como {name}. Tamén {item}, {clipboard}, {time} e {date}.</string>
     <string name="macro_value_name">Nome do valor</string>
     <string name="macro_value_name_invalid">Usa letras, díxitos, puntos, guións ou guións baixos</string>
     <string name="macro_test_value">Valor</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">O valor %1$s está definido</string>
     <string name="macro_test_value_value">O valor %1$s ten %2$s</string>
     <string name="macro_test_not">Non: %1$s</string>
+    <string name="macro_values_help">Os valores insírense como {name}. Tamén {item}, {clipboard}, {time}, {date}, {battery} e {device.wifi}.</string>
+    <string name="macro_do_device_control">Configuración do dispositivo</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Activar</string>
+    <string name="macro_do_turn_off">Desactivar</string>
+    <string name="macro_do_toggle">Activar ou desactivar</string>
+    <string name="macro_do_slider_help" formatted="false">Un número, unha porcentaxe como 50%, ou +1 ou -1.</string>
+    <string name="macro_do_choice_help">Unha opción, como Vibración, ou next.</string>
+    <string name="macro_do_media">Tecla multimedia</string>
+    <string name="macro_media_play_pause">Reproducir ou pór en pausa</string>
+    <string name="macro_media_play">Reproducir</string>
+    <string name="macro_media_pause">Pór en pausa</string>
+    <string name="macro_media_next">Seguinte</string>
+    <string name="macro_media_previous">Anterior</string>
+    <string name="macro_media_stop">Deter</string>
+    <string name="macro_media_rewind">Rebobinar</string>
+    <string name="macro_media_fast_forward">Avanzar</string>
+    <string name="macro_do_set_timer">Definir temporizador</string>
+    <string name="macro_do_set_timer_value">Definir temporizador: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Segundos</string>
+    <string name="macro_do_label">Etiqueta (opcional)</string>
+    <string name="macro_do_set_alarm">Definir alarma</string>
+    <string name="macro_do_set_alarm_value">Definir alarma: %1$s, %2$s</string>
+    <string name="macro_do_call">Chamar</string>
+    <string name="macro_do_number">Número de teléfono</string>
+    <string name="macro_do_send_message">Enviar mensaxe</string>
+    <string name="macro_do_send_message_value">Mensaxe para %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Abrir cámara</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Vídeo</string>
+    <string name="macro_do_set_timer_short">Definir temporizador: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Definir alarma: %1$s</string>
 </resources>

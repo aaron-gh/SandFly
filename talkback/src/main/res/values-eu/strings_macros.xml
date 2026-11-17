@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Helbidea</string>
     <string name="macro_do_keys_hint">Teklak; adibidez, tab enter</string>
     <string name="macro_number_range">Sartu %1$d eta %2$d arteko zenbaki bat</string>
-    <string name="macro_values_help">Balioak {name} gisa txertatzen dira. Baita {item}, {clipboard}, {time} eta {date} ere.</string>
     <string name="macro_value_name">Balioaren izena</string>
     <string name="macro_value_name_invalid">Erabili letrak, digituak, puntuak, marratxoak edo azpimarrak</string>
     <string name="macro_test_value">Balioa</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s balioa ezarrita dago</string>
     <string name="macro_test_value_value">%1$s balioak hau dauka: %2$s</string>
     <string name="macro_test_not">Ez: %1$s</string>
+    <string name="macro_values_help">Balioak {name} gisa txertatzen dira. Baita {item}, {clipboard}, {time}, {date}, {battery} eta {device.wifi} ere.</string>
+    <string name="macro_do_device_control">Gailuaren ezarpena</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Aktibatu</string>
+    <string name="macro_do_turn_off">Desaktibatu</string>
+    <string name="macro_do_toggle">Aktibatu edo desaktibatu</string>
+    <string name="macro_do_slider_help" formatted="false">Zenbaki bat, ehuneko bat (adibidez, 50%), edo +1 edo -1.</string>
+    <string name="macro_do_choice_help">Aukera bat (adibidez, Dardara) edo next.</string>
+    <string name="macro_do_media">Multimedia-tekla</string>
+    <string name="macro_media_play_pause">Erreproduzitu edo pausatu</string>
+    <string name="macro_media_play">Erreproduzitu</string>
+    <string name="macro_media_pause">Pausatu</string>
+    <string name="macro_media_next">Hurrengoa</string>
+    <string name="macro_media_previous">Aurrekoa</string>
+    <string name="macro_media_stop">Gelditu</string>
+    <string name="macro_media_rewind">Atzeratu</string>
+    <string name="macro_media_fast_forward">Aurreratu</string>
+    <string name="macro_do_set_timer">Ezarri tenporizadorea</string>
+    <string name="macro_do_set_timer_value">Ezarri tenporizadorea: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Segundoak</string>
+    <string name="macro_do_label">Etiketa (aukerakoa)</string>
+    <string name="macro_do_set_alarm">Ezarri alarma</string>
+    <string name="macro_do_set_alarm_value">Ezarri alarma: %1$s, %2$s</string>
+    <string name="macro_do_call">Deitu</string>
+    <string name="macro_do_number">Telefono-zenbakia</string>
+    <string name="macro_do_send_message">Bidali mezua</string>
+    <string name="macro_do_send_message_value">Mezua (%1$s): %2$s</string>
+    <string name="macro_do_open_camera">Ireki kamera</string>
+    <string name="macro_do_camera_photo">Argazkia</string>
+    <string name="macro_do_camera_video">Bideoa</string>
+    <string name="macro_do_set_timer_short">Ezarri tenporizadorea: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Ezarri alarma: %1$s</string>
 </resources>

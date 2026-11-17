@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Adresa</string>
     <string name="macro_do_keys_hint">Tastet, si tab enter</string>
     <string name="macro_number_range">Shkruaj nga %1$d deri në %2$d</string>
-    <string name="macro_values_help">Vlerat futen si {name}. Gjithashtu {item}, {clipboard}, {time} dhe {date}.</string>
     <string name="macro_value_name">Emri i vlerës</string>
     <string name="macro_value_name_invalid">Përdor shkronja, shifra, pika, viza ose nënvizime</string>
     <string name="macro_test_value">Vlera</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Vlera %1$s është caktuar</string>
     <string name="macro_test_value_value">Vlera %1$s ka %2$s</string>
     <string name="macro_test_not">Jo: %1$s</string>
+    <string name="macro_values_help">Vlerat futen si {name}. Gjithashtu {item}, {clipboard}, {time}, {date}, {battery} dhe {device.wifi}.</string>
+    <string name="macro_do_device_control">Cilësim i pajisjes</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Aktivizo</string>
+    <string name="macro_do_turn_off">Çaktivizo</string>
+    <string name="macro_do_toggle">Aktivizo ose çaktivizo</string>
+    <string name="macro_do_slider_help" formatted="false">Një numër, një përqindje si 50%, ose +1 ose -1.</string>
+    <string name="macro_do_choice_help">Një opsion, si Dridhja, ose next.</string>
+    <string name="macro_do_media">Tasti i medias</string>
+    <string name="macro_media_play_pause">Luaj ose vendos në pauzë</string>
+    <string name="macro_media_play">Luaj</string>
+    <string name="macro_media_pause">Vendos në pauzë</string>
+    <string name="macro_media_next">Tjetra</string>
+    <string name="macro_media_previous">Prapa</string>
+    <string name="macro_media_stop">Ndalo</string>
+    <string name="macro_media_rewind">Kthe pas</string>
+    <string name="macro_media_fast_forward">Shpejto përpara</string>
+    <string name="macro_do_set_timer">Cakto kohëmatësin</string>
+    <string name="macro_do_set_timer_value">Cakto kohëmatësin: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekonda</string>
+    <string name="macro_do_label">Etiketa (opsionale)</string>
+    <string name="macro_do_set_alarm">Cakto alarmin</string>
+    <string name="macro_do_set_alarm_value">Cakto alarmin: %1$s, %2$s</string>
+    <string name="macro_do_call">Telefono</string>
+    <string name="macro_do_number">Numri i telefonit</string>
+    <string name="macro_do_send_message">Dërgo mesazh</string>
+    <string name="macro_do_send_message_value">Mesazh për %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Hap kamerën</string>
+    <string name="macro_do_camera_photo">Fotografi</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Cakto kohëmatësin: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Cakto alarmin: %1$s</string>
 </resources>

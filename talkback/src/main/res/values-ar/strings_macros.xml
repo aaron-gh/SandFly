@@ -161,7 +161,6 @@
     <string name="macro_do_link_hint">العنوان</string>
     <string name="macro_do_keys_hint">المفاتيح، مثل tab enter</string>
     <string name="macro_number_range">أدخل رقمًا من %1$d إلى %2$d</string>
-    <string name="macro_values_help">تُدرَج القيم بالصيغة {name}. وأيضًا {item} و{clipboard} و{time} و{date}.</string>
     <string name="macro_value_name">اسم القيمة</string>
     <string name="macro_value_name_invalid">استخدِم الأحرف أو الأرقام أو النقاط أو الشرطات أو الشرطات السفلية</string>
     <string name="macro_test_value">القيمة</string>
@@ -169,4 +168,36 @@
     <string name="macro_test_value_set">تم تعيين القيمة %1$s</string>
     <string name="macro_test_value_value">القيمة %1$s تحتوي على %2$s</string>
     <string name="macro_test_not">ليس: %1$s</string>
+    <string name="macro_values_help">تُدرَج القيم بالصيغة {name}. وأيضًا {item} و{clipboard} و{time} و{date} و{battery} و{device.wifi}.</string>
+    <string name="macro_do_device_control">إعداد الجهاز</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">تفعيل</string>
+    <string name="macro_do_turn_off">إيقاف</string>
+    <string name="macro_do_toggle">تفعيل أو إيقاف</string>
+    <string name="macro_do_slider_help" formatted="false">رقم، أو نسبة مئوية مثل 50%، أو +1 أو -1.</string>
+    <string name="macro_do_choice_help">خيار، مثل اهتزاز، أو next.</string>
+    <string name="macro_do_media">مفتاح الوسائط</string>
+    <string name="macro_media_play_pause">تشغيل أو إيقاف مؤقت</string>
+    <string name="macro_media_play">تشغيل</string>
+    <string name="macro_media_pause">إيقاف مؤقت</string>
+    <string name="macro_media_next">التالي</string>
+    <string name="macro_media_previous">السابق</string>
+    <string name="macro_media_stop">إيقاف</string>
+    <string name="macro_media_rewind">ترجيع</string>
+    <string name="macro_media_fast_forward">تقديم سريع</string>
+    <string name="macro_do_set_timer">ضبط موقت</string>
+    <string name="macro_do_set_timer_value">ضبط موقت: %1$s s، %2$s</string>
+    <string name="macro_do_timer_seconds">الثواني</string>
+    <string name="macro_do_label">التصنيف (اختياري)</string>
+    <string name="macro_do_set_alarm">ضبط تنبيه</string>
+    <string name="macro_do_set_alarm_value">ضبط تنبيه: %1$s، %2$s</string>
+    <string name="macro_do_call">اتصال</string>
+    <string name="macro_do_number">رقم الهاتف</string>
+    <string name="macro_do_send_message">إرسال رسالة</string>
+    <string name="macro_do_send_message_value">رسالة إلى %1$s: %2$s</string>
+    <string name="macro_do_open_camera">فتح الكاميرا</string>
+    <string name="macro_do_camera_photo">صورة</string>
+    <string name="macro_do_camera_video">فيديو</string>
+    <string name="macro_do_set_timer_short">ضبط موقت: %1$s s</string>
+    <string name="macro_do_set_alarm_short">ضبط تنبيه: %1$s</string>
 </resources>

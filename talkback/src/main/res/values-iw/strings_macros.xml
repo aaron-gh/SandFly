@@ -152,7 +152,6 @@
     <string name="macro_do_link_hint">כתובת</string>
     <string name="macro_do_keys_hint">מקשים, כמו tab enter</string>
     <string name="macro_number_range">יש להזין %1$d עד %2$d</string>
-    <string name="macro_values_help">ערכים מוכנסים בתור {name}. וגם {item}, {clipboard}, {time} ו-{date}.</string>
     <string name="macro_value_name">שם הערך</string>
     <string name="macro_value_name_invalid">יש להשתמש באותיות, ספרות, נקודות, מקפים או קווים תחתונים</string>
     <string name="macro_test_value">ערך</string>
@@ -160,4 +159,36 @@
     <string name="macro_test_value_set">הערך %1$s מוגדר</string>
     <string name="macro_test_value_value">הערך %1$s מכיל %2$s</string>
     <string name="macro_test_not">לא: %1$s</string>
+    <string name="macro_values_help">ערכים מוכנסים בתור {name}. וגם {item}, {clipboard}, {time}, {date}, {battery} ו-{device.wifi}.</string>
+    <string name="macro_do_device_control">הגדרת מכשיר</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">הפעלה</string>
+    <string name="macro_do_turn_off">השבתה</string>
+    <string name="macro_do_toggle">הפעלה או השבתה</string>
+    <string name="macro_do_slider_help" formatted="false">מספר, אחוז כמו 50%, או +1 או -1.</string>
+    <string name="macro_do_choice_help">אפשרות, כמו רטט, או next.</string>
+    <string name="macro_do_media">מקש מדיה</string>
+    <string name="macro_media_play_pause">הפעלה או השהיה</string>
+    <string name="macro_media_play">הפעלה</string>
+    <string name="macro_media_pause">השהיה</string>
+    <string name="macro_media_next">הבא</string>
+    <string name="macro_media_previous">הקודם</string>
+    <string name="macro_media_stop">עצירה</string>
+    <string name="macro_media_rewind">הרצה אחורה</string>
+    <string name="macro_media_fast_forward">הרצה קדימה</string>
+    <string name="macro_do_set_timer">הגדרת טיימר</string>
+    <string name="macro_do_set_timer_value">הגדרת טיימר: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">שניות</string>
+    <string name="macro_do_label">תווית (אופציונלי)</string>
+    <string name="macro_do_set_alarm">הגדרת שעון מעורר</string>
+    <string name="macro_do_set_alarm_value">הגדרת שעון מעורר: %1$s, %2$s</string>
+    <string name="macro_do_call">התקשרות</string>
+    <string name="macro_do_number">מספר טלפון</string>
+    <string name="macro_do_send_message">שליחת הודעה</string>
+    <string name="macro_do_send_message_value">הודעה אל %1$s: %2$s</string>
+    <string name="macro_do_open_camera">פתיחת המצלמה</string>
+    <string name="macro_do_camera_photo">תמונה</string>
+    <string name="macro_do_camera_video">סרטון</string>
+    <string name="macro_do_set_timer_short">הגדרת טיימר: %1$s s</string>
+    <string name="macro_do_set_alarm_short">הגדרת שעון מעורר: %1$s</string>
 </resources>

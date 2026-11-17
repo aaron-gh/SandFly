@@ -152,7 +152,6 @@
     <string name="macro_do_link_hint">Adresa</string>
     <string name="macro_do_keys_hint">Tipke, npr. tab enter</string>
     <string name="macro_number_range">Unesite od %1$d do %2$d</string>
-    <string name="macro_values_help">Vrijednosti se umeću kao {name}. Također {item}, {clipboard}, {time} i {date}.</string>
     <string name="macro_value_name">Naziv vrijednosti</string>
     <string name="macro_value_name_invalid">Koristite slova, cifre, tačke, crtice ili donje crte</string>
     <string name="macro_test_value">Vrijednost</string>
@@ -160,4 +159,36 @@
     <string name="macro_test_value_set">Vrijednost %1$s je postavljena</string>
     <string name="macro_test_value_value">Vrijednost %1$s sadrži %2$s</string>
     <string name="macro_test_not">Nije: %1$s</string>
+    <string name="macro_values_help">Vrijednosti se umeću kao {name}. Također {item}, {clipboard}, {time}, {date}, {battery} i {device.wifi}.</string>
+    <string name="macro_do_device_control">Postavka uređaja</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Uključi</string>
+    <string name="macro_do_turn_off">Isključi</string>
+    <string name="macro_do_toggle">Uključi ili isključi</string>
+    <string name="macro_do_slider_help" formatted="false">Broj, postotak, naprimjer 50%, ili +1 ili -1.</string>
+    <string name="macro_do_choice_help">Opcija, naprimjer Vibracija, ili next.</string>
+    <string name="macro_do_media">Medijska tipka</string>
+    <string name="macro_media_play_pause">Reproduciraj ili pauziraj</string>
+    <string name="macro_media_play">Reproduciraj</string>
+    <string name="macro_media_pause">Pauziraj</string>
+    <string name="macro_media_next">Sljedeće</string>
+    <string name="macro_media_previous">Prethodno</string>
+    <string name="macro_media_stop">Zaustavi</string>
+    <string name="macro_media_rewind">Premotaj unazad</string>
+    <string name="macro_media_fast_forward">Premotaj naprijed</string>
+    <string name="macro_do_set_timer">Postavi tajmer</string>
+    <string name="macro_do_set_timer_value">Postavi tajmer: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekunde</string>
+    <string name="macro_do_label">Oznaka (opcionalno)</string>
+    <string name="macro_do_set_alarm">Postavi alarm</string>
+    <string name="macro_do_set_alarm_value">Postavi alarm: %1$s, %2$s</string>
+    <string name="macro_do_call">Pozovi</string>
+    <string name="macro_do_number">Broj telefona</string>
+    <string name="macro_do_send_message">Pošalji poruku</string>
+    <string name="macro_do_send_message_value">Poruka za %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Otvori kameru</string>
+    <string name="macro_do_camera_photo">Fotografija</string>
+    <string name="macro_do_camera_video">Videozapis</string>
+    <string name="macro_do_set_timer_short">Postavi tajmer: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Postavi alarm: %1$s</string>
 </resources>

@@ -214,6 +214,12 @@ object MacroRunner {
           service.getSystemService(android.content.ClipboardManager::class.java)
             ?.primaryClip?.takeIf { it.itemCount > 0 }?.getItemAt(0)?.coerceToText(service)?.toString().orEmpty()
       }
+      if ("{battery}" in text) DeviceActions.batteryLevel(service)?.let { all["battery"] = it.toString() }
+      // {device.wifi} and the like: the state of a device control.
+      Regex("\\{device\\.([A-Za-z]+)\\}").findAll(text).forEach { match ->
+        val name = match.groupValues[1]
+        DeviceActions.state(service, name)?.let { all["device.$name"] = it.text }
+      }
       val now = java.util.Date()
       all.putIfAbsent("time", android.text.format.DateFormat.getTimeFormat(service).format(now))
       all.putIfAbsent("date", android.text.format.DateFormat.getLongDateFormat(service).format(now))
@@ -258,6 +264,34 @@ object MacroRunner {
         Macros.DoKind.PLAY_TONE -> {
           playTone(step.number.coerceIn(20, 20_000))
           runStep(index + 1)
+        }
+        Macros.DoKind.DEVICE_CONTROL ->
+          DeviceActions.set(service, step.name, text) { worked, why ->
+            mainHandler.post { ifActive { if (worked) next() else fail(index, step, why ?: "not changed") } }
+          }
+        Macros.DoKind.MEDIA -> {
+          if (!DeviceActions.media(service, step.text)) return fail(index, step, "no media key ${step.text}")
+          next()
+        }
+        Macros.DoKind.SET_TIMER -> {
+          if (!DeviceActions.setTimer(service, step.number, text)) return fail(index, step, "no clock app")
+          next()
+        }
+        Macros.DoKind.SET_ALARM -> {
+          if (!DeviceActions.setAlarm(service, step.number / 60, step.number % 60, text)) return fail(index, step, "no clock app")
+          next()
+        }
+        Macros.DoKind.CALL -> {
+          if (!DeviceActions.call(service, text)) return fail(index, step, "no phone app")
+          next()
+        }
+        Macros.DoKind.SEND_MESSAGE -> {
+          if (!DeviceActions.message(service, fill(step.name), text)) return fail(index, step, "no messaging app")
+          next()
+        }
+        Macros.DoKind.OPEN_CAMERA -> {
+          if (!DeviceActions.camera(service, step.text == "video")) return fail(index, step, "no camera app")
+          next()
         }
         Macros.DoKind.COPY_TEXT -> {
           service.getSystemService(android.content.ClipboardManager::class.java)

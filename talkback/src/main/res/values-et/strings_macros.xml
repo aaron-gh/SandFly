@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Aadress</string>
     <string name="macro_do_keys_hint">Klahvid, nt tab enter</string>
     <string name="macro_number_range">Sisestage %1$d kuni %2$d</string>
-    <string name="macro_values_help">Väärtused lisatakse kujul {name}. Lisaks {item}, {clipboard}, {time} ja {date}.</string>
     <string name="macro_value_name">Väärtuse nimi</string>
     <string name="macro_value_name_invalid">Kasutage tähti, numbreid, punkte, sidekriipse või allkriipse</string>
     <string name="macro_test_value">Väärtus</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Väärtus %1$s on määratud</string>
     <string name="macro_test_value_value">Väärtus %1$s sisaldab: %2$s</string>
     <string name="macro_test_not">Mitte: %1$s</string>
+    <string name="macro_values_help">Väärtused lisatakse kujul {name}. Lisaks {item}, {clipboard}, {time}, {date}, {battery} ja {device.wifi}.</string>
+    <string name="macro_do_device_control">Seadme seade</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Lülita sisse</string>
+    <string name="macro_do_turn_off">Lülita välja</string>
+    <string name="macro_do_toggle">Lülita sisse või välja</string>
+    <string name="macro_do_slider_help" formatted="false">Arv, protsent, näiteks 50%, või +1 või -1.</string>
+    <string name="macro_do_choice_help">Valik, näiteks Vibreerimine, või next.</string>
+    <string name="macro_do_media">Meediaklahv</string>
+    <string name="macro_media_play_pause">Esita või peata</string>
+    <string name="macro_media_play">Esita</string>
+    <string name="macro_media_pause">Peata</string>
+    <string name="macro_media_next">Järgmine</string>
+    <string name="macro_media_previous">Eelmine</string>
+    <string name="macro_media_stop">Lõpeta</string>
+    <string name="macro_media_rewind">Keri tagasi</string>
+    <string name="macro_media_fast_forward">Keri edasi</string>
+    <string name="macro_do_set_timer">Määra taimer</string>
+    <string name="macro_do_set_timer_value">Määra taimer: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekundid</string>
+    <string name="macro_do_label">Silt (valikuline)</string>
+    <string name="macro_do_set_alarm">Määra äratus</string>
+    <string name="macro_do_set_alarm_value">Määra äratus: %1$s, %2$s</string>
+    <string name="macro_do_call">Helista</string>
+    <string name="macro_do_number">Telefoninumber</string>
+    <string name="macro_do_send_message">Saada sõnum</string>
+    <string name="macro_do_send_message_value">Sõnum numbrile %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Ava kaamera</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Määra taimer: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Määra äratus: %1$s</string>
 </resources>

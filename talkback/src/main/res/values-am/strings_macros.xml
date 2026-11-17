@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">አድራሻ</string>
     <string name="macro_do_keys_hint">ቁልፎች፣ ለምሳሌ tab enter</string>
     <string name="macro_number_range">ከ%1$d እስከ %2$d ያለ ቁጥር ያስገቡ</string>
-    <string name="macro_values_help">እሴቶች እንደ {name} ይገባሉ። እንዲሁም {item}፣ {clipboard}፣ {time} እና {date}።</string>
     <string name="macro_value_name">የእሴት ስም</string>
     <string name="macro_value_name_invalid">ፊደሎችን፣ አሃዞችን፣ ነጥቦችን፣ ሰረዞችን ወይም የታች ሰረዞችን ይጠቀሙ</string>
     <string name="macro_test_value">እሴት</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">እሴት %1$s ተዘጋጅቷል</string>
     <string name="macro_test_value_value">እሴት %1$s %2$s ይዟል</string>
     <string name="macro_test_not">አይደለም፦ %1$s</string>
+    <string name="macro_values_help">እሴቶች እንደ {name} ይገባሉ። እንዲሁም {item}፣ {clipboard}፣ {time}፣ {date}፣ {battery} እና {device.wifi}።</string>
+    <string name="macro_do_device_control">የመሣሪያ ቅንብር</string>
+    <string name="macro_do_device_control_value">%1$s፦ %2$s</string>
+    <string name="macro_do_turn_on">አብራ</string>
+    <string name="macro_do_turn_off">አጥፋ</string>
+    <string name="macro_do_toggle">አብራ ወይም አጥፋ</string>
+    <string name="macro_do_slider_help" formatted="false">ቁጥር፣ እንደ 50% ያለ መቶኛ፣ ወይም +1 ወይም -1።</string>
+    <string name="macro_do_choice_help">አማራጭ፣ ለምሳሌ ንዝረት፣ ወይም next።</string>
+    <string name="macro_do_media">የሚዲያ ቁልፍ</string>
+    <string name="macro_media_play_pause">አጫውት ወይም ለአፍታ አቁም</string>
+    <string name="macro_media_play">አጫውት</string>
+    <string name="macro_media_pause">ለአፍታ አቁም</string>
+    <string name="macro_media_next">ቀጣይ</string>
+    <string name="macro_media_previous">ቀዳሚ</string>
+    <string name="macro_media_stop">አቁም</string>
+    <string name="macro_media_rewind">ወደኋላ አጠንጥን</string>
+    <string name="macro_media_fast_forward">በፍጥነት ወደፊት</string>
+    <string name="macro_do_set_timer">ሰዓት ቆጣሪ አዘጋጅ</string>
+    <string name="macro_do_set_timer_value">ሰዓት ቆጣሪ አዘጋጅ፦ %1$s s፣ %2$s</string>
+    <string name="macro_do_timer_seconds">ሰከንዶች</string>
+    <string name="macro_do_label">መሰየሚያ (አማራጭ)</string>
+    <string name="macro_do_set_alarm">ማንቂያ አዘጋጅ</string>
+    <string name="macro_do_set_alarm_value">ማንቂያ አዘጋጅ፦ %1$s፣ %2$s</string>
+    <string name="macro_do_call">ደውል</string>
+    <string name="macro_do_number">ስልክ ቁጥር</string>
+    <string name="macro_do_send_message">መልዕክት ላክ</string>
+    <string name="macro_do_send_message_value">መልዕክት ወደ %1$s፦ %2$s</string>
+    <string name="macro_do_open_camera">ካሜራ ክፈት</string>
+    <string name="macro_do_camera_photo">ፎቶ</string>
+    <string name="macro_do_camera_video">ቪዲዮ</string>
+    <string name="macro_do_set_timer_short">ሰዓት ቆጣሪ አዘጋጅ፦ %1$s s</string>
+    <string name="macro_do_set_alarm_short">ማንቂያ አዘጋጅ፦ %1$s</string>
 </resources>

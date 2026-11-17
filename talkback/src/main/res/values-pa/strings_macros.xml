@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">ਪਤਾ</string>
     <string name="macro_do_keys_hint">ਕੁੰਜੀਆਂ, ਜਿਵੇਂ tab enter</string>
     <string name="macro_number_range">%1$d ਤੋਂ %2$d ਦਾਖਲ ਕਰੋ</string>
-    <string name="macro_values_help">ਮੁੱਲ {name} ਵਜੋਂ ਪਾਏ ਜਾਂਦੇ ਹਨ। ਨਾਲ ਹੀ {item}, {clipboard}, {time} ਅਤੇ {date}।</string>
     <string name="macro_value_name">ਮੁੱਲ ਦਾ ਨਾਮ</string>
     <string name="macro_value_name_invalid">ਅੱਖਰ, ਅੰਕ, ਬਿੰਦੂ, ਡੈਸ਼ ਜਾਂ ਅੰਡਰਸਕੋਰ ਵਰਤੋ</string>
     <string name="macro_test_value">ਮੁੱਲ</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">ਮੁੱਲ %1$s ਸੈੱਟ ਹੈ</string>
     <string name="macro_test_value_value">ਮੁੱਲ %1$s ਵਿੱਚ %2$s ਹੈ</string>
     <string name="macro_test_not">ਨਹੀਂ: %1$s</string>
+    <string name="macro_values_help">ਮੁੱਲ {name} ਵਜੋਂ ਪਾਏ ਜਾਂਦੇ ਹਨ। ਨਾਲ ਹੀ {item}, {clipboard}, {time}, {date}, {battery} ਅਤੇ {device.wifi}।</string>
+    <string name="macro_do_device_control">ਡੀਵਾਈਸ ਸੈਟਿੰਗ</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ਚਾਲੂ ਕਰੋ</string>
+    <string name="macro_do_turn_off">ਬੰਦ ਕਰੋ</string>
+    <string name="macro_do_toggle">ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰੋ</string>
+    <string name="macro_do_slider_help" formatted="false">ਕੋਈ ਸੰਖਿਆ, 50% ਵਰਗੀ ਪ੍ਰਤੀਸ਼ਤ, ਜਾਂ +1 ਜਾਂ -1।</string>
+    <string name="macro_do_choice_help">ਵਾਈਬ੍ਰੇਟ ਵਰਗਾ ਕੋਈ ਵਿਕਲਪ, ਜਾਂ next।</string>
+    <string name="macro_do_media">ਮੀਡੀਆ ਕੁੰਜੀ</string>
+    <string name="macro_media_play_pause">ਚਲਾਓ ਜਾਂ ਰੋਕੋ</string>
+    <string name="macro_media_play">ਚਲਾਓ</string>
+    <string name="macro_media_pause">ਰੋਕੋ</string>
+    <string name="macro_media_next">ਅਗਲਾ ਟਰੈਕ</string>
+    <string name="macro_media_previous">ਪਿਛਲਾ ਟਰੈਕ</string>
+    <string name="macro_media_stop">ਬੰਦ ਕਰੋ</string>
+    <string name="macro_media_rewind">ਰਿਵਾਈਂਡ ਕਰੋ</string>
+    <string name="macro_media_fast_forward">ਫਾਸਟ ਫਾਰਵਰਡ ਕਰੋ</string>
+    <string name="macro_do_set_timer">ਟਾਈਮਰ ਸੈੱਟ ਕਰੋ</string>
+    <string name="macro_do_set_timer_value">ਟਾਈਮਰ ਸੈੱਟ ਕਰੋ: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">ਸਕਿੰਟ</string>
+    <string name="macro_do_label">ਲੇਬਲ (ਵਿਕਲਪਿਕ)</string>
+    <string name="macro_do_set_alarm">ਅਲਾਰਮ ਸੈੱਟ ਕਰੋ</string>
+    <string name="macro_do_set_alarm_value">ਅਲਾਰਮ ਸੈੱਟ ਕਰੋ: %1$s, %2$s</string>
+    <string name="macro_do_call">ਕਾਲ ਕਰੋ</string>
+    <string name="macro_do_number">ਫ਼ੋਨ ਨੰਬਰ</string>
+    <string name="macro_do_send_message">ਸੁਨੇਹਾ ਭੇਜੋ</string>
+    <string name="macro_do_send_message_value">%1$s ਨੂੰ ਸੁਨੇਹਾ: %2$s</string>
+    <string name="macro_do_open_camera">ਕੈਮਰਾ ਖੋਲ੍ਹੋ</string>
+    <string name="macro_do_camera_photo">ਫ਼ੋਟੋ</string>
+    <string name="macro_do_camera_video">ਵੀਡੀਓ</string>
+    <string name="macro_do_set_timer_short">ਟਾਈਮਰ ਸੈੱਟ ਕਰੋ: %1$s s</string>
+    <string name="macro_do_set_alarm_short">ਅਲਾਰਮ ਸੈੱਟ ਕਰੋ: %1$s</string>
 </resources>

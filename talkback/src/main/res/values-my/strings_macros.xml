@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">လိပ်စာ</string>
     <string name="macro_do_keys_hint">ခလုတ်များ၊ ဥပမာ tab enter</string>
     <string name="macro_number_range">%1$d မှ %2$d အထိ ထည့်ပါ</string>
-    <string name="macro_values_help">တန်ဖိုးများကို {name} အဖြစ် ထည့်ပါ။ {item}၊ {clipboard}၊ {time} နှင့် {date} ကိုလည်း သုံးနိုင်သည်။</string>
     <string name="macro_value_name">တန်ဖိုး အမည်</string>
     <string name="macro_value_name_invalid">စာလုံး၊ ဂဏန်း၊ အစက်၊ တုံးတို သို့မဟုတ် underscore များကို သုံးပါ</string>
     <string name="macro_test_value">တန်ဖိုး</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">တန်ဖိုး %1$s သတ်မှတ်ထားသည်</string>
     <string name="macro_test_value_value">တန်ဖိုး %1$s တွင် %2$s ပါသည်</string>
     <string name="macro_test_not">မဟုတ်- %1$s</string>
+    <string name="macro_values_help">တန်ဖိုးများကို {name} အဖြစ် ထည့်ပါ။ {item}၊ {clipboard}၊ {time}၊ {date}၊ {battery} နှင့် {device.wifi} ကိုလည်း သုံးနိုင်သည်။</string>
+    <string name="macro_do_device_control">စက်ပစ္စည်း ဆက်တင်</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ဖွင့်ရန်</string>
+    <string name="macro_do_turn_off">ပိတ်ရန်</string>
+    <string name="macro_do_toggle">ဖွင့်ရန် (သို့) ပိတ်ရန်</string>
+    <string name="macro_do_slider_help" formatted="false">နံပါတ်၊ 50% ကဲ့သို့ ရာခိုင်နှုန်း၊ (သို့) +1 (သို့) -1။</string>
+    <string name="macro_do_choice_help">တုန်ခါမှု ကဲ့သို့ ရွေးစရာ (သို့) next။</string>
+    <string name="macro_do_media">မီဒီယာ ခလုတ်</string>
+    <string name="macro_media_play_pause">ဖွင့်ရန် (သို့) ခဏရပ်ရန်</string>
+    <string name="macro_media_play">ဖွင့်ရန်</string>
+    <string name="macro_media_pause">ခဏရပ်ရန်</string>
+    <string name="macro_media_next">နောက်တစ်ပုဒ်</string>
+    <string name="macro_media_previous">ယခင်တစ်ပုဒ်</string>
+    <string name="macro_media_stop">ရပ်ရန်</string>
+    <string name="macro_media_rewind">နောက်ပြန်ရစ်ရန်</string>
+    <string name="macro_media_fast_forward">ရှေ့သို့ အမြန်သွားရန်</string>
+    <string name="macro_do_set_timer">တိုင်မာ သတ်မှတ်ရန်</string>
+    <string name="macro_do_set_timer_value">တိုင်မာ သတ်မှတ်ရန်: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">စက္ကန့်</string>
+    <string name="macro_do_label">အညွှန်း (မဖြစ်မနေ မလို)</string>
+    <string name="macro_do_set_alarm">နှိုးစက် သတ်မှတ်ရန်</string>
+    <string name="macro_do_set_alarm_value">နှိုးစက် သတ်မှတ်ရန်: %1$s, %2$s</string>
+    <string name="macro_do_call">ခေါ်ဆိုရန်</string>
+    <string name="macro_do_number">ဖုန်းနံပါတ်</string>
+    <string name="macro_do_send_message">မက်ဆေ့ဂျ် ပို့ရန်</string>
+    <string name="macro_do_send_message_value">%1$s သို့ မက်ဆေ့ဂျ်: %2$s</string>
+    <string name="macro_do_open_camera">ကင်မရာ ဖွင့်ရန်</string>
+    <string name="macro_do_camera_photo">ဓာတ်ပုံ</string>
+    <string name="macro_do_camera_video">ဗီဒီယို</string>
+    <string name="macro_do_set_timer_short">တိုင်မာ သတ်မှတ်ရန်: %1$s s</string>
+    <string name="macro_do_set_alarm_short">နှိုးစက် သတ်မှတ်ရန်: %1$s</string>
 </resources>

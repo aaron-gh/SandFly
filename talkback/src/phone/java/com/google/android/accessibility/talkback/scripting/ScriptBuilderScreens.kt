@@ -1123,6 +1123,15 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
     if (!nested) {
       insideRows(screen, query)
       subQueryRow(screen, query, "has", R.string.script_builder_has)
+      if (query.optJSONObject("has") != null) {
+        val depth = query.optInt("hasDepth", NodeQuery.MAX_HAS_DEPTH)
+        screen.action(getString(R.string.script_builder_has_depth), resources.getQuantityString(R.plurals.script_builder_levels, depth, depth)) {
+          val choices = (1..NodeQuery.MAX_HAS_DEPTH).toList()
+          choose(getString(R.string.script_builder_has_depth), choices.map { resources.getQuantityString(R.plurals.script_builder_levels, it, it) }, depth - 1) {
+            change("hasDepth", choices[it].takeIf { level -> level < NodeQuery.MAX_HAS_DEPTH })
+          }
+        }
+      }
     }
   }
 

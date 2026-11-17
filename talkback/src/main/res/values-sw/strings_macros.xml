@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Anwani</string>
     <string name="macro_do_keys_hint">Vitufe, kama tab enter</string>
     <string name="macro_number_range">Weka %1$d hadi %2$d</string>
-    <string name="macro_values_help">Thamani huingizwa kama {name}. Pia {item}, {clipboard}, {time} na {date}.</string>
     <string name="macro_value_name">Jina la thamani</string>
     <string name="macro_value_name_invalid">Tumia herufi, tarakimu, nukta, vistari au mistari ya chini</string>
     <string name="macro_test_value">Thamani</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Thamani %1$s imewekwa</string>
     <string name="macro_test_value_value">Thamani %1$s ina %2$s</string>
     <string name="macro_test_not">Si: %1$s</string>
+    <string name="macro_values_help">Thamani huingizwa kama {name}. Pia {item}, {clipboard}, {time}, {date}, {battery} na {device.wifi}.</string>
+    <string name="macro_do_device_control">Mpangilio wa kifaa</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Washa</string>
+    <string name="macro_do_turn_off">Zima</string>
+    <string name="macro_do_toggle">Washa au zima</string>
+    <string name="macro_do_slider_help" formatted="false">Nambari, asilimia kama 50%, au +1 au -1.</string>
+    <string name="macro_do_choice_help">Chaguo, kama Tetema, au next.</string>
+    <string name="macro_do_media">Kitufe cha media</string>
+    <string name="macro_media_play_pause">Cheza au simamisha</string>
+    <string name="macro_media_play">Cheza</string>
+    <string name="macro_media_pause">Simamisha</string>
+    <string name="macro_media_next">Inayofuata</string>
+    <string name="macro_media_previous">Rudi nyuma</string>
+    <string name="macro_media_stop">Acha</string>
+    <string name="macro_media_rewind">Rudisha nyuma</string>
+    <string name="macro_media_fast_forward">Sogeza mbele</string>
+    <string name="macro_do_set_timer">Weka kipima muda</string>
+    <string name="macro_do_set_timer_value">Weka kipima muda: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekunde</string>
+    <string name="macro_do_label">Lebo (hiari)</string>
+    <string name="macro_do_set_alarm">Weka kengele</string>
+    <string name="macro_do_set_alarm_value">Weka kengele: %1$s, %2$s</string>
+    <string name="macro_do_call">Piga simu</string>
+    <string name="macro_do_number">Nambari ya simu</string>
+    <string name="macro_do_send_message">Tuma ujumbe</string>
+    <string name="macro_do_send_message_value">Ujumbe kwa %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Fungua kamera</string>
+    <string name="macro_do_camera_photo">Picha</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Weka kipima muda: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Weka kengele: %1$s</string>
 </resources>

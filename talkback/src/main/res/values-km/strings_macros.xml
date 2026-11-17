@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">អាសយដ្ឋាន</string>
     <string name="macro_do_keys_hint">គ្រាប់ចុច ដូចជា tab enter</string>
     <string name="macro_number_range">បញ្ចូលពី %1$d ដល់ %2$d</string>
-    <string name="macro_values_help">តម្លៃត្រូវបានបញ្ចូលជា {name}។ ក៏មាន {item}, {clipboard}, {time} និង {date} ផងដែរ។</string>
     <string name="macro_value_name">ឈ្មោះតម្លៃ</string>
     <string name="macro_value_name_invalid">ប្រើអក្សរ លេខ ចំណុច សញ្ញាដក ឬសញ្ញាគូសក្រោម</string>
     <string name="macro_test_value">តម្លៃ</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">តម្លៃ %1$s ត្រូវបានកំណត់</string>
     <string name="macro_test_value_value">តម្លៃ %1$s មាន %2$s</string>
     <string name="macro_test_not">មិនមែន៖ %1$s</string>
+    <string name="macro_values_help">តម្លៃត្រូវបានបញ្ចូលជា {name}។ ក៏មាន {item}, {clipboard}, {time}, {date}, {battery} និង {device.wifi} ផងដែរ។</string>
+    <string name="macro_do_device_control">ការកំណត់ឧបករណ៍</string>
+    <string name="macro_do_device_control_value">%1$s៖ %2$s</string>
+    <string name="macro_do_turn_on">បើក</string>
+    <string name="macro_do_turn_off">បិទ</string>
+    <string name="macro_do_toggle">បើក ឬបិទ</string>
+    <string name="macro_do_slider_help" formatted="false">លេខ ភាគរយដូចជា 50% ឬ +1 ឬ -1។</string>
+    <string name="macro_do_choice_help">ជម្រើសមួយ ដូចជា ញ័រ ឬ next។</string>
+    <string name="macro_do_media">គ្រាប់ចុចមេឌៀ</string>
+    <string name="macro_media_play_pause">លេង ឬផ្អាក</string>
+    <string name="macro_media_play">លេង</string>
+    <string name="macro_media_pause">ផ្អាក</string>
+    <string name="macro_media_next">បន្ទាប់</string>
+    <string name="macro_media_previous">មុន</string>
+    <string name="macro_media_stop">ឈប់</string>
+    <string name="macro_media_rewind">ខាថយក្រោយ</string>
+    <string name="macro_media_fast_forward">ខាទៅមុខ</string>
+    <string name="macro_do_set_timer">កំណត់កម្មវិធីកំណត់ម៉ោង</string>
+    <string name="macro_do_set_timer_value">កំណត់កម្មវិធីកំណត់ម៉ោង៖ %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">វិនាទី</string>
+    <string name="macro_do_label">ស្លាក (ស្រេចចិត្ត)</string>
+    <string name="macro_do_set_alarm">កំណត់ម៉ោងរោទ៍</string>
+    <string name="macro_do_set_alarm_value">កំណត់ម៉ោងរោទ៍៖ %1$s, %2$s</string>
+    <string name="macro_do_call">ហៅទូរសព្ទ</string>
+    <string name="macro_do_number">លេខទូរស័ព្ទ</string>
+    <string name="macro_do_send_message">ផ្ញើសារ</string>
+    <string name="macro_do_send_message_value">សារទៅ %1$s៖ %2$s</string>
+    <string name="macro_do_open_camera">បើកកាមេរ៉ា</string>
+    <string name="macro_do_camera_photo">រូបថត</string>
+    <string name="macro_do_camera_video">វីដេអូ</string>
+    <string name="macro_do_set_timer_short">កំណត់កម្មវិធីកំណត់ម៉ោង៖ %1$s s</string>
+    <string name="macro_do_set_alarm_short">កំណត់ម៉ោងរោទ៍៖ %1$s</string>
 </resources>

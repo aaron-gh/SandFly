@@ -155,7 +155,6 @@
     <string name="macro_do_link_hint">Adresas</string>
     <string name="macro_do_keys_hint">Klavišai, pvz., tab enter</string>
     <string name="macro_number_range">Įveskite nuo %1$d iki %2$d</string>
-    <string name="macro_values_help">Reikšmės įterpiamos kaip {name}. Taip pat {item}, {clipboard}, {time} ir {date}.</string>
     <string name="macro_value_name">Reikšmės pavadinimas</string>
     <string name="macro_value_name_invalid">Naudokite raides, skaitmenis, taškus, brūkšnelius arba pabraukimo brūkšnius</string>
     <string name="macro_test_value">Reikšmė</string>
@@ -163,4 +162,36 @@
     <string name="macro_test_value_set">Reikšmė %1$s nustatyta</string>
     <string name="macro_test_value_value">Reikšmėje %1$s yra %2$s</string>
     <string name="macro_test_not">Ne: %1$s</string>
+    <string name="macro_values_help">Reikšmės įterpiamos kaip {name}. Taip pat {item}, {clipboard}, {time}, {date}, {battery} ir {device.wifi}.</string>
+    <string name="macro_do_device_control">Įrenginio nustatymas</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Įjungti</string>
+    <string name="macro_do_turn_off">Išjungti</string>
+    <string name="macro_do_toggle">Įjungti arba išjungti</string>
+    <string name="macro_do_slider_help" formatted="false">Skaičius, procentai, pvz., 50%, arba +1 ar -1.</string>
+    <string name="macro_do_choice_help">Parinktis, pvz., Vibravimas, arba next.</string>
+    <string name="macro_do_media">Medijos klavišas</string>
+    <string name="macro_media_play_pause">Leisti arba pristabdyti</string>
+    <string name="macro_media_play">Leisti</string>
+    <string name="macro_media_pause">Pristabdyti</string>
+    <string name="macro_media_next">Kitas</string>
+    <string name="macro_media_previous">Ankstesnis</string>
+    <string name="macro_media_stop">Sustabdyti</string>
+    <string name="macro_media_rewind">Atsukti atgal</string>
+    <string name="macro_media_fast_forward">Prasukti į priekį</string>
+    <string name="macro_do_set_timer">Nustatyti laikmatį</string>
+    <string name="macro_do_set_timer_value">Nustatyti laikmatį: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekundės</string>
+    <string name="macro_do_label">Etiketė (neprivaloma)</string>
+    <string name="macro_do_set_alarm">Nustatyti signalą</string>
+    <string name="macro_do_set_alarm_value">Nustatyti signalą: %1$s, %2$s</string>
+    <string name="macro_do_call">Skambinti</string>
+    <string name="macro_do_number">Telefono numeris</string>
+    <string name="macro_do_send_message">Siųsti žinutę</string>
+    <string name="macro_do_send_message_value">Žinutė (%1$s): %2$s</string>
+    <string name="macro_do_open_camera">Atidaryti fotoaparatą</string>
+    <string name="macro_do_camera_photo">Nuotrauka</string>
+    <string name="macro_do_camera_video">Vaizdo įrašas</string>
+    <string name="macro_do_set_timer_short">Nustatyti laikmatį: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Nustatyti signalą: %1$s</string>
 </resources>

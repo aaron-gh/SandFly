@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Adres</string>
     <string name="macro_do_keys_hint">Sleutels, soos tab enter</string>
     <string name="macro_number_range">Voer %1$d tot %2$d in</string>
-    <string name="macro_values_help">Waardes word as {name} ingevoeg. Ook {item}, {clipboard}, {time} en {date}.</string>
     <string name="macro_value_name">Waardenaam</string>
     <string name="macro_value_name_invalid">Gebruik letters, syfers, punte, koppeltekens of onderstrepe</string>
     <string name="macro_test_value">Waarde</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Waarde %1$s is gestel</string>
     <string name="macro_test_value_value">Waarde %1$s bevat %2$s</string>
     <string name="macro_test_not">Nie: %1$s</string>
+    <string name="macro_values_help">Waardes word as {name} ingevoeg. Ook {item}, {clipboard}, {time}, {date}, {battery} en {device.wifi}.</string>
+    <string name="macro_do_device_control">Toestelinstelling</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Skakel aan</string>
+    <string name="macro_do_turn_off">Skakel af</string>
+    <string name="macro_do_toggle">Skakel aan of af</string>
+    <string name="macro_do_slider_help" formatted="false">’n Getal, ’n persentasie soos 50%, of +1 of -1.</string>
+    <string name="macro_do_choice_help">’n Opsie, soos Vibreer, of next.</string>
+    <string name="macro_do_media">Mediasleutel</string>
+    <string name="macro_media_play_pause">Speel of onderbreek</string>
+    <string name="macro_media_play">Speel</string>
+    <string name="macro_media_pause">Onderbreek</string>
+    <string name="macro_media_next">Volgende</string>
+    <string name="macro_media_previous">Vorige</string>
+    <string name="macro_media_stop">Stop</string>
+    <string name="macro_media_rewind">Terugspoel</string>
+    <string name="macro_media_fast_forward">Vinnig vorentoe</string>
+    <string name="macro_do_set_timer">Stel timer</string>
+    <string name="macro_do_set_timer_value">Stel timer: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekondes</string>
+    <string name="macro_do_label">Etiket (opsioneel)</string>
+    <string name="macro_do_set_alarm">Stel wekker</string>
+    <string name="macro_do_set_alarm_value">Stel wekker: %1$s, %2$s</string>
+    <string name="macro_do_call">Bel</string>
+    <string name="macro_do_number">Foonnommer</string>
+    <string name="macro_do_send_message">Stuur boodskap</string>
+    <string name="macro_do_send_message_value">Boodskap aan %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Maak kamera oop</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Stel timer: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Stel wekker: %1$s</string>
 </resources>

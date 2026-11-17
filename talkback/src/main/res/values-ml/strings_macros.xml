@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">വിലാസം</string>
     <string name="macro_do_keys_hint">കീകൾ, ഉദാ. tab enter</string>
     <string name="macro_number_range">%1$d മുതൽ %2$d വരെ നൽകുക</string>
-    <string name="macro_values_help">മൂല്യങ്ങൾ {name} ആയി ചേർക്കുക. {item}, {clipboard}, {time}, {date} എന്നിവയും.</string>
     <string name="macro_value_name">മൂല്യത്തിന്റെ പേര്</string>
     <string name="macro_value_name_invalid">അക്ഷരങ്ങൾ, അക്കങ്ങൾ, ഡോട്ടുകൾ, ഡാഷുകൾ, അണ്ടർസ്കോറുകൾ എന്നിവ ഉപയോഗിക്കുക</string>
     <string name="macro_test_value">മൂല്യം</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">മൂല്യം %1$s സജ്ജമാക്കിയിട്ടുണ്ട്</string>
     <string name="macro_test_value_value">മൂല്യം %1$s-ൽ %2$s ഉണ്ട്</string>
     <string name="macro_test_not">അല്ല: %1$s</string>
+    <string name="macro_values_help">മൂല്യങ്ങൾ {name} ആയി ചേർക്കുക. {item}, {clipboard}, {time}, {date}, {battery}, {device.wifi} എന്നിവയും.</string>
+    <string name="macro_do_device_control">ഉപകരണ ക്രമീകരണം</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">ഓണാക്കുക</string>
+    <string name="macro_do_turn_off">ഓഫാക്കുക</string>
+    <string name="macro_do_toggle">ഓണാക്കുക അല്ലെങ്കിൽ ഓഫാക്കുക</string>
+    <string name="macro_do_slider_help" formatted="false">ഒരു സംഖ്യ, 50% പോലുള്ള ശതമാനം, അല്ലെങ്കിൽ +1 അല്ലെങ്കിൽ -1.</string>
+    <string name="macro_do_choice_help">വൈബ്രേറ്റ് പോലുള്ള ഒരു ഓപ്ഷൻ, അല്ലെങ്കിൽ next.</string>
+    <string name="macro_do_media">മീഡിയ കീ</string>
+    <string name="macro_media_play_pause">പ്ലേ ചെയ്യുക/തൽക്കാലം നിർത്തുക</string>
+    <string name="macro_media_play">പ്ലേ ചെയ്യുക</string>
+    <string name="macro_media_pause">താൽക്കാലികമായി നിർത്തുക</string>
+    <string name="macro_media_next">അടുത്തത്</string>
+    <string name="macro_media_previous">മുമ്പത്തേത്</string>
+    <string name="macro_media_stop">നിർത്തുക</string>
+    <string name="macro_media_rewind">റിവൈൻഡ് ചെയ്യുക</string>
+    <string name="macro_media_fast_forward">ഫാസ്റ്റ് ഫോർവേഡ് ചെയ്യുക</string>
+    <string name="macro_do_set_timer">ടൈമർ സജ്ജമാക്കുക</string>
+    <string name="macro_do_set_timer_value">ടൈമർ സജ്ജമാക്കുക: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">സെക്കൻഡ്</string>
+    <string name="macro_do_label">ലേബൽ (ഓപ്‌ഷണൽ)</string>
+    <string name="macro_do_set_alarm">അലാറം സജ്ജമാക്കുക</string>
+    <string name="macro_do_set_alarm_value">അലാറം സജ്ജമാക്കുക: %1$s, %2$s</string>
+    <string name="macro_do_call">വിളിക്കുക</string>
+    <string name="macro_do_number">ഫോൺ നമ്പർ</string>
+    <string name="macro_do_send_message">സന്ദേശം അയയ്ക്കുക</string>
+    <string name="macro_do_send_message_value">%1$s-ന് സന്ദേശം: %2$s</string>
+    <string name="macro_do_open_camera">ക്യാമറ തുറക്കുക</string>
+    <string name="macro_do_camera_photo">ഫോട്ടോ</string>
+    <string name="macro_do_camera_video">വീഡിയോ</string>
+    <string name="macro_do_set_timer_short">ടൈമർ സജ്ജമാക്കുക: %1$s s</string>
+    <string name="macro_do_set_alarm_short">അലാറം സജ്ജമാക്കുക: %1$s</string>
 </resources>

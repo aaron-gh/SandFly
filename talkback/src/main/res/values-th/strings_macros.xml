@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">ที่อยู่</string>
     <string name="macro_do_keys_hint">ปุ่ม เช่น tab enter</string>
     <string name="macro_number_range">ป้อน %1$d ถึง %2$d</string>
-    <string name="macro_values_help">ใส่ค่าเป็น {name} และใช้ {item}, {clipboard}, {time} และ {date} ได้ด้วย</string>
     <string name="macro_value_name">ชื่อค่า</string>
     <string name="macro_value_name_invalid">ใช้ตัวอักษร ตัวเลข จุด ขีดกลาง หรือขีดล่าง</string>
     <string name="macro_test_value">ค่า</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">กำหนดค่า %1$s แล้ว</string>
     <string name="macro_test_value_value">ค่า %1$s มี %2$s</string>
     <string name="macro_test_not">ไม่: %1$s</string>
+    <string name="macro_values_help">ใส่ค่าเป็น {name} และใช้ {item}, {clipboard}, {time}, {date}, {battery} และ {device.wifi} ได้ด้วย</string>
+    <string name="macro_do_device_control">การตั้งค่าอุปกรณ์</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">เปิด</string>
+    <string name="macro_do_turn_off">ปิด</string>
+    <string name="macro_do_toggle">เปิดหรือปิด</string>
+    <string name="macro_do_slider_help" formatted="false">ตัวเลข เปอร์เซ็นต์ เช่น 50% หรือ +1 หรือ -1</string>
+    <string name="macro_do_choice_help">ตัวเลือก เช่น สั่น หรือ next</string>
+    <string name="macro_do_media">ปุ่มสื่อ</string>
+    <string name="macro_media_play_pause">เล่นหรือหยุดชั่วคราว</string>
+    <string name="macro_media_play">เล่น</string>
+    <string name="macro_media_pause">หยุดชั่วคราว</string>
+    <string name="macro_media_next">ถัดไป</string>
+    <string name="macro_media_previous">ก่อนหน้า</string>
+    <string name="macro_media_stop">หยุด</string>
+    <string name="macro_media_rewind">กรอกลับ</string>
+    <string name="macro_media_fast_forward">กรอไปข้างหน้า</string>
+    <string name="macro_do_set_timer">ตั้งตัวจับเวลา</string>
+    <string name="macro_do_set_timer_value">ตั้งตัวจับเวลา: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">วินาที</string>
+    <string name="macro_do_label">ป้ายกำกับ (ไม่บังคับ)</string>
+    <string name="macro_do_set_alarm">ตั้งการปลุก</string>
+    <string name="macro_do_set_alarm_value">ตั้งการปลุก: %1$s, %2$s</string>
+    <string name="macro_do_call">โทร</string>
+    <string name="macro_do_number">หมายเลขโทรศัพท์</string>
+    <string name="macro_do_send_message">ส่งข้อความ</string>
+    <string name="macro_do_send_message_value">ข้อความถึง %1$s: %2$s</string>
+    <string name="macro_do_open_camera">เปิดกล้อง</string>
+    <string name="macro_do_camera_photo">รูปภาพ</string>
+    <string name="macro_do_camera_video">วิดีโอ</string>
+    <string name="macro_do_set_timer_short">ตั้งตัวจับเวลา: %1$s s</string>
+    <string name="macro_do_set_alarm_short">ตั้งการปลุก: %1$s</string>
 </resources>

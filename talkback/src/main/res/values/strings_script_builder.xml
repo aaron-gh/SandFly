@@ -419,4 +419,11 @@
         <item quantity="one">Every minute</item>
         <item quantity="other">Every %1$d minutes</item>
     </plurals>
+    <!-- How many levels down Has an item inside looks: 1 for the items directly in the item. [CHAR LIMIT=40] -->
+    <string name="script_builder_has_depth">Levels down</string>
+    <!-- Number of levels down Has an item inside looks. [CHAR LIMIT=NONE] -->
+    <plurals name="script_builder_levels">
+        <item quantity="one">Directly inside</item>
+        <item quantity="other">Up to %1$d levels</item>
+    </plurals>
 </resources>

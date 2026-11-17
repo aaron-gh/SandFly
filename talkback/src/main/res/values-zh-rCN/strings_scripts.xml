@@ -99,7 +99,6 @@
     <!-- What the clipboard permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_clipboard">读取和更改剪贴板</string>
     <!-- What the system permission lets a script do. [CHAR LIMIT=NONE] -->
-    <string name="script_permission_system">返回、回到主屏幕、打开通知、列出并打开应用、打开设置和链接、向应用发送 intent、更改音量和铃声模式</string>
     <!-- What the notifications permission lets a script do. [CHAR LIMIT=NONE] -->
     <string name="script_permission_notifications">读取和更改朗读的通知</string>
     <!-- What the events permission lets a script do. [CHAR LIMIT=NONE] -->
@@ -311,4 +310,5 @@
     <string name="item_details_inside">其中的项目</string>
     <string name="item_details_script">脚本详情</string>
     <string name="item_details_app">应用</string>
+    <string name="script_permission_system">返回、回到主屏幕、打开通知、列出并打开应用、打开设置和链接、向应用发送 intent、更改音量、铃声模式以及 Wi-Fi 和手电筒等设备设置、控制媒体、设置计时器和闹钟、拨打电话和发送消息</string>
 </resources>

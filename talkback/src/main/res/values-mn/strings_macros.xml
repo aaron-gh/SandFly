@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Хаяг</string>
     <string name="macro_do_keys_hint">Товчлуурууд, жишээ нь tab enter</string>
     <string name="macro_number_range">%1$d-%2$d хооронд оруулна уу</string>
-    <string name="macro_values_help">Утгыг {name} хэлбэрээр оруулна. Мөн {item}, {clipboard}, {time}, {date}.</string>
     <string name="macro_value_name">Утгын нэр</string>
     <string name="macro_value_name_invalid">Үсэг, цифр, цэг, зураас эсвэл доогуур зураас ашиглана уу</string>
     <string name="macro_test_value">Утга</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s утга тохируулагдсан</string>
     <string name="macro_test_value_value">%1$s утга %2$s агуулсан</string>
     <string name="macro_test_not">Биш: %1$s</string>
+    <string name="macro_values_help">Утгыг {name} хэлбэрээр оруулна. Мөн {item}, {clipboard}, {time}, {date}, {battery}, {device.wifi}.</string>
+    <string name="macro_do_device_control">Төхөөрөмжийн тохиргоо</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Асаах</string>
+    <string name="macro_do_turn_off">Унтраах</string>
+    <string name="macro_do_toggle">Асаах эсвэл унтраах</string>
+    <string name="macro_do_slider_help" formatted="false">Тоо, 50% гэх мэт хувь, эсвэл +1 эсвэл -1.</string>
+    <string name="macro_do_choice_help">Чичиргээ гэх мэт сонголт, эсвэл next.</string>
+    <string name="macro_do_media">Медиа товч</string>
+    <string name="macro_media_play_pause">Тоглуулах эсвэл түр зогсоох</string>
+    <string name="macro_media_play">Тоглуулах</string>
+    <string name="macro_media_pause">Түр зогсоох</string>
+    <string name="macro_media_next">Дараах</string>
+    <string name="macro_media_previous">Өмнөх</string>
+    <string name="macro_media_stop">Зогсоох</string>
+    <string name="macro_media_rewind">Ухраах</string>
+    <string name="macro_media_fast_forward">Урагшлуулах</string>
+    <string name="macro_do_set_timer">Таймер тохируулах</string>
+    <string name="macro_do_set_timer_value">Таймер тохируулах: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Секунд</string>
+    <string name="macro_do_label">Шошго (заавал биш)</string>
+    <string name="macro_do_set_alarm">Сэрүүлэг тохируулах</string>
+    <string name="macro_do_set_alarm_value">Сэрүүлэг тохируулах: %1$s, %2$s</string>
+    <string name="macro_do_call">Залгах</string>
+    <string name="macro_do_number">Утасны дугаар</string>
+    <string name="macro_do_send_message">Мессеж илгээх</string>
+    <string name="macro_do_send_message_value">%1$s руу мессеж: %2$s</string>
+    <string name="macro_do_open_camera">Камер нээх</string>
+    <string name="macro_do_camera_photo">Зураг</string>
+    <string name="macro_do_camera_video">Видео</string>
+    <string name="macro_do_set_timer_short">Таймер тохируулах: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Сэрүүлэг тохируулах: %1$s</string>
 </resources>

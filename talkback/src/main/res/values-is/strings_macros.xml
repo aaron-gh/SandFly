@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Vistfang</string>
     <string name="macro_do_keys_hint">Lyklar, t.d. tab enter</string>
     <string name="macro_number_range">Sláðu inn %1$d til %2$d</string>
-    <string name="macro_values_help">Gildi eru sett inn sem {name}. Einnig {item}, {clipboard}, {time} og {date}.</string>
     <string name="macro_value_name">Heiti gildis</string>
     <string name="macro_value_name_invalid">Notaðu bókstafi, tölustafi, punkta, bandstrik eða undirstrik</string>
     <string name="macro_test_value">Gildi</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Gildið %1$s er stillt</string>
     <string name="macro_test_value_value">Gildið %1$s inniheldur %2$s</string>
     <string name="macro_test_not">Ekki: %1$s</string>
+    <string name="macro_values_help">Gildi eru sett inn sem {name}. Einnig {item}, {clipboard}, {time}, {date}, {battery} og {device.wifi}.</string>
+    <string name="macro_do_device_control">Tækjastilling</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Kveikja á</string>
+    <string name="macro_do_turn_off">Slökkva á</string>
+    <string name="macro_do_toggle">Kveikja eða slökkva á</string>
+    <string name="macro_do_slider_help" formatted="false">Tala, prósenta eins og 50%, eða +1 eða -1.</string>
+    <string name="macro_do_choice_help">Valkostur, eins og Titra, eða next.</string>
+    <string name="macro_do_media">Margmiðlunarlykill</string>
+    <string name="macro_media_play_pause">Spila eða gera hlé</string>
+    <string name="macro_media_play">Spila</string>
+    <string name="macro_media_pause">Gera hlé</string>
+    <string name="macro_media_next">Næsta</string>
+    <string name="macro_media_previous">Fyrri</string>
+    <string name="macro_media_stop">Stöðva</string>
+    <string name="macro_media_rewind">Spóla til baka</string>
+    <string name="macro_media_fast_forward">Spóla áfram</string>
+    <string name="macro_do_set_timer">Stilla tímamæli</string>
+    <string name="macro_do_set_timer_value">Stilla tímamæli: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekúndur</string>
+    <string name="macro_do_label">Skýring (valfrjálst)</string>
+    <string name="macro_do_set_alarm">Stilla vekjara</string>
+    <string name="macro_do_set_alarm_value">Stilla vekjara: %1$s, %2$s</string>
+    <string name="macro_do_call">Hringja</string>
+    <string name="macro_do_number">Símanúmer</string>
+    <string name="macro_do_send_message">Senda skilaboð</string>
+    <string name="macro_do_send_message_value">Skilaboð til %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Opna myndavél</string>
+    <string name="macro_do_camera_photo">Mynd</string>
+    <string name="macro_do_camera_video">Myndskeið</string>
+    <string name="macro_do_set_timer_short">Stilla tímamæli: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Stilla vekjara: %1$s</string>
 </resources>

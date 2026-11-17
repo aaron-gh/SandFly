@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">ঠিকনা</string>
     <string name="macro_do_keys_hint">কী, যেনে tab enter</string>
     <string name="macro_number_range">%1$d ৰ পৰা %2$d লৈকে দিয়ক</string>
-    <string name="macro_values_help">মানসমূহ {name} হিচাপে বহে। লগতে {item}, {clipboard}, {time} আৰু {date}।</string>
     <string name="macro_value_name">মানৰ নাম</string>
     <string name="macro_value_name_invalid">আখৰ, অংক, ডট, ডেশ্ব বা আণ্ডাৰস্ক’ৰ ব্যৱহাৰ কৰক</string>
     <string name="macro_test_value">মান</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">মান %1$s ছেট কৰা আছে</string>
     <string name="macro_test_value_value">মান %1$s ত %2$s আছে</string>
     <string name="macro_test_not">নহয়: %1$s</string>
+    <string name="macro_values_help">মানসমূহ {name} হিচাপে বহে। লগতে {item}, {clipboard}, {time}, {date}, {battery} আৰু {device.wifi}।</string>
+    <string name="macro_do_device_control">ডিভাইচৰ ছেটিং</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">অন কৰক</string>
+    <string name="macro_do_turn_off">অফ কৰক</string>
+    <string name="macro_do_toggle">অন বা অফ কৰক</string>
+    <string name="macro_do_slider_help" formatted="false">এটা সংখ্যা, এটা শতাংশ যেনে 50%, বা +1 বা -1।</string>
+    <string name="macro_do_choice_help">এটা বিকল্প, যেনে কম্পন, বা next।</string>
+    <string name="macro_do_media">মিডিয়া কী</string>
+    <string name="macro_media_play_pause">প্লে’ বা পজ কৰক</string>
+    <string name="macro_media_play">প্লে’ কৰক</string>
+    <string name="macro_media_pause">পজ কৰক</string>
+    <string name="macro_media_next">পৰৱৰ্তী</string>
+    <string name="macro_media_previous">পূৰ্বৱৰ্তী</string>
+    <string name="macro_media_stop">বন্ধ কৰক</string>
+    <string name="macro_media_rewind">পিছলৈ নিয়ক</string>
+    <string name="macro_media_fast_forward">আগলৈ নিয়ক</string>
+    <string name="macro_do_set_timer">টাইমাৰ ছেট কৰক</string>
+    <string name="macro_do_set_timer_value">টাইমাৰ ছেট কৰক: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">ছেকেণ্ড</string>
+    <string name="macro_do_label">লেবেল (ঐচ্ছিক)</string>
+    <string name="macro_do_set_alarm">এলাৰ্ম ছেট কৰক</string>
+    <string name="macro_do_set_alarm_value">এলাৰ্ম ছেট কৰক: %1$s, %2$s</string>
+    <string name="macro_do_call">কল কৰক</string>
+    <string name="macro_do_number">ফোন নম্বৰ</string>
+    <string name="macro_do_send_message">বাৰ্তা পঠিয়াওক</string>
+    <string name="macro_do_send_message_value">%1$sলৈ বাৰ্তা: %2$s</string>
+    <string name="macro_do_open_camera">কেমেৰা খোলক</string>
+    <string name="macro_do_camera_photo">ফট’</string>
+    <string name="macro_do_camera_video">ভিডিঅ’</string>
+    <string name="macro_do_set_timer_short">টাইমাৰ ছেট কৰক: %1$s s</string>
+    <string name="macro_do_set_alarm_short">এলাৰ্ম ছেট কৰক: %1$s</string>
 </resources>

@@ -140,7 +140,6 @@
     <string name="macro_do_link_hint">Адреса</string>
     <string name="macro_do_keys_hint">Клавіші, наприклад tab enter</string>
     <string name="macro_number_range">Введіть від %1$d до %2$d</string>
-    <string name="macro_values_help">Значення вставляються як {name}. Також {item}, {clipboard}, {time} і {date}.</string>
     <string name="macro_value_name">Назва значення</string>
     <string name="macro_value_name_invalid">Використовуйте літери, цифри, крапки, дефіси або підкреслення</string>
     <string name="macro_test_value">Значення</string>
@@ -148,4 +147,36 @@
     <string name="macro_test_value_set">Значення %1$s встановлено</string>
     <string name="macro_test_value_value">Значення %1$s містить %2$s</string>
     <string name="macro_test_not">Не: %1$s</string>
+    <string name="macro_values_help">Значення вставляються як {name}. Також {item}, {clipboard}, {time}, {date}, {battery} і {device.wifi}.</string>
+    <string name="macro_do_device_control">Налаштування пристрою</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Увімкнути</string>
+    <string name="macro_do_turn_off">Вимкнути</string>
+    <string name="macro_do_toggle">Увімкнути або вимкнути</string>
+    <string name="macro_do_slider_help" formatted="false">Число, відсоток, наприклад 50%, або +1 чи -1.</string>
+    <string name="macro_do_choice_help">Варіант, наприклад Вібрація, або next.</string>
+    <string name="macro_do_media">Медіаклавіша</string>
+    <string name="macro_media_play_pause">Відтворити або призупинити</string>
+    <string name="macro_media_play">Відтворити</string>
+    <string name="macro_media_pause">Пауза</string>
+    <string name="macro_media_next">Далі</string>
+    <string name="macro_media_previous">Назад</string>
+    <string name="macro_media_stop">Зупинити</string>
+    <string name="macro_media_rewind">Перемотати назад</string>
+    <string name="macro_media_fast_forward">Перемотати вперед</string>
+    <string name="macro_do_set_timer">Установити таймер</string>
+    <string name="macro_do_set_timer_value">Установити таймер: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Секунди</string>
+    <string name="macro_do_label">Мітка (необов’язково)</string>
+    <string name="macro_do_set_alarm">Установити будильник</string>
+    <string name="macro_do_set_alarm_value">Установити будильник: %1$s, %2$s</string>
+    <string name="macro_do_call">Зателефонувати</string>
+    <string name="macro_do_number">Номер телефону</string>
+    <string name="macro_do_send_message">Надіслати повідомлення</string>
+    <string name="macro_do_send_message_value">Повідомлення на %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Відкрити камеру</string>
+    <string name="macro_do_camera_photo">Фото</string>
+    <string name="macro_do_camera_video">Відео</string>
+    <string name="macro_do_set_timer_short">Установити таймер: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Установити будильник: %1$s</string>
 </resources>

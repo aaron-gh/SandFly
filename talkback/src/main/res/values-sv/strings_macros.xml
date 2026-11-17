@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Adress</string>
     <string name="macro_do_keys_hint">Tangenter, till exempel tab enter</string>
     <string name="macro_number_range">Ange %1$d till %2$d</string>
-    <string name="macro_values_help">Värden infogas som {name}. Även {item}, {clipboard}, {time} och {date}.</string>
     <string name="macro_value_name">Värdenamn</string>
     <string name="macro_value_name_invalid">Använd bokstäver, siffror, punkter, bindestreck eller understreck</string>
     <string name="macro_test_value">Värde</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">Värdet %1$s är angivet</string>
     <string name="macro_test_value_value">Värdet %1$s har %2$s</string>
     <string name="macro_test_not">Inte: %1$s</string>
+    <string name="macro_values_help">Värden infogas som {name}. Även {item}, {clipboard}, {time}, {date}, {battery} och {device.wifi}.</string>
+    <string name="macro_do_device_control">Enhetsinställning</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Aktivera</string>
+    <string name="macro_do_turn_off">Inaktivera</string>
+    <string name="macro_do_toggle">Aktivera eller inaktivera</string>
+    <string name="macro_do_slider_help" formatted="false">Ett tal, en procentsats som 50% eller +1 eller -1.</string>
+    <string name="macro_do_choice_help">Ett alternativ, till exempel Vibrera, eller next.</string>
+    <string name="macro_do_media">Medieknapp</string>
+    <string name="macro_media_play_pause">Spela upp eller pausa</string>
+    <string name="macro_media_play">Spela upp</string>
+    <string name="macro_media_pause">Pausa</string>
+    <string name="macro_media_next">Nästa</string>
+    <string name="macro_media_previous">Föregående</string>
+    <string name="macro_media_stop">Stoppa</string>
+    <string name="macro_media_rewind">Spola bakåt</string>
+    <string name="macro_media_fast_forward">Spola framåt</string>
+    <string name="macro_do_set_timer">Ställ in timer</string>
+    <string name="macro_do_set_timer_value">Ställ in timer: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Sekunder</string>
+    <string name="macro_do_label">Etikett (valfri)</string>
+    <string name="macro_do_set_alarm">Ställ in larm</string>
+    <string name="macro_do_set_alarm_value">Ställ in larm: %1$s, %2$s</string>
+    <string name="macro_do_call">Ring</string>
+    <string name="macro_do_number">Telefonnummer</string>
+    <string name="macro_do_send_message">Skicka meddelande</string>
+    <string name="macro_do_send_message_value">Meddelande till %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Öppna kameran</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Ställ in timer: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Ställ in larm: %1$s</string>
 </resources>

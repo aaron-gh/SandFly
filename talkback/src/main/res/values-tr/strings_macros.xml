@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Adres</string>
     <string name="macro_do_keys_hint">Tuşlar, örneğin tab enter</string>
     <string name="macro_number_range">%1$d ile %2$d arasında bir değer girin</string>
-    <string name="macro_values_help">Değerler {name} olarak eklenir. Ayrıca {item}, {clipboard}, {time} ve {date}.</string>
     <string name="macro_value_name">Değer adı</string>
     <string name="macro_value_name_invalid">Harf, rakam, nokta, kısa çizgi veya alt çizgi kullanın</string>
     <string name="macro_test_value">Değer</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s değeri ayarlı</string>
     <string name="macro_test_value_value">%1$s değeri %2$s içerir</string>
     <string name="macro_test_not">Değil: %1$s</string>
+    <string name="macro_values_help">Değerler {name} olarak eklenir. Ayrıca {item}, {clipboard}, {time}, {date}, {battery} ve {device.wifi}.</string>
+    <string name="macro_do_device_control">Cihaz ayarı</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Etkinleştir</string>
+    <string name="macro_do_turn_off">Kapat</string>
+    <string name="macro_do_toggle">Etkinleştir veya kapat</string>
+    <string name="macro_do_slider_help" formatted="false">Bir sayı, 50% gibi bir yüzde veya +1 ya da -1.</string>
+    <string name="macro_do_choice_help">Titreşim gibi bir seçenek veya next.</string>
+    <string name="macro_do_media">Medya tuşu</string>
+    <string name="macro_media_play_pause">Oynat veya duraklat</string>
+    <string name="macro_media_play">Oynat</string>
+    <string name="macro_media_pause">Duraklat</string>
+    <string name="macro_media_next">Sonraki</string>
+    <string name="macro_media_previous">Önceki</string>
+    <string name="macro_media_stop">Durdur</string>
+    <string name="macro_media_rewind">Geri sar</string>
+    <string name="macro_media_fast_forward">İleri sar</string>
+    <string name="macro_do_set_timer">Zamanlayıcı kur</string>
+    <string name="macro_do_set_timer_value">Zamanlayıcı kur: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Saniye</string>
+    <string name="macro_do_label">Etiket (isteğe bağlı)</string>
+    <string name="macro_do_set_alarm">Alarm kur</string>
+    <string name="macro_do_set_alarm_value">Alarm kur: %1$s, %2$s</string>
+    <string name="macro_do_call">Ara</string>
+    <string name="macro_do_number">Telefon numarası</string>
+    <string name="macro_do_send_message">Mesaj gönder</string>
+    <string name="macro_do_send_message_value">%1$s numarasına mesaj: %2$s</string>
+    <string name="macro_do_open_camera">Kamerayı aç</string>
+    <string name="macro_do_camera_photo">Fotoğraf</string>
+    <string name="macro_do_camera_video">Video</string>
+    <string name="macro_do_set_timer_short">Zamanlayıcı kur: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Alarm kur: %1$s</string>
 </resources>

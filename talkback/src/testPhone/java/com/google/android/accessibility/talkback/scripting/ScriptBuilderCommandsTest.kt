@@ -82,7 +82,7 @@ class ScriptBuilderCommandsTest {
     assertEquals(listOf("Reply", "Empty"), installed.manifest.commands.map { it.title })
     // Opening an app needs system, from the announcement trigger.
     assertEquals(
-      setOf(ScriptPermission.INPUT, ScriptPermission.ACTIONS, ScriptPermission.SCREEN, ScriptPermission.SYSTEM),
+      setOf(ScriptPermission.INPUT, ScriptPermission.SPEECH, ScriptPermission.SCREEN, ScriptPermission.SYSTEM),
       installed.manifest.permissions,
     )
     val main = store.readFile(id, ScriptPackage.MAIN)!!.decodeToString()
@@ -247,5 +247,40 @@ class ScriptBuilderCommandsTest {
   fun luaSyntaxErrors_areFound() {
     assertNull(LuaEngine.syntaxError("local x = 1\nsf.speak(x)"))
     assertTrue(LuaEngine.syntaxError("if then end")!!.isNotEmpty())
+  }
+
+  @Test
+  fun taskCommands_needOnlyWhatTheirStepsUse() {
+    val id = ScriptBuilder.create(context, "Torch")
+    val draft = ScriptBuilder.draft(store, id)!!
+    draft.put(
+      "commands",
+      JSONArray().put(
+        JSONObject().put("id", "c1").put("title", "Torch").put("macro", macroJson(Macros.Do(Macros.DoKind.DEVICE_CONTROL, "toggle", "flashlight")))
+      ),
+    )
+    ScriptBuilder.save(context, draft)
+
+    // No input: the user assigns the command; system: it changes a device setting.
+    assertEquals(setOf(ScriptPermission.SYSTEM), store.find(id)!!.manifest.permissions)
+
+    draft.getJSONArray("commands").getJSONObject(0).put("gesture", "swipeUpThenRight")
+    ScriptBuilder.save(context, draft)
+    assertEquals(setOf(ScriptPermission.SYSTEM, ScriptPermission.INPUT), store.find(id)!!.manifest.permissions)
+  }
+
+  @Test
+  fun macroPermissions_followTheSteps() {
+    fun perms(vararg steps: Macros.Step) = ScriptRuntime.macroPermissions(Macros.Macro("m", "", steps.toList()))
+    assertEquals(emptySet<ScriptPermission>(), perms(Macros.Do(Macros.DoKind.VIBRATE, number = 100)))
+    assertEquals(setOf(ScriptPermission.SPEECH), perms(Macros.SpeakText("{battery} percent")))
+    assertEquals(setOf(ScriptPermission.SPEECH, ScriptPermission.SCREEN), perms(Macros.SpeakText("{item}")))
+    assertEquals(setOf(ScriptPermission.SCREEN, ScriptPermission.ACTIONS), perms(Macros.Tap("Send")))
+    assertEquals(setOf(ScriptPermission.INPUT), perms(Macros.RunCommand("NEXT")))
+    assertEquals(setOf(ScriptPermission.SYSTEM), perms(Macros.Do(Macros.DoKind.MEDIA, "playPause"), Macros.Do(Macros.DoKind.SET_TIMER, "Tea", number = 180)))
+    assertEquals(
+      setOf(ScriptPermission.SCREEN),
+      perms(Macros.If(Macros.Condition(listOf(Macros.Clause(Macros.KeyboardShown)))), Macros.EndIf),
+    )
   }
 }

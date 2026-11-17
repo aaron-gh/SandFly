@@ -164,7 +164,21 @@ object Macros {
     SHOW_MESSAGE("show_message", R.string.macro_do_show_message),
     SET_VALUE("set_value", R.string.macro_do_set_value),
     FETCH("fetch", R.string.macro_do_fetch),
-    TRANSLATE("translate", R.string.macro_do_translate);
+    TRANSLATE("translate", R.string.macro_do_translate),
+    /** [Do.name] is a control of [DeviceActions.CONTROLS], [Do.text] its new value. */
+    DEVICE_CONTROL("device_control", R.string.macro_do_device_control),
+    /** [Do.text] is a key of [DeviceActions.MEDIA_KEYS]. */
+    MEDIA("media", R.string.macro_do_media),
+    /** [Do.number] is seconds, [Do.text] the timer's label. */
+    SET_TIMER("set_timer", R.string.macro_do_set_timer),
+    /** [Do.number] is minutes after midnight, [Do.text] the alarm's label. */
+    SET_ALARM("set_alarm", R.string.macro_do_set_alarm),
+    /** [Do.text] is the number. */
+    CALL("call", R.string.macro_do_call),
+    /** [Do.name] is the number, [Do.text] the message. */
+    SEND_MESSAGE("send_message", R.string.macro_do_send_message),
+    /** [Do.text] is photo or video. */
+    OPEN_CAMERA("open_camera", R.string.macro_do_open_camera);
 
     /** Whether the step keeps its result as the value [Do.name]. */
     val setsValue: Boolean
@@ -762,7 +776,7 @@ object Macros {
     when (step) {
       is SpeakText -> step.text
       is TypeText -> step.text
-      is Do -> step.text
+      is Do -> step.text + " " + step.name
       else -> ""
     }
 
@@ -772,6 +786,28 @@ object Macros {
       DoKind.VIBRATE -> context.getString(R.string.macro_do_vibrate_value, step.number)
       DoKind.PLAY_TONE -> context.getString(R.string.macro_do_play_tone_value, step.number)
       DoKind.SET_VOLUME -> context.getString(R.string.macro_do_set_volume_value, step.name, step.number)
+      DoKind.DEVICE_CONTROL -> {
+        val control = DeviceActions.CONTROLS[step.name]
+        val value =
+          when (step.text) {
+            "on" -> context.getString(R.string.macro_do_turn_on)
+            "off" -> context.getString(R.string.macro_do_turn_off)
+            "toggle" -> context.getString(R.string.macro_do_toggle)
+            else -> step.text
+          }
+        context.getString(R.string.macro_do_device_control_value, control?.let { context.getString(it.title) } ?: step.name, value)
+      }
+      DoKind.SET_TIMER -> {
+        val seconds = secondsText(step.number * 1000L)
+        if (step.text.isBlank()) context.getString(R.string.macro_do_set_timer_short, seconds)
+        else context.getString(R.string.macro_do_set_timer_value, seconds, step.text)
+      }
+      DoKind.SET_ALARM -> {
+        val time = "%02d:%02d".format(step.number / 60, step.number % 60)
+        if (step.text.isBlank()) context.getString(R.string.macro_do_set_alarm_short, time)
+        else context.getString(R.string.macro_do_set_alarm_value, time, step.text)
+      }
+      DoKind.SEND_MESSAGE -> context.getString(R.string.macro_do_send_message_value, step.name, step.text)
       DoKind.SET_VALUE, DoKind.FETCH, DoKind.TRANSLATE ->
         context.getString(R.string.macro_do_into_value, context.getString(step.kind.title), step.text, step.name)
       else -> context.getString(R.string.macro_do_value, context.getString(step.kind.title), step.text)

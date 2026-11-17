@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">Adreça</string>
     <string name="macro_do_keys_hint">Tecles, com ara tab enter</string>
     <string name="macro_number_range">Introdueix de %1$d a %2$d</string>
-    <string name="macro_values_help">Els valors s\'insereixen com a {name}. També {item}, {clipboard}, {time} i {date}.</string>
     <string name="macro_value_name">Nom del valor</string>
     <string name="macro_value_name_invalid">Utilitza lletres, xifres, punts, guions o guions baixos</string>
     <string name="macro_test_value">Valor</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">El valor %1$s està definit</string>
     <string name="macro_test_value_value">El valor %1$s conté %2$s</string>
     <string name="macro_test_not">No: %1$s</string>
+    <string name="macro_values_help">Els valors s\'insereixen com a {name}. També {item}, {clipboard}, {time}, {date}, {battery} i {device.wifi}.</string>
+    <string name="macro_do_device_control">Configuració del dispositiu</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">Activa</string>
+    <string name="macro_do_turn_off">Desactiva</string>
+    <string name="macro_do_toggle">Activa o desactiva</string>
+    <string name="macro_do_slider_help" formatted="false">Un número, un percentatge com ara 50%, o +1 o -1.</string>
+    <string name="macro_do_choice_help">Una opció, com ara Vibració, o next.</string>
+    <string name="macro_do_media">Tecla multimèdia</string>
+    <string name="macro_media_play_pause">Reprodueix o posa en pausa</string>
+    <string name="macro_media_play">Reprodueix</string>
+    <string name="macro_media_pause">Posa en pausa</string>
+    <string name="macro_media_next">Següent</string>
+    <string name="macro_media_previous">Anterior</string>
+    <string name="macro_media_stop">Atura</string>
+    <string name="macro_media_rewind">Rebobina</string>
+    <string name="macro_media_fast_forward">Avança ràpidament</string>
+    <string name="macro_do_set_timer">Defineix un temporitzador</string>
+    <string name="macro_do_set_timer_value">Defineix un temporitzador: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">Segons</string>
+    <string name="macro_do_label">Etiqueta (opcional)</string>
+    <string name="macro_do_set_alarm">Defineix una alarma</string>
+    <string name="macro_do_set_alarm_value">Defineix una alarma: %1$s, %2$s</string>
+    <string name="macro_do_call">Truca</string>
+    <string name="macro_do_number">Número de telèfon</string>
+    <string name="macro_do_send_message">Envia un missatge</string>
+    <string name="macro_do_send_message_value">Missatge a %1$s: %2$s</string>
+    <string name="macro_do_open_camera">Obre la càmera</string>
+    <string name="macro_do_camera_photo">Foto</string>
+    <string name="macro_do_camera_video">Vídeo</string>
+    <string name="macro_do_set_timer_short">Defineix un temporitzador: %1$s s</string>
+    <string name="macro_do_set_alarm_short">Defineix una alarma: %1$s</string>
 </resources>

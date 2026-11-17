@@ -149,7 +149,6 @@
     <string name="macro_do_link_hint">पत्ता</string>
     <string name="macro_do_keys_hint">की, उदा. tab enter</string>
     <string name="macro_number_range">%1$d ते %2$d टाका</string>
-    <string name="macro_values_help">मूल्ये {name} म्हणून घातली जातात. तसेच {item}, {clipboard}, {time} आणि {date}.</string>
     <string name="macro_value_name">मूल्याचे नाव</string>
     <string name="macro_value_name_invalid">अक्षरे, अंक, पूर्णविराम, डॅश किंवा अंडरस्कोअर वापरा</string>
     <string name="macro_test_value">मूल्य</string>
@@ -157,4 +156,36 @@
     <string name="macro_test_value_set">%1$s मूल्य सेट आहे</string>
     <string name="macro_test_value_value">%1$s मूल्यामध्ये %2$s आहे</string>
     <string name="macro_test_not">नाही: %1$s</string>
+    <string name="macro_values_help">मूल्ये {name} म्हणून घातली जातात. तसेच {item}, {clipboard}, {time}, {date}, {battery} आणि {device.wifi}.</string>
+    <string name="macro_do_device_control">डिव्हाइस सेटिंग</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">सुरू करा</string>
+    <string name="macro_do_turn_off">बंद करा</string>
+    <string name="macro_do_toggle">सुरू किंवा बंद करा</string>
+    <string name="macro_do_slider_help" formatted="false">एक संख्या, 50% सारखी टक्केवारी, किंवा +1 किंवा -1.</string>
+    <string name="macro_do_choice_help">कंपन सारखा पर्याय, किंवा next.</string>
+    <string name="macro_do_media">मीडिया की</string>
+    <string name="macro_media_play_pause">प्ले किंवा पॉझ करा</string>
+    <string name="macro_media_play">प्ले करा</string>
+    <string name="macro_media_pause">पॉझ करा</string>
+    <string name="macro_media_next">पुढील</string>
+    <string name="macro_media_previous">मागील</string>
+    <string name="macro_media_stop">थांबवा</string>
+    <string name="macro_media_rewind">रिवाइंड करा</string>
+    <string name="macro_media_fast_forward">फास्ट फॉरवर्ड करा</string>
+    <string name="macro_do_set_timer">टाइमर सेट करा</string>
+    <string name="macro_do_set_timer_value">टाइमर सेट करा: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">सेकंद</string>
+    <string name="macro_do_label">लेबल (ऐच्छिक)</string>
+    <string name="macro_do_set_alarm">अलार्म सेट करा</string>
+    <string name="macro_do_set_alarm_value">अलार्म सेट करा: %1$s, %2$s</string>
+    <string name="macro_do_call">कॉल करा</string>
+    <string name="macro_do_number">फोन नंबर</string>
+    <string name="macro_do_send_message">मेसेज पाठवा</string>
+    <string name="macro_do_send_message_value">%1$s ला मेसेज: %2$s</string>
+    <string name="macro_do_open_camera">कॅमेरा उघडा</string>
+    <string name="macro_do_camera_photo">फोटो</string>
+    <string name="macro_do_camera_video">व्हिडिओ</string>
+    <string name="macro_do_set_timer_short">टाइमर सेट करा: %1$s s</string>
+    <string name="macro_do_set_alarm_short">अलार्म सेट करा: %1$s</string>
 </resources>

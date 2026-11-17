@@ -146,7 +146,6 @@
     <string name="macro_do_link_hint">주소</string>
     <string name="macro_do_keys_hint">키(예: tab enter)</string>
     <string name="macro_number_range">%1$d~%2$d 사이로 입력하세요</string>
-    <string name="macro_values_help">값은 {name} 형식으로 넣습니다. {item}, {clipboard}, {time}, {date}도 사용할 수 있습니다.</string>
     <string name="macro_value_name">값 이름</string>
     <string name="macro_value_name_invalid">문자, 숫자, 점, 대시 또는 밑줄을 사용하세요</string>
     <string name="macro_test_value">값</string>
@@ -154,4 +153,36 @@
     <string name="macro_test_value_set">값 %1$s 설정됨</string>
     <string name="macro_test_value_value">값 %1$s에 %2$s 포함</string>
     <string name="macro_test_not">아님: %1$s</string>
+    <string name="macro_values_help">값은 {name} 형식으로 넣습니다. {item}, {clipboard}, {time}, {date}, {battery}, {device.wifi}도 사용할 수 있습니다.</string>
+    <string name="macro_do_device_control">기기 설정</string>
+    <string name="macro_do_device_control_value">%1$s: %2$s</string>
+    <string name="macro_do_turn_on">사용 설정</string>
+    <string name="macro_do_turn_off">사용 중지</string>
+    <string name="macro_do_toggle">사용 설정 또는 사용 중지</string>
+    <string name="macro_do_slider_help" formatted="false">숫자, 50%와 같은 비율 또는 +1이나 -1</string>
+    <string name="macro_do_choice_help">진동과 같은 옵션 또는 next</string>
+    <string name="macro_do_media">미디어 키</string>
+    <string name="macro_media_play_pause">재생 또는 일시중지</string>
+    <string name="macro_media_play">재생</string>
+    <string name="macro_media_pause">일시중지</string>
+    <string name="macro_media_next">다음</string>
+    <string name="macro_media_previous">이전</string>
+    <string name="macro_media_stop">중지</string>
+    <string name="macro_media_rewind">되감기</string>
+    <string name="macro_media_fast_forward">빨리 감기</string>
+    <string name="macro_do_set_timer">타이머 설정</string>
+    <string name="macro_do_set_timer_value">타이머 설정: %1$s s, %2$s</string>
+    <string name="macro_do_timer_seconds">초</string>
+    <string name="macro_do_label">라벨(선택사항)</string>
+    <string name="macro_do_set_alarm">알람 설정</string>
+    <string name="macro_do_set_alarm_value">알람 설정: %1$s, %2$s</string>
+    <string name="macro_do_call">전화 걸기</string>
+    <string name="macro_do_number">전화번호</string>
+    <string name="macro_do_send_message">메시지 보내기</string>
+    <string name="macro_do_send_message_value">%1$s에게 보낼 메시지: %2$s</string>
+    <string name="macro_do_open_camera">카메라 열기</string>
+    <string name="macro_do_camera_photo">사진</string>
+    <string name="macro_do_camera_video">동영상</string>
+    <string name="macro_do_set_timer_short">타이머 설정: %1$s s</string>
+    <string name="macro_do_set_alarm_short">알람 설정: %1$s</string>
 </resources>
