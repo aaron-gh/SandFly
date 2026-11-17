@@ -1649,7 +1649,11 @@ local sf = {
     end,
   },
   macros = {
-    run = function(file) return call('macros.run', { file = tostring(file) }) end,
+    run = function(file, values)
+      local given = {}
+      for k, v in pairs(values or {}) do given[tostring(k)] = tostring(v) end
+      return call('macros.run', { file = tostring(file), values = next(given) and given or nil })
+    end,
     stop = function() send('macros.stop') end,
   },
   commands = {

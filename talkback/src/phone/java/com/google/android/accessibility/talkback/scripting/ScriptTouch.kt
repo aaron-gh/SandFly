@@ -193,7 +193,7 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     return full
   }
 
-  private companion object {
+  internal companion object {
     const val MAX_STROKES = 10
     const val MAX_POINTS = 100
     const val MAX_KEYS = 100
