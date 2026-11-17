@@ -16,12 +16,15 @@
 
 package com.google.android.accessibility.talkback.selector
 
+import android.content.Context
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
@@ -47,6 +50,39 @@ class ReadingControlListsTest {
         ReadingControlLists.ControlList("2", "Web", emptyList()),
       )
     assertEquals(lists, ReadingControlLists.fromJson(ReadingControlLists.toJson(lists)))
+  }
+
+  @Test
+  fun listInUse_stepsThroughTheMainListAndEachList() {
+    val prefs =
+      RuntimeEnvironment.getApplication()
+        .getSharedPreferences("reading_control_lists_test", Context.MODE_PRIVATE)
+    prefs.edit().clear().commit()
+    assertNull(ReadingControlLists.inUse(prefs))
+    assertEquals("", ReadingControlLists.adjacentId(prefs, true))
+
+    ReadingControlLists.write(
+      prefs,
+      listOf(
+        ReadingControlLists.ControlList("1", "Speech", listOf("a")),
+        ReadingControlLists.ControlList("2", "Web", listOf("b")),
+      ),
+    )
+    assertEquals("1", ReadingControlLists.adjacentId(prefs, true))
+    assertEquals("2", ReadingControlLists.adjacentId(prefs, false))
+
+    ReadingControlLists.setInUse(prefs, "2")
+    assertEquals("Web", ReadingControlLists.inUse(prefs)?.name)
+    assertEquals("", ReadingControlLists.adjacentId(prefs, true))
+    assertEquals("1", ReadingControlLists.adjacentId(prefs, false))
+
+    ReadingControlLists.setInUse(prefs, "")
+    assertNull(ReadingControlLists.inUse(prefs))
+
+    // A deleted list is no longer in use.
+    ReadingControlLists.setInUse(prefs, "1")
+    ReadingControlLists.write(prefs, listOf(ReadingControlLists.ControlList("2", "Web", listOf("b"))))
+    assertNull(ReadingControlLists.inUse(prefs))
   }
 
   @Test

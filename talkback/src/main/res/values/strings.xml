@@ -2221,6 +2221,14 @@
     <string name="shortcut_next_in_reading_control_list">Next item in <xliff:g id="name" example="Speech">%1$s</xliff:g></string>
     <!-- Command that selects the previous reading control of a list. [CHAR_LIMIT=NONE] -->
     <string name="shortcut_previous_in_reading_control_list">Previous item in <xliff:g id="name" example="Speech">%1$s</xliff:g></string>
+    <!-- Command that changes the list next and previous reading control go through to the next reading control list, after Reading controls. [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_next_reading_control_list">Next reading control list</string>
+    <!-- Command that changes the list next and previous reading control go through to the previous reading control list. [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_previous_reading_control_list">Previous reading control list</string>
+    <!-- Said by the Next and Previous reading control list commands before any reading control list is added. [CHAR_LIMIT=NONE] -->
+    <string name="no_reading_control_lists">No reading control lists</string>
+    <!-- Said by the Next and Previous reading control list commands: the list now in use, and the reading control selected from it. [CHAR_LIMIT=NONE] -->
+    <string name="reading_control_list_changed"><xliff:g id="list" example="Speech">%1$s</xliff:g>, <xliff:g id="control" example="Words">%2$s</xliff:g></string>
     <!-- A reading control with no handwriting letter. [CHAR LIMIT=30] -->
     <string name="reading_control_letter_none">None</string>
     <!-- Spoken when the screen is ready for a handwritten letter that chooses a reading control. [CHAR LIMIT=NONE] -->

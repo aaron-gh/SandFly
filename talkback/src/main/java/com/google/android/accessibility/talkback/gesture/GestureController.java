@@ -683,6 +683,11 @@ public class GestureController {
       selectorController.changeGestureProfile(eventId, /* isNext= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_next_gesture_profile))) {
       selectorController.changeGestureProfile(eventId, /* isNext= */ true);
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_previous_reading_control_list))) {
+      selectorController.changeReadingControlList(eventId, /* isNext= */ false);
+    } else if (action.equals(service.getString(R.string.shortcut_value_next_reading_control_list))) {
+      selectorController.changeReadingControlList(eventId, /* isNext= */ true);
     } else if (action.equals(service.getString(R.string.shortcut_value_app_gestures_for_app))) {
       result = AppGestureFragment.open(service, AppGestures.appShown());
     } else if (action.equals(service.getString(R.string.shortcut_value_settings_profiles))) {

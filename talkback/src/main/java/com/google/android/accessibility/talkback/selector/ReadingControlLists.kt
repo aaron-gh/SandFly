@@ -32,6 +32,8 @@ import org.json.JSONObject
  */
 object ReadingControlLists {
   private const val KEY = "pref_reading_control_lists"
+  // The ID of the list in use; none for the main list.
+  private const val IN_USE_KEY = "pref_reading_control_list_in_use"
   // Start and end the value of a list's commands. They must never change once released.
   private const val PREFIX = "READING_CONTROL_LIST:"
   private const val NEXT = ":NEXT"
@@ -77,6 +79,35 @@ object ReadingControlLists {
     read(prefs).firstOrNull { it.id == id }?.controls
 
   @JvmStatic fun read(prefs: SharedPreferences): List<ControlList> = fromJson(prefs.getString(KEY, null))
+
+  /**
+   * The list in use, which next and previous reading control go through instead of the main list,
+   * or null for the main list, also when the list in use was deleted. The Next and Previous reading
+   * control list commands change it.
+   */
+  @JvmStatic
+  fun inUse(prefs: SharedPreferences): ControlList? {
+    val id = prefs.getString(IN_USE_KEY, null) ?: return null
+    return read(prefs).firstOrNull { it.id == id }
+  }
+
+  /** Makes the list [id] the one in use, or the main list for "". */
+  @JvmStatic
+  fun setInUse(prefs: SharedPreferences, id: String) {
+    if (id.isEmpty()) {
+      prefs.edit().remove(IN_USE_KEY).apply()
+    } else {
+      prefs.edit().putString(IN_USE_KEY, id).apply()
+    }
+  }
+
+  /** The ID of the list after, or before, the one in use, with "" for the main list first. */
+  @JvmStatic
+  fun adjacentId(prefs: SharedPreferences, next: Boolean): String {
+    val ids = listOf("") + read(prefs).map { it.id }
+    val index = ids.indexOf(inUse(prefs)?.id ?: "")
+    return ids[Math.floorMod(index + if (next) 1 else -1, ids.size)]
+  }
 
   @JvmStatic
   fun write(prefs: SharedPreferences, lists: List<ControlList>) {
