@@ -27,6 +27,8 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.Commands
 import com.google.android.accessibility.talkback.gesture.AppShortcutActions
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
+import com.google.android.accessibility.talkback.macros.MacroRunner
+import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.talkback.translation.Translator
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.ACTIONS
 import com.google.android.accessibility.talkback.scripting.ScriptPermission.CLIPBOARD
@@ -245,6 +247,28 @@ class ScriptRuntime(
       (if (value.startsWith(SANDFLY_PRO_COMMAND_PREFIX)) SYSTEM else COMMAND_PERMISSIONS[value])
         ?.let(::requirePermission)
       promise { settle -> manager.feedback.runCommand(value) { settle(true, it) } }
+    }
+    on("macros.run", INPUT) { args ->
+      apiCheck(!manager.inBacktalk) { "Scripts can't run macros on SandFly's own screens" }
+      val path = args.optString("file")
+      apiCheck(path.isNotEmpty() && !path.startsWith("/")) { "macros.run needs a path in the script" }
+      val file = store.file(id, path)
+      apiCheck(file != null && file.isFile && file.length() <= MAX_FILE_BYTES) { "No macro file $path" }
+      val macro = Macros.macroFromJson(file!!.readText())
+      apiCheck(macro != null) { "$path holds no macro" }
+      val refused = macro!!.steps.firstOrNull { it is Macros.RunCommand && it.value in REFUSED_COMMANDS }
+      apiCheck(refused == null) { "Scripts can't run ${(refused as Macros.RunCommand).value}" }
+      macroPermissions(macro).forEach(::requirePermission)
+      // The macro runs on the main thread, after the script carries on.
+      val scriptMacro = macro.copy(id = Macros.EXTERNAL_PREFIX + id + ":" + path)
+      android.os.Handler(android.os.Looper.getMainLooper()).post { MacroRunner.runMacro(scriptMacro) }
+      true
+    }
+    on("macros.stop", INPUT) {
+      android.os.Handler(android.os.Looper.getMainLooper()).post {
+        if (MacroRunner.runningId()?.startsWith(Macros.EXTERNAL_PREFIX + id + ":") == true) MacroRunner.stop()
+      }
+      JSONObject.NULL
     }
     on("screen.inputFocused", SCREEN) { nodes.snapshot(manager.inputFocusedNode()) }
     on("screen.windows", SCREEN) { manager.screen.windows(nodes::snapshot) }
@@ -739,6 +763,24 @@ class ScriptRuntime(
     // A script passes keys with sf.keys.passAll, which ends when the script unloads.
     private val REFUSED_COMMANDS =
       setOf("TOGGLE_SCRIPTS", "KEYCOMBO:keycombo_shortcut_toggle_keyboard_input")
+
+    /**
+     * The permissions a script needs to run [macro] with sf.macros.run: reading the screen and
+     * acting on it, as its steps do, and those of the commands it runs and of opening apps.
+     */
+    fun macroPermissions(macro: Macros.Macro): Set<ScriptPermission> {
+      val needed = mutableSetOf(INPUT, ACTIONS, SCREEN)
+      for (step in macro.steps) {
+        when (step) {
+          is Macros.RunCommand ->
+            (if (step.value.startsWith(SANDFLY_PRO_COMMAND_PREFIX)) SYSTEM else COMMAND_PERMISSIONS[step.value])
+              ?.let(needed::add)
+          is Macros.OpenApp -> needed += SYSTEM
+          else -> {}
+        }
+      }
+      return needed
+    }
 
     /** SandFly Pro's commands, which use the person's monthly allowance. */
     private const val SANDFLY_PRO_COMMAND_PREFIX = "SFPRO_"

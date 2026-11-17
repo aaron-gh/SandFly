@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment
 import androidx.preference.Preference
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.macros.MacroFragment
 import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.scripting.ScriptBuilder.objects
@@ -158,11 +159,160 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
       }
     }
 
-    screen.category(R.string.script_builder_script).action(getString(R.string.script_remove)) {
+    BuiltScriptMacros.init(context)
+    val commands = draft.optJSONArray(BuiltScriptMacros.COMMANDS).objects()
+    val commandsCategory = screen.category(R.string.script_builder_commands)
+    for (command in commands) {
+      commandsCategory.link(command.optString("title"), stepsText(command), MacroFragment::class.java) {
+        putString(MacroFragment.ARG_MACRO, BuiltScriptMacros.idOf(scriptId, BuiltScriptMacros.COMMANDS, command.getString("id")))
+      }
+    }
+    commandsCategory.action(getString(R.string.script_builder_add_command)) {
+      askText(getString(R.string.script_builder_add_command), hint = getString(R.string.script_builder_title_field)) { title, _, _ ->
+        if (title.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+        val entryId = newEntryId("c")
+        edit { it.getOrPutArray(BuiltScriptMacros.COMMANDS).put(JSONObject().put("id", entryId).put("title", title)) }
+        openSteps(BuiltScriptMacros.COMMANDS, entryId)
+        null
+      }
+    }
+
+    val triggers = draft.optJSONArray(BuiltScriptMacros.TRIGGERS).objects()
+    val triggersCategory = screen.category(R.string.script_builder_triggers)
+    triggers.forEachIndexed { index, trigger ->
+      val problem = ScriptBuilder.triggerProblem(trigger)
+      val summary = if (problem != null) getString(R.string.script_builder_not_used, problem) else stepsText(trigger)
+      triggersCategory.action(ScriptBuilder.triggerText(context, trigger), summary) { editTrigger(index) }
+    }
+    triggersCategory.action(getString(R.string.script_builder_add_trigger)) { addTrigger() }
+
+    val codeCategory = screen.category(R.string.script_builder_code_category)
+    val code = draft.optString("code")
+    codeCategory.action(
+      getString(R.string.script_builder_code),
+      if (code.isBlank()) notSet() else resources.getQuantityString(R.plurals.script_builder_code_lines, code.lines().size, code.lines().size),
+    ) {
+      askText(
+        getString(R.string.script_builder_code),
+        code,
+        inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE or InputType.TYPE_TEXT_FLAG_NO_SUGGESTIONS,
+      ) { text, _, _ ->
+        edit { it.putOrRemove("code", text.ifBlank { null }) }
+        null
+      }
+    }
+    val extra = draft.optJSONArray("permissions").let { list -> (0 until (list?.length() ?: 0)).map { list!!.optString(it) } }
+    codeCategory.action(
+      getString(R.string.script_builder_extra_permissions),
+      extra.mapNotNull { ScriptPermission.fromKey(it) }.joinToString(", ") { it.key }.ifEmpty { notSet() },
+    ) {
+      val permissions = ScriptPermission.entries
+      val checked = permissions.map { it.key in extra }.toBooleanArray()
+      dialog()
+        .setTitle(R.string.script_builder_extra_permissions)
+        .setMultiChoiceItems(permissions.map { requireContext().permissionText(it) }.toTypedArray(), checked) { _, which, on ->
+          checked[which] = on
+        }
+        .setPositiveButton(android.R.string.ok) { _, _ ->
+          val chosen = permissions.filterIndexed { i, _ -> checked[i] }.map { it.key }
+          edit { it.putOrRemove("permissions", if (chosen.isEmpty()) null else JSONArray(chosen)) }
+        }
+        .setNegativeButton(android.R.string.cancel, null)
+        .show()
+    }
+
+    val scriptCategory = screen.category(R.string.script_builder_script)
+    scriptCategory.action(getString(R.string.script_builder_export)) {
+      exportFile.launch(draft.optString("name").ifBlank { scriptId } + ".zip")
+    }
+    scriptCategory.action(getString(R.string.script_remove)) {
       confirm(getString(R.string.script_remove_title, draft.optString("name")), R.string.script_remove) {
         store.remove(scriptId)
         ScriptLog.clear(scriptId)
         parentFragmentManager.popBackStack()
+      }
+    }
+  }
+
+  private val exportFile =
+    registerForActivityResult(androidx.activity.result.contract.ActivityResultContracts.CreateDocument("application/zip")) { uri ->
+      if (uri == null) return@registerForActivityResult
+      val context = requireContext()
+      val saved =
+        try {
+          context.contentResolver.openOutputStream(uri)?.use { ScriptBuilder.exportZip(store, scriptId, it) } != null
+        } catch (e: IOException) {
+          false
+        }
+      Toast.makeText(context, if (saved) R.string.script_builder_exported else R.string.script_builder_export_failed, Toast.LENGTH_SHORT).show()
+    }
+
+  private fun newEntryId(prefix: String): String =
+    prefix + java.lang.Long.toString(System.currentTimeMillis(), Character.MAX_RADIX)
+
+  private fun stepsText(entry: JSONObject): String {
+    val count = BuiltScriptMacros.macroOf(entry)?.steps?.size ?: 0
+    return if (count == 0) getString(R.string.macro_no_steps)
+    else resources.getQuantityString(R.plurals.script_builder_steps, count, count)
+  }
+
+  private fun openSteps(list: String, entryId: String) {
+    open(MacroFragment::class.java) { putString(MacroFragment.ARG_MACRO, BuiltScriptMacros.idOf(scriptId, list, entryId)) }
+  }
+
+  private fun addTrigger() {
+    val kinds = listOf(ScriptBuilder.WHEN_FOCUS, ScriptBuilder.WHEN_APP, ScriptBuilder.WHEN_WINDOW, ScriptBuilder.WHEN_ANNOUNCEMENT)
+    val names =
+      listOf(
+        getString(R.string.script_builder_when_focus),
+        getString(R.string.script_builder_when_app),
+        getString(R.string.script_builder_when_window),
+        getString(R.string.script_builder_when_announcement),
+      )
+    choose(getString(R.string.script_builder_add_trigger), names) { which ->
+      val entryId = newEntryId("t")
+      val trigger = JSONObject().put("id", entryId).put("when", kinds[which])
+      when (kinds[which]) {
+        ScriptBuilder.WHEN_FOCUS -> {
+          edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger.put("match", JSONObject())) }
+          val index = draft()?.optJSONArray(BuiltScriptMacros.TRIGGERS)?.length()?.minus(1) ?: return@choose
+          openQuery(listOf(BuiltScriptMacros.TRIGGERS, index, "match"))
+        }
+        ScriptBuilder.WHEN_ANNOUNCEMENT ->
+          askText(getString(R.string.script_builder_when_announcement), hint = getString(R.string.script_builder_text)) { text, _, _ ->
+            if (text.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+            edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger.put("text", text)) }
+            openSteps(BuiltScriptMacros.TRIGGERS, entryId)
+            null
+          }
+        else -> {
+          edit { it.getOrPutArray(BuiltScriptMacros.TRIGGERS).put(trigger) }
+          openSteps(BuiltScriptMacros.TRIGGERS, entryId)
+        }
+      }
+    }
+  }
+
+  private fun editTrigger(index: Int) {
+    val trigger = draft()?.optJSONArray(BuiltScriptMacros.TRIGGERS)?.optJSONObject(index) ?: return
+    val entryId = trigger.optString("id")
+    val options = mutableListOf(getString(R.string.script_builder_steps))
+    when (trigger.optString("when")) {
+      ScriptBuilder.WHEN_FOCUS -> options += getString(R.string.script_builder_item)
+      ScriptBuilder.WHEN_ANNOUNCEMENT -> options += getString(R.string.script_builder_text)
+    }
+    options += getString(R.string.script_builder_remove)
+    choose(ScriptBuilder.triggerText(requireContext(), trigger), options) { which ->
+      when (options[which]) {
+        getString(R.string.script_builder_steps) -> openSteps(BuiltScriptMacros.TRIGGERS, entryId)
+        getString(R.string.script_builder_item) -> openQuery(listOf(BuiltScriptMacros.TRIGGERS, index, "match"))
+        getString(R.string.script_builder_text) ->
+          askText(getString(R.string.script_builder_text), trigger.optString("text")) { text, _, _ ->
+            if (text.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
+            edit { it.getJSONArray(BuiltScriptMacros.TRIGGERS).getJSONObject(index).put("text", text) }
+            null
+          }
+        else -> edit { it.getJSONArray(BuiltScriptMacros.TRIGGERS).removeAt(index) }
       }
     }
   }

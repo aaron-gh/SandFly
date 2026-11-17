@@ -399,8 +399,47 @@ object Macros {
     prefs.edit { putString(KEY, toJson(macros)) }
   }
 
+  /**
+   * Macros kept somewhere other than the settings, such as the commands of a script made in the
+   * script builder, by ids that start with [EXTERNAL_PREFIX]. The macro editor edits them as it
+   * edits the user's own macros.
+   */
+  interface ExternalMacros {
+    fun find(id: String): Macro?
+
+    fun update(macro: Macro)
+
+    fun delete(id: String)
+
+    /** Whether the macro [id] has a name the user can change, such as a command's title. */
+    fun canRename(id: String): Boolean = true
+  }
+
+  /** Whether the macro [id] has a name the user can change. */
+  @JvmStatic fun canRename(id: String): Boolean = !isExternal(id) || external()?.canRename(id) == true
+
+  const val EXTERNAL_PREFIX = "script:"
+
+  @JvmStatic fun isExternal(id: String): Boolean = id.startsWith(EXTERNAL_PREFIX)
+
+  /** The holder of external macros, which the phone build sets up when it is first needed. */
+  @Volatile private var externalMacros: ExternalMacros? = null
+
+  private fun external(): ExternalMacros? {
+    externalMacros?.let { return it }
+    return try {
+      (Class.forName(EXTERNAL_CLASS).getField("INSTANCE").get(null) as? ExternalMacros)?.also { externalMacros = it }
+    } catch (e: ReflectiveOperationException) {
+      null
+    }
+  }
+
+  private const val EXTERNAL_CLASS = "com.google.android.accessibility.talkback.scripting.BuiltScriptMacros"
+
   /** Returns the macro [id], or null. */
-  @JvmStatic fun find(prefs: SharedPreferences, id: String): Macro? = read(prefs).firstOrNull { it.id == id }
+  @JvmStatic
+  fun find(prefs: SharedPreferences, id: String): Macro? =
+    if (isExternal(id)) external()?.find(id) else read(prefs).firstOrNull { it.id == id }
 
   /** Adds a macro named [name] with no steps, and returns it. */
   fun add(prefs: SharedPreferences, name: String): Macro {
@@ -411,6 +450,10 @@ object Macros {
 
   /** Saves [macro] in place of the macro with its ID. */
   fun update(prefs: SharedPreferences, macro: Macro) {
+    if (isExternal(macro.id)) {
+      external()?.update(macro)
+      return
+    }
     write(prefs, read(prefs).map { if (it.id == macro.id) macro else it })
   }
 
@@ -419,6 +462,10 @@ object Macros {
    * that run it.
    */
   fun delete(context: Context, prefs: SharedPreferences, id: String) {
+    if (isExternal(id)) {
+      external()?.delete(id)
+      return
+    }
     write(prefs, read(prefs).filter { it.id != id })
     CommandAssignments.unassign(context, prefs, commandOf(id))
   }
@@ -872,6 +919,12 @@ object Macros {
       val ms = millis.toInt()
       context.resources.getQuantityString(R.plurals.macro_step_wait_milliseconds, ms, ms)
     }
+
+  /** [macro] as JSON, as a file of macros holds it. */
+  fun macroToJson(macro: Macro): String = toJson(listOf(macro))
+
+  /** The first macro in [json], made by [macroToJson], or null. */
+  fun macroFromJson(json: String?): Macro? = fromJson(json).firstOrNull()
 
   internal fun toJson(macros: List<Macro>): String =
     JSONArray()

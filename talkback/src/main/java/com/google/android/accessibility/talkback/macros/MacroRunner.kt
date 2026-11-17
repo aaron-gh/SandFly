@@ -130,6 +130,17 @@ object MacroRunner {
     return true
   }
 
+  /**
+   * Runs [macro], which isn't one of the user's own, such as one a script gives, when its
+   * condition is met, stopping the macro running. Returns false when SandFly isn't running.
+   */
+  @JvmStatic
+  fun runMacro(macro: Macros.Macro): Boolean {
+    val service = TalkBackService.getInstance() ?: return false
+    start(service, macro, sayNotMet = false, onDone = null)
+    return true
+  }
+
   private const val UNSAVED_ID = ""
 
   private fun start(

@@ -1648,6 +1648,10 @@ local sf = {
       call('keys.passAll', { on = on ~= false })
     end,
   },
+  macros = {
+    run = function(file) return call('macros.run', { file = tostring(file) }) end,
+    stop = function() send('macros.stop') end,
+  },
   commands = {
     list = function() return call('commands.list') end,
     run = function(id) return await(call('commands.run', { id = tostring(id) }), true) end,
