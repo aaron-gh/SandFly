@@ -3989,6 +3989,20 @@ public class FocusProcessorForLogicalNavigation {
     if (pageAction == 0 || scrollAction == 0) {
       return null;
     }
+    if (navigationAction.actionType == NavigationAction.SCROLL_UP
+        || navigationAction.actionType == NavigationAction.SCROLL_DOWN) {
+      // Scrolling forward or back moves a pager, such as a launcher's home screens, sideways, so
+      // for up and down only something that scrolls up and down counts.
+      int directionalAction =
+          navigationAction.actionType == NavigationAction.SCROLL_UP
+              ? ACTION_SCROLL_DOWN.getId()
+              : ACTION_SCROLL_UP.getId();
+      return new NodeActionFilter(pageAction)
+          .or(new NodeActionFilter(directionalAction))
+          .or(
+              new NodeActionFilter(scrollAction)
+                  .and(Filter.node(node -> !scrollsSideways(node))));
+    }
     if (navigationAction.actionType == NavigationAction.SCROLL_LEFT
         || navigationAction.actionType == NavigationAction.SCROLL_RIGHT) {
       // Scrolling forward or back moves a vertical list up or down, so for left and right only
