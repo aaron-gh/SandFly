@@ -81,6 +81,14 @@ abstract class ScriptBuilderBaseFragment : NotificationCodeFragment(R.string.scr
     }
   }
 
+  /** Calls [edit], or, when the value is set, first offers Edit and Remove. */
+  protected fun editOrRemove(title: String, isSet: Boolean, edit: () -> Unit, remove: () -> Unit) {
+    if (!isSet) return edit()
+    choose(title, listOf(getString(R.string.notification_edit), getString(R.string.script_builder_remove))) {
+      if (it == 0) edit() else remove()
+    }
+  }
+
   protected fun JSONObject.putOrRemove(key: String, value: Any?): JSONObject =
     if (value == null) apply { remove(key) } else put(key, value)
 
@@ -893,7 +901,7 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
   private fun textRow(group: PreferenceGroup, key: String, title: Int) {
     val old = rule()?.optString(key)?.ifEmpty { null }
     group.action(getString(title), old ?: notSet()) {
-      askOptional(getString(title), old) { change(key, it) }
+      editOrRemove(getString(title), old != null, { askOptional(getString(title), old) { change(key, it) } }) { change(key, null) }
     }
   }
 
@@ -1105,17 +1113,21 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
       }
     }
     screen.action(getString(R.string.script_builder_text), ScriptBuilderFragment.textCondition(context, query) ?: notSet()) {
-      askTextCondition(query)
+      editOrRemove(getString(R.string.script_builder_text), ScriptBuilderFragment.textCondition(context, query) != null, { askTextCondition(query) }) {
+        removeKeys("contains", "matches", "field")
+      }
     }
     screen.action(getString(R.string.macro_item_kind), ScriptBuilderFragment.kindsOf(query).joinToString(", ") { getString(it.title) }.ifEmpty { notSet() }) {
-      askKinds(query)
+      editOrRemove(getString(R.string.macro_item_kind), query.has("kind"), { askKinds(query) }) { removeKeys("kind") }
     }
     val exact = EXACT_FIELDS.filter { (key, _) -> query.optString(key).isNotEmpty() }
     screen.action(
       getString(R.string.script_builder_exact_text),
       exact.joinToString(", ") { (key, field) -> getString(R.string.macro_field_value, query.optString(key), getString(field.title)) }.ifEmpty { notSet() },
     ) {
-      askExactText(query)
+      editOrRemove(getString(R.string.script_builder_exact_text), exact.isNotEmpty(), { askExactText(query) }) {
+        removeKeys(*EXACT_FIELDS.map { it.first }.toTypedArray())
+      }
     }
     textRow(screen, query, "id", R.string.script_builder_id)
     textRow(screen, query, "parentId", R.string.script_builder_parent_id)
@@ -1148,6 +1160,11 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
         }
       }
     }
+  }
+
+  private fun removeKeys(vararg keys: String) = edit { draft ->
+    val target = Paths.get(draft, path) as? JSONObject ?: return@edit
+    keys.forEach { target.remove(it) }
   }
 
   /** A row for each item the item is inside, and one that adds another, up to four. */
@@ -1234,7 +1251,7 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
   private fun textRow(group: PreferenceGroup, query: JSONObject, key: String, title: Int) {
     val old = query.optString(key).ifEmpty { null }
     group.action(getString(title), old ?: notSet()) {
-      askOptional(getString(title), old) { change(key, it) }
+      editOrRemove(getString(title), old != null, { askOptional(getString(title), old) { change(key, it) } }) { change(key, null) }
     }
   }
 
