@@ -2131,7 +2131,7 @@ public class SelectorController implements UserInputEventListener {
 
   /** Returns whether {@code setting}, replaced automatically, can be current again. */
   private boolean canRestore(Setting setting) {
-    @Nullable ReadingControlLists.ControlList inUse = ReadingControlLists.inUse(prefs);
+    ReadingControlLists.@Nullable ControlList inUse = ReadingControlLists.inUse(prefs);
     boolean inListInUse =
         inUse != null && inUse.getControls().contains(context.getString(setting.prefKeyResId));
     return setting == settingFromReadingControlList || inListInUse
@@ -2343,7 +2343,7 @@ public class SelectorController implements UserInputEventListener {
    * order, or null while the main list is in use.
    */
   private @Nullable List<Setting> listInUseSettings(@Nullable AccessibilityNodeInfoCompat node) {
-    @Nullable ReadingControlLists.ControlList inUse = ReadingControlLists.inUse(prefs);
+    ReadingControlLists.@Nullable ControlList inUse = ReadingControlLists.inUse(prefs);
     if (inUse == null) {
       return null;
     }
@@ -2378,7 +2378,7 @@ public class SelectorController implements UserInputEventListener {
       displayText = context.getString(R.string.no_reading_control_lists);
     } else {
       ReadingControlLists.setInUse(prefs, ReadingControlLists.adjacentId(prefs, isNext));
-      @Nullable ReadingControlLists.ControlList inUse = ReadingControlLists.inUse(prefs);
+      ReadingControlLists.@Nullable ControlList inUse = ReadingControlLists.inUse(prefs);
       displayText =
           inUse != null
               ? inUse.getName()

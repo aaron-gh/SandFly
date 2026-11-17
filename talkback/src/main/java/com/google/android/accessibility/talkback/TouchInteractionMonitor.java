@@ -1180,7 +1180,7 @@ public class TouchInteractionMonitor
    */
   @MainThread
   public boolean holdFocusedItemDown() {
-    if (!fingerDown || state != STATE_TOUCH_EXPLORING || downOnGboard || exploringKeyboard) {
+    if (!fingerDown || state != STATE_TOUCH_EXPLORING || gboardRoot != null || exploringKeyboard) {
       return false;
     }
     LogUtils.d(LOG_TAG, "holdFocusedItemDown");
