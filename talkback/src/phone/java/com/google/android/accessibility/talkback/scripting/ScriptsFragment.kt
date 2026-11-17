@@ -67,6 +67,7 @@ class ScriptsFragment : ScriptInstallFragment() {
     ) {
       store.allOff = it
     }
+    screen.action(getString(R.string.script_builder_new)) { newScript() }
     screen.action(getString(R.string.script_import), getString(R.string.script_import_summary)) {
       openScript.launch(arrayOf("*/*"))
     }
@@ -154,6 +155,38 @@ class ScriptsFragment : ScriptInstallFragment() {
       rebuild()
       toast(getString(R.string.scripts_checking_updates))
     }
+  }
+
+  private fun newScript() {
+    val context = requireContext()
+    val field =
+      android.widget.EditText(context).apply {
+        hint = getString(R.string.script_builder_name)
+        inputType = android.text.InputType.TYPE_CLASS_TEXT
+      }
+    val padding = (20 * resources.displayMetrics.density).toInt()
+    val layout = android.widget.FrameLayout(context).apply { setPadding(padding, padding / 2, padding, 0); addView(field) }
+    dialog(getString(R.string.script_builder_new)) {
+      setView(layout)
+      setPositiveButton(android.R.string.ok) { _, _ ->
+        val name = field.text.toString().trim()
+        if (name.isEmpty()) return@setPositiveButton
+        val id =
+          try {
+            ScriptBuilder.create(context, name)
+          } catch (e: IOException) {
+            toast(getString(R.string.script_builder_save_failed, e.message))
+            return@setPositiveButton
+          }
+        onPreferenceTreeClick(
+          Preference(context).apply {
+            fragment = ScriptBuilderFragment::class.java.name
+            extras.putString(ARG_ID, id)
+          }
+        )
+      }
+    }
+    field.requestFocus()
   }
 
   private fun importScript(uri: Uri) {

@@ -44,6 +44,9 @@ class ScriptDetailFragment : ScriptScreenFragment() {
       }
     }
     screen.info(manifest.name, context.scriptAbout(manifest))
+    if (ScriptBuilder.isBuilt(store, scriptId)) {
+      screen.link(getString(R.string.script_builder_edit), null, ScriptBuilderFragment::class.java, scriptId)
+    }
     manifest.compatibilityWarning(context)?.let {
       screen.info(getString(R.string.script_compatibility_title), it)
     }
