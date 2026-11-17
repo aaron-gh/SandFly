@@ -44,14 +44,15 @@ import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 /**
  * The granular editing screen: the text as a list of pieces, split by characters, words,
  * sentences, lines or paragraphs. Double tapping a piece edits it, and its actions insert text
- * before or after it, delete it or select it. Selected pieces can be copied, cut or deleted
- * together. Save writes the text back to the text field it came from.
+ * before or after it, delete it or select it; Start selection and End selection select every piece
+ * between two. Selected pieces can be copied, cut or deleted together. Save writes the text back to the text field it came from.
  */
 class GranularEditingActivity : AppCompatActivity() {
   private var text = ""
   private var granularity = Granularity.WORDS
   private var pieces: List<Piece> = emptyList()
   private val selected = HashSet<Int>()
+  private val range = RangeSelection()
   private val undo = ArrayList<String>()
   private val redo = ArrayList<String>()
   private var lastFind = ""
@@ -135,6 +136,7 @@ class GranularEditingActivity : AppCompatActivity() {
   private fun refresh() {
     pieces = TextPieces.split(text, granularity)
     selected.clear()
+    range.clear()
     splitBy.text = getString(R.string.granular_editing_split_by, getString(nameOf(granularity)))
     empty.visibility = if (pieces.isEmpty()) View.VISIBLE else View.GONE
     adapter.notifyDataSetChanged()
@@ -219,6 +221,26 @@ class GranularEditingActivity : AppCompatActivity() {
   private fun toggleSelected(index: Int) {
     if (!selected.remove(index)) selected += index
     adapter.notifyItemChanged(index)
+  }
+
+  /** Selects the piece and marks it as the start of a range that End selection selects. */
+  private fun startSelection(index: Int) {
+    if (index !in pieces.indices) return
+    range.start(index)
+    selected += index
+    // Every piece now offers End selection.
+    adapter.notifyDataSetChanged()
+    list.announceForAccessibility(getString(R.string.selection_range_started))
+  }
+
+  /** Selects every piece from the one Start selection marked to this one. */
+  private fun endSelection(index: Int) {
+    if (index !in pieces.indices) return
+    val chosen = range.end(index)
+    selected.addAll(chosen)
+    adapter.notifyDataSetChanged()
+    val count = chosen.count()
+    list.announceForAccessibility(resources.getQuantityString(R.plurals.selection_range_selected, count, count))
   }
 
   /** Copies the selected pieces, or all of the text when none is selected. */
@@ -322,6 +344,7 @@ class GranularEditingActivity : AppCompatActivity() {
     if (selected.isNotEmpty()) {
       add(R.string.granular_editing_clear_selection) {
         selected.clear()
+        range.clear()
         adapter.notifyDataSetChanged()
       }
       add(R.string.granular_editing_cut_selected) { cut() }
@@ -476,9 +499,11 @@ class GranularEditingActivity : AppCompatActivity() {
 
   /** What can be done with a piece, besides editing it, which double tapping does. */
   private fun pieceActions(isSelected: Boolean): List<Pair<Int, (Int) -> Unit>> =
-    listOf(
+    listOfNotNull(
       (if (isSelected) R.string.granular_editing_unselect else R.string.granular_editing_select) to
         { index: Int -> toggleSelected(index) },
+      R.string.selection_range_start to { index: Int -> startSelection(index) },
+      if (range.isStarted) R.string.selection_range_end to { index: Int -> endSelection(index) } else null,
       R.string.granular_editing_insert_before to { index: Int -> insert(index, after = false) },
       R.string.granular_editing_insert_after to { index: Int -> insert(index, after = true) },
       R.string.granular_editing_delete to { index: Int -> delete(listOf(index)) },
