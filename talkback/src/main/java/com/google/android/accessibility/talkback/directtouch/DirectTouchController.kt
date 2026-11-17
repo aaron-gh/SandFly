@@ -57,7 +57,6 @@ import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_UNINTERRUPTIBLE_BY_NEW_SPEECH_CAN_IGNORE_INTERRUPTS
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.accessibility.utils.output.ThemeVibrations
-import kotlin.math.roundToInt
 
 /**
  * Gives games direct touch. While an app the user turned on is in front, touches go straight to it.
@@ -671,13 +670,8 @@ constructor(
     val window = boundsOf(mainWindow)
     val areas =
       target.screenAreas +
-        target.windowAreas.map {
-          Rect(
-            window.left + (it.left * window.width()).roundToInt(),
-            window.top + (it.top * window.height()).roundToInt(),
-            window.left + (it.right * window.width()).roundToInt(),
-            window.top + (it.bottom * window.height()).roundToInt(),
-          )
+        target.windowAreas.mapNotNull {
+          it.resolve(window, service.resources.displayMetrics.density)
         } +
         viewBounds(mainWindow, target.viewIds)
     val excluded = excludedBounds(windows, directTyping, navBarDirect, keyboards)

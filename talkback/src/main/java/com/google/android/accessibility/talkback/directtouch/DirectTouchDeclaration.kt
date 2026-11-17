@@ -18,7 +18,6 @@ package com.google.android.accessibility.talkback.directtouch
 
 import android.content.res.XmlResourceParser
 import android.graphics.Rect
-import android.graphics.RectF
 import org.xmlpull.v1.XmlPullParser
 
 /** Where an app in front gets direct touch. */
@@ -30,12 +29,12 @@ sealed interface DirectTouchTarget {
   data object Screen : DirectTouchTarget
 
   /**
-   * Parts of the app's window: [screenAreas] in screen pixels, [windowAreas] as fractions of the
-   * window from 0 to 1, and the views with the resource IDs in [viewIds], wherever they are.
+   * Parts of the app's window: [screenAreas] in screen pixels, [windowAreas] measured from the
+   * window's top left corner, and the views with the resource IDs in [viewIds], wherever they are.
    */
   data class Areas(
     val screenAreas: List<Rect> = emptyList(),
-    val windowAreas: List<RectF> = emptyList(),
+    val windowAreas: List<WindowArea> = emptyList(),
     val viewIds: List<String> = emptyList(),
   ) : DirectTouchTarget
 }
@@ -49,7 +48,7 @@ data class DirectTouchRule(
   val state: String?,
   val screen: Boolean,
   val viewId: String? = null,
-  val windowArea: RectF? = null,
+  val windowArea: WindowArea? = null,
 )
 
 /**
@@ -60,6 +59,7 @@ data class DirectTouchRule(
  *     <screen activity=".GameActivity" />
  *     <area activity=".MainActivity" state="playing" view="@id/board" />
  *     <area activity=".MainActivity" state="playing" top="50%" />
+ *     <area state="playing" bottom="100%" height="200dp" />
  * </direct-touch>
  * ```
  */
@@ -93,6 +93,8 @@ class DirectTouchDeclaration(val rules: List<DirectTouchRule>) {
     const val MAX_RULES = 64
 
     private const val MAX_NAME_LENGTH = 256
+
+    private val AREA_LENGTHS = listOf("left", "top", "right", "bottom", "width", "height")
 
     /**
      * Reads a declaration of [packageName] from [parser]. [resourceName] names a resource ID of the
@@ -135,12 +137,19 @@ class DirectTouchDeclaration(val rules: List<DirectTouchRule>) {
           if (view != null) {
             return DirectTouchRule(activity, state, screen = false, viewId = view)
           }
+          // A length that is there but isn't one skips the rule; one left out is the window's own.
+          val lengths =
+            AREA_LENGTHS.associateWith { name ->
+              attribute(parser, name)?.let { AreaLength.parse(it) ?: return null }
+            }
           val area =
-            RectF(
-              fraction(parser, "left", 0f) ?: return null,
-              fraction(parser, "top", 0f) ?: return null,
-              fraction(parser, "right", 1f) ?: return null,
-              fraction(parser, "bottom", 1f) ?: return null,
+            WindowArea(
+              left = lengths["left"],
+              top = lengths["top"],
+              right = lengths["right"],
+              bottom = lengths["bottom"],
+              width = lengths["width"],
+              height = lengths["height"],
             )
           if (area.isEmpty) null else DirectTouchRule(activity, state, screen = false, windowArea = area)
         }
@@ -188,24 +197,5 @@ class DirectTouchDeclaration(val rules: List<DirectTouchRule>) {
         id.startsWith("@id/") -> "$packageName:id/${id.removePrefix("@id/")}"
         else -> "$packageName:id/$id"
       }
-
-    /**
-     * An edge as a fraction of the window: "50%" or "0.5". [default] when absent, null when the
-     * value isn't a number.
-     */
-    private fun fraction(parser: XmlPullParser, name: String, default: Float): Float? {
-      val value = attribute(parser, name) ?: return default
-      return parseFraction(value)
-    }
-
-    fun parseFraction(value: String): Float? {
-      val number =
-        if (value.endsWith("%")) {
-          value.dropLast(1).trim().toFloatOrNull()?.div(100f)
-        } else {
-          value.toFloatOrNull()
-        } ?: return null
-      return if (number.isFinite()) number.coerceIn(0f, 1f) else null
-    }
   }
 }
