@@ -228,6 +228,7 @@ class ManifestParser(private val strict: Boolean) {
       manifestCheck(!it.has("inside")) { "has can't hold inside" }
       query(it, nested = true)
     }
+    NodeQuery.problem(json)?.let(::manifestError)
     val query = NodeQuery.of(json)
     manifestCheck(query != NodeQuery()) { "A match needs at least one field" }
     checkRole(query.role)

@@ -159,6 +159,10 @@ object Macros {
     HEADING("heading", R.string.macro_kind_heading),
     ENABLED("enabled", R.string.macro_kind_enabled);
 
+    /** The name scripts give it, such as longClickable. */
+    val scriptName: String
+      get() = key.split('_').mapIndexed { i, part -> if (i == 0) part else part.replaceFirstChar(Char::uppercase) }.joinToString("")
+
     companion object {
       fun of(key: String?): Kind? = entries.firstOrNull { it.key == key }
     }

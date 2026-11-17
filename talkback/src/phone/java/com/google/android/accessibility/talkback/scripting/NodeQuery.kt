@@ -18,6 +18,8 @@ package com.google.android.accessibility.talkback.scripting
 
 import android.os.SystemClock
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.macros.MacroRunner
+import com.google.android.accessibility.talkback.macros.Macros
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -28,6 +30,16 @@ data class NodeQuery(
   val text: String? = null,
   val textContains: String? = null,
   val contentDescription: String? = null,
+  val hint: String? = null,
+  val stateDescription: String? = null,
+  /** Text that one of the item's texts, or its [field], contains, ignoring case. */
+  val contains: String? = null,
+  /** A regular expression found in one of the item's texts, or in its [field], ignoring case. */
+  val regex: String? = null,
+  /** The one text [contains] and [regex] look in, by its name in [FIELDS]. */
+  val field: String? = null,
+  /** Macro item types the item must all be, by their names in [KINDS]. */
+  val kinds: List<String> = emptyList(),
   val className: String? = null,
   val role: String? = null,
   val clickable: Boolean? = null,
@@ -38,6 +50,8 @@ data class NodeQuery(
   /** Wanted values of the item's states, such as checked = true. */
   val states: Map<String, Boolean> = emptyMap(),
 ) {
+  private val pattern by lazy { regex?.let(Macros::compilePattern) }
+
   fun matches(node: AccessibilityNodeInfoCompat, textOf: TextOf = PLAIN_TEXT): Boolean =
     (id == null || idMatches(id, node.viewIdResourceName)) &&
       (clickable == null || node.isClickable == clickable) &&
@@ -46,6 +60,11 @@ data class NodeQuery(
       (contentDescription == null || node.contentDescription?.toString() == contentDescription) &&
       (text == null || textOf(node) == text) &&
       (textContains == null || contains(node, textOf, textContains)) &&
+      (hint == null || node.hintText?.toString() == hint) &&
+      (stateDescription == null || node.stateDescription?.toString() == stateDescription) &&
+      (contains == null || textsOf(node, textOf).any { it.contains(contains.trim(), ignoreCase = true) }) &&
+      (regex == null || matchesPattern(node, textOf)) &&
+      kinds.all { MacroRunner.isKind(node.unwrap(), KINDS.getValue(it)) } &&
       (role == null || ScriptRoles.appRole(node) == role) &&
       (parentId == null || idMatches(parentId, node.parent?.viewIdResourceName)) &&
       // Last, because every ancestor is a call to the app.
@@ -109,6 +128,33 @@ data class NodeQuery(
     return false
   }
 
+  /**
+   * The texts [contains] and [regex] look in: [field], or else the text, content description,
+   * hint and state, as a macro test's Match in and Any text do. An id is also given without its
+   * package.
+   */
+  private fun textsOf(node: AccessibilityNodeInfoCompat, textOf: TextOf): List<String> =
+    when (field?.let(FIELDS::getValue)) {
+      null ->
+        listOfNotNull(
+          textOf(node),
+          node.contentDescription?.toString(),
+          node.hintText?.toString(),
+          node.stateDescription?.toString(),
+        )
+      Macros.Field.TEXT -> listOfNotNull(textOf(node))
+      Macros.Field.DESCRIPTION -> listOfNotNull(node.contentDescription?.toString())
+      Macros.Field.HINT -> listOfNotNull(node.hintText?.toString())
+      Macros.Field.STATE -> listOfNotNull(node.stateDescription?.toString())
+      Macros.Field.RESOURCE_ID ->
+        node.viewIdResourceName?.let { listOf(it, it.substringAfter(":id/")).distinct() }.orEmpty()
+    }.map { it.trim() }
+
+  private fun matchesPattern(node: AccessibilityNodeInfoCompat, textOf: TextOf): Boolean {
+    val pattern = pattern ?: return false
+    return textsOf(node, textOf).any { pattern.matcher(it.take(Macros.MAX_PATTERN_INPUT)).find() }
+  }
+
   private fun contains(node: AccessibilityNodeInfoCompat, textOf: TextOf, part: String): Boolean =
     listOf(textOf(node), node.contentDescription?.toString()).any {
       it?.contains(part, ignoreCase = true) == true
@@ -136,6 +182,21 @@ data class NodeQuery(
         "password" to { it.isPassword },
       )
 
+    /** The texts [field] can name: the names of item fields, and those of a macro's Match in list. */
+    private val FIELDS: Map<String, Macros.Field> =
+      mapOf(
+        "text" to Macros.Field.TEXT,
+        "contentDescription" to Macros.Field.DESCRIPTION,
+        "description" to Macros.Field.DESCRIPTION,
+        "hint" to Macros.Field.HINT,
+        "stateDescription" to Macros.Field.STATE,
+        "state" to Macros.Field.STATE,
+        "id" to Macros.Field.RESOURCE_ID,
+      )
+
+    /** The macro item types [kinds] can name, by their names in scripts. */
+    val KINDS: Map<String, Macros.Kind> = Macros.Kind.entries.associateBy { it.scriptName }
+
     val KEYS =
       STATES.keys +
       setOf(
@@ -143,6 +204,12 @@ data class NodeQuery(
         "text",
         "textContains",
         "contentDescription",
+        "hint",
+        "stateDescription",
+        "contains",
+        "matches",
+        "field",
+        "kind",
         "className",
         "role",
         "clickable",
@@ -151,13 +218,42 @@ data class NodeQuery(
         "has",
       )
 
+    /**
+     * What is wrong with the fields of [json] that only a query uses, or null. Nested queries are
+     * checked where they are read.
+     */
+    fun problem(json: JSONObject): String? {
+      val field = json.optString("field").ifEmpty { null }
+      val matches = json.optString("matches").ifEmpty { null }
+      val unknownKind = kindsOf(json.opt("kind")).firstOrNull { it !in KINDS }
+      return when {
+        json.has("kind") && json.opt("kind") !is String && json.opt("kind") !is JSONArray ->
+          "kind is a name or a list of names"
+        unknownKind != null -> "Unknown kind $unknownKind. Kinds: ${KINDS.keys.joinToString()}"
+        field != null && field !in FIELDS ->
+          "Unknown field $field. Fields: ${FIELDS.keys.joinToString()}"
+        field != null && !json.has("contains") && !json.has("matches") ->
+          "field needs contains or matches"
+        matches != null && Macros.compilePattern(matches.trim()) == null ->
+          "matches isn't a usable regular expression: $matches. Repeated groups can't contain repetition or |."
+        else -> null
+      }
+    }
+
     fun of(json: JSONObject, nested: Boolean = false): NodeQuery {
+      problem(json)?.let { throw ScriptApiException(it) }
       fun text(key: String) = json.optString(key).ifEmpty { null }
       return NodeQuery(
         id = text("id"),
         text = text("text"),
         textContains = text("textContains"),
         contentDescription = text("contentDescription"),
+        hint = text("hint"),
+        stateDescription = text("stateDescription"),
+        contains = text("contains")?.takeIf { it.isNotBlank() },
+        regex = text("matches")?.trim(),
+        field = text("field"),
+        kinds = kindsOf(json.opt("kind")),
         className = text("className"),
         role = text("role"),
         clickable = if (json.has("clickable")) json.getBoolean("clickable") else null,
@@ -169,6 +265,14 @@ data class NodeQuery(
         states = STATES.keys.filter(json::has).associateWith(json::getBoolean),
       )
     }
+
+    /** kind is one name, or a list of them. */
+    private fun kindsOf(value: Any?): List<String> =
+      when (value) {
+        is String -> listOf(value)
+        is JSONArray -> (0 until value.length()).map { value.optString(it) }
+        else -> emptyList()
+      }
 
     /** inside is one query, or a list of them. */
     private fun insideOf(value: Any?): List<NodeQuery> =

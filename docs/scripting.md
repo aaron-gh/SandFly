@@ -61,8 +61,8 @@ A table with only listed values, such as `{ 'speech', 'screen' }`, is a list. A 
 | `id` | Required. Lowercase letters, digits, dots, dashes and underscores, starting with a letter or digit, up to 64 characters. A script with the same id replaces the installed one. |
 | `name` | Required. Shown in the Scripts list, and at the start of the title of every dialog the script shows. |
 | `author` | Required. |
-| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 5. Use the highest version marked on anything the script uses, such as 3 for a script that uses anything marked *Version 3*. |
-| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Versions 2 to 5 only add to version 1, so scripts tested with 1 get no warning. |
+| `minApiVersion` | Required. The lowest script API version the script works with. This document describes version 6. Use the highest version marked on anything the script uses, such as 3 for a script that uses anything marked *Version 3*. |
+| `testedApiVersion` | Required. The highest script API version you tested with. SandFly warns before installing a script tested only with a version older than the last one that changed existing calls. Versions 2 to 6 only add to version 1, so scripts tested with 1 get no warning. |
 | `version` | The script's own version, as text, such as `'1.2'`. The default is `'1'`. SandFly updates installed scripts from their source when this is higher, compared number by number, so raise it with each change. |
 | `description` | Shown on the script's page and before it's installed. |
 | `homepage` | An `http` or `https` address. The script's page has a button that opens it. |
@@ -179,7 +179,7 @@ A rule can set any of these:
 
 When several rules match an item, the first one that sets a field wins for that field. Rules from scripts for the app come before rules from scripts for all apps, and `sf.rules.add` comes before the manifest.
 
-To find an item's id, class and role, assign **Inspect focused item** to a gesture (it opens a window with the details under headings; **Copy item details** copies them without opening it), or add it to the SandFly menu in **SandFly menu**, under **Controls**. **Copy screen tree** copies every item on screen as JSON.
+To find an item's id, class, role, texts and kinds, assign **Inspect focused item** to a gesture (it opens a window with the details under headings; **Copy item details** copies them without opening it), or add it to the SandFly menu in **SandFly menu**, under **Controls**. **Copy screen tree** copies every item on screen as JSON.
 
 ### Actions in rules
 
@@ -216,6 +216,11 @@ A query finds items. It's an id as text, or a record with any of these; an item 
 | `inside` | A query that one of the items around it must match: its parent, the parent's parent, and so on. `{ className = 'Button', inside = { textContains = 'play video' } }` matches every button in a video's row, and not the row itself. `inside` can't hold another `inside`. *Version 2:* a list of queries, each of which one of the items around it must match. `{ clickable = true, inside = { { clickable = true }, { id = 'results' } } }` matches every item that can be clicked inside another one in the list `results`, and not the list's rows themselves. |
 | `has` | A query that one of the items inside it must match, up to 6 levels down and 60 items. `{ parentId = 'results', has = { textContains = 'Subscribe to' } }` matches a row in a list that holds a Subscribe button. `has` can't hold `has` or `inside`. |
 | `checkable`, `checked`, `longClickable`, `focusable`, `focused`, `selected`, `enabled`, `editable`, `scrollable`, `visible`, `heading`, `password` | *Version 2.* `true` or `false`. `{ className = 'CheckBox', checked = false }` matches unchecked check boxes. |
+| `hint`, `stateDescription` | *Version 6.* The hint or state, exactly. |
+| `contains` | *Version 6.* Part of the item's text, content description, hint or state, ignoring case, as a macro's **Any text** matches. With `field`, part of that one text. |
+| `matches` | *Version 6.* A regular expression found in the item's text, content description, hint or state, ignoring case, as a macro's **Regular expression** check box does. With `field`, in that one text. `{ matches = '^new post$', field = 'contentDescription' }` matches an item described as exactly "New post". Repeated groups can't contain repetition or `\|`, and only the first 1,000 characters of a text are looked at. |
+| `field` | *Version 6.* The one text `contains` and `matches` look in, as a macro's **Match in** does: `'text'`, `'contentDescription'` (or `'description'`), `'hint'`, `'stateDescription'` (or `'state'`) or `'id'`. An id is matched with and without its package, so `'^send$'` matches `com.example:id/send`. |
+| `kind` | *Version 6.* A macro item type, or a list of them that the item must all be: `'clickable'`, `'longClickable'`, `'editable'`, `'scrollable'`, `'adjustable'`, `'checkable'`, `'checked'`, `'selected'`, `'heading'` or `'enabled'`. They match as in a macro test: `'clickable'` and `'longClickable'` count an item up to 6 levels above that can be clicked, as the text of a button is often an item in it; `'scrollable'` counts an item with a scroll action, and `'adjustable'` a slider or progress bar. `{ contains = 'new post', field = 'description', kind = 'clickable' }` is the macro test Item on screen: new post (Description), Clickable. |
 
 ## Items
 
