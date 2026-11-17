@@ -37,27 +37,41 @@ class HomeScreenPagesTest {
       this.priority = priority
     }
 
+  private val samsung = home("com.sec.android.app.launcher")
+  private val other = home("com.dialect.launcher")
+
   @Test
-  fun everyInstalledHomeAppCounts() {
+  fun defaultHomeApp_isTheOnlyOneInUse() {
     assertEquals(
-      setOf("com.sec.android.app.launcher", "com.dialect.launcher"),
-      HomeScreenPages.launcherPackages(
-        listOf(home("com.sec.android.app.launcher"), home("com.dialect.launcher"))
-      ),
+      setOf("com.sec.android.app.launcher"),
+      HomeScreenPages.launchersInUse(samsung) { throw AssertionError("not needed") },
     )
   }
 
   @Test
-  fun fallbackHomeAndTheAppChooserDoNotCount() {
+  fun appChooser_meansEveryInstalledHomeAppCounts() {
+    assertEquals(
+      setOf("com.sec.android.app.launcher", "com.dialect.launcher"),
+      HomeScreenPages.launchersInUse(home("android")) { listOf(samsung, other) },
+    )
+  }
+
+  @Test
+  fun noResolvedActivity_meansEveryInstalledHomeAppCounts() {
+    assertEquals(
+      setOf("com.sec.android.app.launcher", "com.dialect.launcher"),
+      HomeScreenPages.launchersInUse(null) { listOf(samsung, other) },
+    )
+  }
+
+  @Test
+  fun fallbackHome_meansEveryInstalledHomeAppCounts_withoutFallbackHomeOrTheAppChooser() {
+    val fallbackHome = home("com.android.settings", priority = -1000)
     assertEquals(
       setOf("com.sec.android.app.launcher"),
-      HomeScreenPages.launcherPackages(
-        listOf(
-          home("com.sec.android.app.launcher"),
-          home("com.android.settings", priority = -1000),
-          home("android"),
-        )
-      ),
+      HomeScreenPages.launchersInUse(fallbackHome) {
+        listOf(samsung, fallbackHome, home("android"))
+      },
     )
   }
 }
