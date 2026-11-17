@@ -81,11 +81,20 @@ object ScriptBuilder {
     val store = ScriptStore.get(context)
     val source = store.readFile(script.id, ScriptPackage.MAIN)?.decodeToString() ?: throw IOException("No main.lua")
     val manifest = JSONObject(ManifestReader.read(source))
-    val code =
-      ManifestReader.codeAfter(source).lines().filterNot { it.startsWith(ScriptSignature.PREFIX) }.joinToString("\n").trim()
+    val draft = draftOf(manifest, codeOf(source))
+    draft.put("name", context.getString(R.string.script_builder_copy_name, manifest.optString("name", script.manifest.name)))
+    return createFrom(context, draft, script.id)
+  }
+
+  /** The code of the main.lua [source] after its manifest, without its signature. */
+  fun codeOf(source: String): String =
+    ManifestReader.codeAfter(source).lines().filterNot { it.startsWith(ScriptSignature.PREFIX) }.joinToString("\n").trim()
+
+  /** A draft with the parts of [manifest] as builder parts and [code] as its Lua code. */
+  fun draftOf(manifest: JSONObject, code: String): JSONObject {
     val draft =
       JSONObject()
-        .put("name", context.getString(R.string.script_builder_copy_name, manifest.optString("name", script.manifest.name)))
+        .put("name", manifest.optString("name"))
         .put("apps", manifest.optJSONArray("apps") ?: manifest.optString("apps").takeIf { it.isNotEmpty() }?.let { JSONArray().put(it) } ?: JSONArray())
         .put("rules", manifest.optJSONArray("rules") ?: JSONArray())
         .put("navigation", manifest.optJSONArray("navigation") ?: JSONArray())
@@ -95,7 +104,7 @@ object ScriptBuilder {
     for (key in MANIFEST_FIELDS) manifest.opt(key)?.let { draft.put(key, it) }
     manifest.optJSONArray("commands")?.let { draft.put(BuiltScriptMacros.COMMANDS, it) }
     if (code.isNotEmpty()) draft.put("code", code)
-    return createFrom(context, draft, script.id)
+    return draft
   }
 
   /** Writes [draft] and installs the script made from it. */

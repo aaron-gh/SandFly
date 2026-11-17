@@ -525,4 +525,18 @@
     <string name="script_builder_read_text_before">Text before it</string>
     <!-- Script builder: an empty part is taken from the nearest item above in the same list, such as a message's sender. -->
     <string name="script_builder_read_above">If empty, use the item above</string>
+    <!-- Scripts screen: describe a script and have SandFly Pro's agent write it. -->
+    <string name="script_ai_build">Build a script with SandFly Pro</string>
+    <!-- Script builder: have SandFly Pro's agent change this script. -->
+    <string name="script_ai_change">Change with SandFly Pro</string>
+    <!-- Script builder: heading over a script SandFly Pro wrote that the person hasn't accepted. -->
+    <string name="script_ai_review">Written by SandFly Pro</string>
+    <!-- Script builder: permissions a script SandFly Pro wrote gets only when accepted. %1$s: their names, such as network, java. -->
+    <string name="script_ai_held">Not allowed until accepted: %1$s</string>
+    <!-- Script builder: keeps the script SandFly Pro wrote. -->
+    <string name="script_ai_accept">Accept</string>
+    <!-- Script builder: asks SandFly Pro to change the script it wrote. -->
+    <string name="script_ai_ask_changes">Ask for changes</string>
+    <!-- Script builder: removes the script SandFly Pro wrote. -->
+    <string name="script_ai_discard">Discard</string>
 </resources>

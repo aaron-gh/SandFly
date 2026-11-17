@@ -293,4 +293,19 @@ class ScriptBuilderScreensTest {
     assertTrue(!match.has("className"))
     assertEquals(match.toString(), changed.getJSONArray("speech").getJSONObject(0).getJSONObject("match").toString())
   }
+
+  @Test
+  fun scriptWrittenBySandFlyPro_isReviewedInTheBuilder() {
+    val source = "local manifest = { name = 'Episodes', version = '1', permissions = { 'speech', 'network' }, rules = { { match = { id = 'row' }, label = 'Episode' } } }\n"
+    val saved = ScriptAi.save(context, null, source)
+    val scriptId = saved.id!!
+    ScriptAi.setReview(context, scriptId, "Reads each episode row as one item.")
+    val page = open(ScriptBuilderFragment::class.java, Bundle().apply { putString(ScriptScreenFragment.ARG_ID, scriptId) })
+    page.row("Reads each episode row as one item.")
+    page.row("Not allowed until accepted: network")
+    page.click("Accept")
+    assertEquals(null, ScriptAi.review(context, scriptId))
+    assertTrue(ScriptPermission.NETWORK in ScriptStore.get(context).find(scriptId)!!.granted)
+    assertTrue(all(current().preferenceScreen).none { it.title?.toString() == "Accept" })
+  }
 }
