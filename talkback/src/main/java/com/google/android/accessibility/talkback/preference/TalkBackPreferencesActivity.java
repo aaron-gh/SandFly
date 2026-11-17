@@ -143,7 +143,21 @@ public class TalkBackPreferencesActivity extends PreferencesActivity
     PreferenceFragmentCompat fragment = getFragmentByName(fragmentName);
     fragment.setArguments(argumentsOf(intent));
     LogUtils.e(TAG, "onNewIntent/getContainerId()= %s", getContainerId());
-    getSupportFragmentManager()
+    FragmentManager manager = getSupportFragmentManager();
+    if (fragment instanceof TalkBackPreferenceFragment) {
+      // The app icon, or another intent for the main screen, while settings are open: Back from the
+      // main screen leaves settings, so nothing stays behind it, and a main screen already shown
+      // stays as it is.
+      if (manager.getBackStackEntryCount() > 0) {
+        manager.popBackStackImmediate(
+            manager.getBackStackEntryAt(0).getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+      }
+      if (!(manager.findFragmentById(getContainerId()) instanceof TalkBackPreferenceFragment)) {
+        manager.beginTransaction().replace(getContainerId(), fragment, getFragmentTag()).commit();
+      }
+      return;
+    }
+    manager
         .beginTransaction()
         .replace(getContainerId(), fragment, getFragmentTag())
         // Add root page to back-history
