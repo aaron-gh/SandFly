@@ -330,6 +330,9 @@ public class ImageCaptionResultBottomSheet {
       mainHandler = new Handler(context.getMainLooper());
       imageQnaChatAdapter =
           new ImageQnaChatAdapter(context, mainHandler, pipeline, isDimScreenEnabled);
+      // Set here rather than when the listening page is bound: listening starts before that page
+      // is bound, and a page kept in the cache is not bound again.
+      speechRecognizerPerformer.setListener(questionListener());
 
       // Listen for changes to the messages and UiState from the controller.
       CoroutineHelper.INSTANCE.collect(
@@ -360,7 +363,7 @@ public class ImageCaptionResultBottomSheet {
         case ASK_GEMINI_LISTENING -> {
           contentView =
               inflater.inflate(R.layout.image_qna_voice_input_bottomsheet_dialog, viewGroup, false);
-          return new ImageQnaVoiceInputViewHolder(contentView, speechRecognizerPerformer);
+          return new ImageQnaVoiceInputViewHolder(contentView);
         }
         case IMAGE_QA_CHAT_VOICE_INPUT -> {
           contentView = inflater.inflate(R.layout.image_qna_chat_ui_voice_input, viewGroup, false);
@@ -440,8 +443,7 @@ public class ImageCaptionResultBottomSheet {
         imageCaptionResultViewHolder.setAskGeminiButtonOnClickListener(
             view -> {
               LogUtils.d(TAG, "Ask Gemini button clicked - voice input.");
-              pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focus(MUTE_NEXT_FOCUS));
-              viewPager.setCurrentItem(ASK_GEMINI_LISTENING, /* smoothScroll= */ false);
+              startVoiceInput();
             });
         imageCaptionResultViewHolder.setAskGeminiTypingButtonOnClickListener(
             view -> {
@@ -455,56 +457,6 @@ public class ImageCaptionResultBottomSheet {
         }
       } else if (viewHolder instanceof ImageQnaVoiceInputViewHolder imageQnAVoiceInputViewHolder) {
         // The page of voice input listening.
-        imageQnAVoiceInputViewHolder.setSpeechRecognizerListener(
-            new SpeechRecognizerRequester() {
-              @Override
-              public boolean onResult(String command, boolean isPartialResult) {
-                LogUtils.d(TAG, "Recognized text : %s, isPartialResult", command, isPartialResult);
-                if (skipVoiceInputResult) {
-                  LogUtils.d(TAG, "Skip voice input result.");
-                  skipVoiceInputResult = false;
-                  return true;
-                }
-                pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focus(MUTE_NEXT_FOCUS));
-                requestImageQna(command, /* isVoiceInput= */ true);
-                viewPager.setCurrentItem(IMAGE_QA_CHAT_VOICE_INPUT, /* smoothScroll= */ false);
-                return true;
-              }
-
-              @Override
-              public void onFeedbackEvent(@FeedbackEvent int eventId) {
-                LogUtils.d(TAG, "onFeedbackEvent eventId: %d", eventId);
-                switch (eventId) {
-                  case EVENT_MIC_PERMISSION_REQUESTED -> mainDialog.hide();
-                  case EVENT_MIC_PERMISSION_NOT_GRANTED ->
-                      pipeline.returnFeedback(
-                          EVENT_ID_UNTRACKED,
-                          Feedback.showToast(
-                              ShowToast.Action.SHOW,
-                              context.getString(R.string.voice_commands_no_mic_permissions),
-                              true));
-                  case EVENT_DIALOG_CONFIRM -> mainDialog.show();
-                  default -> {}
-                }
-              }
-
-              @Override
-              public void onError(int error) {
-                LogUtils.d(TAG, "Recognition failed with error code: %d", error);
-                if (skipVoiceInputResult) {
-                  LogUtils.d(TAG, "Skip voice input result.");
-                  skipVoiceInputResult = false;
-                  return;
-                }
-                pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focus(MUTE_NEXT_FOCUS));
-
-                controller.onVoiceError(error);
-
-                viewPager.setCurrentItem(IMAGE_QA_CHAT_VOICE_INPUT, false);
-              }
-            });
-        speechRecognizerPerformer.doListening();
-        skipVoiceInputResult = false;
         imageQnAVoiceInputViewHolder.setAskGeminiTypingButtonOnClickListener(
             view -> {
               LogUtils.d(TAG, "Ask Gemini listening to typing.");
@@ -644,6 +596,61 @@ public class ImageCaptionResultBottomSheet {
           });
     }
 
+    /** Gets the question asked by voice, or the error, for the dialog this adapter belongs to. */
+    private SpeechRecognizerRequester questionListener() {
+      return new SpeechRecognizerRequester() {
+        @Override
+        public boolean onResult(String command, boolean isPartialResult) {
+          LogUtils.d(TAG, "Recognized text : %s, isPartialResult", command, isPartialResult);
+          if (skipVoiceInputResult) {
+            LogUtils.d(TAG, "Skip voice input result.");
+            skipVoiceInputResult = false;
+            return true;
+          }
+          pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focus(MUTE_NEXT_FOCUS));
+          requestImageQna(command, /* isVoiceInput= */ true);
+          viewPager.setCurrentItem(IMAGE_QA_CHAT_VOICE_INPUT, /* smoothScroll= */ false);
+          return true;
+        }
+
+        @Override
+        public void onFeedbackEvent(@FeedbackEvent int eventId) {
+          LogUtils.d(TAG, "onFeedbackEvent eventId: %d", eventId);
+          switch (eventId) {
+            case EVENT_MIC_PERMISSION_REQUESTED -> mainDialog.hide();
+            case EVENT_MIC_PERMISSION_NOT_GRANTED ->
+                pipeline.returnFeedback(
+                    EVENT_ID_UNTRACKED,
+                    Feedback.showToast(
+                        ShowToast.Action.SHOW,
+                        context.getString(R.string.voice_commands_no_mic_permissions),
+                        true));
+            case EVENT_DIALOG_CONFIRM -> mainDialog.show();
+            default -> {}
+          }
+        }
+
+        @Override
+        public void onError(int error) {
+          LogUtils.d(TAG, "Recognition failed with error code: %d", error);
+          if (skipVoiceInputResult) {
+            LogUtils.d(TAG, "Skip voice input result.");
+            skipVoiceInputResult = false;
+            return;
+          }
+          pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focus(MUTE_NEXT_FOCUS));
+
+          controller.onVoiceError(error);
+
+          viewPager.setCurrentItem(IMAGE_QA_CHAT_VOICE_INPUT, false);
+        }
+      };
+    }
+
+    /**
+     * Shows the listening page and starts listening, only here: SandFly's dictation stops
+     * recording when listening is asked for again, so a second start would end the question.
+     */
     void startVoiceInput() {
       pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.focus(MUTE_NEXT_FOCUS));
       viewPager.setCurrentItem(ASK_GEMINI_LISTENING, /* smoothScroll= */ false);
@@ -805,22 +812,15 @@ public class ImageCaptionResultBottomSheet {
 
   /** The view holder for the image Q&A voice input listening page. */
   private static class ImageQnaVoiceInputViewHolder extends RecyclerView.ViewHolder {
-    final SpeechRecognizerPerformer speechRecognizerPerformer;
     final MaterialButton askGeminiTypingButton;
     final ImageView geminiSpark;
     final ImageView stopListening;
 
-    public ImageQnaVoiceInputViewHolder(
-        @NonNull View itemView, SpeechRecognizerPerformer speechRecognizerPerformer) {
+    public ImageQnaVoiceInputViewHolder(@NonNull View itemView) {
       super(itemView);
-      this.speechRecognizerPerformer = speechRecognizerPerformer;
       askGeminiTypingButton = itemView.findViewById(R.id.btn_type_question);
       geminiSpark = itemView.findViewById(R.id.gemini_spark);
       stopListening = itemView.findViewById(R.id.stop_listening);
-    }
-
-    void setSpeechRecognizerListener(SpeechRecognizerRequester requester) {
-      speechRecognizerPerformer.setListener(requester);
     }
 
     void setAskGeminiTypingButtonOnClickListener(OnClickListener listener) {
