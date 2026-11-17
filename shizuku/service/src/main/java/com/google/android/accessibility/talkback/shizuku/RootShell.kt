@@ -217,8 +217,9 @@ object RootShell {
     private fun runSu(token: String, user: String?) {
       val su =
         try {
-          // Options before the user, as Magisk's su documents them.
-          val command = listOf("su", "-c", launchCommand()) + listOfNotNull(user)
+          // The user before -c: Magisk's su takes everything after -c as the command, so a user
+          // after it would be an argument of the command, and the process would run as root.
+          val command = listOf("su") + listOfNotNull(user) + listOf("-c", launchCommand())
           ProcessBuilder(command).redirectErrorStream(true).start()
         } catch (e: Exception) {
           Log.w(TAG, "Cannot run su: $e")

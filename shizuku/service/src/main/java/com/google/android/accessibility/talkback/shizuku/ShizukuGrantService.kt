@@ -419,6 +419,9 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
   @Volatile private var clipWatcher: IClipboardWatcher? = null
 
   override fun watchClipboard(watcher: IClipboardWatcher?) {
+    // Only the shell user owns the shell's package. Under any other user ID, root under Shizuku or
+    // su, the clipboard service refuses the read and clears the clipboard.
+    if (watcher != null && android.os.Process.myUid() % PER_USER_RANGE != SHELL_APP_ID) return
     synchronized(this) {
       clipWatcher = watcher
       val manager = shellClipboard() ?: return
@@ -755,6 +758,8 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
     /** Installing is slower than a setting change, so it gets longer than the other commands. */
     const val INSTALL_TIMEOUT_SECONDS = 120L
     const val SHELL_PACKAGE = "com.android.shell"
+    /** Process.SHELL_UID, the shell user's app ID. */
+    const val SHELL_APP_ID = 2000
     /** The setting with the volume keys shortcut's targets, separated by colons. */
     const val VOLUME_KEYS_SETTING = "accessibility_shortcut_target_service"
     /** UserShortcutType.HARDWARE, the volume keys shortcut, from Android 15. */
