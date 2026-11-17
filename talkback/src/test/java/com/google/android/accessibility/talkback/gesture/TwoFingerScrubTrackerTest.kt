@@ -65,6 +65,15 @@ class TwoFingerScrubTrackerTest {
     }
   }
 
+  /** Moves the fingers' middle from [fromX] and the current height to [toX], [toY] in [steps] steps. */
+  private fun slideTo(fromX: Float, toX: Float, toY: Float, steps: Int) {
+    val fromY = y
+    for (i in 1..steps) {
+      y = fromY + (toY - fromY) * i / steps
+      moveTo(fromX + (toX - fromX) * i / steps, afterMillis = 10)
+    }
+  }
+
   private fun event(action: Int, x: Float, count: Int): MotionEvent {
     val ids = IntArray(count) { it }
     val coords =
@@ -176,6 +185,41 @@ class TwoFingerScrubTrackerTest {
     slideVertically(500f, 500f, 1000f)
     assertEquals(0, scrubs)
     tracker.onMotionEvent(event(MotionEvent.ACTION_UP, 500f, 1))
+    assertEquals(0, scrubs)
+  }
+
+  @Test
+  fun slideDownThenSidewaysWithDriftOutAndBack_scrubsWhenAnyDirectionCounts() {
+    anyDirection = true
+    land(500f)
+    slideVertically(500f, 500f, 700f)
+    // Sideways with the fingers still drifting down a little.
+    slideTo(500f, 650f, 730f, steps = 15)
+    slideTo(650f, 500f, 730f, steps = 15)
+    assertEquals(1, scrubs)
+  }
+
+  @Test
+  fun curvedSwipeDown_isNotAScrubWhenAnyDirectionCounts() {
+    anyDirection = true
+    land(500f)
+    slideTo(500f, 500f, 600f, steps = 10)
+    // Curves right 120 px and back left 80 px while going on down.
+    slideTo(500f, 620f, 840f, steps = 24)
+    slideTo(620f, 540f, 1000f, steps = 16)
+    assertEquals(0, scrubs)
+    assertTrue(tracker.isTracking)
+  }
+
+  @Test
+  fun firstStrokeTurnsAsideOnlyOnce() {
+    anyDirection = true
+    land(500f)
+    slideVertically(500f, 500f, 700f)
+    slide(500f, 650f)
+    // A second turn, down and back up, doesn't start the scrub again.
+    slideVertically(650f, 700f, 850f)
+    slideVertically(650f, 850f, 750f)
     assertEquals(0, scrubs)
   }
 

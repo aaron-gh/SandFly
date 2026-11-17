@@ -34,8 +34,9 @@ import kotlin.math.sign
  *
  * Strokes go left and right, and movement up or down first is not a scrub, unless [anyDirection]
  * returns true when the fingers land. Then strokes may go any way, such as up and down or
- * diagonally, and a first stroke that turns aside, such as a slide in from the top edge followed by
- * a stroke sideways, starts the scrub again from the turn.
+ * diagonally. A first stroke that turns aside by more than 45 degrees, such as a slide in from the
+ * top edge followed by a stroke sideways, starts the scrub again once from the turn, the way it
+ * goes from there. A stroke that only curves or drifts keeps its direction.
  */
 class TwoFingerScrubTracker(
   private val strokePx: Float,
@@ -64,6 +65,8 @@ class TwoFingerScrubTracker(
   private var startDistance = 0f
   // Whether strokes may go any way for the current touch, not only left and right.
   private var anyWay = false
+  // Whether the first stroke already turned aside and started again, which it does once.
+  private var turned = false
   // The unit vector of the current stroke's direction, set from the first stroke.
   private var directionX = 0f
   private var directionY = 0f
@@ -124,6 +127,7 @@ class TwoFingerScrubTracker(
     startY = (event.getY(0) + event.getY(1)) / 2
     startDistance = hypot(event.getX(1) - event.getX(0), event.getY(1) - event.getY(0))
     anyWay = anyDirection()
+    turned = false
     strokes = 0
     state = State.TRACKING
   }
@@ -182,12 +186,20 @@ class TwoFingerScrubTracker(
     // How far the fingers are from the furthest point of the stroke, along the stroke and across it.
     val along = (x - extremeX) * directionX + (y - extremeY) * directionY
     val across = abs((x - extremeX) * directionY - (y - extremeY) * directionX)
-    if (along > 0) {
-      extremeX += along * directionX
-      extremeY += along * directionY
+    // When strokes may go any way, the stroke goes on while the fingers move within 45 degrees of
+    // it, and the furthest point is where they are, so that drift and curves don't add up to a turn.
+    // Otherwise the furthest point stays on the line of the stroke.
+    val advancing = along > 0 && (!anyWay || along >= across)
+    if (advancing) {
+      if (anyWay) {
+        extremeX = x
+        extremeY = y
+      } else {
+        extremeX += along * directionX
+        extremeY += along * directionY
+      }
       strokeTime = time
-    }
-    if (-along >= strokePx * RETURN_FRACTION) {
+    } else if (-along >= strokePx * RETURN_FRACTION) {
       directionX = -directionX
       directionY = -directionY
       extremeX = x
@@ -203,14 +215,19 @@ class TwoFingerScrubTracker(
         return
       }
     } else if (
-      anyWay && strokes == 1 && across >= strokePx && -along < strokePx * TURN_FRACTION
+      anyWay &&
+        !turned &&
+        strokes == 1 &&
+        across >= strokePx &&
+        -along < strokePx * TURN_FRACTION
     ) {
-      // The fingers turned aside without coming back, so the scrub starts at the turn.
+      // The fingers turned aside at the furthest point without coming back, so the scrub starts
+      // again from there, the way they went from it.
       if (GestureLog.enabled) {
         Log.d(DEBUG_TAG, "Two-finger scrub: first stroke turned aside, starting again")
       }
+      turned = true
       startFirstStroke(x - extremeX, y - extremeY, x, y, time)
-      startTime = time
     }
     if (time - strokeTime > MAX_STROKE_MILLIS) {
       reject("stroke didn't turn back")
