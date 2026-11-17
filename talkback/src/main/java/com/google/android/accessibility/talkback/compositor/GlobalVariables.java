@@ -994,6 +994,29 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
     return mContext.getString(R.string.template_hint_wear_input_focused_adjustable);
   }
 
+  /** Returns whether Proofread is in the reading control list, so typo hints are spoken. */
+  public boolean isTypoHintOn() {
+    return selectorController != null
+        && selectorController.isSettingInList(Setting.GRANULARITY_TYPO);
+  }
+
+  /**
+   * Returns the hint for an edit field or pasted text with {@code typoCount} misspelled words, or
+   * "" when Proofread isn't in the reading control list.
+   */
+  public CharSequence getTypoHint(int typoCount) {
+    if (typoCount <= 0 || !isTypoHintOn()) {
+      return "";
+    }
+    CharSequence gesture = getGestureStringForReadingMenuNextSetting();
+    if (TextUtils.isEmpty(gesture)
+        || SelectorController.getCurrentSetting(mContext) == Setting.GRANULARITY_TYPO) {
+      // No reading control gesture to name, or Proofread is already the current reading control.
+      return mContext.getString(R.string.hint_suggestion);
+    }
+    return mContext.getString(R.string.template_hint_edit_text_containing_typo, typoCount, gesture);
+  }
+
   /** Returns the gesture string to select the next setting in reading menu. */
   public CharSequence getGestureStringForReadingMenuNextSetting() {
     if (inputModeTracker.getInputMode() == INPUT_MODE_KEYBOARD) {

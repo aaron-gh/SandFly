@@ -266,18 +266,18 @@ public final class InputTextFeedbackRules {
       CharSequence pastedTextAndHint =
           SpannableUtils.getSpannedFormattedString(
               context.getString(R.string.template_text_pasted), pastedText);
-      ImmutableList<SuggestionSpan> suggestionSpans =
-          AccessibilityNodeInfoUtils.getSuggestionSpans(
-              context,
-              pastedText,
-              eventOptions.sourceNode == null ? TYPE_NULL : eventOptions.sourceNode.getInputType());
-      if (!suggestionSpans.isEmpty()) {
-        CharSequence hint =
-            context.getString(
-                R.string.template_hint_edit_text_containing_typo,
-                suggestionSpans.size(),
-                globalVariables.getGestureStringForReadingMenuNextSetting());
-        pastedTextAndHint = joinCharSequences(pastedTextAndHint, hint);
+      if (globalVariables.isTypoHintOn()) {
+        ImmutableList<SuggestionSpan> suggestionSpans =
+            AccessibilityNodeInfoUtils.getSuggestionSpans(
+                context,
+                pastedText,
+                eventOptions.sourceNode == null
+                    ? TYPE_NULL
+                    : eventOptions.sourceNode.getInputType());
+        CharSequence hint = globalVariables.getTypoHint(suggestionSpans.size());
+        if (!TextUtils.isEmpty(hint)) {
+          pastedTextAndHint = joinCharSequences(pastedTextAndHint, hint);
+        }
       }
       changedText = pastedTextAndHint;
     } else if (!isInitialWordEmpty) {
