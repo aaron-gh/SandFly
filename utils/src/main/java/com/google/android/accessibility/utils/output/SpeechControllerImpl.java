@@ -2885,7 +2885,12 @@ public class SpeechControllerImpl implements SpeechController {
       return false;
     }
     final FeedbackItem previousItem = currentFeedbackItem;
-    final FeedbackItem nextItem = (feedbackQueue.isEmpty() ? null : feedbackQueue.remove(0));
+    final FeedbackItem nextItem;
+    // The queue can be cleared from another thread between the emptiness check and the removal.
+    final List<FeedbackItem> queue = feedbackQueue;
+    synchronized (queue) {
+      nextItem = queue.isEmpty() ? null : queue.remove(0);
+    }
 
     currentFeedbackItem = nextItem;
 
