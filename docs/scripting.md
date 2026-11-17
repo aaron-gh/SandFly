@@ -29,6 +29,16 @@ SandFly checks installed scripts for a newer `version` in the source they came f
 
 Scripts run in [Lua 5.4](https://www.lua.org/manual/5.4/) through [LuaJava](https://github.com/gudzpoz/luajava). A script has the `string`, `table`, `math`, `utf8` and `coroutine` libraries, `os.time`, `os.clock`, `os.date` and `os.difftime`, `json` for JSON text, and the `sf` table described below. It has no `io`, `debug` or `package`, no access to files, and loads only Lua text, not compiled Lua. Unless it has the [`java` permission](#java), it can't reach Android or Java; everything goes through `sf`.
 
+## The script builder
+
+**New script** on the Scripts screen makes a script without writing code. Its screen has:
+
+*   **Apps**: the apps it runs in, each optionally limited to an activity or a window title. With none, it runs in all apps.
+*   **Rules**: each names an item, with the same tests as a macro's Item on screen (text with **Match in** and **Regular expression**, item types), plus resource ID, class name, role, **Inside an item** and **Has an item inside**. **Use the inspected item** fills them in from the item last shown by **Inspect focused item** or **Copy item details**. A rule sets any of the [rule fields](#rules), such as Label, Hide, **Read as one item** (`group`) and Reading order, and adds actions to the item's Actions menu.
+*   **Reading controls**: [navigation](#navigation) entries.
+
+Each change is saved and applies at once. The builder writes `main.lua` with a manifest and no code, and asks only for the permissions its rules and reading controls need. A rule or reading control that isn't finished shows what it needs and is left out until it is. The script's page has **Edit in script builder**.
+
 ## A first script
 
 ```lua

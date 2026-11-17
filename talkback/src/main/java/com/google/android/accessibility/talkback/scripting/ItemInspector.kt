@@ -26,6 +26,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.macros.MacroRunner
 import com.google.android.accessibility.talkback.macros.Macros
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.ClipboardHistory
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
@@ -66,6 +67,10 @@ object ItemInspector {
    * out.
    */
   fun report(context: Context, node: AccessibilityNodeInfoCompat): List<Section> {
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putString(PREF_LAST_QUERY, scriptQuery(node).toString())
+      .apply()
     val role = ScriptRoles.role(node)
     val script =
       lines(
@@ -97,6 +102,40 @@ object ItemInspector {
       )
       .filter { it.lines.isNotEmpty() }
   }
+
+  /**
+   * A script query for [node]: its id when it has one, or else its description or text, and
+   * Clickable or Heading when it is one.
+   */
+  fun scriptQuery(node: AccessibilityNodeInfoCompat): JSONObject {
+    val query = JSONObject()
+    val id = node.viewIdResourceName?.substringAfter(":id/")
+    val description = node.contentDescription?.toString()?.trim().orEmpty()
+    val text = node.text?.toString()?.trim().orEmpty()
+    when {
+      !id.isNullOrEmpty() -> query.put("id", id)
+      description.isNotEmpty() -> query.put("contains", description).put("field", "contentDescription")
+      text.isNotEmpty() && !node.isPassword -> query.put("contains", text).put("field", "text")
+    }
+    val kinds = listOfNotNull("clickable".takeIf { node.isClickable }, "heading".takeIf { node.isHeading })
+    when (kinds.size) {
+      0 -> {}
+      1 -> query.put("kind", kinds[0])
+      else -> query.put("kind", JSONArray(kinds))
+    }
+    return query
+  }
+
+  /** The script query of the item last inspected, or null. */
+  @JvmStatic
+  fun lastQuery(context: Context): JSONObject? =
+    SharedPreferencesUtils.getSharedPreferences(context).getString(PREF_LAST_QUERY, null)?.let {
+      try {
+        JSONObject(it).takeIf { query -> query.length() > 0 }
+      } catch (e: org.json.JSONException) {
+        null
+      }
+    }
 
   /** [sections] as text: each heading, then its lines, with a blank line between parts. */
   fun plainText(context: Context, sections: List<Section>): String =
@@ -205,6 +244,7 @@ object ItemInspector {
   private val treeReader by lazy {
     ThreadPoolExecutor(0, 1, 30, TimeUnit.SECONDS, LinkedBlockingQueue<Runnable>())
   }
+  private const val PREF_LAST_QUERY = "item_inspector_last_query"
   private const val MAX_DEPTH = 60
   private const val MAX_ITEMS = 2000
   /** The most items in the inspected item whose texts Inspect focused item reads. */
