@@ -233,4 +233,7 @@ fun interface LanguageGuesser {
    * none is likely enough. Called on the main thread, so it must return quickly.
    */
   fun guess(text: String, candidates: List<String>): String?
+
+  /** Called on the main thread before the texts of one utterance are guessed. */
+  fun startUtterance() {}
 }

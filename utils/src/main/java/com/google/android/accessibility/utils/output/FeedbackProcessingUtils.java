@@ -428,6 +428,7 @@ public class FeedbackProcessingUtils {
     formattingClasses.add(BASE_CLICKABLE_SPAN);
     // Emoji are fragments of their own while they have their own voice or rate.
     formattingClasses.add(EmojiSpeech.Mark.class);
+    LanguageSwitch.startUtterance();
     for (int i = 0; i < item.getFragments().size(); ++i) {
       final FeedbackFragment fragment = item.getFragments().get(i);
       CharSequence fragmentText = fragment.getText();

@@ -24,16 +24,20 @@ import com.google.android.accessibility.utils.output.LanguageVoices
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentifier
+import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executor
+import java.util.concurrent.TimeUnit
 
 /**
  * Tells languages written in the same script apart by their words, with ML Kit language
  * identification on the phone, for [LanguageVoices.PREF_IDENTIFY_FROM_WORDS].
  *
- * Speech is made on the main thread, which doesn't wait for identification: text not identified
- * yet is identified in the background, and its result is used the next time it is said. After a
- * failure, such as while Google Play services downloads language identification, nothing is
- * identified for [RETRY_AFTER_FAILURE_MS].
+ * Speech is made on the main thread. Text not identified yet is identified in the background, and
+ * speech waits for it at most [UTTERANCE_WAIT_MS] in all for each utterance, and only once
+ * identification has answered before, so never for loading the model. Text identified too late is
+ * spoken as it would be without identification, and its result is used the next time it is said.
+ * After a failure, such as while Google Play services downloads language identification, nothing
+ * is identified for [RETRY_AFTER_FAILURE_MS].
  */
 class WordLanguageGuesser
 @VisibleForTesting
@@ -58,8 +62,18 @@ internal constructor(private val identifier: Identifier) : LanguageGuesser {
         size > MAX_RESULTS
     }
 
-  /** The texts being identified, guarded by [results]. */
-  private val identifying = HashSet<String>()
+  /** The texts being identified, each with a latch released when done, guarded by [results]. */
+  private val identifying = HashMap<String, CountDownLatch>()
+
+  /** Whether identification has answered since the guesser started, so its model is loaded. */
+  @Volatile private var answered = false
+
+  /** How long speech may still wait for identification in the current utterance, in nanoseconds. */
+  private var waitLeftNanos = 0L
+
+  override fun startUtterance() {
+    waitLeftNanos = TimeUnit.MILLISECONDS.toNanos(UTTERANCE_WAIT_MS)
+  }
 
   override fun guess(text: String, candidates: List<String>): String? {
     synchronized(results) { results[text] }?.let { languages ->
@@ -67,17 +81,39 @@ internal constructor(private val identifier: Identifier) : LanguageGuesser {
         LogUtils.d(TAG, "Words identified as %s of %s: %s", it, candidates, languages)
       }
     }
-    identifyLater(text)
-    return null
+    val done = identifyLater(text) ?: return null
+    if (!answered || waitLeftNanos <= 0) return null
+    val start = System.nanoTime()
+    try {
+      done.await(waitLeftNanos, TimeUnit.NANOSECONDS)
+    } catch (e: InterruptedException) {
+      Thread.currentThread().interrupt()
+    }
+    waitLeftNanos -= System.nanoTime() - start
+    val languages = synchronized(results) { results[text] }
+    if (languages == null) {
+      LogUtils.d(TAG, "Words not identified in time, %d ms left", waitLeftNanos / 1_000_000)
+      return null
+    }
+    return pick(languages, candidates).also {
+      LogUtils.d(TAG, "Words identified as %s of %s: %s", it, candidates, languages)
+    }
   }
 
-  /** Identifies [text] in the background for the next time it is said. */
-  private fun identifyLater(text: String) {
-    if (SystemClock.uptimeMillis() < failedUntil) return
+  /**
+   * Identifies [text] in the background, unless it is being identified already. Returns the latch
+   * released when it is done, or null if it isn't being identified.
+   */
+  private fun identifyLater(text: String): CountDownLatch? {
+    if (SystemClock.uptimeMillis() < failedUntil) return null
+    val done = CountDownLatch(1)
     synchronized(results) {
+      identifying[text]?.let {
+        return it
+      }
       // Fast navigation says many texts; the ones that wait are dropped, not queued.
-      if (text in identifying || identifying.size >= MAX_IDENTIFYING) return
-      identifying += text
+      if (identifying.size >= MAX_IDENTIFYING) return null
+      identifying[text] = done
     }
     val started =
       try {
@@ -86,11 +122,14 @@ internal constructor(private val identifier: Identifier) : LanguageGuesser {
             // Such as while Google Play services downloads language identification. Not kept, so
             // the text is tried again.
             failedUntil = SystemClock.uptimeMillis() + RETRY_AFTER_FAILURE_MS
+          } else {
+            answered = true
           }
           synchronized(results) {
             identifying -= text
             if (languages != null) results[text] = languages
           }
+          done.countDown()
         }
       } catch (e: RuntimeException) {
         LogUtils.w(TAG, "Language not identified: %s", e)
@@ -98,7 +137,10 @@ internal constructor(private val identifier: Identifier) : LanguageGuesser {
       }
     if (!started) {
       synchronized(results) { identifying -= text }
+      done.countDown()
+      return null
     }
+    return done
   }
 
   /** Identifies languages with ML Kit. */
@@ -142,6 +184,8 @@ internal constructor(private val identifier: Identifier) : LanguageGuesser {
     private const val TAG = "WordLanguageGuesser"
     /** How many texts are identified at once at most. */
     private const val MAX_IDENTIFYING = 8
+    /** How long speech waits for identification in all for each utterance, in milliseconds. */
+    private const val UTTERANCE_WAIT_MS = 30L
     private const val RETRY_AFTER_FAILURE_MS = 60_000L
     private const val MIN_CONFIDENCE = 0.5f
     private const val MAX_RESULTS = 300
