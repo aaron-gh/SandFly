@@ -71,6 +71,7 @@ object ItemInspector {
       .edit()
       .putString(PREF_LAST_QUERY, scriptQuery(node).toString())
       .putString(PREF_LAST_APP, node.packageName?.toString())
+      .putString(PREF_LAST_TEXT, spokenText(node))
       .apply()
     val role = ScriptRoles.role(node)
     val script =
@@ -138,6 +139,21 @@ object ItemInspector {
         null
       }
     }
+
+  /**
+   * The texts of [node] as SandFly joins them: its description or text, or else the texts of the
+   * items in it, separated by commas. For trying speech edits on.
+   */
+  private fun spokenText(node: AccessibilityNodeInfoCompat): String? {
+    val own = (node.contentDescription?.takeIf { it.isNotBlank() } ?: node.text)?.toString()?.trim()
+    if (!own.isNullOrEmpty()) return own
+    return innerTexts(node).map { it.second }.distinct().joinToString(", ").ifEmpty { null }
+  }
+
+  /** The text of the item last inspected, as SandFly joins its texts, or null. */
+  @JvmStatic
+  fun lastText(context: Context): String? =
+    SharedPreferencesUtils.getSharedPreferences(context).getString(PREF_LAST_TEXT, null)
 
   /** The package of the app of the item last inspected, or null. */
   @JvmStatic
@@ -253,6 +269,7 @@ object ItemInspector {
   }
   private const val PREF_LAST_QUERY = "item_inspector_last_query"
   private const val PREF_LAST_APP = "item_inspector_last_app"
+  private const val PREF_LAST_TEXT = "item_inspector_last_text"
   private const val MAX_DEPTH = 60
   private const val MAX_ITEMS = 2000
   /** The most items in the inspected item whose texts Inspect focused item reads. */

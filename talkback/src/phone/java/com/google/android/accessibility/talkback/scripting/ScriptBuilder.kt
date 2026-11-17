@@ -347,16 +347,35 @@ object ScriptBuilder {
     }
 
   /** What is wrong with the speech change [change], or null when it is finished. */
-  fun speechProblem(change: JSONObject): String? =
-    when {
+  fun speechProblem(change: JSONObject): String? {
+    val edits = editsOf(change)
+    return when {
       change.optString("when") !in SPEECH_WHEN -> "Unknown speech change"
-      change.optString("change") !in SPEECH_CHANGES -> "Choose the change"
-      change.optString("when") == WHEN_FOCUS -> queryProblem(change.optJSONObject("match"), required = true)
-      change.optString("change") == CHANGE_REPLACE_PART && change.optString("find").isEmpty() -> "Set the text to find"
-      change.optString("change") != CHANGE_SILENCE && change.optString("change") != CHANGE_REPLACE_PART &&
-        change.optString("text").isEmpty() -> "Set the text to say"
-      else -> null
+      change.optString("when") == WHEN_FOCUS && queryProblem(change.optJSONObject("match"), required = true) != null ->
+        queryProblem(change.optJSONObject("match"), required = true)
+      edits.length() == 0 -> "Add an edit"
+      else -> edits.objects().firstNotNullOfOrNull { SpeechEdits.problem(it) }
     }
+  }
+
+  /**
+   * The edits of [change]. A speech change made before edits had one change, kept as
+   * change, text and find; it reads as the same edit.
+   */
+  fun editsOf(change: JSONObject): JSONArray {
+    change.optJSONArray("edits")?.let { return it }
+    val text = change.optString("text")
+    val edit =
+      when (change.optString("change")) {
+        CHANGE_SAY -> JSONObject().put("op", SpeechEdits.SAY).put("text", text)
+        CHANGE_BEFORE -> JSONObject().put("op", SpeechEdits.BEFORE).put("text", text)
+        CHANGE_AFTER -> JSONObject().put("op", SpeechEdits.AFTER).put("text", text)
+        CHANGE_SILENCE -> JSONObject().put("op", SpeechEdits.SILENCE)
+        CHANGE_REPLACE_PART -> JSONObject().put("op", SpeechEdits.REPLACE).put("find", change.optString("find")).put("with", text)
+        else -> return JSONArray()
+      }
+    return JSONArray().put(edit)
+  }
 
   /**
    * The code of [draft]: each command and trigger runs its macro file, each speech change changes
@@ -395,6 +414,12 @@ local function __sf_breplace(text, find, with)
   return table.concat(out)
 end
 local function __sf_btext(node) return node ~= nil and tostring(node) or nil end
+local function __sf_bedits(said, edits)
+  local result = sf.text.edit(said, edits)
+  if result == nil then return nil end
+  if result.silent then return false end
+  return result.text
+end
 """
 
   private fun generatedCode(draft: JSONObject): String = buildString {
@@ -450,7 +475,7 @@ local function __sf_btext(node) return node ~= nil and tostring(node) or nil end
       }
     }
     for (change in speech) {
-      val result = speechResult(change)
+      val result = "__sf_bedits(said, ${lua(editsOf(change), "  ")})"
       val text = lua(change.optString("has").lowercase())
       val app = change.optString("app").ifEmpty { null }?.let(::lua)
       when (change.optString("when")) {
@@ -468,18 +493,6 @@ local function __sf_btext(node) return node ~= nil and tostring(node) or nil end
           )
         WHEN_SPEECH -> append("sf.onSpeech(function(said) if __sf_bhas(said, $text) then return $result end end)\n")
       }
-    }
-  }
-
-  /** The Lua value a speech hook returns for [change], given what SandFly would say as `said`. */
-  private fun speechResult(change: JSONObject): String {
-    val text = "__sf_breplace(${lua(change.optString("text"))}, '{text}', said)"
-    return when (change.optString("change")) {
-      CHANGE_SAY -> "{ speak = $text }"
-      CHANGE_BEFORE -> "{ before = $text }"
-      CHANGE_AFTER -> "{ after = $text }"
-      CHANGE_SILENCE -> "false"
-      else -> "{ speak = __sf_breplace(said, ${lua(change.optString("find"))}, ${lua(change.optString("text"))}) }"
     }
   }
 

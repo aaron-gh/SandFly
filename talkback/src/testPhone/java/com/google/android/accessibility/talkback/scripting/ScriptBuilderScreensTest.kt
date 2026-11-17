@@ -203,7 +203,7 @@ class ScriptBuilderScreensTest {
     val page = open(ScriptBuilderFragment::class.java, args {})
     for (title in listOf("Every day at 08:30", "When an item is clicked", "Mode", "Go", "Description", "Lua code", "Duplicate script")) page.row(title)
     open(ScriptBuiltCommandFragment::class.java, args { putInt(ScriptBuiltCommandFragment.ARG_INDEX, 0) }).row("Gesture")
-    open(ScriptSpeechChangeFragment::class.java, args { putInt(ScriptSpeechChangeFragment.ARG_INDEX, 0) }).row("Text to replace")
+    open(ScriptSpeechChangeFragment::class.java, args { putInt(ScriptSpeechChangeFragment.ARG_INDEX, 0) }).row("Replace a with b")
     val query = open(ScriptQueryFragment::class.java, args { putString(ScriptQueryFragment.ARG_PATH, Paths.encode(listOf("rules", 0, "match"))) })
     query.row("Exact text")
     query.row("States")
