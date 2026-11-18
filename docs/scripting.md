@@ -212,9 +212,9 @@ To find an item's id, class, role, texts and kinds, assign **Inspect focused ite
 }
 ```
 
-Each action has a `title` and one of `click`, `longClick`, `focus`, `scrollForward`, `scrollBackward` or `speak`. All but `speak` take the item to act on, as an id or a query, and need the `actions` permission. `speak` takes text, or `{ textOf = item }`, which needs `screen`. Actions in rules need the `input` permission.
+Each action has a `title` and one of `click`, `longClick`, `touchHold`, `focus`, `scrollForward`, `scrollBackward` or `speak`. *Version 6.* `touchHold` holds a touch on the item for a second, passed through to the app as a double-tap and hold is, for buttons that act only on a held touch, such as a Like button that shows reactions. All but `speak` take the item to act on, as an id or a query, and need the `actions` permission. `speak` takes text, or `{ textOf = item }`, which needs `screen`. Actions in rules need the `input` permission.
 
-*Version 6.* An action can instead have `steps`, done in order: each is `{ click = item, where = 'item' }` (or `longClick`, `focus`, `scrollForward`, `scrollBackward`), where `item` is a query, a list of queries tried in turn, or `{}` for the action's item itself. `where = 'item'` (the default) finds the item in the action's item; `where = 'screen'` finds it in any app window, such as an entry of the menu the step before opened. Each step waits up to 2 seconds for its item. When one isn't found, SandFly presses Back if an earlier step ran, and plays the not-found sound.
+*Version 6.* An action can instead have `steps`, done in order: each is `{ click = item, where = 'item' }` (or `longClick`, `touchHold`, `focus`, `scrollForward`, `scrollBackward`), where `item` is a query, a list of queries tried in turn, or `{}` for the action's item itself. `where = 'item'` (the default) finds the item in the action's item; `where = 'screen'` finds it in any app window, such as an entry of the menu the step before opened. Each step waits up to 2 seconds for its item. When one isn't found, SandFly presses Back if an earlier step ran, and plays the not-found sound.
 
 ```lua
 { title = 'Add to queue', steps = {
