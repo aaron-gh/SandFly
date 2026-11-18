@@ -50,14 +50,12 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
  */
 public class GesturePreferenceFragmentLegacyCompat extends PreferenceDialogFragmentCompat {
   private static final String TAG = "GesturePreferenceFragmentCompat";
-  private static final String ARG_ACTIONS = "actions";
 
   /** Creates the fragment from given {@link GestureListPreference}. */
   public static GesturePreferenceFragmentLegacyCompat create(GestureListPreference preference) {
     GesturePreferenceFragmentLegacyCompat fragment = new GesturePreferenceFragmentLegacyCompat();
-    Bundle args = new Bundle(2);
+    Bundle args = new Bundle(1);
     args.putString(PreferenceDialogFragmentCompat.ARG_KEY, preference.getKey());
-    args.putParcelableArray(ARG_ACTIONS, preference.getActionItems());
     fragment.setArguments(args);
     return fragment;
   }
@@ -71,7 +69,11 @@ public class GesturePreferenceFragmentLegacyCompat extends PreferenceDialogFragm
   @Override
   protected View onCreateDialogView(Context context) {
     ListView listView = new ListView(getActivity());
-    Parcelable[] items = getArguments().getParcelableArray(ARG_ACTIONS);
+    // The command list is too large to keep in the arguments, which go into saved state.
+    Parcelable[] items =
+        (getPreference() instanceof GestureListPreference gesturePreference)
+            ? gesturePreference.getActionItems()
+            : new Parcelable[0];
     ActionAdapter adapter = new ActionAdapter(getActivity(), items, getPreferenceValue());
 
     listView.setAdapter(adapter);

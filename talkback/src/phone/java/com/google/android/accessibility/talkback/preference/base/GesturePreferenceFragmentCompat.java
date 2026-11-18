@@ -225,7 +225,8 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
             category = new AccessibilitySuitePreferenceCategory(getContext());
             preferenceScreen.addPreference(category);
           }
-          radioButtonPreference.setKey(item.text);
+          // No key: a row with a key keeps its state in the saved state of the activity, a few
+          // hundred kilobytes for the whole list, and saves its check box under its command's name.
           category.addPreference(radioButtonPreference);
           if (checked) {
             selectedCategory = category;
