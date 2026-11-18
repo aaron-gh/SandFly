@@ -1017,8 +1017,10 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
         if (button.title.lowercase() !in titles) {
           actions.put(JSONObject().put("title", button.title).put("click", JSONObject(button.target.toString())))
         }
+        // A touch held on the button, as a double-tap and hold: apps such as Facebook open their
+        // reactions only for that, not for the accessibility long click.
         button.longPressTitle?.takeIf { it.lowercase() !in titles }?.let {
-          actions.put(JSONObject().put("title", it).put("longClick", JSONObject(button.target.toString())))
+          actions.put(JSONObject().put("title", it).put("touchHold", JSONObject(button.target.toString())))
         }
       }
       val parts = ItemPattern.parts(item, grouped = true)
@@ -1196,6 +1198,7 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
     listOf(
       getString(R.string.script_builder_action_click),
       getString(R.string.script_builder_action_long_click),
+      getString(R.string.macro_step_touch_hold),
       getString(R.string.script_builder_action_focus),
       getString(R.string.script_builder_action_scroll_forward),
       getString(R.string.script_builder_action_scroll_backward),
@@ -1229,14 +1232,14 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
         return at
       }
       when (which) {
-        5 ->
+        ScriptBuilder.ACTION_KINDS.indexOf("speak") ->
           askText(getString(R.string.script_builder_action_speak_text)) { text, _, _ ->
             if (text.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
             action.put("speak", text)
             saveAction()
             null
           }
-        6 -> {
+        ScriptBuilder.ACTION_KINDS.indexOf("speak") + 1 -> {
           action.put("speak", JSONObject().put("textOf", JSONObject()))
           val at = saveAction()
           openQuery(path("actions", at, "speak", "textOf"))
@@ -1382,13 +1385,13 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
         else -> emptyList()
       }
     val onScreen = step.optString("where") == "screen"
-    val long = verb == "longClick"
+    val long = verb == "longClick" || verb == "touchHold"
     if (!onScreen && queries.singleOrNull()?.length() == 0) {
       return getString(if (long) R.string.script_builder_step_long_click_item else R.string.script_builder_step_click_item)
     }
     val name = queries.joinToString(" / ") { ScriptBuilderFragment.describeQuery(context, it) }
     return when (verb) {
-      "click", "longClick" ->
+      "click", "longClick", "touchHold" ->
         getString(
           when {
             onScreen && long -> R.string.script_builder_step_long_click_screen

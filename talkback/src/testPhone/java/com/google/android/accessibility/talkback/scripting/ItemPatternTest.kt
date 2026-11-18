@@ -220,6 +220,21 @@ class ItemInspectorSampleTest {
   }
 
   @Test
+  fun treeText_givesEachItemsLevel() {
+    val tree =
+      JSONObject()
+        .put("app", "com.example")
+        .put(
+          "root",
+          JSONObject().put("level", 0).put("class", "FrameLayout").put(
+            "children",
+            JSONArray().put(JSONObject().put("level", 1).put("class", "Button").put("id", "com.example:id/send").put("flags", JSONArray().put("clickable")).put("description", "Send\nnow")),
+          ),
+        )
+    assertEquals("app: com.example\nlevel 0: FrameLayout\nlevel 1: Button; id: send; clickable; description: Send / now", ItemInspector.treeText(tree))
+  }
+
+  @Test
   fun sample_withRowsOfFewerItemsBeside_doesNotFail() {
     // The inspected item is the third in its row; the row beside it has one item. Following the
     // inspected item's place into that row asked for a child past its last one, which Android 16

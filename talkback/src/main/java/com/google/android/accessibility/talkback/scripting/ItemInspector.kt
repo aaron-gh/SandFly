@@ -379,7 +379,7 @@ object ItemInspector {
 
   private fun readScreenTree(context: Context, node: AccessibilityNodeInfoCompat?): String {
     val (tree, count) = screenTree(context, node) ?: return context.getString(R.string.script_tree_none)
-    context.copyToClipboard(context.getString(R.string.script_tree_clip_label), tree.toString(1))
+    context.copyToClipboard(context.getString(R.string.script_tree_clip_label), treeText(tree))
     return context.getString(R.string.script_tree_copied, count)
   }
 
@@ -399,6 +399,9 @@ object ItemInspector {
     fun describe(item: AccessibilityNodeInfoCompat, depth: Int): JSONObject =
       JSONObject().apply {
         count++
+        // The level, 0 for the window's top item, so that what holds what is clear without
+        // following the nesting.
+        put("level", depth)
         putOpt("id", item.viewIdResourceName)
         putOpt("class", item.className?.toString()?.substringAfterLast('.'))
         putOpt("role", ScriptRoles.role(item).takeIf { it != "none" })
@@ -421,6 +424,38 @@ object ItemInspector {
         .putOpt("window", Scripts.currentWindowTitle())
         .put("root", describe(root, 0))
     return tree to count
+  }
+
+  /**
+   * [tree] as text: its app, activity and window, then one line for each item in order, each item
+   * before the items in it: "level 3: Button; id: send; clickable, focusable; text: Send". An item
+   * belongs to the nearest line above it with a lower level.
+   */
+  @JvmStatic
+  fun treeText(tree: JSONObject): String {
+    val lines = mutableListOf<String>()
+    for (key in listOf("app", "activity", "window")) tree.optString(key).takeIf { it.isNotEmpty() }?.let { lines += "$key: $it" }
+    fun visit(item: JSONObject) {
+      fun text(key: String) = item.optString(key).takeIf { it.isNotEmpty() }?.replace(Regex("\\s*\\n\\s*"), " / ")
+      val list = { key: String -> item.optJSONArray(key)?.let { array -> (0 until array.length()).map { array.optString(it) } }.orEmpty() }
+      val parts =
+        listOfNotNull(
+          item.optString("class").ifEmpty { "item" },
+          text("id")?.let { "id: ${it.substringAfter(":id/")}" },
+          text("role")?.let { "role: $it" },
+          list("flags").joinToString(", ").ifEmpty { null },
+          text("text")?.let { "text: $it" },
+          text("description")?.let { "description: $it" },
+          text("hint")?.let { "hint: $it" },
+          text("state")?.let { "state: $it" },
+          list("actions").joinToString(" | ").ifEmpty { null }?.let { "actions: $it" },
+          list("rules").joinToString(" | ").ifEmpty { null }?.let { "rules: $it" },
+        )
+      lines += "level ${item.optInt("level")}: " + parts.joinToString("; ")
+      item.optJSONArray("children")?.let { children -> for (i in 0 until children.length()) children.optJSONObject(i)?.let(::visit) }
+    }
+    tree.optJSONObject("root")?.let(::visit)
+    return lines.joinToString("\n")
   }
 
   private fun JSONObject.putList(key: String, values: List<Any>) {

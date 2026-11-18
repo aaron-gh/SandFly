@@ -107,7 +107,14 @@ object ScriptActionRecorder {
       val target =
         if (node == item) JSONObject()
         else ItemPattern.target(current.row, ItemInspector.snapshot(node, TARGET_DEPTH)) ?: return
-      val verb = if (action == AccessibilityNodeInfo.ACTION_LONG_CLICK) "longClick" else "click"
+      // A long press by touch, or SandFly's double-tap and hold, which passes a held touch to the
+      // app, is kept as a held touch: some apps act only on that.
+      val verb =
+        when {
+          action != AccessibilityNodeInfo.ACTION_LONG_CLICK -> "click"
+          fromSandFly -> "longClick"
+          else -> "touchHold"
+        }
       current.steps += JSONObject().put(verb, target).put("where", if (inItem) "item" else "screen")
       current.lastNode = node
       current.lastTime = now

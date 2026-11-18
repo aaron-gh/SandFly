@@ -90,6 +90,23 @@ class ScriptActionRecorderTest {
   }
 
   @Test
+  fun touchHold_isAnActionAndAStep() {
+    val rule =
+      ManifestParser(strict = true).rule(
+        JSONObject()
+          .put("match", JSONObject().put("id", "comment"))
+          .put(
+            "actions",
+            JSONArray()
+              .put(JSONObject().put("title", "React").put("touchHold", JSONObject().put("matches", "^Like.+")))
+              .put(JSONObject().put("title", "Menu").put("steps", JSONArray().put(JSONObject().put("touchHold", JSONArray())))),
+          )
+      )
+    assertEquals(RuleItemAction.Verb.TOUCH_HOLD, rule.actions[0].verb)
+    assertEquals(RuleItemAction.Verb.TOUCH_HOLD, rule.actions[1].steps.single().verb)
+  }
+
+  @Test
   fun buttonInTheItem_isFoundWithoutTheEpisodesName() {
     val row = JSONObject().put("description", "Episode 12: The tide, 41 minutes")
     val target = ItemPattern.target(row, JSONObject().put("description", "Download Episode 12: The tide"))!!

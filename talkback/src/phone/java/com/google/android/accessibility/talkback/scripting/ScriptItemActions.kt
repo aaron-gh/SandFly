@@ -32,6 +32,8 @@ class ScriptItemActions(
   private val feedback: ScriptFeedback,
   private val windowRoots: () -> List<AccessibilityNodeInfoCompat> = { emptyList() },
   private val back: () -> Unit = {},
+  /** Holds a touch on an item, passed through to the app; gives whether it was performed. */
+  private val touchHold: (AccessibilityNodeInfoCompat) -> Boolean = { false },
 ) {
   private class Offered(
     val node: AccessibilityNodeInfoCompat,
@@ -148,6 +150,7 @@ class ScriptItemActions(
         feedback.speak(text?.toString().orEmpty(), interrupt = true)
       }
       RuleItemAction.Verb.FOCUS -> target?.let { feedback.focus(it) {} }
+      RuleItemAction.Verb.TOUCH_HOLD -> target?.let { if (!touchHold(it)) feedback.playSound(R.raw.complete) }
       else -> {
         val id = NodeBridge.ACTIONS.getValue(action.verb.key)
         target?.let { doerOf(it, id) }?.performAction(id)
@@ -180,6 +183,10 @@ class ScriptItemActions(
       }
       when (step.verb) {
         RuleItemAction.Verb.FOCUS -> feedback.focus(target) {}
+        RuleItemAction.Verb.TOUCH_HOLD -> if (!touchHold(target)) {
+          feedback.playSound(R.raw.complete)
+          return
+        }
         else -> {
           val id = NodeBridge.ACTIONS.getValue(step.verb.key)
           doerOf(target, id).performAction(id)

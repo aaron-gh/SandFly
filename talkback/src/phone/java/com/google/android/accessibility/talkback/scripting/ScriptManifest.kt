@@ -184,6 +184,8 @@ data class RuleItemAction(
   enum class Verb(val key: String) {
     CLICK("click"),
     LONG_CLICK("longClick"),
+    /** A touch held on the item and passed to the app, as a double-tap and hold is. */
+    TOUCH_HOLD("touchHold"),
     FOCUS("focus"),
     SCROLL_FORWARD("scrollForward"),
     SCROLL_BACKWARD("scrollBackward"),
