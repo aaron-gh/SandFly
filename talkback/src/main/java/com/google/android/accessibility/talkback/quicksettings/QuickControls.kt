@@ -590,7 +590,11 @@ class QuickControls(private val context: Context) {
         val sizes =
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) FONT_SIZES
           else FONT_SIZES.filter { it <= MAX_FONT_SIZE_BEFORE_14 }
-        ChoiceState(fontChoice((scale * 100).roundToInt()), sizes.map { fontChoice(it) })
+        ChoiceState(percentChoice((scale * 100).roundToInt()), sizes.map { percentChoice(it) })
+      }
+      QuickControl.DISPLAY_SIZE -> {
+        val sizes = DisplaySizes.of(context) ?: return null
+        ChoiceState(percentChoice(sizes.currentPercent), sizes.options.map { percentChoice(it) })
       }
       else -> null
     }
@@ -607,8 +611,28 @@ class QuickControls(private val context: Context) {
         }
       QuickControl.SCREEN_TIMEOUT -> writeSystem(Settings.System.SCREEN_OFF_TIMEOUT, value, onFailed)
       QuickControl.FONT_SIZE -> writeSystem(Settings.System.FONT_SCALE, value / 100f, onFailed)
+      QuickControl.DISPLAY_SIZE -> setDisplaySize(value, onFailed)
       else -> Change.FAILED
     }
+
+  /**
+   * Sets the display size to [percent] of the default density with `wm density`, which only the
+   * shell may run, so without Shizuku Android's display settings open instead.
+   */
+  private fun setDisplaySize(percent: Int, onFailed: () -> Unit): Change {
+    val sizes = DisplaySizes.of(context) ?: return Change.FAILED
+    if (percent !in sizes.min..sizes.max && percent !in sizes.options) return Change.FAILED
+    if (!ShizukuGrants.isReady()) {
+      return openSettings(QuickControl.DISPLAY_SIZE)
+    }
+    ShizukuShell.run(context, ShizukuCommand.DISPLAY_DENSITY, sizes.argument(percent)) { worked ->
+      if (!worked) {
+        openSettings(QuickControl.DISPLAY_SIZE)
+        onFailed()
+      }
+    }
+    return Change.STARTED
+  }
 
   /**
    * The modes SandFly can set: Vibrate needs a vibrator, and Mute needs Do Not Disturb access,
@@ -646,6 +670,7 @@ class QuickControls(private val context: Context) {
   fun freeChoiceValues(control: QuickControl): IntRange? =
     when (control) {
       QuickControl.FONT_SIZE -> MIN_FREE_FONT_SIZE..maxFontSize()
+      QuickControl.DISPLAY_SIZE -> DisplaySizes.of(context)?.let { it.min..it.max }
       else -> null
     }
 
@@ -653,7 +678,7 @@ class QuickControls(private val context: Context) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) FONT_SIZES.last()
     else MAX_FONT_SIZE_BEFORE_14
 
-  private fun fontChoice(percent: Int) =
+  private fun percentChoice(percent: Int) =
     Choice(NumberFormat.getPercentInstance().format(percent / 100.0), percent)
 
   /** What a button shows under its name. */
@@ -828,7 +853,8 @@ class QuickControls(private val context: Context) {
       QuickControl.HOTSPOT -> Intent(ACTION_TETHER_SETTINGS)
       QuickControl.NIGHT_LIGHT,
       QuickControl.SCREEN_TIMEOUT,
-      QuickControl.FONT_SIZE -> Intent(Settings.ACTION_DISPLAY_SETTINGS)
+      QuickControl.FONT_SIZE,
+      QuickControl.DISPLAY_SIZE -> Intent(Settings.ACTION_DISPLAY_SETTINGS)
       QuickControl.EXTRA_DIM,
       QuickControl.COLOR_INVERSION,
       QuickControl.COLOR_CORRECTION -> Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)

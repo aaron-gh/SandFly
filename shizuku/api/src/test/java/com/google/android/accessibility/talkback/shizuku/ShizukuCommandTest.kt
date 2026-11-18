@@ -85,6 +85,18 @@ class ShizukuCommandTest {
     assertNull(ShizukuCommand.INPUT_KEYEVENT.shellCommand("66"))
   }
 
+  @Test
+  fun displayDensityTakesADensityOrReset() {
+    assertEquals(listOf("wm", "density", "384"), ShizukuCommand.DISPLAY_DENSITY.shellCommand("384"))
+    assertEquals(listOf("wm", "density", "reset"), ShizukuCommand.DISPLAY_DENSITY.shellCommand(ShizukuCommand.RESET))
+    assertNull(ShizukuCommand.DISPLAY_DENSITY.shellCommand("99"))
+    assertNull(ShizukuCommand.DISPLAY_DENSITY.shellCommand("1001"))
+    assertNull(ShizukuCommand.DISPLAY_DENSITY.shellCommand("0384"))
+    assertNull(ShizukuCommand.DISPLAY_DENSITY.shellCommand("384 -d 1"))
+    assertNull(ShizukuCommand.DISPLAY_DENSITY.shellCommand("384; reboot"))
+    assertNull(ShizukuCommand.DISPLAY_DENSITY.shellCommand(""))
+  }
+
   /**
    * The service gets commands and grants by ordinal, and the SandFly add-on's service can be older
    * or newer than SandFly, so the order must not change. Add new ones at the end of this list.
@@ -112,6 +124,7 @@ class ShizukuCommandTest {
         "START_SHORTCUT_ACTIVITY",
         "ACCESSIBILITY_SHORTCUT",
         "RESET_ACCESSIBILITY_AUDIO",
+        "DISPLAY_DENSITY",
       ),
       ShizukuCommand.entries.map { it.name },
     )

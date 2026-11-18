@@ -60,7 +60,12 @@ enum class ShizukuCommand {
    */
   ACCESSIBILITY_SHORTCUT,
   /** Clears the output that Android keeps for accessibility audio. It takes no argument. */
-  RESET_ACCESSIBILITY_AUDIO;
+  RESET_ACCESSIBILITY_AUDIO,
+  /**
+   * Sets the default display's density, as Android's Display size setting does: [RESET] for the
+   * device's own, or a density in dpi from [MIN_DENSITY] to [MAX_DENSITY].
+   */
+  DISPLAY_DENSITY;
 
   /**
    * The command, as adb would run it after `adb shell`, or null if [argument] isn't one it takes.
@@ -109,6 +114,10 @@ enum class ShizukuCommand {
         }
       ACCESSIBILITY_SHORTCUT -> null
       RESET_ACCESSIBILITY_AUDIO -> null
+      DISPLAY_DENSITY ->
+        argument
+          .takeIf { it == RESET || (DENSITY.matches(it) && it.toInt() in MIN_DENSITY..MAX_DENSITY) }
+          ?.let { listOf("wm", "density", it) }
     }
   }
 
@@ -126,6 +135,12 @@ enum class ShizukuCommand {
     fun argument(on: Boolean, userId: Int): String = argument(on) + "@" + userId
 
     private val SWITCH = Regex("""(on|off)(?:@(\d{1,6}))?""")
+
+    /** The [DISPLAY_DENSITY] argument that returns to the device's own density. */
+    const val RESET = "reset"
+    const val MIN_DENSITY = 100
+    const val MAX_DENSITY = 1000
+    private val DENSITY = Regex("""[1-9]\d{2,3}""")
 
     /** The most characters [INPUT_TEXT] types at once. */
     const val MAX_TEXT = 1000

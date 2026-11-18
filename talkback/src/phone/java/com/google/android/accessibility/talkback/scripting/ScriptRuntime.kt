@@ -342,10 +342,16 @@ class ScriptRuntime(
           jsonObject("value" to state.value, "min" to state.min, "max" to state.max)
         is DeviceActions.State.Choice ->
           jsonObject(
-            "value" to state.value,
-            "label" to state.label,
-            "options" to JSONArray(state.options.map { (value, label) -> jsonObject("value" to value, "label" to label) }),
-          )
+              "value" to state.value,
+              "label" to state.label,
+              "options" to JSONArray(state.options.map { (value, label) -> jsonObject("value" to value, "label" to label) }),
+            )
+            .apply {
+              state.range?.let {
+                put("min", it.first)
+                put("max", it.last)
+              }
+            }
       }
     }
     on("device.set", SYSTEM) { args ->

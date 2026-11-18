@@ -51,6 +51,7 @@ enum class QuickControl(@StringRes val title: Int, val kind: Kind) {
   ADAPTIVE_BRIGHTNESS(R.string.quick_settings_adaptive_brightness, Kind.SWITCH),
   SCREEN_TIMEOUT(R.string.quick_settings_screen_timeout, Kind.CHOICE),
   FONT_SIZE(R.string.quick_settings_font_size, Kind.CHOICE),
+  DISPLAY_SIZE(R.string.quick_settings_display_size, Kind.CHOICE),
   MEDIA(R.string.quick_settings_media, Kind.MEDIA),
   MEDIA_OUTPUT(R.string.quick_settings_media_output, Kind.BUTTON),
   MEDIA_VOLUME(R.string.quick_settings_media_volume, Kind.SLIDER),
