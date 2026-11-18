@@ -57,6 +57,9 @@ import java.util.concurrent.Executors
  * A notification settings screen built in code, which builds itself again each time it shows, so
  * that it shows what a screen opened from it changed.
  */
+/** The kinds of rows [NotificationCodeFragment.rebuild] updates in place. */
+private val PLAIN_ROWS: Set<Class<*>> = setOf(Preference::class.java, CheckBoxPreference::class.java, PreferenceCategory::class.java)
+
 abstract class NotificationCodeFragment(@StringRes private val title: Int) : TalkbackBaseFragment() {
   protected lateinit var prefs: SharedPreferences
   protected val settings: NotificationSettings
@@ -75,11 +78,95 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     rebuild()
   }
 
-  /** Builds the screen again, keeping the list where it was. */
+  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    super.onViewCreated(view, savedInstanceState)
+    // A changed row is bound again in its own view, so accessibility focus stays on it.
+    (listView?.itemAnimator as? androidx.recyclerview.widget.SimpleItemAnimator)?.supportsChangeAnimations = false
+  }
+
+  /**
+   * Builds the screen again, keeping the list where it was. Rows that are still there are updated
+   * in place, so that the row the person changed keeps accessibility focus instead of being read
+   * again as a new item.
+   */
   protected fun rebuild() {
     val screen = preferenceScreen
-    screen.removeAll()
-    build(screen)
+    if (screen.preferenceCount == 0) {
+      build(screen)
+      return
+    }
+    val fresh = preferenceManager.createPreferenceScreen(requireContext())
+    build(fresh)
+    // A row taken out of the screen it was built in reads as disabled, so whether each is enabled
+    // is noted first.
+    val enabled = java.util.IdentityHashMap<Preference, Boolean>()
+    fun note(group: PreferenceGroup) {
+      for (i in 0 until group.preferenceCount) {
+        val preference = group.getPreference(i)
+        enabled[preference] = preference.isEnabled
+        if (preference is PreferenceGroup) note(preference)
+      }
+    }
+    note(fresh)
+    sync(screen, fresh, enabled)
+  }
+
+  /** Makes [old] show the rows of [new]: rows of both are updated in place, others added or removed. */
+  private fun sync(old: PreferenceGroup, new: PreferenceGroup, enabled: Map<Preference, Boolean>) {
+    val olds = identities(old).toMap(LinkedHashMap())
+    val news = identities(new)
+    for ((_, preference) in news) new.removePreference(preference)
+    news.forEachIndexed { index, (identity, preference) ->
+      val existing = olds[identity]?.takeIf { reusable(it, preference) }
+      if (existing != null) {
+        olds.remove(identity)
+        copy(preference, existing, enabled)
+        existing.order = index
+      } else {
+        preference.order = index
+        old.addPreference(preference)
+        if (preference !is PreferenceGroup) preference.isEnabled = enabled[preference] ?: true
+      }
+    }
+    for (left in olds.values) old.removePreference(left)
+  }
+
+  /** Each row of [group] by its key, or its class and title, and how many such rows come before it. */
+  private fun identities(group: PreferenceGroup): List<Pair<String, Preference>> {
+    val seen = HashMap<String, Int>()
+    return (0 until group.preferenceCount).map { i ->
+      val preference = group.getPreference(i)
+      val base = preference.key ?: "${preference.javaClass.name}|${preference.title}"
+      val count = (seen[base] ?: 0) + 1
+      seen[base] = count
+      "$base#$count" to preference
+    }
+  }
+
+  /**
+   * Whether [existing] can show [fresh]: plain rows of the same kind. Rows of their own classes keep
+   * values of their own, such as a list row's place, so they are always replaced.
+   */
+  private fun reusable(existing: Preference, fresh: Preference): Boolean =
+    existing.javaClass == fresh.javaClass &&
+      existing.javaClass in PLAIN_ROWS &&
+      existing.layoutResource == fresh.layoutResource
+
+  private fun copy(from: Preference, to: Preference, enabled: Map<Preference, Boolean>) {
+    to.title = from.title
+    to.summary = from.summary
+    to.isSelectable = from.isSelectable
+    // A category always says it isn't enabled; disabling one would disable its rows.
+    if (to !is PreferenceGroup) to.isEnabled = enabled[from] ?: true
+    to.isVisible = from.isVisible
+    to.onPreferenceClickListener = from.onPreferenceClickListener
+    to.onPreferenceChangeListener = from.onPreferenceChangeListener
+    to.fragment = from.fragment
+    to.extras.clear()
+    to.extras.putAll(from.extras)
+    to.intent = from.intent
+    if (to is CheckBoxPreference && from is CheckBoxPreference) to.isChecked = from.isChecked
+    if (to is PreferenceGroup && from is PreferenceGroup) sync(to, from, enabled)
   }
 
   protected abstract fun build(screen: PreferenceGroup)
