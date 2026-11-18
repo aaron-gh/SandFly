@@ -33,7 +33,7 @@ object ItemPattern {
    * A button in the item: the title of its action, the query that finds it in each item, and its
    * text in the inspected item.
    */
-  data class Button(val title: String, val target: JSONObject, val value: String)
+  data class Button(val title: String, val target: JSONObject, val value: String, val longPressTitle: String? = null)
 
   /**
    * A text pattern. [regex] is found ignoring case; [exact] is the text when every item has the same
@@ -48,10 +48,33 @@ object ItemPattern {
   fun item(sample: JSONObject?): JSONObject? = sample?.optJSONObject("item")
 
   /**
+   * The sample of the list row the inspected item is in, when it isn't the row itself: the row,
+   * the rows like it beside it, and the other rows beside it.
+   */
+  fun rowSample(sample: JSONObject?): JSONObject? = sample?.optJSONObject("row")
+
+  /** The samples a rule can be for: the row the inspected item is in, then the item itself. */
+  fun samples(sample: JSONObject?): List<JSONObject> = listOfNotNull(rowSample(sample), sample?.takeIf { item(it) != null })
+
+  /**
+   * Items beside the inspected one that a rule for it mustn't name: rows of another kind, such as
+   * the rows a post is split into beside its comments.
+   */
+  private fun others(sample: JSONObject): List<JSONObject> {
+    val alike = similar(sample)
+    return sample.optJSONArray("others").objectList() +
+      sample.optJSONArray("similar").objectList().filter { candidate -> alike.none { it === candidate } }
+  }
+
+  /**
    * The items like the inspected item, without the ones built differently, such as a heading row of
    * the same class in the same list.
    */
-  private fun similar(sample: JSONObject): List<JSONObject> {
+  private val similarCache = java.util.WeakHashMap<JSONObject, List<JSONObject>>()
+
+  private fun similar(sample: JSONObject): List<JSONObject> = synchronized(similarCache) { similarCache.getOrPut(sample) { alike(sample) } }
+
+  private fun alike(sample: JSONObject): List<JSONObject> {
     val item = item(sample) ?: return emptyList()
     val shape = inners(item).map { it.path to it.json.optString("class") }
     return sample.optJSONArray("similar").objectList().filter { other ->
@@ -75,12 +98,16 @@ object ItemPattern {
     if (id.isNotEmpty() && similar.all { it.optString("id") == id }) return JSONObject().put("id", id)
     val className = item.optString("class").ifEmpty { null }
     val query = JSONObject().putOpt("className", className)
+    // A row that can be clicked, such as a comment, isn't one of the groups inside it.
+    if (item.optBoolean("clickable") && similar.all { it.optBoolean("clickable") }) query.put("clickable", true)
     val items = listOf(item) + similar
+    val others = others(sample)
     // A query that also names an item inside a row, such as its Add Friend button holding a text
-    // described "Add friend", would change that item too.
+    // described "Add friend", would change that item too; one that names a row of another kind,
+    // such as a post's Like button row beside a comment's, would change that row.
     for ((has, depth) in innerItems(item, similar)) {
       val candidate = JSONObject(query.toString()).put("has", has).put("hasDepth", depth)
-      if (!namesInner(candidate, items)) return candidate
+      if (!namesInner(candidate, items) && others.none { matches(candidate, it) }) return candidate
     }
     // The item's own text, when the items share part of it.
     val own = label(item) ?: return null
@@ -88,7 +115,7 @@ object ItemPattern {
     val pattern = pattern(own, similar.map { if (fieldOf(it) == field) label(it) else null }, emptyList()) ?: return null
     if (similar.isEmpty()) return null
     val named = if (pattern.exact != null) query.put(field, pattern.exact) else query.put("matches", pattern.regex).put("field", field)
-    return named.takeUnless { namesInner(it, items) }
+    return named.takeUnless { namesInner(it, items) || others.any { other -> matches(it, other) } }
   }
 
   /** Whether [query] names an item inside one of [items]. */
@@ -229,27 +256,43 @@ object ItemPattern {
     val buttons = mutableListOf<Button>()
     val clickable = inners(item).filter { it.json.optBoolean("clickable") }
     for (button in clickable) {
-      // A button inside another button is pressed by that one.
-      if (clickable.any { it !== button && button.path.size > it.path.size && button.path.take(it.path.size) == it.path }) continue
+      // An item with buttons in it, such as a comment that can be clicked, is a container: its
+      // buttons are the actions.
+      if (inners(button.json).any { it.json.optBoolean("clickable") }) continue
       val (named, path) =
         if (label(button.json) != null) button.json to button.path
         else inners(button.json).firstOrNull { label(it.json) != null }?.let { it.json to button.path + it.path } ?: continue
       val value = label(named)!!
       if (value.equals(label(item), ignoreCase = true)) continue
+      // The first text of a row without one of its own names the row, such as a comment's author.
+      if (label(item) == null && readingOrder(item).firstOrNull { label(it) != null } === named) continue
+      // A button showing a text the row has outside it, such as a comment's time, is content.
+      val inButton = inners(button.json).map { it.json }.toSet() + button.json
+      if (inners(item).any { it.json !in inButton && !it.json.optBoolean("clickable") && label(it.json).equals(value, ignoreCase = true) }) continue
       val field = fieldOf(named)
       val others = similar.map { other -> at(other, path)?.takeIf { fieldOf(it) == field }?.let(::label) }
       val known = if (others.all { it != null }) others else emptyList()
-      // A button the other items have with another text, such as Cancel request, keeps its own.
+      // A button another row has with the same text, beside rows where it differs, such as Add
+      // Friend beside Cancel request, keeps its own text. One whose text differs in every row, such
+      // as a name, is content, not an action.
       val pattern =
         pattern(value, known, if (known.isEmpty()) names(item, button.json) else emptyList())
-          ?: pattern(value, emptyList(), names(item, button.json))
+          ?: (if (known.any { it.equals(value, ignoreCase = true) }) pattern(value, emptyList(), names(item, button.json)) else null)
           ?: continue
-      val title = pattern.core.trim { !it.isLetterOrDigit() }.ifEmpty { continue }
+      val title = titleOf(pattern.core).ifEmpty { continue }
+      // A long text, such as a comment's own text in an item that can be clicked, is content.
+      if (title.length > MAX_TITLE || title.split(' ').size > MAX_TITLE_WORDS) continue
       if (buttons.any { it.title.equals(title, ignoreCase = true) }) continue
       val target =
         if (pattern.exact != null) JSONObject().put(field, pattern.exact)
         else JSONObject().put("matches", pattern.regex).put("field", field)
-      buttons += Button(title, target, value)
+      // A long press the app named, such as "Long-press for more reactions" on a Like button.
+      val longPress =
+        button.json.optJSONArray("actions").objectList()
+          .firstOrNull { it.optInt("id") == ACTION_LONG_CLICK }
+          ?.optString("label")?.let(::titleOf)?.ifEmpty { null }
+          ?.takeUnless { it.equals(title, ignoreCase = true) }
+      buttons += Button(title, target, value, longPress)
       if (buttons.size == MAX_BUTTONS) break
     }
     return buttons
@@ -323,7 +366,8 @@ object ItemPattern {
       // the text "Remove" inside the Remove button doesn't match.
       val more = { core: String -> if (all.all { it.trim().length > core.length }) ".+" else "" }
       return when {
-        prefix.length >= MIN_CORE && prefix.length >= suffix.length -> Pattern("^" + quote(prefix) + more(prefix), null, prefix)
+        // A shared start comes first: an action's text starts with what it does, such as "Reply to".
+        prefix.length >= MIN_CORE -> Pattern("^" + quote(prefix) + more(prefix), null, prefix)
         suffix.length >= MIN_CORE -> Pattern(more(suffix) + quote(suffix) + "$", null, suffix)
         else -> commonWords(all)?.let { Pattern(quote(it), null, it) }
       }
@@ -364,6 +408,31 @@ object ItemPattern {
 
   private fun exact(value: String) = Pattern("^" + quote(value) + "$", value, value)
 
+  /**
+   * An action's title from a button's text: its first sentence, without "button" at its end or a
+   * short word such as "to" left from a name, so that "Like Andria's comment button. Double-tap
+   * and hold to show reaction tray." gives "Like" with the name taken out, and "Reply to Andria's
+   * comment" gives "Reply".
+   */
+  fun titleOf(text: String): String {
+    var title = text.split(SENTENCE_END, limit = 2).first().trim()
+    title = title.replace(BUTTON_WORD, "").trim()
+    while (true) {
+      val words = title.split(' ')
+      val last = words.last()
+      if (words.size < 2 || last.length > SHORT_WORD || last.any { !it.isLowerCase() }) break
+      title = words.dropLast(1).joinToString(" ")
+    }
+    return title.trim { !it.isLetterOrDigit() }
+  }
+
+  private val SENTENCE_END = Regex("[.!?](\\s|$)|\n")
+  private val BUTTON_WORD = Regex("\\s+button$", RegexOption.IGNORE_CASE)
+  private const val SHORT_WORD = 3
+  private const val MAX_TITLE = 32
+  private const val MAX_TITLE_WORDS = 5
+  private const val ACTION_LONG_CLICK = 32
+
   /** The start all [texts] share, ending at a word's end. */
   private fun wordPrefix(texts: List<String>): String {
     val first = texts.first()
@@ -391,11 +460,19 @@ object ItemPattern {
    */
   private fun names(item: JSONObject, except: JSONObject): List<String> {
     val excluded = inners(except).map { it.json } + except
+    // The first text in reading order, which names a row, such as a comment's author.
     val texts =
       label(item)?.let { listOf(it) }
-        ?: listOfNotNull(inners(item).firstOrNull { inner -> excluded.none { it === inner.json } && label(inner.json) != null }?.let { label(it.json) })
-    return texts.flatMap { it.split(',') }.map { it.trim() }.filter { it.length >= MIN_CORE }.distinct()
+        ?: listOfNotNull(readingOrder(item).firstOrNull { inner -> excluded.none { it === inner } && label(inner) != null }?.let(::label))
+    val parts = texts.flatMap { it.split(',') }.map { it.trim() }.filter { it.length >= MIN_CORE }
+    // A person's first name, as in "Reply to Andria's comment" in Andria Jones's comment.
+    val firstNames = parts.mapNotNull { part -> part.split(' ').takeIf { it.size in 2..4 }?.first()?.takeIf { it.length >= MIN_CORE && it[0].isUpperCase() } }
+    return (parts + firstNames).distinct()
   }
+
+  /** The items in [item] in reading order, each before the items in it. */
+  private fun readingOrder(item: JSONObject): List<JSONObject> =
+    item.optJSONArray("children").objectList().flatMap { listOf(it) + readingOrder(it) }
 
   /** The items in [item], breadth first. */
   private fun inners(item: JSONObject): List<Inner> {

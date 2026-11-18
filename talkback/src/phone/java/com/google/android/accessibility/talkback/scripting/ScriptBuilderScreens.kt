@@ -798,7 +798,7 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
     val match = rule.optJSONObject("match")
     // The inspected item, when this rule names it: changes can be worked out from it.
     val sample =
-      ItemInspector.lastSample(context)?.takeIf { sample ->
+      ItemPattern.samples(ItemInspector.lastSample(context)).firstOrNull { sample ->
         match != null && ItemPattern.item(sample)?.let { ItemPattern.tellsItem(match, it) } == true
       }
     val item = screen.category(R.string.script_builder_applies_to)
@@ -985,7 +985,7 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
     if (buttons.isNotEmpty()) {
       category.action(
         getString(R.string.script_builder_one_item_actions),
-        getString(R.string.script_builder_actions_value, buttons.joinToString(", ") { it.title }),
+        getString(R.string.script_builder_actions_value, buttons.flatMap { listOfNotNull(it.title, it.longPressTitle) }.joinToString(", ")),
       ) {
         makeOneItem(sample, buttons)
       }
@@ -1017,13 +1017,18 @@ class ScriptRuleFragment : ScriptBuilderBaseFragment() {
         if (button.title.lowercase() !in titles) {
           actions.put(JSONObject().put("title", button.title).put("click", JSONObject(button.target.toString())))
         }
+        button.longPressTitle?.takeIf { it.lowercase() !in titles }?.let {
+          actions.put(JSONObject().put("title", it).put("longClick", JSONObject(button.target.toString())))
+        }
       }
       val parts = ItemPattern.parts(item, grouped = true)
       editSpeech(draft) { edits ->
-        parts.forEachIndexed { i, part ->
-          if (buttons.any { it.value.equals(part, ignoreCase = true) }) {
-            ItemPattern.removePart(sample, true, i)?.let { addEdit(edits, it) }
-          }
+        // The buttons' texts are found as the actions find the buttons, in every row.
+        for (button in buttons) {
+          val find = button.target.optString("matches").ifEmpty { null }
+            ?: button.target.keys().asSequence().map { button.target.optString(it) }.firstOrNull()?.let { "^" + ItemPattern.quote(it) + "$" }
+            ?: continue
+          addEdit(edits, JSONObject().put("op", SpeechEdits.REMOVE_PARTS).put("find", find).put("regex", true))
         }
         if (parts.map { it.lowercase() }.distinct().size < parts.size) {
           addEdit(edits, JSONObject().put("op", SpeechEdits.REMOVE_REPEATS))
@@ -1466,7 +1471,7 @@ class ScriptReadFragment : ScriptBuilderBaseFragment() {
     val rule = rule() ?: return
     val context = requireContext()
     val sample =
-      ItemInspector.lastSample(context)?.takeIf { sample ->
+      ItemPattern.samples(ItemInspector.lastSample(context)).firstOrNull { sample ->
         rule.optJSONObject("match")?.let { match -> ItemPattern.item(sample)?.let { ItemPattern.tellsItem(match, it) } } == true
       }
     val item = ItemPattern.item(sample)
@@ -1584,6 +1589,19 @@ class ScriptQueryFragment : ScriptBuilderBaseFragment() {
     val context = requireContext()
     screen.action(ScriptBuilderFragment.describeQuery(context, query)) {}.isSelectable = false
     val sample = ItemInspector.lastSample(context)
+    val rowSample = ItemPattern.rowSample(sample)
+    ItemPattern.likeQuery(rowSample)?.let { like ->
+      screen.action(
+        getString(R.string.script_builder_rule_for_row),
+        listOfNotNull(ScriptBuilderFragment.describeQuery(context, like), likeCountText(context, like, rowSample)).joinToString("\n"),
+      ) {
+        edit { draft ->
+          val target = Paths.get(draft, path) as? JSONObject ?: return@edit
+          for (key in QUERY_KEYS + "hasDepth") target.remove(key)
+          like.keys().forEach { target.put(it, like.get(it)) }
+        }
+      }
+    }
     ItemPattern.likeQuery(sample)?.let { like ->
       screen.action(
         getString(R.string.script_builder_like_inspected),
@@ -1908,14 +1926,31 @@ fun JSONObject.getOrPutArray(key: String): JSONArray =
 class ScriptRulePickFragment : NotificationCodeFragment(R.string.script_builder_rule_for_item) {
   private val store: ScriptStore by lazy { ScriptStore.get(requireContext()) }
 
+  /** Whether the rule is for the list row the inspected item is in, when it is in one. */
+  private var forRow = true
+
   override fun build(screen: PreferenceGroup) {
     val context = requireContext()
-    val sample = ItemInspector.lastSample(context)
+    val inspected = ItemInspector.lastSample(context)
+    val rowSample = ItemPattern.rowSample(inspected)?.takeIf { ItemPattern.likeQuery(it) != null }
+    // A rule for the list row the inspected item is in, such as a comment, unless the person chose
+    // the item itself.
+    val forRow = rowSample != null && forRow
+    val sample = if (forRow) rowSample else inspected
     // Every item like the inspected one, such as each row of a list, or else the item itself.
     val query = ItemPattern.likeQuery(sample) ?: ItemInspector.lastQuery(context)
     if (query == null) {
       screen.action(getString(R.string.script_builder_no_inspected)) {}.isSelectable = false
       return
+    }
+    if (rowSample != null) {
+      val choices = listOf(getString(R.string.script_builder_rule_for_row), getString(R.string.script_builder_rule_for_item_choice))
+      screen.action(getString(R.string.script_builder_rule_for), choices[if (forRow) 0 else 1]) {
+        choose(getString(R.string.script_builder_rule_for), choices, if (forRow) 0 else 1) {
+          this.forRow = it == 0
+          rebuild()
+        }
+      }
     }
     screen.action(
       getString(R.string.script_builder_item),
