@@ -73,6 +73,24 @@ class ScriptManager(
           .mapNotNull { window -> window.root?.let(AccessibilityNodeInfoCompat::wrap) }
       },
       back = { service.performGlobalAction(android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_BACK) },
+      touchHold = { node ->
+        val talkBack = service as? com.google.android.accessibility.talkback.TalkBackService
+        if (talkBack == null) {
+          false
+        } else {
+          val bounds = android.graphics.Rect().also(node::getBoundsInScreen)
+          val latch = java.util.concurrent.CountDownLatch(1)
+          var performed = false
+          mainHandler.post {
+            com.google.android.accessibility.talkback.macros.TouchHold.perform(talkBack, bounds, com.google.android.accessibility.talkback.macros.TouchHold.DEFAULT_HOLD_MS) {
+              performed = it
+              latch.countDown()
+            }
+          }
+          latch.await(TOUCH_HOLD_WAIT_S, java.util.concurrent.TimeUnit.SECONDS)
+          performed
+        }
+      },
     )
   private val navigator = ScriptNavigator(this)
   private val errors = ErrorCounter()
@@ -652,6 +670,7 @@ class ScriptManager(
     const val PRELUDE_ASSET = "scripting/prelude.lua"
     const val UNLOAD_LIMIT_MS = 250L
     const val WINDOWS_DEBOUNCE_MS = 100L
+    const val TOUCH_HOLD_WAIT_S = 5L
     const val LAYER_TIMEOUT_MS = 3000L
     const val KEY_WAIT_MS = 30L
     const val ON_DEMAND_IDLE_MS = 2000L

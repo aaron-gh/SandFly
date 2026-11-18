@@ -687,7 +687,7 @@ end
     )
 
   /** The kinds of rule action, each the key that holds what it acts on. */
-  val ACTION_KINDS = listOf("click", "longClick", "focus", "scrollForward", "scrollBackward", "speak")
+  val ACTION_KINDS = listOf("click", "longClick", "touchHold", "focus", "scrollForward", "scrollBackward", "speak")
 
   private val IDENTIFIER = Regex("^[A-Za-z_][A-Za-z0-9_]*$")
   private val LUA_KEYWORDS =
