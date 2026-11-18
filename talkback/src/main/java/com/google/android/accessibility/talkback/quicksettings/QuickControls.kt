@@ -1021,7 +1021,7 @@ class QuickControls(private val context: Context) {
     /** Font sizes as percentages, as the system's font size slider offers them. */
     private val FONT_SIZES = listOf(85, 100, 115, 130, 150, 180, 200)
     private const val MAX_FONT_SIZE_BEFORE_14 = 130
-    /** Below this, text is too small for rows to shrink any further, and some apps break. */
+    /** Android's settings refuse a font scale below 0.25. */
     private const val MIN_FREE_FONT_SIZE = 25
     /** Some phones offer a screen timeout of Integer.MAX_VALUE, which means never. */
     private const val NEVER_TIMEOUT_MS = Int.MAX_VALUE / 2
