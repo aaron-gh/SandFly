@@ -101,12 +101,28 @@ object UpdateChecker {
       }
     }
     val urls = listOfNotNull(STABLE_RELEASE_URL, DEV_RELEASE_URL.takeIf { Updater.isDevBuildsEnabled(context) })
-    val releases = urls.mapNotNull { fetchRelease(context, it) }
-    if (releases.isEmpty()) {
-      throw IOException("GitHub has no SandFly release")
+    var attempt = 0
+    while (true) {
+      val releases = urls.mapNotNull { fetchRelease(context, it) }
+      if (releases.isEmpty()) {
+        throw IOException("GitHub has no SandFly release")
+      }
+      try {
+        return newest(releases, BuildConfig.COMMIT_COUNT, BuildConfig.COMMIT_HASH, apkName())
+      } catch (e: ApkMissingException) {
+        // CI replaces a development build's APK by deleting it and uploading the new one, which
+        // takes a while; a check in between finds the release without it.
+        if (attempt++ >= PUBLISHING_RETRIES) throw e
+        Thread.sleep(PUBLISHING_WAIT_MS)
+      }
     }
-    return newest(releases, BuildConfig.COMMIT_COUNT, BuildConfig.COMMIT_HASH, apkName())
   }
+
+  /** A release names a newer build without its APK: the build is being published. */
+  class ApkMissingException(message: String) : JSONException(message)
+
+  private const val PUBLISHING_RETRIES = 3
+  private const val PUBLISHING_WAIT_MS = 20_000L
 
   /** Returns the newest of the [releases] that is newer than the running build, or null. */
   @VisibleForTesting
@@ -203,7 +219,7 @@ object UpdateChecker {
       (0 until assets.length())
         .map { assets.getJSONObject(it) }
         .firstOrNull { it.optString("name") == apkName }
-        ?: throw JSONException("The release has no $apkName")
+        ?: throw ApkMissingException("The release has no $apkName")
     val downloadUrl = asset.getString("browser_download_url")
     val apiDownloadUrl = asset.optString("url").takeIf { it.isNotEmpty() }
 

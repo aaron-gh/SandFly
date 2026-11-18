@@ -149,4 +149,18 @@ class UpdateCheckerTest {
   fun aWatchNeverTakesThePhoneBuild() {
     UpdateChecker.parseRelease(release(11), 10, "", UpdateChecker.WATCH_APK_NAME)
   }
+
+  @Test
+  fun newerBuildWithoutItsApk_isBeingPublished() {
+    // CI deletes the old APK before uploading the new one.
+    val release = JSONObject().put("body", "build: 900").put("assets", JSONArray()).toString()
+    val thrown =
+      try {
+        UpdateChecker.parseRelease(release, currentBuild = 800, currentHash = "abc")
+        null
+      } catch (e: UpdateChecker.ApkMissingException) {
+        e
+      }
+    assertTrue(thrown != null)
+  }
 }
