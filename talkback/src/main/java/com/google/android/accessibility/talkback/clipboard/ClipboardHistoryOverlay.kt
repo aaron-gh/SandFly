@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.clipboard
 
+import android.annotation.SuppressLint
 import android.accessibilityservice.AccessibilityService
 import android.content.Context
 import android.content.Intent
@@ -667,6 +668,8 @@ object ClipboardHistoryOverlay {
    * A list row like [android.R.layout.simple_list_item_1] with [rowActions] as accessibility
    * actions. The actions are added to the list's own ones, such as the click that taps the row.
    */
+  // An overlay of the service, without an AppCompat theme to apply.
+  @SuppressLint("AppCompatCustomView")
   private class ActionRowView(context: Context) : TextView(context) {
     var rowActions: List<Pair<Int, () -> Unit>> = emptyList()
 
