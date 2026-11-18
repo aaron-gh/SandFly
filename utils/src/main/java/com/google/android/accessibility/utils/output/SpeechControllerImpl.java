@@ -1231,6 +1231,13 @@ public class SpeechControllerImpl implements SpeechController {
       return;
     }
 
+    if (OutputMute.isSpeechMuted()) {
+      // Dropped, as with voice feedback off. Its sounds and vibrations play unless muted too.
+      LogUtils.v(TAG, "Speech muted by a script.");
+      playEarconsAndHaptics(earcons, haptics, nonSpeechParams, eventId);
+      return;
+    }
+
     @Nullable SpeechFilter filter = speechFilter;
     boolean fromScript = speechParams != null && speechParams.containsKey(SPEECH_PARAM_FROM_SCRIPT);
     if (filter != null && !fromScript && !TextUtils.isEmpty(text)) {

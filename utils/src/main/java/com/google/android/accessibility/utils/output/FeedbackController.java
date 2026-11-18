@@ -296,7 +296,7 @@ public class FeedbackController {
 
   /** Plays a vibration pattern in the format {@link HapticPatternParser} reads. */
   private boolean vibratePattern(int[] patternArray, @Nullable EventId eventId) {
-    if (!mHapticEnabled || patternArray.length == 0) {
+    if (!mHapticEnabled || patternArray.length == 0 || OutputMute.isVibrationMuted()) {
       return false;
     }
     final VibrationEffect effect;
@@ -437,6 +437,7 @@ public class FeedbackController {
       boolean evenIfSoundsOff,
       @Nullable EventId eventId) {
     if ((!mAuditoryEnabled && !evenIfSoundsOff)
+        || OutputMute.areSoundsMuted()
         || resId == 0
         || isMuted(mMutedAuditoryNames, resId)
         || !hasSound(resId)) {
@@ -481,6 +482,7 @@ public class FeedbackController {
   private void playPlacedSound(
       int resId, float rate, float volume, float x, float y, @Nullable EventId eventId) {
     if (!mAuditoryEnabled
+        || OutputMute.areSoundsMuted()
         || resId == 0
         || isMuted(mMutedAuditoryNames, resId)
         || !hasSound(resId)) {
@@ -551,7 +553,11 @@ public class FeedbackController {
         (pool, sampleId, status) -> {
           float @Nullable [] play = mPendingPlays.get(sampleId);
           mPendingPlays.remove(sampleId);
-          if (play != null && pool == mSoundPool && mAuditoryEnabled && status == 0) {
+          if (play != null
+              && pool == mSoundPool
+              && mAuditoryEnabled
+              && !OutputMute.areSoundsMuted()
+              && status == 0) {
             new EarconsPlayTask(pool, sampleId, play[0], play[1], play[2]).execute();
           }
         });

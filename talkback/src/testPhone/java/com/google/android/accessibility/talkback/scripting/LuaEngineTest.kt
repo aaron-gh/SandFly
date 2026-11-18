@@ -124,6 +124,28 @@ class LuaEngineTest {
   }
 
   @Test
+  fun aMuteNamesWhatItMutesAndItsHandleReleasesIt() {
+    host.answers["feedback.mute"] = { "7" }
+    run(
+      """
+      local mute = sf.feedback.mute({ speech = true, sounds = true }, 3000)
+      mute:release()
+      sf.feedback.unmute()
+      local ok = pcall(sf.feedback.mute, 'speech', 3000)
+      sf.speak(tostring(ok))
+      """
+    )
+    val muted = host.calls.single { it.first == "feedback.mute" }.second!!
+    assertEquals(true, muted.getBoolean("speech"))
+    assertEquals(true, muted.getBoolean("sounds"))
+    assertEquals(false, muted.getBoolean("vibration"))
+    assertEquals(3000, muted.getInt("ms"))
+    assertEquals(7, host.calls.single { it.first == "feedback.release" }.second!!.getInt("token"))
+    assertEquals(1, host.calls.count { it.first == "feedback.unmute" })
+    assertEquals(listOf("false"), host.spoken())
+  }
+
+  @Test
   fun compiledLuaIsRefused() {
     run(
       """

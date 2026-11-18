@@ -1586,6 +1586,20 @@ local braille = {
   show = function(text) send('braille.show', { text = tostring(text) }) end,
 }
 
+local feedback = {
+  mute = function(what, ms)
+    if type(what) ~= 'table' then
+      error('sf.feedback.mute needs a table such as { speech = true, sounds = true }', 2)
+    end
+    local token = call('feedback.mute', {
+      speech = what.speech == true, sounds = what.sounds == true, vibration = what.vibration == true,
+      ms = tonumber(ms),
+    })
+    return { release = function() send('feedback.release', { token = token }) end }
+  end,
+  unmute = function() send('feedback.unmute') end,
+}
+
 local device = {
   info = function() return call('device.info') end,
   battery = function() return call('device.battery') end,
@@ -1658,6 +1672,7 @@ local sf = {
   end,
   speech = speech,
   braille = braille,
+  feedback = feedback,
   touch = touch,
   keys = {
     press = function(keys)
