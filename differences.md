@@ -310,6 +310,10 @@ The **High** preset uses **After the letter, delayed** and the **Low** preset us
 
 The **Speech history** command, in **Reading**, opens a list of the last 100 texts SandFly spoke, newest first. Double-tap a text for **Copy**, and for **Show all** when the text is longer than the list shows. **Clear history** removes every text. The history is kept in memory only, is never saved or logged, and is cleared when SandFly turns off. It leaves out speech while a password field has focus, speech while the list is open, and the hints and messages that **Repeat last spoken phrase** also leaves out. Texts are kept to 2,000 characters.
 
+### Repeat last spoken phrase slower
+
+The **Repeat last spoken phrase slower** command, in **Reading**, says the last spoken phrase again once, slower than it was said, in the same voice, including a voice profile from **Voices by language**. The speech rate doesn't change, so the next item is spoken at the usual rate. **Speech** > **Repeat slower by** sets how much slower, from 5% to 50%; the default is 15%. Emoji spoken with their own voice profile keep the emoji speech rate.
+
 ## Notifications
 
 ### Samsung watch notification content

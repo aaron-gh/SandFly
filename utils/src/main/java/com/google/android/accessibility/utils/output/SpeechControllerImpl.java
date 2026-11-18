@@ -801,6 +801,15 @@ public class SpeechControllerImpl implements SpeechController {
     return repeatUtterance(getLastUtterance());
   }
 
+  /**
+   * Repeats the last spoken phrase once at {@code rateMultiple} times the rate it was said at, in
+   * the same voice. It stays the last phrase in the history, and repeating it again says it at the
+   * usual rate.
+   */
+  public boolean repeatLastUtteranceSlower(float rateMultiple) {
+    return repeatUtterance(getLastUtterance(), rateMultiple);
+  }
+
   /** Copies saved talkback speech to clipboard. */
   public boolean copySavedUtteranceToClipboard(EventId eventId) {
     return copyUtteranceToClipboard(savedUtterance, eventId);
@@ -884,6 +893,11 @@ public class SpeechControllerImpl implements SpeechController {
 
   /** Repeats the provided utterance. */
   public boolean repeatUtterance(@Nullable FeedbackItem item) {
+    return repeatUtterance(item, /* rateMultiple= */ 1f);
+  }
+
+  /** Repeats the provided utterance at {@code rateMultiple} times the rate it was said at. */
+  private boolean repeatUtterance(@Nullable FeedbackItem item, float rateMultiple) {
     if (item == null) {
       return false;
     }
@@ -896,6 +910,7 @@ public class SpeechControllerImpl implements SpeechController {
     final FeedbackItem newItem = new FeedbackItem(item);
     newItem.addFlag(
         FeedbackItem.FLAG_FORCE_FEEDBACK_ALL);
+    newItem.setRateMultiple(rateMultiple);
     speak(
         /* item= */ newItem,
         /* queueMode= */ QUEUE_MODE_BIT_FLUSH_ALL,
@@ -2260,6 +2275,8 @@ public class SpeechControllerImpl implements SpeechController {
     boolean applyParams = mUseIntonation || params.containsKey(SPEECH_PARAM_FROM_SCRIPT);
     float pitch = speechPitch * (applyParams ? parseFloatParam(params, SpeechParam.PITCH, 1) : 1);
     float rate = speechRate * (applyParams ? parseFloatParam(params, SpeechParam.RATE, 1) : 1);
+    // A phrase repeated slower; a language profile below gets the slower rate as well.
+    rate *= feedbackItem.getRateMultiple();
     if (params.containsKey(EmojiSpeech.SPEECH_PARAM_EMOJI)) {
       // The emoji speech rate applies whether or not intonation is on.
       rate = EmojiSpeech.rateFor(rate);
