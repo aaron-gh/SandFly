@@ -183,7 +183,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
                 isWatch
                     && monitoring
                     && defaultDisplayOn
-                    && isInteractive
+                    // The display can wake before SCREEN_ON updates isInteractive.
+                    && ((PowerManager) service.getSystemService(Context.POWER_SERVICE))
+                        .isInteractive()
                     && enabledTellingTime
                     && TalkBackService.isServiceActive()
                     && !PauseController.isPaused()
