@@ -76,6 +76,7 @@ class CommandsTest {
         R.string.shortcut_value_toggle_auto_translation,
         R.string.shortcut_value_toggle_equalizer,
         R.string.shortcut_value_toggle_focus_indicator,
+        R.string.shortcut_value_toggle_focus_text_inside_items,
         R.string.shortcut_value_settings_profiles,
         R.string.shortcut_value_next_settings_profile,
         R.string.shortcut_value_previous_settings_profile,
