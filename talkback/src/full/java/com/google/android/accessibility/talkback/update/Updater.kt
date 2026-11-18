@@ -43,6 +43,7 @@ import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.migration.AppIdMove
+import com.google.android.accessibility.talkback.network.NetworkForeground
 import com.google.android.accessibility.talkback.utils.NotificationUtils
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.PreferenceSettingsUtils
@@ -383,7 +384,9 @@ object Updater {
     try {
       DownloadRetry.run { attempt ->
         val attemptUrl = DownloadRetry.urlFor(attempt, url, apiUrl)
-        downloadOnce(context, attemptUrl, attemptUrl == apiUrl, file, fast?.network)
+        NetworkForeground.run {
+          downloadOnce(context, attemptUrl, attemptUrl == apiUrl, file, fast?.network)
+        }
       }
       complete = true
       return file

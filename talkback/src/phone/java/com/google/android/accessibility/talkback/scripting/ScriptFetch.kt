@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.scripting
 
+import com.google.android.accessibility.talkback.network.NetworkForeground
 import java.io.IOException
 import java.net.HttpURLConnection
 import java.net.MalformedURLException
@@ -74,11 +75,13 @@ object ScriptFetch {
   fun start(request: Request, done: (Boolean, Any?) -> Unit): Future<*> =
     executor.submit {
       runCatching {
-          (request.url.openConnection() as HttpURLConnection).run {
-            try {
-              send(request)
-            } finally {
-              disconnect()
+          NetworkForeground.run {
+            (request.url.openConnection() as HttpURLConnection).run {
+              try {
+                send(request)
+              } finally {
+                disconnect()
+              }
             }
           }
         }

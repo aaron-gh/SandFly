@@ -5419,4 +5419,9 @@
     <item quantity="one"><xliff:g id="count" example="1">%1$d</xliff:g> item selected</item>
     <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> items selected</item>
   </plurals>
+
+  <!-- Name of the notification channel for the notification Android shows while SandFly runs network requests from the background. [CHAR LIMIT=40] -->
+  <string name="network_notification_channel">Network requests</string>
+  <!-- Title of the notification Android shows while SandFly runs network requests from the background. [CHAR LIMIT=40] -->
+  <string name="network_notification_title">Network request</string>
 </resources>

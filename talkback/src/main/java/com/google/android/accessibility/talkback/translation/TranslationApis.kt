@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.translation
 
+import com.google.android.accessibility.talkback.network.NetworkForeground
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 import java.io.InputStream
@@ -175,7 +176,9 @@ object TranslationApis {
 
   /** Sends [request] as JSON, and returns the HTTP status and the answer. */
   @Throws(IOException::class)
-  fun send(request: Request): Pair<Int, String> {
+  fun send(request: Request): Pair<Int, String> = NetworkForeground.run { sendNow(request) }
+
+  private fun sendNow(request: Request): Pair<Int, String> {
     val connection = URL(request.url).openConnection() as HttpURLConnection
     try {
       connection.connectTimeout = TIMEOUT_MS

@@ -30,6 +30,7 @@ import androidx.annotation.WorkerThread
 import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
+import com.google.android.accessibility.talkback.network.NetworkForeground
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.BufferedReader
 import java.io.File
@@ -307,6 +308,16 @@ object ProblemReportSender {
     json: JSONObject,
     success: Int = HTTP_CREATED,
     onBadRequest: () -> Unit = {},
+  ): Pair<Result, JSONObject?> =
+    NetworkForeground.run { postNow(context, url, json, success, onBadRequest) }
+
+  @WorkerThread
+  private fun postNow(
+    context: Context,
+    url: String,
+    json: JSONObject,
+    success: Int,
+    onBadRequest: () -> Unit,
   ): Pair<Result, JSONObject?> {
     val connection: HttpURLConnection =
       try {

@@ -22,6 +22,7 @@ import com.google.android.accessibility.braille.interfaces.ScreenReaderCommands;
 import com.google.android.accessibility.talkback.braille.BrailleDisplayCommands;
 import com.google.android.accessibility.talkback.report.CrashLog;
 import com.google.android.accessibility.talkback.migration.SettingsImporter;
+import com.google.android.accessibility.talkback.network.NetworkForeground;
 import com.google.android.accessibility.talkback.training.PageConfigMapperImpl;
 import com.google.android.accessibility.talkback.training.TalkBackDisabledWarmingDialogImpl;
 import com.google.android.accessibility.talkback.training.TrainingConfigMapperImpl;
@@ -44,6 +45,11 @@ public class TalkBackApplication extends Application {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P
         || getPackageName().equals(Application.getProcessName())) {
       SettingsImporter.importIfNeeded(this);
+    }
+    // Its service runs in the main process, which makes the requests that need it.
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
+        && getPackageName().equals(Application.getProcessName())) {
+      NetworkForeground.initialize(this);
     }
 
     FormFactorUtils.initialize(this);
