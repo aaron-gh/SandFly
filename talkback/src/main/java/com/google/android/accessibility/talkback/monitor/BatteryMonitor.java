@@ -152,6 +152,11 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
     return batteryStateKnown ? charging : powerConnected;
   }
 
+  /** Returns the battery level in percent, or {@link #UNKNOWN_LEVEL} before it is known. */
+  public int getLevel() {
+    return batteryLevel;
+  }
+
   @VisibleForTesting
   public static int getBatteryLevel(int scale, int level) {
     return (scale > 0 ? Math.round((level / (float) scale) * 100) : UNKNOWN_LEVEL);

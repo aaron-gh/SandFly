@@ -529,7 +529,8 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     }
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
     List<StatusItem> items =
-        ScreenAnnouncementSettings.screenOnStatusItems(prefs, statusReader.isCharging());
+        ScreenAnnouncementSettings.screenOnStatusItems(
+            prefs, statusReader.isCharging(), statusReader.batteryLevel());
     if (items.isEmpty()) {
       return;
     }

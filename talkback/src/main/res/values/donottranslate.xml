@@ -431,6 +431,24 @@
         <item>always</item>
         <item>while_charging</item>
     </string-array>
+    <!-- Low battery when the screen turns on: ScreenAnnouncementSettings.LOW_BATTERY_LEVELS, in
+         percent, 0 for off. -->
+    <string-array name="pref_screen_on_low_battery_entries">
+        <item>@string/screen_on_battery_off</item>
+        <item>@string/screen_on_low_battery_10</item>
+        <item>@string/screen_on_low_battery_15</item>
+        <item>@string/screen_on_low_battery_20</item>
+        <item>@string/screen_on_low_battery_30</item>
+        <item>@string/screen_on_low_battery_50</item>
+    </string-array>
+    <string-array name="pref_screen_on_low_battery_values" translatable="false">
+        <item>0</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+        <item>30</item>
+        <item>50</item>
+    </string-array>
     <string name="pref_selector_tablet_held_up_faces_away_key" translatable="false">pref_selector_tablet_held_up_faces_away_key</string>
     <string name="pref_selector_live_recognition_key" translatable="false">pref_selector_live_recognition_key</string>
     <string name="pref_selector_ai_actions_key" translatable="false">pref_selector_ai_actions_key</string>
