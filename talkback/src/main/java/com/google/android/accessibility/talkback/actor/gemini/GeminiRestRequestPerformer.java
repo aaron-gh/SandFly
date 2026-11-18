@@ -23,14 +23,19 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Network;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
+import com.android.volley.toolbox.BasicNetwork;
+import com.android.volley.toolbox.DiskBasedCache;
+import com.android.volley.toolbox.HurlStack;
 import com.google.android.accessibility.talkback.actor.gemini.DataFieldUtils.GeminiResponse;
+import com.google.android.accessibility.talkback.network.NetworkForeground;
 import com.google.android.accessibility.talkback.report.AiResponseReport;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -92,13 +97,29 @@ public class GeminiRestRequestPerformer {
 
   private static @Nullable RequestQueue sharedQueue;
 
+  /** The cache directory that Volley.newRequestQueue uses. */
+  private static final String VOLLEY_CACHE_DIR = "volley";
+
   /**
    * The one request queue for AI requests. Each queue starts five threads that run until it is
-   * stopped, and performers are made at every service start.
+   * stopped, and performers are made at every service start. Built as Volley.newRequestQueue
+   * builds it, with each request run through {@link NetworkForeground}.
    */
   static synchronized RequestQueue sharedQueue(Context context) {
     if (sharedQueue == null) {
-      sharedQueue = Volley.newRequestQueue(context.getApplicationContext());
+      BasicNetwork basic = new BasicNetwork(new HurlStack());
+      Network network =
+          request -> {
+            NetworkForeground.Lease lease = NetworkForeground.acquire();
+            try {
+              return basic.performRequest(request);
+            } finally {
+              lease.release();
+            }
+          };
+      File cache = new File(context.getApplicationContext().getCacheDir(), VOLLEY_CACHE_DIR);
+      sharedQueue = new RequestQueue(new DiskBasedCache(cache), network);
+      sharedQueue.start();
     }
     return sharedQueue;
   }

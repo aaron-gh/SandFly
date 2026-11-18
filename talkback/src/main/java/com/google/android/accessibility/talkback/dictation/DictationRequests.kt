@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.dictation
 
 import android.util.Base64
 import android.util.Base64OutputStream
+import com.google.android.accessibility.talkback.network.NetworkForeground
 import java.io.ByteArrayOutputStream
 import java.io.FilterOutputStream
 import java.io.IOException
@@ -176,6 +177,14 @@ internal object DictationRequests {
 
   @Throws(IOException::class)
   private fun post(
+    url: String,
+    headers: Map<String, String>,
+    length: Long,
+    writeBody: (OutputStream) -> Unit,
+  ): JSONObject = NetworkForeground.run { postNow(url, headers, length, writeBody) }
+
+  @Throws(IOException::class)
+  private fun postNow(
     url: String,
     headers: Map<String, String>,
     length: Long,

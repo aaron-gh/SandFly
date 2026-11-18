@@ -22,6 +22,7 @@ import androidx.annotation.VisibleForTesting
 import androidx.annotation.WorkerThread
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.migration.AppIdMove
+import com.google.android.accessibility.talkback.network.NetworkForeground
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.IOException
@@ -154,7 +155,11 @@ object UpdateChecker {
 
   /** Returns the release at [url] as JSON, or null if GitHub has no such release. */
   @WorkerThread
-  private fun fetchRelease(context: Context, url: String): String? {
+  private fun fetchRelease(context: Context, url: String): String? =
+    NetworkForeground.run { fetchReleaseNow(context, url) }
+
+  @WorkerThread
+  private fun fetchReleaseNow(context: Context, url: String): String? {
     val connection = openConnection(context, url)
     try {
       connection.setRequestProperty("Accept", "application/vnd.github+json")

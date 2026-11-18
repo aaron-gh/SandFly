@@ -197,6 +197,13 @@
             android:exported="false"
             android:foregroundServiceType="dataSync" />
 
+        <!-- Keeps SandFly in the foreground during network requests on phones that block the
+             network of an accessibility service while another app is in front. -->
+        <service
+            android:name="com.google.android.accessibility.talkback.network.NetworkForegroundService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
         <!-- Moves calls to the speaker when the phone is away from the ear. Android binds it
              during calls only while the user has granted MANAGE_ONGOING_CALLS with adb. -->
         <service
