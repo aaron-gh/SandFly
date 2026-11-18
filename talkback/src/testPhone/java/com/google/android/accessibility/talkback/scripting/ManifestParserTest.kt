@@ -422,4 +422,12 @@ class ManifestParserTest {
     assertTrue(rejects(""","commands":[{"id":"torch","title":"Torch","gesture":"swipeUpThenRight"}]""").contains("input"))
     assertTrue(rejects(""","commands":[{"id":"torch","title":"Torch","menu":true}]""").contains("input"))
   }
+
+  @Test
+  fun anOnDemandScriptNeedsNoInputPermission() {
+    val torch =
+      parse(""","onDemand":true,"permissions":["system"],"commands":[{"id":"torch","title":"Torch"}]""")
+    assertTrue(torch.onDemand)
+    assertEquals(listOf("torch"), torch.commands.map { it.id })
+  }
 }
