@@ -220,6 +220,23 @@ class ItemInspectorSampleTest {
   }
 
   @Test
+  fun sample_withRowsOfFewerItemsBeside_doesNotFail() {
+    // The inspected item is the third in its row; the row beside it has one item. Following the
+    // inspected item's place into that row asked for a child past its last one, which Android 16
+    // answers with an exception.
+    val list = node("androidx.recyclerview.widget.RecyclerView")
+    val full = node("android.view.ViewGroup")
+    for (text in listOf("A", "B", "C")) org.robolectric.Shadows.shadowOf(full).addChild(node("android.widget.TextView", text = text))
+    val short = node("android.view.ViewGroup")
+    org.robolectric.Shadows.shadowOf(short).addChild(node("android.widget.TextView", text = "D"))
+    org.robolectric.Shadows.shadowOf(list).addChild(full)
+    org.robolectric.Shadows.shadowOf(list).addChild(short)
+    val inspected = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrap(list.getChild(0).getChild(2))
+    val sample = ItemInspector.sample(inspected)
+    assertEquals("C", sample.getJSONObject("item").getString("text"))
+  }
+
+  @Test
   fun sample_ofAnItemInAListRow_hasTheRowItIsIn() {
     val list = node("androidx.recyclerview.widget.RecyclerView")
     val title = node("android.view.ViewGroup", text = "Post title")

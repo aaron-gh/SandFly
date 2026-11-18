@@ -22,7 +22,19 @@ import com.google.android.accessibility.utils.traversal.ReorderedChildrenIterato
 private const val MAX_DEPTH = 50
 
 fun AccessibilityNodeInfoCompat.children(): List<AccessibilityNodeInfoCompat> =
-  (0..<childCount).mapNotNull { getChild(it) }
+  (0..<childCount).mapNotNull { childOrNull(it) }
+
+/**
+ * Child [index], or null. Android 16 throws for an index past the last child instead of giving
+ * null, which happens when the app removes children while they are read.
+ */
+fun AccessibilityNodeInfoCompat.childOrNull(index: Int): AccessibilityNodeInfoCompat? =
+  if (index !in 0..<childCount) null
+  else try {
+    getChild(index)
+  } catch (e: IndexOutOfBoundsException) {
+    null
+  }
 
 fun AccessibilityNodeInfoCompat.childrenInReadingOrder(): Sequence<AccessibilityNodeInfoCompat> =
   ReorderedChildrenIterator.createAscendingIterator(this).asSequence().filterNotNull()
