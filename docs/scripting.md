@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-A script is a Lua file that changes how SandFly works in one app or in every app, or adds commands to SandFly. This document describes the whole script API, version 5.
+A script is a Lua file that changes how SandFly works in one app or in every app, or adds commands to SandFly. This document describes the whole script API, version 6.
 
 Scripts run on phones and tablets. Watches and TVs can't run them.
 
@@ -120,7 +120,7 @@ Scripts are also unloaded while the screen is off, while SandFly is paused, and 
 
 ### Permissions
 
-A script can only use what its manifest asks for. The user sees the list before installing, and can turn each permission off on the script's page. A call that needs a permission the script doesn't have raises an error; a hook or rule that needs one is skipped, with a warning in the script's log.
+A script can only use what its manifest asks for. The user sees the list before installing, and can turn each permission off on the script's page. A call that needs a permission the script doesn't have raises an error; a hook or rule that needs one is skipped, with a warning in the script's log. SandFly refuses a manifest that has `navigation`, or commands with their own `gesture`, `keys`, `menu` or `control`, without asking for `input`.
 
 | Permission | What it allows |
 |---|---|
@@ -128,7 +128,7 @@ A script can only use what its manifest asks for. The user sees the list before 
 | `actions` | Clicking, scrolling, typing and moving focus: `item:click()`, `item:perform()`, `item:focus()`, `item:setText()` and the other item actions, `sf.touch`, `sf.keys.type`, `sf.keys.press`, and rule actions other than `speak`. |
 | `speech` | Speaking with `sf.speak` and `sf.message`, `sf.speech.stop()`, `sf.braille`, rules that change an item, `sf.rules`, changing what a hook was given to say, and the `onSpeech` hook. |
 | `passwords` | The text of password fields. Without it, that text is left out. |
-| `input` | Commands, `sf.bind`, `navigation`, `sf.commands.run`, `sf.keys.passAll`, the `onActions` hook, and actions in rules. |
+| `input` | The `gesture`, `keys`, `menu` and `control` of commands, `sf.bind`, `navigation`, `sf.commands.run`, `sf.keys.passAll`, the `onActions` hook, and actions in rules. *Version 6:* commands without these need no permission; before, every command needed `input`. |
 | `network` | `sf.fetch` and `sf.translate`. |
 | `clipboard` | `sf.clipboard`. |
 | `system` | `sf.system`, `sf.resume`, `sf.device.setVolume` and `sf.device.setRingerMode`. |
