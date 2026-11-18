@@ -29,13 +29,12 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.mlkit.RemoteLanguageIdentifier
 import com.google.android.accessibility.utils.output.FeedbackItem
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechControllerImpl
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.common.MlKitException
-import com.google.mlkit.nl.languageid.LanguageIdentification
-import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
 import com.google.mlkit.nl.languageid.LanguageIdentifier
 import java.util.Locale
 import java.util.function.Consumer
@@ -341,12 +340,8 @@ internal constructor(context: Context, private val engine: Engine) : SpeechContr
       val client =
         identifier
           ?: try {
-            LanguageIdentification.getClient(
-                LanguageIdentificationOptions.Builder().setConfidenceThreshold(MIN_CONFIDENCE).build()
-              )
-              .also { identifier = it }
+            RemoteLanguageIdentifier(MIN_CONFIDENCE).also { identifier = it }
           } catch (e: IllegalStateException) {
-            // ML Kit isn't set up until the device is first unlocked after it starts.
             LogUtils.w(TAG, "No language identification: %s", e)
             null
           }

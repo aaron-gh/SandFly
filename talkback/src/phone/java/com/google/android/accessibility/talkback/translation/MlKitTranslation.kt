@@ -18,13 +18,12 @@ package com.google.android.accessibility.talkback.translation
 
 import android.app.DownloadManager
 import android.os.SystemClock
+import com.google.android.accessibility.utils.mlkit.RemoteLanguageIdentifier
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.common.model.DownloadConditions
 import com.google.mlkit.common.model.RemoteModelManager
 import com.google.mlkit.common.sdkinternal.MlKitContext
-import com.google.mlkit.nl.languageid.LanguageIdentification
-import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
 import com.google.mlkit.nl.languageid.LanguageIdentifier
 import com.google.mlkit.nl.translate.TranslateLanguage
 import com.google.mlkit.nl.translate.TranslateRemoteModel
@@ -61,10 +60,7 @@ class MlKitTranslation : OnDeviceTranslation {
   override fun detect(text: String, done: (language: String?, unavailable: Boolean) -> Unit) {
     val client =
       identifier
-        ?: LanguageIdentification.getClient(
-            LanguageIdentificationOptions.Builder().setConfidenceThreshold(MIN_CONFIDENCE).build()
-          )
-          .also { identifier = it }
+        ?: RemoteLanguageIdentifier(MIN_CONFIDENCE).also { identifier = it }
     client
       .identifyLanguage(text)
       .addOnSuccessListener { code ->

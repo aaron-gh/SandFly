@@ -3,24 +3,14 @@ package com.google.android.accessibility.utils.ocr
 import android.content.Context
 import android.content.res.Resources
 import android.os.SystemClock
+import com.google.android.accessibility.utils.mlkit.MlKitHelper
 import com.google.android.accessibility.utils.output.LanguageSwitch
-import com.google.android.gms.common.moduleinstall.ModuleInstall
-import com.google.android.gms.common.moduleinstall.ModuleInstallRequest
-import com.google.android.gms.common.moduleinstall.ModuleInstallResponse
 import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
-import com.google.mlkit.vision.text.TextRecognition
-import com.google.mlkit.vision.text.TextRecognizer
-import com.google.mlkit.vision.text.TextRecognizerOptionsInterface
-import com.google.mlkit.vision.text.chinese.ChineseTextRecognizerOptions
-import com.google.mlkit.vision.text.devanagari.DevanagariTextRecognizerOptions
-import com.google.mlkit.vision.text.japanese.JapaneseTextRecognizerOptions
-import com.google.mlkit.vision.text.korean.KoreanTextRecognizerOptions
-import com.google.mlkit.vision.text.latin.TextRecognizerOptions
 import java.io.Closeable
 import java.util.Locale
 
@@ -29,6 +19,10 @@ import java.util.Locale
  * language, then the system languages. The recognizers other than the Latin one also read Latin
  * letters. While Google Play services has no model for the script, the Latin recognizer reads the
  * image and the model download is requested.
+ *
+ * The recognizers run in the `:mlkit` process, through [MlKitHelper], since they load Google Play
+ * services code, and an update of Google Play services stops every process with its code loaded.
+ * Only images made with [InputImage.fromBitmap] are recognized.
  */
 class LanguageTextRecognizer
 @JvmOverloads
@@ -36,6 +30,7 @@ constructor(
   context: Context,
   private val languages: () -> List<Locale> = ::languagesInUse,
   private val clock: () -> Long = SystemClock::elapsedRealtime,
+  private val helper: MlKitHelper = MlKitHelper.get(context),
 ) : Closeable {
 
   /** The scripts ML Kit has a text recognizer for. */
@@ -47,8 +42,6 @@ constructor(
     KOREAN,
   }
 
-  private val context: Context = context.applicationContext ?: context
-  private val recognizers = HashMap<Script, TextRecognizer>()
   private val downloadRequested = HashSet<Script>()
   private var latinUntil = 0L
   private var closed = false
@@ -63,108 +56,52 @@ constructor(
   /** Recognizes text in [image]. The task fails if no recognizer can be made or used. */
   fun process(image: InputImage): Task<Text> {
     val script: Script
-    val recognizer: TextRecognizer
     synchronized(this) {
       if (closed) return Tasks.forException(IllegalStateException("Text recognizer closed"))
       script = script()
-      recognizer =
-        try {
-          recognizer(script)
-        } catch (e: RuntimeException) {
-          // Such as ML Kit not being set up yet just after the phone starts.
-          return Tasks.forException(e)
-        }
     }
-    val task = processWith(recognizer, image)
+    val bitmap =
+      image.bitmapInternal
+        ?: return Tasks.forException(
+          MlKitException("Only bitmaps are recognized", MlKitException.INVALID_ARGUMENT)
+        )
+    val rotation = image.rotationDegrees
+    val task = helper.recognizeText(bitmap, rotation, script)
     if (script == Script.LATIN) return task
     return task.continueWithTask { result ->
       if (result.isSuccessful || !isUnavailable(result.exception)) return@continueWithTask result
-      val latin: TextRecognizer
       synchronized(this) {
         if (closed) return@continueWithTask result
         LogUtils.w(TAG, "No %s text recognizer, Latin is used", script)
         latinUntil = clock() + SCRIPT_RETRY_MS
         requestDownload(script)
-        latin =
-          try {
-            recognizer(Script.LATIN)
-          } catch (e: RuntimeException) {
-            return@continueWithTask result
-          }
       }
-      processWith(latin, image)
+      helper.recognizeText(bitmap, rotation, Script.LATIN)
     }
   }
-
-  private fun processWith(recognizer: TextRecognizer, image: InputImage): Task<Text> =
-    try {
-      recognizer.process(image)
-    } catch (e: RuntimeException) {
-      // Such as a recognizer closed after a language change.
-      Tasks.forException(e)
-    }
 
   /**
    * Asks Google Play services to download the model of the recognizer last used, such as after
    * [process] failed with [MlKitException.UNAVAILABLE].
    */
   @Synchronized
-  fun download(): Task<ModuleInstallResponse> {
+  fun download(): Task<Void?> {
     if (closed) return Tasks.forException(IllegalStateException("Text recognizer closed"))
-    return try {
-      install(recognizer(script()))
-    } catch (e: RuntimeException) {
-      Tasks.forException(e)
-    }
+    return helper.installTextRecognizer(script())
   }
 
-  /** Closes the recognizers. They are made again only by a new instance. */
+  /** Stops new requests. The recognizers in the other process stay until it is unbound. */
   @Synchronized
   override fun close() {
     closed = true
-    for (recognizer in recognizers.values) {
-      closeQuietly(recognizer)
-    }
-    recognizers.clear()
-  }
-
-  private fun recognizer(script: Script): TextRecognizer {
-    recognizers[script]?.let {
-      return it
-    }
-    // Another script's model stays loaded only as long as the language that wanted it is in use.
-    if (script != Script.LATIN) {
-      val others = recognizers.keys.filter { it != Script.LATIN }
-      for (other in others) {
-        closeQuietly(recognizers.remove(other))
-      }
-    }
-    return TextRecognition.getClient(optionsFor(script)).also { recognizers[script] = it }
-  }
-
-  private fun closeQuietly(recognizer: TextRecognizer?) {
-    try {
-      recognizer?.close()
-    } catch (e: RuntimeException) {
-      LogUtils.w(TAG, "Text recognizer not closed: %s", e)
-    }
   }
 
   private fun requestDownload(script: Script) {
     if (!downloadRequested.add(script)) return
-    val recognizer = recognizers[script] ?: return
-    try {
-      install(recognizer).addOnFailureListener { e ->
-        LogUtils.w(TAG, "%s text recognizer not downloaded: %s", script, e)
-      }
-    } catch (e: RuntimeException) {
+    helper.installTextRecognizer(script).addOnFailureListener { e ->
       LogUtils.w(TAG, "%s text recognizer not downloaded: %s", script, e)
     }
   }
-
-  private fun install(recognizer: TextRecognizer): Task<ModuleInstallResponse> =
-    ModuleInstall.getClient(context)
-      .installModules(ModuleInstallRequest.newBuilder().addApi(recognizer).build())
 
   companion object {
     private const val TAG = "LanguageTextRecognizer"
@@ -237,15 +174,6 @@ constructor(
         "awa",
         "new" -> Script.DEVANAGARI
         else -> Script.LATIN
-      }
-
-    private fun optionsFor(script: Script): TextRecognizerOptionsInterface =
-      when (script) {
-        Script.LATIN -> TextRecognizerOptions.DEFAULT_OPTIONS
-        Script.CHINESE -> ChineseTextRecognizerOptions.Builder().build()
-        Script.DEVANAGARI -> DevanagariTextRecognizerOptions.Builder().build()
-        Script.JAPANESE -> JapaneseTextRecognizerOptions.Builder().build()
-        Script.KOREAN -> KoreanTextRecognizerOptions.Builder().build()
       }
 
     /** Whether [e] says Google Play services has no model for the recognizer yet. */

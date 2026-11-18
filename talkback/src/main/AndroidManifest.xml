@@ -223,6 +223,14 @@
             android:exported="false"
             android:process=":ondeviceai" />
 
+        <!-- Runs ML Kit language identification and text recognition in their own process. They
+             load Google Play services code, and an update of Google Play services stops every
+             process with its code loaded, which would stop the screen reader. -->
+        <service
+            android:name="com.google.android.accessibility.utils.mlkit.MlKitHelperService"
+            android:exported="false"
+            android:process=":mlkit" />
+
         <!-- On-device models can run on the GPU when these are present: on-device AI and Whisper. -->
         <uses-native-library android:name="libvndksupport.so" android:required="false" />
         <uses-native-library android:name="libOpenCL.so" android:required="false" />
