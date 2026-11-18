@@ -262,7 +262,11 @@ public class DimScreenActor implements OnConfigurationChangedListener {
       }
       viewParams.flags &= ~LayoutParams.FLAG_TURN_SCREEN_ON;
       viewParams.flags &= ~LayoutParams.FLAG_KEEP_SCREEN_ON;
-      viewParams.format = PixelFormat.OPAQUE;
+      // Not OPAQUE: the window manager ignores FLAG_KEEP_SCREEN_ON on windows behind an opaque
+      // window that fills the display. Before Android 15 the size it compares against excludes the
+      // navigation bar and cutout, so the gap below doesn't stop an opaque curtain from filling it,
+      // and a video under the curtain no longer kept the screen on. The view still draws black.
+      viewParams.format = PixelFormat.TRANSLUCENT;
 
       view = new DimmingOverlayView(service);
       view.setTimerLimit(INSTRUCTION_VISIBLE_SECONDS);
