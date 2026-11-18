@@ -167,6 +167,12 @@ public final class GestureConfiguration {
     };
   }
 
+  /** Returns whether {@code gestureId} is one of the two-finger angle gestures. */
+  public static boolean isTwoFingerAngle(int gestureId) {
+    return gestureId <= GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_LEFT
+        && gestureId >= GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN;
+  }
+
   /**
    * Returns the gestures that start with the one-finger swipe {@code swipeGestureId}: its swipe and
    * hold, the back-and-forth and angle gestures that start in its direction, and their swipe and

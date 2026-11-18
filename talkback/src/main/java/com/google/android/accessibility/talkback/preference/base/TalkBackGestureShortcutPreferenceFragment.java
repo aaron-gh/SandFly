@@ -282,6 +282,7 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
             twoFingerSwipes.setChecked(GestureLayout.handlesTwoFingerSwipes(prefs));
           }
           updateTwoFingerSwipeRows();
+          updateTwoDirectionCategories();
         } else if (TextUtils.equals(key, VibrationWatchGestureSettings.PREF_RESERVED)) {
           updatePreferencesForVibrationWatchIfNeeded();
         } else if (TextUtils.equals(key, getString(R.string.pref_swipes_before_lift_key))) {
@@ -289,13 +290,15 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
         }
       };
 
-  /** Back-and-forth and angle gestures are hidden while swipes run before the finger lifts. */
+  /**
+   * Back-and-forth and angle gestures are hidden while swipes run before the finger lifts, and
+   * two-finger angle gestures while two-finger swipes scroll in the app.
+   */
   private void updateTwoDirectionCategories() {
-    boolean hidden = SwipesBeforeLift.isOnByDefault(requireContext());
     for (String key : SwipesBeforeLift.categoryKeys(requireContext())) {
       Preference category = findPreference(key);
       if (category != null) {
-        category.setVisible(!hidden);
+        category.setVisible(!SwipesBeforeLift.hidesCategory(requireContext(), key));
       }
     }
   }

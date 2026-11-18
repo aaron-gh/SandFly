@@ -25,7 +25,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 /**
  * Recognize swipes before lifting: a one-finger swipe runs once it has moved the gesture confirm
  * distance, with the finger still down. Back-and-forth and angle gestures start the same way, so
- * they are off and hidden while it is on. Only SandFly's own gesture detection does this.
+ * they are off and hidden while it is on, and so are the two-finger angle gestures. Only SandFly's
+ * own gesture detection does this.
  *
  * With it off, a swipe still runs before the lift while no back-and-forth or angle gesture that
  * starts in its direction, and no swipe and hold of either, has a command (see
@@ -76,7 +77,21 @@ object SwipesBeforeLift {
   /** Returns whether the Gestures screen category with [key] is hidden, as Default has it. */
   @JvmStatic
   fun hidesCategory(context: Context, key: String?): Boolean =
-    key != null && key in categoryKeys(context) && isOnByDefault(context)
+    hidesCategory(context, key, isOnByDefault(context))
+
+  /**
+   * Returns whether the Gestures screen category with [key] is hidden while swipes run before the
+   * finger lifts is [swipesBeforeLift]. The two-finger angle gestures are also hidden while
+   * two-finger swipes scroll in the app, as SandFly recognizes them only while it handles
+   * two-finger swipes.
+   */
+  @JvmStatic
+  fun hidesCategory(context: Context, key: String?, swipesBeforeLift: Boolean): Boolean {
+    if (key == null || key !in categoryKeys(context)) return false
+    if (swipesBeforeLift) return true
+    return key == context.getString(R.string.pref_category_2finger_angle_shortcuts_key) &&
+      !GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(context))
+  }
 
   /** Keys of the back-and-forth and angle categories of the Gestures screen. */
   @JvmStatic
@@ -84,5 +99,6 @@ object SwipesBeforeLift {
     setOf(
       context.getString(R.string.pref_category_1finger_back_forth_shortcuts_key),
       context.getString(R.string.pref_category_1finger_angle_shortcuts_key),
+      context.getString(R.string.pref_category_2finger_angle_shortcuts_key),
     )
 }

@@ -1193,6 +1193,22 @@ public abstract class PageConfig {
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_SCRUB, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_LEFT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_LEFT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_RIGHT, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_UP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_DOWN, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_PINCH, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_SPREAD, ANNOUNCE_REAL_ACTION);

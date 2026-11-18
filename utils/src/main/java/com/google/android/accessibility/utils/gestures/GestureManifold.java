@@ -177,6 +177,17 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT = -120;
   public static final int GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT = -121;
 
+  // Two fingers swiping one way and then turning at a right angle, as the one-finger angle
+  // gestures do. Recognized by SandFly's own detection while it handles two-finger swipes.
+  public static final int GESTURE_2_FINGER_SWIPE_UP_AND_LEFT = -122;
+  public static final int GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT = -123;
+  public static final int GESTURE_2_FINGER_SWIPE_DOWN_AND_LEFT = -124;
+  public static final int GESTURE_2_FINGER_SWIPE_DOWN_AND_RIGHT = -125;
+  public static final int GESTURE_2_FINGER_SWIPE_LEFT_AND_UP = -126;
+  public static final int GESTURE_2_FINGER_SWIPE_LEFT_AND_DOWN = -127;
+  public static final int GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP = -128;
+  public static final int GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN = -129;
+
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
 
@@ -192,8 +203,8 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   private boolean twoFingerPassthroughEnabled;
   // A list of all the multi-finger gestures, for easy adding and removal.
   private final List<GestureMatcher> multiFingerGestures = new ArrayList<>();
-  // A list of two-finger swipes, for easy adding and removal when turning on or off two-finger
-  // passthrough.
+  // A list of two-finger swipes, including the angle gestures, for easy adding and removal when
+  // turning on or off two-finger passthrough.
   private final List<GestureMatcher> twoFingerSwipes = new ArrayList<>();
   private boolean logMotionEvent = false;
   // Whether a gesture completed on the move event being processed.
@@ -304,7 +315,8 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
           if ((gestureId == GESTURE_2_FINGER_SWIPE_DOWN)
               || (gestureId == GESTURE_2_FINGER_SWIPE_LEFT)
               || (gestureId == GESTURE_2_FINGER_SWIPE_RIGHT)
-              || (gestureId == GESTURE_2_FINGER_SWIPE_UP)) {
+              || (gestureId == GESTURE_2_FINGER_SWIPE_UP)
+              || GestureConfiguration.isTwoFingerAngle(gestureId)) {
             twoFingerSwipes.add(gestureMatcher);
           }
         }

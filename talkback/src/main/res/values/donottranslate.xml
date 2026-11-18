@@ -623,6 +623,7 @@
     <string name="pref_category_1finger_back_forth_shortcuts_key" translatable="false">pref_category_1finger_back_forth_shortcuts</string>
     <string name="pref_category_1finger_angle_shortcuts_key" translatable="false">pref_category_1finger_angle_shortcuts</string>
     <string name="pref_category_2finger_shortcuts_key" translatable="false">pref_category_2finger_shortcuts</string>
+    <string name="pref_category_2finger_angle_shortcuts_key" translatable="false">pref_category_2finger_angle_shortcuts</string>
     <string name="pref_category_3finger_shortcuts_key" translatable="false">pref_category_3finger_shortcuts</string>
     <string name="pref_category_4finger_shortcuts_key" translatable="false">pref_category_4finger_shortcuts</string>
     <string name="pref_category_fingerprint_touch_shortcuts_key">pref_category_fingerprint_touch_shortcuts_key</string>
@@ -709,6 +710,14 @@
     <string name="pref_shortcut_2finger_3tap_hold_key" translatable="false">pref_shortcut_two_finger_triple_tap_and_hold</string>
     <string name="pref_shortcut_3finger_3tap_hold_key" translatable="false">pref_shortcut_three_finger_triple_tap_and_hold</string>
     <string name="pref_shortcut_2finger_rotate_clockwise_key" translatable="false">pref_shortcut_two_finger_rotate_clockwise</string>
+    <string name="pref_shortcut_2finger_up_and_left_key" translatable="false">pref_shortcut_two_finger_up_and_left</string>
+    <string name="pref_shortcut_2finger_up_and_right_key" translatable="false">pref_shortcut_two_finger_up_and_right</string>
+    <string name="pref_shortcut_2finger_down_and_left_key" translatable="false">pref_shortcut_two_finger_down_and_left</string>
+    <string name="pref_shortcut_2finger_down_and_right_key" translatable="false">pref_shortcut_two_finger_down_and_right</string>
+    <string name="pref_shortcut_2finger_left_and_up_key" translatable="false">pref_shortcut_two_finger_left_and_up</string>
+    <string name="pref_shortcut_2finger_left_and_down_key" translatable="false">pref_shortcut_two_finger_left_and_down</string>
+    <string name="pref_shortcut_2finger_right_and_up_key" translatable="false">pref_shortcut_two_finger_right_and_up</string>
+    <string name="pref_shortcut_2finger_right_and_down_key" translatable="false">pref_shortcut_two_finger_right_and_down</string>
     <string name="pref_shortcut_2finger_scrub_key" translatable="false">pref_shortcut_two_finger_scrub</string>
     <string name="pref_shortcut_2finger_pinch_key" translatable="false">pref_shortcut_two_finger_pinch</string>
     <string name="pref_shortcut_2finger_spread_key" translatable="false">pref_shortcut_two_finger_spread</string>
@@ -1085,6 +1094,14 @@
 
       <item>@string/pref_shortcut_2finger_rotate_clockwise_key</item>
       <item>@string/pref_shortcut_2finger_rotate_counterclockwise_key</item>
+      <item>@string/pref_shortcut_2finger_up_and_left_key</item>
+      <item>@string/pref_shortcut_2finger_up_and_right_key</item>
+      <item>@string/pref_shortcut_2finger_down_and_left_key</item>
+      <item>@string/pref_shortcut_2finger_down_and_right_key</item>
+      <item>@string/pref_shortcut_2finger_left_and_up_key</item>
+      <item>@string/pref_shortcut_2finger_left_and_down_key</item>
+      <item>@string/pref_shortcut_2finger_right_and_up_key</item>
+      <item>@string/pref_shortcut_2finger_right_and_down_key</item>
       <item>@string/pref_shortcut_2finger_scrub_key</item>
       <item>@string/pref_shortcut_2finger_pinch_key</item>
       <item>@string/pref_shortcut_2finger_spread_key</item>
@@ -2178,6 +2195,15 @@
       <item>MAPPER_GESTURE_2_FINGER_SWIPE_LEFT</item>
       <item>MAPPER_GESTURE_2_FINGER_SWIPE_RIGHT</item>
       <item>MAPPER_GESTURE_2_FINGER_SWIPE_UP</item>
+      <!-- Two-finger angle swipes. -->
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_UP_AND_LEFT</item>
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT</item>
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_DOWN_AND_LEFT</item>
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_DOWN_AND_RIGHT</item>
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_LEFT_AND_UP</item>
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_LEFT_AND_DOWN</item>
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP</item>
+      <item>MAPPER_GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN</item>
       <!-- Three-finger swipes. -->
       <item>MAPPER_GESTURE_3_FINGER_SWIPE_DOWN</item>
       <item>MAPPER_GESTURE_3_FINGER_SWIPE_LEFT</item>
@@ -2552,6 +2578,14 @@
     <string name="pref_shortcut_2finger_3tap_hold_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_3finger_3tap_hold_default">@string/shortcut_value_paste</string>
     <string name="pref_shortcut_2finger_rotate_clockwise_default">@string/shortcut_value_select_next_setting</string>
+    <string name="pref_shortcut_2finger_up_and_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_up_and_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_down_and_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_down_and_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_left_and_up_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_left_and_down_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_right_and_up_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_right_and_down_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_2finger_scrub_default">@string/shortcut_value_back</string>
     <string name="pref_shortcut_2finger_pinch_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_2finger_spread_default">@string/shortcut_value_unassigned</string>
