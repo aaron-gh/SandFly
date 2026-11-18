@@ -56,6 +56,7 @@ class GranularEditingActivity : AppCompatActivity() {
   private val undo = ArrayList<String>()
   private val redo = ArrayList<String>()
   private var lastFind = ""
+  private var lastFoundIndex = -1
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
 
   private lateinit var list: RecyclerView
@@ -263,12 +264,15 @@ class GranularEditingActivity : AppCompatActivity() {
       val index = (from + step) % pieces.size
       val piece = pieces[index]
       if (text.substring(piece.coreStart, piece.coreEnd).contains(query, ignoreCase = true)) {
+        lastFoundIndex = index
         focus(index)
         return
       }
     }
     list.announceForAccessibility(getString(R.string.granular_editing_not_found))
   }
+
+  private fun findStart(): Int = focusedIndex().takeIf { it >= 0 } ?: lastFoundIndex
 
   private fun focusedIndex(): Int {
     val focused = list.focusedChild ?: list.findFocus()
@@ -330,9 +334,9 @@ class GranularEditingActivity : AppCompatActivity() {
     if (undo.isNotEmpty()) add(R.string.granular_editing_undo) { undoLast() }
     if (redo.isNotEmpty()) add(R.string.granular_editing_redo) { redoLast() }
     add(R.string.granular_editing_find) {
-      ask(R.string.granular_editing_find, lastFind) { typed -> if (typed.isNotEmpty()) find(typed, focusedIndex()) }
+      ask(R.string.granular_editing_find, lastFind) { typed -> if (typed.isNotEmpty()) find(typed, findStart()) }
     }
-    if (lastFind.isNotEmpty()) add(R.string.granular_editing_find_next) { find(lastFind, focusedIndex()) }
+    if (lastFind.isNotEmpty()) add(R.string.granular_editing_find_next) { find(lastFind, findStart()) }
     add(R.string.granular_editing_replace) { replaceAll() }
     add(R.string.granular_editing_add_at_end) { addAtEnd() }
     if (pieces.isNotEmpty()) {
