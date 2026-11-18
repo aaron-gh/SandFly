@@ -137,7 +137,7 @@ This applies to lists with one column whose indexes run down the screen, and who
 
 ### Speaking the next item while a list scrolls
 
-When the next item is only partly on screen, SandFly speaks it first and then scrolls the rest of it into view, instead of scrolling before it speaks. When a swipe or a key has to scroll a list to reach the next item, SandFly focuses and speaks the next item as soon as it comes on screen, while the list is still scrolling. If the scroll ends without showing it, SandFly scrolls again once the list has stopped. This applies to moving to the previous item too. Once the list stops, an item that is still cut off by the edge of the list is scrolled fully into view. To wait until the list slows down instead, turn off **Controls** > **Navigation** > **Speak the next item while scrolling**.
+When the next item is only partly on screen, SandFly speaks it first and then scrolls the rest of it into view, instead of scrolling before it speaks. An item with text that is off screen, such as a row whose title is cut off by the edge of the list, is scrolled into view first and then spoken, so that its text is included. When a swipe or a key has to scroll a list to reach the next item, SandFly focuses and speaks the next item as soon as it comes on screen, while the list is still scrolling. If the scroll ends without showing it, SandFly scrolls again once the list has stopped. This applies to moving to the previous item too. Once the list stops, an item that is still cut off by the edge of the list is scrolled fully into view. To wait until the list slows down instead, turn off **Controls** > **Navigation** > **Speak the next item while scrolling**.
 
 ### Scrolling ahead to the next item
 
