@@ -345,6 +345,7 @@ class WhisperModels private constructor(context: Context) {
             isCancelled = { cancelled.get() },
           )
       if (result == ModelDownloader.Result.Done) chooseDownloaded(model)
+      if (result == ModelDownloader.Result.Cancelled) ModelFiles.partFile(file(model)).delete()
       setState(
         when (result) {
           is ModelDownloader.Result.Failed -> State.Failed(model, result.failure)
