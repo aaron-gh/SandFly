@@ -43,25 +43,76 @@ import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
 
-/** Macros: the macros the user made, and the button that makes another. */
+/**
+ * Macros: the macros the user made, those for all apps first, then the apps that have macros, each
+ * opening the same screen with [ARG_APP], which lists that app's macros.
+ */
 class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
 
   private val files = ItemFileLauncher(this) { rebuild() }
 
+  /** The app whose macros the screen lists, or null for the Macros screen. */
+  private val app: String? by lazy { arguments?.getString(ARG_APP)?.ifEmpty { null } }
+
+  override fun getTitle(): CharSequence =
+    app?.let { Macros.appName(requireContext(), it) } ?: getText(R.string.title_pref_macros)
+
   override fun build(screen: PreferenceGroup) {
+    val app = app
     screen.action(getString(R.string.macro_add)) { add() }
-    val macros = Macros.read(prefs)
+    if (app == null) screen.action(getString(R.string.macro_add_app)) { addApp() }
+    val all = Macros.read(prefs)
+    val macros = all.filter { it.app == app }
     if (ItemFileLauncher.isAvailable) {
-      screen.action(getString(R.string.item_file_import)) { files.importFile() }
-      if (macros.isNotEmpty()) {
+      if (app == null) screen.action(getString(R.string.item_file_import)) { files.importFile() }
+      val exported = if (app == null) all else macros
+      if (exported.isNotEmpty()) {
+        val ids = if (app == null) null else macros.map { it.id }.toSet()
         screen.action(getString(R.string.item_file_export)) {
-          files.export(getString(R.string.title_pref_macros)) { ItemFiles.exportMacros(it) }
+          files.export(getTitle().toString()) { ItemFiles.exportMacros(it, ids) }
         }
       }
     }
-    for (macro in macros) {
-      screen.link(macro.name, null, MacroFragment::class.java) {
-        putString(MacroFragment.ARG_MACRO, macro.id)
+    if (app != null) {
+      for (macro in macros) screen.macroLink(macro)
+      return
+    }
+    if (macros.isNotEmpty()) {
+      val general = screen.category(R.string.macro_all_apps)
+      for (macro in macros) general.macroLink(macro)
+    }
+    val context = requireContext()
+    val apps =
+      all
+        .mapNotNull { it.app }
+        .groupingBy { it }
+        .eachCount()
+        .map { (packageName, count) -> Triple(packageName, Macros.appName(context, packageName), count) }
+        .sortedBy { it.second.lowercase() }
+    if (apps.isNotEmpty()) {
+      val list = screen.category(R.string.macro_apps)
+      for ((packageName, name, count) in apps) {
+        list.link(name, resources.getQuantityString(R.plurals.macro_count, count, count), MacrosFragment::class.java) {
+          putString(ARG_APP, packageName)
+        }
+      }
+    }
+  }
+
+  private fun PreferenceGroup.macroLink(macro: Macros.Macro) {
+    link(macro.name, null, MacroFragment::class.java) { putString(MacroFragment.ARG_MACRO, macro.id) }
+  }
+
+  /** Asks for an app and opens the list of its macros. */
+  private fun addApp() {
+    chooseApp { packageName, _ ->
+      if (packageName.isNotEmpty() && isAdded) {
+        onPreferenceTreeClick(
+          Preference(requireContext()).apply {
+            fragment = MacrosFragment::class.java.name
+            extras.putString(ARG_APP, packageName)
+          }
+        )
       }
     }
   }
@@ -72,7 +123,7 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
       if (trimmed.isEmpty()) {
         ""
       } else {
-        val macro = Macros.add(prefs, trimmed)
+        val macro = Macros.add(prefs, trimmed, app)
         rebuild()
         onPreferenceTreeClick(
           Preference(requireContext()).apply {
@@ -83,6 +134,11 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
         null
       }
     }
+  }
+
+  companion object {
+    /** The argument with the package of the app whose macros the screen lists. */
+    const val ARG_APP = "app"
   }
 }
 
@@ -362,6 +418,21 @@ class MacroFragment : MacroEditorFragment() {
       MacroConditionFragment::class.java,
     ) {
       putString(ARG_MACRO, macro.id)
+    }
+    // A script's commands run where the script runs.
+    if (!Macros.isExternal(macro.id)) {
+      screen.action(
+        getString(R.string.macro_app),
+        macro.app?.let { Macros.appName(context, it) } ?: getString(R.string.macro_all_apps),
+      ) {
+        chooseApp(getString(R.string.macro_all_apps)) { packageName, _ ->
+          macro()?.let { Macros.update(prefs, it.copy(app = packageName.ifEmpty { null })) }
+          rebuild()
+        }
+      }
+      screen.switch(getString(R.string.macro_in_actions), macro.inActions) { checked ->
+        macro()?.let { Macros.update(prefs, it.copy(inActions = checked)) }
+      }
     }
     val list = screen.category(R.string.macro_steps)
     if (macro.steps.isEmpty()) list.addPreference(infoRow(context, "macro_no_steps", getString(R.string.macro_no_steps)))

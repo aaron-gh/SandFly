@@ -580,7 +580,7 @@ object ItemFiles {
             if (step.optString("type") == "open_app") step.put("app", remap(step.optString("app").trim()))
           }
         }
-        val macro = Macros.fromJson(JSONArray().put(copy).toString()).firstOrNull()
+        val macro = Macros.fromJson(JSONArray().put(copy).toString(), moveAppTests = true).firstOrNull()
         if (macro == null) {
           problem(R.string.item_file_problem_not_read, context.getString(Kind.MACROS.title), number)
           continue

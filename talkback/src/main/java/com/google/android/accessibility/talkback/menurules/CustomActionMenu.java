@@ -43,12 +43,15 @@ import com.google.android.accessibility.talkback.applauncher.HomeScreenApps;
 import com.google.android.accessibility.talkback.focusmanagement.HomeScreenPages;
 import com.google.android.accessibility.talkback.focusmanagement.PictureInPictureItem;
 import com.google.android.accessibility.talkback.gesture.OpenAppActions;
+import com.google.android.accessibility.talkback.macros.MacroRunner;
+import com.google.android.accessibility.talkback.macros.Macros;
 import com.google.android.accessibility.talkback.overview.RecentTasks;
 import com.google.android.accessibility.talkback.scripting.ScriptItemAction;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -59,6 +62,7 @@ import java.util.Set;
 public class CustomActionMenu implements NodeMenu {
   public static final int CUSTOM_ACTION_GROUP_ID = 1;
   private static final int SCRIPT_ACTION_ID = 0x5c000000;
+  private static final int MACRO_ACTION_ID = 0x5a000000;
   private static final int OPEN_IN_SPLIT_ACTION_ID = 0x5bffffff;
   private static final int PIP_CONTROL_ACTION_ID = 0x5b000000;
   private static final String TAG = "CustomActionMenu";
@@ -74,8 +78,24 @@ public class CustomActionMenu implements NodeMenu {
   public boolean accept(Context context, AccessibilityNodeInfoCompat node) {
     return acceptCustomActionMenu(node)
         || !Scripts.itemActions(node).isEmpty()
-        || PictureInPictureItem.isItem(node);
+        || PictureInPictureItem.isItem(node)
+        || !macrosOf(context, node).isEmpty();
   }
+
+  /** The user's macros listed in the Actions menu of {@code node}'s app. */
+  private static List<Macros.Macro> macrosOf(Context context, AccessibilityNodeInfoCompat node) {
+    return Macros.inActionsOf(
+        SharedPreferencesUtils.getSharedPreferences(context), node.getPackageName());
+  }
+
+  /** Whether {@code item} runs one of the user's macros, which every item of an app can list. */
+  public static boolean isMacroItem(ContextMenuItem item) {
+    return item.getGroupId() == CUSTOM_ACTION_GROUP_ID
+        && item.getItemId() >= MACRO_ACTION_ID
+        && item.getItemId() < MACRO_ACTION_ID + MAX_MACRO_ITEMS;
+  }
+
+  private static final int MAX_MACRO_ITEMS = 0x10000;
 
   private static boolean acceptCustomActionMenu(AccessibilityNodeInfoCompat node) {
     List<AccessibilityActionCompat> actions = node.getActionList();
@@ -95,7 +115,29 @@ public class CustomActionMenu implements NodeMenu {
     addOpenInSplitItem(context, node, customItems);
     addPictureInPictureControls(context, node, customItems);
     addScriptItems(context, scriptActions, /* first= */ false, customItems);
+    addMacroItems(context, node, customItems);
     return customItems;
+  }
+
+  /** Adds the user's macros for the node's app, and for all apps, that are shown in Actions. */
+  private static void addMacroItems(
+      Context context, AccessibilityNodeInfoCompat node, List<ContextMenuItem> menu) {
+    List<Macros.Macro> macros = macrosOf(context, node);
+    for (int i = 0; i < macros.size() && i < MAX_MACRO_ITEMS; i++) {
+      String id = macros.get(i).getId();
+      ContextMenuItem item =
+          ContextMenu.createMenuItem(
+              context, CUSTOM_ACTION_GROUP_ID, MACRO_ACTION_ID + i, Menu.NONE, macros.get(i).getName());
+      item.setOnMenuItemClickListener(
+          clicked -> {
+            MacroRunner.run(id, /* sayNotMet= */ true);
+            return true;
+          });
+      item.setDeferredType(DeferredType.WINDOWS_STABLE);
+      item.setSkipRefocusEvents(true);
+      item.setCheckable(false);
+      menu.add(item);
+    }
   }
 
   /** Adds Open in split screen to an app's icon in the launcher. */
