@@ -28,10 +28,12 @@ import android.os.SystemClock
 import android.provider.AlarmClock
 import android.provider.MediaStore
 import android.view.KeyEvent
+import com.google.android.accessibility.talkback.quicksettings.ChoiceState
 import com.google.android.accessibility.talkback.quicksettings.QuickControl
 import com.google.android.accessibility.talkback.quicksettings.QuickControls
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import kotlin.math.roundToInt
 
 /**
  * What macros and scripts do to the device outside the screen: the controls of SandFly's quick
@@ -197,22 +199,41 @@ object DeviceActions {
       }
       QuickControl.Kind.CHOICE -> {
         val choice = controls.choice(control) ?: return done(false, "$name can't be read")
-        val options = choice.options
-        val option =
-          when {
-            text.equals("next", ignoreCase = true) ->
-              options.getOrNull((options.indexOfFirst { it.value == choice.current.value } + 1) % options.size)
-            else ->
-              options.firstOrNull { it.value.toString() == text }
-                ?: options.firstOrNull { it.label.equals(text, ignoreCase = true) }
-                ?: options.firstOrNull { it.label.contains(text, ignoreCase = true) }
-          } ?: return done(false, "$name has ${options.joinToString { it.label }}")
+        val free = controls.freeChoiceValues(control)
+        val value =
+          choiceValue(choice, text, free)
+            ?: return done(
+              false,
+              "$name has ${choice.options.joinToString { it.label }}" +
+                free?.let { ", or any number from ${it.first} to ${it.last}" }.orEmpty(),
+            )
         var failed = false
-        val change = controls.setChoice(control, option.value) { failed = true }
+        val change = controls.setChoice(control, value) { failed = true }
         if (failed) done(false, "$name wasn't changed") else finish(change)
       }
       else -> done(false, "$name can't be set")
     }
+  }
+
+  /**
+   * The value [text] picks for a choice: `next`, an option's value or label, or part of a label.
+   * For a choice that also takes any number in [free], a number such as 50, 50.0 or 50% is that
+   * number, so that 50 isn't taken as part of the label 150%; null when it is outside [free].
+   */
+  internal fun choiceValue(choice: ChoiceState, text: String, free: IntRange?): Int? {
+    val options = choice.options
+    if (text.equals("next", ignoreCase = true)) {
+      return options.getOrNull((options.indexOfFirst { it.value == choice.current.value } + 1) % options.size)?.value
+    }
+    if (free != null) {
+      text.removeSuffix("%").trim().toDoubleOrNull()?.let { number ->
+        return number.takeIf { it.isFinite() }?.roundToInt()?.takeIf { it in free }
+      }
+    }
+    return (options.firstOrNull { it.value.toString() == text }
+        ?: options.firstOrNull { it.label.equals(text, ignoreCase = true) }
+        ?: options.firstOrNull { it.label.contains(text, ignoreCase = true) })
+      ?.value
   }
 
   /** Presses the media key [name] for the app that plays media. Returns false for no such key. */

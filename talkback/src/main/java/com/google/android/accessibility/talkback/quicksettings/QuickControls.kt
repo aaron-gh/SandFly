@@ -639,6 +639,20 @@ class QuickControls(private val context: Context) {
     return Choice(label, ms)
   }
 
+  /**
+   * Values [setChoice] takes for [control] besides its options, for scripts and macros that want a
+   * value Android's own settings don't offer, or null when only the options are taken.
+   */
+  fun freeChoiceValues(control: QuickControl): IntRange? =
+    when (control) {
+      QuickControl.FONT_SIZE -> MIN_FREE_FONT_SIZE..maxFontSize()
+      else -> null
+    }
+
+  private fun maxFontSize(): Int =
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) FONT_SIZES.last()
+    else MAX_FONT_SIZE_BEFORE_14
+
   private fun fontChoice(percent: Int) =
     Choice(NumberFormat.getPercentInstance().format(percent / 100.0), percent)
 
@@ -1007,6 +1021,8 @@ class QuickControls(private val context: Context) {
     /** Font sizes as percentages, as the system's font size slider offers them. */
     private val FONT_SIZES = listOf(85, 100, 115, 130, 150, 180, 200)
     private const val MAX_FONT_SIZE_BEFORE_14 = 130
+    /** Android's settings refuse a font scale below 0.25. */
+    private const val MIN_FREE_FONT_SIZE = 25
     /** Some phones offer a screen timeout of Integer.MAX_VALUE, which means never. */
     private const val NEVER_TIMEOUT_MS = Int.MAX_VALUE / 2
 
