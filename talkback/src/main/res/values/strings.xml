@@ -377,6 +377,14 @@
     <string name="title_pref_language_voices">Voices by language</string>
     <!-- Switch that tells languages written with the same letters apart by their words, such as English and French. [CHAR LIMIT=60] -->
     <string name="title_pref_identify_languages_from_words">Identify languages from words</string>
+    <!-- Spoken when the Switch language automatically command turns the setting on. [CHAR LIMIT=NONE] -->
+    <string name="switch_languages_now_on">Switch language automatically on</string>
+    <!-- Spoken when the Switch language automatically command turns the setting off. [CHAR LIMIT=NONE] -->
+    <string name="switch_languages_now_off">Switch language automatically off</string>
+    <!-- Spoken when the Identify languages from words command turns the setting on. [CHAR LIMIT=NONE] -->
+    <string name="identify_languages_from_words_now_on">Identify languages from words on</string>
+    <!-- Spoken when the Identify languages from words command turns the setting off. [CHAR LIMIT=NONE] -->
+    <string name="identify_languages_from_words_now_off">Identify languages from words off</string>
     <!-- Row on the Voices by language screen that adds a language to the list. [CHAR LIMIT=40] -->
     <string name="title_pref_add_language">Add language</string>
     <!-- Button in a language's dialog on the Voices by language screen that removes the language from the list. [CHAR LIMIT=30] -->

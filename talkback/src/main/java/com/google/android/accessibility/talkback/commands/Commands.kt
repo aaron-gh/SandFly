@@ -731,6 +731,14 @@ object Commands {
           Key.SHOW_LANGUAGES_AVAILABLE,
         )
         gesture(
+          R.string.shortcut_value_toggle_switch_languages,
+          R.string.title_pref_switch_languages,
+        )
+        gesture(
+          R.string.shortcut_value_toggle_identify_languages_from_words,
+          R.string.title_pref_identify_languages_from_words,
+        )
+        gesture(
           R.string.shortcut_value_voice_profiles,
           R.string.shortcut_voice_profiles,
           Key.SHOW_VOICE_PROFILES,
