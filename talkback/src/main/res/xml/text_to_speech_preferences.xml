@@ -16,6 +16,11 @@
         android:defaultValue="@integer/pref_speech_rate_default_int"
         android:key="@string/pref_speech_rate_seekbar_key_int"
         android:title="@string/title_pref_talkback_speech_rate" />
+    <ListPreference
+        android:defaultValue="15"
+        android:key="@string/pref_repeat_slower_by_key"
+        android:summary="%s"
+        android:title="@string/title_pref_repeat_slower_by" />
     <com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference
         android:key="@string/pref_speech_pitch_seekbar_key_int"
         android:persistent="false"

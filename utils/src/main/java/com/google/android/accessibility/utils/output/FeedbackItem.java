@@ -146,6 +146,13 @@ public class FeedbackItem {
 
   private int mUtteranceGroup = SpeechController.UTTERANCE_GROUP_DEFAULT;
 
+  /**
+   * The multiple of the speech rate this item is said at, such as 0.85 for a phrase repeated
+   * slower. Copies of the item don't keep it, so the phrase is said at the usual rate when it is
+   * repeated again.
+   */
+  private float rateMultiple = 1f;
+
   private final @Nullable EventId mEventId;
 
   /**
@@ -374,6 +381,16 @@ public class FeedbackItem {
    */
   public void addFlag(int flag) {
     mFlags |= flag;
+  }
+
+  /** Returns the multiple of the speech rate this item is said at, 1 for the usual rate. */
+  public float getRateMultiple() {
+    return rateMultiple;
+  }
+
+  /** Sets the multiple of the speech rate this item is said at, 1 for the usual rate. */
+  public void setRateMultiple(float rateMultiple) {
+    this.rateMultiple = rateMultiple;
   }
 
   /** @return the {@link UtteranceStartRunnable} associated with this item */

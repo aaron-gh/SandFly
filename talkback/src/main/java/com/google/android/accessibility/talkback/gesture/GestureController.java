@@ -54,6 +54,7 @@ import static com.google.android.accessibility.talkback.Feedback.FocusDirection.
 import static com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.PASSTHROUGH_CONFIRM_DIALOG;
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.COPY_LAST;
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.REPEAT_LAST;
+import static com.google.android.accessibility.talkback.Feedback.Speech.Action.REPEAT_LAST_SLOWER;
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.SPELL_LAST;
 import static com.google.android.accessibility.talkback.Feedback.Speech.Action.TOGGLE_VOICE_FEEDBACK;
 import static com.google.android.accessibility.talkback.Feedback.UniversalSearch.Action.CANCEL_SEARCH;
@@ -1176,6 +1177,11 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId, Feedback.part().setSpeech(Feedback.Speech.create(REPEAT_LAST)));
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_repeat_last_spoken_phrase_slower))) {
+      result =
+          pipeline.returnFeedback(
+              eventId, Feedback.part().setSpeech(Feedback.Speech.create(REPEAT_LAST_SLOWER)));
     } else if (action.equals(service.getString(R.string.shortcut_value_spell_last_spoken_phrase))) {
       result =
           pipeline.returnFeedback(

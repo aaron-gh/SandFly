@@ -635,6 +635,10 @@ object Commands {
           Key.REPEAT_LAST_SPOKEN_PHRASE,
         )
         gesture(
+          R.string.shortcut_value_repeat_last_spoken_phrase_slower,
+          R.string.title_repeat_last_spoken_phrase_slower,
+        )
+        gesture(
           R.string.shortcut_value_spell_last_spoken_phrase,
           R.string.title_spell_last_spoken_phrase,
         )

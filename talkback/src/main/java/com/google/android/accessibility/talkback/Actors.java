@@ -37,6 +37,7 @@ import android.os.Bundle;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.speech.SlowerRepeat;
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity;
 import com.google.android.accessibility.talkback.Feedback.AdjustValue;
 import com.google.android.accessibility.talkback.Feedback.AdjustVolume;
@@ -114,6 +115,7 @@ import com.google.android.accessibility.talkback.focusmanagement.action.Navigati
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
 import com.google.android.accessibility.talkback.preference.base.AutomaticDescriptionsFragment;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.AccessibilityNode;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils.Constants;
 import com.google.android.accessibility.utils.FeatureSupport;
@@ -376,6 +378,11 @@ class Actors {
         case COPY_LAST -> speaker.copyLastUtteranceToClipboard(eventId);
         case REPEAT_SAVED -> speaker.repeatSavedUtterance();
         case REPEAT_LAST -> unused = speaker.repeatLastUtterance();
+        case REPEAT_LAST_SLOWER ->
+            unused =
+                speaker.repeatLastUtteranceSlower(
+                    SlowerRepeat.rateMultiple(
+                        context, SharedPreferencesUtils.getSharedPreferences(context)));
         case SPELL_SAVED -> speaker.spellSavedUtterance();
         case SPELL_LAST -> unused = speaker.spellLastUtterance();
         case PAUSE_OR_RESUME -> {

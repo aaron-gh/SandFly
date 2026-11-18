@@ -11,6 +11,7 @@ import androidx.annotation.StringRes;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.SeekBarPreference;
+import com.google.android.accessibility.talkback.speech.SlowerRepeat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
@@ -81,6 +82,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     setUpSystemTtsSettingsPreference();
     updateSpeechStreamValue();
     setUpEmojiRate();
+    setUpRepeatSlowerBy();
 
     setUpSeekBar(
         R.string.pref_speech_volume_seekbar_key_int,
@@ -202,6 +204,26 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     String value = list.getValue();
     if (value == null || list.findIndexOfValue(value) < 0) {
       list.setValue(EmojiSpeech.RATE_DEFAULT);
+    }
+  }
+
+  /** Lists how much slower Repeat last spoken phrase slower can say the phrase, in percent. */
+  private void setUpRepeatSlowerBy() {
+    if (!(findPreferenceByResId(R.string.pref_repeat_slower_by_key) instanceof ListPreference list)) {
+      return;
+    }
+    NumberFormat percent = NumberFormat.getPercentInstance();
+    CharSequence[] entries = new CharSequence[SlowerRepeat.PERCENTS.length];
+    CharSequence[] values = new CharSequence[SlowerRepeat.PERCENTS.length];
+    for (int i = 0; i < SlowerRepeat.PERCENTS.length; i++) {
+      entries[i] = percent.format(SlowerRepeat.PERCENTS[i] / 100.0);
+      values[i] = Integer.toString(SlowerRepeat.PERCENTS[i]);
+    }
+    list.setEntries(entries);
+    list.setEntryValues(values);
+    String value = list.getValue();
+    if (value == null || list.findIndexOfValue(value) < 0) {
+      list.setValue(Integer.toString(SlowerRepeat.PERCENT_DEFAULT));
     }
   }
 

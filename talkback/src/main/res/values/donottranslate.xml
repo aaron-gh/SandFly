@@ -112,6 +112,8 @@
     </string-array>
     <string name="pref_quick_settings_items_key">pref_quick_settings_items_screen</string>
     <string name="pref_speech_rate_key">pref_rate_volume</string>
+    <!-- How much slower Repeat last spoken phrase slower says the phrase, in percent. -->
+    <string name="pref_repeat_slower_by_key">pref_repeat_slower_by</string>
     <string name="pref_speech_rate_seekbar_key_int">pref_speech_rate_seekbar_key_int</string>
     <string name="pref_speech_pitch_key">pref_pitch_volume</string>
     <string name="pref_speech_volume_key">pref_speech_volume</string>
@@ -1973,6 +1975,7 @@
   <string name="shortcut_value_toggle_scripts" translatable="false">TOGGLE_SCRIPTS</string>
   <string name="shortcut_value_announce_current_title" translatable="false">ANNOUNCE_CURRENT_TITLE</string>
   <string name="shortcut_value_repeat_last_spoken_phrase" translatable="false">REPEAT_LAST_SPOKEN_PHRASE</string>
+  <string name="shortcut_value_repeat_last_spoken_phrase_slower" translatable="false">REPEAT_LAST_SPOKEN_PHRASE_SLOWER</string>
   <string name="shortcut_value_spell_last_spoken_phrase" translatable="false">SPELL_LAST_SPOKEN_PHRASE</string>
   <string name="shortcut_value_speech_history" translatable="false">SPEECH_HISTORY</string>
   <string name="shortcut_value_translate_last_spoken_phrase" translatable="false">TRANSLATE_LAST_SPOKEN_PHRASE</string>

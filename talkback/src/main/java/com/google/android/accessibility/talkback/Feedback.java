@@ -1263,6 +1263,8 @@ public abstract class Feedback {
       COPY_LAST,
       REPEAT_SAVED,
       REPEAT_LAST,
+      /** Repeats the last spoken phrase once, at the rate Repeat slower by sets. */
+      REPEAT_LAST_SLOWER,
       SPELL_SAVED,
       SPELL_LAST,
       PAUSE_OR_RESUME,

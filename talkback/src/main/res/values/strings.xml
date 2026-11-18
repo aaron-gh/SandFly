@@ -312,6 +312,8 @@
     <string name="value_emoji_voice_same">Same as speech</string>
     <!-- Title of the text-to-speech setting for the rate emoji are spoken at, as a percentage of the speech rate. [CHAR LIMIT=40] -->
     <string name="title_pref_emoji_rate">Emoji speech rate</string>
+    <!-- Title of the text-to-speech setting for how much slower the Repeat last spoken phrase slower command says the phrase, as a percentage of the rate it was said at. [CHAR LIMIT=40] -->
+    <string name="title_pref_repeat_slower_by">Repeat slower by</string>
     <!-- Title of the setting, and of the reading control, that chooses which volume speech and sounds play at: accessibility, media, ring or call. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_stream">Speech volume</string>
     <!-- Summary of the Speech volume reading control in the reading controls settings. [CHAR LIMIT=NONE] -->
@@ -2703,6 +2705,8 @@
     <string name="title_spell_last_spoken_phrase">Spell last spoken phrase</string>
     <!-- Label for the menu item that lets the user repeats the last spoken phrase. [CHAR_LIMIT=130] -->
     <string name="title_repeat_last_spoken_phrase">Repeat last spoken phrase</string>
+    <!-- Label for the command that says the last spoken phrase again once, slower than it was said. [CHAR_LIMIT=130] -->
+    <string name="title_repeat_last_spoken_phrase_slower">Repeat last spoken phrase slower</string>
     <!-- Label for the menu item that lets the user open the custom action menu (this is menu items defined by the app [CHAR_LIMIT=40] -->
     <!--
       Source: Possible user requests from voice commands to show possible actions.
