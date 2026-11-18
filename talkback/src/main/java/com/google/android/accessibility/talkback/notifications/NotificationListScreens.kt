@@ -39,11 +39,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.ViewCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
 import androidx.fragment.app.Fragment
 import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceCategory
 import androidx.preference.PreferenceGroup
+import androidx.preference.PreferenceViewHolder
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -58,7 +61,51 @@ import java.util.concurrent.Executors
  * that it shows what a screen opened from it changed.
  */
 /** The kinds of rows [NotificationCodeFragment.rebuild] updates in place. */
-private val PLAIN_ROWS: Set<Class<*>> = setOf(Preference::class.java, CheckBoxPreference::class.java, PreferenceCategory::class.java)
+private val PLAIN_ROWS: Set<Class<*>> =
+  setOf(Preference::class.java, ActionRow::class.java, CheckBoxPreference::class.java, PreferenceCategory::class.java)
+
+/** The accessibility action IDs of an [ActionRow]'s actions, in order. */
+private val ROW_ACTION_IDS =
+  intArrayOf(
+    R.id.accessibility_custom_action_0,
+    R.id.accessibility_custom_action_1,
+    R.id.accessibility_custom_action_2,
+    R.id.accessibility_custom_action_3,
+    R.id.accessibility_custom_action_4,
+    R.id.accessibility_custom_action_5,
+  )
+
+/** An action of an [ActionRow]. */
+class RowAction(val label: CharSequence, val run: () -> Unit)
+
+/** A row whose [actions], up to six, are also its accessibility actions. */
+class ActionRow(context: Context) : Preference(context) {
+  var actions: List<RowAction> = emptyList()
+    set(value) {
+      val relabelled = value.map { it.label.toString() } != field.map { it.label.toString() }
+      field = value
+      if (relabelled) notifyChanged()
+    }
+
+  override fun onBindViewHolder(holder: PreferenceViewHolder) {
+    super.onBindViewHolder(holder)
+    // Rows are reused for other rows, so every bind replaces all the actions.
+    val row = holder.itemView
+    ROW_ACTION_IDS.forEachIndexed { index, id ->
+      val action = actions.getOrNull(index)
+      if (action == null) {
+        ViewCompat.removeAccessibilityAction(row, id)
+      } else {
+        ViewCompat.replaceAccessibilityAction(row, AccessibilityActionCompat(id, action.label), action.label) { _, _ ->
+          // The row's action now: building the screen again replaces the actions without a bind.
+          val current = actions.getOrNull(index) ?: return@replaceAccessibilityAction false
+          current.run()
+          true
+        }
+      }
+    }
+  }
+}
 
 abstract class NotificationCodeFragment(@StringRes private val title: Int) : TalkbackBaseFragment() {
   protected lateinit var prefs: SharedPreferences
@@ -166,6 +213,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     to.extras.putAll(from.extras)
     to.intent = from.intent
     if (to is CheckBoxPreference && from is CheckBoxPreference) to.isChecked = from.isChecked
+    if (to is ActionRow && from is ActionRow) to.actions = from.actions
     if (to is PreferenceGroup && from is PreferenceGroup) sync(to, from, enabled)
   }
 
@@ -178,12 +226,14 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
       addPreference(it)
     }
 
+  /** Adds a row that runs [onClick] when tapped, with [actions] as its accessibility actions. */
   protected fun PreferenceGroup.action(
     title: CharSequence,
     summary: CharSequence? = null,
+    actions: List<RowAction> = emptyList(),
     onClick: () -> Unit,
   ): Preference =
-    Preference(context).also {
+    (if (actions.isEmpty()) Preference(context) else ActionRow(context).also { it.actions = actions }).also {
       it.title = title
       it.summary = summary
       it.isPersistent = false

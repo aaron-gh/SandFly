@@ -23,6 +23,7 @@ import com.google.android.accessibility.talkback.backup.ItemFileLauncher
 import com.google.android.accessibility.talkback.backup.ItemFiles
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.notifications.Replacement
+import com.google.android.accessibility.talkback.notifications.RowAction
 import com.google.android.accessibility.talkback.notifications.TextMatch
 
 /** Speech > Speech dictionary: the entries, each with the app it is used in. */
@@ -107,21 +108,19 @@ abstract class DictionaryFragment(
           )
           .joinToString(", ")
           .ifEmpty { null }
-      screen.action(title, summary) {
-        choose(
-          title,
-          listOf(
-            getString(R.string.notification_edit),
-            getString(R.string.notification_choose_app),
-            getString(R.string.notification_remove),
-          ),
-        ) {
-          when (it) {
-            0 -> edit(entries, index)
-            1 -> chooseApp { app, name -> save(entries.replace(index, entry.copy(app = app, appName = name))) }
-            else -> save(entries.filterIndexed { i, _ -> i != index })
-          }
-        }
+      // The same actions are offered on a tap and as the row's accessibility actions.
+      val actions =
+        listOf(
+          RowAction(getString(R.string.notification_edit)) { edit(entries, index) },
+          RowAction(getString(R.string.notification_choose_app)) {
+            chooseApp { app, name -> save(entries.replace(index, entry.copy(app = app, appName = name))) }
+          },
+          RowAction(getString(R.string.notification_remove)) {
+            save(entries.filterIndexed { i, _ -> i != index })
+          },
+        )
+      screen.action(title, summary, actions) {
+        choose(title, actions.map { it.label }) { actions[it].run() }
       }
     }
   }

@@ -22,11 +22,13 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
 import android.graphics.PixelFormat
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.text.TextUtils
 import android.util.TypedValue
 import android.view.ContextThemeWrapper
+import android.view.Gravity
 import android.view.KeyEvent
 import android.view.View
 import android.view.ViewGroup
@@ -79,6 +81,16 @@ object ClipboardHistoryOverlay {
   private const val PADDING_DP = 16
   private const val MIN_ROW_HEIGHT_DP = 48
   private const val SYSTEM_UI_PACKAGE = "com.android.systemui"
+
+  /** The accessibility action IDs of a row's actions, in order. */
+  private val ROW_ACTION_IDS =
+    intArrayOf(
+      R.id.accessibility_custom_action_0,
+      R.id.accessibility_custom_action_1,
+      R.id.accessibility_custom_action_2,
+      R.id.accessibility_custom_action_3,
+      R.id.accessibility_custom_action_4,
+    )
 
   // Accessibility focus moves into a new window once it is in the window list, and onto a new page
   // once it is laid out.
@@ -455,7 +467,10 @@ object ClipboardHistoryOverlay {
         wrapHeight(),
       )
     }
-    val adapter = rows(context, emptyList())
+    // Each text's actions are also its row's accessibility actions.
+    val adapter = rows(context, emptyList()) { position ->
+      entries.getOrNull(position)?.let { entryActions(context, it) }.orEmpty()
+    }
     val list = ListView(context)
     list.adapter = adapter
     list.setOnItemClickListener { _, _, position, _ ->
@@ -518,15 +533,7 @@ object ClipboardHistoryOverlay {
     clearButton = null
     page.removeAllViews()
     val title = heading(page, shortened(text)).apply { maxLines = MAX_LINES }
-    val actions: List<Pair<Int, () -> Unit>> =
-      listOfNotNull(
-        pasteTarget?.let { android.R.string.paste to { paste(text) } },
-        android.R.string.copy to { done(text) { ClipboardHistory.copy(context, text) } },
-        // As the Add to clipboard command does, with the whole text rather than the shortened one.
-        R.string.shortcut_add_to_clipboard to { done(text) { ClipboardHistory.append(context, text) } },
-        R.string.notification_edit to { openActivity(ClipboardHistoryActivity.MODE_EDIT, text) },
-        R.string.notification_remove to { done(text) { ClipboardHistory.remove(context, text) } },
-      )
+    val actions = entryActions(context, text)
     val list = ListView(context)
     list.adapter = rows(context, actions.map { context.getString(it.first) })
     list.setOnItemClickListener { _, _, position, _ -> actions.getOrNull(position)?.second?.invoke() }
@@ -535,6 +542,17 @@ object ClipboardHistoryOverlay {
     // The first action, as in SandFly's other menus; the title only repeats the text.
     focusLater(PAGE_FOCUS_DELAY_MS) { list.getChildAt(0) ?: title }
   }
+
+  /** What can be done with [text]: each action's title and what it does. */
+  private fun entryActions(context: Context, text: String): List<Pair<Int, () -> Unit>> =
+    listOfNotNull(
+      pasteTarget?.let { android.R.string.paste to { paste(text) } },
+      android.R.string.copy to { done(text) { ClipboardHistory.copy(context, text) } },
+      // As the Add to clipboard command does, with the whole text rather than the shortened one.
+      R.string.shortcut_add_to_clipboard to { done(text) { ClipboardHistory.append(context, text) } },
+      R.string.notification_edit to { openActivity(ClipboardHistoryActivity.MODE_EDIT, text) },
+      R.string.notification_remove to { done(text) { ClipboardHistory.remove(context, text) } },
+    )
 
   /** Runs [action] on [text], then shows the list with focus on the text, if it is still there. */
   private fun done(text: String, action: () -> Unit) {
@@ -628,23 +646,65 @@ object ClipboardHistoryOverlay {
 
   private fun fillHeight() = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f)
 
-  /** Rows of [items], each shown in up to [MAX_LINES] lines and read whole. */
-  private fun rows(context: Context, items: List<String>): ArrayAdapter<String> =
-    object :
-      ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, items.toMutableList()) {
+  /**
+   * Rows of [items], each shown in up to [MAX_LINES] lines and read whole, with the actions that
+   * [actions] gives for its position as its accessibility actions.
+   */
+  private fun rows(
+    context: Context,
+    items: List<String>,
+    actions: ((Int) -> List<Pair<Int, () -> Unit>>)? = null,
+  ): ArrayAdapter<String> =
+    object : ArrayAdapter<String>(context, 0, items.toMutableList()) {
       override fun getView(position: Int, convertView: View?, parent: ViewGroup): View =
-        super.getView(position, convertView, parent).also {
-          (it as? TextView)?.apply {
-            maxLines = MAX_LINES
-            ellipsize = TextUtils.TruncateAt.END
-          }
+        ((convertView as? ActionRowView) ?: ActionRowView(context)).apply {
+          text = getItem(position)
+          rowActions = actions?.invoke(position).orEmpty()
         }
     }
+
+  /**
+   * A list row like [android.R.layout.simple_list_item_1] with [rowActions] as accessibility
+   * actions. The actions are added to the list's own ones, such as the click that taps the row.
+   */
+  private class ActionRowView(context: Context) : TextView(context) {
+    var rowActions: List<Pair<Int, () -> Unit>> = emptyList()
+
+    init {
+      themeAttr(context, android.R.attr.textAppearanceListItem).takeIf { it != 0 }?.let { setTextAppearance(it) }
+      gravity = Gravity.CENTER_VERTICAL
+      minHeight = dp(context, MIN_ROW_HEIGHT_DP)
+      val padding = dp(context, PADDING_DP)
+      setPaddingRelative(padding, 0, padding, 0)
+      maxLines = MAX_LINES
+      ellipsize = TextUtils.TruncateAt.END
+    }
+
+    override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo) {
+      super.onInitializeAccessibilityNodeInfo(info)
+      rowActions.take(ROW_ACTION_IDS.size).forEachIndexed { index, (title, _) ->
+        info.addAction(AccessibilityNodeInfo.AccessibilityAction(ROW_ACTION_IDS[index], context.getString(title)))
+      }
+    }
+
+    override fun performAccessibilityAction(action: Int, arguments: Bundle?): Boolean {
+      val index = ROW_ACTION_IDS.indexOf(action)
+      val rowAction = rowActions.getOrNull(index) ?: return super.performAccessibilityAction(action, arguments)
+      rowAction.second()
+      return true
+    }
+  }
 
   /** [text], cut to [TITLE_LENGTH] characters, as the list shows and reads it. */
   @JvmStatic
   fun shortened(text: String): String =
     if (text.length > TITLE_LENGTH) text.take(TITLE_LENGTH) + "…" else text
+
+  private fun themeAttr(context: Context, attr: Int): Int {
+    val value = TypedValue()
+    context.theme.resolveAttribute(attr, value, true)
+    return value.resourceId
+  }
 
   private fun themeColor(context: Context, attr: Int): Int {
     val value = TypedValue()
