@@ -48,6 +48,15 @@ object ScreenAnnouncementSettings {
   private val BATTERY_VALUES = setOf(BATTERY_OFF, BATTERY_ALWAYS, BATTERY_WHILE_CHARGING)
 
   /**
+   * The battery level in percent below which the battery is also spoken after the time as the
+   * screen turns on, whatever [SCREEN_ON_BATTERY] says, or 0 for never. It is saved as a string
+   * for the list on the settings screen.
+   */
+  const val SCREEN_ON_LOW_BATTERY = "pref_screen_on_low_battery"
+  const val LOW_BATTERY_OFF = 0
+  @JvmField val LOW_BATTERY_LEVELS = listOf(LOW_BATTERY_OFF, 10, 15, 20, 30, 50)
+
+  /**
    * The status items with a switch that can be spoken after the time and the battery as the screen
    * turns on, in the order they are spoken. They are separate from the status gesture's, so that
    * each can say different things. The time has its own older switch.
@@ -104,18 +113,31 @@ object ScreenAnnouncementSettings {
   @JvmStatic
   fun oldBatteryValue(on: Boolean): String = if (on) BATTERY_ALWAYS else BATTERY_OFF
 
+  /** The level chosen for [SCREEN_ON_LOW_BATTERY], or [LOW_BATTERY_OFF]. */
+  @JvmStatic
+  fun lowBatteryLevel(prefs: SharedPreferences): Int =
+    prefs.getString(SCREEN_ON_LOW_BATTERY, null)?.toIntOrNull()?.takeIf {
+      it in LOW_BATTERY_LEVELS
+    } ?: LOW_BATTERY_OFF
+
   /**
    * The status items to speak after the time as the screen turns on. [charging] is whether the
-   * charger is connected, for [BATTERY_WHILE_CHARGING].
+   * charger is connected, for [BATTERY_WHILE_CHARGING], and [batteryLevel] the battery level in
+   * percent, or a negative number when it is unknown, for [SCREEN_ON_LOW_BATTERY].
    */
   @JvmStatic
-  fun screenOnStatusItems(prefs: SharedPreferences, charging: Boolean): List<StatusItem> {
+  @JvmOverloads
+  fun screenOnStatusItems(
+    prefs: SharedPreferences,
+    charging: Boolean,
+    batteryLevel: Int = -1,
+  ): List<StatusItem> {
     val battery =
       when (screenOnBattery(prefs)) {
         BATTERY_ALWAYS -> true
         BATTERY_WHILE_CHARGING -> charging
         else -> false
-      }
+      } || batteryLevel in 0 until lowBatteryLevel(prefs)
     return (if (battery) listOf(StatusItem.BATTERY) else emptyList()) +
       SCREEN_ON_STATUS.filterValues { isOn(prefs, it) }.keys
   }

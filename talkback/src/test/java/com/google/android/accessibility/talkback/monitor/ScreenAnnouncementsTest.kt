@@ -112,6 +112,79 @@ class ScreenAnnouncementsTest {
   }
 
   @Test
+  fun aLowBatteryIsSaidBelowTheChosenLevel() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putString(ScreenAnnouncementSettings.SCREEN_ON_LOW_BATTERY, "20").apply()
+    assertEquals(
+      listOf(StatusItem.BATTERY),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 19),
+    )
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 20),
+    )
+    // An unknown level is never low.
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, -1),
+    )
+  }
+
+  @Test
+  fun aLowBatteryIsSaidOnceWithTheBatteryList() {
+    val prefs = FakeSharedPreferences()
+    prefs
+      .edit()
+      .putString(ScreenAnnouncementSettings.SCREEN_ON_LOW_BATTERY, "20")
+      .putString(
+        ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+        ScreenAnnouncementSettings.BATTERY_WHILE_CHARGING,
+      )
+      .putBoolean("pref_screen_on_wifi", true)
+      .apply()
+    assertEquals(
+      listOf(StatusItem.BATTERY, StatusItem.WIFI),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true, 5),
+    )
+    assertEquals(
+      listOf(StatusItem.BATTERY, StatusItem.WIFI),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 5),
+    )
+    assertEquals(
+      listOf(StatusItem.WIFI),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 50),
+    )
+  }
+
+  @Test
+  fun lowBatteryIsOffByDefaultAndForUnknownValues() {
+    val prefs = FakeSharedPreferences()
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 1),
+    )
+    prefs.edit().putString(ScreenAnnouncementSettings.SCREEN_ON_LOW_BATTERY, "99").apply()
+    assertEquals(
+      ScreenAnnouncementSettings.LOW_BATTERY_OFF,
+      ScreenAnnouncementSettings.lowBatteryLevel(prefs),
+    )
+  }
+
+  @Test
+  fun theLowBatteryListMatchesTheLevels() {
+    val screen = File("src/main/res/xml/screen_announcement_preferences.xml")
+    val values =
+      File("src/main/res/values/donottranslate.xml")
+        .readText()
+        .substringAfter("<string-array name=\"pref_screen_on_low_battery_values\"")
+        .substringBefore("</string-array>")
+        .let { Regex("<item>(\\d+)</item>").findAll(it).map { m -> m.groupValues[1].toInt() } }
+        .toList()
+    assertEquals(ScreenAnnouncementSettings.LOW_BATTERY_LEVELS, values)
+    assertTrue(screen.readText().contains(ScreenAnnouncementSettings.SCREEN_ON_LOW_BATTERY))
+  }
+
+  @Test
   fun theBatteryOffIsNeverSaid() {
     val prefs = FakeSharedPreferences()
     prefs

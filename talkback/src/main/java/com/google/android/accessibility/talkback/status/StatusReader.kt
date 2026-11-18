@@ -107,6 +107,9 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
   /** Whether the charger is connected or the battery is charging. */
   fun isCharging(): Boolean = batteryMonitor.isCharging
 
+  /** The battery level in percent, or [BatteryMonitor.UNKNOWN_LEVEL] before it is known. */
+  fun batteryLevel(): Int = batteryMonitor.level
+
   /** Follows the network type of each active SIM, and stops following removed ones. */
   @RequiresApi(Build.VERSION_CODES.S)
   private fun followDisplayInfo() {

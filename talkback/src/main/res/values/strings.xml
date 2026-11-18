@@ -544,6 +544,18 @@
     <string name="screen_on_battery_always">Always</string>
     <!-- Choice for when the battery level is said when the screen turns on: only while the charger is connected. [CHAR LIMIT=40] -->
     <string name="screen_on_battery_while_charging">Only while charging</string>
+    <!-- Title of the list that also says the battery level when the screen turns on while the level is below the chosen percentage. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_screen_on_low_battery">Low battery</string>
+    <!-- Choice in the Low battery list: say the battery level when the screen turns on while it is below 10 percent. [CHAR LIMIT=40] -->
+    <string name="screen_on_low_battery_10" formatted="false">Below 10%</string>
+    <!-- Choice in the Low battery list: say the battery level when the screen turns on while it is below 15 percent. [CHAR LIMIT=40] -->
+    <string name="screen_on_low_battery_15" formatted="false">Below 15%</string>
+    <!-- Choice in the Low battery list: say the battery level when the screen turns on while it is below 20 percent. [CHAR LIMIT=40] -->
+    <string name="screen_on_low_battery_20" formatted="false">Below 20%</string>
+    <!-- Choice in the Low battery list: say the battery level when the screen turns on while it is below 30 percent. [CHAR LIMIT=40] -->
+    <string name="screen_on_low_battery_30" formatted="false">Below 30%</string>
+    <!-- Choice in the Low battery list: say the battery level when the screen turns on while it is below 50 percent. [CHAR LIMIT=40] -->
+    <string name="screen_on_low_battery_50" formatted="false">Below 50%</string>
     <!-- Switch to say how many notifications there are, after the time, when the screen turns on. [CHAR LIMIT=NONE] -->
     <string name="title_pref_screen_on_notification_count">Number of notifications</string>
     <!-- Said after the time when the screen turns on: how many notifications there are. Not said when there are none. [CHAR LIMIT=NONE] -->
