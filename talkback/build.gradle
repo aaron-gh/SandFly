@@ -94,6 +94,11 @@ android {
     }
 }
 
+// The Robolectric tests run in one JVM, and Gradle's default 512 MB heap runs out near the end.
+tasks.withType(Test).configureEach {
+    maxHeapSize = "2g"
+}
+
 // Watches have only the full build.
 androidComponents {
     beforeVariants(selector().all()) { variant ->
