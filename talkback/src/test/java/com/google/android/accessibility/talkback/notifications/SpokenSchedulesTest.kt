@@ -102,7 +102,7 @@ class SpokenSchedulesTest {
       .remove(SpokenSchedules.KEY_CLOCK_LAST_INTERVAL)
       .putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "15")
       .commit()
-    val schedules = SpokenSchedules(context, { _, _ -> }, {})
+    val schedules = SpokenSchedules(context, {}, {})
     schedules.start()
     prefs.edit().putString(SpokenSchedules.KEY_CLOCK_INTERVAL, "0").commit()
     schedules.stop()
