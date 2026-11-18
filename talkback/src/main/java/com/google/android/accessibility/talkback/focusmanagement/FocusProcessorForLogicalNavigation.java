@@ -2648,13 +2648,20 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     // A plain swipe to an item that is at least partly on screen speaks it first and brings the
-    // rest of it on screen after, as reading what may need scrolling waits for the app.
+    // rest of it on screen after, as reading what may need scrolling waits for the app. An item
+    // with text off screen, such as a row whose title is cut off at the list's edge, is described
+    // without that text until the scroll, so it is scrolled first and spoken from the app's focus
+    // event, which then comes after the scroll.
     boolean revealAfterFocus =
         target != null
             && navigationAction.shouldScroll
             && navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
             && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
             && target.isVisibleToUser();
+    if (revealAfterFocus && hasTextOffScreen(target)) {
+      LogUtils.d(TAG, "Scrolling before focusing: text in the target is off screen.");
+      revealAfterFocus = false;
+    }
     if ((target != null) && navigationAction.shouldScroll && !revealAfterFocus) {
       boolean scrolled =
           ensureOnScreen(
@@ -2729,6 +2736,47 @@ public class FocusProcessorForLogicalNavigation {
     logEdge(pivot, navigationAction);
     announceNativeElement(logicalDirection, navigationAction.targetType, eventId);
     return false;
+  }
+
+  /** Most descendants of a swipe's target that {@link #hasTextOffScreen} looks at. */
+  private static final int MAX_OFF_SCREEN_TEXT_NODES = 32;
+
+  /**
+   * Whether {@code target}, which has no description of its own and is read by its contents, has
+   * a descendant with text that isn't visible to the user, such as the title of a list row cut off
+   * at the list's edge or behind its padding. Only the first {@link #MAX_OFF_SCREEN_TEXT_NODES}
+   * descendants are looked at.
+   */
+  @VisibleForTesting
+  static boolean hasTextOffScreen(AccessibilityNodeInfoCompat target) {
+    if (hasText(target.getContentDescription())) {
+      return false;
+    }
+    ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
+    queue.add(target);
+    int checked = 0;
+    while (!queue.isEmpty()) {
+      AccessibilityNodeInfoCompat node = queue.poll();
+      for (int i = 0; i < node.getChildCount(); i++) {
+        if (++checked > MAX_OFF_SCREEN_TEXT_NODES) {
+          return false;
+        }
+        AccessibilityNodeInfoCompat child = node.getChild(i);
+        if (child == null) {
+          continue;
+        }
+        if (!child.isVisibleToUser()
+            && (hasText(child.getText()) || hasText(child.getContentDescription()))) {
+          return true;
+        }
+        queue.add(child);
+      }
+    }
+    return false;
+  }
+
+  private static boolean hasText(@Nullable CharSequence text) {
+    return text != null && TextUtils.getTrimmedLength(text) > 0;
   }
 
   /**
