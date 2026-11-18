@@ -155,8 +155,48 @@ object ItemInspector {
    * [node] and the items like it around it, such as the other rows of its list, with the items in
    * each. The script builder finds what they have in common, to name them all in one rule.
    */
-  fun sample(node: AccessibilityNodeInfoCompat): JSONObject =
-    JSONObject().put("item", sampleItem(node)).put("similar", JSONArray(similarItems(node).map(::sampleItem)))
+  fun sample(node: AccessibilityNodeInfoCompat): JSONObject {
+    val sample = JSONObject().put("item", sampleItem(node)).put("similar", JSONArray(similarItems(node).map(::sampleItem)))
+    // The row of a list the item is in, such as a comment holding its author, text and buttons:
+    // with the rows beside it, those of its class to compare with and the others, such as the rows
+    // a post is split into, which a rule for the row mustn't name.
+    rowOf(node)?.let { wrapper ->
+      val parent = wrapper.parent
+      // A row is often wrapped in items holding only it; the innermost of them is the row.
+      val row = unwrapped(wrapper)
+      if (row == node) return@let
+      val siblings = parent?.childrenInReadingOrder()?.filter { it.isVisibleToUser && it != wrapper }?.map(::unwrapped)?.toList().orEmpty()
+      val (alike, others) = siblings.partition { it.className == row.className }
+      sample.put(
+        "row",
+        JSONObject()
+          .put("item", sampleItem(row))
+          .put("similar", JSONArray(alike.take(MAX_SIMILAR).map(::sampleItem)))
+          .put("others", JSONArray(others.take(MAX_SIMILAR).map { sampleItem(it, OTHERS_DEPTH) })),
+      )
+    }
+    return sample
+  }
+
+  /** [node], or the innermost item in it that holds only the next, as long as none has a text. */
+  private fun unwrapped(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat {
+    var item = node
+    repeat(MAX_ROW_LEVELS) {
+      if (!item.text.isNullOrEmpty() || !item.contentDescription.isNullOrEmpty()) return item
+      val shown = item.childrenInReadingOrder().filter { it.isVisibleToUser }.take(2).toList()
+      item = shown.singleOrNull() ?: return item
+    }
+    return item
+  }
+
+  /** The item around [node], or [node], that is a row of a list, or null when it isn't in one. */
+  private fun rowOf(node: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? =
+    (sequenceOf(node) + node.ancestors().take(MAX_ROW_LEVELS)).firstOrNull { item -> item.parent?.let(::isList) == true }
+
+  private fun isList(node: AccessibilityNodeInfoCompat): Boolean {
+    val className = node.className?.toString().orEmpty()
+    return node.collectionInfo != null || LIST_CLASSES.any { className.endsWith(it) }
+  }
 
   /**
    * The items in the same place as [node] under its parent, or else under an item further up: the
@@ -200,6 +240,10 @@ object ItemInspector {
         putOpt("text", item.text?.toString()?.trim()?.takeIf { it.isNotEmpty() && !item.isPassword })
         putOpt("description", item.contentDescription?.toString()?.trim()?.ifEmpty { null })
         if (item.isClickable) put("clickable", true)
+        if (item.isLongClickable) put("longClickable", true)
+        if (AccessibilityNodeInfoUtils.isHeading(item)) put("heading", true)
+        // Actions the app named, such as "Long-press for more reactions" on a Like button.
+        putList("actions", item.actionList.mapNotNull { action -> action.label?.toString()?.let { JSONObject().put("id", action.id).put("label", it) } })
         if (depth < maxDepth) {
           val children =
             item.childrenInReadingOrder().filter { it.isVisibleToUser }.takeWhile { count < MAX_SAMPLE_ITEMS }
@@ -385,6 +429,11 @@ object ItemInspector {
   /** How deep, and how many items, of each item are kept. */
   private const val MAX_SAMPLE_DEPTH = 5
   private const val MAX_SAMPLE_ITEMS = 40
+  /** How far up from the inspected item a list row is looked for. */
+  private const val MAX_ROW_LEVELS = 10
+  /** How deep the rows beside a row that aren't like it are kept. */
+  private const val OTHERS_DEPTH = 3
+  private val LIST_CLASSES = listOf("RecyclerView", "ListView", "GridView")
   private const val MAX_DEPTH = 60
   private const val MAX_ITEMS = 2000
   /** The most items in the inspected item whose texts Inspect focused item reads. */

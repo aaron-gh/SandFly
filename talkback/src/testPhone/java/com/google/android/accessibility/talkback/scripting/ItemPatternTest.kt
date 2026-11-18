@@ -220,6 +220,28 @@ class ItemInspectorSampleTest {
   }
 
   @Test
+  fun sample_ofAnItemInAListRow_hasTheRowItIsIn() {
+    val list = node("androidx.recyclerview.widget.RecyclerView")
+    val title = node("android.view.ViewGroup", text = "Post title")
+    org.robolectric.Shadows.shadowOf(list).addChild(title)
+    for (name in listOf("Andria Jones", "Bob Smith")) {
+      val wrapper = node("android.view.ViewGroup")
+      val card = node("android.view.ViewGroup", clickable = true)
+      org.robolectric.Shadows.shadowOf(card).addChild(node("android.widget.Button", description = name, clickable = true))
+      org.robolectric.Shadows.shadowOf(card).addChild(node("android.widget.Button", description = "Reply to ${name.substringBefore(' ')}'s comment", clickable = true))
+      org.robolectric.Shadows.shadowOf(wrapper).addChild(card)
+      org.robolectric.Shadows.shadowOf(list).addChild(wrapper)
+    }
+    // The author's name in the first comment.
+    val inspected = androidx.core.view.accessibility.AccessibilityNodeInfoCompat.wrap(list.getChild(1).getChild(0).getChild(0))
+    val row = ItemPattern.rowSample(ItemInspector.sample(inspected))!!
+    assertEquals(true, row.getJSONObject("item").getBoolean("clickable"))
+    // The post's title row is of the same class, but built differently: only the other comment is like it.
+    assertEquals(1, ItemPattern.similarCount(row))
+    assertEquals(listOf("Reply"), ItemPattern.buttons(row).map { it.title })
+  }
+
+  @Test
   fun sample_hasTheRowsLikeTheInspectedOne() {
     val list = node("androidx.recyclerview.widget.RecyclerView")
     row(list, "Natalie Anderson")
@@ -254,4 +276,96 @@ class ItemInspectorSampleTest {
 
 private object RuntimeEnvironmentHolder {
   val context: android.content.Context get() = org.robolectric.RuntimeEnvironment.getApplication()
+}
+
+/** Comments on a Facebook post, from the screen tree the user sent. */
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [35])
+class FacebookCommentsTest {
+  private fun n(cls: String, text: String? = null, description: String? = null, clickable: Boolean = false, longClickable: Boolean = false, actions: List<Pair<Int, String>> = emptyList(), vararg children: JSONObject): JSONObject =
+    JSONObject()
+      .put("class", "android.view.$cls")
+      .putOpt("text", text)
+      .putOpt("description", description)
+      .apply { if (clickable) put("clickable", true) }
+      .apply { if (longClickable) put("longClickable", true) }
+      .apply { if (actions.isNotEmpty()) put("actions", JSONArray(actions.map { JSONObject().put("id", it.first).put("label", it.second) })) }
+      .apply { if (children.isNotEmpty()) put("children", JSONArray(children.toList())) }
+
+  // The comment itself, inside the list row that holds only it, as the sample keeps it.
+  private fun comment(first: String, last: String, body: String, time: String, short: String): JSONObject =
+      n("ViewGroup", clickable = true, longClickable = true, children = arrayOf(
+        n("ViewGroup", children = arrayOf(n("ViewGroup", children = arrayOf(
+          n("Button", text = "$first $last", description = "$first $last", clickable = true),
+          n("ViewGroup", clickable = true, longClickable = true, children = arrayOf(n("Button", text = body, description = body))),
+        )))),
+        n("ViewGroup", children = arrayOf(
+          n("ViewGroup", text = time, description = time, children = arrayOf(n("Button", text = short, description = time, clickable = true))),
+          n("Button", description = "Like $first's comment button. Double-tap and hold to show reaction tray.", clickable = true, longClickable = true, actions = listOf(32 to "Long-press for more reactions")),
+          n("Button", text = "Reply to $first's comment", description = "Reply to $first's comment", clickable = true),
+        )),
+      ))
+
+  // The rows a post is split into, beside its comments.
+  private val postRows =
+    JSONArray()
+      .put(n("ViewGroup", text = "Great & Little Broughton Crack", description = "Great & Little Broughton Crack", children = arrayOf(n("Button", text = "Great & Little Broughton Crack", clickable = true))))
+      .put(n("Button", description = "More options for Amanda McKendrey's post", clickable = true))
+      .put(n("ViewGroup", children = arrayOf(n("ViewGroup", children = arrayOf(n("ViewGroup", children = arrayOf(
+        n("Button", description = "Like button. Double-tap and hold to react to the comment.", clickable = true, longClickable = true),
+        n("Button", text = "Comment, 1 comment", description = "Comment, 1 comment", clickable = true),
+        n("Button", description = "Share button. Double-tap to share the post.", clickable = true),
+        n("Button", description = "Save post", clickable = true),
+      )))))))
+
+  private val sample =
+    JSONObject()
+      .put("item", comment("Andria", "Jones", "It’s a three way light system, so you can get in, and out of the village 🤩", "6 hours", "6h"))
+      .put("similar", JSONArray().put(comment("Bob", "Smith", "Thanks", "2 hours", "2h")).put(comment("Cara", "Lee", "Same here", "1 day", "1d")))
+      .put("others", postRows)
+
+  @Test
+  fun commentRows_areNamedByWhatOnlyCommentsHave() {
+    val query = ItemPattern.likeQuery(sample)!!
+    // Comments can be clicked and the rows of the post can't, and a post's Like button starts with
+    // "Like" too: neither those rows nor the groups inside a comment are named.
+    assertEquals(true, query.getBoolean("clickable"))
+    assertEquals(3, ItemPattern.count(query, sample))
+    for (i in 0 until postRows.length()) assertEquals(false, ItemPattern.matches(query, postRows.getJSONObject(i)))
+    val inside = sample.getJSONObject("item").getJSONArray("children")
+    for (i in 0 until inside.length()) assertEquals(false, ItemPattern.matches(query, inside.getJSONObject(i)))
+  }
+
+  @Test
+  fun commentButtons_areTitledByWhatTheyDo() {
+    val buttons = ItemPattern.buttons(sample)
+    assertEquals(listOf("Like", "Reply"), buttons.map { it.title })
+    assertEquals("Long-press for more reactions", buttons[0].longPressTitle)
+  }
+
+  @Test
+  fun aGroupedComment_readsItsAuthorTextAndTime() {
+    val item = sample.getJSONObject("item")
+    val edits = JSONArray()
+    for (button in ItemPattern.buttons(sample)) {
+      edits.put(JSONObject().put("op", "removeParts").put("find", button.target.getString("matches")).put("regex", true))
+    }
+    val text = ItemPattern.parts(item, grouped = true).joinToString(", ")
+    val read = SpeechEdits.apply(text, edits) as SpeechEdits.Result.Speak
+    assertEquals("Andria Jones, It’s a three way light system, so you can get in, and out of the village 🤩, 6 hours", read.text)
+  }
+
+  @Test
+  fun titles_dropHintsNamesAndButton() {
+    assertEquals("Like", ItemPattern.titleOf("Like"))
+    assertEquals("Share", ItemPattern.titleOf("Share button. Double-tap to share the post."))
+    assertEquals("Reply", ItemPattern.titleOf("Reply to"))
+    assertEquals("Save post", ItemPattern.titleOf("Save post"))
+  }
+
+  @Test
+  fun aloneOnScreen_theNameAndTimeAreNotActions() {
+    val alone = JSONObject().put("item", sample.getJSONObject("item"))
+    assertEquals(listOf("Like", "Reply"), ItemPattern.buttons(alone).map { it.title })
+  }
 }
