@@ -124,6 +124,8 @@ object NotificationReader {
   private var schedules: SpokenSchedules? = null
   /** The voices of the voice profiles that notifications are read with, by profile ID. */
   private val voices = HashMap<String, NotificationVoice>()
+  /** The voice profile the last summary was read with, empty for SandFly's own voice. */
+  private var summaryVoiceKey = ""
   private var isSandFlySpeaking: () -> Boolean = { false }
   private var isSilenced: (Boolean, Boolean) -> Boolean = { _, _ -> false }
   private var isTouching: () -> Boolean = { false }
@@ -665,6 +667,7 @@ object NotificationReader {
   @MainThread
   fun readSummary(): Boolean {
     val context = context ?: return false
+    summaryVoiceKey = settings(context).voiceProfile
     SpokenSchedules.readSummary(context) { text, interrupt -> announce(text, interrupt) }
     return true
   }
@@ -794,10 +797,24 @@ object NotificationReader {
   @JvmStatic
   @MainThread
   fun onUserAction() {
+    stopSummaryInVoice()
     val handed = (listOfNotNull(reading) + queued).filter { it.voiceKey.isNotEmpty() }
     if (handed.isEmpty()) return
     LogUtils.d(TAG, "User action; stopping %d notifications in voice profiles", handed.size)
     handed.forEach { stopOne(it) }
+  }
+
+  /**
+   * Stops a summary being read in a voice profile's engine. The summary isn't a readout, and the
+   * engine isn't SandFly's speech, so nothing else stops it.
+   */
+  private fun stopSummaryInVoice() {
+    val voice = voices[summaryVoiceKey]?.takeIf { it.isBusy } ?: return
+    LogUtils.d(TAG, "User action; stopping the summary in a voice profile")
+    SpokenSchedules.cancelSummary()
+    handler.removeCallbacksAndMessages(QUIET_TOKEN)
+    voice.stop()
+    summaryVoiceKey = ""
   }
 
   /** Stops [readout] alone, waiting in speech or being read, and goes on with the others. */
