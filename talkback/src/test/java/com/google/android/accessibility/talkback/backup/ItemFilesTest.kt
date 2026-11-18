@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.backup
 import android.content.Context
 import android.view.ContextThemeWrapper
 import android.view.KeyEvent
+import com.google.android.accessibility.braille.interfaces.CustomBrailleCharacters
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.voicecommands.CustomVoiceCommands
 import com.google.android.accessibility.talkback.gesture.AppGestures
@@ -55,6 +56,7 @@ class ItemFilesTest {
     FormFactorUtils.initialize(context)
     SettingsProfiles.reset()
     prefs.edit().clear().commit()
+    CustomBrailleCharacters.prefs(context).edit().clear().commit()
   }
 
   @After
@@ -195,6 +197,33 @@ class ItemFilesTest {
     assertTrue(entries[1].replacement.regex)
     // The symbol dictionary has no regular expressions.
     assertFalse(SymbolDictionary.read(prefs).single().replacement.regex)
+  }
+
+  @Test
+  fun brailleCharactersReplaceTheSameTextInTheSameTableAndExport() {
+    val braillePrefs = CustomBrailleCharacters.prefs(context)
+    CustomBrailleCharacters.write(
+      braillePrefs,
+      listOf(CustomBrailleCharacters.Entry(")", "2356", "POLISH"), CustomBrailleCharacters.Entry(")", "5-345", "UEB")),
+    )
+    val result =
+      imported(
+        """{"brailleCharacters":[{"text":")","cells":"56-2356","table":"POLISH"},
+            {"text":"itd.","cells":"1256 1256","table":"POLISH"},{"text":"x","cells":"9","table":"POLISH"},
+            {"text":"y","cells":"1","table":"../x"}]}"""
+      )
+    assertEquals(2, result.counts[ItemFiles.Kind.BRAILLE_CHARACTERS])
+    assertEquals(2, result.problems.size)
+    val entries = CustomBrailleCharacters.read(braillePrefs)
+    assertEquals(
+      listOf(")" to "56-2356", ")" to "5-345", "itd." to "1256-1256"),
+      entries.map { it.text to it.cells },
+    )
+    // An exported file imports as it was.
+    val file = ItemFiles.exportBrailleCharacters(context)
+    CustomBrailleCharacters.write(braillePrefs, emptyList())
+    assertEquals(3, imported(file).counts[ItemFiles.Kind.BRAILLE_CHARACTERS])
+    assertEquals(entries, CustomBrailleCharacters.read(braillePrefs))
   }
 
   @Test

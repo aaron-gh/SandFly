@@ -17,13 +17,18 @@
 package com.google.android.accessibility.braille.translate.liblouis;
 
 import android.content.Context;
+import androidx.annotation.Nullable;
 import com.google.android.accessibility.braille.interfaces.BrailleWord;
 
 /** LibLouis Unified English Braille grade 1 translator. */
 public class LibLouisTranslatorUeb1 extends LibLouisTranslator {
 
   public LibLouisTranslatorUeb1(Context context) {
-    super(context, "en-ueb-g1.ctb");
+    this(context, /* code= */ null);
+  }
+
+  public LibLouisTranslatorUeb1(Context context, @Nullable String code) {
+    super(context, code, "en-ueb-g1.ctb");
     fillBypassMap();
   }
 

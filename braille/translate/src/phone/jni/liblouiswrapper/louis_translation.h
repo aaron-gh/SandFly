@@ -40,6 +40,8 @@ JNIEXPORT jboolean JNICALL JNI_METHOD(setTablesDirNative)(JNIEnv* env,
                                                           jclass clazz,
                                                           jstring pat);
 
+JNIEXPORT void JNICALL JNI_METHOD(freeTablesNative)(JNIEnv* env, jclass clazz);
+
 JNIEXPORT void JNICALL JNI_METHOD(classInitNative)(JNIEnv* env, jclass clazz);
 }  // extern "C"
 #endif  // JAVA_COM_GOOGLE_ANDROID_ACCESSIBILITY_BRAILLE_TRANSLATE_LIBLOUIS_JNI_LIBLOUISWRAPPER_LOUIS_TRANSLATION_H_

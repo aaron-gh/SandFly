@@ -1027,6 +1027,12 @@ Hold dots 4, 5, and 6 and swipe right to search for an emoji. Type words of its 
 
 The braille languages include Mongolian, uncontracted and contracted, from the liblouis tables.
 
+### Custom braille characters
+
+In braille keyboard settings, **Custom braille characters** lists characters or text typed with braille cells of your choice, each for one braille table. Choose **Add character** and enter the character or text, the dots of each cell with cells separated by hyphens, such as 2356 or 456-2356, and the braille table. An entry takes precedence over the table's own rules on the braille keyboard and on a braille display, both for typing and for the braille shown. Entering a character again for the same table replaces the earlier entry. **Export to file** and **Import from file** save and read the list as an [item file](docs/reference/item-files.md).
+
+An entry is for one table, as the same cells stand for different characters in different tables. Rules of the table that cover more cells, such as contractions, and rules for characters within numbers, can still take precedence.
+
 ### Typing sounds
 
 In braille keyboard settings, **Typing sounds** plays a sound for each character, and a sound each for space, delete, and new line. It's off by default. The sounds are SandFly's, played at SandFly's sound volume, and a [sound theme](themes.md) can replace them with its own.

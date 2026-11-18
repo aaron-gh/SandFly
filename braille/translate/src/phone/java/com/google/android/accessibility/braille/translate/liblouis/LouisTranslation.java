@@ -36,6 +36,13 @@ public class LouisTranslation {
   private static final String LOG_TAG = LouisTranslation.class.getSimpleName();
 
   /**
+   * Held during each call into liblouis, which keeps its compiled tables and buffers in globals, so
+   * that the braille keyboard and a braille display don't translate at once, and tables are freed
+   * only between translations.
+   */
+  static final Object LOCK = new Object();
+
+  /**
    * Translation mode passed to liblouis.
    * REFERTO
    */
@@ -65,12 +72,18 @@ public class LouisTranslation {
    * location in the file system under which the liblouis translation tables can be found.
    */
   public static boolean setTablesDir(String path) {
-    return setTablesDirNative(path);
+    synchronized (LOCK) {
+      return setTablesDirNative(path);
+    }
   }
 
   /** Compiles the given table and makes sure it is valid. */
   public static boolean checkTable(String tableName) {
-    if (!checkTableNative(tableName)) {
+    boolean valid;
+    synchronized (LOCK) {
+      valid = checkTableNative(tableName);
+    }
+    if (!valid) {
       Log.w(LOG_TAG, "Table not found or invalid: " + tableName);
       return false;
     }
@@ -80,7 +93,10 @@ public class LouisTranslation {
   /** Translates a string into the corresponding dot patterns. */
   public static TranslationResult translate(
       CharSequence text, String tableName, int cursorPosition) {
-    TranslationResult result = translateNative(text, tableName, cursorPosition);
+    TranslationResult result;
+    synchronized (LOCK) {
+      result = translateNative(text, tableName, cursorPosition);
+    }
     if (result == null) {
       result = TranslationResult.createUnknown(text, cursorPosition);
     }
@@ -100,7 +116,16 @@ public class LouisTranslation {
 
   /** Back-translates a byte array of dot patterns into the corresponding String. */
   public static String backTranslate(byte[] cells, String tableName, int mode) {
-    return nullToEmpty(backTranslateNative(cells, tableName, mode));
+    synchronized (LOCK) {
+      return nullToEmpty(backTranslateNative(cells, tableName, mode));
+    }
+  }
+
+  /** Frees the compiled tables, so that tables changed on disk are read again when next used. */
+  static void freeTables() {
+    synchronized (LOCK) {
+      freeTablesNative();
+    }
   }
 
   // Native methods.
@@ -113,6 +138,8 @@ public class LouisTranslation {
   private static native boolean checkTableNative(String tableName);
 
   private static native boolean setTablesDirNative(String path);
+
+  private static native void freeTablesNative();
 
   private static native void classInitNative();
 

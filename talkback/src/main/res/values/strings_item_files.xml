@@ -85,6 +85,11 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> braille dictionary entry</item>
         <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> braille dictionary entries</item>
     </plurals>
+    <!-- How many custom braille characters an import added or replaced. [CHAR_LIMIT=NONE] -->
+    <plurals name="item_file_count_braille_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> custom braille character</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> custom braille characters</item>
+    </plurals>
     <!-- How many custom voice commands an import added or replaced. [CHAR_LIMIT=NONE] -->
     <plurals name="item_file_count_voice_commands">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> custom voice command</item>

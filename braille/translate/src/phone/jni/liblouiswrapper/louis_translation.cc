@@ -115,6 +115,8 @@ JNIEXPORT jobject JNICALL JNI_METHOD(translateNative)(JNIEnv* env, jclass clazz,
         input_pos.data(), cursor_pos_pointer, dotsIO);
     if (result == 0) {
       LOGE("Translation failed.");
+      env->ReleaseStringChars(text, text_utf16);
+      env->ReleaseStringUTFChars(tableName, table_name_utf8);
       return nullptr;
     }
 
@@ -131,6 +133,8 @@ JNIEXPORT jobject JNICALL JNI_METHOD(translateNative)(JNIEnv* env, jclass clazz,
       break;
     }
   }
+  env->ReleaseStringChars(text, text_utf16);
+  env->ReleaseStringUTFChars(tableName, table_name_utf8);
   jbyteArray cells_array = env->NewByteArray(out_used);
   if (cells_array == nullptr) {
     return nullptr;
@@ -218,6 +222,7 @@ JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
                                          /* spacing= */ nullptr, mode);
     if (result == 0) {
       LOGE("Back translation failed.");
+      env->ReleaseStringUTFChars(tableName, table_name_utf8);
       return nullptr;
     }
 
@@ -237,7 +242,15 @@ JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
       break;
     }
   }
+  env->ReleaseStringUTFChars(tableName, table_name_utf8);
   return env->NewString(out_buf.data(), out_used);
+}
+
+// Frees the compiled tables, so that tables changed on disk are compiled again
+// when next used.
+JNIEXPORT void JNICALL JNI_METHOD(freeTablesNative)(JNIEnv* env,
+                                                    jclass clazz) {
+  lou_free();
 }
 
 JNIEXPORT jboolean JNICALL JNI_METHOD(setTablesDirNative)(JNIEnv* env,

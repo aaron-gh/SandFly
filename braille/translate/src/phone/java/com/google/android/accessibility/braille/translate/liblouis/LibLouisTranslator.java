@@ -35,11 +35,27 @@ public class LibLouisTranslator implements BrailleTranslator {
   private final Map<BrailleWord, String> bypassMap;
   private final Map<BrailleCharacter, String> commutativityMap;
   private final String tableName;
+
+  /** The braille table this translator is part of, whose custom characters it uses, or null. */
+  @Nullable private final String code;
+
   private final LiblouisLoader loader;
 
   public LibLouisTranslator(Context context, String tableName) {
+    this(context, /* code= */ null, tableName);
+  }
+
+  /**
+   * A translator with [tableName], in the braille table [code], such as "POLISH", whose custom
+   * braille characters take precedence over the table's rules.
+   */
+  public LibLouisTranslator(Context context, @Nullable String code, String tableName) {
     this.tableName = tableName;
+    this.code = code;
     loader = LiblouisLoader.getInstance(context);
+    if (code != null) {
+      CustomCharacterTables.start(context);
+    }
     bypassMap = new LinkedHashMap<>();
     commutativityMap = new LinkedHashMap<>();
   }
@@ -94,7 +110,8 @@ public class LibLouisTranslator implements BrailleTranslator {
     if (!loader.isExtracted()) {
       return TranslationResult.createUnknown(text, cursorPosition);
     }
-    return LouisTranslation.translate(text, tableName, cursorPosition);
+    return LouisTranslation.translate(
+        text, CustomCharacterTables.tableList(code, tableName), cursorPosition);
   }
 
   @Override
@@ -105,16 +122,19 @@ public class LibLouisTranslator implements BrailleTranslator {
     if (!(o instanceof LibLouisTranslator libLouisTranslator)) {
       return false;
     }
-    return tableName.equals(libLouisTranslator.tableName);
+    return tableName.equals(libLouisTranslator.tableName)
+        && Objects.equals(code, libLouisTranslator.code);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(tableName);
+    return Objects.hash(tableName, code);
   }
 
   private String translateToPrintInternal(BrailleWord brailleWord, boolean partial) {
-    String bypassValueOrNull = getBypassMap().get(brailleWord);
+    // Custom characters take precedence over the words this translator corrects.
+    boolean custom = CustomCharacterTables.containsCustomCells(code, brailleWord);
+    String bypassValueOrNull = custom ? null : getBypassMap().get(brailleWord);
     if (bypassValueOrNull != null) {
       return bypassValueOrNull;
     }
@@ -132,14 +152,26 @@ public class LibLouisTranslator implements BrailleTranslator {
     if (partial) {
       flags |= TranslationMode.PARTIAL_TRANSLATE;
     }
-    return LouisTranslation.backTranslate(brailleWord.toByteArray(), tableName, flags);
+    return LouisTranslation.backTranslate(
+        brailleWord.toByteArray(), CustomCharacterTables.tableList(code, tableName), flags);
   }
 
   private String transformUsingCommutativityMap(BrailleWord brailleWord, String translationRaw) {
-    if (!brailleWord.containsAny(commutativityMap.keySet())) {
+    Map<BrailleCharacter, String> replacements = commutativityMap;
+    if (!brailleWord.containsAny(replacements.keySet())) {
       return translationRaw;
     }
-    List<BrailleWord> tokens = brailleWord.tokenize(commutativityMap.keySet());
+    if (CustomCharacterTables.containsCustomCells(code, brailleWord)) {
+      // A cell that is a custom character keeps the custom character's text.
+      replacements = new LinkedHashMap<>(commutativityMap);
+      replacements
+          .keySet()
+          .removeIf(cell -> CustomCharacterTables.isCustomCells(code, new BrailleWord(cell)));
+      if (!brailleWord.containsAny(replacements.keySet())) {
+        return translationRaw;
+      }
+    }
+    List<BrailleWord> tokens = brailleWord.tokenize(replacements.keySet());
     String translateThenConcatenate =
         tokens.stream()
             .map(brailleWord1 -> translateToPrintDirect(brailleWord1, false))
@@ -153,8 +185,8 @@ public class LibLouisTranslator implements BrailleTranslator {
     StringBuilder translationSB = new StringBuilder();
     for (BrailleWord token : tokens) {
       String tokenTranslation;
-      if (token.size() == 1 && commutativityMap.containsKey(token.get(0))) {
-        tokenTranslation = commutativityMap.get(token.get(0));
+      if (token.size() == 1 && replacements.containsKey(token.get(0))) {
+        tokenTranslation = replacements.get(token.get(0));
       } else {
         tokenTranslation = translateToPrintDirect(token, false);
       }

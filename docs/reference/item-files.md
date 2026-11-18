@@ -1,6 +1,6 @@
 # SandFly item files
 
-An item file holds SandFly items: macros, gesture profiles, keymaps, gestures and keyboard shortcuts in apps, settings profiles, dictionary entries and custom voice commands. Item files can be exported, shared, edited, written by hand or written by an AI chat, and imported on any phone with SandFly.
+An item file holds SandFly items: macros, gesture profiles, keymaps, gestures and keyboard shortcuts in apps, settings profiles, dictionary entries, custom braille characters and custom voice commands. Item files can be exported, shared, edited, written by hand or written by an AI chat, and imported on any phone with SandFly.
 
 An item file is not a settings file. Back up and restore > Export settings writes every setting; an item file holds only the items in it.
 
@@ -19,9 +19,10 @@ Each screen of items has Export to file and Import from file. Export to file on 
 | Speech dictionary | Settings > Speech > Speech dictionary |
 | Symbol dictionary | Settings > Speech > Symbol dictionary |
 | Braille dictionary | Settings > Braille > Braille dictionary |
+| Custom braille characters | Settings > Braille > Braille keyboard > Custom braille characters |
 | Custom voice commands | Settings > Voice commands |
 
-Import from file on any of these screens imports everything in the file. An imported item replaces the item of the same kind with the same name, ignoring case; other items stay. Dictionary entries replace entries with the same text to find in the same app. Custom voice commands replace those with the same phrase.
+Import from file on any of these screens imports everything in the file. An imported item replaces the item of the same kind with the same name, ignoring case; other items stay. Dictionary entries replace entries with the same text to find in the same app. Custom braille characters replace those with the same text in the same braille table. Custom voice commands replace those with the same phrase.
 
 After an import, SandFly lists what it left out: unknown commands, gestures, keys and settings, entries without a name, and regular expressions it refuses.
 
@@ -43,6 +44,7 @@ An item file is a JSON object. `format` is `"sandfly-items"` and `version` is `1
   "speechDictionary": [],
   "symbolDictionary": [],
   "brailleDictionary": [],
+  "brailleCharacters": [],
   "voiceCommands": []
 }
 ```
@@ -205,6 +207,16 @@ API keys, SandFly Pro and the state of the phone, such as which tutorials were s
 ```
 
 `replace` can be empty, which removes the text. `regex` and `wholeWord` are optional, and the symbol dictionary has neither. `app` is a package name, for an entry used in one app; empty for every app. Regular expressions that repeat a group with repetition or alternatives in it, such as `(a+)+`, are refused. The symbol dictionary holds at most 500 entries, the speech and braille dictionaries at most 5000 after an import.
+
+## Custom braille characters
+
+`brailleCharacters` is a list of text typed with braille cells of your choice, each in one braille table:
+
+```json
+{ "text": ")", "cells": "56-2356", "table": "POLISH" }
+```
+
+`text` is 1 to 50 characters. `cells` is the dot numbers of each cell, 1 to 8, with cells separated by hyphens; at most 20 cells. `table` is the braille table's code name, such as `"POLISH"`, `"POLISH_COMP8"`, `"UEB"` or `"GERMAN"`; a file exported from Custom braille characters shows the code names of the tables in use. At most 500 custom braille characters are kept.
 
 ## Custom voice commands
 

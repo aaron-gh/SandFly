@@ -19,6 +19,7 @@ package com.google.android.accessibility.braille.translate.liblouis;
 import static com.google.android.accessibility.utils.StringUtils.capitalizeFirstLetter;
 
 import android.content.Context;
+import androidx.annotation.Nullable;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import com.google.android.accessibility.braille.interfaces.BrailleWord;
 import com.google.common.base.Ascii;
@@ -28,7 +29,11 @@ public class LibLouisTranslatorUeb2 extends LibLouisTranslator {
   private static final BrailleCharacter CAPITALIZE = new BrailleCharacter(6);
 
   public LibLouisTranslatorUeb2(Context context) {
-    super(context, "en-ueb-g2.ctb");
+    this(context, /* code= */ null);
+  }
+
+  public LibLouisTranslatorUeb2(Context context, @Nullable String code) {
+    super(context, code, "en-ueb-g2.ctb");
     fillBypassMap();
   }
 
