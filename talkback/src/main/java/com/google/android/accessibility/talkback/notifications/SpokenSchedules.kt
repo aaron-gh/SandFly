@@ -48,8 +48,8 @@ import java.util.TimeZone
  */
 class SpokenSchedules(
   private val context: Context,
-  /** Says a text, interrupting what notifications are saying when the second value is true. */
-  private val say: (CharSequence, Boolean) -> Unit,
+  /** Reads the summary of the notifications. */
+  private val readSummary: () -> Unit,
   /** Says the time, in the voice its setting chooses. */
   private val sayTime: (CharSequence) -> Unit,
 ) {
@@ -180,7 +180,7 @@ class SpokenSchedules(
 
   private fun onSummary() {
     schedule()
-    readSummary(context, say)
+    readSummary()
   }
 
   companion object {
@@ -314,19 +314,25 @@ class SpokenSchedules(
 
     /**
      * Reads every notification in the shade, as the notification settings say how, with a
-     * greeting and how many there are. Needs notification access.
+     * greeting and how many there are. Needs notification access. [speak] is given each line,
+     * whether it interrupts, and whether it is the last.
      */
     @JvmStatic
     @MainThread
-    fun readSummary(context: Context, speak: (CharSequence, Boolean) -> Unit) {
+    fun readSummary(context: Context, speak: (CharSequence, Boolean, Boolean) -> Unit) {
       cancelSummary()
       readSummary(context, speak, retry = true)
     }
 
-    private fun readSummary(context: Context, speak: (CharSequence, Boolean) -> Unit, retry: Boolean) {
+    private fun readSummary(
+      context: Context,
+      speak: (CharSequence, Boolean, Boolean) -> Unit,
+      retry: Boolean,
+    ) {
       val prefs = SharedPreferencesUtils.getSharedPreferences(context)
       val listener = NotificationListService.instance
-      fun say(text: CharSequence, interrupt: Boolean = false) = speak(text, interrupt)
+      fun say(text: CharSequence, interrupt: Boolean = false, last: Boolean = true) =
+        speak(text, interrupt, last)
       if (listener == null) {
         // The listener connects only while something needs it; it is needed now for a minute.
         if (retry && NotificationListService.isAccessGranted(context)) {
@@ -373,14 +379,17 @@ class SpokenSchedules(
           )
           .joinToString(" ")
       LogUtils.d(TAG, "Reading a summary of %d notifications", lines.size)
-      say(intro, interrupt = true)
+      say(intro, interrupt = true, last = lines.isEmpty())
       val gap = NotificationSettings.int(prefs, KEY_SUMMARY_GAP, 0).coerceIn(0, 10)
       if (gap == 0) {
-        lines.forEach { say(it) }
+        lines.forEachIndexed { index, line -> say(line, last = index == lines.lastIndex) }
         return
       }
       lines.forEachIndexed { index, line ->
-        summaryHandler.postDelayed({ say(line) }, (index + 1) * gap * 1000L)
+        summaryHandler.postDelayed(
+          { say(line, last = index == lines.lastIndex) },
+          (index + 1) * gap * 1000L,
+        )
       }
     }
 

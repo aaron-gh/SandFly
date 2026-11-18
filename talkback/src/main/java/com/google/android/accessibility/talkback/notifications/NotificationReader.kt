@@ -85,6 +85,10 @@ object NotificationReader {
   private const val VOLUME_UP_WAIT_MS = 2_000L
   /** Marks the callbacks of readouts that wait for SandFly to be quiet, to drop them on stop. */
   private val QUIET_TOKEN = Any()
+  /** Marks the callbacks of summary lines that wait for SandFly to be quiet. */
+  private val SUMMARY_TOKEN = Any()
+  /** The longest the stop settings stay on for a summary whose end isn't reported. */
+  private const val SUMMARY_MAX_MS = 15 * 60_000L
   /** Marks the callbacks of notifications waiting for the listener's Do Not Disturb ranking. */
   private val DND_TOKEN = Any()
   private const val DND_CHECK_MS = 200L
@@ -124,8 +128,15 @@ object NotificationReader {
   private var schedules: SpokenSchedules? = null
   /** The voices of the voice profiles that notifications are read with, by profile ID. */
   private val voices = HashMap<String, NotificationVoice>()
-  /** The voice profile the last summary was read with, empty for SandFly's own voice. */
+  /**
+   * Whether a summary is being read, from its start until its last line ends or it is stopped.
+   * The stop settings apply meanwhile, as while a notification is read.
+   */
+  private var summaryReading = false
+  /** The voice profile the summary is read with, empty for SandFly's own voice. */
   private var summaryVoiceKey = ""
+  /** Counts summaries, so the end of one stopped earlier doesn't end the next. */
+  private var summaryNumber = 0
   private var isSandFlySpeaking: () -> Boolean = { false }
   private var isSilenced: (Boolean, Boolean) -> Boolean = { _, _ -> false }
   private var isTouching: () -> Boolean = { false }
@@ -278,7 +289,7 @@ object NotificationReader {
     schedules =
       SpokenSchedules(
           app,
-          say = { text, interrupt -> announce(text, interrupt) },
+          readSummary = { readSummary() },
           sayTime = { text -> announce(text, interrupt = false, clockVoice(settings(app))) },
         )
         .also { it.start() }
@@ -667,9 +678,70 @@ object NotificationReader {
   @MainThread
   fun readSummary(): Boolean {
     val context = context ?: return false
-    summaryVoiceKey = settings(context).voiceProfile
-    SpokenSchedules.readSummary(context) { text, interrupt -> announce(text, interrupt) }
+    val settings = settings(context)
+    stopSummary()
+    summaryReading = true
+    summaryNumber++
+    summaryVoiceKey = settings.voiceProfile
+    sensors?.start(settings)
+    handler.postAtTime({ endSummary() }, SUMMARY_TOKEN, SystemClock.uptimeMillis() + SUMMARY_MAX_MS)
+    SpokenSchedules.readSummary(context) { text, interrupt, last ->
+      announceSummaryLine(text, interrupt, last)
+    }
     return true
+  }
+
+  /** Says a line of the summary; the summary ends after the [last]. */
+  private fun announceSummaryLine(text: CharSequence, interrupt: Boolean, last: Boolean) {
+    val context = context ?: return
+    if (!summaryReading) return
+    val settings = settings(context)
+    val overMedia = settings.media != MediaBehavior.SKIP
+    val duringCalls = settings.duringCalls
+    val voice = voiceFor(summaryVoiceKey)
+    val number = summaryNumber
+    val end = { if (summaryNumber == number) endSummary() }
+    if (voice != null && !isSilenced(overMedia, duringCalls)) {
+      whenSandFlyIsQuiet(SystemClock.uptimeMillis(), SUMMARY_TOKEN) {
+        if (!summaryReading) return@whenSandFlyIsQuiet
+        if (isSilenced(overMedia, duringCalls)) {
+          if (last) endSummary()
+          return@whenSandFlyIsQuiet
+        }
+        voice.speak(text, interrupt, null, if (last) summaryEndListener(end) else null)
+      }
+      return
+    }
+    announce(text, interrupt, profile = "", onDone = if (last) Runnable { end() } else null)
+  }
+
+  /** Calls [end] when the summary's last line is said in a voice profile, stopped or not. */
+  private fun summaryEndListener(end: () -> Unit) =
+    object : NotificationVoice.Listener {
+      override fun onStart() {}
+
+      override fun onDone(spoken: Boolean) = end()
+
+      override fun onUnavailable() = end()
+    }
+
+  /** Stops the summary being read, if one is. */
+  private fun stopSummary() {
+    if (!summaryReading) return
+    LogUtils.d(TAG, "Stopping the summary")
+    SpokenSchedules.cancelSummary()
+    handler.removeCallbacksAndMessages(SUMMARY_TOKEN)
+    // SandFly's own voice is stopped by the speech that follows the user's action.
+    if (summaryVoiceKey.isNotEmpty()) voices[summaryVoiceKey]?.stop()
+    endSummary()
+  }
+
+  private fun endSummary() {
+    if (!summaryReading) return
+    summaryReading = false
+    summaryVoiceKey = ""
+    handler.removeCallbacksAndMessages(SUMMARY_TOKEN)
+    if (reading == null) sensors?.stop()
   }
 
   /**
@@ -797,24 +869,11 @@ object NotificationReader {
   @JvmStatic
   @MainThread
   fun onUserAction() {
-    stopSummaryInVoice()
+    stopSummary()
     val handed = (listOfNotNull(reading) + queued).filter { it.voiceKey.isNotEmpty() }
     if (handed.isEmpty()) return
     LogUtils.d(TAG, "User action; stopping %d notifications in voice profiles", handed.size)
     handed.forEach { stopOne(it) }
-  }
-
-  /**
-   * Stops a summary being read in a voice profile's engine. The summary isn't a readout, and the
-   * engine isn't SandFly's speech, so nothing else stops it.
-   */
-  private fun stopSummaryInVoice() {
-    val voice = voices[summaryVoiceKey]?.takeIf { it.isBusy } ?: return
-    LogUtils.d(TAG, "User action; stopping the summary in a voice profile")
-    SpokenSchedules.cancelSummary()
-    handler.removeCallbacksAndMessages(QUIET_TOKEN)
-    voice.stop()
-    summaryVoiceKey = ""
   }
 
   /** Stops [readout] alone, waiting in speech or being read, and goes on with the others. */
@@ -841,7 +900,7 @@ object NotificationReader {
       if (SystemClock.uptimeMillis() > swallowVolumeUpsUntil) swallowVolumeUps.clear()
       return swallowVolumeUps.remove(keyCode)
     }
-    if (event.repeatCount > 0 || !isReading) return false
+    if (event.repeatCount > 0 || (!isReading && !summaryReading)) return false
     val context = context ?: return false
     if (!SharedPreferencesUtils.getSharedPreferences(context)
         .getBoolean(NotificationSettings.Companion.Keys.VOLUME_KEYS, false)) {
@@ -1043,7 +1102,7 @@ object NotificationReader {
     queued.remove(readout)
     if (reading === readout) {
       reading = null
-      sensors?.stop()
+      if (!summaryReading) sensors?.stop()
       handler.removeCallbacks(stopAfterLimit)
       abandonFocus()
     }
@@ -1103,6 +1162,7 @@ object NotificationReader {
     text: CharSequence,
     interrupt: Boolean,
     profile: String? = null,
+    onDone: Runnable? = null,
   ) {
     val context = context ?: return
     val settings = settings(context)
@@ -1124,7 +1184,13 @@ object NotificationReader {
           (if (overMedia) FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE else 0) or
             (if (duringCalls) FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_PHONE_CALL_ACTIVE else 0)
         )
-    feedback?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, options))
+    if (onDone != null) options.setCompletedAction { onDone.run() }
+    val feedback = feedback
+    if (feedback == null) {
+      onDone?.run()
+      return
+    }
+    feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, options))
   }
 
   /** The voice profile the time is said with, empty for SandFly's own voice. */
@@ -1182,12 +1248,16 @@ object NotificationReader {
    * Runs [then] once SandFly isn't speaking, so another voice doesn't talk over it, or after
    * [QUIET_WAIT_MS] at most.
    */
-  private fun whenSandFlyIsQuiet(since: Long, then: () -> Unit) {
+  private fun whenSandFlyIsQuiet(since: Long, token: Any = QUIET_TOKEN, then: () -> Unit) {
     if (!isSandFlySpeaking() || SystemClock.uptimeMillis() - since >= QUIET_WAIT_MS) {
       then()
       return
     }
-    handler.postAtTime({ whenSandFlyIsQuiet(since, then) }, QUIET_TOKEN, SystemClock.uptimeMillis() + QUIET_CHECK_MS)
+    handler.postAtTime(
+      { whenSandFlyIsQuiet(since, token, then) },
+      token,
+      SystemClock.uptimeMillis() + QUIET_CHECK_MS,
+    )
   }
 
   /** The notification settings, read again only after they change. */
@@ -1213,6 +1283,9 @@ object NotificationReader {
   }
 
   private fun cancelAll() {
+    summaryReading = false
+    summaryVoiceKey = ""
+    handler.removeCallbacksAndMessages(SUMMARY_TOKEN)
     waiting.toList().forEach { cancel(it) }
     queued.forEach { it.cancelled = true }
     queued.clear()
