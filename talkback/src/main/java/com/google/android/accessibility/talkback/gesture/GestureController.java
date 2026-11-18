@@ -145,6 +145,7 @@ import com.google.android.accessibility.talkback.directtouch.DirectTouchControll
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.speechhistory.SpeechHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.CharacterCount;
+import com.google.android.accessibility.talkback.granularediting.TextFieldContents;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
 import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
@@ -922,6 +923,24 @@ public class GestureController {
         result = false;
       } else {
         speak(CharacterCount.describe(service, node));
+      }
+    } else if (action.equals(service.getString(R.string.shortcut_value_read_text_field))) {
+      AccessibilityNodeInfoCompat field =
+          TextFieldContents.field(
+              accessibilityFocusMonitor.getInputFocus(),
+              accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false));
+      if (field == null) {
+        speak(service.getString(R.string.not_editable));
+      } else {
+        // The text goes into the speech history, to repeat or copy, unless it is a password.
+        int flags =
+            FeedbackItem.FLAG_FORCE_FEEDBACK_ALL
+                | (field.isPassword() ? FeedbackItem.FLAG_NO_HISTORY : 0);
+        pipeline.returnFeedback(
+            eventId,
+            Feedback.speech(
+                TextFieldContents.describe(service, field),
+                SpeakOptions.create().setFlags(flags)));
       }
     } else if (action.equals(service.getString(R.string.shortcut_value_paste))) {
       AccessibilityNodeInfoCompat node = getEditTextFocus();

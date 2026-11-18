@@ -867,6 +867,7 @@ object Commands {
         gesture(R.string.shortcut_value_submit_text, R.string.shortcut_submit_text)
         gesture(R.string.shortcut_value_clear_text, R.string.shortcut_clear_text)
         gesture(R.string.shortcut_value_character_count, R.string.shortcut_character_count)
+        gesture(R.string.shortcut_value_read_text_field, R.string.shortcut_read_text_field)
         gesture(
           R.string.shortcut_value_copy_last_spoken_phrase,
           R.string.title_copy_last_spoken_phrase,
