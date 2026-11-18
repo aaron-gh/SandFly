@@ -32,6 +32,7 @@ import com.google.android.accessibility.talkback.quicksettings.QuickControl
 import com.google.android.accessibility.talkback.quicksettings.QuickControls
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import kotlin.math.roundToInt
 
 /**
  * What macros and scripts do to the device outside the screen: the controls of SandFly's quick
@@ -206,14 +207,27 @@ object DeviceActions {
               options.firstOrNull { it.value.toString() == text }
                 ?: options.firstOrNull { it.label.equals(text, ignoreCase = true) }
                 ?: options.firstOrNull { it.label.contains(text, ignoreCase = true) }
-          } ?: return done(false, "$name has ${options.joinToString { it.label }}")
+          }
+        val value =
+          option?.value
+            ?: valueInFreeRange(controls, control, text)
+            ?: return done(false, "$name has ${options.joinToString { it.label }}${freeRangeHint(controls, control)}")
         var failed = false
-        val change = controls.setChoice(control, option.value) { failed = true }
+        val change = controls.setChoice(control, value) { failed = true }
         if (failed) done(false, "$name wasn't changed") else finish(change)
       }
       else -> done(false, "$name can't be set")
     }
   }
+
+  /** [text] as a number, such as 50, 50.0 or 50%, when [control] takes it although it isn't an option. */
+  private fun valueInFreeRange(controls: QuickControls, control: QuickControl, text: String): Int? {
+    val range = controls.freeChoiceValues(control) ?: return null
+    return text.removeSuffix("%").trim().toDoubleOrNull()?.roundToInt()?.takeIf { it in range }
+  }
+
+  private fun freeRangeHint(controls: QuickControls, control: QuickControl): String =
+    controls.freeChoiceValues(control)?.let { ", or any number from ${it.first} to ${it.last}" }.orEmpty()
 
   /** Presses the media key [name] for the app that plays media. Returns false for no such key. */
   fun media(context: Context, name: String): Boolean {
