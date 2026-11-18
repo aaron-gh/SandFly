@@ -322,11 +322,23 @@ object ItemInspector {
   }
 
   private fun readScreenTree(context: Context, node: AccessibilityNodeInfoCompat?): String {
+    val (tree, count) = screenTree(context, node) ?: return context.getString(R.string.script_tree_none)
+    context.copyToClipboard(context.getString(R.string.script_tree_clip_label), tree.toString(1))
+    return context.getString(R.string.script_tree_copied, count)
+  }
+
+  /**
+   * Every item of the window of [node], or of the active window, as JSON, with how many items it
+   * has; or null when there is no window. Asks the app about each item in turn, so it is called off
+   * the main thread.
+   */
+  @JvmStatic
+  fun screenTree(context: Context, node: AccessibilityNodeInfoCompat?): Pair<JSONObject, Int>? {
     val activeRoot = (context as? AccessibilityService)?.rootInActiveWindow
     val root =
       node?.let(AccessibilityNodeInfoUtils::getRoot)
         ?: activeRoot?.let(AccessibilityNodeInfoCompat::wrap)
-        ?: return context.getString(R.string.script_tree_none)
+        ?: return null
     var count = 0
     fun describe(item: AccessibilityNodeInfoCompat, depth: Int): JSONObject =
       JSONObject().apply {
@@ -352,8 +364,7 @@ object ItemInspector {
         .putOpt("activity", Scripts.currentActivity())
         .putOpt("window", Scripts.currentWindowTitle())
         .put("root", describe(root, 0))
-    context.copyToClipboard(context.getString(R.string.script_tree_clip_label), tree.toString(1))
-    return context.getString(R.string.script_tree_copied, count)
+    return tree to count
   }
 
   private fun JSONObject.putList(key: String, values: List<Any>) {

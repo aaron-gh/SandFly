@@ -50,6 +50,12 @@ interface SandflyAiFeatures {
 
     /** The Worker refused the licence of an AI service request: checks its state again. */
     fun onAiServiceRefused(context: Context) {}
+
+    /**
+     * Asks for what a script should do and has the agent write it, or change the built script
+     * [scriptId]. The result opens in the script builder for review.
+     */
+    fun buildScript(context: Context, scriptId: String?) {}
 }
 
 object SandflyAi {

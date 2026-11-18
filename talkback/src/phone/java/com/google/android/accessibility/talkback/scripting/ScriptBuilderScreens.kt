@@ -115,6 +115,27 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
   override fun build(screen: PreferenceGroup) {
     val draft = draft() ?: return
     val context = requireContext()
+    val pro = com.google.android.accessibility.talkback.sandflyai.SandflyAi.features
+    ScriptAi.review(context, scriptId)?.let { summary ->
+      // A script SandFly Pro wrote, which the person hasn't accepted yet.
+      val review = screen.category(R.string.script_ai_review)
+      if (summary.isNotBlank()) review.action(summary) {}.isSelectable = false
+      val held = store.find(scriptId)?.manifest?.permissions.orEmpty().filter { it in ScriptAi.HELD }
+      if (held.isNotEmpty()) {
+        review.action(getString(R.string.script_ai_held, held.joinToString(", ") { it.key })) {}.isSelectable = false
+      }
+      review.action(getString(R.string.script_ai_accept)) {
+        ScriptAi.accept(context, scriptId)
+        rebuild()
+      }
+      pro?.let { review.action(getString(R.string.script_ai_ask_changes)) { it.buildScript(context, scriptId) } }
+      review.action(getString(R.string.script_ai_discard)) {
+        confirm(getString(R.string.script_ai_discard), R.string.script_builder_delete) {
+          ScriptAi.discard(context, scriptId)
+          parentFragmentManager.popBackStack()
+        }
+      }
+    }
     screen.action(getString(R.string.script_builder_name), draft.optString("name")) {
       askText(getString(R.string.script_builder_name), draft.optString("name")) { name, _, _ ->
         if (name.isEmpty()) return@askText getString(R.string.script_builder_name_empty)
@@ -125,6 +146,9 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
     }
     screen.link(getString(R.string.script_builder_script_page), null, ScriptDetailFragment::class.java) {
       putString(ScriptScreenFragment.ARG_ID, scriptId)
+    }
+    if (pro != null && ScriptAi.review(context, scriptId) == null) {
+      screen.action(getString(R.string.script_ai_change)) { pro.buildScript(context, scriptId) }
     }
 
     val apps = draft.optJSONArray("apps") ?: JSONArray()
