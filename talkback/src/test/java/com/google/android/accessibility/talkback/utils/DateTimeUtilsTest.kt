@@ -63,6 +63,7 @@ class DateTimeUtilsTest {
     SharedPreferencesUtils.getSharedPreferences(context)
       .edit()
       .remove(context.getString(R.string.pref_time_seconds_key))
+      .remove(context.getString(R.string.pref_time_seconds_screen_on_key))
       .commit()
   }
 
@@ -97,5 +98,44 @@ class DateTimeUtilsTest {
       DateTimeUtils.getCurrentTime(context, DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS),
     )
     assertTrue(DateTimeUtils.getCurrentTimeAndDate(context).contains(":05:09"))
+  }
+
+  @Test
+  fun screenOnTimeHasSecondsByDefaultWhenTheSwitchIsOn() {
+    setSeconds(true)
+    assertEquals(
+      "14:05:09",
+      DateTimeUtils.getScreenOnTime(context, DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS),
+    )
+  }
+
+  @Test
+  fun screenOnTimeLeavesOutSecondsWhenOnlyAsked() {
+    setSeconds(true)
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putBoolean(context.getString(R.string.pref_time_seconds_screen_on_key), false)
+      .commit()
+    val screenOn =
+      DateTimeUtils.getScreenOnTime(context, DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS)
+    assertFalse(screenOn, screenOn.contains("05:09"))
+    assertTrue(screenOn, screenOn.contains("14:05"))
+    // A command and the status readout still say the seconds.
+    assertEquals(
+      "14:05:09",
+      DateTimeUtils.getCurrentTime(context, DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS),
+    )
+    assertTrue(DateTimeUtils.getCurrentTimeAndDate(context).contains(":05:09"))
+  }
+
+  @Test
+  fun screenOnTimeHasNoSecondsWhileTheMainSwitchIsOff() {
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putBoolean(context.getString(R.string.pref_time_seconds_screen_on_key), true)
+      .commit()
+    val screenOn =
+      DateTimeUtils.getScreenOnTime(context, DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS)
+    assertFalse(screenOn, screenOn.contains("05:09"))
   }
 }

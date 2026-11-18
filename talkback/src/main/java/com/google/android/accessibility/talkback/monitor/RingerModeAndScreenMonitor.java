@@ -571,7 +571,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       return;
     }
 
-    final String currentTime = DateTimeUtils.getCurrentTime(service, timeFormat);
+    final String currentTime = DateTimeUtils.getScreenOnTime(service, timeFormat);
     StringBuilderUtils.appendWithSeparator(builder, currentTime);
   }
 
