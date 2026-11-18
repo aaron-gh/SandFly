@@ -53,10 +53,10 @@ object ScriptReadParts {
   /** The part from the nearest item above [node] in its list that has it. */
   private fun above(node: AccessibilityNodeInfoCompat, part: ReadPart, deadline: Long): String? {
     val parent = node.parent ?: return null
-    val index = (0 until parent.childCount).firstOrNull { parent.getChild(it) == node } ?: return null
+    val index = (0 until parent.childCount).firstOrNull { parent.childOrNull(it) == node } ?: return null
     for (i in index - 1 downTo maxOf(0, index - MAX_ABOVE)) {
       if (SystemClock.uptimeMillis() > deadline) return null
-      val sibling = parent.getChild(i) ?: continue
+      val sibling = parent.childOrNull(i) ?: continue
       textOf(sibling, part, deadline)?.let { return it }
     }
     return null

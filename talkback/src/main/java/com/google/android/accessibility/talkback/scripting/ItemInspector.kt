@@ -72,7 +72,7 @@ object ItemInspector {
       .putString(PREF_LAST_QUERY, scriptQuery(node).toString())
       .putString(PREF_LAST_APP, node.packageName?.toString())
       .putString(PREF_LAST_TEXT, spokenText(node))
-      .putString(PREF_LAST_SAMPLE, sample(node).toString())
+      .putString(PREF_LAST_SAMPLE, safeSample(node)?.toString())
       .apply()
     val role = ScriptRoles.role(node)
     val script =
@@ -155,6 +155,20 @@ object ItemInspector {
    * [node] and the items like it around it, such as the other rows of its list, with the items in
    * each. The script builder finds what they have in common, to name them all in one rule.
    */
+  /**
+   * [sample], or null when the app's items changed while they were read. The details window opens
+   * either way.
+   */
+  private fun safeSample(node: AccessibilityNodeInfoCompat): JSONObject? =
+    try {
+      sample(node)
+    } catch (e: RuntimeException) {
+      com.google.android.libraries.accessibility.utils.log.LogUtils.w("ItemInspector", "No sample of the inspected item: %s", e)
+      null
+    }
+
+  private fun childAt(node: AccessibilityNodeInfoCompat?, index: Int): AccessibilityNodeInfoCompat? = node?.childOrNull(index)
+
   fun sample(node: AccessibilityNodeInfoCompat): JSONObject {
     val sample = JSONObject().put("item", sampleItem(node)).put("similar", JSONArray(similarItems(node).map(::sampleItem)))
     // The row of a list the item is in, such as a comment holding its author, text and buttons:
@@ -208,15 +222,13 @@ object ItemInspector {
     var child = node
     for (level in 1..MAX_SIMILAR_LEVELS) {
       val parent = child.parent ?: return emptyList()
-      val index = (0 until parent.childCount).firstOrNull { parent.getChild(it) == child } ?: return emptyList()
+      val index = (0 until parent.childCount).firstOrNull { childAt(parent, it) == child } ?: return emptyList()
       path.add(0, index)
       val found =
         (0 until parent.childCount)
           .asSequence()
           .filter { it != index }
-          .mapNotNull { start ->
-            path.drop(1).fold(parent.getChild(start) as AccessibilityNodeInfoCompat?) { item, i -> item?.getChild(i) }
-          }
+          .mapNotNull { start -> path.drop(1).fold(childAt(parent, start)) { item, i -> childAt(item, i) } }
           .filter { it.className == className && it.isVisibleToUser }
           .take(MAX_SIMILAR)
           .toList()
