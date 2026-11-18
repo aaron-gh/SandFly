@@ -57,9 +57,23 @@ public final class DateTimeUtils {
 
   /** Returns the current time in text using the local format. */
   public static String getCurrentTime(Context context, @TimeFeedbackFormat int timeFormat) {
+    return getCurrentTime(context, timeFormat, includeSeconds(context));
+  }
+
+  /**
+   * Returns the current time for the announcement when the screen turns on, which has seconds only
+   * when Include seconds when the screen turns on is also on.
+   */
+  public static String getScreenOnTime(Context context, @TimeFeedbackFormat int timeFormat) {
+    return getCurrentTime(
+        context, timeFormat, includeSeconds(context) && includeSecondsAtScreenOn(context));
+  }
+
+  private static String getCurrentTime(
+      Context context, @TimeFeedbackFormat int timeFormat, boolean seconds) {
     int timeFlags = DateUtils.FORMAT_SHOW_TIME | DateUtils.FORMAT_CAP_NOON_MIDNIGHT;
 
-    return formatCurrentTime(context, clock.millis(), timeFlags, timeFormat);
+    return formatCurrentTime(context, clock.millis(), timeFlags, timeFormat, seconds);
   }
 
   /** Returns the current time in text using the time format in advanced settings. */
@@ -98,7 +112,8 @@ public final class DateTimeUtils {
       Context context, int timeFlags, @TimeFeedbackFormat int timeFormat) {
 
     long millis = clock.millis();
-    String timeString = formatCurrentTime(context, millis, timeFlags, timeFormat);
+    String timeString =
+        formatCurrentTime(context, millis, timeFlags, timeFormat, includeSeconds(context));
     String dateString = formatCurrentDate(context, millis, timeFlags);
 
     if (timeString.isEmpty()) {
@@ -113,7 +128,11 @@ public final class DateTimeUtils {
   }
 
   private static String formatCurrentTime(
-      Context context, long millis, int timeFlags, @TimeFeedbackFormat int timeFormat) {
+      Context context,
+      long millis,
+      int timeFlags,
+      @TimeFeedbackFormat int timeFormat,
+      boolean seconds) {
     int currentTimeFlags = timeFlags & DateUtils.FORMAT_SHOW_TIME;
     String timeString = "";
     if (currentTimeFlags != 0) {
@@ -123,7 +142,7 @@ public final class DateTimeUtils {
             case DateTimeUtils.TIME_FEEDBACK_FORMAT_24_HOURS -> true;
             default -> DateFormat.is24HourFormat(context);
           };
-      if (includeSeconds(context)) {
+      if (seconds) {
         return formatTimeWithSeconds(
             millis, twentyFourHours, Locale.getDefault(), TimeZone.getDefault());
       }
@@ -140,6 +159,15 @@ public final class DateTimeUtils {
         context.getResources(),
         R.string.pref_time_seconds_key,
         R.bool.pref_time_seconds_default);
+  }
+
+  /** Whether Include seconds when the screen turns on is on. */
+  private static boolean includeSecondsAtScreenOn(Context context) {
+    return SharedPreferencesUtils.getBooleanPref(
+        SharedPreferencesUtils.getSharedPreferences(context),
+        context.getResources(),
+        R.string.pref_time_seconds_screen_on_key,
+        R.bool.pref_time_seconds_screen_on_default);
   }
 
   /** Returns the time at {@code millis} with hours, minutes and seconds, in {@code locale}. */

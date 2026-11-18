@@ -92,6 +92,11 @@
       android:defaultValue="@bool/pref_time_seconds_default"
       android:key="@string/pref_time_seconds_key"
       android:title="@string/title_pref_time_seconds" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_time_seconds_screen_on_default"
+      android:dependency="@string/pref_time_seconds_key"
+      android:key="@string/pref_time_seconds_screen_on_key"
+      android:title="@string/title_pref_time_seconds_screen_on" />
 
   <!-- Formatting -->
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
