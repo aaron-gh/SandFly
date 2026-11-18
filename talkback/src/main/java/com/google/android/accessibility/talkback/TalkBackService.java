@@ -252,6 +252,7 @@ import com.google.android.accessibility.talkback.macros.MacroRunner;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
 import com.google.android.accessibility.talkback.monitor.BatteryMonitor;
+import com.google.android.accessibility.talkback.monitor.CallDurationAnnouncer;
 import com.google.android.accessibility.talkback.monitor.CallStateMonitor;
 import com.google.android.accessibility.talkback.monitor.DeviceConfigurationMonitor;
 import com.google.android.accessibility.talkback.monitor.InputMethodMonitor;
@@ -3181,6 +3182,8 @@ public class TalkBackService extends AccessibilityServiceCompat
             displayMonitor,
             statusReader,
             this);
+    callStateMonitor.addCallStateChangedListener(
+        CallDurationAnnouncer.create(this, pipeline.getFeedbackReturner()));
     if (speechCacheController != null) {
       ringerModeAndScreenMonitor.addScreenChangedListener(speechCacheController);
     }
