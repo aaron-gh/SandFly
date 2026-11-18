@@ -37,6 +37,13 @@ object OpenAppActions {
   /** An app with an icon on the home screen, and the action that opens it. */
   data class App(val label: String, val value: String)
 
+  /**
+   * The labels of home screen activities by component, with the APK path and the locale they were
+   * loaded for. Loading every label takes seconds on some phones; an update or a new language
+   * loads it again. Holds only the apps of the last list.
+   */
+  private val labels = HashMap<String, Pair<String, String>>()
+
   /** Returns the action that opens [component]. */
   @JvmStatic fun valueOf(component: ComponentName): String = PREFIX + component.flattenToString()
 
@@ -57,15 +64,24 @@ object OpenAppActions {
   @JvmStatic
   fun apps(context: Context): List<App> {
     val packageManager = context.packageManager
-    return packageManager
-      .queryIntentActivities(homeScreenIntent(), /* flags= */ 0)
-      // SandFly has a launcher icon of its own, which opens its settings; leave it out of the list.
-      .filterNot { it.activityInfo.packageName == context.packageName }
-      .map {
-        App(
-          it.loadLabel(packageManager).toString(),
-          valueOf(ComponentName(it.activityInfo.packageName, it.activityInfo.name)),
-        )
+    val locale = context.resources.configuration.locales.toLanguageTags()
+    val found =
+      packageManager
+        .queryIntentActivities(homeScreenIntent(), /* flags= */ 0)
+        // SandFly has a launcher icon of its own, which opens its settings; leave it out of the list.
+        .filterNot { it.activityInfo.packageName == context.packageName }
+    return synchronized(labels) {
+        val apps =
+          found.map {
+            val value = valueOf(ComponentName(it.activityInfo.packageName, it.activityInfo.name))
+            val key = it.activityInfo.applicationInfo?.sourceDir + "|" + locale
+            val label =
+              labels[value]?.takeIf { (loadedFor, _) -> loadedFor == key }?.second
+                ?: it.loadLabel(packageManager).toString().also { label -> labels[value] = key to label }
+            App(label, value)
+          }
+        labels.keys.retainAll(apps.mapTo(HashSet()) { it.value })
+        apps
       }
       .sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER, App::label).thenBy(App::value))
   }

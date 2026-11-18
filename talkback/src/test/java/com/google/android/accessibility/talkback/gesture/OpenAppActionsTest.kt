@@ -47,7 +47,11 @@ class OpenAppActionsTest {
     installHomeScreenApp(atlas, "Atlas")
   }
 
-  private fun installHomeScreenApp(component: ComponentName, label: String) {
+  private fun installHomeScreenApp(
+    component: ComponentName,
+    label: String,
+    sourceDir: String = "/data/app/${component.packageName}/base.apk",
+  ) {
     val activity =
       ActivityInfo().apply {
         packageName = component.packageName
@@ -57,6 +61,7 @@ class OpenAppActionsTest {
           ApplicationInfo().apply {
             packageName = component.packageName
             nonLocalizedLabel = label
+            this.sourceDir = sourceDir
           }
       }
     val packageManager = shadowOf(context.packageManager)
@@ -72,6 +77,24 @@ class OpenAppActionsTest {
     assertEquals(
       listOf(
         OpenAppActions.App("Atlas", OpenAppActions.valueOf(atlas)),
+        OpenAppActions.App("mail", OpenAppActions.valueOf(mail)),
+      ),
+      OpenAppActions.apps(context),
+    )
+  }
+
+  @Test
+  fun anUpdatedAppIsListedWithItsNewName() {
+    OpenAppActions.apps(context)
+    shadowOf(context.packageManager)
+      .removeResolveInfosForIntent(
+        Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_LAUNCHER),
+        atlas.packageName,
+      )
+    installHomeScreenApp(atlas, "Atlas Maps", sourceDir = "/data/app/atlas-2/base.apk")
+    assertEquals(
+      listOf(
+        OpenAppActions.App("Atlas Maps", OpenAppActions.valueOf(atlas)),
         OpenAppActions.App("mail", OpenAppActions.valueOf(mail)),
       ),
       OpenAppActions.apps(context),
