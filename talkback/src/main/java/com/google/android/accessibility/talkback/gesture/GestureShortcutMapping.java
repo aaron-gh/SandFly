@@ -559,6 +559,48 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         MULTI_FINGER,
         R.string.pref_shortcut_2finger_rotate_counterclockwise_key,
         R.string.pref_shortcut_2finger_rotate_counterclockwise_default),
+    // Two-finger angle gestures. Only recognized when SandFly detects gestures itself and handles
+    // two-finger swipes.
+    TWO_FINGER_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_up_and_left_key,
+        R.string.pref_shortcut_2finger_up_and_left_default),
+    TWO_FINGER_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_up_and_right_key,
+        R.string.pref_shortcut_2finger_up_and_right_default),
+    TWO_FINGER_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_LEFT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_down_and_left_key,
+        R.string.pref_shortcut_2finger_down_and_left_default),
+    TWO_FINGER_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_RIGHT,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_down_and_right_key,
+        R.string.pref_shortcut_2finger_down_and_right_default),
+    TWO_FINGER_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_left_and_up_key,
+        R.string.pref_shortcut_2finger_left_and_up_default),
+    TWO_FINGER_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_left_and_down_key,
+        R.string.pref_shortcut_2finger_left_and_down_default),
+    TWO_FINGER_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_right_and_up_key,
+        R.string.pref_shortcut_2finger_right_and_up_default),
+    TWO_FINGER_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_right_and_down_key,
+        R.string.pref_shortcut_2finger_right_and_down_default),
     TWO_FINGER_SCRUB(
         GESTURE_2_FINGER_SCRUB,
         MULTI_FINGER,
@@ -1752,8 +1794,11 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           continue;
         }
 
-        // Back-and-forth and angle gestures are off while swipes run before the finger lifts.
-        if (swipesBeforeLift && GestureConfiguration.isTwoDirectionSwipe(gesture.gestureId)) {
+        // Back-and-forth and angle gestures, also with two fingers, are off while swipes run before
+        // the finger lifts.
+        if (swipesBeforeLift
+            && (GestureConfiguration.isTwoDirectionSwipe(gesture.gestureId)
+                || GestureConfiguration.isTwoFingerAngle(gesture.gestureId))) {
           continue;
         }
 
@@ -2023,6 +2068,22 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_2finger_rotate_clockwise);
       case GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE ->
           context.getString(R.string.title_pref_shortcut_2finger_rotate_counterclockwise);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_2finger_up_and_left);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_2finger_up_and_right);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_2finger_down_and_left);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_2finger_down_and_right);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_2finger_left_and_up);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_2finger_left_and_down);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_2finger_right_and_up);
+      case GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_2finger_right_and_down);
       case GESTURE_2_FINGER_SCRUB -> context.getString(R.string.title_pref_shortcut_2finger_scrub);
       case GESTURE_2_FINGER_PINCH ->
           context.getString(R.string.title_pref_shortcut_2finger_pinch);

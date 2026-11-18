@@ -158,10 +158,9 @@ class GestureProfileFragment : NotificationCodeFragment(R.string.title_pref_gest
     }
 
     // The categories and rows of the Gestures screen, with the list of commands it opens.
-    val twoDirectionKeys = SwipesBeforeLift.categoryKeys(context)
     for (category in categories) {
       // Back-and-forth and angle gestures are off while swipes run before the finger lifts.
-      if (swipesBeforeLift && category.key in twoDirectionKeys) continue
+      if (SwipesBeforeLift.hidesCategory(context, category.key, swipesBeforeLift)) continue
       val group = AccessibilitySuitePreferenceCategory(context)
       // The Gestures screen's key, which keeps whether it is expanded.
       group.key = category.key

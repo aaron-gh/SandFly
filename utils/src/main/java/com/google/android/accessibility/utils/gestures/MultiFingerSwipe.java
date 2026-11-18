@@ -35,9 +35,9 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * This class is responsible for matching one-finger swipe gestures. Each instance matches one swipe
- * gesture. A swipe is specified as a series of one or more directions e.g. left, left and up, etc.
- * At this time swipes with more than two directions are not supported.
+ * This class is responsible for matching multi-finger swipe gestures. Each instance matches one
+ * swipe gesture: a swipe in one direction, or an angle gesture that swipes one way and then turns
+ * at a right angle, such as up and then right. Every finger's path must follow the directions.
  */
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class MultiFingerSwipe extends GestureMatcher {
@@ -54,6 +54,8 @@ class MultiFingerSwipe extends GestureMatcher {
 
   // The swipe direction for this matcher.
   private int targetDirection;
+  // The direction after the turn of an angle gesture, or Swipe.NONE for a swipe in one direction.
+  private final int secondDirection;
   private int[] pointerIds;
   // The starting point of each finger's path in the gesture.
   private PointF[] base;
@@ -86,7 +88,23 @@ class MultiFingerSwipe extends GestureMatcher {
       int gesture,
       GestureMatcher.StateChangeListener listener,
       GestureMatcher.AnalyticsEventLogger logger) {
+    this(context, fingerCount, direction, Swipe.NONE, gesture, listener, logger);
+  }
+
+  /**
+   * Matches a swipe in {@code direction}, or, unless {@code secondDirection} is {@link
+   * Swipe#NONE}, a swipe in {@code direction} that then turns to {@code secondDirection}.
+   */
+  MultiFingerSwipe(
+      Context context,
+      int fingerCount,
+      int direction,
+      int secondDirection,
+      int gesture,
+      GestureMatcher.StateChangeListener listener,
+      GestureMatcher.AnalyticsEventLogger logger) {
     super(gesture, new Handler(context.getMainLooper()), listener, logger);
+    this.secondDirection = secondDirection;
     targetFingerCount = fingerCount;
     pointerIds = new int[targetFingerCount];
     base = new PointF[targetFingerCount];
@@ -306,9 +324,11 @@ class MultiFingerSwipe extends GestureMatcher {
           cancelGesture(event);
           return;
         }
-        // Then, make sure the pointer is going in the right direction.
+        // Then, make sure the pointer is going in the right direction. While swipes run before
+        // the lift, angle gestures are off, as the one-finger ones are.
         int direction = toDirection(x - base[pointerIndex].x, y - base[pointerIndex].y);
-        if (direction != targetDirection) {
+        if (direction != targetDirection
+            || (isAngle() && GestureConfiguration.swipesBeforeLift())) {
           cancelGesture(event);
           return;
         }
@@ -318,10 +338,10 @@ class MultiFingerSwipe extends GestureMatcher {
           strokeBuffers.get(i).add(new PointF(base[i]));
         }
       } else if (getState() == STATE_GESTURE_STARTED) {
-        // Cancel if the finger starts to go the wrong way.
-        // Note that this only works because this matcher assumes one direction.
+        // Cancel if the finger starts to go the wrong way. An angle gesture turns, so its path
+        // is only checked at the lift.
         int direction = toDirection(x - base[pointerIndex].x, y - base[pointerIndex].y);
-        if (direction != UNCERTAIN && direction != targetDirection) {
+        if (!isAngle() && direction != UNCERTAIN && direction != targetDirection) {
           cancelGesture(event);
           return;
         }
@@ -407,6 +427,9 @@ class MultiFingerSwipe extends GestureMatcher {
    * @return True if the path matches the specified direction for this matcher, otherwise false.
    */
   private boolean recognizeGesturePath(List<PointF> path) {
+    if (isAngle()) {
+      return recognizeAnglePath(path);
+    }
     for (int i = 0; i < path.size() - 1; ++i) {
       PointF start = path.get(i);
       PointF end = path.get(i + 1);
@@ -422,6 +445,41 @@ class MultiFingerSwipe extends GestureMatcher {
             directionToString(this.targetDirection));
         return false;
       }
+    }
+    gestureMotionEventLog(VERBOSE, "Completed.");
+    return true;
+  }
+
+  /** Whether this matcher matches an angle gesture, with a second direction. */
+  private boolean isAngle() {
+    return secondDirection != Swipe.NONE;
+  }
+
+  /**
+   * Tests the path of a given finger against an angle gesture: two line segments, split where the
+   * direction changes by about 90 degrees, as for one-finger angle gestures, in this matcher's two
+   * directions.
+   */
+  private boolean recognizeAnglePath(List<PointF> path) {
+    List<PointF> segments = Swipe.segments(path);
+    if (segments.size() != 3) {
+      gestureMotionEventLog(VERBOSE, "Found %d segments when expecting 2", segments.size() - 1);
+      return false;
+    }
+    PointF start = segments.get(0);
+    PointF turn = segments.get(1);
+    PointF end = segments.get(2);
+    int first = toDirection(turn.x - start.x, turn.y - start.y);
+    int second = toDirection(end.x - turn.x, end.y - turn.y);
+    if (first != targetDirection || second != secondDirection) {
+      gestureMotionEventLog(
+          VERBOSE,
+          "Found directions %s and %s when expecting %s and %s",
+          directionToString(first),
+          directionToString(second),
+          directionToString(targetDirection),
+          directionToString(secondDirection));
+      return false;
     }
     gestureMotionEventLog(VERBOSE, "Completed.");
     return true;
@@ -456,6 +514,9 @@ class MultiFingerSwipe extends GestureMatcher {
     StringBuilder builder = new StringBuilder();
     builder.append(targetFingerCount).append("-finger ");
     builder.append("Swipe ").append(directionToString(targetDirection));
+    if (isAngle()) {
+      builder.append(" and ").append(directionToString(secondDirection));
+    }
     return builder.toString();
   }
 

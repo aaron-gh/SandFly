@@ -89,7 +89,8 @@ object CommandBindings {
     // The filter hides back-and-forth and angle gestures as Default has them; a gesture profile can
     // have them the other way.
     for (key in SwipesBeforeLift.categoryKeys(context)) {
-      screen.findPreference<Preference>(key)?.isVisible = !swipesBeforeLift
+      screen.findPreference<Preference>(key)?.isVisible =
+        !SwipesBeforeLift.hidesCategory(context, key, swipesBeforeLift)
     }
     return (0 until screen.preferenceCount)
       .mapNotNull { screen.getPreference(it) as? PreferenceGroup }

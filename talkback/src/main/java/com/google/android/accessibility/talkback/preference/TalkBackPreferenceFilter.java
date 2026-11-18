@@ -367,6 +367,11 @@ public class TalkBackPreferenceFilter {
         R.string.pref_gesture_set_key, HIDDEN_ON_TV | HIDE_MULTIPLE_GESTURE_SET),
     CUSTOMIZE_GESTURE_GROUP_2FINGER(
         R.string.pref_category_2finger_shortcuts_key, SHOW_IF_MULTI_FINGER),
+    // Only SandFly's gesture detection recognizes two-finger angle gestures, and watches pass
+    // two-finger swipes to the app.
+    CUSTOMIZE_GESTURE_GROUP_2FINGER_ANGLE(
+        R.string.pref_category_2finger_angle_shortcuts_key,
+        SHOW_IF_MULTI_FINGER | SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     CUSTOMIZE_GESTURE_GROUP_3FINGER(
         R.string.pref_category_3finger_shortcuts_key, SHOW_IF_MULTI_FINGER),
     CUSTOMIZE_GESTURE_GROUP_4FINGER(

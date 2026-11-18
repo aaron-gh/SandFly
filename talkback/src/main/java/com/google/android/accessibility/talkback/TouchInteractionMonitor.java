@@ -2508,10 +2508,12 @@ public class TouchInteractionMonitor
   @Override
   public void onGestureStarted(int gestureId) {
     gestureStarted = true;
+    // A two-finger angle gesture starts as a two-finger swipe does.
     if (gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
         && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_DOWN
         && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_LEFT
-        && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_RIGHT) {
+        && gestureId != AccessibilityService.GESTURE_2_FINGER_SWIPE_RIGHT
+        && !GestureConfiguration.isTwoFingerAngle(gestureId)) {
       nonSwipeGestureStarted = true;
     }
     requestTouchExplorationDelayed.cancel();

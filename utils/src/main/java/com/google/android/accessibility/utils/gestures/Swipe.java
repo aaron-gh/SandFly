@@ -33,6 +33,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.R;
 import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider;
 import java.util.ArrayList;
+import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -511,7 +512,17 @@ class Swipe extends GestureMatcher {
     if (stroke.size() < 2) {
       return false;
     }
+    ArrayList<PointF> path = segments(stroke);
+    gestureMotionEventLog(VERBOSE, "path = %s", path.toString());
+    return pathMatches(path);
+  }
 
+  /**
+   * Splits the sampled points of {@code stroke}, at least two, into line segments where the
+   * direction changes by about 90 degrees. Returns the points where the segments start, and the
+   * last point.
+   */
+  static ArrayList<PointF> segments(List<PointF> stroke) {
     // Look at mStrokeBuffer and extract 2 line segments, delimited by near-perpendicular
     // direction change.
     // Method: for each sampled motion event, check the angle of the most recent motion vector
@@ -576,8 +587,7 @@ class Swipe extends GestureMatcher {
     }
 
     path.add(next);
-    gestureMotionEventLog(VERBOSE, "path = %s", path.toString());
-    return pathMatches(path);
+    return path;
   }
 
   /**

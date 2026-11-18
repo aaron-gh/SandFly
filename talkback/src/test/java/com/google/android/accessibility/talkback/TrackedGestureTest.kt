@@ -46,12 +46,21 @@ import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEd
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.gestures.GestureConfiguration
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_COUNTERCLOCKWISE
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SCRUB
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SPREAD
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_LEFT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_DOWN_AND_RIGHT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_DOWN
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_LEFT_AND_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_LEFT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_QUADRUPLE_TAP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_SPREAD
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_BOTTOM
@@ -171,6 +180,7 @@ class TrackedGestureTest {
   fun tearDown() {
     monitor.stop()
     controller.unregisterCallback(monitor)
+    GestureConfiguration.setSwipesBeforeLift(false)
   }
 
   private fun callController(name: String, type: Class<*>, argument: Any) {
@@ -804,6 +814,122 @@ class TrackedGestureTest {
       request!!.javaClass.getDeclaredField("state").apply { isAccessible = true }.getInt(request) ==
         state
     }
+  }
+
+  /**
+   * Two fingers 60 pixels apart side by side land at (130, 235) and (190, 235), and move through
+   * each offset from there in [legs], as x and y pairs, 8 steps of 10 ms for each, and lift.
+   */
+  private fun twoFingerPath(vararg legs: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    var x = 130f
+    var y = 235f
+    touchAt(ACTION_DOWN, 0, x, y)
+    touchAt(ACTION_POINTER_DOWN, 5, x, y, x + 60f, y, actionIndex = 1)
+    var time = 5L
+    for (leg in 0 until legs.size / 2) {
+      val stepX = (130f + legs[leg * 2] - x) / 8
+      val stepY = (235f + legs[leg * 2 + 1] - y) / 8
+      repeat(8) {
+        time += 10
+        x += stepX
+        y += stepY
+        touchAt(ACTION_MOVE, time, x, y, x + 60f, y)
+      }
+    }
+    time += 10
+    touchAt(ACTION_POINTER_UP, time, x, y, x + 60f, y, actionIndex = 1)
+    touchAt(ACTION_UP, time + 5, x, y)
+    runUntil(time + 500)
+  }
+
+  /** Two fingers swipe 110 pixels by ([dx1], [dy1]) and then 110 pixels by ([dx2], [dy2]). */
+  private fun twoFingerAngle(dx1: Float, dy1: Float, dx2: Float, dy2: Float) {
+    monitor.setTwoFingerPassthroughEnabled(false)
+    twoFingerPath(dx1 * 110f, dy1 * 110f, (dx1 + dx2) * 110f, (dy1 + dy2) * 110f)
+  }
+
+  @Test
+  fun twoFingerSwipeUpThenLeft() {
+    twoFingerAngle(0f, -1f, -1f, 0f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_UP_AND_LEFT), service.gestures)
+  }
+
+  @Test
+  fun twoFingerSwipeUpThenRight() {
+    twoFingerAngle(0f, -1f, 1f, 0f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun twoFingerSwipeDownThenLeft() {
+    twoFingerAngle(0f, 1f, -1f, 0f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_DOWN_AND_LEFT), service.gestures)
+  }
+
+  @Test
+  fun twoFingerSwipeDownThenRight() {
+    twoFingerAngle(0f, 1f, 1f, 0f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_DOWN_AND_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun twoFingerSwipeLeftThenUp() {
+    twoFingerAngle(-1f, 0f, 0f, -1f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_LEFT_AND_UP), service.gestures)
+  }
+
+  @Test
+  fun twoFingerSwipeLeftThenDown() {
+    twoFingerAngle(-1f, 0f, 0f, 1f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_LEFT_AND_DOWN), service.gestures)
+  }
+
+  @Test
+  fun twoFingerSwipeRightThenUp() {
+    twoFingerAngle(1f, 0f, 0f, -1f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP), service.gestures)
+  }
+
+  @Test
+  fun twoFingerSwipeRightThenDown() {
+    twoFingerAngle(1f, 0f, 0f, 1f)
+    assertEquals(listOf(GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN), service.gestures)
+  }
+
+  @Test
+  fun straightTwoFingerSwipeIsNotAnAngle() {
+    monitor.setTwoFingerPassthroughEnabled(false)
+    twoFingerPath(0f, -110f, 0f, -220f)
+    assertEquals(listOf(AccessibilityService.GESTURE_2_FINGER_SWIPE_UP), service.gestures)
+  }
+
+  @Test
+  fun scrubIsStillAScrubWhileSandFlyHandlesTwoFingerSwipes() {
+    monitor.setTwoFingerPassthroughEnabled(false)
+    twoFingerMove(100f, 200f, 100f)
+    assertEquals(listOf(GESTURE_2_FINGER_SCRUB), service.gestures)
+  }
+
+  @Test
+  fun upAndDownScrubIsStillAScrubWhileSandFlyHandlesTwoFingerSwipes() {
+    monitor.setTwoFingerPassthroughEnabled(false)
+    twoFingerPath(0f, -110f, 0f, 0f)
+    assertEquals(listOf(GESTURE_2_FINGER_SCRUB), service.gestures)
+  }
+
+  @Test
+  fun twoFingerAngleScrollsTheAppWhileTwoFingerSwipesScroll() {
+    twoFingerPath(0f, -110f, 110f, -110f)
+    assertEquals(true, requestedDragging())
+    assertEquals(false, service.gestures.any { GestureConfiguration.isTwoFingerAngle(it) })
+  }
+
+  @Test
+  fun twoFingerAngleIsOffWhileSwipesRunBeforeTheLift() {
+    GestureConfiguration.setSwipesBeforeLift(true)
+    twoFingerAngle(0f, -1f, 1f, 0f)
+    assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT))
   }
 
   @Test

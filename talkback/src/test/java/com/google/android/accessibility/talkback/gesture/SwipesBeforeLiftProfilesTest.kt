@@ -20,6 +20,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureConfiguration
+import com.google.android.accessibility.utils.gestures.GestureManifold
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -109,6 +110,66 @@ class SwipesBeforeLiftProfilesTest {
     setDefault(false)
     assertNull(SwipesBeforeLift.profileValue(context, false))
     assertEquals(true, SwipesBeforeLift.profileValue(context, true))
+  }
+
+  private val twoFingerAngles: String
+    get() = context.getString(R.string.pref_category_2finger_angle_shortcuts_key)
+
+  private fun setHandlesTwoFingerSwipes(on: Boolean) {
+    prefs.edit().putBoolean(GestureLayout.TWO_FINGER_SWIPES_KEY, on).commit()
+  }
+
+  @Test
+  fun twoFingerAngleGesturesAreHiddenWhileSwipesRunBeforeTheLift() {
+    setHandlesTwoFingerSwipes(true)
+    setDefault(false)
+    assertFalse(SwipesBeforeLift.hidesCategory(context, twoFingerAngles))
+    setDefault(true)
+    assertTrue(SwipesBeforeLift.hidesCategory(context, twoFingerAngles))
+    assertFalse(SwipesBeforeLift.hidesCategory(context, twoFingerAngles, false))
+  }
+
+  @Test
+  fun twoFingerAngleGesturesAreHiddenWhileTwoFingerSwipesScroll() {
+    setDefault(false)
+    setHandlesTwoFingerSwipes(false)
+    assertTrue(SwipesBeforeLift.hidesCategory(context, twoFingerAngles))
+    assertFalse(
+      SwipesBeforeLift.hidesCategory(
+        context,
+        context.getString(R.string.pref_category_1finger_angle_shortcuts_key),
+      )
+    )
+  }
+
+  @Test
+  fun twoFingerAngleGestureHasNoCommandWhileSwipesRunBeforeTheLift() {
+    setHandlesTwoFingerSwipes(true)
+    prefs
+      .edit()
+      .putString(
+        context.getString(R.string.pref_shortcut_2finger_up_and_right_key),
+        context.getString(R.string.shortcut_value_home),
+      )
+      .commit()
+    setDefault(false)
+    assertTrue(
+      GestureShortcutMapping(context).isAssigned(GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT)
+    )
+    setDefault(true)
+    assertFalse(
+      GestureShortcutMapping(context).isAssigned(GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_RIGHT)
+    )
+  }
+
+  @Test
+  fun twoFingerAngleGesturesHaveNoCommandByDefault() {
+    val mapping = GestureShortcutMapping(context)
+    for (gestureId in -129..-122) {
+      assertTrue(GestureConfiguration.isTwoFingerAngle(gestureId))
+      assertFalse(mapping.isAssigned(gestureId))
+    }
+    assertFalse(GestureConfiguration.isTwoFingerAngle(GestureManifold.GESTURE_2_FINGER_SCRUB))
   }
 
   @Test
