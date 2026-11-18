@@ -441,12 +441,18 @@ object Macros {
     }
   }
 
-  /** A macro. [id] is unique among the macros. It only runs when [condition] is met. */
+  /**
+   * A macro. [id] is unique among the macros. It only runs when [condition] is met, and when [app]
+   * isn't null, only while that app is in front. [inActions] lists it in the Actions menu of the
+   * items of [app], or of every app when [app] is null.
+   */
   data class Macro(
     val id: String,
     val name: String,
     val steps: List<Step>,
     val condition: Condition = Condition(),
+    val app: String? = null,
+    val inActions: Boolean = false,
   )
 
   /** Why the steps of a macro can't run, at the step [index]. */
@@ -584,7 +590,19 @@ object Macros {
     parsed?.takeIf { it.first == json }?.let {
       return it.second
     }
-    return fromJson(json).also { parsed = json to it }
+    return fromJson(json, moveAppTests = true).also { parsed = json to it }
+  }
+
+  /**
+   * Returns the macros listed in the Actions menu of an item of the app [packageName]: those of the
+   * app, and those of all apps, in their order.
+   */
+  @JvmStatic
+  fun inActionsOf(prefs: SharedPreferences, packageName: CharSequence?): List<Macro> {
+    val macros = read(prefs)
+    if (macros.none { it.inActions }) return emptyList()
+    val app = packageName?.toString()
+    return macros.filter { it.inActions && (it.app == null || it.app == app) }
   }
 
   @JvmStatic
@@ -643,9 +661,9 @@ object Macros {
   fun find(prefs: SharedPreferences, id: String): Macro? =
     if (isExternal(id)) external()?.find(id) else read(prefs).firstOrNull { it.id == id }
 
-  /** Adds a macro named [name] with no steps, and returns it. */
-  fun add(prefs: SharedPreferences, name: String): Macro {
-    val macro = Macro(newId(), name, emptyList())
+  /** Adds a macro named [name] with no steps, for the app [app] or all apps, and returns it. */
+  fun add(prefs: SharedPreferences, name: String, app: String? = null): Macro {
+    val macro = Macro(newId(), name, emptyList(), app = app)
     write(prefs, read(prefs) + macro)
     return macro
   }
@@ -1199,6 +1217,8 @@ object Macros {
               .put("name", macro.name)
               .put("steps", JSONArray().apply { macro.steps.forEach { put(stepToJson(it)) } })
               .apply { if (macro.condition.clauses.isNotEmpty()) put("condition", conditionToJson(macro.condition)) }
+              .apply { macro.app?.let { put("app", it) } }
+              .apply { if (macro.inActions) put("actions", true) }
           )
         }
       }
@@ -1370,9 +1390,10 @@ object Macros {
   /**
    * Reads macros saved by [toJson]. Settings can be imported from a file, so values are kept
    * within their limits, steps of unknown types are left out, and a macro that can't be read is
-   * skipped.
+   * skipped. With [moveAppTests], a macro saved without an app, before macros had one, gets the app
+   * of its condition's App in front test, as [withAppOfCondition] does.
    */
-  internal fun fromJson(json: String?): List<Macro> {
+  internal fun fromJson(json: String?, moveAppTests: Boolean = false): List<Macro> {
     if (json.isNullOrEmpty()) return emptyList()
     val array =
       try {
@@ -1387,17 +1408,43 @@ object Macros {
         val id = item.getString("id")
         if (id.isEmpty() || !ids.add(id)) return@mapNotNull null
         val steps = item.optJSONArray("steps") ?: JSONArray()
-        Macro(
-          id,
-          item.getString("name"),
-          (0 until minOf(steps.length(), MAX_STEPS)).mapNotNull { stepFromJson(steps.optJSONObject(it)) },
-          conditionFromJson(item.optJSONArray("condition")),
-        )
+        val macro =
+          Macro(
+            id,
+            item.getString("name"),
+            (0 until minOf(steps.length(), MAX_STEPS)).mapNotNull { stepFromJson(steps.optJSONObject(it)) },
+            conditionFromJson(item.optJSONArray("condition")),
+            item.optString("app").takeIf { isPackageName(it) },
+            item.optBoolean("actions", false),
+          )
+        if (moveAppTests && !item.has("app")) withAppOfCondition(macro) else macro
       } catch (e: JSONException) {
         null
       }
     }
   }
+
+  /**
+   * Returns [macro] for the app of its condition's App in front test, without that test, when it
+   * has no app and its condition needs that app: a test that isn't reversed, in a condition without
+   * "or". Otherwise returns [macro] as it is. The macro runs when it did before.
+   */
+  @JvmStatic
+  fun withAppOfCondition(macro: Macro): Macro {
+    val clauses = macro.condition.clauses
+    if (macro.app != null || clauses.any { it.or }) return macro
+    val index = clauses.indexOfFirst { !it.not && it.test is AppInFront }
+    if (index < 0) return macro
+    val app = (clauses[index].test as AppInFront).packageName
+    return macro.copy(condition = Condition(clauses.filterIndexed { i, _ -> i != index }), app = app)
+  }
+
+  /** Whether [text] can be the package name of an app. */
+  @JvmStatic
+  fun isPackageName(text: String): Boolean = text.length <= MAX_PACKAGE_NAME && PACKAGE_NAME.matches(text)
+
+  private const val MAX_PACKAGE_NAME = 255
+  private val PACKAGE_NAME = Regex("^[A-Za-z0-9_]+(\\.[A-Za-z0-9_]+)*$")
 
   private fun stepFromJson(item: JSONObject?): Step? {
     if (item == null) return null

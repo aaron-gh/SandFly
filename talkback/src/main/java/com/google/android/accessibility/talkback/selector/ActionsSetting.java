@@ -85,12 +85,33 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
     if (selectableText) {
       return hasOtherThanEditingOptions(actions);
     }
-    return !actions.isEmpty();
+    return hasOtherThanMacros(actions);
+  }
+
+  /**
+   * Returns whether the only actions of {@code node} are the user's macros, which are listed for
+   * every item of their app and don't switch the reading control to Actions.
+   */
+  public boolean hasOnlyMacros(Context context, AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    List<ContextMenuItem> actions = actionsOf(context, node);
+    return !actions.isEmpty() && !hasOtherThanMacros(actions);
+  }
+
+  private static boolean hasOtherThanMacros(List<ContextMenuItem> actions) {
+    for (ContextMenuItem action : actions) {
+      if (!CustomActionMenu.isMacroItem(action)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   private static boolean hasOtherThanEditingOptions(List<ContextMenuItem> actions) {
     for (ContextMenuItem action : actions) {
-      if (!isEditingOption(action)) {
+      if (!isEditingOption(action) && !CustomActionMenu.isMacroItem(action)) {
         return true;
       }
     }

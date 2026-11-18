@@ -1702,7 +1702,8 @@ public class SelectorController implements UserInputEventListener {
       restoreSetting();
       return;
     }
-    if (leavesActionsOnWebPage(currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
+    if (leavesActionsOnWebPage(currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))
+        || leavesActionsForMacros(currentSetting, AccessibilityNodeInfoCompat.wrap(nodeInfo))) {
       restoreSetting();
       return;
     }
@@ -1745,6 +1746,22 @@ public class SelectorController implements UserInputEventListener {
     }
     Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
     return actions.isPresent() && !actions.get().shouldActivateSetting(context, node);
+  }
+
+  /**
+   * Whether focus moved from the item that switched the reading control to Actions to an item whose
+   * only actions are the user's macros, which every item of their app lists. Actions is then left,
+   * as on an item without actions.
+   */
+  private boolean leavesActionsForMacros(
+      Setting currentSetting, AccessibilityNodeInfoCompat node) {
+    if (currentSetting != ACTIONS || !actionsSwitchedAutomatically) {
+      return false;
+    }
+    Optional<ContextualSetting> actions = findContextualSetting(ACTIONS);
+    return actions.isPresent()
+        && actions.get() instanceof ActionsSetting
+        && ((ActionsSetting) actions.get()).hasOnlyMacros(context, node);
   }
 
   @Override

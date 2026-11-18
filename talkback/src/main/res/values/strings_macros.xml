@@ -417,4 +417,12 @@
     <string name="macro_test_focus_inside_value">Focus inside: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
     <!-- A Focus is inside an item test, reversed. %1$s: the item. -->
     <string name="macro_test_not_focus_inside_value">Focus not inside: <xliff:g id="item" example="watch_player">%1$s</xliff:g></string>
+    <!-- Title of the setting of a macro with the app it runs in and is listed under. [CHAR LIMIT=40] -->
+    <string name="macro_app">App</string>
+    <!-- The App setting of a macro that runs in every app, and the heading of the macros that do. [CHAR LIMIT=40] -->
+    <string name="macro_all_apps">All apps</string>
+    <!-- Setting of a macro that lists it in the Actions menu and the Actions reading control, of its app's items or of every item. [CHAR LIMIT=40] -->
+    <string name="macro_in_actions">Show in Actions</string>
+    <!-- Spoken when a macro limited to an app is run while another app is in front. %1$s: the app. [CHAR LIMIT=NONE] -->
+    <string name="macro_not_in_app">Macro not run. Runs only in <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
 </resources>

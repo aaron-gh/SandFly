@@ -497,4 +497,98 @@ class MacrosTest {
       assertTrue(pattern, Macros.compilePattern(pattern) != null)
     }
   }
+
+  @Test
+  fun appAndActionsSurviveJson() {
+    val macros =
+      listOf(
+        Macro("a", "Reply", listOf(Wait(100)), app = "com.whatsapp", inActions = true),
+        Macro("b", "Everywhere", emptyList(), inActions = true),
+        Macro("c", "Plain", emptyList()),
+      )
+    val json = Macros.toJson(macros)
+    assertEquals(macros, Macros.fromJson(json))
+    assertEquals(macros, Macros.fromJson(json, moveAppTests = true))
+    val plain = JSONArray(json).getJSONObject(2)
+    assertFalse(plain.has("app"))
+    assertFalse(plain.has("actions"))
+  }
+
+  @Test
+  fun appThatIsNotAPackageNameIsLeftOut() {
+    val json =
+      JSONArray()
+        .put(JSONObject().put("id", "a").put("name", "A").put("app", "not a package"))
+        .put(JSONObject().put("id", "b").put("name", "B").put("app", "com.example." + "x".repeat(300)))
+        .toString()
+    assertEquals(listOf(null, null), Macros.fromJson(json).map { it.app })
+  }
+
+  @Test
+  fun savedAppTestBecomesTheApp() {
+    val app = Macros.Clause(Macros.AppInFront("com.whatsapp"))
+    val keyboard = Macros.Clause(Macros.KeyboardShown)
+    // Saved before macros had an app: the App in front test is the app, and the other tests stay.
+    val old = Macros.toJson(listOf(Macro("a", "Reply", emptyList(), Macros.Condition(listOf(keyboard, app)))))
+    val read = Macros.fromJson(old, moveAppTests = true).single()
+    assertEquals("com.whatsapp", read.app)
+    assertEquals(Macros.Condition(listOf(keyboard)), read.condition)
+    // Not without moveAppTests, as for a script's macros.
+    assertNull(Macros.fromJson(old).single().app)
+  }
+
+  @Test
+  fun appTestStaysWhenTheConditionDoesNotNeedIt() {
+    val app = Macros.Clause(Macros.AppInFront("com.whatsapp"))
+    val keyboard = Macros.Clause(Macros.KeyboardShown)
+    val conditions =
+      listOf(
+        Macros.Condition(listOf(keyboard, app.copy(or = true))),
+        Macros.Condition(listOf(app.copy(not = true))),
+      )
+    for (condition in conditions) {
+      val macro = Macro("a", "Reply", emptyList(), condition)
+      assertEquals(macro, Macros.fromJson(Macros.toJson(listOf(macro)), moveAppTests = true).single())
+    }
+    // A macro saved with an app, even all apps, keeps its condition as it is.
+    val saved = JSONArray(Macros.toJson(listOf(Macro("a", "Reply", emptyList(), Macros.Condition(listOf(app))))))
+    saved.getJSONObject(0).put("app", "")
+    val read = Macros.fromJson(saved.toString(), moveAppTests = true).single()
+    assertNull(read.app)
+    assertEquals(Macros.Condition(listOf(app)), read.condition)
+  }
+
+  @Test
+  fun readMovesTheAppTestOfSavedMacros() {
+    val app = Macros.Clause(Macros.AppInFront("com.whatsapp"))
+    prefs.edit().putString(Macros.KEY, Macros.toJson(listOf(Macro("a", "Reply", emptyList(), Macros.Condition(listOf(app)))))).commit()
+    val macro = Macros.read(prefs).single()
+    assertEquals("com.whatsapp", macro.app)
+    assertTrue(macro.condition.clauses.isEmpty())
+  }
+
+  @Test
+  fun actionsListTheMacrosOfTheAppAndOfAllApps() {
+    Macros.write(
+      prefs,
+      listOf(
+        Macro("a", "WhatsApp reply", emptyList(), app = "com.whatsapp", inActions = true),
+        Macro("b", "Everywhere", emptyList(), inActions = true),
+        Macro("c", "Not shown", emptyList(), app = "com.whatsapp"),
+        Macro("d", "YouTube", emptyList(), app = "com.google.android.youtube", inActions = true),
+      ),
+    )
+    assertEquals(listOf("a", "b"), Macros.inActionsOf(prefs, "com.whatsapp").map { it.id })
+    assertEquals(listOf("b"), Macros.inActionsOf(prefs, "com.example").map { it.id })
+    assertEquals(listOf("b"), Macros.inActionsOf(prefs, null).map { it.id })
+    Macros.write(prefs, listOf(Macro("c", "Not shown", emptyList(), app = "com.whatsapp")))
+    assertTrue(Macros.inActionsOf(prefs, "com.whatsapp").isEmpty())
+  }
+
+  @Test
+  fun addedMacroHasTheApp() {
+    assertEquals("com.whatsapp", Macros.add(prefs, "Reply", "com.whatsapp").app)
+    assertNull(Macros.add(prefs, "Other").app)
+    assertEquals(listOf("com.whatsapp", null), Macros.read(prefs).map { it.app })
+  }
 }

@@ -363,6 +363,21 @@ class MacroFragment : MacroEditorFragment() {
     ) {
       putString(ARG_MACRO, macro.id)
     }
+    // A script's commands run where the script runs.
+    if (!Macros.isExternal(macro.id)) {
+      screen.action(
+        getString(R.string.macro_app),
+        macro.app?.let { Macros.appName(context, it) } ?: getString(R.string.macro_all_apps),
+      ) {
+        chooseApp(getString(R.string.macro_all_apps)) { packageName, _ ->
+          macro()?.let { Macros.update(prefs, it.copy(app = packageName.ifEmpty { null })) }
+          rebuild()
+        }
+      }
+      screen.switch(getString(R.string.macro_in_actions), macro.inActions) { checked ->
+        macro()?.let { Macros.update(prefs, it.copy(inActions = checked)) }
+      }
+    }
     val list = screen.category(R.string.macro_steps)
     if (macro.steps.isEmpty()) list.addPreference(infoRow(context, "macro_no_steps", getString(R.string.macro_no_steps)))
     val flow = Macros.analyze(macro.steps)

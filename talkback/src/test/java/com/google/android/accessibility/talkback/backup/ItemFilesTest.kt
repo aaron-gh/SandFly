@@ -272,4 +272,31 @@ class ItemFilesTest {
     assertTrue(gestures.size > 50)
     assertTrue("pref_shortcut_up" in gestures)
   }
+
+  @Test
+  fun macroAppAndActionsSurviveExportAndImport() {
+    Macros.write(
+      prefs,
+      listOf(
+        Macros.Macro("m", "Reply", listOf(Macros.Wait(100)), app = "com.whatsapp", inActions = true),
+        Macros.Macro("n", "Other", emptyList()),
+      ),
+    )
+    val file = ItemFiles.exportMacros(context)
+    prefs.edit().clear().commit()
+    assertTrue(imported(file).problems.isEmpty())
+    val macros = Macros.read(prefs)
+    assertEquals(listOf("com.whatsapp", null), macros.map { it.app })
+    assertEquals(listOf(true, false), macros.map { it.inActions })
+  }
+
+  @Test
+  fun importedAppTestBecomesTheApp() {
+    imported(
+      """{"macros":[{"name":"Reply","condition":[{"test":"app","package":"com.whatsapp"}],"steps":[]}]}"""
+    )
+    val macro = Macros.read(prefs).single()
+    assertEquals("com.whatsapp", macro.app)
+    assertTrue(macro.condition.clauses.isEmpty())
+  }
 }

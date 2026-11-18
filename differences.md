@@ -565,6 +565,10 @@ A condition is a list of tests: **Item on screen**, an item whose text, descript
 
 Steps in blocks are indented. When the blocks don't match, such as an **If** without **End if**, the macro's screen shows the step and the problem, and the macro doesn't run. Deleting **If** or a repeat also deletes its **Else if**, **Else** and **End** steps, and keeps the steps in it.
 
+**App**, on the macro's screen, limits the macro to an app: it runs only while that app is in front, and **Run now** says so otherwise. **All apps** is the default. A macro saved with an **App in front** test in a **Run only when** condition without "or" has that app as its **App** instead of the test.
+
+**Show in Actions**, on the macro's screen, lists the macro in the **Actions** menu and the **Actions** reading control of every item of its app, or of every app for **All apps**, after the app's own actions. Choosing it there runs the macro. These macros don't switch the reading control to **Actions** automatically.
+
 Each macro is a command in the **Macros** category, so a gesture, a keyboard shortcut or a menu can run it. Starting a macro stops the one running, and so does **Stop macro**. When a step fails, such as an item that isn't found, SandFly says so and the macro stops. Deleting a macro removes it from the gestures, keys and menus that run it. Macros are included in exported settings. Not on watches.
 
 ### Gesture profiles

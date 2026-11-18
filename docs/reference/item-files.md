@@ -83,7 +83,7 @@ A sequence, as in the SandFly keymap, has its first keys, a comma and the second
 }
 ```
 
-`id` is optional; other items in the file can name the macro by it. `condition` is optional; without it the macro always runs.
+`id` is optional; other items in the file can name the macro by it. `condition` is optional; without it the macro always runs. `app` is optional: the package name of the app the macro runs in, such as `"com.whatsapp"`; without it the macro runs in all apps. A macro without `app` whose `condition` has an `app` test that isn't reversed, and no `"or"`, gets that test's package as its `app`. `"actions": true` lists the macro in the Actions menu of the items of its app, or of all apps.
 
 Steps, by `type`:
 

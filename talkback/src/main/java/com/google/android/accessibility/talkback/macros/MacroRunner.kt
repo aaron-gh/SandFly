@@ -404,6 +404,24 @@ object MacroRunner {
         done()
         return
       }
+      val app = macro.app
+      if (app == null) {
+        startIfMet(sayNotMet)
+        return
+      }
+      evaluate(Macros.Condition(listOf(Macros.Clause(Macros.AppInFront(app))))) { inApp ->
+        if (inApp) {
+          startIfMet(sayNotMet)
+        } else {
+          if (sayNotMet) say(service.getString(R.string.macro_not_in_app, Macros.appName(service, app)))
+          failed = true
+          done()
+        }
+      }
+    }
+
+    /** Runs the steps when the macro's condition is met. */
+    private fun startIfMet(sayNotMet: Boolean) {
       evaluate(macro.condition) { met ->
         if (met) {
           runStep(0)
