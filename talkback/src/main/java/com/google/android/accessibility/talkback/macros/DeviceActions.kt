@@ -70,6 +70,7 @@ object DeviceActions {
       "adaptiveBrightness" to QuickControl.ADAPTIVE_BRIGHTNESS,
       "screenTimeout" to QuickControl.SCREEN_TIMEOUT,
       "fontSize" to QuickControl.FONT_SIZE,
+      "displaySize" to QuickControl.DISPLAY_SIZE,
       "mediaVolume" to QuickControl.MEDIA_VOLUME,
       "callVolume" to QuickControl.CALL_VOLUME,
       "ringVolume" to QuickControl.RING_VOLUME,
@@ -115,7 +116,12 @@ object DeviceActions {
       QuickControl.Kind.SLIDER -> controls.slider(control)?.let { State.Slider(it.value, it.min, it.max) }
       QuickControl.Kind.CHOICE ->
         controls.choice(control)?.let { choice ->
-          State.Choice(choice.current.value, choice.current.label, choice.options.map { it.value to it.label })
+          State.Choice(
+            choice.current.value,
+            choice.current.label,
+            choice.options.map { it.value to it.label },
+            controls.freeChoiceValues(control),
+          )
         }
       else -> null
     }
@@ -135,7 +141,13 @@ object DeviceActions {
         get() = value.toString()
     }
 
-    data class Choice(val value: Int, val label: String, val options: List<Pair<Int, String>>) : State() {
+    /** [range] is the numbers it also takes besides its options, if any. */
+    data class Choice(
+      val value: Int,
+      val label: String,
+      val options: List<Pair<Int, String>>,
+      val range: IntRange? = null,
+    ) : State() {
       override val text: String
         get() = label
     }
