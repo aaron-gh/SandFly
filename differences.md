@@ -206,6 +206,8 @@ When text is marked as another language, TalkBack switches the voice to that lan
 
 When you turn a change off, SandFly no longer splits the text or pauses around it. Text marked as the voice's own language and country, such as US English for a US English voice, isn't split either, whatever the settings, since the voice doesn't change. SandFly compares languages by their codes only, so Serbian in Latin and in Cyrillic script counts as two dialects, and Norwegian marked as `no` and as `nb` counts as two languages.
 
+The **Switch language automatically** and **Identify languages from words** commands, in **Speech**, turn those settings on or off, for gestures, edge menus and keyboard shortcuts, and say "Switch language automatically on" or "off", and "Identify languages from words on" or "off".
+
 ### How emoji are spoken
 
 Some speech engines read emoji badly, use names of their own, or don't read them at all. **Verbosity** > **Emoji** chooses how they're spoken:

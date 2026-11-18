@@ -150,6 +150,7 @@ import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
+import com.google.android.accessibility.talkback.speech.LanguageSwitchCommands;
 import com.google.android.accessibility.talkback.selector.ReadingControlLists;
 import com.google.android.accessibility.talkback.translation.TranslateCommand;
 import com.google.android.accessibility.talkback.selector.ReadingControlCommands;
@@ -1218,6 +1219,23 @@ public class GestureController {
       selectorController.switchOnOrOffAutoTranslation(eventId, /* hint= */ null);
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_equalizer))) {
       selectorController.switchEqualizerOnOrOff(eventId, /* hint= */ null);
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_switch_languages))) {
+      boolean on =
+          LanguageSwitchCommands.toggleSwitchLanguages(
+              service, SharedPreferencesUtils.getSharedPreferences(service));
+      speak(
+          service.getString(
+              on ? R.string.switch_languages_now_on : R.string.switch_languages_now_off));
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_toggle_identify_languages_from_words))) {
+      boolean on =
+          LanguageSwitchCommands.toggleIdentifyFromWords(
+              SharedPreferencesUtils.getSharedPreferences(service));
+      speak(
+          service.getString(
+              on
+                  ? R.string.identify_languages_from_words_now_on
+                  : R.string.identify_languages_from_words_now_off));
     } else if (SandflyAi.getFeatures() != null
         && action.equals(service.getString(R.string.shortcut_value_ai_agent))) {
       SandflyAi.getFeatures().startAgent(service);
