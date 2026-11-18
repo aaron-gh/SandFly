@@ -673,6 +673,9 @@ public class EventFilter {
     if (TelegramChatCell.isDescribedOnFocus(node)) {
       return false;
     }
+    if (!WebInterfaceUtils.supportsWebActions(node) && isNamedOnlyByFocusEvent(node)) {
+      return false;
+    }
     AccessibilityWindowInfo window = AccessibilityNodeInfoUtils.getWindow(node.unwrap());
     if (AccessibilityWindowInfoUtils.getType(window)
         == AccessibilityWindowInfo.TYPE_INPUT_METHOD) {
@@ -682,6 +685,20 @@ public class EventFilter {
     // its text in children still off screen, which descriptions leave out unless they are spoken
     // as they will be after the scroll. Otherwise the app's event, after the scroll, says it.
     return speakItemsBeforeScroll || !hasChildOffScreen(node);
+  }
+
+  /**
+   * Whether {@code node} has no name of its own and nothing inside it that names it, so that only
+   * the app's focus event can. The app fills that event with the text of views left out of the
+   * node tree, such as the app name on a card of a launcher's recent apps screen. A SandFly-made
+   * event has only the node's own text, so speaking it early would say "Unlabeled".
+   */
+  static boolean isNamedOnlyByFocusEvent(AccessibilityNodeInfoCompat node) {
+    return TextUtils.isEmpty(AccessibilityNodeInfoUtils.getNodeText(node))
+        && TextUtils.isEmpty(node.getStateDescription())
+        && TextUtils.isEmpty(node.getHintText())
+        && (node.getChildCount() == 0
+            || AccessibilityNodeInfoUtils.isClickableWithOnlyDecorativeChild(node));
   }
 
   /** Whether a child of {@code node} is off screen. */
