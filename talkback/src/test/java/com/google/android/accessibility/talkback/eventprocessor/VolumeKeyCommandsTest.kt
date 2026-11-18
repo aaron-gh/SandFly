@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.handlesVolumeKeys
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.isPlaybackActive
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.localSessionStream
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.streamWithoutSession
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.volumeFlags
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -158,5 +159,12 @@ class VolumeKeyCommandsTest {
       localSessionStream(STREAM_MUSIC, USE_DEFAULT_STREAM_TYPE, false),
     )
     assertEquals(STREAM_ALARM, localSessionStream(STREAM_ALARM, USE_DEFAULT_STREAM_TYPE, false))
+  }
+
+  @Test
+  fun streamWithoutSession_musicWhenMusicPlaysAndStreamIsDefault() {
+    assertEquals(STREAM_MUSIC, streamWithoutSession(USE_DEFAULT_STREAM_TYPE, true))
+    assertEquals(USE_DEFAULT_STREAM_TYPE, streamWithoutSession(USE_DEFAULT_STREAM_TYPE, false))
+    assertEquals(STREAM_ALARM, streamWithoutSession(STREAM_ALARM, true))
   }
 }
