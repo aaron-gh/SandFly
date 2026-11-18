@@ -437,6 +437,10 @@ object Commands {
         keyboard(Key.REFOCUS_CURRENT_NODE)
         keyboard(Key.NAVIGATE_NEXT_FOCUSABLE)
         keyboard(Key.NAVIGATE_PREVIOUS_FOCUSABLE)
+        gesture(
+          R.string.shortcut_value_toggle_focus_text_inside_items,
+          R.string.title_pref_focus_text_inside_items,
+        )
       }
 
     private fun navigationSetting() =

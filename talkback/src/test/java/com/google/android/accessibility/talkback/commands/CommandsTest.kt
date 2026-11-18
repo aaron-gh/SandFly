@@ -79,6 +79,7 @@ class CommandsTest {
         R.string.shortcut_value_repeat_last_spoken_phrase_slower,
         R.string.shortcut_value_toggle_switch_languages,
         R.string.shortcut_value_toggle_identify_languages_from_words,
+        R.string.shortcut_value_toggle_focus_text_inside_items,
         R.string.shortcut_value_settings_profiles,
         R.string.shortcut_value_next_settings_profile,
         R.string.shortcut_value_previous_settings_profile,

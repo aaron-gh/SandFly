@@ -814,6 +814,23 @@ public class GestureController {
       speak(
           service.getString(
               shown ? R.string.focus_indicator_now_on : R.string.focus_indicator_now_off));
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_toggle_focus_text_inside_items))) {
+      SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+      boolean on =
+          !SharedPreferencesUtils.getBooleanPref(
+              prefs,
+              service.getResources(),
+              R.string.pref_focus_text_inside_items_key,
+              R.bool.pref_focus_text_inside_items_default);
+      // The service applies the setting when it changes.
+      SharedPreferencesUtils.putBooleanPref(
+          prefs, service.getResources(), R.string.pref_focus_text_inside_items_key, on);
+      speak(
+          service.getString(
+              on
+                  ? R.string.focus_text_inside_items_now_on
+                  : R.string.focus_text_inside_items_now_off));
     } else if (action.equals(service.getString(R.string.shortcut_value_pause_backtalk))) {
       if (service.getPauseController() != null) {
         service.getPauseController().requestPause();
