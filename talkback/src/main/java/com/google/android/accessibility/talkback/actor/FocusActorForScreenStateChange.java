@@ -175,6 +175,7 @@ public class FocusActorForScreenStateChange {
             lastFocusAction = focusActionRecord;
           } else {
             fallBackWindow = null;
+            lastFocusAction = null;
           }
         }
       }
