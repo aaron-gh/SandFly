@@ -115,6 +115,10 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
 
   /** Panel holding a set of developer preferences. */
     public static class BrailleImePrefFragment extends PreferenceFragmentCompat {
+    private static final String SANDFLY_SETTINGS_ACTIVITY =
+        "com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity";
+    private static final String CUSTOM_CHARACTERS_FRAGMENT =
+        "com.google.android.accessibility.talkback.braille.CustomBrailleCharactersFragment";
     private Preference brailleGradePreference;
 
     @Override
@@ -196,6 +200,16 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
                 return false;
               });
         }
+      }
+
+      {
+        // Custom braille characters, a screen of SandFly's settings.
+        Preference customCharactersPref =
+            findPreference(getString(R.string.pref_brailleime_custom_characters));
+        customCharactersPref.setIntent(
+            new Intent()
+                .setClassName(getContext(), SANDFLY_SETTINGS_ACTIVITY)
+                .putExtra(PreferencesActivity.FRAGMENT_NAME, CUSTOM_CHARACTERS_FRAGMENT));
       }
 
       {

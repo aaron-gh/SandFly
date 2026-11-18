@@ -22,6 +22,7 @@ import android.content.SharedPreferences
 import androidx.annotation.PluralsRes
 import androidx.annotation.StringRes
 import androidx.annotation.WorkerThread
+import com.google.android.accessibility.braille.interfaces.CustomBrailleCharacters
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.voicecommands.CustomVoiceCommands
 import com.google.android.accessibility.talkback.commands.Commands
@@ -111,6 +112,11 @@ object ItemFiles {
       R.plurals.item_file_count_braille_dictionary,
     ),
     VOICE_COMMANDS("voiceCommands", R.string.voice_commands_custom, R.plurals.item_file_count_voice_commands),
+    BRAILLE_CHARACTERS(
+      "brailleCharacters",
+      R.string.title_pref_custom_braille_characters,
+      R.plurals.item_file_count_braille_characters,
+    ),
   }
 
   /** What an import did. */
@@ -245,6 +251,15 @@ object ItemFiles {
       array.put(item)
     }
     return newFile().put(kind.key, array).toString(2)
+  }
+
+  /** Returns a file of the custom braille characters. */
+  fun exportBrailleCharacters(context: Context): String {
+    val array = JSONArray()
+    for (entry in CustomBrailleCharacters.read(CustomBrailleCharacters.prefs(context))) {
+      array.put(JSONObject().put("text", entry.text).put("cells", entry.cells).put("table", entry.table))
+    }
+    return newFile().put(Kind.BRAILLE_CHARACTERS.key, array).toString(2)
   }
 
   /** Returns a file of the custom voice commands, and the macros they run. */
@@ -406,6 +421,7 @@ object ItemFiles {
       importDictionary(Kind.SPEECH_DICTIONARY)
       importDictionary(Kind.SYMBOL_DICTIONARY)
       importDictionary(Kind.BRAILLE_DICTIONARY)
+      importBrailleCharacters()
       importSettingsProfiles()
       if (moreProblems) problems += context.getString(R.string.item_file_problem_more)
       return Result.Imported(counts, problems)
@@ -774,6 +790,36 @@ object ItemFiles {
         else -> BrailleDictionary.write(prefs, all)
       }
       counted(kind, count)
+    }
+
+    /** Adds the custom braille characters, each replacing the one with its text in its table. */
+    private fun importBrailleCharacters() {
+      val items = items(Kind.BRAILLE_CHARACTERS)
+      if (items.isEmpty()) return
+      val braillePrefs = CustomBrailleCharacters.prefs(context)
+      val all = CustomBrailleCharacters.read(braillePrefs).toMutableList()
+      val title = context.getString(Kind.BRAILLE_CHARACTERS.title)
+      var count = 0
+      for ((number, item) in items) {
+        val entry =
+          CustomBrailleCharacters.entry(item.optString("text"), item.optString("cells"), item.optString("table").trim())
+        if (entry == null) {
+          problem(R.string.item_file_problem_not_read, title, number)
+          continue
+        }
+        val index = all.indexOfFirst { it.text == entry.text && it.table == entry.table }
+        if (index >= 0) {
+          all[index] = entry
+        } else if (all.size < CustomBrailleCharacters.MAX_ENTRIES) {
+          all += entry
+        } else {
+          problem(R.string.item_file_problem_limit, title, CustomBrailleCharacters.MAX_ENTRIES)
+          break
+        }
+        count++
+      }
+      CustomBrailleCharacters.write(braillePrefs, all)
+      counted(Kind.BRAILLE_CHARACTERS, count)
     }
 
     private fun importSettingsProfiles() {

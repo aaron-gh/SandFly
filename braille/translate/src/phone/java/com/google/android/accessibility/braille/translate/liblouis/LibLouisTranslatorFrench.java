@@ -17,12 +17,17 @@
 package com.google.android.accessibility.braille.translate.liblouis;
 
 import android.content.Context;
+import androidx.annotation.Nullable;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 
 /** LibLouis Translator for French grade 1. */
 public class LibLouisTranslatorFrench extends LibLouisTranslator {
   public LibLouisTranslatorFrench(Context context) {
-    super(context, "fr-bfu-comp6.utb");
+    this(context, /* code= */ null);
+  }
+
+  public LibLouisTranslatorFrench(Context context, @Nullable String code) {
+    super(context, code, "fr-bfu-comp6.utb");
     setupCommutativityReplacementMap();
   }
 

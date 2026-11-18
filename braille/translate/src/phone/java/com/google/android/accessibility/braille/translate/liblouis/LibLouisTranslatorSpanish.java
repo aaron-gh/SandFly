@@ -17,6 +17,7 @@
 package com.google.android.accessibility.braille.translate.liblouis;
 
 import android.content.Context;
+import androidx.annotation.Nullable;
 import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -25,7 +26,11 @@ import java.util.Map;
 public class LibLouisTranslatorSpanish extends LibLouisTranslator {
 
   public LibLouisTranslatorSpanish(Context context) {
-    super(context, "es.tbl");
+    this(context, /* code= */ null);
+  }
+
+  public LibLouisTranslatorSpanish(Context context, @Nullable String code) {
+    super(context, code, "es.tbl");
     setupCommutativityReplacementMap();
   }
 

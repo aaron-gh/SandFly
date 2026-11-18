@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Action on the Custom braille characters screen, and title of its dialog, that adds a character or text typed with braille cells of the user's choice. [CHAR_LIMIT=NONE] -->
+    <string name="custom_braille_characters_add">Add character</string>
+    <!-- Label of the field, in the dialog of a custom braille character, for the character or text that the braille cells type. [CHAR_LIMIT=NONE] -->
+    <string name="custom_braille_characters_text">Character or text</string>
+    <!-- Label of the field, in the dialog of a custom braille character, for the braille cells that type the character, written as dot numbers. [CHAR_LIMIT=NONE] -->
+    <string name="custom_braille_characters_cells">Dots</string>
+    <!-- Label of the list, in the dialog of a custom braille character, and action on a custom braille character, for the braille table the character is used in, such as Polish. [CHAR_LIMIT=NONE] -->
+    <string name="custom_braille_characters_table">Braille table</string>
+    <!-- Text in the dialog of a custom braille character that says how to write the braille cells. [CHAR_LIMIT=NONE] -->
+    <string name="custom_braille_characters_cells_help">Dot numbers of each cell, with cells separated by hyphens, such as 2356 or 456-2356.</string>
+    <!-- Error in the dialog of a custom braille character when the dots field is not braille cells. [CHAR_LIMIT=NONE] -->
+    <string name="custom_braille_characters_invalid_cells">Enter dot numbers 1 to 8, at most <xliff:g id="number" example="20">%1$d</xliff:g> cells</string>
+    <!-- Error in the dialog of a custom braille character when the character or text field is empty or too long. [CHAR_LIMIT=NONE] -->
+    <string name="custom_braille_characters_invalid_text">Enter 1 to <xliff:g id="number" example="50">%1$d</xliff:g> characters</string>
+</resources>
