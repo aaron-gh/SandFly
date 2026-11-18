@@ -308,4 +308,24 @@ class ScriptBuilderScreensTest {
     assertTrue(ScriptPermission.NETWORK in ScriptStore.get(context).find(scriptId)!!.granted)
     assertTrue(all(current().preferenceScreen).none { it.title?.toString() == "Accept" })
   }
+
+  @Test
+  fun changingARule_keepsItsRowsInPlace() {
+    val page = open(ScriptBuilderFragment::class.java, Bundle().apply { putString(ScriptScreenFragment.ARG_ID, id) })
+    page.click("Add rule")
+    val rule = current()
+    val group = rule.row("Read as one item") as androidx.preference.CheckBoxPreference
+    val label = rule.row("Label")
+    group.performClick()
+    idle()
+    // The same rows, updated, so that accessibility focus stays on the checkbox.
+    assertTrue(rule.row("Read as one item") === group)
+    assertTrue(group.isChecked)
+    assertTrue(rule.row("Label") === label)
+    assertTrue(label.isEnabled)
+    assertEquals(true, ScriptBuilder.draft(ScriptStore.get(context), id)!!.getJSONArray("rules").getJSONObject(0).getBoolean("group"))
+    // A row that only some states have comes and goes.
+    assertTrue(all(rule.preferenceScreen).none { it.title?.toString() == "Not used: set the item" } ||
+      all(rule.preferenceScreen).count { it.title?.toString()?.startsWith("Not used") == true } == 1)
+  }
 }
