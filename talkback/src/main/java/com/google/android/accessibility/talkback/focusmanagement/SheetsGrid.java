@@ -242,6 +242,42 @@ public final class SheetsGrid {
         null);
   }
 
+  /**
+   * Returns the node Sheets now lists for the address of {@code lastCell}, looking under its old
+   * grid and then under the grid found again if Sheets replaced it, or null if none lists it.
+   */
+  @Nullable
+  public static AccessibilityNodeInfoCompat sameCellListedAgain(
+      @Nullable AccessibilityNodeInfoCompat lastCell) {
+    Cell cell = cellOf(lastCell);
+    if (cell == null) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat oldGrid = lastCell.getParent();
+    if (oldGrid != null) {
+      oldGrid.refresh();
+      AccessibilityNodeInfoCompat same = listedAs(oldGrid, cell);
+      if (same != null) {
+        return same;
+      }
+    }
+    AccessibilityNodeInfoCompat grid = findGrid(oldGrid);
+    return grid == null ? null : listedAs(grid, cell);
+  }
+
+  @Nullable
+  private static AccessibilityNodeInfoCompat listedAs(AccessibilityNodeInfoCompat grid, Cell cell) {
+    List<AccessibilityNodeInfoCompat> cells = new ArrayList<>();
+    cellsOf(grid, cells);
+    for (AccessibilityNodeInfoCompat node : cells) {
+      Cell c = cellOf(node);
+      if (c != null && c.address.equals(cell.address) && node.isVisibleToUser()) {
+        return node;
+      }
+    }
+    return null;
+  }
+
   /** Returns whether the node is a Sheets cell, so row and column navigation work from it. */
   public static boolean isCell(@Nullable AccessibilityNodeInfoCompat node) {
     return cellOf(node) != null;
@@ -1191,7 +1227,7 @@ public final class SheetsGrid {
 
   /** Looks through the window for a node listing cells, for when Sheets replaced the grid. */
   @Nullable
-  private static AccessibilityNodeInfoCompat findGrid(AccessibilityNodeInfoCompat oldGrid) {
+  private static AccessibilityNodeInfoCompat findGrid(@Nullable AccessibilityNodeInfoCompat oldGrid) {
     AccessibilityService service = TalkBackService.getInstance();
     if (service == null) {
       return null;
