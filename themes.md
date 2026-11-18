@@ -174,6 +174,8 @@ play is left out when the theme is installed, and SandFly says so.
 | `formatting` | Formatted text |
 | `screen_off` | Screen off |
 | `screen_on` | Screen on |
+| `screen_hidden` | The screen is hidden |
+| `screen_shown` | The hidden screen is shown again |
 | `loading` | Loading |
 | `model_loading` | The on-device AI model loading |
 | `browse_mode_on_v4_2` | Browse mode on |

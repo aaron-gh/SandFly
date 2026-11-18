@@ -59,10 +59,12 @@ object ScreenAnnouncementSettings {
   /**
    * The status items with a switch that can be spoken after the time and the battery as the screen
    * turns on, in the order they are spoken. They are separate from the status gesture's, so that
-   * each can say different things. The time has its own older switch.
+   * each can say different things. The time has its own older switch. The hidden screen comes
+   * first of these, as it decides whether the screen can be shown to someone.
    */
   val SCREEN_ON_STATUS: Map<StatusItem, String> =
     linkedMapOf(
+      StatusItem.HIDDEN_SCREEN to "pref_screen_on_hidden_screen",
       StatusItem.WIFI to "pref_screen_on_wifi",
       StatusItem.MOBILE to "pref_screen_on_mobile_network",
       StatusItem.RINGER to "pref_screen_on_ringer",

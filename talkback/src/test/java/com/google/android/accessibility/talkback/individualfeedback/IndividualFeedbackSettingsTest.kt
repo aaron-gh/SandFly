@@ -54,6 +54,14 @@ class IndividualFeedbackSettingsTest {
   }
 
   @Test
+  fun turningOffTheScreenHiddenSoundLeavesTheScreenShownSound() {
+    val hidden = IndividualFeedbackSettings.SOUNDS.first { it.key == "screen_hidden" }
+    IndividualFeedbackSettings.setSoundOn(prefs, hidden, false)
+    assertEquals(setOf("screen_hidden"), IndividualFeedbackSettings.mutedSoundResources(prefs))
+    assertTrue(IndividualFeedbackSettings.mutedVibrationResources(prefs).isEmpty())
+  }
+
+  @Test
   fun soundsAndVibrationsAreSeparate() {
     IndividualFeedbackSettings.setVibrationOn(prefs, click, false)
     assertFalse(IndividualFeedbackSettings.isVibrationOn(prefs, click))

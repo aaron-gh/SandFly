@@ -42,6 +42,12 @@ class SoundThemesTest {
   }
 
   @Test
+  fun aThemeCanReplaceTheHiddenAndShownScreenSoundsAndVibrations() {
+    assertTrue(SoundThemes.SOUND_KEYS.containsAll(listOf("screen_hidden", "screen_shown")))
+    assertTrue(SoundThemes.VIBRATION_NAMES.containsAll(listOf("screen_hidden", "screen_shown")))
+  }
+
+  @Test
   fun screenOnIsAnEventSound() {
     assertTrue(SoundThemes.SOUND_KEYS.contains("screen_on"))
     assertTrue(IndividualFeedbackSettings.SOUNDS.any { it.key == "screen_on" })

@@ -284,6 +284,28 @@ class ScreenAnnouncementsTest {
   }
 
   @Test
+  fun theHiddenScreenIsOffByDefaultAndSaidFirstAfterTheBattery() {
+    val prefs = FakeSharedPreferences()
+    assertFalse(
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false)
+        .contains(StatusItem.HIDDEN_SCREEN)
+    )
+    prefs
+      .edit()
+      .putBoolean("pref_screen_on_hidden_screen", true)
+      .putBoolean("pref_screen_on_wifi", true)
+      .putString(
+        ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+        ScreenAnnouncementSettings.BATTERY_ALWAYS,
+      )
+      .apply()
+    assertEquals(
+      listOf(StatusItem.BATTERY, StatusItem.HIDDEN_SCREEN, StatusItem.WIFI),
+      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false),
+    )
+  }
+
+  @Test
   fun screenOnStatusNeverRepeatsTheTime() {
     // The time has its own switch and is spoken first.
     assertFalse(StatusItem.TIME in ScreenAnnouncementSettings.SCREEN_ON_STATUS)

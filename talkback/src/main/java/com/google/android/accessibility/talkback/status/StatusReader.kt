@@ -38,6 +38,7 @@ import com.google.android.accessibility.talkback.permission.PermissionUtils
 import com.google.android.accessibility.talkback.utils.DateTimeUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.util.function.BooleanSupplier
 
 /** A part of the status readout. The names are saved in preferences, so do not rename them. */
 enum class StatusItem(@StringRes val title: Int, @StringRes val summary: Int) {
@@ -47,11 +48,13 @@ enum class StatusItem(@StringRes val title: Int, @StringRes val summary: Int) {
   MOBILE(R.string.status_item_mobile, R.string.status_item_mobile_summary),
   RINGER(R.string.status_item_ringer, R.string.status_item_ringer_summary),
   AIRPLANE_MODE(R.string.status_item_airplane_mode, R.string.status_item_airplane_mode_summary),
+  HIDDEN_SCREEN(R.string.status_item_hidden_screen, R.string.status_item_hidden_screen_summary),
 }
 
 /**
- * Describes what the status bar shows, such as the time, battery, and network state. Items that are
- * in their usual state, such as the ringer when it rings, are left out.
+ * Describes what the status bar shows, such as the time, battery, and network state, and whether
+ * the screen is hidden. Items that are in their usual state, such as the ringer when it rings or a
+ * screen that isn't hidden, are left out.
  */
 class StatusReader(private val context: Context, private val batteryMonitor: BatteryMonitor) {
   private val wifiManager = context.getSystemService(WifiManager::class.java)
@@ -65,6 +68,9 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
   private val overrideNetworkTypes = mutableMapOf<Int, Int>()
   private val displayInfoCallbacks = mutableMapOf<Int, Pair<TelephonyManager, TelephonyCallback>>()
   private var subscriptionsListener: SubscriptionManager.OnSubscriptionsChangedListener? = null
+
+  /** Whether SandFly's hide screen curtain covers the screen now. */
+  var screenHidden: BooleanSupplier = BooleanSupplier { false }
 
   /** Starts following the network type that the status bar shows for each active SIM. */
   fun start() {
@@ -167,6 +173,8 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
       StatusItem.RINGER -> describeRinger()
       StatusItem.AIRPLANE_MODE ->
         if (isAirplaneModeOn()) context.getString(R.string.status_airplane_mode) else null
+      StatusItem.HIDDEN_SCREEN ->
+        if (screenHidden.asBoolean) context.getString(R.string.screen_dimmed) else null
     }
 
   @Suppress("DEPRECATION") // connectionInfo is the only way to get the name without a callback.
@@ -379,6 +387,7 @@ class StatusReader(private val context: Context, private val batteryMonitor: Bat
         StatusItem.MOBILE,
         StatusItem.RINGER,
         StatusItem.AIRPLANE_MODE,
+        StatusItem.HIDDEN_SCREEN,
       )
   }
 }

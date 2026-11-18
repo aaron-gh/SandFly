@@ -55,4 +55,8 @@
     <string name="status_item_airplane_mode" tools:ignore="MissingTranslation">Airplane mode</string>
     <!-- Status readout settings: summary of the airplane mode item. [CHAR LIMIT=NONE] -->
     <string name="status_item_airplane_mode_summary" tools:ignore="MissingTranslation">Only when airplane mode is on</string>
+    <!-- Status readout settings: title of the item that says "Screen hidden" while Hide screen covers the screen. [CHAR LIMIT=40] -->
+    <string name="status_item_hidden_screen" tools:ignore="MissingTranslation">Hidden screen</string>
+    <!-- Status readout settings: summary of the hidden screen item. [CHAR LIMIT=NONE] -->
+    <string name="status_item_hidden_screen_summary" tools:ignore="MissingTranslation">Only when the screen is hidden</string>
 </resources>

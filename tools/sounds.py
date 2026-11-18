@@ -1,8 +1,8 @@
 # Synthesises all of SandFly's built-in sounds and writes them where the app reads them: focus,
 # clicks, scrolling, windows, list chimes, links, formatting, typos, browse mode, loading, volume,
-# screen off and on, the circle menu, reading controls, cursor moves, row wraps, edge gestures,
-# control sounds, SandFly's notifications and the agent in talkback and utils, and the braille
-# display and braille keyboard sounds in braille/common.
+# screen off and on, the screen hidden and shown, the circle menu, reading controls, cursor moves,
+# row wraps, edge gestures, control sounds, SandFly's notifications and the agent in talkback and
+# utils, and the braille display and braille keyboard sounds in braille/common.
 #
 # Each sound is a 48 kHz, 16-bit mono WAV, peak-normalised to its own level and dithered. WAV is
 # lossless, and Android plays it everywhere; ffmpeg's built-in Vorbis encoder, used before, added
@@ -195,6 +195,12 @@ def sounds():
     # The screen turned off: a falling slide.
     s["screen_off"] = ([TALKBACK], [note(900, 0, 0.3, 0.12, glide=300, partials=((1, 1.0), (2, 0.2)))],
                        0.32, -6)
+    # The screen was hidden: two soft, warm notes that fall, the second left to ring. Shown: the
+    # same notes, rising. Lower and slower than the keyboard and browse mode runs.
+    for name in ("screen_hidden", "screen_shown"):
+        run = (E5, A4) if name == "screen_hidden" else (A4, E5)
+        s[name] = ([TALKBACK], [note(run[0], 0, 0.14, 0.05, partials=WARM),
+                                note(run[1], 0.1, 0.3, 0.1, partials=WARM)], 0.42, -7)
     # Circle menu items, one note each from a pentatonic scale.
     for i, pitch in enumerate(PENTATONIC, start=1):
         s[f"radial_menu_{i}"] = ([TALKBACK], [note(pitch, 0, 0.09, 0.035, brightness_decay=30,

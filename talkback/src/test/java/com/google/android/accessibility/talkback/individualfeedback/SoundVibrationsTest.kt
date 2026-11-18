@@ -39,6 +39,19 @@ class SoundVibrationsTest {
   }
 
   @Test
+  fun hidingAndShowingTheScreenEachHaveTheirOwnSoundVibrationAndSwitches() {
+    for (sound in listOf("screen_hidden", "screen_shown")) {
+      val item = IndividualFeedbackSettings.SOUNDS.single { it.key == sound }
+      assertEquals(listOf(sound), item.resourceNames)
+      val pattern = SoundVibrations.PATTERNS.getValue(sound)
+      assertEquals("${sound}_pattern", pattern)
+      assertEquals(pattern, SoundVibrations.switchOf(sound))
+      assertTrue(IndividualFeedbackSettings.VIBRATIONS.any { it.key == pattern })
+      assertTrue(File("src/main/res/raw/$sound.wav").isFile)
+    }
+  }
+
+  @Test
   fun theRepeatingLoadingVibrationIsShortButFirmEnoughToFeelThroughACase() {
     val loading = patterns.getValue(SoundVibrations.PATTERNS.getValue("loading"))
     val onTimes = loading.onOff.filterIndexed { i, _ -> i % 2 == 1 }

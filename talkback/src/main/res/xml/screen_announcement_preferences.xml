@@ -46,6 +46,11 @@
         android:title="@string/title_pref_screen_on_low_battery" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="false"
+        android:key="pref_screen_on_hidden_screen"
+        android:summary="@string/status_item_hidden_screen_summary"
+        android:title="@string/status_item_hidden_screen" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
         android:key="pref_screen_on_wifi"
         android:summary="@string/status_item_wifi_summary"
         android:title="@string/status_item_wifi" />

@@ -594,7 +594,7 @@ SandFly says the profile's name when it changes. Next and previous go through **
 
 ### Status gesture
 
-Triple-tap with two fingers to hear what the status bar shows: the time, the battery, the Wi-Fi network and its signal, and the mobile carrier, network type, and signal. SandFly also says the ringer, Do Not Disturb, and airplane mode when they aren't in their usual state. To hear the name of the Wi-Fi network, allow location access when SandFly asks the first time.
+Triple-tap with two fingers to hear what the status bar shows: the time, the battery, the Wi-Fi network and its signal, and the mobile carrier, network type, and signal. SandFly also says the ringer, Do Not Disturb, and airplane mode when they aren't in their usual state, and "Screen hidden" while the screen is hidden. To hear the name of the Wi-Fi network, allow location access when SandFly asks the first time.
 
 To choose what the gesture says and in what order, go to **Status readout**. Each item has **Move up** and **Move down** actions. In gesture settings, this action is called **Speak status**. To read from the current item, which was the gesture's action in TalkBack, choose **Read from focused item** in the SandFly menu.
 
@@ -838,13 +838,15 @@ For 3 minutes after you hid the screen, TalkBack set the screen to full brightne
 
 If you turn off **Always show this** in the hide screen dialog, SandFly says only "Screen hidden" and skips the instructions for showing the screen again. When SandFly starts with the screen hidden, it says "Screen hidden" after "SandFly on".
 
+Hiding and showing the screen each play a sound and a vibration of their own, which can be turned off in **Individual sounds and vibrations** (**Screen hidden** and **Screen shown**) and replaced by a [sound theme](themes.md). The status gesture says "Screen hidden" while the screen is hidden; to leave it out, turn off **Hidden screen** in **Status readout**. To have SandFly say "Screen hidden" when the screen turns on, turn on **Hidden screen** in **Verbosity** > **Screen on and off**.
+
 ### Proximity sensor
 
 SandFly doesn't stop speech when something covers the proximity sensor. To turn this back on, go to **Sound and vibration** > **Cover proximity sensor to stop speech**.
 
 ### Screen on and off announcements
 
-In **Verbosity** > **Screen on and off**, you can choose what SandFly says when the screen turns off, when it turns on, and when you unlock the phone. When the screen turns off, SandFly says "Screen off" and the ringer mode. When the screen turns on, it says the time, and it can also say the battery, the Wi-Fi network, the mobile network, the ringer and Do Not Disturb, and airplane mode, after the time in the same announcement. It also says the number of notifications after the time, as in "6 notifications", when SandFly has notification access and there are notifications that aren't ongoing. When you unlock the phone, it says "Device unlocked". Each of these has its own switch. By default, everything except the extra status items is on.
+In **Verbosity** > **Screen on and off**, you can choose what SandFly says when the screen turns off, when it turns on, and when you unlock the phone. When the screen turns off, SandFly says "Screen off" and the ringer mode. When the screen turns on, it says the time, and it can also say the battery, whether the screen is hidden, the Wi-Fi network, the mobile network, the ringer and Do Not Disturb, and airplane mode, after the time in the same announcement. It also says the number of notifications after the time, as in "6 notifications", when SandFly has notification access and there are notifications that aren't ongoing. When you unlock the phone, it says "Device unlocked". Each of these has its own switch. By default, everything except the extra status items is on.
 
 These switches are separate from **Status readout**, so the status gesture can say different things. SandFly doesn't make the screen-on announcement during calls, and the lock screen no longer cuts off "Screen off".
 

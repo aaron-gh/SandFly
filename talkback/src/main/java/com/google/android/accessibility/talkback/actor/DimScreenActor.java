@@ -190,6 +190,14 @@ public class DimScreenActor implements OnConfigurationChangedListener {
   }
 
   /**
+   * Whether the curtain covers the screen now. The setting can be on while it doesn't, such as
+   * while SandFly is paused.
+   */
+  public boolean isScreenHidden() {
+    return isDimmed;
+  }
+
+  /**
    * Turn on screen dimming without setting the shared preference. Used by {@link #resume()} and
    * {@link DimScreenDialog}
    */
@@ -370,6 +378,7 @@ public class DimScreenActor implements OnConfigurationChangedListener {
 
   /** Turns off screen dimming without setting the shared preference. */
   private void makeScreenBright() {
+    boolean wasDimmed = isDimmed;
     if (isDimmed) {
       isDimmed = false;
       isInstructionDisplayed = false;
@@ -383,11 +392,15 @@ public class DimScreenActor implements OnConfigurationChangedListener {
     HiddenScreenBrightness.restore(service);
     // Not to feedback since this actor is shut down.
     if (!stopFeedback) {
-      pipeline.returnFeedback(
-          EVENT_ID_UNTRACKED,
+      Part.Builder feedback =
           Feedback.speech(
               service.getString(R.string.screen_brightness_restored),
-              announcementOptions(SpeechController.QUEUE_MODE_INTERRUPT)));
+              announcementOptions(SpeechController.QUEUE_MODE_INTERRUPT));
+      // The sound plays only when the curtain was up, as the screen is then shown again.
+      if (wasDimmed) {
+        feedback.setSound(Feedback.Sound.create(R.raw.screen_shown));
+      }
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, feedback);
     }
   }
 
@@ -437,7 +450,8 @@ public class DimScreenActor implements OnConfigurationChangedListener {
                     .setAction(Action.SPEAK)
                     .setText(service.getString(R.string.screen_dimmed))
                     .setOptions(announcementOptions(SpeechController.QUEUE_MODE_INTERRUPT))
-                    .build()));
+                    .build())
+            .setSound(Feedback.Sound.create(R.raw.screen_hidden)));
     // Users who turned off the confirmation dialog already know how to show the screen again.
     if (!getShouldShowDialogPref()) {
       return;

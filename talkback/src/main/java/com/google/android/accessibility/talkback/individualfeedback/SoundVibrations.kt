@@ -140,6 +140,8 @@ object SoundVibrations {
       "keyboard_closed" to "keyboard_closed_pattern",
       "sandfly_notification" to "sandfly_notification_pattern",
       "screen_on" to "screen_on_pattern",
+      "screen_hidden" to "screen_hidden_pattern",
+      "screen_shown" to "screen_shown_pattern",
       // The braille display's sounds.
       "display_connected" to "display_connected_pattern",
       "display_disconnected" to "display_disconnected_pattern",

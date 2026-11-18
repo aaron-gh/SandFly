@@ -2914,6 +2914,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             accessibilityFocusMonitor, this, speechController, screenStateMonitor.state);
     dimScreenController =
         new DimScreenActor(this, universalSearchActor, gestureShortcutMapping, dimScreenNotifier);
+    statusReader.setScreenHidden(dimScreenController::isScreenHidden);
 
     accessibilityFocusInterpreter =
         new AccessibilityFocusInterpreter(
