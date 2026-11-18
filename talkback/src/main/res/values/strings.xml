@@ -2638,6 +2638,10 @@
     <string name="shortcut_character_count">Character count</string>
     <!-- Spoken by the Character count command: the length of the text in the focused edit box. %1$s is the number of characters, such as "12 characters", %2$s the number of words, such as "3 words". [CHAR LIMIT=NONE] -->
     <string name="character_count_template"><xliff:g id="characters" example="12 characters">%1$s</xliff:g>, <xliff:g id="words" example="3 words">%2$s</xliff:g></string>
+    <!-- Label for the command that says the whole text of the text field being typed in, or of the focused text field. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_read_text_field">Read text field</string>
+    <!-- Spoken by the Read text field command when the text field has no text, before its hint if it has one. [CHAR LIMIT=NONE] -->
+    <string name="text_field_empty">Empty</string>
     <!-- Number of characters in the focused edit box, spoken by the Character count command. [CHAR LIMIT=NONE] -->
     <plurals name="character_count_characters">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> character</item>
