@@ -175,6 +175,7 @@ import com.google.android.accessibility.talkback.overview.RecentAppSteps;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
+import com.google.android.accessibility.utils.output.OutputMute;
 import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.labeling.Label;
 import com.google.android.accessibility.utils.labeling.LabelManager;
@@ -1310,6 +1311,7 @@ public class GestureController {
   @SuppressWarnings("NewApi")
   public void onGesture(int gestureId, EventId eventId) {
     RecentUserInput.mark();
+    OutputMute.onUserInput("gesture");
     if (gestureId == GESTURE_FAKED_SPLIT_TYPING_AND_HOLD) {
       // The intended behavior is simulating the non-customizable gesture "double-tap-and-hold".
       gestureId = GESTURE_DOUBLE_TAP_AND_HOLD;

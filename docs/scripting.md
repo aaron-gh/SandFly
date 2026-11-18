@@ -411,6 +411,7 @@ Each entry becomes a reading control that moves to the next or previous item mat
 *   `sf.playTone(frequency, ms, { volume })` plays a tone. `ms` is 100 if left out.
 *   `sf.playAudio(samples, { sampleRate, volume })` plays a list of samples from -1 to 1, up to 10 seconds. `sampleRate` is from 8,000 to 48,000, and 22,050 if left out.
 *   `sf.vibrate(pattern)` vibrates for a number of milliseconds, or a list of up to 20 that alternates vibration and pause, up to 5 seconds.
+*   *Version 6.* `sf.feedback.mute({ speech, sounds, vibration }, ms)` mutes SandFly's speech, sounds or vibration, each that is `true`, for `ms` milliseconds, at most 10,000. Speech under way stops, and what SandFly would say, play or vibrate while muted is dropped, not queued, including the script's own `sf.speak` and sounds. It gives a handle whose `release()` ends the mute. `sf.feedback.unmute()` ends a mute the script started. A mute also ends when the script unloads or raises an error, when the app it started in leaves the screen, and when the user touches the screen, makes a gesture or presses a key; the script's own `sf.touch` gestures and `sf.keys` presses don't end it. A new mute, of this script or another, replaces the one before. Scripts can't mute on SandFly's own screens. Needs `speech`.
 
 Sounds and vibration follow the user's **Sound feedback** and **Vibration feedback** settings. A script can play 4 sounds at once; more are skipped.
 

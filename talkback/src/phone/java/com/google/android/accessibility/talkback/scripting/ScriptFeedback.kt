@@ -40,6 +40,7 @@ import com.google.android.accessibility.talkback.speechcontrol.ExternalSpeech
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.FeedbackItem
+import com.google.android.accessibility.utils.output.OutputMute
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_INTERRUPT
 import com.google.android.accessibility.utils.output.SpeechController.QUEUE_MODE_QUEUE
@@ -73,6 +74,11 @@ class ScriptFeedback(
     voice: Voice = Voice(),
     done: ((Boolean) -> Unit)? = null,
   ) {
+    if (OutputMute.isSpeechMuted()) {
+      // Dropped without ever completing.
+      done?.invoke(false)
+      return
+    }
     val options =
       ExternalSpeech.options(
         if (interrupt) QUEUE_MODE_INTERRUPT else QUEUE_MODE_QUEUE,
@@ -210,7 +216,9 @@ class ScriptFeedback(
   fun openApp(packageName: String, done: (Boolean) -> Unit) = onMain { done(launch(packageName)) }
 
   fun vibrate(pattern: LongArray) {
-    if (paused || !preference(R.string.pref_vibration_key, R.bool.pref_vibration_default)) return
+    if (paused || OutputMute.isVibrationMuted() || !preference(R.string.pref_vibration_key, R.bool.pref_vibration_default)) {
+      return
+    }
     val vibrator =
       service.getSystemService(Vibrator::class.java)?.takeIf { it.hasVibrator() } ?: return
     @Suppress("DEPRECATION")
@@ -218,7 +226,9 @@ class ScriptFeedback(
   }
 
   private fun soundOn(): Boolean =
-    !paused && preference(R.string.pref_soundback_key, R.bool.pref_soundback_default)
+    !paused &&
+      !OutputMute.areSoundsMuted() &&
+      preference(R.string.pref_soundback_key, R.bool.pref_soundback_default)
 
   private fun preference(key: Int, default: Int): Boolean =
     SharedPreferencesUtils.getBooleanPref(

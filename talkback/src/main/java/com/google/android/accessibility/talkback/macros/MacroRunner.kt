@@ -50,6 +50,7 @@ import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.device.ScreenUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import com.google.android.accessibility.utils.output.OutputMute
 
 /**
  * Runs macros, one at a time: starting a macro stops the one running.
@@ -255,14 +256,15 @@ object MacroRunner {
           runStep(index + 1)
         }
         Macros.DoKind.VIBRATE -> {
-          val vibrator = service.getSystemService(android.os.Vibrator::class.java)
+          val vibrator =
+            service.getSystemService(android.os.Vibrator::class.java)?.takeUnless { OutputMute.isVibrationMuted() }
           vibrator?.vibrate(
             android.os.VibrationEffect.createOneShot(step.number.coerceIn(1, 5_000).toLong(), android.os.VibrationEffect.DEFAULT_AMPLITUDE)
           )
           runStep(index + 1)
         }
         Macros.DoKind.PLAY_TONE -> {
-          playTone(step.number.coerceIn(20, 20_000))
+          if (!OutputMute.areSoundsMuted()) playTone(step.number.coerceIn(20, 20_000))
           runStep(index + 1)
         }
         Macros.DoKind.DEVICE_CONTROL ->

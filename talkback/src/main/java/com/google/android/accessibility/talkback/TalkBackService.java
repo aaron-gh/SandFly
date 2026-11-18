@@ -322,6 +322,7 @@ import com.google.android.accessibility.talkback.utils.TalkbackFeatureSupport;
 import com.google.android.accessibility.talkback.utils.VerbosityPreferences;
 import com.google.android.accessibility.utils.AccessibilityEventListener;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
+import com.google.android.accessibility.utils.output.OutputMute;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -1428,6 +1429,9 @@ public class TalkBackService extends AccessibilityServiceCompat
         || eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       RecentUserInput.mark();
     }
+    if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
+      OutputMute.onUserInput("touch");
+    }
     if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START
         && gestureController != null) {
       gestureController.onUserInputStarted();
@@ -1738,6 +1742,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       RecentUserInput.mark();
+      OutputMute.onUserInput("key");
       ScrollAhead.cancelAll("key");
       // Repeats of a held key, such as the one that started the collection, don't end it.
       if (keyEvent.getRepeatCount() == 0) {

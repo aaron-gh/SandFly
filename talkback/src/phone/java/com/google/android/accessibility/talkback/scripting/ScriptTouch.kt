@@ -28,6 +28,7 @@ import androidx.core.os.bundleOf
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import com.google.android.accessibility.utils.output.OutputMute
 import org.json.JSONArray
 
 /** Touches the screen, presses keys and types text for scripts. */
@@ -78,8 +79,10 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
       // apps until the gesture ends. A lock the person or another SandFly screen holds stays theirs.
       if (gestures++ == 0) ownsPassThrough = !feedback.services.isPassThroughActive()
       if (gestures == 1 && ownsPassThrough) feedback.passThrough(true)
+      val ended = injecting()
       val finish = { performed: Boolean ->
         if (--gestures == 0 && ownsPassThrough) feedback.passThrough(false)
+        ended()
         done(performed)
       }
       val callback =
@@ -98,6 +101,21 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     }
   }
 
+  /**
+   * Marks touches and keys as the script's from now until the returned function runs, and a moment
+   * after, as their events can arrive late, so that they don't end a script's mute as the user's
+   * would.
+   */
+  private fun injecting(): () -> Unit {
+    OutputMute.scriptInputStarted()
+    val ended = java.util.concurrent.atomic.AtomicBoolean()
+    return {
+      if (ended.compareAndSet(false, true)) {
+        mainHandler.postDelayed({ OutputMute.scriptInputEnded() }, INPUT_EVENT_DELAY_MS)
+      }
+    }
+  }
+
   /** Stops gestures that haven't started. Called from any thread once scripts are off. */
   fun close() {
     mainHandler.post { closed = true }
@@ -108,7 +126,11 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     apiCheck(names.size in 1..MAX_KEYS) { "pressKeys takes 1 to $MAX_KEYS keys" }
     val codes = names.map(::keyCodeName)
     requireShizuku("Pressing keys")
-    ShizukuShell.run(service, ShizukuCommand.INPUT_KEYEVENT, codes.joinToString(" "), done)
+    val ended = injecting()
+    ShizukuShell.run(service, ShizukuCommand.INPUT_KEYEVENT, codes.joinToString(" ")) {
+      ended()
+      done(it)
+    }
   }
 
   /**
@@ -147,10 +169,21 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     }
     flush()
     if (steps.isEmpty()) return done(true)
+    val ended = injecting()
     fun run(index: Int) {
-      if (index == steps.size) return done(true)
+      if (index == steps.size) {
+        ended()
+        return done(true)
+      }
       val (command, argument) = steps[index]
-      ShizukuShell.run(service, command, argument) { ok -> if (ok) run(index + 1) else done(false) }
+      ShizukuShell.run(service, command, argument) { ok ->
+        if (ok) {
+          run(index + 1)
+        } else {
+          ended()
+          done(false)
+        }
+      }
     }
     run(0)
   }
@@ -201,6 +234,8 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     const val DEFAULT_DURATION_MS = 50L
     const val MAX_DURATION_MS = 10_000L
     const val PASS_THROUGH_WAIT_MS = 350L
+    /** How long after an injected touch or key ends its events may still arrive. */
+    const val INPUT_EVENT_DELAY_MS = 500L
 
     val KEY_ALIASES =
       mapOf(

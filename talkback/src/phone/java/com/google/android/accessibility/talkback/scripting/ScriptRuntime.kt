@@ -45,6 +45,7 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Future
 import java.util.concurrent.atomic.AtomicInteger
 import com.google.android.accessibility.talkback.scripting.ScriptBuilder.objects
+import com.google.android.accessibility.utils.output.OutputMute
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -145,6 +146,7 @@ class ScriptRuntime(
   }
 
   fun close() {
+    OutputMute.releaseOwner(id, "script unloaded")
     dialogs.close(id)
     timers.values.forEach(handler::removeCallbacks)
     timers.clear()
@@ -232,6 +234,26 @@ class ScriptRuntime(
     }
     on("speech.stop", SPEECH) { if (!manager.inBacktalk) manager.feedback.stopSpeech() }
     on("speech.isSpeaking") { manager.feedback.services.isSpeaking() }
+    on("feedback.mute", SPEECH) { args ->
+      apiCheck(!manager.inBacktalk) { "Scripts can't mute SandFly on its own screens" }
+      val ms = args.optDouble("ms", Double.NaN)
+      apiCheck(ms.isFinite() && ms > 0) {
+        "sf.feedback.mute needs a time in milliseconds, up to ${OutputMute.MAX_MS}"
+      }
+      val speech = args.optBoolean("speech")
+      val sounds = args.optBoolean("sounds")
+      val vibration = args.optBoolean("vibration")
+      apiCheck(speech || sounds || vibration) {
+        "sf.feedback.mute needs speech, sounds or vibration set to true"
+      }
+      val app = manager.appInfo().optString("package").ifEmpty { null }
+      val token = OutputMute.start(id, app, speech, sounds, vibration, minOf(ms, OutputMute.MAX_MS.toDouble()).toLong())
+      // Speech under way is muted as well.
+      if (speech) manager.feedback.stopSpeech()
+      token
+    }
+    on("feedback.release") { OutputMute.release(it.optInt("token")) }
+    on("feedback.unmute") { OutputMute.releaseOwner(id, "unmuted") }
     on("speech.last", SCREEN) {
       promise { settle -> manager.feedback.lastSpeech { settle(true, it) } }
     }
