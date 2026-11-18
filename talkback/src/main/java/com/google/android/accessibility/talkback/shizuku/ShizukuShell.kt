@@ -236,10 +236,18 @@ object ShizukuShell {
           }
           // Shizuku forgets a connection whose service died, so only a new bind brings it back,
           // and calls waiting for this one would wait forever.
-          unbind()
-          failPending()
-          if (holders > 0 && isAllowed()) {
-            bind(context)
+          // Shizuku calls this while iterating its connection set, so changing that set here
+          // throws ConcurrentModificationException. Defer until its loop has finished.
+          val dead = this
+          mainHandler.post {
+            if (connection !== dead) {
+              return@post
+            }
+            unbind()
+            failPending()
+            if (holders > 0 && isAllowed()) {
+              bind(context)
+            }
           }
         }
       }
