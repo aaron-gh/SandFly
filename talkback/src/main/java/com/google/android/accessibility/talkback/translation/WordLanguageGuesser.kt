@@ -19,10 +19,10 @@ package com.google.android.accessibility.talkback.translation
 import android.content.SharedPreferences
 import android.os.SystemClock
 import androidx.annotation.VisibleForTesting
+import com.google.android.accessibility.utils.mlkit.RemoteLanguageIdentifier
 import com.google.android.accessibility.utils.output.LanguageGuesser
 import com.google.android.accessibility.utils.output.LanguageVoices
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentifier
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executor
@@ -163,9 +163,8 @@ internal constructor(private val identifier: Identifier) : LanguageGuesser {
     private fun client(): LanguageIdentifier? =
       client
         ?: try {
-          LanguageIdentification.getClient().also { client = it }
+          RemoteLanguageIdentifier().also { client = it }
         } catch (e: IllegalStateException) {
-          // ML Kit isn't set up until the device is first unlocked after it starts.
           LogUtils.w(TAG, "No language identification: %s", e)
           null
         }

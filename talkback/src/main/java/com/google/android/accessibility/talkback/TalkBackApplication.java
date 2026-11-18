@@ -21,6 +21,7 @@ import android.os.Build;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderCommands;
 import com.google.android.accessibility.talkback.braille.BrailleDisplayCommands;
 import com.google.android.accessibility.talkback.report.CrashLog;
+import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.migration.SettingsImporter;
 import com.google.android.accessibility.talkback.training.PageConfigMapperImpl;
 import com.google.android.accessibility.talkback.training.TalkBackDisabledWarmingDialogImpl;
@@ -30,6 +31,7 @@ import com.google.android.accessibility.talkback.training.content.TutorialConten
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivityInterfaceInjector;
 import com.google.android.accessibility.talkback.trainingcommon.content.TutorialContentInterfaceInjector;
 import com.google.android.accessibility.utils.FormFactorUtils;
+import com.google.android.accessibility.utils.mlkit.MlKitHelper;
 
 /** A top level Application for TalkBack. */
 public class TalkBackApplication extends Application {
@@ -44,6 +46,12 @@ public class TalkBackApplication extends Application {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P
         || getPackageName().equals(Application.getProcessName())) {
       SettingsImporter.importIfNeeded(this);
+    }
+    MlKitHelper.initialize(this);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
+        && Application.getProcessName().endsWith(":mlkit")) {
+      // So that a problem report includes the log of ML Kit's process.
+      ProblemReportSender.rememberProcess(this, "mlkit");
     }
 
     FormFactorUtils.initialize(this);

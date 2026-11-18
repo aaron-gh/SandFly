@@ -55,9 +55,8 @@ import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.accessibility.utils.output.VoiceProfiles
 import com.google.android.accessibility.utils.SettingsUtils
+import com.google.android.accessibility.utils.mlkit.RemoteLanguageIdentifier
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import com.google.mlkit.nl.languageid.LanguageIdentification
-import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
 import com.google.mlkit.nl.languageid.LanguageIdentifier
 import java.util.Date
 import java.util.Locale
@@ -1221,10 +1220,7 @@ object NotificationReader {
     val identifier =
       languageIdentifier
         ?: try {
-          LanguageIdentification.getClient(
-              LanguageIdentificationOptions.Builder().setConfidenceThreshold(0.6f).build()
-            )
-            .also { languageIdentifier = it }
+          RemoteLanguageIdentifier(0.6f).also { languageIdentifier = it }
         } catch (e: RuntimeException) {
           LogUtils.w(TAG, "No language identification: %s", e)
           null
