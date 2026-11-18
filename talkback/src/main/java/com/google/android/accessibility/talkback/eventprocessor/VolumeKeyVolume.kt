@@ -61,7 +61,11 @@ class VolumeKeyVolume(private val context: Context) {
     val session = session
     val info = session?.playbackInfo
     if (session == null || info == null) {
-      audio.adjustSuggestedStreamVolume(direction, stream, flags)
+      audio.adjustSuggestedStreamVolume(
+        direction,
+        streamWithoutSession(stream, audio.isMusicActive),
+        flags,
+      )
       return
     }
     if (info.playbackType == MediaController.PlaybackInfo.PLAYBACK_TYPE_REMOTE) {
@@ -126,6 +130,19 @@ class VolumeKeyVolume(private val context: Context) {
       }
       return flags
     }
+
+    /**
+     * The stream to change when no session takes the keys. Left to Android with the default stream,
+     * a change from SandFly goes to the accessibility stream, so the music stream is named when
+     * music plays.
+     */
+    @JvmStatic
+    internal fun streamWithoutSession(stream: Int, musicActive: Boolean): Int =
+      if (stream == AudioManager.USE_DEFAULT_STREAM_TYPE && musicActive) {
+        AudioManager.STREAM_MUSIC
+      } else {
+        stream
+      }
 
     /** Whether a session in playback [state] takes volume keys, as PlaybackState.isActive(). */
     @JvmStatic
