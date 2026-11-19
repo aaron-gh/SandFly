@@ -31,14 +31,19 @@ import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
 import com.google.android.accessibility.talkback.utils.NotificationUtils
+import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.PerformActionUtils
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.preference.BasePreferencesActivity
 import com.google.android.libraries.accessibility.utils.log.LogUtils
+import java.text.DateFormat
+import java.util.Date
 
 /**
  * Records the steps of a macro as the user does them: presses on items, by touch or with SandFly,
@@ -50,14 +55,24 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * Everything runs on the main thread.
  */
 object MacroRecorder {
-  /** The steps recorded for the macro [macroId], to be added at [at], or at the end for null. */
-  class Result(val macroId: String, val at: Int?, val steps: List<Macros.Step>, val skippedPasswords: Boolean)
+  /**
+   * The steps recorded for the macro [macroId], to be added at [at], or at the end for null.
+   * [created] when the macro was made for the recording.
+   */
+  class Result(
+    val macroId: String,
+    val at: Int?,
+    val steps: List<Macros.Step>,
+    val skippedPasswords: Boolean,
+    val created: Boolean,
+  )
 
   private class Session(
     val macroId: String,
     val name: String,
     val at: Int?,
     val forApp: Boolean,
+    val created: Boolean,
     val startTime: Long,
     val ownPkg: String,
     val homePkg: String?,
@@ -116,7 +131,7 @@ object MacroRecorder {
    * when the macro runs in one app only, which then isn't opened first. Ends any recording before
    * it.
    */
-  fun start(context: Context, macroId: String, name: String, at: Int?, forApp: Boolean) {
+  fun start(context: Context, macroId: String, name: String, at: Int?, forApp: Boolean, created: Boolean = false) {
     val home =
       context.packageManager
         .resolveActivity(Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME), 0)
@@ -124,7 +139,7 @@ object MacroRecorder {
         ?.packageName
     val ime = Settings.Secure.getString(context.contentResolver, Settings.Secure.DEFAULT_INPUT_METHOD)?.substringBefore('/')
     handler.removeCallbacks(checkRunnable)
-    session = Session(macroId, name, at, forApp, SystemClock.uptimeMillis(), context.packageName, home, ime)
+    session = Session(macroId, name, at, forApp, created, SystemClock.uptimeMillis(), context.packageName, home, ime)
     PerformActionUtils.addActionListener(listener)
     notify(context, macroId, name)
   }
@@ -146,7 +161,24 @@ object MacroRecorder {
         startApp = startApp,
         trailing = endingCommands(context),
       )
-    return Result(ended.macroId, ended.at, steps, ended.skippedPasswords)
+    return Result(ended.macroId, ended.at, steps, ended.skippedPasswords, ended.created)
+  }
+
+  /**
+   * The Record a macro command: makes a macro named after the time and records its steps from the
+   * screen in front, or, while recording, opens the macro, which ends the recording.
+   */
+  fun recordOrStop(service: TalkBackService): Boolean {
+    if (openMacro(service)) return true
+    val prefs = SharedPreferencesUtils.getSharedPreferences(service)
+    val time = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.SHORT).format(Date())
+    val macro = Macros.add(prefs, service.getString(R.string.macro_recorded_name, time))
+    start(service, macro.id, macro.name, at = null, forApp = false, created = true)
+    service.feedbackReturner?.returnFeedback(
+      EVENT_ID_UNTRACKED,
+      Feedback.speech(service.getString(R.string.macro_recording_toast)),
+    )
+    return true
   }
 
   /** Opens the screen of the macro being recorded, which ends the recording. Returns false when none is. */

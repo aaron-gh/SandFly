@@ -60,7 +60,6 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
   override fun build(screen: PreferenceGroup) {
     val app = app
     screen.action(getString(R.string.macro_add)) { add() }
-    screen.action(getString(R.string.macro_record_new)) { add(record = true) }
     if (app == null) screen.action(getString(R.string.macro_add_app)) { addApp() }
     val all = Macros.read(prefs)
     val macros = all.filter { it.app == app }
@@ -118,9 +117,8 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
     }
   }
 
-  /** Asks for a name and opens the new macro, which starts recording its steps for [record]. */
-  private fun add(record: Boolean = false) {
-    askText(getString(if (record) R.string.macro_record_new else R.string.macro_add), hint = getString(R.string.menu_name)) { name, _, _ ->
+  private fun add() {
+    askText(getString(R.string.macro_add), hint = getString(R.string.menu_name)) { name, _, _ ->
       val trimmed = name.trim()
       if (trimmed.isEmpty()) {
         ""
@@ -131,7 +129,6 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
           Preference(requireContext()).apply {
             fragment = MacroFragment::class.java.name
             extras.putString(MacroFragment.ARG_MACRO, macro.id)
-            if (record) extras.putBoolean(MacroFragment.ARG_RECORD, true)
           }
         )
         null
@@ -506,27 +503,30 @@ class MacroFragment : MacroEditorFragment() {
 
   override fun onResume() {
     super.onResume()
-    if (arguments?.getBoolean(ARG_RECORD) == true) {
-      arguments?.remove(ARG_RECORD)
-      startRecording()
-      return
-    }
     // Coming back to the macro, from the notification, Stop macro or otherwise, ends a recording.
     if (MacroRecorder.isRecording(macroId)) finishRecording()
   }
 
   /**
    * Records steps as the user does them, to be added where Add step adds a step. SandFly's
-   * settings go to the back, showing the app before them, or the macro's app is opened.
+   * settings go to the back, showing the app before them, or the macro's app is opened. [created]
+   * when the macro was made for the recording, which deletes it when nothing is kept.
    */
-  private fun startRecording() {
+  private fun startRecording(created: Boolean = false) {
     val macro = macro() ?: return
     if (TalkBackService.getInstance() == null) {
       toast(R.string.talkback_inactive_title)
       return
     }
     val context = requireContext()
-    MacroRecorder.start(context, macro.id, macro.name, insertAt?.takeIf { it < macro.steps.size }, forApp = macro.app != null)
+    MacroRecorder.start(
+      context,
+      macro.id,
+      macro.name,
+      insertAt?.takeIf { it < macro.steps.size },
+      forApp = macro.app != null,
+      created = created,
+    )
     android.widget.Toast.makeText(context, R.string.macro_recording_toast, android.widget.Toast.LENGTH_LONG).show()
     val launch = macro.app?.let { context.packageManager.getLaunchIntentForPackage(it) }
     if (launch != null) {
@@ -542,6 +542,7 @@ class MacroFragment : MacroEditorFragment() {
     val result = MacroRecorder.stop(context) ?: return
     if (result.steps.isEmpty()) {
       toast(R.string.script_builder_nothing_recorded)
+      deleteIfUnused(result)
       return
     }
     val flow = Macros.analyze(result.steps)
@@ -561,9 +562,17 @@ class MacroFragment : MacroEditorFragment() {
           insertSteps(at, result.steps, afterAll = true)
         }
       }
-      .setNeutralButton(R.string.script_builder_record_again) { _, _ -> startRecording() }
-      .setNegativeButton(android.R.string.cancel, null)
+      .setNeutralButton(R.string.script_builder_record_again) { _, _ -> startRecording(result.created) }
+      .setNegativeButton(android.R.string.cancel) { _, _ -> deleteIfUnused(result) }
+      .setOnCancelListener { deleteIfUnused(result) }
       .show()
+  }
+
+  /** Deletes the macro made for the recording [result] when it has no steps, and leaves its screen. */
+  private fun deleteIfUnused(result: MacroRecorder.Result) {
+    if (!result.created || !isAdded || macro()?.steps?.isNotEmpty() != false) return
+    Macros.delete(requireContext(), prefs, result.macroId)
+    requireActivity().onBackPressedDispatcher.onBackPressed()
   }
 
   private fun runNow() {
@@ -1220,9 +1229,6 @@ class MacroFragment : MacroEditorFragment() {
   companion object {
     /** The argument with the ID of the macro, for each screen of a macro. */
     const val ARG_MACRO = "macro"
-
-    /** The argument that starts recording steps once the macro's screen is shown. */
-    const val ARG_RECORD = "record"
 
     private const val STATE_INSERT_AT = "insert_at"
 

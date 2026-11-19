@@ -195,6 +195,10 @@ object VoicePlanRunner {
           MacroRunner.stop()
           next()
         }
+        value == Macros.RECORD_COMMAND -> {
+          MacroRunner.runCommand(value)
+          next()
+        }
         Macros.isCommand(value) -> {
           val id = Macros.idOf(value)
           macroRunning = true

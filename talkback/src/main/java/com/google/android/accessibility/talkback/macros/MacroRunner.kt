@@ -106,6 +106,9 @@ object MacroRunner {
       stop()
       return true
     }
+    if (value == Macros.RECORD_COMMAND) {
+      return TalkBackService.getInstance()?.let { MacroRecorder.recordOrStop(it) } ?: false
+    }
     val id = Macros.idOf(value) ?: return false
     return run(id)
   }

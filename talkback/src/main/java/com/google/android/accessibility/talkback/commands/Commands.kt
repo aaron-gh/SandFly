@@ -1278,6 +1278,9 @@ object Commands {
             Command(Macros.STOP_COMMAND, context.getString(R.string.shortcut_stop_macro), keyboardAction = null)
           )
         }
+        commands.add(
+          Command(Macros.RECORD_COMMAND, context.getString(R.string.macro_record_new), keyboardAction = null)
+        )
       }
 
     private fun gestureProfiles() =
