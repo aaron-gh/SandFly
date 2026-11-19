@@ -128,6 +128,7 @@ import com.google.android.accessibility.talkback.focusmanagement.NavigationTarge
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping.TalkbackAction;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
+import com.google.android.accessibility.talkback.macros.MacroRecorder;
 import com.google.android.accessibility.talkback.macros.MacroRunner;
 import com.google.android.accessibility.talkback.macros.Macros;
 import com.google.android.accessibility.talkback.menurules.RuleTextFormatting;
@@ -375,6 +376,7 @@ public class GestureController {
 
   public void performAction(String action, EventId eventId) {
     RecentUserInput.mark();
+    MacroRecorder.onCommand(service, action);
     NotificationReader.onUserAction();
     boolean defaultItemNavigation =
         action.equals(service.getString(R.string.shortcut_value_next))

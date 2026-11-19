@@ -57,7 +57,7 @@ object ScriptActionRecorder {
   fun start(context: Context, scriptId: String, ruleIndex: Int, title: String, match: JSONObject) {
     val query = NodeQuery.of(match)
     recording = Recording(scriptId, ruleIndex, title, query)
-    PerformActionUtils.setActionListener(listener)
+    PerformActionUtils.addActionListener(listener)
     notify(context, scriptId, ruleIndex, title)
   }
 
@@ -69,7 +69,7 @@ object ScriptActionRecorder {
   fun stop(context: Context): List<JSONObject> {
     val ended = recording
     recording = null
-    PerformActionUtils.setActionListener(null)
+    PerformActionUtils.removeActionListener(listener)
     context.getSystemService(NotificationManager::class.java)?.cancel(NOTIFICATION_ID)
     return ended?.let { synchronized(it) { it.steps.toList() } }.orEmpty()
   }

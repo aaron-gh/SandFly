@@ -55,13 +55,21 @@ public class PerformActionUtils {
   /** Told of each action the screen reader performs on an item, such as a click. */
   public interface ActionListener {
     void onActionPerformed(AccessibilityNodeInfoCompat node, int action);
+
+    /** Told of an action about to be performed, while the screen is still as it was. */
+    default void onActionPerforming(AccessibilityNodeInfoCompat node, int action) {}
   }
 
-  private static volatile @Nullable ActionListener actionListener;
+  private static final java.util.concurrent.CopyOnWriteArrayList<ActionListener> actionListeners =
+      new java.util.concurrent.CopyOnWriteArrayList<>();
 
-  /** Sets the one listener told of actions performed, or none for null. */
-  public static void setActionListener(@Nullable ActionListener listener) {
-    actionListener = listener;
+  /** Adds a listener told of actions performed, once. */
+  public static void addActionListener(ActionListener listener) {
+    actionListeners.addIfAbsent(listener);
+  }
+
+  public static void removeActionListener(ActionListener listener) {
+    actionListeners.remove(listener);
   }
 
   public static boolean performAction(
@@ -78,13 +86,17 @@ public class PerformActionUtils {
       return false;
     }
 
+    for (ActionListener listener : actionListeners) {
+      listener.onActionPerforming(node, action);
+    }
     boolean result = node.performAction(action, args);
     if (result && changesTextOrCursor(action) && !AccessibilityNodeInfoUtils.isKeyboard(node)) {
       lastActionOutsideKeyboard = SystemClock.uptimeMillis();
     }
-    @Nullable ActionListener listener = actionListener;
-    if (result && listener != null) {
-      listener.onActionPerformed(node, action);
+    if (result) {
+      for (ActionListener listener : actionListeners) {
+        listener.onActionPerformed(node, action);
+      }
     }
     LogUtils.d(
         TAG,
