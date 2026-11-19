@@ -82,6 +82,7 @@ import android.os.Build.VERSION;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.provider.Settings;
 import android.speech.tts.TextToSpeech;
@@ -131,6 +132,7 @@ import com.google.android.accessibility.talkback.actor.FocusManagerInternal;
 import com.google.android.accessibility.talkback.actor.FullScreenReadActor;
 import com.google.android.accessibility.talkback.actor.GestureReporter;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
+import com.google.android.accessibility.talkback.actor.KeepScreenOnWindow;
 import com.google.android.accessibility.talkback.actor.KeyboardActor;
 import com.google.android.accessibility.talkback.actor.LanguageActor;
 import com.google.android.accessibility.talkback.actor.NodeActionPerformer;
@@ -335,6 +337,7 @@ import com.google.android.accessibility.utils.BuildVersionUtils;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.FormFactorUtils;
+import com.google.android.accessibility.utils.KeepScreenOn;
 import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.Logger;
 import com.google.android.accessibility.utils.PackageManagerUtils;
@@ -3254,7 +3257,11 @@ public class TalkBackService extends AccessibilityServiceCompat
           if (!isInteractive) {
             cancelContinuousCopy();
           }
+          KeepScreenOn.setScreenOn(isInteractive);
         });
+    PowerManager powerManager = getSystemService(PowerManager.class);
+    KeepScreenOn.attach(
+        new KeepScreenOnWindow(this), powerManager == null || powerManager.isInteractive());
     splitScreen = new SplitScreen(this);
     appSwitcherKeys =
         new AppSwitcherKeys(
@@ -4031,6 +4038,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (liftCancelStrip != null) {
       liftCancelStrip.setShown(false);
     }
+    KeepScreenOn.detach();
 
     if (volumeKeyCommands != null) {
       volumeKeyCommands.cancel();
@@ -4156,6 +4164,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (liftCancelStrip != null) {
       liftCancelStrip.setShown(false);
     }
+    KeepScreenOn.detach();
     // we put it first to be sure that screen dimming would be removed even if code below
     // will crash by any reason. Because leaving user with dimmed screen is super bad
     // We check the instance against null to prevent the premature service destroy (aka destroy
@@ -5172,6 +5181,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
     // While paused, touches go to the apps, which the strip would take at the bottom of the screen.
     updateLiftCancelStrip();
+    KeepScreenOn.setPaused(paused);
     if (scriptHost != null) {
       scriptHost.onPausedChanged(paused);
     }

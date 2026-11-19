@@ -63,6 +63,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.annotation.WorkerThread;
 import androidx.core.content.ContextCompat;
 import com.google.android.accessibility.utils.BuildVersionUtils;
+import com.google.android.accessibility.utils.KeepScreenOn;
 import com.google.android.accessibility.utils.Logger;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.ChangeLocaleAction;
@@ -1101,8 +1102,8 @@ public class FailoverTextToSpeech {
 
     volume *= calculateVolumeAdjustment();
 
-    if (preventDeviceSleep && wakeLock != null && !wakeLock.isHeld()) {
-      wakeLock.acquire(10 * 60 * 1000L /*10 minutes*/);
+    if (preventDeviceSleep) {
+      preventDeviceSleep();
     }
 
     Exception failureException = null;
@@ -1189,8 +1190,8 @@ public class FailoverTextToSpeech {
         // Not speaking.
       }
     }
-    if (preventDeviceSleep && wakeLock != null && !wakeLock.isHeld()) {
-      wakeLock.acquire(10 * 60 * 1000L /*10 minutes*/);
+    if (preventDeviceSleep) {
+      preventDeviceSleep();
     }
     // Copies: the speech controller fills the same maps again for each later utterance.
     Map<String, String> mainParams = new HashMap<>(params);
@@ -1256,8 +1257,8 @@ public class FailoverTextToSpeech {
         other.stop();
       }
     }
-    if (preventDeviceSleep && wakeLock != null && !wakeLock.isHeld()) {
-      wakeLock.acquire(10 * 60 * 1000L /*10 minutes*/);
+    if (preventDeviceSleep) {
+      preventDeviceSleep();
     }
     float rateFactor = parseFloat(params.get(LanguageVoices.SPEECH_PARAM_RATE), 1f);
     float pitchFactor = parseFloat(params.get(LanguageVoices.SPEECH_PARAM_PITCH), 1f);
@@ -1403,22 +1404,35 @@ public class FailoverTextToSpeech {
     return multiple;
   }
 
-  /** Releases the {@link WakeLock} */
+  /**
+   * Keeps the screen on for at most {@link KeepScreenOn#LIMIT_MS}, through the {@link WakeLock} and
+   * through {@link KeepScreenOn}, as the wake lock doesn't keep the screen on on some phones.
+   */
+  private void preventDeviceSleep() {
+    if (wakeLock != null && !wakeLock.isHeld()) {
+      wakeLock.acquire(KeepScreenOn.LIMIT_MS);
+    }
+    KeepScreenOn.request(KeepScreenOn.SPEECH);
+  }
+
+  /** Releases the {@link WakeLock} and the {@link KeepScreenOn} request of speech. */
   private void allowDeviceSleep() {
     allowDeviceSleep(null);
   }
 
   private void allowDeviceSleep(@Nullable String completedUtteranceId) {
+    boolean isRecent = recentUtteranceIds.contains(completedUtteranceId);
+    boolean isLast = Objects.equals(recentUtteranceIds.peekLast(), completedUtteranceId);
+    if (completedUtteranceId != null && !isLast && isRecent) {
+      return;
+    }
+    KeepScreenOn.release(KeepScreenOn.SPEECH);
     if (wakeLock != null && wakeLock.isHeld()) {
-      boolean isRecent = recentUtteranceIds.contains(completedUtteranceId);
-      boolean isLast = Objects.equals(recentUtteranceIds.peekLast(), completedUtteranceId);
-      if (completedUtteranceId == null || isLast || !isRecent) {
-        try {
-          wakeLock.release();
-        } catch (RuntimeException unused) {
-          // Ignore: already released by timeout.
-          // TODO: Log this exception from GoogleLogger.
-        }
+      try {
+        wakeLock.release();
+      } catch (RuntimeException unused) {
+        // Ignore: already released by timeout.
+        // TODO: Log this exception from GoogleLogger.
       }
     }
   }

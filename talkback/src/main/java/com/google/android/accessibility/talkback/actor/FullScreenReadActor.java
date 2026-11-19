@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
+import com.google.android.accessibility.utils.KeepScreenOn;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WeakReferenceHandler;
 import com.google.android.accessibility.utils.input.CursorGranularity;
@@ -214,10 +215,6 @@ public class FullScreenReadActor {
 
     setReadingState(STATE_READING_FROM_NEXT);
 
-    if (!wakeLock.isHeld()) {
-      wakeLock.acquire();
-    }
-
     // With this refocus to trigger the continuous reading mode from cursor position.
     EventState.getInstance().setFlag(EventState.EVENT_NODE_REFOCUSED);
     moveTo(currentNode);
@@ -264,10 +261,6 @@ public class FullScreenReadActor {
     }
 
     setReadingState(STATE_READING_FROM_BEGINNING);
-
-    if (!wakeLock.isHeld()) {
-      wakeLock.acquire();
-    }
 
     // This is potentially a refocus, so we should set the refocus flag just in case.
     EventState.getInstance().setFlag(EventState.EVENT_NODE_REFOCUSED);
@@ -318,10 +311,6 @@ public class FullScreenReadActor {
       LogUtils.d(TAG, "Continuous reading interrupt internal ");
     }
     setReadingState(STATE_STOPPED);
-
-    if (wakeLock.isHeld()) {
-      wakeLock.release();
-    }
   }
 
   private void moveTo(AccessibilityNodeInfoCompat node) {
@@ -338,6 +327,8 @@ public class FullScreenReadActor {
   }
 
   private void moveForward() {
+    // Each item read starts the time limit again.
+    KeepScreenOn.request(KeepScreenOn.READING);
     EventId eventId = EVENT_ID_UNTRACKED; // First node's speech is already performance tracked.
     // Continuous reading mode (CRM) uses default granularity, or that of the reading control it was
     // started with.
@@ -359,9 +350,29 @@ public class FullScreenReadActor {
     currentState = newState;
 
     speechController.setShouldInjectAutoReadingCallbacks(isActive(), nodeSpokenRunnable);
+    updateDeviceSleep();
     if (wasActive != isActive()) {
       TutorialHooks.onContinuousReading(isActive());
       SettingsProfiles.onContinuousReading(isActive());
+    }
+  }
+
+  /**
+   * Keeps the screen on while reading, with the wake lock and with {@link KeepScreenOn}, which keeps
+   * it on where the wake lock doesn't, until reading stops or for at most {@link
+   * KeepScreenOn#LIMIT_MS} after the last item.
+   */
+  private void updateDeviceSleep() {
+    if (isActive()) {
+      if (!wakeLock.isHeld()) {
+        wakeLock.acquire();
+      }
+      KeepScreenOn.request(KeepScreenOn.READING);
+    } else {
+      if (wakeLock.isHeld()) {
+        wakeLock.release();
+      }
+      KeepScreenOn.release(KeepScreenOn.READING);
     }
   }
 
@@ -397,10 +408,14 @@ public class FullScreenReadActor {
 
     if (doPause) { // || !currentFocused.equals(pausedNode)) {
       pausedNode = currentFocused;
+      // While paused, the screen turns off as usual.
+      KeepScreenOn.release(KeepScreenOn.READING);
     } else {
       pausedNode = null;
       if (isPreviousActive() && speechController.isContinuousReadingPaused()) {
         setReadingState(STATE_READING_FROM_NEXT);
+      } else if (isActive()) {
+        KeepScreenOn.request(KeepScreenOn.READING);
       }
     }
   }
