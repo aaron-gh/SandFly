@@ -186,4 +186,29 @@ class TextPiecesTest {
     assertTrue(TextPieces.split("", Granularity.CHARACTERS, Locale.US).isEmpty())
     assertTrue(TextPieces.split("", Granularity.LINES, Locale.US).isEmpty())
   }
+
+  @Test
+  fun findIndexSearchesForwardAndBackwardWithWrapping() {
+    val text = "one two one three one"
+    val pieces = TextPieces.split(text, Granularity.WORDS, Locale.US)
+    val ones = pieces.indices.filter { text.substring(pieces[it].coreStart, pieces[it].coreEnd) == "one" }
+    assertEquals(3, ones.size)
+    // Nothing focused yet: forward starts at the first piece, backward at the last.
+    assertEquals(ones[0], TextPieces.findIndex(text, pieces, "ONE", -1))
+    assertEquals(ones[2], TextPieces.findIndex(text, pieces, "one", -1, backwards = true))
+    // From a match, the next and previous matches.
+    assertEquals(ones[2], TextPieces.findIndex(text, pieces, "one", ones[1]))
+    assertEquals(ones[0], TextPieces.findIndex(text, pieces, "one", ones[1], backwards = true))
+    // Wrapping around both ends.
+    assertEquals(ones[0], TextPieces.findIndex(text, pieces, "one", ones[2]))
+    assertEquals(ones[2], TextPieces.findIndex(text, pieces, "one", ones[0], backwards = true))
+    // A single match is found again from itself.
+    val three = TextPieces.findIndex(text, pieces, "three", -1)
+    assertEquals(three, TextPieces.findIndex(text, pieces, "three", three, backwards = true))
+    // An index past the end starts over.
+    assertEquals(ones[0], TextPieces.findIndex(text, pieces, "one", pieces.size + 3))
+    assertEquals(-1, TextPieces.findIndex(text, pieces, "four", 0))
+    assertEquals(-1, TextPieces.findIndex(text, pieces, "", 0))
+    assertEquals(-1, TextPieces.findIndex(text, emptyList(), "one", 0, backwards = true))
+  }
 }

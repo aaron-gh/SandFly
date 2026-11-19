@@ -261,18 +261,15 @@ class GranularEditingActivity : AppCompatActivity() {
     delete(selected.toList())
   }
 
-  private fun find(query: String, from: Int) {
+  private fun find(query: String, from: Int, backwards: Boolean = false) {
     lastFind = query
     if (pieces.isEmpty()) return
-    for (step in 1..pieces.size) {
-      val index = (from + step) % pieces.size
-      val piece = pieces[index]
-      if (text.substring(piece.coreStart, piece.coreEnd).contains(query, ignoreCase = true)) {
-        focus(index)
-        return
-      }
+    val index = TextPieces.findIndex(text, pieces, query, from, backwards)
+    if (index >= 0) {
+      focus(index)
+    } else {
+      list.announceForAccessibility(getString(R.string.granular_editing_not_found))
     }
-    list.announceForAccessibility(getString(R.string.granular_editing_not_found))
   }
 
   private fun findStart(): Int = focusedIndex().takeIf { it >= 0 } ?: lastFocusIndex
@@ -339,7 +336,10 @@ class GranularEditingActivity : AppCompatActivity() {
     add(R.string.granular_editing_find) {
       ask(R.string.granular_editing_find, lastFind) { typed -> if (typed.isNotEmpty()) find(typed, findStart()) }
     }
-    if (lastFind.isNotEmpty()) add(R.string.granular_editing_find_next) { find(lastFind, findStart()) }
+    if (lastFind.isNotEmpty()) {
+      add(R.string.granular_editing_find_next) { find(lastFind, findStart()) }
+      add(R.string.granular_editing_find_previous) { find(lastFind, findStart(), backwards = true) }
+    }
     add(R.string.granular_editing_replace) { replaceAll() }
     add(R.string.granular_editing_add_at_end) { addAtEnd() }
     if (pieces.isNotEmpty()) {
