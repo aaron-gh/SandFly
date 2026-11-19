@@ -173,7 +173,7 @@
     <string name="macro_invalid_regex">Not a usable regular expression. Repeated groups can\'t contain repetition or |.</string>
     <!-- Label of the list in the macro item text dialogs: which text of an item is looked in. [CHAR LIMIT=40] -->
     <string name="macro_match_in">Match in</string>
-    <!-- Choice in the Match in list: the item's text, description, hint and state. [CHAR LIMIT=40] -->
+    <!-- Choice in the Match in list: the item's text, description, hint, state and tooltip. [CHAR LIMIT=40] -->
     <string name="macro_field_any">Any text</string>
     <!-- Choice in the Match in list: the item's text. [CHAR LIMIT=40] -->
     <string name="macro_field_text">Text</string>
@@ -183,6 +183,8 @@
     <string name="macro_field_hint">Hint</string>
     <!-- Choice in the Match in list: the item's state description. [CHAR LIMIT=40] -->
     <string name="macro_field_state">State</string>
+    <!-- Choice in the Match in list: the item's tooltip text. [CHAR LIMIT=40] -->
+    <string name="macro_field_tooltip">Tooltip</string>
     <!-- Choice in the Match in list: the view ID of the item, such as com.example:id/send. [CHAR LIMIT=40] -->
     <string name="macro_field_id">Resource ID</string>
     <!-- Item text of a macro step or test looked for in one text of the item. field is that text, such as Description. [CHAR LIMIT=NONE] -->

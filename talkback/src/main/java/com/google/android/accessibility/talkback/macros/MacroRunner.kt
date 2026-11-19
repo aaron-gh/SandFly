@@ -1081,6 +1081,7 @@ object MacroRunner {
       Macros.Field.DESCRIPTION -> listOfNotNull(node.contentDescription)
       Macros.Field.HINT -> listOfNotNull(node.hintText)
       Macros.Field.STATE -> listOfNotNull(AccessibilityNodeInfoCompat.wrap(node).stateDescription)
+      Macros.Field.TOOLTIP -> listOfNotNull(AccessibilityNodeInfoCompat.wrap(node).tooltipText)
       Macros.Field.RESOURCE_ID ->
         node.viewIdResourceName?.let { id -> listOf(id, id.substringAfter(":id/")).distinct() }.orEmpty()
     }

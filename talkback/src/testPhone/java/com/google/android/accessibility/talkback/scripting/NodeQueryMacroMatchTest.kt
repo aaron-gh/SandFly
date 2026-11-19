@@ -60,6 +60,18 @@ class NodeQueryMacroMatchTest {
   }
 
   @Test
+  fun contains_findsAnItemNamedOnlyByItsTooltip() {
+    val more = node {
+      contentDescription = "Button"
+      tooltipText = "More actions"
+    }
+
+    assertTrue(query("""{"contains":"more actions"}""").matches(more))
+    assertTrue(query("""{"matches":"^more actions$","field":"tooltip"}""").matches(more))
+    assertFalse(query("""{"contains":"more actions","field":"description"}""").matches(more))
+  }
+
+  @Test
   fun matches_findsARegularExpressionInAField() {
     val button = node { contentDescription = "New post" }
     val heading = node { contentDescription = "New post draft" }

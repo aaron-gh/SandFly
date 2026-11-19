@@ -306,6 +306,7 @@ object ItemInspector {
       "description" to node.contentDescription,
       "hint" to node.hintText,
       "state" to node.stateDescription,
+      "tooltip" to node.tooltipText,
     )
 
   /** The macro item types [node] is, by their titles in a test's Item type list. */
