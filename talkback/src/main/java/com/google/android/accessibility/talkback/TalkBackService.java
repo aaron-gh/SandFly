@@ -3330,6 +3330,12 @@ public class TalkBackService extends AccessibilityServiceCompat
               public void onPausedChanged(boolean paused) {
                 onPauseChanged(paused);
               }
+
+              @Override
+              public void onResumeAnnounced() {
+                // Hidden again after "resumed", so "Screen hidden" is spoken second.
+                dimScreenController.resumeAfterPause();
+              }
             });
 
     startScripts();
@@ -5154,6 +5160,8 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Turns off, or back on, what pausing Backtalk turns off besides events and feedback. */
   private void onPauseChanged(boolean paused) {
     if (paused) {
+      // A hidden screen would stay black while paused SandFly can't show it again.
+      dimScreenController.suspend();
       if (volumeKeyCommands != null) {
         // The release of a key held now goes to the pause, not to the volume key presses.
         volumeKeyCommands.cancel();
