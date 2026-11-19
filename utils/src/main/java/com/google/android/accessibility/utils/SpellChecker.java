@@ -25,6 +25,7 @@ import static android.view.textservice.SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TY
 import android.content.Context;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.SystemClock;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -73,6 +74,9 @@ public class SpellChecker {
   private static final long SPELL_CHECKING_MAX_WAITING_TIME_MS = 500;
   private static final long BACKGROUND_CHECK_MAX_WAITING_TIME_MS = 2000;
   private static final int MISSPELLED_WORD_SUGGESTIONS_MAX_NUM = 5;
+  // Without a spell checker service, creating a session fails. A text field reporting cursor moves
+  // many times a second would otherwise try again on every move.
+  @VisibleForTesting static final long NO_SESSION_RETRY_DELAY_MS = 10_000;
   private static final int RESULT_ATTR_LOOKS_LIKE_GRAMMAR_ERROR =
       FeatureSupport.supportGrammarError()
           ? SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_GRAMMAR_ERROR
@@ -92,6 +96,8 @@ public class SpellChecker {
   private static final Cache resultCache = new Cache();
   private static final Handler mainHandler = new Handler(Looper.getMainLooper());
   private static @Nullable SpellChecker backgroundCheck;
+  // Uptime until which no new session is tried, after one couldn't be created.
+  private static volatile long noSessionUntilMs;
   private static final Runnable backgroundCheckTimeout =
       () -> {
         LogUtils.e(TAG, "Spell checking timeout.");
@@ -172,6 +178,10 @@ public class SpellChecker {
       return getResultFromCache();
     }
 
+    if (isSessionUnavailable()) {
+      return text;
+    }
+
     final SpellChecker spellChecker = new SpellChecker(context, text, listener);
     final AtomicReference<Looper> threadLooper = new AtomicReference<>();
     final Thread thread =
@@ -247,6 +257,17 @@ public class SpellChecker {
     mainHandler.postDelayed(backgroundCheckTimeout, BACKGROUND_CHECK_MAX_WAITING_TIME_MS);
   }
 
+  /** Whether a session couldn't be created a short time ago, so none is tried yet. */
+  @VisibleForTesting
+  static boolean isSessionUnavailable() {
+    return SystemClock.uptimeMillis() < noSessionUntilMs;
+  }
+
+  @VisibleForTesting
+  static void resetSessionUnavailable() {
+    noSessionUntilMs = 0;
+  }
+
   private static void cancelBackgroundCheck() {
     mainHandler.removeCallbacks(backgroundCheckTimeout);
     if (backgroundCheck != null) {
@@ -279,6 +300,10 @@ public class SpellChecker {
       return false;
     }
 
+    if (isSessionUnavailable()) {
+      return false;
+    }
+
     session =
         textServicesManager.newSpellCheckerSession(
             /* bundle= */ null,
@@ -287,6 +312,7 @@ public class SpellChecker {
             /* referToSpellCheckerLanguageSettings= */ true);
     if (session == null) {
       LogUtils.e(TAG, "Fail to create a SpellingCheckerSession.");
+      noSessionUntilMs = SystemClock.uptimeMillis() + NO_SESSION_RETRY_DELAY_MS;
       return false;
     }
 
