@@ -4435,6 +4435,9 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(R.string.pref_wrap_around_key, R.bool.pref_wrap_around_default));
     FocusProcessorForLogicalNavigation.setStopBeforeWrap(
         getBooleanPref(R.string.pref_stop_before_wrap_key, R.bool.pref_stop_before_wrap_default));
+    FocusProcessorForLogicalNavigation.setLeaveSystemBars(
+        getBooleanPref(
+            R.string.pref_leave_system_bars_key, R.bool.pref_leave_system_bars_default));
     AutomaticTranslation.update(this);
     WordLanguageGuesser.update(prefs);
     SymbolDictionary.load(prefs);

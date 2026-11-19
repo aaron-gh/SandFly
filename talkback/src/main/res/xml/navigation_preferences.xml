@@ -15,6 +15,10 @@
       android:key="@string/pref_wrap_around_reading_controls_key"
       android:title="@string/title_pref_wrap_around_reading_controls" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_leave_system_bars_default"
+      android:key="@string/pref_leave_system_bars_key"
+      android:title="@string/title_pref_leave_system_bars" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_focus_new_windows_default"
       android:key="@string/pref_focus_new_windows_key"
       android:title="@string/title_pref_focus_new_windows" />
