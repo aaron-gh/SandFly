@@ -123,4 +123,10 @@ public interface TalkBackForBrailleIme {
 
   /** Creates {@link FocusFinder} instance. */
   FocusFinder createFocusFinder();
+
+  /**
+   * Shows the screen reader's braille commands over the keyboard, the braille mode after typing.
+   * Returns false when they can't be shown.
+   */
+  boolean showBrailleCommands();
 }

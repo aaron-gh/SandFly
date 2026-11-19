@@ -23,14 +23,32 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.output.SpeechController
 
-/** Watches have no braille keyboard, so typing an app's name in braille isn't available. */
+/** Watches have no braille keyboard, so braille typed on the screen isn't available. */
 @Suppress("UNUSED_PARAMETER")
-class BrailleAppLauncher(
+class BrailleScreenInput(
   private val service: AccessibilityService,
   private val pipeline: Pipeline.FeedbackReturner,
   actorState: ActorState,
+  host: BrailleScreenInputHost,
 ) {
-  fun show() {
+  val isShowing: Boolean
+    get() = false
+
+  fun showCommands() {
+    notAvailable()
+  }
+
+  fun showApps() {
+    notAvailable()
+  }
+
+  fun recordCell(onCell: (String?) -> Unit): Boolean = false
+
+  fun switchToBrailleKeyboard(): Boolean = false
+
+  fun shutdown() {}
+
+  private fun notAvailable() {
     pipeline.returnFeedback(
       EVENT_ID_UNTRACKED,
       Feedback.speech(
@@ -39,6 +57,4 @@ class BrailleAppLauncher(
       ),
     )
   }
-
-  fun shutdown() {}
 }

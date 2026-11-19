@@ -15,6 +15,11 @@
         android:targetClass="com.google.android.accessibility.brailleime.settings.BrailleImePreferencesActivity" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.braillecommands.BrailleCommandsFragment"
+      android:key="pref_braille_commands_screen"
+      android:persistent="false"
+      android:title="@string/title_braille_commands" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.speechdictionary.BrailleDictionaryFragment"
       android:key="pref_braille_dictionary_screen"
       android:persistent="false"

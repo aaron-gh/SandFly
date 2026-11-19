@@ -22,6 +22,8 @@ import androidx.appcompat.app.AlertDialog
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.braillecommands.BrailleCellAssigner
+import com.google.android.accessibility.talkback.braillecommands.BrailleCommands
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils
@@ -54,6 +56,8 @@ class CommandFragment : TalkbackBaseFragment() {
   )
 
   private var sections: List<Section> = emptyList()
+
+  private val brailleCells by lazy { BrailleCellAssigner(this) { fill() } }
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
@@ -98,6 +102,7 @@ class CommandFragment : TalkbackBaseFragment() {
     for (section in sections) {
       addSection(section, command)
     }
+    addBrailleCells(command)
 
     val manager = CommandBindings.keyComboManager(context)
     val model = manager.keyComboModel ?: return
@@ -162,6 +167,67 @@ class CommandFragment : TalkbackBaseFragment() {
         title = getString(section.add)
         setOnPreferenceClickListener {
           chooseGesture(command, section.slots, section.choose)
+          true
+        }
+      }
+    )
+  }
+
+  /** Adds the braille cells that run [command] in Default's braille commands, then Add. */
+  private fun addBrailleCells(command: Commands.Command) {
+    val context = requireContext()
+    val category =
+      AccessibilitySuitePreferenceCategory(context).apply {
+        key = "pref_command_braille_cells"
+        title = getString(R.string.command_braille_cells)
+        isIconSpaceReserved = false
+      }
+    preferenceScreen.addPreference(category)
+    val cells = BrailleCommands.cellsOf(context, prefs, command.value)
+    if (cells.isEmpty()) {
+      category.addPreference(
+        AccessibilitySuitePreference(context).apply {
+          key = "pref_command_no_braille_cells"
+          isPersistent = false
+          isIconSpaceReserved = false
+          isSelectable = false
+          title = getString(R.string.command_no_braille_cells)
+        }
+      )
+    }
+    for (cell in cells) {
+      category.addPreference(
+        AccessibilitySuitePreference(context).apply {
+          key = "pref_command_braille_cell_$cell"
+          isPersistent = false
+          isIconSpaceReserved = false
+          title = BrailleCellAssigner.cellName(context, cell)
+          setOnPreferenceClickListener {
+            AlertDialog.Builder(context)
+              .setTitle(title)
+              .setPositiveButton(R.string.command_remove_braille_cell) { _, _ ->
+                BrailleCommands.remove(context, prefs, BrailleCommands.DEFAULT_SET, cell)
+                fill()
+              }
+              .setNegativeButton(android.R.string.cancel, null)
+              .show()
+            true
+          }
+        }
+      )
+    }
+    category.addPreference(
+      AccessibilitySuitePreference(context).apply {
+        key = "pref_command_add_braille_cell"
+        isPersistent = false
+        isIconSpaceReserved = false
+        title = getString(R.string.command_add_braille_cell)
+        // The cell is typed on SandFly's braille surface.
+        isEnabled = brailleCells.canRecord
+        setOnPreferenceClickListener {
+          brailleCells.record { cell ->
+            brailleCells.assign(BrailleCommands.DEFAULT_SET, cell, command.value)
+          }
           true
         }
       }

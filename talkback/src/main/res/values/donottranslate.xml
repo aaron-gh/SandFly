@@ -1889,6 +1889,10 @@
   <string name="shortcut_value_previous_reading_control_list" translatable="false">PREVIOUS_READING_CONTROL_LIST</string>
   <string name="shortcut_value_write_app_name">WRITE_APP_NAME</string>
   <string name="shortcut_value_braille_app_name">BRAILLE_APP_NAME</string>
+  <string name="shortcut_value_braille_commands" translatable="false">BRAILLE_COMMANDS</string>
+  <string name="shortcut_value_braille_command_profiles" translatable="false">BRAILLE_COMMAND_PROFILES</string>
+  <string name="shortcut_value_next_braille_command_profile" translatable="false">NEXT_BRAILLE_COMMAND_PROFILE</string>
+  <string name="shortcut_value_previous_braille_command_profile" translatable="false">PREVIOUS_BRAILLE_COMMAND_PROFILE</string>
   <string name="pref_handwriting_keyboard_key" translatable="false">pref_handwriting_keyboard</string>
   <!-- How long handwriting waits after a stroke for the next one, in milliseconds. -->
   <string name="pref_handwriting_wait_key" translatable="false">pref_handwriting_wait</string>
@@ -3038,6 +3042,7 @@
   <string name="pref_show_context_menu_gesture_profile_setting_key" translatable="false">pref_gesture_profile_menu_setting_key</string>
   <bool name="pref_show_context_menu_gesture_profile_default">true</bool>
   <item type="id" name="group_gesture_profile" />
+  <item type="id" name="group_braille_command_profile" />
   <item type="id" name="gesture_profile_menu" />
   <string name="shortcut_value_app_gestures_for_app" translatable="false">APP_GESTURES_FOR_APP</string>
   <string name="pref_show_context_menu_app_gestures_setting_key" translatable="false">pref_app_gestures_menu_setting_key</string>

@@ -154,6 +154,7 @@ public class BrailleImeActor {
       case TOGGLE_ORIENTATION_LOCK -> callback.toggleOrientationLock();
       case NEXT_BRAILLE_TABLE -> callback.switchToNextBrailleTable();
       case EMOJI_SEARCH -> callback.startEmojiSearch();
+      case NEXT_BRAILLE_MODE -> result = talkBackForBrailleIme.showBrailleCommands();
       case NEXT_GRANULARITY ->
           performTextAction(imeConnection, ScreenReaderAction.NEXT_READING_CONTROL);
       case PREVIOUS_GRANULARITY ->
