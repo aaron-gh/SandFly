@@ -128,6 +128,8 @@ import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
+import java.io.FileDescriptor;
+import java.io.PrintWriter;
 import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -517,6 +519,11 @@ public class BrailleIme extends InputMethodService {
     // A tablet says where the charging port is once how it is held settles, as its dots turn then.
     HeldOrientationTracker.setLastHeldListener(
         () -> {
+          OrientationTrace.add(
+              "lastHeld "
+                  + HeldOrientationTracker.getLastHeld()
+                  + " rotation="
+                  + HeldOrientationTracker.getLastHeldRotation());
           if (BrailleUtils.isPhoneSizedDevice(getResources())) {
             return;
           }
@@ -1101,6 +1108,19 @@ public class BrailleIme extends InputMethodService {
         public void onDetectionChanged(boolean isTabletop, boolean isFirstChangedEvent) {
           cancelScreenAwayAnnouncement();
           boolean facing = layoutOrientator.isUprightFacingUser();
+          OrientationTrace.add(
+              "detection tabletop="
+                  + isTabletop
+                  + " facing="
+                  + facing
+                  + " first="
+                  + isFirstChangedEvent
+                  + " monitor="
+                  + OrientationMonitor.getInstance().getCurrentOrientation()
+                  + " lastHeld="
+                  + HeldOrientationTracker.getLastHeld()
+                  + " locked="
+                  + isOrientationLocked());
           boolean laidDownFromFacing =
               isTabletop && !facing && wasUprightFacingUser && !isFirstChangedEvent;
           wasUprightFacingUser = facing;
@@ -1129,6 +1149,7 @@ public class BrailleIme extends InputMethodService {
               facing
                   ? getFacingAnnouncement()
                   : isTabletop ? getTabletopAnnouncement() : getScreenAwayAnnouncement();
+          OrientationTrace.add("say \"" + layout + "\"");
           String calibrationTips = "";
           if (keyboardView.inTwoStepCalibration()) {
             if (!isFirstChangedEvent) {
@@ -1522,9 +1543,19 @@ public class BrailleIme extends InputMethodService {
       return;
     }
     PortPosition position = keyboardView.turnTabletop(quarters);
+    OrientationTrace.add(
+        "turn quarters="
+            + quarters
+            + " port="
+            + position
+            + " tabletop="
+            + isCurrentTableTopMode()
+            + " locked="
+            + isOrientationLocked());
     if (position == null || !isCurrentTableTopMode() || isOrientationLocked()) {
       return;
     }
+    OrientationTrace.add("say \"" + getPortAnnouncement(position) + "\"");
     BrailleCommonTalkBackSpeaker.getInstance()
         .speak(getPortAnnouncement(position), TalkBackSpeaker.AnnounceType.INTERRUPT);
   }
@@ -1547,6 +1578,7 @@ public class BrailleIme extends InputMethodService {
       knownPortSide = getHeldOrientation();
       announcement = getString(R.string.orientation_unlocked_announcement);
     }
+    OrientationTrace.add("lock \"" + announcement + "\"");
     BrailleCommonTalkBackSpeaker.getInstance()
         .speak(announcement, TalkBackSpeaker.AnnounceType.INTERRUPT);
   }
@@ -1633,6 +1665,7 @@ public class BrailleIme extends InputMethodService {
    * hidden. Later ones interrupt, as they answer the user moving the device.
    */
   private void speakScreenAwayAnnouncement(String announcement) {
+    OrientationTrace.add("say \"" + announcement + "\"");
     if (screenAwayAnnouncementFirst) {
       long waited = SystemClock.uptimeMillis() - screenAwayAnnouncementHeldAtMs;
       BrailleCommonTalkBackSpeaker.getInstance()
@@ -1687,6 +1720,7 @@ public class BrailleIme extends InputMethodService {
     boolean turned = knownPortSide != OrientationMonitor.Orientation.UNKNOWN;
     knownPortSide = orientation;
     if (turned) {
+      OrientationTrace.add("say \"" + getPortAnnouncement(heldPortPosition(orientation)) + "\"");
       BrailleCommonTalkBackSpeaker.getInstance()
           .speak(
               getPortAnnouncement(heldPortPosition(orientation)),
@@ -1698,6 +1732,7 @@ public class BrailleIme extends InputMethodService {
       new OrientationMonitor.Callback() {
         @Override
         public void onOrientationChanged(OrientationMonitor.Orientation orientation) {
+          OrientationTrace.add("monitor " + orientation);
           if (orientationCallbackDelegate != null) {
             orientationCallbackDelegate.onOrientationChanged(orientation);
           }
@@ -2454,5 +2489,11 @@ public class BrailleIme extends InputMethodService {
   @VisibleForTesting
   public void testing_setTutorialState(State state) {
     tutorialState = state;
+  }
+
+  @Override
+  protected void dump(FileDescriptor fd, PrintWriter writer, String[] args) {
+    super.dump(fd, writer, args);
+    OrientationTrace.dump(writer);
   }
 }
