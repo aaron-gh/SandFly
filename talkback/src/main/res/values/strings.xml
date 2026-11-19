@@ -3623,6 +3623,9 @@
     <string name="title_pref_volume_keys_take_all">SandFly handles every volume key press</string>
     <!-- Title of the switch that makes the hardware volume keys change the volume without showing Android's volume panel (the on-screen volume slider). [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_keys_hide_panel">Hide volume panel</string>
+    <!-- Title and summary of the switch for volume key shortcuts when the display is off. -->
+    <string name="title_pref_volume_keys_screen_off">Volume key shortcuts with the screen off</string>
+    <string name="summary_pref_volume_keys_screen_off">Requires Shizuku. Presses without a command change the volume as usual.</string>
     <!-- Title of the setting, shown while SandFly handles every volume key press is on, that chooses the command run by pressing volume up once. Volume up is the hardware key. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_up_press">Volume up press</string>
     <!-- Title of the setting, shown while SandFly handles every volume key press is on, that chooses the command run by pressing volume down once. Volume down is the hardware key. [CHAR LIMIT=NONE] -->

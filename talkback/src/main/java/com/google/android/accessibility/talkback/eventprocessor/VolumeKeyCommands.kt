@@ -30,6 +30,7 @@ import android.view.KeyEvent
 import android.view.ViewConfiguration
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.report.VolumeKeyLog
+import com.google.android.accessibility.talkback.shizuku.ScreenOffVolumeKeys
 import com.google.android.accessibility.utils.monitor.ScreenMonitor
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 
@@ -50,6 +51,7 @@ class VolumeKeyCommands(
   private val volume = VolumeKeyVolume(context)
   private val powerManager = context.getSystemService(PowerManager::class.java)
   private val handler = Handler(Looper.getMainLooper())
+  private val screenOffKeys = ScreenOffVolumeKeys(context, perform)
 
   /** Volume keys > SandFly handles every volume key press. */
   private var takesAllPresses = false
@@ -106,34 +108,40 @@ class VolumeKeyCommands(
         it.isNotEmpty() && it != unassigned
       }
     val systemLongPress = ViewConfiguration.getLongPressTimeout().toLong()
-    presses.setCommands(
-      VolumeKeyPresses.KeyCommands(
-        double = command(R.string.pref_volume_up_double_press_key),
-        triple = command(R.string.pref_volume_up_triple_press_key),
-        long = command(R.string.pref_volume_up_long_press_key),
-        single = if (takesAllPresses) command(R.string.pref_volume_up_press_key) else null,
-      ),
-      VolumeKeyPresses.KeyCommands(
-        double = command(R.string.pref_volume_down_double_press_key),
-        triple = command(R.string.pref_volume_down_triple_press_key),
-        long = command(R.string.pref_volume_down_long_press_key),
-        single = if (takesAllPresses) command(R.string.pref_volume_down_press_key) else null,
-      ),
-      VolumeKeyPresses.Timeouts(
-        multiPress = ViewConfiguration.getDoubleTapTimeout().toLong(),
-        longPress =
-          longPressDuration(
-            prefs.getString(
-              context.getString(R.string.pref_volume_key_long_press_duration_key),
-              null,
-            ),
-            systemLongPress,
-          ),
-        repeat = ViewConfiguration.getKeyRepeatDelay().toLong(),
-        repeatStart = systemLongPress,
-      ),
+    val up = VolumeKeyPresses.KeyCommands(
+      double = command(R.string.pref_volume_up_double_press_key),
+      triple = command(R.string.pref_volume_up_triple_press_key),
+      long = command(R.string.pref_volume_up_long_press_key),
+      single = if (takesAllPresses) command(R.string.pref_volume_up_press_key) else null,
+    )
+    val down = VolumeKeyPresses.KeyCommands(
+      double = command(R.string.pref_volume_down_double_press_key),
+      triple = command(R.string.pref_volume_down_triple_press_key),
+      long = command(R.string.pref_volume_down_long_press_key),
+      single = if (takesAllPresses) command(R.string.pref_volume_down_press_key) else null,
+    )
+    val timeouts = VolumeKeyPresses.Timeouts(
+      multiPress = ViewConfiguration.getDoubleTapTimeout().toLong(),
+      longPress =
+        longPressDuration(
+          prefs.getString(context.getString(R.string.pref_volume_key_long_press_duration_key), null),
+          systemLongPress,
+        ),
+      repeat = ViewConfiguration.getKeyRepeatDelay().toLong(),
+      repeatStart = systemLongPress,
+    )
+    presses.setCommands(up, down, timeouts)
+    screenOffKeys.configure(
+      prefs.getBoolean(context.getString(R.string.pref_volume_keys_screen_off_key), false),
+      up,
+      down,
+      timeouts,
     )
   }
+
+  fun setScreenOffAllowed(allowed: Boolean) = screenOffKeys.setActive(allowed)
+
+  fun refreshScreenOffKeys() = screenOffKeys.refresh()
 
   /**
    * Notes which volume keys are pressed. Called for every key event before anything else can
