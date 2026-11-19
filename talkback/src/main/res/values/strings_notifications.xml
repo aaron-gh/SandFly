@@ -79,6 +79,8 @@
     <string name="notification_voice_sandfly">SandFly\'s voice</string>
     <!-- Choice of the voice the time is said with: the voice set for notifications. -->
     <string name="notification_clock_voice_notifications">Notification voice</string>
+    <!-- Switch: a notification read with another voice profile than the one SandFly speaks with is read at once, while SandFly speaks. When off, it is read after SandFly's speech. -->
+    <string name="notification_over_other_voice_title">Read over SandFly\'s speech in a different voice</string>
     <!-- Switch: notifications are said in the language they are written in. -->
     <string name="notification_detect_language_title">Detect language</string>
     <!-- Summary of the detect language switch. -->

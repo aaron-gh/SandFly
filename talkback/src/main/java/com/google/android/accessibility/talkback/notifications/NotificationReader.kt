@@ -45,6 +45,7 @@ import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation
@@ -78,6 +79,11 @@ object NotificationReader {
   /** How often, and for how long at most, another voice waits for SandFly to stop speaking. */
   private const val QUIET_CHECK_MS = 200L
   private const val QUIET_WAIT_MS = 10_000L
+  /**
+   * The longest a notification in another voice waits for SandFly to stop speaking, kept below
+   * [START_WAIT_MS].
+   */
+  private const val NOTIFICATION_QUIET_WAIT_MS = 45_000L
   /** The most voice profiles whose engines are kept running for notifications. */
   private const val MAX_VOICES = 8
   /** How long after both volume keys go down their ups are taken. */
@@ -943,7 +949,11 @@ object NotificationReader {
     if (readout.cancelled) return
     val feedback = feedback ?: return
     val settings = readout.settings
-    val voice = voiceFor(readout.decision.voiceProfile ?: settings.voiceProfile)
+    // A notification in the voice profile SandFly speaks with goes to SandFly's speech, after what
+    // it is saying.
+    val voice =
+      voiceFor(readout.decision.voiceProfile ?: settings.voiceProfile)
+        ?.takeIf { it.currentProfile?.id() != VoiceProfiles.active()?.id() }
     readout.voiceKey = voice?.currentProfile?.id().orEmpty()
     // Another voice reading, or about to, would talk over this one.
     val others = (listOfNotNull(reading) + queued).filter { !it.cancelled && it.voiceKey != readout.voiceKey }
@@ -988,13 +998,17 @@ object NotificationReader {
     }
     watchSpeech()
     if (voice != null && !isSilenced(overMedia, duringCalls)) {
-      if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
-      whenSandFlyIsQuiet(SystemClock.uptimeMillis()) {
+      val overSpeech = settings.overOtherVoice && !limitsSpeech()
+      whenSandFlyIsQuiet(
+        SystemClock.uptimeMillis(),
+        maxWait = if (overSpeech) 0L else NOTIFICATION_QUIET_WAIT_MS,
+      ) {
         if (readout.cancelled || isSilenced(overMedia, duringCalls)) {
           if (!readout.cancelled) readout.silenced = true
           onDone(readout, SpeechController.STATUS_INTERRUPTED)
           return@whenSandFlyIsQuiet
         }
+        if (settings.soundBefore) feedback.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
         // A translation is read in the voice profile's own voice, not one for its language.
         voice.speak(
           if (readout.translated) readout.text.toString() else readout.text,
@@ -1244,16 +1258,29 @@ object NotificationReader {
   }
 
   /**
-   * Runs [then] once SandFly isn't speaking, so another voice doesn't talk over it, or after
-   * [QUIET_WAIT_MS] at most.
+   * Whether speech other than of focus the user moved is left out now, by Speak only focus moved
+   * by the user in the app in front or while an assistant or call plays audio, so a notification
+   * in another voice doesn't talk over SandFly's speech.
    */
-  private fun whenSandFlyIsQuiet(since: Long, token: Any = QUIET_TOKEN, then: () -> Unit) {
-    if (!isSandFlySpeaking() || SystemClock.uptimeMillis() - since >= QUIET_WAIT_MS) {
+  private fun limitsSpeech(): Boolean =
+    AppSpeechFilter.mutes(AppSpeechFilter.Source.APP_SPEECH, stateReader?.foregroundApp)
+
+  /**
+   * Runs [then] once SandFly isn't speaking, so another voice doesn't talk over it, or after
+   * [maxWait] at most.
+   */
+  private fun whenSandFlyIsQuiet(
+    since: Long,
+    token: Any = QUIET_TOKEN,
+    maxWait: Long = QUIET_WAIT_MS,
+    then: () -> Unit,
+  ) {
+    if (!isSandFlySpeaking() || SystemClock.uptimeMillis() - since >= maxWait) {
       then()
       return
     }
     handler.postAtTime(
-      { whenSandFlyIsQuiet(since, token, then) },
+      { whenSandFlyIsQuiet(since, token, maxWait, then) },
       token,
       SystemClock.uptimeMillis() + QUIET_CHECK_MS,
     )
