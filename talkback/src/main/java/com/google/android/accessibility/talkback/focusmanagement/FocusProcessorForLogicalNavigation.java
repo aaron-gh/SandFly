@@ -833,7 +833,32 @@ public class FocusProcessorForLogicalNavigation {
    * success flag.
    */
   public boolean searchAndFocus(boolean startAtRoot, Filter<AccessibilityNodeInfoCompat> filter) {
-    return search(startAtRoot, /* focus= */ true, filter) != null;
+    return search(
+            startAtRoot,
+            /* focus= */ true,
+            TraversalStrategy.SEARCH_FOCUS_FORWARD,
+            /* beforeFocus= */ null,
+            filter)
+        != null;
+  }
+
+  /**
+   * Moves focus to the next node after the focused node, or the previous one when {@code forward}
+   * is false, that matches {@code filter}. {@code beforeFocus} runs once a node is found, before it
+   * is focused. Returns whether a node was found and focused.
+   */
+  public boolean searchAndFocus(
+      boolean startAtRoot,
+      boolean forward,
+      @Nullable Runnable beforeFocus,
+      Filter<AccessibilityNodeInfoCompat> filter) {
+    return search(
+            startAtRoot,
+            /* focus= */ true,
+            forward ? TraversalStrategy.SEARCH_FOCUS_FORWARD : TraversalStrategy.SEARCH_FOCUS_BACKWARD,
+            beforeFocus,
+            filter)
+        != null;
   }
 
   /**
@@ -841,7 +866,11 @@ public class FocusProcessorForLogicalNavigation {
    * node.
    */
   private @Nullable AccessibilityNode search(
-      boolean startAtRoot, boolean focus, Filter<AccessibilityNodeInfoCompat> filter) {
+      boolean startAtRoot,
+      boolean focus,
+      @SearchDirection int direction,
+      @Nullable Runnable beforeFocus,
+      Filter<AccessibilityNodeInfoCompat> filter) {
 
     AccessibilityNodeInfoCompat start = null;
     AccessibilityNodeInfoCompat rootNode = null;
@@ -865,10 +894,9 @@ public class FocusProcessorForLogicalNavigation {
       }
     }
 
-    // Search forward for node satisfying filter. Swipes move through web content with its own
+    // Search for node satisfying filter. Swipes move through web content with its own
     // navigation actions, so the traversal order leaves out its children unless asked; a search
     // has to look inside web pages and WebViews too.
-    @SearchDirection int direction = TraversalStrategy.SEARCH_FOCUS_FORWARD;
     TraversalStrategy traversalStrategy =
         TraversalStrategyUtils.getTraversalStrategy(
             rootNode,
@@ -880,6 +908,9 @@ public class FocusProcessorForLogicalNavigation {
         TraversalStrategyUtils.searchFocus(traversalStrategy, start, direction, filter);
     if (target == null) {
       return null;
+    }
+    if (beforeFocus != null) {
+      beforeFocus.run();
     }
 
     // Focus first matching node.

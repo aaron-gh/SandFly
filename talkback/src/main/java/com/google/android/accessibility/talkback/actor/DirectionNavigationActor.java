@@ -277,6 +277,19 @@ public class DirectionNavigationActor implements UserInputEventListener {
     return focusProcessorForLogicalNavigation.searchAndFocus(startAtRoot, filter);
   }
 
+  /**
+   * Pass-through to {@link FocusProcessorForLogicalNavigation#searchAndFocus(boolean, boolean,
+   * Runnable, Filter)}.
+   */
+  public boolean searchAndFocus(
+      boolean startAtRoot,
+      boolean forward,
+      @Nullable Runnable beforeFocus,
+      Filter<AccessibilityNodeInfoCompat> filter) {
+    return focusProcessorForLogicalNavigation.searchAndFocus(
+        startAtRoot, forward, beforeFocus, filter);
+  }
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
   // Navigation methods used internally.
 

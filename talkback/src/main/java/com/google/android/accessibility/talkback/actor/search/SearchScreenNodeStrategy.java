@@ -259,31 +259,34 @@ public final class SearchScreenNodeStrategy {
     lastKeyword = trimmedUserInput;
 
     // Find node matching target keyword, and focus that node.
-    return directionNavigator.searchAndFocus(
-        startAtRoot,
-        new Filter<AccessibilityNodeInfoCompat>() {
-          @Override
-          public boolean accept(AccessibilityNodeInfoCompat node) {
-            if (node == null) {
-              return false;
-            }
+    return directionNavigator.searchAndFocus(startAtRoot, textFilter(trimmedUserInput, labelManager));
+  }
 
-            // Only keep the visible nodes.
-            if (!AccessibilityNodeInfoUtils.isVisible(node)) {
-              return false;
-            }
-            // Keep the nodes with texts.
-            @Nullable CharSequence nodeText = TalkBackLabelManager.getNodeText(node, labelManager);
-            if (TextUtils.isEmpty(nodeText)) {
-              return false;
-            }
+  /** Accepts the visible nodes whose text, or label, contains {@code text}, ignoring case. */
+  public static Filter<AccessibilityNodeInfoCompat> textFilter(
+      String text, @Nullable TalkBackLabelManager labelManager) {
+    return new Filter<AccessibilityNodeInfoCompat>() {
+      @Override
+      public boolean accept(AccessibilityNodeInfoCompat node) {
+        if (node == null) {
+          return false;
+        }
 
-            // Check for target-text match.
-            List<MatchResult> matches =
-                StringMatcher.findMatches(nodeText.toString(), trimmedUserInput);
-            return (matches != null) && (!matches.isEmpty());
-          }
-        });
+        // Only keep the visible nodes.
+        if (!AccessibilityNodeInfoUtils.isVisible(node)) {
+          return false;
+        }
+        // Keep the nodes with texts.
+        @Nullable CharSequence nodeText = TalkBackLabelManager.getNodeText(node, labelManager);
+        if (TextUtils.isEmpty(nodeText)) {
+          return false;
+        }
+
+        // Check for target-text match.
+        List<MatchResult> matches = StringMatcher.findMatches(nodeText.toString(), text);
+        return (matches != null) && (!matches.isEmpty());
+      }
+    };
   }
 
   @Nullable

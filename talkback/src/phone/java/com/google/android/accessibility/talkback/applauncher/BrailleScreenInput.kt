@@ -70,6 +70,9 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  *   language, and SandFly says the first app whose name, or a word of it, starts with them. Swipes
  *   work as on the braille keyboard: up and down with one finger for the previous and next app,
  *   left to delete, up with two fingers to open the app.
+ * - Find: the cells are read as uncontracted braille, as in app search, and form the text that Find
+ *   text, Find next text and Find previous text look for on the screen. Right with one finger
+ *   types a space, left deletes, up or right with two fingers finds.
  * - Recording one cell for the Braille commands screen.
  *
  * The braille keyboard's Next braille mode gesture goes from braille commands to app search, then
@@ -85,6 +88,7 @@ class BrailleScreenInput(
   private enum class Mode {
     COMMANDS,
     APPS,
+    FIND,
     RECORD,
   }
 
@@ -92,7 +96,7 @@ class BrailleScreenInput(
   private val title = service.getString(R.string.title_braille_commands)
   private val overlay = HandwritingOverlay(service, pipeline, actorState, title)
   private val search = AppNameSearch(service, pipeline, R.string.braille_app_prompt, ::dismiss)
-  private val closeIdle = Runnable { cancel() }
+  private val closeIdle = Runnable { if (mode == Mode.FIND) cancelFind() else cancel() }
   private var orientator: LayoutOrientator? = null
   private var inputView: BrailleInputView? = null
   private var translator: BrailleTranslator? = null
@@ -106,6 +110,16 @@ class BrailleScreenInput(
   private var onRecorded: ((String?) -> Unit)? = null
   /** The app in front when the surface showed, whose braille commands apply. */
   private var appShown: String? = null
+
+  /** The text found last since the surface showed, which Find next and previous text look for. */
+  private var findText: String? = null
+  /** Which way the text being typed is looked for, and whether past the bottom from the top. */
+  private var findForward = true
+  private var findWrap = false
+  /** Whether the surface showed only for the text to find, and closes once it is found. */
+  private var closeAfterFind = false
+  /** The words of the text to find typed before the one in [cells]. */
+  private val findWords = mutableListOf<BrailleWord>()
 
   /** Lays the dots out again when the screen turns, or a foldable folds or unfolds. */
   private val configurationCallbacks =
@@ -186,6 +200,26 @@ class BrailleScreenInput(
     if (!show(Mode.RECORD)) return false
     onRecorded = onCell
     return true
+  }
+
+  /**
+   * Focuses the next item on the screen that contains the text to find, or the previous one when
+   * [forward] is false; with [wrap], from the top when none is after the focused item. With
+   * [newText], or before any text was found since the surface showed, asks for the text first.
+   */
+  fun find(forward: Boolean, wrap: Boolean, newText: Boolean) {
+    val text = findText
+    if (!newText && text != null && isShowing && mode != Mode.RECORD) {
+      if (mode != Mode.COMMANDS) enter(Mode.COMMANDS, quiet = true)
+      search(text, forward, wrap)
+      return
+    }
+    if (isShowing && mode == Mode.RECORD) return
+    findForward = forward
+    findWrap = wrap
+    // Asked again while typing the text, the surface still closes after the search if it would have.
+    if (!isShowing) closeAfterFind = true else if (mode != Mode.FIND) closeAfterFind = false
+    if (!show(Mode.FIND)) closeAfterFind = false
   }
 
   /**
@@ -291,11 +325,12 @@ class BrailleScreenInput(
     return true
   }
 
-  /** Changes to [newMode] and says it. */
-  private fun enter(newMode: Mode) {
+  /** Changes to [newMode] and says it, unless [quiet]. */
+  private fun enter(newMode: Mode, quiet: Boolean = false) {
     val previous = mode
     mode = newMode
     cells.clear()
+    findWords.clear()
     handler.removeCallbacks(closeIdle)
     handler.removeCallbacks(coveredCheck)
     if (previous == Mode.APPS && newMode != Mode.APPS) search.stop()
@@ -306,11 +341,16 @@ class BrailleScreenInput(
         restartIdleTimer()
       }
       Mode.COMMANDS -> {
+        if (quiet) return
         val profile = BrailleCommands.activeName(prefs)
         speak(
           if (profile == null) title
           else service.getString(R.string.braille_commands_with_profile, profile)
         )
+      }
+      Mode.FIND -> {
+        speak(service.getString(R.string.braille_find_prompt))
+        restartIdleTimer()
       }
       Mode.RECORD -> {
         speak(service.getString(R.string.braille_command_record_prompt))
@@ -324,6 +364,7 @@ class BrailleScreenInput(
     when (mode) {
       Mode.COMMANDS -> enter(Mode.APPS)
       Mode.APPS -> if (!typeOnBrailleKeyboard()) enter(Mode.COMMANDS)
+      Mode.FIND -> cancelFind()
       Mode.RECORD -> {}
     }
   }
@@ -337,6 +378,7 @@ class BrailleScreenInput(
       when (closed) {
         Mode.APPS -> service.getString(R.string.braille_app_closed)
         Mode.COMMANDS -> service.getString(R.string.braille_commands_closed)
+        Mode.FIND,
         Mode.RECORD -> null
       }
     if (text != null) speak(text)
@@ -362,6 +404,9 @@ class BrailleScreenInput(
     inputView = null
     translator = null
     appShown = null
+    findText = null
+    closeAfterFind = false
+    findWords.clear()
     cells.clear()
     search.stop()
     overlay.remove()
@@ -434,6 +479,10 @@ class BrailleScreenInput(
             search.whenLoaded { addCell(brailleCharacter) }
           }
           Mode.COMMANDS -> runCell(brailleCharacter)
+          Mode.FIND -> {
+            restartIdleTimer()
+            addFindCell(brailleCharacter)
+          }
           Mode.RECORD -> {
             val record = onRecorded
             onRecorded = null
@@ -446,6 +495,7 @@ class BrailleScreenInput(
       }
 
       override fun onSwipeProduced(swipe: Swipe): Boolean {
+        if (mode == Mode.FIND) return onFindSwipe(swipe)
         if (swipe.touchCount == 2 && swipe.direction == Swipe.Direction.DOWN) {
           cancel()
           return true
@@ -472,6 +522,7 @@ class BrailleScreenInput(
       }
 
       override fun onDotHoldAndDotSwipe(dotHoldSwipe: DotHoldSwipe): Boolean {
+        // Find goes back to braille commands, as Next braille mode goes on from them.
         if (mode == Mode.RECORD || !isNextModeGesture(dotHoldSwipe)) return false
         nextMode()
         return true
@@ -479,6 +530,132 @@ class BrailleScreenInput(
 
       override fun onHoldProduced(pointersHeldCount: Int): Boolean = false
     }
+
+  /** Types, deletes or finds the text to find, or leaves Find. */
+  private fun onFindSwipe(swipe: Swipe): Boolean {
+    restartIdleTimer()
+    when (swipe.touchCount to swipe.direction) {
+      2 to Swipe.Direction.DOWN -> cancelFind()
+      1 to Swipe.Direction.RIGHT -> addFindSpace()
+      1 to Swipe.Direction.LEFT -> deleteFindCell()
+      2 to Swipe.Direction.LEFT -> clearFind()
+      2 to Swipe.Direction.UP,
+      2 to Swipe.Direction.RIGHT -> confirmFind()
+      else -> return isNextModeGesture(swipe).also { if (it) cancelFind() }
+    }
+    return true
+  }
+
+  /** The text to find typed so far. */
+  private fun typedFindText(): String =
+    (findWords + cells).map { print(it) }.filter { it.isNotBlank() }.joinToString(" ")
+
+  private fun findCellCount(): Int = findWords.sumOf { it.size() } + cells.size()
+
+  private fun addFindCell(cell: BrailleCharacter) {
+    if (findCellCount() >= MAX_CELLS) return
+    val before = print(cells)
+    cells.append(cell)
+    val after = print(cells)
+    BrailleImeTypingSounds.play(service, BrailleImeTypingSounds.Key.CHARACTER)
+    val added = if (after.startsWith(before)) after.substring(before.length) else after
+    speak(added.ifBlank { BrailleTranslateUtils.getDotsText(service.resources, cell) })
+  }
+
+  private fun addFindSpace() {
+    if (cells.isEmpty || findCellCount() >= MAX_CELLS) return
+    findWords.add(BrailleWord(cells))
+    cells.clear()
+    BrailleImeTypingSounds.play(service, BrailleImeTypingSounds.Key.SPACE)
+    speak(service.getString(R.string.handwriting_space))
+  }
+
+  /** Deletes the last cell, or the space before the word being typed when it has none. */
+  private fun deleteFindCell() {
+    if (cells.isEmpty) {
+      if (findWords.isEmpty()) {
+        speak(service.getString(R.string.handwriting_empty))
+        return
+      }
+      cells.append(findWords.removeAt(findWords.size - 1))
+      BrailleImeTypingSounds.play(service, BrailleImeTypingSounds.Key.DELETE)
+      speak(
+        service.getString(
+          R.string.template_text_removed,
+          service.getString(R.string.handwriting_space),
+        )
+      )
+      return
+    }
+    val before = print(cells)
+    val cell = cells.remove(cells.size() - 1)
+    val after = print(cells)
+    BrailleImeTypingSounds.play(service, BrailleImeTypingSounds.Key.DELETE)
+    val deleted =
+      (if (before.startsWith(after)) before.substring(after.length) else before).ifBlank {
+        BrailleTranslateUtils.getDotsText(service.resources, cell)
+      }
+    speak(service.getString(R.string.template_text_removed, deleted))
+  }
+
+  private fun clearFind() {
+    val text = typedFindText()
+    findWords.clear()
+    cells.clear()
+    if (text.isBlank()) {
+      speak(service.getString(R.string.handwriting_empty))
+      return
+    }
+    BrailleImeTypingSounds.play(service, BrailleImeTypingSounds.Key.DELETE)
+    speak(service.getString(R.string.template_text_removed, text))
+  }
+
+  /** Looks for the text typed, or asks for it again when none is typed. */
+  private fun confirmFind() {
+    val text = typedFindText()
+    if (text.isBlank()) {
+      speak(service.getString(R.string.braille_find_prompt))
+      return
+    }
+    val forward = findForward
+    val wrap = findWrap
+    leaveFind()
+    findText = text
+    search(text, forward, wrap)
+  }
+
+  /** Leaves Find without looking for anything. */
+  private fun cancelFind() {
+    if (closeAfterFind) {
+      dismiss()
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
+    } else {
+      enter(Mode.COMMANDS)
+    }
+  }
+
+  /** Goes back to braille commands, or closes the surface when it showed only for Find. */
+  private fun leaveFind() {
+    if (closeAfterFind) dismiss() else enter(Mode.COMMANDS, quiet = true)
+  }
+
+  /** Focuses the next or previous item that contains [text], or says that none does. */
+  private fun search(text: String, forward: Boolean, wrap: Boolean) {
+    val found =
+      host.findText(text, forward, wrap) {
+        // Said before the item found, which the focus change says next.
+        pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+            service.getString(R.string.braille_find_wrapped),
+            AppNameSearch.speakOptions(
+              SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH
+            ),
+          ),
+        )
+      }
+    if (!found) speak(service.getString(R.string.granular_editing_not_found))
+  }
 
   /** Runs the command that braille commands give [cell], or says that it has none. */
   private fun runCell(cell: BrailleCharacter) {
