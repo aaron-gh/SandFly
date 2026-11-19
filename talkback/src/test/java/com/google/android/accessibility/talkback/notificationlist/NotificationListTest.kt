@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.notificationlist
 
 import android.app.Notification
+import android.app.Person
 import android.os.Process
 import android.service.notification.StatusBarNotification
 import org.junit.After
@@ -92,5 +93,45 @@ class NotificationListTest {
 
     assertEquals(1, items.size)
     assertEquals(2, (items.single() as NotificationItem.Group).entries.size)
+  }
+
+  private fun chat(title: String, vararg messages: Pair<String, Long>): Notification {
+    val style = Notification.MessagingStyle(Person.Builder().setName("Me").build()).setConversationTitle(title).setGroupConversation(true)
+    messages.forEach { (text, time) ->
+      val sender = text.substringBefore(':')
+      style.addMessage(text.substringAfter(": "), time, Person.Builder().setName(sender).build())
+    }
+    return Notification.Builder(context, "messages")
+      .setContentTitle(title)
+      .setContentText(messages.last().first)
+      .setWhen(messages.last().second)
+      .setShowWhen(true)
+      .setStyle(style)
+      .build()
+  }
+
+  @Test
+  fun byTime_listsEachMessageOfAChatNotification() {
+    val family =
+      posted("org.telegram.messenger", 1, chat("Family", "Ann: one" to 1_000L, "Bob: two" to 3_000L, "Ann: three" to 5_000L))
+    val dad = posted("com.example.sms", 2, message("Dad", 4_000L))
+    NotificationList.onConnected(arrayOf(family, dad), null)
+
+    val entries = NotificationList.itemsByTime(context).flatMap { it.entries }
+
+    assertEquals(listOf("Ann: three", null, "Bob: two", "Ann: one"), entries.map { it.text?.toString() })
+    assertEquals(listOf(family.key, dad.key, family.key, family.key), entries.map { it.key })
+    assertEquals(4, entries.map { it.rowKey }.toSet().size)
+    assertEquals(listOf("Family", "Dad", "Family", "Family"), entries.map { it.title?.toString() })
+  }
+
+  @Test
+  fun grouped_keepsAChatNotificationAsOneItem() {
+    val family = posted("org.telegram.messenger", 1, chat("Family", "Ann: one" to 1_000L, "Bob: two" to 3_000L))
+    NotificationList.onConnected(arrayOf(family), null)
+
+    val entries = NotificationList.items(context).flatMap { it.entries }
+
+    assertEquals(listOf(family.key), entries.map { it.rowKey })
   }
 }

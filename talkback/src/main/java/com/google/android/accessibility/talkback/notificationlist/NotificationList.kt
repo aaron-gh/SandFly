@@ -89,14 +89,16 @@ object NotificationList {
     cached ?: build(context).also { cached = it }
 
   /**
-   * Every notification as an item of its own, newest first by the time it shows. A group's summary
-   * is left out where [items] leaves it out, as it repeats the group's members.
+   * Every notification as an item of its own, newest first by the time it shows, and every message
+   * of a messaging notification with several. A group's summary is left out where [items] leaves it
+   * out, as it repeats the group's members.
    */
   fun itemsByTime(context: Context): List<NotificationItem> = byTime(items(context))
 
   internal fun byTime(items: List<NotificationItem>): List<NotificationItem> =
     items
       .flatMap { it.entries }
+      .flatMap { it.messageEntries() }
       .sortedWith(
         compareByDescending<NotificationEntry> { it.timeMillis }
           .thenByDescending { it.notification.postTime }
