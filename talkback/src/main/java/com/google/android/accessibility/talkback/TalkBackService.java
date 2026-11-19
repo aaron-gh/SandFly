@@ -4572,6 +4572,8 @@ public class TalkBackService extends AccessibilityServiceCompat
             R.string.pref_rotor_step_degrees_key,
             R.string.pref_rotor_step_degrees_default));
     globalVariables.setTypingMethod(accessibilityFocusInterpreter.getTypingMethod());
+    FocusProcessorForLogicalNavigation.setTypingMethod(
+        accessibilityFocusInterpreter.getTypingMethod());
 
     applyTouchExplorationPreference();
 
