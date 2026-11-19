@@ -16,6 +16,8 @@
 package com.google.android.accessibility.talkback.applauncher
 
 import android.accessibilityservice.AccessibilityService
+import android.os.PowerManager
+import android.app.KeyguardManager
 import android.content.BroadcastReceiver
 import android.content.ComponentCallbacks
 import android.content.Context
@@ -111,6 +113,24 @@ class BrailleScreenInput(
   /** The app in front when the surface showed, whose braille commands apply. */
   private var appShown: String? = null
 
+  /**
+   * Whether braille commands show again when the braille keyboard closes: the surface closed for the
+   * keyboard, and wasn't shown over it.
+   */
+  private var returnAfterKeyboard = false
+  /** Whether the braille keyboard was shown when the surface showed. */
+  private var shownOverKeyboard = false
+  private val showAfterKeyboard = Runnable {
+    if (!returnAfterKeyboard || isShowing) return@Runnable
+    returnAfterKeyboard = false
+    // Not over the lock screen, or while the screen is off.
+    val power = service.getSystemService(PowerManager::class.java)
+    val keyguard = service.getSystemService(KeyguardManager::class.java)
+    if (power?.isInteractive == false || keyguard?.isKeyguardLocked == true) return@Runnable
+    showCommands()
+  }
+  private val reclaimPassthrough = Runnable { overlay.claimPassthrough() }
+
   /** The text found last since the surface showed, which Find next and previous text look for. */
   private var findText: String? = null
   /** Which way the text being typed is looked for, and whether past the bottom from the top. */
@@ -145,9 +165,20 @@ class BrailleScreenInput(
     }
   private var screenOffRegistered = false
 
-  /** Closes braille commands when a command showed a SandFly window over them, such as a menu. */
+  /** SandFly's windows shown before the last command ran, which don't count as covering. */
+  private var overlaysBefore: Set<Int> = emptySet()
+
+  /**
+   * Closes braille commands when a command showed a SandFly window over them, such as a menu, or
+   * leaves them to the braille keyboard when the command opened it.
+   */
   private val coveredCheck = Runnable {
-    if (isShowing && mode == Mode.COMMANDS && otherOverlayShown()) {
+    if (!isShowing || mode != Mode.COMMANDS || (otherOverlays() - overlaysBefore).isEmpty()) {
+      return@Runnable
+    }
+    if (host.isBrailleKeyboardShown()) {
+      onBrailleKeyboardShown()
+    } else {
       dismiss()
       pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
     }
@@ -223,6 +254,36 @@ class BrailleScreenInput(
   }
 
   /**
+   * Called when the braille keyboard shows. A keyboard that opens over the surface, such as for a
+   * text field activated with a braille command, takes the touches of the whole screen, so the
+   * surface closes and shows again when the keyboard closes.
+   */
+  fun onBrailleKeyboardShown() {
+    handler.removeCallbacks(showAfterKeyboard)
+    handler.removeCallbacks(reclaimPassthrough)
+    if (!isShowing || mode == Mode.RECORD || shownOverKeyboard) return
+    dismiss(releasePassthrough = false)
+    returnAfterKeyboard = true
+  }
+
+  /**
+   * Called when the braille keyboard closes: braille commands show again if they closed for it, and
+   * a surface shown over the keyboard takes back the touches the keyboard let go of.
+   */
+  fun onBrailleKeyboardHidden() {
+    shownOverKeyboard = false
+    if (isShowing) {
+      // After the keyboard has let go of the region.
+      handler.post(reclaimPassthrough)
+    } else if (returnAfterKeyboard) {
+      // A keyboard that closes and opens again, as when focus moves between text fields, leaves the
+      // surface closed.
+      handler.removeCallbacks(showAfterKeyboard)
+      handler.postDelayed(showAfterKeyboard, RETURN_AFTER_KEYBOARD_MS)
+    }
+  }
+
+  /**
    * Leaves typing to the braille keyboard while the surface shows, as Switch to braille keyboard
    * does. Returns false, and says so, when no text field is being edited.
    */
@@ -241,13 +302,15 @@ class BrailleScreenInput(
   private fun typeOnBrailleKeyboard(): Boolean {
     if (!host.canType()) return false
     val shown = host.isBrailleKeyboardShown()
+    val returnToCommands = !shownOverKeyboard
     // Closed first: a keyboard that opens takes touches of its own, which closing would undo.
-    dismiss()
+    dismiss(releasePassthrough = !shown)
+    returnAfterKeyboard = returnToCommands
     if (shown) {
       speak(service.getString(R.string.title_pref_brailleime))
     } else {
       // The keyboard says its name when it opens.
-      host.switchToBrailleKeyboard()
+      if (!host.switchToBrailleKeyboard()) returnAfterKeyboard = false
     }
     return true
   }
@@ -278,6 +341,9 @@ class BrailleScreenInput(
     }
     // Taken before the surface shows, which may count as a window of SandFly's.
     appShown = AppGestures.appForGestures().takeIf { it.isNotEmpty() }
+    shownOverKeyboard = host.isBrailleKeyboardShown()
+    returnAfterKeyboard = false
+    handler.removeCallbacks(showAfterKeyboard)
     val orientator = LayoutOrientator(service, orientatorCallback).also { orientator = it }
     orientator.startIfNeeded()
     val size = Utils.getDisplaySizeInPixels(service)
@@ -385,10 +451,15 @@ class BrailleScreenInput(
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
   }
 
-  /** Closes the surface without any feedback, such as when SandFly stops. */
-  private fun dismiss() {
+  /**
+   * Closes the surface without any feedback, such as when SandFly stops. With [releasePassthrough]
+   * false, the region touches pass through is left to the braille keyboard that holds it.
+   */
+  private fun dismiss(releasePassthrough: Boolean = true) {
     handler.removeCallbacks(closeIdle)
     handler.removeCallbacks(coveredCheck)
+    handler.removeCallbacks(reclaimPassthrough)
+    returnAfterKeyboard = false
     orientator?.stop()
     orientator = null
     if (enabledOrientationMonitor) {
@@ -409,7 +480,7 @@ class BrailleScreenInput(
     findWords.clear()
     cells.clear()
     search.stop()
-    overlay.remove()
+    overlay.remove(releasePassthrough)
     mode = Mode.COMMANDS
     onRecorded?.let {
       onRecorded = null
@@ -419,6 +490,7 @@ class BrailleScreenInput(
 
   fun shutdown() {
     dismiss()
+    handler.removeCallbacks(showAfterKeyboard)
     search.shutdown()
     prefs.unregisterOnSharedPreferenceChangeListener(assignmentListener)
     braillePrefs.unregisterOnSharedPreferenceChangeListener(assignmentListener)
@@ -670,6 +742,7 @@ class BrailleScreenInput(
       )
       return
     }
+    overlaysBefore = otherOverlays()
     host.runCommand(value)
     // A command that shows a menu or dialog over the surface leaves it to touch.
     if (isShowing && mode == Mode.COMMANDS) {
@@ -679,15 +752,18 @@ class BrailleScreenInput(
   }
 
   /**
-   * Whether a window of SandFly's other than this surface, with something in it, shows over the
-   * screen, such as the SandFly menu.
+   * The IDs of SandFly's windows other than this surface with something in them, such as the
+   * SandFly menu or the braille keyboard.
    */
-  private fun otherOverlayShown(): Boolean =
-    service.windows.any { window ->
-      window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY &&
-        window.title?.toString() != title &&
-        window.root?.let { it.childCount > 0 && it.packageName == service.packageName } == true
-    }
+  private fun otherOverlays(): Set<Int> =
+    service.windows
+      .filter { window ->
+        window.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY &&
+          window.title?.toString() != title &&
+          window.root?.let { it.childCount > 0 && it.packageName == service.packageName } == true
+      }
+      .map { it.id }
+      .toSet()
 
   /** The print text of the cells typed, read as uncontracted braille. */
   private fun print(word: BrailleWord): String =
@@ -777,6 +853,8 @@ class BrailleScreenInput(
     const val TAG = "BrailleScreenInput"
     /** App search and recording close after this long without a touch. */
     const val IDLE_CLOSE_MS = 15_000L
+    /** How long braille commands wait to show after the braille keyboard closes. */
+    const val RETURN_AFTER_KEYBOARD_MS = 300L
     /** How long after a command the surface looks for a window the command showed over it. */
     const val COVERED_CHECK_MS = 700L
     const val MAX_CELLS = 100

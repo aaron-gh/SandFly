@@ -50,6 +50,10 @@ class BrailleScreenInput(
 
   fun switchToBrailleKeyboard(): Boolean = false
 
+  fun onBrailleKeyboardShown() {}
+
+  fun onBrailleKeyboardHidden() {}
+
   fun shutdown() {}
 
   private fun notAvailable() {
