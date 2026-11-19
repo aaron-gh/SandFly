@@ -250,6 +250,11 @@ data class NotificationSettings(
    * [CLOCK_VOICE_NOTIFICATIONS] for the voice of notifications.
    */
   val clockVoiceProfile: String = CLOCK_VOICE_NOTIFICATIONS,
+  /**
+   * Whether a notification in another voice than SandFly's speech is read at once, over that
+   * speech, rather than after it.
+   */
+  val overOtherVoice: Boolean = false,
   val soundBefore: Boolean = false,
   val delaySeconds: Int = 0,
   val queueBehavior: QueueBehavior = QueueBehavior.QUEUE,
@@ -343,6 +348,7 @@ data class NotificationSettings(
       const val DETECT_LANGUAGE = "pref_notification_detect_language"
       const val VOICE_PROFILE = "pref_notification_voice_profile"
       const val CLOCK_VOICE_PROFILE = "pref_notification_clock_voice_profile"
+      const val OVER_OTHER_VOICE = "pref_notification_over_other_voice"
       const val SOUND_BEFORE = "pref_notification_sound_before"
       const val DELAY = "pref_notification_delay"
       const val QUEUE = "pref_notification_queue"
@@ -417,6 +423,7 @@ data class NotificationSettings(
         detectLanguage = b(Keys.DETECT_LANGUAGE, d.detectLanguage),
         voiceProfile = s(Keys.VOICE_PROFILE, ""),
         clockVoiceProfile = s(Keys.CLOCK_VOICE_PROFILE, d.clockVoiceProfile),
+        overOtherVoice = b(Keys.OVER_OTHER_VOICE, d.overOtherVoice),
         soundBefore = b(Keys.SOUND_BEFORE, d.soundBefore),
         delaySeconds = i(Keys.DELAY, d.delaySeconds).coerceIn(0, 60),
         queueBehavior = QueueBehavior.of(prefs.getString(Keys.QUEUE, null)),
