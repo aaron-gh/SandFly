@@ -38,6 +38,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.SpellChecker;
 import com.google.android.accessibility.utils.input.TextEventInterpretation;
 import com.google.android.accessibility.utils.input.TextEventInterpretation.TextEvent;
+import java.util.function.BooleanSupplier;
 import com.google.android.accessibility.utils.input.TextEventInterpreter;
 import com.google.android.accessibility.utils.input.TextEventInterpreter.InterpretationConsumer;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.SpellingSuggestion;
@@ -65,6 +66,8 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
   private Pipeline.InterpretationReceiver pipelineInterpretationReceiver;
   // The misspelled word the last spelling hint was for, while the cursor stays on it.
   private @Nullable String lastHintedTypo;
+  // Whether Proofread is in the reading controls in use; spelling hints are off without it.
+  private BooleanSupplier typoHintOn = () -> true;
 
   ///////////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -79,6 +82,10 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
 
   public void setPipelineInterpretationReceiver(Pipeline.InterpretationReceiver pipeline) {
     this.pipelineInterpretationReceiver = pipeline;
+  }
+
+  public void setTypoHintOn(BooleanSupplier typoHintOn) {
+    this.typoHintOn = typoHintOn;
   }
 
   ///////////////////////////////////////////////////////////////////////////////////////
@@ -148,7 +155,8 @@ public class HintEventInterpreter implements AccessibilityEventListener, Interpr
   /** Handles the interpreted text-change event. */
   @Override
   public void accept(TextEventInterpreter.Interpretation interpretation) {
-    if (!TalkbackFeatureSupport.supportTextSuggestion()) {
+    if (!TalkbackFeatureSupport.supportTextSuggestion() || !typoHintOn.getAsBoolean()) {
+      lastHintedTypo = null;
       return;
     }
 

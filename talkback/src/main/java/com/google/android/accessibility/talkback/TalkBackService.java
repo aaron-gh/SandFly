@@ -3437,6 +3437,7 @@ public class TalkBackService extends AccessibilityServiceCompat
             FeatureFlagReader.readLineWhenMoveToAdjacentLineByUpDownKey(this));
     // Event-interpreters are chained: textEventInterpreter -> hintEventInterpreter
     textEventInterpreter.addListener(hintEventInterpreter);
+    hintEventInterpreter.setTypoHintOn(globalVariables::isTypoHintOn);
     processorEventQueue = new ProcessorEventQueue(eventFilter, textEventInterpreter);
 
     addEventListener(processorEventQueue);
