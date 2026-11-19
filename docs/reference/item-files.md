@@ -98,6 +98,7 @@ Steps, by `type`:
 | `touch_hold` | `label`, `hold`, `slide`, `distance`, `timeout`, `regex`, `field` | Touches the centre of the item and holds for `hold` ms, then slides `distance` dp towards `slide` if set, and lifts |
 | `focus_item` | `label`, `timeout`, `regex`, `field` | Moves accessibility focus to the item |
 | `speak_item` | `label`, `timeout`, `regex`, `field` | Speaks the item |
+| `act_item` | `act`, `label`, `times`, `timeout`, `regex`, `field` | Long-presses or scrolls the item `times` times: `act` is `"long_press"`, `"scroll_forward"` or `"scroll_backward"`. A scroll without `label` scrolls the largest list on screen |
 | `speak_text` | `text` | Speaks the text |
 | `open_app` | `app` | Opens an app: its Open app command |
 | `type_text` | `text`, `replace` | Types the text in the focused field; `replace` replaces its text |
@@ -112,7 +113,7 @@ Steps, by `type`:
 | `stop` | | Stops the macro |
 | `wait_until` | `condition`, `timeout` | Waits until the condition is met; the macro stops after `timeout` ms |
 
-`timeout` of `tap`, `touch_hold`, `focus_item` and `speak_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint, state or tooltip, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` or `"id"` (the resource ID). `x` and `y` of `tap_position` are from 0 to 10000; the step fails when the position is outside the screen. `hold` of `touch_hold` is from 100 to 600000 ms; 1000 by default. `slide` is `"up"`, `"down"`, `"left"` or `"right"`; without it the touch lifts where it is. `distance` is from 1 to 1000 dp; 100 by default; the end of the slide is kept on the screen. The Speak coordinates command speaks and copies the position of the centre of the focused item. A macro has at most 200 steps.
+`timeout` of `tap`, `touch_hold`, `focus_item`, `speak_item` and `act_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint, state or tooltip, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` or `"id"` (the resource ID). `x` and `y` of `tap_position` are from 0 to 10000; the step fails when the position is outside the screen. `hold` of `touch_hold` is from 100 to 600000 ms; 1000 by default. `slide` is `"up"`, `"down"`, `"left"` or `"right"`; without it the touch lifts where it is. `distance` is from 1 to 1000 dp; 100 by default; the end of the slide is kept on the screen. The Speak coordinates command speaks and copies the position of the centre of the focused item. A macro has at most 200 steps.
 
 A condition is a list of tests. Tests are joined with "and"; a test with `"or": true` starts a new group joined with "or". `"not": true` reverses a test. A condition has at most 20 tests.
 
@@ -124,7 +125,7 @@ A condition is a list of tests. Tests are joined with "and"; a test with `"or": 
 | `keyboard` | | The on-screen keyboard is shown |
 | `locked` | | The lock screen is shown |
 
-`kind` is optional: `clickable`, `long_clickable`, `editable`, `scrollable`, `adjustable`, `checkable`, `checked`, `selected`, `heading` or `enabled`.
+`kind` is optional: `clickable`, `long_clickable`, `editable`, `scrollable`, `adjustable`, `checkable`, `checked`, `selected`, `heading` or `enabled`. `clickable`, `long_clickable` and `checked` also count an item a few levels around the one with the text; `checked` also counts a checked switch or check box in the row the text is in.
 
 ## Gesture profiles
 

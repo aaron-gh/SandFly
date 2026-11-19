@@ -254,6 +254,7 @@ import com.google.android.accessibility.talkback.labeling.CustomLabelManager;
 import com.google.android.accessibility.talkback.labeling.StoragelessLabelManager;
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
 import com.google.android.accessibility.talkback.logging.EventLatencyLogger;
+import com.google.android.accessibility.talkback.macros.MacroRecorder;
 import com.google.android.accessibility.talkback.macros.MacroRunner;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
@@ -1343,6 +1344,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       ScrollEventInterpreter.onTouchInteractionStart();
     }
+    MacroRecorder.onAccessibilityEvent(this, event);
     if (scriptHost != null) {
       scriptHost.onAccessibilityEvent(event);
     }

@@ -60,6 +60,7 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
   override fun build(screen: PreferenceGroup) {
     val app = app
     screen.action(getString(R.string.macro_add)) { add() }
+    screen.action(getString(R.string.macro_record_new)) { add(record = true) }
     if (app == null) screen.action(getString(R.string.macro_add_app)) { addApp() }
     val all = Macros.read(prefs)
     val macros = all.filter { it.app == app }
@@ -117,8 +118,9 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
     }
   }
 
-  private fun add() {
-    askText(getString(R.string.macro_add), hint = getString(R.string.menu_name)) { name, _, _ ->
+  /** Asks for a name and opens the new macro, which starts recording its steps for [record]. */
+  private fun add(record: Boolean = false) {
+    askText(getString(if (record) R.string.macro_record_new else R.string.macro_add), hint = getString(R.string.menu_name)) { name, _, _ ->
       val trimmed = name.trim()
       if (trimmed.isEmpty()) {
         ""
@@ -129,6 +131,7 @@ class MacrosFragment : NotificationCodeFragment(R.string.title_pref_macros) {
           Preference(requireContext()).apply {
             fragment = MacroFragment::class.java.name
             extras.putString(MacroFragment.ARG_MACRO, macro.id)
+            if (record) extras.putBoolean(MacroFragment.ARG_RECORD, true)
           }
         )
         null
@@ -410,6 +413,7 @@ class MacroFragment : MacroEditorFragment() {
     insertAt = at
     if (macro.steps.size < Macros.MAX_STEPS) {
       screen.action(getString(R.string.macro_add_step), addStepPlace(context, macro.steps, at)) { addStep(at) }
+      screen.action(getString(R.string.macro_record), addStepPlace(context, macro.steps, at)) { startRecording() }
     }
     screen.link(
       getString(R.string.macro_run_only_when),
@@ -499,6 +503,68 @@ class MacroFragment : MacroEditorFragment() {
     }
 
   private fun rowKey(index: Int): String = "macro_step_$index"
+
+  override fun onResume() {
+    super.onResume()
+    if (arguments?.getBoolean(ARG_RECORD) == true) {
+      arguments?.remove(ARG_RECORD)
+      startRecording()
+      return
+    }
+    // Coming back to the macro, from the notification, Stop macro or otherwise, ends a recording.
+    if (MacroRecorder.isRecording(macroId)) finishRecording()
+  }
+
+  /**
+   * Records steps as the user does them, to be added where Add step adds a step. SandFly's
+   * settings go to the back, showing the app before them, or the macro's app is opened.
+   */
+  private fun startRecording() {
+    val macro = macro() ?: return
+    if (TalkBackService.getInstance() == null) {
+      toast(R.string.talkback_inactive_title)
+      return
+    }
+    val context = requireContext()
+    MacroRecorder.start(context, macro.id, macro.name, insertAt?.takeIf { it < macro.steps.size }, forApp = macro.app != null)
+    android.widget.Toast.makeText(context, R.string.macro_recording_toast, android.widget.Toast.LENGTH_LONG).show()
+    val launch = macro.app?.let { context.packageManager.getLaunchIntentForPackage(it) }
+    if (launch != null) {
+      startActivity(launch.addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+    } else {
+      requireActivity().moveTaskToBack(true)
+    }
+  }
+
+  /** Ends the recording and offers its steps: Save adds them, Record again starts over. */
+  private fun finishRecording() {
+    val context = requireContext()
+    val result = MacroRecorder.stop(context) ?: return
+    if (result.steps.isEmpty()) {
+      toast(R.string.script_builder_nothing_recorded)
+      return
+    }
+    val flow = Macros.analyze(result.steps)
+    val lines =
+      result.steps.mapIndexed { i, step -> "  ".repeat(flow.level[i]) + Macros.describe(context, step) }.toMutableList()
+    if (result.skippedPasswords) lines += getString(R.string.macro_recorded_no_passwords)
+    dialog()
+      .setTitle(R.string.macro_recorded)
+      .setMessage(lines.joinToString("\n"))
+      .setPositiveButton(R.string.script_builder_save) { _, _ ->
+        val steps = steps()
+        // The steps can have changed meanwhile, on another screen.
+        val at = result.at?.takeIf { it <= steps.size }
+        if (steps.size + result.steps.size > Macros.MAX_STEPS) {
+          android.widget.Toast.makeText(context, getString(R.string.macro_recorded_too_many, Macros.MAX_STEPS), android.widget.Toast.LENGTH_LONG).show()
+        } else {
+          insertSteps(at, result.steps, afterAll = true)
+        }
+      }
+      .setNeutralButton(R.string.script_builder_record_again) { _, _ -> startRecording() }
+      .setNegativeButton(android.R.string.cancel, null)
+      .show()
+  }
 
   private fun runNow() {
     if (TalkBackService.getInstance() == null) {
@@ -665,14 +731,15 @@ class MacroFragment : MacroEditorFragment() {
 
   /**
    * Adds [added] at [at], or at the end for null, and moves focus to the first of them. The next
-   * step goes after the first of them: after a single step, or into the block it starts.
+   * step goes after the first of them: after a single step, or into the block it starts; or after
+   * all of them for [afterAll], as for recorded steps.
    */
-  private fun insertSteps(at: Int?, added: List<Macros.Step>) {
+  private fun insertSteps(at: Int?, added: List<Macros.Step>, afterAll: Boolean = false) {
     if (!isAdded) return
     val steps = steps()
     if (steps.size + added.size > Macros.MAX_STEPS) return
     val position = at?.coerceIn(0, steps.size) ?: steps.size
-    insertAt = position + 1
+    insertAt = if (afterAll) at?.let { position + added.size } else position + 1
     save(steps.subList(0, position) + added + steps.subList(position, steps.size))
     rebuild()
     listView?.let { focusAfterLayout(it, findPreference(rowKey(position)), null) }
@@ -785,7 +852,8 @@ class MacroFragment : MacroEditorFragment() {
         val regex = checked.firstOrNull() == true
         val times = timesText.trim().toIntOrNull()?.takeIf { it in 1..Macros.MAX_REPEATS }
         when {
-          label.isEmpty() -> ""
+          // A scroll without an item scrolls the largest list on screen.
+          label.isEmpty() && act == Macros.ItemAct.LONG_PRESS -> ""
           regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
           times == null -> getString(R.string.macro_invalid_times, Macros.MAX_REPEATS)
           else -> {
@@ -1152,6 +1220,9 @@ class MacroFragment : MacroEditorFragment() {
   companion object {
     /** The argument with the ID of the macro, for each screen of a macro. */
     const val ARG_MACRO = "macro"
+
+    /** The argument that starts recording steps once the macro's screen is shown. */
+    const val ARG_RECORD = "record"
 
     private const val STATE_INSERT_AT = "insert_at"
 

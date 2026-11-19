@@ -122,7 +122,8 @@ object Macros {
 
   /**
    * Long-presses or scrolls, [times] times, the item a [Tap] with the same values would click, or
-   * the nearest item around it that can be, such as a seek bar holding a time.
+   * the nearest item around it that can be, such as a seek bar holding a time. A scroll with an
+   * empty [label] scrolls the largest list on screen.
    */
   data class ActOnItem(
     val label: String,
@@ -751,12 +752,16 @@ object Macros {
       }
       is FocusItem ->
         context.getString(R.string.macro_step_focus_value, labelText(context, step.label, step.regex, step.field))
-      is ActOnItem ->
+      is ActOnItem -> {
+        val item =
+          if (step.label.isEmpty()) context.getString(R.string.macro_list_on_screen)
+          else labelText(context, step.label, step.regex, step.field)
         if (step.times > 1) {
-          context.getString(R.string.macro_step_act_times_value, context.getString(step.act.title), labelText(context, step.label, step.regex, step.field), step.times)
+          context.getString(R.string.macro_step_act_times_value, context.getString(step.act.title), item, step.times)
         } else {
-          context.getString(R.string.macro_step_act_value, context.getString(step.act.title), labelText(context, step.label, step.regex, step.field))
+          context.getString(R.string.macro_step_act_value, context.getString(step.act.title), item)
         }
+      }
       is SpeakItem ->
         context.getString(R.string.macro_step_speak_item_value, labelText(context, step.label, step.regex, step.field))
       is SpeakText -> context.getString(R.string.macro_step_speak_text_value, step.text)
@@ -1486,8 +1491,9 @@ object Macros {
           )
         }
       TYPE_ACT_ITEM ->
-        item.optString("label").takeIf { it.isNotBlank() }?.let { label ->
-          ItemAct.of(item.optString("act"))?.let { act ->
+        ItemAct.of(item.optString("act"))?.let { act ->
+          // Without a label, a scroll step scrolls the largest list on screen.
+          item.optString("label").trim().takeIf { it.isNotEmpty() || act != ItemAct.LONG_PRESS }?.let { label ->
             ActOnItem(
               label,
               act,
