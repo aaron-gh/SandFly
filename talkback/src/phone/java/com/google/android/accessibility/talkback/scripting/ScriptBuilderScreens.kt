@@ -748,6 +748,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
         "contentDescription", "description" -> Macros.Field.DESCRIPTION
         "hint" -> Macros.Field.HINT
         "stateDescription", "state" -> Macros.Field.STATE
+        "tooltip" -> Macros.Field.TOOLTIP
         "id" -> Macros.Field.RESOURCE_ID
         else -> null
       }
@@ -759,6 +760,7 @@ class ScriptBuilderFragment : ScriptBuilderBaseFragment() {
         Macros.Field.DESCRIPTION -> "contentDescription"
         Macros.Field.HINT -> "hint"
         Macros.Field.STATE -> "stateDescription"
+        Macros.Field.TOOLTIP -> "tooltip"
         Macros.Field.RESOURCE_ID -> "id"
       }
 

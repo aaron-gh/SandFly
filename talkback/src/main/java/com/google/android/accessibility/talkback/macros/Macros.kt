@@ -359,6 +359,7 @@ object Macros {
     DESCRIPTION("description", R.string.macro_field_description),
     HINT("hint", R.string.macro_field_hint),
     STATE("state", R.string.macro_field_state),
+    TOOLTIP("tooltip", R.string.macro_field_tooltip),
     RESOURCE_ID("id", R.string.macro_field_id);
 
     companion object {
@@ -370,7 +371,7 @@ object Macros {
   sealed class Test
 
   /**
-   * An item on screen whose text, description, hint or state, or only its [field] when that isn't
+   * An item on screen whose text, description, hint, state or tooltip, or only its [field] when that isn't
    * null, contains [label], ignoring case, or matches it as a regular expression for [regex], and
    * that is of [kind] when it isn't null.
    */

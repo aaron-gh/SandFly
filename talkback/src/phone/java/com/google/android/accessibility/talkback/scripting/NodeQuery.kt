@@ -143,11 +143,13 @@ data class NodeQuery(
           node.contentDescription?.toString(),
           node.hintText?.toString(),
           node.stateDescription?.toString(),
+          node.tooltipText?.toString(),
         )
       Macros.Field.TEXT -> listOfNotNull(textOf(node))
       Macros.Field.DESCRIPTION -> listOfNotNull(node.contentDescription?.toString())
       Macros.Field.HINT -> listOfNotNull(node.hintText?.toString())
       Macros.Field.STATE -> listOfNotNull(node.stateDescription?.toString())
+      Macros.Field.TOOLTIP -> listOfNotNull(node.tooltipText?.toString())
       Macros.Field.RESOURCE_ID ->
         node.viewIdResourceName?.let { listOf(it, it.substringAfter(":id/")).distinct() }.orEmpty()
     }.map { it.trim() }
@@ -193,6 +195,7 @@ data class NodeQuery(
         "hint" to Macros.Field.HINT,
         "stateDescription" to Macros.Field.STATE,
         "state" to Macros.Field.STATE,
+        "tooltip" to Macros.Field.TOOLTIP,
         "id" to Macros.Field.RESOURCE_ID,
       )
 
