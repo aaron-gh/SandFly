@@ -27,6 +27,13 @@
   <!--The theme is for preference settings-->
   <style name="TalkBackSettings" parent="Theme.MaterialComponents.Light.Bridge">
     <item name="colorAccent">@color/colorAccent</item>
+    <item name="alertDialogTheme">@style/SettingsAlertDialog</item>
+  </style>
+
+  <!-- Settings dialogs shrink above the keyboard, so their buttons stay on screen with a long text
+       field. -->
+  <style name="SettingsAlertDialog" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+    <item name="android:windowSoftInputMode">adjustResize</item>
   </style>
 
   <!-- Keymap -->
