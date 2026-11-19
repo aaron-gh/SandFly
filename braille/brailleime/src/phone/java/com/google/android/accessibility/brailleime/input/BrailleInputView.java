@@ -572,6 +572,17 @@ public class BrailleInputView extends View
       tabletopRotation = held;
     }
     tabletopSideDecidedAtMs = SystemClock.uptimeMillis();
+    OrientationTrace.add(
+        "decide tablet heldRotation="
+            + held
+            + " lastHeld="
+            + HeldOrientationTracker.getLastHeld()
+            + " displayRotation="
+            + displayRotation()
+            + " fromScreenAway="
+            + fromScreenAway
+            + " -> tabletopRotation="
+            + tabletopRotation);
     callback.onTabletopPortSideDecided();
   }
 
