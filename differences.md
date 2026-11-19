@@ -852,7 +852,7 @@ For 3 minutes after you hid the screen, TalkBack set the screen to full brightne
 
 If you turn off **Always show this** in the hide screen dialog, SandFly says only "Screen hidden" and skips the instructions for showing the screen again. When SandFly starts with the screen hidden, it says "Screen hidden" after "SandFly on".
 
-Hiding and showing the screen each play a sound and a vibration of their own, which can be turned off in **Individual sounds and vibrations** (**Screen hidden** and **Screen shown**) and replaced by a [sound theme](themes.md). The status gesture says "Screen hidden" while the screen is hidden; to leave it out, turn off **Hidden screen** in **Status readout**. To have SandFly say "Screen hidden" when the screen turns on, turn on **Hidden screen** in **Verbosity** > **Screen on and off**.
+Hiding and showing the screen each play a sound and a vibration of their own, which can be turned off in **Individual sounds and vibrations** (**Screen hidden** and **Screen shown**) and replaced by a [sound theme](themes.md). The status gesture says "Screen hidden" while the screen is hidden; to leave it out, turn off **Hidden screen** in **Status readout**. To have SandFly say "Screen hidden" when the screen turns on, turn on **Hidden screen** in **Verbosity** > **Screen on and off** > **When the screen turns on**.
 
 ### Proximity sensor
 
@@ -860,9 +860,11 @@ SandFly doesn't stop speech when something covers the proximity sensor. To turn 
 
 ### Screen on and off announcements
 
-In **Verbosity** > **Screen on and off**, you can choose what SandFly says when the screen turns off, when it turns on, and when you unlock the phone. When the screen turns off, SandFly says "Screen off" and the ringer mode. When the screen turns on, it says the time, and it can also say the battery, whether the screen is hidden, the Wi-Fi network, the mobile network, the ringer and Do Not Disturb, and airplane mode, after the time in the same announcement. It also says the number of notifications after the time, as in "6 notifications", when SandFly has notification access and there are notifications that aren't ongoing. When you unlock the phone, it says "Device unlocked". Each of these has its own switch. By default, everything except the extra status items is on.
+In **Verbosity** > **Screen on and off**, you can choose what SandFly says when the screen turns off, when it turns on, and when you unlock the phone. **When the screen turns off**, **When the screen turns on** and **When the phone is unlocked** each have the same items: **Time**, **Number of notifications**, **Battery** (**Off**, **Always** or **Only while charging**), **Low battery**, **Hidden screen**, **Wi-Fi**, **Mobile network**, **Ringer and Do Not Disturb** and **Airplane mode**. They are said in that order at each event, in one announcement. The number of notifications, as in "6 notifications", needs notification access and counts notifications that aren't ongoing. **When the screen turns off** also has **Say "Screen off"** and **Ringer mode**, which says "Ringer vibrate" or "Ringer silent"; with **Ringer and Do Not Disturb** on there, **Ringer mode** isn't said. **When the phone is unlocked** also has **Say "Device unlocked"**. By default, SandFly says "Screen off" and the ringer mode when the screen turns off, the time and the number of notifications when it turns on, and "Device unlocked" when you unlock the phone.
 
-These switches are separate from **Status readout**, so the status gesture can say different things. SandFly doesn't make the screen-on announcement during calls, and the lock screen no longer cuts off "Screen off".
+With face or fingerprint unlock, the phone is unlocked right after the screen turns on. Items that the screen-on announcement said less than 5 seconds before aren't said again on unlock.
+
+These items are separate from **Status readout**, so the status gesture can say different things. During calls, SandFly says only "Screen off". The lock screen doesn't cut off the screen-off announcement.
 
 ### SandFly as the wallpaper
 

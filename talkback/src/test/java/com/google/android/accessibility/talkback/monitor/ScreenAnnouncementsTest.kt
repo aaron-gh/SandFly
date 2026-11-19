@@ -63,7 +63,7 @@ class ScreenAnnouncementsTest {
     )
     assertEquals(
       emptyList<StatusItem>(),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ true),
     )
   }
 
@@ -87,7 +87,7 @@ class ScreenAnnouncementsTest {
       .apply()
     assertEquals(
       listOf(StatusItem.BATTERY, StatusItem.WIFI),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false),
     )
   }
 
@@ -103,11 +103,11 @@ class ScreenAnnouncementsTest {
       .apply()
     assertEquals(
       listOf(StatusItem.BATTERY),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ true),
     )
     assertEquals(
       emptyList<StatusItem>(),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false),
     )
   }
 
@@ -117,16 +117,16 @@ class ScreenAnnouncementsTest {
     prefs.edit().putString(ScreenAnnouncementSettings.SCREEN_ON_LOW_BATTERY, "20").apply()
     assertEquals(
       listOf(StatusItem.BATTERY),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 19),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false, 19),
     )
     assertEquals(
       emptyList<StatusItem>(),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 20),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false, 20),
     )
     // An unknown level is never low.
     assertEquals(
       emptyList<StatusItem>(),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, -1),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false, -1),
     )
   }
 
@@ -144,15 +144,15 @@ class ScreenAnnouncementsTest {
       .apply()
     assertEquals(
       listOf(StatusItem.BATTERY, StatusItem.WIFI),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true, 5),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ true, 5),
     )
     assertEquals(
       listOf(StatusItem.BATTERY, StatusItem.WIFI),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 5),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false, 5),
     )
     assertEquals(
       listOf(StatusItem.WIFI),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 50),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false, 50),
     )
   }
 
@@ -161,7 +161,7 @@ class ScreenAnnouncementsTest {
     val prefs = FakeSharedPreferences()
     assertEquals(
       emptyList<StatusItem>(),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false, 1),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false, 1),
     )
     prefs.edit().putString(ScreenAnnouncementSettings.SCREEN_ON_LOW_BATTERY, "99").apply()
     assertEquals(
@@ -197,7 +197,7 @@ class ScreenAnnouncementsTest {
       .apply()
     assertEquals(
       emptyList<StatusItem>(),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ true),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ true),
     )
   }
 
@@ -287,7 +287,7 @@ class ScreenAnnouncementsTest {
   fun theHiddenScreenIsOffByDefaultAndSaidFirstAfterTheBattery() {
     val prefs = FakeSharedPreferences()
     assertFalse(
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false)
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false)
         .contains(StatusItem.HIDDEN_SCREEN)
     )
     prefs
@@ -301,13 +301,284 @@ class ScreenAnnouncementsTest {
       .apply()
     assertEquals(
       listOf(StatusItem.BATTERY, StatusItem.HIDDEN_SCREEN, StatusItem.WIFI),
-      ScreenAnnouncementSettings.screenOnStatusItems(prefs, /* charging= */ false),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_ON, /* charging= */ false),
     )
   }
 
   @Test
-  fun screenOnStatusNeverRepeatsTheTime() {
+  fun statusItemsNeverRepeatTheTime() {
     // The time has its own switch and is spoken first.
-    assertFalse(StatusItem.TIME in ScreenAnnouncementSettings.SCREEN_ON_STATUS)
+    assertFalse(ScreenReadoutItem.entries.any { it.status == StatusItem.TIME })
+  }
+
+  @Test
+  fun eachEventHasTheSameItemsWithTheSameTitlesOnTheScreen() {
+    val screen = File("src/main/res/xml/screen_announcement_preferences.xml")
+    val categories =
+      DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(screen).getElementsByTagName(
+        "com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory"
+      )
+    fun rows(categoryKey: String): Map<String, String> {
+      val category =
+        (0 until categories.length)
+          .map { categories.item(it) as Element }
+          .single { it.getAttribute("android:key") == categoryKey }
+      val children = category.childNodes
+      return (0 until children.length)
+        .mapNotNull { children.item(it) as? Element }
+        .associate { it.getAttribute("android:key") to it.getAttribute("android:title") }
+    }
+    fun itemKeys(event: ScreenEvent): List<String> =
+      listOf(
+        if (event == ScreenEvent.SCREEN_ON) "@string/pref_speak_time_key"
+        else ScreenAnnouncementSettings.timeKey(event),
+        ScreenAnnouncementSettings.notificationCountKey(event),
+        ScreenAnnouncementSettings.batteryKey(event),
+        ScreenAnnouncementSettings.lowBatteryKey(event),
+      ) + ScreenReadoutItem.entries.mapNotNull { ScreenAnnouncementSettings.statusKey(event, it) }
+    val off = rows("pref_screen_announcements_screen_off_category")
+    val on = rows("pref_screen_announcements_screen_on_category")
+    val unlock = rows("pref_screen_announcements_unlock_category")
+    val onTitles = itemKeys(ScreenEvent.SCREEN_ON).map { on.getValue(it) }
+    assertEquals(onTitles, itemKeys(ScreenEvent.SCREEN_OFF).map { off.getValue(it) })
+    assertEquals(onTitles, itemKeys(ScreenEvent.UNLOCK).map { unlock.getValue(it) })
+    // Plus the event's own switches.
+    assertEquals(
+      setOf(ScreenAnnouncementSettings.SAY_SCREEN_OFF, ScreenAnnouncementSettings.SCREEN_OFF_RINGER),
+      off.keys - itemKeys(ScreenEvent.SCREEN_OFF).toSet(),
+    )
+    assertEquals(emptySet<String>(), on.keys - itemKeys(ScreenEvent.SCREEN_ON).toSet())
+    assertEquals(
+      setOf(ScreenAnnouncementSettings.SAY_UNLOCKED),
+      unlock.keys - itemKeys(ScreenEvent.UNLOCK).toSet(),
+    )
+  }
+
+  @Test
+  fun theExistingKeysKeepMeaningTheScreenOnItems() {
+    assertEquals(
+      "pref_screen_on_notification_count",
+      ScreenAnnouncementSettings.notificationCountKey(ScreenEvent.SCREEN_ON),
+    )
+    assertEquals(
+      ScreenAnnouncementSettings.SCREEN_ON_BATTERY,
+      ScreenAnnouncementSettings.batteryKey(ScreenEvent.SCREEN_ON),
+    )
+    assertEquals(
+      ScreenAnnouncementSettings.SCREEN_ON_LOW_BATTERY,
+      ScreenAnnouncementSettings.lowBatteryKey(ScreenEvent.SCREEN_ON),
+    )
+    assertEquals(
+      listOf(
+        "pref_screen_on_hidden_screen",
+        "pref_screen_on_wifi",
+        "pref_screen_on_mobile_network",
+        "pref_screen_on_ringer",
+        "pref_screen_on_airplane_mode",
+      ),
+      ScreenReadoutItem.entries.mapNotNull {
+        ScreenAnnouncementSettings.statusKey(ScreenEvent.SCREEN_ON, it)
+      },
+    )
+  }
+
+  @Test
+  fun byDefaultEachEventReadsWhatItAlwaysHas() {
+    val prefs = FakeSharedPreferences()
+    assertEquals(
+      listOf(ScreenReadoutItem.TIME, ScreenReadoutItem.NOTIFICATION_COUNT),
+      ScreenAnnouncementSettings.readoutItems(
+        prefs,
+        ScreenEvent.SCREEN_ON,
+        screenOnTime = true,
+        charging = true,
+        batteryLevel = 5,
+      ),
+    )
+    for (event in listOf(ScreenEvent.SCREEN_OFF, ScreenEvent.UNLOCK)) {
+      assertEquals(
+        emptyList<ScreenReadoutItem>(),
+        ScreenAnnouncementSettings.readoutItems(
+          prefs,
+          event,
+          screenOnTime = true,
+          charging = true,
+          batteryLevel = 5,
+        ),
+      )
+    }
+    assertTrue(ScreenAnnouncementSettings.screenOffRingerMode(prefs))
+  }
+
+  @Test
+  fun eachEventReadsItsOwnChoice() {
+    // The example from report #483.
+    val prefs = FakeSharedPreferences()
+    prefs
+      .edit()
+      .putBoolean(ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT, false)
+      .putString(
+        ScreenAnnouncementSettings.batteryKey(ScreenEvent.SCREEN_ON),
+        ScreenAnnouncementSettings.BATTERY_ALWAYS,
+      )
+      .putBoolean("pref_unlock_mobile_network", true)
+      .putBoolean("pref_screen_off_notification_count", true)
+      .putBoolean("pref_screen_off_ringer", true)
+      .apply()
+    assertEquals(
+      listOf(ScreenReadoutItem.TIME, ScreenReadoutItem.BATTERY),
+      ScreenAnnouncementSettings.readoutItems(
+        prefs,
+        ScreenEvent.SCREEN_ON,
+        screenOnTime = true,
+        charging = false,
+      ),
+    )
+    assertEquals(
+      listOf(ScreenReadoutItem.MOBILE),
+      ScreenAnnouncementSettings.readoutItems(
+        prefs,
+        ScreenEvent.UNLOCK,
+        screenOnTime = true,
+        charging = false,
+      ),
+    )
+    assertEquals(
+      listOf(ScreenReadoutItem.NOTIFICATION_COUNT, ScreenReadoutItem.RINGER),
+      ScreenAnnouncementSettings.readoutItems(
+        prefs,
+        ScreenEvent.SCREEN_OFF,
+        screenOnTime = true,
+        charging = false,
+      ),
+    )
+    // The ringer item says the ringer mode, so "Ringer vibrate" isn't said as well.
+    assertFalse(ScreenAnnouncementSettings.screenOffRingerMode(prefs))
+  }
+
+  @Test
+  fun everyItemIsReadInTheSameOrderAtEachEvent() {
+    for (event in ScreenEvent.entries) {
+      val prefs = FakeSharedPreferences()
+      val edit =
+        prefs
+          .edit()
+          .putBoolean(ScreenAnnouncementSettings.timeKey(event), true)
+          .putBoolean(ScreenAnnouncementSettings.notificationCountKey(event), true)
+          .putString(
+            ScreenAnnouncementSettings.batteryKey(event),
+            ScreenAnnouncementSettings.BATTERY_ALWAYS,
+          )
+      for (item in ScreenReadoutItem.entries) {
+        ScreenAnnouncementSettings.statusKey(event, item)?.let { edit.putBoolean(it, true) }
+      }
+      edit.apply()
+      assertEquals(
+        ScreenReadoutItem.entries,
+        ScreenAnnouncementSettings.readoutItems(
+          prefs,
+          event,
+          screenOnTime = true,
+          charging = false,
+        ),
+      )
+    }
+  }
+
+  @Test
+  fun theScreenOnTimeSwitchIsOnlyForTheScreenTurningOn() {
+    val prefs = FakeSharedPreferences()
+    prefs.edit().putBoolean(ScreenAnnouncementSettings.timeKey(ScreenEvent.UNLOCK), true).apply()
+    assertEquals(
+      listOf(ScreenReadoutItem.TIME),
+      ScreenAnnouncementSettings.readoutItems(
+        prefs,
+        ScreenEvent.UNLOCK,
+        screenOnTime = false,
+        charging = false,
+      ),
+    )
+    assertFalse(
+      ScreenReadoutItem.TIME in
+        ScreenAnnouncementSettings.readoutItems(
+          prefs,
+          ScreenEvent.SCREEN_ON,
+          screenOnTime = false,
+          charging = false,
+        )
+    )
+    assertFalse(
+      ScreenReadoutItem.TIME in
+        ScreenAnnouncementSettings.readoutItems(
+          prefs,
+          ScreenEvent.SCREEN_OFF,
+          screenOnTime = true,
+          charging = false,
+        )
+    )
+  }
+
+  @Test
+  fun theOtherEventsHaveTheirOwnBatteryListsWithoutTheOldSwitch() {
+    val prefs = FakeSharedPreferences()
+    prefs
+      .edit()
+      .putBoolean(ScreenAnnouncementSettings.OLD_SCREEN_ON_BATTERY, true)
+      .putString(
+        ScreenAnnouncementSettings.batteryKey(ScreenEvent.UNLOCK),
+        ScreenAnnouncementSettings.BATTERY_WHILE_CHARGING,
+      )
+      .putString(ScreenAnnouncementSettings.lowBatteryKey(ScreenEvent.SCREEN_OFF), "20")
+      .apply()
+    assertEquals(
+      ScreenAnnouncementSettings.BATTERY_OFF,
+      ScreenAnnouncementSettings.battery(prefs, ScreenEvent.SCREEN_OFF),
+    )
+    assertEquals(
+      listOf(StatusItem.BATTERY),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.UNLOCK, charging = true),
+    )
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.UNLOCK, charging = false, 10),
+    )
+    assertEquals(
+      listOf(StatusItem.BATTERY),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_OFF, charging = false, 10),
+    )
+    assertEquals(
+      emptyList<StatusItem>(),
+      ScreenAnnouncementSettings.statusItems(prefs, ScreenEvent.SCREEN_OFF, charging = false, 20),
+    )
+  }
+
+  @Test
+  fun unlockingRightAfterTheScreenTurnsOnLeavesOutWhatWasJustRead() {
+    val unlock = listOf(ScreenReadoutItem.TIME, ScreenReadoutItem.MOBILE)
+    val screenOn = listOf(ScreenReadoutItem.TIME, ScreenReadoutItem.BATTERY)
+    assertEquals(
+      listOf(ScreenReadoutItem.MOBILE),
+      ScreenAnnouncementSettings.withoutRepeats(unlock, screenOn, screenOnAt = 1_000, now = 2_000),
+    )
+    val window = ScreenAnnouncementSettings.REPEAT_WINDOW_MS
+    assertEquals(
+      unlock,
+      ScreenAnnouncementSettings.withoutRepeats(unlock, screenOn, 1_000, 1_000 + window),
+    )
+    assertEquals(
+      unlock,
+      ScreenAnnouncementSettings.withoutRepeats(unlock, emptyList(), 1_000, 2_000),
+    )
+  }
+
+  @Test
+  fun anyNotificationCountSwitchNeedsTheListener() {
+    val prefs = FakeSharedPreferences()
+    assertTrue(ScreenAnnouncementSettings.anyNotificationCount(prefs))
+    prefs.edit().putBoolean(ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT, false).apply()
+    assertFalse(ScreenAnnouncementSettings.anyNotificationCount(prefs))
+    prefs.edit().putBoolean("pref_unlock_notification_count", true).apply()
+    assertTrue(ScreenAnnouncementSettings.anyNotificationCount(prefs))
+    assertEquals(3, ScreenAnnouncementSettings.NOTIFICATION_COUNT_KEYS.size)
   }
 }

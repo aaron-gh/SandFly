@@ -104,6 +104,14 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   private final ScreenOnRecorder screenOnRecorder = new ScreenOnRecorder();
 
+  /**
+   * The items the last screen-on readout read, and when, in {@link SystemClock#uptimeMillis()}, so
+   * that unlocking right after does not read them again. Main thread only.
+   */
+  private List<ScreenReadoutItem> screenOnReadItems = new ArrayList<>();
+
+  private long screenOnReadAt;
+
   /** The current ringer mode. */
   private int ringerMode = AudioManager.RINGER_MODE_NORMAL;
 
@@ -246,6 +254,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       case Intent.ACTION_SCREEN_OFF -> {
         isInteractive = false;
         wakeAnnouncementRecovery.cancel();
+        screenOnReadItems = new ArrayList<>();
         screenOnRecorder.onScreenOff();
         AudioDeviceRouter router = AudioDeviceRouter.getInstance();
         if (router != null) {
@@ -300,7 +309,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     LogUtils.d(TAG, "enabledTellingTime=" + enabledTellingTime);
   }
 
-  /** Handles when the device is unlocked. Just speaks "unlocked." */
+  /** Handles when the device is unlocked. Speaks "Device unlocked" and the items chosen for it. */
   private void handleDeviceUnlocked(EventId eventId) {
     if (isIdle()) {
       if (isWatch) {
@@ -313,6 +322,14 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
         if (ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_UNLOCKED)) {
           ttsText.append(service.getString(R.string.value_device_unlocked));
         }
+        // With face or fingerprint unlock, the screen-on readout has just read some of them.
+        appendReadout(
+            ttsText,
+            ScreenAnnouncementSettings.withoutRepeats(
+                readoutItems(prefs, ScreenEvent.UNLOCK),
+                screenOnReadItems,
+                screenOnReadAt,
+                SystemClock.uptimeMillis()));
         SpeakOptions speakOptions =
             SpeakOptions.create()
                 .setQueueMode(
@@ -329,56 +346,30 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   private void handleScreenOffInBackgroundThread(EventId eventId) {
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
-    final SpannableStringBuilder ttsText = new SpannableStringBuilder();
-    if (ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_SCREEN_OFF)) {
-      ttsText.append(service.getString(R.string.value_screen_off));
-    }
-    // Only announce ringer state if we're not in a call.
-    if (isIdle()
-        && ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SCREEN_OFF_RINGER)) {
-      appendRingerStateAnnouncement(ttsText);
-    }
-
-    // Speak "screen off".
     // REFERTO: Do not have any screen off message and any chime for Android Wear.
-    Feedback.Part.@Nullable Builder feedback = null;
-    if (!isWatch) {
-      // Uninterruptible, so that the lock screen or always-on display appearing right after the
-      // screen turns off does not cut the announcement off.
-      SpeakOptions speakOptions =
-          SpeakOptions.create()
-              .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
-              .setFlags(FeedbackItem.FLAG_NO_HISTORY);
-      final float volume;
-      if (ringerMode == AudioManager.RINGER_MODE_NORMAL) {
-        // Gets the volume of Backtalk's sounds, which use the speech volume.
-        final float talkbackVolume =
-            getStreamVolume(FailoverTextToSpeech.getSpeechAudioStream(service));
-        if ((talkbackVolume > 0)
-            && (audioManager.isWiredHeadsetOn() || audioManager.isBluetoothA2dpOn())) {
-          // TODO: refactor the following lines.
-          // Play the ringer beep on the default (music) stream to avoid
-          // issues with ringer audio (e.g. no speech on ICS and
-          // interruption of music on JB). Adjust playback volume to
-          // compensate for music volume.
-          final float ringVolume = getStreamVolume(AudioManager.STREAM_RING);
-          volume = Math.min(1.0f, (ringVolume / talkbackVolume));
-        } else {
-          volume = 1.0f;
-        }
-        // Normally we'll play the volume beep on the ring stream.
-        feedback = Feedback.part().setSound(Feedback.Sound.create(R.raw.screen_off, 1.0f, volume));
-        if (ttsText.length() > 0) {
-          feedback.speech(ttsText, speakOptions);
-        }
-      } else if (ttsText.length() > 0) {
-        feedback = Feedback.speech(ttsText, speakOptions);
+    // The volume of the screen-off sound, which plays only while the ringer rings, or -1 for none.
+    float soundVolume = -1;
+    if (!isWatch && ringerMode == AudioManager.RINGER_MODE_NORMAL) {
+      // Gets the volume of SandFly's sounds, which use the speech volume.
+      final float talkbackVolume =
+          getStreamVolume(FailoverTextToSpeech.getSpeechAudioStream(service));
+      if ((talkbackVolume > 0)
+          && (audioManager.isWiredHeadsetOn() || audioManager.isBluetoothA2dpOn())) {
+        // TODO: refactor the following lines.
+        // Play the ringer beep on the default (music) stream to avoid
+        // issues with ringer audio (e.g. no speech on ICS and
+        // interruption of music on JB). Adjust playback volume to
+        // compensate for music volume.
+        final float ringVolume = getStreamVolume(AudioManager.STREAM_RING);
+        soundVolume = Math.min(1.0f, (ringVolume / talkbackVolume));
+      } else {
+        soundVolume = 1.0f;
       }
     }
 
-    // The rest uses the speech queue and the event queues, which only the main thread may use.
-    final Feedback.Part.@Nullable Builder screenOffFeedback = feedback;
+    // The rest uses the speech queue, the event queues and the status, which only the main thread
+    // may use.
+    final float screenOffSoundVolume = soundVolume;
     mainHandler.post(
         () -> {
           if (isInteractive) {
@@ -393,10 +384,50 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
           // Stop queued speech and events. AccessibilityEventProcessor will block new events.
           service.clearQueues();
 
-          if (screenOffFeedback != null) {
-            pipeline.returnFeedback(eventId, screenOffFeedback);
+          if (isWatch) {
+            return;
+          }
+          // Sent after clearing the queues, and uninterruptible, so that neither they nor the lock
+          // screen or always-on display appearing right after the screen turns off cut it off.
+          final SpannableStringBuilder ttsText = screenOffText();
+          SpeakOptions speakOptions =
+              SpeakOptions.create()
+                  .setQueueMode(
+                      SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
+                  .setFlags(FeedbackItem.FLAG_NO_HISTORY);
+          Feedback.Part.@Nullable Builder feedback = null;
+          if (screenOffSoundVolume >= 0) {
+            // Normally we'll play the volume beep on the ring stream.
+            feedback =
+                Feedback.part()
+                    .setSound(Feedback.Sound.create(R.raw.screen_off, 1.0f, screenOffSoundVolume));
+            if (ttsText.length() > 0) {
+              feedback.speech(ttsText, speakOptions);
+            }
+          } else if (ttsText.length() > 0) {
+            feedback = Feedback.speech(ttsText, speakOptions);
+          }
+          if (feedback != null) {
+            pipeline.returnFeedback(eventId, feedback);
           }
         });
+  }
+
+  /** "Screen off", the ringer mode and the items chosen for the screen turning off. */
+  private SpannableStringBuilder screenOffText() {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+    final SpannableStringBuilder ttsText = new SpannableStringBuilder();
+    if (ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_SCREEN_OFF)) {
+      ttsText.append(service.getString(R.string.value_screen_off));
+    }
+    // Only announce the ringer state and the status if we're not in a call.
+    if (isIdle()) {
+      if (ScreenAnnouncementSettings.screenOffRingerMode(prefs)) {
+        appendRingerStateAnnouncement(ttsText);
+      }
+      appendReadout(ttsText, readoutItems(prefs, ScreenEvent.SCREEN_OFF));
+    }
+    return ttsText;
   }
 
   /** Handles when the screen is turned off. Announces "screen off". */
@@ -472,9 +503,12 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       if (Settings.Secure.getInt(
               service.getContentResolver(), Settings.Secure.DEVICE_PROVISIONED, 0)
           != 0) {
-        appendCurrentTimeAnnouncementIfNeeded(ttsText);
-        appendNotificationCount(ttsText);
-        appendStatusAnnouncement(ttsText);
+        List<ScreenReadoutItem> items =
+            readoutItems(
+                SharedPreferencesUtils.getSharedPreferences(service), ScreenEvent.SCREEN_ON);
+        appendReadout(ttsText, items);
+        screenOnReadItems = items;
+        screenOnReadAt = SystemClock.uptimeMillis();
       } else {
         // Device is not ready, just speak screen on
         ttsText.append(service.getString(R.string.value_screen_on));
@@ -495,16 +529,40 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
   }
 
+  /** The items chosen for {@code event}, in the order they are read. */
+  private List<ScreenReadoutItem> readoutItems(SharedPreferences prefs, ScreenEvent event) {
+    return ScreenAnnouncementSettings.readoutItems(
+        prefs,
+        event,
+        enabledTellingTime,
+        statusReader != null && statusReader.isCharging(),
+        statusReader != null ? statusReader.batteryLevel() : -1);
+  }
+
   /**
-   * Appends how many notifications there are, if the user chose to hear it, there are any, and
-   * SandFly's notification listener is connected, which needs notification access.
+   * Appends {@code items}, which are in the order {@link ScreenAnnouncementSettings#readoutItems}
+   * gives, with the same wording at the screen turning off or on and the phone being unlocked.
+   */
+  private void appendReadout(SpannableStringBuilder builder, List<ScreenReadoutItem> items) {
+    List<StatusItem> status = new ArrayList<>();
+    for (ScreenReadoutItem item : items) {
+      if (item == ScreenReadoutItem.TIME) {
+        StringBuilderUtils.appendWithSeparator(
+            builder, DateTimeUtils.getScreenOnTime(service, timeFormat));
+      } else if (item == ScreenReadoutItem.NOTIFICATION_COUNT) {
+        appendNotificationCount(builder);
+      } else if (item.getStatus() != null) {
+        status.add(item.getStatus());
+      }
+    }
+    appendStatusAnnouncement(builder, status);
+  }
+
+  /**
+   * Appends how many notifications there are, if there are any and SandFly's notification listener
+   * is connected, which needs notification access.
    */
   private void appendNotificationCount(SpannableStringBuilder builder) {
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
-    if (!ScreenAnnouncementSettings.isOn(
-        prefs, ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT)) {
-      return;
-    }
     Integer count = NotificationListService.countedNotifications(service);
     if (count == null || count <= 0) {
       return;
@@ -522,21 +580,14 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   /**
-   * Appends the status items the user chose for when the screen turns on. They are spoken with the
-   * time, in one announcement that the lock screen taking focus cannot interrupt.
+   * Appends the status {@code items}. They are spoken with the time, in one announcement that the
+   * lock screen taking focus cannot interrupt.
    */
-  private void appendStatusAnnouncement(SpannableStringBuilder builder) {
-    if (statusReader == null) {
+  private void appendStatusAnnouncement(SpannableStringBuilder builder, List<StatusItem> items) {
+    if (statusReader == null || items.isEmpty()) {
       return;
     }
-    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
-    List<StatusItem> items =
-        ScreenAnnouncementSettings.screenOnStatusItems(
-            prefs, statusReader.isCharging(), statusReader.batteryLevel());
-    if (items.isEmpty()) {
-      return;
-    }
-    // The screen turning on is not a request, so do not ask for permission over the lock screen.
+    // The screen turning off or on and unlocking are not requests, so do not ask for permission.
     String status = statusReader.describe(items, /* askForLocation= */ false);
     if (status.isEmpty()) {
       return;
@@ -561,21 +612,6 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   /** Handles when the ringer mode (ex. volume) changes. Announces the current ringer state. */
   private void handleRingerModeChanged(int ringerMode) {
     this.ringerMode = ringerMode;
-  }
-
-  /**
-   * Appends the current time announcement to a {@link StringBuilder}.
-   *
-   * @param builder The string to append to.
-   */
-  @SuppressWarnings("deprecation")
-  private void appendCurrentTimeAnnouncementIfNeeded(SpannableStringBuilder builder) {
-    if (!enabledTellingTime) {
-      return;
-    }
-
-    final String currentTime = DateTimeUtils.getScreenOnTime(service, timeFormat);
-    StringBuilderUtils.appendWithSeparator(builder, currentTime);
   }
 
   /**
