@@ -51,6 +51,22 @@ class BrailleCommandsTest {
   }
 
   @Test
+  fun findCommandsHaveTheirCells() {
+    assertEquals(
+      context.getString(R.string.shortcut_value_braille_find_text),
+      BrailleCommands.action(context, prefs, "124", null),
+    )
+    assertEquals(
+      context.getString(R.string.shortcut_value_braille_find_next_text),
+      BrailleCommands.action(context, prefs, "1246", null),
+    )
+    assertEquals(
+      context.getString(R.string.shortcut_value_braille_find_previous_text),
+      BrailleCommands.action(context, prefs, "1345", null),
+    )
+  }
+
+  @Test
   fun builtInCellsAreUniqueAndValid() {
     val cells = BrailleCommands.builtIn(context).keys
     assertTrue(cells.all { BrailleCommands.normalize(it) == it })

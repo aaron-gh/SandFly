@@ -1094,6 +1094,17 @@ object Commands {
           R.string.shortcut_braille_commands,
           available = !wear,
         )
+        gesture(R.string.shortcut_value_braille_find_text, R.string.shortcut_braille_find_text, available = !wear)
+        gesture(
+          R.string.shortcut_value_braille_find_next_text,
+          R.string.shortcut_braille_find_next_text,
+          available = !wear,
+        )
+        gesture(
+          R.string.shortcut_value_braille_find_previous_text,
+          R.string.shortcut_braille_find_previous_text,
+          available = !wear,
+        )
         gesture(
           R.string.shortcut_value_braille_command_profiles,
           R.string.shortcut_braille_command_profiles,

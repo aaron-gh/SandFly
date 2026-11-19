@@ -44,6 +44,10 @@ class BrailleScreenInput(
 
   fun recordCell(onCell: (String?) -> Unit): Boolean = false
 
+  fun find(forward: Boolean, wrap: Boolean, newText: Boolean) {
+    notAvailable()
+  }
+
   fun switchToBrailleKeyboard(): Boolean = false
 
   fun shutdown() {}

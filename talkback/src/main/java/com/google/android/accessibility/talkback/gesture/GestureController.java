@@ -512,6 +512,13 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_commands))) {
       brailleScreenInput.showCommands();
       result = true;
+    } else if (action.equals(service.getString(R.string.shortcut_value_braille_find_text))) {
+      brailleScreenInput.find(/* forward= */ true, /* wrap= */ true, /* newText= */ true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_braille_find_next_text))) {
+      brailleScreenInput.find(/* forward= */ true, /* wrap= */ false, /* newText= */ false);
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_braille_find_previous_text))) {
+      brailleScreenInput.find(/* forward= */ false, /* wrap= */ false, /* newText= */ false);
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_command_profiles))) {
       result =
           menuManager.showMenu(
@@ -1778,6 +1785,11 @@ public class GestureController {
         return false;
       }
       return true;
+    }
+
+    @Override
+    public boolean findText(String text, boolean forward, boolean wrap, Runnable onWrap) {
+      return service.findText(text, forward, wrap, onWrap);
     }
   }
 

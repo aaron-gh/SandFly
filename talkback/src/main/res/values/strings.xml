@@ -2308,6 +2308,16 @@
     <string name="shortcut_braille_commands">Braille commands</string>
     <!-- Spoken when braille commands show while a braille command profile is in use. %1$s is the profile's name. [CHAR LIMIT=NONE] -->
     <string name="braille_commands_with_profile">Braille commands, <xliff:g id="profile" example="Reading">%1$s</xliff:g></string>
+    <!-- Command: asks for text typed in braille on the screen, then focuses the next item on the screen that contains it, going round to the top when none is after the focused item. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_braille_find_text">Find text</string>
+    <!-- Command: focuses the next item on the screen that contains the text last found with Find text, without going round to the top. Asks for the text when none was typed since braille commands showed. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_braille_find_next_text">Find next text</string>
+    <!-- Command: focuses the previous item on the screen that contains the text last found with Find text, without going round to the bottom. Asks for the text when none was typed since braille commands showed. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_braille_find_previous_text">Find previous text</string>
+    <!-- Spoken when the screen is ready for braille typing of the text to find. [CHAR LIMIT=NONE] -->
+    <string name="braille_find_prompt">Type text to find</string>
+    <!-- Spoken when Find text found nothing after the focused item and found the text from the top of the screen. [CHAR LIMIT=NONE] -->
+    <string name="braille_find_wrapped">Wrapped</string>
     <!-- Spoken when braille commands close. [CHAR LIMIT=NONE] -->
     <string name="braille_commands_closed">Braille commands closed</string>
     <!-- Spoken when a braille cell typed in braille commands runs no command. %1$s is the cell, such as "dots 2 3 6". [CHAR LIMIT=NONE] -->

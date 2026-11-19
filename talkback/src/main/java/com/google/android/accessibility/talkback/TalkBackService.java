@@ -103,6 +103,8 @@ import androidx.core.content.ContextCompat;
 import androidx.core.os.UserManagerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.ConcurrentNodeQueries;
+import com.google.android.accessibility.utils.Filter;
+import com.google.android.accessibility.talkback.actor.search.SearchScreenNodeStrategy;
 import com.google.android.accessibility.talkback.applauncher.BrailleScreenInput;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
@@ -739,6 +741,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private TextEventInterpreter textEventInterpreter;
   private Compositor compositor;
   private DirectionNavigationActor.StateReader directionNavigationActorStateReader;
+  private @Nullable DirectionNavigationActor directionNavigationActor;
   private FullScreenReadActor fullScreenReadActor;
   private @Nullable ContinuousCopy continuousCopy;
   private GeminiActor geminiActor;
@@ -2889,6 +2892,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     autoScrollInterpreter.setUniversalSearchActor(universalSearchActor);
 
     DirectionNavigationActor directionNavigationActor =
+        this.directionNavigationActor =
         new DirectionNavigationActor(
             inputModeTracker,
             globalVariables,
@@ -3673,6 +3677,28 @@ public class TalkBackService extends AccessibilityServiceCompat
     return getBrailleImeForTalkBack() == null
         ? false
         : getBrailleImeForTalkBack().isBrailleKeyboardActivated();
+  }
+
+  /**
+   * Focuses the next item on the screen whose text contains {@code text}, or the previous one when
+   * {@code forward} is false. With {@code wrap}, a forward search that finds nothing after the
+   * focused item starts again from the top and runs {@code onWrap} before focusing what it finds.
+   * Returns whether an item was focused.
+   */
+  public boolean findText(String text, boolean forward, boolean wrap, Runnable onWrap) {
+    DirectionNavigationActor navigator = directionNavigationActor;
+    String trimmed = text.trim();
+    if (navigator == null || trimmed.isEmpty()) {
+      return false;
+    }
+    Filter<AccessibilityNodeInfoCompat> filter =
+        SearchScreenNodeStrategy.textFilter(trimmed, labelManager);
+    if (navigator.searchAndFocus(/* startAtRoot= */ false, forward, null, filter)) {
+      return true;
+    }
+    return wrap
+        && forward
+        && navigator.searchAndFocus(/* startAtRoot= */ true, /* forward= */ true, onWrap, filter);
   }
 
   /** Whether the on-screen braille keyboard is shown. */

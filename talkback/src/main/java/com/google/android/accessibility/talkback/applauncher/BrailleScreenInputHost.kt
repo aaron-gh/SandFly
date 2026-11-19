@@ -31,4 +31,12 @@ interface BrailleScreenInputHost {
    * changed.
    */
   fun switchToBrailleKeyboard(): Boolean
+
+  /**
+   * Focuses the next item on the screen whose text contains [text], or the previous one when
+   * [forward] is false. With [wrap], a forward search that finds nothing after the focused item
+   * starts again from the top and runs [onWrap] before focusing what it finds. Returns whether an
+   * item was focused.
+   */
+  fun findText(text: String, forward: Boolean, wrap: Boolean, onWrap: Runnable): Boolean
 }
