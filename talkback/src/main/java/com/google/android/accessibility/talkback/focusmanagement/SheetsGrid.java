@@ -265,6 +265,26 @@ public final class SheetsGrid {
     return grid == null ? null : listedAs(grid, cell);
   }
 
+  /**
+   * Returns the cell Sheets lists in the active window for {@code address}, or the listed cell
+   * nearest it when Sheets doesn't list that one, or null when no grid is found.
+   */
+  @Nullable
+  public static AccessibilityNodeInfoCompat listedCellOrNearest(String address) {
+    Cell cell = parse(address);
+    AccessibilityNodeInfoCompat grid = cell == null ? null : findGrid(null);
+    if (grid == null) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat same = listedAs(grid, cell);
+    if (same != null) {
+      return same;
+    }
+    List<AccessibilityNodeInfoCompat> cells = new ArrayList<>();
+    cellsOf(grid, cells);
+    return nearest(cells, cell, null);
+  }
+
   @Nullable
   private static AccessibilityNodeInfoCompat listedAs(AccessibilityNodeInfoCompat grid, Cell cell) {
     List<AccessibilityNodeInfoCompat> cells = new ArrayList<>();

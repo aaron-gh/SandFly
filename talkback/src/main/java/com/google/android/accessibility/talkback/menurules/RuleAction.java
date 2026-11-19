@@ -40,6 +40,7 @@ public class RuleAction extends NodeMenuRule {
   private final LinkMenu linkMenu;
   private final QuotedMessageMenu quotedMessageMenu;
   private final TelegramShareMenu telegramShareMenu;
+  private final SheetsEditMenu sheetsEditMenu = new SheetsEditMenu();
 
   public RuleAction(
       Pipeline.FeedbackReturner pipeline,
@@ -65,7 +66,8 @@ public class RuleAction extends NodeMenuRule {
         || typoSuggestionMenu.accept(context, node)
         || linkMenu.accept(context, node)
         || quotedMessageMenu.accept(context, node)
-        || telegramShareMenu.accept(context, node);
+        || telegramShareMenu.accept(context, node)
+        || sheetsEditMenu.accept(context, node);
   }
 
   @Override
@@ -96,6 +98,10 @@ public class RuleAction extends NodeMenuRule {
 
     if (telegramShareMenu.accept(context, node)) {
       actionItems.addAll(telegramShareMenu.getMenuItemsForNode(context, node, includeAncestors));
+    }
+
+    if (sheetsEditMenu.accept(context, node)) {
+      actionItems.addAll(sheetsEditMenu.getMenuItemsForNode(context, node, includeAncestors));
     }
 
     return actionItems;
