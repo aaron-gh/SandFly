@@ -264,6 +264,8 @@ class MacrosTest {
     assertEquals("abc", Macros.idOf(value))
     assertTrue(Macros.isCommand(Macros.STOP_COMMAND))
     assertNull(Macros.idOf(Macros.STOP_COMMAND))
+    assertTrue(Macros.isCommand(Macros.RECORD_COMMAND))
+    assertNull(Macros.idOf(Macros.RECORD_COMMAND))
     assertFalse(Macros.isCommand(back()))
     assertFalse(Macros.isCommand(null))
     assertNull(Macros.idOf(back()))
@@ -282,6 +284,10 @@ class MacrosTest {
     assertEquals(
       context.getString(R.string.shortcut_stop_macro),
       Macros.label(context, prefs, Macros.STOP_COMMAND),
+    )
+    assertEquals(
+      context.getString(R.string.macro_record_new),
+      Macros.label(context, prefs, Macros.RECORD_COMMAND),
     )
   }
 
@@ -347,7 +353,7 @@ class MacrosTest {
     try {
       val category = Commands.categories(context).single { it.titleRes == R.string.title_pref_macros }
       assertEquals(
-        listOf(Macros.commandOf(macro.id), Macros.STOP_COMMAND),
+        listOf(Macros.commandOf(macro.id), Macros.STOP_COMMAND, Macros.RECORD_COMMAND),
         category.commands.map { it.value },
       )
       assertEquals("Reply", Commands.label(context, Macros.commandOf(macro.id)))
@@ -358,7 +364,11 @@ class MacrosTest {
     } finally {
       shared.edit().remove(Macros.KEY).commit()
     }
-    assertTrue(Commands.categories(context).none { it.titleRes == R.string.title_pref_macros })
+    // Record a macro stays, so that the first macro can be recorded from any screen.
+    assertEquals(
+      listOf(Macros.RECORD_COMMAND),
+      Commands.categories(context).single { it.titleRes == R.string.title_pref_macros }.commands.map { it.value },
+    )
   }
 
   @Test
