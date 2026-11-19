@@ -43,6 +43,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.VoiceActionMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
+import com.google.android.accessibility.talkback.menurules.SheetsEditMenu;
 import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor;
@@ -423,6 +424,7 @@ public class AccessibilityEventProcessor implements DisplayStateChangedListener 
     if (event == null) {
       return true;
     }
+    SheetsEditMenu.onEvent(event);
     if (SheetsGrid.shouldDropFocusEvent(event)) {
       return true;
     }

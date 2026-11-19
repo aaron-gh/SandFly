@@ -2803,6 +2803,10 @@
     <string name="title_custom_action">Actions</string>
     <!-- Action on a Telegram message that replies to another: shows the message it quotes. [CHAR_LIMIT=NONE] -->
     <string name="title_go_to_quoted_message">Go to quoted message</string>
+    <!-- Action in the Actions menu of a Google Sheets cell: opens the field for typing into the cell, then focuses the cell again when editing ends. [CHAR LIMIT=40] -->
+    <string name="title_sheets_edit_cell">Edit cell</string>
+    <!-- Action in the Actions menu of a Google Sheets cell: as Edit cell, with formula mode turned on first. [CHAR LIMIT=40] -->
+    <string name="title_sheets_insert_formula">Insert formula</string>
     <!-- Label for the context menu containing show or hide screen. [CHAR_LIMIT=130] -->
     <string name="title_show_hide_screen">Hide or show screen</string>
     <!-- Label for the context menu that enabling or disabling telling time. [CHAR_LIMIT=100]-->
