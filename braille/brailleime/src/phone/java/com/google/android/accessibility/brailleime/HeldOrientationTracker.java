@@ -145,7 +145,9 @@ public final class HeldOrientationTracker {
 
   private final AccelerometerShare.Reader sharedReader =
       (timeNs, x, y, z) -> {
-        if (timeNs >= lastSharedReadingNs
+        // Before the first reading, the subtraction would overflow and drop every reading.
+        if (lastSharedReadingNs != Long.MIN_VALUE
+            && timeNs >= lastSharedReadingNs
             && timeNs - lastSharedReadingNs < SHARED_READING_INTERVAL_NS) {
           return;
         }
