@@ -445,7 +445,8 @@ object Macros {
   /**
    * A macro. [id] is unique among the macros. It only runs when [condition] is met, and when [app]
    * isn't null, only while that app is in front. [inActions] lists it in the Actions menu of the
-   * items of [app], or of every app when [app] is null.
+   * items of [app], or of every app when [app] is null. [shortcutToken] is the token of its home
+   * screen shortcut, which [MacroShortcuts] checks, or null when it has none.
    */
   data class Macro(
     val id: String,
@@ -454,6 +455,7 @@ object Macros {
     val condition: Condition = Condition(),
     val app: String? = null,
     val inActions: Boolean = false,
+    val shortcutToken: String? = null,
   )
 
   /** Why the steps of a macro can't run, at the step [index]. */
@@ -687,8 +689,10 @@ object Macros {
       external()?.delete(id)
       return
     }
+    val deleted = read(prefs).firstOrNull { it.id == id }
     write(prefs, read(prefs).filter { it.id != id })
     CommandAssignments.unassign(context, prefs, commandOf(id))
+    if (deleted?.shortcutToken != null) MacroShortcuts.disable(context, id)
   }
 
   /** Returns [steps] with the step at [index] moved by [offset], or null when it can't move. */
@@ -1203,12 +1207,13 @@ object Macros {
     }
 
   /** [macro] as JSON, as a file of macros holds it. */
-  fun macroToJson(macro: Macro): String = toJson(listOf(macro))
+  fun macroToJson(macro: Macro): String = toJson(listOf(macro), shortcuts = false)
 
   /** The first macro in [json], made by [macroToJson], or null. */
   fun macroFromJson(json: String?): Macro? = fromJson(json).firstOrNull()
 
-  internal fun toJson(macros: List<Macro>): String =
+  /** [macros] as JSON; without [shortcuts], without the tokens of their home screen shortcuts. */
+  internal fun toJson(macros: List<Macro>, shortcuts: Boolean = true): String =
     JSONArray()
       .apply {
         for (macro in macros) {
@@ -1220,6 +1225,7 @@ object Macros {
               .apply { if (macro.condition.clauses.isNotEmpty()) put("condition", conditionToJson(macro.condition)) }
               .apply { macro.app?.let { put("app", it) } }
               .apply { if (macro.inActions) put("actions", true) }
+              .apply { if (shortcuts) macro.shortcutToken?.let { put("shortcut", it) } }
           )
         }
       }
@@ -1417,6 +1423,7 @@ object Macros {
             conditionFromJson(item.optJSONArray("condition")),
             item.optString("app").takeIf { isPackageName(it) },
             item.optBoolean("actions", false),
+            item.optString("shortcut").takeIf { MacroShortcuts.isToken(it) },
           )
         if (moveAppTests && !item.has("app")) withAppOfCondition(macro) else macro
       } catch (e: JSONException) {

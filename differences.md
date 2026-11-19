@@ -587,6 +587,8 @@ Steps in blocks are indented. When the blocks don't match, such as an **If** wit
 
 **Show in Actions**, on the macro's screen, lists the macro in the **Actions** menu and the **Actions** reading control of every item of its app, or of every app for **All apps**, after the app's own actions. Choosing it there runs the macro. These macros don't switch the reading control to **Actions** automatically.
 
+**Add to home screen**, on the macro's screen, adds a home screen shortcut that runs the macro on the screen it is opened from. Renaming the macro renames the shortcut, and deleting the macro disables it. When SandFly is off, the shortcut shows "SandFly is off".
+
 Each macro is a command in the **Macros** category, so a gesture, a keyboard shortcut or a menu can run it. Starting a macro stops the one running, and so does **Stop macro**. When a step fails, such as an item that isn't found, SandFly says so and the macro stops. Deleting a macro removes it from the gestures, keys and menus that run it. Macros are included in exported settings. Not on watches.
 
 ### Gesture profiles

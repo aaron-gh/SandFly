@@ -5579,4 +5579,16 @@
   <string name="title_pref_keyboards_with_own_speech">Keyboards with their own speech</string>
   <!-- Spoken when the Speak only focus moved by the user reading control or command changes the setting. %1$s is the new choice, such as In all apps. [CHAR LIMIT=NONE] -->
   <string name="template_speak_user_focus_changed">Speak only focus moved by the user: <xliff:g id="choice" example="In all apps">%1$s</xliff:g></string>
+  <!-- Action on a macro's screen that asks the launcher to add a home screen shortcut that runs the macro. [CHAR LIMIT=NONE] -->
+  <string name="macro_add_to_home_screen">Add to home screen</string>
+  <!-- Shown when the launcher can't add home screen shortcuts. [CHAR LIMIT=NONE] -->
+  <string name="macro_shortcut_unsupported">The launcher doesn\'t support home screen shortcuts</string>
+  <!-- Shown when the macro's home screen shortcut is on the home screen already. [CHAR LIMIT=NONE] -->
+  <string name="macro_shortcut_already_added">Already on the home screen</string>
+  <!-- Shown when Android didn't accept the request to add a macro's home screen shortcut. [CHAR LIMIT=NONE] -->
+  <string name="macro_shortcut_failed">Shortcut not added</string>
+  <!-- Shown when a home screen shortcut of a deleted macro is opened. [CHAR LIMIT=NONE] -->
+  <string name="macro_shortcut_deleted">Macro deleted</string>
+  <!-- Shown when a macro's home screen shortcut doesn't match the macro, such as after a settings import. [CHAR LIMIT=NONE] -->
+  <string name="macro_shortcut_invalid">Shortcut not valid. Add the macro to the home screen again.</string>
 </resources>

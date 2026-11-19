@@ -355,6 +355,16 @@
             </intent-filter>
         </activity-alias>
 
+        <!-- Runs the macro of a home screen shortcut. Not exported: the launcher starts pinned
+             shortcuts as SandFly through LauncherApps.startShortcut. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.macros.MacroShortcutActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity="com.google.android.accessibility.talkback.macros.shortcut"
+            android:theme="@android:style/Theme.NoDisplay" />
+
         <activity
             android:name="com.google.android.accessibility.talkback.soundthemes.ThemeDraftActivity"
             android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
