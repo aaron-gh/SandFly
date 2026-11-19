@@ -108,6 +108,10 @@ public final class AccessibilityEventFeedbackUtils {
     if (event == null) {
       return "";
     }
+    // Page numbers are container positions, so they follow the same setting as list positions.
+    if (globalVariables != null && !globalVariables.getSpeakCollectionInfo()) {
+      return "";
+    }
     int fromIndex = event.getFromIndex();
     int itemCount = event.getItemCount();
     if (fromIndex >= 0 && itemCount > 0) {
