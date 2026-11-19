@@ -210,6 +210,11 @@ public class FocusProcessorForLogicalNavigation {
   // the next or previous window, instead of around the bar.
   private static boolean leaveSystemBars = false;
 
+  // With any typing method but double-tap, swipes from the keyboard go on in the app from the text
+  // field rather than through the keys.
+  @FocusProcessorForTapAndTouchExploration.TypingMethod
+  private static int typingMethod = FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE;
+
   // Whether the current navigation action stopped at the first or last item because wrapping is
   // off, where it would otherwise have wrapped around.
   private boolean stoppedAtEdge = false;
@@ -621,6 +626,28 @@ public class FocusProcessorForLogicalNavigation {
     leaveSystemBars = leave;
   }
 
+  public static void setTypingMethod(
+      @FocusProcessorForTapAndTouchExploration.TypingMethod int method) {
+    typingMethod = method;
+  }
+
+  /**
+   * Whether swipes from {@code fromWindow} can go to the keyboard's window. Swipes from other
+   * windows never go into the keyboard; swipes from inside it, such as with double-tap typing,
+   * still leave it.
+   */
+  @VisibleForTesting
+  static boolean swipesIncludeKeyboard(@Nullable AccessibilityWindowInfo fromWindow) {
+    return AccessibilityWindowInfoUtils.isImeWindow(fromWindow);
+  }
+
+  /** Whether swipes from a key go on in the app from the text field, rather than through keys. */
+  @VisibleForTesting
+  static boolean swipesFromKeysStayInApp(
+      @FocusProcessorForTapAndTouchExploration.TypingMethod int method) {
+    return method != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP;
+  }
+
   /** Whether a swipe past the last or first item stops there, rather than wrapping around. */
   private static boolean stopsAtEdge() {
     return !wrapAround || stopBeforeWrap;
@@ -653,6 +680,7 @@ public class FocusProcessorForLogicalNavigation {
       LogUtils.w(TAG, "Cannot find pivot node for %s", navigationAction);
       return false;
     }
+    pivot = textFieldForKeyAfterTyping(pivot, navigationAction);
     if (navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION) {
       ScrollEventInterpreter.onNavigation(pivot.getWindowId());
     }
@@ -3339,13 +3367,16 @@ public class FocusProcessorForLogicalNavigation {
     List<AccessibilityWindowInfo> windows = AccessibilityServiceCompatUtils.getWindows(service);
     // The picture-in-picture menu and other windows over a picture-in-picture window are part of
     // its one item.
-    DirectionalNavigationWindowFilter windowFilter =
-        new DirectionalNavigationWindowFilter(
-            service, searchState, PictureInPictureItem.overlayWindowIds(windows));
     int searchDirection = navigationAction.searchDirection;
     int logicalDirection = TraversalStrategyUtils.getLogicalDirection(searchDirection, isScreenRtl);
     @Nullable AccessibilityWindowInfo currentWindow =
         AccessibilityNodeInfoUtils.getWindow(pivot.unwrap());
+    DirectionalNavigationWindowFilter windowFilter =
+        new DirectionalNavigationWindowFilter(
+            service,
+            searchState,
+            PictureInPictureItem.overlayWindowIds(windows),
+            swipesIncludeKeyboard(currentWindow));
     if (currentWindow != null
         && AccessibilityWindowInfoUtils.getType(currentWindow)
             == AccessibilityWindowInfoCompat.TYPE_SYSTEM) {
@@ -4206,6 +4237,41 @@ public class FocusProcessorForLogicalNavigation {
         target,
         logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD,
         WindowUtils.isScreenLayoutRTL(service));
+  }
+
+  /**
+   * With any typing method but double-tap, a swipe from the keyboard goes on in the app from the
+   * text field being typed in, rather than through the keyboard.
+   */
+  private AccessibilityNodeInfoCompat textFieldForKeyAfterTyping(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
+    if (!swipesFromKeysStayInApp(typingMethod)
+        || navigationAction.actionType != NavigationAction.DIRECTIONAL_NAVIGATION
+        || !TraversalStrategyUtils.isLogicalDirection(navigationAction.searchDirection)
+        || !isInKeyboard(pivot)) {
+      return pivot;
+    }
+    @Nullable AccessibilityNodeInfoCompat field =
+        accessibilityFocusMonitor.getEditingNodeFromFocusedKeyboard(pivot);
+    if (field == null || AccessibilityNodeInfoUtils.isKeyboard(field)) {
+      return pivot;
+    }
+    LogUtils.d(TAG, "Swipe from a key goes on from the text field: %s", field);
+    return field;
+  }
+
+  /**
+   * Whether {@code node} is in the keyboard's window. Compares window IDs with the window list
+   * rather than asking the app for the node's window on every swipe.
+   */
+  private boolean isInKeyboard(AccessibilityNodeInfoCompat node) {
+    int windowId = node.getWindowId();
+    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(service)) {
+      if (window.getId() == windowId) {
+        return AccessibilityWindowInfoUtils.isImeWindow(window);
+      }
+    }
+    return false;
   }
 
   /** Whether {@code navigationAction} moves to the next or previous item, as a swipe does. */
@@ -8715,14 +8781,17 @@ public class FocusProcessorForLogicalNavigation {
     final Context context;
     final UniversalSearchActor.State searchState;
     final Set<Integer> pictureInPictureOverlayIds;
+    final boolean includeKeyboard;
 
     DirectionalNavigationWindowFilter(
         Context context,
         UniversalSearchActor.State searchState,
-        Set<Integer> pictureInPictureOverlayIds) {
+        Set<Integer> pictureInPictureOverlayIds,
+        boolean includeKeyboard) {
       this.context = context;
       this.searchState = searchState;
       this.pictureInPictureOverlayIds = pictureInPictureOverlayIds;
+      this.includeKeyboard = includeKeyboard;
     }
 
     @Override
@@ -8754,7 +8823,7 @@ public class FocusProcessorForLogicalNavigation {
                     || !SettingsUtils.allowLinksOutOfSettings(
                         context))) // System bar in SUW is navigable.
             || (type == AccessibilityWindowInfo.TYPE_MAGNIFICATION_OVERLAY)
-            || (type == AccessibilityWindowInfo.TYPE_INPUT_METHOD)
+            || (includeKeyboard && type == AccessibilityWindowInfo.TYPE_INPUT_METHOD)
             || (Role.getRole(window.getRoot()) == ROLE_FLOATING_ACTION_BUTTON));
       }
     }
