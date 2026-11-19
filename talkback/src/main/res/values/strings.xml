@@ -2299,6 +2299,68 @@
     <string name="braille_app_prompt">Type an app\'s name in braille</string>
     <!-- Spoken when the braille surface for opening an app closes without opening one. [CHAR LIMIT=NONE] -->
     <string name="braille_app_closed">Braille app search closed</string>
+    <!--
+      Title of the Braille commands screen and of the braille surface on the whole screen on which
+      each braille cell typed runs a SandFly command. Also spoken when the surface shows. [CHAR LIMIT=NONE]
+    -->
+    <string name="title_braille_commands">Braille commands</string>
+    <!-- Gesture and keyboard shortcut command that shows braille commands: braille cells typed on the screen run SandFly commands. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_braille_commands">Braille commands</string>
+    <!-- Spoken when braille commands show while a braille command profile is in use. %1$s is the profile's name. [CHAR LIMIT=NONE] -->
+    <string name="braille_commands_with_profile">Braille commands, <xliff:g id="profile" example="Reading">%1$s</xliff:g></string>
+    <!-- Spoken when braille commands close. [CHAR LIMIT=NONE] -->
+    <string name="braille_commands_closed">Braille commands closed</string>
+    <!-- Spoken when a braille cell typed in braille commands runs no command. %1$s is the cell, such as "dots 2 3 6". [CHAR LIMIT=NONE] -->
+    <string name="braille_command_none">No command for <xliff:g id="cell" example="dots 2 3 6">%1$s</xliff:g></string>
+    <!-- Spoken when the screen is ready for the braille cell to give a command. [CHAR LIMIT=NONE] -->
+    <string name="braille_command_record_prompt">Type the braille cell</string>
+    <!-- Spoken when braille commands can't change to the braille keyboard because no text field is being edited. [CHAR LIMIT=NONE] -->
+    <string name="braille_mode_no_text_field">No text field</string>
+    <!-- Name of a braille cell: its dot numbers. [CHAR LIMIT=NONE] -->
+    <plurals name="braille_command_cell">
+        <item quantity="one">Dot <xliff:g id="dots" example="4">%1$s</xliff:g></item>
+        <item quantity="other">Dots <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+    </plurals>
+    <!-- Title for the screen of braille command profiles: sets of braille cells that run other commands while the profile is in use. [CHAR LIMIT=NONE] -->
+    <string name="title_braille_command_profiles">Braille command profiles</string>
+    <!-- Title for the menu that changes the braille command profile in use. [CHAR LIMIT=NONE] -->
+    <string name="title_braille_command_profile">Braille command profile</string>
+    <!-- Said when a command that changes braille command profile is used before any profile is added. [CHAR LIMIT=NONE] -->
+    <string name="no_braille_command_profiles">No braille command profiles</string>
+    <!-- Gesture and keyboard shortcut command that opens a menu to choose the braille command profile in use. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_braille_command_profiles">Choose braille command profile</string>
+    <!-- Gesture and keyboard shortcut command that changes to the next braille command profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_next_braille_command_profile">Next braille command profile</string>
+    <!-- Gesture and keyboard shortcut command that changes to the previous braille command profile. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_previous_braille_command_profile">Previous braille command profile</string>
+    <!-- Command that changes to one braille command profile. %1$s is the profile's name, or Default. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_use_braille_command_profile">Use braille command profile <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <!-- Title for the setting that chooses the braille command profile in use. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_braille_command_profile_in_use">Braille command profile in use</string>
+    <!-- Title for the button that adds a braille cell that runs a command. [CHAR LIMIT=NONE] -->
+    <string name="braille_commands_add">Add braille command</string>
+    <!-- Title for the screen of apps in which braille cells run other commands. [CHAR LIMIT=NONE] -->
+    <string name="title_braille_commands_in_apps">Braille commands in apps</string>
+    <!-- Confirmation before Default's braille cells go back to the cells SandFly comes with. [CHAR LIMIT=NONE] -->
+    <string name="braille_commands_reset_confirm">Reset braille commands to their default cells?</string>
+    <!-- Title for the button that adds a braille command profile. [CHAR LIMIT=NONE] -->
+    <string name="braille_command_profile_add">Add braille command profile</string>
+    <!-- Name given to a new braille command profile, with a number to tell it apart. [CHAR LIMIT=NONE] -->
+    <string name="braille_command_profile_new_name">Braille command profile <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <!-- Error on the name field when the name entered is already another braille command profile's, or Default. [CHAR LIMIT=NONE] -->
+    <string name="braille_command_profile_name_taken">A braille command profile is already called <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <!-- Title for the button that removes a braille command profile. [CHAR LIMIT=NONE] -->
+    <string name="braille_command_profile_delete">Delete braille command profile</string>
+    <!-- Title for the button that changes which braille cell runs a command. [CHAR LIMIT=NONE] -->
+    <string name="braille_command_change_cell">Change braille cell</string>
+    <!-- Heading on a command's screen for the braille cells that run it in braille commands. [CHAR LIMIT=NONE] -->
+    <string name="command_braille_cells">Braille cells</string>
+    <!-- Shown on a command's screen when no braille cell runs it. [CHAR LIMIT=NONE] -->
+    <string name="command_no_braille_cells">No braille cells</string>
+    <!-- Button on a command's screen that adds a braille cell that runs it. [CHAR LIMIT=NONE] -->
+    <string name="command_add_braille_cell">Add braille cell</string>
+    <!-- Button that takes a braille cell from the command it runs. [CHAR LIMIT=NONE] -->
+    <string name="command_remove_braille_cell">Remove braille cell</string>
     <!-- Spoken when typing an app's name in braille isn't possible, such as before Android 11 or on a watch. [CHAR LIMIT=NONE] -->
     <string name="braille_app_not_available">Typing an app\'s name in braille is not available</string>
     <!-- Spoken when handwriting couldn't be recognized as a letter. [CHAR LIMIT=NONE] -->

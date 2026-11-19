@@ -103,6 +103,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.os.UserManagerCompat;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.ConcurrentNodeQueries;
+import com.google.android.accessibility.talkback.applauncher.BrailleScreenInput;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.accessibility.braille.brailledisplay.BrailleDisplay;
@@ -3672,6 +3673,19 @@ public class TalkBackService extends AccessibilityServiceCompat
     return getBrailleImeForTalkBack() == null
         ? false
         : getBrailleImeForTalkBack().isBrailleKeyboardActivated();
+  }
+
+  /** Whether the on-screen braille keyboard is shown. */
+  public boolean isBrailleKeyboardShown() {
+    return isBrailleKeyboardActivated();
+  }
+
+  /**
+   * Braille commands, app search and recording of braille cells on the screen, or null while
+   * SandFly is off.
+   */
+  public @Nullable BrailleScreenInput getBrailleScreenInput() {
+    return gestureController == null ? null : gestureController.getBrailleScreenInput();
   }
 
   @Compositor.Flavor

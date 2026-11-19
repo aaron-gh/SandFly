@@ -64,6 +64,7 @@ import static com.google.android.accessibility.talkback.actor.SystemActionPerfor
 import static com.google.android.accessibility.talkback.actor.SystemActionPerformer.GLOBAL_ACTION_ACCESSIBILITY_BUTTON_CHOOSER;
 import static com.google.android.accessibility.talkback.actor.SystemActionPerformer.GLOBAL_ACTION_KEYCODE_HEADSETHOOK;
 import static com.google.android.accessibility.talkback.actor.TalkBackUIActor.Type.GESTURE_OR_KEYBOARD_ACTION_OVERLAY;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.BRAILLE_COMMAND_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CONTEXT;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.EDITING;
@@ -147,7 +148,9 @@ import com.google.android.accessibility.talkback.speechhistory.SpeechHistoryFrag
 import com.google.android.accessibility.talkback.granularediting.CharacterCount;
 import com.google.android.accessibility.talkback.granularediting.TextFieldContents;
 import com.google.android.accessibility.talkback.granularediting.GranularEditing;
-import com.google.android.accessibility.talkback.applauncher.BrailleAppLauncher;
+import com.google.android.accessibility.talkback.applauncher.BrailleScreenInput;
+import com.google.android.accessibility.talkback.applauncher.BrailleScreenInputHost;
+import com.google.android.accessibility.talkback.braillecommands.BrailleCommands;
 import com.google.android.accessibility.talkback.handwriting.HandwritingAppLauncher;
 import com.google.android.accessibility.talkback.handwriting.HandwritingCommand;
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi;
@@ -236,7 +239,7 @@ public class GestureController {
   private final HandwritingCommand handwritingCommand;
   private final TranslateCommand translateCommand;
   private final HandwritingAppLauncher handwritingAppLauncher;
-  private final BrailleAppLauncher brailleAppLauncher;
+  private final BrailleScreenInput brailleScreenInput;
   private final AiDictation dictation;
 
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
@@ -302,7 +305,7 @@ public class GestureController {
     swipeUp = new SwipeUp(service);
     handwritingCommand = new HandwritingCommand(service, pipeline, actorState, selectorController);
     handwritingAppLauncher = new HandwritingAppLauncher(service, pipeline, actorState);
-    brailleAppLauncher = new BrailleAppLauncher(service, pipeline, actorState);
+    brailleScreenInput = new BrailleScreenInput(service, pipeline, actorState, new BrailleHost());
     translateCommand = new TranslateCommand(service);
     dictation = new AiDictation(service, pipeline);
   }
@@ -314,7 +317,7 @@ public class GestureController {
     swipeUp.cancel();
     handwritingCommand.shutdown();
     handwritingAppLauncher.shutdown();
-    brailleAppLauncher.shutdown();
+    brailleScreenInput.shutdown();
     translateCommand.shutdown();
     dictation.shutdown();
   }
@@ -504,8 +507,31 @@ public class GestureController {
       handwritingAppLauncher.show();
       result = true;
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_app_name))) {
-      brailleAppLauncher.show();
+      brailleScreenInput.showApps();
       result = true;
+    } else if (action.equals(service.getString(R.string.shortcut_value_braille_commands))) {
+      brailleScreenInput.showCommands();
+      result = true;
+    } else if (action.equals(service.getString(R.string.shortcut_value_braille_command_profiles))) {
+      result =
+          menuManager.showMenu(
+              BRAILLE_COMMAND_PROFILE, eventId, R.string.no_braille_command_profiles);
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_previous_braille_command_profile))) {
+      changeBrailleCommandProfile(/* next= */ false);
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_next_braille_command_profile))) {
+      changeBrailleCommandProfile(/* next= */ true);
+    } else if (BrailleCommands.isAction(action)) {
+      @Nullable String name =
+          BrailleCommands.select(
+              service,
+              SharedPreferencesUtils.getSharedPreferences(service),
+              BrailleCommands.idOf(action));
+      result = name != null;
+      if (name != null) {
+        speak(name);
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_to_top))) {
       result = listEdgeScroller.scroll(/* toStart= */ true, eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_to_bottom))) {
@@ -986,6 +1012,9 @@ public class GestureController {
     } else if (continuousCopyAction) {
       ContinuousCopy continuousCopy = service.getContinuousCopy();
       result = continuousCopy != null && continuousCopy.start(eventId);
+    } else if (action.equals(service.getString(R.string.shortcut_value_braille_keyboard))
+        && brailleScreenInput.isShowing()) {
+      result = brailleScreenInput.switchToBrailleKeyboard();
     } else if (action.equals(service.getString(R.string.shortcut_value_braille_keyboard))) {
       String inputMethodInfoId =
           KeyboardUtils.getImeId(
@@ -1698,6 +1727,57 @@ public class GestureController {
       return node;
     } else {
       return null;
+    }
+  }
+
+  /** Changes to the next or previous braille command profile, with Default first, and says it. */
+  private void changeBrailleCommandProfile(boolean next) {
+    SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
+    if (!BrailleCommands.hasProfiles(prefs)) {
+      speak(service.getString(R.string.no_braille_command_profiles));
+      return;
+    }
+    @Nullable String name =
+        BrailleCommands.select(service, prefs, BrailleCommands.adjacentId(prefs, next));
+    speak(name != null ? name : service.getString(R.string.no_braille_command_profiles));
+  }
+
+  /** Braille commands, app search and typing on the screen. */
+  public BrailleScreenInput getBrailleScreenInput() {
+    return brailleScreenInput;
+  }
+
+  /** What braille commands reach here. */
+  private final class BrailleHost implements BrailleScreenInputHost {
+    @Override
+    public void runCommand(String value) {
+      performAction(value, EVENT_ID_UNTRACKED);
+    }
+
+    @Override
+    public boolean canType() {
+      return isBrailleKeyboardShown() || editingTextField() != null;
+    }
+
+    @Override
+    public boolean isBrailleKeyboardShown() {
+      return service.isBrailleKeyboardShown();
+    }
+
+    @Override
+    public boolean switchToBrailleKeyboard() {
+      String id =
+          KeyboardUtils.getImeId(
+              service,
+              AccessibilityServiceCompatUtils.Constants.BRAILLE_KEYBOARD,
+              /* enabledOnly= */ true);
+      if (TextUtils.isEmpty(id)
+          || Build.VERSION.SDK_INT < Build.VERSION_CODES.R
+          || !service.getSoftKeyboardController().switchToInputMethod(id)) {
+        speak(service.getString(R.string.switch_to_braille_keyboard_failure_msg));
+        return false;
+      }
+      return true;
     }
   }
 

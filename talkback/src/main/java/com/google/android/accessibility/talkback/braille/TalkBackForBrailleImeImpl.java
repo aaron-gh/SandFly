@@ -29,6 +29,7 @@ import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.DimScreenActor;
+import com.google.android.accessibility.talkback.applauncher.BrailleScreenInput;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
@@ -367,6 +368,16 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
   @Override
   public FocusFinder createFocusFinder() {
     return new FocusFinder(service);
+  }
+
+  @Override
+  public boolean showBrailleCommands() {
+    BrailleScreenInput input = service.getBrailleScreenInput();
+    if (input == null) {
+      return false;
+    }
+    input.showCommands();
+    return input.isShowing();
   }
 
   @Override

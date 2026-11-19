@@ -310,6 +310,8 @@
   <string name="bk_gesture_next_braille_table">Switch to next braille table</string>
   <!-- Braille keyboard gesture that starts emoji search, in which the user types words of an emoji's name, moves through the emoji found and inserts one. [CHAR_LIMIT=50] -->
   <string name="bk_gesture_emoji_search">Search emoji</string>
+  <!-- Braille keyboard gesture that changes to the next braille mode: from typing to braille commands, which run SandFly commands by braille cells, then to typing an app's name, then back to typing. [CHAR_LIMIT=50] -->
+  <string name="bk_gesture_next_braille_mode">Next braille mode</string>
   <!-- Spell check -->
   <!-- Spell check gesture of previous misspelled word. [CHAR_LIMIT=NONE] -->
   <string name="bk_gesture_previous_misspelled_word">Move to previous typo</string>

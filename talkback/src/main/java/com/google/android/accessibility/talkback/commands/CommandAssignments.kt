@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.commands
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
+import com.google.android.accessibility.talkback.braillecommands.BrailleCommands
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.gesture.AppGestures
@@ -55,8 +56,8 @@ object CommandAssignments {
   /**
    * Takes the command saved as [value] off everything in [prefs] that runs it: a gesture, arrow key
    * or edge menu item saved as the value becomes unassigned, the gestures and keys of apps and
-   * gesture profiles that run it go back to what they run without the app or profile, menus and
-   * custom reading controls lose it, and its keyboard shortcuts are removed.
+   * gesture profiles that run it go back to what they run without the app or profile, menus,
+   * custom reading controls and braille commands lose it, and its keyboard shortcuts are removed.
    */
   @JvmStatic
   fun unassign(context: Context, prefs: SharedPreferences, value: String) {
@@ -95,6 +96,7 @@ object CommandAssignments {
       )
     }
     CommandMenus.removeCommand(context, prefs, value)
+    BrailleCommands.removeCommand(context, prefs, value)
     // The running screen reader keeps the shortcuts of its keymap in memory.
     val model = TalkBackService.getInstance()?.keyComboManager?.keyComboModel ?: return
     if (model.getKeyComboForKey(shortcutKey).keyComboCode != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) {

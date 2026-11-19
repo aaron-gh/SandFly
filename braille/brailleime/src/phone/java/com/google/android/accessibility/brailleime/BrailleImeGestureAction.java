@@ -29,6 +29,7 @@ import static com.google.android.accessibility.braille.common.BrailleImeAction.H
 import static com.google.android.accessibility.braille.common.BrailleImeAction.HIDE_KEYBOARD;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.MOVE_CURSOR_BACKWARD;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.MOVE_CURSOR_FORWARD;
+import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_BRAILLE_MODE;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_BRAILLE_TABLE;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_CHARACTER;
 import static com.google.android.accessibility.braille.common.BrailleImeAction.NEXT_GRANULARITY;
@@ -184,6 +185,10 @@ public final class BrailleImeGestureAction {
               EMOJI_SEARCH,
               new DotHoldSwipe(
                   new Swipe(Direction.RIGHT, /* touchCount= */ 1), new BrailleCharacter(4, 5, 6)))
+          .put(
+              NEXT_BRAILLE_MODE,
+              new DotHoldSwipe(
+                  new Swipe(Direction.LEFT, /* touchCount= */ 1), new BrailleCharacter(4, 5, 6)))
           .buildOrThrow();
 
   private static final ImmutableMap<BrailleImeAction, ImmutableList<Gesture>>

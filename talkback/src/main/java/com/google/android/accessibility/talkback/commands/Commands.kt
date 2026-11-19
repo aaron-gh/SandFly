@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.commands
 import android.content.Context
 import android.os.Build
 import androidx.annotation.StringRes
+import com.google.android.accessibility.talkback.braillecommands.BrailleCommands
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.GestureReporter
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
@@ -184,6 +185,9 @@ object Commands {
     gestureProfileLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
+    BrailleCommands.label(context, SharedPreferencesUtils.getSharedPreferences(context), value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
     readingControlListLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
@@ -238,6 +242,7 @@ object Commands {
       ?: AppShortcutActions.label(context, value)
       ?: AccessibilityShortcutActions.label(context, value)
       ?: gestureProfileLabel(context, value)
+      ?: BrailleCommands.label(context, SharedPreferencesUtils.getSharedPreferences(context), value)
       ?: readingControlListLabel(context, value)
       ?: customMenuLabel(context, value)
       ?: macroLabel(context, value)
@@ -339,6 +344,7 @@ object Commands {
         customMenus()
         macros()
         gestureProfiles()
+        brailleCommandProfiles()
         readingControlLists()
         voiceProfiles()
         openApp()
@@ -1084,6 +1090,26 @@ object Commands {
           available = FeatureSupport.supportSwitchToInputMethod() && !wear,
         )
         gesture(
+          R.string.shortcut_value_braille_commands,
+          R.string.shortcut_braille_commands,
+          available = !wear,
+        )
+        gesture(
+          R.string.shortcut_value_braille_command_profiles,
+          R.string.shortcut_braille_command_profiles,
+          available = !wear,
+        )
+        gesture(
+          R.string.shortcut_value_next_braille_command_profile,
+          R.string.shortcut_next_braille_command_profile,
+          available = !wear,
+        )
+        gesture(
+          R.string.shortcut_value_previous_braille_command_profile,
+          R.string.shortcut_previous_braille_command_profile,
+          available = !wear,
+        )
+        gesture(
           R.string.shortcut_value_toggle_braille_display,
           R.string.shortcut_toggle_braille_display,
           available = display && FeatureFlagReader.useGestureBrailleDisplayOnOff(context),
@@ -1253,6 +1279,22 @@ object Commands {
             Command(
               GestureProfiles.valueOf(id),
               context.getString(R.string.shortcut_use_gesture_profile, name),
+              keyboardAction = null,
+            )
+          )
+        }
+      }
+
+    private fun brailleCommandProfiles() =
+      category(R.string.title_braille_command_profiles) {
+        val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+        // Without a profile, Default is the only choice and changes nothing.
+        if (!BrailleCommands.hasProfiles(prefs)) return@category
+        for ((id, name) in BrailleCommands.choices(context, prefs)) {
+          commands.add(
+            Command(
+              BrailleCommands.valueOf(id),
+              context.getString(R.string.shortcut_use_braille_command_profile, name),
               keyboardAction = null,
             )
           )

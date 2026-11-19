@@ -28,6 +28,7 @@ import static com.google.android.accessibility.talkback.contextmenu.ListMenuMana
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CONTEXT;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.CUSTOM_ACTION;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.EDITING;
+import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.BRAILLE_COMMAND_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.GESTURE_PROFILE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.LANGUAGE;
 import static com.google.android.accessibility.talkback.contextmenu.ListMenuManager.MenuId.SETTINGS_PROFILE;
@@ -147,6 +148,7 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     LANGUAGE,
     VOICE_PROFILE,
     GESTURE_PROFILE,
+    BRAILLE_COMMAND_PROFILE,
     SETTINGS_PROFILE,
     SPLIT_SCREEN,
     EDITING,
@@ -377,6 +379,9 @@ public class ListMenuManager implements WindowEventHandler, AccessibilityEventLi
     } else if (menuId == GESTURE_PROFILE) {
       GestureProfileMenuProcessor.prepareGestureProfileMenu(service, pipeline, menu);
       menu.setTitle(service.getString(R.string.title_gesture_profile));
+    } else if (menuId == BRAILLE_COMMAND_PROFILE) {
+      BrailleCommandProfileMenuProcessor.prepareMenu(service, pipeline, menu);
+      menu.setTitle(service.getString(R.string.title_braille_command_profile));
     } else if (menuId == SETTINGS_PROFILE) {
       SettingsProfileMenuProcessor.prepareSettingsProfileMenu(service, pipeline, menu);
       menu.setTitle(service.getString(R.string.title_settings_profile));
