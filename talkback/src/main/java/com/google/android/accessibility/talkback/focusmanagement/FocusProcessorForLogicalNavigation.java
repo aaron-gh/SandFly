@@ -131,6 +131,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -2725,7 +2726,8 @@ public class FocusProcessorForLogicalNavigation {
             && navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
             && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
             && target.isVisibleToUser();
-    if (revealAfterFocus && hasTextOffScreen(target)) {
+    if (revealAfterFocus
+        && hasTextOffScreen(target, scrollingAncestorBounds(target), systemBarBounds())) {
       LogUtils.d(TAG, "Scrolling before focusing: text in the target is off screen.");
       revealAfterFocus = false;
     }
@@ -2816,6 +2818,50 @@ public class FocusProcessorForLogicalNavigation {
    */
   @VisibleForTesting
   static boolean hasTextOffScreen(AccessibilityNodeInfoCompat target) {
+    return hasTextOffScreen(target, /* listBounds= */ null, Collections.emptyList());
+  }
+
+  /** Bounds of the list that scrolls {@code target}, or null if there is none. */
+  private static @Nullable Rect scrollingAncestorBounds(AccessibilityNodeInfoCompat target) {
+    AccessibilityNodeInfoCompat list =
+        AccessibilityNodeInfoUtils.getMatchingAncestor(target, FILTER_AUTO_SCROLL);
+    if (list == null) {
+      list =
+          AccessibilityNodeInfoUtils.getMatchingAncestor(
+              target, AccessibilityNodeInfoUtils.FILTER_AUTO_SCROLL_ANY_ROLE);
+    }
+    if (list == null) {
+      return null;
+    }
+    Rect bounds = new Rect();
+    list.getBoundsInScreen(bounds);
+    return bounds;
+  }
+
+  /** Bounds of the system windows, such as the navigation and status bars. */
+  private List<Rect> systemBarBounds() {
+    List<Rect> bars = new ArrayList<>();
+    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(service)) {
+      if (window != null
+          && AccessibilityWindowInfoUtils.getType(window)
+              == AccessibilityWindowInfoCompat.TYPE_SYSTEM) {
+        Rect bounds = AccessibilityWindowInfoUtils.getBounds(window);
+        if (bounds != null && !bounds.isEmpty()) {
+          bars.add(bounds);
+        }
+      }
+    }
+    return bars;
+  }
+
+  /**
+   * Like {@link #hasTextOffScreen(AccessibilityNodeInfoCompat)}, but text that lies inside {@code
+   * listBounds} and under one of {@code barBounds} is covered by a system bar rather than hidden by
+   * the app, so scrolling can't reveal it and it doesn't count.
+   */
+  @VisibleForTesting
+  static boolean hasTextOffScreen(
+      AccessibilityNodeInfoCompat target, @Nullable Rect listBounds, List<Rect> barBounds) {
     if (hasText(target.getContentDescription())) {
       return false;
     }
@@ -2833,10 +2879,29 @@ public class FocusProcessorForLogicalNavigation {
           continue;
         }
         if (!child.isVisibleToUser()
-            && (hasText(child.getText()) || hasText(child.getContentDescription()))) {
+            && (hasText(child.getText()) || hasText(child.getContentDescription()))
+            && !isCoveredBySystemBar(child, listBounds, barBounds)) {
           return true;
         }
         queue.add(child);
+      }
+    }
+    return false;
+  }
+
+  private static boolean isCoveredBySystemBar(
+      AccessibilityNodeInfoCompat node, @Nullable Rect listBounds, List<Rect> barBounds) {
+    if (listBounds == null || barBounds.isEmpty()) {
+      return false;
+    }
+    Rect bounds = new Rect();
+    node.getBoundsInScreen(bounds);
+    if (bounds.isEmpty() || !listBounds.contains(bounds)) {
+      return false;
+    }
+    for (Rect bar : barBounds) {
+      if (Rect.intersects(bar, bounds)) {
+        return true;
       }
     }
     return false;
