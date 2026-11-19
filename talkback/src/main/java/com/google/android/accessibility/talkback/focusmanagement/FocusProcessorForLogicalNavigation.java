@@ -206,6 +206,10 @@ public class FocusProcessorForLogicalNavigation {
   // the next one wraps around.
   private static boolean stopBeforeWrap = true;
 
+  // Whether a swipe past the first or last item of the navigation bar or the status bar moves to
+  // the next or previous window, instead of around the bar.
+  private static boolean leaveSystemBars = false;
+
   // Whether the current navigation action stopped at the first or last item because wrapping is
   // off, where it would otherwise have wrapped around.
   private boolean stoppedAtEdge = false;
@@ -611,6 +615,10 @@ public class FocusProcessorForLogicalNavigation {
 
   public static void setStopBeforeWrap(boolean stop) {
     stopBeforeWrap = stop;
+  }
+
+  public static void setLeaveSystemBars(boolean leave) {
+    leaveSystemBars = leave;
   }
 
   /** Whether a swipe past the last or first item stops there, rather than wrapping around. */
@@ -3324,8 +3332,9 @@ public class FocusProcessorForLogicalNavigation {
     }
 
     // Swipes don't go into the navigation bar or the status bar, so focus there, after Back or a
-    // touch, goes on into the app at the bar's end instead of around the bar.
-    if ((logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
+    // touch, goes on into the app at the bar's end instead of around the bar, when set to.
+    if (leaveSystemBars
+        && (logicalDirection == TraversalStrategy.SEARCH_FOCUS_FORWARD
             || logicalDirection == TraversalStrategy.SEARCH_FOCUS_BACKWARD)
         && !windowFilter.accept(currentWindow)
         && WindowUtils.isSystemBar(service, currentWindow)) {
