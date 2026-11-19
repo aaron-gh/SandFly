@@ -359,6 +359,21 @@ public final class GranularityTraversal {
                           .build())));
     } else {
       setAccessibilityCursor(node, range[1], range[0], text.length(), forward);
+      if (!shouldHandleGranularityTraversalInTalkback(node)
+          && AccessibilityNodeInfoUtils.isNonEditableSelectableText(node)) {
+        // The framework moves through this text from its selection, so a later move by character
+        // or word continues from the sentence rather than from the start.
+        int cursor = forward ? range[1] : range[0];
+        Bundle args = new Bundle();
+        args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, cursor);
+        args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, cursor);
+        pipelineReturner.ifPresent(
+            feedbackReturner ->
+                feedbackReturner.returnFeedback(
+                    eventId,
+                    Feedback.nodeAction(
+                        node, AccessibilityNodeInfoCompat.ACTION_SET_SELECTION, args)));
+      }
     }
     sendViewTextTraversedAtGranularityEvent(
         range[0], range[1], forward, text, CursorGranularity.SENTENCE.value, node, eventId);
