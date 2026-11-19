@@ -147,5 +147,25 @@ class ReadingControlValuesTest {
     assertNull(value(Setting.VERTICAL_NAVIGATION))
   }
 
+  @Test
+  fun speakUserFocus_saysTheChoice() {
+    assertEquals(context.getString(R.string.speak_user_focus_off), value(Setting.SPEAK_USER_FOCUS))
+    prefs.edit().putString(context.getString(R.string.pref_speak_user_focus_key), "all").commit()
+    assertEquals(
+      context.getString(R.string.speak_user_focus_all_apps),
+      value(Setting.SPEAK_USER_FOCUS),
+    )
+  }
+
+  @Test
+  fun speakUserFocus_isAToggleCommand() {
+    val entry = ReadingControlCommands.ENTRIES.single { it.setting == Setting.SPEAK_USER_FOCUS }
+    assertTrue(entry.toggle)
+    assertEquals(
+      Setting.SPEAK_USER_FOCUS,
+      ReadingControlCommands.settingOf(ReadingControlCommands.valueOf(Setting.SPEAK_USER_FOCUS, true)),
+    )
+  }
+
   private fun value(setting: Setting) = ReadingControlValues.of(context, prefs, setting)
 }

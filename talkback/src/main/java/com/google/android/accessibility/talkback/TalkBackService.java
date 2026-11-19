@@ -193,6 +193,7 @@ import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeS
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorVolumeStream.TouchInteractingIndicator;
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands;
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.feedbackpolicy.ScreenFeedbackManager;
 import com.google.android.accessibility.talkback.feedbackpolicy.WindowNamesSetting;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -1126,6 +1127,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       keyboardWindowSounds.shutdown();
       keyboardWindowSounds = null;
     }
+    AppSpeechFilter.stop();
     if (keyboardHoverWindows != null) {
       keyboardHoverWindows.shutdown();
       keyboardHoverWindows = null;
@@ -1402,11 +1404,17 @@ public class TalkBackService extends AccessibilityServiceCompat
       // again, so the window list decides as well.
       updateFrontApp();
       // The keyboard window comes and goes with a windows change.
-      if (SettingsProfiles.watchesKeyboards()) {
-        SettingsProfiles.onKeyboardShown(
+      if (SettingsProfiles.watchesKeyboards() || AppSpeechFilter.watchesKeyboards()) {
+        @Nullable String keyboard =
             AccessibilityServiceCompatUtils.isInputWindowOnScreen(this)
                 ? KeyboardUtils.getCurrentInputMethod(this)
-                : null);
+                : null;
+        if (SettingsProfiles.watchesKeyboards()) {
+          SettingsProfiles.onKeyboardShown(keyboard);
+        }
+        if (AppSpeechFilter.watchesKeyboards()) {
+          AppSpeechFilter.onKeyboardShown(keyboard);
+        }
       }
     }
     if (eventType == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
@@ -4076,6 +4084,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     prefs.unregisterOnSharedPreferenceChangeListener(analytics);
     // Profiles used in apps and contexts don't apply while SandFly is off.
     SettingsProfiles.onServiceStopped(this);
+    AppSpeechFilter.stop();
 
     unregisterReceivers(batteryMonitor, volumeMonitor);
 
@@ -4466,6 +4475,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     WindowEventInterpreter.setReduceWindowDelay(reduceDelayPref);
     String windowNames = WindowNamesSetting.read(prefs, res);
     ScreenFeedbackManager.setWindowNames(windowNames);
+    AppSpeechFilter.load(this, prefs);
     ScreenFeedbackManager.setKeyboardShownOrHiddenSpoken(
         getBooleanPref(
             R.string.pref_announce_keyboard_shown_hidden_key,

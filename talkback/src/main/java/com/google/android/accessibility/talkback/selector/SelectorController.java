@@ -98,6 +98,7 @@ import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem;
 import com.google.android.accessibility.talkback.contextmenu.ContextMenuItem.ContextMenuItemId;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorAccessibilityHints;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
@@ -283,6 +284,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_auto_translation_key,
         R.string.selector_auto_translation,
         R.bool.pref_selector_auto_translation_default),
+    SPEAK_USER_FOCUS(
+        R.string.pref_selector_speak_user_focus_key,
+        R.string.selector_speak_user_focus,
+        R.bool.pref_selector_speak_user_focus_default),
     CHANGE_BRIGHTNESS(
         R.string.pref_selector_change_brightness_key,
         R.string.selector_brightness_change,
@@ -822,6 +827,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.ALARM_VOLUME,
           Setting.SOUND_MODE,
           Setting.AUTO_TRANSLATION,
+          Setting.SPEAK_USER_FOCUS,
           Setting.CHANGE_BRIGHTNESS,
           Setting.CHANGE_TOUCH_FOCUS_LATENCY,
           Setting.CHANGE_TYPING_FOCUS_LATENCY,
@@ -954,6 +960,8 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.addAll(EQUALIZER_BANDS);
       // Watches have no Audio output settings.
       hiddenSettingsBuilder.add(Setting.AUDIO_OUTPUT);
+      // Nor Speak only focus moved by the user.
+      hiddenSettingsBuilder.add(Setting.SPEAK_USER_FOCUS);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
@@ -1205,6 +1213,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case AUTO_TRANSLATION -> {
         actionDescription = context.getString(R.string.title_pref_translation_auto);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case SPEAK_USER_FOCUS -> {
+        actionDescription = context.getString(R.string.title_pref_speak_user_focus);
         hint = getAdjustSelectedSettingGestures();
       }
       case CHANGE_BRIGHTNESS -> {
@@ -2834,6 +2846,10 @@ public class SelectorController implements UserInputEventListener {
         switchOnOrOffAutoTranslation(eventId, getAdjustSelectedSettingGestures());
         return;
       }
+      case SPEAK_USER_FOCUS -> {
+        changeSpeakUserFocus(eventId, isNext);
+        return;
+      }
       case CHANGE_BRIGHTNESS -> {
         changeBrightness(eventId, /* increase= */ !isNext);
         return;
@@ -3650,6 +3666,25 @@ public class SelectorController implements UserInputEventListener {
         getAdjustSelectedSettingGestures());
     showQuickMenuActionOverlay(
         eventId, context.getString(!audioFocusOn ? R.string.value_on : R.string.value_off));
+  }
+
+  /**
+   * Changes Speak only focus moved by the user to the next or previous choice, or, from the command,
+   * turns it off or back on, see {@link AppSpeechFilter#toggle}.
+   */
+  private void changeSpeakUserFocus(EventId eventId, boolean isNext) {
+    String mode = AppSpeechFilter.mode(context, prefs);
+    String updated =
+        adjustingByCommand
+            ? AppSpeechFilter.toggle(mode, !AppSpeechFilter.apps(context, prefs).isEmpty())
+            : AppSpeechFilter.step(mode, isNext);
+    AppSpeechFilter.setMode(context, prefs, updated);
+    String modeName = AppSpeechFilter.modeName(context, updated);
+    announceSetting(
+        eventId,
+        context.getString(R.string.template_speak_user_focus_changed, modeName),
+        getAdjustSelectedSettingGestures());
+    showQuickMenuActionOverlay(eventId, modeName);
   }
 
   /** Turns automatic translation on or off, and says so, followed by {@code hint}. */

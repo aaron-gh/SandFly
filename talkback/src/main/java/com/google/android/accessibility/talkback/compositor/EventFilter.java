@@ -28,6 +28,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAccessibilityFocusedFeedbackRule;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache;
@@ -615,6 +616,7 @@ public class EventFilter {
         info.forceFeedbackEvenIfMicrophoneActive());
     focusInterpretation.setForceFeedbackEvenIfSsbActive(info.forceFeedbackEvenIfSsbActive());
     focusInterpretation.setIsNavigateByUser(true);
+    focusInterpretation.setIsMovedByUser(AppSpeechFilter.isMovedByUser(info.sourceAction));
     focusInterpretation.setColumnWrap(info.columnWrap);
     EventInterpretation eventInterpreted =
         new EventInterpretation(AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED);

@@ -168,4 +168,29 @@
         android:key="@string/pref_status_readout_key"
         android:title="@string/title_pref_status_readout" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="pref_verbosity_category_own_speech"
+      android:title="@string/title_pref_category_own_speech">
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_speak_user_focus_default"
+        android:entries="@array/pref_speak_user_focus_entries"
+        android:entryValues="@array/pref_speak_user_focus_values"
+        android:key="@string/pref_speak_user_focus_key"
+        android:summary="%s"
+        android:title="@string/title_pref_speak_user_focus" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.feedbackpolicy.SpeakUserFocusAppsFragment"
+        android:key="@string/pref_speak_user_focus_apps_key"
+        android:persistent="false"
+        android:title="@string/title_pref_speak_user_focus_apps" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_speak_user_focus_assistant_audio_default"
+        android:key="@string/pref_speak_user_focus_assistant_audio_key"
+        android:title="@string/title_pref_speak_user_focus_assistant_audio" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.feedbackpolicy.KeyboardsWithOwnSpeechFragment"
+        android:key="@string/pref_keyboards_with_own_speech_key"
+        android:persistent="false"
+        android:title="@string/title_pref_keyboards_with_own_speech" />
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 </PreferenceScreen>

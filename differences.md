@@ -245,6 +245,16 @@ While another app records from the microphone without headphones, and during cal
 
 With **Text-to-speech** > **Quiet while recording** on, SandFly stays quiet while an app records without headphones, except for speech within two seconds of a touch, gesture, key or braille input, so that notifications and other speech you didn't ask for aren't recorded. It's off by default.
 
+### Apps with their own speech
+
+Some apps and keyboards have their own text-to-speech output, such as an assistant that plays its answer as speech while it moves accessibility focus to each new piece of text, or a keyboard that plays speech for its keys. TalkBack speaks the same content at the same time. The settings in **Verbosity** > **Apps with their own speech** leave this speech out. Only speech is left out: focus still moves, and sounds and vibrations still play. SandFly's own screens are always spoken.
+
+**Speak only focus moved by the user** is **Off** by default. With **In all apps**, or **In chosen apps** and the apps listed in **Chosen apps**, SandFly speaks focus that you move by touch, gestures, keys, a braille display or commands, and doesn't speak focus that the app moves, announcements, live region changes, window names or window change announcements. Focus that SandFly moves after a window changes, after a scroll, or to follow input focus is counted as moved by the app, so it isn't spoken either, including input focus that an app moves when you press Tab or another key that the app handles. **Speak only focus moved by the user** is also a reading control, which you can turn on in **Reading controls**, and a command that turns it off, or back on with **In chosen apps** when there are chosen apps and **In all apps** otherwise.
+
+With **Speak only focus moved by the user while an assistant or call plays audio** on, SandFly does the same in all apps while another app plays audio as an assistant or a call. Focus that you move is still spoken during calls. When SandFly speech uses the call volume, its own audio can't be told apart from an app's call audio, so an app call counts only while Android is in call mode. It's off by default.
+
+While a keyboard listed in **Keyboards with their own speech** is shown, SandFly doesn't speak its keys, the text typed or deleted, or the cursor moving in the edit field. Gestures and commands still work, and moving through text with SandFly's reading controls is still spoken.
+
 ### Volume change feedback
 
 **Volume keys** > **Volume change feedback** gives feedback when you change the volume. The default is **Speech**.

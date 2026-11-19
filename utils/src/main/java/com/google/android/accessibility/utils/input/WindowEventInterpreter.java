@@ -1503,7 +1503,11 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
     return title;
   }
 
-  private @Nullable CharSequence getWindowPackageName(int windowId) {
+  /**
+   * Returns the package of the root of the window {@code windowId} that is on screen, or null. See
+   * {@link #getRootPackageName}.
+   */
+  public @Nullable CharSequence getWindowPackageName(int windowId) {
     @Nullable AccessibilityWindowInfo window = findWindow(windowId);
     return (window == null) ? null : getRootPackageName(window);
   }

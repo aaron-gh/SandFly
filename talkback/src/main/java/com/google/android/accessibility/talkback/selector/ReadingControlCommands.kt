@@ -65,6 +65,7 @@ object ReadingControlCommands {
       Entry(Setting.CHANGE_LIFT_TO_ACTIVATE, R.string.title_pref_lift_to_activate),
       Entry(Setting.WRAP_AROUND, R.string.title_pref_wrap_around, toggle = true),
       Entry(Setting.TABLET_HELD_UP_FACES_AWAY, R.string.title_selector_tablet_held_up_faces_away, toggle = true),
+      Entry(Setting.SPEAK_USER_FOCUS, R.string.title_pref_speak_user_focus, toggle = true),
       Entry(Setting.SWITCH_TTS_ENGINE, R.string.title_selector_switch_tts_engine),
       Entry(Setting.SPEECH_STREAM, R.string.title_pref_speech_stream),
       Entry(Setting.AUDIO_OUTPUT, R.string.title_pref_audio_output_device),

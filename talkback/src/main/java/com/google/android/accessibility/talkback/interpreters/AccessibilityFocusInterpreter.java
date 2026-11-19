@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.compositor.AccessibilityFocusEventInterpretation;
 import com.google.android.accessibility.talkback.compositor.AccessibilityFocusEventInterpreter;
 import com.google.android.accessibility.talkback.compositor.Compositor;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.ColumnWrap;
@@ -911,6 +912,7 @@ public class AccessibilityFocusInterpreter
         info.sourceAction == FocusActionInfo.TOUCH_EXPLORATION
             || info.sourceAction == FocusActionInfo.LOGICAL_NAVIGATION);
     interpretation.setIsTouchExploration(info.sourceAction == FocusActionInfo.TOUCH_EXPLORATION);
+    interpretation.setIsMovedByUser(AppSpeechFilter.isMovedByUser(info.sourceAction));
     return interpretation;
   }
 

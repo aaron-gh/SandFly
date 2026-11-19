@@ -25,6 +25,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.text.TextUtils;
+import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
@@ -32,6 +33,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor;
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewClickedFeedbackRule;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
@@ -627,6 +629,12 @@ public class Compositor {
     if (scripted != null) {
       ttsOutput = scripted;
     }
+    if (!TextUtils.isEmpty(ttsOutput)
+        && AppSpeechFilter.isActive()
+        && isLeftUnsaid(event, options)) {
+      LogUtils.d(TAG, "Not spoken, from an app or keyboard with its own speech: event=%d", event);
+      ttsOutput = "";
+    }
     if (!TextUtils.isEmpty(ttsOutput)) {
       // Cleans up the TTS output if it is just 1 character long. This will announce single
       // symbols correctly.
@@ -674,6 +682,81 @@ public class Compositor {
       }
       if (runnable != null) {
         runnable.run(SpeechController.STATUS_NOT_SPOKEN);
+      }
+    }
+  }
+
+  /**
+   * Whether the speech for {@code event} is left unsaid by {@link AppSpeechFilter}: focus an app
+   * moved, an announcement, a live region or a window change in the apps the settings name, or
+   * keyboard keys and text editing while a keyboard with its own speech is shown.
+   */
+  private static boolean isLeftUnsaid(int event, HandleEventOptions options) {
+    AppSpeechFilter.@Nullable Source source = speechSource(event, options);
+    if (source == null) {
+      return false;
+    }
+    @Nullable CharSequence packageName = null;
+    if (options.sourceNode != null) {
+      packageName = options.sourceNode.getPackageName();
+    }
+    if (packageName == null && options.eventObject != null) {
+      packageName = options.eventObject.getPackageName();
+    }
+    if (packageName == null && options.eventInterpretation != null) {
+      packageName = options.eventInterpretation.getPackageName();
+    }
+    return AppSpeechFilter.mutes(source, packageName);
+  }
+
+  /** What caused the speech for {@code event}, or null for speech the filter always lets through. */
+  private static AppSpeechFilter.@Nullable Source speechSource(
+      int event, HandleEventOptions options) {
+    switch (event) {
+      case EVENT_TYPE_VIEW_ACCESSIBILITY_FOCUSED -> {
+        @Nullable AccessibilityFocusEventInterpretation focus =
+            (options.eventInterpretation == null)
+                ? null
+                : options.eventInterpretation.getAccessibilityFocusInterpretation();
+        // Focus SandFly didn't move has no interpretation of its own: the app moved it.
+        return (focus != null && focus.getIsMovedByUser())
+            ? AppSpeechFilter.Source.USER_FOCUS
+            : AppSpeechFilter.Source.APP_FOCUS;
+      }
+      case EVENT_TYPE_VIEW_HOVER_ENTER -> {
+        // Only touch exploration hovers over items.
+        return AppSpeechFilter.Source.USER_FOCUS;
+      }
+      case EVENT_TYPE_VIEW_FOCUSED -> {
+        return AppSpeechFilter.Source.APP_FOCUS;
+      }
+      case EVENT_TYPE_ANNOUNCEMENT, EVENT_TYPE_WINDOW_STATE_CHANGED -> {
+        return AppSpeechFilter.Source.APP_SPEECH;
+      }
+      case EVENT_TYPE_WINDOW_CONTENT_CHANGED -> {
+        // Other content changes say the new state of an item, such as a switch the user turned on.
+        return (options.sourceNode != null
+                && options.sourceNode.getLiveRegion() != View.ACCESSIBILITY_LIVE_REGION_NONE)
+            ? AppSpeechFilter.Source.APP_SPEECH
+            : null;
+      }
+      case EVENT_TYPE_INPUT_TEXT_CLEAR,
+          EVENT_TYPE_INPUT_TEXT_REMOVE,
+          EVENT_TYPE_INPUT_TEXT_ADD,
+          EVENT_TYPE_INPUT_TEXT_REPLACE,
+          EVENT_TYPE_INPUT_TEXT_PASSWORD_ADD,
+          EVENT_TYPE_INPUT_TEXT_PASSWORD_REMOVE,
+          EVENT_TYPE_INPUT_TEXT_PASSWORD_REPLACE,
+          EVENT_TYPE_INPUT_SELECTION_MOVE_CURSOR_TO_BEGINNING,
+          EVENT_TYPE_INPUT_SELECTION_MOVE_CURSOR_TO_END,
+          EVENT_TYPE_INPUT_SELECTION_MOVE_CURSOR_NO_SELECTION,
+          EVENT_TYPE_INPUT_SELECTION_MOVE_CURSOR_WITH_SELECTION,
+          EVENT_TYPE_INPUT_SELECTION_MOVE_CURSOR_SELECTION_CLEARED -> {
+        // Moving through text with SandFly's own commands is a text traversal, still spoken.
+        return AppSpeechFilter.Source.TEXT_EDIT;
+      }
+      default -> {
+        return null;
       }
     }
   }
