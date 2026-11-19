@@ -20,6 +20,8 @@ import android.app.Notification
 import android.app.Person
 import android.os.Process
 import android.service.notification.StatusBarNotification
+import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -45,6 +47,14 @@ class NotificationListTest {
   @After
   fun disconnect() {
     NotificationList.onDisconnected()
+    setLeaveOutMedia(false)
+  }
+
+  private fun setLeaveOutMedia(on: Boolean) {
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .edit()
+      .putBoolean(context.getString(R.string.pref_notification_list_skip_media_key), on)
+      .commit()
   }
 
   @Test
@@ -133,5 +143,37 @@ class NotificationListTest {
     val entries = NotificationList.items(context).flatMap { it.entries }
 
     assertEquals(listOf(family.key), entries.map { it.rowKey })
+  }
+
+  @Test
+  fun mediaPlayers_leftOutOnlyWhenTheSwitchIsOn() {
+    val player =
+      posted(
+        "com.example.player",
+        1,
+        Notification.Builder(context, "playing")
+          .setContentTitle("Episode")
+          .setCategory(Notification.CATEGORY_TRANSPORT)
+          .build(),
+      )
+    val session =
+      posted(
+        "com.example.radio",
+        2,
+        Notification.Builder(context, "radio").setContentTitle("Station").build().also {
+          it.extras.putString(Notification.EXTRA_MEDIA_SESSION, "token")
+        },
+      )
+    val dad = posted("com.example.sms", 3, message("Dad", 2_000L))
+    NotificationList.onConnected(arrayOf(player, session, dad), null)
+
+    fun keys() = NotificationList.items(context).flatMap { it.entries }.map { it.key }
+
+    assertEquals(listOf(player.key, session.key, dad.key), keys())
+    setLeaveOutMedia(true)
+    assertEquals(listOf(dad.key), keys())
+    assertEquals(listOf(dad.key), NotificationList.itemsByTime(context).flatMap { it.entries }.map { it.key })
+    setLeaveOutMedia(false)
+    assertEquals(listOf(player.key, session.key, dad.key), keys())
   }
 }

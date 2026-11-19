@@ -96,9 +96,7 @@ data class NotificationInfo(
         foregroundService = flags and Notification.FLAG_FOREGROUND_SERVICE != 0,
         groupSummary = flags and Notification.FLAG_GROUP_SUMMARY != 0,
         lowPriority = priority < Notification.PRIORITY_DEFAULT,
-        media = extras.containsKey(Notification.EXTRA_MEDIA_SESSION) ||
-          notification.category == Notification.CATEGORY_TRANSPORT ||
-          isSamsungMediaActivity(extras, notification.channelId),
+        media = isMedia(notification),
         progress = extras.getInt(Notification.EXTRA_PROGRESS_MAX, 0) > 0 ||
           extras.getBoolean(Notification.EXTRA_PROGRESS_INDETERMINATE, false) ||
           notification.category == Notification.CATEGORY_PROGRESS,
@@ -113,6 +111,15 @@ data class NotificationInfo(
     private fun isSamsungMediaActivity(extras: Bundle, channelId: String?): Boolean =
       extras.containsKey(SAMSUNG_ONGOING_ACTIVITY_STYLE) &&
         channelId?.contains("media", ignoreCase = true) == true
+
+    /** Whether [notification] is a media player's, or One UI's Now Bar media notification. */
+    @JvmStatic
+    fun isMedia(notification: Notification): Boolean {
+      val extras = notification.extras ?: Bundle.EMPTY
+      return extras.containsKey(Notification.EXTRA_MEDIA_SESSION) ||
+        notification.category == Notification.CATEGORY_TRANSPORT ||
+        isSamsungMediaActivity(extras, notification.channelId)
+    }
 
     /** Whether [notification], posted by [packageName], is One UI's Now Bar media notification. */
     @JvmStatic

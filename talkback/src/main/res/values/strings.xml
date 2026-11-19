@@ -982,6 +982,8 @@
     <string name="title_pref_notification_list">Use SandFly\'s notification list</string>
     <!-- Title of the switch that makes SandFly's notification list show every notification on its own, newest first, as "App, time, title, text", instead of in groups in the system's order. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_notification_list_by_time" tools:ignore="MissingTranslation">List notifications newest first, without groups</string>
+    <!-- Title of the switch that leaves media players' notifications out of SandFly's notification list. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_notification_list_skip_media">Leave media players out of the notification list</string>
     <!-- Title of the screen that chooses which parts of a notification SandFly's notification list speaks, and their order. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_notification_parts">Notification details</string>
     <!-- Title of the switch that makes Android record Google Play as having installed SandFly. [CHAR_LIMIT=NONE] -->

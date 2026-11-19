@@ -58,6 +58,10 @@ class NotificationListService : NotificationListenerService() {
           connectList()
         }
       }
+      if ((key == getString(R.string.pref_notification_list_key) ||
+          key == getString(R.string.pref_notification_list_skip_media_key)) && instance === this) {
+        recount()
+      }
     }
 
   private fun listEnabled() = NotificationList.isEnabled(this)
@@ -83,7 +87,7 @@ class NotificationListService : NotificationListenerService() {
     countedKeys.clear()
     runCatching { activeNotifications }.getOrNull()?.forEach {
       postedTexts[it.key] = Posted(textOf(it.notification), it.notification.`when`)
-      if (isCounted(this, it)) countedKeys.add(it.key)
+      if (countsHere(it)) countedKeys.add(it.key)
     }
     SharedPreferencesUtils.getSharedPreferences(this)
       .registerOnSharedPreferenceChangeListener(switchListener)
@@ -124,13 +128,31 @@ class NotificationListService : NotificationListenerService() {
    */
   private val postedTexts = LinkedHashMap<String, Posted>()
 
-  /** The keys of the notifications in the shade that [isCounted] counts. */
+  /** The keys of the notifications in the shade that [countsHere] counts. */
   private val countedKeys = HashSet<String>()
+
+  /**
+   * Whether the screen-on count counts [notification]: as [isCounted], and not a media player's
+   * while SandFly's notification list leaves them out, so that the count matches the list.
+   */
+  private fun countsHere(notification: StatusBarNotification): Boolean =
+    isCounted(this, notification) &&
+      !(listEnabled() &&
+        NotificationList.leavesOutMedia(this) &&
+        NotificationInfo.isMedia(notification.notification))
+
+  /** Counts the notifications in the shade again, after a setting that [countsHere] reads changes. */
+  private fun recount() {
+    countedKeys.clear()
+    runCatching { activeNotifications }.getOrNull()?.forEach {
+      if (countsHere(it)) countedKeys.add(it.key)
+    }
+  }
 
   override fun onNotificationPosted(notification: StatusBarNotification, ranking: RankingMap?) {
     if (listEnabled()) NotificationList.onPosted(notification, ranking)
     // An update can make a notification ongoing or no longer ongoing.
-    if (isCounted(this, notification)) {
+    if (countsHere(notification)) {
       countedKeys.add(notification.key)
     } else {
       countedKeys.remove(notification.key)
