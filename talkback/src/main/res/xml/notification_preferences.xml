@@ -55,6 +55,11 @@
       android:dependency="@string/pref_notification_list_key"
       android:key="@string/pref_notification_list_by_time_key"
       android:title="@string/title_pref_notification_list_by_time"/>
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="@bool/pref_notification_list_skip_media_default"
+      android:dependency="@string/pref_notification_list_key"
+      android:key="@string/pref_notification_list_skip_media_key"
+      android:title="@string/title_pref_notification_list_skip_media"/>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.notificationlist.NotificationPartsFragment"
       android:key="@string/pref_notification_parts_key"

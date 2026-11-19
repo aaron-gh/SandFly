@@ -42,6 +42,8 @@ object NotificationList {
   private val notifications = LinkedHashMap<String, StatusBarNotification>()
   private var ranking: RankingMap? = null
   private var cached: List<NotificationItem>? = null
+  /** Whether [cached] leaves out media players. */
+  private var cachedLeavesOutMedia = false
   private val appNames = HashMap<String, CharSequence>()
 
   /** Whether the listener is connected, so that the list is current. */
@@ -62,6 +64,14 @@ object NotificationList {
       .getBoolean(
         context.getString(R.string.pref_notification_list_by_time_key),
         context.resources.getBoolean(R.bool.pref_notification_list_by_time_default),
+      )
+
+  /** Whether the list leaves out media players' notifications. */
+  fun leavesOutMedia(context: Context): Boolean =
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .getBoolean(
+        context.getString(R.string.pref_notification_list_skip_media_key),
+        context.resources.getBoolean(R.bool.pref_notification_list_skip_media_default),
       )
 
   /** Whether the user has given Backtalk notification access. */
@@ -85,8 +95,16 @@ object NotificationList {
   }
 
   /** The notifications to show, in order. */
-  fun items(context: Context): List<NotificationItem> =
-    cached ?: build(context).also { cached = it }
+  fun items(context: Context): List<NotificationItem> {
+    val leaveOutMedia = leavesOutMedia(context)
+    cached?.takeIf { cachedLeavesOutMedia == leaveOutMedia }?.let {
+      return it
+    }
+    return build(context, leaveOutMedia).also {
+      cached = it
+      cachedLeavesOutMedia = leaveOutMedia
+    }
+  }
 
   /**
    * Every notification as an item of its own, newest first by the time it shows. A group's summary
@@ -156,15 +174,15 @@ object NotificationList {
    * Orders the notifications as the system ranks them. A group is shown where its first member
    * ranks, as one item when it has two or more members, and its summary only when it has no other
    * members, as the summary repeats them. As in the system's shade, the members of an app's group
-   * without a summary are shown one by one.
+   * without a summary are shown one by one. Media players are left out when [leaveOutMedia].
    */
-  private fun build(context: Context): List<NotificationItem> {
+  private fun build(context: Context, leaveOutMedia: Boolean): List<NotificationItem> {
     val order = ranking?.orderedKeys?.toList() ?: notifications.keys.toList()
     val orderSet = order.toSet()
     val ranked =
       (order.mapNotNull { notifications[it] } +
           notifications.values.filter { it.key !in orderSet })
-        .filter { !isPlaceholder(it) }
+        .filter { !isPlaceholder(it) && !(leaveOutMedia && NotificationInfo.isMedia(it.notification)) }
     val groups = ranked.groupBy { it.groupKey }
     val shownGroups = HashSet<String>()
     val result = ArrayList<NotificationItem>()
