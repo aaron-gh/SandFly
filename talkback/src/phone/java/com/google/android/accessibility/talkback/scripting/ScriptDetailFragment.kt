@@ -46,6 +46,9 @@ class ScriptDetailFragment : ScriptScreenFragment() {
     screen.info(manifest.name, context.scriptAbout(manifest))
     if (ScriptBuilder.isBuilt(store, scriptId)) {
       screen.link(getString(R.string.script_builder_edit), null, ScriptBuilderFragment::class.java, scriptId)
+      com.google.android.accessibility.talkback.sandflyai.SandflyAi.features?.let { pro ->
+        screen.action(getString(R.string.script_ai_change)) { pro.buildScript(context, scriptId) }
+      }
     } else {
       screen.action(getString(R.string.script_builder_copy_to_builder)) {
         val id =
