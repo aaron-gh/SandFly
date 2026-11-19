@@ -213,6 +213,31 @@ object TextPieces {
     return builder.toString()
   }
 
+  /**
+   * Returns the index of the next piece after [from] (or before it when [backwards]) whose shown
+   * text contains [query], ignoring case, wrapping around; -1 when no piece contains it. A [from]
+   * outside the pieces starts at the first piece, or at the last one when [backwards].
+   */
+  fun findIndex(
+    text: String,
+    pieces: List<Piece>,
+    query: String,
+    from: Int,
+    backwards: Boolean = false,
+  ): Int {
+    if (query.isEmpty() || pieces.isEmpty()) return -1
+    val size = pieces.size
+    val start = if (from in pieces.indices) from else if (backwards) size else -1
+    for (step in 1..size) {
+      val index = Math.floorMod(if (backwards) start - step else start + step, size)
+      val piece = pieces[index]
+      if (text.substring(piece.coreStart, piece.coreEnd).contains(query, ignoreCase = true)) {
+        return index
+      }
+    }
+    return -1
+  }
+
   /** Replaces every [find] in [text] with [replacement], ignoring case, and counts them. */
   fun replaceAll(text: String, find: String, replacement: String): Pair<String, Int> {
     if (find.isEmpty()) return text to 0
