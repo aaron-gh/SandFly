@@ -17,6 +17,8 @@
 package com.google.android.accessibility.utils;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import android.content.Context;
 import android.text.Spanned;
@@ -24,11 +26,14 @@ import android.text.style.SuggestionSpan;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SuggestionsInfo;
 import com.google.common.collect.ImmutableList;
+import java.time.Duration;
+import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.RuntimeEnvironment;
 import org.robolectric.annotation.Config;
+import org.robolectric.shadows.ShadowSystemClock;
 
 /** Spell checker results for the text of an edit field. */
 @RunWith(RobolectricTestRunner.class)
@@ -61,5 +66,25 @@ public class SpellCheckerTest {
     assertEquals(1, spans.length);
     assertEquals(4, ((Spanned) result).getSpanStart(spans[0]));
     assertEquals(7, ((Spanned) result).getSpanEnd(spans[0]));
+  }
+
+  @After
+  public void tearDown() {
+    SpellChecker.resetSessionUnavailable();
+  }
+
+  @Test
+  public void noNewSessionIsTriedForAWhileAfterOneFails() {
+    Context context = RuntimeEnvironment.getApplication();
+    SpellChecker.resetSessionUnavailable();
+    SpellChecker first = new SpellChecker(context, "wrd", new SpellChecker.SpellCheckingListener());
+
+    // Robolectric has no spell checker service, so the session can't be created.
+    assertFalse(first.perform());
+    assertTrue(SpellChecker.isSessionUnavailable());
+    assertEquals("wrd", SpellChecker.getTextWithSuggestionSpans(context, "wrd").toString());
+
+    ShadowSystemClock.advanceBy(Duration.ofMillis(SpellChecker.NO_SESSION_RETRY_DELAY_MS));
+    assertFalse(SpellChecker.isSessionUnavailable());
   }
 }
