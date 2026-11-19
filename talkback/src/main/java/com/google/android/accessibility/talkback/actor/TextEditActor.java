@@ -424,13 +424,45 @@ public class TextEditActor {
   }
 
   /** Drops the text selected in copying mode, and ends copying mode. */
-  public boolean clearSelected(EventId eventId) {
+  public boolean clearSelected(@Nullable AccessibilityNodeInfoCompat node, EventId eventId) {
     @Nullable CopySelection copySelection = stateReader.copySelection();
     if (copySelection == null || (!copySelection.hasContent() && !copySelection.isActive())) {
-      return false;
+      return clearAppSelection(node, eventId);
     }
     copySelection.clear();
     pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+    pipeline.returnFeedback(
+        eventId,
+        Feedback.speech(
+            service.getString(R.string.notification_type_selection_cleared), SPEAK_OPTIONS));
+    return true;
+  }
+
+  /** Collapses the text selected in an edit field to its end, and ends selection mode. */
+  private boolean clearAppSelection(@Nullable AccessibilityNodeInfoCompat node, EventId eventId) {
+    if (node == null || !AccessibilityNodeInfoUtils.keepsAppSelection(node)) {
+      return false;
+    }
+    int start = node.getTextSelectionStart();
+    int end = node.getTextSelectionEnd();
+    boolean modeActive = stateReader.isSelectionModeActive();
+    if (start == end && !modeActive) {
+      return false;
+    }
+    if (modeActive) {
+      pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+    }
+    if (start != end) {
+      int cursor = max(start, end);
+      textCursorTracker.forceSetCursorPosition(cursor, cursor);
+      final Bundle args = new Bundle();
+      args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, cursor);
+      args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, cursor);
+      if (!PerformActionUtils.performAction(
+          node, AccessibilityNodeInfoCompat.ACTION_SET_SELECTION, args, eventId)) {
+        return false;
+      }
+    }
     pipeline.returnFeedback(
         eventId,
         Feedback.speech(

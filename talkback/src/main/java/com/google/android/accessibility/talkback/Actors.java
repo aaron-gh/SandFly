@@ -508,7 +508,7 @@ class Actors {
             case END_SELECT -> editor.endSelect(edit.node(), eventId);
             case COPY -> editor.copy(edit.node(), eventId);
             case APPEND_COPY -> editor.appendCopy(edit.node(), eventId);
-            case CLEAR_SELECTION -> editor.clearSelected(eventId);
+            case CLEAR_SELECTION -> editor.clearSelected(edit.node(), eventId);
             case CUT -> editor.cut(edit.node(), eventId);
             case PASTE -> editor.paste(edit.node(), eventId);
             case DELETE -> editor.delete(edit.node(), eventId);
