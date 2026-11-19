@@ -76,6 +76,9 @@ class PauseController(
 
     /** Turns explore by touch and the parts that depend on it off, or back on. */
     fun onPausedChanged(paused: Boolean)
+
+    /** Runs after Backtalk says it resumed, for feedback that is spoken after that. */
+    fun onResumeAnnounced()
   }
 
   private val prefs = SharedPreferencesUtils.getSharedPreferences(service)
@@ -167,6 +170,7 @@ class PauseController(
     TraversalTreeCache.clear("resume")
     host.onPausedChanged(false)
     announce(R.raw.chime_up, R.string.backtalk_resumed)
+    host.onResumeAnnounced()
   }
 
   /** Ends the pause without feedback when the service shuts down. */

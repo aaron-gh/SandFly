@@ -202,6 +202,10 @@ public class DimScreenActor implements OnConfigurationChangedListener {
    * {@link DimScreenDialog}
    */
   public void makeScreenDim() {
+    makeScreenDim(SpeechController.QUEUE_MODE_INTERRUPT);
+  }
+
+  private void makeScreenDim(int queueMode) {
 
     initSearchScreenOverlay.initOverlay();
 
@@ -221,12 +225,12 @@ public class DimScreenActor implements OnConfigurationChangedListener {
         startDimmingCount();
       }
       dimScreenNotifier.onScreenDim();
-      announceFeedbackAndUsageHintForScreenDimmed();
+      announceFeedbackAndUsageHintForScreenDimmed(queueMode);
       requestBrightnessPermission();
       return;
     }
 
-    announceFeedbackAndUsageHintForScreenDimmed();
+    announceFeedbackAndUsageHintForScreenDimmed(queueMode);
   }
 
   /**
@@ -362,6 +366,16 @@ public class DimScreenActor implements OnConfigurationChangedListener {
     }
   }
 
+  /**
+   * Hides the screen again after a pause if the setting is on. "Screen hidden" is queued after
+   * "resumed".
+   */
+  public void resumeAfterPause() {
+    if (isDimmingEnabled()) {
+      makeScreenDim(SpeechController.QUEUE_MODE_QUEUE);
+    }
+  }
+
   public void suspend() {
     makeScreenBright();
     if (dimScreenDialog != null) {
@@ -442,6 +456,10 @@ public class DimScreenActor implements OnConfigurationChangedListener {
   }
 
   private void announceFeedbackAndUsageHintForScreenDimmed() {
+    announceFeedbackAndUsageHintForScreenDimmed(SpeechController.QUEUE_MODE_INTERRUPT);
+  }
+
+  private void announceFeedbackAndUsageHintForScreenDimmed(int queueMode) {
     pipeline.returnFeedback(
         EVENT_ID_UNTRACKED,
         Part.builder()
@@ -449,7 +467,7 @@ public class DimScreenActor implements OnConfigurationChangedListener {
                 Speech.builder()
                     .setAction(Action.SPEAK)
                     .setText(service.getString(R.string.screen_dimmed))
-                    .setOptions(announcementOptions(SpeechController.QUEUE_MODE_INTERRUPT))
+                    .setOptions(announcementOptions(queueMode))
                     .build())
             .setSound(Feedback.Sound.create(R.raw.screen_hidden)));
     // Users who turned off the confirmation dialog already know how to show the screen again.
