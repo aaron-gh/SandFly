@@ -355,10 +355,22 @@ public class ScreenFeedbackManager
         (announcement != null) && announcement.isFromVolumeControlPanel();
     boolean firstPart = true;
     boolean droppedWindowName = false;
+    // Worked out at the first part it applies to, as finding the windows' apps can ask the apps.
+    @Nullable Boolean appSpeechLeftUnsaid = AppSpeechFilter.isActive() ? null : false;
     for (FeedbackPart feedbackPart : feedback.getParts()) {
       if (!windowNamesSpoken && feedbackPart.isWindowName()) {
         droppedWindowName = true;
         continue;
+      }
+      if (feedbackPart.isWindowName() || feedbackPart.isAppAnnouncement()) {
+        if (appSpeechLeftUnsaid == null) {
+          appSpeechLeftUnsaid = leavesAppSpeechUnsaid(interpretation);
+        }
+        if (appSpeechLeftUnsaid) {
+          LogUtils.d(TAG, "Window speech not spoken, from an app with its own speech");
+          droppedWindowName = true;
+          continue;
+        }
       }
       int queueMode =
           !(firstItemInterruptsWindowName && feedbackPart.isWindowName())
@@ -385,6 +397,42 @@ public class ScreenFeedbackManager
                   com.google.android.accessibility.utils.R.raw.window_state)
               .vibration(com.google.android.accessibility.utils.R.array.window_state_pattern));
     }
+  }
+
+  /**
+   * Whether {@link AppSpeechFilter} leaves the window names and app announcements of {@code
+   * interpretation} unsaid: whether it does for the app of one of the windows that changed, or for
+   * any app when their apps aren't known.
+   */
+  private boolean leavesAppSpeechUnsaid(WindowEventInterpreter.EventInterpretation interpretation) {
+    boolean anyPackage = false;
+    @Nullable Announcement announcement = interpretation.getAnnouncement();
+    if (announcement != null && announcement.packageName() != null) {
+      anyPackage = true;
+      if (AppSpeechFilter.mutes(AppSpeechFilter.Source.APP_SPEECH, announcement.packageName())) {
+        return true;
+      }
+    }
+    int[] windowIds = {
+      interpretation.getEventSourceWindow().getId(),
+      interpretation.getWindowA().getId(),
+      interpretation.getWindowB().getId(),
+      interpretation.getOtherActiveWindow().getId(),
+    };
+    for (int windowId : windowIds) {
+      if (windowId == WINDOW_ID_NONE) {
+        continue;
+      }
+      @Nullable CharSequence packageName = interpreter.getWindowPackageName(windowId);
+      if (packageName == null) {
+        continue;
+      }
+      anyPackage = true;
+      if (AppSpeechFilter.mutes(AppSpeechFilter.Source.APP_SPEECH, packageName)) {
+        return true;
+      }
+    }
+    return !anyPackage && AppSpeechFilter.mutes(AppSpeechFilter.Source.APP_SPEECH, null);
   }
 
   private boolean allowAnnounce(AccessibilityEvent event) {
@@ -494,6 +542,9 @@ public class ScreenFeedbackManager
         logCompose(logDepth, "composeFeedback", "announcement");
         feedback.addPart(
             new FeedbackPart(announcement.text())
+                .appAnnouncement(
+                    !announcement.isFromVolumeControlPanel()
+                        && !announcement.isFromInputMethodEditor())
                 .forceFeedbackEvenIfAudioPlaybackActive(!announcement.isFromVolumeControlPanel())
                 .forceFeedbackEvenIfMicrophoneActive(!announcement.isFromVolumeControlPanel())
                 .forceFeedbackEvenIfSsbActive(announcement.isFromInputMethodEditor()));
@@ -833,9 +884,24 @@ public class ScreenFeedbackManager
     private boolean forceFeedbackEvenIfMicrophoneActive = false;
     private boolean forceFeedbackEvenIfSsbActive = false;
     private boolean windowName = false;
+    private boolean appAnnouncement = false;
 
     public FeedbackPart(CharSequence speech) {
       this.speech = speech;
+    }
+
+    /**
+     * Marks an announcement of the window change that an app made, as opposed to one from the
+     * volume panel or the keyboard.
+     */
+    @CanIgnoreReturnValue
+    public FeedbackPart appAnnouncement(boolean appAnnouncement) {
+      this.appAnnouncement = appAnnouncement;
+      return this;
+    }
+
+    public boolean isAppAnnouncement() {
+      return appAnnouncement;
     }
 
     /** Marks the part that names the window, as opposed to an announcement. */

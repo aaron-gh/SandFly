@@ -27,6 +27,7 @@ import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -54,6 +55,28 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     preferences = SharedPreferencesUtils.getSharedPreferences(getContext());
     setupTellTimePreference();
     setupEmojiRepeatCountPreference();
+    setupSpeakUserFocusPreference();
+  }
+
+  /** Chosen apps only applies while Speak only focus moved by the user is In chosen apps. */
+  private void setupSpeakUserFocusPreference() {
+    Preference mode = findPreference(R.string.pref_speak_user_focus_key);
+    if (!(mode instanceof ListPreference modeList)) {
+      return;
+    }
+    updateSpeakUserFocusApps(modeList.getValue());
+    mode.setOnPreferenceChangeListener(
+        (preference, newValue) -> {
+          updateSpeakUserFocusApps(String.valueOf(newValue));
+          return true;
+        });
+  }
+
+  private void updateSpeakUserFocusApps(@Nullable String mode) {
+    Preference apps = findPreference(R.string.pref_speak_user_focus_apps_key);
+    if (apps != null) {
+      apps.setEnabled(AppSpeechFilter.MODE_CHOSEN_APPS.equals(mode));
+    }
   }
 
   /**
@@ -147,6 +170,13 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
         } else if (TextUtils.equals(key, getString(R.string.pref_punctuation_verbosity))) {
           if (findPreference(R.string.pref_punctuation_verbosity) instanceof ListPreference p) {
             p.setValue(prefs.getString(key, getString(R.string.pref_punctuation_verbosity_default)));
+          }
+        } else if (TextUtils.equals(key, getString(R.string.pref_speak_user_focus_key))) {
+          // Changed by the reading control or the command.
+          if (findPreference(R.string.pref_speak_user_focus_key) instanceof ListPreference p) {
+            String mode = AppSpeechFilter.mode(requireContext(), prefs);
+            p.setValue(mode);
+            updateSpeakUserFocusApps(mode);
           }
         } else if (TextUtils.equals(key, getString(R.string.pref_speak_time_key))) {
           if (tellTimePreference != null) {

@@ -35,6 +35,7 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
   private boolean shouldMuteFeedback = false;
   private boolean isNavigateByUser = false;
   private boolean isTouchExploration = false;
+  private boolean isMovedByUser = false;
   private boolean isEqualsToLastHoverEnterKeyboardEventNode = false;
   private int columnWrap = ColumnWrap.NONE;
 
@@ -117,6 +118,19 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
     return isTouchExploration;
   }
 
+  /**
+   * Sets whether the user moved the focus, by touch, gestures, keys, a braille display or commands,
+   * rather than the app or SandFly after a window change.
+   */
+  public void setIsMovedByUser(boolean isMovedByUser) {
+    checkIsWritable();
+    this.isMovedByUser = isMovedByUser;
+  }
+
+  public boolean getIsMovedByUser() {
+    return isMovedByUser;
+  }
+
   /** Sets whether the focus moved to another row of a grid, one of the {@link ColumnWrap} values. */
   public void setColumnWrap(int columnWrap) {
     checkIsWritable();
@@ -151,6 +165,7 @@ public class AccessibilityFocusEventInterpretation extends ReadOnly {
         StringBuilderUtils.optionalTag(
             "isInitialFocusAfterScreenStateChange", isInitialFocusAfterScreenStateChange),
         StringBuilderUtils.optionalTag("isNavigateByUser", isNavigateByUser),
+        StringBuilderUtils.optionalTag("isMovedByUser", isMovedByUser),
         StringBuilderUtils.optionalTag(
             "isEqualsToLastHoverEnterKeyboardEventNode", isEqualsToLastHoverEnterKeyboardEventNode),
         StringBuilderUtils.optionalInt("columnWrap", columnWrap, ColumnWrap.NONE),

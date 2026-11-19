@@ -5561,4 +5561,22 @@
   <string name="network_notification_channel">Network requests</string>
   <!-- Title of the notification Android shows while SandFly runs network requests from the background. [CHAR LIMIT=40] -->
   <string name="network_notification_title">Network request</string>
+  <!-- Category on the Verbosity screen with the settings for apps and keyboards that speak by themselves, such as an assistant that reads its answer aloud. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_category_own_speech">Apps with their own speech</string>
+  <!-- Setting on the Verbosity screen: where SandFly speaks only accessibility focus that the user moved, by touch, gestures, keys, a braille display or commands, and not focus that an app moved, announcements, live regions or window titles. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_speak_user_focus">Speak only focus moved by the user</string>
+  <!-- Choice of Speak only focus moved by the user: SandFly speaks all focus as usual. [CHAR LIMIT=40] -->
+  <string name="speak_user_focus_off">Off</string>
+  <!-- Choice of Speak only focus moved by the user: it applies in every app. [CHAR LIMIT=40] -->
+  <string name="speak_user_focus_all_apps">In all apps</string>
+  <!-- Choice of Speak only focus moved by the user: it applies in the apps listed in Chosen apps. [CHAR LIMIT=40] -->
+  <string name="speak_user_focus_chosen_apps">In chosen apps</string>
+  <!-- Setting on the Verbosity screen that opens the list of apps in which Speak only focus moved by the user applies when it is set to In chosen apps. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_speak_user_focus_apps">Chosen apps</string>
+  <!-- Switch on the Verbosity screen: while another app plays assistant audio, such as an assistant reading its answer, or call audio, SandFly speaks only focus that the user moved, in all apps. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_speak_user_focus_assistant_audio">Speak only focus moved by the user while an assistant or call plays audio</string>
+  <!-- Setting on the Verbosity screen that opens the list of on-screen keyboards that speak by themselves. While one of them is shown, SandFly doesn't speak its keys, typed or deleted text or cursor movement. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_keyboards_with_own_speech">Keyboards with their own speech</string>
+  <!-- Spoken when the Speak only focus moved by the user reading control or command changes the setting. %1$s is the new choice, such as In all apps. [CHAR LIMIT=NONE] -->
+  <string name="template_speak_user_focus_changed">Speak only focus moved by the user: <xliff:g id="choice" example="In all apps">%1$s</xliff:g></string>
 </resources>

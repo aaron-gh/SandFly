@@ -3055,4 +3055,24 @@
   <string name="shortcut_value_next_settings_profile" translatable="false">NEXT_SETTINGS_PROFILE</string>
   <string name="shortcut_value_previous_settings_profile" translatable="false">PREVIOUS_SETTINGS_PROFILE</string>
   <item type="id" name="group_settings_profile" />
+  <!-- Speak only focus moved by the user: AppSpeechFilter's MODE_ constants. -->
+  <string name="pref_speak_user_focus_key" translatable="false">pref_speak_user_focus</string>
+  <string name="pref_speak_user_focus_default" translatable="false">off</string>
+  <string-array name="pref_speak_user_focus_entries">
+      <item>@string/speak_user_focus_off</item>
+      <item>@string/speak_user_focus_all_apps</item>
+      <item>@string/speak_user_focus_chosen_apps</item>
+  </string-array>
+  <string-array name="pref_speak_user_focus_values" translatable="false">
+      <item>off</item>
+      <item>all</item>
+      <item>chosen</item>
+  </string-array>
+  <string name="pref_speak_user_focus_apps_key" translatable="false">pref_speak_user_focus_apps</string>
+  <string name="pref_speak_user_focus_assistant_audio_key" translatable="false">pref_speak_user_focus_assistant_audio</string>
+  <bool name="pref_speak_user_focus_assistant_audio_default">false</bool>
+  <string name="pref_keyboards_with_own_speech_key" translatable="false">pref_keyboards_with_own_speech</string>
+  <string name="pref_selector_speak_user_focus_key" translatable="false">pref_selector_speak_user_focus_key</string>
+  <bool name="pref_selector_speak_user_focus_default">false</bool>
+  <string name="selector_speak_user_focus" translatable="false">SELECTOR_SPEAK_USER_FOCUS</string>
 </resources>

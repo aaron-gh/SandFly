@@ -24,6 +24,7 @@ import android.os.Build;
 import android.text.TextUtils;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.focusmanagement.LiftToActivateMode;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
@@ -115,6 +116,9 @@ final class ReadingControlValues {
       }
       case AUTO_TRANSLATION -> {
         return onOff(context, TranslationSettings.INSTANCE.auto(prefs));
+      }
+      case SPEAK_USER_FOCUS -> {
+        return AppSpeechFilter.modeName(context, AppSpeechFilter.mode(context, prefs));
       }
       case CHANGE_BRIGHTNESS -> {
         if (!ScreenBrightness.canWrite(context)) {
