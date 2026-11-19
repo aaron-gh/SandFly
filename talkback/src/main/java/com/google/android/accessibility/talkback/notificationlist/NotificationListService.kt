@@ -51,7 +51,7 @@ class NotificationListService : NotificationListenerService() {
         key == NotificationSettings.Companion.Keys.APP_CANCEL ||
         key == NotificationSettings.Companion.Keys.DND ||
         key == NotificationSettings.Companion.Keys.ENABLED ||
-        key == ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT) {
+        key in ScreenAnnouncementSettings.NOTIFICATION_COUNT_KEYS) {
         if (!isNeeded(this)) {
           unbind()
         } else if (key == getString(R.string.pref_notification_list_key) && listEnabled()) {
@@ -230,10 +230,7 @@ class NotificationListService : NotificationListenerService() {
             // accessibility event for, such as those on silent channels.
             NotificationSettings.read(it).let { s -> s.needsListener || s.enabled } ||
               it.getBoolean(SpokenSchedules.KEY_SUMMARY_DAILY, false) ||
-              ScreenAnnouncementSettings.isOn(
-                it,
-                ScreenAnnouncementSettings.SCREEN_ON_NOTIFICATION_COUNT,
-              )
+              ScreenAnnouncementSettings.anyNotificationCount(it)
           })
 
     /**

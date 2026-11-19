@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- What SandFly says when the screen turns off or on and when the phone is unlocked. The keys
-     and defaults match ScreenAnnouncementSettings, except the time, which is an older setting. The
-     status items after the time are separate from the status gesture's Status readout. -->
+<!-- What SandFly says when the screen turns off or on and when the phone is unlocked. Each event
+     has the same items. The keys and defaults match ScreenAnnouncementSettings, except the
+     screen-on time, which is an older setting. The status items are separate from the status
+     gesture's Status readout. -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_screen_announcements_screen_off_category"
@@ -15,6 +16,55 @@
         android:key="pref_screen_off_ringer_mode"
         android:summary="@string/summary_pref_announce_ringer_mode"
         android:title="@string/title_pref_announce_ringer_mode" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_screen_off_time"
+        android:title="@string/title_pref_announce_time" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_screen_off_notification_count"
+        android:title="@string/title_pref_screen_on_notification_count" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="off"
+        android:dialogTitle="@string/status_item_battery"
+        android:entries="@array/pref_screen_on_battery_entries"
+        android:entryValues="@array/pref_screen_on_battery_values"
+        android:key="pref_screen_off_battery_mode"
+        android:summary="%s"
+        android:title="@string/status_item_battery" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="0"
+        android:dialogTitle="@string/title_pref_screen_on_low_battery"
+        android:entries="@array/pref_screen_on_low_battery_entries"
+        android:entryValues="@array/pref_screen_on_low_battery_values"
+        android:key="pref_screen_off_low_battery"
+        android:summary="%s"
+        android:title="@string/title_pref_screen_on_low_battery" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_screen_off_hidden_screen"
+        android:summary="@string/status_item_hidden_screen_summary"
+        android:title="@string/status_item_hidden_screen" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_screen_off_wifi"
+        android:summary="@string/status_item_wifi_summary"
+        android:title="@string/status_item_wifi" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_screen_off_mobile_network"
+        android:summary="@string/status_item_mobile_summary"
+        android:title="@string/status_item_mobile" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_screen_off_ringer"
+        android:summary="@string/status_item_ringer_summary"
+        android:title="@string/status_item_ringer" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_screen_off_airplane_mode"
+        android:summary="@string/status_item_airplane_mode_summary"
+        android:title="@string/status_item_airplane_mode" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
@@ -78,5 +128,54 @@
         android:defaultValue="true"
         android:key="pref_unlock_say_unlocked"
         android:title="@string/title_pref_say_device_unlocked" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_unlock_time"
+        android:title="@string/title_pref_announce_time" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_unlock_notification_count"
+        android:title="@string/title_pref_screen_on_notification_count" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="off"
+        android:dialogTitle="@string/status_item_battery"
+        android:entries="@array/pref_screen_on_battery_entries"
+        android:entryValues="@array/pref_screen_on_battery_values"
+        android:key="pref_unlock_battery_mode"
+        android:summary="%s"
+        android:title="@string/status_item_battery" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="0"
+        android:dialogTitle="@string/title_pref_screen_on_low_battery"
+        android:entries="@array/pref_screen_on_low_battery_entries"
+        android:entryValues="@array/pref_screen_on_low_battery_values"
+        android:key="pref_unlock_low_battery"
+        android:summary="%s"
+        android:title="@string/title_pref_screen_on_low_battery" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_unlock_hidden_screen"
+        android:summary="@string/status_item_hidden_screen_summary"
+        android:title="@string/status_item_hidden_screen" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_unlock_wifi"
+        android:summary="@string/status_item_wifi_summary"
+        android:title="@string/status_item_wifi" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_unlock_mobile_network"
+        android:summary="@string/status_item_mobile_summary"
+        android:title="@string/status_item_mobile" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_unlock_ringer"
+        android:summary="@string/status_item_ringer_summary"
+        android:title="@string/status_item_ringer" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_unlock_airplane_mode"
+        android:summary="@string/status_item_airplane_mode_summary"
+        android:title="@string/status_item_airplane_mode" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 </PreferenceScreen>
