@@ -202,8 +202,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
       for (item in items) {
         when (item) {
           is NotificationItem.Single -> {
-            keys.add(item.entry.key)
-            views.add(row(item.entry.key).also { bind(it, item.entry, indented = false) })
+            keys.add(item.entry.rowKey)
+            views.add(row(item.entry.rowKey).also { bind(it, item.entry, indented = false) })
           }
           is NotificationItem.Group -> {
             val groupKey = GROUP_PREFIX + item.key
@@ -211,8 +211,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
             views.add(row(groupKey).also { bindGroup(it, item) })
             if (item.key in expandedGroups) {
               for (entry in item.entries) {
-                keys.add(entry.key)
-                views.add(row(entry.key).also { bind(it, entry, indented = true) })
+                keys.add(entry.rowKey)
+                views.add(row(entry.rowKey).also { bind(it, entry, indented = true) })
               }
             }
           }
@@ -259,7 +259,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
   private fun row(key: String): TextView = rows.getOrPut(key) { notificationRow() }
 
   private fun bind(row: TextView, entry: NotificationEntry, indented: Boolean) {
-    val details = details(entry, playbackState(entry), full = entry.key in expandedTexts)
+    val details = details(entry, playbackState(entry), full = entry.rowKey in expandedTexts)
     row.text = details.joinToString("\n")
     row.contentDescription = details.joinToString(", ")
     row.setPaddingRelative(dp(if (indented) 40 else 16), row.paddingTop, row.paddingEnd, row.paddingBottom)
@@ -395,7 +395,7 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
           AccessibilityNodeInfo.AccessibilityAction(
             R.id.notification_list_full_text_action,
             getString(
-              if (entry.key in expandedTexts) R.string.notification_list_show_less
+              if (entry.rowKey in expandedTexts) R.string.notification_list_show_less
               else R.string.notification_list_show_all
             ),
           )
@@ -421,8 +421,8 @@ class NotificationListActivity : AppCompatActivity(), NotificationList.Listener 
         return true
       }
       if (action == R.id.notification_list_full_text_action) {
-        if (!expandedTexts.add(entry.key)) {
-          expandedTexts.remove(entry.key)
+        if (!expandedTexts.add(entry.rowKey)) {
+          expandedTexts.remove(entry.rowKey)
         }
         show()
         return true
