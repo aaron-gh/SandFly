@@ -33,6 +33,7 @@ import com.google.android.gms.common.moduleinstall.ModuleInstall
 import com.google.android.gms.common.moduleinstall.ModuleInstallRequest
 import com.google.android.gms.tasks.Task
 import com.google.mlkit.common.MlKitException
+import com.google.mlkit.common.sdkinternal.MlKitContext
 import com.google.mlkit.nl.languageid.LanguageIdentification
 import com.google.mlkit.nl.languageid.LanguageIdentificationOptions
 import com.google.mlkit.nl.languageid.LanguageIdentifier
@@ -69,6 +70,8 @@ class MlKitHelperService : Service() {
 
   override fun onCreate() {
     super.onCreate()
+    // ML Kit's content provider initializes it in the main process only.
+    MlKitContext.initializeIfNeeded(applicationContext)
     thread = HandlerThread("mlkit-helper").apply { start() }
     handler = Handler(thread.looper)
     onThread = Executor { handler.post(it) }
