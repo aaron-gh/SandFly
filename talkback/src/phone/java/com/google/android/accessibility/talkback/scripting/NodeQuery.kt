@@ -143,6 +143,7 @@ data class NodeQuery(
           node.contentDescription?.toString(),
           node.hintText?.toString(),
           node.stateDescription?.toString(),
+          node.tooltipText?.toString(),
         )
       Macros.Field.TEXT -> listOfNotNull(textOf(node))
       Macros.Field.DESCRIPTION -> listOfNotNull(node.contentDescription?.toString())

@@ -1013,7 +1013,7 @@ object MacroRunner {
           val texts =
             when {
               field != null -> texts(node, field)
-              kind == null && !anyMatch -> listOfNotNull(node.text, node.contentDescription)
+              kind == null && !anyMatch -> listOfNotNull(node.text, node.contentDescription, AccessibilityNodeInfoCompat.wrap(node).tooltipText)
               else -> texts(node)
             }
           for (text in texts) {
@@ -1091,6 +1091,7 @@ object MacroRunner {
       node.contentDescription,
       node.hintText,
       AccessibilityNodeInfoCompat.wrap(node).stateDescription,
+      AccessibilityNodeInfoCompat.wrap(node).tooltipText,
     )
 
   /**
