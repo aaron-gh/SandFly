@@ -25,9 +25,10 @@ import com.google.android.accessibility.brailleime.OrientationMonitor.Orientatio
  *
  * The side the user typed with in screen-away mode comes first when it is decided, as tipping the
  * phone flat keeps the port on the same side of the user. It only counts when the phone was held
- * upright in screen-away mode, so that tipping a phone held nearly flat in the hands past the
- * screen-away angle, and typing, does not count. It is kept, and turns with the phone, until the
- * user types on the table, so that lifting the phone in a pause and laying it flat again keeps it.
+ * upright in landscape, so that tipping a phone held nearly flat in the hands past the screen-away
+ * angle, or holding it up in portrait to read it, and touching the screen does not count. It is
+ * kept, and turns with the phone, until the user types on the table or holds the phone up in
+ * portrait, so that lifting the phone in a pause and laying it flat again keeps it.
  */
 class PhoneTabletopSide {
   /**
@@ -39,6 +40,9 @@ class PhoneTabletopSide {
 
   /** Whether the user typed in screen-away mode since the side was last decided. */
   private var typedSinceDecided = false
+
+  /** When the user last typed in screen-away mode, in uptime milliseconds. */
+  private var typedAtMs = -1L
 
   /** When the side was last decided, in uptime milliseconds, or -1 if not yet. */
   private var decidedAtMs = -1L
@@ -55,16 +59,17 @@ class PhoneTabletopSide {
     private set
 
   /**
-   * The user touched the screen in screen-away mode, with the layout expecting the charging port on
-   * this side. It counts as screen-away typing only if the phone was [heldUpright] in screen-away
-   * mode.
+   * The user touched the screen in screen-away mode at [nowMs], with the layout expecting the
+   * charging port on this side. It counts as screen-away typing only if the phone was held upright
+   * in screen-away mode and is held in landscape, as [heldUprightInLandscape] says.
    */
-  fun onScreenAwayTouch(portOnRight: Boolean, heldUpright: Boolean) {
-    if (!heldUpright) {
+  fun onScreenAwayTouch(portOnRight: Boolean, heldUprightInLandscape: Boolean, nowMs: Long) {
+    if (!heldUprightInLandscape) {
       return
     }
     typedPortOnRight = portOnRight
     typedSinceDecided = true
+    typedAtMs = nowMs
   }
 
   /** The user touched the screen in tabletop mode, so screen-away typing is no longer the last. */
@@ -87,6 +92,14 @@ class PhoneTabletopSide {
       !DotsOrientation.shouldDecideTabletopAgain(decidedAtMs, typedSinceDecided, lastHeldSeenMs)
     ) {
       return false
+    }
+    if (
+      typedPortOnRight != null &&
+        lastHeldSeenMs > typedAtMs &&
+        DotsOrientation.heldPortOnRight(lastHeld) == null
+    ) {
+      // Held up in portrait since typing, so the port is toward or away from the user.
+      typedPortOnRight = null
     }
     port = DotsOrientation.decidePhoneTabletopPort(typedPortOnRight, lastHeld, portrait, rotation)
     portOnRight =

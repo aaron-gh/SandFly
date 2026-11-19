@@ -455,7 +455,9 @@ public class BrailleInputView extends View
         phoneTabletop.onTabletopTouch();
       } else if (isPhone()) {
         phoneTabletop.onScreenAwayTouch(
-            layoutExpectsPortOnRight() != turnedAround, callback.wasHeldUprightInScreenAway());
+            layoutExpectsPortOnRight() != turnedAround,
+            callback.wasHeldUprightInScreenAway() && heldPortOnRight() != null,
+            SystemClock.uptimeMillis());
       }
     }
     boolean result;

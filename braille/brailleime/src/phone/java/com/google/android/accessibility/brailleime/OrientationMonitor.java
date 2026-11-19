@@ -17,10 +17,14 @@
 package com.google.android.accessibility.brailleime;
 
 import android.content.Context;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.hardware.display.DisplayManager;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.OrientationEventListener;
+import androidx.annotation.Nullable;
 import com.google.common.annotations.VisibleForTesting;
 
 /**
@@ -63,7 +67,43 @@ public class OrientationMonitor {
   private Callback orientationMonitorCallback;
   private boolean enabled;
   private Orientation currentOrientation = Orientation.UNKNOWN;
-  private OrientationEventListener orientationEventListener;
+  @Nullable private SensorManager sensors;
+  @Nullable private Sensor accelerometer;
+
+  /**
+   * How far past the edge between two orientations a reading must be, in degrees, before the
+   * orientation changes, so that a device held near the edge does not flicker between them.
+   */
+  @VisibleForTesting static final int HYSTERESIS_DEGREES = 5;
+
+  /**
+   * How far from lying flat a device must be tilted before a reading can change the orientation,
+   * as tan² of the angle: 40 degrees. Tilted less, a small sideways roll swings the reading a long
+   * way, as when picking the device up by one edge or holding it low to read.
+   */
+  private static final float MIN_TILT_TAN_SQUARED = 0.704f;
+
+  private final SensorEventListener sensorListener =
+      new SensorEventListener() {
+        @Override
+        public void onSensorChanged(SensorEvent event) {
+          float[] values = event.values;
+          if (values.length < 3) {
+            return;
+          }
+          Orientation newOrientation =
+              nextOrientation(currentOrientation, defaultPortrait, values[0], values[1], values[2]);
+          if (newOrientation != currentOrientation) {
+            currentOrientation = newOrientation;
+            if (orientationMonitorCallback != null) {
+              orientationMonitorCallback.onOrientationChanged(newOrientation);
+            }
+          }
+        }
+
+        @Override
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {}
+      };
   private Context context;
   // Whether the device's natural orientation is portrait, read once and again when a display
   // changes, as a foldable folds or unfolds, rather than at every reading.
@@ -98,28 +138,50 @@ public class OrientationMonitor {
     if (singleton == null) {
       singleton = new OrientationMonitor();
       singleton.context = context.getApplicationContext();
-      singleton.orientationEventListener =
-          new OrientationEventListener(context.getApplicationContext()) {
-            @Override
-            public void onOrientationChanged(int degree) {
-              Orientation newOrientation = toOrientation(singleton.defaultPortrait, degree);
-              if (newOrientation != singleton.currentOrientation) {
-                singleton.currentOrientation = newOrientation;
-                if (singleton.orientationMonitorCallback != null) {
-                  singleton.orientationMonitorCallback.onOrientationChanged(newOrientation);
-                }
-              }
-            }
-          };
+      singleton.sensors = singleton.context.getSystemService(SensorManager.class);
+      singleton.accelerometer =
+          singleton.sensors == null
+              ? null
+              : singleton.sensors.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
     }
   }
 
   /**
-   * Converts a reading from {@link OrientationEventListener} to the nearest orientation, on a device
-   * whose natural orientation is portrait or not.
+   * The orientation after an accelerometer reading, from {@code current}. Lying flat reads as it
+   * did from {@link android.view.OrientationEventListener}. Tilted less than 40 degrees from flat,
+   * or within {@link #HYSTERESIS_DEGREES} of the edge of the current orientation, it stays as it
+   * is.
+   */
+  @VisibleForTesting
+  static Orientation nextOrientation(
+      Orientation current, boolean defaultPortrait, float x, float y, float z) {
+    int degrees = HeldOrientationTracker.orientationDegrees(x, y, z);
+    if (degrees == HeldOrientationTracker.ORIENTATION_UNKNOWN) {
+      return toOrientation(defaultPortrait, degrees);
+    }
+    if (x * x + y * y < z * z * MIN_TILT_TAN_SQUARED) {
+      return current;
+    }
+    Orientation next = toOrientation(defaultPortrait, degrees);
+    if (next == current || current == Orientation.UNKNOWN) {
+      return next;
+    }
+    int fromCenter =
+        Math.floorMod(degrees - next.getDegree() - (defaultPortrait ? 0 : 90), 360);
+    fromCenter = Math.min(fromCenter, 360 - fromCenter);
+    return fromCenter <= 45 - HYSTERESIS_DEGREES ? next : current;
+  }
+
+  /**
+   * Converts a reading as from {@link android.view.OrientationEventListener} to the nearest
+   * orientation, on a device whose natural orientation is portrait or not.
    */
   static Orientation toOrientation(boolean defaultPortrait, int degree) {
-    degree = defaultPortrait ? degree : degree - 90;
+    if (degree < 0) {
+      // Lying flat.
+      return defaultPortrait ? Orientation.PORTRAIT : Orientation.UNKNOWN;
+    }
+    degree = defaultPortrait ? degree : Math.floorMod(degree - 90, 360);
     for (Orientation orientation : Orientation.values()) {
       if (orientation != Orientation.UNKNOWN
           && Math.abs(degree - orientation.getDegree()) <= 45) {
@@ -144,7 +206,9 @@ public class OrientationMonitor {
           .getSystemService(DisplayManager.class)
           .registerDisplayListener(displayListener, new Handler(Looper.getMainLooper()));
     }
-    orientationEventListener.enable();
+    if (sensors != null && accelerometer != null) {
+      sensors.registerListener(sensorListener, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+    }
   }
 
   public void disable() {
@@ -155,7 +219,9 @@ public class OrientationMonitor {
     if (context != null) {
       context.getSystemService(DisplayManager.class).unregisterDisplayListener(displayListener);
     }
-    orientationEventListener.disable();
+    if (sensors != null) {
+      sensors.unregisterListener(sensorListener);
+    }
   }
 
   public boolean isEnabled() {
@@ -177,15 +243,5 @@ public class OrientationMonitor {
   /** Whether a callback is registered, as while the braille keyboard is shown. */
   public boolean hasCallback() {
     return orientationMonitorCallback != null;
-  }
-
-  @VisibleForTesting
-  public void testing_setOrientationEventListener(OrientationEventListener listener) {
-    orientationEventListener = listener;
-  }
-
-  @VisibleForTesting
-  public OrientationEventListener testing_getOrientationEventListener() {
-    return orientationEventListener;
   }
 }

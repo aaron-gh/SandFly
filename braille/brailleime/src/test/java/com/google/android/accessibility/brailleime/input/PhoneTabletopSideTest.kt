@@ -48,7 +48,7 @@ class PhoneTabletopSideTest {
     // angle, which reads as held up, and a key typed while tipped.
     layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 200)
     side.onTabletopTouch()
-    side.onScreenAwayTouch(portOnRight = true, heldUpright = false)
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = false, nowMs = 250)
     assertNull(side.typedPortOnRight)
     assertTrue(layFlat(heldPortLeftFacing, heldAtMs = 300, nowMs = 400))
     assertEquals(PortPosition.LEFT, side.port)
@@ -56,7 +56,7 @@ class PhoneTabletopSideTest {
 
   @Test
   fun typedScreenAway_comesFirst() {
-    side.onScreenAwayTouch(portOnRight = true, heldUpright = true)
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = true, nowMs = 50)
     assertTrue(layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 200))
     assertEquals(PortPosition.RIGHT, side.port)
     assertTrue(side.portOnRight)
@@ -64,7 +64,7 @@ class PhoneTabletopSideTest {
 
   @Test
   fun typedScreenAway_isKeptWhenLiftedInAPauseAndLaidFlatAgain() {
-    side.onScreenAwayTouch(portOnRight = true, heldUpright = true)
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = true, nowMs = 50)
     layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 200)
     // Lifted without typing, so held up again, then dipped flat.
     assertTrue(layFlat(heldPortLeftFacing, heldAtMs = 300, nowMs = 400))
@@ -73,7 +73,7 @@ class PhoneTabletopSideTest {
 
   @Test
   fun typingOnTheTable_forgetsTheTypedSide() {
-    side.onScreenAwayTouch(portOnRight = true, heldUpright = true)
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = true, nowMs = 50)
     layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 200)
     side.onTabletopTouch()
     assertNull(side.typedPortOnRight)
@@ -83,7 +83,7 @@ class PhoneTabletopSideTest {
 
   @Test
   fun typedSide_turnsWithThePhoneOnTheTable() {
-    side.onScreenAwayTouch(portOnRight = true, heldUpright = true)
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = true, nowMs = 50)
     layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 200)
     side.turn(1, tabletop = true)
     assertEquals(PortPosition.NEAR, side.port)
@@ -98,7 +98,7 @@ class PhoneTabletopSideTest {
 
   @Test
   fun typedSide_doesNotTurnWhileHeldUp() {
-    side.onScreenAwayTouch(portOnRight = true, heldUpright = true)
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = true, nowMs = 50)
     layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 200)
     side.turn(2, tabletop = false)
     assertEquals(true, side.typedPortOnRight)
@@ -112,7 +112,7 @@ class PhoneTabletopSideTest {
     assertFalse(layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 400))
     assertEquals(PortPosition.RIGHT, side.port)
     // Typing in screen-away mode is something new.
-    side.onScreenAwayTouch(portOnRight = false, heldUpright = true)
+    side.onScreenAwayTouch(portOnRight = false, heldUprightInLandscape = true, nowMs = 450)
     assertTrue(layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 500))
     assertEquals(PortPosition.LEFT, side.port)
   }
@@ -129,5 +129,29 @@ class PhoneTabletopSideTest {
     side.turn(1, tabletop = true)
     assertEquals(PortPosition.NEAR, side.port)
     assertTrue(side.portOnRight)
+  }
+
+  @Test
+  fun heldUpInPortraitAfterTyping_forgetsTheTypedSide() {
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = true, nowMs = 50)
+    // Picked up in portrait to read the screen, then laid flat with the port toward the user.
+    assertTrue(layFlat(Orientation.PORTRAIT, heldAtMs = 100, nowMs = 200))
+    assertEquals(PortPosition.NEAR, side.port)
+    assertNull(side.typedPortOnRight)
+  }
+
+  @Test
+  fun heldUpInLandscapeAfterTyping_keepsTheTypedSide() {
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = true, nowMs = 50)
+    assertTrue(layFlat(heldPortLeftFacing, heldAtMs = 100, nowMs = 200))
+    assertEquals(PortPosition.RIGHT, side.port)
+  }
+
+  @Test
+  fun touchedWhileHeldUpInPortrait_doesNotCount() {
+    side.onScreenAwayTouch(portOnRight = true, heldUprightInLandscape = false, nowMs = 150)
+    assertNull(side.typedPortOnRight)
+    assertTrue(layFlat(Orientation.PORTRAIT, heldAtMs = 100, nowMs = 200))
+    assertEquals(PortPosition.NEAR, side.port)
   }
 }
