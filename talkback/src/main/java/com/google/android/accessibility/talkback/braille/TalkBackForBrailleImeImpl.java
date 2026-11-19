@@ -201,6 +201,10 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
         talkBackPrivateMethodProvider.requestTouchExploration(!disableEbt);
       }
     }
+    BrailleScreenInput input = service.getBrailleScreenInput();
+    if (input != null) {
+      input.onBrailleKeyboardShown();
+    }
   }
 
   private void passWholeScreenThroughKeepingExploreByTouchOn() {
@@ -269,6 +273,10 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
           Feedback.passThroughMode(LOCK_PASS_THROUGH, /* region= */ null));
     } else {
       applyExploreByTouchPreference();
+    }
+    BrailleScreenInput input = service.getBrailleScreenInput();
+    if (input != null) {
+      input.onBrailleKeyboardHidden();
     }
   }
 

@@ -100,16 +100,27 @@ class HandwritingOverlay(
     return true
   }
 
-  /** Removes the surface. */
-  fun remove() {
+  /**
+   * Removes the surface. With [releasePassthrough] false, the region touches pass through is left
+   * as it is, for a window that took it over, such as the braille keyboard.
+   */
+  fun remove(releasePassthrough: Boolean = true) {
     val current = view ?: return
     view = null
-    clearPassthroughRegion()
+    if (releasePassthrough) clearPassthroughRegion() else passthroughRegionSet = false
     try {
       windowManager.removeViewImmediate(current)
     } catch (e: IllegalArgumentException) {
       LogUtils.w(TAG, "Handwriting surface was not attached: %s", e)
     }
+  }
+
+  /**
+   * Sends touches on the whole screen to the surface again, after a window that held the region,
+   * such as the braille keyboard, let go of it.
+   */
+  fun claimPassthrough() {
+    if (isShowing && !passthroughRegionSet) setPassthroughRegion()
   }
 
   /** Sends touches on the whole screen straight to the surface, instead of through touch exploration. */
