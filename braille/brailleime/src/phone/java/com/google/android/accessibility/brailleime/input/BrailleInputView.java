@@ -43,6 +43,7 @@ import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import com.google.android.accessibility.brailleime.BrailleIme.OrientationSensitive;
 import com.google.android.accessibility.brailleime.BrailleInputOptions;
 import com.google.android.accessibility.brailleime.HeldOrientationTracker;
+import com.google.android.accessibility.brailleime.OrientationTrace;
 import com.google.android.accessibility.brailleime.OrientationMonitor;
 import com.google.android.accessibility.brailleime.R;
 import com.google.android.accessibility.brailleime.Utils;
@@ -52,6 +53,7 @@ import com.google.android.accessibility.brailleime.input.MultitouchHandler.HoldR
 import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -454,10 +456,14 @@ public class BrailleInputView extends View
       if (isPhone() && tabletopMode) {
         phoneTabletop.onTabletopTouch();
       } else if (isPhone()) {
+        Boolean typedBefore = phoneTabletop.getTypedPortOnRight();
         phoneTabletop.onScreenAwayTouch(
             layoutExpectsPortOnRight() != turnedAround,
             callback.wasHeldUprightInScreenAway() && heldPortOnRight() != null,
             SystemClock.uptimeMillis());
+        if (!Objects.equals(typedBefore, phoneTabletop.getTypedPortOnRight())) {
+          OrientationTrace.add("typed portOnRight=" + phoneTabletop.getTypedPortOnRight());
+        }
       }
     }
     boolean result;
@@ -518,12 +524,28 @@ public class BrailleInputView extends View
    */
   private void decideTabletopPortSideIfNeeded(boolean fromScreenAway) {
     if (isPhone()) {
+      Boolean typed = phoneTabletop.getTypedPortOnRight();
       if (phoneTabletop.decideIfNeeded(
           HeldOrientationTracker.getLastHeld(),
           HeldOrientationTracker.getLastHeldSeenMs(),
           isPortrait(),
           displayRotation(),
           SystemClock.uptimeMillis())) {
+        OrientationTrace.add(
+            "decide typed="
+                + typed
+                + " lastHeld="
+                + HeldOrientationTracker.getLastHeld()
+                + " seen="
+                + HeldOrientationTracker.getLastHeldSeenMs()
+                + " portrait="
+                + isPortrait()
+                + " rotation="
+                + displayRotation()
+                + " -> port="
+                + phoneTabletop.getPort()
+                + " portOnRight="
+                + phoneTabletop.getPortOnRight());
         callback.onTabletopPortSideDecided();
       }
       return;
@@ -593,6 +615,11 @@ public class BrailleInputView extends View
   public PortPosition turnTabletop(int quarters) {
     if (isPhone()) {
       phoneTabletop.turn(quarters, tabletopMode);
+      OrientationTrace.add(
+          "phone turn port="
+              + phoneTabletop.getPort()
+              + " portOnRight="
+              + phoneTabletop.getPortOnRight());
     } else {
       tabletopRotation = DotsOrientation.turnRotation(tabletopRotation, quarters);
     }
