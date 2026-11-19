@@ -183,7 +183,7 @@ object ItemFiles {
   fun exportMacros(context: Context, ids: Set<String>? = null): String {
     val all = Macros.read(prefs(context))
     val wanted = if (ids == null) all.map { it.id }.toSet() else referencedMacros(all, ids)
-    return newFile().put(Kind.MACROS.key, JSONArray(Macros.toJson(all.filter { it.id in wanted }))).toString(2)
+    return newFile().put(Kind.MACROS.key, JSONArray(Macros.toJson(all.filter { it.id in wanted }, shortcuts = false))).toString(2)
   }
 
   /** Returns a file of the gestures and keyboard shortcuts of [packages], or every app for null. */
@@ -314,7 +314,7 @@ object ItemFiles {
       val all = Macros.read(prefs(context))
       val wanted = referencedMacros(all, ids)
       val macros = all.filter { it.id in wanted }
-      if (macros.isNotEmpty()) file.put(Kind.MACROS.key, JSONArray(Macros.toJson(macros)))
+      if (macros.isNotEmpty()) file.put(Kind.MACROS.key, JSONArray(Macros.toJson(macros, shortcuts = false)))
     }
     return file.toString(2)
   }
@@ -590,6 +590,8 @@ object ItemFiles {
         val name = name(Kind.MACROS, number, item) ?: continue
         val id = macroIds[name.lowercase()] ?: continue
         val copy = JSONObject(item.toString()).put("id", id).put("name", name)
+        // A file never sets the token of a home screen shortcut; the macro it replaces keeps its own.
+        copy.remove("shortcut")
         copy.optJSONArray("steps")?.let { steps ->
           for (i in 0 until steps.length()) {
             val step = steps.optJSONObject(i) ?: continue
@@ -607,8 +609,8 @@ object ItemFiles {
             if (step !is Macros.RunCommand) step
             else Macros.RunCommand(command(name, step.value) ?: step.value)
           }
-        val read = macro.copy(steps = steps)
         val index = all.indexOfFirst { it.id == id }
+        val read = macro.copy(steps = steps, shortcutToken = all.getOrNull(index)?.shortcutToken)
         if (index >= 0) all[index] = read else all += read
         count++
       }

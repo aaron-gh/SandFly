@@ -470,6 +470,7 @@ class MacroFragment : MacroEditorFragment() {
         )
       }
     }
+    if (!external) screen.action(getString(R.string.macro_add_to_home_screen)) { addToHomeScreen() }
     if (Macros.canRename(macro.id)) screen.action(getString(R.string.menu_rename)) { rename() }
     if (ItemFileLauncher.isAvailable && !external) {
       screen.action(getString(R.string.item_file_export)) {
@@ -1095,10 +1096,20 @@ class MacroFragment : MacroEditorFragment() {
         ""
       } else {
         Macros.update(prefs, macro.copy(name = trimmed))
+        Macros.find(prefs, macro.id)?.let { MacroShortcuts.update(requireContext(), it) }
         activity?.title = trimmed
         rebuild()
         null
       }
+    }
+  }
+
+  private fun addToHomeScreen() {
+    when (MacroShortcuts.request(requireContext(), prefs, macroId)) {
+      MacroShortcuts.Result.REQUESTED -> {}
+      MacroShortcuts.Result.ALREADY_ADDED -> toast(R.string.macro_shortcut_already_added)
+      MacroShortcuts.Result.UNSUPPORTED -> toast(R.string.macro_shortcut_unsupported)
+      MacroShortcuts.Result.FAILED -> toast(R.string.macro_shortcut_failed)
     }
   }
 
