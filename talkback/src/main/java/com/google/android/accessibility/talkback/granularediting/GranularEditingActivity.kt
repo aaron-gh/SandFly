@@ -22,6 +22,7 @@ import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
 import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import android.widget.Button
 import android.widget.EditText
@@ -32,6 +33,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.AccessibilityDelegateCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
@@ -56,7 +58,8 @@ class GranularEditingActivity : AppCompatActivity() {
   private val undo = ArrayList<String>()
   private val redo = ArrayList<String>()
   private var lastFind = ""
-  private var lastFoundIndex = -1
+  /** The piece that last had accessibility focus, where Find continues when no piece has it. */
+  private var lastFocusIndex = -1
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
 
   private lateinit var list: RecyclerView
@@ -158,6 +161,7 @@ class GranularEditingActivity : AppCompatActivity() {
   private fun focus(index: Int) {
     if (pieces.isEmpty()) return
     val position = index.coerceIn(0, pieces.size - 1)
+    lastFocusIndex = position
     list.scrollToPosition(position)
     list.post {
       list
@@ -264,7 +268,6 @@ class GranularEditingActivity : AppCompatActivity() {
       val index = (from + step) % pieces.size
       val piece = pieces[index]
       if (text.substring(piece.coreStart, piece.coreEnd).contains(query, ignoreCase = true)) {
-        lastFoundIndex = index
         focus(index)
         return
       }
@@ -272,7 +275,7 @@ class GranularEditingActivity : AppCompatActivity() {
     list.announceForAccessibility(getString(R.string.granular_editing_not_found))
   }
 
-  private fun findStart(): Int = focusedIndex().takeIf { it >= 0 } ?: lastFoundIndex
+  private fun findStart(): Int = focusedIndex().takeIf { it >= 0 } ?: lastFocusIndex
 
   private fun focusedIndex(): Int {
     val focused = list.focusedChild ?: list.findFocus()
@@ -456,6 +459,17 @@ class GranularEditingActivity : AppCompatActivity() {
           val outValue = TypedValue()
           context.theme.resolveAttribute(android.R.attr.selectableItemBackground, outValue, true)
           setBackgroundResource(outValue.resourceId)
+          ViewCompat.setAccessibilityDelegate(
+            this,
+            object : AccessibilityDelegateCompat() {
+              override fun sendAccessibilityEvent(host: View, eventType: Int) {
+                if (eventType == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
+                  list.getChildAdapterPosition(host).takeIf { it >= 0 }?.let { lastFocusIndex = it }
+                }
+                super.sendAccessibilityEvent(host, eventType)
+              }
+            },
+          )
         }
       )
 
