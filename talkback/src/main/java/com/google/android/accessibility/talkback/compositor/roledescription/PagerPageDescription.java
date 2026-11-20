@@ -57,7 +57,7 @@ public final class PagerPageDescription implements RoleDescription {
     CharSequence pagerPageState =
         AccessibilityNodeFeedbackUtils.getNodeStateDescription(node, context, globalVariables);
     if (TextUtils.isEmpty(pagerPageState)) {
-      return AccessibilityEventFeedbackUtils.getPagerIndexCount(event, context, globalVariables);
+      return AccessibilityEventFeedbackUtils.getFocusedPagerPageIndexCount(event, context, globalVariables);
     }
     return pagerPageState;
   }
