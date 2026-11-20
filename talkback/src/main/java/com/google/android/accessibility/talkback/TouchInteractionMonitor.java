@@ -417,8 +417,6 @@ public class TouchInteractionMonitor
   private boolean passingSyntheticTouch;
   // Whether the touch in progress went down while touch was locked, and so does nothing.
   private boolean ignoringLockedTouch;
-  // The device ID Android gives the touches of gestures that accessibility services send.
-  private static final int INJECTED_DEVICE_ID = 0;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
   private final boolean touchFocusTimeout;
@@ -942,16 +940,11 @@ public class TouchInteractionMonitor
     if (passingSyntheticTouch) {
       return;
     }
-    // While touch is locked, a touch does nothing and nothing reaches the app, except a gesture
-    // SandFly sends itself, such as a script's, which goes to the app as it is.
+    // While touch is locked, a touch does nothing and nothing reaches the app. A gesture SandFly
+    // sends itself, such as a script's, is expected and handed on above.
     if (event.getActionMasked() == ACTION_DOWN) {
       ignoringLockedTouch = false;
       if (TouchLock.isLocked()) {
-        if (event.getDeviceId() == INJECTED_DEVICE_ID) {
-          passingSyntheticTouch = true;
-          requestDelegating("injectedWhileTouchLocked");
-          return;
-        }
         ignoringLockedTouch = true;
         TouchLock.onLockedTouch();
       }
