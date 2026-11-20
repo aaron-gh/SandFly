@@ -478,9 +478,16 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
     pipeline.returnFeedback(eventId, part);
   }
 
+  /**
+   * Whether a phone call rings or goes on. The audio mode covers SandFly without the phone
+   * permission, and the volume changes Android reports before the call state.
+   */
   private boolean isPhoneBusy() {
-    return (callStateMonitor != null)
-        && (callStateMonitor.getCurrentCallState() != TelephonyManager.CALL_STATE_IDLE);
+    if ((callStateMonitor != null)
+        && (callStateMonitor.getCurrentCallState() != TelephonyManager.CALL_STATE_IDLE)) {
+      return true;
+    }
+    return audioManager != null && VolumeToneGateKt.isPhoneCallAudioMode(audioManager.getMode());
   }
 
   /**
@@ -519,6 +526,11 @@ public class VolumeMonitor extends SameThreadBroadcastReceiver {
           intent.getIntExtra(AudioManagerCompatUtils.EXTRA_PREV_VOLUME_STREAM_VALUE, -1);
 
       if (typeAlias < 0 || value < 0 || prevValue < 0) {
+        return;
+      }
+      if (VolumeToneGateKt.isLinkedVolumeReport(type, typeAlias)) {
+        // A call ringing switches the dial tones volume to the call volume, reported as a change
+        // of the call volume that no user made.
         return;
       }
 

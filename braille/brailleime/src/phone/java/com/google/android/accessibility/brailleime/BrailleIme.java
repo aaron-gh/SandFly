@@ -474,6 +474,24 @@ public class BrailleIme extends InputMethodService {
   }
 
   @Override
+  public void onUpdateSelection(
+      int oldSelStart,
+      int oldSelEnd,
+      int newSelStart,
+      int newSelEnd,
+      int candidatesStart,
+      int candidatesEnd) {
+    super.onUpdateSelection(
+        oldSelStart, oldSelEnd, newSelStart, newSelEnd, candidatesStart, candidatesEnd);
+    // Cursor movements that don't go through this keyboard's commands, such as screen reader
+    // gestures, leave the word being typed as composing text where it is.
+    if (editBuffer != null && isConnectionValid()) {
+      editBuffer.onSelectionUpdated(
+          getImeConnection(), newSelStart, newSelEnd, candidatesStart, candidatesEnd);
+    }
+  }
+
+  @Override
   public boolean onEvaluateFullscreenMode() {
     // Why return false here? - see the note atop the class regarding how we suppress Views.
     return false;

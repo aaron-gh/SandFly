@@ -27,8 +27,11 @@ import android.view.MotionEvent.ACTION_MOVE
 import android.view.MotionEvent.ACTION_POINTER_DOWN
 import android.view.MotionEvent.ACTION_POINTER_UP
 import android.view.MotionEvent.ACTION_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_DOWN
 import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider
 import com.google.common.collect.ImmutableList
@@ -41,7 +44,7 @@ import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowLooper
 
-/** Taps with several fingers followed by a swipe with as many fingers. */
+/** Taps with several fingers followed by a swipe with as many fingers or with one finger. */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class MultiFingerTapThenSwipeTest {
@@ -86,6 +89,12 @@ class MultiFingerTapThenSwipeTest {
           "MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP",
           "MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_DOWN",
           "MAPPER_GESTURE_3_FINGER_TRIPLE_TAP_SWIPE_DOWN",
+          "MAPPER_GESTURE_SWIPE_UP",
+          "MAPPER_GESTURE_SWIPE_LEFT",
+          "MAPPER_GESTURE_SWIPE_RIGHT",
+          "MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP",
+          "MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT",
+          "MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT",
         ),
       )
       .apply { setMultiFingerGesturesEnabled(true) }
@@ -271,6 +280,93 @@ class MultiFingerTapThenSwipeTest {
     fingersUp(2)
     assertEquals(listOf<Int>(), completed)
     idle(1000)
+    assertEquals(listOf(GESTURE_2_FINGER_SINGLE_TAP), completed)
+  }
+
+  @Test
+  fun tapWithTwoFingersThenSwipeUpWithOneFinger() {
+    assigned +=
+      listOf(GESTURE_2_FINGER_SINGLE_TAP, GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP)
+    taps(fingers = 2, taps = 1)
+    swipe(fingers = 1, dxCm = 0f, dyCm = -1f)
+    idle(1000)
+    // Neither the two-finger tap nor the one-finger swipe on its own.
+    assertEquals(listOf(GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP), completed)
+  }
+
+  @Test
+  fun doubleTapWithTwoFingersThenSwipeLeftWithOneFinger() {
+    assigned +=
+      listOf(GESTURE_2_FINGER_DOUBLE_TAP, GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT)
+    taps(fingers = 2, taps = 2)
+    swipe(fingers = 1, dxCm = -1f, dyCm = 0f)
+    idle(1000)
+    assertEquals(listOf(GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT), completed)
+  }
+
+  @Test
+  fun tripleTapWithTwoFingersThenSwipeRightWithOneFinger() {
+    assigned += GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT
+    taps(fingers = 2, taps = 3)
+    swipe(fingers = 1, dxCm = 1f, dyCm = 0f)
+    assertEquals(listOf(GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT), completed)
+  }
+
+  @Test
+  fun twoFingerSwipeIsNotTheOneFingerSwipeGesture() {
+    assigned += GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP
+    taps(fingers = 2, taps = 1)
+    swipe(fingers = 2, dxCm = 0f, dyCm = -1f)
+    idle(1000)
+    assertEquals(false, GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP in completed)
+  }
+
+  @Test
+  fun oneFingerSwipeIsNotTheTwoFingerSwipeGesture() {
+    assigned += GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT
+    taps(fingers = 2, taps = 1)
+    swipe(fingers = 1, dxCm = -1f, dyCm = 0f)
+    idle(1000)
+    assertEquals(false, GESTURE_2_FINGER_SINGLE_TAP_SWIPE_LEFT in completed)
+  }
+
+  @Test
+  fun oneFingerSwipeInAnotherDirectionIsNotTheGesture() {
+    assigned += GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP
+    taps(fingers = 2, taps = 1)
+    swipe(fingers = 1, dxCm = 0f, dyCm = 1f)
+    idle(1000)
+    assertEquals(listOf<Int>(), completed)
+  }
+
+  @Test
+  fun lateOneFingerSwipeIsNotTheGesture() {
+    assigned +=
+      listOf(GESTURE_2_FINGER_SINGLE_TAP, GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP)
+    taps(fingers = 2, taps = 1)
+    idle(1000)
+    swipe(fingers = 1, dxCm = 0f, dyCm = -1f)
+    assertEquals(listOf(GESTURE_2_FINGER_SINGLE_TAP), completed)
+  }
+
+  @Test
+  fun singleTapWaitsForAOneFingerSwipeThatHasAnAction() {
+    assigned +=
+      listOf(GESTURE_2_FINGER_SINGLE_TAP, GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP)
+    fingersDown(2)
+    idle(50)
+    fingersUp(2)
+    assertEquals(listOf<Int>(), completed)
+    idle(1000)
+    assertEquals(listOf(GESTURE_2_FINGER_SINGLE_TAP), completed)
+  }
+
+  @Test
+  fun singleTapRunsAtItsLastTapWhenTheOneFingerSwipesHaveNoAction() {
+    assigned += GESTURE_2_FINGER_SINGLE_TAP
+    fingersDown(2)
+    idle(50)
+    fingersUp(2)
     assertEquals(listOf(GESTURE_2_FINGER_SINGLE_TAP), completed)
   }
 }

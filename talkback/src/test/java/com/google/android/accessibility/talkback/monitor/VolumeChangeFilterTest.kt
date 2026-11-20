@@ -28,8 +28,15 @@ import android.media.AudioAttributes.USAGE_MEDIA
 import android.media.AudioAttributes.USAGE_NOTIFICATION
 import android.media.AudioAttributes.USAGE_NOTIFICATION_RINGTONE
 import android.media.AudioAttributes.USAGE_VOICE_COMMUNICATION
+import android.media.AudioManager.MODE_CALL_REDIRECT
+import android.media.AudioManager.MODE_CALL_SCREENING
+import android.media.AudioManager.MODE_IN_CALL
+import android.media.AudioManager.MODE_IN_COMMUNICATION
+import android.media.AudioManager.MODE_NORMAL
+import android.media.AudioManager.MODE_RINGTONE
 import android.media.AudioManager.STREAM_ACCESSIBILITY
 import android.media.AudioManager.STREAM_ALARM
+import android.media.AudioManager.STREAM_DTMF
 import android.media.AudioManager.STREAM_MUSIC
 import android.media.AudioManager.STREAM_NOTIFICATION
 import android.media.AudioManager.STREAM_RING
@@ -218,5 +225,28 @@ class VolumeChangeFilterTest {
     )
     // A podcast app's speech counts when SandFly plays nothing at the media volume.
     assertTrue(isMediaPlaying(listOf(USAGE_MEDIA), listOf(CONTENT_TYPE_SPEECH), false))
+  }
+
+  @Test
+  fun aRingingOrOngoingPhoneCallIsFoundFromTheAudioMode() {
+    assertTrue(isPhoneCallAudioMode(MODE_RINGTONE))
+    assertTrue(isPhoneCallAudioMode(MODE_IN_CALL))
+    assertTrue(isPhoneCallAudioMode(MODE_CALL_SCREENING))
+    assertTrue(isPhoneCallAudioMode(MODE_CALL_REDIRECT))
+    assertFalse(isPhoneCallAudioMode(MODE_NORMAL))
+    // App calls are found from their players.
+    assertFalse(isPhoneCallAudioMode(MODE_IN_COMMUNICATION))
+  }
+
+  @Test
+  fun theDialTonesVolumeSwitchingToTheCallVolumeIsNoUserChange() {
+    // Reported when a call starts ringing, and back when it ends.
+    assertTrue(isLinkedVolumeReport(STREAM_DTMF, STREAM_VOICE_CALL))
+    assertTrue(isLinkedVolumeReport(STREAM_DTMF, STREAM_RING))
+    assertFalse(isLinkedVolumeReport(STREAM_VOICE_CALL, STREAM_VOICE_CALL))
+    assertFalse(isLinkedVolumeReport(STREAM_RING, STREAM_RING))
+    assertFalse(isLinkedVolumeReport(STREAM_NOTIFICATION, STREAM_RING))
+    // A dial tones volume of its own, or one reported without its alias.
+    assertFalse(isLinkedVolumeReport(STREAM_DTMF, STREAM_DTMF))
   }
 }

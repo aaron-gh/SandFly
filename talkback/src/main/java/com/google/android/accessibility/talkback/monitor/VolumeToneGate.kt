@@ -58,6 +58,25 @@ fun isMediaPlaying(usages: List<Int>, contentTypes: List<Int>, ownMediaAudio: Bo
           type != AudioAttributes.CONTENT_TYPE_SONIFICATION))
   }
 
+/**
+ * Whether the audio [mode] is that of a phone call ringing or going on. Read without the phone
+ * permission, and already set when Android reports the volume changes of the call's start.
+ */
+fun isPhoneCallAudioMode(mode: Int): Boolean =
+  mode == AudioManager.MODE_RINGTONE ||
+    mode == AudioManager.MODE_IN_CALL ||
+    mode == AudioManager.MODE_CALL_SCREENING ||
+    mode == AudioManager.MODE_CALL_REDIRECT
+
+/**
+ * Whether a volume change reported for [stream], whose volume follows [alias], is one no user made.
+ * The dial tones volume follows the ring volume, or the call volume while a call rings or goes on,
+ * and Android reports a change of it each time it switches between them. Volume key steps that
+ * change it are reported for [alias] as well.
+ */
+fun isLinkedVolumeReport(stream: Int, alias: Int): Boolean =
+  stream == AudioManager.STREAM_DTMF && alias != AudioManager.STREAM_DTMF
+
 /** The audio usage that makes the volume step tone play at the volume of [stream]. */
 fun volumeToneUsage(stream: Int): Int =
   when (stream) {

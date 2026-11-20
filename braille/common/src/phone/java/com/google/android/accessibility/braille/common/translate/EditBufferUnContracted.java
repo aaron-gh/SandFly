@@ -100,19 +100,26 @@ public class EditBufferUnContracted implements EditBuffer {
     holdings.append(brailleCharacter);
     String currentTranslation =
         SentenceCapitalization.apply(capitalizeHoldings, translator.translateToPrint(holdings));
-    if (currentTranslation.startsWith(previousTranslation)) {
-      result = currentTranslation.substring(previousTranslation.length());
-    }
+    // The cell can also change the text of the cells before it, such as a custom character whose
+    // first cell is a character on its own: that text is replaced.
+    int unchanged = commonPrefixLength(previousTranslation, currentTranslation);
+    result = currentTranslation.substring(unchanged);
 
     // Use setComposingText() to send user input braille character in text but not password fields;
     // Otherwise use commitText().
-    if (!TextUtils.isEmpty(result)) {
+    if (!currentTranslation.equals(previousTranslation)) {
       if (BrailleCommonUtils.isTextField(imeConnection.editorInfo)
           && !BrailleCommonUtils.isPasswordField(imeConnection.editorInfo)) {
         imeConnection.inputConnection.setComposingText(currentTranslation, 1);
       } else {
-        imeConnection.inputConnection.commitText(result, 1);
-        speakIfFieldHidesTypedText(imeConnection, result);
+        int replaced = previousTranslation.length() - unchanged;
+        if (replaced > 0) {
+          imeConnection.inputConnection.deleteSurroundingText(replaced, 0);
+        }
+        if (!result.isEmpty()) {
+          imeConnection.inputConnection.commitText(result, 1);
+          speakIfFieldHidesTypedText(imeConnection, result);
+        }
       }
       lastCommitIndexOfHoldings = holdings.size();
     }
@@ -129,6 +136,20 @@ public class EditBufferUnContracted implements EditBuffer {
       result = textToSpeak;
     }
     return result;
+  }
+
+  /** The length of the text that [a] and [b] start with, not splitting a surrogate pair. */
+  @VisibleForTesting
+  static int commonPrefixLength(String a, String b) {
+    int length = 0;
+    int max = Math.min(a.length(), b.length());
+    while (length < max && a.charAt(length) == b.charAt(length)) {
+      length++;
+    }
+    if (length > 0 && length < max && Character.isHighSurrogate(a.charAt(length - 1))) {
+      length--;
+    }
+    return length;
   }
 
   private void startWordInNumbersInNumberField(
@@ -327,6 +348,40 @@ public class EditBufferUnContracted implements EditBuffer {
   @Override
   public void commit(ImeConnection imeConnection) {
     clearHoldingsAndFinishComposing(imeConnection.inputConnection);
+  }
+
+  @Override
+  public boolean hasHoldings(ImeConnection imeConnection) {
+    return !holdings.isEmpty();
+  }
+
+  /**
+   * Finishes the word being typed when the cursor leaves its composing text, such as after a
+   * cursor movement by a gesture, so that the next cells start a word at the cursor and the word's
+   * text stays where it is.
+   */
+  @Override
+  public void onSelectionUpdated(
+      ImeConnection imeConnection,
+      int newSelStart,
+      int newSelEnd,
+      int candidatesStart,
+      int candidatesEnd) {
+    if (holdings.isEmpty() || candidatesStart < 0 || candidatesEnd < candidatesStart) {
+      return;
+    }
+    if (newSelStart != newSelEnd
+        || !isCursorOfComposingText(newSelEnd, candidatesStart, candidatesEnd)) {
+      commit(imeConnection);
+    }
+  }
+
+  /**
+   * Whether [cursor] is where this buffer leaves the cursor after setting the composing text from
+   * [candidatesStart] to [candidatesEnd]: at its end.
+   */
+  protected boolean isCursorOfComposingText(int cursor, int candidatesStart, int candidatesEnd) {
+    return cursor == candidatesEnd;
   }
 
   @Override

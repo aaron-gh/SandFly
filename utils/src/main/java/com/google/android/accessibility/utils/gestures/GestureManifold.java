@@ -188,6 +188,21 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_2_FINGER_SWIPE_RIGHT_AND_UP = -128;
   public static final int GESTURE_2_FINGER_SWIPE_RIGHT_AND_DOWN = -129;
 
+  // Taps with two fingers followed by a swipe with one finger. Recognized by SandFly's own
+  // detection only while they have an action.
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP = -130;
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_DOWN = -131;
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_LEFT = -132;
+  public static final int GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_RIGHT = -133;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_UP = -134;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_DOWN = -135;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT = -136;
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_RIGHT = -137;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_UP = -138;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_DOWN = -139;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_LEFT = -140;
+  public static final int GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT = -141;
+
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
 

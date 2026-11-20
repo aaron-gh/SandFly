@@ -1116,8 +1116,8 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_switch_keyboard))) {
       result = NextKeyboard.switchKeyboard(service, said -> speak(said.toString()));
     } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {
-      AccessibilityNodeInfoCompat node =
-          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      // The field the keyboard types into when focus is on the keyboard.
+      AccessibilityNodeInfoCompat node = getSelectTextFocus(/* speakIfNone= */ false);
       result = pipeline.returnFeedback(eventId, Feedback.edit(node, CLEAR_SELECTION));
     } else if (action.equals(service.getString(R.string.shortcut_value_copy))) {
       AccessibilityNodeInfoCompat node =
