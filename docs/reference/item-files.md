@@ -151,6 +151,7 @@ A gesture left out of `gestures` runs what it runs without the profile. `swipesB
   "sandFlyKey": "Insert",
   "sequences": false,
   "arrowsNavigate": false,
+  "plainKeys": false,
   "shortcuts": {
     "NEXT": "SandFly+Right",
     "PREVIOUS": "SandFly+Left",
@@ -161,7 +162,7 @@ A gesture left out of `gestures` runs what it runs without the profile. `swipesB
 
 An imported keymap is a custom keymap; choose it in Settings > Keyboard shortcuts > Choose a keymap. Commands left out of `shortcuts` have no keyboard shortcut in it, so start from an exported keymap to change a few shortcuts. Each command has one shortcut, and two commands can't have the same keys.
 
-`sandFlyKey` is `Meta`, `Alt`, `Ctrl+Alt`, `Ctrl+Meta`, `Insert` or `Numpad Insert`; `Meta` by default. `sequences` is whether shortcuts can be sequences. `arrowsNavigate` is whether arrow keys and other shortcuts without the SandFly key work outside browse mode, as in NVDA.
+`sandFlyKey` is `Meta`, `Alt`, `Ctrl+Alt`, `Ctrl+Meta`, `Insert`, `Numpad Insert`, `Sym` or `Right Alt`; `Meta` by default. `sequences` is whether shortcuts can be sequences. `arrowsNavigate` is whether arrow keys and other shortcuts without the SandFly key work outside browse mode, as in NVDA. `plainKeys` is optional, `false` by default: whether the SandFly key with a shortcut without it runs that shortcut anywhere, text fields too, as in the keyboard phone keymap.
 
 ## Gestures and keyboard shortcuts in apps
 

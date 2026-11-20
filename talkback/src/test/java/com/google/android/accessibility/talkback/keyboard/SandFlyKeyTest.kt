@@ -406,4 +406,86 @@ class SandFlyKeyTest {
     assertFalse(manager.isKeyboardInputOff)
     assertEquals(emptyList<String?>(), keys)
   }
+
+  /** A key's name as shortcuts are spoken, which Robolectric gives as its number. */
+  private fun name(keyCode: Int) =
+    KeyEvent.keyCodeToString(keyCode).removePrefix("KEYCODE_").replace('_', ' ')
+
+  @Test
+  fun keyboardPhoneSingleKeysWorkOutsideTextFields() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SPACE))
+    manager.up(KeyEvent.KEYCODE_SPACE)
+    val shift = KeyEvent.META_SHIFT_ON or KeyEvent.META_SHIFT_LEFT_ON
+    manager.down(KeyEvent.KEYCODE_SHIFT_LEFT, shift)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SPACE, shift))
+    manager.up(KeyEvent.KEYCODE_SPACE, shift)
+    manager.up(KeyEvent.KEYCODE_SHIFT_LEFT)
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_SPACE), "Shift + " + name(KeyEvent.KEYCODE_SPACE)), keys)
+    // A key without a shortcut is typing.
+    assertFalse(manager.down(KeyEvent.KEYCODE_O))
+  }
+
+  @Test
+  fun keyboardPhoneSingleKeysTypeInATextFieldBeingEdited() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    editTextField(manager)
+    assertFalse(manager.down(KeyEvent.KEYCODE_T))
+    manager.up(KeyEvent.KEYCODE_T)
+    assertFalse(manager.down(KeyEvent.KEYCODE_SPACE))
+    manager.up(KeyEvent.KEYCODE_SPACE)
+    assertTrue(keys.isEmpty())
+
+    // Sym with the key does what the key does outside text fields.
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+    assertTrue(manager.down(KeyEvent.KEYCODE_SPACE))
+    manager.up(KeyEvent.KEYCODE_SPACE)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_SPACE)), keys)
+  }
+
+  @Test
+  fun keyboardPhoneSandFlyKeyShortcuts() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+    assertTrue(manager.down(KeyEvent.KEYCODE_P))
+    manager.up(KeyEvent.KEYCODE_P)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(listOf<String?>("Sym + " + name(KeyEvent.KEYCODE_P)), keys)
+    // P alone has no shortcut.
+    assertFalse(manager.down(KeyEvent.KEYCODE_P))
+  }
+
+  @Test
+  fun rightAltHeldIsTheSandFlyKeyWithoutAlt() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.RIGHT_ALT)
+    editTextField(manager)
+    val rightAlt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_RIGHT_ON
+    assertTrue(manager.down(KeyEvent.KEYCODE_ALT_RIGHT, rightAlt))
+    assertTrue(manager.down(KeyEvent.KEYCODE_K, rightAlt))
+    manager.up(KeyEvent.KEYCODE_K, rightAlt)
+    manager.up(KeyEvent.KEYCODE_ALT_RIGHT)
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_K)), keys)
+
+    // Left Alt with a letter types a digit.
+    val leftAlt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_LEFT_ON
+    assertFalse(manager.down(KeyEvent.KEYCODE_ALT_LEFT, leftAlt))
+    assertFalse(manager.down(KeyEvent.KEYCODE_K, leftAlt))
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun altAsKeyboardPhoneSandFlyKeyTypesInTextFields() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.ALT)
+    editTextField(manager)
+    val alt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_RIGHT_ON
+    manager.down(KeyEvent.KEYCODE_ALT_RIGHT, alt)
+    // Alt + U types 1 on the Unihertz Titan.
+    assertFalse(manager.down(KeyEvent.KEYCODE_U, alt))
+    manager.up(KeyEvent.KEYCODE_U, alt)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SPACE, alt))
+    manager.up(KeyEvent.KEYCODE_SPACE, alt)
+    manager.up(KeyEvent.KEYCODE_ALT_RIGHT)
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_SPACE)), keys)
+  }
 }

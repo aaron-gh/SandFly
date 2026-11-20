@@ -22,8 +22,9 @@ import com.google.android.accessibility.talkback.R
 
 /**
  * A key that can be the SandFly key, which keymap shortcuts are pressed with. Meta, Alt, Ctrl + Alt
- * and Ctrl + Meta are modifiers to Android; Insert and Numpad Insert are ordinary keys that SandFly
- * takes and treats as a modifier while they're held.
+ * and Ctrl + Meta are modifiers to Android; Insert, Numpad Insert, Sym and Right Alt are keys that
+ * SandFly takes and treats as a modifier while they're held. Right Alt is the Sym key of keyboard
+ * phones such as the Zinwa Q25, whose Alt key is left Alt.
  */
 enum class SandFlyKey(
   @StringRes val valueRes: Int,
@@ -71,6 +72,18 @@ enum class SandFlyKey(
     R.string.keycombo_key_modifier_numpad_insert,
     KeyComboModel.HELD_KEY_MODIFIER,
     KeyEvent.KEYCODE_NUMPAD_0,
+  ),
+  SYM(
+    R.string.trigger_modifier_sym_entry_value,
+    R.string.keycombo_key_modifier_sym,
+    KeyComboModel.HELD_KEY_MODIFIER,
+    KeyEvent.KEYCODE_SYM,
+  ),
+  RIGHT_ALT(
+    R.string.trigger_modifier_right_alt_entry_value,
+    R.string.keycombo_key_modifier_right_alt,
+    KeyComboModel.HELD_KEY_MODIFIER,
+    KeyEvent.KEYCODE_ALT_RIGHT,
   );
 
   /** Whether this is one key, which can be pressed twice, as two held together can't. */
@@ -93,7 +106,27 @@ enum class SandFlyKey(
           keyCode == KeyEvent.KEYCODE_META_LEFT ||
           keyCode == KeyEvent.KEYCODE_META_RIGHT
       INSERT,
-      NUMPAD_INSERT -> keyCode == this.keyCode
+      NUMPAD_INSERT,
+      SYM,
+      RIGHT_ALT -> keyCode == this.keyCode
+    }
+
+  /**
+   * Whether Alt pressed with letters types digits and symbols on the keyboards this key is used on,
+   * so that the SandFly key with a letter is typing in a text field being edited.
+   */
+  val typesWithLetters: Boolean
+    get() = this == ALT
+
+  /**
+   * Removes from [modifiers] what Android adds while this held key is down: Right Alt held alone
+   * adds Alt to the keys pressed with it.
+   */
+  fun withoutOwnModifiers(modifiers: Int, metaState: Int): Int =
+    if (this == RIGHT_ALT && metaState and KeyEvent.META_ALT_LEFT_ON == 0) {
+      modifiers and KeyEvent.META_ALT_ON.inv()
+    } else {
+      modifiers
     }
 
   /** Whether this is an ordinary key held as a modifier. */

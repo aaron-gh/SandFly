@@ -27,6 +27,11 @@ data class CustomKeymap(
   val usesSequences: Boolean,
   /** Whether its shortcuts without the SandFly key leave text fields being edited alone. */
   val arrowsNavigate: Boolean = false,
+  /**
+   * Whether the SandFly key with a shortcut without it does the same anywhere, text fields too, as
+   * in the keyboard phone keymap.
+   */
+  val plainKeys: Boolean = false,
 ) {
   /** The keymap preference's value for this keymap. */
   val value: String
@@ -64,6 +69,7 @@ object CustomKeymaps {
   private const val NAME = "pref_custom_keymap_name_"
   private const val SEQUENCES = "pref_custom_keymap_sequences_"
   private const val ARROWS_NAVIGATE = "pref_custom_keymap_arrows_navigate_"
+  private const val PLAIN_KEYS = "pref_custom_keymap_plain_keys_"
 
   private fun prefs(context: Context): SharedPreferences =
     SharedPreferencesUtils.getSharedPreferences(context)
@@ -82,6 +88,7 @@ object CustomKeymaps {
       name,
       prefs.getBoolean(SEQUENCES + id, false),
       prefs.getBoolean(ARROWS_NAVIGATE + id, false),
+      prefs.getBoolean(PLAIN_KEYS + id, false),
     )
   }
 
@@ -106,10 +113,11 @@ object CustomKeymaps {
     sandFlyKey: SandFlyKey,
     shortcuts: Map<String, KeyCombo>,
     arrowsNavigate: Boolean = false,
+    plainKeys: Boolean = false,
   ): CustomKeymap {
     val ids = ids(context)
     val id = ((ids.mapNotNull { it.toIntOrNull() }.maxOrNull() ?: 0) + 1).toString()
-    val keymap = CustomKeymap(id, name, usesSequences, arrowsNavigate)
+    val keymap = CustomKeymap(id, name, usesSequences, arrowsNavigate, plainKeys)
     val current = KeyComboPersister(context, keymap.persisterPrefix)
     val original = KeyComboPersister(context, keymap.originalPersisterPrefix)
     for ((key, keyCombo) in shortcuts) {
@@ -120,6 +128,7 @@ object CustomKeymaps {
       putString(NAME + id, name)
       putBoolean(SEQUENCES + id, usesSequences)
       putBoolean(ARROWS_NAVIGATE + id, arrowsNavigate)
+      putBoolean(PLAIN_KEYS + id, plainKeys)
       putString(keymap.sandFlyKeyPref, context.getString(sandFlyKey.valueRes))
       putString(IDS, (ids + id).joinToString(","))
     }
@@ -137,6 +146,7 @@ object CustomKeymaps {
     sandFlyKey: SandFlyKey,
     shortcuts: Map<String, KeyCombo>,
     arrowsNavigate: Boolean,
+    plainKeys: Boolean,
   ) {
     for (prefix in listOf(keymap.persisterPrefix, keymap.originalPersisterPrefix)) {
       val persister = KeyComboPersister(context, prefix)
@@ -150,6 +160,7 @@ object CustomKeymaps {
     prefs(context).edit {
       putBoolean(SEQUENCES + keymap.id, usesSequences)
       putBoolean(ARROWS_NAVIGATE + keymap.id, arrowsNavigate)
+      putBoolean(PLAIN_KEYS + keymap.id, plainKeys)
       putString(keymap.sandFlyKeyPref, context.getString(sandFlyKey.valueRes))
     }
   }
@@ -173,6 +184,7 @@ object CustomKeymaps {
       remove(NAME + keymap.id)
       remove(SEQUENCES + keymap.id)
       remove(ARROWS_NAVIGATE + keymap.id)
+      remove(PLAIN_KEYS + keymap.id)
       remove(keymap.sandFlyKeyPref)
       putString(IDS, remaining.joinToString(","))
     }

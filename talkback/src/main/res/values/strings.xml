@@ -1342,6 +1342,8 @@
     <string name="value_jaws_keymap">JAWS keymap</string>
     <!-- Name of the keymap with Orca's keyboard commands. Orca is a screen reader for Linux; don't translate it. [CHAR LIMIT=40] -->
     <string name="value_orca_keymap">Orca keymap</string>
+    <!-- Keymap for phones with a built-in keyboard and no Ctrl or Meta key, such as the Unihertz Titan, BlackBerry KEY2 and Zinwa Q25. [CHAR LIMIT=40] -->
+    <string name="value_keyboard_phone_keymap">Keyboard phone keymap</string>
     <!-- Name of the keymap that keeps an older version's Default keymap, with the user's shortcuts. [CHAR LIMIT=40] -->
     <string name="keycombo_custom_keymap_default_name">Custom</string>
     <!-- Setting that makes a keymap of the user's own, as a copy of the keymap in use. [CHAR LIMIT=40] -->
@@ -1704,6 +1706,10 @@
     <string name="keycombo_key_modifier_insert">Insert</string>
     <!-- The 0 key of the number pad with Num Lock off, where it is Insert. e.g. Numpad Insert + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_numpad_insert">Numpad Insert</string>
+    <!-- The Sym key of keyboard phones such as the Unihertz Titan and BlackBerry KEY2. e.g. Sym + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_sym">Sym</string>
+    <!-- The right Alt key, which is the Sym key of keyboard phones such as the Zinwa Q25. e.g. Right Alt + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_right_alt">Right Alt</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
     <string name="keycombo_key_arrow_right">Arrow Right</string>
     <!-- String representation of arrow left key. e.g. Meta + Arrow Left. -->
