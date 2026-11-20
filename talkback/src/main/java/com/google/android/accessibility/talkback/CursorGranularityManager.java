@@ -29,6 +29,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -45,6 +46,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Function;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -254,7 +256,9 @@ public class CursorGranularityManager {
       return false;
     }
 
+    CursorGranularity previous = currentGranularity;
     currentGranularity = granularity;
+    carryPosition(previous, eventId);
     return true;
   }
 
@@ -347,9 +351,51 @@ public class CursorGranularityManager {
     int nextIndex =
         nextGranularityIndex(supportedGranularities, currentIndex, direction, sentencesOffered());
 
+    CursorGranularity previous = currentGranularity;
     currentGranularity = supportedGranularities.get(nextIndex);
     savedGranularity = currentGranularity;
+    carryPosition(previous, eventId);
     return nextIndex != currentIndex;
+  }
+
+  /**
+   * Moves on from the same place in the text when the granularity changes between sentences and
+   * another text granularity. Android moves through a text view's characters, words, lines and
+   * paragraphs from its own cursor, and sentences are moved through from a position kept here, so
+   * without this the next move starts from the beginning of the text.
+   */
+  private void carryPosition(@Nullable CursorGranularity previous, EventId eventId) {
+    CursorGranularity next = currentGranularity;
+    if (previous == null
+        || next == null
+        || previous == next
+        || !previous.isMicroGranularity()
+        || !next.isMicroGranularity()
+        || (previous != CursorGranularity.SENTENCE && next != CursorGranularity.SENTENCE)
+        || currentNodeIndex < 0
+        || currentNodeIndex >= navigableNodes.size()) {
+      return;
+    }
+    AccessibilityNodeInfoCompat node = navigableNodes.get(currentNodeIndex);
+    // Text SandFly moves through keeps one position for every granularity, and a focused edit
+    // text moves by sentence from the field's cursor.
+    if (GranularityTraversal.shouldHandleGranularityTraversalInTalkback(node)
+        || (Role.getRole(node) == Role.ROLE_EDIT_TEXT && node.isFocused())) {
+      return;
+    }
+    if (previous == CursorGranularity.SENTENCE) {
+      int position = granularityTraversal.getCursorPosition(node);
+      if (position < 0) {
+        return;
+      }
+      Bundle arguments = new Bundle();
+      arguments.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, position);
+      arguments.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, position);
+      pipeline.returnFeedback(
+          eventId, Feedback.nodeAction(node, ACTION_SET_SELECTION, arguments));
+    } else if (node.refresh() && node.getTextSelectionEnd() >= 0) {
+      granularityTraversal.restoreSentencePosition(node, node.getTextSelectionEnd());
+    }
   }
 
   /** Whether Sentences is turned on in Reading controls and usable in the current mode. */
@@ -799,6 +845,17 @@ public class CursorGranularityManager {
       @Nullable AccessibilityNodeInfoCompat root,
       @Nullable List<AccessibilityNodeInfoCompat> nodes,
       @NonNull Set<AccessibilityNodeInfoCompat> visitedNodes) {
+    return extractNavigableNodes(root, nodes, visitedNodes, Scripts::groupItems);
+  }
+
+  @VisibleForTesting
+  static int extractNavigableNodes(
+      @Nullable AccessibilityNodeInfoCompat root,
+      @Nullable List<AccessibilityNodeInfoCompat> nodes,
+      @NonNull Set<AccessibilityNodeInfoCompat> visitedNodes,
+      @NonNull
+          Function<AccessibilityNodeInfoCompat, @Nullable List<AccessibilityNodeInfoCompat>>
+              groupItemsOf) {
     int supportedGranularities = 0;
     if (root == null) {
       return supportedGranularities;
@@ -808,23 +865,23 @@ public class CursorGranularityManager {
       // Root already visited. Stop searching.
       return supportedGranularities;
     }
-    if (GranularityTraversal.shouldHandleGranularityTraversalInTalkback(root)) {
-      LogUtils.d(TAG, "Adding granularities supported by Talkback managed granularity navigation");
-      supportedGranularities |=
-          GranularityTraversal.TALKBACK_SUPPORTED_GRANULARITIES | sentenceMask(root);
-      if (nodes != null) {
-        nodes.add(root);
-      }
-
-    } else if (AccessibilityNodeInfoUtils.getMovementGranularity(root) != 0) {
-      if (nodes != null) {
-        nodes.add(root);
-      }
-      supportedGranularities |= root.getMovementGranularities() | sentenceMask(root);
-    }
+    supportedGranularities |= addNavigableNode(root, nodes);
 
     if (!TextUtils.isEmpty(root.getContentDescription())) {
       // Don't pull children from nodes with content descriptions.
+      return supportedGranularities;
+    }
+    // A script reads an item it groups from the items inside it, buttons included, in their reading
+    // order. Move through those items, so that the text starts where its speech starts.
+    List<AccessibilityNodeInfoCompat> groupItems = groupItemsOf.apply(root);
+    if (groupItems != null && !groupItems.isEmpty()) {
+      if (TextUtils.isEmpty(root.getText())) {
+        for (AccessibilityNodeInfoCompat item : groupItems) {
+          if (item != null && visitedNodes.add(item)) {
+            supportedGranularities |= addNavigableNode(item, nodes);
+          }
+        }
+      }
       return supportedGranularities;
     }
     ReorderedChildrenIterator iterator = ReorderedChildrenIterator.createAscendingIterator(root);
@@ -834,11 +891,29 @@ public class CursorGranularityManager {
       // TYPE_VIEW_ACCESSIBILITY_FOCUSED events. See named node "description_for_tree_nodes" in
       // compositor.json.
       if (FILTER_NON_FOCUSABLE_VISIBLE_NODE.accept(child)) {
-        supportedGranularities |= extractNavigableNodes(child, nodes, visitedNodes);
+        supportedGranularities |= extractNavigableNodes(child, nodes, visitedNodes, groupItemsOf);
       }
     }
 
     return supportedGranularities;
+  }
+
+  /** Adds {@code node} to {@code nodes} if its text can be moved through, and returns its mask. */
+  private static int addNavigableNode(
+      AccessibilityNodeInfoCompat node, @Nullable List<AccessibilityNodeInfoCompat> nodes) {
+    if (GranularityTraversal.shouldHandleGranularityTraversalInTalkback(node)) {
+      LogUtils.d(TAG, "Adding granularities supported by Talkback managed granularity navigation");
+      if (nodes != null) {
+        nodes.add(node);
+      }
+      return GranularityTraversal.TALKBACK_SUPPORTED_GRANULARITIES | sentenceMask(node);
+    } else if (AccessibilityNodeInfoUtils.getMovementGranularity(node) != 0) {
+      if (nodes != null) {
+        nodes.add(node);
+      }
+      return node.getMovementGranularities() | sentenceMask(node);
+    }
+    return 0;
   }
 
   private static int sentenceMask(AccessibilityNodeInfoCompat node) {
@@ -859,6 +934,19 @@ public class CursorGranularityManager {
       return;
     }
     pipeline.returnFeedback(eventId, Feedback.nodeAction(root, ACTION_SET_SELECTION));
+
+    // The items a script groups are moved through even when they are buttons, which the subtree
+    // below leaves out. An app keeps their selection from an earlier move, so the move would start
+    // where it ended.
+    List<AccessibilityNodeInfoCompat> groupItems = Scripts.groupItems(root);
+    if (groupItems != null && !groupItems.isEmpty()) {
+      for (AccessibilityNodeInfoCompat item : groupItems) {
+        if (item != null) {
+          pipeline.returnFeedback(eventId, Feedback.nodeAction(item, ACTION_SET_SELECTION));
+        }
+      }
+      return;
+    }
 
     // Traverse whole subtree, resetting selection.
     AccessibilityNodeInfoUtils.processSubtree(
