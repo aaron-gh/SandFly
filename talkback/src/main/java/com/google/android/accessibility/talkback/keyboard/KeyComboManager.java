@@ -478,6 +478,15 @@ public class KeyComboManager
 
     if (plainKeys() && keyPresses.onKeyEvent(event)) {
       arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+      // A held SandFly key's release taken here still ends Pass the next key's own keys, so the
+      // next key, such as Sym for the keyboard's symbols, goes to the app.
+      if (event.getAction() == KeyEvent.ACTION_UP
+          && keyComboPassThroughState
+              == KeyComboPassThroughState.PENDING_PASS_THROUGH_SHORTCUT_RELEASE
+          && !isAnyModifierKeyPressed(event)
+          && currentKeysDown.isEmpty()) {
+        setKeyComboPassThroughState(KeyComboPassThroughState.ACTIVE);
+      }
       return true;
     }
 
@@ -1836,7 +1845,9 @@ public class KeyComboManager
 
     boolean activatingPassThrough = nextState == KeyComboPassThroughState.ACTIVE;
     boolean deactivatingPassThrough = keyComboPassThroughState == KeyComboPassThroughState.ACTIVE;
-    if (activatingPassThrough) {
+    if (pipeline == null) {
+      // Not connected to the service yet.
+    } else if (activatingPassThrough) {
       pipeline.returnFeedback(
           EVENT_ID_UNTRACKED,
           Feedback.part()

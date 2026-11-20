@@ -22,9 +22,11 @@ import com.google.android.accessibility.talkback.R
 
 /**
  * A key that can be the SandFly key, which keymap shortcuts are pressed with. Meta, Alt, Ctrl + Alt
- * and Ctrl + Meta are modifiers to Android; Insert, Numpad Insert, Sym and Right Alt are keys that
- * SandFly takes and treats as a modifier while they're held. Right Alt is the Sym key of keyboard
- * phones such as the Zinwa Q25, whose Alt key is left Alt.
+ * Ctrl + Meta and Ctrl are modifiers to Android; Insert, Numpad Insert, Sym, Right Alt, Right Shift
+ * and Fn are keys that SandFly takes and treats as a modifier while they're held. Right Alt is the
+ * Sym key of keyboard phones such as the Zinwa Q25, whose Alt key is left Alt. Ctrl, Right Shift and
+ * Fn leave Sym to the keyboard on keyboard phones that have them: Ctrl where Fn is set to Ctrl, as
+ * on the Unihertz Titan 2, Fn as the BlackBerry KEY2's Speed key.
  */
 enum class SandFlyKey(
   @StringRes val valueRes: Int,
@@ -84,6 +86,24 @@ enum class SandFlyKey(
     R.string.keycombo_key_modifier_right_alt,
     KeyComboModel.HELD_KEY_MODIFIER,
     KeyEvent.KEYCODE_ALT_RIGHT,
+  ),
+  CTRL(
+    R.string.trigger_modifier_ctrl_entry_value,
+    R.string.keycombo_key_modifier_ctrl,
+    KeyEvent.META_CTRL_ON,
+    KeyEvent.KEYCODE_UNKNOWN,
+  ),
+  RIGHT_SHIFT(
+    R.string.trigger_modifier_right_shift_entry_value,
+    R.string.keycombo_key_modifier_right_shift,
+    KeyComboModel.HELD_KEY_MODIFIER,
+    KeyEvent.KEYCODE_SHIFT_RIGHT,
+  ),
+  FUNCTION(
+    R.string.trigger_modifier_function_entry_value,
+    R.string.keycombo_key_modifier_function,
+    KeyComboModel.HELD_KEY_MODIFIER,
+    KeyEvent.KEYCODE_FUNCTION,
   );
 
   /** Whether this is one key, which can be pressed twice, as two held together can't. */
@@ -95,6 +115,7 @@ enum class SandFlyKey(
     when (this) {
       META -> keyCode == KeyEvent.KEYCODE_META_LEFT || keyCode == KeyEvent.KEYCODE_META_RIGHT
       ALT -> keyCode == KeyEvent.KEYCODE_ALT_LEFT || keyCode == KeyEvent.KEYCODE_ALT_RIGHT
+      CTRL -> keyCode == KeyEvent.KEYCODE_CTRL_LEFT || keyCode == KeyEvent.KEYCODE_CTRL_RIGHT
       CTRL_ALT ->
         keyCode == KeyEvent.KEYCODE_CTRL_LEFT ||
           keyCode == KeyEvent.KEYCODE_CTRL_RIGHT ||
@@ -108,7 +129,9 @@ enum class SandFlyKey(
       INSERT,
       NUMPAD_INSERT,
       SYM,
-      RIGHT_ALT -> keyCode == this.keyCode
+      RIGHT_ALT,
+      RIGHT_SHIFT,
+      FUNCTION -> keyCode == this.keyCode
     }
 
   /**
@@ -120,13 +143,15 @@ enum class SandFlyKey(
 
   /**
    * Removes from [modifiers] what Android adds while this held key is down: Right Alt held alone
-   * adds Alt to the keys pressed with it.
+   * adds Alt to the keys pressed with it, Right Shift held alone Shift.
    */
   fun withoutOwnModifiers(modifiers: Int, metaState: Int): Int =
-    if (this == RIGHT_ALT && metaState and KeyEvent.META_ALT_LEFT_ON == 0) {
-      modifiers and KeyEvent.META_ALT_ON.inv()
-    } else {
-      modifiers
+    when {
+      this == RIGHT_ALT && metaState and KeyEvent.META_ALT_LEFT_ON == 0 ->
+        modifiers and KeyEvent.META_ALT_ON.inv()
+      this == RIGHT_SHIFT && metaState and KeyEvent.META_SHIFT_LEFT_ON == 0 ->
+        modifiers and KeyEvent.META_SHIFT_ON.inv()
+      else -> modifiers
     }
 
   /** Whether this is an ordinary key held as a modifier. */

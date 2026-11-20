@@ -20,6 +20,21 @@ import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
+/**
+ * The keys a keyboard phone keymap can be pressed with: Sym first, then keys that leave Sym to the
+ * keyboard where the phone has them.
+ */
+private val KEYBOARD_PHONE_SANDFLY_KEYS =
+  listOf(
+    SandFlyKey.SYM,
+    SandFlyKey.CTRL,
+    SandFlyKey.RIGHT_SHIFT,
+    SandFlyKey.FUNCTION,
+    SandFlyKey.RIGHT_ALT,
+    SandFlyKey.ALT,
+    SandFlyKey.META,
+  )
+
 /** A set of default keyboard shortcuts, with the SandFly keys it can be used with. */
 enum class Keymap(
   @StringRes val valueRes: Int,
@@ -103,7 +118,7 @@ enum class Keymap(
     R.string.value_keyboard_phone_keymap,
     "keyboard_phone_key_combo_model",
     "pref_keyboard_phone_keymap_trigger_modifier",
-    listOf(SandFlyKey.SYM, SandFlyKey.RIGHT_ALT, SandFlyKey.ALT, SandFlyKey.META),
+    KEYBOARD_PHONE_SANDFLY_KEYS,
     KeyboardPhoneKeymap,
     usesSequences = false,
     arrowsNavigate = true,
@@ -114,7 +129,7 @@ enum class Keymap(
     R.string.value_keyboard_phone_single_key_keymap,
     "keyboard_phone_single_key_combo_model",
     "pref_keyboard_phone_single_keymap_trigger_modifier",
-    listOf(SandFlyKey.SYM, SandFlyKey.RIGHT_ALT, SandFlyKey.ALT, SandFlyKey.META),
+    KEYBOARD_PHONE_SANDFLY_KEYS,
     KeyboardPhoneSingleKeyKeymap,
     usesSequences = false,
     arrowsNavigate = true,

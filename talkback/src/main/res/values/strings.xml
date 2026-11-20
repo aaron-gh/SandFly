@@ -1712,6 +1712,10 @@
     <string name="keycombo_key_modifier_sym">Sym</string>
     <!-- The right Alt key, which is the Sym key of keyboard phones such as the Zinwa Q25. e.g. Right Alt + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_right_alt">Right Alt</string>
+    <!-- The right Shift key, as the SandFly key of a keyboard phone. e.g. Right Shift + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_right_shift">Right Shift</string>
+    <!-- The Fn key, such as the Speed key of the BlackBerry KEY2, as the SandFly key. e.g. Fn + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_function">Fn</string>
     <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
     <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
