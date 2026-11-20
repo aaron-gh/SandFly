@@ -580,6 +580,56 @@ class SandFlyKeyTest {
   }
 
   @Test
+  fun keyboardPhonePassNextKeyGivesSymToTheKeyboard() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    editTextField(manager)
+    manager.down(KeyEvent.KEYCODE_SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_P))
+    // Sym + P is Pass the next key, which the tutorial hook here takes before it runs.
+    assertEquals(listOf<String?>("Sym + " + name(KeyEvent.KEYCODE_P)), keys)
+    val state = KeyComboManager::class.java.getDeclaredField("keyComboPassThroughState")
+    state.isAccessible = true
+    val states = state.type.enumConstants!!.associateBy { (it as Enum<*>).name }
+    state.set(manager, states["PENDING_PASS_THROUGH_SHORTCUT_RELEASE"])
+    manager.up(KeyEvent.KEYCODE_P)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(states["ACTIVE"], state.get(manager))
+    // The next press, Sym with a letter for a symbol, goes to the keyboard.
+    assertFalse(manager.down(KeyEvent.KEYCODE_SYM))
+    assertFalse(manager.down(KeyEvent.KEYCODE_A))
+    manager.up(KeyEvent.KEYCODE_A)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun keyboardPhoneCtrlAsSandFlyKeyLeavesSymToTheKeyboard() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.CTRL)
+    editTextField(manager)
+    val ctrl = KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON
+    assertTrue(manager.down(KeyEvent.KEYCODE_CTRL_LEFT, ctrl))
+    assertTrue(manager.up(KeyEvent.KEYCODE_CTRL_LEFT))
+    assertEquals(listOf<String?>("Ctrl"), keys)
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_SYM))
+    assertFalse(manager.down(KeyEvent.KEYCODE_A))
+    manager.up(KeyEvent.KEYCODE_A)
+    assertFalse(manager.up(KeyEvent.KEYCODE_SYM))
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun rightShiftHeldIsTheSandFlyKeyWithoutShift() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.RIGHT_SHIFT)
+    val rightShift = KeyEvent.META_SHIFT_ON or KeyEvent.META_SHIFT_RIGHT_ON
+    assertTrue(manager.down(KeyEvent.KEYCODE_SHIFT_RIGHT, rightShift))
+    assertTrue(manager.down(KeyEvent.KEYCODE_K, rightShift))
+    manager.up(KeyEvent.KEYCODE_K, rightShift)
+    manager.up(KeyEvent.KEYCODE_SHIFT_RIGHT)
+    assertEquals(listOf<String?>("Right Shift + " + name(KeyEvent.KEYCODE_K)), keys)
+  }
+
+  @Test
   fun keyboardPhoneSandFlyKeyShortcuts() {
     val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
     assertTrue(manager.down(KeyEvent.KEYCODE_SYM))

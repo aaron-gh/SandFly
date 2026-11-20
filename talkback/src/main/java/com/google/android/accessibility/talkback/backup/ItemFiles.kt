@@ -148,6 +148,9 @@ object ItemFiles {
       SandFlyKey.NUMPAD_INSERT to "Numpad Insert",
       SandFlyKey.SYM to "Sym",
       SandFlyKey.RIGHT_ALT to "Right Alt",
+      SandFlyKey.CTRL to "Ctrl",
+      SandFlyKey.RIGHT_SHIFT to "Right Shift",
+      SandFlyKey.FUNCTION to "Fn",
     )
 
   /** The names of the SandFly keys in files, for the file reference. */
