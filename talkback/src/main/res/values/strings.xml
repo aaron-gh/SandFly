@@ -1710,6 +1710,10 @@
     <string name="keycombo_key_modifier_sym">Sym</string>
     <!-- The right Alt key, which is the Sym key of keyboard phones such as the Zinwa Q25. e.g. Right Alt + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_right_alt">Right Alt</string>
+    <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
+    <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
+    <!-- Switch of the keyboard phone keymap: outside text fields, a key alone does what the SandFly key with it does. [CHAR LIMIT=NONE] -->
+    <string name="keycombo_single_keys_outside_text_fields">Single keys outside text fields</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
     <string name="keycombo_key_arrow_right">Arrow Right</string>
     <!-- String representation of arrow left key. e.g. Meta + Arrow Left. -->

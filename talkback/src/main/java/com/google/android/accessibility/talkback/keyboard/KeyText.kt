@@ -23,11 +23,17 @@ import java.util.Locale
  * Keyboard shortcuts as text in files, the same in every language: modifiers and the key joined
  * with "+", such as "SandFly+Shift+Right" or "Ctrl+Alt+H". "SandFly" is the keymap's SandFly key. A
  * sequence has its first key, a comma and its second key, such as "SandFly+O, H". The SandFly key
- * pressed twice is "SandFly twice".
+ * pressed twice is "SandFly twice". Presses of the keyboard phone keymap end with words: modifier
+ * keys on their own with "alone", such as "SandFly+Shift alone" or "Alt alone twice", any key pressed
+ * twice with "twice", such as "Enter twice", and modifier keys held down with "held", such as
+ * "Alt+Shift held".
  */
 object KeyText {
   const val SANDFLY = "SandFly"
   private const val TWICE = "SandFly twice"
+  private const val ALONE = " alone"
+  private const val PRESSED_TWICE = " twice"
+  private const val HELD = " held"
   private const val MAX_LENGTH = 100
 
   private val MODIFIERS =
@@ -115,6 +121,17 @@ object KeyText {
     for ((name, bit) in MODIFIERS) {
       if (modifiers and bit != 0) parts += name
     }
+    if (keyCombo.isModifierKeys) {
+      val keys = parts.joinToString("+")
+      return when {
+        keyCombo.isHeldDown -> keys + HELD
+        keyCombo.isPressedTwice -> keys + ALONE + PRESSED_TWICE
+        else -> keys + ALONE
+      }
+    }
+    if (keyCombo.isPressedTwice) {
+      return (parts + keyName(keyCombo.keyCode)).joinToString("+") + PRESSED_TWICE
+    }
     val prefix = keyCombo.prefixKeyCode
     return if (prefix != KeyComboModel.NO_PREFIX_KEY_CODE) {
       (parts + keyName(prefix)).joinToString("+") + ", " + keyName(keyCombo.keyCode)
@@ -129,6 +146,9 @@ object KeyText {
     val trimmed = text.trim()
     if (trimmed.isEmpty() || trimmed.length > MAX_LENGTH) return null
     if (trimmed.equals(TWICE, ignoreCase = true)) return KeyCombo.sandFlyKeyPressedTwice()
+    parsePress(trimmed)?.let {
+      return it
+    }
     val comma = trimmed.indexOf(',')
     val first = if (comma < 0) trimmed else trimmed.substring(0, comma)
     val second = if (comma < 0) null else trimmed.substring(comma + 1).trim()
@@ -148,6 +168,48 @@ object KeyText {
     // A sequence: the first key, then a key on its own.
     val next = keyCode(second) ?: return null
     return KeyCombo(modifiers, key, next, trigger)
+  }
+
+  /**
+   * Returns the press written as [text], such as "Alt alone twice", "Enter twice" or "Alt+Shift
+   * held", or null when it isn't one.
+   */
+  private fun parsePress(text: String): KeyCombo? {
+    val lower = text.lowercase(Locale.ROOT)
+    var rest = text
+    var pressType = 0
+    when {
+      lower.endsWith(HELD) -> {
+        rest = text.dropLast(HELD.length)
+        pressType = KeyCombo.HELD_DOWN
+      }
+      lower.endsWith(PRESSED_TWICE) -> {
+        rest = text.dropLast(PRESSED_TWICE.length)
+        pressType = KeyCombo.PRESSED_TWICE
+      }
+    }
+    val alone = rest.lowercase(Locale.ROOT).endsWith(ALONE)
+    if (alone) rest = rest.dropLast(ALONE.length)
+    if (pressType == 0 && !alone) return null
+    val parts = rest.split('+').map { it.trim() }
+    if (parts.any { it.isEmpty() }) return null
+    var trigger = false
+    var modifiers = 0
+    val modifierParts = if (alone || pressType == KeyCombo.HELD_DOWN) parts else parts.dropLast(1)
+    for (part in modifierParts) {
+      if (part.equals(SANDFLY, ignoreCase = true)) {
+        trigger = true
+        continue
+      }
+      modifiers = modifiers or (MODIFIER_NAMES[part.lowercase(Locale.ROOT)] ?: return null)
+    }
+    if (alone || pressType == KeyCombo.HELD_DOWN) {
+      if (modifiers == 0 && !trigger) return null
+      val combo = KeyCombo.modifierKeys(modifiers, trigger)
+      return if (pressType == 0) combo else combo.withPressType(pressType)
+    }
+    val key = keyCode(parts.last()) ?: return null
+    return KeyCombo(modifiers, key, trigger).withPressType(pressType)
   }
 
   /** The name of the key [keyCode]. */

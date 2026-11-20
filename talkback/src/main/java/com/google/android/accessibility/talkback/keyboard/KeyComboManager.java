@@ -97,6 +97,12 @@ public class KeyComboManager
     implements ServiceKeyEventListener, ServiceStateListener, AccessibilityEventListener {
   private static final String TAG = "KeyComboManager";
 
+  /**
+   * Whether, in the keyboard phone keymap, a key alone outside text fields does what the SandFly key
+   * with it does.
+   */
+  public static final String PREF_SINGLE_KEYS = "pref_keyboard_phone_single_keys";
+
   /** Set once the keyboard phone keymap has been chosen for a keyboard phone. */
   private static final String PREF_KEYBOARD_PHONE_KEYMAP_CHOSEN = "pref_keyboard_phone_keymap_chosen";
 
@@ -250,6 +256,40 @@ public class KeyComboManager
   private ScheduledExecutorService scheduler;
   private Future<Boolean> scheduleToOpenSearchApp;
   private final ArrowKeyNavKeyHandler arrowKeyNavKeyHandler;
+  // Modifier keys pressed alone, keys pressed twice and modifier keys held, in the keyboard phone
+  // keymap.
+  private final KeyPresses keyPresses =
+      new KeyPresses(
+          new KeyPresses.Host() {
+            @Override
+            public int triggerModifier() {
+              return keyComboModel.getTriggerModifier();
+            }
+
+            @Override
+            public @Nullable SandFlyKey heldSandFlyKey() {
+              @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+              return sandFlyKey != null && sandFlyKey.isHeldKey() ? sandFlyKey : null;
+            }
+
+            @Override
+            public boolean isAssigned(KeyCombo combo) {
+              return serviceState == SERVICE_STATE_ACTIVE
+                  && matchKeyCombo
+                  && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
+                  && (combo.isTriggerModifierUsed() || !isPassingKeysToApp())
+                  && keyComboModel.getKeyComboMap().containsValue(combo);
+            }
+
+            @Override
+            public void perform(KeyCombo combo) {
+              boolean performed = performedCombo;
+              boolean partial = hasPartialMatch;
+              matchAndPerformKeyCombo(combo, keyComboModel.getTriggerModifier());
+              performedCombo = performed;
+              hasPartialMatch = partial;
+            }
+          });
 
   private enum KeyComboPassThroughState {
     // KeyComboPassThrough is not enabled and TalkBack will act on key events as normal.
@@ -439,6 +479,11 @@ public class KeyComboManager
       return onKeyEventWhileInputOff(event);
     }
 
+    if (plainKeys() && keyPresses.onKeyEvent(event)) {
+      arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+      return true;
+    }
+
     // While the review cursor is on, arrow keys and the like move it.
     @Nullable ScreenReview screenReview = keyComboMapper == null ? null : keyComboMapper.getScreenReview();
     if (screenReview != null
@@ -553,6 +598,7 @@ public class KeyComboManager
   /** Refreshes key combo model after key map changes. */
   public void refreshKeyComboModel() {
     keyComboModel = createKeyComboModel();
+    keyPresses.clear();
     sandFlyKeyHeld = false;
   }
 
@@ -609,7 +655,14 @@ public class KeyComboManager
     // Append key code.
     appendKey(keyCombo.getKeyCode(), assignedShortcut);
 
-    return assignedShortcut.toString();
+    String keys = assignedShortcut.toString();
+    if (keyCombo.isPressedTwice()) {
+      return context.getString(R.string.sandfly_keyboard_tutorial_key_twice, keys);
+    }
+    if (keyCombo.isHeldDown()) {
+      return context.getString(R.string.keycombo_keys_held, keys);
+    }
+    return keys;
   }
 
   /** Notifies configuration changed. */
@@ -895,6 +948,34 @@ public class KeyComboManager
     return browseModeOnlyCommands.contains(key)
         && !plainKeys()
         && !(arrowsNavigate() && textGranularityKeys.contains(key));
+  }
+
+  /**
+   * Returns the shortcut that [keyCode] with [modifiers], pressed alone, runs where single keys of
+   * the keyboard phone keymap are on, or null: Space and Shift + Space move to the next and previous
+   * item, Enter activates, and any other key does what the SandFly key with it does.
+   */
+  private @Nullable KeyCombo singleKeyShortcut(int modifiers, int keyCode) {
+    if (!plainKeys() || !sharedPreferences.getBoolean(PREF_SINGLE_KEYS, false)) {
+      return null;
+    }
+    @Nullable String command = null;
+    if (keyCode == KeyEvent.KEYCODE_SPACE && modifiers == KeyComboModel.NO_MODIFIER) {
+      command = context.getString(R.string.keycombo_shortcut_navigate_next_default);
+    } else if (keyCode == KeyEvent.KEYCODE_SPACE && modifiers == KeyEvent.META_SHIFT_ON) {
+      command = context.getString(R.string.keycombo_shortcut_navigate_previous_default);
+    } else if (keyCode == KeyEvent.KEYCODE_ENTER && modifiers == KeyComboModel.NO_MODIFIER) {
+      command = context.getString(R.string.keycombo_shortcut_perform_click);
+    }
+    KeyCombo keyCombo =
+        command != null
+            ? keyComboModel.getKeyComboForKey(command)
+            : new KeyCombo(
+                modifiers, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ true);
+    return keyCombo.getKeyComboCode() != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED
+            && keyComboModel.getKeyComboMap().containsValue(keyCombo)
+        ? keyCombo
+        : null;
   }
 
   /**
@@ -1232,7 +1313,7 @@ public class KeyComboManager
 
   /** Appends string representation of target key code. */
   private void appendKey(int keyCode, StringBuilder sb) {
-    if (keyCode <= 0 || KeyEvent.isModifierKey(keyCode)) {
+    if (keyCode <= 0 || KeyEvent.isModifierKey(keyCode) || keyCode == KeyCombo.MODIFIER_KEYS) {
       return;
     }
     // A held SandFly key is named with the SandFly key.
@@ -1401,6 +1482,28 @@ public class KeyComboManager
       passedKeys.addAll(currentKeysDown);
       return false;
     }
+    // Single keys of the keyboard phone keymap, where they are on: outside a text field being
+    // edited, a key alone does what the SandFly key with it does. In a text field, they type; the
+    // SandFly key alone, which works anywhere, moves out of it.
+    if (hasModifier
+        && !pressedTriggerModifier
+        && !startedSequenceKeyCombo
+        && !KeyEvent.isModifierKey(event.getKeyCode())) {
+      @Nullable KeyCombo singleKey = singleKeyShortcut(otherModifiers, getConvertedKeyCode(event));
+      if (singleKey != null) {
+        if (isEditingTextWithAccessibilityFocus()) {
+          passedKeys.addAll(currentKeysDown);
+          return false;
+        }
+        currentKeyCombo = singleKey;
+        performedCombo = matchAndPerformKeyCombo(singleKey, triggerModifier);
+        hasPartialMatch = false;
+        if (performedCombo) {
+          keyPresses.forgetPress();
+          return true;
+        }
+      }
+    }
     // Keys without the SandFly key in keymaps whose shortcuts without it work outside browse mode.
     if (hasModifier
         && !pressedTriggerModifier
@@ -1408,8 +1511,10 @@ public class KeyComboManager
         && (isCustomKeymap() || arrowsNavigate())
         && !KeyEvent.isModifierKey(event.getKeyCode())) {
       // Enter clicks SandFly focus where arrow keys move it, unless input focus is there already.
+      // In the keyboard phone keymap, Enter goes to the app unless a shortcut takes it.
       boolean enter =
           arrowsNavigate()
+              && !plainKeys()
               && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER
                   || event.getKeyCode() == KeyEvent.KEYCODE_NUMPAD_ENTER)
               && otherModifiers == KeyComboModel.NO_MODIFIER
@@ -1888,7 +1993,9 @@ public class KeyComboManager
   private boolean onKeyUp(KeyEvent event) {
     if (currentKeysDown.contains(event.getKeyCode())) {
       maxKeysDown = max(maxKeysDown, currentKeysDown.size());
-      if (maxKeysDown == 1 && KEY_EVENT_INDEPENDENT_FUNCTIONAL_KEYS.contains(event.getKeyCode())) {
+      if (maxKeysDown == 1
+          && analytics != null
+          && KEY_EVENT_INDEPENDENT_FUNCTIONAL_KEYS.contains(event.getKeyCode())) {
         analytics.onKeyboardShortcutUsed(
             TalkBackPhysicalKeyboardShortcut.getActionFromInputFrameworkAction(event.getKeyCode()),
             KeyCombo.extractModifiers(getKeyComboCode(event)),
