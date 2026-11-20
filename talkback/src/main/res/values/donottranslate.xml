@@ -853,6 +853,7 @@
   <string name="nvda_keymap_entry_value">nvda_keymap</string>
   <string name="jaws_keymap_entry_value">jaws_keymap</string>
   <string name="orca_keymap_entry_value">orca_keymap</string>
+  <string name="keyboard_phone_keymap_entry_value">keyboard_phone_keymap</string>
 
   <string name="trigger_modifier_meta_entry_value">trigger_modifier_meta</string>
   <string name="trigger_modifier_alt_entry_value">trigger_modifier_alt</string>
@@ -860,6 +861,8 @@
   <string name="trigger_modifier_ctrl_meta_entry_value">trigger_modifier_ctrl_meta</string>
   <string name="trigger_modifier_insert_entry_value">trigger_modifier_insert</string>
   <string name="trigger_modifier_numpad_insert_entry_value">trigger_modifier_numpad_insert</string>
+  <string name="trigger_modifier_sym_entry_value">trigger_modifier_sym</string>
+  <string name="trigger_modifier_right_alt_entry_value">trigger_modifier_right_alt</string>
 
   <string name="keycombo_shortcut_navigate_next">keycombo_shortcut_navigate_next</string>
   <string name="keycombo_shortcut_navigate_previous">keycombo_shortcut_navigate_previous</string>
@@ -1267,6 +1270,7 @@
         <item>@string/value_nvda_keymap</item>
         <item>@string/value_jaws_keymap</item>
         <item>@string/value_orca_keymap</item>
+        <item>@string/value_keyboard_phone_keymap</item>
     </string-array>
 
     <string-array name="pref_select_keymap_values">
@@ -1275,6 +1279,7 @@
         <item>@string/nvda_keymap_entry_value</item>
         <item>@string/jaws_keymap_entry_value</item>
         <item>@string/orca_keymap_entry_value</item>
+        <item>@string/keyboard_phone_keymap_entry_value</item>
     </string-array>
 
 

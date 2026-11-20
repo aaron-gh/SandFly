@@ -119,6 +119,14 @@ public class NewKeyComboModel implements KeyComboModel {
     return customKeymap != null ? customKeymap.getArrowsNavigate() : keymap.getArrowsNavigate();
   }
 
+  /**
+   * Returns whether the keymap is for keyboards without Ctrl, Meta or arrow keys: its shortcuts may
+   * be keys without the SandFly key, and the SandFly key with one of them does the same anywhere.
+   */
+  public boolean plainKeys() {
+    return customKeymap != null ? customKeymap.getPlainKeys() : keymap.getPlainKeys();
+  }
+
   /** Returns whether SandFly key + R or O starts a shortcut of two keys one after the other. */
   public boolean usesSequences() {
     return customKeymap != null ? customKeymap.getUsesSequences() : keymap.getUsesSequences();
@@ -1356,13 +1364,14 @@ public class NewKeyComboModel implements KeyComboModel {
       return false;
     }
 
-    // A custom keymap takes any keys; the others' shortcuts are pressed with the SandFly key.
-    return customKeymap != null || keyCombo.isTriggerModifierUsed();
+    // A custom keymap and the keyboard phone keymap take any keys; the others' shortcuts are
+    // pressed with the SandFly key.
+    return customKeymap != null || plainKeys() || keyCombo.isTriggerModifierUsed();
   }
 
   @Override
   public String getDescriptionOfEligibleKeyCombo() {
-    if (customKeymap != null) {
+    if (customKeymap != null || plainKeys()) {
       return context.getString(R.string.keycombo_assign_dialog_custom_keymap_instruction);
     }
     return context.getString(

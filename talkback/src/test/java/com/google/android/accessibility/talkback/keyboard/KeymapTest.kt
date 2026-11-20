@@ -452,4 +452,44 @@ class KeymapTest {
     assertFalse(model.keyComboMap.containsKey(repeatOld))
     CustomKeymaps.delete(context, custom)
   }
+
+  @Test
+  fun keyboardPhoneKeymapTakesKeysWithoutTheSandFlyKey() {
+    val phone = NewKeyComboModel(context, Keymap.KEYBOARD_PHONE)
+    assertTrue(phone.plainKeys())
+    assertTrue(phone.isEligibleKeyCombo(KeyCombo(0, 0, KeyEvent.KEYCODE_Y, false)))
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_SPACE, false),
+      phone.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_default)),
+    )
+    val sandFly = NewKeyComboModel(context, Keymap.SANDFLY)
+    assertFalse(sandFly.plainKeys())
+    assertFalse(sandFly.isEligibleKeyCombo(KeyCombo(0, 0, KeyEvent.KEYCODE_Y, false)))
+  }
+
+  @Test
+  fun keyboardPhones() {
+    assertTrue(KeyboardPhones.isKeyboardPhone("Unihertz", "Titan Pocket"))
+    assertTrue(KeyboardPhones.isKeyboardPhone("Unihertz", "TITAN 2"))
+    assertFalse(KeyboardPhones.isKeyboardPhone("Unihertz", "Jelly Star"))
+    assertTrue(KeyboardPhones.isKeyboardPhone("BlackBerry", "BBF100-1"))
+    assertFalse(KeyboardPhones.isKeyboardPhone("BlackBerry", "BBD100-1"))
+    assertTrue(KeyboardPhones.isKeyboardPhone("Zinwa", "Q25"))
+    assertFalse(KeyboardPhones.isKeyboardPhone("Google", "Pixel 9"))
+    assertEquals(SandFlyKey.RIGHT_ALT, KeyboardPhones.sandFlyKey("Zinwa", "Q25", hasSym = false))
+    assertEquals(SandFlyKey.SYM, KeyboardPhones.sandFlyKey("Unihertz", "Titan 2", hasSym = true))
+    assertEquals(SandFlyKey.ALT, KeyboardPhones.sandFlyKey("Unihertz", "Titan", hasSym = false))
+  }
+
+  @Test
+  fun keyboardPhoneDefaultsNeedNoCtrlOrMeta() {
+    val model = NewKeyComboModel(context, Keymap.KEYBOARD_PHONE)
+    for (key in model.keyComboMap.keys) {
+      val combo = model.getDefaultKeyCombo(key)
+      val modifiers = combo.modifiers
+      assertEquals(key, 0, modifiers and (KeyEvent.META_CTRL_ON or KeyEvent.META_META_ON or KeyEvent.META_ALT_ON))
+      val keyCode = combo.keyCode
+      assertFalse(key, keyCode in KeyEvent.KEYCODE_DPAD_UP..KeyEvent.KEYCODE_DPAD_RIGHT)
+    }
+  }
 }
