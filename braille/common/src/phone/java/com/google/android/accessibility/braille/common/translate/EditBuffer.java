@@ -78,4 +78,23 @@ public interface EditBuffer {
 
   /** Gets the holdings info for braille display. */
   HoldingsInfo getHoldingsInfo(ImeConnection imeConnection);
+
+  /**
+   * Whether the buffer holds braille that {@link #commit} sends or finishes, including braille
+   * whose text is already shown in the field as composing text.
+   */
+  default boolean hasHoldings(ImeConnection imeConnection) {
+    return getHoldingsInfo(imeConnection).holdings().array().length != 0;
+  }
+
+  /**
+   * Called when the field's selection or composing text changes, with the values of {@link
+   * android.inputmethodservice.InputMethodService#onUpdateSelection}.
+   */
+  default void onSelectionUpdated(
+      ImeConnection imeConnection,
+      int newSelStart,
+      int newSelEnd,
+      int candidatesStart,
+      int candidatesEnd) {}
 }
