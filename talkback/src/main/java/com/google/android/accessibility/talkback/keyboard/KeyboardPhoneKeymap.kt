@@ -23,10 +23,11 @@ import com.google.android.accessibility.talkback.R
  * Alt and often Sym, but no Ctrl, Meta or arrow keys: the Unihertz Titan phones, BlackBerry KEYone
  * and KEY2, and Zinwa's phones.
  *
- * None is a letter, Space or Enter on its own, which typing and messaging apps need: the most used
+ * None is a letter or Space on its own, which typing needs: the most used
  * are presses of keys that typing leaves alone, as Key Mapper's are, and work anywhere, text fields
  * too. The SandFly key, Sym, pressed alone moves to the next item, with Shift to the previous one.
- * Enter pressed twice activates, so one press still sends a message. Alt pressed twice plays or
+ * Enter activates the item SandFly focus moved to; after typing, it goes to the app, so it still
+ * sends a message. Alt pressed twice plays or
  * pauses media and answers calls, and Alt + Shift held chooses the next reading control. The rest
  * are the SandFly key with a letter, which work anywhere as well: J chooses the previous reading
  * control, I and K move by it, T and B go to the top and bottom, as on BlackBerry.
@@ -40,7 +41,10 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
       // Presses that work anywhere.
       put(R.string.keycombo_shortcut_navigate_next_default, KeyCombo.modifierKeys(NONE, true))
       put(R.string.keycombo_shortcut_navigate_previous_default, KeyCombo.modifierKeys(SHIFT, true))
-      put(R.string.keycombo_shortcut_perform_click, twice(KeyEvent.KEYCODE_ENTER))
+      put(
+        R.string.keycombo_shortcut_perform_click,
+        KeyCombo(NONE, KeyComboModel.NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_ENTER, false),
+      )
       put(
         R.string.keycombo_shortcut_global_play_pause_media,
         KeyCombo.modifierKeys(ALT, false).withPressType(KeyCombo.PRESSED_TWICE),
@@ -129,11 +133,6 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
   // Touch can be locked from the keyboard, for people who use only the keyboard.
   override val commandDefaults: Map<Int, KeyCombo> =
     mapOf(R.string.shortcut_value_toggle_touch_lock to sandFly(NONE, KeyEvent.KEYCODE_L))
-
-  /** [keyCode] pressed twice in a row, without the SandFly key. */
-  private fun twice(keyCode: Int) =
-    KeyCombo(NONE, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ false)
-      .withPressType(KeyCombo.PRESSED_TWICE)
 
   /** Puts SandFly key + [keyCode] for [next] and with Shift for [previous]. */
   private fun MutableMap<Int, KeyCombo>.sandFlyPair(next: Int, previous: Int, keyCode: Int) {

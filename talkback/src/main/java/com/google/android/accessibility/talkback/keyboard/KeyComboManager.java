@@ -97,12 +97,6 @@ public class KeyComboManager
     implements ServiceKeyEventListener, ServiceStateListener, AccessibilityEventListener {
   private static final String TAG = "KeyComboManager";
 
-  /**
-   * Whether, in the keyboard phone keymap, a key alone outside text fields does what the SandFly key
-   * with it does.
-   */
-  public static final String PREF_SINGLE_KEYS = "pref_keyboard_phone_single_keys";
-
   /** Set once the keyboard phone keymap has been chosen for a keyboard phone. */
   private static final String PREF_KEYBOARD_PHONE_KEYMAP_CHOSEN = "pref_keyboard_phone_keymap_chosen";
 
@@ -256,6 +250,9 @@ public class KeyComboManager
   private ScheduledExecutorService scheduler;
   private Future<Boolean> scheduleToOpenSearchApp;
   private final ArrowKeyNavKeyHandler arrowKeyNavKeyHandler;
+  // Whether SandFly focus moved since a key last went to the app: Enter in the keyboard phone
+  // keymaps follows whichever came last.
+  private boolean focusMovedSinceTyping;
   // Modifier keys pressed alone, keys pressed twice and modifier keys held, in the keyboard phone
   // keymap.
   private final KeyPresses keyPresses =
@@ -515,12 +512,21 @@ public class KeyComboManager
       return false;
     }
 
-    return switch (event.getAction()) {
-      case KeyEvent.ACTION_DOWN -> onKeyDown(event);
-      case KeyEvent.ACTION_MULTIPLE -> hasPartialMatch;
-      case KeyEvent.ACTION_UP -> onKeyUp(event);
-      default -> false;
-    };
+    boolean handled =
+        switch (event.getAction()) {
+          case KeyEvent.ACTION_DOWN -> onKeyDown(event);
+          case KeyEvent.ACTION_MULTIPLE -> hasPartialMatch;
+          case KeyEvent.ACTION_UP -> onKeyUp(event);
+          default -> false;
+        };
+    // A key that went to the app, such as one typed into a message.
+    if (!handled
+        && event.getAction() == KeyEvent.ACTION_DOWN
+        && !KeyEvent.isModifierKey(event.getKeyCode())
+        && event.getKeyCode() != KeyEvent.KEYCODE_ENTER) {
+      focusMovedSinceTyping = false;
+    }
+    return handled;
   }
 
   @Override
@@ -551,6 +557,9 @@ public class KeyComboManager
   public void onAccessibilityEvent(AccessibilityEvent event, EventId eventId) {
     if (keyComboMapper != null) {
       keyComboMapper.getScreenReview().onAccessibilityEvent(event);
+    }
+    if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
+      focusMovedSinceTyping = true;
     }
     if (event.getEventType() != AccessibilityEvent.TYPE_VIEW_FOCUSED
         && event.getEventType() != AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
@@ -948,34 +957,6 @@ public class KeyComboManager
     return browseModeOnlyCommands.contains(key)
         && !plainKeys()
         && !(arrowsNavigate() && textGranularityKeys.contains(key));
-  }
-
-  /**
-   * Returns the shortcut that [keyCode] with [modifiers], pressed alone, runs where single keys of
-   * the keyboard phone keymap are on, or null: Space and Shift + Space move to the next and previous
-   * item, Enter activates, and any other key does what the SandFly key with it does.
-   */
-  private @Nullable KeyCombo singleKeyShortcut(int modifiers, int keyCode) {
-    if (!plainKeys() || !sharedPreferences.getBoolean(PREF_SINGLE_KEYS, false)) {
-      return null;
-    }
-    @Nullable String command = null;
-    if (keyCode == KeyEvent.KEYCODE_SPACE && modifiers == KeyComboModel.NO_MODIFIER) {
-      command = context.getString(R.string.keycombo_shortcut_navigate_next_default);
-    } else if (keyCode == KeyEvent.KEYCODE_SPACE && modifiers == KeyEvent.META_SHIFT_ON) {
-      command = context.getString(R.string.keycombo_shortcut_navigate_previous_default);
-    } else if (keyCode == KeyEvent.KEYCODE_ENTER && modifiers == KeyComboModel.NO_MODIFIER) {
-      command = context.getString(R.string.keycombo_shortcut_perform_click);
-    }
-    KeyCombo keyCombo =
-        command != null
-            ? keyComboModel.getKeyComboForKey(command)
-            : new KeyCombo(
-                modifiers, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ true);
-    return keyCombo.getKeyComboCode() != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED
-            && keyComboModel.getKeyComboMap().containsValue(keyCombo)
-        ? keyCombo
-        : null;
   }
 
   /**
@@ -1482,26 +1463,37 @@ public class KeyComboManager
       passedKeys.addAll(currentKeysDown);
       return false;
     }
-    // Single keys of the keyboard phone keymap, where they are on: outside a text field being
-    // edited, a key alone does what the SandFly key with it does. In a text field, they type; the
-    // SandFly key alone, which works anywhere, moves out of it.
+    // Enter in the keyboard phone keymap, where a shortcut is Enter alone: after SandFly focus moved
+    // to an item, it activates that item; after a key went to the app, as while typing a message,
+    // it goes to the app, which may send the message. Where SandFly focus is on the text field
+    // with input focus, it goes to the app.
     if (hasModifier
         && !pressedTriggerModifier
         && !startedSequenceKeyCombo
-        && !KeyEvent.isModifierKey(event.getKeyCode())) {
-      @Nullable KeyCombo singleKey = singleKeyShortcut(otherModifiers, getConvertedKeyCode(event));
-      if (singleKey != null) {
-        if (isEditingTextWithAccessibilityFocus()) {
-          passedKeys.addAll(currentKeysDown);
-          return false;
+        && plainKeys()
+        && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+      KeyCombo enterKeys =
+          new KeyCombo(
+              otherModifiers,
+              KeyComboModel.NO_PREFIX_KEY_CODE,
+              KeyEvent.KEYCODE_ENTER,
+              /* triggerModifierUsed= */ false);
+      if (keyComboModel.getKeyComboMap().containsValue(enterKeys)) {
+        if (event.getRepeatCount() > 0) {
+          return enterKeys.equals(currentKeyCombo) && performedCombo;
         }
-        currentKeyCombo = singleKey;
-        performedCombo = matchAndPerformKeyCombo(singleKey, triggerModifier);
-        hasPartialMatch = false;
-        if (performedCombo) {
-          keyPresses.forgetPress();
-          return true;
+        if (focusMovedSinceTyping && isSandFlyFocusAwayFromInputFocus()) {
+          currentKeyCombo = enterKeys;
+          performedCombo = matchAndPerformKeyCombo(enterKeys, triggerModifier);
+          hasPartialMatch = false;
+          if (performedCombo) {
+            keyPresses.forgetPress();
+            return true;
+          }
         }
+        currentKeyCombo = new KeyCombo();
+        passedKeys.addAll(currentKeysDown);
+        return false;
       }
     }
     // Keys without the SandFly key in keymaps whose shortcuts without it work outside browse mode.

@@ -458,22 +458,67 @@ class SandFlyKeyTest {
     assertEquals(listOf<String?>("Sym", "Sym + " + name(KeyEvent.KEYCODE_K)), keys)
   }
 
+  /** Makes [manager] find input focus on a text field and SandFly focus on another item. */
+  private fun focusAwayFromTextField(manager: KeyComboManager) {
+    val field =
+      AccessibilityNodeInfoCompat.wrap(
+        AccessibilityNodeInfo.obtain().apply {
+          isFocused = true
+          isEditable = true
+          text = "field"
+        }
+      )
+    val option =
+      AccessibilityNodeInfoCompat.wrap(AccessibilityNodeInfo.obtain().apply { text = "option" })
+    val monitor =
+      object : AccessibilityFocusMonitor(null, null, null) {
+        override fun getInputFocus() = field
+
+        override fun getAccessibilityFocus(useInputFocusIfEmpty: Boolean) = option
+      }
+    KeyComboManager::class.java.getDeclaredField("accessibilityFocusMonitor").apply {
+      isAccessible = true
+      set(manager, monitor)
+    }
+  }
+
+  private fun KeyComboManager.focusMoved() =
+    onAccessibilityEvent(
+      android.view.accessibility.AccessibilityEvent.obtain(
+        android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+      ),
+      null,
+    )
+
   @Test
-  fun keyboardPhoneEnterTwiceActivatesAndOnceGoesToTheApp() {
+  fun keyboardPhoneEnterActivatesAfterMovingAndSendsAfterTyping() {
+    for (keymap in listOf(Keymap.KEYBOARD_PHONE, Keymap.KEYBOARD_PHONE_SINGLE_KEYS)) {
+      keys.clear()
+      val manager = manager(keymap, SandFlyKey.SYM)
+      focusAwayFromTextField(manager)
+      // SandFly focus moved to an option while a draft waits in the text field: Enter activates it.
+      manager.focusMoved()
+      assertTrue(manager.down(KeyEvent.KEYCODE_ENTER))
+      manager.up(KeyEvent.KEYCODE_ENTER)
+      assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_ENTER)), keys)
+      // Typed since: Enter goes to the app, which sends.
+      time += 1000
+      assertFalse(manager.down(KeyEvent.KEYCODE_O))
+      manager.up(KeyEvent.KEYCODE_O)
+      time += 1000
+      assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
+      manager.up(KeyEvent.KEYCODE_ENTER)
+      assertEquals(1, keys.size)
+    }
+  }
+
+  @Test
+  fun keyboardPhoneEnterGoesToTheTextFieldWithSandFlyFocus() {
     val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
     editTextField(manager)
+    manager.focusMoved()
     assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
-    assertFalse(manager.up(KeyEvent.KEYCODE_ENTER))
-    assertTrue(manager.down(KeyEvent.KEYCODE_ENTER))
-    assertTrue(manager.up(KeyEvent.KEYCODE_ENTER))
-    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_ENTER) + " twice"), keys)
-    // Too slow for twice: each goes to the app.
-    time += 1000
-    assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
-    manager.up(KeyEvent.KEYCODE_ENTER)
-    time += 1000
-    assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
-    assertEquals(1, keys.size)
+    assertTrue(keys.isEmpty())
   }
 
   @Test
@@ -510,37 +555,28 @@ class SandFlyKeyTest {
   }
 
   @Test
-  fun keyboardPhoneSingleKeysWhenOnWorkOutsideTextFieldsOnly() {
-    SharedPreferencesUtils.getSharedPreferences(context)
-      .edit()
-      .putBoolean(KeyComboManager.PREF_SINGLE_KEYS, true)
-      .commit()
-    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
-    // Space moves as Sym alone does; K does what Sym + K does; Enter activates, once.
+  fun keyboardPhoneSingleKeyKeymapTypesInTextFieldsAndSymLeavesThem() {
+    val manager = manager(Keymap.KEYBOARD_PHONE_SINGLE_KEYS, SandFlyKey.SYM)
     assertTrue(manager.down(KeyEvent.KEYCODE_SPACE))
     manager.up(KeyEvent.KEYCODE_SPACE)
     assertTrue(manager.down(KeyEvent.KEYCODE_K))
     manager.up(KeyEvent.KEYCODE_K)
-    assertTrue(manager.down(KeyEvent.KEYCODE_ENTER))
-    manager.up(KeyEvent.KEYCODE_ENTER)
-    assertTrue(manager.down(KeyEvent.KEYCODE_ENTER))
-    manager.up(KeyEvent.KEYCODE_ENTER)
-    // O has no shortcut with Sym: typing.
+    // O has no shortcut: typing.
     assertFalse(manager.down(KeyEvent.KEYCODE_O))
     manager.up(KeyEvent.KEYCODE_O)
-    val enter = name(KeyEvent.KEYCODE_ENTER) + " twice"
-    assertEquals(listOf<String?>("Sym", "Sym + " + name(KeyEvent.KEYCODE_K), enter, enter), keys)
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_SPACE), name(KeyEvent.KEYCODE_K)), keys)
 
-    // In a text field being edited they type, and Sym alone still moves.
     editTextField(manager)
     time += 1000
-    assertFalse(manager.down(KeyEvent.KEYCODE_K))
-    manager.up(KeyEvent.KEYCODE_K)
     assertFalse(manager.down(KeyEvent.KEYCODE_SPACE))
     manager.up(KeyEvent.KEYCODE_SPACE)
+    // Sym + Space moves out of the text field.
     assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+    assertTrue(manager.down(KeyEvent.KEYCODE_SPACE))
+    manager.up(KeyEvent.KEYCODE_SPACE)
     manager.up(KeyEvent.KEYCODE_SYM)
-    assertEquals(5, keys.size)
+    assertEquals(name(KeyEvent.KEYCODE_SPACE), keys.last())
+    assertEquals(3, keys.size)
   }
 
   @Test

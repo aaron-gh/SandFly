@@ -463,7 +463,7 @@ class KeymapTest {
       phone.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_default)),
     )
     assertEquals(
-      KeyCombo(0, 0, KeyEvent.KEYCODE_ENTER, false).withPressType(KeyCombo.PRESSED_TWICE),
+      KeyCombo(0, 0, KeyEvent.KEYCODE_ENTER, false),
       phone.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_perform_click)),
     )
     val sandFly = NewKeyComboModel(context, Keymap.SANDFLY)
@@ -494,9 +494,9 @@ class KeymapTest {
       assertEquals(key, 0, modifiers and (KeyEvent.META_CTRL_ON or KeyEvent.META_META_ON))
       val keyCode = combo.keyCode
       assertFalse(key, keyCode in KeyEvent.KEYCODE_DPAD_UP..KeyEvent.KEYCODE_DPAD_RIGHT)
-      // No letter, Space or Enter on its own, which typing needs.
+      // No letter or Space on its own, which typing needs; Enter follows typing.
       if (!combo.isTriggerModifierUsed && !combo.isModifierKeys && !combo.isPressedTwice) {
-        assertFalse(key, combo.keyCode != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED)
+        assertEquals(key, KeyEvent.KEYCODE_ENTER, combo.keyCode)
       }
     }
   }

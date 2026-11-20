@@ -1344,6 +1344,8 @@
     <string name="value_orca_keymap">Orca keymap</string>
     <!-- Keymap for phones with a built-in keyboard and no Ctrl or Meta key, such as the Unihertz Titan, BlackBerry KEY2 and Zinwa Q25. [CHAR LIMIT=40] -->
     <string name="value_keyboard_phone_keymap">Keyboard phone keymap</string>
+    <!-- Keymap for keyboard phones whose shortcuts are mostly single keys, which work outside text fields. [CHAR LIMIT=40] -->
+    <string name="value_keyboard_phone_single_key_keymap">Keyboard phone single-key keymap</string>
     <!-- Name of the keymap that keeps an older version's Default keymap, with the user's shortcuts. [CHAR LIMIT=40] -->
     <string name="keycombo_custom_keymap_default_name">Custom</string>
     <!-- Setting that makes a keymap of the user's own, as a copy of the keymap in use. [CHAR LIMIT=40] -->
@@ -1712,8 +1714,6 @@
     <string name="keycombo_key_modifier_right_alt">Right Alt</string>
     <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
     <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
-    <!-- Switch of the keyboard phone keymap: outside text fields, a key alone does what the SandFly key with it does. [CHAR LIMIT=NONE] -->
-    <string name="keycombo_single_keys_outside_text_fields">Single keys outside text fields</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
     <string name="keycombo_key_arrow_right">Arrow Right</string>
     <!-- String representation of arrow left key. e.g. Meta + Arrow Left. -->

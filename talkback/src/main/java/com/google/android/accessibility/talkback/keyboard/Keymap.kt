@@ -108,6 +108,17 @@ enum class Keymap(
     usesSequences = false,
     arrowsNavigate = true,
     plainKeys = true,
+  ),
+  KEYBOARD_PHONE_SINGLE_KEYS(
+    R.string.keyboard_phone_single_key_keymap_entry_value,
+    R.string.value_keyboard_phone_single_key_keymap,
+    "keyboard_phone_single_key_combo_model",
+    "pref_keyboard_phone_single_keymap_trigger_modifier",
+    listOf(SandFlyKey.SYM, SandFlyKey.RIGHT_ALT, SandFlyKey.ALT, SandFlyKey.META),
+    KeyboardPhoneSingleKeyKeymap,
+    usesSequences = false,
+    arrowsNavigate = true,
+    plainKeys = true,
   );
 
   /** The SandFly key its defaults are written for. */
@@ -126,7 +137,7 @@ enum class Keymap(
       ?.takeIf { it in sandFlyKeys } ?: defaultSandFlyKey()
 
   private fun defaultSandFlyKey(): SandFlyKey =
-    if (this == KEYBOARD_PHONE) KeyboardPhones.sandFlyKey() else nativeKey
+    if (plainKeys) KeyboardPhones.sandFlyKey() else nativeKey
 
   /** Where shortcuts are saved with [sandFlyKey], so each SandFly key keeps its own changes. */
   fun persisterPrefix(sandFlyKey: SandFlyKey): String =
