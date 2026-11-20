@@ -69,6 +69,8 @@ A keyboard shortcut is written as its keys joined with `+`, such as `"SandFly+Sh
 
 A sequence, as in the SandFly keymap, has its first keys, a comma and the second key: `"SandFly+O, H"`. The SandFly key pressed twice is `"SandFly twice"`.
 
+The keyboard phone keymap also takes presses. Modifier keys pressed on their own end with `alone`: `"SandFly alone"`, `"SandFly+Shift alone"`. A key or modifier keys pressed twice in a row end with `twice`: `"Enter twice"`, `"Alt alone twice"`. Modifier keys held down on their own end with `held`: `"Alt+Shift held"`.
+
 ## Macros
 
 ```json

@@ -21,83 +21,92 @@ import com.google.android.accessibility.talkback.R
 /**
  * The default shortcuts of the keyboard phone keymap, for phones whose keyboard has letters, Shift,
  * Alt and often Sym, but no Ctrl, Meta or arrow keys: the Unihertz Titan phones, BlackBerry KEYone
- * and KEY2, and Zinwa's phones. Single keys work outside text fields being edited, Shift with most
- * of them goes the other way, and the SandFly key with any of them does the same anywhere, text
- * fields too. Space moves by item, as the space bar scrolls on BlackBerry, and T and B go to the top
- * and bottom, as on BlackBerry. Written for Sym as the SandFly key; none uses Alt or Meta, so Right
- * Alt, Alt and Meta can be the SandFly key too.
+ * and KEY2, and Zinwa's phones.
+ *
+ * None is a letter, Space or Enter on its own, which typing and messaging apps need: the most used
+ * are presses of keys that typing leaves alone, as Key Mapper's are, and work anywhere, text fields
+ * too. The SandFly key, Sym, pressed alone moves to the next item, with Shift to the previous one.
+ * Enter pressed twice activates, so one press still sends a message. Alt pressed twice plays or
+ * pauses media and answers calls, and Alt + Shift held chooses the next reading control. The rest
+ * are the SandFly key with a letter, which work anywhere as well: J chooses the previous reading
+ * control, I and K move by it, T and B go to the top and bottom, as on BlackBerry.
+ *
+ * Written for Sym as the SandFly key; none uses Meta, so Right Alt and Meta can be the SandFly key
+ * too, and Alt, where Alt + Shift held and Alt twice become the SandFly key's.
  */
 object KeyboardPhoneKeymap : KeymapDefaults() {
   override val defaults: Map<Int, KeyCombo> =
     buildMap {
-      // Moving.
-      plainPair(
-        R.string.keycombo_shortcut_navigate_next_default,
-        R.string.keycombo_shortcut_navigate_previous_default,
-        KeyEvent.KEYCODE_SPACE,
+      // Presses that work anywhere.
+      put(R.string.keycombo_shortcut_navigate_next_default, KeyCombo.modifierKeys(NONE, true))
+      put(R.string.keycombo_shortcut_navigate_previous_default, KeyCombo.modifierKeys(SHIFT, true))
+      put(R.string.keycombo_shortcut_perform_click, twice(KeyEvent.KEYCODE_ENTER))
+      put(
+        R.string.keycombo_shortcut_global_play_pause_media,
+        KeyCombo.modifierKeys(ALT, false).withPressType(KeyCombo.PRESSED_TWICE),
       )
-      put(R.string.keycombo_shortcut_navigate_first, plain(NONE, KeyEvent.KEYCODE_T))
-      put(R.string.keycombo_shortcut_navigate_last, plain(NONE, KeyEvent.KEYCODE_B))
-      // Reading controls on the keys where the arrows would be, J, L, I and K: J and L choose one,
-      // I and K move by it or change it.
-      put(R.string.keycombo_shortcut_global_scroll_forward_reading_menu, plain(NONE, KeyEvent.KEYCODE_L))
-      put(R.string.keycombo_shortcut_global_scroll_backward_reading_menu, plain(NONE, KeyEvent.KEYCODE_J))
-      put(R.string.keycombo_shortcut_global_adjust_reading_setting_next, plain(NONE, KeyEvent.KEYCODE_K))
-      put(R.string.keycombo_shortcut_global_adjust_reading_settings_previous, plain(NONE, KeyEvent.KEYCODE_I))
-      plainPair(
+      put(
+        R.string.keycombo_shortcut_global_scroll_forward_reading_menu,
+        KeyCombo.modifierKeys(ALT or SHIFT, false).withPressType(KeyCombo.HELD_DOWN),
+      )
+
+      // Moving, with the SandFly key.
+      put(R.string.keycombo_shortcut_global_scroll_backward_reading_menu, sandFly(NONE, KeyEvent.KEYCODE_J))
+      put(R.string.keycombo_shortcut_global_adjust_reading_setting_next, sandFly(NONE, KeyEvent.KEYCODE_K))
+      put(R.string.keycombo_shortcut_global_adjust_reading_settings_previous, sandFly(NONE, KeyEvent.KEYCODE_I))
+      put(R.string.keycombo_shortcut_navigate_first, sandFly(NONE, KeyEvent.KEYCODE_T))
+      put(R.string.keycombo_shortcut_navigate_last, sandFly(NONE, KeyEvent.KEYCODE_B))
+      sandFlyPair(
         R.string.keycombo_shortcut_navigate_next_heading,
         R.string.keycombo_shortcut_navigate_previous_heading,
         KeyEvent.KEYCODE_H,
       )
-      plainPair(
+      sandFlyPair(
         R.string.keycombo_shortcut_navigate_next_link,
         R.string.keycombo_shortcut_navigate_previous_link,
         KeyEvent.KEYCODE_U,
       )
-      plainPair(
+      sandFlyPair(
         R.string.keycombo_shortcut_navigate_next_control,
         R.string.keycombo_shortcut_navigate_previous_control,
         KeyEvent.KEYCODE_F,
       )
-      plainPair(
+      sandFlyPair(
         R.string.keycombo_shortcut_navigate_next_edit_field,
         R.string.keycombo_shortcut_navigate_previous_edit_field,
         KeyEvent.KEYCODE_E,
       )
-      plainPair(
+      sandFlyPair(
         R.string.keycombo_shortcut_navigate_next_graphic,
         R.string.keycombo_shortcut_navigate_previous_graphic,
         KeyEvent.KEYCODE_G,
       )
 
       // Acting.
-      put(R.string.keycombo_shortcut_perform_click, plain(NONE, KeyEvent.KEYCODE_ENTER))
-      put(R.string.keycombo_shortcut_perform_long_click, plain(SHIFT, KeyEvent.KEYCODE_ENTER))
-      put(R.string.keycombo_shortcut_global_back, plain(NONE, KeyEvent.KEYCODE_DEL))
-      put(R.string.keycombo_shortcut_global_home, plain(SHIFT, KeyEvent.KEYCODE_DEL))
-      put(R.string.keycombo_shortcut_global_notifications, plain(NONE, KeyEvent.KEYCODE_N))
-      put(R.string.keycombo_shortcut_global_recents, plain(SHIFT, KeyEvent.KEYCODE_N))
-      put(R.string.keycombo_shortcut_other_talkback_context_menu, plain(NONE, KeyEvent.KEYCODE_M))
-      put(R.string.keycombo_shortcut_other_custom_actions, plain(SHIFT, KeyEvent.KEYCODE_M))
-      put(R.string.keycombo_shortcut_other_toggle_search, plain(NONE, KeyEvent.KEYCODE_S))
-      put(R.string.keycombo_shortcut_other_open_talkback_settings, plain(SHIFT, KeyEvent.KEYCODE_S))
+      put(R.string.keycombo_shortcut_perform_long_click, sandFly(NONE, KeyEvent.KEYCODE_ENTER))
+      put(R.string.keycombo_shortcut_global_back, sandFly(NONE, KeyEvent.KEYCODE_DEL))
+      put(R.string.keycombo_shortcut_global_home, sandFly(SHIFT, KeyEvent.KEYCODE_DEL))
+      put(R.string.keycombo_shortcut_global_notifications, sandFly(NONE, KeyEvent.KEYCODE_N))
+      put(R.string.keycombo_shortcut_global_recents, sandFly(SHIFT, KeyEvent.KEYCODE_N))
+      put(R.string.keycombo_shortcut_other_talkback_context_menu, sandFly(NONE, KeyEvent.KEYCODE_M))
+      put(R.string.keycombo_shortcut_other_custom_actions, sandFly(SHIFT, KeyEvent.KEYCODE_M))
+      put(R.string.keycombo_shortcut_other_toggle_search, sandFly(NONE, KeyEvent.KEYCODE_S))
+      put(R.string.keycombo_shortcut_other_open_talkback_settings, sandFly(SHIFT, KeyEvent.KEYCODE_S))
 
       // Reading.
-      put(R.string.keycombo_shortcut_other_read_from_cursor_item, plain(NONE, KeyEvent.KEYCODE_R))
-      put(R.string.keycombo_shortcut_other_read_from_top, plain(SHIFT, KeyEvent.KEYCODE_R))
-      put(R.string.keycombo_shortcut_global_announce_current_title, plain(NONE, KeyEvent.KEYCODE_W))
-      put(R.string.keycombo_shortcut_global_announce_current_time_and_date, plain(NONE, KeyEvent.KEYCODE_D))
-      put(R.string.keycombo_shortcut_global_announce_battery_state, plain(SHIFT, KeyEvent.KEYCODE_D))
-      put(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase, plain(NONE, KeyEvent.KEYCODE_X))
-      put(R.string.keycombo_shortcut_other_copy_last_spoken_phrase, plain(SHIFT, KeyEvent.KEYCODE_X))
-      put(R.string.keycombo_shortcut_global_describe_image, plain(NONE, KeyEvent.KEYCODE_A))
-      put(R.string.keycombo_shortcut_global_hide_or_show_screen, plain(NONE, KeyEvent.KEYCODE_Z))
+      put(R.string.keycombo_shortcut_other_read_from_cursor_item, sandFly(NONE, KeyEvent.KEYCODE_R))
+      put(R.string.keycombo_shortcut_other_read_from_top, sandFly(SHIFT, KeyEvent.KEYCODE_R))
+      put(R.string.keycombo_shortcut_global_announce_current_title, sandFly(NONE, KeyEvent.KEYCODE_W))
+      put(R.string.keycombo_shortcut_global_announce_current_time_and_date, sandFly(NONE, KeyEvent.KEYCODE_D))
+      put(R.string.keycombo_shortcut_global_announce_battery_state, sandFly(SHIFT, KeyEvent.KEYCODE_D))
+      put(R.string.keycombo_shortcut_other_repeat_last_spoken_phrase, sandFly(NONE, KeyEvent.KEYCODE_X))
+      put(R.string.keycombo_shortcut_other_copy_last_spoken_phrase, sandFly(SHIFT, KeyEvent.KEYCODE_X))
+      put(R.string.keycombo_shortcut_global_describe_image, sandFly(NONE, KeyEvent.KEYCODE_A))
+      put(R.string.keycombo_shortcut_global_hide_or_show_screen, sandFly(NONE, KeyEvent.KEYCODE_Z))
 
       // SandFly and the keyboard.
-      put(R.string.keycombo_shortcut_other_show_keyboard_shortcuts_dialog, plain(NONE, KeyEvent.KEYCODE_Q))
-      put(R.string.keycombo_shortcut_toggle_pass_keys_to_app, plain(SHIFT, KeyEvent.KEYCODE_Q))
-      // Only with the SandFly key: with keyboard input off, or for the next key, every other key
-      // goes to the app.
+      put(R.string.keycombo_shortcut_other_show_keyboard_shortcuts_dialog, sandFly(NONE, KeyEvent.KEYCODE_Q))
+      put(R.string.keycombo_shortcut_toggle_pass_keys_to_app, sandFly(SHIFT, KeyEvent.KEYCODE_Q))
       put(
         R.string.keycombo_shortcut_global_toggle_key_combo_pass_through_once,
         sandFly(NONE, KeyEvent.KEYCODE_P),
@@ -117,9 +126,18 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
       )
     }
 
-  /** Puts [keyCode] for [next] and Shift + [keyCode] for [previous], outside text fields. */
-  private fun MutableMap<Int, KeyCombo>.plainPair(next: Int, previous: Int, keyCode: Int) {
-    put(next, plain(NONE, keyCode))
-    put(previous, plain(SHIFT, keyCode))
+  // Touch can be locked from the keyboard, for people who use only the keyboard.
+  override val commandDefaults: Map<Int, KeyCombo> =
+    mapOf(R.string.shortcut_value_toggle_touch_lock to sandFly(NONE, KeyEvent.KEYCODE_L))
+
+  /** [keyCode] pressed twice in a row, without the SandFly key. */
+  private fun twice(keyCode: Int) =
+    KeyCombo(NONE, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ false)
+      .withPressType(KeyCombo.PRESSED_TWICE)
+
+  /** Puts SandFly key + [keyCode] for [next] and with Shift for [previous]. */
+  private fun MutableMap<Int, KeyCombo>.sandFlyPair(next: Int, previous: Int, keyCode: Int) {
+    put(next, sandFly(NONE, keyCode))
+    put(previous, sandFly(SHIFT, keyCode))
   }
 }

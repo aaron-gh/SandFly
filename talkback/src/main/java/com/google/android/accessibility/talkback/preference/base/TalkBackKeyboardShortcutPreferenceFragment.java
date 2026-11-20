@@ -29,6 +29,7 @@ import androidx.preference.ListPreference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
+import androidx.preference.SwitchPreferenceCompat;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
@@ -457,6 +458,18 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     String usedValue = getString(used.getValueRes());
     if (!usedValue.equals(preference.getValue())) {
       preference.setValue(usedValue);
+    }
+    // Keymaps for keyboard phones can also take single keys outside text fields.
+    if (getKeyComboManager().getKeyComboModel() instanceof NewKeyComboModel model
+        && model.plainKeys()) {
+      SwitchPreferenceCompat singleKeys = new SwitchPreferenceCompat(context);
+      singleKeys.setKey(KeyComboManager.PREF_SINGLE_KEYS);
+      singleKeys.setPersistent(true);
+      singleKeys.setDefaultValue(false);
+      singleKeys.setTitle(R.string.keycombo_single_keys_outside_text_fields);
+      singleKeys.setOrder(2);
+      singleKeys.setIconSpaceReserved(false);
+      category.addPreference(singleKeys);
     }
   }
 
