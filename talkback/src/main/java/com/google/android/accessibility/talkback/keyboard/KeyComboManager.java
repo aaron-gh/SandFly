@@ -250,9 +250,10 @@ public class KeyComboManager
   private ScheduledExecutorService scheduler;
   private Future<Boolean> scheduleToOpenSearchApp;
   private final ArrowKeyNavKeyHandler arrowKeyNavKeyHandler;
-  // Whether SandFly focus moved since a key last went to the app: Enter in the keyboard phone
-  // keymaps follows whichever came last.
-  private boolean focusMovedSinceTyping;
+  // Whether the user ran a SandFly command or touched the screen since a key last went to the app
+  // or a new screen opened. While not, and a text field has input focus, the keyboard phone keymaps'
+  // single keys and Enter go to the text field.
+  private boolean navigatedSinceTyping;
   // Modifier keys pressed alone, keys pressed twice and modifier keys held, in the keyboard phone
   // keymap.
   private final KeyPresses keyPresses =
@@ -477,6 +478,7 @@ public class KeyComboManager
     }
 
     if (plainKeys() && keyPresses.onKeyEvent(event)) {
+      navigatedSinceTyping = true;
       arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
       // A held SandFly key's release taken here still ends Pass the next key's own keys, so the
       // next key, such as Sym for the keyboard's symbols, goes to the app.
@@ -528,12 +530,11 @@ public class KeyComboManager
           case KeyEvent.ACTION_UP -> onKeyUp(event);
           default -> false;
         };
-    // A key that went to the app, such as one typed into a message.
-    if (!handled
-        && event.getAction() == KeyEvent.ACTION_DOWN
+    // A key that went to the app, such as one typed into a message, or a SandFly shortcut.
+    if (event.getAction() == KeyEvent.ACTION_DOWN
         && !KeyEvent.isModifierKey(event.getKeyCode())
         && event.getKeyCode() != KeyEvent.KEYCODE_ENTER) {
-      focusMovedSinceTyping = false;
+      navigatedSinceTyping = handled;
     }
     return handled;
   }
@@ -551,7 +552,8 @@ public class KeyComboManager
         | AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         | AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
         | AccessibilityEvent.TYPE_WINDOWS_CHANGED
-        | AccessibilityEvent.TYPE_VIEW_SCROLLED;
+        | AccessibilityEvent.TYPE_VIEW_SCROLLED
+        | AccessibilityEvent.TYPE_TOUCH_INTERACTION_START;
   }
 
   /**
@@ -567,8 +569,11 @@ public class KeyComboManager
     if (keyComboMapper != null) {
       keyComboMapper.getScreenReview().onAccessibilityEvent(event);
     }
-    if (event.getEventType() == AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
-      focusMovedSinceTyping = true;
+    // A new screen starts with typing where a text field has input focus; a touch moves around.
+    if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+      navigatedSinceTyping = false;
+    } else if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
+      navigatedSinceTyping = true;
     }
     if (event.getEventType() != AccessibilityEvent.TYPE_VIEW_FOCUSED
         && event.getEventType() != AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
@@ -1010,6 +1015,18 @@ public class KeyComboManager
     return focus != null && !focus.equals(accessibilityFocusMonitor.getInputFocus());
   }
 
+  /**
+   * Whether the user is typing: a text field has input focus, and since a key last went to the app
+   * or the screen changed, the user ran no SandFly command and didn't touch the screen.
+   */
+  private boolean isTyping() {
+    if (navigatedSinceTyping || accessibilityFocusMonitor == null) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat inputFocus = accessibilityFocusMonitor.getInputFocus();
+    return inputFocus != null && inputFocus.isFocused() && inputFocus.isEditable();
+  }
+
   /** Whether SandFly focus is on the text field being edited. */
   private boolean isEditingTextWithAccessibilityFocus() {
     if (accessibilityFocusMonitor == null) {
@@ -1436,7 +1453,7 @@ public class KeyComboManager
         && sandFlyKey.getTypesWithLetters()
         && event.isPrintingKey()
         && event.getKeyCode() != KeyEvent.KEYCODE_SPACE
-        && isEditingTextWithAccessibilityFocus()) {
+        && (isEditingTextWithAccessibilityFocus() || isTyping())) {
       passedKeys.addAll(currentKeysDown);
       return false;
     }
@@ -1491,7 +1508,7 @@ public class KeyComboManager
         if (event.getRepeatCount() > 0) {
           return enterKeys.equals(currentKeyCombo) && performedCombo;
         }
-        if (focusMovedSinceTyping && isSandFlyFocusAwayFromInputFocus()) {
+        if (isSandFlyFocusAwayFromInputFocus() && !isTyping()) {
           currentKeyCombo = enterKeys;
           performedCombo = matchAndPerformKeyCombo(enterKeys, triggerModifier);
           hasPartialMatch = false;
@@ -1538,7 +1555,7 @@ public class KeyComboManager
                       getConvertedKeyCode(event),
                       /* triggerModifierUsed= */ false),
                   triggerModifier)))
-          && isEditingTextWithAccessibilityFocus()) {
+          && (isEditingTextWithAccessibilityFocus() || (plainKeys() && isTyping()))) {
         passedKeys.addAll(currentKeysDown);
         return false;
       }
