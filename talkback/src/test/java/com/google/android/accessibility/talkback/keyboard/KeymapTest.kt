@@ -480,8 +480,22 @@ class KeymapTest {
     assertFalse(KeyboardPhones.isKeyboardPhone("BlackBerry", "BBD100-1"))
     assertTrue(KeyboardPhones.isKeyboardPhone("Zinwa", "Q25"))
     assertFalse(KeyboardPhones.isKeyboardPhone("Google", "Pixel 9"))
-    assertEquals(SandFlyKey.RIGHT_ALT, KeyboardPhones.sandFlyKey("Zinwa", "Q25", hasSym = false))
+    // Keys typing doesn't need come first, so that Sym stays the keyboard's.
+    assertEquals(SandFlyKey.RIGHT_SHIFT, KeyboardPhones.sandFlyKey("Zinwa", "Q25", hasSym = false))
+    assertEquals(
+      SandFlyKey.RIGHT_SHIFT,
+      KeyboardPhones.sandFlyKey("Unihertz", "Titan 2 Elite", hasSym = true, fnIsCtrl = true),
+    )
+    assertEquals(
+      SandFlyKey.CTRL,
+      KeyboardPhones.sandFlyKey("Unihertz", "Titan 2", hasSym = true, fnIsCtrl = true),
+    )
     assertEquals(SandFlyKey.SYM, KeyboardPhones.sandFlyKey("Unihertz", "Titan 2", hasSym = true))
+    assertEquals(
+      SandFlyKey.RIGHT_SHIFT,
+      KeyboardPhones.sandFlyKey("BlackBerry", "BBF100-1", hasSym = true, hasRightShift = true),
+    )
+    assertEquals(SandFlyKey.SYM, KeyboardPhones.sandFlyKey("BlackBerry", "BBF100-1", hasSym = true))
     assertEquals(SandFlyKey.ALT, KeyboardPhones.sandFlyKey("Unihertz", "Titan", hasSym = false))
   }
 

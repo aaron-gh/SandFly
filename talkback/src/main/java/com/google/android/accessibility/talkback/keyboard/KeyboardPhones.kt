@@ -15,7 +15,9 @@
  */
 package com.google.android.accessibility.talkback.keyboard
 
+import android.content.Context
 import android.os.Build
+import android.provider.Settings
 import android.view.KeyCharacterMap
 import android.view.KeyEvent
 import java.util.Locale
@@ -50,22 +52,60 @@ object KeyboardPhones {
     manufacturer.orEmpty().lowercase(Locale.ROOT).contains("zinwa") &&
       model.orEmpty().uppercase(Locale.ROOT).contains("Q25")
 
+  private fun isUnihertz(manufacturer: String?): Boolean =
+    manufacturer.orEmpty().lowercase(Locale.ROOT).contains("unihertz")
+
+  /** The Unihertz Titan 2 Elite, whose Fn key sends no press SandFly can follow, even as Ctrl. */
+  private fun isTitanElite(manufacturer: String?, model: String?): Boolean =
+    isUnihertz(manufacturer) && model.orEmpty().uppercase(Locale.ROOT).contains("ELITE")
+
   /**
-   * The SandFly key for this phone's keyboard: Right Alt on the Zinwa Q25, whose Sym key it is, Sym
-   * where the keyboard has one, otherwise Alt, as on the first Unihertz Titan.
+   * Whether the Unihertz keyboard settings make the Fn key work as Ctrl, read from the system
+   * settings the phone keeps them in.
+   */
+  private fun isFnSetToCtrl(context: Context): Boolean =
+    try {
+      val resolver = context.contentResolver
+      Settings.System.getInt(resolver, "fn_programmable_key_enable", 0) == 1 &&
+        Settings.System.getInt(resolver, "fn_programmable_key_function", 0) == FN_AS_CTRL
+    } catch (e: RuntimeException) {
+      false
+    }
+
+  /**
+   * The SandFly key for this phone's keyboard, a key typing doesn't need where it has one, so that
+   * Sym stays the keyboard's: Ctrl where the Unihertz Fn key is set to Ctrl, Right Shift on the
+   * Unihertz Titan 2 Elite, the Zinwa Q25 and BlackBerry phones with a right Shift, otherwise Sym,
+   * or Alt on a keyboard without Sym, as on the first Unihertz Titan.
    */
   @JvmStatic
-  fun sandFlyKey(): SandFlyKey =
+  fun sandFlyKey(context: Context): SandFlyKey =
     sandFlyKey(
       Build.MANUFACTURER,
       Build.MODEL,
       hasSym = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_SYM),
+      hasRightShift = KeyCharacterMap.deviceHasKey(KeyEvent.KEYCODE_SHIFT_RIGHT),
+      fnIsCtrl = isUnihertz(Build.MANUFACTURER) && isFnSetToCtrl(context),
     )
 
-  internal fun sandFlyKey(manufacturer: String?, model: String?, hasSym: Boolean): SandFlyKey =
-    when {
-      isZinwaQ25(manufacturer, model) -> SandFlyKey.RIGHT_ALT
+  internal fun sandFlyKey(
+    manufacturer: String?,
+    model: String?,
+    hasSym: Boolean,
+    hasRightShift: Boolean = false,
+    fnIsCtrl: Boolean = false,
+  ): SandFlyKey {
+    val maker = manufacturer.orEmpty().lowercase(Locale.ROOT)
+    return when {
+      fnIsCtrl && !isTitanElite(manufacturer, model) -> SandFlyKey.CTRL
+      isTitanElite(manufacturer, model) || isZinwaQ25(manufacturer, model) -> SandFlyKey.RIGHT_SHIFT
+      (maker.contains("blackberry") || maker.contains("tcl")) && hasRightShift ->
+        SandFlyKey.RIGHT_SHIFT
       hasSym -> SandFlyKey.SYM
       else -> SandFlyKey.ALT
     }
+  }
+
+  /** The value of the Unihertz Fn key setting for Ctrl. */
+  private const val FN_AS_CTRL = 1
 }
