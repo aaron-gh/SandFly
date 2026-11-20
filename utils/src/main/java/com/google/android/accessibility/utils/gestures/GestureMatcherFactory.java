@@ -246,20 +246,63 @@ class GestureMatcherFactory {
     MAPPER_GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT(
         GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT, 4, 3, LEFT, NONE),
     MAPPER_GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT(
-        GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT, 4, 3, RIGHT, NONE);
+        GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT, 4, 3, RIGHT, NONE),
+    // Taps with two fingers, then a swipe with one finger.
+    MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP, 2, 1, UP, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_DOWN(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_DOWN, 2, 1, DOWN, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_LEFT(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_LEFT, 2, 1, LEFT, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_RIGHT, 2, 1, RIGHT, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_UP(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_UP, 2, 2, UP, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_DOWN(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_DOWN, 2, 2, DOWN, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT, 2, 2, LEFT, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_RIGHT, 2, 2, RIGHT, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_UP(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_UP, 2, 3, UP, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_DOWN(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_DOWN, 2, 3, DOWN, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_LEFT(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_LEFT, 2, 3, LEFT, NONE, 1),
+    MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT(
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT, 2, 3, RIGHT, NONE, 1);
 
     GestureMatchConfig(int gestureId, int finger, int tap, int direction1, int direction2) {
-      this(gestureId, finger, tap, /* isHold= */ false, direction1, direction2);
+      this(gestureId, finger, tap, /* isHold= */ false, direction1, direction2, finger);
     }
 
     GestureMatchConfig(
         int gestureId, int finger, int tap, boolean isHold, int direction1, int direction2) {
+      this(gestureId, finger, tap, isHold, direction1, direction2, finger);
+    }
+
+    /** Taps with {@code finger} fingers, then a swipe with {@code swipeFinger} fingers. */
+    GestureMatchConfig(
+        int gestureId, int finger, int tap, int direction1, int direction2, int swipeFinger) {
+      this(gestureId, finger, tap, /* isHold= */ false, direction1, direction2, swipeFinger);
+    }
+
+    GestureMatchConfig(
+        int gestureId,
+        int finger,
+        int tap,
+        boolean isHold,
+        int direction1,
+        int direction2,
+        int swipeFinger) {
       this.gestureId = gestureId;
       this.finger = finger;
       this.tap = tap;
       this.isHold = isHold;
       this.direction1 = direction1;
       this.direction2 = direction2;
+      this.swipeFinger = swipeFinger;
     }
 
     final int gestureId;
@@ -268,6 +311,8 @@ class GestureMatcherFactory {
     final boolean isHold;
     final int direction1;
     final int direction2;
+    // The number of fingers of the swipe after the taps of a tap, then swipe gesture.
+    final int swipeFinger;
 
     @Override
     public String toString() {
@@ -284,6 +329,8 @@ class GestureMatcherFactory {
           + direction1
           + ", direction2="
           + direction2
+          + ", swipeFinger="
+          + swipeFinger
           + '}';
     }
   }
@@ -405,12 +452,13 @@ class GestureMatcherFactory {
             listener,
             logger);
       }
-      // taps, then a swipe
+      // taps, then a swipe with as many fingers or with one
       if (gestureMatchConfig.direction1 != NONE) {
         return new MultiFingerTapThenSwipe(
             context,
             gestureMatchConfig.finger,
             gestureMatchConfig.tap,
+            gestureMatchConfig.swipeFinger,
             gestureMatchConfig.direction1,
             gestureMatchConfig.gestureId,
             listener,
