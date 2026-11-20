@@ -149,6 +149,7 @@ class VolumeChangeFeedback(private val context: Context) {
         (toneDuringMedia || !media) &&
         kind == VolumeChangeFilter.Kind.STEP &&
         !phoneCallActive &&
+        !isPhoneRingingOrInCall() &&
         !PauseController.isPaused() &&
         !isAppCallActive()
     ) {
@@ -266,6 +267,16 @@ class VolumeChangeFeedback(private val context: Context) {
           player != null ||
           FailoverTextToSpeech.speechUsage(context) == AudioAttributes.USAGE_MEDIA,
     )
+  }
+
+  /**
+   * Whether the audio mode shows a phone call ringing or going on. The call state that
+   * [phoneCallActive] comes from is always idle while the phone permission is not granted, and a
+   * tone played then would silence the ringtone.
+   */
+  private fun isPhoneRingingOrInCall(): Boolean {
+    val audio = context.getSystemService(AudioManager::class.java) ?: return false
+    return audio.mode == AudioManager.MODE_RINGTONE || audio.mode == AudioManager.MODE_IN_CALL
   }
 
   private fun isAppCallActive(): Boolean {
