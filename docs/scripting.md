@@ -434,11 +434,12 @@ Sounds and vibration follow the user's **Sound feedback** and **Vibration feedba
 
 ### Touch and keys
 
-*Version 2.* These need the `actions` permission. They [wait](#waiting) for the result where they can, and give whether it worked. Touching the screen needs Android 11 or later. While a script's touch is under way, touches on the screen pass through to apps, so SandFly doesn't take the script's touches as its own gestures.
+*Version 2.* These need the `actions` permission. They [wait](#waiting) for the result where they can, and give whether it worked. Touching the screen needs Android 11 or later. While a script's touch is under way, touches on the screen pass through to apps, so SandFly doesn't take the script's touches as its own gestures, unless touch is locked.
 
 *   `sf.touch.tap(x, y)`, `sf.touch.doubleTap(x, y)` and `sf.touch.longPress(x, y, ms)` touch a point on the screen, in pixels. `ms` is 1,000 if left out.
 *   `sf.touch.swipe(x1, y1, x2, y2, ms)` moves a finger from one point to the other in `ms` milliseconds, 300 if left out.
 *   `sf.touch.gesture(strokes)` performs up to 10 strokes at once, for gestures with more fingers. Each stroke is `{ points, start, duration }`: a list of up to 100 `{ x, y }` points, followed in `duration` milliseconds, starting `start` milliseconds after the gesture begins. A gesture lasts up to 10 seconds.
+*   *Version 6.* `sf.touch.lock(ms)` locks touch for `ms` milliseconds, at most 10,000: the user's touches and gestures on the screen do nothing and don't reach the app, while the script's own `sf.touch` gestures still go to the app. It gives a handle whose `release()` ends the lock, and `sf.touch.unlock()` ends a lock the script started. The lock also ends when the script unloads or raises an error, when the app it started in leaves the screen, and when the user presses both volume keys together or runs Lock or unlock touch. A new script lock, of this script or another, replaces the one before. Scripts can't lock touch on SandFly's own screens. Touch lock needs Android 13 or later; before that, nothing is locked.
 *   `sf.keys.type(text)` types text where the cursor is in the edit field with input focus, replacing any selection. Into a password field, or with no edit field, it types through Shizuku, which takes only text without line breaks, up to 1,000 characters.
 *   `sf.keys.press(keys)` presses keys through Shizuku, one after another. `keys` is a list, or names separated by spaces: Android's key names with or without `KEYCODE_`, such as `'enter'`, `'tab'`, `'KEYCODE_MEDIA_PLAY_PAUSE'`, and `up`, `down`, `left`, `right`, `backspace`, `delete`, `esc`, `home`, `end`, `pageup`, `pagedown`, `playpause`, `next`, `previous`, `volumeup` and `volumedown`.
 

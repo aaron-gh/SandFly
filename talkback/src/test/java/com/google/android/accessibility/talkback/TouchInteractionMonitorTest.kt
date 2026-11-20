@@ -42,6 +42,7 @@ import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorF
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.time.Duration
+import com.google.android.accessibility.talkback.touchlock.TouchLock
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -226,6 +227,66 @@ class TouchInteractionMonitorTest {
     touchAt(ACTION_MOVE, 160f, height - 40f, 340)
     runUntil(350)
     assertEquals(listOf(false, true, false), service.fingerAtScreenEdge)
+  }
+
+  /** A touch of the user's touch screen, which, unlike a gesture a service sends, has a device. */
+  private fun userTouchAt(action: Int, x: Float, y: Float, timeMs: Long) {
+    val eventTime = start + timeMs
+    if (action == ACTION_DOWN) {
+      downTime = eventTime
+    }
+    val event =
+      MotionEvent.obtain(downTime, eventTime, action, x, y, 1f, 1f, 0, 1f, 1f, /* deviceId= */ 5, 0)
+    main.postAtTime({ callController("onMotionEvent", MotionEvent::class.java, event) }, eventTime)
+  }
+
+  @Test
+  fun touchesDoNothingWhileTouchIsLocked() {
+    val lockChanges = mutableListOf<Boolean>()
+    TouchLock.start(
+      service,
+      object : TouchLock.Host {
+        override fun isAvailable() = true
+
+        override fun speak(text: CharSequence) {}
+
+        override fun lockedTouch(feedback: TouchLock.LockedTouchFeedback) {}
+
+        override fun onLockChanged(locked: Boolean) {
+          lockChanges.add(locked)
+        }
+
+        override fun onVolumeKeysTaken() {}
+      },
+    )
+    try {
+      TouchLock.toggle()
+      // A finger held still, then a swipe right.
+      stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+      userTouchAt(ACTION_DOWN, 160f, 200f, 0)
+      userTouchAt(ACTION_UP, 160f, 200f, 400)
+      userTouchAt(ACTION_DOWN, 40f, 200f, 500)
+      for (step in 1..6) {
+        userTouchAt(ACTION_MOVE, 40f + 40f * step, 200f, 500L + 15 * step)
+      }
+      userTouchAt(ACTION_UP, 280f, 200f, 600)
+      runUntil(1000)
+      assertEquals(listOf<Thread>(), reporter.requests)
+      assertEquals(listOf<Int>(), service.gestures)
+
+      // Unlocked, the same swipe is a gesture.
+      TouchLock.toggle()
+      userTouchAt(ACTION_DOWN, 40f, 200f, 1100)
+      for (step in 1..6) {
+        userTouchAt(ACTION_MOVE, 40f + 40f * step, 200f, 1100L + 15 * step)
+      }
+      userTouchAt(ACTION_UP, 280f, 200f, 1200)
+      runUntil(1500)
+      assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+      assertEquals(listOf(true, false), lockChanges)
+    } finally {
+      TouchLock.stop()
+    }
   }
 
   @Test

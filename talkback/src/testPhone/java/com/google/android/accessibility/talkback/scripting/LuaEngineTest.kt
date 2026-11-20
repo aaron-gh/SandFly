@@ -146,6 +146,21 @@ class LuaEngineTest {
   }
 
   @Test
+  fun aTouchLockHasATimeAndItsHandleReleasesIt() {
+    host.answers["touch.lock"] = { "4" }
+    run(
+      """
+      local lock = sf.touch.lock(2500)
+      lock:release()
+      sf.touch.unlock()
+      """
+    )
+    assertEquals(2500, host.calls.single { it.first == "touch.lock" }.second!!.getInt("ms"))
+    assertEquals(4, host.calls.single { it.first == "touch.release" }.second!!.getInt("token"))
+    assertEquals(1, host.calls.count { it.first == "touch.unlock" })
+  }
+
+  @Test
   fun compiledLuaIsRefused() {
     run(
       """

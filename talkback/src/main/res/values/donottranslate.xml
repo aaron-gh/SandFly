@@ -496,6 +496,34 @@
       <item>1</item>
       <item>2</item>
     </string-array>
+    <string name="pref_lock_touch_automatically_key" translatable="false">pref_lock_touch_automatically</string>
+    <string-array name="pref_lock_touch_automatically_entries">
+      <item>@string/value_lock_touch_never</item>
+      <item>@string/value_lock_touch_screen_on</item>
+      <item>@string/value_lock_touch_lock_screen</item>
+      <item>@string/value_lock_touch_proximity</item>
+    </string-array>
+    <!-- TouchLock.Automatic reads the same values. -->
+    <string-array name="pref_lock_touch_automatically_values" translatable="false">
+      <item>off</item>
+      <item>screen_on</item>
+      <item>lock_screen</item>
+      <item>proximity</item>
+    </string-array>
+    <string name="pref_locked_touch_feedback_key" translatable="false">pref_locked_touch_feedback</string>
+    <string name="locked_touch_feedback_nothing_value" translatable="false">nothing</string>
+    <string name="locked_touch_feedback_sound_value" translatable="false">sound</string>
+    <string name="locked_touch_feedback_vibration_value" translatable="false">vibration</string>
+    <string-array name="pref_locked_touch_feedback_entries">
+      <item>@string/value_locked_touch_nothing</item>
+      <item>@string/value_locked_touch_sound</item>
+      <item>@string/value_locked_touch_vibration</item>
+    </string-array>
+    <string-array name="pref_locked_touch_feedback_values" translatable="false">
+      <item>@string/locked_touch_feedback_nothing_value</item>
+      <item>@string/locked_touch_feedback_sound_value</item>
+      <item>@string/locked_touch_feedback_vibration_value</item>
+    </string-array>
     <string name="pref_selector_switch_tts_engine_key" translatable="false">pref_selector_switch_tts_engine_key</string>
     <string name="pref_selector_speech_stream_key" translatable="false">pref_selector_speech_stream_key</string>
     <string name="pref_selector_audio_output_key" translatable="false">pref_selector_audio_output_key</string>
@@ -1866,6 +1894,7 @@
   <string name="shortcut_value_refresh" translatable="false">REFRESH</string>
   <string name="shortcut_value_toggle_browse_mode" translatable="false">TOGGLE_BROWSE_MODE</string>
   <string name="shortcut_value_toggle_arrow_key_nav" translatable="false">TOGGLE_ARROW_KEY_NAV</string>
+  <string name="shortcut_value_toggle_touch_lock" translatable="false">TOGGLE_TOUCH_LOCK</string>
   <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="shortcut_value_dictate" translatable="false">DICTATE</string>

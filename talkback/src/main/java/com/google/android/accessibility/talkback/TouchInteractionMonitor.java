@@ -124,6 +124,7 @@ import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.PinchTracker;
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
+import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
@@ -414,6 +415,10 @@ public class TouchInteractionMonitor
   private final SharedPreferences sharedPreferences;
   // Whether the touch in progress is one SandFly sent, which goes to the app as it is.
   private boolean passingSyntheticTouch;
+  // Whether the touch in progress went down while touch was locked, and so does nothing.
+  private boolean ignoringLockedTouch;
+  // The device ID Android gives the touches of gestures that accessibility services send.
+  private static final int INJECTED_DEVICE_ID = 0;
   @VisibleForTesting final TouchExplorationModeFailureReporter touchExplorationModeFailureReporter;
   private final boolean typingFocusTimeout;
   private final boolean touchFocusTimeout;
@@ -935,6 +940,27 @@ public class TouchInteractionMonitor
       return;
     }
     if (passingSyntheticTouch) {
+      return;
+    }
+    // While touch is locked, a touch does nothing and nothing reaches the app, except a gesture
+    // SandFly sends itself, such as a script's, which goes to the app as it is.
+    if (event.getActionMasked() == ACTION_DOWN) {
+      ignoringLockedTouch = false;
+      if (TouchLock.isLocked()) {
+        if (event.getDeviceId() == INJECTED_DEVICE_ID) {
+          passingSyntheticTouch = true;
+          requestDelegating("injectedWhileTouchLocked");
+          return;
+        }
+        ignoringLockedTouch = true;
+        TouchLock.onLockedTouch();
+      }
+    }
+    if (ignoringLockedTouch) {
+      int action = event.getActionMasked();
+      if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+        ignoringLockedTouch = false;
+      }
       return;
     }
     runDueCornerTapTimeout(event);

@@ -45,6 +45,7 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.Future
 import java.util.concurrent.atomic.AtomicInteger
 import com.google.android.accessibility.talkback.scripting.ScriptBuilder.objects
+import com.google.android.accessibility.talkback.touchlock.TouchLock
 import com.google.android.accessibility.utils.output.OutputMute
 import org.json.JSONArray
 import org.json.JSONObject
@@ -147,6 +148,7 @@ class ScriptRuntime(
 
   fun close() {
     OutputMute.releaseOwner(id, "script unloaded")
+    TouchLock.releaseOwner(id, "script unloaded")
     dialogs.close(id)
     timers.values.forEach(handler::removeCallbacks)
     timers.clear()
@@ -319,6 +321,17 @@ class ScriptRuntime(
     }
     on("node.labeledBy", SCREEN) { nodes.labeledBy(handle(it)) }
     on("node.labelFor", SCREEN) { nodes.labelFor(handle(it)) }
+    on("touch.lock", ACTIONS) { args ->
+      apiCheck(!manager.inBacktalk) { "Scripts can't lock touch on SandFly's own screens" }
+      val ms = args.optDouble("ms", Double.NaN)
+      apiCheck(ms.isFinite() && ms > 0) {
+        "sf.touch.lock needs a time in milliseconds, up to ${TouchLock.MAX_SCRIPT_MS}"
+      }
+      val app = manager.appInfo().optString("package").ifEmpty { null }
+      TouchLock.lockForScript(id, app, minOf(ms, TouchLock.MAX_SCRIPT_MS.toDouble()).toLong())
+    }
+    on("touch.release") { TouchLock.release(it.optInt("token")) }
+    on("touch.unlock") { TouchLock.releaseOwner(id, "unlocked") }
     on("touch.gesture", ACTIONS) { args ->
       val strokes = args.optJSONArray("strokes")
       promise { settle -> manager.touch.gesture(strokes) { settle(true, it) } }

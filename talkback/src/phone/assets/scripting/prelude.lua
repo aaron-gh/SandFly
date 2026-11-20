@@ -1518,6 +1518,11 @@ touch = {
   swipe = function(x1, y1, x2, y2, ms)
     return gesture({ { points = { point(x1, y1), point(x2, y2) }, duration = tonumber(ms) or 300 } })
   end,
+  lock = function(ms)
+    local token = call('touch.lock', { ms = tonumber(ms) })
+    return { release = function() send('touch.release', { token = token }) end }
+  end,
+  unlock = function() send('touch.unlock') end,
 }
 
 local function key_list(keys)
