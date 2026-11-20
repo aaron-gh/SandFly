@@ -26,8 +26,10 @@ import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.os.bundleOf
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
+import com.google.android.accessibility.talkback.touchlock.TouchLock
 import com.google.android.accessibility.utils.output.OutputMute
 import org.json.JSONArray
 
@@ -53,6 +55,7 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     val list = strokes.items()
     apiCheck(list.size in 1..MAX_STROKES) { "A gesture has 1 to $MAX_STROKES strokes" }
     val builder = GestureDescription.Builder()
+    var lastEndMs = 0L
     for (item in list) {
       val stroke = item as? org.json.JSONObject ?: apiError("A stroke is { points, start, duration }")
       val points = stroke.optJSONArray("points").items()
@@ -70,11 +73,27 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
       apiCheck(start in 0..MAX_DURATION_MS && duration in 1..MAX_DURATION_MS) {
         "A stroke starts within and lasts at most $MAX_DURATION_MS milliseconds"
       }
+      lastEndMs = maxOf(lastEndMs, start + duration)
       builder.addStroke(GestureDescription.StrokeDescription(path, start, duration))
     }
     val description = asApiError { builder.build() }
     mainHandler.post {
       if (closed) return@post done(false)
+      // While touch is locked the pass-through region stays empty, so the gesture is handed to the
+      // app as SandFly's own touch instead.
+      if (TouchLock.isLocked() && SyntheticTouches.isAvailable()) {
+        val ended = injecting()
+        val sent =
+          SyntheticTouches.dispatch(service, description, lastEndMs, null) { performed ->
+            ended()
+            done(performed)
+          }
+        if (!sent) {
+          ended()
+          done(false)
+        }
+        return@post
+      }
       // Touch exploration would take the strokes as SandFly gestures, so touch passes through to
       // apps until the gesture ends. A lock the person or another SandFly screen holds stays theirs.
       if (gestures++ == 0) ownsPassThrough = !feedback.services.isPassThroughActive()

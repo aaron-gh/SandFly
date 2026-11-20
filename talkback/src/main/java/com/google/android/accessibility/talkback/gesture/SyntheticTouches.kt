@@ -61,6 +61,7 @@ object SyntheticTouches {
     gesture: GestureDescription,
     durationMs: Long,
     onEnd: Runnable? = null,
+    onResult: ((Boolean) -> Unit)? = null,
   ): Boolean {
     if (!isAvailable()) return false
     expectedUntil = SystemClock.uptimeMillis() + durationMs + START_MARGIN_MS
@@ -69,11 +70,13 @@ object SyntheticTouches {
         override fun onCompleted(description: GestureDescription) {
           expectedUntil = 0L
           onEnd?.run()
+          onResult?.invoke(true)
         }
 
         override fun onCancelled(description: GestureDescription) {
           expectedUntil = 0L
           onEnd?.run()
+          onResult?.invoke(false)
         }
       }
     if (!service.dispatchGesture(gesture, callback, handler)) {
