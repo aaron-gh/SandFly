@@ -818,7 +818,7 @@
         android:title="@string/title_pref_shortcut_4finger_spread"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
-  <!-- Taps with several fingers, then a swipe with as many fingers -->
+  <!-- Taps with several fingers, then a swipe with as many fingers or with one finger -->
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_tap_swipe_shortcuts_key"
       android:title="@string/tap_swipe_gestures_title">
@@ -1002,6 +1002,66 @@
         android:key="@string/pref_shortcut_4finger_3tap_swipe_right_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_4finger_3tap_swipe_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_1tap_1finger_swipe_up_default"
+        android:key="@string/pref_shortcut_2finger_1tap_1finger_swipe_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_1tap_1finger_swipe_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_1tap_1finger_swipe_down_default"
+        android:key="@string/pref_shortcut_2finger_1tap_1finger_swipe_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_1tap_1finger_swipe_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_1tap_1finger_swipe_left_default"
+        android:key="@string/pref_shortcut_2finger_1tap_1finger_swipe_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_1tap_1finger_swipe_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_1tap_1finger_swipe_right_default"
+        android:key="@string/pref_shortcut_2finger_1tap_1finger_swipe_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_1tap_1finger_swipe_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_2tap_1finger_swipe_up_default"
+        android:key="@string/pref_shortcut_2finger_2tap_1finger_swipe_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_2tap_1finger_swipe_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_2tap_1finger_swipe_down_default"
+        android:key="@string/pref_shortcut_2finger_2tap_1finger_swipe_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_2tap_1finger_swipe_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_2tap_1finger_swipe_left_default"
+        android:key="@string/pref_shortcut_2finger_2tap_1finger_swipe_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_2tap_1finger_swipe_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_2tap_1finger_swipe_right_default"
+        android:key="@string/pref_shortcut_2finger_2tap_1finger_swipe_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_2tap_1finger_swipe_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_3tap_1finger_swipe_up_default"
+        android:key="@string/pref_shortcut_2finger_3tap_1finger_swipe_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_3tap_1finger_swipe_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_3tap_1finger_swipe_down_default"
+        android:key="@string/pref_shortcut_2finger_3tap_1finger_swipe_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_3tap_1finger_swipe_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_3tap_1finger_swipe_left_default"
+        android:key="@string/pref_shortcut_2finger_3tap_1finger_swipe_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_3tap_1finger_swipe_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_2finger_3tap_1finger_swipe_right_default"
+        android:key="@string/pref_shortcut_2finger_3tap_1finger_swipe_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_2finger_3tap_1finger_swipe_right"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Fingerprint sensor swipe gestures -->

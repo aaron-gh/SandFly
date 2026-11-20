@@ -658,7 +658,7 @@ A corner with no gesture assigned works as before. In a corner with a gesture as
 
 ### Tap, then swipe
 
-Under **Tap, then swipe** in gesture settings, there are gestures that tap once, twice or three times with two, three or four fingers and then swipe up, down, left or right with as many fingers, such as **Double-tap, then swipe up with 2 fingers**. They do nothing by default. The swipe is the next touch after the last tap and must start within 0.25 seconds of it. While one of these gestures has a command, the taps it starts with wait for the swipe as they wait for a further tap. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
+Under **Tap, then swipe** in gesture settings, there are gestures that tap once, twice or three times with two, three or four fingers and then swipe up, down, left or right with as many fingers, such as **Double-tap, then swipe up with 2 fingers**, and gestures that tap once, twice or three times with two fingers and then swipe up, down, left or right with one finger, such as **Double-tap with 2 fingers, then swipe up**. They do nothing by default. The swipe is the next touch after the last tap and must start within 0.25 seconds of it. While one of these gestures has a command, the taps it starts with wait for the swipe as they wait for a further tap. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
 
 ### Two-finger angle gestures
 
@@ -724,7 +724,7 @@ To let Android recognize gestures again, turn off **Advanced settings** > **Deve
 
 ### Multi-finger taps without the wait
 
-A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no gesture that goes on after these taps with as many fingers has a command: more taps, more taps and hold, or a [tap, then swipe](#tap-then-swipe) gesture. TalkBack waited about 0.3 seconds for a further tap. A quadruple-tap with three fingers always runs at once. In the tutorial, these taps still wait. This requires **Handle gestures in SandFly**.
+A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no gesture that starts with these taps and goes on after them has a command: more taps or more taps and hold with as many fingers, or a [tap, then swipe](#tap-then-swipe) gesture. TalkBack waited about 0.3 seconds for a further tap. A quadruple-tap with three fingers always runs at once. In the tutorial, these taps still wait. This requires **Handle gestures in SandFly**.
 
 ## Navigation
 
