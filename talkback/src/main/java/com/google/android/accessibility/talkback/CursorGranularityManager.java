@@ -802,8 +802,9 @@ public class CursorGranularityManager {
       return false;
     }
 
-    // EditText has has a stable cursor position, so don't clear selection.
-    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+    // Edit fields have a stable cursor position, so don't clear selection. Some apps use a custom
+    // class for the field, which has no EditText role but is still editable.
+    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT || node.isEditable()) {
       return false;
     }
 
