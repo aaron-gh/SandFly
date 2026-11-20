@@ -27,13 +27,15 @@ import com.google.android.accessibility.braille.translate.BrailleTranslator
 import com.google.android.accessibility.braille.translate.TranslationResult
 import java.lang.reflect.Proxy
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 
-/** Custom characters that change the text of the cells before them. */
+/** The composing text of the word being typed, and custom characters that change it. */
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class EditBufferUnContractedComposingTest {
@@ -75,6 +77,67 @@ class EditBufferUnContractedComposingTest {
   }
 
   @Test
+  fun wordShownAsComposingTextCounts() {
+    val field = Field()
+    buffer.appendBraille(field.connection(TEXT), cell("1"))
+    assertTrue(buffer.hasHoldings(field.connection(TEXT)))
+    // The braille display gets no cells for it, as its text is in the field.
+    assertEquals(0, buffer.getHoldingsInfo(field.connection(TEXT)).holdings().array().size)
+    buffer.commit(field.connection(TEXT))
+    assertFalse(buffer.hasHoldings(field.connection(TEXT)))
+  }
+
+  @Test
+  fun cursorMovedOutOfTheWordStartsANewWordAtTheCursor() {
+    val field = Field()
+    field.text.append("xy ")
+    field.cursor = 3
+    buffer.appendBraille(field.connection(TEXT), cell("1"))
+    buffer.appendBraille(field.connection(TEXT), cell("12"))
+    assertEquals("xy ab", field.text.toString())
+
+    field.moveCursor(0)
+    field.reportSelection(buffer)
+    assertEquals(-1, field.composingStart)
+    assertFalse(buffer.hasHoldings(field.connection(TEXT)))
+
+    buffer.appendBraille(field.connection(TEXT), cell("14"))
+    assertEquals("cxy ab", field.text.toString())
+    buffer.appendSpace(field.connection(TEXT))
+    assertEquals("c xy ab", field.text.toString())
+  }
+
+  @Test
+  fun cursorMovedInsideAOneWordFieldStartsANewWord() {
+    val field = Field()
+    buffer.appendBraille(field.connection(TEXT), cell("1"))
+    buffer.appendBraille(field.connection(TEXT), cell("12"))
+    field.moveCursor(0)
+    field.reportSelection(buffer)
+    buffer.appendBraille(field.connection(TEXT), cell("14"))
+    assertEquals("cab", field.text.toString())
+  }
+
+  @Test
+  fun ownTypingKeepsTheWord() {
+    val field = Field()
+    buffer.appendBraille(field.connection(TEXT), cell("1"))
+    field.reportSelection(buffer)
+    buffer.appendBraille(field.connection(TEXT), cell("12"))
+    field.reportSelection(buffer)
+    assertTrue(buffer.hasHoldings(field.connection(TEXT)))
+    assertEquals("ab", field.text.substring(field.composingStart, field.composingEnd))
+  }
+
+  @Test
+  fun selectionFinishesTheWord() {
+    val field = Field()
+    buffer.appendBraille(field.connection(TEXT), cell("1"))
+    buffer.onSelectionUpdated(field.connection(TEXT), 0, 1, 0, 1)
+    assertFalse(buffer.hasHoldings(field.connection(TEXT)))
+  }
+
+  @Test
   fun commonPrefixKeepsSurrogatePairs() {
     assertEquals(2, EditBufferUnContracted.commonPrefixLength("ab", "abc"))
     assertEquals(0, EditBufferUnContracted.commonPrefixLength("_", ")"))
@@ -87,6 +150,14 @@ class EditBufferUnContractedComposingTest {
     var cursor = 0
     var composingStart = -1
     var composingEnd = -1
+
+    fun moveCursor(position: Int) {
+      cursor = position
+    }
+
+    fun reportSelection(buffer: EditBuffer) {
+      buffer.onSelectionUpdated(connection(TEXT), cursor, cursor, composingStart, composingEnd)
+    }
 
     private fun replace(newText: CharSequence, composing: Boolean) {
       val start = if (composingStart >= 0) composingStart else cursor

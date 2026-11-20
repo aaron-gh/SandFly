@@ -337,8 +337,9 @@ public class BrailleImeActor {
 
   private void performTextAction(ImeConnection imeConnection, Runnable runnable) {
     EditBuffer editBuffer = callback.getEditBuffer();
-    if (editBuffer != null
-        && editBuffer.getHoldingsInfo(imeConnection).holdings().array().length != 0) {
+    // Also a word whose text is shown as composing text, which is otherwise left where it is and
+    // replaced there by the next cells, wherever the cursor is moved.
+    if (editBuffer != null && editBuffer.hasHoldings(imeConnection)) {
       editBuffer.commit(imeConnection);
       handler.post(runnable);
     } else {

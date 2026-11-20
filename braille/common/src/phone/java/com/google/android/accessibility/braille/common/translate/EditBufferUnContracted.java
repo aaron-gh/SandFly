@@ -351,6 +351,40 @@ public class EditBufferUnContracted implements EditBuffer {
   }
 
   @Override
+  public boolean hasHoldings(ImeConnection imeConnection) {
+    return !holdings.isEmpty();
+  }
+
+  /**
+   * Finishes the word being typed when the cursor leaves its composing text, such as after a
+   * cursor movement by a gesture, so that the next cells start a word at the cursor and the word's
+   * text stays where it is.
+   */
+  @Override
+  public void onSelectionUpdated(
+      ImeConnection imeConnection,
+      int newSelStart,
+      int newSelEnd,
+      int candidatesStart,
+      int candidatesEnd) {
+    if (holdings.isEmpty() || candidatesStart < 0 || candidatesEnd < candidatesStart) {
+      return;
+    }
+    if (newSelStart != newSelEnd
+        || !isCursorOfComposingText(newSelEnd, candidatesStart, candidatesEnd)) {
+      commit(imeConnection);
+    }
+  }
+
+  /**
+   * Whether [cursor] is where this buffer leaves the cursor after setting the composing text from
+   * [candidatesStart] to [candidatesEnd]: at its end.
+   */
+  protected boolean isCursorOfComposingText(int cursor, int candidatesStart, int candidatesEnd) {
+    return cursor == candidatesEnd;
+  }
+
+  @Override
   public String toString() {
     return holdings.toString();
   }
