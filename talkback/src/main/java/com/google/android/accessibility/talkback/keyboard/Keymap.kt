@@ -149,10 +149,10 @@ enum class Keymap(
         context,
         SharedPreferencesUtils.getSharedPreferences(context).getString(sandFlyKeyPref, null),
       )
-      ?.takeIf { it in sandFlyKeys } ?: defaultSandFlyKey()
+      ?.takeIf { it in sandFlyKeys } ?: defaultSandFlyKey(context)
 
-  private fun defaultSandFlyKey(): SandFlyKey =
-    if (plainKeys) KeyboardPhones.sandFlyKey() else nativeKey
+  private fun defaultSandFlyKey(context: Context): SandFlyKey =
+    if (plainKeys) KeyboardPhones.sandFlyKey(context) else nativeKey
 
   /** Where shortcuts are saved with [sandFlyKey], so each SandFly key keeps its own changes. */
   fun persisterPrefix(sandFlyKey: SandFlyKey): String =
