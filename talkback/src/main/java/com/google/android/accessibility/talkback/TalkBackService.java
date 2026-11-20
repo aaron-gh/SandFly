@@ -3730,6 +3730,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     return isBrailleKeyboardActivated();
   }
 
+  /** Whether the braille keyboard takes touches on the screen, not typing from a display. */
+  public boolean isOnScreenBrailleKeyboardShown() {
+    BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();
+    return brailleIme != null
+        && brailleIme.getBrailleTyping() == BrailleImeForTalkBack.BrailleTyping.ON_SCREEN;
+  }
+
   /**
    * Braille commands, app search and recording of braille cells on the screen, or null while
    * SandFly is off.
