@@ -53,6 +53,10 @@ public class PassThroughModeActor {
   private boolean locked;
   // The region direct touch wants. Used whenever neither the gesture nor the braille lock holds it.
   private Region directTouchRegion = new Region();
+  // The pass-through region set last, which applies again when touch unlocks.
+  private Region wantedRegion = new Region();
+  // Whether touch is locked, which keeps every region empty.
+  private boolean touchLocked;
   private PassThroughModeDialog passThroughDialog;
   // The exit runs on the main thread, like everything else here, not on a thread of its own.
   private final Handler handler = new Handler(Looper.getMainLooper());
@@ -101,8 +105,7 @@ public class PassThroughModeActor {
   public void setTouchExplorePassThrough(boolean enable) {
     if (FeatureSupport.supportPassthrough() && !locked) {
       if (enable) {
-        service.setTouchExplorationPassthroughRegion(
-            Display.DEFAULT_DISPLAY, getRegionOfFullScreen(service));
+        setRegion(Display.DEFAULT_DISPLAY, getRegionOfFullScreen(service));
         startPassThroughGuardTimer();
         LogUtils.v(TAG, "Enter touch explore pass-through mode.");
         pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up));
@@ -110,7 +113,7 @@ public class PassThroughModeActor {
         // An exit left pending would set the region again later, over whichever holds it by then,
         // such as the circle menu's.
         cancelPassThroughGuardTimer();
-        service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
+        setRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
         if (touchExplorePassThroughActive) {
           LogUtils.v(TAG, "Leave touch explore pass-through mode.");
           pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down));
@@ -127,7 +130,28 @@ public class PassThroughModeActor {
   public void setDirectTouchRegion(@Nullable Region region) {
     directTouchRegion = region == null ? new Region() : new Region(region);
     if (FeatureSupport.supportPassthrough() && !locked && !touchExplorePassThroughActive) {
-      service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
+      setRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
+    }
+  }
+
+  /**
+   * Sets whether touch is locked. While it is, no touch passes through to apps; the region set
+   * last applies again when it unlocks.
+   */
+  public void setTouchLocked(boolean touchLocked) {
+    if (this.touchLocked == touchLocked || !FeatureSupport.supportPassthrough()) {
+      return;
+    }
+    this.touchLocked = touchLocked;
+    service.setTouchExplorationPassthroughRegion(
+        Display.DEFAULT_DISPLAY, touchLocked ? new Region() : wantedRegion);
+  }
+
+  /** Sets the pass-through region, unless touch is locked, when it waits until touch unlocks. */
+  private void setRegion(int displayId, Region region) {
+    wantedRegion = region;
+    if (!touchLocked) {
+      service.setTouchExplorationPassthroughRegion(displayId, region);
     }
   }
 
@@ -150,10 +174,10 @@ public class PassThroughModeActor {
         cancelPassThroughGuardTimer();
         locked = true;
         touchExplorePassThroughActive = true;
-        service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, region);
+        setRegion(Display.DEFAULT_DISPLAY, region);
         LogUtils.v(TAG, "Enter touch explore pass-through lock mode.");
       } else {
-        service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
+        setRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
         locked = false;
         if (touchExplorePassThroughActive) {
           touchExplorePassThroughActive = false;

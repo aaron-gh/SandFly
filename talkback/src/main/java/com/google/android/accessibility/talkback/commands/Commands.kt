@@ -1182,6 +1182,11 @@ object Commands {
           R.string.shortcut_previous_settings_profile,
         )
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
+        gesture(
+          R.string.shortcut_value_toggle_touch_lock,
+          R.string.shortcut_toggle_touch_lock,
+          available = FeatureSupport.supportGestureDetection(),
+        )
         gesture(R.string.shortcut_value_toggle_scripts, R.string.shortcut_toggle_scripts)
         gesture(R.string.shortcut_value_script_commands, R.string.shortcut_script_commands)
         gesture(R.string.shortcut_value_verbosity_settings, R.string.title_pref_selector_verbosity)

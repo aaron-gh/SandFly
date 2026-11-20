@@ -179,6 +179,7 @@ import com.google.android.accessibility.talkback.overview.RecentAppSteps;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
+import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.utils.output.OutputMute;
 import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.labeling.Label;
@@ -443,6 +444,7 @@ public class GestureController {
     R.string.shortcut_value_refresh,
     R.string.shortcut_value_toggle_browse_mode,
     R.string.shortcut_value_toggle_arrow_key_nav,
+    R.string.shortcut_value_toggle_touch_lock,
     R.string.shortcut_value_row_up,
     R.string.shortcut_value_row_down,
     R.string.shortcut_value_column_left,
@@ -728,6 +730,8 @@ public class GestureController {
         keyComboManager.toggleArrowKeyNav();
       }
       result = keyComboManager != null;
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_touch_lock))) {
+      result = TouchLock.toggle();
     } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {
       result = pullToRefresh.refresh(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_media_control))) {
