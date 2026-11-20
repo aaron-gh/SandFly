@@ -423,19 +423,73 @@ public class TextEditActor {
     return true;
   }
 
-  /** Drops the text selected in copying mode, and ends copying mode. */
-  public boolean clearSelected(EventId eventId) {
+  /**
+   * Drops the text selected in copying mode and ends copying mode, or else collapses the app's
+   * selection in {@code node} at its end and ends selection mode.
+   */
+  public boolean clearSelected(@Nullable AccessibilityNodeInfoCompat node, EventId eventId) {
     @Nullable CopySelection copySelection = stateReader.copySelection();
-    if (copySelection == null || (!copySelection.hasContent() && !copySelection.isActive())) {
+    if (copySelection != null && (copySelection.hasContent() || copySelection.isActive())) {
+      copySelection.clear();
+      pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.speech(
+              service.getString(R.string.notification_type_selection_cleared), SPEAK_OPTIONS));
+      return true;
+    }
+    return clearAppSelection(node, stateReader.isSelectionModeActive(), eventId);
+  }
+
+  /**
+   * Ends selection mode and collapses the selection the app keeps in {@code node} at the end of
+   * the selection. Returns false when there is no selection and selection mode is off.
+   */
+  boolean clearAppSelection(
+      @Nullable AccessibilityNodeInfoCompat node, boolean selectionModeActive, EventId eventId) {
+    if (node == null || !AccessibilityNodeInfoUtils.keepsAppSelection(node)) {
       return false;
     }
-    copySelection.clear();
-    pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
-    pipeline.returnFeedback(
-        eventId,
-        Feedback.speech(
-            service.getString(R.string.notification_type_selection_cleared), SPEAK_OPTIONS));
-    return true;
+    node.refresh();
+    int start = node.getTextSelectionStart();
+    int end = node.getTextSelectionEnd();
+    boolean hasSelection = start >= 0 && end >= 0 && start != end;
+    if (!hasSelection && !selectionModeActive) {
+      return false;
+    }
+    // Selection mode ends first, so the cursor move below does not extend the selection.
+    if (selectionModeActive) {
+      pipeline.returnFeedback(eventId, Feedback.focusDirection(SELECTION_MODE_OFF));
+    }
+    boolean result = true;
+    if (hasSelection) {
+      int cursor = max(start, end);
+      if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+        result = moveCursor(node, cursor, eventId);
+      } else {
+        Bundle args = new Bundle();
+        args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_START_INT, cursor);
+        args.putInt(AccessibilityNodeInfoCompat.ACTION_ARGUMENT_SELECTION_END_INT, cursor);
+        result =
+            PerformActionUtils.performAction(
+                node, AccessibilityNodeInfoCompat.ACTION_SET_SELECTION, args, eventId);
+      }
+      if (!result) {
+        LogUtils.d(TAG, "clearAppSelection: collapsing the selection failed");
+      }
+    }
+    if (hasSelection && result) {
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.speech(
+              service.getString(R.string.notification_type_selection_cleared), SPEAK_OPTIONS));
+    } else if (selectionModeActive) {
+      pipeline.returnFeedback(
+          eventId,
+          Feedback.speech(
+              service.getString(R.string.notification_type_selection_mode_off), SPEAK_OPTIONS));
+    }
+    return result;
   }
 
   /**
