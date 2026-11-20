@@ -1314,6 +1314,13 @@ public class KeyComboManager
         KeyEvent.META_META_ON,
         context.getString(R.string.keycombo_key_modifier_meta),
         sb);
+    appendModifier(
+        modifier, KeyEvent.META_SYM_ON, context.getString(R.string.keycombo_key_modifier_sym), sb);
+    appendModifier(
+        modifier,
+        KeyEvent.META_FUNCTION_ON,
+        context.getString(R.string.keycombo_key_modifier_function),
+        sb);
   }
 
   /** Appends string representation of target modifier if modifier contains it. */
@@ -1553,8 +1560,16 @@ public class KeyComboManager
           isCustomKeymap()
               && !arrowsNavigate()
               && (otherModifiers & (KeyEvent.META_CTRL_ON | KeyEvent.META_ALT_ON)) != 0;
+      // In the keyboard phone keymaps, Sym, Fn and Ctrl aren't typing: their shortcuts work in text
+      // fields too.
+      boolean phoneShortcutKeys =
+          plainKeys()
+              && (otherModifiers
+                      & (KeyEvent.META_SYM_ON | KeyEvent.META_FUNCTION_ON | KeyEvent.META_CTRL_ON))
+                  != 0;
       if ((enter
               || (!customShortcutKeys
+                  && !phoneShortcutKeys
                   && isShortcutKey(
                   new KeyCombo(
                       otherModifiers,

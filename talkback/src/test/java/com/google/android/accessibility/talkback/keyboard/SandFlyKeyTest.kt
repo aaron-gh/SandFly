@@ -683,6 +683,32 @@ class SandFlyKeyTest {
   }
 
   @Test
+  fun symInShortcutsWhereAltIsTheSandFlyKey() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.ALT)
+    val model = manager.keyComboModel
+    val sym = KeyEvent.META_SYM_ON
+    model.saveKeyCombo(
+      context.getString(R.string.keycombo_shortcut_other_read_from_top),
+      KeyCombo(sym, 0, KeyEvent.KEYCODE_K, false),
+    )
+    model.saveKeyCombo(
+      context.getString(R.string.keycombo_shortcut_global_announce_battery_state),
+      KeyCombo.modifierKeys(sym, false),
+    )
+    editTextField(manager)
+    // Sym + K works in a text field too. Sym alone has a shortcut, so Sym's press is SandFly's.
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM, sym))
+    assertTrue(manager.down(KeyEvent.KEYCODE_K, sym))
+    manager.up(KeyEvent.KEYCODE_K, sym)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    // Sym alone.
+    time += 1000
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM, sym))
+    assertTrue(manager.up(KeyEvent.KEYCODE_SYM))
+    assertEquals(listOf<String?>("Sym + " + name(KeyEvent.KEYCODE_K), "Sym"), keys)
+  }
+
+  @Test
   fun keyboardPhoneSandFlyKeyShortcuts() {
     val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
     assertTrue(manager.down(KeyEvent.KEYCODE_SYM))

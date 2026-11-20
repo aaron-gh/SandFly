@@ -42,6 +42,8 @@ object KeyText {
       "Ctrl" to KeyEvent.META_CTRL_ON,
       "Alt" to KeyEvent.META_ALT_ON,
       "Meta" to KeyEvent.META_META_ON,
+      "Sym" to KeyEvent.META_SYM_ON,
+      "Fn" to KeyEvent.META_FUNCTION_ON,
     )
 
   private val MODIFIER_NAMES =
@@ -52,6 +54,9 @@ object KeyText {
       "alt" to KeyEvent.META_ALT_ON,
       "meta" to KeyEvent.META_META_ON,
       "search" to KeyEvent.META_META_ON,
+      "sym" to KeyEvent.META_SYM_ON,
+      "fn" to KeyEvent.META_FUNCTION_ON,
+      "function" to KeyEvent.META_FUNCTION_ON,
     )
 
   /** Names written for keys whose Android names are long or unclear. */

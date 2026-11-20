@@ -48,8 +48,14 @@ public final class KeyCombo {
   public static final int PARTIAL_MATCH = 1;
   public static final int EXACT_MATCH = 2;
 
+  // Sym and Fn too, which keyboard phones have, so that they can be in shortcuts as Alt can.
   public static final int KEY_EVENT_MODIFIER_MASK =
-      KeyEvent.META_SHIFT_ON | KeyEvent.META_CTRL_ON | KeyEvent.META_ALT_ON | KeyEvent.META_META_ON;
+      KeyEvent.META_SHIFT_ON
+          | KeyEvent.META_CTRL_ON
+          | KeyEvent.META_ALT_ON
+          | KeyEvent.META_META_ON
+          | KeyEvent.META_SYM_ON
+          | KeyEvent.META_FUNCTION_ON;
 
   public static final ImmutableSet<Integer> SEQUENCE_KEY_COMBO_CODE_PREFIX_KEYS =
       ImmutableSet.of(KeyEvent.KEYCODE_R, KeyEvent.KEYCODE_O);
