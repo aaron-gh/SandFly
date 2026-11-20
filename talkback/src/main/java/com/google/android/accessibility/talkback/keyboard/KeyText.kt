@@ -25,8 +25,8 @@ import java.util.Locale
  * sequence has its first key, a comma and its second key, such as "SandFly+O, H". The SandFly key
  * pressed twice is "SandFly twice". Presses of the keyboard phone keymap end with words: modifier
  * keys on their own with "alone", such as "SandFly+Shift alone" or "Alt alone twice", any key pressed
- * twice with "twice", such as "Enter twice", and modifier keys held down with "held", such as
- * "Alt+Shift held".
+ * twice with "twice", such as "Enter twice", and keys held down with "held", such as "Alt+Shift
+ * held" or "K held".
  */
 object KeyText {
   const val SANDFLY = "SandFly"
@@ -132,6 +132,9 @@ object KeyText {
     if (keyCombo.isPressedTwice) {
       return (parts + keyName(keyCombo.keyCode)).joinToString("+") + PRESSED_TWICE
     }
+    if (keyCombo.isHeldDown) {
+      return (parts + keyName(keyCombo.keyCode)).joinToString("+") + HELD
+    }
     val prefix = keyCombo.prefixKeyCode
     return if (prefix != KeyComboModel.NO_PREFIX_KEY_CODE) {
       (parts + keyName(prefix)).joinToString("+") + ", " + keyName(keyCombo.keyCode)
@@ -195,7 +198,12 @@ object KeyText {
     if (parts.any { it.isEmpty() }) return null
     var trigger = false
     var modifiers = 0
-    val modifierParts = if (alone || pressType == KeyCombo.HELD_DOWN) parts else parts.dropLast(1)
+    // Held keys are modifier keys on their own, or a key with the modifiers before it.
+    val lastIsModifier =
+      parts.last().equals(SANDFLY, ignoreCase = true) ||
+        MODIFIER_NAMES.containsKey(parts.last().lowercase(Locale.ROOT))
+    val modifierKeys = alone || (pressType == KeyCombo.HELD_DOWN && lastIsModifier)
+    val modifierParts = if (modifierKeys) parts else parts.dropLast(1)
     for (part in modifierParts) {
       if (part.equals(SANDFLY, ignoreCase = true)) {
         trigger = true
@@ -203,7 +211,7 @@ object KeyText {
       }
       modifiers = modifiers or (MODIFIER_NAMES[part.lowercase(Locale.ROOT)] ?: return null)
     }
-    if (alone || pressType == KeyCombo.HELD_DOWN) {
+    if (modifierKeys) {
       if (modifiers == 0 && !trigger) return null
       val combo = KeyCombo.modifierKeys(modifiers, trigger)
       return if (pressType == 0) combo else combo.withPressType(pressType)

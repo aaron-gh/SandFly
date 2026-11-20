@@ -76,6 +76,10 @@ class KeyTextTest {
             .withPressType(KeyCombo.HELD_DOWN),
         "Enter twice" to
           KeyCombo(0, 0, KeyEvent.KEYCODE_ENTER, false).withPressType(KeyCombo.PRESSED_TWICE),
+        "K held" to KeyCombo(0, 0, KeyEvent.KEYCODE_K, false).withPressType(KeyCombo.HELD_DOWN),
+        "SandFly+Shift+K held" to
+          KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_K, true)
+            .withPressType(KeyCombo.HELD_DOWN),
       )
     for ((text, combo) in presses) {
       assertEquals(text, combo, KeyText.parse(text))

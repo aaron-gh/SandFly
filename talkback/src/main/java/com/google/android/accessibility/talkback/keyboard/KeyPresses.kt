@@ -22,7 +22,8 @@ import android.view.KeyEvent
 /**
  * The presses of the keyboard phone keymap that aren't keys pressed with modifiers, as Key Mapper
  * has them: modifier keys pressed on their own, such as Alt alone or Shift + Sym, any key pressed
- * twice in a row, and modifier keys held down on their own. They work anywhere, text fields too.
+ * twice in a row, modifier keys held down on their own, and other keys held down. They work
+ * anywhere, text fields too, except other keys held down, which are typing while the user types.
  *
  * SandFly can't send a key on to the app later, so a press that may become a double press isn't
  * held back: the first press goes on as it would, and the second runs the shortcut. A modifier key
@@ -42,6 +43,12 @@ class KeyPresses(private val host: Host) {
 
     /** Runs the shortcut [combo]. */
     fun perform(combo: KeyCombo)
+
+    /**
+     * Whether a key held down can be a shortcut now: not while the user types into a text field,
+     * where holding a letter is the keyboard's.
+     */
+    fun canHoldKeys(): Boolean
   }
 
   private val handler = Handler(Looper.getMainLooper())
@@ -72,6 +79,18 @@ class KeyPresses(private val host: Host) {
   private var pendingSingle: Runnable? = null
   private val holdCheck = Runnable { onHeld() }
 
+  /** A key other than a modifier, held back while it may be held down long enough for its shortcut. */
+  private var heldKey: KeyCombo? = null
+  private var heldKeyCode = 0
+  private var heldKeyDone = false
+  private val keyHoldCheck = Runnable {
+    val combo = heldKey
+    if (combo != null && heldKeyCode in down && !heldKeyDone) {
+      heldKeyDone = true
+      host.perform(combo.withPressType(KeyCombo.HELD_DOWN))
+    }
+  }
+
   /** Returns whether [event] was used, so it doesn't go on to the app or other shortcuts. */
   fun onKeyEvent(event: KeyEvent): Boolean {
     val keyCode = event.keyCode
@@ -94,6 +113,9 @@ class KeyPresses(private val host: Host) {
     down.clear()
     taken.clear()
     handler.removeCallbacks(holdCheck)
+    handler.removeCallbacks(keyHoldCheck)
+    heldKey = null
+    heldKeyCode = 0
     pendingSingle?.let { handler.removeCallbacks(it) }
     pendingSingle = null
     lastPress = null
@@ -152,6 +174,19 @@ class KeyPresses(private val host: Host) {
       host.perform(twice)
       return true
     }
+    // A key with a shortcut held down waits to see how long it is held, outside typing; released
+    // sooner, it runs its own shortcut, if it has one, instead of going to the app.
+    if (heldKey == null &&
+      host.isAssigned(combo.withPressType(KeyCombo.HELD_DOWN)) &&
+      host.canHoldKeys()
+    ) {
+      heldKey = combo
+      heldKeyCode = keyCode
+      heldKeyDone = false
+      taken += keyCode
+      handler.postDelayed(keyHoldCheck, HOLD_MS)
+      return true
+    }
     return false
   }
 
@@ -159,6 +194,18 @@ class KeyPresses(private val host: Host) {
     val keyCode = event.keyCode
     down -= keyCode
     val wasTaken = taken.remove(keyCode)
+    if (keyCode == heldKeyCode) {
+      handler.removeCallbacks(keyHoldCheck)
+      val combo = heldKey
+      heldKey = null
+      heldKeyCode = 0
+      if (combo != null && !heldKeyDone) {
+        if (host.isAssigned(combo)) host.perform(combo)
+      } else {
+        // Held down: not the first of two presses.
+        sessionKey = null
+      }
+    }
     if (down.isNotEmpty()) return wasTaken
     handler.removeCallbacks(holdCheck)
     if (sessionDone) {
