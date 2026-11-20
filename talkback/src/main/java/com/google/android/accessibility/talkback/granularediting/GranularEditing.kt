@@ -59,7 +59,8 @@ object GranularEditing {
       when {
         editable && node.isShowingHintText -> ""
         editable -> fieldText(node)
-        else -> AccessibilityNodeInfoUtils.getText(node)?.toString().orEmpty()
+        // Chat messages and list rows often carry their text only as a content description.
+        else -> AccessibilityNodeInfoUtils.getNodeText(node)?.toString().orEmpty()
       }
     if (!editable && nodeText.isBlank()) return refuse(context, R.string.granular_editing_no_text)
     handler.removeCallbacksAndMessages(null)
