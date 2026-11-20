@@ -3013,6 +3013,9 @@ public class SpeechControllerImpl implements SpeechController {
       BuildVersionUtils.isAtLeastO()
           ? new AudioFocusRequest.Builder(AudioManager.AUDIOFOCUS_GAIN_TRANSIENT_MAY_DUCK)
               .setOnAudioFocusChangeListener(mAudioFocusListener, mHandler)
+              // Without this the system lowers the speech volume when another app requests focus
+              // that may duck; speech should keep playing at full volume.
+              .setWillPauseWhenDucked(true)
               .setAudioAttributes(
                   new AudioAttributes.Builder()
                       .setContentType(AudioAttributes.CONTENT_TYPE_SPEECH)
