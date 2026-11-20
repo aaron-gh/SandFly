@@ -190,6 +190,42 @@ class AnyRoleScrollableTest {
   }
 
   @Test
+  fun aFlutterPageViewAndTheTabBarViewAroundItAreNotScrolled() {
+    // Report 485: Flutter's PageView is an android.view.View that scrolls forward and back only.
+    val pivot = item()
+    val zones =
+      Node(
+          "android.view.View",
+          AccessibilityAction.ACTION_SCROLL_FORWARD,
+          AccessibilityAction.ACTION_SCROLL_BACKWARD,
+        )
+        .add(pivot)
+    Node(
+        "android.view.View",
+        AccessibilityAction.ACTION_SCROLL_FORWARD,
+        AccessibilityAction.ACTION_SCROLL_BACKWARD,
+      )
+      .add(Node("android.view.View").add(zones))
+
+    assertNull(findAnyRole(pivot, TraversalStrategy.SEARCH_FOCUS_BACKWARD))
+    assertNull(findAnyRole(pivot, TraversalStrategy.SEARCH_FOCUS_FORWARD))
+    assertTrue(AccessibilityNodeInfoUtils.isPlainViewScrollingWithoutAxis(zones))
+  }
+
+  @Test
+  fun aPlainViewWithAnAxisOrCollectionInfoIsStillScrolled() {
+    val filter = AccessibilityNodeInfoUtils.FILTER_AUTO_SCROLL_ANY_ROLE
+    assertTrue(filter.accept(verticalScroller("android.view.View")))
+    val list = Node("android.view.View", AccessibilityAction.ACTION_SCROLL_FORWARD)
+    list.setCollectionInfo(AccessibilityNodeInfoCompat.CollectionInfoCompat.obtain(20, 0, false))
+    assertTrue(filter.accept(list))
+    // Other classes that scroll forward and back only are scrolled as before.
+    assertTrue(
+      filter.accept(Node("android.widget.FrameLayout", AccessibilityAction.ACTION_SCROLL_FORWARD))
+    )
+  }
+
+  @Test
   fun aOneRowCollectionIsNotScrolled() {
     val pivot = item()
     val row =
