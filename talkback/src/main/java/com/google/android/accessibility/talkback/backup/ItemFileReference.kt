@@ -55,7 +55,7 @@ object ItemFileReference {
       }
     }
 
-    text.append("\n## Keys\n\nModifiers: ").append(KeyText.SANDFLY).append(", Shift, Ctrl, Alt, Meta.\n\n")
+    text.append("\n## Keys\n\nModifiers: ").append(KeyText.SANDFLY).append(", Shift, Ctrl, Alt, Meta, Sym, Fn.\n\n")
     text.append("Named keys: ").append(KeyText.namedKeys().joinToString(", ")).append(".\n\n")
     text.append("SandFly keys of keymaps: ").append(ItemFiles.sandFlyKeyNames().joinToString(", ")).append(".\n")
 

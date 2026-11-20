@@ -143,7 +143,7 @@ enum class SandFlyKey(
 
   /**
    * Removes from [modifiers] what Android adds while this held key is down: Right Alt held alone
-   * adds Alt to the keys pressed with it, Right Shift held alone Shift.
+   * adds Alt to the keys pressed with it, Right Shift held alone Shift, Sym Sym and Fn Fn.
    */
   fun withoutOwnModifiers(modifiers: Int, metaState: Int): Int =
     when {
@@ -151,6 +151,8 @@ enum class SandFlyKey(
         modifiers and KeyEvent.META_ALT_ON.inv()
       this == RIGHT_SHIFT && metaState and KeyEvent.META_SHIFT_LEFT_ON == 0 ->
         modifiers and KeyEvent.META_SHIFT_ON.inv()
+      this == SYM -> modifiers and KeyEvent.META_SYM_ON.inv()
+      this == FUNCTION -> modifiers and KeyEvent.META_FUNCTION_ON.inv()
       else -> modifiers
     }
 

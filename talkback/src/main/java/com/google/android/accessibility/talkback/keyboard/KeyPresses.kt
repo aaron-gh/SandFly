@@ -282,7 +282,7 @@ class KeyPresses(private val host: Host) {
     keyComboOf(event, host.heldSandFlyKey(), down.any { isHeldKey(it) }, host.triggerModifier())
 
   companion object {
-    /** The modifier bit [event] presses: of Shift, Alt, Ctrl or Meta, or of [heldKey]. */
+    /** The modifier bit [event] presses: of Shift, Alt, Ctrl, Meta, Sym or Fn, or of [heldKey]. */
     @JvmStatic
     fun modifierBitOf(event: KeyEvent, heldKey: SandFlyKey?): Int {
       if (heldKey != null && heldKey.isHeldKey && heldKey.isKey(event)) {
@@ -297,6 +297,8 @@ class KeyPresses(private val host: Host) {
         KeyEvent.KEYCODE_CTRL_RIGHT -> KeyEvent.META_CTRL_ON
         KeyEvent.KEYCODE_META_LEFT,
         KeyEvent.KEYCODE_META_RIGHT -> KeyEvent.META_META_ON
+        KeyEvent.KEYCODE_SYM -> KeyEvent.META_SYM_ON
+        KeyEvent.KEYCODE_FUNCTION -> KeyEvent.META_FUNCTION_ON
         else -> 0
       }
     }

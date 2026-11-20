@@ -65,7 +65,7 @@ A gesture is written as its key, such as `"pref_shortcut_up"` for Swipe up. The 
 
 ## Keyboard shortcuts
 
-A keyboard shortcut is written as its keys joined with `+`, such as `"SandFly+Shift+Right"` or `"Ctrl+Alt+H"`. `SandFly` is the keymap's SandFly key. Modifiers are `Shift`, `Ctrl`, `Alt` and `Meta`. A key is a letter, a digit, or a name: `Left`, `Right`, `Up`, `Down`, `Enter`, `Space`, `Backspace`, `Delete`, `Escape`, `Tab`, `PageUp`, `PageDown`, `Home`, `End`, `Insert`, `Menu`, `Grave`, `Minus`, `Equals`, `LeftBracket`, `RightBracket`, `Backslash`, `Semicolon`, `Apostrophe`, `Comma`, `Period`, `Slash`, or Android's name for the key without `KEYCODE_`, such as `F5` or `Numpad_5`. Names are not case-sensitive.
+A keyboard shortcut is written as its keys joined with `+`, such as `"SandFly+Shift+Right"` or `"Ctrl+Alt+H"`. `SandFly` is the keymap's SandFly key. Modifiers are `Shift`, `Ctrl`, `Alt`, `Meta`, `Sym` and `Fn`. A key is a letter, a digit, or a name: `Left`, `Right`, `Up`, `Down`, `Enter`, `Space`, `Backspace`, `Delete`, `Escape`, `Tab`, `PageUp`, `PageDown`, `Home`, `End`, `Insert`, `Menu`, `Grave`, `Minus`, `Equals`, `LeftBracket`, `RightBracket`, `Backslash`, `Semicolon`, `Apostrophe`, `Comma`, `Period`, `Slash`, or Android's name for the key without `KEYCODE_`, such as `F5` or `Numpad_5`. Names are not case-sensitive.
 
 A sequence, as in the SandFly keymap, has its first keys, a comma and the second key: `"SandFly+O, H"`. The SandFly key pressed twice is `"SandFly twice"`.
 
