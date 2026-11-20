@@ -482,13 +482,13 @@ class SandFlyKeyTest {
     }
   }
 
-  private fun KeyComboManager.focusMoved() =
-    onAccessibilityEvent(
-      android.view.accessibility.AccessibilityEvent.obtain(
-        android.view.accessibility.AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
-      ),
-      null,
-    )
+  /** Presses Sym + K, a SandFly shortcut in both keyboard phone keymaps, to move around. */
+  private fun KeyComboManager.moveWithSym() {
+    down(KeyEvent.KEYCODE_SYM)
+    assertTrue(down(KeyEvent.KEYCODE_K))
+    up(KeyEvent.KEYCODE_K)
+    up(KeyEvent.KEYCODE_SYM)
+  }
 
   @Test
   fun keyboardPhoneEnterActivatesAfterMovingAndSendsAfterTyping() {
@@ -496,11 +496,16 @@ class SandFlyKeyTest {
       keys.clear()
       val manager = manager(keymap, SandFlyKey.SYM)
       focusAwayFromTextField(manager)
-      // SandFly focus moved to an option while a draft waits in the text field: Enter activates it.
-      manager.focusMoved()
+      // Not moved yet, with a text field taking input: Enter goes to it.
+      assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
+      manager.up(KeyEvent.KEYCODE_ENTER)
+      // Moved to an option while a draft waits in the text field: Enter activates it.
+      time += 1000
+      manager.moveWithSym()
       assertTrue(manager.down(KeyEvent.KEYCODE_ENTER))
       manager.up(KeyEvent.KEYCODE_ENTER)
-      assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_ENTER)), keys)
+      assertEquals(name(KeyEvent.KEYCODE_ENTER), keys.last())
+      assertEquals(2, keys.size)
       // Typed since: Enter goes to the app, which sends.
       time += 1000
       assertFalse(manager.down(KeyEvent.KEYCODE_O))
@@ -508,15 +513,38 @@ class SandFlyKeyTest {
       time += 1000
       assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
       manager.up(KeyEvent.KEYCODE_ENTER)
-      assertEquals(1, keys.size)
+      assertEquals(2, keys.size)
     }
+  }
+
+  @Test
+  fun singleKeysTypeIntoTheTextFieldWithInputFocusUntilSandFlyMoves() {
+    val manager = manager(Keymap.KEYBOARD_PHONE_SINGLE_KEYS, SandFlyKey.SYM)
+    focusAwayFromTextField(manager)
+    // M, the SandFly menu, types an m into the message instead.
+    assertFalse(manager.down(KeyEvent.KEYCODE_M))
+    manager.up(KeyEvent.KEYCODE_M)
+    assertTrue(keys.isEmpty())
+    // After a SandFly shortcut, single keys are shortcuts until a key is typed again.
+    time += 1000
+    manager.moveWithSym()
+    assertTrue(manager.down(KeyEvent.KEYCODE_M))
+    manager.up(KeyEvent.KEYCODE_M)
+    assertEquals(name(KeyEvent.KEYCODE_M), keys.last())
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_O))
+    manager.up(KeyEvent.KEYCODE_O)
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_M))
+    assertEquals(2, keys.size)
   }
 
   @Test
   fun keyboardPhoneEnterGoesToTheTextFieldWithSandFlyFocus() {
     val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
     editTextField(manager)
-    manager.focusMoved()
+    manager.moveWithSym()
+    keys.clear()
     assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
     assertTrue(keys.isEmpty())
   }
