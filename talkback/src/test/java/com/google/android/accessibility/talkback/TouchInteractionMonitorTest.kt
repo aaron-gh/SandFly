@@ -274,6 +274,17 @@ class TouchInteractionMonitorTest {
       assertEquals(listOf<Thread>(), reporter.requests)
       assertEquals(listOf<Int>(), service.gestures)
 
+      // A touch with no device, as Android may give the user's touches, isn't sent to the app.
+      touchAt(ACTION_DOWN, 160f, 200f, 700)
+      runUntil(710)
+      fun field(name: String) =
+        TouchInteractionMonitor::class.java.getDeclaredField(name).apply { isAccessible = true }
+      assertEquals(false, field("passingSyntheticTouch").getBoolean(monitor))
+      assertEquals(true, field("ignoringLockedTouch").getBoolean(monitor))
+      touchAt(ACTION_UP, 160f, 200f, 750)
+      runUntil(800)
+      assertEquals(listOf<Thread>(), reporter.requests)
+
       // Unlocked, the same swipe is a gesture.
       TouchLock.toggle()
       userTouchAt(ACTION_DOWN, 40f, 200f, 1100)

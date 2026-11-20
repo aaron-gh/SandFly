@@ -83,12 +83,31 @@ object SyntheticTouches {
     return true
   }
 
+  /** Until when, in uptime, every touch that goes down is a gesture SandFly sends itself. */
+  @Volatile private var allExpectedUntil = 0L
+
+  /**
+   * Expects the touches of a gesture SandFly sends itself in another way, lasting [durationMs],
+   * such as a script's while touch is locked, so that each of its strokes goes to the app as it is.
+   */
+  @JvmStatic
+  fun expectAll(durationMs: Long) {
+    allExpectedUntil = SystemClock.uptimeMillis() + durationMs + START_MARGIN_MS
+  }
+
+  /** Ends [expectAll] when the gesture ends. */
+  @JvmStatic
+  fun stopExpectingAll() {
+    allExpectedUntil = 0L
+  }
+
   /**
    * Returns whether the touch going down now is one SandFly sent, which is then no longer
    * expected. Called by touch handling for each touch that starts.
    */
   @JvmStatic
   fun takeIfExpected(): Boolean {
+    if (SystemClock.uptimeMillis() <= allExpectedUntil) return true
     if (SystemClock.uptimeMillis() > expectedUntil) return false
     expectedUntil = 0L
     return true
