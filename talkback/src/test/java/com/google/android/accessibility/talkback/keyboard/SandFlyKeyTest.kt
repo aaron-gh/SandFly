@@ -658,6 +658,31 @@ class SandFlyKeyTest {
   }
 
   @Test
+  fun keyHeldDownRunsItsShortcutOutsideTypingAndPressedBrieflyItsOwn() {
+    val manager = manager(Keymap.KEYBOARD_PHONE_SINGLE_KEYS, SandFlyKey.SYM)
+    val readFromTop = context.getString(R.string.keycombo_shortcut_other_read_from_top)
+    val kHeld = KeyCombo(0, 0, KeyEvent.KEYCODE_K, false).withPressType(KeyCombo.HELD_DOWN)
+    manager.keyComboModel.saveKeyCombo(readFromTop, kHeld)
+    // Held: its shortcut, once, and the key doesn't reach the app.
+    assertTrue(manager.down(KeyEvent.KEYCODE_K))
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(KeyPresses.HOLD_MS + 50))
+    assertTrue(manager.up(KeyEvent.KEYCODE_K))
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_K) + " held"), keys)
+    // Pressed briefly: K's own shortcut.
+    time += 1000
+    assertTrue(manager.down(KeyEvent.KEYCODE_K))
+    assertTrue(manager.up(KeyEvent.KEYCODE_K))
+    assertEquals(name(KeyEvent.KEYCODE_K), keys.last())
+    // Typing: K goes to the text field, held or not.
+    editTextField(manager)
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_K))
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(KeyPresses.HOLD_MS + 50))
+    manager.up(KeyEvent.KEYCODE_K)
+    assertEquals(2, keys.size)
+  }
+
+  @Test
   fun keyboardPhoneSandFlyKeyShortcuts() {
     val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
     assertTrue(manager.down(KeyEvent.KEYCODE_SYM))

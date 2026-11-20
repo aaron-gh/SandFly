@@ -280,6 +280,11 @@ public class KeyComboManager
             }
 
             @Override
+            public boolean canHoldKeys() {
+              return !isEditingTextWithAccessibilityFocus() && !isTyping();
+            }
+
+            @Override
             public void perform(KeyCombo combo) {
               boolean performed = performedCombo;
               boolean partial = hasPartialMatch;
@@ -605,6 +610,8 @@ public class KeyComboManager
    */
   public void setKeyEventDelegate(ServiceKeyEventListener delegate) {
     keyEventDelegate = delegate;
+    // Keys pressed or released while the delegate had them aren't followed.
+    keyPresses.clear();
   }
 
   /**

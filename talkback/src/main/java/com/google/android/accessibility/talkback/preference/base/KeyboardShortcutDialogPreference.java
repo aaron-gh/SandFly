@@ -251,6 +251,18 @@ public class KeyboardShortcutDialogPreference extends Preference
   private long lastRecordedTime;
   private @Nullable Runnable pendingEnterSave;
   private final Runnable pressHoldCheck = this::onPressHeld;
+  // A key other than a modifier being recorded, which held down records the key held.
+  private @Nullable KeyCombo pressKeyHeld;
+  private int pressKeyHeldCode;
+  private final Runnable pressKeyHoldCheck =
+      () -> {
+        if (pressKeyHeld != null && pressKeysDown.contains(pressKeyHeldCode)) {
+          record(
+              pressKeyHeld.withPressType(KeyCombo.HELD_DOWN),
+              /* allowTwice= */ false,
+              android.os.SystemClock.uptimeMillis());
+        }
+      };
 
   /** Clears current temporary key combo code. */
   private void clearTemporaryKeyCombo() {
@@ -360,6 +372,12 @@ public class KeyboardShortcutDialogPreference extends Preference
   @Override
   public boolean onKeyEvent(KeyEvent event, EventId eventId) {
     if (keyEventSource != KEY_EVENT_SOURCE_ACCESSIBILITY_SERVICE) {
+      return false;
+    }
+    // A dialog that closed without letting go gives the keys back.
+    if (setUpKeyComboDialog == null || !setUpKeyComboDialog.isShowing()) {
+      setKeyEventSource(KEY_EVENT_SOURCE_ACTIVITY);
+      keyComboManager.setMatchKeyCombo(true);
       return false;
     }
 
@@ -693,13 +711,20 @@ public class KeyboardShortcutDialogPreference extends Preference
           sandFlyKey != null
               && sandFlyKey.isHeldKey()
               && pressKeysDown.contains(sandFlyKey.getKeyCode());
-      record(
-          KeyPresses.keyComboOf(event, sandFlyKey, heldDown, trigger),
-          /* allowTwice= */ true,
-          event.getEventTime());
+      KeyCombo combo = KeyPresses.keyComboOf(event, sandFlyKey, heldDown, trigger);
+      record(combo, /* allowTwice= */ true, event.getEventTime());
+      // Held down, it is the key held.
+      pressHandler.removeCallbacks(pressKeyHoldCheck);
+      pressKeyHeld = combo;
+      pressKeyHeldCode = keyCode;
+      pressHandler.postDelayed(pressKeyHoldCheck, KeyPresses.HOLD_MS);
       return true;
     }
     pressKeysDown.remove(keyCode);
+    if (keyCode == pressKeyHeldCode) {
+      pressHandler.removeCallbacks(pressKeyHoldCheck);
+      pressKeyHeldCode = 0;
+    }
     if (pressKeysDown.isEmpty()) {
       pressHandler.removeCallbacks(pressHoldCheck);
       if (pressOnlyModifiers && !pressHeld && pressModifiers != 0) {
@@ -740,6 +765,17 @@ public class KeyboardShortcutDialogPreference extends Preference
     updateKeyAssignmentText();
   }
 
+  /**
+   * Takes key presses again for the shortcut being recorded, only while its dialog shows. Key
+   * already in use closes after the shortcut dialog when it saves; taking keys for a closed dialog
+   * would keep every key from SandFly and the apps until SandFly restarts.
+   */
+  private void takeKeysWhileDialogShows() {
+    if (setUpKeyComboDialog != null && setUpKeyComboDialog.isShowing()) {
+      setKeyEventSource(getKeyEventSourceForCurrentKeyComboModel());
+    }
+  }
+
   /** Shows dialog if there is duplicate key assigned. */
   private void showOverrideKeyComboDialog(final String key) {
     CharSequence currentAction = titleOf(key);
@@ -752,7 +788,7 @@ public class KeyboardShortcutDialogPreference extends Preference
           @Override
           public void onClick(DialogInterface dialog, int which) {
             if (which != DialogInterface.BUTTON_POSITIVE) {
-              setKeyEventSource(getKeyEventSourceForCurrentKeyComboModel());
+              takeKeysWhileDialogShows();
               return;
             }
 
@@ -797,8 +833,8 @@ public class KeyboardShortcutDialogPreference extends Preference
             .create();
     keyAlreadyInUseDialog.setOnDismissListener(
         (dialog) -> {
-          setKeyEventSource(getKeyEventSourceForCurrentKeyComboModel());
           keyAlreadyInUseDialog = null;
+          takeKeysWhileDialogShows();
         });
     keyAlreadyInUseDialog.show();
   }
