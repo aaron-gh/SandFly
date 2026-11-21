@@ -472,6 +472,38 @@ class KeymapTest {
   }
 
   @Test
+  fun firstKeyboardPhoneSingleKeysGiveWayToPresses() {
+    choose(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    val prefix = Keymap.KEYBOARD_PHONE.persisterPrefix
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(prefix + "_defaults_version", 5).commit()
+    val persister = KeyComboPersister(context, prefix)
+    val back = context.getString(R.string.keycombo_shortcut_global_back)
+    val nextItem = context.getString(R.string.keycombo_shortcut_navigate_next_default)
+    val playPause = context.getString(R.string.keycombo_shortcut_global_play_pause_media)
+    val title = context.getString(R.string.keycombo_shortcut_global_announce_current_title)
+    // The first keyboard phone keymap saved Backspace alone for Back, Space for the next item and
+    // nothing for play and pause; the user changed the window title to Sym + Y.
+    persister.saveKeyCombo(back, KeyCombo(0, 0, KeyEvent.KEYCODE_DEL, false))
+    persister.saveKeyCombo(nextItem, KeyCombo(0, 0, KeyEvent.KEYCODE_SPACE, false))
+    persister.saveKeyCombo(playPause, KeyCombo())
+    persister.saveKeyCombo(title, KeyCombo(0, 0, KeyEvent.KEYCODE_Y, true))
+    val model = NewKeyComboModel(context, Keymap.KEYBOARD_PHONE)
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_DEL, true), model.getKeyComboForKey(back))
+    assertEquals(KeyCombo.modifierKeys(0, true), model.getKeyComboForKey(nextItem))
+    assertEquals(
+      KeyCombo.modifierKeys(KeyEvent.META_ALT_ON, false).withPressType(KeyCombo.PRESSED_TWICE),
+      model.getKeyComboForKey(playPause),
+    )
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_Y, true), model.getKeyComboForKey(title))
+    // The single-key keymap keeps Backspace alone for Back.
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_DEL, false),
+      NewKeyComboModel(context, Keymap.KEYBOARD_PHONE_SINGLE_KEYS).getKeyComboForKey(back),
+    )
+  }
+
+  @Test
   fun keyboardPhones() {
     assertTrue(KeyboardPhones.isKeyboardPhone("Unihertz", "Titan Pocket"))
     assertTrue(KeyboardPhones.isKeyboardPhone("Unihertz", "TITAN 2"))

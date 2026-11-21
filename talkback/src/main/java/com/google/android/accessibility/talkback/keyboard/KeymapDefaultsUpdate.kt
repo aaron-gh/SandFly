@@ -26,8 +26,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * saved shortcut is forgotten.
  */
 object KeymapDefaultsUpdate {
-  /** The version of the defaults of the NVDA, JAWS and Orca keymaps. */
-  private const val VERSION = 5
+  /** The version of the defaults of the NVDA, JAWS, Orca and keyboard phone keymaps. */
+  private const val VERSION = 6
 
   private const val NONE = KeyComboModel.NO_MODIFIER
   private const val SHIFT = KeyEvent.META_SHIFT_ON
@@ -173,9 +173,85 @@ object KeymapDefaultsUpdate {
     )
   }
 
+  /**
+   * The version 5 defaults of the commands whose defaults changed in version 6: the keyboard phone
+   * keymap's first single keys, which became presses and SandFly key shortcuts. The keyboard phone
+   * single-key keymap has them as its own.
+   */
+  private val VERSION_5: Map<Keymap, Map<Int, KeyCombo>> by lazy {
+    fun plain(modifiers: Int, keyCode: Int) = old(modifiers, keyCode, sandFly = false)
+    val firstKeys = mutableMapOf<Int, KeyCombo>()
+    fun pair(next: Int, previous: Int, keyCode: Int) {
+      firstKeys[next] = plain(NONE, keyCode)
+      firstKeys[previous] = plain(SHIFT, keyCode)
+    }
+    pair(
+      R.string.keycombo_shortcut_navigate_next_default,
+      R.string.keycombo_shortcut_navigate_previous_default,
+      KeyEvent.KEYCODE_SPACE,
+    )
+    pair(
+      R.string.keycombo_shortcut_navigate_next_heading,
+      R.string.keycombo_shortcut_navigate_previous_heading,
+      KeyEvent.KEYCODE_H,
+    )
+    pair(
+      R.string.keycombo_shortcut_navigate_next_link,
+      R.string.keycombo_shortcut_navigate_previous_link,
+      KeyEvent.KEYCODE_U,
+    )
+    pair(
+      R.string.keycombo_shortcut_navigate_next_control,
+      R.string.keycombo_shortcut_navigate_previous_control,
+      KeyEvent.KEYCODE_F,
+    )
+    pair(
+      R.string.keycombo_shortcut_navigate_next_edit_field,
+      R.string.keycombo_shortcut_navigate_previous_edit_field,
+      KeyEvent.KEYCODE_E,
+    )
+    pair(
+      R.string.keycombo_shortcut_navigate_next_graphic,
+      R.string.keycombo_shortcut_navigate_previous_graphic,
+      KeyEvent.KEYCODE_G,
+    )
+    firstKeys.putAll(
+      mapOf(
+        R.string.keycombo_shortcut_navigate_first to plain(NONE, KeyEvent.KEYCODE_T),
+        R.string.keycombo_shortcut_navigate_last to plain(NONE, KeyEvent.KEYCODE_B),
+        R.string.keycombo_shortcut_global_scroll_forward_reading_menu to plain(NONE, KeyEvent.KEYCODE_L),
+        R.string.keycombo_shortcut_global_scroll_backward_reading_menu to plain(NONE, KeyEvent.KEYCODE_J),
+        R.string.keycombo_shortcut_global_adjust_reading_setting_next to plain(NONE, KeyEvent.KEYCODE_K),
+        R.string.keycombo_shortcut_global_adjust_reading_settings_previous to plain(NONE, KeyEvent.KEYCODE_I),
+        R.string.keycombo_shortcut_perform_long_click to plain(SHIFT, KeyEvent.KEYCODE_ENTER),
+        R.string.keycombo_shortcut_global_back to plain(NONE, KeyEvent.KEYCODE_DEL),
+        R.string.keycombo_shortcut_global_home to plain(SHIFT, KeyEvent.KEYCODE_DEL),
+        R.string.keycombo_shortcut_global_notifications to plain(NONE, KeyEvent.KEYCODE_N),
+        R.string.keycombo_shortcut_global_recents to plain(SHIFT, KeyEvent.KEYCODE_N),
+        R.string.keycombo_shortcut_other_talkback_context_menu to plain(NONE, KeyEvent.KEYCODE_M),
+        R.string.keycombo_shortcut_other_custom_actions to plain(SHIFT, KeyEvent.KEYCODE_M),
+        R.string.keycombo_shortcut_other_toggle_search to plain(NONE, KeyEvent.KEYCODE_S),
+        R.string.keycombo_shortcut_other_open_talkback_settings to plain(SHIFT, KeyEvent.KEYCODE_S),
+        R.string.keycombo_shortcut_other_read_from_cursor_item to plain(NONE, KeyEvent.KEYCODE_R),
+        R.string.keycombo_shortcut_other_read_from_top to plain(SHIFT, KeyEvent.KEYCODE_R),
+        R.string.keycombo_shortcut_global_announce_current_title to plain(NONE, KeyEvent.KEYCODE_W),
+        R.string.keycombo_shortcut_global_announce_current_time_and_date to plain(NONE, KeyEvent.KEYCODE_D),
+        R.string.keycombo_shortcut_global_announce_battery_state to plain(SHIFT, KeyEvent.KEYCODE_D),
+        R.string.keycombo_shortcut_other_repeat_last_spoken_phrase to plain(NONE, KeyEvent.KEYCODE_X),
+        R.string.keycombo_shortcut_other_copy_last_spoken_phrase to plain(SHIFT, KeyEvent.KEYCODE_X),
+        R.string.keycombo_shortcut_global_describe_image to plain(NONE, KeyEvent.KEYCODE_A),
+        R.string.keycombo_shortcut_global_hide_or_show_screen to plain(NONE, KeyEvent.KEYCODE_Z),
+        R.string.keycombo_shortcut_other_show_keyboard_shortcuts_dialog to plain(NONE, KeyEvent.KEYCODE_Q),
+        R.string.keycombo_shortcut_toggle_pass_keys_to_app to plain(SHIFT, KeyEvent.KEYCODE_Q),
+        R.string.keycombo_shortcut_global_play_pause_media to KeyCombo(),
+      )
+    )
+    mapOf(Keymap.KEYBOARD_PHONE to firstKeys.toMap())
+  }
+
   /** Each version's earlier defaults of the commands it changed. */
   private val CHANGES: List<Pair<Int, Map<Keymap, Map<Int, KeyCombo>>>> by lazy {
-    listOf(2 to VERSION_1, 3 to VERSION_2, 4 to VERSION_3, 5 to VERSION_4)
+    listOf(2 to VERSION_1, 3 to VERSION_2, 4 to VERSION_3, 5 to VERSION_4, 6 to VERSION_5)
   }
 
   @JvmStatic
