@@ -2727,7 +2727,8 @@ public class FocusProcessorForLogicalNavigation {
             && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
             && target.isVisibleToUser();
     if (revealAfterFocus
-        && hasTextOffScreen(target, scrollingAncestorBounds(target), systemBarBounds())) {
+        && hasTextOffScreen(
+            target, scrollingAncestorBounds(target), SystemBarCover.systemBarBounds(service))) {
       LogUtils.d(TAG, "Scrolling before focusing: text in the target is off screen.");
       revealAfterFocus = false;
     }
@@ -2838,22 +2839,6 @@ public class FocusProcessorForLogicalNavigation {
     return bounds;
   }
 
-  /** Bounds of the system windows, such as the navigation and status bars. */
-  private List<Rect> systemBarBounds() {
-    List<Rect> bars = new ArrayList<>();
-    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(service)) {
-      if (window != null
-          && AccessibilityWindowInfoUtils.getType(window)
-              == AccessibilityWindowInfoCompat.TYPE_SYSTEM) {
-        Rect bounds = AccessibilityWindowInfoUtils.getBounds(window);
-        if (bounds != null && !bounds.isEmpty()) {
-          bars.add(bounds);
-        }
-      }
-    }
-    return bars;
-  }
-
   /**
    * Like {@link #hasTextOffScreen(AccessibilityNodeInfoCompat)}, but text that lies inside {@code
    * listBounds} and under one of {@code barBounds} is covered by a system bar rather than hidden by
@@ -2880,28 +2865,10 @@ public class FocusProcessorForLogicalNavigation {
         }
         if (!child.isVisibleToUser()
             && (hasText(child.getText()) || hasText(child.getContentDescription()))
-            && !isCoveredBySystemBar(child, listBounds, barBounds)) {
+            && !SystemBarCover.isCovered(child, listBounds, barBounds)) {
           return true;
         }
         queue.add(child);
-      }
-    }
-    return false;
-  }
-
-  private static boolean isCoveredBySystemBar(
-      AccessibilityNodeInfoCompat node, @Nullable Rect listBounds, List<Rect> barBounds) {
-    if (listBounds == null || barBounds.isEmpty()) {
-      return false;
-    }
-    Rect bounds = new Rect();
-    node.getBoundsInScreen(bounds);
-    if (bounds.isEmpty() || !listBounds.contains(bounds)) {
-      return false;
-    }
-    for (Rect bar : barBounds) {
-      if (Rect.intersects(bar, bounds)) {
-        return true;
       }
     }
     return false;
