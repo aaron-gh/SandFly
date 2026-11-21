@@ -27,7 +27,6 @@ import android.speech.RecognitionListener
 import android.speech.RecognizerIntent
 import android.speech.SpeechRecognizer
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import java.util.Locale
 
 /**
  * Android speech recognition that goes on until [stop]: each time the recognizer ends after a
@@ -79,18 +78,6 @@ internal class ContinuousRecognition(
         // Asks for the pause before the recognizer ends; not every recognizer follows it.
         .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, pause)
         .putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_POSSIBLY_COMPLETE_SILENCE_LENGTH_MILLIS, pause)
-    if (service != null) {
-      // On the phone, with punctuation and capital letters where the recognizer can add them.
-      intent
-        .putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
-        .putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().toLanguageTag())
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        intent.putExtra(
-          RecognizerIntent.EXTRA_ENABLE_FORMATTING,
-          RecognizerIntent.FORMATTING_OPTIMIZE_QUALITY,
-        )
-      }
-    }
     if (!once && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
       // One listening session with results for each part, so that a recognizer that supports it
       // doesn't play its start sound again after each pause. Others end after a pause as before.
