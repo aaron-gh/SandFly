@@ -2,6 +2,7 @@ package com.google.android.accessibility.utils.ocr
 
 import android.content.Context
 import android.content.res.Resources
+import android.graphics.Bitmap
 import android.os.SystemClock
 import com.google.android.accessibility.utils.mlkit.MlKitHelper
 import com.google.android.accessibility.utils.output.LanguageSwitch
@@ -9,7 +10,6 @@ import com.google.android.gms.tasks.Task
 import com.google.android.gms.tasks.Tasks
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import com.google.mlkit.common.MlKitException
-import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import java.io.Closeable
 import java.util.Locale
@@ -22,7 +22,9 @@ import java.util.Locale
  *
  * The recognizers run in the `:mlkit` process, through [MlKitHelper], since they load Google Play
  * services code, and an update of Google Play services stops every process with its code loaded.
- * Only images made with [InputImage.fromBitmap] are recognized.
+ * Images are taken as bitmaps, not as ML Kit InputImages: InputImage.fromBitmap needs ML Kit's
+ * context, which ML Kit's content provider sets up in SandFly's process only after the user unlocks
+ * the phone once it has started.
  */
 class LanguageTextRecognizer
 @JvmOverloads
@@ -53,19 +55,16 @@ constructor(
     return if (wanted != Script.LATIN && clock() < latinUntil) Script.LATIN else wanted
   }
 
-  /** Recognizes text in [image]. The task fails if no recognizer can be made or used. */
-  fun process(image: InputImage): Task<Text> {
+  /**
+   * Recognizes text in [bitmap], turned by [rotation] degrees. The task fails if no recognizer can
+   * be made or used.
+   */
+  fun process(bitmap: Bitmap, rotation: Int): Task<Text> {
     val script: Script
     synchronized(this) {
       if (closed) return Tasks.forException(IllegalStateException("Text recognizer closed"))
       script = script()
     }
-    val bitmap =
-      image.bitmapInternal
-        ?: return Tasks.forException(
-          MlKitException("Only bitmaps are recognized", MlKitException.INVALID_ARGUMENT)
-        )
-    val rotation = image.rotationDegrees
     val task = helper.recognizeText(bitmap, rotation, script)
     if (script == Script.LATIN) return task
     return task.continueWithTask { result ->

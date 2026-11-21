@@ -28,7 +28,6 @@ import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.text.Text
 import java.util.concurrent.Executor
 import org.json.JSONArray
@@ -125,7 +124,7 @@ class ScriptScreen(private val service: AccessibilityService) {
             return done(null, "Scripts are off")
           }
           recognizer
-            .process(InputImage.fromBitmap(bitmap, 0))
+            .process(bitmap, 0)
             .addOnSuccessListener { text -> done(textJson(text, bounds), null) }
             .addOnFailureListener { e ->
               LogUtils.w(TAG, "Text recognition failed: %s", e)

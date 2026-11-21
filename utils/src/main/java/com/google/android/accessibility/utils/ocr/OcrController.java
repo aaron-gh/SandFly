@@ -31,7 +31,6 @@ import com.google.android.accessibility.utils.RectUtils;
 import com.google.android.libraries.accessibility.utils.bitmap.BitmapUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
-import com.google.mlkit.vision.common.InputImage;
 import com.google.mlkit.vision.text.Text.Element;
 import com.google.mlkit.vision.text.Text.Line;
 import com.google.mlkit.vision.text.Text.TextBlock;
@@ -359,7 +358,7 @@ public class OcrController {
 
           runnable.addRecognitionCount();
           recognizer
-              .process(InputImage.fromBitmap(croppedBitmap, /* rotationDegrees= */ 0))
+              .process(croppedBitmap, /* rotation= */ 0)
               .addOnSuccessListener(text -> textBlocksMap.put(ocrInfo, text.getTextBlocks()))
               .addOnFailureListener(
                   exception -> {

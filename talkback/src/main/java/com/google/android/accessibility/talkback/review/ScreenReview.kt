@@ -49,7 +49,6 @@ import com.google.android.accessibility.utils.output.SpeechCleanupUtils
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.accessibility.utils.output.SpeechController.SpeakOptions
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import com.google.mlkit.vision.common.InputImage
 
 /**
  * Reviews the text on screen by line, word and character, as it is laid out, without moving SandFly
@@ -574,7 +573,7 @@ class ScreenReview(
   private fun recognize(bitmap: Bitmap) {
     val recognizer = recognizer ?: LanguageTextRecognizer(service).also { recognizer = it }
     recognizer
-      .process(InputImage.fromBitmap(bitmap, 0))
+      .process(bitmap, 0)
       .addOnSuccessListener { result ->
         val items =
           result.textBlocks.flatMap { block ->
