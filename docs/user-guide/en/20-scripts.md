@@ -247,7 +247,7 @@ These commands show the details that scripts and macros use to name items. They 
 
 - **Inspect focused item**: opens the **Item details** window for the item with focus, with **Texts**, **Item types**, **Items inside**, **Script details** and **App**. Double-tap a line to copy its value. **Copy all** copies all details. **Add a rule for this item** adds a rule for the item to a built script, or to a new script for its app, and opens it.
 - **Copy item details**: copies the same details as text, and says "Copied item details".
-- **Copy screen tree**: copies all items on screen as JSON, and says how many items it copied.
+- **Copy screen tree**: copies all items on screen as text, one line for each item, and says how many items it copied.
 
 SandFly says "No item has focus" when there is no item to inspect.
 

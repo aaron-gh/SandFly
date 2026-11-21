@@ -202,6 +202,6 @@ Starting a macro stops the macro that is running. The **Stop macro** command sto
 
 Activate a line to copy its value. **Copy all** copies all the details as text. In builds with scripts, **Add a rule for this item** opens the script builder with the item. See [](#scripts).
 
-**Copy item details** copies the same details without opening the window, and says "Copied item details". **Copy screen tree** copies all items on the screen as JSON, for writing scripts.
+**Copy item details** copies the same details without opening the window, and says "Copied item details". **Copy screen tree** copies all items on the screen as text, one line for each item with its class, ID, role, states and texts, for writing scripts.
 
 **Inspect focused item** and **Copy item details** can be added to the SandFly menu; they are off by default. To inspect an item, move focus to it, then open the SandFly menu and choose **Inspect focused item**: the window shows the item that had focus before the menu.
