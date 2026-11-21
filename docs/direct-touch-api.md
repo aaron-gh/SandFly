@@ -4,7 +4,7 @@ With direct touch, touches go straight to your app instead of to SandFly's explo
 
 ## What the user controls
 
-*   Direct touch is turned on for your app the first time SandFly sees it, if your app declares where it wants direct touch or holds the permission below. The user can turn it off for your app at any time in **Controls** > **Direct touch**, and nothing your app declares or asks for has any effect then.
+*   Direct touch is turned on for your app the first time SandFly sees it, if your app declares where it wants direct touch or holds the permission below. The user can turn it off for your app at any time in **Touch** > **Direct touch**, and nothing your app declares or asks for has any effect then.
 *   SandFly takes touch back when a dialog appears, another app opens on top of yours, the notification shade or quick settings open, a text field takes focus, or the screen turns off. Touch goes back to your app's areas when they're gone.
 *   System windows, such as the status bar, stay with SandFly. So does the keyboard, unless the user turns on direct typing for your app. The navigation bar takes touches directly only when the user turns on **Tap to activate navigation bar buttons**.
 *   SandFly says "Direct touch on" when your app's areas start taking touches, and "Direct touch off" when they stop, unless the user turned off **Speak when direct touch changes**.

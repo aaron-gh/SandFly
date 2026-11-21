@@ -39,6 +39,10 @@ On-device AI models are not copied, so download them again in SandFly. Turn on t
 
 If you use an accessibility shortcut, grant SandFly permission to change secure settings before you turn it on, and it moves the shortcut to itself: `adb shell pm grant io.github.aaron_gh.sandfly android.permission.WRITE_SECURE_SETTINGS`. Otherwise, set the shortcut again for SandFly.
 
+## User guide
+
+The SandFly User Guide opens from **Help & feedback** > **User guide** in SandFly settings. Its source files are in [docs/user-guide](docs/user-guide).
+
 ## Differences from TalkBack
 
 SandFly speaks sooner after each swipe and screen change, and can play its sounds and speech through a low-latency audio path. It adds a two-finger rotor, edge gestures and a two-finger scrub as in VoiceOver, a circle menu, Pause SandFly, direct touch for audio games, sound themes with control sounds in 3D, a vibration for every sound, a status gesture, voice profiles, settings for how notifications are read, its own notification list and quick settings panel, image and screen descriptions from several AI services or a model on the phone, and braille keyboard dots that follow how you hold the device. It also changes some defaults and fixes problems in TalkBack. For the full list, see [Differences from TalkBack](differences.md).

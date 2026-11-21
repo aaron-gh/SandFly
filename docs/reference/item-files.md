@@ -15,7 +15,7 @@ Each screen of items has Export to file and Import from file. Export to file on 
 | Gestures in apps | Settings > Gestures > Gestures in apps |
 | Keyboard shortcuts in apps | Settings > Keyboard shortcuts > Keyboard shortcuts in apps |
 | Keymaps | Settings > Keyboard shortcuts (exports the keymap in use) |
-| Settings profiles | Settings > Back up and restore > Settings profiles |
+| Settings profiles | Settings > Settings profiles |
 | Speech dictionary | Settings > Speech > Speech dictionary |
 | Symbol dictionary | Settings > Speech > Symbol dictionary |
 | Braille dictionary | Settings > Braille > Braille dictionary |
