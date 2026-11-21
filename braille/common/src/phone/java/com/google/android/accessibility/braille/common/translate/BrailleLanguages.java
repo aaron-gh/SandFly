@@ -50,6 +50,7 @@ public class BrailleLanguages {
   public static final Locale LOCALE_EN_US = Locale.US;
   public static final Locale LOCALE_ES = Locale.forLanguageTag("es");
   public static final Locale LOCALE_ET = Locale.forLanguageTag("et");
+  public static final Locale LOCALE_FA = Locale.forLanguageTag("fa");
   public static final Locale LOCALE_FI = Locale.forLanguageTag("fi");
   public static final Locale LOCALE_FR = Locale.FRENCH;
   public static final Locale LOCALE_GRC = Locale.forLanguageTag("grc");
@@ -701,6 +702,16 @@ public class BrailleLanguages {
     NORWEGIAN_8_6FALLBACK(
         LOCALE_NO,
         R.string.code_user_facing_name_norwegian_8_with_6_fallback,
+        /* supportedContracted= */ false,
+        /* eightDot= */ true),
+    PERSIAN(
+        LOCALE_FA,
+        R.string.code_user_facing_name_persian,
+        /* supportedContracted= */ false,
+        /* eightDot= */ false),
+    PERSIAN_COMP8(
+        LOCALE_FA,
+        R.string.code_user_facing_name_persian_comp8,
         /* supportedContracted= */ false,
         /* eightDot= */ true),
     POLISH(

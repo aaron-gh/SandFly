@@ -235,6 +235,12 @@ public class LibLouis implements TranslatorFactory {
       case "NORWEGIAN_COMP8" -> {
         return new LibLouisTranslator(context, codeName, "no-no-comp8.ctb");
       }
+      case "PERSIAN" -> {
+        return new LibLouisTranslator(context, codeName, "fa-ir-g1.utb");
+      }
+      case "PERSIAN_COMP8" -> {
+        return new LibLouisTranslator(context, codeName, "fa-ir-comp8.ctb");
+      }
       case "POLISH" -> {
         return new LibLouisTranslator(context, codeName, "pl.tbl");
       }
