@@ -24,12 +24,15 @@ import android.widget.Toast;
 import androidx.annotation.StringRes;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.userguide.UserGuideActivity;
 
 /**
- * Help and feedback: the tutorial, gesture practice, problem reports, the version history and the
+ * Help and feedback: the user guide, the tutorial, gesture practice, problem reports, the version history and the
  * privacy policy.
  */
 public class HelpFragment extends AdvancedSettingFragment {
+  private static final String USER_GUIDE_KEY = "pref_user_guide";
+
   public HelpFragment() {
     super(R.xml.help_and_feedback_preferences, R.string.title_pref_help_and_feedback);
   }
@@ -37,6 +40,14 @@ public class HelpFragment extends AdvancedSettingFragment {
   @Override
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
     super.onCreatePreferences(savedInstanceState, rootKey);
+    Preference userGuide = findPreference(USER_GUIDE_KEY);
+    if (userGuide != null) {
+      if (UserGuideActivity.isAvailable()) {
+        userGuide.setIntent(UserGuideActivity.intent(requireContext()));
+      } else {
+        userGuide.setVisible(false);
+      }
+    }
     opensUrl(R.string.pref_version_history_key, R.string.version_history_url);
     opensUrl(R.string.pref_privacy_policy_key, R.string.privacy_policy_url);
   }

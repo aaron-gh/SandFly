@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Help & feedback: opens the user guide. -->
+    <string name="title_pref_user_guide">User guide</string>
+    <!-- Title at the top of the user guide page. -->
+    <string name="user_guide_title">SandFly User Guide</string>
+    <!-- Heading of the table of contents of the user guide. -->
+    <string name="user_guide_contents">Contents</string>
+    <!-- Heading of an appendix of the user guide, such as "Appendix A: Default gestures". -->
+    <string name="user_guide_appendix">Appendix <xliff:g id="letter" example="A">%1$s</xliff:g>: <xliff:g id="title" example="Default gestures">%2$s</xliff:g></string>
+    <!-- Link at the end of each chapter of the user guide to its table of contents. -->
+    <string name="user_guide_back_to_contents">Back to contents</string>
+    <!-- Column heading in the user guide's lists of gestures. -->
+    <string name="user_guide_gesture">Gesture</string>
+    <!-- Column heading in the user guide's lists of gestures and keyboard shortcuts. -->
+    <string name="user_guide_command">Command</string>
+    <!-- Column heading in the user guide's lists of keyboard shortcuts. -->
+    <string name="user_guide_keyboard_shortcut">Keyboard shortcut</string>
+    <!-- Line before the keyboard shortcuts of a keymap in the user guide, such as "SandFly key: Insert". -->
+    <string name="user_guide_sandfly_key">SandFly key: <xliff:g id="key" example="Insert">%1$s</xliff:g></string>
+    <!-- Shown when the user guide can't be shown, such as without a web view. -->
+    <string name="user_guide_unavailable">The user guide can\'t open on this device.</string>
+</resources>

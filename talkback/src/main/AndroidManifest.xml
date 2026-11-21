@@ -409,6 +409,15 @@
             </intent-filter>
         </activity>
 
+        <!-- Help & feedback > User guide. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.userguide.UserGuideActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout"
+            android:exported="false"
+            android:label="@string/title_pref_user_guide"
+            android:taskAffinity="com.google.android.accessibility.talkback.SettingsAffinity"
+            android:theme="@style/TalkBackSettings" />
+
         <!-- To choose SandFly's or VoiceOver's gestures the first time SandFly starts. -->
         <activity
             android:name="com.google.android.accessibility.talkback.gesture.GestureLayoutActivity"
