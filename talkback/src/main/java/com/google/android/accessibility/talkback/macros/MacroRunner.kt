@@ -1079,6 +1079,22 @@ object MacroRunner {
     return partial
   }
 
+  /**
+   * Returns whether [macro], listed in the Actions menu of the focused item's app, is shown there
+   * now: whether its [Macros.Macro.actionsCondition] is met. A test that fails to run counts as met,
+   * so the macro stays listed.
+   */
+  @JvmStatic
+  fun isShownInActions(service: TalkBackService, macro: Macros.Macro): Boolean {
+    if (macro.actionsCondition.clauses.isEmpty()) return true
+    return try {
+      macro.actionsCondition.isMet { check(service, it, emptyMap()) }
+    } catch (e: RuntimeException) {
+      LogUtils.w(TAG, "Actions condition of a macro not checked: %s", e)
+      true
+    }
+  }
+
   /** Returns whether the macro condition test [test] is met. Called on the search thread. */
   private fun check(service: TalkBackService, test: Macros.Test, values: Map<String, String>): Boolean =
     when (test) {

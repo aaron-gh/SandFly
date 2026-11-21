@@ -429,6 +429,8 @@
     <string name="macro_apps">Apps</string>
     <!-- Setting of a macro that lists it in the Actions menu and the Actions reading control, of its app's items or of every item. [CHAR LIMIT=40] -->
     <string name="macro_in_actions">Show in Actions</string>
+    <!-- Title of the row on a macro's screen, shown while Show in Actions is on, that opens the condition the focused item must meet for the macro to be listed in its Actions menu. [CHAR LIMIT=NONE] -->
+    <string name="macro_in_actions_only_when">Show in Actions only when</string>
     <!-- Spoken when a macro limited to an app is run while another app is in front. %1$s: the app. [CHAR LIMIT=NONE] -->
     <string name="macro_not_in_app">Macro not run. Runs only in <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
     <!-- Number of macros of an app, under its name on the Macros screen. -->
