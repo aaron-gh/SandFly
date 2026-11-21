@@ -61,14 +61,23 @@ object SpeechDictionary {
 
   private var ownPackage: String = ""
 
-  // Whether text in SandFly's own windows is changed, as in the notification list.
+  // How many of SandFly's screens whose text is changed, such as the notification list, are
+  // started. One screen's onStop can come after the next one's onStart.
+  private var ownWindowScreens = 0
+
+  // Whether text in SandFly's own windows is changed.
   @Volatile private var appliesInOwnWindows: Boolean = false
 
-  /** Sets whether entries apply in SandFly's own windows, which the notification list needs. */
+  /**
+   * Sets whether entries apply in SandFly's own windows, which the notification list and granular
+   * editing need: true from a screen's onStart, false from its onStop. Called on the main thread.
+   */
   @JvmStatic
   fun setAppliesInOwnWindows(applies: Boolean) {
-    if (appliesInOwnWindows != applies) replacedCharacters.clear()
-    appliesInOwnWindows = applies
+    ownWindowScreens = if (applies) ownWindowScreens + 1 else maxOf(0, ownWindowScreens - 1)
+    val now = ownWindowScreens > 0
+    if (appliesInOwnWindows != now) replacedCharacters.clear()
+    appliesInOwnWindows = now
   }
 
   /** Reads the entries from [prefs], and applies them to speech while there are any. */
