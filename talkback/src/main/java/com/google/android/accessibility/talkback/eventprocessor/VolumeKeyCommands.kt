@@ -19,7 +19,6 @@ package com.google.android.accessibility.talkback.eventprocessor
 import android.content.Context
 import android.content.SharedPreferences
 import android.hardware.display.DisplayManager
-import android.media.AudioAttributes
 import android.media.AudioManager
 import android.os.Handler
 import android.os.Looper
@@ -136,6 +135,7 @@ class VolumeKeyCommands(
       up,
       down,
       timeouts,
+      FailoverTextToSpeech.speechUsage(context),
     )
   }
 
@@ -226,7 +226,7 @@ class VolumeKeyCommands(
    */
   private fun isInCall(): Boolean {
     val audioManager = audioManager ?: return false
-    return isAppCall(
+    return VolumeKeyPresses.isAppCall(
       audioManager.activePlaybackConfigurations.map { it.audioAttributes.usage },
       FailoverTextToSpeech.speechUsage(context),
       audioManager.mode,
@@ -279,19 +279,6 @@ class VolumeKeyCommands(
         takesAll -> VolumeKeyPresses.OtherPresses.NOTHING
         hidesPanel -> VolumeKeyPresses.OtherPresses.VOLUME
         else -> VolumeKeyPresses.OtherPresses.ANDROID
-      }
-
-    /**
-     * Whether the audio [usages] playing and the audio [mode] make up an app call: audio with the
-     * voice communication usage plays. When SandFly's own speech and sounds have that usage, its
-     * players can't be told apart from an app's, and the audio mode of an app call counts instead.
-     */
-    @JvmStatic
-    internal fun isAppCall(usages: List<Int>, ownUsage: Int, mode: Int): Boolean =
-      if (ownUsage == AudioAttributes.USAGE_VOICE_COMMUNICATION) {
-        mode == AudioManager.MODE_IN_COMMUNICATION
-      } else {
-        AudioAttributes.USAGE_VOICE_COMMUNICATION in usages
       }
   }
 }

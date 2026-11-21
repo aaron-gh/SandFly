@@ -131,7 +131,7 @@ class OneUiVolumeKeys(
   /** Whether an app call is going on, whose volume the keys are left to change. */
   private fun isAppCall(): Boolean {
     val audio = audioManager ?: return false
-    return VolumeKeyCommands.isAppCall(
+    return VolumeKeyPresses.isAppCall(
       audio.activePlaybackConfigurations.map { it.audioAttributes.usage },
       FailoverTextToSpeech.speechUsage(context),
       audio.mode,

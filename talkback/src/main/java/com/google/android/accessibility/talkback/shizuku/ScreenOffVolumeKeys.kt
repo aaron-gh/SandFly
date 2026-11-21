@@ -25,6 +25,7 @@ import android.os.RemoteException
 import android.util.Log
 import android.view.Display
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses
+import com.google.android.accessibility.talkback.report.VolumeKeyLog
 import com.google.android.accessibility.utils.FormFactorUtils
 
 /** Lets the regular volume key recognizer receive presses when Android doesn't deliver key events. */
@@ -38,6 +39,8 @@ internal class ScreenOffVolumeKeys(
   private var options: Options? = null
   private var active = false
   private var listening = false
+  /** Whether the helper stopped by itself since the display turned off; no retry until it is on. */
+  private var stoppedThisScreenOff = false
 
   @Volatile private var session: Session? = null
   private val connected: (IShizukuGrants) -> Unit = { session?.register(it) }
@@ -48,8 +51,11 @@ internal class ScreenOffVolumeKeys(
     up: VolumeKeyPresses.KeyCommands,
     down: VolumeKeyPresses.KeyCommands,
     timeouts: VolumeKeyPresses.Timeouts,
+    speechUsage: Int,
   ) {
-    options = if (enabled && (!up.isEmpty || !down.isEmpty)) Options(up, down, timeouts) else null
+    options =
+      if (enabled && (!up.isEmpty || !down.isEmpty)) Options(up, down, timeouts, speechUsage)
+      else null
     updateListening()
   }
 
@@ -86,8 +92,11 @@ internal class ScreenOffVolumeKeys(
   }
 
   fun refresh() {
+    val off = screenOff()
+    if (!off) stoppedThisScreenOff = false
     val next = options?.takeIf {
-      listening && screenOff() && !ShizukuShell.usesRoot() && ShizukuShell.isAllowed()
+      listening && off && !stoppedThisScreenOff && !ShizukuShell.usesRoot() &&
+        ShizukuShell.isAllowed()
     }
     val previous = session
     if (previous?.options == next) return
@@ -113,6 +122,7 @@ internal class ScreenOffVolumeKeys(
     val up: VolumeKeyPresses.KeyCommands,
     val down: VolumeKeyPresses.KeyCommands,
     val timeouts: VolumeKeyPresses.Timeouts,
+    val speechUsage: Int,
   )
 
   private inner class Session(val options: Options) : IVolumeKeyCommandListener.Stub() {
@@ -121,9 +131,11 @@ internal class ScreenOffVolumeKeys(
     /** Called on ShizukuShell's commands thread. */
     fun register(connected: IShizukuGrants): Boolean {
       if (session !== this || service === connected) return true
-      val error = connected.watchScreenOffVolumeKeys(commands(), timings(), this)
+      val error =
+        connected.watchScreenOffVolumeKeys(commands(), timings(), options.speechUsage, this)
       if (error != null) {
         Log.w(TAG, "Cannot use volume keys with the screen off: $error")
+        VolumeKeyLog.note("Screen-off volume keys not started: $error")
         return false
       }
       service = connected
@@ -147,6 +159,18 @@ internal class ScreenOffVolumeKeys(
 
     private fun timings(): LongArray =
       with(options.timeouts) { longArrayOf(multiPress, longPress, repeat, repeatStart) }
+
+    override fun stopped(reason: String?) {
+      main.post {
+        if (session !== this) return@post
+        if (reason != null) {
+          Log.w(TAG, "Volume keys returned to Android with the screen off: $reason")
+          VolumeKeyLog.note("Screen-off volume keys stopped: $reason")
+        }
+        session = null
+        stoppedThisScreenOff = true
+      }
+    }
 
     override fun perform(command: String?) {
       if (command == null) return

@@ -35,9 +35,9 @@ import android.media.session.MediaController.PlaybackInfo.PLAYBACK_TYPE_REMOTE
 import android.media.session.PlaybackState.STATE_BUFFERING
 import android.media.session.PlaybackState.STATE_PAUSED
 import android.media.session.PlaybackState.STATE_PLAYING
-import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.isAppCall
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.longPressDuration
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands.Companion.otherPresses
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses.Companion.isAppCall
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses.OtherPresses
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.FLAG_FROM_KEY
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyVolume.Companion.handlesVolumeKeys

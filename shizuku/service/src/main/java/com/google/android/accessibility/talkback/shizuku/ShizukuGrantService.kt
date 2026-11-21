@@ -78,6 +78,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
   override fun watchScreenOffVolumeKeys(
     commands: Array<out String?>?,
     timings: LongArray?,
+    speechUsage: Int,
     listener: IVolumeKeyCommandListener?,
   ): String? {
     val appContext = context ?: return "Shizuku did not provide an app context"
@@ -99,6 +100,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
         keys(0),
         keys(4),
         VolumeKeyPresses.Timeouts(timings[0], timings[1], timings[2], timings[3]),
+        speechUsage,
       ).also { it.start() }
       null
     } catch (failure: Exception) {

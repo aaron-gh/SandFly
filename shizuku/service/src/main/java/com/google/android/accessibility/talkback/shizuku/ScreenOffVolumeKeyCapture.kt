@@ -20,9 +20,12 @@ import android.content.Context
 import android.hardware.display.DisplayManager
 import android.hardware.input.InputManager
 import android.media.AudioManager
+import android.os.Handler
+import android.os.HandlerThread
 import android.os.IBinder
 import android.os.ParcelFileDescriptor
 import android.os.PowerManager
+import android.os.RemoteException
 import android.os.SystemClock
 import android.system.Os
 import android.system.OsConstants
@@ -41,14 +44,24 @@ internal class ScreenOffVolumeKeyCapture(
   private val up: VolumeKeyPresses.KeyCommands,
   private val down: VolumeKeyPresses.KeyCommands,
   private val timeouts: VolumeKeyPresses.Timeouts,
+  private val speechUsage: Int,
 ) : AutoCloseable {
   private val power = context.getSystemService(PowerManager::class.java)
   private val displays = context.getSystemService(DisplayManager::class.java)
   private val audio = context.getSystemService(AudioManager::class.java)
   private val stopPipe = ParcelFileDescriptor.createPipe()
-  private val death = IBinder.DeathRecipient { stop() }
+  private val death = IBinder.DeathRecipient { stop(byClient = true) }
   private val worker = Thread({ capture() }, TAG)
   @Volatile private var stopped = false
+  /** Whether SandFly asked to stop or died, so that it isn't told the keys went back. */
+  @Volatile private var stoppedByClient = false
+  /** Keeps the CPU awake while presses are counted, which a display that is off doesn't. */
+  private var wakeLock: PowerManager.WakeLock? =
+    power?.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, WAKE_LOCK_TAG)?.apply {
+      setReferenceCounted(false)
+    }
+  /** Uptime until which the CPU stays awake after a key edge or a command. */
+  private var awakeUntil = 0L
 
   fun isWatching(callback: IVolumeKeyCommandListener): Boolean =
     listener.asBinder() == callback.asBinder()
@@ -58,14 +71,15 @@ internal class ScreenOffVolumeKeyCapture(
       listener.asBinder().linkToDeath(death, 0)
       worker.start()
     } catch (failure: Exception) {
-      stop()
+      stop(byClient = true)
       stopPipe[0].close()
       throw failure
     }
   }
 
   @Synchronized
-  private fun stop() {
+  private fun stop(byClient: Boolean) {
+    if (byClient) stoppedByClient = true
     if (!stopped) {
       stopped = true
       stopPipe[1].close()
@@ -73,7 +87,7 @@ internal class ScreenOffVolumeKeyCapture(
   }
 
   override fun close() {
-    stop()
+    stop(byClient = true)
     worker.join(1000)
   }
 
@@ -84,7 +98,21 @@ internal class ScreenOffVolumeKeyCapture(
 
   private fun capture() {
     val devices = mutableListOf<ParcelFileDescriptor>()
+    // What went wrong, for SandFly; null when the display turned on.
+    var reason: String? = null
+    val displayThread = HandlerThread(TAG).apply { start() }
+    val displayListener =
+      object : DisplayManager.DisplayListener {
+        override fun onDisplayAdded(displayId: Int) = Unit
+
+        override fun onDisplayRemoved(displayId: Int) = Unit
+
+        override fun onDisplayChanged(displayId: Int) {
+          if (displayId == Display.DEFAULT_DISPLAY && !screenOff()) stop(byClient = false)
+        }
+      }
     try {
+      displays?.registerDisplayListener(displayListener, Handler(displayThread.looper))
       if (!screenOff()) return
       var foundKeys = 0
       for (file in File("/dev/input").listFiles().orEmpty()) {
@@ -94,7 +122,13 @@ internal class ScreenOffVolumeKeyCapture(
         } catch (_: IOException) {
           continue
         }
-        val keys = VolumeKeyDevice.supportedKeys(device.fd)
+        val keys =
+          try {
+            VolumeKeyDevice.supportedKeys(device.fd)
+          } catch (failure: Throwable) {
+            device.close()
+            throw failure
+          }
         if (keys == 0) {
           device.close()
           continue
@@ -111,10 +145,11 @@ internal class ScreenOffVolumeKeyCapture(
         val grabbedAt = LongArray(devices.size)
         try {
           for ((index, device) in devices.withIndex()) {
-            if (!screenOff() || VolumeKeyDevice.keysDown(device.fd) != 0) return
+            if (!screenOff()) return
+            checkNoKeysDown(device)
             grabbedAt[index] = SystemClock.uptimeMillis()
             check(VolumeKeyDevice.grab(device.fd)) { "Cannot take a volume key device" }
-            if (VolumeKeyDevice.keysDown(device.fd) != 0) return
+            checkNoKeysDown(device)
           }
           Log.i(TAG, "Watching built-in volume keys with the display off")
           readKeys(devices, grabbedAt, output.fd)
@@ -126,15 +161,37 @@ internal class ScreenOffVolumeKeyCapture(
         }
       }
     } catch (failure: Exception) {
-      if (!stopped) Log.w(TAG, "Leaving volume keys to Android", failure)
+      if (!stopped) {
+        Log.w(TAG, "Leaving volume keys to Android", failure)
+        reason = failure.message ?: failure.toString()
+      }
     } catch (failure: LinkageError) {
-      if (!stopped) Log.w(TAG, "Cannot load volume key support", failure)
+      if (!stopped) {
+        Log.w(TAG, "Cannot load volume key support", failure)
+        reason = "Cannot load volume key support: $failure"
+      }
     } finally {
       devices.forEach { runCatching { it.close() } }
-      stop()
+      releaseWakeLock()
+      runCatching { displays?.unregisterDisplayListener(displayListener) }
+      displayThread.quitSafely()
+      stop(byClient = false)
       stopPipe[0].close()
-      listener.asBinder().unlinkToDeath(death, 0)
+      runCatching { listener.asBinder().unlinkToDeath(death, 0) }
+      if (!stoppedByClient) {
+        try {
+          listener.stopped(reason)
+        } catch (_: RemoteException) {
+          // SandFly stopped.
+        }
+      }
     }
+  }
+
+  private fun checkNoKeysDown(device: ParcelFileDescriptor) {
+    val down = VolumeKeyDevice.keysDown(device.fd)
+    check(down >= 0) { "Cannot read the volume key state" }
+    check(down == 0) { "Volume key held when the display turned off" }
   }
 
   /** Waits for Android to recognize the fallback device before taking any physical key. */
@@ -162,7 +219,10 @@ internal class ScreenOffVolumeKeyCapture(
       timer,
       object : VolumeKeyPresses.Callbacks {
         override fun perform(command: String) {
-          if (screenOff()) listener.perform(command)
+          if (screenOff()) {
+            stayAwakeBriefly()
+            listener.perform(command)
+          }
         }
 
         override fun adjustVolume(keyCode: Int, repeated: Boolean) {
@@ -176,10 +236,11 @@ internal class ScreenOffVolumeKeyCapture(
     var passed = 0
     try {
       while (!stopped) {
-        val ready = Os.poll(sources, timer.waitMs())
+        val ready = Os.poll(sources, pollTimeout(timer))
         if (sources[0].revents.toInt() != 0 || !screenOff()) return
         if (ready == 0) {
           timer.advance(SystemClock.uptimeMillis())
+          keepAwake(timer)
           continue
         }
         for (index in devices.indices) {
@@ -191,6 +252,7 @@ internal class ScreenOffVolumeKeyCapture(
           check(edge >= 0) { "Volume key input overruns or disconnected" }
           val eventTime = edge shr 2
           if (edge == 0L || eventTime < grabbedAt[index]) continue
+          stayAwakeBriefly()
           timer.advance(eventTime)
           val isUp = edge and 2L != 0L
           val isDown = edge and 1L != 0L
@@ -217,6 +279,7 @@ internal class ScreenOffVolumeKeyCapture(
             }
           }
         }
+        keepAwake(timer)
       }
     } finally {
       if (passed and UP != 0) runCatching { emit(KeyEvent.KEYCODE_VOLUME_UP, false) }
@@ -225,11 +288,53 @@ internal class ScreenOffVolumeKeyCapture(
   }
 
   private fun canUseCommands(): Boolean {
+    val audio = audio ?: return true
+    val mode = audio.mode
     // Leave the Android handling of call volume and silencing an incoming call available.
-    val mode = audio?.mode
-    return mode != AudioManager.MODE_RINGTONE &&
-      mode != AudioManager.MODE_IN_CALL &&
-      mode != AudioManager.MODE_IN_COMMUNICATION
+    if (mode == AudioManager.MODE_RINGTONE || mode == AudioManager.MODE_IN_CALL) return false
+    return !VolumeKeyPresses.isAppCall(
+      audio.activePlaybackConfigurations.map { it.audioAttributes.usage },
+      speechUsage,
+      mode,
+    )
+  }
+
+  private fun stayAwakeBriefly() {
+    awakeUntil = SystemClock.uptimeMillis() + AWAKE_AFTER_EDGE_MS
+  }
+
+  /** Holds the wake lock while [timer] runs or shortly after a key edge or a command. */
+  private fun keepAwake(timer: KeyTimer) {
+    val lock = wakeLock ?: return
+    val needed = timer.isPending || SystemClock.uptimeMillis() < awakeUntil
+    try {
+      if (needed && !lock.isHeld) {
+        lock.acquire(WAKE_LOCK_LIMIT_MS)
+      } else if (!needed && lock.isHeld) {
+        lock.release()
+      }
+    } catch (failure: RuntimeException) {
+      Log.w(TAG, "Cannot keep the CPU awake while counting presses", failure)
+      wakeLock = null
+    }
+  }
+
+  private fun releaseWakeLock() {
+    val lock = wakeLock ?: return
+    try {
+      if (lock.isHeld) lock.release()
+    } catch (_: RuntimeException) {
+      // Already released.
+    }
+  }
+
+  /** Waits until [timer] is due, or until the wake lock may be released. */
+  private fun pollTimeout(timer: KeyTimer): Int {
+    val timerWait = timer.waitMs()
+    val now = SystemClock.uptimeMillis()
+    if (wakeLock?.isHeld != true || awakeUntil <= now) return timerWait
+    val awakeWait = (awakeUntil - now).toInt()
+    return if (timerWait < 0) awakeWait else minOf(timerWait, awakeWait)
   }
 
   private fun pollFd(descriptor: ParcelFileDescriptor): StructPollfd =
@@ -243,6 +348,9 @@ internal class ScreenOffVolumeKeyCapture(
     private var latestTime = 0L
     private var due = 0L
     private var task: Runnable? = null
+
+    val isPending: Boolean
+      get() = task != null
 
     override fun schedule(delayMs: Long, task: Runnable) {
       due = latestTime + delayMs
@@ -269,6 +377,11 @@ internal class ScreenOffVolumeKeyCapture(
     private const val TAG = "ScreenOffVolumeKeys"
     private const val OUTPUT_NAME = "SandFly Volume Keys"
     private const val OUTPUT_START_TIMEOUT_MS = 750L
+    private const val WAKE_LOCK_TAG = "SandFly:ScreenOffVolumeKeys"
+    /** How long the CPU stays awake after a key edge or a command, for SandFly to respond. */
+    private const val AWAKE_AFTER_EDGE_MS = 1000L
+    /** Release in case the capture thread stops responding; renewed while presses continue. */
+    private const val WAKE_LOCK_LIMIT_MS = 10_000L
     private const val UP = 1
     private const val DOWN = 2
     private val EVENT_NODE = Regex("event[0-9]+")

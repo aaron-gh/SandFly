@@ -18,4 +18,10 @@ package com.google.android.accessibility.talkback.shizuku;
 
 oneway interface IVolumeKeyCommandListener {
     void perform(String command);
+
+    /**
+     * The volume keys went back to Android without stopScreenOffVolumeKeys. reason is what went
+     * wrong, or null when the display turned on.
+     */
+    void stopped(String reason);
 }

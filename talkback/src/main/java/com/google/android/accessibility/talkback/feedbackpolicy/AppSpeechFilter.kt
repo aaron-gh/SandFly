@@ -27,7 +27,7 @@ import androidx.annotation.MainThread
 import androidx.annotation.VisibleForTesting
 import androidx.core.content.edit
 import com.google.android.accessibility.talkback.R
-import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils
 import com.google.android.accessibility.utils.KeyboardUtils
@@ -226,7 +226,7 @@ object AppSpeechFilter {
   @JvmStatic
   fun othersPlayAssistantOrCall(usages: Collection<Int>, ownUsage: Int, mode: Int): Boolean =
     (AudioAttributes.USAGE_ASSISTANT in usages && ownUsage != AudioAttributes.USAGE_ASSISTANT) ||
-      VolumeKeyCommands.isAppCall(usages.toList(), ownUsage, mode)
+      VolumeKeyPresses.isAppCall(usages.toList(), ownUsage, mode)
 
   /** Reads the settings and starts or stops watching what they need. */
   @JvmStatic
