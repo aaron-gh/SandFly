@@ -31,6 +31,10 @@ abstract class KeymapDefaults {
    */
   protected open val commandDefaults: Map<Int, KeyCombo> = emptyMap()
 
+  /** The keys under which the commands with default shortcuts in [commandDefaults] are saved. */
+  fun commandKeys(context: Context): List<String> =
+    commandDefaults.keys.map { Commands.shortcutKey(context.getString(it)) }
+
   /** Returns the default shortcut of the command saved under [key], or none. */
   fun defaultKeyCombo(context: Context, key: String): KeyCombo {
     for ((keyRes, combo) in defaults) {
@@ -64,6 +68,9 @@ abstract class KeymapDefaults {
     /** A key that works without the SandFly key in browse mode. */
     fun browse(modifiers: Int, keyCode: Int) =
       KeyCombo(modifiers, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ false)
+
+    /** Keys that work only while a text field is being edited, taking them from the text field. */
+    fun editing(modifiers: Int, keyCode: Int) = plain(modifiers, keyCode).withWhileEditing(true)
 
     /**
      * A key that works without the SandFly key outside text fields being edited, in keymaps where
