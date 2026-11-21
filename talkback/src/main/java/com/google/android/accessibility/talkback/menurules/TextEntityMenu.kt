@@ -231,8 +231,8 @@ class TextEntityMenu(private val pipeline: Pipeline.FeedbackReturner) : NodeMenu
     fun labelOf(context: Context, entity: Entity): String =
       when (entity) {
         is Entity.Web,
-        is Entity.Email -> entity.text
-        is Entity.Phone -> context.getString(R.string.menu_item_call_number, entity.text)
+        is Entity.Email,
+        is Entity.Phone -> entity.text
         is Entity.Code -> context.getString(R.string.menu_item_copy_code, entity.text)
       }
 
