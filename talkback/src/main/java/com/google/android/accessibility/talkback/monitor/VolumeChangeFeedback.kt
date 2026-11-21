@@ -27,7 +27,7 @@ import android.os.Handler
 import android.os.Looper
 import android.os.SystemClock
 import com.google.android.accessibility.talkback.R
-import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyCommands
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses
 import com.google.android.accessibility.talkback.pause.PauseController
 import com.google.android.accessibility.talkback.soundthemes.SoundThemeManifest
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
@@ -270,7 +270,7 @@ class VolumeChangeFeedback(private val context: Context) {
 
   private fun isAppCallActive(): Boolean {
     val audio = context.getSystemService(AudioManager::class.java) ?: return false
-    return VolumeKeyCommands.isAppCall(
+    return VolumeKeyPresses.isAppCall(
       audio.activePlaybackConfigurations.map { it.audioAttributes.usage },
       FailoverTextToSpeech.speechUsage(context),
       audio.mode,

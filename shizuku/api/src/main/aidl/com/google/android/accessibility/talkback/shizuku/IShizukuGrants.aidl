@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.shizuku;
 
 import android.os.Bundle;
 import com.google.android.accessibility.talkback.shizuku.IClipboardWatcher;
+import com.google.android.accessibility.talkback.shizuku.IVolumeKeyCommandListener;
 
 /**
  * Runs as the shell user through Shizuku. Grants SandFly one of a few fixed permissions, and runs
@@ -96,4 +97,16 @@ interface IShizukuGrants {
      * worked, or what went wrong.
      */
     String injectHover(int action, long downTime, float x, float y, boolean waitForFinish) = 11;
+
+    /**
+     * Routes assigned presses of dedicated built-in volume keys while the display is off.
+     * speechUsage is the audio usage of SandFly's speech, which tells app calls apart. Returns null
+     * if registration succeeds, or what went wrong.
+     */
+    String watchScreenOffVolumeKeys(
+        in String[] commands, in long[] timings, int speechUsage,
+        IVolumeKeyCommandListener listener) = 12;
+
+    /** Returns the volume keys to Android immediately if this is still the current listener. */
+    oneway void stopScreenOffVolumeKeys(IVolumeKeyCommandListener listener) = 13;
 }

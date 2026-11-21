@@ -1603,6 +1603,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
 
     serviceState = newState;
+    if (volumeKeyCommands != null) {
+      volumeKeyCommands.setScreenOffAllowed(isServiceActive() && !PauseController.isPaused());
+    }
     if (newState != ServiceStateListener.SERVICE_STATE_ACTIVE) {
       LiveRecognition.stop();
       MacroRunner.stop();
@@ -3311,8 +3314,11 @@ public class TalkBackService extends AccessibilityServiceCompat
             // Android cancels the touch, which ends with no TYPE_TOUCH_INTERACTION_END.
             forgetTouchInteraction("screen off");
           }
-          if (!isInteractive && volumeKeyCommands != null) {
-            volumeKeyCommands.onScreenOff();
+          if (volumeKeyCommands != null) {
+            if (!isInteractive) {
+              volumeKeyCommands.onScreenOff();
+            }
+            volumeKeyCommands.refreshScreenOffKeys();
           }
           if (!isInteractive && oneUiVolumeKeys != null) {
             oneUiVolumeKeys.onScreenOff();
@@ -4852,6 +4858,7 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(
             R.string.pref_telegram_reply_quotes_key, R.bool.pref_telegram_reply_quotes_default));
     if (volumeKeyCommands != null) {
+      volumeKeyCommands.setScreenOffAllowed(isServiceActive() && !PauseController.isPaused());
       volumeKeyCommands.reload(prefs);
     }
     if (oneUiVolumeKeys != null) {
@@ -5243,6 +5250,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   /** Turns off, or back on, what pausing Backtalk turns off besides events and feedback. */
   private void onPauseChanged(boolean paused) {
+    if (volumeKeyCommands != null) {
+      volumeKeyCommands.setScreenOffAllowed(!paused && isServiceActive());
+    }
     if (paused) {
       // A hidden screen would stay black while paused SandFly can't show it again.
       dimScreenController.suspend();

@@ -24,6 +24,10 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys;
+import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell;
+import com.google.android.accessibility.utils.FormFactorUtils;
+import kotlin.Unit;
 
 /** Volume keys: what the volume keys do while SandFly is on. */
 public class VolumeKeysFragment extends AdvancedSettingFragment {
@@ -36,6 +40,30 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
     super.onCreatePreferences(savedInstanceState, rootKey);
     setVisible(
         R.string.pref_volume_keys_speech_volume_while_speaking_key, OneUiVolumeKeys.isSupported());
+    TwoStatePreference screenOff = findPreference(getString(R.string.pref_volume_keys_screen_off_key));
+    if (screenOff != null) {
+      // The root shell process can't load the native helper.
+      screenOff.setVisible(
+          !FormFactorUtils.isAndroidWear()
+              && ShizukuShell.isAvailable(requireContext())
+              && !ShizukuShell.usesRoot());
+      screenOff.setOnPreferenceChangeListener(
+          (preference, value) -> {
+            if (!Boolean.TRUE.equals(value)
+                || !ShizukuGrants.INSTANCE.isReady()
+                || ShizukuGrants.INSTANCE.hasShizukuPermission()) {
+              return true;
+            }
+            ShizukuGrants.INSTANCE.withShizukuPermission(
+                allowed -> {
+                  if (allowed) {
+                    screenOff.setChecked(true);
+                  }
+                  return Unit.INSTANCE;
+                });
+            return false;
+          });
+    }
     TwoStatePreference takeAll = findPreference(getString(R.string.pref_volume_keys_take_all_key));
     if (takeAll != null) {
       showSinglePresses(takeAll.isChecked());

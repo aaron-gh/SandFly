@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.eventprocessor
 
+import android.media.AudioAttributes
+import android.media.AudioManager
 import android.view.KeyEvent
 
 /**
@@ -424,5 +426,18 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
     @JvmStatic
     fun isVolumeKey(keyCode: Int): Boolean =
       keyCode == KeyEvent.KEYCODE_VOLUME_UP || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN
+
+    /**
+     * Whether the audio [usages] playing and the audio [mode] make up an app call: audio with the
+     * voice communication usage plays. When SandFly's own speech and sounds have that usage, its
+     * players can't be told apart from an app's, and the audio mode of an app call counts instead.
+     */
+    @JvmStatic
+    fun isAppCall(usages: List<Int>, ownUsage: Int, mode: Int): Boolean =
+      if (ownUsage == AudioAttributes.USAGE_VOICE_COMMUNICATION) {
+        mode == AudioManager.MODE_IN_COMMUNICATION
+      } else {
+        AudioAttributes.USAGE_VOICE_COMMUNICATION in usages
+      }
   }
 }

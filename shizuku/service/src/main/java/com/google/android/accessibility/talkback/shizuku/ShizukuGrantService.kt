@@ -36,6 +36,7 @@ import android.view.InputDevice
 import android.view.InputEvent
 import android.view.MotionEvent
 import com.google.android.accessibility.talkback.audio.AccessibilityAudioOutput
+import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses
 import java.io.File
 import java.io.IOException
 import java.io.InputStream
@@ -69,6 +70,51 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
 
   override fun destroy() {
     exitProcess(0)
+  }
+
+  private var screenOffVolumeKeys: ScreenOffVolumeKeyCapture? = null
+
+  @Synchronized
+  override fun watchScreenOffVolumeKeys(
+    commands: Array<out String?>?,
+    timings: LongArray?,
+    speechUsage: Int,
+    listener: IVolumeKeyCommandListener?,
+  ): String? {
+    val appContext = context ?: return "Shizuku did not provide an app context"
+    if (listener == null || commands?.size != 8 ||
+      timings?.size != 4 || timings.any { it !in 1L..5000L }
+    ) {
+      return "Invalid volume key configuration"
+    }
+    return try {
+      screenOffVolumeKeys?.close()
+      screenOffVolumeKeys = null
+      fun keys(start: Int) = VolumeKeyPresses.KeyCommands(
+        single = commands[start], double = commands[start + 1],
+        triple = commands[start + 2], long = commands[start + 3],
+      )
+      screenOffVolumeKeys = ScreenOffVolumeKeyCapture(
+        appContext,
+        listener,
+        keys(0),
+        keys(4),
+        VolumeKeyPresses.Timeouts(timings[0], timings[1], timings[2], timings[3]),
+        speechUsage,
+      ).also { it.start() }
+      null
+    } catch (failure: Exception) {
+      failure.toString()
+    }
+  }
+
+  @Synchronized
+  override fun stopScreenOffVolumeKeys(listener: IVolumeKeyCommandListener?) {
+    val capture = screenOffVolumeKeys ?: return
+    if (listener != null && capture.isWatching(listener)) {
+      capture.close()
+      screenOffVolumeKeys = null
+    }
   }
 
   override fun grant(grant: Int, packageName: String?): String? {
