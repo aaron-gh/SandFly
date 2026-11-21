@@ -214,10 +214,22 @@ class MultiFingerMultiTap extends GestureMatcher {
 
   @Override
   protected void onMove(EventId eventId, MotionEvent event) {
-    // Outside the touch slop
-    if (null == findNearestPoint(event, touchSlop, false)) {
-      cancelGesture(event);
+    // Cancel as soon as any pointer is outside the touch slop of all the base points.
+    for (int pointer = 0; pointer < event.getPointerCount(); pointer++) {
+      if (!isNearAnyBase(event.getX(pointer), event.getY(pointer), touchSlop)) {
+        cancelGesture(event);
+        return;
+      }
     }
+  }
+
+  private boolean isNearAnyBase(float x, float y, float slop) {
+    for (PointF base : bases) {
+      if (!Float.isNaN(base.x) && Math.hypot(base.x - x, base.y - y) < slop) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Override
