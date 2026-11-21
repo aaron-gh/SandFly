@@ -70,7 +70,6 @@ import com.google.android.accessibility.utils.monitor.RecentUserInput
 import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer
 import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
-import com.google.mlkit.vision.common.InputImage
 import java.io.ByteArrayOutputStream
 import java.util.Locale
 import java.util.concurrent.Executors
@@ -523,7 +522,7 @@ class LiveRecognitionActivity : ComponentActivity() {
     if (RecognitionMode.TEXT !in enabled) { release(); return }
     try {
       recognizerUsed = true
-      recognizer.process(InputImage.fromBitmap(bitmap, 0))
+      recognizer.process(bitmap, 0)
         .addOnSuccessListener { result ->
           LogUtils.v(TAG, "Text, %d characters, %d ms after the frame", result.text.length,
             SystemClock.elapsedRealtime() - capturedAt)

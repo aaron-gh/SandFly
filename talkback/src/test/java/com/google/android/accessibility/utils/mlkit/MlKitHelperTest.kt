@@ -29,9 +29,7 @@ import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer
 import com.google.android.accessibility.utils.ocr.LanguageTextRecognizer.Script
 import com.google.android.gms.tasks.Task
 import com.google.mlkit.common.MlKitException
-import com.google.mlkit.common.sdkinternal.MlKitContext
 import com.google.mlkit.nl.languageid.IdentifiedLanguage
-import com.google.mlkit.vision.common.InputImage
 import java.io.File
 import java.time.Duration
 import java.util.Locale
@@ -40,7 +38,6 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -99,12 +96,6 @@ class MlKitHelperTest {
 
   private val connector = FakeConnector()
   private val helper = MlKitHelper(context, main, connector)
-
-  @Before
-  fun setUp() {
-    // InputImage.fromBitmap needs it, as on a phone, where ML Kit sets it up as SandFly starts.
-    MlKitContext.initializeIfNeeded(context)
-  }
 
   private fun idle() = shadowOf(main).idle()
 
@@ -374,7 +365,7 @@ class MlKitHelperTest {
     val recognizer =
       LanguageTextRecognizer(context, { listOf(Locale.JAPAN) }, { 0L }, helper)
 
-    val task = recognizer.process(InputImage.fromBitmap(Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888), 0))
+    val task = recognizer.process(Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888), 0)
     idle()
     connector.connect(service)
     idle()
@@ -393,11 +384,33 @@ class MlKitHelperTest {
   }
 
   @Test
+  fun textRecognizer_sendsTheBitmapWithoutMlKitContext() {
+    // ML Kit's context is not set up in this test, as in SandFly's process on the lock screen
+    // after the phone starts.
+    val service = FakeService()
+    service.answer = {
+      result { putByteArray(MlKitProtocol.KEY_TEXT_DATA, MlKitProtocol.encodeText(MlKitProtocolTest.sample())) }
+    }
+    val recognizer = LanguageTextRecognizer(context, { listOf(Locale.US) }, { 0L }, helper)
+
+    val task = recognizer.process(Bitmap.createBitmap(6, 3, Bitmap.Config.ARGB_8888), 270)
+    idle()
+    connector.connect(service)
+    idle()
+
+    val request = service.requests.single()
+    assertEquals(MlKitProtocol.MSG_RECOGNIZE_TEXT, request.what)
+    assertEquals(270, request.data.getInt(MlKitProtocol.KEY_ROTATION))
+    assertEquals("LATIN", request.data.getString(MlKitProtocol.KEY_SCRIPT))
+    assertEquals(2, task.result.textBlocks.size)
+  }
+
+  @Test
   fun closedTextRecognizer_failsWithoutARequest() {
     val recognizer = LanguageTextRecognizer(context, { listOf(Locale.US) }, { 0L }, helper)
     recognizer.close()
 
-    val task = recognizer.process(InputImage.fromBitmap(Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888), 0))
+    val task = recognizer.process(Bitmap.createBitmap(4, 4, Bitmap.Config.ARGB_8888), 0)
     idle()
 
     assertTrue(task.isComplete && !task.isSuccessful)
