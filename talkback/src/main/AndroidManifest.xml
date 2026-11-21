@@ -681,8 +681,7 @@
             android:exported="false" />
         <service
             android:name="com.google.android.accessibility.talkback.speechcontrol.SpeechControlService"
-            android:exported="true"
-            android:permission="${applicationId}.permission.SPEAK">
+            android:exported="true">
             <intent-filter>
                 <action android:name="fyi.quin.backtalk.action.SPEECH_CONTROL" />
             </intent-filter>
