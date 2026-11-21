@@ -171,7 +171,9 @@ import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.DebugProperties;
 import com.google.android.accessibility.talkback.utils.FocusIndicatorUtils;
 import com.google.android.accessibility.talkback.utils.GeminiCommandUtils;
+import com.google.android.accessibility.talkback.keyboard.CharacterChooser;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKeyboardHost;
 import com.google.android.accessibility.talkback.labeling.LabelDialogManager;
 import com.google.android.accessibility.talkback.keyboard.NextKeyboard;
 import com.google.android.accessibility.talkback.overview.PreviousApp;
@@ -732,6 +734,16 @@ public class GestureController {
       result = keyComboManager != null;
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_touch_lock))) {
       result = TouchLock.toggle();
+    } else if (action.equals(service.getString(R.string.shortcut_value_search_emoji))
+        || action.equals(service.getString(R.string.shortcut_value_choose_symbol))) {
+      result =
+          SandFlyKeyboardHost.openChooser(
+              action.equals(service.getString(R.string.shortcut_value_search_emoji))
+                  ? CharacterChooser.Kind.EMOJI
+                  : CharacterChooser.Kind.SYMBOL);
+      if (!result) {
+        SandFlyKeyboardHost.speak(service.getString(R.string.sandfly_keyboard_needed));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {
       result = pullToRefresh.refresh(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_media_control))) {

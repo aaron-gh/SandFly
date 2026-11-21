@@ -894,6 +894,17 @@ object Commands {
         gesture(R.string.shortcut_value_continuous_copy, R.string.title_continuous_copy)
         gesture(R.string.shortcut_value_granular_editing, R.string.granular_editing_title)
         gesture(R.string.shortcut_value_typo_suggestions, R.string.title_edittext_typo_suggestions)
+        // The SandFly keyboard is in the phone build only.
+        gesture(
+          R.string.shortcut_value_search_emoji,
+          R.string.shortcut_search_emoji,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
+        gesture(
+          R.string.shortcut_value_choose_symbol,
+          R.string.shortcut_choose_symbol,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
         gesture(
           R.string.shortcut_value_switch_keyboard,

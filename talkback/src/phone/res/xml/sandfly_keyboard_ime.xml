@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The SandFly keyboard, for physical keyboards. Its language is the keyboard's. It has no
+     subtypes, so that its name isn't shown twice in Android's keyboard list and picker. -->
+<input-method xmlns:android="http://schemas.android.com/apk/res/android"
+    android:supportsSwitchingToNextInputMethod="true" />

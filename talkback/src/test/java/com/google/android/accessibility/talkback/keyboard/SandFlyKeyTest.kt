@@ -556,6 +556,42 @@ class SandFlyKeyTest {
   }
 
   @Test
+  fun keysPressedWhileAChooserIsOpenGoToIt() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    var choosing = false
+    SandFlyKeyboardHost.keyboard =
+      object : SandFlyKeyboardHost.Keyboard {
+        override val isEditing = true
+        override val isChoosing
+          get() = choosing
+
+        override fun openChooser(kind: CharacterChooser.Kind) = true
+      }
+    try {
+      // The shortcut that opens a chooser is released as usual.
+      manager.down(KeyEvent.KEYCODE_SYM)
+      assertTrue(manager.down(KeyEvent.KEYCODE_K))
+      choosing = true
+      assertTrue(manager.up(KeyEvent.KEYCODE_K))
+      manager.up(KeyEvent.KEYCODE_SYM)
+      assertEquals(1, keys.size)
+      // Keys pressed while it is open are its own, up to their release.
+      time += 1000
+      assertFalse(manager.down(KeyEvent.KEYCODE_SYM))
+      choosing = false
+      assertFalse(manager.up(KeyEvent.KEYCODE_SYM))
+      assertEquals(1, keys.size)
+      // Then SandFly has the keys again.
+      time += 1000
+      assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+      assertTrue(manager.up(KeyEvent.KEYCODE_SYM))
+      assertEquals(2, keys.size)
+    } finally {
+      SandFlyKeyboardHost.keyboard = null
+    }
+  }
+
+  @Test
   fun keyboardPhoneTrackpadPressIsEnter() {
     for (keyCode in listOf(KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_NUMPAD_ENTER)) {
       keys.clear()
