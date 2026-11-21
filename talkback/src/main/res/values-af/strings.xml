@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android se fisieke sleutelbordinstellings</string>
   <string name="title_pref_keypad_letter_keys">Lettersleutels druk sleutelblokknoppies</string>
   <string name="title_pref_enter_sends_messages">Enter stuur boodskappe</string>
+  <string name="sandfly_keyboard_name">SandFly-sleutelbord</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Ingehoue sleutels tik</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt-karakter</item>
+    <item>Hoofletter</item>
+    <item>Herhaalde karakter</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Soek emoji</string>
+  <string name="shortcut_choose_symbol">Kies \'n simbool</string>
+  <string name="sandfly_keyboard_emoji_search">Emoji-soektog</string>
+  <string name="sandfly_keyboard_symbols">Simbole</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d van %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Geen passings nie</string>
+  <string name="sandfly_keyboard_chooser_closed">Toegemaak</string>
+  <string name="sandfly_keyboard_needed">Vereis die SandFly-sleutelbord in \'n teksveld</string>
   <string name="value_keyboard_echo_none">Geen</string>
   <string name="value_keyboard_echo_characters_only">Karakters</string>
   <string name="value_keyboard_echo_words_only">Woorde</string>

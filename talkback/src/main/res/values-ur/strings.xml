@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">‏Android فزیکل کی بورڈ سیٹنگز</string>
   <string name="title_pref_keypad_letter_keys">حرفی کلیدیں کی پیڈ کے بٹن دباتی ہیں</string>
   <string name="title_pref_enter_sends_messages">‏Enter پیغامات بھیجتا ہے</string>
+  <string name="sandfly_keyboard_name">SandFly کی بورڈ</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">دبا کر رکھی گئی کلیدوں سے ٹائپنگ</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt حرف</item>
+    <item>بڑا حرف</item>
+    <item>دہرایا گیا حرف</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ایموجی تلاش کریں</string>
+  <string name="shortcut_choose_symbol">علامت منتخب کریں</string>
+  <string name="sandfly_keyboard_emoji_search">ایموجی تلاش</string>
+  <string name="sandfly_keyboard_symbols">علامات</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s، %3$d میں سے %2$d</string>
+  <string name="sandfly_keyboard_no_matches">کوئی مماثل نہیں</string>
+  <string name="sandfly_keyboard_chooser_closed">بند ہو گیا</string>
+  <string name="sandfly_keyboard_needed">ٹیکسٹ فیلڈ میں SandFly کی بورڈ درکار ہے</string>
   <string name="value_keyboard_echo_none">کوئی نہیں</string>
   <string name="value_keyboard_echo_characters_only">حروف</string>
   <string name="value_keyboard_echo_words_only">الفاظ</string>

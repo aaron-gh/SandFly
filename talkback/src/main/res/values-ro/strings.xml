@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Setările tastaturii fizice Android</string>
   <string name="title_pref_keypad_letter_keys">Tastele cu litere apasă butoanele tastaturii numerice</string>
   <string name="title_pref_enter_sends_messages">Enter trimite mesajele</string>
+  <string name="sandfly_keyboard_name">Tastatură SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Introducere la apăsarea lungă a tastelor</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Caracter Alt</item>
+    <item>Majusculă</item>
+    <item>Caracter repetat</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Caută emoji</string>
+  <string name="shortcut_choose_symbol">Alege un simbol</string>
+  <string name="sandfly_keyboard_emoji_search">Căutare de emoji</string>
+  <string name="sandfly_keyboard_symbols">Simboluri</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d din %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Nu sunt rezultate</string>
+  <string name="sandfly_keyboard_chooser_closed">Închis</string>
+  <string name="sandfly_keyboard_needed">Necesită tastatura SandFly într-un câmp de text</string>
   <string name="value_keyboard_echo_none">Fără</string>
   <string name="value_keyboard_echo_characters_only">Caractere</string>
   <string name="value_keyboard_echo_words_only">Cuvinte</string>

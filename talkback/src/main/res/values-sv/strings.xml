@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Androids inställningar för fysiskt tangentbord</string>
   <string name="title_pref_keypad_letter_keys">Bokstavstangenter trycker på knapparna på knappsatsen</string>
   <string name="title_pref_enter_sends_messages">Enter skickar meddelanden</string>
+  <string name="sandfly_keyboard_name">SandFly-tangentbord</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Inmatning med nedhållen tangent</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt-tecken</item>
+    <item>Versal</item>
+    <item>Upprepat tecken</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Sök efter emojier</string>
+  <string name="shortcut_choose_symbol">Välj en symbol</string>
+  <string name="sandfly_keyboard_emoji_search">Emojisökning</string>
+  <string name="sandfly_keyboard_symbols">Symboler</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d av %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Inga träffar</string>
+  <string name="sandfly_keyboard_chooser_closed">Stängd</string>
+  <string name="sandfly_keyboard_needed">Kräver SandFly-tangentbordet i ett textfält</string>
   <string name="value_keyboard_echo_none">Inget</string>
   <string name="value_keyboard_echo_characters_only">Tecken</string>
   <string name="value_keyboard_echo_words_only">Ord</string>

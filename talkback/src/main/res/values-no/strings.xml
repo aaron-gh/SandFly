@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Androids innstillinger for fysisk tastatur</string>
   <string name="title_pref_keypad_letter_keys">Bokstavtaster trykker på knappene på talltastaturet</string>
   <string name="title_pref_enter_sends_messages">Enter sender meldinger</string>
+  <string name="sandfly_keyboard_name">SandFly-tastatur</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Taster som holdes inne, skriver</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt-tegn</item>
+    <item>Stor bokstav</item>
+    <item>Gjentatt tegn</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Søk etter emojier</string>
+  <string name="shortcut_choose_symbol">Velg et symbol</string>
+  <string name="sandfly_keyboard_emoji_search">Emojisøk</string>
+  <string name="sandfly_keyboard_symbols">Symboler</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d av %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Ingen treff</string>
+  <string name="sandfly_keyboard_chooser_closed">Lukket</string>
+  <string name="sandfly_keyboard_needed">Krever SandFly-tastaturet i et tekstfelt</string>
   <string name="value_keyboard_echo_none">Ingen</string>
   <string name="value_keyboard_echo_characters_only">Tegn</string>
   <string name="value_keyboard_echo_words_only">Ord</string>

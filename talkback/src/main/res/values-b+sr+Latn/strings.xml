@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android podešavanja fizičke tastature</string>
   <string name="title_pref_keypad_letter_keys">Tasteri sa slovima pritiskaju dugmad numeričke tastature</string>
   <string name="title_pref_enter_sends_messages">Enter šalje poruke</string>
+  <string name="sandfly_keyboard_name">SandFly tastatura</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Unos držanjem tastera</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt znak</item>
+    <item>Veliko slovo</item>
+    <item>Ponovljeni znak</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Pretraži emodžije</string>
+  <string name="shortcut_choose_symbol">Izaberi simbol</string>
+  <string name="sandfly_keyboard_emoji_search">Pretraga emodžija</string>
+  <string name="sandfly_keyboard_symbols">Simboli</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d od %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Nema podudaranja</string>
+  <string name="sandfly_keyboard_chooser_closed">Zatvoreno</string>
+  <string name="sandfly_keyboard_needed">Potrebna je SandFly tastatura u polju za tekst</string>
   <string name="value_keyboard_echo_none">Ništa</string>
   <string name="value_keyboard_echo_characters_only">Znakovi</string>
   <string name="value_keyboard_echo_words_only">Reči</string>

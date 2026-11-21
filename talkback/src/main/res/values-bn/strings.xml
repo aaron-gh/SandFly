@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android-এর ফিজিক্যাল কীবোর্ড সেটিংস</string>
   <string name="title_pref_keypad_letter_keys">অক্ষর কী দিয়ে কীপ্যাডের বোতাম প্রেস হয়</string>
   <string name="title_pref_enter_sends_messages">Enter প্রেস করলে মেসেজ পাঠানো হয়</string>
+  <string name="sandfly_keyboard_name">SandFly কীবোর্ড</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">কী ধরে রাখলে যা টাইপ হয়</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt অক্ষর</item>
+    <item>বড় হাতের অক্ষর</item>
+    <item>রিপিট হওয়া অক্ষর</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ইমোজি সার্চ করুন</string>
+  <string name="shortcut_choose_symbol">একটি চিহ্ন বেছে নিন</string>
+  <string name="sandfly_keyboard_emoji_search">ইমোজি সার্চ</string>
+  <string name="sandfly_keyboard_symbols">চিহ্ন</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %3$dটির মধ্যে %2$d</string>
+  <string name="sandfly_keyboard_no_matches">কোনো মিল নেই</string>
+  <string name="sandfly_keyboard_chooser_closed">বন্ধ হয়েছে</string>
+  <string name="sandfly_keyboard_needed">টেক্সট ফিল্ডে SandFly কীবোর্ড প্রয়োজন</string>
   <string name="value_keyboard_echo_none">কোনওটিই নয়</string>
   <string name="value_keyboard_echo_characters_only">অক্ষর</string>
   <string name="value_keyboard_echo_words_only">শব্দ</string>

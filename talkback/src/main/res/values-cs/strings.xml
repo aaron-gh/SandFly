@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Nastavení fyzické klávesnice Android</string>
   <string name="title_pref_keypad_letter_keys">Písmenné klávesy stisknou tlačítka číselné klávesnice</string>
   <string name="title_pref_enter_sends_messages">Enter odesílá zprávy</string>
+  <string name="sandfly_keyboard_name">Klávesnice SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Psaní podržením klávesy</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Znak Alt</item>
+    <item>Velké písmeno</item>
+    <item>Opakovaný znak</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Hledat emodži</string>
+  <string name="shortcut_choose_symbol">Vybrat symbol</string>
+  <string name="sandfly_keyboard_emoji_search">Hledání emodži</string>
+  <string name="sandfly_keyboard_symbols">Symboly</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d z %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Žádné shody</string>
+  <string name="sandfly_keyboard_chooser_closed">Zavřeno</string>
+  <string name="sandfly_keyboard_needed">Vyžaduje klávesnici SandFly v textovém poli</string>
   <string name="value_keyboard_echo_none">Žádná</string>
   <string name="value_keyboard_echo_characters_only">Znaky</string>
   <string name="value_keyboard_echo_words_only">Slova</string>

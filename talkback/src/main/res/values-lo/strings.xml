@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">ການຕັ້ງຄ່າແປ້ນພິມພາຍນອກຂອງ Android</string>
   <string name="title_pref_keypad_letter_keys">ປຸ່ມຕົວອັກສອນກົດປຸ່ມແປ້ນຕົວເລກ</string>
   <string name="title_pref_enter_sends_messages">Enter ສົ່ງຂໍ້ຄວາມ</string>
+  <string name="sandfly_keyboard_name">ແປ້ນພິມ SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">ການພິມເມື່ອກົດປຸ່ມຄ້າງໄວ້</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>ຕົວອັກສອນ Alt</item>
+    <item>ຕົວພິມໃຫຍ່</item>
+    <item>ຕົວອັກສອນຊ້ຳ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ຊອກຫາອີໂມຈິ</string>
+  <string name="shortcut_choose_symbol">ເລືອກສັນຍາລັກ</string>
+  <string name="sandfly_keyboard_emoji_search">ການຊອກຫາອີໂມຈິ</string>
+  <string name="sandfly_keyboard_symbols">ສັນຍາລັກ</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d ຈາກທັງໝົດ %3$d</string>
+  <string name="sandfly_keyboard_no_matches">ບໍ່ພົບຂໍ້ມູນທີ່ກົງກັນ</string>
+  <string name="sandfly_keyboard_chooser_closed">ປິດແລ້ວ</string>
+  <string name="sandfly_keyboard_needed">ຕ້ອງໃຊ້ແປ້ນພິມ SandFly ໃນຊ່ອງຂໍ້ຄວາມ</string>
   <string name="value_keyboard_echo_none">ບໍ່ມີ</string>
   <string name="value_keyboard_echo_characters_only">ຕົວອັກສອນ</string>
   <string name="value_keyboard_echo_words_only">ຄຳ​ສັບ</string>

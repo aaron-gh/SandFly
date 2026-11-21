@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android физикалық пернетақта параметрлері</string>
   <string name="title_pref_keypad_letter_keys">Әріп пернелері сандық пернетақта түймелерін басады</string>
   <string name="title_pref_enter_sends_messages">Enter хабарларды жібереді</string>
+  <string name="sandfly_keyboard_name">SandFly пернетақтасы</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Басып тұрған пернелердің енгізуі</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt таңбасы</item>
+    <item>Бас әріп</item>
+    <item>Қайталанған таңба</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Эмодзи іздеу</string>
+  <string name="shortcut_choose_symbol">Таңба таңдау</string>
+  <string name="sandfly_keyboard_emoji_search">Эмодзи іздеу</string>
+  <string name="sandfly_keyboard_symbols">Таңбалар</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d/%3$d</string>
+  <string name="sandfly_keyboard_no_matches">Сәйкестіктер жоқ</string>
+  <string name="sandfly_keyboard_chooser_closed">Жабылды</string>
+  <string name="sandfly_keyboard_needed">Мәтін өрісінде SandFly пернетақтасы қажет</string>
   <string name="value_keyboard_echo_none">Жоқ</string>
   <string name="value_keyboard_echo_characters_only">Таңбалар</string>
   <string name="value_keyboard_echo_words_only">Сөздер</string>

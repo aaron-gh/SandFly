@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android-н биет гарын тохиргоо</string>
   <string name="title_pref_keypad_letter_keys">Үсгийн товчлуурууд тоон самбарын товчлууруудыг дарна</string>
   <string name="title_pref_enter_sends_messages">Enter мессеж илгээнэ</string>
+  <string name="sandfly_keyboard_name">SandFly гар</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Удаан дарсан товчны оруулга</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt тэмдэгт</item>
+    <item>Том үсэг</item>
+    <item>Давтагдсан тэмдэгт</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Эможи хайх</string>
+  <string name="shortcut_choose_symbol">Тэмдэг сонгох</string>
+  <string name="sandfly_keyboard_emoji_search">Эможи хайлт</string>
+  <string name="sandfly_keyboard_symbols">Тэмдгүүд</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %3$d-ийн %2$d</string>
+  <string name="sandfly_keyboard_no_matches">Тохирох зүйл алга</string>
+  <string name="sandfly_keyboard_chooser_closed">Хаагдлаа</string>
+  <string name="sandfly_keyboard_needed">Текстийн талбарт SandFly гар шаардлагатай</string>
   <string name="value_keyboard_echo_none">Хоосон</string>
   <string name="value_keyboard_echo_characters_only">Тэмдэгтүүд</string>
   <string name="value_keyboard_echo_words_only">Үгс</string>

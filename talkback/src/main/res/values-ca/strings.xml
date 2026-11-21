@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Configuració del teclat físic d\'Android</string>
   <string name="title_pref_keypad_letter_keys">Les tecles de lletres premen els botons del teclat numèric</string>
   <string name="title_pref_enter_sends_messages">Retorn envia missatges</string>
+  <string name="sandfly_keyboard_name">Teclat SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Escriptura en mantenir premuda una tecla</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Caràcter Alt</item>
+    <item>Lletra majúscula</item>
+    <item>Caràcter repetit</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Cerca emojis</string>
+  <string name="shortcut_choose_symbol">Tria un símbol</string>
+  <string name="sandfly_keyboard_emoji_search">Cerca d\'emojis</string>
+  <string name="sandfly_keyboard_symbols">Símbols</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d de %3$d</string>
+  <string name="sandfly_keyboard_no_matches">No hi ha cap coincidència</string>
+  <string name="sandfly_keyboard_chooser_closed">Tancat</string>
+  <string name="sandfly_keyboard_needed">Cal el teclat SandFly en un camp de text</string>
   <string name="value_keyboard_echo_none">Cap</string>
   <string name="value_keyboard_echo_characters_only">Caràcters</string>
   <string name="value_keyboard_echo_words_only">Paraules</string>

@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Configuración del teclado físico de Android</string>
   <string name="title_pref_keypad_letter_keys">Las teclas de letras presionan los botones del teclado numérico</string>
   <string name="title_pref_enter_sends_messages">Intro envía mensajes</string>
+  <string name="sandfly_keyboard_name">Teclado SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Escritura al mantener presionada una tecla</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Carácter Alt</item>
+    <item>Letra mayúscula</item>
+    <item>Carácter repetido</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Buscar emojis</string>
+  <string name="shortcut_choose_symbol">Elegir un símbolo</string>
+  <string name="sandfly_keyboard_emoji_search">Búsqueda de emojis</string>
+  <string name="sandfly_keyboard_symbols">Símbolos</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d de %3$d</string>
+  <string name="sandfly_keyboard_no_matches">No hay coincidencias</string>
+  <string name="sandfly_keyboard_chooser_closed">Cerrado</string>
+  <string name="sandfly_keyboard_needed">Requiere el teclado SandFly en un campo de texto</string>
   <string name="value_keyboard_echo_none">Ninguna</string>
   <string name="value_keyboard_echo_characters_only">Caracteres</string>
   <string name="value_keyboard_echo_words_only">Palabras</string>

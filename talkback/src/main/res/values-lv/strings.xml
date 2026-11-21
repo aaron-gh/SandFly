@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android fiziskās tastatūras iestatījumi</string>
   <string name="title_pref_keypad_letter_keys">Burtu taustiņi nospiež ciparu tastatūras pogas</string>
   <string name="title_pref_enter_sends_messages">Enter sūta ziņojumus</string>
+  <string name="sandfly_keyboard_name">SandFly tastatūra</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Turētu taustiņu ievade</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt rakstzīme</item>
+    <item>Lielais burts</item>
+    <item>Atkārtota rakstzīme</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Meklēt emocijzīmes</string>
+  <string name="shortcut_choose_symbol">Izvēlēties simbolu</string>
+  <string name="sandfly_keyboard_emoji_search">Emocijzīmju meklēšana</string>
+  <string name="sandfly_keyboard_symbols">Simboli</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d no %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Nav atbilstību</string>
+  <string name="sandfly_keyboard_chooser_closed">Aizvērts</string>
+  <string name="sandfly_keyboard_needed">Nepieciešama SandFly tastatūra teksta laukā</string>
   <string name="value_keyboard_echo_none">Nav</string>
   <string name="value_keyboard_echo_characters_only">Rakstzīmes</string>
   <string name="value_keyboard_echo_words_only">Vārdi</string>

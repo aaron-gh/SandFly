@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android-ის ფიზიკური კლავიატურის პარამეტრები</string>
   <string name="title_pref_keypad_letter_keys">ასოების კლავიშები აჭერს ციფრული კლავიატურის ღილაკებს</string>
   <string name="title_pref_enter_sends_messages">Enter აგზავნის შეტყობინებებს</string>
+  <string name="sandfly_keyboard_name">SandFly კლავიატურა</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">დაჭერილი კლავიშების შეყვანა</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt სიმბოლო</item>
+    <item>მთავრული ასო</item>
+    <item>გამეორებული სიმბოლო</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ემოჯის ძიება</string>
+  <string name="shortcut_choose_symbol">სიმბოლოს არჩევა</string>
+  <string name="sandfly_keyboard_emoji_search">ემოჯის ძიება</string>
+  <string name="sandfly_keyboard_symbols">სიმბოლოები</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d %3$d-დან</string>
+  <string name="sandfly_keyboard_no_matches">დამთხვევები არ არის</string>
+  <string name="sandfly_keyboard_chooser_closed">დაიხურა</string>
+  <string name="sandfly_keyboard_needed">საჭიროა SandFly კლავიატურა ტექსტურ ველში</string>
   <string name="value_keyboard_echo_none">არცერთი</string>
   <string name="value_keyboard_echo_characters_only">სიმბოლოები</string>
   <string name="value_keyboard_echo_words_only">სიტყვები</string>

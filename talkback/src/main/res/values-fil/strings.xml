@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Mga setting ng pisikal na keyboard ng Android</string>
   <string name="title_pref_keypad_letter_keys">Pinipindot ng mga letter key ang mga button ng keypad</string>
   <string name="title_pref_enter_sends_messages">Nagpapadala ng mga mensahe ang Enter</string>
+  <string name="sandfly_keyboard_name">SandFly keyboard</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Tina-type ng mga key na pinindot nang matagal</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt character</item>
+    <item>Malaking titik</item>
+    <item>Inulit na character</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Maghanap ng emoji</string>
+  <string name="shortcut_choose_symbol">Pumili ng simbolo</string>
+  <string name="sandfly_keyboard_emoji_search">Paghahanap ng emoji</string>
+  <string name="sandfly_keyboard_symbols">Mga simbolo</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d sa %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Walang pagtutugma</string>
+  <string name="sandfly_keyboard_chooser_closed">Isinara</string>
+  <string name="sandfly_keyboard_needed">Kailangan ang SandFly keyboard sa isang text field</string>
   <string name="value_keyboard_echo_none">Wala</string>
   <string name="value_keyboard_echo_characters_only">Mga Character</string>
   <string name="value_keyboard_echo_words_only">Mga Salita</string>

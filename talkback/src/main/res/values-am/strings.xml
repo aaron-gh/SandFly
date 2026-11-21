@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">የAndroid አካላዊ የቁልፍ ሰሌዳ ቅንብሮች</string>
   <string name="title_pref_keypad_letter_keys">የፊደል ቁልፎች የቁጥር ሰሌዳ አዝራሮችን ይጫናሉ</string>
   <string name="title_pref_enter_sends_messages">Enter መልዕክቶችን ይልካል</string>
+  <string name="sandfly_keyboard_name">SandFly ቁልፍ ሰሌዳ</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">የተያዙ ቁልፎች የሚተይቡት</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt ቁምፊ</item>
+    <item>አቢይ ሆሄ</item>
+    <item>የተደገመ ቁምፊ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ስሜት ገላጭ ምስል ይፈልጉ</string>
+  <string name="shortcut_choose_symbol">ምልክት ይምረጡ</string>
+  <string name="sandfly_keyboard_emoji_search">የስሜት ገላጭ ምስል ፍለጋ</string>
+  <string name="sandfly_keyboard_symbols">ምልክቶች</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s፣ %2$d ከ%3$d</string>
+  <string name="sandfly_keyboard_no_matches">ምንም ተዛማጆች የሉም</string>
+  <string name="sandfly_keyboard_chooser_closed">ተዘግቷል</string>
+  <string name="sandfly_keyboard_needed">በጽሑፍ መስክ ውስጥ SandFly ቁልፍ ሰሌዳ ያስፈልጋል</string>
   <string name="value_keyboard_echo_none">ምንም</string>
   <string name="value_keyboard_echo_characters_only">ቁምፊዎች</string>
   <string name="value_keyboard_echo_words_only">ቃላት</string>

@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android-ի ֆիզիկական ստեղնաշարի կարգավորումներ</string>
   <string name="title_pref_keypad_letter_keys">Տառերի ստեղները սեղմում են թվային ստեղնաշարի կոճակները</string>
   <string name="title_pref_enter_sends_messages">Enter-ը ուղարկում է հաղորդագրությունները</string>
+  <string name="sandfly_keyboard_name">SandFly ստեղնաշար</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Սեղմած պահված ստեղների մուտքագրում</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt նիշ</item>
+    <item>Մեծատառ</item>
+    <item>Կրկնվող նիշ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Որոնել էմոջիներ</string>
+  <string name="shortcut_choose_symbol">Ընտրել նշան</string>
+  <string name="sandfly_keyboard_emoji_search">Էմոջիների որոնում</string>
+  <string name="sandfly_keyboard_symbols">Նշաններ</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d %3$d-ից</string>
+  <string name="sandfly_keyboard_no_matches">Համընկնումներ չկան</string>
+  <string name="sandfly_keyboard_chooser_closed">Փակվեց</string>
+  <string name="sandfly_keyboard_needed">Անհրաժեշտ է SandFly ստեղնաշարը տեքստային դաշտում</string>
   <string name="value_keyboard_echo_none">Միացված չէ</string>
   <string name="value_keyboard_echo_characters_only">Նիշեր</string>
   <string name="value_keyboard_echo_words_only">Բառեր</string>

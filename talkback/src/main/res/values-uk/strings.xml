@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Налаштування фізичної клавіатури Android</string>
   <string name="title_pref_keypad_letter_keys">Клавіші з літерами натискають кнопки цифрової клавіатури</string>
   <string name="title_pref_enter_sends_messages">Enter надсилає повідомлення</string>
+  <string name="sandfly_keyboard_name">Клавіатура SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Введення під час утримання клавіш</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Символ Alt</item>
+    <item>Велика буква</item>
+    <item>Повторений символ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Шукати емодзі</string>
+  <string name="shortcut_choose_symbol">Вибрати символ</string>
+  <string name="sandfly_keyboard_emoji_search">Пошук емодзі</string>
+  <string name="sandfly_keyboard_symbols">Символи</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d з %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Збігів немає</string>
+  <string name="sandfly_keyboard_chooser_closed">Закрито</string>
+  <string name="sandfly_keyboard_needed">Потрібна клавіатура SandFly у текстовому полі</string>
   <string name="value_keyboard_echo_none">Немає</string>
   <string name="value_keyboard_echo_characters_only">Символи</string>
   <string name="value_keyboard_echo_words_only">Слова</string>

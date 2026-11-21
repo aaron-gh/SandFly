@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android च्या वास्तविक कीबोर्ड सेटिंग्ज</string>
   <string name="title_pref_keypad_letter_keys">अक्षर की कीपॅडची बटणे दाबतात</string>
   <string name="title_pref_enter_sends_messages">Enter मेसेज पाठवते</string>
+  <string name="sandfly_keyboard_name">SandFly कीबोर्ड</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">दाबून धरलेल्या की काय टाइप करतात</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt वर्ण</item>
+    <item>कॅपिटल अक्षर</item>
+    <item>पुनरावृत्ती झालेला वर्ण</item>
+  </string-array>
+  <string name="shortcut_search_emoji">इमोजी शोधा</string>
+  <string name="shortcut_choose_symbol">चिन्ह निवडा</string>
+  <string name="sandfly_keyboard_emoji_search">इमोजी शोध</string>
+  <string name="sandfly_keyboard_symbols">चिन्हे</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %3$d पैकी %2$d</string>
+  <string name="sandfly_keyboard_no_matches">कोणत्याही जुळण्या नाहीत</string>
+  <string name="sandfly_keyboard_chooser_closed">बंद केले</string>
+  <string name="sandfly_keyboard_needed">मजकूर फील्डमध्ये SandFly कीबोर्ड आवश्यक आहे</string>
   <string name="value_keyboard_echo_none">कोणतेही नाही</string>
   <string name="value_keyboard_echo_characters_only">वर्ण</string>
   <string name="value_keyboard_echo_words_only">शब्द</string>
