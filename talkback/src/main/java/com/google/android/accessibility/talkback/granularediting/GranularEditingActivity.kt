@@ -40,6 +40,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.Accessibilit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.speechdictionary.SpeechDictionary
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
@@ -128,6 +129,16 @@ class GranularEditingActivity : AppCompatActivity() {
       },
     )
     refresh()
+  }
+
+  override fun onStart() {
+    super.onStart()
+    SpeechDictionary.setAppliesInOwnWindows(true)
+  }
+
+  override fun onStop() {
+    SpeechDictionary.setAppliesInOwnWindows(false)
+    super.onStop()
   }
 
   override fun onSaveInstanceState(outState: Bundle) {
