@@ -82,10 +82,25 @@ public class CustomActionMenu implements NodeMenu {
         || !macrosOf(context, node).isEmpty();
   }
 
-  /** The user's macros listed in the Actions menu of {@code node}'s app. */
+  /**
+   * The user's macros listed in the Actions menu of {@code node}'s app, without those whose
+   * Actions condition isn't met now.
+   */
   private static List<Macros.Macro> macrosOf(Context context, AccessibilityNodeInfoCompat node) {
-    return Macros.inActionsOf(
-        SharedPreferencesUtils.getSharedPreferences(context), node.getPackageName());
+    List<Macros.Macro> macros =
+        Macros.inActionsOf(
+            SharedPreferencesUtils.getSharedPreferences(context), node.getPackageName());
+    TalkBackService service = TalkBackService.getInstance();
+    if (macros.isEmpty() || service == null) {
+      return macros;
+    }
+    List<Macros.Macro> shown = new ArrayList<>();
+    for (Macros.Macro macro : macros) {
+      if (MacroRunner.isShownInActions(service, macro)) {
+        shown.add(macro);
+      }
+    }
+    return shown;
   }
 
   /** Whether {@code item} runs one of the user's macros, which every item of an app can list. */

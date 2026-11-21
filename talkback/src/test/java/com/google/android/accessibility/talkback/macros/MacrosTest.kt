@@ -525,6 +525,22 @@ class MacrosTest {
   }
 
   @Test
+  fun actionsConditionSurvivesJson() {
+    val condition =
+      Macros.Condition(
+        listOf(Macros.Clause(Macros.FocusedItem("Send", Macros.Kind.CLICKABLE), not = true))
+      )
+    val macros =
+      listOf(
+        Macro("a", "Reply", listOf(Wait(100)), inActions = true, actionsCondition = condition),
+        Macro("b", "Plain", emptyList(), inActions = true),
+      )
+    val json = Macros.toJson(macros)
+    assertEquals(macros, Macros.fromJson(json))
+    assertFalse(JSONArray(json).getJSONObject(1).has("actionsCondition"))
+  }
+
+  @Test
   fun appThatIsNotAPackageNameIsLeftOut() {
     val json =
       JSONArray()

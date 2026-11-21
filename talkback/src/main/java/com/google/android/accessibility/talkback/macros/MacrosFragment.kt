@@ -433,6 +433,18 @@ class MacroFragment : MacroEditorFragment() {
       }
       screen.switch(getString(R.string.macro_in_actions), macro.inActions) { checked ->
         macro()?.let { Macros.update(prefs, it.copy(inActions = checked)) }
+        rebuild()
+      }
+      if (macro.inActions) {
+        screen.link(
+          getString(R.string.macro_in_actions_only_when),
+          if (macro.actionsCondition.clauses.isEmpty()) getString(R.string.macro_always)
+          else Macros.describe(context, macro.actionsCondition),
+          MacroConditionFragment::class.java,
+        ) {
+          putString(ARG_MACRO, macro.id)
+          putInt(MacroConditionFragment.ARG_STEP, MacroConditionFragment.ACTIONS)
+        }
       }
     }
     val list = screen.category(R.string.macro_steps)
@@ -1256,19 +1268,29 @@ class MacroConditionFragment : MacroEditorFragment() {
         is Macros.ElseIf -> R.string.macro_step_else_if
         is Macros.RepeatWhile -> R.string.macro_step_repeat_while
         is Macros.WaitUntil -> R.string.macro_step_wait_until
-        else -> R.string.macro_run_only_when
+        else ->
+          if (stepIndex == ACTIONS) R.string.macro_in_actions_only_when
+          else R.string.macro_run_only_when
       }
     )
 
   /** The condition, or null when the step isn't there any more. */
   private fun condition(): Macros.Condition? =
-    if (stepIndex < 0) macro()?.condition else Macros.conditionOf(step())
+    when {
+      stepIndex == ACTIONS -> macro()?.actionsCondition
+      stepIndex < 0 -> macro()?.condition
+      else -> Macros.conditionOf(step())
+    }
 
   private fun save(condition: Macros.Condition) {
     val macro = macro() ?: return
     val clauses = condition.clauses.take(Macros.MAX_CLAUSES)
     // The first test has nothing before it to join.
     val saved = Macros.Condition(clauses.mapIndexed { i, clause -> if (i == 0) clause.copy(or = false) else clause })
+    if (stepIndex == ACTIONS) {
+      Macros.update(prefs, macro.copy(actionsCondition = saved))
+      return
+    }
     if (stepIndex < 0) {
       Macros.update(prefs, macro.copy(condition = saved))
       return
@@ -1432,7 +1454,13 @@ class MacroConditionFragment : MacroEditorFragment() {
   }
 
   companion object {
-    /** The argument with the index of the step, or -1 for the condition the macro runs on. */
+    /**
+     * The argument with the index of the step, or -1 for the condition the macro runs on, or
+     * [ACTIONS] for the condition it is shown in Actions on.
+     */
     const val ARG_STEP = "step"
+
+    /** [ARG_STEP] for the condition a macro is shown in the Actions menu on. */
+    const val ACTIONS = -2
   }
 }

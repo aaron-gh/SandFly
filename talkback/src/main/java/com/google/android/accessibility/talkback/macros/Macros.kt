@@ -446,8 +446,9 @@ object Macros {
   /**
    * A macro. [id] is unique among the macros. It only runs when [condition] is met, and when [app]
    * isn't null, only while that app is in front. [inActions] lists it in the Actions menu of the
-   * items of [app], or of every app when [app] is null. [shortcutToken] is the token of its home
-   * screen shortcut, which [MacroShortcuts] checks, or null when it has none.
+   * items of [app], or of every app when [app] is null, while [actionsCondition] is met for the
+   * focused item. [shortcutToken] is the token of its home screen shortcut, which [MacroShortcuts]
+   * checks, or null when it has none.
    */
   data class Macro(
     val id: String,
@@ -457,6 +458,7 @@ object Macros {
     val app: String? = null,
     val inActions: Boolean = false,
     val shortcutToken: String? = null,
+    val actionsCondition: Condition = Condition(),
   )
 
   /** Why the steps of a macro can't run, at the step [index]. */
@@ -1237,6 +1239,11 @@ object Macros {
               .apply { if (macro.condition.clauses.isNotEmpty()) put("condition", conditionToJson(macro.condition)) }
               .apply { macro.app?.let { put("app", it) } }
               .apply { if (macro.inActions) put("actions", true) }
+              .apply {
+                if (macro.actionsCondition.clauses.isNotEmpty()) {
+                  put("actionsCondition", conditionToJson(macro.actionsCondition))
+                }
+              }
               .apply { if (shortcuts) macro.shortcutToken?.let { put("shortcut", it) } }
           )
         }
@@ -1436,6 +1443,7 @@ object Macros {
             item.optString("app").takeIf { isPackageName(it) },
             item.optBoolean("actions", false),
             item.optString("shortcut").takeIf { MacroShortcuts.isToken(it) },
+            conditionFromJson(item.optJSONArray("actionsCondition")),
           )
         if (moveAppTests && !item.has("app")) withAppOfCondition(macro) else macro
       } catch (e: JSONException) {
