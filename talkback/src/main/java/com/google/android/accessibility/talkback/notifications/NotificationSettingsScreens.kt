@@ -103,7 +103,7 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
         SpokenSchedules.KEY_SUMMARY_DAILY -> {
           NotificationListService.rebind(requireContext())
           updateAccess()
-          if (prefs.getBoolean(key, false)) askForExactAlarms()
+          if (prefs.all[key] == true) askForExactAlarms()
         }
         SpokenSchedules.KEY_CLOCK_INTERVAL -> {
           updateExactAlarms()
