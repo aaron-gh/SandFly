@@ -46,6 +46,16 @@ class KeyTextTest {
   }
 
   @Test
+  fun shortcutsWhileEditingGoBothWays() {
+    val keyCombo = KeyCombo(KeyEvent.META_ALT_ON, KeyEvent.KEYCODE_SPACE, false).withWhileEditing(true)
+    assertEquals("Alt+Space while editing", KeyText.of(keyCombo))
+    assertEquals(keyCombo, KeyText.parse("Alt+Space while editing"))
+    // Not with the SandFly key, nor pressed twice.
+    assertEquals(null, KeyText.parse("SandFly+Space while editing"))
+    assertEquals(null, KeyText.parse("Enter twice while editing"))
+  }
+
+  @Test
   fun readsOtherSpellings() {
     assertEquals(
       KeyCombo(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_ESCAPE, true),

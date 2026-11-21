@@ -36,6 +36,8 @@ import java.util.Locale
  * - Emoji search and the symbol chooser, which SandFly's commands open: typed words list the
  *   characters whose names they start, the arrow keys or the trackpad move through them, Enter
  *   types the one spoken, and Back or Escape closes the list.
+ * - Editing mode, which a SandFly command turns on: single keys move the cursor and select, copy,
+ *   cut and paste ([EditingMode]).
  */
 class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
@@ -45,6 +47,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
 
   private var editing = false
   private var chooser: CharacterChooser? = null
+  private val editingMode by lazy { EditingMode(this) }
 
   /** Keys whose press the keyboard took, so that their repeats and release are taken too. */
   private val takenKeys = mutableSetOf<Int>()
@@ -59,6 +62,22 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
 
   override val isChoosing: Boolean
     get() = chooser != null
+
+  override val isEditingModeOn: Boolean
+    get() = editingMode.isOn
+
+  override fun toggleEditingMode(): Boolean {
+    if (editingMode.isOn) {
+      editingMode.turnOff(announce = true)
+      return true
+    }
+    if (!editing || currentInputConnection == null) {
+      return false
+    }
+    chooser = null
+    editingMode.turnOn()
+    return true
+  }
 
   override fun onCreate() {
     super.onCreate()
@@ -100,6 +119,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     editing = attribute.inputType and InputType.TYPE_MASK_CLASS != InputType.TYPE_NULL
     if (!restarting) {
       chooser = null
+      editingMode.turnOff(announce = false)
     }
     heldKey = KeyEvent.KEYCODE_UNKNOWN
   }
@@ -107,6 +127,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   override fun onFinishInput() {
     editing = false
     chooser = null
+    editingMode.turnOff(announce = false)
     heldKey = KeyEvent.KEYCODE_UNKNOWN
     takenKeys.clear()
     super.onFinishInput()
@@ -126,6 +147,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
         CharacterChooser.Kind.SYMBOL -> CharacterChooser(kind, CharacterChooser.symbols(), recent(kind))
       }
     chooser = opened
+    editingMode.turnOff(announce = false)
     val title =
       getString(
         if (kind == CharacterChooser.Kind.EMOJI) R.string.sandfly_keyboard_emoji_search
@@ -143,6 +165,11 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     val open = chooser
     if (open != null) {
       val taken = onChooserKey(open, keyCode, event)
+      if (taken) takenKeys += keyCode
+      return taken || super.onKeyDown(keyCode, event)
+    }
+    if (editingMode.isOn) {
+      val taken = editingMode.onKeyDown(keyCode, event, currentInputConnection)
       if (taken) takenKeys += keyCode
       return taken || super.onKeyDown(keyCode, event)
     }

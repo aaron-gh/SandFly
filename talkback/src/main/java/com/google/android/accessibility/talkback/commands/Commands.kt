@@ -905,6 +905,11 @@ object Commands {
           R.string.shortcut_choose_symbol,
           available = !FormFactorUtils.isAndroidWear(),
         )
+        gesture(
+          R.string.shortcut_value_toggle_editing_mode,
+          R.string.shortcut_toggle_editing_mode,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
         gesture(
           R.string.shortcut_value_switch_keyboard,

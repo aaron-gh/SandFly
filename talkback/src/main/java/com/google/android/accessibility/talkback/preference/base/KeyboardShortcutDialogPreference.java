@@ -27,6 +27,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.IntDef;
@@ -172,6 +173,11 @@ public class KeyboardShortcutDialogPreference extends Preference
   // Takes the keys recorded in place of the keymap, for keyboard shortcuts kept elsewhere.
   @Nullable private Consumer<KeyCombo> recordListener;
 
+  /** Whether the shortcut being set works only while a text field is being edited. */
+  private boolean whileEditing;
+
+  @Nullable private CheckBox whileEditingBox;
+
   /**
    * Makes the dialog give the keys recorded to {@code listener}, which keeps them, instead of
    * saving them in the keymap as the shortcut of this preference's key.
@@ -291,11 +297,20 @@ public class KeyboardShortcutDialogPreference extends Preference
             keyCombo.getPrefixKeyCode(),
             keyCombo.getKeyCode(),
             triggerModifierUsed);
+    applyWhileEditing();
   }
 
   /** Sets temporary key combo. */
   private void setTemporaryKeyCombo(KeyCombo keyCombo) {
     this.tempKeyCombo = keyCombo;
+    applyWhileEditing();
+  }
+
+  /** Marks the shortcut being set as working only while editing, as the check box says. */
+  private void applyWhileEditing() {
+    if (tempKeyCombo.getKeyComboCode() != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED) {
+      tempKeyCombo = tempKeyCombo.withWhileEditing(whileEditing);
+    }
   }
 
   private int getKeyEventSourceForCurrentKeyComboModel() {
@@ -447,6 +462,10 @@ public class KeyboardShortcutDialogPreference extends Preference
         && keyComboManager.modifiersOf(event) == KeyEvent.META_CTRL_ON
         && event.getKeyCode() == KeyEvent.KEYCODE_DEL) {
       this.tempKeyCombo = keyComboManager.getKeyComboModel().getDefaultKeyCombo(getKey());
+      // The default may work only while editing, or everywhere.
+      if (whileEditingBox != null) {
+        whileEditingBox.setChecked(tempKeyCombo.isWhileEditing());
+      }
       currentSequenceKeyState = STATE_PREFIX_KEY_NOT_PRESSED;
       updateKeyAssignmentText();
       return true;
@@ -1020,7 +1039,9 @@ public class KeyboardShortcutDialogPreference extends Preference
 
     updateKeyComboManager();
 
-    setTemporaryKeyCombo(getKeyComboForKey(key));
+    KeyCombo saved = getKeyComboForKey(key);
+    whileEditing = saved.isWhileEditing();
+    setTemporaryKeyCombo(saved);
     keyAssignmentView = (TextView) dialogView.findViewById(R.id.assigned_combination);
     instructionText = (TextView) dialogView.findViewById(R.id.instruction);
     instructionText.setText(
@@ -1046,7 +1067,33 @@ public class KeyboardShortcutDialogPreference extends Preference
 
     keyComboManager.setMatchKeyCombo(false);
 
-    return dialogView;
+    whileEditingBox = null;
+    if (recordListener != null) {
+      return dialogView;
+    }
+    // Shortcuts of the keymap can work only while a text field is being edited, taking their keys
+    // from it.
+    whileEditingBox = new CheckBox(getContext());
+    whileEditingBox.setText(R.string.keycombo_only_while_editing);
+    whileEditingBox.setChecked(whileEditing);
+    whileEditingBox.setOnCheckedChangeListener(
+        (box, checked) -> {
+          whileEditing = checked;
+          applyWhileEditing();
+          keyAssignmentView.setText(
+              keyComboManager.getKeyComboStringRepresentation(this.tempKeyCombo));
+        });
+    LinearLayout layout = new LinearLayout(getContext());
+    layout.setOrientation(LinearLayout.VERTICAL);
+    layout.addView(dialogView);
+    int padding = (int) (24 * getContext().getResources().getDisplayMetrics().density);
+    whileEditingBox.setPadding(padding / 4, 0, padding, 0);
+    LinearLayout.LayoutParams params =
+        new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+    params.setMarginStart(padding);
+    layout.addView(whileEditingBox, params);
+    return layout;
   }
 
   /** Updates key assignment by getting the summary of th preference. */

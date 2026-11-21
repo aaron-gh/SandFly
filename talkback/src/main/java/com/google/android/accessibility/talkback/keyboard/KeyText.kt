@@ -34,6 +34,7 @@ object KeyText {
   private const val ALONE = " alone"
   private const val PRESSED_TWICE = " twice"
   private const val HELD = " held"
+  private const val WHILE_EDITING = " while editing"
   private const val MAX_LENGTH = 100
 
   private val MODIFIERS =
@@ -119,6 +120,9 @@ object KeyText {
   @JvmStatic
   fun of(keyCombo: KeyCombo): String? {
     if (keyCombo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) return null
+    if (keyCombo.isWhileEditing) {
+      return of(keyCombo.withWhileEditing(false))?.let { it + WHILE_EDITING }
+    }
     if (keyCombo.isSandFlyKeyPressedTwice) return TWICE
     val parts = mutableListOf<String>()
     if (keyCombo.isTriggerModifierUsed) parts += SANDFLY
@@ -153,6 +157,12 @@ object KeyText {
   fun parse(text: String): KeyCombo? {
     val trimmed = text.trim()
     if (trimmed.isEmpty() || trimmed.length > MAX_LENGTH) return null
+    if (trimmed.lowercase(Locale.ROOT).endsWith(WHILE_EDITING)) {
+      val keys = parse(trimmed.dropLast(WHILE_EDITING.length)) ?: return null
+      // Only keys without the SandFly key, pressed once, work while editing.
+      if (keys.isTriggerModifierUsed || keys.modifiers and KeyCombo.PRESS_TYPES != 0) return null
+      return keys.withWhileEditing(true)
+    }
     if (trimmed.equals(TWICE, ignoreCase = true)) return KeyCombo.sandFlyKeyPressedTwice()
     parsePress(trimmed)?.let {
       return it

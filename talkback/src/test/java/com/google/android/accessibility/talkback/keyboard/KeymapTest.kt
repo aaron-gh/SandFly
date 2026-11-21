@@ -541,7 +541,12 @@ class KeymapTest {
       val keyCode = combo.keyCode
       assertFalse(key, keyCode in KeyEvent.KEYCODE_DPAD_UP..KeyEvent.KEYCODE_DPAD_RIGHT)
       // No letter or Space on its own, which typing needs; Enter follows typing.
-      if (!combo.isTriggerModifierUsed && !combo.isModifierKeys && !combo.isPressedTwice) {
+      if (
+        !combo.isTriggerModifierUsed &&
+          !combo.isModifierKeys &&
+          !combo.isPressedTwice &&
+          !combo.isWhileEditing
+      ) {
         assertEquals(key, KeyEvent.KEYCODE_ENTER, combo.keyCode)
       }
     }

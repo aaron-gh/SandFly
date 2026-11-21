@@ -123,12 +123,14 @@ object KeyboardPhoneSingleKeyKeymap : KeymapDefaults() {
     }
 
   // Touch can be locked from the keyboard, next to Z, which hides the screen. In text fields,
-  // with the SandFly keyboard, the SandFly key with O searches emoji and with Y chooses a symbol.
+  // with the SandFly keyboard, the SandFly key with O searches emoji and with C turns editing mode
+  // on or off, and Alt + Space chooses a symbol, as on BlackBerry keyboards.
   override val commandDefaults: Map<Int, KeyCombo> =
     mapOf(
       R.string.shortcut_value_toggle_touch_lock to plain(SHIFT, KeyEvent.KEYCODE_Z),
       R.string.shortcut_value_search_emoji to sandFly(NONE, KeyEvent.KEYCODE_O),
-      R.string.shortcut_value_choose_symbol to sandFly(NONE, KeyEvent.KEYCODE_Y),
+      R.string.shortcut_value_toggle_editing_mode to sandFly(NONE, KeyEvent.KEYCODE_C),
+      R.string.shortcut_value_choose_symbol to editing(ALT, KeyEvent.KEYCODE_SPACE),
     )
 
   /** Puts [keyCode] for [next] and Shift + [keyCode] for [previous], outside text fields. */
