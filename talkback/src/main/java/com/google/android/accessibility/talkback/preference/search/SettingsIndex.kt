@@ -48,6 +48,7 @@ import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
+import com.google.android.accessibility.talkback.keyboard.KeypadKeys
 import com.google.android.accessibility.talkback.notificationlist.NotificationList
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
@@ -442,7 +443,10 @@ object SettingsIndex {
     hideIf(wear, "pref_speech_equalizer_screen")
 
     // TypingFragment: shown while a physical keyboard is connected.
-    hideIf(!InputDeviceMonitor(context).hasPhysicalKeyboard(), R.string.pref_physical_keyboard_key)
+    val physicalKeyboard = InputDeviceMonitor(context).hasPhysicalKeyboard()
+    hideIf(!physicalKeyboard, R.string.pref_physical_keyboard_key)
+    hideIf(!physicalKeyboard, R.string.pref_enter_sends_messages_key)
+    hideIf(!physicalKeyboard || !KeypadKeys.isAvailable(), R.string.pref_keypad_letter_keys_key)
 
     // VolumeKeysFragment.
     hideIf(

@@ -42,7 +42,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * user grants with adb or Shizuku. It has no call screen of its own. It watches the proximity
  * sensor only while a call can be heard and the setting is on, and only switches the call while
  * Backtalk is on and not paused, so that turning Backtalk off or on, or pausing it, takes effect
- * during a call.
+ * during a call. While bound, it also plays the keypad tones of letter keys pressed on the call
+ * screen ([KeypadKeys][com.google.android.accessibility.talkback.keyboard.KeypadKeys]).
  */
 @RequiresApi(Build.VERSION_CODES.S)
 class SpeakerphoneInCallService : InCallService() {
@@ -96,6 +97,7 @@ class SpeakerphoneInCallService : InCallService() {
 
   override fun onCreate() {
     super.onCreate()
+    current = this
     sensorManager = getSystemService(SensorManager::class.java)
     sensor =
       sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, /* wakeUp= */ true)
@@ -106,6 +108,10 @@ class SpeakerphoneInCallService : InCallService() {
   }
 
   override fun onDestroy() {
+    if (current === this) {
+      current = null
+      toneCall = null
+    }
     SharedPreferencesUtils.getSharedPreferences(this)
       .unregisterOnSharedPreferenceChangeListener(prefsListener)
     stopListening()
@@ -162,6 +168,34 @@ class SpeakerphoneInCallService : InCallService() {
 
   companion object {
     private const val TAG = "SpeakerphoneInCall"
+
+    /** The service while Android has it bound, during calls. */
+    @Volatile private var current: SpeakerphoneInCallService? = null
+
+    /** The call whose keypad tone is playing. */
+    private var toneCall: Call? = null
+
+    /**
+     * Plays the keypad tone of [character], a digit, * or #, in the active call, as the call
+     * screen's keypad does, until [stopDtmfTone]. Returns false where no call is active or Android
+     * hasn't bound the service.
+     */
+    @JvmStatic
+    fun playDtmfTone(character: Char): Boolean {
+      val service = current ?: return false
+      val call = service.calls.firstOrNull { it.details.state == Call.STATE_ACTIVE } ?: return false
+      toneCall?.stopDtmfTone()
+      call.playDtmfTone(character)
+      toneCall = call
+      return true
+    }
+
+    /** Stops the keypad tone [playDtmfTone] started. */
+    @JvmStatic
+    fun stopDtmfTone() {
+      toneCall?.stopDtmfTone()
+      toneCall = null
+    }
 
     /** How long a reading must hold before the call switches. */
     private const val SETTLE_MS = 300L

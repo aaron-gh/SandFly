@@ -227,6 +227,8 @@
     <string name="pref_typing_confirmation_key" translatable="false">pref_typing_confirmation</string>
     <string name="pref_typing_long_press_duration_key" translatable="false">pref_typing_long_press_duration</string>
     <string name="pref_typing_hold_keys_down_key" translatable="false">pref_typing_hold_keys_down</string>
+    <string name="pref_keypad_letter_keys_key" translatable="false">pref_keypad_letter_keys</string>
+    <string name="pref_enter_sends_messages_key" translatable="false">pref_enter_sends_messages</string>
     <string name="pref_multi_tap_timeout_key" translatable="false">pref_multi_tap_timeout</string>
     <string name="pref_swipe_hold_time_key" translatable="false">pref_swipe_hold_time</string>
     <string name="pref_swipe_start_time_key" translatable="false">pref_swipe_start_time</string>
@@ -2369,6 +2371,8 @@
     <bool name="pref_overview_newest_last_default">false</bool>
     <bool name="pref_cache_keyboard_keys_default">false</bool>
     <bool name="pref_typing_hold_keys_down_default">false</bool>
+    <bool name="pref_keypad_letter_keys_default">true</bool>
+    <bool name="pref_enter_sends_messages_default">false</bool>
     <bool name="pref_double_tap_moves_cursor_default">false</bool>
     <bool name="pref_vibration_default">true</bool>
     <bool name="pref_soundback_default">true</bool>

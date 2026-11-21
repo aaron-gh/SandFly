@@ -22,6 +22,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.keyboard.KeypadKeys;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
 
@@ -38,7 +39,10 @@ public class TypingFragment extends TalkBackLatencyReductionPreferenceFragment {
     updatePhysicalKeyboardPreference();
   }
 
-  /** Opens the system's physical keyboard settings, shown only while a keyboard is connected. */
+  /**
+   * Shows the physical keyboard settings only while a keyboard is connected, and letter keys on
+   * keypads only for keyboards whose letters carry numbers.
+   */
   private void updatePhysicalKeyboardPreference() {
     Context context = getContext();
     Preference preference = findPreferenceByResId(R.string.pref_physical_keyboard_key);
@@ -46,6 +50,14 @@ public class TypingFragment extends TalkBackLatencyReductionPreferenceFragment {
       return;
     }
     boolean connected = new InputDeviceMonitor(context).hasPhysicalKeyboard();
+    Preference category = findPreference("pref_typing_category_physical_keyboard");
+    if (category != null) {
+      category.setVisible(connected);
+    }
+    Preference keypadKeys = findPreferenceByResId(R.string.pref_keypad_letter_keys_key);
+    if (keypadKeys != null) {
+      keypadKeys.setVisible(KeypadKeys.isAvailable());
+    }
     if (connected) {
       Intent intent = new Intent(Settings.ACTION_HARD_KEYBOARD_SETTINGS);
       intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

@@ -27,7 +27,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * or Alt, run commands without the Meta key. Each of these [ArrowKeys] runs a command, as a gesture
  * does, saved as the command's value; the defaults are VoiceOver's keys on iOS. Each keymap has its
  * own commands and its own switch. Keymaps whose arrow keys move SandFly focus, such as NVDA's,
- * don't have it.
+ * don't have it. The keyboard phone keymaps have it on until it is turned off, for the arrow keys
+ * that a trackpad such as the Zinwa Q25's sends.
  */
 object ArrowKeyNav {
   private const val PREF_ON = "pref_arrow_key_nav_on"
@@ -54,13 +55,22 @@ object ArrowKeyNav {
   fun isAvailable(context: Context): Boolean {
     val value = keymapValue(context)
     val custom = CustomKeymaps.of(context, value)
-    return !(custom?.arrowsNavigate ?: Keymap.of(context, value).arrowsNavigate)
+    val keymap = Keymap.of(context, value)
+    val plainKeys = custom?.plainKeys ?: keymap.plainKeys
+    return plainKeys || !(custom?.arrowsNavigate ?: keymap.arrowsNavigate)
   }
 
   /** Whether arrow key navigation is on in the keymap in use. */
   @JvmStatic
   fun isOn(context: Context): Boolean =
-    isAvailable(context) && prefs(context).getBoolean(onKey(context), false)
+    isAvailable(context) && prefs(context).getBoolean(onKey(context), isOnByDefault(context))
+
+  /** Whether arrow key navigation is on until turned off: in keymaps for keyboard phones. */
+  @JvmStatic
+  fun isOnByDefault(context: Context): Boolean {
+    val value = keymapValue(context)
+    return CustomKeymaps.of(context, value)?.plainKeys ?: Keymap.of(context, value).plainKeys
+  }
 
   @JvmStatic
   fun setOn(context: Context, on: Boolean) {

@@ -338,7 +338,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     AccessibilitySuiteSwitchPreference on = new AccessibilitySuiteSwitchPreference(context);
     on.setKey(ArrowKeyNav.onKey(context));
     on.setTitle(R.string.keycombo_menu_category_arrow_key_nav);
-    on.setDefaultValue(false);
+    on.setDefaultValue(ArrowKeyNav.isOnByDefault(context));
     on.setIconSpaceReserved(false);
     category.addPreference(on);
     for (ArrowKeys arrowKeys : ArrowKeys.values()) {
