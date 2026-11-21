@@ -24,8 +24,8 @@ import android.os.Looper
 import android.widget.Toast
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.scripting.descendantsInReadingOrder
 import com.google.android.accessibility.utils.ClipboardHistory
-import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
 import com.google.android.accessibility.utils.Role
 
 /**
@@ -59,8 +59,7 @@ object GranularEditing {
       when {
         editable && node.isShowingHintText -> ""
         editable -> fieldText(node)
-        // Chat messages and list rows often carry their text only as a content description.
-        else -> AccessibilityNodeInfoUtils.getNodeText(node)?.toString().orEmpty()
+        else -> itemText(node)
       }
     if (!editable && nodeText.isBlank()) return refuse(context, R.string.granular_editing_no_text)
     handler.removeCallbacksAndMessages(null)
@@ -71,6 +70,25 @@ object GranularEditing {
         .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
     )
     return true
+  }
+
+  /**
+   * The text of an item that isn't a text field: its text, or else its content description, as
+   * chat messages and chat list rows have, or else the texts of the items in it, one per line.
+   */
+  private fun itemText(node: AccessibilityNodeInfoCompat): String {
+    node.text?.toString()?.takeIf { it.isNotBlank() }?.let { return it }
+    node.contentDescription?.toString()?.takeIf { it.isNotBlank() }?.let { return it }
+    val lines = mutableListOf<String>()
+    var count = 0
+    for (item in node.descendantsInReadingOrder()) {
+      if (++count > MAX_INNER_ITEMS) break
+      if (!item.isVisibleToUser) continue
+      val own =
+        (item.text?.takeIf { it.isNotBlank() } ?: item.contentDescription)?.toString()?.trim()
+      if (!own.isNullOrEmpty() && own !in lines) lines += own
+    }
+    return lines.joinToString("\n")
   }
 
   /**
@@ -173,4 +191,7 @@ object GranularEditing {
 
   private const val SAVE_TRIES = 15
   private const val SAVE_INTERVAL_MS = 200L
+
+  /** How many items inside an item are read for its text at most. */
+  private const val MAX_INNER_ITEMS = 200
 }
