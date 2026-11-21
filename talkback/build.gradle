@@ -99,6 +99,52 @@ tasks.withType(Test).configureEach {
     maxHeapSize = "2g"
 }
 
+// The user guide: its chapter files, and the documents in docs/ that its appendices include.
+abstract class UserGuideAssets extends DefaultTask {
+    @InputDirectory
+    @PathSensitive(PathSensitivity.RELATIVE)
+    abstract DirectoryProperty getGuide()
+
+    @InputFiles
+    @PathSensitive(PathSensitivity.NAME_ONLY)
+    abstract ConfigurableFileCollection getIncluded()
+
+    @OutputDirectory
+    abstract DirectoryProperty getOutput()
+
+    @javax.inject.Inject
+    abstract FileSystemOperations getFiles()
+
+    @TaskAction
+    void copy() {
+        def guideDir = guide.get().asFile
+        def includedFiles = included.files
+        files.sync {
+            into(output.get().asFile)
+            from(guideDir) {
+                include '*/*.md'
+                into 'user-guide'
+            }
+            from(includedFiles) {
+                into 'user-guide/api'
+            }
+        }
+    }
+}
+
+def userGuideAssets = tasks.register('userGuideAssets', UserGuideAssets) {
+    guide = rootProject.layout.projectDirectory.dir('docs/user-guide')
+    included.from(['scripting.md', 'speech-api.md', 'braille-display-api.md', 'direct-touch-api.md', 'reference/item-files.md']
+        .collect { rootProject.file("docs/$it") })
+    output = layout.buildDirectory.dir('generated/userGuideAssets')
+}
+
+androidComponents {
+    onVariants(selector().all()) { variant ->
+        variant.sources.assets?.addGeneratedSourceDirectory(userGuideAssets, { it.output })
+    }
+}
+
 // Watches have only the full build.
 androidComponents {
     beforeVariants(selector().all()) { variant ->

@@ -430,6 +430,7 @@ object SettingsIndex {
       R.string.pref_show_exit_watermark_key,
     )
     hideIf(wear || tv, "pref_practice_gestures_help")
+    hideIf(wear, "pref_user_guide")
     hideIf(wear, R.string.pref_export_settings_key)
     hideIf(wear, R.string.pref_import_settings_key)
 

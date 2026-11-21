@@ -712,11 +712,17 @@ public class KeyComboManager
 
   /** Returns user friendly string representations of key combo */
   public String getKeyComboStringRepresentation(KeyCombo keyCombo) {
+    return getKeyComboStringRepresentation(keyCombo, keyComboModel);
+  }
+
+  /** Returns {@code keyCombo} as text, as pressed in the keymap of {@code model}. */
+  public String getKeyComboStringRepresentation(KeyCombo keyCombo, KeyComboModel model) {
     if (keyCombo.getKeyComboCode() == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED) {
       return context.getString(R.string.keycombo_unassigned);
     }
     // Browse mode's toggle is written as the SandFly key's Meta key with no key after it.
-    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    @Nullable
+    SandFlyKey sandFlyKey = model instanceof NewKeyComboModel newModel ? newModel.getSandFlyKey() : null;
     if (sandFlyKey != null
         && keyCombo.isTriggerModifierUsed()
         && keyCombo.getPrefixKeyCode() == KeyEvent.KEYCODE_META_RIGHT
@@ -725,9 +731,9 @@ public class KeyComboManager
           R.string.sandfly_keyboard_tutorial_key_twice, context.getString(sandFlyKey.getNameRes()));
     }
 
-    int triggerModifier = keyComboModel.getTriggerModifier();
+    int triggerModifier = model.getTriggerModifier();
     boolean sequenceKeyCombo =
-        isSequenceKeyInfraSupported()
+        isSequenceKeyInfraSupported(model)
             && (keyCombo.getPrefixKeyCode() != KeyComboModel.NO_PREFIX_KEY_CODE);
 
     StringBuilder assignedShortcut = new StringBuilder();
@@ -744,10 +750,10 @@ public class KeyComboManager
     appendModifiers(keyCombo.getModifiers(), assignedShortcut);
     // Append prefix key code if it's in sequenced key mode.
     if (sequenceKeyCombo) {
-      appendKey(keyCombo.getPrefixKeyCode(), assignedShortcut);
+      appendKey(keyCombo.getPrefixKeyCode(), assignedShortcut, sandFlyKey);
     }
     // Append key code.
-    appendKey(keyCombo.getKeyCode(), assignedShortcut);
+    appendKey(keyCombo.getKeyCode(), assignedShortcut, sandFlyKey);
 
     String keys = assignedShortcut.toString();
     if (keyCombo.isPressedTwice()) {
@@ -789,9 +795,13 @@ public class KeyComboManager
    * shortcuts of two keys one after the other.
    */
   public boolean isSequenceKeyInfraSupported() {
+    return isSequenceKeyInfraSupported(keyComboModel);
+  }
+
+  private boolean isSequenceKeyInfraSupported(KeyComboModel model) {
     return FeatureFlagReader.enableSequenceKeyInfra(context)
-        && keyComboModel instanceof NewKeyComboModel model
-        && model.usesSequences();
+        && model instanceof NewKeyComboModel newModel
+        && newModel.usesSequences();
   }
 
   /** Returns true if the given key code is a meta key. */
@@ -1472,11 +1482,15 @@ public class KeyComboManager
 
   /** Appends string representation of target key code. */
   private void appendKey(int keyCode, StringBuilder sb) {
+    appendKey(keyCode, sb, getSandFlyKey());
+  }
+
+  /** Appends the name of {@code keyCode}, unless it is the held SandFly key {@code sandFlyKey}. */
+  private void appendKey(int keyCode, StringBuilder sb, @Nullable SandFlyKey sandFlyKey) {
     if (keyCode <= 0 || KeyEvent.isModifierKey(keyCode) || keyCode == KeyCombo.MODIFIER_KEYS) {
       return;
     }
     // A held SandFly key is named with the SandFly key.
-    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
     if (sandFlyKey != null && sandFlyKey.isHeldKey() && keyCode == sandFlyKey.getKeyCode()) {
       return;
     }
