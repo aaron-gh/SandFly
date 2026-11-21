@@ -556,6 +556,42 @@ class SandFlyKeyTest {
   }
 
   @Test
+  fun shortcutsWhileEditingTakeTheirKeysOnlyInATextFieldBeingEdited() {
+    for (keymap in listOf(Keymap.KEYBOARD_PHONE, Keymap.KEYBOARD_PHONE_SINGLE_KEYS)) {
+      keys.clear()
+      val manager = manager(keymap, SandFlyKey.SYM)
+      manager.setCommandPerformer { _, _ -> }
+      val alt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_LEFT_ON
+      // Outside a text field, Alt + Space is the app's.
+      manager.down(KeyEvent.KEYCODE_ALT_LEFT, alt)
+      assertFalse(manager.down(KeyEvent.KEYCODE_SPACE, alt))
+      manager.up(KeyEvent.KEYCODE_SPACE, alt)
+      manager.up(KeyEvent.KEYCODE_ALT_LEFT)
+      assertTrue(keys.isEmpty())
+      // In one being edited, it chooses a symbol, and its repeats and release are taken too.
+      time += 1000
+      editTextField(manager)
+      manager.down(KeyEvent.KEYCODE_ALT_LEFT, alt)
+      assertTrue(manager.down(KeyEvent.KEYCODE_SPACE, alt))
+      assertTrue(manager.up(KeyEvent.KEYCODE_SPACE, alt))
+      manager.up(KeyEvent.KEYCODE_ALT_LEFT)
+      assertEquals(1, keys.size)
+      assertTrue(keys.last()!!.endsWith("while editing"))
+    }
+  }
+
+  @Test
+  fun keyboardPhoneCommandDefaultsWorkWithoutBeingSet() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    manager.setCommandPerformer { _, _ -> }
+    manager.down(KeyEvent.KEYCODE_SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_L))
+    manager.up(KeyEvent.KEYCODE_L)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals("Sym + " + name(KeyEvent.KEYCODE_L), keys.last())
+  }
+
+  @Test
   fun keysPressedWhileAChooserIsOpenGoToIt() {
     val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
     var choosing = false
@@ -566,6 +602,10 @@ class SandFlyKeyTest {
           get() = choosing
 
         override fun openChooser(kind: CharacterChooser.Kind) = true
+
+        override val isEditingModeOn = false
+
+        override fun toggleEditingMode() = false
       }
     try {
       // The shortcut that opens a chooser is released as usual.

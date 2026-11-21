@@ -1183,6 +1183,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     TOGGLE_TOUCH_LOCK(R.string.shortcut_value_toggle_touch_lock, R.string.shortcut_toggle_touch_lock),
     SEARCH_EMOJI(R.string.shortcut_value_search_emoji, R.string.shortcut_search_emoji),
     CHOOSE_SYMBOL(R.string.shortcut_value_choose_symbol, R.string.shortcut_choose_symbol),
+    TOGGLE_EDITING_MODE(
+        R.string.shortcut_value_toggle_editing_mode, R.string.shortcut_toggle_editing_mode),
     PREV_CONTAINER(R.string.shortcut_value_prev_container, R.string.shortcut_prev_container),
     NEXT_CONTAINER(R.string.shortcut_value_next_container, R.string.shortcut_next_container),
     PREVIOUS_WINDOW(R.string.shortcut_value_previous_window, R.string.shortcut_previous_window),

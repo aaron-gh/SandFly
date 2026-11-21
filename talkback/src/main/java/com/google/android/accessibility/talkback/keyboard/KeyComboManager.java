@@ -257,6 +257,9 @@ public class KeyComboManager
   /** Enter that sends messages. */
   private final MessageEnterKeys messageEnterKeys;
 
+  /** Keys of shortcuts while editing that ran, whose repeats and release are taken too. */
+  private final Set<Integer> editingShortcutKeys = new HashSet<>();
+
   /** Keys pressed while a chooser of the SandFly keyboard was open, released there too. */
   private final Set<Integer> keysPassedToChooser = new HashSet<>();
   // Whether the user ran a SandFly command or touched the screen since a key last went to the app
@@ -471,6 +474,7 @@ public class KeyComboManager
     }
     messageEnterKeys.reset();
     keysPassedToChooser.clear();
+    editingShortcutKeys.clear();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
     serviceState = newState;
@@ -503,10 +507,12 @@ public class KeyComboManager
     }
 
     // While the SandFly keyboard's emoji search or symbol chooser is open, every key pressed is its
-    // own, up to its release. Keys pressed before, such as the shortcut that opened it, are
-    // released here.
+    // own, up to its release; in its editing mode, every key pressed without the SandFly key. Keys
+    // pressed before, such as the shortcut that opened it, are released here.
     if (event.getAction() == KeyEvent.ACTION_DOWN) {
-      if (keysPassedToChooser.contains(event.getKeyCode()) || SandFlyKeyboardHost.isChoosing()) {
+      if (keysPassedToChooser.contains(event.getKeyCode())
+          || SandFlyKeyboardHost.isChoosing()
+          || (SandFlyKeyboardHost.isEditingModeOn() && !isSandFlyKeyEvent(event))) {
         keysPassedToChooser.add(event.getKeyCode());
         return false;
       }
@@ -528,6 +534,11 @@ public class KeyComboManager
         arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
         return true;
       }
+    }
+
+    if (onEditingShortcut(event)) {
+      arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+      return true;
     }
 
     if (plainKeys() && keyPresses.onKeyEvent(event)) {
@@ -744,6 +755,9 @@ public class KeyComboManager
     }
     if (keyCombo.isHeldDown()) {
       return context.getString(R.string.keycombo_keys_held, keys);
+    }
+    if (keyCombo.isWhileEditing()) {
+      return context.getString(R.string.keycombo_keys_while_editing, keys);
     }
     return keys;
   }
@@ -1065,6 +1079,14 @@ public class KeyComboManager
     return false;
   }
 
+  /** Whether [event] is the SandFly key, or a key pressed with it. */
+  private boolean isSandFlyKeyEvent(KeyEvent event) {
+    @Nullable SandFlyKey sandFlyKey = getSandFlyKey();
+    return sandFlyKeyHeld
+        || isSandFlyKeyPressed(event)
+        || (sandFlyKey != null && sandFlyKey.isKey(event));
+  }
+
   /** Whether [keyCode] is Enter, Numpad Enter or the centre of a D-pad. */
   private static boolean isEnterKey(int keyCode) {
     return keyCode == KeyEvent.KEYCODE_ENTER
@@ -1100,6 +1122,49 @@ public class KeyComboManager
     }
     AccessibilityNodeInfoCompat inputFocus = accessibilityFocusMonitor.getInputFocus();
     return inputFocus != null && inputFocus.isFocused() && inputFocus.isEditable();
+  }
+
+  /**
+   * Runs the shortcut while editing that [event] presses, in a text field being edited, which then
+   * doesn't get the keys. Only keys pressed without the SandFly key look anything up.
+   */
+  private boolean onEditingShortcut(KeyEvent event) {
+    int keyCode = event.getKeyCode();
+    if (event.getAction() != KeyEvent.ACTION_DOWN) {
+      return event.getAction() == KeyEvent.ACTION_UP
+          ? editingShortcutKeys.remove(keyCode)
+          : editingShortcutKeys.contains(keyCode);
+    }
+    if (editingShortcutKeys.contains(keyCode)) {
+      // Its repeats.
+      return true;
+    }
+    if (serviceState != SERVICE_STATE_ACTIVE
+        || !matchKeyCombo
+        || keyComboModel == null
+        || event.getRepeatCount() > 0
+        || KeyEvent.isModifierKey(keyCode)
+        || keyComboPassThroughState == KeyComboPassThroughState.ACTIVE
+        || isSandFlyKeyPressed(event)
+        || sandFlyKeyHeld) {
+      return false;
+    }
+    KeyCombo keys =
+        new KeyCombo(
+            (event.getModifiers() & KEY_EVENT_MODIFIER_MASK) | KeyCombo.WHILE_EDITING,
+            KeyComboModel.NO_PREFIX_KEY_CODE,
+            getConvertedKeyCode(event),
+            /* triggerModifierUsed= */ false);
+    if (!keyComboModel.getKeyComboMap().containsValue(keys) || !isEditingText()) {
+      return false;
+    }
+    boolean performed = matchAndPerformKeyCombo(keys, keyComboModel.getTriggerModifier());
+    performedCombo = false;
+    hasPartialMatch = false;
+    if (performed) {
+      editingShortcutKeys.add(keyCode);
+    }
+    return performed;
   }
 
   /** Whether the user is typing in a text field or SandFly focus is on the one being edited. */

@@ -38,6 +38,12 @@ object SandFlyKeyboardHost {
 
     /** Opens the chooser of [kind] in the text field being edited. Returns false if none is. */
     fun openChooser(kind: CharacterChooser.Kind): Boolean
+
+    /** Whether editing mode is on, where keys without the SandFly key edit. */
+    val isEditingModeOn: Boolean
+
+    /** Turns editing mode on in the text field being edited, or off. False if it can't be on. */
+    fun toggleEditingMode(): Boolean
   }
 
   @JvmStatic @Volatile var keyboard: Keyboard? = null
@@ -53,6 +59,12 @@ object SandFlyKeyboardHost {
 
   /** Whether a chooser of the SandFly keyboard is open, so that keys go to it. */
   @JvmStatic fun isChoosing(): Boolean = keyboard?.isChoosing == true
+
+  /** Whether the SandFly keyboard's editing mode is on, so that keys without the SandFly key go to it. */
+  @JvmStatic fun isEditingModeOn(): Boolean = keyboard?.isEditingModeOn == true
+
+  /** Turns editing mode on or off; false without the SandFly keyboard in a text field. */
+  @JvmStatic fun toggleEditingMode(): Boolean = keyboard?.toggleEditingMode() == true
 
   /** Opens a chooser in the text field being edited; false without the SandFly keyboard. */
   @JvmStatic

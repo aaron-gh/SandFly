@@ -3734,6 +3734,20 @@
     <string name="sandfly_keyboard_chooser_closed">Closed</string>
     <!-- Spoken when Search emoji or Choose a symbol runs without the SandFly keyboard in a text field. -->
     <string name="sandfly_keyboard_needed">Needs the SandFly keyboard in a text field</string>
+    <!-- Command: with the SandFly keyboard, in a text field, single keys move the cursor and select, copy, cut and paste instead of typing, until it is turned off. -->
+    <string name="shortcut_toggle_editing_mode">Turn editing mode on or off</string>
+    <!-- Spoken when the SandFly keyboard's editing mode turns on. -->
+    <string name="sandfly_keyboard_editing_mode_on">Editing mode on</string>
+    <!-- Spoken when the SandFly keyboard's editing mode turns off. -->
+    <string name="sandfly_keyboard_editing_mode_off">Editing mode off</string>
+    <!-- Spoken in editing mode when S starts selecting: moving the cursor now selects text. -->
+    <string name="sandfly_keyboard_selecting_on">Selecting</string>
+    <!-- Spoken in editing mode when S stops selecting: moving the cursor no longer selects text. -->
+    <string name="sandfly_keyboard_selecting_off">Not selecting</string>
+    <!-- Keyboard shortcut dialog: check box that makes the shortcut work only while a text field is being edited, where it takes its keys from the text field. -->
+    <string name="keycombo_only_while_editing">Only while editing</string>
+    <!-- A keyboard shortcut that works only while a text field is being edited, such as "Alt+Space while editing". -->
+    <string name="keycombo_keys_while_editing"><xliff:g id="keys" example="Alt+Space">%1$s</xliff:g> while editing</string>
     <!-- Title of the switch that makes a double tap on the text field being edited move the cursor to the start of its text, or to the end when the cursor is at the start, instead of activating the field. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_double_tap_moves_cursor">Double-tap moves cursor to start or end</string>
     <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->

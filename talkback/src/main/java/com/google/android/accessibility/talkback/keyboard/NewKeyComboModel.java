@@ -1364,6 +1364,13 @@ public class NewKeyComboModel implements KeyComboModel {
       return false;
     }
 
+    // Shortcuts while editing are keys without the SandFly key, pressed once, in any keymap.
+    if (keyCombo.isWhileEditing()) {
+      return !keyCombo.isTriggerModifierUsed()
+          && (keyCombo.getModifiers() & KeyCombo.PRESS_TYPES) == 0
+          && keyCombo.getPrefixKeyCode() == NO_PREFIX_KEY_CODE;
+    }
+
     // A custom keymap and the keyboard phone keymap take any keys; the others' shortcuts are
     // pressed with the SandFly key.
     return customKeymap != null || plainKeys() || keyCombo.isTriggerModifierUsed();
@@ -1678,6 +1685,15 @@ public class NewKeyComboModel implements KeyComboModel {
     moveCommandShortcutsToActions(persister);
     for (String key : persister.keysStartingWith(Commands.SHORTCUT_KEY_PREFIX)) {
       keyComboMap.put(key, persister.getKeyCombo(key));
+    }
+    // Commands the keymap gives a shortcut, such as Lock or unlock touch in the keyboard phone
+    // keymap, have it until it is changed.
+    if (keymap.getDefaults() != null && originalPersister == null) {
+      for (String key : keymap.getDefaults().commandKeys(context)) {
+        if (!keyComboMap.containsKey(key)) {
+          addKeyCombo(key);
+        }
+      }
     }
   }
 

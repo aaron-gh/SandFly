@@ -204,6 +204,27 @@ public final class KeyCombo {
   /** The bits of how a shortcut is pressed, rather than which keys it presses. */
   public static final int PRESS_TYPES = PRESSED_TWICE | HELD_DOWN;
 
+  /**
+   * Modifier bit of a shortcut that works only while a text field is being edited, where it takes
+   * its keys from the text field. Elsewhere the keys do what they do without it.
+   */
+  public static final int WHILE_EDITING = 0x08000000;
+
+  /** Whether this works only while a text field is being edited. */
+  public boolean isWhileEditing() {
+    return (getModifiers() & WHILE_EDITING) != 0;
+  }
+
+  /** Returns this shortcut working only while editing, or everywhere. */
+  public KeyCombo withWhileEditing(boolean whileEditing) {
+    int modifiers = getModifiers() & ~WHILE_EDITING;
+    return new KeyCombo(
+        whileEditing ? modifiers | WHILE_EDITING : modifiers,
+        getPrefixKeyCode(),
+        getKeyCode(),
+        triggerModifierUsed);
+  }
+
   /** Returns the shortcut of modifier keys pressed on their own. */
   public static KeyCombo modifierKeys(int modifiers, boolean triggerModifierUsed) {
     return new KeyCombo(
