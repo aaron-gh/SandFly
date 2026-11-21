@@ -41,6 +41,22 @@
       android:key="@string/pref_touch_focus_time_out_key"
       app:summary="%s"
       android:title="@string/title_pref_touch_focus_timeout" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="off"
+      android:dialogTitle="@string/title_pref_lock_touch_automatically"
+      android:entries="@array/pref_lock_touch_automatically_entries"
+      android:entryValues="@array/pref_lock_touch_automatically_values"
+      android:key="@string/pref_lock_touch_automatically_key"
+      android:summary="%s"
+      android:title="@string/title_pref_lock_touch_automatically" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/locked_touch_feedback_nothing_value"
+      android:dialogTitle="@string/title_pref_locked_touch_feedback"
+      android:entries="@array/pref_locked_touch_feedback_entries"
+      android:entryValues="@array/pref_locked_touch_feedback_values"
+      android:key="@string/pref_locked_touch_feedback_key"
+      android:summary="%s"
+      android:title="@string/title_pref_locked_touch_feedback" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.directtouch.DirectTouchFragment"
       android:key="@string/pref_direct_touch_key"

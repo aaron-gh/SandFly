@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.scripting
 
+import com.google.android.accessibility.talkback.touchlock.TouchLock
 import com.google.android.accessibility.utils.output.OutputMute
 import android.accessibilityservice.AccessibilityService
 import android.os.Handler
@@ -498,6 +499,7 @@ class ScriptManager(
     val id = runtime.id
     ScriptLog.add(id, ScriptLog.Level.ERROR, message)
     OutputMute.releaseOwner(id, "script error")
+    TouchLock.releaseOwner(id, "script error")
     // Calls are refused on Backtalk's own screens, which is no fault of the script.
     if (activation.inBacktalk && !interrupted) {
       return
@@ -521,7 +523,9 @@ class ScriptManager(
     activation.refresh()
     rules.clearCache()
     val info = activation.appInfo
-    OutputMute.onAppChanged(info.optString("package").ifEmpty { null })
+    val app = info.optString("package").ifEmpty { null }
+    OutputMute.onAppChanged(app)
+    TouchLock.onAppChanged(app)
     val demanded = synchronized(onDemand) { onDemand.keys.toSet() }
     val wanted = ScriptLoading.wanted(store.all(), screenOn, demanded, activation::wants)
     val version = ++speechStateVersion

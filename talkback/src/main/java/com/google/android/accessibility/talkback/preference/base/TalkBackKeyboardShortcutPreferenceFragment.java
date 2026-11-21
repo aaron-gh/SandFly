@@ -602,22 +602,23 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
             usesSequences,
             sandFlyKey != null ? sandFlyKey : SandFlyKey.META,
             model.getKeyComboMap(),
-            model instanceof NewKeyComboModel newModel && newModel.arrowsNavigate());
+            model instanceof NewKeyComboModel newModel && newModel.arrowsNavigate(),
+            model instanceof NewKeyComboModel plainModel && plainModel.plainKeys());
     prefs.edit().putString(getString(R.string.pref_select_keymap_key), custom.getValue()).apply();
     PreferencesActivityUtils.announceText(
         getString(R.string.keycombo_menu_announce_active_keymap, name), getActivity());
   }
 
-  /** Forgets [custom] and uses the SandFly keymap where it was in use. */
+  /** Forgets [custom] and uses the default keymap where it was in use. */
   private void deleteKeymap(CustomKeymap custom) {
     CustomKeymaps.delete(getContext(), custom);
+    Keymap fallback = Keymap.defaultKeymap();
     prefs
         .edit()
-        .putString(
-            getString(R.string.pref_select_keymap_key), getString(Keymap.SANDFLY.getValueRes()))
+        .putString(getString(R.string.pref_select_keymap_key), getString(fallback.getValueRes()))
         .apply();
     PreferencesActivityUtils.announceText(
-        getString(R.string.keycombo_menu_announce_active_keymap, getString(Keymap.SANDFLY.getNameRes())),
+        getString(R.string.keycombo_menu_announce_active_keymap, getString(fallback.getNameRes())),
         getActivity());
   }
 
@@ -636,6 +637,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     }
     keymapPreference.setEntries(entries.toArray(new CharSequence[entries.size()]));
     keymapPreference.setEntryValues(entryValues.toArray(new CharSequence[entryValues.size()]));
+    keymapPreference.setDefaultValue(getString(Keymap.defaultKeymap().getValueRes()));
   }
 
   /**

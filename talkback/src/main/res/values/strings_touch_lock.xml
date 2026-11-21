@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Command that turns touch lock on or off: while it is on, touches and gestures on the screen do nothing. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_toggle_touch_lock">Lock or unlock touch</string>
+    <!-- Spoken when touch lock turns on. [CHAR LIMIT=NONE] -->
+    <string name="touch_locked">Touch locked</string>
+    <!-- Spoken when touch lock turns off. [CHAR LIMIT=NONE] -->
+    <string name="touch_unlocked">Touch unlocked</string>
+    <!-- Spoken when touch can't be locked, before Android 13. [CHAR LIMIT=NONE] -->
+    <string name="touch_lock_unavailable">Touch lock needs Android 13 or later</string>
+    <!-- Title of the setting for when touch locks without the command. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_lock_touch_automatically">Lock touch automatically</string>
+    <!-- Option of Lock touch automatically: never. [CHAR LIMIT=NONE] -->
+    <string name="value_lock_touch_never">Never</string>
+    <!-- Option of Lock touch automatically: each time the screen turns on. [CHAR LIMIT=NONE] -->
+    <string name="value_lock_touch_screen_on">When the screen turns on</string>
+    <!-- Option of Lock touch automatically: while the lock screen is shown. [CHAR LIMIT=NONE] -->
+    <string name="value_lock_touch_lock_screen">On the lock screen</string>
+    <!-- Option of Lock touch automatically: while something covers the proximity sensor, such as an ear or a pocket. [CHAR LIMIT=NONE] -->
+    <string name="value_lock_touch_proximity">While the proximity sensor is covered</string>
+    <!-- Title of the setting for what a touch gives while touch is locked. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_locked_touch_feedback">Touches while touch is locked</string>
+    <!-- Option of Touches while touch is locked: no feedback. [CHAR LIMIT=NONE] -->
+    <string name="value_locked_touch_nothing">Nothing</string>
+    <!-- Option of Touches while touch is locked: a sound. [CHAR LIMIT=NONE] -->
+    <string name="value_locked_touch_sound">Sound</string>
+    <!-- Option of Touches while touch is locked: a vibration. [CHAR LIMIT=NONE] -->
+    <string name="value_locked_touch_vibration">Vibration</string>
+</resources>

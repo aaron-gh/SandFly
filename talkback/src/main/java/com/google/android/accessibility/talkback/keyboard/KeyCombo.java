@@ -48,8 +48,14 @@ public final class KeyCombo {
   public static final int PARTIAL_MATCH = 1;
   public static final int EXACT_MATCH = 2;
 
+  // Sym and Fn too, which keyboard phones have, so that they can be in shortcuts as Alt can.
   public static final int KEY_EVENT_MODIFIER_MASK =
-      KeyEvent.META_SHIFT_ON | KeyEvent.META_CTRL_ON | KeyEvent.META_ALT_ON | KeyEvent.META_META_ON;
+      KeyEvent.META_SHIFT_ON
+          | KeyEvent.META_CTRL_ON
+          | KeyEvent.META_ALT_ON
+          | KeyEvent.META_META_ON
+          | KeyEvent.META_SYM_ON
+          | KeyEvent.META_FUNCTION_ON;
 
   public static final ImmutableSet<Integer> SEQUENCE_KEY_COMBO_CODE_PREFIX_KEYS =
       ImmutableSet.of(KeyEvent.KEYCODE_R, KeyEvent.KEYCODE_O);
@@ -181,6 +187,51 @@ public final class KeyCombo {
     }
 
     return NO_MATCH;
+  }
+
+  /**
+   * The key code of a shortcut of modifier keys pressed on their own, with no other key, such as Alt
+   * alone or Alt + Shift: its modifiers are the keys, and the SandFly key where it is used.
+   */
+  public static final int MODIFIER_KEYS = 0x7FF0;
+
+  /** Modifier bit of a shortcut pressed twice in a row. */
+  public static final int PRESSED_TWICE = 0x20000000;
+
+  /** Modifier bit of a shortcut of modifier keys held down on their own. */
+  public static final int HELD_DOWN = 0x10000000;
+
+  /** The bits of how a shortcut is pressed, rather than which keys it presses. */
+  public static final int PRESS_TYPES = PRESSED_TWICE | HELD_DOWN;
+
+  /** Returns the shortcut of modifier keys pressed on their own. */
+  public static KeyCombo modifierKeys(int modifiers, boolean triggerModifierUsed) {
+    return new KeyCombo(
+        modifiers, KeyComboModel.NO_PREFIX_KEY_CODE, MODIFIER_KEYS, triggerModifierUsed);
+  }
+
+  /** Returns this shortcut with [pressType], [PRESSED_TWICE] or [HELD_DOWN], and no other. */
+  public KeyCombo withPressType(int pressType) {
+    return new KeyCombo(
+        (getModifiers() & ~PRESS_TYPES) | pressType,
+        getPrefixKeyCode(),
+        getKeyCode(),
+        triggerModifierUsed);
+  }
+
+  /** Whether this is modifier keys pressed on their own. */
+  public boolean isModifierKeys() {
+    return getKeyCode() == MODIFIER_KEYS;
+  }
+
+  /** Whether this is pressed twice in a row. */
+  public boolean isPressedTwice() {
+    return (getModifiers() & PRESSED_TWICE) != 0;
+  }
+
+  /** Whether this is modifier keys held down on their own. */
+  public boolean isHeldDown() {
+    return (getModifiers() & HELD_DOWN) != 0;
   }
 
   /**

@@ -605,6 +605,11 @@ class TutorialActivity : AppCompatActivity() {
           SandFlyKey.CTRL_META -> R.string.sandfly_keyboard_tutorial_ctrl_meta_key_location
           SandFlyKey.INSERT -> R.string.sandfly_keyboard_tutorial_insert_key_location
           SandFlyKey.NUMPAD_INSERT -> R.string.sandfly_keyboard_tutorial_numpad_insert_key_location
+          SandFlyKey.SYM -> R.string.sandfly_keyboard_tutorial_sym_key_location
+          SandFlyKey.RIGHT_ALT -> R.string.sandfly_keyboard_tutorial_right_alt_key_location
+          SandFlyKey.CTRL -> R.string.sandfly_keyboard_tutorial_ctrl_key_location
+          SandFlyKey.RIGHT_SHIFT -> R.string.sandfly_keyboard_tutorial_right_shift_key_location
+          SandFlyKey.FUNCTION -> R.string.sandfly_keyboard_tutorial_function_key_location
         }
       ),
     )

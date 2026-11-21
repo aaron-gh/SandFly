@@ -62,4 +62,31 @@ class KeyTextTest {
     }
     assertNull(KeyText.of(KeyCombo()))
   }
+
+  @Test
+  fun pressesOfTheKeyboardPhoneKeymapGoBothWays() {
+    val presses =
+      mapOf(
+        "SandFly alone" to KeyCombo.modifierKeys(0, true),
+        "SandFly+Shift alone" to KeyCombo.modifierKeys(KeyEvent.META_SHIFT_ON, true),
+        "Alt alone twice" to
+          KeyCombo.modifierKeys(KeyEvent.META_ALT_ON, false).withPressType(KeyCombo.PRESSED_TWICE),
+        "Shift+Alt held" to
+          KeyCombo.modifierKeys(KeyEvent.META_ALT_ON or KeyEvent.META_SHIFT_ON, false)
+            .withPressType(KeyCombo.HELD_DOWN),
+        "Enter twice" to
+          KeyCombo(0, 0, KeyEvent.KEYCODE_ENTER, false).withPressType(KeyCombo.PRESSED_TWICE),
+        "K held" to KeyCombo(0, 0, KeyEvent.KEYCODE_K, false).withPressType(KeyCombo.HELD_DOWN),
+        "Sym alone" to KeyCombo.modifierKeys(KeyEvent.META_SYM_ON, false),
+        "SandFly+Shift+K held" to
+          KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_K, true)
+            .withPressType(KeyCombo.HELD_DOWN),
+      )
+    for ((text, combo) in presses) {
+      assertEquals(text, combo, KeyText.parse(text))
+      assertEquals(text, combo, KeyText.parse(KeyText.of(combo)!!))
+    }
+    // The SandFly key twice is still browse mode's.
+    assertEquals(KeyCombo.sandFlyKeyPressedTwice(), KeyText.parse("SandFly twice"))
+  }
 }

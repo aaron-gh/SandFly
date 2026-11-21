@@ -65,9 +65,11 @@ A gesture is written as its key, such as `"pref_shortcut_up"` for Swipe up. The 
 
 ## Keyboard shortcuts
 
-A keyboard shortcut is written as its keys joined with `+`, such as `"SandFly+Shift+Right"` or `"Ctrl+Alt+H"`. `SandFly` is the keymap's SandFly key. Modifiers are `Shift`, `Ctrl`, `Alt` and `Meta`. A key is a letter, a digit, or a name: `Left`, `Right`, `Up`, `Down`, `Enter`, `Space`, `Backspace`, `Delete`, `Escape`, `Tab`, `PageUp`, `PageDown`, `Home`, `End`, `Insert`, `Menu`, `Grave`, `Minus`, `Equals`, `LeftBracket`, `RightBracket`, `Backslash`, `Semicolon`, `Apostrophe`, `Comma`, `Period`, `Slash`, or Android's name for the key without `KEYCODE_`, such as `F5` or `Numpad_5`. Names are not case-sensitive.
+A keyboard shortcut is written as its keys joined with `+`, such as `"SandFly+Shift+Right"` or `"Ctrl+Alt+H"`. `SandFly` is the keymap's SandFly key. Modifiers are `Shift`, `Ctrl`, `Alt`, `Meta`, `Sym` and `Fn`. A key is a letter, a digit, or a name: `Left`, `Right`, `Up`, `Down`, `Enter`, `Space`, `Backspace`, `Delete`, `Escape`, `Tab`, `PageUp`, `PageDown`, `Home`, `End`, `Insert`, `Menu`, `Grave`, `Minus`, `Equals`, `LeftBracket`, `RightBracket`, `Backslash`, `Semicolon`, `Apostrophe`, `Comma`, `Period`, `Slash`, or Android's name for the key without `KEYCODE_`, such as `F5` or `Numpad_5`. Names are not case-sensitive.
 
 A sequence, as in the SandFly keymap, has its first keys, a comma and the second key: `"SandFly+O, H"`. The SandFly key pressed twice is `"SandFly twice"`.
+
+The keyboard phone keymap also takes presses. Modifier keys pressed on their own end with `alone`: `"SandFly alone"`, `"SandFly+Shift alone"`. A key or modifier keys pressed twice in a row end with `twice`: `"Enter twice"`, `"Alt alone twice"`. Keys held down end with `held`: modifier keys on their own, `"Alt+Shift held"`, or a key, `"K held"`, which outside typing runs its shortcut when held and the key's own shortcut when pressed briefly.
 
 ## Macros
 
@@ -98,6 +100,7 @@ Steps, by `type`:
 | `touch_hold` | `label`, `hold`, `slide`, `distance`, `timeout`, `regex`, `field` | Touches the centre of the item and holds for `hold` ms, then slides `distance` dp towards `slide` if set, and lifts |
 | `focus_item` | `label`, `timeout`, `regex`, `field` | Moves accessibility focus to the item |
 | `speak_item` | `label`, `timeout`, `regex`, `field` | Speaks the item |
+| `act_item` | `act`, `label`, `times`, `timeout`, `regex`, `field` | Long-presses or scrolls the item `times` times: `act` is `"long_press"`, `"scroll_forward"` or `"scroll_backward"`. A scroll without `label` scrolls the largest list on screen |
 | `speak_text` | `text` | Speaks the text |
 | `open_app` | `app` | Opens an app: its Open app command |
 | `type_text` | `text`, `replace` | Types the text in the focused field; `replace` replaces its text |
@@ -112,7 +115,7 @@ Steps, by `type`:
 | `stop` | | Stops the macro |
 | `wait_until` | `condition`, `timeout` | Waits until the condition is met; the macro stops after `timeout` ms |
 
-`timeout` of `tap`, `touch_hold`, `focus_item` and `speak_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint, state or tooltip, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` or `"id"` (the resource ID). `x` and `y` of `tap_position` are from 0 to 10000; the step fails when the position is outside the screen. `hold` of `touch_hold` is from 100 to 600000 ms; 1000 by default. `slide` is `"up"`, `"down"`, `"left"` or `"right"`; without it the touch lifts where it is. `distance` is from 1 to 1000 dp; 100 by default; the end of the slide is kept on the screen. The Speak coordinates command speaks and copies the position of the centre of the focused item. A macro has at most 200 steps.
+`timeout` of `tap`, `touch_hold`, `focus_item`, `speak_item` and `act_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint, state or tooltip, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` or `"id"` (the resource ID). `x` and `y` of `tap_position` are from 0 to 10000; the step fails when the position is outside the screen. `hold` of `touch_hold` is from 100 to 600000 ms; 1000 by default. `slide` is `"up"`, `"down"`, `"left"` or `"right"`; without it the touch lifts where it is. `distance` is from 1 to 1000 dp; 100 by default; the end of the slide is kept on the screen. The Speak coordinates command speaks and copies the position of the centre of the focused item. A macro has at most 200 steps.
 
 A condition is a list of tests. Tests are joined with "and"; a test with `"or": true` starts a new group joined with "or". `"not": true` reverses a test. A condition has at most 20 tests.
 
@@ -124,7 +127,7 @@ A condition is a list of tests. Tests are joined with "and"; a test with `"or": 
 | `keyboard` | | The on-screen keyboard is shown |
 | `locked` | | The lock screen is shown |
 
-`kind` is optional: `clickable`, `long_clickable`, `editable`, `scrollable`, `adjustable`, `checkable`, `checked`, `selected`, `heading` or `enabled`.
+`kind` is optional: `clickable`, `long_clickable`, `editable`, `scrollable`, `adjustable`, `checkable`, `checked`, `selected`, `heading` or `enabled`. `clickable`, `long_clickable` and `checked` also count an item a few levels around the one with the text; `checked` also counts a checked switch or check box in the row the text is in.
 
 ## Gesture profiles
 
@@ -150,6 +153,7 @@ A gesture left out of `gestures` runs what it runs without the profile. `swipesB
   "sandFlyKey": "Insert",
   "sequences": false,
   "arrowsNavigate": false,
+  "plainKeys": false,
   "shortcuts": {
     "NEXT": "SandFly+Right",
     "PREVIOUS": "SandFly+Left",
@@ -160,7 +164,7 @@ A gesture left out of `gestures` runs what it runs without the profile. `swipesB
 
 An imported keymap is a custom keymap; choose it in Settings > Keyboard shortcuts > Choose a keymap. Commands left out of `shortcuts` have no keyboard shortcut in it, so start from an exported keymap to change a few shortcuts. Each command has one shortcut, and two commands can't have the same keys.
 
-`sandFlyKey` is `Meta`, `Alt`, `Ctrl+Alt`, `Ctrl+Meta`, `Insert` or `Numpad Insert`; `Meta` by default. `sequences` is whether shortcuts can be sequences. `arrowsNavigate` is whether arrow keys and other shortcuts without the SandFly key work outside browse mode, as in NVDA.
+`sandFlyKey` is `Meta`, `Alt`, `Ctrl+Alt`, `Ctrl+Meta`, `Insert`, `Numpad Insert`, `Sym`, `Right Alt`, `Ctrl`, `Right Shift` or `Fn`; `Meta` by default. `sequences` is whether shortcuts can be sequences. `arrowsNavigate` is whether arrow keys and other shortcuts without the SandFly key work outside browse mode, as in NVDA. `plainKeys` is optional, `false` by default: whether the SandFly key with a shortcut without it runs that shortcut anywhere, text fields too, as in the keyboard phone keymap.
 
 ## Gestures and keyboard shortcuts in apps
 

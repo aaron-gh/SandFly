@@ -18,16 +18,28 @@ package com.google.android.accessibility.talkback.keyboard
 import android.content.Context
 import android.view.KeyEvent
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.commands.Commands
 
 /** The default shortcuts of a keymap modelled on another screen reader. */
 abstract class KeymapDefaults {
   /** Default shortcuts by the string resource of their command's key; the rest are unassigned. */
   protected abstract val defaults: Map<Int, KeyCombo>
 
+  /**
+   * Default shortcuts of commands without a keyboard action of their own, by the string resource
+   * of the command's value, such as the gesture command Lock or unlock touch.
+   */
+  protected open val commandDefaults: Map<Int, KeyCombo> = emptyMap()
+
   /** Returns the default shortcut of the command saved under [key], or none. */
   fun defaultKeyCombo(context: Context, key: String): KeyCombo {
     for ((keyRes, combo) in defaults) {
       if (context.getString(keyRes) == key) {
+        return combo
+      }
+    }
+    for ((valueRes, combo) in commandDefaults) {
+      if (Commands.shortcutKey(context.getString(valueRes)) == key) {
         return combo
       }
     }

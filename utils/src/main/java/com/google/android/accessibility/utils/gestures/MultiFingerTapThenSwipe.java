@@ -26,8 +26,9 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GestureCo
 
 /**
  * Matches one, two or three taps with several fingers followed by a swipe in one direction with as
- * many fingers, such as a double-tap with two fingers and then a swipe up with two fingers. The
- * swipe is the next touch after the last tap, which starts within the time allowed between taps.
+ * many fingers or with one finger, such as a double-tap with two fingers and then a swipe up with
+ * two fingers. The swipe is the next touch after the last tap, which starts within the time allowed
+ * between taps.
  *
  * <p>The matcher goes on to the swipe only while its gesture has an action, and the taps it starts
  * with wait for the swipe only then.
@@ -36,6 +37,8 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GestureCo
 class MultiFingerTapThenSwipe extends MultiFingerMultiTap {
 
   private final int direction;
+  // The number of fingers of the swipe.
+  private final int swipeFingers;
   private final GestureConfigProvider gestureConfig;
   // Matches the swipe after the taps. Null only while the superclass constructor runs.
   @Nullable private MultiFingerSwipe swipe;
@@ -49,6 +52,7 @@ class MultiFingerTapThenSwipe extends MultiFingerMultiTap {
       Context context,
       int fingers,
       int taps,
+      int swipeFingers,
       int direction,
       int gestureId,
       GestureMatcher.StateChangeListener listener,
@@ -56,10 +60,11 @@ class MultiFingerTapThenSwipe extends MultiFingerMultiTap {
       GestureMatcher.AnalyticsEventLogger logger) {
     super(context, fingers, taps, gestureId, listener, logger);
     this.direction = direction;
+    this.swipeFingers = swipeFingers;
     this.gestureConfig = configProvider;
     swipe =
         new MultiFingerSwipe(
-            context, fingers, direction, gestureId, this::onSwipeStateChanged, logger);
+            context, swipeFingers, direction, gestureId, this::onSwipeStateChanged, logger);
   }
 
   @Override
@@ -192,9 +197,10 @@ class MultiFingerTapThenSwipe extends MultiFingerMultiTap {
     } else {
       builder.append(mTargetTapCount);
     }
-    return builder
-        .append(" Tap then Swipe ")
-        .append(MultiFingerSwipe.directionToString(direction))
-        .toString();
+    builder.append(" Tap then ");
+    if (swipeFingers != targetFingerCount) {
+      builder.append(swipeFingers).append("-Finger ");
+    }
+    return builder.append("Swipe ").append(MultiFingerSwipe.directionToString(direction)).toString();
   }
 }

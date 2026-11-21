@@ -185,7 +185,7 @@ class EventVariables implements VariableDelegate {
       case EVENT_BEFORE_TEXT -> mEvent.getBeforeText();
       case EVENT_SOURCE_ERROR -> (mSource == null) ? "" : mSource.getError();
       case EVENT_PAGER_INDEX_COUNT ->
-          AccessibilityEventFeedbackUtils.getPagerIndexCount(mEvent, mContext, globalVariables);
+          AccessibilityEventFeedbackUtils.getFocusedPagerPageIndexCount(mEvent, mContext, globalVariables);
       case EVENT_SCROLL_POSITION_OUTPUT ->
           ScrollPositionFeedbackRule.getScrollPositionText(mEvent, mContext, globalVariables);
       case EVENT_DESCRIPTION ->

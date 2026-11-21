@@ -128,6 +128,7 @@ import com.google.android.accessibility.talkback.focusmanagement.NavigationTarge
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping.TalkbackAction;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
+import com.google.android.accessibility.talkback.macros.MacroRecorder;
 import com.google.android.accessibility.talkback.macros.MacroRunner;
 import com.google.android.accessibility.talkback.macros.Macros;
 import com.google.android.accessibility.talkback.menurules.RuleTextFormatting;
@@ -178,6 +179,7 @@ import com.google.android.accessibility.talkback.overview.RecentAppSteps;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
+import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.utils.output.OutputMute;
 import com.google.android.accessibility.utils.KeyboardUtils;
 import com.google.android.accessibility.utils.labeling.Label;
@@ -203,6 +205,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -374,7 +377,182 @@ public class GestureController {
   }
 
   public void performAction(String action, EventId eventId) {
+    if (isInputOverlayShown() && !runsOverInputOverlay(action)) {
+      // A window would open over the braille keyboard, braille input or handwriting.
+      LogUtils.d(LOG_TAG, "Not run over an input overlay: [%s]", action);
+      pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+      return;
+    }
+    runAction(action, eventId);
+  }
+
+  /** Whether the on-screen braille keyboard, braille input or a handwriting overlay is shown. */
+  private boolean isInputOverlayShown() {
+    return service.isOnScreenBrailleKeyboardShown()
+        || brailleScreenInput.isShowing()
+        || handwritingCommand.isShowing()
+        || handwritingAppLauncher.isShowing();
+  }
+
+  private @Nullable Set<String> commandsOverInputOverlay;
+
+  /** Whether {@code action} runs while an input overlay is shown: it opens no window. */
+  private boolean runsOverInputOverlay(String action) {
+    if (commandsOverInputOverlay == null) {
+      Set<String> commands = new HashSet<>();
+      commands.add(service.getString(R.string.switch_gesture_set));
+      for (int id : COMMANDS_OVER_INPUT_OVERLAY) {
+        commands.add(service.getString(id));
+      }
+      commandsOverInputOverlay = commands;
+    }
+    return commandsOverInputOverlay.contains(action)
+        || NavigationGestureActions.isAction(action)
+        || ReadingControlCommands.isSelection(action)
+        || ReadingControlLists.isCommand(action)
+        || ReadingControlCommands.settingOf(action) != null
+        || GestureProfiles.isAction(action)
+        || VoiceProfileNames.isCommand(action)
+        || BrailleCommands.isAction(action);
+  }
+
+  /** Commands that open no window, so they run over the braille keyboard and handwriting. */
+  private static final int[] COMMANDS_OVER_INPUT_OVERLAY = {
+    R.string.shortcut_value_unassigned,
+    R.string.shortcut_value_previous,
+    R.string.shortcut_value_next,
+    R.string.shortcut_value_move_to_item_below,
+    R.string.shortcut_value_move_to_item_above,
+    R.string.shortcut_value_move_to_item_left,
+    R.string.shortcut_value_move_to_item_right,
+    R.string.shortcut_value_first_in_screen,
+    R.string.shortcut_value_last_in_screen,
+    R.string.shortcut_value_next_granularity,
+    R.string.shortcut_value_previous_granularity,
+    R.string.shortcut_value_prev_container,
+    R.string.shortcut_value_next_container,
+    R.string.shortcut_value_previous_window,
+    R.string.shortcut_value_next_window,
+    R.string.shortcut_value_scroll_back,
+    R.string.shortcut_value_scroll_forward,
+    R.string.shortcut_value_scroll_to_top,
+    R.string.shortcut_value_scroll_to_bottom,
+    R.string.shortcut_value_scroll_up,
+    R.string.shortcut_value_scroll_down,
+    R.string.shortcut_value_scroll_left,
+    R.string.shortcut_value_scroll_right,
+    R.string.shortcut_value_refresh,
+    R.string.shortcut_value_toggle_browse_mode,
+    R.string.shortcut_value_toggle_arrow_key_nav,
+    R.string.shortcut_value_toggle_touch_lock,
+    R.string.shortcut_value_row_up,
+    R.string.shortcut_value_row_down,
+    R.string.shortcut_value_column_left,
+    R.string.shortcut_value_column_right,
+    R.string.shortcut_value_read_from_top,
+    R.string.shortcut_value_read_from_current,
+    R.string.shortcut_value_read_from_current_by_reading_control,
+    R.string.shortcut_value_perform_click_action,
+    R.string.shortcut_value_perform_double_click_action,
+    R.string.shortcut_value_touch_click_action,
+    R.string.shortcut_value_perform_long_click_action,
+    R.string.shortcut_value_action_setting_activate_current_action,
+    R.string.shortcut_value_select_next_setting,
+    R.string.shortcut_value_select_previous_setting,
+    R.string.shortcut_value_selected_setting_next_action,
+    R.string.shortcut_value_selected_setting_previous_action,
+    R.string.shortcut_value_next_reading_control_list,
+    R.string.shortcut_value_previous_reading_control_list,
+    R.string.shortcut_value_back,
+    R.string.shortcut_value_home,
+    R.string.shortcut_value_lock_screen,
+    R.string.shortcut_value_take_screenshot,
+    R.string.shortcut_value_answer_call,
+    R.string.shortcut_value_media_control,
+    R.string.shortcut_value_dictate_or_media_control,
+    R.string.shortcut_value_dictate,
+    R.string.shortcut_value_increase_volume,
+    R.string.shortcut_value_decrease_volume,
+    R.string.shortcut_value_increase_media_volume,
+    R.string.shortcut_value_decrease_media_volume,
+    R.string.shortcut_value_next_track,
+    R.string.shortcut_value_previous_track,
+    R.string.shortcut_value_rewind,
+    R.string.shortcut_value_fast_forward,
+    R.string.shortcut_value_read_notifications,
+    R.string.shortcut_value_toggle_notification_speech,
+    R.string.shortcut_value_toggle_time_announcements,
+    R.string.shortcut_value_read_last_notification,
+    R.string.shortcut_value_stop_notification,
+    R.string.shortcut_value_start_selection_mode,
+    R.string.shortcut_value_move_cursor_to_beginning,
+    R.string.shortcut_value_move_cursor_to_end,
+    R.string.shortcut_value_select_all,
+    R.string.shortcut_value_clear_selection,
+    R.string.shortcut_value_copy,
+    R.string.shortcut_value_add_to_clipboard,
+    R.string.shortcut_value_cut,
+    R.string.shortcut_value_paste,
+    R.string.shortcut_value_copy_last_spoken_phrase,
+    R.string.shortcut_value_continuous_copy,
+    R.string.shortcut_value_submit_text,
+    R.string.shortcut_value_clear_text,
+    R.string.shortcut_value_character_count,
+    R.string.shortcut_value_read_text_field,
+    R.string.shortcut_value_split_typing,
+    R.string.shortcut_value_braille_keyboard,
+    // Braille commands and app search show over the braille keyboard on purpose.
+    R.string.shortcut_value_braille_commands,
+    R.string.shortcut_value_braille_app_name,
+    R.string.shortcut_value_braille_find_text,
+    R.string.shortcut_value_braille_find_next_text,
+    R.string.shortcut_value_braille_find_previous_text,
+    R.string.shortcut_value_toggle_braille_display,
+    R.string.shortcut_value_pause_or_resume_feedback,
+    R.string.shortcut_value_toggle_voice_feedback,
+    R.string.shortcut_value_control_telling_time,
+    R.string.shortcut_value_control_text_formatting,
+    R.string.shortcut_value_describe_text_formatting,
+    R.string.shortcut_value_announce_current_time_and_date,
+    R.string.shortcut_value_announce_battery_state,
+    R.string.shortcut_value_announce_status,
+    R.string.shortcut_value_announce_current_title,
+    R.string.shortcut_value_announce_phonetic_pronunciation,
+    R.string.shortcut_value_speak_position,
+    R.string.shortcut_value_speak_coordinates,
+    R.string.shortcut_value_copy_item_details,
+    R.string.shortcut_value_copy_screen_tree,
+    R.string.shortcut_value_repeat_last_spoken_phrase,
+    R.string.shortcut_value_repeat_last_spoken_phrase_slower,
+    R.string.shortcut_value_spell_last_spoken_phrase,
+    R.string.shortcut_value_translate_last_spoken_phrase,
+    R.string.shortcut_value_toggle_scripts,
+    R.string.shortcut_value_toggle_focus_indicator,
+    R.string.shortcut_value_toggle_focus_text_inside_items,
+    R.string.shortcut_value_toggle_direct_touch_app,
+    R.string.shortcut_value_toggle_color_inversion,
+    R.string.shortcut_value_toggle_auto_translation,
+    R.string.shortcut_value_toggle_equalizer,
+    R.string.shortcut_value_toggle_switch_languages,
+    R.string.shortcut_value_toggle_identify_languages_from_words,
+    R.string.shortcut_value_speech_pitch_decrease,
+    R.string.shortcut_value_speech_pitch_increase,
+    R.string.shortcut_value_speech_rate_decrease,
+    R.string.shortcut_value_speech_rate_increase,
+    R.string.shortcut_value_previous_voice_profile,
+    R.string.shortcut_value_next_voice_profile,
+    R.string.shortcut_value_previous_gesture_profile,
+    R.string.shortcut_value_next_gesture_profile,
+    R.string.shortcut_value_previous_settings_profile,
+    R.string.shortcut_value_next_settings_profile,
+    R.string.shortcut_value_previous_braille_command_profile,
+    R.string.shortcut_value_next_braille_command_profile,
+  };
+
+  /** Runs {@code action}, over an input overlay as well. */
+  private void runAction(String action, EventId eventId) {
     RecentUserInput.mark();
+    MacroRecorder.onCommand(service, action);
     NotificationReader.onUserAction();
     boolean defaultItemNavigation =
         action.equals(service.getString(R.string.shortcut_value_next))
@@ -552,6 +730,8 @@ public class GestureController {
         keyComboManager.toggleArrowKeyNav();
       }
       result = keyComboManager != null;
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_touch_lock))) {
+      result = TouchLock.toggle();
     } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {
       result = pullToRefresh.refresh(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_media_control))) {
@@ -940,8 +1120,8 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_switch_keyboard))) {
       result = NextKeyboard.switchKeyboard(service, said -> speak(said.toString()));
     } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {
-      AccessibilityNodeInfoCompat node =
-          accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ true);
+      // The field the keyboard types into when focus is on the keyboard.
+      AccessibilityNodeInfoCompat node = getSelectTextFocus(/* speakIfNone= */ false);
       result = pipeline.returnFeedback(eventId, Feedback.edit(node, CLEAR_SELECTION));
     } else if (action.equals(service.getString(R.string.shortcut_value_copy))) {
       AccessibilityNodeInfoCompat node =
@@ -1758,7 +1938,8 @@ public class GestureController {
   private final class BrailleHost implements BrailleScreenInputHost {
     @Override
     public void runCommand(String value) {
-      performAction(value, EVENT_ID_UNTRACKED);
+      // A command typed in braille runs even when it opens a window.
+      runAction(value, EVENT_ID_UNTRACKED);
     }
 
     @Override

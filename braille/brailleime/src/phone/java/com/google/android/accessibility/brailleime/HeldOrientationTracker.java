@@ -34,7 +34,6 @@ import android.os.PowerManager;
 import android.os.SystemClock;
 import android.provider.Settings;
 import androidx.annotation.Nullable;
-import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.braille.common.BrailleCommonUtils;
 import com.google.android.accessibility.brailleime.OrientationMonitor.Orientation;
 import com.google.android.accessibility.brailleime.input.DotsOrientation;
@@ -65,7 +64,7 @@ public final class HeldOrientationTracker {
   /** How far a reading's time may be from now and still be in the clock of elapsed realtime. */
   private static final long MAX_READING_AGE_NS = 5_000_000_000L;
 
-  @VisibleForTesting static final int ORIENTATION_UNKNOWN = -1;
+  static final int ORIENTATION_UNKNOWN = -1;
 
   private static HeldOrientationTracker instance;
 
@@ -146,7 +145,9 @@ public final class HeldOrientationTracker {
 
   private final AccelerometerShare.Reader sharedReader =
       (timeNs, x, y, z) -> {
-        if (timeNs >= lastSharedReadingNs
+        // Before the first reading, the subtraction would overflow and drop every reading.
+        if (lastSharedReadingNs != Long.MIN_VALUE
+            && timeNs >= lastSharedReadingNs
             && timeNs - lastSharedReadingNs < SHARED_READING_INTERVAL_NS) {
           return;
         }
@@ -245,7 +246,6 @@ public final class HeldOrientationTracker {
    * or {@link #ORIENTATION_UNKNOWN} while it lies flat. The same as {@link
    * android.view.OrientationEventListener} gives.
    */
-  @VisibleForTesting
   static int orientationDegrees(float x, float y, float z) {
     float upX = -x;
     float upY = -y;

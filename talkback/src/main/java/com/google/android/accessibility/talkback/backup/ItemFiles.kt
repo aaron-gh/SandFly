@@ -146,6 +146,11 @@ object ItemFiles {
       SandFlyKey.CTRL_META to "Ctrl+Meta",
       SandFlyKey.INSERT to "Insert",
       SandFlyKey.NUMPAD_INSERT to "Numpad Insert",
+      SandFlyKey.SYM to "Sym",
+      SandFlyKey.RIGHT_ALT to "Right Alt",
+      SandFlyKey.CTRL to "Ctrl",
+      SandFlyKey.RIGHT_SHIFT to "Right Shift",
+      SandFlyKey.FUNCTION to "Fn",
     )
 
   /** The names of the SandFly keys in files, for the file reference. */
@@ -227,6 +232,7 @@ object ItemFiles {
         .put("sandFlyKey", SANDFLY_KEYS[sandFlyKey ?: SandFlyKey.META])
         .put("sequences", model.usesSequences())
         .put("arrowsNavigate", model.arrowsNavigate())
+        .put("plainKeys", model.plainKeys())
         .put("shortcuts", shortcuts)
     return withMacros(context, newFile().put(Kind.KEYMAPS.key, JSONArray().put(item)), values)
   }
@@ -673,11 +679,12 @@ object ItemFiles {
         }
         val sequences = item.optBoolean("sequences", false)
         val arrows = item.optBoolean("arrowsNavigate", false)
+        val plainKeys = item.optBoolean("plainKeys", false)
         val existing = CustomKeymaps.all(context).firstOrNull { it.name.equals(name, ignoreCase = true) }
         if (existing != null) {
-          CustomKeymaps.replace(context, existing, sequences, sandFlyKey, shortcuts, arrows)
+          CustomKeymaps.replace(context, existing, sequences, sandFlyKey, shortcuts, arrows, plainKeys)
         } else {
-          CustomKeymaps.create(context, name, sequences, sandFlyKey, shortcuts, arrows)
+          CustomKeymaps.create(context, name, sequences, sandFlyKey, shortcuts, arrows, plainKeys)
         }
         count++
       }

@@ -222,6 +222,7 @@ import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
+import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
 import com.google.android.accessibility.talkback.handwriting.HandwritingKeyboardHost;
@@ -254,6 +255,7 @@ import com.google.android.accessibility.talkback.labeling.CustomLabelManager;
 import com.google.android.accessibility.talkback.labeling.StoragelessLabelManager;
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager;
 import com.google.android.accessibility.talkback.logging.EventLatencyLogger;
+import com.google.android.accessibility.talkback.macros.MacroRecorder;
 import com.google.android.accessibility.talkback.macros.MacroRunner;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleCreator;
 import com.google.android.accessibility.talkback.menurules.NodeMenuRuleProcessor;
@@ -1269,6 +1271,61 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
+  /**
+   * Starts touch lock, which ignores touches while it is on: by the command, automatically, or for
+   * a script.
+   */
+  private void startTouchLock() {
+    ringerModeAndScreenMonitor.addScreenChangedListener(
+        (isInteractive, eventId) -> TouchLock.onScreenChanged(isInteractive));
+    ringerModeAndScreenMonitor.addDeviceUnlockedListener(TouchLock::onDeviceUnlocked);
+    TouchLock.start(
+        this,
+        new TouchLock.Host() {
+          @Override
+          public boolean isAvailable() {
+            return SyntheticTouches.isAvailable();
+          }
+
+          @Override
+          public void speak(CharSequence text) {
+            pipeline
+                .getFeedbackReturner()
+                .returnFeedback(
+                    EVENT_ID_UNTRACKED,
+                    Feedback.speech(
+                        text,
+                        SpeechController.SpeakOptions.create()
+                            .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)));
+          }
+
+          @Override
+          public void lockedTouch(TouchLock.LockedTouchFeedback feedback) {
+            pipeline
+                .getFeedbackReturner()
+                .returnFeedback(
+                    EVENT_ID_UNTRACKED,
+                    feedback == TouchLock.LockedTouchFeedback.SOUND
+                        ? Feedback.sound(R.raw.typo)
+                        : Feedback.vibration(R.array.typo_pattern));
+          }
+
+          @Override
+          public void onLockChanged(boolean locked) {
+            if (passThroughModeActor != null) {
+              passThroughModeActor.setTouchLocked(locked);
+            }
+          }
+
+          @Override
+          public void onVolumeKeysTaken() {
+            if (volumeKeyCommands != null) {
+              volumeKeyCommands.cancel();
+            }
+          }
+        });
+  }
+
   /** Says why the model on the phone could not answer, such as low memory. */
   private void speakOnDeviceAiProblem(String text) {
     if (pipeline != null) {
@@ -1343,6 +1400,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       ScrollEventInterpreter.onTouchInteractionStart();
     }
+    MacroRecorder.onAccessibilityEvent(this, event);
     if (scriptHost != null) {
       scriptHost.onAccessibilityEvent(event);
     }
@@ -1444,11 +1502,14 @@ public class TalkBackService extends AccessibilityServiceCompat
         || eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_END) {
       RecentUserInput.mark();
     }
-    if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
+    // A touch while touch is locked does nothing, so it doesn't end a mute or stop speech either.
+    boolean touchLocked = TouchLock.isLocked();
+    if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START && !touchLocked) {
       OutputMute.onUserInput("touch");
     }
     if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START
-        && gestureController != null) {
+        && gestureController != null
+        && !touchLocked) {
       gestureController.onUserInputStarted();
     }
     if (eventType == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
@@ -1754,6 +1815,10 @@ public class TalkBackService extends AccessibilityServiceCompat
   protected boolean onKeyEventInternal(KeyEvent keyEvent) {
     if (volumeKeyCommands != null) {
       volumeKeyCommands.onKeyEventSeen(keyEvent);
+    }
+    // Both volume keys unlock touch, whatever else is going on.
+    if (TouchLock.onKeyEvent(keyEvent)) {
+      return true;
     }
     if (keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       RecentUserInput.mark();
@@ -3212,6 +3277,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     ringerModeAndScreenMonitor.addScreenChangedListener(proximitySensorMonitor);
     accessibilityEventProcessor.setRingerModeAndScreenMonitor(ringerModeAndScreenMonitor);
+    startTouchLock();
 
     headphoneStateMonitor = new HeadphoneStateMonitor(this);
 
@@ -3728,6 +3794,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     return isBrailleKeyboardActivated();
   }
 
+  /** Whether the braille keyboard takes touches on the screen, not typing from a display. */
+  public boolean isOnScreenBrailleKeyboardShown() {
+    BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();
+    return brailleIme != null
+        && brailleIme.getBrailleTyping() == BrailleImeForTalkBack.BrailleTyping.ON_SCREEN;
+  }
+
   /**
    * Braille commands, app search and recording of braille cells on the screen, or null while
    * SandFly is off.
@@ -4204,6 +4277,7 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (proximitySensorMonitor != null) {
       proximitySensorMonitor.shutdown();
     }
+    TouchLock.stop();
     if (backTapCommands != null) {
       backTapCommands.shutdown();
     }

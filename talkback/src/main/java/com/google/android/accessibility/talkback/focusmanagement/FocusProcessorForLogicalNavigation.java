@@ -4692,7 +4692,7 @@ public class FocusProcessorForLogicalNavigation {
 
     // A carousel that only scrolls sideways and shows one page at a time works as a pager: a swipe
     // to the next or previous item goes past it, as for a ViewPager, rather than turning its page
-    // (report 383, Lost Vault's zones). Carousels showing several items still scroll.
+    // (report 383). Carousels showing several items still scroll.
     if ((logicalDirection == SEARCH_FOCUS_FORWARD || logicalDirection == SEARCH_FOCUS_BACKWARD)
         && AccessibilityNodeInfoUtils.scrollsOnlySideways(scrollableNode)
         && showsOnePage(scrollableNode, pivot)) {

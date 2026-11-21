@@ -1265,7 +1265,7 @@
     <string name="edge_gestures_title">Edges</string>
     <!-- Title of the group of gestures that tap one finger in a corner of the screen. [CHAR_LIMIT=40] -->
     <string name="corner_gestures_title">Corners</string>
-    <!-- Title of the group of gestures that tap with several fingers and then swipe with as many fingers. [CHAR_LIMIT=40] -->
+    <!-- Title of the group of gestures that tap with several fingers and then swipe with as many fingers or with one finger. [CHAR_LIMIT=40] -->
     <string name="tap_swipe_gestures_title">Tap, then swipe</string>
     <!-- Label for the group of two finger gestures. [CHAR_LIMIT=60] -->
     <string name="two_finger_gestures_title">2 fingers</string>
@@ -1342,6 +1342,10 @@
     <string name="value_jaws_keymap">JAWS keymap</string>
     <!-- Name of the keymap with Orca's keyboard commands. Orca is a screen reader for Linux; don't translate it. [CHAR LIMIT=40] -->
     <string name="value_orca_keymap">Orca keymap</string>
+    <!-- Keymap for phones with a built-in keyboard and no Ctrl or Meta key, such as the Unihertz Titan, BlackBerry KEY2 and Zinwa Q25. [CHAR LIMIT=40] -->
+    <string name="value_keyboard_phone_keymap">Keyboard phone keymap</string>
+    <!-- Keymap for keyboard phones whose shortcuts are mostly single keys, which work outside text fields. [CHAR LIMIT=40] -->
+    <string name="value_keyboard_phone_single_key_keymap">Keyboard phone single-key keymap</string>
     <!-- Name of the keymap that keeps an older version's Default keymap, with the user's shortcuts. [CHAR LIMIT=40] -->
     <string name="keycombo_custom_keymap_default_name">Custom</string>
     <!-- Setting that makes a keymap of the user's own, as a copy of the keymap in use. [CHAR LIMIT=40] -->
@@ -1704,6 +1708,16 @@
     <string name="keycombo_key_modifier_insert">Insert</string>
     <!-- The 0 key of the number pad with Num Lock off, where it is Insert. e.g. Numpad Insert + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_numpad_insert">Numpad Insert</string>
+    <!-- The Sym key of keyboard phones such as the Unihertz Titan and BlackBerry KEY2. e.g. Sym + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_sym">Sym</string>
+    <!-- The right Alt key, which is the Sym key of keyboard phones such as the Zinwa Q25. e.g. Right Alt + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_right_alt">Right Alt</string>
+    <!-- The right Shift key, as the SandFly key of a keyboard phone. e.g. Right Shift + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_right_shift">Right Shift</string>
+    <!-- The Fn key, such as the Speed key of the BlackBerry KEY2, as the SandFly key. e.g. Fn + A. [CHAR LIMIT=20] -->
+    <string name="keycombo_key_modifier_function">Fn</string>
+    <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
+    <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
     <string name="keycombo_key_arrow_right">Arrow Right</string>
     <!-- String representation of arrow left key. e.g. Meta + Arrow Left. -->
@@ -3354,6 +3368,30 @@
     <string name="title_pref_shortcut_4finger_3tap_swipe_left">Triple-tap, then swipe left with 4 fingers</string>
     <!-- Label for the preference that assigns an action to four fingers tapping three times and then swiping right. [CHAR_LIMIT=75] -->
     <string name="title_pref_shortcut_4finger_3tap_swipe_right">Triple-tap, then swipe right with 4 fingers</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping up. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Tap with 2 fingers, then swipe up</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping down. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Tap with 2 fingers, then swipe down</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping left. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Tap with 2 fingers, then swipe left</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping once and then one finger swiping right. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Tap with 2 fingers, then swipe right</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping up. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Double-tap with 2 fingers, then swipe up</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping down. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Double-tap with 2 fingers, then swipe down</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping left. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Double-tap with 2 fingers, then swipe left</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping twice and then one finger swiping right. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Double-tap with 2 fingers, then swipe right</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping up. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Triple-tap with 2 fingers, then swipe up</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping down. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Triple-tap with 2 fingers, then swipe down</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping left. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Triple-tap with 2 fingers, then swipe left</string>
+    <!-- Label for the preference that assigns an action to two fingers tapping three times and then one finger swiping right. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Triple-tap with 2 fingers, then swipe right</string>
 
     <!-- Label for the preference that assigns an action to the "three-finger triple-tap and hold" gesture. [CHAR_LIMIT=90] -->
     <string name="title_pref_shortcut_3finger_3tap_hold">Triple-tap and hold with 3 fingers</string>

@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.keyboard
 
 import android.content.Context
 import android.view.KeyEvent
+import android.os.Looper
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
@@ -26,6 +27,8 @@ import com.google.android.accessibility.talkback.tutorial.TutorialHooks
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.ServiceStateListener
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import java.time.Duration
+import org.robolectric.Shadows.shadowOf
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -405,5 +408,349 @@ class SandFlyKeyTest {
     )
     assertFalse(manager.isKeyboardInputOff)
     assertEquals(emptyList<String?>(), keys)
+  }
+
+  /** A key's name as shortcuts are spoken, which Robolectric gives as its number. */
+  private fun name(keyCode: Int) =
+    KeyEvent.keyCodeToString(keyCode).removePrefix("KEYCODE_").replace('_', ' ')
+
+  @Test
+  fun keyboardPhoneSymAloneMovesAndShiftSymMovesBack() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+    assertTrue(manager.up(KeyEvent.KEYCODE_SYM))
+    val shift = KeyEvent.META_SHIFT_ON or KeyEvent.META_SHIFT_LEFT_ON
+    assertFalse(manager.down(KeyEvent.KEYCODE_SHIFT_LEFT, shift))
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM, shift))
+    manager.up(KeyEvent.KEYCODE_SYM, shift)
+    manager.up(KeyEvent.KEYCODE_SHIFT_LEFT)
+    assertEquals(listOf<String?>("Sym", "Sym + Shift"), keys)
+    // Sym held with a key is that key's shortcut, not Sym alone.
+    manager.down(KeyEvent.KEYCODE_SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_K))
+    manager.up(KeyEvent.KEYCODE_K)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals("Sym + " + name(KeyEvent.KEYCODE_K), keys.last())
+    assertEquals(3, keys.size)
+  }
+
+  @Test
+  fun keyboardPhoneLettersSpaceAndEnterAloneAreTyping() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    for (keyCode in listOf(KeyEvent.KEYCODE_T, KeyEvent.KEYCODE_SPACE, KeyEvent.KEYCODE_ENTER)) {
+      assertFalse(manager.down(keyCode))
+      assertFalse(manager.up(keyCode))
+      time += 1000
+    }
+    assertTrue(keys.isEmpty())
+  }
+
+  @Test
+  fun keyboardPhonePressesWorkInATextFieldBeingEdited() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    editTextField(manager)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+    assertTrue(manager.up(KeyEvent.KEYCODE_SYM))
+    manager.down(KeyEvent.KEYCODE_SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_K))
+    manager.up(KeyEvent.KEYCODE_K)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(listOf<String?>("Sym", "Sym + " + name(KeyEvent.KEYCODE_K)), keys)
+  }
+
+  /** Makes [manager] find input focus on a text field and SandFly focus on another item. */
+  private fun focusAwayFromTextField(manager: KeyComboManager) {
+    val field =
+      AccessibilityNodeInfoCompat.wrap(
+        AccessibilityNodeInfo.obtain().apply {
+          isFocused = true
+          isEditable = true
+          text = "field"
+        }
+      )
+    val option =
+      AccessibilityNodeInfoCompat.wrap(AccessibilityNodeInfo.obtain().apply { text = "option" })
+    val monitor =
+      object : AccessibilityFocusMonitor(null, null, null) {
+        override fun getInputFocus() = field
+
+        override fun getAccessibilityFocus(useInputFocusIfEmpty: Boolean) = option
+      }
+    KeyComboManager::class.java.getDeclaredField("accessibilityFocusMonitor").apply {
+      isAccessible = true
+      set(manager, monitor)
+    }
+  }
+
+  /** Presses Sym + K, a SandFly shortcut in both keyboard phone keymaps, to move around. */
+  private fun KeyComboManager.moveWithSym() {
+    down(KeyEvent.KEYCODE_SYM)
+    assertTrue(down(KeyEvent.KEYCODE_K))
+    up(KeyEvent.KEYCODE_K)
+    up(KeyEvent.KEYCODE_SYM)
+  }
+
+  @Test
+  fun keyboardPhoneEnterActivatesAfterMovingAndSendsAfterTyping() {
+    for (keymap in listOf(Keymap.KEYBOARD_PHONE, Keymap.KEYBOARD_PHONE_SINGLE_KEYS)) {
+      keys.clear()
+      val manager = manager(keymap, SandFlyKey.SYM)
+      focusAwayFromTextField(manager)
+      // Not moved yet, with a text field taking input: Enter goes to it.
+      assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
+      manager.up(KeyEvent.KEYCODE_ENTER)
+      // Moved to an option while a draft waits in the text field: Enter activates it.
+      time += 1000
+      manager.moveWithSym()
+      assertTrue(manager.down(KeyEvent.KEYCODE_ENTER))
+      manager.up(KeyEvent.KEYCODE_ENTER)
+      assertEquals(name(KeyEvent.KEYCODE_ENTER), keys.last())
+      assertEquals(2, keys.size)
+      // Typed since: Enter goes to the app, which sends.
+      time += 1000
+      assertFalse(manager.down(KeyEvent.KEYCODE_O))
+      manager.up(KeyEvent.KEYCODE_O)
+      time += 1000
+      assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
+      manager.up(KeyEvent.KEYCODE_ENTER)
+      assertEquals(2, keys.size)
+    }
+  }
+
+  @Test
+  fun singleKeysTypeIntoTheTextFieldWithInputFocusUntilSandFlyMoves() {
+    val manager = manager(Keymap.KEYBOARD_PHONE_SINGLE_KEYS, SandFlyKey.SYM)
+    focusAwayFromTextField(manager)
+    // M, the SandFly menu, types an m into the message instead.
+    assertFalse(manager.down(KeyEvent.KEYCODE_M))
+    manager.up(KeyEvent.KEYCODE_M)
+    assertTrue(keys.isEmpty())
+    // After a SandFly shortcut, single keys are shortcuts until a key is typed again.
+    time += 1000
+    manager.moveWithSym()
+    assertTrue(manager.down(KeyEvent.KEYCODE_M))
+    manager.up(KeyEvent.KEYCODE_M)
+    assertEquals(name(KeyEvent.KEYCODE_M), keys.last())
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_O))
+    manager.up(KeyEvent.KEYCODE_O)
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_M))
+    assertEquals(2, keys.size)
+  }
+
+  @Test
+  fun keyboardPhoneEnterGoesToTheTextFieldWithSandFlyFocus() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    editTextField(manager)
+    manager.moveWithSym()
+    keys.clear()
+    assertFalse(manager.down(KeyEvent.KEYCODE_ENTER))
+    assertTrue(keys.isEmpty())
+  }
+
+  @Test
+  fun keyboardPhoneAltTwiceTakesOnlyTheSecondPress() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    val alt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_RIGHT_ON
+    assertFalse(manager.down(KeyEvent.KEYCODE_ALT_RIGHT, alt))
+    assertFalse(manager.up(KeyEvent.KEYCODE_ALT_RIGHT))
+    assertTrue(manager.down(KeyEvent.KEYCODE_ALT_RIGHT, alt))
+    assertTrue(manager.up(KeyEvent.KEYCODE_ALT_RIGHT))
+    assertEquals(listOf<String?>("Alt twice"), keys)
+  }
+
+  @Test
+  fun keyboardPhoneAltShiftHeldChoosesTheNextReadingControl() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    val alt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_RIGHT_ON
+    val altShift = alt or KeyEvent.META_SHIFT_ON or KeyEvent.META_SHIFT_LEFT_ON
+    manager.down(KeyEvent.KEYCODE_ALT_RIGHT, alt)
+    manager.down(KeyEvent.KEYCODE_SHIFT_LEFT, altShift)
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(KeyPresses.HOLD_MS + 50))
+    assertEquals(listOf<String?>("Alt + Shift held"), keys)
+    manager.up(KeyEvent.KEYCODE_SHIFT_LEFT, alt)
+    manager.up(KeyEvent.KEYCODE_ALT_RIGHT)
+    assertEquals(1, keys.size)
+    // Alt + Shift pressed briefly does nothing.
+    time += 1000
+    manager.down(KeyEvent.KEYCODE_ALT_RIGHT, alt)
+    manager.down(KeyEvent.KEYCODE_SHIFT_LEFT, altShift)
+    manager.up(KeyEvent.KEYCODE_SHIFT_LEFT, alt)
+    manager.up(KeyEvent.KEYCODE_ALT_RIGHT)
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(KeyPresses.HOLD_MS + 50))
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun keyboardPhoneSingleKeyKeymapTypesInTextFieldsAndSymLeavesThem() {
+    val manager = manager(Keymap.KEYBOARD_PHONE_SINGLE_KEYS, SandFlyKey.SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SPACE))
+    manager.up(KeyEvent.KEYCODE_SPACE)
+    assertTrue(manager.down(KeyEvent.KEYCODE_K))
+    manager.up(KeyEvent.KEYCODE_K)
+    // O has no shortcut: typing.
+    assertFalse(manager.down(KeyEvent.KEYCODE_O))
+    manager.up(KeyEvent.KEYCODE_O)
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_SPACE), name(KeyEvent.KEYCODE_K)), keys)
+
+    editTextField(manager)
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_SPACE))
+    manager.up(KeyEvent.KEYCODE_SPACE)
+    // Sym + Space moves out of the text field.
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+    assertTrue(manager.down(KeyEvent.KEYCODE_SPACE))
+    manager.up(KeyEvent.KEYCODE_SPACE)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(name(KeyEvent.KEYCODE_SPACE), keys.last())
+    assertEquals(3, keys.size)
+  }
+
+  @Test
+  fun keyboardPhonePassNextKeyGivesSymToTheKeyboard() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    editTextField(manager)
+    manager.down(KeyEvent.KEYCODE_SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_P))
+    // Sym + P is Pass the next key, which the tutorial hook here takes before it runs.
+    assertEquals(listOf<String?>("Sym + " + name(KeyEvent.KEYCODE_P)), keys)
+    val state = KeyComboManager::class.java.getDeclaredField("keyComboPassThroughState")
+    state.isAccessible = true
+    val states = state.type.enumConstants!!.associateBy { (it as Enum<*>).name }
+    state.set(manager, states["PENDING_PASS_THROUGH_SHORTCUT_RELEASE"])
+    manager.up(KeyEvent.KEYCODE_P)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(states["ACTIVE"], state.get(manager))
+    // The next press, Sym with a letter for a symbol, goes to the keyboard.
+    assertFalse(manager.down(KeyEvent.KEYCODE_SYM))
+    assertFalse(manager.down(KeyEvent.KEYCODE_A))
+    manager.up(KeyEvent.KEYCODE_A)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun keyboardPhoneCtrlAsSandFlyKeyLeavesSymToTheKeyboard() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.CTRL)
+    editTextField(manager)
+    val ctrl = KeyEvent.META_CTRL_ON or KeyEvent.META_CTRL_LEFT_ON
+    assertTrue(manager.down(KeyEvent.KEYCODE_CTRL_LEFT, ctrl))
+    assertTrue(manager.up(KeyEvent.KEYCODE_CTRL_LEFT))
+    assertEquals(listOf<String?>("Ctrl"), keys)
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_SYM))
+    assertFalse(manager.down(KeyEvent.KEYCODE_A))
+    manager.up(KeyEvent.KEYCODE_A)
+    assertFalse(manager.up(KeyEvent.KEYCODE_SYM))
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun rightShiftHeldIsTheSandFlyKeyWithoutShift() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.RIGHT_SHIFT)
+    val rightShift = KeyEvent.META_SHIFT_ON or KeyEvent.META_SHIFT_RIGHT_ON
+    assertTrue(manager.down(KeyEvent.KEYCODE_SHIFT_RIGHT, rightShift))
+    assertTrue(manager.down(KeyEvent.KEYCODE_K, rightShift))
+    manager.up(KeyEvent.KEYCODE_K, rightShift)
+    manager.up(KeyEvent.KEYCODE_SHIFT_RIGHT)
+    assertEquals(listOf<String?>("Right Shift + " + name(KeyEvent.KEYCODE_K)), keys)
+  }
+
+  @Test
+  fun keyHeldDownRunsItsShortcutOutsideTypingAndPressedBrieflyItsOwn() {
+    val manager = manager(Keymap.KEYBOARD_PHONE_SINGLE_KEYS, SandFlyKey.SYM)
+    val readFromTop = context.getString(R.string.keycombo_shortcut_other_read_from_top)
+    val kHeld = KeyCombo(0, 0, KeyEvent.KEYCODE_K, false).withPressType(KeyCombo.HELD_DOWN)
+    manager.keyComboModel.saveKeyCombo(readFromTop, kHeld)
+    // Held: its shortcut, once, and the key doesn't reach the app.
+    assertTrue(manager.down(KeyEvent.KEYCODE_K))
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(KeyPresses.HOLD_MS + 50))
+    assertTrue(manager.up(KeyEvent.KEYCODE_K))
+    assertEquals(listOf<String?>(name(KeyEvent.KEYCODE_K) + " held"), keys)
+    // Pressed briefly: K's own shortcut.
+    time += 1000
+    assertTrue(manager.down(KeyEvent.KEYCODE_K))
+    assertTrue(manager.up(KeyEvent.KEYCODE_K))
+    assertEquals(name(KeyEvent.KEYCODE_K), keys.last())
+    // Typing: K goes to the text field, held or not.
+    editTextField(manager)
+    time += 1000
+    assertFalse(manager.down(KeyEvent.KEYCODE_K))
+    shadowOf(Looper.getMainLooper()).idleFor(Duration.ofMillis(KeyPresses.HOLD_MS + 50))
+    manager.up(KeyEvent.KEYCODE_K)
+    assertEquals(2, keys.size)
+  }
+
+  @Test
+  fun symInShortcutsWhereAltIsTheSandFlyKey() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.ALT)
+    val model = manager.keyComboModel
+    val sym = KeyEvent.META_SYM_ON
+    model.saveKeyCombo(
+      context.getString(R.string.keycombo_shortcut_other_read_from_top),
+      KeyCombo(sym, 0, KeyEvent.KEYCODE_K, false),
+    )
+    model.saveKeyCombo(
+      context.getString(R.string.keycombo_shortcut_global_announce_battery_state),
+      KeyCombo.modifierKeys(sym, false),
+    )
+    editTextField(manager)
+    // Sym + K works in a text field too. Sym alone has a shortcut, so Sym's press is SandFly's.
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM, sym))
+    assertTrue(manager.down(KeyEvent.KEYCODE_K, sym))
+    manager.up(KeyEvent.KEYCODE_K, sym)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    // Sym alone.
+    time += 1000
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM, sym))
+    assertTrue(manager.up(KeyEvent.KEYCODE_SYM))
+    assertEquals(listOf<String?>("Sym + " + name(KeyEvent.KEYCODE_K), "Sym"), keys)
+  }
+
+  @Test
+  fun keyboardPhoneSandFlyKeyShortcuts() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+    assertTrue(manager.down(KeyEvent.KEYCODE_SYM))
+    assertTrue(manager.down(KeyEvent.KEYCODE_P))
+    manager.up(KeyEvent.KEYCODE_P)
+    manager.up(KeyEvent.KEYCODE_SYM)
+    assertEquals(listOf<String?>("Sym + " + name(KeyEvent.KEYCODE_P)), keys)
+    // P alone has no shortcut.
+    assertFalse(manager.down(KeyEvent.KEYCODE_P))
+  }
+
+  @Test
+  fun rightAltHeldIsTheSandFlyKeyWithoutAlt() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.RIGHT_ALT)
+    editTextField(manager)
+    val rightAlt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_RIGHT_ON
+    assertTrue(manager.down(KeyEvent.KEYCODE_ALT_RIGHT, rightAlt))
+    assertTrue(manager.down(KeyEvent.KEYCODE_K, rightAlt))
+    manager.up(KeyEvent.KEYCODE_K, rightAlt)
+    manager.up(KeyEvent.KEYCODE_ALT_RIGHT)
+    assertEquals(listOf<String?>("Right Alt + " + name(KeyEvent.KEYCODE_K)), keys)
+
+    // Left Alt with a letter types a digit.
+    val leftAlt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_LEFT_ON
+    assertFalse(manager.down(KeyEvent.KEYCODE_ALT_LEFT, leftAlt))
+    assertFalse(manager.down(KeyEvent.KEYCODE_K, leftAlt))
+    assertEquals(1, keys.size)
+  }
+
+  @Test
+  fun altAsKeyboardPhoneSandFlyKeyTypesInTextFields() {
+    val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.ALT)
+    editTextField(manager)
+    val alt = KeyEvent.META_ALT_ON or KeyEvent.META_ALT_RIGHT_ON
+    manager.down(KeyEvent.KEYCODE_ALT_RIGHT, alt)
+    // Alt + U types 1 on the Unihertz Titan.
+    assertFalse(manager.down(KeyEvent.KEYCODE_U, alt))
+    manager.up(KeyEvent.KEYCODE_U, alt)
+    // Alt + Backspace is Back.
+    assertTrue(manager.down(KeyEvent.KEYCODE_DEL, alt))
+    manager.up(KeyEvent.KEYCODE_DEL, alt)
+    manager.up(KeyEvent.KEYCODE_ALT_RIGHT)
+    assertEquals(listOf<String?>("Alt + Backspace"), keys)
   }
 }

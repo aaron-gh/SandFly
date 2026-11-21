@@ -267,8 +267,11 @@ public class CustomLabelManager extends TalkBackLabelManager {
   @Override
   public @Nullable Label getLabelForViewIdFromCache(String resourceName) {
     // Asked for every item described, so without labels or a resource ID it returns at once, and
-    // other names, such as Compose test tags, aren't logged as unreadable.
-    if (!isInitialized()
+    // other names, such as Compose test tags, aren't logged as unreadable. The speech cache for
+    // keyboard keys describes them on its own thread, where the cache, kept on the main thread,
+    // can't be read.
+    if (Looper.myLooper() != Looper.getMainLooper()
+        || !isInitialized()
         || labelCache.isEmpty()
         || resourceName == null
         || !resourceName.contains(":id/")) {

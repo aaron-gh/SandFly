@@ -436,4 +436,22 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macro</item>
         <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> macros</item>
     </plurals>
+    <!-- Button on a macro's screen that starts recording steps as the user does them in apps. [CHAR LIMIT=40] -->
+    <string name="macro_record">Record steps</string>
+    <!-- Command that makes a new macro and starts recording its steps; while recording, it ends the recording. [CHAR LIMIT=40] -->
+    <string name="macro_record_new">Record a macro</string>
+    <!-- Notification shown while macro steps are recorded; opening it ends the recording. %1$s: the macro's name. -->
+    <string name="macro_recording_notification">Recording macro steps: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <!-- Shown when macro steps start being recorded. -->
+    <string name="macro_recording_toast">Recording. To stop, run Record a macro or Stop macro, or open the Recording macro steps notification.</string>
+    <!-- Title of the dialog that lists the steps recorded for a macro, with Save, Record again and Cancel. [CHAR LIMIT=40] -->
+    <string name="macro_recorded">Recorded steps</string>
+    <!-- Line under the recorded steps when text was typed in a password field. -->
+    <string name="macro_recorded_no_passwords">Text typed in password fields is not recorded.</string>
+    <!-- Shown when recorded steps would make a macro longer than it can be. %1$d: the most steps. -->
+    <string name="macro_recorded_too_many">Not added. A macro has at most <xliff:g id="count" example="200">%1$d</xliff:g> steps.</string>
+    <!-- Name of a macro made by the Record a macro command. %1$s: the date and time. [CHAR LIMIT=40] -->
+    <string name="macro_recorded_name">Recorded <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <!-- The item of a scroll step without one: the largest list on screen. [CHAR LIMIT=40] -->
+    <string name="macro_list_on_screen">List on screen</string>
 </resources>

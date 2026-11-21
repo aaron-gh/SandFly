@@ -477,9 +477,7 @@ public class TextEventInterpreter {
     final @Nullable CharSequence text;
     if (isGranularTraversal) {
       // Gets text from node instead of event to prevent missing locale spans.
-      @Nullable AccessibilityNodeInfoCompat nodeToAnnounce =
-          AccessibilityEventUtils.sourceCompat(event);
-      text = AccessibilityNodeInfoUtils.getNodeText(nodeToAnnounce);
+      text = getTraversedNodeText(AccessibilityEventUtils.sourceCompat(event));
     } else {
       // Only use the first item from getText().
       text = getEventText(event);
@@ -716,10 +714,30 @@ public class TextEventInterpreter {
     }
 
     // Update history for events which could not be interpreted in the above mentioned categories.
-    mHistory.setLastFromIndex(event.getFromIndex());
-    mHistory.setLastToIndex(event.getToIndex());
+    // The indices of a traversal event are the text moved over, not a selection.
+    if (eventTypeInt == AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED) {
+      mHistory.setLastFromIndex(event.getFromIndex());
+      mHistory.setLastToIndex(event.getToIndex());
+    }
 
     return interpretation.setInvalid("Unhandled selection event.");
+  }
+
+  /**
+   * Returns the text the indices of a {@link
+   * AccessibilityEvent#TYPE_VIEW_TEXT_TRAVERSED_AT_MOVEMENT_GRANULARITY} event refer to. The
+   * framework moves through the text of an edit text, also when the field has a content
+   * description, as the message fields of Signal and Messenger have.
+   */
+  @VisibleForTesting
+  static @Nullable CharSequence getTraversedNodeText(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node != null && node.isEditable()) {
+      @Nullable CharSequence fieldText = AccessibilityNodeInfoUtils.getText(node);
+      if (!TextUtils.isEmpty(fieldText)) {
+        return fieldText;
+      }
+    }
+    return AccessibilityNodeInfoUtils.getNodeText(node);
   }
 
   /**

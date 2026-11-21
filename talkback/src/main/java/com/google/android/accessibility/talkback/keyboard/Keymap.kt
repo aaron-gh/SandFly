@@ -20,6 +20,21 @@ import androidx.annotation.StringRes
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
+/**
+ * The keys a keyboard phone keymap can be pressed with: Sym first, then keys that leave Sym to the
+ * keyboard where the phone has them.
+ */
+private val KEYBOARD_PHONE_SANDFLY_KEYS =
+  listOf(
+    SandFlyKey.SYM,
+    SandFlyKey.CTRL,
+    SandFlyKey.RIGHT_SHIFT,
+    SandFlyKey.FUNCTION,
+    SandFlyKey.RIGHT_ALT,
+    SandFlyKey.ALT,
+    SandFlyKey.META,
+  )
+
 /** A set of default keyboard shortcuts, with the SandFly keys it can be used with. */
 enum class Keymap(
   @StringRes val valueRes: Int,
@@ -42,6 +57,12 @@ enum class Keymap(
    * and text fields being edited, as a computer screen reader's do.
    */
   val arrowsNavigate: Boolean = false,
+  /**
+   * Whether it is for keyboards without Ctrl, Meta or arrow keys: its shortcuts are single keys,
+   * which work outside text fields being edited, and the SandFly key with one of them does the same
+   * anywhere. Shortcuts can be recorded without the SandFly key.
+   */
+  val plainKeys: Boolean = false,
 ) {
   SANDFLY(
     R.string.new_keymap_entry_value,
@@ -91,19 +112,47 @@ enum class Keymap(
     OrcaKeymap,
     usesSequences = false,
     arrowsNavigate = true,
+  ),
+  KEYBOARD_PHONE(
+    R.string.keyboard_phone_keymap_entry_value,
+    R.string.value_keyboard_phone_keymap,
+    "keyboard_phone_key_combo_model",
+    "pref_keyboard_phone_keymap_trigger_modifier",
+    KEYBOARD_PHONE_SANDFLY_KEYS,
+    KeyboardPhoneKeymap,
+    usesSequences = false,
+    arrowsNavigate = true,
+    plainKeys = true,
+  ),
+  KEYBOARD_PHONE_SINGLE_KEYS(
+    R.string.keyboard_phone_single_key_keymap_entry_value,
+    R.string.value_keyboard_phone_single_key_keymap,
+    "keyboard_phone_single_key_combo_model",
+    "pref_keyboard_phone_single_keymap_trigger_modifier",
+    KEYBOARD_PHONE_SANDFLY_KEYS,
+    KeyboardPhoneSingleKeyKeymap,
+    usesSequences = false,
+    arrowsNavigate = true,
+    plainKeys = true,
   );
 
   /** The SandFly key its defaults are written for. */
   val nativeKey: SandFlyKey
     get() = sandFlyKeys[0]
 
-  /** The SandFly key the user chose for this keymap, or its own. */
+  /**
+   * The SandFly key the user chose for this keymap, or its own: for the keyboard phone keymap, the
+   * key that the phone's keyboard has.
+   */
   fun sandFlyKey(context: Context): SandFlyKey =
     SandFlyKey.fromValue(
         context,
         SharedPreferencesUtils.getSharedPreferences(context).getString(sandFlyKeyPref, null),
       )
-      ?.takeIf { it in sandFlyKeys } ?: nativeKey
+      ?.takeIf { it in sandFlyKeys } ?: defaultSandFlyKey(context)
+
+  private fun defaultSandFlyKey(context: Context): SandFlyKey =
+    if (plainKeys) KeyboardPhones.sandFlyKey(context) else nativeKey
 
   /** Where shortcuts are saved with [sandFlyKey], so each SandFly key keeps its own changes. */
   fun persisterPrefix(sandFlyKey: SandFlyKey): String =
@@ -115,5 +164,9 @@ enum class Keymap(
     @JvmStatic
     fun of(context: Context, value: String?): Keymap =
       entries.firstOrNull { context.getString(it.valueRes) == value } ?: SANDFLY
+
+    /** The keymap used until one is chosen: the keyboard phone keymap on keyboard phones. */
+    @JvmStatic
+    fun defaultKeymap(): Keymap = if (KeyboardPhones.isKeyboardPhone()) KEYBOARD_PHONE else SANDFLY
   }
 }

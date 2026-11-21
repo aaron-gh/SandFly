@@ -452,4 +452,66 @@ class KeymapTest {
     assertFalse(model.keyComboMap.containsKey(repeatOld))
     CustomKeymaps.delete(context, custom)
   }
+
+  @Test
+  fun keyboardPhoneKeymapTakesKeysWithoutTheSandFlyKey() {
+    val phone = NewKeyComboModel(context, Keymap.KEYBOARD_PHONE)
+    assertTrue(phone.plainKeys())
+    assertTrue(phone.isEligibleKeyCombo(KeyCombo(0, 0, KeyEvent.KEYCODE_Y, false)))
+    assertEquals(
+      KeyCombo.modifierKeys(0, true),
+      phone.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_default)),
+    )
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_ENTER, false),
+      phone.getKeyComboForKey(context.getString(R.string.keycombo_shortcut_perform_click)),
+    )
+    val sandFly = NewKeyComboModel(context, Keymap.SANDFLY)
+    assertFalse(sandFly.plainKeys())
+    assertFalse(sandFly.isEligibleKeyCombo(KeyCombo(0, 0, KeyEvent.KEYCODE_Y, false)))
+  }
+
+  @Test
+  fun keyboardPhones() {
+    assertTrue(KeyboardPhones.isKeyboardPhone("Unihertz", "Titan Pocket"))
+    assertTrue(KeyboardPhones.isKeyboardPhone("Unihertz", "TITAN 2"))
+    assertFalse(KeyboardPhones.isKeyboardPhone("Unihertz", "Jelly Star"))
+    assertTrue(KeyboardPhones.isKeyboardPhone("BlackBerry", "BBF100-1"))
+    assertFalse(KeyboardPhones.isKeyboardPhone("BlackBerry", "BBD100-1"))
+    assertTrue(KeyboardPhones.isKeyboardPhone("Zinwa", "Q25"))
+    assertFalse(KeyboardPhones.isKeyboardPhone("Google", "Pixel 9"))
+    // Keys typing doesn't need come first, so that Sym stays the keyboard's.
+    assertEquals(SandFlyKey.RIGHT_SHIFT, KeyboardPhones.sandFlyKey("Zinwa", "Q25", hasSym = false))
+    assertEquals(
+      SandFlyKey.RIGHT_SHIFT,
+      KeyboardPhones.sandFlyKey("Unihertz", "Titan 2 Elite", hasSym = true, fnIsCtrl = true),
+    )
+    assertEquals(
+      SandFlyKey.CTRL,
+      KeyboardPhones.sandFlyKey("Unihertz", "Titan 2", hasSym = true, fnIsCtrl = true),
+    )
+    assertEquals(SandFlyKey.SYM, KeyboardPhones.sandFlyKey("Unihertz", "Titan 2", hasSym = true))
+    assertEquals(
+      SandFlyKey.RIGHT_SHIFT,
+      KeyboardPhones.sandFlyKey("BlackBerry", "BBF100-1", hasSym = true, hasRightShift = true),
+    )
+    assertEquals(SandFlyKey.SYM, KeyboardPhones.sandFlyKey("BlackBerry", "BBF100-1", hasSym = true))
+    assertEquals(SandFlyKey.ALT, KeyboardPhones.sandFlyKey("Unihertz", "Titan", hasSym = false))
+  }
+
+  @Test
+  fun keyboardPhoneDefaultsNeedNoCtrlOrMeta() {
+    val model = NewKeyComboModel(context, Keymap.KEYBOARD_PHONE)
+    for (key in model.keyComboMap.keys) {
+      val combo = model.getDefaultKeyCombo(key)
+      val modifiers = combo.modifiers
+      assertEquals(key, 0, modifiers and (KeyEvent.META_CTRL_ON or KeyEvent.META_META_ON))
+      val keyCode = combo.keyCode
+      assertFalse(key, keyCode in KeyEvent.KEYCODE_DPAD_UP..KeyEvent.KEYCODE_DPAD_RIGHT)
+      // No letter or Space on its own, which typing needs; Enter follows typing.
+      if (!combo.isTriggerModifierUsed && !combo.isModifierKeys && !combo.isPressedTwice) {
+        assertEquals(key, KeyEvent.KEYCODE_ENTER, combo.keyCode)
+      }
+    }
+  }
 }

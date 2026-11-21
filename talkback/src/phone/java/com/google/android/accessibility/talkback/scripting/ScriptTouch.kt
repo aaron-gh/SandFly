@@ -26,7 +26,9 @@ import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.os.bundleOf
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
+import com.google.android.accessibility.talkback.touchlock.TouchLock
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.output.OutputMute
 import org.json.JSONArray
@@ -53,6 +55,7 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     val list = strokes.items()
     apiCheck(list.size in 1..MAX_STROKES) { "A gesture has 1 to $MAX_STROKES strokes" }
     val builder = GestureDescription.Builder()
+    var length = 0L
     for (item in list) {
       val stroke = item as? org.json.JSONObject ?: apiError("A stroke is { points, start, duration }")
       val points = stroke.optJSONArray("points").items()
@@ -71,6 +74,7 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
         "A stroke starts within and lasts at most $MAX_DURATION_MS milliseconds"
       }
       builder.addStroke(GestureDescription.StrokeDescription(path, start, duration))
+      length = maxOf(length, start + duration)
     }
     val description = asApiError { builder.build() }
     mainHandler.post {
@@ -81,7 +85,8 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
       if (gestures == 1 && ownsPassThrough) feedback.passThrough(true)
       val ended = injecting()
       val finish = { performed: Boolean ->
-        if (--gestures == 0 && ownsPassThrough) feedback.passThrough(false)
+        if (--gestures == 0) SyntheticTouches.stopExpectingAll()
+        if (gestures == 0 && ownsPassThrough) feedback.passThrough(false)
         ended()
         done(performed)
       }
@@ -94,6 +99,9 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
       // Android applies the pass-through region a moment later.
       mainHandler.postDelayed(
         {
+          // While touch is locked, no touch passes through, so SandFly hands the gesture's own
+          // touches to the app as they come.
+          if (!closed && TouchLock.isLocked()) SyntheticTouches.expectAll(length)
           if (closed || !service.dispatchGesture(description, callback, mainHandler)) finish(false)
         },
         PASS_THROUGH_WAIT_MS,

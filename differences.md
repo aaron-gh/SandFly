@@ -589,6 +589,8 @@ Steps in blocks are indented. When the blocks don't match, such as an **If** wit
 
 **Add to home screen**, on the macro's screen, adds a home screen shortcut that runs the macro on the screen it is opened from. Renaming the macro renames the shortcut, and deleting the macro disables it. When SandFly is off, the shortcut shows "SandFly is off".
 
+**Record a macro**, a command in the **Macros** category, makes a macro named after the date and time and records its steps as the user does them in apps: presses and long presses, scrolls, typed text (not in password fields), apps opened from the launcher, and the Back, Home, Overview, Notifications, Quick settings, All apps, Select all, Copy, Cut and Paste commands. Running it again, running **Stop macro** or opening the **Recording macro steps** notification ends the recording and opens the macro with the steps, and **Save**, **Record again** and **Cancel**; **Cancel** deletes the macro. **Record steps**, on a macro's screen, records steps into that macro, where **Add step** adds a step. SandFly's own screens aren't recorded. The steps hold what the actions imply: scrolls in a list followed by a press on an item in it become a **Repeat while** that scrolls until the item is on screen; actions done several times in a row become a **Repeat**, or a **Repeat while** the first item pressed is on screen when it was gone after the last time; a press that turns a switch or check box on or off runs only when it is off or on; and when the first action is in the app in front at the start, the macro opens that app first when it isn't in front. Items are found by their whole text, as a regular expression.
+
 Each macro is a command in the **Macros** category, so a gesture, a keyboard shortcut or a menu can run it. Starting a macro stops the one running, and so does **Stop macro**. When a step fails, such as an item that isn't found, SandFly says so and the macro stops. Deleting a macro removes it from the gestures, keys and menus that run it. Macros are included in exported settings. Not on watches.
 
 ### Gesture profiles
@@ -656,7 +658,7 @@ A corner with no gesture assigned works as before. In a corner with a gesture as
 
 ### Tap, then swipe
 
-Under **Tap, then swipe** in gesture settings, there are gestures that tap once, twice or three times with two, three or four fingers and then swipe up, down, left or right with as many fingers, such as **Double-tap, then swipe up with 2 fingers**. They do nothing by default. The swipe is the next touch after the last tap and must start within 0.25 seconds of it. While one of these gestures has a command, the taps it starts with wait for the swipe as they wait for a further tap. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
+Under **Tap, then swipe** in gesture settings, there are gestures that tap once, twice or three times with two, three or four fingers and then swipe up, down, left or right with as many fingers, such as **Double-tap, then swipe up with 2 fingers**, and gestures that tap once, twice or three times with two fingers and then swipe up, down, left or right with one finger, such as **Double-tap with 2 fingers, then swipe up**. They do nothing by default. The swipe is the next touch after the last tap and must start within 0.25 seconds of it. While one of these gestures has a command, the taps it starts with wait for the swipe as they wait for a further tap. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
 
 ### Two-finger angle gestures
 
@@ -722,7 +724,7 @@ To let Android recognize gestures again, turn off **Advanced settings** > **Deve
 
 ### Multi-finger taps without the wait
 
-A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no gesture that goes on after these taps with as many fingers has a command: more taps, more taps and hold, or a [tap, then swipe](#tap-then-swipe) gesture. TalkBack waited about 0.3 seconds for a further tap. A quadruple-tap with three fingers always runs at once. In the tutorial, these taps still wait. This requires **Handle gestures in SandFly**.
+A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no gesture that starts with these taps and goes on after them has a command: more taps or more taps and hold with as many fingers, or a [tap, then swipe](#tap-then-swipe) gesture. TalkBack waited about 0.3 seconds for a further tap. A quadruple-tap with three fingers always runs at once. In the tutorial, these taps still wait. This requires **Handle gestures in SandFly**.
 
 ## Navigation
 

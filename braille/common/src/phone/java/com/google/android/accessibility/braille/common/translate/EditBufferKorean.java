@@ -106,6 +106,16 @@ public class EditBufferKorean extends EditBufferUnContracted {
     return input;
   }
 
+  /**
+   * The composing text is set with its length as the new cursor position, which places the cursor
+   * up to that length less one after the composing text's end.
+   */
+  @Override
+  protected boolean isCursorOfComposingText(int cursor, int candidatesStart, int candidatesEnd) {
+    return candidatesEnd <= cursor
+        && cursor <= candidatesEnd + Math.max(0, candidatesEnd - candidatesStart - 1);
+  }
+
   @Override
   public void deleteCharacterBackward(ImeConnection imeConnection) {
     if (holdings.isEmpty()) {

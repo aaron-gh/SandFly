@@ -84,6 +84,8 @@ object MacroRunner {
 
   private const val MAX_NODES = 5_000
   private const val MAX_CLICK_PARENTS = 6
+  /** The most items of a row looked through for a checked switch. */
+  private const val MAX_ROW_NODES = 30
 
   private val mainHandler = Handler(Looper.getMainLooper())
 
@@ -99,8 +101,13 @@ object MacroRunner {
   @JvmStatic
   fun runCommand(value: String): Boolean {
     if (value == Macros.STOP_COMMAND) {
+      // While steps are recorded, it ends the recording on the macro's screen.
+      TalkBackService.getInstance()?.let { if (MacroRecorder.openMacro(it)) return true }
       stop()
       return true
+    }
+    if (value == Macros.RECORD_COMMAND) {
+      return TalkBackService.getInstance()?.let { MacroRecorder.recordOrStop(it) } ?: false
     }
     val id = Macros.idOf(value) ?: return false
     return run(id)
@@ -486,7 +493,8 @@ object MacroRunner {
           is Macros.TapPosition -> tapAt(index, step)
           is Macros.TouchHold -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.FocusItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
-          is Macros.ActOnItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
+          is Macros.ActOnItem ->
+            if (step.label.isEmpty()) findList(index, step) else findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakItem -> findItem(index, step, step.label, step.regex, step.timeoutMillis)
           is Macros.SpeakText -> {
             speak(fill(step.text))
@@ -772,6 +780,30 @@ object MacroRunner {
       searchHandler().post { search(index, step, match, deadline) }
     }
 
+    /** Runs the scroll [step] that has no item on the largest list on screen, waiting for one. */
+    private fun findList(index: Int, step: Macros.ActOnItem) {
+      val deadline = SystemClock.uptimeMillis() + step.timeoutMillis
+      searchHandler().post { searchList(index, step, deadline) }
+    }
+
+    private fun searchList(index: Int, step: Macros.ActOnItem, deadline: Long) {
+      if (finished) return
+      val result =
+        try {
+          largestList(service, step.act.action)?.let { act(it, step) }
+        } catch (e: RuntimeException) {
+          LogUtils.w(TAG, "Cannot read the windows: %s", e)
+          null
+        }
+      when {
+        result == true -> mainHandler.post { ifActive { later(STEP_GAP_MS) { runStep(index + 1) } } }
+        result == false -> mainHandler.post { ifActive { fail(index, step, "scroll not performed", found = true) } }
+        SystemClock.uptimeMillis() + POLL_MS <= deadline ->
+          searchHandler?.postDelayed({ searchList(index, step, deadline) }, POLL_MS)
+        else -> mainHandler.post { ifActive { fail(index, step, "no list", found = true) } }
+      }
+    }
+
     /**
      * Looks for the item of [step], a Tap item, Focus item or Speak item step, by [label] on the
      * search thread until [deadline], and clicks it, moves accessibility focus to it or speaks it.
@@ -984,6 +1016,13 @@ object MacroRunner {
   }
 
   /**
+   * The item a step that finds items by [label] in [field], a regular expression for [regex],
+   * finds on screen now, or null. For [MacroRecorder], which checks that it finds the item pressed.
+   */
+  internal fun firstItem(service: TalkBackService, label: String, regex: Boolean, field: Macros.Field?): AccessibilityNodeInfo? =
+    findItem(service, LabelMatch(label, regex), field = field)
+
+  /**
    * The item whose text or description is [label], ignoring case, or else the first one whose text
    * or description contains it or, for a regular expression, matches it, in the active window
    * first, then from the top window down. SandFly's own overlays are left out.
@@ -1009,20 +1048,27 @@ object MacroRunner {
       while (queue.isNotEmpty() && count < MAX_NODES) {
         val node = queue.removeFirst()
         count++
-        if (node.isVisibleToUser && (kind == null || isKind(node, kind))) {
+        if (node.isVisibleToUser) {
           val texts =
             when {
               field != null -> texts(node, field)
               kind == null && !anyMatch -> listOfNotNull(node.text, node.contentDescription, AccessibilityNodeInfoCompat.wrap(node).tooltipText)
               else -> texts(node)
             }
+          var exact = false
+          var contains = false
           for (text in texts) {
             val trimmed = text.toString().trim()
-            if (label.isExactly(trimmed)) return node
-            if (partial == null && label.isIn(trimmed)) {
-              if (anyMatch) return node
-              partial = node
+            if (label.isExactly(trimmed)) {
+              exact = true
+              break
             }
+            if (!contains && label.isIn(trimmed)) contains = true
+          }
+          // The kind is checked only for an item with the text, as it can read the items around it.
+          if ((exact || (contains && (anyMatch || partial == null))) && (kind == null || isKind(node, kind))) {
+            if (exact || anyMatch) return node
+            partial = node
           }
         }
         for (i in 0 until node.childCount) {
@@ -1135,11 +1181,72 @@ object MacroRunner {
         node.rangeInfo != null ||
           node.actionList.any { it.id == AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS.id }
       Macros.Kind.CHECKABLE -> node.isCheckable
-      @Suppress("DEPRECATION") Macros.Kind.CHECKED -> node.isChecked
+      @Suppress("DEPRECATION") Macros.Kind.CHECKED -> nodeOrParent(node) { it.isChecked } || checkedInRow(node)
       Macros.Kind.SELECTED -> node.isSelected
       Macros.Kind.HEADING -> AccessibilityNodeInfoCompat.wrap(node).isHeading
       Macros.Kind.ENABLED -> node.isEnabled
     }
+
+  /**
+   * Whether the nearest clickable item around [node], such as a settings row, has a switch or check
+   * box in it that is checked.
+   */
+  @Suppress("DEPRECATION")
+  private fun checkedInRow(node: AccessibilityNodeInfo): Boolean {
+    var row: AccessibilityNodeInfo? = node
+    repeat(MAX_CLICK_PARENTS + 1) {
+      val item = row ?: return false
+      if (item.isClickable) {
+        val queue = ArrayDeque<AccessibilityNodeInfo>()
+        queue.add(item)
+        var count = 0
+        while (queue.isNotEmpty() && count < MAX_ROW_NODES) {
+          val inner = queue.removeFirst()
+          count++
+          if (inner.isCheckable && inner.isChecked) return true
+          for (i in 0 until inner.childCount) inner.getChild(i)?.let { queue.add(it) }
+        }
+        return false
+      }
+      row = item.parent
+    }
+    return false
+  }
+
+  /**
+   * The largest visible item that can do [action], a scroll, in the active window, or else in the
+   * top window that has one. SandFly's own overlays and the keyboard are left out.
+   */
+  private fun largestList(service: TalkBackService, action: Int): AccessibilityNodeInfo? {
+    val roots =
+      service.windows
+        .filter { it.type != AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY && it.type != AccessibilityWindowInfo.TYPE_INPUT_METHOD }
+        .sortedWith(compareByDescending<AccessibilityWindowInfo> { it.isActive }.thenByDescending { it.layer })
+        .mapNotNull { it.root }
+    var count = 0
+    val bounds = Rect()
+    for (root in roots) {
+      var best: AccessibilityNodeInfo? = null
+      var bestArea = 0L
+      val queue = ArrayDeque<AccessibilityNodeInfo>()
+      queue.add(root)
+      while (queue.isNotEmpty() && count < MAX_NODES) {
+        val node = queue.removeFirst()
+        count++
+        if (node.isVisibleToUser && node.actionList.any { it.id == action }) {
+          node.getBoundsInScreen(bounds)
+          val area = bounds.width().toLong() * bounds.height()
+          if (best == null || area > bestArea) {
+            best = node
+            bestArea = area
+          }
+        }
+        for (i in 0 until node.childCount) node.getChild(i)?.let { queue.add(it) }
+      }
+      if (best != null) return best
+    }
+    return null
+  }
 
   private fun nodeOrParent(node: AccessibilityNodeInfo, test: (AccessibilityNodeInfo) -> Boolean): Boolean {
     var candidate: AccessibilityNodeInfo? = node

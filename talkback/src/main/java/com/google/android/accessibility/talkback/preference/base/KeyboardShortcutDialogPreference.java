@@ -38,6 +38,8 @@ import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
+import com.google.android.accessibility.talkback.keyboard.KeyPresses;
+import com.google.android.accessibility.talkback.keyboard.NewKeyComboModel;
 import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -237,6 +239,31 @@ public class KeyboardShortcutDialogPreference extends Preference
     super.onPrepareForRemoval();
   }
 
+  // Presses being recorded, for keymaps that take presses.
+  private static final long RECORD_TWICE_MS = 500;
+  private final android.os.Handler pressHandler =
+      new android.os.Handler(android.os.Looper.getMainLooper());
+  private final java.util.Set<Integer> pressKeysDown = new java.util.HashSet<>();
+  private int pressModifiers;
+  private boolean pressOnlyModifiers = true;
+  private boolean pressHeld;
+  private @Nullable KeyCombo lastRecorded;
+  private long lastRecordedTime;
+  private @Nullable Runnable pendingEnterSave;
+  private final Runnable pressHoldCheck = this::onPressHeld;
+  // A key other than a modifier being recorded, which held down records the key held.
+  private @Nullable KeyCombo pressKeyHeld;
+  private int pressKeyHeldCode;
+  private final Runnable pressKeyHoldCheck =
+      () -> {
+        if (pressKeyHeld != null && pressKeysDown.contains(pressKeyHeldCode)) {
+          record(
+              pressKeyHeld.withPressType(KeyCombo.HELD_DOWN),
+              /* allowTwice= */ false,
+              android.os.SystemClock.uptimeMillis());
+        }
+      };
+
   /** Clears current temporary key combo code. */
   private void clearTemporaryKeyCombo() {
     tempKeyCombo =
@@ -319,6 +346,10 @@ public class KeyboardShortcutDialogPreference extends Preference
   /** Handles key combo when fragment closes. */
   private void onSetUpKeyComboDialogClosed() {
     setTemporaryKeyCombo(getKeyComboForKey(getKey()));
+    pressHandler.removeCallbacksAndMessages(null);
+    pendingEnterSave = null;
+    pressKeysDown.clear();
+    lastRecorded = null;
 
     keyComboManager.setMatchKeyCombo(true);
     setKeyEventSource(KEY_EVENT_SOURCE_ACTIVITY);
@@ -343,6 +374,12 @@ public class KeyboardShortcutDialogPreference extends Preference
     if (keyEventSource != KEY_EVENT_SOURCE_ACCESSIBILITY_SERVICE) {
       return false;
     }
+    // A dialog that closed without letting go gives the keys back.
+    if (setUpKeyComboDialog == null || !setUpKeyComboDialog.isShowing()) {
+      setKeyEventSource(KEY_EVENT_SOURCE_ACTIVITY);
+      keyComboManager.setMatchKeyCombo(true);
+      return false;
+    }
 
     return onKeyEventInternal(event);
   }
@@ -362,6 +399,9 @@ public class KeyboardShortcutDialogPreference extends Preference
   }
 
   private boolean onKeyEventInternal(KeyEvent event) {
+    if (recordsPresses()) {
+      return recordPress(event);
+    }
     if (!processKeyEvent(event)) {
       boolean consume = consumeKeyEvent;
       consumeKeyEvent = false;
@@ -580,6 +620,162 @@ public class KeyboardShortcutDialogPreference extends Preference
     return event.getAction() == KeyEvent.ACTION_DOWN;
   }
 
+  /**
+   * Whether the keymap takes presses as Key Mapper does, as the keyboard phone keymap does: keys
+   * without the SandFly key, modifier keys pressed on their own, either pressed twice, and modifier
+   * keys held down.
+   */
+  private boolean recordsPresses() {
+    return keyComboManager.getKeyComboModel() instanceof NewKeyComboModel model
+        && model.plainKeys();
+  }
+
+  /**
+   * Records the press [event] belongs to, for keymaps that take presses. Enter alone saves, a moment
+   * later, unless it is pressed again, which records Enter twice; Backspace alone clears.
+   */
+  private boolean recordPress(KeyEvent event) {
+    int keyCode = event.getKeyCode();
+    if (keyCode == KeyEvent.KEYCODE_BACK
+        || keyCode == KeyEvent.KEYCODE_HOME
+        || keyCode == KeyEvent.KEYCODE_CALL
+        || keyCode == KeyEvent.KEYCODE_ENDCALL
+        || keyCode == KeyEvent.KEYCODE_POWER
+        || keyCode == KeyEvent.KEYCODE_VOLUME_UP
+        || keyCode == KeyEvent.KEYCODE_VOLUME_DOWN
+        || keyAlreadyInUseDialog != null) {
+      return false;
+    }
+    boolean down = event.getAction() == KeyEvent.ACTION_DOWN;
+    if (event.getAction() == KeyEvent.ACTION_MULTIPLE || event.getRepeatCount() > 0) {
+      return true;
+    }
+    boolean alone = pressKeysDown.isEmpty() && hasNoModifiers(event);
+    if (keyCode == KeyEvent.KEYCODE_ENTER && alone) {
+      if (!down) {
+        return true;
+      }
+      if (pendingEnterSave != null) {
+        pressHandler.removeCallbacks(pendingEnterSave);
+        pendingEnterSave = null;
+        record(
+            new KeyCombo(
+                KeyComboModel.NO_MODIFIER,
+                KeyComboModel.NO_PREFIX_KEY_CODE,
+                KeyEvent.KEYCODE_ENTER,
+                /* triggerModifierUsed= */ false)
+                .withPressType(KeyCombo.PRESSED_TWICE),
+            /* allowTwice= */ false,
+            event.getEventTime());
+      } else {
+        pendingEnterSave =
+            () -> {
+              pendingEnterSave = null;
+              if (!shouldAnnounceInvalidShortcutMessage()) {
+                processSaveButtonClickListener();
+              }
+            };
+        pressHandler.postDelayed(pendingEnterSave, KeyPresses.TWICE_MS);
+      }
+      return true;
+    }
+    if (keyCode == KeyEvent.KEYCODE_DEL && alone) {
+      if (down) {
+        clearTemporaryKeyCombo();
+        lastRecorded = null;
+        updateKeyAssignmentText();
+      }
+      return true;
+    }
+    @Nullable SandFlyKey sandFlyKey = keyComboManager.getSandFlyKey();
+    int trigger = getTriggerModifier();
+    if (down) {
+      if (pressKeysDown.isEmpty()) {
+        pressModifiers = 0;
+        pressOnlyModifiers = true;
+        pressHeld = false;
+      }
+      pressKeysDown.add(keyCode);
+      int bit = KeyPresses.modifierBitOf(event, sandFlyKey);
+      if (bit != 0) {
+        if (pressOnlyModifiers) {
+          pressModifiers |= bit;
+          pressHandler.removeCallbacks(pressHoldCheck);
+          pressHandler.postDelayed(pressHoldCheck, KeyPresses.HOLD_MS);
+        }
+        return true;
+      }
+      pressOnlyModifiers = false;
+      pressHandler.removeCallbacks(pressHoldCheck);
+      boolean heldDown =
+          sandFlyKey != null
+              && sandFlyKey.isHeldKey()
+              && pressKeysDown.contains(sandFlyKey.getKeyCode());
+      KeyCombo combo = KeyPresses.keyComboOf(event, sandFlyKey, heldDown, trigger);
+      record(combo, /* allowTwice= */ true, event.getEventTime());
+      // Held down, it is the key held.
+      pressHandler.removeCallbacks(pressKeyHoldCheck);
+      pressKeyHeld = combo;
+      pressKeyHeldCode = keyCode;
+      pressHandler.postDelayed(pressKeyHoldCheck, KeyPresses.HOLD_MS);
+      return true;
+    }
+    pressKeysDown.remove(keyCode);
+    if (keyCode == pressKeyHeldCode) {
+      pressHandler.removeCallbacks(pressKeyHoldCheck);
+      pressKeyHeldCode = 0;
+    }
+    if (pressKeysDown.isEmpty()) {
+      pressHandler.removeCallbacks(pressHoldCheck);
+      if (pressOnlyModifiers && !pressHeld && pressModifiers != 0) {
+        record(
+            KeyPresses.comboOf(pressModifiers, trigger),
+            /* allowTwice= */ true,
+            event.getEventTime());
+      }
+    }
+    return true;
+  }
+
+  /** Records modifier keys held down on their own. */
+  private void onPressHeld() {
+    if (!pressOnlyModifiers || pressKeysDown.isEmpty() || pressModifiers == 0) {
+      return;
+    }
+    pressHeld = true;
+    record(
+        KeyPresses.comboOf(pressModifiers, getTriggerModifier())
+            .withPressType(KeyCombo.HELD_DOWN),
+        /* allowTwice= */ false,
+        android.os.SystemClock.uptimeMillis());
+  }
+
+  /** Shows [combo] as the new shortcut, or it pressed twice where it was the last one too. */
+  private void record(KeyCombo combo, boolean allowTwice, long time) {
+    if (allowTwice
+        && combo.equals(lastRecorded)
+        && time - lastRecordedTime < RECORD_TWICE_MS) {
+      lastRecorded = null;
+      setTemporaryKeyCombo(combo.withPressType(KeyCombo.PRESSED_TWICE));
+    } else {
+      lastRecorded = allowTwice ? combo : null;
+      lastRecordedTime = time;
+      setTemporaryKeyCombo(combo);
+    }
+    updateKeyAssignmentText();
+  }
+
+  /**
+   * Takes key presses again for the shortcut being recorded, only while its dialog shows. Key
+   * already in use closes after the shortcut dialog when it saves; taking keys for a closed dialog
+   * would keep every key from SandFly and the apps until SandFly restarts.
+   */
+  private void takeKeysWhileDialogShows() {
+    if (setUpKeyComboDialog != null && setUpKeyComboDialog.isShowing()) {
+      setKeyEventSource(getKeyEventSourceForCurrentKeyComboModel());
+    }
+  }
+
   /** Shows dialog if there is duplicate key assigned. */
   private void showOverrideKeyComboDialog(final String key) {
     CharSequence currentAction = titleOf(key);
@@ -592,7 +788,7 @@ public class KeyboardShortcutDialogPreference extends Preference
           @Override
           public void onClick(DialogInterface dialog, int which) {
             if (which != DialogInterface.BUTTON_POSITIVE) {
-              setKeyEventSource(getKeyEventSourceForCurrentKeyComboModel());
+              takeKeysWhileDialogShows();
               return;
             }
 
@@ -637,8 +833,8 @@ public class KeyboardShortcutDialogPreference extends Preference
             .create();
     keyAlreadyInUseDialog.setOnDismissListener(
         (dialog) -> {
-          setKeyEventSource(getKeyEventSourceForCurrentKeyComboModel());
           keyAlreadyInUseDialog = null;
+          takeKeysWhileDialogShows();
         });
     keyAlreadyInUseDialog.show();
   }

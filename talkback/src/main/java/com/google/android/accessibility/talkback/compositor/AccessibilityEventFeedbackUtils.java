@@ -101,7 +101,22 @@ public final class AccessibilityEventFeedbackUtils {
     return (eventText == null) ? "" : LocaleUtils.wrapWithLocaleSpan(eventText, locale);
   }
 
-  /** Returns the page index count. */
+  /**
+   * Returns the page index count of a focused pager page, which is left out when container element
+   * positions are turned off.
+   */
+  public static CharSequence getFocusedPagerPageIndexCount(
+      @Nullable AccessibilityEvent event, Context context, GlobalVariables globalVariables) {
+    if (!globalVariables.getSpeakCollectionInfo()) {
+      return "";
+    }
+    return getPagerIndexCount(event, context, globalVariables);
+  }
+
+  /**
+   * Returns the page index count. Spoken after a pager scrolls, when Always speak number of list
+   * items is on.
+   */
   public static CharSequence getPagerIndexCount(
       @Nullable AccessibilityEvent event, Context context, GlobalVariables globalVariables) {
     // Describing the focused node without an event, such as for lift to type.

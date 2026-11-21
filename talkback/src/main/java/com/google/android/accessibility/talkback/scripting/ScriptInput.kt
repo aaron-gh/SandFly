@@ -188,6 +188,30 @@ object ScriptInput {
       "fourFingerTripleTapThenSwipeLeft" to GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT,
       "fourFingerTripleTapThenSwipeRight" to
         GestureManifold.GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT,
+      "twoFingerTapThenOneFingerSwipeUp" to
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP,
+      "twoFingerTapThenOneFingerSwipeDown" to
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_DOWN,
+      "twoFingerTapThenOneFingerSwipeLeft" to
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_LEFT,
+      "twoFingerTapThenOneFingerSwipeRight" to
+        GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_RIGHT,
+      "twoFingerDoubleTapThenOneFingerSwipeUp" to
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_UP,
+      "twoFingerDoubleTapThenOneFingerSwipeDown" to
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_DOWN,
+      "twoFingerDoubleTapThenOneFingerSwipeLeft" to
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT,
+      "twoFingerDoubleTapThenOneFingerSwipeRight" to
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_RIGHT,
+      "twoFingerTripleTapThenOneFingerSwipeUp" to
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_UP,
+      "twoFingerTripleTapThenOneFingerSwipeDown" to
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_DOWN,
+      "twoFingerTripleTapThenOneFingerSwipeLeft" to
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_LEFT,
+      "twoFingerTripleTapThenOneFingerSwipeRight" to
+        GestureManifold.GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT,
       "twoFingerPinch" to GestureManifold.GESTURE_2_FINGER_PINCH,
       "twoFingerSpread" to GestureManifold.GESTURE_2_FINGER_SPREAD,
       "threeFingerPinch" to GestureManifold.GESTURE_3_FINGER_PINCH,

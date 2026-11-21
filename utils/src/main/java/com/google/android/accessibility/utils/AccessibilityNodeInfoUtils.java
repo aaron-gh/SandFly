@@ -543,8 +543,9 @@ public class AccessibilityNodeInfoUtils {
    * Filter for containers that moving to the next or previous item may scroll when no ancestor
    * passes {@link #FILTER_AUTO_SCROLL}, such as NestedScrollView, Compose scrollables and custom
    * lists. Accepts visible nodes with a scroll action whatever their role, except pagers, tab bars,
-   * pickers, seek controls, edit texts, web views and nodes that scroll only sideways, so that the
-   * scroll doesn't switch pages or tabs or change a value.
+   * pickers, seek controls, edit texts, web views, nodes that scroll only sideways and plain views
+   * that scroll with no axis ({@link #isPlainViewScrollingWithoutAxis}), so that the scroll doesn't
+   * switch pages or tabs or change a value.
    */
   public static final Filter<AccessibilityNodeInfoCompat> FILTER_AUTO_SCROLL_ANY_ROLE =
       Filter.node(
@@ -564,8 +565,25 @@ public class AccessibilityNodeInfoUtils {
                 && role != Role.ROLE_DROP_DOWN_LIST
                 && role != Role.ROLE_EDIT_TEXT
                 && role != Role.ROLE_WEB_VIEW
-                && !scrollsOnlySideways(node);
+                && !scrollsOnlySideways(node)
+                && !isPlainViewScrollingWithoutAxis(node);
           });
+
+  /**
+   * Returns whether {@code node} is a plain android.view.View that scrolls only forward and back:
+   * no collection info and no up, down, left or right scroll actions. Flutter gives a PageView,
+   * such as a TabBarView, this shape; its lists and scroll views get a scroll view class or
+   * collection info, and Compose scrollables have up and down or left and right actions (report
+   * 485, Lost Vault's zones and tabs).
+   */
+  public static boolean isPlainViewScrollingWithoutAxis(@NonNull AccessibilityNodeInfoCompat node) {
+    return TextUtils.equals(node.getClassName(), "android.view.View")
+        && node.getCollectionInfo() == null
+        && !supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_UP.getId())
+        && !supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId())
+        && !supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_LEFT.getId())
+        && !supportsAction(node, AccessibilityActionCompat.ACTION_SCROLL_RIGHT.getId());
+  }
 
   /**
    * Returns whether {@code node} scrolls left and right but not up and down: it has left or right

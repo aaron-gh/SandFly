@@ -496,6 +496,34 @@
       <item>1</item>
       <item>2</item>
     </string-array>
+    <string name="pref_lock_touch_automatically_key" translatable="false">pref_lock_touch_automatically</string>
+    <string-array name="pref_lock_touch_automatically_entries">
+      <item>@string/value_lock_touch_never</item>
+      <item>@string/value_lock_touch_screen_on</item>
+      <item>@string/value_lock_touch_lock_screen</item>
+      <item>@string/value_lock_touch_proximity</item>
+    </string-array>
+    <!-- TouchLock.Automatic reads the same values. -->
+    <string-array name="pref_lock_touch_automatically_values" translatable="false">
+      <item>off</item>
+      <item>screen_on</item>
+      <item>lock_screen</item>
+      <item>proximity</item>
+    </string-array>
+    <string name="pref_locked_touch_feedback_key" translatable="false">pref_locked_touch_feedback</string>
+    <string name="locked_touch_feedback_nothing_value" translatable="false">nothing</string>
+    <string name="locked_touch_feedback_sound_value" translatable="false">sound</string>
+    <string name="locked_touch_feedback_vibration_value" translatable="false">vibration</string>
+    <string-array name="pref_locked_touch_feedback_entries">
+      <item>@string/value_locked_touch_nothing</item>
+      <item>@string/value_locked_touch_sound</item>
+      <item>@string/value_locked_touch_vibration</item>
+    </string-array>
+    <string-array name="pref_locked_touch_feedback_values" translatable="false">
+      <item>@string/locked_touch_feedback_nothing_value</item>
+      <item>@string/locked_touch_feedback_sound_value</item>
+      <item>@string/locked_touch_feedback_vibration_value</item>
+    </string-array>
     <string name="pref_selector_switch_tts_engine_key" translatable="false">pref_selector_switch_tts_engine_key</string>
     <string name="pref_selector_speech_stream_key" translatable="false">pref_selector_speech_stream_key</string>
     <string name="pref_selector_audio_output_key" translatable="false">pref_selector_audio_output_key</string>
@@ -807,6 +835,18 @@
     <string name="pref_shortcut_4finger_3tap_swipe_down_key" translatable="false">pref_shortcut_four_finger_triple_tap_swipe_down</string>
     <string name="pref_shortcut_4finger_3tap_swipe_left_key" translatable="false">pref_shortcut_four_finger_triple_tap_swipe_left</string>
     <string name="pref_shortcut_4finger_3tap_swipe_right_key" translatable="false">pref_shortcut_four_finger_triple_tap_swipe_right</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_up_key" translatable="false">pref_shortcut_two_finger_single_tap_one_finger_swipe_up</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_down_key" translatable="false">pref_shortcut_two_finger_single_tap_one_finger_swipe_down</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_left_key" translatable="false">pref_shortcut_two_finger_single_tap_one_finger_swipe_left</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_right_key" translatable="false">pref_shortcut_two_finger_single_tap_one_finger_swipe_right</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_up_key" translatable="false">pref_shortcut_two_finger_double_tap_one_finger_swipe_up</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_down_key" translatable="false">pref_shortcut_two_finger_double_tap_one_finger_swipe_down</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_left_key" translatable="false">pref_shortcut_two_finger_double_tap_one_finger_swipe_left</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_right_key" translatable="false">pref_shortcut_two_finger_double_tap_one_finger_swipe_right</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_up_key" translatable="false">pref_shortcut_two_finger_triple_tap_one_finger_swipe_up</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_down_key" translatable="false">pref_shortcut_two_finger_triple_tap_one_finger_swipe_down</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_left_key" translatable="false">pref_shortcut_two_finger_triple_tap_one_finger_swipe_left</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_right_key" translatable="false">pref_shortcut_two_finger_triple_tap_one_finger_swipe_right</string>
     <string name="pref_category_tap_swipe_shortcuts_key" translatable="false">pref_category_tap_swipe_shortcuts</string>
     <string name="pref_shortcut_2finger_rotate_counterclockwise_key" translatable="false">pref_shortcut_two_finger_rotate_counterclockwise</string>
 
@@ -841,6 +881,8 @@
   <string name="nvda_keymap_entry_value">nvda_keymap</string>
   <string name="jaws_keymap_entry_value">jaws_keymap</string>
   <string name="orca_keymap_entry_value">orca_keymap</string>
+  <string name="keyboard_phone_keymap_entry_value">keyboard_phone_keymap</string>
+  <string name="keyboard_phone_single_key_keymap_entry_value">keyboard_phone_single_key_keymap</string>
 
   <string name="trigger_modifier_meta_entry_value">trigger_modifier_meta</string>
   <string name="trigger_modifier_alt_entry_value">trigger_modifier_alt</string>
@@ -848,6 +890,11 @@
   <string name="trigger_modifier_ctrl_meta_entry_value">trigger_modifier_ctrl_meta</string>
   <string name="trigger_modifier_insert_entry_value">trigger_modifier_insert</string>
   <string name="trigger_modifier_numpad_insert_entry_value">trigger_modifier_numpad_insert</string>
+  <string name="trigger_modifier_sym_entry_value">trigger_modifier_sym</string>
+  <string name="trigger_modifier_right_alt_entry_value">trigger_modifier_right_alt</string>
+  <string name="trigger_modifier_ctrl_entry_value">trigger_modifier_ctrl</string>
+  <string name="trigger_modifier_right_shift_entry_value">trigger_modifier_right_shift</string>
+  <string name="trigger_modifier_function_entry_value">trigger_modifier_function</string>
 
   <string name="keycombo_shortcut_navigate_next">keycombo_shortcut_navigate_next</string>
   <string name="keycombo_shortcut_navigate_previous">keycombo_shortcut_navigate_previous</string>
@@ -1190,6 +1237,18 @@
       <item>@string/pref_shortcut_4finger_3tap_swipe_down_key</item>
       <item>@string/pref_shortcut_4finger_3tap_swipe_left_key</item>
       <item>@string/pref_shortcut_4finger_3tap_swipe_right_key</item>
+      <item>@string/pref_shortcut_2finger_1tap_1finger_swipe_up_key</item>
+      <item>@string/pref_shortcut_2finger_1tap_1finger_swipe_down_key</item>
+      <item>@string/pref_shortcut_2finger_1tap_1finger_swipe_left_key</item>
+      <item>@string/pref_shortcut_2finger_1tap_1finger_swipe_right_key</item>
+      <item>@string/pref_shortcut_2finger_2tap_1finger_swipe_up_key</item>
+      <item>@string/pref_shortcut_2finger_2tap_1finger_swipe_down_key</item>
+      <item>@string/pref_shortcut_2finger_2tap_1finger_swipe_left_key</item>
+      <item>@string/pref_shortcut_2finger_2tap_1finger_swipe_right_key</item>
+      <item>@string/pref_shortcut_2finger_3tap_1finger_swipe_up_key</item>
+      <item>@string/pref_shortcut_2finger_3tap_1finger_swipe_down_key</item>
+      <item>@string/pref_shortcut_2finger_3tap_1finger_swipe_left_key</item>
+      <item>@string/pref_shortcut_2finger_3tap_1finger_swipe_right_key</item>
 
       <!-- Fingerprint gestures-->
       <item>@string/pref_shortcut_fingerprint_up_key</item>
@@ -1243,6 +1302,8 @@
         <item>@string/value_nvda_keymap</item>
         <item>@string/value_jaws_keymap</item>
         <item>@string/value_orca_keymap</item>
+        <item>@string/value_keyboard_phone_keymap</item>
+        <item>@string/value_keyboard_phone_single_key_keymap</item>
     </string-array>
 
     <string-array name="pref_select_keymap_values">
@@ -1251,6 +1312,8 @@
         <item>@string/nvda_keymap_entry_value</item>
         <item>@string/jaws_keymap_entry_value</item>
         <item>@string/orca_keymap_entry_value</item>
+        <item>@string/keyboard_phone_keymap_entry_value</item>
+        <item>@string/keyboard_phone_single_key_keymap_entry_value</item>
     </string-array>
 
 
@@ -1837,6 +1900,7 @@
   <string name="shortcut_value_refresh" translatable="false">REFRESH</string>
   <string name="shortcut_value_toggle_browse_mode" translatable="false">TOGGLE_BROWSE_MODE</string>
   <string name="shortcut_value_toggle_arrow_key_nav" translatable="false">TOGGLE_ARROW_KEY_NAV</string>
+  <string name="shortcut_value_toggle_touch_lock" translatable="false">TOGGLE_TOUCH_LOCK</string>
   <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="shortcut_value_dictate" translatable="false">DICTATE</string>
@@ -2260,6 +2324,18 @@
       <item>MAPPER_GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_DOWN</item>
       <item>MAPPER_GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_LEFT</item>
       <item>MAPPER_GESTURE_4_FINGER_TRIPLE_TAP_SWIPE_RIGHT</item>
+      <item>MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP</item>
+      <item>MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_DOWN</item>
+      <item>MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_LEFT</item>
+      <item>MAPPER_GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_RIGHT</item>
+      <item>MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_UP</item>
+      <item>MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_DOWN</item>
+      <item>MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_LEFT</item>
+      <item>MAPPER_GESTURE_2_FINGER_DOUBLE_TAP_1_FINGER_SWIPE_RIGHT</item>
+      <item>MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_UP</item>
+      <item>MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_DOWN</item>
+      <item>MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_LEFT</item>
+      <item>MAPPER_GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT</item>
     </string-array>
 
 
@@ -2698,6 +2774,18 @@
     <string name="pref_shortcut_4finger_3tap_swipe_down_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_4finger_3tap_swipe_left_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_4finger_3tap_swipe_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_up_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_down_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_1tap_1finger_swipe_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_up_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_down_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_2tap_1finger_swipe_right_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_up_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_down_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_left_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_2finger_3tap_1finger_swipe_right_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_2finger_rotate_counterclockwise_default">@string/shortcut_value_select_previous_setting</string>
 
     <!-- Fingerprint gesture shortcut default values -->
