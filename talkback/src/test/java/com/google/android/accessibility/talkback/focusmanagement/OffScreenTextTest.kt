@@ -95,11 +95,39 @@ class OffScreenTextTest {
     assertFalse(FocusProcessorForLogicalNavigation.hasTextOffScreen(row))
   }
 
+  @Test
+  fun textInsideTheListUnderASystemBarIsNotOffScreen() {
+    val row = node()
+    node(row, text = "Home screen", visible = false, bounds = Rect(216, 2487, 707, 2555))
+    val list = Rect(0, 647, 1200, 2608)
+    val bar = listOf(Rect(0, 2466, 1200, 2608))
+    assertFalse(FocusProcessorForLogicalNavigation.hasTextOffScreen(row, list, bar))
+  }
+
+  @Test
+  fun textInsideTheListNotUnderASystemBarIsOffScreen() {
+    val row = node()
+    node(row, text = "Home screen", visible = false, bounds = Rect(216, 1000, 707, 1100))
+    val list = Rect(0, 647, 1200, 2608)
+    val bar = listOf(Rect(0, 2466, 1200, 2608))
+    assertTrue(FocusProcessorForLogicalNavigation.hasTextOffScreen(row, list, bar))
+  }
+
+  @Test
+  fun textOutsideTheListIsOffScreenEvenUnderASystemBar() {
+    val row = node()
+    node(row, text = "Home screen", visible = false, bounds = Rect(216, 2487, 707, 2700))
+    val list = Rect(0, 647, 1200, 2608)
+    val bar = listOf(Rect(0, 2466, 1200, 2800))
+    assertTrue(FocusProcessorForLogicalNavigation.hasTextOffScreen(row, list, bar))
+  }
+
   private fun node(
     parent: AccessibilityNodeInfoCompat? = null,
     text: String? = null,
     description: String? = null,
     visible: Boolean = true,
+    bounds: Rect = Rect(0, 0, 100, 100),
   ): AccessibilityNodeInfoCompat {
     val raw = AccessibilityNodeInfo.obtain()
     // Distinct sources keep the nodes unequal.
@@ -108,7 +136,7 @@ class OffScreenTextTest {
     raw.text = text
     raw.contentDescription = description
     raw.isVisibleToUser = visible
-    raw.setBoundsInScreen(Rect(0, 0, 100, 100))
+    raw.setBoundsInScreen(bounds)
     val node = AccessibilityNodeInfoCompat.wrap(raw)
     if (parent != null) {
       shadowOf(parent.unwrap()).addChild(raw)

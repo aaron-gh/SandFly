@@ -21,6 +21,7 @@ import static androidx.core.view.ViewCompat.ACCESSIBILITY_LIVE_REGION_NONE;
 import static com.google.android.accessibility.talkback.compositor.CompositorUtils.PRUNE_EMPTY;
 import static com.google.android.accessibility.talkback.compositor.roledescription.RoleDescriptionExtractor.isStateBeforeName;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
 import android.graphics.Rect;
 import android.text.TextUtils;
@@ -30,6 +31,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
+import com.google.android.accessibility.talkback.focusmanagement.SystemBarCover;
 import com.google.android.accessibility.talkback.imagecaption.ImageContents;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
@@ -369,7 +371,8 @@ public class TreeNodesDescription {
           } else {
             boolean isVisible =
                 AccessibilityNodeInfoUtils.isVisible(childNode)
-                    || (globalVariables.isDescribingSwipeTarget() && isOffScreen(childNode));
+                    || (globalVariables.isDescribingSwipeTarget() && isOffScreen(childNode))
+                    || isCoveredBySystemBar(node, childNode);
             boolean isAccessibilityFocusable =
                 AccessibilityNodeInfoUtils.isAccessibilityFocusable(childNode);
             logString
@@ -533,6 +536,24 @@ public class TreeNodesDescription {
    * the top below the bottom or the left right of the right. A node that is on screen but hidden,
    * even one shrunk to nothing, keeps bounds that are the right way round.
    */
+  /**
+   * Returns whether {@code child}, inside {@code parent}'s bounds, is under a system bar such as
+   * the navigation bar, which Android reports as not visible though the app shows it.
+   */
+  private boolean isCoveredBySystemBar(
+      AccessibilityNodeInfoCompat parent, AccessibilityNodeInfoCompat child) {
+    if (!(context instanceof AccessibilityService)) {
+      return false;
+    }
+    Rect parentBounds = boundsOf(parent);
+    Rect childBounds = boundsOf(child);
+    if (childBounds.isEmpty() || !parentBounds.contains(childBounds)) {
+      return false;
+    }
+    return SystemBarCover.isCovered(
+        child, parentBounds, SystemBarCover.systemBarBounds((AccessibilityService) context));
+  }
+
   private static boolean isOffScreen(AccessibilityNodeInfoCompat node) {
     Rect bounds = boundsOf(node);
     return bounds.top > bounds.bottom || bounds.left > bounds.right;
