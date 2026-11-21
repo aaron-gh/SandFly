@@ -52,6 +52,18 @@
         android:key="@string/pref_enter_sends_messages_key"
         android:title="@string/title_pref_enter_sends_messages" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_sandfly_keyboard_key"
+        android:title="@string/sandfly_keyboard_name">
+      <intent android:action="android.settings.INPUT_METHOD_SETTINGS" />
+    </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_sandfly_keyboard_held_keys_default"
+        android:entries="@array/pref_sandfly_keyboard_held_keys_entries"
+        android:entryValues="@array/pref_sandfly_keyboard_held_keys_values"
+        android:key="@string/pref_sandfly_keyboard_held_keys_key"
+        android:summary="%s"
+        android:title="@string/title_pref_sandfly_keyboard_held_keys" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_physical_keyboard_key"
         android:title="@string/title_pref_system_physical_keyboard" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>

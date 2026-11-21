@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android இன் ஃபிசிக்கல் கீபோர்டு அமைப்புகள்</string>
   <string name="title_pref_keypad_letter_keys">எழுத்து விசைகள் கீபேட் பட்டன்களை அழுத்தும்</string>
   <string name="title_pref_enter_sends_messages">Enter மெசேஜ்களை அனுப்பும்</string>
+  <string name="sandfly_keyboard_name">SandFly கீபோர்டு</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">அழுத்திப் பிடித்த பட்டன்கள் டைப் செய்வது</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt எழுத்து</item>
+    <item>பேரெழுத்து</item>
+    <item>ரிப்பீட் எழுத்து</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ஈமோஜியைத் தேடு</string>
+  <string name="shortcut_choose_symbol">குறியீட்டைத் தேர்ந்தெடு</string>
+  <string name="sandfly_keyboard_emoji_search">ஈமோஜி தேடல்</string>
+  <string name="sandfly_keyboard_symbols">குறியீடுகள்</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %3$d இல் %2$d</string>
+  <string name="sandfly_keyboard_no_matches">பொருத்தமானது எதுவும் இல்லை</string>
+  <string name="sandfly_keyboard_chooser_closed">மூடப்பட்டது</string>
+  <string name="sandfly_keyboard_needed">உரைப் புலத்தில் SandFly கீபோர்டு தேவை</string>
   <string name="value_keyboard_echo_none">எதுவுமில்லை</string>
   <string name="value_keyboard_echo_characters_only">எழுத்துகள்</string>
   <string name="value_keyboard_echo_words_only">வார்த்தைகள்</string>

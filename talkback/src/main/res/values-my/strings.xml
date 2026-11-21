@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android ၏ ပြင်ပကီးဘုတ် ဆက်တင်များ</string>
   <string name="title_pref_keypad_letter_keys">စာလုံးကီးများဖြင့် ကီးပက်ခလုတ်များကို နှိပ်ရန်</string>
   <string name="title_pref_enter_sends_messages">Enter ဖြင့် မက်ဆေ့ဂျ်များ ပို့ရန်</string>
+  <string name="sandfly_keyboard_name">SandFly ကီးဘုတ်</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">ဖိထားသော ကီးများ ရိုက်ခြင်း</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt အက္ခရာ</item>
+    <item>စာလုံးအကြီး</item>
+    <item>ထပ်နေသော အက္ခရာ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">အီမိုဂျီ ရှာရန်</string>
+  <string name="shortcut_choose_symbol">သင်္ကေတ ရွေးရန်</string>
+  <string name="sandfly_keyboard_emoji_search">အီမိုဂျီ ရှာခြင်း</string>
+  <string name="sandfly_keyboard_symbols">သင်္ကေတများ</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s၊ %3$d ခုအနက် %2$d</string>
+  <string name="sandfly_keyboard_no_matches">ကိုက်ညီသည့်အရာများ မရှိပါ</string>
+  <string name="sandfly_keyboard_chooser_closed">ပိတ်လိုက်သည်</string>
+  <string name="sandfly_keyboard_needed">စာသားအကွက်တွင် SandFly ကီးဘုတ် လိုအပ်သည်</string>
   <string name="value_keyboard_echo_none">မရှိ</string>
   <string name="value_keyboard_echo_characters_only">အက္ခရာများ</string>
   <string name="value_keyboard_echo_words_only">စကားလုံးများ</string>

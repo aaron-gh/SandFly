@@ -229,6 +229,14 @@
     <string name="pref_typing_hold_keys_down_key" translatable="false">pref_typing_hold_keys_down</string>
     <string name="pref_keypad_letter_keys_key" translatable="false">pref_keypad_letter_keys</string>
     <string name="pref_enter_sends_messages_key" translatable="false">pref_enter_sends_messages</string>
+    <string name="pref_sandfly_keyboard_key" translatable="false">pref_sandfly_keyboard</string>
+    <string name="pref_sandfly_keyboard_held_keys_key" translatable="false">pref_sandfly_keyboard_held_keys</string>
+    <string name="pref_sandfly_keyboard_held_keys_default" translatable="false">alt</string>
+    <string-array name="pref_sandfly_keyboard_held_keys_values" translatable="false">
+        <item>alt</item>
+        <item>capital</item>
+        <item>repeat</item>
+    </string-array>
     <string name="pref_multi_tap_timeout_key" translatable="false">pref_multi_tap_timeout</string>
     <string name="pref_swipe_hold_time_key" translatable="false">pref_swipe_hold_time</string>
     <string name="pref_swipe_start_time_key" translatable="false">pref_swipe_start_time</string>
@@ -1904,6 +1912,8 @@
   <string name="shortcut_value_toggle_browse_mode" translatable="false">TOGGLE_BROWSE_MODE</string>
   <string name="shortcut_value_toggle_arrow_key_nav" translatable="false">TOGGLE_ARROW_KEY_NAV</string>
   <string name="shortcut_value_toggle_touch_lock" translatable="false">TOGGLE_TOUCH_LOCK</string>
+  <string name="shortcut_value_search_emoji" translatable="false">SEARCH_EMOJI</string>
+  <string name="shortcut_value_choose_symbol" translatable="false">CHOOSE_SYMBOL</string>
   <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="shortcut_value_dictate" translatable="false">DICTATE</string>

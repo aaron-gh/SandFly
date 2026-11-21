@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android-en teklatu fisikoaren ezarpenak</string>
   <string name="title_pref_keypad_letter_keys">Letra-teklek zenbaki-teklatuko botoiak sakatzen dituzte</string>
   <string name="title_pref_enter_sends_messages">Sartu teklak mezuak bidaltzen ditu</string>
+  <string name="sandfly_keyboard_name">SandFly teklatua</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Sakatuta edukitako teklen idazketa</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt karakterea</item>
+    <item>Maiuskula</item>
+    <item>Errepikatutako karakterea</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Bilatu emojiak</string>
+  <string name="shortcut_choose_symbol">Aukeratu ikur bat</string>
+  <string name="sandfly_keyboard_emoji_search">Emojien bilaketa</string>
+  <string name="sandfly_keyboard_symbols">Ikurrak</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d/%3$d</string>
+  <string name="sandfly_keyboard_no_matches">Ez dago bat-etortzerik</string>
+  <string name="sandfly_keyboard_chooser_closed">Itxita</string>
+  <string name="sandfly_keyboard_needed">SandFly teklatua behar da testu-eremu batean</string>
   <string name="value_keyboard_echo_none">Bat ere ez</string>
   <string name="value_keyboard_echo_characters_only">Karaktereak</string>
   <string name="value_keyboard_echo_words_only">Hitzak</string>

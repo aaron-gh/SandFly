@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">การตั้งค่าแป้นพิมพ์จริงของ Android</string>
   <string name="title_pref_keypad_letter_keys">ปุ่มตัวอักษรกดปุ่มบนแป้นตัวเลข</string>
   <string name="title_pref_enter_sends_messages">Enter ส่งข้อความ</string>
+  <string name="sandfly_keyboard_name">แป้นพิมพ์ SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">การพิมพ์เมื่อกดแป้นค้างไว้</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>อักขระ Alt</item>
+    <item>ตัวอักษรพิมพ์ใหญ่</item>
+    <item>อักขระซ้ำ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ค้นหาอีโมจิ</string>
+  <string name="shortcut_choose_symbol">เลือกสัญลักษณ์</string>
+  <string name="sandfly_keyboard_emoji_search">การค้นหาอีโมจิ</string>
+  <string name="sandfly_keyboard_symbols">สัญลักษณ์</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d จาก %3$d</string>
+  <string name="sandfly_keyboard_no_matches">ไม่มีรายการที่ตรงกัน</string>
+  <string name="sandfly_keyboard_chooser_closed">ปิดแล้ว</string>
+  <string name="sandfly_keyboard_needed">ต้องใช้แป้นพิมพ์ SandFly ในช่องข้อความ</string>
   <string name="value_keyboard_echo_none">ไม่มี</string>
   <string name="value_keyboard_echo_characters_only">อักขระ</string>
   <string name="value_keyboard_echo_words_only">คำ</string>

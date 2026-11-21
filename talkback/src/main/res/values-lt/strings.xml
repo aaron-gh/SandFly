@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android fizinės klaviatūros nustatymai</string>
   <string name="title_pref_keypad_letter_keys">Raidžių klavišai spaudžia skaičių klaviatūros mygtukus</string>
   <string name="title_pref_enter_sends_messages">Enter siunčia pranešimus</string>
+  <string name="sandfly_keyboard_name">SandFly klaviatūra</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Laikomų klavišų įvestis</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt simbolis</item>
+    <item>Didžioji raidė</item>
+    <item>Pakartotas simbolis</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Ieškoti jaustukų</string>
+  <string name="shortcut_choose_symbol">Pasirinkti simbolį</string>
+  <string name="sandfly_keyboard_emoji_search">Jaustukų paieška</string>
+  <string name="sandfly_keyboard_symbols">Simboliai</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d iš %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Atitikčių nėra</string>
+  <string name="sandfly_keyboard_chooser_closed">Uždaryta</string>
+  <string name="sandfly_keyboard_needed">Reikia SandFly klaviatūros teksto lauke</string>
   <string name="value_keyboard_echo_none">Nėra</string>
   <string name="value_keyboard_echo_characters_only">Simboliai</string>
   <string name="value_keyboard_echo_words_only">Žodžiai</string>

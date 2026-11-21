@@ -249,6 +249,7 @@ import com.google.android.accessibility.talkback.ipc.IpcService.IpcClientCallbac
 import com.google.android.accessibility.talkback.ipc.IpcService.ServerOnDestroyListener;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKeyboardHost;
 import com.google.android.accessibility.talkback.keyboard.SandFlyKey;
 import com.google.android.accessibility.talkback.keyboardecho.KeyboardEchoSettings;
 import com.google.android.accessibility.talkback.labeling.CustomLabelManager;
@@ -1214,6 +1215,7 @@ public class TalkBackService extends AccessibilityServiceCompat
       SandflyAi.getFeatures().onServiceDestroyed(this);
     }
     HandwritingKeyboardHost.setFeedback(null);
+    SandFlyKeyboardHost.setFeedback(null);
     TutorialHooks.setFeedback(null);
     instance = null;
     // Shutdown and unregister all components.
@@ -3665,6 +3667,7 @@ public class TalkBackService extends AccessibilityServiceCompat
                     : getBrailleImeForTalkBack().getBrailleImeForBrailleDisplay());
 
     HandwritingKeyboardHost.setFeedback(pipeline.getFeedbackReturner());
+    SandFlyKeyboardHost.setFeedback(pipeline.getFeedbackReturner());
     TutorialHooks.setFeedback(pipeline.getFeedbackReturner());
     talkBackForBrailleIme =
         new TalkBackForBrailleImeImpl(

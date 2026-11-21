@@ -3708,6 +3708,32 @@
     <string name="title_pref_keypad_letter_keys">Letter keys press keypad buttons</string>
     <!-- Typing > Physical keyboard: Enter presses Send in a messaging app's message field; Shift + Enter types a new line. -->
     <string name="title_pref_enter_sends_messages">Enter sends messages</string>
+    <!-- Name of SandFly's input method for physical keyboards, in Android's keyboard list, and the Typing setting that opens that list. -->
+    <string name="sandfly_keyboard_name">SandFly keyboard</string>
+    <!-- Typing > Physical keyboard: what a printing key held down types with the SandFly keyboard. -->
+    <string name="title_pref_sandfly_keyboard_held_keys">Held keys type</string>
+    <!-- Choices of Held keys type: the key's Alt character (or its capital when it has none), its capital letter, or the key repeated. -->
+    <string-array name="pref_sandfly_keyboard_held_keys_entries">
+        <item>Alt character</item>
+        <item>Capital letter</item>
+        <item>Repeated character</item>
+    </string-array>
+    <!-- Command: in a text field, opens a list of emoji found by typing words of their names. -->
+    <string name="shortcut_search_emoji">Search emoji</string>
+    <!-- Command: in a text field, opens a list of symbols to type, found by typing words of their names. -->
+    <string name="shortcut_choose_symbol">Choose a symbol</string>
+    <!-- Spoken when emoji search opens, before the first emoji. -->
+    <string name="sandfly_keyboard_emoji_search">Emoji search</string>
+    <!-- Spoken when the symbol chooser opens, before the first symbol. -->
+    <string name="sandfly_keyboard_symbols">Symbols</string>
+    <!-- Spoken for the character chosen in emoji search or the symbol chooser: its name, its position, the number of matches. -->
+    <string name="sandfly_keyboard_chooser_item">%1$s, %2$d of %3$d</string>
+    <!-- Spoken when no character's name has the words typed in emoji search or the symbol chooser. -->
+    <string name="sandfly_keyboard_no_matches">No matches</string>
+    <!-- Spoken when emoji search or the symbol chooser closes without typing. -->
+    <string name="sandfly_keyboard_chooser_closed">Closed</string>
+    <!-- Spoken when Search emoji or Choose a symbol runs without the SandFly keyboard in a text field. -->
+    <string name="sandfly_keyboard_needed">Needs the SandFly keyboard in a text field</string>
     <!-- Title of the switch that makes a double tap on the text field being edited move the cursor to the start of its text, or to the end when the cursor is at the start, instead of activating the field. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_double_tap_moves_cursor">Double-tap moves cursor to start or end</string>
     <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->

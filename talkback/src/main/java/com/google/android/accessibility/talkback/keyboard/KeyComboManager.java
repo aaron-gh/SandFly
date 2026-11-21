@@ -256,6 +256,9 @@ public class KeyComboManager
 
   /** Enter that sends messages. */
   private final MessageEnterKeys messageEnterKeys;
+
+  /** Keys pressed while a chooser of the SandFly keyboard was open, released there too. */
+  private final Set<Integer> keysPassedToChooser = new HashSet<>();
   // Whether the user ran a SandFly command or touched the screen since a key last went to the app
   // or a new screen opened. While not, and a text field has input focus, the keyboard phone keymaps'
   // single keys and Enter go to the text field.
@@ -467,6 +470,7 @@ public class KeyComboManager
       keypadKeys.reset();
     }
     messageEnterKeys.reset();
+    keysPassedToChooser.clear();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
     serviceState = newState;
@@ -496,6 +500,21 @@ public class KeyComboManager
 
     if (isKeyboardInputOff()) {
       return onKeyEventWhileInputOff(event);
+    }
+
+    // While the SandFly keyboard's emoji search or symbol chooser is open, every key pressed is its
+    // own, up to its release. Keys pressed before, such as the shortcut that opened it, are
+    // released here.
+    if (event.getAction() == KeyEvent.ACTION_DOWN) {
+      if (keysPassedToChooser.contains(event.getKeyCode()) || SandFlyKeyboardHost.isChoosing()) {
+        keysPassedToChooser.add(event.getKeyCode());
+        return false;
+      }
+    } else if (keysPassedToChooser.contains(event.getKeyCode())) {
+      if (event.getAction() == KeyEvent.ACTION_UP) {
+        keysPassedToChooser.remove(event.getKeyCode());
+      }
+      return false;
     }
 
     // Letter keys on keypads and Enter in message fields, before shortcuts. While SandFly is
@@ -1068,7 +1087,15 @@ public class KeyComboManager
    * or the screen changed, the user ran no SandFly command and didn't touch the screen.
    */
   private boolean isTyping() {
-    if (navigatedSinceTyping || accessibilityFocusMonitor == null) {
+    if (navigatedSinceTyping) {
+      return false;
+    }
+    // The SandFly keyboard knows whether a text field takes what is typed, without asking the app.
+    @Nullable Boolean editing = SandFlyKeyboardHost.isEditing();
+    if (editing != null) {
+      return editing;
+    }
+    if (accessibilityFocusMonitor == null) {
       return false;
     }
     AccessibilityNodeInfoCompat inputFocus = accessibilityFocusMonitor.getInputFocus();

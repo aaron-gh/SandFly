@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android fiziki klaviatura ayarları</string>
   <string name="title_pref_keypad_letter_keys">Hərf düymələri rəqəm klaviaturasının düymələrini basır</string>
   <string name="title_pref_enter_sends_messages">Enter mesajları göndərir</string>
+  <string name="sandfly_keyboard_name">SandFly klaviaturası</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Basılı saxlanılan düymələr yazır</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt simvolu</item>
+    <item>Böyük hərf</item>
+    <item>Təkrarlanan simvol</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Emoji axtarın</string>
+  <string name="shortcut_choose_symbol">Simvol seçin</string>
+  <string name="sandfly_keyboard_emoji_search">Emoji axtarışı</string>
+  <string name="sandfly_keyboard_symbols">Simvollar</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d/%3$d</string>
+  <string name="sandfly_keyboard_no_matches">Nəticə yoxdur</string>
+  <string name="sandfly_keyboard_chooser_closed">Bağlandı</string>
+  <string name="sandfly_keyboard_needed">Mətn sahəsində SandFly klaviaturası tələb olunur</string>
   <string name="value_keyboard_echo_none">Heç biri</string>
   <string name="value_keyboard_echo_characters_only">Simvollar</string>
   <string name="value_keyboard_echo_words_only">Sözlər</string>

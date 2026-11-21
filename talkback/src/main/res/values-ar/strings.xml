@@ -781,6 +781,21 @@
   <string name="title_pref_system_physical_keyboard">إعدادات لوحة المفاتيح الخارجية في Android</string>
   <string name="title_pref_keypad_letter_keys">مفاتيح الأحرف تضغط على أزرار لوحة الأرقام</string>
   <string name="title_pref_enter_sends_messages">مفتاح Enter يرسل الرسائل</string>
+  <string name="sandfly_keyboard_name">لوحة مفاتيح SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">الكتابة عند الضغط مطولاً على المفاتيح</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>حرف Alt</item>
+    <item>حرف كبير</item>
+    <item>حرف مكرر</item>
+  </string-array>
+  <string name="shortcut_search_emoji">البحث عن رموز تعبيرية</string>
+  <string name="shortcut_choose_symbol">اختيار رمز</string>
+  <string name="sandfly_keyboard_emoji_search">البحث عن الرموز التعبيرية</string>
+  <string name="sandfly_keyboard_symbols">الرموز</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s، %2$d من %3$d</string>
+  <string name="sandfly_keyboard_no_matches">لا توجد نتائج مطابقة</string>
+  <string name="sandfly_keyboard_chooser_closed">تم الإغلاق</string>
+  <string name="sandfly_keyboard_needed">يتطلب لوحة مفاتيح SandFly في حقل نص</string>
   <string name="title_pref_interrupt_typing">إيقاف الكلام عند الكتابة</string>
   <string name="pref_interrupt_typing_entry_always">دائمًا</string>
   <string name="pref_interrupt_typing_entry_edit_fields">في حقول التعديل</string>

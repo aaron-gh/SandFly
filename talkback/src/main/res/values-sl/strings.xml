@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Nastavitve fizične tipkovnice Android</string>
   <string name="title_pref_keypad_letter_keys">Črkovne tipke pritiskajo gumbe številčnice</string>
   <string name="title_pref_enter_sends_messages">Enter pošlje sporočila</string>
+  <string name="sandfly_keyboard_name">Tipkovnica SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Vnos ob držanju tipke</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Znak Alt</item>
+    <item>Velika črka</item>
+    <item>Ponovljeni znak</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Išči čustvene simbole</string>
+  <string name="shortcut_choose_symbol">Izberi simbol</string>
+  <string name="sandfly_keyboard_emoji_search">Iskanje čustvenih simbolov</string>
+  <string name="sandfly_keyboard_symbols">Simboli</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d od %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Ni ujemanj</string>
+  <string name="sandfly_keyboard_chooser_closed">Zaprto</string>
+  <string name="sandfly_keyboard_needed">Zahteva tipkovnico SandFly v polju z besedilom</string>
   <string name="value_keyboard_echo_none">Brez</string>
   <string name="value_keyboard_echo_characters_only">Znaki</string>
   <string name="value_keyboard_echo_words_only">Besede</string>

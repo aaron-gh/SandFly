@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android 實體鍵盤設定</string>
   <string name="title_pref_keypad_letter_keys">字母鍵按下數字鍵盤按鈕</string>
   <string name="title_pref_enter_sends_messages">按 Enter 傳送訊息</string>
+  <string name="sandfly_keyboard_name">SandFly 鍵盤</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">按住按鍵時輸入</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt 字元</item>
+    <item>大楷</item>
+    <item>重複字元</item>
+  </string-array>
+  <string name="shortcut_search_emoji">搜尋表情符號</string>
+  <string name="shortcut_choose_symbol">選擇符號</string>
+  <string name="sandfly_keyboard_emoji_search">表情符號搜尋</string>
+  <string name="sandfly_keyboard_symbols">符號</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s、%2$d / %3$d</string>
+  <string name="sandfly_keyboard_no_matches">沒有相符結果</string>
+  <string name="sandfly_keyboard_chooser_closed">已關閉</string>
+  <string name="sandfly_keyboard_needed">需要在文字欄位中使用 SandFly 鍵盤</string>
   <string name="value_keyboard_echo_none">無</string>
   <string name="value_keyboard_echo_characters_only">字元</string>
   <string name="value_keyboard_echo_words_only">字詞</string>

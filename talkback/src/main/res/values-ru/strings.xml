@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Настройки физической клавиатуры Android</string>
   <string name="title_pref_keypad_letter_keys">Буквенные клавиши нажимают кнопки цифровой клавиатуры</string>
   <string name="title_pref_enter_sends_messages">Ввод отправляет сообщения</string>
+  <string name="sandfly_keyboard_name">Клавиатура SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Ввод при удержании клавиш</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Символ Alt</item>
+    <item>Заглавная буква</item>
+    <item>Повторный символ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Найти эмодзи</string>
+  <string name="shortcut_choose_symbol">Выбрать символ</string>
+  <string name="sandfly_keyboard_emoji_search">Поиск эмодзи</string>
+  <string name="sandfly_keyboard_symbols">Символы</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d из %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Нет совпадений</string>
+  <string name="sandfly_keyboard_chooser_closed">Закрыто</string>
+  <string name="sandfly_keyboard_needed">Требуется клавиатура SandFly в текстовом поле</string>
   <string name="value_keyboard_echo_none">Отключено</string>
   <string name="value_keyboard_echo_characters_only">Символы</string>
   <string name="value_keyboard_echo_words_only">Слова</string>

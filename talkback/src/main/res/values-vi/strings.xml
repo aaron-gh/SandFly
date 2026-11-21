@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Cài đặt bàn phím thực của Android</string>
   <string name="title_pref_keypad_letter_keys">Phím chữ nhấn các nút trên bàn phím số</string>
   <string name="title_pref_enter_sends_messages">Enter gửi tin nhắn</string>
+  <string name="sandfly_keyboard_name">Bàn phím SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Nhập khi giữ phím</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Ký tự Alt</item>
+    <item>Chữ cái viết hoa</item>
+    <item>Ký tự lặp lại</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Tìm biểu tượng cảm xúc</string>
+  <string name="shortcut_choose_symbol">Chọn ký hiệu</string>
+  <string name="sandfly_keyboard_emoji_search">Tìm biểu tượng cảm xúc</string>
+  <string name="sandfly_keyboard_symbols">Ký hiệu</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d trên %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Không có kết quả phù hợp</string>
+  <string name="sandfly_keyboard_chooser_closed">Đã đóng</string>
+  <string name="sandfly_keyboard_needed">Cần có bàn phím SandFly trong trường văn bản</string>
   <string name="value_keyboard_echo_none">Không</string>
   <string name="value_keyboard_echo_characters_only">Ký tự</string>
   <string name="value_keyboard_echo_words_only">Từ</string>

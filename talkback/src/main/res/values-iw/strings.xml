@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">הגדרות המקלדת הפיזית של Android</string>
   <string name="title_pref_keypad_letter_keys">מקשי האותיות לוחצים על לחצני לוח המקשים</string>
   <string name="title_pref_enter_sends_messages">מקש Enter שולח הודעות</string>
+  <string name="sandfly_keyboard_name">מקלדת SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">הקלדה בלחיצה ארוכה על מקש</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>תו Alt</item>
+    <item>אות רישית</item>
+    <item>תו חוזר</item>
+  </string-array>
+  <string name="shortcut_search_emoji">חיפוש אמוג\'י</string>
+  <string name="shortcut_choose_symbol">בחירת סמל</string>
+  <string name="sandfly_keyboard_emoji_search">חיפוש אמוג\'י</string>
+  <string name="sandfly_keyboard_symbols">סמלים</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d מתוך %3$d</string>
+  <string name="sandfly_keyboard_no_matches">אין התאמות</string>
+  <string name="sandfly_keyboard_chooser_closed">נסגר</string>
+  <string name="sandfly_keyboard_needed">נדרשת מקלדת SandFly בשדה טקסט</string>
   <string name="value_keyboard_echo_none">ללא</string>
   <string name="value_keyboard_echo_characters_only">תווים</string>
   <string name="value_keyboard_echo_words_only">מילים</string>

@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Cilësimet e tastierës fizike të Android</string>
   <string name="title_pref_keypad_letter_keys">Tastet e shkronjave shtypin butonat e tastierës numerike</string>
   <string name="title_pref_enter_sends_messages">Enter dërgon mesazhet</string>
+  <string name="sandfly_keyboard_name">Tastiera SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Shkrimi me tastet e mbajtura</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Karakteri Alt</item>
+    <item>Shkronjë kapitale</item>
+    <item>Karakter i përsëritur</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Kërko emoji</string>
+  <string name="shortcut_choose_symbol">Zgjidh një simbol</string>
+  <string name="sandfly_keyboard_emoji_search">Kërkimi i emoji-ve</string>
+  <string name="sandfly_keyboard_symbols">Simbolet</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d nga %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Asnjë përputhje</string>
+  <string name="sandfly_keyboard_chooser_closed">U mbyll</string>
+  <string name="sandfly_keyboard_needed">Kërkon tastierën SandFly në një fushë teksti</string>
   <string name="value_keyboard_echo_none">Asnjë</string>
   <string name="value_keyboard_echo_characters_only">Karakteret</string>
   <string name="value_keyboard_echo_words_only">Fjalët</string>

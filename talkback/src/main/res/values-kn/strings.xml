@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android ನ ಭೌತಿಕ ಕೀಬೋರ್ಡ್ ಸೆಟ್ಟಿಂಗ್‌ಗಳು</string>
   <string name="title_pref_keypad_letter_keys">ಅಕ್ಷರ ಕೀಗಳು ಕೀಪ್ಯಾಡ್ ಬಟನ್‌ಗಳನ್ನು ಒತ್ತುತ್ತವೆ</string>
   <string name="title_pref_enter_sends_messages">Enter ಸಂದೇಶಗಳನ್ನು ಕಳುಹಿಸುತ್ತದೆ</string>
+  <string name="sandfly_keyboard_name">SandFly ಕೀಬೋರ್ಡ್</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">ಒತ್ತಿ ಹಿಡಿದ ಕೀಗಳ ಟೈಪಿಂಗ್</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt ಅಕ್ಷರ</item>
+    <item>ದೊಡ್ಡಕ್ಷರ</item>
+    <item>ಪುನರಾವರ್ತಿತ ಅಕ್ಷರ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ಎಮೋಜಿ ಹುಡುಕಿ</string>
+  <string name="shortcut_choose_symbol">ಚಿಹ್ನೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+  <string name="sandfly_keyboard_emoji_search">ಎಮೋಜಿ ಹುಡುಕಾಟ</string>
+  <string name="sandfly_keyboard_symbols">ಚಿಹ್ನೆಗಳು</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %3$d ರಲ್ಲಿ %2$d</string>
+  <string name="sandfly_keyboard_no_matches">ಯಾವುದೇ ಹೊಂದಾಣಿಕೆಗಳಿಲ್ಲ</string>
+  <string name="sandfly_keyboard_chooser_closed">ಮುಚ್ಚಲಾಗಿದೆ</string>
+  <string name="sandfly_keyboard_needed">ಪಠ್ಯ ಫೀಲ್ಡ್‌ನಲ್ಲಿ SandFly ಕೀಬೋರ್ಡ್ ಅಗತ್ಯವಿದೆ</string>
   <string name="value_keyboard_echo_none">ಯಾವುದೂ ಅಲ್ಲ</string>
   <string name="value_keyboard_echo_characters_only">ಅಕ್ಷರಗಳು</string>
   <string name="value_keyboard_echo_words_only">ಪದಗಳು</string>

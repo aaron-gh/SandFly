@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android හි භෞතික යතුරු පුවරු සැකසුම්</string>
   <string name="title_pref_keypad_letter_keys">අකුරු යතුරු මගින් යතුරු පෑඩයේ බොත්තම් ඔබයි</string>
   <string name="title_pref_enter_sends_messages">Enter පණිවුඩ යවයි</string>
+  <string name="sandfly_keyboard_name">SandFly යතුරු පුවරුව</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">අල්ලාගත් යතුරු ටයිප් කරන දේ</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt අනුලකුණ</item>
+    <item>කැපිටල් අකුර</item>
+    <item>පුනරාවර්තන අනුලකුණ</item>
+  </string-array>
+  <string name="shortcut_search_emoji">ඉමොජි සොයන්න</string>
+  <string name="shortcut_choose_symbol">සංකේතයක් තෝරන්න</string>
+  <string name="sandfly_keyboard_emoji_search">ඉමොජි සෙවීම</string>
+  <string name="sandfly_keyboard_symbols">සංකේත</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %3$d න් %2$d</string>
+  <string name="sandfly_keyboard_no_matches">ගැළපීම් නැත</string>
+  <string name="sandfly_keyboard_chooser_closed">වසා ඇත</string>
+  <string name="sandfly_keyboard_needed">පෙළ ක්ෂේත්‍රයක SandFly යතුරු පුවරුව අවශ්‍යයි</string>
   <string name="value_keyboard_echo_none">කිසිවක් නැත</string>
   <string name="value_keyboard_echo_characters_only">අනුලකුණු</string>
   <string name="value_keyboard_echo_words_only">වචන</string>

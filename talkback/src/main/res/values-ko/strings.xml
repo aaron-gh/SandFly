@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android 물리적 키보드 설정</string>
   <string name="title_pref_keypad_letter_keys">문자 키로 키패드 버튼 누르기</string>
   <string name="title_pref_enter_sends_messages">Enter 키로 메시지 보내기</string>
+  <string name="sandfly_keyboard_name">SandFly 키보드</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">키를 길게 누를 때 입력</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt 문자</item>
+    <item>대문자</item>
+    <item>반복 문자</item>
+  </string-array>
+  <string name="shortcut_search_emoji">그림 이모티콘 검색</string>
+  <string name="shortcut_choose_symbol">기호 선택</string>
+  <string name="sandfly_keyboard_emoji_search">그림 이모티콘 검색</string>
+  <string name="sandfly_keyboard_symbols">기호</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d/%3$d</string>
+  <string name="sandfly_keyboard_no_matches">일치하는 결과 없음</string>
+  <string name="sandfly_keyboard_chooser_closed">닫힘</string>
+  <string name="sandfly_keyboard_needed">텍스트 입력란에 SandFly 키보드 필요</string>
   <string name="value_keyboard_echo_none">없음</string>
   <string name="value_keyboard_echo_characters_only">글자</string>
   <string name="value_keyboard_echo_words_only">단어</string>

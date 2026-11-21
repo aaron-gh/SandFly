@@ -133,9 +133,14 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
       )
     }
 
-  // Touch can be locked from the keyboard, for people who use only the keyboard.
+  // Touch can be locked from the keyboard, for people who use only the keyboard. In text fields,
+  // with the SandFly keyboard, O searches emoji and Y chooses a symbol.
   override val commandDefaults: Map<Int, KeyCombo> =
-    mapOf(R.string.shortcut_value_toggle_touch_lock to sandFly(NONE, KeyEvent.KEYCODE_L))
+    mapOf(
+      R.string.shortcut_value_toggle_touch_lock to sandFly(NONE, KeyEvent.KEYCODE_L),
+      R.string.shortcut_value_search_emoji to sandFly(NONE, KeyEvent.KEYCODE_O),
+      R.string.shortcut_value_choose_symbol to sandFly(NONE, KeyEvent.KEYCODE_Y),
+    )
 
   /** Puts SandFly key + [keyCode] for [next] and with Shift for [previous]. */
   private fun MutableMap<Int, KeyCombo>.sandFlyPair(next: Int, previous: Int, keyCode: Int) {

@@ -637,6 +637,21 @@
   <string name="title_pref_system_physical_keyboard">Android の物理キーボード設定</string>
   <string name="title_pref_keypad_letter_keys">文字キーでキーパッドのボタンを押す</string>
   <string name="title_pref_enter_sends_messages">Enter キーでメッセージを送信</string>
+  <string name="sandfly_keyboard_name">SandFly キーボード</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">キー長押し時の入力</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt 文字</item>
+    <item>大文字</item>
+    <item>繰り返し文字</item>
+  </string-array>
+  <string name="shortcut_search_emoji">絵文字を検索</string>
+  <string name="shortcut_choose_symbol">記号を選択</string>
+  <string name="sandfly_keyboard_emoji_search">絵文字検索</string>
+  <string name="sandfly_keyboard_symbols">記号</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s、%2$d/%3$d</string>
+  <string name="sandfly_keyboard_no_matches">一致するものがありません</string>
+  <string name="sandfly_keyboard_chooser_closed">閉じました</string>
+  <string name="sandfly_keyboard_needed">テキスト フィールドで SandFly キーボードが必要です</string>
   <string name="value_keyboard_echo_none">なし</string>
   <string name="value_keyboard_echo_characters_only">文字</string>
   <string name="value_keyboard_echo_words_only">単語</string>

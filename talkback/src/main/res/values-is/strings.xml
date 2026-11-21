@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Vélbúnaðarlyklaborðsstillingar Android</string>
   <string name="title_pref_keypad_letter_keys">Bókstafslyklar ýta á hnappa talnaborðs</string>
   <string name="title_pref_enter_sends_messages">Enter sendir skilaboð</string>
+  <string name="sandfly_keyboard_name">SandFly-lyklaborð</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Innsláttur haldinna lykla</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt-stafur</item>
+    <item>Hástafur</item>
+    <item>Endurtekinn stafur</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Leita að emoji</string>
+  <string name="shortcut_choose_symbol">Velja tákn</string>
+  <string name="sandfly_keyboard_emoji_search">Emoji-leit</string>
+  <string name="sandfly_keyboard_symbols">Tákn</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d af %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Engar samsvaranir</string>
+  <string name="sandfly_keyboard_chooser_closed">Lokað</string>
+  <string name="sandfly_keyboard_needed">Krefst SandFly-lyklaborðs í textareit</string>
   <string name="value_keyboard_echo_none">Engin</string>
   <string name="value_keyboard_echo_characters_only">Stafir</string>
   <string name="value_keyboard_echo_words_only">Orð</string>

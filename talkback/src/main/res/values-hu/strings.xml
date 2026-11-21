@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Android fizikai billentyűzet beállításai</string>
   <string name="title_pref_keypad_letter_keys">A betűbillentyűk megnyomják a számbillentyűzet gombjait</string>
   <string name="title_pref_enter_sends_messages">Az Enter elküldi az üzeneteket</string>
+  <string name="sandfly_keyboard_name">SandFly billentyűzet</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Lenyomva tartott billentyű bevitele</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt karakter</item>
+    <item>Nagybetű</item>
+    <item>Ismételt karakter</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Emoji keresése</string>
+  <string name="shortcut_choose_symbol">Szimbólum kiválasztása</string>
+  <string name="sandfly_keyboard_emoji_search">Emojikeresés</string>
+  <string name="sandfly_keyboard_symbols">Szimbólumok</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d / %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Nincs találat</string>
+  <string name="sandfly_keyboard_chooser_closed">Bezárva</string>
+  <string name="sandfly_keyboard_needed">SandFly billentyűzet szükséges egy szövegmezőben</string>
   <string name="value_keyboard_echo_none">Nincs</string>
   <string name="value_keyboard_echo_characters_only">Karakterek</string>
   <string name="value_keyboard_echo_words_only">Szavak</string>

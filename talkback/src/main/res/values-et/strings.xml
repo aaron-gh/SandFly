@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Androidi füüsilise klaviatuuri seaded</string>
   <string name="title_pref_keypad_letter_keys">Tähtklahvid vajutavad numbriklaviatuuri nuppe</string>
   <string name="title_pref_enter_sends_messages">Enter saadab sõnumid</string>
+  <string name="sandfly_keyboard_name">SandFly klaviatuur</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Allhoitud klahvi sisestus</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Alt-tähemärk</item>
+    <item>Suurtäht</item>
+    <item>Korduv tähemärk</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Otsi emotikone</string>
+  <string name="shortcut_choose_symbol">Vali sümbol</string>
+  <string name="sandfly_keyboard_emoji_search">Emotikonide otsing</string>
+  <string name="sandfly_keyboard_symbols">Sümbolid</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d / %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Vasteid pole</string>
+  <string name="sandfly_keyboard_chooser_closed">Suletud</string>
+  <string name="sandfly_keyboard_needed">Vajab tekstiväljal SandFly klaviatuuri</string>
   <string name="value_keyboard_echo_none">Puudub</string>
   <string name="value_keyboard_echo_characters_only">Tähemärgid</string>
   <string name="value_keyboard_echo_words_only">Sõnad</string>

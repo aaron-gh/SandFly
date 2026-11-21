@@ -15,6 +15,20 @@
                 android:name="android.view.im"
                 android:resource="@xml/handwriting_ime" />
         </service>
+        <!-- The input method for physical keyboards: no keys on the screen; held keys, emoji
+             search and the symbol chooser, and whether a text field is being edited. -->
+        <service
+            android:name="com.google.android.accessibility.talkback.keyboard.SandFlyKeyboard"
+            android:label="@string/sandfly_keyboard_name"
+            android:exported="true"
+            android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/sandfly_keyboard_ime" />
+        </service>
         <!-- Installs scripts that are opened with or shared to SandFly, through Scripts. -->
         <activity
             android:name="com.google.android.accessibility.talkback.scripting.ScriptImportActivity"

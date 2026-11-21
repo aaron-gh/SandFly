@@ -638,6 +638,21 @@
   <string name="title_pref_system_physical_keyboard">Ρυθμίσεις φυσικού πληκτρολογίου Android</string>
   <string name="title_pref_keypad_letter_keys">Τα πλήκτρα γραμμάτων πατούν τα κουμπιά του αριθμητικού πληκτρολογίου</string>
   <string name="title_pref_enter_sends_messages">Το Enter στέλνει μηνύματα</string>
+  <string name="sandfly_keyboard_name">Πληκτρολόγιο SandFly</string>
+  <string name="title_pref_sandfly_keyboard_held_keys">Πληκτρολόγηση με παρατεταμένο πάτημα πλήκτρου</string>
+  <string-array name="pref_sandfly_keyboard_held_keys_entries">
+    <item>Χαρακτήρας Alt</item>
+    <item>Κεφαλαίο γράμμα</item>
+    <item>Επαναλαμβανόμενος χαρακτήρας</item>
+  </string-array>
+  <string name="shortcut_search_emoji">Αναζήτηση emoji</string>
+  <string name="shortcut_choose_symbol">Επιλογή συμβόλου</string>
+  <string name="sandfly_keyboard_emoji_search">Αναζήτηση emoji</string>
+  <string name="sandfly_keyboard_symbols">Σύμβολα</string>
+  <string name="sandfly_keyboard_chooser_item">%1$s, %2$d από %3$d</string>
+  <string name="sandfly_keyboard_no_matches">Κανένα αποτέλεσμα</string>
+  <string name="sandfly_keyboard_chooser_closed">Έκλεισε</string>
+  <string name="sandfly_keyboard_needed">Απαιτείται το πληκτρολόγιο SandFly σε πεδίο κειμένου</string>
   <string name="value_keyboard_echo_none">Κανένας</string>
   <string name="value_keyboard_echo_characters_only">Χαρακτήρες</string>
   <string name="value_keyboard_echo_words_only">Λέξεις</string>
