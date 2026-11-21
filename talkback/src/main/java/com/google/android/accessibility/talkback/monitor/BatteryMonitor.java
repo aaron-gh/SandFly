@@ -89,6 +89,7 @@ public class BatteryMonitor extends SameThreadBroadcastReceiver {
         int status =
             intent.getIntExtra(BatteryManager.EXTRA_STATUS, BatteryManager.BATTERY_STATUS_UNKNOWN);
         charging = plugged || status == BatteryManager.BATTERY_STATUS_CHARGING;
+        powerConnected = plugged;
         onBatteryState(plugged, status == BatteryManager.BATTERY_STATUS_FULL || batteryLevel >= 100);
       }
       case Intent.ACTION_POWER_DISCONNECTED -> {
