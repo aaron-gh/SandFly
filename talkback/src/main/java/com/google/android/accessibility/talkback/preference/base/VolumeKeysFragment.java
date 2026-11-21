@@ -42,12 +42,15 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
         R.string.pref_volume_keys_speech_volume_while_speaking_key, OneUiVolumeKeys.isSupported());
     TwoStatePreference screenOff = findPreference(getString(R.string.pref_volume_keys_screen_off_key));
     if (screenOff != null) {
-      screenOff.setVisible(!FormFactorUtils.isAndroidWear() && ShizukuShell.isAvailable(requireContext()));
+      // The root shell process can't load the native helper.
+      screenOff.setVisible(
+          !FormFactorUtils.isAndroidWear()
+              && ShizukuShell.isAvailable(requireContext())
+              && !ShizukuShell.usesRoot());
       screenOff.setOnPreferenceChangeListener(
           (preference, value) -> {
             if (!Boolean.TRUE.equals(value)
                 || !ShizukuGrants.INSTANCE.isReady()
-                || ShizukuShell.usesRoot()
                 || ShizukuGrants.INSTANCE.hasShizukuPermission()) {
               return true;
             }

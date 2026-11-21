@@ -25,7 +25,6 @@
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="false"
       android:key="@string/pref_volume_keys_screen_off_key"
-      android:summary="@string/summary_pref_volume_keys_screen_off"
       android:title="@string/title_pref_volume_keys_screen_off" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
       android:defaultValue="@string/pref_volume_change_feedback_default"
