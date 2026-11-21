@@ -1,13 +1,15 @@
 local manifest = {
   id = 'wikipedia-search',
   name = 'Wikipedia',
-  version = '1',
+  version = '2',
   author = 'SandFly',
   description = 'Searches English Wikipedia and opens the chosen article. Assign Search Wikipedia in Commands.',
   onDemand = true,
   minApiVersion = 6,
   testedApiVersion = 6,
-  permissions = { 'dialogs', 'network', 'system' },
+  -- dialogs: the search field and the results. network: sf.fetch. system: sf.system.openUrl.
+  -- speech: sf.speak.
+  permissions = { 'dialogs', 'network', 'system', 'speech' },
   commands = {
     { id = 'search', title = 'Search Wikipedia' },
   },
@@ -24,11 +26,13 @@ sf.onCommand('search', function()
   if not query or query == '' then
     return
   end
-  local response = sf.fetch(
+  -- sf.fetch raises an error when there is no connection, so pcall catches it.
+  local fetched, response = pcall(
+    sf.fetch,
     'https://en.wikipedia.org/w/api.php?action=opensearch&limit=20&format=json&search=' .. encode(query),
     { headers = { ['User-Agent'] = 'SandFly-script/1.0' } }
   )
-  if not response.ok then
+  if not fetched or not response.ok then
     sf.speak('Search failed')
     return
   end
