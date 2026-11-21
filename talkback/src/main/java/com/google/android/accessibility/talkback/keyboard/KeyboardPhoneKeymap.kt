@@ -32,6 +32,9 @@ import com.google.android.accessibility.talkback.R
  * are the SandFly key with a letter, which work anywhere as well: J chooses the previous reading
  * control, I and K move by it, T and B go to the top and bottom, as on BlackBerry.
  *
+ * Arrow key navigation is on in this keymap, for the arrow keys that the Zinwa Q25 trackpad sends,
+ * and a press of the trackpad is Enter.
+ *
  * Written for Sym as the SandFly key; none uses Meta, so Right Alt and Meta can be the SandFly key
  * too, and Alt, where Alt + Shift held and Alt twice become the SandFly key's.
  */

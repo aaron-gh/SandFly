@@ -3702,6 +3702,12 @@
     <string name="title_pref_on_screen_keyboard">On-screen keyboard</string>
     <!-- Label for preference specifying that TalkBack physical keyboard settings. [CHAR_LIMIT=75] -->
     <string name="title_pref_physical_keyboard">Physical keyboard</string>
+    <!-- Typing > Physical keyboard: opens Android's own physical keyboard settings. -->
+    <string name="title_pref_system_physical_keyboard">Android physical keyboard settings</string>
+    <!-- Typing > Physical keyboard: on keyboards whose letters carry numbers, as on BlackBerry phones where W is 1, letter keys press the buttons of the lock screen PIN pad, the call keypad and calculators. -->
+    <string name="title_pref_keypad_letter_keys">Letter keys press keypad buttons</string>
+    <!-- Typing > Physical keyboard: Enter presses Send in a messaging app's message field; Shift + Enter types a new line. -->
+    <string name="title_pref_enter_sends_messages">Enter sends messages</string>
     <!-- Title of the switch that makes a double tap on the text field being edited move the cursor to the start of its text, or to the end when the cursor is at the start, instead of activating the field. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_double_tap_moves_cursor">Double-tap moves cursor to start or end</string>
     <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->

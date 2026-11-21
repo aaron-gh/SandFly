@@ -250,6 +250,12 @@ public class KeyComboManager
   private ScheduledExecutorService scheduler;
   private Future<Boolean> scheduleToOpenSearchApp;
   private final ArrowKeyNavKeyHandler arrowKeyNavKeyHandler;
+
+  /** Letter keys that press keypad buttons, on keyboards whose letters carry numbers. */
+  private final @Nullable KeypadKeys keypadKeys;
+
+  /** Enter that sends messages. */
+  private final MessageEnterKeys messageEnterKeys;
   // Whether the user ran a SandFly command or touched the screen since a key last went to the app
   // or a new screen opened. While not, and a text field has input focus, the keyboard phone keymaps'
   // single keys and Enter go to the text field.
@@ -311,6 +317,8 @@ public class KeyComboManager
 
   private KeyComboManager(Context context) {
     this.context = context;
+    keypadKeys = context instanceof AccessibilityService service ? new KeypadKeys(service) : null;
+    messageEnterKeys = new MessageEnterKeys(context);
     sharedPreferences = SharedPreferencesUtils.getSharedPreferences(context);
     initializeDefaultPreferenceValues();
     keyComboModel = createKeyComboModel();
@@ -333,7 +341,11 @@ public class KeyComboManager
 
               @Override
               public boolean isEditingText() {
-                return isEditingTextWithAccessibilityFocus();
+                // In the keyboard phone keymaps, also while typing in a text field that SandFly
+                // focus left, as their single keys do.
+                return plainKeys()
+                    ? KeyComboManager.this.isEditingText()
+                    : isEditingTextWithAccessibilityFocus();
               }
             });
     // Create a set of commands that only work in Browse Mode.
@@ -451,6 +463,10 @@ public class KeyComboManager
     }
     // The up event of a held SandFly key may be lost the same way.
     sandFlyKeyHeld = false;
+    if (keypadKeys != null) {
+      keypadKeys.reset();
+    }
+    messageEnterKeys.reset();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
     serviceState = newState;
@@ -480,6 +496,19 @@ public class KeyComboManager
 
     if (isKeyboardInputOff()) {
       return onKeyEventWhileInputOff(event);
+    }
+
+    // Letter keys on keypads and Enter in message fields, before shortcuts. While SandFly is
+    // suspended, only the releases of keys they took.
+    if (serviceState == SERVICE_STATE_ACTIVE || event.getAction() != KeyEvent.ACTION_DOWN) {
+      if ((keypadKeys != null && keypadKeys.onKeyEvent(event, this::isEditingText))
+          || messageEnterKeys.onKeyEvent(
+              event,
+              () -> accessibilityFocusMonitor == null ? null : accessibilityFocusMonitor.getInputFocus(),
+              this::isEditingText)) {
+        arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+        return true;
+      }
     }
 
     if (plainKeys() && keyPresses.onKeyEvent(event)) {
@@ -521,6 +550,11 @@ public class KeyComboManager
                 && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
                 && !sandFlyKeyHeld
                 && !isPassingKeysToApp())) {
+      // Moving with the arrow keys, such as the Zinwa Q25 trackpad's, ends typing as a shortcut
+      // does, so that Enter activates the item moved to.
+      if (event.getAction() == KeyEvent.ACTION_DOWN) {
+        navigatedSinceTyping = true;
+      }
       return true;
     }
 
@@ -538,7 +572,7 @@ public class KeyComboManager
     // A key that went to the app, such as one typed into a message, or a SandFly shortcut.
     if (event.getAction() == KeyEvent.ACTION_DOWN
         && !KeyEvent.isModifierKey(event.getKeyCode())
-        && event.getKeyCode() != KeyEvent.KEYCODE_ENTER) {
+        && !isEnterKey(event.getKeyCode())) {
       navigatedSinceTyping = handled;
     }
     return handled;
@@ -1012,6 +1046,13 @@ public class KeyComboManager
     return false;
   }
 
+  /** Whether [keyCode] is Enter, Numpad Enter or the centre of a D-pad. */
+  private static boolean isEnterKey(int keyCode) {
+    return keyCode == KeyEvent.KEYCODE_ENTER
+        || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER
+        || keyCode == KeyEvent.KEYCODE_DPAD_CENTER;
+  }
+
   /** Whether SandFly focus is on an item other than the one with input focus. */
   private boolean isSandFlyFocusAwayFromInputFocus() {
     if (accessibilityFocusMonitor == null) {
@@ -1032,6 +1073,11 @@ public class KeyComboManager
     }
     AccessibilityNodeInfoCompat inputFocus = accessibilityFocusMonitor.getInputFocus();
     return inputFocus != null && inputFocus.isFocused() && inputFocus.isEditable();
+  }
+
+  /** Whether the user is typing in a text field or SandFly focus is on the one being edited. */
+  private boolean isEditingText() {
+    return isEditingTextWithAccessibilityFocus() || isTyping();
   }
 
   /** Whether SandFly focus is on the text field being edited. */
@@ -1506,12 +1552,13 @@ public class KeyComboManager
     // Enter in the keyboard phone keymap, where a shortcut is Enter alone: after SandFly focus moved
     // to an item, it activates that item; after a key went to the app, as while typing a message,
     // it goes to the app, which may send the message. Where SandFly focus is on the text field
-    // with input focus, it goes to the app.
+    // with input focus, it goes to the app. Numpad Enter and the centre of a D-pad are Enter here,
+    // as a press of the Zinwa Q25 trackpad is.
     if (hasModifier
         && !pressedTriggerModifier
         && !startedSequenceKeyCombo
         && plainKeys()
-        && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
+        && isEnterKey(event.getKeyCode())) {
       KeyCombo enterKeys =
           new KeyCombo(
               otherModifiers,

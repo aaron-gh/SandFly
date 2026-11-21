@@ -540,6 +540,39 @@ class SandFlyKeyTest {
   }
 
   @Test
+  fun keyboardPhoneKeymapsHaveArrowKeyNavigationOn() {
+    for (keymap in listOf(Keymap.KEYBOARD_PHONE, Keymap.KEYBOARD_PHONE_SINGLE_KEYS)) {
+      manager(keymap, SandFlyKey.SYM)
+      assertTrue(ArrowKeyNav.isAvailable(context))
+      assertTrue(ArrowKeyNav.isOn(context))
+      ArrowKeyNav.setOn(context, false)
+      assertFalse(ArrowKeyNav.isOn(context))
+    }
+    manager(Keymap.SANDFLY)
+    assertTrue(ArrowKeyNav.isAvailable(context))
+    assertFalse(ArrowKeyNav.isOn(context))
+    manager(Keymap.NVDA)
+    assertFalse(ArrowKeyNav.isAvailable(context))
+  }
+
+  @Test
+  fun keyboardPhoneTrackpadPressIsEnter() {
+    for (keyCode in listOf(KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_NUMPAD_ENTER)) {
+      keys.clear()
+      val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
+      focusAwayFromTextField(manager)
+      assertFalse(manager.down(keyCode))
+      manager.up(keyCode)
+      time += 1000
+      manager.moveWithSym()
+      assertTrue(manager.down(keyCode))
+      manager.up(keyCode)
+      assertEquals(name(KeyEvent.KEYCODE_ENTER), keys.last())
+      time += 1000
+    }
+  }
+
+  @Test
   fun keyboardPhoneEnterGoesToTheTextFieldWithSandFlyFocus() {
     val manager = manager(Keymap.KEYBOARD_PHONE, SandFlyKey.SYM)
     editTextField(manager)
