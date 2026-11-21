@@ -17,7 +17,6 @@
 package com.google.android.accessibility.braille.common.translate
 
 import android.content.Context
-import androidx.test.core.app.ApplicationProvider
 import com.google.android.accessibility.braille.common.R
 import com.google.android.accessibility.braille.common.translate.BrailleLanguages.Code
 import java.util.Locale
@@ -28,12 +27,13 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
+import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [34])
 class BrailleLanguagesTest {
-  private val context: Context = ApplicationProvider.getApplicationContext()
+  private val context: Context = RuntimeEnvironment.getApplication()
 
   @Test
   fun persianCodeConfiguration() {
