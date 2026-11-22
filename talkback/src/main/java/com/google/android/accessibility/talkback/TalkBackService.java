@@ -1566,6 +1566,9 @@ public class TalkBackService extends AccessibilityServiceCompat
             displayIdToTouchInteractionMonitors.get(event.getDisplayId());
         if (touchInteractionMonitor != null) {
           touchInteractionMonitor.onHoverEntered();
+          if (!KeyboardHover.isSentHover(event)) {
+            touchInteractionMonitor.onGboardHoverEntered(event);
+          }
         }
       }
     }
