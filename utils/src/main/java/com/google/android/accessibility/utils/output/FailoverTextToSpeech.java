@@ -1937,6 +1937,7 @@ public class FailoverTextToSpeech {
     if (tts != null && tempTts == null) {
       synchronized (ttsLock) {
         cachedTtsLocale = null;
+        unsupportedLocales.clear();
         mLastUtteranceLocale = null;
         missingVoice = null;
         if (profile == null) {
@@ -1982,6 +1983,7 @@ public class FailoverTextToSpeech {
     synchronized (ttsLock) {
       mLastUtteranceLocale = null;
       cachedTtsLocale = null;
+      unsupportedLocales.clear();
       try {
         // Each step is tried in turn, since a voice the engine lists can still fail to be set,
         // and the engine would otherwise keep the voice it had, such as another profile's.
@@ -3291,6 +3293,7 @@ public class FailoverTextToSpeech {
     if (status != TextToSpeech.SUCCESS) {
       synchronized (ttsLock) {
         cachedTtsLocale = null;
+        unsupportedLocales.clear();
         engineVoices = null;
         missingVoice = null;
       }
@@ -3320,6 +3323,7 @@ public class FailoverTextToSpeech {
     synchronized (ttsLock) {
       oldVoices = engineVoices;
       cachedTtsLocale = null;
+      unsupportedLocales.clear();
       // An engine kept started may have another language set.
       mLastUtteranceLocale = null;
       engineVoices = voices;
@@ -3822,6 +3826,16 @@ public class FailoverTextToSpeech {
   private @Nullable Locale cachedTtsLocale;
 
   /**
+   * Locales the engine rejected, with the uptime when it did, so that text marked with a language
+   * the engine doesn't have doesn't call {@link TextToSpeech#setLanguage(Locale)} again for each
+   * utterance. Cleared with {@link #cachedTtsLocale}; an entry is tried again after {@link
+   * #UNSUPPORTED_LOCALE_RETRY_MS}. Guarded by {@code ttsLock}.
+   */
+  private final Map<Locale, Long> unsupportedLocales = new HashMap<>();
+
+  private static final long UNSUPPORTED_LOCALE_RETRY_MS = 60_000;
+
+  /**
    * Helper method that ensures the text-to-speech engine works even when the user is using the
    * Google TTS and has the system set to a non-embedded language.
    *
@@ -3939,9 +3953,17 @@ public class FailoverTextToSpeech {
         return LANG_AVAILABLE;
       }
 
+      Long rejectedAt = unsupportedLocales.get(locale);
+      if (rejectedAt != null
+          && SystemClock.uptimeMillis() - rejectedAt < UNSUPPORTED_LOCALE_RETRY_MS) {
+        return TextToSpeech.LANG_NOT_SUPPORTED;
+      }
       int status = tts.setLanguage(locale);
       LogUtils.d(TAG, "set ttsLocale: %s with status %s", locale, status);
-      if (!isNotAvailableStatus(status)) {
+      if (isNotAvailableStatus(status)) {
+        unsupportedLocales.put(locale, SystemClock.uptimeMillis());
+      } else {
+        unsupportedLocales.remove(locale);
         cachedTtsLocale = locale;
       }
       return status;
