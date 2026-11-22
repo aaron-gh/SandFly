@@ -17,9 +17,12 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.accessibilityservice.AccessibilityService
+import android.content.Context
+import android.content.pm.PackageManager
 import android.graphics.Rect
 import android.graphics.Region
 import android.os.Build
+import android.os.SystemClock
 import android.text.TextUtils
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.annotation.RequiresApi
@@ -50,6 +53,62 @@ object KeyboardExploration {
     TextUtils.equals(packageName, GBOARD_PACKAGE_NAME) ||
       TextUtils.equals(packageName, GBOARD_PACKAGE_NAME_DEV) ||
       TextUtils.equals(packageName, PIXELBOARD_PACKAGE_NAME)
+
+  /**
+   * The first Gboard version that selects the characters of its popup from touch exploration's
+   * hover and reports each one: 18.8. Gboard 18.4 (Pixelboard) and 18.5 report none, so SandFly
+   * explores those itself.
+   */
+  private const val POPUP_REPORTING_MAJOR = 18
+  private const val POPUP_REPORTING_MINOR = 8
+
+  /** How long a keyboard's version is kept before it is read again, as after an update. */
+  private const val VERSION_CHECK_MS = 60_000L
+
+  private class VersionCheck(val reportsPopup: Boolean, val checkedAtMs: Long)
+
+  private val versionChecks = HashMap<String, VersionCheck>()
+
+  /**
+   * Returns whether the Gboard-based keyboard [packageName] takes touch exploration as other
+   * keyboards do: it selects the characters of its popup from the hover, reports each one, and
+   * types the selected one when the hover exits. Older versions are explored by SandFly itself.
+   */
+  @JvmStatic
+  fun usesTouchExploration(context: Context, packageName: CharSequence?): Boolean {
+    if (packageName == null || !isGboardPackage(packageName)) {
+      return false
+    }
+    val name = packageName.toString()
+    val now = SystemClock.uptimeMillis()
+    versionChecks[name]
+      ?.takeIf { now - it.checkedAtMs < VERSION_CHECK_MS }
+      ?.let {
+        return it.reportsPopup
+      }
+    val versionName =
+      try {
+        context.packageManager.getPackageInfo(name, 0).versionName
+      } catch (e: PackageManager.NameNotFoundException) {
+        null
+      }
+    val reportsPopup = reportsPopupSelection(versionName)
+    versionChecks[name] = VersionCheck(reportsPopup, now)
+    return reportsPopup
+  }
+
+  /**
+   * Returns whether a Gboard [versionName], such as "18.8.0.1022711984-beta-arm64-v8a", reports the
+   * characters its popup selects.
+   */
+  @JvmStatic
+  fun reportsPopupSelection(versionName: String?): Boolean {
+    val parts = versionName?.split('.') ?: return false
+    val major = parts.getOrNull(0)?.toIntOrNull() ?: return false
+    val minor = parts.getOrNull(1)?.toIntOrNull() ?: return false
+    return major > POPUP_REPORTING_MAJOR ||
+      (major == POPUP_REPORTING_MAJOR && minor >= POPUP_REPORTING_MINOR)
+  }
 
   /**
    * Returns the root of Gboard's window if it is the topmost window at [x], [y] on [displayId], or

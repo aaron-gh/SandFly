@@ -1008,9 +1008,17 @@ public class TouchInteractionMonitor
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
               && isOnKeyboard(event.getX(), event.getY());
       long rootStartMs = SystemClock.uptimeMillis();
-      // Gboard gets Android's touch exploration, as other keyboards do: its hover events select
-      // the characters of its popup, report them, and play its own key feedback.
-      gboardRoot = null;
+      gboardRoot =
+          typingMethod != FocusProcessorForTapAndTouchExploration.DOUBLE_TAP
+              ? KeyboardExploration.gboardRootAt(service, displayId, event.getX(), event.getY())
+              : null;
+      if (gboardRoot != null
+          && KeyboardExploration.usesTouchExploration(service, gboardRoot.getPackageName())) {
+        // Gboard 18.8 and later get Android's touch exploration, as other keyboards do: their
+        // hover events select the characters of the popup, report them, and play the keyboard's
+        // own key feedback.
+        gboardRoot = null;
+      }
       if (gboardRoot != null) {
         LogUtils.d(
             LOG_TAG,

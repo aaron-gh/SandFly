@@ -203,8 +203,9 @@ public class FocusProcessorForTapAndTouchExploration {
    * performs a long click action:
    */
   private boolean mayBeLiftToType = true;
-  // Whether a long press on a Gboard key, which opens Gboard's popup of alternative characters,
-  // happened during this touch. Gboard types the popup's character itself when the hover exits.
+  // Whether a long press on a key of Gboard 18.8 or later, which opens Gboard's popup of
+  // alternative characters, happened during this touch. Gboard types the popup's character itself
+  // when the hover exits.
   private boolean longPressedGboardKey;
 
   // When Split-tapping triggered, we record & skip the Lift-to-type decision, to avoid the double
@@ -818,7 +819,8 @@ public class FocusProcessorForTapAndTouchExploration {
                     // The touch ended, or moved to another item, while the hover ended.
                     return;
                   }
-                  if (KeyboardExploration.isGboardPackage(node.getPackageName())) {
+                  if (KeyboardExploration.usesTouchExploration(
+                      parent.context, node.getPackageName())) {
                     parent.longPressedGboardKey = true;
                   }
                   parent.interpretationReceiver.input(
