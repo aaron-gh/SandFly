@@ -1545,6 +1545,34 @@
       <item>500</item>
     </string-array>
 
+  <!-- Time between one-finger taps: the multi-tap times, and longer ones for slow taps. -->
+    <string-array name="pref_multi_tap_timeout_long_entries">
+      <item>@string/value_multi_tap_timeout_100ms</item>
+      <item>@string/value_multi_tap_timeout_150ms</item>
+      <item>@string/value_multi_tap_timeout_200ms</item>
+      <item>@string/value_multi_tap_timeout_250ms</item>
+      <item>@string/value_handwriting_wait_300</item>
+      <item>@string/value_handwriting_wait_400</item>
+      <item>@string/value_handwriting_wait_500</item>
+      <item>@string/value_multi_tap_timeout_750ms</item>
+      <item>@string/value_handwriting_wait_1000</item>
+      <item>@string/value_multi_tap_timeout_1500ms</item>
+      <item>@string/value_typing_long_press_2000ms</item>
+    </string-array>
+    <string-array name="pref_multi_tap_timeout_long_values">
+      <item>100</item>
+      <item>150</item>
+      <item>200</item>
+      <item>250</item>
+      <item>300</item>
+      <item>400</item>
+      <item>500</item>
+      <item>750</item>
+      <item>1000</item>
+      <item>1500</item>
+      <item>2000</item>
+    </string-array>
+
     <string name="pref_multi_tap_timeout_default" translatable="false">250</string>
     <string name="pref_swipe_hold_time_default" translatable="false">250</string>
 

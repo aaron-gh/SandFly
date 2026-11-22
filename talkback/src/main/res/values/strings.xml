@@ -3469,6 +3469,10 @@
     <string name="value_multi_tap_timeout_200ms">0.2 seconds</string>
     <!-- Label for multi-tap timeout. [CHAR LIMIT=NONE]-->
     <string name="value_multi_tap_timeout_250ms">0.25 seconds (default)</string>
+    <!-- Choice of Time between one-finger taps, for slow taps. [CHAR_LIMIT=NONE] -->
+    <string name="value_multi_tap_timeout_750ms">0.75 seconds</string>
+    <!-- Choice of Time between one-finger taps, for slow taps. [CHAR_LIMIT=NONE] -->
+    <string name="value_multi_tap_timeout_1500ms">1.5 seconds</string>
     <!-- Title for how far 2 fingers must turn on the screen to move the rotor by one reading control. [CHAR LIMIT=NONE]-->
     <string name="title_pref_rotor_step_degrees">Rotor turn per step</string>
     <!-- Title for how far from an edge of the screen a touch starts to be an edge gesture or an edge menu. [CHAR LIMIT=NONE]-->
