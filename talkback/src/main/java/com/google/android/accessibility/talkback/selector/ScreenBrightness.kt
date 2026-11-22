@@ -21,29 +21,21 @@ import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.Settings
+import com.google.android.accessibility.talkback.quicksettings.BrightnessCurve
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import kotlin.math.abs
-import kotlin.math.ln
 import kotlin.math.roundToInt
-import kotlin.math.sqrt
 
 /**
  * Reads and changes the system screen brightness setting. Percentages use the same perceptual
- * scale as the system brightness slider.
+ * scale as the system brightness slider, over the setting range of this device.
  */
 internal object ScreenBrightness {
   private const val TAG = "ScreenBrightness"
-  private const val MIN_SETTING = 1
-  private const val MAX_SETTING = 255
   private const val MAX_PERCENT = 100
   private const val PERCENT_STEP = 10
 
-  // Hybrid log-gamma curve from SettingsLib BrightnessUtils, which the system slider uses.
-  private const val HLG_R = 0.5f
-  private const val HLG_A = 0.17883277f
-  private const val HLG_B = 0.28466892f
-  private const val HLG_C = 0.55991073f
-  private const val HLG_SCALE = 12f
+  private val deviceCurve by lazy { BrightnessCurve.forDevice() }
 
   @JvmStatic fun canWrite(context: Context): Boolean = Settings.System.canWrite(context)
 
@@ -68,7 +60,8 @@ internal object ScreenBrightness {
       Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL,
     ) == Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC
 
-  @JvmStatic fun getPercent(context: Context): Int = settingToPercent(getSetting(context))
+  @JvmStatic
+  fun getPercent(context: Context): Int = settingToPercent(getSetting(context), deviceCurve)
 
   /**
    * Moves brightness about one step. The dim end of the curve is coarse, so this picks the setting
@@ -76,7 +69,7 @@ internal object ScreenBrightness {
    */
   @JvmStatic
   fun adjust(context: Context, increase: Boolean): Boolean {
-    val newSetting = nextSetting(getSetting(context), increase) ?: return false
+    val newSetting = nextSetting(getSetting(context), increase, deviceCurve) ?: return false
     return Settings.System.putInt(
       context.contentResolver,
       Settings.System.SCREEN_BRIGHTNESS,
@@ -88,19 +81,23 @@ internal object ScreenBrightness {
    * The setting one step brighter or dimmer than [oldSetting], or null if it is already at the
    * limit. Other apps can store any value, such as 0, so [oldSetting] is first brought into range.
    */
-  internal fun nextSetting(oldSetting: Int, increase: Boolean): Int? {
-    val current = oldSetting.coerceIn(MIN_SETTING, MAX_SETTING)
-    if (current == (if (increase) MAX_SETTING else MIN_SETTING)) {
+  internal fun nextSetting(
+    oldSetting: Int,
+    increase: Boolean,
+    curve: BrightnessCurve = BrightnessCurve(),
+  ): Int? {
+    val current = oldSetting.coerceIn(curve.min, curve.max)
+    if (current == (if (increase) curve.max else curve.min)) {
       return null
     }
     val direction = if (increase) 1 else -1
     val targetPercent =
-      (settingToPercent(current).toFloat() / PERCENT_STEP).roundToInt() * PERCENT_STEP +
+      (settingToPercent(current, curve).toFloat() / PERCENT_STEP).roundToInt() * PERCENT_STEP +
         direction * PERCENT_STEP
-    val candidates = if (increase) (current + 1)..MAX_SETTING else (current - 1) downTo MIN_SETTING
+    val candidates = if (increase) (current + 1)..curve.max else (current - 1) downTo curve.min
     // Ties go to the farthest setting, so a step always moves past values that round the same.
     return candidates.minWith(
-      compareBy<Int> { abs(settingToPercent(it) - targetPercent) }
+      compareBy<Int> { abs(settingToPercent(it, curve) - targetPercent) }
         .thenByDescending { abs(it - current) }
     )
   }
@@ -109,14 +106,11 @@ internal object ScreenBrightness {
     Settings.System.getInt(
       context.contentResolver,
       Settings.System.SCREEN_BRIGHTNESS,
-      MAX_SETTING,
+      deviceCurve.max,
     )
 
-  internal fun settingToPercent(setting: Int): Int {
-    val scaled =
-      HLG_SCALE * (setting.coerceIn(MIN_SETTING, MAX_SETTING) - MIN_SETTING) /
-        (MAX_SETTING - MIN_SETTING)
-    val gamma = if (scaled <= 1) sqrt(scaled) * HLG_R else HLG_A * ln(scaled - HLG_B) + HLG_C
-    return (gamma * MAX_PERCENT).roundToInt()
-  }
+  internal fun settingToPercent(
+    setting: Int,
+    curve: BrightnessCurve = BrightnessCurve(),
+  ): Int = (curve.toSlider(setting) * MAX_PERCENT).roundToInt()
 }
