@@ -5455,6 +5455,10 @@
   <string name="title_pref_dictation_auto_stop">Auto stop after silence</string>
   <!-- Dictation switch: when dictation ends, SandFly speaks the text it typed into the field. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_dictation_speak_text">Speak dictated text</string>
+  <!-- Switch in Dictation settings: Google speech recognition adds punctuation and capital letters. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_dictation_punctuation">Automatic punctuation</string>
+  <!-- Switch in Dictation settings: Google speech recognition masks offensive words. [CHAR_LIMIT=NONE] -->
+  <string name="title_pref_dictation_block_offensive">Block offensive words</string>
   <!-- List: how long recognition models stay in memory after use. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_keep_models_loaded">Keep recognition models loaded</string>
   <!-- Choice: recognition models are unloaded after each use. [CHAR_LIMIT=NONE] -->

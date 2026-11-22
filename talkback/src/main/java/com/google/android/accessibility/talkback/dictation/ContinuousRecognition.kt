@@ -45,6 +45,10 @@ internal class ContinuousRecognition(
   private val onSpeech: () -> Unit = {},
   /** Whether recognition ends at the first pause instead of starting again. */
   private val once: Boolean = false,
+  /** Whether [service] adds punctuation and capital letters. */
+  private val punctuation: Boolean = true,
+  /** Whether [service] masks offensive words. */
+  private val blockOffensiveWords: Boolean = true,
 ) : RecognitionListener {
   private var recognizer: SpeechRecognizer? = null
   private val parts = mutableListOf<String>()
@@ -85,10 +89,13 @@ internal class ContinuousRecognition(
         .putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
         .putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault().toLanguageTag())
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-        intent.putExtra(
-          RecognizerIntent.EXTRA_ENABLE_FORMATTING,
-          RecognizerIntent.FORMATTING_OPTIMIZE_QUALITY,
-        )
+        if (punctuation) {
+          intent.putExtra(
+            RecognizerIntent.EXTRA_ENABLE_FORMATTING,
+            RecognizerIntent.FORMATTING_OPTIMIZE_QUALITY,
+          )
+        }
+        intent.putExtra(RecognizerIntent.EXTRA_MASK_OFFENSIVE_WORDS, blockOffensiveWords)
       }
     }
     if (!once && Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {

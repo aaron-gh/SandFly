@@ -261,6 +261,12 @@ class DictationFragment : TalkbackBaseFragment(R.xml.dictation_preferences) {
     // Only with a Gemini API key, which Rambler needs.
     findPreference<Preference>(DictationSettings.PREF_RAMBLER_LIVE)?.isVisible =
       DictationSettings.ramblerKey(prefs).isNotEmpty()
+    // Only Google speech recognition takes these.
+    val google =
+      Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
+        DictationSettings.googleInstalled(context)
+    findPreference<Preference>(DictationSettings.PREF_PUNCTUATION)?.isVisible = google
+    findPreference<Preference>(DictationSettings.PREF_BLOCK_OFFENSIVE)?.isVisible = google
     googleDownloadPref.isVisible =
       Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU &&
         DictationSettings.googleInstalled(context) &&

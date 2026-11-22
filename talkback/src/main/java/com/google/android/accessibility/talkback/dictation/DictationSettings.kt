@@ -38,6 +38,8 @@ object DictationSettings {
   const val PREF_RAMBLER_LIVE = "pref_dictation_rambler_live"
   const val PREF_AUTO_STOP_MS = "pref_dictation_auto_stop_ms"
   const val PREF_SPEAK_TEXT = "pref_dictation_speak_text"
+  const val PREF_PUNCTUATION = "pref_dictation_punctuation"
+  const val PREF_BLOCK_OFFENSIVE = "pref_dictation_block_offensive"
 
   /** The AI service of automatic descriptions corrects dictation too. */
   const val AI_SAME = "same"
@@ -93,6 +95,13 @@ object DictationSettings {
 
   /** Whether Dictate speaks the text it types: Speak dictated text. */
   fun speaksText(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SPEAK_TEXT, false)
+
+  /** Whether Google speech recognition adds punctuation and capital letters: Automatic punctuation. */
+  fun punctuation(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_PUNCTUATION, true)
+
+  /** Whether Google speech recognition masks offensive words: Block offensive words. */
+  fun blocksOffensiveWords(prefs: SharedPreferences): Boolean =
+    prefs.getBoolean(PREF_BLOCK_OFFENSIVE, true)
 
   /** How long after the last speech recording stops by itself, in milliseconds, or 0 for never. */
   fun autoStopMs(prefs: SharedPreferences): Long =

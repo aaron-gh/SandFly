@@ -253,6 +253,8 @@ class AiDictation(
           onSpeech = ::heardSpeech,
           // Listening ends at a pause; starting again would play the recognizer's start sound.
           once = onText != null,
+          punctuation = DictationSettings.punctuation(prefs),
+          blockOffensiveWords = DictationSettings.blocksOffensiveWords(prefs),
         )
       if (!recognizer.start()) return false
       continuous = recognizer
