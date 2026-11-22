@@ -192,11 +192,13 @@ class KeyboardExplorationTest {
   fun hoverOnACharacterAwayFromTheFingerFindsThePopupWithoutAPaneEvent() {
     // As Gboard beta on a Pixel 9 Pro: the popup over the long-pressed C, in the keyboard's window.
     val root =
-      AccessibilityNodeInfo().apply {
-        packageName = GBOARD
-        setBoundsInScreen(KEYBOARD_BOUNDS)
-        isVisibleToUser = true
-      }
+      AccessibilityNodeInfo()
+        .apply {
+          packageName = GBOARD
+          setBoundsInScreen(KEYBOARD_BOUNDS)
+          isVisibleToUser = true
+        }
+        .withId()
     val row = root.addContainer(KEYBOARD_BOUNDS).addContainer(Rect(0, 1733, 1080, 1867))
     val c = row.addKey("C", Rect(337, 1733, 432, 1867))
     val v = row.addKey("V", Rect(432, 1733, 527, 1867))
@@ -210,7 +212,13 @@ class KeyboardExplorationTest {
     val fingerY = 1800f
 
     val found =
-      KeyboardExploration.popupOfKey(AccessibilityNodeInfoCompat.wrap(caron), width, fingerX, fingerY)
+      KeyboardExploration.popupOfKey(
+        AccessibilityNodeInfoCompat.wrap(caron),
+        AccessibilityNodeInfoCompat.wrap(c),
+        width,
+        fingerX,
+        fingerY,
+      )
 
     val bounds = Rect()
     found!!.getBoundsInScreen(bounds)
@@ -222,11 +230,75 @@ class KeyboardExplorationTest {
     )
     // Gboard's hover on the key under the finger, or on another key of the keyboard, is no popup.
     assertNull(
-      KeyboardExploration.popupOfKey(AccessibilityNodeInfoCompat.wrap(c), width, fingerX, fingerY)
+      KeyboardExploration.popupOfKey(
+        AccessibilityNodeInfoCompat.wrap(c),
+        AccessibilityNodeInfoCompat.wrap(c),
+        width,
+        fingerX,
+        fingerY,
+      )
     )
     assertNull(
-      KeyboardExploration.popupOfKey(AccessibilityNodeInfoCompat.wrap(v), width, fingerX, fingerY)
+      KeyboardExploration.popupOfKey(
+        AccessibilityNodeInfoCompat.wrap(v),
+        AccessibilityNodeInfoCompat.wrap(c),
+        width,
+        fingerX,
+        fingerY,
+      )
     )
+  }
+
+  @Test
+  fun popupCoveringTheHeldKeyIsFoundFromTheHover() {
+    // As Gboard 18.8 beta on a Galaxy Z Fold7: the popup over the long-pressed comma reaches down
+    // over the comma, under the finger.
+    val root =
+      AccessibilityNodeInfo()
+        .apply {
+          packageName = GBOARD
+          setBoundsInScreen(KEYBOARD_BOUNDS)
+          isVisibleToUser = true
+        }
+        .withId()
+    val row = root.addContainer(KEYBOARD_BOUNDS).addContainer(Rect(0, 2278, 1080, 2400))
+    val comma = row.addKey(",", Rect(165, 2278, 272, 2400))
+    row.addKey("Next language", Rect(272, 2278, 379, 2400))
+    val frame = root.addContainer(Rect(150, 2120, 390, 2400))
+    val popup = frame.addContainer(Rect(160, 2130, 380, 2240))
+    val emoji = popup.addKey("Emoji button", Rect(168, 2137, 267, 2236))
+    popup.addKey("Settings", Rect(267, 2137, 366, 2236))
+    val width = KEYBOARD_BOUNDS.width()
+    val fingerX = 228f
+    val fingerY = 2359f
+
+    val found =
+      KeyboardExploration.popupOfKey(
+        AccessibilityNodeInfoCompat.wrap(emoji),
+        AccessibilityNodeInfoCompat.wrap(comma),
+        width,
+        fingerX,
+        fingerY,
+      )
+
+    val bounds = Rect()
+    found!!.getBoundsInScreen(bounds)
+    assertEquals(Rect(150, 2120, 390, 2400), bounds)
+    assertEquals(
+      listOf<CharSequence>("Emoji button", "Settings"),
+      KeyboardExploration.popupKeys(found).map { it.contentDescription },
+    )
+    // Without the held key, the frame under the finger is taken as part of the keyboard.
+    val withoutHeldKey =
+      KeyboardExploration.popupOfKey(
+        AccessibilityNodeInfoCompat.wrap(emoji),
+        null,
+        width,
+        fingerX,
+        fingerY,
+      )
+    withoutHeldKey!!.getBoundsInScreen(bounds)
+    assertEquals(Rect(160, 2130, 380, 2240), bounds)
   }
 
   private class TestWindow(val window: AccessibilityWindowInfo, val root: AccessibilityNodeInfo)
@@ -262,6 +334,7 @@ class KeyboardExplorationTest {
         isEnabled = true
       }
     ReflectionHelpers.setField(key, "mWindowId", KEYBOARD_ID)
+    key.withId()
     shadowOf(this).addChild(key)
     return key
   }
@@ -275,11 +348,20 @@ class KeyboardExplorationTest {
         isVisibleToUser = true
       }
     ReflectionHelpers.setField(container, "mWindowId", KEYBOARD_ID)
+    container.withId()
     shadowOf(this).addChild(container)
     return container
   }
 
+  /** Gives this node an ID of its own, which Robolectric compares nodes by. */
+  private fun AccessibilityNodeInfo.withId(): AccessibilityNodeInfo {
+    ReflectionHelpers.setField(shadowOf(this), "mOriginNodeId", ++lastNodeId)
+    return this
+  }
+
   private companion object {
+    var lastNodeId = 0L
+
     const val GBOARD = "com.google.android.inputmethod.latin"
     const val KEYBOARD_ID = 7
     const val APP_ID = 3

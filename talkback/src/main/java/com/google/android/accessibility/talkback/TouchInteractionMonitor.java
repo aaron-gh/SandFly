@@ -2871,8 +2871,14 @@ public class TouchInteractionMonitor
       return;
     }
     @Nullable AccessibilityNodeInfoCompat popup =
-        KeyboardExploration.popupOfKey(key, windowWidth, lastFingerX, lastFingerY);
+        KeyboardExploration.popupOfKey(
+            key, lastExploredNode, windowWidth, lastFingerX, lastFingerY);
     if (popup == null) {
+      LogUtils.d(
+          LOG_TAG,
+          "No popup found from Gboard's hover on %s: %s",
+          key.getContentDescription(),
+          KeyboardExploration.describeAncestors(key));
       return;
     }
     LogUtils.d(LOG_TAG, "Gboard's popup found from its hover on %s", key.getContentDescription());
