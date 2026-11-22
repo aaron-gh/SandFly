@@ -75,22 +75,30 @@ The screen of a profile also has:
 
 ### Back up and restore settings {#profiles-backup}
 
-**Back up and restore** saves all SandFly settings to a file and replaces them with the settings in a file, such as to set up another phone the same way. These settings aren't on watches.
+**Back up and restore** saves all SandFly settings and your own content to a file and replaces them with those in a file, such as to set up another phone the same way. These settings aren't on watches.
 
 #### Export settings {#profiles-export}
 
 1. Go to **Back up and restore** > **Export settings**.
-2. Choose where to save the file. The suggested name is `sandfly-settings.json`.
+2. Choose where to save the file. The suggested name is `sandfly-settings.zip`.
 
 SandFly says "Settings exported. API keys are not included".
 
-The file holds every SandFly setting, except:
+The .zip file holds every SandFly setting, and:
+
+- Custom labels.
+- Settings profiles. The settings are saved as they are without profiles, and the profiles separately.
+- Installed scripts.
+- Sound themes, and the sounds you changed in the Backtalk theme.
+- The wallpaper image.
+
+It leaves out:
 
 - API keys, so that you can share or sync the file.
 - The SandFly Pro license. On another phone, activate SandFly Pro as a device of its own. See [](#pro).
 - The time of the last update check.
-- Settings profiles. The file holds your settings without profiles. To save profiles, export them to an item file. See [](#profiles-item-files).
-- Custom labels, installed scripts and sound themes, which are kept in files of their own. To export custom labels, see [](#scripts-labels-export). To export a script, see [](#scripts-builder-manage). For sound themes, see [](#sound).
+- Downloaded AI and speech recognition models, logs and problem reports.
+- Sound theme drafts.
 
 #### Import settings {#profiles-import}
 
@@ -99,9 +107,11 @@ The file holds every SandFly setting, except:
 
 The settings in the file replace your settings, and SandFly says "Settings imported". Settings that the file doesn't hold, and the API keys on this phone, stay as they are. The settings profiles in use are applied again over the imported settings.
 
-**Import settings** also reads a settings file exported from Backtalk. Its settings replace those of SandFly, and settings that only SandFly has stay as they are.
+Custom labels, settings profiles, scripts and sound themes in the file are added. Each replaces the one on this phone for the same item, name or ID; others stay. The wallpaper image in the file replaces this phone's.
 
-If SandFly says "This file is not a SandFly or Backtalk settings file, or could not be read", the file isn't a settings file, or it is larger than 5 MB.
+**Import settings** also reads a settings file with the .json extension, exported by an earlier version of SandFly, and a settings file exported from Backtalk. A Backtalk file's settings replace those of SandFly, and settings that only SandFly has stay as they are.
+
+If SandFly says "This file is not a SandFly or Backtalk settings file, or could not be read", the file isn't a settings file or is damaged, a .json file is larger than 5 MB, or a .zip file is larger than 300 MB unpacked. Nothing is changed.
 
 ### Item files {#profiles-item-files}
 

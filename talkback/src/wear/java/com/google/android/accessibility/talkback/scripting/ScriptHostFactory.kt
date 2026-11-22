@@ -33,4 +33,18 @@ object ScriptHostFactory {
   @JvmStatic
   @Suppress("UNUSED_PARAMETER")
   fun commands(context: Context, all: Boolean): List<ScriptCommandEntry> = emptyList()
+
+  @JvmStatic
+  @Suppress("UNUSED_PARAMETER")
+  fun scriptFiles(context: Context): Map<String, Map<String, ByteArray>> = emptyMap()
+
+  @JvmStatic
+  @Suppress("UNUSED_PARAMETER")
+  fun isScript(id: String, files: Map<String, ByteArray>): Boolean = false
+
+  @JvmStatic
+  @Suppress("UNUSED_PARAMETER")
+  fun restoreScripts(context: Context, scripts: Map<String, Map<String, ByteArray>>) {}
+
+  @JvmStatic @Suppress("UNUSED_PARAMETER") fun reloadScripts(context: Context) {}
 }
