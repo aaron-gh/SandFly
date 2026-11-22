@@ -262,8 +262,11 @@ public final class Mappers {
               .setFlags(
                   FeedbackItem.FLAG_NO_HISTORY
                       | FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE);
-      return Feedback.create(
-          eventId, Feedback.Part.builder().speech(announcement, speakOptions).build());
+      Feedback.Part.Builder part = Feedback.Part.builder().speech(announcement, speakOptions);
+      if (((Interpretation.Power) interpretation).fullyCharged) {
+        part.sound(R.raw.full_charge);
+      }
+      return Feedback.create(eventId, part.build());
     } else if (interpretation instanceof Interpretation.VoiceCommand) {
       return VoiceCommandMapper.handleSpeechCommand(eventId, variables, depth);
     } else if (interpretation instanceof Interpretation.DirectionNavigation) {

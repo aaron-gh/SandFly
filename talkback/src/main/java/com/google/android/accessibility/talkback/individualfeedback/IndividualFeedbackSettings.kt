@@ -93,6 +93,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("keyboard_opened", R.string.individual_sound_keyboard_opened),
       FeedbackItem("keyboard_closed", R.string.individual_sound_keyboard_closed),
       FeedbackItem("sandfly_notification", R.string.individual_sound_sandfly_notification),
+      FeedbackItem("full_charge", R.string.individual_sound_full_charge),
       FeedbackItem(
         "radial_menu",
         R.string.individual_sound_radial_menu,
@@ -209,6 +210,7 @@ object IndividualFeedbackSettings {
         "sandfly_notification_pattern",
         R.string.individual_sound_sandfly_notification,
       ),
+      FeedbackItem("full_charge_pattern", R.string.individual_sound_full_charge),
       FeedbackItem(
         "radial_menu_pattern",
         R.string.individual_sound_radial_menu,

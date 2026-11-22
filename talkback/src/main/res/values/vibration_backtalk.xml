@@ -540,6 +540,48 @@
         <item>90</item><!-- delayMs -->
     </integer-array>
 
+    <!-- Full charge: three rising taps, then a long swell. -->
+    <integer-array name="full_charge_pattern">
+        <item>0</item>
+        <item>12</item>
+        <item>70</item>
+        <item>12</item>
+        <item>70</item>
+        <item>12</item>
+        <item>70</item>
+        <item>90</item>
+        <item>-9998</item><!-- AMPLITUDES: ms, amplitude -->
+        <item>8</item>
+        <item>80</item>
+        <item>70</item>
+        <item>0</item>
+        <item>8</item>
+        <item>100</item>
+        <item>70</item>
+        <item>0</item>
+        <item>8</item>
+        <item>120</item>
+        <item>70</item>
+        <item>0</item>
+        <item>45</item>
+        <item>80</item>
+        <item>45</item>
+        <item>140</item>
+        <item>-9999</item><!-- SENTINEL SEPARATOR -->
+        <item>7</item><!-- TICK -->
+        <item>120</item><!-- scale -->
+        <item>0</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>160</item><!-- scale -->
+        <item>70</item><!-- delayMs -->
+        <item>7</item><!-- TICK -->
+        <item>200</item><!-- scale -->
+        <item>70</item><!-- delayMs -->
+        <item>5</item><!-- SLOW_RISE -->
+        <item>200</item><!-- scale -->
+        <item>70</item><!-- delayMs -->
+    </integer-array>
+
     <!-- Circle menu opened with 1 item: a swell, then one tick for each item. -->
     <integer-array name="radial_menu_1_pattern">
         <item>0</item>
