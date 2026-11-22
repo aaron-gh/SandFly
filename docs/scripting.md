@@ -256,7 +256,7 @@ A rule must set at least one of these fields:
 | `activate` | query | The item inside it that a double-tap presses, such as the part of a grouped post that opens it. |
 | `liftToActivate` | `true` | Activates the item when the finger lifts from it after touching it, as **Lift to activate** does, whatever that setting is. |
 | `longPressAfter` | number | For an item with `liftToActivate`, a number of milliseconds from 100 to 10,000. Holding the finger on the item for that time long-presses it, and lifting the finger then does nothing more. Items that can't be long-pressed are left alone. |
-| `touchToActivate` | `true` | Activates the item by tapping it on the screen instead of sending it an accessibility click, for controls that ignore that click. Needs Android 13 or later and **Handle gestures in SandFly**; elsewhere the item is clicked as usual. |
+| `touchToActivate` | `true` | Activates the item by tapping it on the screen instead of sending it an accessibility click, for controls that ignore that click. Needs Android 11 or later; elsewhere the item is clicked as usual. |
 | `read` | list | *Version 6.* What SandFly reads for the item instead of what it says, as up to 12 parts joined by commas. See below. |
 | `actions` | list | Up to 10 entries to add to the Actions menu of the item. See [Actions in rules](#actions-in-rules). |
 | `buttonActions` | `true` | *Version 6.* Adds each button in the item to its Actions menu when the menu opens, named by its description, its text or the first text in it: up to 20 buttons, up to 8 levels down. A button inside a button is left to the outer one. Needs `actions` and `input`. |

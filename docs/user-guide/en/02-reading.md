@@ -57,7 +57,7 @@ With **Navigation** > **Wrap around** on, which is the default, a swipe past the
 
 When the **Actions** reading control is selected, a double-tap performs the action chosen in it. See [](#reading-controls).
 
-**Activate with a tap**, a command with no gesture by default, taps the middle of the focused item on the screen, for items that respond only to a finger on the screen. It needs Android 13 or later and **Developer settings** > **Handle gestures in SandFly**, which is on by default; otherwise the item is activated as usual.
+**Activate with a tap**, a command with no gesture by default, taps the middle of the focused item on the screen, for items that respond only to a finger on the screen. It needs Android 11 or later; otherwise the item is activated as usual.
 
 To activate items by lifting your finger or with a single tap, see [](#touch).
 

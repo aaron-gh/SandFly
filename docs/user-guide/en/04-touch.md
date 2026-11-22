@@ -45,7 +45,7 @@ SandFly doesn't read the buttons as you touch them, but speaks the button that a
 
 #### Activate with a tap {#touch-activate-with-tap}
 
-Some controls ignore the activation that SandFly sends and react only to a finger on the screen. The **Activate with a tap** command, unassigned by default, taps the middle of the focused item instead. Assign it to a gesture or keyboard shortcut; see [](#gestures). A script can do the same for chosen items whenever they are activated; see [](#scripts). Both need Android 13 or later and **Developer settings** > **Handle gestures in SandFly**; otherwise the item is activated as usual.
+Some controls ignore the activation that SandFly sends and react only to a finger on the screen. The **Activate with a tap** command, unassigned by default, taps the middle of the focused item instead. Assign it to a gesture or keyboard shortcut; see [](#gestures). A script can do the same for chosen items whenever they are activated; see [](#scripts). Both need Android 11 or later; otherwise the item is activated as usual.
 
 #### Speech while you touch the screen {#touch-speech}
 

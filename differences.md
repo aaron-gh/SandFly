@@ -202,7 +202,7 @@ For every gesture and its settings, see the user guide chapter [Gestures](docs/u
 
 ### Gestures recognized by SandFly
 
-By default, SandFly recognizes gestures itself on Android 13 and later, instead of leaving this to Android. TalkBack leaves this off. Gesture recognition by SandFly is needed for the rotor, edge gestures and edge menus, corner gestures, the scrub, pinch and spread, swipe and hold, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers, the four-finger taps on half of the screen, the timing settings on the **Gestures** screen, touch lock and **Activate with a tap**.
+By default, SandFly recognizes gestures itself on Android 13 and later, instead of leaving this to Android. TalkBack leaves this off. Gesture recognition by SandFly is needed for the rotor, edge gestures and edge menus, corner gestures, the scrub, pinch and spread, swipe and hold, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers, the four-finger taps on half of the screen, the timing settings on the **Gestures** screen and touch lock.
 
 To have Android recognize gestures again, turn off **Developer settings** > **Handle gestures in SandFly**, then turn SandFly off and on again. The gestures and settings above are then unavailable.
 
@@ -367,7 +367,7 @@ With **Touch** > **Tap to activate navigation bar buttons** on, touches on the n
 
 ### Activate with a tap
 
-Some controls, such as some in TikTok, ignore the accessibility click that activating sends, and react only to a finger on the screen. The **Activate with a tap** command, in the **Activation** category and unassigned by default, taps the middle of the focused item on the screen instead. Android calculates where to tap, also when the screen is magnified. A script rule can do the same for chosen items whenever they are activated. Both need Android 13 or later and gesture recognition by SandFly; otherwise the item is activated as usual.
+Some controls, such as some in TikTok, ignore the accessibility click that activating sends, and react only to a finger on the screen. The **Activate with a tap** command, in the **Activation** category and unassigned by default, taps the middle of the part of the focused item on the screen instead, with touch passed through to the app for the tap. A script rule can do the same for chosen items whenever they are activated. Both need Android 11 or later; otherwise the item is activated as usual.
 
 ### Lock touch
 

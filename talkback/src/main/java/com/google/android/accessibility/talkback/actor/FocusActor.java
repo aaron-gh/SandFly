@@ -30,6 +30,7 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import android.os.Build;
 import android.text.style.URLSpan;
+import android.view.Display;
 import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
@@ -40,6 +41,7 @@ import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Interpretation;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.TalkBackService.GestureDetectionState;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
 import com.google.android.accessibility.talkback.WebActor;
@@ -51,6 +53,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Scr
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.macros.PassThroughTouch;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.utils.LinkUtils;
 import com.google.android.accessibility.talkback.utils.LinkUtils.LinkSpan;
@@ -163,8 +166,8 @@ public class FocusActor implements UserInputEventListener {
   }
 
   /**
-   * Activates the focused item by touching it on the screen, for controls that ignore the click
-   * that activating sends. Where SandFly doesn't detect gestures itself, it is clicked as usual.
+   * Activates the focused item by tapping it on the screen, for controls that ignore the click that
+   * activating sends. Where it can't be tapped, it is clicked as usual.
    */
   public boolean touchClickCurrentFocus(EventId eventId) {
     AccessibilityNodeInfoCompat currentFocus =
@@ -177,18 +180,34 @@ public class FocusActor implements UserInputEventListener {
   }
 
   /**
-   * Taps the place of accessibility focus, {@code focus}, which Android works out, also when the
-   * screen is magnified. Returns false where SandFly doesn't detect gestures itself.
+   * Taps the centre of the part of {@code focus} on the screen, as a finger would, with touch passed
+   * through to the app. On another display or while another feature holds the pass-through lock,
+   * Android's own tap on accessibility focus is used where SandFly detects gestures itself; that
+   * tap clicks the item first and touches it only when the click fails. Returns false before
+   * Android 11 without that tap, or when the item is off the screen.
    */
   private boolean touchFocus(AccessibilityNodeInfoCompat focus, EventId eventId) {
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU
-        || !gestureDetectionState.gestureDetector()
-        || pipeline == null) {
+    if (pipeline == null) {
       return false;
     }
-    TouchInteractionController controller =
-        service.getTouchInteractionController(
-            AccessibilityWindowInfoUtils.getDisplayId(focus.getWindow()));
+    int displayId = AccessibilityWindowInfoUtils.getDisplayId(focus.getWindow());
+    if (service instanceof TalkBackService talkBack
+        && PassThroughTouch.isSupported()
+        && displayId == Display.DEFAULT_DISPLAY
+        && !PassThroughTouch.isLockedElsewhere(talkBack)) {
+      Rect bounds = new Rect();
+      focus.getBoundsInScreen(bounds);
+      if (PassThroughTouch.visibleCentre(talkBack, bounds) == null) {
+        return false;
+      }
+      pipeline.returnFeedback(eventId, Feedback.interrupt(Feedback.HINT, /* level= */ 2));
+      return PassThroughTouch.tap(talkBack, bounds);
+    }
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU
+        || !gestureDetectionState.gestureDetector()) {
+      return false;
+    }
+    TouchInteractionController controller = service.getTouchInteractionController(displayId);
     if (controller == null) {
       return false;
     }
