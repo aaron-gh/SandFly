@@ -297,10 +297,14 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     }
   }
 
-  /** Whether a screen other than the default display is on, such as a flip phone's cover screen. */
+  /**
+   * Whether a screen other than the default display is on, such as a flip phone's cover screen.
+   * Private displays, which apps make for themselves, such as a projection to a car, don't count.
+   */
   private boolean isOtherDisplayOn() {
     for (Display display : displayManager.getDisplays()) {
       if (display.getDisplayId() != Display.DEFAULT_DISPLAY
+          && (display.getFlags() & Display.FLAG_PRIVATE) == 0
           && display.getState() == Display.STATE_ON) {
         return true;
       }
