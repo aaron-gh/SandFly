@@ -90,7 +90,8 @@ class ScriptBuilderCommandsTest {
     assertFalse(main, main.contains("sf.onCommand(\"c2\""))
     assertTrue(main, main.contains("sf.onFocus(function(item) if item:find(query) then __sf_brun(\"macros/t1.json\""))
     assertTrue(main, main.contains("__sf_bhas(a.text, \"sent\")"))
-    assertFalse(main, main.contains("t3"))
+    // The script ID is random and can contain "t3" itself.
+    assertFalse(main, main.contains("macros/t3.json"))
     val file = Macros.macroFromJson(store.readFile(id, "macros/c1.json")!!.decodeToString())!!
     assertEquals(listOf(Macros.SpeakText("Replying"), Macros.RunCommand("NEXT")), file.steps)
     assertNull(store.readFile(id, "macros/t3.json"))
