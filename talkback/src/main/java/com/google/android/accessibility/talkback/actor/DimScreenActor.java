@@ -29,6 +29,7 @@ import android.graphics.Point;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.view.Gravity;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 import android.view.WindowMetrics;
@@ -265,8 +266,17 @@ public class DimScreenActor implements OnConfigurationChangedListener {
       viewParams.flags |= LayoutParams.FLAG_NOT_TOUCHABLE;
       viewParams.flags |= LayoutParams.FLAG_FULLSCREEN;
       viewParams.flags |= LayoutParams.FLAG_LAYOUT_NO_LIMITS;
+      viewParams.flags |= LayoutParams.FLAG_LAYOUT_IN_SCREEN;
+      // Without a gravity the curtain is centred in a frame that leaves out the navigation bar, so
+      // half the bar's height stayed uncovered at the bottom. The 1-pixel gap is at the bottom edge.
+      viewParams.gravity = Gravity.TOP | Gravity.START;
+      viewParams.x = 0;
+      viewParams.y = 0;
       // Cover the camera cutout too, so the status bar doesn't show beside it.
       if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        // Lay out over the status and navigation bars.
+        viewParams.setFitInsetsTypes(0);
+        viewParams.setFitInsetsSides(0);
         viewParams.layoutInDisplayCutoutMode = LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_ALWAYS;
       } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
         viewParams.layoutInDisplayCutoutMode =

@@ -264,7 +264,7 @@ In the list:
 - **Dismiss** removes a notification, and **Clear all** removes all that can be removed.
 - **Quick settings** opens the quick settings.
 
-While the phone is locked, the **Notifications** command opens the system shade, which hides what you chose to hide on the lock screen. The **System notification shade** command always opens the system shade.
+While the phone is locked, the **Notifications** command opens the system shade, which hides what you chose to hide on the lock screen. The **System notification shade** command always opens the system shade. SandFly's list opens as a screen of its own, so the app in front pauses. Some apps end what they are doing when they pause: wireless debugging pairing in Settings fails when the pairing code is entered from SandFly's list. Use **System notification shade** for those.
 
 Settings for the list:
 

@@ -153,4 +153,19 @@ class ProcessorPhoneticLettersLookupTest {
         ?.toString(),
     )
   }
+
+  @Test
+  fun latinLetterInLocaleWithCountryFallsBackToEnglish() {
+    val map =
+      Function<String, Map<String, String>> { locale ->
+        when (locale) {
+          "ru" -> mapOf("б" to "Борис")
+          "en-US" -> mapOf("b" to "Bravo")
+          else -> emptyMap()
+        }
+      }
+    assertEquals("Bravo", ProcessorPhoneticLetters.getPhoneticLetterWithMap("ru-RU", "B", map)?.toString())
+    assertEquals("Bravo", ProcessorPhoneticLetters.getPhoneticLetterWithMap("ru", "b", map)?.toString())
+    assertEquals("Борис", ProcessorPhoneticLetters.getPhoneticLetterWithMap("ru-RU", "Б", map)?.toString())
+  }
 }
