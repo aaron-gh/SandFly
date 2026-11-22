@@ -130,6 +130,26 @@ class SwipesBeforeLiftProfilesTest {
   }
 
   @Test
+  fun twoStrokeSwipeCategoriesAreHiddenWhileTheirTimeIsOff() {
+    val oneDirection = context.getString(R.string.pref_category_1finger_two_stroke_shortcuts_key)
+    val angleFirst =
+      context.getString(R.string.pref_category_1finger_two_stroke_up_and_left_shortcuts_key)
+    setDefault(false)
+    assertTrue(SwipesBeforeLift.hidesCategory(context, oneDirection))
+    assertTrue(SwipesBeforeLift.hidesCategory(context, angleFirst))
+    prefs
+      .edit()
+      .putString(context.getString(R.string.pref_two_stroke_swipe_time_key), "1000")
+      .commit()
+    assertFalse(SwipesBeforeLift.hidesCategory(context, oneDirection))
+    assertFalse(SwipesBeforeLift.hidesCategory(context, angleFirst))
+    // Swipes before the lift hide only those with a back-and-forth or angle swipe.
+    setDefault(true)
+    assertFalse(SwipesBeforeLift.hidesCategory(context, oneDirection))
+    assertTrue(SwipesBeforeLift.hidesCategory(context, angleFirst))
+  }
+
+  @Test
   fun twoFingerAngleGesturesAreHiddenWhileTwoFingerSwipesScroll() {
     setDefault(false)
     setHandlesTwoFingerSwipes(false)

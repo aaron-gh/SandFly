@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.content.Context
+import android.content.SharedPreferences
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.FormFactorUtils
@@ -82,21 +83,27 @@ object SwipesBeforeLift {
 
   /**
    * Returns whether the Gestures screen category with [key] is hidden while swipes run before the
-   * finger lifts is [swipesBeforeLift]. The two-finger angle gestures are also hidden while
-   * two-finger swipes scroll in the app, as SandFly recognizes them only while it handles
-   * two-finger swipes.
+   * finger lifts is [swipesBeforeLift]. The two-stroke swipe categories are also hidden while Time
+   * between two-stroke swipes is Off, and the two-finger angle gestures while two-finger swipes
+   * scroll in the app, as SandFly recognizes them only while it handles two-finger swipes.
    */
   @JvmStatic
   fun hidesCategory(context: Context, key: String?, swipesBeforeLift: Boolean): Boolean {
     if (key == null || key !in categoryKeys(context)) return false
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    if (key in twoStrokeCategoryKeys(context) && !twoStrokeSwipesOn(context, prefs)) return true
+    if (key == context.getString(R.string.pref_category_1finger_two_stroke_shortcuts_key)) {
+      // One-direction swipes only, which stay with swipes before the lift.
+      return false
+    }
     if (swipesBeforeLift) return true
     return key == context.getString(R.string.pref_category_2finger_angle_shortcuts_key) &&
-      !GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(context))
+      !GestureLayout.handlesTwoFingerSwipes(prefs)
   }
 
   /**
-   * Keys of the back-and-forth, angle and three-part swipe categories of the Gestures screen, and of
-   * the two-stroke swipe categories with a back-and-forth or angle stroke.
+   * Keys of the Gestures screen categories that can be hidden: back-and-forth, angle, three-part
+   * and two-stroke swipes, and two-finger angle gestures.
    */
   @JvmStatic
   fun categoryKeys(context: Context): Set<String> =
@@ -104,6 +111,13 @@ object SwipesBeforeLift {
       context.getString(R.string.pref_category_1finger_back_forth_shortcuts_key),
       context.getString(R.string.pref_category_1finger_angle_shortcuts_key),
       context.getString(R.string.pref_category_1finger_three_part_shortcuts_key),
+      context.getString(R.string.pref_category_2finger_angle_shortcuts_key),
+    ) + twoStrokeCategoryKeys(context)
+
+  /** Keys of the two-stroke swipe categories of the Gestures screen. */
+  private fun twoStrokeCategoryKeys(context: Context): Set<String> =
+    setOf(
+      context.getString(R.string.pref_category_1finger_two_stroke_shortcuts_key),
       context.getString(R.string.pref_category_1finger_two_stroke_turn_second_shortcuts_key),
       context.getString(R.string.pref_category_1finger_two_stroke_up_and_down_shortcuts_key),
       context.getString(R.string.pref_category_1finger_two_stroke_down_and_up_shortcuts_key),
@@ -117,6 +131,14 @@ object SwipesBeforeLift {
       context.getString(R.string.pref_category_1finger_two_stroke_left_and_down_shortcuts_key),
       context.getString(R.string.pref_category_1finger_two_stroke_right_and_up_shortcuts_key),
       context.getString(R.string.pref_category_1finger_two_stroke_right_and_down_shortcuts_key),
-      context.getString(R.string.pref_category_2finger_angle_shortcuts_key),
     )
+
+  /** Returns whether Time between two-stroke swipes is set. */
+  private fun twoStrokeSwipesOn(context: Context, prefs: SharedPreferences): Boolean =
+    SharedPreferencesUtils.getIntFromStringPref(
+      prefs,
+      context.resources,
+      R.string.pref_two_stroke_swipe_time_key,
+      R.string.pref_two_stroke_swipe_time_default,
+    ) > 0
 }
