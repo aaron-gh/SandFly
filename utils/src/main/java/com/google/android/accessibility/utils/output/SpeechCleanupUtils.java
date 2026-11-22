@@ -21,6 +21,8 @@ import static android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
 import android.content.Context;
 import android.text.Spannable;
 import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
 import android.text.style.TtsSpan;
@@ -58,7 +60,7 @@ public final class SpeechCleanupUtils {
       Pattern.compile(CONSECUTIVE_CHARACTER_REGEX);
 
   /** Speak punctuation verbosity levels. */
-  @IntDef({ALL, MOST, SOME})
+  @IntDef({ALL, MOST, SOME, NONE})
   @Retention(RetentionPolicy.SOURCE)
   public @interface PunctuationVerbosity {}
 
@@ -82,6 +84,13 @@ public final class SpeechCleanupUtils {
    * handle speaking punctuation in SOME level.
    */
   public static final int SOME = 2;
+
+  /**
+   * Speak punctuation verbosity in which no punctuation or symbol is said: {@link
+   * #withPunctuationHidden} puts spaces in their place for the speech engine. A character said on
+   * its own, such as when moving by character, is still named.
+   */
+  public static final int NONE = 3;
 
   /**
    * Map containing string to speech conversions and the verbosity level of symbol and punctuation .
@@ -402,7 +411,142 @@ public final class SpeechCleanupUtils {
    */
   public static boolean isHiddenByVerbosity(char key) {
     Pair<Integer, Integer> pair = TALKBACK_PUNCTUATION_AND_SYMBOL.get(key);
-    return pair != null && key != ' ' && pair.second < spokenPunctuationVerbosity;
+    if (pair != null) {
+      return key != ' ' && pair.second < spokenPunctuationVerbosity;
+    }
+    return spokenPunctuationVerbosity == NONE && isPunctuationOrSymbol(key);
+  }
+
+  /** Whether the punctuation verbosity is {@link #NONE}. */
+  public static boolean hidesAllPunctuation() {
+    return spokenPunctuationVerbosity == NONE;
+  }
+
+  /** Punctuation that joins the letters or digits on either side of it into one word. */
+  private static final String WORD_JOINERS = "'\u2019\u02bc-\u2010\u2011";
+
+  /** Punctuation that joins the digits on either side of it into one number, date or time. */
+  private static final String NUMBER_JOINERS = ".,:/";
+
+  /**
+   * Punctuation that engines pause for and don't say when it ends a word, kept for the pause and
+   * the intonation of a question.
+   */
+  private static final String PAUSE_PUNCTUATION =
+      ".,!?;:\u2026\u3002\uff0c\uff01\uff1f\u3001\uff1b\uff1a";
+
+  /** Whether {@code c} is a punctuation mark or a symbol, by its Unicode category. */
+  public static boolean isPunctuationOrSymbol(char c) {
+    switch (Character.getType(c)) {
+      case Character.CONNECTOR_PUNCTUATION:
+      case Character.DASH_PUNCTUATION:
+      case Character.START_PUNCTUATION:
+      case Character.END_PUNCTUATION:
+      case Character.INITIAL_QUOTE_PUNCTUATION:
+      case Character.FINAL_QUOTE_PUNCTUATION:
+      case Character.OTHER_PUNCTUATION:
+      case Character.MATH_SYMBOL:
+      case Character.CURRENCY_SYMBOL:
+      case Character.MODIFIER_SYMBOL:
+      case Character.OTHER_SYMBOL:
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  /**
+   * Whether the character at {@code i} of {@code text} is left out of speech at {@link #NONE}.
+   * Kept: emoji, apostrophes and hyphens inside a word, separators inside a number, and
+   * punctuation that ends a word, which engines pause for.
+   */
+  @VisibleForTesting
+  static boolean isHiddenAt(CharSequence text, int i) {
+    char c = text.charAt(i);
+    if (!isPunctuationOrSymbol(c)) {
+      return false;
+    }
+    int length = text.length();
+    char next = i + 1 < length ? text.charAt(i + 1) : 0;
+    if (next == '\ufe0f' || next == '\u20e3') {
+      // An emoji, or a keycap such as #️⃣.
+      return false;
+    }
+    if (Character.getType(c) == Character.OTHER_SYMBOL
+        && !TALKBACK_PUNCTUATION_AND_SYMBOL.containsKey(c)) {
+      // Emoji and pictographs without a name here.
+      return false;
+    }
+    char previous = i > 0 ? text.charAt(i - 1) : 0;
+    if (WORD_JOINERS.indexOf(c) >= 0
+        && Character.isLetterOrDigit(previous)
+        && Character.isLetterOrDigit(next)) {
+      return false;
+    }
+    if (NUMBER_JOINERS.indexOf(c) >= 0 && Character.isDigit(previous) && Character.isDigit(next)) {
+      return false;
+    }
+    if (PAUSE_PUNCTUATION.indexOf(c) >= 0
+        && i > 0
+        && !Character.isWhitespace(previous)
+        && (i + 1 == length || Character.isWhitespace(next) || c >= '\u3000')) {
+      // Ideographic punctuation is followed by text without a space.
+      return false;
+    }
+    return true;
+  }
+
+  /**
+   * Returns {@code text} with a space said in place of each punctuation mark and symbol that
+   * {@link #isHiddenAt} leaves out, as a {@link TtsSpan}, or null if there are none. The text
+   * itself, and so the text copied from speech, keeps them. Characters already covered by a
+   * TtsSpan or an identifier span are left as they are.
+   */
+  public static @Nullable CharSequence withPunctuationHidden(@Nullable CharSequence text) {
+    if (TextUtils.isEmpty(text)) {
+      return null;
+    }
+    SpannableStringBuilder builder = null;
+    for (int i = 0; i < text.length(); i++) {
+      if (!isHiddenAt(text, i) || isCoveredBySpokenSpan(text, i)) {
+        continue;
+      }
+      if (builder == null) {
+        builder = new SpannableStringBuilder(text);
+      }
+      builder.setSpan(
+          new TtsSpan.TextBuilder(" ").build(), i, i + 1, Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+    }
+    return builder;
+  }
+
+  private static boolean isCoveredBySpokenSpan(CharSequence text, int i) {
+    if (!(text instanceof Spanned spanned)) {
+      return false;
+    }
+    return covers(spanned, i, TtsSpan.class)
+        || covers(spanned, i, SpannableUtils.IdentifierSpan.class);
+  }
+
+  private static boolean covers(Spanned spanned, int i, Class<?> type) {
+    for (Object span : spanned.getSpans(i, i + 1, type)) {
+      if (spanned.getSpanStart(span) <= i && spanned.getSpanEnd(span) > i) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Whether {@code text} is one character, apart from spaces around it, such as when moving by
+   * character or typing. At {@link #NONE} such a character is still said.
+   */
+  public static boolean isSingleCharacter(@Nullable CharSequence text) {
+    if (text == null) {
+      return false;
+    }
+    String trimmed = text.toString().trim();
+    return !trimmed.isEmpty() && trimmed.codePointCount(0, trimmed.length()) == 1;
   }
 
   /** The symbol dictionary's text for {@code key}, or null if it keeps its name. */

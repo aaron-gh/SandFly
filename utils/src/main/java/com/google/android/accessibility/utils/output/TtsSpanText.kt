@@ -56,7 +56,8 @@ private constructor(
           .getSpans(0, text.length, TtsSpan::class.java)
           .filter {
             it.type == TtsSpan.TYPE_TEXT &&
-              !it.args.getString(TtsSpan.ARG_TEXT).isNullOrBlank() &&
+              // A blank text, such as punctuation left out of speech, is written in as a space.
+              !it.args.getString(TtsSpan.ARG_TEXT).isNullOrEmpty() &&
               text.getSpanStart(it) < text.getSpanEnd(it)
           }
           .sortedBy { text.getSpanStart(it) }

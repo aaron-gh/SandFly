@@ -566,7 +566,7 @@ public class SpeechControllerImpl implements SpeechController {
     this.punctuationVerbosity = punctuationVerbosity;
     SpeechCleanupUtils.setPunctuationVerbosity(punctuationVerbosity);
     // TalkBack handles speaking punctuation if Speak punctuation verbosity preference is All or
-    // Most except Some.
+    // Most except Some. At None, makeSpeakablePunctuation leaves punctuation out.
     mUsePunctuation = punctuationVerbosity == ALL || punctuationVerbosity == MOST;
   }
 
@@ -1353,6 +1353,10 @@ public class SpeechControllerImpl implements SpeechController {
   }
 
   private void makeSpeakablePunctuation(FeedbackItem item) {
+    if (punctuationVerbosity == SpeechCleanupUtils.NONE) {
+      hidePunctuation(item);
+      return;
+    }
     if (!mUsePunctuation) {
       return;
     }
@@ -1423,6 +1427,22 @@ public class SpeechControllerImpl implements SpeechController {
       }
       if (fragmentChanged) {
         originalFragment.setText(builder);
+      }
+    }
+  }
+
+  /**
+   * Puts a space in place of each punctuation mark and symbol for the engine, unless the utterance
+   * is a single character, which is still said.
+   */
+  private static void hidePunctuation(FeedbackItem item) {
+    if (SpeechCleanupUtils.isSingleCharacter(item.getAggregateText())) {
+      return;
+    }
+    for (FeedbackFragment fragment : item.getFragments()) {
+      @Nullable CharSequence hidden = SpeechCleanupUtils.withPunctuationHidden(fragment.getText());
+      if (hidden != null) {
+        fragment.setText(hidden);
       }
     }
   }

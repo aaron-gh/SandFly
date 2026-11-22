@@ -35,7 +35,7 @@ The order also applies to rows whose check box or switch has no text of its own,
 
 The **Text and symbols** group sets how text, punctuation, capital letters and emoji are spoken:
 
-- **Speak punctuation and symbols**: **All** says every punctuation mark and symbol. **Most** says most symbols, such as & and @, but leaves common punctuation, such as commas and apostrophes, to the speech engine. **Some**, the default, leaves punctuation and symbols to the speech engine. **Learn more**, in the list, opens a web page about punctuation levels.
+- **Speak punctuation and symbols**: **All** says every punctuation mark and symbol. **Most** says most symbols, such as & and @, but leaves common punctuation, such as commas and apostrophes, to the speech engine. **Some**, the default, leaves punctuation and symbols to the speech engine. **None** leaves punctuation and symbols out of speech, except a character read on its own, such as when moving by character. Apostrophes and hyphens inside words, separators inside numbers, and punctuation that ends a word are left to the speech engine. **Learn more**, in the list, opens a web page about punctuation levels.
 - **Capital letters**: what SandFly does for a capital letter: **Do nothing**, **Say "capital"**, the default, **Change pitch**, or **Play sound**.
 - **Emoji**, **Count repeated emoji** and **Speak "emoji" after emoji names**: see [](#verbosity-emoji).
 - **Count repeated symbols**: says how many times a symbol repeats when it repeats 4 or more times. On by default.

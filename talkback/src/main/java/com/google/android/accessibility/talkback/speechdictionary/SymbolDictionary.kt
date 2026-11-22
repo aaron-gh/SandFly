@@ -96,10 +96,11 @@ object SymbolDictionary {
   /**
    * Whether [symbol] is punctuation that engines don't read aloud, which the punctuation verbosity
    * leaves out of speech now. Symbols such as % @ & * #, which engines say themselves, keep their
-   * entries.
+   * entries, unless the punctuation verbosity is None, which leaves out every symbol.
    */
   private fun isSilentWhenHidden(symbol: Char): Boolean =
-    symbol in ENGINE_SILENT_PUNCTUATION && SpeechCleanupUtils.isHiddenByVerbosity(symbol)
+    (symbol in ENGINE_SILENT_PUNCTUATION || SpeechCleanupUtils.hidesAllPunctuation()) &&
+      SpeechCleanupUtils.isHiddenByVerbosity(symbol)
 
   /** Punctuation that engines leave unsaid in text, pausing for it at most. */
   private const val ENGINE_SILENT_PUNCTUATION =
