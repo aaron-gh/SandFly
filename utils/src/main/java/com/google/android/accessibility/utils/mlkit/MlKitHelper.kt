@@ -79,18 +79,18 @@ constructor(
         context.bindService(
           intent,
           object : ServiceConnection {
-            override fun onServiceConnected(name: ComponentName, service: IBinder) =
+            override fun onServiceConnected(name: ComponentName?, service: IBinder) =
               executor.execute { connection.onServiceConnected(name, service) }
 
-            override fun onServiceDisconnected(name: ComponentName) =
+            override fun onServiceDisconnected(name: ComponentName?) =
               executor.execute { connection.onServiceDisconnected(name) }
 
-            override fun onBindingDied(name: ComponentName) =
+            override fun onBindingDied(name: ComponentName?) =
               executor.execute { connection.onBindingDied(name) }
 
             // Android calls it from API 28.
             @RequiresApi(Build.VERSION_CODES.P)
-            override fun onNullBinding(name: ComponentName) =
+            override fun onNullBinding(name: ComponentName?) =
               executor.execute { connection.onNullBinding(name) }
           }.also { legacyConnections[connection] = it },
           Context.BIND_AUTO_CREATE,
@@ -141,8 +141,9 @@ constructor(
 
   private val connection =
     object : ServiceConnection {
-      // Each ignores what comes after an unbind, such as a connection that came too late.
-      override fun onServiceConnected(name: ComponentName, binder: IBinder) {
+      // Each ignores what comes after an unbind, such as a connection that came too late. Names
+      // are nullable: Robolectric's unbind calls onServiceDisconnected with none.
+      override fun onServiceConnected(name: ComponentName?, binder: IBinder) {
         if (!bound) return
         handler.removeCallbacks(connectTimeout)
         val messenger = Messenger(binder)
@@ -152,17 +153,17 @@ constructor(
         }
       }
 
-      override fun onServiceDisconnected(name: ComponentName) {
+      override fun onServiceDisconnected(name: ComponentName?) {
         if (!bound) return
         LogUtils.w(TAG, "The ML Kit process stopped")
         stopAll("The ML Kit process stopped")
       }
 
-      override fun onBindingDied(name: ComponentName) {
+      override fun onBindingDied(name: ComponentName?) {
         if (bound) stopAll("The ML Kit process stopped")
       }
 
-      override fun onNullBinding(name: ComponentName) {
+      override fun onNullBinding(name: ComponentName?) {
         if (bound) stopAll("The ML Kit process did not start")
       }
     }
