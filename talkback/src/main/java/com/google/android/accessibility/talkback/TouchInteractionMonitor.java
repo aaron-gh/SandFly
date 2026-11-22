@@ -2209,7 +2209,11 @@ public class TouchInteractionMonitor
       gestureAppThisInteraction = AppGestures.appForGestures();
     }
     boolean assigned =
-        AppGestures.withApp(gestureAppThisInteraction, () -> isGestureAssigned(gestureId));
+        AppGestures.withApp(gestureAppThisInteraction, () -> isGestureAssigned(gestureId))
+            // A back-and-forth or angle swipe that makes a two-stroke swipe with a command is
+            // matched, and the swipe it starts with waits for the lift, with or without a command
+            // of its own.
+            || twoStrokeSwipes.makesAssignedTwoStrokeSwipe(gestureId);
     assignedThisInteraction.put(gestureId, assigned);
     return assigned;
   }

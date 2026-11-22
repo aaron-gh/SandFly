@@ -24,6 +24,7 @@ import android.view.KeyEvent
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.utils.gestures.GestureManifold
+import com.google.android.accessibility.utils.gestures.TwoStrokeSwipeIds
 
 @SuppressLint("InlinedApi")
 object ScriptInput {
@@ -279,23 +280,20 @@ object ScriptInput {
       "swipeRightThenLeftThenUp" to GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_UP,
       "swipeRightThenLeftThenDown" to GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN,
       "swipeRightThenLeftThenRight" to GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT,
-      "swipeUpLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP,
-      "swipeUpLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN,
-      "swipeUpLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT,
-      "swipeUpLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT,
-      "swipeDownLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP,
-      "swipeDownLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN,
-      "swipeDownLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT,
-      "swipeDownLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT,
-      "swipeLeftLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP,
-      "swipeLeftLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN,
-      "swipeLeftLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT,
-      "swipeLeftLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT,
-      "swipeRightLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP,
-      "swipeRightLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN,
-      "swipeRightLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT,
-      "swipeRightLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT,
     )
+      .apply {
+        // Two-stroke swipes, named after their swipes, such as swipeUpLiftSwipeRight and
+        // swipeUpThenLeftLiftSwipeRightThenDown.
+        val strokes = filterValues { TwoStrokeSwipeIds.twoStrokeSwipesStartingWith(it).isNotEmpty() }
+        for ((firstName, first) in strokes) {
+          for ((secondName, second) in strokes) {
+            put(
+              firstName + "Lift" + secondName.replaceFirstChar { it.uppercaseChar() },
+              TwoStrokeSwipeIds.twoStrokeSwipeOf(first, second),
+            )
+          }
+        }
+      }
 
   private val fingerprintGestures: Map<String, Int> =
     linkedMapOf(

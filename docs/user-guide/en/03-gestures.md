@@ -50,9 +50,11 @@ These 16 gestures are at the end of the **1 finger**, **1 finger back-and-forth*
 
 #### Two-stroke swipes {#gestures-two-stroke}
 
-A two-stroke swipe is two one-finger swipes with the finger lifted between them, such as **Swipe right, lift, then swipe up**. The 16 gestures, including the same direction twice, are in the **Two-stroke swipes** category of the **Gestures** screen and do nothing by default.
+A two-stroke swipe is two one-finger swipes with the finger lifted between them, such as **Swipe right, lift, then swipe up**. Either swipe can be a one-direction, back-and-forth or angle swipe, such as **Swipe up then left, lift, then swipe right** or **Swipe up, lift, then swipe right then down**, which makes 256 gestures, including the same swipe twice. They do nothing by default. On the **Gestures** screen, the 16 made of one-direction swipes are in the **Two-stroke swipes** category, those that start with a one-direction swipe and end with a back-and-forth or angle swipe are in **Two-stroke swipes ending with back-and-forth or angle**, and the others are in a category for each first swipe, such as **Two-stroke swipes starting with Swipe up then left**.
 
-They work only while **Time between two-stroke swipes** is set; see [](#gestures-timing). The second swipe must start within that time after the first lifts. After a swipe, SandFly waits for a second swipe only when a two-stroke swipe that starts with that swipe has a command, in the gesture layout, the gesture profile in use or the gestures of the app; other swipes run at once. When the time passes, or the next touch is a tap, touch exploration or a gesture with more fingers, the first swipe runs as an ordinary swipe. Not on watches.
+They work only while **Time between two-stroke swipes** is set; see [](#gestures-timing). The second swipe must start within that time after the first lifts. After a swipe, SandFly waits for a second swipe only when a two-stroke swipe that starts with that swipe has a command, in the gesture layout, the gesture profile in use or the gestures of the app; other swipes run at once. When the time passes, or the next touch is a tap, touch exploration or a gesture with more fingers, the first swipe runs as an ordinary swipe.
+
+A two-stroke swipe that starts with a back-and-forth or angle swipe makes no one-direction swipe wait for a second swipe, so commands can go on two-stroke swipes while one-direction swipes run at once. A back-and-forth or angle swipe in a two-stroke swipe with a command is recognized even when it has no command of its own. **Recognize swipes before lifting** turns off and hides the two-stroke swipes with a back-and-forth or angle swipe. Not on watches.
 
 ### Rotor {#gestures-rotor}
 
@@ -171,7 +173,7 @@ On phones whose fingerprint sensor reports swipes, the **Fingerprint gestures** 
 - The timing settings: see [](#gestures-timing).
 - **Recognize swipes before lifting**: see [](#gestures-swipes-before-lift).
 - **Gestures in apps**, **Gesture profiles** and **App shortcuts**: see [](#gestures-in-apps), [](#gestures-profiles) and [](#gestures-app-shortcuts).
-- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Three-part swipes**, **Two-stroke swipes**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures**, **Back tap** and **Shake**.
+- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Three-part swipes**, **Two-stroke swipes**, **Two-stroke swipes ending with back-and-forth or angle**, a **Two-stroke swipes starting with** category for each back-and-forth and angle swipe, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures**, **Back tap** and **Shake**.
 
 The categories are collapsed. Activate a category to expand it. Each gesture in a category shows the command it runs.
 
@@ -201,7 +203,7 @@ These settings need gesture recognition by SandFly; see [](#gestures-recognition
 
 #### Recognize swipes before lifting {#gestures-swipes-before-lift}
 
-With **Recognize swipes before lifting** on, a one-finger swipe runs its command once the finger has moved 1 cm, before you lift it. Back-and-forth and angle gestures start like a single swipe, so this setting turns off and hides the **1 finger back-and-forth**, **1 finger angle**, **Three-part swipes** and **2 finger angle** categories. A swipe still waits for the lift when the swipe and hold of its direction has a command, or when an edge gesture is still possible. It's off by default.
+With **Recognize swipes before lifting** on, a one-finger swipe runs its command once the finger has moved 1 cm, before you lift it. Back-and-forth and angle gestures start like a single swipe, so this setting turns off and hides the **1 finger back-and-forth**, **1 finger angle**, **Three-part swipes** and **2 finger angle** categories and the two-stroke swipe categories with back-and-forth and angle swipes. A swipe still waits for the lift when the swipe and hold of its direction has a command, or when an edge gesture is still possible. It's off by default.
 
 With it off, a swipe also runs before the lift when no gesture that starts in its direction has a command: no back-and-forth or angle gesture, no swipe and hold of either, and no three-part swipe. With **SandFly gestures**, the back-and-forth gestures have commands; with **VoiceOver gestures**, none of these gestures do.
 

@@ -70,6 +70,7 @@ import com.google.android.accessibility.utils.Consumer;
 import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.PackageManagerUtils;
 import com.google.android.accessibility.utils.gestures.GestureManifold;
+import com.google.android.accessibility.utils.gestures.TwoStrokeSwipeIds;
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -1472,38 +1473,9 @@ public abstract class PageConfig {
           GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT, ANNOUNCE_REAL_ACTION);
-      this.captureGestureIdToAnnouncements.put(
-          GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT, ANNOUNCE_REAL_ACTION);
+      for (int gestureId : TwoStrokeSwipeIds.twoStrokeSwipes()) {
+        this.captureGestureIdToAnnouncements.put(gestureId, ANNOUNCE_REAL_ACTION);
+      }
       this.captureGestureIdToAnnouncements.put(
           GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(

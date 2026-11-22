@@ -24,11 +24,15 @@ import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_LEFT
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_RIGHT_AND_UP
 import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP
+import android.accessibilityservice.AccessibilityService.GESTURE_SWIPE_UP_AND_LEFT
 import android.os.Handler
 import android.os.Looper
 import com.google.android.accessibility.utils.gestures.GestureManifold
+import com.google.android.accessibility.utils.gestures.TwoStrokeSwipeIds
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT
 import java.time.Duration
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -211,18 +215,97 @@ class TwoStrokeSwipesTest {
   fun twoStrokeSwipeIds() {
     assertEquals(
       GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP,
-      GestureManifold.twoStrokeSwipeOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_UP),
+      TwoStrokeSwipeIds.twoStrokeSwipeOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_UP),
     )
-    assertEquals(0, GestureManifold.twoStrokeSwipeOf(GESTURE_SWIPE_RIGHT, GESTURE_2_FINGER_SINGLE_TAP))
+    assertEquals(0, TwoStrokeSwipeIds.twoStrokeSwipeOf(GESTURE_SWIPE_RIGHT, GESTURE_2_FINGER_SINGLE_TAP))
     assertEquals(
       listOf(
         GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP,
         GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN,
         GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT,
         GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT,
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_DOWN,
       ),
-      GestureManifold.twoStrokeSwipesStartingWith(GESTURE_SWIPE_DOWN).toList(),
+      TwoStrokeSwipeIds.twoStrokeSwipesStartingWith(GESTURE_SWIPE_DOWN).toList().take(5),
     )
-    assertTrue(GestureManifold.twoStrokeSwipesStartingWith(GESTURE_DOUBLE_TAP).isEmpty())
+    assertEquals(16, TwoStrokeSwipeIds.twoStrokeSwipesStartingWith(GESTURE_SWIPE_UP_AND_LEFT).size)
+    assertTrue(TwoStrokeSwipeIds.twoStrokeSwipesStartingWith(GESTURE_DOUBLE_TAP).isEmpty())
+    assertTrue(TwoStrokeSwipeIds.twoStrokeSwipesStartingWith(GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP).isEmpty())
+  }
+
+  @Test
+  fun everyTwoStrokeSwipe_hasItsOwnIdAndItsParts() {
+    val all = TwoStrokeSwipeIds.twoStrokeSwipes()
+    assertEquals(256, all.size)
+    assertEquals(256, all.toSet().size)
+    for (id in all) {
+      val parts = TwoStrokeSwipeIds.twoStrokeSwipeParts(id)!!
+      assertEquals(id, TwoStrokeSwipeIds.twoStrokeSwipeOf(parts[0], parts[1]))
+      assertTrue(TwoStrokeSwipeIds.isTwoStrokeSwipe(id))
+      assertEquals(
+        id !in GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT..GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP,
+        TwoStrokeSwipeIds.isTwoStrokeSwipeWithTurn(id),
+      )
+    }
+    // The 16 one-direction ones keep their numbers.
+    assertEquals(
+      GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT,
+      TwoStrokeSwipeIds.twoStrokeSwipeOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT),
+    )
+    assertEquals(
+      GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT,
+      TwoStrokeSwipeIds.twoStrokeSwipeOf(GESTURE_SWIPE_UP_AND_LEFT, GESTURE_SWIPE_RIGHT),
+    )
+    assertEquals(
+      GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP,
+      TwoStrokeSwipeIds.twoStrokeSwipeOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT_AND_UP),
+    )
+    // Numbers in the block the one-direction ones would have had are no gestures.
+    assertEquals(null, TwoStrokeSwipeIds.twoStrokeSwipeParts(-1000))
+    assertFalse(TwoStrokeSwipeIds.isTwoStrokeSwipe(GESTURE_SWIPE_UP_AND_LEFT))
+    assertFalse(TwoStrokeSwipeIds.isTwoStrokeSwipe(-1256))
+  }
+
+  @Test
+  fun angleFirst_makesTheTwoStrokeSwipe() {
+    swipes.setTimeMs(1000)
+    assigned += GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT
+    assertTrue(swipe(GESTURE_SWIPE_UP_AND_LEFT))
+    assertTrue(swipe(GESTURE_SWIPE_RIGHT))
+    assertEquals(listOf(GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT), dispatched)
+  }
+
+  @Test
+  fun angleSecond_makesTheTwoStrokeSwipe() {
+    swipes.setTimeMs(1000)
+    assigned += GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP
+    assertTrue(swipe(GESTURE_SWIPE_RIGHT))
+    assertTrue(swipe(GESTURE_SWIPE_RIGHT_AND_UP))
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP), dispatched)
+  }
+
+  @Test
+  fun angleFirstOnly_oneDirectionSwipesRunAtOnce() {
+    swipes.setTimeMs(2000)
+    assigned += GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT
+    assertFalse(swipe(GESTURE_SWIPE_UP))
+    assertFalse(swipe(GESTURE_SWIPE_RIGHT))
+    assertEquals(listOf(GESTURE_SWIPE_UP, GESTURE_SWIPE_RIGHT), dispatched)
+  }
+
+  @Test
+  fun makesAssignedTwoStrokeSwipe_asFirstOrSecondSwipe() {
+    assigned += GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT
+    assigned += GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP
+    // Off.
+    assertFalse(swipes.makesAssignedTwoStrokeSwipe(GESTURE_SWIPE_UP_AND_LEFT))
+    swipes.setTimeMs(1000)
+    assertTrue(swipes.makesAssignedTwoStrokeSwipe(GESTURE_SWIPE_UP_AND_LEFT))
+    assertFalse(swipes.makesAssignedTwoStrokeSwipe(GESTURE_SWIPE_RIGHT_AND_UP))
+    assertFalse(swipes.makesAssignedTwoStrokeSwipe(GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT))
+    // After a waiting right swipe, the angle second swipe has one.
+    swipe(GESTURE_SWIPE_RIGHT)
+    swipes.onTouchDown()
+    assertTrue(swipes.makesAssignedTwoStrokeSwipe(GESTURE_SWIPE_RIGHT_AND_UP))
   }
 }

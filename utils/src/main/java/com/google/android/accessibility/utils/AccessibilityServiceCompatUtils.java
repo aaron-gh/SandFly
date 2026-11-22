@@ -30,6 +30,7 @@ import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.NonNull;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.utils.gestures.GestureManifold;
+import com.google.android.accessibility.utils.gestures.TwoStrokeSwipeIds;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -578,41 +579,20 @@ public class AccessibilityServiceCompatUtils {
           "GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN";
       case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT ->
           "GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT";
-      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP ->
-          "GESTURE_SWIPE_UP_LIFT_SWIPE_UP";
-      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN ->
-          "GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN";
-      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT ->
-          "GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT";
-      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT ->
-          "GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT";
-      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP ->
-          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP";
-      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN ->
-          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN";
-      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT ->
-          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT";
-      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT ->
-          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT";
-      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP ->
-          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP";
-      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN ->
-          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN";
-      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT ->
-          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT";
-      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT ->
-          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT";
-      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP ->
-          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP";
-      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN ->
-          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN";
-      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT ->
-          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT";
-      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT ->
-          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT";
-      default -> "(unhandled " + gestureId + ")";
+      default -> twoStrokeSwipeToString(gestureId);
     };
   }
+  /** Names a two-stroke swipe after its two swipes, such as GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT. */
+  private static String twoStrokeSwipeToString(int gestureId) {
+    int[] parts = TwoStrokeSwipeIds.twoStrokeSwipeParts(gestureId);
+    if (parts == null) {
+      return "(unhandled " + gestureId + ")";
+    }
+    return gestureIdToString(parts[0])
+        + "_LIFT_"
+        + gestureIdToString(parts[1]).substring("GESTURE_".length());
+  }
+
 
   /**
    * Gets string representative of a fingerprint gesture.

@@ -21,18 +21,21 @@ import android.os.Build
 import android.os.Handler
 import androidx.annotation.RequiresApi
 import com.google.android.accessibility.utils.gestures.GestureManifold
+import com.google.android.accessibility.utils.gestures.TwoStrokeSwipeIds
 import java.util.function.Consumer
 import java.util.function.IntPredicate
 
 /**
  * Two-stroke swipes: a one-finger swipe, the finger lifted, and a second one-finger swipe that
  * starts within the time set in Time between two-stroke swipes, reported as one gesture such as
- * [GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP].
+ * [GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP]. Either swipe is a one-direction,
+ * back-and-forth or angle swipe.
  *
- * A one-finger swipe waits for a second swipe only while the time is set and a two-stroke swipe
- * that starts with it has a command; otherwise it runs at once. A waiting swipe runs as it is when
- * the time passes before the next touch, or when the next touch is anything other than a swipe that
- * makes a two-stroke swipe with a command.
+ * A swipe waits for a second swipe only while the time is set and a two-stroke swipe that starts
+ * with it has a command; otherwise it runs at once, so a two-stroke swipe that starts with a
+ * back-and-forth or angle swipe makes no one-direction swipe wait. A waiting swipe runs as it is
+ * when the time passes before the next touch, or when the next touch is anything other than a swipe
+ * that makes a two-stroke swipe with a command.
  *
  * @param isAssigned whether a gesture has a command
  * @param dispatch runs a gesture
@@ -69,7 +72,7 @@ class TwoStrokeSwipes(
     val first = waiting
     if (first != null) {
       clearWaiting()
-      val twoStroke = GestureManifold.twoStrokeSwipeOf(first.gestureId, event.gestureId)
+      val twoStroke = TwoStrokeSwipeIds.twoStrokeSwipeOf(first.gestureId, event.gestureId)
       if (twoStroke != 0 && isAssigned.test(twoStroke)) {
         dispatch.accept(AccessibilityGestureEvent(twoStroke, event.displayId, event.motionEvents))
         return true
@@ -86,9 +89,29 @@ class TwoStrokeSwipes(
     return true
   }
 
+  /**
+   * Returns whether the swipe [gestureId] makes a two-stroke swipe with a command, as the second
+   * swipe after the waiting swipe or as a first swipe. Gesture matching treats such a swipe as one
+   * with a command: a back-and-forth or angle swipe is matched, and a one-direction swipe that it
+   * starts with waits for the lift.
+   */
+  fun makesAssignedTwoStrokeSwipe(gestureId: Int): Boolean {
+    if (timeMs == 0) {
+      return false
+    }
+    val first = waiting
+    if (first != null) {
+      val twoStroke = TwoStrokeSwipeIds.twoStrokeSwipeOf(first.gestureId, gestureId)
+      if (twoStroke != 0 && isAssigned.test(twoStroke)) {
+        return true
+      }
+    }
+    return waitsAfter(gestureId)
+  }
+
   /** Returns whether the gesture [gestureId] waits for a second swipe. */
   fun waitsAfter(gestureId: Int): Boolean =
-    timeMs > 0 && GestureManifold.twoStrokeSwipesStartingWith(gestureId).any { isAssigned.test(it) }
+    timeMs > 0 && TwoStrokeSwipeIds.twoStrokeSwipesStartingWith(gestureId).any { isAssigned.test(it) }
 
   /** The first finger of a touch went down. A second swipe that starts now is in time. */
   fun onTouchDown() {
