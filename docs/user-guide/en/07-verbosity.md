@@ -87,6 +87,7 @@ The **Announcements** group sets what SandFly says when something changes:
 - **Announce full charge**: says "Battery fully charged" once when the battery is full while the charger is connected. Off by default.
 - **Announce call length**: when a phone call ends, says how long it lasted, from when the call was answered or dialed. Calls that weren't answered aren't announced. Off by default.
 - **Announce keyboard shown or hidden**: on by default.
+- **Announce folded or unfolded**: on a foldable phone, says "Folded" when you close it and "Unfolded" when you open it. When closing turns the screen off, "Folded" is said in place of "Screen off"; when opening turns the screen on, "Unfolded" comes before the time and the other items. Holding the phone nearly closed, with the main screen on, says nothing. Shown only on phones with a hinge sensor. On by default.
 - **Screen on and off**: what SandFly says when the screen turns off or on and when the phone is unlocked. See [](#verbosity-screen-on-off).
 - **Time format**: **Use device time format**, the default, **12 hour** or **24 hour**, for the time that SandFly says.
 - **Include seconds in the time**: off by default.

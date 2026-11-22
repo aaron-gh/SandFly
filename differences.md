@@ -790,6 +790,7 @@ In **Verbosity** > **Announcements**:
 
 - **Announce full charge**: SandFly speaks "Battery fully charged" once when the battery is full while the charger is connected, also with notification reading off. Off by default.
 - **Announce call length**: when a phone call ends, SandFly speaks how long it lasted, from when the call was answered or dialed. Off by default.
+- **Announce folded or unfolded**: on a foldable phone, SandFly speaks "Folded" when you close it and "Unfolded" when you open it. When closing turns the screen off, "Folded" is spoken in place of "Screen off", with the other screen-off items; when opening turns the main screen on, "Unfolded" comes before the screen-on items. Holding the phone nearly closed, with the main screen on, says nothing. It works from the hinge sensor that Android has on foldables since Android 11; on phones without one, the switch isn't shown and nothing changes. TalkBack doesn't announce folding. On by default.
 - **Include seconds in the time**: the time that SandFly speaks includes the seconds. Off by default. **Include seconds when the screen turns on**, on by default, applies it to the time spoken when the screen turns on.
 - **Time format**, which TalkBack has in **Advanced settings**: **Use device time format**, **12 hour** or **24 hour**.
 

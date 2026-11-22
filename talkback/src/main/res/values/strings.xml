@@ -486,6 +486,8 @@
     <string name="template_call_ended">Call ended, <xliff:g id="duration" example="3 minutes, 12 seconds">%1$s</xliff:g></string>
     <!-- Switch: speech reports an on-screen keyboard being shown or hidden. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_keyboard_shown_hidden">Announce keyboard shown or hidden</string>
+    <!-- Switch: on a foldable phone, speech says "Folded" or "Unfolded" when it is closed or opened. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_announce_folded_unfolded">Announce folded or unfolded</string>
     <!-- Said when the battery becomes fully charged while the charger is connected. -->
     <string name="battery_fully_charged">Battery fully charged</string>
     <!--
@@ -535,6 +537,17 @@
       Description: This is spoken to the user. [CHAR LIMIT=NONE]
     -->
     <string name="value_device_unlocked">Device unlocked.</string>
+
+    <!--
+      Source: A value for announcing that a foldable phone was closed.
+      Description: This is spoken to the user. [CHAR LIMIT=NONE]
+    -->
+    <string name="value_folded">Folded.</string>
+    <!--
+      Source: A value for announcing that a foldable phone was opened.
+      Description: This is spoken to the user. [CHAR LIMIT=NONE]
+    -->
+    <string name="value_unfolded">Unfolded.</string>
 
     <!-- Settings for what SandFly says when the screen turns off or on and when the phone is unlocked. [CHAR LIMIT=NONE] -->
     <string name="title_pref_screen_announcements">Screen on and off</string>

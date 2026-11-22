@@ -49,6 +49,7 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.keyboard.KeypadKeys
+import com.google.android.accessibility.talkback.monitor.HingeFoldMonitor
 import com.google.android.accessibility.talkback.notificationlist.NotificationList
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
@@ -509,6 +510,9 @@ object SettingsIndex {
       SandflyAi.COMMAND_SCREEN_RECOGNITION_IN_APP !in proCommands,
       R.string.pref_show_context_menu_screen_recognition_app_setting_key,
     )
+
+    // VerbosityPrefFragment: folding is only told from a hinge sensor.
+    hideIf(!HingeFoldMonitor.hasHingeSensor(context), R.string.pref_announce_folded_unfolded_key)
 
     // DeveloperPrefFragment. The version is shown there, or as the screen's subtitle.
     hideIf(true, R.string.pref_developer_version_code_key)

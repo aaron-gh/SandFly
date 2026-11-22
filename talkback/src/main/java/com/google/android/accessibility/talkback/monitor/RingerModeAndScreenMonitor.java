@@ -138,19 +138,170 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
   private final WakeAnnouncementRecovery wakeAnnouncementRecovery;
 
+  /**
+   * How far apart the hinge closing and the main screen turning off may be for the phone to have
+   * folded, how long after that the screen may turn off for "Folded" to replace "Screen off", and
+   * how long the screen must stay on after that, as when the cover screen comes on, for "Folded" to
+   * be said alone. On a Galaxy Z Flip the main screen turns off about 0.15 seconds after the hinge
+   * closes, and the screen about 0.6 to 0.85 seconds after.
+   */
+  private static final long FOLD_MATCH_MS = 1_500;
+
+  /** How long after the phone unfolds the main screen may turn on for "Unfolded" to be said. */
+  private static final long UNFOLD_MATCH_MS = 1_500;
+
+  /**
+   * How long the screen-on readout waits for the hinge when the main screen turns on while the
+   * phone reads as folded. On a Galaxy Z Flip the main screen turns on about 0.15 seconds before
+   * the hinge reading arrives.
+   */
+  private static final long UNFOLD_WAIT_MS = 500;
+
+  /** The hinge of a foldable phone. On other phones it does nothing. */
+  private final HingeFoldMonitor foldMonitor;
+
+  /**
+   * The phone folded and its main screen turned off, and nothing has been said for it yet. The
+   * hinge alone doesn't say so, as some phones read as closed while held nearly closed with the
+   * main screen on. Main thread.
+   */
+  private boolean foldPending;
+
+  /** When the main screen last turned off, in {@link SystemClock#uptimeMillis()}, or 0. */
+  private long mainScreenOffAt;
+
+  /** When "Folded" was last said alone, in {@link SystemClock#uptimeMillis()}, or 0. */
+  private long foldSpokenAt;
+
+  /** The screen-on readout waits for the hinge to say whether the phone unfolded. Main thread. */
+  private boolean waitingForUnfold;
+
+  private final Runnable foldCheck = this::sayFoldedIfScreenStayedOn;
+  private final Runnable unfoldWaitTimeout =
+      () -> {
+        waitingForUnfold = false;
+        speakForDisplayOn(EVENT_ID_UNTRACKED);
+      };
+
+  /** What starts the screen-off announcement. */
+  private static final int OPENING_SCREEN_OFF = 0;
+
+  private static final int OPENING_FOLDED = 1;
+
+  /** Nothing, as "Folded" was just said. */
+  private static final int OPENING_NOTHING = 2;
+
   @Override
   public void onDisplayStateChanged(boolean displayOn) {
     final boolean preDisplayOn = defaultDisplayOn;
     defaultDisplayOn = displayOn;
     if (!displayOn) {
       wakeAnnouncementRecovery.cancel();
+      stopWaitingForUnfold();
+      if (preDisplayOn) {
+        mainScreenOffAt = SystemClock.uptimeMillis();
+        if (Boolean.TRUE.equals(foldMonitor.getFolded())) {
+          markFolded();
+        }
+      }
     }
     if (defaultDisplayOn && !preDisplayOn) {
+      cancelFold();
       screenOnRecorder.onScreenOnSignal(SystemClock.uptimeMillis());
       // When the display turns on, we announce the current time and the current ringer
       // state when phone is idle.
-      speakForDisplayOn(EVENT_ID_UNTRACKED);
+      if (foldMonitor.unfoldedWithin(UNFOLD_MATCH_MS)) {
+        speakForDisplayOn(EVENT_ID_UNTRACKED, /* allowRecovery= */ true, /* unfolded= */ true);
+      } else if (Boolean.TRUE.equals(foldMonitor.getFolded())) {
+        // Opening a folded phone turns the main screen on before the hinge reading arrives.
+        waitingForUnfold = true;
+        mainHandler.postDelayed(unfoldWaitTimeout, UNFOLD_WAIT_MS);
+      } else {
+        speakForDisplayOn(EVENT_ID_UNTRACKED);
+      }
     }
+  }
+
+  /** Called when a foldable phone folds or unfolds, not when SandFly starts. */
+  private void onFoldChanged(boolean folded) {
+    cancelFold();
+    if (!TalkBackService.isServiceActive()) {
+      stopWaitingForUnfold();
+      return;
+    }
+    if (folded) {
+      stopWaitingForUnfold();
+      if (!defaultDisplayOn) {
+        if (mainScreenOffAt != 0 && SystemClock.uptimeMillis() - mainScreenOffAt < FOLD_MATCH_MS) {
+          // The main screen may turn off just before the hinge reading arrives.
+          markFolded();
+        } else if (isInteractive) {
+          // The cover screen was in use with the phone partly closed, as in a Galaxy Z Flip's tent
+          // mode, and the phone then closed.
+          sayFolded();
+        }
+      }
+    } else if (waitingForUnfold) {
+      stopWaitingForUnfold();
+      speakForDisplayOn(EVENT_ID_UNTRACKED, /* allowRecovery= */ true, /* unfolded= */ true);
+    }
+  }
+
+  /** The phone folded and its main screen turned off, so "Folded" is said. */
+  private void markFolded() {
+    foldPending = true;
+    mainHandler.removeCallbacks(foldCheck);
+    mainHandler.postDelayed(foldCheck, FOLD_MATCH_MS);
+  }
+
+  private void cancelFold() {
+    foldPending = false;
+    mainHandler.removeCallbacks(foldCheck);
+  }
+
+  private void stopWaitingForUnfold() {
+    waitingForUnfold = false;
+    mainHandler.removeCallbacks(unfoldWaitTimeout);
+  }
+
+  /** Says "Folded" when the screen stayed on after folding, as when the cover screen came on. */
+  private void sayFoldedIfScreenStayedOn() {
+    if (!foldPending) {
+      return;
+    }
+    foldPending = false;
+    if (isInteractive && !defaultDisplayOn && Boolean.TRUE.equals(foldMonitor.getFolded())) {
+      sayFolded();
+    }
+  }
+
+  /**
+   * Says "Folded" alone, while the screen is on. "Screen off" isn't said if the screen turns off
+   * right after.
+   */
+  private void sayFolded() {
+    if (TalkBackService.isServiceActive() && isFoldAnnounced()) {
+      foldSpokenAt = SystemClock.uptimeMillis();
+      speakFoldWord(R.string.value_folded);
+    }
+  }
+
+  /** Whether Announce folded or unfolded is on. */
+  private boolean isFoldAnnounced() {
+    return SharedPreferencesUtils.getBooleanPref(
+        SharedPreferencesUtils.getSharedPreferences(service),
+        service.getResources(),
+        R.string.pref_announce_folded_unfolded_key,
+        R.bool.pref_announce_folded_unfolded_default);
+  }
+
+  private void speakFoldWord(int resId) {
+    SpeakOptions speakOptions =
+        SpeakOptions.create()
+            .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
+            .setFlags(FeedbackItem.FLAG_SKIP_DUPLICATE);
+    pipeline.returnFeedback(
+        EVENT_ID_UNTRACKED, Feedback.speech(service.getString(resId), speakOptions));
   }
 
   /** Creates a new instance. */
@@ -183,6 +334,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     isInteractive =
         ((PowerManager) service.getSystemService(Context.POWER_SERVICE)).isInteractive();
     isWatch = FormFactorUtils.isAndroidWear();
+    foldMonitor = new HingeFoldMonitor(service);
     executor = Executors.newSingleThreadExecutor();
     wakeAnnouncementRecovery =
         new WakeAnnouncementRecovery(
@@ -206,6 +358,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
       ContextCompat.registerReceiver(context, this, STATE_CHANGE_FILTER, RECEIVER_EXPORTED);
       updateScreenState();
       displayMonitor.addDisplayStateChangedListener(this);
+      if (!isWatch) {
+        foldMonitor.start(this::onFoldChanged);
+      }
       monitoring = true;
     }
   }
@@ -215,6 +370,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     if (monitoring) {
       context.unregisterReceiver(this);
       displayMonitor.removeDisplayStateChangedListener(this);
+      foldMonitor.stop();
+      cancelFold();
+      stopWaitingForUnfold();
       monitoring = false;
     }
   }
@@ -261,7 +419,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
           router.ensureRouting();
           router.scheduleReassertion();
         }
-        handleScreenOff(eventId);
+        handleScreenOff(eventId, screenOffOpening());
       }
       case Intent.ACTION_USER_PRESENT -> {
         AudioDeviceRouter router = AudioDeviceRouter.getInstance();
@@ -345,7 +503,24 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     }
   }
 
-  private void handleScreenOffInBackgroundThread(EventId eventId) {
+  /**
+   * What starts the screen-off announcement: "Folded" when the phone just folded, nothing when
+   * "Folded" was just said alone, or "Screen off". Ends the wait for the phone to fold.
+   */
+  private int screenOffOpening() {
+    stopWaitingForUnfold();
+    boolean folded = foldPending;
+    cancelFold();
+    if (folded) {
+      return OPENING_FOLDED;
+    }
+    if (foldSpokenAt != 0 && SystemClock.uptimeMillis() - foldSpokenAt < FOLD_MATCH_MS) {
+      return OPENING_NOTHING;
+    }
+    return OPENING_SCREEN_OFF;
+  }
+
+  private void handleScreenOffInBackgroundThread(EventId eventId, int opening) {
     // REFERTO: Do not have any screen off message and any chime for Android Wear.
     // The volume of the screen-off sound, which plays only while the ringer rings, or -1 for none.
     float soundVolume = -1;
@@ -389,7 +564,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
           }
           // Sent after clearing the queues, and uninterruptible, so that neither they nor the lock
           // screen or always-on display appearing right after the screen turns off cut it off.
-          final SpannableStringBuilder ttsText = screenOffText();
+          final SpannableStringBuilder ttsText = screenOffText(opening);
           SpeakOptions speakOptions =
               SpeakOptions.create()
                   .setQueueMode(
@@ -413,11 +588,18 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
         });
   }
 
-  /** "Screen off", the ringer mode and the items chosen for the screen turning off. */
-  private SpannableStringBuilder screenOffText() {
+  /**
+   * "Screen off", or "Folded" when the phone just folded, then the ringer mode and the items chosen
+   * for the screen turning off. {@code opening} is {@link #OPENING_SCREEN_OFF}, {@link
+   * #OPENING_FOLDED} or {@link #OPENING_NOTHING}.
+   */
+  private SpannableStringBuilder screenOffText(int opening) {
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(service);
     final SpannableStringBuilder ttsText = new SpannableStringBuilder();
-    if (ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_SCREEN_OFF)) {
+    if (opening == OPENING_FOLDED && isFoldAnnounced()) {
+      ttsText.append(service.getString(R.string.value_folded));
+    } else if (opening != OPENING_NOTHING
+        && ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.SAY_SCREEN_OFF)) {
       ttsText.append(service.getString(R.string.value_screen_off));
     }
     // Only announce the ringer state and the status if we're not in a call.
@@ -432,7 +614,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   /** Handles when the screen is turned off. Announces "screen off". */
   @SuppressWarnings("deprecation")
-  private void handleScreenOff(EventId eventId) {
+  private void handleScreenOff(EventId eventId, int opening) {
     menuManager.dismissAll();
     ClipboardHistoryOverlay.close();
 
@@ -450,7 +632,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     }
 
     // Move non-ui tasks to background thread
-    executor.execute(() -> handleScreenOffInBackgroundThread(eventId));
+    executor.execute(() -> handleScreenOffInBackgroundThread(eventId, opening));
   }
 
   /** Handles when the screen is interactive. */
@@ -495,9 +677,17 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   private void speakForDisplayOn(EventId eventId, boolean allowRecovery) {
+    speakForDisplayOn(eventId, allowRecovery, /* unfolded= */ false);
+  }
+
+  /** {@code unfolded}: the phone just unfolded, so the readout starts with "Unfolded". */
+  private void speakForDisplayOn(EventId eventId, boolean allowRecovery, boolean unfolded) {
     final SpannableStringBuilder ttsText = new SpannableStringBuilder();
 
     if (isIdle()) {
+      if (unfolded && isFoldAnnounced()) {
+        ttsText.append(service.getString(R.string.value_unfolded));
+      }
       // Need the old version to support version older than JB_MR1
       // noinspection deprecation
       if (Settings.Secure.getInt(

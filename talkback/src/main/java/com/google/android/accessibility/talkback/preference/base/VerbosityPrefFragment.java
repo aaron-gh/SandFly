@@ -28,6 +28,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
+import com.google.android.accessibility.talkback.monitor.HingeFoldMonitor;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -56,6 +57,17 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     setupTellTimePreference();
     setupEmojiRepeatCountPreference();
     setupSpeakUserFocusPreference();
+    setupFoldPreference();
+  }
+
+  /** Folding is only told from a hinge sensor, so phones without one don't show the switch. */
+  private void setupFoldPreference() {
+    Preference fold = findPreference(R.string.pref_announce_folded_unfolded_key);
+    if (fold != null
+        && fold.getParent() != null
+        && !HingeFoldMonitor.hasHingeSensor(requireContext())) {
+      fold.getParent().removePreference(fold);
+    }
   }
 
   /** Chosen apps only applies while Speak only focus moved by the user is In chosen apps. */
