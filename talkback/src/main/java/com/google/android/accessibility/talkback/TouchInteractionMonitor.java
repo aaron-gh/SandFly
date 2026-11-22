@@ -374,6 +374,10 @@ public class TouchInteractionMonitor
   private boolean keepMonitorTouchExplore = true;
   // To record any 1-finger gestures are still trying to match.
   private final Set<Integer> touchExploreGate = new HashSet<>(32);
+
+  // Three-direction swipes that have failed to match in this interaction. Touch exploration also
+  // waits for the ones with a command, which are matched only then.
+  private final Set<Integer> cancelledThreeDirectionSwipes = new HashSet<>();
   // To enable the MotionEvent log, issue the following command.
   // adb shell setprop log.tag.MotionEventLog VERBOSE
   // and re-enable TalkBack
@@ -1367,6 +1371,7 @@ public class TouchInteractionMonitor
     requestTouchExplorationDelayed.cancel();
     queuedMotionEvents.clear();
     touchExploreGate.addAll(TOUCH_EXPLORE_GATE);
+    cancelledThreeDirectionSwipes.clear();
     keepMonitorTouchExplore = true;
     waitFirstMotionEvent = false;
     if (eventId != null) {
@@ -2530,15 +2535,39 @@ public class TouchInteractionMonitor
 
   @Override
   public void onGestureCancelled(int gestureId) {
-    if (touchExploreGate.remove(gestureId)) {
+    boolean threeDirection = GestureConfiguration.isThreeDirectionSwipe(gestureId);
+    if (threeDirection) {
+      cancelledThreeDirectionSwipes.add(gestureId);
+    }
+    if (touchExploreGate.remove(gestureId) || threeDirection) {
       if (keepMonitorTouchExplore
           && touchExploreGate.isEmpty()
+          && !threeDirectionSwipePending()
           && state == STATE_TOUCH_INTERACTING) {
         keepMonitorTouchExplore = false;
         requestTouchExplorationDelayed.cancel();
         requestTouchExploration("onGestureCancelled");
       }
     }
+  }
+
+  /** Returns whether a three-direction swipe with a command may still be matched. */
+  private boolean threeDirectionSwipePending() {
+    int[] firstSwipes = {
+      GESTURE_SWIPE_UP,
+      AccessibilityService.GESTURE_SWIPE_DOWN,
+      AccessibilityService.GESTURE_SWIPE_LEFT,
+      AccessibilityService.GESTURE_SWIPE_RIGHT
+    };
+    for (int first : firstSwipes) {
+      for (int gestureId : GestureConfiguration.threeDirectionSwipesStartingWith(first)) {
+        if (!cancelledThreeDirectionSwipes.contains(gestureId)
+            && isGestureAssignedForMatching(gestureId)) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   @Override
