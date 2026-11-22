@@ -77,6 +77,7 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.media.AudioManager;
 import android.graphics.Region;
+import android.hardware.display.DisplayManager;
 import android.os.Build;
 import android.os.Build.VERSION;
 import android.os.Bundle;
@@ -975,6 +976,9 @@ public class TalkBackService extends AccessibilityServiceCompat
 
   private final @NonNull SparseArray<TouchInteractionMonitor> displayIdToTouchInteractionMonitors =
       new SparseArray<>();
+  // Sets up gesture detection on a display that appears or changes after it was set up on the
+  // others, such as the cover screen of a flip phone that was open when SandFly started.
+  private DisplayManager.@Nullable DisplayListener gestureDetectionDisplayListener;
 
   private IpcClientCallbackImpl ipcClientCallback;
   private BootReceiver bootReceiver;
@@ -5916,36 +5920,136 @@ public class TalkBackService extends AccessibilityServiceCompat
 
     List<Display> displays = WindowUtils.getAllDisplays(getApplicationContext());
     for (Display display : displays) {
-      @Nullable TouchInteractionController touchInteractionController =
-          getTouchInteractionController(display.getDisplayId());
-      if (touchInteractionController == null) {
-        continue;
-      }
-      TouchInteractionMonitor touchInteractionMonitor =
-          new TouchInteractionMonitor(
-              display,
-              prefs,
-              touchInteractionController,
-              this,
-              primesController,
-              new TouchExplorationModeFailureReporter(analytics),
-              this::provisionTouchExplore,
-              this::onGestureDebug);
-      touchInteractionMonitor.setMultiFingerGesturesEnabled(true);
-      touchInteractionMonitor.setTwoFingerPassthroughEnabled(
-          !GestureLayout.handlesTwoFingerSwipes(prefs));
-      touchInteractionMonitor.setServiceHandlesDoubleTap(true);
-      // The controller calls the monitor on the main thread as each event comes in, in order with
-      // the timeouts that gesture detection counts there. The executor runs it there at once. It
-      // must not be null: Android's unregisterCallback reports a callback with a null executor as
-      // not registered and then leaves the touch screen's gesture detection flag set, so the next
-      // screen reader gets no touches.
-      touchInteractionController.registerCallback(Runnable::run, touchInteractionMonitor);
-      displayIdToTouchInteractionMonitors.put(display.getDisplayId(), touchInteractionMonitor);
-      userInterface.registerListener(touchInteractionMonitor);
-      LogUtils.i(TAG, "Enabling service gesture detection on display %d", display.getDisplayId());
+      registerGestureDetectionOnDisplay(display);
     }
     SyntheticTouches.setDetectionRegistered(displayIdToTouchInteractionMonitors.size() != 0);
+    registerGestureDetectionDisplayListener();
+  }
+
+  /**
+   * Sets up gesture detection on one display, unless it is set up there already.
+   *
+   * @return whether gesture detection is set up on the display
+   */
+  @SuppressLint("NewApi")
+  private boolean registerGestureDetectionOnDisplay(Display display) {
+    int displayId = display.getDisplayId();
+    if (displayIdToTouchInteractionMonitors.get(displayId) != null) {
+      return true;
+    }
+    @Nullable TouchInteractionController touchInteractionController =
+        getTouchInteractionController(displayId);
+    if (touchInteractionController == null) {
+      return false;
+    }
+    TouchInteractionMonitor touchInteractionMonitor =
+        new TouchInteractionMonitor(
+            display,
+            prefs,
+            touchInteractionController,
+            this,
+            primesController,
+            new TouchExplorationModeFailureReporter(analytics),
+            this::provisionTouchExplore,
+            this::onGestureDebug);
+    touchInteractionMonitor.setMultiFingerGesturesEnabled(true);
+    touchInteractionMonitor.setTwoFingerPassthroughEnabled(
+        !GestureLayout.handlesTwoFingerSwipes(prefs));
+    touchInteractionMonitor.setServiceHandlesDoubleTap(true);
+    // The controller calls the monitor on the main thread as each event comes in, in order with
+    // the timeouts that gesture detection counts there. The executor runs it there at once. It
+    // must not be null: Android's unregisterCallback reports a callback with a null executor as
+    // not registered and then leaves the touch screen's gesture detection flag set, so the next
+    // screen reader gets no touches.
+    touchInteractionController.registerCallback(Runnable::run, touchInteractionMonitor);
+    displayIdToTouchInteractionMonitors.put(displayId, touchInteractionMonitor);
+    userInterface.registerListener(touchInteractionMonitor);
+    LogUtils.i(TAG, "Enabling service gesture detection on display %d", displayId);
+    return true;
+  }
+
+  /** Stops gesture detection on one display, if it is set up there. */
+  @SuppressLint("NewApi")
+  private void unregisterGestureDetectionOnDisplay(int displayId) {
+    TouchInteractionMonitor touchInteractionMonitor =
+        displayIdToTouchInteractionMonitors.get(displayId);
+    if (touchInteractionMonitor == null) {
+      return;
+    }
+    userInterface.unregisterListener(touchInteractionMonitor);
+    touchInteractionMonitor.stop();
+    @Nullable TouchInteractionController touchInteractionController =
+        getTouchInteractionController(displayId);
+    if (touchInteractionController != null) {
+      touchInteractionController.unregisterCallback(touchInteractionMonitor);
+    }
+    displayIdToTouchInteractionMonitors.remove(displayId);
+    LogUtils.i(TAG, "Disabling service gesture detection on display %d", displayId);
+  }
+
+  /**
+   * Listens for displays that appear or change after gesture detection was set up. When SandFly
+   * starts with a flip phone open, such as a Galaxy Z Flip, its cover screen gets no gesture
+   * detection then, so touching the cover screen once the phone is closed speaks nothing. The
+   * cover screen is set up when it appears or changes, as when the phone is closed.
+   */
+  private void registerGestureDetectionDisplayListener() {
+    if (gestureDetectionDisplayListener != null) {
+      return;
+    }
+    DisplayManager displayManager = getSystemService(DisplayManager.class);
+    if (displayManager == null) {
+      return;
+    }
+    gestureDetectionDisplayListener =
+        new DisplayManager.DisplayListener() {
+          @Override
+          public void onDisplayAdded(int displayId) {
+            addGestureDetectionOnDisplay(displayId);
+          }
+
+          @Override
+          public void onDisplayChanged(int displayId) {
+            addGestureDetectionOnDisplay(displayId);
+          }
+
+          @Override
+          public void onDisplayRemoved(int displayId) {
+            unregisterGestureDetectionOnDisplay(displayId);
+            SyntheticTouches.setDetectionRegistered(
+                displayIdToTouchInteractionMonitors.size() != 0);
+          }
+        };
+    displayManager.registerDisplayListener(
+        gestureDetectionDisplayListener, new Handler(Looper.getMainLooper()));
+  }
+
+  private void unregisterGestureDetectionDisplayListener() {
+    if (gestureDetectionDisplayListener == null) {
+      return;
+    }
+    DisplayManager displayManager = getSystemService(DisplayManager.class);
+    if (displayManager != null) {
+      displayManager.unregisterDisplayListener(gestureDetectionDisplayListener);
+    }
+    gestureDetectionDisplayListener = null;
+  }
+
+  /** Sets up gesture detection on a display that appeared or changed, if it has none yet. */
+  private void addGestureDetectionOnDisplay(int displayId) {
+    // Displays change often, as when their brightness or refresh rate changes, so a display that
+    // has gesture detection already is skipped first.
+    if (displayIdToTouchInteractionMonitors.get(displayId) != null
+        || !isServiceActive()
+        || !shouldUseTalkbackGestureDetection()) {
+      return;
+    }
+    DisplayManager displayManager = getSystemService(DisplayManager.class);
+    @Nullable Display display =
+        (displayManager == null) ? null : displayManager.getDisplay(displayId);
+    if (display != null && registerGestureDetectionOnDisplay(display)) {
+      SyntheticTouches.setDetectionRegistered(true);
+    }
   }
 
   /**
@@ -5959,22 +6063,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     }
   }
 
-  @SuppressLint("NewApi")
   private void unregisterGestureDetection() {
-    List<Display> displays = WindowUtils.getAllDisplays(getApplicationContext());
-    for (Display display : displays) {
-      @Nullable TouchInteractionController touchInteractionController =
-          getTouchInteractionController(display.getDisplayId());
-      TouchInteractionMonitor touchInteractionMonitor =
-          displayIdToTouchInteractionMonitors.get(display.getDisplayId());
-      if (touchInteractionController == null || touchInteractionMonitor == null) {
-        continue;
-      }
-      userInterface.unregisterListener(touchInteractionMonitor);
-      touchInteractionMonitor.stop();
-      touchInteractionController.unregisterCallback(touchInteractionMonitor);
+    unregisterGestureDetectionDisplayListener();
+    // By the displays that have gesture detection rather than the displays listed now, so that a
+    // display that is no longer listed is stopped too.
+    while (displayIdToTouchInteractionMonitors.size() > 0) {
+      unregisterGestureDetectionOnDisplay(displayIdToTouchInteractionMonitors.keyAt(0));
     }
-    displayIdToTouchInteractionMonitors.clear();
     SyntheticTouches.setDetectionRegistered(false);
   }
 
