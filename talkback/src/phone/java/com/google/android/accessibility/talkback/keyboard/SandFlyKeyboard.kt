@@ -38,6 +38,8 @@ import java.util.Locale
  *   types the one spoken, and Back or Escape closes the list.
  * - Editing mode, which a SandFly command turns on: single keys move the cursor and select, copy,
  *   cut and paste ([EditingMode]).
+ * - Double presses ([DoublePressCharacters]): a key pressed twice puts its double-press characters
+ *   in place of the character the first press typed, and Space pressed twice types a period.
  */
 class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
@@ -57,6 +59,18 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   private var heldTyped = 0
   private var heldDone = false
 
+  /** The last press that a second press of its key can replace, with the character it typed. */
+  private var lastPress: Press? = null
+
+  private class Press(val keyCode: Int, val typed: Char, val time: Long)
+
+  /** Whether the field being edited is a password field, where double presses type as single ones. */
+  private var password = false
+
+  /** The double-press characters, read again when the setting changes. */
+  private var doublePressText: String? = null
+  private var doublePressEntries: Map<Char, String> = emptyMap()
+
   override val isEditing: Boolean
     get() = editing
 
@@ -75,6 +89,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       return false
     }
     chooser = null
+    lastPress = null
     editingMode.turnOn()
     return true
   }
@@ -117,6 +132,8 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   override fun onStartInput(attribute: EditorInfo, restarting: Boolean) {
     super.onStartInput(attribute, restarting)
     editing = attribute.inputType and InputType.TYPE_MASK_CLASS != InputType.TYPE_NULL
+    password = isPassword(attribute.inputType)
+    lastPress = null
     if (!restarting) {
       chooser = null
       editingMode.turnOff(announce = false)
@@ -129,6 +146,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     chooser = null
     editingMode.turnOff(announce = false)
     heldKey = KeyEvent.KEYCODE_UNKNOWN
+    lastPress = null
     takenKeys.clear()
     super.onFinishInput()
   }
@@ -147,6 +165,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
         CharacterChooser.Kind.SYMBOL -> CharacterChooser(kind, CharacterChooser.symbols(), recent(kind))
       }
     chooser = opened
+    lastPress = null
     editingMode.turnOff(announce = false)
     val title =
       getString(
@@ -161,6 +180,14 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
     if (keyCode in takenKeys) {
       return true
+    }
+    val press = lastPress
+    // Another key, or the same key held down, ends the double press. A modifier key held down
+    // since before the press repeats and is ignored.
+    if (press != null && (keyCode != press.keyCode || event.repeatCount > 0)) {
+      if (keyCode == press.keyCode || event.repeatCount == 0 || !KeyEvent.isModifierKey(keyCode)) {
+        lastPress = null
+      }
     }
     val open = chooser
     if (open != null) {
@@ -179,10 +206,92 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       openChooser(CharacterChooser.Kind.SYMBOL)
       return true
     }
+    if (onDoublePress(keyCode, event)) {
+      takenKeys += keyCode
+      return true
+    }
     if (onHeldKey(keyCode, event)) {
       return true
     }
     return super.onKeyDown(keyCode, event)
+  }
+
+  override fun onUpdateSelection(
+    oldSelStart: Int,
+    oldSelEnd: Int,
+    newSelStart: Int,
+    newSelEnd: Int,
+    candidatesStart: Int,
+    candidatesEnd: Int,
+  ) {
+    super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd, candidatesStart, candidatesEnd)
+    // Typing a character moves the cursor one place on; any other move ends the double press.
+    if (
+      lastPress != null &&
+        !(oldSelStart == oldSelEnd && newSelStart == newSelEnd && newSelStart == oldSelStart + 1)
+    ) {
+      lastPress = null
+    }
+  }
+
+  /**
+   * Follows double presses: the app types the first press; a second press of the same key soon
+   * after it, with nothing else between, is taken, and the keyboard puts the key's double-press
+   * characters in place of the character the first press typed. Returns whether it took [event].
+   */
+  private fun onDoublePress(keyCode: Int, event: KeyEvent): Boolean {
+    if (event.repeatCount > 0) {
+      return false
+    }
+    val last = lastPress
+    lastPress = null
+    if (password || !isDoublePressable(event)) {
+      return false
+    }
+    val typed = event.unicodeChar.toChar()
+    val spacePeriod =
+      prefs.getBoolean(
+        getString(R.string.pref_sandfly_keyboard_double_space_period_key),
+        resources.getBoolean(R.bool.pref_sandfly_keyboard_double_space_period_default),
+      )
+    val entries = doublePressEntries()
+    if (
+      last != null &&
+        last.keyCode == keyCode &&
+        event.eventTime - last.time < DoublePressCharacters.TWICE_MS
+    ) {
+      val connection = currentInputConnection
+      if (connection != null) {
+        val replacement =
+          DoublePressCharacters.replacement(
+            last.typed,
+            connection.getTextBeforeCursor(2, 0),
+            entries,
+            spacePeriod,
+          )
+        if (replacement != null) {
+          connection.beginBatchEdit()
+          connection.deleteSurroundingText(1, 0)
+          connection.commitText(replacement, 1)
+          connection.endBatchEdit()
+          return true
+        }
+      }
+    }
+    if (DoublePressCharacters.applies(typed, entries, spacePeriod)) {
+      lastPress = Press(keyCode, typed, event.eventTime)
+    }
+    return false
+  }
+
+  private fun doublePressEntries(): Map<Char, String> {
+    val text = prefs.getString(DoublePressCharacters.KEY, null)
+    if (text != doublePressText) {
+      doublePressText = text
+      doublePressEntries =
+        DoublePressCharacters.parse(text).associate { it.key to it.characters }
+    }
+    return doublePressEntries
   }
 
   override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
@@ -342,6 +451,26 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
         event.keyCode != KeyEvent.KEYCODE_SPACE &&
         event.unicodeChar > 0 &&
         event.metaState and TYPING_MODIFIERS == 0
+
+    /** A printing key, Space too, pressed alone or with Shift, that types a character. */
+    fun isDoublePressable(event: KeyEvent): Boolean =
+      event.isPrintingKey &&
+        event.unicodeChar > 0 &&
+        event.unicodeChar <= Char.MAX_VALUE.code &&
+        !Character.isISOControl(event.unicodeChar) &&
+        event.metaState and TYPING_MODIFIERS == 0
+
+    fun isPassword(inputType: Int): Boolean {
+      val variation = inputType and InputType.TYPE_MASK_VARIATION
+      return when (inputType and InputType.TYPE_MASK_CLASS) {
+        InputType.TYPE_CLASS_TEXT ->
+          variation == InputType.TYPE_TEXT_VARIATION_PASSWORD ||
+            variation == InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD ||
+            variation == InputType.TYPE_TEXT_VARIATION_WEB_PASSWORD
+        InputType.TYPE_CLASS_NUMBER -> variation == InputType.TYPE_NUMBER_VARIATION_PASSWORD
+        else -> false
+      }
+    }
 
     /** The key's Alt character, where it has one other than [typed]. */
     fun altCharacter(event: KeyEvent, typed: Char): Char? {

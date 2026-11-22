@@ -292,6 +292,12 @@ public class TalkBackPreferenceFilter {
     SANDFLY_KEYBOARD_HELD_KEYS(
         R.string.pref_sandfly_keyboard_held_keys_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SANDFLY_KEYBOARD_DOUBLE_PRESS(
+        R.string.pref_sandfly_keyboard_double_press_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SANDFLY_KEYBOARD_DOUBLE_SPACE_PERIOD(
+        R.string.pref_sandfly_keyboard_double_space_period_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     BRAILLE_DISPLAY(
         R.string.pref_brailledisplay_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),

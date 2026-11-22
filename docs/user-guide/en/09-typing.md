@@ -279,4 +279,4 @@ While the handwriting keyboard is shown, only commands that open no window run, 
 
 ### Physical keyboards {#typing-physical-keyboard}
 
-While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type** and **Android physical keyboard settings**. These settings are described in [](#keyboards).
+While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period** and **Android physical keyboard settings**. These settings are described in [](#keyboards).

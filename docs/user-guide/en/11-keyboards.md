@@ -302,6 +302,8 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 - **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter go to the app, which types a new line. It works with any physical keyboard, and is off by default.
 - **SandFly keyboard**: opens the list of keyboards in Android settings, where you turn on the SandFly keyboard. See [](#keyboards-sandfly-keyboard).
 - **Held keys type**: what a key held down types with the SandFly keyboard.
+- **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).
+- **Double space types a period**: with the SandFly keyboard, Space pressed twice after a word types a period and a space. Off by default.
 - **Android physical keyboard settings**: opens the physical keyboard settings of Android, such as the keyboard layout.
 
 ### The SandFly keyboard {#keyboards-sandfly-keyboard}
@@ -310,6 +312,7 @@ The SandFly keyboard is an input method for physical keyboards. It shows no keys
 
 - Exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places.
 - Held keys that type the Alt character of the key or its capital letter.
+- Double presses that type other characters, such as G G for ğ, and a period for Space pressed twice.
 - Emoji search and a symbol list.
 - Editing mode, in which single keys move the cursor and select, copy, cut and paste.
 
@@ -333,6 +336,16 @@ While the SandFly keyboard is in use, no on-screen keyboard shows.
 - **Repeated character**: the character, repeated, as without the SandFly keyboard.
 
 The key types its own character first; when Android starts to repeat it, the SandFly keyboard puts the held character in its place.
+
+#### Double presses {#keyboards-double-press}
+
+**Typing** > **Physical keyboard** > **Double-press characters** lists keys and what each types when pressed twice with the SandFly keyboard, such as ğ for G, ö for O or ä for E. **Add a key** adds one: enter the key's character in **Key** and the characters in **Double press types**. Each key has **Edit** and **Remove**. The list is empty by default.
+
+The first press types the key's character. A second press of the same key within 350 milliseconds, with no other key or cursor move between, puts the double-press characters in its place. After a capital, such as with Shift, the double press types the capital, such as Ğ. Keys not in the list type as usual.
+
+With **Double space types a period** on, Space pressed twice after a letter or digit puts a period and a space in place of the first space.
+
+Double presses don't apply in password fields.
 
 #### Search emoji and choose symbols {#keyboards-emoji}
 
