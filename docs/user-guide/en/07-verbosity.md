@@ -95,7 +95,7 @@ The **Announcements** group sets what SandFly says when something changes:
 
 #### Screen on and off {#verbosity-screen-on-off}
 
-**Verbosity** > **Screen on and off** has three groups: **When the screen turns off**, **When the screen turns on**, and **When the phone is unlocked**. Each group has the same items, except the first one:
+**Verbosity** > **Screen on and off** has three groups: **When the screen turns off**, **When the screen turns on**, and **When the phone is unlocked**. On a flip phone, waking the cover screen counts as the screen turning on, and opening the phone right after doesn't say it again. Each group has the same items, except the first one:
 
 - **Say "Screen off"**: in **When the screen turns off** only. On by default.
 - **Ringer mode**: in **When the screen turns off** only. Says when the ringer is set to vibrate or silent. On by default.
