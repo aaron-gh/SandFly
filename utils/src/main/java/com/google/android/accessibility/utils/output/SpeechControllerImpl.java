@@ -2341,6 +2341,14 @@ public class SpeechControllerImpl implements SpeechController {
         }
         default -> {}
       }
+      if (capLetterFeedback != CAPITAL_LETTERS_TYPE_SPEAK_CAP) {
+        // Some engines say "capital" for a capital letter on its own (#549). In lower case it has
+        // only the pitch or sound chosen here.
+        @Nullable CharSequence lowered = CapitalLetterSpan.withLoneCapitalLowercased(text, locale);
+        if (lowered != null) {
+          text = lowered;
+        }
+      }
     }
 
     // Text in a language with a voice profile of its own is said with that profile's rate and
