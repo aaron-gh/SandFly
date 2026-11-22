@@ -35,7 +35,7 @@ class ScriptPackage(
 
     /** The most a .lua file can be. */
     const val MAX_LUA_BYTES = 1024 * 1024
-    private const val MAX_FILES = 200
+    const val MAX_FILES = 200
 
     fun read(bytes: ByteArray): ScriptPackage {
       val zip = isZip(bytes)

@@ -25,17 +25,27 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.StringRes
 import androidx.annotation.VisibleForTesting
+import androidx.annotation.WorkerThread
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.commands.RemovedCommands
+import com.google.android.accessibility.talkback.labeling.LabelBackup
 import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
 import com.google.android.accessibility.talkback.migration.MigrationFiles
+import com.google.android.accessibility.talkback.scripting.ScriptHostFactory
+import com.google.android.accessibility.talkback.soundthemes.SoundThemes
+import com.google.android.accessibility.talkback.soundthemes.StagedTheme
+import com.google.android.accessibility.talkback.wallpaper.SandFlyWallpaperService
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import java.io.BufferedInputStream
 import java.io.File
 import java.io.IOException
+import java.io.InputStream
+import java.io.OutputStream
+import java.util.UUID
 import java.util.concurrent.LinkedBlockingQueue
 import java.util.concurrent.ThreadPoolExecutor
 import java.util.concurrent.TimeUnit
@@ -45,13 +55,16 @@ import org.json.JSONObject
 
 /**
  * Exports SandFly's settings to a file and imports them from one, so that a phone can be set up
- * like another. The file holds every preference file, in device-protected and in
+ * like another. The settings JSON holds every preference file, in device-protected and in
  * credential-protected storage, except the updater's state, the state of the move from Backtalk
  * Aaron, the SandFly Pro licence and API keys.
  *
- * Custom labels, installed scripts and sound themes are files of their own, and are not in it.
+ * Export settings writes a .zip file, [SettingsArchive], with the settings JSON and the user
+ * content kept in files of their own: custom labels, settings profiles, installed scripts, sound
+ * themes and the wallpaper image. AI models, logs and problem reports are left out.
  *
- * A settings file exported from Backtalk can be imported too.
+ * Import settings reads that .zip file, a settings JSON file of an earlier version, and a settings
+ * file exported from Backtalk.
  *
  * A settings profile holds settings of the main, braille keyboard and braille display preference
  * files, without the state that only this phone has, such as whether a tutorial was shown: see
@@ -61,7 +74,7 @@ import org.json.JSONObject
 object SettingsBackup {
   private const val FORMAT = "sandfly-settings"
   private const val VERSION = 1
-  private const val FILE_NAME = "sandfly-settings.json"
+  private const val FILE_NAME = "sandfly-settings.zip"
   private const val REFERENCE_FILE_NAME = "sandfly-file-format.md"
   private const val MAX_BYTES = 5 * 1024 * 1024
   private const val PREFS_SUFFIX = ".xml"
@@ -171,7 +184,7 @@ object SettingsBackup {
     }
     val create =
       fragment.registerForActivityResult(
-        ActivityResultContracts.CreateDocument("application/json")
+        ActivityResultContracts.CreateDocument("application/zip")
       ) { uri ->
         uri?.let {
           val context = fragment.requireContext().applicationContext
@@ -190,7 +203,15 @@ object SettingsBackup {
       true
     }
     import.setOnPreferenceClickListener {
-      open.launch(arrayOf("application/json", "text/plain", "application/octet-stream"))
+      open.launch(
+        arrayOf(
+          "application/zip",
+          "application/x-zip-compressed",
+          "application/json",
+          "text/plain",
+          "application/octet-stream",
+        )
+      )
       true
     }
     setUpReference(fragment)
@@ -233,8 +254,9 @@ object SettingsBackup {
   private fun write(context: Context, uri: Uri) {
     val written =
       try {
+        val contents = archiveContents(context)
         context.contentResolver.openOutputStream(uri, "wt")?.use {
-          it.write(export(context).toByteArray())
+          SettingsArchive.write(it, contents)
         } != null
       } catch (e: IOException) {
         false
@@ -247,19 +269,7 @@ object SettingsBackup {
   private fun read(context: Context, uri: Uri) {
     val imported =
       try {
-        val bytes =
-          context.contentResolver.openInputStream(uri)?.use { input ->
-            val buffer = ByteArray(MAX_BYTES + 1)
-            var length = 0
-            while (length < buffer.size) {
-              val count = input.read(buffer, length, buffer.size - length)
-              if (count < 0) break
-              length += count
-            }
-            if (length > MAX_BYTES) throw IOException("The file is too large")
-            buffer.copyOf(length)
-          }
-        bytes != null && import(context, bytes.decodeToString())
+        context.contentResolver.openInputStream(uri)?.use { importFile(context, it) } ?: false
       } catch (e: IOException) {
         false
       } catch (e: SecurityException) {
@@ -272,6 +282,124 @@ object SettingsBackup {
       }
     }
     toast(context, if (imported) R.string.settings_import_done else R.string.settings_import_failed)
+  }
+
+  /** What Export settings writes: the settings and the user content kept in files of their own. */
+  @WorkerThread
+  @Throws(IOException::class)
+  fun archiveContents(context: Context): SettingsArchive.Contents {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    val themes =
+      SoundThemes.backedUp(context).associate { theme ->
+        theme.id to { output: OutputStream -> SoundThemes.export(context, prefs, theme.id, output); Unit }
+      }
+    val profiles =
+      if (SettingsProfiles.ready(context).profiles().isEmpty()) null
+      else ItemFiles.exportSettingsProfiles(context)
+    return SettingsArchive.Contents(
+      settings = export(context),
+      labels = LabelBackup.export(context),
+      profiles = profiles,
+      wallpaper = SandFlyWallpaperService.imageFile(context).takeIf { it.isFile },
+      scripts = ScriptHostFactory.scriptFiles(context),
+      themes = themes,
+    )
+  }
+
+  /**
+   * Imports the settings file [input]: a .zip file of Export settings, or a settings JSON file of an
+   * earlier version or of Backtalk. Returns false if it can't be read.
+   */
+  @WorkerThread
+  @Throws(IOException::class)
+  fun importFile(context: Context, input: InputStream): Boolean {
+    val buffered = BufferedInputStream(input)
+    val header = ByteArray(4)
+    buffered.mark(header.size)
+    var length = 0
+    while (length < header.size) {
+      val count = buffered.read(header, length, header.size - length)
+      if (count < 0) break
+      length += count
+    }
+    buffered.reset()
+    if (SettingsArchive.isZip(header, length)) return importArchive(context, buffered)
+    val buffer = ByteArray(MAX_BYTES + 1)
+    length = 0
+    while (length < buffer.size) {
+      val count = buffered.read(buffer, length, buffer.size - length)
+      if (count < 0) break
+      length += count
+    }
+    if (length > MAX_BYTES) return false
+    return import(context, buffer.copyOf(length).decodeToString())
+  }
+
+  /**
+   * Imports a .zip file of Export settings. Every part is read and checked before anything changes,
+   * so a file that can't be read changes nothing. Then the settings replace this phone's, as
+   * [import] does, and the labels, profiles, scripts and themes in the file are added, replacing
+   * those of the same name or ID.
+   */
+  @WorkerThread
+  private fun importArchive(context: Context, input: InputStream): Boolean {
+    val directory = File(context.cacheDir, "settings-import-" + UUID.randomUUID())
+    val staged = mutableListOf<Pair<String, StagedTheme>>()
+    try {
+      val archive =
+        try {
+          SettingsArchive.read(input, directory)
+        } catch (e: SettingsArchive.ArchiveException) {
+          return false
+        }
+      val labels =
+        try {
+          archive.labels?.let { LabelBackup.parse(it) }.orEmpty()
+        } catch (e: JSONException) {
+          return false
+        }
+      if (archive.profiles != null && !isItemFile(archive.profiles)) return false
+      if (archive.scripts.any { (id, files) -> !ScriptHostFactory.isScript(id, files) }) return false
+      if (archive.themes.keys.any { !SoundThemes.isThemeId(it) }) return false
+      try {
+        for ((id, file) in archive.themes) staged += id to SoundThemes.stage(context, file, id)
+      } catch (e: SoundThemes.NotAThemeException) {
+        return false
+      }
+      // The settings are checked in full before any is written.
+      if (!import(context, archive.settings)) return false
+      for ((id, theme) in staged) SoundThemes.restore(context, theme, id)
+      ScriptHostFactory.restoreScripts(context, archive.scripts)
+      ScriptHostFactory.reloadScripts(context)
+      val labelsImported = LabelBackup.import(context, labels)
+      archive.profiles?.let { ItemFiles.import(context, it) }
+      archive.wallpaper?.let { restoreWallpaper(context, it) }
+      SoundThemes.reload(SharedPreferencesUtils.getSharedPreferences(context))
+      return labelsImported
+    } finally {
+      // Themes not installed, after a failure.
+      staged.forEach { SoundThemes.discard(it.second) }
+      directory.deleteRecursively()
+    }
+  }
+
+  private fun isItemFile(json: String): Boolean =
+    try {
+      JSONObject(json).optString("format") == ItemFiles.FORMAT
+    } catch (e: JSONException) {
+      false
+    }
+
+  @Throws(IOException::class)
+  private fun restoreWallpaper(context: Context, image: File) {
+    val target = SandFlyWallpaperService.imageFile(context)
+    val temporary = File(target.parentFile, target.name + ".new")
+    image.copyTo(temporary, overwrite = true)
+    if (!temporary.renameTo(target)) {
+      temporary.delete()
+      throw IOException("Cannot replace the wallpaper image")
+    }
+    Handler(Looper.getMainLooper()).post { SandFlyWallpaperService.redraw() }
   }
 
   /** Returns every exported setting as JSON, with the settings that profiles replace as without them. */

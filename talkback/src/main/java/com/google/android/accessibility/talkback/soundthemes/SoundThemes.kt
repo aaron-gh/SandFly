@@ -133,6 +133,9 @@ object SoundThemes {
   /** License, readme and credits files, which stay with the theme when it is shared again. */
   private val DOCUMENT = Regex("(license|licence|copying|readme|notice|authors|credits)(\\.(txt|md))?")
 
+  /** The IDs that [idFor] gives. */
+  private val THEME_ID = Regex("[a-z0-9][a-z0-9-]{0,59}")
+
   enum class Result {
     OK,
     TOO_LARGE,
@@ -658,6 +661,34 @@ object SoundThemes {
       activate(context, prefs, staged.id, saveCurrent = false)
     }
   }
+
+  /** Whether [id] can name an installed theme in a settings file: Backtalk's or a name's [idFor]. */
+  @JvmStatic fun isThemeId(id: String): Boolean = id == BACKTALK || THEME_ID.matches(id)
+
+  /**
+   * Installs [staged] as the theme [id], replacing a theme with that ID, without changing which
+   * theme is in use or its settings, for Import settings.
+   */
+  @Throws(IOException::class)
+  fun restore(context: Context, staged: StagedTheme, id: String) {
+    if (!isThemeId(id)) {
+      staged.directory.deleteRecursively()
+      throw IOException("Bad theme ID $id")
+    }
+    val target = File(themesDirectory(context), id)
+    target.deleteRecursively()
+    if (!staged.directory.renameTo(target)) {
+      staged.directory.deleteRecursively()
+      throw IOException("Cannot install theme $id")
+    }
+  }
+
+  /** The themes to save in a settings file: the installed ones, and Backtalk's if it was changed. */
+  fun backedUp(context: Context): List<SoundTheme> =
+    installed(context).filter { it.id != BACKTALK || it.directory.listFiles().orEmpty().isNotEmpty() }
+
+  /** Has the service read the theme in use again, after Import settings replaced themes. */
+  fun reload(prefs: SharedPreferences) = changed(prefs)
 
   // ---------------------------------------------------------------------------------------------
   // Names

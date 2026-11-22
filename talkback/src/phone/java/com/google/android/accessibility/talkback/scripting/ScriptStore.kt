@@ -119,8 +119,27 @@ class ScriptStore private constructor(private val context: Context) {
     origin: String? = null,
   ) {
     val id = pkg.manifest.id
+    placeCode(id, pkg.files)
+    updateScripts { list ->
+      val existing = list.firstOrNull { it.id == id }
+      val installed =
+        InstalledScript(
+          pkg.manifest,
+          existing?.enabled ?: enabled,
+          granted intersect pkg.manifest.permissions,
+          System.currentTimeMillis(),
+          origin = origin ?: existing?.origin.orEmpty(),
+          keepRunning = existing?.keepRunning ?: false,
+        )
+      if (existing == null) list + installed else list.map { if (it.id == id) installed else it }
+    }
+  }
+
+  /** Writes [files] as the code of the script [id], replacing its code. */
+  @Throws(IOException::class)
+  private fun placeCode(id: String, files: Map<String, ByteArray>) {
     val staging = File(scriptsDir(), ".$id.new").apply { deleteRecursively() }
-    for ((path, bytes) in pkg.files) {
+    for ((path, bytes) in files) {
       val file = File(staging, path).insideOf(staging) ?: throw IOException("Bad path $path")
       file.parentFile?.mkdirs()
       file.writeBytes(bytes)
@@ -140,19 +159,36 @@ class ScriptStore private constructor(private val context: Context) {
       throw IOException("Could not install $id")
     }
     old.deleteRecursively()
-    updateScripts { list ->
-      val existing = list.firstOrNull { it.id == id }
-      val installed =
-        InstalledScript(
-          pkg.manifest,
-          existing?.enabled ?: enabled,
-          granted intersect pkg.manifest.permissions,
-          System.currentTimeMillis(),
-          origin = origin ?: existing?.origin.orEmpty(),
-          keepRunning = existing?.keepRunning ?: false,
-        )
-      if (existing == null) list + installed else list.map { if (it.id == id) installed else it }
+  }
+
+  /** The files of each installed script, by script ID and by path, for Export settings. */
+  @Synchronized
+  @Throws(IOException::class)
+  fun codeFiles(): Map<String, Map<String, ByteArray>> =
+    scripts.associate { script ->
+      val code = codeDir(script.id)
+      val files =
+        code.walkTopDown().filter { it.isFile }.associate { file ->
+          file.relativeTo(code).invariantSeparatorsPath to file.readBytes()
+        }
+      script.id to files
+    }.filterValues { it.isNotEmpty() }
+
+  /**
+   * Writes [files] as the code of the script [id], replacing its code, without changing the list
+   * of scripts: Import settings sets the list, and then [reload] reads it.
+   */
+  @Synchronized
+  @Throws(IOException::class)
+  fun restoreCode(id: String, files: Map<String, ByteArray>) = placeCode(id, files)
+
+  /** Reads the list of scripts again, after Import settings replaced it. */
+  fun reload() {
+    synchronized(this) {
+      scripts = load()
+      translated = null
     }
+    notify { it.onScriptsChanged() }
   }
 
   /**

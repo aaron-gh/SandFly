@@ -149,6 +149,11 @@ public class CustomLabelMigrationManager {
 
   // public visibility for tests
   public String generateJsonText(List<Label> labels) throws JSONException {
+    return toJson(labels);
+  }
+
+  /** Returns [labels] in the format of a labels file. */
+  public static String toJson(List<Label> labels) throws JSONException {
     JSONObject root = new JSONObject();
     JSONArray labelsArray = new JSONArray();
     for (Label label : labels) {
@@ -220,6 +225,12 @@ public class CustomLabelMigrationManager {
   // public visibility for tests
   @NonNull
   public List<Label> parseLabels(String jsonText) throws JSONException {
+    return fromJson(jsonText);
+  }
+
+  /** Reads the labels of a labels file. */
+  @NonNull
+  public static List<Label> fromJson(String jsonText) throws JSONException {
     JSONObject root = new JSONObject(jsonText);
     JSONArray labelsArray = root.getJSONArray(JSON_LABELS_ARRAY);
     if (labelsArray == null) {
@@ -234,7 +245,7 @@ public class CustomLabelMigrationManager {
       if (TextUtils.isEmpty(packageName)) {
         continue;
       }
-      String packageSignature = labelObject.getString(JSON_LABEL_PACKAGE_SIGNATURE);
+      String packageSignature = labelObject.optString(JSON_LABEL_PACKAGE_SIGNATURE);
       String viewName = labelObject.getString(JSON_LABEL_VIEW_NAME);
       if (TextUtils.isEmpty(viewName)) {
         continue;
@@ -243,7 +254,7 @@ public class CustomLabelMigrationManager {
       if (TextUtils.isEmpty(labelText)) {
         continue;
       }
-      String locale = labelObject.getString(JSON_LABEL_LOCALE);
+      String locale = labelObject.optString(JSON_LABEL_LOCALE);
       int packageVersion = labelObject.getInt(JSON_PACKAGE_VERSION);
       long timestamp = labelObject.getLong(JSON_TIMESTAMP);
       Label label =
