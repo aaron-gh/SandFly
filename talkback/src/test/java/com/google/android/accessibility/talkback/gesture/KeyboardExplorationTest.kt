@@ -301,6 +301,55 @@ class KeyboardExplorationTest {
     assertEquals(Rect(160, 2130, 380, 2240), bounds)
   }
 
+  @Test
+  fun popupInAViewOverTheWholeWindowIsFoundFromTheHover() {
+    // As Gboard 18.8 beta on a Galaxy Z Fold7: the characters for the long-pressed A are in a view
+    // as large as Gboard's window, beside the keyboard.
+    val root =
+      AccessibilityNodeInfo()
+        .apply {
+          packageName = GBOARD
+          setBoundsInScreen(KEYBOARD_BOUNDS)
+          isVisibleToUser = true
+        }
+        .withId()
+    val keyboard = root.addContainer(KEYBOARD_BOUNDS)
+    val row = keyboard.addContainer(Rect(0, 2000, 1080, 2134))
+    val a = row.addKey("A", Rect(40, 2000, 140, 2134))
+    val otherRow = keyboard.addContainer(Rect(0, 1866, 1080, 2000))
+    val q = otherRow.addKey("Q", Rect(0, 1866, 100, 2000))
+    val overlay = root.addContainer(KEYBOARD_BOUNDS)
+    val grave = overlay.addKey("A, grave", Rect(20, 1880, 120, 1980))
+    overlay.addKey("A, acute", Rect(120, 1880, 220, 1980))
+    val width = KEYBOARD_BOUNDS.width()
+    val fingerX = 90f
+    val fingerY = 2060f
+
+    val found =
+      KeyboardExploration.popupOfKey(
+        AccessibilityNodeInfoCompat.wrap(grave),
+        AccessibilityNodeInfoCompat.wrap(a),
+        width,
+        fingerX,
+        fingerY,
+      )
+
+    assertEquals(
+      listOf<CharSequence>("A, grave", "A, acute"),
+      KeyboardExploration.popupKeys(found!!).map { it.contentDescription },
+    )
+    // Another row of the keyboard, as wide as the window, is no popup.
+    assertNull(
+      KeyboardExploration.popupOfKey(
+        AccessibilityNodeInfoCompat.wrap(q),
+        AccessibilityNodeInfoCompat.wrap(a),
+        width,
+        fingerX,
+        fingerY,
+      )
+    )
+  }
+
   private class TestWindow(val window: AccessibilityWindowInfo, val root: AccessibilityNodeInfo)
 
   private fun window(id: Int, type: Int, bounds: Rect, rootPackage: String): TestWindow {

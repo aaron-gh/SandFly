@@ -161,12 +161,13 @@ object KeyboardExploration {
 
   /**
    * Returns the popup of alternative characters that Gboard's [key] is in, for Gboard versions that
-   * send no pane event when it opens: the widest of [key]'s ancestors that is narrower than
-   * Gboard's window, [windowWidth] wide, and not part of the keyboard with [heldKey], the key the
-   * finger at [x], [y] holds. The popup can cover [heldKey], as Gboard 18.8 beta's does, so
-   * without [heldKey] an ancestor under the finger is taken as part of the keyboard. Ancestors are
-   * looked for as far up as [popupKeys] looks down for the characters. Returns null if [key] is
-   * under the finger, or none of its ancestors is such a popup.
+   * send no pane event when it opens: the highest of [key]'s ancestors that is not part of the
+   * keyboard with [heldKey], the key the finger at [x], [y] holds, and is either narrower than
+   * Gboard's window, [windowWidth] wide, or over [heldKey]. Gboard 18.8 beta puts the popup's
+   * characters in a view over the whole window. Without [heldKey], the popup is the widest
+   * ancestor narrower than the window and not under the finger. Ancestors are looked for as far up
+   * as [popupKeys] looks down for the characters. Returns null if [key] is under the finger, or
+   * none of its ancestors is such a popup.
    */
   @JvmStatic
   fun popupOfKey(
@@ -182,15 +183,23 @@ object KeyboardExploration {
       return null
     }
     val keyboard = heldKey?.let { ancestorsOf(it, MAX_DEPTH) }
+    val heldBounds = Rect()
+    heldKey?.getBoundsInScreen(heldBounds)
     var popup: AccessibilityNodeInfoCompat? = null
     var ancestor = key.parent
     var level = 1
     while (ancestor != null && level <= POPUP_DEPTH) {
       ancestor.getBoundsInScreen(bounds)
-      // The keyboard itself, or a part of it with the held key, isn't the popup.
-      val inKeyboard =
-        if (keyboard != null) ancestor in keyboard else bounds.contains(x.toInt(), y.toInt())
-      if (bounds.width() >= windowWidth || inKeyboard) {
+      // The keyboard itself, or a part of it with the held key, isn't the popup; nor is another
+      // part of the keyboard as wide as the window, such as a row of keys.
+      val isPopup =
+        if (keyboard != null) {
+          ancestor !in keyboard &&
+            (bounds.width() < windowWidth || bounds.contains(heldBounds))
+        } else {
+          bounds.width() < windowWidth && !bounds.contains(x.toInt(), y.toInt())
+        }
+      if (!isPopup) {
         break
       }
       popup = ancestor
