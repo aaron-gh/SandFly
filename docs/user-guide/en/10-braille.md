@@ -122,7 +122,7 @@ Limitations:
 
 #### Braille languages {#braille-keyboard-languages}
 
-- **Languages**: the braille tables that the keyboard and braille displays can use. Choose **Add a language** to add one. Japanese braille needs a dictionary of about 15 MB, which SandFly downloads when you add the language.
+- **Languages**: the braille tables that the keyboard and braille displays can use. Choose **Add a language** to add one. Japanese braille needs a dictionary of about 15 MB, which SandFly downloads when you add the language. **Romanian** is 6-dot uncontracted braille: dots 46 capital letter, dots 56 capital word, dots 3456 number sign, dots 2356 parentheses, and UEB signs for operators; **Romanian 8-dot Computer Braille** uses one 8-dot cell per character.
 - **Preferred typing language**: the table that the keyboard starts with.
 - **Preferred braille grade**: **Contracted braille** or **Uncontracted braille**. The default is uncontracted.
 

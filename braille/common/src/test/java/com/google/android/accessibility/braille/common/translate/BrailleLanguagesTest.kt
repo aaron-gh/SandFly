@@ -70,4 +70,28 @@ class BrailleLanguagesTest {
       Locale.setDefault(originalLocale)
     }
   }
+
+  @Test
+  fun romanianCodeConfiguration() {
+    val romanian = Code.valueOf("ROMANIAN")
+    assertEquals("ro", romanian.locale.language)
+    assertFalse(romanian.isSupportsContracted(context))
+    assertFalse(romanian.isEightDot)
+    assertTrue(romanian.isAvailable(context))
+    assertEquals("Romanian", romanian.getUserFacingName(context))
+  }
+
+  @Test
+  fun defaultCodeForRomanianLocale() {
+    val originalLocale = Locale.getDefault()
+    try {
+      Locale.setDefault(Locale.forLanguageTag("ro"))
+      assertEquals(Code.ROMANIAN, BrailleLanguages.getDefaultCode(context))
+
+      Locale.setDefault(Locale.forLanguageTag("ro-RO"))
+      assertEquals(Code.ROMANIAN, BrailleLanguages.getDefaultCode(context))
+    } finally {
+      Locale.setDefault(originalLocale)
+    }
+  }
 }
