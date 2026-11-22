@@ -237,6 +237,8 @@ If the service doesn't respond within 20 seconds (60 seconds for On-device AI), 
 
 In **Typing** > **Dictation**:
 
+- **Automatic punctuation**: Google speech recognition adds punctuation and capital letters. On by default. Shown on Android 13 or later with Google speech recognition installed.
+- **Block offensive words**: Google speech recognition masks offensive words. On by default. Shown with **Automatic punctuation**.
 - **Auto stop after silence**: stops recording after 3, 5, 10, 15 or 30 seconds, or 1 minute, without speech. The default is **Off**.
 - **Speak dictated text**: reads the text after SandFly types it, except in password fields. Off by default.
 - **Keep recognition models loaded**: how long a Whisper model and the On-device AI model stay in memory after use: **Unload after use** (the default), 5, 15 or 30 minutes, or **Until SandFly stops**. A loaded model starts sooner and uses memory.

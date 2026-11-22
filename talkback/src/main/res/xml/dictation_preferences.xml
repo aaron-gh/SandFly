@@ -16,6 +16,16 @@
       android:order="2"
       android:persistent="false"
       android:title="@string/dictation_google_download" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:key="pref_dictation_punctuation"
+      android:order="2"
+      android:title="@string/title_pref_dictation_punctuation" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+      android:defaultValue="true"
+      android:key="pref_dictation_block_offensive"
+      android:order="2"
+      android:title="@string/title_pref_dictation_block_offensive" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
       android:defaultValue="0"
       android:entries="@array/pref_dictation_auto_stop_entries"
