@@ -350,6 +350,17 @@ class KeyboardExplorationTest {
     )
   }
 
+  @Test
+  fun onlyGboard18_8AndLaterReportTheirPopupSelection() {
+    assertTrue(KeyboardExploration.reportsPopupSelection("18.8.0.1022711984-beta-arm64-v8a"))
+    assertTrue(KeyboardExploration.reportsPopupSelection("19.0.2.1100000000-release-arm64-v8a"))
+    // Pixelboard 18.4.1, and Gboard 18.5.6 beta, report none.
+    assertFalse(KeyboardExploration.reportsPopupSelection("18.4.1.985164140-release-arm64-v8a"))
+    assertFalse(KeyboardExploration.reportsPopupSelection("18.5.6.1000000000-beta-arm64-v8a"))
+    assertFalse(KeyboardExploration.reportsPopupSelection(null))
+    assertFalse(KeyboardExploration.reportsPopupSelection("beta"))
+  }
+
   private class TestWindow(val window: AccessibilityWindowInfo, val root: AccessibilityNodeInfo)
 
   private fun window(id: Int, type: Int, bounds: Rect, rootPackage: String): TestWindow {
