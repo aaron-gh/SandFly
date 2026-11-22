@@ -2576,6 +2576,20 @@
     <string name="shortcut_perform_long_click_action">Touch and hold</string>
     <!-- Label for the shortcut that activates the focused item by tapping it on the screen, for controls that ignore an accessibility click. [CHAR_LIMIT=60] -->
     <string name="shortcut_touch_click_action">Activate with a tap</string>
+    <!-- Label for the command that activates a button on the screen whose label is one of the confirm button labels, such as OK or Send. [CHAR_LIMIT=60] -->
+    <string name="shortcut_activate_confirm_button">Activate confirm button</string>
+    <!-- Label for the command that activates a button on the screen whose label is one of the cancel button labels, such as Cancel or Close. [CHAR_LIMIT=60] -->
+    <string name="shortcut_activate_cancel_button">Activate cancel button</string>
+    <!-- Built-in labels of confirm buttons that Activate confirm button looks for, one per line. Translate each to the label apps use in this language; keep one label per line. -->
+    <string name="confirm_button_words_default">OK\nYes\nSend\nDone\nContinue\nNext\nSave\nAllow\nAccept\nConfirm\nSubmit\nReply</string>
+    <!-- Built-in labels of cancel buttons that Activate cancel button looks for, one per line. Translate each to the label apps use in this language; keep one label per line. -->
+    <string name="cancel_button_words_default">Cancel\nNo\nClose\nBack\nDismiss\nDeny\nDon\'t allow\nNot now\nSkip\nLater</string>
+    <!-- Spoken when Activate confirm button finds no button with one of the confirm button labels. [CHAR_LIMIT=60] -->
+    <string name="no_confirm_button">No confirm button</string>
+    <!-- Spoken when Activate cancel button finds no button with one of the cancel button labels. [CHAR_LIMIT=60] -->
+    <string name="no_cancel_button">No cancel button</string>
+    <!-- Title of the setting on a button command's screen that holds the button labels the command looks for, one per line. [CHAR_LIMIT=40] -->
+    <string name="title_button_command_words">Button labels</string>
     <!-- Title for dialog with general TalkBack actions and focused node actions [CHAR_LIMIT=40] -->
     <string name="talkback_menu_title">SandFly menu</string>
     <!-- Text of TalkBack menu Close button. [CHAR_LIMIT=40] -->

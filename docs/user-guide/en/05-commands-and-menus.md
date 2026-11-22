@@ -15,7 +15,7 @@ The list holds only the commands that the device supports. For example, commands
 - **Navigation**: next and previous item, the item above, below, left and right, first and last item on the screen, containers, windows, and **Focus text inside items separately**.
 - **Navigation setting**: the **Navigation** menu, **Page navigation**, and next and previous navigation setting.
 - **Object navigation** and **Screen review**: commands for desktop-style object navigation and the review cursor, mostly for keyboards. See [](#keyboards).
-- **Activation**: **Activate**, **Touch and hold**, **Activate with a tap**, **Show custom actions**, **Addresses and numbers**, **Add or edit labels**, **Open SandFly menu**, **Pass through system gesture**, and **Turn direct touch on or off for this app**.
+- **Activation**: **Activate**, **Touch and hold**, **Activate with a tap**, **Activate confirm button**, **Activate cancel button**, **Show custom actions**, **Addresses and numbers**, **Add or edit labels**, **Open SandFly menu**, **Pass through system gesture**, and **Turn direct touch on or off for this app**.
 - **Scrolling**: scroll forward, back, up, down, left and right, to the top and to the bottom, and **Refresh**.
 - **Navigate by text** and **Navigate by element**: next and previous character, word, line, paragraph, heading, link, control, button, list, table, landmark and other kinds of item.
 - **Tables**: next and previous row and column, the start and end of rows, columns and tables, and row and column headers.
@@ -48,6 +48,14 @@ These categories list what you add yourself, and are shown only when they have c
 
 **Speak status**, in the **Reading** category, reads what the status bar shows, such as the time, the battery level and the network, and whether the screen is hidden. By default, a two-finger triple-tap runs it. To choose what it reads and in what order, go to **Verbosity** > **Status readout**. See [](#verbosity).
 
+#### Activate confirm button and Activate cancel button {#commands-button-commands}
+
+**Activate confirm button** and **Activate cancel button**, in the **Activation** category and unassigned by default, activate a button on the screen by its label, without moving focus. **Activate confirm button** looks for labels such as **OK**, **Yes**, **Send**, **Done**, **Next**, **Save** and **Allow**; **Activate cancel button** for labels such as **Cancel**, **No**, **Close**, **Back**, **Not now** and **Skip**. A label matches when it is the same word, ignoring case and punctuation at the end.
+
+SandFly looks in the active window first, such as a dialog, then in the other app windows from the top. When several buttons match, the one nearest to the focused item is activated; with no focused item, the lowest one on the screen. When no button matches, SandFly says "No confirm button" or "No cancel button".
+
+To change the labels, choose the command in **Commands**, then **Button labels**, and enter one label per line. Your list replaces the built-in one. To use the built-in list again, delete every label.
+
 ### Assign a gesture or keyboard shortcut to a command {#commands-assign}
 
 1. In SandFly settings, choose **Commands**.
@@ -57,6 +65,7 @@ These categories list what you add yourself, and are shown only when they have c
 
 The command screen has these groups:
 
+- **Button labels**: only for **Activate confirm button** and **Activate cancel button**, the labels that the command looks for. See [](#commands-button-commands).
 - **Gestures**: the gestures that run the command. To remove one, choose it, then **Remove gesture**.
 - **Arrow key navigation**: the arrow keys of arrow key navigation that run the command, with **Add arrow keys** and **Remove arrow keys**. The group is shown only with a keymap that has arrow key navigation. See [](#keyboards).
 - **Braille cells**: the braille cells that run the command in the **Default** braille commands. **Add braille cell** records a cell that you type on the SandFly braille surface. To remove a cell, choose it, then **Remove braille cell**. See [](#braille).

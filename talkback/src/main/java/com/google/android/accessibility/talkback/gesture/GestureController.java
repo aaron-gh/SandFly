@@ -43,6 +43,7 @@ import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CL
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.DOUBLE_CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.LONG_CLICK_CURRENT;
 import static com.google.android.accessibility.talkback.Feedback.Focus.Action.TOUCH_CLICK_CURRENT;
+import static com.google.android.accessibility.talkback.Feedback.Focus.Action.CLICK_NODE;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.NEXT_GRANULARITY;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.NEXT_PAGE;
 import static com.google.android.accessibility.talkback.Feedback.FocusDirection.Action.PREVIOUS_GRANULARITY;
@@ -110,6 +111,7 @@ import com.google.android.accessibility.talkback.Feedback.TriggerIntent.Action;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.commands.AppGestureFragment;
+import com.google.android.accessibility.talkback.commands.ButtonCommands;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ContinuousCopy;
@@ -457,6 +459,8 @@ public class GestureController {
     R.string.shortcut_value_perform_click_action,
     R.string.shortcut_value_perform_double_click_action,
     R.string.shortcut_value_touch_click_action,
+    R.string.shortcut_value_activate_confirm_button,
+    R.string.shortcut_value_activate_cancel_button,
     R.string.shortcut_value_perform_long_click_action,
     R.string.shortcut_value_action_setting_activate_current_action,
     R.string.shortcut_value_select_next_setting,
@@ -1001,6 +1005,17 @@ public class GestureController {
       result = pipeline.returnFeedback(eventId, Feedback.focus(LONG_CLICK_CURRENT));
     } else if (action.equals(service.getString(R.string.shortcut_value_touch_click_action))) {
       result = pipeline.returnFeedback(eventId, Feedback.focus(TOUCH_CLICK_CURRENT));
+    } else if (ButtonCommands.kindOf(service, action) != null) {
+      ButtonCommands.Kind kind = ButtonCommands.kindOf(service, action);
+      AccessibilityNodeInfoCompat button =
+          ButtonCommands.find(service, SharedPreferencesUtils.getSharedPreferences(service), kind);
+      if (button == null) {
+        speak(service.getString(kind.getNoneRes()));
+      } else {
+        // Activating stops speech, as double tap does.
+        pipeline.returnFeedback(eventId, Feedback.part().setInterruptGentle(true));
+        result = pipeline.returnFeedback(eventId, Feedback.focus(CLICK_NODE).setTarget(button));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_select_previous_setting))) {
       selectorController.selectPreviousOrNextSetting(
           eventId, AnnounceType.DESCRIPTION_AND_HINT, false);
