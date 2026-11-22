@@ -760,6 +760,11 @@ public class BrailleLanguages {
         R.string.code_user_facing_name_punjabi,
         /* supportedContracted= */ false,
         /* eightDot= */ false),
+    ROMANIAN(
+        LOCALE_RO,
+        R.string.code_user_facing_name_romanian,
+        /* supportedContracted= */ false,
+        /* eightDot= */ false),
     ROMANIAN_COMP8(
         LOCALE_RO,
         R.string.code_user_facing_name_romanian_comp8,

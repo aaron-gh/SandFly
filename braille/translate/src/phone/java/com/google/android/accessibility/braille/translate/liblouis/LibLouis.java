@@ -256,6 +256,9 @@ public class LibLouis implements TranslatorFactory {
       case "PUNJABI" -> {
         return new LibLouisTranslator(context, codeName, "pa.tbl");
       }
+      case "ROMANIAN" -> {
+        return new LibLouisTranslator(context, codeName, "ro-g0-sandfly.utb");
+      }
       case "ROMANIAN_COMP8" -> {
         return new LibLouisTranslator(context, codeName, "ro.tbl");
       }

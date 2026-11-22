@@ -1,0 +1,127 @@
+#
+# Uncontracted 6-dot braille table for Romanian, used by SandFly for the
+# braille keyboard and braille displays.
+#
+# This file is part of SandFly and is distributed under the GNU Lesser General
+# Public License, version 2.1 or later, like the liblouis tables it includes.
+#
+# The upstream table ro-g0.utb includes the French table fr-bfu-comp6.utb,
+# whose number sign (dot 6) and digit zero (dots 3456) stay active in
+# back-translation and cannot be removed by a later table. This table is
+# therefore self-contained. Signs follow the Romanian braille in use by
+# Romanian braille keyboard users: dots 3456 number sign, dots 46 capital
+# letter, dots 56 capital word, dots 2356 both parentheses, UEB signs for
+# operators and other symbols.
+
+#-index-name: Romanian, uncontracted, SandFly
+#-display-name: Romanian braille
+
+#+language: ro
+#+type: literary
+#+dots: 6
+#+contraction: no
+#+grade: 0
+#+direction: both
+
+include spaces.uti
+
+# Romanian letters. The first definition of a dot pattern is the one used in
+# back-translation: comma-below letters, not the cedilla forms.
+lowercase \x0103 16       LATIN SMALL LETTER A WITH BREVE
+lowercase \x00e2 126      LATIN SMALL LETTER A WITH CIRCUMFLEX
+lowercase \x00ee 146      LATIN SMALL LETTER I WITH CIRCUMFLEX
+lowercase \x0219 156      LATIN SMALL LETTER S WITH COMMA BELOW
+lowercase \x021b 246      LATIN SMALL LETTER T WITH COMMA BELOW
+noback lowercase \x015f 156   LATIN SMALL LETTER S WITH CEDILLA
+noback lowercase \x0163 246   LATIN SMALL LETTER T WITH CEDILLA
+base uppercase \x0102 \x0103
+base uppercase \x00c2 \x00e2
+base uppercase \x00ce \x00ee
+base uppercase \x0218 \x0219
+base uppercase \x021a \x021b
+base uppercase \x015e \x015f
+base uppercase \x0162 \x0163
+
+include latinLetterDef6Dots.uti
+include digits6Dots.uti
+include litdigits6Dots.uti
+
+# Punctuation
+punctuation , 2
+punctuation ; 23
+punctuation : 25
+punctuation . 256
+punctuation ? 26
+punctuation ! 235
+punctuation ' 3
+punctuation - 36
+
+# Dots 2356 are an opening parenthesis at the start of a word and a closing
+# parenthesis elsewhere.
+punctuation ( 2356
+punctuation ) 2356
+prepunc ( 2356
+postpunc ) 2356
+
+# Quotation marks: dots 236 opening, dots 356 closing.
+punctuation \x201e 236    DOUBLE LOW-9 QUOTATION MARK
+punctuation \x201d 356    RIGHT DOUBLE QUOTATION MARK
+prepunc \x201e 236
+postpunc \x201d 356
+punctuation " 236
+noback prepunc " 236
+noback postpunc " 356
+noback punctuation \x201c 236   LEFT DOUBLE QUOTATION MARK
+noback postpunc \x201c 356
+noback punctuation \x00ab 236   LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+noback punctuation \x00bb 356   RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+noback punctuation \x2018 3     LEFT SINGLE QUOTATION MARK
+noback punctuation \x2019 3     RIGHT SINGLE QUOTATION MARK
+
+punctuation [ 6-2356
+punctuation ] 2356-3
+punctuation { 456-126
+punctuation } 456-345
+
+sign \x2026 3-3-3         HORIZONTAL ELLIPSIS
+sign \x2013 36-36         EN DASH
+sign \x2014 6-36          EM DASH
+noback sign \x2010 36     HYPHEN
+noback sign \x2011 36     NON-BREAKING HYPHEN
+
+# Symbols
+sign % 356-245
+sign @ 4
+sign # 456-1456
+sign & 4-12346
+sign $ 4-234
+sign \x20ac 4-15          EURO SIGN
+sign \x00a3 4-123         POUND SIGN
+sign \x00b0 45-245        DEGREE SIGN
+sign \x00a7 45-234        SECTION SIGN
+sign \x00a9 45-14         COPYRIGHT SIGN
+sign ~ 4-35
+sign _ 46-36
+sign | 456-1256
+sign \\ 456-16
+
+# Operators, as in UEB. Dots 5-36 back-translate to the hyphen-minus.
+nofor math - 5-36
+math \x2212 5-36          MINUS SIGN
+math + 5-235
+math = 5-2356
+math \x00d7 5-236         MULTIPLICATION SIGN
+math \x00f7 5-34          DIVISION SIGN
+math * 5-35
+math < 4-126
+math > 4-345
+math / 34
+nofor math / 456-34
+
+# Indicators
+numsign 3456
+numericmodechars .,
+capsletter 46
+begcapsword 56
+
+include braille-patterns.cti
