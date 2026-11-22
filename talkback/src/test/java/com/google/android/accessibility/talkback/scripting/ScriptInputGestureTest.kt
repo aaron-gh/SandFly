@@ -80,6 +80,15 @@ class ScriptInputGestureTest {
   }
 
   @Test
+  fun twoStrokeSwipesHaveNames() {
+    assertTrue(ScriptInput.isGesture("swipeDownLiftSwipeDown"))
+    assertEquals(
+      "swipeRightLiftSwipeUp",
+      ScriptInput.gestureName(GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP),
+    )
+  }
+
+  @Test
   fun everyGestureNameIsUnique() {
     assertEquals(ScriptInput.gestureNames.size, ScriptInput.gestureNames.toSet().size)
   }

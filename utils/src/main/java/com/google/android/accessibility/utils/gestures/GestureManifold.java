@@ -242,6 +242,26 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN = -176;
   public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT = -177;
 
+  // Two one-finger swipes with the finger lifted between them, within the time set for them.
+  // Reported by TalkBack's TouchInteractionMonitor in place of the two swipes while they have an
+  // action.
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_UP = -178;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN = -179;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT = -180;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT = -181;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP = -182;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN = -183;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT = -184;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT = -185;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP = -186;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN = -187;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT = -188;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT = -189;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP = -190;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN = -191;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT = -192;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT = -193;
+
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
 
@@ -285,6 +305,48 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
       case AccessibilityService.GESTURE_SWIPE_RIGHT_AND_UP -> GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD;
       case AccessibilityService.GESTURE_SWIPE_RIGHT_AND_DOWN -> GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD;
       default -> 0;
+    };
+  }
+
+  /**
+   * Returns the two-stroke swipe of the one-finger swipe {@code firstGestureId} and then the
+   * one-finger swipe {@code secondGestureId}, or 0 when either is no one-direction swipe.
+   */
+  public static int twoStrokeSwipeOf(int firstGestureId, int secondGestureId) {
+    int first = oneDirectionSwipeIndex(firstGestureId);
+    int second = oneDirectionSwipeIndex(secondGestureId);
+    if (first < 0 || second < 0) {
+      return 0;
+    }
+    // Numbered down from the first, four for each first direction, in the order up, down, left,
+    // right.
+    return GESTURE_SWIPE_UP_LIFT_SWIPE_UP - first * 4 - second;
+  }
+
+  /**
+   * Returns the four two-stroke swipes that start with the one-finger swipe {@code
+   * swipeGestureId}, or none for every other gesture.
+   */
+  public static int[] twoStrokeSwipesStartingWith(int swipeGestureId) {
+    if (oneDirectionSwipeIndex(swipeGestureId) < 0) {
+      return new int[0];
+    }
+    return new int[] {
+      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_UP),
+      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_DOWN),
+      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_LEFT),
+      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_RIGHT)
+    };
+  }
+
+  /** The place of a one-direction swipe in up, down, left, right, or -1 for other gestures. */
+  private static int oneDirectionSwipeIndex(int gestureId) {
+    return switch (gestureId) {
+      case AccessibilityService.GESTURE_SWIPE_UP -> 0;
+      case AccessibilityService.GESTURE_SWIPE_DOWN -> 1;
+      case AccessibilityService.GESTURE_SWIPE_LEFT -> 2;
+      case AccessibilityService.GESTURE_SWIPE_RIGHT -> 3;
+      default -> -1;
     };
   }
 

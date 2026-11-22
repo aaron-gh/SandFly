@@ -8,7 +8,7 @@ The commands that each gesture runs by default are listed in [](#appendix-gestur
 
 A touch that rests on the screen or moves slowly is touch exploration: SandFly reads the item under the finger. A touch that moves quickly, or taps, is a gesture. See [](#reading) for touch exploration.
 
-On Android 13 and later, SandFly recognizes gestures itself. Many gestures in this chapter need this: the rotor, edge gestures, corner gestures, the scrub, pinch and spread, swipe and hold, three-part swipes, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers and the four-finger taps on the top or bottom half of the screen. The timing settings on the **Gestures** screen need it too. Gestures with two or more fingers need Android 11 or later.
+On Android 13 and later, SandFly recognizes gestures itself. Many gestures in this chapter need this: the rotor, edge gestures, corner gestures, the scrub, pinch and spread, swipe and hold, three-part swipes, two-stroke swipes, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers and the four-finger taps on the top or bottom half of the screen. The timing settings on the **Gestures** screen need it too. Gestures with two or more fingers need Android 11 or later.
 
 Recognition by SandFly is controlled by **Developer settings** > **Handle gestures in SandFly**, which is on by default. When you turn it off, Android recognizes gestures, and the gestures and settings above are not available. Turn SandFly off and on again after you change this setting.
 
@@ -47,6 +47,12 @@ Each one-finger swipe, back-and-forth swipe and angle swipe has a version that e
 A pause shorter than the hold time where an angle or back-and-forth swipe turns stays part of that swipe. A longer pause is the swipe and hold of the first direction, when that has a command.
 
 These 16 gestures are at the end of the **1 finger**, **1 finger back-and-forth** and **1 finger angle** categories and do nothing by default. A swipe and hold without a command isn't recognized, so swipes work as before until you assign one. **Hold time after a swipe** sets the rest; see [](#gestures-timing). Not on watches.
+
+#### Two-stroke swipes {#gestures-two-stroke}
+
+A two-stroke swipe is two one-finger swipes with the finger lifted between them, such as **Swipe right, lift, then swipe up**. The 16 gestures, including the same direction twice, are in the **Two-stroke swipes** category of the **Gestures** screen and do nothing by default.
+
+They work only while **Time between two-stroke swipes** is set; see [](#gestures-timing). The second swipe must start within that time after the first lifts. After a swipe, SandFly waits for a second swipe only when a two-stroke swipe that starts with that swipe has a command, in the gesture layout, the gesture profile in use or the gestures of the app; other swipes run at once. When the time passes, or the next touch is a tap, touch exploration or a gesture with more fingers, the first swipe runs as an ordinary swipe. Not on watches.
 
 ### Rotor {#gestures-rotor}
 
@@ -157,7 +163,7 @@ On phones whose fingerprint sensor reports swipes, the **Fingerprint gestures** 
 - The timing settings: see [](#gestures-timing).
 - **Recognize swipes before lifting**: see [](#gestures-swipes-before-lift).
 - **Gestures in apps**, **Gesture profiles** and **App shortcuts**: see [](#gestures-in-apps), [](#gestures-profiles) and [](#gestures-app-shortcuts).
-- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Three-part swipes**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures** and **Back tap**.
+- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Three-part swipes**, **Two-stroke swipes**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures** and **Back tap**.
 
 The categories are collapsed. Activate a category to expand it. Each gesture in a category shows the command it runs.
 
@@ -181,8 +187,9 @@ With **Handle two-finger swipes in SandFly** off, two-finger swipes go to the ap
 - **Time between one-finger taps**: how long SandFly waits for a further tap before it decides that a one-finger tap gesture is finished, from 0.1 to 0.5 seconds. The default is 0.25 seconds. A shorter time makes one-finger double-taps respond faster, but a slow double-tap can then count as two taps. Taps with two or more fingers always allow at least 0.25 seconds between taps.
 - **Hold time after a swipe**: how long the finger rests after a swipe for a swipe and hold gesture, from 0.1 to 0.5 seconds. The default is 0.25 seconds. See [](#gestures-swipe-and-hold).
 - **Gesture start time**: how long a one-finger swipe can take to move its first centimeter before the touch becomes touch exploration, from 0.15 to 0.3 seconds. The default is 0.15 seconds. Choose a longer time if slow swipes start touch exploration.
+- **Time between two-stroke swipes**: how long after a swipe the second swipe of a two-stroke swipe can start: **Off**, 0.5, 1, 1.5 or 2 seconds. The default is **Off**, which turns two-stroke swipes off. See [](#gestures-two-stroke).
 
-These settings need gesture recognition by SandFly; see [](#gestures-recognition). **Hold time after a swipe** and **Gesture start time** aren't on watches.
+These settings need gesture recognition by SandFly; see [](#gestures-recognition). **Hold time after a swipe**, **Gesture start time** and **Time between two-stroke swipes** aren't on watches.
 
 #### Recognize swipes before lifting {#gestures-swipes-before-lift}
 

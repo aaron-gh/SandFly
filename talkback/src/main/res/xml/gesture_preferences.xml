@@ -50,6 +50,14 @@
       android:key="@string/pref_swipe_start_time_key"
       android:summary="%s"
       android:title="@string/title_pref_swipe_start_time" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+      android:defaultValue="@string/pref_two_stroke_swipe_time_default"
+      android:dialogTitle="@string/title_pref_two_stroke_swipe_time"
+      android:entries="@array/pref_two_stroke_swipe_time_entries"
+      android:entryValues="@array/pref_two_stroke_swipe_time_values"
+      android:key="@string/pref_two_stroke_swipe_time_key"
+      android:summary="%s"
+      android:title="@string/title_pref_two_stroke_swipe_time" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_swipes_before_lift_default"
       android:key="@string/pref_swipes_before_lift_key"
@@ -439,6 +447,92 @@
         android:key="@string/pref_shortcut_right_and_left_and_right_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_right_and_left_and_right"/>
+  </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
+
+  <!-- Two one-finger swipes with the finger lifted between them -->
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
+      android:key="@string/pref_category_1finger_two_stroke_shortcuts_key"
+      android:title="@string/two_stroke_swipe_gestures_title">
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_up_lift_up_default"
+        android:key="@string/pref_shortcut_up_lift_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_up_lift_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_up_lift_down_default"
+        android:key="@string/pref_shortcut_up_lift_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_up_lift_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_up_lift_left_default"
+        android:key="@string/pref_shortcut_up_lift_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_up_lift_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_up_lift_right_default"
+        android:key="@string/pref_shortcut_up_lift_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_up_lift_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_down_lift_up_default"
+        android:key="@string/pref_shortcut_down_lift_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_down_lift_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_down_lift_down_default"
+        android:key="@string/pref_shortcut_down_lift_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_down_lift_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_down_lift_left_default"
+        android:key="@string/pref_shortcut_down_lift_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_down_lift_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_down_lift_right_default"
+        android:key="@string/pref_shortcut_down_lift_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_down_lift_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_left_lift_up_default"
+        android:key="@string/pref_shortcut_left_lift_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_left_lift_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_left_lift_down_default"
+        android:key="@string/pref_shortcut_left_lift_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_left_lift_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_left_lift_left_default"
+        android:key="@string/pref_shortcut_left_lift_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_left_lift_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_left_lift_right_default"
+        android:key="@string/pref_shortcut_left_lift_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_left_lift_right"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_right_lift_up_default"
+        android:key="@string/pref_shortcut_right_lift_up_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_right_lift_up"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_right_lift_down_default"
+        android:key="@string/pref_shortcut_right_lift_down_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_right_lift_down"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_right_lift_left_default"
+        android:key="@string/pref_shortcut_right_lift_left_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_right_lift_left"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_right_lift_right_default"
+        android:key="@string/pref_shortcut_right_lift_right_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_right_lift_right"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Edge gestures -->

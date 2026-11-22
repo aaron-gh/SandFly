@@ -304,6 +304,10 @@ Under **Gestures** > **2 finger angle**, there are eight gestures that swipe two
 
 Under **Gestures** > **Three-part swipes**, there are 36 gestures that move one finger in three directions without lifting it, each part turning from the one before, such as **Swipe right, up, then right**. They do nothing by default, and a three-part swipe without a command isn't recognized. **Recognize swipes before lifting** turns them off and hides them. Not on watches.
 
+### Two-stroke swipes
+
+Under **Gestures** > **Two-stroke swipes**, there are 16 gestures of two one-finger swipes with the finger lifted between them, such as **Swipe right, lift, then swipe up**. They do nothing by default and work only while **Gestures** > **Time between two-stroke swipes** is set, from 0.5 to 2 seconds; it's **Off** by default. After a swipe, SandFly waits for the second swipe only when a two-stroke swipe that starts with that swipe has a command; other swipes run at once. When the time passes, or the next touch is something else, the first swipe runs as an ordinary swipe. Not on watches.
+
 ### Swipe and hold
 
 Each one-finger swipe, back-and-forth swipe and angle swipe has a version that ends with the finger resting on the screen, such as **Swipe right and hold** or **Swipe left then up and hold**. Swipe, then keep the finger still: the command runs when the hold time ends, before you lift the finger. Lifting sooner makes the ordinary swipe. A pause shorter than the hold time where an angle or back-and-forth swipe turns stays part of that swipe; a longer pause is the swipe and hold of the first direction, when that has a command.

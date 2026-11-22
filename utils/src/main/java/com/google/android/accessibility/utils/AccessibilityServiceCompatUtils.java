@@ -578,6 +578,38 @@ public class AccessibilityServiceCompatUtils {
           "GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN";
       case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT ->
           "GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT";
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP ->
+          "GESTURE_SWIPE_UP_LIFT_SWIPE_UP";
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN ->
+          "GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN";
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT ->
+          "GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT";
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT ->
+          "GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT";
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP ->
+          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP";
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN ->
+          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN";
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT ->
+          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT";
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT ->
+          "GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT";
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP ->
+          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP";
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN ->
+          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN";
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT ->
+          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT";
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT ->
+          "GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT";
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP ->
+          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP";
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN ->
+          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN";
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT ->
+          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT";
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT ->
+          "GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT";
       default -> "(unhandled " + gestureId + ")";
     };
   }

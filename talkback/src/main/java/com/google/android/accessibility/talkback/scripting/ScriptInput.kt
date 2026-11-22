@@ -279,6 +279,22 @@ object ScriptInput {
       "swipeRightThenLeftThenUp" to GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_UP,
       "swipeRightThenLeftThenDown" to GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN,
       "swipeRightThenLeftThenRight" to GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT,
+      "swipeUpLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP,
+      "swipeUpLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN,
+      "swipeUpLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT,
+      "swipeUpLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT,
+      "swipeDownLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP,
+      "swipeDownLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN,
+      "swipeDownLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT,
+      "swipeDownLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT,
+      "swipeLeftLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP,
+      "swipeLeftLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN,
+      "swipeLeftLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT,
+      "swipeLeftLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT,
+      "swipeRightLiftSwipeUp" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP,
+      "swipeRightLiftSwipeDown" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN,
+      "swipeRightLiftSwipeLeft" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT,
+      "swipeRightLiftSwipeRight" to GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT,
     )
 
   private val fingerprintGestures: Map<String, Int> =

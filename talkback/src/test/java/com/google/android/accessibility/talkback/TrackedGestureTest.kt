@@ -82,6 +82,7 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_E
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP
 import java.time.Duration
 import kotlin.math.cos
 import kotlin.math.sin
@@ -869,6 +870,54 @@ class TrackedGestureTest {
     val upMs = oneFingerStroke(0, 60f, 300f, 90f, 0f, 0f, -90f, 90f, 0f)
     runUntil(upMs + 500)
     assertEquals(false, service.gestures.contains(GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT))
+  }
+
+  private fun setTwoStrokeTime(ms: Int) {
+    SharedPreferencesUtils.getSharedPreferences(service)
+      .edit()
+      .putString(service.getString(R.string.pref_two_stroke_swipe_time_key), ms.toString())
+      .commit()
+  }
+
+  @Test
+  fun twoStrokeSwipeIsItsGestureWhenAssigned() {
+    setTwoStrokeTime(1000)
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_right_lift_up_key)
+    val firstUpMs = oneFingerStroke(0, 60f, 300f, 120f, 0f)
+    runUntil(firstUpMs + 300)
+    assertEquals(emptyList<Int>(), service.gestures)
+    val secondUpMs = oneFingerStroke(firstUpMs + 400, 160f, 400f, 0f, -120f)
+    runUntil(secondUpMs + 2000)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP), service.gestures)
+  }
+
+  @Test
+  fun twoStrokeFirstSwipeRunsWhenTheTimePasses() {
+    setTwoStrokeTime(1000)
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_right_lift_up_key)
+    val upMs = oneFingerStroke(0, 60f, 300f, 120f, 0f)
+    runUntil(upMs + 900)
+    assertEquals(emptyList<Int>(), service.gestures)
+    runUntil(upMs + 1100)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun swipeWithNoAssignedTwoStrokeSwipeRunsAtOnce() {
+    setTwoStrokeTime(2000)
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_right_lift_up_key)
+    // Up starts no two-stroke swipe with a command.
+    val upMs = oneFingerStroke(0, 160f, 400f, 0f, -120f)
+    runUntil(upMs + 20)
+    assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+  }
+
+  @Test
+  fun twoStrokeSwipesOffSwipeRunsAtOnce() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_right_lift_up_key)
+    val upMs = oneFingerStroke(0, 60f, 300f, 120f, 0f)
+    runUntil(upMs + 20)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
   }
 
   /** Whether Backtalk asked the system to pass the touch to the app as it is. */
