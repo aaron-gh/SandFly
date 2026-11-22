@@ -188,6 +188,47 @@ class KeyboardExplorationTest {
     assertEquals(1, NodesShadow.refreshes)
   }
 
+  @Test
+  fun hoverOnACharacterAwayFromTheFingerFindsThePopupWithoutAPaneEvent() {
+    // As Gboard beta on a Pixel 9 Pro: the popup over the long-pressed C, in the keyboard's window.
+    val root =
+      AccessibilityNodeInfo().apply {
+        packageName = GBOARD
+        setBoundsInScreen(KEYBOARD_BOUNDS)
+        isVisibleToUser = true
+      }
+    val row = root.addContainer(KEYBOARD_BOUNDS).addContainer(Rect(0, 1733, 1080, 1867))
+    val c = row.addKey("C", Rect(337, 1733, 432, 1867))
+    val v = row.addKey("V", Rect(432, 1733, 527, 1867))
+    val frame = root.addContainer(Rect(230, 1580, 545, 1700))
+    val popup = frame.addContainer(Rect(235, 1592, 532, 1691))
+    popup.addKey("Ć", Rect(235, 1592, 334, 1691))
+    val caron = popup.addKey("Č", Rect(334, 1592, 433, 1691))
+    popup.addKey("C", Rect(433, 1592, 532, 1691))
+    val width = KEYBOARD_BOUNDS.width()
+    val fingerX = 380f
+    val fingerY = 1800f
+
+    val found =
+      KeyboardExploration.popupOfKey(AccessibilityNodeInfoCompat.wrap(caron), width, fingerX, fingerY)
+
+    val bounds = Rect()
+    found!!.getBoundsInScreen(bounds)
+    assertEquals(Rect(230, 1580, 545, 1700), bounds)
+    val keys = KeyboardExploration.popupKeys(found)
+    assertEquals(
+      listOf<CharSequence>("Ć", "Č", "C"),
+      keys.map { it.contentDescription },
+    )
+    // Gboard's hover on the key under the finger, or on another key of the keyboard, is no popup.
+    assertNull(
+      KeyboardExploration.popupOfKey(AccessibilityNodeInfoCompat.wrap(c), width, fingerX, fingerY)
+    )
+    assertNull(
+      KeyboardExploration.popupOfKey(AccessibilityNodeInfoCompat.wrap(v), width, fingerX, fingerY)
+    )
+  }
+
   private class TestWindow(val window: AccessibilityWindowInfo, val root: AccessibilityNodeInfo)
 
   private fun window(id: Int, type: Int, bounds: Rect, rootPackage: String): TestWindow {
@@ -208,7 +249,7 @@ class KeyboardExplorationTest {
     return TestWindow(window, root)
   }
 
-  private fun AccessibilityNodeInfo.addKey(label: String, bounds: Rect) {
+  private fun AccessibilityNodeInfo.addKey(label: String, bounds: Rect): AccessibilityNodeInfo {
     val key =
       AccessibilityNodeInfo().apply {
         packageName = GBOARD
@@ -222,6 +263,20 @@ class KeyboardExplorationTest {
       }
     ReflectionHelpers.setField(key, "mWindowId", KEYBOARD_ID)
     shadowOf(this).addChild(key)
+    return key
+  }
+
+  private fun AccessibilityNodeInfo.addContainer(bounds: Rect): AccessibilityNodeInfo {
+    val container =
+      AccessibilityNodeInfo().apply {
+        packageName = GBOARD
+        className = "android.widget.FrameLayout"
+        setBoundsInScreen(bounds)
+        isVisibleToUser = true
+      }
+    ReflectionHelpers.setField(container, "mWindowId", KEYBOARD_ID)
+    shadowOf(this).addChild(container)
+    return container
   }
 
   private companion object {

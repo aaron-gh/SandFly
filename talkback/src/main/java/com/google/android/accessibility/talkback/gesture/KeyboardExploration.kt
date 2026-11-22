@@ -160,6 +160,41 @@ object KeyboardExploration {
   }
 
   /**
+   * Returns the popup of alternative characters that Gboard's [key] is in, for Gboard versions that
+   * send no pane event when it opens: the widest of [key]'s ancestors that is narrower than
+   * Gboard's window, [windowWidth] wide, and not under the finger at [x], [y]. Ancestors are
+   * looked for as far up as [popupKeys] looks down for the characters. Returns null if [key] is
+   * under the finger, or none of its ancestors is such a popup.
+   */
+  @JvmStatic
+  fun popupOfKey(
+    key: AccessibilityNodeInfoCompat,
+    windowWidth: Int,
+    x: Float,
+    y: Float,
+  ): AccessibilityNodeInfoCompat? {
+    val bounds = Rect()
+    key.getBoundsInScreen(bounds)
+    if (bounds.contains(x.toInt(), y.toInt())) {
+      return null
+    }
+    var popup: AccessibilityNodeInfoCompat? = null
+    var ancestor = key.parent
+    var level = 1
+    while (ancestor != null && level <= POPUP_DEPTH) {
+      ancestor.getBoundsInScreen(bounds)
+      // The keyboard itself, or a part of it with the key under the finger, isn't the popup.
+      if (bounds.width() >= windowWidth || bounds.contains(x.toInt(), y.toInt())) {
+        break
+      }
+      popup = ancestor
+      ancestor = ancestor.parent
+      level++
+    }
+    return popup
+  }
+
+  /**
    * Returns the character of Gboard's popup, among its [keys] from [popupKeys], that a finger at
    * [x], [y] selects: the one under it, or else the nearest, as Gboard selects one for a finger
    * anywhere on the screen while the popup is open. Returns null if there are no characters.

@@ -93,6 +93,7 @@ import android.util.SparseBooleanArray;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.ViewConfiguration;
+import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.annotation.MainThread;
@@ -132,6 +133,7 @@ import com.google.android.accessibility.talkback.preference.PreferencesActivityU
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
+import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -2793,21 +2795,72 @@ public class TouchInteractionMonitor
     }
     // A pane over the keyboard, or a new layout, can be under the finger now.
     skipLookupsInLastExploredBounds = false;
-    @Nullable AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(pane);
-    if (window == null) {
+    int windowWidth = gboardWindowWidth(pane);
+    if (windowWidth < 0) {
       return;
     }
     Rect paneBounds = new Rect();
-    Rect windowBounds = new Rect();
     pane.getBoundsInScreen(paneBounds);
-    window.getBoundsInScreen(windowBounds);
-    if (paneBounds.width() < windowBounds.width()) {
-      gboardPopup = pane;
-      gboardPopupKeys = ImmutableList.of();
-      gboardPopupFetches = 0;
+    if (paneBounds.width() < windowWidth) {
+      openGboardPopup(pane);
       // The character the finger selects is said at once, before the finger moves.
       exploreKeyboardAt(lastFingerX, lastFingerY);
     }
+  }
+
+  /**
+   * Notes Gboard's own hover enter {@code event}, not one for the hover SandFly sends it. Gboard
+   * sends one for the character it selects when its popup of alternative characters opens, and
+   * some versions, such as Gboard beta, send no pane event for the popup: a hover on a key away
+   * from the finger, in a container narrower than Gboard's window, opens the popup here. Gboard's
+   * hover focuses the character it selected, which stays selected until the finger moves.
+   */
+  public void onGboardHoverEntered(AccessibilityEvent event) {
+    if (!exploringKeyboard
+        || gboardPopup != null
+        || event.getEventTime() < touchDownTimeMs
+        || !KeyboardExploration.isGboardPackage(event.getPackageName())) {
+      return;
+    }
+    @Nullable AccessibilityNodeInfoCompat key = AccessibilityEventUtils.sourceCompat(event);
+    if (key == null) {
+      return;
+    }
+    int windowWidth = gboardWindowWidth(key);
+    if (windowWidth < 0) {
+      return;
+    }
+    @Nullable AccessibilityNodeInfoCompat popup =
+        KeyboardExploration.popupOfKey(key, windowWidth, lastFingerX, lastFingerY);
+    if (popup == null) {
+      return;
+    }
+    LogUtils.d(LOG_TAG, "Gboard's popup found from its hover on %s", key.getContentDescription());
+    openGboardPopup(popup);
+    lastExploredNode = key;
+    lastExploredX = lastFingerX;
+    lastExploredY = lastFingerY;
+    key.getBoundsInScreen(lastExploredBounds);
+    skipLookupsInLastExploredBounds = false;
+    splitTappedKeyboard = false;
+  }
+
+  /** Returns the width of the window {@code node} is in, or -1 if it has none. */
+  private static int gboardWindowWidth(AccessibilityNodeInfoCompat node) {
+    @Nullable AccessibilityWindowInfoCompat window = AccessibilityNodeInfoUtils.getWindow(node);
+    if (window == null) {
+      return -1;
+    }
+    Rect windowBounds = new Rect();
+    window.getBoundsInScreen(windowBounds);
+    return windowBounds.width();
+  }
+
+  /** Selects characters among those of {@code popup} for the rest of the touch. */
+  private void openGboardPopup(AccessibilityNodeInfoCompat popup) {
+    gboardPopup = popup;
+    gboardPopupKeys = ImmutableList.of();
+    gboardPopupFetches = 0;
   }
 
   /** Returns whether {@code node} is in the popup Gboard opened during this touch. */
