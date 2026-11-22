@@ -43,7 +43,7 @@ class DownloadRetryTest {
       }
     assertEquals("apk", result)
     assertEquals(3, attempts)
-    assertEquals(listOf(2_000L, 5_000L), slept)
+    assertEquals(listOf(2_000L, 4_000L), slept)
   }
 
   @Test
@@ -76,8 +76,9 @@ class DownloadRetryTest {
       assertThrows(IOException::class.java) {
         DownloadRetry.run<String>(sleep) { throw IOException("attempt ${++attempts}") }
       }
-    assertEquals("attempt 3", thrown.message)
-    assertEquals(3, attempts)
+    assertEquals("attempt 6", thrown.message)
+    assertEquals(6, attempts)
+    assertEquals(listOf(2_000L, 4_000L, 8_000L, 16_000L, 30_000L), slept)
   }
 
   @Test

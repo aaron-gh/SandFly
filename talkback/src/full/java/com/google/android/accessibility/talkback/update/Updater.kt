@@ -26,11 +26,11 @@ import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageInstaller
 import android.content.pm.PackageManager
-import android.net.Network
 import android.net.Uri
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.provider.Settings
 import android.widget.Toast
 import androidx.annotation.StringRes
@@ -42,7 +42,9 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.actor.gemini.local.DownloadProgress
 import com.google.android.accessibility.talkback.migration.AppIdMove
+import com.google.android.accessibility.talkback.monitor.CallDurationAnnouncer
 import com.google.android.accessibility.talkback.network.NetworkForeground
 import com.google.android.accessibility.talkback.utils.NotificationUtils
 import com.google.android.accessibility.utils.FormFactorUtils
@@ -54,7 +56,6 @@ import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
-import java.net.HttpURLConnection
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
@@ -80,6 +81,8 @@ object Updater {
   internal const val PREF_LAST_CHECK_TIME = "update_last_check_time"
   internal const val PREF_LAST_NOTIFIED_BUILD = "update_last_notified_build"
   private const val APK_FILE_NAME = "sandfly.apk"
+  private const val PART_SUFFIX = ".part"
+  private const val PROGRESS_INTERVAL_MS = 1_000L
   private const val DOWNLOAD_DIRECTORY = "update"
   /** How long to wait for the shell install before falling back; SandFly usually restarts first. */
   private const val INSTALL_TIMEOUT_SECONDS = 150L
@@ -267,7 +270,7 @@ object Updater {
       .setTitle(title)
       .setMessage(message)
       .setPositiveButton(R.string.update_dialog_install) { _, _ ->
-        install(activity, update.downloadUrl, update.apiDownloadUrl)
+        install(activity, update.downloadUrl, update.apiDownloadUrl, update.size)
       }
       .setNegativeButton(android.R.string.cancel) { dialog, _ -> dialog.dismiss() }
       .setCancelable(true)
@@ -281,6 +284,7 @@ object Updater {
         .setAction(UpdateReceiver.ACTION_INSTALL)
         .putExtra(UpdateReceiver.EXTRA_DOWNLOAD_URL, update.downloadUrl)
         .putExtra(UpdateReceiver.EXTRA_API_DOWNLOAD_URL, update.apiDownloadUrl)
+        .putExtra(UpdateReceiver.EXTRA_SIZE, update.size)
     val pendingIntent =
       PendingIntent.getBroadcast(
         context,
@@ -310,7 +314,13 @@ object Updater {
    * SandFly installs as a new app. Anything else is refused.
    */
   @JvmStatic
-  fun install(context: Context, downloadUrl: String, apiDownloadUrl: String? = null) {
+  @JvmOverloads
+  fun install(
+    context: Context,
+    downloadUrl: String,
+    apiDownloadUrl: String? = null,
+    size: Long = -1L,
+  ) {
     val appContext = context.applicationContext
     // With the Play-installer setting on and Shizuku, the shell installs the update, so SandFly
     // doesn't need permission to install apps itself.
@@ -342,7 +352,7 @@ object Updater {
       try {
         val apk =
           try {
-            download(appContext, downloadUrl, apiDownloadUrl)
+            download(appContext, downloadUrl, apiDownloadUrl, size)
           } finally {
             // Set before downloading ends, so that the update counts as busy throughout.
             installing.set(true)
@@ -370,85 +380,81 @@ object Updater {
   }
 
   /**
-   * Downloads the APK, showing its progress in a notification. A watch downloads over its own
-   * Wi-Fi when it comes up, not through the phone.
+   * Downloads the APK, showing its progress in a notification. Each attempt resumes what the
+   * previous one downloaded, and a part left by a failed download is resumed by the next install of
+   * the same build. A watch downloads over its own Wi-Fi when it comes up, not through the phone.
    */
-  private fun download(context: Context, url: String, apiUrl: String?): File {
+  private fun download(context: Context, url: String, apiUrl: String?, size: Long): File {
     // Not the cache directory: with little free storage, Android deletes cache files to make room
     // for the install session, which would delete this APK before it is copied there.
     val directory = File(context.filesDir, DOWNLOAD_DIRECTORY)
     directory.mkdirs()
     val file = File(directory, APK_FILE_NAME)
+    file.delete()
     val fast = if (FormFactorUtils.isAndroidWear()) FastNetwork.request(context) else null
-    var complete = false
+    val progress = ProgressNotifier(context)
+    val download =
+      ResumableDownload(
+        File(directory, APK_FILE_NAME + PART_SUFFIX),
+        ResumableDownload.identity(url, size),
+        size,
+        { UpdateChecker.openConnection(context, it, fast?.network) },
+        progress::onProgress,
+      )
     try {
       DownloadRetry.run { attempt ->
         val attemptUrl = DownloadRetry.urlFor(attempt, url, apiUrl)
-        NetworkForeground.run {
-          downloadOnce(context, attemptUrl, attemptUrl == apiUrl, file, fast?.network)
-        }
+        NetworkForeground.run { download.attempt(attemptUrl, attemptUrl == apiUrl) }
       }
-      complete = true
+      download.finish(file)
       return file
+    } catch (e: PermanentDownloadException) {
+      download.discard()
+      throw DownloadFailedException(e)
     } catch (e: IOException) {
+      // The part stays for the next install of this build.
       throw DownloadFailedException(e)
     } finally {
-      if (!complete) file.delete()
       fast?.release()
     }
   }
 
-  private fun downloadOnce(
-    context: Context,
-    url: String,
-    isApi: Boolean,
-    file: File,
-    network: Network?,
-  ) {
-    val connection = UpdateChecker.openConnection(context, url, network)
-    try {
-      // Without this type, the API returns the asset's JSON description instead of the APK.
-      if (isApi) connection.setRequestProperty("Accept", "application/octet-stream")
-      val code = connection.responseCode
-      if (code != HttpURLConnection.HTTP_OK) {
-        val message = "Download returned HTTP $code"
-        // An API failure such as the rate limit leaves the direct address to try.
-        throw if (isApi || DownloadRetry.isRetryableStatus(code)) {
-          IOException(message)
+  /** Shows the download's percentage and time left, at most once a second. */
+  private class ProgressNotifier(private val context: Context) {
+    private val throughput = DownloadThroughput()
+    private var shownAt = 0L
+    private var shownText: String? = null
+
+    fun onProgress(done: Long, total: Long) {
+      val now = SystemClock.elapsedRealtime()
+      throughput.add(now, done)
+      if (shownText != null && now - shownAt < PROGRESS_INTERVAL_MS) return
+      val percent = if (total > 0) DownloadProgress.percent(done, total) else -1
+      val text =
+        if (percent < 0) {
+          ""
         } else {
-          PermanentDownloadException(message)
+          throughput.secondsLeft(done, total)?.let {
+            context.getString(
+              R.string.update_download_progress_time,
+              percent,
+              CallDurationAnnouncer.formatDuration(DownloadThroughput.roundSecondsLeft(it)),
+            )
+          } ?: context.getString(R.string.update_download_progress, percent)
         }
-      }
-      val total = connection.contentLengthLong
-      var done = 0L
-      connection.inputStream.use { input ->
-        file.outputStream().use { output ->
-          val buffer = ByteArray(64 * 1024)
-          var shownPercent = -1
-          while (true) {
-            val count = input.read(buffer)
-            if (count < 0) break
-            output.write(buffer, 0, count)
-            done += count
-            val percent = if (total > 0) (done * 100 / total).toInt() else -1
-            if (percent != shownPercent && (percent < 0 || percent % 5 == 0)) {
-              shownPercent = percent
-              showProgress(context, percent)
-            }
-          }
-        }
-      }
-      DownloadRetry.checkSize(total, done)
-    } finally {
-      connection.disconnect()
+      shownAt = now
+      if (text == shownText) return
+      shownText = text
+      showProgress(context, percent, text)
     }
   }
 
-  private fun showProgress(context: Context, percent: Int) {
+  private fun showProgress(context: Context, percent: Int, text: String) {
     if (!NotificationManagerCompat.from(context).areNotificationsEnabled()) return
     val notification =
       NotificationUtils.createDefaultNotificationBuilder(context)
         .setContentTitle(context.getString(R.string.update_downloading))
+        .setContentText(text.ifEmpty { null })
         .setProgress(100, percent.coerceAtLeast(0), percent < 0)
         .setOngoing(true)
         .setOnlyAlertOnce(true)

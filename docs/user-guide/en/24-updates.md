@@ -38,12 +38,12 @@ Turn off **Automatically check for updates** to check only with **Check for upda
 
 1. Tap the **SandFly update available** notification, or choose **Install** in the dialog of **Check for updates**.
 2. The first time, Android opens the setting that allows SandFly to install apps, and SandFly shows "Allow SandFly to install apps, then try the update again". Turn on the setting, go back, and repeat step 1.
-3. SandFly shows "Downloading update" and the progress of the download in a notification.
+3. SandFly shows "Downloading update" and the progress of the download in a notification: the percentage, and after a few seconds the time left, such as "40%, 1 minute, 20 seconds left".
 4. When the download is complete, the Android install prompt opens. Choose **Update** or **Install**.
 
 SandFly restarts with the new build, with the same settings. If the install prompt doesn't open, such as when the screen turned off during the download, tap the notification **SandFly update downloaded**. The notification goes away after 10 minutes.
 
-SandFly installs only builds of SandFly signed with the SandFly key. If the download is something else, SandFly shows "The download is not a build of this app, so it was not installed". If the download fails after several attempts, SandFly shows "Could not download the update".
+SandFly installs only builds of SandFly signed with the SandFly key. If the download is something else, SandFly shows "The download is not a build of this app, so it was not installed". When the connection drops, SandFly retries up to five times, and continues the download where it stopped. If the download still fails, SandFly shows "Could not download the update". Installing the same build again, before SandFly restarts, continues the download.
 
 A build of SandFly that you build yourself is signed with another key. Android doesn't install a SandFly release over it, or the other way around. Uninstall one before you install the other.
 
