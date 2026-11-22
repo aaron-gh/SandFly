@@ -4463,7 +4463,52 @@ public class FocusProcessorForLogicalNavigation {
       return true;
     }
     CollectionInfoCompat collection = node.getCollectionInfo();
-    return collection != null && collection.getRowCount() == 1 && collection.getColumnCount() != 1;
+    if (collection != null && collection.getRowCount() == 1 && collection.getColumnCount() != 1) {
+      return true;
+    }
+    return holdsPagesSideBySide(node);
+  }
+
+  /**
+   * Returns whether {@code node} has two children laid out next to each other, one beyond the
+   * other's edge, as the pages of a pager are, for a pager whose class is a plain view group.
+   */
+  private static boolean holdsPagesSideBySide(AccessibilityNodeInfoCompat node) {
+    int count = node.getChildCount();
+    if (count < 2) {
+      return false;
+    }
+    Rect parentBounds = new Rect();
+    node.getBoundsInScreen(parentBounds);
+    if (parentBounds.isEmpty()) {
+      return false;
+    }
+    Rect first = new Rect();
+    Rect other = new Rect();
+    AccessibilityNodeInfoCompat firstChild = node.getChild(0);
+    if (firstChild == null) {
+      return false;
+    }
+    firstChild.getBoundsInScreen(first);
+    // A page is about as wide as the pager.
+    if (first.isEmpty() || first.width() * 10 < parentBounds.width() * 9) {
+      return false;
+    }
+    for (int i = 1; i < count; i++) {
+      AccessibilityNodeInfoCompat child = node.getChild(i);
+      if (child == null) {
+        continue;
+      }
+      child.getBoundsInScreen(other);
+      if (!other.isEmpty()
+          && other.width() * 10 >= parentBounds.width() * 9
+          && (other.left >= first.right || other.right <= first.left)
+          && other.top < first.bottom
+          && other.bottom > first.top) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
