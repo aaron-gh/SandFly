@@ -95,12 +95,12 @@ Steps, by `type`:
 | --- | --- | --- |
 | `command` | `command` | Runs a command |
 | `wait` | `ms` | Waits, up to 600000 ms |
-| `tap` | `label`, `timeout`, `regex`, `field` | Taps the item whose text contains `label` |
+| `tap` | `label`, `timeout`, `regex`, `field`, `kind` | Taps the item whose text contains `label` |
 | `tap_position` | `x`, `y` | Taps the screen at `x`, `y` in pixels from the top left |
-| `touch_hold` | `label`, `hold`, `slide`, `distance`, `timeout`, `regex`, `field` | Touches the centre of the item and holds for `hold` ms, then slides `distance` dp towards `slide` if set, and lifts |
-| `focus_item` | `label`, `timeout`, `regex`, `field` | Moves accessibility focus to the item |
-| `speak_item` | `label`, `timeout`, `regex`, `field` | Speaks the item |
-| `act_item` | `act`, `label`, `times`, `timeout`, `regex`, `field` | Long-presses or scrolls the item `times` times: `act` is `"long_press"`, `"scroll_forward"` or `"scroll_backward"`. A scroll without `label` scrolls the largest list on screen |
+| `touch_hold` | `label`, `hold`, `slide`, `distance`, `timeout`, `regex`, `field`, `kind` | Touches the centre of the item and holds for `hold` ms, then slides `distance` dp towards `slide` if set, and lifts |
+| `focus_item` | `label`, `timeout`, `regex`, `field`, `kind` | Moves accessibility focus to the item |
+| `speak_item` | `label`, `timeout`, `regex`, `field`, `kind` | Speaks the item |
+| `act_item` | `act`, `label`, `times`, `timeout`, `regex`, `field`, `kind` | Long-presses or scrolls the item `times` times: `act` is `"long_press"`, `"scroll_forward"` or `"scroll_backward"`. A scroll without `label` scrolls the largest list on screen |
 | `speak_text` | `text` | Speaks the text |
 | `open_app` | `app` | Opens an app: its Open app command |
 | `type_text` | `text`, `replace` | Types the text in the focused field; `replace` replaces its text |
@@ -115,7 +115,7 @@ Steps, by `type`:
 | `stop` | | Stops the macro |
 | `wait_until` | `condition`, `timeout` | Waits until the condition is met; the macro stops after `timeout` ms |
 
-`timeout` of `tap`, `touch_hold`, `focus_item`, `speak_item` and `act_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint, state or tooltip, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` or `"id"` (the resource ID). `x` and `y` of `tap_position` are from 0 to 10000; the step fails when the position is outside the screen. `hold` of `touch_hold` is from 100 to 600000 ms; 1000 by default. `slide` is `"up"`, `"down"`, `"left"` or `"right"`; without it the touch lifts where it is. `distance` is from 1 to 1000 dp; 100 by default; the end of the slide is kept on the screen. The Speak coordinates command speaks and copies the position of the centre of the focused item. A macro has at most 200 steps.
+`timeout` of `tap`, `touch_hold`, `focus_item`, `speak_item` and `act_item` is how long to wait for the item, from 500 to 60000 ms; 3000 by default. `label` is found anywhere in the item's text, description, hint, state or tooltip, ignoring case. With `"regex": true` it is a regular expression. `field` limits the search to `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` or `"id"` (the resource ID). `kind` limits it to items of that type, as `kind` of the `item` test does; without it, any type. `x` and `y` of `tap_position` are from 0 to 10000; the step fails when the position is outside the screen. `hold` of `touch_hold` is from 100 to 600000 ms; 1000 by default. `slide` is `"up"`, `"down"`, `"left"` or `"right"`; without it the touch lifts where it is. `distance` is from 1 to 1000 dp; 100 by default; the end of the slide is kept on the screen. The Speak coordinates command speaks and copies the position of the centre of the focused item. A macro has at most 200 steps.
 
 A condition is a list of tests. Tests are joined with "and"; a test with `"or": true` starts a new group joined with "or". `"not": true` reverses a test. A condition has at most 20 tests.
 

@@ -52,14 +52,15 @@ object Macros {
 
   /**
    * Clicks the first item on screen whose text or description, or only its [field] when that isn't
-   * null, contains [label], ignoring case, or matches it as a regular expression for [regex],
-   * waiting up to [timeoutMillis] for it to appear.
+   * null, contains [label], ignoring case, or matches it as a regular expression for [regex], and
+   * that is of [kind] when it isn't null, waiting up to [timeoutMillis] for it to appear.
    */
   data class Tap(
     val label: String,
     val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
     val regex: Boolean = false,
     val field: Field? = null,
+    val kind: Kind? = null,
   ) : Step()
 
   /**
@@ -82,6 +83,7 @@ object Macros {
     val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
     val regex: Boolean = false,
     val field: Field? = null,
+    val kind: Kind? = null,
   ) : Step()
 
   /**
@@ -93,6 +95,7 @@ object Macros {
     val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
     val regex: Boolean = false,
     val field: Field? = null,
+    val kind: Kind? = null,
   ) : Step()
 
   /**
@@ -104,6 +107,7 @@ object Macros {
     val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
     val regex: Boolean = false,
     val field: Field? = null,
+    val kind: Kind? = null,
   ) : Step()
 
   /** Speaks [text]. */
@@ -132,6 +136,7 @@ object Macros {
     val timeoutMillis: Long = DEFAULT_TAP_TIMEOUT_MS,
     val regex: Boolean = false,
     val field: Field? = null,
+    val kind: Kind? = null,
   ) : Step()
 
   /** Opens the app of the [OpenAppActions] value [value]. */
@@ -744,10 +749,10 @@ object Macros {
       is RunCommand ->
         Commands.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
       is Wait -> waitText(context, step.millis)
-      is Tap -> context.getString(R.string.macro_step_tap_value, labelText(context, step.label, step.regex, step.field))
+      is Tap -> context.getString(R.string.macro_step_tap_value, stepItemText(context, step.label, step.regex, step.field, step.kind))
       is TapPosition -> context.getString(R.string.macro_step_tap_position_value, step.x, step.y)
       is TouchHold -> {
-        val label = labelText(context, step.label, step.regex, step.field)
+        val label = stepItemText(context, step.label, step.regex, step.field, step.kind)
         val seconds = secondsText(step.holdMillis)
         step.slide?.let {
           context.getString(
@@ -760,11 +765,11 @@ object Macros {
         } ?: context.getString(R.string.macro_step_touch_hold_value, label, seconds)
       }
       is FocusItem ->
-        context.getString(R.string.macro_step_focus_value, labelText(context, step.label, step.regex, step.field))
+        context.getString(R.string.macro_step_focus_value, stepItemText(context, step.label, step.regex, step.field, step.kind))
       is ActOnItem -> {
         val item =
           if (step.label.isEmpty()) context.getString(R.string.macro_list_on_screen)
-          else labelText(context, step.label, step.regex, step.field)
+          else stepItemText(context, step.label, step.regex, step.field, step.kind)
         if (step.times > 1) {
           context.getString(R.string.macro_step_act_times_value, context.getString(step.act.title), item, step.times)
         } else {
@@ -772,7 +777,7 @@ object Macros {
         }
       }
       is SpeakItem ->
-        context.getString(R.string.macro_step_speak_item_value, labelText(context, step.label, step.regex, step.field))
+        context.getString(R.string.macro_step_speak_item_value, stepItemText(context, step.label, step.regex, step.field, step.kind))
       is SpeakText -> context.getString(R.string.macro_step_speak_text_value, step.text)
       is OpenApp ->
         OpenAppActions.label(context, step.value) ?: context.getString(R.string.macro_step_unavailable)
@@ -893,6 +898,10 @@ object Macros {
         context.getString(R.string.macro_do_into_value, context.getString(step.kind.title), step.text, step.name)
       else -> context.getString(R.string.macro_do_value, context.getString(step.kind.title), step.text)
     }
+
+  /** Returns the item a step looks for by [label], with its [field], [regex] and [kind]. */
+  private fun stepItemText(context: Context, label: String, regex: Boolean, field: Field?, kind: Kind?): String =
+    itemText(context, labelText(context, label, regex, field), kind)
 
   /** Returns [label], with the [field] it is looked in, and said to be a regular expression for [regex]. */
   private fun labelText(context: Context, label: String, regex: Boolean, field: Field?): String =
@@ -1261,6 +1270,7 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+          .apply { step.kind?.let { put("kind", it.key) } }
       is TapPosition -> JSONObject().put("type", TYPE_TAP_POSITION).put("x", step.x).put("y", step.y)
       is TouchHold ->
         JSONObject()
@@ -1271,6 +1281,7 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+          .apply { step.kind?.let { put("kind", it.key) } }
       is ActOnItem ->
         JSONObject()
           .put("type", TYPE_ACT_ITEM)
@@ -1280,6 +1291,7 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+          .apply { step.kind?.let { put("kind", it.key) } }
       is FocusItem ->
         JSONObject()
           .put("type", TYPE_FOCUS_ITEM)
@@ -1287,6 +1299,7 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+          .apply { step.kind?.let { put("kind", it.key) } }
       is SpeakItem ->
         JSONObject()
           .put("type", TYPE_SPEAK_ITEM)
@@ -1294,6 +1307,7 @@ object Macros {
           .put("timeout", step.timeoutMillis)
           .apply { if (step.regex) put("regex", true) }
           .apply { step.field?.let { put("field", it.key) } }
+          .apply { step.kind?.let { put("kind", it.key) } }
       is SpeakText -> JSONObject().put("type", TYPE_SPEAK_TEXT).put("text", step.text)
       is Do ->
         JSONObject()
@@ -1486,6 +1500,7 @@ object Macros {
             item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
             item.optBoolean("regex", false),
             Field.of(item.optString("field")),
+            Kind.of(item.optString("kind")),
           )
         }
       TYPE_TAP_POSITION -> {
@@ -1503,6 +1518,7 @@ object Macros {
             item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
             item.optBoolean("regex", false),
             Field.of(item.optString("field")),
+            Kind.of(item.optString("kind")),
           )
         }
       TYPE_ACT_ITEM ->
@@ -1516,6 +1532,7 @@ object Macros {
               item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
               item.optBoolean("regex", false),
               Field.of(item.optString("field")),
+              Kind.of(item.optString("kind")).takeIf { label.isNotEmpty() },
             )
           }
         }
@@ -1526,6 +1543,7 @@ object Macros {
             item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
             item.optBoolean("regex", false),
             Field.of(item.optString("field")),
+            Kind.of(item.optString("kind")),
           )
         }
       TYPE_SPEAK_ITEM ->
@@ -1535,6 +1553,7 @@ object Macros {
             item.optLong("timeout", DEFAULT_TAP_TIMEOUT_MS).coerceIn(MIN_TAP_TIMEOUT_MS, MAX_TAP_TIMEOUT_MS),
             item.optBoolean("regex", false),
             Field.of(item.optString("field")),
+            Kind.of(item.optString("kind")),
           )
         }
       TYPE_SPEAK_TEXT -> item.optString("text").takeIf { it.isNotBlank() }?.let { SpeakText(it.take(MAX_TEXT)) }
