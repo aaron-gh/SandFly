@@ -262,6 +262,249 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT = -192;
   public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT = -193;
 
+  // Two-stroke swipes with a back-and-forth or angle swipe as either stroke, numbered down from
+  // -1000, sixteen for each first stroke; see TwoStrokeSwipeIds.
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_DOWN = -1004;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_UP = -1005;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_RIGHT = -1006;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_LEFT = -1007;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_LEFT = -1008;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_RIGHT = -1009;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_LEFT = -1010;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_RIGHT = -1011;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_UP = -1012;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_DOWN = -1013;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_UP = -1014;
+  public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_DOWN = -1015;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_DOWN = -1020;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_UP = -1021;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT = -1022;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT = -1023;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_LEFT = -1024;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_RIGHT = -1025;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_LEFT = -1026;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT = -1027;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_UP = -1028;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_DOWN = -1029;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_UP = -1030;
+  public static final int GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN = -1031;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_DOWN = -1036;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_UP = -1037;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT = -1038;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT = -1039;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_LEFT = -1040;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_RIGHT = -1041;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_LEFT = -1042;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT = -1043;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_UP = -1044;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_DOWN = -1045;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_UP = -1046;
+  public static final int GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN = -1047;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_DOWN = -1052;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_UP = -1053;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT = -1054;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT = -1055;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_LEFT = -1056;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_RIGHT = -1057;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT = -1058;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT = -1059;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_UP = -1060;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN = -1061;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP = -1062;
+  public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN = -1063;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP = -1064;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN = -1065;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT = -1066;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT = -1067;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN = -1068;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP = -1069;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT = -1070;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT = -1071;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT = -1072;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT = -1073;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT = -1074;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT = -1075;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP = -1076;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN = -1077;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP = -1078;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN = -1079;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP = -1080;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN = -1081;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT = -1082;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT = -1083;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_DOWN = -1084;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_UP = -1085;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT = -1086;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT = -1087;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_LEFT = -1088;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_RIGHT = -1089;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT = -1090;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT = -1091;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_UP = -1092;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN = -1093;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_UP = -1094;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN = -1095;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP = -1096;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN = -1097;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT = -1098;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT = -1099;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN = -1100;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP = -1101;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT = -1102;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT = -1103;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT = -1104;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT = -1105;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT = -1106;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT = -1107;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP = -1108;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN = -1109;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP = -1110;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN = -1111;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP = -1112;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN = -1113;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT = -1114;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT = -1115;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN = -1116;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP = -1117;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT = -1118;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT = -1119;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT = -1120;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT = -1121;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT = -1122;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT = -1123;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP = -1124;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN = -1125;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP = -1126;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN = -1127;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP = -1128;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN = -1129;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT = -1130;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT = -1131;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN = -1132;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP = -1133;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT = -1134;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT = -1135;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT = -1136;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT = -1137;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT = -1138;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT = -1139;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP = -1140;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN = -1141;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP = -1142;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN = -1143;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP = -1144;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN = -1145;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT = -1146;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT = -1147;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN = -1148;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP = -1149;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT = -1150;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT = -1151;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT = -1152;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT = -1153;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT = -1154;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT = -1155;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP = -1156;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN = -1157;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP = -1158;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN = -1159;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP = -1160;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN = -1161;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT = -1162;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT = -1163;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN = -1164;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP = -1165;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT = -1166;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT = -1167;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT = -1168;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT = -1169;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT = -1170;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT = -1171;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP = -1172;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN = -1173;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP = -1174;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN = -1175;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP = -1176;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN = -1177;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT = -1178;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT = -1179;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN = -1180;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP = -1181;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT = -1182;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT = -1183;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT = -1184;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT = -1185;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT = -1186;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT = -1187;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP = -1188;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN = -1189;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP = -1190;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN = -1191;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP = -1192;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN = -1193;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT = -1194;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT = -1195;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_DOWN = -1196;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_UP = -1197;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT = -1198;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT = -1199;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_LEFT = -1200;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT = -1201;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT = -1202;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT = -1203;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_UP = -1204;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN = -1205;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP = -1206;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN = -1207;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP = -1208;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN = -1209;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT = -1210;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT = -1211;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN = -1212;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP = -1213;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT = -1214;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT = -1215;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT = -1216;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT = -1217;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT = -1218;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT = -1219;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP = -1220;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN = -1221;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP = -1222;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN = -1223;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP = -1224;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN = -1225;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT = -1226;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT = -1227;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_DOWN = -1228;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_UP = -1229;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT = -1230;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT = -1231;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_LEFT = -1232;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT = -1233;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT = -1234;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT = -1235;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_UP = -1236;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN = -1237;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP = -1238;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN = -1239;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP = -1240;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN = -1241;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT = -1242;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT = -1243;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN = -1244;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP = -1245;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT = -1246;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT = -1247;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT = -1248;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT = -1249;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT = -1250;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT = -1251;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP = -1252;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN = -1253;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP = -1254;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN = -1255;
+
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
 
@@ -305,48 +548,6 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
       case AccessibilityService.GESTURE_SWIPE_RIGHT_AND_UP -> GESTURE_SWIPE_RIGHT_AND_UP_AND_HOLD;
       case AccessibilityService.GESTURE_SWIPE_RIGHT_AND_DOWN -> GESTURE_SWIPE_RIGHT_AND_DOWN_AND_HOLD;
       default -> 0;
-    };
-  }
-
-  /**
-   * Returns the two-stroke swipe of the one-finger swipe {@code firstGestureId} and then the
-   * one-finger swipe {@code secondGestureId}, or 0 when either is no one-direction swipe.
-   */
-  public static int twoStrokeSwipeOf(int firstGestureId, int secondGestureId) {
-    int first = oneDirectionSwipeIndex(firstGestureId);
-    int second = oneDirectionSwipeIndex(secondGestureId);
-    if (first < 0 || second < 0) {
-      return 0;
-    }
-    // Numbered down from the first, four for each first direction, in the order up, down, left,
-    // right.
-    return GESTURE_SWIPE_UP_LIFT_SWIPE_UP - first * 4 - second;
-  }
-
-  /**
-   * Returns the four two-stroke swipes that start with the one-finger swipe {@code
-   * swipeGestureId}, or none for every other gesture.
-   */
-  public static int[] twoStrokeSwipesStartingWith(int swipeGestureId) {
-    if (oneDirectionSwipeIndex(swipeGestureId) < 0) {
-      return new int[0];
-    }
-    return new int[] {
-      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_UP),
-      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_DOWN),
-      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_LEFT),
-      twoStrokeSwipeOf(swipeGestureId, AccessibilityService.GESTURE_SWIPE_RIGHT)
-    };
-  }
-
-  /** The place of a one-direction swipe in up, down, left, right, or -1 for other gestures. */
-  private static int oneDirectionSwipeIndex(int gestureId) {
-    return switch (gestureId) {
-      case AccessibilityService.GESTURE_SWIPE_UP -> 0;
-      case AccessibilityService.GESTURE_SWIPE_DOWN -> 1;
-      case AccessibilityService.GESTURE_SWIPE_LEFT -> 2;
-      case AccessibilityService.GESTURE_SWIPE_RIGHT -> 3;
-      default -> -1;
     };
   }
 

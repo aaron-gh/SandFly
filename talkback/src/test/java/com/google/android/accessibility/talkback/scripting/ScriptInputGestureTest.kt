@@ -86,6 +86,11 @@ class ScriptInputGestureTest {
       "swipeRightLiftSwipeUp",
       ScriptInput.gestureName(GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP),
     )
+    assertEquals(
+      "swipeUpThenLeftLiftSwipeRightThenDown",
+      ScriptInput.gestureName(GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN),
+    )
+    assertTrue(ScriptInput.isGesture("swipeLeftLiftSwipeDownThenUp"))
   }
 
   @Test

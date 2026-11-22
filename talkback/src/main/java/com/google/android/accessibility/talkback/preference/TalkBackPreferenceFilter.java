@@ -455,6 +455,45 @@ public class TalkBackPreferenceFilter {
     CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES(
         R.string.pref_category_1finger_two_stroke_shortcuts_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_TURN_SECOND(
+        R.string.pref_category_1finger_two_stroke_turn_second_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_UP_AND_DOWN(
+        R.string.pref_category_1finger_two_stroke_up_and_down_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_DOWN_AND_UP(
+        R.string.pref_category_1finger_two_stroke_down_and_up_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_LEFT_AND_RIGHT(
+        R.string.pref_category_1finger_two_stroke_left_and_right_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_RIGHT_AND_LEFT(
+        R.string.pref_category_1finger_two_stroke_right_and_left_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_UP_AND_LEFT(
+        R.string.pref_category_1finger_two_stroke_up_and_left_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_UP_AND_RIGHT(
+        R.string.pref_category_1finger_two_stroke_up_and_right_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_DOWN_AND_LEFT(
+        R.string.pref_category_1finger_two_stroke_down_and_left_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_DOWN_AND_RIGHT(
+        R.string.pref_category_1finger_two_stroke_down_and_right_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_LEFT_AND_UP(
+        R.string.pref_category_1finger_two_stroke_left_and_up_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_LEFT_AND_DOWN(
+        R.string.pref_category_1finger_two_stroke_left_and_down_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_RIGHT_AND_UP(
+        R.string.pref_category_1finger_two_stroke_right_and_up_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_GROUP_TWO_STROKE_SWIPES_RIGHT_AND_DOWN(
+        R.string.pref_category_1finger_two_stroke_right_and_down_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     TWO_STROKE_SWIPE_TIME(
         R.string.pref_two_stroke_swipe_time_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),

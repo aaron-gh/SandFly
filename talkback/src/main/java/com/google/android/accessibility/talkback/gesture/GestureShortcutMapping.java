@@ -116,6 +116,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.gestures.GestureConfiguration;
 import com.google.android.accessibility.utils.gestures.GestureManifold;
+import com.google.android.accessibility.utils.gestures.TwoStrokeSwipeIds;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -1352,6 +1353,1206 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         SINGLE_FINGER,
         R.string.pref_shortcut_right_lift_right_key,
         R.string.pref_shortcut_right_lift_right_default),
+    SWIPE_UP_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_up_and_down_key,
+        R.string.pref_shortcut_up_lift_up_and_down_default),
+    SWIPE_UP_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_down_and_up_key,
+        R.string.pref_shortcut_up_lift_down_and_up_default),
+    SWIPE_UP_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_left_and_right_key,
+        R.string.pref_shortcut_up_lift_left_and_right_default),
+    SWIPE_UP_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_right_and_left_key,
+        R.string.pref_shortcut_up_lift_right_and_left_default),
+    SWIPE_UP_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_up_and_left_key,
+        R.string.pref_shortcut_up_lift_up_and_left_default),
+    SWIPE_UP_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_up_and_right_key,
+        R.string.pref_shortcut_up_lift_up_and_right_default),
+    SWIPE_UP_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_down_and_left_key,
+        R.string.pref_shortcut_up_lift_down_and_left_default),
+    SWIPE_UP_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_down_and_right_key,
+        R.string.pref_shortcut_up_lift_down_and_right_default),
+    SWIPE_UP_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_left_and_up_key,
+        R.string.pref_shortcut_up_lift_left_and_up_default),
+    SWIPE_UP_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_left_and_down_key,
+        R.string.pref_shortcut_up_lift_left_and_down_default),
+    SWIPE_UP_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_right_and_up_key,
+        R.string.pref_shortcut_up_lift_right_and_up_default),
+    SWIPE_UP_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_lift_right_and_down_key,
+        R.string.pref_shortcut_up_lift_right_and_down_default),
+    SWIPE_DOWN_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_up_and_down_key,
+        R.string.pref_shortcut_down_lift_up_and_down_default),
+    SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_down_and_up_key,
+        R.string.pref_shortcut_down_lift_down_and_up_default),
+    SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_left_and_right_key,
+        R.string.pref_shortcut_down_lift_left_and_right_default),
+    SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_right_and_left_key,
+        R.string.pref_shortcut_down_lift_right_and_left_default),
+    SWIPE_DOWN_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_up_and_left_key,
+        R.string.pref_shortcut_down_lift_up_and_left_default),
+    SWIPE_DOWN_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_up_and_right_key,
+        R.string.pref_shortcut_down_lift_up_and_right_default),
+    SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_down_and_left_key,
+        R.string.pref_shortcut_down_lift_down_and_left_default),
+    SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_down_and_right_key,
+        R.string.pref_shortcut_down_lift_down_and_right_default),
+    SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_left_and_up_key,
+        R.string.pref_shortcut_down_lift_left_and_up_default),
+    SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_left_and_down_key,
+        R.string.pref_shortcut_down_lift_left_and_down_default),
+    SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_right_and_up_key,
+        R.string.pref_shortcut_down_lift_right_and_up_default),
+    SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_lift_right_and_down_key,
+        R.string.pref_shortcut_down_lift_right_and_down_default),
+    SWIPE_LEFT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_up_and_down_key,
+        R.string.pref_shortcut_left_lift_up_and_down_default),
+    SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_down_and_up_key,
+        R.string.pref_shortcut_left_lift_down_and_up_default),
+    SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_left_and_right_key,
+        R.string.pref_shortcut_left_lift_left_and_right_default),
+    SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_right_and_left_key,
+        R.string.pref_shortcut_left_lift_right_and_left_default),
+    SWIPE_LEFT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_up_and_left_key,
+        R.string.pref_shortcut_left_lift_up_and_left_default),
+    SWIPE_LEFT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_up_and_right_key,
+        R.string.pref_shortcut_left_lift_up_and_right_default),
+    SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_down_and_left_key,
+        R.string.pref_shortcut_left_lift_down_and_left_default),
+    SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_down_and_right_key,
+        R.string.pref_shortcut_left_lift_down_and_right_default),
+    SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_left_and_up_key,
+        R.string.pref_shortcut_left_lift_left_and_up_default),
+    SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_left_and_down_key,
+        R.string.pref_shortcut_left_lift_left_and_down_default),
+    SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_right_and_up_key,
+        R.string.pref_shortcut_left_lift_right_and_up_default),
+    SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_lift_right_and_down_key,
+        R.string.pref_shortcut_left_lift_right_and_down_default),
+    SWIPE_RIGHT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_up_and_down_key,
+        R.string.pref_shortcut_right_lift_up_and_down_default),
+    SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_down_and_up_key,
+        R.string.pref_shortcut_right_lift_down_and_up_default),
+    SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_left_and_right_key,
+        R.string.pref_shortcut_right_lift_left_and_right_default),
+    SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_right_and_left_key,
+        R.string.pref_shortcut_right_lift_right_and_left_default),
+    SWIPE_RIGHT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_up_and_left_key,
+        R.string.pref_shortcut_right_lift_up_and_left_default),
+    SWIPE_RIGHT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_up_and_right_key,
+        R.string.pref_shortcut_right_lift_up_and_right_default),
+    SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_down_and_left_key,
+        R.string.pref_shortcut_right_lift_down_and_left_default),
+    SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_down_and_right_key,
+        R.string.pref_shortcut_right_lift_down_and_right_default),
+    SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_left_and_up_key,
+        R.string.pref_shortcut_right_lift_left_and_up_default),
+    SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_left_and_down_key,
+        R.string.pref_shortcut_right_lift_left_and_down_default),
+    SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_right_and_up_key,
+        R.string.pref_shortcut_right_lift_right_and_up_default),
+    SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_lift_right_and_down_key,
+        R.string.pref_shortcut_right_lift_right_and_down_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_up_key,
+        R.string.pref_shortcut_up_and_down_lift_up_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_down_key,
+        R.string.pref_shortcut_up_and_down_lift_down_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_left_key,
+        R.string.pref_shortcut_up_and_down_lift_left_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_right_key,
+        R.string.pref_shortcut_up_and_down_lift_right_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_up_and_down_key,
+        R.string.pref_shortcut_up_and_down_lift_up_and_down_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_down_and_up_key,
+        R.string.pref_shortcut_up_and_down_lift_down_and_up_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_left_and_right_key,
+        R.string.pref_shortcut_up_and_down_lift_left_and_right_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_right_and_left_key,
+        R.string.pref_shortcut_up_and_down_lift_right_and_left_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_up_and_left_key,
+        R.string.pref_shortcut_up_and_down_lift_up_and_left_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_up_and_right_key,
+        R.string.pref_shortcut_up_and_down_lift_up_and_right_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_down_and_left_key,
+        R.string.pref_shortcut_up_and_down_lift_down_and_left_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_down_and_right_key,
+        R.string.pref_shortcut_up_and_down_lift_down_and_right_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_left_and_up_key,
+        R.string.pref_shortcut_up_and_down_lift_left_and_up_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_left_and_down_key,
+        R.string.pref_shortcut_up_and_down_lift_left_and_down_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_right_and_up_key,
+        R.string.pref_shortcut_up_and_down_lift_right_and_up_default),
+    SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_down_lift_right_and_down_key,
+        R.string.pref_shortcut_up_and_down_lift_right_and_down_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_up_key,
+        R.string.pref_shortcut_down_and_up_lift_up_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_down_key,
+        R.string.pref_shortcut_down_and_up_lift_down_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_left_key,
+        R.string.pref_shortcut_down_and_up_lift_left_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_right_key,
+        R.string.pref_shortcut_down_and_up_lift_right_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_up_and_down_key,
+        R.string.pref_shortcut_down_and_up_lift_up_and_down_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_down_and_up_key,
+        R.string.pref_shortcut_down_and_up_lift_down_and_up_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_left_and_right_key,
+        R.string.pref_shortcut_down_and_up_lift_left_and_right_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_right_and_left_key,
+        R.string.pref_shortcut_down_and_up_lift_right_and_left_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_up_and_left_key,
+        R.string.pref_shortcut_down_and_up_lift_up_and_left_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_up_and_right_key,
+        R.string.pref_shortcut_down_and_up_lift_up_and_right_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_down_and_left_key,
+        R.string.pref_shortcut_down_and_up_lift_down_and_left_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_down_and_right_key,
+        R.string.pref_shortcut_down_and_up_lift_down_and_right_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_left_and_up_key,
+        R.string.pref_shortcut_down_and_up_lift_left_and_up_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_left_and_down_key,
+        R.string.pref_shortcut_down_and_up_lift_left_and_down_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_right_and_up_key,
+        R.string.pref_shortcut_down_and_up_lift_right_and_up_default),
+    SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_up_lift_right_and_down_key,
+        R.string.pref_shortcut_down_and_up_lift_right_and_down_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_up_key,
+        R.string.pref_shortcut_left_and_right_lift_up_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_down_key,
+        R.string.pref_shortcut_left_and_right_lift_down_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_left_key,
+        R.string.pref_shortcut_left_and_right_lift_left_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_right_key,
+        R.string.pref_shortcut_left_and_right_lift_right_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_up_and_down_key,
+        R.string.pref_shortcut_left_and_right_lift_up_and_down_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_down_and_up_key,
+        R.string.pref_shortcut_left_and_right_lift_down_and_up_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_left_and_right_key,
+        R.string.pref_shortcut_left_and_right_lift_left_and_right_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_right_and_left_key,
+        R.string.pref_shortcut_left_and_right_lift_right_and_left_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_up_and_left_key,
+        R.string.pref_shortcut_left_and_right_lift_up_and_left_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_up_and_right_key,
+        R.string.pref_shortcut_left_and_right_lift_up_and_right_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_down_and_left_key,
+        R.string.pref_shortcut_left_and_right_lift_down_and_left_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_down_and_right_key,
+        R.string.pref_shortcut_left_and_right_lift_down_and_right_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_left_and_up_key,
+        R.string.pref_shortcut_left_and_right_lift_left_and_up_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_left_and_down_key,
+        R.string.pref_shortcut_left_and_right_lift_left_and_down_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_right_and_up_key,
+        R.string.pref_shortcut_left_and_right_lift_right_and_up_default),
+    SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_right_lift_right_and_down_key,
+        R.string.pref_shortcut_left_and_right_lift_right_and_down_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_up_key,
+        R.string.pref_shortcut_right_and_left_lift_up_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_down_key,
+        R.string.pref_shortcut_right_and_left_lift_down_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_left_key,
+        R.string.pref_shortcut_right_and_left_lift_left_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_right_key,
+        R.string.pref_shortcut_right_and_left_lift_right_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_up_and_down_key,
+        R.string.pref_shortcut_right_and_left_lift_up_and_down_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_down_and_up_key,
+        R.string.pref_shortcut_right_and_left_lift_down_and_up_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_left_and_right_key,
+        R.string.pref_shortcut_right_and_left_lift_left_and_right_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_right_and_left_key,
+        R.string.pref_shortcut_right_and_left_lift_right_and_left_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_up_and_left_key,
+        R.string.pref_shortcut_right_and_left_lift_up_and_left_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_up_and_right_key,
+        R.string.pref_shortcut_right_and_left_lift_up_and_right_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_down_and_left_key,
+        R.string.pref_shortcut_right_and_left_lift_down_and_left_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_down_and_right_key,
+        R.string.pref_shortcut_right_and_left_lift_down_and_right_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_left_and_up_key,
+        R.string.pref_shortcut_right_and_left_lift_left_and_up_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_left_and_down_key,
+        R.string.pref_shortcut_right_and_left_lift_left_and_down_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_right_and_up_key,
+        R.string.pref_shortcut_right_and_left_lift_right_and_up_default),
+    SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_left_lift_right_and_down_key,
+        R.string.pref_shortcut_right_and_left_lift_right_and_down_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_up_key,
+        R.string.pref_shortcut_up_and_left_lift_up_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_down_key,
+        R.string.pref_shortcut_up_and_left_lift_down_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_left_key,
+        R.string.pref_shortcut_up_and_left_lift_left_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_right_key,
+        R.string.pref_shortcut_up_and_left_lift_right_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_up_and_down_key,
+        R.string.pref_shortcut_up_and_left_lift_up_and_down_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_down_and_up_key,
+        R.string.pref_shortcut_up_and_left_lift_down_and_up_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_left_and_right_key,
+        R.string.pref_shortcut_up_and_left_lift_left_and_right_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_right_and_left_key,
+        R.string.pref_shortcut_up_and_left_lift_right_and_left_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_up_and_left_key,
+        R.string.pref_shortcut_up_and_left_lift_up_and_left_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_up_and_right_key,
+        R.string.pref_shortcut_up_and_left_lift_up_and_right_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_down_and_left_key,
+        R.string.pref_shortcut_up_and_left_lift_down_and_left_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_down_and_right_key,
+        R.string.pref_shortcut_up_and_left_lift_down_and_right_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_left_and_up_key,
+        R.string.pref_shortcut_up_and_left_lift_left_and_up_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_left_and_down_key,
+        R.string.pref_shortcut_up_and_left_lift_left_and_down_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_right_and_up_key,
+        R.string.pref_shortcut_up_and_left_lift_right_and_up_default),
+    SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_left_lift_right_and_down_key,
+        R.string.pref_shortcut_up_and_left_lift_right_and_down_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_up_key,
+        R.string.pref_shortcut_up_and_right_lift_up_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_down_key,
+        R.string.pref_shortcut_up_and_right_lift_down_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_left_key,
+        R.string.pref_shortcut_up_and_right_lift_left_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_right_key,
+        R.string.pref_shortcut_up_and_right_lift_right_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_up_and_down_key,
+        R.string.pref_shortcut_up_and_right_lift_up_and_down_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_down_and_up_key,
+        R.string.pref_shortcut_up_and_right_lift_down_and_up_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_left_and_right_key,
+        R.string.pref_shortcut_up_and_right_lift_left_and_right_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_right_and_left_key,
+        R.string.pref_shortcut_up_and_right_lift_right_and_left_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_up_and_left_key,
+        R.string.pref_shortcut_up_and_right_lift_up_and_left_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_up_and_right_key,
+        R.string.pref_shortcut_up_and_right_lift_up_and_right_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_down_and_left_key,
+        R.string.pref_shortcut_up_and_right_lift_down_and_left_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_down_and_right_key,
+        R.string.pref_shortcut_up_and_right_lift_down_and_right_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_left_and_up_key,
+        R.string.pref_shortcut_up_and_right_lift_left_and_up_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_left_and_down_key,
+        R.string.pref_shortcut_up_and_right_lift_left_and_down_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_right_and_up_key,
+        R.string.pref_shortcut_up_and_right_lift_right_and_up_default),
+    SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_up_and_right_lift_right_and_down_key,
+        R.string.pref_shortcut_up_and_right_lift_right_and_down_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_up_key,
+        R.string.pref_shortcut_down_and_left_lift_up_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_down_key,
+        R.string.pref_shortcut_down_and_left_lift_down_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_left_key,
+        R.string.pref_shortcut_down_and_left_lift_left_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_right_key,
+        R.string.pref_shortcut_down_and_left_lift_right_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_up_and_down_key,
+        R.string.pref_shortcut_down_and_left_lift_up_and_down_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_down_and_up_key,
+        R.string.pref_shortcut_down_and_left_lift_down_and_up_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_left_and_right_key,
+        R.string.pref_shortcut_down_and_left_lift_left_and_right_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_right_and_left_key,
+        R.string.pref_shortcut_down_and_left_lift_right_and_left_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_up_and_left_key,
+        R.string.pref_shortcut_down_and_left_lift_up_and_left_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_up_and_right_key,
+        R.string.pref_shortcut_down_and_left_lift_up_and_right_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_down_and_left_key,
+        R.string.pref_shortcut_down_and_left_lift_down_and_left_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_down_and_right_key,
+        R.string.pref_shortcut_down_and_left_lift_down_and_right_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_left_and_up_key,
+        R.string.pref_shortcut_down_and_left_lift_left_and_up_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_left_and_down_key,
+        R.string.pref_shortcut_down_and_left_lift_left_and_down_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_right_and_up_key,
+        R.string.pref_shortcut_down_and_left_lift_right_and_up_default),
+    SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_left_lift_right_and_down_key,
+        R.string.pref_shortcut_down_and_left_lift_right_and_down_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_up_key,
+        R.string.pref_shortcut_down_and_right_lift_up_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_down_key,
+        R.string.pref_shortcut_down_and_right_lift_down_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_left_key,
+        R.string.pref_shortcut_down_and_right_lift_left_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_right_key,
+        R.string.pref_shortcut_down_and_right_lift_right_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_up_and_down_key,
+        R.string.pref_shortcut_down_and_right_lift_up_and_down_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_down_and_up_key,
+        R.string.pref_shortcut_down_and_right_lift_down_and_up_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_left_and_right_key,
+        R.string.pref_shortcut_down_and_right_lift_left_and_right_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_right_and_left_key,
+        R.string.pref_shortcut_down_and_right_lift_right_and_left_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_up_and_left_key,
+        R.string.pref_shortcut_down_and_right_lift_up_and_left_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_up_and_right_key,
+        R.string.pref_shortcut_down_and_right_lift_up_and_right_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_down_and_left_key,
+        R.string.pref_shortcut_down_and_right_lift_down_and_left_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_down_and_right_key,
+        R.string.pref_shortcut_down_and_right_lift_down_and_right_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_left_and_up_key,
+        R.string.pref_shortcut_down_and_right_lift_left_and_up_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_left_and_down_key,
+        R.string.pref_shortcut_down_and_right_lift_left_and_down_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_right_and_up_key,
+        R.string.pref_shortcut_down_and_right_lift_right_and_up_default),
+    SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_down_and_right_lift_right_and_down_key,
+        R.string.pref_shortcut_down_and_right_lift_right_and_down_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_up_key,
+        R.string.pref_shortcut_left_and_up_lift_up_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_down_key,
+        R.string.pref_shortcut_left_and_up_lift_down_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_left_key,
+        R.string.pref_shortcut_left_and_up_lift_left_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_right_key,
+        R.string.pref_shortcut_left_and_up_lift_right_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_up_and_down_key,
+        R.string.pref_shortcut_left_and_up_lift_up_and_down_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_down_and_up_key,
+        R.string.pref_shortcut_left_and_up_lift_down_and_up_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_left_and_right_key,
+        R.string.pref_shortcut_left_and_up_lift_left_and_right_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_right_and_left_key,
+        R.string.pref_shortcut_left_and_up_lift_right_and_left_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_up_and_left_key,
+        R.string.pref_shortcut_left_and_up_lift_up_and_left_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_up_and_right_key,
+        R.string.pref_shortcut_left_and_up_lift_up_and_right_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_down_and_left_key,
+        R.string.pref_shortcut_left_and_up_lift_down_and_left_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_down_and_right_key,
+        R.string.pref_shortcut_left_and_up_lift_down_and_right_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_left_and_up_key,
+        R.string.pref_shortcut_left_and_up_lift_left_and_up_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_left_and_down_key,
+        R.string.pref_shortcut_left_and_up_lift_left_and_down_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_right_and_up_key,
+        R.string.pref_shortcut_left_and_up_lift_right_and_up_default),
+    SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_up_lift_right_and_down_key,
+        R.string.pref_shortcut_left_and_up_lift_right_and_down_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_up_key,
+        R.string.pref_shortcut_left_and_down_lift_up_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_down_key,
+        R.string.pref_shortcut_left_and_down_lift_down_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_left_key,
+        R.string.pref_shortcut_left_and_down_lift_left_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_right_key,
+        R.string.pref_shortcut_left_and_down_lift_right_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_up_and_down_key,
+        R.string.pref_shortcut_left_and_down_lift_up_and_down_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_down_and_up_key,
+        R.string.pref_shortcut_left_and_down_lift_down_and_up_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_left_and_right_key,
+        R.string.pref_shortcut_left_and_down_lift_left_and_right_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_right_and_left_key,
+        R.string.pref_shortcut_left_and_down_lift_right_and_left_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_up_and_left_key,
+        R.string.pref_shortcut_left_and_down_lift_up_and_left_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_up_and_right_key,
+        R.string.pref_shortcut_left_and_down_lift_up_and_right_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_down_and_left_key,
+        R.string.pref_shortcut_left_and_down_lift_down_and_left_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_down_and_right_key,
+        R.string.pref_shortcut_left_and_down_lift_down_and_right_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_left_and_up_key,
+        R.string.pref_shortcut_left_and_down_lift_left_and_up_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_left_and_down_key,
+        R.string.pref_shortcut_left_and_down_lift_left_and_down_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_right_and_up_key,
+        R.string.pref_shortcut_left_and_down_lift_right_and_up_default),
+    SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_left_and_down_lift_right_and_down_key,
+        R.string.pref_shortcut_left_and_down_lift_right_and_down_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_up_key,
+        R.string.pref_shortcut_right_and_up_lift_up_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_down_key,
+        R.string.pref_shortcut_right_and_up_lift_down_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_left_key,
+        R.string.pref_shortcut_right_and_up_lift_left_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_right_key,
+        R.string.pref_shortcut_right_and_up_lift_right_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_up_and_down_key,
+        R.string.pref_shortcut_right_and_up_lift_up_and_down_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_down_and_up_key,
+        R.string.pref_shortcut_right_and_up_lift_down_and_up_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_left_and_right_key,
+        R.string.pref_shortcut_right_and_up_lift_left_and_right_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_right_and_left_key,
+        R.string.pref_shortcut_right_and_up_lift_right_and_left_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_up_and_left_key,
+        R.string.pref_shortcut_right_and_up_lift_up_and_left_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_up_and_right_key,
+        R.string.pref_shortcut_right_and_up_lift_up_and_right_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_down_and_left_key,
+        R.string.pref_shortcut_right_and_up_lift_down_and_left_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_down_and_right_key,
+        R.string.pref_shortcut_right_and_up_lift_down_and_right_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_left_and_up_key,
+        R.string.pref_shortcut_right_and_up_lift_left_and_up_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_left_and_down_key,
+        R.string.pref_shortcut_right_and_up_lift_left_and_down_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_right_and_up_key,
+        R.string.pref_shortcut_right_and_up_lift_right_and_up_default),
+    SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_up_lift_right_and_down_key,
+        R.string.pref_shortcut_right_and_up_lift_right_and_down_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_up_key,
+        R.string.pref_shortcut_right_and_down_lift_up_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_down_key,
+        R.string.pref_shortcut_right_and_down_lift_down_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_left_key,
+        R.string.pref_shortcut_right_and_down_lift_left_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_right_key,
+        R.string.pref_shortcut_right_and_down_lift_right_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_up_and_down_key,
+        R.string.pref_shortcut_right_and_down_lift_up_and_down_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_down_and_up_key,
+        R.string.pref_shortcut_right_and_down_lift_down_and_up_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_left_and_right_key,
+        R.string.pref_shortcut_right_and_down_lift_left_and_right_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_right_and_left_key,
+        R.string.pref_shortcut_right_and_down_lift_right_and_left_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_up_and_left_key,
+        R.string.pref_shortcut_right_and_down_lift_up_and_left_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_up_and_right_key,
+        R.string.pref_shortcut_right_and_down_lift_up_and_right_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_down_and_left_key,
+        R.string.pref_shortcut_right_and_down_lift_down_and_left_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_down_and_right_key,
+        R.string.pref_shortcut_right_and_down_lift_down_and_right_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_left_and_up_key,
+        R.string.pref_shortcut_right_and_down_lift_left_and_up_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_left_and_down_key,
+        R.string.pref_shortcut_right_and_down_lift_left_and_down_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_right_and_up_key,
+        R.string.pref_shortcut_right_and_down_lift_right_and_up_default),
+    SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN,
+        SINGLE_FINGER,
+        R.string.pref_shortcut_right_and_down_lift_right_and_down_key,
+        R.string.pref_shortcut_right_and_down_lift_right_and_down_default),
 
     // Fingerprint.
     FINGERPRINT_SWIPE_UP(
@@ -2121,11 +3322,13 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           continue;
         }
 
-        // Back-and-forth and angle gestures, also with two fingers, and swipes in three directions
-        // are off while swipes run before the finger lifts.
+        // Back-and-forth and angle gestures, also with two fingers, swipes in three directions and
+        // two-stroke swipes with a back-and-forth or angle stroke are off while swipes run before
+        // the finger lifts.
         if (swipesBeforeLift
             && (GestureConfiguration.isTwoDirectionSwipe(gesture.gestureId)
                 || GestureConfiguration.isThreeDirectionSwipe(gesture.gestureId)
+                || TwoStrokeSwipeIds.isTwoStrokeSwipeWithTurn(gesture.gestureId)
                 || GestureConfiguration.isTwoFingerAngle(gesture.gestureId))) {
           continue;
         }
@@ -2701,6 +3904,486 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_right_lift_left);
       case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT ->
           context.getString(R.string.title_pref_shortcut_right_lift_right);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_down_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_up_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_right_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_left_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_left_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_up_and_right_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_left_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_down_and_right_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_up_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_left_and_down_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_up_lift_right_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_up_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_down_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_left_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_right_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_up_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_UP_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_up_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_LEFT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_down_and_left);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_DOWN_AND_RIGHT ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_down_and_right);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_left_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_LEFT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_left_and_down);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_UP ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_right_and_up);
+      case GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_LIFT_SWIPE_RIGHT_AND_DOWN ->
+          context.getString(R.string.title_pref_shortcut_right_and_down_lift_right_and_down);
       case GESTURE_SWIPE_UP_AND_HOLD ->
           context.getString(R.string.title_pref_shortcut_up_and_hold);
       case GESTURE_SWIPE_DOWN_AND_HOLD ->

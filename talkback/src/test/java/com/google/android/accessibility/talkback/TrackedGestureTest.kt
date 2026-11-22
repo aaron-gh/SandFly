@@ -83,6 +83,8 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_E
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_LEFT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT
 import java.time.Duration
 import kotlin.math.cos
 import kotlin.math.sin
@@ -910,6 +912,61 @@ class TrackedGestureTest {
     val upMs = oneFingerStroke(0, 160f, 400f, 0f, -120f)
     runUntil(upMs + 20)
     assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+  }
+
+  @Test
+  fun twoStrokeSwipeStartingWithAnAngleIsItsGesture() {
+    setTwoStrokeTime(1000)
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_up_and_left_lift_right_key)
+    val firstUpMs = oneFingerStroke(0, 300f, 400f, 0f, -120f, -120f, 0f)
+    runUntil(firstUpMs + 300)
+    assertEquals(emptyList<Int>(), service.gestures)
+    val secondUpMs = oneFingerStroke(firstUpMs + 400, 60f, 300f, 120f, 0f)
+    runUntil(secondUpMs + 2000)
+    assertEquals(listOf(GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun twoStrokeSwipeEndingWithAnAngleIsItsGesture() {
+    setTwoStrokeTime(1000)
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_right_lift_up_and_left_key)
+    val firstUpMs = oneFingerStroke(0, 60f, 300f, 120f, 0f)
+    runUntil(firstUpMs + 300)
+    val secondUpMs = oneFingerStroke(firstUpMs + 400, 300f, 400f, 0f, -120f, -120f, 0f)
+    runUntil(secondUpMs + 2000)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_LEFT), service.gestures)
+  }
+
+  @Test
+  fun twoStrokeSwipeStartingWithAnAngleLeavesSwipesRunningAtOnce() {
+    setTwoStrokeTime(2000)
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_up_and_left_lift_right_key)
+    val upMs = oneFingerStroke(0, 160f, 400f, 0f, -120f)
+    runUntil(upMs + 20)
+    assertEquals(listOf(GESTURE_SWIPE_UP), service.gestures)
+  }
+
+  @Test
+  fun angleWithoutACommandIsMatchedForItsTwoStrokeSwipe() {
+    setTwoStrokeTime(1000)
+    // Nothing else that starts upward has a command, so an up swipe alone runs before the lift.
+    assign(
+      R.string.shortcut_value_unassigned,
+      R.string.pref_shortcut_up_and_down_key,
+      R.string.pref_shortcut_up_and_left_key,
+      R.string.pref_shortcut_up_and_right_key,
+      R.string.pref_shortcut_up_and_hold_key,
+      R.string.pref_shortcut_up_and_down_and_hold_key,
+      R.string.pref_shortcut_up_and_left_and_hold_key,
+      R.string.pref_shortcut_up_and_right_and_hold_key,
+    )
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_up_and_left_lift_right_key)
+    // Upward for 240 ms, past the wait for a second finger.
+    val firstUpMs = oneFingerStroke(0, 300f, 400f, 0f, -50f, 0f, -50f, 0f, -50f, -150f, 0f)
+    runUntil(firstUpMs + 300)
+    val secondUpMs = oneFingerStroke(firstUpMs + 400, 60f, 300f, 120f, 0f)
+    runUntil(secondUpMs + 2000)
+    assertEquals(listOf(GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT), service.gestures)
   }
 
   @Test
