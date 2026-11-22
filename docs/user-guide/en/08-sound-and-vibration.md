@@ -59,6 +59,7 @@ The sounds, by the names shown in **Individual sounds and vibrations** and in th
 | **Browse mode on** and **Browse mode off** | Browse mode turns on or off. See [](#web). |
 | **Keyboard opened** and **Keyboard closed** | An on-screen keyboard opens or closes. |
 | **SandFly notification** | SandFly posts a notification on a notification channel without a sound. |
+| **Full charge** | The battery is fully charged, with **Announce full charge** on. See [](#verbosity-announcements). |
 | **Circle menu** | The items of the circle menu, eight notes. |
 | **Braille display connected**, **Braille display disconnected**, **Braille command failed**, **Braille auto scroll on**, **Braille auto scroll off** and **Braille keyboard calibrated** | Braille displays and the braille keyboard. See [](#braille). |
 | **Control sound: button** to **Control sound: tree item** | Control sounds, one for each kind of control. See [](#sound-control-sounds). |

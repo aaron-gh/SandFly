@@ -139,6 +139,7 @@ object SoundVibrations {
       "keyboard_opened" to "keyboard_opened_pattern",
       "keyboard_closed" to "keyboard_closed_pattern",
       "sandfly_notification" to "sandfly_notification_pattern",
+      "full_charge" to "full_charge_pattern",
       "screen_on" to "screen_on_pattern",
       "screen_hidden" to "screen_hidden_pattern",
       "screen_shown" to "screen_shown_pattern",
