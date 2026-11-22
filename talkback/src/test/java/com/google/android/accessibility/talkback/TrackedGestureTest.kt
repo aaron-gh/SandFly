@@ -81,6 +81,7 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_E
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT
 import java.time.Duration
 import kotlin.math.cos
 import kotlin.math.sin
@@ -828,6 +829,46 @@ class TrackedGestureTest {
     val upMs = oneFingerSwipeUpAt(multiFingerTaps(fingers = 2, taps = 1) + 100)
     runUntil(upMs + 1000)
     assertEquals(false, service.gestures.contains(GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP))
+  }
+
+  /**
+   * One finger lands at ([x], [y]) [downMs] after the start, moves by each pair of pixel offsets in
+   * [moves] in turn, in 8 steps of 10 ms each, and lifts, and the interaction ends. Returns when it
+   * lifted.
+   */
+  private fun oneFingerStroke(downMs: Long, x: Float, y: Float, vararg moves: Float): Long {
+    stateChangeAt(STATE_TOUCH_INTERACTING, downMs)
+    touchAt(ACTION_DOWN, downMs, x, y)
+    var time = downMs
+    var currentX = x
+    var currentY = y
+    for (i in moves.indices step 2) {
+      repeat(8) {
+        time += 10
+        currentX += moves[i] / 8
+        currentY += moves[i + 1] / 8
+        touchAt(ACTION_MOVE, time, currentX, currentY)
+      }
+    }
+    time += 10
+    touchAt(ACTION_UP, time, currentX, currentY)
+    stateChangeAt(STATE_CLEAR, time + 5)
+    return time
+  }
+
+  @Test
+  fun threePartSwipeIsItsGestureWhenAssigned() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_right_and_up_and_right_key)
+    val upMs = oneFingerStroke(0, 60f, 300f, 90f, 0f, 0f, -90f, 90f, 0f)
+    runUntil(upMs + 500)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun threePartSwipeIsNothingWhenUnassigned() {
+    val upMs = oneFingerStroke(0, 60f, 300f, 90f, 0f, 0f, -90f, 90f, 0f)
+    runUntil(upMs + 500)
+    assertEquals(false, service.gestures.contains(GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT))
   }
 
   /** Whether Backtalk asked the system to pass the touch to the app as it is. */

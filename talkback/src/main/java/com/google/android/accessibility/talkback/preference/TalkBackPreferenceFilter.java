@@ -439,6 +439,10 @@ public class TalkBackPreferenceFilter {
     CUSTOMIZE_GESTURE_GROUP_CORNERS(
         R.string.pref_category_corner_shortcuts_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    // Swipes in three directions, which only SandFly's own gesture detection recognizes.
+    CUSTOMIZE_GESTURE_GROUP_THREE_PART_SWIPES(
+        R.string.pref_category_1finger_three_part_shortcuts_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     CUSTOMIZE_GESTURE_GROUP_TAP_SWIPE(
         R.string.pref_category_tap_swipe_shortcuts_key,
         SHOW_IF_MULTI_FINGER | SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),

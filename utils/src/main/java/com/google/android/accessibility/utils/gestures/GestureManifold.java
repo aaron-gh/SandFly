@@ -203,6 +203,45 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_LEFT = -140;
   public static final int GESTURE_2_FINGER_TRIPLE_TAP_1_FINGER_SWIPE_RIGHT = -141;
 
+  // One-finger swipes in three directions in one stroke, each turning from the one before, such
+  // as right, up, then right. Recognized by SandFly's own detection only while they have an action.
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_AND_UP = -142;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_AND_LEFT = -143;
+  public static final int GESTURE_SWIPE_UP_AND_DOWN_AND_RIGHT = -144;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_AND_UP = -145;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_AND_DOWN = -146;
+  public static final int GESTURE_SWIPE_UP_AND_LEFT_AND_RIGHT = -147;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_AND_UP = -148;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_AND_DOWN = -149;
+  public static final int GESTURE_SWIPE_UP_AND_RIGHT_AND_LEFT = -150;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_AND_DOWN = -151;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_AND_LEFT = -152;
+  public static final int GESTURE_SWIPE_DOWN_AND_UP_AND_RIGHT = -153;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_AND_UP = -154;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_AND_DOWN = -155;
+  public static final int GESTURE_SWIPE_DOWN_AND_LEFT_AND_RIGHT = -156;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_AND_UP = -157;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_AND_DOWN = -158;
+  public static final int GESTURE_SWIPE_DOWN_AND_RIGHT_AND_LEFT = -159;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_AND_DOWN = -160;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_AND_LEFT = -161;
+  public static final int GESTURE_SWIPE_LEFT_AND_UP_AND_RIGHT = -162;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_AND_UP = -163;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_AND_LEFT = -164;
+  public static final int GESTURE_SWIPE_LEFT_AND_DOWN_AND_RIGHT = -165;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_AND_UP = -166;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_AND_DOWN = -167;
+  public static final int GESTURE_SWIPE_LEFT_AND_RIGHT_AND_LEFT = -168;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_AND_DOWN = -169;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_AND_LEFT = -170;
+  public static final int GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT = -171;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_AND_UP = -172;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_AND_LEFT = -173;
+  public static final int GESTURE_SWIPE_RIGHT_AND_DOWN_AND_RIGHT = -174;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_AND_UP = -175;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN = -176;
+  public static final int GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT = -177;
+
   // Match the value of GESTURE_ID_2FINGER_1TAP_HOLD in TalkBack.
   public static final int GESTURE_2_FINGER_SINGLE_TAP_AND_HOLD = 63;
 
