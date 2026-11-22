@@ -17,7 +17,9 @@
 package com.google.android.accessibility.talkback.gesture
 
 import android.accessibilityservice.AccessibilityGestureEvent
+import android.os.Build
 import android.os.Handler
+import androidx.annotation.RequiresApi
 import com.google.android.accessibility.utils.gestures.GestureManifold
 import java.util.function.Consumer
 import java.util.function.IntPredicate
@@ -35,6 +37,7 @@ import java.util.function.IntPredicate
  * @param isAssigned whether a gesture has a command
  * @param dispatch runs a gesture
  */
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class TwoStrokeSwipes(
   private val handler: Handler,
   private val isAssigned: IntPredicate,
