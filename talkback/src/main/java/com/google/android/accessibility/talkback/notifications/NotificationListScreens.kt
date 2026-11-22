@@ -333,7 +333,8 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
    * Asks for a text, with [text] filled in, and an optional switch such as "Regular expression".
    * [onDone] gets the text and the switch, and returns an error to show, or null. The dialog
    * closes before [onDone] runs, and opens again with the error shown if there is one.
-   * [inputType] and [secondInputType] are the input types of the text fields.
+   * [inputType] and [secondInputType] are the input types of the text fields. [choice] and
+   * [secondChoice] are lists shown below the text fields.
    */
   protected fun askText(
     title: CharSequence,
@@ -347,6 +348,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     inputType: Int = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE,
     secondInputType: Int = InputType.TYPE_CLASS_TEXT,
     choice: DialogChoice? = null,
+    secondChoice: DialogChoice? = null,
     error: CharSequence? = null,
     onDone: (String, String, List<Boolean>) -> String?,
   ) {
@@ -361,7 +363,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
     val enterPressesOk = secondHint == null && inputType and InputType.TYPE_TEXT_FLAG_MULTI_LINE == 0
     // With more than one control, each has a label shown above it, as a hint is hidden by the text
     // in the field.
-    val labelled = secondHint != null || choice != null
+    val labelled = secondHint != null || choice != null || secondChoice != null
     val edit =
       KeyboardSafeEditText(context).apply {
         id = View.generateViewId()
@@ -382,25 +384,25 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
           this.inputType = secondInputType
         }.also { layout.addView(it, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT) }
       }
-    choice?.let {
+    for (list in listOfNotNull(choice, secondChoice)) {
       val spinner =
         Spinner(context).apply {
           id = View.generateViewId()
           adapter =
-            ArrayAdapter(context, android.R.layout.simple_spinner_item, it.items).apply {
+            ArrayAdapter(context, android.R.layout.simple_spinner_item, list.items).apply {
               setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             }
-          setSelection(it.selected.coerceIn(0, (it.items.size - 1).coerceAtLeast(0)))
+          setSelection(list.selected.coerceIn(0, (list.items.size - 1).coerceAtLeast(0)))
           onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
               override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                it.selected = position
+                list.selected = position
               }
 
               override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
         }
-      addLabel(layout, it.label, spinner)
+      addLabel(layout, list.label, spinner)
       layout.addView(spinner, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
     }
     val boxes =
@@ -442,6 +444,7 @@ abstract class NotificationCodeFragment(@StringRes private val title: Int) : Tal
             inputType = inputType,
             secondInputType = secondInputType,
             choice = choice,
+            secondChoice = secondChoice,
             error = newError,
             onDone = onDone,
           )

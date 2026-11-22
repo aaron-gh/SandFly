@@ -195,7 +195,7 @@
     <string name="macro_regex_value"><xliff:g id="pattern" example="Reply.*Anna">%1$s</xliff:g> (regular expression)</string>
     <!-- Hint of the text field for the text of the item a Focused item test looks for, which can be left empty. [CHAR LIMIT=60] -->
     <string name="macro_test_label_optional">Item text (optional)</string>
-    <!-- Title of the dialog that asks for the kind of item a test looks for. [CHAR LIMIT=40] -->
+    <!-- Title of the dialog that asks for the kind of item a test looks for, and label of the list of it in the macro step dialogs that find an item. [CHAR LIMIT=40] -->
     <string name="macro_item_kind">Item type</string>
     <!-- Item type: any item. [CHAR LIMIT=40] -->
     <string name="macro_kind_any">Any type</string>

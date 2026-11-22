@@ -737,8 +737,9 @@ object MacroRunner {
     }
 
     /**
-     * Looks for the item of [step], a Tap item, Focus item or Speak item step, by [label] on the
-     * search thread until [deadline], and clicks it, moves accessibility focus to it or speaks it.
+     * Looks for the item of [step], a Tap item, Focus item or Speak item step, by [label] and the
+     * step's item type on the search thread until [deadline], and clicks it, moves accessibility
+     * focus to it or speaks it.
      */
     private fun search(index: Int, step: Macros.Step, label: LabelMatch, deadline: Long) {
       if (finished) return
@@ -751,11 +752,20 @@ object MacroRunner {
           is Macros.ActOnItem -> step.field
           else -> null
         }
+      val kind =
+        when (step) {
+          is Macros.Tap -> step.kind
+          is Macros.FocusItem -> step.kind
+          is Macros.SpeakItem -> step.kind
+          is Macros.TouchHold -> step.kind
+          is Macros.ActOnItem -> step.kind
+          else -> null
+        }
       // The item to focus or speak, the point to touch, whether the click was performed, or null
       // when the item isn't there.
       val result: Any? =
         try {
-          val node = findItem(service, label, field = field)
+          val node = findItem(service, label, kind, field = field)
           // The run can be stopped while the windows are read.
           if (finished) return
           node?.let {
@@ -972,6 +982,30 @@ object MacroRunner {
         .filter { it.type != AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY }
         .sortedWith(compareByDescending<AccessibilityWindowInfo> { it.isActive }.thenByDescending { it.layer })
         .mapNotNull { it.root }
+    return findItemIn(roots, label, kind, anyMatch, field)
+  }
+
+  /**
+   * The item a step that finds items by [label] in [field], a regular expression for [regex], of
+   * [kind] when it isn't null, finds in the windows of [roots], or null. For tests.
+   */
+  internal fun stepItemIn(
+    roots: List<AccessibilityNodeInfo>,
+    label: String,
+    regex: Boolean = false,
+    field: Macros.Field? = null,
+    kind: Macros.Kind? = null,
+  ): AccessibilityNodeInfo? = findItemIn(roots, LabelMatch(label, regex), kind, anyMatch = false, field = field)
+
+  /** [findItem] in the windows of [roots], in that order. */
+  private fun findItemIn(
+    roots: List<AccessibilityNodeInfo>,
+    label: LabelMatch,
+    kind: Macros.Kind?,
+    anyMatch: Boolean,
+    field: Macros.Field?,
+  ): AccessibilityNodeInfo? {
+    if (!label.isUsable) return null
     var partial: AccessibilityNodeInfo? = null
     var count = 0
     for (root in roots) {
@@ -984,7 +1018,8 @@ object MacroRunner {
           val texts =
             when {
               field != null -> texts(node, field)
-              kind == null && !anyMatch -> listOfNotNull(node.text, node.contentDescription, AccessibilityNodeInfoCompat.wrap(node).tooltipText)
+              // A step looks in the same texts with an item type as without one.
+              !anyMatch -> listOfNotNull(node.text, node.contentDescription, AccessibilityNodeInfoCompat.wrap(node).tooltipText)
               else -> texts(node)
             }
           var exact = false

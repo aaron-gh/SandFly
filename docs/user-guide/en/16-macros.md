@@ -77,8 +77,7 @@ The steps and tests that find an item have these fields:
 - **Item text**: the text to look for.
 - **Regular expression**: reads **Item text** as a regular expression, matched anywhere in the text and ignoring case. Repeated groups can't contain repetition or `|`, such as `(a+)+`.
 - **Match in**: where to look. **Any text**, the default, or only **Text**, **Description**, **Hint**, **State**, **Tooltip** or **Resource ID**. A resource ID matches with or without its package, so `send` matches `com.example:id/send`.
-
-The tests also have **Item type**: **Any type**, or **Clickable**, **Long-clickable**, **Editable**, **Scrollable**, **Adjustable**, **Checkable**, **Checked**, **Selected**, **Heading** or **Enabled**.
+- **Item type**: **Any type**, the default, or only items that are **Clickable**, **Long-clickable**, **Editable**, **Scrollable**, **Adjustable**, **Checkable**, **Checked**, **Selected**, **Heading** or **Enabled**. With **Clickable**, **Tap item** taps a button and not a heading with the same text. Tests ask for the item type after the text.
 
 To see what an item has in each field and which item types it is, use **Inspect focused item**. See [](#macros-inspect).
 

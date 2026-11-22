@@ -172,6 +172,17 @@ abstract class MacroEditorFragment : NotificationCodeFragment(R.string.title_pre
   /** The field chosen in [choice], made by [fieldChoice], or null for Any text. */
   protected fun chosenField(choice: DialogChoice): Macros.Field? = Macros.Field.entries.getOrNull(choice.selected - 1)
 
+  /** The Item type list of the step dialogs that find an item, with [kind] chosen: Any type, then each type. */
+  protected fun kindChoice(kind: Macros.Kind?): DialogChoice =
+    DialogChoice(
+      getString(R.string.macro_item_kind),
+      listOf(getString(R.string.macro_kind_any)) + Macros.Kind.entries.map { getString(it.title) },
+      kind?.let { it.ordinal + 1 } ?: 0,
+    )
+
+  /** The item type chosen in [choice], made by [kindChoice], or null for Any type. */
+  protected fun chosenKind(choice: DialogChoice): Macros.Kind? = Macros.Kind.entries.getOrNull(choice.selected - 1)
+
   /**
    * Asks for a test, with [old] chosen, then for what it looks for, and gives it to [then].
    */
@@ -715,13 +726,13 @@ class MacroFragment : MacroEditorFragment() {
       is Macros.TouchHold -> askTouchHold(step, replace)
       is Macros.FocusItem ->
         askTap(
-          Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field),
+          Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field, step.kind),
           replace,
           R.string.macro_step_focus,
         )
       is Macros.SpeakItem ->
         askTap(
-          Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field),
+          Macros.Tap(step.label, step.timeoutMillis, step.regex, step.field, step.kind),
           replace,
           R.string.macro_step_speak_item,
         )
@@ -818,6 +829,7 @@ class MacroFragment : MacroEditorFragment() {
    */
   private fun askTap(step: Macros.Tap?, then: (Macros.Step) -> Unit, kind: Int = R.string.macro_step_tap) {
     val fields = fieldChoice(step?.field)
+    val types = kindChoice(step?.kind)
     askText(
       getString(kind),
       text = step?.label.orEmpty(),
@@ -829,6 +841,7 @@ class MacroFragment : MacroEditorFragment() {
       inputType = InputType.TYPE_CLASS_TEXT,
       secondInputType = SECONDS_INPUT,
       choice = fields,
+      secondChoice = types,
     ) { label, timeout, checked ->
       val regex = checked.firstOrNull() == true
       when {
@@ -839,11 +852,12 @@ class MacroFragment : MacroEditorFragment() {
             Macros.parseSeconds(timeout)?.coerceIn(Macros.MIN_TAP_TIMEOUT_MS, Macros.MAX_TAP_TIMEOUT_MS)
               ?: Macros.DEFAULT_TAP_TIMEOUT_MS
           val field = chosenField(fields)
+          val type = chosenKind(types)
           then(
             when (kind) {
-              R.string.macro_step_focus -> Macros.FocusItem(label, millis, regex, field)
-              R.string.macro_step_speak_item -> Macros.SpeakItem(label, millis, regex, field)
-              else -> Macros.Tap(label, millis, regex, field)
+              R.string.macro_step_focus -> Macros.FocusItem(label, millis, regex, field, type)
+              R.string.macro_step_speak_item -> Macros.SpeakItem(label, millis, regex, field, type)
+              else -> Macros.Tap(label, millis, regex, field, type)
             }
           )
           null
@@ -858,6 +872,7 @@ class MacroFragment : MacroEditorFragment() {
     choose(getString(R.string.macro_step_act_item), acts.map { getString(it.title) }, step?.let { acts.indexOf(it.act) } ?: -1) { chosen ->
       val act = acts[chosen]
       val fields = fieldChoice(step?.field)
+      val types = kindChoice(step?.kind)
       askText(
         getString(act.title),
         text = step?.label.orEmpty(),
@@ -869,6 +884,7 @@ class MacroFragment : MacroEditorFragment() {
         inputType = InputType.TYPE_CLASS_TEXT,
         secondInputType = InputType.TYPE_CLASS_NUMBER,
         choice = fields,
+        secondChoice = types,
       ) { label, timesText, checked ->
         val regex = checked.firstOrNull() == true
         val times = timesText.trim().toIntOrNull()?.takeIf { it in 1..Macros.MAX_REPEATS }
@@ -878,7 +894,8 @@ class MacroFragment : MacroEditorFragment() {
           regex && Macros.compilePattern(label) == null -> getString(R.string.macro_invalid_regex)
           times == null -> getString(R.string.macro_invalid_times, Macros.MAX_REPEATS)
           else -> {
-            then(Macros.ActOnItem(label, act, times, step?.timeoutMillis ?: Macros.DEFAULT_TAP_TIMEOUT_MS, regex, chosenField(fields)))
+            val type = chosenKind(types).takeIf { label.isNotEmpty() }
+            then(Macros.ActOnItem(label, act, times, step?.timeoutMillis ?: Macros.DEFAULT_TAP_TIMEOUT_MS, regex, chosenField(fields), type))
             null
           }
         }
@@ -913,6 +930,7 @@ class MacroFragment : MacroEditorFragment() {
    */
   private fun askTouchHold(step: Macros.TouchHold?, then: (Macros.Step) -> Unit) {
     val fields = fieldChoice(step?.field)
+    val types = kindChoice(step?.kind)
     askText(
       getString(R.string.macro_step_touch_hold),
       text = step?.label.orEmpty(),
@@ -924,6 +942,7 @@ class MacroFragment : MacroEditorFragment() {
       inputType = InputType.TYPE_CLASS_TEXT,
       secondInputType = SECONDS_INPUT,
       choice = fields,
+      secondChoice = types,
     ) { label, holdText, checked ->
       val regex = checked.firstOrNull() == true
       val hold = Macros.parseSeconds(holdText)
@@ -941,6 +960,7 @@ class MacroFragment : MacroEditorFragment() {
               step?.timeoutMillis ?: Macros.DEFAULT_TAP_TIMEOUT_MS,
               regex,
               chosenField(fields),
+              chosenKind(types),
             )
           askSlide(held, then)
           null
