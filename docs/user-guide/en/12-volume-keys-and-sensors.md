@@ -72,7 +72,8 @@ Volume changes that SandFly makes, such as with a volume command, get no feedbac
 
 These features use the sensors of the phone. Each is set on the screen named here.
 
-- **Back tap**: double or triple taps on the back of the phone run commands. **Gestures** > **Back tap**; see [](#gestures-back-tap).
+- **Back tap**: two, three or four taps on the back of the phone run commands. **Gestures** > **Back tap**; see [](#gestures-back-tap).
+- **Shake**: shaking the phone runs a command. **Gestures** > **Shake**; see [](#gestures-shake).
 - **Cover proximity sensor to stop speech**: covering the proximity sensor stops speech. Off by default. **Speech** > **Cover proximity sensor to stop speech**; see [](#speech).
 - **Lock touch automatically** > **While the proximity sensor is covered**: touch is locked while something covers the proximity sensor. See [](#touch-lock).
 - **Shake to stop** and **Wave to stop**: shaking the phone, or moving a hand over the proximity sensor, stops the reading of a notification. **Notifications** > **Stop reading**; see [](#notifications).

@@ -51,7 +51,7 @@ On watches:
 - **Practice gestures** isn't in **Help & feedback**. Use **Practice gestures** at the top of **Gestures**, which opens the gesture practice of the watch tutorial.
 - **Version history** and **Privacy policy** show the address of the page when the watch has no browser.
 
-These features aren't available on watches, and their settings aren't shown: scripts, macros, custom menus, custom reading controls, voice commands, direct touch, back tap, edge and corner gesture settings, the braille keyboard, the handwriting keyboard, the SandFly keyboard, on-device AI, **Use SandFly as the wallpaper**, **Speaker when away from your ear**, **Reset accessibility audio after calls**, **Volume key shortcuts with the screen off**, and **Show instructions for turning off SandFly**.
+These features aren't available on watches, and their settings aren't shown: scripts, macros, custom menus, custom reading controls, voice commands, direct touch, back tap, shake, edge and corner gesture settings, the braille keyboard, the handwriting keyboard, the SandFly keyboard, on-device AI, **Use SandFly as the wallpaper**, **Speaker when away from your ear**, **Reset accessibility audio after calls**, **Volume key shortcuts with the screen off**, and **Show instructions for turning off SandFly**.
 
 For notifications on Samsung watches, see [](#notifications).
 

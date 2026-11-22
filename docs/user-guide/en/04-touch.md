@@ -53,7 +53,7 @@ By default, touching the screen stops speech. To keep speech going until touch f
 
 ### Lock touch {#touch-lock}
 
-While touch is locked, touches and gestures on the screen do nothing, and nothing reaches the app. Keys, volume key commands, fingerprint gestures and back tap still work. Touch lock needs Android 13 or later and **Developer settings** > **Handle gestures in SandFly**.
+While touch is locked, touches and gestures on the screen do nothing, and nothing reaches the app. Keys, volume key commands, fingerprint gestures, back tap and shake still work. Touch lock needs Android 13 or later and **Developer settings** > **Handle gestures in SandFly**.
 
 To lock or unlock touch, use the **Lock or unlock touch** command. SandFly says "Touch locked" or "Touch unlocked". Assign the command to a volume key press, a keyboard shortcut or a back tap, so that you can unlock touch without the screen; see [](#buttons) and [](#gestures-back-tap). Pressing both volume keys together always unlocks touch.
 

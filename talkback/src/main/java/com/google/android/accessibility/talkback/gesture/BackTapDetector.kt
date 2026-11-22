@@ -21,8 +21,8 @@ import kotlin.math.max
 import kotlin.math.sqrt
 
 /**
- * Finds taps on the back of the device in accelerometer readings and counts them into double and
- * triple taps.
+ * Finds taps on the back of the device in accelerometer readings and counts them into double,
+ * triple and quadruple taps.
  *
  * A tap is a short jolt, mostly along the axis through the screen, after a moment with little
  * movement. Gravity and slow movement are taken out with a low-pass filter. A touch on the screen
@@ -36,7 +36,7 @@ import kotlin.math.sqrt
 class BackTapDetector(private val listener: Listener) {
 
   interface Listener {
-    /** Runs when [count] taps, 2 or 3, have ended. */
+    /** Runs when [count] taps, 2 to 4, have ended. */
     fun onTaps(count: Int)
 
     /** Describes a jolt, taken as a tap or not, for the debug log. */
@@ -50,10 +50,10 @@ class BackTapDetector(private val listener: Listener) {
   var threshold: Float = Sensitivity.MEDIUM.threshold
 
   /**
-   * Whether a double tap waits to see whether a third tap follows. Without a command for the triple
-   * tap, the double tap runs sooner.
+   * The most taps that run a command, 2 to 4. Fewer taps wait to see whether another tap follows;
+   * this many run as soon as the last one is measured.
    */
-  var waitForTriple: Boolean = true
+  var mostTaps: Int = MAX_TAPS
 
   /** How strong a jolt must be at each sensitivity, in m/s². */
   enum class Sensitivity(val threshold: Float) {
@@ -163,6 +163,12 @@ class BackTapDetector(private val listener: Listener) {
     }
   }
 
+  /** Drops the taps so far and any in the next [MAX_TAP_INTERVAL_NS] from [timeNs], as after a shake. */
+  fun dropTaps(timeNs: Long) {
+    taps = 0
+    ignoreTapsUntilNs = maxOf(ignoreTapsUntilNs, timeNs + MAX_TAP_INTERVAL_NS)
+  }
+
   private fun restart(timeNs: Long, x: Float, y: Float, z: Float) {
     started = true
     lastNs = timeNs
@@ -233,8 +239,7 @@ class BackTapDetector(private val listener: Listener) {
       when {
         // Waits long enough for a touch on the screen to be reported.
         sinceLastTap < TOUCH_GUARD_NS -> return
-        taps == MAX_TAPS -> MAX_TAPS
-        taps == 2 && !waitForTriple -> 2
+        taps >= mostTaps.coerceIn(2, MAX_TAPS) -> taps
         sinceLastTap > MAX_TAP_INTERVAL_NS -> taps
         else -> return
       }
@@ -248,7 +253,7 @@ class BackTapDetector(private val listener: Listener) {
 
   private companion object {
     const val NONE = -1L
-    const val MAX_TAPS = 3
+    const val MAX_TAPS = 4
     const val MS = 1_000_000L
 
     /** Time constant of the low-pass filter that takes out gravity and slow movement. */
@@ -261,19 +266,19 @@ class BackTapDetector(private val listener: Listener) {
     const val SETTLE_NS = 100 * MS
     /** Part of the threshold from which jolts are measured, so that ones too light are logged. */
     const val MEASURED_RATIO = 0.5f
-    /** Part of the threshold a second or third tap must reach. */
+    /** Part of the threshold a later tap must reach. */
     const val FOLLOWING_TAP_RATIO = 0.75f
     /** How long the strongest part of a jolt is looked for. */
     const val JOLT_NS = 25 * MS
     /** Time after the start of a jolt in which the device still rings. */
     const val RING_NS = 90 * MS
-    /** Longest time between the taps of a double or triple tap. */
+    /** Longest time between the taps of a double, triple or quadruple tap. */
     const val MAX_TAP_INTERVAL_NS = 450 * MS
     /** Time before and after a touch on the screen in which jolts are dropped. */
     const val TOUCH_GUARD_NS = 150 * MS
     /**
      * How far a touch's time may be from the last reading's and still be in the same clock. Batched
-     * readings come up to [BackTapCommands]' report latency late.
+     * readings come up to [AccelerometerGestures]' report latency late.
      */
     const val MAX_TOUCH_OFFSET_NS = 2_000 * MS
     /** How much stronger a tap is along the axis through the screen than along the others. */
