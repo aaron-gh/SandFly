@@ -196,6 +196,8 @@ The **Move to item below** and **Move to item above** commands make the same mov
 
 When a window opens, or you go back to a screen, SandFly moves focus into it: to the item you were on, to the text field with the cursor, or to the first item. This also applies to SandFly menus and dialogs.
 
+After you activate an item in a list, such as a folder in a file manager or a page in Settings, and go back, focus returns to that item when the list shows it again within two seconds. This also works in apps that change the list without opening a new window.
+
 To leave focus where it is, turn off **Navigation** > **Move focus to new windows**. SandFly then reads only the name of the window, and the next swipe moves to the first item. Focus follows input focus only when you move input focus with a key, such as an arrow key or Tab. On TVs, focus always moves to new windows.
 
 When the focused item disappears, such as an ad that collapses or a list row that is removed, SandFly focuses the item now at its place and reading goes on from there.

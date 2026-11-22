@@ -49,6 +49,7 @@ import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
+import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory.ActivatedItem;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -156,10 +157,14 @@ public class FocusActor implements UserInputEventListener {
     if (currentFocus != null && pipeline != null) {
       pipeline.returnFeedback(eventId, Feedback.part().setInterruptGentle(true));
     }
-    if (Scripts.touchesToActivate(currentFocus) && touchFocus(currentFocus, eventId)) {
-      return true;
+    ActivatedItem item = focusManagerInternal.describeActivatedItem(currentFocus);
+    boolean activated =
+        (Scripts.touchesToActivate(currentFocus) && touchFocus(currentFocus, eventId))
+            || clickNode(currentFocus, eventId);
+    if (activated && item != null) {
+      focusManagerInternal.onItemActivated(item);
     }
-    return clickNode(currentFocus, eventId);
+    return activated;
   }
 
   /**
@@ -173,7 +178,12 @@ public class FocusActor implements UserInputEventListener {
       return false;
     }
     pipeline.returnFeedback(eventId, Feedback.part().setInterruptGentle(true));
-    return touchFocus(currentFocus, eventId) || clickNode(currentFocus, eventId);
+    ActivatedItem item = focusManagerInternal.describeActivatedItem(currentFocus);
+    boolean activated = touchFocus(currentFocus, eventId) || clickNode(currentFocus, eventId);
+    if (activated && item != null) {
+      focusManagerInternal.onItemActivated(item);
+    }
+    return activated;
   }
 
   /**
@@ -424,6 +434,16 @@ public class FocusActor implements UserInputEventListener {
    */
   public boolean ensureAccessibilityFocusOnScreen(EventId eventId) {
     return focusManagerInternal.ensureAccessibilityFocusOnScreen(eventId);
+  }
+
+  /** Notes a Back, before it runs, for focus to return to the list item activated before it. */
+  public void onBack() {
+    focusManagerInternal.onBack();
+  }
+
+  /** Focuses the list item activated before the last Back, when its list is shown again. */
+  public boolean restoreActivatedItemAfterBack(EventId eventId) {
+    return focusManagerInternal.restoreActivatedItemAfterBack(eventId);
   }
 
   /**

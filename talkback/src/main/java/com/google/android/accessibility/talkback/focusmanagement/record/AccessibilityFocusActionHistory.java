@@ -35,6 +35,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.auto.value.AutoValue;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
@@ -134,6 +135,18 @@ public final class AccessibilityFocusActionHistory {
   @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
   static final int MAXIMUM_WINDOW_MAP_SIZE = 10;
 
+  /** Most list items kept by {@link #onItemActivated}. */
+  @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+  static final int MAXIMUM_ACTIVATED_ITEMS = 16;
+
+  /** How long after Back focus may return to the list item activated before. */
+  @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+  static final long RESTORE_AFTER_BACK_MS = 2000;
+
+  /** A second Back within this long of the first is the same Back, as a key and its action. */
+  @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
+  static final long SAME_BACK_MS = 300;
+
   /** Maximum size of {@link #focusActionRecordList} */
   @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
   static final int MAXIMUM_RECORD_QUEUE_SIZE = 5;
@@ -202,6 +215,20 @@ public final class AccessibilityFocusActionHistory {
   private @Nullable FocusActionRecord recordNotFound;
 
   private int windowIdNotFound;
+
+  /** List items activated, oldest first, at most {@link #MAXIMUM_ACTIVATED_ITEMS}. */
+  private final ArrayDeque<ActivatedItem> activatedItems = new ArrayDeque<>();
+
+  /** {@link SystemClock#uptimeMillis()} of the last Back, or -1 when no Back is pending. */
+  private long backTime = -1;
+
+  /** The window focus was in at the last Back. */
+  private int backWindowId = -1;
+
+  /** Focus at the last Back, and its item label then. */
+  private @Nullable AccessibilityNodeInfoCompat focusAtBack;
+
+  private @Nullable String focusLabelAtBack;
 
   //////////////////////////////////////////////////////////////////////////////////////////
   // Construction
@@ -456,6 +483,176 @@ public final class AccessibilityFocusActionHistory {
   }
 
   /**
+   * A list item that was activated, such as a folder in a file manager, described well enough to
+   * find it again when Back shows the list again, also as another node.
+   */
+  public static final class ActivatedItem {
+    public final int windowId;
+    public final @NonNull String className;
+    public final @Nullable String viewId;
+    /** The text of the item and its descendants. */
+    public final @NonNull String label;
+    /** Vertical center of the item on the screen, to choose among items with the same label. */
+    public final int centerY;
+
+    public ActivatedItem(
+        int windowId,
+        @NonNull String className,
+        @Nullable String viewId,
+        @NonNull String label,
+        int centerY) {
+      this.windowId = windowId;
+      this.className = className;
+      this.viewId = viewId;
+      this.label = label;
+      this.centerY = centerY;
+    }
+
+    boolean sameItem(ActivatedItem other) {
+      return windowId == other.windowId
+          && className.equals(other.className)
+          && Objects.equals(viewId, other.viewId)
+          && label.equals(other.label);
+    }
+  }
+
+  /** Keeps {@code item}, activated, to focus it again after Back. */
+  public void onItemActivated(@NonNull ActivatedItem item) {
+    ActivatedItem newest = activatedItems.peekLast();
+    if (newest != null && newest.sameItem(item)) {
+      activatedItems.pollLast();
+    }
+    activatedItems.addLast(item);
+    while (activatedItems.size() > MAXIMUM_ACTIVATED_ITEMS) {
+      activatedItems.pollFirst();
+    }
+  }
+
+  /**
+   * Notes a Back, before it runs.
+   *
+   * @param time {@link SystemClock#uptimeMillis()} of the Back
+   * @param windowId the window focus is in, or the active window
+   * @param focus accessibility focus, or null
+   * @param focusLabel the item label of {@code focus}
+   * @param windowIds the windows on the screen; activated items in other windows are dropped. Null
+   *     keeps them.
+   */
+  public void onBack(
+      long time,
+      int windowId,
+      @Nullable AccessibilityNodeInfoCompat focus,
+      @Nullable String focusLabel,
+      @Nullable Collection<Integer> windowIds) {
+    if (backTime >= 0 && time - backTime >= 0 && time - backTime < SAME_BACK_MS) {
+      return;
+    }
+    endBack();
+    if (windowIds != null) {
+      activatedItems.removeIf(item -> !windowIds.contains(item.windowId));
+    }
+    if (activatedItems.isEmpty()) {
+      return;
+    }
+    backTime = time;
+    backWindowId = windowId;
+    focusAtBack = (focus == null) ? null : AccessibilityNodeInfoCompat.obtain(focus);
+    focusLabelAtBack = focusLabel;
+  }
+
+  /**
+   * Ends the pending Back without focus returning to an activated item. The newest item in its
+   * window is dropped: Back left the list it was in.
+   */
+  public void endBack() {
+    if (backTime < 0) {
+      return;
+    }
+    Iterator<ActivatedItem> newestFirst = activatedItems.descendingIterator();
+    while (newestFirst.hasNext()) {
+      if (newestFirst.next().windowId == backWindowId) {
+        newestFirst.remove();
+        break;
+      }
+    }
+    clearBack();
+  }
+
+  private void clearBack() {
+    backTime = -1;
+    focusAtBack = null;
+    focusLabelAtBack = null;
+  }
+
+  /** Returns whether a Back within {@link #RESTORE_AFTER_BACK_MS} waits for its list. */
+  public boolean isBackPending(long now) {
+    if (backTime < 0) {
+      return false;
+    }
+    if (now - backTime > RESTORE_AFTER_BACK_MS) {
+      endBack();
+      return false;
+    }
+    return true;
+  }
+
+  public long getBackTime() {
+    return backTime;
+  }
+
+  public int getBackWindowId() {
+    return backWindowId;
+  }
+
+  public @Nullable AccessibilityNodeInfoCompat getFocusAtBack() {
+    return focusAtBack;
+  }
+
+  public @Nullable String getFocusLabelAtBack() {
+    return focusLabelAtBack;
+  }
+
+  /** Returns the activated items in the window of the pending Back, newest first. */
+  public List<ActivatedItem> getActivatedItemsAfterBack(long now) {
+    List<ActivatedItem> items = new ArrayList<>();
+    if (!isBackPending(now)) {
+      return items;
+    }
+    Iterator<ActivatedItem> newestFirst = activatedItems.descendingIterator();
+    while (newestFirst.hasNext()) {
+      ActivatedItem item = newestFirst.next();
+      if (item.windowId == backWindowId) {
+        items.add(item);
+      }
+    }
+    return items;
+  }
+
+  /**
+   * Ends the pending Back with focus on {@code item}. The item and the newer items in its window,
+   * from lists below it, are dropped.
+   */
+  public void onActivatedItemRestored(@NonNull ActivatedItem item) {
+    Iterator<ActivatedItem> newestFirst = activatedItems.descendingIterator();
+    while (newestFirst.hasNext()) {
+      ActivatedItem newer = newestFirst.next();
+      if (newer.windowId != item.windowId) {
+        continue;
+      }
+      newestFirst.remove();
+      if (newer == item) {
+        break;
+      }
+    }
+    clearBack();
+  }
+
+  @VisibleForTesting
+  int getActivatedItemCount() {
+    return activatedItems.size();
+  }
+
+  /**
    * Caches current focused node especially for context menu and dialogs, which is used to restore
    * focus when context menu or dialog closes.
    */
@@ -482,6 +679,11 @@ public final class AccessibilityFocusActionHistory {
     lastEditableFocusActionRecord = null;
     cachedNodeToRestoreFocus = null;
     recordNotFound = null;
+
+    activatedItems.clear();
+    backTime = -1;
+    focusAtBack = null;
+    focusLabelAtBack = null;
 
     clearPendingFocusAction();
   }

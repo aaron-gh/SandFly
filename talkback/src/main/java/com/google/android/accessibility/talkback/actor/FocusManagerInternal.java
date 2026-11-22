@@ -47,10 +47,12 @@ import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCa
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
+import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory.ActivatedItem;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory.WindowIdentifier;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
+import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.FocusFinder;
@@ -67,6 +69,7 @@ import com.google.android.accessibility.utils.traversal.TraversalStrategyUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -325,6 +328,11 @@ public class FocusManagerInternal {
       return false;
     }
 
+    // Before the window change settles: placed now, the item is kept by the window change.
+    if (restoreActivatedItemAfterBack(eventId)) {
+      return true;
+    }
+
     ScreenState state = screenState.getStableScreenState();
     long windowEventInterpreterDelayTimeMs =
         SystemClock.uptimeMillis() - state.getScreenTransitionStartTime();
@@ -402,6 +410,267 @@ public class FocusManagerInternal {
         toFeedbackPart(INITIAL_FOCUS_FIRST_CONTENT, screenState.getStableScreenState()));
 
     return pipeline.returnFeedback(Feedback.create(eventId, feedbackFailovers));
+  }
+
+  /** Most nodes read to find an activated list item again after Back. */
+  private static final int MAX_ACTIVATED_ITEM_NODES = 2000;
+
+  /** Finding an activated list item again after Back stops after this long. */
+  private static final long MAX_ACTIVATED_ITEM_SEARCH_MS = 60;
+
+  /** Descendants read for an item label, and how deep. */
+  private static final int MAX_LABEL_NODES = 16;
+
+  private static final int MAX_LABEL_DEPTH = 3;
+
+  /**
+   * Returns {@code item} described to be found again after Back, or null when it is not in a list
+   * or has no text.
+   */
+  @Nullable ActivatedItem describeActivatedItem(
+      @Nullable AccessibilityNodeInfoCompat item) {
+    if (item == null
+        || item.getClassName() == null
+        || !AccessibilityNodeInfoUtils.isInCollection(item)) {
+      return null;
+    }
+    String label = itemLabel(item);
+    if (label == null) {
+      return null;
+    }
+    Rect bounds = new Rect();
+    item.getBoundsInScreen(bounds);
+    return new ActivatedItem(
+        item.getWindowId(),
+        item.getClassName().toString(),
+        item.getViewIdResourceName(),
+        label,
+        bounds.centerY());
+  }
+
+  /** Keeps {@code item}, a list item just activated, to focus it again after Back. */
+  void onItemActivated(@NonNull ActivatedItem item) {
+    history.onItemActivated(item);
+  }
+
+  /** Notes a Back, before it runs. */
+  void onBack() {
+    AccessibilityNodeInfoCompat focus = focusFinder.findFocusCompat(FOCUS_ACCESSIBILITY);
+    int windowId = -1;
+    if (focus != null) {
+      windowId = focus.getWindowId();
+    } else {
+      ScreenState state = screenState.getStableScreenState();
+      AccessibilityWindowInfo active = (state == null) ? null : state.getActiveWindow();
+      if (active != null) {
+        windowId = active.getId();
+      }
+    }
+    List<Integer> windowIds = new ArrayList<>();
+    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(service)) {
+      windowIds.add(window.getId());
+    }
+    history.onBack(
+        SystemClock.uptimeMillis(),
+        windowId,
+        focus,
+        (focus == null) ? null : itemLabel(focus),
+        windowIds.isEmpty() ? null : windowIds);
+  }
+
+  /**
+   * Within {@link AccessibilityFocusActionHistory#RESTORE_AFTER_BACK_MS} of a Back, focuses the
+   * list item activated before in the same window, as when an app shows a folder's list again in
+   * place of the subfolder's. Focus is left alone when it was moved by the user after the Back,
+   * when it is in another window, or when it is still on a list item that shows what it showed at
+   * the Back, as the list has not changed yet.
+   *
+   * @return true if focus was placed on the item
+   */
+  boolean restoreActivatedItemAfterBack(EventId eventId) {
+    long now = SystemClock.uptimeMillis();
+    if (pipeline == null
+        || !history.isBackPending(now)
+        || !FocusProcessorForScreenStateChange.focusesNewWindows()) {
+      return false;
+    }
+    @Nullable FocusActionRecord last = history.getLastFocusActionRecord();
+    boolean placedSinceBack = last != null && last.getActionTime() >= history.getBackTime();
+    if (placedSinceBack && !isPlacedAutomatically(last.getExtraInfo().sourceAction)) {
+      history.endBack();
+      return false;
+    }
+    int windowId = history.getBackWindowId();
+    AccessibilityNodeInfoCompat focus = focusFinder.findFocusCompat(FOCUS_ACCESSIBILITY);
+    if (focus != null) {
+      if (focus.getWindowId() != windowId) {
+        return false;
+      }
+      if (!placedSinceBack
+          && focus.equals(history.getFocusAtBack())
+          && AccessibilityNodeInfoUtils.isInCollection(focus)
+          && TextUtils.equals(itemLabel(focus), history.getFocusLabelAtBack())) {
+        return false;
+      }
+    }
+    List<ActivatedItem> items = history.getActivatedItemsAfterBack(now);
+    if (items.isEmpty()) {
+      return false;
+    }
+    AccessibilityNodeInfoCompat root = windowRoot(windowId);
+    if (root == null) {
+      return false;
+    }
+    ActivatedItem[] found = new ActivatedItem[1];
+    AccessibilityNodeInfoCompat node = findActivatedItem(root, items, found);
+    if (node == null) {
+      return false;
+    }
+    history.onActivatedItemRestored(found[0]);
+    if (node.isAccessibilityFocused()) {
+      return true;
+    }
+    LogUtils.d(TAG, "Focus returns after Back to the list item activated before.");
+    FocusActionInfo focusActionInfo =
+        FocusActionInfo.builder()
+            .setSourceAction(FocusActionInfo.SCREEN_STATE_CHANGE)
+            .setInitialFocusType(FocusActionInfo.RESTORED_LAST_FOCUS)
+            .build();
+    return pipeline.returnFeedback(
+        eventId,
+        Focus.builder()
+            .setAction(Focus.Action.FOCUS)
+            .setFocusActionInfo(focusActionInfo)
+            .setTarget(node));
+  }
+
+  /** Whether focus from {@code sourceAction} was placed by SandFly, not moved by the user. */
+  private static boolean isPlacedAutomatically(int sourceAction) {
+    return sourceAction == FocusActionInfo.SCREEN_STATE_CHANGE
+        || sourceAction == FocusActionInfo.ENSURE_ON_SCREEN
+        || sourceAction == FocusActionInfo.FOCUS_SYNCHRONIZATION;
+  }
+
+  private @Nullable AccessibilityNodeInfoCompat windowRoot(int windowId) {
+    for (AccessibilityWindowInfo window : AccessibilityServiceCompatUtils.getWindows(service)) {
+      if (window.getId() == windowId) {
+        return AccessibilityWindowInfoUtils.getRootCompat(window);
+      }
+    }
+    return null;
+  }
+
+  /**
+   * Returns the text of {@code node}, or else of its descendants, one per line, or null if there is
+   * none.
+   */
+  @VisibleForTesting
+  static @Nullable String itemLabel(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return null;
+    }
+    CharSequence own = AccessibilityNodeInfoUtils.getNodeText(node);
+    if (own != null) {
+      return own.toString();
+    }
+    StringBuilder label = new StringBuilder();
+    int[] read = {0};
+    appendDescendantText(node, 1, label, read);
+    return (label.length() == 0) ? null : label.toString();
+  }
+
+  private static void appendDescendantText(
+      AccessibilityNodeInfoCompat node, int depth, StringBuilder label, int[] read) {
+    int count = node.getChildCount();
+    for (int i = 0; i < count && read[0] < MAX_LABEL_NODES; i++) {
+      AccessibilityNodeInfoCompat child = node.getChild(i);
+      read[0]++;
+      if (child == null || !child.isVisibleToUser()) {
+        continue;
+      }
+      CharSequence text = AccessibilityNodeInfoUtils.getNodeText(child);
+      if (text != null) {
+        if (label.length() > 0) {
+          label.append('\n');
+        }
+        label.append(text);
+      }
+      if (depth < MAX_LABEL_DEPTH) {
+        appendDescendantText(child, depth + 1, label, read);
+      }
+    }
+  }
+
+  /**
+   * Returns the node under {@code root} that is the newest of {@code items}, newest first, found
+   * with its class, view ID and label, the one nearest where it was when several are, and sets
+   * {@code found[0]} to that item. When the search stops at its limits, only the newest item counts.
+   */
+  private static @Nullable AccessibilityNodeInfoCompat findActivatedItem(
+      AccessibilityNodeInfoCompat root,
+      List<ActivatedItem> items,
+      ActivatedItem[] found) {
+    AccessibilityNodeInfoCompat[] best = new AccessibilityNodeInfoCompat[items.size()];
+    int[] bestDistance = new int[items.size()];
+    Rect bounds = new Rect();
+    ArrayDeque<AccessibilityNodeInfoCompat> queue = new ArrayDeque<>();
+    queue.add(root);
+    int read = 0;
+    long deadline = SystemClock.uptimeMillis() + MAX_ACTIVATED_ITEM_SEARCH_MS;
+    boolean stopped = false;
+    while (!queue.isEmpty()) {
+      if (read >= MAX_ACTIVATED_ITEM_NODES || SystemClock.uptimeMillis() > deadline) {
+        stopped = true;
+        break;
+      }
+      AccessibilityNodeInfoCompat node = queue.poll();
+      int count = node.getChildCount();
+      for (int i = 0; i < count; i++) {
+        AccessibilityNodeInfoCompat child = node.getChild(i);
+        read++;
+        if (child == null || !child.isVisibleToUser()) {
+          continue;
+        }
+        queue.add(child);
+        CharSequence className = child.getClassName();
+        if (className == null) {
+          continue;
+        }
+        String label = null;
+        for (int k = 0; k < items.size(); k++) {
+          ActivatedItem item = items.get(k);
+          if (!item.className.contentEquals(className)
+              || (item.viewId != null && !item.viewId.equals(child.getViewIdResourceName()))) {
+            continue;
+          }
+          if (label == null) {
+            label = itemLabel(child);
+            if (label == null) {
+              break;
+            }
+          }
+          if (!item.label.equals(label) || !AccessibilityNodeInfoUtils.shouldFocusNode(child)) {
+            continue;
+          }
+          child.getBoundsInScreen(bounds);
+          int distance = Math.abs(bounds.centerY() - item.centerY);
+          if (best[k] == null || distance < bestDistance[k]) {
+            best[k] = child;
+            bestDistance[k] = distance;
+          }
+        }
+      }
+    }
+    for (int k = 0; k < items.size(); k++) {
+      if (stopped && k > 0) {
+        break;
+      }
+      if (best[k] != null) {
+        found[0] = items.get(k);
+        return best[k];
+      }
+    }
+    return null;
   }
 
   /**
