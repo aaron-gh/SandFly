@@ -1805,13 +1805,13 @@ public class GestureController {
   }
 
   /**
-   * Runs the command of a back tap, named by its preference key on the Gestures screen without a
-   * gesture set.
+   * Runs the command of a back tap or a shake, named by its preference key on the Gestures screen
+   * without a gesture set.
    */
-  public void onBackTap(String key, EventId eventId) {
+  public void onAccelerometerGesture(String key, EventId eventId) {
     String unassigned = service.getString(R.string.shortcut_value_unassigned);
     String action = gestureShortcutMapping.getActionKeyFromPrefKey(key, unassigned);
-    LogUtils.v(LOG_TAG, "Back tap [%s], action: [%s]", key, action);
+    LogUtils.v(LOG_TAG, "Accelerometer gesture [%s], action: [%s]", key, action);
     if (TextUtils.isEmpty(action) || action.equals(unassigned)) {
       return;
     }

@@ -36,26 +36,35 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
- * Gestures > Back tap: runs the commands of double and triple taps on the back of the device.
+ * Gestures > Back tap and Gestures > Shake: runs the commands of taps on the back of the device and
+ * of shakes.
  *
  * The accelerometer is read only while the screen is on, the screen reader is running and not
- * paused, and a back tap runs a command on the Gestures screen, in a gesture profile or in an app.
- * Readings are taken on a thread of their own, in batches, and passed on through
- * [AccelerometerShare].
+ * paused, and a back tap or the shake runs a command on the Gestures screen, in a gesture profile
+ * or in an app: fast while a back tap runs one, slower for the shake alone. Readings are taken on a
+ * thread of their own, in batches, and passed on through [AccelerometerShare].
  */
-class BackTapCommands(
+class AccelerometerGestures(
   private val context: Context,
-  /** Runs the command of the back tap with the given preference key, on the main thread. */
+  /** Runs the command of the gesture with the given preference key, on the main thread. */
   private val perform: (String) -> Unit,
 ) : AccessibilityEventListener {
   private val sensors = context.getSystemService(SensorManager::class.java)
   private val mainHandler = Handler(Looper.getMainLooper())
-  private val doubleKey = context.getString(R.string.pref_shortcut_back_tap_double_key)
-  private val tripleKey = context.getString(R.string.pref_shortcut_back_tap_triple_key)
+  /** The back tap keys by tap count, from 2. */
+  private val tapKeys =
+    listOf(
+      context.getString(R.string.pref_shortcut_back_tap_double_key),
+      context.getString(R.string.pref_shortcut_back_tap_triple_key),
+      context.getString(R.string.pref_shortcut_back_tap_quadruple_key),
+    )
+  private val shakeKey = context.getString(R.string.pref_shortcut_shake_key)
 
-  private var used = false
-  private var tripleUsed = false
+  // The most back taps that run a command, or 0 for none.
+  private var mostTaps = 0
+  private var shakeUsed = false
   private var sensitivity = BackTapDetector.Sensitivity.MEDIUM
+  private var shakeSensitivity = ShakeDetector.Sensitivity.MEDIUM
   private var screenOn = context.getSystemService(PowerManager::class.java)?.isInteractive ?: true
   private var allowed = false
 
@@ -63,13 +72,23 @@ class BackTapCommands(
   private var thread: HandlerThread? = null
   private var handler: Handler? = null
   private var detector: BackTapDetector? = null
+  private var shakeDetector: ShakeDetector? = null
   private var sensorListener: SensorEventListener? = null
+  // Whether the readings come fast enough for back taps.
+  private var readingFast = false
+  // Whether readings go to the shake detector: used on the thread readings come on.
+  private var readingShake = false
 
-  /** Reads which back taps run commands, and the sensitivity, from [prefs]. */
+  /** Reads which back taps and shakes run commands, and the sensitivities, from [prefs]. */
   fun reload(prefs: SharedPreferences) {
     val gestureSet = gestureSet(prefs)
-    tripleUsed = isUsed(prefs, tripleKey, gestureSet)
-    used = tripleUsed || isUsed(prefs, doubleKey, gestureSet)
+    mostTaps = 0
+    tapKeys.forEachIndexed { index, key ->
+      if (isUsed(prefs, key, gestureSet)) {
+        mostTaps = index + 2
+      }
+    }
+    shakeUsed = isUsed(prefs, shakeKey, gestureSet)
     val value =
       prefs.getString(
         context.getString(R.string.pref_back_tap_sensitivity_key),
@@ -78,10 +97,18 @@ class BackTapCommands(
     sensitivity =
       BackTapDetector.Sensitivity.entries.firstOrNull { it.name.equals(value, ignoreCase = true) }
         ?: BackTapDetector.Sensitivity.MEDIUM
+    val shakeValue =
+      prefs.getString(
+        context.getString(R.string.pref_shake_sensitivity_key),
+        context.getString(R.string.pref_shake_sensitivity_default),
+      )
+    shakeSensitivity =
+      ShakeDetector.Sensitivity.entries.firstOrNull { it.name.equals(shakeValue, ignoreCase = true) }
+        ?: ShakeDetector.Sensitivity.MEDIUM
     update()
   }
 
-  /** Sets whether back taps may run commands: while the screen reader runs and isn't paused. */
+  /** Sets whether the gestures may run commands: while the screen reader runs and isn't paused. */
   fun setAllowed(allowed: Boolean) {
     this.allowed = allowed
     update()
@@ -113,24 +140,29 @@ class BackTapCommands(
   }
 
   private fun update() {
-    if (used && screenOn && allowed) start() else stop()
+    if ((mostTaps > 0 || shakeUsed) && screenOn && allowed) start() else stop()
   }
 
   private fun start() {
+    val fast = mostTaps > 0
     val running = detector
-    if (running != null) {
-      configure(running)
+    if (running != null && fast == readingFast) {
+      configure(running, shakeDetector)
       return
+    }
+    if (running != null) {
+      // Back taps need faster readings than the shake: read again at the other rate.
+      stop()
     }
     val sensors = sensors ?: return
     val sensor = sensors.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) ?: return
-    val thread = HandlerThread("BackTap").apply { start() }
+    val thread = HandlerThread("AccelerometerGestures").apply { start() }
     val handler = Handler(thread.looper)
     val detector =
       BackTapDetector(
         object : BackTapDetector.Listener {
           override fun onTaps(count: Int) {
-            val key = if (count == 3) tripleKey else doubleKey
+            val key = tapKeys.getOrNull(count - 2) ?: return
             mainHandler.post {
               // Taps reported just before the readings stopped run nothing.
               if (sensorListener != null) {
@@ -144,41 +176,62 @@ class BackTapCommands(
           }
         }
       )
+    val shakeDetector =
+      ShakeDetector { timeNs ->
+        // The jolts of a shake are no back taps.
+        detector.dropTaps(timeNs)
+        LogUtils.d(TAG, "Shake")
+        mainHandler.post {
+          if (sensorListener != null && shakeUsed) {
+            perform(shakeKey)
+          }
+        }
+      }
     val listener =
       object : SensorEventListener {
         override fun onSensorChanged(event: SensorEvent) {
           val values = event.values
           if (values.size >= 3) {
-            detector.onSample(event.timestamp, values[0], values[1], values[2])
+            if (fast) {
+              detector.onSample(event.timestamp, values[0], values[1], values[2])
+            }
+            if (readingShake) {
+              shakeDetector.onSample(event.timestamp, values[0], values[1], values[2])
+            }
             AccelerometerShare.publish(event.timestamp, values[0], values[1], values[2])
           }
         }
 
         override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
       }
-    configure(detector)
-    if (
-      !sensors.registerListener(listener, sensor, SAMPLING_PERIOD_US, MAX_REPORT_LATENCY_US, handler)
-    ) {
-      LogUtils.w(TAG, "The accelerometer can't be read for back taps")
+    configure(detector, shakeDetector)
+    val period = if (fast) SAMPLING_PERIOD_US else SHAKE_SAMPLING_PERIOD_US
+    if (!sensors.registerListener(listener, sensor, period, MAX_REPORT_LATENCY_US, handler)) {
+      LogUtils.w(TAG, "The accelerometer can't be read for back taps or shakes")
       thread.quitSafely()
       return
     }
     this.thread = thread
     this.handler = handler
     this.detector = detector
+    this.shakeDetector = shakeDetector
+    readingFast = fast
     sensorListener = listener
     AccelerometerShare.setActive(true)
   }
 
-  private fun configure(detector: BackTapDetector) {
+  private fun configure(detector: BackTapDetector, shakeDetector: ShakeDetector?) {
     val threshold = sensitivity.threshold
-    val waitForTriple = tripleUsed
+    val mostTaps = mostTaps.coerceAtLeast(2)
+    val shakeThreshold = shakeSensitivity.threshold
+    val shake = shakeUsed
     val apply = {
+      readingShake = shake
       detector.threshold = threshold
-      detector.waitForTriple = waitForTriple
+      detector.mostTaps = mostTaps
+      shakeDetector?.threshold = shakeThreshold
     }
-    // Before the readings start the detector is used on no thread yet.
+    // Before the readings start the detectors are used on no thread yet.
     handler?.post(apply) ?: apply()
   }
 
@@ -192,6 +245,8 @@ class BackTapCommands(
     thread = null
     handler = null
     detector = null
+    shakeDetector = null
+    readingFast = false
   }
 
   /** Whether the gesture of [key] runs a command anywhere: in a profile, an app or the set in use. */
@@ -228,13 +283,16 @@ class BackTapCommands(
     }
 
   private companion object {
-    const val TAG = "BackTapCommands"
+    const val TAG = "AccelerometerGestures"
 
     /**
      * Readings every 2.5 ms (400 Hz): a tap's jolt lasts about 10 ms. Android gives at most 200 Hz
      * without the HIGH_SAMPLING_RATE_SENSORS permission.
      */
     const val SAMPLING_PERIOD_US = 2_500
+
+    /** Readings every 20 ms (50 Hz) for the shake alone: a shake swings about 3 to 8 times a second. */
+    const val SHAKE_SAMPLING_PERIOD_US = 20_000
 
     /**
      * Readings come in batches up to 100 ms apart where the sensor can hold them, so the device

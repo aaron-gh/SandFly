@@ -962,6 +962,8 @@
     <string name="title_pref_category_fingerprint_touch_shortcuts">Fingerprint gestures</string>
     <!-- Category for assigning commands to taps on the back of the device, detected with the accelerometer. [CHAR LIMIT=40] -->
     <string name="title_pref_category_back_tap">Back tap</string>
+    <!-- Category for assigning a command to shaking the device, detected with the accelerometer. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_shake">Shake</string>
     <!-- Category for tutorial, the tutorial page contains help and feedback. [CHAR LIMIT=60] -->
     <string name="title_pref_category_tutorial">SandFly tutorial</string>
     <!-- Category for helping page or feedback. [CHAR LIMIT=60] -->
@@ -3447,6 +3449,12 @@
     <string name="title_pref_shortcut_back_tap_triple">Triple tap on back</string>
     <!-- Title of the list that sets how light a tap on the back of the device can be and still count. [CHAR_LIMIT=60] -->
     <string name="title_pref_back_tap_sensitivity">Back tap sensitivity</string>
+    <!-- Label for the preference that assigns a command to four quick taps on the back of the device. [CHAR_LIMIT=90] -->
+    <string name="title_pref_shortcut_back_tap_quadruple">Quadruple tap on back</string>
+    <!-- Label for the preference that assigns a command to shaking the device back and forth. [CHAR_LIMIT=90] -->
+    <string name="title_pref_shortcut_shake">Shake</string>
+    <!-- Title of the list that sets how hard the device must be shaken for a shake to count. [CHAR_LIMIT=60] -->
+    <string name="title_pref_shake_sensitivity">Shake sensitivity</string>
 
     <!-- Label for the prefernce that displays version code. [CHAR_LIMIT=99] -->
     <string name="title_pref_version_code">Version code</string>

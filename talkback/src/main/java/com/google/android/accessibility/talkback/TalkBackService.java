@@ -214,7 +214,7 @@ import com.google.android.accessibility.talkback.focusmanagement.interpreter.Scr
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.TouchExplorationInterpreter;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
-import com.google.android.accessibility.talkback.gesture.BackTapCommands;
+import com.google.android.accessibility.talkback.gesture.AccelerometerGestures;
 import com.google.android.accessibility.talkback.gesture.GestureController;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
 import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
@@ -968,7 +968,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   /** Alt+Tab through SandFly's overview. */
   @Nullable private AppSwitcherKeys appSwitcherKeys;
   @Nullable private SplitScreen splitScreen;
-  @Nullable private BackTapCommands backTapCommands;
+  @Nullable private AccelerometerGestures accelerometerGestures;
   // Keep recognition models loaded, Until SandFly stops.
   @Nullable private RecognitionModelKeeper recognitionModelKeeper;
   // The strip at the bottom of the screen where lifting activates nothing with Lift to activate.
@@ -3355,18 +3355,18 @@ public class TalkBackService extends AccessibilityServiceCompat
                 keyComboManager != null
                     && keyComboManager.getSandFlyKey() == SandFlyKey.ALT);
 
-    backTapCommands =
-        new BackTapCommands(
+    accelerometerGestures =
+        new AccelerometerGestures(
             this,
             key -> {
               if (gestureController != null
                   && isServiceActive()
                   && !PauseController.isPaused()) {
-                gestureController.onBackTap(key, EVENT_ID_UNTRACKED);
+                gestureController.onAccelerometerGesture(key, EVENT_ID_UNTRACKED);
               }
               return Unit.INSTANCE;
             });
-    addEventListener(backTapCommands);
+    addEventListener(accelerometerGestures);
     if (recognitionModelKeeper != null) {
       recognitionModelKeeper.stop();
     }
@@ -3374,8 +3374,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     recognitionModelKeeper.start();
     ringerModeAndScreenMonitor.addScreenChangedListener(
         (isInteractive, eventId) -> {
-          if (backTapCommands != null) {
-            backTapCommands.onScreenChanged(isInteractive);
+          if (accelerometerGestures != null) {
+            accelerometerGestures.onScreenChanged(isInteractive);
           }
         });
 
@@ -4078,8 +4078,8 @@ public class TalkBackService extends AccessibilityServiceCompat
         getString(R.string.selector_switch_tts_engine),
         getString(R.string.selector_voice_profile));
     reloadPreferences();
-    if (backTapCommands != null) {
-      backTapCommands.setAllowed(!PauseController.isPaused());
+    if (accelerometerGestures != null) {
+      accelerometerGestures.setAllowed(!PauseController.isPaused());
     }
 
     inputFocusInterpreter.initLastEditableFocusForGlobalVariables();
@@ -4142,8 +4142,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeKeyCommands != null) {
       volumeKeyCommands.cancel();
     }
-    if (backTapCommands != null) {
-      backTapCommands.setAllowed(false);
+    if (accelerometerGestures != null) {
+      accelerometerGestures.setAllowed(false);
     }
 
     if (displayMonitor != null) {
@@ -4297,8 +4297,8 @@ public class TalkBackService extends AccessibilityServiceCompat
       proximitySensorMonitor.shutdown();
     }
     TouchLock.stop();
-    if (backTapCommands != null) {
-      backTapCommands.shutdown();
+    if (accelerometerGestures != null) {
+      accelerometerGestures.shutdown();
     }
     if (recognitionModelKeeper != null) {
       recognitionModelKeeper.stop();
@@ -4883,8 +4883,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (volumeChangeFeedback != null) {
       volumeChangeFeedback.reload(prefs);
     }
-    if (backTapCommands != null) {
-      backTapCommands.reload(prefs);
+    if (accelerometerGestures != null) {
+      accelerometerGestures.reload(prefs);
     }
 
     boolean useAudioFocus =
@@ -5282,8 +5282,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     if (directTouchController != null) {
       directTouchController.setPaused(paused);
     }
-    if (backTapCommands != null) {
-      backTapCommands.setAllowed(!paused && isServiceActive());
+    if (accelerometerGestures != null) {
+      accelerometerGestures.setAllowed(!paused && isServiceActive());
     }
     // While paused, touches go to the apps, which the strip would take at the bottom of the screen.
     updateLiftCancelStrip();

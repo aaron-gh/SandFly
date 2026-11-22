@@ -58,7 +58,7 @@ class BackTapDetectorTest {
 
   @Test
   fun doubleTap_withoutTripleTapCommand_runsSooner() {
-    detector.waitForTriple = false
+    detector.mostTaps = 2
     still(500)
     tap(at = 500)
     tap(at = 700)
@@ -78,7 +78,67 @@ class BackTapDetectorTest {
   }
 
   @Test
-  fun fourTaps_runOnlyTheTripleTap() {
+  fun tripleTap_withoutQuadrupleTapCommand_runsSooner() {
+    detector.mostTaps = 3
+    still(500)
+    tap(at = 500)
+    tap(at = 700)
+    tap(at = 900)
+    still(2000)
+    assertEquals(listOf(3), runs.map { it.first })
+    assertTrue(runs[0].second < 900 + 300)
+  }
+
+  @Test
+  fun tripleTap_waitsForAFourthTap() {
+    still(500)
+    tap(at = 500)
+    tap(at = 700)
+    tap(at = 900)
+    still(2000)
+    assertTrue(runs[0].second >= 900 + 450)
+  }
+
+  @Test
+  fun fourTaps_quadrupleTap() {
+    still(500)
+    tap(at = 500)
+    tap(at = 700)
+    tap(at = 900)
+    tap(at = 1100)
+    still(2500)
+    assertEquals(listOf(4), runs.map { it.first })
+    // Nothing has more taps: runs without waiting for another.
+    assertTrue(runs[0].second < 1100 + 300)
+  }
+
+  @Test
+  fun fiveTaps_runOnlyTheQuadrupleTap() {
+    still(500)
+    tap(at = 500)
+    tap(at = 700)
+    tap(at = 900)
+    tap(at = 1100)
+    tap(at = 1300)
+    still(3000)
+    assertEquals(listOf(4), runs.map { it.first })
+  }
+
+  @Test
+  fun droppedTaps_runNothing() {
+    still(500)
+    tap(at = 500)
+    tap(at = 700)
+    still(750)
+    detector.dropTaps(750 * MS)
+    tap(at = 900)
+    still(2000)
+    assertEquals(emptyList<Int>(), runs.map { it.first })
+  }
+
+  @Test
+  fun fourTaps_withoutQuadrupleTapCommand_runOnlyTheTripleTap() {
+    detector.mostTaps = 3
     still(500)
     tap(at = 500)
     tap(at = 700)

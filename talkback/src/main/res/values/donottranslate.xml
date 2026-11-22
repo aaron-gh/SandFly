@@ -873,6 +873,7 @@
     <string name="pref_category_back_tap_key">pref_category_back_tap_key</string>
     <string name="pref_shortcut_back_tap_double_key">pref_shortcut_back_tap_double</string>
     <string name="pref_shortcut_back_tap_triple_key">pref_shortcut_back_tap_triple</string>
+    <string name="pref_shortcut_back_tap_quadruple_key">pref_shortcut_back_tap_quadruple</string>
     <string name="pref_back_tap_sensitivity_key">pref_back_tap_sensitivity</string>
     <string name="pref_back_tap_sensitivity_default">medium</string>
     <string-array name="pref_back_tap_sensitivity_entries" translatable="false">
@@ -885,6 +886,11 @@
       <item>medium</item>
       <item>high</item>
     </string-array>
+    <!-- Shake keys: the sensitivity uses the entries and values of back tap's. -->
+    <string name="pref_category_shake_key">pref_category_shake_key</string>
+    <string name="pref_shortcut_shake_key">pref_shortcut_shake</string>
+    <string name="pref_shake_sensitivity_key">pref_shake_sensitivity</string>
+    <string name="pref_shake_sensitivity_default">medium</string>
 
   <!-- Keyboard preferences -->
   <string name="pref_select_keymap_key">pref_select_keymap</string>
@@ -1273,6 +1279,10 @@
       <!-- Back tap -->
       <item>@string/pref_shortcut_back_tap_double_key</item>
       <item>@string/pref_shortcut_back_tap_triple_key</item>
+      <item>@string/pref_shortcut_back_tap_quadruple_key</item>
+
+      <!-- Shake -->
+      <item>@string/pref_shortcut_shake_key</item>
     </string-array>
 
     <!-- Gestures > Gesture layout: the values match GestureLayout.SANDFLY and VOICEOVER. -->

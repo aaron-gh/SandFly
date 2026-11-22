@@ -132,11 +132,19 @@ The swipe is the next touch after the last tap and must start within 0.25 second
 
 ### Back tap {#gestures-back-tap}
 
-Tap the back of the phone twice or three times with a finger to run **Double tap on back** or **Triple tap on back**, under **Back tap** on the **Gestures** screen. Both do nothing by default. SandFly detects the taps with the accelerometer, only while the screen is on, SandFly isn't paused and a back tap has a command. Taps while you touch the screen don't count.
+Tap the back of the phone two, three or four times with a finger to run **Double tap on back**, **Triple tap on back** or **Quadruple tap on back**, under **Back tap** on the **Gestures** screen. They do nothing by default. SandFly detects the taps with the accelerometer, only while the screen is on, SandFly isn't paused and a back tap has a command. Taps while you touch the screen don't count.
 
 **Back tap sensitivity** sets how hard a tap must be: **Low** needs the hardest taps, **High** the lightest. The default is **Medium**. Raise it if taps are missed, and lower it if back taps run when you put the phone down or carry it.
 
-A double tap runs sooner when **Triple tap on back** has no command. Back tap isn't on watches or TVs. Back taps still work while touch is locked; see [](#touch).
+Taps wait for a following tap only while a gesture with more taps has a command: a double tap runs sooner when **Triple tap on back** and **Quadruple tap on back** have no command. Back tap isn't on watches or TVs. Back taps still work while touch is locked; see [](#touch).
+
+### Shake {#gestures-shake}
+
+Shake the phone quickly back and forth to run **Shake**, under **Shake** on the **Gestures** screen. It does nothing by default. A shake is at least two swings each way within about two thirds of a second. Shaking that goes on runs **Shake** once; the next shake counts after the phone has been still for a moment. SandFly detects shakes with the accelerometer, only while the screen is on, SandFly isn't paused and **Shake** has a command.
+
+**Shake sensitivity** sets how hard the phone must be shaken: **Low** needs the hardest shakes, **High** the lightest. The default is **Medium**.
+
+Shake isn't on watches or TVs, and works while touch is locked.
 
 ### Fingerprint gestures {#gestures-fingerprint}
 
@@ -153,7 +161,7 @@ On phones whose fingerprint sensor reports swipes, the **Fingerprint gestures** 
 - The timing settings: see [](#gestures-timing).
 - **Recognize swipes before lifting**: see [](#gestures-swipes-before-lift).
 - **Gestures in apps**, **Gesture profiles** and **App shortcuts**: see [](#gestures-in-apps), [](#gestures-profiles) and [](#gestures-app-shortcuts).
-- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures** and **Back tap**.
+- The gesture categories: **1 finger**, **1 finger back-and-forth**, **1 finger angle**, **Edges**, **Corners**, **2 fingers**, **2 finger angle**, **3 fingers**, **4 fingers**, **Tap, then swipe**, **Fingerprint gestures**, **Back tap** and **Shake**.
 
 The categories are collapsed. Activate a category to expand it. Each gesture in a category shows the command it runs.
 
