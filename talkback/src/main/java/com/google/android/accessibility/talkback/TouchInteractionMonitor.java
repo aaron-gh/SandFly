@@ -2937,7 +2937,7 @@ public class TouchInteractionMonitor
         || !isInGboardPopup(node)
         || typingMethod != FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE
         || Role.getRole(node) == Role.ROLE_TEXT_ENTRY_KEY
-        || !node.isClickable()) {
+        || !AccessibilityNodeInfoUtils.isClickable(node)) {
       return;
     }
     LogUtils.v(LOG_TAG, "Typing the popup character %s", node.getContentDescription());
