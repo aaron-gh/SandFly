@@ -63,6 +63,8 @@ public class CustomActionMenu implements NodeMenu {
   public static final int CUSTOM_ACTION_GROUP_ID = 1;
   private static final int SCRIPT_ACTION_ID = 0x5c000000;
   private static final int MACRO_ACTION_ID = 0x5a000000;
+  /** Macros with a Show in Actions only when condition, which select Actions automatically. */
+  private static final int CONDITIONED_MACRO_ACTION_ID = 0x59000000;
   private static final int OPEN_IN_SPLIT_ACTION_ID = 0x5bffffff;
   private static final int PIP_CONTROL_ACTION_ID = 0x5b000000;
   private static final String TAG = "CustomActionMenu";
@@ -103,7 +105,10 @@ public class CustomActionMenu implements NodeMenu {
     return shown;
   }
 
-  /** Whether {@code item} runs one of the user's macros, which every item of an app can list. */
+  /**
+   * Whether {@code item} runs one of the user's macros without a Show in Actions only when
+   * condition, which every item of an app can list. Macros with a condition aren't counted.
+   */
   public static boolean isMacroItem(ContextMenuItem item) {
     return item.getGroupId() == CUSTOM_ACTION_GROUP_ID
         && item.getItemId() >= MACRO_ACTION_ID
@@ -139,10 +144,15 @@ public class CustomActionMenu implements NodeMenu {
       Context context, AccessibilityNodeInfoCompat node, List<ContextMenuItem> menu) {
     List<Macros.Macro> macros = macrosOf(context, node);
     for (int i = 0; i < macros.size() && i < MAX_MACRO_ITEMS; i++) {
-      String id = macros.get(i).getId();
+      Macros.Macro macro = macros.get(i);
+      String id = macro.getId();
+      int base =
+          macro.getActionsCondition().getClauses().isEmpty()
+              ? MACRO_ACTION_ID
+              : CONDITIONED_MACRO_ACTION_ID;
       ContextMenuItem item =
           ContextMenu.createMenuItem(
-              context, CUSTOM_ACTION_GROUP_ID, MACRO_ACTION_ID + i, Menu.NONE, macros.get(i).getName());
+              context, CUSTOM_ACTION_GROUP_ID, base + i, Menu.NONE, macro.getName());
       item.setOnMenuItemClickListener(
           clicked -> {
             MacroRunner.run(id, /* sayNotMet= */ true);

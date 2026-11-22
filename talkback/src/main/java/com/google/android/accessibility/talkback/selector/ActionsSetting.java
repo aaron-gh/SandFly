@@ -89,8 +89,9 @@ public class ActionsSetting implements SelectorController.ContextualSetting {
   }
 
   /**
-   * Returns whether the only actions of {@code node} are the user's macros, which are listed for
-   * every item of their app and don't switch the reading control to Actions.
+   * Returns whether the only actions of {@code node} are the user's macros without a Show in
+   * Actions only when condition, which are listed for every item of their app and don't switch the
+   * reading control to Actions.
    */
   public boolean hasOnlyMacros(Context context, AccessibilityNodeInfoCompat node) {
     if (node == null) {

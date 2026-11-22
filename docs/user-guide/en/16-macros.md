@@ -37,7 +37,7 @@ The screen of a macro has:
 - **Run only when**: a condition that has to be met for the macro to run. **Always** by default. When the condition isn't met, the macro does nothing, and **Run now** says "Macro not run. Run only when: not met". See [](#macros-conditions).
 - **App**: the app the macro runs in, or **All apps**, the default. A macro with an app runs only while that app is in front.
 - **Show in Actions**: lists the macro in the **Actions** menu and the **Actions** reading control of every item in its app, or in every app for **All apps**, after the actions of the app. Choosing it there runs the macro. Off by default.
-- **Show in Actions only when**: shown with **Show in Actions** on. A condition that has to be met for the focused item to list the macro.
+- **Show in Actions only when**: shown with **Show in Actions** on. A condition that has to be met for the focused item to list the macro. With a condition, the macro counts as an action of the item for **Change reading control automatically**, so the **Actions** reading control is selected on it; without one it doesn't.
 - **Steps**: the steps in order. Steps inside an **If** or a repeat are indented.
 - **Gestures and keyboard shortcut**: the gestures, arrow keys, braille cells and keyboard shortcut that run the macro.
 - **Add to home screen**: adds a home screen shortcut that runs the macro on the screen that you open it from. Renaming the macro renames the shortcut; deleting the macro disables it. Not every launcher supports shortcuts.
