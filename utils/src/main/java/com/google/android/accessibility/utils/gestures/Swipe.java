@@ -38,8 +38,8 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * This class is responsible for matching one-finger swipe gestures. Each instance matches one swipe
- * gesture. A swipe is specified as a series of one or more directions e.g. left, left and up, etc.
- * At this time swipes with more than two directions are not supported.
+ * gesture. A swipe is specified as a series of one to three directions e.g. left, left and up, etc.
+ * A swipe in three directions is SandFly's own, and is matched only while it has an action.
  */
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class Swipe extends GestureMatcher {
@@ -140,6 +140,24 @@ class Swipe extends GestureMatcher {
     this(context, new int[] {direction1, direction2}, gesture, listener, configProvider, logger);
   }
 
+  Swipe(
+      Context context,
+      int direction1,
+      int direction2,
+      int direction3,
+      int gesture,
+      GestureMatcher.StateChangeListener listener,
+      GestureConfigProvider configProvider,
+      GestureMatcher.AnalyticsEventLogger logger) {
+    this(
+        context,
+        new int[] {direction1, direction2, direction3},
+        gesture,
+        listener,
+        configProvider,
+        logger);
+  }
+
   private Swipe(
       Context context,
       int[] directions,
@@ -221,6 +239,11 @@ class Swipe extends GestureMatcher {
   @Override
   protected void onDown(EventId eventId, MotionEvent event) {
     if (Float.isNaN(baseX) && Float.isNaN(baseY)) {
+      if (directions.length > 2 && !configProvider.isGestureAssigned(getGestureId())) {
+        // Nothing to run, so the touch is matched as before.
+        cancelGesture(event, /* notify= */ false);
+        return;
+      }
       baseX = event.getX();
       baseY = event.getY();
       baseTime = event.getEventTime();

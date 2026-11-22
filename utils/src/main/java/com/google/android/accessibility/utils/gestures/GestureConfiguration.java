@@ -167,6 +167,44 @@ public final class GestureConfiguration {
     };
   }
 
+  /** Returns whether {@code gestureId} is a one-finger swipe in three directions. */
+  public static boolean isThreeDirectionSwipe(int gestureId) {
+    return gestureId <= GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_UP
+        && gestureId >= GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT;
+  }
+
+  /**
+   * Returns the one-finger swipes in three directions whose first direction is that of the
+   * one-finger swipe {@code swipeGestureId}, or none for every other gesture.
+   */
+  @RequiresApi(Build.VERSION_CODES.TIRAMISU)
+  public static int[] threeDirectionSwipesStartingWith(int swipeGestureId) {
+    // The three-direction swipes are numbered down from the first, nine for each first direction,
+    // in the order up, down, left, right.
+    int first =
+        switch (swipeGestureId) {
+          case AccessibilityService.GESTURE_SWIPE_UP -> 0;
+          case AccessibilityService.GESTURE_SWIPE_DOWN -> 1;
+          case AccessibilityService.GESTURE_SWIPE_LEFT -> 2;
+          case AccessibilityService.GESTURE_SWIPE_RIGHT -> 3;
+          default -> -1;
+        };
+    if (first < 0) {
+      return new int[0];
+    }
+    int[] gestures = new int[THREE_DIRECTION_SWIPES_PER_FIRST_DIRECTION];
+    for (int i = 0; i < gestures.length; i++) {
+      gestures[i] =
+          GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_UP
+              - first * THREE_DIRECTION_SWIPES_PER_FIRST_DIRECTION
+              - i;
+    }
+    return gestures;
+  }
+
+  // Three second directions, each with three third directions.
+  private static final int THREE_DIRECTION_SWIPES_PER_FIRST_DIRECTION = 9;
+
   /** Returns whether {@code gestureId} is one of the two-finger angle gestures. */
   public static boolean isTwoFingerAngle(int gestureId) {
     return gestureId <= GestureManifold.GESTURE_2_FINGER_SWIPE_UP_AND_LEFT
@@ -175,8 +213,9 @@ public final class GestureConfiguration {
 
   /**
    * Returns the gestures that start with the one-finger swipe {@code swipeGestureId}: its swipe and
-   * hold, the back-and-forth and angle gestures that start in its direction, and their swipe and
-   * hold versions. Empty for every other gesture. Swipe and hold gestures are SandFly's own
+   * hold, the back-and-forth and angle gestures that start in its direction, their swipe and hold
+   * versions, and the swipes in three directions that start in its direction. Empty for every other
+   * gesture. Swipe and hold gestures are SandFly's own
    * detection's, from Android 13.
    */
   @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -212,12 +251,15 @@ public final class GestureConfiguration {
     if (twoDirection.length == 0) {
       return twoDirection;
     }
-    int[] gestures = new int[twoDirection.length * 2 + 1];
+    int[] threeDirection = threeDirectionSwipesStartingWith(swipeGestureId);
+    int[] gestures = new int[twoDirection.length * 2 + 1 + threeDirection.length];
     gestures[0] = GestureManifold.swipeAndHoldOf(swipeGestureId);
     for (int i = 0; i < twoDirection.length; i++) {
       gestures[1 + 2 * i] = twoDirection[i];
       gestures[2 + 2 * i] = GestureManifold.swipeAndHoldOf(twoDirection[i]);
     }
+    System.arraycopy(
+        threeDirection, 0, gestures, twoDirection.length * 2 + 1, threeDirection.length);
     return gestures;
   }
 

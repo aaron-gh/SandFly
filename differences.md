@@ -300,6 +300,14 @@ Under **Gestures** > **Tap, then swipe**, there are gestures that tap once, twic
 
 Under **Gestures** > **2 finger angle**, there are eight gestures that swipe two fingers one way and then turn at a right angle, such as **Swipe up then right with 2 fingers**. They do nothing by default. Two fingers moved one way and back are the scrub, so there are no two-finger back-and-forth gestures. The angle gestures work only while **Handle two-finger swipes in SandFly** is on, and are hidden while it is off. Not on watches.
 
+### Three-part swipes
+
+Under **Gestures** > **Three-part swipes**, there are 36 gestures that move one finger in three directions without lifting it, each part turning from the one before, such as **Swipe right, up, then right**. They do nothing by default, and a three-part swipe without a command isn't recognized. **Recognize swipes before lifting** turns them off and hides them. Not on watches.
+
+### Two-stroke swipes
+
+Under **Gestures** > **Two-stroke swipes**, there are 16 gestures of two one-finger swipes with the finger lifted between them, such as **Swipe right, lift, then swipe up**. They do nothing by default and work only while **Gestures** > **Time between two-stroke swipes** is set, from 0.5 to 2 seconds; it's **Off** by default. After a swipe, SandFly waits for the second swipe only when a two-stroke swipe that starts with that swipe has a command; other swipes run at once. When the time passes, or the next touch is something else, the first swipe runs as an ordinary swipe. Not on watches.
+
 ### Swipe and hold
 
 Each one-finger swipe, back-and-forth swipe and angle swipe has a version that ends with the finger resting on the screen, such as **Swipe right and hold** or **Swipe left then up and hold**. Swipe, then keep the finger still: the command runs when the hold time ends, before you lift the finger. Lifting sooner makes the ordinary swipe. A pause shorter than the hold time where an angle or back-and-forth swipe turns stays part of that swipe; a longer pause is the swipe and hold of the first direction, when that has a command.
@@ -320,7 +328,7 @@ A tap with two, three or four fingers, or several such taps, runs its command as
 
 ### Recognize swipes before lifting
 
-With **Gestures** > **Recognize swipes before lifting** on, a one-finger swipe runs its command once the finger has moved 1 cm, before you lift it. The setting turns off and hides the one-finger back-and-forth and angle gestures and the two-finger angle gestures. A swipe still waits for the lift when the swipe and hold of its direction has a command, or when an edge gesture is still possible. It's off by default.
+With **Gestures** > **Recognize swipes before lifting** on, a one-finger swipe runs its command once the finger has moved 1 cm, before you lift it. The setting turns off and hides the one-finger back-and-forth and angle gestures, the three-part swipes and the two-finger angle gestures. A swipe still waits for the lift when the swipe and hold of its direction has a command, or when an edge gesture is still possible. It's off by default.
 
 With the setting off, a swipe also runs before the lift when no gesture that starts in its direction has a command. With **SandFly gestures**, the back-and-forth gestures have commands; with **VoiceOver gestures**, they don't. Each gesture profile can turn the setting on or off for itself. Not on watches.
 

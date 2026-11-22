@@ -24,9 +24,9 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * Recognize swipes before lifting: a one-finger swipe runs once it has moved the gesture confirm
- * distance, with the finger still down. Back-and-forth and angle gestures start the same way, so
- * they are off and hidden while it is on, and so are the two-finger angle gestures. Only SandFly's
- * own gesture detection does this.
+ * distance, with the finger still down. Back-and-forth and angle gestures and three-part swipes
+ * start the same way, so they are off and hidden while it is on, and so are the two-finger angle
+ * gestures. Only SandFly's own gesture detection does this.
  *
  * With it off, a swipe still runs before the lift while no back-and-forth or angle gesture that
  * starts in its direction, and no swipe and hold of either, has a command (see
@@ -93,12 +93,13 @@ object SwipesBeforeLift {
       !GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(context))
   }
 
-  /** Keys of the back-and-forth and angle categories of the Gestures screen. */
+  /** Keys of the back-and-forth, angle and three-part swipe categories of the Gestures screen. */
   @JvmStatic
   fun categoryKeys(context: Context): Set<String> =
     setOf(
       context.getString(R.string.pref_category_1finger_back_forth_shortcuts_key),
       context.getString(R.string.pref_category_1finger_angle_shortcuts_key),
+      context.getString(R.string.pref_category_1finger_three_part_shortcuts_key),
       context.getString(R.string.pref_category_2finger_angle_shortcuts_key),
     )
 }

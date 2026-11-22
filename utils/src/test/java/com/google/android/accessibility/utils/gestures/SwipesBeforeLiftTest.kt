@@ -343,16 +343,28 @@ class SwipesBeforeLiftTest {
         GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_HOLD,
         GESTURE_SWIPE_UP_AND_RIGHT,
         GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_HOLD,
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_UP,
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_LEFT,
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_RIGHT,
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_UP,
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_DOWN,
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_RIGHT,
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_UP,
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_DOWN,
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_LEFT,
       ),
       GestureConfiguration.gesturesStartingWith(GESTURE_SWIPE_UP),
     )
     val swipes = listOf(GESTURE_SWIPE_UP, GESTURE_SWIPE_DOWN, GESTURE_SWIPE_LEFT, GESTURE_SWIPE_RIGHT)
     for (swipe in swipes) {
       val following = GestureConfiguration.gesturesStartingWith(swipe)
-      assertEquals(7, following.size)
+      assertEquals(16, following.size)
       assertEquals(GestureManifold.swipeAndHoldOf(swipe), following[0])
-      for (i in 1 until following.size) {
+      for (i in 1 until 7) {
         assertTrue(GestureConfiguration.isTwoDirectionSwipe(following[i]))
+      }
+      for (i in 7 until following.size) {
+        assertTrue(GestureConfiguration.isThreeDirectionSwipe(following[i]))
       }
     }
     assertTrue(GestureConfiguration.gesturesStartingWith(GESTURE_SWIPE_DOWN_AND_UP).isEmpty())

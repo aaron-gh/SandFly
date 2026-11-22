@@ -129,6 +129,7 @@ import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
+import com.google.android.accessibility.talkback.gesture.TwoStrokeSwipes;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
@@ -253,6 +254,8 @@ public class TouchInteractionMonitor
   private int draggingPointerId = INVALID_POINTER_ID;
   private final TalkBackService service;
   private final Handler mainHandler;
+  // A one-finger swipe waiting for the second swipe of a two-stroke swipe.
+  private final TwoStrokeSwipes twoStrokeSwipes;
   private final GestureManifold gestureDetector;
   private boolean gestureStarted = false;
   // Whether a gesture other than a two-finger swipe started. A two-finger swipe starts as soon as
@@ -527,6 +530,8 @@ public class TouchInteractionMonitor
     this.logger = logger;
     displayId = context.getDisplay().getDisplayId();
     mainHandler = new Handler(context.getMainLooper());
+    twoStrokeSwipes =
+        new TwoStrokeSwipes(mainHandler, this::isGestureAssignedForMatching, this::postGesture);
     this.touchExplorationModeFailureReporter = touchExplorationModeFailureReporter;
     gestureDetector =
         new GestureManifold(
@@ -717,6 +722,7 @@ public class TouchInteractionMonitor
 
   public void stop() {
     stateInActive = false;
+    twoStrokeSwipes.cancel();
     HoverlessWindows.clearStart();
     // Nothing that is waiting runs a gesture or speaks after the service stops.
     clearCornerTaps();
@@ -748,6 +754,12 @@ public class TouchInteractionMonitor
             R.string.pref_swipe_start_time_key,
             R.string.pref_swipe_start_time_default));
     GestureConfiguration.setSwipesBeforeLift(SwipesBeforeLift.isOn(context));
+    twoStrokeSwipes.setTimeMs(
+        SharedPreferencesUtils.getIntFromStringPref(
+            prefs,
+            context.getResources(),
+            R.string.pref_two_stroke_swipe_time_key,
+            R.string.pref_two_stroke_swipe_time_default));
   }
 
   /** Reads how far edge gestures slide in to their first click, and on to their second. */
@@ -890,6 +902,7 @@ public class TouchInteractionMonitor
             || context.getString(R.string.pref_swipe_hold_time_key).equals(key)
             || context.getString(R.string.pref_swipe_start_time_key).equals(key)
             || context.getString(R.string.pref_swipes_before_lift_key).equals(key)
+            || context.getString(R.string.pref_two_stroke_swipe_time_key).equals(key)
             || GestureProfiles.ACTIVE_KEY.equals(key)
             || GestureProfiles.KEY.equals(key)) {
           updateMultiTapTimeout(prefs);
@@ -907,6 +920,20 @@ public class TouchInteractionMonitor
   @SuppressWarnings("Override")
   @Override
   public void onMotionEvent(MotionEvent event) {
+    int action = event == null ? -1 : event.getActionMasked();
+    if (action == ACTION_DOWN) {
+      twoStrokeSwipes.onTouchDown();
+    } else if (action == ACTION_POINTER_DOWN) {
+      // A gesture with more fingers is no second swipe.
+      twoStrokeSwipes.flush();
+    }
+    handleMotionEvent(event);
+    if (action == MotionEvent.ACTION_UP || action == MotionEvent.ACTION_CANCEL) {
+      twoStrokeSwipes.onTouchUp();
+    }
+  }
+
+  private void handleMotionEvent(MotionEvent event) {
     if (event != null) {
       int action = event.getActionMasked();
       if (event.getPointerCount() > 1) {
@@ -1691,10 +1718,10 @@ public class TouchInteractionMonitor
 
   /** Dispatch a gesture event to the main thread of the service. */
   private void dispatchGestureToMainThreadAndClear(AccessibilityGestureEvent gestureEvent) {
-    mainHandler.post(
-        () -> {
-          boolean unused = service.onGesture(gestureEvent);
-        });
+    // A one-finger swipe may wait for the second swipe of a two-stroke swipe, which this may be.
+    if (!twoStrokeSwipes.offer(gestureEvent)) {
+      postGesture(gestureEvent);
+    }
     clear();
     clearGestureDetectorOnNextDown = true;
     // A gesture recognized from events that corner taps hand back ended in the past, with the
@@ -2478,6 +2505,12 @@ public class TouchInteractionMonitor
 
   /** Dispatch a gesture event to the main thread of the service, but do not clear state. */
   private void dispatchGestureToMainThread(AccessibilityGestureEvent gestureEvent) {
+    twoStrokeSwipes.flush();
+    postGesture(gestureEvent);
+  }
+
+  /** Runs a gesture on the main thread of the service. */
+  private void postGesture(AccessibilityGestureEvent gestureEvent) {
     mainHandler.post(
         () -> {
           boolean unused = service.onGesture(gestureEvent);
@@ -2580,6 +2613,8 @@ public class TouchInteractionMonitor
   }
 
   void requestTouchExploration(String caller) {
+    // Touch exploration is no second swipe.
+    twoStrokeSwipes.flush();
     if (cornerTapTracker.isActive()) {
       // Corner taps keep the touch until they end.
       return;
@@ -2615,6 +2650,7 @@ public class TouchInteractionMonitor
    * exploration, whose hover events don't find the characters of Gboard's popup on some phones.
    */
   private void startExploringKeyboard(String caller) {
+    twoStrokeSwipes.flush();
     LogUtils.v(LOG_TAG, "Exploring the keyboard, instead of %s", caller);
     exploringKeyboard = true;
     keepMonitorTouchExplore = false;

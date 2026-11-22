@@ -113,6 +113,79 @@ class GestureMatcherFactory {
     MAPPER_GESTURE_SWIPE_UP_AND_DOWN(GESTURE_SWIPE_UP_AND_DOWN, 1, 0, UP, DOWN),
     MAPPER_GESTURE_SWIPE_UP_AND_LEFT(GESTURE_SWIPE_UP_AND_LEFT, 1, 0, UP, LEFT),
     MAPPER_GESTURE_SWIPE_UP_AND_RIGHT(GESTURE_SWIPE_UP_AND_RIGHT, 1, 0, UP, RIGHT),
+    // Three-direction swipes: the gesture, then its directions.
+    MAPPER_GESTURE_SWIPE_UP_AND_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_UP, UP, DOWN, UP),
+    MAPPER_GESTURE_SWIPE_UP_AND_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_LEFT, UP, DOWN, LEFT),
+    MAPPER_GESTURE_SWIPE_UP_AND_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_DOWN_AND_RIGHT, UP, DOWN, RIGHT),
+    MAPPER_GESTURE_SWIPE_UP_AND_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_UP, UP, LEFT, UP),
+    MAPPER_GESTURE_SWIPE_UP_AND_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_DOWN, UP, LEFT, DOWN),
+    MAPPER_GESTURE_SWIPE_UP_AND_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_AND_RIGHT, UP, LEFT, RIGHT),
+    MAPPER_GESTURE_SWIPE_UP_AND_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_UP, UP, RIGHT, UP),
+    MAPPER_GESTURE_SWIPE_UP_AND_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_DOWN, UP, RIGHT, DOWN),
+    MAPPER_GESTURE_SWIPE_UP_AND_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_UP_AND_RIGHT_AND_LEFT, UP, RIGHT, LEFT),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_AND_DOWN, DOWN, UP, DOWN),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_AND_LEFT, DOWN, UP, LEFT),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_UP_AND_RIGHT, DOWN, UP, RIGHT),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_AND_UP, DOWN, LEFT, UP),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_AND_DOWN, DOWN, LEFT, DOWN),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_LEFT_AND_RIGHT, DOWN, LEFT, RIGHT),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_AND_UP, DOWN, RIGHT, UP),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_AND_DOWN, DOWN, RIGHT, DOWN),
+    MAPPER_GESTURE_SWIPE_DOWN_AND_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_DOWN_AND_RIGHT_AND_LEFT, DOWN, RIGHT, LEFT),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_AND_DOWN, LEFT, UP, DOWN),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_AND_LEFT, LEFT, UP, LEFT),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_UP_AND_RIGHT, LEFT, UP, RIGHT),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_AND_UP, LEFT, DOWN, UP),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_AND_LEFT, LEFT, DOWN, LEFT),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_DOWN_AND_RIGHT, LEFT, DOWN, RIGHT),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_RIGHT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_AND_UP, LEFT, RIGHT, UP),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_RIGHT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_AND_DOWN, LEFT, RIGHT, DOWN),
+    MAPPER_GESTURE_SWIPE_LEFT_AND_RIGHT_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_LEFT_AND_RIGHT_AND_LEFT, LEFT, RIGHT, LEFT),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_UP_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_DOWN, RIGHT, UP, DOWN),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_UP_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_LEFT, RIGHT, UP, LEFT),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT, RIGHT, UP, RIGHT),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_DOWN_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_UP, RIGHT, DOWN, UP),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_DOWN_AND_LEFT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_LEFT, RIGHT, DOWN, LEFT),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_DOWN_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_RIGHT, RIGHT, DOWN, RIGHT),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_LEFT_AND_UP(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_UP, RIGHT, LEFT, UP),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_DOWN, RIGHT, LEFT, DOWN),
+    MAPPER_GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT(
+        GestureManifold.GESTURE_SWIPE_RIGHT_AND_LEFT_AND_RIGHT, RIGHT, LEFT, RIGHT),
     // Set up multi-finger gestures to be enabled later.
     // Two-finger taps.
     MAPPER_GESTURE_2_FINGER_SINGLE_TAP(GESTURE_2_FINGER_SINGLE_TAP, 2, 1, NONE, NONE),
@@ -288,6 +361,11 @@ class GestureMatcherFactory {
       this(gestureId, finger, tap, /* isHold= */ false, direction1, direction2, swipeFinger);
     }
 
+    /** A one-finger swipe in three directions. */
+    GestureMatchConfig(int gestureId, int direction1, int direction2, int direction3) {
+      this(gestureId, 1, 0, /* isHold= */ false, direction1, direction2, direction3, 1);
+    }
+
     GestureMatchConfig(
         int gestureId,
         int finger,
@@ -296,12 +374,25 @@ class GestureMatcherFactory {
         int direction1,
         int direction2,
         int swipeFinger) {
+      this(gestureId, finger, tap, isHold, direction1, direction2, NONE, swipeFinger);
+    }
+
+    GestureMatchConfig(
+        int gestureId,
+        int finger,
+        int tap,
+        boolean isHold,
+        int direction1,
+        int direction2,
+        int direction3,
+        int swipeFinger) {
       this.gestureId = gestureId;
       this.finger = finger;
       this.tap = tap;
       this.isHold = isHold;
       this.direction1 = direction1;
       this.direction2 = direction2;
+      this.direction3 = direction3;
       this.swipeFinger = swipeFinger;
     }
 
@@ -311,6 +402,8 @@ class GestureMatcherFactory {
     final boolean isHold;
     final int direction1;
     final int direction2;
+    // The third direction of a one-finger swipe in three directions, or NONE.
+    final int direction3;
     // The number of fingers of the swipe after the taps of a tap, then swipe gesture.
     final int swipeFinger;
 
@@ -329,6 +422,8 @@ class GestureMatcherFactory {
           + direction1
           + ", direction2="
           + direction2
+          + ", direction3="
+          + direction3
           + ", swipeFinger="
           + swipeFinger
           + '}';
@@ -386,6 +481,17 @@ class GestureMatcherFactory {
     if (gestureMatchConfig.finger == 1) {
       // swipe
       if (gestureMatchConfig.tap == 0) {
+        if (gestureMatchConfig.direction3 != NONE) {
+          return new Swipe(
+              context,
+              gestureMatchConfig.direction1,
+              gestureMatchConfig.direction2,
+              gestureMatchConfig.direction3,
+              gestureMatchConfig.gestureId,
+              listener,
+              configResolver,
+              logger);
+        }
         if (gestureMatchConfig.direction2 == NONE) {
           return new Swipe(
               context,
