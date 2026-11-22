@@ -49,6 +49,7 @@ import com.google.android.accessibility.talkback.directtouch.DirectTouchRegions;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.action.TouchExplorationAction;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
@@ -202,6 +203,9 @@ public class FocusProcessorForTapAndTouchExploration {
    * performs a long click action:
    */
   private boolean mayBeLiftToType = true;
+  // Whether a long press on a Gboard key, which opens Gboard's popup of alternative characters,
+  // happened during this touch. Gboard types the popup's character itself when the hover exits.
+  private boolean longPressedGboardKey;
 
   // When Split-tapping triggered, we record & skip the Lift-to-type decision, to avoid the double
   // input phenomenon, until the touch interaction end.
@@ -368,6 +372,7 @@ public class FocusProcessorForTapAndTouchExploration {
     mayBeRefocusAction = true;
     mayBeSingleTap = true;
     mayBeLiftToType = true;
+    longPressedGboardKey = false;
     isSplitTap = false;
     heldToCancel = false;
   }
@@ -437,8 +442,9 @@ public class FocusProcessorForTapAndTouchExploration {
       result = onHoverEnterGeneralNode(touchedFocusableNode, eventId);
     }
 
-    // Reset it when last touched node is changed.
-    mayBeLiftToType = true;
+    // Reset it when last touched node is changed, except in Gboard's popup, which types its
+    // character itself.
+    mayBeLiftToType = !longPressedGboardKey;
     lastFocusableNodeBeingTouched = touchedFocusableNode;
 
     int scriptLongPressMs = Scripts.longPressAfterMs(touchedFocusableNode);
@@ -811,6 +817,9 @@ public class FocusProcessorForTapAndTouchExploration {
                   if (node == null || node != parent.lastFocusableNodeBeingTouched) {
                     // The touch ended, or moved to another item, while the hover ended.
                     return;
+                  }
+                  if (KeyboardExploration.isGboardPackage(node.getPackageName())) {
+                    parent.longPressedGboardKey = true;
                   }
                   parent.interpretationReceiver.input(
                       /* eventId= */ null,
