@@ -437,15 +437,14 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
     }
     String normalizedLetter = letter.toLowerCase(spanLocale);
     String value = phoneticLetterMap.apply(normalizedLocale).get(normalizedLetter);
+    if (value == null && !normalizedParsed.getCountry().isEmpty()) {
+      // Get the letter for the base language, if possible.
+      value = phoneticLetterMap.apply(normalizedParsed.getLanguage()).get(normalizedLetter);
+    }
     if (value == null) {
-      if (normalizedParsed.getCountry().isEmpty()) {
-        // As a last resort, fall back to English.
-        value = phoneticLetterMap.apply(FALLBACK_LOCALE).get(normalizedLetter);
-      } else {
-        // Get the letter for the base language, if possible.
-        normalizedLetter = letter.toLowerCase(spanLocale);
-        value = phoneticLetterMap.apply(normalizedParsed.getLanguage()).get(normalizedLetter);
-      }
+      // As a last resort, fall back to English, so that Latin letters get phonetic words in a
+      // language with a country, such as ru-RU, as they do in one without, such as ru.
+      value = phoneticLetterMap.apply(FALLBACK_LOCALE).get(normalizedLetter);
     }
     // Attach the original locale to the phonetic letter so TTS keeps the user's voice.
     SpannableString ss = null;
