@@ -73,6 +73,8 @@ class CommandsTest {
     for (res in
       listOf(
         R.string.shortcut_value_text_entities,
+        R.string.shortcut_value_activate_confirm_button,
+        R.string.shortcut_value_activate_cancel_button,
         R.string.shortcut_value_toggle_auto_translation,
         R.string.shortcut_value_toggle_equalizer,
         R.string.shortcut_value_toggle_focus_indicator,

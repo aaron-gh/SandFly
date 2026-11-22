@@ -17,8 +17,11 @@
 package com.google.android.accessibility.talkback.commands
 
 import android.os.Bundle
+import android.text.InputFilter
+import android.text.InputType
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
+import androidx.preference.EditTextPreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
@@ -99,6 +102,7 @@ class CommandFragment : TalkbackBaseFragment() {
     screen.removeAll()
     val command = command ?: return
 
+    ButtonCommands.kindOf(context, command.value)?.let { addButtonWords(it) }
     for (section in sections) {
       addSection(section, command)
     }
@@ -171,6 +175,38 @@ class CommandFragment : TalkbackBaseFragment() {
         }
       }
     )
+  }
+
+  /** Adds the labels of the buttons that Activate confirm button or cancel button looks for. */
+  private fun addButtonWords(kind: ButtonCommands.Kind) {
+    val context = requireContext()
+    preferenceScreen.addPreference(
+      EditTextPreference(context).apply {
+        key = "pref_command_button_words"
+        isPersistent = false
+        isIconSpaceReserved = false
+        title = getString(R.string.title_button_command_words)
+        dialogTitle = title
+        showButtonWords(this, kind)
+        setOnBindEditTextListener { field ->
+          field.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
+          field.filters = arrayOf(InputFilter.LengthFilter(ButtonCommands.MAX_TEXT))
+          field.setSelection(field.length())
+        }
+        setOnPreferenceChangeListener { _, value ->
+          ButtonCommands.saveWords(context, prefs, kind, value as String)
+          showButtonWords(this, kind)
+          false
+        }
+      }
+    )
+  }
+
+  /** Shows the saved labels of [kind] in [preference], the built-in ones while none are saved. */
+  private fun showButtonWords(preference: EditTextPreference, kind: ButtonCommands.Kind) {
+    val text = ButtonCommands.wordsText(requireContext(), prefs, kind)
+    preference.text = text
+    preference.summary = text.lines().filter { it.isNotBlank() }.joinToString(", ")
   }
 
   /** Adds the braille cells that run [command] in Default's braille commands, then Add. */
