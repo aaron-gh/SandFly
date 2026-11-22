@@ -3722,6 +3722,22 @@
         <item>Capital letter</item>
         <item>Repeated character</item>
     </string-array>
+    <!-- Typing > Physical keyboard: screen listing keys and the characters that pressing the key twice types with the SandFly keyboard, in place of the character the first press typed. -->
+    <string name="title_pref_sandfly_keyboard_double_press">Double-press characters</string>
+    <!-- Typing > Physical keyboard: with the SandFly keyboard, Space pressed twice after a word types a period and a space. -->
+    <string name="title_pref_sandfly_keyboard_double_space_period">Double space types a period</string>
+    <!-- Double-press characters: button that adds a key with the characters its double press types. -->
+    <string name="double_press_add">Add a key</string>
+    <!-- Double-press characters: a key and the characters its double press types, such as "g: ğ". -->
+    <string name="double_press_item"><xliff:g id="key" example="g">%1$s</xliff:g>: <xliff:g id="characters" example="ğ">%2$s</xliff:g></string>
+    <!-- Double-press characters, Add a key dialog: label of the field for the key's character. -->
+    <string name="double_press_key">Key</string>
+    <!-- Double-press characters, Add a key dialog: label of the field for what the double press types. -->
+    <string name="double_press_characters">Double press types</string>
+    <!-- Double-press characters, Add a key dialog: error when the key field doesn't hold one character other than a space. -->
+    <string name="double_press_enter_key">Enter one character</string>
+    <!-- Double-press characters, Add a key dialog: error when the field for what the double press types is empty or longer than 16 characters. -->
+    <string name="double_press_enter_characters">Enter 1 to 16 characters</string>
     <!-- Command: in a text field, opens a list of emoji found by typing words of their names. -->
     <string name="shortcut_search_emoji">Search emoji</string>
     <!-- Command: in a text field, opens a list of symbols to type, found by typing words of their names. -->

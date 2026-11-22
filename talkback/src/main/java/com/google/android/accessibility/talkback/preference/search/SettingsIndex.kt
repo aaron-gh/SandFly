@@ -449,6 +449,8 @@ object SettingsIndex {
     hideIf(!physicalKeyboard, R.string.pref_enter_sends_messages_key)
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_key)
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_held_keys_key)
+    hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_double_press_key)
+    hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_double_space_period_key)
     hideIf(!physicalKeyboard || !KeypadKeys.isAvailable(), R.string.pref_keypad_letter_keys_key)
 
     // VolumeKeysFragment.

@@ -64,6 +64,15 @@
         android:summary="%s"
         android:title="@string/title_pref_sandfly_keyboard_held_keys" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:fragment="com.google.android.accessibility.talkback.keyboard.DoublePressCharactersFragment"
+        android:key="@string/pref_sandfly_keyboard_double_press_key"
+        android:persistent="false"
+        android:title="@string/title_pref_sandfly_keyboard_double_press" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_sandfly_keyboard_double_space_period_default"
+        android:key="@string/pref_sandfly_keyboard_double_space_period_key"
+        android:title="@string/title_pref_sandfly_keyboard_double_space_period" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_physical_keyboard_key"
         android:title="@string/title_pref_system_physical_keyboard" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
