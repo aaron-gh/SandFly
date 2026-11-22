@@ -1836,6 +1836,9 @@ public class TalkBackService extends AccessibilityServiceCompat
       // Repeats of a held key, such as the one that started the collection, don't end it.
       if (keyEvent.getRepeatCount() == 0) {
         stopContinuousCopy();
+        if (keyEvent.getKeyCode() == KeyEvent.KEYCODE_BACK && focuser != null) {
+          focuser.onBack();
+        }
       }
       if (gestureController != null) {
         gestureController.onUserInputStarted();

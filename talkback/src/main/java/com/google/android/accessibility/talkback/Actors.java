@@ -29,6 +29,7 @@ import static com.google.android.accessibility.utils.output.SpeechController.UTT
 import static com.google.android.accessibility.utils.preference.PreferencesActivity.FRAGMENT_NAME;
 import static com.google.android.accessibility.utils.traversal.TraversalStrategy.SEARCH_FOCUS_FORWARD;
 
+import android.accessibilityservice.AccessibilityService;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
@@ -494,6 +495,9 @@ class Actors {
     // System action
     @Nullable SystemAction systemAction = part.systemAction();
     if (systemAction != null) {
+      if (systemAction.systemActionId() == AccessibilityService.GLOBAL_ACTION_BACK) {
+        focuser.onBack();
+      }
       success &= systemActionPerformer.performAction(systemAction.systemActionId());
     }
 
@@ -586,7 +590,9 @@ class Actors {
         case RESTORE_TO_CACHE -> success &= focuser.restoreFocus(eventId);
         case CLEAR_CACHED -> success &= focuser.popCachedNodeToRestoreFocus();
         case INITIAL_FOCUS_RESTORE ->
-            success &= focuserWindowChange.restoreLastFocusedNode(focus.screenState(), eventId);
+            success &=
+                focuser.restoreActivatedItemAfterBack(eventId)
+                    || focuserWindowChange.restoreLastFocusedNode(focus.screenState(), eventId);
         case INITIAL_FOCUS_FOLLOW_INPUT ->
             success &=
                 focuserWindowChange.syncAccessibilityFocusAndInputFocus(
