@@ -162,29 +162,35 @@ object KeyboardExploration {
   /**
    * Returns the popup of alternative characters that Gboard's [key] is in, for Gboard versions that
    * send no pane event when it opens: the widest of [key]'s ancestors that is narrower than
-   * Gboard's window, [windowWidth] wide, and not under the finger at [x], [y]. Ancestors are
+   * Gboard's window, [windowWidth] wide, and not part of the keyboard with [heldKey], the key the
+   * finger at [x], [y] holds. The popup can cover [heldKey], as Gboard 18.8 beta's does, so
+   * without [heldKey] an ancestor under the finger is taken as part of the keyboard. Ancestors are
    * looked for as far up as [popupKeys] looks down for the characters. Returns null if [key] is
    * under the finger, or none of its ancestors is such a popup.
    */
   @JvmStatic
   fun popupOfKey(
     key: AccessibilityNodeInfoCompat,
+    heldKey: AccessibilityNodeInfoCompat?,
     windowWidth: Int,
     x: Float,
     y: Float,
   ): AccessibilityNodeInfoCompat? {
     val bounds = Rect()
     key.getBoundsInScreen(bounds)
-    if (bounds.contains(x.toInt(), y.toInt())) {
+    if (bounds.contains(x.toInt(), y.toInt()) || key == heldKey) {
       return null
     }
+    val keyboard = heldKey?.let { ancestorsOf(it, MAX_DEPTH) }
     var popup: AccessibilityNodeInfoCompat? = null
     var ancestor = key.parent
     var level = 1
     while (ancestor != null && level <= POPUP_DEPTH) {
       ancestor.getBoundsInScreen(bounds)
-      // The keyboard itself, or a part of it with the key under the finger, isn't the popup.
-      if (bounds.width() >= windowWidth || bounds.contains(x.toInt(), y.toInt())) {
+      // The keyboard itself, or a part of it with the held key, isn't the popup.
+      val inKeyboard =
+        if (keyboard != null) ancestor in keyboard else bounds.contains(x.toInt(), y.toInt())
+      if (bounds.width() >= windowWidth || inKeyboard) {
         break
       }
       popup = ancestor
@@ -192,6 +198,41 @@ object KeyboardExploration {
       level++
     }
     return popup
+  }
+
+  /** Returns [node]'s ancestors, up to [depth] of them. */
+  private fun ancestorsOf(node: AccessibilityNodeInfoCompat, depth: Int): Set<AccessibilityNodeInfoCompat> {
+    val ancestors = HashSet<AccessibilityNodeInfoCompat>()
+    var ancestor = node.parent
+    while (ancestor != null && ancestors.size < depth && ancestors.add(ancestor)) {
+      ancestor = ancestor.parent
+    }
+    return ancestors
+  }
+
+  /**
+   * Describes [key]'s ancestors, as far up as [popupOfKey] looks, for the log when no popup is
+   * found.
+   */
+  @JvmStatic
+  fun describeAncestors(key: AccessibilityNodeInfoCompat): String {
+    val bounds = Rect()
+    val description = StringBuilder()
+    var ancestor = key.parent
+    var level = 1
+    while (ancestor != null && level <= POPUP_DEPTH) {
+      ancestor.getBoundsInScreen(bounds)
+      description
+        .append(if (level > 1) " < " else "")
+        .append(ancestor.className?.toString()?.substringAfterLast('.'))
+        .append(' ')
+        .append(bounds.toShortString())
+        .append(" children ")
+        .append(ancestor.childCount)
+      ancestor = ancestor.parent
+      level++
+    }
+    return description.toString()
   }
 
   /**
