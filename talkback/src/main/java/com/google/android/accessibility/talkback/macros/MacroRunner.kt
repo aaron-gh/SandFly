@@ -16,13 +16,8 @@
 
 package com.google.android.accessibility.talkback.macros
 
-import android.accessibilityservice.AccessibilityService
-import android.accessibilityservice.GestureDescription
 import android.app.KeyguardManager
-import android.graphics.Path
 import android.graphics.Rect
-import android.graphics.Region
-import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
@@ -34,7 +29,6 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
-import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.LOCK_PASS_THROUGH
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
@@ -78,9 +72,6 @@ object MacroRunner {
 
   /** How long a Type text step waits for an edit field to have input focus. */
   private const val FIELD_TIMEOUT_MS = 3_000L
-
-  /** How long a Tap at position step waits for Android to apply the pass-through region. */
-  private const val PASS_THROUGH_WAIT_MS = 350L
 
   private const val MAX_NODES = 5_000
   private const val MAX_CLICK_PARENTS = 6
@@ -677,93 +668,34 @@ object MacroRunner {
     }
 
     /**
-     * Performs [segments] as one touch, each segment dispatched when the one before ends, with
-     * touch passed through to the app while it runs, as touch exploration would take it as a touch
-     * of its own. Goes on to the next step when the touch ends. When the run is stopped while the
-     * touch is down, the touch is lifted where it is.
+     * Performs [segments] as one touch through [PassThroughTouch]. Goes on to the next step when the
+     * touch ends. When the run is stopped while the touch is down, the touch is lifted where it is.
      */
     private fun touch(index: Int, step: Macros.Step, segments: List<TouchSegment>) {
-      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) {
+      if (!PassThroughTouch.isSupported()) {
         fail(index, step, "touch needs Android 11", found = true)
         return
       }
-      val pipeline = service.feedbackReturner
-      if (pipeline == null) {
+      if (service.feedbackReturner == null) {
         fail(index, step, "no feedback pipeline", found = true)
+        return
+      }
+      if (PassThroughTouch.isLockedElsewhere(service)) {
+        fail(index, step, "pass-through held by another feature", found = true)
         return
       }
       if (segments.isEmpty()) {
         runStep(index + 1)
         return
       }
-      val size = ScreenUtils.getRealScreenSize(service)
-      pipeline.returnFeedback(
-        EVENT_ID_UNTRACKED,
-        Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, size.x, size.y)),
-      )
-      var ended = false
-      val end = { performed: Boolean ->
-        if (!ended) {
-          ended = true
-          pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
+      val started =
+        PassThroughTouch.perform(service, segments, stopped = { !active }) { performed ->
           ifActive {
             if (performed) later(STEP_GAP_MS) { runStep(index + 1) }
             else fail(index, step, "touch not performed", found = true)
           }
         }
-      }
-      // The stroke and segment that ended last, which the next one continues.
-      var previous: GestureDescription.StrokeDescription? = null
-      var previousSegment: TouchSegment? = null
-      lateinit var dispatch: (Int) -> Unit
-      dispatch = dispatch@{ i ->
-        val stopped = !active
-        val last = previousSegment
-        val segment =
-          when {
-            !stopped -> segments[i]
-            // Stopped before the touch went down.
-            last == null -> null
-            else -> last.lift()
-          }
-        if (segment == null) {
-          end(false)
-          return@dispatch
-        }
-        val continues = segment.willContinue && !stopped
-        val path =
-          Path().apply {
-            moveTo(segment.fromX, segment.fromY)
-            if (segment.moves) lineTo(segment.toX, segment.toY)
-          }
-        val stroke =
-          previous?.continueStroke(path, 0, segment.durationMs, continues)
-            ?: GestureDescription.StrokeDescription(path, 0, segment.durationMs, continues)
-        val callback =
-          object : AccessibilityService.GestureResultCallback() {
-            override fun onCompleted(description: GestureDescription) {
-              previous = stroke
-              previousSegment = segment
-              when {
-                stopped -> end(false)
-                continues -> dispatch(i + 1)
-                else -> end(true)
-              }
-            }
-
-            override fun onCancelled(description: GestureDescription) = end(false)
-          }
-        try {
-          val gesture = GestureDescription.Builder().addStroke(stroke).build()
-          if (!service.dispatchGesture(gesture, callback, mainHandler)) end(false)
-        } catch (e: RuntimeException) {
-          LogUtils.w(TAG, "Cannot touch: %s", e)
-          end(false)
-        }
-      }
-      // Posted without the run as token, so that a touch that is down is lifted and pass-through
-      // ends also when the run is stopped. Android applies the pass-through region a moment later.
-      mainHandler.postDelayed({ dispatch(0) }, PASS_THROUGH_WAIT_MS)
+      if (!started) fail(index, step, "touch not performed", found = true)
     }
 
     /**

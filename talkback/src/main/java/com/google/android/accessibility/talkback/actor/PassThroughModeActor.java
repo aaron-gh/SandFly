@@ -76,6 +76,11 @@ public class PassThroughModeActor {
     public boolean isPassThroughModeActive() {
       return PassThroughModeActor.this.touchExplorePassThroughActive;
     }
+
+    /** Whether a feature holds the pass-through lock. */
+    public boolean isLocked() {
+      return PassThroughModeActor.this.locked;
+    }
   }
 
   public final PassThroughModeActor.State state = new PassThroughModeActor.State();
