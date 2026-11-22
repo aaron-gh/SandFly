@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.hardware.display.DisplayManager;
 import android.media.AudioManager;
 import android.os.Handler;
 import android.os.Looper;
@@ -137,6 +138,14 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private final ExecutorService executor;
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
   private final WakeAnnouncementRecovery wakeAnnouncementRecovery;
+  private final DisplayManager displayManager;
+
+  /**
+   * Whether the screen-on readout was spoken for another screen in this wake, so that the default
+   * display turning on right after, such as when a flip phone is opened from its cover screen, does
+   * not speak it again. Main thread only.
+   */
+  private boolean otherDisplayReadoutSpoken;
 
   @Override
   public void onDisplayStateChanged(boolean displayOn) {
@@ -147,6 +156,11 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     }
     if (defaultDisplayOn && !preDisplayOn) {
       screenOnRecorder.onScreenOnSignal(SystemClock.uptimeMillis());
+      if (otherDisplayReadoutSpoken) {
+        // Another screen already spoke the readout in this wake.
+        otherDisplayReadoutSpoken = false;
+        return;
+      }
       // When the display turns on, we announce the current time and the current ringer
       // state when phone is idle.
       speakForDisplayOn(EVENT_ID_UNTRACKED);
@@ -183,6 +197,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     isInteractive =
         ((PowerManager) service.getSystemService(Context.POWER_SERVICE)).isInteractive();
     isWatch = FormFactorUtils.isAndroidWear();
+    displayManager = (DisplayManager) service.getSystemService(Context.DISPLAY_SERVICE);
     executor = Executors.newSingleThreadExecutor();
     wakeAnnouncementRecovery =
         new WakeAnnouncementRecovery(
@@ -250,10 +265,18 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
           router.scheduleReassertion();
         }
         handleScreenOn(eventId);
+        if (!defaultDisplayOn && isOtherDisplayOn()) {
+          // Another screen, such as a flip phone's cover screen, woke instead of the default
+          // display, which speaks the readout when it turns on.
+          LogUtils.d(TAG, "Screen on with another display on; speaking the screen-on readout");
+          speakForDisplayOn(eventId);
+          otherDisplayReadoutSpoken = true;
+        }
       }
       case Intent.ACTION_SCREEN_OFF -> {
         isInteractive = false;
         wakeAnnouncementRecovery.cancel();
+        otherDisplayReadoutSpoken = false;
         screenOnReadItems = new ArrayList<>();
         screenOnRecorder.onScreenOff();
         AudioDeviceRouter router = AudioDeviceRouter.getInstance();
@@ -272,6 +295,17 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
         handleDeviceUnlocked(eventId);
       }
     }
+  }
+
+  /** Whether a screen other than the default display is on, such as a flip phone's cover screen. */
+  private boolean isOtherDisplayOn() {
+    for (Display display : displayManager.getDisplays()) {
+      if (display.getDisplayId() != Display.DEFAULT_DISPLAY
+          && display.getState() == Display.STATE_ON) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void updateScreenState() {
