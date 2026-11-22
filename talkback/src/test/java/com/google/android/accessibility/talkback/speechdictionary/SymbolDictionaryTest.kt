@@ -244,6 +244,25 @@ class SymbolDictionaryTest {
   }
 
   @Test
+  fun noneLeavesOutEverySymbolEntryInTextButNamesTheCharacterOnItsOwn() {
+    val context = RuntimeEnvironment.getApplication()
+    SymbolDictionary.write(prefs, listOf(entry("%", " per cent"), entry("@", " at ")))
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown("com.example")
+    SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.NONE)
+    try {
+      assertNull(SpeechDictionary.apply("50%"))
+      assertNull(SpeechDictionary.apply("me@example"))
+      assertTrue(SpeechCleanupUtils.isHiddenByVerbosity('+'))
+      assertEquals(" per cent", SpeechCleanupUtils.cleanUp(context, "%").toString())
+    } finally {
+      SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.ALL)
+    }
+  }
+
+  @Test
   fun characterInSandFlyWindowsKeepsItsName() {
     val context = RuntimeEnvironment.getApplication()
     SymbolDictionary.write(prefs, listOf(entry("#", "hashmark")))
