@@ -22,7 +22,6 @@ import android.icu.util.Measure
 import android.icu.util.MeasureUnit
 import android.os.SystemClock
 import android.telephony.TelephonyManager
-import androidx.annotation.VisibleForTesting
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
@@ -93,7 +92,6 @@ class CallDurationAnnouncer(
       })
 
     /** Says [seconds] in hours, minutes and seconds, such as "3 minutes, 12 seconds". */
-    @VisibleForTesting
     @JvmStatic
     @JvmOverloads
     fun formatDuration(seconds: Long, locale: Locale = Locale.getDefault()): String {

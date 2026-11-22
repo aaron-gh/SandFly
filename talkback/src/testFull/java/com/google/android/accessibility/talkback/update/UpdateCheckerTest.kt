@@ -51,6 +51,14 @@ class UpdateCheckerTest {
   }
 
   @Test
+  fun assetSizeIsRead() {
+    val json = JSONObject(release(11))
+    json.getJSONArray("assets").getJSONObject(0).put("size", 12345)
+    assertEquals(12345L, UpdateChecker.parseRelease(json.toString(), 10, "")!!.size)
+    assertEquals(-1L, UpdateChecker.parseRelease(release(11), 10, "")!!.size)
+  }
+
+  @Test
   fun apiDownloadAddressIsOptional() {
     assertNull(UpdateChecker.parseRelease(release(11), 10, "")!!.apiDownloadUrl)
   }

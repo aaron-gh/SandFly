@@ -23,8 +23,8 @@ internal class PermanentDownloadException(message: String) : IOException(message
 
 /** Runs the attempts of an update download. */
 internal object DownloadRetry {
-  /** The wait before each attempt after the first. */
-  private val DELAYS_MS = longArrayOf(2_000L, 5_000L)
+  /** The wait before each attempt after the first. Each attempt resumes what the last one left. */
+  private val DELAYS_MS = longArrayOf(2_000L, 4_000L, 8_000L, 16_000L, 30_000L)
 
   /** Returns whether a later attempt can get a different answer to HTTP status [code]. */
   fun isRetryableStatus(code: Int): Boolean = code == 408 || code == 429 || code in 500..599

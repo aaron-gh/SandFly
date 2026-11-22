@@ -46,6 +46,8 @@ data class UpdateInfo(
   val move: Boolean = false,
   /** The GitHub API address of the APK, tried when [downloadUrl] fails. */
   val apiDownloadUrl: String? = null,
+  /** The APK's size in bytes, or -1 when the release doesn't give it. */
+  val size: Long = -1L,
 )
 
 /**
@@ -227,6 +229,7 @@ object UpdateChecker {
         ?: throw ApkMissingException("The release has no $apkName")
     val downloadUrl = asset.getString("browser_download_url")
     val apiDownloadUrl = asset.optString("url").takeIf { it.isNotEmpty() }
+    val size = asset.optLong("size", -1L).takeIf { it > 0 } ?: -1L
 
     val commits = lines.filter { it.startsWith("- ") }.map { it.removePrefix("- ") }
     val shortHash = currentHash.take(SHORT_HASH_LENGTH)
@@ -248,6 +251,7 @@ object UpdateChecker {
       downloadUrl,
       notes.ifEmpty { newCommits.map { it.substringAfter(' ') } },
       apiDownloadUrl = apiDownloadUrl,
+      size = size,
     )
   }
 

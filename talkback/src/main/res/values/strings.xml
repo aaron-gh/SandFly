@@ -5679,4 +5679,8 @@
   <string name="macro_shortcut_deleted">Macro deleted</string>
   <!-- Shown when a macro's home screen shortcut doesn't match the macro, such as after a settings import. [CHAR LIMIT=NONE] -->
   <string name="macro_shortcut_invalid">Shortcut not valid. Add the macro to the home screen again.</string>
+  <!-- Text of the update download notification while the time left is not known yet. %1$d is the percentage downloaded. [CHAR LIMIT=NONE] -->
+  <string name="update_download_progress">%1$d%%</string>
+  <!-- Text of the update download notification. %1$d is the percentage downloaded, %2$s the time left, such as "2 minutes, 10 seconds". [CHAR LIMIT=NONE] -->
+  <string name="update_download_progress_time">%1$d%%, %2$s left</string>
 </resources>
