@@ -20,6 +20,7 @@ import android.app.Notification
 import android.app.Person
 import android.os.Process
 import android.service.notification.StatusBarNotification
+import android.widget.RemoteViews
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.After
@@ -175,5 +176,36 @@ class NotificationListTest {
     assertEquals(listOf(dad.key), NotificationList.itemsByTime(context).flatMap { it.entries }.map { it.key })
     setLeaveOutMedia(false)
     assertEquals(listOf(player.key, session.key, dad.key), keys())
+  }
+
+  @Test
+  fun customLayoutText_standsInForMissingText() {
+    // Samsung Weather puts its text only in a custom layout (#583).
+    val layout = RemoteViews(context.packageName, android.R.layout.simple_list_item_1)
+    layout.setTextViewText(android.R.id.text1, "12°, rain 30%")
+    val titleOnly = RemoteViews(context.packageName, android.R.layout.simple_list_item_1)
+    titleOnly.setTextViewText(android.R.id.text1, "Weather")
+    val weather = Notification.Builder(context, "weather").setContentTitle("Weather").build()
+    @Suppress("DEPRECATION")
+    weather.contentView = layout
+    val withText =
+      Notification.Builder(context, "weather").setContentTitle("Weather").setContentText("Sunny").build()
+    @Suppress("DEPRECATION")
+    withText.contentView = layout
+    val repeatsTitle = Notification.Builder(context, "weather").setContentTitle("Weather").build()
+    @Suppress("DEPRECATION")
+    repeatsTitle.contentView = titleOnly
+    NotificationList.onConnected(
+      arrayOf(
+        posted("com.example.weather", 1, weather),
+        posted("com.example.weather2", 2, withText),
+        posted("com.example.weather3", 3, repeatsTitle),
+      ),
+      null,
+    )
+
+    val texts = NotificationList.items(context).flatMap { it.entries }.map { it.text?.toString() }
+
+    assertEquals(listOf("12°, rain 30%", "Sunny", null), texts)
   }
 }
