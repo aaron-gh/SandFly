@@ -69,7 +69,6 @@ object ReadingControlCommands {
       Entry(Setting.SWITCH_TTS_ENGINE, R.string.title_selector_switch_tts_engine),
       Entry(Setting.SPEECH_STREAM, R.string.title_pref_speech_stream),
       Entry(Setting.AUDIO_OUTPUT, R.string.title_pref_audio_output_device),
-      Entry(Setting.EQUALIZER_32, R.string.title_selector_equalizer_32),
       Entry(Setting.EQUALIZER_64, R.string.title_selector_equalizer_64),
       Entry(Setting.EQUALIZER_125, R.string.title_selector_equalizer_125),
       Entry(Setting.EQUALIZER_250, R.string.title_selector_equalizer_250),

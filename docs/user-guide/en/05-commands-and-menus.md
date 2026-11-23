@@ -167,7 +167,7 @@ When you change the reading control or its value with a gesture, SandFly also sh
 - **Tables**: **Rows and columns**, **Row** and **Column**.
 - **Speech**: **Speech rate**, **Speak punctuation and symbols**, **Emoji**, **Speak text formatting**, **Spoken language**, **Speech engine**, **Speech volume**, **Audio output device**, **Voice profile**, **Automatic translation** and **Speak only focus moved by the user**.
 - **Keyboard echo**: the echo of the on-screen keyboard, physical keyboard, braille keyboard, braille display and handwriting keyboard.
-- **Equalizer**: **Equalizer**, and one control for each band from 32 Hz to 16 kHz. See [](#speech).
+- **Equalizer**: **Equalizer**, and one control for each band from 64 Hz to 16 kHz. See [](#speech).
 - **Image and screen descriptions**: **Live recognition** and **AI actions**. See [](#commands-ai-actions).
 - **Sound and vibration**: **Audio ducking**, **Accessibility volume**, **Media volume**, **Call volume**, **Ring volume**, **Notification volume**, **Alarm volume** and **Sound mode**.
 - **Display**: **Hide screen**, **Brightness**, and **Tablet held up faces away**, for the braille keyboard on a tablet or an unfolded phone.

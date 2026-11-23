@@ -103,7 +103,7 @@ They apply whether the speech engine reads the emoji or SandFly replaces them wi
 
 ### Speech equalizer {#speech-equalizer}
 
-**Speech** > **Equalizer** sets a 12-band equalizer for **SandFly default**. **Equalizer** on the screen of a voice profile sets one for that profile. A new profile starts with the equalizer of **SandFly default**. The equalizer isn't available on watches.
+**Speech** > **Equalizer** sets an 11-band equalizer for **SandFly default**. **Equalizer** on the screen of a voice profile sets one for that profile. A new profile starts with the equalizer of **SandFly default**. The equalizer isn't available on watches.
 
 The **Equalizer** screen has:
 
@@ -111,7 +111,7 @@ The **Equalizer** screen has:
 - **Preset**: **Flat**, **Clarity**, **Bass boost**, **Bass cut**, **Treble boost**, **Treble cut**, **Warm**, **Reduce harshness**, **Reduce sibilance** or **Small speaker**, then your saved presets. The bands start flat. Changing a band sets **Preset** to **Custom**.
 - **Save as preset**: saves the bands as a preset with a name. Saved presets are listed for **SandFly default** and for every voice profile. You can save up to 50 presets.
 - **Saved presets**: renames or deletes a saved preset. Deleting a preset doesn't change the bands of an equalizer set to it.
-- A slider for each band: 32 Hz, 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz and 16 kHz, each from -12 dB to +12 dB.
+- A slider for each band: 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz and 16 kHz, each from -12 dB to +12 dB.
 
 When a band boosts, a limiter keeps speech from clipping.
 

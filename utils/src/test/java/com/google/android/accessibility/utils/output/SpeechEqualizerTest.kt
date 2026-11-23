@@ -37,15 +37,30 @@ class SpeechEqualizerTest {
     assertArrayEquals(flat, SpeechEqualizer.parse(null))
     assertArrayEquals(flat, SpeechEqualizer.parse(""))
     assertArrayEquals(flat, SpeechEqualizer.parse("1,2,3"))
+    assertArrayEquals(flat, SpeechEqualizer.parse("1,2,3,4,5,6,7,8,9,10,x"))
     assertArrayEquals(flat, SpeechEqualizer.parse("1,2,3,4,5,6,7,8,9,10,11,x"))
+    assertArrayEquals(flat, SpeechEqualizer.parse("1,2,3,4,5,6,7,8,9,10,11,12,13"))
   }
 
   @Test
   fun gainsAreKeptInRange() {
-    val gains = SpeechEqualizer.parse("99,-99,0,0,0,0,0,0,0,0,0,3")
+    val gains = SpeechEqualizer.parse("99,-99,0,0,0,0,0,0,0,0,3")
     assertEquals(SpeechEqualizer.MAX_GAIN_DB, gains[0])
     assertEquals(-SpeechEqualizer.MAX_GAIN_DB, gains[1])
-    assertEquals(3, gains[11])
+    assertEquals(3, gains[10])
+  }
+
+  @Test
+  fun twelveBandSettingsLoseTheirFirstBand() {
+    assertArrayEquals(
+      intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+      SpeechEqualizer.parse("9,1,2,3,4,5,6,7,8,9,10,11"),
+    )
+    // Presets saved with 12 bands are still found.
+    assertEquals(
+      SpeechEqualizer.Preset.BASS_BOOST,
+      SpeechEqualizer.presetOf(SpeechEqualizer.parse("6,6,5,3,1,0,0,0,0,0,0,0")),
+    )
   }
 
   @Test
@@ -112,7 +127,7 @@ class SpeechEqualizerTest {
 
   @Test
   fun bandsAboveHalfTheRateAreSkipped() {
-    val gains = IntArray(SpeechEqualizer.BANDS).also { it[11] = 12 }
+    val gains = IntArray(SpeechEqualizer.BANDS).also { it[SpeechEqualizer.BANDS - 1] = 12 }
     val samples = sine(1000.0, amplitude = 0.1f, frames = 16_000)
     val copy = samples.copyOf()
     SpeechEqualizer.Filter(gains, 16_000, 1).process(samples)
@@ -122,7 +137,7 @@ class SpeechEqualizerTest {
   @Test
   fun responseMatchesTheFilter() {
     val presetGains = SpeechEqualizer.Preset.entries.map { it.gains() }
-    val custom = intArrayOf(3, -12, 0, 6, -4, 12, -8, 0, 2, -6, 9, -3)
+    val custom = intArrayOf(-12, 0, 6, -4, 12, -8, 0, 2, -6, 9, -3)
     for (gains in presetGains + listOf(custom)) {
       for (frequency in doubleArrayOf(50.0, 200.0, 700.0, 1500.0, 3500.0, 7000.0, 12000.0)) {
         assertEquals(

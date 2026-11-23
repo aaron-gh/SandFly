@@ -32,7 +32,7 @@ import org.json.JSONException
 import org.json.JSONObject
 
 /**
- * A 12-band graphic equalizer for speech, set for SandFly default and for each voice profile. It
+ * An 11-band graphic equalizer for speech, set for SandFly default and for each voice profile. It
  * filters speech that [LowLatencyAudio] plays, and [SessionEqualizer] applies it to speech the
  * engine plays itself.
  *
@@ -62,25 +62,28 @@ object SpeechEqualizer {
 
   /** The centre frequency of each band, in Hz. */
   @JvmField
-  val FREQUENCIES = intArrayOf(32, 64, 125, 250, 500, 1000, 2000, 3000, 4000, 6000, 8000, 16000)
+  val FREQUENCIES = intArrayOf(64, 125, 250, 500, 1000, 2000, 3000, 4000, 6000, 8000, 16000)
 
   @JvmField val BANDS = FREQUENCIES.size
+
+  /** The number of bands saved by versions up to 0.6.0. Their first band, 32 Hz, is dropped when read. */
+  private const val LEGACY_BANDS = 12
 
   /** The most a band can boost or cut, in dB. */
   const val MAX_GAIN_DB = 12
 
   /** Gains, in dB, of each preset. */
   enum class Preset(private val gains: IntArray) {
-    FLAT(intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)),
-    CLARITY(intArrayOf(-4, -3, -2, -1, 0, 1, 3, 4, 4, 3, 2, 0)),
-    BASS_BOOST(intArrayOf(6, 6, 5, 3, 1, 0, 0, 0, 0, 0, 0, 0)),
-    BASS_CUT(intArrayOf(-12, -10, -8, -5, -2, 0, 0, 0, 0, 0, 0, 0)),
-    TREBLE_BOOST(intArrayOf(0, 0, 0, 0, 0, 0, 1, 2, 3, 5, 6, 6)),
-    TREBLE_CUT(intArrayOf(0, 0, 0, 0, 0, 0, -1, -2, -4, -6, -8, -10)),
-    WARM(intArrayOf(2, 3, 3, 2, 1, 0, -1, -1, -2, -3, -3, -3)),
-    REDUCE_HARSHNESS(intArrayOf(0, 0, 0, 0, 0, 0, -2, -4, -5, -5, -3, -2)),
-    REDUCE_SIBILANCE(intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, -1, -4, -6, -3)),
-    SMALL_SPEAKER(intArrayOf(-12, -12, -8, -3, 0, 1, 2, 2, 1, 0, 0, 0));
+    FLAT(intArrayOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)),
+    CLARITY(intArrayOf(-3, -2, -1, 0, 1, 3, 4, 4, 3, 2, 0)),
+    BASS_BOOST(intArrayOf(6, 5, 3, 1, 0, 0, 0, 0, 0, 0, 0)),
+    BASS_CUT(intArrayOf(-10, -8, -5, -2, 0, 0, 0, 0, 0, 0, 0)),
+    TREBLE_BOOST(intArrayOf(0, 0, 0, 0, 0, 1, 2, 3, 5, 6, 6)),
+    TREBLE_CUT(intArrayOf(0, 0, 0, 0, 0, -1, -2, -4, -6, -8, -10)),
+    WARM(intArrayOf(3, 3, 2, 1, 0, -1, -1, -2, -3, -3, -3)),
+    REDUCE_HARSHNESS(intArrayOf(0, 0, 0, 0, 0, -2, -4, -5, -5, -3, -2)),
+    REDUCE_SIBILANCE(intArrayOf(0, 0, 0, 0, 0, 0, 0, -1, -4, -6, -3)),
+    SMALL_SPEAKER(intArrayOf(-12, -8, -3, 0, 1, 2, 2, 1, 0, 0, 0));
 
     /** A copy of this preset's gains. */
     fun gains(): IntArray = gains.copyOf()
@@ -168,19 +171,30 @@ object SpeechEqualizer {
     return if (isFlat(gains)) null else gains
   }
 
-  /** Gains from a saved [value], each kept within [MAX_GAIN_DB]; flat if it can't be read. */
+  /**
+   * Gains from a saved [value], each kept within [MAX_GAIN_DB]; flat if it can't be read. A value of
+   * [LEGACY_BANDS] bands loses its first.
+   */
   @JvmStatic
   fun parse(value: String?): IntArray {
     val gains = IntArray(BANDS)
     if (value.isNullOrEmpty()) return gains
     val parts = value.split(",")
-    if (parts.size != BANDS) return gains
+    val skip = legacySkip(parts.size) ?: return gains
     for (i in 0 until BANDS) {
-      val gain = parts[i].trim().toIntOrNull() ?: return IntArray(BANDS)
+      val gain = parts[i + skip].trim().toIntOrNull() ?: return IntArray(BANDS)
       gains[i] = gain.coerceIn(-MAX_GAIN_DB, MAX_GAIN_DB)
     }
     return gains
   }
+
+  /** How many leading bands a saved list of [size] bands has that are no longer used, or null. */
+  private fun legacySkip(size: Int): Int? =
+    when (size) {
+      BANDS -> 0
+      LEGACY_BANDS -> LEGACY_BANDS - BANDS
+      else -> null
+    }
 
   @JvmStatic fun format(gains: IntArray): String = gains.joinToString(",")
 
@@ -217,7 +231,8 @@ object SpeechEqualizer {
 
   /**
    * The saved presets in [value]. A preset without a name, with a name used earlier in the list, or
-   * without a whole number for each band is left out, and so is any after [MAX_SAVED_PRESETS].
+   * without a whole number for each band is left out, and so is any after [MAX_SAVED_PRESETS]. A
+   * preset of [LEGACY_BANDS] bands loses its first.
    */
   @JvmStatic
   fun parsePresets(value: String?): List<SavedPreset> {
@@ -243,11 +258,11 @@ object SpeechEqualizer {
     val name = cleanPresetName(json.opt("name") as? String)
     if (name.isEmpty()) return null
     val array = json.opt("gains") as? JSONArray ?: return null
-    if (array.length() != BANDS) return null
+    val skip = legacySkip(array.length()) ?: return null
     val gains = IntArray(BANDS)
     for (i in 0 until BANDS) {
       val gain =
-        when (val item = array.opt(i)) {
+        when (val item = array.opt(i + skip)) {
           is Int -> item.toLong()
           is Long -> item
           else -> return null
