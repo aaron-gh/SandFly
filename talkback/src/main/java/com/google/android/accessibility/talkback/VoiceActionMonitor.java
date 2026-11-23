@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback;
 import static android.media.AudioAttributes.USAGE_GAME;
 import static android.media.AudioAttributes.USAGE_MEDIA;
 
+import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.Context;
 import android.content.Intent;
 import android.media.AudioPlaybackConfiguration;
@@ -26,6 +27,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.telephony.TelephonyManager;
+import android.view.accessibility.AccessibilityManager;
 import androidx.annotation.IntDef;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.monitor.CallStateMonitor;
@@ -41,6 +43,7 @@ import com.google.android.accessibility.utils.monitor.VoiceActionDelegate;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
+import java.util.List;
 
 /**
  * Monitors voice actions from other applications. Prevents TalkBack's audio feedback from
@@ -49,6 +52,8 @@ import java.lang.annotation.RetentionPolicy;
 public class VoiceActionMonitor implements VoiceActionDelegate {
 
   private static final String TAG = "VoiceActionMonitor";
+
+  private static final String VOICE_ACCESS_PACKAGE = "com.google.android.apps.accessibility.voiceaccess";
 
   private static final int SSB = 0;
   private static final int MEDIA_RECORDER = 1;
@@ -240,7 +245,29 @@ public class VoiceActionMonitor implements VoiceActionDelegate {
 
   @Override
   public boolean isVoiceRecognitionActive() {
-    return mediaRecorderMonitor.isVoiceRecognitionActive();
+    // Voice Access listens all the time, so its recording says nothing about dictation, and the
+    // text it edits has to be spoken like any other.
+    return mediaRecorderMonitor.isVoiceRecognitionActive() && !isVoiceAccessEnabled();
+  }
+
+  private boolean isVoiceAccessEnabled() {
+    AccessibilityManager manager =
+        (AccessibilityManager) service.getSystemService(Context.ACCESSIBILITY_SERVICE);
+    if (manager == null) {
+      return false;
+    }
+    List<AccessibilityServiceInfo> enabled =
+        manager.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK);
+    if (enabled == null) {
+      return false;
+    }
+    for (AccessibilityServiceInfo info : enabled) {
+      String id = info.getId();
+      if (id != null && id.startsWith(VOICE_ACCESS_PACKAGE + "/")) {
+        return true;
+      }
+    }
+    return false;
   }
 
   @Override
