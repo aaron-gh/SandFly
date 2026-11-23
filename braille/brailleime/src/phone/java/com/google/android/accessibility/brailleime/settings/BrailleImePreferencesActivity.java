@@ -300,6 +300,19 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
       }
 
       {
+        SwitchPreferenceCompat returnToPreviousKeyboardPref =
+            findPreference(getString(R.string.pref_brailleime_return_to_previous_keyboard));
+        returnToPreviousKeyboardPref.setChecked(
+            BrailleUserPreferences.readReturnToPreviousKeyboard(getContext()));
+        returnToPreviousKeyboardPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeReturnToPreviousKeyboard(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
         // Capitalize sentences preference.
         SwitchPreferenceCompat capitalizeSentencesPref =
             findPreference(getString(R.string.pref_brailleime_capitalize_sentences));

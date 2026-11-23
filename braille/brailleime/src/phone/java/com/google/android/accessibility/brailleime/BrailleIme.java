@@ -277,6 +277,9 @@ public class BrailleIme extends InputMethodService {
   private Handler mainHandler;
   private Handler calibrationAnnouncementHandler;
   private boolean brailleDisplayConnectedAndNotSuspended;
+  // The braille keyboard was shown in the current text field, so leaving the field returns to the
+  // previous keyboard while that setting is on.
+  private boolean returnToPreviousKeyboardOnFinishInput;
   // Set while the Switch to next braille table gesture changes the language, which it says itself.
   private boolean switchingBrailleTable;
   private int orientation;
@@ -423,7 +426,11 @@ public class BrailleIme extends InputMethodService {
     // therefore we first confirm that the screen is indeed on before invoking activateIfNeeded.
     PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
     if (pm.isInteractive()) {
-      if (showKeyboardView() && !restarting) {
+      boolean shown = showKeyboardView();
+      if (shown) {
+        returnToPreviousKeyboardOnFinishInput = true;
+      }
+      if (shown && !restarting) {
         playActiveSound(true);
         if (isBrailleDisplayStateChanged()) {
           updateInputView();
@@ -456,6 +463,42 @@ public class BrailleIme extends InputMethodService {
       return true;
     }
     return super.onEvaluateInputViewShown();
+  }
+
+  @Override
+  public void onFinishInput() {
+    super.onFinishInput();
+    // Not called when the screen rotates or the app restarts input in the same field, only when
+    // the field is left.
+    if (returnToPreviousKeyboardOnFinishInput) {
+      returnToPreviousKeyboardOnFinishInput = false;
+      returnToPreviousKeyboard();
+    }
+  }
+
+  /**
+   * Changes to the keyboard used before the braille keyboard while Return to the previous keyboard
+   * is on, so that the braille keyboard only stays for the field it was opened in.
+   */
+  private void returnToPreviousKeyboard() {
+    if (!BuildVersionUtils.isAtLeastP()
+        || !PreviousKeyboard.INSTANCE.shouldReturn(
+            BrailleUserPreferences.readReturnToPreviousKeyboard(this),
+            brailleDisplayConnectedAndNotSuspended,
+            KeyboardUtils.areMultipleImesEnabled(this),
+            PreviousKeyboard.INSTANCE.isCurrent(
+                KeyboardUtils.getCurrentInputMethod(this), getPackageName(), getClass().getName()))) {
+      return;
+    }
+    BrailleImeLog.d(TAG, "Returning to the previous keyboard");
+    if (isConnectionValid() && editBuffer != null) {
+      editBuffer.commit(getImeConnection());
+    }
+    // The system knows which keyboard was used before; without one, the next keyboard is used, as
+    // with the gesture that switches keyboards.
+    if (!switchToPreviousInputMethod()) {
+      switchToNextInputMethod();
+    }
   }
 
   @Override
@@ -1358,6 +1401,8 @@ public class BrailleIme extends InputMethodService {
         public void hideBrailleKeyboard() {
           hideSelf();
           escapeReminder.increaseExitKeyboardCounter();
+          returnToPreviousKeyboardOnFinishInput = false;
+          returnToPreviousKeyboard();
         }
 
         @Override
@@ -1383,7 +1428,7 @@ public class BrailleIme extends InputMethodService {
           EditorInfo editorInfo = getCurrentInputEditorInfo();
           // A chat keeps its field for the next message, so the keyboard stays for it too. Other
           // fields move on: hiding brings touch exploration back, so that accessibility focus can
-          // go to the next field.
+          // go to the next field. Neither returns to the previous keyboard.
           if (editorInfo == null || !SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
             hideSelf();
             escapeReminder.increaseExitKeyboardCounter();

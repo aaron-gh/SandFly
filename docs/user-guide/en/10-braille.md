@@ -158,6 +158,7 @@ In **Braille** > **Braille keyboard**:
 - **Swap top and bottom dots**: dot 1 trades places with dot 3, and dot 4 with dot 6. Off by default. You can turn on both swaps.
 - **Typing sounds**: plays a sound for each character, and a sound each for space, delete and new line, at the SandFly sound volume. A sound theme can replace them. Off by default. See [](#sound).
 - **Say "Submitting text"**: announces "Submitting text" when you submit text with a two-finger swipe up. On by default.
+- **Return to the previous keyboard**: when you hide the braille keyboard with a two-finger swipe down, or leave its text field, SandFly changes back to the keyboard you used before it, so the next text field opens with that keyboard. Open the braille keyboard again with **Switch to braille keyboard**. It doesn't apply while a braille display is connected. Off by default.
 - **Capitalize sentences**: types the first letter of a sentence as a capital, at the start of a field, after a new line, and after a full stop, question mark or exclamation mark followed by a space. It doesn't change password, email address, web address or number fields. Off by default.
 
 The braille keyboard uses the same vibration effects as the rest of SandFly. Submitting text vibrates as closing or switching the keyboard does. Deleting in an empty field plays a soft vibration that fades out.
