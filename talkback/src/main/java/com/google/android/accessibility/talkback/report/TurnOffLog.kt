@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.report
 import android.content.Context
 import android.os.Process
 import android.provider.Settings
+import androidx.annotation.VisibleForTesting
 import com.google.android.accessibility.talkback.migration.AppIdMove
 import com.google.android.accessibility.talkback.migration.ComponentLists
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -36,7 +37,7 @@ object TurnOffLog {
   private const val TAG = "TurnOffLog"
   private const val FILE_NAME = "last_turn_off.txt"
   private const val LOG_LINES = 400
-  private const val MAX_CHARS = 60_000
+  internal const val MAX_CHARS = 60_000
   /** A turn-off older than this is left out of reports. */
   private const val MAX_AGE_MS = 7L * 24 * 60 * 60 * 1000
 
@@ -69,7 +70,7 @@ object TurnOffLog {
             ProblemReportSender.readLog(pid, LOG_LINES, ProblemReportSender.MAIN_LOG_PRIORITY)
               .orEmpty()
           try {
-            file(app).writeText((head + log).takeLast(MAX_CHARS))
+            file(app).writeText(compose(head, log))
           } catch (e: IOException) {
             LogUtils.w(TAG, "Cannot keep the turn-off log: %s", e)
           }
@@ -77,6 +78,17 @@ object TurnOffLog {
         TAG,
       )
       .start()
+  }
+
+  /**
+   * [head] and as many whole lines from the end of [log] as fit in [MAX_CHARS] with it. The head
+   * is always kept: a log filled by a phone's own repeated lines used to push it out.
+   */
+  @VisibleForTesting
+  internal fun compose(head: String, log: String): String {
+    val room = (MAX_CHARS - head.length).coerceAtLeast(0)
+    if (log.length <= room) return head + log
+    return head + log.takeLast(room).substringAfter('\n')
   }
 
   /** The last turn-off, if it was in the last week, or null. */
