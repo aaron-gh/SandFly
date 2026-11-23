@@ -98,8 +98,10 @@ class VolumeKeyVolume(private val context: Context) {
       }
     // In Android's priority order.
     return sessions.firstOrNull {
-      val info = it.playbackInfo
-      isPlaybackActive(it.playbackState?.state) &&
+      // Annotated non-null, but older Android versions return null.
+      val info: MediaController.PlaybackInfo? = it.playbackInfo
+      info != null &&
+        isPlaybackActive(it.playbackState?.state) &&
         handlesVolumeKeys(info.playbackType, info.volumeControl)
     }
   }
