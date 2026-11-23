@@ -263,6 +263,26 @@ class SymbolDictionaryTest {
   }
 
   @Test
+  fun noneWithSymbolsThatChangeMeaning_appliesEntriesWhereTheSymbolIsKept() {
+    val context = RuntimeEnvironment.getApplication()
+    SymbolDictionary.write(prefs, listOf(entry("%", " per cent"), entry("-", " minus ")))
+    prefs.edit().commit()
+    SymbolDictionary.load(prefs)
+    SpeechDictionary.load(context, prefs)
+    SpeechDictionary.onWindowShown("com.example")
+    SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.NONE)
+    SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(true)
+    try {
+      assertEquals("50 per cent", SpeechDictionary.apply("50%").toString())
+      assertEquals(" minus 5 and one - two", SpeechDictionary.apply("-5 and one - two").toString())
+      assertNull(SpeechDictionary.apply("one - two"))
+    } finally {
+      SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(false)
+      SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.ALL)
+    }
+  }
+
+  @Test
   fun characterInSandFlyWindowsKeepsItsName() {
     val context = RuntimeEnvironment.getApplication()
     SymbolDictionary.write(prefs, listOf(entry("#", "hashmark")))

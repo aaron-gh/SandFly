@@ -52,6 +52,10 @@
         android:key="@string/pref_punctuation_verbosity"
         android:summary="%s"
         android:title="@string/title_pref_punctuation" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_punctuation_none_keep_meaning_default"
+        android:key="@string/pref_punctuation_none_keep_meaning_key"
+        android:title="@string/title_pref_punctuation_none_keep_meaning" />
     <ListPreference
         android:defaultValue="@string/pref_capital_letters_default"
         android:entries="@array/pref_capital_letters_entries"

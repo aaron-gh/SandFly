@@ -457,8 +457,9 @@ public final class SpeechCleanupUtils {
 
   /**
    * Whether the character at {@code i} of {@code text} is left out of speech at {@link #NONE}.
-   * Kept: emoji, apostrophes and hyphens inside a word, separators inside a number, and
-   * punctuation that ends a word, which engines pause for.
+   * Kept: emoji, apostrophes and hyphens inside a word, separators inside a number, punctuation
+   * that ends a word, which engines pause for, and, while {@link #keepsSymbolsThatChangeMeaning},
+   * the symbols that {@link #changesMeaningAt} finds.
    */
   @VisibleForTesting
   static boolean isHiddenAt(CharSequence text, int i) {
@@ -493,7 +494,73 @@ public final class SpeechCleanupUtils {
       // Ideographic punctuation is followed by text without a space.
       return false;
     }
-    return true;
+    return !(keepsSymbolsThatChangeMeaning && changesMeaningAt(text, i));
+  }
+
+  private static volatile boolean keepsSymbolsThatChangeMeaning = false;
+
+  /**
+   * Sets whether {@link #NONE} leaves the symbols that {@link #changesMeaningAt} finds to the
+   * speech engine.
+   */
+  public static void setKeepsSymbolsThatChangeMeaning(boolean keeps) {
+    keepsSymbolsThatChangeMeaning = keeps;
+  }
+
+  /** Whether {@link #NONE} leaves the symbols that {@link #changesMeaningAt} finds in speech. */
+  public static boolean keepsSymbolsThatChangeMeaning() {
+    return keepsSymbolsThatChangeMeaning;
+  }
+
+  /** Plus and minus signs, kept directly before a number. */
+  private static final String NUMBER_SIGNS = "+-−";
+
+  /** Math symbols, kept between numbers: + − × ÷ = < >. */
+  private static final String MATH_BETWEEN_NUMBERS = "+−×÷=<>";
+
+  /** Degree, percent, per mille and per ten thousand signs, always kept. */
+  private static final String UNIT_SIGNS = "°%٪％‰‱";
+
+  /** Spaces skipped between a math symbol and the numbers on either side of it. */
+  private static final int MAX_SPACES_AROUND_MATH = 3;
+
+  /**
+   * Whether the symbol at {@code i} of {@code text} changes what the text means: a plus or minus
+   * sign directly before a number, a degree, percent or per mille sign, a currency symbol, or a
+   * math symbol between numbers.
+   */
+  public static boolean changesMeaningAt(CharSequence text, int i) {
+    char c = text.charAt(i);
+    if (UNIT_SIGNS.indexOf(c) >= 0 || Character.getType(c) == Character.CURRENCY_SYMBOL) {
+      return true;
+    }
+    int length = text.length();
+    char previous = i > 0 ? text.charAt(i - 1) : 0;
+    char next = i + 1 < length ? text.charAt(i + 1) : 0;
+    if (NUMBER_SIGNS.indexOf(c) >= 0
+        && Character.isDigit(next)
+        && !Character.isLetterOrDigit(previous)) {
+      return true;
+    }
+    if (MATH_BETWEEN_NUMBERS.indexOf(c) < 0) {
+      return false;
+    }
+    int before = i - 1;
+    while (before >= 0 && i - before <= MAX_SPACES_AROUND_MATH && isSpace(text.charAt(before))) {
+      before--;
+    }
+    int after = i + 1;
+    while (after < length && after - i <= MAX_SPACES_AROUND_MATH && isSpace(text.charAt(after))) {
+      after++;
+    }
+    return before >= 0
+        && after < length
+        && Character.isDigit(text.charAt(before))
+        && Character.isDigit(text.charAt(after));
+  }
+
+  private static boolean isSpace(char c) {
+    return c == ' ' || c == ' ' || c == ' ';
   }
 
   /**

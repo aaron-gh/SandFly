@@ -730,6 +730,8 @@
       Source: Speak punctuation and symbols choice: no punctuation or symbol is said, except a character said on its own. [CHAR LIMIT=45]
     -->
     <string name="punctuation_none">None</string>
+    <!-- Title of the switch shown while Speak punctuation and symbols is None: plus and minus signs before numbers, degree, percent, per mille and currency signs, and math symbols between numbers are still said. [CHAR LIMIT=60] -->
+    <string name="title_pref_punctuation_none_keep_meaning">Say symbols that change meaning</string>
     <!--
       Source: Preference for how emoji are spoken. [CHAR LIMIT=45]
     -->
