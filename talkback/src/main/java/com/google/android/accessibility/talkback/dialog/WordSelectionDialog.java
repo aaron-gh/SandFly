@@ -172,9 +172,9 @@ public class WordSelectionDialog extends BaseDialog {
     }
   }
 
-  private final List<String> paragraphs;
-  private final List<String> entities;
-  private final boolean textTruncated;
+  private List<String> paragraphs;
+  private List<String> entities;
+  private boolean textTruncated;
   private final List<Token> tokens = new ArrayList<>();
   private boolean listTruncated;
   @Nullable private TextView truncatedNotice;
@@ -187,6 +187,11 @@ public class WordSelectionDialog extends BaseDialog {
   private final boolean showGranularityOptions;
   /** Whether every item starts checked, as the texts of Continuous copy do. */
   private boolean checkedAtFirst;
+  /** The screen's text, whose list Scroll up and Scroll down scroll; null for other lists. */
+  @Nullable private ScreenText.Session session;
+  /** Whether a Scroll up or Scroll down runs. */
+  private boolean scrolling;
+  @Nullable private View entitiesButton;
 
   public WordSelectionDialog(
       Context context,
@@ -214,6 +219,19 @@ public class WordSelectionDialog extends BaseDialog {
 
   @Override
   public void handleDialogDismiss() {
+    @Nullable ScreenText.Session scrolled = session;
+    if (scrolled != null) {
+      session = null;
+      EXECUTOR.execute(
+          () -> {
+            try {
+              scrolled.restore();
+            } catch (Throwable t) {
+              LogUtils.w(TAG, "Can't scroll the list back: %s", t);
+            }
+          });
+    }
+    entitiesButton = null;
     tokens.clear();
     checked.clear();
     range.clear();
@@ -242,11 +260,9 @@ public class WordSelectionDialog extends BaseDialog {
         radioGroup.setVisibility(View.GONE);
       }
     } else if (radioGroup != null) {
-      if (entities.isEmpty()) {
-        View entitiesButton = radioGroup.findViewById(R.id.radio_entities);
-        if (entitiesButton != null) {
-          entitiesButton.setVisibility(View.GONE);
-        }
+      entitiesButton = radioGroup.findViewById(R.id.radio_entities);
+      if (entitiesButton != null && entities.isEmpty()) {
+        entitiesButton.setVisibility(View.GONE);
       }
       radioGroup.setOnCheckedChangeListener(
           (group, checkedId) -> {
@@ -260,6 +276,16 @@ public class WordSelectionDialog extends BaseDialog {
               setGranularity(Granularity.WORDS);
             }
           });
+    }
+
+    boolean canScroll = session != null && session.canScroll();
+    for (int id : new int[] {R.id.scroll_up, R.id.scroll_down}) {
+      View button = view.findViewById(id);
+      if (button != null) {
+        button.setVisibility(canScroll ? View.VISIBLE : View.GONE);
+        boolean forward = id == R.id.scroll_down;
+        button.setOnClickListener(v -> scrollList(forward));
+      }
     }
 
     wordsRecyclerView = view.findViewById(R.id.words_recycler_view);
@@ -519,6 +545,113 @@ public class WordSelectionDialog extends BaseDialog {
     }
   }
 
+  /**
+   * Scrolls the screen's list a page up or down, past the text read so far, and adds that page's
+   * text to the list, keeping the checked items.
+   */
+  private void scrollList(boolean forward) {
+    @Nullable ScreenText.Session scrolled = session;
+    if (scrolled == null || scrolling) {
+      return;
+    }
+    scrolling = true;
+    EXECUTOR.execute(
+        () -> {
+          int result;
+          @Nullable Collected collected = null;
+          try {
+            result = scrolled.scroll(forward);
+            if (result > 0) {
+              collected = scrolled.collected();
+              try {
+                collected.entities.addAll(findEntities(context, collected.paragraphs));
+              } catch (Throwable t) {
+                LogUtils.w(TAG, "Can't find addresses and numbers on the screen: %s", t);
+              }
+            }
+          } catch (Throwable t) {
+            LogUtils.w(TAG, "Can't scroll the list: %s", t);
+            result = ScreenText.NOT_SCROLLED;
+          }
+          int scrollResult = result;
+          @Nullable Collected added = collected;
+          new Handler(context.getMainLooper())
+              .post(
+                  () -> {
+                    scrolling = false;
+                    if (adapter == null || session != scrolled) {
+                      // Closed.
+                      return;
+                    }
+                    if (added != null) {
+                      addScrolledText(added, forward);
+                    } else if (scrollResult == ScreenText.FULL) {
+                      announceTruncated(SpeechController.QUEUE_MODE_INTERRUPT);
+                    } else {
+                      speak(context.getString(R.string.word_selection_no_more_text));
+                    }
+                  });
+        });
+  }
+
+  /**
+   * Shows {@code collected}, the text before with a page more of the list, keeping the checked
+   * items when they are all still listed.
+   */
+  private void addScrolledText(Collected collected, boolean forward) {
+    List<Token> before = new ArrayList<>(tokens);
+    BitSet checkedBefore = (BitSet) checked.clone();
+    paragraphs = collected.paragraphs;
+    entities = collected.entities;
+    textTruncated = collected.truncated;
+    if (entitiesButton != null && !entities.isEmpty()) {
+      entitiesButton.setVisibility(View.VISIBLE);
+    }
+    populateItems(currentGranularity);
+    int added = tokens.size() - before.size();
+    int offset = forward ? 0 : added;
+    if (added >= 0 && sameTexts(before, tokens, offset)) {
+      for (int i = checkedBefore.nextSetBit(0); i >= 0; i = checkedBefore.nextSetBit(i + 1)) {
+        checked.set(i + offset);
+      }
+      if (adapter != null) {
+        adapter.notifyDataSetChanged();
+      }
+    }
+    if (added > 0) {
+      speak(
+          context.getResources().getQuantityString(R.plurals.word_selection_added, added, added));
+    } else {
+      speak(context.getString(R.string.word_selection_no_more_text));
+    }
+    announceTruncated(SpeechController.QUEUE_MODE_QUEUE);
+  }
+
+  /** Whether {@code after}, from {@code offset}, starts with the texts of {@code before}. */
+  @VisibleForTesting
+  static boolean sameTexts(List<Token> before, List<Token> after, int offset) {
+    if (offset < 0 || offset + before.size() > after.size()) {
+      return false;
+    }
+    for (int i = 0; i < before.size(); i++) {
+      if (!before.get(i).text.equals(after.get(offset + i).text)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private void speak(String text) {
+    if (pipeline != null) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              text,
+              SpeechController.SpeakOptions.create()
+                  .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)));
+    }
+  }
+
   /** Checks the item and marks it as the start of a range that End selection checks. */
   private void startSelection(int index) {
     if (index < 0 || index >= tokens.size()) {
@@ -676,15 +809,17 @@ public class WordSelectionDialog extends BaseDialog {
   }
 
   /**
-   * Collects the text on the screen off the main thread, with all of the text of the list or page
-   * that scrolls, then shows the dialog.
+   * Collects the text on the screen off the main thread, then shows the dialog, with Scroll up and
+   * Scroll down when the screen has a list that scrolls.
    */
   public static void showForScreen(TalkBackService service, @Nullable FeedbackReturner pipeline) {
     EXECUTOR.execute(
         () -> {
           Collected collected;
+          @Nullable ScreenText.Session screen = null;
           try {
-            collected = ScreenText.collect(service, pipeline);
+            screen = ScreenText.collect(service, pipeline);
+            collected = screen.collected();
           } catch (Throwable t) {
             LogUtils.w(TAG, "Can't collect the text on the screen: %s", t);
             collected = new Collected();
@@ -695,6 +830,7 @@ public class WordSelectionDialog extends BaseDialog {
             LogUtils.w(TAG, "Can't find addresses and numbers on the screen: %s", t);
           }
           Collected result = collected;
+          @Nullable ScreenText.Session session = screen;
           new Handler(service.getMainLooper())
               .post(
                   () -> {
@@ -717,6 +853,7 @@ public class WordSelectionDialog extends BaseDialog {
                             result,
                             pipeline,
                             /* showGranularityOptions= */ true);
+                    dialog.session = session;
                     dialog.showDialog();
                   });
         });

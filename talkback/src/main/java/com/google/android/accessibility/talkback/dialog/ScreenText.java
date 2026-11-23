@@ -42,6 +42,7 @@ import com.google.android.accessibility.utils.input.ScrollEventInterpreter.Scrol
 import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -51,24 +52,13 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Collects the text on the screen for Copy text from screen. The largest list or page of the active
- * window that scrolls up and down is read from its start to its end: it is scrolled to its start, a
- * page at a time to its end, and back until the item that was at its top, or the focused item, is
- * on screen again. These scrolls say nothing. Runs off the main thread; the scrolls are sent from
- * the main thread.
+ * Collects the text on the screen for Copy text from screen, and scrolls the largest list or page
+ * of the active window that scrolls up and down a page at a time for Scroll up and Scroll down. The
+ * list is scrolled back when the window closes. These scrolls say nothing.
  */
 final class ScreenText {
 
   private static final String TAG = "ScreenText";
-
-  /** The most pages scrolled back to the start of the list. */
-  @VisibleForTesting static final int MAX_SCROLLS_BACK = 20;
-
-  /** The most pages scrolled forward past the starting position. */
-  @VisibleForTesting static final int MAX_SCROLLS_FORWARD = 20;
-
-  /** The longest the scrolling runs before the list is scrolled back. */
-  private static final long MAX_DURATION_MS = 30_000;
 
   /** How often the list is read while a scroll moves it. */
   private static final long POLL_MS = 100;
@@ -80,7 +70,7 @@ final class ScreenText {
   private static final long SEND_WAIT_MS = 1000;
 
   /** Progress tones play this long at most. */
-  private static final long TONES_MS = 2 * 60_000L;
+  private static final long TONES_MS = 60_000L;
 
   private static final int MAX_NODES = 1500;
   private static final int MAX_DEPTH = 50;
@@ -102,9 +92,11 @@ final class ScreenText {
     }
   }
 
-  /** Collects the text of every window on screen, with all of the active window's list. */
-  static WordSelectionDialog.Collected collect(
-      TalkBackService service, @Nullable FeedbackReturner pipeline) {
+  /**
+   * Collects the text of every window on screen. Runs off the main thread, as does every method of
+   * the returned session.
+   */
+  static Session collect(TalkBackService service, @Nullable FeedbackReturner pipeline) {
     @Nullable AccessibilityNodeInfoCompat list = pipeline == null ? null : findList(service);
     Walk walk = new Walk(list);
 
@@ -134,36 +126,83 @@ final class ScreenText {
       }
     }
 
-    List<String> listTexts = new ArrayList<>();
-    if (list != null && pipeline != null && walk.listIndex >= 0) {
-      int room = WordSelectionDialog.MAX_TEXT_CHARS - chars(walk.texts);
-      listTexts = new ListReader(service, pipeline, list).read(room);
-    }
-
-    WordSelectionDialog.Collected collected = new WordSelectionDialog.Collected();
-    int listIndex = walk.listIndex < 0 ? walk.texts.size() : walk.listIndex;
-    for (int i = 0; i < walk.texts.size(); i++) {
-      if (i == listIndex && !addAll(collected, listTexts)) {
-        return collected;
-      }
-      if (!collected.add(walk.texts.get(i))) {
-        return collected;
-      }
-    }
-    if (listIndex >= walk.texts.size()) {
-      addAll(collected, listTexts);
-    }
-    return collected;
+    @Nullable ListScroller scroller =
+        (list != null && pipeline != null && walk.listIndex >= 0)
+            ? new ListScroller(pipeline, list)
+            : null;
+    return new Session(walk.texts, walk.listIndex, scroller);
   }
 
-  private static boolean addAll(WordSelectionDialog.Collected collected, List<String> texts) {
-    for (String text : texts) {
-      if (!collected.add(text)) {
-        return false;
+  /**
+   * The text on screen, with what Scroll up and Scroll down added from the list. All methods run
+   * off the main thread, one at a time.
+   */
+  static final class Session {
+    private final List<String> outside;
+    private final int listIndex;
+    @Nullable private final ListScroller scroller;
+    /** The list's texts read so far, from the highest page read to the lowest. */
+    private final List<String> listTexts;
+
+    Session(List<String> outside, int listIndex, @Nullable ListScroller scroller) {
+      this.outside = outside;
+      this.scroller = scroller;
+      this.listIndex = (scroller == null || listIndex < 0) ? outside.size() : listIndex;
+      this.listTexts =
+          (scroller == null) ? new ArrayList<>() : new ArrayList<>(scroller.start.texts);
+    }
+
+    /** Whether the screen has a list that Scroll up and Scroll down scroll. */
+    boolean canScroll() {
+      return scroller != null;
+    }
+
+    /** The texts in screen order, the list's in its place, within the dialog's limits. */
+    WordSelectionDialog.Collected collected() {
+      WordSelectionDialog.Collected collected = new WordSelectionDialog.Collected();
+      for (int i = 0; i <= outside.size(); i++) {
+        if (i == listIndex) {
+          for (String text : listTexts) {
+            if (!collected.add(text)) {
+              return collected;
+            }
+          }
+        }
+        if (i < outside.size() && !collected.add(outside.get(i))) {
+          return collected;
+        }
+      }
+      return collected;
+    }
+
+    /**
+     * Scrolls the list a page past the text read so far and adds that page's text. Returns the
+     * number of texts added, 0 when the list is at its end or start, {@link #NOT_SCROLLED} when it
+     * can't scroll, or {@link #FULL} when the text is at its limit.
+     */
+    int scroll(boolean forward) {
+      if (scroller == null) {
+        return NOT_SCROLLED;
+      }
+      if (chars(outside) + chars(listTexts) >= WordSelectionDialog.MAX_TEXT_CHARS) {
+        return FULL;
+      }
+      return scroller.readPage(listTexts, forward);
+    }
+
+    /** Scrolls the list back to where it was when the text was collected. */
+    void restore() {
+      if (scroller != null) {
+        scroller.restore(listTexts);
       }
     }
-    return true;
   }
+
+  /** {@link Session#scroll} result when the list can't scroll. */
+  static final int NOT_SCROLLED = -1;
+
+  /** {@link Session#scroll} result when the text is at its limit. */
+  static final int FULL = -2;
 
   private static int chars(List<String> texts) {
     int chars = 0;
@@ -312,7 +351,7 @@ final class ScreenText {
 
   /**
    * Joins {@code page} onto {@code texts}: the start of {@code page} that repeats the end of {@code
-   * texts} is left out, as the items a scroll keeps on screen. Returns the characters added.
+   * texts} is left out, as the items a scroll keeps on screen. Returns the number of texts added.
    */
   @VisibleForTesting
   static int merge(List<String> texts, List<String> page) {
@@ -333,25 +372,49 @@ final class ScreenText {
         overlap++;
       }
     }
-    int added = 0;
-    for (String text : page.subList(overlap, page.size())) {
-      texts.add(text);
-      added += text.length();
-    }
+    List<String> rest = new ArrayList<>(page.subList(overlap, page.size()));
+    texts.addAll(rest);
+    return rest.size();
+  }
+
+  /**
+   * Joins {@code page}, from higher in the list, before {@code texts}: the end of {@code page}
+   * that repeats the start of {@code texts} is left out. Returns the number of texts added.
+   */
+  @VisibleForTesting
+  static int mergeBefore(List<String> texts, List<String> page) {
+    List<String> reversed = new ArrayList<>(texts);
+    Collections.reverse(reversed);
+    List<String> reversedPage = new ArrayList<>(page);
+    Collections.reverse(reversedPage);
+    int added = merge(reversed, reversedPage);
+    Collections.reverse(reversed);
+    texts.clear();
+    texts.addAll(reversed);
     return added;
   }
 
-  /** Scrolls one list and reads it, from the worker thread. */
-  private static final class ListReader {
+  /** Scrolls one list and reads its pages, from the worker thread. */
+  private static final class ListScroller {
     private final FeedbackReturner pipeline;
     private final AccessibilityNodeInfoCompat list;
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private final ProgressTonePlayer tones;
-    private final long deadline = SystemClock.uptimeMillis() + MAX_DURATION_MS;
+    /** The list's page on screen when the text was collected. */
+    final Walk start;
+    /** The page on screen now. */
+    private Walk current;
+    /** Pages scrolled forward from the start, less pages scrolled back. */
+    private int position;
+    /** The positions of the highest and the lowest page read. */
+    private int highest;
+    private int lowest;
 
-    ListReader(TalkBackService service, FeedbackReturner pipeline, AccessibilityNodeInfoCompat list) {
+    ListScroller(FeedbackReturner pipeline, AccessibilityNodeInfoCompat list) {
       this.pipeline = pipeline;
       this.list = list;
+      start = page();
+      current = start;
       tones =
           new ProgressTonePlayer(
               new DefaultProgressToneProvider(),
@@ -361,73 +424,72 @@ final class ScreenText {
     }
 
     /**
-     * Returns the list's texts from its start, up to about {@code room} characters, and scrolls
-     * it back to where it was.
+     * Scrolls back to the edge of {@code texts} that {@code forward} points to, then a page past
+     * it, and joins that page onto {@code texts}. Returns the number of texts added.
      */
-    List<String> read(int room) {
-      Walk start = page();
-      List<String> texts = new ArrayList<>(start.texts);
+    int readPage(List<String> texts, boolean forward) {
       mainHandler.post(() -> tones.play(/* playTone= */ true, /* delayPlayTone= */ true));
       try {
-        // Back to the start.
-        int back = 0;
-        Walk current = start;
-        while (back < MAX_SCROLLS_BACK && !timedOut()) {
-          @Nullable Walk next = scroll(/* forward= */ false, current);
+        if (texts.isEmpty()) {
+          @Nullable Walk next = step(forward);
           if (next == null) {
-            break;
+            return NOT_SCROLLED;
           }
-          back++;
-          current = next;
+          texts.addAll(next.texts);
+          return next.texts.size();
         }
-
-        // Forward to the end, joining each page on.
-        texts = new ArrayList<>(current.texts);
-        int chars = chars(texts);
-        int forward = 0;
-        while (forward < back + MAX_SCROLLS_FORWARD && chars < room && !timedOut()) {
-          @Nullable Walk next = scroll(/* forward= */ true, current);
+        // Up and Down can be pressed in turn: go back to the edge read so far.
+        @Nullable String edge = forward ? lastUnique(texts) : firstUnique(texts);
+        int most = lowest - highest + 2;
+        for (int i = 0; edge != null && !current.texts.contains(edge) && i < most; i++) {
+          if (step(forward) == null) {
+            return 0;
+          }
+        }
+        int added = join(texts, current.texts, forward);
+        if (added == 0) {
+          @Nullable Walk next = step(forward);
           if (next == null) {
-            break;
+            return 0;
           }
-          forward++;
-          chars += merge(texts, next.texts);
-          current = next;
+          added = join(texts, next.texts, forward);
         }
-        LogUtils.d(
-            TAG, "Scrolled %d pages back, %d forward, %d texts", back, forward, texts.size());
-
-        restore(start, texts, current, forward - back);
+        return added;
       } catch (RuntimeException e) {
         LogUtils.w(TAG, "Can't scroll the list: %s", e);
+        return NOT_SCROLLED;
       } finally {
         mainHandler.post(tones::stop);
       }
-      return texts;
+    }
+
+    private static int join(List<String> texts, List<String> page, boolean forward) {
+      return forward ? merge(texts, page) : mergeBefore(texts, page);
     }
 
     /**
-     * Scrolls back the {@code pages} the list moved, or forward when negative, stopping once the
-     * focused item, or the first item that was on screen, is on screen again.
+     * Scrolls back the pages the list moved, stopping once the focused item, or the first item
+     * that was on screen, is on screen again.
      */
-    private void restore(Walk start, List<String> texts, Walk current, int pages) {
-      if (pages == 0) {
+    void restore(List<String> texts) {
+      if (position == 0) {
         return;
       }
-      @Nullable String anchor = anchor(start, texts);
-      boolean forward = pages < 0;
-      int steps = Math.abs(pages);
-      // One page more than the count, as the last page of a list can be a part of a page.
-      int most = (anchor == null) ? steps : steps + 1;
-      for (int i = 0; i < most; i++) {
-        if (anchor != null && current.texts.contains(anchor)) {
-          return;
+      try {
+        @Nullable String anchor = anchor(start, texts);
+        boolean forward = position < 0;
+        // One page more than the count, as the last page of a list can be a part of a page.
+        int most = Math.abs(position) + (anchor == null ? 0 : 1);
+        for (int i = 0; i < most; i++) {
+          if (anchor != null && current.texts.contains(anchor)) {
+            return;
+          }
+          if (step(forward) == null) {
+            return;
+          }
         }
-        @Nullable Walk next = scroll(forward, current);
-        if (next == null) {
-          return;
-        }
-        current = next;
+      } catch (RuntimeException e) {
+        LogUtils.w(TAG, "Can't scroll the list back: %s", e);
       }
     }
 
@@ -437,10 +499,7 @@ final class ScreenText {
      */
     @Nullable
     private static String anchor(Walk start, List<String> texts) {
-      Map<String, Integer> counts = new HashMap<>();
-      for (String text : texts) {
-        counts.merge(text, 1, Integer::sum);
-      }
+      Map<String, Integer> counts = counts(texts);
       if (start.focused != null && counts.getOrDefault(start.focused, 0) == 1) {
         return start.focused;
       }
@@ -450,10 +509,6 @@ final class ScreenText {
         }
       }
       return null;
-    }
-
-    private boolean timedOut() {
-      return SystemClock.uptimeMillis() > deadline;
     }
 
     /** The texts of the list's items on screen. */
@@ -468,7 +523,7 @@ final class ScreenText {
      * scroll that way or nothing on it changed.
      */
     @Nullable
-    private Walk scroll(boolean forward, Walk before) {
+    private Walk step(boolean forward) {
       if (!list.refresh()) {
         return null;
       }
@@ -478,17 +533,28 @@ final class ScreenText {
       }
       long end = SystemClock.uptimeMillis() + SCROLL_WAIT_MS;
       @Nullable Walk previous = null;
+      @Nullable Walk moved = null;
       while (SystemClock.uptimeMillis() < end) {
         SystemClock.sleep(POLL_MS);
         Walk now = page();
-        if (!now.texts.equals(before.texts)) {
+        if (!now.texts.equals(current.texts)) {
           if (previous != null && now.texts.equals(previous.texts)) {
-            return now;
+            moved = now;
+            break;
           }
           previous = now;
         }
       }
-      return previous;
+      if (moved == null) {
+        moved = previous;
+      }
+      if (moved != null) {
+        current = moved;
+        position += forward ? 1 : -1;
+        highest = Math.min(highest, position);
+        lowest = Math.max(lowest, position);
+      }
+      return moved;
     }
 
     /** Sends the scroll from the main thread, recorded as SandFly's own, which says nothing. */
@@ -517,5 +583,37 @@ final class ScreenText {
         return false;
       }
     }
+  }
+
+  private static Map<String, Integer> counts(List<String> texts) {
+    Map<String, Integer> counts = new HashMap<>();
+    for (String text : texts) {
+      counts.merge(text, 1, Integer::sum);
+    }
+    return counts;
+  }
+
+  /** The last of {@code texts} found only once in them, or null. */
+  @Nullable
+  private static String lastUnique(List<String> texts) {
+    Map<String, Integer> counts = counts(texts);
+    for (int i = texts.size() - 1; i >= 0; i--) {
+      if (counts.get(texts.get(i)) == 1) {
+        return texts.get(i);
+      }
+    }
+    return null;
+  }
+
+  /** The first of {@code texts} found only once in them, or null. */
+  @Nullable
+  private static String firstUnique(List<String> texts) {
+    Map<String, Integer> counts = counts(texts);
+    for (String text : texts) {
+      if (counts.get(text) == 1) {
+        return text;
+      }
+    }
+    return null;
   }
 }
