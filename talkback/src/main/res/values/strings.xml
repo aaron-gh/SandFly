@@ -6156,6 +6156,8 @@
   <!-- Choices of Auto stop after silence. [CHAR_LIMIT=30] -->
   <string-array name="pref_dictation_auto_stop_entries">
     <item>Off</item>
+    <item>1 second</item>
+    <item>2 seconds</item>
     <item>3 seconds</item>
     <item>5 seconds</item>
     <item>10 seconds</item>
