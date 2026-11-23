@@ -66,6 +66,8 @@ To have the volume keys change the speech volume while SandFly speaks, turn on *
 
 With a tone, **Silence tone during media playback** turns off the tone while an app plays media. With speech, **Silence speech during media playback** turns off the announcement while an app plays media, and **Interrupt speech to announce the volume** stops the speech that is playing to announce the volume. The two media switches are off by default, and **Interrupt speech to announce the volume** is on.
 
+With speech, **Change speech volume silently while speaking** leaves out the announcement when the volume keys change the speech volume while SandFly speaks or has speech queued, so speech continues at the new volume. Presses that follow each other within a second count as one series, which stays silent after speech ends. The tone still plays if chosen. Presses while a finger is on the screen, presses while SandFly is silent, and changes from the volume panel or apps are announced. On Samsung phones, outside continuous reading, the keys change the speech volume while SandFly speaks only with **Volume keys change speech volume while speaking** on. Off by default.
+
 Volume changes that SandFly makes, such as with a volume command, get no feedback. Volume changes that other apps make do. There's no tone during a call or while SandFly is paused.
 
 ### Sensors {#buttons-sensors}

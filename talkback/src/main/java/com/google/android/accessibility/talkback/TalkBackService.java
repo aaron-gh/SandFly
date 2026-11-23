@@ -1861,6 +1861,16 @@ public class TalkBackService extends AccessibilityServiceCompat
         return handled;
       }
     }
+    if (keyEvent.getAction() == KeyEvent.ACTION_DOWN
+        && volumeChangeFeedback != null
+        && VolumeKeyPresses.isVolumeKey(keyEvent.getKeyCode())) {
+      // For Change speech volume silently while speaking.
+      ActorState actorState = pipeline.getActorState();
+      volumeChangeFeedback.onVolumeKeyDown(
+          actorState.getSpeechState().isSpeakingOrQueuedAndNotSourceIsVolumeAnnouncement()
+              || actorState.getContinuousRead().isActive(),
+          isTouchInteracting || isBrailleImeTouchInteracting());
+    }
 
     if (brailleDisplay.onKeyEvent(keyEvent)) {
       return true;

@@ -92,8 +92,8 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
   }
 
   /**
-   * Shows the media playback switch of the tone and of speech, and the interrupt switch of speech,
-   * only when {@code value} has it.
+   * Shows the media playback switch of the tone and of speech, and the interrupt and silent switches
+   * of speech, only when {@code value} has it.
    */
   private void showMediaSwitches(@Nullable String value) {
     boolean both = getString(R.string.value_volume_change_feedback_tone_and_spoken).equals(value);
@@ -103,6 +103,7 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
     boolean spoken = both || getString(R.string.value_volume_change_feedback_spoken).equals(value);
     setVisible(R.string.pref_volume_change_speech_during_media_key, spoken);
     setVisible(R.string.pref_volume_change_interrupts_speech_key, spoken);
+    setVisible(R.string.pref_volume_change_silent_while_speaking_key, spoken);
   }
 
   private void setVisible(int keyResId, boolean visible) {

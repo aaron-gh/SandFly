@@ -408,6 +408,7 @@
     <string name="pref_volume_change_tone_during_media_key" translatable="false">pref_volume_change_tone_during_media</string>
     <string name="pref_volume_change_speech_during_media_key" translatable="false">pref_volume_change_speech_during_media</string>
     <string name="pref_volume_change_interrupts_speech_key" translatable="false">pref_volume_change_interrupts_speech</string>
+    <string name="pref_volume_change_silent_while_speaking_key" translatable="false">pref_volume_change_silent_while_speaking</string>
     <string name="pref_volume_keys_speech_volume_while_speaking_key" translatable="false">pref_volume_keys_speech_volume_while_speaking</string>
     <string name="pref_volume_keys_take_all_key" translatable="false">pref_volume_keys_take_all</string>
     <string name="pref_volume_keys_hide_panel_key" translatable="false">pref_volume_keys_hide_panel</string>
@@ -3126,6 +3127,7 @@
     <bool name="pref_volume_change_tone_during_media_default">false</bool>
     <bool name="pref_volume_change_speech_during_media_default">false</bool>
     <bool name="pref_volume_change_interrupts_speech_default">true</bool>
+    <bool name="pref_volume_change_silent_while_speaking_default">false</bool>
     <bool name="pref_volume_keys_speech_volume_while_speaking_default">false</bool>
     <bool name="pref_volume_keys_take_all_default">false</bool>
     <bool name="pref_volume_keys_hide_panel_default">false</bool>
