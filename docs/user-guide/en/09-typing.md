@@ -143,8 +143,10 @@ SandFly keeps a history of up to 50 texts copied, newest first. The history hold
 
 To open the history, run **Clipboard history**, from the **Text editing** commands or the **Editing menu**. The history opens over the current screen.
 
-- Double-tap a text to open its actions: **Paste** into the text field that the history was opened from, **Copy** it again, **Add to clipboard**, **Edit** its text, or **Remove** it.
-- **Export to file** saves the whole history as a text file.
+- Double-tap a text to paste it into the text field that the history was opened from. When the history was opened without a text field, double-tap opens the text's actions.
+- Double-tap and hold a text to open its actions: **Paste**, **Copy** it again, **Add to clipboard**, **Edit** its text, **Export to file**, or **Remove** it. The actions are also in the text's **Actions**.
+- **Select** shows the texts as check boxes. Double-tap texts to check them, then choose **Remove** or **Export to file** for the checked texts.
+- **Export to file** saves the whole history as a text file. Several texts are separated by a line of three hyphens between blank lines.
 - **Clear history** removes all the texts.
 
 To paste without opening the history, add the **Clipboard history** reading control, in the **Actions for current item** group of **Reading controls**. In a text field, swipe up or down to go through the texts in the history, and double-tap to paste the text that SandFly read last. The reading control is off by default. See [](#commands).

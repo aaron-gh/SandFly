@@ -141,6 +141,14 @@ object ClipboardHistory {
     synchronized(this) { write(context, read(context).filter { it != text }) }
   }
 
+  /** Removes the entries [texts]. */
+  @JvmStatic
+  fun removeAll(context: Context, texts: Collection<String>) {
+    if (texts.isEmpty()) return
+    val removed = texts.toHashSet()
+    synchronized(this) { write(context, read(context).filter { it !in removed }) }
+  }
+
   @JvmStatic
   fun clear(context: Context) {
     synchronized(this) { write(context, emptyList()) }
@@ -166,15 +174,16 @@ object ClipboardHistory {
     return true
   }
 
-  /** The name the exported history's file is offered with. */
+  /** The name the exported history's, or the exported entries', file is offered with. */
   const val EXPORT_FILE_NAME = "sandfly-clipboard-history.txt"
 
   /** The line between two entries in the exported file. */
   const val EXPORT_SEPARATOR = "---"
 
   /**
-   * The text of the exported history: [entries] newest first, each as it is, with a blank line, a
-   * line of [EXPORT_SEPARATOR] and a blank line between two entries, and a line break at the end.
+   * The text of the exported history or entries: [entries] newest first, each as it is, with a
+   * blank line, a line of [EXPORT_SEPARATOR] and a blank line between two entries, and a line
+   * break at the end. The history holds at most [MAX_ENTRIES] texts of [MAX_LENGTH] characters.
    */
   @JvmStatic
   fun exportText(entries: List<String>): String =

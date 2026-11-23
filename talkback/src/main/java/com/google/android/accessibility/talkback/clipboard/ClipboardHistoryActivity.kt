@@ -33,20 +33,24 @@ import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 /**
  * The parts of the clipboard history that need an activity, opened from [ClipboardHistoryOverlay]
  * while its window is closed: Edit, a dialog that changes the text of an entry, and Export to file,
- * which saves the whole history as a UTF-8 text file in the format [ClipboardHistory.exportText]
- * describes. The window shows again when the dialog closes or the file picker returns. Leaving the
+ * which saves the whole history, or the texts [ClipboardHistoryOverlay.exportedEntries], as a UTF-8
+ * text file in the format [ClipboardHistory.exportText] describes. The window shows again when the dialog closes or the file picker returns. Leaving the
  * Edit dialog for another screen discards the change, and the window doesn't show again.
  */
 class ClipboardHistoryActivity : AppCompatActivity() {
 
   private val createFile =
     registerForActivityResult(ActivityResultContracts.CreateDocument("text/plain")) { uri ->
+      // Taken before the window shows again, which forgets them.
+      val exported = ClipboardHistoryOverlay.exportedEntries
       if (uri != null) {
-        // Read when the file is written, off the main thread; the history holds at most
-        // MAX_ENTRIES texts of MAX_LENGTH characters.
-        ItemFileLauncher.exportText(this, uri) { ClipboardHistory.exportText(ClipboardHistory.entries(it)) }
+        // The whole history is read when the file is written, off the main thread. It holds at
+        // most MAX_ENTRIES texts of MAX_LENGTH characters.
+        ItemFileLauncher.exportText(this, uri) {
+          ClipboardHistory.exportText(exported ?: ClipboardHistory.entries(it))
+        }
       }
-      end(focusText = null)
+      end(focusText = exported?.singleOrNull())
     }
 
   private var dialog: AlertDialog? = null

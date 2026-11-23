@@ -86,6 +86,32 @@ class ClipboardHistoryTest {
   }
 
   @Test
+  fun removedCheckedEntriesAreGoneAndTheOthersKeepTheirOrder() {
+    ClipboardHistory.record(context, "d")
+    ClipboardHistory.record(context, "c")
+    ClipboardHistory.record(context, "b")
+    ClipboardHistory.record(context, "a")
+    ClipboardHistory.removeAll(context, listOf("c", "a", "not there"))
+    assertEquals(listOf("b", "d"), ClipboardHistory.entries(context))
+    ClipboardHistory.removeAll(context, emptyList())
+    assertEquals(listOf("b", "d"), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun checkedEntriesExportNewestFirst() {
+    ClipboardHistory.record(context, "c")
+    ClipboardHistory.record(context, "b")
+    ClipboardHistory.record(context, "a")
+    val selection = ClipboardSelection()
+    selection.toggle("c")
+    selection.toggle("a")
+    assertEquals(
+      "a\n\n---\n\nc\n",
+      ClipboardHistory.exportText(selection.checkedIn(ClipboardHistory.entries(context))),
+    )
+  }
+
+  @Test
   fun editedTextTakesThePlaceOfTheEntry() {
     ClipboardHistory.record(context, "c")
     ClipboardHistory.record(context, "b")

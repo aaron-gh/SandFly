@@ -39,6 +39,8 @@ import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.CheckedTextView
+import android.widget.Checkable
 import android.widget.LinearLayout
 import android.widget.ListView
 import android.widget.TextView
@@ -62,16 +64,19 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 /**
  * The texts copied, newest first, in an accessibility overlay over the screen the history was
  * opened from, which stays open under it. Each text can be pasted into the edit box the history was
- * opened from, copied again, added to the end of the clipboard's text, edited or removed, and the
- * whole history exported to a text file. The list shows long texts shortened, and the actions use
- * the whole text. Edit and Export to file take place in [ClipboardHistoryActivity], while the
- * window is closed; it shows again when they end.
+ * opened from, copied again, added to the end of the clipboard's text, edited, exported to a text
+ * file or removed, and the whole history exported to a text file. Opened for an edit box, a click
+ * on a text pastes it; otherwise, and on a long click, it shows the text's actions, which are also
+ * the row's accessibility actions. Select shows the texts as check boxes, and removes or exports
+ * the checked ones. The list shows long texts shortened, and the actions use the whole text. Edit
+ * and Export to file take place in [ClipboardHistoryActivity], while the window is closed; it shows
+ * again when they end, without the checked texts.
  *
  * Opened for an edit box, the window doesn't take input focus, so that the edit box's window keeps
  * it and its app can read the clipboard for Paste. Opened without one, the window takes input
  * focus, as SandFly can read the clipboard only then.
  *
- * Back closes the actions of a text, then the window. Another app's screen, such as an incoming
+ * Back closes the actions of a text or Select, then the window. Another app's screen, such as an incoming
  * call, an alarm or an app opened from a notification, closes the window, as does a call ringing
  * or starting. Main thread only.
  */
@@ -91,6 +96,7 @@ object ClipboardHistoryOverlay {
       R.id.accessibility_custom_action_2,
       R.id.accessibility_custom_action_3,
       R.id.accessibility_custom_action_4,
+      R.id.accessibility_custom_action_5,
     )
 
   // Accessibility focus moves into a new window once it is in the window list, and onto a new page
@@ -150,6 +156,7 @@ object ClipboardHistoryOverlay {
     val before: AccessibilityNodeInfo?,
     val over: CharSequence?,
     val entry: String?,
+    val exported: List<String>?,
   )
 
   private var suspended: Suspended? = null
@@ -158,7 +165,14 @@ object ClipboardHistoryOverlay {
   private var entries: List<String> = emptyList()
   private var listAdapter: ArrayAdapter<String>? = null
   private var exportButton: View? = null
+  private var selectButton: View? = null
   private var clearButton: View? = null
+
+  // Select, while it is shown: the texts checked, and the buttons for them.
+  private var selecting = false
+  private val selection = ClipboardSelection()
+  private var removeCheckedButton: View? = null
+  private var exportCheckedButton: View? = null
 
   // Whether a Back or Escape press went down while the window showed: its release is the window's.
   private var backKeyDown = false
@@ -221,6 +235,14 @@ object ClipboardHistoryOverlay {
     get() = suspended?.entry
 
   /**
+   * The texts that [ClipboardHistoryActivity] exports, newest first, or null when it exports the
+   * whole history.
+   */
+  @JvmStatic
+  val exportedEntries: List<String>?
+    get() = suspended?.exported
+
+  /**
    * Shows the window again once [ClipboardHistoryActivity] has ended, as it was before, with focus
    * on [focusText]'s row, or else on the title. Does nothing when the window was closed meanwhile,
    * such as when the screen turned off.
@@ -241,12 +263,16 @@ object ClipboardHistoryOverlay {
     suspended = null
   }
 
-  /** Shows the list again from the actions of a text, or else closes the window. */
+  /** Shows the list again from the actions of a text or from Select, or else closes the window. */
   @JvmStatic
   fun back(): Boolean {
     if (!isShowing) return false
     val text = chosen
-    if (text != null) showList(focusText = text) else close(restoreFocus = true)
+    when {
+      text != null -> showList(focusText = text)
+      selecting -> showList(focusText = null)
+      else -> close(restoreFocus = true)
+    }
     return true
   }
 
@@ -427,8 +453,9 @@ object ClipboardHistoryOverlay {
     chosen = null
     entries = emptyList()
     listAdapter = null
-    exportButton = null
-    clearButton = null
+    forgetButtons()
+    selecting = false
+    selection.clear()
     try {
       service?.getSystemService(WindowManager::class.java)?.removeViewImmediate(view)
     } catch (e: IllegalArgumentException) {
@@ -449,15 +476,23 @@ object ClipboardHistoryOverlay {
 
   /**
    * Shows the list of texts, and puts accessibility focus on [focusText]'s row, or else on the
-   * title, after [focusDelayMs].
+   * title, after [focusDelayMs]. With [select], the texts are check boxes, with buttons for the
+   * checked ones.
    */
-  private fun showList(focusText: String?, focusDelayMs: Long = PAGE_FOCUS_DELAY_MS) {
+  private fun showList(
+    focusText: String?,
+    focusDelayMs: Long = PAGE_FOCUS_DELAY_MS,
+    select: Boolean = false,
+  ) {
     val page = root ?: return
     val context = page.context
     chosen = null
+    selecting = select
+    selection.clear()
+    forgetButtons()
     page.removeAllViews()
     val title = heading(page, context.getString(R.string.title_clipboard_history))
-    if (ShizukuShell.isAllowed()) {
+    if (!select && ShizukuShell.isAllowed()) {
       page.addView(
         SwitchCompat(context).apply {
           setText(R.string.title_clipboard_history_other_apps)
@@ -469,13 +504,36 @@ object ClipboardHistoryOverlay {
       )
     }
     // Each text's actions are also its row's accessibility actions.
-    val adapter = rows(context, emptyList()) { position ->
-      entries.getOrNull(position)?.let { entryActions(context, it) }.orEmpty()
-    }
+    val adapter =
+      if (select) {
+        rows(context, emptyList(), checked = { position ->
+          entries.getOrNull(position)?.let(selection::isChecked) == true
+        })
+      } else {
+        rows(context, emptyList(), actions = { position ->
+          entries.getOrNull(position)?.let { entryActions(context, it) }.orEmpty()
+        })
+      }
     val list = ListView(context)
     list.adapter = adapter
-    list.setOnItemClickListener { _, _, position, _ ->
-      entries.getOrNull(position)?.let(::showActions)
+    list.setOnItemClickListener { _, view, position, _ ->
+      val text = entries.getOrNull(position) ?: return@setOnItemClickListener
+      when {
+        select -> {
+          // Set before the list sends the click event, which then reads the new state.
+          (view as? Checkable)?.isChecked = selection.toggle(text)
+          updateButtons()
+        }
+        pasteTarget != null -> paste(text)
+        else -> showActions(text)
+      }
+    }
+    if (!select) {
+      list.setOnItemLongClickListener { _, _, position, _ ->
+        val text = entries.getOrNull(position)
+        text?.let(::showActions)
+        text != null
+      }
     }
     val empty =
       TextView(context).apply {
@@ -486,21 +544,42 @@ object ClipboardHistoryOverlay {
     page.addView(empty, fillHeight())
     list.emptyView = empty
     listAdapter = adapter
-    // Watches have no file picker.
-    if (ItemFileLauncher.isAvailable) {
-      exportButton =
-        button(page, R.string.item_file_export) {
-          openActivity(ClipboardHistoryActivity.MODE_EXPORT, entry = null)
+    if (select) {
+      removeCheckedButton =
+        button(page, R.string.notification_remove) {
+          ClipboardHistory.removeAll(context, selection.checkedIn(entries))
+          showList(focusText = null)
         }
-    }
-    clearButton =
-      button(page, R.string.clipboard_history_clear) {
-        ClipboardHistory.clear(context)
-        // The button goes with the texts.
-        refreshList()
-        focusLater(PAGE_FOCUS_DELAY_MS) { empty }
+      // Watches have no file picker.
+      if (ItemFileLauncher.isAvailable) {
+        exportCheckedButton =
+          button(page, R.string.item_file_export) {
+            openActivity(
+              ClipboardHistoryActivity.MODE_EXPORT,
+              entry = null,
+              exported = selection.checkedIn(entries),
+            )
+          }
       }
-    button(page, R.string.close_string) { close(restoreFocus = true) }
+      button(page, android.R.string.cancel) { showList(focusText = null) }
+    } else {
+      selectButton =
+        button(page, R.string.clipboard_history_select) { showList(focusText = null, select = true) }
+      if (ItemFileLauncher.isAvailable) {
+        exportButton =
+          button(page, R.string.item_file_export) {
+            openActivity(ClipboardHistoryActivity.MODE_EXPORT, entry = null)
+          }
+      }
+      clearButton =
+        button(page, R.string.clipboard_history_clear) {
+          ClipboardHistory.clear(context)
+          // The button goes with the texts.
+          refreshList()
+          focusLater(PAGE_FOCUS_DELAY_MS) { empty }
+        }
+      button(page, R.string.close_string) { close(restoreFocus = true) }
+    }
     refreshList()
     val index = focusText?.let { entries.indexOf(it) } ?: -1
     if (index >= 0) {
@@ -515,13 +594,34 @@ object ClipboardHistoryOverlay {
     val service = service ?: return
     val adapter = listAdapter ?: return
     entries = ClipboardHistory.entries(service)
+    selection.retain(entries)
     adapter.setNotifyOnChange(false)
     adapter.clear()
     adapter.addAll(entries.map(::shortened))
     adapter.notifyDataSetChanged()
+    updateButtons()
+  }
+
+  /**
+   * Shows the list's buttons only when there are texts, and enables Select's buttons only when a
+   * text is checked.
+   */
+  private fun updateButtons() {
     val visibility = if (entries.isEmpty()) View.GONE else View.VISIBLE
+    selectButton?.visibility = visibility
     exportButton?.visibility = visibility
     clearButton?.visibility = visibility
+    val anyChecked = selection.count > 0
+    removeCheckedButton?.isEnabled = anyChecked
+    exportCheckedButton?.isEnabled = anyChecked
+  }
+
+  private fun forgetButtons() {
+    exportButton = null
+    selectButton = null
+    clearButton = null
+    removeCheckedButton = null
+    exportCheckedButton = null
   }
 
   /** Shows what can be done with [text], in place of the list. */
@@ -530,8 +630,9 @@ object ClipboardHistoryOverlay {
     val context = page.context
     chosen = text
     listAdapter = null
-    exportButton = null
-    clearButton = null
+    forgetButtons()
+    selecting = false
+    selection.clear()
     page.removeAllViews()
     val title = heading(page, shortened(text)).apply { maxLines = MAX_LINES }
     val actions = entryActions(context, text)
@@ -552,6 +653,14 @@ object ClipboardHistoryOverlay {
       // As the Add to clipboard command does, with the whole text rather than the shortened one.
       R.string.shortcut_add_to_clipboard to { done(text) { ClipboardHistory.append(context, text) } },
       R.string.notification_edit to { openActivity(ClipboardHistoryActivity.MODE_EDIT, text) },
+      // Watches have no file picker.
+      if (ItemFileLauncher.isAvailable) {
+        R.string.item_file_export to {
+          openActivity(ClipboardHistoryActivity.MODE_EXPORT, entry = null, exported = listOf(text))
+        }
+      } else {
+        null
+      },
       R.string.notification_remove to { done(text) { ClipboardHistory.remove(context, text) } },
     )
 
@@ -563,11 +672,12 @@ object ClipboardHistoryOverlay {
 
   /**
    * Closes the window and opens [ClipboardHistoryActivity] in [mode], for [entry] when it edits
-   * one. The window shows again when the activity ends.
+   * one, and for [exported] when it exports those texts rather than the whole history. The window
+   * shows again when the activity ends.
    */
-  private fun openActivity(mode: String, entry: String?) {
+  private fun openActivity(mode: String, entry: String?, exported: List<String>? = null) {
     val service = service ?: return
-    val state = Suspended(pasteTarget, focusBefore, openedOver, entry)
+    val state = Suspended(pasteTarget, focusBefore, openedOver, entry, exported)
     close(restoreFocus = false)
     suspended = state
     try {
@@ -578,7 +688,7 @@ object ClipboardHistoryOverlay {
       )
     } catch (e: RuntimeException) {
       LogUtils.e(TAG, "Could not open the clipboard history activity: %s", e)
-      resume(entry)
+      resume(entry ?: exported?.singleOrNull())
     }
   }
 
@@ -649,29 +759,43 @@ object ClipboardHistoryOverlay {
 
   /**
    * Rows of [items], each shown in up to [MAX_LINES] lines and read whole, with the actions that
-   * [actions] gives for its position as its accessibility actions.
+   * [actions] gives for its position as its accessibility actions. With [checked], the rows are
+   * check boxes, checked as it gives for their position.
    */
   private fun rows(
     context: Context,
     items: List<String>,
     actions: ((Int) -> List<Pair<Int, () -> Unit>>)? = null,
+    checked: ((Int) -> Boolean)? = null,
   ): ArrayAdapter<String> =
     object : ArrayAdapter<String>(context, 0, items.toMutableList()) {
       override fun getView(position: Int, convertView: View?, parent: ViewGroup): View =
         ((convertView as? ActionRowView) ?: ActionRowView(context)).apply {
           text = getItem(position)
           rowActions = actions?.invoke(position).orEmpty()
+          checkBox = checked != null
+          isChecked = checked?.invoke(position) == true
         }
     }
 
   /**
    * A list row like [android.R.layout.simple_list_item_1] with [rowActions] as accessibility
    * actions. The actions are added to the list's own ones, such as the click that taps the row.
+   * With [checkBox], the row is a check box, like [android.R.layout.simple_list_item_multiple_choice].
    */
   // An overlay of the service, without an AppCompat theme to apply.
   @SuppressLint("AppCompatCustomView")
-  private class ActionRowView(context: Context) : TextView(context) {
+  private class ActionRowView(context: Context) : CheckedTextView(context) {
     var rowActions: List<Pair<Int, () -> Unit>> = emptyList()
+
+    var checkBox = false
+      set(value) {
+        if (field == value) return
+        field = value
+        setCheckMarkDrawable(
+          if (value) themeAttr(context, android.R.attr.listChoiceIndicatorMultiple) else 0
+        )
+      }
 
     init {
       themeAttr(context, android.R.attr.textAppearanceListItem).takeIf { it != 0 }?.let { setTextAppearance(it) }
@@ -683,8 +807,15 @@ object ClipboardHistoryOverlay {
       ellipsize = TextUtils.TruncateAt.END
     }
 
+    // Outside Select, read as the text it shows.
+    override fun getAccessibilityClassName(): CharSequence =
+      if (checkBox) super.getAccessibilityClassName() else TextView::class.java.name
+
     override fun onInitializeAccessibilityNodeInfo(info: AccessibilityNodeInfo) {
       super.onInitializeAccessibilityNodeInfo(info)
+      // A CheckedTextView is always checkable; the row only in Select.
+      info.isCheckable = checkBox
+      if (!checkBox) info.isChecked = false
       rowActions.take(ROW_ACTION_IDS.size).forEachIndexed { index, (title, _) ->
         info.addAction(AccessibilityNodeInfo.AccessibilityAction(ROW_ACTION_IDS[index], context.getString(title)))
       }
