@@ -827,6 +827,10 @@ object Commands {
           Key.SELECT_PREVIOUS_READING_MENU,
         )
         gesture(
+          R.string.shortcut_value_select_first_setting,
+          R.string.shortcut_select_first_setting,
+        )
+        gesture(
           R.string.shortcut_value_selected_setting_next_action,
           R.string.shortcut_selected_setting_next_action,
           Key.ADJUST_READING_MENU_DOWN,
