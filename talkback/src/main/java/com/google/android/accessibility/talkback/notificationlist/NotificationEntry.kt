@@ -77,7 +77,15 @@ class NotificationEntry(
   private class Message(val text: CharSequence, val sender: CharSequence?, val timeMillis: Long)
 
   companion object {
-    fun from(notification: StatusBarNotification, appName: CharSequence): NotificationEntry {
+    /**
+     * The entry for [notification]. [customText] gives the text of its custom layout, read only
+     * when its text fields have none, from the title and app name to leave out.
+     */
+    fun from(
+      notification: StatusBarNotification,
+      appName: CharSequence,
+      customText: ((skip: List<CharSequence?>) -> CharSequence?)? = null,
+    ): NotificationEntry {
       val extras = notification.notification.extras ?: Bundle.EMPTY
       val title =
         extras.getCharSequence(Notification.EXTRA_TITLE_BIG)
@@ -88,6 +96,7 @@ class NotificationEntry(
           ?: lastMessage(extras)
           ?: extras.getCharSequenceArray(Notification.EXTRA_TEXT_LINES)?.joinToString("\n")
           ?: notification.notification.tickerText
+          ?: customText?.invoke(listOf(title, appName))
       val timeMillis = timeMillis(notification)
       return NotificationEntry(
         notification,

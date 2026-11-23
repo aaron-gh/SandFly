@@ -226,7 +226,9 @@ object NotificationList {
       NotificationInfo.isSamsungMediaActivity(notification.packageName, notification.notification)
 
   private fun entry(context: Context, notification: StatusBarNotification): NotificationEntry =
-    NotificationEntry.from(notification, appName(context, notification.packageName))
+    NotificationEntry.from(notification, appName(context, notification.packageName)) { skip ->
+      CustomViewText.of(context, notification, skip)
+    }
 
   private fun appName(context: Context, packageName: String): CharSequence =
     appNames.getOrPut(packageName) {
