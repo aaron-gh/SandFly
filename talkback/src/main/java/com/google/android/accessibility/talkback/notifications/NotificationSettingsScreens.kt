@@ -41,6 +41,39 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.VoiceProfiles
 import java.util.Calendar
 
+/** The voices a list setting chooses from: SandFly's voice and the voice profiles, by name. */
+object VoiceChoices {
+  /**
+   * Sets the choices of [preference]. With [notificationVoice], the voice set for notifications
+   * comes first, as [NotificationSettings.CLOCK_VOICE_NOTIFICATIONS]; SandFly's voice is the empty
+   * value. A saved value that isn't one of the choices is changed to the first.
+   */
+  @JvmStatic
+  fun setUp(
+    context: Context,
+    prefs: SharedPreferences,
+    preference: ListPreference,
+    notificationVoice: Boolean,
+  ) {
+    val names =
+      VoiceProfiles.names(prefs, context.getString(R.string.voice_profile_default)) {
+        context.getString(R.string.voice_profile_new_name, it)
+      }
+    val sandFly = context.getString(R.string.notification_voice_sandfly)
+    val firstNames =
+      if (notificationVoice) {
+        listOf(context.getString(R.string.notification_clock_voice_notifications), sandFly)
+      } else {
+        listOf(sandFly)
+      }
+    val firstValues =
+      if (notificationVoice) listOf(NotificationSettings.CLOCK_VOICE_NOTIFICATIONS, "") else listOf("")
+    preference.entries = (firstNames + names.values).toTypedArray()
+    preference.entryValues = (firstValues + names.keys).toTypedArray()
+    if (preference.findIndexOfValue(preference.value.orEmpty()) < 0) preference.value = firstValues.first()
+  }
+}
+
 /** Number choices of a list setting, and how each is said. */
 internal object NotificationChoices {
   fun percent(context: Context, value: Int) = context.getString(R.string.notification_percent, value)
@@ -184,22 +217,9 @@ abstract class NotificationXmlFragment(@XmlRes xml: Int, @StringRes private val 
 
   /** Lists SandFly's voice and the voice profiles, by name, to read notifications with. */
   private fun setUpVoices(preference: ListPreference) {
-    val names =
-      VoiceProfiles.names(prefs, getString(R.string.voice_profile_default)) {
-        getString(R.string.voice_profile_new_name, it)
-      }
     // The time's voice can also be the voice of notifications, its default.
     val clock = preference.key == NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE
-    val firstNames =
-      if (clock) {
-        listOf(getString(R.string.notification_clock_voice_notifications), getString(R.string.notification_voice_sandfly))
-      } else {
-        listOf(getString(R.string.notification_voice_sandfly))
-      }
-    val firstValues = if (clock) listOf(NotificationSettings.CLOCK_VOICE_NOTIFICATIONS, "") else listOf("")
-    preference.entries = (firstNames + names.values).toTypedArray()
-    preference.entryValues = (firstValues + names.keys).toTypedArray()
-    if (preference.findIndexOfValue(preference.value.orEmpty()) < 0) preference.value = firstValues.first()
+    VoiceChoices.setUp(requireContext(), prefs, preference, notificationVoice = clock)
   }
 
   override fun onStart() {

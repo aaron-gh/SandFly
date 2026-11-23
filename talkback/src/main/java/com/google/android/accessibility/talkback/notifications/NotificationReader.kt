@@ -46,6 +46,7 @@ import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeNotificationStateChangedFeedbackRule
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter
+import com.google.android.accessibility.talkback.monitor.BatteryLevelAnnouncements
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation
@@ -131,6 +132,7 @@ object NotificationReader {
   private var sensors: StopSensors? = null
   private var languageIdentifier: LanguageIdentifier? = null
   private var schedules: SpokenSchedules? = null
+  private var batteryLevels: BatteryLevelAnnouncements? = null
   /** The voices of the voice profiles that notifications are read with, by profile ID. */
   private val voices = HashMap<String, NotificationVoice>()
   /**
@@ -241,6 +243,7 @@ object NotificationReader {
       if (
         key == NotificationSettings.Companion.Keys.VOICE_PROFILE ||
           key == NotificationSettings.Companion.Keys.CLOCK_VOICE_PROFILE ||
+          key == BatteryLevelAnnouncements.KEY_VOICE ||
           key == NotificationSettings.Companion.Keys.APPS ||
           key == NotificationSettings.Companion.Keys.RULES ||
           key == VoiceProfiles.PREF_IDS ||
@@ -298,6 +301,11 @@ object NotificationReader {
           sayTime = { text -> announce(text, interrupt = false, clockVoice(settings(app))) },
         )
         .also { it.start() }
+    batteryLevels =
+      BatteryLevelAnnouncements(app) { text ->
+        announce(text, interrupt = false, batteryVoice(app, settings(app)))
+      }
+        .also { it.start() }
     updateVoices(SharedPreferencesUtils.getSharedPreferences(app))
   }
 
@@ -309,6 +317,8 @@ object NotificationReader {
     cancelAll()
     schedules?.stop()
     schedules = null
+    batteryLevels?.stop()
+    batteryLevels = null
     voices.values.forEach { it.shutdown() }
     voices.clear()
     isSandFlySpeaking = { false }
@@ -1214,6 +1224,15 @@ object NotificationReader {
       settings.clockVoiceProfile
     }
 
+  /** The voice profile the battery level is said with, empty for SandFly's own voice. */
+  private fun batteryVoice(context: Context, settings: NotificationSettings): String {
+    val value =
+      SharedPreferencesUtils.getSharedPreferences(context)
+        .getString(BatteryLevelAnnouncements.KEY_VOICE, null)
+        .orEmpty()
+    return if (value == NotificationSettings.CLOCK_VOICE_NOTIFICATIONS) settings.voiceProfile else value
+  }
+
   /**
    * The voice of the voice profile [id], or null for SandFly's: when [id] is empty or the profile is
    * gone.
@@ -1232,7 +1251,7 @@ object NotificationReader {
     val settings = NotificationSettings.read(prefs)
     val ids = VoiceProfiles.ids(prefs)
     val wanted =
-      (listOf(settings.voiceProfile, clockVoice(settings)) +
+      (listOf(settings.voiceProfile, clockVoice(settings), batteryVoice(context, settings)) +
           settings.apps.values.mapNotNull { it.voiceProfile } +
           settings.rules.flatMap { rule ->
             rule.actions.filter { it.type == RuleAction.Type.VOICE }.map { it.value }

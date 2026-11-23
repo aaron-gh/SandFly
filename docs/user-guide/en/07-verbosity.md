@@ -86,6 +86,8 @@ The **Announcements** group sets what SandFly says when something changes:
 - **Window names**: when SandFly says the name of a window. **Always** says it when a window opens and when focus moves into it from another window, before the first item. **Always, cut off by the first item**, the default, does the same, but the first item focused in a new window stops the name. **Only when a window opens** doesn't say it when focus moves into a window. **Never** says no window names.
 - **Always speak number of list items**: says which items are showing after every scroll. Off by default. With it off, SandFly says no list position when a list scrolls.
 - **Announce full charge**: says "Battery fully charged" and plays the **Full charge** sound once when the battery is full while the charger is connected. Off by default.
+- **Battery level**: says the battery level, charging or not, each time it reaches a multiple of 5% or 10%, or every 15 minutes, 30 minutes or hour. Nothing is said while the screen is off. Off by default.
+- **Battery level voice**: the voice for **Battery level**: **Notification voice**, **SandFly's voice**, the default, or a voice profile. See [](#notifications-voice).
 - **Announce call length**: when a phone call ends, says how long it lasted, from when the call was answered or dialed. Calls that weren't answered aren't announced. Off by default.
 - **Announce keyboard shown or hidden**: on by default.
 - **Screen on and off**: what SandFly says when the screen turns off or on and when the phone is unlocked. See [](#verbosity-screen-on-off).
