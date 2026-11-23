@@ -196,7 +196,7 @@ The braille dictionary, for braille displays, is in braille settings. See [](#br
 
 Choose **Add a replacement**, enter the **Symbol** and what to **Replace with**, and choose **OK**. Entries have the same **Edit**, **Choose an app**, **Remove**, **Import from file** and **Export to file** options as the speech dictionary.
 
-In speech, entries for punctuation that speech engines don't read aloud, such as a period or comma, don't apply while **Verbosity** > **Speak punctuation and symbols** leaves that punctuation out. With **None**, no entry for a single symbol applies in text. See [](#verbosity-text).
+In speech, entries for punctuation that speech engines don't read aloud, such as a period or comma, don't apply while **Verbosity** > **Speak punctuation and symbols** leaves that punctuation out. With **None**, no entry for a single symbol applies in text, except where **Say symbols that change meaning** keeps the symbol. See [](#verbosity-text).
 
 ### Pause and resume speech {#speech-pause}
 

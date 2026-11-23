@@ -30,6 +30,7 @@ import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
+import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
@@ -56,6 +57,28 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     setupTellTimePreference();
     setupEmojiRepeatCountPreference();
     setupSpeakUserFocusPreference();
+    setupPunctuationNonePreference();
+  }
+
+  /** Say symbols that change meaning is shown only while Speak punctuation and symbols is None. */
+  private void setupPunctuationNonePreference() {
+    Preference punctuation = findPreference(R.string.pref_punctuation_verbosity);
+    if (!(punctuation instanceof ListPreference punctuationList)) {
+      return;
+    }
+    updatePunctuationNonePreference(punctuationList.getValue());
+    punctuation.setOnPreferenceChangeListener(
+        (preference, newValue) -> {
+          updatePunctuationNonePreference(String.valueOf(newValue));
+          return true;
+        });
+  }
+
+  private void updatePunctuationNonePreference(@Nullable String punctuation) {
+    Preference keepMeaning = findPreference(R.string.pref_punctuation_none_keep_meaning_key);
+    if (keepMeaning != null) {
+      keepMeaning.setVisible(String.valueOf(SpeechCleanupUtils.NONE).equals(punctuation));
+    }
   }
 
   /** Chosen apps only applies while Speak only focus moved by the user is In chosen apps. */
@@ -170,6 +193,7 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
         } else if (TextUtils.equals(key, getString(R.string.pref_punctuation_verbosity))) {
           if (findPreference(R.string.pref_punctuation_verbosity) instanceof ListPreference p) {
             p.setValue(prefs.getString(key, getString(R.string.pref_punctuation_verbosity_default)));
+            updatePunctuationNonePreference(p.getValue());
           }
         } else if (TextUtils.equals(key, getString(R.string.pref_speak_user_focus_key))) {
           // Changed by the reading control or the command.

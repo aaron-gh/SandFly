@@ -36,6 +36,7 @@ class PunctuationNoneTest {
   @After
   fun tearDown() {
     SpeechCleanupUtils.setPunctuationVerbosity(SpeechCleanupUtils.ALL)
+    SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(false)
   }
 
   /** The text an engine is given. */
@@ -126,5 +127,60 @@ class PunctuationNoneTest {
     assertTrue(SpeechCleanupUtils.isHiddenByVerbosity('.'))
     assertFalse(SpeechCleanupUtils.isHiddenByVerbosity(' '))
     assertFalse(SpeechCleanupUtils.isHiddenByVerbosity('a'))
+  }
+
+  /** The words an engine is given, with the spaces between them collapsed. */
+  private fun said(text: CharSequence): String = spoken(text).replace(Regex(" +"), " ").trim()
+
+  /** Report GH #199: Say symbols that change meaning. */
+  private val meaningExamples = listOf("\u22125 \u00b0C", "50 %", "10 \u20ac", "\$10", "2+2=4")
+
+  @Test
+  fun symbolsThatChangeMeaning_off_areHidden() {
+    SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(false)
+    assertEquals("5 C", said("\u22125 \u00b0C"))
+    assertEquals("50", said("50 %"))
+    assertEquals("10", said("10 \u20ac"))
+    assertEquals("10", said("\$10"))
+    assertEquals("2 2 4", said("2+2=4"))
+  }
+
+  @Test
+  fun symbolsThatChangeMeaning_on_stayForTheEngine() {
+    SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(true)
+    for (text in meaningExamples) {
+      assertNull(text, SpeechCleanupUtils.withPunctuationHidden(text))
+    }
+    assertNull(SpeechCleanupUtils.withPunctuationHidden("-5 +3 3 \u00d7 4 \u00f7 2 = 6 1 < 2 > 0"))
+    assertEquals("-2", said("(-2)"))
+    assertNull(
+      SpeechCleanupUtils.withPunctuationHidden("5\u2030 1\u2031 \u00a35 \u00a5100 \u20b9 90\u00b0")
+    )
+  }
+
+  @Test
+  fun symbolsThatChangeMeaning_on_othersStayHidden() {
+    SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(true)
+    // A hyphen between words, with spaces around it.
+    assertEquals("one two", said("one - two"))
+    // A hyphen not before a number, or after a letter.
+    assertEquals("a b", said("a -b"))
+    assertTrue(SpeechCleanupUtils.isHiddenAt("x-", 1))
+    // Math symbols not between numbers.
+    assertEquals("a b", said("a + b"))
+    assertEquals("x 5", said("x =5"))
+    assertEquals("tag", said("<tag>"))
+    // Other symbols.
+    assertEquals("a b", said("a/b"))
+    assertEquals("me example", said("me@example"))
+    assertEquals("1", said("#1"))
+    // Too many spaces between a math symbol and a number.
+    assertEquals("2 4", said("2    = 4"))
+  }
+
+  @Test
+  fun symbolsThatChangeMeaning_on_wordJoinersAsBefore() {
+    SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(true)
+    assertNull(SpeechCleanupUtils.withPunctuationHidden("e-mail 3-4"))
   }
 }

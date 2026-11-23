@@ -259,6 +259,7 @@
     <string name="pref_phonetic_letters_typing_mode_key" translatable="false">pref_phonetic_letters_typing_mode</string>
     <string name="pref_punctuation_key" translatable="false">pref_punctuation</string>
     <string name="pref_punctuation_verbosity" translatable="false">pref_punctuation_verbosity</string>
+    <string name="pref_punctuation_none_keep_meaning_key" translatable="false">pref_punctuation_none_keep_meaning</string>
     <string name="pref_count_repeated_symbols_key" >pref_collapse_repeated_symbols</string>
     <string name="pref_emoji_speech_key" translatable="false">pref_emoji_speech</string>
     <string name="pref_emoji_repeat_count_key" translatable="false">pref_emoji_repeat_count</string>
@@ -3101,6 +3102,7 @@
     <string name="pref_capital_letters_default">1</string>
     <bool name="pref_punctuation_default">false</bool>
     <string name="pref_punctuation_verbosity_default">2</string>
+    <bool name="pref_punctuation_none_keep_meaning_default">false</bool>
     <bool name="pref_count_repeated_symbols_default">true</bool>
     <bool name="pref_emoji_suffix_default">false</bool>
     <string name="pref_node_desc_order_default">pref_node_desc_order_value_state_name_role_pos</string>

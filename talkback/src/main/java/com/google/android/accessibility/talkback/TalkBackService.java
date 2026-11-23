@@ -395,6 +395,7 @@ import com.google.android.accessibility.utils.output.ScrollActionRecord;
 import com.google.android.accessibility.utils.output.SelectionStateReader;
 import com.google.android.accessibility.utils.output.SpeechController;
 import com.google.android.accessibility.utils.output.SpeechController.UtteranceCompleteRunnable;
+import com.google.android.accessibility.utils.output.SpeechCleanupUtils;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl;
 import com.google.android.accessibility.utils.output.SpeechControllerImpl.CapitalLetterHandlingMethod;
 import com.google.android.accessibility.utils.output.SpeechHistory;
@@ -4760,6 +4761,10 @@ public class TalkBackService extends AccessibilityServiceCompat
                 res,
                 R.string.pref_punctuation_verbosity,
                 R.string.pref_punctuation_verbosity_default)));
+    SpeechCleanupUtils.setKeepsSymbolsThatChangeMeaning(
+        getBooleanPref(
+            R.string.pref_punctuation_none_keep_meaning_key,
+            R.bool.pref_punctuation_none_keep_meaning_default));
     // Before the mode, which keeps the emoji loaded while emoji have a voice or rate of their own.
     EmojiSpeech.setVoice(prefs);
     EmojiSpeech.setMode(
