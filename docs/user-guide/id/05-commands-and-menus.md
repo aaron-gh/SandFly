@@ -167,7 +167,7 @@ Saat Anda mengubah kontrol pembacaan atau nilainya dengan gestur, SandFly juga m
 - **Tabel**: **Baris dan kolom**, **Baris**, dan **Kolom**.
 - **Ucapan**: **Kecepatan bicara**, **Ucapkan tanda baca dan simbol**, **Emoji**, **Ucapkan pemformatan teks**, **Bahasa lisan**, **Mesin ucapan**, **Volume ucapan**, **Perangkat output audio**, **Profil suara**, **Terjemahan otomatis**, dan **Ucapkan hanya fokus yang dipindahkan pengguna**.
 - **Gema keyboard**: gema untuk keyboard di layar, keyboard fisik, keyboard braille, layar braille, dan keyboard tulisan tangan.
-- **Equalizer**: **Equalizer**, dan satu kontrol untuk setiap pita frekuensi dari 32 Hz hingga 16 kHz. Lihat [](#speech).
+- **Equalizer**: **Equalizer**, dan satu kontrol untuk setiap pita frekuensi dari 64 Hz hingga 16 kHz. Lihat [](#voice-effects).
 - **Deskripsi gambar dan layar**: **Pengenalan langsung** dan **Tindakan AI**. Lihat [](#commands-ai-actions).
 - **Suara dan getaran**: **Pengecilan volume audio**, **Volume aksesibilitas**, **Volume media**, **Volume panggilan**, **Volume dering**, **Volume pemberitahuan**, **Volume alarm**, dan **Modus suara**.
 - **Tampilan**: **Sembunyikan layar**, **Kecerahan**, dan **Tablet yang diangkat menghadap ke luar**, untuk keyboard braille di tablet atau ponsel lipat yang dibuka.

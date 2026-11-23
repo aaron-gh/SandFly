@@ -250,7 +250,7 @@ Kontrol pembacaan **Volume ucapan** beralih di antara volume-volume ini, dan kon
 
 - Ucapan menggunakan jalur cepat di Android 11 dan lebih baru. Di versi lebih lama, hanya suara yang menggunakannya.
 - Ucapan diputar dengan cara biasa selama panggilan, sesaat setelah panggilan dimulai atau berakhir, saat aplikasi merekam dengan mikrofon, serta pada mesin ucapan yang memutar audionya sendiri.
-- Melanjutkan ucapan dari tengah kata setelah jeda memerlukan **Audio latensi rendah**. Lihat [](#speech-pause). Jika nonaktif, equalizer ucapan hanya berfungsi pada perangkat yang mendukungnya sebagai efek audio. Lihat [](#speech-equalizer).
+- Melanjutkan ucapan dari tengah kata setelah jeda memerlukan **Audio latensi rendah**. Lihat [](#speech-pause). Jika nonaktif, equalizer ucapan hanya berfungsi pada perangkat yang mendukungnya sebagai efek audio. Lihat [](#voice-effects).
 
 ### Mempertahankan ucapan di ponsel saat mentransmisikan layar {#sound-casting}
 

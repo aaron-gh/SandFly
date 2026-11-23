@@ -68,7 +68,7 @@ Untuk mengubah profil, buka **Ucapan** > **Profil suara** dan pilih profilnya.
 - **Bahasa**: **Default**, atau salah satu bahasa dari mesin tersebut.
 - **Suara**: **Default**, atau salah satu suara dari mesin dalam bahasa yang dipilih.
 - **Volume ucapan**, **Kecepatan bicara**, dan **Tinggi nada ucapan**: sama seperti di layar **Ucapan**, khusus untuk profil ini.
-- **Equalizer**: equalizer untuk profil ini. Lihat [](#speech-equalizer). Tidak tersedia di jam tangan.
+- **Equalizer**: equalizer untuk profil ini. Lihat [](#voice-effects). Tidak tersedia di jam tangan.
 - **Kirim teks panjang per kalimat**: sama seperti di layar **Ucapan**, khusus untuk profil ini. Lihat [](#speech-pronunciation).
 - **Biarkan mesin ucapan tetap berjalan**: menjaga mesin profil ini tetap berjalan saat mesin lain digunakan dan layar menyala, sehingga saat beralih ke profil ini tidak perlu menunggu mesin dimulai. Setiap mesin yang dibiarkan berjalan menggunakan prosesnya sendiri. Nonaktif secara default.
 - **Pindahkan ke atas** dan **Pindahkan ke bawah**: hanya di jam tangan. Di ponsel, Anda memindahkan profil langsung di daftarnya.
@@ -101,9 +101,9 @@ Dua setelan di grup **Suara** mengubah cara emoji terdengar:
 
 Keduanya berlaku baik saat mesin ucapan membaca emoji secara langsung maupun saat SandFly menggantinya dengan namanya. Apakah emoji dibaca dan bagaimana caranya diatur di **Panjang respons** > **Emoji**. Lihat [](#verbosity-emoji).
 
-### Equalizer ucapan {#speech-equalizer}
+### Equalizer ucapan {#voice-effects}
 
-**Ucapan** > **Equalizer** menyetel equalizer 12 pita untuk **Default SandFly**. **Equalizer** di layar profil suara menyetel equalizer untuk profil tersebut. Profil baru dimulai dengan equalizer milik **Default SandFly**. Equalizer tidak tersedia di jam tangan.
+**Ucapan** > **Equalizer** menyetel equalizer 11 pita untuk **Default SandFly**. **Equalizer** di layar profil suara menyetel equalizer untuk profil tersebut. Profil baru dimulai dengan equalizer milik **Default SandFly**. Equalizer tidak tersedia di jam tangan.
 
 Layar **Equalizer** berisi:
 
@@ -111,7 +111,7 @@ Layar **Equalizer** berisi:
 - **Preset**: **Datar**, **Kejernihan**, **Penguat bass**, **Kurangi bass**, **Penguat treble**, **Kurangi treble**, **Hangat**, **Kurangi kekasaran**, **Kurangi desis**, atau **Speaker kecil**, diikuti preset tersimpan Anda. Pita dimulai dalam posisi datar. Mengubah satu pita akan menyetel **Preset** ke **Kustom**.
 - **Simpan sebagai preset**: menyimpan pengaturan pita sebagai preset dengan nama tertentu. Preset tersimpan ditampilkan untuk **Default SandFly** dan untuk setiap profil suara. Anda dapat menyimpan hingga 50 preset.
 - **Preset tersimpan**: mengganti nama atau menghapus preset tersimpan. Menghapus preset tidak mengubah pengaturan pita equalizer yang sedang menggunakannya.
-- Penggeser untuk setiap pita: 32 Hz, 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz, dan 16 kHz, masing-masing dari -12 dB hingga +12 dB.
+- Penggeser untuk setiap pita: 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz, dan 16 kHz, masing-masing dari -12 dB hingga +12 dB.
 
 Saat sebuah pita dinaikkan, pembatas mencegah suara pecah (clipping).
 
