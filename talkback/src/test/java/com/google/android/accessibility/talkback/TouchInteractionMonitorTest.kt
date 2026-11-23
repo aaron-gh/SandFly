@@ -42,7 +42,9 @@ import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorF
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.time.Duration
+import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.touchlock.TouchLock
+import com.google.android.accessibility.utils.gestures.GestureManifold
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -388,6 +390,52 @@ class TouchInteractionMonitorTest {
       listOf(GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT, GESTURE_SWIPE_RIGHT),
       service.gestures,
     )
+  }
+
+  /**
+   * One touch that moves 2 cm in each of [parts], as (x, y) steps, in four moves of 15 ms each, and
+   * lifts, with every gesture given a command, as a three-part swipe assigned in SandFly's layout.
+   */
+  private fun strokeWithEveryGestureAssigned(vararg parts: Pair<Float, Float>) {
+    Scripts.captureNext {}
+    try {
+      val cm = service.resources.displayMetrics.xdpi / 2.54f
+      var x = service.resources.displayMetrics.widthPixels / 4f
+      var y = service.resources.displayMetrics.heightPixels / 4f
+      stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+      touchAt(ACTION_DOWN, x, y, 0)
+      var at = 0L
+      for ((dx, dy) in parts) {
+        repeat(4) {
+          x += dx * cm / 2
+          y += dy * cm / 2
+          at += 15
+          touchAt(ACTION_MOVE, x, y, at)
+        }
+      }
+      touchAt(ACTION_UP, x, y, at + 10)
+      stateChangeAt(STATE_CLEAR, at + 300)
+      runUntil(at + 400)
+    } finally {
+      Scripts.captureNext(null)
+    }
+  }
+
+  @Test
+  fun threePartSwipeIsAGestureWithoutTouchExplorationAtTheLift() {
+    strokeWithEveryGestureAssigned(1f to 0f, 0f to 1f, 1f to 0f)
+
+    assertEquals(listOf<Thread>(), reporter.requests)
+    assertEquals(0, service.tapExplorations)
+    assertEquals(listOf(GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun strokeInFourPartsIsNoGestureAndExploresWhereTheFingerLifted() {
+    strokeWithEveryGestureAssigned(1f to 0f, 0f to 1f, 1f to 0f, 0f to -1f)
+
+    assertEquals(listOf(mainThread), reporter.requests)
+    assertEquals(listOf<Int>(), service.gestures)
   }
 
   @Test

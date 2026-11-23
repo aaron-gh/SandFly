@@ -2530,10 +2530,14 @@ public class TouchInteractionMonitor
 
   @Override
   public void onGestureCancelled(int gestureId) {
-    if (touchExploreGate.remove(gestureId)) {
+    // A three-part swipe is matched after the one- and two-part swipes, which all fail at its lift:
+    // touch exploration waits until it ends too, or it explores where the finger lifted.
+    if (touchExploreGate.remove(gestureId)
+        || GestureConfiguration.isThreeDirectionSwipe(gestureId)) {
       if (keepMonitorTouchExplore
           && touchExploreGate.isEmpty()
-          && state == STATE_TOUCH_INTERACTING) {
+          && state == STATE_TOUCH_INTERACTING
+          && !gestureDetector.isThreeDirectionSwipeStarted()) {
         keepMonitorTouchExplore = false;
         requestTouchExplorationDelayed.cancel();
         requestTouchExploration("onGestureCancelled");
