@@ -27,7 +27,7 @@ The list holds only the commands that the device supports. For example, commands
 - **System actions**: **Home**, **Back**, **Overview**, previous, older and newer app, **Take screenshot**, **Answer call**, **Split screen**, notifications, Quick Settings, **Lock screen**, **Power menu**, **All apps**, the accessibility shortcut, magnification, color inversion, **Write an app's name to open it**, **Type an app's name in braille to open it**, and **Start voice command**.
 - **Media and volume**: play or pause, next and previous track, rewind, fast forward, and volume.
 - **Notifications**: read notifications, read the last notification again, stop reading, and turn notification speech and time announcements on or off. See [](#notifications).
-- **Image and screen descriptions**: **Take picture and describe**, **Describe image**, **Describe screen**, their **Speak** and **Ask about** versions, and **Report AI response**. With SandFly Pro, also the screen recognition commands. See [](#descriptions).
+- **Image and screen descriptions**: **Take picture and describe**, **Describe image**, **Describe screen**, their **Speak** and **Ask about** versions, **Share image of focused item**, **Share screenshot** and **Report AI response**. With SandFly Pro, also the screen recognition commands. See [](#descriptions).
 - **Live recognition**: a command for each Live recognition mode, and **Stop Live recognition**.
 - **Braille**: **Switch to braille keyboard**, **Braille commands**, **Find text**, braille command profiles, and braille display commands. See [](#braille).
 - **SandFly**: **Pause SandFly**, **Hide or show screen**, **Show the focus indicator**, **Screen search**, gesture and settings profiles, **Gestures for this app**, **Turn arrow key navigation on or off**, **Lock or unlock touch**, **Turn all scripts on or off**, **Script commands**, **Verbosity**, **Turn off SandFly**, **Open tutorial** and **Practice gestures**. With SandFly Pro, also **Start or stop AI agent task**.
@@ -221,6 +221,6 @@ Each list adds two commands to the **Reading control lists** category: **Next it
 
 #### AI actions {#commands-ai-actions}
 
-The **AI actions** reading control holds the AI commands: **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description** and **Ask about image**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. Swipe up or down to choose a command, then double-tap to run it. The control offers only the commands that the device and the AI services settings support, and isn't shown when there are none.
+The **AI actions** reading control holds the AI commands: **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image**, **Share image of focused item** and **Share screenshot**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. Swipe up or down to choose a command, then double-tap to run it. The control offers only the commands that the device and the AI services settings support, and isn't shown when there are none.
 
 **AI actions to include**, after **AI actions** in **Current**, chooses which commands the control offers. All are included until you change it. For the commands, see [](#descriptions) and [](#pro).

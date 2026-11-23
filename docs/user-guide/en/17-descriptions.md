@@ -73,6 +73,7 @@ These commands are in the **Image and screen descriptions** category in **Comman
 - **Take picture and describe**: takes a picture with the rear camera and describes it. See [](#descriptions-take-picture).
 - **Describe image**, **Speak image description** and **Ask about image**: describe the focused image in a window, describe it aloud, or answer a spoken question about it.
 - **Describe screen**, **Speak screen description** and **Ask about screen**: the same for the whole screen.
+- **Share image of focused item** and **Share screenshot**: take a screenshot of the focused item or the whole screen and open the Android share sheet with it, to send it to another app. Needs Android 11 or later. Secure windows are black in the screenshot.
 - **Report AI response**: opens a problem report with the last text an AI model gave, such as a description or an answer. See [](#help).
 
 With SandFly Pro, the category also has the screen recognition commands. See [](#pro-screen-recognition).
@@ -83,7 +84,7 @@ For default gestures and keyboard shortcuts, see [](#appendix-gestures) and [](#
 
 #### AI actions reading control {#descriptions-ai-actions}
 
-The **AI actions** reading control runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description** and **Ask about image**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. It needs Android 11 or later.
+The **AI actions** reading control runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image**, **Share image of focused item** and **Share screenshot**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. It needs Android 11 or later.
 
 1. Choose the **AI actions** reading control.
 2. Swipe up or down to choose an action.

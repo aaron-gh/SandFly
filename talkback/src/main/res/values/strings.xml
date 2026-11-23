@@ -85,6 +85,12 @@
     <string name="title_ask_about_screen">Ask about screen</string>
     <!-- Command: takes a screenshot of the focused image, records a spoken question about it, and speaks the answer. -->
     <string name="title_ask_about_image">Ask about image</string>
+    <!-- Command: takes a screenshot of the focused item and opens the Android share sheet with it. -->
+    <string name="title_share_focused_image">Share image of focused item</string>
+    <!-- Command: takes a screenshot of the whole screen and opens the Android share sheet with it. -->
+    <string name="title_share_screenshot">Share screenshot</string>
+    <!-- Spoken when Share image of focused item or Share screenshot can't take or save the screenshot. -->
+    <string name="share_image_failed">Screenshot failed</string>
     <!-- Hint of the text field for the question in the Ask about screen and Ask about image windows. -->
     <string name="ai_question_hint">Question</string>
     <!-- Button that sends the question in the Ask about screen and Ask about image windows. -->
