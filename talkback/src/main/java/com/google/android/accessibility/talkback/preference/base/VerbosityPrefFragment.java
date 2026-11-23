@@ -28,6 +28,8 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
+import com.google.android.accessibility.talkback.monitor.BatteryLevelAnnouncements;
+import com.google.android.accessibility.talkback.notifications.VoiceChoices;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -56,6 +58,22 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
     setupTellTimePreference();
     setupEmojiRepeatCountPreference();
     setupSpeakUserFocusPreference();
+    setupBatteryLevelVoicePreference();
+  }
+
+  @Override
+  public void onStart() {
+    super.onStart();
+    // Voice profiles may have been added or renamed on their own screen.
+    setupBatteryLevelVoicePreference();
+  }
+
+  /** Lists the notification voice, SandFly's voice and the voice profiles for the battery level. */
+  private void setupBatteryLevelVoicePreference() {
+    Preference voice = findPreference(BatteryLevelAnnouncements.KEY_VOICE);
+    if (voice instanceof ListPreference voiceList && preferences != null) {
+      VoiceChoices.setUp(requireContext(), preferences, voiceList, /* notificationVoice= */ true);
+    }
   }
 
   /** Chosen apps only applies while Speak only focus moved by the user is In chosen apps. */

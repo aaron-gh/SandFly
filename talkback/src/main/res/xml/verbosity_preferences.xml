@@ -133,6 +133,21 @@
         android:defaultValue="@bool/pref_announce_full_charge_default"
         android:key="@string/pref_announce_full_charge_key"
         android:title="@string/title_pref_announce_full_charge" />
+    <!-- Keys and values match BatteryLevelAnnouncements. VerbosityPrefFragment lists the voices. -->
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="off"
+        android:dialogTitle="@string/title_pref_battery_level_interval"
+        android:entries="@array/pref_battery_level_interval_entries"
+        android:entryValues="@array/pref_battery_level_interval_values"
+        android:key="pref_battery_level_interval"
+        android:summary="%s"
+        android:title="@string/title_pref_battery_level_interval" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue=""
+        android:dialogTitle="@string/title_pref_battery_level_voice"
+        android:key="pref_battery_level_voice_profile"
+        android:summary="%s"
+        android:title="@string/title_pref_battery_level_voice" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_announce_call_length_default"
         android:key="@string/pref_announce_call_length_key"

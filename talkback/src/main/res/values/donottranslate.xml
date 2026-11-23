@@ -462,6 +462,23 @@
         <item>@string/screen_on_low_battery_30</item>
         <item>@string/screen_on_low_battery_50</item>
     </string-array>
+    <!-- Battery level at intervals: the values BatteryLevelAnnouncements.parse reads. -->
+    <string-array name="pref_battery_level_interval_entries">
+        <item>@string/screen_on_battery_off</item>
+        <item>@string/battery_level_every_5_percent</item>
+        <item>@string/battery_level_every_10_percent</item>
+        <item>@string/battery_level_every_15_minutes</item>
+        <item>@string/battery_level_every_30_minutes</item>
+        <item>@string/battery_level_every_hour</item>
+    </string-array>
+    <string-array name="pref_battery_level_interval_values" translatable="false">
+        <item>off</item>
+        <item>percent_5</item>
+        <item>percent_10</item>
+        <item>minutes_15</item>
+        <item>minutes_30</item>
+        <item>minutes_60</item>
+    </string-array>
     <string-array name="pref_screen_on_low_battery_values" translatable="false">
         <item>0</item>
         <item>10</item>

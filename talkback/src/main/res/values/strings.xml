@@ -494,6 +494,20 @@
     <string name="template_charging_lite">Charging <xliff:g id="changing_status" example="Started">%1$s</xliff:g></string>
     <!-- Switch: SandFly says when the battery is fully charged while the charger is connected. -->
     <string name="title_pref_announce_full_charge">Announce full charge</string>
+    <!-- List: how often SandFly says the battery level while the screen is on, charging or not. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_battery_level_interval">Battery level</string>
+    <!-- Choice in the Battery level list: say the battery level each time it reaches a multiple of 5 percent. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_5_percent" formatted="false">Every 5%</string>
+    <!-- Choice in the Battery level list: say the battery level each time it reaches a multiple of 10 percent. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_10_percent" formatted="false">Every 10%</string>
+    <!-- Choice in the Battery level list: say the battery level every 15 minutes. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_15_minutes">Every 15 minutes</string>
+    <!-- Choice in the Battery level list: say the battery level every 30 minutes. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_30_minutes">Every 30 minutes</string>
+    <!-- Choice in the Battery level list: say the battery level every hour. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_hour">Every hour</string>
+    <!-- List: the voice the Battery level announcements are said with: the notification voice, SandFly's voice or a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_battery_level_voice">Battery level voice</string>
     <!-- Title of the switch that says how long a phone call lasted when it ends. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_call_length">Announce call length</string>
     <!-- Spoken when a phone call ends, with Announce call length on. %1$s is how long it lasted, such as "3 minutes, 12 seconds". [CHAR LIMIT=NONE] -->
