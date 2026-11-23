@@ -35,6 +35,7 @@ The presses don't run commands, and the keys change the volume as usual, in thes
 - During a phone call, or while an app plays call audio.
 - While a finger is on the screen, or during continuous reading.
 - When the key adjusts a slider or moves the cursor.
+- While the Shortcut Menu app is shown.
 
 While a call rings, only a volume key with the **Answer call** command assigned to one of its presses runs commands.
 
@@ -47,7 +48,7 @@ Both settings leave the keys to Android while the screen is off, during a phone 
 
 ### Volume key shortcuts with the screen off {#buttons-screen-off}
 
-With **Volume key shortcuts with the screen off** on, the volume key presses that have commands run them while the display is off. Presses without a command change the volume. The setting needs Shizuku, and isn't shown when SandFly uses root instead of Shizuku or on watches; see [](#updates). The first time you turn it on, Shizuku shows a request to allow SandFly. It's off by default.
+With **Volume key shortcuts with the screen off** on, the volume key presses that have commands run them while the display is off. Presses without a command change the volume. The setting needs Shizuku, and isn't shown when SandFly uses root instead of Shizuku or on watches; see [](#updates-shizuku). The first time you turn it on, Shizuku shows a request to allow SandFly. It's off by default.
 
 ### Speech volume on Samsung phones {#buttons-samsung}
 
@@ -76,7 +77,7 @@ These features use the sensors of the phone. Each is set on the screen named her
 
 - **Back tap**: two, three or four taps on the back of the phone run commands. **Gestures** > **Back tap**; see [](#gestures-back-tap).
 - **Shake**: shaking the phone runs a command. **Gestures** > **Shake**; see [](#gestures-shake).
-- **Cover proximity sensor to stop speech**: covering the proximity sensor stops speech. Off by default. **Speech** > **Cover proximity sensor to stop speech**; see [](#speech).
+- **Cover proximity sensor to stop speech**: covering the proximity sensor stops speech. Off by default. **Speech** > **Cover proximity sensor to stop speech**; see [](#speech-stop).
 - **Lock touch automatically** > **While the proximity sensor is covered**: touch is locked while something covers the proximity sensor. See [](#touch-lock).
-- **Shake to stop** and **Wave to stop**: shaking the phone, or moving a hand over the proximity sensor, stops the reading of a notification. **Notifications** > **Stop reading**; see [](#notifications).
-- **Speaker when away from your ear**: a call moves to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up. **Audio output** > **Speaker when away from your ear**; see [](#sound).
+- **Shake to stop** and **Wave to stop**: shaking the phone, or moving a hand over the proximity sensor, stops the reading of a notification. **Notifications** > **Stop reading**; see [](#notifications-stop).
+- **Speaker when away from your ear**: a call moves to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up. **Audio output** > **Speaker when away from your ear**. It needs Android 12 or later. See [](#sound-calls).

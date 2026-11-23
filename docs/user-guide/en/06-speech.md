@@ -33,7 +33,7 @@ You can also change speech without opening settings:
 - The **Increase speech rate**, **Decrease speech rate**, **Increase speech pitch** and **Decrease speech pitch** commands, for gestures, keyboard shortcuts and menus.
 - The **Increase speech volume**, **Decrease speech volume** and **Reset speech rate and pitch** keyboard shortcuts. See [](#appendix-keyboard-shortcuts).
 
-To choose whether speech plays at the accessibility, media, ring or call volume, see [](#sound-speech-volume).
+To choose whether speech plays at the accessibility, media, ring or call volume, see [](#sound-speech-volume). To change the speech volume with the volume keys, see [](#buttons-speech-volume).
 
 ### Repeat the last phrase slower {#speech-repeat-slower}
 
@@ -259,6 +259,6 @@ The **Speech** group of commands has, among others: **Pause or resume speech**, 
 
 The **Reading** group has **Repeat last spoken phrase**, **Repeat last spoken phrase slower**, **Spell last spoken phrase** and **Speech history**.
 
-The speech reading controls are **Speech rate**, **Spoken language**, **Speech engine**, **Voice profile**, **Voice effects** and the equalizer bands. Only **Speech rate** is in the reading controls by default. The **Speech volume** and **Audio output device** reading controls are described in [](#sound-reading-controls).
+The speech reading controls are **Speech rate**, **Spoken language**, **Speech engine**, **Voice profile**, **Voice effects** and the equalizer bands. Only **Speech rate** is in the reading controls by default. The **Speech volume** and **Audio output device** reading controls are described in [](#sound-reading-controls). The **Speech** group of **Reading controls** also has **Speak punctuation and symbols**, **Emoji** and **Speak text formatting** (see [](#verbosity-text)), **Automatic translation** (see [](#translation)) and **Speak only focus moved by the user** (see [](#verbosity-own-speech)).
 
 To assign commands to gestures and keyboard shortcuts, and to add reading controls, see [](#commands).

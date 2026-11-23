@@ -18,7 +18,7 @@ The **Show the focus indicator** command, in the **SandFly** group of commands, 
 
 ### Hide the screen {#display-hide-screen}
 
-Hide screen turns the display black, so that people near you can't see what is on it. SandFly and the apps keep working as usual.
+Hide screen turns the display black, including the navigation bar, so that people near you can't see what is on it. SandFly and the apps keep working as usual.
 
 To hide the screen:
 
@@ -37,7 +37,7 @@ To stop the dialog from opening each time, turn off **Always show this warning**
 
 With the **Modify system settings** permission, SandFly also sets the screen brightness to its minimum while the screen is hidden, and sets it back when the screen is shown. The first time you hide the screen without that permission, SandFly opens the Android screen to allow it.
 
-Note: The screen stays hidden after SandFly restarts. Hide screen isn't available while the phone is locked. While the screen is hidden, image descriptions aren't available.
+Note: The screen stays hidden after SandFly restarts. Hide screen isn't available while the phone is locked. Before Android 14, image descriptions aren't available while the screen is hidden.
 
 To change the sounds for hiding and showing the screen, see [](#sound). To have SandFly say "Screen hidden" when the screen turns on, see [](#verbosity).
 
@@ -48,7 +48,7 @@ The **Brightness** reading control changes the system screen brightness, even wh
 1. Swipe up or down to choose the reading control, until SandFly says "Brightness". See [](#reading).
 2. Swipe up to make the screen brighter, or swipe down to make it dimmer.
 
-Each step changes the brightness by about 10 percent, and SandFly says the new level, such as "Brightness 40 percent." SandFly needs the **Modify system settings** permission to change the brightness, and opens the Android screen to allow it the first time. While adaptive brightness is on, SandFly says "Turn off adaptive brightness to change brightness."
+Each step changes the brightness by 10 percent of the system brightness slider, and SandFly says the new level, such as "Brightness 40 percent." SandFly needs the **Modify system settings** permission to change the brightness, and opens the Android screen to allow it the first time. While adaptive brightness is on, SandFly says "Turn off adaptive brightness to change brightness."
 
 ### Use SandFly as the wallpaper {#display-wallpaper}
 
@@ -63,7 +63,7 @@ These settings are on phones and tablets only.
 
 ### The SandFly overview {#display-overview}
 
-the SandFly overview lists the recent apps in a column or grid that SandFly reads in order. It opens in place of the system overview when you turn on **Overview** > **Use SandFly's overview**. The setting is off by default.
+The SandFly overview lists the recent apps in a column or grid that SandFly reads in order. It opens in place of the system overview when you turn on **Overview** > **Use SandFly's overview**. The setting is off by default.
 
 The SandFly overview needs Shizuku, or root, to read and open the recent apps. See [](#updates). Without Shizuku, the system overview opens, and SandFly says "Shizuku not running" or "Shizuku doesn't allow SandFly". On the lock screen, the system overview opens.
 
@@ -112,7 +112,7 @@ While split screen is shown, the SandFly menu has a **Split screen** item, with 
 
 ### The SandFly quick settings panel {#display-quick-settings}
 
-the SandFly quick settings panel is a grid of switches, sliders and buttons that you choose and arrange. It opens in place of the system quick settings when you turn on **Quick settings** > **Use SandFly's quick settings**. The setting is off by default.
+The SandFly quick settings panel is a grid of switches, sliders and buttons that you choose and arrange. It opens in place of the system quick settings when you turn on **Quick settings** > **Use SandFly's quick settings**. The setting is off by default.
 
 #### Use the quick settings panel {#display-quick-settings-use}
 

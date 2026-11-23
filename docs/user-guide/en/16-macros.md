@@ -35,7 +35,7 @@ The screen of a macro has:
 - **Add step**: adds a step. Under it, SandFly shows where the step goes: **At the end**, **At the start**, or after a step. A new step goes after the step that you added last, so that steps added after **If** or a repeat go inside its block.
 - **Record steps**: records steps where **Add step** adds them. See [](#macros-record).
 - **Run only when**: a condition that has to be met for the macro to run. **Always** by default. When the condition isn't met, the macro does nothing, and **Run now** says "Macro not run. Run only when: not met". See [](#macros-conditions).
-- **App**: the app the macro runs in, or **All apps**, the default. A macro with an app runs only while that app is in front.
+- **App**: the app the macro runs in, or **All apps**, the default. A macro with an app runs only while that app is in front; elsewhere, **Run now** says "Macro not run. Runs only in" and the name of the app.
 - **Show in Actions**: lists the macro in the **Actions** menu and the **Actions** reading control of every item in its app, or in every app for **All apps**, after the actions of the app. Choosing it there runs the macro. Off by default.
 - **Show in Actions only when**: shown with **Show in Actions** on. A condition that has to be met for the focused item to list the macro. With a condition, the macro counts as an action of the item for **Change reading control automatically**, so the **Actions** reading control is selected on it; without one it doesn't.
 - **Steps**: the steps in order. Steps inside an **If** or a repeat are indented.
@@ -54,7 +54,7 @@ When the blocks of a macro don't match, such as an **If** without **End if**, th
 - **Run command**: runs any command except a macro. Choose a category, then the command.
 - **Tap item**: activates the first item on the screen whose text or description contains a text, ignoring case. An item whose whole text is the text comes first. SandFly waits for the item to appear, 3 seconds by default, set by **Seconds to wait for the item**.
 - **Tap at position**: taps the screen at an X and a Y in pixels from the top left. Needs Android 11 or later.
-- **Touch and hold item**: touches the centre of an item for **Seconds to hold**, 1 second by default, then lifts in place or slides up, down, left or right by a distance in dp before it lifts. For buttons that act while they are held, such as the voice message button of a chat app.
+- **Touch and hold item**: touches the centre of an item for **Seconds to hold**, 1 second by default, then lifts in place or slides up, down, left or right by a distance in dp before it lifts. For buttons that act while they are held, such as the voice message button of a chat app. Needs Android 11 or later.
 - **Focus item**: finds an item as **Tap item** does and moves accessibility focus to it, which reads it.
 - **Speak item**: finds an item as **Tap item** does and reads its name without moving focus.
 - **Long-press or scroll an item**: long-presses, scrolls forward or scrolls backward an item a number of times. For an item that can't do it, SandFly uses the nearest item around it that can, such as a seek bar. A scroll with no item text scrolls the largest list on the screen.
@@ -68,7 +68,7 @@ When the blocks of a macro don't match, such as an **If** without **End if**, th
 - **Repeat**, **Repeat while**, **End repeat** and **Exit loop**: run steps more than once. See [](#macros-repeat).
 - **Stop macro**: stops the macro.
 
-When a step fails, such as an item that isn't found, SandFly says "Macro stopped. Failed:" and the step, and the macro stops.
+When a step fails, SandFly says "Macro stopped. Failed:" and the step, and the macro stops. When the item of a step isn't found, SandFly says "Macro stopped. Not found:" and the item text. A **Wait until** that runs out of time says "Macro stopped. Timed out:" and the step.
 
 #### Find items {#macros-find-items}
 
@@ -77,7 +77,7 @@ The steps and tests that find an item have these fields:
 - **Item text**: the text to look for.
 - **Regular expression**: reads **Item text** as a regular expression, matched anywhere in the text and ignoring case. Repeated groups can't contain repetition or `|`, such as `(a+)+`.
 - **Match in**: where to look. **Any text**, the default, or only **Text**, **Description**, **Hint**, **State**, **Tooltip** or **Resource ID**. A resource ID matches with or without its package, so `send` matches `com.example:id/send`.
-- **Item type**: **Any type**, the default, or only items that are **Clickable**, **Long-clickable**, **Editable**, **Scrollable**, **Adjustable**, **Checkable**, **Checked**, **Selected**, **Heading** or **Enabled**. With **Clickable**, **Tap item** taps a button and not a heading with the same text. Tests ask for the item type after the text.
+- **Item type**, except in **Focus is inside an item**: **Any type**, the default, or only items that are **Clickable**, **Long-clickable**, **Editable**, **Scrollable**, **Adjustable**, **Checkable**, **Checked**, **Selected**, **Heading** or **Enabled**. With **Clickable**, **Tap item** taps a button and not a heading with the same text. Tests ask for the item type after the text.
 
 To see what an item has in each field and which item types it is, use **Inspect focused item**. See [](#macros-inspect).
 
@@ -122,7 +122,7 @@ The tests are:
 - **App in front**: an app is in front.
 - **Keyboard shown**: the on-screen keyboard is shown.
 - **Screen locked**: the lock screen is shown.
-- **Value**: a value contains a text, or, with **Contains** empty, is set.
+- **Value**: a value contains a text, or, with **Contains** empty, is set. With **Regular expression**, the text is a regular expression.
 
 When a condition has tests, **Add test** first asks for **Join with and** or **Join with or**. Choose a test for these actions:
 
@@ -140,7 +140,7 @@ When a condition has tests, **Add test** first asks for **Join with and** or **J
 #### Repeat {#macros-repeat}
 
 - **Repeat**: runs the steps up to **End repeat** a number of times, from 1 to 1,000.
-- **Repeat while**: runs the steps up to **End repeat** while a condition is met, up to 1,000 times in one run of the macro.
+- **Repeat while**: runs the steps up to **End repeat** while a condition is met, up to 1,000 times in one run of the macro. After 1,000 times, SandFly says "Macro stopped. Repeated 1000 times:" and the step, and the macro stops.
 - **Exit loop**: goes on after the **End repeat** of the repeat that it is in.
 
 **Add step** adds a repeat with its **End repeat**, and the steps that you add next go inside it.
@@ -203,4 +203,4 @@ Activate a line to copy its value. **Copy all** copies all the details as text. 
 
 **Copy item details** copies the same details without opening the window, and says "Copied item details". **Copy screen tree** copies all items on the screen as text, one line for each item with its class, ID, role, states and texts, for writing scripts.
 
-**Inspect focused item** and **Copy item details** can be added to the SandFly menu; they are off by default. To inspect an item, move focus to it, then open the SandFly menu and choose **Inspect focused item**: the window shows the item that had focus before the menu.
+**Inspect focused item**, **Copy item details** and **Copy screen tree** can be added to the SandFly menu; they are off by default. To inspect an item, move focus to it, then open the SandFly menu and choose **Inspect focused item**: the window shows the item that had focus before the menu.

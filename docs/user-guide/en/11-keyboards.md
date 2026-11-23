@@ -88,9 +88,9 @@ These aren't available on watches. For the file format, see [](#api-item-files).
 
 **Keyboard shortcuts** in SandFly settings has:
 
+- **Search**: finds a command or an arrow key by its name or its keys, and opens its shortcut.
 - **Keymap**: **Choose a keymap**, **Choose SandFly key**, **Reset the keymap**, **View system keyboard shortcuts**, **New keymap**, **Export to file**, **Import from file**, and for keymaps that you made, **Rename keymap** and **Delete keymap**. **View system keyboard shortcuts** opens the list of the keyboard shortcuts of Android and the app in use.
 - **Keyboard shortcuts in apps**: shortcuts that run other commands in one app. See [](#keyboards-app-shortcuts).
-- **Search**: finds a command or an arrow key by its name or its keys, and opens its shortcut.
 - **Arrow key navigation**: in keymaps that have it. See [](#keyboards-arrow-keys).
 - The commands, by category, each with its shortcut. Each category opens and closes. A command whose shortcut works only in browse mode has "in browse mode" after its name, such as "Navigate to next heading in browse mode".
 
@@ -109,7 +109,7 @@ You can also see and change the keyboard shortcut of a command on its screen in 
 In the dialog:
 
 - Backspace clears the shortcut, so the command has none. **Clear** does the same.
-- Ctrl + Backspace sets the default shortcut again.
+- Ctrl + Backspace sets the default shortcut again, in the SandFly and VoiceOver keymaps and in keymaps copied from them.
 - Escape, or **Cancel**, closes the dialog without a change.
 
 If another command has the keys, SandFly shows "Currently assigned to" and the name of that command. When you save, the **Key already in use** dialog asks whether to take the keys from that command; select **OK** to assign them to the command you are changing.
@@ -143,14 +143,16 @@ To record these, press the keys the same way in the shortcut dialog. In these ke
 
 1. In **Keyboard shortcuts**, select **Keyboard shortcuts in apps**.
 2. Select **Add app**, and choose the app.
-3. Under **Keyboard shortcuts**, select **Add keyboard shortcut**, and press the keys.
-4. Choose a command.
+3. Under **Keyboard shortcuts**, select **Add keyboard shortcut**, press the keys, and select **Save**.
+4. Choose a category, then a command, or choose **Unassigned**.
+
+**Add keyboard shortcut** is available only while SandFly is on. Select a shortcut for **Choose command** or **Remove**. **Remove app** removes the gestures and shortcuts of the app.
 
 The same screen has the gestures of each app. For gestures in apps, see [](#gestures).
 
 ### Find a keyboard shortcut {#keyboards-shortcut-list}
 
-**Show keyboard shortcuts list** opens a list of every command and its shortcut, which you can search. Its default shortcut is SandFly key + Shift + / in the SandFly keymap, and SandFly key + Q in the keyboard phone keymap.
+**Show keyboard shortcuts list** opens a list of every command and its shortcut, which you can search. Its default shortcut is SandFly key + Shift + / in the SandFly, VoiceOver and Orca keymaps, SandFly key + Q in the keyboard phone keymap, and Q in the keyboard phone single-key keymap.
 
 **Keyboard shortcuts** > **Search** finds a command by its name or keys in settings. For the default shortcuts of every keymap, see [](#appendix-keyboard-shortcuts).
 
@@ -259,9 +261,21 @@ In the JAWS keymap, the review cursor works as the JAWS cursor; in the Orca keym
 
 Some apps use keys that SandFly also uses. These commands leave keys to the app:
 
-- **Pass through to system**: the next key, or keys pressed together, that you press after the shortcut go to the app instead of SandFly. SandFly says "Ignoring next key press". Its default shortcut is SandFly key + Shift + Escape in the SandFly keymap, and SandFly key + P in the keyboard phone keymap.
-- **Pass keys without the SandFly key to this app**: the app shown gets every key pressed without the SandFly key, such as the arrow keys and the browse mode letters, until you run the command again in that app. SandFly says "Passing keys to" or "Not passing keys to" and the name of the app, and keeps the choice for each app. While the review cursor is on, it still takes its keys. Its default shortcut is SandFly key + Shift + Space in the NVDA keymap, and SandFly key + Shift + Q in the keyboard phone keymap.
-- **Turn SandFly keyboard input on or off**: every key goes to Android, shortcuts with the SandFly key too, until you press the shortcut of this command again. SandFly says "SandFly keyboard input off" or "SandFly keyboard input on". Keyboard input is on again when SandFly restarts. Its default shortcut is SandFly key + Shift + K in the SandFly, NVDA and JAWS keymaps, and SandFly key + Shift + P in the keyboard phone keymap.
+- **Pass through to system**: the next key, or keys pressed together, that you press after the shortcut go to the app instead of SandFly. SandFly says "Ignoring next key press".
+- **Pass keys without the SandFly key to this app**: the app shown gets every key pressed without the SandFly key, such as the arrow keys and the browse mode letters, until you run the command again in that app. SandFly says "Passing keys to" or "Not passing keys to" and the name of the app, and keeps the choice for each app. While the review cursor is on, it still takes its keys.
+- **Turn SandFly keyboard input on or off**: every key goes to Android, shortcuts with the SandFly key too, until you press the shortcut of this command again. SandFly says "SandFly keyboard input off" or "SandFly keyboard input on". Keyboard input is on again when SandFly restarts.
+
+The default shortcuts are:
+
+| Keymap | Pass through to system | Pass keys without the SandFly key to this app | Turn SandFly keyboard input on or off |
+| --- | --- | --- | --- |
+| SandFly keymap | SandFly key + Shift + Escape | None | SandFly key + Shift + K |
+| VoiceOver keymap | None | None | SandFly key + Shift + ; |
+| NVDA keymap | SandFly key + F2 | SandFly key + Shift + Space | SandFly key + Shift + K |
+| JAWS keymap | SandFly key + 3 | SandFly key + Shift + Z | SandFly key + Shift + K |
+| Orca keymap | SandFly key + Backspace | SandFly key + Shift + A | SandFly key + Shift + ; |
+| Keyboard phone keymap | SandFly key + P | SandFly key + Shift + Q | SandFly key + Shift + P |
+| Keyboard phone single-key keymap | SandFly key + P | Shift + Q | SandFly key + Shift + P |
 
 These commands are in the **Activation** category. A script can also have SandFly pass every key to its app; turning SandFly keyboard input on again ends that. See [](#scripts).
 
@@ -339,9 +353,9 @@ The key types its own character first; when Android starts to repeat it, the San
 
 #### Double presses {#keyboards-double-press}
 
-**Typing** > **Physical keyboard** > **Double-press characters** lists keys and what each types when pressed twice with the SandFly keyboard, such as ğ for G, ö for O or ä for E. **Add a key** adds one: enter the key's character in **Key** and the characters in **Double press types**. Each key has **Edit** and **Remove**. The list is empty by default.
+**Typing** > **Physical keyboard** > **Double-press characters** lists keys and what each types when pressed twice with the SandFly keyboard, such as ğ for G, ö for O or ä for E. **Add a key** adds one: enter the character of the key in **Key**, and 1 to 16 characters in **Double press types**. Select a key for **Edit** or **Remove**. The list is empty by default.
 
-The first press types the key's character. A second press of the same key within 350 milliseconds, with no other key or cursor move between, puts the double-press characters in its place. After a capital, such as with Shift, the double press types the capital, such as Ğ. Keys not in the list type as usual.
+The first press types the character of the key. A second press of the same key within 350 milliseconds, with no other key or cursor move between, puts the double-press characters in its place. After a capital, such as with Shift, the double press types the capital, such as Ğ. Keys not in the list type as usual.
 
 With **Double space types a period** on, Space pressed twice after a letter or digit puts a period and a space in place of the first space.
 
@@ -369,6 +383,7 @@ In the keyboard phone keymaps, **Search emoji** is SandFly key + O, and **Choose
 - U and O: previous and next word.
 - Alt + J and Alt + L: start and end of the line. Alt + I and Alt + K: start and end of the text.
 - T and B: start and end of the text.
+- Home and End: start and end of the line. With Ctrl: start and end of the text.
 - Shift with a move selects. S starts selecting, and SandFly says "Selecting"; press S again to stop.
 - A selects all, C copies, X cuts, V pastes.
 - Z undoes, Shift + Z redoes.
@@ -381,5 +396,5 @@ Other keys that type do nothing in editing mode. Editing mode needs the SandFly 
 ### Other keyboard settings {#keyboards-other-settings}
 
 - **Typing** > **Keyboard echo** > **Physical keyboard** sets what SandFly says as you type on a physical keyboard. See [](#typing).
-- Every key on a physical keyboard stops speech, except modifier keys such as Shift. Ctrl pressed alone pauses speech. **Interrupt speech when typing**, in **Speech**, sets when typed characters stop speech. See [](#speech).
+- Every key on a physical keyboard stops speech, except modifier keys such as Shift, Caps Lock, Num Lock, Scroll Lock and the volume keys. **Speech** > **Interrupt speech when typing** sets when typed characters stop speech, and **Speech** > **Interrupt speech on Enter** whether Enter does. Ctrl pressed alone pauses or resumes speech. See [](#speech-stop).
 - With a physical keyboard connected the first time SandFly starts, the keyboard tutorial opens instead of the touch tutorial. When you open the tutorial later with a keyboard connected to a device with a touch screen, SandFly offers **Touch tutorial** and **Keyboard tutorial**. See [](#getting-started).

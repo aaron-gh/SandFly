@@ -239,7 +239,7 @@ Timed triggers run only while the script runs.
 
 With SandFly Pro, **Build a script with SandFly Pro**, on the **Scripts** screen, writes a script from your description of what it should do. **Change with SandFly Pro**, on the page of a built script and in the script builder, changes a script. SandFly Pro reads the screen in front and tests the script. In its notification, SandFly Pro shows requests to open other screens or to try parts of the script; select **Done** or **Reply** there when you have done so.
 
-The script then opens in the script builder under **Written by SandFly Pro**, with a summary, **Accept**, **Ask for changes** and **Discard**. Until you accept it, the script runs without the internet and Java code permissions. Building a script uses much more of the monthly usage limit of SandFly Pro than other tasks. See [](#pro).
+The script then opens in the script builder under **Written by SandFly Pro**, with a summary, **Accept**, **Ask for changes** and **Discard**. Until you accept it, the script runs without the internet and Java code permissions. Building a script uses much more of the monthly usage limit of SandFly Pro than other tasks. See [](#pro-scripts).
 
 ### Inspect items {#scripts-inspect}
 
@@ -271,7 +271,7 @@ To label items from the SandFly menu, turn on **Add or edit labels** in **SandFl
 
 #### Export and import custom labels {#scripts-labels-export}
 
-Custom labels aren't in exported settings. To move them to another phone, export them to a file.
+**Back up and restore** > **Export settings** includes custom labels. See [](#profiles-export). To share only the labels, export them to a file.
 
 - **Export custom labels**: saves all custom labels to a file and opens the Android share sheet, where you choose where to send or save it. SandFly says "Nothing to export. You have not added any labels" when there are none.
 - **Import custom labels**: reads a labels file. In the **Import custom labels to SandFly** dialog, choose **Override** to replace your labels with those in the file when both label the same item, or **Skip** to keep yours.

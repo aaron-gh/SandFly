@@ -26,10 +26,10 @@ SandFly started as a fork of [Backtalk](https://github.com/trypsynth/backtalk), 
 Each item links to the chapter of the user guide that describes it.
 
 - **Faster speech.** SandFly reads the next item sooner after a swipe, a double-tap or a screen change, prepares the next swipe in advance, and can play speech and sounds through a low-latency audio path. See [Differences from TalkBack](differences.md).
-- **Gestures.** One- to four-finger swipes and taps, back-and-forth and angle gestures, swipe and hold, a two-finger rotor, edge gestures and a two-finger scrub, corner gestures, pinch and spread, and back tap. Choose the SandFly gesture layout or one that matches VoiceOver on iPhone, and set gestures for each app or in gesture profiles. See [Gestures](docs/user-guide/en/03-gestures.md).
+- **Gestures.** One- to four-finger swipes and taps, back-and-forth and angle gestures, three-part and two-stroke swipes, swipe and hold, a two-finger rotor, edge gestures and a two-finger scrub, corner gestures, pinch and spread, back tap and shake. Choose the SandFly gesture layout or one that matches VoiceOver on iPhone, and set gestures for each app or in gesture profiles. See [Gestures](docs/user-guide/en/03-gestures.md).
 - **Reading and navigation.** Reading controls for characters, words, lines, headings, links, controls and more; continuous reading; screen search; tables; containers and windows; addresses and numbers in text. See [Explore and read the screen](docs/user-guide/en/02-reading.md) and [Web pages and elements](docs/user-guide/en/13-web.md).
 - **Commands and menus.** Every command can have gestures and keyboard shortcuts. The SandFly menu, a circle menu, custom menus, macros that record and repeat steps, and voice commands. See [Commands and menus](docs/user-guide/en/05-commands-and-menus.md), [Macros](docs/user-guide/en/16-macros.md) and [Voice commands](docs/user-guide/en/15-voice-commands.md).
-- **Speech.** Voice profiles, voices by language, a speech equalizer, a speech dictionary and a symbol dictionary, emoji settings, and speech history. See [Speech](docs/user-guide/en/06-speech.md) and [Verbosity](docs/user-guide/en/07-verbosity.md).
+- **Speech.** Voice profiles, voices by language, voice effects with an equalizer and compression, a speech dictionary and a symbol dictionary, emoji settings, and speech history. See [Speech](docs/user-guide/en/06-speech.md) and [Verbosity](docs/user-guide/en/07-verbosity.md).
 - **Sound and vibration.** Sound themes, control sounds in 3D audio, a vibration for every sound, and a choice of audio output device. See [Sound, vibration and audio output](docs/user-guide/en/08-sound-and-vibration.md).
 - **Typing.** Typing methods for the on-screen keyboard, granular editing, clipboard history, dictation on the phone with Whisper, and a handwriting keyboard. See [Type and edit text](docs/user-guide/en/09-typing.md).
 - **Braille.** An on-screen braille keyboard with dots that follow how you hold the device, braille commands and an app launcher, and braille displays over Bluetooth, USB and HID, or from another app. See [Braille](docs/user-guide/en/10-braille.md).
@@ -38,7 +38,7 @@ Each item links to the chapter of the user guide that describes it.
 - **Image and screen descriptions.** Describe images, the screen and the camera view, and ask questions about them, with SandFly Pro, an AI service with your own key, or a model on the phone. See [Image and screen descriptions](docs/user-guide/en/17-descriptions.md).
 - **Translation.** Translate the last phrase, or translate speech and notifications automatically. See [Translation](docs/user-guide/en/19-translation.md).
 - **Scripts.** Lua scripts and a script builder change how SandFly reads and works in one app or in every app. See [Scripts and custom labels](docs/user-guide/en/20-scripts.md).
-- **Settings profiles.** Sets of changed settings that apply in chosen apps, on web pages, while reading or while editing. See [Settings profiles and backups](docs/user-guide/en/22-profiles-and-backup.md).
+- **Settings profiles and backups.** Sets of changed settings that apply in chosen apps, on web pages, while reading or while editing, and backups of all settings with custom labels, profiles, scripts and sound themes in one file. See [Settings profiles and backups](docs/user-guide/en/22-profiles-and-backup.md).
 - **Other tools.** Direct touch for games, touch lock, Pause SandFly, the SandFly overview of recent apps, the SandFly quick settings panel, hide screen, and SandFly as the wallpaper. See [Touch](docs/user-guide/en/04-touch.md), [Display, overview and quick settings](docs/user-guide/en/21-display.md) and [Pause and turn off SandFly](docs/user-guide/en/23-pause-and-turn-off.md).
 
 ## Install SandFly
@@ -145,7 +145,7 @@ Features that need Shizuku, root or adb:
 - **Volume keys** > **Volume key shortcuts with the screen off** works only through Shizuku.
 - The SandFly overview of recent apps, Alt+Tab and split screen.
 - The switches and sliders of the SandFly quick settings panel.
-- Clipboard history of text copied in other apps, and Gboard key vibration while you explore the keyboard.
+- Clipboard history of text copied in other apps, and the key vibration of Gboard versions before 18.8 while you explore the keyboard.
 - **Updates and installation** > **Appear installed from Google Play**.
 
 Without Shizuku, a setting that needs an adb permission shows the adb command, and its **Copy command** action copies it. See [Updates, Shizuku and root](docs/user-guide/en/24-updates.md).
@@ -160,7 +160,7 @@ You can also open an [issue on GitHub](https://github.com/aaron-gh/SandFly/issue
 
 SandFly is translated into Afrikaans, Albanian, Amharic, Arabic, Armenian, Assamese, Azerbaijani, Bangla, Basque, Belarusian, Bosnian, Bulgarian, Burmese, Catalan, Chinese (Simplified, Traditional and Hong Kong), Croatian, Czech, Danish, Dutch, English (United Kingdom, Australia and India), Estonian, Filipino, Finnish, French (France and Canada), Galician, Georgian, German, Greek, Gujarati, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Japanese, Kannada, Kazakh, Khmer, Korean, Kyrgyz, Lao, Latvian, Lithuanian, Macedonian, Malay, Malayalam, Marathi, Mongolian, Nepali, Norwegian, Odia, Persian, Polish, Portuguese (Brazil and Portugal), Punjabi, Romanian, Russian, Serbian (Cyrillic and Latin), Sinhala, Slovak, Slovenian, Spanish (Spain and Latin America), Swahili, Swedish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese and Zulu.
 
-The user guide is in English. Its lists of default gestures and keyboard shortcuts are shown in the language of SandFly. To translate the guide, see [docs/user-guide/README.md](docs/user-guide/README.md).
+The user guide is in English, Dutch and Indonesian, and shows in English in other languages. Its lists of default gestures and keyboard shortcuts are shown in the language of SandFly. To translate the guide, see [docs/user-guide/README.md](docs/user-guide/README.md).
 
 ## For developers
 

@@ -22,7 +22,7 @@ The list holds only the commands that the device supports. For example, commands
 - **Web**: **Turn browse mode on or off**, lists of headings, landmarks, links, controls and tables, and the address of a link or page. See [](#web).
 - **Reading**: **Read from top**, **Read from focused item**, **Read from focused item by reading control**, repeat, spell and translate the last spoken phrase, **Speech history**, **Speak status**, **Speak position**, **Speak coordinates**, the date and time, the battery level and the window title.
 - **Speech**: **Pause or resume speech**, **Turn speech on or off**, speech rate, pitch and volume, spoken language, voice profiles, punctuation, keyboard echo, **Use voice effects**, **Audio ducking** and **Vibration feedback**.
-- **Reading controls**: next and previous reading control, **Move reading control down or forward** and **Move reading control up or backward**, **Write the letter of a reading control**, next and previous reading control list, and a **Set reading control to** command for each reading control in the list. See [](#commands-reading-controls).
+- **Reading controls**: next and previous reading control, **First reading control**, **Move reading control down or forward** and **Move reading control up or backward**, **Write the letter of a reading control**, next and previous reading control list, and a **Set reading control to** command for each reading control in the list. See [](#commands-reading-controls).
 - **Text editing**: selection mode, cursor movement, select all, copy, cut, paste, **Clipboard history**, **Editing menu**, **Submit text**, **Clear text**, **Copy last spoken phrase**, **Copy text from screen**, **Continuous copy**, **Granular editing**, **Spelling / grammar suggestions**, **Search emoji**, **Choose a symbol**, **Turn editing mode on or off**, **Dictate** and **Switch keyboard**. See [](#typing).
 - **System actions**: **Home**, **Back**, **Overview**, previous, older and newer app, **Take screenshot**, **Answer call**, **Split screen**, notifications, Quick Settings, **Lock screen**, **Power menu**, **All apps**, the accessibility shortcut, magnification, color inversion, **Write an app's name to open it**, **Type an app's name in braille to open it**, and **Start voice command**.
 - **Media and volume**: play or pause, next and previous track, rewind, fast forward, and volume.
@@ -217,7 +217,7 @@ A reading control list is a named list of reading controls, apart from the main 
 
 The list screen also has **Rename** and **Delete list**.
 
-Each list adds two commands to the **Reading control lists** category: **Next item in** and **Previous item in** the list, which select the next or previous reading control of that list. The **Next reading control list** and **Previous reading control list** commands, in the **Reading controls** category, choose the list that next and previous reading control move through, the main list or one of yours.
+Each list adds two commands to the **Reading control lists** category: **Next item in** and **Previous item in** the list, which select the next or previous reading control of that list. The **Next reading control list** and **Previous reading control list** commands, in the **Reading controls** category, choose the list that next and previous reading control move through, the main list or one of yours. **First reading control** selects the first reading control of that list.
 
 #### AI actions {#commands-ai-actions}
 
