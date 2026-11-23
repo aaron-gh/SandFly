@@ -66,6 +66,8 @@ Om de volumetoetsen het spraakvolume te laten wijzigen terwijl SandFly spreekt, 
 
 Met een toon zet **Toon dempen tijdens afspelen van media** de toon uit terwijl een app media afspeelt. Met spraak zet **Spraak dempen tijdens afspelen van media** de aankondiging uit terwijl een app media afspeelt, en **Spraak onderbreken om het volume te melden** stopt de spraak die wordt afgespeeld om het volume aan te kondigen. De twee media-schakelaars staan standaard uit, en **Spraak onderbreken om het volume te melden** staat standaard aan.
 
+Met spraak laat **Spraakvolume stil wijzigen tijdens spreken** de aankondiging weg wanneer de volumetoetsen het spraakvolume wijzigen terwijl SandFly spreekt of spraak in de wachtrij heeft, zodat spraak doorgaat op het nieuwe volume. Drukken die elkaar binnen een seconde opvolgen, tellen als één reeks, die stil blijft nadat de spraak eindigt. De toon speelt nog wel, indien gekozen. Drukken terwijl een vinger op het scherm staat, drukken terwijl SandFly stil is, en wijzigingen vanuit het volumepaneel of apps worden wel aangekondigd. Op Samsung-telefoons wijzigen de toetsen, buiten doorlopend lezen, het spraakvolume terwijl SandFly spreekt alleen met **Volumetoetsen wijzigen spraakvolume tijdens spreken** aan. Standaard uit.
+
 Volumewijzigingen die SandFly maakt, zoals met een volumeopdracht, krijgen geen feedback. Volumewijzigingen die andere apps maken, krijgen die wel. Er is geen toon tijdens een gesprek of terwijl SandFly is gepauzeerd.
 
 ### Sensoren {#buttons-sensors}

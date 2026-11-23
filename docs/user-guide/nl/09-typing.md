@@ -143,8 +143,10 @@ SandFly houdt een geschiedenis bij van tot 50 gekopieerde teksten, nieuwste eers
 
 Om de geschiedenis te openen, voer je **Klembordgeschiedenis** uit, vanuit de opdrachten **Tekst bewerken** of het **Bewerkingsmenu**. De geschiedenis opent over het huidige scherm.
 
-- Dubbeltik op een tekst om de acties erbij te openen: **Plakken** in het tekstveld waaruit de geschiedenis is geopend, **Kopiëren** opnieuw, **Toevoegen aan klembord**, **Bewerken** van de tekst, of **Verwijderen**.
-- **Exporteren naar bestand** bewaart de hele geschiedenis als een tekstbestand.
+- Dubbeltik op een tekst om deze te plakken in het tekstveld waaruit de geschiedenis is geopend. Als de geschiedenis zonder tekstveld is geopend, opent dubbeltikken de acties van de tekst.
+- Dubbeltik en houd een tekst vast om de acties erbij te openen: **Plakken**, **Kopiëren** opnieuw, **Toevoegen aan klembord**, **Bewerken** van de tekst, **Exporteren naar bestand**, of **Verwijderen**. De acties staan ook bij **Acties** van de tekst.
+- **Selecteren** toont de teksten als selectievakjes. Dubbeltik op teksten om ze aan te vinken, en kies dan **Verwijderen** of **Exporteren naar bestand** voor de aangevinkte teksten.
+- **Exporteren naar bestand** bewaart de hele geschiedenis als een tekstbestand. Meerdere teksten worden gescheiden door een regel van drie koppeltekens tussen lege regels.
 - **Geschiedenis wissen** verwijdert alle teksten.
 
 Om te plakken zonder de geschiedenis te openen, voeg je de leesinstelling **Klembordgeschiedenis** toe, in de groep **Acties voor huidig item** van **Leesinstellingen**. Swipe in een tekstveld omhoog of omlaag om door de teksten in de geschiedenis te gaan, en dubbeltik om de tekst te plakken die SandFly het laatst voorlas. De leesinstelling staat standaard uit. Zie [](#commands).
@@ -239,7 +241,7 @@ In **Typen** > **Dicteren**:
 
 - **Automatische interpunctie**: Google-spraakherkenning voegt interpunctie en hoofdletters toe. Standaard aan. Getoond op Android 13 of later met Google-spraakherkenning geïnstalleerd.
 - **Aanstootgevende woorden blokkeren**: Google-spraakherkenning maskeert aanstootgevende woorden. Standaard aan. Getoond bij **Automatische interpunctie**.
-- **Automatisch stoppen na stilte**: stopt de opname na 3, 5, 10, 15 of 30 seconden, of 1 minuut, zonder spraak. De standaardwaarde is **Uit**.
+- **Automatisch stoppen na stilte**: stopt de opname na 1, 2, 3, 5, 10, 15 of 30 seconden, of 1 minuut, zonder spraak. De standaardwaarde is **Uit**.
 - **Gedicteerde tekst voorlezen**: leest de tekst voor nadat SandFly deze typt, behalve in wachtwoordvelden. Standaard uit.
 - **Herkenningsmodellen geladen houden**: hoelang een Whisper-model en het AI-model op het apparaat in het geheugen blijven na gebruik: **Na gebruik verwijderen** (de standaardwaarde), 5, 15 of 30 minuten, of **Tot SandFly stopt**. Een geladen model start sneller en gebruikt geheugen.
 - **Downloadserver voor modellen**: waar modellen worden gedownload vandaan, **Hugging Face** (de standaardwaarde) of **hf-mirror.com**.

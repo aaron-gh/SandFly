@@ -250,7 +250,7 @@ De leesinstelling **Spraakvolume** wisselt tussen deze volumes, en de leesinstel
 
 - Spraak gebruikt het snelle pad op Android 11 en later. Op eerdere versies gebruiken alleen geluiden dit.
 - Spraak speelt op de gewone manier tijdens gesprekken, kort na het begin of einde van een gesprek, terwijl een app met de microfoon opneemt, en met spraakengines die hun eigen audio afspelen.
-- Spraak midden in een woord hervatten na een pauze vereist **Audio met lage latentie**. Zie [](#speech-pause). Met dit uit, werkt de spraakequalizer alleen waar het apparaat dit als audio-effect ondersteunt. Zie [](#speech-equalizer).
+- Spraak midden in een woord hervatten na een pauze vereist **Audio met lage latentie**. Zie [](#speech-pause). Met dit uit, werkt de spraakequalizer alleen waar het apparaat dit als audio-effect ondersteunt. Zie [](#voice-effects).
 
 ### Houd spraak op de telefoon tijdens casten {#sound-casting}
 

@@ -67,6 +67,7 @@ Een leesinstelling bepaalt wat een swipe omhoog of omlaag doet. De meeste leesin
 
 - Om de volgende leesinstelling te selecteren, swipe omlaag en dan omhoog, swipe met drie vingers naar rechts of omlaag, of draai met twee vingers met de klok mee.
 - Om de vorige leesinstelling te selecteren, swipe omhoog en dan omlaag, swipe met drie vingers naar links of omhoog, of draai tegen de klok in.
+- Om de eerste leesinstelling te selecteren, wijs je een gebaar of sneltoets toe aan **Eerste leesinstelling**. Deze heeft er standaard geen.
 - Om op de geselecteerde leesinstelling te bewegen, swipe omlaag om vooruit te gaan en omhoog om terug te gaan. Dit zijn de opdrachten **Leesinstellingen lager of vooruit verplaatsen** en **Leesinstellingen hoger of achteruit verplaatsen**.
 
 SandFly spreekt de naam van elke leesinstelling uit terwijl je deze selecteert. Naar rechts en links swipen beweegt per item, welke leesinstelling ook is geselecteerd, behalve met **Rijen en kolommen** in een tabel.
@@ -139,7 +140,7 @@ Naar rechts en links swipen scrolt lijsten zelf wanneer het volgende item buiten
 - Om terug te scrollen, swipe naar links en dan naar rechts. Dit is **Terug scrollen**. Boven aan een lijst trekt **Terug scrollen** de lijst omlaag, wat deze in de meeste apps vernieuwt.
 - Om de app direct te scrollen, sleep twee vingers over het scherm, zoals je zonder SandFly één vinger zou slepen.
 
-In de standaardgebarenindeling gaan swipes met twee vingers naar de app en scrollen deze. Met **Gebaren** > **Swipes met twee vingers verwerken in SandFly** aan, zoals in de VoiceOver-gebarenindeling, voeren swipes met twee vingers in plaats daarvan opdrachten uit: standaard **Omhoog scrollen**, **Omlaag scrollen**, **Naar links scrollen** en **Naar rechts scrollen**, die de inhoud in de richting van de swipe bewegen. Deze vier opdrachten hebben Android 11 of hoger nodig, en staan niet op horloges.
+In de standaardgebarenindeling gaan swipes met twee vingers naar de app en scrollen deze. Met **Gebaren** > **Swipes met twee vingers verwerken in SandFly** aan, zoals in de VoiceOver-gebarenindeling, voeren swipes met twee vingers in plaats daarvan opdrachten uit: standaard **Omhoog scrollen**, **Omlaag scrollen**, **Naar links scrollen** en **Naar rechts scrollen**, die de inhoud in de richting van de swipe bewegen. Als geen enkel item op het scherm zijwaarts scrolt, sturen **Naar links scrollen** en **Naar rechts scrollen** een swipe met één vinger naar de pager rond het gefocuste item, zoals de maptabbladen in Solid Explorer. Deze vier opdrachten hebben Android 11 of hoger nodig, en staan niet op horloges.
 
 Deze opdrachten, in de categorie **Scrollen**, hebben standaard geen gebaar:
 
@@ -230,6 +231,8 @@ Telefoonnummers worden gevonden door de tekstclassificatie van Android, die ook 
 ### Tekst van het scherm kopiëren {#reading-copy-text}
 
 **Tekst van het scherm kopiëren**, een opdracht in de categorie **Tekst bewerken** zonder gebaar standaard, opent een venster met de tekst op het scherm als een lijst met selectievakjes.
+
+Het venster toont de tekst op het scherm. Als het scherm een lijst of pagina heeft die scrolt, scrollen **Omhoog scrollen** boven de lijst en **Omlaag scrollen** eronder die lijst een pagina verder dan de tot dan toe vermelde tekst, en wordt de tekst van die pagina toegevoegd. Aangevinkte stukken blijven aangevinkt. Als de lijst aan het begin of einde staat, zegt SandFly "Geen tekst meer". De lijst scrollt terug naar waar hij stond toen het venster sluit.
 
 1. Voer **Tekst van het scherm kopiëren** uit.
 2. Kies onder **Granulariteit** hoe de tekst wordt verdeeld: **Adressen en nummers**, **Tekens**, **Woorden** of **Alinea's**. **Woorden** is als eerste geselecteerd.

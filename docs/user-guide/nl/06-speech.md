@@ -68,7 +68,7 @@ Om een profiel te wijzigen, ga je naar **Spraak** > **Stemprofielen** en kies je
 - **Taal**: **Standaard**, of een van de talen van de engine.
 - **Stem**: **Standaard**, of een van de stemmen van de engine in de gekozen taal.
 - **Spraakvolume**, **Spreeksnelheid** en **Toonhoogte van spraak**: zoals op het scherm **Spraak**, voor dit profiel.
-- **Equalizer**: de equalizer van dit profiel. Zie [](#speech-equalizer). Niet op horloges.
+- **Equalizer**: de equalizer van dit profiel. Zie [](#voice-effects). Niet op horloges.
 - **Stuur lange tekst zin voor zin**: zoals op het scherm **Spraak**, voor dit profiel. Zie [](#speech-pronunciation).
 - **Engine gestart houden**: houdt de engine van dit profiel actief terwijl een andere engine in gebruik is en het scherm aan staat, zodat wisselen naar het profiel niet wacht tot de engine start. Elke engine die gestart blijft, draait als een eigen proces. Standaard uit.
 - **Omhoog verplaatsen** en **Omlaag verplaatsen**: alleen op horloges. Op telefoons verplaats je profielen in de lijst.
@@ -101,23 +101,24 @@ Twee instellingen in de groep **Stem** veranderen hoe emoji klinken:
 
 Ze gelden zowel wanneer de spraakengine de emoji voorleest als wanneer SandFly ze vervangt door hun namen. Of emoji worden voorgelezen, en hoe, wordt ingesteld bij **Verbositeit** > **Emoji**. Zie [](#verbosity-emoji).
 
-### Spraakequalizer {#speech-equalizer}
+### Equalizer {#voice-effects}
 
-**Spraak** > **Equalizer** stelt een equalizer met 12 banden in voor **SandFly-standaard**. **Equalizer** op het scherm van een stemprofiel stelt er een in voor dat profiel. Een nieuw profiel begint met de equalizer van **SandFly-standaard**. De equalizer is niet beschikbaar op horloges.
+**Spraak** > **Equalizer** stelt een equalizer met 11 banden en compressie-effecten in voor **SandFly-standaard**. **Equalizer** op het scherm van een stemprofiel stelt deze in voor dat profiel. Een nieuw profiel begint met de equalizer van **SandFly-standaard**. De equalizer is niet beschikbaar op horloges.
 
 Het scherm **Equalizer** heeft:
 
-- **Equalizer gebruiken**: zet de equalizer aan of uit zonder de banden te wijzigen. Standaard aan.
-- **Voorinstelling**: **Vlak**, **Helderheid**, **Bas versterken**, **Bas verzwakken**, **Hoge tonen versterken**, **Hoge tonen verzwakken**, **Warm**, **Minder scherpte**, **Minder sisklanken** of **Kleine luidspreker**, daarna je opgeslagen voorinstellingen. De banden beginnen vlak. Het wijzigen van een band zet **Voorinstelling** op **Aangepast**.
-- **Opslaan als voorinstelling**: slaat de banden op als een voorinstelling met een naam. Opgeslagen voorinstellingen worden vermeld voor **SandFly-standaard** en voor elk stemprofiel. Je kunt tot 50 voorinstellingen opslaan.
-- **Opgeslagen voorinstellingen**: hernoemt of verwijdert een opgeslagen voorinstelling. Het verwijderen van een voorinstelling verandert niets aan de banden van een equalizer die erop is ingesteld.
-- Een schuifregelaar voor elke band: 32 Hz, 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz en 16 kHz, elk van -12 dB tot +12 dB.
+- **Equalizer gebruiken**: zet de equalizer en de effecten aan of uit zonder ze te wijzigen. Standaard aan.
+- **Voorinstelling**: **Vlak**, **Helderheid**, **Bas versterken**, **Bas verzwakken**, **Hoge tonen versterken**, **Hoge tonen verzwakken**, **Warm**, **Minder scherpte**, **Minder sisklanken**, **Kleine luidspreker** of **Diepe bas**, daarna je opgeslagen voorinstellingen. Een voorinstelling stelt de banden en de effecten in. De banden beginnen vlak en de effecten uit. Het wijzigen van een band of een effect zet **Voorinstelling** op **Aangepast**.
+- **Opslaan als voorinstelling**: slaat de banden en effecten op als een voorinstelling met een naam. Opgeslagen voorinstellingen worden vermeld voor **SandFly-standaard** en voor elk stemprofiel. Je kunt tot 50 voorinstellingen opslaan.
+- **Opgeslagen voorinstellingen**: hernoemt of verwijdert een opgeslagen voorinstelling. Het verwijderen van een voorinstelling verandert niets aan de equalizer die erop is ingesteld.
+- **Bascompressie**, **Stemcompressie** en **Hogetonencompressie**: **Uit**, **Laag**, **Gemiddeld** of **Hoog**. Elk comprimeert spraak in zijn bereik, onder 200 Hz, 200 Hz tot 4 kHz, of boven 4 kHz, en verhoogt het niveau ervan, zodat stille delen van het bereik luider worden. **Diepe bas** gebruikt **Bascompressie** op **Gemiddeld**.
+- **Equalizer**: een schuifregelaar voor elke band: 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz en 16 kHz, elk van -12 dB tot +12 dB.
 
-Wanneer een band versterkt, voorkomt een limiter dat spraak vervormt.
+Wanneer een band versterkt of een effect aan staat, voorkomt een limiter dat spraak vervormt.
 
-De equalizer geldt voor spraak die SandFly afspeelt via **Audio-uitvoer** > **Audio met lage latentie**. Met **Audio met lage latentie** uit, geldt hij als audio-effect op Android 9 en later, waar het apparaat dit ondersteunt. Anders toont het item **Equalizer** "Vereist Audio-uitvoer > Audio met lage latentie". Engines die tekst doorgeven aan andere engines passen het effect alleen toe als ze ook de audiosessie doorgeven. Zie [](#sound).
+De equalizer geldt voor spraak die SandFly afspeelt via **Audio-uitvoer** > **Audio met lage latentie**. Met **Audio met lage latentie** uit, gelden de effecten als audio-effect op Android 9 en later, waar het apparaat dit ondersteunt. Anders toont het item **Equalizer** "Vereist Audio-uitvoer > Audio met lage latentie". Engines die tekst doorgeven aan andere engines passen het effect alleen toe als ze ook de audiosessie doorgeven. Zie [](#sound).
 
-Leesinstellingen: **Equalizer** zet de equalizer van de stem in gebruik aan of uit, en elke band heeft een leesinstelling, zoals **Equalizer 1 kHz**. Swipe omhoog of omlaag om de band met 1 dB te wijzigen. Ze staan niet standaard in de leesinstellingen. Om ze toe te voegen, ga je naar **Leesinstellingen**. De opdracht **Equalizer gebruiken**, in de groep **Stem** van de opdrachten, zet de equalizer aan of uit.
+Leesinstellingen: **Equalizer** zet de equalizer van de stem in gebruik aan of uit, en elke equalizerband heeft een leesinstelling, zoals **Equalizer 1 kHz**. Swipe omhoog of omlaag om de band met 1 dB te wijzigen. Ze staan niet standaard in de leesinstellingen. Om ze toe te voegen, ga je naar **Leesinstellingen**. De opdracht **Equalizer gebruiken**, in de groep **Stem** van de opdrachten, zet de equalizer aan of uit.
 
 ### Talen {#speech-languages}
 
@@ -195,7 +196,7 @@ Het brailewoordenboek, voor brailleleesregels, staat in de brailleinstellingen. 
 
 Kies **Vervanging toevoegen**, voer het **Symbool** in en wat je wilt **Vervangen door**, en kies **OK**. Items hebben dezelfde opties **Bewerken**, **Kies een app**, **Verwijderen**, **Importeren uit bestand** en **Exporteren naar bestand** als het spraakwoordenboek.
 
-In spraak gelden items voor interpunctie die spraakengines niet voorlezen, zoals een punt of komma, niet terwijl **Verbositeit** > **Interpunctie en symbolen uitspreken** die interpunctie weglaat. Met **Geen** geldt geen item voor een los symbool in tekst. Zie [](#verbosity-text).
+In spraak gelden items voor interpunctie die spraakengines niet voorlezen, zoals een punt of komma, niet terwijl **Verbositeit** > **Interpunctie en symbolen uitspreken** die interpunctie weglaat. Met **Geen** geldt geen item voor een los symbool in tekst, behalve waar **Symbolen uitspreken die van betekenis veranderen** het symbool laat staan. Zie [](#verbosity-text).
 
 ### Pauzeer en hervat spraak {#speech-pause}
 

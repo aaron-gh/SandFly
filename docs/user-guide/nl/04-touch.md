@@ -47,6 +47,8 @@ SandFly leest de knoppen niet voor terwijl je ze aanraakt, maar spreekt de knop 
 
 Sommige bedieningselementen negeren de activatie die SandFly stuurt en reageren alleen op een vinger op het scherm. De opdracht **Activeren met een tik**, standaard niet toegewezen, tikt in plaats daarvan op het midden van het gefocuste item. Wijs dit toe aan een gebaar of sneltoets; zie [](#gestures). Een script kan hetzelfde doen voor gekozen items telkens wanneer ze worden geactiveerd; zie [](#scripts). Beide hebben Android 11 of hoger nodig; anders wordt het item als gewoonlijk geactiveerd.
 
+Voor apps waarin het activeren van een item niets doet, zet je de app aan onder **Aanraking** > **Dubbeltikken tikt op het scherm**, of voer je in de app de opdracht **Dubbeltikken tikt op het scherm in deze app** uit, standaard niet toegewezen. Het activeren van een item in die app tikt het dan aan. De opdracht zegt "Dubbeltikken tikt op het scherm aan" of "Dubbeltikken tikt op het scherm uit". Dit heeft ook Android 11 of hoger nodig.
+
 #### Spraak terwijl je het scherm aanraakt {#touch-speech}
 
 Standaard stopt het aanraken van het scherm de spraak. Om de spraak te laten doorgaan tot aanraking een item focust, zet **Spraak** > **Spraak stoppen bij het aanraken van het scherm** uit. Zie [](#speech).
