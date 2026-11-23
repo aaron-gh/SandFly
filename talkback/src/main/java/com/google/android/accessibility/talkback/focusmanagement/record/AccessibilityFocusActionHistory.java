@@ -551,6 +551,12 @@ public final class AccessibilityFocusActionHistory {
     if (windowIds != null) {
       activatedItems.removeIf(item -> !windowIds.contains(item.windowId));
     }
+    LogUtils.d(
+        TAG,
+        "Back in window %d, windows %s, activated items kept: %d",
+        windowId,
+        windowIds,
+        activatedItems.size());
     if (activatedItems.isEmpty()) {
       return;
     }
