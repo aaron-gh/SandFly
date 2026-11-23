@@ -176,4 +176,13 @@ class WordSelectionDialogTest {
       WordSelectionDialog.joinSelected(tokens.items, checked, Granularity.ENTITIES),
     )
   }
+
+  @Test
+  fun sameTextsFindsTheItemsBeforeAtTheOffset() {
+    val before = listOf("b", "c").map { WordSelectionDialog.Token(it, null) }
+    val after = listOf("a", "b", "c").map { WordSelectionDialog.Token(it, null) }
+    assertTrue(WordSelectionDialog.sameTexts(before, after, 1))
+    assertFalse(WordSelectionDialog.sameTexts(before, after, 0))
+    assertFalse(WordSelectionDialog.sameTexts(before, after, 2))
+  }
 }

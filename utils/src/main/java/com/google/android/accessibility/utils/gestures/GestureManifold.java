@@ -826,6 +826,17 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
     listener.onGestureCompleted(gestureEvent);
   }
 
+  /** Returns whether a one-finger swipe in three directions has started and not yet ended. */
+  public boolean isThreeDirectionSwipeStarted() {
+    for (GestureMatcher matcher : gestures) {
+      if (matcher.getState() == GestureMatcher.STATE_GESTURE_STARTED
+          && GestureConfiguration.isThreeDirectionSwipe(matcher.getGestureId())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   public boolean isMultiFingerGesturesEnabled() {
     return multiFingerGesturesEnabled;
   }

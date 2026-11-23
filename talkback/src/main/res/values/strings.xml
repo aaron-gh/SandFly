@@ -166,20 +166,32 @@
     <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
     <!-- Switch on a voice profile's screen. When on, the profile's text-to-speech engine stays connected while another engine is in use, so that changing to the profile, and notifications read with it, don't wait for the engine to start. [CHAR LIMIT=NONE] -->
     <string name="title_pref_voice_profile_keep_engine_started">Keep the engine started</string>
-    <!-- Title of the settings screen with the speech equalizer. [CHAR LIMIT=40] -->
-    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <!-- Title of the settings screen with the speech equalizer and compression effects, and of the reading control that turns them on or off. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer">Voice effects</string>
     <!-- Title of the list of equalizer presets. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer_preset">Preset</string>
-    <!-- Switch on the Equalizer screen that turns the equalizer on or off. Off keeps the band settings. [CHAR LIMIT=40] -->
-    <string name="title_pref_speech_equalizer_on">Use equalizer</string>
-    <!-- Summary of Equalizer while Use equalizer is off. [CHAR LIMIT=20] -->
+    <!-- Switch on the Voice effects screen that turns the equalizer and effects on or off. Off keeps their settings. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer_on">Use voice effects</string>
+    <!-- Summary of Voice effects while Use voice effects is off, and the Off level of a voice effect. [CHAR LIMIT=20] -->
     <string name="speech_equalizer_off">Off</string>
-    <!-- Spoken when the Equalizer reading control turns the equalizer on. [CHAR LIMIT=NONE] -->
-    <string name="speech_equalizer_turned_on">Equalizer on</string>
-    <!-- Spoken when the Equalizer reading control turns the equalizer off. [CHAR LIMIT=NONE] -->
-    <string name="speech_equalizer_turned_off">Equalizer off</string>
-    <!-- Reading control that changes the gain of the equalizer band at 32 Hz. [CHAR LIMIT=40] -->
-    <string name="title_selector_equalizer_32">Equalizer 32 Hz</string>
+    <!-- Spoken when the Voice effects reading control turns the voice effects on. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_turned_on">Voice effects on</string>
+    <!-- Spoken when the Voice effects reading control turns the voice effects off. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_turned_off">Voice effects off</string>
+    <!-- Heading of the equalizer band sliders on the Voice effects screen. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer_bands">Equalizer</string>
+    <!-- Voice effect that compresses speech below 200 Hz and raises its level. Audio term. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_effect_bass_compression">Bass compression</string>
+    <!-- Voice effect that compresses speech from 200 Hz to 4 kHz and raises its level. Audio term. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_effect_voice_compression">Voice compression</string>
+    <!-- Voice effect that compresses speech above 4 kHz and raises its level. Audio term. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_effect_treble_compression">Treble compression</string>
+    <!-- Lowest level of a voice effect that is on. [CHAR LIMIT=20] -->
+    <string name="speech_effect_low">Low</string>
+    <!-- Middle level of a voice effect. [CHAR LIMIT=20] -->
+    <string name="speech_effect_medium">Medium</string>
+    <!-- Highest level of a voice effect. [CHAR LIMIT=20] -->
+    <string name="speech_effect_high">High</string>
     <!-- Reading control that changes the gain of the equalizer band at 64 Hz. [CHAR LIMIT=40] -->
     <string name="title_selector_equalizer_64">Equalizer 64 Hz</string>
     <!-- Reading control that changes the gain of the equalizer band at 125 Hz. [CHAR LIMIT=40] -->
@@ -202,7 +214,7 @@
     <string name="title_selector_equalizer_8k">Equalizer 8 kHz</string>
     <!-- Reading control that changes the gain of the equalizer band at 16 kHz. [CHAR LIMIT=40] -->
     <string name="title_selector_equalizer_16k">Equalizer 16 kHz</string>
-    <!-- Summary of Equalizer while Low-latency audio, on the Audio output screen, is off. "Audio output" and "Low-latency audio" are the titles of those settings. [CHAR LIMIT=80] -->
+    <!-- Summary of Voice effects while Low-latency audio, on the Audio output screen, is off. "Audio output" and "Low-latency audio" are the titles of those settings. [CHAR LIMIT=80] -->
     <string name="summary_speech_equalizer_needs_low_latency">Needs Audio output &gt; Low-latency audio</string>
     <!-- Equalizer preset with every band at 0 dB. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_flat">Flat</string>
@@ -224,7 +236,9 @@
     <string name="speech_equalizer_reduce_sibilance">Reduce sibilance</string>
     <!-- Equalizer preset cutting the low frequencies a phone speaker can't play. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_small_speaker">Small speaker</string>
-    <!-- Equalizer preset list item shown when the bands match no preset. [CHAR LIMIT=40] -->
+    <!-- Equalizer preset boosting low frequencies, cutting 1 to 6 kHz, with Bass compression at Medium. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_deep_bass">Deep bass</string>
+    <!-- Equalizer preset list item shown when the bands and effects match no preset. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_custom">Custom</string>
     <!-- Title of an equalizer band slider, its frequency in hertz, such as "500 Hz". [CHAR LIMIT=20] -->
     <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
@@ -232,9 +246,9 @@
     <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
     <!-- Spoken value of an equalizer band slider, its gain in decibels, such as "+3 dB" or "-6 dB". [CHAR LIMIT=20] -->
     <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
-    <!-- Button on the Equalizer screen that saves the current band settings as a preset with a name, and title of the dialog that asks for the name. [CHAR LIMIT=40] -->
+    <!-- Button on the Voice effects screen that saves the current band and effect settings as a preset with a name, and title of the dialog that asks for the name. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer_save_preset">Save as preset</string>
-    <!-- Button on the Equalizer screen that lists the presets the user saved, to rename or delete them, and title of that list. [CHAR LIMIT=40] -->
+    <!-- Button on the Voice effects screen that lists the presets the user saved, to rename or delete them, and title of that list. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer_saved_presets">Saved presets</string>
     <!-- Hint of the name field in the dialog that saves or renames an equalizer preset. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_preset_name">Name</string>
@@ -6298,6 +6312,13 @@
   <string name="no_phrase_to_select" tools:ignore="MissingTranslation">No phrase to select</string>
   <!-- Shown and spoken in the Copy text from screen dialog when it lists only part of the text. [CHAR_LIMIT=NONE] -->
   <string name="word_selection_list_cut_off" tools:ignore="MissingTranslation">List cut off at <xliff:g id="count" example="1000">%1$d</xliff:g> items</string>
+  <!-- Spoken after Scroll up or Scroll down in the Copy text from screen dialog added the text of a page of the list. [CHAR_LIMIT=NONE] -->
+  <plurals name="word_selection_added" tools:ignore="MissingTranslation">
+    <item quantity="one">Added <xliff:g id="count" example="1">%1$d</xliff:g> item</item>
+    <item quantity="other">Added <xliff:g id="count" example="5">%1$d</xliff:g> items</item>
+  </plurals>
+  <!-- Spoken after Scroll up or Scroll down in the Copy text from screen dialog when the list is at its start or end. [CHAR_LIMIT=NONE] -->
+  <string name="word_selection_no_more_text" tools:ignore="MissingTranslation">No more text</string>
   <!-- Spoken after the checked items of the Copy text from screen dialog were copied. [CHAR_LIMIT=NONE] -->
   <plurals name="word_selection_copied" tools:ignore="MissingTranslation">
     <item quantity="one">Copied <xliff:g id="count" example="1">%1$d</xliff:g> item</item>

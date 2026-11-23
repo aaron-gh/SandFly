@@ -231,6 +231,8 @@ Phone numbers are found by the text classifier of Android, which also finds date
 
 **Copy text from screen**, a command in the **Text editing** category with no gesture by default, opens a window with the text on the screen as a list of check boxes.
 
+The window lists the text on the screen. When the screen has a list or page that scrolls, **Scroll up** above the list and **Scroll down** below it scroll that list a page past the text listed so far and add that page's text. Checked pieces stay checked. When the list is at its start or end, SandFly says "No more text". The list scrolls back to where it was when the window closes.
+
 1. Run **Copy text from screen**.
 2. Under **Granularity**, choose how the text is divided: **Addresses and numbers**, **Characters**, **Words** or **Paragraphs**. **Words** is selected first.
 3. Check the pieces you want. To check a range, double-tap and hold the first piece and then the last, or use the **Start selection** and **End selection** actions. **Select all** checks every piece.

@@ -50,13 +50,12 @@ final class EmojiVoice {
     voice.setProfile(profile, exists ? profileEqualizer(prefs, id) : null);
   }
 
-  /** The equalizer gains of voice profile {@code id}, or null if its equalizer is off or flat. */
-  static int @Nullable [] profileEqualizer(SharedPreferences prefs, String id) {
-    if (!SpeechEqualizer.isOn(prefs, id)) {
-      return null;
-    }
-    int[] gains = SpeechEqualizer.read(prefs, id);
-    return SpeechEqualizer.isFlat(gains) ? null : gains;
+  /**
+   * The equalizer values of voice profile {@code id}, or null if its equalizer is off, or flat with
+   * no effects.
+   */
+  static SpeechEqualizer.@Nullable Values profileEqualizer(SharedPreferences prefs, String id) {
+    return SpeechEqualizer.inUse(prefs, id);
   }
 
   /** See {@link ProfileVoice#isInUse}. */

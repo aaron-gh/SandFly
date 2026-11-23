@@ -2,7 +2,7 @@
 
 SandFly plays a sound and a vibration for actions and events, such as moving focus, activating an item, scrolling and opening a window. **Sound and vibration** in SandFly settings turns sounds and vibrations on and off, sets their volume and strength, and holds sound themes and control sounds. **Audio output** sets where speech and sounds play, at which volume, and what happens to other audio and to calls while SandFly is on.
 
-For the speech engine, voices, speech rate, speech volume and the equalizer, see [](#speech). For the volume keys and **Volume change feedback**, see [](#buttons).
+For the speech engine, voices, speech rate, speech volume and voice effects, see [](#speech). For the volume keys and **Volume change feedback**, see [](#buttons).
 
 ### Turn sounds on or off {#sound-feedback}
 
@@ -250,7 +250,7 @@ The **Speech volume** reading control switches between these volumes, and the **
 
 - Speech uses the fast path on Android 11 and later. On earlier versions, only sounds use it.
 - Speech plays the usual way during calls, shortly after a call starts or ends, while an app records with the microphone, and with speech engines that play their own audio.
-- Resuming speech mid-word after a pause needs **Low-latency audio**. See [](#speech-pause). With it off, the speech equalizer works only where the device supports it as an audio effect. See [](#speech-equalizer).
+- Resuming speech mid-word after a pause needs **Low-latency audio**. See [](#speech-pause). With it off, voice effects work only where the device supports them as an audio effect. See [](#voice-effects).
 
 ### Keep speech on the phone while casting {#sound-casting}
 

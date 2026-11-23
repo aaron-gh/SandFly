@@ -16,7 +16,7 @@
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
     android:theme="@style/A11yAlertDialogCustomViewTheme"
     android:paddingStart="16dp"
@@ -78,10 +78,27 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
+    <Button
+        android:id="@+id/scroll_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="@string/shortcut_scroll_up"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/words_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:scrollbars="vertical" />
+
+    <Button
+        android:id="@+id/scroll_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="@string/shortcut_scroll_down"
+        android:visibility="gone" />
 
 </LinearLayout>

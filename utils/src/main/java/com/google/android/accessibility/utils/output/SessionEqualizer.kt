@@ -26,26 +26,29 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 import kotlin.math.pow
 
 /**
- * The speech equalizer as an audio effect on an audio session, for speech the engine plays itself
+ * The speech equalizer and its effects as an audio effect on an audio session, for speech the engine plays itself
  * rather than [LowLatencyAudio]. The engine plays speech on the session when it is given as
  * `KEY_PARAM_SESSION_ID`, as Android's text-to-speech playback does. An engine that passes speech
  * on to other engines applies it only if it passes the session on as well.
  *
- * The effect's bands follow the response of [SpeechEqualizer.Filter], so that speech sounds the same
- * either way.
+ * The effect's bands follow the response of [SpeechEqualizer.Filter], and its compression the
+ * filter's ranges and levels, so that speech sounds about the same either way.
  */
 class SessionEqualizer private constructor(val sessionId: Int, private val effect: DynamicsProcessing) {
-  private var gains: IntArray? = null
+  private var values: SpeechEqualizer.Values? = null
 
-  /** Sets the effect to [gains]. Returns false if the effect no longer works. */
+  /** Sets the effect to [values]. Returns false if the effect no longer works. */
   @RequiresApi(Build.VERSION_CODES.P)
-  fun setGains(gains: IntArray): Boolean {
-    if (gains.contentEquals(this.gains)) return true
+  fun setValues(values: SpeechEqualizer.Values): Boolean {
+    if (values == this.values) return true
+    val gains = values.gains()
+    val effects = values.effects()
     return try {
       effect.setPreEqAllChannelsTo(eq(gains))
-      effect.setLimiterAllChannelsTo(limiter(gains.any { it > 0 }))
+      effect.setMbcAllChannelsTo(mbc(effects))
+      effect.setLimiterAllChannelsTo(limiter(gains.any { it > 0 } || effects.any { it > 0 }))
       if (!effect.enabled) effect.enabled = true
-      this.gains = gains.copyOf()
+      this.values = values
       true
     } catch (e: RuntimeException) {
       // Such as after the audio server restarted, which leaves the effect dead.
@@ -106,8 +109,8 @@ class SessionEqualizer private constructor(val sessionId: Int, private val effec
               CHANNELS,
               /* preEqInUse= */ true,
               BAND_COUNT,
-              /* mbcInUse= */ false,
-              0,
+              /* mbcInUse= */ true,
+              SpeechEqualizer.EFFECTS,
               /* postEqInUse= */ false,
               0,
               /* limiterInUse= */ true,
@@ -134,6 +137,38 @@ class SessionEqualizer private constructor(val sessionId: Int, private val effec
         eq.setBand(band, DynamicsProcessing.EqBand(true, cutoff, gain))
       }
       return eq
+    }
+
+    /** Compression of the bass, voice and treble ranges, at the levels of [effects]. */
+    @RequiresApi(Build.VERSION_CODES.P)
+    private fun mbc(effects: IntArray): DynamicsProcessing.Mbc {
+      val mbc = DynamicsProcessing.Mbc(true, effects.any { it > 0 }, SpeechEqualizer.EFFECTS)
+      val cutoffs =
+        floatArrayOf(
+          SpeechEqualizer.BASS_CROSSOVER_HZ.toFloat(),
+          SpeechEqualizer.TREBLE_CROSSOVER_HZ.toFloat(),
+          TOP_CUTOFF_HZ,
+        )
+      for (band in 0 until SpeechEqualizer.EFFECTS) {
+        val level = effects[band]
+        mbc.setBand(
+          band,
+          DynamicsProcessing.MbcBand(
+            true,
+            cutoffs[band],
+            SpeechEqualizer.COMPRESSION_ATTACK_MS,
+            SpeechEqualizer.COMPRESSION_RELEASE_MS,
+            SpeechEqualizer.compressionRatio(level),
+            SpeechEqualizer.compressionThresholdDb(level),
+            /* kneeWidth= */ 0f,
+            /* noiseGateThreshold= */ -90f,
+            /* expanderRatio= */ 1f,
+            /* preGain= */ 0f,
+            /* postGain= */ SpeechEqualizer.compressionGainDb(level),
+          ),
+        )
+      }
+      return mbc
     }
 
     @RequiresApi(Build.VERSION_CODES.P)
