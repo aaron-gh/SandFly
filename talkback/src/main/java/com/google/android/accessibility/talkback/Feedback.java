@@ -2495,6 +2495,7 @@ public abstract class Feedback {
 
     public abstract @Nullable Bitmap image();
 
+    @SuppressWarnings("mutable")
     public abstract byte[] imageBytes();
 
     public abstract boolean manualTrigger();

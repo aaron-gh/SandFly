@@ -31,6 +31,8 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
@@ -96,6 +98,7 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   /** Defines the state of the sequence key mode. */
   @IntDef({STATE_PREFIX_KEY_NOT_PRESSED, STATE_PREFIX_KEY_PRESSED})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface SequenceKeyModeState {}
 
   private static final int STATE_PREFIX_KEY_NOT_PRESSED = 0;

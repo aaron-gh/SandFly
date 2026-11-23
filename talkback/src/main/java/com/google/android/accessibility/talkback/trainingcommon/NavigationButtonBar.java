@@ -21,6 +21,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import androidx.annotation.IdRes;
 import androidx.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
@@ -49,6 +51,7 @@ public class NavigationButtonBar extends LinearLayout {
 
   /** The function of buttons. */
   @IntDef({BUTTON_TYPE_BACK, BUTTON_TYPE_NEXT, BUTTON_TYPE_EXIT, BUTTON_TYPE_FINISH})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface ButtonType {}
 
   public static final int BUTTON_TYPE_BACK = 0;

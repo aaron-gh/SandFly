@@ -16,12 +16,15 @@
 package com.google.android.accessibility.utils.material;
 
 import androidx.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 
 /** Defines the types of the icon which are used in button. */
 public class ButtonIconType {
 
   /** The types of icon is used for button. */
   @IntDef({ICON_TYPE_BACK, ICON_TYPE_NEXT, ICON_TYPE_CANCEL, ICON_TYPE_CHECK})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface IconType {}
 
   public static final int ICON_TYPE_BACK = 0;

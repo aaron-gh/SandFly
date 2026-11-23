@@ -128,6 +128,7 @@ class SpeakerphoneInCallService : InCallService() {
     update()
   }
 
+  @Suppress("OVERRIDE_DEPRECATION")
   override fun onCallAudioStateChanged(audioState: CallAudioState) {
     policy.onRouteChanged(currentRoute())
   }

@@ -19,6 +19,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.SystemClock;
 import androidx.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import androidx.annotation.Nullable;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -63,6 +65,7 @@ public abstract class Request {
     ERROR_IMAGE_DESCRIPTION_FAILURE,
     ERROR_IMAGE_DESCRIPTION_INITIALIZATION_FAILURE,
   })
+  @Retention(RetentionPolicy.SOURCE)
   public @interface ErrorCode {}
 
   public static final int ERROR_UNKNOWN = 100;

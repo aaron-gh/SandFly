@@ -185,6 +185,7 @@ object WhisperEngines {
 
               override fun onConfigurationChanged(newConfig: Configuration) {}
 
+              @Suppress("OVERRIDE_DEPRECATION")
               override fun onLowMemory() = closeNow()
             }
           )

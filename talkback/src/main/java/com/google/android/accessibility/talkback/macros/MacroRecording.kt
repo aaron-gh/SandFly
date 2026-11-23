@@ -309,7 +309,7 @@ object MacroRecording {
           after.last()?.let { key !in it } == true
       val steps = ArrayList<Macros.Step>()
       steps +=
-        if (untilGone) Macros.RepeatWhile(condition(Macros.ItemOnScreen(label!!.text, regex = label.regex, field = label.field)))
+        if (untilGone) Macros.RepeatWhile(condition(Macros.ItemOnScreen(label.text, regex = label.regex, field = label.field)))
         else Macros.RepeatTimes(bestCount)
       // Each step waits as long as it did the longest time.
       val longest = group.indices.map { g -> (0 until bestCount).map { blocks[i + it * bestLength + g] } }

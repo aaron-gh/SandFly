@@ -40,6 +40,8 @@ import com.google.android.accessibility.utils.performance.AccessibilityActionDet
 import com.google.android.accessibility.utils.performance.AccessibilityAttributes;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import com.google.common.collect.ImmutableList;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -86,6 +88,7 @@ public class Performance {
     STAGE_FEEDBACK_COMPOSED,
     STAGE_ACTION_PERFORMED
   })
+  @Retention(RetentionPolicy.SOURCE)
   public @interface StageId {}
 
   public static final int STAGE_FRAMEWORK = 0; // Latency before TalkBack
@@ -133,6 +136,7 @@ public class Performance {
     EVENT_TYPE_GESTURE_DETECTION,
     EVENT_TYPE_TALKBACK_HINT
   })
+  @Retention(RetentionPolicy.SOURCE)
   public @interface EventTypeId {}
 
   public static final int EVENT_TYPE_ACCESSIBILITY = 0;
@@ -164,6 +168,7 @@ public class Performance {
     HINT_SUB_TYPE_MAGNIFICATION,
     HINT_SUB_TYPE_TALKBACK_ON,
   })
+  @Retention(RetentionPolicy.SOURCE)
   public @interface TalkBackHint {}
 
   public static final int HINT_SUB_TYPE_MAGNIFICATION = 0;
@@ -1528,6 +1533,7 @@ public class Performance {
     CHANGE_LOCALE_DIFFERENT,
     CHANGE_LOCALE_SAME_LANGUAGE,
   })
+  @Retention(RetentionPolicy.SOURCE)
   public @interface ChangeLocaleAction {}
 
   public static final int CHANGE_LOCALE_UNDEFINED = 0;

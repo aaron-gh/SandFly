@@ -20,11 +20,11 @@ import android.accessibilityservice.AccessibilityService
 import android.accessibilityservice.GestureDescription
 import android.graphics.Path
 import android.os.Build
+import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
-import androidx.core.os.bundleOf
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches
 import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
@@ -206,7 +206,7 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     if (
       !node.performAction(
         AccessibilityNodeInfo.ACTION_SET_TEXT,
-        bundleOf(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE to updated),
+        Bundle().apply { putCharSequence(AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE, updated) },
       )
     ) {
       return false
@@ -214,10 +214,10 @@ class ScriptTouch(private val service: AccessibilityService, private val feedbac
     // Some fields, such as search boxes, put the cursor at the end themselves and refuse this.
     node.performAction(
       AccessibilityNodeInfo.ACTION_SET_SELECTION,
-      bundleOf(
-        AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT to cursor,
-        AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT to cursor,
-      ),
+      Bundle().apply {
+        putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_START_INT, cursor)
+        putInt(AccessibilityNodeInfo.ACTION_ARGUMENT_SELECTION_END_INT, cursor)
+      },
     )
     return true
   }

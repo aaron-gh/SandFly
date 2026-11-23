@@ -250,7 +250,7 @@ enum class AiProvider(
         remove(OLD_MODEL)
         remove(OLD_API_KEY)
         val used = provider != null && model.isNotEmpty() && key.isNotEmpty()
-        putString(PREF_ACTIVE, if (used) provider!!.id else GEMINI.id)
+        putString(PREF_ACTIVE, if (used) provider.id else GEMINI.id)
       }
     }
 

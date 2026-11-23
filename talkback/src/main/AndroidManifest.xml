@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.google.android.accessibility.talkback">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Strings with the format ${foo}, such as ${applicationId}, are called
     placeholders, and they get replaced by the build system with the appropriate
@@ -57,8 +56,6 @@
     <!-- Notification rules that check the Bluetooth device or Wi-Fi network connected. Asked
          for only when the user adds such a rule. -->
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <!-- Time announcements and the daily notification summary on the minute. -->
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
 
@@ -66,12 +63,8 @@
     the network name only with location permission. The braille display declares location only
     up to API 30 for Bluetooth scans, so remove that limit. -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission
-        android:name="android.permission.ACCESS_COARSE_LOCATION"
-        tools:remove="android:maxSdkVersion" />
-    <uses-permission
-        android:name="android.permission.ACCESS_FINE_LOCATION"
-        tools:remove="android:maxSdkVersion" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 

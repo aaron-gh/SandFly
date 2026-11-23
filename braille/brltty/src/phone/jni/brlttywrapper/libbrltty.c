@@ -328,7 +328,7 @@ compileKeys(const char *tablesDir) {
     brailleDisplay.keyTable = compileKeyTable(path,
                                               brailleDisplay.keyNames);
     if (brailleDisplay.keyTable != NULL) {
-      setLogKeyEventsFlag(brailleDisplay.keyTable, "");
+      setLogKeyEventsFlag(brailleDisplay.keyTable, (const unsigned char *)"");
     } else {
       logMessage(LOG_ERR, "Couldn't compile key table %s", path);
     }

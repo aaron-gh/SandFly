@@ -36,6 +36,8 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.view.ViewConfiguration;
 import androidx.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import androidx.annotation.Nullable;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import androidx.core.view.accessibility.AccessibilityWindowInfoCompat;
@@ -90,6 +92,7 @@ public class FocusProcessorForTapAndTouchExploration {
     LIFT_TO_TYPE_EXCEPT_ACTION_KEY,
     TAP_TO_TYPE
   })
+  @Retention(RetentionPolicy.SOURCE)
   public @interface TypingMethod {}
 
   /**

@@ -20,6 +20,7 @@ import android.content.ClipboardManager
 import android.content.ComponentName
 import android.content.Context
 import android.content.ContextWrapper
+import android.content.Intent
 import android.net.wifi.WifiManager
 import android.app.ActivityManager
 import android.content.pm.PackageManager
@@ -243,9 +244,9 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       Class.forName("android.os.ServiceManager")
         .getMethod("getService", String::class.java)
         .invoke(null, ACTIVITY_TASK_SERVICE) as? IBinder ?: error("No activity task service")
-    return Class.forName("android.app.IActivityTaskManager\$Stub")
+    return (Class.forName("android.app.IActivityTaskManager\$Stub")
       .getMethod("asInterface", IBinder::class.java)
-      .invoke(null, binder)
+      .invoke(null, binder) ?: error("No activity task manager"))
       .also { taskManagerCache = it }
   }
 
@@ -289,8 +290,10 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
       val titles = arrayOfNulls<String>(tasks.size)
       val activityLabels = arrayOfNulls<String>(tasks.size)
       tasks.forEachIndexed { index, task ->
-        val base = task.baseActivity ?: task.baseIntent?.component ?: task.origActivity
-        val packageName = base?.packageName ?: task.baseIntent?.`package` ?: ""
+        // Annotated non-null, but read from a parcel that can hold null.
+        val baseIntent: Intent? = task.baseIntent
+        val base = task.baseActivity ?: baseIntent?.component ?: task.origActivity
+        val packageName = base?.packageName ?: baseIntent?.`package` ?: ""
         ids[index] =
           if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) task.taskId
           else @Suppress("DEPRECATION") task.persistentId

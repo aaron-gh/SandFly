@@ -62,7 +62,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
   private val audioManager = context.getSystemService(AudioManager::class.java)
   private val prefs = SharedPreferencesUtils.getSharedPreferences(context)
   private val mainHandler = Handler(Looper.getMainLooper())
-  private val lock = java.lang.Object()
+  @Suppress("PLATFORM_CLASS_MAPPED_TO_KOTLIN") private val lock = java.lang.Object()
   private val clips = ArrayList<PlayingClip>()
   private val streams = ArrayDeque<SpeechStream>()
   // Listener callbacks run here, in order, so that they never hold up the audio thread. Its thread
