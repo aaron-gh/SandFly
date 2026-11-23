@@ -322,6 +322,7 @@ public class GestureController {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
     swipeUp.cancel();
+    SidewaysSwipe.cancel();
     handwritingCommand.shutdown();
     handwritingAppLauncher.shutdown();
     brailleScreenInput.shutdown();
@@ -337,6 +338,7 @@ public class GestureController {
     listEdgeScroller.cancel();
     pullToRefresh.cancel();
     swipeUp.cancel();
+    SidewaysSwipe.cancel();
     selectorController.cancelPageScroll();
   }
 

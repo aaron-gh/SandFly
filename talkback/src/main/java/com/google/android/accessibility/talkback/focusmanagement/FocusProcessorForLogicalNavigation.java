@@ -57,6 +57,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.os.Trace;
 import android.text.TextUtils;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.Pair;
 import android.view.accessibility.AccessibilityEvent;
@@ -83,6 +84,7 @@ import com.google.android.accessibility.talkback.eventprocessor.ProcessorAccessi
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget.TargetType;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
+import com.google.android.accessibility.talkback.gesture.SidewaysSwipe;
 import com.google.android.accessibility.talkback.screenelements.ScreenElements;
 import com.google.android.accessibility.talkback.selector.VerticalNavigation;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
@@ -1571,7 +1573,60 @@ public class FocusProcessorForLogicalNavigation {
       return performPageOrScrollAction(navigationAction, nodeFromBfs, eventId);
     }
 
-    return false;
+    return swipeSideways(pivot, navigationAction);
+  }
+
+  /**
+   * Swipes over the pager around {@code pivot} for Scroll left or Scroll right where no node takes
+   * a scroll or page action, for pagers that move only for touches. Returns whether it did.
+   */
+  private boolean swipeSideways(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction) {
+    if (navigationAction.actionType != NavigationAction.SCROLL_LEFT
+        && navigationAction.actionType != NavigationAction.SCROLL_RIGHT) {
+      return false;
+    }
+    DisplayMetrics metrics = service.getResources().getDisplayMetrics();
+    float[] line =
+        sidewaysSwipeLine(
+            pivot, navigationAction, new Rect(0, 0, metrics.widthPixels, metrics.heightPixels));
+    if (line == null || !SidewaysSwipe.send(service, line)) {
+      return false;
+    }
+    LogUtils.d(TAG, "No sideways scroller for %s, swiping the pager.", navigationAction);
+    return true;
+  }
+
+  /**
+   * The swipe that Scroll left or Scroll right sends where no node takes a scroll or page action
+   * for it: over the closest pager around {@code pivot}, as {@link SidewaysSwipe#swipeLine} gives
+   * it. Null for other actions, where a node takes the action, or where no pager holds {@code
+   * pivot}.
+   */
+  @VisibleForTesting
+  static float @Nullable [] sidewaysSwipeLine(
+      AccessibilityNodeInfoCompat pivot, NavigationAction navigationAction, Rect screen) {
+    if (navigationAction.actionType != NavigationAction.SCROLL_LEFT
+        && navigationAction.actionType != NavigationAction.SCROLL_RIGHT) {
+      return null;
+    }
+    Filter<AccessibilityNodeInfoCompat> filter = getScrollOrPageActionFilter(navigationAction);
+    if (filter == null
+        || AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(pivot, filter) != null) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat root = AccessibilityNodeInfoUtils.getRoot(pivot);
+    if (root != null && AccessibilityNodeInfoUtils.searchFromBfs(root, filter) != null) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat pager = SidewaysSwipe.pagerHolding(pivot);
+    if (pager == null) {
+      return null;
+    }
+    Rect bounds = new Rect();
+    pager.getBoundsInScreen(bounds);
+    return SidewaysSwipe.swipeLine(
+        bounds, screen, navigationAction.actionType == NavigationAction.SCROLL_LEFT);
   }
 
   private boolean performPageOrScrollAction(

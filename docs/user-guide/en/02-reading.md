@@ -139,7 +139,7 @@ Swiping right and left scrolls lists by itself when the next item is off screen.
 - To scroll back, swipe left then right. This is **Scroll back**. At the top of a list, **Scroll back** pulls the list down, which refreshes it in most apps.
 - To scroll the app directly, drag two fingers on the screen, as you would drag one finger without SandFly.
 
-In the default gesture layout, two-finger swipes go to the app and scroll it. With **Gestures** > **Handle two-finger swipes in SandFly** on, as in the VoiceOver gesture layout, two-finger swipes run commands instead: by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, which move the content in the direction of the swipe. These four commands need Android 11 or later, and aren't on watches.
+In the default gesture layout, two-finger swipes go to the app and scroll it. With **Gestures** > **Handle two-finger swipes in SandFly** on, as in the VoiceOver gesture layout, two-finger swipes run commands instead: by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, which move the content in the direction of the swipe. Where no item on the screen scrolls sideways, **Scroll left** and **Scroll right** send a one-finger swipe to the pager around the focused item, such as the folder tabs in Solid Explorer. These four commands need Android 11 or later, and aren't on watches.
 
 These commands, in the **Scrolling** category, have no gesture by default:
 
