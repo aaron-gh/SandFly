@@ -262,6 +262,11 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT = -192;
   public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT = -193;
 
+  // A two-finger double tap with one finger in the top third of the screen and the other in the
+  // bottom third. Reported by TalkBack's TouchInteractionMonitor in place of the two-finger double
+  // tap while it has an action.
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM = -194;
+
   // Two-stroke swipes with a back-and-forth or angle swipe as either stroke, numbered down from
   // -1000, sixteen for each first stroke; see TwoStrokeSwipeIds.
   public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_DOWN = -1004;

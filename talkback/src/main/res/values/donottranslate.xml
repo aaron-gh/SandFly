@@ -1029,6 +1029,7 @@
 
     <string name="pref_shortcut_2finger_1tap_key">pref_shortcut_two_finger_single_tap</string>
     <string name="pref_shortcut_2finger_2tap_key">pref_shortcut_two_finger_double_tap</string>
+    <string name="pref_shortcut_2finger_2tap_top_bottom_key" translatable="false">pref_shortcut_two_finger_double_tap_top_bottom</string>
     <string name="pref_shortcut_2finger_3tap_key">pref_shortcut_two_finger_triple_tap</string>
     <string name="pref_shortcut_3finger_1tap_key">pref_shortcut_three_finger_single_tap</string>
     <string name="pref_shortcut_3finger_2tap_key">pref_shortcut_three_finger_double_tap</string>
@@ -1729,6 +1730,7 @@
 
       <item>@string/pref_shortcut_2finger_1tap_key</item>
       <item>@string/pref_shortcut_2finger_2tap_key</item>
+      <item>@string/pref_shortcut_2finger_2tap_top_bottom_key</item>
       <item>@string/pref_shortcut_2finger_3tap_key</item>
       <item>@string/pref_shortcut_3finger_1tap_key</item>
       <item>@string/pref_shortcut_3finger_2tap_key</item>
@@ -3353,6 +3355,7 @@
 
     <string name="pref_shortcut_2finger_1tap_default">@string/shortcut_value_pause_or_resume_feedback</string>
     <string name="pref_shortcut_2finger_2tap_default">@string/shortcut_value_dictate_or_media_control</string>
+    <string name="pref_shortcut_2finger_2tap_top_bottom_default">@string/shortcut_value_unassigned</string>
     <string name="pref_shortcut_2finger_3tap_default">@string/shortcut_value_announce_status</string>
     <string name="pref_shortcut_3finger_1tap_default">@string/shortcut_value_talkback_breakout</string>
     <string name="pref_shortcut_3finger_2tap_default">@string/shortcut_value_toggle_voice_feedback</string>

@@ -324,6 +324,10 @@ The 16 gestures are at the end of the **1 finger**, **1 finger back-and-forth** 
 
 **Tap with 4 fingers on top half** and **Tap with 4 fingers on bottom half**, in **Gestures** > **4 fingers**, are separate gestures. While one of them has a command, a four-finger tap on that half runs it instead of **Tap with 4 fingers**. Both are unassigned by default.
 
+### Two-finger double-tap at the top and bottom
+
+**Double-tap with 2 fingers, top and bottom**, in **Gestures** > **2 fingers**, is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third, as displayed, runs it instead of **Double-tap with 2 fingers**. It is unassigned by default, requires Android 13 or later and **Handle gestures in SandFly** turned on, and isn't on watches.
+
 ### Multi-finger taps without the wait
 
 A tap with two, three or four fingers, or several such taps, runs its command as the fingers lift when no longer gesture that starts with the same taps has a command, such as a further tap, a tap and hold, or a tap then swipe. TalkBack waits about 0.3 seconds for a further tap. A quadruple-tap with three fingers always runs at once. In the tutorial, these taps still wait.

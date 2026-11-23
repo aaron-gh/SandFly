@@ -48,6 +48,7 @@ import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureConfiguration
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE
@@ -708,6 +709,48 @@ class TrackedGestureTest {
     assign(R.string.shortcut_value_first_in_screen, R.string.pref_shortcut_4finger_1tap_top_key)
     fourFingerTap(service.resources.displayMetrics.heightPixels - 40f)
     assertEquals(listOf(AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP), service.gestures)
+  }
+
+  /** Two fingers at [firstY] and [secondY] double-tap, and the triple taps wait no more. */
+  private fun twoFingerDoubleTapAt(firstY: Float, secondY: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    for (downMs in longArrayOf(0, 150)) {
+      touchAt(ACTION_DOWN, downMs, 100f, firstY)
+      touchAt(ACTION_POINTER_DOWN, downMs + 5, 100f, firstY, 200f, secondY, actionIndex = 1)
+      touchAt(ACTION_POINTER_UP, downMs + 60, 100f, firstY, 200f, secondY, actionIndex = 1)
+      touchAt(ACTION_UP, downMs + 80, 100f, firstY)
+    }
+    runUntil(1300)
+  }
+
+  @Test
+  fun twoFingerDoubleTapAtTopAndBottomIsItsOwnGestureWhenAssigned() {
+    assign(
+      R.string.shortcut_value_braille_keyboard,
+      R.string.pref_shortcut_2finger_2tap_top_bottom_key,
+    )
+    // The screen is 470 pixels high: the top third ends at 156 and the bottom third starts at 313.
+    twoFingerDoubleTapAt(80f, 400f)
+    assertEquals(
+      listOf(GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM),
+      service.gestures,
+    )
+  }
+
+  @Test
+  fun twoFingerDoubleTapWithAFingerInTheMiddleStaysTheDoubleTap() {
+    assign(
+      R.string.shortcut_value_braille_keyboard,
+      R.string.pref_shortcut_2finger_2tap_top_bottom_key,
+    )
+    twoFingerDoubleTapAt(80f, 240f)
+    assertEquals(listOf(AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun twoFingerDoubleTapAtTopAndBottomStaysTheDoubleTapWhileUnassigned() {
+    twoFingerDoubleTapAt(80f, 400f)
+    assertEquals(listOf(AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP), service.gestures)
   }
 
   /**
