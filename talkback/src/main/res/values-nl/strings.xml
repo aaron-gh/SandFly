@@ -1904,12 +1904,19 @@
     <string name="shortcut_use_voice_profile">Stemprofiel <xliff:g id="name" example="English">%1$s</xliff:g> gebruiken</string>
     <string name="title_pref_keep_previous_voice_engine">Engine van het vorige stemprofiel gestart houden</string>
     <string name="title_pref_voice_profile_keep_engine_started">Engine gestart houden</string>
-    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <string name="title_pref_speech_equalizer">Stemeffecten</string>
     <string name="title_pref_speech_equalizer_preset">Voorinstelling</string>
-    <string name="title_pref_speech_equalizer_on">Equalizer gebruiken</string>
+    <string name="title_pref_speech_equalizer_on">Stemeffecten gebruiken</string>
     <string name="speech_equalizer_off">Uit</string>
-    <string name="speech_equalizer_turned_on">Equalizer aan</string>
-    <string name="speech_equalizer_turned_off">Equalizer uit</string>
+    <string name="speech_equalizer_turned_on">Stemeffecten aan</string>
+    <string name="speech_equalizer_turned_off">Stemeffecten uit</string>
+    <string name="title_pref_speech_equalizer_bands">Equalizer</string>
+    <string name="title_pref_speech_effect_bass_compression">Bascompressie</string>
+    <string name="title_pref_speech_effect_voice_compression">Stemcompressie</string>
+    <string name="title_pref_speech_effect_treble_compression">Hogetonencompressie</string>
+    <string name="speech_effect_low">Laag</string>
+    <string name="speech_effect_medium">Gemiddeld</string>
+    <string name="speech_effect_high">Hoog</string>
     <string name="title_selector_equalizer_64">Equalizer 64 Hz</string>
     <string name="title_selector_equalizer_125">Equalizer 125 Hz</string>
     <string name="title_selector_equalizer_250">Equalizer 250 Hz</string>
@@ -1932,6 +1939,7 @@
     <string name="speech_equalizer_reduce_harshness">Minder scherpte</string>
     <string name="speech_equalizer_reduce_sibilance">Minder sisklanken</string>
     <string name="speech_equalizer_small_speaker">Kleine luidspreker</string>
+    <string name="speech_equalizer_deep_bass">Diepe bas</string>
     <string name="speech_equalizer_custom">Aangepast</string>
     <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
     <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
