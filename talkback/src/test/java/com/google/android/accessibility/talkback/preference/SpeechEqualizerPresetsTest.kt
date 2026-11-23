@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.preference
 
 import com.google.android.accessibility.utils.output.SpeechEqualizer
 import com.google.android.accessibility.utils.output.SpeechEqualizer.SavedPreset
+import com.google.android.accessibility.utils.output.SpeechEqualizer.Values
 import org.json.JSONArray
 import org.json.JSONObject
 import org.junit.Assert.assertArrayEquals
@@ -34,6 +35,35 @@ class SpeechEqualizerPresetsTest {
 
   private fun preset(name: Any?, gains: List<Any?>): JSONObject =
     JSONObject().put("name", name).put("gains", JSONArray(gains))
+
+  private fun values(gains: IntArray) = Values(gains, IntArray(SpeechEqualizer.EFFECTS))
+
+  @Test
+  fun effectsAreSavedWithThePreset() {
+    val withEffects = SavedPreset("Deep", Values(gains, intArrayOf(2, 0, 3)))
+    val parsed =
+      SpeechEqualizer.parsePresets(
+        SpeechEqualizer.formatPresets(listOf(withEffects, SavedPreset("Plain", gains)))
+      )
+    assertArrayEquals(intArrayOf(2, 0, 3), parsed[0].effects())
+    assertArrayEquals(gains, parsed[0].gains())
+    // Presets saved before effects have none.
+    assertArrayEquals(IntArray(SpeechEqualizer.EFFECTS), parsed[1].effects())
+  }
+
+  @Test
+  fun badEffectsDropThePreset() {
+    val flat = List<Any?>(bands) { 0 }
+    val array =
+      JSONArray()
+        .put(preset("Kept", flat).put("effects", JSONArray(listOf(9, -4, 1))))
+        .put(preset("Short", flat).put("effects", JSONArray(listOf(1, 1))))
+        .put(preset("Text", flat).put("effects", JSONArray(listOf(1, "x", 1))))
+        .put(preset("Not a list", flat).put("effects", "1,1,1"))
+    val parsed = SpeechEqualizer.parsePresets(array.toString())
+    assertEquals(listOf("Kept"), parsed.map { it.name })
+    assertArrayEquals(intArrayOf(SpeechEqualizer.MAX_EFFECT_LEVEL, 0, 1), parsed[0].effects())
+  }
 
   @Test
   fun damagedValuesHaveNoPresets() {
@@ -135,8 +165,10 @@ class SpeechEqualizerPresetsTest {
   fun matchingFindsTheFirstPresetWithTheGains() {
     val presets =
       listOf(SavedPreset("A", IntArray(bands)), SavedPreset("B", gains), SavedPreset("C", gains))
-    assertEquals("B", SpeechEqualizer.savedPresetOf(presets, gains.copyOf())?.name)
-    assertNull(SpeechEqualizer.savedPresetOf(presets, IntArray(bands) { 1 }))
+    assertEquals("B", SpeechEqualizer.savedPresetOf(presets, values(gains.copyOf()))?.name)
+    assertNull(SpeechEqualizer.savedPresetOf(presets, values(IntArray(bands) { 1 })))
+    // The same bands with an effect on are another preset's.
+    assertNull(SpeechEqualizer.savedPresetOf(presets, Values(gains, intArrayOf(1, 0, 0))))
     assertEquals("C", SpeechEqualizer.savedPresetNamed(presets, "C")?.name)
     assertNull(SpeechEqualizer.savedPresetNamed(presets, "c"))
   }
@@ -153,13 +185,13 @@ class SpeechEqualizerPresetsTest {
   @Test
   fun addingChecksTheName() {
     val presets = listOf(SavedPreset("Podcast", gains))
-    assertNull(SpeechEqualizer.withPresetAdded(presets, "  ", gains))
-    assertNull(SpeechEqualizer.withPresetAdded(presets, " PODCAST", gains))
-    val added = SpeechEqualizer.withPresetAdded(presets, " Car ", IntArray(bands) { 20 })!!
+    assertNull(SpeechEqualizer.withPresetAdded(presets, "  ", values(gains)))
+    assertNull(SpeechEqualizer.withPresetAdded(presets, " PODCAST", values(gains)))
+    val added = SpeechEqualizer.withPresetAdded(presets, " Car ", values(IntArray(bands) { 20 }))!!
     assertEquals(listOf("Podcast", "Car"), added.map { it.name })
     assertArrayEquals(IntArray(bands) { SpeechEqualizer.MAX_GAIN_DB }, added[1].gains())
     val full = List(SpeechEqualizer.MAX_SAVED_PRESETS) { SavedPreset("P$it", gains) }
-    assertNull(SpeechEqualizer.withPresetAdded(full, "Another", gains))
+    assertNull(SpeechEqualizer.withPresetAdded(full, "Another", values(gains)))
   }
 
   @Test

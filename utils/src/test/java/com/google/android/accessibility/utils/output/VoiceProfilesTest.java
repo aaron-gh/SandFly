@@ -334,7 +334,7 @@ public class VoiceProfilesTest {
   public void equalizerOffKeepsGainsAndFiltersNothing() {
     int[] gains = SpeechEqualizer.Preset.CLARITY.gains();
     SpeechEqualizer.save(prefs, "", gains);
-    assertTrue(Arrays.equals(gains, SpeechEqualizer.inUse(prefs)));
+    assertTrue(Arrays.equals(gains, SpeechEqualizer.inUse(prefs).gains()));
 
     SpeechEqualizer.setOn(prefs, "", false);
 
@@ -351,9 +351,29 @@ public class VoiceProfilesTest {
     prefs.edit().putString(VoiceProfiles.PREF_ACTIVE, id).apply();
 
     assertTrue(
-        Arrays.equals(SpeechEqualizer.Preset.BASS_CUT.gains(), SpeechEqualizer.inUse(prefs)));
+        Arrays.equals(SpeechEqualizer.Preset.BASS_CUT.gains(), SpeechEqualizer.inUse(prefs).gains()));
     assertTrue(SpeechEqualizer.isKey(SpeechEqualizer.onKey(id)));
     assertTrue(SpeechEqualizer.isKey(SpeechEqualizer.PREF_DEFAULT_ON));
+  }
+
+  @Test
+  public void gainsAndEffectsAreSavedApart() {
+    int[] effects = {2, 0, 1};
+    SpeechEqualizer.saveEffects(prefs, "", effects);
+    SpeechEqualizer.save(prefs, "", SpeechEqualizer.Preset.CLARITY.gains());
+    SpeechEqualizer.changeGain(prefs, "", 0, 1);
+
+    assertTrue(Arrays.equals(effects, SpeechEqualizer.readEffects(prefs, "")));
+    SpeechEqualizer.saveEffects(prefs, "", new int[SpeechEqualizer.EFFECTS]);
+    int[] gains = SpeechEqualizer.Preset.CLARITY.gains();
+    gains[0]++;
+    assertTrue(Arrays.equals(gains, SpeechEqualizer.read(prefs, "")));
+  }
+
+  @Test
+  public void effectsAloneFilterSpeech() {
+    SpeechEqualizer.saveEffects(prefs, "", new int[] {0, 1, 0});
+    assertTrue(Arrays.equals(new int[] {0, 1, 0}, SpeechEqualizer.inUse(prefs).effects()));
   }
 
   @Test

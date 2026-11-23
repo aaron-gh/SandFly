@@ -59,8 +59,66 @@ class SpeechEqualizerTest {
     // Presets saved with 12 bands are still found.
     assertEquals(
       SpeechEqualizer.Preset.BASS_BOOST,
-      SpeechEqualizer.presetOf(SpeechEqualizer.parse("6,6,5,3,1,0,0,0,0,0,0,0")),
+      SpeechEqualizer.presetOf(SpeechEqualizer.parseValues("6,6,5,3,1,0,0,0,0,0,0,0")),
     )
+  }
+
+  @Test
+  fun effectsAreSavedAfterTheGains() {
+    val values = SpeechEqualizer.Values(SpeechEqualizer.Preset.CLARITY.gains(), intArrayOf(1, 0, 3))
+    val saved = SpeechEqualizer.format(values)
+    assertEquals(values, SpeechEqualizer.parseValues(saved))
+    assertArrayEquals(SpeechEqualizer.Preset.CLARITY.gains(), SpeechEqualizer.parse(saved))
+    // Without effects, the value is as before effects.
+    val plain = SpeechEqualizer.Values(SpeechEqualizer.Preset.CLARITY.gains(), IntArray(3))
+    assertEquals(SpeechEqualizer.format(plain.gains()), SpeechEqualizer.format(plain))
+    assertArrayEquals(IntArray(3), SpeechEqualizer.parseEffects(SpeechEqualizer.format(plain)))
+  }
+
+  @Test
+  fun damagedEffectsAreOff() {
+    val gains = "1,2,3,4,5,6,7,8,9,10,11"
+    assertArrayEquals(IntArray(3), SpeechEqualizer.parseEffects("$gains;1,2"))
+    assertArrayEquals(IntArray(3), SpeechEqualizer.parseEffects("$gains;1,x,2"))
+    assertArrayEquals(intArrayOf(3, 0, 1), SpeechEqualizer.parseEffects("$gains;9,-1,1"))
+    assertArrayEquals(intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11), SpeechEqualizer.parse("$gains;1,x,2"))
+  }
+
+  @Test
+  fun quietBassIsRaisedByBassCompression() {
+    val gains = IntArray(SpeechEqualizer.BANDS)
+    val medium = intArrayOf(2, 0, 0)
+    // Below the threshold, the range gets the level's whole gain.
+    assertEquals(6.0, gainDb(gains, 100.0, amplitude = 0.01f, effects = medium), 0.5)
+    assertEquals(0.0, gainDb(gains, 1000.0, amplitude = 0.01f, effects = medium), 0.5)
+  }
+
+  @Test
+  fun loudBassIsCompressed() {
+    val gains = IntArray(SpeechEqualizer.BANDS)
+    // 9 dB over the -15 dB threshold at 3:1 is 6 dB lower, which the 6 dB gain makes up.
+    assertEquals(0.0, gainDb(gains, 100.0, amplitude = 0.5f, effects = intArrayOf(2, 0, 0)), 1.5)
+  }
+
+  @Test
+  fun rangesAddUpToTheSameLevel() {
+    val gains = IntArray(SpeechEqualizer.BANDS)
+    // Only the treble range is compressed, so speech below it keeps its level.
+    for (frequency in doubleArrayOf(60.0, 200.0, 1000.0, 1500.0)) {
+      assertEquals(
+        "at $frequency Hz",
+        0.0,
+        gainDb(gains, frequency, amplitude = 0.01f, effects = intArrayOf(0, 0, 1)),
+        0.3,
+      )
+    }
+  }
+
+  @Test
+  fun limiterKeepsCompressedSpeechFromClipping() {
+    val samples = sine(150.0, amplitude = 0.95f, frames = rate)
+    SpeechEqualizer.Filter(IntArray(SpeechEqualizer.BANDS), rate, 1, intArrayOf(3, 3, 3)).process(samples)
+    assertTrue(samples.all { abs(it) <= 0.98f + 1e-4f })
   }
 
   @Test
@@ -73,11 +131,15 @@ class SpeechEqualizerTest {
   fun presetsAreFound() {
     for (preset in SpeechEqualizer.Preset.entries) {
       assertEquals(SpeechEqualizer.BANDS, preset.gains().size)
-      assertEquals(preset, SpeechEqualizer.presetOf(preset.gains()))
+      assertEquals(SpeechEqualizer.EFFECTS, preset.effects().size)
+      assertEquals(preset, SpeechEqualizer.presetOf(preset.equalizerValues()))
       assertEquals(preset, SpeechEqualizer.presetFor(preset.value))
     }
     val custom = SpeechEqualizer.Preset.FLAT.gains().also { it[5] = 1 }
-    assertNull(SpeechEqualizer.presetOf(custom))
+    assertNull(SpeechEqualizer.presetOf(SpeechEqualizer.Values(custom, IntArray(SpeechEqualizer.EFFECTS))))
+    val deepBassWithoutEffects =
+      SpeechEqualizer.Values(SpeechEqualizer.Preset.DEEP_BASS.gains(), IntArray(SpeechEqualizer.EFFECTS))
+    assertNull(SpeechEqualizer.presetOf(deepBassWithoutEffects))
   }
 
   @Test
@@ -157,11 +219,16 @@ class SpeechEqualizerTest {
   }
 
   /** The gain [gains] give a sine at [frequency], in dB, measured after the filter settles. */
-  private fun gainDb(gains: IntArray, frequency: Double, amplitude: Float): Double {
+  private fun gainDb(
+    gains: IntArray,
+    frequency: Double,
+    amplitude: Float,
+    effects: IntArray = IntArray(SpeechEqualizer.EFFECTS),
+  ): Double {
     val frames = rate * 2
     val samples = sine(frequency, amplitude, frames)
     val input = rms(samples, frames / 2)
-    SpeechEqualizer.Filter(gains, rate, 1).process(samples)
+    SpeechEqualizer.Filter(gains, rate, 1, effects).process(samples)
     return 20 * log10(rms(samples, frames / 2) / input)
   }
 

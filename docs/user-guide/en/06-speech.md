@@ -45,7 +45,7 @@ To use the command, assign it to a gesture or keyboard shortcut, or add it to a 
 
 ### Voice profiles {#speech-voice-profiles}
 
-A voice profile is a set of speech settings that you can switch to at once: a speech engine, language, voice, volume, rate, pitch, equalizer, and **Send long text a sentence at a time**. For example, one profile can use another engine for reading long text while **SandFly default** stays fast.
+A voice profile is a set of speech settings that you can switch to at once: a speech engine, language, voice, volume, rate, pitch, voice effects, and **Send long text a sentence at a time**. For example, one profile can use another engine for reading long text while **SandFly default** stays fast.
 
 **SandFly default** is always in the list. It uses the settings on the **Speech** screen. While a profile is in use, all speech uses the engine and voice of the profile, so SandFly doesn't switch language or dialect, except for languages that have a voice of their own in **Voices by language**. See [](#speech-voices-by-language).
 
@@ -57,7 +57,7 @@ Voice profiles are also used for emoji and for languages: see [](#speech-emoji) 
 2. Choose **Add voice profile**.
 3. Enter a name, or leave the field empty to use the suggested name, such as "Voice profile 1". Choose **OK**.
 
-SandFly opens the settings of the new profile. A new profile starts with the speech volume, rate, pitch, equalizer and **Send long text a sentence at a time** of **SandFly default**.
+SandFly opens the settings of the new profile. A new profile starts with the speech volume, rate, pitch, voice effects and **Send long text a sentence at a time** of **SandFly default**.
 
 #### Voice profile settings {#speech-voice-profile-settings}
 
@@ -68,7 +68,7 @@ To change a profile, go to **Speech** > **Voice profiles** and choose the profil
 - **Language**: **Default**, or one of the languages of the engine.
 - **Voice**: **Default**, or one of the voices of the engine in the chosen language.
 - **Speech volume**, **Speech rate** and **Speech pitch**: as on the **Speech** screen, for this profile.
-- **Equalizer**: the equalizer of this profile. See [](#speech-equalizer). Not on watches.
+- **Voice effects**: the voice effects of this profile. See [](#voice-effects). Not on watches.
 - **Send long text a sentence at a time**: as on the **Speech** screen, for this profile. See [](#speech-pronunciation).
 - **Keep the engine started**: keeps the engine of this profile running while another engine is in use and the screen is on, so that switching to the profile doesn't wait for the engine to start. Each engine kept started runs as a process of its own. Off by default.
 - **Move up** and **Move down**: on watches only. On phones, you move profiles in the list.
@@ -101,23 +101,24 @@ Two settings in the **Voice** group change how emoji sound:
 
 They apply whether the speech engine reads the emoji or SandFly replaces them with their names. Whether emoji are read, and how, is set in **Verbosity** > **Emoji**. See [](#verbosity-emoji).
 
-### Speech equalizer {#speech-equalizer}
+### Voice effects {#voice-effects}
 
-**Speech** > **Equalizer** sets an 11-band equalizer for **SandFly default**. **Equalizer** on the screen of a voice profile sets one for that profile. A new profile starts with the equalizer of **SandFly default**. The equalizer isn't available on watches.
+**Speech** > **Voice effects** sets an 11-band equalizer and compression effects for **SandFly default**. **Voice effects** on the screen of a voice profile sets them for that profile. A new profile starts with the voice effects of **SandFly default**. Voice effects aren't available on watches.
 
-The **Equalizer** screen has:
+The **Voice effects** screen has:
 
-- **Use equalizer**: turns the equalizer on or off without changing the bands. On by default.
-- **Preset**: **Flat**, **Clarity**, **Bass boost**, **Bass cut**, **Treble boost**, **Treble cut**, **Warm**, **Reduce harshness**, **Reduce sibilance** or **Small speaker**, then your saved presets. The bands start flat. Changing a band sets **Preset** to **Custom**.
-- **Save as preset**: saves the bands as a preset with a name. Saved presets are listed for **SandFly default** and for every voice profile. You can save up to 50 presets.
-- **Saved presets**: renames or deletes a saved preset. Deleting a preset doesn't change the bands of an equalizer set to it.
-- A slider for each band: 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz and 16 kHz, each from -12 dB to +12 dB.
+- **Use voice effects**: turns the equalizer and effects on or off without changing them. On by default.
+- **Preset**: **Flat**, **Clarity**, **Bass boost**, **Bass cut**, **Treble boost**, **Treble cut**, **Warm**, **Reduce harshness**, **Reduce sibilance**, **Small speaker** or **Deep bass**, then your saved presets. A preset sets the bands and the effects. The bands start flat and the effects off. Changing a band or an effect sets **Preset** to **Custom**.
+- **Save as preset**: saves the bands and effects as a preset with a name. Saved presets are listed for **SandFly default** and for every voice profile. You can save up to 50 presets.
+- **Saved presets**: renames or deletes a saved preset. Deleting a preset doesn't change voice effects set to it.
+- **Bass compression**, **Voice compression** and **Treble compression**: **Off**, **Low**, **Medium** or **High**. Each compresses speech in its range, below 200 Hz, 200 Hz to 4 kHz, or above 4 kHz, and raises its level, so that quiet parts of the range are louder. **Deep bass** uses **Bass compression** at **Medium**.
+- **Equalizer**: a slider for each band: 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz and 16 kHz, each from -12 dB to +12 dB.
 
-When a band boosts, a limiter keeps speech from clipping.
+When a band boosts or an effect is on, a limiter keeps speech from clipping.
 
-The equalizer applies to speech that SandFly plays through **Audio output** > **Low-latency audio**. With **Low-latency audio** off, it applies as an audio effect on Android 9 and later where the device supports it. Otherwise the **Equalizer** item reads "Needs Audio output > Low-latency audio". Engines that pass text on to other engines apply the effect only if they pass the audio session on as well. See [](#sound).
+Voice effects apply to speech that SandFly plays through **Audio output** > **Low-latency audio**. With **Low-latency audio** off, they apply as an audio effect on Android 9 and later where the device supports it. Otherwise the **Voice effects** item reads "Needs Audio output > Low-latency audio". Engines that pass text on to other engines apply the effect only if they pass the audio session on as well. See [](#sound).
 
-Reading controls: **Equalizer** turns the equalizer of the voice in use on or off, and each band has a reading control, such as **Equalizer 1 kHz**. Swipe up or down to change the band by 1 dB. They aren't in the reading controls by default. To add them, go to **Reading controls**. The **Use equalizer** command, in the **Speech** group of commands, turns the equalizer on or off.
+Reading controls: **Voice effects** turns the voice effects of the voice in use on or off, and each equalizer band has a reading control, such as **Equalizer 1 kHz**. Swipe up or down to change the band by 1 dB. They aren't in the reading controls by default. To add them, go to **Reading controls**. The **Use voice effects** command, in the **Speech** group of commands, turns voice effects on or off.
 
 ### Languages {#speech-languages}
 
@@ -254,10 +255,10 @@ For developers, see [](#api-speech).
 
 ### Speech commands and reading controls {#speech-commands}
 
-The **Speech** group of commands has, among others: **Pause or resume speech**, **Turn speech on or off**, **Increase speech rate**, **Decrease speech rate**, **Increase speech pitch**, **Decrease speech pitch**, **Change spoken language**, **Switch language automatically**, **Identify languages from words**, **Choose voice profile**, **Next voice profile**, **Previous voice profile** and **Use equalizer**. Keyboard shortcuts add **Increase speech volume**, **Decrease speech volume**, **Reset speech rate and pitch** and **Open text-to-speech settings**.
+The **Speech** group of commands has, among others: **Pause or resume speech**, **Turn speech on or off**, **Increase speech rate**, **Decrease speech rate**, **Increase speech pitch**, **Decrease speech pitch**, **Change spoken language**, **Switch language automatically**, **Identify languages from words**, **Choose voice profile**, **Next voice profile**, **Previous voice profile** and **Use voice effects**. Keyboard shortcuts add **Increase speech volume**, **Decrease speech volume**, **Reset speech rate and pitch** and **Open text-to-speech settings**.
 
 The **Reading** group has **Repeat last spoken phrase**, **Repeat last spoken phrase slower**, **Spell last spoken phrase** and **Speech history**.
 
-The speech reading controls are **Speech rate**, **Spoken language**, **Speech engine**, **Voice profile**, **Equalizer** and the equalizer bands. Only **Speech rate** is in the reading controls by default. The **Speech volume** and **Audio output device** reading controls are described in [](#sound-reading-controls).
+The speech reading controls are **Speech rate**, **Spoken language**, **Speech engine**, **Voice profile**, **Voice effects** and the equalizer bands. Only **Speech rate** is in the reading controls by default. The **Speech volume** and **Audio output device** reading controls are described in [](#sound-reading-controls).
 
 To assign commands to gestures and keyboard shortcuts, and to add reading controls, see [](#commands).

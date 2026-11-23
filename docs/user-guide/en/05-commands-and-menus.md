@@ -21,7 +21,7 @@ The list holds only the commands that the device supports. For example, commands
 - **Tables**: next and previous row and column, the start and end of rows, columns and tables, and row and column headers.
 - **Web**: **Turn browse mode on or off**, lists of headings, landmarks, links, controls and tables, and the address of a link or page. See [](#web).
 - **Reading**: **Read from top**, **Read from focused item**, **Read from focused item by reading control**, repeat, spell and translate the last spoken phrase, **Speech history**, **Speak status**, **Speak position**, **Speak coordinates**, the date and time, the battery level and the window title.
-- **Speech**: **Pause or resume speech**, **Turn speech on or off**, speech rate, pitch and volume, spoken language, voice profiles, punctuation, keyboard echo, **Use equalizer**, **Audio ducking** and **Vibration feedback**.
+- **Speech**: **Pause or resume speech**, **Turn speech on or off**, speech rate, pitch and volume, spoken language, voice profiles, punctuation, keyboard echo, **Use voice effects**, **Audio ducking** and **Vibration feedback**.
 - **Reading controls**: next and previous reading control, **Move reading control down or forward** and **Move reading control up or backward**, **Write the letter of a reading control**, next and previous reading control list, and a **Set reading control to** command for each reading control in the list. See [](#commands-reading-controls).
 - **Text editing**: selection mode, cursor movement, select all, copy, cut, paste, **Clipboard history**, **Editing menu**, **Submit text**, **Clear text**, **Copy last spoken phrase**, **Copy text from screen**, **Continuous copy**, **Granular editing**, **Spelling / grammar suggestions**, **Search emoji**, **Choose a symbol**, **Turn editing mode on or off**, **Dictate** and **Switch keyboard**. See [](#typing).
 - **System actions**: **Home**, **Back**, **Overview**, previous, older and newer app, **Take screenshot**, **Answer call**, **Split screen**, notifications, Quick Settings, **Lock screen**, **Power menu**, **All apps**, the accessibility shortcut, magnification, color inversion, **Write an app's name to open it**, **Type an app's name in braille to open it**, and **Start voice command**.
@@ -167,7 +167,7 @@ When you change the reading control or its value with a gesture, SandFly also sh
 - **Tables**: **Rows and columns**, **Row** and **Column**.
 - **Speech**: **Speech rate**, **Speak punctuation and symbols**, **Emoji**, **Speak text formatting**, **Spoken language**, **Speech engine**, **Speech volume**, **Audio output device**, **Voice profile**, **Automatic translation** and **Speak only focus moved by the user**.
 - **Keyboard echo**: the echo of the on-screen keyboard, physical keyboard, braille keyboard, braille display and handwriting keyboard.
-- **Equalizer**: **Equalizer**, and one control for each band from 64 Hz to 16 kHz. See [](#speech).
+- **Voice effects**: **Voice effects**, and one control for each equalizer band from 64 Hz to 16 kHz. See [](#voice-effects).
 - **Image and screen descriptions**: **Live recognition** and **AI actions**. See [](#commands-ai-actions).
 - **Sound and vibration**: **Audio ducking**, **Accessibility volume**, **Media volume**, **Call volume**, **Ring volume**, **Notification volume**, **Alarm volume** and **Sound mode**.
 - **Display**: **Hide screen**, **Brightness**, and **Tablet held up faces away**, for the braille keyboard on a tablet or an unfolded phone.
