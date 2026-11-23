@@ -406,6 +406,9 @@ public class TalkBackPreferenceFilter {
         R.string.pref_shortcut_3finger_4tap_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     // Only SandFly's gesture detection reports where the fingers were.
+    CUSTOMIZE_GESTURE_2FINGER_2TAP_TOP_BOTTOM(
+        R.string.pref_shortcut_2finger_2tap_top_bottom_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     CUSTOMIZE_GESTURE_4FINGER_1TAP_TOP(
         R.string.pref_shortcut_4finger_1tap_top_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),

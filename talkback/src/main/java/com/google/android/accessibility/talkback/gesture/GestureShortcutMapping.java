@@ -407,6 +407,12 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         MULTI_FINGER,
         R.string.pref_shortcut_2finger_2tap_key,
         R.string.pref_shortcut_2finger_2tap_default),
+    // Only recognized when SandFly detects gestures itself.
+    TWO_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM(
+        GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM,
+        MULTI_FINGER,
+        R.string.pref_shortcut_2finger_2tap_top_bottom_key,
+        R.string.pref_shortcut_2finger_2tap_top_bottom_default),
     TWO_FINGER_TRIPLE_TAP(
         AccessibilityService.GESTURE_2_FINGER_TRIPLE_TAP,
         MULTI_FINGER,
@@ -3556,6 +3562,8 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           context.getString(R.string.title_pref_shortcut_2finger_1tap);
       case AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP ->
           context.getString(R.string.title_pref_shortcut_2finger_2tap);
+      case GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM ->
+          context.getString(R.string.title_pref_shortcut_2finger_2tap_top_bottom);
       case AccessibilityService.GESTURE_2_FINGER_TRIPLE_TAP ->
           context.getString(R.string.title_pref_shortcut_2finger_3tap);
       case AccessibilityService.GESTURE_3_FINGER_SWIPE_UP ->

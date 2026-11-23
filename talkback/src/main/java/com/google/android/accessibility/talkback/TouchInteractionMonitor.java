@@ -129,6 +129,7 @@ import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
+import com.google.android.accessibility.talkback.gesture.TopAndBottomTap;
 import com.google.android.accessibility.talkback.gesture.TwoStrokeSwipes;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -308,6 +309,10 @@ public class TouchInteractionMonitor
   @Nullable private String twoFingerWait;
   // The screen size when the current touch started, for the edge gestures.
   private final Point screenSize = new Point();
+  // Where the fingers of the latest touch that reached gesture detection went down, kept after they
+  // lift, for Double-tap with 2 fingers, top and bottom.
+  private final float[] latestTouchDownY = new float[2];
+  private int latestTouchFingers;
   // Whether touch exploration was requested while an edge swipe could still start, and waits for
   // the edge swipe to be rejected.
   private boolean touchExplorationHeldForEdgeSwipe;
@@ -1075,6 +1080,7 @@ public class TouchInteractionMonitor
         gestureDetector.clear();
         eventId = Performance.getInstance().onGestureEventReceived(displayId, event);
       }
+      trackLatestTouchDown(event);
       gestureDetector.onMotionEvent(eventId, event);
     }
     if (!gestureStarted) {
@@ -1725,6 +1731,8 @@ public class TouchInteractionMonitor
       eventId = Performance.getInstance().onGestureEventReceived(displayId, null);
     } else if (gestureId == AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP) {
       dispatchGestureToMainThreadAndClear(fourFingerTapByHalf(gestureEvent));
+    } else if (gestureId == AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP) {
+      dispatchGestureToMainThreadAndClear(twoFingerDoubleTapTopAndBottom(gestureEvent));
     } else {
       dispatchGestureToMainThreadAndClear(gestureEvent);
     }
@@ -1756,6 +1764,39 @@ public class TouchInteractionMonitor
       return tap;
     }
     return new AccessibilityGestureEvent(half, tap.getDisplayId(), events);
+  }
+
+  /** Records where the fingers of the touch went down, from its first finger on. */
+  private void trackLatestTouchDown(MotionEvent event) {
+    int action = event.getActionMasked();
+    if (action == ACTION_DOWN) {
+      latestTouchFingers = 0;
+    }
+    if (action == ACTION_DOWN || action == ACTION_POINTER_DOWN) {
+      // A third finger makes no two-finger tap.
+      if (latestTouchFingers < latestTouchDownY.length) {
+        latestTouchDownY[latestTouchFingers] = event.getY(event.getActionIndex());
+      }
+      latestTouchFingers++;
+    }
+  }
+
+  /**
+   * Returns a two-finger double tap with one finger in the top third of the screen and the other in
+   * the bottom third in place of {@code tap} when that gesture runs a command, otherwise {@code
+   * tap}. The fingers of the last tap decide; the screen is as displayed.
+   */
+  private AccessibilityGestureEvent twoFingerDoubleTapTopAndBottom(AccessibilityGestureEvent tap) {
+    int gestureId = GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM;
+    if (latestTouchFingers != 2 || !isGestureAssigned(gestureId)) {
+      return tap;
+    }
+    Point size = new Point();
+    display.getRealSize(size);
+    if (!TopAndBottomTap.isTopAndBottom(latestTouchDownY[0], latestTouchDownY[1], size.y)) {
+      return tap;
+    }
+    return new AccessibilityGestureEvent(gestureId, tap.getDisplayId(), tap.getMotionEvents());
   }
 
   /** Dispatch a gesture event to the main thread of the service. */
