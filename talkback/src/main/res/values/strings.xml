@@ -6296,6 +6296,13 @@
   <string name="no_phrase_to_select" tools:ignore="MissingTranslation">No phrase to select</string>
   <!-- Shown and spoken in the Copy text from screen dialog when it lists only part of the text. [CHAR_LIMIT=NONE] -->
   <string name="word_selection_list_cut_off" tools:ignore="MissingTranslation">List cut off at <xliff:g id="count" example="1000">%1$d</xliff:g> items</string>
+  <!-- Spoken after Scroll up or Scroll down in the Copy text from screen dialog added the text of a page of the list. [CHAR_LIMIT=NONE] -->
+  <plurals name="word_selection_added" tools:ignore="MissingTranslation">
+    <item quantity="one">Added <xliff:g id="count" example="1">%1$d</xliff:g> item</item>
+    <item quantity="other">Added <xliff:g id="count" example="5">%1$d</xliff:g> items</item>
+  </plurals>
+  <!-- Spoken after Scroll up or Scroll down in the Copy text from screen dialog when the list is at its start or end. [CHAR_LIMIT=NONE] -->
+  <string name="word_selection_no_more_text" tools:ignore="MissingTranslation">No more text</string>
   <!-- Spoken after the checked items of the Copy text from screen dialog were copied. [CHAR_LIMIT=NONE] -->
   <plurals name="word_selection_copied" tools:ignore="MissingTranslation">
     <item quantity="one">Copied <xliff:g id="count" example="1">%1$d</xliff:g> item</item>

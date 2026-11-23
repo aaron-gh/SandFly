@@ -57,4 +57,19 @@ class ScreenTextTest {
     ScreenText.merge(texts, listOf("A", "B"))
     assertEquals(listOf("A", "B"), texts)
   }
+
+  @Test
+  fun mergeBeforeLeavesOutItemsKeptOnScreen() {
+    val texts = mutableListOf("C", "D", "E")
+    val added = ScreenText.mergeBefore(texts, listOf("A", "B", "C", "D"))
+    assertEquals(listOf("A", "B", "C", "D", "E"), texts)
+    assertEquals(2, added)
+  }
+
+  @Test
+  fun mergeBeforeAddsAPageWithoutOverlap() {
+    val texts = mutableListOf("C", "D")
+    ScreenText.mergeBefore(texts, listOf("A", "B"))
+    assertEquals(listOf("A", "B", "C", "D"), texts)
+  }
 }
