@@ -97,6 +97,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private final FeedbackReturner pipeline;
   private final TelevisionNavigationController televisionNavigationController;
   private final AudioManager audioManager;
+  private final PowerManager powerManager;
   private final ListMenuManager menuManager;
   private final CallStateMonitor callStateMonitor;
   private final Set<DialogInterface> openDialogs = new HashSet<>();
@@ -193,9 +194,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     // Otherwise the ringer mode stays normal until it changes after Backtalk starts.
     ringerMode = audioManager.getRingerMode();
     this.statusReader = statusReader;
+    powerManager = (PowerManager) service.getSystemService(Context.POWER_SERVICE);
     // noinspection deprecation
-    isInteractive =
-        ((PowerManager) service.getSystemService(Context.POWER_SERVICE)).isInteractive();
+    isInteractive = powerManager.isInteractive();
     isWatch = FormFactorUtils.isAndroidWear();
     displayManager = (DisplayManager) service.getSystemService(Context.DISPLAY_SERVICE);
     executor = Executors.newSingleThreadExecutor();
@@ -241,12 +242,18 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   @Override
   public void onReceiveIntent(Intent intent) {
-    if (!TalkBackService.isServiceActive()) {
-      return;
-    }
-
     String action = intent.getAction();
     if (action == null) {
+      return;
+    }
+    // The screen state is kept while SandFly is suspended too, so that it is right when SandFly
+    // resumes.
+    if (!TalkBackService.isServiceActive()) {
+      if (Intent.ACTION_SCREEN_ON.equals(action)) {
+        isInteractive = true;
+      } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+        isInteractive = false;
+      }
       return;
     }
 
@@ -324,6 +331,11 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   public boolean isInteractive() {
+    // SCREEN_ON can come late or not at all, which kept volume key presses off with the screen on,
+    // so Android's own state is read while the screen is taken to be off.
+    if (!isInteractive && powerManager.isInteractive()) {
+      isInteractive = true;
+    }
     return isInteractive;
   }
 
