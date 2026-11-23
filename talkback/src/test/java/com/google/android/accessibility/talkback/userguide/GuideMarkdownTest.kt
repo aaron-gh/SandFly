@@ -211,4 +211,22 @@ class GuideMarkdownTest {
       Files(included, mapOf("gestures" to "Gestures.", "keyboard-shortcuts" to "Shortcuts."))
     assertEquals(emptyList<String>(), GuideMarkdown.problems(chapters, sources))
   }
+
+  /** The guide in docs/user-guide/id has no broken links, missing IDs or misplaced headings. */
+  @Test
+  fun indonesianGuideHasNoProblems() {
+    val root = File("../docs").takeIf { it.isDirectory } ?: File("docs")
+    val indonesian = File(root, "user-guide/id")
+    val chapters =
+      indonesian.listFiles { file -> file.name.endsWith(".md") }.orEmpty().sortedBy { it.name }.map {
+        GuideMarkdown.Chapter(it.name, it.readText(), "id")
+      }
+    assertTrue(chapters.isNotEmpty())
+    val included =
+      listOf("scripting.md", "speech-api.md", "braille-display-api.md", "direct-touch-api.md", "reference/item-files.md")
+        .associate { it.substringAfterLast('/') to File(root, it).readText() }
+    val sources =
+      Files(included, mapOf("gestures" to "Gestur.", "keyboard-shortcuts" to "Pintasan."))
+    assertEquals(emptyList<String>(), GuideMarkdown.problems(chapters, sources))
+  }
 }
