@@ -115,6 +115,7 @@ import com.google.android.accessibility.talkback.commands.ButtonCommands;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ContinuousCopy;
+import com.google.android.accessibility.talkback.actor.ImageSharer;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
@@ -1327,6 +1328,15 @@ public class GestureController {
                       /* useInputFocusIfEmpty= */ false),
                   actorState,
                   /* speak= */ true));
+    } else if (action.equals(service.getString(R.string.shortcut_value_share_focused_image))
+        || action.equals(service.getString(R.string.shortcut_value_share_screenshot))) {
+      result =
+          ImageSharer.share(
+              service,
+              accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false),
+              /* wholeScreen= */ action.equals(
+                  service.getString(R.string.shortcut_value_share_screenshot)),
+              message -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(message)));
     } else if (action.equals(service.getString(R.string.shortcut_value_ask_about_screen))
         || action.equals(service.getString(R.string.shortcut_value_ask_about_image))) {
       result =

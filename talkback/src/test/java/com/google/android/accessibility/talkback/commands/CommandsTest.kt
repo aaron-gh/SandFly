@@ -95,6 +95,8 @@ class CommandsTest {
         R.string.shortcut_value_next_reading_control_list,
         R.string.shortcut_value_previous_reading_control_list,
         R.string.shortcut_value_select_first_setting,
+        R.string.shortcut_value_share_focused_image,
+        R.string.shortcut_value_share_screenshot,
       )) {
       assertTrue(context.getString(res) in values)
     }

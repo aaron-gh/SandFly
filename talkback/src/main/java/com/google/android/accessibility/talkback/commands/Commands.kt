@@ -1078,6 +1078,17 @@ object Commands {
           R.string.title_ask_about_screen,
           available = screen,
         )
+        val screenshots = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R
+        gesture(
+          R.string.shortcut_value_share_focused_image,
+          R.string.title_share_focused_image,
+          available = screenshots,
+        )
+        gesture(
+          R.string.shortcut_value_share_screenshot,
+          R.string.title_share_screenshot,
+          available = screenshots,
+        )
         // Every AI response can be reported, whichever feature gave it.
         gesture(R.string.shortcut_value_report_ai_response, R.string.shortcut_report_ai_response)
         // SandFly Pro's screen recognition commands, named by the module.

@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.selector
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Build
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.ImageCaptioner
 import com.google.android.accessibility.talkback.actor.gemini.GeminiConfiguration
@@ -27,8 +28,8 @@ import com.google.android.accessibility.utils.ValueSteps
 
 /**
  * The commands of the AI actions reading control: Describe screen, Describe image, their spoken and
- * question versions, and SandFly Pro's AI agent command in builds that include it. The user chooses
- * which of them the reading control offers.
+ * question versions, Share image of focused item and Share screenshot, and SandFly Pro's AI agent
+ * command in builds that include it. The user chooses which of them the reading control offers.
  */
 object AiActions {
   /** A command value and the label spoken for it. */
@@ -56,6 +57,12 @@ object AiActions {
       if (GeminiConfiguration.imageQnaEnabled(context)) {
         add(R.string.shortcut_value_ask_about_image, R.string.title_ask_about_image)
       }
+    }
+    // Sharing a screenshot with another app, such as an AI assistant, goes with the AI actions
+    // where there are some.
+    if (actions.isNotEmpty() && Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      add(R.string.shortcut_value_share_focused_image, R.string.title_share_focused_image)
+      add(R.string.shortcut_value_share_screenshot, R.string.title_share_screenshot)
     }
     SandflyAi.features?.let {
       actions.add(
