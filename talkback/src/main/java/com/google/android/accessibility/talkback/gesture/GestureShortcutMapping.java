@@ -2813,6 +2813,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_pass_through_next_gesture, R.string.shortcut_pass_through_next),
     TOGGLE_DIRECT_TOUCH_APP(
         R.string.shortcut_value_toggle_direct_touch_app, R.string.shortcut_toggle_direct_touch_app),
+    TOGGLE_DOUBLE_TAP_TAPS_APP(
+        R.string.shortcut_value_toggle_double_tap_taps_app,
+        R.string.shortcut_toggle_double_tap_taps_app),
     PRINT_NODE_TREE(R.string.shortcut_value_print_node_tree, R.string.shortcut_print_node_tree),
     PRINT_PERFORMANCE_STATS(
         R.string.shortcut_value_print_performance_stats, R.string.shortcut_print_performance_stats),

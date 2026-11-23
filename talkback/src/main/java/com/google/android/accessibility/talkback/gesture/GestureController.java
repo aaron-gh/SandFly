@@ -146,6 +146,7 @@ import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.calls.AnswerCall;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
+import com.google.android.accessibility.talkback.doubletaptaps.DoubleTapTapsApps;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.speechhistory.SpeechHistoryFragment;
 import com.google.android.accessibility.talkback.granularediting.CharacterCount;
@@ -536,6 +537,7 @@ public class GestureController {
     R.string.shortcut_value_toggle_focus_indicator,
     R.string.shortcut_value_toggle_focus_text_inside_items,
     R.string.shortcut_value_toggle_direct_touch_app,
+    R.string.shortcut_value_toggle_double_tap_taps_app,
     R.string.shortcut_value_toggle_color_inversion,
     R.string.shortcut_value_toggle_auto_translation,
     R.string.shortcut_value_toggle_equalizer,
@@ -1092,6 +1094,17 @@ public class GestureController {
         speak(service.getString(R.string.direct_touch_no_app));
       } else {
         speak(service.getString(on ? R.string.direct_touch_on : R.string.direct_touch_off));
+      }
+    } else if (action.equals(
+        service.getString(R.string.shortcut_value_toggle_double_tap_taps_app))) {
+      DirectTouchController directTouch = service.getDirectTouchController();
+      String pkg = (directTouch == null) ? null : directTouch.appInFront();
+      if (pkg == null) {
+        speak(service.getString(R.string.double_tap_taps_no_app));
+      } else {
+        boolean on =
+            DoubleTapTapsApps.toggle(SharedPreferencesUtils.getSharedPreferences(service), pkg);
+        speak(service.getString(on ? R.string.double_tap_taps_on : R.string.double_tap_taps_off));
       }
     } else if (action.equals(service.getString(R.string.shortcut_value_a11y_button))) {
       result =

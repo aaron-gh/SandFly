@@ -47,6 +47,8 @@ SandFly doesn't read the buttons as you touch them, but speaks the button that a
 
 Some controls ignore the activation that SandFly sends and react only to a finger on the screen. The **Activate with a tap** command, unassigned by default, taps the middle of the focused item instead. Assign it to a gesture or keyboard shortcut; see [](#gestures). A script can do the same for chosen items whenever they are activated; see [](#scripts). Both need Android 11 or later; otherwise the item is activated as usual.
 
+For apps where activating an item does nothing, turn the app on under **Touch** > **Double tap taps the screen**, or run the **Double tap taps the screen in this app** command, unassigned by default, in the app. Activating an item in that app then taps it. The command says "Double tap taps the screen on" or "Double tap taps the screen off". This also needs Android 11 or later.
+
 #### Speech while you touch the screen {#touch-speech}
 
 By default, touching the screen stops speech. To keep speech going until touch focuses an item, turn off **Speech** > **Stop speech when touching the screen**. See [](#speech).
