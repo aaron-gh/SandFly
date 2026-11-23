@@ -15,7 +15,7 @@ The list holds only the commands that the device supports. For example, commands
 - **Navigation**: next and previous item, the item above, below, left and right, first and last item on the screen, containers, windows, and **Focus text inside items separately**.
 - **Navigation setting**: the **Navigation** menu, **Page navigation**, and next and previous navigation setting.
 - **Object navigation** and **Screen review**: commands for desktop-style object navigation and the review cursor, mostly for keyboards. See [](#keyboards).
-- **Activation**: **Activate**, **Touch and hold**, **Activate with a tap**, **Activate confirm button**, **Activate cancel button**, **Show custom actions**, **Addresses and numbers**, **Add or edit labels**, **Open SandFly menu**, **Pass through system gesture**, and **Turn direct touch on or off for this app**.
+- **Activation**: **Activate**, **Touch and hold**, **Activate with a tap**, **Activate confirm button**, **Activate cancel button**, **Show custom actions**, **Addresses and numbers**, **Add or edit labels**, **Open SandFly menu**, **Pass through system gesture**, **Turn direct touch on or off for this app**, and **Double tap taps the screen in this app**.
 - **Scrolling**: scroll forward, back, up, down, left and right, to the top and to the bottom, and **Refresh**.
 - **Navigate by text** and **Navigate by element**: next and previous character, word, line, paragraph, heading, link, control, button, list, table, landmark and other kinds of item.
 - **Tables**: next and previous row and column, the start and end of rows, columns and tables, and row and column headers.

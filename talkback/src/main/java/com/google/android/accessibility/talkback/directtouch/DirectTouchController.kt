@@ -306,6 +306,12 @@ constructor(
   }
 
   /**
+   * The package of the app in front, for commands that change a setting for it. Null when no app
+   * is in front, such as when SandFly or System UI is.
+   */
+  fun appInFront(): String? = appInFront(service.windows.orEmpty())
+
+  /**
    * The package of the app in front: the main window's, or else the active application window's.
    * Null for SandFly, System UI and the other packages direct touch never works in.
    */

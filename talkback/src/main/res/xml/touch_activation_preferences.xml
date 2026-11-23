@@ -61,6 +61,10 @@
       android:fragment="com.google.android.accessibility.talkback.directtouch.DirectTouchFragment"
       android:key="@string/pref_direct_touch_key"
       android:title="@string/title_pref_direct_touch" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:fragment="com.google.android.accessibility.talkback.doubletaptaps.DoubleTapTapsFragment"
+      android:key="@string/pref_double_tap_taps_key"
+      android:title="@string/title_pref_double_tap_taps" />
   <com.google.android.accessibility.talkback.preference.base.CommandSwitchPreference
       android:defaultValue="@bool/pref_fix_stuck_touch_exploration_default"
       android:key="@string/pref_fix_stuck_touch_exploration_key"

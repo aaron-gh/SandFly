@@ -6374,4 +6374,14 @@
   <string name="update_download_progress">%1$d%%</string>
   <!-- Text of the update download notification. %1$d is the percentage downloaded, %2$s the time left, such as "2 minutes, 10 seconds". [CHAR LIMIT=NONE] -->
   <string name="update_download_progress_time">%1$d%%, %2$s left</string>
+  <!-- Touch settings: title of the screen that lists the apps where activating an item, such as with a double tap, taps it on the screen instead of sending a click. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_double_tap_taps">Double tap taps the screen</string>
+  <!-- Label of the command that turns Double tap taps the screen on or off for the app in front, which can be assigned to a gesture or a key. [CHAR LIMIT=NONE] -->
+  <string name="shortcut_toggle_double_tap_taps_app">Double tap taps the screen in this app</string>
+  <!-- Spoken when the Double tap taps the screen in this app command turns the setting on for the app in front. [CHAR LIMIT=NONE] -->
+  <string name="double_tap_taps_on">Double tap taps the screen on</string>
+  <!-- Spoken when the Double tap taps the screen in this app command turns the setting off for the app in front. [CHAR LIMIT=NONE] -->
+  <string name="double_tap_taps_off">Double tap taps the screen off</string>
+  <!-- Spoken when the Double tap taps the screen in this app command runs while no app is in front, such as when SandFly or the notification shade is. [CHAR LIMIT=NONE] -->
+  <string name="double_tap_taps_no_app">No app in front</string>
 </resources>
