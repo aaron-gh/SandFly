@@ -41,6 +41,9 @@ public class ScrollActionRecord {
   /** SandFly scrolling a list ahead so that the item after the focused one is on screen. */
   public static final String SCROLL_AHEAD = "SCROLL_AHEAD";
 
+  /** Copy text from screen scrolling a list or page to collect its text. */
+  public static final String COLLECT_TEXT = "COLLECT_TEXT";
+
   // User actions that caused scroll
   public static final int ACTION_UNKNOWN = 0;
   public static final int ACTION_AUTO_SCROLL = 1;
