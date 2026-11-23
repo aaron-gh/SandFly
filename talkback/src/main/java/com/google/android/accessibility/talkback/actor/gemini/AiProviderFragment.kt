@@ -84,7 +84,7 @@ class AiProviderFragment : TalkbackBaseFragment() {
       row(
         getString(R.string.title_pref_gemini_model_of, getString(provider.label)),
         if (canChooseModel) provider.model(prefs).ifEmpty { getString(R.string.ai_provider_choose_model) }
-        else missingText(missing!!),
+        else missingText(missing),
       ) {
         chooseModel()
       }.apply { isEnabled = canChooseModel }

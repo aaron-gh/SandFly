@@ -147,6 +147,8 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -158,6 +160,7 @@ public class SelectorController implements UserInputEventListener {
 
   /** The type of granularity. */
   @IntDef({GRANULARITY_FOR_ALL_NODE, GRANULARITY_FOR_NATIVE_NODE})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface GranularityType {}
 
   private static final String TAG = "SelectorController";

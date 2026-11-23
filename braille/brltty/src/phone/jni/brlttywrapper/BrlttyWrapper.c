@@ -336,7 +336,7 @@ jboolean JNIMETHOD(writeWindowNative)(
   if (!bytes) {
     goto out;
   }
-  if (!brltty_writeWindow(bytes, patternLen)) {
+  if (!brltty_writeWindow((unsigned char *)bytes, patternLen)) {
     goto releasebytes;
   }
   ret = JNI_TRUE;
@@ -396,7 +396,7 @@ void JNIMETHOD(addBytesFromDeviceNative)(
     // Out of memory thrown.
     return;
   }
-  char *writeptr = b;
+  char *writeptr = (char *)b;
   while (size > 0) {
     ssize_t res = write(nat->pipefd[1], writeptr, size);
     if (res < 0) {

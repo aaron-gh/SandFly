@@ -19,6 +19,8 @@ package com.google.android.accessibility.utils.monitor;
 import android.view.InputDevice;
 import android.view.KeyEvent;
 import androidx.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import androidx.annotation.NonNull;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
@@ -38,6 +40,7 @@ public class InputModeTracker implements ServiceKeyEventListener {
     INPUT_MODE_BRAILLE_DISPLAY,
     INPUT_MODE_BRAILLE_KEYBOARD,
   })
+  @Retention(RetentionPolicy.SOURCE)
   public @interface InputMode {}
 
   public static final int INPUT_MODE_UNKNOWN = -1;

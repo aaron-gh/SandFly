@@ -25,6 +25,8 @@ import android.view.ViewConfiguration;
 import androidx.annotation.IntDef;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.Performance.EventId;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +39,7 @@ public class VolumeButtonPatternDetector {
 
   /** Constants denoting different sequences of pushing the volume buttons. */
   @IntDef({SHORT_PRESS_PATTERN, LONG_PRESS_PATTERN, SHORT_DOUBLE_PRESS_PATTERN})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface ButtonSequence {}
 
   public static final int SHORT_PRESS_PATTERN = 1;
@@ -45,6 +48,7 @@ public class VolumeButtonPatternDetector {
 
   /** Constants denoting different combinations of the volume buttons. */
   @IntDef({VOLUME_UP, VOLUME_DOWN, TWO_BUTTONS, PLAY_PAUSE})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface ButtonsUsed {}
 
   public static final int VOLUME_UP = KeyEvent.KEYCODE_VOLUME_UP;

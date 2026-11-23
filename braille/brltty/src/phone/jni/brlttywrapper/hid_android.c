@@ -57,7 +57,7 @@ static const HidItemsDescriptor *hidAndroidGetItems(HidHandle *handle) {
     if ((items = malloc(sizeof(*items) + size))) {
       memset(items, 0, sizeof(*items));
       items->count = size;
-      (*env)->GetByteArrayRegion(env, reportDescriptor, 0, size, items->bytes);
+      (*env)->GetByteArrayRegion(env, reportDescriptor, 0, size, (jbyte *)items->bytes);
       return items;
     } else {
       logMallocError();
@@ -110,7 +110,7 @@ static ssize_t hidAndroidReadData(HidHandle *handle, unsigned char *buffer,
         env, hidHelperClass, readMethod);
     if (bytes != NULL) {
       jsize inputSize = (*env)->GetArrayLength(env, bytes);
-      (*env)->GetByteArrayRegion(env, bytes, 0, inputSize, buffer);
+      (*env)->GetByteArrayRegion(env, bytes, 0, inputSize, (jbyte *)buffer);
       return inputSize;
     }
   }
