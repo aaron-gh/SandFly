@@ -12,6 +12,8 @@ The **Sounds** group of **Sound and vibration** has these settings:
 - **Sound feedback volume**: the volume of the sounds, from 5 to 100 percent in steps of 5. The default is 50 percent.
 - **Sound themes**: opens the installed sound themes, control sounds and 3D audio. See [](#sound-themes).
 
+The **Turn sound feedback (earcons) on or off** keyboard shortcut turns **Sound feedback** on or off. See [](#appendix-keyboard-shortcuts).
+
 To turn off a single sound and keep the rest, see [](#sound-individual).
 
 ### Change vibration {#sound-vibration}
@@ -26,6 +28,8 @@ The **Vibration** group of **Sound and vibration** has these settings. On device
   - **On and off**: the vibrator turns on and off at full strength. Every vibrator can play this type.
 
 If vibrations feel weak with **Haptic effects**, choose **Pulses** and raise **Vibration strength**.
+
+The **Vibration feedback** command, in the **Speech** group of commands, turns **Vibration feedback** on or off. See [](#commands).
 
 ### Sounds and vibrations {#sound-events}
 
@@ -242,7 +246,7 @@ The **Speech volume** reading control switches between these volumes, and the **
 
 ### Lower other audio while SandFly speaks {#sound-ducking}
 
-**Audio output** > **Audio ducking** lowers the volume of other audio, such as music, while SandFly speaks. It's on by default. The **Audio ducking** reading control turns it on and off.
+**Audio output** > **Audio ducking** lowers the volume of other audio, such as music, while SandFly speaks. It's on by default. The **Audio ducking** reading control and the **Audio ducking** command, in the **Speech** group of commands, turn it on and off.
 
 ### Low-latency audio {#sound-low-latency}
 

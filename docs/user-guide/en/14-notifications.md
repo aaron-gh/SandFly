@@ -15,7 +15,7 @@ Some features need notification access for SandFly, which Android settings give:
 - Summaries of the notifications in the shade.
 - The SandFly notification list.
 
-To give notification access, select **Turn on notification access** on the **When to read**, **Stop reading** or **Summary and time** screen, and turn on SandFly in the list. SandFly connects to notifications only while SandFly is on.
+To give notification access, select **Turn on notification access** on the **When to read**, **Stop reading** or **Summary and time** screen, and turn on SandFly in the list. The item is shown only while SandFly has no notification access. SandFly connects to notifications only while SandFly is on.
 
 ### Turn notification speech on or off {#notifications-speech-on-off}
 
@@ -76,9 +76,9 @@ For voice settings on this screen, see [](#notifications-voice).
 Under **Notifications** > **Reading notifications** > **Voice**:
 
 - **Voice**: reads notifications with one of your voice profiles, with all of its settings, such as another speech engine, rate and pitch. The default is **SandFly's voice**.
-- **Voice profiles**: opens the voice profiles, where you make and change them. See [](#speech).
+- **Voice profiles**: opens the voice profiles, where you make and change them. See [](#speech-voice-profiles).
 - **Read over SandFly's speech in a different voice**: see below. Off by default.
-- **Detect language**: says each notification in the language it is written in. It needs **Switch language automatically** in Speech settings. Off by default.
+- **Detect language**: says each notification in the language it is written in. It needs **Speech** > **Switch language automatically**. See [](#speech-languages). Off by default.
 - **Sound before notifications**: plays a sound before each notification. Off by default.
 
 Apps and rules can have a voice of their own. See [](#notifications-apps) and [](#notifications-rules).
@@ -87,7 +87,7 @@ How notifications in different voices are read:
 
 - A notification in the voice profile that SandFly speaks with is read after the current speech, in the same speech queue.
 - A notification in a different voice is also read after the current speech, so that two voices don't speak at once. It waits up to 45 seconds. With **Read over SandFly's speech in a different voice** on, it is read at once, over the current speech.
-- **Read over SandFly's speech in a different voice** doesn't apply while **Speak only focus moved by the user** applies to the app in front, or while an assistant or a call plays audio. See [](#verbosity).
+- **Read over SandFly's speech in a different voice** doesn't apply while **Speak only focus moved by the user** applies to the app in front, or while an assistant or a call plays audio. See [](#verbosity-own-speech).
 - While **Quiet while recording**, in **Speech**, applies, no notification is read. See [](#speech).
 - When notifications for different voices arrive together, each waits for the one before it.
 
@@ -98,7 +98,7 @@ If the engine of a voice profile fails, SandFly reads the notification in its ow
 **Notifications** > **Apps** sets how the notifications of each app are read.
 
 - **Other apps**: how SandFly reads the notifications of apps without settings of their own: **Read**, the default, **App name only**, or **Don't read**.
-- **Apps**: the installed apps, the apps with settings, and the apps in the history. Each shows its settings.
+- **Apps**: the apps in the launcher, the apps with settings, and the apps in the history, by name. Each shows its settings.
 
 For one app:
 
@@ -107,7 +107,7 @@ For one app:
 - **Time between an app's notifications**: the shortest time between two notifications of the app that are read. **As other apps** uses the setting in **Repeats**.
 - **Speech format**: a speech format for the app. See [](#notifications-reading).
 - **Voice**: **As other apps**, **SandFly's voice**, or a voice profile, such as one with another speech engine.
-- **Reset**: removes the settings of the app.
+- **Reset**: removes the settings of the app. Shown only for an app with settings.
 
 ### Words and replacements {#notifications-words}
 
@@ -203,23 +203,25 @@ All except **Pocket mode** and **Also when dismissed on a watch** are off by def
 
 **Notifications** > **Summary and time** reads the notifications in the shade, and says the time at an interval. Under **Summary**:
 
-- **Turn on notification access**: summaries need it.
+- **Turn on notification access**: summaries need it. Shown only while SandFly has no notification access.
 - **Read notifications now**: reads the notifications in the shade. It needs SandFly to be on.
 - **Read notifications every day**: reads them each day at **Time**, 08:00 by default.
 - **Newest first**: reads the newest notification first. Off by default.
 - **Your name**: a name for the greeting at the start, such as "Good morning. Sam."
 - **Pause between notifications**: from **Off**, the default, to 5 seconds.
 
-A summary starts with a greeting and the number of notifications, such as "You have 5 notifications.", and reads each notification as app, title and text.
+A summary starts with a greeting and the number of notifications, such as "You have 5 notifications.", and reads each notification as app, title and text. Group summaries and ongoing notifications are left out. **Apps**, **Words and replacements**, **Kinds of notifications** and **Rules** apply, and the notifications that they leave out aren't counted.
 
 Under **Time announcements**:
 
 - **Say the time every**: **Off**, the default, 15 minutes, 30 minutes, 1 hour or 3 hours.
-- **Turn on Alarms and reminders**: lets SandFly say the time exactly on time. Without it, Android can delay the announcements.
+- **Turn on Alarms and reminders**: opens the Android setting that lets SandFly say the time exactly on time. Without it, Android can delay the announcements. Shown only while **Say the time every** isn't **Off** and the setting is off. SandFly also opens this Android setting when you choose an interval for **Say the time every** or turn on **Read notifications every day**, unless it is already on.
 - **Time format**: what SandFly says, with the placeholders `{time}`, `{date}` and `{battery}`, the battery percentage. The default is "It's {time}".
 - **Voice**: **Notification voice**, the default, **SandFly's voice**, or a voice profile.
 
 Summaries are read in the notification voice.
+
+To have the battery level said at an interval, see **Verbosity** > **Battery level** in [](#verbosity-announcements).
 
 ### History {#notifications-history}
 
@@ -242,7 +244,7 @@ Select a notification for these actions, shown with the name of its app, such as
 
 ### Automation {#notifications-automation}
 
-Automation apps, such as Tasker or MacroDroid, can control notification speech with broadcasts to SandFly. Turn on **Notifications** > **Allow automation apps** first; it's off by default, as any app can send them. **Notifications** > **Automation** lists the actions, and copies the one you select:
+Automation apps, such as Tasker or MacroDroid, can control notification speech with broadcasts to SandFly. Turn on **Notifications** > **Allow automation apps** first; it's off by default, as any app can send them. **Notifications** > **Automation** lists the actions, each with its broadcast action: the package name of SandFly followed by an action such as `.action.READ_NOTIFICATIONS`. Select an action to copy its broadcast action:
 
 - **Turn notification speech on**
 - **Turn notification speech off**
@@ -270,7 +272,7 @@ Settings for the list:
 
 - **List notifications newest first, without groups**: each notification is an item of its own, newest first, read as app, time, title and text. Off by default.
 - **Leave media players out of the notification list**: leaves out media player notifications. The notification count read when the screen turns on leaves them out too. Off by default.
-- **Notification details**: which parts of a notification the list reads, and in what order: **Title**, **Text**, **App name**, **Time** and **Playing or paused**. Each part has the actions **Move up** and **Move down**.
+- **Notification details**: which parts of a notification the list reads, and in what order: **Title**, **Text**, **App name**, **Time** and **Playing or paused**. Each part is a check box, all checked by default, and has the actions **Move up** and **Move down**.
 
 ### Notifications Android doesn't announce {#notifications-not-announced}
 

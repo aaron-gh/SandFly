@@ -19,7 +19,7 @@ Recognition by SandFly is controlled by **Developer settings** > **Handle gestur
 - **Two fingers at the top and bottom**: **Double-tap with 2 fingers, top and bottom** is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third runs it instead of **Double-tap with 2 fingers**. Top and bottom follow the screen as displayed, also in landscape.
 - **Four fingers on half of the screen**: **Tap with 4 fingers on top half** and **Tap with 4 fingers on bottom half** are separate gestures. While one of them has a command, a four-finger tap on that half runs it instead of **Tap with 4 fingers**.
 
-A tap with two, three or four fingers runs its command as the fingers lift when no longer gesture that starts with the same taps has a command, such as a further tap, a tap and hold, or a tap then swipe. Otherwise SandFly waits for the next tap. A quadruple-tap with three fingers always runs at once.
+A tap with two, three or four fingers runs its command as the fingers lift, unless a longer gesture that starts with the same taps has a command, such as a further tap, a tap and hold, or a tap then swipe. Then SandFly waits for the next tap. When any finger moves during a multi-finger tap, the touch is no longer a tap. A quadruple-tap with three fingers always runs at once.
 
 **Time between one-finger taps** sets how long SandFly waits for a further one-finger tap. See [](#gestures-timing).
 

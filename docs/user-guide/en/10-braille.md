@@ -207,7 +207,7 @@ In app search, type the name of an app in uncontracted braille of the braille ke
 
 - Swipe down or up for the next or previous app.
 - Swipe left to delete the last cell, and swipe left with two fingers to clear.
-- Swipe up with two fingers to open the app, or swipe up with three fingers to open it in split screen.
+- Swipe up with two fingers to open the app, or swipe up with three fingers to open it in split screen. When you entered app search from braille commands, braille commands show again over the app.
 - Swipe down with two fingers to close.
 
 App search closes after 15 seconds without a touch. To open app search directly, run **Type an app's name in braille to open it**, in the **System actions** group of **Commands**.

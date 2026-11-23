@@ -47,7 +47,7 @@ SandFly doesn't read the buttons as you touch them, but speaks the button that a
 
 Some controls ignore the activation that SandFly sends and react only to a finger on the screen. The **Activate with a tap** command, unassigned by default, taps the middle of the focused item instead. Assign it to a gesture or keyboard shortcut; see [](#gestures). A script can do the same for chosen items whenever they are activated; see [](#scripts). Both need Android 11 or later; otherwise the item is activated as usual.
 
-For apps where activating an item does nothing, turn the app on under **Touch** > **Double tap taps the screen**, or run the **Double tap taps the screen in this app** command, unassigned by default, in the app. Activating an item in that app then taps it. The command says "Double tap taps the screen on" or "Double tap taps the screen off". This also needs Android 11 or later.
+For apps where activating an item does nothing, turn the app on under **Touch** > **Double tap taps the screen**, or run the **Double tap taps the screen in this app** command, unassigned by default, in the app. Activating an item in that app then taps it. The command says "Double tap taps the screen on" or "Double tap taps the screen off", or "No app in front" when no app is in front. This also needs Android 11 or later, and isn't on watches or TVs.
 
 #### Speech while you touch the screen {#touch-speech}
 
@@ -127,6 +127,8 @@ adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
 With the permission, SandFly says "Fixing touch exploration", ends the touches that Android left down, and says "Touch exploration fixed". A touch during the fix goes straight to the app. This works on phones that list these touches in `dumpsys input`, such as Samsung phones.
 
 Without the permission, or on other phones, SandFly can only say that touch exploration may be stuck, and you need to restart the phone. Exploring an area with nothing to read, such as a game, also finds no item, so the warning can be wrong, at most once every 10 minutes.
+
+When the screen turns off during a touch, Android can keep the lifted fingers as down, and then only touch exploration works: gestures and double-taps do nothing. SandFly detects this when the screen turns off during a touch, or when two touches in a row end in touch exploration, and turns explore by touch off and on again. This doesn't depend on **Fix stuck touch exploration** or the DUMP permission.
 
 ### Reset all delay settings {#touch-reset-delays}
 

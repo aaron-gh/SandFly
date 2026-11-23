@@ -94,7 +94,7 @@ Double-tap runs the action that the reading control announced until focus moves.
 
 ### Take a picture and describe it {#descriptions-take-picture}
 
-**Take picture and describe** opens a screen that takes one picture with the rear camera and describes it as **Describe image** does, with the same window for questions.
+**Take picture and describe** opens a screen that takes one picture with the rear camera and describes it as **Describe image** does, with the same window for questions. It is available only on devices with a camera.
 
 1. Run **Take picture and describe**. SandFly says "Hold the phone steady" and takes the picture.
 2. Read the description, and ask questions about the picture if you need to.
@@ -142,7 +142,7 @@ On the free tier of the Gemini API, Google can keep what it receives and use it 
 
 #### What is sent {#descriptions-privacy}
 
-Images, screenshots and questions that you send are sent to the service in use. Before the first image goes to a service, SandFly shows a dialog with the name of the service; its own terms and privacy policy apply. With **Use on-device AI** on, nothing is sent.
+Images, screenshots and questions that you send are sent to the service in use. Before the first image goes to a service, SandFly shows a dialog with the address of the service, such as api.anthropic.com; its own terms and privacy policy apply. With **Use on-device AI** on, nothing is sent.
 
 ### On-device AI {#descriptions-on-device}
 
@@ -154,7 +154,7 @@ While **Use on-device AI** is on, **Describe image**, **Describe screen**, quest
 
 1. Go to **AI services** > **On-device AI**.
 2. Choose **Model**, then choose a model. The list shows the size of each model, the memory it needs and a short note, and marks models that are **downloaded** or **experimental**. It lists only the models that the phone has enough memory for, and the ones already downloaded.
-3. Choose **Download model**. On mobile data, SandFly asks first.
+3. Choose **Download model**, which shows the size of the download. On mobile data, SandFly asks first.
 4. When the download finishes, turn on **Use on-device AI**.
 
 **Gemma 4 E2B** is the recommended model, and the default on phones with enough memory for it. On other phones the default is the largest model that fits. Experimental models may not work well.
@@ -227,7 +227,7 @@ Results are read with the SandFly voice, also while other audio plays. The micro
 - Otherwise the AI service in use, such as SandFly Pro or Claude, which gets a camera image every few seconds.
 - With Gemini as the AI service, the Gemini Live API, which gets a camera image every few seconds. SandFly reads the text of the answer.
 
-Before the first camera image goes to a service, SandFly asks with the dialog **Send camera images to** and the name of the service; choose **Send images**. A rejected API key, a used-up usage limit or repeated failures turn off the modes that use AI, and SandFly says so.
+Before the first camera image goes to a service, SandFly shows the dialog **Send camera images to Gemini?**, or for other services **Send camera images to** and the address of the service, such as api.anthropic.com. Choose **Send images**. A rejected API key, a used-up usage limit or repeated failures turn off the modes that use AI, and SandFly says so.
 
 ### Error messages {#descriptions-errors}
 

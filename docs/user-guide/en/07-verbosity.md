@@ -37,7 +37,7 @@ The **Text and symbols** group sets how text, punctuation, capital letters and e
 
 - **Speak punctuation and symbols**: **All** says every punctuation mark and symbol. **Most** says most symbols, such as & and @, but leaves common punctuation, such as commas and apostrophes, to the speech engine. **Some**, the default, leaves punctuation and symbols to the speech engine. **None** leaves punctuation and symbols out of speech, except a character read on its own, such as when moving by character. Apostrophes and hyphens inside words, separators inside numbers, and punctuation that ends a word are left to the speech engine. **Learn more**, in the list, opens a web page about punctuation levels.
 - **Say symbols that change meaning**, shown while **Speak punctuation and symbols** is **None**: leaves these to the speech engine: a plus or minus sign directly before a number, degree, percent, per mille and currency signs, and + − × ÷ = < > between numbers. Off by default.
-- **Capital letters**: what SandFly does for a capital letter: **Do nothing**, **Say "capital"**, the default, **Change pitch**, or **Play sound**. With other than **Say "capital"**, a capital letter on its own goes to the speech engine in lower case.
+- **Capital letters**: what SandFly does for a capital letter: **Do nothing**, **Say “capital”**, the default, **Change pitch**, or **Play sound**. With any other choice than **Say “capital”**, SandFly sends a capital letter on its own to the speech engine in lower case.
 - **Emoji**, **Count repeated emoji** and **Speak "emoji" after emoji names**: see [](#verbosity-emoji).
 - **Count repeated symbols**: says how many times a symbol repeats when it repeats 4 or more times. On by default.
 - **Speak text formatting** and **Text formatting options**: see [](#verbosity-text-formatting).
@@ -98,7 +98,7 @@ The **Announcements** group sets what SandFly says when something changes:
 
 #### Screen on and off {#verbosity-screen-on-off}
 
-**Verbosity** > **Screen on and off** has three groups: **When the screen turns off**, **When the screen turns on**, and **When the phone is unlocked**. On a flip phone, waking the cover screen counts as the screen turning on, and opening the phone right after doesn't say it again. Each group has the same items, except the first one:
+**Verbosity** > **Screen on and off** has three groups: **When the screen turns off**, **When the screen turns on**, and **When the phone is unlocked**. On a flip phone, waking the cover screen counts as the screen turning on, and opening the phone right after doesn't say it again. Each group has the same items, except the first ones:
 
 - **Say "Screen off"**: in **When the screen turns off** only. On by default.
 - **Ringer mode**: in **When the screen turns off** only. Says when the ringer is set to vibrate or silent. On by default.
