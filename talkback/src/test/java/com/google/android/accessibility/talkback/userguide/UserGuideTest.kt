@@ -65,4 +65,22 @@ class UserGuideTest {
     assertTrue(diag, html.contains("<p class=\"note\">Catatan:"))
     assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
   }
+
+  /** Under Dutch locale, the guide loads docs/user-guide/nl/ with Dutch headings and lists. */
+  @Test
+  @Config(sdk = [35], qualifiers = "nl-rNL")
+  fun buildsTheDutchGuideWithItsGeneratedLists() {
+    val context = RuntimeEnvironment.getApplication() as Context
+    FormFactorUtils.initialize(context)
+    val html = UserGuide.build(context, KeyComboManager.create(context))
+    val diag =
+      "locale=${context.resources.configuration.locales[0]} assets=${context.assets.list("user-guide")?.toList()} head=${html.take(250)}"
+    assertTrue(diag, html.contains("<html lang=\"nl\""))
+    assertTrue(diag, html.contains("<title>SandFly-gebruikershandleiding</title>"))
+    assertTrue(diag, html.contains("<h2 id=\"getting-started\">1 "))
+    assertTrue(diag, html.contains("<h2 id=\"appendix-gestures\">Bijlage A:"))
+    assertTrue(diag, html.contains("<h3 id=\"appendix-gestures-sandfly\">A.1 "))
+    assertTrue(diag, html.contains("<p class=\"note\">Opmerking:"))
+    assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
+  }
 }
