@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">கவனம் ஒரு உருப்படிக்குள் உள்ளது</string>
     <string name="macro_test_focus_inside_value">கவனம் உள்ளே: %1$s</string>
     <string name="macro_test_not_focus_inside_value">கவனம் உள்ளே இல்லை: %1$s</string>
+    <string name="macro_step_tap_position">நிலையில் தட்டு</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> இல் தட்டு</string>
+    <string name="macro_tap_x">X, இடதுபுறத்திலிருந்து பிக்சல்கள்</string>
+    <string name="macro_tap_y">Y, மேலிருந்து பிக்சல்கள்</string>
+    <string name="macro_invalid_position">0 முதல் <xliff:g id="max" example="10000">%1$d</xliff:g> வரை X, Y ஐ உள்ளிடவும்</string>
+    <string name="macro_field_tooltip">உதவிக்குறிப்பு</string>
+    <string name="macro_step_touch_hold">உருப்படியைத் தொட்டுப் பிடி</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> ஐ <xliff:g id="seconds" example="1.5">%2$s</xliff:g> வி. தொட்டுப் பிடி</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> ஐ <xliff:g id="seconds" example="1">%2$s</xliff:g> வி. தொட்டுப் பிடி. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">பிடித்திருக்கும் வினாடிகள்</string>
+    <string name="macro_slide">விரலை எடுப்பதற்கு முன்</string>
+    <string name="macro_slide_none">அதே இடத்தில் எடு</string>
+    <string name="macro_slide_up">மேலே நகர்த்து</string>
+    <string name="macro_slide_down">கீழே நகர்த்து</string>
+    <string name="macro_slide_left">இடதுபுறமாக நகர்த்து</string>
+    <string name="macro_slide_right">வலதுபுறமாக நகர்த்து</string>
+    <string name="macro_slide_distance">dp இல் தூரம்</string>
+    <string name="macro_app">ஆப்ஸ்</string>
+    <string name="macro_all_apps">அனைத்து ஆப்ஸும்</string>
+    <string name="macro_add_app">ஆப்ஸைச் சேர்</string>
+    <string name="macro_apps">ஆப்ஸ்</string>
+    <string name="macro_in_actions">செயல்களில் காட்டு</string>
+    <string name="macro_in_actions_only_when">இந்த நிபந்தனையில் மட்டும் செயல்களில் காட்டு</string>
+    <string name="macro_not_in_app">மேக்ரோ இயக்கப்படவில்லை. <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> இல் மட்டுமே இயங்கும்</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> மேக்ரோ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> மேக்ரோக்கள்</item>
+    </plurals>
+    <string name="macro_record">படிகளைப் பதிவுசெய்</string>
+    <string name="macro_record_new">மேக்ரோவைப் பதிவுசெய்</string>
+    <string name="macro_recording_notification">மேக்ரோ படிகள் பதிவுசெய்யப்படுகின்றன: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">பதிவுசெய்கிறது. நிறுத்த, “மேக்ரோவைப் பதிவுசெய்” அல்லது “மேக்ரோவை நிறுத்து” என்பதை இயக்கவும், அல்லது “மேக்ரோ படிகள் பதிவுசெய்யப்படுகின்றன” அறிவிப்பைத் திறக்கவும்.</string>
+    <string name="macro_recorded">பதிவுசெய்த படிகள்</string>
+    <string name="macro_recorded_no_passwords">கடவுச்சொல் புலங்களில் தட்டச்சு செய்த உரை பதிவுசெய்யப்படாது.</string>
+    <string name="macro_recorded_too_many">சேர்க்கப்படவில்லை. ஒரு மேக்ரோவில் அதிகபட்சம் <xliff:g id="count" example="200">%1$d</xliff:g> படிகள் இருக்கலாம்.</string>
+    <string name="macro_recorded_name">பதிவுசெய்தது <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">திரையில் உள்ள பட்டியல்</string>
 </resources>

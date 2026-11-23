@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">वर्ण जोडा</string>
+    <string name="custom_braille_characters_text">वर्ण किंवा मजकूर</string>
+    <string name="custom_braille_characters_cells">बिंदू</string>
+    <string name="custom_braille_characters_table">ब्रेल टेबल</string>
+    <string name="custom_braille_characters_cells_help">प्रत्येक सेलचे बिंदू क्रमांक, सेल हायफनने वेगळे करून, जसे की 2356 किंवा 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">1 ते 8 बिंदू क्रमांक एंटर करा, जास्तीत जास्त <xliff:g id="number" example="20">%1$d</xliff:g> सेल</string>
+    <string name="custom_braille_characters_invalid_text">1 ते <xliff:g id="number" example="50">%1$d</xliff:g> वर्ण एंटर करा</string>
+</resources>

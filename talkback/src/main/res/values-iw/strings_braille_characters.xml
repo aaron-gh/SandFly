@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">הוספת תו</string>
+    <string name="custom_braille_characters_text">תו או טקסט</string>
+    <string name="custom_braille_characters_cells">נקודות</string>
+    <string name="custom_braille_characters_table">טבלת ברייל</string>
+    <string name="custom_braille_characters_cells_help">מספרי הנקודות של כל תא, עם מקף בין התאים, למשל 2356 או 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">יש להזין מספרי נקודות 1 עד 8, לכל היותר <xliff:g id="number" example="20">%1$d</xliff:g> תאים</string>
+    <string name="custom_braille_characters_invalid_text">יש להזין 1 עד <xliff:g id="number" example="50">%1$d</xliff:g> תווים</string>
+</resources>

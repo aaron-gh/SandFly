@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">A fókusz egy elemen belül van</string>
     <string name="macro_test_focus_inside_value">Fókusz ezen belül: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fókusz nem ezen belül: %1$s</string>
+    <string name="macro_step_tap_position">Koppintás adott helyen</string>
+    <string name="macro_step_tap_position_value">Koppintás itt: <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, képpont balról</string>
+    <string name="macro_tap_y">Y, képpont felülről</string>
+    <string name="macro_invalid_position">Adjon meg X és Y értéket 0 és <xliff:g id="max" example="10000">%1$d</xliff:g> között</string>
+    <string name="macro_field_tooltip">Elemleírás</string>
+    <string name="macro_step_touch_hold">Elem lenyomva tartása</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> lenyomva tartása <xliff:g id="seconds" example="1.5">%2$s</xliff:g> mp-ig</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> lenyomva tartása <xliff:g id="seconds" example="1">%2$s</xliff:g> mp-ig. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Lenyomva tartás (másodperc)</string>
+    <string name="macro_slide">Felemelés előtt</string>
+    <string name="macro_slide_none">Felemelés helyben</string>
+    <string name="macro_slide_up">Húzás felfelé</string>
+    <string name="macro_slide_down">Húzás lefelé</string>
+    <string name="macro_slide_left">Húzás balra</string>
+    <string name="macro_slide_right">Húzás jobbra</string>
+    <string name="macro_slide_distance">Távolság dp-ben</string>
+    <string name="macro_app">Alkalmazás</string>
+    <string name="macro_all_apps">Minden alkalmazás</string>
+    <string name="macro_add_app">Alkalmazás hozzáadása</string>
+    <string name="macro_apps">Alkalmazások</string>
+    <string name="macro_in_actions">Megjelenítés a Műveletek között</string>
+    <string name="macro_in_actions_only_when">Megjelenítés a Műveletek között csak akkor, ha</string>
+    <string name="macro_not_in_app">A makró nem futott. Csak itt fut: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makró</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makró</item>
+    </plurals>
+    <string name="macro_record">Lépések rögzítése</string>
+    <string name="macro_record_new">Makró rögzítése</string>
+    <string name="macro_recording_notification">Makrólépések rögzítése: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Rögzítés folyamatban. Leállítás: futtassa a Makró rögzítése vagy a Makró leállítása parancsot, vagy nyissa meg a Makrólépések rögzítése értesítést.</string>
+    <string name="macro_recorded">Rögzített lépések</string>
+    <string name="macro_recorded_no_passwords">A jelszómezőkbe írt szöveg nincs rögzítve.</string>
+    <string name="macro_recorded_too_many">Nincs hozzáadva. Egy makró legfeljebb <xliff:g id="count" example="200">%1$d</xliff:g> lépésből állhat.</string>
+    <string name="macro_recorded_name">Rögzítve: <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Lista a képernyőn</string>
 </resources>

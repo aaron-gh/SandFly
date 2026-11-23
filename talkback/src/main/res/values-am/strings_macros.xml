@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">ትኩረት በንጥል ውስጥ ነው</string>
     <string name="macro_test_focus_inside_value">ትኩረት ያለበት ንጥል፦ %1$s</string>
     <string name="macro_test_not_focus_inside_value">ትኩረት የሌለበት ንጥል፦ %1$s</string>
+    <string name="macro_step_tap_position">በአቀማመጥ ላይ መታ አድርግ</string>
+    <string name="macro_step_tap_position_value">በ<xliff:g id="x" example="540">%1$d</xliff:g>፣ <xliff:g id="y" example="1200">%2$d</xliff:g> ላይ መታ አድርግ</string>
+    <string name="macro_tap_x">X፣ ከግራ ያሉ ፒክሰሎች</string>
+    <string name="macro_tap_y">Y፣ ከላይ ያሉ ፒክሰሎች</string>
+    <string name="macro_invalid_position">ከ0 እስከ <xliff:g id="max" example="10000">%1$d</xliff:g> ያለ X እና Y ያስገቡ</string>
+    <string name="macro_field_tooltip">የመሣሪያ ጥቆማ</string>
+    <string name="macro_step_touch_hold">ንጥል ንካ እና ያዝ</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>ን ለ<xliff:g id="seconds" example="1.5">%2$s</xliff:g> ሰከንድ ንካ እና ያዝ</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>ን ለ<xliff:g id="seconds" example="1">%2$s</xliff:g> ሰከንድ ንካ እና ያዝ። <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">የመያዣ ሰከንዶች</string>
+    <string name="macro_slide">ከማንሳት በፊት</string>
+    <string name="macro_slide_none">በቦታው አንሳ</string>
+    <string name="macro_slide_up">ወደ ላይ አንሸራት</string>
+    <string name="macro_slide_down">ወደ ታች አንሸራት</string>
+    <string name="macro_slide_left">ወደ ግራ አንሸራት</string>
+    <string name="macro_slide_right">ወደ ቀኝ አንሸራት</string>
+    <string name="macro_slide_distance">ርቀት በdp</string>
+    <string name="macro_app">መተግበሪያ</string>
+    <string name="macro_all_apps">ሁሉም መተግበሪያዎች</string>
+    <string name="macro_add_app">መተግበሪያ አክል</string>
+    <string name="macro_apps">መተግበሪያዎች</string>
+    <string name="macro_in_actions">በእርምጃዎች ውስጥ አሳይ</string>
+    <string name="macro_in_actions_only_when">በእርምጃዎች ውስጥ የሚታየው ይህ ሲሆን ብቻ</string>
+    <string name="macro_not_in_app">ማክሮ አልሄደም። የሚሄደው በ<xliff:g id="app" example="WhatsApp">%1$s</xliff:g> ውስጥ ብቻ ነው</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ማክሮ</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ማክሮዎች</item>
+    </plurals>
+    <string name="macro_record">ደረጃዎችን ቅዳ</string>
+    <string name="macro_record_new">ማክሮ ቅዳ</string>
+    <string name="macro_recording_notification">የማክሮ ደረጃዎችን በመቅዳት ላይ፦ <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">በመቅዳት ላይ። ለማቆም «ማክሮ ቅዳ»ን ወይም «ማክሮ አቁም»ን ያሂዱ፣ ወይም የ«የማክሮ ደረጃዎችን በመቅዳት ላይ» ማሳወቂያን ይክፈቱ።</string>
+    <string name="macro_recorded">የተቀዱ ደረጃዎች</string>
+    <string name="macro_recorded_no_passwords">በይለፍ ቃል መስኮች ውስጥ የተተየበ ጽሑፍ አይቀዳም።</string>
+    <string name="macro_recorded_too_many">አልታከለም። ማክሮ ቢበዛ <xliff:g id="count" example="200">%1$d</xliff:g> ደረጃዎች አሉት።</string>
+    <string name="macro_recorded_name">የተቀዳ <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">በማያ ገጽ ላይ ያለ ዝርዝር</string>
 </resources>

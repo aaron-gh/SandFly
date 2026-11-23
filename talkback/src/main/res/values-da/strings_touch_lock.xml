@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Lås eller lås op for berøring</string>
+    <string name="touch_locked">Berøring låst</string>
+    <string name="touch_unlocked">Berøring låst op</string>
+    <string name="touch_lock_unavailable">Berøringslås kræver Android 13 eller nyere</string>
+    <string name="title_pref_lock_touch_automatically">Lås berøring automatisk</string>
+    <string name="value_lock_touch_never">Aldrig</string>
+    <string name="value_lock_touch_screen_on">Når skærmen tændes</string>
+    <string name="value_lock_touch_lock_screen">På låseskærmen</string>
+    <string name="value_lock_touch_proximity">Når nærhedssensoren er dækket til</string>
+    <string name="title_pref_locked_touch_feedback">Berøringer, når berøring er låst</string>
+    <string name="value_locked_touch_nothing">Intet</string>
+    <string name="value_locked_touch_sound">Lyd</string>
+    <string name="value_locked_touch_vibration">Vibration</string>
+</resources>

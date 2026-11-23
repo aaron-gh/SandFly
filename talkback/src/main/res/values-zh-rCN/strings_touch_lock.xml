@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">锁定或解锁触摸</string>
+    <string name="touch_locked">触摸已锁定</string>
+    <string name="touch_unlocked">触摸已解锁</string>
+    <string name="touch_lock_unavailable">触摸锁定需要 Android 13 或更高版本</string>
+    <string name="title_pref_lock_touch_automatically">自动锁定触摸</string>
+    <string name="value_lock_touch_never">从不</string>
+    <string name="value_lock_touch_screen_on">屏幕开启时</string>
+    <string name="value_lock_touch_lock_screen">在锁屏上</string>
+    <string name="value_lock_touch_proximity">接近传感器被遮盖时</string>
+    <string name="title_pref_locked_touch_feedback">触摸锁定时的触摸反馈</string>
+    <string name="value_locked_touch_nothing">无</string>
+    <string name="value_locked_touch_sound">提示音</string>
+    <string name="value_locked_touch_vibration">振动</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">إضافة حرف</string>
+    <string name="custom_braille_characters_text">الحرف أو النص</string>
+    <string name="custom_braille_characters_cells">النقاط</string>
+    <string name="custom_braille_characters_table">جدول برايل</string>
+    <string name="custom_braille_characters_cells_help">أرقام نقاط كل خلية، مع الفصل بين الخلايا بشرطات، مثل 2356 أو 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">أدخل أرقام النقاط من 1 إلى 8، بحد أقصى <xliff:g id="number" example="20">%1$d</xliff:g> خلية</string>
+    <string name="custom_braille_characters_invalid_text">أدخل من 1 إلى <xliff:g id="number" example="50">%1$d</xliff:g> من الأحرف</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Pridať znak</string>
+    <string name="custom_braille_characters_text">Znak alebo text</string>
+    <string name="custom_braille_characters_cells">Body</string>
+    <string name="custom_braille_characters_table">Tabuľka Braillovho písma</string>
+    <string name="custom_braille_characters_cells_help">Čísla bodov každej bunky, bunky oddelené spojovníkmi, napríklad 2356 alebo 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Zadajte čísla bodov 1 až 8, najviac <xliff:g id="number" example="20">%1$d</xliff:g> buniek</string>
+    <string name="custom_braille_characters_invalid_text">Zadajte 1 až <xliff:g id="number" example="50">%1$d</xliff:g> znakov</string>
+</resources>

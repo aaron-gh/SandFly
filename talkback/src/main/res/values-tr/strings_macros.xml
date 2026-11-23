@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Odak bir öğenin içinde</string>
     <string name="macro_test_focus_inside_value">Odak içinde: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Odak içinde değil: %1$s</string>
+    <string name="macro_step_tap_position">Konuma dokun</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> konumuna dokun</string>
+    <string name="macro_tap_x">X, soldan piksel</string>
+    <string name="macro_tap_y">Y, üstten piksel</string>
+    <string name="macro_invalid_position">X ve Y için 0 ile <xliff:g id="max" example="10000">%1$d</xliff:g> arası değer girin</string>
+    <string name="macro_field_tooltip">Araç ipucu</string>
+    <string name="macro_step_touch_hold">Öğeye dokunup basılı tut</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> öğesine <xliff:g id="seconds" example="1.5">%2$s</xliff:g> sn dokunup basılı tut</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> öğesine <xliff:g id="seconds" example="1">%2$s</xliff:g> sn dokunup basılı tut. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Basılı tutma süresi (saniye)</string>
+    <string name="macro_slide">Kaldırmadan önce</string>
+    <string name="macro_slide_none">Yerinde kaldır</string>
+    <string name="macro_slide_up">Yukarı kaydır</string>
+    <string name="macro_slide_down">Aşağı kaydır</string>
+    <string name="macro_slide_left">Sola kaydır</string>
+    <string name="macro_slide_right">Sağa kaydır</string>
+    <string name="macro_slide_distance">dp cinsinden mesafe</string>
+    <string name="macro_app">Uygulama</string>
+    <string name="macro_all_apps">Tüm uygulamalar</string>
+    <string name="macro_add_app">Uygulama ekle</string>
+    <string name="macro_apps">Uygulamalar</string>
+    <string name="macro_in_actions">İşlemler\'de göster</string>
+    <string name="macro_in_actions_only_when">İşlemler\'de yalnızca şu durumda göster</string>
+    <string name="macro_not_in_app">Makro çalıştırılmadı. Yalnızca <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> uygulamasında çalışır</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makro</item>
+    </plurals>
+    <string name="macro_record">Adımları kaydet</string>
+    <string name="macro_record_new">Makro kaydet</string>
+    <string name="macro_recording_notification">Makro adımları kaydediliyor: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Kaydediliyor. Durdurmak için Makro kaydet veya Makroyu durdur komutunu çalıştırın ya da Makro adımları kaydediliyor bildirimini açın.</string>
+    <string name="macro_recorded">Kaydedilen adımlar</string>
+    <string name="macro_recorded_no_passwords">Şifre alanlarına yazılan metin kaydedilmez.</string>
+    <string name="macro_recorded_too_many">Eklenmedi. Bir makro en fazla <xliff:g id="count" example="200">%1$d</xliff:g> adım içerebilir.</string>
+    <string name="macro_recorded_name">Kayıt <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Ekrandaki liste</string>
 </resources>

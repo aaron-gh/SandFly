@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Lock or unlock touch</string>
+    <string name="touch_locked">Touch locked</string>
+    <string name="touch_unlocked">Touch unlocked</string>
+    <string name="touch_lock_unavailable">Touch lock needs Android 13 or later</string>
+    <string name="title_pref_lock_touch_automatically">Lock touch automatically</string>
+    <string name="value_lock_touch_never">Never</string>
+    <string name="value_lock_touch_screen_on">When the screen turns on</string>
+    <string name="value_lock_touch_lock_screen">On the lock screen</string>
+    <string name="value_lock_touch_proximity">While the proximity sensor is covered</string>
+    <string name="title_pref_locked_touch_feedback">Touches while touch is locked</string>
+    <string name="value_locked_touch_nothing">Nothing</string>
+    <string name="value_locked_touch_sound">Sound</string>
+    <string name="value_locked_touch_vibration">Vibration</string>
+</resources>

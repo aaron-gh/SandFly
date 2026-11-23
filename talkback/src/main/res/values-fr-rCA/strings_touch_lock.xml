@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Verrouiller ou déverrouiller le toucher</string>
+    <string name="touch_locked">Toucher verrouillé</string>
+    <string name="touch_unlocked">Toucher déverrouillé</string>
+    <string name="touch_lock_unavailable">Le verrouillage du toucher nécessite Android 13 ou version ultérieure</string>
+    <string name="title_pref_lock_touch_automatically">Verrouiller le toucher automatiquement</string>
+    <string name="value_lock_touch_never">Jamais</string>
+    <string name="value_lock_touch_screen_on">Quand l\'écran s\'allume</string>
+    <string name="value_lock_touch_lock_screen">Sur l\'écran de verrouillage</string>
+    <string name="value_lock_touch_proximity">Quand le capteur de proximité est couvert</string>
+    <string name="title_pref_locked_touch_feedback">Touchers pendant le verrouillage du toucher</string>
+    <string name="value_locked_touch_nothing">Rien</string>
+    <string name="value_locked_touch_sound">Son</string>
+    <string name="value_locked_touch_vibration">Vibration</string>
+</resources>

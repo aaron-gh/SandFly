@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Add character</string>
+    <string name="custom_braille_characters_text">Character or text</string>
+    <string name="custom_braille_characters_cells">Dots</string>
+    <string name="custom_braille_characters_table">Braille table</string>
+    <string name="custom_braille_characters_cells_help">Dot numbers of each cell, with cells separated by hyphens, such as 2356 or 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Enter dot numbers 1 to 8, at most <xliff:g id="number" example="20">%1$d</xliff:g> cells</string>
+    <string name="custom_braille_characters_invalid_text">Enter 1 to <xliff:g id="number" example="50">%1$d</xliff:g> characters</string>
+</resources>

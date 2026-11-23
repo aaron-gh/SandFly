@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Blochează sau deblochează atingerea</string>
+    <string name="touch_locked">Atingere blocată</string>
+    <string name="touch_unlocked">Atingere deblocată</string>
+    <string name="touch_lock_unavailable">Blocarea atingerii necesită Android 13 sau o versiune ulterioară</string>
+    <string name="title_pref_lock_touch_automatically">Blochează automat atingerea</string>
+    <string name="value_lock_touch_never">Niciodată</string>
+    <string name="value_lock_touch_screen_on">Când se aprinde ecranul</string>
+    <string name="value_lock_touch_lock_screen">Pe ecranul de blocare</string>
+    <string name="value_lock_touch_proximity">Cât timp senzorul de proximitate este acoperit</string>
+    <string name="title_pref_locked_touch_feedback">Atingeri cât timp atingerea este blocată</string>
+    <string name="value_locked_touch_nothing">Nimic</string>
+    <string name="value_locked_touch_sound">Sunet</string>
+    <string name="value_locked_touch_vibration">Vibrație</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Dodaj znak</string>
+    <string name="custom_braille_characters_text">Znak ali besedilo</string>
+    <string name="custom_braille_characters_cells">Pike</string>
+    <string name="custom_braille_characters_table">Braillova tabela</string>
+    <string name="custom_braille_characters_cells_help">Številke pik vsake celice, celice ločene z vezaji, na primer 2356 ali 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Vnesite številke pik od 1 do 8, največje število celic: <xliff:g id="number" example="20">%1$d</xliff:g></string>
+    <string name="custom_braille_characters_invalid_text">Vnesite od 1 do <xliff:g id="number" example="50">%1$d</xliff:g> znakov</string>
+</resources>

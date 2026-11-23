@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Bæta við staf</string>
+    <string name="custom_braille_characters_text">Stafur eða texti</string>
+    <string name="custom_braille_characters_cells">Punktar</string>
+    <string name="custom_braille_characters_table">Blindraleturstafla</string>
+    <string name="custom_braille_characters_cells_help">Punktanúmer hvers reits, með bandstriki á milli reita, t.d. 2356 eða 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Sláðu inn punktanúmer 1 til 8, að hámarki <xliff:g id="number" example="20">%1$d</xliff:g> reiti</string>
+    <string name="custom_braille_characters_invalid_text">Sláðu inn 1 til <xliff:g id="number" example="50">%1$d</xliff:g> stafi</string>
+</resources>

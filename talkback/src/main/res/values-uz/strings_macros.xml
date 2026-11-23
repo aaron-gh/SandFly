@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Fokus element ichida</string>
     <string name="macro_test_focus_inside_value">Fokus ichida: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokus ichida emas: %1$s</string>
+    <string name="macro_step_tap_position">Joylashuvga teginish</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> nuqtaga teginish</string>
+    <string name="macro_tap_x">X, chapdan piksel</string>
+    <string name="macro_tap_y">Y, tepadan piksel</string>
+    <string name="macro_invalid_position">X va Y ni 0 dan <xliff:g id="max" example="10000">%1$d</xliff:g> gacha kiriting</string>
+    <string name="macro_field_tooltip">Maslahat matni</string>
+    <string name="macro_step_touch_hold">Elementni bosib turish</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> elementini <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s bosib turish</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> elementini <xliff:g id="seconds" example="1">%2$s</xliff:g> s bosib turish. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Bosib turish soniyalari</string>
+    <string name="macro_slide">Koʻtarishdan oldin</string>
+    <string name="macro_slide_none">Joyida koʻtarish</string>
+    <string name="macro_slide_up">Tepaga siljitish</string>
+    <string name="macro_slide_down">Pastga siljitish</string>
+    <string name="macro_slide_left">Chapga siljitish</string>
+    <string name="macro_slide_right">Oʻngga siljitish</string>
+    <string name="macro_slide_distance">Masofa (dp)</string>
+    <string name="macro_app">Ilova</string>
+    <string name="macro_all_apps">Barcha ilovalar</string>
+    <string name="macro_add_app">Ilova qoʻshish</string>
+    <string name="macro_apps">Ilovalar</string>
+    <string name="macro_in_actions">Amallarda koʻrsatish</string>
+    <string name="macro_in_actions_only_when">Amallarda faqat quyidagi holatda koʻrsatish</string>
+    <string name="macro_not_in_app">Makro bajarilmadi. Faqat <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> ilovasida ishlaydi</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ta makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ta makro</item>
+    </plurals>
+    <string name="macro_record">Qadamlarni yozib olish</string>
+    <string name="macro_record_new">Makro yozib olish</string>
+    <string name="macro_recording_notification">Makro qadamlari yozib olinmoqda: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Yozib olinmoqda. Toʻxtatish uchun Makro yozib olish yoki Makroni toʻxtatish buyrugʻini bajaring yoki “Makro qadamlari yozib olinmoqda” bildirishnomasini oching.</string>
+    <string name="macro_recorded">Yozib olingan qadamlar</string>
+    <string name="macro_recorded_no_passwords">Parol maydonlariga yozilgan matn yozib olinmaydi.</string>
+    <string name="macro_recorded_too_many">Qoʻshilmadi. Makroda koʻpi bilan <xliff:g id="count" example="200">%1$d</xliff:g> ta qadam boʻladi.</string>
+    <string name="macro_recorded_name">Yozib olingan: <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Ekrandagi roʻyxat</string>
 </resources>

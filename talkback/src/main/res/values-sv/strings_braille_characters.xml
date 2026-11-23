@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Lägg till tecken</string>
+    <string name="custom_braille_characters_text">Tecken eller text</string>
+    <string name="custom_braille_characters_cells">Punkter</string>
+    <string name="custom_braille_characters_table">Punktskriftstabell</string>
+    <string name="custom_braille_characters_cells_help">Punktnumren för varje cell, med cellerna åtskilda av bindestreck, till exempel 2356 eller 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Ange punktnummer 1 till 8, högst <xliff:g id="number" example="20">%1$d</xliff:g> celler</string>
+    <string name="custom_braille_characters_invalid_text">Ange 1 till <xliff:g id="number" example="50">%1$d</xliff:g> tecken</string>
+</resources>

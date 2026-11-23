@@ -209,4 +209,45 @@
     <string name="macro_test_focus_inside">التركيز داخل عنصر</string>
     <string name="macro_test_focus_inside_value">التركيز داخل: %1$s</string>
     <string name="macro_test_not_focus_inside_value">التركيز ليس داخل: %1$s</string>
+    <string name="macro_step_tap_position">النقر في موضع</string>
+    <string name="macro_step_tap_position_value">النقر عند <xliff:g id="x" example="540">%1$d</xliff:g>، <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X، بالبكسل من اليسار</string>
+    <string name="macro_tap_y">Y، بالبكسل من الأعلى</string>
+    <string name="macro_invalid_position">أدخل X وY من 0 إلى <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">تلميح الأداة</string>
+    <string name="macro_step_touch_hold">النقر مع الاستمرار على عنصر</string>
+    <string name="macro_step_touch_hold_value">النقر مع الاستمرار على <xliff:g id="label" example="Voice message">%1$s</xliff:g> لمدة <xliff:g id="seconds" example="1.5">%2$s</xliff:g> ث</string>
+    <string name="macro_step_touch_hold_slide_value">النقر مع الاستمرار على <xliff:g id="label" example="Voice message">%1$s</xliff:g> لمدة <xliff:g id="seconds" example="1">%2$s</xliff:g> ث. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">مدة الاستمرار بالثواني</string>
+    <string name="macro_slide">قبل الرفع</string>
+    <string name="macro_slide_none">الرفع في المكان</string>
+    <string name="macro_slide_up">التحريك للأعلى</string>
+    <string name="macro_slide_down">التحريك للأسفل</string>
+    <string name="macro_slide_left">التحريك لليسار</string>
+    <string name="macro_slide_right">التحريك لليمين</string>
+    <string name="macro_slide_distance">المسافة بوحدة dp</string>
+    <string name="macro_app">التطبيق</string>
+    <string name="macro_all_apps">كل التطبيقات</string>
+    <string name="macro_add_app">إضافة تطبيق</string>
+    <string name="macro_apps">التطبيقات</string>
+    <string name="macro_in_actions">العرض في «الإجراءات»</string>
+    <string name="macro_in_actions_only_when">العرض في «الإجراءات» فقط عندما</string>
+    <string name="macro_not_in_app">لم يتم تشغيل الماكرو. يعمل فقط في <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="zero"><xliff:g id="count" example="3">%d</xliff:g> وحدة ماكرو</item>
+        <item quantity="one">ماكرو واحد (<xliff:g id="count" example="1">%d</xliff:g>)</item>
+        <item quantity="two">ماكروان (<xliff:g id="count" example="3">%d</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> وحدات ماكرو</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> وحدة ماكرو</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> وحدة ماكرو</item>
+    </plurals>
+    <string name="macro_record">تسجيل الخطوات</string>
+    <string name="macro_record_new">تسجيل ماكرو</string>
+    <string name="macro_recording_notification">جارٍ تسجيل خطوات الماكرو: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">جارٍ التسجيل. للإيقاف، شغِّل «تسجيل ماكرو» أو «إيقاف الماكرو»، أو افتح إشعار «جارٍ تسجيل خطوات الماكرو».</string>
+    <string name="macro_recorded">الخطوات المسجّلة</string>
+    <string name="macro_recorded_no_passwords">لا يتم تسجيل النص المكتوب في حقول كلمات المرور.</string>
+    <string name="macro_recorded_too_many">لم تتم الإضافة. يحتوي الماكرو على <xliff:g id="count" example="200">%1$d</xliff:g> خطوة كحد أقصى.</string>
+    <string name="macro_recorded_name">مسجَّل في <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">القائمة على الشاشة</string>
 </resources>

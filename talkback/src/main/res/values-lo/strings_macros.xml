@@ -194,4 +194,40 @@
     <string name="macro_test_focus_inside">ໂຟກັສຢູ່ໃນລາຍການ</string>
     <string name="macro_test_focus_inside_value">ໂຟກັສຢູ່ໃນ: %1$s</string>
     <string name="macro_test_not_focus_inside_value">ໂຟກັສບໍ່ຢູ່ໃນ: %1$s</string>
+    <string name="macro_step_tap_position">ແຕະທີ່ຕຳແໜ່ງ</string>
+    <string name="macro_step_tap_position_value">ແຕະທີ່ <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, ພິກເຊວຈາກຊ້າຍ</string>
+    <string name="macro_tap_y">Y, ພິກເຊວຈາກເທິງ</string>
+    <string name="macro_invalid_position">ປ້ອນ X ແລະ Y ຈາກ 0 ຫາ <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">ຄຳແນະນຳເຄື່ອງມື</string>
+    <string name="macro_step_touch_hold">ແຕະລາຍການຄ້າງໄວ້</string>
+    <string name="macro_step_touch_hold_value">ແຕະ <xliff:g id="label" example="Voice message">%1$s</xliff:g> ຄ້າງໄວ້ <xliff:g id="seconds" example="1.5">%2$s</xliff:g> ວິ</string>
+    <string name="macro_step_touch_hold_slide_value">ແຕະ <xliff:g id="label" example="Voice message">%1$s</xliff:g> ຄ້າງໄວ້ <xliff:g id="seconds" example="1">%2$s</xliff:g> ວິ. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">ວິນາທີທີ່ຄ້າງໄວ້</string>
+    <string name="macro_slide">ກ່ອນຍົກນິ້ວ</string>
+    <string name="macro_slide_none">ຍົກນິ້ວຢູ່ບ່ອນເດີມ</string>
+    <string name="macro_slide_up">ເລື່ອນຂຶ້ນ</string>
+    <string name="macro_slide_down">ເລື່ອນລົງ</string>
+    <string name="macro_slide_left">ເລື່ອນໄປທາງຊ້າຍ</string>
+    <string name="macro_slide_right">ເລື່ອນໄປທາງຂວາ</string>
+    <string name="macro_slide_distance">ໄລຍະທາງເປັນ dp</string>
+    <string name="macro_app">ແອັບ</string>
+    <string name="macro_all_apps">ທຸກແອັບ</string>
+    <string name="macro_add_app">ເພີ່ມແອັບ</string>
+    <string name="macro_apps">ແອັບ</string>
+    <string name="macro_in_actions">ສະແດງໃນ ການດຳເນີນການ</string>
+    <string name="macro_in_actions_only_when">ສະແດງໃນ ການດຳເນີນການ ສະເພາະເມື່ອ</string>
+    <string name="macro_not_in_app">ບໍ່ໄດ້ເອີ້ນໃຊ້ມາໂຄຣ. ເອີ້ນໃຊ້ໄດ້ສະເພາະໃນ <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ມາໂຄຣ</item>
+    </plurals>
+    <string name="macro_record">ບັນທຶກຂັ້ນຕອນ</string>
+    <string name="macro_record_new">ບັນທຶກມາໂຄຣ</string>
+    <string name="macro_recording_notification">ກຳລັງບັນທຶກຂັ້ນຕອນມາໂຄຣ: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">ກຳລັງບັນທຶກ. ເພື່ອຢຸດ, ເອີ້ນໃຊ້ ບັນທຶກມາໂຄຣ ຫຼື ຢຸດມາໂຄຣ, ຫຼື ເປີດການແຈ້ງເຕືອນ ກຳລັງບັນທຶກຂັ້ນຕອນມາໂຄຣ.</string>
+    <string name="macro_recorded">ຂັ້ນຕອນທີ່ບັນທຶກແລ້ວ</string>
+    <string name="macro_recorded_no_passwords">ຂໍ້ຄວາມທີ່ພິມໃນຊ່ອງລະຫັດຜ່ານບໍ່ຖືກບັນທຶກ.</string>
+    <string name="macro_recorded_too_many">ບໍ່ໄດ້ເພີ່ມ. ມາໂຄຣມີໄດ້ບໍ່ເກີນ <xliff:g id="count" example="200">%1$d</xliff:g> ຂັ້ນຕອນ.</string>
+    <string name="macro_recorded_name">ບັນທຶກເມື່ອ <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">ລາຍຊື່ໃນໜ້າຈໍ</string>
 </resources>

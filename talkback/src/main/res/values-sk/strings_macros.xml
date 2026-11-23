@@ -203,4 +203,43 @@
     <string name="macro_test_focus_inside">Zameranie je vnútri položky</string>
     <string name="macro_test_focus_inside_value">Zameranie vnútri: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Zameranie nie vnútri: %1$s</string>
+    <string name="macro_step_tap_position">Klepnúť na pozíciu</string>
+    <string name="macro_step_tap_position_value">Klepnúť na <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixely zľava</string>
+    <string name="macro_tap_y">Y, pixely zhora</string>
+    <string name="macro_invalid_position">Zadajte X a Y od 0 do <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Popisok</string>
+    <string name="macro_step_touch_hold">Pridržať položku</string>
+    <string name="macro_step_touch_hold_value">Pridržať <xliff:g id="label" example="Voice message">%1$s</xliff:g> na <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Pridržať <xliff:g id="label" example="Voice message">%1$s</xliff:g> na <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Sekundy pridržania</string>
+    <string name="macro_slide">Pred zdvihnutím prsta</string>
+    <string name="macro_slide_none">Zdvihnúť na mieste</string>
+    <string name="macro_slide_up">Posun nahor</string>
+    <string name="macro_slide_down">Posun nadol</string>
+    <string name="macro_slide_left">Posun doľava</string>
+    <string name="macro_slide_right">Posun doprava</string>
+    <string name="macro_slide_distance">Vzdialenosť v dp</string>
+    <string name="macro_app">Aplikácia</string>
+    <string name="macro_all_apps">Všetky aplikácie</string>
+    <string name="macro_add_app">Pridať aplikáciu</string>
+    <string name="macro_apps">Aplikácie</string>
+    <string name="macro_in_actions">Zobraziť v Akciách</string>
+    <string name="macro_in_actions_only_when">Zobraziť v Akciách, iba keď</string>
+    <string name="macro_not_in_app">Makro nebolo spustené. Spúšťa sa iba v aplikácii <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> makrá</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> makra</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makier</item>
+    </plurals>
+    <string name="macro_record">Nahrať kroky</string>
+    <string name="macro_record_new">Nahrať makro</string>
+    <string name="macro_recording_notification">Nahrávajú sa kroky makra: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Nahráva sa. Ak chcete nahrávanie zastaviť, spustite Nahrať makro alebo Zastaviť makro, alebo otvorte upozornenie Nahrávajú sa kroky makra.</string>
+    <string name="macro_recorded">Nahraté kroky</string>
+    <string name="macro_recorded_no_passwords">Text zadaný do polí pre heslo sa nenahráva.</string>
+    <string name="macro_recorded_too_many">Nepridané. Makro má najviac <xliff:g id="count" example="200">%1$d</xliff:g> krokov.</string>
+    <string name="macro_recorded_name">Nahraté <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Zoznam na obrazovke</string>
 </resources>

@@ -200,4 +200,42 @@
     <string name="macro_test_focus_inside">המיקוד בתוך פריט</string>
     <string name="macro_test_focus_inside_value">מיקוד בתוך: %1$s</string>
     <string name="macro_test_not_focus_inside_value">מיקוד לא בתוך: %1$s</string>
+    <string name="macro_step_tap_position">הקשה במיקום</string>
+    <string name="macro_step_tap_position_value">הקשה ב-<xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, פיקסלים משמאל</string>
+    <string name="macro_tap_y">Y, פיקסלים מלמעלה</string>
+    <string name="macro_invalid_position">יש להזין X ו-Y מ-0 עד <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">תיאור כלי</string>
+    <string name="macro_step_touch_hold">לחיצה ארוכה על פריט</string>
+    <string name="macro_step_touch_hold_value">לחיצה ארוכה על <xliff:g id="label" example="Voice message">%1$s</xliff:g> למשך <xliff:g id="seconds" example="1.5">%2$s</xliff:g> שניות</string>
+    <string name="macro_step_touch_hold_slide_value">לחיצה ארוכה על <xliff:g id="label" example="Voice message">%1$s</xliff:g> למשך <xliff:g id="seconds" example="1">%2$s</xliff:g> שניות. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">שניות להחזקה</string>
+    <string name="macro_slide">לפני ההרמה</string>
+    <string name="macro_slide_none">הרמה במקום</string>
+    <string name="macro_slide_up">החלקה למעלה</string>
+    <string name="macro_slide_down">החלקה למטה</string>
+    <string name="macro_slide_left">החלקה שמאלה</string>
+    <string name="macro_slide_right">החלקה ימינה</string>
+    <string name="macro_slide_distance">מרחק ב-dp</string>
+    <string name="macro_app">אפליקציה</string>
+    <string name="macro_all_apps">כל האפליקציות</string>
+    <string name="macro_add_app">הוספת אפליקציה</string>
+    <string name="macro_apps">אפליקציות</string>
+    <string name="macro_in_actions">הצגה בפעולות</string>
+    <string name="macro_in_actions_only_when">הצגה בפעולות רק כאשר</string>
+    <string name="macro_not_in_app">המאקרו לא הופעל. פועל רק ב-<xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> מאקרו</item>
+        <item quantity="two"><xliff:g id="count" example="3">%d</xliff:g> מאקרו</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> מאקרו</item>
+    </plurals>
+    <string name="macro_record">הקלטת שלבים</string>
+    <string name="macro_record_new">הקלטת מאקרו</string>
+    <string name="macro_recording_notification">הקלטת שלבי מאקרו: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">מתבצעת הקלטה. כדי לעצור, מפעילים את ״הקלטת מאקרו״ או את ״עצירת מאקרו״, או פותחים את ההתראה ״הקלטת שלבי מאקרו״.</string>
+    <string name="macro_recorded">שלבים שהוקלטו</string>
+    <string name="macro_recorded_no_passwords">טקסט שמוקלד בשדות סיסמה לא מוקלט.</string>
+    <string name="macro_recorded_too_many">לא נוסף. מאקרו מכיל לכל היותר <xliff:g id="count" example="200">%1$d</xliff:g> שלבים.</string>
+    <string name="macro_recorded_name">הוקלט <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">רשימה במסך</string>
 </resources>

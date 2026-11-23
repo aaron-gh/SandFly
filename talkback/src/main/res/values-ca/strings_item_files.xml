@@ -57,4 +57,9 @@
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ordre de veu personalitzada</item>
         <item quantity="other"><xliff:g id="count" example="1">%d</xliff:g> ordres de veu personalitzades</item>
     </plurals>
+    <plurals name="item_file_count_braille_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> caràcter braille personalitzat</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> caràcters braille personalitzats</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> caràcters braille personalitzats</item>
+    </plurals>
 </resources>

@@ -198,11 +198,11 @@
     <!-- Label of the clipboard entry with the screen tree. [CHAR LIMIT=40] -->
     <string name="script_tree_clip_label">屏幕树</string>
     <!-- Summary of the option that shows Copy screen tree in the SandFly menu. [CHAR LIMIT=NONE] -->
-    <string name="summary_copy_screen_tree_menu">把屏幕上的所有项目复制为 JSON，用于编写脚本</string>
+    <string name="summary_copy_screen_tree_menu">把屏幕上的所有项目复制为文本，用于编写脚本</string>
     <!-- Label of the clipboard entry with the focused item's details. [CHAR LIMIT=40] -->
     <string name="script_inspect_clip_label">项目详情</string>
     <!-- Summary of the option that shows Inspect focused item in the SandFly menu. [CHAR LIMIT=NONE] -->
-    <string name="summary_inspect_item_menu">朗读并复制你所在项目的详情，用于编写脚本</string>
+    <string name="summary_inspect_item_menu">显示你所在项目的详情，用于编写脚本和宏</string>
 
     <!-- In a script's keyboard shortcut, the key SandFly's shortcuts are pressed with. [CHAR LIMIT=40] -->
     <string name="script_keys_backtalk_modifier">SandFly 修饰键</string>

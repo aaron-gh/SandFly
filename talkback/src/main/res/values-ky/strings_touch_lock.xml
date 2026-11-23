@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Тийүүнү кулпулоо же кулпусун ачуу</string>
+    <string name="touch_locked">Тийүү кулпуланды</string>
+    <string name="touch_unlocked">Тийүүнүн кулпусу ачылды</string>
+    <string name="touch_lock_unavailable">Тийүүнү кулпулоо үчүн Android 13 же андан кийинкиси керек</string>
+    <string name="title_pref_lock_touch_automatically">Тийүүнү автоматтык түрдө кулпулоо</string>
+    <string name="value_lock_touch_never">Эч качан</string>
+    <string name="value_lock_touch_screen_on">Экран күйгөндө</string>
+    <string name="value_lock_touch_lock_screen">Кулпу экранында</string>
+    <string name="value_lock_touch_proximity">Жакындык сенсору жабылып турганда</string>
+    <string name="title_pref_locked_touch_feedback">Тийүү кулпуланганда тийүүлөр</string>
+    <string name="value_locked_touch_nothing">Эч нерсе</string>
+    <string name="value_locked_touch_sound">Үн</string>
+    <string name="value_locked_touch_vibration">Дирилдөө</string>
+</resources>

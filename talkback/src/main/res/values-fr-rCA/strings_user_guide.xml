@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_user_guide">Guide de l\'utilisateur</string>
+    <string name="user_guide_title">Guide de l\'utilisateur SandFly</string>
+    <string name="user_guide_contents">Sommaire</string>
+    <string name="user_guide_appendix">Annexe <xliff:g id="letter" example="A">%1$s</xliff:g> : <xliff:g id="title" example="Default gestures">%2$s</xliff:g></string>
+    <string name="user_guide_back_to_contents">Retour au sommaire</string>
+    <string name="user_guide_gesture">Geste</string>
+    <string name="user_guide_command">Commande</string>
+    <string name="user_guide_keyboard_shortcut">Raccourci clavier</string>
+    <string name="user_guide_sandfly_key">Touche SandFly : <xliff:g id="key" example="Insert">%1$s</xliff:g></string>
+    <string name="user_guide_unavailable">Impossible d\'ouvrir le guide de l\'utilisateur sur cet appareil.</string>
+</resources>

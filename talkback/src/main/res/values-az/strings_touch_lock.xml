@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Toxunuşu kilidləyin və ya kilidi açın</string>
+    <string name="touch_locked">Toxunuş kilidləndi</string>
+    <string name="touch_unlocked">Toxunuşun kilidi açıldı</string>
+    <string name="touch_lock_unavailable">Toxunuş kilidi Android 13 və ya daha yeni versiya tələb edir</string>
+    <string name="title_pref_lock_touch_automatically">Toxunuşu avtomatik kilidləyin</string>
+    <string name="value_lock_touch_never">Heç vaxt</string>
+    <string name="value_lock_touch_screen_on">Ekran yandıqda</string>
+    <string name="value_lock_touch_lock_screen">Kilid ekranında</string>
+    <string name="value_lock_touch_proximity">Yaxınlıq sensoru örtülü olduqda</string>
+    <string name="title_pref_locked_touch_feedback">Toxunuş kilidli olduqda toxunuşlar</string>
+    <string name="value_locked_touch_nothing">Heç nə</string>
+    <string name="value_locked_touch_sound">Səs</string>
+    <string name="value_locked_touch_vibration">Vibrasiya</string>
+</resources>

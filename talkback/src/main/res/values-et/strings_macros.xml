@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Fookus on üksuse sees</string>
     <string name="macro_test_focus_inside_value">Fookus sees: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fookus pole sees: %1$s</string>
+    <string name="macro_step_tap_position">Puuduta asukohta</string>
+    <string name="macro_step_tap_position_value">Puuduta kohta <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, piksleid vasakult</string>
+    <string name="macro_tap_y">Y, piksleid ülevalt</string>
+    <string name="macro_invalid_position">Sisestage X ja Y vahemikus 0 kuni <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Kohtspikker</string>
+    <string name="macro_step_touch_hold">Puuduta üksust pikalt</string>
+    <string name="macro_step_touch_hold_value">Puuduta üksust <xliff:g id="label" example="Voice message">%1$s</xliff:g> pikalt <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Puuduta üksust <xliff:g id="label" example="Voice message">%1$s</xliff:g> pikalt <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Hoidmise sekundid</string>
+    <string name="macro_slide">Enne tõstmist</string>
+    <string name="macro_slide_none">Tõsta paigal</string>
+    <string name="macro_slide_up">Libista üles</string>
+    <string name="macro_slide_down">Libista alla</string>
+    <string name="macro_slide_left">Libista vasakule</string>
+    <string name="macro_slide_right">Libista paremale</string>
+    <string name="macro_slide_distance">Kaugus dp-des</string>
+    <string name="macro_app">Rakendus</string>
+    <string name="macro_all_apps">Kõik rakendused</string>
+    <string name="macro_add_app">Lisa rakendus</string>
+    <string name="macro_apps">Rakendused</string>
+    <string name="macro_in_actions">Kuva menüüs Toimingud</string>
+    <string name="macro_in_actions_only_when">Kuva menüüs Toimingud ainult siis, kui</string>
+    <string name="macro_not_in_app">Makrot ei käivitatud. Töötab ainult rakenduses <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makrot</item>
+    </plurals>
+    <string name="macro_record">Salvesta sammud</string>
+    <string name="macro_record_new">Salvesta makro</string>
+    <string name="macro_recording_notification">Makro sammude salvestamine: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Salvestamine. Peatamiseks käivitage Salvesta makro või Peata makro või avage märguanne Makro sammude salvestamine.</string>
+    <string name="macro_recorded">Salvestatud sammud</string>
+    <string name="macro_recorded_no_passwords">Paroolivälja sisestatud teksti ei salvestata.</string>
+    <string name="macro_recorded_too_many">Ei lisatud. Makros on kõige rohkem <xliff:g id="count" example="200">%1$d</xliff:g> sammu.</string>
+    <string name="macro_recorded_name">Salvestatud <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Ekraanil olev loend</string>
 </resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">टच लॉक या अनलॉक करें</string>
+    <string name="touch_locked">टच लॉक है</string>
+    <string name="touch_unlocked">टच अनलॉक है</string>
+    <string name="touch_lock_unavailable">टच लॉक के लिए Android 13 या उसके बाद का वर्शन ज़रूरी है</string>
+    <string name="title_pref_lock_touch_automatically">टच अपने-आप लॉक करें</string>
+    <string name="value_lock_touch_never">कभी नहीं</string>
+    <string name="value_lock_touch_screen_on">स्क्रीन चालू होने पर</string>
+    <string name="value_lock_touch_lock_screen">लॉक स्क्रीन पर</string>
+    <string name="value_lock_touch_proximity">प्रॉक्सिमिटी सेंसर ढका होने पर</string>
+    <string name="title_pref_locked_touch_feedback">टच लॉक होने पर छूना</string>
+    <string name="value_locked_touch_nothing">कुछ नहीं</string>
+    <string name="value_locked_touch_sound">आवाज़</string>
+    <string name="value_locked_touch_vibration">वाइब्रेशन</string>
+</resources>

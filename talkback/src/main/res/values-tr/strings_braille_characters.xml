@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Karakter ekle</string>
+    <string name="custom_braille_characters_text">Karakter veya metin</string>
+    <string name="custom_braille_characters_cells">Noktalar</string>
+    <string name="custom_braille_characters_table">Braille tablosu</string>
+    <string name="custom_braille_characters_cells_help">Her hücrenin nokta numaraları; hücreler kısa çizgiyle ayrılır, örneğin 2356 veya 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">1 ile 8 arası nokta numaraları girin, en fazla <xliff:g id="number" example="20">%1$d</xliff:g> hücre</string>
+    <string name="custom_braille_characters_invalid_text">1 ile <xliff:g id="number" example="50">%1$d</xliff:g> arası karakter girin</string>
+</resources>

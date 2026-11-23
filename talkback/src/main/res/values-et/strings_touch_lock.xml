@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Lülita puutelukk sisse või välja</string>
+    <string name="touch_locked">Puutelukk sees</string>
+    <string name="touch_unlocked">Puutelukk väljas</string>
+    <string name="touch_lock_unavailable">Puutelukk nõuab Android 13 või uuemat</string>
+    <string name="title_pref_lock_touch_automatically">Lukusta puudutused automaatselt</string>
+    <string name="value_lock_touch_never">Mitte kunagi</string>
+    <string name="value_lock_touch_screen_on">Kui ekraan lülitub sisse</string>
+    <string name="value_lock_touch_lock_screen">Lukustuskuval</string>
+    <string name="value_lock_touch_proximity">Kui lähedusandur on kaetud</string>
+    <string name="title_pref_locked_touch_feedback">Puudutused puuteluku ajal</string>
+    <string name="value_locked_touch_nothing">Mitte midagi</string>
+    <string name="value_locked_touch_sound">Heli</string>
+    <string name="value_locked_touch_vibration">Vibreerimine</string>
+</resources>

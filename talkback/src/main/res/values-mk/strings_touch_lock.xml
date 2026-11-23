@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Заклучи или отклучи допир</string>
+    <string name="touch_locked">Допирот е заклучен</string>
+    <string name="touch_unlocked">Допирот е отклучен</string>
+    <string name="touch_lock_unavailable">Заклучувањето допир бара Android 13 или понов</string>
+    <string name="title_pref_lock_touch_automatically">Автоматски заклучувај допир</string>
+    <string name="value_lock_touch_never">Никогаш</string>
+    <string name="value_lock_touch_screen_on">Кога екранот ќе се вклучи</string>
+    <string name="value_lock_touch_lock_screen">На заклучениот екран</string>
+    <string name="value_lock_touch_proximity">Додека сензорот за близина е покриен</string>
+    <string name="title_pref_locked_touch_feedback">Допири додека допирот е заклучен</string>
+    <string name="value_locked_touch_nothing">Ништо</string>
+    <string name="value_locked_touch_sound">Звук</string>
+    <string name="value_locked_touch_vibration">Вибрација</string>
+</resources>

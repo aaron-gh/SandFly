@@ -194,4 +194,40 @@
     <string name="macro_test_focus_inside">ဖိုကပ်စ်သည် အရာတစ်ခုအတွင်း ရှိသည်</string>
     <string name="macro_test_focus_inside_value">ဖိုကပ်စ် အတွင်း- %1$s</string>
     <string name="macro_test_not_focus_inside_value">ဖိုကပ်စ် အတွင်း မဟုတ်- %1$s</string>
+    <string name="macro_step_tap_position">တည်နေရာတွင် တို့ရန်</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>၊ <xliff:g id="y" example="1200">%2$d</xliff:g> တွင် တို့ရန်</string>
+    <string name="macro_tap_x">X၊ ဘယ်ဘက်မှ ပစ်ဇယ်</string>
+    <string name="macro_tap_y">Y၊ အပေါ်မှ ပစ်ဇယ်</string>
+    <string name="macro_invalid_position">X နှင့် Y ကို 0 မှ <xliff:g id="max" example="10000">%1$d</xliff:g> အထိ ထည့်ပါ</string>
+    <string name="macro_field_tooltip">ကိရိယာအကြံပြုချက်</string>
+    <string name="macro_step_touch_hold">အရာကို ထိ၍ ဖိထားရန်</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> ကို <xliff:g id="seconds" example="1.5">%2$s</xliff:g> စက္ကန့် ထိ၍ ဖိထားရန်</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> ကို <xliff:g id="seconds" example="1">%2$s</xliff:g> စက္ကန့် ထိ၍ ဖိထားရန်။ <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">ဖိထားမည့် စက္ကန့်</string>
+    <string name="macro_slide">မကြွမီ</string>
+    <string name="macro_slide_none">နေရာတွင်ပင် ကြွရန်</string>
+    <string name="macro_slide_up">အပေါ်သို့ ဆွဲရန်</string>
+    <string name="macro_slide_down">အောက်သို့ ဆွဲရန်</string>
+    <string name="macro_slide_left">ဘယ်သို့ ဆွဲရန်</string>
+    <string name="macro_slide_right">ညာသို့ ဆွဲရန်</string>
+    <string name="macro_slide_distance">အကွာအဝေး (dp)</string>
+    <string name="macro_app">အက်ပ်</string>
+    <string name="macro_all_apps">အက်ပ်အားလုံး</string>
+    <string name="macro_add_app">အက်ပ် ထည့်ရန်</string>
+    <string name="macro_apps">အက်ပ်များ</string>
+    <string name="macro_in_actions">လုပ်ဆောင်ချက်များတွင် ပြရန်</string>
+    <string name="macro_in_actions_only_when">လုပ်ဆောင်ချက်များတွင် ဤအခါမှသာ ပြရန်</string>
+    <string name="macro_not_in_app">မက်ခရို မလုပ်ဆောင်ပါ။ <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> တွင်သာ လုပ်ဆောင်သည်</string>
+    <plurals name="macro_count">
+        <item quantity="other">မက်ခရို <xliff:g id="count" example="3">%d</xliff:g> ခု</item>
+    </plurals>
+    <string name="macro_record">အဆင့်များ မှတ်တမ်းတင်ရန်</string>
+    <string name="macro_record_new">မက်ခရို မှတ်တမ်းတင်ရန်</string>
+    <string name="macro_recording_notification">မက်ခရို အဆင့်များ မှတ်တမ်းတင်နေသည်- <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">မှတ်တမ်းတင်နေသည်။ ရပ်ရန် “မက်ခရို မှတ်တမ်းတင်ရန်” သို့မဟုတ် “မက်ခရို ရပ်ရန်” ကို လုပ်ဆောင်ပါ၊ သို့မဟုတ် “မက်ခရို အဆင့်များ မှတ်တမ်းတင်နေသည်” အကြောင်းကြားချက်ကို ဖွင့်ပါ။</string>
+    <string name="macro_recorded">မှတ်တမ်းတင်ထားသော အဆင့်များ</string>
+    <string name="macro_recorded_no_passwords">စကားဝှက် အကွက်များတွင် ရိုက်ထားသော စာသားကို မှတ်တမ်းမတင်ပါ။</string>
+    <string name="macro_recorded_too_many">မထည့်ရပါ။ မက်ခရိုတစ်ခုတွင် အဆင့် အများဆုံး <xliff:g id="count" example="200">%1$d</xliff:g> ဆင့် ရှိနိုင်သည်။</string>
+    <string name="macro_recorded_name"><xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g> တွင် မှတ်တမ်းတင်ထားသည်</string>
+    <string name="macro_list_on_screen">ဖန်သားပြင်ပေါ်ရှိ စာရင်း</string>
 </resources>

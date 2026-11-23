@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Ֆոկուսը տարրի ներսում է</string>
     <string name="macro_test_focus_inside_value">Ֆոկուսը ներսում՝ %1$s</string>
     <string name="macro_test_not_focus_inside_value">Ֆոկուսը ներսում չէ՝ %1$s</string>
+    <string name="macro_step_tap_position">Հպել դիրքում</string>
+    <string name="macro_step_tap_position_value">Հպել <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> դիրքում</string>
+    <string name="macro_tap_x">X, պիքսելներ ձախից</string>
+    <string name="macro_tap_y">Y, պիքսելներ վերևից</string>
+    <string name="macro_invalid_position">Մուտքագրեք X և Y 0-ից <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Հուշում</string>
+    <string name="macro_step_touch_hold">Հպել և պահել տարրը</string>
+    <string name="macro_step_touch_hold_value">Հպել և պահել <xliff:g id="label" example="Voice message">%1$s</xliff:g>-ը <xliff:g id="seconds" example="1.5">%2$s</xliff:g> վ</string>
+    <string name="macro_step_touch_hold_slide_value">Հպել և պահել <xliff:g id="label" example="Voice message">%1$s</xliff:g>-ը <xliff:g id="seconds" example="1">%2$s</xliff:g> վ։ <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Պահելու վայրկյաններ</string>
+    <string name="macro_slide">Մատը բարձրացնելուց առաջ</string>
+    <string name="macro_slide_none">Բարձրացնել տեղում</string>
+    <string name="macro_slide_up">Սահեցնել վերև</string>
+    <string name="macro_slide_down">Սահեցնել ներքև</string>
+    <string name="macro_slide_left">Սահեցնել ձախ</string>
+    <string name="macro_slide_right">Սահեցնել աջ</string>
+    <string name="macro_slide_distance">Հեռավորությունը dp-ով</string>
+    <string name="macro_app">Հավելված</string>
+    <string name="macro_all_apps">Բոլոր հավելվածները</string>
+    <string name="macro_add_app">Ավելացնել հավելված</string>
+    <string name="macro_apps">Հավելվածներ</string>
+    <string name="macro_in_actions">Ցուցադրել Գործողություններում</string>
+    <string name="macro_in_actions_only_when">Ցուցադրել Գործողություններում միայն երբ</string>
+    <string name="macro_not_in_app">Մակրոն չգործարկվեց։ Աշխատում է միայն <xliff:g id="app" example="WhatsApp">%1$s</xliff:g>-ում</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> մակրո</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> մակրո</item>
+    </plurals>
+    <string name="macro_record">Գրանցել քայլերը</string>
+    <string name="macro_record_new">Գրանցել մակրո</string>
+    <string name="macro_recording_notification">Մակրոյի քայլերի գրանցում՝ <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Գրանցում։ Դադարեցնելու համար գործարկեք «Գրանցել մակրո» կամ «Դադարեցնել մակրոն», կամ բացեք «Մակրոյի քայլերի գրանցում» ծանուցումը։</string>
+    <string name="macro_recorded">Գրանցված քայլեր</string>
+    <string name="macro_recorded_no_passwords">Գաղտնաբառի դաշտերում մուտքագրված տեքստը չի գրանցվում։</string>
+    <string name="macro_recorded_too_many">Չավելացվեց։ Մակրոն կարող է ունենալ առավելագույնը <xliff:g id="count" example="200">%1$d</xliff:g> քայլ։</string>
+    <string name="macro_recorded_name">Գրանցված՝ <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Էկրանի ցանկը</string>
 </resources>

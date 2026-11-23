@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Zaklepanje ali odklepanje dotika</string>
+    <string name="touch_locked">Dotik zaklenjen</string>
+    <string name="touch_unlocked">Dotik odklenjen</string>
+    <string name="touch_lock_unavailable">Zaklepanje dotika zahteva Android 13 ali novejši</string>
+    <string name="title_pref_lock_touch_automatically">Samodejno zakleni dotik</string>
+    <string name="value_lock_touch_never">Nikoli</string>
+    <string name="value_lock_touch_screen_on">Ko se zaslon vklopi</string>
+    <string name="value_lock_touch_lock_screen">Na zaklenjenem zaslonu</string>
+    <string name="value_lock_touch_proximity">Ko je senzor bližine pokrit</string>
+    <string name="title_pref_locked_touch_feedback">Dotiki, ko je dotik zaklenjen</string>
+    <string name="value_locked_touch_nothing">Nič</string>
+    <string name="value_locked_touch_sound">Zvok</string>
+    <string name="value_locked_touch_vibration">Vibriranje</string>
+</resources>

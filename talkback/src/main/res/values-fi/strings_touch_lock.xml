@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Lukitse kosketus tai avaa lukitus</string>
+    <string name="touch_locked">Kosketus lukittu</string>
+    <string name="touch_unlocked">Kosketuksen lukitus avattu</string>
+    <string name="touch_lock_unavailable">Kosketuksen lukitus vaatii Android 13:n tai uudemman</string>
+    <string name="title_pref_lock_touch_automatically">Lukitse kosketus automaattisesti</string>
+    <string name="value_lock_touch_never">Ei koskaan</string>
+    <string name="value_lock_touch_screen_on">Kun näyttö käynnistyy</string>
+    <string name="value_lock_touch_lock_screen">Lukitusnäytöllä</string>
+    <string name="value_lock_touch_proximity">Kun läheisyysanturi on peitetty</string>
+    <string name="title_pref_locked_touch_feedback">Kosketukset kosketuksen ollessa lukittu</string>
+    <string name="value_locked_touch_nothing">Ei mitään</string>
+    <string name="value_locked_touch_sound">Ääni</string>
+    <string name="value_locked_touch_vibration">Värinä</string>
+</resources>

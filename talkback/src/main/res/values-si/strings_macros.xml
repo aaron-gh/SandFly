@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">නාභිගත කිරීම අයිතමයක් තුළ ඇත</string>
     <string name="macro_test_focus_inside_value">නාභිගත කිරීම තුළ: %1$s</string>
     <string name="macro_test_not_focus_inside_value">නාභිගත කිරීම තුළ නැත: %1$s</string>
+    <string name="macro_step_tap_position">ස්ථානයේ තට්ටු කරන්න</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> හි තට්ටු කරන්න</string>
+    <string name="macro_tap_x">X, වමේ සිට පික්සල</string>
+    <string name="macro_tap_y">Y, ඉහළ සිට පික්සල</string>
+    <string name="macro_invalid_position">X සහ Y 0 සිට <xliff:g id="max" example="10000">%1$d</xliff:g> දක්වා ඇතුළත් කරන්න</string>
+    <string name="macro_field_tooltip">මෙවලම් ඉඟිය</string>
+    <string name="macro_step_touch_hold">අයිතමය ස්පර්ශ කර අල්ලාගෙන සිටින්න</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> තත්පර <xliff:g id="seconds" example="1.5">%2$s</xliff:g>ක් ස්පර්ශ කර අල්ලාගෙන සිටින්න</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> තත්පර <xliff:g id="seconds" example="1">%2$s</xliff:g>ක් ස්පර්ශ කර අල්ලාගෙන සිටින්න. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">අල්ලාගෙන සිටින තත්පර</string>
+    <string name="macro_slide">ඔසවන්නට පෙර</string>
+    <string name="macro_slide_none">එම තැනම ඔසවන්න</string>
+    <string name="macro_slide_up">ඉහළට ලිස්සන්න</string>
+    <string name="macro_slide_down">පහළට ලිස්සන්න</string>
+    <string name="macro_slide_left">වමට ලිස්සන්න</string>
+    <string name="macro_slide_right">දකුණට ලිස්සන්න</string>
+    <string name="macro_slide_distance">dp වලින් දුර</string>
+    <string name="macro_app">යෙදුම</string>
+    <string name="macro_all_apps">සියලු යෙදුම්</string>
+    <string name="macro_add_app">යෙදුම එක් කරන්න</string>
+    <string name="macro_apps">යෙදුම්</string>
+    <string name="macro_in_actions">ක්‍රියා තුළ පෙන්වන්න</string>
+    <string name="macro_in_actions_only_when">ක්‍රියා තුළ පෙන්වන්නේ මෙවිට පමණි</string>
+    <string name="macro_not_in_app">මැක්‍රෝව ධාවනය කළේ නැත. එය ධාවනය වන්නේ <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> තුළ පමණි</string>
+    <plurals name="macro_count">
+        <item quantity="one">මැක්‍රෝ <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">මැක්‍රෝ <xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <string name="macro_record">පියවර පටිගත කරන්න</string>
+    <string name="macro_record_new">මැක්‍රෝවක් පටිගත කරන්න</string>
+    <string name="macro_recording_notification">මැක්‍රෝ පියවර පටිගත කරමින්: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">පටිගත කරමින්. නැවැත්වීමට, “මැක්‍රෝවක් පටිගත කරන්න” හෝ “මැක්‍රෝව නවත්වන්න” ධාවනය කරන්න, නැතහොත් “මැක්‍රෝ පියවර පටිගත කරමින්” දැනුම්දීම විවෘත කරන්න.</string>
+    <string name="macro_recorded">පටිගත කළ පියවර</string>
+    <string name="macro_recorded_no_passwords">මුරපද ක්ෂේත්‍රවල ටයිප් කළ පෙළ පටිගත නොකෙරේ.</string>
+    <string name="macro_recorded_too_many">එක් කළේ නැත. මැක්‍රෝවකට තිබිය හැක්කේ උපරිම පියවර <xliff:g id="count" example="200">%1$d</xliff:g> කි.</string>
+    <string name="macro_recorded_name">පටිගත කිරීම <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">තිරයේ ඇති ලැයිස්තුව</string>
 </resources>

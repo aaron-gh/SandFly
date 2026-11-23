@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Fokusi është brenda një artikulli</string>
     <string name="macro_test_focus_inside_value">Fokusi brenda: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokusi jo brenda: %1$s</string>
+    <string name="macro_step_tap_position">Trokit në pozicion</string>
+    <string name="macro_step_tap_position_value">Trokit në <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pikselë nga e majta</string>
+    <string name="macro_tap_y">Y, pikselë nga lart</string>
+    <string name="macro_invalid_position">Fut X dhe Y nga 0 deri në <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Këshilla e veglës</string>
+    <string name="macro_step_touch_hold">Prek dhe mbaj artikullin</string>
+    <string name="macro_step_touch_hold_value">Prek dhe mbaj <xliff:g id="label" example="Voice message">%1$s</xliff:g> për <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Prek dhe mbaj <xliff:g id="label" example="Voice message">%1$s</xliff:g> për <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Sekonda mbajtjeje</string>
+    <string name="macro_slide">Para ngritjes</string>
+    <string name="macro_slide_none">Ngri në vend</string>
+    <string name="macro_slide_up">Rrëshqit lart</string>
+    <string name="macro_slide_down">Rrëshqit poshtë</string>
+    <string name="macro_slide_left">Rrëshqit majtas</string>
+    <string name="macro_slide_right">Rrëshqit djathtas</string>
+    <string name="macro_slide_distance">Distanca në dp</string>
+    <string name="macro_app">Aplikacioni</string>
+    <string name="macro_all_apps">Të gjitha aplikacionet</string>
+    <string name="macro_add_app">Shto aplikacion</string>
+    <string name="macro_apps">Aplikacionet</string>
+    <string name="macro_in_actions">Shfaq te Veprimet</string>
+    <string name="macro_in_actions_only_when">Shfaq te Veprimet vetëm kur</string>
+    <string name="macro_not_in_app">Makroja nuk u ekzekutua. Ekzekutohet vetëm në <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makro</item>
+    </plurals>
+    <string name="macro_record">Regjistro hapat</string>
+    <string name="macro_record_new">Regjistro një makro</string>
+    <string name="macro_recording_notification">Po regjistrohen hapat e makros: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Po regjistrohet. Për të ndaluar, ekzekuto Regjistro një makro ose Ndalo makron, ose hap njoftimin Po regjistrohen hapat e makros.</string>
+    <string name="macro_recorded">Hapat e regjistruar</string>
+    <string name="macro_recorded_no_passwords">Teksti i shkruar në fushat e fjalëkalimit nuk regjistrohet.</string>
+    <string name="macro_recorded_too_many">Nuk u shtua. Një makro ka të shumtën <xliff:g id="count" example="200">%1$d</xliff:g> hapa.</string>
+    <string name="macro_recorded_name">Regjistruar <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Lista në ekran</string>
 </resources>

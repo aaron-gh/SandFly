@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Karakter hozzáadása</string>
+    <string name="custom_braille_characters_text">Karakter vagy szöveg</string>
+    <string name="custom_braille_characters_cells">Pontok</string>
+    <string name="custom_braille_characters_table">Braille-táblázat</string>
+    <string name="custom_braille_characters_cells_help">Az egyes cellák pontszámai, a cellák kötőjellel elválasztva, például 2356 vagy 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Adjon meg 1–8 közötti pontszámokat, legfeljebb <xliff:g id="number" example="20">%1$d</xliff:g> cellát</string>
+    <string name="custom_braille_characters_invalid_text">Adjon meg 1–<xliff:g id="number" example="50">%1$d</xliff:g> karaktert</string>
+</resources>

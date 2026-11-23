@@ -203,4 +203,43 @@
     <string name="macro_test_focus_inside">Фокус унутры элемента</string>
     <string name="macro_test_focus_inside_value">Фокус унутры: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Фокус не ўнутры: %1$s</string>
+    <string name="macro_step_tap_position">Націснуць у пазіцыі</string>
+    <string name="macro_step_tap_position_value">Націснуць у <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, пікселі ад левага краю</string>
+    <string name="macro_tap_y">Y, пікселі ад верхняга краю</string>
+    <string name="macro_invalid_position">Увядзіце X і Y ад 0 да <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Падказка</string>
+    <string name="macro_step_touch_hold">Націснуць і ўтрымліваць элемент</string>
+    <string name="macro_step_touch_hold_value">Націснуць і ўтрымліваць <xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1.5">%2$s</xliff:g> с</string>
+    <string name="macro_step_touch_hold_slide_value">Націснуць і ўтрымліваць <xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1">%2$s</xliff:g> с. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Секунд утрымання</string>
+    <string name="macro_slide">Перад адрывам</string>
+    <string name="macro_slide_none">Адарваць на месцы</string>
+    <string name="macro_slide_up">Правесці ўверх</string>
+    <string name="macro_slide_down">Правесці ўніз</string>
+    <string name="macro_slide_left">Правесці ўлева</string>
+    <string name="macro_slide_right">Правесці ўправа</string>
+    <string name="macro_slide_distance">Адлегласць у dp</string>
+    <string name="macro_app">Праграма</string>
+    <string name="macro_all_apps">Усе праграмы</string>
+    <string name="macro_add_app">Дадаць праграму</string>
+    <string name="macro_apps">Праграмы</string>
+    <string name="macro_in_actions">Паказваць у дзеяннях</string>
+    <string name="macro_in_actions_only_when">Паказваць у дзеяннях толькі калі</string>
+    <string name="macro_not_in_app">Макрас не выкананы. Выконваецца толькі ў <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> макрас</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> макрасы</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> макрасаў</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> макраса</item>
+    </plurals>
+    <string name="macro_record">Запісаць крокі</string>
+    <string name="macro_record_new">Запісаць макрас</string>
+    <string name="macro_recording_notification">Запіс крокаў макраса: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Ідзе запіс. Каб спыніць, выканайце «Запісаць макрас» або «Спыніць макрас» ці адкрыйце апавяшчэнне «Запіс крокаў макраса».</string>
+    <string name="macro_recorded">Запісаныя крокі</string>
+    <string name="macro_recorded_no_passwords">Тэкст, уведзены ў палі пароляў, не запісваецца.</string>
+    <string name="macro_recorded_too_many">Не дададзена. Макрас мае не больш за <xliff:g id="count" example="200">%1$d</xliff:g> крокаў.</string>
+    <string name="macro_recorded_name">Запіс ад <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Спіс на экране</string>
 </resources>

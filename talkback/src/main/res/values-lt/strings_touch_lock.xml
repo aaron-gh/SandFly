@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Užrakinti arba atrakinti prisilietimus</string>
+    <string name="touch_locked">Prisilietimai užrakinti</string>
+    <string name="touch_unlocked">Prisilietimai atrakinti</string>
+    <string name="touch_lock_unavailable">Prisilietimų užraktui reikia Android 13 ar naujesnės versijos</string>
+    <string name="title_pref_lock_touch_automatically">Automatiškai užrakinti prisilietimus</string>
+    <string name="value_lock_touch_never">Niekada</string>
+    <string name="value_lock_touch_screen_on">Kai įsijungia ekranas</string>
+    <string name="value_lock_touch_lock_screen">Užrakinimo ekrane</string>
+    <string name="value_lock_touch_proximity">Kai uždengtas artumo jutiklis</string>
+    <string name="title_pref_locked_touch_feedback">Prisilietimai, kai jie užrakinti</string>
+    <string name="value_locked_touch_nothing">Nieko</string>
+    <string name="value_locked_touch_sound">Garsas</string>
+    <string name="value_locked_touch_vibration">Vibravimas</string>
+</resources>
