@@ -83,7 +83,7 @@ object UserGuide {
    * language, then English. Folders are named like resource folders, such as pt-rBR.
    */
   private fun languageFolders(context: Context, locale: Locale): List<String> {
-    val available = context.assets.list(ROOT).orEmpty().toSet()
+    val available = context.assets.list(ROOT).orEmpty().map { it.substringBefore('/') }.toSet()
     val languages = listOf(locale.language) + LEGACY[locale.language].orEmpty()
     val folders = mutableListOf<String>()
     for (language in languages) {

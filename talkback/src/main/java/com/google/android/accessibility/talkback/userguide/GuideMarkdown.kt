@@ -417,7 +417,12 @@ object GuideMarkdown {
     }
 
     private fun paragraphText(text: String, html: StringBuilder) {
-      if (text.startsWith("Note:") || text.startsWith("**Note:**")) {
+      if (
+        text.startsWith("Note:") ||
+          text.startsWith("**Note:**") ||
+          text.startsWith("Catatan:") ||
+          text.startsWith("**Catatan:**")
+      ) {
         html.append("<p class=\"note\">").append(Inline.render(text, byId)).append("</p>\n")
       } else {
         html.append("<p>").append(Inline.render(text, byId)).append("</p>\n")

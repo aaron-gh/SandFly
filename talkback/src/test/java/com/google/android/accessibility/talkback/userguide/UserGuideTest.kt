@@ -47,4 +47,22 @@ class UserGuideTest {
     // Gestures and shortcuts are listed with their commands.
     assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
   }
+
+  /** Under Indonesian locale, the guide loads docs/user-guide/id/ with Indonesian headings and lists. */
+  @Test
+  @Config(sdk = [35], qualifiers = "in-rID")
+  fun buildsTheIndonesianGuideWithItsGeneratedLists() {
+    val context = RuntimeEnvironment.getApplication() as Context
+    FormFactorUtils.initialize(context)
+    val html = UserGuide.build(context, KeyComboManager.create(context))
+    val diag =
+      "locale=${context.resources.configuration.locales[0]} assets=${context.assets.list("user-guide")?.toList()} head=${html.take(250)}"
+    assertTrue(diag, html.contains("<html lang=\"id\""))
+    assertTrue(diag, html.contains("<title>Panduan Pengguna SandFly</title>"))
+    assertTrue(diag, html.contains("<h2 id=\"getting-started\">1 "))
+    assertTrue(diag, html.contains("<h2 id=\"appendix-gestures\">Lampiran A:"))
+    assertTrue(diag, html.contains("<h3 id=\"appendix-gestures-sandfly\">A.1 "))
+    assertTrue(diag, html.contains("<p class=\"note\">Catatan:"))
+    assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
+  }
 }

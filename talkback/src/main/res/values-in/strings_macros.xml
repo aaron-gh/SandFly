@@ -194,4 +194,40 @@
     <string name="macro_test_focus_inside">Fokus ada di dalam item</string>
     <string name="macro_test_focus_inside_value">Fokus di dalam: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokus tidak di dalam: %1$s</string>
+    <string name="macro_step_tap_position">Ketuk di posisi</string>
+    <string name="macro_step_tap_position_value">Ketuk di <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, piksel dari kiri</string>
+    <string name="macro_tap_y">Y, piksel dari atas</string>
+    <string name="macro_invalid_position">Masukkan X dan Y dari 0 hingga <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Tooltip</string>
+    <string name="macro_step_touch_hold">Sentuh lama item</string>
+    <string name="macro_step_touch_hold_value">Sentuh lama <xliff:g id="label" example="Voice message">%1$s</xliff:g> selama <xliff:g id="seconds" example="1.5">%2$s</xliff:g> detik</string>
+    <string name="macro_step_touch_hold_slide_value">Sentuh lama <xliff:g id="label" example="Voice message">%1$s</xliff:g> selama <xliff:g id="seconds" example="1">%2$s</xliff:g> detik. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Detik untuk menahan</string>
+    <string name="macro_slide">Sebelum jari diangkat</string>
+    <string name="macro_slide_none">Angkat di tempat</string>
+    <string name="macro_slide_up">Geser ke atas</string>
+    <string name="macro_slide_down">Geser ke bawah</string>
+    <string name="macro_slide_left">Geser ke kiri</string>
+    <string name="macro_slide_right">Geser ke kanan</string>
+    <string name="macro_slide_distance">Jarak dalam dp</string>
+    <string name="macro_app">Aplikasi</string>
+    <string name="macro_all_apps">Semua aplikasi</string>
+    <string name="macro_add_app">Tambahkan aplikasi</string>
+    <string name="macro_apps">Aplikasi</string>
+    <string name="macro_in_actions">Tampilkan di Tindakan</string>
+    <string name="macro_in_actions_only_when">Tampilkan di Tindakan hanya jika</string>
+    <string name="macro_not_in_app">Makro tidak dijalankan. Hanya berjalan di <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makro</item>
+    </plurals>
+    <string name="macro_record">Rekam langkah</string>
+    <string name="macro_record_new">Rekam makro</string>
+    <string name="macro_recording_notification">Merekam langkah makro: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Merekam. Untuk berhenti, jalankan Rekam makro atau Hentikan makro, atau buka notifikasi Merekam langkah makro.</string>
+    <string name="macro_recorded">Langkah yang direkam</string>
+    <string name="macro_recorded_no_passwords">Teks yang diketik di kolom sandi tidak direkam.</string>
+    <string name="macro_recorded_too_many">Tidak ditambahkan. Sebuah makro maksimal memiliki <xliff:g id="count" example="200">%1$d</xliff:g> langkah.</string>
+    <string name="macro_recorded_name">Rekaman <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Daftar di layar</string>
 </resources>

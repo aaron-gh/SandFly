@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Tambahkan karakter</string>
+    <string name="custom_braille_characters_text">Karakter atau teks</string>
+    <string name="custom_braille_characters_cells">Titik</string>
+    <string name="custom_braille_characters_table">Tabel braille</string>
+    <string name="custom_braille_characters_cells_help">Nomor titik setiap sel, dengan sel dipisahkan oleh tanda hubung, seperti 2356 atau 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Masukkan nomor titik 1 hingga 8, maksimal <xliff:g id="number" example="20">%1$d</xliff:g> sel</string>
+    <string name="custom_braille_characters_invalid_text">Masukkan 1 hingga <xliff:g id="number" example="50">%1$d</xliff:g> karakter</string>
+</resources>
