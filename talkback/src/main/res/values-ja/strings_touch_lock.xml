@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">タッチをロックまたはロック解除</string>
+    <string name="touch_locked">タッチをロックしました</string>
+    <string name="touch_unlocked">タッチのロックを解除しました</string>
+    <string name="touch_lock_unavailable">タッチのロックには Android 13 以降が必要です</string>
+    <string name="title_pref_lock_touch_automatically">タッチを自動的にロック</string>
+    <string name="value_lock_touch_never">しない</string>
+    <string name="value_lock_touch_screen_on">画面がオンになったとき</string>
+    <string name="value_lock_touch_lock_screen">ロック画面</string>
+    <string name="value_lock_touch_proximity">近接センサーが覆われている間</string>
+    <string name="title_pref_locked_touch_feedback">タッチのロック中のタッチ</string>
+    <string name="value_locked_touch_nothing">なし</string>
+    <string name="value_locked_touch_sound">音</string>
+    <string name="value_locked_touch_vibration">バイブレーション</string>
+</resources>

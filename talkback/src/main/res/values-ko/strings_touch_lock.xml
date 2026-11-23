@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">터치 잠금 또는 잠금 해제</string>
+    <string name="touch_locked">터치 잠김</string>
+    <string name="touch_unlocked">터치 잠금 해제됨</string>
+    <string name="touch_lock_unavailable">터치 잠금에는 Android 13 이상이 필요합니다</string>
+    <string name="title_pref_lock_touch_automatically">자동으로 터치 잠금</string>
+    <string name="value_lock_touch_never">사용 안함</string>
+    <string name="value_lock_touch_screen_on">화면이 켜질 때</string>
+    <string name="value_lock_touch_lock_screen">잠금 화면에서</string>
+    <string name="value_lock_touch_proximity">근접 센서가 가려져 있는 동안</string>
+    <string name="title_pref_locked_touch_feedback">터치 잠금 중 터치</string>
+    <string name="value_locked_touch_nothing">없음</string>
+    <string name="value_locked_touch_sound">소리</string>
+    <string name="value_locked_touch_vibration">진동</string>
+</resources>

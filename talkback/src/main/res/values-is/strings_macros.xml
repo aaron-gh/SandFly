@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Fókus er inni í atriði</string>
     <string name="macro_test_focus_inside_value">Fókus inni í: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fókus ekki inni í: %1$s</string>
+    <string name="macro_step_tap_position">Ýta á staðsetningu</string>
+    <string name="macro_step_tap_position_value">Ýta á <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixlar frá vinstri</string>
+    <string name="macro_tap_y">Y, pixlar frá toppi</string>
+    <string name="macro_invalid_position">Sláðu inn X og Y frá 0 til <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Ábending</string>
+    <string name="macro_step_touch_hold">Halda inni á atriði</string>
+    <string name="macro_step_touch_hold_value">Halda inni á <xliff:g id="label" example="Voice message">%1$s</xliff:g> í <xliff:g id="seconds" example="1.5">%2$s</xliff:g> sek.</string>
+    <string name="macro_step_touch_hold_slide_value">Halda inni á <xliff:g id="label" example="Voice message">%1$s</xliff:g> í <xliff:g id="seconds" example="1">%2$s</xliff:g> sek. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Sekúndur sem haldið er inni</string>
+    <string name="macro_slide">Áður en fingri er lyft</string>
+    <string name="macro_slide_none">Lyfta á sama stað</string>
+    <string name="macro_slide_up">Renna upp</string>
+    <string name="macro_slide_down">Renna niður</string>
+    <string name="macro_slide_left">Renna til vinstri</string>
+    <string name="macro_slide_right">Renna til hægri</string>
+    <string name="macro_slide_distance">Fjarlægð í dp</string>
+    <string name="macro_app">Forrit</string>
+    <string name="macro_all_apps">Öll forrit</string>
+    <string name="macro_add_app">Bæta við forriti</string>
+    <string name="macro_apps">Forrit</string>
+    <string name="macro_in_actions">Sýna í Aðgerðum</string>
+    <string name="macro_in_actions_only_when">Sýna í Aðgerðum aðeins þegar</string>
+    <string name="macro_not_in_app">Fjölvi ekki keyrður. Keyrir aðeins í <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> fjölvi</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> fjölvar</item>
+    </plurals>
+    <string name="macro_record">Taka upp skref</string>
+    <string name="macro_record_new">Taka upp fjölva</string>
+    <string name="macro_recording_notification">Tekur upp skref fjölva: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Upptaka hafin. Til að stöðva skaltu keyra Taka upp fjölva eða Stöðva fjölva, eða opna tilkynninguna Tekur upp skref fjölva.</string>
+    <string name="macro_recorded">Upptekin skref</string>
+    <string name="macro_recorded_no_passwords">Texti sem er sleginn inn í aðgangsorðsreiti er ekki tekinn upp.</string>
+    <string name="macro_recorded_too_many">Ekki bætt við. Fjölvi getur haft að hámarki <xliff:g id="count" example="200">%1$d</xliff:g> skref.</string>
+    <string name="macro_recorded_name">Tekið upp <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Listi á skjánum</string>
 </resources>

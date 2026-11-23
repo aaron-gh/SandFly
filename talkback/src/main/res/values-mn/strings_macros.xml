@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Фокус зүйлийн дотор байна</string>
     <string name="macro_test_focus_inside_value">Фокус дотор: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Фокус дотор биш: %1$s</string>
+    <string name="macro_step_tap_position">Байрлал дээр товших</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> дээр товших</string>
+    <string name="macro_tap_x">X, зүүн талаас пикселээр</string>
+    <string name="macro_tap_y">Y, дээд талаас пикселээр</string>
+    <string name="macro_invalid_position">X ба Y-г 0-ээс <xliff:g id="max" example="10000">%1$d</xliff:g> хүртэл оруулна уу</string>
+    <string name="macro_field_tooltip">Зөвлөмж</string>
+    <string name="macro_step_touch_hold">Зүйлд хүрээд удаан дарах</string>
+    <string name="macro_step_touch_hold_value">Хүрээд удаан дарах: <xliff:g id="label" example="Voice message">%1$s</xliff:g>, <xliff:g id="seconds" example="1.5">%2$s</xliff:g> с</string>
+    <string name="macro_step_touch_hold_slide_value">Хүрээд удаан дарах: <xliff:g id="label" example="Voice message">%1$s</xliff:g>, <xliff:g id="seconds" example="1">%2$s</xliff:g> с. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Дарах секунд</string>
+    <string name="macro_slide">Өргөхөөс өмнө</string>
+    <string name="macro_slide_none">Байранд нь өргөх</string>
+    <string name="macro_slide_up">Дээш гулсуулах</string>
+    <string name="macro_slide_down">Доош гулсуулах</string>
+    <string name="macro_slide_left">Зүүн тийш гулсуулах</string>
+    <string name="macro_slide_right">Баруун тийш гулсуулах</string>
+    <string name="macro_slide_distance">Зай, dp-ээр</string>
+    <string name="macro_app">Апп</string>
+    <string name="macro_all_apps">Бүх апп</string>
+    <string name="macro_add_app">Апп нэмэх</string>
+    <string name="macro_apps">Аппууд</string>
+    <string name="macro_in_actions">Үйлдлүүдэд харуулах</string>
+    <string name="macro_in_actions_only_when">Зөвхөн дараах үед Үйлдлүүдэд харуулах</string>
+    <string name="macro_not_in_app">Макро ажиллаагүй. Зөвхөн дараах аппад ажиллана: <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> макро</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> макро</item>
+    </plurals>
+    <string name="macro_record">Алхмуудыг бичих</string>
+    <string name="macro_record_new">Макро бичих</string>
+    <string name="macro_recording_notification">Макроны алхмуудыг бичиж байна: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Бичиж байна. Зогсоохын тулд «Макро бичих» эсвэл «Макро зогсоох»-ыг ажиллуулах, эсвэл «Макроны алхмуудыг бичиж байна» мэдэгдлийг нээнэ үү.</string>
+    <string name="macro_recorded">Бичсэн алхмууд</string>
+    <string name="macro_recorded_no_passwords">Нууц үгийн талбарт оруулсан текст бичигдэхгүй.</string>
+    <string name="macro_recorded_too_many">Нэмэгдсэнгүй. Макро хамгийн ихдээ <xliff:g id="count" example="200">%1$d</xliff:g> алхамтай.</string>
+    <string name="macro_recorded_name">Бичлэг <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Дэлгэц дээрх жагсаалт</string>
 </resources>

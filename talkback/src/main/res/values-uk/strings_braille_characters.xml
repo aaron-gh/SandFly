@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Додати символ</string>
+    <string name="custom_braille_characters_text">Символ або текст</string>
+    <string name="custom_braille_characters_cells">Крапки</string>
+    <string name="custom_braille_characters_table">Таблиця Брайля</string>
+    <string name="custom_braille_characters_cells_help">Номери крапок кожної клітинки, клітинки розділяються дефісами, наприклад 2356 або 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Введіть номери крапок від 1 до 8, максимальна кількість клітинок: <xliff:g id="number" example="20">%1$d</xliff:g></string>
+    <string name="custom_braille_characters_invalid_text">Введіть від 1 до <xliff:g id="number" example="50">%1$d</xliff:g> символів</string>
+</resources>

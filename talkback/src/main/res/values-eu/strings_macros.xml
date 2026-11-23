@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Fokua elementu baten barruan dago</string>
     <string name="macro_test_focus_inside_value">Fokua barruan: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokua ez dago barruan: %1$s</string>
+    <string name="macro_step_tap_position">Sakatu posizio batean</string>
+    <string name="macro_step_tap_position_value">Sakatu hemen: <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixelak ezkerretik</string>
+    <string name="macro_tap_y">Y, pixelak goitik</string>
+    <string name="macro_invalid_position">Idatzi X eta Y, 0 eta <xliff:g id="max" example="10000">%1$d</xliff:g> artean</string>
+    <string name="macro_field_tooltip">Aholkua</string>
+    <string name="macro_step_touch_hold">Eduki sakatuta elementua</string>
+    <string name="macro_step_touch_hold_value">Eduki sakatuta <xliff:g id="label" example="Voice message">%1$s</xliff:g> (<xliff:g id="seconds" example="1.5">%2$s</xliff:g> s)</string>
+    <string name="macro_step_touch_hold_slide_value">Eduki sakatuta <xliff:g id="label" example="Voice message">%1$s</xliff:g> (<xliff:g id="seconds" example="1">%2$s</xliff:g> s). <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Sakatuta edukitzeko segundoak</string>
+    <string name="macro_slide">Altxatu aurretik</string>
+    <string name="macro_slide_none">Altxatu bertan</string>
+    <string name="macro_slide_up">Irristatu gora</string>
+    <string name="macro_slide_down">Irristatu behera</string>
+    <string name="macro_slide_left">Irristatu ezkerrera</string>
+    <string name="macro_slide_right">Irristatu eskuinera</string>
+    <string name="macro_slide_distance">Distantzia (dp)</string>
+    <string name="macro_app">Aplikazioa</string>
+    <string name="macro_all_apps">Aplikazio guztiak</string>
+    <string name="macro_add_app">Gehitu aplikazioa</string>
+    <string name="macro_apps">Aplikazioak</string>
+    <string name="macro_in_actions">Erakutsi Ekintzak atalean</string>
+    <string name="macro_in_actions_only_when">Erakutsi Ekintzak atalean kasu honetan soilik</string>
+    <string name="macro_not_in_app">Ez da exekutatu makroa. <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> aplikazioan soilik exekutatzen da</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makro</item>
+    </plurals>
+    <string name="macro_record">Grabatu urratsak</string>
+    <string name="macro_record_new">Grabatu makro bat</string>
+    <string name="macro_recording_notification">Makroaren urratsak grabatzen: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Grabatzen. Gelditzeko, exekutatu «Grabatu makro bat» edo «Gelditu makroa», edo ireki «Makroaren urratsak grabatzen» jakinarazpena.</string>
+    <string name="macro_recorded">Grabatutako urratsak</string>
+    <string name="macro_recorded_no_passwords">Pasahitz-eremuetan idatzitako testua ez da grabatzen.</string>
+    <string name="macro_recorded_too_many">Ez da gehitu. Makro batek gehienez <xliff:g id="count" example="200">%1$d</xliff:g> urrats izan ditzake.</string>
+    <string name="macro_recorded_name">Grabazioa: <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Pantailako zerrenda</string>
 </resources>

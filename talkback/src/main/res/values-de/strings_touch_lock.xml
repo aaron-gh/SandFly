@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Berührung sperren oder entsperren</string>
+    <string name="touch_locked">Berührung gesperrt</string>
+    <string name="touch_unlocked">Berührung entsperrt</string>
+    <string name="touch_lock_unavailable">Berührungssperre erfordert Android 13 oder höher</string>
+    <string name="title_pref_lock_touch_automatically">Berührung automatisch sperren</string>
+    <string name="value_lock_touch_never">Nie</string>
+    <string name="value_lock_touch_screen_on">Wenn der Bildschirm eingeschaltet wird</string>
+    <string name="value_lock_touch_lock_screen">Auf dem Sperrbildschirm</string>
+    <string name="value_lock_touch_proximity">Solange der Näherungssensor abgedeckt ist</string>
+    <string name="title_pref_locked_touch_feedback">Berührungen bei gesperrter Berührung</string>
+    <string name="value_locked_touch_nothing">Nichts</string>
+    <string name="value_locked_touch_sound">Ton</string>
+    <string name="value_locked_touch_vibration">Vibration</string>
+</resources>

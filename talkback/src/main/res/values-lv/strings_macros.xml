@@ -188,4 +188,42 @@
     <string name="macro_test_focus_inside">Fokuss ir vienumā</string>
     <string name="macro_test_focus_inside_value">Fokuss vienumā: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokuss nav vienumā: %1$s</string>
+    <string name="macro_step_tap_position">Pieskarties pozīcijā</string>
+    <string name="macro_step_tap_position_value">Pieskarties pozīcijā <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pikseļi no kreisās malas</string>
+    <string name="macro_tap_y">Y, pikseļi no augšas</string>
+    <string name="macro_invalid_position">Ievadiet X un Y no 0 līdz <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Rīka padoms</string>
+    <string name="macro_step_touch_hold">Pieskarties vienumam un turēt</string>
+    <string name="macro_step_touch_hold_value">Pieskarties vienumam <xliff:g id="label" example="Voice message">%1$s</xliff:g> un turēt <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Pieskarties vienumam <xliff:g id="label" example="Voice message">%1$s</xliff:g> un turēt <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Turēšanas ilgums sekundēs</string>
+    <string name="macro_slide">Pirms pacelšanas</string>
+    <string name="macro_slide_none">Pacelt uz vietas</string>
+    <string name="macro_slide_up">Pavilkt augšup</string>
+    <string name="macro_slide_down">Pavilkt lejup</string>
+    <string name="macro_slide_left">Pavilkt pa kreisi</string>
+    <string name="macro_slide_right">Pavilkt pa labi</string>
+    <string name="macro_slide_distance">Attālums dp vienībās</string>
+    <string name="macro_app">Lietotne</string>
+    <string name="macro_all_apps">Visas lietotnes</string>
+    <string name="macro_add_app">Pievienot lietotni</string>
+    <string name="macro_apps">Lietotnes</string>
+    <string name="macro_in_actions">Rādīt sadaļā Darbības</string>
+    <string name="macro_in_actions_only_when">Rādīt sadaļā Darbības tikai tad, ja</string>
+    <string name="macro_not_in_app">Makro netika palaists. Darbojas tikai lietotnē <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="zero"><xliff:g id="count" example="3">%d</xliff:g> makro</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makro</item>
+    </plurals>
+    <string name="macro_record">Ierakstīt soļus</string>
+    <string name="macro_record_new">Ierakstīt makro</string>
+    <string name="macro_recording_notification">Tiek ierakstīti makro soļi: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Notiek ierakstīšana. Lai apturētu, palaidiet “Ierakstīt makro” vai “Apturēt makro” vai atveriet paziņojumu “Tiek ierakstīti makro soļi”.</string>
+    <string name="macro_recorded">Ierakstītie soļi</string>
+    <string name="macro_recorded_no_passwords">Paroles laukos ievadītais teksts netiek ierakstīts.</string>
+    <string name="macro_recorded_too_many">Nav pievienots. Maksimālais makro soļu skaits: <xliff:g id="count" example="200">%1$d</xliff:g>.</string>
+    <string name="macro_recorded_name">Ierakstīts <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Saraksts ekrānā</string>
 </resources>

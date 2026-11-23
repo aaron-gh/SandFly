@@ -194,4 +194,40 @@
     <string name="macro_test_focus_inside">포커스가 다른 항목 안에 있음</string>
     <string name="macro_test_focus_inside_value">포커스 상위 항목: %1$s</string>
     <string name="macro_test_not_focus_inside_value">포커스 상위 항목 아님: %1$s</string>
+    <string name="macro_step_tap_position">위치 탭</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> 위치 탭</string>
+    <string name="macro_tap_x">X, 왼쪽에서부터 픽셀</string>
+    <string name="macro_tap_y">Y, 위쪽에서부터 픽셀</string>
+    <string name="macro_invalid_position">X와 Y를 0~<xliff:g id="max" example="10000">%1$d</xliff:g> 범위로 입력하세요</string>
+    <string name="macro_field_tooltip">툴팁</string>
+    <string name="macro_step_touch_hold">항목 길게 터치</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>을(를) <xliff:g id="seconds" example="1.5">%2$s</xliff:g>초 동안 길게 터치</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>을(를) <xliff:g id="seconds" example="1">%2$s</xliff:g>초 동안 길게 터치. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g>dp</string>
+    <string name="macro_hold_seconds">누르고 있을 시간(초)</string>
+    <string name="macro_slide">손가락을 떼기 전</string>
+    <string name="macro_slide_none">그 자리에서 떼기</string>
+    <string name="macro_slide_up">위로 밀기</string>
+    <string name="macro_slide_down">아래로 밀기</string>
+    <string name="macro_slide_left">왼쪽으로 밀기</string>
+    <string name="macro_slide_right">오른쪽으로 밀기</string>
+    <string name="macro_slide_distance">거리(dp)</string>
+    <string name="macro_app">앱</string>
+    <string name="macro_all_apps">모든 앱</string>
+    <string name="macro_add_app">앱 추가</string>
+    <string name="macro_apps">앱</string>
+    <string name="macro_in_actions">작업에 표시</string>
+    <string name="macro_in_actions_only_when">다음 조건일 때만 작업에 표시</string>
+    <string name="macro_not_in_app">매크로가 실행되지 않았습니다. <xliff:g id="app" example="WhatsApp">%1$s</xliff:g>에서만 실행됩니다</string>
+    <plurals name="macro_count">
+        <item quantity="other">매크로 <xliff:g id="count" example="3">%d</xliff:g>개</item>
+    </plurals>
+    <string name="macro_record">단계 기록</string>
+    <string name="macro_record_new">매크로 기록</string>
+    <string name="macro_recording_notification">매크로 단계 기록 중: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">기록 중입니다. 중지하려면 매크로 기록 또는 매크로 중지를 실행하거나 매크로 단계 기록 중 알림을 여세요.</string>
+    <string name="macro_recorded">기록된 단계</string>
+    <string name="macro_recorded_no_passwords">비밀번호 필드에 입력한 텍스트는 기록되지 않습니다.</string>
+    <string name="macro_recorded_too_many">추가되지 않았습니다. 매크로는 최대 <xliff:g id="count" example="200">%1$d</xliff:g>단계까지 가능합니다.</string>
+    <string name="macro_recorded_name">기록됨 <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">화면의 목록</string>
 </resources>

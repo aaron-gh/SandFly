@@ -22,9 +22,9 @@
     <string name="item_file_problem_limit"><xliff:g id="kind" example="Symbol dictionary">%1$s</xliff:g>: najviše <xliff:g id="number" example="500">%2$d</xliff:g> stavki</string>
     <string name="item_file_problem_more">Izostavljeno je još stavki</string>
     <plurals name="item_file_count_macros">
-        <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> makro</item>
-        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> makra</item>
-        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makra</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> makroa</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> makroa</item>
     </plurals>
     <plurals name="item_file_count_gesture_profiles">
         <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> profil pokreta</item>
@@ -65,5 +65,10 @@
         <item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> prilagođena glasovna naredba</item>
         <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> prilagođene glasovne naredbe</item>
         <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> prilagođenih glasovnih naredbi</item>
+    </plurals>
+    <plurals name="item_file_count_braille_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> prilagođeni brajični znak</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> prilagođena brajična znaka</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> prilagođenih brajičnih znakova</item>
     </plurals>
 </resources>

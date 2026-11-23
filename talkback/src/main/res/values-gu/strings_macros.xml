@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">ફોકસ કોઈ આઇટમની અંદર છે</string>
     <string name="macro_test_focus_inside_value">ફોકસ અંદર: %1$s</string>
     <string name="macro_test_not_focus_inside_value">ફોકસ અંદર નથી: %1$s</string>
+    <string name="macro_step_tap_position">સ્થાન પર ટૅપ કરો</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> પર ટૅપ કરો</string>
+    <string name="macro_tap_x">X, ડાબેથી પિક્સેલ</string>
+    <string name="macro_tap_y">Y, ઉપરથી પિક્સેલ</string>
+    <string name="macro_invalid_position">0 થી <xliff:g id="max" example="10000">%1$d</xliff:g> સુધીના X અને Y દાખલ કરો</string>
+    <string name="macro_field_tooltip">ટૂલટિપ</string>
+    <string name="macro_step_touch_hold">આઇટમને ટચ કરીને દબાવી રાખો</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>ને <xliff:g id="seconds" example="1.5">%2$s</xliff:g> સે. માટે ટચ કરીને દબાવી રાખો</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>ને <xliff:g id="seconds" example="1">%2$s</xliff:g> સે. માટે ટચ કરીને દબાવી રાખો. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">દબાવી રાખવાની સેકન્ડ</string>
+    <string name="macro_slide">આંગળી ઉઠાવતા પહેલાં</string>
+    <string name="macro_slide_none">જગ્યા પર જ ઉઠાવો</string>
+    <string name="macro_slide_up">ઉપર સરકાવો</string>
+    <string name="macro_slide_down">નીચે સરકાવો</string>
+    <string name="macro_slide_left">ડાબે સરકાવો</string>
+    <string name="macro_slide_right">જમણે સરકાવો</string>
+    <string name="macro_slide_distance">dpમાં અંતર</string>
+    <string name="macro_app">ઍપ</string>
+    <string name="macro_all_apps">બધી ઍપ</string>
+    <string name="macro_add_app">ઍપ ઉમેરો</string>
+    <string name="macro_apps">ઍપ</string>
+    <string name="macro_in_actions">ક્રિયાઓમાં બતાવો</string>
+    <string name="macro_in_actions_only_when">ક્રિયાઓમાં ફક્ત ત્યારે બતાવો જ્યારે</string>
+    <string name="macro_not_in_app">મેક્રો ચાલ્યો નથી. ફક્ત <xliff:g id="app" example="WhatsApp">%1$s</xliff:g>માં ચાલે છે</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> મેક્રો</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> મેક્રો</item>
+    </plurals>
+    <string name="macro_record">પગલાં રેકોર્ડ કરો</string>
+    <string name="macro_record_new">મેક્રો રેકોર્ડ કરો</string>
+    <string name="macro_recording_notification">મેક્રોનાં પગલાં રેકોર્ડ થઈ રહ્યાં છે: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">રેકોર્ડ થઈ રહ્યું છે. રોકવા માટે, મેક્રો રેકોર્ડ કરો અથવા મેક્રો રોકો ચલાવો, અથવા “મેક્રોનાં પગલાં રેકોર્ડ થઈ રહ્યાં છે” નોટિફિકેશન ખોલો.</string>
+    <string name="macro_recorded">રેકોર્ડ કરેલાં પગલાં</string>
+    <string name="macro_recorded_no_passwords">પાસવર્ડ ફીલ્ડમાં લખેલું ટેક્સ્ટ રેકોર્ડ થતું નથી.</string>
+    <string name="macro_recorded_too_many">ઉમેર્યું નથી. મેક્રોમાં વધુમાં વધુ <xliff:g id="count" example="200">%1$d</xliff:g> પગલાં હોય છે.</string>
+    <string name="macro_recorded_name"><xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g> રેકોર્ડ કરેલો</string>
+    <string name="macro_list_on_screen">સ્ક્રીન પરની સૂચિ</string>
 </resources>

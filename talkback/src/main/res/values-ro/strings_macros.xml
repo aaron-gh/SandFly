@@ -200,4 +200,42 @@
     <string name="macro_test_focus_inside">Focalizarea este în interiorul unui element</string>
     <string name="macro_test_focus_inside_value">Focalizarea este în: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Focalizarea nu este în: %1$s</string>
+    <string name="macro_step_tap_position">Atinge la poziție</string>
+    <string name="macro_step_tap_position_value">Atinge la <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixeli de la stânga</string>
+    <string name="macro_tap_y">Y, pixeli de sus</string>
+    <string name="macro_invalid_position">Introdu X și Y de la 0 la <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Sfat explicativ</string>
+    <string name="macro_step_touch_hold">Atinge lung elementul</string>
+    <string name="macro_step_touch_hold_value">Atinge lung <xliff:g id="label" example="Voice message">%1$s</xliff:g> timp de <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Atinge lung <xliff:g id="label" example="Voice message">%1$s</xliff:g> timp de <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Secunde de menținere</string>
+    <string name="macro_slide">Înainte de ridicare</string>
+    <string name="macro_slide_none">Ridică pe loc</string>
+    <string name="macro_slide_up">Glisează în sus</string>
+    <string name="macro_slide_down">Glisează în jos</string>
+    <string name="macro_slide_left">Glisează spre stânga</string>
+    <string name="macro_slide_right">Glisează spre dreapta</string>
+    <string name="macro_slide_distance">Distanța în dp</string>
+    <string name="macro_app">Aplicație</string>
+    <string name="macro_all_apps">Toate aplicațiile</string>
+    <string name="macro_add_app">Adaugă o aplicație</string>
+    <string name="macro_apps">Aplicații</string>
+    <string name="macro_in_actions">Afișează în Acțiuni</string>
+    <string name="macro_in_actions_only_when">Afișează în Acțiuni numai când</string>
+    <string name="macro_not_in_app">Macrocomanda nu a rulat. Rulează numai în <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macrocomandă</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> macrocomenzi</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de macrocomenzi</item>
+    </plurals>
+    <string name="macro_record">Înregistrează pașii</string>
+    <string name="macro_record_new">Înregistrează o macrocomandă</string>
+    <string name="macro_recording_notification">Se înregistrează pașii macrocomenzii: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Se înregistrează. Pentru a opri, rulează Înregistrează o macrocomandă sau Oprește macrocomanda ori deschide notificarea Se înregistrează pașii macrocomenzii.</string>
+    <string name="macro_recorded">Pași înregistrați</string>
+    <string name="macro_recorded_no_passwords">Textul introdus în câmpurile de parolă nu este înregistrat.</string>
+    <string name="macro_recorded_too_many">Nu s-a adăugat. O macrocomandă are cel mult <xliff:g id="count" example="200">%1$d</xliff:g> de pași.</string>
+    <string name="macro_recorded_name">Înregistrată <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Lista de pe ecran</string>
 </resources>

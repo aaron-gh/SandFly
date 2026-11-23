@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Zablokuj lub odblokuj dotyk</string>
+    <string name="touch_locked">Dotyk zablokowany</string>
+    <string name="touch_unlocked">Dotyk odblokowany</string>
+    <string name="touch_lock_unavailable">Blokada dotyku wymaga Androida 13 lub nowszego</string>
+    <string name="title_pref_lock_touch_automatically">Automatycznie blokuj dotyk</string>
+    <string name="value_lock_touch_never">Nigdy</string>
+    <string name="value_lock_touch_screen_on">Po włączeniu ekranu</string>
+    <string name="value_lock_touch_lock_screen">Na ekranie blokady</string>
+    <string name="value_lock_touch_proximity">Gdy czujnik zbliżeniowy jest zakryty</string>
+    <string name="title_pref_locked_touch_feedback">Dotknięcia przy zablokowanym dotyku</string>
+    <string name="value_locked_touch_nothing">Nic</string>
+    <string name="value_locked_touch_sound">Dźwięk</string>
+    <string name="value_locked_touch_vibration">Wibracja</string>
+</resources>

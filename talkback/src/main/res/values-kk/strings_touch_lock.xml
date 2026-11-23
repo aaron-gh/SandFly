@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Түртуді құлыптау не құлыптан шығару</string>
+    <string name="touch_locked">Түрту құлыпталды</string>
+    <string name="touch_unlocked">Түрту құлыптан шықты</string>
+    <string name="touch_lock_unavailable">Түртуді құлыптау үшін Android 13 немесе одан кейінгі нұсқа қажет</string>
+    <string name="title_pref_lock_touch_automatically">Түртуді автоматты құлыптау</string>
+    <string name="value_lock_touch_never">Ешқашан</string>
+    <string name="value_lock_touch_screen_on">Экран қосылғанда</string>
+    <string name="value_lock_touch_lock_screen">Құлыптау экранында</string>
+    <string name="value_lock_touch_proximity">Жақындық сенсоры жабық тұрғанда</string>
+    <string name="title_pref_locked_touch_feedback">Түрту құлыпталғандағы түртулер</string>
+    <string name="value_locked_touch_nothing">Ештеңе</string>
+    <string name="value_locked_touch_sound">Дыбыс</string>
+    <string name="value_locked_touch_vibration">Діріл</string>
+</resources>

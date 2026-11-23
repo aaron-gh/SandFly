@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Додај знак</string>
+    <string name="custom_braille_characters_text">Знак или текст</string>
+    <string name="custom_braille_characters_cells">Точки</string>
+    <string name="custom_braille_characters_table">Брајова табела</string>
+    <string name="custom_braille_characters_cells_help">Броеви на точките на секоја ќелија, со ќелиите одделени со цртички, на пример 2356 или 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Внесете броеви на точки од 1 до 8, најмногу <xliff:g id="number" example="20">%1$d</xliff:g> ќелии</string>
+    <string name="custom_braille_characters_invalid_text">Внесете од 1 до <xliff:g id="number" example="50">%1$d</xliff:g> знаци</string>
+</resources>

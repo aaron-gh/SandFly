@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">حرف شامل کریں</string>
+    <string name="custom_braille_characters_text">حرف یا ٹیکسٹ</string>
+    <string name="custom_braille_characters_cells">ڈاٹس</string>
+    <string name="custom_braille_characters_table">بریل ٹیبل</string>
+    <string name="custom_braille_characters_cells_help">ہر سیل کے ڈاٹ نمبر، سیلز کو ہائفن سے الگ کر کے، جیسے 2356 یا 456-2356۔</string>
+    <string name="custom_braille_characters_invalid_cells">1 سے 8 تک ڈاٹ نمبر درج کریں، زیادہ سے زیادہ <xliff:g id="number" example="20">%1$d</xliff:g> سیلز</string>
+    <string name="custom_braille_characters_invalid_text">1 سے <xliff:g id="number" example="50">%1$d</xliff:g> حروف درج کریں</string>
+</resources>

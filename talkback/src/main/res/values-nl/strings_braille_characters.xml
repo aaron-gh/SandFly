@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Teken toevoegen</string>
+    <string name="custom_braille_characters_text">Teken of tekst</string>
+    <string name="custom_braille_characters_cells">Punten</string>
+    <string name="custom_braille_characters_table">Brailletabel</string>
+    <string name="custom_braille_characters_cells_help">Puntnummers van elke cel, met cellen gescheiden door koppeltekens, zoals 2356 of 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Voer puntnummers 1 tot 8 in, maximaal <xliff:g id="number" example="20">%1$d</xliff:g> cellen</string>
+    <string name="custom_braille_characters_invalid_text">Voer 1 tot <xliff:g id="number" example="50">%1$d</xliff:g> tekens in</string>
+</resources>

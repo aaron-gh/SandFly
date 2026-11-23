@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">I-lock o i-unlock ang pagpindot</string>
+    <string name="touch_locked">Naka-lock ang pagpindot</string>
+    <string name="touch_unlocked">Naka-unlock ang pagpindot</string>
+    <string name="touch_lock_unavailable">Kailangan ng Android 13 o mas bago para i-lock ang pagpindot</string>
+    <string name="title_pref_lock_touch_automatically">Awtomatikong i-lock ang pagpindot</string>
+    <string name="value_lock_touch_never">Hindi kailanman</string>
+    <string name="value_lock_touch_screen_on">Kapag nag-on ang screen</string>
+    <string name="value_lock_touch_lock_screen">Sa lock screen</string>
+    <string name="value_lock_touch_proximity">Habang natatakpan ang proximity sensor</string>
+    <string name="title_pref_locked_touch_feedback">Mga pagpindot habang naka-lock ang pagpindot</string>
+    <string name="value_locked_touch_nothing">Wala</string>
+    <string name="value_locked_touch_sound">Tunog</string>
+    <string name="value_locked_touch_vibration">Vibration</string>
+</resources>

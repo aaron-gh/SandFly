@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">تمرکز درون یک مورد است</string>
     <string name="macro_test_focus_inside_value">تمرکز درون: %1$s</string>
     <string name="macro_test_not_focus_inside_value">تمرکز درون نیست: %1$s</string>
+    <string name="macro_step_tap_position">تک‌ضرب در موقعیت</string>
+    <string name="macro_step_tap_position_value">تک‌ضرب در <xliff:g id="x" example="540">%1$d</xliff:g>، <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X، پیکسل از چپ</string>
+    <string name="macro_tap_y">Y، پیکسل از بالا</string>
+    <string name="macro_invalid_position">X و Y را از ۰ تا <xliff:g id="max" example="10000">%1$d</xliff:g> وارد کنید</string>
+    <string name="macro_field_tooltip">راهنمای ابزار</string>
+    <string name="macro_step_touch_hold">لمس کردن و نگه داشتن مورد</string>
+    <string name="macro_step_touch_hold_value">لمس کردن و نگه داشتن <xliff:g id="label" example="Voice message">%1$s</xliff:g> به مدت <xliff:g id="seconds" example="1.5">%2$s</xliff:g> ثانیه</string>
+    <string name="macro_step_touch_hold_slide_value">لمس کردن و نگه داشتن <xliff:g id="label" example="Voice message">%1$s</xliff:g> به مدت <xliff:g id="seconds" example="1">%2$s</xliff:g> ثانیه. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">ثانیه‌های نگه داشتن</string>
+    <string name="macro_slide">پیش از برداشتن انگشت</string>
+    <string name="macro_slide_none">برداشتن در همان جا</string>
+    <string name="macro_slide_up">کشیدن به‌بالا</string>
+    <string name="macro_slide_down">کشیدن به‌پایین</string>
+    <string name="macro_slide_left">کشیدن به‌چپ</string>
+    <string name="macro_slide_right">کشیدن به‌راست</string>
+    <string name="macro_slide_distance">فاصله به dp</string>
+    <string name="macro_app">برنامه</string>
+    <string name="macro_all_apps">همه برنامه‌ها</string>
+    <string name="macro_add_app">افزودن برنامه</string>
+    <string name="macro_apps">برنامه‌ها</string>
+    <string name="macro_in_actions">نمایش در کنش‌ها</string>
+    <string name="macro_in_actions_only_when">نمایش در کنش‌ها فقط وقتی</string>
+    <string name="macro_not_in_app">ماکرو اجرا نشد. فقط در <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> اجرا می‌شود</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ماکرو</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> ماکرو</item>
+    </plurals>
+    <string name="macro_record">ضبط گام‌ها</string>
+    <string name="macro_record_new">ضبط ماکرو</string>
+    <string name="macro_recording_notification">در حال ضبط گام‌های ماکرو: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">در حال ضبط. برای توقف، «ضبط ماکرو» یا «توقف ماکرو» را اجرا کنید، یا اعلان «در حال ضبط گام‌های ماکرو» را باز کنید.</string>
+    <string name="macro_recorded">گام‌های ضبط‌شده</string>
+    <string name="macro_recorded_no_passwords">متن تایپ‌شده در فیلدهای گذرواژه ضبط نمی‌شود.</string>
+    <string name="macro_recorded_too_many">افزوده نشد. هر ماکرو حداکثر <xliff:g id="count" example="200">%1$d</xliff:g> گام دارد.</string>
+    <string name="macro_recorded_name">ضبط‌شده در <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">فهرست روی صفحه</string>
 </resources>

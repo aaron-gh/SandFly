@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Закључај или откључај додир</string>
+    <string name="touch_locked">Додир је закључан</string>
+    <string name="touch_unlocked">Додир је откључан</string>
+    <string name="touch_lock_unavailable">За закључавање додира потребан је Android 13 или новији</string>
+    <string name="title_pref_lock_touch_automatically">Аутоматски закључај додир</string>
+    <string name="value_lock_touch_never">Никада</string>
+    <string name="value_lock_touch_screen_on">Када се екран укључи</string>
+    <string name="value_lock_touch_lock_screen">На закључаном екрану</string>
+    <string name="value_lock_touch_proximity">Док је сензор близине прекривен</string>
+    <string name="title_pref_locked_touch_feedback">Додири док је додир закључан</string>
+    <string name="value_locked_touch_nothing">Ништа</string>
+    <string name="value_locked_touch_sound">Звук</string>
+    <string name="value_locked_touch_vibration">Вибрација</string>
+</resources>

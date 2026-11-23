@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Pievienot rakstzīmi</string>
+    <string name="custom_braille_characters_text">Rakstzīme vai teksts</string>
+    <string name="custom_braille_characters_cells">Punkti</string>
+    <string name="custom_braille_characters_table">Braila tabula</string>
+    <string name="custom_braille_characters_cells_help">Katras šūnas punktu numuri, šūnas atdalot ar defisi, piemēram, 2356 vai 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Ievadiet punktu numurus no 1 līdz 8; maksimālais šūnu skaits: <xliff:g id="number" example="20">%1$d</xliff:g></string>
+    <string name="custom_braille_characters_invalid_text">Ievadiet no 1 līdz <xliff:g id="number" example="50">%1$d</xliff:g> rakstzīmēm</string>
+</resources>

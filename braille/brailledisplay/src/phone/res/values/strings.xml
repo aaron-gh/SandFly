@@ -48,12 +48,10 @@
   <!-- Announcement for user use keystroke to switch uncontracted mode. [CHAR_LIMIT=50] -->
   <string name="bd_switch_to_uncontracted">uncontracted</string>
 
-  <!-- TODO: update to translatable string once approved by UX -->
-  <!-- Announcement for user turn on braille on screen overlay. [CHAR_LIMIT=50] -->
-  <string name="bd_turn_braille_on_screen_overlay_on" translatable="false">Turn on braille on screen overlay</string>
-  <!-- TODO: update to translatable string once approved by UX -->
-  <!-- Announcement for user turn off braille on screen overlay. [CHAR_LIMIT=50] -->
-  <string name="bd_turn_braille_on_screen_overlay_off" translatable="false">Turn off braille on screen overlay</string>
+  <!-- Spoken when a braille display command turns Show braille output on screen on. [CHAR_LIMIT=50] -->
+  <string name="bd_turn_braille_on_screen_overlay_on">Braille output on screen on</string>
+  <!-- Spoken when a braille display command turns Show braille output on screen off. [CHAR_LIMIT=50] -->
+  <string name="bd_turn_braille_on_screen_overlay_off">Braille output on screen off</string>
 
   <!-- Announcement for user turn on braille display. [CHAR_LIMIT=50] -->
   <string name="bd_turn_braille_display_on">Turn on braille display</string>

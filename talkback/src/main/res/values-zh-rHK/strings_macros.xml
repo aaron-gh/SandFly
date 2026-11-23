@@ -194,4 +194,40 @@
     <string name="macro_test_focus_inside">焦點在項目內</string>
     <string name="macro_test_focus_inside_value">焦點在內：%1$s</string>
     <string name="macro_test_not_focus_inside_value">焦點不在內：%1$s</string>
+    <string name="macro_step_tap_position">輕按位置</string>
+    <string name="macro_step_tap_position_value">輕按 <xliff:g id="x" example="540">%1$d</xliff:g>，<xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X，距離左邊的像素</string>
+    <string name="macro_tap_y">Y，距離頂部的像素</string>
+    <string name="macro_invalid_position">請輸入 0 至 <xliff:g id="max" example="10000">%1$d</xliff:g> 之間的 X 和 Y</string>
+    <string name="macro_field_tooltip">工具提示</string>
+    <string name="macro_step_touch_hold">按住項目</string>
+    <string name="macro_step_touch_hold_value">按住<xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1.5">%2$s</xliff:g> 秒</string>
+    <string name="macro_step_touch_hold_slide_value">按住<xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1">%2$s</xliff:g> 秒。<xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">按住秒數</string>
+    <string name="macro_slide">放開前</string>
+    <string name="macro_slide_none">在原位放開</string>
+    <string name="macro_slide_up">向上滑動</string>
+    <string name="macro_slide_down">向下滑動</string>
+    <string name="macro_slide_left">向左滑動</string>
+    <string name="macro_slide_right">向右滑動</string>
+    <string name="macro_slide_distance">距離 (dp)</string>
+    <string name="macro_app">應用程式</string>
+    <string name="macro_all_apps">所有應用程式</string>
+    <string name="macro_add_app">新增應用程式</string>
+    <string name="macro_apps">應用程式</string>
+    <string name="macro_in_actions">在「操作」中顯示</string>
+    <string name="macro_in_actions_only_when">只在以下情況於「操作」中顯示</string>
+    <string name="macro_not_in_app">未執行巨集。只在<xliff:g id="app" example="WhatsApp">%1$s</xliff:g>中執行</string>
+    <plurals name="macro_count">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> 個巨集</item>
+    </plurals>
+    <string name="macro_record">錄製步驟</string>
+    <string name="macro_record_new">錄製巨集</string>
+    <string name="macro_recording_notification">正在錄製巨集步驟：<xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">正在錄製。如要停止，請執行「錄製巨集」或「停止巨集」，或開啟「正在錄製巨集步驟」通知。</string>
+    <string name="macro_recorded">已錄製的步驟</string>
+    <string name="macro_recorded_no_passwords">不會錄製在密碼欄位中輸入的文字。</string>
+    <string name="macro_recorded_too_many">未新增。巨集最多只可有 <xliff:g id="count" example="200">%1$d</xliff:g> 個步驟。</string>
+    <string name="macro_recorded_name">錄製於 <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">畫面上的清單</string>
 </resources>

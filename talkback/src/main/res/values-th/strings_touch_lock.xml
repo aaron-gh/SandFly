@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">ล็อกหรือปลดล็อกการสัมผัส</string>
+    <string name="touch_locked">ล็อกการสัมผัสแล้ว</string>
+    <string name="touch_unlocked">ปลดล็อกการสัมผัสแล้ว</string>
+    <string name="touch_lock_unavailable">การล็อกการสัมผัสต้องใช้ Android 13 ขึ้นไป</string>
+    <string name="title_pref_lock_touch_automatically">ล็อกการสัมผัสโดยอัตโนมัติ</string>
+    <string name="value_lock_touch_never">ไม่เลย</string>
+    <string name="value_lock_touch_screen_on">เมื่อหน้าจอเปิดขึ้น</string>
+    <string name="value_lock_touch_lock_screen">ในหน้าจอล็อก</string>
+    <string name="value_lock_touch_proximity">ขณะที่มีสิ่งปิดพร็อกซิมิตีเซ็นเซอร์</string>
+    <string name="title_pref_locked_touch_feedback">การสัมผัสขณะล็อกการสัมผัส</string>
+    <string name="value_locked_touch_nothing">ไม่มี</string>
+    <string name="value_locked_touch_sound">เสียง</string>
+    <string name="value_locked_touch_vibration">การสั่น</string>
+</resources>

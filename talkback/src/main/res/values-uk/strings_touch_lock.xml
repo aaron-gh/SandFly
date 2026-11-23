@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Заблокувати або розблокувати дотик</string>
+    <string name="touch_locked">Дотик заблоковано</string>
+    <string name="touch_unlocked">Дотик розблоковано</string>
+    <string name="touch_lock_unavailable">Блокування дотику потребує Android 13 або новішої версії</string>
+    <string name="title_pref_lock_touch_automatically">Автоматично блокувати дотик</string>
+    <string name="value_lock_touch_never">Ніколи</string>
+    <string name="value_lock_touch_screen_on">Коли вмикається екран</string>
+    <string name="value_lock_touch_lock_screen">На заблокованому екрані</string>
+    <string name="value_lock_touch_proximity">Коли датчик наближення закрито</string>
+    <string name="title_pref_locked_touch_feedback">Дотики, коли дотик заблоковано</string>
+    <string name="value_locked_touch_nothing">Нічого</string>
+    <string name="value_locked_touch_sound">Звук</string>
+    <string name="value_locked_touch_vibration">Вібрація</string>
+</resources>

@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Фокус элемент ішінде</string>
     <string name="macro_test_focus_inside_value">Фокус ішінде: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Фокус ішінде емес: %1$s</string>
+    <string name="macro_step_tap_position">Орынды түрту</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> орнын түрту</string>
+    <string name="macro_tap_x">X, сол жақтан пиксель</string>
+    <string name="macro_tap_y">Y, жоғарыдан пиксель</string>
+    <string name="macro_invalid_position">X пен Y мәнін 0 мен <xliff:g id="max" example="10000">%1$d</xliff:g> аралығында енгізіңіз</string>
+    <string name="macro_field_tooltip">Қалқыма кеңес</string>
+    <string name="macro_step_touch_hold">Элементті түртіп, ұстап тұру</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> элементін <xliff:g id="seconds" example="1.5">%2$s</xliff:g> с түртіп, ұстап тұру</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> элементін <xliff:g id="seconds" example="1">%2$s</xliff:g> с түртіп, ұстап тұру. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Ұстап тұру секундтары</string>
+    <string name="macro_slide">Саусақты көтерер алдында</string>
+    <string name="macro_slide_none">Орнында көтеру</string>
+    <string name="macro_slide_up">Жоғары жылжыту</string>
+    <string name="macro_slide_down">Төмен жылжыту</string>
+    <string name="macro_slide_left">Солға жылжыту</string>
+    <string name="macro_slide_right">Оңға жылжыту</string>
+    <string name="macro_slide_distance">Қашықтық, dp</string>
+    <string name="macro_app">Қолданба</string>
+    <string name="macro_all_apps">Барлық қолданба</string>
+    <string name="macro_add_app">Қолданба қосу</string>
+    <string name="macro_apps">Қолданбалар</string>
+    <string name="macro_in_actions">Әрекеттерде көрсету</string>
+    <string name="macro_in_actions_only_when">Әрекеттерде тек мына жағдайда көрсету</string>
+    <string name="macro_not_in_app">Макрос орындалмады. Тек <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> қолданбасында орындалады</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> макрос</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> макрос</item>
+    </plurals>
+    <string name="macro_record">Қадамдарды жазу</string>
+    <string name="macro_record_new">Макрос жазу</string>
+    <string name="macro_recording_notification">Макрос қадамдары жазылуда: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Жазылуда. Тоқтату үшін «Макрос жазу» не «Макросты тоқтату» командасын орындаңыз немесе «Макрос қадамдары жазылуда» хабарландыруын ашыңыз.</string>
+    <string name="macro_recorded">Жазылған қадамдар</string>
+    <string name="macro_recorded_no_passwords">Құпия сөз өрістеріне терілген мәтін жазылмайды.</string>
+    <string name="macro_recorded_too_many">Қосылмады. Макроста ең көбі <xliff:g id="count" example="200">%1$d</xliff:g> қадам болады.</string>
+    <string name="macro_recorded_name">Жазылған: <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Экрандағы тізім</string>
 </resources>

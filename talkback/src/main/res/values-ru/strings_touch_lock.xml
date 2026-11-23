@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Заблокировать или разблокировать касания</string>
+    <string name="touch_locked">Касания заблокированы</string>
+    <string name="touch_unlocked">Касания разблокированы</string>
+    <string name="touch_lock_unavailable">Для блокировки касаний требуется Android 13 или более поздней версии</string>
+    <string name="title_pref_lock_touch_automatically">Автоматически блокировать касания</string>
+    <string name="value_lock_touch_never">Никогда</string>
+    <string name="value_lock_touch_screen_on">При включении экрана</string>
+    <string name="value_lock_touch_lock_screen">На экране блокировки</string>
+    <string name="value_lock_touch_proximity">Пока закрыт датчик приближения</string>
+    <string name="title_pref_locked_touch_feedback">Касания при блокировке касаний</string>
+    <string name="value_locked_touch_nothing">Ничего</string>
+    <string name="value_locked_touch_sound">Звук</string>
+    <string name="value_locked_touch_vibration">Вибрация</string>
+</resources>

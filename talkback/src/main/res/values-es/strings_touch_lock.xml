@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Bloquear o desbloquear la pantalla táctil</string>
+    <string name="touch_locked">Pantalla táctil bloqueada</string>
+    <string name="touch_unlocked">Pantalla táctil desbloqueada</string>
+    <string name="touch_lock_unavailable">El bloqueo táctil requiere Android 13 o posterior</string>
+    <string name="title_pref_lock_touch_automatically">Bloquear la pantalla táctil automáticamente</string>
+    <string name="value_lock_touch_never">Nunca</string>
+    <string name="value_lock_touch_screen_on">Al encenderse la pantalla</string>
+    <string name="value_lock_touch_lock_screen">En la pantalla de bloqueo</string>
+    <string name="value_lock_touch_proximity">Mientras el sensor de proximidad está tapado</string>
+    <string name="title_pref_locked_touch_feedback">Toques con la pantalla táctil bloqueada</string>
+    <string name="value_locked_touch_nothing">Nada</string>
+    <string name="value_locked_touch_sound">Sonido</string>
+    <string name="value_locked_touch_vibration">Vibración</string>
+</resources>

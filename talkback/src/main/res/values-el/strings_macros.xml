@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Η εστίαση είναι μέσα σε στοιχείο</string>
     <string name="macro_test_focus_inside_value">Εστίαση μέσα σε: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Εστίαση όχι μέσα σε: %1$s</string>
+    <string name="macro_step_tap_position">Πάτημα σε θέση</string>
+    <string name="macro_step_tap_position_value">Πάτημα στο <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixel από τα αριστερά</string>
+    <string name="macro_tap_y">Y, pixel από επάνω</string>
+    <string name="macro_invalid_position">Εισαγάγετε X και Y από 0 έως <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Επεξήγηση εργαλείου</string>
+    <string name="macro_step_touch_hold">Παρατεταμένο άγγιγμα στοιχείου</string>
+    <string name="macro_step_touch_hold_value">Παρατεταμένο άγγιγμα στο <xliff:g id="label" example="Voice message">%1$s</xliff:g> για <xliff:g id="seconds" example="1.5">%2$s</xliff:g> δ</string>
+    <string name="macro_step_touch_hold_slide_value">Παρατεταμένο άγγιγμα στο <xliff:g id="label" example="Voice message">%1$s</xliff:g> για <xliff:g id="seconds" example="1">%2$s</xliff:g> δ. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Δευτερόλεπτα κρατήματος</string>
+    <string name="macro_slide">Πριν από την ανύψωση</string>
+    <string name="macro_slide_none">Ανύψωση στη θέση</string>
+    <string name="macro_slide_up">Ολίσθηση προς τα επάνω</string>
+    <string name="macro_slide_down">Ολίσθηση προς τα κάτω</string>
+    <string name="macro_slide_left">Ολίσθηση προς τα αριστερά</string>
+    <string name="macro_slide_right">Ολίσθηση προς τα δεξιά</string>
+    <string name="macro_slide_distance">Απόσταση σε dp</string>
+    <string name="macro_app">Εφαρμογή</string>
+    <string name="macro_all_apps">Όλες οι εφαρμογές</string>
+    <string name="macro_add_app">Προσθήκη εφαρμογής</string>
+    <string name="macro_apps">Εφαρμογές</string>
+    <string name="macro_in_actions">Εμφάνιση στις Ενέργειες</string>
+    <string name="macro_in_actions_only_when">Εμφάνιση στις Ενέργειες μόνο όταν</string>
+    <string name="macro_not_in_app">Η μακροεντολή δεν εκτελέστηκε. Εκτελείται μόνο στο <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> μακροεντολή</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> μακροεντολές</item>
+    </plurals>
+    <string name="macro_record">Εγγραφή βημάτων</string>
+    <string name="macro_record_new">Εγγραφή μακροεντολής</string>
+    <string name="macro_recording_notification">Εγγραφή βημάτων μακροεντολής: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Εγγραφή σε εξέλιξη. Για διακοπή, εκτελέστε «Εγγραφή μακροεντολής» ή «Διακοπή μακροεντολής» ή ανοίξτε την ειδοποίηση «Εγγραφή βημάτων μακροεντολής».</string>
+    <string name="macro_recorded">Βήματα που εγγράφηκαν</string>
+    <string name="macro_recorded_no_passwords">Το κείμενο που πληκτρολογείται σε πεδία κωδικού πρόσβασης δεν εγγράφεται.</string>
+    <string name="macro_recorded_too_many">Δεν προστέθηκε. Μια μακροεντολή έχει έως <xliff:g id="count" example="200">%1$d</xliff:g> βήματα.</string>
+    <string name="macro_recorded_name">Εγγραφή <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Λίστα στην οθόνη</string>
 </resources>

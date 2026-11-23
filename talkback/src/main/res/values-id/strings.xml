@@ -351,7 +351,7 @@
   <string name="shortcut_title_menu_control">Menu dan kontrol</string>
   <string name="shortcut_title_text_editing">Pengeditan teks</string>
   <string name="shortcut_title_special_features">Lainnya</string>
-  <string name="shortcut_unassigned">Ketuk untuk menetapkan</string>
+    <string name="shortcut_unassigned">Tidak ditetapkan</string>
   <string name="shortcut_not_customizable">%1$s, tidak dapat disesuaikan</string>
   <string name="shortcut_disabled_due_to_vibration_watch">Tidak tersedia saat getaran smartwatch aktif</string>
   <string name="shortcut_next">Item berikutnya</string>
@@ -1390,7 +1390,7 @@
     <string name="summary_pref_speech_control">Aplikasi yang Anda izinkan dapat mengucapkan teks dengan suara SandFly Anda. Saat perangkat terkunci, hanya aplikasi yang juga Anda izinkan saat terkunci yang dapat berbicara.</string>
     <string name="title_pref_speech_control_sound">Putar suara sebelum aplikasi lain berbicara</string>
     <string name="speech_control_apps_category">Aplikasi</string>
-    <string name="speech_control_no_apps">Belum ada aplikasi yang meminta izin untuk berbicara.</string>
+    <string name="speech_control_no_apps">Belum ada aplikasi yang terhubung.</string>
     <string name="speech_control_ask_title">Izinkan <xliff:g id="app" example="Tasker">%1$s</xliff:g> berbicara melalui SandFly?</string>
     <string name="speech_control_allow">Izinkan</string>
     <string name="speech_control_deny">Jangan izinkan</string>
@@ -1734,7 +1734,7 @@
     <string name="template_item_details_order_dropped"><xliff:g id="detail" example="Name">%1$s</xliff:g> dilepas. <xliff:g id="position" example="Position 2 of 3">%2$s</xliff:g></string>
     <string name="item_details_order_footer">SandFly menyatakan detail item dalam urutan ini. Untuk mengubahnya, sentuh dan tahan suatu detail, lalu seret ke atas atau ke bawah. Dengan SandFly aktif, ketuk dua kali dan tahan, lalu seret. Anda juga dapat menggunakan tindakan Pindah ke atas dan Pindah ke bawah.</string>
     <string name="title_pref_speak_items_before_scroll">Ucapkan item sebelum digulir hingga terlihat</string>
-    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Periksa kunci di Pengaturan layanan AI.</string>
+    <string name="gemini_error_api_key">Gemini tidak menerima kunci API. Periksa kunci di setelan Layanan AI.</string>
     <string name="gemini_error_quota">Batas penggunaan kunci API Gemini Anda telah tercapai. Coba lagi nanti.</string>
     <string name="gemini_error_busy">Gemini sedang sibuk saat ini. Coba lagi sebentar lagi.</string>
     <string name="gemini_error_timeout">Gemini butuh waktu terlalu lama untuk menjawab. Coba lagi.</string>
@@ -1904,12 +1904,12 @@
     <string name="shortcut_use_voice_profile">Gunakan profil suara <xliff:g id="name" example="English">%1$s</xliff:g></string>
     <string name="title_pref_keep_previous_voice_engine">Biarkan mesin ucapan profil suara sebelumnya tetap berjalan</string>
     <string name="title_pref_voice_profile_keep_engine_started">Biarkan mesin ucapan tetap berjalan</string>
-    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <string name="title_pref_speech_equalizer">Efek ucapan</string>
     <string name="title_pref_speech_equalizer_preset">Preset</string>
-    <string name="title_pref_speech_equalizer_on">Gunakan equalizer</string>
+    <string name="title_pref_speech_equalizer_on">Gunakan efek ucapan</string>
     <string name="speech_equalizer_off">Nonaktif</string>
-    <string name="speech_equalizer_turned_on">Equalizer aktif</string>
-    <string name="speech_equalizer_turned_off">Equalizer nonaktif</string>
+    <string name="speech_equalizer_turned_on">Efek ucapan aktif</string>
+    <string name="speech_equalizer_turned_off">Efek ucapan nonaktif</string>
     <string name="title_selector_equalizer_64">Equalizer 64 Hz</string>
     <string name="title_selector_equalizer_125">Equalizer 125 Hz</string>
     <string name="title_selector_equalizer_250">Equalizer 250 Hz</string>
@@ -2727,4 +2727,36 @@
     <string name="macro_shortcut_invalid">Pintasan tidak valid. Tambahkan makro ke layar utama lagi.</string>
     <string name="update_download_progress">%1$d%%</string>
     <string name="update_download_progress_time">%1$d%%, tersisa %2$s</string>
+    <string name="title_share_focused_image">Bagikan gambar item yang difokuskan</string>
+    <string name="title_share_screenshot">Bagikan screenshot</string>
+    <string name="share_image_failed">Screenshot gagal</string>
+    <string name="title_pref_speech_equalizer_bands">Equalizer</string>
+    <string name="title_pref_speech_effect_bass_compression">Kompresi bass</string>
+    <string name="title_pref_speech_effect_voice_compression">Kompresi vokal</string>
+    <string name="title_pref_speech_effect_treble_compression">Kompresi treble</string>
+    <string name="speech_effect_low">Rendah</string>
+    <string name="speech_effect_medium">Sedang</string>
+    <string name="speech_effect_high">Tinggi</string>
+    <string name="speech_equalizer_deep_bass">Bass dalam</string>
+    <string name="title_pref_battery_level_interval">Tingkat baterai</string>
+    <string name="battery_level_every_5_percent" formatted="false">Setiap 5%</string>
+    <string name="battery_level_every_10_percent" formatted="false">Setiap 10%</string>
+    <string name="battery_level_every_15_minutes">Setiap 15 menit</string>
+    <string name="battery_level_every_30_minutes">Setiap 30 menit</string>
+    <string name="battery_level_every_hour">Setiap jam</string>
+    <string name="title_pref_battery_level_voice">Suara tingkat baterai</string>
+    <string name="title_pref_punctuation_none_keep_meaning">Ucapkan simbol yang mengubah makna</string>
+    <string name="shortcut_select_first_setting">Kontrol pembacaan pertama</string>
+    <string name="clipboard_history_select">Pilih</string>
+    <string name="title_pref_shortcut_2finger_2tap_top_bottom">Ketuk dua kali dengan 2 jari, atas dan bawah</string>
+    <string name="title_pref_volume_change_silent_while_speaking">Ubah volume ucapan tanpa pengumuman saat berbicara</string>
+    <plurals name="word_selection_added">
+        <item quantity="other"><xliff:g id="count" example="5">%1$d</xliff:g> item ditambahkan</item>
+    </plurals>
+    <string name="word_selection_no_more_text">Tidak ada teks lagi</string>
+    <string name="title_pref_double_tap_taps">Ketuk dua kali mengetuk layar</string>
+    <string name="shortcut_toggle_double_tap_taps_app">Ketuk dua kali mengetuk layar di aplikasi ini</string>
+    <string name="double_tap_taps_on">Ketuk dua kali mengetuk layar aktif</string>
+    <string name="double_tap_taps_off">Ketuk dua kali mengetuk layar nonaktif</string>
+    <string name="double_tap_taps_no_app">Tidak ada aplikasi di depan</string>
 </resources>

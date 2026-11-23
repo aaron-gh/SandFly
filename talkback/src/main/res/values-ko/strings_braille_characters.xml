@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">문자 추가</string>
+    <string name="custom_braille_characters_text">문자 또는 텍스트</string>
+    <string name="custom_braille_characters_cells">점</string>
+    <string name="custom_braille_characters_table">점자표</string>
+    <string name="custom_braille_characters_cells_help">각 셀의 점 번호이며, 셀은 하이픈으로 구분합니다(예: 2356 또는 456-2356).</string>
+    <string name="custom_braille_characters_invalid_cells">점 번호 1~8을 최대 <xliff:g id="number" example="20">%1$d</xliff:g>개 셀까지 입력하세요</string>
+    <string name="custom_braille_characters_invalid_text">1~<xliff:g id="number" example="50">%1$d</xliff:g>자를 입력하세요</string>
+</resources>

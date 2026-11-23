@@ -200,4 +200,42 @@
     <string name="macro_test_focus_inside">Фокус је унутар ставке</string>
     <string name="macro_test_focus_inside_value">Фокус унутар: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Фокус није унутар: %1$s</string>
+    <string name="macro_step_tap_position">Додир на положају</string>
+    <string name="macro_step_tap_position_value">Додир на <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, пиксели од леве ивице</string>
+    <string name="macro_tap_y">Y, пиксели од горње ивице</string>
+    <string name="macro_invalid_position">Унесите X и Y од 0 до <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Опис алатке</string>
+    <string name="macro_step_touch_hold">Додирни и задржи ставку</string>
+    <string name="macro_step_touch_hold_value">Додирни и задржи <xliff:g id="label" example="Voice message">%1$s</xliff:g>, <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Додирни и задржи <xliff:g id="label" example="Voice message">%1$s</xliff:g>, <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Секунде задржавања</string>
+    <string name="macro_slide">Пре подизања</string>
+    <string name="macro_slide_none">Подигни на месту</string>
+    <string name="macro_slide_up">Клизни нагоре</string>
+    <string name="macro_slide_down">Клизни надоле</string>
+    <string name="macro_slide_left">Клизни улево</string>
+    <string name="macro_slide_right">Клизни удесно</string>
+    <string name="macro_slide_distance">Удаљеност у dp</string>
+    <string name="macro_app">Апликација</string>
+    <string name="macro_all_apps">Све апликације</string>
+    <string name="macro_add_app">Додај апликацију</string>
+    <string name="macro_apps">Апликације</string>
+    <string name="macro_in_actions">Прикажи у радњама</string>
+    <string name="macro_in_actions_only_when">Прикажи у радњама само када</string>
+    <string name="macro_not_in_app">Макро није покренут. Покреће се само у апликацији <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> макро</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> макроа</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> макроа</item>
+    </plurals>
+    <string name="macro_record">Сними кораке</string>
+    <string name="macro_record_new">Сними макро</string>
+    <string name="macro_recording_notification">Снимање корака макроа: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Снимање. Да бисте зауставили, покрените „Сними макро“ или „Заустави макро“ или отворите обавештење „Снимање корака макроа“.</string>
+    <string name="macro_recorded">Снимљени кораци</string>
+    <string name="macro_recorded_no_passwords">Текст унет у поља за лозинку се не снима.</string>
+    <string name="macro_recorded_too_many">Није додато. Макро има највише <xliff:g id="count" example="200">%1$d</xliff:g> корака.</string>
+    <string name="macro_recorded_name">Снимљено <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Листа на екрану</string>
 </resources>

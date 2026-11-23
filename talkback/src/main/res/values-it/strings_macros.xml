@@ -197,4 +197,42 @@
     <string name="macro_test_focus_inside">La selezione è dentro un elemento</string>
     <string name="macro_test_focus_inside_value">Selezione dentro: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Selezione fuori da: %1$s</string>
+    <string name="macro_step_tap_position">Tocca in una posizione</string>
+    <string name="macro_step_tap_position_value">Tocca in <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixel da sinistra</string>
+    <string name="macro_tap_y">Y, pixel dall\'alto</string>
+    <string name="macro_invalid_position">Inserisci X e Y da 0 a <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Descrizione comando</string>
+    <string name="macro_step_touch_hold">Tocca e tieni premuto elemento</string>
+    <string name="macro_step_touch_hold_value">Tocca e tieni premuto <xliff:g id="label" example="Voice message">%1$s</xliff:g> per <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Tocca e tieni premuto <xliff:g id="label" example="Voice message">%1$s</xliff:g> per <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Secondi di pressione</string>
+    <string name="macro_slide">Prima del sollevamento</string>
+    <string name="macro_slide_none">Solleva sul posto</string>
+    <string name="macro_slide_up">Trascina verso l\'alto</string>
+    <string name="macro_slide_down">Trascina verso il basso</string>
+    <string name="macro_slide_left">Trascina verso sinistra</string>
+    <string name="macro_slide_right">Trascina verso destra</string>
+    <string name="macro_slide_distance">Distanza in dp</string>
+    <string name="macro_app">App</string>
+    <string name="macro_all_apps">Tutte le app</string>
+    <string name="macro_add_app">Aggiungi app</string>
+    <string name="macro_apps">App</string>
+    <string name="macro_in_actions">Mostra in Azioni</string>
+    <string name="macro_in_actions_only_when">Mostra in Azioni solo quando</string>
+    <string name="macro_not_in_app">Macro non eseguita. Viene eseguita solo in <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macro</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> macro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> macro</item>
+    </plurals>
+    <string name="macro_record">Registra passaggi</string>
+    <string name="macro_record_new">Registra una macro</string>
+    <string name="macro_recording_notification">Registrazione dei passaggi della macro: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Registrazione in corso. Per interrompere, esegui Registra una macro o Interrompi macro, oppure apri la notifica Registrazione dei passaggi della macro.</string>
+    <string name="macro_recorded">Passaggi registrati</string>
+    <string name="macro_recorded_no_passwords">Il testo digitato nei campi password non viene registrato.</string>
+    <string name="macro_recorded_too_many">Non aggiunti. Una macro ha al massimo <xliff:g id="count" example="200">%1$d</xliff:g> passaggi.</string>
+    <string name="macro_recorded_name">Registrata il <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Elenco sullo schermo</string>
 </resources>

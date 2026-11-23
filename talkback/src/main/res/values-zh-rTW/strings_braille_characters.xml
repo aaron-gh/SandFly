@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">新增字元</string>
+    <string name="custom_braille_characters_text">字元或文字</string>
+    <string name="custom_braille_characters_cells">點</string>
+    <string name="custom_braille_characters_table">點字表</string>
+    <string name="custom_braille_characters_cells_help">每個點字方的點號，點字方之間以連字號分隔，例如 2356 或 456-2356。</string>
+    <string name="custom_braille_characters_invalid_cells">請輸入 1 到 8 的點號，最多 <xliff:g id="number" example="20">%1$d</xliff:g> 個點字方</string>
+    <string name="custom_braille_characters_invalid_text">請輸入 1 到 <xliff:g id="number" example="50">%1$d</xliff:g> 個字元</string>
+</resources>
