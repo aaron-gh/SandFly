@@ -12,25 +12,25 @@ De lijst bevat alleen de opdrachten die het apparaat ondersteunt. Opdrachten die
 
 #### Opdrachtcategorieën {#commands-categories}
 
-- **Navigatie**: volgend en vorig item, het item boven, onder, links en rechts, eerste en laatste item op het scherm, containers, vensters, en **Tekst binnen items afzonderlijk focussen**.
+- **Navigatie**: volgend en vorig item, het item boven, onder, links en rechts, eerste en laatste item op het scherm, containers, vensters, en **Tekst in items afzonderlijk focussen**.
 - **Navigatie-instelling**: het menu **Navigatie**, **Paginanavigatie**, en volgende en vorige navigatie-instelling.
 - **Objectnavigatie** en **Schermoverzicht**: opdrachten voor objectnavigatie in desktopstijl en de reviewcursor, vooral voor toetsenborden. Zie [](#keyboards).
-- **Activeren**: **Activeren**, **Tikken en vasthouden**, **Activeren met een tik**, **Bevestigingsknop activeren**, **Annuleringsknop activeren**, **Aangepaste acties tonen**, **Adressen en nummers**, **Labels toevoegen of bewerken**, **SandFly-menu openen**, **Systeemgebaar doorgeven**, **Directe aanraking voor deze app aan- of uitzetten**, en **Dubbeltikken tikt op het scherm in deze app**.
+- **Activeren**: **Activeren**, **Tikken en vasthouden**, **Activeren met een tik**, **Bevestigingsknop activeren**, **Annuleerknop activeren**, **Aangepaste acties tonen**, **Adressen en nummers**, **Labels toevoegen of bewerken**, **SandFly-menu openen**, **Systeemgebaar voor doorgeven**, **Directe aanraking voor deze app aan- of uitzetten**, en **Dubbeltikken tikt op het scherm in deze app**.
 - **Scrollen**: vooruit, terug, omhoog, omlaag, naar links en naar rechts scrollen, naar boven en naar beneden, en **Vernieuwen**.
 - **Navigeren op tekst** en **Navigeren op element**: volgend en vorig teken, woord, regel, alinea, kop, link, bedieningselement, knop, lijst, tabel, herkenningspunt en andere soorten items.
 - **Tabellen**: volgende en vorige rij en kolom, het begin en einde van rijen, kolommen en tabellen, en rij- en kolomkoppen.
 - **Web**: **Browsemodus aan- of uitzetten**, lijsten met koppen, herkenningspunten, links, bedieningselementen en tabellen, en het adres van een link of pagina. Zie [](#web).
-- **Lezen**: **Vanaf boven lezen**, **Vanaf gefocust item lezen**, **Vanaf gefocust item lezen per leesinstelling**, de laatst uitgesproken woordgroep herhalen, spellen en vertalen, **Spraakgeschiedenis**, **Status uitspreken**, **Positie uitspreken**, **Coördinaten uitspreken**, de datum en tijd, het batterijniveau en de venstertitel.
-- **Spraak**: **Spraak pauzeren of hervatten**, **Spraak aan- of uitzetten**, spreeksnelheid, toonhoogte en volume, gesproken taal, stemprofielen, interpunctie, toetsenbordecho, **Stemeffecten gebruiken**, **Audio-ducking** en **Trillingsfeedback**.
-- **Leesinstellingen**: volgende en vorige leesinstelling, **Leesinstellingen lager of vooruit verplaatsen** en **Leesinstellingen hoger of achteruit verplaatsen**, **Letter van een leesinstelling schrijven**, volgende en vorige lijst met leesinstellingen, en een opdracht **Instellen op** voor elke leesinstelling in de lijst. Zie [](#commands-reading-controls).
-- **Tekst bewerken**: selectiemodus, cursorbeweging, alles selecteren, kopiëren, knippen, plakken, **Klembordgeschiedenis**, **Bewerkingsmenu**, **Tekst sturen**, **Tekst wissen**, **Laatst uitgesproken woordgroep kopiëren**, **Tekst van het scherm kopiëren**, **Doorlopend kopiëren**, **Gedetailleerde bewerking**, **Spelling-/grammaticasuggesties**, **Emoji zoeken**, **Symbool kiezen**, **Bewerkingsmodus aan- of uitzetten**, **Dicteren** en **Toetsenbord wisselen**. Zie [](#typing).
-- **Systeemacties**: **Home**, **Terug**, **Overzicht**, vorige, oudere en nieuwere app, **Schermafbeelding maken**, **Oproep beantwoorden**, **Gesplitst scherm**, meldingen, Snelle instellingen, **Vergrendelscherm**, **Aan/uit-menu**, **Alle apps**, de snelkoppeling voor toegankelijkheid, vergroting, kleurinversie, **De naam van een app schrijven om deze te openen**, **De naam van een app in braille typen om deze te openen**, en **Spraakopdracht starten**.
+- **Lezen**: **Lezen vanaf het begin**, **Lezen vanaf item waarop is gefocust**, **Voorlezen vanaf gefocust item per leesinstelling**, de laatst uitgesproken woordgroep herhalen, spellen en vertalen, **Spraakgeschiedenis**, **Status uitspreken**, **Positie uitspreken**, **Coördinaten uitspreken**, de datum en tijd, het batterijniveau en de venstertitel.
+- **Spraak**: **Spraak pauzeren of hervatten**, **Spraak aan- of uitzetten**, spreeksnelheid, toonhoogte en volume, gesproken taal, stemprofielen, interpunctie, toetsenbordecho, **Stemeffecten gebruiken**, **Audiovolume verlagen** en **Trilfeedback**.
+- **Leesinstellingen**: volgende en vorige leesinstelling, **Eerste leesinstelling**, **Leesinstellingen lager of vooruit verplaatsen** en **Leesinstellingen hoger of achteruit verplaatsen**, **Letter van een leesinstelling schrijven**, volgende en vorige lijst met leesinstellingen, en een opdracht **Leesinstelling instellen op** voor elke leesinstelling in de lijst. Zie [](#commands-reading-controls).
+- **Tekstverwerking**: selectiemodus, cursorbeweging, alles selecteren, kopiëren, knippen, plakken, **Klembordgeschiedenis**, **Bewerkingsmenu**, **Tekst sturen**, **Tekst wissen**, **Laatst uitgesproken woordgroep kopiëren**, **Tekst van scherm kopiëren**, **Doorlopend kopiëren**, **Gedetailleerde bewerking**, **Spelling-/grammaticasuggesties**, **Emoji zoeken**, **Symbool kiezen**, **Bewerkingsmodus aan- of uitzetten**, **Dicteren** en **Toetsenbord wisselen**. Zie [](#typing).
+- **Systeemacties**: **Home**, **Terug**, **Overzicht**, vorige, oudere en nieuwere app, **Schermafbeelding maken**, **Gesprek beantwoorden**, **Gesplitst scherm**, meldingen, Snelle instellingen, **Vergrendel het apparaatscherm**, **Aan/uit-menu**, **Alle apps**, de snelkoppeling voor toegankelijkheid, vergroting, kleurinversie, **Schrijf de naam van een app om deze te openen**, **Typ de naam van een app in braille om deze te openen**, en **Spraakopdracht starten**.
 - **Media en volume**: afspelen of pauzeren, volgend en vorig nummer, terugspoelen, vooruitspoelen, en volume.
 - **Meldingen**: meldingen lezen, de laatste melding opnieuw lezen, stoppen met lezen, en meldingsspraak en tijdsaankondigingen aan- of uitzetten. Zie [](#notifications).
-- **Afbeeldings- en schermbeschrijvingen**: **Foto maken en beschrijven**, **Afbeelding beschrijven**, **Scherm beschrijven**, hun versies **Uitspreken** en **Vragen over**, **Afbeelding van gefocust item delen**, **Schermafbeelding delen** en **AI-antwoord melden**. Met SandFly Pro ook de opdrachten voor schermherkenning. Zie [](#descriptions).
+- **Afbeeldings- en schermbeschrijvingen**: **Foto maken en beschrijven**, **Afbeelding beschrijven**, **Scherm beschrijven**, hun versies **Uitspreken** en **Vragen over**, **Afbeelding van gefocust item delen**, **Screenshot delen** en **AI-antwoord melden**. Met SandFly Pro ook de opdrachten voor schermherkenning. Zie [](#descriptions).
 - **Live herkenning**: een opdracht voor elke modus van Live herkenning, en **Live herkenning stoppen**.
-- **Braille**: **Schakelen naar brailletoetsenbord**, **Brailleopdrachten**, **Tekst zoeken**, braillecommandoprofielen, en opdrachten voor de brailleleesregel. Zie [](#braille).
-- **SandFly**: **SandFly pauzeren**, **Scherm verbergen of tonen**, **De focusindicator tonen**, **Schermzoeken**, gebaren- en instellingenprofielen, **Gebaren voor deze app**, **Navigatie met pijltoetsen aan- of uitzetten**, **Aanraking vergrendelen of ontgrendelen**, **Alle scripts aan- of uitzetten**, **Scriptopdrachten**, **Uitgebreidheidsniveau**, **SandFly uitzetten**, **Tutorial openen** en **Gebaren oefenen**. Met SandFly Pro ook **AI-agenttaak starten of stoppen**.
+- **Braille**: **Overschakelen naar brailletoetsenbord**, **Braillecommando's**, **Tekst zoeken**, braillecommandoprofielen, en opdrachten voor de brailleleesregel. Zie [](#braille).
+- **SandFly**: **SandFly pauzeren**, **Scherm verbergen of tonen**, **Focusindicator tonen**, **Schermzoeken**, gebaren- en instellingenprofielen, **Gebaren voor deze app**, **Navigatie met pijltoetsen aan- of uitzetten**, **Aanraking vergrendelen of ontgrendelen**, **Alle scripts in- of uitschakelen**, **Scriptcommando's**, **Uitgebreidheidsniveau**, **SandFly uitzetten**, **Tutorial openen** en **Gebaren oefenen**. Met SandFly Pro ook **AI-agenttaak starten of stoppen**.
 - **Ontwikkelaarsinstellingen**: **Gefocust item inspecteren**, **Itemdetails kopiëren** en **Schermboom kopiëren**. Zie [](#macros-inspect).
 - **Instellingswaarden**: een opdracht voor de volgende en vorige waarde voor elke leesinstelling die een instelling verandert, zoals **Interpunctie: volgende waarde**, en opdrachten die instellingen zoals **Rondgaan** aan- of uitzetten.
 
@@ -38,7 +38,7 @@ Deze categorieën vermelden wat je zelf toevoegt, en worden alleen getoond wanne
 
 - **Scripts**: de opdrachten die geïnstalleerde scripts toevoegen. Zie [](#scripts).
 - **Aangepaste menu's**: één opdracht voor elk aangepast menu, die het opent. Zie [](#commands-custom-menus).
-- **Macro's**: één opdracht voor elke macro, **Macro stoppen**, en **Macro opnemen**. Zie [](#macros).
+- **Macro's**: één opdracht voor elke macro, **Macro stoppen**, en **Een macro opnemen**. Zie [](#macros).
 - **Gebarenprofielen**, **Braillecommandoprofielen** en **Stemprofielen**: één opdracht voor elk profiel, die het in gebruik neemt.
 - **Lijsten met leesinstellingen**: **Volgend item in** en **Vorig item in** een lijst, voor elke lijst. Zie [](#commands-reading-control-lists).
 - **App openen**: één opdracht voor elke geïnstalleerde app.
@@ -46,11 +46,11 @@ Deze categorieën vermelden wat je zelf toevoegt, en worden alleen getoond wanne
 
 #### Status uitspreken {#commands-status}
 
-**Status uitspreken**, in de categorie **Lezen**, leest voor wat de statusbalk toont, zoals de tijd, het batterijniveau en het netwerk, en of het scherm verborgen is. Standaard voert een 3 keer tikken met twee vingers dit uit. Om te kiezen wat dit voorleest en in welke volgorde, ga naar **Uitgebreidheidsniveau** > **Statusoverzicht**. Zie [](#verbosity).
+**Status uitspreken**, in de categorie **Lezen**, leest voor wat de statusbalk toont, zoals de tijd, het batterijniveau en het netwerk, en of het scherm verborgen is. Standaard voert een 3 keer tikken met twee vingers dit uit. Om te kiezen wat dit voorleest en in welke volgorde, ga naar **Uitgebreidheidsniveau** > **Status voorlezen**. Zie [](#verbosity).
 
 #### Bevestigingsknop activeren en Annuleringsknop activeren {#commands-button-commands}
 
-**Bevestigingsknop activeren** en **Annuleringsknop activeren**, in de categorie **Activeren** en standaard niet toegewezen, activeren een knop op het scherm aan de hand van het label, zonder de focus te verplaatsen. **Bevestigingsknop activeren** zoekt naar labels zoals **OK**, **Ja**, **Verzenden**, **Klaar**, **Volgende**, **Opslaan** en **Toestaan**; **Annuleringsknop activeren** naar labels zoals **Annuleren**, **Nee**, **Sluiten**, **Terug**, **Niet nu** en **Overslaan**. Een label komt overeen wanneer het hetzelfde woord is, ongeacht hoofdletters en leestekens aan het einde.
+**Bevestigingsknop activeren** en **Annuleerknop activeren**, in de categorie **Activeren** en standaard niet toegewezen, activeren een knop op het scherm aan de hand van het label, zonder de focus te verplaatsen. **Bevestigingsknop activeren** zoekt naar labels zoals **OK**, **Ja**, **Verzenden**, **Klaar**, **Volgende**, **Opslaan** en **Toestaan**; **Annuleerknop activeren** naar labels zoals **Annuleren**, **Nee**, **Sluiten**, **Terug**, **Niet nu** en **Overslaan**. Een label komt overeen wanneer het hetzelfde woord is, ongeacht hoofdletters en leestekens aan het einde.
 
 SandFly zoekt eerst in het actieve venster, zoals een dialoogvenster, en dan in de andere appvensters vanaf boven. Wanneer meerdere knoppen overeenkomen, wordt de knop die het dichtst bij het gefocuste item staat geactiveerd; zonder gefocust item de onderste op het scherm. Wanneer geen knop overeenkomt, zegt SandFly "Geen bevestigingsknop" of "Geen annuleringsknop".
 
@@ -65,7 +65,7 @@ Om de labels te veranderen, kies de opdracht in **Commando's**, dan **Knoplabels
 
 Het opdrachtscherm heeft deze groepen:
 
-- **Knoplabels**: alleen voor **Bevestigingsknop activeren** en **Annuleringsknop activeren**, de labels waarnaar de opdracht zoekt. Zie [](#commands-button-commands).
+- **Knoplabels**: alleen voor **Bevestigingsknop activeren** en **Annuleerknop activeren**, de labels waarnaar de opdracht zoekt. Zie [](#commands-button-commands).
 - **Gebaren**: de gebaren die de opdracht uitvoeren. Om er een te verwijderen, kies het, dan **Gebaar verwijderen**.
 - **Navigatie met pijltoetsen**: de pijltoetsen van navigatie met pijltoetsen die de opdracht uitvoeren, met **Pijltoetsen toevoegen** en **Pijltoetsen verwijderen**. De groep wordt alleen getoond bij een toetsenbordindeling met navigatie met pijltoetsen. Zie [](#keyboards).
 - **Braillecellen**: de braillecellen die de opdracht uitvoeren in de **Standaard** brailleopdrachten. **Braillecel toevoegen** registreert een cel die je typt op het SandFly-brailleoppervlak. Om een cel te verwijderen, kies het, dan **Braillecel verwijderen**. Zie [](#braille).
@@ -126,7 +126,7 @@ Sommige items hebben opties, die na het item in **Huidig** staan en verborgen zi
 
 #### Standaarditems {#commands-menu-defaults}
 
-Standaard heeft het SandFly-menu **Spelling-/grammaticasuggesties**, scriptitems, **Afbeelding beschrijven**, **Scherm beschrijven**, **Vanaf gefocust item lezen**, **Gebarenprofiel**, **Gebaren voor deze app**, **Scherm verbergen of tonen**, **SandFly pauzeren**, **SandFly uitzetten**, **Instellingen voor SandFly**, **Feedback sturen**, **Tekst-naar-spraak** en **Gesplitst scherm**. Met SandFly Pro heeft het ook de items voor schermherkenning. Items zoals **Acties**, **Schermzoeken**, **Navigatie**, **Vanaf boven lezen**, **Laatst uitgesproken woordgroep kopiëren**, **Spraakopdrachten**, **Uitgebreidheidsniveau**, **Gesproken taal**, **Gefocust item inspecteren** en **Itemdetails kopiëren** staan standaard uit; voeg ze toe met **Commando toevoegen**.
+Standaard heeft het SandFly-menu **Spelling-/grammaticasuggesties**, scriptitems, **Afbeelding beschrijven**, **Scherm beschrijven**, **Lezen vanaf item waarop is gefocust**, **Gebarenprofiel**, **Gebaren voor deze app**, **Scherm verbergen of tonen**, **SandFly pauzeren**, **SandFly uitzetten**, **Instellingen voor SandFly**, **Feedback sturen**, **Tekst-naar-spraak** en **Gesplitst scherm**. Met SandFly Pro heeft het ook de items voor schermherkenning. Items zoals **Acties**, **Schermzoeken**, **Navigatie**, **Lezen vanaf het begin**, **Laatst uitgesproken woordgroep kopiëren**, **Spraakopdrachten**, **Uitgebreidheidsniveau**, **Gesproken taal**, **Gefocust item inspecteren** en **Itemdetails kopiëren** staan standaard uit; voeg ze toe met **Commando toevoegen**.
 
 Op horloges zijn de instellingen van het SandFly-menu een lijst met schakelaars in een vaste volgorde. Zie [](#devices).
 
@@ -162,15 +162,15 @@ Wanneer je de leesinstelling of de waarde ervan verandert met een gebaar, toont 
 - **Acties voor huidig item**: **Acties**, **Adressen en nummers**, **Klembordgeschiedenis** en **Proeflezen**, dat tussen spelling- en grammaticasuggesties beweegt.
 - **Basisnavigatie**: **Standaardnavigatie**, **Vensters**, **Containers**, **Schermzoeken**, **Verticale navigatie**, **Scrollen** en **Rondgaan**.
 - **Navigeren op tekst**: **Tekens**, **Woorden**, **Regels**, **Zinnen** en **Alinea's**.
-- **Elementnavigatie**: **Koppen**, **Links**, **Bedieningselementen**, **Herkenningspunten**, **Knoppen**, **Selectievakjes**, **Keuzerondjes**, **Invoervelden**, **Keuzelijsten**, **Focusbare items**, **Afbeeldingen en video's**, **Lijsten**, **Lijstitems**, **Tabellen**, **Bezochte links** en **Niet-bezochte links**.
+- **Elementnavigatie**: **Koppen**, **Links**, **Bedieningselementen**, **Herkenningspunten**, **Knoppen**, **Selectievakjes**, **Keuzerondjes**, **Bewerkingsvelden**, **Keuzelijsten met invoervak**, **Focusbare items**, **Afbeeldingen en video's**, **Lijsten**, **Lijstitems**, **Tabellen**, **Bezochte links** en **Niet-bezochte links**.
 - **Kopniveaus**: **Kop 1** tot **Kop 6**.
 - **Tabellen**: **Rijen en kolommen**, **Rij** en **Kolom**.
-- **Spraak**: **Spreeksnelheid**, **Interpunctie en symbolen uitspreken**, **Emoji**, **Tekstopmaak uitspreken**, **Gesproken taal**, **Spraakengine**, **Spraakvolume**, **Audio-uitvoerapparaat**, **Stemprofiel**, **Automatisch vertalen** en **Alleen door de gebruiker bewogen focus uitspreken**.
+- **Spraak**: **Spreeksnelheid**, **Interpunctie en symbolen uitspreken**, **Emoji**, **Tekstopmaak voorlezen**, **Gesproken taal**, **Spraakmotor**, **Spraakvolume**, **Audio-uitvoerapparaat**, **Stemprofiel**, **Automatische vertaling** en **Alleen door de gebruiker verplaatste focus uitspreken**.
 - **Toetsenbordecho**: het echo van het schermtoetsenbord, fysieke toetsenbord, brailletoetsenbord, brailleleesregel en handschrifttoetsenbord.
 - **Stemeffecten**: **Stemeffecten**, en één instelling voor elke equalizerband van 64 Hz tot 16 kHz. Zie [](#voice-effects).
 - **Afbeeldings- en schermbeschrijvingen**: **Live herkenning** en **AI-acties**. Zie [](#commands-ai-actions).
-- **Geluid en trilling**: **Audio-ducking**, **Toegankelijkheidsvolume**, **Mediavolume**, **Gespreksvolume**, **Belvolume**, **Meldingsvolume**, **Alarmvolume** en **Geluidsmodus**.
-- **Weergave**: **Scherm verbergen**, **Helderheid**, en **Omhoog gehouden tablet wijst van je af**, voor het brailletoetsenbord op een tablet of een uitgevouwen telefoon.
+- **Geluid en trillen**: **Audiovolume verlagen**, **Toegankelijkheidsvolume**, **Mediavolume**, **Gespreksvolume**, **Belvolume**, **Meldingsvolume**, **Alarmvolume** en **Geluidsmodus**.
+- **Weergave**: **Scherm verbergen**, **Helderheid**, en **Rechtop gehouden tablet naar buiten gericht**, voor het brailletoetsenbord op een tablet of een uitgevouwen telefoon.
 - **Aanraking**: **Focusvertraging**, **Focusvertraging bij typen**, **Optillen om te activeren** en **Gebarenprofiel**.
 - **Aangepaste leesinstellingen**: de leesinstellingen die je zelf maakt. Zie [](#commands-custom-reading-controls).
 
@@ -195,7 +195,7 @@ Sommige instellingen hebben opties, die na de instelling in **Huidig** staan en 
 
 De opdracht **Letter van een leesinstelling schrijven** opent een oppervlak op het hele scherm. Schrijf er met één vinger een letter op, en SandFly selecteert de volgende leesinstelling met die letter, of anders de volgende waarvan de naam ermee begint. Een tik sluit het oppervlak. Handschriftherkenning gebruikt een model dat SandFly de eerste keer downloadt, na jouw bevestiging.
 
-**Leesinstellingen** > **Handgeschreven letters** vermeldt de leesinstellingen met hun letters. Kies een instelling om deze een letter van A tot Z te geven, of **Geen**. Meerdere instellingen kunnen een letter delen; deze opnieuw schrijven beweegt naar de volgende. Standaardletters zijn onder meer H voor **Koppen**, K voor **Links**, L voor **Regels**, A voor **Herkenningspunten**, W voor **Woorden**, C voor **Tekens**, P voor **Alinea's**, O voor **Bedieningselementen**, B voor **Knoppen**, E voor **Invoervelden**, T voor **Tabellen** en S voor **Spreeksnelheid**.
+**Leesinstellingen** > **Handgeschreven letters** vermeldt de leesinstellingen met hun letters. Kies een instelling om deze een letter van A tot Z te geven, of **Geen**. Meerdere instellingen kunnen een letter delen; deze opnieuw schrijven beweegt naar de volgende. Standaardletters zijn onder meer H voor **Koppen**, K voor **Links**, L voor **Regels**, A voor **Herkenningspunten**, W voor **Woorden**, C voor **Tekens**, P voor **Alinea's**, O voor **Bedieningselementen**, B voor **Knoppen**, E voor **Bewerkingsvelden**, T voor **Tabellen** en S voor **Spreeksnelheid**.
 
 #### Aangepaste leesinstellingen {#commands-custom-reading-controls}
 
@@ -217,10 +217,10 @@ Een lijst met leesinstellingen is een benoemde lijst met leesinstellingen, los v
 
 Het lijstscherm heeft ook **Hernoemen** en **Lijst verwijderen**.
 
-Elke lijst voegt twee opdrachten toe aan de categorie **Lijsten met leesinstellingen**: **Volgend item in** en **Vorig item in** de lijst, die de volgende of vorige leesinstelling van die lijst selecteren. De opdrachten **Volgende lijst met leesinstellingen** en **Vorige lijst met leesinstellingen**, in de categorie **Leesinstellingen**, kiezen de lijst waar volgende en vorige leesinstelling doorheen bewegen, de hoofdlijst of een van de jouwe.
+Elke lijst voegt twee opdrachten toe aan de categorie **Lijsten met leesinstellingen**: **Volgend item in** en **Vorig item in** de lijst, die de volgende of vorige leesinstelling van die lijst selecteren. De opdrachten **Volgende lijst met leesinstellingen** en **Vorige lijst met leesinstellingen**, in de categorie **Leesinstellingen**, kiezen de lijst waar volgende en vorige leesinstelling doorheen bewegen, de hoofdlijst of een van de jouwe. **Eerste leesinstelling** selecteert de eerste leesinstelling van die lijst.
 
 #### AI-acties {#commands-ai-actions}
 
-De leesinstelling **AI-acties** bevat de AI-opdrachten: **Scherm beschrijven**, **Schermbeschrijving uitspreken**, **Vragen over scherm**, **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken**, **Vragen over afbeelding**, **Afbeelding van gefocust item delen** en **Schermafbeelding delen**, en met SandFly Pro ook **AI-agenttaak starten of stoppen** en **AI-agenttaak typen**. Swipe omhoog of omlaag om een opdracht te kiezen, en dubbeltik dan om deze uit te voeren. De instelling biedt alleen de opdrachten aan die het apparaat en de instellingen voor AI-diensten ondersteunen, en wordt niet getoond wanneer er geen zijn.
+De leesinstelling **AI-acties** bevat de AI-opdrachten: **Scherm beschrijven**, **Schermbeschrijving uitspreken**, **Vragen over scherm**, **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken**, **Vragen over afbeelding**, **Afbeelding van gefocust item delen** en **Screenshot delen**, en met SandFly Pro ook **AI-agenttaak starten of stoppen** en **AI-agenttaak typen**. Swipe omhoog of omlaag om een opdracht te kiezen, en dubbeltik dan om deze uit te voeren. De instelling biedt alleen de opdrachten aan die het apparaat en de instellingen voor AI-diensten ondersteunen, en wordt niet getoond wanneer er geen zijn.
 
 **Op te nemen AI-acties**, na **AI-acties** in **Huidig**, kiest welke opdrachten de instelling aanbiedt. Standaard zijn ze allemaal opgenomen tot je dit verandert. Voor de opdrachten, zie [](#descriptions) en [](#pro).

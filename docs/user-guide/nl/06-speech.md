@@ -2,7 +2,7 @@
 
 Het scherm **Spraak** in de instellingen van SandFly bepaalt de spraakengine, stem, snelheid, toonhoogte en volume, stemprofielen, talen, uitspraak en wat spraak stopt. Het heeft de groepen **Stem**, **Talen**, **Uitspraak**, **Spraak stoppen** en **Andere apps**.
 
-Waar spraak wordt afgespeeld, het volume waarop, het verlagen van ander geluid en **Audio met lage latentie** staan op het scherm **Audio-uitvoer**. Zie [](#sound). Wat SandFly over elk item zegt, zoals gebruikstips, interpunctie en emoji, staat op het scherm **Verbositeit**. Zie [](#verbosity).
+Waar spraak wordt afgespeeld, het volume waarop, het verlagen van ander geluid en **Audio met lage latentie** staan op het scherm **Audio-uitvoer**. Zie [](#sound). Wat SandFly over elk item zegt, zoals gebruikstips, interpunctie en emoji, staat op het scherm **Uitgebreidheidsniveau**. Zie [](#verbosity).
 
 ### Kies een spraakengine {#speech-engine}
 
@@ -33,7 +33,7 @@ Je kunt spraak ook wijzigen zonder de instellingen te openen:
 - De opdrachten **Spreeksnelheid verhogen**, **Spreeksnelheid verlagen**, **Spreektoonhoogte verhogen** en **Spreektoonhoogte verlagen**, voor gebaren, sneltoetsen en menu's.
 - De sneltoetsen **Spraakvolume verhogen**, **Spraakvolume verlagen** en **Spreeksnelheid en toonhoogte resetten**. Zie [](#appendix-keyboard-shortcuts).
 
-Om te kiezen of spraak wordt afgespeeld op het toegankelijkheids-, media-, bel- of gespreksvolume, zie [](#sound-speech-volume).
+Om te kiezen of spraak wordt afgespeeld op het toegankelijkheids-, media-, bel- of gespreksvolume, zie [](#sound-speech-volume). Om het spraakvolume te wijzigen met de volumetoetsen, zie [](#buttons-speech-volume).
 
 ### Herhaal de laatste zin langzamer {#speech-repeat-slower}
 
@@ -78,7 +78,7 @@ Om een profiel te wijzigen, ga je naar **Spraak** > **Stemprofielen** en kies je
 
 - **Spraak** > **Stemprofielen** > **Stemprofiel in gebruik**: kies **SandFly-standaard** of een profiel.
 - De leesinstelling **Stemprofiel**: swipe omhoog of omlaag om door **SandFly-standaard** en de profielen te gaan, in de volgorde van het scherm **Stemprofielen**. Deze staat niet standaard in de leesinstellingen. Om hem toe te voegen, ga je naar **Leesinstellingen**.
-- De opdrachten **Kies stemprofiel**, **Volgende stemprofiel** en **Vorig stemprofiel**, in de groep **Stem** van de opdrachten.
+- De opdrachten **Kies stemprofiel**, **Volgende stemprofiel** en **Vorig stemprofiel**, in de groep **Spraak** van de opdrachten.
 - Zodra je een profiel hebt, heeft de groep **Stemprofielen** van de opdrachten een opdracht **Stemprofiel gebruiken** voor **SandFly-standaard** en voor elk profiel, voor gebaren, sneltoetsen en menu's.
 
 Je kunt ook een item **Stemprofiel** toevoegen aan het SandFly-menu. Zie [](#commands).
@@ -90,7 +90,7 @@ Op het scherm **Stemprofielen**:
 - Om een profiel te verplaatsen, tik je erop en houd je vast, en sleep je het omhoog of omlaag, of gebruik je de acties **Omhoog verplaatsen** en **Omlaag verplaatsen**. SandFly kondigt aan boven of onder welk profiel het is verplaatst.
 - Om een profiel te hernoemen of te verwijderen, gebruik je de acties **Hernoemen** en **Verwijderen**, of tik je op het profiel en houd je vast om een menu met deze opties te openen.
 
-**Engine van vorig stemprofiel gestart houden**, op het scherm **Stemprofielen**, houdt de engine van het profiel dat vóór het huidige werd gebruikt actief terwijl het scherm aan staat, zodat terugwisselen niet wacht tot de engine start. Standaard uit.
+**Engine van het vorige stemprofiel gestart houden**, op het scherm **Stemprofielen**, houdt de engine van het profiel dat vóór het huidige werd gebruikt actief terwijl het scherm aan staat, zodat terugwisselen niet wacht tot de engine start. Standaard uit.
 
 ### Emojistem en -snelheid {#speech-emoji}
 
@@ -99,7 +99,7 @@ Twee instellingen in de groep **Stem** veranderen hoe emoji klinken:
 - **Emoji-stem**: **Zelfde als spraak**, de standaardwaarde, of een stemprofiel om emoji mee uit te spreken.
 - **Spraaksnelheid voor emoji**: de snelheid van emoji als percentage van de spreeksnelheid, van 50% tot 300%. De standaardwaarde is 100%.
 
-Ze gelden zowel wanneer de spraakengine de emoji voorleest als wanneer SandFly ze vervangt door hun namen. Of emoji worden voorgelezen, en hoe, wordt ingesteld bij **Verbositeit** > **Emoji**. Zie [](#verbosity-emoji).
+Ze gelden zowel wanneer de spraakengine de emoji voorleest als wanneer SandFly ze vervangt door hun namen. Of emoji worden voorgelezen, en hoe, wordt ingesteld bij **Uitgebreidheidsniveau** > **Emoji**. Zie [](#verbosity-emoji).
 
 ### Stemeffecten {#voice-effects}
 
@@ -108,7 +108,7 @@ Ze gelden zowel wanneer de spraakengine de emoji voorleest als wanneer SandFly z
 Het scherm **Stemeffecten** heeft:
 
 - **Stemeffecten gebruiken**: zet de equalizer en de effecten aan of uit zonder ze te wijzigen. Standaard aan.
-- **Voorinstelling**: **Vlak**, **Helderheid**, **Bas versterken**, **Bas verzwakken**, **Hoge tonen versterken**, **Hoge tonen verzwakken**, **Warm**, **Minder scherpte**, **Minder sisklanken**, **Kleine luidspreker** of **Diepe bas**, daarna je opgeslagen voorinstellingen. Een voorinstelling stelt de banden en de effecten in. De banden beginnen vlak en de effecten uit. Het wijzigen van een band of een effect zet **Voorinstelling** op **Aangepast**.
+- **Voorinstelling**: **Vlak**, **Helderheid**, **Meer bas**, **Minder bas**, **Meer hoge tonen**, **Minder hoge tonen**, **Warme klank**, **Minder scherpte**, **Minder sisklanken**, **Kleine luidspreker** of **Diepe bas**, daarna je opgeslagen voorinstellingen. Een voorinstelling stelt de banden en de effecten in. De banden beginnen vlak en de effecten uit. Het wijzigen van een band of een effect zet **Voorinstelling** op **Aangepast**.
 - **Opslaan als voorinstelling**: slaat de banden en effecten op als een voorinstelling met een naam. Opgeslagen voorinstellingen worden vermeld voor **SandFly-standaard** en voor elk stemprofiel. Je kunt tot 50 voorinstellingen opslaan.
 - **Opgeslagen voorinstellingen**: hernoemt of verwijdert een opgeslagen voorinstelling. Het verwijderen van een voorinstelling verandert niets aan de stemeffecten die erop zijn ingesteld.
 - **Bascompressie**, **Stemcompressie** en **Hogetonencompressie**: **Uit**, **Laag**, **Gemiddeld** of **Hoog**. Elk comprimeert spraak in zijn bereik, onder 200 Hz, 200 Hz tot 4 kHz, of boven 4 kHz, en verhoogt het niveau ervan, zodat stille delen van het bereik luider worden. **Diepe bas** gebruikt **Bascompressie** op **Gemiddeld**.
@@ -118,7 +118,7 @@ Wanneer een band versterkt of een effect aan staat, voorkomt een limiter dat spr
 
 De stemeffecten gelden voor spraak die SandFly afspeelt via **Audio-uitvoer** > **Audio met lage latentie**. Met **Audio met lage latentie** uit, gelden ze als audio-effect op Android 9 en later, waar het apparaat dit ondersteunt. Anders toont het item **Stemeffecten** "Vereist Audio-uitvoer > Audio met lage latentie". Engines die tekst doorgeven aan andere engines passen het effect alleen toe als ze ook de audiosessie doorgeven. Zie [](#sound).
 
-Leesinstellingen: **Stemeffecten** zet de stemeffecten van de stem in gebruik aan of uit, en elke equalizerband heeft een leesinstelling, zoals **Equalizer 1 kHz**. Swipe omhoog of omlaag om de band met 1 dB te wijzigen. Ze staan niet standaard in de leesinstellingen. Om ze toe te voegen, ga je naar **Leesinstellingen**. De opdracht **Stemeffecten gebruiken**, in de groep **Stem** van de opdrachten, zet de stemeffecten aan of uit.
+Leesinstellingen: **Stemeffecten** zet de stemeffecten van de stem in gebruik aan of uit, en elke equalizerband heeft een leesinstelling, zoals **Equalizer 1 kHz**. Swipe omhoog of omlaag om de band met 1 dB te wijzigen. Ze staan niet standaard in de leesinstellingen. Om ze toe te voegen, ga je naar **Leesinstellingen**. De opdracht **Stemeffecten gebruiken**, in de groep **Spraak** van de opdrachten, zet de stemeffecten aan of uit.
 
 ### Talen {#speech-languages}
 
@@ -133,7 +133,7 @@ Met een wijziging uit, leest SandFly de tekst voor met de stem die in gebruik is
 
 Met **Automatisch van taal wisselen** aan, vindt SandFly ook de taal van tekst die apps niet markeren aan het schrift, zoals Arabische of Griekse letters in Engelse tekst, en aan letters die maar één van je talen gebruikt. **Talen herkennen aan woorden** gebruikt taalherkenning op het apparaat van Google Play-services, voor stukken tekst van minstens 12 letters.
 
-De opdrachten **Automatisch van taal wisselen** en **Talen herkennen aan woorden**, in de groep **Stem** van de opdrachten, zetten deze instellingen aan of uit.
+De opdrachten **Automatisch van taal wisselen** en **Talen herkennen aan woorden**, in de groep **Spraak** van de opdrachten, zetten deze instellingen aan of uit.
 
 #### Stemmen per taal {#speech-voices-by-language}
 
@@ -168,9 +168,9 @@ De groep **Uitspraak** heeft:
 De twee instellingen voor fonetische letters hebben elk vier keuzes:
 
 - **Uit**: zegt alleen de letter.
-- **Na de letter, met pauze, zoals "h, hotel"**: de standaardwaarde. Wanneer je per teken verplaatst, volgt het woord na een korte pauze, en als je eerder verder gaat, wordt het overgeslagen.
-- **Na de letter, zonder pauze, zoals "h hotel"**.
-- **In plaats van de letter, zoals "hotel"**.
+- **Na de letter, met pauze, zoals ‘h, Hendrik’**: de standaardwaarde. Wanneer je per teken verplaatst, volgt het woord na een korte pauze, en als je eerder verder gaat, wordt het overgeslagen.
+- **Na de letter, zonder pauze, zoals ‘h Hendrik’**.
+- **In plaats van de letter, zoals ‘Hendrik’**.
 
 ### Spraakwoordenboek {#speech-dictionary}
 
@@ -196,7 +196,7 @@ Het brailewoordenboek, voor brailleleesregels, staat in de brailleinstellingen. 
 
 Kies **Vervanging toevoegen**, voer het **Symbool** in en wat je wilt **Vervangen door**, en kies **OK**. Items hebben dezelfde opties **Bewerken**, **Kies een app**, **Verwijderen**, **Importeren uit bestand** en **Exporteren naar bestand** als het spraakwoordenboek.
 
-In spraak gelden items voor interpunctie die spraakengines niet voorlezen, zoals een punt of komma, niet terwijl **Verbositeit** > **Interpunctie en symbolen uitspreken** die interpunctie weglaat. Met **Geen** geldt geen item voor een los symbool in tekst, behalve waar **Symbolen uitspreken die van betekenis veranderen** het symbool laat staan. Zie [](#verbosity-text).
+In spraak gelden items voor interpunctie die spraakengines niet voorlezen, zoals een punt of komma, niet terwijl **Uitgebreidheidsniveau** > **Interpunctie en symbolen uitspreken** die interpunctie weglaat. Met **Geen** geldt geen item voor een los symbool in tekst, behalve waar **Symbolen uitspreken die de betekenis veranderen** het symbool laat staan. Zie [](#verbosity-text).
 
 ### Pauzeer en hervat spraak {#speech-pause}
 
@@ -219,7 +219,7 @@ Op een fysiek toetsenbord pauzeert alleen Ctrl indrukken spraak. Zie [](#keyboar
 De groep **Spraak stoppen** bepaalt wat spraak stopt:
 
 - **Spraak stoppen bij aanraken van het scherm**: standaard aan.
-- **Spraak onderbreken tijdens typen**: wanneer een teken dat op een fysiek toetsenbord wordt getypt spraak stopt. **Altijd**, de standaardwaarde, **In bewerkbare velden**, of **Bij toetsenbordecho**, alleen wanneer de toetsenbordecho het teken of het woord dat het afsluit uitspreekt. Niet op horloges.
+- **Spraak onderbreken tijdens typen**: wanneer een teken dat op een fysiek toetsenbord wordt getypt spraak stopt. **Altijd**, de standaardwaarde, **In bewerkingsvelden**, of **Bij toetsenbordecho**, alleen wanneer de toetsenbordecho het teken of het woord dat het afsluit uitspreekt. Niet op horloges.
 - **Spraak onderbreken bij Enter**: Enter op een fysiek toetsenbord stopt spraak. Standaard aan. Niet op horloges.
 - **Afstandssensor afdekken om spraak te stoppen**: het afdekken van de afstandssensor stopt spraak. Standaard uit. Niet op tv's en niet op apparaten zonder afstandssensor.
 - **Stil tijdens het opnemen**: terwijl een app opneemt zonder dat er een koptelefoon is aangesloten, spreekt SandFly alleen binnen 2 seconden na een aanraking, gebaar, toets of brailleinvoer, en is stil voor andere spraak, zoals meldingen, zodat deze niet wordt opgenomen. Standaard uit.
@@ -232,7 +232,7 @@ Terwijl een andere app opneemt vanaf de microfoon en tijdens gesprekken, spreekt
 
 De opdracht **Spraakgeschiedenis**, in de groep **Lezen** van de opdrachten, opent een lijst van de laatste 100 teksten die SandFly heeft uitgesproken, nieuwste eerst.
 
-- Kies een tekst voor **Kopiëren**, en voor **Alles tonen** wanneer de lijst de tekst inkort.
+- Kies een tekst voor **Kopiëren**, en voor **Toon alles** wanneer de lijst de tekst inkort.
 - **Geschiedenis wissen**, aan het einde van de lijst, verwijdert elke tekst.
 
 De geschiedenis wordt alleen in het geheugen bewaard, nooit opgeslagen of gelogd, en wordt gewist wanneer SandFly wordt uitgezet. Deze bevat geen spraak terwijl een wachtwoordveld focus heeft, of spraak terwijl de lijst open is. Elke tekst wordt tot 2000 tekens bewaard.
@@ -255,10 +255,10 @@ Voor ontwikkelaars, zie [](#api-speech).
 
 ### Spraakopdrachten en leesinstellingen {#speech-commands}
 
-De groep **Stem** van de opdrachten heeft onder meer: **Spraak pauzeren of hervatten**, **Spraak aan- of uitzetten**, **Spreeksnelheid verhogen**, **Spreeksnelheid verlagen**, **Spreektoonhoogte verhogen**, **Spreektoonhoogte verlagen**, **Gesproken taal wijzigen**, **Automatisch van taal wisselen**, **Talen herkennen aan woorden**, **Kies stemprofiel**, **Volgende stemprofiel**, **Vorig stemprofiel** en **Stemeffecten gebruiken**. Sneltoetsen voegen **Spraakvolume verhogen**, **Spraakvolume verlagen**, **Spreeksnelheid en toonhoogte resetten** en **Instellingen voor tekst-naar-spraak openen** toe.
+De groep **Spraak** van de opdrachten heeft onder meer: **Spraak pauzeren of hervatten**, **Spraak aan- of uitzetten**, **Spreeksnelheid verhogen**, **Spreeksnelheid verlagen**, **Spreektoonhoogte verhogen**, **Spreektoonhoogte verlagen**, **Gesproken taal wijzigen**, **Automatisch van taal wisselen**, **Talen herkennen aan woorden**, **Kies stemprofiel**, **Volgende stemprofiel**, **Vorig stemprofiel** en **Stemeffecten gebruiken**. Sneltoetsen voegen **Spraakvolume verhogen**, **Spraakvolume verlagen**, **Spreeksnelheid en toonhoogte resetten** en **Instellingen voor tekst-naar-spraak openen** toe.
 
 De groep **Lezen** heeft **Laatst uitgesproken woordgroep herhalen**, **Laatst uitgesproken woordgroep langzamer herhalen**, **Laatst uitgesproken woordgroep spellen** en **Spraakgeschiedenis**.
 
-De spraakleesinstellingen zijn **Spreeksnelheid**, **Gesproken taal**, **Spraakmotor**, **Stemprofiel**, **Stemeffecten** en de equalizerbanden. Alleen **Spreeksnelheid** staat standaard in de leesinstellingen. De leesinstellingen **Spraakvolume** en **Audio-uitvoerapparaat** worden beschreven in [](#sound-reading-controls).
+De spraakleesinstellingen zijn **Spreeksnelheid**, **Gesproken taal**, **Spraakmotor**, **Stemprofiel**, **Stemeffecten** en de equalizerbanden. Alleen **Spreeksnelheid** staat standaard in de leesinstellingen. De leesinstellingen **Spraakvolume** en **Audio-uitvoerapparaat** worden beschreven in [](#sound-reading-controls). De groep **Spraak** van **Leesinstellingen** heeft ook **Interpunctie en symbolen uitspreken**, **Emoji** en **Tekstopmaak voorlezen** (zie [](#verbosity-text)), **Automatische vertaling** (zie [](#translation)) en **Alleen door de gebruiker verplaatste focus uitspreken** (zie [](#verbosity-own-speech)).
 
 Om opdrachten toe te wijzen aan gebaren en sneltoetsen, en om leesinstellingen toe te voegen, zie [](#commands).

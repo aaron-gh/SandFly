@@ -102,7 +102,7 @@ De machtigingen zijn:
 - **Klikken, scrollen, typen en de focus verplaatsen**
 - **De spraak van SandFly ontvangen en wijzigen**
 - **Wachtwoordvelden lezen**
-- **Gebaren, toetsen, menu-items en leesinstellingen toevoegen, en SandFly-commando's uitvoeren**
+- **Gebaren, toetsen, menu-items en leesinstellingen toevoegen en SandFly-commando's uitvoeren**
 - **Internet gebruiken**
 - **Het klembord lezen en wijzigen**
 - **Teruggaan of naar het startscherm gaan, meldingen openen, een lijst met apps tonen, apps, instellingen en links openen, intents naar apps sturen, het volume, de belmodus en apparaatinstellingen zoals Wi-Fi en de zaklamp wijzigen, media bedienen, timers en wekkers instellen, en gesprekken en berichten starten**
@@ -239,7 +239,7 @@ Getimede triggers werken alleen terwijl het script actief is.
 
 Met SandFly Pro schrijft **Script bouwen met SandFly Pro**, op het scherm **Scripts**, een script op basis van je beschrijving van wat het moet doen. **Wijzigen met SandFly Pro**, op de pagina van een gebouwd script en in de scriptbouwer, wijzigt een script. SandFly Pro leest het scherm op de voorgrond en test het script. In zijn melding toont SandFly Pro verzoeken om andere schermen te openen of delen van het script te proberen; selecteer daar **Klaar** of **Beantwoorden** als je dat hebt gedaan.
 
-Het script opent dan in de scriptbouwer onder **Geschreven door SandFly Pro**, met een samenvatting, **Accepteren**, **Wijzigingen vragen** en **Verwijderen**. Tot je het accepteert, werkt het script zonder internet en Java-codemachtigingen. Het bouwen van een script gebruikt veel meer van de maandelijkse gebruikslimiet van SandFly Pro dan andere taken. Zie [](#pro).
+Het script opent dan in de scriptbouwer onder **Geschreven door SandFly Pro**, met een samenvatting, **Accepteren**, **Wijzigingen vragen** en **Verwijderen**. Tot je het accepteert, werkt het script zonder internet en Java-codemachtigingen. Het bouwen van een script gebruikt veel meer van de maandelijkse gebruikslimiet van SandFly Pro dan andere taken. Zie [](#pro-scripts).
 
 ### Inspecteer items {#scripts-inspect}
 
@@ -258,7 +258,7 @@ Een aangepast label vervangt de naam van een item, zoals een ongelabelde knop in
 #### Voeg een label toe of bewerk het {#scripts-labels-add}
 
 1. Verplaats de focus naar het item.
-2. Voer de opdracht **Labels toevoegen of bewerken** uit, in de groep **Activering** van commando's. Zie [](#commands).
+2. Voer de opdracht **Labels toevoegen of bewerken** uit, in de groep **Activeren** van commando's. Zie [](#commands).
 3. Voer in het dialoogvenster **Label toevoegen** of **Label bewerken** het label in, en selecteer dan **OK**.
 
 Om een label te verwijderen, voer **Labels toevoegen of bewerken** uit op het item, en selecteer dan **Label verwijderen**. SandFly zegt "Kan dit niet labelen" als het item niet gelabeld kan worden.
@@ -271,7 +271,7 @@ Om items te labelen vanuit het SandFly-menu, zet **Labels toevoegen of bewerken*
 
 #### Exporteer en importeer aangepaste labels {#scripts-labels-export}
 
-Aangepaste labels staan niet in geëxporteerde instellingen. Om ze naar een andere telefoon te verplaatsen, exporteer ze naar een bestand.
+**Back-up en herstel** > **Instellingen exporteren** neemt aangepaste labels mee. Zie [](#profiles-export). Om alleen de labels te delen, exporteer ze naar een bestand.
 
 - **Aangepaste labels exporteren**: slaat alle aangepaste labels op in een bestand en opent het Android-deelscherm, waar je kiest waar je het naar toe stuurt of opslaat. SandFly zegt "Niets om te exporteren. Je hebt geen labels toegevoegd." als er geen zijn.
 - **Aangepaste labels importeren**: leest een labelbestand. Kies in het dialoogvenster **Aangepaste labels importeren in SandFly** **Overschrijven** om je labels te vervangen door die in het bestand als beide hetzelfde item labelen, of **Overslaan** om die van jou te behouden.

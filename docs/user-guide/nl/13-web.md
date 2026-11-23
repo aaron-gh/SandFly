@@ -20,7 +20,7 @@ Hoe sommige elementen worden voorgelezen:
 - Selectievakjes en keuzerondjes worden voorgelezen met hun labels.
 - Als een pagina de focus naar een element zoals een bericht verplaatst, zoals Mastodon doet met de toetsen J en K, leest SandFly de tekst van de links erin voor, zoals de auteur, de tijd en de hashtags, maar niet de knoppen ervan. Spaties tussen links worden niet voorgelezen.
 
-Opmerking: Sommige spraakengines, zoals Gryphon, stoppen alleen tussen de tekstdelen die ze ontvangen. Als de spraak van het volgende item laat begint nadat je van een lange alinea bent weggeswipet, zet je **Spraak** > **Stuur lange tekst zin voor zin** aan. Zie [](#speech).
+Opmerking: Sommige spraakengines, zoals Gryphon, stoppen alleen tussen de tekstdelen die ze ontvangen. Als de spraak van het volgende item laat begint nadat je van een lange alinea bent weggeswipet, zet je **Spraak** > **Stuur lange tekst zin voor zin** aan. Zie [](#speech-pronunciation).
 
 ### Per element bewegen {#web-elements}
 
@@ -51,7 +51,7 @@ Je kunt deze leesinstellingen toevoegen op het scherm **Leesinstellingen**, onde
 
 Zie [](#commands) om een leesinstelling toe te voegen. Zie [](#reading-controls) om leesinstellingen te selecteren.
 
-Je kunt ook per element bewegen zonder de leesinstelling te wijzigen: wijs gebaren toe aan de opdrachten onder **Navigeren op element** en **Navigeren op kopniveau**, zoals **Volgende kop** en **Vorige kop**. Zie [](#gestures). Op een fysiek toetsenbord heeft elk element een sneltoets; zie [](#keyboards).
+Je kunt ook per element bewegen zonder de leesinstelling te wijzigen: wijs gebaren toe aan de opdrachten in de categorie **Navigeren op element**, zoals **Volgende kop**, **Vorige kop** en **Volgende kop 1**. Zie [](#gestures). Op een fysiek toetsenbord heeft elk element een sneltoets; zie [](#keyboards).
 
 De opdracht **Navigatie**, die je aan het SandFly-menu kunt toevoegen, toont soorten navigatie om uit te kiezen, zoals tekens, koppen of herkenningspunten. Als die in het SandFly-menu staat, kiest **Navigatie-opties bewerken**, daaronder op het scherm **SandFly-menu**, welke soorten worden getoond. Zie [](#commands).
 
@@ -102,7 +102,7 @@ Gebruik de opdracht **Browsemodus aan- of uitzetten**, in de categorie **Web**, 
 
 Deze instellingen staan op het scherm **Navigatie**:
 
-- **Slimme browsemodus**: zet de browsemodus automatisch aan of uit op basis van het item waar je op staat. Dit synchroniseert de invoerfocus met de SandFly-focus. Standaard aan. SandFly zet de browsemodus aan als de focus naar een item in webinhoud gaat, en uit bij tekstvelden en bij bedieningselementen die de pijltoetsen gebruiken, zoals schuifregelaars, keuzelijsten, menubalken, menu's, boomstructuren, roosters, keuzelijsten met invoervak en spinbuttons. Als je de browsemodus zelf uitzet in webinhoud, zet het verplaatsen van de focus binnen die webinhoud hem niet weer aan. De browsemodus gaat ook uit als de invoerfocus naar een tekstveld of schuifregelaar in een app gaat.
+- **Slimme browsemodus**: zet de browsemodus aan of uit voor het gefocuste item. Standaard aan. SandFly zet de browsemodus aan als de focus naar een item in webinhoud gaat, en uit bij tekstvelden en bij bedieningselementen die de pijltoetsen gebruiken, zoals schuifregelaars, keuzelijsten, menubalken, menu's, boomstructuren, roosters, keuzelijsten met invoervak en spinbuttons. Als een toetsenbordopdracht de SandFly-focus naar een van deze items verplaatst, gaat de invoerfocus daar ook naartoe. Als je de browsemodus zelf uitzet in webinhoud, zet het verplaatsen van de focus binnen die webinhoud hem niet weer aan. De browsemodus gaat ook uit als de invoerfocus naar een tekstveld of schuifregelaar in een app gaat.
 - **Browsemodus per app onthouden**: SandFly behoudt de browsemodus zoals je die voor het laatst in elke app hebt aan- of uitgezet. In een app waarin je de browsemodus niet hebt aan- of uitgezet, staat die uit, tenzij **Slimme browsemodus** hem aanzet in webinhoud. Standaard uit.
 
 ### Lijsten met elementen en adressen {#web-lists}
@@ -110,7 +110,7 @@ Deze instellingen staan op het scherm **Navigatie**:
 Met een fysiek toetsenbord tonen deze opdrachten, in de categorie **Web**, de elementen van de pagina:
 
 - **Lijst met koppen tonen**
-- **Lijst met herkenningspunten tonen**
+- **Lijst met oriëntatiepunten tonen**
 - **Lijst met links tonen**
 - **Lijst met bedieningselementen tonen**
 - **Lijst met tabellen tonen**

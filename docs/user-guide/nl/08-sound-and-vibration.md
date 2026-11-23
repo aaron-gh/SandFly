@@ -2,7 +2,7 @@
 
 SandFly speelt een geluid en een trilling af voor acties en gebeurtenissen, zoals focus verplaatsen, een item activeren, scrollen en een venster openen. **Geluid en trillen** in de instellingen van SandFly zet geluiden en trillingen aan en uit, bepaalt hun volume en sterkte, en bevat geluidsthema's en bedieningsgeluiden. **Audio-uitvoer** bepaalt waar spraak en geluiden worden afgespeeld, op welk volume, en wat er gebeurt met andere audio en met gesprekken terwijl SandFly aan staat.
 
-Voor de spraakengine, stemmen, spreeksnelheid, spraakvolume en de stemeffecten, zie [](#speech). Voor de volumetoetsen en **Volumewijziging**, zie [](#buttons).
+Voor de spraakengine, stemmen, spreeksnelheid, spraakvolume en de stemeffecten, zie [](#speech). Voor de volumetoetsen en **Feedback bij volumewijziging**, zie [](#buttons).
 
 ### Zet geluiden aan of uit {#sound-feedback}
 
@@ -12,6 +12,8 @@ De groep **Geluiden** van **Geluid en trillen** heeft deze instellingen:
 - **Volume geluidsfeedback**: het volume van de geluiden, van 5 tot 100 procent in stappen van 5. De standaardwaarde is 50 procent.
 - **Geluidsthema's**: opent de geïnstalleerde geluidsthema's, bedieningsgeluiden en 3D-audio. Zie [](#sound-themes).
 
+De sneltoets **Geluidsfeedback (earcons) aan- of uitzetten** zet **Geluidsfeedback** aan of uit. Zie [](#appendix-keyboard-shortcuts).
+
 Om een los geluid uit te zetten en de rest te houden, zie [](#sound-individual).
 
 ### Verander trilling {#sound-vibration}
@@ -20,18 +22,20 @@ De groep **Trillen** van **Geluid en trillen** heeft deze instellingen. Op appar
 
 - **Trilfeedback**: speelt de SandFly-trillingen af. Standaard aan. Met dit uit, spelen geluiden nog steeds.
 - **Trillingssterkte**: hoe sterk trillingen zijn, van 5 tot 200 procent. De standaardwaarde is 100 procent. De instelling wordt alleen getoond op apparaten waarvan de trilmotor de sterkte kan variëren.
-- **Trillingstype**: hoe trillingen worden afgespeeld. De lijst toont alleen de typen die de trilmotor kan afspelen, en de instelling is verborgen wanneer er maar één type beschikbaar is. Tot je een type kiest, gebruikt SandFly het eerste in de lijst.
+- **Type trilling**: hoe trillingen worden afgespeeld. De lijst toont alleen de typen die de trilmotor kan afspelen, en de instelling is verborgen wanneer er maar één type beschikbaar is. Tot je een type kiest, gebruikt SandFly het eerste in de lijst.
   - **Haptische effecten**: samengestelde effecten zoals klikken en tikken, op Android 11 en later met een trilmotor die ze ondersteunt.
   - **Pulsen**: trillingen met wisselende sterkte, op trilmotoren die hun sterkte kunnen variëren.
   - **Aan en uit**: de trilmotor gaat aan en uit op volle sterkte. Elke trilmotor kan dit type afspelen.
 
 Als trillingen zwak aanvoelen met **Haptische effecten**, kies je **Pulsen** en verhoog je **Trillingssterkte**.
 
+De opdracht **Trilfeedback**, in de groep **Spraak** van de opdrachten, zet **Trilfeedback** aan of uit. Zie [](#commands).
+
 ### Geluiden en trillingen {#sound-events}
 
 Elk geluid heeft een eigen trilling, die met het geluid afspeelt en ook afspeelt met **Geluidsfeedback** uit. Je kunt alle geluiden uitzetten en acties nog steeds aan hun trilling onderscheiden. Een paar trillingen, zoals de aankondigingstrilling en de trillingen van het brailletoetsenbord, spelen zonder geluid.
 
-De geluiden, bij de namen die worden getoond in **Losse geluiden en trillingen** en in de geluidslijst van een thema:
+De geluiden, bij de namen die worden getoond in **Afzonderlijke geluiden en trillingen** en in de geluidslijst van een thema:
 
 | Geluid | Speelt bij |
 | --- | --- |
@@ -48,21 +52,21 @@ De geluiden, bij de namen die worden getoond in **Losse geluiden en trillingen**
 | **Randgebaar onderaan**, **Randgebaar midden** en **Randgebaar bovenaan** | De fasen van een randgebaar. Niet op horloges. |
 | **Invoegpunt verplaatst** | Verplaatsen per teken, woord, regel of alinea verplaatst de cursor in een tekstveld dat je bewerkt. |
 | **Naar volgende rij** en **Naar vorige rij** | Een swipe verplaatst focus naar een item op een rij onder of boven de huidige. |
-| **Agent task started**, **Agent task complete**, **Agent question**, **Agent stopped at a sensitive action** en **Agent task failed** | De SandFly Pro-agent. Alleen in builds met SandFly Pro. Zie [](#pro). |
+| **Agenttaak gestart**, **Agenttaak voltooid**, **Vraag van agent**, **Agent gestopt bij gevoelige actie** en **Agenttaak mislukt** | De SandFly Pro-agent. Alleen in builds met SandFly Pro. Zie [](#pro). |
 | **Spelfout** | Een verkeerd gespeld woord. |
 | **Link** | Een link in tekst. |
 | **Opgemaakte tekst** | Opgemaakte tekst, zoals vet. |
 | **Scherm uit** en **Scherm aan** | Het scherm gaat uit of aan. |
-| **Scherm verborgen** en **Scherm getoond** | Het scherm is verborgen, of weer getoond. Zie [](#display). |
+| **Scherm verborgen** en **Scherm weergegeven** | Het scherm is verborgen, of weer getoond. Zie [](#display). |
 | **Laden** | Een beschrijving of ander resultaat wordt geladen. |
-| **On-device AI model loading** | Het AI-model op het apparaat wordt geladen. |
+| **AI-model op het apparaat wordt geladen** | Het AI-model op het apparaat wordt geladen. |
 | **Browsemodus aan** en **Browsemodus uit** | Browsemodus gaat aan of uit. Zie [](#web). |
 | **Toetsenbord geopend** en **Toetsenbord gesloten** | Een schermtoetsenbord opent of sluit. |
 | **SandFly-melding** | SandFly plaatst een melding op een meldingskanaal zonder geluid. |
 | **Volledig opgeladen** | De batterij is volledig opgeladen, met **Volledig opgeladen batterij melden** aan. Zie [](#verbosity-announcements). |
 | **Cirkelmenu** | De items van het cirkelmenu, acht noten. |
-| **Brailleleesregel verbonden**, **Brailleleesregel niet verbonden**, **Braillecommando mislukt**, **Automatisch scrollen braille aan**, **Automatisch scrollen braille uit** en **Brailletoetsenbord gecalibreerd** | Brailleleesregels en het brailletoetsenbord. Zie [](#braille). |
-| **Bedieningsgeluid: knop** tot **Bedieningsgeluid: boomstructuuritem** | Bedieningsgeluiden, één voor elk type bedieningselement. Zie [](#sound-control-sounds). |
+| **Brailleleesregel verbonden**, **Brailleleesregel losgekoppeld**, **Braille-opdracht mislukt**, **Automatisch braille scrollen aan**, **Automatisch braille scrollen uit** en **Brailletoetsenbord gekalibreerd** | Brailleleesregels en het brailletoetsenbord. Zie [](#braille). |
+| **Bedieningselementgeluid: knop** tot **Bedieningselementgeluid: boomitem** | Bedieningsgeluiden, één voor elk type bedieningselement. Zie [](#sound-control-sounds). |
 
 #### Navigatiegeluiden {#sound-navigation-sounds}
 
@@ -78,7 +82,7 @@ Terwijl je met twee vingers een lijst scrolt, speelt SandFly een licht tikje voo
 
 ### Zet losse geluiden en trillingen uit {#sound-individual}
 
-**Geluid en trillen** > **Losse geluiden en trillingen** heeft een schakelaar voor elk geluid, onder **Geluiden**, en voor elke trilling, onder **Trillingen**. Alle schakelaars staan standaard aan. Het uitzetten van een geluid houdt de trilling, en het uitzetten van een trilling houdt het geluid. **Geluidsfeedback** en **Trilfeedback** zetten nog steeds alle geluiden of alle trillingen in één keer uit.
+**Geluid en trillen** > **Afzonderlijke geluiden en trillingen** heeft een schakelaar voor elk geluid, onder **Geluiden**, en voor elke trilling, onder **Trillingen**. Alle schakelaars staan standaard aan. Het uitzetten van een geluid houdt de trilling, en het uitzetten van een trilling houdt het geluid. **Geluidsfeedback** en **Trilfeedback** zetten nog steeds alle geluiden of alle trillingen in één keer uit.
 
 Om een geluid of trilling af te spelen voordat je de schakelaar wijzigt:
 
@@ -139,7 +143,7 @@ Je kunt elk geluid van het thema dat in gebruik is vervangen door een geluidsbes
 
 De samenvatting van elk geluid toont **Geluid van SandFly**, **Themageluid** of **Geen geluid**. Dezelfde acties staan in het actiemenu van elk geluid, als **Beluisteren**, **Instellen op geen geluid**, **Geluid van SandFly gebruiken** en **Een geluidsbestand kiezen**. **De geluiden van SandFly voor alles gebruiken** verwijdert elk geluid van het thema en gebruikt de ingebouwde geluiden.
 
-De geluidslijst heeft ook geluiden die **Losse geluiden en trillingen** niet heeft: **Volumewijziging**, dat speelt voor elke volumestap wanneer **Volumewijziging** is ingesteld op een toon (zie [](#buttons)), en de typegeluiden van het brailletoetsenbord, die spelen met **Typegeluiden** aan in de instellingen van het brailletoetsenbord (zie [](#braille)).
+De geluidslijst heeft ook geluiden die **Afzonderlijke geluiden en trillingen** niet heeft: **Volumewijziging**, dat speelt voor elke volumestap wanneer **Feedback bij volumewijziging** is ingesteld op een toon (zie [](#buttons)), en de typegeluiden van het brailletoetsenbord, die spelen met **Typegeluiden** aan in de instellingen van het brailletoetsenbord (zie [](#braille)).
 
 #### Maak een geluidsthema {#sound-themes-create}
 
@@ -178,7 +182,7 @@ De instellingen onder het thema dat in gebruik is:
 - **3D-audio**: wanneer bedieningsgeluiden spelen vanaf de positie van het bedieningselement. Zie [](#sound-3d-audio).
 - **Toch het type bedieningselement uitspreken**: zegt het type bedieningselement na zijn geluid. Standaard aan voor het thema **SandFly**, uit voor andere thema's tenzij het thema dit instelt.
 
-Een item dat zelf geen bedieningselement is, zoals een rij in Instellingen, speelt het geluid van het eerste bedieningselement erin, zoals zijn schakelaar, en anders het geluid van zijn type item, zoals een lijstitem. Toetsen van het schermtoetsenbord houden het focusgeluid. Een trilling van een bedieningselement speelt met **Geluidsfeedback** uit, zodat je bedieningselementen aan hun trilling kunt onderscheiden. Een type bedieningselement waarvan het geluid is uitgezet in **Losse geluiden en trillingen**, of door het thema op geen geluid is gezet, speelt het focusgeluid, en SandFly zegt het type bedieningselement.
+Een item dat zelf geen bedieningselement is, zoals een rij in Instellingen, speelt het geluid van het eerste bedieningselement erin, zoals zijn schakelaar, en anders het geluid van zijn type item, zoals een lijstitem. Toetsen van het schermtoetsenbord houden het focusgeluid. Een trilling van een bedieningselement speelt met **Geluidsfeedback** uit, zodat je bedieningselementen aan hun trilling kunt onderscheiden. Een type bedieningselement waarvan het geluid is uitgezet in **Afzonderlijke geluiden en trillingen**, of door het thema op geen geluid is gezet, speelt het focusgeluid, en SandFly zegt het type bedieningselement.
 
 Elk thema houdt zijn eigen instellingen voor bedieningsgeluiden. Wisselen van thema wisselt deze mee.
 
@@ -242,7 +246,7 @@ De leesinstelling **Spraakvolume** wisselt tussen deze volumes, en de leesinstel
 
 ### Verlaag ander geluid terwijl SandFly spreekt {#sound-ducking}
 
-**Audio-uitvoer** > **Audiovolume verlagen** verlaagt het volume van andere audio, zoals muziek, terwijl SandFly spreekt. Standaard aan. De leesinstelling **Audiovolume verlagen** zet dit aan en uit.
+**Audio-uitvoer** > **Audiovolume verlagen** verlaagt het volume van andere audio, zoals muziek, terwijl SandFly spreekt. Standaard aan. De leesinstelling **Audiovolume verlagen** en de opdracht **Audiovolume verlagen**, in de groep **Spraak** van de opdrachten, zetten dit aan en uit.
 
 ### Audio met lage latentie {#sound-low-latency}
 
@@ -250,7 +254,7 @@ De leesinstelling **Spraakvolume** wisselt tussen deze volumes, en de leesinstel
 
 - Spraak gebruikt het snelle pad op Android 11 en later. Op eerdere versies gebruiken alleen geluiden dit.
 - Spraak speelt op de gewone manier tijdens gesprekken, kort na het begin of einde van een gesprek, terwijl een app met de microfoon opneemt, en met spraakengines die hun eigen audio afspelen.
-- Spraak midden in een woord hervatten na een pauze vereist **Audio met lage latentie**. Zie [](#speech-pause). Met dit uit, werken de stemeffecten alleen waar het apparaat dit als audio-effect ondersteunt. Zie [](#voice-effects).
+- Spraak midden in een woord hervatten na een pauze vereist **Audio met lage latentie**. Zie [](#speech-pause). Met dit uit, werken de stemeffecten alleen waar het apparaat ze als audio-effect ondersteunt. Zie [](#voice-effects).
 
 ### Houd spraak op de telefoon tijdens casten {#sound-casting}
 

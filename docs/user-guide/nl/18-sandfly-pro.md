@@ -9,7 +9,7 @@ SandFly Pro is een betaalde add-on die AI-functies aan SandFly toevoegt:
 
 SandFly Pro vereist een internetverbinding. De AI-agent, schermherkenning en de scriptagent vereisen Android 11 of hoger. Elke code heeft een maandelijkse gebruikslimiet. Zie [](#pro-usage).
 
-De instellingen van SandFly Pro staan in **SandFly Pro**, na **AI-diensten** in de instellingen van SandFly. **AI-diensten** > **SandFly Pro-instellingen** opent hetzelfde scherm.
+De instellingen van SandFly Pro staan in **SandFly Pro**, na **AI-diensten** in de instellingen van SandFly. **AI-diensten** > **Instellingen voor SandFly Pro** opent hetzelfde scherm.
 
 ### Koop SandFly Pro {#pro-buy}
 
@@ -47,7 +47,7 @@ Als de code niet kan worden geactiveerd, zegt SandFly waarom, bijvoorbeeld:
 - **Code invoeren**: activeert een code op dit apparaat.
 - **Dit apparaat verwijderen**: zet SandFly Pro op dit apparaat uit, zodat de code op een ander apparaat kan worden geactiveerd. Getoond terwijl een code op het apparaat staat.
 - **Kopen**: opent de aankooppagina. Terwijl een code op het apparaat staat, is het item **Verlengen**, wat tijd toevoegt aan die code. Terwijl de code automatisch wordt verlengd, is het item **Abonnement beheren**.
-- **Automatische verlenging aanzetten**: getoond voor een code die niet automatisch wordt verlengd. Zie [](#pro-auto-renewal).
+- **Automatische verlenging inschakelen**: getoond voor een code die niet automatisch wordt verlengd. Zie [](#pro-auto-renewal).
 - **Automatische schermherkenning** en **Herkende schermen vergeten**: zie [](#pro-screen-recognition).
 - **Verkoopvoorwaarden** en **Privacybeleid**.
 
@@ -55,7 +55,7 @@ Als de code niet kan worden geactiveerd, zegt SandFly waarom, bijvoorbeeld:
 
 Automatische verlenging staat uit totdat je hem kiest. Je kunt hem kiezen bij het kopen, of later voor een code die je al hebt:
 
-1. Ga naar **SandFly Pro** en kies **Automatische verlenging aanzetten**. Een pagina opent in de browser.
+1. Ga naar **SandFly Pro** en kies **Automatische verlenging inschakelen**. Een pagina opent in de browser.
 2. Volg de stappen op de pagina.
 
 Terwijl de code automatisch wordt verlengd, zegt de status **Actief. Wordt verlengd op** en de datum. Om de betaalkaart te wijzigen of de verlenging te annuleren, kies **Abonnement beheren**.
@@ -98,7 +98,7 @@ De AI-agent voert een taak uit in de app op de voorgrond, via tikken, swipes, ty
 2. Voer **AI-agenttaak starten of stoppen** uit. SandFly begint met opnemen.
 3. Zeg de taak, zoals "begin een nieuw spel". Als je stopt met praten, zegt SandFly "Agent gestart."
 
-Om de taak in plaats daarvan te typen, voer **AI-agenttaak typen** uit. Typ in het venster **AI-agenttaak** wat de agent moet doen en kies **Starten**, of kies **Spreken** om het op te nemen.
+Om de taak in plaats daarvan te typen, voer **AI-agenttaak typen** uit. Typ in het venster **AI-agenttaak** wat de agent moet doen en kies **Starten**, of kies **Spreken** om het op te nemen. Hetzelfde venster opent als de opname niet kan starten. Terwijl een taak wordt uitgevoerd, zegt **AI-agenttaak typen** "Een agenttaak wordt uitgevoerd."
 
 Terwijl de agent werkt, leest SandFly voor wat de agent rapporteert, speelt een geluid als hij begint, vraagt en eindigt, en leest aan het einde een samenvatting voor: "Taak voltooid." of "Taak niet voltooid."
 
@@ -106,7 +106,7 @@ Beide opdrachten staan in **Commando's**, waar je ze kunt toewijzen aan gebaren 
 
 #### Beantwoord vragen en sta acties toe {#pro-agent-questions}
 
-Als de agent een vraag heeft, leest SandFly die voor en neemt je antwoord op. Voor een getypte taak opent in plaats daarvan een venster: typ het antwoord en kies **Antwoorden**.
+Als de agent een vraag heeft, leest SandFly die voor en neemt je antwoord op. Voor een getypte taak opent in plaats daarvan een venster: typ het antwoord en kies **Antwoord**.
 
 Sommige acties vereisen jouw toestemming, zoals betalingen, berichten of posts versturen, gegevens verwijderen, beveiliging, privacy of toegankelijkheidsinstellingen wijzigen, machtigingen verlenen, apps installeren en bellen. SandFly toont **Deze actie toestaan?** met **Toestaan** en **Niet toestaan**. Als de veiligheidscontrole niet kan worden bereikt, vraagt SandFly dit voor elke actie.
 
@@ -114,7 +114,7 @@ Andere acties worden geblokkeerd, zoals het invoeren van wachtwoorden of codes d
 
 #### Vervolgverzoeken {#pro-agent-follow-up}
 
-Gedurende 10 minuten na het einde van een taak zet de volgende taak hetzelfde gesprek voort, zodat je om meer kunt vragen zonder te herhalen wat de agent deed. SandFly zegt "Vervolgtaak gestart." Voor een getypte vervolgtaak heet het venster **AI-agent vervolgtaak**.
+Gedurende 10 minuten na het einde van een taak zet de volgende taak hetzelfde gesprek voort, zodat je om meer kunt vragen zonder te herhalen wat de agent deed. SandFly zegt "Vervolgtaak gestart." Voor een getypte vervolgtaak heet het venster **Vervolgtaak voor AI-agent**.
 
 #### Stop de agent {#pro-agent-stop}
 
@@ -126,7 +126,7 @@ De agent stopt zelf na een limiet van stappen of tijd, en SandFly zegt dat.
 
 - De agent vereist Android 11 of hoger.
 - Vensters die schermafbeeldingen blokkeren, zoals sommige bank-apps, sturen alleen hun items.
-- In apps zonder tekstveld, zoals spellen, vereist typen Shizuku, en ook toetsen anders dan Terug, Home en Enter. Zie [](#updates).
+- In apps zonder tekstveld, zoals spellen, vereist typen Shizuku, en ook toetsen anders dan Terug, Home en Enter. Zie [](#updates-shizuku).
 
 ### Schermherkenning {#pro-screen-recognition}
 
@@ -157,12 +157,12 @@ De scriptagent schrijft een SandFly-script op basis van een beschrijving, en tes
 1. Open de app waarvoor het script is.
 2. Ga naar **Scripts** en kies **Script bouwen met SandFly Pro**, of voer de opdracht **Script bouwen met SandFly Pro** uit.
 3. Lees het dialoogvenster **Scripts en de gebruikslimiet**, dat zegt hoeveel van de maandelijkse limiet is gebruikt, en kies **Akkoord en doorgaan**.
-4. Typ in **Een script bouwen** wat het script moet doen en in welke app, en kies **Starten**. SandFly zegt "Het script wordt gebouwd".
-5. Als de melding **SandFly Pro wacht op een scherm** verschijnt, open het scherm dat de agent vraagt, en kies dan **Klaar** in de melding, of voer **Script bouwen met SandFly Pro** opnieuw uit. Als de agent om een test vraagt, zoals van een gebaar, probeer die in de app, en kies dan **Klaar**.
+4. Typ in **Script bouwen** wat het script moet doen en in welke app, en kies **Starten**. SandFly zegt "Het script wordt gebouwd".
+5. Als de melding **SandFly Pro wacht op een scherm** verschijnt, open het scherm dat de agent vraagt, en kies dan **Klaar** in de melding, of voer **Script bouwen met SandFly Pro** opnieuw uit. Als de agent om een test vraagt, zoals van een gebaar, toont de melding **SandFly Pro bouwt een script** het verzoek: probeer de test in de app, en kies dan **Klaar**, of kies **Beantwoorden** en beschrijf wat er gebeurde.
 6. Om in plaats daarvan een bericht naar de agent te sturen, zoals om een scherm over te slaan of om te stoppen en te bewaren wat hij heeft, kies **Beantwoorden** in de melding.
 
-Terwijl het script wordt gebouwd, heeft de melding **SandFly Pro bouwt een script** de knop **Stoppen**. Als je **Script bouwen met SandFly Pro** aan het SandFly-menu hebt toegevoegd, is het menu-item **De SandFly Pro-agent stoppen** terwijl de agent werkt. Terwijl de agent werkt en niet op jou wacht, stopt **Script bouwen met SandFly Pro** hem ook. Als de agent klaar is of wordt gestopt, opent het script in de scriptbouwer onder **Geschreven door SandFly Pro**, met een samenvatting en **Accepteren**, **Wijzigingen vragen** en **Verwijderen**. Tot je het accepteert, werkt het script zonder toegang tot het netwerk en Java-machtigingen.
+Terwijl het script wordt gebouwd, heeft de melding **SandFly Pro bouwt een script** de knoppen **Beantwoorden** en **Stoppen**. **Beantwoorden** stuurt een bericht dat de agent bij zijn volgende stap leest. Als je **Script bouwen met SandFly Pro** aan het SandFly-menu hebt toegevoegd, is het menu-item **SandFly Pro-agent stoppen** terwijl de agent werkt. Terwijl de agent werkt en niet op jou wacht, stopt **Script bouwen met SandFly Pro** hem ook. Als de agent klaar is of wordt gestopt, opent het script in de scriptbouwer onder **Geschreven door SandFly Pro**, met een samenvatting en **Accepteren**, **Wijzigingen vragen** en **Verwijderen**. Tot je het accepteert, werkt het script zonder toegang tot het netwerk en Java-machtigingen. Als de agent geen script heeft opgeslagen, zegt SandFly "Geen script opgeslagen".
 
 Om een gebouwd script te wijzigen, kies **Wijzigen met SandFly Pro** op zijn pagina of in de scriptbouwer.
 
-Het bouwen van een script gebruikt veel meer van de maandelijkse gebruikslimiet dan een agenttaak. Eén script kan een groot deel ervan gebruiken. Voor scripts en de scriptbouwer, zie [](#scripts).
+Het bouwen van een script gebruikt veel meer van de maandelijkse gebruikslimiet dan een agenttaak. Eén script kan een groot deel ervan gebruiken. Elk script heeft een eigen bestedingslimiet: als die is bereikt, slaat de agent op wat werkt en rondt af, en de samenvatting vermeldt wat niet klaar is. Voor scripts en de scriptbouwer, zie [](#scripts).

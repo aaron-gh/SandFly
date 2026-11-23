@@ -29,7 +29,7 @@ De services zijn:
 - **Google Cloud Translation**, **DeepL** en **Microsoft Translator**: vereisen je eigen API-sleutel van de service.
 - **LibreTranslate**: vereist het adres van een LibreTranslate-server, zoals `https://libretranslate.com` of je eigen server, en een API-sleutel als de server die nodig heeft.
 
-Als je een service kiest die een API-sleutel of een adres vereist, vraagt SandFly er direct om. De instellingen van de service staan dan in een eigen categorie op het scherm **Vertaling**, zoals **DeepL-instellingen**:
+Als je een service kiest die een API-sleutel of een adres vereist, vraagt SandFly er direct om. De instellingen van de service staan dan in een eigen categorie op het scherm **Vertaling**, zoals **Instellingen voor DeepL**:
 
 - Het item voor de API-sleutel, zoals **DeepL API-sleutel**: plak de sleutel en kies **Opslaan**. Om hem te verwijderen, maak het veld leeg en kies **Opslaan**.
 - **Adres**, voor LibreTranslate: het adres van de server. Dit moet beginnen met `https://`.
@@ -48,7 +48,7 @@ Met **Op het apparaat** tonen de lijsten de talen die vertaling op het apparaat 
 
 ### Talen op het apparaat {#translation-on-device}
 
-Met **Op het apparaat** als de vertaalservice of de service voor automatische vertaling heeft de categorie **Instellingen op het apparaat** deze items:
+Met **Op het apparaat** als de vertaalservice of de service voor automatische vertaling heeft de categorie **Instellingen voor Op het apparaat** deze items:
 
 - **Talen op het apparaat**: toont de talen en welke zijn gedownload. Kies een taal die niet is gedownload om hem te downloaden, ongeveer 30 MB, of een gedownloade taal om hem te verwijderen.
 - **Alle talen downloaden**: downloadt elke taal die niet is gedownload, één voor één, na een dialoogvenster met hun aantal en grootte. Terwijl ze downloaden, toont het item hoeveel er klaar zijn, en SandFly kondigt elk kwart aan terwijl het scherm **Vertaling** open is. De downloads gaan door nadat je het scherm verlaat. Kies het item opnieuw om ze te stoppen.

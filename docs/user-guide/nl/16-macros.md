@@ -35,9 +35,9 @@ Het scherm van een macro heeft:
 - **Stap toevoegen**: voegt een stap toe. Daaronder toont SandFly waar de stap komt: **Aan het einde**, **Aan het begin**, of na een stap. Een nieuwe stap komt na de stap die je het laatst hebt toegevoegd, zodat stappen die je na **Als** of een herhaling toevoegt, in dat blok terechtkomen.
 - **Stappen opnemen**: neemt stappen op waar **Stap toevoegen** ze toevoegt. Zie [](#macros-record).
 - **Alleen uitvoeren als**: een voorwaarde waaraan moet worden voldaan om de macro uit te voeren. Standaard **Altijd**. Als niet aan de voorwaarde wordt voldaan, doet de macro niets, en **Nu uitvoeren** toont "Macro niet uitgevoerd. Alleen uitvoeren als: niet voldaan". Zie [](#macros-conditions).
-- **App**: de app waarin de macro werkt, of **Alle apps**, de standaardwaarde. Een macro met een app werkt alleen terwijl die app op de voorgrond staat.
-- **Weergeven in Acties**: toont de macro in het menu **Acties** en de leesinstelling **Acties** van elk item in zijn app, of in elke app bij **Alle apps**, na de acties van de app. Door hem daar te kiezen, voer je de macro uit. Standaard uit.
-- **Weergeven in Acties alleen als**: getoond terwijl **Weergeven in Acties** aan staat. Een voorwaarde waaraan het gefocuste item moet voldoen om de macro in zijn menu Acties te tonen. Met een voorwaarde geldt de macro als een actie van het item voor **Leesinstelling automatisch wijzigen**, zodat de leesinstelling **Acties** erop is geselecteerd; zonder voorwaarde niet.
+- **App**: de app waarin de macro werkt, of **Alle apps**, de standaardwaarde. Een macro met een app werkt alleen terwijl die app op de voorgrond staat; elders zegt **Nu uitvoeren** "Macro niet uitgevoerd. Werkt alleen in" en de naam van de app.
+- **Tonen in Acties**: toont de macro in het menu **Acties** en de leesinstelling **Acties** van elk item in zijn app, of in elke app bij **Alle apps**, na de acties van de app. Door hem daar te kiezen, voer je de macro uit. Standaard uit.
+- **Alleen tonen in Acties als**: getoond terwijl **Tonen in Acties** aan staat. Een voorwaarde waaraan het gefocuste item moet voldoen om de macro in zijn menu Acties te tonen. Met een voorwaarde geldt de macro als een actie van het item voor **Leesinstelling automatisch wijzigen**, zodat de leesinstelling **Acties** erop is geselecteerd; zonder voorwaarde niet.
 - **Stappen**: de stappen in volgorde. Stappen binnen een **Als** of een herhaling zijn ingesprongen.
 - **Gebaren en sneltoets**: de gebaren, pijltoetsen, braillecellen en sneltoets die de macro uitvoeren.
 - **Toevoegen aan startscherm**: voegt een startscherm-snelkoppeling toe die de macro uitvoert op het scherm van waaruit je hem toevoegt. Het hernoemen van de macro hernoemt de snelkoppeling; het verwijderen van de macro schakelt haar uit. Niet elke launcher ondersteunt snelkoppelingen.
@@ -54,7 +54,7 @@ Als de blokken van een macro niet overeenkomen, zoals een **Als** zonder **Einde
 - **Commando uitvoeren**: voert elk commando uit behalve een macro. Kies een categorie, dan het commando.
 - **Item aantikken**: activeert het eerste item op het scherm waarvan de tekst of beschrijving een tekst bevat, ongeacht hoofd- of kleine letters. Een item waarvan de hele tekst de tekst is, komt als eerste. SandFly wacht op het item, standaard 3 seconden, ingesteld met **Seconden wachten op het item**.
 - **Tikken op positie**: tikt op het scherm op een X en een Y in pixels vanaf linksboven. Vereist Android 11 of hoger.
-- **Item tikken en vasthouden**: raakt het midden van een item aan voor **Seconden vasthouden**, standaard 1 seconde, en tilt dan op dezelfde plek op of schuift omhoog, omlaag, naar links of naar rechts over een afstand in dp voordat hij optilt. Voor knoppen die reageren terwijl ze worden vastgehouden, zoals de knop voor spraakberichten van een chatapp.
+- **Item aanraken en vasthouden**: raakt het midden van een item aan voor **Seconden vasthouden**, standaard 1 seconde, en tilt dan op dezelfde plek op of schuift omhoog, omlaag, naar links of naar rechts over een afstand in dp voordat hij optilt. Voor knoppen die reageren terwijl ze worden vastgehouden, zoals de knop voor spraakberichten van een chatapp. Vereist Android 11 of hoger.
 - **Item focussen**: zoekt een item zoals **Item aantikken** doet en verplaatst de toegankelijkheidsfocus ernaartoe, waardoor het wordt gelezen.
 - **Item uitspreken**: zoekt een item zoals **Item aantikken** doet en leest zijn naam voor zonder de focus te verplaatsen.
 - **Een item lang indrukken of scrollen**: drukt lang op een item, scrollt het vooruit of scrollt het terug, een aantal keer. Voor een item dat dit niet kan, gebruikt SandFly het dichtstbijzijnde item dat het wel kan, zoals een schuifregelaar. Een scroll zonder itemtekst scrollt de grootste lijst op het scherm.
@@ -68,7 +68,7 @@ Als de blokken van een macro niet overeenkomen, zoals een **Als** zonder **Einde
 - **Herhalen**, **Herhalen zolang**, **Einde herhalen** en **Lus verlaten**: voeren stappen meer dan één keer uit. Zie [](#macros-repeat).
 - **Macro stoppen**: stopt de macro.
 
-Als een stap mislukt, zoals een item dat niet wordt gevonden, zegt SandFly "Macro gestopt. Mislukt:" gevolgd door de stap, en de macro stopt.
+Als een stap mislukt, zegt SandFly "Macro gestopt. Mislukt:" gevolgd door de stap, en de macro stopt. Als het item van een stap niet wordt gevonden, zegt SandFly "Macro gestopt. Niet gevonden:" en de tekst van het item. Een **Wachten tot** waarvan de tijd verstrijkt, zegt "Macro gestopt. Time-out:" en de stap.
 
 #### Zoek items {#macros-find-items}
 
@@ -77,7 +77,7 @@ De stappen en tests die een item zoeken, hebben deze velden:
 - **Itemtekst**: de tekst om naar te zoeken.
 - **Reguliere expressie**: leest **Itemtekst** als een reguliere expressie, overal in de tekst gezocht en ongeacht hoofd- of kleine letters. Herhaalde groepen mogen geen herhaling of `|` bevatten, zoals `(a+)+`.
 - **Zoeken in**: waar te zoeken. **Willekeurige tekst**, de standaardwaarde, of alleen **Tekst**, **Beschrijving**, **Hint**, **Status**, **Tooltip** of **Resource-ID**. Een resource-ID komt overeen met of zonder zijn pakket, dus `send` komt overeen met `com.example:id/send`.
-- **Itemtype**: **Elk type**, de standaardwaarde, of alleen items die **Aanklikbaar**, **Lang aanklikbaar**, **Bewerkbaar**, **Scrollbaar**, **Aanpasbaar**, **Aanvinkbaar**, **Aangevinkt**, **Geselecteerd**, **Kop** of **Aangezet** zijn. Met **Aanklikbaar** tikt **Item aantikken** op een knop en niet op een kop met dezelfde tekst. Tests vragen om het itemtype na de tekst.
+- **Itemtype**, behalve in **Focus is binnen een item**: **Elk type**, de standaardwaarde, of alleen items die **Aanklikbaar**, **Lang aanklikbaar**, **Bewerkbaar**, **Scrollbaar**, **Aanpasbaar**, **Aanvinkbaar**, **Aangevinkt**, **Geselecteerd**, **Kop** of **Aangezet** zijn. Met **Aanklikbaar** tikt **Item aantikken** op een knop en niet op een kop met dezelfde tekst. Tests vragen om het itemtype na de tekst.
 
 Om te zien wat een item in elk veld heeft en welke itemtypen het is, gebruik **Gefocust item inspecteren**. Zie [](#macros-inspect).
 
@@ -110,9 +110,9 @@ De teksten van **Tekst uitspreken**, **Tekst typen** en de stappen hierboven kun
 
 ### Voorwaarden {#macros-conditions}
 
-Een voorwaarde is een lijst met tests. **Als**, **Anders als**, **Herhalen zolang**, **Wachten tot**, **Alleen uitvoeren als** en **Weergeven in Acties alleen als** hebben er elk een. Kies de stap, of de instelling, om de voorwaarde te openen.
+Een voorwaarde is een lijst met tests. **Als**, **Anders als**, **Herhalen zolang**, **Wachten tot**, **Alleen uitvoeren als** en **Alleen tonen in Acties als** hebben er elk een. Kies de stap, of de instelling, om de voorwaarde te openen.
 
-Het voorwaardescherm heeft **Test toevoegen** en **Voorwaarden**, en voor **Wachten tot**, **Seconden wachten**. Een voorwaarde zonder tests is altijd voldaan.
+Het voorwaardescherm heeft **Voorwaarde toevoegen** en **Voorwaarden**, en voor **Wachten tot**, **Seconden wachten**. Een voorwaarde zonder tests is altijd voldaan.
 
 De tests zijn:
 
@@ -122,9 +122,9 @@ De tests zijn:
 - **App op de voorgrond**: een app staat op de voorgrond.
 - **Toetsenbord getoond**: het schermtoetsenbord wordt getoond.
 - **Scherm vergrendeld**: het vergrendelscherm wordt getoond.
-- **Waarde**: een waarde bevat een tekst, of, met **Bevat** leeg, is ingesteld.
+- **Waarde**: een waarde bevat een tekst, of, met **Bevat** leeg, is ingesteld. Met **Reguliere expressie** is de tekst een reguliere expressie.
 
-Als een voorwaarde tests heeft, vraagt **Test toevoegen** eerst om **Verbinden met en** of **Verbinden met of**. Kies een test voor deze acties:
+Als een voorwaarde tests heeft, vraagt **Voorwaarde toevoegen** eerst om **Verbinden met en** of **Verbinden met of**. Kies een test voor deze acties:
 
 - **Bewerken**.
 - **Wijzigen in**: keert de test om, zoals **Toetsenbord verborgen**, **Scherm ontgrendeld**, **Geen item op scherm** of **App niet op de voorgrond**.
@@ -140,7 +140,7 @@ Als een voorwaarde tests heeft, vraagt **Test toevoegen** eerst om **Verbinden m
 #### Herhalen {#macros-repeat}
 
 - **Herhalen**: voert de stappen tot **Einde herhalen** een aantal keer uit, van 1 tot 1000.
-- **Herhalen zolang**: voert de stappen tot **Einde herhalen** uit zolang aan een voorwaarde is voldaan, tot 1000 keer in één uitvoering van de macro.
+- **Herhalen zolang**: voert de stappen tot **Einde herhalen** uit zolang aan een voorwaarde is voldaan, tot 1000 keer in één uitvoering van de macro. Na 1000 keer zegt SandFly "Macro gestopt. 1000 keer herhaald:" en de stap, en de macro stopt.
 - **Lus verlaten**: gaat verder na de **Einde herhalen** van de herhaling waarin hij staat.
 
 **Stap toevoegen** voegt een herhaling toe met zijn **Einde herhalen**, en de stappen die je daarna toevoegt, komen daarbinnen.
@@ -159,7 +159,7 @@ Om een nieuwe macro op te nemen:
 
 1. Ga naar het scherm waar de macro begint.
 2. Gebruik de opdracht **Een macro opnemen**, in de categorie **Macro's**. Wijs hem eerst toe aan een gebaar, of voeg hem toe aan het SandFly-menu. Zie [](#commands-assign) en [](#commands-edit-menu).
-3. SandFly maakt een macro met de naam "Opgenomen" en de datum en tijd, en toont de melding **Macrostappen worden opgenomen**.
+3. SandFly maakt een macro met de naam "Opgenomen" en de datum en tijd, en toont de melding **Macrostappen opnemen**.
 4. Voer de stappen uit.
 5. Om te stoppen, gebruik **Een macro opnemen** opnieuw, gebruik **Macro stoppen**, of open de melding. SandFly opent de macro en toont de opgenomen stappen.
 6. Kies **Opslaan** om de stappen toe te voegen, **Opnieuw opnemen** om opnieuw te beginnen, of **Annuleren**. **Annuleren** verwijdert de macro.
@@ -182,7 +182,7 @@ Opgenomen stappen zoeken items op hun hele tekst, als een reguliere expressie. B
 
 - Een gebaar, sneltoets, pijltoets of braillecel die eraan is toegewezen. Zie [](#commands-assign).
 - Een menu-item: voeg de macro toe aan het SandFly-menu, een aangepast menu of een aangepaste leesinstelling vanuit de categorie **Macro's**. Zie [](#commands).
-- Het menu **Acties** of de leesinstelling **Acties**, met **Weergeven in Acties** aan.
+- Het menu **Acties** of de leesinstelling **Acties**, met **Tonen in Acties** aan.
 - Een startscherm-snelkoppeling, met **Toevoegen aan startscherm**.
 - Een spraakopdracht: zeg de naam van de macro, of "voer de macro" naam "uit". Een aangepaste spraakopdracht kan hem ook uitvoeren. Zie [](#voice-commands).
 - **Nu uitvoeren** op het macroscherm.
@@ -203,4 +203,4 @@ Activeer een regel om de waarde ervan te kopiëren. **Alles kopiëren** kopieert
 
 **Itemdetails kopiëren** kopieert dezelfde details zonder het venster te openen, en zegt "Itemdetails gekopieerd". **Schermboom kopiëren** kopieert alle items op het scherm als tekst, één regel per item met zijn klasse, ID, rol, statussen en teksten, voor het schrijven van scripts.
 
-**Gefocust item inspecteren** en **Itemdetails kopiëren** kunnen worden toegevoegd aan het SandFly-menu; ze staan standaard uit. Om een item te inspecteren, verplaats de focus ernaartoe, open dan het SandFly-menu en kies **Gefocust item inspecteren**: het venster toont het item dat voor het menu focus had.
+**Gefocust item inspecteren**, **Itemdetails kopiëren** en **Schermboom kopiëren** kunnen worden toegevoegd aan het SandFly-menu; ze staan standaard uit. Om een item te inspecteren, verplaats de focus ernaartoe, open dan het SandFly-menu en kies **Gefocust item inspecteren**: het venster toont het item dat voor het menu focus had.

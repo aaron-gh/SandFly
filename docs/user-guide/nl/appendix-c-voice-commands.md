@@ -86,8 +86,8 @@ Deze zinnen werken op het gefocuste tekstvak.
 | "Scherm verbergen", of een zin met "dimmen" of "donkerder" | Verbergt het scherm. |
 | "Scherm tonen", of "scherm helderder maken", "scherm herstellen" of "scherm verbergen annuleren" | Toont het scherm weer. |
 | "Label TEKST" | Geeft het gefocuste item het aangepaste label. SandFly zegt "Label opgeslagen". |
-| "Hulp", of een zin met "wat" en "zeggen", zoals "Wat kan ik zeggen" | Opent **Overzicht van spraakopdrachten**. |
-| "Stop", of "stoppen", "annuleer", "annuleren", "laat maar" of "hou op", of een zin met "stil" of "onderbreken" | Stopt de spraakopdracht die wordt uitgevoerd. |
+| Een zin met "hulp", of met "wat" en "zeggen", zoals "Wat kan ik zeggen" | Opent **Overzicht van spraakopdrachten**. |
+| "Stop", "annuleer", "annuleren", "laat maar" of "hou op", of een zin met "stoppen", "afsluiten", "stil" of "onderbreken" | Stopt de spraakopdracht die wordt uitgevoerd. |
 
 ### Apps, items en opdrachten {#appendix-voice-commands-apps}
 
@@ -102,17 +102,17 @@ Deze zinnen werken op het gefocuste tekstvak.
 
 ### Bellen en berichten {#appendix-voice-commands-calls}
 
-NAAM is een contactnaam of een telefoonnummer. APP is de naam van een berichtenapp, zoals WhatsApp. Zonder app, of met "sms", "sms-bericht", "tekstbericht" of "berichten", gaat het bericht naar de standaard-sms-app.
+NAAM is een contactnaam of een telefoonnummer. APP is de naam van een berichtenapp, zoals WhatsApp. Zonder app, of met "sms", "sms-bericht", "tekstbericht" of "berichten", gaat het bericht naar de standaard-sms-app. In de sms-app en WhatsApp schrijft SandFly het bericht aan het contact en vraagt daarna of het verstuurd moet worden. Andere apps krijgen alleen de tekst, en je kiest het gesprek in de app.
 
 | Zeg | Wat er gebeurt |
 | --- | --- |
 | "Bel NAAM", of "bel NAAM op", "bel naar NAAM", "telefoneer met NAAM" of "kies NAAM" | Belt het contact of nummer. |
-| "Bericht NAAM met de tekst TEKST", of "sms NAAM met de tekst TEKST", "stuur (een) bericht naar NAAM met de tekst TEKST", "stuur (een) bericht naar NAAM waarin staat TEKST" of "stuur NAAM (een) bericht met de tekst TEKST" | Schrijft het bericht en vraagt daarna of het verstuurd moet worden. |
+| "Stuur (een) bericht naar NAAM met de tekst TEKST", of "stuur (een) bericht naar NAAM waarin staat TEKST" of "stuur NAAM (een) bericht met de tekst TEKST" | Schrijft het bericht. |
 | "Bericht NAAM TEKST", of "sms NAAM TEKST" of "stuur (een) bericht naar NAAM TEKST" | Schrijft het bericht naar het contact dat aan het begin wordt genoemd. |
-| "Bericht NAAM via APP met de tekst TEKST", of "stuur (een) bericht naar NAAM via APP met de tekst TEKST", "stuur (een) bericht naar NAAM via APP waarin staat TEKST", "stuur (een) APP-bericht naar NAAM met de tekst TEKST" of "zeg tegen NAAM via APP TEKST" | Schrijft het bericht in de app. |
-| "Stuur (een) APP-bericht naar NAAM" | Neemt de tekst op en schrijft het bericht daarna in de app. |
+| "Bericht NAAM via APP TEKST", of "stuur (een) bericht naar NAAM via APP met de tekst TEKST", "stuur (een) bericht naar NAAM via APP waarin staat TEKST", "stuur (een) APP bericht naar NAAM met de tekst TEKST" of "zeg tegen NAAM via APP TEKST" | Schrijft het bericht in de app. |
+| "Stuur (een) APP bericht naar NAAM" | Neemt de tekst op en schrijft het bericht daarna in de app. |
 
-Zeg bij "Versturen naar NAAM?" "ja", "jazeker", "jep", "verstuur", "verstuur het", "stuur", "stuur het", "ok", "oké", "okay", "prima" of "doe maar" om op **Verzenden** te drukken. Elk ander antwoord laat het bericht onverstuurd.
+SandFly vraagt "Versturen naar NAAM: TEKST?", of "Versturen naar NAAM?" voor een beschrijving. Zeg "ja", "jazeker", "jep", "verstuur", "verstuur het", "stuur", "stuur het", "ok", "oké", "okay", "prima" of "doe maar" om op **Verzenden** te drukken. Elk ander antwoord laat het bericht onverstuurd, en SandFly zegt "Bericht niet verstuurd".
 
 ### Beschrijvingen {#appendix-voice-commands-descriptions}
 

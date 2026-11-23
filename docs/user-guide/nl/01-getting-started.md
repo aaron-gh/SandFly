@@ -79,7 +79,7 @@ De tutorial heeft 16 lessen in vijf hoofdstukken:
 
 Elke les geeft een instructie, wacht tot je deze met je eigen gebaren hebt uitgevoerd, en geeft dan de volgende. De instructie is het eerste onderdeel na de naam van de les. SandFly spreekt elke instructie uit, ook terwijl andere audio speelt, en herhaalt deze na 25 seconden zonder gebaar of aanraking, tot drie keer. De instructies noemen de gebaren die in je gebareninstellingen aan elke actie zijn toegewezen. Als een actie geen gebaar heeft, meldt de stap dit, en gaat **Stap overslaan** verder zonder dat gebaar.
 
-Als een les is afgerond, zegt SandFly welk gebaar de volgende les start en verplaatst de focus naar **Volgende les**. De laatste les heeft **Tutorial afronden**.
+Als een les is afgerond, zegt SandFly welk gebaar de volgende les start en verplaatst de focus naar **Volgende les**, gevolgd door de naam van de les. De laatste les heeft **Tutorial afronden**.
 
 In een les leiden gebaren die de tutorial zouden verlaten, zoals Terug, Home, recente apps en meldingen, er niet toe dat je de tutorial verlaat. SandFly zegt wat het gebaar zou hebben gedaan. Spraak uitschakelen en SandFly pauzeren werken op dezelfde manier. Terug sluit nog steeds het toetsenbord en menu's. Om een andere les te kiezen of de tutorial te verlaten, gebruik je **Inhoud**, die de lessen vermeldt, zegt welke zijn afgerond, en een van de lessen opent. **Tutorial sluiten** in **Inhoud** sluit de tutorial.
 
@@ -91,7 +91,7 @@ Opmerking: De tutorial neemt alleen gebaren aan die SandFly herkent. Als **Gebar
 
 #### Toetsenbordtutorial {#getting-started-keyboard-tutorial}
 
-Als er een fysiek toetsenbord is aangesloten wanneer SandFly voor het eerst start, opent SandFly in plaats daarvan de **SandFly-toetsenbordtutorial**. Deze leert de sneltoetsen van je toetsenbordindeling in 15 lessen, waaronder **Lijst met sneltoetsen**, **Browsemodus** voor webpagina's, en **Toetsenbord oefenen**. Als een apparaat zowel een aanraakscherm als een fysiek toetsenbord heeft, opent **SandFly-tutorial** een dialoogvenster met **Aanraaktutorial** en **Toetsenbordtutorial**. Zie [](#keyboards).
+Als er een fysiek toetsenbord is aangesloten wanneer SandFly voor het eerst start, opent SandFly in plaats daarvan de **SandFly-toetsenbordtutorial**. Deze leert de sneltoetsen van je toetsenbordindeling in 15 lessen, waaronder **Lijst met sneltoetsen**, **Browsemodus** voor webpagina's, en **Toetsenbord oefenen**. Als een apparaat zowel een aanraakscherm als een fysiek toetsenbord heeft, opent **SandFly-tutorial** een dialoogvenster met **Tutorial over aanraakbediening** en **Tutorial over toetsenbordbediening**. Zie [](#keyboards).
 
 Horloges en tv's hebben hun eigen tutorials. Zie [](#devices).
 
@@ -126,7 +126,7 @@ Om de instellingen voor SandFly te openen, doe een van de volgende dingen:
 - Kies **Instellingen voor SandFly** in het SandFly-menu.
 - Ga in de Android-instellingen naar **Toegankelijkheid** > **SandFly** > **Instellingen**.
 
-Het hoofdscherm van de instellingen vermeldt de instellingenschermen: Spraak, Uitgebreidheidsniveau, Geluid en trillen, Audio-uitvoer, Aanraking, Gebaren, Sneltoetsen, Volumetoetsen, Commando's, Leesinstellingen, SandFly-menu, Aangepaste menu's, Macro's, Spraakopdrachten, Navigatie, Typen, Braille, Weergave, Meldingen, Vertaling, Afbeeldings- en schermbeschrijvingen, AI-diensten, Scripts, Aangepaste labels, Snelle instellingen, Overzicht, Pauzeren en uitzetten, Instellingenprofielen, Back-up en herstel, Updates en installatie, Shizuku en root, Hulp en feedback en Ontwikkelaarsinstellingen. Sommige schermen worden niet getoond op horloges en tv's, of op apparaten die de hardware voor een functie missen.
+Het hoofdscherm van de instellingen vermeldt de instellingenschermen: Spraak, Uitgebreidheidsniveau, Geluid en trillen, Audio-uitvoer, Aanraking, Gebaren, Sneltoetsen, Volumetoetsen, Commando's, Leesinstellingen, SandFly-menu, Aangepaste menu's, Macro's, Spraakopdrachten, Navigatie, Typen, Braille, Weergave, Meldingen, Vertaling, Afbeeldings- en schermbeschrijvingen, AI-diensten, SandFly Pro, Scripts, Aangepaste labels, Snelle instellingen, Overzicht, Pauzeren en uitzetten, Instellingenprofielen, Back-up en herstel, Updates en installatie, Shizuku en root, Hulp en feedback en Ontwikkelaarsinstellingen. Sommige schermen worden niet getoond op horloges en tv's, of op apparaten die de hardware voor een functie missen.
 
 #### De instellingen doorzoeken {#getting-started-search}
 

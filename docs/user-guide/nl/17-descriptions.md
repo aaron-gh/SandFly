@@ -16,7 +16,7 @@ Instellingen voor beschrijvingen staan op twee schermen: **Afbeeldings- en scher
 2. Ga naar **Afbeeldings- en schermbeschrijvingen** en zet **Gedetailleerde afbeeldingsbeschrijvingen** aan.
 3. Lees het dialoogvenster over wat wordt verstuurd en naar wie, en kies dan **Aanzetten**.
 
-Als je **Afbeelding beschrijven** uitvoert terwijl **Gedetailleerde afbeeldingsbeschrijvingen** uit staat, toont SandFly het dialoogvenster **Gedetailleerde afbeeldingsbeschrijvingen krijgen?**. **Aanzetten** zet de instelling aan en beschrijft de afbeelding; **Nee, bedankt** laat hem uit staan, en SandFly leest alleen de tekst in de afbeelding voor.
+Als je **Afbeelding beschrijven** uitvoert terwijl **Gedetailleerde afbeeldingsbeschrijvingen** uit staat, toont SandFly het dialoogvenster **Gedetailleerde afbeeldingsbeschrijvingen ophalen?**. **Aanzetten** zet de instelling aan en beschrijft de afbeelding; **Nee, bedankt** laat hem uit staan, en SandFly leest alleen de tekst in de afbeelding voor.
 
 De eerste keer dat je **Scherm beschrijven** uitvoert, toont SandFly het dialoogvenster **Schermbeschrijving** over de schermafbeelding die wordt verstuurd. Kies **Aanzetten** om het scherm te beschrijven.
 
@@ -33,7 +33,7 @@ De eerste keer dat je **Scherm beschrijven** uitvoert, toont SandFly het dialoog
 1. Verplaats de focus naar een afbeelding.
 2. Voer **Afbeelding beschrijven** uit. Dit staat in het SandFly-menu, en je kunt het toewijzen aan een gebaar of een toets. Zie [](#descriptions-commands).
 
-SandFly opent het venster **Afbeeldingsbeschrijving** met de beschrijving, en de tekst die in de afbeelding is gevonden. In het venster kun je de beschrijving kopiëren, beoordelen en vragen stellen over de afbeelding. Zie [](#descriptions-questions).
+SandFly opent het venster **Beschrijving van de afbeelding** met de beschrijving, en de tekst die in de afbeelding is gevonden. In het venster kun je de beschrijving kopiëren, beoordelen en vragen stellen over de afbeelding. Zie [](#descriptions-questions).
 
 Als er geen gedetailleerde beschrijving kan worden gemaakt, leest SandFly de tekst in de afbeelding voor en zegt waarom, bijvoorbeeld "Kan geen gedetailleerdere afbeeldingsbeschrijving krijgen" met de reden, of "Maak verbinding met internet voor een gedetailleerdere afbeeldingsbeschrijving."
 
@@ -51,10 +51,10 @@ Om de beschrijving te laten voorlezen zonder het venster, voer in plaats daarvan
 
 Vragen gaan naar dezelfde AI-service of het model op het apparaat als de beschrijving.
 
-In het venster **Afbeeldingsbeschrijving** of **Schermbeschrijving**:
+In het venster **Beschrijving van de afbeelding** of **Schermbeschrijving**:
 
-- **Vraag met je stem** neemt een vraag op met de spraakherkenner die is gekozen bij **Typen** > **Dictee**, stuurt die en leest het antwoord voor. **Stoppen met luisteren** beëindigt de opname. Zie [](#typing).
-- **Typ een vraag** opent een tekstveld. Typ de vraag en kies **Vraag stellen**.
+- **Vragen met spraak** neemt een vraag op met de spraakherkenner die is gekozen bij **Typen** > **Dicteren**, stuurt die en leest het antwoord voor. **Stop met luisteren** beëindigt de opname. Zie [](#typing).
+- **Typ een vraag** opent een tekstveld. Typ de vraag en kies **Vragen**.
 
 Elk antwoord blijft in het venster staan, zodat je vervolgvragen kunt stellen over dezelfde afbeelding of hetzelfde scherm.
 
@@ -64,7 +64,7 @@ Om te vragen zonder eerst een beschrijving te openen, voer **Vragen over afbeeld
 2. Voer de opdracht uit. SandFly maakt een schermafbeelding van de afbeelding of het scherm en begint met opnemen.
 3. Zeg de vraag. De opname stopt na een stilte, of als je de opdracht opnieuw uitvoert.
 
-SandFly stuurt de vraag en leest het antwoord voor. Als de opname niet kan starten, opent in plaats daarvan een tekstveld: typ de vraag en kies **Vraag stellen**. Tot je ermee hebt ingestemd om schermafbeeldingen naar de AI-service te sturen, voeren deze opdrachten in plaats daarvan **Afbeelding beschrijven** of **Scherm beschrijven** uit, die het dialoogvenster voor die toestemming tonen.
+SandFly stuurt de vraag en leest het antwoord voor. Als de opname niet kan starten, opent in plaats daarvan een tekstveld: typ de vraag en kies **Vragen**. Tot je ermee hebt ingestemd om schermafbeeldingen naar de AI-service te sturen, voeren deze opdrachten in plaats daarvan **Afbeelding beschrijven** of **Scherm beschrijven** uit, die het dialoogvenster voor die toestemming tonen.
 
 ### Opdrachten voor beschrijvingen {#descriptions-commands}
 
@@ -73,7 +73,7 @@ Deze opdrachten staan in de categorie **Afbeeldings- en schermbeschrijvingen** i
 - **Foto maken en beschrijven**: maakt een foto met de camera aan de achterkant en beschrijft die. Zie [](#descriptions-take-picture).
 - **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken** en **Vragen over afbeelding**: beschrijven de gefocuste afbeelding in een venster, beschrijven haar voorlezend, of beantwoorden een gesproken vraag erover.
 - **Scherm beschrijven**, **Schermbeschrijving uitspreken** en **Vragen over scherm**: hetzelfde voor het hele scherm.
-- **Afbeelding van gefocust item delen** en **Schermafbeelding delen**: maken een schermafbeelding van het gefocuste item of het hele scherm en openen daarmee het deelvenster van Android, om deze naar een andere app te sturen. Vereist Android 11 of hoger. Beveiligde vensters zijn zwart op de schermafbeelding.
+- **Afbeelding van gefocust item delen** en **Screenshot delen**: maken een schermafbeelding van het gefocuste item of het hele scherm en openen daarmee het deelvenster van Android, om deze naar een andere app te sturen. Vereist Android 11 of hoger. Beveiligde vensters zijn zwart op de schermafbeelding.
 - **AI-antwoord melden**: opent een probleemrapport met de laatste tekst die een AI-model gaf, zoals een beschrijving of een antwoord. Zie [](#help).
 
 Met SandFly Pro heeft de categorie ook de opdrachten voor schermherkenning. Zie [](#pro-screen-recognition).
@@ -84,7 +84,7 @@ Voor standaardgebaren en sneltoetsen, zie [](#appendix-gestures) en [](#appendix
 
 #### Leesinstelling AI-acties {#descriptions-ai-actions}
 
-De leesinstelling **AI-acties** voert **Scherm beschrijven**, **Schermbeschrijving uitspreken**, **Vragen over scherm**, **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken**, **Vragen over afbeelding**, **Afbeelding van gefocust item delen** en **Schermafbeelding delen** uit, en met SandFly Pro ook **AI-agenttaak starten of stoppen** en **AI-agenttaak typen**. Dit vereist Android 11 of hoger.
+De leesinstelling **AI-acties** voert **Scherm beschrijven**, **Schermbeschrijving uitspreken**, **Vragen over scherm**, **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken**, **Vragen over afbeelding**, **Afbeelding van gefocust item delen** en **Screenshot delen** uit, en met SandFly Pro ook **AI-agenttaak starten of stoppen** en **AI-agenttaak typen**. Dit vereist Android 11 of hoger.
 
 1. Kies de leesinstelling **AI-acties**.
 2. Swipe omhoog of omlaag om een actie te kiezen.
@@ -94,7 +94,7 @@ Dubbeltikken voert de actie uit die de leesinstelling aankondigde totdat de focu
 
 ### Maak een foto en beschrijf die {#descriptions-take-picture}
 
-**Foto maken en beschrijven** opent een scherm dat één foto maakt met de camera aan de achterkant en die beschrijft zoals **Afbeelding beschrijven** doet, met hetzelfde venster voor vragen.
+**Foto maken en beschrijven** opent een scherm dat één foto maakt met de camera aan de achterkant en die beschrijft zoals **Afbeelding beschrijven** doet, met hetzelfde venster voor vragen. Dit is alleen beschikbaar op apparaten met een camera.
 
 1. Voer **Foto maken en beschrijven** uit. SandFly zegt "Houd de telefoon stil" en maakt de foto.
 2. Lees de beschrijving, en stel zo nodig vragen over de foto.
@@ -109,13 +109,13 @@ SandFly vraagt de eerste keer om de cameratoestemming.
 Het scherm heeft deze items:
 
 - **AI-service**: de service in gebruik. Dit toont alleen de services die zijn ingesteld, en **Geen**.
-- Een instellingenitem voor elke service: **SandFly Pro-instellingen**, **Gemini-instellingen**, **Claude-instellingen**, **OpenAI (ChatGPT)-instellingen**, **Mistral-instellingen**, **Groq-instellingen**, **OpenRouter-instellingen**, **Ollama Cloud-instellingen**, **Qwen-instellingen**, **Zhipu GLM-instellingen**, **Baichuan-instellingen**, **DeepSeek-instellingen**, **Kimi-instellingen**, **Hunyuan-instellingen**, **SiliconFlow-instellingen** en **Instellingen voor andere dienst**. Het item van de service in gebruik toont **In gebruik**; het item van een service die niet is ingesteld, toont **Niet ingesteld**. **SandFly Pro-instellingen** zit in builds met SandFly Pro en opent het scherm SandFly Pro. Zie [](#pro).
+- Een instellingenitem voor elke service: **Instellingen voor SandFly Pro**, **Gemini-instellingen**, **Instellingen voor Claude**, **Instellingen voor OpenAI (ChatGPT)**, **Instellingen voor Mistral**, **Instellingen voor Groq**, **Instellingen voor OpenRouter**, **Instellingen voor Ollama Cloud**, **Instellingen voor Qwen**, **Instellingen voor Zhipu GLM**, **Instellingen voor Baichuan**, **Instellingen voor DeepSeek**, **Instellingen voor Kimi**, **Instellingen voor Hunyuan**, **Instellingen voor SiliconFlow** en **Instellingen voor Andere dienst**. Het item van de service in gebruik toont **In gebruik**; het item van een service die niet is ingesteld, toont **Niet ingesteld**. **Instellingen voor SandFly Pro** zit in builds met SandFly Pro en opent het scherm SandFly Pro. Zie [](#pro).
 - **AI op het apparaat**: zie [](#descriptions-on-device).
 - **Herkenningsmodellen geladen houden** en **Downloadserver voor modellen**: zie [](#descriptions-model-settings).
 
 #### Stel een service in {#descriptions-set-up-service}
 
-1. Ga naar **AI-diensten** en open de instellingen van een service, zoals **Claude-instellingen**.
+1. Ga naar **AI-diensten** en open de instellingen van een service, zoals **Instellingen voor Claude**.
 2. Voor **Andere dienst**, kies **Adres** en voer het adres in van een service met een OpenAI-compatibele chat-API en beeldinvoer. Het adres moet beginnen met `https://`.
 3. Kies het item voor de API-sleutel, zoals **Claude API-sleutel**. Kies **Sleutel ophalen** om de website van de service te openen en een sleutel te maken, als de service er een aanbiedt. Plak de sleutel en kies **Opslaan**.
 4. Kies het modelitem, zoals **Claude-model**. SandFly haalt de lijst met modellen voor je sleutel op. Kies een model, of kies **Voer een modelnaam in** en typ hem. Als de lijst niet kan worden opgehaald, toont SandFly waarom en opent een veld voor de modelnaam.
@@ -142,7 +142,7 @@ Bij het gratis abonnement van de Gemini API kan Google bewaren wat het ontvangt 
 
 #### Wat wordt verstuurd {#descriptions-privacy}
 
-Afbeeldingen, schermafbeeldingen en vragen die je verstuurt, worden gestuurd naar de service in gebruik. Voordat de eerste afbeelding naar een service gaat, toont SandFly een dialoogvenster met de naam van de service; de eigen voorwaarden en het privacybeleid ervan zijn van toepassing. Met **AI op het apparaat gebruiken** aan wordt niets verstuurd.
+Afbeeldingen, schermafbeeldingen en vragen die je verstuurt, worden gestuurd naar de service in gebruik. Voordat de eerste afbeelding naar een service gaat, toont SandFly een dialoogvenster met het adres van de service, zoals api.anthropic.com; de eigen voorwaarden en het privacybeleid ervan zijn van toepassing. Met **AI op het apparaat gebruiken** aan wordt niets verstuurd.
 
 ### AI op het apparaat {#descriptions-on-device}
 
@@ -154,7 +154,7 @@ Terwijl **AI op het apparaat gebruiken** aan staat, gebruiken **Afbeelding besch
 
 1. Ga naar **AI-diensten** > **AI op het apparaat**.
 2. Kies **Model**, en kies dan een model. De lijst toont de grootte van elk model, het geheugen dat het nodig heeft en een korte toelichting, en markeert modellen die **gedownload** of **experimenteel** zijn. Dit toont alleen de modellen waarvoor de telefoon genoeg geheugen heeft, en de modellen die al zijn gedownload.
-3. Kies **Model downloaden**. Op mobiele data vraagt SandFly dit eerst.
+3. Kies **Model downloaden**, dat de grootte van de download toont. Op mobiele data vraagt SandFly dit eerst.
 4. Als het downloaden klaar is, zet **AI op het apparaat gebruiken** aan.
 
 **Gemma 4 E2B** is het aanbevolen model, en de standaardwaarde op telefoons met genoeg geheugen daarvoor. Op andere telefoons is de standaardwaarde het grootste model dat past. Experimentele modellen werken mogelijk niet goed.
@@ -174,7 +174,7 @@ Om een bestand te gebruiken dat je zelf hebt gedownload, kies **Gebruik een mode
 - **Kortere schermbeschrijvingen** (standaard uit): **Scherm beschrijven** vraagt om minder details, zodat het antwoord eerder komt.
 - **Processor**: **CPU**, **GPU** of **NPU**. Alleen getoond op telefoons waar het model op de GPU of de NPU kan werken. Met **NPU** gebruikt SandFly het model dat voor die NPU is gebouwd, en kan **Model** niet worden gewijzigd.
 
-Terwijl het model laadt en werkt, speelt SandFly een herhalend geluid af. Je kunt deze geluiden uitzetten bij **Geluid en trilling** > **Afzonderlijke geluiden en trillingen**. Zie [](#sound).
+Terwijl het model laadt en werkt, speelt SandFly een herhalend geluid af. Je kunt deze geluiden uitzetten bij **Geluid en trillen** > **Afzonderlijke geluiden en trillingen**. Zie [](#sound).
 
 #### Geheugen {#descriptions-on-device-memory}
 
@@ -184,7 +184,7 @@ Het model laadt bij het eerste verzoek en werkt in zijn eigen proces. Voordat he
 
 ### Instellingen voor modellen {#descriptions-model-settings}
 
-Deze twee instellingen staan in **AI-diensten** en in **Typen** > **Dictee**, en gelden voor modellen voor AI op het apparaat en voor de spraakherkenningsmodellen van dictee:
+Deze twee instellingen staan in **AI-diensten** en in **Typen** > **Dicteren**, en gelden voor modellen voor AI op het apparaat en voor de spraakherkenningsmodellen van dictee:
 
 - **Herkenningsmodellen geladen houden**: hoe lang modellen in het geheugen blijven na gebruik: **Na gebruik uitladen** (de standaardwaarde), **5 minuten**, **15 minuten**, **30 minuten** of **Totdat SandFly stopt**. Het model voor AI op het apparaat blijft na een verzoek altijd minstens 2 minuten geladen. Met **Totdat SandFly stopt** laadt het model voor AI op het apparaat als SandFly start.
 - **Downloadserver voor modellen**: **Hugging Face** (de standaardwaarde) of **hf-mirror.com**, voor plekken waar Hugging Face niet bereikbaar is.
@@ -227,7 +227,7 @@ Resultaten worden voorgelezen met de stem van SandFly, ook terwijl andere audio 
 - Anders de AI-service in gebruik, zoals SandFly Pro of Claude, die elke paar seconden een camerabeeld krijgt.
 - Met Gemini als AI-service, de Gemini Live API, die elke paar seconden een camerabeeld krijgt. SandFly leest de tekst van het antwoord voor.
 
-Voordat het eerste camerabeeld naar een service gaat, vraagt SandFly dit met het dialoogvenster **Camerabeelden sturen naar** en de naam van de service; kies **Beelden sturen**. Een afgewezen API-sleutel, een opgebruikte gebruikslimiet of herhaalde mislukkingen zetten de modi die AI gebruiken uit, en SandFly zegt dat.
+Voordat het eerste camerabeeld naar een service gaat, toont SandFly het dialoogvenster **Camerabeelden naar Gemini sturen?**, of voor andere services hetzelfde dialoogvenster met het adres van de service in plaats van Gemini, zoals api.anthropic.com. Kies **Beelden sturen**. Een afgewezen API-sleutel, een opgebruikte gebruikslimiet of herhaalde mislukkingen zetten de modi die AI gebruiken uit, en SandFly zegt dat.
 
 ### Foutmeldingen {#descriptions-errors}
 

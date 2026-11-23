@@ -23,7 +23,7 @@ Het brailletoetsenbord is een invoermethode, **SandFly-brailletoetsenbord**, die
 
 Zodra het toetsenbord is aangezet, is het eerste item **Een brailletoetsenbord gebruiken**, dat stap 3 toont.
 
-De opdracht **Switch to braille keyboard**, in de groep **Braille** van **Opdrachten**, verandert naar het brailletoetsenbord vanuit elk toetsenbord. Standaard voert een tweevingerdubbeltik en vasthouden dit uit. Dit vereist Android 11 of later. Zie [](#commands).
+De opdracht **Overschakelen naar brailletoetsenbord**, in de groep **Braille** van **Commando's**, verandert naar het brailletoetsenbord vanuit elk toetsenbord. Standaard voert een tweevingerdubbeltik en vasthouden dit uit. Dit vereist Android 11 of later. Zie [](#commands).
 
 De eerste keer dat het toetsenbord opent, start een handleiding. Om het toetsenbord zonder deze te openen, kies je **Handleiding overslaan** op de eerste pagina.
 
@@ -31,9 +31,9 @@ De eerste keer dat het toetsenbord opent, start een handleiding. Om het toetsenb
 
 Je kunt op drie manieren typen, ingesteld bij **Braille** > **Brailletoetsenbord** > **Indeling**:
 
-- **Aanpassen aan hoe je het apparaat vasthoudt**: SandFly gebruikt screen-away-modus terwijl je het apparaat omhoog houdt met het scherm van je afgewend, en tafelmodus terwijl het plat ligt. Dit is de standaardwaarde op telefoons.
-- **Screen-away-modus**: houd het apparaat vast met het scherm van je afgewend, en typ met de vingers van beide handen op de achterranden.
-- **Tafelmodus**: leg het apparaat plat op een tafel voor je. Dit is de standaardwaarde op tablets.
+- **Pas aan hoe je het apparaat vasthoudt**: SandFly gebruikt screen-away-modus terwijl je het apparaat omhoog houdt met het scherm van je afgewend, en tafelmodus terwijl het plat ligt. Dit is de standaardwaarde op telefoons.
+- **Scherm weg-modus**: houd het apparaat vast met het scherm van je afgewend, en typ met de vingers van beide handen op de achterranden.
+- **Tafelbladmodus**: leg het apparaat plat op een tafel voor je. Dit is de standaardwaarde op tablets.
 
 SandFly houdt de punten onder je vingers, hoe je het apparaat ook vasthoudt, met automatisch draaien aan of uit. Zie [](#braille-keyboard-orientation).
 
@@ -70,15 +70,15 @@ Gebaren die beginnen met vastgehouden punten, zoals het vasthouden van punt 4, 5
 
 Elk gebaar met vastgehouden punten werkt ook met de overeenkomstige punten van de andere hand, zoals punt 1, 2 en 3 voor punt 4, 5 en 6. Een swipe telt wanneer deze tot ongeveer 35 graden van de horizontale of verticale richting afwijkt.
 
-De drievingerswipe omhoog opent **Opties voor brailletoetsenbord**: **Wisselen naar volgende taal**, **Wisselen naar** kortschrift of volledige **braille**, **Positie van punten updaten**, **Gebaren bekijken**, **Handleiding openen** en **Instellingen**.
+De drievingerswipe omhoog opent **Opties brailletoetsenbord**: **Overschakelen naar volgende taal**, **Overschakelen naar** kortschrift of volledige **braille**, **Positie van punten updaten**, **Gebaren checken**, **Tutorial openen** en **Instellingen**.
 
 Wanneer je naar een ander bedieningselement swipet voordat het brailletoetsenbord opent, verplaatst SandFly de focus terug naar het tekstveld voor elke opdracht, zodat cursorbeweging en bewerking op het tekstveld van toepassing zijn.
 
 #### Verander de gebaren van het brailletoetsenbord {#braille-keyboard-gestures}
 
 1. Ga naar **Braille** > **Brailletoetsenbord** > **Gebaren**.
-2. Kies een groep: **Basisbediening**, **Cursorverplaatsing**, **Tekst selecteren en bewerken** of **Proeflezen**.
-3. Kies een actie, kies dan **Gebaar wijzigen**, **Standaardwaarde herstellen** of **Gebaar verwijderen**.
+2. Kies een groep: **Algemene bediening**, **Cursorbeweging**, **Tekstselectie en -bewerking** of **Proeflezen**.
+3. Kies een actie, kies dan **Gebaar wijzigen**, **Resetten naar standaard** of **Gebaar verwijderen**.
 4. Voor **Gebaar wijzigen** opent het brailletoetsenbord. Voer het nieuwe gebaar uit, en voer het dan opnieuw uit om te bevestigen. Om te annuleren, swipe je met twee vingers omlaag.
 5. Een dialoogvenster biedt ook het gespiegelde gebaar voor de actie aan. Kies **Gespiegeld gebaar gebruiken** of **Overslaan**.
 
@@ -89,10 +89,10 @@ Als het gebaar een andere actie uitvoert, kondigt SandFly de actie aan; voer het
 SandFly plaatst de punten waar je vingers landen wanneer je de positie van de punten updatet. De posities worden bewaard voor elke indeling.
 
 - Houd zes vingers op het scherm (acht bij achtpuntsbraille) voor 2 seconden.
-- Of kies **Positie van punten updaten** in **Opties voor brailletoetsenbord**, en volg de stappen voor elke hand.
+- Of kies **Positie van punten updaten** in **Opties brailletoetsenbord**, en volg de stappen voor elke hand.
 - Met **Braille** > **Brailletoetsenbord** > **Positie van punten updaten met de ene hand en dan de andere** aan, houd je drie vingers van één hand minstens 0,4 seconden op het scherm, en zet je dan de drie vingers van de andere hand erbij en houd je alle zes 0,65 seconden stil. Elke hand mag eerst. Gebruik bij achtpuntsbraille vier vingers van elke hand. Zes vingers die samen landen, of die eerder optillen, typen een cel. Dit werkt alleen terwijl **Alle ingedrukte punten opnemen** uit staat, wat niet de standaardwaarde is. De instelling staat standaard aan.
 
-Met **Braille** > **Brailletoetsenbord** > **Positie van punten updaten tijdens typen** aan, verplaatst elke getypte cel de punten een beetje richting waar je vingers landen, zodat de punten handen volgen die tijdens het typen verschuiven. De posities worden bewaard en de volgende keer gebruikt. De instelling staat standaard aan.
+Met **Braille** > **Brailletoetsenbord** > **Positie van punten updaten tijdens het typen** aan, verplaatst elke getypte cel de punten een beetje richting waar je vingers landen, zodat de punten handen volgen die tijdens het typen verschuiven. De posities worden bewaard en de volgende keer gebruikt. De instelling staat standaard aan.
 
 - Een aanraking verplaatst de punten alleen wanneer deze duidelijk dichter bij zijn eigen punt is dan bij een ander punt. Wanneer een vinger zo ver is verschoven dat het verkeerde punt wordt getypt, update je de positie van de punten in plaats daarvan.
 - De punten bewegen niet van het scherm af, niet dichter bij elkaar dan de breedte van één punt, en niet in een volgorde die hun puntnummers verandert.
@@ -111,7 +111,7 @@ SandFly kondigt aan waar de oplaadpoort zich bevindt wanneer de modus verandert 
 
 Om de punten in dezelfde richting te houden, houd je de punten 4, 5 en 6 vast en swipe je omhoog. SandFly kondigt "Oriëntatie vergrendeld" aan. Doe hetzelfde opnieuw om te ontgrendelen. Er is een vergrendeling voor elke schermgrootte en modus, zodat je een vouwtelefoon op de ene manier kunt vergrendelen wanneer deze is gevouwen en op een andere manier wanneer deze is ontvouwen.
 
-Wanneer je een telefoon plat legt na hem omhoog te hebben gehouden, gaat SandFly ervan uit dat deze naar je toe was gericht, tenzij je erop typte in screen-away-modus. Een tablet of ontvouwen vouwtelefoon die rechtop wordt gehouden, wordt aangenomen naar je toe gericht te zijn, en een die zijwaarts wordt gehouden, wordt aangenomen van je af gericht te zijn, zoals bij typen met het scherm van je af. Als je een tablet naar je toe gericht vasthoudt of neerzet, zet je **Braille** > **Brailletoetsenbord** > **Rechtopstaande tablet is van je af gericht** uit. Een tablet die op elke manier omhoog wordt gehouden, gebruikt dan de tafelindeling naar je toe gericht, met je duimen op de onderrand. De instelling staat standaard aan, en is ook een leesinstelling, in de groep **Beeldscherm** van **Leesinstellingen**.
+Wanneer je een telefoon plat legt na hem omhoog te hebben gehouden, gaat SandFly ervan uit dat deze naar je toe was gericht, tenzij je erop typte in screen-away-modus. Een tablet of ontvouwen vouwtelefoon die rechtop wordt gehouden, wordt aangenomen naar je toe gericht te zijn, en een die zijwaarts wordt gehouden, wordt aangenomen van je af gericht te zijn, zoals bij typen met het scherm van je af. Als je een tablet naar je toe gericht vasthoudt of neerzet, zet je **Braille** > **Brailletoetsenbord** > **Rechtop gehouden tablet naar buiten gericht** uit. Een tablet die op elke manier omhoog wordt gehouden, gebruikt dan de tafelindeling naar je toe gericht, met je duimen op de onderrand. De instelling staat standaard aan, en is ook een leesinstelling, in de groep **Weergave** van **Leesinstellingen**.
 
 Beperkingen:
 
@@ -122,7 +122,7 @@ Beperkingen:
 
 #### Brailletalen {#braille-keyboard-languages}
 
-- **Talen**: de brailletabellen die het toetsenbord en brailleleesregels kunnen gebruiken. Kies **Taal toevoegen** om er een toe te voegen. Japanse braille heeft een woordenboek van ongeveer 15 MB nodig, dat SandFly downloadt wanneer je de taal toevoegt. **Roemeens** is zespuntsvolledige braille: punten 46 hoofdletter, punten 56 hoofdletterwoord, punten 3456 cijferteken, punten 2356 haakjes, en UEB-tekens voor operatoren; **Roemeens achtpuntscomputerbraille** gebruikt één achtpuntscel per teken.
+- **Talen**: de brailletabellen die het toetsenbord en brailleleesregels kunnen gebruiken. Kies **Taal toevoegen** om er een toe te voegen. Japanse braille heeft een woordenboek van ongeveer 15 MB nodig, dat SandFly downloadt wanneer je de taal toevoegt. **Roemeens** is zespuntsvolledige braille: punten 46 hoofdletter, punten 56 hoofdletterwoord, punten 3456 cijferteken, punten 2356 haakjes, en UEB-tekens voor operatoren; **8-punts computerbraille Roemeens** gebruikt één achtpuntscel per teken.
 - **Voorkeurstaal voor typen**: de tabel waarmee het toetsenbord begint.
 - **Gewenst brailleniveau**: **Kortschrift** of **Volledige braille**. De standaardwaarde is volledige braille.
 
@@ -170,7 +170,7 @@ Met braillecommando's kun je SandFly-opdrachten uitvoeren door braillecellen op 
 
 Om braillecommando's te tonen, doe je een van de volgende:
 
-- Voer de opdracht **Braillecommando's**, in de groep **Braille** van **Opdrachten**, uit. Deze heeft standaard geen gebaar. Zie [](#commands).
+- Voer de opdracht **Braillecommando's**, in de groep **Braille** van **Commando's**, uit. Deze heeft standaard geen gebaar. Zie [](#commands).
 - Houd op het brailletoetsenbord de punten 4, 5 en 6 vast en swipe naar links.
 
 Een geluidssignaal speelt, en SandFly kondigt "Braillecommando's" aan, met de naam van het braillecommandoprofiel dat in gebruik is. De punten bedekken het scherm, ingedeeld zoals op het brailletoetsenbord. Typ een cel om de opdracht ervan uit te voeren. Voor een cel zonder opdracht kondigt SandFly "Geen opdracht voor" en de punten aan.
@@ -187,8 +187,8 @@ De standaardcellen zijn:
 | Punt 1 | **Vorig item** |
 | Punten 5 6 | **Volgende leesinstelling** |
 | Punten 2 3 | **Vorige leesinstelling** |
-| Punt 5 | **Leesinstelling omlaag of vooruit verplaatsen** |
-| Punt 2 | **Leesinstelling omhoog of achteruit verplaatsen** |
+| Punt 5 | **Leesinstellingen lager of vooruit verplaatsen** |
+| Punt 2 | **Leesinstellingen hoger of achteruit verplaatsen** |
 | Punten 3 6 | **Activeren** |
 | Punten 1 2 | **Terug** |
 | Punten 1 2 5 | **Start** |
@@ -207,14 +207,14 @@ In appzoeken typ je de naam van een app in volledige braille van de toetsenbordt
 
 - Swipe omlaag of omhoog voor de volgende of vorige app.
 - Swipe naar links om de laatste cel te verwijderen, en swipe naar links met twee vingers om te wissen.
-- Swipe omhoog met twee vingers om de app te openen, of swipe omhoog met drie vingers om deze in gesplitst scherm te openen.
+- Swipe omhoog met twee vingers om de app te openen, of swipe omhoog met drie vingers om deze in gesplitst scherm te openen. Als je appzoeken vanuit braillecommando's hebt geopend, worden braillecommando's weer getoond boven de app.
 - Swipe omlaag met twee vingers om te sluiten.
 
-Appzoeken sluit na 15 seconden zonder aanraking. Om appzoeken direct te openen, voer je **Type an app's name in braille to open it** uit, in de groep **Systeemacties** van **Opdrachten**.
+Appzoeken sluit na 15 seconden zonder aanraking. Om appzoeken direct te openen, voer je **Typ de naam van een app in braille om deze te openen** uit, in de groep **Systeemacties** van **Commando's**.
 
 #### Vind tekst op het scherm {#braille-commands-find}
 
-**Tekst zoeken**, **Volgende tekst zoeken** en **Vorige tekst zoeken** staan in de groep **Braille** van **Opdrachten**, en hebben standaard braillecellen.
+**Tekst zoeken**, **Volgende tekst zoeken** en **Vorige tekst zoeken** staan in de groep **Braille** van **Commando's**, en hebben standaard braillecellen.
 
 1. Voer **Tekst zoeken** uit. SandFly kondigt "Typ tekst om te zoeken" aan.
 2. Typ de tekst in volledige braille. Swipe naar rechts voor een spatie, swipe naar links om te verwijderen, en swipe naar links met twee vingers om te wissen.
@@ -229,9 +229,9 @@ Ga naar **Braille** > **Braillecommando's**. Het scherm toont elke cel met zijn 
 - Om een cel toe te voegen, kies je **Braillecommando toevoegen**, kies je een groep en een opdracht, en typ je dan de cel. SandFly toont de punten om deze te typen.
 - Om een cel te wijzigen, kies je deze, en daarna **Opdracht kiezen**, **Braillecel wijzigen** of **Verwijderen**.
 - Als de cel al een andere opdracht uitvoert, biedt een dialoogvenster aan deze voor de nieuwe opdracht te gebruiken. Kies **Vervangen**.
-- **Standaardwaarde herstellen**, getoond nadat je de cellen hebt gewijzigd, geeft de cellen hun standaardwaarden terug.
+- **Standaardwaarden herstellen**, getoond nadat je de cellen hebt gewijzigd, geeft de cellen hun standaardwaarden terug.
 
-Je kunt een opdracht ook een cel geven vanuit zijn eigen scherm in **Opdrachten**, in de sectie **Braillecellen**. Zie [](#commands).
+Je kunt een opdracht ook een cel geven vanuit zijn eigen scherm in **Commando's**, in de sectie **Braillecellen**. Zie [](#commands).
 
 #### Braillecommando's in apps en profielen {#braille-commands-profiles}
 
@@ -241,7 +241,7 @@ Een cel voert de opdracht uit van het braillecommandoprofiel dat in gebruik is, 
 - **Braillecommandoprofielen**: kies **Braillecommandoprofiel toevoegen**, voer een naam in, en voeg dan cellen toe. Kies in een profiel **Hernoemen** of **Braillecommandoprofiel verwijderen**.
 - **Braillecommandoprofiel in gebruik**: getoond wanneer er een profiel is. Kies **Standaard** of een profiel.
 
-De opdrachten **Kies braillecommandoprofiel**, **Volgend braillecommandoprofiel** en **Vorig braillecommandoprofiel** staan in de groep **Braille** van **Opdrachten**, en elk profiel heeft een opdracht **Braillecommandoprofiel gebruiken** in de groep **Braillecommandoprofielen**. Je kunt ze gebaren, toetsen of braillecellen geven. Zie [](#commands).
+De opdrachten **Braillecommandoprofiel kiezen**, **Volgend braillecommandoprofiel** en **Vorig braillecommandoprofiel** staan in de groep **Braille** van **Commando's**, en elk profiel heeft een opdracht **Braillecommandoprofiel gebruiken** in de groep **Braillecommandoprofielen**. Je kunt ze gebaren, toetsen of braillecellen geven. Zie [](#commands).
 
 ### Brailleleesregels {#braille-displays}
 
@@ -254,7 +254,7 @@ SandFly toont tekst op brailleleesregels en neemt opdrachten en invoer aan van h
 3. Zet Bluetooth aan op de leesregel, of verbind deze met een USB-kabel.
 4. Kies onder **Apparaten** de leesregel, en kies dan **Verbinden**. Als de leesregel niet wordt vermeld, kies je **Nieuw apparaat zoeken**.
 
-Een leesregel in de lijst is **Actief** terwijl verbonden, **Opgeslagen, beschikbaar** of **Beschikbaar** wanneer deze kan verbinden, of **Opgeslagen** wanneer deze buiten bereik is. Kies een opgeslagen leesregel om de verbinding te verbreken of te **Vergeten**. Met **Automatisch verbinding maken** aan, verbinden opgeslagen leesregels wanneer ze in de buurt zijn. Standaard aan.
+Een leesregel in de lijst is **Actief** terwijl verbonden, **Opgeslagen, beschikbaar** of **Beschikbaar** wanneer deze kan verbinden, of **Opgeslagen** wanneer deze buiten bereik is. Kies een opgeslagen leesregel voor **Verbinding verbreken** of **Vergeten**. Met **Automatisch verbinding maken** aan, verbinden opgeslagen leesregels wanneer ze in de buurt zijn. Standaard aan.
 
 Op Android 15 en later verbindt SandFly ook met leesregels die de HID-braillestandaard via Bluetooth gebruiken. De lijst toont elk Bluetooth-apparaat dat HID aanbiedt, dus andere HID-apparaten, zoals toetsenborden, kunnen erin voorkomen; verbinden controleert of het apparaat een brailleleesregel is.
 
@@ -280,7 +280,7 @@ De groep **Algemeen** heeft:
 - **Leesregels van andere apps**: zie [](#braille-displays-other-apps).
 - **Geavanceerde instellingen**: **Knoppen omwisselen voor omhoog en omlaag meedraaien**, **Braille-uitvoer op scherm tonen**, **Berichtduur** (**Kort**, **Gemiddeld** of **Lang**), **Cursor knippert elke** (van **Nooit** tot 2 seconden; de standaardwaarde is 0,75 seconden), **Cursor tonen bij niet-bewerkbare items** (standaard aan), **Apparaatberichten tonen**, dat berichten zoals meldingen en binnenkomende gesprekken op de leesregel toont, en **Apparaatberichten opslaan**, dat een lijst ervan bewaart om te openen met Spatie en de punten 1, 3, 4, 5, 7 en 8.
 
-De opdracht **Navigate to braille display settings**, in de groep **Braille** van **Opdrachten**, opent deze instellingen. De sneltoetsen **Switch between contracted (grade 2) and uncontracted (grade 1)** en **Show or hide on-screen braille for connected braille displays** veranderen het brailleniveau en **Braille-uitvoer op scherm tonen** vanaf een fysiek toetsenbord. Zie [](#appendix-keyboard-shortcuts).
+De opdracht **Naar instellingen voor brailleleesregel**, in de groep **Braille** van **Commando's**, opent deze instellingen. De sneltoetsen **Schakelen tussen braille (graad 2) en braille (graad 1)** en **Braille op scherm tonen of verbergen voor verbonden brailleleesregels** veranderen het brailleniveau en **Braille-uitvoer op scherm tonen** vanaf een fysiek toetsenbord. Zie [](#appendix-keyboard-shortcuts).
 
 #### Kies de toetsen van een opdracht {#braille-displays-keys}
 
@@ -291,7 +291,7 @@ De opdracht **Navigate to braille display settings**, in de groep **Braille** va
 
 Als de toetsen al een andere opdracht uitvoeren, biedt een dialoogvenster aan deze naar de nieuwe opdracht te verplaatsen; de andere opdracht heeft dan geen toetsen meer. **Resetten** geeft een opdracht zijn standaardtoetsen terug, en **Alle toetsen resetten** doet dit voor elke opdracht.
 
-**SandFly-opdrachten** toont de opdrachten die gebaren uitvoeren, zoals **SandFly-menu openen**, **Meldingen** of **Vanaf begin lezen**, per groep, zodat je elke opdracht leesregeltoetsen kunt geven. Opdrachten zonder toetsen op de verbonden leesregel worden vermeld met "Geen toetsen".
+**SandFly-opdrachten** toont de opdrachten die gebaren uitvoeren, zoals **SandFly-menu openen**, **Meldingen** of **Lezen vanaf het begin**, per groep, zodat je elke opdracht leesregeltoetsen kunt geven. Opdrachten zonder toetsen op de verbonden leesregel worden vermeld met "Geen toetsen".
 
 Pan- en routeertoetsen kunnen niet worden gewijzigd, behalve de rechter joystick links en rechts op EuroBraille-leesregels. Toetsen zonder Spatie typen nog steeds hun punten in tekstvelden.
 

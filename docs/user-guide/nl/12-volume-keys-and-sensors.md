@@ -35,19 +35,20 @@ De drukken voeren geen opdrachten uit, en de toetsen wijzigen het volume zoals g
 - Tijdens een telefoongesprek, of terwijl een app gespreksaudio afspeelt.
 - Terwijl een vinger op het scherm staat, of tijdens doorlopend lezen.
 - Als de toets een schuifregelaar aanpast of de cursor beweegt.
+- Terwijl de app Shortcut Menu wordt getoond.
 
 Terwijl een gesprek overgaat, voert alleen een volumetoets met de opdracht **Gesprek beantwoorden** toegewezen aan een van zijn drukken, opdrachten uit.
 
 ### Volumetoetsdrukken van Android weghouden {#buttons-take-all}
 
-- **SandFly verwerkt elke druk op een volumetoets**: terwijl het scherm aanstaat, gaat elke druk op een volumetoets naar SandFly. Drukken met een opdracht voeren die uit, en andere drukken, ook een toets vasthouden, wijzigen geen volume. Terwijl deze instelling aanstaat, verschijnen **Volume omhoog indrukken** en **Volume omlaag indrukken**, en voeren ze een opdracht uit voor een enkele druk. Standaard uit.
+- **SandFly verwerkt elke druk op een volumetoets**: terwijl het scherm aanstaat, gaat elke druk op een volumetoets naar SandFly. Drukken met een opdracht voeren die uit, en andere drukken, ook een toets vasthouden, wijzigen geen volume. Terwijl deze instelling aanstaat, verschijnen **Volume omhoog één keer indrukken** en **Volume omlaag één keer indrukken**, en voeren ze een opdracht uit voor een enkele druk. Standaard uit.
 - **Volumepaneel verbergen**: terwijl het scherm aanstaat, wijzigen drukken zonder opdracht het volume zonder het volumepaneel van Android te tonen. Standaard uit. Met beide instellingen aan wijzigen drukken zonder opdracht geen volume.
 
 Beide instellingen laten de toetsen aan Android terwijl het scherm uit is, tijdens een telefoongesprek of terwijl een app gespreksaudio afspeelt, terwijl een gesprek overgaat, terwijl SandFly is gepauzeerd, en als beide volumetoetsen worden vastgehouden. Schuifregelaars aanpassen, de cursor bewegen en het spraakvolume met een vinger op het scherm blijven werken.
 
 ### Sneltoetsen voor volumetoetsen met het scherm uit {#buttons-screen-off}
 
-Met **Sneltoetsen voor volumetoetsen met het scherm uit** aan voeren de drukken op volumetoetsen met opdrachten die uit terwijl het scherm uit is. Drukken zonder opdracht wijzigen het volume. De instelling vereist Shizuku, en wordt niet getoond als SandFly root gebruikt in plaats van Shizuku, of op smartwatches; zie [](#updates). De eerste keer dat je deze instelling aanzet, toont Shizuku een verzoek om SandFly toe te staan. Standaard uit.
+Met **Sneltoetsen voor volumetoetsen met het scherm uit** aan voeren de drukken op volumetoetsen met opdrachten die uit terwijl het scherm uit is. Drukken zonder opdracht wijzigen het volume. De instelling vereist Shizuku, en wordt niet getoond als SandFly root gebruikt in plaats van Shizuku, of op smartwatches; zie [](#updates-shizuku). De eerste keer dat je deze instelling aanzet, toont Shizuku een verzoek om SandFly toe te staan. Standaard uit.
 
 ### Spraakvolume op Samsung-telefoons {#buttons-samsung}
 
@@ -76,7 +77,7 @@ Deze functies gebruiken de sensoren van de telefoon. Elke functie wordt ingestel
 
 - **Tikken op achterkant**: twee, drie of vier tikken op de achterkant van de telefoon voeren opdrachten uit. **Gebaren** > **Tikken op achterkant**; zie [](#gestures-back-tap).
 - **Schudden**: de telefoon schudden voert een opdracht uit. **Gebaren** > **Schudden**; zie [](#gestures-shake).
-- **Afstandssensor afdekken om spraak te stoppen**: de afstandssensor afdekken stopt de spraak. Standaard uit. **Spraak** > **Afstandssensor afdekken om spraak te stoppen**; zie [](#speech).
-- **Aanraking automatisch vergrendelen** > **Terwijl de afstandssensor is afgedekt**: de aanraking is vergrendeld terwijl iets de afstandssensor bedekt. Zie [](#touch-lock).
-- **Schud om te stoppen** en **Zwaaien om te stoppen**: de telefoon schudden, of een hand over de afstandssensor bewegen, stopt het voorlezen van een melding. **Meldingen** > **Stop met lezen**; zie [](#notifications).
-- **Luidspreker wanneer de telefoon niet bij je oor is**: een gesprek gaat naar de luidspreker als je de telefoon van je oor afhaalt, en terug naar de oorspreker als je hem weer tegen je oor houdt. **Audio-uitvoer** > **Luidspreker wanneer de telefoon niet bij je oor is**; zie [](#sound).
+- **Afstandssensor afdekken om spraak te stoppen**: de afstandssensor afdekken stopt de spraak. Standaard uit. **Spraak** > **Afstandssensor afdekken om spraak te stoppen**; zie [](#speech-stop).
+- **Aanraking automatisch vergrendelen** > **Terwijl de nabijheidssensor is afgedekt**: de aanraking is vergrendeld terwijl iets de afstandssensor bedekt. Zie [](#touch-lock).
+- **Schud om te stoppen** en **Zwaaien om te stoppen**: de telefoon schudden, of een hand over de afstandssensor bewegen, stopt het voorlezen van een melding. **Meldingen** > **Stop met lezen**; zie [](#notifications-stop).
+- **Luidspreker wanneer de telefoon niet bij je oor is**: een gesprek gaat naar de luidspreker als je de telefoon van je oor afhaalt, en terug naar de oorspreker als je hem weer tegen je oor houdt. **Audio-uitvoer** > **Luidspreker wanneer de telefoon niet bij je oor is**. Dit vereist Android 12 of hoger. Zie [](#sound-calls).

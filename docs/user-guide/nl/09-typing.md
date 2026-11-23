@@ -10,7 +10,7 @@ Om de typinstellingen te openen, ga je naar **Typen** in de instellingen van San
 
 - **Toetsenbordecho**: wat SandFly voorleest terwijl je typt met elk type toetsenbord. Zie [](#typing-keyboard-echo).
 - **Dubbeltikken verplaatst cursor naar begin of einde**. Zie [](#typing-double-tap-cursor).
-- **Schermtoetsenbord**: **Typemethode**, **Vertraging voor tikken en vasthouden tijdens het typen**, **Hold keys down after the touch and hold delay**, **Focusvertraging bij typen** en **Toetsenbordtoetsen sneller aankondigen**. Zie [](#typing-on-screen-keyboard).
+- **Schermtoetsenbord**: **Typemethode**, **Vertraging voor tikken en vasthouden tijdens het typen**, **Toetsen ingedrukt houden na de vertraging voor tikken en vasthouden**, **Focusvertraging bij typen** en **Toetsenbordtoetsen sneller aankondigen**. Zie [](#typing-on-screen-keyboard).
 - **Fysiek toetsenbord**: alleen getoond terwijl een fysiek toetsenbord is verbonden. Zie [](#typing-physical-keyboard).
 - **Andere manieren om te typen**: **Dicteren**, **Handschrifttoetsenbord** en **Wachttijd na schrijven**. Zie [](#typing-dictation) en [](#typing-handwriting).
 
@@ -22,11 +22,11 @@ Raak het toetsenbord aan en sleep je vinger over de toetsen. SandFly leest elke 
 
 1. Ga naar **Typen** > **Typemethode**.
 2. Kies een van de methoden:
-   - **Houd vinger vast om willekeurige toets te selecteren, dubbeltik dan**: til je vinger op, dubbeltik dan overal om de toets te typen die SandFly het laatst voorlas.
-   - **Houd vinger vast om lettertoets te selecteren, til dan op. Dubbeltik voor andere toetsen.**: het optillen van je vinger typt een lettertoets. Andere toetsen, zoals Delete of Enter, vereisen een dubbeltik. Dit is de standaardwaarde.
-   - **Houd vinger vast om willekeurige toets te selecteren, til dan op**: het optillen van je vinger typt elke toets. Deze methode heeft de laagste vertraging.
-   - **Houd vinger vast om willekeurige toets te selecteren, til dan op. Dubbeltik voor Enter, Klaar of Verzenden.**: het optillen van je vinger typt elke toets behalve de toets die verzendt of indient, zoals Enter, Klaar, Verzenden, Zoeken of Start, waarvoor een dubbeltik nodig is. SandFly herkent deze toets in Gboard. In andere toetsenborden typt elke toets wanneer je je vinger optilt.
-   - **Tik op een toets om deze te typen, of houd vinger vast om willekeurige toets te selecteren, til dan op**: een snelle tik op een toets typt deze meteen, zodat snelle dubbele letters twee keer worden getypt. Het vasthouden van een vinger op het toetsenbord verkent de toetsen, en optillen typt de toets onder de vinger. Deze methode is beschikbaar op Android 13 en later.
+   - **Houd je vinger op een toets om deze te selecteren en dubbeltik**: til je vinger op, dubbeltik dan overal om de toets te typen die SandFly het laatst voorlas.
+   - **Houd je vinger op een lettertoets om deze te selecteren en haal dan je vinger van het scherm. Dubbeltik voor andere toetsen.**: het optillen van je vinger typt een lettertoets. Andere toetsen, zoals Delete of Enter, vereisen een dubbeltik. Dit is de standaardwaarde.
+   - **Houd je vinger op een toets om te selecteren en haal dan je vinger van het scherm**: het optillen van je vinger typt elke toets. Deze methode heeft de laagste vertraging.
+   - **Houd je vinger op een toets om die te selecteren en til je vinger dan op. Dubbeltik voor Enter, Klaar of Verzenden.**: het optillen van je vinger typt elke toets behalve de toets die verzendt of indient, zoals Enter, Klaar, Verzenden, Zoeken of Start, waarvoor een dubbeltik nodig is. SandFly herkent deze toets in Gboard. In andere toetsenborden typt elke toets wanneer je je vinger optilt.
+   - **Tik op een toets om die te typen, of houd je vinger op een toets om die te selecteren en til je vinger dan op**: een snelle tik op een toets typt deze meteen, zodat snelle dubbele letters twee keer worden getypt. Het vasthouden van een vinger op het toetsenbord verkent de toetsen, en optillen typt de toets onder de vinger. Deze methode is beschikbaar op Android 13 en later.
 
 Bij elke methode kun je ook split-tap gebruiken: houd één vinger op een toets en tik met een andere vinger op het scherm om deze te typen.
 
@@ -34,19 +34,21 @@ Op Android 13 en later zet het kiezen van een van de laatste drie methoden **Foc
 
 #### Tik een toets aan en houd vast {#typing-touch-and-hold}
 
-**Typen** > **Vertraging voor tikken en vasthouden tijdens het typen** bepaalt hoe lang je je vinger op een toets houdt voordat SandFly er lang op drukt, bijvoorbeeld om de alternatieve tekens van een toets te openen. De keuzes zijn 0,5, 1, 2, 3 en 5 seconden; de standaardwaarde is 3 seconden. De instelling is niet beschikbaar met de typemethode **Houd vinger vast om willekeurige toets te selecteren, dubbeltik dan**.
+**Typen** > **Vertraging voor tikken en vasthouden tijdens het typen** bepaalt hoe lang je je vinger op een toets houdt voordat SandFly er lang op drukt, bijvoorbeeld om de alternatieve tekens van een toets te openen. De keuzes zijn 0,5, 1, 2, 3 en 5 seconden; de standaardwaarde is 3 seconden. De instelling is niet beschikbaar met de typemethode **Houd je vinger op een toets om deze te selecteren en dubbeltik**.
 
-Met **Typen** > **Hold keys down after the touch and hold delay** aan, drukt SandFly de toets aan het einde van de vertraging in en geeft de rest van de aanraking door aan het toetsenbord, zoals een dubbeltik en vasthouden doet. Het toetsenbord behandelt de aanraking dan als een eigen lange druk, zoals een Delete-toets die blijft herhalen terwijl deze wordt vastgehouden. Dit geldt bij de til-om-te-typen-methoden, op andere toetsenborden dan Gboard. Standaard uit.
+Met **Typen** > **Toetsen ingedrukt houden na de vertraging voor tikken en vasthouden** aan, drukt SandFly de toets aan het einde van de vertraging in en geeft de rest van de aanraking door aan het toetsenbord, zoals een dubbeltik en vasthouden doet. Het toetsenbord behandelt de aanraking dan als een eigen lange druk, zoals een Delete-toets die blijft herhalen terwijl deze wordt vastgehouden. Dit geldt bij de til-om-te-typen-methoden, op alle toetsenborden behalve Gboard en Pixelboard in versies vóór 18.8. Standaard uit.
 
 #### Alternatieve tekens in Gboard {#typing-gboard-alternatives}
 
 Wanneer je een toets in Gboard vasthoudt, drukt SandFly er na de vertraging voor tikken en vasthouden lang op, en opent Gboard een pop-up met alternatieve tekens. SandFly leest het geselecteerde teken, zoals "Komma", zodra de pop-up opent. Sleep je vinger naar de andere tekens om ze te horen, en til je vinger op om het teken te typen waar je op staat.
 
-Op Android 11 en later verkent SandFly aanrakingen op Gboard, en op Pixelboard, dat erop is gebaseerd, zelf in plaats van via aanraakverkenning. Terwijl de pop-up open is, selecteert je vinger een van de tekens erin, waar je vinger ook is, het dichtstbijzijnde teken wanneer je vinger buiten de pop-up is, en optillen typt het en sluit de pop-up. Wanneer je vinger het toetsenbord verlaat zonder geopende pop-up, neemt aanraakverkenning het over voor de rest van het scherm, en optillen van je vinger daar typt niets. Dit geldt niet met de typemethode **Houd vinger vast om willekeurige toets te selecteren, dubbeltik dan**.
+Gboard 18.8 en later krijgen aanrakingen via de aanraakverkenning van Android, zoals andere toetsenborden. Bij eerdere versies van Gboard, en van Pixelboard, dat op Gboard is gebaseerd, verkent SandFly aanrakingen op het toetsenbord zelf, op Android 11 en later. Terwijl de pop-up van deze versies open is, selecteert je vinger een van de tekens erin, waar je vinger ook is, het dichtstbijzijnde teken wanneer je vinger buiten de pop-up is, en optillen typt het en sluit de pop-up. Wanneer je vinger het toetsenbord verlaat zonder geopende pop-up, neemt aanraakverkenning het over voor de rest van het scherm, en optillen van je vinger daar typt niets. Dit geldt niet met de typemethode **Houd je vinger op een toets om deze te selecteren en dubbeltik**.
 
 #### Trilling van Gboard-toetsen {#typing-gboard-vibration}
 
-Gboard speelt zijn toetsfeedback, zoals een trilling, alleen af wanneer een toets hover-gebeurtenissen ontvangt, die een aanraking die SandFly zelf verkent niet verstuurt. Wanneer Shizuku of root voor SandFly is ingesteld, stuurt SandFly deze hover-gebeurtenissen naar Gboard, zodat Gboard de feedback afspeelt die in zijn eigen instellingen is ingesteld, zoals **Trillen bij toetsaanslag**. Zonder Shizuku of root speelt Gboard geen toetsfeedback terwijl SandFly het toetsenbord verkent. Hiervoor is geen instelling. Om Shizuku of root in te stellen, zie [](#updates).
+Gboard 18.8 en later spelen de toetsfeedback af die in de Gboard-instellingen is ingesteld, zoals **Trillen bij toetsaanslag**.
+
+Gboard en Pixelboard in versies vóór 18.8 spelen toetsfeedback alleen af wanneer een toets hover-gebeurtenissen ontvangt, die een aanraking die SandFly zelf verkent niet verstuurt. Wanneer Shizuku of root voor SandFly is ingesteld, stuurt SandFly deze hover-gebeurtenissen naar het toetsenbord, zodat het de feedback afspeelt die in zijn eigen instellingen is ingesteld. Zonder Shizuku of root spelen deze versies geen toetsfeedback terwijl SandFly het toetsenbord verkent. Hiervoor is geen instelling. Om Shizuku of root in te stellen, zie [](#updates).
 
 #### Verander de focusvertraging bij typen {#typing-focus-delay}
 
@@ -60,7 +62,7 @@ Je kunt de vertraging ook wijzigen terwijl je typt met de leesinstelling **Focus
 
 #### Swipes en het toetsenbord {#typing-swipes-keyboard}
 
-Swipes vanuit een app, de statusbalk of de navigatiebalk verplaatsen focus nooit naar het toetsenbord. Bij elke typemethode behalve **Houd vinger vast om willekeurige toets te selecteren, dubbeltik dan**, gaat een swipe terwijl focus op een toets staat verder in de app, vanuit het tekstveld waarin je typt. Bij de dubbeltikmethode verplaatsen swipes door de toetsen. Swipes vanuit het toetsenbord kunnen het nog steeds verlaten.
+Swipes vanuit een app, de statusbalk of de navigatiebalk verplaatsen focus nooit naar het toetsenbord. Bij elke typemethode behalve **Houd je vinger op een toets om deze te selecteren en dubbeltik**, gaat een swipe terwijl focus op een toets staat verder in de app, vanuit het tekstveld waarin je typt. Bij de dubbeltikmethode verplaatsen swipes door de toetsen. Swipes vanuit het toetsenbord kunnen het nog steeds verlaten.
 
 ### Toetsenbordecho {#typing-keyboard-echo}
 
@@ -72,7 +74,9 @@ Toetsenbordecho bepaalt wat SandFly voorleest terwijl je typt. Elk type toetsenb
 
 Woordecho leest het hele woord voor zoals het in het veld staat, terug tot de laatste spatie. Woorden met apostroffen of koppeltekens, zoals "don't", zijn één woord, en een web- of e-mailadres is één woord. Wanneer een toetsenbord een woord, de interpunctie erbij en een spatie in één keer toevoegt, zoals het brailletoetsenbord doet in kortschrift, leest SandFly het woord voor.
 
-Elke echo-instelling is ook een leesinstelling en een item van het SandFly-menu: **Schermtoetsenbordecho**, **Toetsenbordecho van fysiek toetsenbord**, **Toetsenbordecho van brailletoetsenbord**, **Toetsenbordecho van brailleleesregel** en **Toetsenbordecho van handschrifttoetsenbord**. Deze staan standaard uit. Om ze toe te voegen, ga je naar **Leesinstellingen** of **SandFly-menu** en zet je ze aan in de groep **Toetsenbordecho**. Zie [](#commands).
+Elke echo-instelling is ook een leesinstelling, een item van het SandFly-menu en een opdracht in de groep **Spraak** van de opdrachten: **Toetsenbordecho op het scherm**, **Echo van fysiek toetsenbord**, **Echo van brailletoetsenbord**, **Echo van brailleleesregel** en **Echo van handschrifttoetsenbord**. De leesinstellingen en menu-items staan standaard uit. Om ze toe te voegen, ga je naar **Leesinstellingen** of **SandFly-menu** en zet je ze aan in de groep **Toetsenbordecho**. Zie [](#commands).
+
+De sneltoets **Typecho doorlopen** zet **Fysiek toetsenbord** op de volgende keuze. Zie [](#appendix-keyboard-shortcuts).
 
 ### Verplaats de cursor {#typing-move-cursor}
 
@@ -81,7 +85,7 @@ Wanneer focus op een tekstveld staat, verplaatsen de leesinstellingen **Tekens**
 1. Swipe omhoog dan omlaag, of omlaag dan omhoog, om een leesinstelling te kiezen. Je kunt ook met drie vingers omhoog of omlaag swipen.
 2. Swipe omlaag om de cursor vooruit te verplaatsen, of swipe omhoog om hem terug te verplaatsen.
 
-De opdrachten **Cursor naar begin verplaatsen** en **Cursor naar einde verplaatsen** in de groep **Tekst bewerken** van **Opdrachten** verplaatsen de cursor naar het begin of einde van de tekst. Ze staan ook in de acties van een tekstveld. Zie [](#typing-editing-actions).
+De opdrachten **Cursor naar begin verplaatsen** en **Cursor naar einde verplaatsen** in de groep **Tekstverwerking** van **Commando's** verplaatsen de cursor naar het begin of einde van de tekst. Ze staan ook in de acties van een tekstveld. Zie [](#typing-editing-actions).
 
 Voor de standaardgebaren, zie [](#appendix-gestures). Voor leesinstellingen, zie [](#commands).
 
@@ -124,11 +128,11 @@ De opdracht **Bewerkingsmenu** opent een menu met **Klembordgeschiedenis**, **Ko
 
 #### Andere opdrachten voor tekstbewerking {#typing-editing-commands}
 
-De groep **Tekst bewerken** van **Opdrachten** heeft ook:
+De groep **Tekstverwerking** van **Commando's** heeft ook:
 
 - **Tekst sturen**: drukt de toets die de tekst in het toetsenbord verzendt of indient, zoals Verzenden, Zoeken of Klaar.
 - **Tekst wissen**: verwijdert alle tekst in het tekstveld.
-- **Tekentelling**: leest de lengte van de tekst voor, zoals "12 tekens, 3 woorden". In een wachtwoordveld worden alleen de tekens geteld.
+- **Aantal tekens**: leest de lengte van de tekst voor, zoals "12 tekens, 3 woorden". In een wachtwoordveld worden alleen de tekens geteld.
 - **Tekstveld voorlezen**: leest de hele tekst van het tekstveld voor, of "Leeg" en de hint wanneer het geen tekst heeft.
 - **Spelling-/grammaticasuggesties**: opent de suggesties voor de typefout bij de cursor. De leesinstelling **Proeflezen** verplaatst tussen typefouten.
 - **Dicteren**: zie [](#typing-dictate).
@@ -139,9 +143,9 @@ Geen van deze opdrachten heeft standaard een gebaar. Om er een gebaar aan te gev
 
 ### Klembordgeschiedenis {#typing-clipboard-history}
 
-SandFly houdt een geschiedenis bij van tot 50 gekopieerde teksten, nieuwste eerst. De geschiedenis bevat de teksten die SandFly kopieert, en de teksten die andere apps kopiëren terwijl een venster van SandFly focus heeft. Android laat apps de inhoud van het klembord niet op de achtergrond lezen, dus met Shizuku of root voegt de schakelaar **Kopieën van andere apps toevoegen** boven aan de geschiedenis elke tekst toe die andere apps kopiëren. De geschiedenis wordt los van de instellingen bewaard en is niet opgenomen in een backup van de instellingen.
+SandFly houdt een geschiedenis bij van tot 50 gekopieerde teksten, nieuwste eerst. De geschiedenis bevat de teksten die SandFly kopieert, en de teksten die andere apps kopiëren terwijl een venster van SandFly focus heeft. Android laat apps de inhoud van het klembord niet op de achtergrond lezen, dus met Shizuku of root voegt de schakelaar **Kopieën uit andere apps toevoegen** boven aan de geschiedenis elke tekst toe die andere apps kopiëren. De geschiedenis wordt los van de instellingen bewaard en is niet opgenomen in een backup van de instellingen.
 
-Om de geschiedenis te openen, voer je **Klembordgeschiedenis** uit, vanuit de opdrachten **Tekst bewerken** of het **Bewerkingsmenu**. De geschiedenis opent over het huidige scherm.
+Om de geschiedenis te openen, voer je **Klembordgeschiedenis** uit, vanuit de opdrachten **Tekstverwerking** of het **Bewerkingsmenu**. De geschiedenis opent over het huidige scherm.
 
 - Dubbeltik op een tekst om deze te plakken in het tekstveld waaruit de geschiedenis is geopend. Als de geschiedenis zonder tekstveld is geopend, opent dubbeltikken de acties van de tekst.
 - Dubbeltik en houd een tekst vast om de acties erbij te openen: **Plakken**, **Kopiëren** opnieuw, **Toevoegen aan klembord**, **Bewerken** van de tekst, **Exporteren naar bestand**, of **Verwijderen**. De acties staan ook bij **Acties** van de tekst.
@@ -153,18 +157,18 @@ Om te plakken zonder de geschiedenis te openen, voeg je de leesinstelling **Klem
 
 ### Kopieer tekst van het scherm {#typing-copy-from-screen}
 
-Deze opdrachten staan in de groep **Tekst bewerken** van **Opdrachten**:
+Deze opdrachten staan in de groep **Tekstverwerking** van **Commando's**:
 
 - **Laatst uitgesproken woordgroep kopiëren**: kopieert de laatste tekst die SandFly voorlas. Standaard voert een drievingertripletik dit uit.
 - **Laatste gesproken zin woord voor woord selecteren**: opent een lijst van de woorden van de laatste zin, om de woorden te controleren die je wilt kopiëren.
-- **Tekst van scherm kopiëren**: opent een lijst van de tekst op het scherm, opgesplitst in adressen en getallen, tekens, woorden of alinea's, om de delen te controleren die je wilt kopiëren.
+- **Tekst van scherm kopiëren**: opent een lijst van de tekst op het scherm, opgesplitst in adressen en getallen, tekens, woorden of alinea's, om de delen aan te vinken die je wilt kopiëren. Zie [](#reading-copy-text).
 - **Doorlopend kopiëren**: verplaatst focus van het item met focus door elk item daarna, zonder spraak, waarbij lijsten en pagina's onderweg scrollen, en verzamelt de tekst van elk item. Raak het scherm aan, druk op een toets of voer een andere opdracht uit om te stoppen. Aan het einde worden de teksten getoond met elk een keuzevakje; vink de teksten aan die je wilt kopiëren en kies **Opslaan**. Doorlopend kopiëren stopt na 2000 items of 10 minuten.
 
 In deze lijsten vinken de acties **Selectie starten** en **Selectie beëindigen** van een item elk item tussen twee items aan. Dubbeltikken en vasthouden van een item doet hetzelfde.
 
 ### Gedetailleerde bewerking {#typing-granular-editing}
 
-Gedetailleerde bewerking opent de tekst van het tekstveld met focus, of van elk item met focus dat tekst heeft, in een eigen scherm, opgesplitst in stukken. Om dit te openen, kies je **Gedetailleerde bewerking** in de acties van een tekstveld, of voer je de opdracht **Gedetailleerde bewerking** uit vanuit de groep **Tekst bewerken** van **Opdrachten**. Wachtwoordvelden kunnen niet worden geopend.
+Gedetailleerde bewerking opent de tekst van het tekstveld met focus, of van elk item met focus dat tekst heeft, in een eigen scherm, opgesplitst in stukken. Om dit te openen, kies je **Gedetailleerde bewerking** in de acties van een tekstveld, of voer je de opdracht **Gedetailleerde bewerking** uit vanuit de groep **Tekstverwerking** van **Commando's**. Wachtwoordvelden kunnen niet worden geopend.
 
 - **Splitsen op** kiest de stukken: **Tekens**, **Woorden**, **Zinnen**, **Regels** of **Alinea's**. De standaardwaarde is **Woorden**, en SandFly houdt je laatste keuze aan.
 - Dubbeltik op een stuk om het te bewerken. Het leeg maken ervan verwijdert het.
@@ -197,7 +201,7 @@ Standaard voert een tweevingerdubbeltik **Dicteren, media afspelen of pauzeren**
 Ga naar **Typen** > **Dicteren** > **Spraakherkenning**, en kies een van de volgende:
 
 - **Automatisch**: de standaardwaarde. SandFly gebruikt Google-spraakherkenning op het apparaat wanneer deze is geïnstalleerd en de taal van de telefoon heeft; anders Rambler, wanneer er een Gemini API-sleutel is en Rambler de taal ondersteunt; anders Whisper, wanneer een model is gedownload; anders Android-spraakherkenning. Het scherm toont welke er wordt gebruikt, zoals "Automatisch: Rambler".
-- **Google-spraakherkenning op het apparaat**: de herkenner van de app Spraakherkenning en synthese, met zijn offline taalpakketten, in de taal van de telefoon. Op Android 13 en later voegt deze interpunctie en hoofdletters toe. Wanneer de taal van de telefoon geen taalpakket heeft, opent de rij **Downloaden** (taal) **voor herkenning op het apparaat** het downloadscherm van Spraakherkenning en synthese.
+- **Google-spraakherkenning op het apparaat**: de herkenner van de app Spraakherkenning en synthese, met zijn offline taalpakketten, in de taal van de telefoon. Op Android 13 en later voegt deze interpunctie en hoofdletters toe terwijl **Automatische interpunctie** aan staat. Wanneer de taal van de telefoon geen taalpakket heeft, opent de rij **Downloaden** (taal) **voor herkenning op het apparaat** het downloadscherm van Spraakherkenning en synthese.
 - **Rambler (Gemini API)**: het model Gemini 3.5 Transcribe, via de Gemini API-sleutel die is ingesteld in AI-services. Dit verwijdert stopwoorden, lost zelfcorrecties op, en formatteert interpunctie, getallen en lijsten. Zie [](#descriptions) voor de Gemini API-sleutel.
 - **Whisper**: herkenning op de telefoon, met een gedownload Whisper-model. Zie [](#typing-whisper-models).
 - **Android-spraakherkenning**: de spraakherkenningsservice die is gekozen in de Android-instellingen.
@@ -230,7 +234,7 @@ Het eerste model dat je downloadt, wordt gebruikt. Whisper gebruikt de taal van 
 
 Met **Typen** > **Dicteren** > **Dicteren corrigeren met AI** aan, stuurt SandFly de tekst van Google-spraakherkenning op het apparaat, Whisper of Android-spraakherkenning naar een AI-service voordat deze wordt getypt, met tot 300 tekens van de tekst voor de cursor. De service verwijdert stopwoorden, stotteren en valse starts, lost zelfcorrecties op ("twee, nee, drie" wordt "drie"), voegt interpunctie en hoofdletters toe, corrigeert verkeerd gehoorde woorden, en formatteert getallen, datums en lijsten. Standaard aan. Tekst van Rambler wordt niet opnieuw gestuurd, en dicteren in een wachtwoordveld wordt niet gestuurd.
 
-- **AI-service voor dicteren**: **Zelfde als AI-services** (de standaardwaarde), elke AI-service die is ingesteld, of **AI op het apparaat** wanneer zijn model is gedownload. Met AI op het apparaat blijft al het dicteren op de telefoon. Zie [](#descriptions).
+- **AI-service voor dicteren**: **Zelfde als AI-diensten** (de standaardwaarde), elke AI-service die is ingesteld, of **AI op het apparaat** wanneer zijn model is gedownload. Met AI op het apparaat blijft al het dicteren op de telefoon. Zie [](#descriptions).
 - **Correctieprompt**: de instructies die de AI-service ontvangt, zoals een taal of stijl. Het veld begint met de ingebouwde prompt. Het ongewijzigd of leeg opslaan houdt de ingebouwde prompt aan.
 
 Als de service niet binnen 20 seconden reageert (60 seconden voor AI op het apparaat), of tekst teruggeeft die veel langer is dan de spraak, typt SandFly de tekst zoals herkend. Het uitvoeren van **Dicteren** voordat de service reageert, doet meteen hetzelfde.
@@ -242,8 +246,8 @@ In **Typen** > **Dicteren**:
 - **Automatische interpunctie**: Google-spraakherkenning voegt interpunctie en hoofdletters toe. Standaard aan. Getoond op Android 13 of later met Google-spraakherkenning geïnstalleerd.
 - **Aanstootgevende woorden blokkeren**: Google-spraakherkenning maskeert aanstootgevende woorden. Standaard aan. Getoond bij **Automatische interpunctie**.
 - **Automatisch stoppen na stilte**: stopt de opname na 1, 2, 3, 5, 10, 15 of 30 seconden, of 1 minuut, zonder spraak. De standaardwaarde is **Uit**.
-- **Gedicteerde tekst voorlezen**: leest de tekst voor nadat SandFly deze typt, behalve in wachtwoordvelden. Standaard uit.
-- **Herkenningsmodellen geladen houden**: hoelang een Whisper-model en het AI-model op het apparaat in het geheugen blijven na gebruik: **Na gebruik verwijderen** (de standaardwaarde), 5, 15 of 30 minuten, of **Tot SandFly stopt**. Een geladen model start sneller en gebruikt geheugen.
+- **Gedicteerde tekst uitspreken**: leest de tekst voor nadat SandFly deze typt, behalve in wachtwoordvelden. Standaard uit.
+- **Herkenningsmodellen geladen houden**: hoelang een Whisper-model en het AI-model op het apparaat in het geheugen blijven na gebruik: **Na gebruik uitladen** (de standaardwaarde), 5, 15 of 30 minuten, of **Totdat SandFly stopt**. Een geladen model start sneller en gebruikt geheugen.
 - **Downloadserver voor modellen**: waar modellen worden gedownload vandaan, **Hugging Face** (de standaardwaarde) of **hf-mirror.com**.
 
 ### Handschrifttoetsenbord {#typing-handwriting}
@@ -253,8 +257,8 @@ SandFly-handschrift is een toetsenbord dat typt wat je met één vinger op het s
 #### Zet het handschrifttoetsenbord aan {#typing-handwriting-turn-on}
 
 1. Ga naar **Typen** > **Handschrifttoetsenbord**. De toetsenbordinstellingen van Android openen.
-2. Zet **SandFly-handschrift** aan.
-3. Kies in een tekstveld **SandFly-handschrift** als toetsenbord, bijvoorbeeld met de opdracht **Toetsenbord wisselen** of de toetsenbordwisselaar van Android.
+2. Zet **SandFly handschrift** aan.
+3. Kies in een tekstveld **SandFly handschrift** als toetsenbord, bijvoorbeeld met de opdracht **Toetsenbord wisselen** of de toetsenbordwisselaar van Android.
 
 De eerste keer dat het toetsenbord opent, doorloopt een handleiding het schrijven van een letter, een woord en elk gebaar, en gaat verder wanneer je elke stap doet. Er wordt niets in het veld getypt tijdens de handleiding. Om deze vroeg te beëindigen, swipe je met drie vingers omlaag. Om de handleiding opnieuw te openen, tik je met drie vingers.
 
@@ -264,7 +268,7 @@ Handschrift wordt op de telefoon herkend door Google ML Kit, in de taal van de t
 
 Schrijf een letter, meerdere letters of een heel woord ergens op het scherm. Streken die binnen de wachttijd op elkaar volgen, zijn één stuk schrift, dat daarna wordt getypt en voorgelezen. Puntjes, zoals op een i, tellen als streken.
 
-**Typen** > **Wachttijd na schrijven** bepaalt de wachttijd, van 0,2 tot 1 seconde; de standaardwaarde is 0,6 seconden. Een kortere wachttijd typt sneller, maar elke streek van een letter met meerdere streken, zoals H, moet erbinnen beginnen. De instelling geldt ook voor de opdrachten **Write the letter of a reading control** en **Write an app's name to open it**. Zie [](#commands).
+**Typen** > **Wachttijd na schrijven** bepaalt de wachttijd, van 0,2 tot 1 seconde; de standaardwaarde is 0,6 seconden. Een kortere wachttijd typt sneller, maar elke streek van een letter met meerdere streken, zoals H, moet erbinnen beginnen. De instelling geldt ook voor de opdrachten **Letter van een leesinstelling schrijven** en **Schrijf de naam van een app om deze te openen**. Zie [](#commands).
 
 | Gebaar | Actie |
 | --- | --- |
@@ -283,4 +287,4 @@ Terwijl het handschrifttoetsenbord wordt getoond, werken alleen opdrachten die g
 
 ### Fysieke toetsenborden {#typing-physical-keyboard}
 
-Terwijl een fysiek toetsenbord is verbonden, heeft de groep **Fysiek toetsenbord** van **Typen** **Lettertoetsen drukken op knoppen van het numerieke toetsenblok**, **Enter verstuurt berichten**, **SandFly-toetsenbord**, **Invoer bij ingedrukte toets**, **Tekens bij twee keer indrukken**, **Twee keer spatie typt een punt** en **Android-instellingen voor fysiek toetsenbord**. Deze instellingen worden beschreven in [](#keyboards).
+Terwijl een fysiek toetsenbord is verbonden, heeft de groep **Fysiek toetsenbord** van **Typen** **Lettertoetsen drukken op knoppen van het numerieke toetsenblok**, **Enter verstuurt berichten**, **SandFly-toetsenbord**, **Invoer bij ingedrukte toets**, **Tekens bij twee keer drukken**, **Twee keer spatie typt een punt** en **Android-instellingen voor fysiek toetsenbord**. Deze instellingen worden beschreven in [](#keyboards).

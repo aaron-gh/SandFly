@@ -47,11 +47,11 @@ SandFly leest de knoppen niet voor terwijl je ze aanraakt, maar spreekt de knop 
 
 Sommige bedieningselementen negeren de activatie die SandFly stuurt en reageren alleen op een vinger op het scherm. De opdracht **Activeren met een tik**, standaard niet toegewezen, tikt in plaats daarvan op het midden van het gefocuste item. Wijs dit toe aan een gebaar of sneltoets; zie [](#gestures). Een script kan hetzelfde doen voor gekozen items telkens wanneer ze worden geactiveerd; zie [](#scripts). Beide hebben Android 11 of hoger nodig; anders wordt het item als gewoonlijk geactiveerd.
 
-Voor apps waarin het activeren van een item niets doet, zet je de app aan onder **Aanraking** > **Dubbeltikken tikt op het scherm**, of voer je in de app de opdracht **Dubbeltikken tikt op het scherm in deze app** uit, standaard niet toegewezen. Het activeren van een item in die app tikt het dan aan. De opdracht zegt "Dubbeltikken tikt op het scherm aan" of "Dubbeltikken tikt op het scherm uit". Dit heeft ook Android 11 of hoger nodig.
+Voor apps waarin het activeren van een item niets doet, zet je de app aan onder **Aanraking** > **Dubbeltikken tikt op het scherm**, of voer je in de app de opdracht **Dubbeltikken tikt op het scherm in deze app** uit, standaard niet toegewezen. Het activeren van een item in die app tikt het dan aan. De opdracht zegt "Dubbeltikken tikt op het scherm aan" of "Dubbeltikken tikt op het scherm uit", of "Geen app op de voorgrond" als er geen app op de voorgrond is. Dit heeft ook Android 11 of hoger nodig, en is niet beschikbaar op horloges of tv's.
 
 #### Spraak terwijl je het scherm aanraakt {#touch-speech}
 
-Standaard stopt het aanraken van het scherm de spraak. Om de spraak te laten doorgaan tot aanraking een item focust, zet **Spraak** > **Spraak stoppen bij het aanraken van het scherm** uit. Zie [](#speech).
+Standaard stopt het aanraken van het scherm de spraak. Om de spraak te laten doorgaan tot aanraking een item focust, zet **Spraak** > **Spraak stoppen bij aanraken van het scherm** uit. Zie [](#speech).
 
 ### Aanraking vergrendelen {#touch-lock}
 
@@ -62,9 +62,9 @@ Om aanraking te vergrendelen of te ontgrendelen, gebruik de opdracht **Aanraking
 **Aanraking** > **Aanraking automatisch vergrendelen** vergrendelt aanraking zonder de opdracht:
 
 - **Nooit**: de standaard.
-- **Wanneer het scherm aangaat**: elke keer dat het scherm aangaat. Ontgrendel met de opdracht of beide volumetoetsen.
+- **Als het scherm aangaat**: elke keer dat het scherm aangaat. Ontgrendel met de opdracht of beide volumetoetsen.
 - **Op het vergrendelscherm**: tot je de telefoon ontgrendelt.
-- **Terwijl de afstandssensor is afgedekt**: terwijl het scherm aan staat en iets de afstandssensor afdekt, zoals een oor of een zak.
+- **Terwijl de nabijheidssensor is afgedekt**: terwijl het scherm aan staat en iets de afstandssensor afdekt, zoals een oor of een zak.
 
 SandFly spreekt niets uit wanneer aanraking automatisch vergrendelt.
 
@@ -127,6 +127,8 @@ adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
 Met de machtiging zegt SandFly "Aanraakverkenning repareren", beëindigt de aanrakingen die Android ingedrukt liet, en zegt "Aanraakverkenning opgelost". Een aanraking tijdens de reparatie gaat rechtstreeks naar de app. Dit werkt op telefoons die deze aanrakingen vermelden in `dumpsys input`, zoals Samsung-telefoons.
 
 Zonder de machtiging, of op andere telefoons, kan SandFly alleen zeggen dat de aanraakverkenning mogelijk is vastgelopen, en moet je de telefoon opnieuw starten. Het verkennen van een gebied zonder iets om voor te lezen, zoals een spel, vindt ook geen item, zodat de waarschuwing onterecht kan zijn, hoogstens eens per 10 minuten.
+
+Als het scherm uitgaat tijdens een aanraking, kan Android de opgetilde vingers als ingedrukt blijven beschouwen, en dan werkt alleen aanraakverkenning: gebaren en dubbeltikken doen niets. SandFly detecteert dit als het scherm uitgaat tijdens een aanraking, of als twee aanrakingen achter elkaar in aanraakverkenning eindigen, en zet Verkennen via aanraking uit en weer aan. Dit hangt niet af van **Vastgelopen aanraakverkenning repareren** of de DUMP-machtiging.
 
 ### Alle instellingen voor vertraging resetten {#touch-reset-delays}
 

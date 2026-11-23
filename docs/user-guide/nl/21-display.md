@@ -18,7 +18,7 @@ De opdracht **Focusindicator tonen**, in de groep opdrachten **SandFly**, zet de
 
 ### Verberg het scherm {#display-hide-screen}
 
-Scherm verbergen maakt het scherm zwart, zodat mensen in je omgeving niet kunnen zien wat erop staat. SandFly en de apps blijven gewoon werken.
+Scherm verbergen maakt het scherm zwart, ook de navigatiebalk, zodat mensen in je omgeving niet kunnen zien wat erop staat. SandFly en de apps blijven gewoon werken.
 
 Om het scherm te verbergen:
 
@@ -37,7 +37,7 @@ Om te voorkomen dat het dialoogvenster elke keer opent, zet je **Deze waarschuwi
 
 Met de machtiging **Systeeminstellingen wijzigen** zet SandFly de schermhelderheid ook op het minimum terwijl het scherm verborgen is, en zet deze terug zodra het scherm wordt getoond. De eerste keer dat je het scherm verbergt zonder die machtiging, opent SandFly het Android-scherm om deze toe te staan.
 
-Opmerking: Het scherm blijft verborgen nadat SandFly opnieuw start. Scherm verbergen is niet beschikbaar terwijl de telefoon is vergrendeld. Terwijl het scherm verborgen is, zijn afbeeldingsbeschrijvingen niet beschikbaar.
+Opmerking: Het scherm blijft verborgen nadat SandFly opnieuw start. Scherm verbergen is niet beschikbaar terwijl de telefoon is vergrendeld. Vóór Android 14 zijn afbeeldingsbeschrijvingen niet beschikbaar terwijl het scherm verborgen is.
 
 Om de geluiden voor het verbergen en tonen van het scherm te wijzigen, zie [](#sound). Om SandFly "Scherm verborgen" te laten zeggen wanneer het scherm wordt ingeschakeld, zie [](#verbosity).
 
@@ -48,7 +48,7 @@ De leesinstelling **Helderheid** wijzigt de systeemschermhelderheid, ook terwijl
 1. Swipe naar omhoog of omlaag om de leesinstelling te kiezen, tot SandFly "Helderheid" zegt. Zie [](#reading).
 2. Swipe naar omhoog om het scherm lichter te maken, of naar omlaag om het donkerder te maken.
 
-Elke stap wijzigt de helderheid met ongeveer 10 procent, en SandFly zegt het nieuwe niveau, zoals "Helderheid 40 procent." SandFly heeft de machtiging **Systeeminstellingen wijzigen** nodig om de helderheid te wijzigen, en opent de eerste keer het Android-scherm om deze toe te staan. Terwijl adaptieve helderheid aan staat, zegt SandFly "Zet adaptieve helderheid uit om de helderheid te wijzigen."
+Elke stap wijzigt de helderheid met 10 procent van de schuifregelaar voor systeemhelderheid, en SandFly zegt het nieuwe niveau, zoals "Helderheid 40 procent." SandFly heeft de machtiging **Systeeminstellingen wijzigen** nodig om de helderheid te wijzigen, en opent de eerste keer het Android-scherm om deze toe te staan. Terwijl adaptieve helderheid aan staat, zegt SandFly "Zet adaptieve helderheid uit om de helderheid te wijzigen."
 
 ### Gebruik SandFly als achtergrond {#display-wallpaper}
 
@@ -108,7 +108,7 @@ Alt+Tab is niet beschikbaar wanneer Alt de SandFly-toets is. Zie [](#keyboards).
 
 Om twee apps in gesplitst scherm te openen, gebruik je **Gesplitst scherm** in het menu Acties van een app in het SandFly-overzicht. Zie [](#display-overview-use).
 
-Terwijl gesplitst scherm wordt getoond, heeft het SandFly-menu een item **Gesplitst scherm**, met **Ga naar scheidingslijn** en de acties van de scheidingslijn, zoals de afmetingen en het verwisselen van de apps. De opdracht **Gesplitst scherm**, in **Systeemacties**, opent hetzelfde menu, en zegt "Niet in gesplitst scherm" wanneer er geen gesplitst scherm wordt getoond. In gesplitst scherm gaan de terugtoets en getypte toetsen naar de app waarin je het laatst de focus hebt verplaatst.
+Terwijl gesplitst scherm wordt getoond, heeft het SandFly-menu een item **Gesplitst scherm**, met **Naar scheidingslijn gaan** en de acties van de scheidingslijn, zoals de afmetingen en het verwisselen van de apps. De opdracht **Gesplitst scherm**, in **Systeemacties**, opent hetzelfde menu, en zegt "Niet in gesplitst scherm" wanneer er geen gesplitst scherm wordt getoond. In gesplitst scherm gaan de terugtoets en getypte toetsen naar de app waarin je het laatst de focus hebt verplaatst.
 
 ### Het paneel voor snelle instellingen van SandFly {#display-quick-settings}
 

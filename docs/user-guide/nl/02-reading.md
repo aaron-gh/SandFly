@@ -10,13 +10,13 @@ SandFly-focus is het item dat SandFly voorleest en waarop het handelt. Een recht
 
 SandFly-focus staat los van invoerfocus, het item dat invoer ontvangt van een toetsenbord. Tekstvelden, en sommige webinhoud, kunnen invoerfocus hebben terwijl SandFly-focus elders is.
 
-Een item kan een knop zijn, een regel tekst, een lijstrij, een afbeelding of iets anders dat een app toont. Apps bepalen hoe hun schermen in items zijn verdeeld. Wanneer een item andere tekst bevat, leest SandFly dit allemaal als één item, tenzij **Navigatie** > **Tekst binnen items afzonderlijk focussen** aan staat. Zie [](#reading-navigation-settings).
+Een item kan een knop zijn, een regel tekst, een lijstrij, een afbeelding of iets anders dat een app toont. Apps bepalen hoe hun schermen in items zijn verdeeld. Wanneer een item andere tekst bevat, leest SandFly dit allemaal als één item, tenzij **Navigatie** > **Tekst in items afzonderlijk focussen** aan staat. Zie [](#reading-navigation-settings).
 
 ### Verkennen via aanraking {#reading-explore}
 
 Raak het scherm aan en beweeg je vinger. SandFly focust en leest het item onder je vinger voor. Wanneer je vinger over een leeg deel van het scherm beweegt, speelt SandFly een geluid.
 
-SandFly wacht een korte tijd na het aanraken van het scherm, om een gebaar van een aanraking te onderscheiden, voordat het het item onder je vinger focust. Om deze wachttijd te veranderen, ga naar **Aanraking** > **Focusvertraging**. De standaardwaarde is 150 ms. Aanraakinstellingen worden beschreven in [](#touch).
+SandFly wacht een korte tijd na het aanraken van het scherm, om een gebaar van een aanraking te onderscheiden, voordat het het item onder je vinger focust. Om deze wachttijd te veranderen, ga naar **Aanraking** > **Focusvertraging**. De standaardwaarde is 0,15 seconden. Aanraakinstellingen worden beschreven in [](#touch).
 
 - Tussen de pictogrammen van het startscherm aanraken leest de pagina niet voor, zoals "Startscherm 1 van 2". Swipen bereikt dit nog wel.
 - Een scherm-in-scherm-venster, zoals een video die over het startscherm speelt, is één item, genoemd naar de app en "scherm in scherm". De bedieningselementen in het venster zijn acties van dat item. Aanraking bereikt elke bediening nog wel.
@@ -43,12 +43,12 @@ Om een gebaar of sneltoets aan een opdracht toe te wijzen, zie [](#commands).
 
 Met **Navigatie** > **Rondgaan** aan, wat de standaard is, gaat een swipe voorbij het laatste item naar het eerste item, en een swipe voorbij het eerste item naar het laatste.
 
-- **Navigatie** > **Stoppen bij het laatste item voordat het rondgaat**: De eerste swipe voorbij het laatste of eerste item stopt daar met het eindgeluid, en alleen de volgende swipe gaat rond. Standaard aan. Dit heeft geen effect terwijl **Rondgaan** uit staat.
+- **Navigatie** > **Stoppen bij het laatste item voor het rondgaan**: De eerste swipe voorbij het laatste of eerste item stopt daar met het eindgeluid, en alleen de volgende swipe gaat rond. Standaard aan. Dit heeft geen effect terwijl **Rondgaan** uit staat.
 - Met **Rondgaan** uit, leest elke swipe of toetsaanslag voorbij het eerste of laatste item dat item opnieuw voor met het eindgeluid. Bewegen op kop, link of bediening in apps stopt ook bij de uiteinden. Webpagina's kunnen zelf nog wel rondgaan.
 
 **Rondgaan** is ook een leesinstelling, die je kunt toevoegen op het scherm **Leesinstellingen** om rondgaan aan of uit te zetten met een swipe omhoog of omlaag. Zie [](#reading-controls).
 
-**Navigatie** > **Rondgaan in leesinstellingen** stelt in of leesinstellingen die door een lijst van waarden gaan, zoals **Spraakengine**, **Audio-uitvoerapparaat**, **Acties**, **Adressen en nummers** of **Geluidsmodus**, rondgaan van de laatste waarde naar de eerste. Wanneer dit uit staat, leest swipen voorbij de eerste of laatste waarde die waarde opnieuw voor met het eindgeluid. Tot je dit verandert, volgt het **Rondgaan**, zodat items en waarden eenmaal ingesteld anders kunnen rondgaan.
+**Navigatie** > **Rondgaan in leesinstellingen** stelt in of leesinstellingen die door een lijst van waarden gaan, zoals **Spraakmotor**, **Audio-uitvoerapparaat**, **Acties**, **Adressen en nummers** of **Geluidsmodus**, rondgaan van de laatste waarde naar de eerste. Wanneer dit uit staat, leest swipen voorbij de eerste of laatste waarde die waarde opnieuw voor met het eindgeluid. Tot je dit verandert, volgt het **Rondgaan**, zodat items en waarden eenmaal ingesteld anders kunnen rondgaan.
 
 ### Een item activeren {#reading-activate}
 
@@ -67,7 +67,7 @@ Een leesinstelling bepaalt wat een swipe omhoog of omlaag doet. De meeste leesin
 
 - Om de volgende leesinstelling te selecteren, swipe omlaag en dan omhoog, swipe met drie vingers naar rechts of omlaag, of draai met twee vingers met de klok mee.
 - Om de vorige leesinstelling te selecteren, swipe omhoog en dan omlaag, swipe met drie vingers naar links of omhoog, of draai tegen de klok in.
-- Om de eerste leesinstelling te selecteren, wijs je een gebaar of sneltoets toe aan **Eerste leesinstelling**. Deze heeft er standaard geen.
+- Om de eerste leesinstelling van de gebruikte lijst te selecteren, wijs je een gebaar of sneltoets toe aan **Eerste leesinstelling**. Deze heeft er standaard geen.
 - Om op de geselecteerde leesinstelling te bewegen, swipe omlaag om vooruit te gaan en omhoog om terug te gaan. Dit zijn de opdrachten **Leesinstellingen lager of vooruit verplaatsen** en **Leesinstellingen hoger of achteruit verplaatsen**.
 
 SandFly spreekt de naam van elke leesinstelling uit terwijl je deze selecteert. Naar rechts en links swipen beweegt per item, welke leesinstelling ook is geselecteerd, behalve met **Rijen en kolommen** in een tabel.
@@ -104,21 +104,21 @@ Deze leesinstellingen bewegen naar het volgende of vorige item van één soort. 
 - **Schermzoeken**: de resultaten van de laatste schermzoekopdracht. Zie [](#reading-search).
 - **Scrollen**: scrolt de lijst vooruit wanneer je omlaag swipet en terug wanneer je omhoog swipet. Wanneer een lijst niet op scrollen reageert, stuurt SandFly in plaats daarvan een swipe naar de lijst. Niet standaard in de lijst.
 
-De leesinstellingen onder **Elementnavigatie** en **Kopniveaus** op het scherm **Leesinstellingen**, zoals **Herkenningspunten**, **Knoppen**, **Invoervelden** en **Tabellen**, bewegen op de elementen van webpagina's, en werken ook in apps. Zie [](#web).
+De leesinstellingen onder **Elementnavigatie** en **Kopniveaus** op het scherm **Leesinstellingen**, zoals **Herkenningspunten**, **Knoppen**, **Bewerkingsvelden**, **Lijsten** en **Tabellen**, bewegen op de elementen van webpagina's, en werken ook in apps. Zie [](#web).
 
 **Leesinstellingen** > **Links en Bedieningselementen alleen in webinhoud**, standaard uit, laat **Links** en **Bedieningselementen** buiten de lijst buiten webinhoud. Gebaren en sneltoetsen voor de volgende of vorige link of bediening werken nog overal.
 
 #### Op tekst of element bewegen zonder leesinstelling {#reading-navigation-commands}
 
-Je kunt een gebaar of sneltoets toewijzen om naar het volgende of vorige teken, woord, regel, alinea, kop, link, bedieningselement, herkenningspunt, knop, selectievakje, keuzerondje, invoerveld, keuzelijst, focusbaar item, afbeelding, lijst, lijstitem, tabel, bezochte link, niet-bezochte link, of kop van een opgegeven niveau te gaan. Deze bewegingen veranderen de geselecteerde leesinstelling niet. In de lijst met opdrachten voor een gebaar staan ze onder **Navigeren op tekst**, **Navigeren op element** en **Navigeren op kopniveau**. Zie [](#gestures).
+Je kunt een gebaar of sneltoets toewijzen om naar het volgende of vorige teken, woord, regel, alinea, kop, link, bedieningselement, herkenningspunt, knop, selectievakje, keuzerondje, invoerveld, keuzelijst, focusbaar item, afbeelding, lijst, lijstitem, tabel, bezochte link, niet-bezochte link, of kop van een opgegeven niveau te gaan. Deze bewegingen veranderen de geselecteerde leesinstelling niet. In de lijst met opdrachten voor een gebaar staan ze onder **Navigeren op tekst** en **Navigeren op element**. Zie [](#gestures).
 
 ### Doorlopend lezen {#reading-continuous}
 
 SandFly kan elk item na elkaar voorlezen, en lijsten onderweg scrollen:
 
-- **Vanaf boven lezen**: leest vanaf het eerste item op het scherm.
-- **Vanaf gefocust item lezen**: leest vanaf het gefocuste item. Dit staat standaard in het SandFly-menu.
-- **Vanaf gefocust item lezen per leesinstelling**: leest vanaf het gefocuste item, en dan alleen de items van de geselecteerde leesinstelling, zoals elke kop of elke link. Een leesinstelling die niet tussen items van één soort beweegt, leest elk item voor.
+- **Lezen vanaf het begin**: leest vanaf het eerste item op het scherm.
+- **Lezen vanaf item waarop is gefocust**: leest vanaf het gefocuste item. Dit staat standaard in het SandFly-menu.
+- **Voorlezen vanaf gefocust item per leesinstelling**: leest vanaf het gefocuste item, en dan alleen de items van de geselecteerde leesinstelling, zoals elke kop of elke link. Een leesinstelling die niet tussen items van één soort beweegt, leest elk item voor.
 
 Deze opdrachten staan in de categorie **Lezen** van opdrachten en hebben standaard geen gebaar. Je kunt ze uitvoeren vanuit het SandFly-menu, dat een tik met drie vingers opent, of ze toewijzen aan een gebaar of sneltoets. Zie [](#commands).
 
@@ -140,12 +140,12 @@ Naar rechts en links swipen scrolt lijsten zelf wanneer het volgende item buiten
 - Om terug te scrollen, swipe naar links en dan naar rechts. Dit is **Terug scrollen**. Boven aan een lijst trekt **Terug scrollen** de lijst omlaag, wat deze in de meeste apps vernieuwt.
 - Om de app direct te scrollen, sleep twee vingers over het scherm, zoals je zonder SandFly één vinger zou slepen.
 
-In de standaardgebarenindeling gaan swipes met twee vingers naar de app en scrollen deze. Met **Gebaren** > **Swipes met twee vingers verwerken in SandFly** aan, zoals in de VoiceOver-gebarenindeling, voeren swipes met twee vingers in plaats daarvan opdrachten uit: standaard **Omhoog scrollen**, **Omlaag scrollen**, **Naar links scrollen** en **Naar rechts scrollen**, die de inhoud in de richting van de swipe bewegen. Als geen enkel item op het scherm zijwaarts scrolt, sturen **Naar links scrollen** en **Naar rechts scrollen** een swipe met één vinger naar de pager rond het gefocuste item, zoals de maptabbladen in Solid Explorer. Deze vier opdrachten hebben Android 11 of hoger nodig, en staan niet op horloges.
+In de standaardgebarenindeling gaan swipes met twee vingers naar de app en scrollen deze. Met **Gebaren** > **Swipes met twee vingers in SandFly verwerken** aan, zoals in de VoiceOver-gebarenindeling, voeren swipes met twee vingers in plaats daarvan opdrachten uit: standaard **Omhoog scrollen**, **Omlaag scrollen**, **Naar links scrollen** en **Naar rechts scrollen**, die de inhoud in de richting van de swipe bewegen. Als geen enkel item op het scherm zijwaarts scrolt, sturen **Naar links scrollen** en **Naar rechts scrollen** een swipe met één vinger naar de pager rond het gefocuste item, zoals de maptabbladen in Solid Explorer. Deze vier opdrachten hebben Android 11 of hoger nodig, en staan niet op horloges.
 
 Deze opdrachten, in de categorie **Scrollen**, hebben standaard geen gebaar:
 
 - **Naar boven scrollen** en **Naar beneden scrollen** scrollen de lijst die focus heeft naar het begin of einde, een pagina per keer, en focussen dan het eerste of laatste item. Een aanraking, gebaar of toets stopt ze. Niet op horloges.
-- **Vernieuwen** scrolt de lijst naar boven en trekt deze omlaag. Dit heeft Android 13 of hoger nodig.
+- **Vernieuwen** scrolt de lijst naar boven en trekt deze omlaag. Dit heeft Android 11 of hoger nodig.
 
 Terwijl je met twee vingers scrolt, speelt SandFly het scrollgeluid en een lichte trilling voor elk item dat voorbij scrolt. De toonhoogte van het scrollgeluid stijgt van boven naar onder in de lijst. Scrolls die SandFly maakt om het volgende item te bereiken, maken geen geluid. Voor geluids- en trillingsinstellingen, zie [](#sound).
 
@@ -178,7 +178,7 @@ De leesinstellingen **Rij** en **Kolom** bewegen alleen per rij of alleen per ko
 
 De leesinstellingen voor tabellen verschijnen in de lijst alleen in tabellen. In Google Spreadsheets behandelt SandFly het raster van cellen als een tabel, zodat de leesinstellingen en opdrachten voor tabellen tussen cellen bewegen, en de acties van een cel **Cel bewerken** en **Formule invoegen** omvatten.
 
-Of SandFly rij- en kolomnummers en kolomkoppen voorleest bij elke cel, wordt ingesteld door **Uitgebreidheidsniveau** > **Rij- en kolomnummers uitspreken** en **Kolomkoppen lezen**. Zie [](#verbosity). Toetsenbordopdrachten die de rij- en kolomkoppen voorlezen, worden beschreven in [](#keyboards).
+Of SandFly rij- en kolomnummers en kolomkoppen voorleest bij elke cel, wordt ingesteld door **Uitgebreidheidsniveau** > **Rij- en kolomnummers uitspreken** en **Kolomkoppen voorlezen**. Zie [](#verbosity). Toetsenbordopdrachten die de rij- en kolomkoppen voorlezen, worden beschreven in [](#keyboards).
 
 ### Vensters, containers en items daaronder {#reading-windows}
 
@@ -199,7 +199,7 @@ Wanneer een venster opent, of je teruggaat naar een scherm, beweegt SandFly de f
 
 Nadat je een item in een lijst activeert, zoals een map in een bestandsbeheerder of een pagina in Instellingen, en teruggaat, keert de focus terug naar dat item wanneer de lijst dit binnen twee seconden weer toont. Dit werkt ook in apps die de lijst veranderen zonder een nieuw venster te openen.
 
-Om de focus te laten staan waar deze is, zet **Navigatie** > **Focus verplaatsen naar nieuwe vensters** uit. SandFly leest dan alleen de naam van het venster voor, en de volgende swipe beweegt naar het eerste item. Focus volgt invoerfocus alleen wanneer je invoerfocus verplaatst met een toets, zoals een pijltoets of Tab. Op tv's beweegt de focus altijd naar nieuwe vensters.
+Om de focus te laten staan waar deze is, zet **Navigatie** > **Verplaats de focus naar nieuwe vensters** uit. SandFly leest dan alleen de naam van het venster voor, en de volgende swipe beweegt naar het eerste item. Focus volgt invoerfocus alleen wanneer je invoerfocus verplaatst met een toets, zoals een pijltoets of Tab. Op tv's beweegt de focus altijd naar nieuwe vensters.
 
 Wanneer het gefocuste item verdwijnt, zoals een advertentie die inklapt of een lijstrij die wordt verwijderd, focust SandFly het item dat nu op die plaats staat, en gaat het voorlezen vanaf daar door.
 
@@ -230,14 +230,14 @@ Telefoonnummers worden gevonden door de tekstclassificatie van Android, die ook 
 
 ### Tekst van het scherm kopiëren {#reading-copy-text}
 
-**Tekst van het scherm kopiëren**, een opdracht in de categorie **Tekst bewerken** zonder gebaar standaard, opent een venster met de tekst op het scherm als een lijst met selectievakjes.
+**Tekst van scherm kopiëren**, een opdracht in de categorie **Tekstverwerking** zonder gebaar standaard, opent een venster met de tekst op het scherm als een lijst met selectievakjes.
 
-Het venster toont de tekst op het scherm. Als het scherm een lijst of pagina heeft die scrolt, scrollen **Omhoog scrollen** boven de lijst en **Omlaag scrollen** eronder die lijst een pagina verder dan de tot dan toe vermelde tekst, en wordt de tekst van die pagina toegevoegd. Aangevinkte stukken blijven aangevinkt. Als de lijst aan het begin of einde staat, zegt SandFly "Geen tekst meer". De lijst scrollt terug naar waar hij stond toen het venster sluit.
+Het venster toont de tekst op het scherm. Als het scherm een lijst of pagina heeft die scrolt, scrollen **Omhoog scrollen** boven de lijst en **Omlaag scrollen** eronder die lijst een pagina verder dan de tot dan toe vermelde tekst, en wordt de tekst van die pagina toegevoegd. SandFly zegt hoeveel stukken er zijn toegevoegd, zoals "5 items toegevoegd". Aangevinkte stukken blijven aangevinkt. Als de lijst aan het begin of einde staat, zegt SandFly "Geen tekst meer". De lijst scrollt terug naar waar hij stond toen het venster sluit.
 
-1. Voer **Tekst van het scherm kopiëren** uit.
+1. Voer **Tekst van scherm kopiëren** uit.
 2. Kies onder **Granulariteit** hoe de tekst wordt verdeeld: **Adressen en nummers**, **Tekens**, **Woorden** of **Alinea's**. **Woorden** is als eerste geselecteerd.
 3. Vink de stukken aan die je wilt. Om een reeks aan te vinken, dubbeltik en houd het eerste stuk vast en dan het laatste, of gebruik de acties **Selectie starten** en **Selectie beëindigen**. **Alles selecteren** vinkt elk stuk aan.
-4. Selecteer **Kopiëren**. De aangevinkte stukken worden gekopieerd, één per regel.
+4. Selecteer **Kopiëren**. De aangevinkte stukken worden op volgorde gekopieerd: woorden met een spatie ertussen, tekens zonder iets ertussen, alinea's met een lege regel ertussen, en adressen en nummers één per regel.
 
 **Adressen en nummers** vermeldt elk webadres, e-mailadres, telefoonnummer en code op het scherm zoals geschreven, zodat je een telefoonnummer kunt kopiëren in plaats van het te bellen. Dit verschijnt alleen wanneer het scherm die heeft, en vermeldt elke soort, wat **Op te nemen adressen en nummers** ook is ingesteld. Ze vinden kan het venster tot een seconde langer laten openen.
 
@@ -248,21 +248,21 @@ Het venster bevat maximaal 1000 stukken; wanneer de tekst langer is, leest het "
 Het scherm **Navigatie** in de instellingen voor SandFly heeft deze instellingen:
 
 - **Rondgaan**: Voorbij het laatste item swipen gaat naar het eerste, en voorbij het eerste naar het laatste. Standaard aan. Zie [](#reading-wrap).
-- **Stoppen bij het laatste item voordat het rondgaat**: De eerste swipe voorbij het einde stopt daar; de volgende gaat rond. Standaard aan.
+- **Stoppen bij het laatste item voor het rondgaan**: De eerste swipe voorbij het einde stopt daar; de volgende gaat rond. Standaard aan.
 - **Rondgaan in leesinstellingen**: Waarden van leesinstellingen gaan rond van de laatste naar de eerste. Volgt **Rondgaan** tot je dit verandert.
 - **Van de statusbalk en navigatiebalk naar andere vensters gaan**: Swipes voorbij het einde van een systeembalk bewegen naar de app. Standaard uit. Zie [](#reading-windows).
-- **Focus verplaatsen naar nieuwe vensters**: De focus beweegt naar vensters die openen. Standaard aan. Zie [](#reading-screen-changes).
+- **Verplaats de focus naar nieuwe vensters**: De focus beweegt naar vensters die openen. Standaard aan. Zie [](#reading-screen-changes).
 - **Items uitspreken voordat ze in beeld scrollen**: Items die deels buiten beeld staan, worden voorgelezen voordat de lijst scrolt. Standaard uit. Zie [](#reading-scroll-swipes).
 - **Alvast scrollen naar het volgende item**: Lijsten scrollen alvast terwijl het laatste item op het scherm wordt voorgelezen. Standaard aan.
 - **Volgende item uitspreken tijdens scrollen**: Het volgende item wordt voorgelezen zodra het op het scherm komt. Standaard aan.
-- **Tekst binnen items afzonderlijk focussen**: Elk stuk tekst en elke status binnen een item krijgt zijn eigen focus, zodat je het kunt bereiken door te swipen en door aanraking. Het item zelf houdt alleen focus wanneer het eigen tekst, een eigen status of eigen acties heeft; het activeren van een stuk tekst daarbinnen activeert het item. Standaard uit. De opdracht **Tekst binnen items afzonderlijk focussen**, in de categorie **Navigatie**, zet dit aan of uit en leest "Tekst binnen items afzonderlijk focussen aan" of "Tekst binnen items afzonderlijk focussen uit" voor.
+- **Tekst in items afzonderlijk focussen**: Elk stuk tekst en elke status binnen een item krijgt zijn eigen focus, zodat je het kunt bereiken door te swipen en door aanraking. Het item zelf houdt alleen focus wanneer het eigen tekst, een eigen status of eigen acties heeft; het activeren van een stuk tekst daarbinnen activeert het item. Standaard uit. De opdracht **Tekst in items afzonderlijk focussen**, in de categorie **Navigatie**, zet dit aan of uit en leest "Tekst binnen items afzonderlijk focussen aan" of "Tekst binnen items afzonderlijk focussen uit" voor.
 - **Overschakelen naar tabelnavigatie in tabellen**: **Rijen en kolommen** wordt geselecteerd wanneer de focus een tabel binnengaat. Standaard uit. Zie [](#reading-tables).
 - **Slimme browsemodus** en **Browsemodus per app onthouden**: Zie [](#web).
-- **Telegram-antwoordcitaten met het bericht lezen**, onder **Apps**: Zie [](#reading-telegram).
+- **Antwoordcitaten in Telegram voorlezen met het bericht**, onder **Apps**: Zie [](#reading-telegram).
 
 #### Telegram {#reading-telegram}
 
 In Telegram en apps die erop zijn gebaseerd, zoals Nekogram:
 
-- Met **Navigatie** > **Telegram-antwoordcitaten met het bericht lezen** aan, wat de standaard is, leest SandFly het citaat van het bericht waarop een bericht reageert samen met het bericht voor, na de tijd, als "in antwoord op" de verzender en de tekst. Het citaat krijgt geen eigen focus; **Naar geciteerd bericht gaan**, in de acties van het bericht, toont het geciteerde bericht. Zet de instelling uit om het citaat als eigen item te hebben; **Naar geciteerd bericht gaan** wordt dan niet aangeboden.
+- Met **Navigatie** > **Antwoordcitaten in Telegram voorlezen met het bericht** aan, wat de standaard is, leest SandFly het citaat van het bericht waarop een bericht reageert samen met het bericht voor, na de tijd, als "in antwoord op" de verzender en de tekst. Het citaat krijgt geen eigen focus; **Naar geciteerd bericht**, in de acties van het bericht, toont het geciteerde bericht. Zet de instelling uit om het citaat als eigen item te hebben; **Naar geciteerd bericht** wordt dan niet aangeboden.
 - De Deel-knop naast elk bericht in een kanaal krijgt geen focus wanneer je swipet of het scherm aanraakt. Deze staat in de acties van het bericht, onder de naam die Telegram ervoor geeft, zoals **Delen**.

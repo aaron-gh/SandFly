@@ -26,6 +26,8 @@ SandFly toont "Controleren op updates", en daarna een van deze:
 - Een dialoogvenster **SandFly build** *nummer* **is beschikbaar**, met de wijzigingen in de nieuwe build. Voor een stabiele release zijn de wijzigingen de releasenotities. Voor een ontwikkelversie zijn het de wijzigingen sinds de geïnstalleerde build. Kies **Installeren** om deze te installeren, of **Annuleren**.
 - "Kon niet controleren op updates", wanneer GitHub niet bereikt kan worden. Probeer het later opnieuw.
 
+Terwijl een nieuwe ontwikkelversie wordt gepubliceerd, wacht de controle daarop en probeert het opnieuw, tot een minuut lang.
+
 ### Automatisch controleren op updates {#updates-automatic}
 
 **Updates en installatie** > **Automatisch controleren op updates** staat standaard aan. Terwijl SandFly aan staat, controleert het 30 seconden na het starten op een nieuwe build, en daarna één keer per dag, of één keer per uur met **Ontwikkelversies** aan. Wanneer een nieuwe build beschikbaar is, toont SandFly de melding **SandFly-update beschikbaar**, met de wijzigingen. Elke build wordt één keer aangekondigd.

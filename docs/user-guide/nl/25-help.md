@@ -15,7 +15,7 @@ De instellingen voor ontwikkelaars en voor het vinden van problemen staan in **O
 
 **Hulp en feedback** > **SandFly-tutorial** opent de SandFly-tutorial bij de les waar je was. Op een apparaat met een aanraakscherm en een fysiek toetsenbord wordt eerst gevraagd om **Tutorial over aanraakbediening** of **Tutorial over toetsenbordbediening**. Voor de lessen en hoe de tutorial werkt, zie [](#getting-started-tutorial).
 
-**Hulp en feedback** > **Gebaren oefenen** opent **Gebaren oefenen**, waar elk gebaar de naam en de opdracht noemt die erin is toegewezen, zonder de opdracht uit te voeren. Om deze te verlaten, ga je naar **Oefening beëindigen** en activeer je dit.
+**Hulp en feedback** > **Gebaren oefenen** opent **Gebaren oefenen**, waar elk gebaar de naam en de opdracht noemt die erin is toegewezen, zonder de opdracht uit te voeren. Om deze te verlaten, ga je naar **Oefenen beëindigen** en activeer je dit.
 
 De opdrachten **Tutorial openen** en **Gebaren oefenen** openen dezelfde lessen. **Gebaren oefenen** wordt niet getoond op horloges en tv's, die hun eigen tutorials hebben. Op een tv zonder tutorial heet **SandFly-tutorial** **Hulp**. Zie [](#devices).
 
@@ -86,7 +86,7 @@ Terwijl SandFly aan staat, controleert het elk uur op antwoorden en statuswijzig
 
 #### Rapporteer een AI-antwoord {#help-feedback-ai-response}
 
-De opdracht **AI-antwoord melden** opent een nieuw rapport met de laatste tekst die een AI-model heeft gegeven, zoals een afbeeldings- of schermbeschrijving, een resultaat van live herkenning of het resultaat van een agenttaak. Gebruik deze om een antwoord te rapporteren dat onjuist of kwetsend is. SandFly bewaart alleen het laatste antwoord, tot SandFly stopt. Als er geen AI-antwoord is geweest, zegt SandFly dit. Wijs de opdracht toe aan een gebaar of toets in **Opdrachten**. Zie [](#commands) en [](#descriptions).
+De opdracht **AI-antwoord melden** opent een nieuw rapport met de laatste tekst die een AI-model heeft gegeven, zoals een afbeeldings- of schermbeschrijving, een resultaat van live herkenning of het resultaat van een agenttaak. Gebruik deze om een antwoord te rapporteren dat onjuist of kwetsend is. SandFly bewaart alleen het laatste antwoord, tot SandFly stopt. Als er geen AI-antwoord is geweest, zegt SandFly dit. Wijs de opdracht toe aan een gebaar of toets in **Commando's**. Zie [](#commands) en [](#descriptions).
 
 ### Versiegeschiedenis en privacybeleid {#help-version-history}
 

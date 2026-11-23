@@ -15,7 +15,7 @@ Sommige functies vereisen toegang tot meldingen voor SandFly, die de Android-ins
 - Samenvattingen van de meldingen in het meldingenpaneel.
 - De meldingenlijst van SandFly.
 
-Om toegang tot meldingen te geven, selecteer je **Toegang tot meldingen aanzetten** op het scherm **Wanneer voorlezen**, **Stop met lezen** of **Samenvatting en tijd**, en zet je SandFly aan in de lijst. SandFly maakt alleen verbinding met meldingen terwijl SandFly aanstaat.
+Om toegang tot meldingen te geven, selecteer je **Toegang tot meldingen aanzetten** op het scherm **Wanneer voorlezen**, **Stop met lezen** of **Samenvatting en tijd**, en zet je SandFly aan in de lijst. Het item wordt alleen getoond zolang SandFly geen toegang tot meldingen heeft. SandFly maakt alleen verbinding met meldingen terwijl SandFly aanstaat.
 
 ### Het voorlezen van meldingen aan- of uitzetten {#notifications-speech-on-off}
 
@@ -76,9 +76,9 @@ Zie [](#notifications-voice) voor stem-instellingen op dit scherm.
 Onder **Meldingen** > **Meldingen voorlezen** > **Stem**:
 
 - **Stem**: leest meldingen voor met een van je stemprofielen, met alle instellingen daarvan, zoals een andere spraakengine, tempo en toonhoogte. De standaardinstelling is **SandFly's stem**.
-- **Stemprofielen**: opent de stemprofielen, waar je ze maakt en wijzigt. Zie [](#speech).
-- **Over de spraak van SandFly heen lezen in een andere stem**: zie hieronder. Standaard uit.
-- **Taal detecteren**: zegt elke melding in de taal waarin die is geschreven. Vereist **Automatisch van taal wisselen** in de instellingen voor Spraak. Standaard uit.
+- **Stemprofielen**: opent de stemprofielen, waar je ze maakt en wijzigt. Zie [](#speech-voice-profiles).
+- **Door de spraak van SandFly heen voorlezen met een andere stem**: zie hieronder. Standaard uit.
+- **Taal detecteren**: zegt elke melding in de taal waarin die is geschreven. Vereist **Spraak** > **Automatisch van taal wisselen**. Zie [](#speech-languages). Standaard uit.
 - **Geluid vóór meldingen**: speelt een geluid af vóór elke melding. Standaard uit.
 
 Apps en regels kunnen een eigen stem hebben. Zie [](#notifications-apps) en [](#notifications-rules).
@@ -86,8 +86,8 @@ Apps en regels kunnen een eigen stem hebben. Zie [](#notifications-apps) en [](#
 Hoe meldingen in verschillende stemmen worden voorgelezen:
 
 - Een melding in het stemprofiel waarmee SandFly spreekt, wordt voorgelezen na de huidige spraak, in dezelfde spraakwachtrij.
-- Een melding in een andere stem wordt ook voorgelezen na de huidige spraak, zodat niet twee stemmen tegelijk spreken. Deze wacht tot 45 seconden. Met **Over de spraak van SandFly heen lezen in een andere stem** aan wordt de melding meteen voorgelezen, over de huidige spraak heen.
-- **Over de spraak van SandFly heen lezen in een andere stem** geldt niet terwijl **Alleen focus uitspreken die jij verplaatst** van toepassing is op de app op de voorgrond, of terwijl een assistent of een gesprek audio afspeelt. Zie [](#verbosity).
+- Een melding in een andere stem wordt ook voorgelezen na de huidige spraak, zodat niet twee stemmen tegelijk spreken. Deze wacht tot 45 seconden. Met **Door de spraak van SandFly heen voorlezen met een andere stem** aan wordt de melding meteen voorgelezen, over de huidige spraak heen.
+- **Door de spraak van SandFly heen voorlezen met een andere stem** geldt niet terwijl **Alleen door de gebruiker verplaatste focus uitspreken** van toepassing is op de app op de voorgrond, of terwijl een assistent of een gesprek audio afspeelt. Zie [](#verbosity-own-speech).
 - Terwijl **Stil tijdens het opnemen**, in **Spraak**, van toepassing is, wordt er geen melding voorgelezen. Zie [](#speech).
 - Als meldingen voor verschillende stemmen samen binnenkomen, wacht elke op de melding ervoor.
 
@@ -98,7 +98,7 @@ Als de engine van een stemprofiel mislukt, leest SandFly de melding voor in zijn
 **Meldingen** > **Apps** stelt in hoe de meldingen van elke app worden voorgelezen.
 
 - **Andere apps**: hoe SandFly de meldingen voorleest van apps zonder eigen instellingen: **Lezen**, de standaardinstelling, **Alleen app-naam**, of **Niet lezen**.
-- **Apps**: de geïnstalleerde apps, de apps met instellingen, en de apps in de geschiedenis. Elke app toont zijn instellingen.
+- **Apps**: de apps in de launcher, de apps met instellingen, en de apps in de geschiedenis, op naam. Elke app toont zijn instellingen.
 
 Voor één app:
 
@@ -107,7 +107,7 @@ Voor één app:
 - **Tijd tussen de meldingen van een app**: de kortste tijd tussen twee meldingen van de app die worden voorgelezen. **Net als andere apps** gebruikt de instelling in **Herhalingen**.
 - **Spraakformaat**: een spraakformaat voor de app. Zie [](#notifications-reading).
 - **Stem**: **Net als andere apps**, **SandFly's stem**, of een stemprofiel, zoals een met een andere spraakengine.
-- **Resetten**: verwijdert de instellingen van de app.
+- **Resetten**: verwijdert de instellingen van de app. Alleen getoond voor een app met instellingen.
 
 ### Woorden en vervangingen {#notifications-words}
 
@@ -203,23 +203,25 @@ Alle instellingen staan standaard uit, behalve **Zakmodus** en **Ook wanneer de 
 
 **Meldingen** > **Samenvatting en tijd** leest de meldingen in het meldingenpaneel voor, en zegt de tijd op een interval. Onder **Samenvatting**:
 
-- **Toegang tot meldingen aanzetten**: samenvattingen vereisen dit.
+- **Toegang tot meldingen aanzetten**: samenvattingen vereisen dit. Alleen getoond zolang SandFly geen toegang tot meldingen heeft.
 - **Meldingen nu voorlezen**: leest de meldingen in het meldingenpaneel voor. Vereist dat SandFly aanstaat.
 - **Meldingen elke dag voorlezen**: leest ze elke dag voor op **Tijdstip**, standaard 08:00.
 - **Nieuwste eerst**: leest de nieuwste melding eerst voor. Standaard uit.
 - **Jouw naam**: een naam voor de begroeting aan het begin, zoals "Goedemorgen. Sam."
 - **Pauze tussen meldingen**: van **Uit**, de standaardinstelling, tot 5 seconden.
 
-Een samenvatting begint met een begroeting en het aantal meldingen, zoals "Je hebt 5 meldingen.", en leest elke melding voor als app, titel en tekst.
+Een samenvatting begint met een begroeting en het aantal meldingen, zoals "Je hebt 5 meldingen.", en leest elke melding voor als app, titel en tekst. Groepssamenvattingen en doorlopende meldingen worden weggelaten. **Apps**, **Woorden en vervangingen**, **Soorten meldingen** en **Regels** zijn van toepassing, en de meldingen die ze weglaten, worden niet meegeteld.
 
 Onder **Tijdaankondigingen**:
 
 - **Zeg de tijd elke**: **Uit**, de standaardinstelling, 15 minuten, 30 minuten, 1 uur of 3 uur.
-- **Wekkers en herinneringen inschakelen**: laat SandFly de tijd precies op tijd zeggen. Zonder deze instelling kan Android de aankondigingen uitstellen.
+- **Wekkers en herinneringen inschakelen**: opent de Android-instelling waarmee SandFly de tijd precies op tijd kan zeggen. Zonder deze instelling kan Android de aankondigingen uitstellen. Alleen getoond zolang **Zeg de tijd elke** niet op **Uit** staat en de instelling uit staat. SandFly opent deze Android-instelling ook als je een interval kiest voor **Zeg de tijd elke** of **Meldingen elke dag voorlezen** aanzet, tenzij die al aan staat.
 - **Tijdnotatie**: wat SandFly zegt, met de tijdelijke aanduidingen `{time}`, `{date}` en `{battery}`, het batterijpercentage. De standaardinstelling is "Het is {time}".
 - **Stem**: **Stem voor meldingen**, de standaardinstelling, **SandFly's stem**, of een stemprofiel.
 
 Samenvattingen worden voorgelezen in de stem voor meldingen.
+
+Om het batterijniveau op een interval te laten zeggen, zie **Uitgebreidheidsniveau** > **Batterijniveau** in [](#verbosity-announcements).
 
 ### Meldingsgeschiedenis {#notifications-history}
 
@@ -242,7 +244,7 @@ Selecteer een melding voor deze acties, getoond met de naam van de app, zoals Ch
 
 ### Automatisering {#notifications-automation}
 
-Automatiseringsapps, zoals Tasker of MacroDroid, kunnen het voorlezen van meldingen bedienen met broadcasts naar SandFly. Zet eerst **Meldingen** > **Automatiseringsapps toestaan** aan; deze staat standaard uit, omdat elke app ze kan versturen. **Meldingen** > **Automatisering** toont de acties, en kopieert de actie die je selecteert:
+Automatiseringsapps, zoals Tasker of MacroDroid, kunnen het voorlezen van meldingen bedienen met broadcasts naar SandFly. Zet eerst **Meldingen** > **Automatiseringsapps toestaan** aan; deze staat standaard uit, omdat elke app ze kan versturen. **Meldingen** > **Automatisering** toont de acties, elk met zijn broadcastactie: de pakketnaam van SandFly gevolgd door een actie zoals `.action.READ_NOTIFICATIONS`. Selecteer een actie om de broadcastactie te kopiëren:
 
 - **Schakel het voorlezen van meldingen in**
 - **Schakel het voorlezen van meldingen uit**
@@ -270,7 +272,7 @@ Instellingen voor de lijst:
 
 - **Meldingen nieuwste eerst weergeven, zonder groepen**: elke melding is een item op zichzelf, nieuwste eerst, voorgelezen als app, tijd, titel en tekst. Standaard uit.
 - **Mediaspelers weglaten uit de meldingenlijst**: laat meldingen van mediaspelers weg. Het aantal meldingen dat wordt voorgelezen als het scherm aangaat, laat die ook weg. Standaard uit.
-- **Meldingsdetails**: welke delen van een melding de lijst voorleest, en in welke volgorde: **Titel**, **Tekst**, **App-naam**, **Tijdstip** en **Afspelen of pauzeren**. Elk deel heeft de acties **Omhoog verplaatsen** en **Omlaag verplaatsen**.
+- **Meldingsdetails**: welke delen van een melding de lijst voorleest, en in welke volgorde: **Titel**, **Tekst**, **App-naam**, **Tijdstip** en **Afspelen of pauzeren**. Elk deel is een selectievakje, standaard allemaal aangevinkt, en heeft de acties **Omhoog verplaatsen** en **Omlaag verplaatsen**.
 
 ### Meldingen die Android niet aankondigt {#notifications-not-announced}
 

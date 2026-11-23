@@ -1,6 +1,6 @@
 ## Instellingenprofielen en backups {#profiles}
 
-Een instellingenprofiel is een benoemde set instellingen die SandFly gebruikt in plaats van je instellingen terwijl het profiel in gebruik is, overal of alleen in bepaalde apps en situaties. **Backup en herstel** slaat alle SandFly-instellingen op in een bestand en herstelt ze vanuit een bestand. Itembestanden bevatten losse soorten items, zoals macro's of gebarenprofielen, om ze te delen of naar een andere telefoon te verplaatsen.
+Een instellingenprofiel is een benoemde set instellingen die SandFly gebruikt in plaats van je instellingen terwijl het profiel in gebruik is, overal of alleen in bepaalde apps en situaties. **Back-up en herstel** slaat alle SandFly-instellingen op in een bestand en herstelt ze vanuit een bestand. Itembestanden bevatten losse soorten items, zoals macro's of gebarenprofielen, om ze te delen of naar een andere telefoon te verplaatsen.
 
 Voor gebarenprofielen, die alleen gebaren wijzigen, zie [](#gestures). Voor spraakprofielen, zie [](#speech).
 
@@ -75,11 +75,11 @@ Het scherm van een profiel heeft ook:
 
 ### Backup en herstel van instellingen {#profiles-backup}
 
-**Backup en herstel** slaat alle SandFly-instellingen en je eigen inhoud op in een bestand en vervangt ze door die uit een bestand, zoals om een andere telefoon op dezelfde manier in te stellen. Deze instellingen staan niet op horloges.
+**Back-up en herstel** slaat alle SandFly-instellingen en je eigen inhoud op in een bestand en vervangt ze door die uit een bestand, zoals om een andere telefoon op dezelfde manier in te stellen. Deze instellingen staan niet op horloges.
 
 #### Exporteer instellingen {#profiles-export}
 
-1. Ga naar **Backup en herstel** > **Instellingen exporteren**.
+1. Ga naar **Back-up en herstel** > **Instellingen exporteren**.
 2. Kies waar je het bestand wilt opslaan. De voorgestelde naam is `sandfly-settings.zip`.
 
 SandFly zegt "Instellingen geëxporteerd. API-sleutels zijn niet inbegrepen".
@@ -102,7 +102,7 @@ Het laat weg:
 
 #### Importeer instellingen {#profiles-import}
 
-1. Ga naar **Backup en herstel** > **Instellingen importeren**.
+1. Ga naar **Back-up en herstel** > **Instellingen importeren**.
 2. Kies het instellingenbestand.
 
 De instellingen in het bestand vervangen je instellingen, en SandFly zegt "Instellingen geïmporteerd". Instellingen die niet in het bestand staan, en de API-sleutels op deze telefoon, blijven zoals ze zijn. De instellingenprofielen die in gebruik zijn, worden opnieuw toegepast over de geïmporteerde instellingen.
@@ -155,6 +155,6 @@ Na een import toont SandFly wat het heeft weggelaten, zoals onbekende opdrachten
 
 #### Schrijf een itembestand {#profiles-item-reference}
 
-**Backup en herstel** > **Naslag voor exportbestandsindeling** slaat een document op, `sandfly-file-format.md`, dat itembestanden beschrijft, gevolgd door de gebaren, opdrachten en instellingen van deze telefoon, met de waarde die elke instelling nu heeft. Om een AI-chat items voor je te laten schrijven, geef je deze het bestand met een beschrijving van de items, sla je het antwoord op als bestand, en importeer je het met **Importeren uit bestand**.
+**Back-up en herstel** > **Naslag voor exportbestandsindeling** slaat een document op, `sandfly-file-format.md`, dat itembestanden beschrijft, gevolgd door de gebaren, opdrachten en instellingen van deze telefoon, met de waarde die elke instelling nu heeft. Om een AI-chat items voor je te laten schrijven, geef je deze het bestand met een beschrijving van de items, sla je het antwoord op als bestand, en importeer je het met **Importeren uit bestand**.
 
 De indeling wordt beschreven in [](#api-item-files).
