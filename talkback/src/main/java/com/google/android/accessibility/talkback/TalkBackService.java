@@ -309,6 +309,7 @@ import com.google.android.accessibility.talkback.speechcontrol.KeyboardSpeech;
 import com.google.android.accessibility.talkback.speechcontrol.SpeechControl;
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.stucktouch.StuckTouchController;
+import com.google.android.accessibility.talkback.stucktouch.TouchExplorerReset;
 import com.google.android.accessibility.talkback.training.OnboardingInitiator;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.PageConfig;
@@ -901,6 +902,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   private ScreenStateMonitor screenStateMonitor;
   private DirectTouchController directTouchController;
   private StuckTouchController stuckTouchController;
+  private @Nullable TouchExplorerReset touchExplorerReset;
   private PauseController pauseController;
   private AudioDeviceRouter audioDeviceRouter;
   private @Nullable AccessibilityAudioWatcher accessibilityAudioWatcher;
@@ -1153,6 +1155,10 @@ public class TalkBackService extends AccessibilityServiceCompat
       splitScreen = null;
     }
 
+    if (touchExplorerReset != null) {
+      touchExplorerReset.shutdown();
+      touchExplorerReset = null;
+    }
     if (stuckTouchController != null) {
       stuckTouchController.shutdown();
       stuckTouchController = null;
@@ -2197,6 +2203,16 @@ public class TalkBackService extends AccessibilityServiceCompat
       return true;
     }
     return false;
+  }
+
+  /**
+   * Sets up Android's touch explorer again, for when it keeps fingers that have lifted and detects
+   * no more gestures.
+   */
+  void resetTouchExplorer(String reason) {
+    if (touchExplorerReset != null) {
+      touchExplorerReset.reset(reason);
+    }
   }
 
   private void provisionTouchExplore(boolean enabled) {
@@ -3323,8 +3339,13 @@ public class TalkBackService extends AccessibilityServiceCompat
     ringerModeAndScreenMonitor.addScreenChangedListener(
         (isInteractive, eventId) -> {
           if (!isInteractive) {
+            boolean touching = isTouchInteracting;
             // Android cancels the touch, which ends with no TYPE_TOUCH_INTERACTION_END.
             forgetTouchInteraction("screen off");
+            if (touching) {
+              // Android's touch explorer doesn't get that cancel, and keeps the fingers as down.
+              resetTouchExplorer("screen off during a touch");
+            }
           }
           if (volumeKeyCommands != null) {
             if (!isInteractive) {
@@ -3583,27 +3604,27 @@ public class TalkBackService extends AccessibilityServiceCompat
       displayMonitor.addDisplayStateChangedListener(directTouchController);
     }
 
+    StuckTouchController.TouchExploration touchExploration =
+        new StuckTouchController.TouchExploration() {
+          @Override
+          public boolean isOn() {
+            return Boolean.TRUE.equals(isTouchExplorationEnabled());
+          }
+
+          @Override
+          public void turnOff() {
+            requestTouchExploration(false);
+          }
+
+          @Override
+          public void restore() {
+            applyTouchExplorationPreference();
+          }
+        };
     stuckTouchController =
         new StuckTouchController(
-            this,
-            prefs,
-            pipeline.getFeedbackReturner(),
-            new StuckTouchController.TouchExploration() {
-              @Override
-              public boolean isOn() {
-                return Boolean.TRUE.equals(isTouchExplorationEnabled());
-              }
-
-              @Override
-              public void turnOff() {
-                requestTouchExploration(false);
-              }
-
-              @Override
-              public void restore() {
-                applyTouchExplorationPreference();
-              }
-            });
+            this, prefs, pipeline.getFeedbackReturner(), touchExploration);
+    touchExplorerReset = new TouchExplorerReset(this, touchExploration);
 
     universalSearchManager =
         new UniversalSearchManager(

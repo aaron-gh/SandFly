@@ -73,6 +73,11 @@ class TouchInteractionMonitorTest {
     val fingerAtScreenEdge = mutableListOf<Boolean>()
     var tapActivatesAtOnce = false
     var tapExplorations = 0
+    val touchExplorerResets = mutableListOf<String>()
+
+    override fun resetTouchExplorer(reason: String) {
+      touchExplorerResets.add(reason)
+    }
 
     override fun quickTapActivatesAtOnce(): Boolean = tapActivatesAtOnce
 
@@ -210,6 +215,47 @@ class TouchInteractionMonitorTest {
   /** Lets time pass until [timeMs] after the start while the main thread is busy with other work. */
   private fun mainThreadBusyUntil(timeMs: Long) {
     ShadowSystemClock.advanceBy(Duration.ofMillis(start + timeMs - SystemClock.uptimeMillis()))
+  }
+
+  /** Android's touch explorer ends a touch at [timeMs] without reaching the clear state. */
+  private fun touchEndsInTouchExplorationAt(timeMs: Long) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, timeMs)
+    stateChangeAt(STATE_TOUCH_EXPLORING, timeMs + 1)
+  }
+
+  @Test
+  fun touchesThatEndInTouchExplorationSetUpTheTouchExplorerAgain() {
+    // A touch explorer that keeps lifted fingers starts each touch in touch exploration.
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 10)
+    touchEndsInTouchExplorationAt(500)
+    runUntil(600)
+    assertEquals(listOf<String>(), service.touchExplorerResets)
+
+    touchEndsInTouchExplorationAt(1000)
+    runUntil(1100)
+    assertEquals(1, service.touchExplorerResets.size)
+
+    // The count starts again after a reset.
+    touchEndsInTouchExplorationAt(1500)
+    runUntil(1600)
+    assertEquals(1, service.touchExplorerResets.size)
+  }
+
+  @Test
+  fun touchExplorationThatEndsInTheClearStateLeavesTheTouchExplorerAsItIs() {
+    for (i in 0 until 3) {
+      val at = i * 1000L
+      stateChangeAt(STATE_TOUCH_INTERACTING, at)
+      stateChangeAt(STATE_TOUCH_EXPLORING, at + 10)
+      // A finger down again before the end of the last touch, then lifted.
+      touchEndsInTouchExplorationAt(at + 500)
+      stateChangeAt(STATE_TOUCH_INTERACTING, at + 700)
+      stateChangeAt(STATE_CLEAR, at + 701)
+    }
+    runUntil(3000)
+
+    assertEquals(listOf<String>(), service.touchExplorerResets)
   }
 
   @Test
