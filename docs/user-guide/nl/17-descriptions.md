@@ -73,6 +73,7 @@ Deze opdrachten staan in de categorie **Afbeeldings- en schermbeschrijvingen** i
 - **Foto maken en beschrijven**: maakt een foto met de camera aan de achterkant en beschrijft die. Zie [](#descriptions-take-picture).
 - **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken** en **Vragen over afbeelding**: beschrijven de gefocuste afbeelding in een venster, beschrijven haar voorlezend, of beantwoorden een gesproken vraag erover.
 - **Scherm beschrijven**, **Schermbeschrijving uitspreken** en **Vragen over scherm**: hetzelfde voor het hele scherm.
+- **Afbeelding van gefocust item delen** en **Schermafbeelding delen**: maken een schermafbeelding van het gefocuste item of het hele scherm en openen daarmee het deelvenster van Android, om deze naar een andere app te sturen. Vereist Android 11 of hoger. Beveiligde vensters zijn zwart op de schermafbeelding.
 - **AI-antwoord melden**: opent een probleemrapport met de laatste tekst die een AI-model gaf, zoals een beschrijving of een antwoord. Zie [](#help).
 
 Met SandFly Pro heeft de categorie ook de opdrachten voor schermherkenning. Zie [](#pro-screen-recognition).
@@ -83,7 +84,7 @@ Voor standaardgebaren en sneltoetsen, zie [](#appendix-gestures) en [](#appendix
 
 #### Leesinstelling AI-acties {#descriptions-ai-actions}
 
-De leesinstelling **AI-acties** voert **Scherm beschrijven**, **Schermbeschrijving uitspreken**, **Vragen over scherm**, **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken** en **Vragen over afbeelding** uit, en met SandFly Pro ook **AI-agenttaak starten of stoppen** en **AI-agenttaak typen**. Dit vereist Android 11 of hoger.
+De leesinstelling **AI-acties** voert **Scherm beschrijven**, **Schermbeschrijving uitspreken**, **Vragen over scherm**, **Afbeelding beschrijven**, **Afbeeldingsbeschrijving uitspreken**, **Vragen over afbeelding**, **Afbeelding van gefocust item delen** en **Schermafbeelding delen** uit, en met SandFly Pro ook **AI-agenttaak starten of stoppen** en **AI-agenttaak typen**. Dit vereist Android 11 of hoger.
 
 1. Kies de leesinstelling **AI-acties**.
 2. Swipe omhoog of omlaag om een actie te kiezen.
