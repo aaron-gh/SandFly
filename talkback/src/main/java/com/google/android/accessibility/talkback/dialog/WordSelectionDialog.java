@@ -20,13 +20,15 @@ import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRAC
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.accessibility.AccessibilityWindowInfo;
+import android.view.ViewParent;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
@@ -44,11 +46,8 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.granularediting.RangeSelection;
 import com.google.android.accessibility.talkback.menurules.TextEntityMenu;
-import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
-import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.ClipboardHistory;
 import com.google.android.accessibility.utils.SpannableUtils;
-import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
@@ -57,9 +56,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.BitSet;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -91,8 +88,6 @@ public class WordSelectionDialog extends BaseDialog {
   @VisibleForTesting static final int MAX_TEXT_CHARS = 20_000;
   /** The longest item; longer paragraphs and words are split into several items. */
   @VisibleForTesting static final int MAX_ITEM_CHARS = 300;
-  private static final int MAX_NODES = 1500;
-  private static final int MAX_DEPTH = 50;
 
   // One thread, which ends when it has been idle for a while.
   private static final ThreadPoolExecutor EXECUTOR = createExecutor();
@@ -452,6 +447,7 @@ public class WordSelectionDialog extends BaseDialog {
   public A11yAlertDialogWrapper showDialog() {
     A11yAlertDialogWrapper dialog = super.showDialog();
     if (dialog != null) {
+      fillScreen(dialog);
       announceTruncated(SpeechController.QUEUE_MODE_QUEUE);
       Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
       if (neutralButton != null) {
@@ -490,6 +486,37 @@ public class WordSelectionDialog extends BaseDialog {
       }
     }
     return dialog;
+  }
+
+  /**
+   * Makes the dialog fill the screen, with the list taking the height between the options and the
+   * buttons.
+   */
+  private void fillScreen(A11yAlertDialogWrapper dialog) {
+    Window window = dialog.getWindow();
+    if (window == null) {
+      return;
+    }
+    // The material background's insets keep the dialog away from the screen edges.
+    Drawable background = window.getDecorView().getBackground();
+    if (background instanceof InsetDrawable inset && inset.getDrawable() != null) {
+      window.setBackgroundDrawable(inset.getDrawable());
+    }
+    window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+    // The dialog's panels wrap their content; up to the window's content they take its height.
+    View content = window.findViewById(android.R.id.content);
+    View view = wordsRecyclerView;
+    while (view != null && view != content) {
+      ViewParent parent = view.getParent();
+      if (view != wordsRecyclerView) {
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        if (params != null) {
+          params.height = ViewGroup.LayoutParams.MATCH_PARENT;
+          view.setLayoutParams(params);
+        }
+      }
+      view = (parent instanceof View parentView) ? parentView : null;
+    }
   }
 
   /** Checks the item and marks it as the start of a range that End selection checks. */
@@ -648,13 +675,16 @@ public class WordSelectionDialog extends BaseDialog {
     dialog.showDialog();
   }
 
-  /** Collects the text on the screen off the main thread, then shows the dialog. */
+  /**
+   * Collects the text on the screen off the main thread, with all of the text of the list or page
+   * that scrolls, then shows the dialog.
+   */
   public static void showForScreen(TalkBackService service, @Nullable FeedbackReturner pipeline) {
     EXECUTOR.execute(
         () -> {
           Collected collected;
           try {
-            collected = extractScreenParagraphs(service);
+            collected = ScreenText.collect(service, pipeline);
           } catch (Throwable t) {
             LogUtils.w(TAG, "Can't collect the text on the screen: %s", t);
             collected = new Collected();
@@ -711,95 +741,6 @@ public class WordSelectionDialog extends BaseDialog {
       found.add(entity.getText());
     }
     return found;
-  }
-
-  private static Collected extractScreenParagraphs(TalkBackService service) {
-    Collected paragraphs = new Collected();
-    Set<AccessibilityNodeInfoCompat> visited = new HashSet<>();
-
-    List<AccessibilityWindowInfo> windows = AccessibilityServiceCompatUtils.getWindows(service);
-    if (windows != null && !windows.isEmpty()) {
-      for (AccessibilityWindowInfo window : windows) {
-        if (paragraphs.truncated) {
-          break;
-        }
-        if (window == null || WindowUtils.isSystemBar(service, window)) {
-          continue;
-        }
-        int type = window.getType();
-        if (type == AccessibilityWindowInfo.TYPE_APPLICATION
-            || type == AccessibilityWindowInfo.TYPE_SYSTEM) {
-          AccessibilityNodeInfo root = window.getRoot();
-          if (root != null) {
-            collectTexts(
-                AccessibilityNodeInfoCompat.wrap(root), paragraphs, visited, /* depth= */ 0);
-          }
-        }
-      }
-    }
-
-    if (paragraphs.paragraphs.isEmpty()) {
-      AccessibilityNodeInfo activeRoot = service.getRootInActiveWindow();
-      if (activeRoot != null) {
-        collectTexts(
-            AccessibilityNodeInfoCompat.wrap(activeRoot), paragraphs, visited, /* depth= */ 0);
-      }
-    }
-
-    return paragraphs;
-  }
-
-  private static boolean collectTexts(
-      @Nullable AccessibilityNodeInfoCompat node,
-      Collected paragraphs,
-      Set<AccessibilityNodeInfoCompat> visited,
-      int depth) {
-    if (node == null
-        || depth > MAX_DEPTH
-        || visited.size() >= MAX_NODES
-        || paragraphs.truncated) {
-      return false;
-    }
-    if (!visited.add(node)) {
-      return false;
-    }
-    if (!node.isVisibleToUser() || node.isPassword()) {
-      return false;
-    }
-
-    boolean hasText = false;
-    CharSequence text = AccessibilityNodeInfoUtils.getText(node);
-    if (!TextUtils.isEmpty(text)) {
-      String s = text.toString().trim();
-      if (!s.isEmpty()) {
-        paragraphs.add(s);
-        hasText = true;
-      }
-    }
-
-    boolean descendantHasText = false;
-    int childCount = node.getChildCount();
-    for (int i = 0; i < childCount; i++) {
-      AccessibilityNodeInfoCompat child = node.getChild(i);
-      if (child != null) {
-        if (collectTexts(child, paragraphs, visited, depth + 1)) {
-          descendantHasText = true;
-        }
-      }
-    }
-
-    if (!hasText && !descendantHasText) {
-      CharSequence contentDesc = node.getContentDescription();
-      if (!TextUtils.isEmpty(contentDesc)) {
-        String s = contentDesc.toString().trim();
-        if (!s.isEmpty()) {
-          paragraphs.add(s);
-          return true;
-        }
-      }
-    }
-
-    return hasText || descendantHasText;
   }
 
   private class TokenAdapter extends RecyclerView.Adapter<TokenViewHolder> {

@@ -667,9 +667,14 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
         && (ScrollActionRecord.FOCUS.equals(record.scrollSource) || isScrollAhead(record));
   }
 
-  /** Whether {@code record} is of SandFly scrolling a list ahead of the focused item. */
+  /**
+   * Whether {@code record} is of SandFly scrolling a list ahead of the focused item, or through a
+   * list to collect its text; neither scroll says anything.
+   */
   private static boolean isScrollAhead(@Nullable ScrollActionRecord record) {
-    return record != null && ScrollActionRecord.SCROLL_AHEAD.equals(record.scrollSource);
+    return record != null
+        && (ScrollActionRecord.SCROLL_AHEAD.equals(record.scrollSource)
+            || ScrollActionRecord.COLLECT_TEXT.equals(record.scrollSource));
   }
 
   /** Checks whether the {@code event} is resulted from cached auto-scroll action. */
