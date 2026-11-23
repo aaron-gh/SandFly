@@ -195,6 +195,9 @@ public class TouchInteractionMonitor
 
   private static final String LOG_TAG = "TouchInteractionMonitor";
   private static final String DEBUG_GESTURE_TAG = "BacktalkGesture";
+
+  /** Touches in a row that end in touch exploration before the touch explorer is set up again. */
+  @VisibleForTesting static final int ENDS_WITHOUT_CLEAR_TO_RESET = 2;
   private static final float MAX_DRAGGING_ANGLE_COS = 0.525321989f; // cos(pi/4)
   // The height of the top and bottom edges for  edge-swipes.
   // For now this is only used to allow three-finger edge-swipes from the bottom.
@@ -359,6 +362,9 @@ public class TouchInteractionMonitor
   private int touchFocusUserIntentTimeout;
 
   private final RequestTouchExplorationDelayed requestTouchExplorationDelayed;
+  // Touches since the last clear state that ended in touch exploration, as when Android's touch
+  // explorer keeps fingers that have lifted.
+  private int endsWithoutClear = 0;
   // A list of motion events that should be queued until a pending transition has taken place.
   private final Queue<MotionEvent> queuedMotionEvents = new LinkedList<>();
   // Whether this monitor is waiting for a state transition.
@@ -1278,6 +1284,7 @@ public class TouchInteractionMonitor
         TouchInteractionController.stateToString(this.state),
         TouchInteractionController.stateToString(state));
     touchExplorationModeFailureReporter.onTouchStateChanged(state);
+    checkTouchExplorerKeepsFingers(state);
     if (state == STATE_CLEAR && this.state != STATE_CLEAR) {
       // The interaction has ended, so taps in a corner waiting for the next tap end now, in the
       // state they were made in, rather than at their timeout in CLEAR.
@@ -1326,6 +1333,34 @@ public class TouchInteractionMonitor
       }
     } else {
       queuedMotionEvents.clear();
+    }
+  }
+
+  /**
+   * Notices when Android's touch explorer keeps fingers that have lifted, which it does after a
+   * touch cancelled without its knowledge, and has it set up again.
+   *
+   * <p>Such a touch explorer ends each touch by going from touch exploration to touch interacting
+   * and back to touch exploration, never to the clear state, without SandFly asking for touch
+   * exploration. Android ends a touch only once its last finger lifts, so a finger is down at that
+   * moment only if the next touch began within milliseconds; it happening for {@link
+   * #ENDS_WITHOUT_CLEAR_TO_RESET} touches in a row means the touch explorer is stuck.
+   */
+  private void checkTouchExplorerKeepsFingers(int newState) {
+    if (newState == STATE_CLEAR) {
+      endsWithoutClear = 0;
+      return;
+    }
+    if (newState != STATE_TOUCH_EXPLORING
+        || this.state != STATE_TOUCH_INTERACTING
+        || previousState != STATE_TOUCH_EXPLORING
+        || stateChangeRequested) {
+      return;
+    }
+    endsWithoutClear++;
+    if (endsWithoutClear >= ENDS_WITHOUT_CLEAR_TO_RESET) {
+      endsWithoutClear = 0;
+      service.resetTouchExplorer("touches end in touch exploration");
     }
   }
 
