@@ -432,10 +432,12 @@ public class FocusManagerInternal {
     if (item == null
         || item.getClassName() == null
         || !AccessibilityNodeInfoUtils.isInCollection(item)) {
+      LogUtils.d(TAG, "Activated item not kept for Back: not in a list.");
       return null;
     }
     String label = itemLabel(item);
     if (label == null) {
+      LogUtils.d(TAG, "Activated item not kept for Back: no text.");
       return null;
     }
     Rect bounds = new Rect();
@@ -450,6 +452,7 @@ public class FocusManagerInternal {
 
   /** Keeps {@code item}, a list item just activated, to focus it again after Back. */
   void onItemActivated(@NonNull ActivatedItem item) {
+    LogUtils.d(TAG, "Activated list item kept for Back, window %d.", item.windowId);
     history.onItemActivated(item);
   }
 
@@ -497,6 +500,7 @@ public class FocusManagerInternal {
     @Nullable FocusActionRecord last = history.getLastFocusActionRecord();
     boolean placedSinceBack = last != null && last.getActionTime() >= history.getBackTime();
     if (placedSinceBack && !isPlacedAutomatically(last.getExtraInfo().sourceAction)) {
+      LogUtils.d(TAG, "After Back: focus moved by the user, activated item not focused.");
       history.endBack();
       return false;
     }
@@ -504,12 +508,15 @@ public class FocusManagerInternal {
     AccessibilityNodeInfoCompat focus = focusFinder.findFocusCompat(FOCUS_ACCESSIBILITY);
     if (focus != null) {
       if (focus.getWindowId() != windowId) {
+        LogUtils.d(
+            TAG, "After Back: focus in window %d, Back in window %d.", focus.getWindowId(), windowId);
         return false;
       }
       if (!placedSinceBack
           && focus.equals(history.getFocusAtBack())
           && AccessibilityNodeInfoUtils.isInCollection(focus)
           && TextUtils.equals(itemLabel(focus), history.getFocusLabelAtBack())) {
+        LogUtils.d(TAG, "After Back: list not changed yet.");
         return false;
       }
     }
@@ -519,11 +526,14 @@ public class FocusManagerInternal {
     }
     AccessibilityNodeInfoCompat root = windowRoot(windowId);
     if (root == null) {
+      LogUtils.d(TAG, "After Back: window %d not on screen.", windowId);
       return false;
     }
     ActivatedItem[] found = new ActivatedItem[1];
     AccessibilityNodeInfoCompat node = findActivatedItem(root, items, found);
     if (node == null) {
+      LogUtils.d(
+          TAG, "After Back: none of %d activated items found in window %d.", items.size(), windowId);
       return false;
     }
     history.onActivatedItemRestored(found[0]);
