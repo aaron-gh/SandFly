@@ -2863,6 +2863,8 @@
     <string name="clipboard_history_hint">Swipe up or down to choose, then double-tap to paste</string>
     <!-- Action at the end of the clipboard history that removes every text from it. [CHAR_LIMIT=40] -->
     <string name="clipboard_history_clear">Clear history</string>
+    <!-- Button in the clipboard history that shows the texts as check boxes, with Remove and Export to file for the checked texts. [CHAR_LIMIT=40] -->
+    <string name="clipboard_history_select">Select</string>
     <!-- Title of the screen and command listing the texts SandFly spoke lately, newest first. [CHAR_LIMIT=40] -->
     <string name="title_speech_history">Speech history</string>
     <!-- Shown in the speech history when it has no texts. [CHAR_LIMIT=NONE] -->

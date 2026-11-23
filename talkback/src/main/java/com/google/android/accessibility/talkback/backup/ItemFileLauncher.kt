@@ -152,7 +152,15 @@ class ItemFileLauncher(private val fragment: Fragment, private val onImported: (
           try {
             val text = build(app)
             app.contentResolver.openOutputStream(uri, "wt")?.use { it.write(text.toByteArray()) } != null
-          } catch (e: Throwable) {
+          } catch (e: IOException) {
+            false
+          } catch (e: SecurityException) {
+            // Access to the file was taken back.
+            false
+          } catch (e: IllegalArgumentException) {
+            // A file provider that doesn't know the URI.
+            false
+          } catch (e: IllegalStateException) {
             false
           }
         toast(app, app.getString(if (written) R.string.item_file_exported else R.string.item_file_export_failed))
