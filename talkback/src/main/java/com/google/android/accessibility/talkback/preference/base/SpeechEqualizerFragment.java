@@ -34,6 +34,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.core.view.ViewCompat;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
+import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.PreferenceViewHolder;
 import com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference;
@@ -47,6 +48,7 @@ import com.google.android.accessibility.utils.output.SessionEqualizer;
 import com.google.android.accessibility.utils.output.SpeechEqualizer;
 import com.google.android.accessibility.utils.output.SpeechEqualizer.Preset;
 import com.google.android.accessibility.utils.output.SpeechEqualizer.SavedPreset;
+import com.google.android.accessibility.utils.output.SpeechEqualizer.Values;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.accessibility.utils.widget.KeyboardSafeEditText;
 import java.text.NumberFormat;
@@ -55,9 +57,10 @@ import java.util.List;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
- * The equalizer of SandFly default or of one voice profile: a switch, a preset list, buttons that
- * save the bands as a preset and rename or delete saved presets, and a slider per band. Saved
- * presets are shared by SandFly default and every voice profile.
+ * The voice effects of SandFly default or of one voice profile: a switch, a preset list, buttons
+ * that save the bands and effects as a preset and rename or delete saved presets, a list per
+ * effect, and a slider per equalizer band. Saved presets are shared by SandFly default and every
+ * voice profile.
  */
 public class SpeechEqualizerFragment extends TalkbackBaseFragment {
 
@@ -75,6 +78,7 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
   private @Nullable AccessibilitySuiteSwitchPreference onPref;
   private @Nullable Preference savedPresetsPref;
   private final List<BandPreference> bands = new ArrayList<>();
+  private final List<ListPreference> effects = new ArrayList<>();
   // Set while this screen saves the gains, whose sliders already show them.
   private boolean saving;
 
@@ -115,19 +119,19 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
         (preference, newValue) -> {
           String value = (String) newValue;
           Preset preset = SpeechEqualizer.presetFor(value);
-          int[] gains = null;
+          Values values = null;
           if (preset != null) {
-            gains = preset.gains();
+            values = preset.equalizerValues();
           } else if (value.startsWith(SAVED_PREFIX)) {
             SavedPreset saved =
                 SpeechEqualizer.savedPresetNamed(
                     SpeechEqualizer.readPresets(prefs), value.substring(SAVED_PREFIX.length()));
             if (saved != null) {
-              gains = saved.gains();
+              values = saved.getValues();
             }
           }
-          if (gains != null) {
-            SpeechEqualizer.save(prefs, id, gains);
+          if (values != null) {
+            SpeechEqualizer.save(prefs, id, values);
             update();
           }
           return false;
@@ -158,6 +162,54 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
         });
     screen.addPreference(savedPresetsPref);
 
+    int[] effectTitles = {
+      R.string.title_pref_speech_effect_bass_compression,
+      R.string.title_pref_speech_effect_voice_compression,
+      R.string.title_pref_speech_effect_treble_compression
+    };
+    CharSequence[] levelNames = {
+      context.getString(R.string.speech_equalizer_off),
+      context.getString(R.string.speech_effect_low),
+      context.getString(R.string.speech_effect_medium),
+      context.getString(R.string.speech_effect_high)
+    };
+    CharSequence[] levelValues = new CharSequence[SpeechEqualizer.MAX_EFFECT_LEVEL + 1];
+    for (int level = 0; level < levelValues.length; level++) {
+      levelValues[level] = String.valueOf(level);
+    }
+    for (int i = 0; i < SpeechEqualizer.EFFECTS; i++) {
+      int effect = i;
+      ListPreference list = new AccessibilitySuiteListPreference(context);
+      list.setKey("speech_effect_" + i);
+      list.setPersistent(false);
+      list.setTitle(effectTitles[i]);
+      list.setDialogTitle(effectTitles[i]);
+      list.setEntries(levelNames);
+      list.setEntryValues(levelValues);
+      list.setSummary("%s");
+      list.setIconSpaceReserved(false);
+      list.setOnPreferenceChangeListener(
+          (preference, newValue) -> {
+            int[] levels = SpeechEqualizer.readEffects(prefs, id);
+            levels[effect] = Integer.parseInt((String) newValue);
+            saving = true;
+            try {
+              SpeechEqualizer.saveEffects(prefs, id, levels);
+            } finally {
+              saving = false;
+            }
+            updatePreset(SpeechEqualizer.readValues(prefs, id));
+            return true;
+          });
+      screen.addPreference(list);
+      effects.add(list);
+    }
+
+    PreferenceCategory bandsCategory = new PreferenceCategory(context);
+    bandsCategory.setKey("speech_equalizer_bands");
+    bandsCategory.setTitle(R.string.title_pref_speech_equalizer_bands);
+    bandsCategory.setIconSpaceReserved(false);
+    screen.addPreference(bandsCategory);
     for (int i = 0; i < SpeechEqualizer.BANDS; i++) {
       int band = i;
       BandPreference bar = new BandPreference(context);
@@ -179,10 +231,10 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
               saving = false;
             }
             bar.describe((Integer) newValue);
-            updatePreset(gains);
+            updatePreset(SpeechEqualizer.readValues(prefs, id));
             return true;
           });
-      screen.addPreference(bar);
+      bandsCategory.addPreference(bar);
       bands.add(bar);
     }
   }
@@ -216,18 +268,24 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
     if (onPref != null) {
       onPref.setChecked(SpeechEqualizer.isOn(prefs, id));
     }
-    int[] gains = SpeechEqualizer.read(prefs, id);
+    Values values = SpeechEqualizer.readValues(prefs, id);
+    int[] gains = values.gains();
     for (int i = 0; i < bands.size(); i++) {
       bands.get(i).setValue(gains[i]);
       bands.get(i).describe(gains[i]);
     }
-    updatePreset(gains);
+    int[] levels = values.effects();
+    for (int i = 0; i < effects.size(); i++) {
+      effects.get(i).setValue(String.valueOf(levels[i]));
+    }
+    updatePreset(values);
   }
 
   /**
-   * Lists the presets, then the saved presets, and Custom as well while the gains are no preset's.
+   * Lists the presets, then the saved presets, and Custom as well while the bands and effects are
+   * no preset's.
    */
-  private void updatePreset(int[] gains) {
+  private void updatePreset(Values equalizer) {
     if (presetPref == null) {
       return;
     }
@@ -236,9 +294,9 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
     if (savedPresetsPref != null) {
       savedPresetsPref.setVisible(!saved.isEmpty());
     }
-    Preset current = SpeechEqualizer.presetOf(gains);
+    Preset current = SpeechEqualizer.presetOf(equalizer);
     SavedPreset currentSaved =
-        (current == null) ? SpeechEqualizer.savedPresetOf(saved, gains) : null;
+        (current == null) ? SpeechEqualizer.savedPresetOf(saved, equalizer) : null;
     List<CharSequence> entries = new ArrayList<>();
     List<CharSequence> values = new ArrayList<>();
     for (Preset preset : Preset.values()) {
@@ -265,7 +323,7 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
     presetPref.setSummary("%s");
   }
 
-  /** Asks for a name, and saves the gains as a preset with it. */
+  /** Asks for a name, and saves the bands and effects as a preset with it. */
   private void askToSavePreset() {
     Context context = requireContext();
     if (SpeechEqualizer.readPresets(prefs).size() >= SpeechEqualizer.MAX_SAVED_PRESETS) {
@@ -280,7 +338,7 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
         R.string.title_pref_speech_equalizer_save_preset,
         /* name= */ null,
         name -> {
-          if (SpeechEqualizer.addPreset(prefs, name, SpeechEqualizer.read(prefs, id))) {
+          if (SpeechEqualizer.addPreset(prefs, name, SpeechEqualizer.readValues(prefs, id))) {
             announce(getString(R.string.speech_equalizer_preset_saved, name));
           }
         });
@@ -445,12 +503,12 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
     if (!SpeechEqualizer.isOn(prefs, profileId)) {
       return context.getString(R.string.speech_equalizer_off);
     }
-    int[] gains = SpeechEqualizer.read(prefs, profileId);
-    Preset preset = SpeechEqualizer.presetOf(gains);
+    Values values = SpeechEqualizer.readValues(prefs, profileId);
+    Preset preset = SpeechEqualizer.presetOf(values);
     if (preset != null) {
       return presetName(context, preset);
     }
-    SavedPreset saved = SpeechEqualizer.savedPresetOf(SpeechEqualizer.readPresets(prefs), gains);
+    SavedPreset saved = SpeechEqualizer.savedPresetOf(SpeechEqualizer.readPresets(prefs), values);
     return (saved == null) ? context.getString(R.string.speech_equalizer_custom) : saved.getName();
   }
 
@@ -467,6 +525,7 @@ public class SpeechEqualizerFragment extends TalkbackBaseFragment {
           case REDUCE_HARSHNESS -> R.string.speech_equalizer_reduce_harshness;
           case REDUCE_SIBILANCE -> R.string.speech_equalizer_reduce_sibilance;
           case SMALL_SPEAKER -> R.string.speech_equalizer_small_speaker;
+          case DEEP_BASS -> R.string.speech_equalizer_deep_bass;
         };
     return context.getString(resId);
   }

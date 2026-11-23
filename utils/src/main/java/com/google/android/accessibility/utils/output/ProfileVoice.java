@@ -90,8 +90,8 @@ final class ProfileVoice {
 
   private @Nullable VoiceProfile profile;
 
-  /** The profile's equalizer gains, or null if it is off or flat. */
-  private int @Nullable [] equalizerGains;
+  /** The profile's equalizer values, or null if it is off, or flat with no effects. */
+  private SpeechEqualizer.@Nullable Values equalizerValues;
 
   /** The equalizer effect on the session speech is played on, or null if none is needed. */
   private @Nullable SessionEqualizer equalizer;
@@ -176,13 +176,13 @@ final class ProfileVoice {
   }
 
   /**
-   * Sets the voice profile to say text with, or none, and its equalizer gains, or null. Another
+   * Sets the voice profile to say text with, or none, and its equalizer values, or null. Another
    * engine is connected when needed.
    */
-  void setProfile(@Nullable VoiceProfile next, int @Nullable [] gains) {
-    if (!java.util.Arrays.equals(gains, equalizerGains)) {
-      equalizerGains = gains;
-      if (gains == null) {
+  void setProfile(@Nullable VoiceProfile next, SpeechEqualizer.@Nullable Values values) {
+    if (!java.util.Objects.equals(values, equalizerValues)) {
+      equalizerValues = values;
+      if (values == null) {
         releaseEqualizer();
       }
     }
@@ -299,19 +299,19 @@ final class ProfileVoice {
 
   /** The audio session for the profile's equalizer, or 0 for none. */
   private int equalizerSession() {
-    int @Nullable [] gains = equalizerGains;
-    if (gains == null || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.P) {
+    SpeechEqualizer.@Nullable Values values = equalizerValues;
+    if (values == null || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.P) {
       return 0;
     }
     if (equalizer == null) {
       equalizer = SessionEqualizer.create(context);
       if (equalizer == null) {
         // Android has no effect for it.
-        equalizerGains = null;
+        equalizerValues = null;
         return 0;
       }
     }
-    if (!equalizer.setGains(gains)) {
+    if (!equalizer.setValues(values)) {
       releaseEqualizer();
       return 0;
     }

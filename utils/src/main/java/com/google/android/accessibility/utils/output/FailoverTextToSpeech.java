@@ -275,8 +275,11 @@ public class FailoverTextToSpeech {
 
   private volatile boolean lowLatencyAudio = false;
 
-  /** The equalizer gains of the voice in use, or null if flat. See {@link SpeechEqualizer}. */
-  private volatile int @Nullable [] equalizerGains;
+  /**
+   * The equalizer values of the voice in use, or null if flat with no effects. See {@link
+   * SpeechEqualizer}.
+   */
+  private volatile SpeechEqualizer.@Nullable Values equalizerValues;
 
   /**
    * Returns whether low-latency audio is on when the user hasn't chosen. It's off on watches,
@@ -1745,8 +1748,8 @@ public class FailoverTextToSpeech {
    * 0 if the equalizer is flat or off or Android has no effect for it.
    */
   private int equalizerSession() {
-    int @Nullable [] gains = equalizerGains;
-    if (gains == null || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.P) {
+    SpeechEqualizer.@Nullable Values values = equalizerValues;
+    if (values == null || android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.P) {
       return 0;
     }
     if (sessionEqualizer == null && !sessionEqualizerFailed) {
@@ -1757,7 +1760,7 @@ public class FailoverTextToSpeech {
     if (equalizer == null) {
       return 0;
     }
-    if (!equalizer.setGains(gains)) {
+    if (!equalizer.setValues(values)) {
       // Made again for the next speech.
       releaseSessionEqualizer();
       return 0;
@@ -1775,8 +1778,8 @@ public class FailoverTextToSpeech {
 
   /** Reads the equalizer in use, and frees its effect if there is none. */
   private void readEqualizer(SharedPreferences prefs) {
-    equalizerGains = SpeechEqualizer.inUse(prefs);
-    if (equalizerGains == null) {
+    equalizerValues = SpeechEqualizer.inUse(prefs);
+    if (equalizerValues == null) {
       releaseSessionEqualizer();
     }
   }
@@ -1892,7 +1895,7 @@ public class FailoverTextToSpeech {
    * another voice, and plays it on its own track, which the equalizer doesn't filter.
    */
   private @Nullable SpeechCacheManager usableSpeechCache() {
-    return VoiceProfiles.isProfileActive() || equalizerGains != null ? null : speechCacheManager;
+    return VoiceProfiles.isProfileActive() || equalizerValues != null ? null : speechCacheManager;
   }
 
   /**
@@ -2270,7 +2273,7 @@ public class FailoverTextToSpeech {
             utteranceId,
             floatParam(bundle, SpeechParam.VOLUME, 1f),
             floatParam(bundle, Engine.KEY_PARAM_PAN, 0f),
-            equalizerGains,
+            equalizerValues,
             hasLetterOrDigit(text),
             lowLatencyListener);
     lowLatencyStreams.put(utteranceId, stream);

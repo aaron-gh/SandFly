@@ -250,7 +250,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     val id: String,
     private val volume: Float,
     private val pan: Float,
-    private val equalizer: IntArray?,
+    private val equalizer: SpeechEqualizer.Values?,
     private val expectsSound: Boolean,
     private val listener: StreamListener,
   ) {
@@ -329,8 +329,11 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
       val built = if (supported) SincResampler(rate, sampleRate, channels) else null
       // Filtered after resampling, so that every engine's speech is filtered at the same rate.
       val builtFilter =
-        if (built != null && equalizer != null) SpeechEqualizer.Filter(equalizer, sampleRate, channels)
-        else null
+        if (built != null && equalizer != null) {
+          SpeechEqualizer.Filter(equalizer.gains(), sampleRate, channels, equalizer.effects())
+        } else {
+          null
+        }
       synchronized(lock) {
         lastActivity = SystemClock.uptimeMillis()
         if (engineStartedAt == 0L) engineStartedAt = lastActivity
@@ -577,7 +580,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
 
   /**
    * Opens a speech stream at [volume] from 0 to 1 and [pan] from -1, left, to 1, right, filtered by
-   * [equalizer] gains (see [SpeechEqualizer]) unless null. It plays once the streams before it have
+   * [equalizer] values (see [SpeechEqualizer]) unless null. It plays once the streams before it have
    * finished. [expectsSound] tells whether the speech has letters or digits, and so should have
    * sound.
    */
@@ -585,7 +588,7 @@ class LowLatencyAudio private constructor(context: Context, private val attribut
     id: String,
     volume: Float,
     pan: Float,
-    equalizer: IntArray?,
+    equalizer: SpeechEqualizer.Values?,
     expectsSound: Boolean,
     listener: StreamListener,
   ): SpeechStream {
