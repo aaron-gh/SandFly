@@ -1929,13 +1929,39 @@ public class SelectorController implements UserInputEventListener {
     pipeline.returnFeedback(
         eventId,
         Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
-    Object entry = entries.get(index);
+    selectRotorEntry(eventId, entries.get(index), announceType, showOverlay);
+    return true;
+  }
+
+  /**
+   * Selects the first reading control of the list that next and previous reading control go
+   * through, and announces it as they do. For selecting the setting via gesture.
+   */
+  public void selectFirstSetting(EventId eventId, AnnounceType announceType) {
+    applyPendingSwitch();
+    @Nullable Object entry = firstRotorEntry();
+    if (entry == null) {
+      return;
+    }
+    pipeline.returnFeedback(eventId, Feedback.sound(R.raw.previous_reading_control));
+    selectRotorEntry(eventId, entry, announceType, /* showOverlay= */ true);
+    analytics.onSelectorEvent();
+  }
+
+  /** The first of the reading controls that gestures move through, or null if there are none. */
+  @VisibleForTesting
+  @Nullable Object firstRotorEntry() {
+    List<Object> entries = rotorEntries();
+    return entries.isEmpty() ? null : entries.get(0);
+  }
+
+  private void selectRotorEntry(
+      EventId eventId, Object entry, AnnounceType announceType, boolean showOverlay) {
     if (entry instanceof Setting setting) {
       setCurrentSetting(eventId, setting, announceType, showOverlay);
     } else {
       selectScriptControl(eventId, (ScriptReadingControl) entry, announceType, showOverlay);
     }
-    return true;
   }
 
   /**

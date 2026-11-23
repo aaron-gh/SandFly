@@ -468,6 +468,7 @@ public class GestureController {
     R.string.shortcut_value_action_setting_activate_current_action,
     R.string.shortcut_value_select_next_setting,
     R.string.shortcut_value_select_previous_setting,
+    R.string.shortcut_value_select_first_setting,
     R.string.shortcut_value_selected_setting_next_action,
     R.string.shortcut_value_selected_setting_previous_action,
     R.string.shortcut_value_next_reading_control_list,
@@ -1026,6 +1027,8 @@ public class GestureController {
     } else if (action.equals(service.getString(R.string.shortcut_value_select_next_setting))) {
       selectorController.selectPreviousOrNextSetting(
           eventId, AnnounceType.DESCRIPTION_AND_HINT, true);
+    } else if (action.equals(service.getString(R.string.shortcut_value_select_first_setting))) {
+      selectorController.selectFirstSetting(eventId, AnnounceType.DESCRIPTION_AND_HINT);
     } else if (action.equals(
         service.getString(R.string.shortcut_value_selected_setting_previous_action))) {
       selectorController.adjustSelectedSetting(eventId, false);

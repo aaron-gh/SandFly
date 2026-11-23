@@ -94,6 +94,7 @@ class CommandsTest {
         R.string.shortcut_value_continuous_copy,
         R.string.shortcut_value_next_reading_control_list,
         R.string.shortcut_value_previous_reading_control_list,
+        R.string.shortcut_value_select_first_setting,
       )) {
       assertTrue(context.getString(res) in values)
     }
