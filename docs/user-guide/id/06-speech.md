@@ -33,7 +33,7 @@ Anda juga dapat mengubah ucapan tanpa membuka setelan:
 - Perintah **Tambah kecepatan bicara**, **Kurangi kecepatan bicara**, **Naikkan tinggi nada ucapan**, dan **Turunkan tinggi nada ucapan**, untuk gestur, pintasan keyboard, dan menu.
 - Pintasan keyboard **Naikkan volume ucapan**, **Turunkan volume ucapan**, dan **Reset kecepatan bicara dan tinggi nada**. Lihat [](#appendix-keyboard-shortcuts).
 
-Untuk memilih apakah ucapan diputar dengan volume aksesibilitas, media, dering, atau panggilan, lihat [](#sound-speech-volume).
+Untuk memilih apakah ucapan diputar dengan volume aksesibilitas, media, dering, atau panggilan, lihat [](#sound-speech-volume). Untuk mengubah volume ucapan dengan tombol volume, lihat [](#buttons-speech-volume).
 
 ### Mengulangi frasa terakhir lebih lambat {#speech-repeat-slower}
 
@@ -45,7 +45,7 @@ Untuk menggunakan perintah ini, tetapkan ke gestur atau pintasan keyboard, atau 
 
 ### Profil suara {#speech-voice-profiles}
 
-Profil suara adalah sekumpulan setelan ucapan yang dapat langsung Anda aktifkan sekaligus: mesin ucapan, bahasa, suara, volume, kecepatan, tinggi nada, equalizer, dan **Kirim teks panjang per kalimat**. Misalnya, satu profil dapat menggunakan mesin lain untuk membaca teks panjang sementara **Default SandFly** tetap cepat.
+Profil suara adalah sekumpulan setelan ucapan yang dapat langsung Anda aktifkan sekaligus: mesin ucapan, bahasa, suara, volume, kecepatan, tinggi nada, efek ucapan, dan **Kirim teks panjang per kalimat**. Misalnya, satu profil dapat menggunakan mesin lain untuk membaca teks panjang sementara **Default SandFly** tetap cepat.
 
 **Default SandFly** selalu ada dalam daftar. Profil ini menggunakan setelan di layar **Ucapan**. Saat profil suara digunakan, semua ucapan menggunakan mesin dan suara profil tersebut, sehingga SandFly tidak mengganti bahasa atau dialek, kecuali untuk bahasa yang memiliki suaranya sendiri di **Suara menurut bahasa**. Lihat [](#speech-voices-by-language).
 
@@ -57,7 +57,7 @@ Profil suara juga digunakan untuk emoji dan untuk bahasa: lihat [](#speech-emoji
 2. Pilih **Tambahkan profil suara**.
 3. Masukkan nama, atau biarkan kosong untuk menggunakan nama yang disarankan, seperti "Profil suara 1". Pilih **Oke**.
 
-SandFly membuka setelan profil baru tersebut. Profil baru dimulai dengan volume ucapan, kecepatan, tinggi nada, equalizer, dan **Kirim teks panjang per kalimat** milik **Default SandFly**.
+SandFly membuka setelan profil baru tersebut. Profil baru dimulai dengan volume ucapan, kecepatan, tinggi nada, efek ucapan, dan **Kirim teks panjang per kalimat** milik **Default SandFly**.
 
 #### Setelan profil suara {#speech-voice-profile-settings}
 
@@ -68,7 +68,7 @@ Untuk mengubah profil, buka **Ucapan** > **Profil suara** dan pilih profilnya.
 - **Bahasa**: **Default**, atau salah satu bahasa dari mesin tersebut.
 - **Suara**: **Default**, atau salah satu suara dari mesin dalam bahasa yang dipilih.
 - **Volume ucapan**, **Kecepatan bicara**, dan **Tinggi nada ucapan**: sama seperti di layar **Ucapan**, khusus untuk profil ini.
-- **Equalizer**: equalizer untuk profil ini. Lihat [](#voice-effects). Tidak tersedia di jam tangan.
+- **Efek ucapan**: efek ucapan untuk profil ini. Lihat [](#voice-effects). Tidak tersedia di jam tangan.
 - **Kirim teks panjang per kalimat**: sama seperti di layar **Ucapan**, khusus untuk profil ini. Lihat [](#speech-pronunciation).
 - **Biarkan mesin ucapan tetap berjalan**: menjaga mesin profil ini tetap berjalan saat mesin lain digunakan dan layar menyala, sehingga saat beralih ke profil ini tidak perlu menunggu mesin dimulai. Setiap mesin yang dibiarkan berjalan menggunakan prosesnya sendiri. Nonaktif secara default.
 - **Pindahkan ke atas** dan **Pindahkan ke bawah**: hanya di jam tangan. Di ponsel, Anda memindahkan profil langsung di daftarnya.
@@ -101,23 +101,24 @@ Dua setelan di grup **Suara** mengubah cara emoji terdengar:
 
 Keduanya berlaku baik saat mesin ucapan membaca emoji secara langsung maupun saat SandFly menggantinya dengan namanya. Apakah emoji dibaca dan bagaimana caranya diatur di **Panjang respons** > **Emoji**. Lihat [](#verbosity-emoji).
 
-### Equalizer ucapan {#voice-effects}
+### Efek ucapan {#voice-effects}
 
-**Ucapan** > **Equalizer** menyetel equalizer 11 pita untuk **Default SandFly**. **Equalizer** di layar profil suara menyetel equalizer untuk profil tersebut. Profil baru dimulai dengan equalizer milik **Default SandFly**. Equalizer tidak tersedia di jam tangan.
+**Ucapan** > **Efek ucapan** menyetel equalizer 11 pita dan efek kompresi untuk **Default SandFly**. **Efek ucapan** di layar profil suara menyetelnya untuk profil tersebut. Profil baru dimulai dengan efek ucapan milik **Default SandFly**. Efek ucapan tidak tersedia di jam tangan.
 
-Layar **Equalizer** berisi:
+Layar **Efek ucapan** berisi:
 
-- **Gunakan equalizer**: mengaktifkan atau menonaktifkan equalizer tanpa mengubah pita frekuensinya. Aktif secara default.
-- **Preset**: **Datar**, **Kejernihan**, **Penguat bass**, **Kurangi bass**, **Penguat treble**, **Kurangi treble**, **Hangat**, **Kurangi kekasaran**, **Kurangi desis**, atau **Speaker kecil**, diikuti preset tersimpan Anda. Pita dimulai dalam posisi datar. Mengubah satu pita akan menyetel **Preset** ke **Kustom**.
-- **Simpan sebagai preset**: menyimpan pengaturan pita sebagai preset dengan nama tertentu. Preset tersimpan ditampilkan untuk **Default SandFly** dan untuk setiap profil suara. Anda dapat menyimpan hingga 50 preset.
-- **Preset tersimpan**: mengganti nama atau menghapus preset tersimpan. Menghapus preset tidak mengubah pengaturan pita equalizer yang sedang menggunakannya.
-- Penggeser untuk setiap pita: 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz, dan 16 kHz, masing-masing dari -12 dB hingga +12 dB.
+- **Gunakan efek ucapan**: mengaktifkan atau menonaktifkan equalizer dan efek tanpa mengubahnya. Aktif secara default.
+- **Preset**: **Datar**, **Kejernihan**, **Penguat bass**, **Kurangi bass**, **Penguat treble**, **Kurangi treble**, **Hangat**, **Kurangi kekasaran**, **Kurangi desis**, **Speaker kecil**, atau **Bass dalam**, diikuti preset tersimpan Anda. Preset menyetel pita dan efek. Pita dimulai dalam posisi datar dan efek dalam keadaan nonaktif. Mengubah satu pita atau satu efek akan menyetel **Preset** ke **Kustom**.
+- **Simpan sebagai preset**: menyimpan pita dan efek sebagai preset dengan nama tertentu. Preset tersimpan ditampilkan untuk **Default SandFly** dan untuk setiap profil suara. Anda dapat menyimpan hingga 50 preset.
+- **Preset tersimpan**: mengganti nama atau menghapus preset tersimpan. Menghapus preset tidak mengubah efek ucapan yang disetel ke preset tersebut.
+- **Kompresi bass**, **Kompresi vokal**, dan **Kompresi treble**: **Nonaktif**, **Rendah**, **Sedang**, atau **Tinggi**. Masing-masing mengompresi ucapan dalam rentangnya, di bawah 200 Hz, 200 Hz hingga 4 kHz, atau di atas 4 kHz, dan menaikkan levelnya, sehingga bagian yang pelan dalam rentang tersebut menjadi lebih keras. **Bass dalam** menggunakan **Kompresi bass** pada **Sedang**.
+- **Equalizer**: penggeser untuk setiap pita: 64 Hz, 125 Hz, 250 Hz, 500 Hz, 1 kHz, 2 kHz, 3 kHz, 4 kHz, 6 kHz, 8 kHz, dan 16 kHz, masing-masing dari -12 dB hingga +12 dB.
 
-Saat sebuah pita dinaikkan, pembatas mencegah suara pecah (clipping).
+Saat sebuah pita dinaikkan atau suatu efek aktif, pembatas mencegah suara pecah (clipping).
 
-Equalizer berlaku pada ucapan yang diputar SandFly melalui **Output audio** > **Audio latensi rendah**. Jika **Audio latensi rendah** nonaktif, equalizer berlaku sebagai efek audio di Android 9 dan lebih baru pada perangkat yang mendukungnya. Jika tidak, item **Equalizer** akan menampilkan "Memerlukan Output audio > Audio latensi rendah". Mesin yang meneruskan teks ke mesin lain hanya menerapkan efek ini jika juga meneruskan sesi audionya. Lihat [](#sound).
+Efek ucapan berlaku pada ucapan yang diputar SandFly melalui **Output audio** > **Audio latensi rendah**. Jika **Audio latensi rendah** nonaktif, efek ucapan berlaku sebagai efek audio di Android 9 dan lebih baru pada perangkat yang mendukungnya. Jika tidak, item **Efek ucapan** akan menampilkan "Memerlukan Output audio > Audio latensi rendah". Mesin yang meneruskan teks ke mesin lain hanya menerapkan efek ini jika juga meneruskan sesi audionya. Lihat [](#sound).
 
-Kontrol pembacaan: **Equalizer** mengaktifkan atau menonaktifkan equalizer dari suara yang sedang digunakan, dan setiap pita memiliki kontrol pembacaannya sendiri, seperti **Equalizer 1 kHz**. Geser ke atas atau ke bawah untuk mengubah pita sebesar 1 dB. Kontrol ini tidak ada di kontrol pembacaan secara default. Untuk menambahkannya, buka **Kontrol pembacaan**. Perintah **Gunakan equalizer**, di grup perintah **Ucapan**, mengaktifkan atau menonaktifkan equalizer.
+Kontrol pembacaan: **Efek ucapan** mengaktifkan atau menonaktifkan efek ucapan dari suara yang sedang digunakan, dan setiap pita equalizer memiliki kontrol pembacaannya sendiri, seperti **Equalizer 1 kHz**. Geser ke atas atau ke bawah untuk mengubah pita sebesar 1 dB. Kontrol ini tidak ada di kontrol pembacaan secara default. Untuk menambahkannya, buka **Kontrol pembacaan**. Perintah **Gunakan efek ucapan**, di grup perintah **Ucapan**, mengaktifkan atau menonaktifkan efek ucapan.
 
 ### Bahasa {#speech-languages}
 
@@ -195,7 +196,7 @@ Kamus braille, untuk layar braille, ada di setelan braille. Lihat [](#braille).
 
 Pilih **Tambahkan pengganti**, masukkan **Simbol** dan teks pada **Ganti dengan**, lalu pilih **Oke**. Entri memiliki opsi **Sunting**, **Pilih aplikasi**, **Hapus**, **Impor dari file**, dan **Ekspor ke file** yang sama dengan kamus ucapan.
 
-Dalam ucapan, entri untuk tanda baca yang tidak dibacakan oleh mesin ucapan, seperti titik atau koma, tidak berlaku jika **Panjang respons** > **Ucapkan tanda baca dan simbol** mengecualikan tanda baca tersebut. Jika disetel ke **Tidak ada**, tidak ada entri untuk satu simbol tunggal yang berlaku dalam teks. Lihat [](#verbosity-text).
+Dalam ucapan, entri untuk tanda baca yang tidak dibacakan oleh mesin ucapan, seperti titik atau koma, tidak berlaku jika **Panjang respons** > **Ucapkan tanda baca dan simbol** mengecualikan tanda baca tersebut. Jika disetel ke **Tidak ada**, tidak ada entri untuk satu simbol tunggal yang berlaku dalam teks, kecuali jika **Ucapkan simbol yang mengubah makna** mempertahankan simbol tersebut. Lihat [](#verbosity-text).
 
 ### Menjeda dan melanjutkan ucapan {#speech-pause}
 
@@ -254,10 +255,10 @@ Untuk developer, lihat [](#api-speech).
 
 ### Perintah ucapan dan kontrol pembacaan {#speech-commands}
 
-Grup perintah **Ucapan**, antara lain, berisi: **Jeda atau lanjutkan ucapan**, **Aktifkan atau nonaktifkan ucapan**, **Tambah kecepatan bicara**, **Kurangi kecepatan bicara**, **Naikkan tinggi nada ucapan**, **Turunkan tinggi nada ucapan**, **Ubah bahasa lisan**, **Ganti bahasa secara otomatis**, **Kenali bahasa dari kata**, **Pilih profil suara**, **Profil suara berikutnya**, **Profil suara sebelumnya**, dan **Gunakan equalizer**. Pintasan keyboard menambahkan **Naikkan volume ucapan**, **Turunkan volume ucapan**, **Reset kecepatan bicara dan tinggi nada**, dan **Buka setelan text-to-speech**.
+Grup perintah **Ucapan**, antara lain, berisi: **Jeda atau lanjutkan ucapan**, **Aktifkan atau nonaktifkan ucapan**, **Tambah kecepatan bicara**, **Kurangi kecepatan bicara**, **Naikkan tinggi nada ucapan**, **Turunkan tinggi nada ucapan**, **Ubah bahasa lisan**, **Ganti bahasa secara otomatis**, **Kenali bahasa dari kata**, **Pilih profil suara**, **Profil suara berikutnya**, **Profil suara sebelumnya**, dan **Gunakan efek ucapan**. Pintasan keyboard menambahkan **Naikkan volume ucapan**, **Turunkan volume ucapan**, **Reset kecepatan bicara dan tinggi nada**, dan **Buka setelan text-to-speech**.
 
 Grup **Membaca** berisi **Ulangi frasa yang terakhir diucapkan**, **Ulangi frasa yang terakhir diucapkan lebih lambat**, **Eja frasa yang terakhir diucapkan**, dan **Histori ucapan**.
 
-Kontrol pembacaan ucapan mencakup **Kecepatan bicara**, **Bahasa lisan**, **Mesin ucapan**, **Profil suara**, **Equalizer**, dan pita-pita equalizer. Hanya **Kecepatan bicara** yang ada di kontrol pembacaan secara default. Kontrol pembacaan **Volume ucapan** dan **Perangkat output audio** dijelaskan di [](#sound-reading-controls).
+Kontrol pembacaan ucapan mencakup **Kecepatan bicara**, **Bahasa lisan**, **Mesin ucapan**, **Profil suara**, **Efek ucapan**, dan pita-pita equalizer. Hanya **Kecepatan bicara** yang ada di kontrol pembacaan secara default. Kontrol pembacaan **Volume ucapan** dan **Perangkat output audio** dijelaskan di [](#sound-reading-controls). Grup **Ucapan** di **Kontrol pembacaan** juga berisi **Ucapkan tanda baca dan simbol**, **Emoji**, dan **Ucapkan pemformatan teks** (lihat [](#verbosity-text)), **Terjemahan otomatis** (lihat [](#translation)), serta **Ucapkan hanya fokus yang dipindahkan pengguna** (lihat [](#verbosity-own-speech)).
 
 Untuk menetapkan perintah ke gestur dan pintasan keyboard, serta menambahkan kontrol pembacaan, lihat [](#commands).

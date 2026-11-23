@@ -86,8 +86,8 @@ Frasa ini berlaku pada kolom edit yang difokuskan.
 | "Sembunyikan layar", atau frasa yang mengandung "redupkan" atau "gelapkan" | Menyembunyikan layar. |
 | "Tampilkan layar", atau "cerahkan layar", "kembalikan kecerahan layar", atau "batal sembunyikan layar" | Menampilkan layar kembali. |
 | "Label TEKS" | Memberi item yang difokuskan label kustom. SandFly mengucapkan "Label disimpan". |
-| "Bantuan", atau frasa yang mengandung "apa" dan "ucapkan", seperti "Apa yang bisa saya ucapkan" | Membuka **Ringkasan perintah suara**. |
-| "Berhenti", atau "stop", "batal", "batalkan", "keluar", "tidak jadi", "lupakan", "sudahlah", "diam", atau frasa yang mengandung "bisukan" atau "jeda" | Menghentikan perintah suara yang sedang berjalan. |
+| Frasa yang mengandung "bantuan", atau yang mengandung "apa" dan "ucapkan", seperti "Apa yang bisa saya ucapkan" | Membuka **Ringkasan perintah suara**. |
+| "Stop", "batal", "batalkan", "tidak jadi", "lupakan", "sudahlah", atau "diam", atau frasa yang mengandung "berhenti", "keluar", "bisukan", atau "jeda" | Menghentikan perintah suara yang sedang berjalan. |
 
 ### Aplikasi, item, dan perintah {#appendix-voice-commands-apps}
 
@@ -102,17 +102,17 @@ Frasa ini berlaku pada kolom edit yang difokuskan.
 
 ### Panggilan dan pesan {#appendix-voice-commands-calls}
 
-NAMA adalah nama kontak atau nomor telepon. APLIKASI adalah nama aplikasi perpesanan, seperti WhatsApp. Tanpa menyebutkan aplikasi, atau dengan "SMS", "teks", "pesan teks", atau "pesan", pesan dikirim melalui aplikasi SMS default.
+NAMA adalah nama kontak atau nomor telepon. APLIKASI adalah nama aplikasi perpesanan, seperti WhatsApp. Tanpa menyebutkan aplikasi, atau dengan "SMS", "teks", "pesan teks", atau "pesan", pesan dikirim melalui aplikasi SMS default. Di aplikasi SMS dan WhatsApp, SandFly menulis pesan ke kontak tersebut, lalu menanyakan apakah akan mengirimnya. Aplikasi lain hanya menerima teksnya, dan Anda memilih chat di aplikasi tersebut.
 
 | Ucapkan | Yang terjadi |
 | --- | --- |
 | "Telepon NAMA", atau "hubungi NAMA", "panggil NAMA", "telepon ke NAMA", atau "lakukan panggilan ke NAMA" | Menelepon kontak atau nomor tersebut. |
-| "Kirim pesan ke NAMA yang berbunyi TEKS", atau "kirim pesan ke NAMA bahwa TEKS", "kirim NAMA pesan yang berbunyi TEKS", atau "kirim pesan ke NAMA: TEKS" | Menulis pesan, lalu menanyakan apakah akan mengirimnya. |
+| "Kirim pesan ke NAMA yang berbunyi TEKS", atau "kirim pesan ke NAMA bahwa TEKS", "kirim NAMA pesan yang berbunyi TEKS", atau "kirim pesan ke NAMA: TEKS" | Menulis pesan. |
 | "Pesan NAMA TEKS", atau "SMS NAMA TEKS", "kirim pesan ke NAMA TEKS", atau "kirim SMS ke NAMA TEKS" | Menulis pesan ke kontak yang disebut di awal. |
 | "Kirim pesan ke NAMA lewat APLIKASI yang berbunyi TEKS", atau "kirim pesan ke NAMA di APLIKASI yang berbunyi TEKS", "kirim pesan APLIKASI ke NAMA yang berbunyi TEKS", "kirim pesan ke NAMA lewat APLIKASI: TEKS", "pesan NAMA lewat APLIKASI TEKS", atau "beri tahu NAMA lewat APLIKASI TEKS" | Menulis pesan di aplikasi tersebut. |
 | "Kirim pesan APLIKASI ke NAMA" | Merekam teks, lalu menulis pesan di aplikasi tersebut. |
 
-Untuk pertanyaan "Kirim ke NAMA?", ucapkan "ya", "iya", "yap", "kirim", "kirim saja", "oke", "ok", "baik", "tentu", atau "lakukan" untuk menekan **Kirim**. Jawaban lain akan membiarkan pesan tidak terkirim.
+SandFly menanyakan "Kirim ke NAMA: TEKS?", atau "Kirim ke NAMA?" untuk deskripsi. Ucapkan "ya", "iya", "yap", "kirim", "kirim saja", "oke", "ok", "baik", "tentu", atau "lakukan" untuk menekan **Kirim**. Jawaban lain akan membiarkan pesan tidak terkirim, dan SandFly mengucapkan "Pesan tidak dikirim".
 
 ### Deskripsi {#appendix-voice-commands-descriptions}
 

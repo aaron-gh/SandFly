@@ -8,7 +8,7 @@ Perintah yang dijalankan setiap gestur secara default tercantum di [](#appendix-
 
 Sentuhan yang diam di layar atau bergerak perlahan adalah eksplorasi sentuhan: SandFly membacakan item di bawah jari. Sentuhan yang bergerak cepat, atau ketukan, adalah gestur. Lihat [](#reading) untuk eksplorasi sentuhan.
 
-Di Android 13 dan yang lebih baru, SandFly mengenali gestur sendiri. Banyak gestur dalam bab ini memerlukannya: rotor, gestur tepi, gestur sudut, usap bolak-balik, jepit dan rentangkan, geser dan tahan, geseran tiga bagian, geseran dua tarikan, ketuk lalu geser, gestur berbentuk sudut dua jari, ketuk empat kali dengan tiga jari, serta ketukan empat jari di separuh atas atau bawah layar. Setelan waktu pada layar **Gestur** juga memerlukannya. Gestur dengan dua jari atau lebih memerlukan Android 11 atau yang lebih baru.
+Di Android 13 dan yang lebih baru, SandFly mengenali gestur sendiri. Banyak gestur dalam bab ini memerlukannya: rotor, gestur tepi, gestur sudut, usap bolak-balik, jepit dan rentangkan, geser dan tahan, geseran tiga bagian, geseran dua tarikan, ketuk lalu geser, gestur berbentuk sudut dua jari, ketuk empat kali dengan tiga jari, ketuk dua kali dengan dua jari di bagian atas dan bawah layar, serta ketukan empat jari di separuh atas atau bawah layar. Setelan waktu pada layar **Gestur** juga memerlukannya. Gestur dengan dua jari atau lebih memerlukan Android 11 atau yang lebih baru.
 
 Pengenalan oleh SandFly dikendalikan oleh **Setelan developer** > **Kelola gestur di SandFly**, yang aktif secara default. Saat Anda menonaktifkannya, Android yang mengenali gestur, sehingga gestur dan setelan di atas tidak tersedia. Nonaktifkan lalu aktifkan kembali SandFly setelah Anda mengubah setelan ini.
 
@@ -16,9 +16,10 @@ Pengenalan oleh SandFly dikendalikan oleh **Setelan developer** > **Kelola gestu
 
 - **Satu jari**: ketuk dua kali mengaktifkan item yang difokuskan, dan ketuk dua kali lalu tahan menyentuh lama item tersebut. Gestur ini tidak dapat diubah.
 - **Dua, tiga, dan empat jari**: ketuk, ketuk dua kali, dan ketuk tiga kali dengan masing-masing jumlah jari, serta ketuk dua kali dan tahan. Dua dan tiga jari juga memiliki ketuk tiga kali dan tahan, sedangkan tiga jari memiliki ketuk dan tahan serta ketuk empat kali.
+- **Dua jari di atas dan bawah**: **Ketuk dua kali dengan 2 jari, atas dan bawah** adalah gestur terpisah. Selama gestur ini memiliki perintah, ketuk dua kali dengan dua jari, satu jari di sepertiga atas layar dan jari lainnya di sepertiga bawah, menjalankannya sebagai pengganti **Ketuk dua kali dengan 2 jari**. Atas dan bawah mengikuti layar sebagaimana ditampilkan, juga dalam mode lanskap.
 - **Empat jari di separuh layar**: **Ketuk dengan 4 jari di separuh atas** dan **Ketuk dengan 4 jari di separuh bawah** adalah gestur terpisah. Selama salah satunya memiliki perintah, ketukan empat jari di separuh layar tersebut menjalankannya sebagai pengganti **Ketuk dengan 4 jari**.
 
-Ketukan dengan dua, tiga, atau empat jari menjalankan perintahnya segera setelah jari diangkat jika tidak ada gestur yang lebih panjang dengan awalan ketukan yang sama yang memiliki perintah, seperti ketukan lanjutan, ketuk dan tahan, atau ketuk lalu geser. Jika ada, SandFly menunggu ketukan berikutnya. Ketukan empat kali dengan tiga jari selalu langsung dijalankan.
+Ketukan dengan dua, tiga, atau empat jari menjalankan perintahnya segera setelah jari diangkat, kecuali jika gestur yang lebih panjang dengan awalan ketukan yang sama memiliki perintah, seperti ketukan lanjutan, ketuk dan tahan, atau ketuk lalu geser. Dalam hal itu, SandFly menunggu ketukan berikutnya. Jika ada jari yang bergerak selama ketukan beberapa jari, sentuhan tersebut tidak lagi dihitung sebagai ketukan. Ketukan empat kali dengan tiga jari selalu langsung dijalankan.
 
 **Waktu antara ketukan satu jari** mengatur berapa lama SandFly menunggu ketukan satu jari berikutnya. Lihat [](#gestures-timing).
 
@@ -68,7 +69,7 @@ Anda dapat menetapkan perintah lain untuk **Putar searah jarum jam dengan 2 jari
 
 Untuk mengusap bolak-balik, gerakkan dua jari dengan cepat ke satu arah melintasi layar lalu kembali, masing-masing tarikan sekitar satu sentimeter. Secara default, usap bolak-balik melakukan Kembali. Dua jari yang digerakkan ke satu arah saja tetap men-scroll. Selama usap bolak-balik masih mungkin terjadi, scroll menyamping dengan dua jari dapat menunggu hingga sekitar setengah detik sebelum dimulai.
 
-**Jepit dengan 2 jari**, **Rentangkan dengan 2 jari**, serta gestur yang sama dengan 3 dan 4 jari tidak melakukan apa pun secara default. Jepit atau rentangkan dihitung setelah jari bergerak sekitar setengah sentimeter mendekati atau menjauhi titik tengahnya, tanpa bergeser bersama-sama atau banyak berputar. Selama jepit atau rentangkan dua jari memiliki perintah, gerakan dua jari yang lebih banyak menjepit daripada bergeser akan menunggu sebelum diteruskan ke aplikasi, sehingga aplikasi yang melakukan zoom dengan dua jari mungkin tidak dapat di-zoom hingga keduanya diatur ke **Ketuk untuk menetapkan**.
+**Jepit dengan 2 jari**, **Rentangkan dengan 2 jari**, serta gestur yang sama dengan 3 dan 4 jari tidak melakukan apa pun secara default. Jepit atau rentangkan dihitung setelah jari bergerak sekitar setengah sentimeter mendekati atau menjauhi titik tengahnya, tanpa bergeser bersama-sama atau banyak berputar. Selama jepit atau rentangkan dua jari memiliki perintah, gerakan dua jari yang lebih banyak menjepit daripada bergeser akan menunggu sebelum diteruskan ke aplikasi, sehingga aplikasi yang melakukan zoom dengan dua jari mungkin tidak dapat di-zoom hingga keduanya diatur ke **Tidak ditetapkan**.
 
 Gestur usap bolak-balik, jepit, dan rentangkan tidak tersedia di jam tangan.
 
@@ -184,7 +185,7 @@ Di jam tangan, layar ini juga memiliki **Cadangkan gestur untuk Vibration Watch*
 **Tata letak gestur** memilih gestur awal yang digunakan layar **Gestur**:
 
 - **Gestur SandFly**: gestur default SandFly.
-- **Gestur VoiceOver**: gestur VoiceOver di iPhone, seperti ketuk dua jari untuk menjeda ucapan, ketuk dua kali dua jari untuk **Dikte, putar, atau jeda media**, geseran tiga jari untuk scroll, dan ketuk tiga jari untuk **Ucapkan posisi**. Gestur yang tidak dimiliki VoiceOver bernilai **Ketuk untuk menetapkan**, dan Anda dapat menetapkannya sendiri.
+- **Gestur VoiceOver**: gestur VoiceOver di iPhone, seperti ketuk dua jari untuk menjeda ucapan, ketuk dua kali dua jari untuk **Dikte, putar, atau jeda media**, geseran tiga jari untuk scroll, dan ketuk tiga jari untuk **Ucapkan posisi**. Gestur yang tidak dimiliki VoiceOver bernilai **Tidak ditetapkan**, dan Anda dapat menetapkannya sendiri.
 
 Saat pertama kali SandFly dimulai, dialog **Pilih gestur** terbuka agar Anda dapat memilih tata letak. Setiap tata letak menyimpan perubahannya sendiri, sehingga beralih kembali akan memulihkan gestur seperti yang Anda atur. Memilih tata letak mengaktifkan **Tangani geseran dua jari di SandFly** untuk **Gestur VoiceOver** dan menonaktifkannya untuk **Gestur SandFly**. Gestur di aplikasi dan profil gestur berlaku untuk kedua tata letak.
 
@@ -214,15 +215,15 @@ Setiap profil gestur dapat mengaktifkan atau menonaktifkan setelan ini untuk dir
 1. Buka **Gestur**.
 2. Aktifkan kategori gestur tersebut, misalnya **3 jari**, untuk meluaskannya.
 3. Aktifkan gestur yang diinginkan. Daftar perintah akan terbuka.
-4. Pilih perintah. **Ketuk untuk menetapkan** membuat gestur tidak melakukan apa pun.
+4. Pilih perintah. **Tidak ditetapkan** membuat gestur tidak melakukan apa pun.
 
-Daftar diawali **Telusuri** dan **Ketuk untuk menetapkan**, diikuti kategori perintah. Setiap kategori diciutkan, kecuali kategori yang memuat perintah yang saat ini dijalankan gestur tersebut. Untuk mencari gestur berdasarkan perintah yang dijalankannya, gunakan **Telusuri** di bagian atas layar **Gestur**.
+Daftar diawali **Telusuri** dan **Tidak ditetapkan**, diikuti kategori perintah. Setiap kategori diciutkan, kecuali kategori yang memuat perintah yang saat ini dijalankan gestur tersebut. Untuk mencari gestur berdasarkan perintah yang dijalankannya, gunakan **Telusuri** di bagian atas layar **Gestur**.
 
 Anda juga dapat memberi gestur pada suatu perintah dari layar **Perintah**; lihat [](#commands).
 
 ### Mereset gestur {#gestures-reset}
 
-**Gestur** > **Reset setelan gestur** mengembalikan setiap gestur pada tata letak gestur yang sedang digunakan ke perintah default-nya, setelah dialog **Reset gestur?**. Pilih **Setel ulang** untuk mengonfirmasi. Gestur di aplikasi, profil gestur, dan setelan lain di layar tidak berubah.
+**Gestur** > **Reset setelan gestur** mengembalikan setiap gestur pada tata letak gestur yang sedang digunakan ke perintah default-nya, setelah dialog **Reset gestur?**. Pilih **Reset** untuk mengonfirmasi. Gestur di aplikasi, profil gestur, dan setelan lain di layar tidak berubah.
 
 ### Gestur di aplikasi {#gestures-in-apps}
 
@@ -233,7 +234,7 @@ Untuk menambahkan gestur bagi suatu aplikasi:
 1. Buka **Gestur** > **Gestur di aplikasi**.
 2. Pilih **Tambahkan aplikasi**, lalu pilih aplikasinya.
 3. Di bawah **Gestur**, pilih **Tambahkan gestur**. Daftar menampilkan setiap gestur beserta perintahnya.
-4. Pilih gestur, lalu kategori perintah, lalu perintahnya. **Ketuk untuk menetapkan** membuat gestur tidak melakukan apa pun di aplikasi tersebut.
+4. Pilih gestur, lalu kategori perintah, lalu perintahnya. **Tidak ditetapkan** membuat gestur tidak melakukan apa pun di aplikasi tersebut.
 
 Setiap gestur pada layar aplikasi menampilkan perintahnya di aplikasi itu. Aktifkan untuk memilih **Pilih perintah** dan **Hapus**. Di bawah **Pintasan keyboard**, **Tambahkan pintasan keyboard** merekam tombol untuk aplikasi tersebut dengan cara yang sama; lihat [](#keyboards). **Hapus aplikasi** menghapus semua gestur dan pintasan keyboard untuk aplikasi tersebut.
 

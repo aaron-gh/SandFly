@@ -16,7 +16,7 @@ Sebuah item dapat berupa tombol, baris teks, baris daftar, gambar, atau apa pun 
 
 Sentuh layar dan gerakkan jari Anda. SandFly memfokuskan dan membacakan item di bawah jari Anda. Saat jari Anda bergerak di atas bagian layar yang kosong, SandFly memutar suara.
 
-SandFly menunggu sebentar setelah Anda menyentuh layar, untuk membedakan gestur dari sentuhan, sebelum memfokuskan item di bawah jari Anda. Untuk mengubah waktu tunggu ini, buka **Sentuhan** > **Penundaan fokus**. Nilai default-nya adalah 150 md. Setelan sentuhan dijelaskan di [](#touch).
+SandFly menunggu sebentar setelah Anda menyentuh layar, untuk membedakan gestur dari sentuhan, sebelum memfokuskan item di bawah jari Anda. Untuk mengubah waktu tunggu ini, buka **Sentuhan** > **Penundaan fokus**. Nilai default-nya adalah 0,15 detik. Setelan sentuhan dijelaskan di [](#touch).
 
 - Menyentuh area di antara ikon-ikon layar utama tidak membacakan halaman, seperti "Layar utama 1 dari 2". Menggeser tetap dapat mencapainya.
 - Jendela picture-in-picture, seperti video yang diputar di atas layar utama, diperlakukan sebagai satu item yang dinamai sesuai aplikasinya diikuti "picture in picture". Kontrol di dalam jendela tersebut menjadi tindakan pada item itu. Sentuhan tetap dapat mencapai setiap kontrol.
@@ -67,6 +67,7 @@ Kontrol pembacaan menentukan apa yang dilakukan oleh geseran ke atas atau gesera
 
 - Untuk memilih kontrol pembacaan berikutnya, geser ke bawah lalu ke atas, geser ke kanan atau ke bawah dengan tiga jari, atau putar searah jarum jam dengan dua jari.
 - Untuk memilih kontrol pembacaan sebelumnya, geser ke atas lalu ke bawah, geser ke kiri atau ke atas dengan tiga jari, atau putar berlawanan arah jarum jam dengan dua jari.
+- Untuk memilih kontrol pembacaan pertama dari daftar yang digunakan, tetapkan gestur atau pintasan keyboard ke **Kontrol pembacaan pertama**. Secara default, perintah ini tidak memiliki gestur atau pintasan.
 - Untuk berpindah menurut kontrol pembacaan yang dipilih, geser ke bawah untuk maju dan geser ke atas untuk mundur. Keduanya adalah perintah **Turunkan atau majukan kontrol pembacaan** dan **Naikkan atau mundurkan kontrol pembacaan**.
 
 SandFly membacakan nama setiap kontrol pembacaan saat Anda memilihnya. Menggeser ke kanan dan ke kiri tetap berpindah antar-item apa pun kontrol pembacaan yang dipilih, kecuali saat menggunakan **Baris dan kolom** di dalam tabel.
@@ -109,7 +110,7 @@ Kontrol pembacaan di bawah **Navigasi elemen** dan **Tingkat judul** pada layar 
 
 #### Berpindah menurut teks atau elemen tanpa kontrol pembacaan {#reading-navigation-commands}
 
-Anda dapat menetapkan gestur atau pintasan keyboard untuk berpindah ke karakter, kata, baris, paragraf, judul, tautan, kontrol, penanda, tombol, kotak centang, tombol radio, kolom edit, kotak kombo, item yang dapat difokuskan, grafik, daftar, item daftar, tabel, tautan yang sudah dikunjungi, tautan yang belum dikunjungi, atau judul pada tingkat tertentu berikutnya atau sebelumnya. Perpindahan ini tidak mengubah kontrol pembacaan yang dipilih. Di daftar perintah untuk gestur, semuanya berada di bawah **Navigasi menurut teks**, **Navigasi menurut elemen**, dan **Navigasi menurut level judul**. Lihat [](#gestures).
+Anda dapat menetapkan gestur atau pintasan keyboard untuk berpindah ke karakter, kata, baris, paragraf, judul, tautan, kontrol, penanda, tombol, kotak centang, tombol radio, kolom edit, kotak kombo, item yang dapat difokuskan, grafik, daftar, item daftar, tabel, tautan yang sudah dikunjungi, tautan yang belum dikunjungi, atau judul pada tingkat tertentu berikutnya atau sebelumnya. Perpindahan ini tidak mengubah kontrol pembacaan yang dipilih. Di daftar perintah untuk gestur, semuanya berada di bawah **Navigasi menurut teks** dan **Navigasi menurut elemen**. Lihat [](#gestures).
 
 ### Membaca terus-menerus {#reading-continuous}
 
@@ -139,12 +140,12 @@ Menggeser ke kanan dan ke kiri men-scroll daftar secara otomatis saat item berik
 - Untuk scroll mundur, geser ke kiri lalu ke kanan. Ini adalah **Scroll mundur**. Di bagian atas daftar, **Scroll mundur** menarik daftar ke bawah, yang di sebagian besar aplikasi akan menyegarkannya.
 - Untuk men-scroll aplikasi secara langsung, seret dua jari di layar, seperti saat Anda menyeret satu jari tanpa SandFly.
 
-Di tata letak gestur default, geseran dua jari diteruskan ke aplikasi untuk men-scroll-nya. Jika **Gestur** > **Tangani geseran dua jari di SandFly** aktif, seperti pada tata letak gestur VoiceOver, geseran dua jari menjalankan perintah sebagai gantinya: secara default **Scroll ke atas**, **Scroll ke bawah**, **Scroll ke kiri**, dan **Scroll ke kanan**, yang menggerakkan konten searah geseran. Keempat perintah ini memerlukan Android 11 atau yang lebih baru, dan tidak tersedia di jam tangan.
+Di tata letak gestur default, geseran dua jari diteruskan ke aplikasi untuk men-scroll-nya. Jika **Gestur** > **Tangani geseran dua jari di SandFly** aktif, seperti pada tata letak gestur VoiceOver, geseran dua jari menjalankan perintah sebagai gantinya: secara default **Scroll ke atas**, **Scroll ke bawah**, **Scroll ke kiri**, dan **Scroll ke kanan**, yang menggerakkan konten searah geseran. Jika tidak ada item di layar yang dapat di-scroll ke samping, **Scroll ke kiri** dan **Scroll ke kanan** mengirim geseran satu jari ke pager di sekitar item yang difokuskan, seperti tab folder di Solid Explorer. Keempat perintah ini memerlukan Android 11 atau yang lebih baru, dan tidak tersedia di jam tangan.
 
 Perintah berikut, di kategori **Scroll**, tidak memiliki gestur secara default:
 
 - **Gulir ke atas** dan **Gulir ke bawah** menggulir daftar yang difokuskan ke awal atau akhir, satu halaman sekali jalan, lalu memfokuskan item pertama atau terakhirnya. Sentuhan, gestur, atau penekanan tombol akan menghentikannya. Tidak tersedia di jam tangan.
-- **Segarkan** menggulir daftar ke bagian atas lalu menariknya ke bawah. Memerlukan Android 13 atau yang lebih baru.
+- **Segarkan** menggulir daftar ke bagian atas lalu menariknya ke bawah. Memerlukan Android 11 atau yang lebih baru.
 
 Saat Anda men-scroll dengan dua jari, SandFly memutar suara scroll dan getaran ringan untuk setiap item yang terlewati. Nada suara scroll semakin tinggi dari bagian atas daftar ke bagian bawah. Scroll yang dilakukan SandFly untuk mencapai item berikutnya tidak mengeluarkan suara. Untuk setelan suara dan getaran, lihat [](#sound).
 
@@ -231,10 +232,12 @@ Nomor telepon ditemukan oleh pengklasifikasi teks Android, yang juga mendeteksi 
 
 **Salin teks dari layar**, perintah di kategori **Pengeditan teks** tanpa gestur secara default, membuka jendela yang menampilkan teks di layar sebagai daftar kotak centang.
 
+Jendela ini mencantumkan teks di layar. Jika layar memiliki daftar atau halaman yang dapat di-scroll, **Scroll ke atas** di atas daftar dan **Scroll ke bawah** di bawahnya men-scroll daftar tersebut satu halaman melewati teks yang sudah dicantumkan dan menambahkan teks halaman itu. SandFly mengucapkan jumlah bagian yang ditambahkan, seperti "5 item ditambahkan". Bagian yang dicentang tetap dicentang. Saat daftar berada di awal atau akhirnya, SandFly mengucapkan "Tidak ada teks lagi". Daftar di-scroll kembali ke posisi semula saat jendela ditutup.
+
 1. Jalankan **Salin teks dari layar**.
 2. Di bawah **Granularitas**, pilih cara teks dibagi: **Alamat dan nomor**, **Karakter**, **Kata**, atau **Paragraf**. **Kata** dipilih terlebih dahulu.
 3. Centang bagian yang Anda inginkan. Untuk mencentang suatu rentang, ketuk dua kali dan tahan bagian pertama lalu bagian terakhir, atau gunakan tindakan **Mulai pemilihan** dan **Akhiri pemilihan**. **Pilih semua** mencentang setiap bagian.
-4. Pilih **Salin**. Bagian yang dicentang disalin, satu per baris.
+4. Pilih **Salin**. Bagian yang dicentang disalin secara berurutan: kata dengan spasi di antaranya, karakter tanpa pemisah, paragraf dengan baris kosong di antaranya, serta alamat dan nomor satu per baris.
 
 **Alamat dan nomor** mencantumkan setiap alamat web, alamat email, nomor telepon, dan kode di layar persis seperti tertulis, sehingga Anda dapat menyalin nomor telepon alih-alih meneleponnya. Opsi ini hanya muncul jika layar memilikinya, dan mencantumkan semua jenis, apa pun setelan **Alamat dan nomor yang disertakan**. Pencariannya dapat membuat jendela terbuka hingga satu detik lebih lama.
 

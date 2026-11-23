@@ -98,7 +98,7 @@ Agen AI menjalankan tugas di aplikasi yang sedang terbuka melalui ketukan, geser
 2. Jalankan **Mulai atau hentikan tugas agen AI**. SandFly mulai merekam.
 3. Ucapkan tugasnya, misalnya "mulai permainan baru". Saat Anda berhenti berbicara, SandFly mengucapkan "Agen dimulai."
 
-Untuk mengetik tugas sebagai gantinya, jalankan **Ketik tugas agen AI**. Di jendela **Tugas agen AI**, ketik hal yang harus dilakukan agen lalu pilih **Mulai**, atau pilih **Ucapkan** untuk merekamnya.
+Untuk mengetik tugas sebagai gantinya, jalankan **Ketik tugas agen AI**. Di jendela **Tugas agen AI**, ketik hal yang harus dilakukan agen lalu pilih **Mulai**, atau pilih **Ucapkan** untuk merekamnya. Jendela yang sama terbuka jika perekaman tidak dapat dimulai. Selama tugas berjalan, **Ketik tugas agen AI** mengucapkan "Tugas agen sedang berjalan."
 
 Saat agen bekerja, SandFly membacakan laporan agen, memutar suara saat agen mulai, bertanya, dan selesai, serta membacakan ringkasan di akhir: "Tugas selesai." atau "Tugas tidak selesai."
 
@@ -126,7 +126,7 @@ Agen berhenti sendiri setelah mencapai batas langkah atau waktu, dan SandFly aka
 
 - Agen memerlukan Android 11 atau versi lebih baru.
 - Jendela yang memblokir screenshot, seperti beberapa aplikasi perbankan, hanya mengirimkan daftar itemnya.
-- Di aplikasi tanpa kolom teks, seperti game, pengetikan memerlukan Shizuku, begitu juga tombol selain Kembali, Layar utama, dan Enter. Lihat [](#updates).
+- Di aplikasi tanpa kolom teks, seperti game, pengetikan memerlukan Shizuku, begitu juga tombol selain Kembali, Layar utama, dan Enter. Lihat [](#updates-shizuku).
 
 ### Pengenalan layar {#pro-screen-recognition}
 
@@ -158,11 +158,11 @@ Agen skrip menulis skrip SandFly dari deskripsi Anda, lalu mengujinya di ponsel.
 2. Buka **Skrip** lalu pilih **Buat skrip dengan SandFly Pro**, atau jalankan perintah **Buat skrip dengan SandFly Pro**.
 3. Baca dialog **Skrip dan batas penggunaan**, yang menunjukkan seberapa banyak batas bulanan yang telah terpakai, lalu pilih **Setuju dan lanjutkan**.
 4. Di **Buat skrip**, ketik apa yang harus dilakukan skrip dan di aplikasi mana, lalu pilih **Mulai**. SandFly mengucapkan "Membuat skrip".
-5. Saat notifikasi **SandFly Pro sedang menunggu layar** muncul, buka layar yang diminta agen, lalu pilih **Selesai** di notifikasi, atau jalankan **Buat skrip dengan SandFly Pro** lagi. Saat agen meminta pengujian, misalnya untuk suatu gestur, coba di aplikasi lalu pilih **Selesai**.
+5. Saat notifikasi **SandFly Pro sedang menunggu layar** muncul, buka layar yang diminta agen, lalu pilih **Selesai** di notifikasi, atau jalankan **Buat skrip dengan SandFly Pro** lagi. Saat agen meminta pengujian, misalnya untuk suatu gestur, notifikasi **SandFly Pro sedang membuat skrip** menampilkan permintaan tersebut: coba di aplikasi, lalu pilih **Selesai**, atau pilih **Balas** dan jelaskan apa yang terjadi.
 6. Untuk mengirim pesan kepada agen sebagai gantinya, misalnya untuk melewati layar atau berhenti dan menyimpan hasil sementara, pilih **Balas** di notifikasi.
 
-Selama skrip dibuat, notifikasi **SandFly Pro sedang membuat skrip** memiliki tombol **Berhenti**. Jika Anda menambahkan **Buat skrip dengan SandFly Pro** ke Menu SandFly, item menu tersebut berubah menjadi **Hentikan agen SandFly Pro** saat agen sedang bekerja. Saat agen bekerja dan tidak sedang menunggu Anda, **Buat skrip dengan SandFly Pro** juga menghentikannya. Saat agen selesai atau dihentikan, skrip terbuka di pembuat skrip di bawah **Ditulis oleh SandFly Pro**, disertai ringkasan serta tombol **Terima**, **Minta perubahan**, dan **Buang**. Sebelum Anda menerimanya, skrip berjalan tanpa izin jaringan dan kode Java.
+Selama skrip dibuat, notifikasi **SandFly Pro sedang membuat skrip** memiliki tombol **Balas** dan **Berhenti**. **Balas** mengirim pesan yang dibaca agen pada langkah berikutnya. Jika Anda menambahkan **Buat skrip dengan SandFly Pro** ke Menu SandFly, item menu tersebut berubah menjadi **Hentikan agen SandFly Pro** saat agen sedang bekerja. Saat agen bekerja dan tidak sedang menunggu Anda, **Buat skrip dengan SandFly Pro** juga menghentikannya. Saat agen selesai atau dihentikan, skrip terbuka di pembuat skrip di bawah **Ditulis oleh SandFly Pro**, disertai ringkasan serta tombol **Terima**, **Minta perubahan**, dan **Buang**. Sebelum Anda menerimanya, skrip berjalan tanpa izin jaringan dan kode Java. Jika agen tidak menyimpan skrip, SandFly mengucapkan "Tidak ada skrip yang disimpan".
 
 Untuk mengubah skrip yang sudah dibuat, pilih **Ubah dengan SandFly Pro** di halaman skrip atau di pembuat skrip.
 
-Membuat skrip memakai jauh lebih banyak batas penggunaan bulanan daripada tugas agen. Satu skrip dapat memakai sebagian besar batas tersebut. Untuk skrip dan pembuat skrip, lihat [](#scripts).
+Membuat skrip memakai jauh lebih banyak batas penggunaan bulanan daripada tugas agen. Satu skrip dapat memakai sebagian besar batas tersebut. Setiap skrip memiliki batas pengeluarannya sendiri: saat batas tercapai, agen menyimpan bagian yang berfungsi lalu selesai, dan ringkasan mencantumkan apa yang belum selesai. Untuk skrip dan pembuat skrip, lihat [](#scripts).

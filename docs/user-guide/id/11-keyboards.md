@@ -88,9 +88,9 @@ Fitur ini tidak tersedia di jam tangan. Untuk format filenya, lihat [](#api-item
 
 **Pintasan keyboard** di setelan SandFly berisi:
 
+- **Telusuri**: menemukan perintah atau tombol panah berdasarkan nama atau tombolnya, lalu membuka pintasannya.
 - **Peta tombol**: **Pilih peta tombol**, **Pilih tombol SandFly**, **Reset peta tombol**, **Lihat pintasan keyboard sistem**, **Peta tombol baru**, **Ekspor ke file**, **Impor dari file**, serta untuk peta tombol buatan Anda, **Ganti nama peta tombol** dan **Hapus peta tombol**. **Lihat pintasan keyboard sistem** membuka daftar pintasan keyboard Android dan aplikasi yang sedang digunakan.
 - **Pintasan keyboard di aplikasi**: pintasan yang menjalankan perintah lain di satu aplikasi. Lihat [](#keyboards-app-shortcuts).
-- **Telusuri**: menemukan perintah atau tombol panah berdasarkan nama atau tombolnya, lalu membuka pintasannya.
 - **Navigasi tombol panah**: pada peta tombol yang memilikinya. Lihat [](#keyboards-arrow-keys).
 - Perintah-perintah, menurut kategori, masing-masing beserta pintasannya. Setiap kategori dapat dibuka dan ditutup. Perintah yang pintasannya hanya bekerja dalam mode penjelajahan memiliki keterangan "dalam mode penjelajahan" setelah namanya, seperti "Navigasi ke judul berikutnya dalam mode penjelajahan".
 
@@ -109,7 +109,7 @@ Anda juga dapat melihat dan mengubah pintasan keyboard suatu perintah di layarny
 Di dalam dialog:
 
 - Backspace menghapus pintasan, sehingga perintah tidak memiliki pintasan. **Hapus** melakukan hal yang sama.
-- Ctrl + Backspace menetapkan kembali pintasan default.
+- Ctrl + Backspace menetapkan kembali pintasan default, di Peta tombol SandFly dan VoiceOver serta di peta tombol yang disalin darinya.
 - Escape, atau **Batal**, menutup dialog tanpa perubahan.
 
 Jika perintah lain sudah menggunakan tombol tersebut, SandFly menampilkan "Saat ini ditetapkan ke" beserta nama perintah itu. Saat Anda menyimpan, dialog **Tombol sudah digunakan** menanyakan apakah tombol akan diambil dari perintah tersebut; pilih **Oke** untuk menetapkannya ke perintah yang sedang Anda ubah.
@@ -139,18 +139,20 @@ Untuk merekamnya, tekan tombol dengan cara yang sama di dialog pintasan. Pada pe
 
 ### Pintasan keyboard di aplikasi {#keyboards-app-shortcuts}
 
-**Pintasan keyboard** > **Pintasan keyboard di aplikasi** menetapkan pintasan keyboard untuk satu aplikasi. Pintasan ini didahulukan daripada pintasan peta tombol saat aplikasi tersebut ditampilkan. Pintasan yang diatur ke **Ketuk untuk menetapkan** di suatu aplikasi membiarkan tombolnya diteruskan ke aplikasi tersebut.
+**Pintasan keyboard** > **Pintasan keyboard di aplikasi** menetapkan pintasan keyboard untuk satu aplikasi. Pintasan ini didahulukan daripada pintasan peta tombol saat aplikasi tersebut ditampilkan. Pintasan yang diatur ke **Tidak ditetapkan** di suatu aplikasi membiarkan tombolnya diteruskan ke aplikasi tersebut.
 
 1. Di **Pintasan keyboard**, pilih **Pintasan keyboard di aplikasi**.
 2. Pilih **Tambahkan aplikasi**, lalu pilih aplikasinya.
-3. Di bawah **Pintasan keyboard**, pilih **Tambahkan pintasan keyboard**, lalu tekan tombolnya.
-4. Pilih sebuah perintah.
+3. Di bawah **Pintasan keyboard**, pilih **Tambahkan pintasan keyboard**, tekan tombolnya, lalu pilih **Simpan**.
+4. Pilih kategori, lalu perintah, atau pilih **Tidak ditetapkan**.
+
+**Tambahkan pintasan keyboard** hanya tersedia saat SandFly aktif. Pilih pintasan untuk **Pilih perintah** atau **Hapus**. **Hapus aplikasi** menghapus gestur dan pintasan aplikasi tersebut.
 
 Layar yang sama memuat gestur untuk setiap aplikasi. Untuk gestur di aplikasi, lihat [](#gestures).
 
 ### Menemukan pintasan keyboard {#keyboards-shortcut-list}
 
-**Tampilkan daftar pintasan keyboard** membuka daftar semua perintah beserta pintasannya yang dapat Anda telusuri. Pintasan defaultnya adalah Tombol SandFly + Shift + / di Peta tombol SandFly, dan Tombol SandFly + Q di Peta tombol ponsel berkeyboard.
+**Tampilkan daftar pintasan keyboard** membuka daftar semua perintah beserta pintasannya yang dapat Anda telusuri. Pintasan defaultnya adalah Tombol SandFly + Shift + / di Peta tombol SandFly, VoiceOver, dan Orca, Tombol SandFly + Q di Peta tombol ponsel berkeyboard, dan Q di Peta tombol satu tombol ponsel berkeyboard.
 
 **Pintasan keyboard** > **Telusuri** mencari perintah berdasarkan nama atau tombolnya di setelan. Untuk pintasan default setiap peta tombol, lihat [](#appendix-keyboard-shortcuts).
 
@@ -259,9 +261,21 @@ Di Peta tombol JAWS, kursor tinjauan bekerja seperti kursor JAWS; di Peta tombol
 
 Beberapa aplikasi menggunakan tombol yang juga digunakan SandFly. Perintah-perintah ini meneruskan tombol ke aplikasi:
 
-- **Melewati sistem**: tombol berikutnya, atau kombinasi tombol bersamaan, yang Anda tekan setelah pintasan ini akan diteruskan ke aplikasi alih-alih ke SandFly. SandFly mengucapkan "Mengabaikan penekanan tombol berikutnya". Pintasan defaultnya adalah Tombol SandFly + Shift + Escape di Peta tombol SandFly, dan Tombol SandFly + P di Peta tombol ponsel berkeyboard.
-- **Teruskan tombol tanpa tombol SandFly ke aplikasi ini**: aplikasi yang tampil menerima setiap tombol yang ditekan tanpa tombol SandFly, seperti tombol panah dan huruf mode penjelajahan, hingga Anda menjalankan perintah ini lagi di aplikasi tersebut. SandFly mengucapkan "Meneruskan tombol ke" atau "Tidak meneruskan tombol ke" diikuti nama aplikasi, dan menyimpan pilihan ini untuk setiap aplikasi. Saat kursor tinjauan aktif, kursor tinjauan tetap mengambil tombolnya. Pintasan defaultnya adalah Tombol SandFly + Shift + Spasi di Peta tombol NVDA, dan Tombol SandFly + Shift + Q di Peta tombol ponsel berkeyboard.
-- **Aktifkan atau nonaktifkan input keyboard SandFly**: setiap tombol diteruskan ke Android, termasuk pintasan dengan tombol SandFly, hingga Anda menekan pintasan perintah ini lagi. SandFly mengucapkan "Input keyboard SandFly nonaktif" atau "Input keyboard SandFly aktif". Input keyboard aktif kembali saat SandFly dimulai ulang. Pintasan defaultnya adalah Tombol SandFly + Shift + K di Peta tombol SandFly, NVDA, dan JAWS, serta Tombol SandFly + Shift + P di Peta tombol ponsel berkeyboard.
+- **Melewati sistem**: tombol berikutnya, atau kombinasi tombol bersamaan, yang Anda tekan setelah pintasan ini akan diteruskan ke aplikasi alih-alih ke SandFly. SandFly mengucapkan "Mengabaikan penekanan tombol berikutnya".
+- **Teruskan tombol tanpa tombol SandFly ke aplikasi ini**: aplikasi yang tampil menerima setiap tombol yang ditekan tanpa tombol SandFly, seperti tombol panah dan huruf mode penjelajahan, hingga Anda menjalankan perintah ini lagi di aplikasi tersebut. SandFly mengucapkan "Meneruskan tombol ke" atau "Tidak meneruskan tombol ke" diikuti nama aplikasi, dan menyimpan pilihan ini untuk setiap aplikasi. Saat kursor tinjauan aktif, kursor tinjauan tetap mengambil tombolnya.
+- **Aktifkan atau nonaktifkan input keyboard SandFly**: setiap tombol diteruskan ke Android, termasuk pintasan dengan tombol SandFly, hingga Anda menekan pintasan perintah ini lagi. SandFly mengucapkan "Input keyboard SandFly nonaktif" atau "Input keyboard SandFly aktif". Input keyboard aktif kembali saat SandFly dimulai ulang.
+
+Pintasan default-nya adalah:
+
+| Peta tombol | Melewati sistem | Teruskan tombol tanpa tombol SandFly ke aplikasi ini | Aktifkan atau nonaktifkan input keyboard SandFly |
+| --- | --- | --- | --- |
+| Peta tombol SandFly | Tombol SandFly + Shift + Escape | Tidak ada | Tombol SandFly + Shift + K |
+| Peta tombol VoiceOver | Tidak ada | Tidak ada | Tombol SandFly + Shift + ; |
+| Peta tombol NVDA | Tombol SandFly + F2 | Tombol SandFly + Shift + Spasi | Tombol SandFly + Shift + K |
+| Peta tombol JAWS | Tombol SandFly + 3 | Tombol SandFly + Shift + Z | Tombol SandFly + Shift + K |
+| Peta tombol Orca | Tombol SandFly + Backspace | Tombol SandFly + Shift + A | Tombol SandFly + Shift + ; |
+| Peta tombol ponsel berkeyboard | Tombol SandFly + P | Tombol SandFly + Shift + Q | Tombol SandFly + Shift + P |
+| Peta tombol satu tombol ponsel berkeyboard | Tombol SandFly + P | Shift + Q | Tombol SandFly + Shift + P |
 
 Perintah-perintah ini berada di kategori **Aktivasi**. Sebuah skrip juga dapat membuat SandFly meneruskan setiap tombol ke aplikasinya; mengaktifkan kembali input keyboard SandFly akan mengakhiri hal tersebut. Lihat [](#scripts).
 
@@ -339,7 +353,7 @@ Tombol mengetikkan karakternya sendiri terlebih dahulu; saat Android mulai mengu
 
 #### Penekanan dua kali {#keyboards-double-press}
 
-**Mengetik** > **Keyboard fisik** > **Karakter tekan dua kali** mencantumkan tombol dan karakter yang diketik saat ditekan dua kali dengan Keyboard SandFly, seperti ğ untuk G, ö untuk O, atau ä untuk E. **Tambahkan tombol** menambahkan entri baru: masukkan karakter tombol di **Tombol** dan karakternya di **Tekan dua kali mengetikkan**. Setiap tombol memiliki opsi **Sunting** dan **Hapus**. Daftar ini kosong secara default.
+**Mengetik** > **Keyboard fisik** > **Karakter tekan dua kali** mencantumkan tombol dan karakter yang diketik saat ditekan dua kali dengan Keyboard SandFly, seperti ğ untuk G, ö untuk O, atau ä untuk E. **Tambahkan tombol** menambahkan entri baru: masukkan karakter tombol di **Tombol**, dan 1 hingga 16 karakter di **Tekan dua kali mengetikkan**. Pilih tombol untuk **Sunting** atau **Hapus**. Daftar ini kosong secara default.
 
 Tekanan pertama mengetikkan karakter tombol tersebut. Tekanan kedua pada tombol yang sama dalam 350 milidetik, tanpa tombol lain atau perpindahan kursor di antaranya, menggantinya dengan karakter tekan dua kali. Setelah huruf kapital, seperti dengan Shift, penekanan dua kali mengetikkan huruf kapitalnya, seperti Ğ. Tombol yang tidak ada di daftar mengetik seperti biasa.
 
@@ -369,6 +383,7 @@ Pada peta tombol ponsel berkeyboard, **Telusuri emoji** adalah Tombol SandFly + 
 - U dan O: kata sebelumnya dan berikutnya.
 - Alt + J dan Alt + L: awal dan akhir baris. Alt + I dan Alt + K: awal dan akhir teks.
 - T dan B: awal dan akhir teks.
+- Home dan End: awal dan akhir baris. Dengan Ctrl: awal dan akhir teks.
 - Shift bersama perpindahan akan memilih teks. S memulai pemilihan, dan SandFly mengucapkan "Memilih"; tekan S lagi untuk berhenti.
 - A memilih semua, C menyalin, X memotong, V menempel.
 - Z mengurungkan, Shift + Z mengulangi.
@@ -381,5 +396,5 @@ Tombol ketik lainnya tidak melakukan apa pun dalam mode pengeditan. Mode pengedi
 ### Setelan keyboard lainnya {#keyboards-other-settings}
 
 - **Mengetik** > **Gema keyboard** > **Keyboard fisik** mengatur apa yang diucapkan SandFly saat Anda mengetik di keyboard fisik. Lihat [](#typing).
-- Setiap tombol pada keyboard fisik menghentikan ucapan, kecuali tombol pengubah seperti Shift. Ctrl yang ditekan sendirian menjeda ucapan. **Interupsi ucapan saat mengetik**, di **Ucapan**, mengatur kapan karakter yang diketik menghentikan ucapan. Lihat [](#speech).
+- Setiap tombol pada keyboard fisik menghentikan ucapan, kecuali tombol pengubah seperti Shift, Caps Lock, Num Lock, Scroll Lock, dan tombol volume. **Ucapan** > **Interupsi ucapan saat mengetik** mengatur kapan karakter yang diketik menghentikan ucapan, dan **Ucapan** > **Hentikan ucapan saat menekan Enter** mengatur apakah Enter menghentikannya. Ctrl yang ditekan sendirian menjeda atau melanjutkan ucapan. Lihat [](#speech-stop).
 - Jika keyboard fisik terhubung saat SandFly pertama kali dimulai, tutorial keyboard akan terbuka alih-alih tutorial gestur sentuh. Saat Anda membuka tutorial di lain waktu dengan keyboard terhubung ke perangkat berlayar sentuh, SandFly menawarkan **Tutorial gestur sentuh** dan **Tutorial keyboard**. Lihat [](#getting-started).

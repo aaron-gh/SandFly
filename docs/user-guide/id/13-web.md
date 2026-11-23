@@ -20,7 +20,7 @@ Cara pembacaan beberapa elemen:
 - Kotak centang dan tombol pilihan dibacakan bersama labelnya.
 - Saat halaman memindahkan fokus ke elemen seperti postingan, seperti yang dilakukan Mastodon dengan tombol J dan K, SandFly membacakan teks link di dalamnya, seperti penulis, waktu, dan tagar, tetapi tidak tombol-tombolnya. Spasi di antara link tidak dibacakan.
 
-Catatan: Beberapa mesin ucapan, seperti Gryphon, hanya berhenti di antara potongan teks yang diterimanya. Jika ucapan item berikutnya mulai terlambat setelah Anda menggeser menjauh dari paragraf panjang, aktifkan **Ucapan** > **Kirim teks panjang per kalimat**. Lihat [](#speech).
+Catatan: Beberapa mesin ucapan, seperti Gryphon, hanya berhenti di antara potongan teks yang diterimanya. Jika ucapan item berikutnya mulai terlambat setelah Anda menggeser menjauh dari paragraf panjang, aktifkan **Ucapan** > **Kirim teks panjang per kalimat**. Lihat [](#speech-pronunciation).
 
 ### Berpindah menurut elemen {#web-elements}
 
@@ -51,7 +51,7 @@ Anda dapat menambahkan kontrol pembacaan berikut di layar **Kontrol pembacaan**,
 
 Untuk menambahkan kontrol pembacaan, lihat [](#commands). Untuk memilih kontrol pembacaan, lihat [](#reading-controls).
 
-Anda juga dapat berpindah menurut elemen tanpa mengubah kontrol pembacaan: tetapkan gestur ke perintah di bawah **Navigasi menurut elemen** dan **Navigasi menurut level judul**, seperti **Judul berikutnya** dan **Judul sebelumnya**. Lihat [](#gestures). Pada keyboard fisik, setiap elemen memiliki pintasan keyboard; lihat [](#keyboards).
+Anda juga dapat berpindah menurut elemen tanpa mengubah kontrol pembacaan: tetapkan gestur ke perintah di kategori **Navigasi menurut elemen**, seperti **Judul berikutnya**, **Judul sebelumnya**, dan **Judul 1 berikutnya**. Lihat [](#gestures). Pada keyboard fisik, setiap elemen memiliki pintasan keyboard; lihat [](#keyboards).
 
 Perintah **Navigasi**, yang dapat Anda tambahkan ke menu SandFly, mencantumkan jenis navigasi yang dapat dipilih, seperti karakter, judul, atau penanda. Saat perintah ini ada di menu SandFly, **Edit opsi navigasi**, di bawahnya pada layar **Menu SandFly**, memilih jenis navigasi apa saja yang ditampilkan. Lihat [](#commands).
 
@@ -102,7 +102,7 @@ Untuk mengaktifkan atau menonaktifkan mode penjelajahan, gunakan perintah **Akti
 
 Setelan berikut berada di layar **Navigasi**:
 
-- **Mode penjelajahan cerdas**: Mengaktifkan atau menonaktifkan mode penjelajahan secara otomatis berdasarkan item yang Anda fokuskan. Setelan ini menyinkronkan fokus input dengan fokus SandFly. Aktif secara default. SandFly mengaktifkan mode penjelajahan saat fokus berpindah ke item di konten web, dan menonaktifkannya di kolom teks serta kontrol yang menggunakan tombol panah, seperti penggeser, kotak daftar, bilah menu, menu, tampilan pohon, kisi, kotak kombinasi, dan tombol putar. Jika Anda menonaktifkan mode penjelajahan sendiri di konten web, memindahkan fokus di dalam konten web tidak akan mengaktifkannya kembali. Mode penjelajahan juga dinonaktifkan saat fokus input berpindah ke kolom teks atau penggeser di aplikasi.
+- **Mode penjelajahan cerdas**: mengaktifkan atau menonaktifkan mode penjelajahan untuk item yang difokuskan. Aktif secara default. SandFly mengaktifkan mode penjelajahan saat fokus berpindah ke item di konten web, dan menonaktifkannya di kolom teks serta kontrol yang menggunakan tombol panah, seperti penggeser, kotak daftar, bilah menu, menu, tampilan pohon, kisi, kotak kombinasi, dan tombol putar. Jika perintah keyboard memindahkan fokus SandFly ke salah satu item tersebut, fokus input juga berpindah ke sana. Jika Anda menonaktifkan mode penjelajahan sendiri di konten web, memindahkan fokus di dalam konten web tidak akan mengaktifkannya kembali. Mode penjelajahan juga dinonaktifkan saat fokus input berpindah ke kolom teks atau penggeser di aplikasi.
 - **Ingat mode jelajah di setiap aplikasi**: SandFly menyimpan status mode penjelajahan terakhir yang Anda aktifkan atau nonaktifkan di setiap aplikasi. Di aplikasi yang belum pernah Anda ubah statusnya, mode penjelajahan nonaktif, kecuali **Mode penjelajahan cerdas** mengaktifkannya di konten web. Nonaktif secara default.
 
 ### Daftar elemen dan alamat {#web-lists}

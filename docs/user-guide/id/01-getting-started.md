@@ -79,7 +79,7 @@ Tutorial ini memiliki 16 pelajaran dalam lima bab:
 
 Setiap pelajaran memberikan instruksi, menunggu hingga Anda melakukannya dengan gestur Anda sendiri, lalu memberikan instruksi berikutnya. Instruksi adalah item pertama setelah nama pelajaran. SandFly mengucapkan setiap instruksi, termasuk saat audio lain sedang diputar, dan mengulanginya setelah 25 detik tanpa gestur atau sentuhan, hingga tiga kali. Instruksi menyebutkan gestur yang ditetapkan untuk setiap tindakan di setelan gestur Anda. Jika suatu tindakan tidak memiliki gestur, langkah tersebut akan menyatakannya, dan **Lewati langkah** melanjutkan tanpa langkah itu.
 
-Saat suatu pelajaran selesai, SandFly menyebutkan gestur mana yang memulai pelajaran berikutnya dan memindahkan fokus ke **Pelajaran berikutnya**. Pelajaran terakhir memiliki **Selesaikan tutorial**.
+Saat suatu pelajaran selesai, SandFly menyebutkan gestur mana yang memulai pelajaran berikutnya dan memindahkan fokus ke **Pelajaran berikutnya**, diikuti nama pelajaran tersebut. Pelajaran terakhir memiliki **Selesaikan tutorial**.
 
 Di dalam pelajaran, gestur yang biasanya keluar dari tutorial, seperti Kembali, Layar utama, aplikasi terbaru, dan notifikasi, tidak keluar dari tutorial. SandFly mengucapkan apa yang seharusnya dilakukan gestur tersebut. Menonaktifkan ucapan dan menjeda SandFly bekerja dengan cara yang sama. Kembali tetap menutup keyboard dan menu. Untuk memilih pelajaran lain atau keluar dari tutorial, gunakan **Daftar isi**, yang mencantumkan semua pelajaran, menunjukkan mana yang sudah selesai, dan membuka pelajaran mana pun. **Tutup tutorial** di dalam **Daftar isi** menutup tutorial.
 
@@ -126,7 +126,7 @@ Untuk membuka setelan SandFly, lakukan salah satu langkah berikut:
 - Pilih **Setelan SandFly** di menu SandFly.
 - Di setelan Android, buka **Aksesibilitas** > **SandFly** > **Setelan**.
 
-Layar setelan utama mencantumkan layar setelan berikut: Ucapan, Panjang respons, Suara dan getaran, Output audio, Sentuhan, Gestur, Pintasan keyboard, Tombol volume, Perintah, Kontrol pembacaan, Menu SandFly, Menu kustom, Makro, Perintah suara, Navigasi, Mengetik, Braille, Tampilan, Notifikasi, Terjemahan, Deskripsi gambar dan layar, Layanan AI, Skrip, Label khusus, Setelan cepat, Ringkasan, Jeda dan nonaktifkan, Profil setelan, Cadangkan dan pulihkan, Update dan penginstalan, Shizuku dan root, Bantuan & masukan, dan Setelan developer. Beberapa layar tidak ditampilkan di jam tangan dan TV, atau di perangkat yang tidak memiliki perangkat keras yang diperlukan fitur tersebut.
+Layar setelan utama mencantumkan layar setelan berikut: Ucapan, Panjang respons, Suara dan getaran, Output audio, Sentuhan, Gestur, Pintasan keyboard, Tombol volume, Perintah, Kontrol pembacaan, Menu SandFly, Menu kustom, Makro, Perintah suara, Navigasi, Mengetik, Braille, Tampilan, Notifikasi, Terjemahan, Deskripsi gambar dan layar, Layanan AI, SandFly Pro, Skrip, Label khusus, Setelan cepat, Ringkasan, Jeda dan nonaktifkan, Profil setelan, Cadangkan dan pulihkan, Update dan penginstalan, Shizuku dan root, Bantuan & masukan, dan Setelan developer. Beberapa layar tidak ditampilkan di jam tangan dan TV, atau di perangkat yang tidak memiliki perangkat keras yang diperlukan fitur tersebut.
 
 #### Menelusuri setelan {#getting-started-search}
 

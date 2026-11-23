@@ -199,7 +199,7 @@ Sel defaultnya adalah:
 | Titik 1 2 3 4 5 | **Setelan Cepat** |
 | Titik 2 3 4 5 | **Fokus pada item pertama di layar** |
 | Titik 1 5 | **Fokus pada item terakhir di layar** |
-| Titik 1 3 4 | **Membuka menu SandFly** |
+| Titik 1 3 4 | **Buka menu SandFly** |
 
 #### Mencari aplikasi {#braille-commands-apps}
 
@@ -207,7 +207,7 @@ Di pencarian aplikasi, ketik nama aplikasi dalam braille tidak singkat sesuai ba
 
 - Geser ke bawah atau ke atas untuk aplikasi berikutnya atau sebelumnya.
 - Geser ke kiri untuk menghapus sel terakhir, dan geser ke kiri dengan dua jari untuk mengosongkan.
-- Geser ke atas dengan dua jari untuk membuka aplikasi, atau geser ke atas dengan tiga jari untuk membukanya di layar terpisah.
+- Geser ke atas dengan dua jari untuk membuka aplikasi, atau geser ke atas dengan tiga jari untuk membukanya di layar terpisah. Jika Anda masuk ke pencarian aplikasi dari perintah braille, perintah braille ditampilkan lagi di atas aplikasi.
 - Geser ke bawah dengan dua jari untuk menutup.
 
 Pencarian aplikasi menutup setelah 15 detik tanpa sentuhan. Untuk membuka pencarian aplikasi secara langsung, jalankan **Ketik nama aplikasi dalam braille untuk membukanya**, di grup **Tindakan sistem** pada **Perintah**.
@@ -237,7 +237,7 @@ Anda juga dapat memberikan sel pada sebuah perintah dari layarnya sendiri di **P
 
 Sebuah sel menjalankan perintah dari profil perintah braille yang sedang digunakan, jika tidak ada maka dari perintah yang diberikan aplikasi yang tampil di depan, dan jika tidak ada maka perintah default.
 
-- **Perintah braille di aplikasi**: pilih **Tambahkan aplikasi**, pilih aplikasinya, lalu tambahkan sel seperti pada setelan default. Di dalam aplikasi, **Ketuk untuk menetapkan** menghentikan sel menjalankan perintah defaultnya. **Hapus aplikasi** menghapus aplikasi beserta sel-selnya.
+- **Perintah braille di aplikasi**: pilih **Tambahkan aplikasi**, pilih aplikasinya, lalu tambahkan sel seperti pada setelan default. Di dalam aplikasi, **Tidak ditetapkan** menghentikan sel menjalankan perintah defaultnya. **Hapus aplikasi** menghapus aplikasi beserta sel-selnya.
 - **Profil perintah braille**: pilih **Tambahkan profil perintah braille**, masukkan nama, lalu tambahkan sel. Di dalam profil, pilih **Ganti nama** atau **Hapus profil perintah braille**.
 - **Profil perintah braille yang sedang digunakan**: ditampilkan jika ada profil. Pilih **Default** atau salah satu profil.
 
@@ -291,7 +291,7 @@ Perintah **Buka setelan penampil braille**, di grup **Braille** pada **Perintah*
 
 Jika tombol tersebut sudah menjalankan perintah lain, dialog menawarkan untuk memindahkannya ke perintah baru; perintah lainnya kemudian tidak memiliki tombol. **Setel ulang** mengembalikan tombol default suatu perintah, dan **Reset semua tombol** melakukannya untuk semua perintah.
 
-**Perintah SandFly** mencantumkan perintah yang dijalankan gestur, seperti **Membuka menu SandFly**, **Notifikasi**, atau **Baca dari atas**, menurut grup, sehingga Anda dapat menetapkan tombol layar braille untuk masing-masing perintah. Perintah tanpa tombol pada layar braille yang terhubung tercantum dengan "Tidak ada tombol".
+**Perintah SandFly** mencantumkan perintah yang dijalankan gestur, seperti **Buka menu SandFly**, **Notifikasi**, atau **Baca dari atas**, menurut grup, sehingga Anda dapat menetapkan tombol layar braille untuk masing-masing perintah. Perintah tanpa tombol pada layar braille yang terhubung tercantum dengan "Tidak ada tombol".
 
 Tombol geser (panning) dan tombol routing tidak dapat diubah, kecuali joystick kanan arah kiri dan kanan pada layar braille EuroBraille. Tombol tanpa Spasi tetap mengetikkan titiknya di dalam kolom teks.
 

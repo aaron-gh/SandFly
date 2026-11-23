@@ -47,6 +47,8 @@ SandFly tidak membacakan tombol saat Anda menyentuhnya, tetapi mengucapkan tombo
 
 Beberapa kontrol mengabaikan aktivasi yang dikirim SandFly dan hanya bereaksi terhadap jari di layar. Perintah **Aktifkan dengan ketukan**, yang tidak ditetapkan secara default, mengetuk bagian tengah item yang difokuskan sebagai gantinya. Tetapkan perintah ini ke gestur atau pintasan keyboard; lihat [](#gestures). Skrip juga dapat melakukan hal yang sama untuk item terpilih setiap kali diaktifkan; lihat [](#scripts). Keduanya memerlukan Android 11 atau yang lebih baru; jika tidak, item diaktifkan seperti biasa.
 
+Untuk aplikasi yang tidak bereaksi saat item diaktifkan, aktifkan aplikasi tersebut di **Sentuhan** > **Ketuk dua kali mengetuk layar**, atau jalankan perintah **Ketuk dua kali mengetuk layar di aplikasi ini**, yang tidak ditetapkan secara default, di aplikasi tersebut. Mengaktifkan item di aplikasi itu kemudian mengetuk item tersebut. Perintah ini mengucapkan "Ketuk dua kali mengetuk layar aktif" atau "Ketuk dua kali mengetuk layar nonaktif", atau "Tidak ada aplikasi di depan" jika tidak ada aplikasi di depan. Fitur ini juga memerlukan Android 11 atau yang lebih baru, dan tidak tersedia di jam tangan atau TV.
+
 #### Ucapan saat Anda menyentuh layar {#touch-speech}
 
 Secara default, menyentuh layar menghentikan ucapan. Agar ucapan tetap berlanjut hingga sentuhan memfokuskan suatu item, nonaktifkan **Ucapan** > **Hentikan ucapan saat menyentuh layar**. Lihat [](#speech).
@@ -125,6 +127,8 @@ adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
 Dengan izin tersebut, SandFly mengucapkan "Memperbaiki eksplorasi sentuhan", mengakhiri sentuhan yang ditinggalkan Android dalam keadaan menempel, lalu mengucapkan "Eksplorasi sentuh diperbaiki". Sentuhan selama proses perbaikan langsung diteruskan ke aplikasi. Cara ini berfungsi pada ponsel yang mencantumkan sentuhan tersebut di `dumpsys input`, seperti ponsel Samsung.
 
 Tanpa izin tersebut, atau di ponsel lain, SandFly hanya dapat memberi tahu bahwa eksplorasi sentuhan mungkin macet dan Anda perlu memulai ulang ponsel. Menjelajahi area tanpa item yang bisa dibaca, seperti gim, juga tidak menemukan item, sehingga peringatan ini dapat muncul secara keliru paling sering sekali setiap 10 menit.
+
+Jika layar mati selama sentuhan, Android dapat tetap menganggap jari yang sudah diangkat masih menempel, sehingga hanya eksplorasi sentuhan yang berfungsi: gestur dan ketuk dua kali tidak melakukan apa pun. SandFly mendeteksi hal ini saat layar mati selama sentuhan, atau saat dua sentuhan berturut-turut berakhir sebagai eksplorasi sentuhan, lalu menonaktifkan dan mengaktifkan kembali eksplorasi sentuhan. Hal ini tidak bergantung pada **Perbaiki eksplorasi sentuhan yang macet** atau izin DUMP.
 
 ### Mereset semua setelan penundaan {#touch-reset-delays}
 

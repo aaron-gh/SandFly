@@ -36,7 +36,8 @@ Urutan ini juga berlaku untuk baris yang kotak centang atau tombol alihnya tidak
 Grup **Teks dan simbol** menentukan cara teks, tanda baca, huruf kapital, dan emoji diucapkan:
 
 - **Ucapkan tanda baca dan simbol**: **Semua** mengucapkan setiap tanda baca dan simbol. **Sebagian besar** mengucapkan sebagian besar simbol, seperti & dan @, tetapi menyerahkan tanda baca umum, seperti koma dan apostrof, kepada mesin ucapan. **Beberapa** (default) menyerahkan tanda baca dan simbol kepada mesin ucapan. **Tidak ada** menghilangkan tanda baca dan simbol dari ucapan, kecuali karakter yang dibaca tersendiri, seperti saat berpindah per karakter. Apostrof dan tanda hubung di dalam kata, pemisah di dalam angka, serta tanda baca yang mengakhiri kata tetap diserahkan kepada mesin ucapan. **Pelajari lebih lanjut** di daftar ini membuka halaman web tentang tingkat tanda baca.
-- **Huruf kapital**: apa yang dilakukan SandFly untuk huruf kapital: **Jangan lakukan apa pun**, **Ucapkan "huruf kapital"** (default), **Ubah tinggi nada**, atau **Putar suara**. Untuk pilihan selain **Ucapkan "huruf kapital"**, huruf kapital yang berdiri sendiri dikirim ke mesin ucapan dalam huruf kecil.
+- **Ucapkan simbol yang mengubah makna**, ditampilkan saat **Ucapkan tanda baca dan simbol** disetel ke **Tidak ada**: menyerahkan hal berikut kepada mesin ucapan: tanda plus atau minus tepat sebelum angka, tanda derajat, persen, per mil, dan mata uang, serta + − × ÷ = < > di antara angka. Nonaktif secara default.
+- **Huruf kapital**: apa yang dilakukan SandFly untuk huruf kapital: **Jangan lakukan apa pun**, **Ucapkan "huruf kapital"** (default), **Ubah tinggi nada**, atau **Putar suara**. Dengan pilihan apa pun selain **Ucapkan "huruf kapital"**, SandFly mengirim huruf kapital yang berdiri sendiri ke mesin ucapan dalam huruf kecil.
 - **Emoji**, **Hitung emoji berulang**, dan **Ucapkan "emoji" setelah nama emoji**: lihat [](#verbosity-emoji).
 - **Hitung simbol berulang**: mengucapkan berapa kali simbol berulang jika muncul 4 kali atau lebih secara berurutan. Aktif secara default.
 - **Ucapkan pemformatan teks** dan **Opsi pemformatan teks**: lihat [](#verbosity-text-formatting).
@@ -85,6 +86,8 @@ Grup **Pengumuman** menentukan apa yang diucapkan SandFly saat terjadi perubahan
 - **Nama jendela**: kapan SandFly mengucapkan nama jendela. **Selalu** mengucapkannya saat jendela terbuka dan saat fokus berpindah ke jendela itu dari jendela lain, sebelum item pertama. **Selalu, dihentikan oleh item pertama** (default) melakukan hal yang sama, tetapi item pertama yang difokuskan di jendela baru akan menghentikan pengucapan nama jendela. **Hanya ketika sebuah jendela terbuka** tidak mengucapkannya saat fokus berpindah ke jendela. **Jangan pernah** tidak mengucapkan nama jendela sama sekali.
 - **Selalu ucapkan jumlah item daftar**: mengucapkan item mana saja yang sedang tampil setelah setiap scroll. Nonaktif secara default. Jika nonaktif, SandFly tidak mengucapkan posisi daftar saat daftar di-scroll.
 - **Umumkan saat baterai penuh**: mengucapkan "Baterai terisi penuh" dan memutar suara **Baterai penuh** satu kali saat baterai penuh sementara pengisi daya tersambung. Nonaktif secara default.
+- **Tingkat baterai**: mengucapkan tingkat baterai, baik saat mengisi daya maupun tidak, setiap kali mencapai kelipatan 5% atau 10%, atau setiap 15 menit, 30 menit, atau satu jam. Tidak ada yang diucapkan saat layar mati. Nonaktif secara default.
+- **Suara tingkat baterai**: suara untuk **Tingkat baterai**: **Suara notifikasi**, **Suara SandFly** (default), atau profil suara. Lihat [](#notifications-voice).
 - **Umumkan durasi panggilan**: saat panggilan telepon berakhir, mengucapkan berapa lama panggilan berlangsung sejak dijawab atau dihubungi. Panggilan yang tidak dijawab tidak diumumkan. Nonaktif secara default.
 - **Umumkan keyboard ditampilkan atau disembunyikan**: aktif secara default.
 - **Layar aktif dan mati**: apa yang diucapkan SandFly saat layar mati atau menyala dan saat kunci ponsel dibuka. Lihat [](#verbosity-screen-on-off).
@@ -95,7 +98,7 @@ Grup **Pengumuman** menentukan apa yang diucapkan SandFly saat terjadi perubahan
 
 #### Layar aktif dan mati {#verbosity-screen-on-off}
 
-**Panjang respons** > **Layar aktif dan mati** memiliki tiga grup: **Saat layar mati**, **Saat layar menyala**, dan **Saat kunci ponsel dibuka**. Di ponsel lipat, menyalakan layar luar dihitung sebagai layar menyala, dan membuka ponsel segera setelahnya tidak mengucapkannya lagi. Setiap grup memiliki item yang sama, kecuali item pertama:
+**Panjang respons** > **Layar aktif dan mati** memiliki tiga grup: **Saat layar mati**, **Saat layar menyala**, dan **Saat kunci ponsel dibuka**. Di ponsel lipat, menyalakan layar luar dihitung sebagai layar menyala, dan membuka ponsel segera setelahnya tidak mengucapkannya lagi. Setiap grup memiliki item yang sama, kecuali beberapa item pertama:
 
 - **Ucapkan "Layar mati"**: hanya di **Saat layar mati**. Aktif secara default.
 - **Mode pendering**: hanya di **Saat layar mati**. Mengucapkan jika pendering disetel ke getar atau senyap. Aktif secara default.

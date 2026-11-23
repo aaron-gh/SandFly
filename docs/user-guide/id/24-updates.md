@@ -23,8 +23,10 @@ Secara default, SandFly hanya menawarkan rilis stabil. Untuk mendapatkan build p
 SandFly menampilkan "Memeriksa pembaruan", lalu salah satu dari berikut ini:
 
 - "SandFly sudah versi terbaru".
-- Dialog **Build SandFly** *nomor* **tersedia**, berisi perubahan di build baru. Untuk rilis stabil, perubahannya berupa catatan rilis. Untuk build pengembangan, berupa perubahan sejak build yang terinstal. Pilih **Instal** untuk memasangnya, atau **Batal**.
+- Dialog **SandFly build** *nomor* **tersedia**, berisi perubahan di build baru. Untuk rilis stabil, perubahannya berupa catatan rilis. Untuk build pengembangan, berupa perubahan sejak build yang terinstal. Pilih **Instal** untuk memasangnya, atau **Batal**.
 - "Tidak dapat memeriksa pembaruan", saat GitHub tidak dapat dijangkau. Coba lagi nanti.
+
+Saat build pengembangan baru sedang dipublikasikan, pemeriksaan menunggunya dan mencoba lagi, hingga satu menit.
 
 ### Pemeriksaan pembaruan otomatis {#updates-automatic}
 

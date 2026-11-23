@@ -239,7 +239,7 @@ Pemicu berwaktu hanya berjalan saat skrip sedang berjalan.
 
 Dengan SandFly Pro, **Buat skrip dengan SandFly Pro** di layar **Skrip** menulis skrip berdasarkan deskripsi Anda mengenai apa yang harus dilakukannya. **Ubah dengan SandFly Pro**, di halaman skrip buatan dan di pembuat skrip, mengubah skrip yang sudah ada. SandFly Pro membaca layar yang sedang tampil dan menguji skrip tersebut. Di notifikasinya, SandFly Pro menampilkan permintaan untuk membuka layar lain atau mencoba bagian skrip; pilih **Selesai** atau **Balas** di sana setelah Anda melakukannya.
 
-Skrip kemudian terbuka di pembuat skrip di bawah **Ditulis oleh SandFly Pro**, beserta ringkasan, **Terima**, **Minta perubahan**, dan **Buang**. Sebelum Anda menerimanya, skrip berjalan tanpa izin internet dan kode Java. Membuat skrip memakai batas penggunaan bulanan SandFly Pro jauh lebih banyak dibandingkan tugas lainnya. Lihat [](#pro).
+Skrip kemudian terbuka di pembuat skrip di bawah **Ditulis oleh SandFly Pro**, beserta ringkasan, **Terima**, **Minta perubahan**, dan **Buang**. Sebelum Anda menerimanya, skrip berjalan tanpa izin internet dan kode Java. Membuat skrip memakai batas penggunaan bulanan SandFly Pro jauh lebih banyak dibandingkan tugas lainnya. Lihat [](#pro-scripts).
 
 ### Memeriksa item {#scripts-inspect}
 
@@ -271,7 +271,7 @@ Untuk memberi label item dari Menu SandFly, aktifkan **Tambahkan atau edit label
 
 #### Mengekspor dan mengimpor label khusus {#scripts-labels-export}
 
-Label khusus tidak disertakan dalam setelan yang diekspor. Untuk memindahkannya ke ponsel lain, ekspor ke sebuah file.
+**Cadangkan dan pulihkan** > **Ekspor pengaturan** menyertakan label khusus. Lihat [](#profiles-export). Untuk membagikan label saja, ekspor ke sebuah file.
 
 - **Ekspor label khusus**: menyimpan semua label khusus ke sebuah file dan membuka lembar berbagi Android, tempat Anda memilih tujuan pengiriman atau penyimpanannya. SandFly mengucapkan "Tidak ada yang diekspor. Anda belum menambahkan label apa pun" jika belum ada label.
 - **Impor label khusus**: membaca file label. Di dialog **Impor label khusus ke SandFly**, pilih **Ganti** untuk mengganti label Anda dengan label dari file jika keduanya memberi label pada item yang sama, atau **Lewati** untuk mempertahankan label Anda.

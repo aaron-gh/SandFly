@@ -2,7 +2,7 @@
 
 SandFly memutar suara dan getaran untuk berbagai tindakan dan peristiwa, seperti memindahkan fokus, mengaktifkan item, scroll, dan membuka jendela. **Suara dan getaran** di setelan SandFly mengaktifkan dan menonaktifkan suara serta getaran, mengatur volume dan kekuatannya, serta memuat tema suara dan suara kontrol. **Output audio** mengatur tempat ucapan dan suara diputar, pada volume mana, serta apa yang terjadi pada audio lain dan panggilan saat SandFly aktif.
 
-Untuk mesin ucapan, suara, kecepatan bicara, volume ucapan, dan equalizer, lihat [](#speech). Untuk tombol volume dan **Umpan balik perubahan volume**, lihat [](#buttons).
+Untuk mesin ucapan, suara, kecepatan bicara, volume ucapan, dan efek ucapan, lihat [](#speech). Untuk tombol volume dan **Umpan balik perubahan volume**, lihat [](#buttons).
 
 ### Mengaktifkan atau menonaktifkan suara {#sound-feedback}
 
@@ -11,6 +11,8 @@ Grup **Suara** di **Suara dan getaran** memiliki setelan berikut:
 - **Respons suara**: memutar suara SandFly. Aktif secara default. Jika nonaktif, getaran tetap berfungsi.
 - **Volume efek suara**: volume suara SandFly, dari 5 hingga 100 persen dengan kelipatan 5. Defaultnya adalah 50 persen.
 - **Tema suara**: membuka tema suara terinstal, suara kontrol, dan audio 3D. Lihat [](#sound-themes).
+
+Pintasan keyboard **Mengaktifkan atau menonaktifkan respons suara (earcon)** mengaktifkan atau menonaktifkan **Respons suara**. Lihat [](#appendix-keyboard-shortcuts).
 
 Untuk menonaktifkan satu suara saja dan membiarkan sisanya aktif, lihat [](#sound-individual).
 
@@ -26,6 +28,8 @@ Grup **Getaran** di **Suara dan getaran** memiliki setelan berikut. Pada perangk
   - **Aktif dan nonaktif**: motor getar menyala dan mati pada kekuatan penuh. Setiap motor getar mendukung jenis ini.
 
 Jika getaran terasa lemah dengan **Efek haptik**, pilih **Denyut** lalu naikkan **Kekuatan getaran**.
+
+Perintah **Respons getar**, di grup perintah **Ucapan**, mengaktifkan atau menonaktifkan **Respons getar**. Lihat [](#commands).
 
 ### Suara dan getaran {#sound-events}
 
@@ -52,7 +56,7 @@ Berikut daftar suara sesuai nama yang ditampilkan di **Suara dan getaran satu pe
 | **Salah eja** | Kata yang salah eja. |
 | **Link** | Link di dalam teks. |
 | **Teks berformat** | Teks berformat, seperti tebal. |
-| **Layar mati** dan **Layar menyala** | Layar mati atau menyala. |
+| **Layar mati** dan **Layar aktif** | Layar mati atau menyala. |
 | **Layar disembunyikan** dan **Layar ditampilkan** | Layar disembunyikan, atau ditampilkan kembali. Lihat [](#display). |
 | **Memuat** | Deskripsi atau hasil lain sedang dimuat. |
 | **Model AI di perangkat sedang dimuat** | Model AI di perangkat sedang dimuat. |
@@ -84,7 +88,7 @@ Untuk mendengarkan suara atau merasakan getaran sebelum mengubah tombol alihnya:
 
 1. Pindahkan fokus ke tombol alih tersebut.
 2. Buka menu tindakan.
-3. Pilih **Dengarkan**.
+3. Pilih **Pratinjau**.
 
 Mengubah tombol alih tidak memutar suara atau getaran.
 
@@ -242,7 +246,7 @@ Kontrol pembacaan **Volume ucapan** beralih di antara volume-volume ini, dan kon
 
 ### Mengecilkan audio lain saat SandFly berbicara {#sound-ducking}
 
-**Output audio** > **Pengecilan volume audio** mengecilkan volume audio lain, seperti musik, saat SandFly berbicara. Setelan ini aktif secara default. Kontrol pembacaan **Pengecilan volume audio** mengaktifkan dan menonaktifkannya.
+**Output audio** > **Pengecilan volume audio** mengecilkan volume audio lain, seperti musik, saat SandFly berbicara. Setelan ini aktif secara default. Kontrol pembacaan **Pengecilan volume audio** dan perintah **Pengecilan volume audio**, di grup perintah **Ucapan**, mengaktifkan dan menonaktifkannya.
 
 ### Audio latensi rendah {#sound-low-latency}
 
@@ -250,7 +254,7 @@ Kontrol pembacaan **Volume ucapan** beralih di antara volume-volume ini, dan kon
 
 - Ucapan menggunakan jalur cepat di Android 11 dan lebih baru. Di versi lebih lama, hanya suara yang menggunakannya.
 - Ucapan diputar dengan cara biasa selama panggilan, sesaat setelah panggilan dimulai atau berakhir, saat aplikasi merekam dengan mikrofon, serta pada mesin ucapan yang memutar audionya sendiri.
-- Melanjutkan ucapan dari tengah kata setelah jeda memerlukan **Audio latensi rendah**. Lihat [](#speech-pause). Jika nonaktif, equalizer ucapan hanya berfungsi pada perangkat yang mendukungnya sebagai efek audio. Lihat [](#voice-effects).
+- Melanjutkan ucapan dari tengah kata setelah jeda memerlukan **Audio latensi rendah**. Lihat [](#speech-pause). Jika nonaktif, efek ucapan hanya berfungsi pada perangkat yang mendukungnya sebagai efek audio. Lihat [](#voice-effects).
 
 ### Mempertahankan ucapan di ponsel saat mentransmisikan layar {#sound-casting}
 

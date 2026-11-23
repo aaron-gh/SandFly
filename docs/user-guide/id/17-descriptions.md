@@ -73,6 +73,7 @@ Perintah berikut berada dalam kategori **Deskripsi gambar dan layar** di **Perin
 - **Ambil foto dan deskripsikan**: mengambil foto dengan kamera belakang dan mendeskripsikannya. Lihat [](#descriptions-take-picture).
 - **Deskripsikan gambar**, **Ucapkan deskripsi gambar**, dan **Tanyakan tentang gambar**: mendeskripsikan gambar yang difokuskan dalam jendela, mendeskripsikannya secara lisan, atau menjawab pertanyaan lisan tentangnya.
 - **Deskripsikan layar**, **Ucapkan deskripsi layar**, dan **Tanyakan tentang layar**: sama seperti di atas, untuk seluruh layar.
+- **Bagikan gambar item yang difokuskan** dan **Bagikan screenshot**: mengambil screenshot item yang difokuskan atau seluruh layar, lalu membuka sheet berbagi Android dengan screenshot tersebut, untuk mengirimkannya ke aplikasi lain. Memerlukan Android 11 atau yang lebih baru. Jendela aman tampil hitam di screenshot.
 - **Laporkan respons AI**: membuka laporan masalah berisi teks terakhir yang diberikan model AI, seperti deskripsi atau jawaban. Lihat [](#help).
 
 Dengan SandFly Pro, kategori ini juga memuat perintah pengenalan layar. Lihat [](#pro-screen-recognition).
@@ -83,7 +84,7 @@ Untuk gestur dan pintasan keyboard default, lihat [](#appendix-gestures) dan [](
 
 #### Kontrol pembacaan Tindakan AI {#descriptions-ai-actions}
 
-Kontrol pembacaan **Tindakan AI** menjalankan **Deskripsikan layar**, **Ucapkan deskripsi layar**, **Tanyakan tentang layar**, **Deskripsikan gambar**, **Ucapkan deskripsi gambar**, dan **Tanyakan tentang gambar**, serta dengan SandFly Pro, **Mulai atau hentikan tugas agen AI** dan **Ketik tugas agen AI**. Fitur ini memerlukan Android 11 atau versi lebih baru.
+Kontrol pembacaan **Tindakan AI** menjalankan **Deskripsikan layar**, **Ucapkan deskripsi layar**, **Tanyakan tentang layar**, **Deskripsikan gambar**, **Ucapkan deskripsi gambar**, **Tanyakan tentang gambar**, **Bagikan gambar item yang difokuskan**, dan **Bagikan screenshot**, serta dengan SandFly Pro, **Mulai atau hentikan tugas agen AI** dan **Ketik tugas agen AI**. Fitur ini memerlukan Android 11 atau versi lebih baru.
 
 1. Pilih kontrol pembacaan **Tindakan AI**.
 2. Geser ke atas atau ke bawah untuk memilih tindakan.
@@ -93,7 +94,7 @@ Ketuk dua kali akan menjalankan tindakan yang diumumkan kontrol pembacaan sampai
 
 ### Mengambil foto dan mendeskripsikannya {#descriptions-take-picture}
 
-**Ambil foto dan deskripsikan** membuka layar yang mengambil satu foto dengan kamera belakang lalu mendeskripsikannya seperti **Deskripsikan gambar**, lengkap dengan jendela yang sama untuk mengajukan pertanyaan.
+**Ambil foto dan deskripsikan** membuka layar yang mengambil satu foto dengan kamera belakang lalu mendeskripsikannya seperti **Deskripsikan gambar**, lengkap dengan jendela yang sama untuk mengajukan pertanyaan. Fitur ini hanya tersedia di perangkat yang memiliki kamera.
 
 1. Jalankan **Ambil foto dan deskripsikan**. SandFly mengucapkan "Tahan ponsel agar tetap stabil" lalu mengambil foto.
 2. Baca deskripsi, dan ajukan pertanyaan tentang foto tersebut jika diperlukan.
@@ -108,7 +109,7 @@ SandFly meminta izin kamera pada penggunaan pertama.
 Layar ini memiliki item berikut:
 
 - **Layanan AI**: layanan yang sedang digunakan. Daftar ini hanya menampilkan layanan yang sudah diatur, serta **Tidak ada**.
-- Item setelan untuk setiap layanan: **Pengaturan SandFly Pro**, **Setelan Gemini**, **Pengaturan Claude**, **Pengaturan OpenAI (ChatGPT)**, **Pengaturan Mistral**, **Pengaturan Groq**, **Pengaturan OpenRouter**, **Pengaturan Ollama Cloud**, **Pengaturan Qwen**, **Pengaturan Zhipu GLM**, **Pengaturan Baichuan**, **Pengaturan DeepSeek**, **Pengaturan Kimi**, **Pengaturan Hunyuan**, **Pengaturan SiliconFlow**, dan **Pengaturan Layanan lainnya**. Item untuk layanan yang sedang dipakai bertuliskan **Digunakan**; item untuk layanan yang belum diatur bertuliskan **Tidak diatur**. **Pengaturan SandFly Pro** tersedia pada build dengan SandFly Pro dan membuka layar SandFly Pro. Lihat [](#pro).
+- Item setelan untuk setiap layanan: **Pengaturan SandFly Pro**, **Setelan Gemini**, **Pengaturan Claude**, **Pengaturan OpenAI (ChatGPT)**, **Pengaturan Mistral**, **Pengaturan Groq**, **Pengaturan OpenRouter**, **Pengaturan Ollama Cloud**, **Pengaturan Qwen**, **Pengaturan Zhipu GLM**, **Pengaturan Baichuan**, **Pengaturan DeepSeek**, **Pengaturan Kimi**, **Pengaturan Hunyuan**, **Pengaturan SiliconFlow**, dan **Pengaturan Layanan lainnya**. Item untuk layanan yang sedang dipakai bertuliskan **Sedang digunakan**; item untuk layanan yang belum diatur bertuliskan **Tidak diatur**. **Pengaturan SandFly Pro** tersedia pada build dengan SandFly Pro dan membuka layar SandFly Pro. Lihat [](#pro).
 - **AI di perangkat**: lihat [](#descriptions-on-device).
 - **Pertahankan model pengenalan dimuat** dan **Server unduhan model**: lihat [](#descriptions-model-settings).
 
@@ -141,7 +142,7 @@ Pada paket gratis Gemini API, Google dapat menyimpan data yang diterima dan meng
 
 #### Data yang dikirim {#descriptions-privacy}
 
-Gambar, screenshot, dan pertanyaan yang Anda kirim akan diteruskan ke layanan yang sedang digunakan. Sebelum gambar pertama dikirim ke suatu layanan, SandFly menampilkan dialog berisi nama layanan tersebut; persyaratan dan kebijakan privasi layanan itu berlaku. Saat **Gunakan AI di perangkat** aktif, tidak ada data yang dikirim.
+Gambar, screenshot, dan pertanyaan yang Anda kirim akan diteruskan ke layanan yang sedang digunakan. Sebelum gambar pertama dikirim ke suatu layanan, SandFly menampilkan dialog berisi alamat layanan tersebut, seperti api.anthropic.com; persyaratan dan kebijakan privasi layanan itu berlaku. Saat **Gunakan AI di perangkat** aktif, tidak ada data yang dikirim.
 
 ### AI di perangkat {#descriptions-on-device}
 
@@ -153,7 +154,7 @@ Saat **Gunakan AI di perangkat** aktif, **Deskripsikan gambar**, **Deskripsikan 
 
 1. Buka **Layanan AI** > **AI di perangkat**.
 2. Pilih **Model**, lalu pilih salah satu model. Daftar menampilkan ukuran setiap model, memori yang dibutuhkan, dan catatan singkat, serta menandai model yang **didownload** atau **eksperimental**. Daftar ini hanya menampilkan model yang sesuai dengan kapasitas memori ponsel dan model yang sudah didownload.
-3. Pilih **Download model**. Jika menggunakan data seluler, SandFly akan bertanya terlebih dahulu.
+3. Pilih **Download model**, yang menampilkan ukuran download. Jika menggunakan data seluler, SandFly akan bertanya terlebih dahulu.
 4. Setelah download selesai, aktifkan **Gunakan AI di perangkat**.
 
 **Gemma 4 E2B** adalah model yang disarankan, dan menjadi default di ponsel dengan memori yang mencukupi. Di ponsel lain, default-nya adalah model terbesar yang muat. Model eksperimental mungkin tidak bekerja dengan baik.
@@ -226,7 +227,7 @@ Hasil dibacakan menggunakan suara SandFly, termasuk saat audio lain sedang diput
 - Jika tidak, digunakan layanan AI yang sedang dipakai, seperti SandFly Pro atau Claude, yang menerima gambar kamera setiap beberapa detik.
 - Jika Gemini yang menjadi layanan AI, digunakan Gemini Live API yang menerima gambar kamera setiap beberapa detik. SandFly membacakan teks jawabannya.
 
-Sebelum gambar kamera pertama dikirim ke suatu layanan, SandFly meminta persetujuan melalui dialog **Kirim gambar kamera ke** diikuti nama layanan tersebut; pilih **Kirim gambar**. Kunci API yang ditolak, batas penggunaan yang habis, atau kegagalan berulang akan menonaktifkan mode yang menggunakan AI, dan SandFly akan memberitahukannya.
+Sebelum gambar kamera pertama dikirim ke suatu layanan, SandFly menampilkan dialog **Kirim gambar kamera ke Gemini?**, atau untuk layanan lain **Kirim gambar kamera ke** diikuti alamat layanan tersebut, seperti api.anthropic.com. Pilih **Kirim gambar**. Kunci API yang ditolak, batas penggunaan yang habis, atau kegagalan berulang akan menonaktifkan mode yang menggunakan AI, dan SandFly akan memberitahukannya.
 
 ### Pesan error {#descriptions-errors}
 

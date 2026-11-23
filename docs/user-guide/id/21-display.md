@@ -18,7 +18,7 @@ Perintah **Tampilkan indikator fokus**, di kelompok perintah **SandFly**, mengak
 
 ### Menyembunyikan layar {#display-hide-screen}
 
-Fitur sembunyikan layar membuat tampilan layar menjadi hitam agar orang di sekitar Anda tidak dapat melihat isinya. SandFly dan aplikasi tetap berjalan seperti biasa.
+Fitur sembunyikan layar membuat tampilan layar menjadi hitam, termasuk bilah navigasi, agar orang di sekitar Anda tidak dapat melihat isinya. SandFly dan aplikasi tetap berjalan seperti biasa.
 
 Untuk menyembunyikan layar:
 
@@ -37,7 +37,7 @@ Agar dialog tidak muncul setiap kali, matikan **Selalu tampilkan peringatan ini*
 
 Dengan izin **Ubah setelan sistem**, SandFly juga menurunkan kecerahan layar ke tingkat minimum saat layar disembunyikan, dan mengembalikannya saat layar ditampilkan kembali. Saat pertama kali Anda menyembunyikan layar tanpa izin tersebut, SandFly membuka layar Android untuk mengizinkannya.
 
-Catatan: Layar tetap tersembunyi setelah SandFly dimulai ulang. Fitur sembunyikan layar tidak tersedia saat ponsel terkunci. Saat layar disembunyikan, deskripsi gambar tidak tersedia.
+Catatan: Layar tetap tersembunyi setelah SandFly dimulai ulang. Fitur sembunyikan layar tidak tersedia saat ponsel terkunci. Sebelum Android 14, deskripsi gambar tidak tersedia saat layar disembunyikan.
 
 Untuk mengubah suara saat menyembunyikan dan menampilkan layar, lihat [](#sound). Agar SandFly mengucapkan "Layar disembunyikan" saat layar menyala, lihat [](#verbosity).
 
@@ -48,7 +48,7 @@ Kontrol pembacaan **Kecerahan** mengubah kecerahan layar sistem, bahkan saat lay
 1. Geser ke atas atau ke bawah untuk memilih kontrol pembacaan hingga SandFly mengucapkan "Kecerahan". Lihat [](#reading).
 2. Geser ke atas untuk membuat layar lebih terang, atau geser ke bawah untuk membuatnya lebih redup.
 
-Setiap langkah mengubah kecerahan sekitar 10 persen, dan SandFly menyebutkan tingkat yang baru, misalnya "Kecerahan 40 persen." SandFly memerlukan izin **Ubah setelan sistem** untuk mengubah kecerahan, dan akan membuka layar Android untuk mengizinkannya pada kali pertama. Saat kecerahan adaptif aktif, SandFly mengucapkan "Nonaktifkan kecerahan adaptif untuk mengubah kecerahan."
+Setiap langkah mengubah kecerahan sebesar 10 persen dari penggeser kecerahan sistem, dan SandFly menyebutkan tingkat yang baru, misalnya "Kecerahan 40 persen." SandFly memerlukan izin **Ubah setelan sistem** untuk mengubah kecerahan, dan akan membuka layar Android untuk mengizinkannya pada kali pertama. Saat kecerahan adaptif aktif, SandFly mengucapkan "Nonaktifkan kecerahan adaptif untuk mengubah kecerahan."
 
 ### Menggunakan SandFly sebagai wallpaper {#display-wallpaper}
 
@@ -70,7 +70,7 @@ Ringkasan SandFly memerlukan Shizuku atau root untuk membaca dan membuka aplikas
 Setelan lainnya di **Ringkasan** adalah:
 
 - **Aplikasi terbaru di bagian bawah**: menempatkan aplikasi terbaru di bagian paling akhir, dan membuka daftar yang sudah digulir ke paling bawah. Nonaktif secara default.
-- **Jumlah kolom**: 1 menampilkan daftar. 2, 3, atau 4 menampilkan kisi dengan jumlah kolom tersebut. Default-nya adalah 1.
+- **Kolom**: 1 menampilkan daftar. 2, 3, atau 4 menampilkan kisi dengan jumlah kolom tersebut. Default-nya adalah 1.
 
 Setelan ini tidak tersedia di TV.
 

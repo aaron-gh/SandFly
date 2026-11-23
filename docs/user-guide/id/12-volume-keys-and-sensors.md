@@ -35,6 +35,7 @@ Penekanan tidak menjalankan perintah, dan tombol mengubah volume seperti biasa, 
 - Selama panggilan telepon, atau saat aplikasi memutar audio panggilan.
 - Saat ada jari di layar, atau selama pembacaan berkelanjutan.
 - Saat tombol menyesuaikan penggeser atau menggerakkan kursor.
+- Saat aplikasi Shortcut Menu ditampilkan.
 
 Saat panggilan berdering, hanya tombol volume yang memiliki perintah **Jawab panggilan** pada salah satu penekanannya yang menjalankan perintah.
 
@@ -47,7 +48,7 @@ Kedua setelan tersebut tetap menyerahkan tombol ke Android saat layar mati, sela
 
 ### Pintasan tombol volume saat layar mati {#buttons-screen-off}
 
-Jika **Pintasan tombol volume saat layar mati** aktif, penekanan tombol volume yang memiliki perintah tetap menjalankannya saat layar mati. Penekanan tanpa perintah mengubah volume. Setelan ini memerlukan Shizuku dan tidak ditampilkan jika SandFly menggunakan root alih-alih Shizuku atau di jam tangan; lihat [](#updates). Saat pertama kali mengaktifkannya, Shizuku menampilkan permintaan izin untuk SandFly. Nonaktif secara default.
+Jika **Pintasan tombol volume saat layar mati** aktif, penekanan tombol volume yang memiliki perintah tetap menjalankannya saat layar mati. Penekanan tanpa perintah mengubah volume. Setelan ini memerlukan Shizuku dan tidak ditampilkan jika SandFly menggunakan root alih-alih Shizuku atau di jam tangan; lihat [](#updates-shizuku). Saat pertama kali mengaktifkannya, Shizuku menampilkan permintaan izin untuk SandFly. Nonaktif secara default.
 
 ### Volume ucapan di ponsel Samsung {#buttons-samsung}
 
@@ -66,6 +67,8 @@ Agar tombol volume mengubah volume ucapan saat SandFly berbicara, aktifkan **Tom
 
 Jika nada digunakan, **Bisukan nada saat media diputar** mematikan nada saat aplikasi memutar media. Jika ucapan digunakan, **Bisukan ucapan saat media diputar** mematikan pengumuman saat aplikasi memutar media, dan **Hentikan ucapan untuk mengumumkan volume** menghentikan ucapan yang sedang diputar untuk mengumumkan volume. Kedua tombol media tersebut nonaktif secara default, sedangkan **Hentikan ucapan untuk mengumumkan volume** aktif.
 
+Jika ucapan digunakan, **Ubah volume ucapan tanpa pengumuman saat berbicara** menghilangkan pengumuman saat tombol volume mengubah volume ucapan selama SandFly berbicara atau memiliki ucapan dalam antrean, sehingga ucapan berlanjut dengan volume baru. Penekanan yang berurutan dalam satu detik dihitung sebagai satu rangkaian, yang tetap tanpa pengumuman setelah ucapan berakhir. Nada tetap diputar jika dipilih. Penekanan saat ada jari di layar, penekanan saat SandFly tidak berbicara, dan perubahan dari panel volume atau aplikasi tetap diumumkan. Di ponsel Samsung, di luar pembacaan berkelanjutan, tombol volume mengubah volume ucapan saat SandFly berbicara hanya jika **Tombol volume mengubah volume ucapan saat berbicara** aktif. Nonaktif secara default.
+
 Perubahan volume yang dilakukan SandFly, seperti melalui perintah volume, tidak mendapatkan umpan balik. Perubahan volume yang dilakukan aplikasi lain tetap mendapatkan umpan balik. Tidak ada nada selama panggilan atau saat SandFly dijeda.
 
 ### Sensor {#buttons-sensors}
@@ -74,7 +77,7 @@ Fitur berikut menggunakan sensor ponsel. Masing-masing diatur di layar yang dise
 
 - **Ketuk belakang**: dua, tiga, atau empat ketukan di bagian belakang ponsel menjalankan perintah. **Gestur** > **Ketuk belakang**; lihat [](#gestures-back-tap).
 - **Goyangkan**: menggoyangkan ponsel menjalankan perintah. **Gestur** > **Goyangkan**; lihat [](#gestures-shake).
-- **Tutupi sensor kedekatan untuk menghentikan ucapan**: menutupi sensor kedekatan menghentikan ucapan. Nonaktif secara default. **Ucapan** > **Tutupi sensor kedekatan untuk menghentikan ucapan**; lihat [](#speech).
+- **Tutupi sensor kedekatan untuk menghentikan ucapan**: menutupi sensor kedekatan menghentikan ucapan. Nonaktif secara default. **Ucapan** > **Tutupi sensor kedekatan untuk menghentikan ucapan**; lihat [](#speech-stop).
 - **Kunci sentuhan secara otomatis** > **Saat sensor jarak tertutup**: sentuhan dikunci saat sesuatu menutupi sensor jarak. Lihat [](#touch-lock).
-- **Kocok untuk berhenti** dan **Lambaikan tangan untuk berhenti**: menggoyangkan ponsel, atau menggerakkan tangan di atas sensor jarak, menghentikan pembacaan notifikasi. **Notifikasi** > **Berhenti membaca**; lihat [](#notifications).
-- **Speaker saat jauh dari telinga**: panggilan berpindah ke speaker saat Anda menjauhkan ponsel dari telinga, dan kembali ke earpiece saat Anda mendekatkannya. **Output audio** > **Speaker saat jauh dari telinga**; lihat [](#sound).
+- **Kocok untuk berhenti** dan **Lambaikan tangan untuk berhenti**: menggoyangkan ponsel, atau menggerakkan tangan di atas sensor jarak, menghentikan pembacaan notifikasi. **Notifikasi** > **Berhenti membaca**; lihat [](#notifications-stop).
+- **Speaker saat jauh dari telinga**: panggilan berpindah ke speaker saat Anda menjauhkan ponsel dari telinga, dan kembali ke earpiece saat Anda mendekatkannya. **Output audio** > **Speaker saat jauh dari telinga**. Memerlukan Android 12 atau yang lebih baru. Lihat [](#sound-calls).

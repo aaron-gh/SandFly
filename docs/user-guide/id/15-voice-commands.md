@@ -1,6 +1,6 @@
 ## Perintah suara {#voice-commands}
 
-Perintah suara menjalankan perintah SandFly dari ucapan: memindahkan fokus, membaca, mengedit teks, membuka aplikasi, mengaktifkan item di layar, menelepon kontak, mengirim pesan, atau mendeskripsikan layar. Satu perintah suara dapat berisi beberapa perintah secara berurutan. **Perintah suara** di setelan SandFly mengaktifkan AI untuk perintah yang tidak dipahami SandFly, serta menyimpan perintah suara yang Anda buat.
+Perintah suara menjalankan perintah SandFly dari ucapan: memindahkan fokus, membaca, mengedit teks, membuka aplikasi, mengaktifkan item di layar, menelepon kontak, mengirim pesan, atau mendeskripsikan layar. Satu perintah suara dapat berisi beberapa perintah secara berurutan. **Perintah suara** di setelan SandFly mengaktifkan AI untuk perintah yang tidak dipahami SandFly, serta menyimpan perintah suara yang Anda buat. Layar **Perintah suara** tidak ditampilkan di jam tangan.
 
 Untuk daftar lengkap frasa, lihat [](#appendix-voice-commands).
 
@@ -9,7 +9,7 @@ Untuk daftar lengkap frasa, lihat [](#appendix-voice-commands).
 1. Gunakan perintah **Mulai perintah suara**. Pada tata letak gestur SandFly, geser ke kanan lalu ke atas. Lihat [](#appendix-gestures).
 2. Ucapkan perintah.
 
-Pada penggunaan pertama, SandFly menampilkan **Menggunakan perintah suara untuk mengontrol SandFly** berisi contoh hal yang dapat diucapkan. Pilih **Gunakan perintah suara** untuk mulai merekam. Agar dialog ini tidak ditampilkan lagi, hapus centang **Selalu tampilkan pesan ini**.
+SandFly menampilkan **Menggunakan perintah suara untuk mengontrol SandFly** berisi contoh hal yang dapat diucapkan. Pilih **Gunakan perintah suara** untuk mulai merekam. Agar dialog ini tidak ditampilkan lagi, hapus centang **Selalu tampilkan pesan ini**.
 
 Perintah suara memerlukan izin mikrofon. SandFly merekam menggunakan pengenal ucapan yang dipilih di **Mengetik** > **Dikte**. Lihat [](#typing).
 
@@ -35,7 +35,7 @@ Jika SandFly tidak memahami perintah, SandFly mengucapkan "Tidak dapat mengenali
 
 #### Aplikasi, item, dan teks {#voice-commands-sandfly}
 
-- **Membuka aplikasi**: "buka", "jalankan", "mulai", atau "beralih ke", diikuti nama aplikasi. SandFly memilih aplikasi dengan nama utuh tersebut, jika tidak ada maka yang namanya diawali teks itu, atau yang memuat salah satu katanya. Jika beberapa aplikasi cocok secara setara, SandFly mengucapkan "Tidak ada aplikasi bernama" diikuti nama tersebut.
+- **Membuka aplikasi**: "buka", "jalankan", "mulai", atau "beralih ke", diikuti nama aplikasi. SandFly memilih aplikasi dengan nama utuh tersebut, jika tidak ada maka yang namanya diawali teks itu, atau yang memuat salah satu katanya. Jika tidak ada aplikasi yang cocok, atau beberapa aplikasi cocok secara setara, SandFly menjalankan perintah dengan nama tersebut, seperti "buka notifikasi"; jika tidak ada perintah seperti itu, perintah suara tidak dipahami.
 - **Mengaktifkan item di layar**: "ketuk", "ketuk dua kali", "klik", "tekan", "aktifkan", atau "pilih", diikuti teks item. SandFly mengaktifkan item pertama yang seluruh teksnya sama, atau jika tidak ada maka item pertama yang teksnya memuat teks tersebut. Jika tidak ada, SandFly mengucapkan "Tidak ditemukan" diikuti teks tersebut.
 - **Ketik teks**: "ketik", "tulis", atau "masukkan", diikuti teksnya. SandFly mengetikkannya di kolom edit yang difokuskan.
 - **Menjalankan perintah**: "jalankan" atau "lakukan" diikuti nama perintah, atau "jalankan makro" diikuti nama makro, seperti "jalankan makro pagi".
@@ -46,7 +46,7 @@ Jika SandFly tidak memahami perintah, SandFly mengucapkan "Tidak dapat mengenali
 - **Telepon**: "telepon", "hubungi", "panggil", "telepon ke", atau "lakukan panggilan ke", diikuti nama kontak atau nomor telepon. SandFly mengucapkan "Menelepon" diikuti nama tersebut lalu memulai panggilan. Pada penggunaan pertama, SandFly meminta izin untuk melakukan panggilan telepon; ucapkan perintah lagi setelah Anda mengizinkannya. Tanpa izin tersebut, aplikasi telepon terbuka dengan nomor tersebut.
 - **Mengirim pesan**: seperti "kirim pesan ke Sam yang berbunyi saya sedang di jalan", "SMS Sam saya sedang di jalan", "kirim pesan ke Sam lewat WhatsApp yang berbunyi halo", atau "beri tahu Sam lewat Signal halo". Tanpa isi teks, SandFly mengucapkan "Pesan untuk" diikuti nama tersebut, lalu merekam teksnya.
 
-Untuk nama kontak, SandFly memerlukan izin membaca kontak dan memintanya pada penggunaan pertama. Jika ada beberapa kontak dengan nama tersebut, SandFly mengucapkan "Ada lebih dari satu kontak bernama" diikuti nama lengkap mereka; ucapkan nama lengkapnya.
+Untuk nama kontak, SandFly memerlukan izin membaca kontak dan memintanya pada penggunaan pertama. Jika ada beberapa kontak dengan nama tersebut, SandFly mengucapkan "Ada lebih dari satu kontak bernama" diikuti nama lengkap mereka; ucapkan nama lengkapnya. Jika tidak ada kontak dengan nama tersebut, SandFly mengucapkan "Tidak ada kontak bernama" diikuti nama tersebut.
 
 Pesan dikirim melalui aplikasi SMS default kecuali Anda menyebutkan nama aplikasi. Untuk SMS atau WhatsApp, SandFly membuka percakapan dengan teks tersebut, mengucapkan "Kirim ke" diikuti nama dan teksnya, lalu merekam jawaban Anda. Ucapkan "ya", "kirim", "oke", atau "tentu", dan SandFly akan menekan **Kirim** lalu mengucapkan "Kirim ditekan". Jawaban lain, atau tanpa jawaban, membiarkan pesan belum terkirim di aplikasi, dan SandFly mengucapkan "Pesan tidak dikirim". Aplikasi lain membuka layar berbagi dengan teks tersebut, tempat Anda memilih percakapan.
 
@@ -55,7 +55,7 @@ Pesan dikirim melalui aplikasi SMS default kecuali Anda menyebutkan nama aplikas
 - **Mendeskripsikan layar**: "jelaskan layar", "deskripsikan layar", atau "apa yang ada di layar".
 - **Mendeskripsikan gambar yang difokuskan**: "jelaskan gambar ini", "deskripsikan foto ini", atau "apa yang ada di gambar ini".
 - **Salin**: "salin itu", "salin", atau "salin deskripsinya" menyalin deskripsi dari perintah sebelumnya, atau jika tidak ada maka frasa terakhir yang diucapkan SandFly.
-- **Kirim**: "kirim ke Sam", "bagikan ke Sam", atau "kirim ke Sam lewat WhatsApp" mengirim deskripsi dari perintah sebelumnya sebagai pesan. "Kirim deskripsi gambar ke Sam" dan "kirim deskripsi layar ke Sam" mendeskripsikan lalu mengirim dalam satu perintah; SandFly menanyakan "Kirim ke" diikuti nama tersebut sebelum menekan **Kirim**.
+- **Kirim**: "kirim ke Sam", "bagikan ke Sam", atau "kirim ke Sam lewat WhatsApp" mengirim deskripsi dari perintah sebelumnya sebagai pesan, atau jika tidak ada, frasa terakhir yang diucapkan SandFly. "Kirim deskripsi gambar ke Sam" dan "kirim deskripsi layar ke Sam" mendeskripsikan lalu mengirim dalam satu perintah; SandFly mengucapkan "Kirim ke" diikuti nama tersebut sebelum menekan **Kirim**.
 
 Perintah ini menggunakan layanan AI atau deskripsi di perangkat yang diatur di **Deskripsi gambar dan layar** dan **Layanan AI**. Lihat [](#descriptions).
 

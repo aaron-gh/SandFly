@@ -35,7 +35,7 @@ Layar sebuah makro memiliki:
 - **Tambahkan langkah**: menambahkan langkah. Di bawahnya, SandFly menunjukkan posisi penambahan langkah: **Di akhir**, **Di awal**, atau setelah suatu langkah. Langkah baru masuk setelah langkah yang terakhir Anda tambahkan, sehingga langkah yang ditambahkan setelah **Jika** atau perulangan masuk ke dalam bloknya.
 - **Rekam langkah**: merekam langkah pada posisi tempat **Tambahkan langkah** menambahkannya. Lihat [](#macros-record).
 - **Jalankan hanya jika**: kondisi yang harus terpenuhi agar makro berjalan. **Selalu** secara default. Jika kondisi tidak terpenuhi, makro tidak melakukan apa pun, dan **Jalankan sekarang** mengucapkan "Makro tidak dijalankan. Jalankan hanya jika: tidak terpenuhi". Lihat [](#macros-conditions).
-- **Aplikasi**: aplikasi tempat makro berjalan, atau **Semua aplikasi** (default). Makro dengan aplikasi tertentu hanya berjalan saat aplikasi tersebut berada di depan.
+- **Aplikasi**: aplikasi tempat makro berjalan, atau **Semua aplikasi** (default). Makro dengan aplikasi tertentu hanya berjalan saat aplikasi tersebut berada di depan; di tempat lain, **Jalankan sekarang** mengucapkan "Makro tidak dijalankan. Hanya berjalan di" diikuti nama aplikasi tersebut.
 - **Tampilkan di Tindakan**: mencantumkan makro di menu **Tindakan** dan kontrol pembacaan **Tindakan** pada setiap item di aplikasinya, atau di setiap aplikasi untuk **Semua aplikasi**, setelah tindakan aplikasi tersebut. Memilihnya di sana akan menjalankan makro. Nonaktif secara default.
 - **Tampilkan di Tindakan hanya jika**: ditampilkan saat **Tampilkan di Tindakan** aktif. Kondisi yang harus terpenuhi pada item yang difokuskan agar makro ditampilkan. Dengan kondisi, makro dihitung sebagai tindakan item untuk **Ubah kontrol pembacaan secara otomatis**, sehingga kontrol pembacaan **Tindakan** dipilih pada item tersebut; tanpa kondisi, tidak demikian.
 - **Langkah**: daftar langkah secara berurutan. Langkah di dalam blok **Jika** atau perulangan ditampilkan menjorok ke dalam.
@@ -54,7 +54,7 @@ Jika blok makro tidak cocok, seperti **Jika** tanpa **Akhir jika**, layar menamp
 - **Jalankan perintah**: menjalankan perintah apa pun selain makro. Pilih kategori, lalu perintahnya.
 - **Ketuk item**: mengaktifkan item pertama di layar yang teks atau deskripsinya memuat teks tertentu, tanpa membedakan huruf besar/kecil. Item yang seluruh teksnya cocok didahulukan. SandFly menunggu item muncul, 3 detik secara default, diatur melalui **Detik menunggu item**.
 - **Ketuk di posisi**: mengetuk layar pada koordinat X dan Y dalam piksel dari kiri atas. Memerlukan Android 11 ke atas.
-- **Sentuh lama item**: menyentuh bagian tengah item selama **Detik untuk menahan**, 1 detik secara default, lalu mengangkat di tempat atau menggeser ke atas, bawah, kiri, atau kanan sejauh jarak dalam dp sebelum diangkat. Berguna untuk tombol yang bekerja saat ditahan, seperti tombol pesan suara di aplikasi chat.
+- **Sentuh lama item**: menyentuh bagian tengah item selama **Detik untuk menahan**, 1 detik secara default, lalu mengangkat di tempat atau menggeser ke atas, bawah, kiri, atau kanan sejauh jarak dalam dp sebelum diangkat. Berguna untuk tombol yang bekerja saat ditahan, seperti tombol pesan suara di aplikasi chat. Memerlukan Android 11 atau yang lebih baru.
 - **Fokus ke item**: menemukan item seperti **Ketuk item** dan memindahkan fokus aksesibilitas ke sana, yang membacakannya.
 - **Ucapkan item**: menemukan item seperti **Ketuk item** dan membacakan namanya tanpa memindahkan fokus.
 - **Tekan lama atau scroll item**: menekan lama, menggulir maju, atau menggulir mundur suatu item beberapa kali. Untuk item yang tidak mendukungnya, SandFly menggunakan item terdekat di sekitarnya yang mendukung, seperti bilah geser. Pengguliran tanpa teks item akan menggulir daftar terbesar di layar.
@@ -68,7 +68,7 @@ Jika blok makro tidak cocok, seperti **Jika** tanpa **Akhir jika**, layar menamp
 - **Ulangi**, **Ulangi selama**, **Akhir ulangi**, dan **Keluar dari perulangan**: menjalankan langkah lebih dari sekali. Lihat [](#macros-repeat).
 - **Hentikan makro**: menghentikan makro.
 
-Jika suatu langkah gagal, seperti item yang tidak ditemukan, SandFly mengucapkan "Makro dihentikan. Gagal:" diikuti nama langkahnya, lalu makro berhenti.
+Jika suatu langkah gagal, SandFly mengucapkan "Makro dihentikan. Gagal:" diikuti nama langkahnya, lalu makro berhenti. Jika item suatu langkah tidak ditemukan, SandFly mengucapkan "Makro dihentikan. Tidak ditemukan:" diikuti teks item tersebut. **Tunggu sampai** yang kehabisan waktu mengucapkan "Makro dihentikan. Waktu habis:" diikuti nama langkahnya.
 
 #### Menemukan item {#macros-find-items}
 
@@ -77,7 +77,7 @@ Langkah dan pengujian yang mencari item memiliki kolom berikut:
 - **Teks item**: teks yang dicari.
 - **Ekspresi reguler**: membaca **Teks item** sebagai ekspresi reguler, dicocokkan di bagian mana pun dari teks tanpa membedakan huruf besar/kecil. Grup berulang tidak boleh berisi pengulangan atau `|`, seperti `(a+)+`.
 - **Cocokkan di**: tempat pencarian. **Teks apa pun** (default), atau hanya **Teks**, **Deskripsi**, **Petunjuk**, **Status**, **Tooltip**, atau **ID sumber daya**. ID sumber daya cocok dengan atau tanpa nama paketnya, sehingga `send` cocok dengan `com.example:id/send`.
-- **Jenis item**: **Jenis apa pun** (default), atau hanya item yang **Dapat diklik**, **Dapat diklik lama**, **Dapat diedit**, **Dapat di-scroll**, **Dapat disesuaikan**, **Dapat dicentang**, **Dicentang**, **Dipilih**, **Judul**, atau **Diaktifkan**. Dengan **Dapat diklik**, **Ketuk item** mengetuk tombol dan bukan judul yang memiliki teks yang sama. Pengujian menanyakan jenis item setelah teks.
+- **Jenis item**, kecuali di **Fokus ada di dalam item**: **Jenis apa pun** (default), atau hanya item yang **Dapat diklik**, **Dapat diklik lama**, **Dapat diedit**, **Dapat di-scroll**, **Dapat disesuaikan**, **Dapat dicentang**, **Dicentang**, **Dipilih**, **Judul**, atau **Diaktifkan**. Dengan **Dapat diklik**, **Ketuk item** mengetuk tombol dan bukan judul yang memiliki teks yang sama. Pengujian menanyakan jenis item setelah teks.
 
 Untuk melihat isi setiap kolom suatu item dan jenis itemnya, gunakan **Periksa item yang difokuskan**. Lihat [](#macros-inspect).
 
@@ -122,7 +122,7 @@ Jenis pengujian yang tersedia:
 - **Aplikasi di depan**: suatu aplikasi sedang berada di depan.
 - **Keyboard ditampilkan**: keyboard di layar sedang ditampilkan.
 - **Layar terkunci**: layar kunci sedang ditampilkan.
-- **Nilai**: suatu nilai memuat teks tertentu, atau, jika **Berisi** kosong, nilai tersebut telah disetel.
+- **Nilai**: suatu nilai memuat teks tertentu, atau, jika **Berisi** kosong, nilai tersebut telah disetel. Dengan **Ekspresi reguler**, teks tersebut adalah ekspresi reguler.
 
 Saat kondisi sudah memiliki pengujian, **Tambahkan pengujian** terlebih dahulu menanyakan **Gabungkan dengan dan** atau **Gabungkan dengan atau**. Pilih pengujian untuk tindakan berikut:
 
@@ -140,7 +140,7 @@ Saat kondisi sudah memiliki pengujian, **Tambahkan pengujian** terlebih dahulu m
 #### Ulangi {#macros-repeat}
 
 - **Ulangi**: menjalankan langkah hingga **Akhir ulangi** sejumlah kali, dari 1 hingga 1.000.
-- **Ulangi selama**: menjalankan langkah hingga **Akhir ulangi** selama kondisi terpenuhi, maksimal 1.000 kali dalam satu kali makro dijalankan.
+- **Ulangi selama**: menjalankan langkah hingga **Akhir ulangi** selama kondisi terpenuhi, maksimal 1.000 kali dalam satu kali makro dijalankan. Setelah 1.000 kali, SandFly mengucapkan "Makro dihentikan. Diulang 1000 kali:" diikuti nama langkahnya, lalu makro berhenti.
 - **Keluar dari perulangan**: melanjutkan ke langkah setelah **Akhir ulangi** dari perulangan tempatnya berada.
 
 **Tambahkan langkah** menambahkan blok perulangan beserta **Akhir ulangi**, dan langkah yang Anda tambahkan berikutnya masuk ke dalamnya.
@@ -203,4 +203,4 @@ Aktifkan suatu baris untuk menyalin nilainya. **Salin semua** menyalin semua det
 
 **Salin detail item** menyalin detail yang sama tanpa membuka jendela, dan mengucapkan "Detail item disalin". **Salin hierarki layar** menyalin semua item di layar sebagai teks, satu baris per item beserta kelas, ID, peran, status, dan teksnya, untuk menulis skrip.
 
-**Periksa item yang difokuskan** dan **Salin detail item** dapat ditambahkan ke menu SandFly; keduanya nonaktif secara default. Untuk memeriksa item, pindahkan fokus ke item tersebut, buka menu SandFly, lalu pilih **Periksa item yang difokuskan**: jendela akan menampilkan item yang difokuskan sebelum menu dibuka.
+**Periksa item yang difokuskan**, **Salin detail item**, dan **Salin hierarki layar** dapat ditambahkan ke menu SandFly; semuanya nonaktif secara default. Untuk memeriksa item, pindahkan fokus ke item tersebut, buka menu SandFly, lalu pilih **Periksa item yang difokuskan**: jendela akan menampilkan item yang difokuskan sebelum menu dibuka.

@@ -34,7 +34,7 @@ Layar **Kirim masukan** memiliki:
 1. Buka **Bantuan & masukan** > **Kirim masukan**.
 2. Pilih **Kirim masukan**.
 3. Isi formulir:
-   - **Jenis umpan balik**: **Perilaku tidak semestinya**, **Kerusakan**, **Lambat atau tidak responsif**, atau **Saran**. Pilihan default adalah **Perilaku tidak semestinya**.
+   - **Jenis umpan balik**: **Perilaku salah**, **Error tiba-tiba**, **Lambat atau tidak merespons**, atau **Saran**. Pilihan default adalah **Perilaku salah**.
    - **Bagian**: bagian dari SandFly, seperti **Ucapan**, **Gestur**, **Penampil braille**, atau **Pembaruan**.
    - **Judul**: ringkasan singkat. Wajib diisi.
    - **Aplikasi tempat hal itu terjadi**: nama aplikasi, jika masalah hanya terjadi di satu aplikasi.

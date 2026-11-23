@@ -15,7 +15,7 @@ Beberapa fitur memerlukan akses notifikasi untuk SandFly, yang diberikan melalui
 - Ringkasan notifikasi di panel notifikasi.
 - Daftar notifikasi SandFly.
 
-Untuk memberikan akses notifikasi, pilih **Aktifkan akses notifikasi** di layar **Kapan dibaca**, **Berhenti membaca**, atau **Ringkasan dan waktu**, lalu aktifkan SandFly di daftar tersebut. SandFly hanya terhubung ke notifikasi saat SandFly aktif.
+Untuk memberikan akses notifikasi, pilih **Aktifkan akses notifikasi** di layar **Kapan dibaca**, **Berhenti membaca**, atau **Ringkasan dan waktu**, lalu aktifkan SandFly di daftar tersebut. Item ini hanya ditampilkan saat SandFly tidak memiliki akses notifikasi. SandFly hanya terhubung ke notifikasi saat SandFly aktif.
 
 ### Mengaktifkan atau menonaktifkan pembacaan notifikasi {#notifications-speech-on-off}
 
@@ -76,9 +76,9 @@ Untuk setelan suara di layar ini, lihat [](#notifications-voice).
 Di bawah **Notifikasi** > **Pembacaan notifikasi** > **Suara**:
 
 - **Suara**: membacakan notifikasi dengan salah satu profil suara Anda beserta semua setelannya, seperti mesin ucapan, kecepatan, dan nada suara lain. Default-nya adalah **Suara SandFly**.
-- **Profil suara**: membuka profil suara, tempat Anda membuatnya dan mengubahnya. Lihat [](#speech).
+- **Profil suara**: membuka profil suara, tempat Anda membuatnya dan mengubahnya. Lihat [](#speech-voice-profiles).
 - **Baca menimpa ucapan SandFly dengan suara berbeda**: lihat di bawah. Nonaktif secara default.
-- **Deteksi bahasa**: mengucapkan setiap notifikasi dalam bahasa penulisannya. Setelan ini memerlukan **Ganti bahasa secara otomatis** di setelan Ucapan. Nonaktif secara default.
+- **Deteksi bahasa**: mengucapkan setiap notifikasi dalam bahasa penulisannya. Setelan ini memerlukan **Ucapan** > **Ganti bahasa secara otomatis**. Lihat [](#speech-languages). Nonaktif secara default.
 - **Suara sebelum notifikasi**: memutar suara sebelum setiap notifikasi. Nonaktif secara default.
 
 Aplikasi dan aturan dapat memiliki suaranya sendiri. Lihat [](#notifications-apps) dan [](#notifications-rules).
@@ -87,7 +87,7 @@ Cara notifikasi dengan suara berbeda dibacakan:
 
 - Notifikasi dengan profil suara yang sama dengan suara SandFly dibacakan setelah ucapan saat ini, di antrean ucapan yang sama.
 - Notifikasi dengan suara berbeda juga dibacakan setelah ucapan saat ini, agar dua suara tidak berbicara bersamaan. Notifikasi menunggu hingga 45 detik. Jika **Baca menimpa ucapan SandFly dengan suara berbeda** aktif, notifikasi langsung dibacakan menimpa ucapan saat ini.
-- **Baca menimpa ucapan SandFly dengan suara berbeda** tidak berlaku saat **Ucapkan hanya fokus yang dipindahkan pengguna** berlaku pada aplikasi di depan, atau saat asisten atau panggilan memutar audio. Lihat [](#verbosity).
+- **Baca menimpa ucapan SandFly dengan suara berbeda** tidak berlaku saat **Ucapkan hanya fokus yang dipindahkan pengguna** berlaku pada aplikasi di depan, atau saat asisten atau panggilan memutar audio. Lihat [](#verbosity-own-speech).
 - Saat **Senyap saat merekam**, di **Ucapan**, berlaku, tidak ada notifikasi yang dibacakan. Lihat [](#speech).
 - Saat notifikasi dengan suara berbeda masuk bersamaan, masing-masing menunggu notifikasi sebelumnya selesai.
 
@@ -98,7 +98,7 @@ Jika mesin ucapan suatu profil suara gagal, SandFly membacakan notifikasi dengan
 **Notifikasi** > **Aplikasi** mengatur cara pembacaan notifikasi setiap aplikasi.
 
 - **Aplikasi lain**: cara SandFly membacakan notifikasi dari aplikasi yang tidak memiliki setelan khusus: **Baca** (default), **Hanya nama aplikasi**, atau **Jangan baca**.
-- **Aplikasi**: aplikasi yang terpasang, aplikasi yang memiliki setelan, dan aplikasi di riwayat. Masing-masing menampilkan setelannya.
+- **Aplikasi**: aplikasi di peluncur, aplikasi yang memiliki setelan, dan aplikasi di riwayat, menurut nama. Masing-masing menampilkan setelannya.
 
 Untuk satu aplikasi:
 
@@ -107,7 +107,7 @@ Untuk satu aplikasi:
 - **Waktu antara notifikasi aplikasi**: jeda tersingkat antara dua notifikasi aplikasi yang dibacakan. **Seperti aplikasi lainnya** menggunakan setelan di **Pengulangan**.
 - **Format ucapan**: format ucapan khusus untuk aplikasi tersebut. Lihat [](#notifications-reading).
 - **Suara**: **Seperti aplikasi lainnya**, **Suara SandFly**, atau profil suara, seperti profil dengan mesin ucapan lain.
-- **Setel ulang**: menghapus setelan khusus aplikasi tersebut.
+- **Setel ulang**: menghapus setelan khusus aplikasi tersebut. Hanya ditampilkan untuk aplikasi yang memiliki setelan.
 
 ### Kata dan pengganti {#notifications-words}
 
@@ -203,23 +203,25 @@ Semua kecuali **Modus saku** dan **Juga ketika notifikasi ditutup di jam tangan 
 
 **Notifikasi** > **Ringkasan dan waktu** membacakan notifikasi di panel notifikasi, dan mengucapkan waktu secara berkala. Di bawah **Ringkasan**:
 
-- **Aktifkan akses notifikasi**: ringkasan memerlukan akses ini.
+- **Aktifkan akses notifikasi**: ringkasan memerlukan akses ini. Hanya ditampilkan saat SandFly tidak memiliki akses notifikasi.
 - **Baca notifikasi sekarang**: membacakan notifikasi di panel notifikasi. SandFly harus aktif.
 - **Baca notifikasi setiap hari**: membacakannya setiap hari pada **Waktu**, 08:00 secara default.
 - **Yang terbaru dulu**: membacakan notifikasi terbaru lebih dulu. Nonaktif secara default.
 - **Nama Anda**: nama untuk sapaan di awal, seperti "Selamat pagi. Sam."
 - **Jeda di antara notifikasi**: dari **Nonaktif** (default) hingga 5 detik.
 
-Ringkasan dimulai dengan sapaan dan jumlah notifikasi, seperti "Anda memiliki 5 notifikasi.", lalu membacakan setiap notifikasi sebagai aplikasi, judul, dan teks.
+Ringkasan dimulai dengan sapaan dan jumlah notifikasi, seperti "Anda memiliki 5 notifikasi.", lalu membacakan setiap notifikasi sebagai aplikasi, judul, dan teks. Ringkasan grup dan notifikasi yang sedang berlangsung tidak disertakan. **Aplikasi**, **Kata dan pengganti**, **Jenis notifikasi**, dan **Aturan** berlaku, dan notifikasi yang dikecualikan olehnya tidak dihitung.
 
 Di bawah **Pengumuman waktu**:
 
 - **Ucapkan waktunya setiap**: **Nonaktif** (default), 15 menit, 30 menit, 1 jam, atau 3 jam.
-- **Aktifkan Alarm dan pengingat**: memungkinkan SandFly mengucapkan waktu tepat pada waktunya. Tanpa izin ini, Android dapat menunda pengumuman.
+- **Aktifkan Alarm dan pengingat**: membuka setelan Android yang memungkinkan SandFly mengucapkan waktu tepat pada waktunya. Tanpa izin ini, Android dapat menunda pengumuman. Hanya ditampilkan saat **Ucapkan waktunya setiap** tidak disetel ke **Nonaktif** dan setelan tersebut nonaktif. SandFly juga membuka setelan Android ini saat Anda memilih interval untuk **Ucapkan waktunya setiap** atau mengaktifkan **Baca notifikasi setiap hari**, kecuali jika setelan tersebut sudah aktif.
 - **Format waktu**: teks yang diucapkan SandFly, dengan placeholder `{time}`, `{date}`, dan `{battery}` (persentase baterai). Default-nya adalah "Sekarang pukul {time}".
 - **Suara**: **Suara notifikasi** (default), **Suara SandFly**, atau profil suara.
 
 Ringkasan dibacakan dengan suara notifikasi.
+
+Agar tingkat baterai diucapkan pada interval tertentu, lihat **Panjang respons** > **Tingkat baterai** di [](#verbosity-announcements).
 
 ### Riwayat pemberitahuan {#notifications-history}
 
@@ -242,7 +244,7 @@ Pilih notifikasi untuk tindakan berikut, yang ditampilkan dengan nama aplikasiny
 
 ### Otomatisasi {#notifications-automation}
 
-Aplikasi otomatisasi, seperti Tasker atau MacroDroid, dapat mengontrol pembacaan notifikasi melalui siaran (broadcast) ke SandFly. Aktifkan **Notifikasi** > **Izinkan aplikasi otomatisasi** terlebih dahulu; setelan ini nonaktif secara default karena aplikasi mana pun dapat mengirimkannya. **Notifikasi** > **Otomatisasi** mencantumkan tindakannya dan menyalin tindakan yang Anda pilih:
+Aplikasi otomatisasi, seperti Tasker atau MacroDroid, dapat mengontrol pembacaan notifikasi melalui siaran (broadcast) ke SandFly. Aktifkan **Notifikasi** > **Izinkan aplikasi otomatisasi** terlebih dahulu; setelan ini nonaktif secara default karena aplikasi mana pun dapat mengirimkannya. **Notifikasi** > **Otomatisasi** mencantumkan tindakannya, masing-masing dengan tindakan siarannya: nama paket SandFly diikuti tindakan seperti `.action.READ_NOTIFICATIONS`. Pilih tindakan untuk menyalin tindakan siarannya:
 
 - **Aktifkan pembacaan notifikasi**
 - **Nonaktifkan pembacaan notifikasi**
@@ -270,7 +272,7 @@ Setelan untuk daftar ini:
 
 - **Urutkan notifikasi dari yang terbaru, tanpa grup**: setiap notifikasi menjadi item tersendiri, yang terbaru lebih dulu, dibacakan sebagai aplikasi, waktu, judul, dan teks. Nonaktif secara default.
 - **Kecualikan pemutar media dari daftar notifikasi**: mengecualikan notifikasi pemutar media. Jumlah notifikasi yang dibacakan saat layar menyala juga mengecualikannya. Nonaktif secara default.
-- **Detail notifikasi**: bagian notifikasi yang dibacakan daftar beserta urutannya: **Judul**, **Teks**, **Nama aplikasi**, **Waktu**, dan **Diputar atau dijeda**. Setiap bagian memiliki tindakan **Pindahkan ke atas** dan **Pindahkan ke bawah**.
+- **Detail notifikasi**: bagian notifikasi yang dibacakan daftar beserta urutannya: **Judul**, **Teks**, **Nama aplikasi**, **Waktu**, dan **Diputar atau dijeda**. Setiap bagian berupa kotak centang, semuanya dicentang secara default, dan memiliki tindakan **Pindahkan ke atas** dan **Pindahkan ke bawah**.
 
 ### Notifikasi yang tidak diumumkan Android {#notifications-not-announced}
 

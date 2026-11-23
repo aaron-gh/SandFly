@@ -36,17 +36,19 @@ Di Android 13 dan yang lebih baru, memilih salah satu dari tiga metode terakhir 
 
 **Mengetik** > **Penundaan sentuh lama saat mengetik** mengatur berapa lama Anda menahan jari pada sebuah tombol sebelum SandFly menekannya lama, misalnya untuk membuka karakter alternatif dari tombol tersebut. Pilihannya adalah 0,5, 1, 2, 3, dan 5 detik; defaultnya adalah 3 detik. Setelan ini tidak tersedia dengan metode pengetikan **Tahan jari untuk memilih tombol, lalu ketuk dua kali**.
 
-Saat **Mengetik** > **Tahan tombol tetap ditekan setelah jeda sentuh lama** aktif, SandFly menekan tombol ke bawah pada akhir jeda dan meneruskan sisa sentuhan ke keyboard, seperti yang dilakukan ketuk dua kali lalu tahan. Keyboard kemudian menangani sentuhan itu sebagai tekan lama miliknya sendiri, seperti tombol Delete yang berulang saat ditahan. Ini berlaku untuk metode angkat untuk mengetik, pada keyboard selain Gboard. Setelan ini nonaktif secara default.
+Saat **Mengetik** > **Tahan tombol tetap ditekan setelah jeda sentuh lama** aktif, SandFly menekan tombol ke bawah pada akhir jeda dan meneruskan sisa sentuhan ke keyboard, seperti yang dilakukan ketuk dua kali lalu tahan. Keyboard kemudian menangani sentuhan itu sebagai tekan lama miliknya sendiri, seperti tombol Delete yang berulang saat ditahan. Ini berlaku untuk metode angkat untuk mengetik, pada semua keyboard kecuali Gboard dan Pixelboard versi sebelum 18.8. Setelan ini nonaktif secara default.
 
 #### Karakter alternatif di Gboard {#typing-gboard-alternatives}
 
 Saat Anda menahan tombol di Gboard, SandFly menekannya lama setelah jeda sentuh lama, dan Gboard membuka jendela pop-up karakter alternatif. SandFly membacakan karakter yang dipilih, seperti "Koma", segera setelah pop-up terbuka. Geser jari Anda ke karakter lain untuk mendengarnya, lalu angkat jari untuk mengetik karakter yang sedang dipilih.
 
-Di Android 11 dan yang lebih baru, SandFly menjelajahi sentuhan di Gboard, dan di Pixelboard yang dibangun darinya, secara langsung alih-alih melalui jelajah sentuh. Saat pop-up terbuka, jari Anda memilih salah satu karakternya di mana pun posisinya—karakter terdekat saat jari Anda berada di luar pop-up—dan mengangkat jari akan mengetiknya lalu menutup pop-up. Saat jari Anda meninggalkan keyboard tanpa pop-up yang terbuka, jelajah sentuh mengambil alih untuk bagian layar lainnya, dan mengangkat jari di sana tidak mengetik apa pun. Ini tidak berlaku dengan metode pengetikan **Tahan jari untuk memilih tombol, lalu ketuk dua kali**.
+Gboard 18.8 dan yang lebih baru menerima sentuhan melalui jelajah sentuh Android, seperti keyboard lainnya. Dengan Gboard versi sebelumnya, dan Pixelboard yang dibangun dari Gboard, SandFly menjelajahi sentuhan di keyboard secara langsung di Android 11 dan yang lebih baru. Saat pop-up versi ini terbuka, jari Anda memilih salah satu karakternya di mana pun posisinya—karakter terdekat saat jari Anda berada di luar pop-up—dan mengangkat jari akan mengetiknya lalu menutup pop-up. Saat jari Anda meninggalkan keyboard tanpa pop-up yang terbuka, jelajah sentuh mengambil alih untuk bagian layar lainnya, dan mengangkat jari di sana tidak mengetik apa pun. Ini tidak berlaku dengan metode pengetikan **Tahan jari untuk memilih tombol, lalu ketuk dua kali**.
 
 #### Getaran tombol Gboard {#typing-gboard-vibration}
 
-Gboard memutar umpan balik tombolnya, seperti getaran, hanya saat tombol menerima peristiwa arahkan kursor (hover), yang tidak dikirim oleh sentuhan yang dijelajahi SandFly secara langsung. Saat Shizuku atau root disiapkan untuk SandFly, SandFly mengirimkan peristiwa hover ini ke Gboard, sehingga Gboard memutar umpan balik yang diatur di setelannya sendiri, seperti **Bergetar saat tombol ditekan**. Tanpa Shizuku atau root, Gboard tidak memutar umpan balik tombol saat SandFly menjelajahi keyboard. Tidak ada setelan untuk ini. Untuk menyiapkan Shizuku atau root, lihat [](#updates).
+Gboard 18.8 dan yang lebih baru memutar umpan balik tombol yang diatur di setelan Gboard, seperti **Bergetar saat tombol ditekan**.
+
+Gboard dan Pixelboard versi sebelum 18.8 memutar umpan balik tombol hanya saat tombol menerima peristiwa arahkan kursor (hover), yang tidak dikirim oleh sentuhan yang dijelajahi SandFly secara langsung. Saat Shizuku atau root disiapkan untuk SandFly, SandFly mengirimkan peristiwa hover ini ke keyboard, sehingga keyboard memutar umpan balik yang diatur di setelannya sendiri. Tanpa Shizuku atau root, versi ini tidak memutar umpan balik tombol saat SandFly menjelajahi keyboard. Tidak ada setelan untuk ini. Untuk menyiapkan Shizuku atau root, lihat [](#updates).
 
 #### Mengubah penundaan fokus pengetikan {#typing-focus-delay}
 
@@ -72,7 +74,9 @@ Gema keyboard mengatur apa yang dibacakan SandFly saat Anda mengetik. Setiap jen
 
 Gema kata membacakan seluruh kata sebagaimana tertulis di kolom, kembali hingga spasi terakhir. Kata dengan apostrof atau tanda hubung, seperti "don't", dihitung sebagai satu kata, dan alamat web atau email adalah satu kata. Saat keyboard menambahkan sebuah kata, tanda bacanya, dan spasi sekaligus, seperti yang dilakukan keyboard braille dalam braille singkat, SandFly membacakan kata tersebut.
 
-Setiap setelan gema juga merupakan kontrol pembacaan dan item Menu SandFly: **Gema keyboard di layar**, **Gema keyboard fisik**, **Gema keyboard braille**, **Gema penampil braille**, dan **Gema keyboard tulisan tangan**. Semuanya nonaktif secara default. Untuk menambahkannya, buka **Kontrol pembacaan** atau **Menu SandFly** lalu aktifkan di grup **Gema keyboard**. Lihat [](#commands).
+Setiap setelan gema juga merupakan kontrol pembacaan, item Menu SandFly, dan perintah di grup perintah **Ucapan**: **Gema keyboard di layar**, **Gema keyboard fisik**, **Gema keyboard braille**, **Gema penampil braille**, dan **Gema keyboard tulisan tangan**. Kontrol pembacaan dan item menu tersebut nonaktif secara default. Untuk menambahkannya, buka **Kontrol pembacaan** atau **Menu SandFly** lalu aktifkan di grup **Gema keyboard**. Lihat [](#commands).
+
+Pintasan keyboard **Siklus gema pengetikan** mengubah **Keyboard fisik** ke pilihan berikutnya. Lihat [](#appendix-keyboard-shortcuts).
 
 ### Memindahkan kursor {#typing-move-cursor}
 
@@ -143,8 +147,10 @@ SandFly menyimpan histori hingga 50 teks yang disalin, dari yang terbaru. Histor
 
 Untuk membuka histori, jalankan **Histori papan klip**, dari perintah **Pengeditan teks** atau **Menu pengeditan**. Histori terbuka di atas layar saat ini.
 
-- Ketuk dua kali teks untuk membuka tindakannya: **Tempel** ke kolom teks tempat histori dibuka, **Salin** lagi, **Tambahkan ke papan klip**, **Sunting** teksnya, atau **Hapus**.
-- **Ekspor ke file** menyimpan seluruh histori sebagai file teks.
+- Ketuk dua kali teks untuk menempelkannya ke kolom teks tempat histori dibuka. Jika histori dibuka tanpa kolom teks, ketuk dua kali akan membuka tindakan teks tersebut.
+- Ketuk dua kali dan tahan teks untuk membuka tindakannya: **Tempel**, **Salin** lagi, **Tambahkan ke papan klip**, **Sunting** teksnya, **Ekspor ke file**, atau **Hapus**. Tindakan ini juga ada di **Tindakan** setiap teks.
+- **Pilih** menampilkan teks sebagai kotak centang. Ketuk dua kali teks untuk mencentangnya, lalu pilih **Hapus** atau **Ekspor ke file** untuk teks yang dicentang.
+- **Ekspor ke file** menyimpan seluruh histori sebagai file teks. Beberapa teks dipisahkan oleh baris berisi tiga tanda hubung di antara baris kosong.
 - **Hapus histori** menghapus semua teks.
 
 Untuk menempel tanpa membuka histori, tambahkan kontrol pembacaan **Histori papan klip**, di grup **Tindakan untuk item saat ini** pada **Kontrol pembacaan**. Di kolom teks, geser ke atas atau ke bawah untuk menelusuri teks dalam histori, lalu ketuk dua kali untuk menempelkan teks yang terakhir dibacakan SandFly. Kontrol pembacaan ini nonaktif secara default. Lihat [](#commands).
@@ -155,7 +161,7 @@ Perintah-perintah ini berada di grup **Pengeditan teks** pada **Perintah**:
 
 - **Salin frasa yang terakhir diucapkan**: menyalin teks terakhir yang dibacakan SandFly. Secara default, ketuk tiga kali dengan tiga jari menjalankannya.
 - **Pilih frasa yang terakhir diucapkan kata demi kata**: membuka daftar kata dari frasa terakhir, agar Anda dapat mencentang kata yang ingin disalin.
-- **Salin teks dari layar**: membuka daftar teks di layar, dibagi menjadi alamat dan nomor, karakter, kata, atau paragraf, agar Anda dapat mencentang bagian yang ingin disalin.
+- **Salin teks dari layar**: membuka daftar teks di layar, dibagi menjadi alamat dan nomor, karakter, kata, atau paragraf, agar Anda dapat mencentang bagian yang ingin disalin. Lihat [](#reading-copy-text).
 - **Salin berkelanjutan**: memindahkan fokus dari item yang difokuskan melewati setiap item setelahnya, tanpa ucapan, menggulir daftar dan halaman di sepanjang jalan, dan mengumpulkan teks setiap item. Sentuh layar, tekan tombol, atau jalankan perintah lain untuk berhenti. Di akhir, teks ditampilkan masing-masing dengan kotak centang; centang teks yang ingin disalin lalu pilih **Simpan**. Salin berkelanjutan berhenti setelah 2.000 item atau 10 menit.
 
 Dalam daftar-daftar ini, tindakan **Mulai pemilihan** dan **Akhiri pemilihan** pada sebuah item mencentang setiap item di antara dua item. Ketuk dua kali lalu tahan pada sebuah item melakukan hal yang sama.
@@ -195,7 +201,7 @@ Secara default, ketuk dua kali dengan dua jari menjalankan **Dikte, putar, atau 
 Buka **Mengetik** > **Dikte** > **Pengenalan ucapan**, lalu pilih salah satu opsi berikut:
 
 - **Otomatis**: setelan default. SandFly menggunakan pengenalan ucapan Google di perangkat jika terpasang dan memiliki bahasa ponsel; jika tidak, menggunakan Rambler jika ada kunci API Gemini dan Rambler mendukung bahasanya; jika tidak, menggunakan Whisper jika model sudah diunduh; jika tidak, menggunakan pengenalan ucapan Android. Layar menampilkan mana yang sedang digunakan, seperti "Otomatis: Rambler".
-- **Pengenalan ucapan Google di perangkat**: pengenal dari aplikasi Speech Recognition & Synthesis, dengan paket bahasa luringnya, dalam bahasa ponsel. Di Android 13 dan yang lebih baru, ini menambahkan tanda baca dan huruf kapital. Jika bahasa ponsel tidak memiliki paket bahasa, baris **Download** (bahasa) **untuk pengenalan di perangkat** membuka layar unduhan Speech Recognition & Synthesis.
+- **Pengenalan ucapan Google di perangkat**: pengenal dari aplikasi Speech Recognition & Synthesis, dengan paket bahasa luringnya, dalam bahasa ponsel. Di Android 13 dan yang lebih baru, ini menambahkan tanda baca dan huruf kapital saat **Tanda baca otomatis** aktif. Jika bahasa ponsel tidak memiliki paket bahasa, baris **Download** (bahasa) **untuk pengenalan di perangkat** membuka layar unduhan Speech Recognition & Synthesis.
 - **Rambler (Gemini API)**: model Gemini 3.5 Transcribe, melalui kunci API Gemini yang diatur di layanan AI. Model ini menghapus kata pengisi, menyelesaikan koreksi diri, serta memformat tanda baca, angka, dan daftar. Lihat [](#descriptions) untuk kunci API Gemini.
 - **Whisper**: pengenalan di ponsel, menggunakan model Whisper yang diunduh. Lihat [](#typing-whisper-models).
 - **Pengenalan ucapan Android**: layanan pengenalan ucapan yang dipilih di setelan Android.
@@ -239,7 +245,7 @@ Di **Mengetik** > **Dikte**:
 
 - **Tanda baca otomatis**: pengenalan ucapan Google menambahkan tanda baca dan huruf kapital. Aktif secara default. Ditampilkan di Android 13 atau yang lebih baru dengan pengenalan ucapan Google terpasang.
 - **Blokir kata-kata kasar**: pengenalan ucapan Google menyensor kata-kata kasar. Aktif secara default. Ditampilkan bersama **Tanda baca otomatis**.
-- **Berhenti otomatis setelah hening**: menghentikan perekaman setelah 3, 5, 10, 15, atau 30 detik, atau 1 menit tanpa ucapan. Defaultnya adalah **Nonaktif**.
+- **Berhenti otomatis setelah hening**: menghentikan perekaman setelah 1, 2, 3, 5, 10, 15, atau 30 detik, atau 1 menit tanpa ucapan. Defaultnya adalah **Nonaktif**.
 - **Ucapkan teks yang didiktekan**: membacakan teks setelah SandFly mengetiknya, kecuali di kolom sandi. Nonaktif secara default.
 - **Pertahankan model pengenalan dimuat**: berapa lama model Whisper dan model AI di perangkat tetap berada di memori setelah digunakan: **Bongkar setelah digunakan** (default), 5, 15, atau 30 menit, atau **Sampai SandFly berhenti**. Model yang tetap dimuat mulai lebih cepat tetapi menggunakan memori.
 - **Server unduhan model**: tempat model diunduh, **Hugging Face** (default) atau **hf-mirror.com**.
