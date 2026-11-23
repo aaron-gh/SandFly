@@ -164,6 +164,24 @@ class GuideMarkdownTest {
   }
 
   @Test
+  fun includedDocumentsKeepExplicitHeadingIds() {
+    val html =
+      render(
+        "appendix-d.md" to
+          """
+          ## API skryptów {#api-scripting}
+          <!-- include: scripting.md -->
+          """,
+        sources =
+          Files(
+            included = mapOf("scripting.md" to "# API\n\n## Reguły {#rules}\n\nZobacz [](#rules)."),
+          ),
+      )
+    assertTrue(html.contains("<h3 id=\"scripting-rules\">A.1 Reguły</h3>"))
+    assertTrue(html.contains("<a href=\"#scripting-rules\">A.1 Reguły</a>"))
+  }
+
+  @Test
   fun generatedPartsAreInserted() {
     val html =
       render(
@@ -245,6 +263,24 @@ class GuideMarkdownTest {
         .associate { it.substringAfterLast('/') to File(root, it).readText() }
     val sources =
       Files(included, mapOf("gestures" to "Gebaren.", "keyboard-shortcuts" to "Sneltoetsen."))
+    assertEquals(emptyList<String>(), GuideMarkdown.problems(chapters, sources))
+  }
+  /** The Polish guide ships the same chapters as English, with translated API references. */
+  @Test
+  fun polishGuideHasNoProblems() {
+    val root = File("../docs").takeIf { it.isDirectory } ?: File("docs")
+    val polish = File(root, "user-guide/pl")
+    val english = File(root, "user-guide/en")
+    val chapters =
+      english.listFiles { file -> file.name.endsWith(".md") }.orEmpty().sortedBy { it.name }.map {
+        GuideMarkdown.Chapter(it.name, File(polish, it.name).readText(), "pl")
+      }
+    assertTrue(chapters.isNotEmpty())
+    val included =
+      listOf("scripting.md", "speech-api.md", "braille-display-api.md", "direct-touch-api.md", "item-files.md")
+        .associateWith { File(polish, it).readText() }
+    val sources =
+      Files(included, mapOf("gestures" to "Gesty.", "keyboard-shortcuts" to "Skróty klawiszowe."))
     assertEquals(emptyList<String>(), GuideMarkdown.problems(chapters, sources))
   }
 }
