@@ -81,7 +81,36 @@ public class CustomActionMenu implements NodeMenu {
     return acceptCustomActionMenu(node)
         || !Scripts.itemActions(node).isEmpty()
         || PictureInPictureItem.isItem(node)
-        || !macrosOf(context, node).isEmpty();
+        || hasMacro(context, node);
+  }
+
+  /**
+   * Whether any of the user's macros is listed in the Actions menu of {@code node}'s app. Macros
+   * without an Actions condition are tried first, and the conditions, which can search the screen,
+   * are checked only until one is met.
+   */
+  private static boolean hasMacro(Context context, AccessibilityNodeInfoCompat node) {
+    List<Macros.Macro> macros =
+        Macros.inActionsOf(
+            SharedPreferencesUtils.getSharedPreferences(context), node.getPackageName());
+    if (macros.isEmpty()) {
+      return false;
+    }
+    TalkBackService service = TalkBackService.getInstance();
+    if (service == null) {
+      return true;
+    }
+    for (Macros.Macro macro : macros) {
+      if (macro.getActionsCondition().getClauses().isEmpty()) {
+        return true;
+      }
+    }
+    for (Macros.Macro macro : macros) {
+      if (MacroRunner.isShownInActions(service, macro)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
