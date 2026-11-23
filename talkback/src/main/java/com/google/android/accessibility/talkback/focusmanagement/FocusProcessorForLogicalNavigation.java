@@ -3456,6 +3456,8 @@ public class FocusProcessorForLogicalNavigation {
         LogUtils.v(TAG, "Reach edge before searchTargetInNextOrPreviousWindow in:" + currentWindow);
         return NavigationResult.create(NavigationResult.Type.REACH_EDGE);
       }
+      // This swipe wraps around at once. Log the edge as a stop does, with what auto-scroll did.
+      logEdge(pivot, navigationAction);
     }
 
     AccessibilityNodeInfoCompat target = null;

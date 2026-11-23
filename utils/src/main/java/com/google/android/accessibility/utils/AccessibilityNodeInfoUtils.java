@@ -1037,7 +1037,9 @@ public class AccessibilityNodeInfoUtils {
       // End of the line. Don't check children and don't allow any recursion.
       // checkChildren is only false in the shouldFocusNode call below. This is to avoid
       // repetitive checks down the tree when looking up at the ancestors.
-      LogUtils.d(
+      // Verbose: building a traversal order logs this for each ancestor of each item, which filled
+      // Debug logs in reports (report 579).
+      LogUtils.v(
           TAG, "checkChildren=false and isAccessibilityFocusable=%s", accessibilityFocusable);
       return accessibilityFocusable;
     }
