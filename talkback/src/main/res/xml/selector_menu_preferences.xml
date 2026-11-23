@@ -398,10 +398,6 @@
             android:title="@string/title_pref_speech_equalizer"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
             android:defaultValue="@bool/pref_selector_equalizer_default"
-            android:key="@string/pref_selector_equalizer_32_key"
-            android:title="@string/title_selector_equalizer_32"/>
-        <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference
-            android:defaultValue="@bool/pref_selector_equalizer_default"
             android:key="@string/pref_selector_equalizer_64_key"
             android:title="@string/title_selector_equalizer_64"/>
         <com.google.android.accessibility.material.preference.AccessibilitySuiteCheckBoxPreference

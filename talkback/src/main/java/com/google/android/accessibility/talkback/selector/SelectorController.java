@@ -504,10 +504,6 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_equalizer_key,
         R.string.selector_equalizer,
         R.bool.pref_selector_equalizer_default),
-    EQUALIZER_32(
-        R.string.pref_selector_equalizer_32_key,
-        R.string.selector_equalizer_32,
-        R.bool.pref_selector_equalizer_default),
     EQUALIZER_64(
         R.string.pref_selector_equalizer_64_key,
         R.string.selector_equalizer_64,
@@ -841,7 +837,6 @@ public class SelectorController implements UserInputEventListener {
           Setting.AUDIO_OUTPUT,
           Setting.SWITCH_VOICE_PROFILE,
           Setting.EQUALIZER,
-          Setting.EQUALIZER_32,
           Setting.EQUALIZER_64,
           Setting.EQUALIZER_125,
           Setting.EQUALIZER_250,
@@ -1271,8 +1266,7 @@ public class SelectorController implements UserInputEventListener {
         actionDescription = context.getString(R.string.title_pref_speech_equalizer);
         hint = getAdjustSelectedSettingGestures();
       }
-      case EQUALIZER_32,
-          EQUALIZER_64,
+      case EQUALIZER_64,
           EQUALIZER_125,
           EQUALIZER_250,
           EQUALIZER_500,
@@ -1409,8 +1403,7 @@ public class SelectorController implements UserInputEventListener {
       case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
         return StreamVolumeControl.percentText(context, STREAM_VOLUMES.get(setting).stream);
       }
-      case EQUALIZER_32,
-          EQUALIZER_64,
+      case EQUALIZER_64,
           EQUALIZER_125,
           EQUALIZER_250,
           EQUALIZER_500,
@@ -2902,8 +2895,7 @@ public class SelectorController implements UserInputEventListener {
         switchEqualizerOnOrOff(eventId, getAdjustSelectedSettingGestures());
         return;
       }
-      case EQUALIZER_32,
-          EQUALIZER_64,
+      case EQUALIZER_64,
           EQUALIZER_125,
           EQUALIZER_250,
           EQUALIZER_500,
@@ -3259,7 +3251,6 @@ public class SelectorController implements UserInputEventListener {
   /** The reading controls of the equalizer bands, in the order of {@link SpeechEqualizer}. */
   private static final ImmutableList<Setting> EQUALIZER_BANDS =
       ImmutableList.of(
-          Setting.EQUALIZER_32,
           Setting.EQUALIZER_64,
           Setting.EQUALIZER_125,
           Setting.EQUALIZER_250,
@@ -3273,7 +3264,6 @@ public class SelectorController implements UserInputEventListener {
           Setting.EQUALIZER_16K);
 
   private static final int[] EQUALIZER_BAND_TITLES = {
-    R.string.title_selector_equalizer_32,
     R.string.title_selector_equalizer_64,
     R.string.title_selector_equalizer_125,
     R.string.title_selector_equalizer_250,
