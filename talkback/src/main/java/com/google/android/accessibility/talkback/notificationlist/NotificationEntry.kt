@@ -83,11 +83,19 @@ class NotificationEntry(
         extras.getCharSequence(Notification.EXTRA_TITLE_BIG)
           ?: extras.getCharSequence(Notification.EXTRA_TITLE)
       val text =
-        extras.getCharSequence(Notification.EXTRA_BIG_TEXT)
-          ?: extras.getCharSequence(Notification.EXTRA_TEXT)
+        extras.nonBlank(Notification.EXTRA_BIG_TEXT)
+          ?: extras.nonBlank(Notification.EXTRA_TEXT)
           ?: lastMessage(extras)
-          ?: extras.getCharSequenceArray(Notification.EXTRA_TEXT_LINES)?.joinToString("\n")
-          ?: notification.notification.tickerText
+          ?: extras
+            .getCharSequenceArray(Notification.EXTRA_TEXT_LINES)
+            ?.filterNotNull()
+            ?.filter { it.isNotBlank() }
+            ?.joinToString("\n")
+            ?.takeIf { it.isNotEmpty() }
+          ?: extras.nonBlank(Notification.EXTRA_SUB_TEXT)
+          ?: extras.nonBlank(Notification.EXTRA_INFO_TEXT)
+          ?: extras.nonBlank(Notification.EXTRA_SUMMARY_TEXT)
+          ?: notification.notification.tickerText?.takeIf { it.isNotBlank() }
       val timeMillis = timeMillis(notification)
       return NotificationEntry(
         notification,
@@ -103,6 +111,9 @@ class NotificationEntry(
         timeMillis,
       )
     }
+
+    private fun Bundle.nonBlank(key: String): CharSequence? =
+      getCharSequence(key)?.takeIf { it.isNotBlank() }
 
     /** Android's own limit for a notification's texts, which apps can get around. */
     private const val MAX_LENGTH = 5 * 1024
