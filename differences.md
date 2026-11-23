@@ -1293,6 +1293,10 @@ The braille languages include Mongolian, uncontracted and contracted, from the l
 
 **Say "Submitting text"** can be turned off to send text without the announcement. It's on by default.
 
+### Braille keyboard stays open after sending in chats
+
+TalkBack hides the braille keyboard each time you submit text. In SandFly, when Submit text sends with the send button next to the field, as in Telegram, WhatsApp and Messages, the braille keyboard stays open for the next message. Other fields, such as search fields, still hide it so that focus can move on.
+
 ### Capitalize sentences
 
 **Capitalize sentences** changes the first letter typed at the start of a sentence to a capital: at the start of a field, after a new line, and after a full stop, question mark or exclamation mark followed by a space. It doesn't change password, email address, web address or number fields. It's off by default.

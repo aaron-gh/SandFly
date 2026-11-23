@@ -72,6 +72,8 @@ Each gesture with held dots also works with the matching dots of the other hand,
 
 The three-finger swipe up opens **Braille keyboard options**: **Switch to next language**, **Switch to** contracted or uncontracted **braille**, **Update dot positions**, **Review gestures**, **Open tutorial** and **Settings**.
 
+Submit text sends a message in chat apps such as Telegram, WhatsApp and Messages with their send button, and the braille keyboard stays open for the next message. In other fields it carries out the action of the field, such as search or next, and hides the braille keyboard, so that focus can move on.
+
 When you swipe to another control before the braille keyboard opens, SandFly moves focus back to the text field before each command, so cursor movement and editing apply to the text field.
 
 #### Change the braille keyboard gestures {#braille-keyboard-gestures}

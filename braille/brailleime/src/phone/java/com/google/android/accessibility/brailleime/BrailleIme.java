@@ -830,9 +830,7 @@ public class BrailleIme extends InputMethodService {
     EditorInfo editorInfo = getCurrentInputEditorInfo();
     int editorAction = editorInfo.imeOptions & EditorInfo.IME_MASK_ACTION;
     BrailleImeLog.d(TAG, "performEnterAction editorAction = " + editorAction);
-    if (!hasEditorAction(editorAction)
-        || editorAction == EditorInfo.IME_ACTION_SEND
-        || (editorInfo.imeOptions & EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) {
+    if (SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
       clickSendButton(inputConnection, editorInfo, editorAction, /* attempt= */ 0);
     } else {
       performEditorAction(inputConnection, editorInfo, editorAction);
@@ -1377,6 +1375,19 @@ public class BrailleIme extends InputMethodService {
 
         @Override
         public void performEditorAction() {
+          BrailleIme.this.performEditorAction(getImeConnection().inputConnection);
+        }
+
+        @Override
+        public void submitText() {
+          EditorInfo editorInfo = getCurrentInputEditorInfo();
+          // A chat keeps its field for the next message, so the keyboard stays for it too. Other
+          // fields move on: hiding brings touch exploration back, so that accessibility focus can
+          // go to the next field.
+          if (editorInfo == null || !SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
+            hideSelf();
+            escapeReminder.increaseExitKeyboardCounter();
+          }
           BrailleIme.this.performEditorAction(getImeConnection().inputConnection);
         }
 

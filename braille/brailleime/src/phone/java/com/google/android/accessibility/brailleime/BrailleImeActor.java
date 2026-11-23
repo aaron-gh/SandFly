@@ -72,6 +72,9 @@ public class BrailleImeActor {
 
     void performEditorAction();
 
+    /** Submits the text, as the Submit text gesture does. */
+    void submitText();
+
     /** Keeps the dots facing the way they are now, or lets them follow the device again. */
     void toggleOrientationLock();
 
@@ -162,14 +165,7 @@ public class BrailleImeActor {
       case PASTE -> performTextAction(imeConnection, ScreenReaderAction.PASTE);
       case CUT -> performTextAction(imeConnection, ScreenReaderAction.CUT);
       case COPY -> performTextAction(imeConnection, ScreenReaderAction.COPY);
-      case SUBMIT_TEXT ->
-          performTextAction(
-              imeConnection,
-              () -> {
-                callback
-                    .hideBrailleKeyboard(); // Restore EBT so a11y focus could jump to next field.
-                callback.performEditorAction();
-              });
+      case SUBMIT_TEXT -> performTextAction(imeConnection, callback::submitText);
       case ADD_SPACE_OR_NEXT_ITEM -> {
         if (talkBackForBrailleIme.isCurrentGranularityTypoCorrection()) {
           if (!typoHandler.nextSuggestion()) {
