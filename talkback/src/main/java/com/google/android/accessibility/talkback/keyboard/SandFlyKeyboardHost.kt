@@ -44,6 +44,9 @@ object SandFlyKeyboardHost {
 
     /** Turns editing mode on in the text field being edited, or off. False if it can't be on. */
     fun toggleEditingMode(): Boolean
+
+    /** SandFly took a key press, such as a shortcut's, which the keyboard doesn't get. */
+    fun onKeyTaken() {}
   }
 
   @JvmStatic @Volatile var keyboard: Keyboard? = null
@@ -65,6 +68,12 @@ object SandFlyKeyboardHost {
 
   /** Turns editing mode on or off; false without the SandFly keyboard in a text field. */
   @JvmStatic fun toggleEditingMode(): Boolean = keyboard?.toggleEditingMode() == true
+
+  /** Tells the SandFly keyboard that SandFly took a key press. */
+  @JvmStatic
+  fun onKeyTaken() {
+    keyboard?.onKeyTaken()
+  }
 
   /** Opens a chooser in the text field being edited; false without the SandFly keyboard. */
   @JvmStatic
