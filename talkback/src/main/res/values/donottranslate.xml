@@ -3897,10 +3897,6 @@
     <item name="web_control" type="id"/>
     <item name="web_landmark" type="id"/>
 
-    <!-- The Actions available sound. It has no sound file of SandFly's own: it plays only a sound
-         file of the sound theme, found by this name. -->
-    <item name="actions_available" type="id"/>
-
     <!-- Actions available sound: values match ActionsAvailable. -->
     <string-array name="pref_actions_available_sound_entries" translatable="false">
         <item>@string/value_actions_available_sound_focus</item>

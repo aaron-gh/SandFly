@@ -39,12 +39,6 @@ object IndividualFeedbackSettings {
   /** The Actions available sound, for items with actions of their app. */
   const val ACTIONS_AVAILABLE = "actions_available"
 
-  /**
-   * Sounds that have no sound or vibration of SandFly's own, and play only what the sound theme
-   * gives them, so that they are off until a theme or the person gives them one.
-   */
-  @JvmField val THEME_ONLY: Set<String> = setOf(ACTIONS_AVAILABLE)
-
   /** SandFly AI's agent sounds, which builds without SandFly AI leave out. */
   val AGENT_SOUNDS =
     listOf(

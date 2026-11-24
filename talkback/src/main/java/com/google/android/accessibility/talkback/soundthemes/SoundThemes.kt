@@ -283,18 +283,6 @@ object SoundThemes {
   fun isNone(theme: SoundTheme, item: FeedbackItem): Boolean =
     theme.manifest.sounds[item.key] == SoundThemeManifest.NONE
 
-  /** Whether [item] has no sound of SandFly's own, and plays only a sound the theme gives it. */
-  @JvmStatic
-  fun isThemeOnly(item: FeedbackItem): Boolean = item.key in IndividualFeedbackSettings.THEME_ONLY
-
-  /**
-   * Whether [item] plays no sound in [theme]: it is set to "none", or it has no sound of SandFly's
-   * own and the theme gives it none.
-   */
-  @JvmStatic
-  fun isSilent(theme: SoundTheme, item: FeedbackItem): Boolean =
-    isNone(theme, item) || (isThemeOnly(item) && soundFiles(theme)[item.key] == null)
-
   /**
    * The sounds and vibrations of the theme in use. An item with several sounds, like the circle
    * menu, plays its theme sound and vibration for all of them.
