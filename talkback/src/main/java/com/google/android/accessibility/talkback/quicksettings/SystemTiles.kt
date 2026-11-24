@@ -79,15 +79,24 @@ object SystemTiles {
 
   /**
    * Finds the system's own tiles, such as Hotspot, from SystemUI's dump when SandFly can read it,
-   * and otherwise by looking through the system's quick settings, which takes a few seconds.
-   * [onDone] gets them, or null, on the main thread.
+   * giving itself what that needs through Shizuku first, and otherwise by looking through the
+   * system's quick settings, which takes a few seconds. [onDone] gets them, or null, on the main
+   * thread.
    */
   fun find(context: Context, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
+    val handler = Handler(Looper.getMainLooper())
+    if (!canRead(context) && ShizukuGrants.isReady()) {
+      ShizukuGrants.requestAll(context, GRANTS) { handler.post { findNow(context, handler, onDone) } }
+    } else {
+      findNow(context, handler, onDone)
+    }
+  }
+
+  private fun findNow(context: Context, handler: Handler, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
     if (!canRead(context)) {
       SystemPanelClicker.scan { labels -> onDone(labels?.map { QuickItem.SystemTile("", it) }) }
       return
     }
-    val handler = Handler(Looper.getMainLooper())
     Thread({
         val tiles =
           try {
