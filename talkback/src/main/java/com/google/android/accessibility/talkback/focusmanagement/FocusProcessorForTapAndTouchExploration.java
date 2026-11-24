@@ -303,14 +303,18 @@ public class FocusProcessorForTapAndTouchExploration {
 
   /**
    * Presses {@code key} down for the rest of the touch, if keys are held down and it has
-   * accessibility focus, where Android presses. Returns whether it is held down.
+   * accessibility focus, where Android presses. Returns whether it is held down. Keys of Gboard
+   * 18.8 and later aren't: Gboard runs its popup of alternative characters from touch
+   * exploration's hover, which a key pressed down ends, so their long press opens the popup as
+   * touch exploration goes on.
    */
   private boolean holdKeyDown(@Nullable AccessibilityNodeInfoCompat key) {
     if (!holdKeysDown
         || keyHolder == null
         || key == null
         || Scripts.longPressAfterMs(key) > 0
-        || !supportsLiftToType(key)) {
+        || !supportsLiftToType(key)
+        || KeyboardExploration.usesTouchExploration(context, key.getPackageName())) {
       return false;
     }
     key.refresh();
