@@ -191,6 +191,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   private boolean usageHintEnabled = true;
   private boolean speakActionsAvailable = false;
   private boolean actionsSoundAfterSpeech = false;
+  private boolean actionsSoundOn = true;
   // It's enabled when [Say capital] is configured.
   private boolean sayCapital = false;
   // How capital letters are told apart, one of SpeechControllerImpl's CAPITAL_LETTERS_TYPE values.
@@ -519,6 +520,14 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
    * Returns whether the Actions available sound plays once the item has been spoken, rather than
    * when the item gets focus.
    */
+  public boolean isActionsSoundOn() {
+    return actionsSoundOn;
+  }
+
+  public void setActionsSoundOn(boolean on) {
+    actionsSoundOn = on;
+  }
+
   public boolean isActionsSoundAfterSpeech() {
     return actionsSoundAfterSpeech;
   }
@@ -1292,6 +1301,7 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
             .append(String.format("speakNotifications=%s, ", getSpeakNotifications()))
             .append(String.format("usageHintEnabled=%s, ", getUsageHintEnabled()))
             .append(String.format("speakActionsAvailable=%s, ", getSpeakActionsAvailable()))
+            .append(String.format("actionsSoundOn=%s, ", isActionsSoundOn()))
             .append(String.format("actionsSoundAfterSpeech=%s, ", isActionsSoundAfterSpeech()))
             .append(
                 String.format(

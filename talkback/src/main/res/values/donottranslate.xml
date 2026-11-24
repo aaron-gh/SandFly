@@ -3899,10 +3899,12 @@
 
     <!-- Actions available sound: values match ActionsAvailable. -->
     <string-array name="pref_actions_available_sound_entries" translatable="false">
+        <item>@string/value_actions_available_sound_off</item>
         <item>@string/value_actions_available_sound_focus</item>
         <item>@string/value_actions_available_sound_after_speech</item>
     </string-array>
     <string-array name="pref_actions_available_sound_values" translatable="false">
+        <item>off</item>
         <item>focus</item>
         <item>after_speech</item>
     </string-array>
