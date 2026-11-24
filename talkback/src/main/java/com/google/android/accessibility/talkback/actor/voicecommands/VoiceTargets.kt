@@ -43,11 +43,7 @@ class VoiceTargets(private val context: Context, private val locale: Locale) : V
   }
 
   private val commandsByName: Map<String, Commands.Command> by lazy {
-    val names = HashMap<String, Commands.Command>()
-    for (command in categories.flatMap { it.commands }) {
-      names.putIfAbsent(VoiceGrammar.normalize(command.label, locale), command)
-    }
-    names
+    commandNames(categories, apps, locale)
   }
 
   private val custom: List<CustomVoiceCommands.Entry> by lazy {
@@ -68,6 +64,30 @@ class VoiceTargets(private val context: Context, private val locale: Locale) : V
   override fun app(name: String): VoiceStep.OpenApp? = findApp(apps, name, locale)
 
   companion object {
+    /**
+     * Commands by their normalized names. SandFly's own commands come first, so a command wins over
+     * an app of the same name. Apps go by their bare names, as in "Gmail" or "run Gmail", and not by
+     * their command list labels ("Open Gmail"), which the open phrase reads as an app.
+     */
+    @JvmStatic
+    fun commandNames(
+      categories: List<Commands.Category>,
+      apps: List<OpenAppActions.App>,
+      locale: Locale,
+    ): Map<String, Commands.Command> {
+      val names = HashMap<String, Commands.Command>()
+      val (appCategories, own) = categories.partition { it.titleRes == R.string.shortcut_title_open_app }
+      for (command in own.flatMap { it.commands }) {
+        names.putIfAbsent(VoiceGrammar.normalize(command.label, locale), command)
+      }
+      val appCommands = appCategories.flatMap { it.commands }.associateBy { it.value }
+      for (app in apps) {
+        val command = appCommands[app.value] ?: continue
+        names.putIfAbsent(VoiceGrammar.normalize(app.label, locale), command)
+      }
+      return names
+    }
+
     /**
      * The app named [name]: its whole name, else the one whose name starts with it, else the one
      * with a word that is it. Null when none is, or when several are equally good and none is the
