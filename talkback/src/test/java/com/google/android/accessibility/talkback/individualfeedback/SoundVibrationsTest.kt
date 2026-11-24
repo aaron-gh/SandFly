@@ -34,7 +34,7 @@ class SoundVibrationsTest {
   private val patternNames =
     vibrationNames -
       SoundVibrations.BRAILLE_KEYBOARD -
-      IndividualFeedbackSettings.THEME_ONLY.map { SoundVibrations.PATTERNS.getValue(it) }.toSet()
+      SoundVibrations.THEME_ONLY_PATTERNS
 
   @Test
   fun everySoundHasAVibration() {
@@ -43,14 +43,15 @@ class SoundVibrationsTest {
   }
 
   @Test
-  fun theActionsAvailableSoundHasASwitchButNoSoundOrVibrationOfItsOwn() {
+  fun theActionsAvailableSoundHasAVibrationSwitchButOnlyAThemeGivesItAVibration() {
     val sound = IndividualFeedbackSettings.ACTIONS_AVAILABLE
     assertTrue(IndividualFeedbackSettings.SOUNDS.any { it.key == sound })
+    assertTrue(File("src/main/res/raw/$sound.wav").isFile)
     val pattern = SoundVibrations.PATTERNS.getValue(sound)
     assertEquals(pattern, SoundVibrations.switchOf(sound))
     assertTrue(IndividualFeedbackSettings.VIBRATIONS.any { it.key == pattern })
+    assertTrue(pattern in SoundVibrations.THEME_ONLY_PATTERNS)
     assertTrue(pattern !in patterns)
-    assertTrue(!File("src/main/res/raw/$sound.wav").exists())
     // A theme's vibration plays with it.
     val themed = intArrayOf(0, 12)
     val played =

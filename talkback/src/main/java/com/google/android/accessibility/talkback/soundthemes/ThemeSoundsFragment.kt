@@ -220,13 +220,12 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
           chooseFile = { if (!closing && available()) launchChooser(item) },
           canPreview = {
             val theme = currentTheme()
-            theme != null && !SoundThemes.isSilent(theme, item)
+            theme != null && !SoundThemes.isNone(theme, item)
           },
-          isNone = { currentTheme()?.let { SoundThemes.isSilent(it, item) } ?: false },
+          isNone = { currentTheme()?.let { SoundThemes.isNone(it, item) } ?: false },
           canReset = {
             val theme = currentTheme()
             theme != null &&
-              !SoundThemes.isThemeOnly(item) &&
               (SoundThemes.soundFiles(theme)[item.key] != null || SoundThemes.isNone(theme, item))
           },
         )
@@ -410,7 +409,7 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
       row.summary =
         context.getString(
           when {
-            SoundThemes.isSilent(theme, row.item) -> R.string.theme_sound_summary_no_sound
+            SoundThemes.isNone(theme, row.item) -> R.string.theme_sound_summary_no_sound
             row.item.key in custom -> R.string.theme_sound_summary_custom
             else -> R.string.theme_sound_summary_default
           }
@@ -424,8 +423,7 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
     val context = requireContext()
     if (closing || !available()) return
     val theme = resolveTheme() ?: return
-    // A sound without one of SandFly's own is no sound until it is given one.
-    val isNone = SoundThemes.isSilent(theme, item)
+    val isNone = SoundThemes.isNone(theme, item)
     val hasCustom = SoundThemes.soundFiles(theme)[item.key] != null
     val choices = ArrayList<Pair<Int, () -> Unit>>()
     choices +=
@@ -446,7 +444,7 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
             }
           }
     }
-    if ((hasCustom || isNone) && !SoundThemes.isThemeOnly(item)) {
+    if (hasCustom || isNone) {
       choices +=
         R.string.theme_sound_use_default to
           {

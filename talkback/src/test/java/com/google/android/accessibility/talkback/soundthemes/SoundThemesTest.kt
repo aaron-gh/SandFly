@@ -17,8 +17,6 @@
 package com.google.android.accessibility.talkback.soundthemes
 
 import com.google.android.accessibility.talkback.individualfeedback.IndividualFeedbackSettings
-import java.io.File
-import java.nio.file.Files
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
@@ -78,27 +76,9 @@ class SoundThemesTest {
   }
 
   @Test
-  fun theActionsAvailableSoundIsSilentUntilTheThemeGivesItOne() {
-    val actions = SoundThemes.SOUNDS.single { it.key == "actions_available" }
-    val focus = SoundThemes.SOUNDS.single { it.key == "focus" }
-    assertTrue(SoundThemes.isThemeOnly(actions))
-    assertFalse(SoundThemes.isThemeOnly(focus))
-    val directory = Files.createTempDirectory("theme").toFile()
-    try {
-      val theme = SoundTheme("test", SoundThemeManifest(name = "Test"), directory)
-      assertTrue(SoundThemes.isSilent(theme, actions))
-      assertFalse(SoundThemes.isSilent(theme, focus))
-      File(directory, SoundThemes.fileName("actions_available", "ogg", 1L)).writeText("")
-      assertFalse(SoundThemes.isSilent(theme, actions))
-      val none =
-        theme.copy(
-          manifest =
-            theme.manifest.copy(sounds = mapOf("actions_available" to SoundThemeManifest.NONE))
-        )
-      assertTrue(SoundThemes.isSilent(none, actions))
-    } finally {
-      directory.deleteRecursively()
-    }
+  fun aThemeCanReplaceTheActionsAvailableSoundAndGiveItAVibration() {
+    assertTrue(SoundThemes.SOUND_KEYS.contains("actions_available"))
+    assertTrue(SoundThemes.VIBRATION_NAMES.contains("actions_available"))
   }
 
   @Test

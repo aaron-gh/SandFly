@@ -71,6 +71,14 @@ object SoundVibrations {
   private val ALSO_PLAYED_AS: Map<String, List<String>> =
     mapOf("focus_actionable" to listOf("view_focused_or_selected_pattern"))
 
+  /**
+   * Vibration switches of sounds without a vibration pattern of SandFly's own, which vibrate only
+   * when a sound theme gives them a vibration.
+   */
+  @JvmField
+  val THEME_ONLY_PATTERNS: Set<String> =
+    setOf("${IndividualFeedbackSettings.ACTIONS_AVAILABLE}_pattern")
+
   /** The names of every vibration a sound theme can replace, as theme.json names them. */
   @JvmStatic
   fun themeNames(soundKeys: Collection<String>): Set<String> = soundKeys.toSet() + VIBRATION_ONLY.keys
@@ -118,7 +126,7 @@ object SoundVibrations {
     mapOf(
       "focus" to "view_hovered_pattern",
       "focus_actionable" to "view_actionable_pattern",
-      // No pattern of SandFly's own: only a sound theme gives it one.
+      // In THEME_ONLY_PATTERNS: only a sound theme gives it a vibration.
       IndividualFeedbackSettings.ACTIONS_AVAILABLE to
         "${IndividualFeedbackSettings.ACTIONS_AVAILABLE}_pattern",
       "view_entered" to "view_entered_pattern",
