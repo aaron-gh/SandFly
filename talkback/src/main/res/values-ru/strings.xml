@@ -2798,4 +2798,22 @@
     <string name="double_tap_taps_on">Двойное нажатие касается экрана: вкл.</string>
     <string name="double_tap_taps_off">Двойное нажатие касается экрана: выкл.</string>
     <string name="double_tap_taps_no_app">Нет приложения на переднем плане</string>
+    <string name="keycombo_menu_toggle_key_practice">Включить или отключить тренировку клавиатуры</string>
+    <string name="key_practice_on">Тренировка клавиатуры включена</string>
+    <string name="key_practice_off">Тренировка клавиатуры отключена</string>
+    <string name="key_practice_sandfly_key">Клавиша SandFly</string>
+    <string name="key_practice_title">Тренировка клавиатуры</string>
+    <string name="key_practice_summary">Озвучивает каждую нажатую клавишу и её команду вместо выполнения команды. Кнопка «Назад» или Escape отключает тренировку.</string>
+    <string name="keycombo_menu_touch_hold_focus">Удерживать касание на элементе в фокусе</string>
+    <string name="touch_hold_held">Касание удерживается</string>
+    <string name="touch_hold_lifted">Касание отпущено</string>
+    <string name="touch_hold_unavailable">Недоступно</string>
+    <string name="touch_hold_no_focus">Нет элемента в фокусе</string>
+    <string name="title_pref_speak_password_characters">Озвучивать символы пароля</string>
+    <string name="summary_pref_speak_password_characters">При использовании клавиатуры SandFly озвучивает введённые, удалённые и пройденные курсором символы в полях пароля</string>
+    <string name="shortcut_spell_password_field">Произнести по буквам поле пароля</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Это не поле пароля</string>
+    <string name="sandfly_keyboard_password_not_available">Текст поля пароля недоступен</string>
+    <string name="sandfly_keyboard_password_not_read">Не читается в полях пароля</string>
 </resources>

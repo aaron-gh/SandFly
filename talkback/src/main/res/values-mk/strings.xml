@@ -2774,4 +2774,22 @@
     <string name="double_tap_taps_on">Двоен допир допира по екранот: вклучено</string>
     <string name="double_tap_taps_off">Двоен допир допира по екранот: исклучено</string>
     <string name="double_tap_taps_no_app">Нема апликација во преден план</string>
+    <string name="keycombo_menu_toggle_key_practice">Вклучи или исклучи вежбање на тастатура</string>
+    <string name="key_practice_on">Вежбањето на тастатура е вклучено</string>
+    <string name="key_practice_off">Вежбањето на тастатура е исклучено</string>
+    <string name="key_practice_sandfly_key">копче за SandFly</string>
+    <string name="key_practice_title">Вежбање на тастатура</string>
+    <string name="key_practice_summary">Го изговара секое притиснато копче и неговата наредба наместо да ја изврши. Се исклучува со копчето Назад или Escape.</string>
+    <string name="keycombo_menu_touch_hold_focus">Задржи допир на фокусираната ставка</string>
+    <string name="touch_hold_held">Допирот е задржан</string>
+    <string name="touch_hold_lifted">Допирот е отпуштен</string>
+    <string name="touch_hold_unavailable">Недостапно</string>
+    <string name="touch_hold_no_focus">Ниту една ставка нема фокус</string>
+    <string name="title_pref_speak_password_characters">Изговарај ги знаците од лозинката</string>
+    <string name="summary_pref_speak_password_characters">Со тастатурата SandFly ги изговара знаците напишани, избришани и поминати со курсорот во полињата за лозинка</string>
+    <string name="shortcut_spell_password_field">Изговори го буква по буква полето за лозинка</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Ова не е поле за лозинка</string>
+    <string name="sandfly_keyboard_password_not_available">Текстот од полето за лозинка не е достапен</string>
+    <string name="sandfly_keyboard_password_not_read">Не се чита во полињата за лозинка</string>
 </resources>

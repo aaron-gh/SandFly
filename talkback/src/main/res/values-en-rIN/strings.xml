@@ -2774,4 +2774,22 @@
     <string name="double_tap_taps_on">Double tap taps the screen on</string>
     <string name="double_tap_taps_off">Double tap taps the screen off</string>
     <string name="double_tap_taps_no_app">No app in front</string>
+    <string name="keycombo_menu_toggle_key_practice">Turn keyboard practice on or off</string>
+    <string name="key_practice_on">Keyboard practice on</string>
+    <string name="key_practice_off">Keyboard practice off</string>
+    <string name="key_practice_sandfly_key">SandFly key</string>
+    <string name="key_practice_title">Keyboard practice</string>
+    <string name="key_practice_summary">Speaks each key pressed and its command instead of running it. Back or Escape turns it off.</string>
+    <string name="keycombo_menu_touch_hold_focus">Hold a touch on the focused item</string>
+    <string name="touch_hold_held">Touch held</string>
+    <string name="touch_hold_lifted">Touch lifted</string>
+    <string name="touch_hold_unavailable">Not available</string>
+    <string name="touch_hold_no_focus">No item has focus</string>
+    <string name="title_pref_speak_password_characters">Speak password characters</string>
+    <string name="summary_pref_speak_password_characters">With the SandFly keyboard, speaks the characters typed, deleted and passed over in password fields</string>
+    <string name="shortcut_spell_password_field">Spell the password field</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Not a password field</string>
+    <string name="sandfly_keyboard_password_not_available">Password field text not available</string>
+    <string name="sandfly_keyboard_password_not_read">Not read in password fields</string>
 </resources>

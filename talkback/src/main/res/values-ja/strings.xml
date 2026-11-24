@@ -2765,4 +2765,22 @@
     <string name="double_tap_taps_on">ダブルタップで画面をタップ: オン</string>
     <string name="double_tap_taps_off">ダブルタップで画面をタップ: オフ</string>
     <string name="double_tap_taps_no_app">前面にアプリがありません</string>
+    <string name="keycombo_menu_toggle_key_practice">キーボード練習のオン/オフを切り替える</string>
+    <string name="key_practice_on">キーボード練習オン</string>
+    <string name="key_practice_off">キーボード練習オフ</string>
+    <string name="key_practice_sandfly_key">SandFly キー</string>
+    <string name="key_practice_title">キーボード練習</string>
+    <string name="key_practice_summary">押したキーとそのコマンドを、実行せずに読み上げます。戻るキーまたは Esc キーでオフになります。</string>
+    <string name="keycombo_menu_touch_hold_focus">フォーカス中の項目をタッチしたままにする</string>
+    <string name="touch_hold_held">タッチを保持中</string>
+    <string name="touch_hold_lifted">タッチを離しました</string>
+    <string name="touch_hold_unavailable">利用できません</string>
+    <string name="touch_hold_no_focus">フォーカスのある項目はありません</string>
+    <string name="title_pref_speak_password_characters">パスワードの文字を読み上げる</string>
+    <string name="summary_pref_speak_password_characters">SandFly キーボードの使用時に、パスワード フィールドで入力、削除、カーソルが通過した文字を読み上げます</string>
+    <string name="shortcut_spell_password_field">パスワード フィールドのスペルを読み上げる</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">パスワード フィールドではありません</string>
+    <string name="sandfly_keyboard_password_not_available">パスワード フィールドのテキストを取得できません</string>
+    <string name="sandfly_keyboard_password_not_read">パスワード フィールドでは読み上げません</string>
 </resources>

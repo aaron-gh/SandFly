@@ -2784,4 +2784,22 @@
     <string name="double_tap_taps_on">El doble toque toca la pantalla activado</string>
     <string name="double_tap_taps_off">El doble toque toca la pantalla desactivado</string>
     <string name="double_tap_taps_no_app">No hay ninguna aplicación en primer plano</string>
+    <string name="keycombo_menu_toggle_key_practice">Activar o desactivar la práctica de teclado</string>
+    <string name="key_practice_on">Práctica de teclado activada</string>
+    <string name="key_practice_off">Práctica de teclado desactivada</string>
+    <string name="key_practice_sandfly_key">Tecla de SandFly</string>
+    <string name="key_practice_title">Práctica de teclado</string>
+    <string name="key_practice_summary">Enuncia cada tecla pulsada y su comando en lugar de ejecutarlo. Atrás o Escape la desactiva.</string>
+    <string name="keycombo_menu_touch_hold_focus">Mantener un toque en el elemento enfocado</string>
+    <string name="touch_hold_held">Toque mantenido</string>
+    <string name="touch_hold_lifted">Toque levantado</string>
+    <string name="touch_hold_unavailable">No disponible</string>
+    <string name="touch_hold_no_focus">Ningún elemento tiene el foco</string>
+    <string name="title_pref_speak_password_characters">Enunciar caracteres de contraseñas</string>
+    <string name="summary_pref_speak_password_characters">Con el teclado SandFly, enuncia los caracteres escritos, eliminados y recorridos por el cursor en los campos de contraseña</string>
+    <string name="shortcut_spell_password_field">Deletrear el campo de contraseña</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">No es un campo de contraseña</string>
+    <string name="sandfly_keyboard_password_not_available">Texto del campo de contraseña no disponible</string>
+    <string name="sandfly_keyboard_password_not_read">No se lee en los campos de contraseña</string>
 </resources>

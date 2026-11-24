@@ -2766,4 +2766,22 @@
     <string name="double_tap_taps_on">輕按兩下時輕按螢幕：開啟</string>
     <string name="double_tap_taps_off">輕按兩下時輕按螢幕：關閉</string>
     <string name="double_tap_taps_no_app">前景沒有應用程式</string>
+    <string name="keycombo_menu_toggle_key_practice">開啟或關閉鍵盤練習</string>
+    <string name="key_practice_on">鍵盤練習已開啟</string>
+    <string name="key_practice_off">鍵盤練習已關閉</string>
+    <string name="key_practice_sandfly_key">SandFly 鍵</string>
+    <string name="key_practice_title">鍵盤練習</string>
+    <string name="key_practice_summary">讀出按下的每個按鍵及其指令，但不執行指令。按返回鍵或 Esc 鍵即可關閉。</string>
+    <string name="keycombo_menu_touch_hold_focus">在焦點項目上保持觸控</string>
+    <string name="touch_hold_held">已保持觸控</string>
+    <string name="touch_hold_lifted">已放開觸控</string>
+    <string name="touch_hold_unavailable">無法使用</string>
+    <string name="touch_hold_no_focus">沒有項目獲得焦點</string>
+    <string name="title_pref_speak_password_characters">讀出密碼字元</string>
+    <string name="summary_pref_speak_password_characters">使用 SandFly 鍵盤時，讀出在密碼欄位中輸入、刪除及游標經過的字元</string>
+    <string name="shortcut_spell_password_field">串出密碼欄位</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">不是密碼欄位</string>
+    <string name="sandfly_keyboard_password_not_available">無法取得密碼欄位文字</string>
+    <string name="sandfly_keyboard_password_not_read">密碼欄位中不會讀出</string>
 </resources>

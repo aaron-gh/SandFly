@@ -2784,4 +2784,22 @@
     <string name="double_tap_taps_on">Toucher deux fois touche l\'écran : activé</string>
     <string name="double_tap_taps_off">Toucher deux fois touche l\'écran : désactivé</string>
     <string name="double_tap_taps_no_app">Aucune application au premier plan</string>
+    <string name="keycombo_menu_toggle_key_practice">Activer ou désactiver l\'entraînement au clavier</string>
+    <string name="key_practice_on">Entraînement au clavier activé</string>
+    <string name="key_practice_off">Entraînement au clavier désactivé</string>
+    <string name="key_practice_sandfly_key">Touche SandFly</string>
+    <string name="key_practice_title">Entraînement au clavier</string>
+    <string name="key_practice_summary">Énonce chaque touche enfoncée et sa commande au lieu de l\'exécuter. Retour ou Échap le désactive.</string>
+    <string name="keycombo_menu_touch_hold_focus">Maintenir un toucher sur l\'élément mis en évidence</string>
+    <string name="touch_hold_held">Toucher maintenu</string>
+    <string name="touch_hold_lifted">Toucher relâché</string>
+    <string name="touch_hold_unavailable">Indisponible</string>
+    <string name="touch_hold_no_focus">Aucun élément n\'a le focus</string>
+    <string name="title_pref_speak_password_characters">Énoncer les caractères des mots de passe</string>
+    <string name="summary_pref_speak_password_characters">Avec le clavier SandFly, énonce les caractères saisis, supprimés et parcourus par le curseur dans les champs de mot de passe</string>
+    <string name="shortcut_spell_password_field">Épeler le champ de mot de passe</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Pas un champ de mot de passe</string>
+    <string name="sandfly_keyboard_password_not_available">Texte du champ de mot de passe indisponible</string>
+    <string name="sandfly_keyboard_password_not_read">Non lu dans les champs de mot de passe</string>
 </resources>

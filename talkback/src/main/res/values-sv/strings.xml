@@ -2774,4 +2774,22 @@
     <string name="double_tap_taps_on">Dubbeltryck trycker på skärmen: på</string>
     <string name="double_tap_taps_off">Dubbeltryck trycker på skärmen: av</string>
     <string name="double_tap_taps_no_app">Ingen app i förgrunden</string>
+    <string name="keycombo_menu_toggle_key_practice">Slå på eller av tangentbordsövning</string>
+    <string name="key_practice_on">Tangentbordsövning på</string>
+    <string name="key_practice_off">Tangentbordsövning av</string>
+    <string name="key_practice_sandfly_key">SandFly-tangent</string>
+    <string name="key_practice_title">Tangentbordsövning</string>
+    <string name="key_practice_summary">Läser upp varje tangent som trycks ned och dess kommando i stället för att köra det. Bakåt eller Esc stänger av den.</string>
+    <string name="keycombo_menu_touch_hold_focus">Håll en beröring på objektet i fokus</string>
+    <string name="touch_hold_held">Beröring hålls kvar</string>
+    <string name="touch_hold_lifted">Beröring släppt</string>
+    <string name="touch_hold_unavailable">Inte tillgängligt</string>
+    <string name="touch_hold_no_focus">Inget objekt har fokus</string>
+    <string name="title_pref_speak_password_characters">Läs upp lösenordstecken</string>
+    <string name="summary_pref_speak_password_characters">Med SandFly-tangentbordet läses tecken som skrivs, raderas och passeras i lösenordsfält upp</string>
+    <string name="shortcut_spell_password_field">Bokstavera lösenordsfältet</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Inte ett lösenordsfält</string>
+    <string name="sandfly_keyboard_password_not_available">Lösenordsfältets text är inte tillgänglig</string>
+    <string name="sandfly_keyboard_password_not_read">Läses inte upp i lösenordsfält</string>
 </resources>

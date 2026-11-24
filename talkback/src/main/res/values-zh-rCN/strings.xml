@@ -3328,4 +3328,22 @@
     <string name="double_tap_taps_on">点按两次即点按屏幕已开启</string>
     <string name="double_tap_taps_off">点按两次即点按屏幕已关闭</string>
     <string name="double_tap_taps_no_app">前台没有应用</string>
+    <string name="keycombo_menu_toggle_key_practice">开启或关闭键盘练习</string>
+    <string name="key_practice_on">键盘练习已开启</string>
+    <string name="key_practice_off">键盘练习已关闭</string>
+    <string name="key_practice_sandfly_key">SandFly 键</string>
+    <string name="key_practice_title">键盘练习</string>
+    <string name="key_practice_summary">朗读按下的每个键及其命令，但不执行命令。按返回键或 Esc 键可关闭。</string>
+    <string name="keycombo_menu_touch_hold_focus">在焦点项上保持触摸</string>
+    <string name="touch_hold_held">触摸已保持</string>
+    <string name="touch_hold_lifted">触摸已抬起</string>
+    <string name="touch_hold_unavailable">不可用</string>
+    <string name="touch_hold_no_focus">没有获得焦点的项</string>
+    <string name="title_pref_speak_password_characters">读出密码字符</string>
+    <string name="summary_pref_speak_password_characters">使用 SandFly 键盘时，读出在密码字段中输入、删除和光标经过的字符</string>
+    <string name="shortcut_spell_password_field">拼读密码字段</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">不是密码字段</string>
+    <string name="sandfly_keyboard_password_not_available">无法获取密码字段文本</string>
+    <string name="sandfly_keyboard_password_not_read">密码字段中不朗读</string>
 </resources>

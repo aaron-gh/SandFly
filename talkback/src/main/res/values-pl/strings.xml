@@ -2626,4 +2626,22 @@
     <string name="double_tap_taps_on">Dwukrotne kliknięcie stuka w ekran: włączone</string>
     <string name="double_tap_taps_off">Dwukrotne kliknięcie stuka w ekran: wyłączone</string>
     <string name="double_tap_taps_no_app">Brak aplikacji na pierwszym planie</string>
+    <string name="keycombo_menu_toggle_key_practice">Włącz lub wyłącz ćwiczenie klawiatury</string>
+    <string name="key_practice_on">Ćwiczenie klawiatury włączone</string>
+    <string name="key_practice_off">Ćwiczenie klawiatury wyłączone</string>
+    <string name="key_practice_sandfly_key">klawisz SandFly</string>
+    <string name="key_practice_title">Ćwiczenie klawiatury</string>
+    <string name="key_practice_summary">Odczytuje każdy naciśnięty klawisz i jego polecenie zamiast je wykonywać. Wstecz lub Escape wyłącza ćwiczenie.</string>
+    <string name="keycombo_menu_touch_hold_focus">Przytrzymaj dotyk na elemencie z fokusem</string>
+    <string name="touch_hold_held">Dotyk przytrzymany</string>
+    <string name="touch_hold_lifted">Dotyk zwolniony</string>
+    <string name="touch_hold_unavailable">Niedostępne</string>
+    <string name="touch_hold_no_focus">Żaden element nie ma fokusu</string>
+    <string name="title_pref_speak_password_characters">Odczytuj znaki hasła</string>
+    <string name="summary_pref_speak_password_characters">Z klawiaturą SandFly odczytuje w polach haseł znaki wpisane, usunięte i mijane przez kursor</string>
+    <string name="shortcut_spell_password_field">Przeliteruj pole hasła</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">To nie jest pole hasła</string>
+    <string name="sandfly_keyboard_password_not_available">Tekst pola hasła niedostępny</string>
+    <string name="sandfly_keyboard_password_not_read">Nie jest odczytywane w polach haseł</string>
 </resources>
