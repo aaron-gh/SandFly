@@ -1242,6 +1242,7 @@ object Commands {
           Key.SHOW_LEARN_MODE_PAGE,
           available = FeatureFlagReader.enableKeyboardLearnModePage(context),
         )
+        keyboard(Key.TOGGLE_KEY_PRACTICE)
         keyboard(Key.SHOW_KEYBOARD_SHORTCUTS_DIALOG)
         keyboard(Key.REPORT_ISSUE)
       }

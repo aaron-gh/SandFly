@@ -91,6 +91,7 @@ These aren't available on watches. For the file format, see [](#api-item-files).
 - **Search**: finds a command or an arrow key by its name or its keys, and opens its shortcut.
 - **Keymap**: **Choose a keymap**, **Choose SandFly key**, **Reset the keymap**, **View system keyboard shortcuts**, **New keymap**, **Export to file**, **Import from file**, and for keymaps that you made, **Rename keymap** and **Delete keymap**. **View system keyboard shortcuts** opens the list of the keyboard shortcuts of Android and the app in use.
 - **Keyboard shortcuts in apps**: shortcuts that run other commands in one app. See [](#keyboards-app-shortcuts).
+- **Keyboard practice**: turns keyboard practice on. See [](#keyboards-practice).
 - **Arrow key navigation**: in keymaps that have it. See [](#keyboards-arrow-keys).
 - The commands, by category, each with its shortcut. Each category opens and closes. A command whose shortcut works only in browse mode has "in browse mode" after its name, such as "Navigate to next heading in browse mode".
 
@@ -155,6 +156,22 @@ The same screen has the gestures of each app. For gestures in apps, see [](#gest
 **Show keyboard shortcuts list** opens a list of every command and its shortcut, which you can search. Its default shortcut is SandFly key + Shift + / in the SandFly, VoiceOver and Orca keymaps, SandFly key + Q in the keyboard phone keymap, and Q in the keyboard phone single-key keymap.
 
 **Keyboard shortcuts** > **Search** finds a command by its name or keys in settings. For the default shortcuts of every keymap, see [](#appendix-keyboard-shortcuts).
+
+### Keyboard practice {#keyboards-practice}
+
+While keyboard practice is on, SandFly says each key that you press and the command that it runs, and runs nothing. Keys don't reach apps. Use it to learn the keys of a keyboard and the shortcuts of your keymap.
+
+- Keys are said as the keyboard shortcuts list names them, followed by their command, such as "Right Shift + W, Speak window title". Keys without a command are said alone.
+- A modifier key is said when you press it, with the command of the modifier keys pressed alone. The SandFly key pressed alone is also said as the SandFly key, such as "Right Shift, SandFly key, Next item".
+- Keys pressed twice, keys held down and the second key of a shortcut of two keys in a row are said with their command, such as "Alt twice" or "Alt + Shift held".
+- While arrow key navigation is on, the arrow keys are said with their arrow key navigation commands.
+- A key held down is said once.
+
+To turn keyboard practice on, select **Keyboard shortcuts** > **Keyboard practice**, or press the shortcut of **Turn keyboard practice on or off**: SandFly key + Shift + K in the keyboard phone keymaps. Other keymaps have no default shortcut. SandFly says "Keyboard practice on".
+
+To turn it off, press the shortcut again, Back or Escape. SandFly says "Keyboard practice off". Keyboard practice is also off when SandFly restarts.
+
+**Turn keyboard practice on or off** is in the **SandFly** category, so you can also assign it to a gesture or add it to the SandFly menu. Volume keys pressed without the SandFly key change the volume as usual. The **Keyboard practice** lesson of the keyboard tutorial is different: it says only keyboard shortcuts, on the tutorial screen.
 
 ### Browse mode {#keyboards-browse-mode}
 

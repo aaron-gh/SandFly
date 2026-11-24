@@ -92,6 +92,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import java.util.function.Consumer;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /** Manages state related to detecting key combinations. */
@@ -139,6 +140,15 @@ public class KeyComboManager
               FeedbackItem.FLAG_NO_HISTORY
                   | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL
                   | FeedbackItem.FLAG_SKIP_DUPLICATE);
+
+  /**
+   * Speak options for keyboard practice: each key interrupts what the one before said, and a key
+   * pressed again is said again.
+   */
+  private static final SpeakOptions KEY_PRACTICE_SPEAK_OPTIONS =
+      SpeakOptions.create()
+          .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+          .setFlags(FeedbackItem.FLAG_NO_HISTORY | FeedbackItem.FLAG_FORCE_FEEDBACK_ALL);
 
   /**
    * Time to wait for a key after the prefix key combo has been pressed. If no key is pressed within
@@ -208,6 +218,12 @@ public class KeyComboManager
 
   /** Keys whose key down turned SandFly keyboard input on or off while it was off. */
   private final Set<Integer> keysTakenWhileInputOff = new HashSet<>();
+
+  /** Keyboard practice, which says each key pressed and its command instead of running it. */
+  private final KeyPractice keyPractice;
+
+  /** Where keyboard practice speaks, for tests; null speaks through the pipeline. */
+  private @Nullable Consumer<String> keyPracticeSpeech;
 
   /** Commands only work in Browse Mode. Built during initialization. */
   private final ImmutableSet<String> browseModeOnlyCommands;
@@ -327,6 +343,14 @@ public class KeyComboManager
     this.context = context;
     keypadKeys = context instanceof AccessibilityService service ? new KeypadKeys(service) : null;
     messageEnterKeys = new MessageEnterKeys(context);
+    keyPractice =
+        new KeyPractice(
+            context,
+            this,
+            text -> {
+              speakForKeyPractice(text);
+              return kotlin.Unit.INSTANCE;
+            });
     sharedPreferences = SharedPreferencesUtils.getSharedPreferences(context);
     initializeDefaultPreferenceValues();
     keyComboModel = createKeyComboModel();
@@ -447,6 +471,7 @@ public class KeyComboManager
       analytics.onModifierKeyUsed(keyComboModel.getTriggerModifier());
     }
     browseModeTurnedOffByUser = false;
+    keyPractice.reset();
     if (browseModeEnabled) {
       browseModeEnabled = false;
       // Record a Browse Mode log if Browse Mode is on when TalkBack is being turned off.
@@ -479,6 +504,10 @@ public class KeyComboManager
     editingShortcutKeys.clear();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
+    // Keyboard practice ends when SandFly is suspended or stops.
+    if (newState != SERVICE_STATE_ACTIVE) {
+      keyPractice.reset();
+    }
     serviceState = newState;
   }
 
@@ -502,6 +531,16 @@ public class KeyComboManager
         arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
         return true;
       }
+    }
+
+    // In keyboard practice, every key pressed is said with its command, and nothing else gets it.
+    boolean practiceWasOn = keyPractice.isOn();
+    if (keyPractice.onKeyEvent(event)) {
+      // Presses before practice don't count towards the next press after it.
+      if (practiceWasOn && !keyPractice.isOn()) {
+        keyPresses.clear();
+      }
+      return true;
     }
 
     if (isKeyboardInputOff()) {
@@ -1085,6 +1124,35 @@ public class KeyComboManager
         Feedback.speech(
             context.getString(on ? R.string.arrow_key_nav_on : R.string.arrow_key_nav_off),
             INTERRUPTIVE_SPEAK_OPTIONS));
+  }
+
+  /** Returns whether keyboard practice is on. */
+  public boolean isKeyPracticeOn() {
+    return keyPractice.isOn();
+  }
+
+  /**
+   * Turns keyboard practice on or off, and says which. While it is on, each key pressed is said
+   * with the command it runs, and nothing runs.
+   */
+  public void toggleKeyPractice() {
+    keyPractice.toggle();
+    LogUtils.i(TAG, "Keyboard practice %s", keyPractice.isOn() ? "on" : "off");
+    // Presses before practice don't count towards the next press after it.
+    if (!keyPractice.isOn()) {
+      keyPresses.clear();
+    }
+  }
+
+  private void speakForKeyPractice(String text) {
+    if (keyPracticeSpeech != null) {
+      keyPracticeSpeech.accept(text);
+      return;
+    }
+    if (pipeline == null) {
+      return;
+    }
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, KEY_PRACTICE_SPEAK_OPTIONS));
   }
 
   /**
@@ -2394,6 +2462,11 @@ public class KeyComboManager
       recordBrowseModeStateWhenOff(BROWSE_MODE_TURNED_OFF_BY_SMART_BROWSE_MODE);
       return;
     }
+  }
+
+  @VisibleForTesting
+  public void testing_setKeyPracticeSpeech(@Nullable Consumer<String> speech) {
+    keyPracticeSpeech = speech;
   }
 
   @VisibleForTesting

@@ -692,6 +692,16 @@ public class KeyComboMapper {
           keyComboManager.toggleKeyboardInput();
         }
       }
+      case TOGGLE_KEY_PRACTICE -> {
+        KeyComboManager keyComboManager =
+            TalkBackService.getInstance() == null
+                ? null
+                : TalkBackService.getInstance().getKeyComboManager();
+        result = keyComboManager != null;
+        if (keyComboManager != null) {
+          keyComboManager.toggleKeyPractice();
+        }
+      }
       case TOGGLE_BROWSE_MODE_EXTRA -> {
         KeyComboManager keyComboManager =
             TalkBackService.getInstance() == null
