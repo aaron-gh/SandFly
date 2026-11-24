@@ -494,6 +494,10 @@ On Android 11, when you choose an action with the **Actions** reading control, a
 
 realme UI reports some volume sliders as not focusable and unlabeled, so TalkBack skips them. SandFly focuses them.
 
+### realme image descriptions
+
+On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes or window changes of com.oplus.viewtalk.
+
 ### Telegram reply quotes
 
 In Telegram and apps built from it, such as Nekogram, the quote of the message that a message replies to is a separate item in TalkBack, often cut off. SandFly reads it with its message, after the time, as "replying to" the sender and text, with the whole quoted text when the quoted message is loaded. The quote isn't focused on its own; **Go to quoted message**, in the actions of the message, shows the quoted message. To have the quote as an item of its own, turn off **Navigation** > **Apps** > **Read Telegram reply quotes with the message**; **Go to quoted message** isn't offered then.

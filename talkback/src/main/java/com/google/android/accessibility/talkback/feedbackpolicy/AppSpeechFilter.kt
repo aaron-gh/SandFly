@@ -48,6 +48,9 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  *
  * Only speech is left out: focus moves, and sounds and vibrations play, as before. The settings are
  * read by [load]; while they are at their defaults nothing is watched and [isActive] is false.
+ *
+ * Whatever the settings, the announcements, live regions and window changes of [IGNORED_PACKAGES]
+ * are never spoken; see [alwaysMutes].
  */
 object AppSpeechFilter {
   private const val TAG = "AppSpeechFilter"
@@ -58,6 +61,12 @@ object AppSpeechFilter {
   const val MODE_CHOSEN_APPS = "chosen"
 
   @JvmField val MODES: List<String> = listOf(MODE_OFF, MODE_ALL_APPS, MODE_CHOSEN_APPS)
+
+  /**
+   * Packages whose app speech is never spoken. com.oplus.viewtalk, an accessibility service on
+   * realme and OPPO phones, announces image descriptions such as "Image may contain…" (#586).
+   */
+  @VisibleForTesting @JvmField val IGNORED_PACKAGES: Set<String> = setOf("com.oplus.viewtalk")
 
   /** What caused speech, as far as the filter tells sources apart. */
   enum class Source {
@@ -103,6 +112,14 @@ object AppSpeechFilter {
   @JvmStatic
   fun mutes(source: Source, packageName: CharSequence?): Boolean =
     active && mutes(state, source, packageName)
+
+  /**
+   * Whether speech from [source] of [packageName] is left unsaid whatever the settings: the
+   * announcements, live regions and window changes of [IGNORED_PACKAGES]. Focus in them is spoken.
+   */
+  @JvmStatic
+  fun alwaysMutes(source: Source, packageName: CharSequence?): Boolean =
+    source == Source.APP_SPEECH && packageName != null && packageName.toString() in IGNORED_PACKAGES
 
   /** Whether speech from [source] of [packageName] is left unsaid in [state]. */
   @JvmStatic

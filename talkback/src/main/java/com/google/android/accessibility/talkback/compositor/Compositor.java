@@ -629,10 +629,8 @@ public class Compositor {
     if (scripted != null) {
       ttsOutput = scripted;
     }
-    if (!TextUtils.isEmpty(ttsOutput)
-        && AppSpeechFilter.isActive()
-        && isLeftUnsaid(event, options)) {
-      LogUtils.d(TAG, "Not spoken, from an app or keyboard with its own speech: event=%d", event);
+    if (!TextUtils.isEmpty(ttsOutput) && isLeftUnsaid(event, options)) {
+      LogUtils.d(TAG, "Not spoken, left out by the app speech filter: event=%d", event);
       ttsOutput = "";
     }
     if (!TextUtils.isEmpty(ttsOutput)) {
@@ -689,11 +687,17 @@ public class Compositor {
   /**
    * Whether the speech for {@code event} is left unsaid by {@link AppSpeechFilter}: focus an app
    * moved, an announcement, a live region or a window change in the apps the settings name, or
-   * keyboard keys and text editing while a keyboard with its own speech is shown.
+   * keyboard keys and text editing while a keyboard with its own speech is shown, and app speech
+   * of the packages it always leaves unsaid.
    */
   private static boolean isLeftUnsaid(int event, HandleEventOptions options) {
     AppSpeechFilter.@Nullable Source source = speechSource(event, options);
     if (source == null) {
+      return false;
+    }
+    // Only app speech can be left unsaid while the settings are at their defaults.
+    boolean active = AppSpeechFilter.isActive();
+    if (!active && source != AppSpeechFilter.Source.APP_SPEECH) {
       return false;
     }
     @Nullable CharSequence packageName = null;
@@ -706,7 +710,8 @@ public class Compositor {
     if (packageName == null && options.eventInterpretation != null) {
       packageName = options.eventInterpretation.getPackageName();
     }
-    return AppSpeechFilter.mutes(source, packageName);
+    return AppSpeechFilter.alwaysMutes(source, packageName)
+        || (active && AppSpeechFilter.mutes(source, packageName));
   }
 
   /** What caused the speech for {@code event}, or null for speech the filter always lets through. */
