@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">పైకి ఆపై ఎడమకు స్వైప్ చేయండి</string>
   <string name="title_pref_shortcut_up_and_right">పైకి ఆపై కుడికి స్వైప్ చేయండి</string>
   <string name="title_pref_shortcut_right_and_down">కుడికి ఆపై కిందికి స్వైప్ చేయండి</string>
+  <string name="title_pref_shortcut_1finger_3tap">మూడుసార్లు ట్యాప్ చేయండి</string>
+  <string name="title_pref_shortcut_1finger_4tap">నాలుగుసార్లు ట్యాప్ చేయండి</string>
   <string name="title_pref_shortcut_right_and_up">కుడికి ఆపై పైకి స్వైప్ చేయండి</string>
   <string name="title_pref_shortcut_left_and_down">ఎడమకు ఆపై కిందికి స్వైప్ చేయండి</string>
   <string name="title_pref_shortcut_left_and_up">ఎడమకు ఆపై పైకి స్వైప్ చేయండి</string>
@@ -1356,6 +1358,7 @@
     <string name="value_charger_connected">ఛార్జర్ కనెక్ట్ చేయబడింది</string>
     <string name="title_pref_screen_announcements">స్క్రీన్ ఆన్ మరియు ఆఫ్</string>
     <string name="summary_pref_screen_announcements">స్క్రీన్ ఆఫ్ లేదా ఆన్ చేసినప్పుడు మరియు ఫోన్ అన్‌లాక్ చేయబడినప్పుడు SandFly ఏమి చెబుతుందో ఎంచుకోండి</string>
+    <string name="title_pref_screen_announcements_over_media">మీడియా ప్లే అవుతున్నప్పుడు చదివి వినిపించు</string>
     <string name="title_screen_announcements_screen_off">స్క్రీన్ ఆఫ్ అయినప్పుడు</string>
     <string name="title_screen_announcements_screen_on">స్క్రీన్ ఆన్ చేసినప్పుడు</string>
     <string name="title_screen_announcements_unlock">ఫోన్ అన్‌లాక్ చేసినప్పుడు</string>
@@ -1998,6 +2001,7 @@
     <string name="pref_speak_list_positions_title">జాబితా సమాచారాన్ని చదవండి</string>
     <string name="pref_speak_grid_positions_title">గ్రిడ్, పట్టిక సమాచారాన్ని చదవండి</string>
     <string name="pref_speak_role_without_pause_title">అంశం రకాన్ని విరామం లేకుండా చదవండి</string>
+    <string name="title_pref_speak_actions_available">చర్యలు అందుబాటులో ఉన్నాయి అని చదివి వినిపించు</string>
     <string name="title_pref_overview">SandFly ఓవర్‌వ్యూను ఉపయోగించండి</string>
     <string name="title_pref_overview_newest_last">ఇటీవలి యాప్ దిగువన</string>
     <string name="title_pref_overview_columns">నిలువు వరుసలు</string>
@@ -2257,6 +2261,10 @@
     <string name="vibration_type_effects">హాప్టిక్ ఎఫెక్ట్‌లు</string>
     <string name="vibration_type_pulses">పల్స్‌లు</string>
     <string name="vibration_type_on_off">ఆన్ మరియు ఆఫ్</string>
+    <string name="title_pref_actions_available_sound">చర్యలు అందుబాటులో ఉన్నాయి సౌండ్</string>
+    <string name="value_actions_available_sound_off">ఆఫ్‌లో ఉంది</string>
+    <string name="value_actions_available_sound_focus">ఐటెమ్‌పై ఫోకస్ వచ్చినప్పుడు</string>
+    <string name="value_actions_available_sound_after_speech">ఐటెమ్ చదివిన తర్వాత</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

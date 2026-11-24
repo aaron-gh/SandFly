@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Провести пальцем угору, потім ліворуч</string>
   <string name="title_pref_shortcut_up_and_right">Провести пальцем угору, потім праворуч</string>
   <string name="title_pref_shortcut_right_and_down">Провести пальцем праворуч, потім униз</string>
+  <string name="title_pref_shortcut_1finger_3tap">Потрійний дотик</string>
+  <string name="title_pref_shortcut_1finger_4tap">Чотири дотики</string>
   <string name="title_pref_shortcut_right_and_up">Провести пальцем праворуч, потім угору</string>
   <string name="title_pref_shortcut_left_and_down">Провести пальцем ліворуч, потім униз</string>
   <string name="title_pref_shortcut_left_and_up">Провести пальцем ліворуч, потім угору</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Зарядний пристрій підключено</string>
     <string name="title_pref_screen_announcements">Увімкнення і вимкнення екрана</string>
     <string name="summary_pref_screen_announcements">Виберіть, що SandFly говорить, коли екран вимикається або вмикається, а також коли телефон розблоковано</string>
+    <string name="title_pref_screen_announcements_over_media">Озвучувати під час відтворення медіа</string>
     <string name="title_screen_announcements_screen_off">Коли екран вимикається</string>
     <string name="title_screen_announcements_screen_on">Коли екран увімкнеться</string>
     <string name="title_screen_announcements_unlock">Коли телефон розблоковано</string>
@@ -2015,6 +2018,7 @@
     <string name="pref_speak_list_positions_title">Озвучувати відомості про список</string>
     <string name="pref_speak_grid_positions_title">Озвучувати відомості про сітку й таблицю</string>
     <string name="pref_speak_role_without_pause_title">Вимовляти тип елемента без паузи</string>
+    <string name="title_pref_speak_actions_available">Озвучувати «Доступні дії»</string>
     <string name="title_pref_overview">Використовувати огляд SandFly</string>
     <string name="title_pref_overview_newest_last">Найновіший додаток унизу</string>
     <string name="title_pref_overview_columns">Стовпці</string>
@@ -2268,6 +2272,10 @@
     <string name="vibration_type_effects">Тактильні ефекти</string>
     <string name="vibration_type_pulses">Імпульси</string>
     <string name="vibration_type_on_off">Проста вібрація</string>
+    <string name="title_pref_actions_available_sound">Звук «Доступні дії»</string>
+    <string name="value_actions_available_sound_off">Вимкнено</string>
+    <string name="value_actions_available_sound_focus">Коли елемент отримує фокус</string>
+    <string name="value_actions_available_sound_after_speech">Після озвучення елемента</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

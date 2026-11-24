@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Սահեցնել վերև, ապա ձախ</string>
   <string name="title_pref_shortcut_up_and_right">Սահեցնել վերև, ապա աջ</string>
   <string name="title_pref_shortcut_right_and_down">Սահեցնել աջ, ապա ներքև</string>
+  <string name="title_pref_shortcut_1finger_3tap">Երեք անգամ հպել</string>
+  <string name="title_pref_shortcut_1finger_4tap">Չորս անգամ հպել</string>
   <string name="title_pref_shortcut_right_and_up">Սահեցնել աջ, ապա վերև</string>
   <string name="title_pref_shortcut_left_and_down">Սահեցնել ձախ, ապա ներքև</string>
   <string name="title_pref_shortcut_left_and_up">Սահեցնել ձախ, ապա վերև</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Լիցքավորիչը միացված է</string>
     <string name="title_pref_screen_announcements">Էկրանի միացում և անջատում</string>
     <string name="summary_pref_screen_announcements">Ընտրեք, թե ինչ հնչեցնի SandFly-ը, երբ էկրանն անջատվում կամ միանում է, և երբ հեռախոսն ապակողպվում է</string>
+    <string name="title_pref_screen_announcements_over_media">Բարձրաձայն արտասանել մեդիայի նվագարկման ժամանակ</string>
     <string name="title_screen_announcements_screen_off">Երբ էկրանն անջատվում է</string>
     <string name="title_screen_announcements_screen_on">Երբ էկրանը միանում է</string>
     <string name="title_screen_announcements_unlock">Երբ հեռախոսն ապակողպվում է</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Հնչեցնել ցանկի մասին տեղեկությունները</string>
     <string name="pref_speak_grid_positions_title">Հնչեցնել ցանցի և աղյուսակի մասին տեղեկությունները</string>
     <string name="pref_speak_role_without_pause_title">Հնչեցնել տարրի տեսակը առանց դադարի</string>
+    <string name="title_pref_speak_actions_available">Բարձրաձայն արտասանել «Գործողությունները հասանելի են»</string>
     <string name="title_pref_overview">Օգտագործել SandFly-ի ընդհանուր տեսքը</string>
     <string name="title_pref_overview_newest_last">Ամենավերջին հավելվածը ներքևում</string>
     <string name="title_pref_overview_columns">Սյունակներ</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Հապտիկ էֆեկտներ</string>
     <string name="vibration_type_pulses">Իմպուլսներ</string>
     <string name="vibration_type_on_off">Միացում և անջատում</string>
+    <string name="title_pref_actions_available_sound">«Գործողությունները հասանելի են» ձայն</string>
+    <string name="value_actions_available_sound_off">Անջատված</string>
+    <string name="value_actions_available_sound_focus">Երբ տարրը ֆոկուսում է</string>
+    <string name="value_actions_available_sound_after_speech">Տարրը հնչեցնելուց հետո</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

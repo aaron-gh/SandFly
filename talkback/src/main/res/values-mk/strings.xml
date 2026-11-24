@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Повлекување нагоре, па налево</string>
   <string name="title_pref_shortcut_up_and_right">Повлекување нагоре, па надесно</string>
   <string name="title_pref_shortcut_right_and_down">Повлекување надесно, па надолу</string>
+  <string name="title_pref_shortcut_1finger_3tap">Троен допир</string>
+  <string name="title_pref_shortcut_1finger_4tap">Четирикратен допир</string>
   <string name="title_pref_shortcut_right_and_up">Повлекување надесно, па нагоре</string>
   <string name="title_pref_shortcut_left_and_down">Повлекување налево, па надолу</string>
   <string name="title_pref_shortcut_left_and_up">Повлекување налево, па нагоре</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Полначот е поврзан</string>
     <string name="title_pref_screen_announcements">Вклучување и исклучување на екранот</string>
     <string name="summary_pref_screen_announcements">Изберете што вели SandFly кога екранот се исклучува или вклучува и кога телефонот е отклучен</string>
+    <string name="title_pref_screen_announcements_over_media">Изговарај додека се репродуцираат медиумите</string>
     <string name="title_screen_announcements_screen_off">Кога екранот ќе се исклучи</string>
     <string name="title_screen_announcements_screen_on">Кога ќе се вклучи екранот</string>
     <string name="title_screen_announcements_unlock">Кога телефонот ќе се отклучи</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Читај информации за списокот</string>
     <string name="pref_speak_grid_positions_title">Читај информации за мрежата и табелата</string>
     <string name="pref_speak_role_without_pause_title">Читај го типот на ставката без пауза</string>
+    <string name="title_pref_speak_actions_available">Изговарај „Достапни се дејства“</string>
     <string name="title_pref_overview">Користи го прегледот на SandFly</string>
     <string name="title_pref_overview_newest_last">Најновата апликација долу</string>
     <string name="title_pref_overview_columns">Колони</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Хаптички ефекти</string>
     <string name="vibration_type_pulses">Импулси</string>
     <string name="vibration_type_on_off">Вклучено и исклучено</string>
+    <string name="title_pref_actions_available_sound">Звук „Достапни се дејства“</string>
+    <string name="value_actions_available_sound_off">Исклучено</string>
+    <string name="value_actions_available_sound_focus">Кога ставката ќе добие фокус</string>
+    <string name="value_actions_available_sound_after_speech">Откако ќе се прочита ставката</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

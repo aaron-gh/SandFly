@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Swayiphela phezulu bese kwesokunxele</string>
   <string name="title_pref_shortcut_up_and_right">Swayiphela phezulu bese kwesokudla</string>
   <string name="title_pref_shortcut_right_and_down">Swayiphela ngakwesokudla bese phansi</string>
+  <string name="title_pref_shortcut_1finger_3tap">Thepha kathathu</string>
+  <string name="title_pref_shortcut_1finger_4tap">Thepha kane</string>
   <string name="title_pref_shortcut_right_and_up">Swayiphela ngakwesokudla bese phezulu</string>
   <string name="title_pref_shortcut_left_and_down">Swayiphela ngakwesokunxele bese phansi</string>
   <string name="title_pref_shortcut_left_and_up">Swayiphela ngakwesokunxele bese phezulu</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Ishaja ixhunyiwe</string>
     <string name="title_pref_screen_announcements">Ukuvula nokuvala isikrini</string>
     <string name="summary_pref_screen_announcements">Khetha ukuthi SandFly ithini uma isikrini sivaliwe noma sivuliwe, nalapho ifoni ivuliwe</string>
+    <string name="title_pref_screen_announcements_over_media">Khuluma ngenkathi imidiya idlala</string>
     <string name="title_screen_announcements_screen_off">Uma isikrini sivaliwe</string>
     <string name="title_screen_announcements_screen_on">Uma isikrini sivulwa</string>
     <string name="title_screen_announcements_unlock">Uma ifoni ivulwa</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Khuluma ulwazi lohlu</string>
     <string name="pref_speak_grid_positions_title">Khuluma ulwazi lwegridi netafula</string>
     <string name="pref_speak_role_without_pause_title">Khuluma uhlobo lwento ngaphandle kokuma</string>
+    <string name="title_pref_speak_actions_available">Khuluma ukuthi Izenzo ziyatholakala</string>
     <string name="title_pref_overview">Sebenzisa ukubuka konke kwe-SandFly</string>
     <string name="title_pref_overview_newest_last">I-app yakamuva ngezansi</string>
     <string name="title_pref_overview_columns">Amakholomu</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Imiphumela ye-haptic</string>
     <string name="vibration_type_pulses">Ama-pulse</string>
     <string name="vibration_type_on_off">Ukuvula nokuvala</string>
+    <string name="title_pref_actions_available_sound">Umsindo wokuthi Izenzo ziyatholakala</string>
+    <string name="value_actions_available_sound_off">Kuvaliwe</string>
+    <string name="value_actions_available_sound_focus">Uma into igxilwa</string>
+    <string name="value_actions_available_sound_after_speech">Ngemuva kokuthi into ikhulunyiwe</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

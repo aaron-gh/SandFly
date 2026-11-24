@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">മുകളിലേക്ക്, പിന്നെ ഇടത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
   <string name="title_pref_shortcut_up_and_right">മുകളിലേക്ക്, പിന്നെ വലത്തേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
   <string name="title_pref_shortcut_right_and_down">വലത്തേക്ക്, പിന്നെ താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
+  <string name="title_pref_shortcut_1finger_3tap">മൂന്ന് തവണ ടാപ്പ് ചെയ്യുക</string>
+  <string name="title_pref_shortcut_1finger_4tap">നാല് തവണ ടാപ്പ് ചെയ്യുക</string>
   <string name="title_pref_shortcut_right_and_up">വലത്തേക്ക്, പിന്നെ മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
   <string name="title_pref_shortcut_left_and_down">ഇടത്തേക്ക്, പിന്നെ താഴേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
   <string name="title_pref_shortcut_left_and_up">ഇടത്തേക്ക്, പിന്നെ മുകളിലേക്ക് സ്വൈപ്പ് ചെയ്യുക</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">ചാർജർ ബന്ധിപ്പിച്ചു</string>
     <string name="title_pref_screen_announcements">സ്‌ക്രീൻ ഓണും ഓഫും</string>
     <string name="summary_pref_screen_announcements">സ്‌ക്രീൻ ഓഫാകുമ്പോഴോ ഓണാകുമ്പോഴോ ഫോൺ അൺലോക്ക് ചെയ്യുമ്പോഴും SandFly എന്ത് പറയണമെന്ന് തിരഞ്ഞെടുക്കുക</string>
+    <string name="title_pref_screen_announcements_over_media">മീഡിയ പ്ലേ ചെയ്യുമ്പോൾ വായിച്ചുകേൾക്കുക</string>
     <string name="title_screen_announcements_screen_off">സ്ക്രീൻ ഓഫ് ചെയ്യുമ്പോൾ</string>
     <string name="title_screen_announcements_screen_on">സ്ക്രീൻ ഓൺ ചെയ്യുമ്പോൾ</string>
     <string name="title_screen_announcements_unlock">ഫോൺ അൺലോക്ക് ചെയ്യുമ്പോൾ</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">ലിസ്റ്റ് വിവരങ്ങൾ വായിക്കുക</string>
     <string name="pref_speak_grid_positions_title">ഗ്രിഡ്, പട്ടിക വിവരങ്ങൾ വായിക്കുക</string>
     <string name="pref_speak_role_without_pause_title">ഇനത്തിന്റെ തരം ഇടവേളയില്ലാതെ വായിക്കുക</string>
+    <string name="title_pref_speak_actions_available">പ്രവർത്തനങ്ങൾ ലഭ്യമാണ് എന്ന് വായിക്കുക</string>
     <string name="title_pref_overview">SandFly അവലോകനം ഉപയോഗിക്കുക</string>
     <string name="title_pref_overview_newest_last">ഏറ്റവും പുതിയ ആപ്പ് താഴെ</string>
     <string name="title_pref_overview_columns">നിരകൾ</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">ഹാപ്റ്റിക് ഇഫക്റ്റുകൾ</string>
     <string name="vibration_type_pulses">പൾസുകൾ</string>
     <string name="vibration_type_on_off">ഓണും ഓഫും</string>
+    <string name="title_pref_actions_available_sound">പ്രവർത്തനങ്ങൾ ലഭ്യമാണ് ശബ്ദം</string>
+    <string name="value_actions_available_sound_off">ഓഫാണ്</string>
+    <string name="value_actions_available_sound_focus">ഇനത്തിൽ ഫോക്കസ് ലഭിക്കുമ്പോൾ</string>
+    <string name="value_actions_available_sound_after_speech">ഇനം വായിച്ചതിന് ശേഷം</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

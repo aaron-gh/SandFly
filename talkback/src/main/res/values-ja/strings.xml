@@ -570,6 +570,8 @@
   <string name="title_pref_shortcut_up_and_left">上にスワイプしてから左にスワイプ</string>
   <string name="title_pref_shortcut_up_and_right">上にスワイプしてから右にスワイプ</string>
   <string name="title_pref_shortcut_right_and_down">右にスワイプしてから下にスワイプ</string>
+  <string name="title_pref_shortcut_1finger_3tap">トリプルタップ</string>
+  <string name="title_pref_shortcut_1finger_4tap">4回タップ</string>
   <string name="title_pref_shortcut_right_and_up">右にスワイプしてから上にスワイプ</string>
   <string name="title_pref_shortcut_left_and_down">左にスワイプしてから下にスワイプ</string>
   <string name="title_pref_shortcut_left_and_up">左にスワイプしてから上にスワイプ</string>
@@ -1362,6 +1364,7 @@
     <string name="value_charger_connected">充電器が接続されています</string>
     <string name="title_pref_screen_announcements">画面のオンとオフ</string>
     <string name="summary_pref_screen_announcements">画面がオフまたはオンになったとき、および電話のロックが解除されたときにSandFlyが何を言うかを選択します</string>
+    <string name="title_pref_screen_announcements_over_media">メディアの再生中も読み上げる</string>
     <string name="title_screen_announcements_screen_off">画面がオフになるとき</string>
     <string name="title_screen_announcements_screen_on">画面がオンになるとき</string>
     <string name="title_screen_announcements_unlock">電話機のロックが解除されたとき</string>
@@ -2004,6 +2007,7 @@
     <string name="pref_speak_list_positions_title">リスト情報を読み上げる</string>
     <string name="pref_speak_grid_positions_title">グリッドと表の情報を読み上げる</string>
     <string name="pref_speak_role_without_pause_title">項目の種類を間を空けずに読み上げる</string>
+    <string name="title_pref_speak_actions_available">「操作を使用できます」を読み上げる</string>
     <string name="title_pref_overview">SandFly の概要を使用</string>
     <string name="title_pref_overview_newest_last">最新のアプリを下に表示</string>
     <string name="title_pref_overview_columns">列数</string>
@@ -2262,6 +2266,10 @@
     <string name="vibration_type_effects">触覚エフェクト</string>
     <string name="vibration_type_pulses">パルス</string>
     <string name="vibration_type_on_off">オン / オフのみ</string>
+    <string name="title_pref_actions_available_sound">「操作を使用できます」のサウンド</string>
+    <string name="value_actions_available_sound_off">オフ</string>
+    <string name="value_actions_available_sound_focus">項目にフォーカスしたとき</string>
+    <string name="value_actions_available_sound_after_speech">項目の読み上げ後</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

@@ -305,7 +305,7 @@ class DefaultConsumer implements EventConsumer {
         case CMD_NAV_WINDOW_PREVIOUS ->
             success = behaviorScreenReaderAction.performAction(ScreenReaderAction.PREVIOUS_WINDOW);
         case CMD_SWITCH_TO_NEXT_OUTPUT_LANGUAGE -> {
-          if (BrailleUserPreferences.readAvailablePreferredCodes(context).size() > 1) {
+          if (BrailleUserPreferences.readAvailablePreferredOutputCodes(context).size() > 1) {
             Code nextCode = BrailleUserPreferences.getNextOutputCode(context);
             String userFacingName = nextCode.getUserFacingName(context);
             BrailleUserPreferences.writeCurrentActiveOutputCode(context, nextCode);

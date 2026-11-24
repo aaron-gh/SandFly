@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">மேலே, பிறகு இடதுபுறமாக ஸ்வைப் செய்தல்</string>
   <string name="title_pref_shortcut_up_and_right">மேலே, பிறகு வலதுபுறமாக ஸ்வைப் செய்தல்</string>
   <string name="title_pref_shortcut_right_and_down">வலதுபுறமாக, பிறகு கீழே ஸ்வைப் செய்தல்</string>
+  <string name="title_pref_shortcut_1finger_3tap">மும்முறை தட்டுதல்</string>
+  <string name="title_pref_shortcut_1finger_4tap">நான்கு முறை தட்டுதல்</string>
   <string name="title_pref_shortcut_right_and_up">வலதுபுறமாக, பிறகு மேலே ஸ்வைப் செய்தல்</string>
   <string name="title_pref_shortcut_left_and_down">இடதுபுறமாக, பிறகு கீழே ஸ்வைப் செய்தல்</string>
   <string name="title_pref_shortcut_left_and_up">இடதுபுறமாக, பிறகு மேலே ஸ்வைப் செய்தல்</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">சார்ஜர் இணைக்கப்பட்டுள்ளது</string>
     <string name="title_pref_screen_announcements">திரை ஆன் மற்றும் ஆஃப்</string>
     <string name="summary_pref_screen_announcements">திரை அணையும்போது அல்லது இயங்கும்போது, ஃபோன் அன்லாக் செய்யப்படும்போது SandFly என்ன சொல்ல வேண்டும் என்பதைத் தேர்வுசெய்யவும்</string>
+    <string name="title_pref_screen_announcements_over_media">மீடியா இயங்கும்போது படி</string>
     <string name="title_screen_announcements_screen_off">திரை அணைக்கப்படும் போது</string>
     <string name="title_screen_announcements_screen_on">திரை இயக்கப்படும் போது</string>
     <string name="title_screen_announcements_unlock">தொலைபேசி திறக்கப்படும் போது</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">பட்டியல் தகவலைப் பேசு</string>
     <string name="pref_speak_grid_positions_title">கட்டம் மற்றும் அட்டவணை தகவலைப் பேசு</string>
     <string name="pref_speak_role_without_pause_title">உருப்படி வகையை இடைநிறுத்தம் இல்லாமல் பேசு</string>
+    <string name="title_pref_speak_actions_available">செயல்கள் கிடைக்கின்றன என்பதைப் படி</string>
     <string name="title_pref_overview">SandFly மேலோட்டப் பார்வையைப் பயன்படுத்து</string>
     <string name="title_pref_overview_newest_last">சமீபத்திய ஆப்ஸ் கீழே</string>
     <string name="title_pref_overview_columns">நெடுவரிசைகள்</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">ஹாப்டிக் விளைவுகள்</string>
     <string name="vibration_type_pulses">துடிப்புகள்</string>
     <string name="vibration_type_on_off">ஆன்/ஆஃப் மட்டும்</string>
+    <string name="title_pref_actions_available_sound">செயல்கள் கிடைக்கின்றன ஒலி</string>
+    <string name="value_actions_available_sound_off">முடக்கப்பட்டுள்ளது</string>
+    <string name="value_actions_available_sound_focus">உருப்படி ஃபோகஸ் பெறும்போது</string>
+    <string name="value_actions_available_sound_after_speech">உருப்படி படிக்கப்பட்ட பிறகு</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

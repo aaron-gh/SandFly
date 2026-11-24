@@ -28,6 +28,7 @@
   <string name="value_screen_on">Obrazovka je zapnutá.</string>
   <string name="value_screen_off">Obrazovka vypnutá.</string>
   <string name="value_device_unlocked">Zařízení bylo odemknuto.</string>
+  <string name="title_pref_screen_announcements_over_media">Číst během přehrávání médií</string>
   <string name="title_pref_speech_volume">Hlasitost řeči</string>
   <string name="title_pref_verbose_scroll_announcement">Vždy vyslovovat počet položek v seznamu</string>
   <string name="summary_pref_verbose_scroll_announcement">Po každém posunutí říkat, které položky jsou zobrazené</string>
@@ -571,6 +572,8 @@
   <string name="title_pref_shortcut_up_and_left">Přejetí nahoru a pak doleva</string>
   <string name="title_pref_shortcut_up_and_right">Přejetí nahoru a pak doprava</string>
   <string name="title_pref_shortcut_right_and_down">Přejetí doprava a pak dolů</string>
+  <string name="title_pref_shortcut_1finger_3tap">Trojité klepnutí</string>
+  <string name="title_pref_shortcut_1finger_4tap">Čtyřnásobné klepnutí</string>
   <string name="title_pref_shortcut_right_and_up">Přejetí doprava a pak nahoru</string>
   <string name="title_pref_shortcut_left_and_down">Přejetí doleva a pak dolů</string>
   <string name="title_pref_shortcut_left_and_up">Přejetí doleva a pak nahoru</string>
@@ -1831,6 +1834,7 @@
     <string name="pref_speak_list_positions_title">Hlásit informace o seznamech</string>
     <string name="pref_speak_grid_positions_title">Hlásit informace o mřížkách a tabulkách</string>
     <string name="pref_speak_role_without_pause_title">Hlásit typ položky bez pauzy</string>
+    <string name="title_pref_speak_actions_available">Hlásit „Akce k dispozici“</string>
     <string name="title_pref_overview">Používat přehled SandFly</string>
     <string name="title_pref_overview_newest_last">Nejnovější aplikace dole</string>
     <string name="title_pref_overview_columns">Sloupce</string>
@@ -2094,6 +2098,10 @@
     <string name="vibration_type_effects">Haptické efekty</string>
     <string name="vibration_type_pulses">Pulzy</string>
     <string name="vibration_type_on_off">Zapnuto a vypnuto</string>
+    <string name="title_pref_actions_available_sound">Zvuk „Akce k dispozici“</string>
+    <string name="value_actions_available_sound_off">Vypnuto</string>
+    <string name="value_actions_available_sound_focus">Když je položka zaměřena</string>
+    <string name="value_actions_available_sound_after_speech">Po přečtení položky</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

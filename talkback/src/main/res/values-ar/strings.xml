@@ -73,6 +73,7 @@
   <string name="value_device_unlocked">تم فتح قفل الجهاز.</string>
   <string name="title_pref_screen_announcements">تشغيل الشاشة وإيقافها</string>
   <string name="summary_pref_screen_announcements">‏اختيار ما يقوله SandFly عند إيقاف الشاشة أو تشغيلها، وعند فتح قفل الهاتف</string>
+  <string name="title_pref_screen_announcements_over_media">النطق أثناء تشغيل الوسائط</string>
   <string name="title_screen_announcements_screen_off">عند إيقاف الشاشة</string>
   <string name="title_screen_announcements_screen_on">عند تشغيل الشاشة</string>
   <string name="title_screen_announcements_unlock">عند فتح قفل الهاتف</string>
@@ -680,6 +681,8 @@
   <string name="title_pref_shortcut_up_and_left">التمرير للأعلى ثم لليسار</string>
   <string name="title_pref_shortcut_up_and_right">التمرير للأعلى ثم لليمين</string>
   <string name="title_pref_shortcut_right_and_down">التمرير لليمين ثم للأسفل</string>
+  <string name="title_pref_shortcut_1finger_3tap">النقر ثلاث مرات</string>
+  <string name="title_pref_shortcut_1finger_4tap">النقر 4 مرّات</string>
   <string name="title_pref_shortcut_right_and_up">التمرير لليمين ثم للأعلى</string>
   <string name="title_pref_shortcut_left_and_down">التمرير لليسار ثم للأسفل</string>
   <string name="title_pref_shortcut_left_and_up">التمرير لليسار ثم للأعلى</string>
@@ -2023,6 +2026,7 @@
     <string name="pref_speak_list_positions_title">نطق معلومات القائمة</string>
     <string name="pref_speak_grid_positions_title">نطق معلومات الشبكة والجدول</string>
     <string name="pref_speak_role_without_pause_title">نطق نوع العنصر دون توقف</string>
+    <string name="title_pref_speak_actions_available">نطق الإجراءات المتاحة</string>
     <string name="title_pref_overview">استخدام نظرة عامة من SandFly</string>
     <string name="title_pref_overview_newest_last">أحدث تطبيق في الأسفل</string>
     <string name="title_pref_overview_columns">الأعمدة</string>
@@ -2291,6 +2295,10 @@
     <string name="vibration_type_effects">التأثيرات اللمسية</string>
     <string name="vibration_type_pulses">نبضات</string>
     <string name="vibration_type_on_off">تشغيل وإيقاف</string>
+    <string name="title_pref_actions_available_sound">صوت الإجراءات المتاحة</string>
+    <string name="value_actions_available_sound_off">غير مفعَّل</string>
+    <string name="value_actions_available_sound_focus">عند التركيز على العنصر</string>
+    <string name="value_actions_available_sound_after_speech">بعد نطق العنصر</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

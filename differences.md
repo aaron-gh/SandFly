@@ -201,7 +201,7 @@ For every gesture and its settings, see the user guide chapter [Gestures](docs/u
 
 ### Gestures recognized by SandFly
 
-On Android 13 and later, SandFly recognizes gestures itself by default, instead of leaving this to Android, as the TalkBack source release does. Gesture recognition by SandFly is needed for the rotor, edge gestures and edge menus, corner gestures, the scrub, pinch and spread, swipe and hold, three-part and two-stroke swipes, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers, the four-finger taps on half of the screen, the timing settings on the **Gestures** screen and touch lock.
+On Android 13 and later, SandFly recognizes gestures itself by default, instead of leaving this to Android, as the TalkBack source release does. Gesture recognition by SandFly is needed for the rotor, edge gestures and edge menus, corner gestures, the scrub, pinch and spread, swipe and hold, three-part and two-stroke swipes, tap then swipe, two-finger angle gestures, the one-finger triple-tap and quadruple-tap, the quadruple-tap with three fingers, the four-finger taps on half of the screen, the timing settings on the **Gestures** screen and touch lock.
 
 To have Android recognize gestures again, turn off **Developer settings** > **Handle gestures in SandFly**, then turn SandFly off and on again. The gestures and settings above are then unavailable.
 
@@ -326,6 +326,10 @@ The 16 gestures are at the end of the **1 finger**, **1 finger back-and-forth** 
 ### Two-finger double-tap at the top and bottom
 
 **Double-tap with 2 fingers, top and bottom**, in **Gestures** > **2 fingers**, is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third, as displayed, runs it instead of **Double-tap with 2 fingers**. It is unassigned by default, requires Android 13 or later and **Handle gestures in SandFly** turned on, and isn't on watches.
+
+### One-finger triple-tap and quadruple-tap
+
+**Triple-tap** and **Quadruple-tap**, in **Gestures** > **1 finger**, are one-finger taps anywhere on the screen. TalkBack has no one-finger tap gestures beyond the double-tap. Both are unassigned by default. A one-finger double-tap runs at once while neither has a command; while one has a command, a double-tap waits for a further tap for **Time between one-finger taps**. A triple-tap waits only while **Quadruple-tap** has a command. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
 
 ### Gestures on the cover screen of a flip phone
 
@@ -493,6 +497,10 @@ On Android 11, when you choose an action with the **Actions** reading control, a
 ### Sliders that report themselves as unfocusable
 
 realme UI reports some volume sliders as not focusable and unlabeled, so TalkBack skips them. SandFly focuses them.
+
+### realme image descriptions
+
+On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes or window changes of com.oplus.viewtalk.
 
 ### Telegram reply quotes
 
@@ -761,6 +769,15 @@ TalkBack has **Choose a preset**, with **High**, **Low** and **Custom** verbosit
 
 With **Verbosity** > **Speak item type without a pause** on, SandFly joins the name and the type of an item with a space instead of a pause. It's off by default.
 
+### Actions available
+
+TalkBack says that an item has actions only in its usage hint. SandFly also has:
+
+- **Verbosity** > **Speak Actions available**: says "Actions available" after an item with actions of its app, with usage hints on or off. With usage hints on, the hint then gives only the gesture that shows the actions, such as "Use tap with 2 fingers to view actions". Off by default.
+- The **Actions available** sound, two short rising tones. **Sound and vibration** > **Actions available sound** turns it **Off** or plays it **When the item gets focus**, after the focus sound, which is the default, or **After the item is spoken**. It has a switch in **Individual sounds and vibrations**, a sound theme can replace it, and a theme can give it a vibration; it has none of its own.
+
+Both are for items with custom actions of their app, such as Reply and Forward on a chat message. Android's actions, such as activating, long pressing, scrolling and expanding, don't count, so an ordinary button has neither. Keys of on-screen keyboards don't count either.
+
 ### Order of item details
 
 **Verbosity** > **Order of item details** sets the order in which SandFly speaks the name, type and state of an item. TalkBack has this setting in **Advanced settings**, as **Element description order**, with three orders to choose from. SandFly lists **State**, **Name** and **Type**, and you put them in any of the six orders: touch and hold a detail and drag it up or down, or use its **Move up** and **Move down** actions. With SandFly on, double-tap and hold a detail, then drag it. SandFly announces the position of the detail as you pick it up, move it and drop it. The default is **State, name, type**, as in TalkBack.
@@ -817,7 +834,7 @@ Some apps and keyboards have their own text-to-speech output, such as an assista
 
 By default, SandFly speaks "Screen off" and the ringer mode when the screen turns off, the time and the number of notifications when it turns on, and "Device unlocked" when you unlock the phone. The number of notifications, as in "6 notifications", needs notification access and counts notifications that aren't ongoing. On a flip phone, waking the cover screen counts as the screen turning on. With face or fingerprint unlock, the phone is unlocked right after the screen turns on; items that the screen-on announcement spoke less than 5 seconds before aren't spoken again on unlock.
 
-These items are separate from **Status readout**, so that **Speak status** can read other things. During calls, SandFly speaks only "Screen off". The lock screen doesn't cut off the screen-off announcement.
+These items are separate from **Status readout**, so that **Speak status** can read other things. During calls, SandFly speaks only "Screen off". The lock screen doesn't cut off the screen-off announcement. Media playback silences the screen-off and unlock announcements unless **Speak during media playback** is on; it's off by default. The screen-on announcement is always spoken during media playback.
 
 ### Battery, call and time announcements
 
@@ -1271,7 +1288,7 @@ In TalkBack, the braille keyboard follows the echo setting of the on-screen keyb
 
 ### Next braille table
 
-Hold dots 4, 5 and 6 and swipe down to switch to the next language of the braille keyboard. Contracted braille is turned on or off as it was when you last used that language, and SandFly announces the language and whether it's contracted. Speech changes to your first voice profile in that language, if you have one, and back to **SandFly default** when the new language has none. You can change the gesture in **Braille** > **Braille keyboard** > **Gestures**.
+Hold dots 4, 5 and 6 and swipe down to switch to the next language of the braille keyboard. Contracted braille is turned on or off as it was when you last used that language, and SandFly announces the language and whether it's contracted. Speech changes to your first voice profile in that language, if you have one, and back to **SandFly default** when the new language has none. Unicode braille keeps the voice in use. You can change the gesture in **Braille** > **Braille keyboard** > **Gestures**.
 
 ### Emoji search
 
@@ -1280,6 +1297,10 @@ Hold dots 4, 5 and 6 and swipe right to search for an emoji. Type words of its n
 ### Mongolian and Romanian braille
 
 The braille languages include Mongolian, uncontracted and contracted, from the liblouis tables, and **Romanian**, 6-dot uncontracted braille, besides **Romanian 8-dot Computer Braille**. Both are on the braille keyboard and on braille displays.
+
+### Unicode braille
+
+**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
 
 ### Custom braille characters
 

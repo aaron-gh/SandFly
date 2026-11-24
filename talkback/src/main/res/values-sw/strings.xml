@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Telezesha kidole juu kisha kushoto</string>
   <string name="title_pref_shortcut_up_and_right">Telezesha kidole juu kisha kulia</string>
   <string name="title_pref_shortcut_right_and_down">Telezesha kidole kulia kisha chini</string>
+  <string name="title_pref_shortcut_1finger_3tap">Gusa mara tatu</string>
+  <string name="title_pref_shortcut_1finger_4tap">Gusa mara nne</string>
   <string name="title_pref_shortcut_right_and_up">Telezesha kidole kulia kisha juu</string>
   <string name="title_pref_shortcut_left_and_down">Telezesha kidole kushoto kisha chini</string>
   <string name="title_pref_shortcut_left_and_up">Telezesha kidole kushoto kisha juu</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Chaja imeunganishwa</string>
     <string name="title_pref_screen_announcements">Kuwasha na kuzima skrini</string>
     <string name="summary_pref_screen_announcements">Chagua SandFly itasema nini skrini inapozimwa au kuwashwa, na simu inapofunguliwa</string>
+    <string name="title_pref_screen_announcements_over_media">Tamka wakati maudhui yanacheza</string>
     <string name="title_screen_announcements_screen_off">Wakati skrini inapozimwa</string>
     <string name="title_screen_announcements_screen_on">Skrini inapowashwa</string>
     <string name="title_screen_announcements_unlock">Simu inapofunguliwa</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Tamka maelezo ya orodha</string>
     <string name="pref_speak_grid_positions_title">Tamka maelezo ya gridi na jedwali</string>
     <string name="pref_speak_role_without_pause_title">Tamka aina ya kipengee bila kusimama</string>
+    <string name="title_pref_speak_actions_available">Tamka Vitendo vinapatikana</string>
     <string name="title_pref_overview">Tumia muhtasari wa SandFly</string>
     <string name="title_pref_overview_newest_last">Programu ya hivi karibuni chini</string>
     <string name="title_pref_overview_columns">Safu wima</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Madoido ya mguso</string>
     <string name="vibration_type_pulses">Mipigo</string>
     <string name="vibration_type_on_off">Kuwasha na kuzima</string>
+    <string name="title_pref_actions_available_sound">Sauti ya Vitendo vinapatikana</string>
+    <string name="value_actions_available_sound_off">Zima</string>
+    <string name="value_actions_available_sound_focus">Kipengee kinapoangaziwa</string>
+    <string name="value_actions_available_sound_after_speech">Baada ya kipengee kutamkwa</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

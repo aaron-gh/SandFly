@@ -29,13 +29,37 @@ class SoundVibrationsTest {
   private val patterns: Map<String, Pattern> = loadPatterns()
   private val vibrationNames = IndividualFeedbackSettings.VIBRATIONS.flatMap { it.resourceNames }
 
-  // Every switch but the braille keyboard's, whose patterns the keyboard defines itself.
-  private val patternNames = vibrationNames - SoundVibrations.BRAILLE_KEYBOARD
+  // Every switch but the braille keyboard's, whose patterns the keyboard defines itself, and those
+  // of sounds that only a theme gives a vibration.
+  private val patternNames =
+    vibrationNames -
+      SoundVibrations.BRAILLE_KEYBOARD -
+      SoundVibrations.THEME_ONLY_PATTERNS
 
   @Test
   fun everySoundHasAVibration() {
     val sounds = IndividualFeedbackSettings.SOUNDS.flatMap { it.resourceNames }.toSet()
     assertEquals(sounds, SoundVibrations.PATTERNS.keys)
+  }
+
+  @Test
+  fun theActionsAvailableSoundHasAVibrationSwitchButOnlyAThemeGivesItAVibration() {
+    val sound = IndividualFeedbackSettings.ACTIONS_AVAILABLE
+    assertTrue(IndividualFeedbackSettings.SOUNDS.any { it.key == sound })
+    assertTrue(File("src/main/res/raw/$sound.wav").isFile)
+    val pattern = SoundVibrations.PATTERNS.getValue(sound)
+    assertEquals(pattern, SoundVibrations.switchOf(sound))
+    assertTrue(IndividualFeedbackSettings.VIBRATIONS.any { it.key == pattern })
+    assertTrue(pattern in SoundVibrations.THEME_ONLY_PATTERNS)
+    assertTrue(pattern !in patterns)
+    // A theme's vibration plays with it.
+    val themed = intArrayOf(0, 12)
+    val played =
+      SoundVibrations.playedAs(
+        mapOf(sound to themed),
+        IndividualFeedbackSettings.SOUNDS.associate { it.key to it.resourceNames },
+      )
+    assertTrue(played[sound] === themed)
   }
 
   @Test

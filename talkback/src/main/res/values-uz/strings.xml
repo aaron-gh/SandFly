@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Tepaga, keyin chapga surish</string>
   <string name="title_pref_shortcut_up_and_right">Tepaga, keyin oʻngga surish</string>
   <string name="title_pref_shortcut_right_and_down">Oʻngga, keyin pastga surish</string>
+  <string name="title_pref_shortcut_1finger_3tap">Uch marta teginish</string>
+  <string name="title_pref_shortcut_1finger_4tap">Toʻrt marta teginish</string>
   <string name="title_pref_shortcut_right_and_up">Oʻngga, keyin tepaga surish</string>
   <string name="title_pref_shortcut_left_and_down">Chapga, keyin pastga surish</string>
   <string name="title_pref_shortcut_left_and_up">Chapga, keyin tepaga surish</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Zaryadlovchi ulangan</string>
     <string name="title_pref_screen_announcements">Ekranni yoqish va oʻchirish</string>
     <string name="summary_pref_screen_announcements">Ekran oʻchgan yoki yoqilganda va telefon qulfdan chiqarilganda SandFly nima deyishini tanlang</string>
+    <string name="title_pref_screen_announcements_over_media">Media ijro etilayotganda aytilsin</string>
     <string name="title_screen_announcements_screen_off">Ekran oʻchganda</string>
     <string name="title_screen_announcements_screen_on">Ekran yoqilganda</string>
     <string name="title_screen_announcements_unlock">Telefon qulfdan chiqarilganda</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Roʻyxat haqidagi maʼlumotni aytish</string>
     <string name="pref_speak_grid_positions_title">Setka va jadval haqidagi maʼlumotni aytish</string>
     <string name="pref_speak_role_without_pause_title">Element turini pauzasiz aytish</string>
+    <string name="title_pref_speak_actions_available">“Amallar mavjud” aytilsin</string>
     <string name="title_pref_overview">SandFly umumiy koʻrinishidan foydalanish</string>
     <string name="title_pref_overview_newest_last">Eng yangi ilova pastda</string>
     <string name="title_pref_overview_columns">Ustunlar</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Haptik effektlar</string>
     <string name="vibration_type_pulses">Impulslar</string>
     <string name="vibration_type_on_off">Yoqish va oʻchirish</string>
+    <string name="title_pref_actions_available_sound">“Amallar mavjud” ovozi</string>
+    <string name="value_actions_available_sound_off">Oʻchiq</string>
+    <string name="value_actions_available_sound_focus">Element fokusga olinganda</string>
+    <string name="value_actions_available_sound_after_speech">Element aytilgandan keyin</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

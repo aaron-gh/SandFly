@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Yukarı ve sonra sola hızlıca kaydırma</string>
   <string name="title_pref_shortcut_up_and_right">Yukarı ve sonra sağa hızlıca kaydırma</string>
   <string name="title_pref_shortcut_right_and_down">Sağa ve sonra aşağı hızlıca kaydırma</string>
+  <string name="title_pref_shortcut_1finger_3tap">Üç kez dokunma</string>
+  <string name="title_pref_shortcut_1finger_4tap">Dört kez dokunma</string>
   <string name="title_pref_shortcut_right_and_up">Sağa ve sonra yukarı hızlıca kaydırma</string>
   <string name="title_pref_shortcut_left_and_down">Sola ve sonra aşağı hızlıca kaydırma</string>
   <string name="title_pref_shortcut_left_and_up">Sola ve sonra yukarı hızlıca kaydırma</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Şarj cihazı bağlı</string>
     <string name="title_pref_screen_announcements">Ekran açık ve kapalı</string>
     <string name="summary_pref_screen_announcements">Ekran kapatıldığında veya açıldığında ve telefonun kilidi açıldığında SandFly\'nin ne söyleyeceğini seçin</string>
+    <string name="title_pref_screen_announcements_over_media">Medya oynatılırken sesli oku</string>
     <string name="title_screen_announcements_screen_off">Ekran kapandığında</string>
     <string name="title_screen_announcements_screen_on">Ekran açıldığında</string>
     <string name="title_screen_announcements_unlock">Telefonun kilidi açıldığında</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Liste bilgilerini seslendir</string>
     <string name="pref_speak_grid_positions_title">Tablo ve ızgara bilgilerini seslendir</string>
     <string name="pref_speak_role_without_pause_title">Öğe türünü duraksamadan seslendir</string>
+    <string name="title_pref_speak_actions_available">İşlemler kullanılabilir ifadesini sesli oku</string>
     <string name="title_pref_overview">SandFly genel bakışını kullan</string>
     <string name="title_pref_overview_newest_last">En son uygulama altta</string>
     <string name="title_pref_overview_columns">Sütunlar</string>
@@ -2267,6 +2271,10 @@
     <string name="vibration_type_effects">Dokunsal efektler</string>
     <string name="vibration_type_pulses">Darbeler</string>
     <string name="vibration_type_on_off">Açık ve kapalı</string>
+    <string name="title_pref_actions_available_sound">İşlemler kullanılabilir sesi</string>
+    <string name="value_actions_available_sound_off">Kapalı</string>
+    <string name="value_actions_available_sound_focus">Öğeye odaklanıldığında</string>
+    <string name="value_actions_available_sound_after_speech">Öğe seslendirildikten sonra</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

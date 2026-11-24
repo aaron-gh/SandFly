@@ -94,4 +94,40 @@ class BrailleLanguagesTest {
       Locale.setDefault(originalLocale)
     }
   }
+
+  @Test
+  fun unicodeBrailleCodeConfiguration() {
+    val unicode = Code.UNICODE_BRAILLE
+    assertTrue(unicode.hasNoLanguage())
+    assertTrue(unicode.isInputOnly)
+    assertFalse(unicode.isSupportsContracted(context))
+    assertFalse(unicode.isEightDot)
+    assertTrue(unicode.isAvailable(context))
+    assertEquals("Unicode Braille", unicode.getUserFacingName(context))
+
+    val unicode8 = Code.UNICODE_BRAILLE_8
+    assertTrue(unicode8.hasNoLanguage())
+    assertTrue(unicode8.isInputOnly)
+    assertFalse(unicode8.isSupportsContracted(context))
+    assertTrue(unicode8.isEightDot)
+    assertEquals("Unicode 8-dot Braille", unicode8.getUserFacingName(context))
+  }
+
+  @Test
+  fun onlyUnicodeBrailleIsInputOnlyOrOfNoLanguage() {
+    val unicode = listOf(Code.UNICODE_BRAILLE, Code.UNICODE_BRAILLE_8)
+    assertEquals(unicode, Code.values().filter { it.isInputOnly })
+    assertEquals(unicode, Code.values().filter { it.hasNoLanguage() })
+  }
+
+  @Test
+  fun defaultCodeIsNeverInputOnly() {
+    val originalLocale = Locale.getDefault()
+    try {
+      Locale.setDefault(Locale.ROOT)
+      assertFalse(BrailleLanguages.getDefaultCode(context).isInputOnly)
+    } finally {
+      Locale.setDefault(originalLocale)
+    }
+  }
 }

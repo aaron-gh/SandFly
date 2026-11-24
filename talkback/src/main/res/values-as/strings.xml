@@ -568,6 +568,8 @@
   <string name="title_pref_shortcut_up_and_left">ওপৰলৈ তাৰ পাছত বাওঁফালে ছোৱাইপ কৰক</string>
   <string name="title_pref_shortcut_up_and_right">ওপৰলৈ তাৰ পাছত সোঁফালে ছোৱাইপ কৰক</string>
   <string name="title_pref_shortcut_right_and_down">সোঁফালে তাৰ পাছত তললৈ ছোৱাইপ কৰক</string>
+  <string name="title_pref_shortcut_1finger_3tap">তিনিবাৰ টিপক</string>
+  <string name="title_pref_shortcut_1finger_4tap">চাৰিবাৰ টিপক</string>
   <string name="title_pref_shortcut_right_and_up">সোঁফালে তাৰ পাছত ওপৰলৈ ছোৱাইপ কৰক</string>
   <string name="title_pref_shortcut_left_and_down">বাওঁফালে তাৰ পাছত তললৈ ছোৱাইপ কৰক</string>
   <string name="title_pref_shortcut_left_and_up">বাওঁফালে তাৰ পাছত ওপৰলৈ ছোৱাইপ কৰক</string>
@@ -1348,6 +1350,7 @@
     <string name="value_charger_connected">চাৰ্জাৰ সংযোগ কৰা আছে</string>
     <string name="title_pref_screen_announcements">স্ক্ৰীন অন আৰু অফ</string>
     <string name="summary_pref_screen_announcements">স্ক্ৰীন অফ বা অন হ’লে, আৰু ফ’নটো আনলক কৰিলে SandFlyএ কি কয় বাছনি কৰক</string>
+    <string name="title_pref_screen_announcements_over_media">মিডিয়া চলি থকাৰ সময়ত কওক</string>
     <string name="title_screen_announcements_screen_off">স্ক্ৰীন অফ হ’লে</string>
     <string name="title_screen_announcements_screen_on">স্ক্ৰীন অন হ’লে</string>
     <string name="title_screen_announcements_unlock">ফ’নটো আনলক কৰিলে</string>
@@ -2004,6 +2007,7 @@
     <string name="pref_speak_list_positions_title">তালিকাৰ তথ্য কওক</string>
     <string name="pref_speak_grid_positions_title">গ্ৰিড আৰু টেবুলৰ তথ্য কওক</string>
     <string name="pref_speak_role_without_pause_title">বস্তুৰ প্ৰকাৰ বিৰতি নোহোৱাকৈ কওক</string>
+    <string name="title_pref_speak_actions_available">কাৰ্য উপলব্ধ কওক</string>
     <string name="title_pref_overview">SandFlyৰ ৰূপৰেখা ব্যৱহাৰ কৰক</string>
     <string name="title_pref_overview_newest_last">শেহতীয়া এপ্‌ তলত</string>
     <string name="title_pref_overview_columns">স্তম্ভ</string>
@@ -2263,6 +2267,10 @@
     <string name="vibration_type_effects">হেপ্টিক প্ৰভাৱ</string>
     <string name="vibration_type_pulses">স্পন্দন</string>
     <string name="vibration_type_on_off">অন আৰু অফ</string>
+    <string name="title_pref_actions_available_sound">কাৰ্য উপলব্ধৰ ধ্বনি</string>
+    <string name="value_actions_available_sound_off">অফ</string>
+    <string name="value_actions_available_sound_focus">বস্তুটোত ফ’কাছ হ’লে</string>
+    <string name="value_actions_available_sound_after_speech">বস্তুটো কোৱাৰ পাছত</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

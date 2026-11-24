@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Omhoog en naar links swipen</string>
   <string name="title_pref_shortcut_up_and_right">Omhoog en naar rechts swipen</string>
   <string name="title_pref_shortcut_right_and_down">Naar rechts en omlaag swipen</string>
+  <string name="title_pref_shortcut_1finger_3tap">3 keer tikken</string>
+  <string name="title_pref_shortcut_1finger_4tap">Viervoudig tikken</string>
   <string name="title_pref_shortcut_right_and_up">Naar rechts en omhoog swipen</string>
   <string name="title_pref_shortcut_left_and_down">Naar links en omlaag swipen</string>
   <string name="title_pref_shortcut_left_and_up">Naar links en omhoog swipen</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Oplader aangesloten</string>
     <string name="title_pref_screen_announcements">Scherm aan en uit</string>
     <string name="summary_pref_screen_announcements">Kies wat SandFly zegt wanneer het scherm wordt in- of uitgeschakeld en wanneer de telefoon wordt ontgrendeld</string>
+    <string name="title_pref_screen_announcements_over_media">Uitspreken tijdens het afspelen van media</string>
     <string name="title_screen_announcements_screen_off">Wanneer het scherm wordt uitgeschakeld</string>
     <string name="title_screen_announcements_screen_on">Wanneer het scherm wordt ingeschakeld</string>
     <string name="title_screen_announcements_unlock">Wanneer de telefoon wordt ontgrendeld</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Lijstinformatie uitspreken</string>
     <string name="pref_speak_grid_positions_title">Raster- en tabelinformatie uitspreken</string>
     <string name="pref_speak_role_without_pause_title">Itemtype uitspreken zonder pauze</string>
+    <string name="title_pref_speak_actions_available">Acties beschikbaar uitspreken</string>
     <string name="title_pref_overview">Overzicht van SandFly gebruiken</string>
     <string name="title_pref_overview_newest_last">Meest recente app onderaan</string>
     <string name="title_pref_overview_columns">Kolommen</string>
@@ -2267,6 +2271,10 @@
     <string name="vibration_type_effects">Haptische effecten</string>
     <string name="vibration_type_pulses">Pulsen</string>
     <string name="vibration_type_on_off">Aan en uit</string>
+    <string name="title_pref_actions_available_sound">Geluid voor Acties beschikbaar</string>
+    <string name="value_actions_available_sound_off">Uit</string>
+    <string name="value_actions_available_sound_focus">Als het item focus krijgt</string>
+    <string name="value_actions_available_sound_after_speech">Nadat het item is uitgesproken</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

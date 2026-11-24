@@ -25,14 +25,14 @@ De opdrachten **Tutorial openen** en **Gebaren oefenen** openen dezelfde lessen.
 
 Het scherm **Feedback sturen** heeft:
 
-- **Feedback sturen**: een nieuw rapport.
+- **Nieuwe feedback**: een nieuw rapport.
 - **Postvak IN**: de feedback die je hebt gestuurd, met de status van elk rapport en de antwoorden.
 - **Concepten**: rapporten die je bent begonnen en nog niet hebt gestuurd.
 
 #### Stuur een rapport {#help-feedback-send}
 
 1. Ga naar **Hulp en feedback** > **Feedback sturen**.
-2. Kies **Feedback sturen**.
+2. Kies **Nieuwe feedback**.
 3. Vul het formulier in:
    - **Type feedback**: **Onjuist gedrag**, **Crash**, **Traag of reageert niet**, of **Suggestie**. De standaardwaarde is **Onjuist gedrag**.
    - **Gebied**: het onderdeel van SandFly, zoals **Spraak**, **Gebaren**, **Brailleleesregel** of **Updates**.

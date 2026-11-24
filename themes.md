@@ -148,6 +148,7 @@ play is left out when the theme is installed, and SandFly says so.
 | --- | --- |
 | `focus` | Focus on an item |
 | `focus_actionable` | Focus on an actionable item |
+| `actions_available` | Focus on an item with actions of its app, such as Reply on a chat message |
 | `view_entered` | Touching an empty area |
 | `tick` | Click |
 | `long_clicked` | Long press |
@@ -254,6 +255,14 @@ selection. `radial_menu` replaces the vibrations of all eight circle menu notes.
 plays the vibration of `hyperlink`, but a theme can give it one of its own. `column_wrap` and
 `column_wrap_back` play with the focus sound, and their vibrations play in place of the focus
 vibration.
+
+`actions_available` has no vibration of SandFly's own; a theme can give it one. It plays for an
+item with custom actions of its app, which have a label and an ID
+that isn't one of Android's, such as Reply and Forward on a chat message. Android's actions, such as
+click, long click, scroll, expand and dismiss, don't count, and neither do keys of on-screen
+keyboards. **Sound and vibration** > **Actions available sound** turns it **Off** or sets when it plays: **When the
+item gets focus**, after the focus sound, with its vibration in place of the focus vibration, or
+**After the item is spoken**.
 
 These vibrations have no sound, and a theme replaces them by these names:
 

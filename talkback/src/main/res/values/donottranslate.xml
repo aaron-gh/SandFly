@@ -1046,6 +1046,8 @@
 
     <string name="pref_shortcut_1finger_2tap_key">pref_shortcut_one_finger_double_tap</string>
     <string name="pref_shortcut_1finger_2tap_hold_key">pref_shortcut_one_finger_double_tap_and_hold</string>
+    <string name="pref_shortcut_1finger_3tap_key" translatable="false">pref_shortcut_one_finger_triple_tap</string>
+    <string name="pref_shortcut_1finger_4tap_key" translatable="false">pref_shortcut_one_finger_quadruple_tap</string>
 
     <string name="pref_shortcut_2finger_1tap_key">pref_shortcut_two_finger_single_tap</string>
     <string name="pref_shortcut_2finger_2tap_key">pref_shortcut_two_finger_double_tap</string>
@@ -1438,6 +1440,8 @@
       <item>@string/pref_shortcut_right_and_down_key</item>
       <item>@string/pref_shortcut_right_and_up_key</item>
       <item>@string/pref_shortcut_left_and_down_key</item>
+      <item>@string/pref_shortcut_1finger_3tap_key</item>
+      <item>@string/pref_shortcut_1finger_4tap_key</item>
       <item>@string/pref_shortcut_up_and_hold_key</item>
       <item>@string/pref_shortcut_down_and_hold_key</item>
       <item>@string/pref_shortcut_left_and_hold_key</item>
@@ -2231,6 +2235,7 @@
   <!-- Time between two-stroke swipes entries: how long after the first swipe the second may start. -->
     <string-array name="pref_two_stroke_swipe_time_entries">
       <item>@string/value_two_stroke_swipe_time_off</item>
+      <item>@string/value_touch_explore_time_out_250ms</item>
       <item>@string/value_typing_long_press_500ms</item>
       <item>@string/value_typing_long_press_1000ms</item>
       <item>@string/value_two_stroke_swipe_time_1500</item>
@@ -2240,6 +2245,7 @@
   <!-- Time between two-stroke swipes values, in milliseconds; 0 is off. -->
     <string-array name="pref_two_stroke_swipe_time_values" translatable="false">
       <item>0</item>
+      <item>250</item>
       <item>500</item>
       <item>1000</item>
       <item>1500</item>
@@ -2928,6 +2934,9 @@
       <!-- Start with double tap. -->
       <item>MAPPER_GESTURE_DOUBLE_TAP</item>
       <item>MAPPER_GESTURE_DOUBLE_TAP_AND_HOLD</item>
+      <!-- Triple and quadruple taps with one finger. -->
+      <item>MAPPER_GESTURE_TRIPLE_TAP</item>
+      <item>MAPPER_GESTURE_QUADRUPLE_TAP</item>
       <!-- Second-finger tap. -->
       <item>MAPPER_GESTURE_FAKED_SPLIT_TYPING</item>
       <item>MAPPER_GESTURE_FAKED_SPLIT_TYPING_AND_HOLD</item>
@@ -3378,6 +3387,8 @@
 
     <string name="pref_shortcut_1finger_2tap_default">@string/shortcut_value_action_setting_activate_current_action</string>
     <string name="pref_shortcut_1finger_2tap_hold_default">@string/shortcut_value_perform_long_click_action</string>
+    <string name="pref_shortcut_1finger_3tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_1finger_4tap_default">@string/shortcut_value_unassigned</string>
 
     <string name="pref_shortcut_2finger_1tap_default">@string/shortcut_value_pause_or_resume_feedback</string>
     <string name="pref_shortcut_2finger_2tap_default">@string/shortcut_value_dictate_or_media_control</string>
@@ -3885,6 +3896,18 @@
     <item name="web_list" type="id"/>
     <item name="web_control" type="id"/>
     <item name="web_landmark" type="id"/>
+
+    <!-- Actions available sound: values match ActionsAvailable. -->
+    <string-array name="pref_actions_available_sound_entries" translatable="false">
+        <item>@string/value_actions_available_sound_off</item>
+        <item>@string/value_actions_available_sound_focus</item>
+        <item>@string/value_actions_available_sound_after_speech</item>
+    </string-array>
+    <string-array name="pref_actions_available_sound_values" translatable="false">
+        <item>off</item>
+        <item>focus</item>
+        <item>after_speech</item>
+    </string-array>
 
     <!-- Talkback Context Menu preferences -->
     <string name="pref_show_context_menu_custom_action_setting_key" translatable="false">pref_custom_action_menu_setting_key</string>

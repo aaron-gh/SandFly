@@ -18,6 +18,7 @@ package com.google.android.accessibility.braille.common.settings;
 
 import static com.google.android.accessibility.braille.common.BrailleUserPreferences.BRAILLE_SHARED_PREFS_FILENAME;
 
+import android.content.Context;
 import android.os.Bundle;
 import androidx.preference.CheckBoxPreference;
 import androidx.preference.PreferenceCategory;
@@ -44,7 +45,18 @@ public class LocaleLanguageActivity extends PreferencesActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setTitle(BrailleStringUtils.toCharacterTitleCase(locale.getDisplayLanguage()));
+    setTitle(title(this, locale));
+  }
+
+  /**
+   * The name of the group of tables in {@code locale}: its language, or, for tables of no language,
+   * Unicode braille.
+   */
+  static CharSequence title(Context context, Locale locale) {
+    if (locale.getLanguage().isEmpty()) {
+      return context.getString(R.string.code_user_facing_name_unicode_braille);
+    }
+    return BrailleStringUtils.toCharacterTitleCase(locale.getDisplayLanguage());
   }
 
   @Override

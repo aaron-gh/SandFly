@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">위쪽 왼쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_up_and_right">위쪽 오른쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_right_and_down">오른쪽 아래쪽 순으로 스와이프</string>
+  <string name="title_pref_shortcut_1finger_3tap">세 번 탭</string>
+  <string name="title_pref_shortcut_1finger_4tap">네 번 탭</string>
   <string name="title_pref_shortcut_right_and_up">오른쪽 위쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_left_and_down">왼쪽 아래쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_left_and_up">왼쪽 위쪽 순으로 스와이프</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">충전기 연결됨</string>
     <string name="title_pref_screen_announcements">화면 켜기 및 끄기</string>
     <string name="summary_pref_screen_announcements">화면이 꺼지거나 켜질 때, 그리고 휴대전화가 잠금 해제되었을 때 SandFly가 말하는 내용을 선택하세요.</string>
+    <string name="title_pref_screen_announcements_over_media">미디어 재생 중에 읽기</string>
     <string name="title_screen_announcements_screen_off">화면이 꺼지면</string>
     <string name="title_screen_announcements_screen_on">화면이 켜질 때</string>
     <string name="title_screen_announcements_unlock">휴대폰 잠금이 해제될 때</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">목록 정보 읽기</string>
     <string name="pref_speak_grid_positions_title">그리드 및 표 정보 읽기</string>
     <string name="pref_speak_role_without_pause_title">항목 유형을 끊지 않고 읽기</string>
+    <string name="title_pref_speak_actions_available">작업 사용 가능 읽기</string>
     <string name="title_pref_overview">SandFly 최근 앱 사용</string>
     <string name="title_pref_overview_newest_last">가장 최근 앱을 아래에 표시</string>
     <string name="title_pref_overview_columns">열</string>
@@ -2264,6 +2268,10 @@
     <string name="vibration_type_effects">햅틱 효과</string>
     <string name="vibration_type_pulses">펄스</string>
     <string name="vibration_type_on_off">켜기/끄기</string>
+    <string name="title_pref_actions_available_sound">작업 사용 가능 소리</string>
+    <string name="value_actions_available_sound_off">사용 안함</string>
+    <string name="value_actions_available_sound_focus">항목에 포커스가 이동할 때</string>
+    <string name="value_actions_available_sound_after_speech">항목을 읽은 후</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

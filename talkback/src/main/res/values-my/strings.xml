@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">အပေါ်သို့ ပွတ်ဆွဲပြီး ဘယ်သို့ ပွတ်ဆွဲရန်</string>
   <string name="title_pref_shortcut_up_and_right">အပေါ်သို့ ပွတ်ဆွဲပြီး ညာသို့ ပွတ်ဆွဲရန်</string>
   <string name="title_pref_shortcut_right_and_down">ညာသို့ ပွတ်ဆွဲပြီး အောက်သို့ ပွတ်ဆွဲရန်</string>
+  <string name="title_pref_shortcut_1finger_3tap">သုံးချက်တို့ရန်</string>
+  <string name="title_pref_shortcut_1finger_4tap">လေးချက်တို့ရန်</string>
   <string name="title_pref_shortcut_right_and_up">ညာသို့ ပွတ်ဆွဲပြီး အပေါ်သို့ ပွတ်ဆွဲရန်</string>
   <string name="title_pref_shortcut_left_and_down">ဘယ်သို့ ပွတ်ဆွဲပြီး အောက်သို့ ပွတ်ဆွဲရန်</string>
   <string name="title_pref_shortcut_left_and_up">ဘယ်သို့ ပွတ်ဆွဲပြီး အပေါ်သို့ ပွတ်ဆွဲရန်</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">အားသွင်းကိရိယာ ချိတ်ဆက်ထားသည်</string>
     <string name="title_pref_screen_announcements">မျက်နှာပြင်အဖွင့်အပိတ်</string>
     <string name="summary_pref_screen_announcements">မျက်နှာပြင် ပိတ်သွားသည့်အခါ သို့မဟုတ် ပွင့်လာသည့်အခါနှင့် ဖုန်းလော့ခ်ဖွင့်သည့်အခါ SandFly ပြောမည့်အရာကို ရွေးပါ</string>
+    <string name="title_pref_screen_announcements_over_media">မီဒီယာ ဖွင့်နေစဉ် ပြောရန်</string>
     <string name="title_screen_announcements_screen_off">မျက်နှာပြင်ပိတ်သွားသောအခါ</string>
     <string name="title_screen_announcements_screen_on">မျက်နှာပြင်ဖွင့်သောအခါ</string>
     <string name="title_screen_announcements_unlock">ဖုန်းကို လော့ခ်ဖွင့်သောအခါ</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">စာရင်းအချက်အလက်များကို ဖတ်ပြရန်</string>
     <string name="pref_speak_grid_positions_title">ဇယားကွက်နှင့် ဇယားအချက်အလက်များကို ဖတ်ပြရန်</string>
     <string name="pref_speak_role_without_pause_title">အရာဝတ္ထုအမျိုးအစားကို ရပ်နားခြင်းမရှိဘဲ ဖတ်ပြရန်</string>
+    <string name="title_pref_speak_actions_available">လုပ်ဆောင်ချက်များ ရနိုင်သည်ဟု ပြောရန်</string>
     <string name="title_pref_overview">SandFly ၏ အနှစ်ချုပ်ကို အသုံးပြုရန်</string>
     <string name="title_pref_overview_newest_last">လတ်တလောအက်ပ်ကို အောက်ဆုံးတွင်ထားရန်</string>
     <string name="title_pref_overview_columns">ကော်လံများ</string>
@@ -2264,6 +2268,10 @@
     <string name="vibration_type_effects">ဟက်ပတစ် အကျိုးသက်ရောက်မှုများ</string>
     <string name="vibration_type_pulses">ပဲလ်စ်များ</string>
     <string name="vibration_type_on_off">ဖွင့်-ပိတ်သာ</string>
+    <string name="title_pref_actions_available_sound">လုပ်ဆောင်ချက်များ ရနိုင်သည့် အသံ</string>
+    <string name="value_actions_available_sound_off">ပိတ်</string>
+    <string name="value_actions_available_sound_focus">အကြောင်းအရာကို ချိန်ထားသောအခါ</string>
+    <string name="value_actions_available_sound_after_speech">အကြောင်းအရာကို ပြောပြီးနောက်</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

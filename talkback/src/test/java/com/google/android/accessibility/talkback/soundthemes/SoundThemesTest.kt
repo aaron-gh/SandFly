@@ -76,6 +76,12 @@ class SoundThemesTest {
   }
 
   @Test
+  fun aThemeCanReplaceTheActionsAvailableSoundAndGiveItAVibration() {
+    assertTrue(SoundThemes.SOUND_KEYS.contains("actions_available"))
+    assertTrue(SoundThemes.VIBRATION_NAMES.contains("actions_available"))
+  }
+
+  @Test
   fun eachCircleMenuSoundCanBeReplaced() {
     val circleMenu = SoundThemes.SOUNDS.single { it.key == "radial_menu" }
     for (i in 1..8) assertEquals(circleMenu, SoundThemes.PARTS["radial_menu_$i"])

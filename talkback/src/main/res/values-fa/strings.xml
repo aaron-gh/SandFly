@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">کشیدن انگشت به بالا سپس چپ</string>
   <string name="title_pref_shortcut_up_and_right">کشیدن انگشت به بالا سپس راست</string>
   <string name="title_pref_shortcut_right_and_down">تند کشیدن به‌راست سپس پایین</string>
+  <string name="title_pref_shortcut_1finger_3tap">سه تک‌ضرب زدن</string>
+  <string name="title_pref_shortcut_1finger_4tap">چهار تک‌ضرب زدن</string>
   <string name="title_pref_shortcut_right_and_up">تند کشیدن به‌راست سپس بالا</string>
   <string name="title_pref_shortcut_left_and_down">کشیدن انگشت به چپ سپس پایین</string>
   <string name="title_pref_shortcut_left_and_up">کشیدن انگشت به چپ سپس بالا</string>
@@ -1352,6 +1354,7 @@
     <string name="value_charger_connected">شارژر متصل است</string>
     <string name="title_pref_screen_announcements">روشن و خاموش شدن صفحه</string>
     <string name="summary_pref_screen_announcements">‏انتخاب آنچه SandFly هنگام خاموش یا روشن شدن صفحه و باز شدن قفل تلفن می‌گوید</string>
+    <string name="title_pref_screen_announcements_over_media">بلند خواندن هنگام پخش رسانه</string>
     <string name="title_screen_announcements_screen_off">وقتی صفحه خاموش می‌شود</string>
     <string name="title_screen_announcements_screen_on">وقتی صفحه روشن می‌شود</string>
     <string name="title_screen_announcements_unlock">وقتی قفل تلفن باز می‌شود</string>
@@ -2008,6 +2011,7 @@
     <string name="pref_speak_list_positions_title">گفتن اطلاعات فهرست</string>
     <string name="pref_speak_grid_positions_title">گفتن اطلاعات شبکه و جدول</string>
     <string name="pref_speak_role_without_pause_title">گفتن نوع مورد بدون مکث</string>
+    <string name="title_pref_speak_actions_available">بلند خواندن «کنش‌ها دردسترس است»</string>
     <string name="title_pref_overview">استفاده از نمای کلی SandFly</string>
     <string name="title_pref_overview_newest_last">جدیدترین برنامه در پایین</string>
     <string name="title_pref_overview_columns">ستون‌ها</string>
@@ -2267,6 +2271,10 @@
     <string name="vibration_type_effects">جلوه‌های لمسی</string>
     <string name="vibration_type_pulses">پالس‌ها</string>
     <string name="vibration_type_on_off">روشن و خاموش</string>
+    <string name="title_pref_actions_available_sound">صدای «کنش‌ها دردسترس است»</string>
+    <string name="value_actions_available_sound_off">خاموش</string>
+    <string name="value_actions_available_sound_focus">وقتی مورد متمرکز می‌شود</string>
+    <string name="value_actions_available_sound_after_speech">پس‌از خوانده شدن مورد</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

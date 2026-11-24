@@ -25,14 +25,14 @@ Perintah **Buka tutorial** dan **Berlatih gestur** membuka pelajaran yang sama. 
 
 Layar **Kirim masukan** memiliki:
 
-- **Kirim masukan**: membuat laporan baru.
+- **Masukan baru**: membuat laporan baru.
 - **Kotak masuk**: masukan yang telah Anda kirim, beserta status setiap laporan dan balasannya.
 - **Draf**: laporan yang sudah Anda mulai tetapi belum dikirim.
 
 #### Mengirim laporan {#help-feedback-send}
 
 1. Buka **Bantuan & masukan** > **Kirim masukan**.
-2. Pilih **Kirim masukan**.
+2. Pilih **Masukan baru**.
 3. Isi formulir:
    - **Jenis umpan balik**: **Perilaku salah**, **Error tiba-tiba**, **Lambat atau tidak merespons**, atau **Saran**. Pilihan default adalah **Perilaku salah**.
    - **Bagian**: bagian dari SandFly, seperti **Ucapan**, **Gestur**, **Penampil braille**, atau **Pembaruan**.

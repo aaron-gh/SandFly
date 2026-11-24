@@ -1392,7 +1392,13 @@ object Commands {
     private fun openApp() =
       category(R.string.shortcut_title_open_app) {
         for (app in OpenAppActions.apps(context)) {
-          commands.add(Command(app.value, app.label, keyboardAction = null))
+          commands.add(
+            Command(
+              app.value,
+              context.getString(R.string.shortcut_open_app, app.label),
+              keyboardAction = null,
+            )
+          )
         }
       }
 

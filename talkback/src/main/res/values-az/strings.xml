@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Barmağınızla yuxarıya, sonra sola sürüşdürün</string>
   <string name="title_pref_shortcut_up_and_right">Barmağınızla yuxarıya, sonra sağa sürüşdürün</string>
   <string name="title_pref_shortcut_right_and_down">Barmağınızla sağa, sonra aşağıya sürüşdürün</string>
+  <string name="title_pref_shortcut_1finger_3tap">Üç dəfə toxunun</string>
+  <string name="title_pref_shortcut_1finger_4tap">Dörd dəfə toxunun</string>
   <string name="title_pref_shortcut_right_and_up">Barmağınızla sağa, sonra yuxarıya sürüşdürün</string>
   <string name="title_pref_shortcut_left_and_down">Barmağınızla sola, sonra aşağıya sürüşdürün</string>
   <string name="title_pref_shortcut_left_and_up">Barmağınızla sola, sonra yuxarıya sürüşdürün</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Enerji doldurucu qoşulub</string>
     <string name="title_pref_screen_announcements">Ekranın aktiv və deaktiv olması</string>
     <string name="summary_pref_screen_announcements">Ekran deaktiv və ya aktiv olduqda və telefonun kilidi açıldıqda SandFly-ın nə səsləndirdiyini seçin</string>
+    <string name="title_pref_screen_announcements_over_media">Media oxudularkən səsləndirin</string>
     <string name="title_screen_announcements_screen_off">Ekran deaktiv olduqda</string>
     <string name="title_screen_announcements_screen_on">Ekran aktiv olduqda</string>
     <string name="title_screen_announcements_unlock">Telefonun kilidi açıldıqda</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Siyahı məlumatını de</string>
     <string name="pref_speak_grid_positions_title">Cədvəl və şəbəkə məlumatını de</string>
     <string name="pref_speak_role_without_pause_title">Element növünü fasiləsiz de</string>
+    <string name="title_pref_speak_actions_available">Əməliyyatlar əlçatandır ifadəsini səsləndirin</string>
     <string name="title_pref_overview">SandFly icmalından istifadə et</string>
     <string name="title_pref_overview_newest_last">Ən son tətbiq aşağıda</string>
     <string name="title_pref_overview_columns">Sütunlar</string>
@@ -2267,6 +2271,10 @@
     <string name="vibration_type_effects">Haptik effektlər</string>
     <string name="vibration_type_pulses">İmpulslar</string>
     <string name="vibration_type_on_off">Aktiv və deaktiv</string>
+    <string name="title_pref_actions_available_sound">Əməliyyatlar əlçatandır səsi</string>
+    <string name="value_actions_available_sound_off">Deaktiv</string>
+    <string name="value_actions_available_sound_focus">Element fokuslandıqda</string>
+    <string name="value_actions_available_sound_after_speech">Element səsləndirildikdən sonra</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

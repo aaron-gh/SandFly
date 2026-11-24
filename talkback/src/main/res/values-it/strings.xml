@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Scorri verso l\'alto, poi verso sinistra</string>
   <string name="title_pref_shortcut_up_and_right">Scorri verso l\'alto, poi verso destra</string>
   <string name="title_pref_shortcut_right_and_down">Scorri verso destra, poi verso il basso</string>
+  <string name="title_pref_shortcut_1finger_3tap">Triplo tocco</string>
+  <string name="title_pref_shortcut_1finger_4tap">Tocca quattro volte</string>
   <string name="title_pref_shortcut_right_and_up">Scorri verso destra, poi verso l\'alto</string>
   <string name="title_pref_shortcut_left_and_down">Scorri verso sinistra, poi verso il basso</string>
   <string name="title_pref_shortcut_left_and_up">Scorri verso sinistra, poi verso l\'alto</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Caricabatterie collegato</string>
     <string name="title_pref_screen_announcements">Schermo acceso e spento</string>
     <string name="summary_pref_screen_announcements">Scegli cosa dice SandFly quando lo schermo si spegne o si accende e quando il telefono è sbloccato</string>
+    <string name="title_pref_screen_announcements_over_media">Leggi durante la riproduzione di contenuti multimediali</string>
     <string name="title_screen_announcements_screen_off">Quando lo schermo si spegne</string>
     <string name="title_screen_announcements_screen_on">Quando lo schermo si accende</string>
     <string name="title_screen_announcements_unlock">Quando il telefono viene sbloccato</string>
@@ -2011,6 +2014,7 @@
     <string name="pref_speak_list_positions_title">Pronuncia informazioni sulle liste</string>
     <string name="pref_speak_grid_positions_title">Pronuncia informazioni su griglie e tabelle</string>
     <string name="pref_speak_role_without_pause_title">Pronuncia il tipo di elemento senza pausa</string>
+    <string name="title_pref_speak_actions_available">Leggi Azioni disponibili</string>
     <string name="title_pref_overview">Usa la panoramica di SandFly</string>
     <string name="title_pref_overview_newest_last">App più recente in basso</string>
     <string name="title_pref_overview_columns">Colonne</string>
@@ -2271,6 +2275,10 @@
     <string name="vibration_type_effects">Effetti aptici</string>
     <string name="vibration_type_pulses">Impulsi</string>
     <string name="vibration_type_on_off">Solo accesa o spenta</string>
+    <string name="title_pref_actions_available_sound">Suono Azioni disponibili</string>
+    <string name="value_actions_available_sound_off">Disattivato</string>
+    <string name="value_actions_available_sound_focus">Quando l\'elemento diventa attivo</string>
+    <string name="value_actions_available_sound_after_speech">Dopo la lettura dell\'elemento</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

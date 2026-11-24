@@ -326,6 +326,7 @@ The SandFly keyboard is an input method for physical keyboards. It shows no keys
 
 - Exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places.
 - Held keys that type the Alt character of the key or its capital letter.
+- Shift pressed and released before a key, which types that key with Shift, as on BlackBerry keyboards. Shift pressed and released again before the key cancels it.
 - Double presses that type other characters, such as G G for ğ, and a period for Space pressed twice.
 - Emoji search and a symbol list.
 - Editing mode, in which single keys move the cursor and select, copy, cut and paste.

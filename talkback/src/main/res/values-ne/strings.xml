@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">माथितिर र त्यसपछि बायाँतिर स्वाइप गर्नुहोस्</string>
   <string name="title_pref_shortcut_up_and_right">माथितिर र त्यसपछि दायाँतिर स्वाइप गर्नुहोस्</string>
   <string name="title_pref_shortcut_right_and_down">दायाँतिर र त्यसपछि तलतिर स्वाइप गर्नुहोस्</string>
+  <string name="title_pref_shortcut_1finger_3tap">ट्रिपल ट्याप</string>
+  <string name="title_pref_shortcut_1finger_4tap">चार पटक ट्याप</string>
   <string name="title_pref_shortcut_right_and_up">दायाँतिर र त्यसपछि माथितिर स्वाइप गर्नुहोस्</string>
   <string name="title_pref_shortcut_left_and_down">बायाँतिर र त्यसपछि तलतिर स्वाइप गर्नुहोस्</string>
   <string name="title_pref_shortcut_left_and_up">बायाँतिर र त्यसपछि माथितिर स्वाइप गर्नुहोस्</string>
@@ -1366,6 +1368,7 @@
     <string name="value_charger_connected">चार्जर जडान भयो</string>
     <string name="title_pref_screen_announcements">स्क्रिन अन र अफ</string>
     <string name="summary_pref_screen_announcements">स्क्रिन बन्द वा सक्रिय हुँदा, र फोन अनलक हुँदा SandFly के भन्छ छान्नुहोस्</string>
+    <string name="title_pref_screen_announcements_over_media">मिडिया चलिरहेको बेला बोल्नुहोस्</string>
     <string name="title_screen_announcements_screen_off">जब स्क्रिन बन्द हुन्छ</string>
     <string name="title_screen_announcements_screen_on">जब स्क्रिन अन हुन्छ</string>
     <string name="title_screen_announcements_unlock">जब फोन अनलक हुन्छ</string>
@@ -2008,6 +2011,7 @@
     <string name="pref_speak_list_positions_title">सूचीसम्बन्धी जानकारी बोल्नुहोस्</string>
     <string name="pref_speak_grid_positions_title">ग्रिड र तालिकासम्बन्धी जानकारी बोल्नुहोस्</string>
     <string name="pref_speak_role_without_pause_title">वस्तुको प्रकार विराम नदिई बोल्नुहोस्</string>
+    <string name="title_pref_speak_actions_available">कारबाहीहरू उपलब्ध छन् भनी बोल्नुहोस्</string>
     <string name="title_pref_overview">SandFly को स्क्रिनसम्बन्धी विवरण प्रयोग गर्नुहोस्</string>
     <string name="title_pref_overview_newest_last">सबैभन्दा पछिल्लो एप तल राख्नुहोस्</string>
     <string name="title_pref_overview_columns">स्तम्भहरू</string>
@@ -2267,6 +2271,10 @@
     <string name="vibration_type_effects">ह्याप्टिक प्रभावहरू</string>
     <string name="vibration_type_pulses">पल्सहरू</string>
     <string name="vibration_type_on_off">अन र अफ</string>
+    <string name="title_pref_actions_available_sound">कारबाहीहरू उपलब्ध छन् भन्ने ध्वनि</string>
+    <string name="value_actions_available_sound_off">अफ</string>
+    <string name="value_actions_available_sound_focus">वस्तुमा फोकस हुँदा</string>
+    <string name="value_actions_available_sound_after_speech">वस्तु बोलिसकेपछि</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

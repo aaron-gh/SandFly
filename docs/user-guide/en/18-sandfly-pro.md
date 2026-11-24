@@ -137,7 +137,9 @@ To recognize a screen:
 1. Open the app.
 2. Choose **Recognize screen** in the SandFly menu, or run the command **Recognize screen**.
 
-SandFly says "Recognizing screen", then the number of items found, such as "7 recognized items", or "No items recognized". Later screens of the same app are recognized as they change, until another app comes to the front.
+SandFly says "Recognizing screen", then the number of items found, such as "7 recognized items", or "No items recognized". Later screens of the same app are recognized as they change, until another app or the home screen comes to the front.
+
+To stop recognition in the app and remove the recognized items, choose **Turn off screen recognition in** and the name of the app in the SandFly menu, or run **Turn screen recognition on or off in the current app**.
 
 To have every screen of an app recognized:
 

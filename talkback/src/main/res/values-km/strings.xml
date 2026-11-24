@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">អូស​ឡើងលើ ហើយ​ទៅ​ឆ្វេង</string>
   <string name="title_pref_shortcut_up_and_right">អូស​ឡើង​លើ ហើយ​ទៅ​ស្ដាំ</string>
   <string name="title_pref_shortcut_right_and_down">អូស​ទៅ​ស្ដាំ ហើយ​ចុះក្រោម</string>
+  <string name="title_pref_shortcut_1finger_3tap">ចុចបីដង</string>
+  <string name="title_pref_shortcut_1finger_4tap">ប៉ះបួនដង</string>
   <string name="title_pref_shortcut_right_and_up">អូស​ទៅ​ស្ដាំ ហើយ​ឡើង​លើ</string>
   <string name="title_pref_shortcut_left_and_down">អូស​ទៅ​ឆ្វេង ហើយ​ចុះក្រោម</string>
   <string name="title_pref_shortcut_left_and_up">អូស​ទៅ​ឆ្វេង​ ហើយ​ឡើង​លើ</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">បានភ្ជាប់ឆ្នាំងសាក</string>
     <string name="title_pref_screen_announcements">អេក្រង់បើកនិងបិទ</string>
     <string name="summary_pref_screen_announcements">ជ្រើសរើសអ្វីដែល SandFly និយាយនៅពេលអេក្រង់បិទ ឬបើក និងនៅពេលដែលទូរសព្ទត្រូវបានដោះសោ</string>
+    <string name="title_pref_screen_announcements_over_media">អានពេលកំពុងចាក់មេឌៀ</string>
     <string name="title_screen_announcements_screen_off">នៅពេលអេក្រង់បិទ</string>
     <string name="title_screen_announcements_screen_on">នៅពេលអេក្រង់បើក</string>
     <string name="title_screen_announcements_unlock">នៅពេលដែលទូរស័ព្ទត្រូវបានដោះសោ</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">និយាយព័ត៌មានអំពីបញ្ជី</string>
     <string name="pref_speak_grid_positions_title">និយាយព័ត៌មានអំពីក្រឡាចត្រង្គ និងតារាង</string>
     <string name="pref_speak_role_without_pause_title">និយាយប្រភេទធាតុដោយមិនផ្អាក</string>
+    <string name="title_pref_speak_actions_available">អាន​មានសកម្មភាព</string>
     <string name="title_pref_overview">ប្រើទិដ្ឋភាពរួមរបស់ SandFly</string>
     <string name="title_pref_overview_newest_last">កម្មវិធីថ្មីបំផុតនៅខាងក្រោម</string>
     <string name="title_pref_overview_columns">ជួរឈរ</string>
@@ -2264,6 +2268,10 @@
     <string name="vibration_type_effects">ឥទ្ធិពលហាប់ទិក</string>
     <string name="vibration_type_pulses">ការញ័រខ្លីៗ</string>
     <string name="vibration_type_on_off">បើក និងបិទ</string>
+    <string name="title_pref_actions_available_sound">សំឡេងមានសកម្មភាព</string>
+    <string name="value_actions_available_sound_off">បិទ</string>
+    <string name="value_actions_available_sound_focus">នៅពេលធាតុត្រូវបានផ្ដោត</string>
+    <string name="value_actions_available_sound_after_speech">បន្ទាប់ពីអានធាតុ</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

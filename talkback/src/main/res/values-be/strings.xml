@@ -569,6 +569,8 @@
   <string name="title_pref_shortcut_up_and_left">Правядзенне пальцам уверх, затым улева</string>
   <string name="title_pref_shortcut_up_and_right">Правядзенне пальцам уверх, затым управа</string>
   <string name="title_pref_shortcut_right_and_down">Правядзенне пальцам управа, затым уніз</string>
+  <string name="title_pref_shortcut_1finger_3tap">Тройчы націснуць</string>
+  <string name="title_pref_shortcut_1finger_4tap">Чатыры разы націснуць</string>
   <string name="title_pref_shortcut_right_and_up">Правядзенне пальцам управа, затым уверх</string>
   <string name="title_pref_shortcut_left_and_down">Правядзенне пальцам улева, затым уніз</string>
   <string name="title_pref_shortcut_left_and_up">Правядзенне пальцам улева, затым уверх</string>
@@ -1349,6 +1351,7 @@
     <string name="value_charger_connected">Зарадная прылада падключана</string>
     <string name="title_pref_screen_announcements">Уключэнне і выключэнне экрана</string>
     <string name="summary_pref_screen_announcements">Выбар таго, што агучвае SandFly пры выключэнні або ўключэнні экрана і пры разблакіроўцы тэлефона</string>
+    <string name="title_pref_screen_announcements_over_media">Агучваць падчас прайгравання мультымедыя</string>
     <string name="title_screen_announcements_screen_off">Пры выключэнні экрана</string>
     <string name="title_screen_announcements_screen_on">Пры ўключэнні экрана</string>
     <string name="title_screen_announcements_unlock">Пры разблакіроўцы тэлефона</string>
@@ -2013,6 +2016,7 @@
     <string name="pref_speak_list_positions_title">Агучваць звесткі пра спісы</string>
     <string name="pref_speak_grid_positions_title">Агучваць звесткі пра сеткі і табліцы</string>
     <string name="pref_speak_role_without_pause_title">Агучваць тып элемента без паўзы</string>
+    <string name="title_pref_speak_actions_available">Агучваць «Даступныя дзеянні»</string>
     <string name="title_pref_overview">Выкарыстоўваць агляд SandFly</string>
     <string name="title_pref_overview_newest_last">Апошняя праграма ўнізе</string>
     <string name="title_pref_overview_columns">Слупкі</string>
@@ -2276,6 +2280,10 @@
     <string name="vibration_type_effects">Тактыльныя эфекты</string>
     <string name="vibration_type_pulses">Імпульсы</string>
     <string name="vibration_type_on_off">Уключэнне і выключэнне</string>
+    <string name="title_pref_actions_available_sound">Гук «Даступныя дзеянні»</string>
+    <string name="value_actions_available_sound_off">Выключана</string>
+    <string name="value_actions_available_sound_focus">Калі элемент атрымлівае фокус</string>
+    <string name="value_actions_available_sound_after_speech">Пасля агучвання элемента</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

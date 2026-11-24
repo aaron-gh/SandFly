@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ඉහළට අනතුරුව වමට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_up_and_right">ඉහළට අනතුරුව දකුණට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_right_and_down">දකුණට අනතුරුව පහළට ස්වයිප් කරන්න</string>
+  <string name="title_pref_shortcut_1finger_3tap">තෙවරක් තට්ටු කරන්න</string>
+  <string name="title_pref_shortcut_1finger_4tap">හතර වතාවක් තට්ටු කරන්න</string>
   <string name="title_pref_shortcut_right_and_up">දකුණට අනතුරුව ඉහළට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_left_and_down">වමට අනතුරුව පහළට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_left_and_up">වමට අනතුරුව ඉහළට ස්වයිප් කරන්න</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">චාජරය සම්බන්ධ කර ඇත</string>
     <string name="title_pref_screen_announcements">තිරය ක්‍රියාත්මක සහ අක්‍රිය වීම</string>
     <string name="summary_pref_screen_announcements">තිරය ක්‍රියාවිරහිත වූ විට හෝ ක්‍රියාත්මක වන විට සහ දුරකථනය අගුලු හැර ඇති විට SandFly පවසන දේ තෝරන්න</string>
+    <string name="title_pref_screen_announcements_over_media">මාධ්‍ය වාදනය කරන අතරතුර කියවන්න</string>
     <string name="title_screen_announcements_screen_off">තිරය නිවා දැමූ විට</string>
     <string name="title_screen_announcements_screen_on">තිරය ක්‍රියාත්මක වන විට</string>
     <string name="title_screen_announcements_unlock">දුරකථනය අගුළු හරින විට</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">ලැයිස්තු තොරතුරු කියන්න</string>
     <string name="pref_speak_grid_positions_title">දැල සහ වගු තොරතුරු කියන්න</string>
     <string name="pref_speak_role_without_pause_title">විරාමයකින් තොරව අයිතමයේ වර්ගය කියන්න</string>
+    <string name="title_pref_speak_actions_available">ක්‍රියා ලබා ගත හැකි බව කියවන්න</string>
     <string name="title_pref_overview">SandFly හි දළ විශ්ලේෂණය භාවිත කරන්න</string>
     <string name="title_pref_overview_newest_last">නවතම යෙදුම පතුලේ</string>
     <string name="title_pref_overview_columns">තීරු</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">හැප්ටික් ප්‍රයෝග</string>
     <string name="vibration_type_pulses">ස්පන්දන</string>
     <string name="vibration_type_on_off">ක්‍රියාත්මක සහ අක්‍රිය</string>
+    <string name="title_pref_actions_available_sound">ක්‍රියා ලබා ගත හැකි ශබ්දය</string>
+    <string name="value_actions_available_sound_off">ක්‍රියාවිරහිතයි</string>
+    <string name="value_actions_available_sound_focus">අයිතමයට අවධානය ලැබෙන විට</string>
+    <string name="value_actions_available_sound_after_speech">අයිතමය කියවූ පසු</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

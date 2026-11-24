@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">वर नंतर डावीकडे स्वाइप करा</string>
   <string name="title_pref_shortcut_up_and_right">वर नंतर उजवीकडे स्वाइप करा</string>
   <string name="title_pref_shortcut_right_and_down">उजवीकडे नंतर खाली स्वाइप करा</string>
+  <string name="title_pref_shortcut_1finger_3tap">तीनदा टॅप करा</string>
+  <string name="title_pref_shortcut_1finger_4tap">चार वेळा टॅप करा</string>
   <string name="title_pref_shortcut_right_and_up">उजवीकडे नंतर वर स्वाइप करा</string>
   <string name="title_pref_shortcut_left_and_down">डावीकडे नंतर खाली स्वाइप करा</string>
   <string name="title_pref_shortcut_left_and_up">डावीकडे नंतर वर स्वाइप करा</string>
@@ -1368,6 +1370,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="value_charger_connected">चार्जर जोडला</string>
     <string name="title_pref_screen_announcements">स्क्रीन चालू आणि बंद</string>
     <string name="summary_pref_screen_announcements">स्क्रीन बंद किंवा चालू झाल्यावर आणि फोन अनलॉक केल्यावर SandFly काय म्हणते ते निवडा</string>
+    <string name="title_pref_screen_announcements_over_media">मीडिया प्ले होत असताना बोला</string>
     <string name="title_screen_announcements_screen_off">जेव्हा स्क्रीन बंद होते</string>
     <string name="title_screen_announcements_screen_on">स्क्रीन चालू झाल्यावर</string>
     <string name="title_screen_announcements_unlock">फोन अनलॉक केल्यावर</string>
@@ -2010,6 +2013,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="pref_speak_list_positions_title">यादीची माहिती बोला</string>
     <string name="pref_speak_grid_positions_title">ग्रिड आणि तक्त्याची माहिती बोला</string>
     <string name="pref_speak_role_without_pause_title">आयटमचा प्रकार विराम न घेता बोला</string>
+    <string name="title_pref_speak_actions_available">कृती उपलब्ध आहेत बोला</string>
     <string name="title_pref_overview">SandFly अवलोकन वापरा</string>
     <string name="title_pref_overview_newest_last">सर्वात अलीकडील अॅप तळाशी</string>
     <string name="title_pref_overview_columns">स्तंभ</string>
@@ -2269,6 +2273,10 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="vibration_type_effects">हॅप्टिक इफेक्ट</string>
     <string name="vibration_type_pulses">पल्स</string>
     <string name="vibration_type_on_off">फक्त सुरू आणि बंद</string>
+    <string name="title_pref_actions_available_sound">कृती उपलब्ध आहेत याचा आवाज</string>
+    <string name="value_actions_available_sound_off">बंद आहे</string>
+    <string name="value_actions_available_sound_focus">आयटमवर फोकस आल्यावर</string>
+    <string name="value_actions_available_sound_after_speech">आयटम बोलून झाल्यावर</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

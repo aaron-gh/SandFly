@@ -17,6 +17,7 @@ package com.google.android.accessibility.talkback.keyboard
 
 import android.inputmethodservice.InputMethodService
 import android.text.InputType
+import android.view.KeyCharacterMap
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import androidx.core.content.edit
@@ -40,6 +41,8 @@ import java.util.Locale
  *   cut and paste ([EditingMode]).
  * - Double presses ([DoublePressCharacters]): a key pressed twice puts its double-press characters
  *   in place of the character the first press typed, and Space pressed twice types a period.
+ * - Shift pressed and released alone types the next letter as a capital, as on BlackBerry
+ *   keyboards; pressed again, it doesn't.
  */
 class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
@@ -63,6 +66,12 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   private var lastPress: Press? = null
 
   private class Press(val keyCode: Int, val typed: Char, val time: Long)
+
+  /** Whether Shift is down with no other key pressed since it went down. */
+  private var shiftAlone = false
+
+  /** Whether Shift was pressed and released alone, so that the next printing key types with Shift. */
+  private var shiftNext = false
 
   /** Whether the field being edited is a password field, where double presses type as single ones. */
   private var password = false
@@ -90,8 +99,15 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     }
     chooser = null
     lastPress = null
+    shiftNext = false
     editingMode.turnOn()
     return true
+  }
+
+  /** A key SandFly took, such as Shift + Sym, wasn't Shift pressed alone, and ends a Shift press. */
+  override fun onKeyTaken() {
+    shiftAlone = false
+    shiftNext = false
   }
 
   override fun onCreate() {
@@ -134,6 +150,8 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     editing = attribute.inputType and InputType.TYPE_MASK_CLASS != InputType.TYPE_NULL
     password = isPassword(attribute.inputType)
     lastPress = null
+    shiftAlone = false
+    shiftNext = false
     if (!restarting) {
       chooser = null
       editingMode.turnOff(announce = false)
@@ -147,6 +165,8 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     editingMode.turnOff(announce = false)
     heldKey = KeyEvent.KEYCODE_UNKNOWN
     lastPress = null
+    shiftAlone = false
+    shiftNext = false
     takenKeys.clear()
     super.onFinishInput()
   }
@@ -166,6 +186,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       }
     chooser = opened
     lastPress = null
+    shiftNext = false
     editingMode.turnOff(announce = false)
     val title =
       getString(
@@ -200,6 +221,11 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       if (taken) takenKeys += keyCode
       return taken || super.onKeyDown(keyCode, event)
     }
+    followShiftKey(keyCode, event)
+    if (onShiftedKey(keyCode, event)) {
+      takenKeys += keyCode
+      return true
+    }
     // Alt + Space on the Zinwa Q25 types this private character for the symbol list.
     if (event.unicodeChar == Q25_SYMBOL_CHARACTER) {
       takenKeys += keyCode
@@ -214,6 +240,55 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       return true
     }
     return super.onKeyDown(keyCode, event)
+  }
+
+  /**
+   * Follows Shift pressed alone. Shift itself still goes to the app, which needs it for Shift +
+   * arrow selection. Only on keyboards whose modifiers work while held ([isChorded]); on others
+   * Android already applies a Shift pressed and released to the next key.
+   */
+  private fun followShiftKey(keyCode: Int, event: KeyEvent) {
+    if (!isShiftKey(keyCode)) {
+      if (event.repeatCount == 0) shiftAlone = false
+      return
+    }
+    if (event.repeatCount == 0) {
+      // Not with a modifier held down, such as Sym, whose shortcuts SandFly takes.
+      shiftAlone = editing && isChorded(event) && event.metaState and TYPING_MODIFIERS == 0
+    }
+  }
+
+  /**
+   * Types the printing key [event] presses with Shift, after Shift was pressed and released alone.
+   * Any other key ends that. Returns whether it took [event].
+   */
+  private fun onShiftedKey(keyCode: Int, event: KeyEvent): Boolean {
+    if (!shiftNext || event.repeatCount > 0 || KeyEvent.isModifierKey(keyCode)) {
+      return false
+    }
+    shiftNext = false
+    if (
+      !event.isPrintingKey ||
+        keyCode == KeyEvent.KEYCODE_SPACE ||
+        event.metaState and (TYPING_MODIFIERS or KeyEvent.META_SHIFT_MASK) != 0
+    ) {
+      return false
+    }
+    val connection = currentInputConnection ?: return false
+    val shifted = event.keyCharacterMap.get(keyCode, event.metaState or KeyEvent.META_SHIFT_ON)
+    if (shifted <= 0 || shifted > Char.MAX_VALUE.code || Character.isISOControl(shifted)) {
+      return false
+    }
+    val typed = shifted.toChar()
+    connection.commitText(typed.toString(), 1)
+    lastPress = null
+    if (
+      !password &&
+        DoublePressCharacters.applies(typed, doublePressEntries(), doubleSpacePeriod())
+    ) {
+      lastPress = Press(keyCode, typed, event.eventTime)
+    }
+    return true
   }
 
   override fun onUpdateSelection(
@@ -249,11 +324,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       return false
     }
     val typed = event.unicodeChar.toChar()
-    val spacePeriod =
-      prefs.getBoolean(
-        getString(R.string.pref_sandfly_keyboard_double_space_period_key),
-        resources.getBoolean(R.bool.pref_sandfly_keyboard_double_space_period_default),
-      )
+    val spacePeriod = doubleSpacePeriod()
     val entries = doublePressEntries()
     if (
       last != null &&
@@ -284,6 +355,12 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     return false
   }
 
+  private fun doubleSpacePeriod(): Boolean =
+    prefs.getBoolean(
+      getString(R.string.pref_sandfly_keyboard_double_space_period_key),
+      resources.getBoolean(R.bool.pref_sandfly_keyboard_double_space_period_default),
+    )
+
   private fun doublePressEntries(): Map<Char, String> {
     val text = prefs.getString(DoublePressCharacters.KEY, null)
     if (text != doublePressText) {
@@ -295,6 +372,13 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   }
 
   override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
+    if (isShiftKey(keyCode)) {
+      // Pressed alone, Shift applies to the next key; pressed alone again, it no longer does.
+      if (shiftAlone && event.metaState and TYPING_MODIFIERS == 0) {
+        shiftNext = !shiftNext
+      }
+      shiftAlone = false
+    }
     if (takenKeys.remove(keyCode)) {
       return true
     }
@@ -444,6 +528,13 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
         KeyEvent.META_META_MASK or
         KeyEvent.META_SYM_ON or
         KeyEvent.META_FUNCTION_ON
+
+    /** Whether the keyboard's modifiers apply only while held, with no Shift for the next key. */
+    fun isChorded(event: KeyEvent): Boolean =
+      event.keyCharacterMap.modifierBehavior == KeyCharacterMap.MODIFIER_BEHAVIOR_CHORDED
+
+    fun isShiftKey(keyCode: Int): Boolean =
+      keyCode == KeyEvent.KEYCODE_SHIFT_LEFT || keyCode == KeyEvent.KEYCODE_SHIFT_RIGHT
 
     /** A printing key other than Space, pressed alone or with Shift. */
     fun isHoldable(event: KeyEvent): Boolean =

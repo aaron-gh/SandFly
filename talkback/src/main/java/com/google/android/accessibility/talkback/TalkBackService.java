@@ -168,6 +168,7 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeIm
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
 import com.google.android.accessibility.talkback.commands.RemovedCommands;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
+import com.google.android.accessibility.talkback.compositor.ActionsAvailable;
 import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
@@ -320,6 +321,7 @@ import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.StallLog;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
+import com.google.android.accessibility.talkback.report.EnterKeyLog;
 import com.google.android.accessibility.talkback.report.VolumeKeyLog;
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation;
 import com.google.android.accessibility.talkback.translation.WordLanguageGuesser;
@@ -1813,6 +1815,17 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   protected final boolean onKeyEvent(KeyEvent keyEvent) {
     boolean result = onKeyEventInternal(keyEvent);
+    if (result && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+      SandFlyKeyboardHost.onKeyTaken();
+    }
+    if (EnterKeyLog.isLogged(keyEvent.getKeyCode())
+        && keyEvent.getAction() == KeyEvent.ACTION_DOWN
+        && keyEvent.getRepeatCount() == 0) {
+      EnterKeyLog.onKeyDown(
+          keyEvent,
+          result,
+          keyComboManager == null ? "no keyboard shortcuts" : keyComboManager.describeEnterState());
+    }
     if (VolumeKeyPresses.isVolumeKey(keyEvent.getKeyCode())) {
       VolumeKeyLog.onKeyEvent(
           keyEvent,
@@ -5116,6 +5129,11 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getString(R.string.pref_a11y_hints_key),
               res.getBoolean(R.bool.pref_a11y_hints_default));
       globalVariables.setUsageHintEnabled(speakUsageHints);
+
+      // Update preferences: Speak Actions available, and when the Actions available sound plays.
+      globalVariables.setSpeakActionsAvailable(ActionsAvailable.isSpoken(prefs));
+      globalVariables.setActionsSoundOn(ActionsAvailable.isSoundOn(prefs));
+      globalVariables.setActionsSoundAfterSpeech(ActionsAvailable.isSoundAfterSpeech(prefs));
 
       // Update preference: speak phonetic letters.
       globalVariables.setPhoneticLetterModes(

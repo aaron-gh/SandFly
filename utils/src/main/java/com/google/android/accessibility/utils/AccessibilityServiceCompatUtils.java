@@ -285,6 +285,8 @@ public class AccessibilityServiceCompatUtils {
       case AccessibilityService.GESTURE_SWIPE_UP_AND_RIGHT -> "GESTURE_SWIPE_UP_AND_RIGHT";
       case AccessibilityService.GESTURE_DOUBLE_TAP -> "GESTURE_DOUBLE_TAP";
       case AccessibilityService.GESTURE_DOUBLE_TAP_AND_HOLD -> "GESTURE_DOUBLE_TAP_AND_HOLD";
+      case GestureManifold.GESTURE_TRIPLE_TAP -> "GESTURE_TRIPLE_TAP";
+      case GestureManifold.GESTURE_QUADRUPLE_TAP -> "GESTURE_QUADRUPLE_TAP";
       case AccessibilityService.GESTURE_2_FINGER_SINGLE_TAP -> "GESTURE_2_FINGER_SINGLE_TAP";
       case AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP -> "GESTURE_2_FINGER_DOUBLE_TAP";
       case AccessibilityService.GESTURE_2_FINGER_TRIPLE_TAP -> "GESTURE_2_FINGER_TRIPLE_TAP";

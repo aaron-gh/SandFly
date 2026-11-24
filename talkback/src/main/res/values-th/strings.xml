@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ปัดขึ้นและไปทางซ้าย</string>
   <string name="title_pref_shortcut_up_and_right">ปัดขึ้นและไปทางขวา</string>
   <string name="title_pref_shortcut_right_and_down">ปัดไปทางขวาแล้วลง</string>
+  <string name="title_pref_shortcut_1finger_3tap">แตะสามครั้ง</string>
+  <string name="title_pref_shortcut_1finger_4tap">แตะ 4 ครั้ง</string>
   <string name="title_pref_shortcut_right_and_up">ปัดไปทางขวาแล้วขึ้น</string>
   <string name="title_pref_shortcut_left_and_down">ปัดไปทางซ้ายแล้วลง</string>
   <string name="title_pref_shortcut_left_and_up">ปัดไปทางซ้ายแล้วขึ้น</string>
@@ -1366,6 +1368,7 @@
     <string name="value_charger_connected">เชื่อมต่อเครื่องชาร์จแล้ว</string>
     <string name="title_pref_screen_announcements">เปิดและปิดหน้าจอ</string>
     <string name="summary_pref_screen_announcements">เลือกสิ่งที่ SandFly พูดเมื่อหน้าจอปิดหรือเปิด และเมื่อปลดล็อกโทรศัพท์</string>
+    <string name="title_pref_screen_announcements_over_media">พูดขณะที่สื่อกำลังเล่นอยู่</string>
     <string name="title_screen_announcements_screen_off">เมื่อหน้าจอดับลง</string>
     <string name="title_screen_announcements_screen_on">เมื่อหน้าจอเปิดขึ้น</string>
     <string name="title_screen_announcements_unlock">เมื่อโทรศัพท์ถูกปลดล็อค</string>
@@ -2008,6 +2011,7 @@
     <string name="pref_speak_list_positions_title">พูดข้อมูลรายการ</string>
     <string name="pref_speak_grid_positions_title">พูดข้อมูลตารางกริดและตาราง</string>
     <string name="pref_speak_role_without_pause_title">พูดประเภทรายการโดยไม่หยุดเว้นช่วง</string>
+    <string name="title_pref_speak_actions_available">พูดว่าการดำเนินการใช้งานได้</string>
     <string name="title_pref_overview">ใช้ภาพรวมของ SandFly</string>
     <string name="title_pref_overview_newest_last">แอปล่าสุดอยู่ด้านล่าง</string>
     <string name="title_pref_overview_columns">คอลัมน์</string>
@@ -2265,6 +2269,10 @@
     <string name="vibration_type_effects">เอฟเฟกต์ระบบสัมผัส</string>
     <string name="vibration_type_pulses">การสั่นเป็นจังหวะ</string>
     <string name="vibration_type_on_off">การสั่นแบบเปิดปิด</string>
+    <string name="title_pref_actions_available_sound">เสียงการดำเนินการใช้งานได้</string>
+    <string name="value_actions_available_sound_off">ปิด</string>
+    <string name="value_actions_available_sound_focus">เมื่อโฟกัสที่รายการ</string>
+    <string name="value_actions_available_sound_after_speech">หลังจากพูดรายการแล้ว</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

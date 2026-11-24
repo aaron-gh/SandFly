@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Liu\'uta sormea ylös ja vasemmalle</string>
   <string name="title_pref_shortcut_up_and_right">Pyyhkäise ylös ja sitten oikealle</string>
   <string name="title_pref_shortcut_right_and_down">Pyyhkäise oikealle ja sitten alas</string>
+  <string name="title_pref_shortcut_1finger_3tap">Kolmoisnapauta</string>
+  <string name="title_pref_shortcut_1finger_4tap">Napauta neljästi</string>
   <string name="title_pref_shortcut_right_and_up">Pyyhkäise oikealle ja sitten ylös</string>
   <string name="title_pref_shortcut_left_and_down">Liu\'uta vasemmalle ja sitten alas</string>
   <string name="title_pref_shortcut_left_and_up">Liu\'uta vasemmalle ja sitten ylös</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Laturi yhdistetty</string>
     <string name="title_pref_screen_announcements">Näyttö päällä ja pois</string>
     <string name="summary_pref_screen_announcements">Valitse, mitä SandFly sanoo, kun näyttö sammuu tai menee päälle ja kun puhelimen lukitus avataan</string>
+    <string name="title_pref_screen_announcements_over_media">Sano ääneen median toiston aikana</string>
     <string name="title_screen_announcements_screen_off">Kun näyttö sammuu</string>
     <string name="title_screen_announcements_screen_on">Kun näyttö menee päälle</string>
     <string name="title_screen_announcements_unlock">Kun puhelimen lukitus avataan</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Puhu luettelon tiedot</string>
     <string name="pref_speak_grid_positions_title">Puhu ruudukon ja taulukon tiedot</string>
     <string name="pref_speak_role_without_pause_title">Puhu kohteen tyyppi ilman taukoa</string>
+    <string name="title_pref_speak_actions_available">Sano ääneen Toiminnot käytettävissä</string>
     <string name="title_pref_overview">Käytä SandFlyn viimeisimpien sovellusten luetteloa</string>
     <string name="title_pref_overview_newest_last">Viimeisin sovellus alimpana</string>
     <string name="title_pref_overview_columns">Sarakkeet</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Haptiset tehosteet</string>
     <string name="vibration_type_pulses">Pulssit</string>
     <string name="vibration_type_on_off">Päälle ja pois</string>
+    <string name="title_pref_actions_available_sound">Toiminnot käytettävissä -ääni</string>
+    <string name="value_actions_available_sound_off">Pois päältä</string>
+    <string name="value_actions_available_sound_focus">Kun kohde kohdistetaan</string>
+    <string name="value_actions_available_sound_after_speech">Kun kohde on luettu</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
