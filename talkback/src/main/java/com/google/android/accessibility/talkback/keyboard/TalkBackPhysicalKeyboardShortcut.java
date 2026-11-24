@@ -737,7 +737,11 @@ public enum TalkBackPhysicalKeyboardShortcut {
   REPEAT_LAST_SPOKEN_PHRASE(
       /* KEYBOARD_SHORTCUT_REPEAT_LAST_SPOKEN_PHRASE */ 1036,
       R.string.keycombo_shortcut_other_repeat_last_spoken_phrase,
-      R.string.title_repeat_last_spoken_phrase);
+      R.string.title_repeat_last_spoken_phrase),
+  TOGGLE_KEY_PRACTICE(
+      /* KEYBOARD_SHORTCUT_TOGGLE_KEY_PRACTICE */ 1037,
+      R.string.keycombo_shortcut_toggle_key_practice,
+      R.string.keycombo_menu_toggle_key_practice);
 
   private static Map<String, TalkBackPhysicalKeyboardShortcut> keyShortcutMap;
   private static Map<Integer, TalkBackPhysicalKeyboardShortcut> ordinalShortcutMap;

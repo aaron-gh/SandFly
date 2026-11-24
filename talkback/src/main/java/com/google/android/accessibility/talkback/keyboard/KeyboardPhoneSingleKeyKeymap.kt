@@ -108,6 +108,8 @@ object KeyboardPhoneSingleKeyKeymap : KeymapDefaults() {
         sandFly(NONE, KeyEvent.KEYCODE_P),
       )
       put(R.string.keycombo_shortcut_toggle_keyboard_input, sandFly(SHIFT, KeyEvent.KEYCODE_P))
+      // Keyboard practice speaks each key and its command: K for keys.
+      put(R.string.keycombo_shortcut_toggle_key_practice, sandFly(SHIFT, KeyEvent.KEYCODE_K))
       // No Ctrl: the SandFly key with the volume keys changes the speech rate, with Shift the speech
       // volume.
       put(R.string.keycombo_shortcut_global_speech_rate_increase, sandFly(NONE, KeyEvent.KEYCODE_VOLUME_UP))

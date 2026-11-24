@@ -154,6 +154,19 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
             return true;
           };
 
+  /** Turns keyboard practice on, in SandFly, which keeps it on outside settings too. */
+  private final Preference.OnPreferenceClickListener keyPracticePreferenceClickListener =
+      (preference) -> {
+        TalkBackService service = TalkBackService.getInstance();
+        if (service != null && TalkBackService.isServiceActive()) {
+          KeyComboManager keyComboManager = service.getKeyComboManager();
+          if (keyComboManager != null && !keyComboManager.isKeyPracticeOn()) {
+            keyComboManager.toggleKeyPractice();
+          }
+        }
+        return true;
+      };
+
   private final OnPreferenceChangeListener preferenceChangeListener =
       (preference, newValue) -> {
         String preferenceKeyForTriggerModifier =
@@ -291,6 +304,12 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     if (viewSystemKeyboardShortcutsPreference != null) {
       viewSystemKeyboardShortcutsPreference.setOnPreferenceClickListener(
           viewSystemKeyboardShortcutsPreferenceClickListener);
+    }
+
+    Preference keyPracticePreference = findPreference(getString(R.string.pref_key_practice_key));
+    if (keyPracticePreference != null) {
+      keyPracticePreference.setOnPreferenceClickListener(keyPracticePreferenceClickListener);
+      keyPracticePreference.setEnabled(isServiceActive());
     }
 
     initPreferenceUIs(getPreferenceScreen());
@@ -712,6 +731,11 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
             @Override
             public void onServiceStateChange(boolean isServiceActive) {
               resetKeymapPreference.setEnabled(isServiceActive);
+              Preference keyPracticePreference =
+                  isAdded() ? findPreference(getString(R.string.pref_key_practice_key)) : null;
+              if (keyPracticePreference != null) {
+                keyPracticePreference.setEnabled(isServiceActive);
+              }
               setUpDialogPreference(
                   preference -> {
                     preference.setEnabled(isServiceActive);

@@ -1716,7 +1716,11 @@ public class TalkBackService extends AccessibilityServiceCompat
       if (!isCtrl) {
         ctrlTapPending = false;
       } else if (keyEvent.getRepeatCount() == 0) {
-        ctrlTapPending = isFromPhysicalKeyboard(keyEvent) && !isKeyboardInputOff();
+        // In keyboard practice, Ctrl is said, and doesn't pause speech.
+        ctrlTapPending =
+            isFromPhysicalKeyboard(keyEvent)
+                && !isKeyboardInputOff()
+                && (keyComboManager == null || !keyComboManager.isKeyPracticeOn());
       }
       return;
     }

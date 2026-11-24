@@ -1260,6 +1260,10 @@ These commands, in the **Activation** category, leave keys to the app:
 - **Pass keys without the SandFly key to this app**: the app shown receives every key pressed without the SandFly key, such as the arrow keys and the browse mode letters, until you run the command again in that app. SandFly keeps the choice for each app.
 - **Turn SandFly keyboard input on or off**: every key goes to Android, shortcuts with the SandFly key too, until you press the shortcut of this command again. Keyboard input is on again when SandFly restarts.
 
+### Keyboard practice
+
+**Turn keyboard practice on or off**, in the **SandFly** category, and **Keyboard shortcuts** > **Keyboard practice** turn on keyboard practice, as NVDA's input help: SandFly says each key pressed, with the modifier keys held, and the command its keys run in the keymap in use, and runs nothing; no key reaches the app. The SandFly key pressed alone is also said as the SandFly key. Keys pressed twice, keys held down, two keys in a row and arrow key navigation are said with their commands. The shortcut again, Back or Escape turns it off. Its default shortcut is SandFly key + Shift + K in the keyboard phone keymaps.
+
 ### Keyboard phones
 
 On phones with a built-in keyboard that has no Ctrl, Meta or arrow keys, such as the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25, SandFly uses the **Keyboard phone keymap**. Its most used shortcuts are presses of keys that typing doesn't use, such as the SandFly key pressed alone for the next item and Alt pressed twice to play or pause media and answer calls. The **Keyboard phone single-key keymap** runs commands with single keys outside text fields, such as Space for the next item and H for the next heading. Shortcuts can also be a modifier key pressed alone, keys pressed twice, or keys held down. In both keymaps, Enter after SandFly focus moved activates the item, and arrow key navigation is on for the arrow keys that a trackpad sends. SandFly chooses a SandFly key that typing on the phone doesn't need, such as Right Shift on the Zinwa Q25.

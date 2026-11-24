@@ -24,5 +24,10 @@
         android:title="@string/title_pref_app_keyboard_shortcuts">
         <extra android:name="shown_from" android:value="keyboard_shortcuts" />
     </com.google.android.accessibility.material.preference.AccessibilitySuitePreference>
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_key_practice_key"
+        android:persistent="false"
+        android:title="@string/key_practice_title"
+        android:summary="@string/key_practice_summary" />
 
 </PreferenceScreen>
