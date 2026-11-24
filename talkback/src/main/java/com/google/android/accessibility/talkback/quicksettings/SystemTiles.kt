@@ -78,6 +78,33 @@ object SystemTiles {
   fun spec(component: ComponentName): String = "custom(${component.flattenToShortString()})"
 
   /**
+   * Finds the system's own tiles, such as Hotspot, from SystemUI's dump when SandFly can read it,
+   * and otherwise by looking through the system's quick settings, which takes a few seconds.
+   * [onDone] gets them, or null, on the main thread.
+   */
+  fun find(context: Context, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
+    if (!canRead(context)) {
+      SystemPanelClicker.scan { labels -> onDone(labels?.map { QuickItem.SystemTile("", it) }) }
+      return
+    }
+    val handler = Handler(Looper.getMainLooper())
+    Thread({
+        val tiles =
+          try {
+            read()
+          } catch (e: Throwable) {
+            null
+          }
+        val found =
+          tiles?.values?.filter { !it.spec.startsWith("custom(") && it.label != null }?.map {
+            QuickItem.SystemTile(it.spec, it.label!!)
+          }
+        handler.post { onDone(found) }
+      }, "QuickSettingsTiles")
+      .start()
+  }
+
+  /**
    * Reads the tiles from SystemUI's dump, by spec. Runs `dumpsys`, so it must not run on the main
    * thread. Returns null if the dump can't be read.
    */

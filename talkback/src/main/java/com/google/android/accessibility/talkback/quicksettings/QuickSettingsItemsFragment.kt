@@ -20,8 +20,6 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.View
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.appcompat.app.AlertDialog
@@ -156,33 +154,9 @@ class QuickSettingsItemsFragment : TalkbackBaseFragment() {
       .keepButtonCase()
   }
 
-  /**
-   * Lists the system's own tiles, such as Hotspot, from SystemUI's dump when SandFly can read it,
-   * and otherwise by looking through the system's quick settings, which takes a few seconds.
-   */
+  /** Lists the system's own tiles, such as Hotspot, as [SystemTiles.find] finds them. */
   private fun addSystemTile() {
-    val context = requireContext().applicationContext
-    if (SystemTiles.canRead(context)) {
-      val handler = Handler(Looper.getMainLooper())
-      Thread({
-          val tiles =
-            try {
-              SystemTiles.read()
-            } catch (e: Throwable) {
-              null
-            }
-          val found =
-            tiles?.values?.filter { !it.spec.startsWith("custom(") && it.label != null }?.map {
-              QuickItem.SystemTile(it.spec, it.label!!)
-            }
-          handler.post { if (isAdded) chooseSystemTile(found) }
-        }, "QuickSettingsTiles")
-        .start()
-    } else {
-      SystemPanelClicker.scan { labels ->
-        if (isAdded) chooseSystemTile(labels?.map { QuickItem.SystemTile("", it) })
-      }
-    }
+    SystemTiles.find(requireContext().applicationContext) { if (isAdded) chooseSystemTile(it) }
   }
 
   /**
