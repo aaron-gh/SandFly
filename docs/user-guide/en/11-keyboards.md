@@ -193,7 +193,7 @@ In the keyboard phone keymaps, the commands that need browse mode in other keyma
 
 Two settings in **Navigation** change when browse mode is on:
 
-- **Navigation** > **Smart browse mode**: turns browse mode off when focus moves to a text field in web content, so that you can type, and on again when focus moves to an item that isn't a text field. It's on by default.
+- **Navigation** > **Smart browse mode**: turns browse mode off when focus moves to a text field in web content, so that you can type, and on again when focus moves to an item that isn't a text field. It's on by default. While arrow key navigation is on, and in the keyboard phone keymaps, moving to a text field doesn't give it input focus, so browse mode stays on until you activate the field.
 - **Navigation** > **Remember browse mode in each app**: keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless **Smart browse mode** turns it on in web content. It's off by default.
 
 For navigation by web elements, see [](#web).
@@ -224,6 +224,8 @@ To change the command of an arrow key:
 3. Choose a command from the list, the same list as for a gesture.
 
 A key that is part of two keys pressed together runs its command when you release it, unless you press the second key first. While a text field is being edited, single arrow keys move the cursor; keys pressed together still run their commands, and Left Arrow + Right Arrow turns arrow key navigation off once both are held for 0.4 seconds.
+
+While arrow key navigation is on, moving to a text field reads it without giving it input focus, and the arrow keys move on past it, also where the app already gave the field input focus. The field is being edited once you activate it, such as with Up Arrow + Down Arrow, or type into it. In the keyboard phone keymaps, Enter activates it too. A new screen that opens with SandFly focus on a text field with input focus starts with the field being edited. In the keyboard phone keymaps, on a new screen where another item has SandFly focus, letters type into the text field with input focus, and the arrow keys go to it once you have typed.
 
 Each keymap has its own arrow key commands and its own switch. The NVDA, JAWS and Orca keymaps don't have arrow key navigation, as their arrow keys move SandFly focus; there, the command says "No arrow key navigation in this keymap".
 
@@ -316,7 +318,7 @@ Keyboard phones are phones with a built-in keyboard that has letters, Shift, Alt
 
 In both keymaps:
 
-- Enter, pressed after SandFly focus moved to an item, activates that item. After you type, Enter goes to the app, so that it sends a message. Where SandFly focus is on the text field being edited, Enter goes to the app.
+- Enter, pressed after SandFly focus moved to an item, activates that item. After you type, Enter goes to the app, so that it sends a message. Where SandFly focus is on the text field being edited, Enter goes to the app. On a text field that SandFly focus moved to, Enter activates the field, even where it has input focus.
 - The commands that need browse mode in other keymaps work without it.
 - Arrow key navigation is on by default. A press of a trackpad that sends Enter, such as on the Zinwa Q25, activates the item.
 - With Alt as the SandFly key, Alt with a letter types its digit or symbol in a text field being edited.
@@ -342,7 +344,7 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 **Typing** > **Physical keyboard** is shown while a physical keyboard is connected:
 
 - **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, as on BlackBerry, Unihertz and Zinwa phones where W, E and R are 1, 2 and 3, letter keys press the buttons of the lock screen PIN pad, the call keypad, where they play the keypad tones, and calculators, where the Alt characters of letters, such as + and -, press the operator buttons. A letter on the lock screen before the PIN pad shows opens it. Keys with a modifier, digit keys and keys typed into a text field aren't taken. It's on by default, and shown only for such keyboards.
-- **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter go to the app, which types a new line. It works with any physical keyboard, and is off by default. The Send key of a keyboard phone, such as the green call key of the Zinwa Q25, presses the Send button in the same message fields whether this setting is on or off. In those apps it also presses a Send button shown outside the field, such as the one for a voice message being recorded; elsewhere it goes to the phone as usual.
+- **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter go to the app, which types a new line. While arrow key navigation is on, and in the keyboard phone keymaps, Enter on a message field that SandFly focus moved to doesn't send until the field is activated or typed into. It works with any physical keyboard, and is off by default. The Send key of a keyboard phone, such as the green call key of the Zinwa Q25, presses the Send button in the same message fields whether this setting is on or off. In those apps it also presses a Send button shown outside the field, such as the one for a voice message being recorded; elsewhere it goes to the phone as usual.
 - **SandFly keyboard**: opens the list of keyboards in Android settings, where you turn on the SandFly keyboard. See [](#keyboards-sandfly-keyboard).
 - **Held keys type**: what a key held down types with the SandFly keyboard.
 - **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).

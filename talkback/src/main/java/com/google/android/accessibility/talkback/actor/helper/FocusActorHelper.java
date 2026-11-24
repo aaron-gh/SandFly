@@ -142,6 +142,16 @@ public final class FocusActorHelper {
         return true;
       } else if (KeyComboManagerHelper.isSmartBrowseModeEnabled(context)
           && KeyComboManagerHelper.shouldTurnOffBrowseMode(node)) {
+        // Input focus opens some text fields, such as search fields that show their results in
+        // place of the screen, and makes the arrow keys and Enter go to the field.
+        if (KeyComboManagerHelper.isTextField(node)
+            && KeyComboManagerHelper.textFieldsWaitForActivation(context)) {
+          LogUtils.w(
+              LOG_TAG,
+              "Input focus left where it is: keyboard navigation moved to a text field, which"
+                  + " starts editing when activated");
+          return false;
+        }
         return true;
       }
     }

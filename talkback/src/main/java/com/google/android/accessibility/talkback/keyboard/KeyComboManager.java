@@ -294,6 +294,13 @@ public class KeyComboManager
   // or a new screen opened. While not, and a text field has input focus, the keyboard phone keymaps'
   // single keys and Enter go to the text field.
   private boolean navigatedSinceTyping;
+  // Whether a key that types went to the app since a new screen opened. A new screen with input
+  // focus in a text field starts with typing, but the arrow keys go to the field only once the user
+  // types.
+  private boolean typedOnScreen;
+  // The text field that SandFly focus moved to and that the arrow keys move past until the user
+  // activates it or types into it.
+  private final TextFieldActivation textFieldActivation = new TextFieldActivation();
   // Modifier keys pressed alone, keys pressed twice and modifier keys held, in the keyboard phone
   // keymap.
   private final KeyPresses keyPresses =
@@ -377,6 +384,7 @@ public class KeyComboManager
             new ArrowKeyNavKeyHandler.Callbacks() {
               @Override
               public void perform(String command) {
+                onKeyboardAction(Commands.keyboardActionFor(context, command));
                 if (TutorialHooks.onKeys(/* keys= */ null, command)) {
                   return;
                 }
@@ -390,11 +398,7 @@ public class KeyComboManager
 
               @Override
               public boolean isEditingText() {
-                // In the keyboard phone keymaps, also while typing in a text field that SandFly
-                // focus left, as their single keys do.
-                return plainKeys()
-                    ? KeyComboManager.this.isEditingText()
-                    : isEditingTextWithAccessibilityFocus();
+                return isEditingTextForArrowKeys();
               }
             });
     // Create a set of commands that only work in Browse Mode.
@@ -482,6 +486,7 @@ public class KeyComboManager
   /** Performs a keyboard action for a gesture or another input. Returns whether it worked. */
   public boolean performKeyboardAction(
       TalkBackPhysicalKeyboardShortcut action, @Nullable EventId eventId) {
+    onKeyboardAction(action);
     if (keyComboMapper == null) {
       return false;
     }
@@ -528,6 +533,7 @@ public class KeyComboManager
     messageEnterKeys.reset();
     keysPassedToChooser.clear();
     editingShortcutKeys.clear();
+    textFieldActivation.reset();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
     // Keyboard practice ends, and a touch held lifts, when SandFly is suspended or stops.
@@ -557,6 +563,11 @@ public class KeyComboManager
 
   private boolean handleKeyEvent(KeyEvent event, EventId eventId) {
     trackSandFlyKey(event);
+    if (event.getAction() == KeyEvent.ACTION_DOWN
+        && event.getRepeatCount() == 0
+        && !KeyEvent.isModifierKey(event.getKeyCode())) {
+      textFieldActivation.onInput();
+    }
     // A key pressed while SandFly keyboard input was off is released where it was pressed, even
     // after keyboard input is turned on again, so that the app doesn't see a key held forever.
     @Nullable Boolean whileInputOff = finishKeyPressedWhileInputOff(event);
@@ -607,13 +618,15 @@ public class KeyComboManager
     }
 
     // Letter keys on keypads and Enter in message fields, before shortcuts. While SandFly is
-    // suspended, only the releases of keys they took.
+    // suspended, only the releases of keys they took. Enter on a message field that SandFly focus
+    // moved to activates the field instead; the Send key still sends.
     if (serviceState == SERVICE_STATE_ACTIVE || event.getAction() != KeyEvent.ACTION_DOWN) {
+      boolean enter = isEnterKey(event.getKeyCode());
       if ((keypadKeys != null && keypadKeys.onKeyEvent(event, this::isEditingText))
           || messageEnterKeys.onKeyEvent(
               event,
               () -> accessibilityFocusMonitor == null ? null : accessibilityFocusMonitor.getInputFocus(),
-              this::isEditingText)) {
+              () -> isEditingText() && !(enter && isSandFlyFocusOnTextFieldMovedTo()))) {
         arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
         return true;
       }
@@ -696,6 +709,11 @@ public class KeyComboManager
       }
       navigatedSinceTyping = handled;
     }
+    // A key typed into the text field with input focus, Enter too, starts editing it.
+    if (event.getAction() == KeyEvent.ACTION_DOWN && !handled && isTypingKey(event)) {
+      typedOnScreen = true;
+      textFieldActivation.onTyped();
+    }
     return handled;
   }
 
@@ -714,13 +732,15 @@ public class KeyComboManager
     return String.format(
         Locale.ROOT,
         "typing %s, moved since typing %s, SandFly keyboard %s, SandFly focus %s, input focus %s,"
-            + " SandFly focus on input focus %s, keymap %s",
+            + " SandFly focus on input focus %s, text field moved to and not activated %s,"
+            + " keymap %s",
         yesNo(isTyping()),
         yesNo(navigatedSinceTyping),
         editing == null ? "not in use" : (editing ? "editing" : "not editing"),
         describeForLog(focus),
         describeForLog(inputFocus),
         yesNo(focus != null && focus.equals(inputFocus)),
+        yesNo(isTextFieldMovedTo(focus)),
         getKeymap());
   }
 
@@ -752,6 +772,8 @@ public class KeyComboManager
   public int getEventTypes() {
     return AccessibilityEvent.TYPE_VIEW_FOCUSED
         | AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+        // A click on a text field that SandFly focus moved to starts editing it.
+        | AccessibilityEvent.TYPE_VIEW_CLICKED
         // The screen review reads the window again after these.
         | AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED
         | AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED
@@ -784,9 +806,12 @@ public class KeyComboManager
                 event.getContentChangeTypes()));
       }
       navigatedSinceTyping = false;
+      typedOnScreen = false;
     } else if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       navigatedSinceTyping = true;
+      textFieldActivation.onInput();
     }
+    onTextFieldActivationEvent(event);
     if (event.getEventType() != AccessibilityEvent.TYPE_VIEW_FOCUSED
         && event.getEventType() != AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED) {
       return;
@@ -1397,6 +1422,89 @@ public class KeyComboManager
             accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false));
   }
 
+  /**
+   * Whether single arrow keys go to a text field instead of arrow key navigation. SandFly focus is on
+   * the text field with input focus, unless SandFly focus moved there and the field wasn't activated
+   * or typed into since; or, in the keyboard phone keymaps, the user typed into the text field with
+   * input focus and ran no SandFly command since, wherever SandFly focus is.
+   */
+  private boolean isEditingTextForArrowKeys() {
+    if (plainKeys() && typedOnScreen && isTyping()) {
+      LogUtils.w(TAG, "Arrow keys edit: typed into the text field with input focus");
+      return true;
+    }
+    if (!isEditingTextWithAccessibilityFocus()) {
+      return false;
+    }
+    @Nullable AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    if (isTextFieldMovedTo(focus)) {
+      LogUtils.w(
+          TAG,
+          "Arrow keys move on: SandFly focus moved to the text field with input focus %s, not"
+              + " activated or typed into since",
+          describeForLog(focus));
+      return false;
+    }
+    LogUtils.w(
+        TAG,
+        "Arrow keys edit: SandFly focus on the text field with input focus %s, %s",
+        describeForLog(focus),
+        navigatedSinceTyping ? "activated or put there by the app" : "typed into or on a new screen");
+    return true;
+  }
+
+  /** Whether SandFly focus is on a text field it moved to, not activated or typed into since. */
+  private boolean isSandFlyFocusOnTextFieldMovedTo() {
+    return accessibilityFocusMonitor != null
+        && isTextFieldMovedTo(
+            accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false));
+  }
+
+  /**
+   * Whether {@code focus} is a text field that SandFly focus moved to, not activated or typed into
+   * since, in a keymap where such a field waits for activation.
+   */
+  private boolean isTextFieldMovedTo(@Nullable AccessibilityNodeInfoCompat focus) {
+    return textFieldActivation.isMovedTo(focus)
+        && KeyComboManagerHelper.textFieldsWaitForActivation(context);
+  }
+
+  /** Notes a keyboard action about to run, of which Click starts editing a text field. */
+  private void onKeyboardAction(@Nullable TalkBackPhysicalKeyboardShortcut action) {
+    if (action == TalkBackPhysicalKeyboardShortcut.PERFORM_CLICK) {
+      textFieldActivation.onActivated();
+    }
+  }
+
+  /** Follows SandFly focus moving to text fields, and clicks on them. */
+  private void onTextFieldActivationEvent(AccessibilityEvent event) {
+    int type = event.getEventType();
+    if (type != AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED
+        && type != AccessibilityEvent.TYPE_VIEW_CLICKED) {
+      return;
+    }
+    @Nullable AccessibilityNodeInfoCompat source =
+        AccessibilityNodeInfoUtils.toCompat(event.getSource());
+    if (source == null) {
+      return;
+    }
+    if (type == AccessibilityEvent.TYPE_VIEW_CLICKED) {
+      textFieldActivation.onClicked(source);
+    } else {
+      textFieldActivation.onAccessibilityFocused(source, /* moving= */ navigatedSinceTyping);
+    }
+  }
+
+  /** Whether {@code event} types or edits text: a printing key, Enter, Backspace or Delete. */
+  private static boolean isTypingKey(KeyEvent event) {
+    int keyCode = event.getKeyCode();
+    return event.isPrintingKey()
+        || isEnterKey(keyCode)
+        || keyCode == KeyEvent.KEYCODE_DEL
+        || keyCode == KeyEvent.KEYCODE_FORWARD_DEL;
+  }
+
   /** Returns how arrow keys are written, such as "Arrow Up + Arrow Down". */
   public String getArrowKeysStringRepresentation(long keys) {
     StringBuilder sb = new StringBuilder();
@@ -1860,8 +1968,9 @@ public class KeyComboManager
     // Enter in the keyboard phone keymap, where a shortcut is Enter alone: after SandFly focus moved
     // to an item, it activates that item; after a key went to the app, as while typing a message,
     // it goes to the app, which may send the message. Where SandFly focus is on the text field
-    // with input focus, it goes to the app. Numpad Enter and the centre of a D-pad are Enter here,
-    // as a press of the Zinwa Q25 trackpad is.
+    // with input focus, it goes to the app, unless SandFly focus moved to that field and it wasn't
+    // activated or typed into since. Numpad Enter and the centre of a D-pad are Enter here, as a
+    // press of the Zinwa Q25 trackpad is.
     if (hasModifier
         && !pressedTriggerModifier
         && !startedSequenceKeyCombo
@@ -1877,7 +1986,8 @@ public class KeyComboManager
         if (event.getRepeatCount() > 0) {
           return enterKeys.equals(currentKeyCombo) && performedCombo;
         }
-        if (isSandFlyFocusAwayFromInputFocus() && !isTyping()) {
+        if ((isSandFlyFocusAwayFromInputFocus() || isSandFlyFocusOnTextFieldMovedTo())
+            && !isTyping()) {
           currentKeyCombo = enterKeys;
           performedCombo = matchAndPerformKeyCombo(enterKeys, triggerModifier);
           hasPartialMatch = false;
@@ -2130,6 +2240,10 @@ public class KeyComboManager
         if (commandValue != null && commandPerformer == null) {
           continue;
         }
+        onKeyboardAction(
+            commandValue != null
+                ? Commands.keyboardActionFor(context, commandValue)
+                : TalkBackPhysicalKeyboardShortcut.getActionFromKey(context.getResources(), key));
         if (TutorialHooks.onKeys(
             getKeyComboStringRepresentation(targetKeyCombo),
             commandValue != null
