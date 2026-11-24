@@ -15,11 +15,15 @@
  */
 package com.google.android.accessibility.talkback.keyboard
 
+import android.accessibilityservice.AccessibilityService
 import android.content.Context
+import android.graphics.Rect
 import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.macros.PassThroughTouch
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Locale
@@ -50,18 +54,19 @@ class MessageEnterKeys(private val context: Context) {
     if (takenKeys.contains(keyCode)) {
       return true
     }
-    if (
-      !sendsMessage(keyCode, isOn(context)) ||
-        event.repeatCount > 0 ||
-        !event.hasNoModifiers() ||
-        !typing.asBoolean
-    ) {
+    if (!sendsMessage(keyCode, isOn(context)) || event.repeatCount > 0 || !event.hasNoModifiers()) {
       return false
     }
-    val field = inputFocus.get() ?: return false
+    val typingNow = typing.asBoolean
+    // Outside the message field, the Send key still presses a Send button on screen, such as the
+    // one a messaging app shows for a voice message being recorded.
+    if (!typingNow && keyCode != KeyEvent.KEYCODE_CALL) {
+      return false
+    }
     val sent =
       try {
-        send(field)
+        val field = if (typingNow) inputFocus.get() else null
+        if (field != null) send(field) else pressSendOnScreen()
       } catch (e: RuntimeException) {
         // The app's window may go away while it is read.
         LogUtils.w(TAG, "Message not sent: %s", e)
@@ -71,6 +76,46 @@ class MessageEnterKeys(private val context: Context) {
       takenKeys.add(keyCode)
     }
     return sent
+  }
+
+  /** Presses the Send button of the messaging app in front, if it shows one. */
+  private fun pressSendOnScreen(): Boolean {
+    val service = context as? AccessibilityService ?: return false
+    val root = service.rootInActiveWindow ?: return false
+    val packageName = root.packageName?.toString() ?: return false
+    if (!isMessagingApp(packageName)) return false
+    val button = findSendButton(root) ?: findSendLabel(root) ?: return false
+    if (button.performAction(AccessibilityNodeInfo.ACTION_CLICK)) {
+      LogUtils.e(TAG, "Send key clicked the Send button on screen in %s", packageName)
+      return true
+    }
+    // A Send button drawn by the app, such as blindGram's for a voice message being recorded, may
+    // not take the accessibility click: it is tapped instead.
+    val bounds = Rect().also(button::getBoundsInScreen)
+    val tapped = service is TalkBackService && PassThroughTouch.tap(service, bounds)
+    LogUtils.e(TAG, "Send key tapped the Send button on screen in %s: %s", packageName, tapped)
+    return tapped
+  }
+
+  /**
+   * Finds a visible item labelled Send that isn't marked clickable, as an app draws for its own
+   * buttons, among a few hundred items.
+   */
+  private fun findSendLabel(root: AccessibilityNodeInfo): AccessibilityNodeInfo? {
+    val queue = ArrayDeque<AccessibilityNodeInfo>()
+    queue.addLast(root)
+    var seen = 0
+    while (queue.isNotEmpty() && seen < MAX_NODES) {
+      val node = queue.removeFirst()
+      seen++
+      if (node.isVisibleToUser && !node.isEditable && isSendLabel(node.contentDescription ?: node.text)) {
+        return node
+      }
+      for (i in 0 until node.childCount) {
+        node.getChild(i)?.let(queue::addLast)
+      }
+    }
+    return null
   }
 
   fun reset() {
@@ -130,6 +175,14 @@ class MessageEnterKeys(private val context: Context) {
         "org.telegram.messenger.web",
         "org.telegram.plus",
         "org.thunderdog.challegram",
+        // Telegram apps built on Telegram's code.
+        "me.blindgram.messenger",
+        "org.telegram.messenger.beta",
+        "tw.nekomimi.nekogram",
+        "com.exteragram.messenger",
+        "uz.unnarsx.cherrygram",
+        "org.forkgram.messenger",
+        "it.octogram.android",
         "org.thoughtcrime.securesms",
         "im.vector.app",
         "io.element.android.x",

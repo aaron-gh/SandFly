@@ -55,4 +55,10 @@ class MessageEnterKeysTest {
     assertTrue(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_NUMPAD_ENTER, enterSendsMessages = true))
     assertFalse(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_A, enterSendsMessages = true))
   }
+
+  @Test
+  fun telegramAppsAreMessagingApps() {
+    assertTrue(MessageEnterKeys.isMessagingApp("org.telegram.messenger"))
+    assertTrue(MessageEnterKeys.isMessagingApp("me.blindgram.messenger"))
+  }
 }
