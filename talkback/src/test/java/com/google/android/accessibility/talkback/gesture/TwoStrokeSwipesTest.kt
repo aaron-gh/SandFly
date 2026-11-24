@@ -131,6 +131,18 @@ class TwoStrokeSwipesTest {
   }
 
   @Test
+  fun quarterSecond_isOfferedAndTimesOut() {
+    swipes.setTimeMs(250)
+    assigned += GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP
+    assertTrue(swipe(GESTURE_SWIPE_RIGHT))
+    idle(240)
+    assertTrue(dispatched.isEmpty())
+    idle(20)
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), dispatched)
+    assertFalse(swipes.isWaiting())
+  }
+
+  @Test
   fun aSecondTouchThatStartsInTime_mayEndLater() {
     swipes.setTimeMs(500)
     assigned += GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP
