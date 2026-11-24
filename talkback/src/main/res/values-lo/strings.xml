@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">​ປັດ​ຂຶ້ນ​ແລ້ວ​ປັດ​ຊ້າຍ</string>
   <string name="title_pref_shortcut_up_and_right">​ປັດ​ຂຶ້ນ​ແລ້ວ​ປັດ​ຂວາ</string>
   <string name="title_pref_shortcut_right_and_down">​ປັດ​ຂວາ​ແລ້ວ​ປັດ​ລົງ</string>
+  <string name="title_pref_shortcut_1finger_3tap">ແຕະສາມເທື່ອ</string>
+  <string name="title_pref_shortcut_1finger_4tap">ແຕະສີ່ເທື່ອ</string>
   <string name="title_pref_shortcut_right_and_up">​ປັດ​ຂວາ​ແລ້ວ​ປັດ​ຂຶ້ນ</string>
   <string name="title_pref_shortcut_left_and_down">​ປັດ​ຊ້າຍ​ແລ້ວ​ປັດ​​ລົງ</string>
   <string name="title_pref_shortcut_left_and_up">​ປັດ​ຊ້າຍ​ແລ້ວ​ປັດ​​ຂຶ້ນ</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">ເຊື່ອມຕໍ່ສາຍສາກແລ້ວ</string>
     <string name="title_pref_screen_announcements">ໜ້າຈໍເປີດ ແລະ ປິດ</string>
     <string name="summary_pref_screen_announcements">ເລືອກສິ່ງທີ່ SandFly ເວົ້າເມື່ອໜ້າຈໍປິດ ຫຼື ເປີດ, ແລະ ເມື່ອໂທລະສັບຖືກປົດລັອກ</string>
+    <string name="title_pref_screen_announcements_over_media">ອ່ານຂະນະທີ່ກຳລັງຫຼິ້ນມີເດຍ</string>
     <string name="title_screen_announcements_screen_off">ເມື່ອໜ້າຈໍປິດ</string>
     <string name="title_screen_announcements_screen_on">ເມື່ອໜ້າຈໍເປີດຂຶ້ນ</string>
     <string name="title_screen_announcements_unlock">ເມື່ອໂທລະສັບຖືກປົດລັອກ</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">ອ່ານຂໍ້ມູນລາຍການ</string>
     <string name="pref_speak_grid_positions_title">ອ່ານຂໍ້ມູນຕາຂ່າຍ ແລະ ຕາຕະລາງ</string>
     <string name="pref_speak_role_without_pause_title">ອ່ານປະເພດລາຍການໂດຍບໍ່ຢຸດ</string>
+    <string name="title_pref_speak_actions_available">ອ່ານ ການດຳເນີນການສາມາດໃຊ້ໄດ້</string>
     <string name="title_pref_overview">ໃຊ້ພາບຮວມຂອງ SandFly</string>
     <string name="title_pref_overview_newest_last">ແອັບຫຼ້າສຸດຢູ່ລຸ່ມສຸດ</string>
     <string name="title_pref_overview_columns">ຖັນ</string>
@@ -2264,6 +2268,9 @@
     <string name="vibration_type_effects">ເອັບເຟັກການສັ່ນ</string>
     <string name="vibration_type_pulses">ຈັງຫວະສັ່ນ</string>
     <string name="vibration_type_on_off">ເປີດ ແລະ ປິດ</string>
+    <string name="title_pref_actions_available_sound">ສຽງການດຳເນີນການສາມາດໃຊ້ໄດ້</string>
+    <string name="value_actions_available_sound_focus">ເມື່ອລາຍການໄດ້ຮັບໂຟກັສ</string>
+    <string name="value_actions_available_sound_after_speech">ຫຼັງຈາກອ່ານລາຍການແລ້ວ</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

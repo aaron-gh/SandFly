@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Prevlačenje nagore pa ulijevo</string>
   <string name="title_pref_shortcut_up_and_right">Prevlačenje nagore pa udesno</string>
   <string name="title_pref_shortcut_right_and_down">Prevlačenje udesno pa nadolje</string>
+  <string name="title_pref_shortcut_1finger_3tap">Trostruki dodir</string>
+  <string name="title_pref_shortcut_1finger_4tap">Četverostruki dodir</string>
   <string name="title_pref_shortcut_right_and_up">Prevlačenje udesno pa nagore</string>
   <string name="title_pref_shortcut_left_and_down">Prevlačenje ulijevo pa nadolje</string>
   <string name="title_pref_shortcut_left_and_up">Prevlačenje ulijevo pa nagore</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Punjač je povezan</string>
     <string name="title_pref_screen_announcements">Uključivanje i isključivanje ekrana</string>
     <string name="summary_pref_screen_announcements">Odaberite šta SandFly izgovara kada se ekran isključi ili uključi i kada se telefon otključa</string>
+    <string name="title_pref_screen_announcements_over_media">Izgovaranje tokom reprodukcije medija</string>
     <string name="title_screen_announcements_screen_off">Kada se ekran isključi</string>
     <string name="title_screen_announcements_screen_on">Kada se ekran uključi</string>
     <string name="title_screen_announcements_unlock">Kada se telefon otključa</string>
@@ -2011,6 +2014,7 @@
     <string name="pref_speak_list_positions_title">Izgovaraj informacije o listama</string>
     <string name="pref_speak_grid_positions_title">Izgovaraj informacije o mrežama i tabelama</string>
     <string name="pref_speak_role_without_pause_title">Izgovaraj vrstu stavke bez pauze</string>
+    <string name="title_pref_speak_actions_available">Izgovaranje teksta „Radnje su dostupne“</string>
     <string name="title_pref_overview">Koristi SandFly pregled</string>
     <string name="title_pref_overview_newest_last">Najnovija aplikacija na dnu</string>
     <string name="title_pref_overview_columns">Kolone</string>
@@ -2272,6 +2276,9 @@
     <string name="vibration_type_effects">Haptički efekti</string>
     <string name="vibration_type_pulses">Impulsi</string>
     <string name="vibration_type_on_off">Uključeno/isključeno</string>
+    <string name="title_pref_actions_available_sound">Zvuk za „Radnje su dostupne“</string>
+    <string name="value_actions_available_sound_focus">Kada stavka dobije fokus</string>
+    <string name="value_actions_available_sound_after_speech">Nakon izgovaranja stavke</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Жоғары, содан кейін солға сырғыту</string>
   <string name="title_pref_shortcut_up_and_right">Жоғары, содан кейін оңға сырғыту</string>
   <string name="title_pref_shortcut_right_and_down">Оңға, содан кейін төмен сырғыту</string>
+  <string name="title_pref_shortcut_1finger_3tap">Үш рет түрту</string>
+  <string name="title_pref_shortcut_1finger_4tap">Төрт рет түрту</string>
   <string name="title_pref_shortcut_right_and_up">Оңға, содан кейін жоғары сырғыту</string>
   <string name="title_pref_shortcut_left_and_down">Солға, содан кейін төмен сырғыту</string>
   <string name="title_pref_shortcut_left_and_up">Солға, содан кейін жоғары сырғыту</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Зарядтағыш қосылған</string>
     <string name="title_pref_screen_announcements">Экранды қосу және өшіру</string>
     <string name="summary_pref_screen_announcements">Экран өшкенде немесе қосылғанда және телефон құлпы ашылғанда SandFly не айтатынын таңдаңыз.</string>
+    <string name="title_pref_screen_announcements_over_media">Медиа ойнату кезінде айту</string>
     <string name="title_screen_announcements_screen_off">Экран өшкенде</string>
     <string name="title_screen_announcements_screen_on">Экран қосылғанда</string>
     <string name="title_screen_announcements_unlock">Телефон құлпы ашылған кезде</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Тізім туралы ақпаратты айту</string>
     <string name="pref_speak_grid_positions_title">Тор және кесте туралы ақпаратты айту</string>
     <string name="pref_speak_role_without_pause_title">Элемент түрін кідіртпей айту</string>
+    <string name="title_pref_speak_actions_available">«Әрекеттер қолжетімді» деп айту</string>
     <string name="title_pref_overview">SandFly шолуын пайдалану</string>
     <string name="title_pref_overview_newest_last">Соңғы қолданба төменде</string>
     <string name="title_pref_overview_columns">Бағандар</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Хаптикалық әсерлер</string>
     <string name="vibration_type_pulses">Импульстер</string>
     <string name="vibration_type_on_off">Қосу және өшіру</string>
+    <string name="title_pref_actions_available_sound">«Әрекеттер қолжетімді» дыбысы</string>
+    <string name="value_actions_available_sound_focus">Элементке назар аударылғанда</string>
+    <string name="value_actions_available_sound_after_speech">Элемент айтылғаннан кейін</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

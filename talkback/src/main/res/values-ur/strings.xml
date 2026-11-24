@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">اوپر پھر بائیں سوائپ کریں</string>
   <string name="title_pref_shortcut_up_and_right">اوپر پھر دائیں سوائپ کریں</string>
   <string name="title_pref_shortcut_right_and_down">دائیں پھر نیچے سوائپ کریں</string>
+  <string name="title_pref_shortcut_1finger_3tap">تین بار تھپتھپائیں</string>
+  <string name="title_pref_shortcut_1finger_4tap">چار بار تھپتھپائیں</string>
   <string name="title_pref_shortcut_right_and_up">دائیں پھر اوپر سوائپ کریں</string>
   <string name="title_pref_shortcut_left_and_down">بائیں پھر نیچے سوائپ کریں</string>
   <string name="title_pref_shortcut_left_and_up">بائیں پھر اوپر سوائپ کریں</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">چارجر منسلک ہے</string>
     <string name="title_pref_screen_announcements">اسکرین آن اور آف</string>
     <string name="summary_pref_screen_announcements">منتخب کریں کہ SandFly کیا کہتا ہے جب اسکرین آف یا آن ہو، اور جب فون ان لاک ہو</string>
+    <string name="title_pref_screen_announcements_over_media">میڈیا چلنے کے دوران بولیں</string>
     <string name="title_screen_announcements_screen_off">جب سکرین بند ہو جاتی ہے</string>
     <string name="title_screen_announcements_screen_on">اسکرین آن ہونے پر</string>
     <string name="title_screen_announcements_unlock">جب فون ان لاک ہوتا ہے</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">فہرست کی معلومات بولیں</string>
     <string name="pref_speak_grid_positions_title">گرڈ اور جدول کی معلومات بولیں</string>
     <string name="pref_speak_role_without_pause_title">آئٹم کی قسم بغیر وقفے کے بولیں</string>
+    <string name="title_pref_speak_actions_available">کارروائیاں دستیاب ہیں بولیں</string>
     <string name="title_pref_overview">SandFly کا مجموعی جائزہ استعمال کریں</string>
     <string name="title_pref_overview_newest_last">سب سے حالیہ ایپ نیچے</string>
     <string name="title_pref_overview_columns">کالم</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">ہیپٹک اثرات</string>
     <string name="vibration_type_pulses">پلسز</string>
     <string name="vibration_type_on_off">آن اور آف</string>
+    <string name="title_pref_actions_available_sound">کارروائیاں دستیاب ہیں کی آواز</string>
+    <string name="value_actions_available_sound_focus">جب آئٹم پر فوکس ہو</string>
+    <string name="value_actions_available_sound_after_speech">آئٹم بولے جانے کے بعد</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

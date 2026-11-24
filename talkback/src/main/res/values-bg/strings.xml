@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Нагоре и след това наляво</string>
   <string name="title_pref_shortcut_up_and_right">Нагоре и след това надясно</string>
   <string name="title_pref_shortcut_right_and_down">Надясно и после надолу</string>
+  <string name="title_pref_shortcut_1finger_3tap">Трикратно докосване</string>
+  <string name="title_pref_shortcut_1finger_4tap">Четирикратно докосване</string>
   <string name="title_pref_shortcut_right_and_up">Надясно и след това нагоре</string>
   <string name="title_pref_shortcut_left_and_down">Наляво и после надолу</string>
   <string name="title_pref_shortcut_left_and_up">Наляво и след това нагоре</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Зарядното е свързано</string>
     <string name="title_pref_screen_announcements">Включване и изключване на екрана</string>
     <string name="summary_pref_screen_announcements">Избор на това какво изговаря SandFly при изключване или включване на екрана и при отключване на телефона</string>
+    <string name="title_pref_screen_announcements_over_media">Изговаряне по време на възпроизвеждане на мултимедия</string>
     <string name="title_screen_announcements_screen_off">При изключване на екрана</string>
     <string name="title_screen_announcements_screen_on">При включване на екрана</string>
     <string name="title_screen_announcements_unlock">При отключване на телефона</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Изговаряне на информация за списъци</string>
     <string name="pref_speak_grid_positions_title">Изговаряне на информация за мрежи и таблици</string>
     <string name="pref_speak_role_without_pause_title">Изговаряне на типа елемент без пауза</string>
+    <string name="title_pref_speak_actions_available">Изговаряне на „Налице са действия“</string>
     <string name="title_pref_overview">Използване на общия преглед на SandFly</string>
     <string name="title_pref_overview_newest_last">Най-скорошното приложение най-долу</string>
     <string name="title_pref_overview_columns">Колони</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Хаптични ефекти</string>
     <string name="vibration_type_pulses">Импулси</string>
     <string name="vibration_type_on_off">Само включено и изключено</string>
+    <string name="title_pref_actions_available_sound">Звук за „Налице са действия“</string>
+    <string name="value_actions_available_sound_focus">Когато елементът получи фокус</string>
+    <string name="value_actions_available_sound_after_speech">След изговаряне на елемента</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

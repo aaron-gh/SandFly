@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Дээш, дараа нь зүүн тийш шудрах</string>
   <string name="title_pref_shortcut_up_and_right">Дээш, дараа нь баруун тийш шудрах</string>
   <string name="title_pref_shortcut_right_and_down">Баруун тийш, дараа нь доош шудрах</string>
+  <string name="title_pref_shortcut_1finger_3tap">Гурав товших</string>
+  <string name="title_pref_shortcut_1finger_4tap">Дөрөв товших</string>
   <string name="title_pref_shortcut_right_and_up">Баруун тийш, дараа нь дээш шудрах</string>
   <string name="title_pref_shortcut_left_and_down">Зүүн тийш, дараа нь доош шудрах</string>
   <string name="title_pref_shortcut_left_and_up">Зүүн тийш, дараа нь дээш шудрах</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Цэнэглэгч холбогдсон</string>
     <string name="title_pref_screen_announcements">Дэлгэц асаах, унтраах</string>
     <string name="summary_pref_screen_announcements">Дэлгэц унтрах, асах, утасны түгжээг тайлах үед SandFly юу хэлэхийг сонгоно уу</string>
+    <string name="title_pref_screen_announcements_over_media">Медиа тоглуулж байх үед хэлэх</string>
     <string name="title_screen_announcements_screen_off">Дэлгэц унтрах үед</string>
     <string name="title_screen_announcements_screen_on">Дэлгэц асах үед</string>
     <string name="title_screen_announcements_unlock">Утасны түгжээг тайлсан үед</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Жагсаалтын мэдээлэл унших</string>
     <string name="pref_speak_grid_positions_title">Тор болон хүснэгтийн мэдээлэл унших</string>
     <string name="pref_speak_role_without_pause_title">Зүйлийн төрлийг завсарлагагүй унших</string>
+    <string name="title_pref_speak_actions_available">«Үйлдлүүд боломжтой» гэж хэлэх</string>
     <string name="title_pref_overview">SandFly-ийн тоймыг ашиглах</string>
     <string name="title_pref_overview_newest_last">Хамгийн сүүлийн апп доор</string>
     <string name="title_pref_overview_columns">Багана</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Хаптик эффект</string>
     <string name="vibration_type_pulses">Импульс</string>
     <string name="vibration_type_on_off">Асах, унтрах</string>
+    <string name="title_pref_actions_available_sound">«Үйлдлүүд боломжтой» дуу</string>
+    <string name="value_actions_available_sound_focus">Зүйл дээр фокуслах үед</string>
+    <string name="value_actions_available_sound_after_speech">Зүйлийг уншсаны дараа</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

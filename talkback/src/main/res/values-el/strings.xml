@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Σύρετε προς τα πάνω και αριστερά</string>
   <string name="title_pref_shortcut_up_and_right">Σύρετε προς τα πάνω και δεξιά</string>
   <string name="title_pref_shortcut_right_and_down">Σύρετε προς τα δεξιά και κάτω</string>
+  <string name="title_pref_shortcut_1finger_3tap">Τριπλό πάτημα</string>
+  <string name="title_pref_shortcut_1finger_4tap">Τετραπλό πάτημα</string>
   <string name="title_pref_shortcut_right_and_up">Σύρετε προς τα δεξιά και πάνω</string>
   <string name="title_pref_shortcut_left_and_down">Σύρετε προς τα αριστερά και κάτω</string>
   <string name="title_pref_shortcut_left_and_up">Σύρετε προς τα αριστερά και πάνω</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Ο φορτιστής συνδέθηκε</string>
     <string name="title_pref_screen_announcements">Ενεργοποίηση και απενεργοποίηση οθόνης</string>
     <string name="summary_pref_screen_announcements">Επιλογή του τι εκφωνεί το SandFly όταν η οθόνη απενεργοποιείται ή ενεργοποιείται και όταν ξεκλειδώνεται το τηλέφωνο</string>
+    <string name="title_pref_screen_announcements_over_media">Εκφώνηση κατά την αναπαραγωγή πολυμέσων</string>
     <string name="title_screen_announcements_screen_off">Όταν απενεργοποιείται η οθόνη</string>
     <string name="title_screen_announcements_screen_on">Όταν ενεργοποιείται η οθόνη</string>
     <string name="title_screen_announcements_unlock">Όταν ξεκλειδώνεται το τηλέφωνο</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Εκφώνηση πληροφοριών λίστας</string>
     <string name="pref_speak_grid_positions_title">Εκφώνηση πληροφοριών πλέγματος και πίνακα</string>
     <string name="pref_speak_role_without_pause_title">Εκφώνηση τύπου στοιχείου χωρίς παύση</string>
+    <string name="title_pref_speak_actions_available">Εκφώνηση του «Διατίθενται ενέργειες»</string>
     <string name="title_pref_overview">Χρήση της επισκόπησης του SandFly</string>
     <string name="title_pref_overview_newest_last">Η πιο πρόσφατη εφαρμογή στο τέλος</string>
     <string name="title_pref_overview_columns">Στήλες</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Απτικά εφέ</string>
     <string name="vibration_type_pulses">Παλμοί</string>
     <string name="vibration_type_on_off">Απλή δόνηση</string>
+    <string name="title_pref_actions_available_sound">Ήχος «Διατίθενται ενέργειες»</string>
+    <string name="value_actions_available_sound_focus">Όταν το στοιχείο αποκτά εστίαση</string>
+    <string name="value_actions_available_sound_after_speech">Μετά την εκφώνηση του στοιχείου</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

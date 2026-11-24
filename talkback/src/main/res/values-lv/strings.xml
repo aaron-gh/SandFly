@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Vilkt uz augšu, pēc tam pa kreisi</string>
   <string name="title_pref_shortcut_up_and_right">Vilkt uz augšu, pēc tam pa labi</string>
   <string name="title_pref_shortcut_right_and_down">Vilkt pa labi, pēc tam uz leju</string>
+  <string name="title_pref_shortcut_1finger_3tap">Trīsreiz pieskarties</string>
+  <string name="title_pref_shortcut_1finger_4tap">Četrreiz pieskarties</string>
   <string name="title_pref_shortcut_right_and_up">Vilkt pa labi, pēc tam uz augšu</string>
   <string name="title_pref_shortcut_left_and_down">Vilkt pa kreisi, pēc tam uz leju</string>
   <string name="title_pref_shortcut_left_and_up">Vilkt pa kreisi, pēc tam uz augšu</string>
@@ -1366,6 +1368,7 @@
     <string name="value_charger_connected">Pieslēgts lādētājs</string>
     <string name="title_pref_screen_announcements">Ekrāns ieslēgts un izslēgts</string>
     <string name="summary_pref_screen_announcements">Izvēlieties, ko SandFly saka, kad ekrāns izslēdzas vai ieslēdzas un kad tālrunis ir atbloķēts</string>
+    <string name="title_pref_screen_announcements_over_media">Izrunāt, kamēr tiek atskaņoti mediji</string>
     <string name="title_screen_announcements_screen_off">Kad ekrāns izslēdzas</string>
     <string name="title_screen_announcements_screen_on">Kad ekrāns ieslēdzas</string>
     <string name="title_screen_announcements_unlock">Kad tālrunis tiek atbloķēts</string>
@@ -2012,6 +2015,7 @@
     <string name="pref_speak_list_positions_title">Lasīt saraksta informāciju</string>
     <string name="pref_speak_grid_positions_title">Lasīt režģa un tabulas informāciju</string>
     <string name="pref_speak_role_without_pause_title">Lasīt vienuma veidu bez pauzes</string>
+    <string name="title_pref_speak_actions_available">Izrunāt “Pieejamas darbības”</string>
     <string name="title_pref_overview">Izmantot SandFly pārskatu</string>
     <string name="title_pref_overview_newest_last">Jaunākā lietotne apakšā</string>
     <string name="title_pref_overview_columns">Kolonnas</string>
@@ -2255,6 +2259,9 @@
     <string name="vibration_type_effects">Haptiskie efekti</string>
     <string name="vibration_type_pulses">Impulsi</string>
     <string name="vibration_type_on_off">Ieslēgta vai izslēgta</string>
+    <string name="title_pref_actions_available_sound">Skaņa “Pieejamas darbības”</string>
+    <string name="value_actions_available_sound_focus">Kad vienums tiek fokusēts</string>
+    <string name="value_actions_available_sound_after_speech">Pēc vienuma nolasīšanas</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

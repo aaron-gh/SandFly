@@ -28,6 +28,7 @@
   <string name="value_screen_on">Ekran włączony.</string>
   <string name="value_screen_off">Ekran wyłączony.</string>
   <string name="value_device_unlocked">Urządzenie zostało odblokowane.</string>
+  <string name="title_pref_screen_announcements_over_media">Odczytuj podczas odtwarzania multimediów</string>
   <string name="title_pref_speech_volume">Głośność mowy</string>
   <string name="title_pref_verbose_scroll_announcement">Zawsze odczytuj liczbę elementów z listy</string>
   <string name="summary_pref_verbose_scroll_announcement">Po każdym przewinięciu mówi, które elementy są widoczne</string>
@@ -571,6 +572,8 @@
   <string name="title_pref_shortcut_up_and_left">Przesuń w górę, a potem w lewo</string>
   <string name="title_pref_shortcut_up_and_right">Przesuń w górę, a potem w prawo</string>
   <string name="title_pref_shortcut_right_and_down">Przesuń w prawo, a potem w dół</string>
+  <string name="title_pref_shortcut_1finger_3tap">Kliknij trzykrotnie</string>
+  <string name="title_pref_shortcut_1finger_4tap">Kliknij czterokrotnie</string>
   <string name="title_pref_shortcut_right_and_up">Przesuń w prawo, a potem w górę</string>
   <string name="title_pref_shortcut_left_and_down">Przesuń w lewo, a potem w dół</string>
   <string name="title_pref_shortcut_left_and_up">Przesuń w lewo, a potem w górę</string>
@@ -1844,6 +1847,7 @@
     <string name="pref_speak_list_positions_title">Odczytywanie informacji o listach</string>
     <string name="pref_speak_grid_positions_title">Odczytywanie informacji o siatkach i tabelach</string>
     <string name="pref_speak_role_without_pause_title">Odczytywanie typu elementu bez pauzy</string>
+    <string name="title_pref_speak_actions_available">Odczytuj „Dostępne czynności”</string>
     <string name="title_pref_overview">Używaj przeglądu SandFly</string>
     <string name="title_pref_overview_newest_last">Najnowsza aplikacja na dole</string>
     <string name="title_pref_overview_columns">Kolumny</string>
@@ -2109,6 +2113,9 @@
     <string name="vibration_type_effects">Efekty haptyczne</string>
     <string name="vibration_type_pulses">Impulsy</string>
     <string name="vibration_type_on_off">Włączanie i wyłączanie</string>
+    <string name="title_pref_actions_available_sound">Dźwięk „Dostępne czynności”</string>
+    <string name="value_actions_available_sound_focus">Gdy element zostanie zaznaczony</string>
+    <string name="value_actions_available_sound_after_speech">Po odczytaniu elementu</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

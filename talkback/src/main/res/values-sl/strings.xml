@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Vlečenje navzgor in nato v levo</string>
   <string name="title_pref_shortcut_up_and_right">Vlečenje navzgor in nato v desno</string>
   <string name="title_pref_shortcut_right_and_down">Vlečenje v desno in nato navzdol</string>
+  <string name="title_pref_shortcut_1finger_3tap">Trikratni dotik</string>
+  <string name="title_pref_shortcut_1finger_4tap">Štirikratni dotik</string>
   <string name="title_pref_shortcut_right_and_up">Vlečenje v desno in nato navzgor</string>
   <string name="title_pref_shortcut_left_and_down">Vlečenje v levo in nato navzdol</string>
   <string name="title_pref_shortcut_left_and_up">Vlečenje v levo in nato navzgor</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Polnilnik priključen</string>
     <string name="title_pref_screen_announcements">Vklop in izklop zaslona</string>
     <string name="summary_pref_screen_announcements">Izberite, kaj SandFly pove, ko se zaslon izklopi ali vklopi in ko je telefon odklenjen</string>
+    <string name="title_pref_screen_announcements_over_media">Izgovarjanje med predvajanjem medijev</string>
     <string name="title_screen_announcements_screen_off">Ko se zaslon izklopi</string>
     <string name="title_screen_announcements_screen_on">Ko se zaslon vklopi</string>
     <string name="title_screen_announcements_unlock">Ko se telefon odklene</string>
@@ -2015,6 +2018,7 @@
     <string name="pref_speak_list_positions_title">Govori podatke o seznamih</string>
     <string name="pref_speak_grid_positions_title">Govori podatke o mrežah in tabelah</string>
     <string name="pref_speak_role_without_pause_title">Govori vrsto elementa brez premora</string>
+    <string name="title_pref_speak_actions_available">Izgovarjanje »Na voljo so dejanja«</string>
     <string name="title_pref_overview">Uporabi pregled SandFly</string>
     <string name="title_pref_overview_newest_last">Najnovejša aplikacija na dnu</string>
     <string name="title_pref_overview_columns">Stolpci</string>
@@ -2278,6 +2282,9 @@
     <string name="vibration_type_effects">Haptični učinki</string>
     <string name="vibration_type_pulses">Impulzi</string>
     <string name="vibration_type_on_off">Samo vklop in izklop</string>
+    <string name="title_pref_actions_available_sound">Zvok »Na voljo so dejanja«</string>
+    <string name="value_actions_available_sound_focus">Ko element dobi fokus</string>
+    <string name="value_actions_available_sound_after_speech">Ko je element izgovorjen</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

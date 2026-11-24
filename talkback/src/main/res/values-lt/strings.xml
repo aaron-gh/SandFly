@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Perbraukti aukštyn, tada kairėn</string>
   <string name="title_pref_shortcut_up_and_right">Perbraukti aukštyn, tada dešinėn</string>
   <string name="title_pref_shortcut_right_and_down">Perbraukti į dešinę, tada į apačią</string>
+  <string name="title_pref_shortcut_1finger_3tap">Palietimas tris kartus</string>
+  <string name="title_pref_shortcut_1finger_4tap">Palietimas keturis kartus</string>
   <string name="title_pref_shortcut_right_and_up">Perbraukti į dešinę, tada į viršų</string>
   <string name="title_pref_shortcut_left_and_down">Perbraukti į kairę, tada į apačią</string>
   <string name="title_pref_shortcut_left_and_up">Perbraukti į kairę, tada į viršų</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Įkroviklis prijungtas</string>
     <string name="title_pref_screen_announcements">Ekrano įjungimas ir išjungimas</string>
     <string name="summary_pref_screen_announcements">Pasirinkite, ką SandFly sako, kai ekranas išsijungia arba įjungiamas ir kai telefonas atrakinamas</string>
+    <string name="title_pref_screen_announcements_over_media">Ištarti, kai leidžiama medija</string>
     <string name="title_screen_announcements_screen_off">Kai ekranas išsijungia</string>
     <string name="title_screen_announcements_screen_on">Kai ekranas įsijungia</string>
     <string name="title_screen_announcements_unlock">Kai telefonas atrakinamas</string>
@@ -2015,6 +2018,7 @@
     <string name="pref_speak_list_positions_title">Skaityti sąrašo informaciją</string>
     <string name="pref_speak_grid_positions_title">Skaityti tinklelio ir lentelės informaciją</string>
     <string name="pref_speak_role_without_pause_title">Skaityti elemento tipą be pauzės</string>
+    <string name="title_pref_speak_actions_available">Ištarti „Pasiekiami veiksmai“</string>
     <string name="title_pref_overview">Naudoti SandFly apžvalgą</string>
     <string name="title_pref_overview_newest_last">Naujausia programa apačioje</string>
     <string name="title_pref_overview_columns">Stulpeliai</string>
@@ -2278,6 +2282,9 @@
     <string name="vibration_type_effects">Haptiniai efektai</string>
     <string name="vibration_type_pulses">Impulsai</string>
     <string name="vibration_type_on_off">Paprastas vibravimas</string>
+    <string name="title_pref_actions_available_sound">Garsas „Pasiekiami veiksmai“</string>
+    <string name="value_actions_available_sound_focus">Kai elementui suteikiamas fokusas</string>
+    <string name="value_actions_available_sound_after_speech">Ištarus elementą</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

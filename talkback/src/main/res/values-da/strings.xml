@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Stryg opad og så til venstre</string>
   <string name="title_pref_shortcut_up_and_right">Stryg opad og så til højre</string>
   <string name="title_pref_shortcut_right_and_down">Stryg til højre og så ned</string>
+  <string name="title_pref_shortcut_1finger_3tap">Tryk tre gange</string>
+  <string name="title_pref_shortcut_1finger_4tap">Tryk fire gange</string>
   <string name="title_pref_shortcut_right_and_up">Stryg til højre og så op</string>
   <string name="title_pref_shortcut_left_and_down">Stryg til venstre og så ned</string>
   <string name="title_pref_shortcut_left_and_up">Stryg til venstre og så op</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Oplader tilsluttet</string>
     <string name="title_pref_screen_announcements">Skærm tændt og slukket</string>
     <string name="summary_pref_screen_announcements">Vælg, hvad SandFly siger, når skærmen slukkes eller tændes, og når telefonen låses op</string>
+    <string name="title_pref_screen_announcements_over_media">Læs op under medieafspilning</string>
     <string name="title_screen_announcements_screen_off">Når skærmen slukkes</string>
     <string name="title_screen_announcements_screen_on">Når skærmen tændes</string>
     <string name="title_screen_announcements_unlock">Når telefonen låses op</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Oplæs listeoplysninger</string>
     <string name="pref_speak_grid_positions_title">Oplæs gitter- og tabeloplysninger</string>
     <string name="pref_speak_role_without_pause_title">Oplæs elementtype uden pause</string>
+    <string name="title_pref_speak_actions_available">Oplæs Handlinger tilgængelige</string>
     <string name="title_pref_overview">Brug SandFlys oversigt</string>
     <string name="title_pref_overview_newest_last">Seneste app nederst</string>
     <string name="title_pref_overview_columns">Kolonner</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Haptiske effekter</string>
     <string name="vibration_type_pulses">Impulser</string>
     <string name="vibration_type_on_off">Til og fra</string>
+    <string name="title_pref_actions_available_sound">Lyd for Handlinger tilgængelige</string>
+    <string name="value_actions_available_sound_focus">Når elementet får fokus</string>
+    <string name="value_actions_available_sound_after_speech">Når elementet er læst op</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

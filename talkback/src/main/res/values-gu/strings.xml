@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ઉપર પછી ડાબે સ્વાઇપ કરો</string>
   <string name="title_pref_shortcut_up_and_right">ઉપર પછી જમણે સ્વાઇપ કરો</string>
   <string name="title_pref_shortcut_right_and_down">જમણે પછી નીચે સ્વાઇપ કરો</string>
+  <string name="title_pref_shortcut_1finger_3tap">ત્રણ વાર ટૅપ કરો</string>
+  <string name="title_pref_shortcut_1finger_4tap">ચાર વાર ટૅપ કરો</string>
   <string name="title_pref_shortcut_right_and_up">જમણે પછી ઉપર સ્વાઇપ કરો</string>
   <string name="title_pref_shortcut_left_and_down">ડાબે પછી નીચે સ્વાઇપ કરો</string>
   <string name="title_pref_shortcut_left_and_up">ડાબે પછી ઉપર સ્વાઇપ કરો</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">ચાર્જર કનેક્ટ કરેલું છે</string>
     <string name="title_pref_screen_announcements">સ્ક્રીન ચાલુ અને બંધ</string>
     <string name="summary_pref_screen_announcements">સ્ક્રીન બંધ કે ચાલુ થાય ત્યારે અને ફોન અનલૉક થાય ત્યારે SandFly શું બોલે તે પસંદ કરો</string>
+    <string name="title_pref_screen_announcements_over_media">મીડિયા ચાલે ત્યારે બોલો</string>
     <string name="title_screen_announcements_screen_off">સ્ક્રીન બંધ થાય ત્યારે</string>
     <string name="title_screen_announcements_screen_on">સ્ક્રીન ચાલુ થાય ત્યારે</string>
     <string name="title_screen_announcements_unlock">ફોન અનલૉક થાય ત્યારે</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">સૂચિની માહિતી બોલો</string>
     <string name="pref_speak_grid_positions_title">ગ્રિડ અને કોષ્ટકની માહિતી બોલો</string>
     <string name="pref_speak_role_without_pause_title">વિરામ વગર આઇટમનો પ્રકાર બોલો</string>
+    <string name="title_pref_speak_actions_available">ક્રિયાઓ ઉપલબ્ધ છે બોલો</string>
     <string name="title_pref_overview">SandFly ઓવરવ્યૂ વાપરો</string>
     <string name="title_pref_overview_newest_last">સૌથી તાજેતરની ઍપ નીચે</string>
     <string name="title_pref_overview_columns">કૉલમ</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">હૅપ્ટિક ઇફેક્ટ</string>
     <string name="vibration_type_pulses">પલ્સ</string>
     <string name="vibration_type_on_off">ચાલુ અને બંધ</string>
+    <string name="title_pref_actions_available_sound">ક્રિયાઓ ઉપલબ્ધ છે માટેનો અવાજ</string>
+    <string name="value_actions_available_sound_focus">આઇટમ પર ફોકસ આવે ત્યારે</string>
+    <string name="value_actions_available_sound_after_speech">આઇટમ બોલાઈ જાય પછી</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

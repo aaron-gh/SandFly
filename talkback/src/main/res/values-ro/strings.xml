@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Glisează în sus, apoi spre stânga</string>
   <string name="title_pref_shortcut_up_and_right">Glisează în sus, apoi spre dreapta</string>
   <string name="title_pref_shortcut_right_and_down">Glisează spre dreapta, apoi în jos</string>
+  <string name="title_pref_shortcut_1finger_3tap">Atinge de trei ori</string>
+  <string name="title_pref_shortcut_1finger_4tap">Atinge de patru ori</string>
   <string name="title_pref_shortcut_right_and_up">Glisează spre dreapta, apoi în sus</string>
   <string name="title_pref_shortcut_left_and_down">Glisează spre stânga, apoi în jos</string>
   <string name="title_pref_shortcut_left_and_up">Glisează spre stânga, apoi în sus</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Încărcător conectat</string>
     <string name="title_pref_screen_announcements">Pornirea și oprirea ecranului</string>
     <string name="summary_pref_screen_announcements">Alegeți ce spune SandFly când ecranul se stinge sau pornește și când telefonul este deblocat</string>
+    <string name="title_pref_screen_announcements_over_media">Rostește în timpul redării media</string>
     <string name="title_screen_announcements_screen_off">Când ecranul se stinge</string>
     <string name="title_screen_announcements_screen_on">Când ecranul se aprinde</string>
     <string name="title_screen_announcements_unlock">Când telefonul este deblocat</string>
@@ -2011,6 +2014,7 @@
     <string name="pref_speak_list_positions_title">Rostește informațiile despre liste</string>
     <string name="pref_speak_grid_positions_title">Rostește informațiile despre grile și tabele</string>
     <string name="pref_speak_role_without_pause_title">Rostește tipul elementului fără pauză</string>
+    <string name="title_pref_speak_actions_available">Rostește „Acțiuni disponibile”</string>
     <string name="title_pref_overview">Folosește lista Recente a SandFly</string>
     <string name="title_pref_overview_newest_last">Aplicația recentă la sfârșit</string>
     <string name="title_pref_overview_columns">Coloane</string>
@@ -2272,6 +2276,9 @@
     <string name="vibration_type_effects">Efecte haptice</string>
     <string name="vibration_type_pulses">Impulsuri</string>
     <string name="vibration_type_on_off">Pornit și oprit</string>
+    <string name="title_pref_actions_available_sound">Sunet „Acțiuni disponibile”</string>
+    <string name="value_actions_available_sound_focus">Când elementul este focalizat</string>
+    <string name="value_actions_available_sound_after_speech">După ce elementul este rostit</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

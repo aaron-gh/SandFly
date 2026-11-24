@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ଉପରକୁ ସ୍ୱାଇପ୍‌ କରନ୍ତୁ ତା’ପରେ ବାମକୁ</string>
   <string name="title_pref_shortcut_up_and_right">ଉପରକୁ ସ୍ୱାଇପ୍‌ କରନ୍ତୁ ତା’ପରେ ଡାହାଣକୁ</string>
   <string name="title_pref_shortcut_right_and_down">ଡାହାଣକୁ ସ୍ୱାଇପ୍‌ କରନ୍ତୁ ତା’ପରେ ତଳକୁ</string>
+  <string name="title_pref_shortcut_1finger_3tap">ତିନିଥର-ଟାପ୍ କରନ୍ତୁ</string>
+  <string name="title_pref_shortcut_1finger_4tap">ଚାରିଥର ଟ୍ୟାପ୍</string>
   <string name="title_pref_shortcut_right_and_up">ଡାହାଣକୁ ସ୍ୱାଇପ୍‌ କରନ୍ତୁ ତା’ପରେ ଉପରକୁ</string>
   <string name="title_pref_shortcut_left_and_down">ବାମକୁ ସ୍ୱାଇପ୍‌ କରନ୍ତୁ ତା’ପରେ ତଳକୁ</string>
   <string name="title_pref_shortcut_left_and_up">ବାମକୁ ସ୍ୱାଇପ୍‌ କରନ୍ତୁ ତା’ପରେ ଉପରକୁ</string>
@@ -1364,6 +1366,7 @@
     <string name="value_charger_connected">ଚାର୍ଜର ସଂଯୁକ୍ତ</string>
     <string name="title_pref_screen_announcements">ସ୍କ୍ରିନ୍ ଅନ୍ ଏବଂ ଅଫ୍</string>
     <string name="summary_pref_screen_announcements">ସ୍କ୍ରିନ୍ ବନ୍ଦ କିମ୍ବା ଚାଲୁ ହେଲେ ଏବଂ ଫୋନ୍ ଅନଲକ୍ ହେଲେ SandFly କ’ଣ କହିବ ତାହା ବାଛନ୍ତୁ</string>
+    <string name="title_pref_screen_announcements_over_media">ମିଡିଆ ଚାଲୁଥିବା ବେଳେ କୁହନ୍ତୁ</string>
     <string name="title_screen_announcements_screen_off">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ବନ୍ଦ ହୋଇଯାଏ</string>
     <string name="title_screen_announcements_screen_on">ଯେତେବେଳେ ସ୍କ୍ରିନ୍ ଟର୍ନ୍ ଅନ୍ ହୁଏ</string>
     <string name="title_screen_announcements_unlock">ଯେତେବେଳେ ଫୋନ୍ ଅନଲକ୍ ହୁଏ</string>
@@ -2006,6 +2009,7 @@
     <string name="pref_speak_list_positions_title">ତାଲିକା ସୂଚନା ପଢ଼ି ଶୁଣାନ୍ତୁ</string>
     <string name="pref_speak_grid_positions_title">ଗ୍ରିଡ ଓ ଟେବୁଲ ସୂଚନା ପଢ଼ି ଶୁଣାନ୍ତୁ</string>
     <string name="pref_speak_role_without_pause_title">ବିରତି ବିନା ଆଇଟମ ପ୍ରକାର ପଢ଼ି ଶୁଣାନ୍ତୁ</string>
+    <string name="title_pref_speak_actions_available">କାର୍ଯ୍ୟଗୁଡ଼ିକ ଉପଲବ୍ଧ ଅଛି ବୋଲି କୁହନ୍ତୁ</string>
     <string name="title_pref_overview">SandFly ର ଓଭରଭିଉ ବ୍ୟବହାର କରନ୍ତୁ</string>
     <string name="title_pref_overview_newest_last">ସବୁଠାରୁ ନୂତନ ଆପ ତଳେ</string>
     <string name="title_pref_overview_columns">ସ୍ତମ୍ଭ</string>
@@ -2265,6 +2269,9 @@
     <string name="vibration_type_effects">ହାପ୍ଟିକ ଇଫେକ୍ଟ</string>
     <string name="vibration_type_pulses">ପଲ୍ସ</string>
     <string name="vibration_type_on_off">ଚାଲୁ ଓ ବନ୍ଦ</string>
+    <string name="title_pref_actions_available_sound">କାର୍ଯ୍ୟଗୁଡ଼ିକ ଉପଲବ୍ଧ ଅଛି ଧ୍ୱନି</string>
+    <string name="value_actions_available_sound_focus">ଆଇଟମରେ ଫୋକସ ହେଲେ</string>
+    <string name="value_actions_available_sound_after_speech">ଆଇଟମ କୁହାଯିବା ପରେ</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

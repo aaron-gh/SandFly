@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">先往上再往左滑動</string>
   <string name="title_pref_shortcut_up_and_right">先往上再往右滑動</string>
   <string name="title_pref_shortcut_right_and_down">先往右再往下滑動</string>
+  <string name="title_pref_shortcut_1finger_3tap">輕按三下</string>
+  <string name="title_pref_shortcut_1finger_4tap">連按四次</string>
   <string name="title_pref_shortcut_right_and_up">先往右再往上滑動</string>
   <string name="title_pref_shortcut_left_and_down">先往左再往下滑動</string>
   <string name="title_pref_shortcut_left_and_up">先往左再往上滑動</string>
@@ -1364,6 +1366,7 @@
     <string name="value_charger_connected">充電器已連接</string>
     <string name="title_pref_screen_announcements">螢幕開啟和關閉</string>
     <string name="summary_pref_screen_announcements">選擇螢幕關閉或開啟以及手機解鎖時 SandFly 所說的內容</string>
+    <string name="title_pref_screen_announcements_over_media">播放媒體時讀出</string>
     <string name="title_screen_announcements_screen_off">當螢幕關閉時</string>
     <string name="title_screen_announcements_screen_on">當螢幕亮起時</string>
     <string name="title_screen_announcements_unlock">當手機解鎖時</string>
@@ -2006,6 +2009,7 @@
     <string name="pref_speak_list_positions_title">朗讀清單資訊</string>
     <string name="pref_speak_grid_positions_title">朗讀格線和表格資訊</string>
     <string name="pref_speak_role_without_pause_title">不停頓朗讀項目類型</string>
+    <string name="title_pref_speak_actions_available">讀出「有可用操作」</string>
     <string name="title_pref_overview">使用 SandFly 概覽</string>
     <string name="title_pref_overview_newest_last">最近使用的應用程式置底</string>
     <string name="title_pref_overview_columns">欄數</string>
@@ -2263,6 +2267,9 @@
     <string name="vibration_type_effects">觸感效果</string>
     <string name="vibration_type_pulses">脈衝</string>
     <string name="vibration_type_on_off">開關式</string>
+    <string name="title_pref_actions_available_sound">「有可用操作」提示音</string>
+    <string name="value_actions_available_sound_focus">項目獲得焦點時</string>
+    <string name="value_actions_available_sound_after_speech">讀出項目後</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

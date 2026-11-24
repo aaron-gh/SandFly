@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ಮೇಲಕ್ಕೆ ನಂತರ ಎಡಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ</string>
   <string name="title_pref_shortcut_up_and_right">ಮೇಲಕ್ಕೆ ನಂತರ ಬಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ</string>
   <string name="title_pref_shortcut_right_and_down">ಬಲಕ್ಕೆ ನಂತರ ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ</string>
+  <string name="title_pref_shortcut_1finger_3tap">ಟ್ರಿಪಲ್-ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+  <string name="title_pref_shortcut_1finger_4tap">ನಾಲ್ಕು ಬಾರಿ-ಟ್ಯಾಪ್ ಮಾಡಿ</string>
   <string name="title_pref_shortcut_right_and_up">ಬಲಕ್ಕೆ ನಂತರ ಮೇಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ</string>
   <string name="title_pref_shortcut_left_and_down">ಎಡಕ್ಕೆ ನಂತರ ಕೆಳಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ</string>
   <string name="title_pref_shortcut_left_and_up">ಎಡಕ್ಕೆ ನಂತರ ಮೇಲಕ್ಕೆ ಸ್ವೈಪ್ ಮಾಡಿ</string>
@@ -1366,6 +1368,7 @@
     <string name="value_charger_connected">ಚಾರ್ಜರ್ ಸಂಪರ್ಕಗೊಂಡಿದೆ</string>
     <string name="title_pref_screen_announcements">ಸ್ಕ್ರೀನ್ ಆನ್ ಮತ್ತು ಆಫ್</string>
     <string name="summary_pref_screen_announcements">ಪರದೆ ಆಫ್ ಅಥವಾ ಆನ್ ಆದಾಗ ಮತ್ತು ಫೋನ್ ಅನ್‌ಲಾಕ್ ಆದಾಗ SandFly ಏನು ಹೇಳುತ್ತದೆ ಎಂಬುದನ್ನು ಆರಿಸಿ</string>
+    <string name="title_pref_screen_announcements_over_media">ಮೀಡಿಯಾ ಪ್ಲೇ ಆಗುತ್ತಿರುವಾಗ ಹೇಳಿ</string>
     <string name="title_screen_announcements_screen_off">ಪರದೆಯು ಆಫ್ ಆಗುವಾಗ</string>
     <string name="title_screen_announcements_screen_on">ಪರದೆಯು ಆನ್ ಆದಾಗ</string>
     <string name="title_screen_announcements_unlock">ಫೋನ್ ಅನ್ಲಾಕ್ ಮಾಡಿದಾಗ</string>
@@ -2008,6 +2011,7 @@
     <string name="pref_speak_list_positions_title">ಪಟ್ಟಿಯ ಮಾಹಿತಿಯನ್ನು ಹೇಳಿ</string>
     <string name="pref_speak_grid_positions_title">ಗ್ರಿಡ್ ಮತ್ತು ಟೇಬಲ್ ಮಾಹಿತಿಯನ್ನು ಹೇಳಿ</string>
     <string name="pref_speak_role_without_pause_title">ಐಟಂ ಪ್ರಕಾರವನ್ನು ವಿರಾಮವಿಲ್ಲದೆ ಹೇಳಿ</string>
+    <string name="title_pref_speak_actions_available">ಕ್ರಿಯೆಗಳು ಲಭ್ಯವಿವೆ ಎಂದು ಹೇಳಿ</string>
     <string name="title_pref_overview">SandFly ಅವಲೋಕನವನ್ನು ಬಳಸಿ</string>
     <string name="title_pref_overview_newest_last">ಇತ್ತೀಚಿನ ಆ್ಯಪ್ ಕೆಳಗೆ</string>
     <string name="title_pref_overview_columns">ಕಾಲಮ್‌ಗಳು</string>
@@ -2267,6 +2271,9 @@
     <string name="vibration_type_effects">ಹ್ಯಾಪ್ಟಿಕ್ ಪರಿಣಾಮಗಳು</string>
     <string name="vibration_type_pulses">ಪಲ್ಸ್‌ಗಳು</string>
     <string name="vibration_type_on_off">ಆನ್ ಮತ್ತು ಆಫ್</string>
+    <string name="title_pref_actions_available_sound">ಕ್ರಿಯೆಗಳು ಲಭ್ಯವಿವೆ ಧ್ವನಿ</string>
+    <string name="value_actions_available_sound_focus">ಐಟಂ ಫೋಕಸ್ ಪಡೆದಾಗ</string>
+    <string name="value_actions_available_sound_after_speech">ಐಟಂ ಅನ್ನು ಹೇಳಿದ ನಂತರ</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

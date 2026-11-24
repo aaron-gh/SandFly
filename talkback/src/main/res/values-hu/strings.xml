@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Csúsztatás felfelé, majd balra</string>
   <string name="title_pref_shortcut_up_and_right">Csúsztatás felfelé, majd jobbra</string>
   <string name="title_pref_shortcut_right_and_down">Csúsztatás jobbra, majd le</string>
+  <string name="title_pref_shortcut_1finger_3tap">Három koppintás</string>
+  <string name="title_pref_shortcut_1finger_4tap">Négy koppintás</string>
   <string name="title_pref_shortcut_right_and_up">Csúsztatás jobbra, majd fel</string>
   <string name="title_pref_shortcut_left_and_down">Csúsztatás balra, majd le</string>
   <string name="title_pref_shortcut_left_and_up">Csúsztatás balra, majd fel</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Töltő csatlakoztatva</string>
     <string name="title_pref_screen_announcements">Képernyő be- és kikapcsolása</string>
     <string name="summary_pref_screen_announcements">Annak kiválasztása, hogy mit mondjon a SandFly a képernyő be- vagy kikapcsolásakor és a telefon feloldásakor</string>
+    <string name="title_pref_screen_announcements_over_media">Kimondás médialejátszás közben</string>
     <string name="title_screen_announcements_screen_off">Amikor kikapcsol a képernyő</string>
     <string name="title_screen_announcements_screen_on">Amikor bekapcsol a képernyő</string>
     <string name="title_screen_announcements_unlock">Amikor feloldja a telefont</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Listainformációk felolvasása</string>
     <string name="pref_speak_grid_positions_title">Rács- és táblázatinformációk felolvasása</string>
     <string name="pref_speak_role_without_pause_title">Elemtípus felolvasása szünet nélkül</string>
+    <string name="title_pref_speak_actions_available">A „Műveletek érhetők el” kimondása</string>
     <string name="title_pref_overview">SandFly-áttekintés használata</string>
     <string name="title_pref_overview_newest_last">A legutóbbi alkalmazás alul</string>
     <string name="title_pref_overview_columns">Oszlopok</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Haptikus effektusok</string>
     <string name="vibration_type_pulses">Impulzusok</string>
     <string name="vibration_type_on_off">Be és ki</string>
+    <string name="title_pref_actions_available_sound">„Műveletek érhetők el” hang</string>
+    <string name="value_actions_available_sound_focus">Amikor az elem fókuszba kerül</string>
+    <string name="value_actions_available_sound_after_speech">Az elem felolvasása után</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Geser ke atas lalu ke kiri</string>
   <string name="title_pref_shortcut_up_and_right">Geser ke atas lalu ke kanan</string>
   <string name="title_pref_shortcut_right_and_down">Geser ke kanan lalu ke bawah</string>
+  <string name="title_pref_shortcut_1finger_3tap">Ketuk tiga kali</string>
+  <string name="title_pref_shortcut_1finger_4tap">Ketuk empat kali</string>
   <string name="title_pref_shortcut_right_and_up">Geser ke kanan lalu ke atas</string>
   <string name="title_pref_shortcut_left_and_down">Geser ke kiri lalu ke bawah</string>
   <string name="title_pref_shortcut_left_and_up">Geser ke kiri lalu ke atas</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Pengisi daya terhubung</string>
     <string name="title_pref_screen_announcements">Layar aktif dan mati</string>
     <string name="summary_pref_screen_announcements">Pilih yang diucapkan SandFly saat layar mati atau aktif, dan saat kunci ponsel dibuka</string>
+    <string name="title_pref_screen_announcements_over_media">Ucapkan saat media diputar</string>
     <string name="title_screen_announcements_screen_off">Saat layar mati</string>
     <string name="title_screen_announcements_screen_on">Saat layar aktif</string>
     <string name="title_screen_announcements_unlock">Saat kunci ponsel dibuka</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Ucapkan informasi daftar</string>
     <string name="pref_speak_grid_positions_title">Ucapkan informasi kisi dan tabel</string>
     <string name="pref_speak_role_without_pause_title">Ucapkan jenis item tanpa jeda</string>
+    <string name="title_pref_speak_actions_available">Ucapkan Tindakan tersedia</string>
     <string name="title_pref_overview">Gunakan ringkasan SandFly</string>
     <string name="title_pref_overview_newest_last">Aplikasi terbaru di bagian bawah</string>
     <string name="title_pref_overview_columns">Kolom</string>
@@ -2245,6 +2249,9 @@
     <string name="vibration_type_effects">Efek haptik</string>
     <string name="vibration_type_pulses">Denyut</string>
     <string name="vibration_type_on_off">Aktif dan nonaktif</string>
+    <string name="title_pref_actions_available_sound">Suara Tindakan tersedia</string>
+    <string name="value_actions_available_sound_focus">Saat item difokuskan</string>
+    <string name="value_actions_available_sound_after_speech">Setelah item diucapkan</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

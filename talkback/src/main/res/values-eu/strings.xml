@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Pasatu hatza gora eta, gero, ezkerrera</string>
   <string name="title_pref_shortcut_up_and_right">Pasatu hatza gora eta, gero, eskuinera</string>
   <string name="title_pref_shortcut_right_and_down">Pasatu hatza eskuinera eta, gero, behera</string>
+  <string name="title_pref_shortcut_1finger_3tap">Sakatu hirutan</string>
+  <string name="title_pref_shortcut_1finger_4tap">Sakatu lau aldiz</string>
   <string name="title_pref_shortcut_right_and_up">Pasatu hatza eskuinera eta, gero, gora</string>
   <string name="title_pref_shortcut_left_and_down">Pasatu hatza ezkerrera eta, gero, behera</string>
   <string name="title_pref_shortcut_left_and_up">Pasatu hatza ezkerrera eta, gero, gora</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Kargagailua konektatuta</string>
     <string name="title_pref_screen_announcements">Pantaila piztea eta itzaltzea</string>
     <string name="summary_pref_screen_announcements">Aukeratu SandFly-ek zer esaten duen pantaila itzali edo piztean eta telefonoa desblokeatzean</string>
+    <string name="title_pref_screen_announcements_over_media">Irakurri ozen multimedia erreproduzitzen den bitartean</string>
     <string name="title_screen_announcements_screen_off">Pantaila itzaltzean</string>
     <string name="title_screen_announcements_screen_on">Pantaila piztean</string>
     <string name="title_screen_announcements_unlock">Telefonoa desblokeatzean</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Esan zerrenden informazioa</string>
     <string name="pref_speak_grid_positions_title">Esan sareten eta taulen informazioa</string>
     <string name="pref_speak_role_without_pause_title">Esan elementu-mota etenaldirik gabe</string>
+    <string name="title_pref_speak_actions_available">Irakurri ozen Ekintzak erabilgarri daude</string>
     <string name="title_pref_overview">Erabili SandFly-ren ikuspegi orokorra</string>
     <string name="title_pref_overview_newest_last">Azken aplikazioa behean</string>
     <string name="title_pref_overview_columns">Zutabeak</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Efektu haptikoak</string>
     <string name="vibration_type_pulses">Pultsuak</string>
     <string name="vibration_type_on_off">Piztu eta itzali</string>
+    <string name="title_pref_actions_available_sound">Ekintzak erabilgarri daude adierazteko soinua</string>
+    <string name="value_actions_available_sound_focus">Elementua fokuratzen denean</string>
+    <string name="value_actions_available_sound_after_speech">Elementua irakurri ondoren</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

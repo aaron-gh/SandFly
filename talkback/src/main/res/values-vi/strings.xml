@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Vuốt lên rồi sang trái</string>
   <string name="title_pref_shortcut_up_and_right">Vuốt lên rồi sang phải</string>
   <string name="title_pref_shortcut_right_and_down">Vuốt sang phải rồi xuống dưới</string>
+  <string name="title_pref_shortcut_1finger_3tap">Nhấn 3 lần</string>
+  <string name="title_pref_shortcut_1finger_4tap">Nhấn 4 lần</string>
   <string name="title_pref_shortcut_right_and_up">Vuốt sang phải rồi lên trên</string>
   <string name="title_pref_shortcut_left_and_down">Vuốt sang trái rồi xuống dưới</string>
   <string name="title_pref_shortcut_left_and_up">Vuốt sang trái rồi lên trên</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Đã kết nối bộ sạc</string>
     <string name="title_pref_screen_announcements">Bật và tắt màn hình</string>
     <string name="summary_pref_screen_announcements">Chọn nội dung SandFly đọc khi màn hình tắt hoặc bật, và khi mở khoá điện thoại</string>
+    <string name="title_pref_screen_announcements_over_media">Đọc khi đang phát nội dung nghe nhìn</string>
     <string name="title_screen_announcements_screen_off">Khi màn hình tắt</string>
     <string name="title_screen_announcements_screen_on">Khi màn hình bật</string>
     <string name="title_screen_announcements_unlock">Khi mở khoá điện thoại</string>
@@ -2003,6 +2006,7 @@
     <string name="pref_speak_list_positions_title">Đọc thông tin danh sách</string>
     <string name="pref_speak_grid_positions_title">Đọc thông tin lưới và bảng</string>
     <string name="pref_speak_role_without_pause_title">Đọc loại mục không ngắt quãng</string>
+    <string name="title_pref_speak_actions_available">Đọc thông báo Có thao tác</string>
     <string name="title_pref_overview">Dùng chế độ tổng quan của SandFly</string>
     <string name="title_pref_overview_newest_last">Ứng dụng gần đây nhất ở dưới cùng</string>
     <string name="title_pref_overview_columns">Cột</string>
@@ -2260,6 +2264,9 @@
     <string name="vibration_type_effects">Hiệu ứng xúc giác</string>
     <string name="vibration_type_pulses">Xung rung</string>
     <string name="vibration_type_on_off">Chỉ bật và tắt</string>
+    <string name="title_pref_actions_available_sound">Âm thanh Có thao tác</string>
+    <string name="value_actions_available_sound_focus">Khi mục được tập trung</string>
+    <string name="value_actions_available_sound_after_speech">Sau khi đọc mục</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

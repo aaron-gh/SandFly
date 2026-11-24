@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Pasar dedo cara arriba, logo á esquerda</string>
   <string name="title_pref_shortcut_up_and_right">Pasar dedo cara arriba, logo á dereita</string>
   <string name="title_pref_shortcut_right_and_down">Pasar dedo á dereita, logo cara abaixo</string>
+  <string name="title_pref_shortcut_1finger_3tap">Tocar tres veces</string>
+  <string name="title_pref_shortcut_1finger_4tap">Tocar catro veces</string>
   <string name="title_pref_shortcut_right_and_up">Pasar dedo á dereita, logo cara arriba</string>
   <string name="title_pref_shortcut_left_and_down">Pasar dedo á esquerda, logo cara abaixo</string>
   <string name="title_pref_shortcut_left_and_up">Pasar dedo á esquerda, logo cara arriba</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Cargador conectado</string>
     <string name="title_pref_screen_announcements">Acender e apagar a pantalla</string>
     <string name="summary_pref_screen_announcements">Escolle o que le SandFly cando a pantalla se apaga ou se acende e cando se desbloquea o teléfono</string>
+    <string name="title_pref_screen_announcements_over_media">Ler durante a reprodución de contido multimedia</string>
     <string name="title_screen_announcements_screen_off">Cando se apaga a pantalla</string>
     <string name="title_screen_announcements_screen_on">Cando se acende a pantalla</string>
     <string name="title_screen_announcements_unlock">Cando se desbloquea o teléfono</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Dicir información da lista</string>
     <string name="pref_speak_grid_positions_title">Dicir información da grella e da táboa</string>
     <string name="pref_speak_role_without_pause_title">Dicir o tipo de elemento sen pausa</string>
+    <string name="title_pref_speak_actions_available">Ler Accións dispoñibles</string>
     <string name="title_pref_overview">Usar a visión xeral de SandFly</string>
     <string name="title_pref_overview_newest_last">Aplicación máis recente abaixo</string>
     <string name="title_pref_overview_columns">Columnas</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Efectos hápticos</string>
     <string name="vibration_type_pulses">Pulsos</string>
     <string name="vibration_type_on_off">Activada e desactivada</string>
+    <string name="title_pref_actions_available_sound">Son de Accións dispoñibles</string>
+    <string name="value_actions_available_sound_focus">Cando o elemento recibe o foco</string>
+    <string name="value_actions_available_sound_after_speech">Despois de ler o elemento</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

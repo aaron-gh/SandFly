@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ወደ ላይ ከዚያ ወደ ግራ ያንሸራትቱ</string>
   <string name="title_pref_shortcut_up_and_right">ወደ ላይ ከዚያ ወደ ቀኝ ያንሸራትቱ</string>
   <string name="title_pref_shortcut_right_and_down">ወደ ቀኝ ከዚያ ወደ ታች ያንሸራትቱ</string>
+  <string name="title_pref_shortcut_1finger_3tap">ሶስቴ መታ ያድርጉ</string>
+  <string name="title_pref_shortcut_1finger_4tap">አራቴ መታ ያድርጉ</string>
   <string name="title_pref_shortcut_right_and_up">ወደ ቀኝ ከዚያ ወደ ላይ ያንሸራትቱ</string>
   <string name="title_pref_shortcut_left_and_down">ወደ ግራ ከዚያ ወደ ታች ያንሸራትቱ</string>
   <string name="title_pref_shortcut_left_and_up">ወደ ግራ ከዚያ ወደ ላይ ያንሸራትቱ</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">ኃይል መሙያ ተገናኝቷል</string>
     <string name="title_pref_screen_announcements">ማያ ገፅ ማብራት እና ማጥፋት</string>
     <string name="summary_pref_screen_announcements">ማያ ገፁ ሲጠፋ ወይም ሲበራ፣ እና ስልኩ ሲከፈት SandFly የሚናገረውን ይምረጡ</string>
+    <string name="title_pref_screen_announcements_over_media">ሚዲያ ሲጫወት ተናገር</string>
     <string name="title_screen_announcements_screen_off">ማያ ገፁ ሲጠፋ</string>
     <string name="title_screen_announcements_screen_on">ማያ ገፁ ሲበራ</string>
     <string name="title_screen_announcements_unlock">ስልኩ ሲከፈት</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">የዝርዝር መረጃ ተናገር</string>
     <string name="pref_speak_grid_positions_title">የፍርግርግ እና የሠንጠረዥ መረጃ ተናገር</string>
     <string name="pref_speak_role_without_pause_title">የንጥል ዓይነትን ያለ ቆም ብለህ ተናገር</string>
+    <string name="title_pref_speak_actions_available">እርምጃዎች ይገኛሉ ተናገር</string>
     <string name="title_pref_overview">የSandFlyን ማጠቃለያ ተጠቀም</string>
     <string name="title_pref_overview_newest_last">በቅርቡ የተጠቀሙበት መተግበሪያ ከታች</string>
     <string name="title_pref_overview_columns">አምዶች</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">የሃፕቲክ ውጤቶች</string>
     <string name="vibration_type_pulses">ምቶች</string>
     <string name="vibration_type_on_off">ማብራት እና ማጥፋት</string>
+    <string name="title_pref_actions_available_sound">የእርምጃዎች ይገኛሉ ድምፅ</string>
+    <string name="value_actions_available_sound_focus">ንጥሉ ትኩረት ሲያገኝ</string>
+    <string name="value_actions_available_sound_after_speech">ንጥሉ ከተነገረ በኋላ</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Potiahnutie nahor, potom doľava</string>
   <string name="title_pref_shortcut_up_and_right">Potiahnutie nahor, potom doprava</string>
   <string name="title_pref_shortcut_right_and_down">Potiahnutie doprava, potom nadol</string>
+  <string name="title_pref_shortcut_1finger_3tap">Trojité klepnutie</string>
+  <string name="title_pref_shortcut_1finger_4tap">Štvorité klepnutie</string>
   <string name="title_pref_shortcut_right_and_up">Potiahnutie doprava, potom nahor</string>
   <string name="title_pref_shortcut_left_and_down">Potiahnutie doľava, potom nadol</string>
   <string name="title_pref_shortcut_left_and_up">Potiahnutie doľava, potom nahor</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Nabíjačka je pripojená</string>
     <string name="title_pref_screen_announcements">Zapnutie a vypnutie obrazovky</string>
     <string name="summary_pref_screen_announcements">Vyberte, čo hovorí SandFly, keď sa obrazovka vypne alebo zapne a keď je telefón odomknutý</string>
+    <string name="title_pref_screen_announcements_over_media">Vyslovovať počas prehrávania médií</string>
     <string name="title_screen_announcements_screen_off">Keď sa obrazovka vypne</string>
     <string name="title_screen_announcements_screen_on">Keď sa obrazovka zapne</string>
     <string name="title_screen_announcements_unlock">Keď sa telefón odomkne</string>
@@ -2015,6 +2018,7 @@
     <string name="pref_speak_list_positions_title">Hovoriť informácie o zoznamoch</string>
     <string name="pref_speak_grid_positions_title">Hovoriť informácie o mriežkach a tabuľkách</string>
     <string name="pref_speak_role_without_pause_title">Hovoriť typ položky bez pauzy</string>
+    <string name="title_pref_speak_actions_available">Vyslovovať „Akcie k dispozícii“</string>
     <string name="title_pref_overview">Používať prehľad SandFly</string>
     <string name="title_pref_overview_newest_last">Najnovšia aplikácia naspodku</string>
     <string name="title_pref_overview_columns">Stĺpce</string>
@@ -2278,6 +2282,9 @@
     <string name="vibration_type_effects">Haptické efekty</string>
     <string name="vibration_type_pulses">Impulzy</string>
     <string name="vibration_type_on_off">Zapnuté a vypnuté</string>
+    <string name="title_pref_actions_available_sound">Zvuk „Akcie k dispozícii“</string>
+    <string name="value_actions_available_sound_focus">Keď je položka zameraná</string>
+    <string name="value_actions_available_sound_after_speech">Po vyslovení položky</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">पहले ऊपर, फिर बाएं स्‍वाइप करें</string>
   <string name="title_pref_shortcut_up_and_right">पहले ऊपर, फिर दाएं स्‍वाइप करें</string>
   <string name="title_pref_shortcut_right_and_down">पहले दाएं, फिर नीचे स्‍वाइप करें</string>
+  <string name="title_pref_shortcut_1finger_3tap">तीन बार टैप करें</string>
+  <string name="title_pref_shortcut_1finger_4tap">चार बार टैप करें</string>
   <string name="title_pref_shortcut_right_and_up">पहले दाएं, फिर ऊपर स्‍वाइप करें</string>
   <string name="title_pref_shortcut_left_and_down">पहले बाएं, फिर नीचे स्‍वाइप करें</string>
   <string name="title_pref_shortcut_left_and_up">पहले बाएं, फिर ऊपर स्‍वाइप करें</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">चार्जर कनेक्ट है</string>
     <string name="title_pref_screen_announcements">स्क्रीन चालू और बंद</string>
     <string name="summary_pref_screen_announcements">चुनें कि स्क्रीन बंद या चालू होने पर, और फ़ोन अनलॉक होने पर SandFly क्या बोले</string>
+    <string name="title_pref_screen_announcements_over_media">मीडिया चलने के दौरान बोलें</string>
     <string name="title_screen_announcements_screen_off">स्क्रीन बंद होने पर</string>
     <string name="title_screen_announcements_screen_on">स्क्रीन चालू होने पर</string>
     <string name="title_screen_announcements_unlock">फ़ोन अनलॉक होने पर</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">सूची की जानकारी बोलें</string>
     <string name="pref_speak_grid_positions_title">ग्रिड और टेबल की जानकारी बोलें</string>
     <string name="pref_speak_role_without_pause_title">बिना रुके आइटम का प्रकार बोलें</string>
+    <string name="title_pref_speak_actions_available">कार्रवाइयां उपलब्ध हैं बोलें</string>
     <string name="title_pref_overview">SandFly की खास जानकारी इस्तेमाल करें</string>
     <string name="title_pref_overview_newest_last">सबसे हाल का ऐप सबसे नीचे</string>
     <string name="title_pref_overview_columns">कॉलम</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">हैप्टिक इफ़ेक्ट</string>
     <string name="vibration_type_pulses">पल्स</string>
     <string name="vibration_type_on_off">चालू और बंद</string>
+    <string name="title_pref_actions_available_sound">कार्रवाइयां उपलब्ध होने की आवाज़</string>
+    <string name="value_actions_available_sound_focus">आइटम पर फ़ोकस होने पर</string>
+    <string name="value_actions_available_sound_after_speech">आइटम बोले जाने के बाद</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

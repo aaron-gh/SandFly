@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Llisca cap amunt i després a l\'esquerra</string>
   <string name="title_pref_shortcut_up_and_right">Llisca cap amunt i després a la dreta</string>
   <string name="title_pref_shortcut_right_and_down">Llisca a la dreta i després cap avall</string>
+  <string name="title_pref_shortcut_1finger_3tap">Fes triple toc</string>
+  <string name="title_pref_shortcut_1finger_4tap">Fes quàdruple toc</string>
   <string name="title_pref_shortcut_right_and_up">Llisca a la dreta i després cap amunt</string>
   <string name="title_pref_shortcut_left_and_down">Llisca a l\'esquerra i després cap avall</string>
   <string name="title_pref_shortcut_left_and_up">Llisca a l\'esquerra i després cap amunt</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Carregador connectat</string>
     <string name="title_pref_screen_announcements">Activació i desactivació de la pantalla</string>
     <string name="summary_pref_screen_announcements">Tria què enuncia SandFly quan la pantalla es desactiva o s\'activa i quan es desbloqueja el telèfon</string>
+    <string name="title_pref_screen_announcements_over_media">Enuncia durant la reproducció de contingut multimèdia</string>
     <string name="title_screen_announcements_screen_off">Quan la pantalla es desactiva</string>
     <string name="title_screen_announcements_screen_on">Quan la pantalla s\'activa</string>
     <string name="title_screen_announcements_unlock">Quan es desbloqueja el telèfon</string>
@@ -2011,6 +2014,7 @@
     <string name="pref_speak_list_positions_title">Digues la informació de les llistes</string>
     <string name="pref_speak_grid_positions_title">Digues la informació de les quadrícules i taules</string>
     <string name="pref_speak_role_without_pause_title">Digues el tipus d\'element sense pausa</string>
+    <string name="title_pref_speak_actions_available">Enuncia Accions disponibles</string>
     <string name="title_pref_overview">Utilitza les aplicacions recents de SandFly</string>
     <string name="title_pref_overview_newest_last">Aplicació més recent a la part inferior</string>
     <string name="title_pref_overview_columns">Columnes</string>
@@ -2270,6 +2274,9 @@
     <string name="vibration_type_effects">Efectes hàptics</string>
     <string name="vibration_type_pulses">Polsos</string>
     <string name="vibration_type_on_off">Activada i desactivada</string>
+    <string name="title_pref_actions_available_sound">So d\'Accions disponibles</string>
+    <string name="value_actions_available_sound_focus">Quan l\'element rep el focus</string>
+    <string name="value_actions_available_sound_after_speech">Després d\'enunciar l\'element</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

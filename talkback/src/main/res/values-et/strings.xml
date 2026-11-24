@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Üles, seejärel vasakule pühkimine</string>
   <string name="title_pref_shortcut_up_and_right">Üles, seejärel paremale pühkimine</string>
   <string name="title_pref_shortcut_right_and_down">Paremale, seejärel alla pühkimine</string>
+  <string name="title_pref_shortcut_1finger_3tap">Kolmikpuudutamine</string>
+  <string name="title_pref_shortcut_1finger_4tap">Neljakordne puudutamine</string>
   <string name="title_pref_shortcut_right_and_up">Paremale, seejärel üles pühkimine</string>
   <string name="title_pref_shortcut_left_and_down">Vasakule, seejärel alla pühkimine</string>
   <string name="title_pref_shortcut_left_and_up">Vasakule, seejärel üles pühkimine</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Laadija on ühendatud</string>
     <string name="title_pref_screen_announcements">Ekraan sees ja väljas</string>
     <string name="summary_pref_screen_announcements">Valige, mida SandFly ütleb, kui ekraan lülitub välja või sisse ja kui telefon avatakse</string>
+    <string name="title_pref_screen_announcements_over_media">Loe ette meedia esitamise ajal</string>
     <string name="title_screen_announcements_screen_off">Kui ekraan lülitub välja</string>
     <string name="title_screen_announcements_screen_on">Kui ekraan lülitub sisse</string>
     <string name="title_screen_announcements_unlock">Kui telefon avatakse</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Öelda loendi teave</string>
     <string name="pref_speak_grid_positions_title">Öelda ruudustiku ja tabeli teave</string>
     <string name="pref_speak_role_without_pause_title">Öelda üksuse tüüp pausita</string>
+    <string name="title_pref_speak_actions_available">Loe ette „Toimingud on saadaval”</string>
     <string name="title_pref_overview">Kasuta SandFlyi ülevaadet</string>
     <string name="title_pref_overview_newest_last">Viimati kasutatud rakendus all</string>
     <string name="title_pref_overview_columns">Veerud</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Haptilised efektid</string>
     <string name="vibration_type_pulses">Impulsid</string>
     <string name="vibration_type_on_off">Sees ja väljas</string>
+    <string name="title_pref_actions_available_sound">Heli „Toimingud on saadaval”</string>
+    <string name="value_actions_available_sound_focus">Kui üksus saab fookuse</string>
+    <string name="value_actions_available_sound_after_speech">Pärast üksuse ettelugemist</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

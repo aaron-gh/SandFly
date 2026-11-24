@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Вверх, затем влево</string>
   <string name="title_pref_shortcut_up_and_right">Вверх, затем вправо</string>
   <string name="title_pref_shortcut_right_and_down">Вправо, затем вниз</string>
+  <string name="title_pref_shortcut_1finger_3tap">Тройное нажатие</string>
+  <string name="title_pref_shortcut_1finger_4tap">Четырёхкратное нажатие</string>
   <string name="title_pref_shortcut_right_and_up">Вправо, затем вверх</string>
   <string name="title_pref_shortcut_left_and_down">Влево, затем вниз</string>
   <string name="title_pref_shortcut_left_and_up">Влево, затем вверх</string>
@@ -1344,6 +1346,7 @@
   <string name="value_charger_connected">Зарядное устройство подключено</string>
   <string name="title_pref_screen_announcements">Включение и выключение экрана</string>
   <string name="summary_pref_screen_announcements">Выберите, что SandFly озвучивает при выключении и включении экрана, а также при разблокировке телефона</string>
+  <string name="title_pref_screen_announcements_over_media">Озвучивать во время воспроизведения медиа</string>
   <string name="title_screen_announcements_screen_off">При выключении экрана</string>
   <string name="title_screen_announcements_screen_on">При включении экрана</string>
   <string name="title_screen_announcements_unlock">При разблокировке телефона</string>
@@ -2016,6 +2019,7 @@
     <string name="pref_speak_list_positions_title">Произносить сведения о списках</string>
     <string name="pref_speak_grid_positions_title">Произносить сведения о сетках и таблицах</string>
     <string name="pref_speak_role_without_pause_title">Произносить тип элемента без паузы</string>
+    <string name="title_pref_speak_actions_available">Озвучивать «Доступны действия»</string>
     <string name="title_pref_overview">Использовать обзор SandFly</string>
     <string name="title_pref_overview_newest_last">Последнее приложение внизу</string>
     <string name="title_pref_overview_columns">Столбцы</string>
@@ -2280,6 +2284,9 @@
     <string name="vibration_type_effects">Тактильные эффекты</string>
     <string name="vibration_type_pulses">Импульсы</string>
     <string name="vibration_type_on_off">Включение и выключение</string>
+    <string name="title_pref_actions_available_sound">Звук «Доступны действия»</string>
+    <string name="value_actions_available_sound_focus">Когда элемент получает фокус</string>
+    <string name="value_actions_available_sound_after_speech">После озвучивания элемента</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

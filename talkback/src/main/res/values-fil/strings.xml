@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Mag-swipe pataas pagkatapos ay pakaliwa</string>
   <string name="title_pref_shortcut_up_and_right">Mag-swipe pataas pagkatapos ay pakanan</string>
   <string name="title_pref_shortcut_right_and_down">Mag-swipe pakanan pagkatapos ay pababa</string>
+  <string name="title_pref_shortcut_1finger_3tap">Mag-triple tap</string>
+  <string name="title_pref_shortcut_1finger_4tap">Mag-quadruple tap</string>
   <string name="title_pref_shortcut_right_and_up">Mag-swipe pakanan pagkatapos ay pataas</string>
   <string name="title_pref_shortcut_left_and_down">Mag-swipe pakaliwa pagkatapos ay pababa</string>
   <string name="title_pref_shortcut_left_and_up">Mag-swipe pakaliwa pagkatapos ay pataas</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Nakakonekta ang charger</string>
     <string name="title_pref_screen_announcements">Pag-on at pag-off ng screen</string>
     <string name="summary_pref_screen_announcements">Piliin kung ano ang sasabihin ng SandFly kapag na-off o na-on ang screen, at kapag na-unlock ang telepono</string>
+    <string name="title_pref_screen_announcements_over_media">Bigkasin habang nagpe-play ang media</string>
     <string name="title_screen_announcements_screen_off">Kapag na-off ang screen</string>
     <string name="title_screen_announcements_screen_on">Kapag na-on ang screen</string>
     <string name="title_screen_announcements_unlock">Kapag na-unlock ang telepono</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Bigkasin ang impormasyon ng listahan</string>
     <string name="pref_speak_grid_positions_title">Bigkasin ang impormasyon ng grid at talahanayan</string>
     <string name="pref_speak_role_without_pause_title">Bigkasin ang uri ng item nang walang pagitan</string>
+    <string name="title_pref_speak_actions_available">Bigkasin ang “Available ang mga pagkilos”</string>
     <string name="title_pref_overview">Gamitin ang overview ng SandFly</string>
     <string name="title_pref_overview_newest_last">Pinakabagong app sa ibaba</string>
     <string name="title_pref_overview_columns">Mga column</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Mga haptic effect</string>
     <string name="vibration_type_pulses">Mga pulse</string>
     <string name="vibration_type_on_off">Simpleng on at off</string>
+    <string name="title_pref_actions_available_sound">Tunog ng “Available ang mga pagkilos”</string>
+    <string name="value_actions_available_sound_focus">Kapag na-focus ang item</string>
+    <string name="value_actions_available_sound_after_speech">Pagkatapos bigkasin ang item</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>

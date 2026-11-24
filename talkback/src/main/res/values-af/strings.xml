@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Swiep op, dan links</string>
   <string name="title_pref_shortcut_up_and_right">Swiep op, dan regs</string>
   <string name="title_pref_shortcut_right_and_down">Swiep regs, dan af</string>
+  <string name="title_pref_shortcut_1finger_3tap">Tripeltik</string>
+  <string name="title_pref_shortcut_1finger_4tap">Tik 4 keer</string>
   <string name="title_pref_shortcut_right_and_up">Swiep regs, dan op</string>
   <string name="title_pref_shortcut_left_and_down">Swiep links, dan af</string>
   <string name="title_pref_shortcut_left_and_up">Swiep links, dan op</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Laaier gekoppel</string>
     <string name="title_pref_screen_announcements">Skerm aan en af</string>
     <string name="summary_pref_screen_announcements">Kies wat SandFly sê wanneer die skerm af- of aanskakel, en wanneer die foon ontsluit word</string>
+    <string name="title_pref_screen_announcements_over_media">Praat terwyl media speel</string>
     <string name="title_screen_announcements_screen_off">Wanneer die skerm afskakel</string>
     <string name="title_screen_announcements_screen_on">Wanneer die skerm aanskakel</string>
     <string name="title_screen_announcements_unlock">Wanneer die foon ontsluit word</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Praat lysinligting</string>
     <string name="pref_speak_grid_positions_title">Praat rooster- en tabelinligting</string>
     <string name="pref_speak_role_without_pause_title">Praat itemtipe sonder pouse</string>
+    <string name="title_pref_speak_actions_available">Sê Handelinge beskikbaar</string>
     <string name="title_pref_overview">Gebruik SandFly se oorsig</string>
     <string name="title_pref_overview_newest_last">Mees onlangse program onderaan</string>
     <string name="title_pref_overview_columns">Kolomme</string>
@@ -2266,6 +2270,9 @@
     <string name="vibration_type_effects">Haptiese effekte</string>
     <string name="vibration_type_pulses">Pulse</string>
     <string name="vibration_type_on_off">Aan en af</string>
+    <string name="title_pref_actions_available_sound">Klank vir Handelinge beskikbaar</string>
+    <string name="value_actions_available_sound_focus">Wanneer die item fokus kry</string>
+    <string name="value_actions_available_sound_after_speech">Nadat die item gesê is</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
