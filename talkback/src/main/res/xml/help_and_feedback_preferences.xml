@@ -11,6 +11,9 @@
       android:key="pref_practice_gestures_help"
       android:title="@string/practice_gestures_title" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+      android:key="@string/pref_gesture_trainer_entry_point_key"
+      android:title="@string/gesture_trainer_title" />
+  <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.report.ReportsFragment"
       android:key="@string/pref_problem_report_key"
       android:title="@string/title_pref_problem_report" />

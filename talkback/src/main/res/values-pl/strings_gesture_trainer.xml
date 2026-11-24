@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="gesture_trainer_title">Trener gestów</string>
+  <string name="gesture_trainer_intro">Naucz się wykonywać gesty tak, aby SandFly zawsze je rozpoznawał. Wybierz grupę. Przy każdym geście SandFly wyjaśnia, jak go wykonać. Potem wykonujesz go <xliff:g id="tries">%1$d</xliff:g> razy, a po każdej próbie słyszysz, czy się udało. Po ostatniej próbie ekran pokazuje, jak precyzyjne były Twoje gesty i co zmienić.</string>
+  <string name="gesture_trainer_group_one_finger">Jeden palec</string>
+  <string name="gesture_trainer_group_two_fingers">Dwa palce</string>
+  <string name="gesture_trainer_group_three_fingers">Trzy palce</string>
+  <string name="gesture_trainer_group_four_fingers">Cztery palce</string>
+  <string name="gesture_trainer_group_pinch_rotate_scrub">Szczypanie, obracanie i wycieranie</string>
+  <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, ćwiczenia: <xliff:g id="count">%2$d</xliff:g></string>
+  <string name="gesture_trainer_close">Zamknij</string>
+  <string name="gesture_trainer_no_detection">Trener gestów wymaga Androida 13 lub nowszego, w którym SandFly sam rozpoznaje gesty.</string>
+  <string name="gesture_trainer_left_out_swipes_before_lift">Gesty tam i z powrotem oraz kątowe są pominięte, bo w ustawieniach gestów włączone jest Rozpoznawaj przesunięcia przed uniesieniem palca.</string>
+  <string name="gesture_trainer_left_out_two_finger_swipes">Przesunięcia dwoma palcami są pominięte, bo przy Twoich ustawieniach gestów przewijają one aplikacje.</string>
+
+  <string name="gesture_trainer_exercise_heading">Ćwiczenie <xliff:g id="number">%1$d</xliff:g> z <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+  <string name="gesture_trainer_start">Start</string>
+  <string name="gesture_trainer_skip">Pomiń to ćwiczenie</string>
+  <string name="gesture_trainer_back_to_groups">Wróć do grup</string>
+  <string name="gesture_trainer_go">Zaczynamy. Wykonaj gest <xliff:g id="tries">%1$d</xliff:g> razy, w dowolnym miejscu ekranu. Każde dotknięcie liczy się jako próba.</string>
+
+  <string name="gesture_trainer_fingers_1">jednym palcem</string>
+  <string name="gesture_trainer_fingers_2">dwoma palcami obok siebie, około 1 cm od siebie</string>
+  <string name="gesture_trainer_fingers_3">trzema palcami obok siebie, lekko rozstawionymi</string>
+  <string name="gesture_trainer_fingers_4">czterema palcami obok siebie, lekko rozstawionymi</string>
+  <string name="gesture_trainer_direction_up">w górę</string>
+  <string name="gesture_trainer_direction_down">w dół</string>
+  <string name="gesture_trainer_direction_left">w lewo</string>
+  <string name="gesture_trainer_direction_right">w prawo</string>
+  <string name="gesture_trainer_how_swipe">Dotknij ekranu <xliff:g id="fingers">%1$s</xliff:g> i bez czekania przesuń <xliff:g id="direction">%2$s</xliff:g> w linii prostej na około 2–3 cm, potem podnieś. Zacznij ruch w chwili dotknięcia: palec, który najpierw spoczywa, jest odczytywany jako eksplorowanie ekranu.</string>
+  <string name="gesture_trainer_how_swipe_multi">Połóż palce razem, w tej samej chwili, i przesuwaj je wszystkie w tę samą stronę. Każdy palec musi przez cały czas iść <xliff:g id="direction">%1$s</xliff:g>, więc trzymaj prostą linię.</string>
+  <string name="gesture_trainer_how_back_and_forth">Dotknij ekranu jednym palcem i przesuń <xliff:g id="first">%1$s</xliff:g> na około 2 cm, potem bez podnoszenia wróć prosto <xliff:g id="second">%2$s</xliff:g> na około 2 cm i podnieś. Zrób to jednym szybkim, płynnym ruchem.</string>
+  <string name="gesture_trainer_how_angle">Dotknij ekranu <xliff:g id="fingers">%1$s</xliff:g> i przesuń <xliff:g id="first">%2$s</xliff:g> na około 2 cm, potem bez podnoszenia skręć ostro i przesuń <xliff:g id="second">%3$s</xliff:g> na około 2 cm, i podnieś. Zakręt ma być ostrym rogiem, jak litera L, a nie łukiem.</string>
+  <string name="gesture_trainer_taps_1">raz</string>
+  <string name="gesture_trainer_taps_2">dwa razy</string>
+  <string name="gesture_trainer_taps_3">trzy razy</string>
+  <string name="gesture_trainer_taps_4">cztery razy</string>
+  <string name="gesture_trainer_how_taps">Stuknij <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Kładź palce razem i podnoś je razem, szybko, bez przesuwania.</string>
+  <string name="gesture_trainer_how_taps_quick">Stukaj szybko i w to samo miejsce: następne stuknięcie musi nastąpić w ciągu <xliff:g id="gap">%1$d</xliff:g> ms od poprzedniego.</string>
+  <string name="gesture_trainer_how_hold">Dotknij ekranu <xliff:g id="fingers">%1$s</xliff:g>, wszystkimi naraz, i nie odrywaj ich: trzymaj je nieruchomo, bez przesuwania, co najmniej <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_how_long_hold_turns_off">Tak długo, bo ten gest wyłącza SandFly, jeśli nie przypiszesz mu innej czynności. Tutaj, w trenerze, nic się nie stanie.</string>
+  <string name="gesture_trainer_how_taps_hold">Stuknij <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, a przy ostatnim stuknięciu zostaw palce na ekranie, nieruchomo, co najmniej <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_how_three_finger_hand">Najwygodniej użyć kciuka i dwóch palców: wskazującego i środkowego.</string>
+  <string name="gesture_trainer_how_four_finger_pinch_hand">Najprościej tak: palec wskazujący i środkowy połóż obok siebie, mogą się stykać. Kciuk i palec serdeczny połóż kilka centymetrów od nich, po obu stronach. Potem zsuń wszystkie cztery opuszki do jednego punktu, jak przy chwytaniu czegoś.</string>
+  <string name="gesture_trainer_how_pinch">Połóż na ekranie <xliff:g id="fingers">%1$d</xliff:g> palce szeroko rozstawione. Potem zsuń je prosto do siebie o co najmniej 1 cm, jak przy podnoszeniu czegoś, i oderwij je od ekranu. Ruszaj tylko palcami, nie całą dłonią, i nie po łuku.</string>
+  <string name="gesture_trainer_how_spread">Połóż na ekranie <xliff:g id="fingers">%1$d</xliff:g> palce blisko siebie. Potem rozsuń je prosto od siebie o co najmniej 1 cm i oderwij je od ekranu. Ruszaj tylko palcami, nie całą dłonią, i nie po łuku.</string>
+  <string name="gesture_trainer_clockwise">zgodnie z ruchem wskazówek zegara</string>
+  <string name="gesture_trainer_counterclockwise">przeciwnie do ruchu wskazówek zegara</string>
+  <string name="gesture_trainer_how_rotate">Połóż dwa palce na ekranie, około 2–3 cm od siebie, i obróć je <xliff:g id="way">%1$s</xliff:g> wokół ich środka, jak przy kręceniu pokrętłem, o około ćwierć obrotu. Potem podnieś.</string>
+  <string name="gesture_trainer_how_scrub">Połóż dwa palce na ekranie i szybko przesuń je w bok o około 2 cm i z powrotem, jak przy wycieraniu, wszystko w ciągu około sekundy. Potem podnieś.</string>
+  <string name="gesture_trainer_edge_bottom">przy dolnej krawędzi</string>
+  <string name="gesture_trainer_edge_top_left">przy górnej krawędzi, w jej lewej połowie</string>
+  <string name="gesture_trainer_edge_top_right">przy górnej krawędzi, w jej prawej połowie</string>
+  <string name="gesture_trainer_edge_left_top">przy lewej krawędzi, w jej górnej połowie</string>
+  <string name="gesture_trainer_edge_left_bottom">przy lewej krawędzi, w jej dolnej połowie</string>
+  <string name="gesture_trainer_edge_right_top">przy prawej krawędzi, w jej górnej połowie</string>
+  <string name="gesture_trainer_edge_right_bottom">przy prawej krawędzi, w jej dolnej połowie</string>
+  <string name="gesture_trainer_edge_left">przy lewej krawędzi</string>
+  <string name="gesture_trainer_edge_right">przy prawej krawędzi</string>
+  <string name="gesture_trainer_edge_top">przy górnej krawędzi</string>
+  <string name="gesture_trainer_how_edge">Przesuń krótko. Połóż jeden palec na samym brzegu szkła, <xliff:g id="edge">%1$s</xliff:g>, i przesuń <xliff:g id="direction">%3$s</xliff:g> w głąb ekranu tylko do pierwszego kliknięcia, około <xliff:g id="distance">%4$d</xliff:g> mm, potem od razu podnieś. Za drugie kliknięcie to już za długo.</string>
+  <string name="gesture_trainer_how_edge_long">Przesuń długo. Połóż jeden palec na samym brzegu szkła, <xliff:g id="edge">%1$s</xliff:g>, i przesuń <xliff:g id="direction">%3$s</xliff:g> w głąb ekranu, za pierwsze kliknięcie aż do drugiego, około <xliff:g id="distance">%4$d</xliff:g> mm, potem podnieś.</string>
+  <string name="gesture_trainer_how_along">Przesuń palec <xliff:g id="direction">%2$s</xliff:g> wzdłuż <xliff:g id="edge">%1$s</xliff:g>, minimum <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+  <string name="gesture_trainer_corner_top_left">lewym górnym</string>
+  <string name="gesture_trainer_corner_top_right">prawym górnym</string>
+  <string name="gesture_trainer_corner_bottom_left">lewym dolnym</string>
+  <string name="gesture_trainer_corner_bottom_right">prawym dolnym</string>
+  <string name="gesture_trainer_how_corner">Stuknij <xliff:g id="taps">%1$s</xliff:g> w <xliff:g id="corner">%2$s</xliff:g> rogu ekranu. Połóż palec w samym rogu, nie dalej niż <xliff:g id="size">%3$d</xliff:g> mm od obu krawędzi, i szybko podnieś, w ciągu <xliff:g id="time">%4$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_sizes">Twoje krawędzie (Szerokość krawędzi) mają <xliff:g id="edge">%1$d</xliff:g> mm, a rogi (Rozmiar rogu) to kwadraty o boku <xliff:g id="corner">%2$d</xliff:g> mm. Oba możesz zmienić w ustawieniach gestów.</string>
+  <string name="gesture_trainer_corner_warning">Większe rogi ułatwiają stukanie w rogi, ale wtedy stuknięcie w przycisk blisko rogu, na przykład Wstecz w lewym górnym rogu albo menu w prawym górnym, może zamiast tego uruchomić gest rogu. Jeśli nie używasz gestów rogów, zostaw domyślny rozmiar.</string>
+
+  <string name="gesture_trainer_rating_precise">rozpoznano, precyzyjnie</string>
+  <string name="gesture_trainer_rating_good">rozpoznano, dobrze</string>
+  <string name="gesture_trainer_rating_borderline">rozpoznano, ale blisko granicy</string>
+  <string name="gesture_trainer_try_recognized">Próba <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+  <string name="gesture_trainer_try_nothing">Próba <xliff:g id="number">%1$d</xliff:g>: nie rozpoznano.</string>
+  <string name="gesture_trainer_try_other">Próba <xliff:g id="number">%1$d</xliff:g>: rozpoznano jako <xliff:g id="gesture">%2$s</xliff:g>.</string>
+  <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: rozpoznano <xliff:g id="recognized">%2$d</xliff:g> z <xliff:g id="tries">%3$d</xliff:g></string>
+  <string name="gesture_trainer_results_tries">Twoje próby</string>
+  <string name="gesture_trainer_results_change">Co zmienić</string>
+  <string name="gesture_trainer_results_close">Blisko granicy</string>
+  <string name="gesture_trainer_results_all_good">Wszystkie próby rozpoznano z dużym zapasem. Świetnie.</string>
+  <string name="gesture_trainer_results_settings">Ustawienia, które mogą pomóc</string>
+  <string name="gesture_trainer_next">Następne ćwiczenie</string>
+  <string name="gesture_trainer_repeat">Powtórz</string>
+  <string name="gesture_trainer_finish">Zakończ</string>
+  <string name="gesture_trainer_group_done">Ukończono wszystkie ćwiczenia w grupie <xliff:g id="group">%1$s</xliff:g>.</string>
+  <string name="gesture_trainer_open_setting">Zmień: <xliff:g id="setting">%1$s</xliff:g></string>
+
+  <string name="gesture_trainer_measure_duration">trwało <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_length">długość <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+  <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm na sekundę</string>
+  <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> stopni od linii prostej</string>
+  <string name="gesture_trainer_measure_start">pierwszy centymetr w <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_landing">palce dotknęły ekranu w odstępie <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_tap">stuknięcie <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms między stuknięciami</string>
+  <string name="gesture_trainer_measure_spread">palce przesunęły się o <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+  <string name="gesture_trainer_measure_rotation">obrót o <xliff:g id="degrees">%1$.0f</xliff:g> stopni</string>
+  <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm od krawędzi rogu</string>
+  <string name="gesture_trainer_measure_edge">start <xliff:g id="mm">%1$.0f</xliff:g> mm od krawędzi</string>
+
+  <string name="gesture_trainer_finding_wrong_finger_count">Palców na ekranie: <xliff:g id="fingers">%1$d</xliff:g> zamiast <xliff:g id="wanted">%2$d</xliff:g>.</string>
+  <string name="gesture_trainer_finding_fingers_landed_apart">Palce dotknęły ekranu w odstępie <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_finger_lifted_early">Jeden palec podniósł się, zanim wszystkie dotknęły ekranu.</string>
+  <string name="gesture_trainer_finding_fingers_lifted_apart">Palce podniosły się w odstępie <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_became_exploration">Palec za długo stał w miejscu albo na początku ruszał za wolno, więc SandFly odczytał dotyk jako eksplorowanie ekranu.</string>
+  <string name="gesture_trainer_finding_slow_start">Pierwszy centymetr zajął <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_paused">Palec zwolnił na <xliff:g id="ms">%1$d</xliff:g> ms, a każdy centymetr może trwać najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_too_short">Ruch miał tylko <xliff:g id="mm">%1$.0f</xliff:g> mm, a musi mieć co najmniej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_wrong_direction_one_finger">Palec ruszył <xliff:g id="direction">%1$s</xliff:g>.</string>
+  <string name="gesture_trainer_finding_wrong_direction">Palce ruszyły <xliff:g id="direction">%1$s</xliff:g>.</string>
+  <string name="gesture_trainer_finding_off_line">Ścieżka odchyliła się o <xliff:g id="degrees">%1$.0f</xliff:g> stopni od linii prostej, a dozwolone jest najwyżej <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+  <string name="gesture_trainer_finding_curved">Ścieżka wygięła się na <xliff:g id="parts">%1$d</xliff:g> części zamiast <xliff:g id="wanted">%2$d</xliff:g>.</string>
+  <string name="gesture_trainer_finding_turn_missing">Nie znaleziono zakrętu.</string>
+  <string name="gesture_trainer_finding_second_part_wrong">Po zakręcie palec poszedł <xliff:g id="direction">%1$s</xliff:g>.</string>
+  <string name="gesture_trainer_finding_tap_moved">Palec przesunął się o <xliff:g id="mm">%1$.1f</xliff:g> mm podczas stuknięcia, a dozwolone jest najwyżej <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_tap_held_long">Stuknięcie trwało <xliff:g id="ms">%1$d</xliff:g> ms, dłużej niż <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_hold_too_short">Ostatnie stuknięcie trzymano <xliff:g id="ms">%1$d</xliff:g> ms, a musi trwać co najmniej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_too_few_taps">Stuknięć: <xliff:g id="taps">%1$d</xliff:g> zamiast <xliff:g id="wanted">%2$d</xliff:g>.</string>
+  <string name="gesture_trainer_finding_too_many_taps">Stuknięć: <xliff:g id="taps">%1$d</xliff:g> zamiast <xliff:g id="wanted">%2$d</xliff:g>.</string>
+  <string name="gesture_trainer_finding_taps_too_slow">Między stuknięciami minęło <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_taps_apart">Stuknięcia trafiły <xliff:g id="mm">%1$.0f</xliff:g> mm od siebie, a dozwolone jest najwyżej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_pinch_too_small">Palce przesunęły się tylko o <xliff:g id="mm">%1$.0f</xliff:g> mm, a muszą o co najmniej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_pinch_wrong_way">Palce ruszyły się w przeciwną stronę.</string>
+  <string name="gesture_trainer_finding_moved_together">Cała dłoń przesunęła się po ekranie o <xliff:g id="mm">%1$.0f</xliff:g> mm, bardziej niż palce zbliżyły się lub oddaliły.</string>
+  <string name="gesture_trainer_finding_rotate_too_small">Palce obróciły się tylko o <xliff:g id="degrees">%1$.0f</xliff:g> stopni, a muszą o co najmniej <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+  <string name="gesture_trainer_finding_rotate_wrong_way">Palce obróciły się w przeciwną stronę.</string>
+  <string name="gesture_trainer_finding_scrub_too_short">Pierwszy ruch miał <xliff:g id="mm">%1$.0f</xliff:g> mm, a musi mieć co najmniej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_scrub_no_return">Ruch z powrotem miał <xliff:g id="mm">%1$.0f</xliff:g> mm, a musi mieć co najmniej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_scrub_too_slow">Wycieranie trwało <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_edge_start_too_far">Palec dotknął <xliff:g id="mm">%1$.0f</xliff:g> mm od krawędzi, a krawędź ma <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_edge_wrong_half">Palec zaczął w drugiej połowie krawędzi.</string>
+  <string name="gesture_trainer_finding_edge_too_short">Palec przesunął się o <xliff:g id="mm">%1$.0f</xliff:g> mm, a musi o co najmniej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_edge_too_long">Zbyt długie przeciągnięcie: palec przeszedł za drugie kliknięcie, <xliff:g id="mm">%1$.0f</xliff:g> mm, a drugie kliknięcie jest na <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_edge_too_slow">Dojście do kliknięcia zajęło <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_edge_sideways">Ruch odchylił się w bok o <xliff:g id="degrees">%1$.0f</xliff:g> stopni, a dozwolone jest najwyżej <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+  <string name="gesture_trainer_finding_corner_missed">Stuknięcie trafiło <xliff:g id="mm">%1$.0f</xliff:g> mm od krawędzi rogu, a róg ma <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_corner_tap_slow">Stuknięcie w róg trwało <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_none">Nie wykryto ruchu, który pasowałby do gestu. Spróbuj jeszcze raz, trochę szybciej i bardziej zdecydowanie.</string>
+
+  <string name="gesture_trainer_tip_wrong_finger_count">Sprawdź, ile palców dotyka szkła. Dłoń albo inny palec oparty o ekran też się liczy.</string>
+  <string name="gesture_trainer_tip_fingers_landed_apart">Połóż wszystkie palce w tej samej chwili, jedną dłonią, a nie po kolei.</string>
+  <string name="gesture_trainer_tip_finger_lifted_early">Najpierw połóż wszystkie palce, dopiero potem je przesuwaj lub podnoś.</string>
+  <string name="gesture_trainer_tip_fingers_lifted_apart">Podnieś wszystkie palce w tej samej chwili.</string>
+  <string name="gesture_trainer_tip_slow_start">Zacznij ruch w chwili dotknięcia ekranu i na początku ruszaj szybciej.</string>
+  <string name="gesture_trainer_tip_paused">Przesuwaj palec równym tempem aż do podniesienia. Nie zwalniaj pod koniec.</string>
+  <string name="gesture_trainer_tip_too_short">Wydłuż ruch, do około 2–3 cm.</string>
+  <string name="gesture_trainer_tip_wrong_direction">Sprawdź kierunek na samym początku ruchu. Pomaga trzymanie telefonu prosto przed sobą.</string>
+  <string name="gesture_trainer_tip_off_line">Trzymaj prostą linię: przesuwaj tylko w danym kierunku, nie po skosie. Kciuk ma skłonność do zataczania łuku, więc wyprostowany palec, na przykład wskazujący, może pomóc.</string>
+  <string name="gesture_trainer_tip_curved">Trzymaj prostą linię i podnieś palec od razu na końcu, bez zahaczania w bok przy podnoszeniu.</string>
+  <string name="gesture_trainer_tip_turn_missing">Zmień kierunek ostro, pod kątem prostym albo prosto z powrotem, bez podnoszenia. Każda część powinna mieć około 2 cm.</string>
+  <string name="gesture_trainer_tip_second_part_wrong">Po zakręcie sprawdź, dokąd idziesz: druga część musi iść w drugim kierunku z nazwy gestu.</string>
+  <string name="gesture_trainer_tip_tap_moved">Stukaj prosto w dół i w górę, opuszkiem palca, bez przesuwania.</string>
+  <string name="gesture_trainer_tip_tap_held_long">Każde stuknięcie rób krótko: dotknij i od razu podnieś.</string>
+  <string name="gesture_trainer_tip_hold_too_short">Przy ostatnim stuknięciu trzymaj palce na ekranie, aż SandFly zareaguje.</string>
+  <string name="gesture_trainer_tip_too_few_taps">Licz stuknięcia i zrób je wszystkie szybko, za jednym razem.</string>
+  <string name="gesture_trainer_tip_too_many_taps">Licz stuknięcia. Palec, który odbija się od szkła, robi dodatkowe stuknięcie.</string>
+  <string name="gesture_trainer_tip_taps_too_slow">Stukaj szybciej: następne stuknięcie zaczynaj zaraz po podniesieniu.</string>
+  <string name="gesture_trainer_tip_taps_apart">Stukaj za każdym razem w to samo miejsce.</string>
+  <string name="gesture_trainer_tip_pinch_too_small">Przesuń palce dalej, co najmniej o 1 cm do siebie albo od siebie.</string>
+  <string name="gesture_trainer_tip_pinch_wrong_way">Szczypanie to zsuwanie palców, rozsuwanie to oddalanie ich od siebie.</string>
+  <string name="gesture_trainer_tip_moved_together">Ruszaj tylko palcami, do siebie albo od siebie. Nie przesuwaj całej dłoni po ekranie.</string>
+  <string name="gesture_trainer_tip_rotate_too_small">Obróć dalej, jak pokrętło o ćwierć obrotu.</string>
+  <string name="gesture_trainer_tip_rotate_wrong_way">Zgodnie z ruchem wskazówek zegara znaczy, że górny palec idzie w prawo.</string>
+  <string name="gesture_trainer_tip_scrub_too_short">Pierwszy ruch zrób na co najmniej 1 cm.</string>
+  <string name="gesture_trainer_tip_scrub_no_return">Po pierwszym ruchu wróć w drugą stronę, zanim podniesiesz palce.</string>
+  <string name="gesture_trainer_tip_scrub_too_slow">Wycieraj szybko, tam i z powrotem w około sekundę.</string>
+  <string name="gesture_trainer_tip_edge_start_too_far">Zacznij na samym brzegu szkła, z opuszkiem częściowo poza ekranem. Jeśli to trudne, zwiększ Szerokość krawędzi.</string>
+  <string name="gesture_trainer_tip_edge_wrong_half">Sprawdź, w której połowie krawędzi zaczynasz.</string>
+  <string name="gesture_trainer_tip_edge_too_short">Przesuń dalej, aż usłyszysz kliknięcie, potem podnieś.</string>
+  <string name="gesture_trainer_tip_edge_too_long">Podnieś palec zaraz po pierwszym kliknięciu, przed drugim.</string>
+  <string name="gesture_trainer_tip_edge_too_slow">Wsuwaj szybciej, bez zatrzymywania się przed kliknięciem.</string>
+  <string name="gesture_trainer_tip_edge_sideways">Przesuwaj prosto od krawędzi albo prosto wzdłuż niej, nie po skosie.</string>
+  <string name="gesture_trainer_tip_corner_missed">Połóż palec w samym rogu, dotykając obu krawędzi. Jeśli dalej nie trafiasz, zwiększ Rozmiar rogu.</string>
+  <string name="gesture_trainer_tip_corner_tap_slow">Podnoś palec szybciej po dotknięciu rogu. Jeśli stukasz powoli, wydłuż Limit czasu kliknięcia rogu.</string>
+  <string name="gesture_trainer_close_to_limit">Blisko granicy: <xliff:g id="finding">%1$s</xliff:g></string>
+
+  <string name="gesture_trainer_advice_start_time">Twoje przesunięcia zaczynają się powoli. Możesz dać im więcej czasu w ustawieniu Czas rozpoczęcia gestu.</string>
+  <string name="gesture_trainer_advice_tap_time">Twoje stuknięcia są powolne. Możesz pozwolić na więcej czasu między stuknięciami w ustawieniu Maksymalny odstęp między kliknięciami jednym palcem.</string>
+  <string name="gesture_trainer_advice_edge_width">Zaczynasz za daleko od krawędzi. Większa Szerokość krawędzi ułatwia rozpoczęcie przesunięć od krawędzi, ale też zamienia zwykłe przesunięcia blisko krawędzi w gesty krawędzi.</string>
+  <string name="gesture_trainer_advice_corner_size">Nie trafiasz w róg. Większy Rozmiar rogu ułatwia stukanie w rogi.</string>
+  <string name="gesture_trainer_advice_corner_time">Twoje stuknięcia w rogi są powolne. Dłuższy Limit czasu kliknięcia rogu przyjmuje wolniejsze stuknięcia.</string>
+
+  <!-- Menu krawędzi -->
+  <string name="gesture_trainer_menu_option">Opcja <xliff:g id="number">%1$d</xliff:g></string>
+  <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: wybierz pozycję <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+  <string name="gesture_trainer_how_menu">Przesuń palec w górę lub w dół <xliff:g id="edge">%1$s</xliff:g>, a menu się otworzy. Pozycji jest <xliff:g id="count">%3$d</xliff:g>, od góry do dołu, każda ma około <xliff:g id="size">%6$s</xliff:g> cm. Pozycja <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, leży od <xliff:g id="from">%7$s</xliff:g> do <xliff:g id="to">%8$s</xliff:g> cm od góry ekranu. Podnieś palec, gdy ją usłyszysz.</string>
+  <string name="gesture_trainer_menu_sample">Ta krawędź nie ma menu, więc ćwiczysz na <xliff:g id="count">%1$d</xliff:g> przykładowych pozycjach.</string>
+  <string name="gesture_trainer_try_menu_cancelled">Próba <xliff:g id="number">%1$d</xliff:g>: menu zamknięte bez wyboru.</string>
+  <string name="gesture_trainer_try_menu_other">Próba <xliff:g id="number">%1$d</xliff:g>: wybrano <xliff:g id="item">%2$s</xliff:g>.</string>
+  <string name="gesture_trainer_measure_menu_item">podniesiony na pozycji <xliff:g id="number">%1$d</xliff:g></string>
+  <string name="gesture_trainer_finding_menu_in_corner">Palec zaczął na samej górze lub dole krawędzi, gdzie są rogi oraz górna i dolna krawędź.</string>
+  <string name="gesture_trainer_finding_menu_left_edge">Palec podniósł się <xliff:g id="mm">%1$.0f</xliff:g> mm od krawędzi, a menu zamyka się dalej niż <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+  <string name="gesture_trainer_finding_menu_wrong_item">Palec podniósł się na pozycji <xliff:g id="item">%1$d</xliff:g> zamiast <xliff:g id="target">%2$d</xliff:g>.</string>
+  <string name="gesture_trainer_tip_menu_in_corner">Zaczynaj trochę dalej od górnego i dolnego końca krawędzi.</string>
+  <string name="gesture_trainer_tip_menu_left_edge">Podczas przesuwania trzymaj palec blisko krawędzi i tam go podnieś.</string>
+  <string name="gesture_trainer_tip_menu_wrong_item">Pozycje leżą na stałe wzdłuż krawędzi: liczy się wysokość, na której podnosisz palec. Słuchaj nazw pozycji podczas przesuwania i podnieś palec, gdy tylko usłyszysz tę właściwą.</string>
+
+  <!-- Spis treści -->
+  <string name="gesture_trainer_contents">Spis treści</string>
+  <string name="gesture_trainer_contents_heading">Spis treści: <xliff:g id="group">%1$s</xliff:g></string>
+  <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+  <string name="gesture_trainer_contents_done">zrobione, rozpoznano <xliff:g id="hits">%1$d</xliff:g> z <xliff:g id="tries">%2$d</xliff:g></string>
+
+  <!-- Tap and swipe, back taps, swipe and hold, and the halves of the screen. -->
+  <string name="gesture_trainer_group_tap_swipe">Stuknięcie i przesunięcie</string>
+  <string name="gesture_trainer_group_edge_swipes">Przesunięcia od krawędzi</string>
+  <string name="gesture_trainer_group_along_edges">Przesunięcia wzdłuż krawędzi</string>
+  <string name="gesture_trainer_group_edge_menus">Menu krawędzi</string>
+  <string name="gesture_trainer_group_corners">Rogi</string>
+  <string name="gesture_trainer_group_back_tap">Stuknięcie w tył urządzenia</string>
+  <string name="gesture_trainer_left_out_two_finger_tap_swipes">Stuknięcia dwoma palcami z przesunięciem dwoma palcami są pominięte, bo przy Twoich ustawieniach gestów przesunięcia dwoma palcami przewijają aplikacje.</string>
+  <string name="gesture_trainer_how_swipe_hold">Potem, bez podnoszenia, zatrzymaj palec i trzymaj go nieruchomo co najmniej <xliff:g id="hold">%1$d</xliff:g> ms, aż SandFly zareaguje, i podnieś.</string>
+  <string name="gesture_trainer_half_top">górnej</string>
+  <string name="gesture_trainer_half_bottom">dolnej</string>
+  <string name="gesture_trainer_how_taps_half">Stuknij w <xliff:g id="half">%1$s</xliff:g> połowie ekranu: liczy się miejsce pośrodku między palcami.</string>
+  <string name="gesture_trainer_same_fingers">tymi samymi palcami</string>
+  <string name="gesture_trainer_how_tap_swipe">Stuknij <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Zaraz po ostatnim stuknięciu, w ciągu <xliff:g id="gap">%3$d</xliff:g> ms, dotknij ekranu znowu <xliff:g id="swipe_fingers">%4$s</xliff:g> i przesuń <xliff:g id="direction">%5$s</xliff:g> w linii prostej na około 2–3 cm, potem podnieś.</string>
+  <string name="gesture_trainer_how_corner_hold">Przy ostatnim stuknięciu zostaw palec w rogu, nieruchomo, co najmniej <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_how_back_tap">Trzymaj telefon w dłoni, za boki, i stuknij <xliff:g id="taps">%1$s</xliff:g> opuszkiem palca w środek jego tyłu, mocno i krótko, jak przy pukaniu do drzwi. Stukaj szybko po sobie: najwyżej <xliff:g id="gap">%2$d</xliff:g> ms między stuknięciami. Nie dotykaj ekranu podczas stukania.</string>
+  <string name="gesture_trainer_back_tap_info">Podczas ćwiczenia stuknięcia w tył nie uruchamiają poleceń. To, jak mocne musi być stuknięcie, ustawia Czułość stuknięcia w tył urządzenia, pierwsza pozycja w kategorii Stuknięcie w tył urządzenia.</string>
+  <string name="gesture_trainer_go_placed">Zaczynamy. Masz <xliff:g id="tries">%1$d</xliff:g> próby.</string>
+  <string name="gesture_trainer_along_left">lewej krawędzi</string>
+  <string name="gesture_trainer_along_right">prawej krawędzi</string>
+  <string name="gesture_trainer_along_top">górnej krawędzi</string>
+  <string name="gesture_trainer_along_bottom">dolnej krawędzi</string>
+  <string name="gesture_trainer_left_out_along_menu">Pominięto przesunięcia wzdłuż <xliff:g id="edge">%1$s</xliff:g>: ma ona menu krawędzi, więc przesunięcie wzdłuż niej otwiera menu, a nie uruchamia gestu.</string>
+  <string name="gesture_trainer_left_out_along_scroll">Pominięto przesunięcia wzdłuż <xliff:g id="edge">%1$s</xliff:g>: ma włączone przewijanie, więc przesunięcie wzdłuż niej przewija aplikację, a nie uruchamia gestu.</string>
+  <string name="gesture_trainer_finding_along_off_edge">Palec za mocno odszedł od krawędzi.</string>
+  <string name="gesture_trainer_tip_along_off_edge">Prowadź palec po samym brzegu szkła, prosto wzdłuż krawędzi.</string>
+  <string name="gesture_trainer_go_back_tap">Zaczynamy. Wykonaj cały gest stukania w tył telefonu <xliff:g id="tries">%1$d</xliff:g> razy. Nie dotykaj ekranu: dotknięcie liczy się jako nieudana próba.</string>
+  <string name="gesture_trainer_no_accelerometer">To urządzenie nie ma akcelerometru, więc nie wyczuje stuknięć w tył.</string>
+  <string name="gesture_trainer_measure_hold">nieruchomo <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_back_tap_strength">stuknięcie o sile <xliff:g id="strength">%1$.1f</xliff:g></string>
+  <string name="gesture_trainer_finding_swipe_hold_too_short">Na końcu palec stał nieruchomo <xliff:g id="ms">%1$d</xliff:g> ms, a musi co najmniej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_tap_wrong_half">Palce stuknęły w drugiej połowie ekranu.</string>
+  <string name="gesture_trainer_finding_swipe_missing">Po stuknięciach nie było przesunięcia.</string>
+  <string name="gesture_trainer_finding_swipe_late">Przesunięcie zaczęło się <xliff:g id="ms">%1$d</xliff:g> ms po ostatnim stuknięciu, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_back_tap_too_light">Za słabe stuknięcie w tył: <xliff:g id="percent">%1$d</xliff:g>%% potrzebnej siły.</string>
+  <string name="gesture_trainer_finding_back_tap_sideways">Stuknięcie bardziej przesunęło telefon na boki niż pchnęło jego tył.</string>
+  <string name="gesture_trainer_finding_back_tap_moving">Telefon poruszał się tuż przed stuknięciem.</string>
+  <string name="gesture_trainer_finding_back_tap_screen_touched">Ekran był dotknięty, a stuknięcia podczas dotykania ekranu się nie liczą.</string>
+  <string name="gesture_trainer_finding_back_taps_too_slow">Między stuknięciami w tył minęło <xliff:g id="ms">%1$d</xliff:g> ms, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_tip_swipe_hold_too_short">Po przesunięciu zatrzymaj palec i trzymaj go nieruchomo na ekranie, aż SandFly zareaguje. Potem podnieś.</string>
+  <string name="gesture_trainer_tip_tap_wrong_half">Sprawdź, w której połowie stukasz: środek ekranu oddziela górną połowę od dolnej.</string>
+  <string name="gesture_trainer_tip_swipe_missing">Po ostatnim stuknięciu od razu dotknij ekranu znowu i przesuń.</string>
+  <string name="gesture_trainer_tip_swipe_late">Zacznij przesuwać zaraz po ostatnim stuknięciu, bez przerwy.</string>
+  <string name="gesture_trainer_tip_back_tap_too_light">Stukaj mocniej, opuszkiem albo paznokciem, blisko środka tyłu. Jeśli mocniejsze stuknięcia są niewygodne, zwiększ Czułość stuknięcia w tył urządzenia.</string>
+  <string name="gesture_trainer_tip_back_tap_sideways">Stukaj prosto w tył telefonu, nie w jego brzeg ani pod kątem.</string>
+  <string name="gesture_trainer_tip_back_tap_moving">Przed stuknięciem przytrzymaj telefon chwilę nieruchomo i trzymaj go luźno, żeby dłoń nim nie ruszała.</string>
+  <string name="gesture_trainer_tip_back_tap_screen_touched">Podczas stukania w tył nie dotykaj ekranu: trzymaj telefon za boki.</string>
+  <string name="gesture_trainer_tip_back_taps_too_slow">Stukaj szybciej, jedno stuknięcie zaraz po drugim.</string>
+  <string name="gesture_trainer_advice_swipe_hold">Podnosisz palec za wcześnie po przesunięciu. Przytrzymanie możesz skrócić w ustawieniu Czas przytrzymania po przesunięciu.</string>
+  <string name="gesture_trainer_advice_back_tap_sensitivity">Twoje stuknięcia w tył są słabe. Większa Czułość stuknięcia w tył urządzenia wyczuwa słabsze stuknięcia, ale może też brać wstrząsy telefonu za stuknięcia.</string>
+  <string name="gesture_trainer_title_version">Trener gestów <xliff:g id="version">%1$s</xliff:g></string>
+  <string name="gesture_trainer_finding_turned_in_pinch">Palce obróciły się o <xliff:g id="degrees">%1$.0f</xliff:g> stopni, a od <xliff:g id="limit">%2$.0f</xliff:g> stopni SandFly uznaje ruch za obracanie.</string>
+  <string name="gesture_trainer_tip_turned_in_pinch">Przesuwaj palce w linii prostej do siebie albo od siebie, nie po łuku wokół siebie.</string>
+  <string name="gesture_trainer_finding_other_gesture">Ruch bardziej przypominał tamten gest niż ten. Przeczytaj opis jeszcze raz i spróbuj ponownie.</string>
+  <string name="gesture_trainer_side_left">lewej</string>
+  <string name="gesture_trainer_side_right">prawej</string>
+  <string name="gesture_trainer_side_top">górnej</string>
+  <string name="gesture_trainer_side_bottom">dolnej</string>
+  <string name="gesture_trainer_finding_wrong_edge">Palec zaczął przy <xliff:g id="side">%1$s</xliff:g> krawędzi, a to ćwiczenie jest przy <xliff:g id="expected">%2$s</xliff:g>.</string>
+  <string name="gesture_trainer_tip_wrong_edge">Przeczytaj jeszcze raz, przy której krawędzi zaczyna się ćwiczenie, i zacznij na samym brzegu szkła po tej stronie.</string>
+  <string name="gesture_trainer_finding_menu_opened_instead">Zamiast tego gestu otworzyło się menu krawędzi.</string>
+  <string name="gesture_trainer_tip_menu_opened_instead">Krawędź z menu traktuje przesunięcia wzdłuż niej jako wybór z menu. Zacznij przy krawędzi, którą podaje ćwiczenie.</string>
+  <string name="gesture_trainer_group_three_part">Przesunięcia trzyczęściowe</string>
+  <string name="gesture_trainer_group_two_stroke">Przesunięcia dwuetapowe</string>
+  <string name="gesture_trainer_group_shake">Potrząśnięcie</string>
+  <string name="gesture_trainer_left_out_three_part_before_lift">Przesunięcia trzyczęściowe są pominięte, bo w ustawieniach gestów włączone jest Rozpoznawaj przesunięcia przed uniesieniem palca.</string>
+  <string name="gesture_trainer_left_out_two_stroke_off">Przesunięcia dwuetapowe są wyłączone: Odstęp między przesunięciami dwuetapowymi jest ustawiony na Wyłączone. Ustaw czas, żeby je ćwiczyć.</string>
+  <string name="gesture_trainer_shake_info">Podczas ćwiczenia potrząśnięcie nie uruchamia polecenia. To, jak mocno trzeba potrząsnąć, ustawia Czułość potrząśnięcia, w kategorii Potrząśnięcie na liście gestów.</string>
+  <string name="gesture_trainer_go_shake">Zaczynamy. Potrząśnij telefonem <xliff:g id="tries">%1$d</xliff:g> razy, z krótką przerwą po każdym potrząśnięciu.</string>
+  <string name="gesture_trainer_how_shake">Trzymaj telefon pewnie i szybko potrząśnij nim tam i z powrotem, jak przy strząsaniu kropli wody: co najmniej dwa razy w każdą stronę, wszystko w ciągu około 2/3 sekundy. Potem trzymaj go nieruchomo.</string>
+  <string name="gesture_trainer_how_two_stroke">Przesuń jednym palcem <xliff:g id="first">%1$s</xliff:g>, około 2 cm, i podnieś. Zaraz potem, w ciągu <xliff:g id="time">%3$d</xliff:g> ms, przesuń jednym palcem <xliff:g id="second">%2$s</xliff:g>, około 2 cm, i podnieś.</string>
+  <string name="gesture_trainer_how_three_part">Dotknij ekranu jednym palcem i bez podnoszenia przesuń <xliff:g id="first">%1$s</xliff:g>, potem skręć ostro i przesuń <xliff:g id="second">%2$s</xliff:g>, potem znowu skręć ostro i przesuń <xliff:g id="third">%3$s</xliff:g>, każdą część na około 2 cm, i podnieś. Zrób to jednym szybkim, płynnym ruchem, z ostrymi rogami, nie łukami.</string>
+  <string name="gesture_trainer_how_taps_top_and_bottom">Połóż jeden palec w górnej jednej trzeciej ekranu, a drugi w dolnej jednej trzeciej, na przykład kciuk na dole i palec wskazujący u góry.</string>
+  <string name="gesture_trainer_finding_tap_not_top_and_bottom">Palce nie były jeden w górnej trzeciej części ekranu, a drugi w dolnej.</string>
+  <string name="gesture_trainer_finding_second_stroke_missing">Nie było drugiego przesunięcia.</string>
+  <string name="gesture_trainer_finding_second_stroke_late">Drugie przesunięcie zaczęło się <xliff:g id="ms">%1$d</xliff:g> ms po pierwszym, a dozwolone jest najwyżej <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+  <string name="gesture_trainer_finding_first_stroke_wrong_direction">Pierwsze przesunięcie poszło <xliff:g id="direction">%1$s</xliff:g>.</string>
+  <string name="gesture_trainer_finding_second_stroke_wrong_direction">Drugie przesunięcie poszło <xliff:g id="direction">%1$s</xliff:g>.</string>
+  <string name="gesture_trainer_finding_shake_too_light">Za słabe potrząśnięcie: <xliff:g id="percent">%1$d</xliff:g>%% potrzebnej siły.</string>
+  <string name="gesture_trainer_finding_shake_too_few_swings">Wychyleń tam i z powrotem: <xliff:g id="swings">%1$d</xliff:g> z <xliff:g id="wanted">%2$d</xliff:g> potrzebnych.</string>
+  <string name="gesture_trainer_tip_tap_not_top_and_bottom">Rozstaw palce daleko: jeden blisko górnej krawędzi, drugi blisko dolnej.</string>
+  <string name="gesture_trainer_tip_second_stroke_missing">Po pierwszym przesunięciu podnieś palec i od razu przesuń jeszcze raz.</string>
+  <string name="gesture_trainer_tip_second_stroke_late">Zacznij drugie przesunięcie szybciej, zaraz po podniesieniu palca, albo ustaw dłuższy Odstęp między przesunięciami dwuetapowymi.</string>
+  <string name="gesture_trainer_tip_shake_too_light">Potrząśnij mocniej i szybciej. Jeśli to niewygodne, zwiększ Czułość potrząśnięcia.</string>
+  <string name="gesture_trainer_tip_shake_too_few_swings">Potrząsaj szybciej, tam i z powrotem co najmniej dwa razy w każdą stronę, bez zatrzymywania się.</string>
+  <string name="gesture_trainer_measure_shake_strength">najsilniejszy ruch <xliff:g id="strength">%1$.1f</xliff:g></string>
+  <string name="gesture_trainer_advice_shake_sensitivity">Twoje potrząśnięcia są słabe. Większa Czułość potrząśnięcia wyczuwa słabsze potrząśnięcia, ale może też brać noszenie telefonu za potrząśnięcie.</string>
+  <string name="gesture_trainer_advice_two_stroke_time">Twoje drugie przesunięcie przychodzi późno. Dłuższy Odstęp między przesunięciami dwuetapowymi daje więcej czasu, ale pojedyncze przesunięcie czeka wtedy dłużej, zanim zadziała.</string>
+  <string name="gesture_trainer_scrub_two_finger_on">Obsługuj przesunięcia dwoma palcami w SandFly jest włączone, więc pocieranie działa.</string>
+  <string name="gesture_trainer_scrub_two_finger_off">Obsługuj przesunięcia dwoma palcami w SandFly jest wyłączone: przesunięcia dwoma palcami przewijają aplikację, więc pocieranie zwykle też ją przewija i nie jest rozpoznawane. Żeby używać pocierania, włącz to ustawienie przyciskiem poniżej. Przesunięcia dwoma palcami będą wtedy uruchamiać polecenia SandFly zamiast przewijać aplikacje.</string>
+  <string name="gesture_trainer_measure_first_stroke">pierwsze przesunięcie <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_second_stroke">drugie przesunięcie <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_whole_gesture">cały gest <xliff:g id="ms">%1$d</xliff:g> ms</string>
+  <string name="gesture_trainer_measure_stroke_gap">przerwa między nimi <xliff:g id="ms">%1$d</xliff:g> ms</string>
+</resources>

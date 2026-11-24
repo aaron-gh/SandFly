@@ -41,6 +41,26 @@ class BackTapDetector(private val listener: Listener) {
 
     /** Describes a jolt, taken as a tap or not, for the debug log. */
     fun onJolt(description: String) {}
+
+    /** A jolt strong enough to be measured was taken as a tap or not, as [jolt] says. */
+    fun onJoltJudged(jolt: Jolt) {}
+
+    /** A run of [count] taps ended, 1 to 4, whether or not it runs a command. */
+    fun onRunEnded(count: Int) {}
+  }
+
+  /**
+   * A jolt at [timeNs] of [strength] along the axis through the screen, in m/s², where [needed] was
+   * needed for a tap. [rejection] says why it wasn't taken as a tap, or is null for a tap.
+   */
+  class Jolt(val timeNs: Long, val strength: Float, val needed: Float, val rejection: Rejection?)
+
+  enum class Rejection {
+    TOO_LIGHT,
+    SCREEN_TOUCHED,
+    JUST_AFTER_RUN,
+    SIDEWAYS,
+    MOVING,
   }
 
   /**
@@ -187,10 +207,11 @@ class BackTapDetector(private val listener: Listener) {
     val following = taps > 0 && startNs - lastTapNs <= MAX_TAP_INTERVAL_NS
     val needed = if (following) threshold * FOLLOWING_TAP_RATIO else threshold
     if (joltZ < needed) {
-      // Too light to be a tap: measured only for the debug log, and changes nothing.
+      // Too light to be a tap: measured only to be described, and changes nothing.
       listener.onJolt(
         String.format(java.util.Locale.ROOT, "Back tap jolt %.1f: too light, %.1f needed", joltZ, needed)
       )
+      listener.onJoltJudged(Jolt(startNs, joltZ, needed, Rejection.TOO_LIGHT))
       return
     }
     // The device rings for a moment after a jolt.
@@ -198,10 +219,11 @@ class BackTapDetector(private val listener: Listener) {
     val stillnessRatio = if (taps == 0) STILL_BEFORE_FIRST_TAP else STILL_BEFORE_NEXT_TAP
     val rejection =
       when {
-        touching || (touchEndNs != NONE && timeNs - touchEndNs < TOUCH_GUARD_NS) -> "screen touched"
-        startNs < ignoreTapsUntilNs -> "just after a run"
-        joltZ < SCREEN_AXIS_RATIO * joltSideways -> "sideways"
-        movementBeforeJolt > stillnessRatio * joltZ -> "moving"
+        touching || (touchEndNs != NONE && timeNs - touchEndNs < TOUCH_GUARD_NS) ->
+          Rejection.SCREEN_TOUCHED
+        startNs < ignoreTapsUntilNs -> Rejection.JUST_AFTER_RUN
+        joltZ < SCREEN_AXIS_RATIO * joltSideways -> Rejection.SIDEWAYS
+        movementBeforeJolt > stillnessRatio * joltZ -> Rejection.MOVING
         else -> null
       }
     listener.onJolt(
@@ -211,12 +233,13 @@ class BackTapDetector(private val listener: Listener) {
         joltZ,
         joltSideways,
         movementBeforeJolt,
-        rejection ?: "tap ${taps + 1}",
+        rejection?.let { it.name.lowercase().replace('_', ' ') } ?: "tap ${taps + 1}",
       )
     )
+    listener.onJoltJudged(Jolt(startNs, joltZ, needed, rejection))
     if (rejection != null) {
       // A jolt that isn't a tap between taps means the device is being handled.
-      if (rejection != "just after a run") {
+      if (rejection != Rejection.JUST_AFTER_RUN) {
         taps = 0
       }
       return
@@ -246,46 +269,47 @@ class BackTapDetector(private val listener: Listener) {
     taps = 0
     // Taps that follow at once belong to this run.
     ignoreTapsUntilNs = timeNs + MAX_TAP_INTERVAL_NS
+    listener.onRunEnded(count)
     if (count >= 2) {
       listener.onTaps(count)
     }
   }
 
-  private companion object {
-    const val NONE = -1L
-    const val MAX_TAPS = 4
-    const val MS = 1_000_000L
+  companion object {
+    private const val NONE = -1L
+    private const val MAX_TAPS = 4
+    private const val MS = 1_000_000L
 
     /** Time constant of the low-pass filter that takes out gravity and slow movement. */
-    const val SLOW_TAU_S = 0.02f
+    private const val SLOW_TAU_S = 0.02f
     /** Time constant of the average of the fast movement before a jolt. */
-    const val MOVEMENT_TAU_S = 0.1f
+    private const val MOVEMENT_TAU_S = 0.1f
     /** Readings this far apart start the filters again. */
-    const val MAX_SAMPLE_GAP_NS = 100 * MS
+    private const val MAX_SAMPLE_GAP_NS = 100 * MS
     /** Time the filters take to settle after they start. */
-    const val SETTLE_NS = 100 * MS
+    private const val SETTLE_NS = 100 * MS
     /** Part of the threshold from which jolts are measured, so that ones too light are logged. */
-    const val MEASURED_RATIO = 0.5f
+    private const val MEASURED_RATIO = 0.5f
     /** Part of the threshold a later tap must reach. */
-    const val FOLLOWING_TAP_RATIO = 0.75f
+    private const val FOLLOWING_TAP_RATIO = 0.75f
     /** How long the strongest part of a jolt is looked for. */
-    const val JOLT_NS = 25 * MS
+    private const val JOLT_NS = 25 * MS
     /** Time after the start of a jolt in which the device still rings. */
-    const val RING_NS = 90 * MS
+    private const val RING_NS = 90 * MS
     /** Longest time between the taps of a double, triple or quadruple tap. */
     const val MAX_TAP_INTERVAL_NS = 450 * MS
     /** Time before and after a touch on the screen in which jolts are dropped. */
-    const val TOUCH_GUARD_NS = 150 * MS
+    private const val TOUCH_GUARD_NS = 150 * MS
     /**
      * How far a touch's time may be from the last reading's and still be in the same clock. Batched
      * readings come up to [AccelerometerGestures]' report latency late.
      */
-    const val MAX_TOUCH_OFFSET_NS = 2_000 * MS
+    private const val MAX_TOUCH_OFFSET_NS = 2_000 * MS
     /** How much stronger a tap is along the axis through the screen than along the others. */
-    const val SCREEN_AXIS_RATIO = 1.2f
+    private const val SCREEN_AXIS_RATIO = 1.2f
     /** Most movement before the first tap, as a part of the tap's strength. */
-    const val STILL_BEFORE_FIRST_TAP = 0.25f
+    private const val STILL_BEFORE_FIRST_TAP = 0.25f
     /** Most movement before a later tap, which may include the ringing of the one before. */
-    const val STILL_BEFORE_NEXT_TAP = 0.45f
+    private const val STILL_BEFORE_NEXT_TAP = 0.45f
   }
 }

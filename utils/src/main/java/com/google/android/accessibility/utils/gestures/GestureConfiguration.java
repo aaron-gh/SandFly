@@ -49,6 +49,9 @@ public final class GestureConfiguration {
     return multiTapTimeoutMs + MULTI_TAP_COMPLETION_MARGIN_MS;
   }
 
+  /** How long two fingers must be held for TalkBack's recovery gesture, two-finger tap and hold. */
+  public static final int TWO_FINGER_LONG_HOLD_MS = 5000;
+
   /**
    * Returns the maximum number of milliseconds between two taps of a multi-finger multi-tap gesture:
    * the user-set time, but never shorter than the default, as lifting and placing several fingers

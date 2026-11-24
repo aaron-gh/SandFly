@@ -156,7 +156,7 @@ class TwoStrokeSwipes(
   }
 
   companion object {
-    /** The times the setting offers, in ms. */
-    private val TIMES_MS = setOf(250, 500, 1000, 1500, 2000)
+    /** The times the setting offers, in ms. Any other is off. */
+    val TIMES_MS = setOf(250, 500, 1000, 1500, 2000)
   }
 }

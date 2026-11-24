@@ -34,6 +34,17 @@ import kotlin.math.sqrt
  */
 class ShakeDetector(private val onShake: (timeNs: Long) -> Unit) {
 
+  /** Learns how shaking went, for the gesture trainer. Called on the thread of the readings. */
+  interface Observer {
+    /** The device moved with [strength] in m/s² beyond gravity, at least half the threshold. */
+    fun onMovement(timeNs: Long, strength: Float) {}
+
+    /** A swing ended, and [swings] swings, each the other way, now count toward a shake. */
+    fun onSwing(timeNs: Long, swings: Int) {}
+  }
+
+  var observer: Observer? = null
+
   /** How strong each swing must be, in m/s² beyond gravity. */
   var threshold: Float = Sensitivity.MEDIUM.threshold
 
@@ -92,6 +103,9 @@ class ShakeDetector(private val onShake: (timeNs: Long) -> Unit) {
     moveY += (y - gravityY - moveY) * moveAlpha
     moveZ += (z - gravityZ - moveZ) * moveAlpha
     val size = sqrt(moveX * moveX + moveY * moveY + moveZ * moveZ)
+    if (size >= threshold * SWING_END_RATIO) {
+      observer?.onMovement(timeNs, size)
+    }
 
     if (timeNs < ignoreUntilNs) {
       // Settling, or just after a shake: movement keeps the shakes ignored until it stops.
@@ -157,6 +171,7 @@ class ShakeDetector(private val onShake: (timeNs: Long) -> Unit) {
     while (swingTimesNs.size > 1 && peakNs - swingTimesNs.first() > SHAKE_NS) {
       swingTimesNs.removeFirst()
     }
+    observer?.onSwing(peakNs, swingTimesNs.size)
     if (swingTimesNs.size >= SWINGS) {
       swingTimesNs.clear()
       ignoreUntilNs = peakNs + COOLDOWN_NS
@@ -168,6 +183,7 @@ class ShakeDetector(private val onShake: (timeNs: Long) -> Unit) {
     swingTimesNs.clear()
     swingTimesNs.addLast(peakNs)
     setLast(peakNs)
+    observer?.onSwing(peakNs, 1)
   }
 
   private fun setLast(peakNs: Long) {
@@ -191,32 +207,32 @@ class ShakeDetector(private val onShake: (timeNs: Long) -> Unit) {
     ignoreUntilNs = maxOf(ignoreUntilNs, timeNs + SETTLE_NS)
   }
 
-  private companion object {
-    const val MS = 1_000_000L
+  companion object {
+    private const val MS = 1_000_000L
 
     /** Swings in a shake: three reversals. */
     const val SWINGS = 4
     /** Time constant of the low-pass filter that finds gravity. */
-    const val GRAVITY_TAU_S = 0.4f
+    private const val GRAVITY_TAU_S = 0.4f
     /** Time constant of the low-pass filter that takes out short jolts, such as taps. */
-    const val MOVE_TAU_S = 0.02f
+    private const val MOVE_TAU_S = 0.02f
     /** Readings this far apart start the filters again. */
-    const val MAX_SAMPLE_GAP_NS = 200 * MS
+    private const val MAX_SAMPLE_GAP_NS = 200 * MS
     /** Time the filters take to settle after they start. */
-    const val SETTLE_NS = 300 * MS
+    private const val SETTLE_NS = 300 * MS
     /** Part of the threshold below which a swing ends. */
-    const val SWING_END_RATIO = 0.5f
+    private const val SWING_END_RATIO = 0.5f
     /** Cosine of the angle within which a swing counts as the opposite or the same direction. */
-    const val REVERSAL_COS = 0.5f
+    private const val REVERSAL_COS = 0.5f
     /** Shortest time between the strongest points of two swings: a shake of 8 per second. */
-    const val MIN_SWING_GAP_NS = 60 * MS
+    private const val MIN_SWING_GAP_NS = 60 * MS
     /** Longest time between the strongest points of two swings. */
-    const val MAX_SWING_GAP_NS = 300 * MS
+    private const val MAX_SWING_GAP_NS = 300 * MS
     /** Longest time from the first to the last swing of a shake. */
     const val SHAKE_NS = 650 * MS
     /** Time after a shake in which no shake counts. */
-    const val COOLDOWN_NS = 1_000 * MS
+    private const val COOLDOWN_NS = 1_000 * MS
     /** Time without a swing that ends the shaking after a shake. */
-    const val QUIET_NS = 400 * MS
+    private const val QUIET_NS = 400 * MS
   }
 }

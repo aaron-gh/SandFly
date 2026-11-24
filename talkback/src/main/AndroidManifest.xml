@@ -511,6 +511,13 @@
             android:theme="@style/NotificationReplyTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
 
+        <!-- SandFly's gesture trainer. In the service's process, which tells it each touch. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.trainer.GestureTrainerActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|navigation|uiMode|fontScale"
+            android:exported="false"
+            android:label="@string/gesture_trainer_title"
+            android:theme="@style/NotificationListTheme" />
         <!-- SandFly's interactive tutorial. In the service's process, which tells it each gesture. -->
         <activity
             android:name="com.google.android.accessibility.talkback.tutorial.TutorialActivity"
