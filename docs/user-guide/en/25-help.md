@@ -25,14 +25,14 @@ The **Open tutorial** and **Practice gestures** commands open the same lessons. 
 
 The **Send feedback** screen has:
 
-- **Send feedback**: a new report.
+- **New feedback**: a new report.
 - **Inbox**: the feedback you have sent, with the status of each report and the replies.
 - **Drafts**: reports that you started and haven't sent.
 
 #### Send a report {#help-feedback-send}
 
 1. Go to **Help & feedback** > **Send feedback**.
-2. Choose **Send feedback**.
+2. Choose **New feedback**.
 3. Fill in the form:
    - **Type of feedback**: **Incorrect behavior**, **Crash**, **Slow or unresponsive**, or **Suggestion**. The default is **Incorrect behavior**.
    - **Area**: the part of SandFly, such as **Speech**, **Gestures**, **Braille display** or **Updates**.
