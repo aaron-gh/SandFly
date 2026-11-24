@@ -1628,6 +1628,16 @@
     <string name="key_practice_title">Keyboard practice</string>
     <!-- Summary of the item in Keyboard shortcuts settings that turns keyboard practice on. [CHAR LIMIT=NONE] -->
     <string name="key_practice_summary">Speaks each key pressed and its command instead of running it. Back or Escape turns it off.</string>
+    <!-- Name of a command that holds a touch down on the item with SandFly focus while its keys are held, or until it runs again after a short press, as for recording a voice message. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_touch_hold_focus">Hold a touch on the focused item</string>
+    <!-- Spoken when the touch on the focused item stays down after its keys are released, until the command runs again or Back or Escape is pressed. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_held">Touch held</string>
+    <!-- Spoken when a touch held on the focused item is lifted. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_lifted">Touch lifted</string>
+    <!-- Spoken when a touch can't be held on the focused item: before Android 11, while another feature passes touch through, or when the item isn't on the screen. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_unavailable">Not available</string>
+    <!-- Spoken when a touch can't be held because no item has SandFly focus. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_no_focus">No item has focus</string>
     <!-- Keyboard key combination assignment for navigating to next button [CHAR LIMIT=40] -->
     <string name="keycombo_menu_web_navigate_to_next_button">Navigate to next button</string>
     <!-- Keyboard key combination assignment for navigating to previous button [CHAR LIMIT=40] -->

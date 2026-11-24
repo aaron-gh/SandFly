@@ -702,6 +702,16 @@ public class KeyComboMapper {
           keyComboManager.toggleKeyPractice();
         }
       }
+      case TOUCH_HOLD_FOCUS -> {
+        KeyComboManager keyComboManager =
+            TalkBackService.getInstance() == null
+                ? null
+                : TalkBackService.getInstance().getKeyComboManager();
+        result = keyComboManager != null;
+        if (keyComboManager != null) {
+          keyComboManager.toggleTouchHold();
+        }
+      }
       case TOGGLE_BROWSE_MODE_EXTRA -> {
         KeyComboManager keyComboManager =
             TalkBackService.getInstance() == null

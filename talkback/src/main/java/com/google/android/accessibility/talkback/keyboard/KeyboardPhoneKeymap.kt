@@ -121,6 +121,9 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
       put(R.string.keycombo_shortcut_toggle_keyboard_input, sandFly(SHIFT, KeyEvent.KEYCODE_P))
       // Keyboard practice speaks each key and its command: K for keys.
       put(R.string.keycombo_shortcut_toggle_key_practice, sandFly(SHIFT, KeyEvent.KEYCODE_K))
+      // A touch held on the focused item, as for recording a voice message: V for voice. The SandFly
+      // key and V are under the two thumbs, so both are easy to hold down.
+      put(R.string.keycombo_shortcut_touch_hold_focus, sandFly(NONE, KeyEvent.KEYCODE_V))
       // No Ctrl: the SandFly key with the volume keys changes the speech rate, with Shift the speech
       // volume.
       put(R.string.keycombo_shortcut_global_speech_rate_increase, sandFly(NONE, KeyEvent.KEYCODE_VOLUME_UP))

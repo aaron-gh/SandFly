@@ -296,6 +296,17 @@ The default shortcuts are:
 
 These commands are in the **Activation** category. A script can also have SandFly pass every key to its app; turning SandFly keyboard input on again ends that. See [](#scripts).
 
+### Hold a touch {#keyboards-touch-hold}
+
+**Hold a touch on the focused item** puts a touch down on the middle of the focused item, as a finger would, and holds it down for as long as you choose. Use it for buttons that act while a finger stays on them, such as the voice message button of Telegram: recording runs while the touch is down, and the message is sent when the touch lifts. **Touch and hold** doesn't do this.
+
+- Hold the keys down: the touch goes down and stays down while you hold them. Releasing the last key of the shortcut, such as V, lifts it; the SandFly key can be released first. SandFly says nothing.
+- Press and release the keys within half a second: the touch stays down without the keys. SandFly says "Touch held". To lift it, press the shortcut again, Back or Escape. SandFly says "Touch lifted".
+
+The default shortcut is SandFly key + V in the keyboard phone keymaps; other keymaps have none. While a touch is held, other keys work as usual, and touch is passed through to the app over the whole screen. The touch lifts after 10 minutes, when the item is no longer on the screen, and when SandFly is suspended. Another touch sent to the screen, such as **Activate with a tap**, cancels it.
+
+The command is in the **Activation** category, so you can also assign it to a gesture or add it to the SandFly menu; run that way, the touch stays down until you run the command again or press Back or Escape. It needs Android 11 or later; before that, and when the item isn't on the screen, SandFly says "Not available". When no item has focus, SandFly says "No item has focus".
+
 ### Keyboard phones {#keyboards-phones}
 
 Keyboard phones are phones with a built-in keyboard that has letters, Shift, Alt and often Sym, but no Ctrl, Meta or arrow keys: the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25. SandFly recognizes these phones and uses the **Keyboard phone keymap** on them. You can choose either keymap for keyboard phones on any phone.
@@ -311,6 +322,7 @@ In both keymaps:
 - With Alt as the SandFly key, Alt with a letter types its digit or symbol in a text field being edited.
 - Shortcuts with Sym, Fn or Ctrl work in text fields too.
 - SandFly key + L locks or unlocks touch in the keyboard phone keymap. See [](#touch).
+- SandFly key + V holds a touch on the focused item, such as the voice message button of a messaging app. See [](#keyboards-touch-hold).
 
 For the full list of shortcuts, see [](#appendix-keyboard-shortcuts).
 

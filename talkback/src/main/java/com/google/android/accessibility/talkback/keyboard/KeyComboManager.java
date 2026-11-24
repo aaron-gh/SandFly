@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Pipeline;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.actor.DirectionNavigationActor;
 import com.google.android.accessibility.talkback.actor.FullScreenReadActor;
@@ -142,8 +143,8 @@ public class KeyComboManager
                   | FeedbackItem.FLAG_SKIP_DUPLICATE);
 
   /**
-   * Speak options for keyboard practice: each key interrupts what the one before said, and a key
-   * pressed again is said again.
+   * Speak options for keyboard practice and Hold a touch on the focused item: each key interrupts
+   * what the one before said, and a key pressed again is said again.
    */
   private static final SpeakOptions KEY_PRACTICE_SPEAK_OPTIONS =
       SpeakOptions.create()
@@ -224,6 +225,15 @@ public class KeyComboManager
 
   /** Where keyboard practice speaks, for tests; null speaks through the pipeline. */
   private @Nullable Consumer<String> keyPracticeSpeech;
+
+  /** Hold a touch on the focused item, which holds a touch while its keys are down or latched. */
+  private final KeyTouchHold touchHold;
+
+  /** Where Hold a touch on the focused item speaks, for tests; null speaks through the pipeline. */
+  private @Nullable Consumer<String> touchHoldSpeech;
+
+  /** The key event being handled, for commands that act on the keys that run them. */
+  private @Nullable KeyEvent handlingKeyEvent;
 
   /** Commands only work in Browse Mode. Built during initialization. */
   private final ImmutableSet<String> browseModeOnlyCommands;
@@ -351,6 +361,13 @@ public class KeyComboManager
               speakForKeyPractice(text);
               return kotlin.Unit.INSTANCE;
             });
+    touchHold =
+        new KeyTouchHold(
+            context,
+            text -> {
+              speakForTouchHold(text);
+              return kotlin.Unit.INSTANCE;
+            });
     sharedPreferences = SharedPreferencesUtils.getSharedPreferences(context);
     initializeDefaultPreferenceValues();
     keyComboModel = createKeyComboModel();
@@ -421,6 +438,14 @@ public class KeyComboManager
         accessibilityService.getResources().getConfiguration().hardKeyboardHidden;
     this.pipeline = pipeline;
     this.accessibilityFocusMonitor = accessibilityFocusMonitor;
+    if (accessibilityService instanceof TalkBackService talkBack) {
+      touchHold.setToucher(
+          new KeyTouchHold.FocusToucher(
+              talkBack,
+              () ->
+                  accessibilityFocusMonitor.getAccessibilityFocus(
+                      /* useInputFocusIfEmpty= */ false)));
+    }
     keyComboMapper =
         new KeyComboMapper(
             accessibilityService,
@@ -472,6 +497,7 @@ public class KeyComboManager
     }
     browseModeTurnedOffByUser = false;
     keyPractice.reset();
+    touchHold.reset();
     if (browseModeEnabled) {
       browseModeEnabled = false;
       // Record a Browse Mode log if Browse Mode is on when TalkBack is being turned off.
@@ -504,9 +530,10 @@ public class KeyComboManager
     editingShortcutKeys.clear();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
-    // Keyboard practice ends when SandFly is suspended or stops.
+    // Keyboard practice ends, and a touch held lifts, when SandFly is suspended or stops.
     if (newState != SERVICE_STATE_ACTIVE) {
       keyPractice.reset();
+      touchHold.reset();
     }
     serviceState = newState;
   }
@@ -519,6 +546,16 @@ public class KeyComboManager
    */
   @Override
   public boolean onKeyEvent(KeyEvent event, EventId eventId) {
+    @Nullable KeyEvent outer = handlingKeyEvent;
+    handlingKeyEvent = event;
+    try {
+      return handleKeyEvent(event, eventId);
+    } finally {
+      handlingKeyEvent = outer;
+    }
+  }
+
+  private boolean handleKeyEvent(KeyEvent event, EventId eventId) {
     trackSandFlyKey(event);
     // A key pressed while SandFly keyboard input was off is released where it was pressed, even
     // after keyboard input is turned on again, so that the app doesn't see a key held forever.
@@ -540,6 +577,11 @@ public class KeyComboManager
       if (practiceWasOn && !keyPractice.isOn()) {
         keyPresses.clear();
       }
+      return true;
+    }
+
+    // While a touch is held: the repeats of the key holding it, and Back or Escape, which lift it.
+    if (touchHold.onKeyEvent(event, modifiersOf(event))) {
       return true;
     }
 
@@ -1142,6 +1184,36 @@ public class KeyComboManager
     if (!keyPractice.isOn()) {
       keyPresses.clear();
     }
+  }
+
+  /**
+   * Runs Hold a touch on the focused item: lifts the touch held, or holds a touch on the item with
+   * SandFly focus, while the keys that ran it are down, or latched when they are released at once
+   * or it didn't run from keys.
+   */
+  public void toggleTouchHold() {
+    touchHold.toggle(handlingKeyEvent);
+  }
+
+  /** Returns whether Hold a touch on the focused item holds a touch now. */
+  public boolean isTouchHeld() {
+    return touchHold.isHeld();
+  }
+
+  /** Returns whether the touch held is latched, so that it stays down without keys. */
+  public boolean isTouchHoldLatched() {
+    return touchHold.isLatched();
+  }
+
+  private void speakForTouchHold(String text) {
+    if (touchHoldSpeech != null) {
+      touchHoldSpeech.accept(text);
+      return;
+    }
+    if (pipeline == null) {
+      return;
+    }
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, KEY_PRACTICE_SPEAK_OPTIONS));
   }
 
   private void speakForKeyPractice(String text) {
@@ -2467,6 +2539,16 @@ public class KeyComboManager
   @VisibleForTesting
   public void testing_setKeyPracticeSpeech(@Nullable Consumer<String> speech) {
     keyPracticeSpeech = speech;
+  }
+
+  @VisibleForTesting
+  public void testing_setTouchHoldSpeech(@Nullable Consumer<String> speech) {
+    touchHoldSpeech = speech;
+  }
+
+  @VisibleForTesting
+  public void testing_setTouchHoldToucher(KeyTouchHold.Toucher toucher) {
+    touchHold.setToucher(toucher);
   }
 
   @VisibleForTesting

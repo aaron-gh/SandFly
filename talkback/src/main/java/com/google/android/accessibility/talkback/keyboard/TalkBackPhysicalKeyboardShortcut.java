@@ -741,7 +741,11 @@ public enum TalkBackPhysicalKeyboardShortcut {
   TOGGLE_KEY_PRACTICE(
       /* KEYBOARD_SHORTCUT_TOGGLE_KEY_PRACTICE */ 1037,
       R.string.keycombo_shortcut_toggle_key_practice,
-      R.string.keycombo_menu_toggle_key_practice);
+      R.string.keycombo_menu_toggle_key_practice),
+  TOUCH_HOLD_FOCUS(
+      /* KEYBOARD_SHORTCUT_TOUCH_HOLD_FOCUS */ 1038,
+      R.string.keycombo_shortcut_touch_hold_focus,
+      R.string.keycombo_menu_touch_hold_focus);
 
   private static Map<String, TalkBackPhysicalKeyboardShortcut> keyShortcutMap;
   private static Map<Integer, TalkBackPhysicalKeyboardShortcut> ordinalShortcutMap;

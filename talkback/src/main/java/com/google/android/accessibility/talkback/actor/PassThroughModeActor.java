@@ -140,24 +140,30 @@ public class PassThroughModeActor {
   }
 
   /**
-   * Sets whether touch is locked. While it is, no touch passes through to apps; the region set
-   * last applies again when it unlocks.
+   * Sets whether touch is locked. While it is, no touch passes through to apps, except while a
+   * feature holds the pass-through lock; the region set last applies again when it unlocks.
    */
   public void setTouchLocked(boolean touchLocked) {
     if (this.touchLocked == touchLocked || !FeatureSupport.supportPassthrough()) {
       return;
     }
     this.touchLocked = touchLocked;
-    service.setTouchExplorationPassthroughRegion(
-        Display.DEFAULT_DISPLAY, touchLocked ? new Region() : wantedRegion);
+    service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, appliedRegion());
   }
 
-  /** Sets the pass-through region, unless touch is locked, when it waits until touch unlocks. */
+  /**
+   * Sets the pass-through region. While touch is locked it waits until touch unlocks, unless a
+   * feature holds the pass-through lock: the touches SandFly sends itself, such as Activate with a
+   * tap and held touches, need it to reach the app, as touch exploration drops locked touches.
+   */
   private void setRegion(int displayId, Region region) {
     wantedRegion = region;
-    if (!touchLocked) {
-      service.setTouchExplorationPassthroughRegion(displayId, region);
-    }
+    service.setTouchExplorationPassthroughRegion(displayId, appliedRegion());
+  }
+
+  /** The region that applies now: none while touch is locked and no feature holds the lock. */
+  private Region appliedRegion() {
+    return touchLocked && !locked ? new Region() : wantedRegion;
   }
 
   public void showEducationDialog() {
@@ -182,8 +188,8 @@ public class PassThroughModeActor {
         setRegion(Display.DEFAULT_DISPLAY, region);
         LogUtils.v(TAG, "Enter touch explore pass-through lock mode.");
       } else {
-        setRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
         locked = false;
+        setRegion(Display.DEFAULT_DISPLAY, directTouchRegion);
         if (touchExplorePassThroughActive) {
           touchExplorePassThroughActive = false;
           LogUtils.v(TAG, "Leave touch explore pass-through lock mode.");
