@@ -105,6 +105,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.annotation.VisibleForTesting;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.utils.TalkBackSharedPreferencesUtils;
 import com.google.android.accessibility.talkback.commands.Commands;
 import com.google.android.accessibility.talkback.compositor.GestureShortcutProvider;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -2952,9 +2953,15 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
   // The preference key of each gesture, which names it in the gestures of each app.
   private volatile Map<Integer, String> gestureIdToKey = new HashMap<>();
 
-  /** Reloads preferences whenever their values change. */
+  /**
+   * Reloads preferences whenever their values change, except keyboard shortcuts: choosing a keymap
+   * saves each of them, and reloading the gestures for each one held the main thread for seconds.
+   */
   private final OnSharedPreferenceChangeListener sharedPreferenceChangeListener =
       (prefs, key) -> {
+        if (TalkBackSharedPreferencesUtils.isKeyComboPreference(key)) {
+          return;
+        }
         loadGestureIdToActionKeyMap();
         if (context.getResources().getString(R.string.pref_gesture_set_key).equals(key)) {
           currentGestureSet =
