@@ -100,11 +100,11 @@ class NotificationEntry(
             ?.filter { it.isNotBlank() }
             ?.joinToString("\n")
             ?.takeIf { it.isNotEmpty() }
+          ?: notification.notification.tickerText?.takeIf { it.isNotBlank() }
+          ?: customText?.invoke(listOf(title, appName))
           ?: extras.nonBlank(Notification.EXTRA_SUB_TEXT)
           ?: extras.nonBlank(Notification.EXTRA_INFO_TEXT)
           ?: extras.nonBlank(Notification.EXTRA_SUMMARY_TEXT)
-          ?: notification.notification.tickerText?.takeIf { it.isNotBlank() }
-          ?: customText?.invoke(listOf(title, appName))
       val timeMillis = timeMillis(notification)
       return NotificationEntry(
         notification,
