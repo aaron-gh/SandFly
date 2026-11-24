@@ -210,7 +210,7 @@ public class AccessibilityFocusMonitor {
       AccessibilityNodeInfoCompat inputFocus = getInputFocus();
       if (inputFocus != null
           && inputFocus.isVisibleToUser()
-          && Role.getRole(inputFocus) == Role.ROLE_EDIT_TEXT) {
+          && (Role.getRole(inputFocus) == Role.ROLE_EDIT_TEXT || inputFocus.isEditable())) {
         LogUtils.d(TAG, "Get the editing node from input focus. node=%s", inputFocus);
         return inputFocus;
       }
@@ -241,7 +241,7 @@ public class AccessibilityFocusMonitor {
     if (node == null) {
       return null;
     }
-    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT || node.isEditable()) {
       return node;
     }
     return getEditingNodeFromFocusedKeyboard(node);
