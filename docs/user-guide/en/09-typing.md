@@ -137,7 +137,7 @@ The **Text editing** group of **Commands** also has:
 - **Spelling / grammar suggestions**: opens the suggestions for the typo at the cursor. The **Proofread** reading control moves between typos.
 - **Dictate**: see [](#typing-dictate).
 - **Switch keyboard**: changes to the next keyboard. Available on Android 11 and later.
-- **Search emoji**, **Choose a symbol** and **Turn editing mode on or off**: commands of the SandFly keyboard. See [](#keyboards).
+- **Search emoji**, **Choose a symbol**, **Turn editing mode on or off** and **Spell the password field**: commands of the SandFly keyboard. See [](#keyboards).
 
 None of these commands has a gesture by default. To give one a gesture, see [](#commands).
 
@@ -287,4 +287,4 @@ While the handwriting keyboard is shown, only commands that open no window run, 
 
 ### Physical keyboards {#typing-physical-keyboard}
 
-While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period** and **Android physical keyboard settings**. These settings are described in [](#keyboards).
+While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters** and **Android physical keyboard settings**. These settings are described in [](#keyboards).

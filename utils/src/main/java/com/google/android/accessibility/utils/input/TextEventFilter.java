@@ -116,6 +116,12 @@ public class TextEventFilter {
    */
   private @Nullable LongPredicate textChangeSuppressor;
 
+  /**
+   * Tells whether the SandFly keyboard says the characters of the password field being edited, so
+   * that a character typed, deleted or moved over there isn't spoken again as a bullet.
+   */
+  private @Nullable BooleanSupplier passwordCharacterSuppressor;
+
   ///////////////////////////////////////////////////////////////////////////////////
   // Member variables
 
@@ -269,6 +275,10 @@ public class TextEventFilter {
             LogUtils.d(TAG, "Drop text change: SandFly spoke the text it typed.");
             return;
           }
+          if (isOneCharacterChange(event) && isPasswordSpokenByKeyboard(event)) {
+            LogUtils.d(TAG, "Drop text change: the SandFly keyboard says the password character.");
+            return;
+          }
         }
         // Text input selection change
       }
@@ -309,6 +319,12 @@ public class TextEventFilter {
               && isCursorMove(textEventInterpreted.getEvent())
               && isTypingSpokenByKeyboard(event.getEventTime())) {
             LogUtils.d(TAG, "Drop cursor move: the keyboard says what it does.");
+            return;
+          }
+          if (textEventInterpreted != null
+              && isOneCharacterMove(textEventInterpreted)
+              && isPasswordSpokenByKeyboard(event)) {
+            LogUtils.d(TAG, "Drop cursor move: the SandFly keyboard says the password character.");
             return;
           }
         }
@@ -401,6 +417,29 @@ public class TextEventFilter {
     };
   }
 
+  /** Whether a text change adds, removes or replaces one character, as one key does. */
+  private static boolean isOneCharacterChange(AccessibilityEvent event) {
+    int added = event.getAddedCount();
+    int removed = event.getRemovedCount();
+    return added <= 1 && removed <= 1 && added + removed > 0;
+  }
+
+  /** Whether a cursor move, with no selection, passed over one character. */
+  private static boolean isOneCharacterMove(TextEventInterpretation interpretation) {
+    if (interpretation.getEvent() != TextEventInterpretation.SELECTION_MOVE_CURSOR_NO_SELECTION) {
+      return false;
+    }
+    @Nullable CharSequence traversed = interpretation.getTraversedText();
+    return traversed != null && traversed.length() == 1;
+  }
+
+  /** Whether [event] is from a password field whose characters the SandFly keyboard says. */
+  private boolean isPasswordSpokenByKeyboard(AccessibilityEvent event) {
+    return event.isPassword()
+        && passwordCharacterSuppressor != null
+        && passwordCharacterSuppressor.getAsBoolean();
+  }
+
   /** Whether a text change at this time was typed on an on-screen keyboard that speaks it. */
   private boolean isTypingSpokenByKeyboard(long textEventTime) {
     return onScreenKeyboardEchoSuppressor != null
@@ -417,6 +456,14 @@ public class TextEventFilter {
   /** Leaves out text changes, removals and replacements included, at times [suppressor] accepts. */
   public void setTextChangeSuppressor(@Nullable LongPredicate suppressor) {
     this.textChangeSuppressor = suppressor;
+  }
+
+  /**
+   * Leaves out one-character text changes and cursor moves in password fields while [suppressor]
+   * is true, as the SandFly keyboard then says those characters itself.
+   */
+  public void setPasswordCharacterSuppressor(@Nullable BooleanSupplier suppressor) {
+    this.passwordCharacterSuppressor = suppressor;
   }
 
   /**

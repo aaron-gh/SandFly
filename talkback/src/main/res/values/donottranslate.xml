@@ -236,6 +236,8 @@
     <string name="pref_sandfly_keyboard_double_press_key" translatable="false">pref_sandfly_keyboard_double_press_screen</string>
     <string name="pref_sandfly_keyboard_double_space_period_key" translatable="false">pref_sandfly_keyboard_double_space_period</string>
     <bool name="pref_sandfly_keyboard_double_space_period_default">false</bool>
+    <string name="pref_speak_password_characters_key" translatable="false">pref_speak_password_characters</string>
+    <bool name="pref_speak_password_characters_default">false</bool>
     <string-array name="pref_sandfly_keyboard_held_keys_values" translatable="false">
         <item>alt</item>
         <item>capital</item>
@@ -2606,6 +2608,7 @@
   <string name="shortcut_value_search_emoji" translatable="false">SEARCH_EMOJI</string>
   <string name="shortcut_value_choose_symbol" translatable="false">CHOOSE_SYMBOL</string>
   <string name="shortcut_value_toggle_editing_mode" translatable="false">TOGGLE_EDITING_MODE</string>
+  <string name="shortcut_value_spell_password_field" translatable="false">SPELL_PASSWORD_FIELD</string>
   <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="shortcut_value_dictate" translatable="false">DICTATE</string>

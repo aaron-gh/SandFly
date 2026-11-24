@@ -1276,11 +1276,20 @@ While a physical keyboard is connected, **Typing** > **Physical keyboard** has:
 
 - **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, letter keys press the buttons of the lock screen PIN pad, the call keypad and calculators. On by default, shown only for such keyboards.
 - **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter type a new line. Off by default.
-- **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period** and **Android physical keyboard settings**.
+- **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters** and **Android physical keyboard settings**.
 
 ### SandFly keyboard
 
 The SandFly keyboard is an input method for physical keyboards that shows no keys on the screen. Keys type as they do without it. It adds exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places; held keys that type the Alt character or the capital letter of the key, set with **Typing** > **Physical keyboard** > **Held keys type**; **Search emoji** and **Choose a symbol**, which list characters by name while you type; double presses, set in **Typing** > **Physical keyboard** > **Double-press characters**, such as G pressed twice for ğ, and with **Double space types a period** on, a period for Space pressed twice after a word; and **Turn editing mode on or off**, in which single keys move the cursor and select, copy, cut and paste. To turn it on, go to **Typing** > **Physical keyboard** > **SandFly keyboard**. Not on watches and TVs.
+
+### Password characters
+
+TalkBack's **Speak passwords** setting was removed, and Android gives screen readers only bullets for password text. The SandFly keyboard reads the text of the field it types into, so SandFly can say the characters of password fields:
+
+- **Typing** > **Physical keyboard** > **Speak password characters**, off by default: in a password field being edited with the SandFly keyboard, each character typed, such as "capital P", "at" or "1", each character deleted with Backspace or Delete, such as "a deleted", and the character the cursor passes over, named as in other text fields. Pasted text, a cleared field and longer moves are spoken with bullets as before.
+- **Spell the password field**, in the **Text editing** category: spells the whole password field being edited with the position of each character, such as "1 capital P, 2 a, 3 at", whether or not the setting is on. Outside a password field it says "Not a password field". Its default shortcut is SandFly key + Y in the keyboard phone keymaps.
+
+The characters are kept out of the speech history, **Repeat last spoken phrase** and **Copy last spoken phrase**, and only their number is logged. In editing mode, R and C no longer say the text of a password field.
 
 ## Braille keyboard
 

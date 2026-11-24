@@ -759,6 +759,12 @@ public class GestureController {
       if (!result) {
         SandFlyKeyboardHost.speak(service.getString(R.string.sandfly_keyboard_needed));
       }
+    } else if (action.equals(service.getString(R.string.shortcut_value_spell_password_field))) {
+      // Only the SandFly keyboard has the text of a password field.
+      result = SandFlyKeyboardHost.spellPasswordField();
+      if (!result) {
+        SandFlyKeyboardHost.speak(service.getString(R.string.sandfly_keyboard_needed));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {
       result = pullToRefresh.refresh(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_media_control))) {
