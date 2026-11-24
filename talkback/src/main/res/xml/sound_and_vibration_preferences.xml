@@ -17,6 +17,15 @@
         android:key="pref_sound_themes"
         android:title="@string/title_pref_sound_themes"
         android:summary="@string/summary_pref_sound_themes" />
+    <!-- Values match ActionsAvailable. -->
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="focus"
+        android:dialogTitle="@string/title_pref_actions_available_sound"
+        android:entries="@array/pref_actions_available_sound_entries"
+        android:entryValues="@array/pref_actions_available_sound_values"
+        android:key="pref_actions_available_sound_timing"
+        android:summary="%s"
+        android:title="@string/title_pref_actions_available_sound" />
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="pref_sounds_category_vibration"

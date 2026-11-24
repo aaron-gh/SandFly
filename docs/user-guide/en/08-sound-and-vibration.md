@@ -11,6 +11,7 @@ The **Sounds** group of **Sound and vibration** has these settings:
 - **Sound feedback**: plays the SandFly sounds. On by default. With it off, vibrations still play.
 - **Sound feedback volume**: the volume of the sounds, from 5 to 100 percent in steps of 5. The default is 50 percent.
 - **Sound themes**: opens the installed sound themes, control sounds and 3D audio. See [](#sound-themes).
+- **Actions available sound**: when the **Actions available** sound plays: **When the item gets focus**, the default, or **After the item is spoken**. See [](#sound-actions-available).
 
 The **Turn sound feedback (earcons) on or off** keyboard shortcut turns **Sound feedback** on or off. See [](#appendix-keyboard-shortcuts).
 
@@ -41,6 +42,7 @@ The sounds, by the names shown in **Individual sounds and vibrations** and in th
 | --- | --- |
 | **Focus on an item** | Focus moves to an item. |
 | **Focus on an actionable item** | Focus moves to an item that you can activate. |
+| **Actions available** | Focus moves to an item with actions of its app, such as Reply on a chat message. No sound until you choose one. See [](#sound-actions-available). |
 | **Touching an empty area** | Your finger touches a part of the screen with no item. |
 | **Click** | An item is activated. |
 | **Long press** | An item is touched and held. |
@@ -75,6 +77,19 @@ SandFly plays no sound when a gesture starts or ends. These sounds give feedback
 - **Next reading control** and **Previous reading control** play when you select another reading control with a gesture, the circle menu, a keyboard shortcut or the braille keyboard.
 - The edge gesture sounds play when a finger touches an edge where an edge gesture starts (**Edge gesture bottom**, a low tick), when the gesture reaches its first stage (**Edge gesture middle**), and when it reaches its second stage (**Edge gesture top**). Sliding back plays the sound of the stage the finger returns to. Lifting the finger plays nothing. For edge gestures, see [](#gestures).
 - **Column wrap** plays when a swipe forward moves focus to an item on a row below the focused item, and **Column wrap back** when a swipe back moves focus to an item on a row above. Each list item is a row of its own. Items side by side, such as icons on a home screen or cells of a table, share a row. The sound plays with the focus sound, and its vibration replaces the focus vibration. It doesn't play when focus moves to another window.
+
+#### Actions available sound {#sound-actions-available}
+
+The **Actions available** sound plays for an item with actions of its app beyond the standard ones, such as Reply and Forward on a chat message in a messaging app. Activating, long pressing, scrolling, expanding and other standard actions don't count, so an ordinary button plays no **Actions available** sound. Keys of on-screen keyboards don't count either. The actions are in the **Actions** reading control and in the SandFly menu.
+
+SandFly has no sound or vibration of its own for **Actions available**. To use it, choose a sound file for it in the sound list of the theme in use (see [](#sound-themes-replace)), or use a sound theme that has one.
+
+**Sound and vibration** > **Actions available sound** sets when it plays:
+
+- **When the item gets focus**: after the focus sound. A vibration that the theme gives it plays in place of the focus vibration.
+- **After the item is spoken**: once the description of the item has been spoken to the end. If you move on before then, it doesn't play.
+
+To have SandFly say "Actions available" after such items, see [](#verbosity-items).
 
 #### Ticks while scrolling {#sound-scroll-ticks}
 
@@ -141,7 +156,7 @@ You can replace any sound of the theme in use with a sound file. To replace soun
    - **No sound**: plays no sound for the event.
    - **Use SandFly's sound**: goes back to the built-in sound.
 
-The summary of each sound shows **SandFly's sound**, **Theme sound** or **No sound**. The same actions are in the actions menu of each sound, as **Preview**, **Set to no sound**, **Use SandFly's sound** and **Choose a sound file**. **Use SandFly's sounds for all** removes every sound of the theme and uses the built-in sounds.
+The summary of each sound shows **SandFly's sound**, **Theme sound** or **No sound**. **Actions available** has no built-in sound, so it shows **No sound** until you choose a sound file for it, and has no **Use SandFly's sound**. The same actions are in the actions menu of each sound, as **Preview**, **Set to no sound**, **Use SandFly's sound** and **Choose a sound file**. **Use SandFly's sounds for all** removes every sound of the theme and uses the built-in sounds.
 
 The sound list also has sounds that **Individual sounds and vibrations** doesn't: **Volume change**, which plays for each volume step when **Volume change feedback** is set to a tone (see [](#buttons)), and the braille keyboard typing sounds, which play with **Typing sounds** on in the braille keyboard settings (see [](#braille)).
 

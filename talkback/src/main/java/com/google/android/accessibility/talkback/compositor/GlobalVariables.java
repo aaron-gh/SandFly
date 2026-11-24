@@ -189,6 +189,8 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
 
   // Defaults to true to speak usage hint.
   private boolean usageHintEnabled = true;
+  private boolean speakActionsAvailable = false;
+  private boolean actionsSoundAfterSpeech = false;
   // It's enabled when [Say capital] is configured.
   private boolean sayCapital = false;
   // How capital letters are told apart, one of SpeechControllerImpl's CAPITAL_LETTERS_TYPE values.
@@ -502,6 +504,27 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
   /** Sets if TalkBack usage hint is enabled. */
   public void setUsageHintEnabled(boolean enabled) {
     usageHintEnabled = enabled;
+  }
+
+  /** Returns whether "Actions available" is spoken after items with actions of their app. */
+  public boolean getSpeakActionsAvailable() {
+    return speakActionsAvailable;
+  }
+
+  public void setSpeakActionsAvailable(boolean speak) {
+    speakActionsAvailable = speak;
+  }
+
+  /**
+   * Returns whether the Actions available sound plays once the item has been spoken, rather than
+   * when the item gets focus.
+   */
+  public boolean isActionsSoundAfterSpeech() {
+    return actionsSoundAfterSpeech;
+  }
+
+  public void setActionsSoundAfterSpeech(boolean afterSpeech) {
+    actionsSoundAfterSpeech = afterSpeech;
   }
 
   /**
@@ -1268,6 +1291,8 @@ public class GlobalVariables extends TimedFlags implements ParseTree.VariableDel
             .append(String.format("dndEnabled=%s, ", isDndEnabled()))
             .append(String.format("speakNotifications=%s, ", getSpeakNotifications()))
             .append(String.format("usageHintEnabled=%s, ", getUsageHintEnabled()))
+            .append(String.format("speakActionsAvailable=%s, ", getSpeakActionsAvailable()))
+            .append(String.format("actionsSoundAfterSpeech=%s, ", isActionsSoundAfterSpeech()))
             .append(
                 String.format(
                     "enableMediaControlHintForCall=%s, ", getEnableMediaControlHintForCall()))

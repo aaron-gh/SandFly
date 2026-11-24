@@ -769,6 +769,15 @@ TalkBack has **Choose a preset**, with **High**, **Low** and **Custom** verbosit
 
 With **Verbosity** > **Speak item type without a pause** on, SandFly joins the name and the type of an item with a space instead of a pause. It's off by default.
 
+### Actions available
+
+TalkBack says that an item has actions only in its usage hint. SandFly also has:
+
+- **Verbosity** > **Speak Actions available**: says "Actions available" after an item with actions of its app, with usage hints on or off. With usage hints on, the hint then leaves out the actions. Off by default.
+- The **Actions available** sound, which a sound theme or a sound file of your own gives it; SandFly has none of its own. **Sound and vibration** > **Actions available sound** plays it **When the item gets focus**, after the focus sound, or **After the item is spoken**. It has a switch in **Individual sounds and vibrations**, and a theme can give it a vibration.
+
+Both are for items with custom actions of their app, such as Reply and Forward on a chat message. Android's actions, such as activating, long pressing, scrolling and expanding, don't count, so an ordinary button has neither. Keys of on-screen keyboards don't count either.
+
 ### Order of item details
 
 **Verbosity** > **Order of item details** sets the order in which SandFly speaks the name, type and state of an item. TalkBack has this setting in **Advanced settings**, as **Element description order**, with three orders to choose from. SandFly lists **State**, **Name** and **Type**, and you put them in any of the six orders: touch and hold a detail and drag it up or down, or use its **Move up** and **Move down** actions. With SandFly on, double-tap and hold a detail, then drag it. SandFly announces the position of the detail as you pick it up, move it and drop it. The default is **State, name, type**, as in TalkBack.

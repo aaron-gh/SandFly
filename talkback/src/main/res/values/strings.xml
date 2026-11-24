@@ -915,6 +915,8 @@
     <string name="pref_speak_roles_title">Speak item type</string>
     <!-- Switch: the item's name and type, such as Back button, are spoken without a comma between them. [CHAR_LIMIT=NONE] -->
     <string name="pref_speak_role_without_pause_title">Speak item type without a pause</string>
+    <!-- Switch: "Actions available" is spoken after an item with actions of its app, such as Reply on a chat message. Keep "Actions available" as in value_actions_available. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_speak_actions_available">Speak Actions available</string>
     <!--
       Source: Summary subtext for preference to speak roles of elements.
       Description: Explains that TalkBack will speak the element type of a focused item. [CHAR LIMIT=NONE]
@@ -1876,6 +1878,12 @@
         <item>@string/vibration_type_pulses</item>
         <item>@string/vibration_type_on_off</item>
     </string-array>
+    <!-- List setting: when the Actions available sound plays for an item with actions of its app. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_actions_available_sound">Actions available sound</string>
+    <!-- Actions available sound: plays with the focus sound. [CHAR_LIMIT=NONE] -->
+    <string name="value_actions_available_sound_focus">When the item gets focus</string>
+    <!-- Actions available sound: plays once the item's speech ends. [CHAR_LIMIT=NONE] -->
+    <string name="value_actions_available_sound_after_speech">After the item is spoken</string>
     <!--
       Source: Preference for whether to provide sound feedback in response to system events.
       Description: The user can check or not check this. [CHAR LIMIT=25]

@@ -168,6 +168,7 @@ import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeIm
 import com.google.android.accessibility.talkback.braille.TalkBackForBrailleImeImpl.TalkBackPrivateMethodProvider;
 import com.google.android.accessibility.talkback.commands.RemovedCommands;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
+import com.google.android.accessibility.talkback.compositor.ActionsAvailable;
 import com.google.android.accessibility.talkback.compositor.ClickFeedback;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
@@ -5128,6 +5129,10 @@ public class TalkBackService extends AccessibilityServiceCompat
               res.getString(R.string.pref_a11y_hints_key),
               res.getBoolean(R.bool.pref_a11y_hints_default));
       globalVariables.setUsageHintEnabled(speakUsageHints);
+
+      // Update preferences: Speak Actions available, and when the Actions available sound plays.
+      globalVariables.setSpeakActionsAvailable(ActionsAvailable.isSpoken(prefs));
+      globalVariables.setActionsSoundAfterSpeech(ActionsAvailable.isSoundAfterSpeech(prefs));
 
       // Update preference: speak phonetic letters.
       globalVariables.setPhoneticLetterModes(

@@ -569,15 +569,20 @@ public class Compositor {
     // Compose earcons.
     SpeakOptions speakOptions = null;
     int earcon = eventFeedback.earcon();
+    int actionsEarcon = eventFeedback.actionsEarcon();
+    boolean actionsAfterSpeech = actionsEarcon != -1 && eventFeedback.actionsEarconAfterSpeech();
     if (earcon != -1) {
       if (speakOptions == null) {
         speakOptions = SpeakOptions.create();
       }
-      // In order: the second earcon's vibration is the one felt.
+      // In order: the vibration of the last earcon that has one is the one felt.
       Set<Integer> earcons = new LinkedHashSet<>();
       earcons.add(earcon);
       if (eventFeedback.secondEarcon() != -1) {
         earcons.add(eventFeedback.secondEarcon());
+      }
+      if (actionsEarcon != -1 && !actionsAfterSpeech) {
+        earcons.add(actionsEarcon);
       }
       speakOptions.setEarcons(earcons);
 
@@ -656,6 +661,10 @@ public class Compositor {
       Bundle speechParams = new Bundle();
       speechParams.putFloat(SpeechParam.PITCH, (float) speechPitch);
 
+      if (actionsAfterSpeech) {
+        runnable = thenEarcon(runnable, actionsEarcon, eventFeedback, eventId);
+      }
+
       // Output feedback: speech, haptics, earcons.
       if (speakOptions == null) {
         speakOptions = SpeakOptions.create();
@@ -672,6 +681,10 @@ public class Compositor {
         speak(ttsOutput, eventId, speakOptions);
       }
     } else {
+      // With nothing to speak, the Actions available sound plays with the other earcons.
+      if (actionsAfterSpeech && speakOptions != null && speakOptions.mEarcons != null) {
+        speakOptions.mEarcons.add(actionsEarcon);
+      }
       if (speakOptions != null) {
         speakOptions.mFlags |= FeedbackItem.FLAG_NO_SPEECH;
         // TODO: Return feedback as output when feedback-mappers are separated from
@@ -857,6 +870,40 @@ public class Compositor {
       onCompleteRunnable = runnableArg;
       return this;
     }
+  }
+
+  /**
+   * Returns {@code completed} followed by {@code earcon}, which plays once the speech has been
+   * spoken to the end, from where the event's earcons come from.
+   */
+  private UtteranceCompleteRunnable thenEarcon(
+      @Nullable UtteranceCompleteRunnable completed,
+      int earcon,
+      EventFeedback eventFeedback,
+      @Nullable EventId eventId) {
+    float earconX = (float) eventFeedback.earconX();
+    float earconY = (float) eventFeedback.earconY();
+    return status -> {
+      if (completed != null) {
+        completed.run(status);
+      }
+      if (status != SpeechController.STATUS_SPOKEN) {
+        return;
+      }
+      SpeakOptions options = SpeakOptions.create();
+      Set<Integer> earcons = new LinkedHashSet<>();
+      earcons.add(earcon);
+      options.setEarcons(earcons);
+      if (earconX >= 0 && earconY >= 0) {
+        Bundle nonSpeechParams = new Bundle();
+        nonSpeechParams.putFloat(Utterance.KEY_METADATA_EARCON_X, earconX);
+        nonSpeechParams.putFloat(Utterance.KEY_METADATA_EARCON_Y, earconY);
+        options.setNonSpeechParams(nonSpeechParams);
+      }
+      // Played at once, leaving the speech queue as it is.
+      options.mFlags |= FeedbackItem.FLAG_NO_SPEECH;
+      speak("", eventId, options);
+    };
   }
 
   private void speak(CharSequence ttsOutput, @Nullable EventId eventId, SpeakOptions speakOptions) {
