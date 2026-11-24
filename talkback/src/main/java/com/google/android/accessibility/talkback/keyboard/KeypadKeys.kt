@@ -121,6 +121,15 @@ class KeypadKeys(private val service: AccessibilityService) {
         (isDigitKey(keyCode) && !isKeyguardLocked()) ||
         !isOn(service)
     ) {
+      if (event.repeatCount == 0 && isKeyguardLocked()) {
+        LogUtils.e(
+          TAG,
+          "Lock screen key %s left alone: modifiers %s, setting on %s",
+          KeyEvent.keyCodeToString(keyCode),
+          !event.hasNoModifiers(),
+          isOn(service),
+        )
+      }
       return false
     }
     val taken =
@@ -156,6 +165,21 @@ class KeypadKeys(private val service: AccessibilityService) {
     val keyguard = service.getSystemService(KeyguardManager::class.java)
     if (keyguard != null && keyguard.isKeyguardLocked) {
       val onLockScreen = pressOnLockScreen(event, keyguard)
+      // Logged at error level so that it shows in the published builds, which log only errors: a
+      // key on the lock screen that types nothing is otherwise impossible to trace. No digits.
+      LogUtils.e(
+        TAG,
+        "Lock screen key %s: %s; window in front %s, PIN pad %s, digits waiting %d",
+        KeyEvent.keyCodeToString(event.keyCode),
+        when (onLockScreen) {
+          true -> "taken"
+          false -> "left to the lock screen"
+          null -> "no lock screen window in front"
+        },
+        service.rootInActiveWindow?.packageName,
+        lockScreenRoots().let { it.isNotEmpty() && hasPinPad(it) },
+        pendingDigits.length,
+      )
       if (onLockScreen != null) {
         return onLockScreen
       }
