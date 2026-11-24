@@ -31,6 +31,7 @@ import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.AppGestures
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneInCallService
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -112,7 +113,23 @@ class KeypadKeys(private val service: AccessibilityService) {
       // Repeats of a taken key.
       return true
     }
-    if (event.repeatCount > 0 || !event.hasNoModifiers() || isDigitKey(keyCode) || !isOn(service)) {
+    // Digit keys type for themselves, except on the lock screen, where one before the PIN pad shows
+    // opens it, as a letter does.
+    if (
+      event.repeatCount > 0 ||
+        !event.hasNoModifiers() ||
+        (isDigitKey(keyCode) && !isKeyguardLocked()) ||
+        !isOn(service)
+    ) {
+      if (event.repeatCount == 0 && isKeyguardLocked()) {
+        LogUtils.e(
+          TAG,
+          "Lock screen key %s left alone: modifiers %s, setting on %s",
+          KeyEvent.keyCodeToString(keyCode),
+          !event.hasNoModifiers(),
+          isOn(service),
+        )
+      }
       return false
     }
     val taken =
@@ -128,6 +145,9 @@ class KeypadKeys(private val service: AccessibilityService) {
     }
     return taken
   }
+
+  private fun isKeyguardLocked(): Boolean =
+    service.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true
 
   /** Clears what is waiting: keys held and digits for a PIN pad that is opening. */
   fun reset() {
@@ -145,6 +165,21 @@ class KeypadKeys(private val service: AccessibilityService) {
     val keyguard = service.getSystemService(KeyguardManager::class.java)
     if (keyguard != null && keyguard.isKeyguardLocked) {
       val onLockScreen = pressOnLockScreen(event, keyguard)
+      // Logged at error level so that it shows in the published builds, which log only errors: a
+      // key on the lock screen that types nothing is otherwise impossible to trace. No digits.
+      LogUtils.e(
+        TAG,
+        "Lock screen key %s: %s; window in front %s, PIN pad %s, digits waiting %d",
+        KeyEvent.keyCodeToString(event.keyCode),
+        when (onLockScreen) {
+          true -> "taken"
+          false -> "left to the lock screen"
+          null -> "no lock screen window in front"
+        },
+        service.rootInActiveWindow?.packageName,
+        lockScreenRoots().let { it.isNotEmpty() && hasPinPad(it) },
+        pendingDigits.length,
+      )
       if (onLockScreen != null) {
         return onLockScreen
       }
@@ -247,7 +282,17 @@ class KeypadKeys(private val service: AccessibilityService) {
       GestureDescription.Builder()
         .addStroke(GestureDescription.StrokeDescription(path, 0, SWIPE_MS))
         .build()
-    return service.dispatchGesture(gesture, null, null)
+    // Where SandFly recognizes gestures itself, a plain dispatched swipe goes through its gesture
+    // detection, which takes it as a SandFly gesture, and touch lock drops it; as SandFly's own
+    // touch it goes to the lock screen as it is.
+    val sent =
+      if (SyntheticTouches.isAvailable()) {
+        SyntheticTouches.dispatch(service, gesture, SWIPE_MS)
+      } else {
+        service.dispatchGesture(gesture, null, null)
+      }
+    LogUtils.e(TAG, "PIN pad swipe sent: %s, as SandFly's own touch: %s", sent, SyntheticTouches.isAvailable())
+    return sent
   }
 
   private fun isInCall(): Boolean =
