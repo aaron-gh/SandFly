@@ -504,6 +504,7 @@ object Commands {
           Key.PERFORM_LONG_CLICK,
         )
         gesture(R.string.shortcut_value_touch_click_action, R.string.shortcut_touch_click_action)
+        keyboard(Key.TOUCH_HOLD_FOCUS, available = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
         for (kind in ButtonCommands.Kind.entries) {
           gesture(kind.valueRes, kind.labelRes)
         }

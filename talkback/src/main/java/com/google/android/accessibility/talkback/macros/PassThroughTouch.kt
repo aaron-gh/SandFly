@@ -37,8 +37,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 /**
  * Touches dispatched to the app as a finger's would be, with touch passed through to the app over
  * the whole screen while they run: a dispatched gesture otherwise goes through touch exploration,
- * which takes it as a touch of its own. Used by macro touches, touch-and-hold rules and Activate
- * with a tap. Called on the main thread.
+ * which takes it as a touch of its own. Used by macro touches, touch-and-hold rules, Activate
+ * with a tap and Hold a touch on the focused item. Called on the main thread.
  *
  * Touches running at the same time share the pass-through lock, which is released when the last of
  * them ends. A lock held by another feature, such as the braille keyboard, is left alone and no
@@ -49,6 +49,9 @@ object PassThroughTouch {
 
   /** How long Android takes to apply the pass-through region. */
   private const val PASS_THROUGH_WAIT_MS = 350L
+
+  /** The length of each part of a touch held by [hold]. */
+  const val HOLD_STEP_MS = 250L
 
   private val main = Handler(Looper.getMainLooper())
 
@@ -119,11 +122,45 @@ object PassThroughTouch {
     done: (Boolean) -> Unit,
   ): Boolean {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R || isLockedElsewhere(service)) return false
-    val pipeline = service.feedbackReturner ?: return false
+    if (service.feedbackReturner == null) return false
     if (segments.isEmpty()) {
       done(true)
       return true
     }
+    return performParts(service, segments::getOrNull, stopped, done)
+  }
+
+  /**
+   * Touches [point] and holds the touch down until [stopped] turns true, then lifts it and calls
+   * [done]. The touch is dispatched in parts of [HOLD_STEP_MS], so it lifts at most that long after
+   * [stopped] turns true. Returns false, without calling [done], when the touch can't start, as
+   * [perform] does.
+   */
+  internal fun hold(
+    service: TalkBackService,
+    point: PointF,
+    stopped: () -> Boolean,
+    done: (Boolean) -> Unit,
+  ): Boolean {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R || isLockedElsewhere(service)) return false
+    if (service.feedbackReturner == null) return false
+    val part = TouchSegment(point.x, point.y, point.x, point.y, HOLD_STEP_MS, true)
+    return performParts(service, { part }, stopped, done)
+  }
+
+  /**
+   * Performs the touch whose parts [part] gives by index, each dispatched when the one before ends,
+   * until a part doesn't continue, [part] gives null or [stopped] turns true; then lifts the touch
+   * where it is and calls [done]. Needs Android 11 and the pipeline, which the callers check.
+   */
+  private fun performParts(
+    service: TalkBackService,
+    part: (Int) -> TouchSegment?,
+    stopped: () -> Boolean,
+    done: (Boolean) -> Unit,
+  ): Boolean {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return false
+    val pipeline = service.feedbackReturner ?: return false
     if (holds == 0) {
       val size = ScreenUtils.getRealScreenSize(service)
       pipeline.returnFeedback(
@@ -152,7 +189,8 @@ object PassThroughTouch {
       val last = previousSegment
       val segment =
         when {
-          !stop -> segments[i]
+          // No part left: the touch lifts where it is.
+          !stop -> part(i) ?: last?.lift()
           // Stopped before the touch went down.
           last == null -> null
           else -> last.lift()
