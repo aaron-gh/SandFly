@@ -817,7 +817,7 @@ Some apps and keyboards have their own text-to-speech output, such as an assista
 
 By default, SandFly speaks "Screen off" and the ringer mode when the screen turns off, the time and the number of notifications when it turns on, and "Device unlocked" when you unlock the phone. The number of notifications, as in "6 notifications", needs notification access and counts notifications that aren't ongoing. On a flip phone, waking the cover screen counts as the screen turning on. With face or fingerprint unlock, the phone is unlocked right after the screen turns on; items that the screen-on announcement spoke less than 5 seconds before aren't spoken again on unlock.
 
-These items are separate from **Status readout**, so that **Speak status** can read other things. During calls, SandFly speaks only "Screen off". The lock screen doesn't cut off the screen-off announcement.
+These items are separate from **Status readout**, so that **Speak status** can read other things. During calls, SandFly speaks only "Screen off". The lock screen doesn't cut off the screen-off announcement. Media playback silences the screen-off and unlock announcements unless **Speak during media playback** is on; it's off by default. The screen-on announcement is always spoken during media playback.
 
 ### Battery, call and time announcements
 

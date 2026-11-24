@@ -113,6 +113,8 @@ The **Announcements** group sets what SandFly says when something changes:
 - **Ringer and Do Not Disturb**: only when the ringer is not set to ring, or Do Not Disturb is on. Off by default.
 - **Airplane mode**: only when airplane mode is on. Off by default.
 
+**Speak during media playback**, above the groups, speaks the screen-off and unlock announcements while media plays. Off by default. The screen-on announcement is always spoken during media playback.
+
 #### Status readout {#verbosity-status-readout}
 
 **Verbosity** > **Status readout** lists the items that the **Speak status** command says, in order: **Time**, **Battery**, **Wi-Fi**, **Mobile network**, **Ringer and Do Not Disturb**, **Airplane mode** and **Hidden screen**. All are on by default. Items in their usual state, such as the ringer when it rings, are left out.
