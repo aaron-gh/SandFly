@@ -182,8 +182,12 @@ class KeypadKeys(private val service: AccessibilityService) {
     if (roots.isEmpty()) {
       return null
     }
-    // A password field gets the letters.
-    if (roots.any { it.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.isEditable == true }) {
+    // A password field gets the letters. A PIN pad's own entry can be an editable field with input
+    // focus too, as on the Zinwa Q25, so the field is the password's only where no PIN pad shows.
+    if (
+      roots.any { it.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.isEditable == true } &&
+        !hasPinPad(roots)
+    ) {
       return false
     }
     val keyCode = event.keyCode
@@ -212,6 +216,10 @@ class KeypadKeys(private val service: AccessibilityService) {
     handler.postDelayed(typePendingDigits, PENDING_CHECK_MS)
     return true
   }
+
+  /** Whether the lock screen shows its PIN pad: its button for 1 is on screen. */
+  private fun hasPinPad(roots: List<AccessibilityNodeInfo>): Boolean =
+    findById(roots, SYSTEM_UI, buttonIds('1', Screen.LOCK_SCREEN).first()) != null
 
   /** The roots of the lock screen's windows in front. */
   private fun lockScreenRoots(): List<AccessibilityNodeInfo> {
