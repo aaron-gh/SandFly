@@ -1813,6 +1813,9 @@ public class TalkBackService extends AccessibilityServiceCompat
   @Override
   protected final boolean onKeyEvent(KeyEvent keyEvent) {
     boolean result = onKeyEventInternal(keyEvent);
+    if (result && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+      SandFlyKeyboardHost.onKeyTaken();
+    }
     if (VolumeKeyPresses.isVolumeKey(keyEvent.getKeyCode())) {
       VolumeKeyLog.onKeyEvent(
           keyEvent,
