@@ -1,8 +1,15 @@
 ## Brajl {#braille}
 
-Możesz pisać sześcioma lub ośmioma punktami na ekranie, wywoływać polecenia komórkami brajlowskimi albo używać monitora przez Bluetooth, USB lub inną aplikację. Otwórz **Brajl** w ustawieniach. Znajdziesz tam [monitor](#braille-displays), [klawiaturę](#braille-keyboard), [polecenia](#braille-commands) i [słowniki](#braille-dictionaries). Klawiatura jest niedostępna, jeśli ekran nie rejestruje przynajmniej pięciu palców naraz.
+Na klawiaturze ekranowej SandFly możesz pisać brajlem sześcio- i ośmiopunktowym. Komórkami brajlowskimi możesz też wywoływać polecenia. SandFly obsługuje monitory brajlowskie podłączone przez Bluetooth lub USB oraz monitory udostępniane przez inne aplikacje.
 
-Odczyt podczas pisania ustawisz w [**Pisanie** > **Echo klawiatury**](#typing).
+Otwórz **Brajl** w ustawieniach SandFly. Znajdziesz tam następujące pozycje.
+
+- **Monitor brajlowski**. Zobacz [](#braille-displays).
+- **Klawiatura brajlowska**. Zobacz [](#braille-keyboard). Jeśli ekran nie rejestruje przynajmniej pięciu palców naraz, ta pozycja jest niedostępna i ma opis „Klawiatura brajlowska nieobsługiwana”.
+- **Polecenia brajlowskie**. Zobacz [](#braille-commands).
+- **Słownik brajlowski** i **Słownik symboli**. Zobacz [](#braille-dictionaries).
+
+To, co SandFly odczytuje podczas pisania na klawiaturze brajlowskiej lub monitorze, ustawisz w **Pisanie** > **Echo klawiatury**. Zobacz [](#typing).
 
 ### Klawiatura brajlowska {#braille-keyboard}
 
@@ -11,12 +18,15 @@ Odczyt podczas pisania ustawisz w [**Pisanie** > **Echo klawiatury**](#typing).
 #### Włącz klawiaturę brajlowską {#braille-keyboard-set-up}
 
 1. Otwórz **Brajl** > **Klawiatura brajlowska** > **Skonfiguruj klawiaturę brajlowską**.
-2. Od Androida 13 wybierz **Włącz**. Na starszym Androidzie wybierz **Ustawienia** i włącz **Klawiatura brajlowska SandFly** na liście klawiatur systemu.
-3. Otwórz pole tekstowe. Użyj przycisku zmiany klawiatury, zazwyczaj u dołu po prawej, i wybierz **Klawiatura brajlowska SandFly**.
+2. Od Androida 13 wybierz **Włącz**. Na starszym Androidzie wybierz **Ustawienia**, a na liście klawiatur systemowych włącz pozycję **Klawiatura brajlowska SandFly**.
+3. Otwórz pole tekstowe.
+4. Użyj przycisku zmiany klawiatury, zazwyczaj u dołu po prawej stronie. Wybierz **Klawiatura brajlowska SandFly**.
 
-Po konfiguracji pierwsza pozycja **Jak używać klawiatury brajlowskiej** przypomina, jak ją wybrać. Od Androida 11 możesz też użyć polecenia **Włącz klawiaturę brajlowską** w kategorii **Brajl**. Domyślnie stuknij dwa razy dwoma palcami i przytrzymaj po drugim stuknięciu. Zobacz [ustawienia poleceń](#commands).
+Po włączeniu klawiatury pierwsza pozycja w jej ustawieniach to **Jak używać klawiatury brajlowskiej**. Pokazuje, jak przełączyć się na nią w polu tekstowym.
 
-Przy pierwszym otwarciu SandFly uruchamia samouczek. Wybierz **Pomiń samouczek**, żeby od razu pisać.
+Od Androida 11 możesz przejść na klawiaturę brajlowską z dowolnej klawiatury poleceniem **Włącz klawiaturę brajlowską** z grupy **Brajl** w ustawieniach **Polecenia**. Domyślnie stuknij dwa razy dwoma palcami i przytrzymaj je po drugim stuknięciu. Zobacz [](#commands).
+
+Przy pierwszym otwarciu klawiatury uruchamia się samouczek. Na pierwszym ekranie możesz wybrać **Pomiń samouczek**, żeby od razu zacząć pisać.
 
 #### Ułóż urządzenie do pisania {#braille-keyboard-hold}
 
@@ -30,111 +40,143 @@ Punkty mogą obracać się razem z urządzeniem nawet przy wyłączonym obrocie 
 
 #### Pisz brajlem {#braille-keyboard-type}
 
-Dotknij jednocześnie punktów znaku i unieś palce. SandFly wpisze znak i odczyta go zgodnie z **Pisanie** > **Echo klawiatury** > **Klawiatura brajlowska**. Domyślnie **Uwzględniaj wszystkie naciśnięte punkty** zalicza punkt także wtedy, gdy uniesiesz z niego palec wcześniej niż z pozostałych.
+Dotknij jednocześnie punktów znaku i unieś palce. SandFly wpisze znak i odczyta go zgodnie z ustawieniem **Pisanie** > **Echo klawiatury** > **Klawiatura brajlowska**.
+
+W ustawieniach **Brajl** > **Klawiatura brajlowska** opcja **Uwzględniaj wszystkie naciśnięte punkty** jest domyślnie włączona. Do wpisywanej komórki wlicza się wtedy każdy dotknięty punkt, nawet jeśli uniesiesz z niego palec przed dotknięciem pozostałych.
 
 | Gest | Działanie domyślne |
 | --- | --- |
-| Palec w prawo | Dodaj spację. |
-| Palec w lewo | Usuń znak. |
-| Palec w górę lub w dół | Przenieś kursor wstecz lub dalej. |
-| Dwa palce w prawo | Wstaw nowy wiersz. |
-| Dwa palce w lewo | Usuń słowo. |
-| Dwa palce w górę | Prześlij tekst. |
-| Dwa palce w dół | Schowaj klawiaturę. |
-| Trzy palce w górę | Otwórz opcje i pomoc. |
-| Trzy palce w dół | Wybierz następną klawiaturę. |
-| Trzy palce w prawo lub lewo | Wybierz następną lub poprzednią jednostkę nawigacji. |
+| Przesuń palcem w prawo | Wstaw spację |
+| Przesuń palcem w lewo | Usuń znak |
+| Przesuń palcem w górę | Cofnij kursor |
+| Przesuń palcem w dół | Przesuń kursor do przodu |
+| Przesuń dwoma palcami w prawo | Wstaw nowy wiersz |
+| Przesuń dwoma palcami w lewo | Usuń słowo |
+| Przesuń dwoma palcami w górę | Prześlij tekst |
+| Przesuń dwoma palcami w dół | Schowaj klawiaturę |
+| Przesuń trzema palcami w górę | Otwórz pomoc i pozostałe opcje |
+| Przesuń trzema palcami w dół | Przełącz na następną klawiaturę |
+| Przesuń trzema palcami w prawo lub w lewo | Wybierz następną lub poprzednią jednostkę nawigacji |
 
-Przytrzymaj punkt 4, 5 lub 6 i przesuń palec w pionie, żeby poruszać się między wierszami, słowami lub znakami i zaznaczać tekst. Punkt 4 z przesunięciem trzema palcami służy do wycinania, kopiowania, wklejania i zaznaczania wszystkiego.
+Przytrzymaj punkt 4, 5 lub 6 i przesuń palcem w górę lub w dół, żeby poruszać się między wierszami, słowami lub znakami albo zaznaczać tekst. Przytrzymanie punktu 4 i przesunięcie trzema palcami pozwala wycinać, kopiować, wklejać i zaznaczać cały tekst.
 
-| Przytrzymaj punkty 4, 5 i 6 i przesuń | Działanie |
+| Przytrzymaj punkty 4, 5 i 6, a potem przesuń palcem | Działanie |
 | --- | --- |
-| W górę | Zablokuj lub odblokuj ułożenie. |
-| W dół | Wybierz następną tabelę brajla. |
-| W prawo | Wyszukaj emoji. |
-| W lewo | Przejdź do następnego trybu brajla. |
+| W górę | Zablokuj lub odblokuj orientację |
+| W dół | Przejdź do następnej tabeli brajlowskiej |
+| W prawo | Wyszukaj emotikony |
+| W lewo | Przejdź do następnego trybu brajla |
 
-Zamiast punktów jednej ręki możesz przytrzymać ich odpowiedniki pod drugą, na przykład 1, 2 i 3 zamiast 4, 5 i 6. SandFly akceptuje ruch odchylony od pionu lub poziomu o około 35 stopni.
+W każdym geście z przytrzymaniem możesz użyć odpowiadających punktów drugiej ręki, na przykład 1, 2 i 3 zamiast 4, 5 i 6. Ruch może odchylać się od pionu lub poziomu o około 35 stopni.
 
-Przesuń trzema palcami w górę, żeby otworzyć **Opcje klawiatury brajlowskiej**. Możesz zmienić język i stopień brajla, wybrać **Zmień pozycje punktów**, **Przejrzyj gesty**, **Otwórz samouczek** lub **Ustawienia**. Jeśli fokus przesunął się z pola przed otwarciem klawiatury, SandFly wraca do pola przy poleceniach edycji.
+Przesuń trzema palcami w górę, żeby otworzyć **Opcje klawiatury brajlowskiej**. Możesz wybrać **Przełącz na następny język** albo zmienić stopień brajla. W tym samym menu są **Zmień pozycje punktów**, **Przejrzyj gesty**, **Otwórz samouczek** i **Ustawienia**.
+
+Jeśli przed otwarciem klawiatury przejdziesz na inny element, SandFly przed każdym poleceniem wróci fokusem do pola tekstowego. Dzięki temu ruch kursora i edycja nadal dotyczą tego pola.
 
 #### Zmień gesty klawiatury brajlowskiej {#braille-keyboard-gestures}
 
 1. Otwórz **Brajl** > **Klawiatura brajlowska** > **Gesty**.
-2. Rozwiń kategorię sterowania, ruchu kursora, zaznaczania i edycji albo korekty.
-3. Wybierz działanie. Możesz użyć **Zmień gest**, **Przywróć domyślne** lub **Usuń gest**.
-4. Jeśli ustawiasz nowy gest, wykonaj go dwa razy. Dwoma palcami w dół anulujesz nagrywanie.
-5. Gdy pojawi się pytanie o drugą rękę, wybierz **Używaj gestu w odbiciu lustrzanym** lub **Pomiń**.
+2. Wybierz grupę **Ustawienia podstawowe**, **Ruch kursora**, **Zaznaczanie i edycja tekstu** lub **Korekta**.
+3. Wybierz działanie, a następnie **Zmień gest**, **Przywróć domyślne** albo **Usuń gest**.
+4. Po wybraniu **Zmień gest** otworzy się klawiatura brajlowska. Wykonaj nowy gest dwa razy. Żeby anulować zmianę, przesuń dwoma palcami w dół.
+5. W kolejnym oknie wybierz **Używaj gestu w odbiciu lustrzanym**, żeby przypisać to samo działanie drugiej ręce. Wybierz **Pomiń**, jeśli wystarczy Ci wykonany gest.
 
-Jeśli gest ma już inne działanie, SandFly je odczyta. Powtórz gest, żeby je zastąpić. **Zresetuj wszystkie gesty** przywraca fabryczne przypisania.
+Jeśli gest ma już inne przypisanie, SandFly odczyta nazwę tego działania. Powtórz gest, żeby je zastąpić. **Zresetuj wszystkie gesty** przywraca domyślne przypisania całej klawiatury.
 
 #### Dopasuj położenie punktów {#braille-keyboard-dot-positions}
 
-Przytrzymaj na ekranie sześć palców przez dwie sekundy. Przy brajlu ośmiopunktowym użyj ośmiu palców. Możesz też wybrać **Zmień pozycje punktów** w **Opcje klawiatury brajlowskiej**. SandFly zapisuje położenie osobno dla każdego układu.
+Podczas dopasowania SandFly umieszcza punkty tam, gdzie oprzesz palce. Każdy układ ma osobny zestaw zapisanych pozycji.
 
-Przy włączonym **Zmień pozycje punktów jedną ręką, a potem drugą** przytrzymaj trzy palce jednej ręki przez co najmniej 0,4 sekundy. Potem dołóż trzy palce drugiej i przytrzymaj wszystkie przez 0,65 sekundy. Zacznij dowolną ręką. Przy ośmiu punktach użyj czterech palców każdej ręki. Jeśli przyłożysz wszystkie na raz lub uniesiesz je za wcześnie, wpiszesz znak. Ta domyślnie włączona metoda działa przy wyłączonym **Uwzględniaj wszystkie naciśnięte punkty**.
+- Przytrzymaj sześć palców na ekranie przez 2 sekundy. Przy brajlu ośmiopunktowym użyj ośmiu palców.
+- Możesz też wybrać **Zmień pozycje punktów** w menu **Opcje klawiatury brajlowskiej**. Wykonaj kroki wyświetlane kolejno dla każdej ręki.
+- W ustawieniach **Brajl** > **Klawiatura brajlowska** jest też opcja **Zmień pozycje punktów jedną ręką, a potem drugą**. Przytrzymaj trzy palce jednej ręki przez co najmniej 0,4 sekundy. Dołóż trzy palce drugiej ręki i pozostaw wszystkie nieruchomo przez 0,65 sekundy. Możesz zacząć dowolną ręką. Przy brajlu ośmiopunktowym użyj po cztery palce każdej ręki. Jeśli przyłożysz sześć palców jednocześnie albo uniesiesz je za wcześnie, wpiszesz komórkę. Opcja jest domyślnie włączona, ale żeby z niej skorzystać, wyłącz **Uwzględniaj wszystkie naciśnięte punkty**.
 
-Domyślna opcja **Zmieniaj pozycje punktów podczas pisania** przesuwa punkty lekko pod palce i zapamiętuje ich pozycję. Działa przy wpisywaniu znaków, gdy palec jest wyraźnie bliżej własnego punktu. SandFly trzyma punkty na ekranie, w odpowiedniej kolejności i z odstępem co najmniej szerokości punktu. Jeśli piszesz już sąsiedni punkt, dopasuj położenie ponownie. Gesty, przytrzymania i samouczek nie przesuwają punktów.
+Domyślna opcja **Zmieniaj pozycje punktów podczas pisania** stopniowo dopasowuje punkty do zmieniającego się ułożenia dłoni. Zapisane pozycje obowiązują też przy kolejnym otwarciu klawiatury.
+
+- Dotyk przesuwa punkt, gdy palec trafia wyraźnie bliżej niego niż pozostałych punktów. Jeśli niechcący wpisujesz już sąsiedni punkt, dopasuj położenie od nowa.
+- Punkty pozostają na ekranie, w tej samej kolejności i co najmniej o szerokość jednego punktu od siebie.
+- Punkty przesuwają się podczas wpisywania komórek. Gesty, przytrzymania i samouczek ich nie zmieniają.
 
 #### Jak punkty podążają za urządzeniem {#braille-keyboard-orientation}
 
-Przy włączonym ekranie SandFly zapamiętuje ostatnie ułożenie trzymanego urządzenia.
+Przez cały czas, gdy ekran jest włączony, SandFly rejestruje ostatnie ułożenie uniesionego urządzenia. Działa to podobnie do automatycznego obrotu ekranu.
 
-- W trybie ekranem od siebie punkty obracają się razem z urządzeniem.
-- Po położeniu na stole SandFly zachowuje poprzednią stronę, także sprzed otwarcia klawiatury. Obrót na stole obraca punkty.
-- Na telefonie punkty obracają się przy przeniesieniu portu ładowania na drugą stronę. Po obrocie o ćwierć SandFly podaje, czy port jest bliżej czy dalej od Ciebie.
-- Na tablecie i rozłożonym telefonie punkty obracają się o ćwierć obrotu, również do góry nogami.
+- W trybie z ekranem od siebie punkty obracają się razem z urządzeniem.
+- Po położeniu urządzenia na stole punkty zachowują ułożenie z chwili, gdy trzymałeś je w rękach. Dotyczy to również ułożenia sprzed otwarcia klawiatury. Możesz obrócić punkty, obracając urządzenie na stole.
+- Na telefonie punkty obracają się, gdy przeniesiesz gniazdo ładowania z jednej strony na drugą. Po ćwierćobrocie pomiędzy tymi pozycjami usłyszysz „Gniazdo ładowania skierowane do Ciebie” albo „Gniazdo ładowania skierowane od Ciebie”.
+- Na tablecie i rozłożonym telefonie punkty obracają się co ćwierć obrotu. Możesz też ułożyć urządzenie do góry nogami.
 
-Po obrocie lub zmianie trybu SandFly podaje stronę portu ładowania. Aby zablokować ułożenie, przytrzymaj punkty 4, 5 i 6 i przesuń w górę. Powtórz gest, aby odblokować. Blokada jest osobna dla trybu i rozmiaru ekranu.
+Przy zmianie trybu lub po każdym obrocie SandFly odczytuje położenie gniazda ładowania. Możesz na przykład usłyszeć „Tryb na stole. Gniazdo ładowania po lewej”.
 
-Gdy odkładasz telefon, SandFly zakłada, że ekran był skierowany do Ciebie, chyba że pisałeś ekranem od siebie. Tablet lub rozłożony telefon w pionie traktuje jako skierowany do Ciebie, a w poziomie jako skierowany od Ciebie. Jeśli trzymasz tablet przed sobą, możesz wyłączyć **Uniesiony tablet ekranem od siebie**. Wtedy SandFly używa układu stołowego z kciukami przy dolnej krawędzi. Przełącznik jest domyślnie włączony. Możesz dodać go w części **Wyświetlanie** sterowania czytaniem.
+Żeby zablokować ułożenie punktów, przytrzymaj punkty 4, 5 i 6 i przesuń palcem w górę. Usłyszysz „Orientacja zablokowana”. Powtórz gest, żeby zdjąć blokadę. Blokada działa osobno dla każdego rozmiaru ekranu i trybu. Możesz więc wybrać inne ułożenie przy złożonym i rozłożonym telefonie.
 
-Jeśli od włączenia ekranu nie podniesiesz telefonu, ułożenie punktów wynika z obrotu ekranu. Przy wyłączonym obrocie SandFly zakłada port po lewej. Obrót na stole lub blokada pozwalają dostosować punkty. Blokada przydaje się też przy odkładaniu telefonu trzymanego ekranem od siebie, jeśli nic nie wpiszesz. Obracanie na stole wymaga czujnika wektora obrotu do gier. Przy włączonym ekranie akcelerometr służy do śledzenia ułożenia.
+Jeśli odkładasz telefon na stół, SandFly przyjmuje, że ekran był skierowany do Ciebie. Wyjątkiem jest sytuacja, gdy wcześniej pisałeś z ekranem od siebie. Tablet lub rozłożony telefon w pionie jest traktowany jako skierowany do Ciebie, a w poziomie jako skierowany od Ciebie. Jeśli trzymasz tablet w poziomie przed sobą, wyłącz **Brajl** > **Klawiatura brajlowska** > **Uniesiony tablet ekranem od siebie**. Wtedy klawiatura będzie używać układu stołowego z kciukami przy dolnej krawędzi, niezależnie od tego, jak obrócisz trzymany tablet. Opcja jest domyślnie włączona. Znajdziesz ją również w grupie **Wyświetlanie** na ekranie **Sterowanie czytaniem**.
+
+Warto pamiętać o kilku szczegółach.
+
+- Jeśli od włączenia ekranu telefon leżał płasko, ułożenie punktów wynika z obrotu ekranu. Przy wyłączonym autoobrocie SandFly przyjmuje, że gniazdo ładowania jest po lewej. Możesz skorygować pozycję, obracając telefon na stole lub blokując orientację.
+- Jeśli trzymasz telefon ekranem od siebie i odłożysz go bez pisania, punkty ułożą się tak, jak przy ekranie skierowanym do Ciebie. Żeby zachować ułożenie, zablokuj orientację przed odłożeniem telefonu.
+- Obracanie punktów na stole wymaga czujnika wektora obrotu do gier. Na urządzeniu bez takiego czujnika punkty nadal podążają za pozycją trzymanego urządzenia.
+- Śledzenie ułożenia korzysta z akcelerometru przez cały czas, gdy ekran jest włączony.
 
 #### Języki brajla {#braille-keyboard-languages}
 
-Otwórz **Języki** > **Dodaj język**, żeby dodać tabelę do klawiatury i monitora. Dla japońskiego SandFly pobiera słownik około 15 MB. Rumuński brajl integralny ma sześć punktów. Punkty 4 i 6 oznaczają wielką literę, 5 i 6 wielkie słowo, 3, 4, 5 i 6 znak liczby, a 2, 3, 5 i 6 nawias. Działania używają znaków UEB. **Rumuński, brajl komputerowy 8-punktowy** używa jednej komórki na znak.
+- W **Języki** znajdują się tabele używane przez klawiaturę brajlowską i monitory. Wybierz **Dodaj język**, żeby dodać kolejną. Przy dodawaniu japońskiego SandFly pobiera słownik o rozmiarze około 15 MB. Tabela **rumuński** używa integralnego brajla sześciopunktowego. Punkty 4 i 6 oznaczają wielką literę, 5 i 6 całe słowo wielkimi literami, 3, 4, 5 i 6 znak liczby, a 2, 3, 5 i 6 nawias. Tabela używa znaków UEB dla działań matematycznych. **Rumuński, brajl komputerowy 8-punktowy** zapisuje każdy znak w jednej ośmiopunktowej komórce. Na końcu listy **Dodaj język** > **Brajl Unicode** są tabele **Brajl Unicode** i **Brajl 8-punktowy Unicode**. Każdą komórkę wpisują jako odpowiadający jej znak Unicode, na przykład ⠞ dla punktów 2, 3, 4 i 5. Spacja pozostaje zwykłą spacją. Tych tabel można używać do pisania. Monitory nie wyświetlają ich na liście **Preferowany język czytania**.
+- **Preferowany język wpisywania** ustawia tabelę używaną po otwarciu klawiatury.
+- W opcji **Preferowany tryb brajla** wybierz **Brajl skrótowy** lub domyślny **Brajl integralny**.
 
-Ustaw tabelę początkową w opcji **Preferowany język wpisywania**. W opcji **Preferowany tryb brajla** wybierz **Brajl skrótowy** lub domyślny **Brajl integralny**. Aby przejść do kolejnego języka podczas pisania, przytrzymaj punkty 4, 5 i 6 i przesuń w dół. SandFly przywróci stopień ostatnio używany w tym języku i go odczyta. Wybierze pierwszy [profil głosowy](#speech) w tym języku, jeśli jest dostępny. W przeciwnym razie wróci do domyślnego.
+Żeby przejść do kolejnej tabeli podczas pisania, przytrzymaj punkty 4, 5 i 6 i przesuń palcem w dół. SandFly odczyta język i ostatnio używany dla niego stopień brajla. Jeżeli masz profil głosowy w danym języku, SandFly wybierze pierwszy z listy. W pozostałych przypadkach wybierze **Domyślny profil głosowy SandFly**. Przy przejściu na brajl Unicode głos się nie zmienia. Zobacz [](#speech).
 
 #### Dodaj własne znaki {#braille-keyboard-custom-characters}
 
-Otwórz **Brajl** > **Klawiatura brajlowska** > **Własne znaki brajlowskie**. Wpis działa w wybranej tabeli na klawiaturze i monitorze, przy pisaniu i wyświetlaniu.
+Otwórz **Brajl** > **Klawiatura brajlowska** > **Własne znaki brajlowskie**. Możesz przypisać wybraną komórkę do znaku lub tekstu w jednej tabeli. Wpis ma pierwszeństwo przed zwykłymi regułami tabeli przy pisaniu i wyświetlaniu. Obowiązuje zarówno na klawiaturze, jak i na monitorze brajlowskim.
 
 1. Wybierz **Dodaj znak**.
-2. Wypełnij **Znak lub tekst**.
-3. W polu **Punkty** wpisz komórki rozdzielone łącznikami, na przykład `2356` lub `456-2356`.
+2. Wpisz **Znak lub tekst**.
+3. W polu **Punkty** wpisz punkty każdej komórki. Jeśli komórek jest więcej, oddziel je łącznikiem, na przykład `456-2356`. Dla jednej komórki wpisz na przykład `2356`.
 4. Wybierz **Tabela brajlowska**.
 
-Ponowny wpis tego znaku w tej samej tabeli zastępuje poprzedni. Reguły obejmujące więcej komórek, na przykład skróty lub znaki w liczbach, mogą mieć pierwszeństwo. [Wpisy możesz przenosić w pliku](#api-item-files) przez **Eksportuj do pliku** i **Importuj z pliku**.
+Jeśli dodasz ten sam znak w tej samej tabeli, nowy wpis zastąpi poprzedni. Pierwszeństwo nadal mogą mieć reguły obejmujące więcej komórek, na przykład skróty, oraz reguły dotyczące znaków wewnątrz liczb. **Eksportuj do pliku** i **Importuj z pliku** zapisują lub wczytują listę. Zobacz [](#api-item-files).
 
-#### Wyszukaj emoji {#braille-keyboard-emoji}
+#### Wyszukaj emotikony {#braille-keyboard-emoji}
 
-1. Przytrzymaj punkty 4, 5 i 6 i przesuń w prawo.
-2. Wpisz słowa nazwy brajlem integralnym w języku klawiatury. SandFly czyta znak, pierwszy pasujący wynik i liczbę wyników. Pomija znak, po którym brak wyników.
-3. Przesuwaj w dół i w górę między wynikami. W prawo wstawisz spację, a w lewo usuniesz znak.
-4. Przesuń dwoma palcami w prawo, żeby wstawić emoji. Możesz szukać następnego.
+1. Przytrzymaj punkty 4, 5 i 6 i przesuń palcem w prawo.
+2. Wpisz słowa z nazwy emotikonu brajlem integralnym w języku klawiatury. SandFly czyta każdy znak, pierwszy wynik zawierający wszystkie wpisane słowa i liczbę wyników. Jeśli po dodaniu znaku brakuje dopasowań, znak zostaje pominięty.
+3. Przesuń palcem w dół lub w górę, żeby usłyszeć następny lub poprzedni wynik. Ruch w prawo wstawia spację, a w lewo usuwa znak.
+4. Przesuń dwoma palcami w prawo, żeby wstawić emotikon. Wyszukiwanie pozostanie otwarte, więc możesz wstawić kolejny.
 
-Inny gest zamyka wyszukiwanie. Nazwy pochodzą z Unicode CLDR dla języka tabeli lub z angielskiego. Wyszukiwanie nie obejmuje wariantów odcienia skóry. Pokazuje do 100 wyników.
+Każdy inny gest zamyka wyszukiwanie. Nazwy pochodzą z Unicode CLDR dla języka używanej tabeli. Jeśli nie ma ich w tym języku, dostępne są nazwy angielskie. Wyszukiwanie pomija warianty odcienia skóry i pokazuje najwyżej 100 wyników.
 
 #### Pozostałe ustawienia klawiatury {#braille-keyboard-settings}
 
-- **Zamień lewe i prawe kropki** wymienia punkty 1, 2, 3 z 4, 5, 6. **Zamień górne i dolne punkty** wymienia 1 z 3 i 4 z 6. Obie opcje są domyślnie wyłączone. Można włączyć obie naraz.
-- **Dźwięki pisania** daje osobny sygnał znaku, spacji, usunięcia i nowego wiersza. Domyślnie jest wyłączone. [Temat](#sound) może podmienić dźwięki.
-- **Mów „Przesyłanie tekstu”** jest domyślnie włączone przy przesunięciu dwoma palcami w górę.
-- **Wielkie litery na początku zdań** działa na początku pola, po nowym wierszu i po kropce, pytajniku lub wykrzykniku zakończonym spacją. Domyślnie jest wyłączone. Pomija hasła, e-mail, adresy WWW i liczby.
+W **Brajl** > **Klawiatura brajlowska** znajdziesz też te opcje.
 
-Przesłanie tekstu wibruje jak zamknięcie lub przełączenie klawiatury. Usuwanie w pustym polu daje cichnącą wibrację. Gdy klawiatura jest otwarta, gesty uruchamiają polecenia bez nowego okna. [Polecenia brajlowskie](#braille-commands) mogą pojawić się nad klawiaturą.
+- **Zamień lewe i prawe kropki** zamienia miejscami punkty 1, 2 i 3 z punktami 4, 5 i 6. Opcja jest domyślnie wyłączona.
+- **Zamień górne i dolne punkty** zamienia punkt 1 z 3, a punkt 4 z 6. Opcja jest domyślnie wyłączona. Możesz ustawić obie zamiany naraz.
+- **Dźwięki pisania** odtwarza dźwięk przy wpisaniu znaku oraz osobne dźwięki dla spacji, usuwania i nowego wiersza. Używa głośności dźwięków SandFly. Możesz zmienić dźwięki za pomocą motywu. Opcja jest domyślnie wyłączona. Zobacz [](#sound).
+- **Mów „Przesyłanie tekstu”** odczytuje ten komunikat, gdy przesyłasz tekst gestem dwóch palców w górę. Opcja jest domyślnie włączona.
+- **Wielkie litery na początku zdań** zmienia pierwszą literę na wielką na początku pola, w nowym wierszu i po kropce, pytajniku lub wykrzykniku, jeśli po znaku jest spacja. Nie zmienia haseł, adresów e-mail, adresów stron ani pól liczbowych. Opcja jest domyślnie wyłączona.
+
+Klawiatura brajlowska korzysta z tych samych wibracji co reszta SandFly. Przy przesłaniu tekstu poczujesz taką wibrację jak przy ukryciu lub zmianie klawiatury. Przy próbie usunięcia znaku w pustym polu wibracja jest delikatna i stopniowo zanika.
+
+Gdy klawiatura brajlowska jest widoczna, gesty nadal uruchamiają polecenia nawigacji czy sterowania czytaniem, które nie otwierają dodatkowego okna. Nad klawiaturą mogą otworzyć się [polecenia brajlowskie](#braille-commands).
 
 ### Polecenia brajlowskie {#braille-commands}
 
-Wpisuj punktami polecenia, szukaj tekstu na ekranie lub uruchamiaj aplikację po nazwie. Funkcja wymaga Androida 11 i jest niedostępna na zegarku.
+Możesz uruchamiać polecenia SandFly, wpisując komórki tak samo jak na klawiaturze brajlowskiej. Z tego samego ekranu możesz wyszukać aplikację po nazwie, znaleźć tekst na ekranie lub przejść do klawiatury brajlowskiej. Polecenia brajlowskie wymagają Androida 11 lub nowszego. Na zegarkach są niedostępne.
 
 #### Wykonaj polecenie brajlowskie {#braille-commands-use}
 
-Użyj **Polecenia brajlowskie** w kategorii [**Brajl**](#commands) albo przytrzymaj 4, 5 i 6 na klawiaturze brajlowskiej i przesuń w lewo. Polecenie domyślnie nie ma gestu. Usłyszysz sygnał i nazwę profilu. Wpisz komórkę, aby uruchomić polecenie. Jeśli nie przypisano działania, SandFly podaje punkty.
+Możesz otworzyć polecenia na dwa sposoby.
 
-Okno pozostaje otwarte do przesunięcia dwoma palcami w dół albo zgaśnięcia ekranu. Menu lub dialog SandFly je zamyka. Polecenia nie pojawiają się na ekranie blokady. Przytrzymanie 4, 5 i 6 z ruchem w lewo przechodzi od poleceń do szukania aplikacji, a potem do klawiatury, jeśli edytujesz pole, lub z powrotem do poleceń. Otwarcie pola uruchamia klawiaturę. Po jej zamknięciu wracają polecenia.
+- Uruchom **Polecenia brajlowskie** z grupy **Brajl** w ustawieniach **Polecenia**. Domyślnie do tego polecenia nie jest przypisany gest. Zobacz [](#commands).
+- Na klawiaturze brajlowskiej przytrzymaj punkty 4, 5 i 6 i przesuń palcem w lewo.
+
+Usłyszysz sygnał, a potem „Polecenia brajlowskie” i nazwę używanego profilu. Punkty zajmą ekran w takim samym układzie jak na klawiaturze brajlowskiej. Wpisz komórkę, żeby uruchomić polecenie. Jeśli nie ma przypisania, SandFly powie „Brak polecenia dla” i odczyta punkty.
+
+Po wykonaniu polecenia punkty pozostają na ekranie. Zamkniesz je, przesuwając dwoma palcami w dół. Znikną również po wygaszeniu ekranu lub otwarciu menu albo okna dialogowego SandFly. Na ekranie blokady polecenia nie są wyświetlane.
+
+Przytrzymaj punkty 4, 5 i 6 i przesuń palcem w lewo, żeby przejść do następnego trybu. Z poleceń przejdziesz do wyszukiwania aplikacji. Kolejne wykonanie gestu wróci do poleceń, a jeśli edytujesz pole tekstowe, otworzy klawiaturę brajlowską. Jeśli otworzysz pole tekstowe z poziomu poleceń, pojawi się klawiatura. Polecenia wrócą po jej zamknięciu.
 
 | Punkty | Polecenie domyślne |
 | --- | --- |
@@ -146,46 +188,57 @@ Okno pozostaje otwarte do przesunięcia dwoma palcami w dół albo zgaśnięcia 
 | 2 | **Przenieś element sterowania czytaniem w górę lub do tyłu** |
 | 3 i 6 | **Aktywuj** |
 | 1 i 2 | **Wstecz** |
-| 1, 2, 5 | **Ekran główny** |
-| 1, 2, 4 | **Znajdź tekst** |
-| 1, 2, 4, 6 | **Znajdź następny tekst** |
-| 1, 3, 4, 5 | **Znajdź poprzedni tekst** |
-| 1, 2, 3, 5 | **Przegląd** |
-| 1, 2, 3, 4, 5 | **Szybkie ustawienia** |
-| 2, 3, 4, 5 | **Zaznacz pierwszy element na ekranie** |
+| 1, 2 i 5 | **Ekran główny** |
+| 1, 2 i 4 | **Znajdź tekst** |
+| 1, 2, 4 i 6 | **Znajdź następny tekst** |
+| 1, 3, 4 i 5 | **Znajdź poprzedni tekst** |
+| 1, 2, 3 i 5 | **Przegląd** |
+| 1, 2, 3, 4 i 5 | **Szybkie ustawienia** |
+| 2, 3, 4 i 5 | **Zaznacz pierwszy element na ekranie** |
 | 1 i 5 | **Zaznacz ostatni element na ekranie** |
-| 1, 3, 4 | **Otwórz menu SandFly** |
+| 1, 3 i 4 | **Otwórz menu SandFly** |
 
 #### Znajdź aplikację {#braille-commands-apps}
 
-Wpisz nazwę brajlem integralnym. SandFly szuka aplikacji, której nazwa lub słowo w nazwie zaczyna się od wpisanych liter. Podaje pierwszą i liczbę wyników. Pomija komórkę, po której nie ma dopasowania.
+Wpisz nazwę aplikacji brajlem integralnym w języku klawiatury. Pasuje każda aplikacja, której nazwa lub dowolne słowo w nazwie zaczyna się od wpisanych liter. SandFly poda pierwszą z nich oraz jej pozycję na liście wyników. Usłyszysz na przykład „Kalendarz, 1 z 3”. Jeśli po wpisaniu komórki nie ma dopasowań, SandFly ją pominie i poinformuje o braku wyników.
 
-- Dół i góra wybierają wynik. Lewo usuwa komórkę, a dwa palce w lewo usuwają tekst.
-- Dwa palce w górę otwierają aplikację. Trzy palce w górę otwierają ją w podziale ekranu. Jeśli przejdziesz z poleceń brajlowskich, wrócą nad aplikacją.
-- Dwa palce w dół zamykają wyszukiwanie. Zamknie się też po 15 sekundach bez dotyku.
+- Przesuń palcem w dół lub w górę, żeby przejść do kolejnego lub poprzedniego wyniku.
+- Przesuń palcem w lewo, żeby usunąć ostatnią komórkę, albo dwoma palcami w lewo, żeby wyczyścić cały wpis.
+- Przesuń dwoma palcami w górę, żeby otworzyć aplikację, albo trzema palcami w górę, żeby otworzyć ją na podzielonym ekranie. Jeśli wyszukiwanie zostało otwarte z poleceń brajlowskich, polecenia znów pojawią się nad aplikacją.
+- Przesuń dwoma palcami w dół, żeby zamknąć wyszukiwanie.
 
-Bezpośredni dostęp daje **Wpisz nazwę aplikacji w brajlu, aby ją otworzyć** w kategorii **Czynności systemowe**.
+Wyszukiwanie zamyka się po 15 sekundach bez dotyku. Żeby otworzyć je bezpośrednio, uruchom **Wpisz nazwę aplikacji w brajlu, aby ją otworzyć** z grupy **Czynności systemowe** w ustawieniach **Polecenia**.
 
 #### Znajdź tekst na ekranie {#braille-commands-find}
 
-1. Uruchom **Znajdź tekst**.
-2. Wpisz szukaną treść brajlem integralnym. W prawo wstawisz spację, w lewo usuniesz, a dwoma palcami w lewo wyczyścisz.
-3. Przesuń dwoma palcami w górę lub w prawo. Fokus przejdzie do następnego dopasowania.
+Polecenia **Znajdź tekst**, **Znajdź następny tekst** i **Znajdź poprzedni tekst** znajdziesz w grupie **Brajl** w ustawieniach **Polecenia**. Każde ma domyślnie przypisaną komórkę brajlowską.
 
-Po końcu ekranu **Znajdź tekst** szuka od początku i informuje o zawinięciu. **Znajdź następny tekst** i **Znajdź poprzedni tekst** szukają dalej od fokusu bez zawijania. Jeśli nie ma wcześniejszego wyniku, zaczynają nowe wyszukiwanie. Dwa palce w dół zamykają wyszukiwanie. Tekst jest pamiętany do zamknięcia poleceń brajlowskich.
+1. Uruchom **Znajdź tekst**. Usłyszysz „Wpisz tekst do znalezienia”.
+2. Wpisz szukaną treść brajlem integralnym. Przesunięcie palcem w prawo wstawia spację, a w lewo usuwa znak. Przesunięcie dwoma palcami w lewo usuwa cały wpis.
+3. Przesuń dwoma palcami w górę lub w prawo. Fokus przejdzie na następny element zawierający szukany tekst.
+
+Po dojściu do dołu ekranu **Znajdź tekst** kontynuuje wyszukiwanie od góry. Usłyszysz wtedy „Od początku”. **Znajdź następny tekst** i **Znajdź poprzedni tekst** szukają tego samego tekstu za bieżącym elementem lub przed nim. Zatrzymują się na końcu lub początku ekranu. Jeśli nie było jeszcze żadnego wyniku, działają jak **Znajdź tekst**. Przesuń dwoma palcami w dół, żeby wyjść bez szukania. Wpisany tekst jest dostępny do chwili zamknięcia poleceń brajlowskich.
 
 #### Zmień przypisanie komórki {#braille-commands-cells}
 
-Otwórz **Brajl** > **Polecenia brajlowskie**. Przy komórkach są przypisane polecenia. Użyj **Dodaj polecenie brajlowskie**, wybierz kategorię i polecenie, a potem wpisz punkty. Aby zmienić istniejącą komórkę, wybierz ją i użyj **Wybierz polecenie**, **Zmień komórkę brajlowską** lub **Usuń**. Gdy komórka ma już inne działanie, SandFly poprosi o potwierdzenie zastąpienia. **Przywróć domyślne** pojawia się po zmianie. Możesz też dodać [komórkę na ekranie polecenia](#commands) w **Komórki brajlowskie**.
+Otwórz **Brajl** > **Polecenia brajlowskie**. Przy każdej komórce zobaczysz przypisane polecenie, na przykład „Punkty 1 2 5: Ekran główny”.
+
+- Żeby dodać komórkę, wybierz **Dodaj polecenie brajlowskie**, a potem grupę i polecenie. Gdy pojawią się punkty, wpisz komórkę.
+- Żeby zmienić komórkę, wybierz ją z listy. Użyj **Wybierz polecenie**, **Zmień komórkę brajlowską** lub **Usuń**.
+- Jeśli komórka uruchamia już inne polecenie, pojawi się okno potwierdzenia. Wybierz **Zastąp**, żeby przypisać nowe polecenie.
+- Gdy zmienisz przypisania, pojawi się **Przywróć domyślne**. Ta opcja przywraca domyślne przypisania komórek.
+
+Komórkę możesz też przypisać od strony polecenia. Otwórz je w ustawieniach **Polecenia** i przejdź do części **Komórki brajlowskie**. Zobacz [](#commands).
 
 #### Przypisania w aplikacjach i profilach {#braille-commands-profiles}
 
-SandFly najpierw sprawdza profil, potem przypisanie dla aplikacji i na końcu domyślne polecenie komórki.
+Komórka najpierw uruchamia polecenie przypisane w bieżącym profilu. Jeśli profil nie określa jej działania, obowiązuje przypisanie dla otwartej aplikacji. Gdy go nie ma, obowiązuje przypisanie domyślne.
 
-- Otwórz **Polecenia brajlowskie w aplikacjach** > **Dodaj aplikację** i przypisz punkty. Możesz wyłączyć domyślne działanie konkretnej komórki w tej aplikacji. **Usuń aplikację** usuwa jej ustawienia.
-- Otwórz **Profile poleceń brajlowskich** > **Dodaj profil poleceń brajlowskich**. Wpisz nazwę i ustaw komórki. Możesz zmienić nazwę lub usunąć profil. Gdy istnieje profil, **Używany profil poleceń brajlowskich** pozwala go włączyć albo wybrać **Domyślny**.
+- W **Polecenia brajlowskie w aplikacjach** wybierz **Dodaj aplikację**, wskaż aplikację i dodaj komórki tak samo jak w ustawieniach domyślnych. Opcja **Nieprzypisane** wyłącza domyślne polecenie danej komórki w tej aplikacji. **Usuń aplikację** usuwa ją z listy razem z jej przypisaniami.
+- W **Profile poleceń brajlowskich** wybierz **Dodaj profil poleceń brajlowskich**, wpisz nazwę i dodaj komórki. Na ekranie profilu możesz użyć **Zmień nazwę** albo **Usuń profil poleceń brajlowskich**.
+- Gdy masz co najmniej jeden profil, w **Używany profil poleceń brajlowskich** możesz wybrać profil albo **Domyślny**.
 
-Możesz też przypisać wybór profilu, następny lub poprzedni profil i użycie konkretnego profilu do [gestu, klawisza albo komórki](#commands).
+W grupie **Brajl** w ustawieniach **Polecenia** znajdziesz **Wybierz profil poleceń brajlowskich**, **Następny profil poleceń brajlowskich** i **Poprzedni profil poleceń brajlowskich**. W grupie **Profile poleceń brajlowskich** każdy profil ma własne polecenie **Użyj profilu poleceń brajlowskich**, po którym podana jest nazwa profilu. Do tych poleceń możesz przypisać gesty, klawisze lub komórki. Zobacz [](#commands).
 
 ### Monitory brajlowskie {#braille-displays}
 
@@ -194,52 +247,79 @@ Monitor wyświetla tekst i przekazuje naciskane klawisze. SandFly obsługuje Blu
 #### Podłącz monitor {#braille-displays-connect}
 
 1. Otwórz **Brajl** > **Monitor brajlowski**.
-2. Włącz **Używaj monitora brajlowskiego**. Jeśli trzeba włączyć Bluetooth lub nadać uprawnienie, SandFly pokaże instrukcję na górze.
-3. Włącz Bluetooth monitora lub podłącz go przez USB.
-4. Otwórz **Urządzenia**, wybierz monitor i użyj **Połącz**. Jeśli go nie ma, wybierz **Poszukaj nowego urządzenia**.
+2. Włącz **Używaj monitora brajlowskiego**. Jeśli potrzebne jest uprawnienie, na przykład **Urządzenia w pobliżu**, albo trzeba włączyć Bluetooth, na górze ekranu pojawi się wskazówka.
+3. Włącz Bluetooth monitora lub podłącz go kablem USB.
+4. W części **Urządzenia** wybierz monitor, a następnie **Połącz**. Jeśli nie ma go na liście, wybierz **Poszukaj nowego urządzenia**.
 
-Lista podaje, czy urządzenie jest aktywne, dostępne albo zapisane poza zasięgiem. Wybierz urządzenie, żeby je rozłączyć lub zapomnieć. Domyślne **Łącz automatycznie** ponownie łączy zapisane monitory w pobliżu.
+Podłączony monitor ma stan **Aktywne**. Jeśli można się z nim połączyć, ma stan **Zapisane, dostępne** lub **Dostępne**. Zapisane urządzenie poza zasięgiem ma stan **Zapisane**. Wybierz zapisany monitor, żeby użyć **Rozłącz** lub **Zapomnij**. Opcja **Łącz automatycznie** jest domyślnie włączona. Zapisany monitor łączy się wtedy po znalezieniu w pobliżu.
 
-Od Androida 15 działa też brajl HID przez Bluetooth. Lista może zawierać inne urządzenia HID, na przykład klawiaturę. SandFly sprawdza przy połączeniu, czy urządzenie jest monitorem. Obsługiwane są między innymi EuroBraille b.note, b.note 2, b.book i b.book 2 wraz z ich klawiszami.
+Od Androida 15 możesz też łączyć się przez Bluetooth z monitorami zgodnymi ze standardem HID dla brajla. Lista pokazuje wszystkie urządzenia Bluetooth z HID, więc może zawierać na przykład klawiatury. Przy nawiązywaniu połączenia SandFly sprawdza, czy urządzenie jest monitorem brajlowskim.
+
+Obsługiwane są między innymi monitory EuroBraille b.note, b.note 2, b.book i b.book 2 wraz z ich klawiaturą i klawiszami nawigacji.
 
 #### Ustawienia monitora {#braille-displays-settings}
 
-W **Języki i polecenia** wybierasz wspólne [języki](#braille-keyboard-languages), **Preferowany język czytania**, **Preferowany język wpisywania** i **Preferowany tryb brajla**. **Polecenia na monitorze brajlowskim** pokazują [klawisze poleceń](#braille-displays-keys). W **Elementy brajlowskie** ustawisz skróty opisujące elementy. Ćwiczenie poleceń pozwala odczytać działanie naciśniętego klawisza.
+Otwórz **Brajl** > **Monitor brajlowski**. W grupie **Języki i polecenia** znajdziesz następujące pozycje.
 
-W sekcji **Ogólne** możesz włączyć [automatyczne łączenie](#braille-displays-connect). Domyślnie wyłączone **Ukrywaj klawiaturę ekranową** chowa inne klawiatury przy podłączonym monitorze. Pasek brajlowski nadal jest dostępny do pisania. **Pokaż napisy na monitorze brajlowskim** pokazuje napisy multimediów. Możesz również wybrać [monitor innej aplikacji](#braille-displays-other-apps).
+- **Języki** to tabele brajlowskie, z których korzysta również klawiatura. Zobacz [](#braille-keyboard-languages).
+- **Preferowany język czytania** ustawia tabelę dla tekstu wyświetlanego na monitorze, a **Preferowany język wpisywania** wybiera tabelę dla tekstu wpisywanego na monitorze. Gdy piszesz brajlem Unicode, monitor pokazuje treść pola w języku czytania.
+- W opcji **Preferowany tryb brajla** wybierz **Brajl skrótowy** lub **Brajl integralny**.
+- W **Polecenia na monitorze brajlowskim** są klawisze poszczególnych poleceń. Zobacz [](#braille-displays-keys).
+- W **Elementy brajlowskie** znajdziesz skróty, którymi monitor oznacza elementy ekranu. Na przykład „btn” oznacza przycisk, a „lnk” link.
+- W trybie ćwiczenia poleceń monitora możesz nacisnąć klawisz na podłączonym monitorze, żeby usłyszeć nazwę przypisanego polecenia. Pozycja w menu ma nazwę **Practice braille display commands**.
 
-**Autoprzewijanie** przełącza spacja z punktami 1, 2, 4, 5 i 6. Punkt 4 wydłuża czas, a punkt 1 go skraca. **Automatycznie dostosowuj czas wyświetlania** uwzględnia długość tekstu. **Domyślny czas wyświetlania** ustawia czas podstawowy.
+W grupie **Ogólne** są następujące ustawienia.
 
-Na ekranie **Ustawienia zaawansowane** możesz odwrócić kierunek przycisków przesuwania, włączyć podgląd brajla na ekranie i ustawić czas komunikatu. Kursor może migać maksymalnie co dwie sekundy lub wcale. Domyślnie miga co 0,75 sekundy. Domyślnie pokazuje się również na elementach nieedytowalnych. Możesz wyświetlać i zapisywać komunikaty z urządzenia, na przykład powiadomienia i połączenia. Zapisane otworzysz spacją z 1, 3, 4, 5, 7 i 8.
+- **Łącz automatycznie** nawiązuje połączenie z zapisanym monitorem, gdy jest w pobliżu. Zobacz [](#braille-displays-connect).
+- **Ukrywaj klawiaturę ekranową** chowa pozostałe klawiatury ekranowe, gdy monitor jest podłączony. Pasek klawiatury brajlowskiej pozostaje widoczny, bo przez nią tekst z monitora trafia do pola. Opcja jest domyślnie wyłączona.
+- **Autoprzewijanie** przesuwa zawartość monitora w ustawionym tempie. Żeby je włączyć lub wyłączyć, naciśnij spację z punktami 1, 2, 4, 5 i 6. Punkt 4 wydłuża czas wyświetlania, a punkt 1 go skraca. **Automatycznie dostosowuj czas wyświetlania** uwzględnia długość tekstu. W **Domyślny czas wyświetlania** ustawisz czas podstawowy.
+- **Pokaż napisy na monitorze brajlowskim** wyświetla napisy do filmów i innych multimediów.
+- W **Wyświetlacze z innych aplikacji** zarządzasz monitorami udostępnionymi przez aplikacje. Zobacz [](#braille-displays-other-apps).
+- W **Ustawienia zaawansowane** są dodatkowe opcje monitora.
+  - **Odwróć działanie przycisków przesuwania w górę i w dół** zamienia ich funkcje.
+  - **Pokaż dane wyjściowe w brajlu na ekranie** włącza podgląd na ekranie.
+  - W **Czas trwania wiadomości** wybierz **Krótki**, **Średni** albo **Długi**.
+  - W **Kursor miga co** ustaw odstęp do 2 sekund albo wybierz **Nigdy**. Domyślny odstęp to 0,75 sekundy.
+  - **Pokazuj kursor na elementach, których nie można edytować** jest domyślnie włączone.
+  - **Pokaż wiadomości z urządzenia** wyświetla na monitorze między innymi powiadomienia i połączenia przychodzące.
+  - **Zapisz wiadomości na urządzeniu** zachowuje ich listę. Otworzysz ją spacją z punktami 1, 3, 4, 5, 7 i 8.
 
-Polecenie **Przejdź do ustawień monitora brajlowskiego** otwiera tę stronę. [Skróty klawiatury](#appendix-keyboard-shortcuts) mogą przełączać stopień brajla i ekranowy podgląd.
+Polecenie **Przejdź do ustawień monitora brajlowskiego** z grupy **Brajl** w ustawieniach **Polecenia** otwiera ten ekran. Na klawiaturze fizycznej możesz użyć skrótu **Przełączaj między trybem skrótowym (stopień 2) a integralnym (stopień 1)**, żeby zmienić stopień brajla. Skrót **Pokaż lub ukryj klawiaturę na monitorach brajlowskich** przełącza opcję **Pokaż dane wyjściowe w brajlu na ekranie**. Zobacz [](#appendix-keyboard-shortcuts).
 
 #### Ustaw klawisze monitora {#braille-displays-keys}
 
 1. Podłącz monitor.
 2. Otwórz **Brajl** > **Monitor brajlowski** > **Polecenia na monitorze brajlowskim**.
-3. Wybierz kategorię i polecenie.
-4. Wybierz **Zmień klawisze** i naciśnij klawisz, spację z punktami albo, na EuroBraille, Backspace z punktami.
+3. Wybierz grupę, a potem polecenie.
+4. Wybierz **Zmień klawisze**. Na monitorze naciśnij nowy klawisz lub spację z punktami. Na monitorach EuroBraille możesz też użyć klawisza Backspace z punktami.
 
-Jeśli kombinacja jest zajęta, SandFly może przenieść ją z poprzedniego polecenia. Możesz zresetować pojedyncze przypisanie albo użyć **Resetuj wszystkie klawisze**. **Polecenia SandFly** pozwalają przypisać klawisze również poleceniom używanym przez gesty. Przy braku przypisania SandFly podaje informację o braku klawiszy.
+Jeśli klawisze uruchamiają już inne polecenie, okno potwierdzenia pozwoli przenieść przypisanie. Poprzednie polecenie pozostanie bez klawiszy. **Resetuj** przywraca domyślne klawisze jednego polecenia, a **Resetuj wszystkie klawisze** przywraca je dla wszystkich poleceń.
 
-Klawisze przesuwania i ustawiania kursora mają stałą funkcję. Na EuroBraille można zmienić lewo i prawo prawego joysticka. Naciśnięcia bez spacji wpisują punkty w polu tekstowym. Na EuroBraille spacja z 2, 3, 5 lub 6 oraz Backspace z punktami domyślnie są nieprzypisane. Klawisze nad komórkami przenoszą kursor lub aktywują. Naciśnięcie prawego joysticka aktywuje, a ruch w bok przesuwa ekran. Lewy joystick przesuwa po znakach w bok i po słowach w pionie.
+W **Polecenia SandFly** znajdziesz polecenia dostępne z gestów, między innymi **Otwórz menu SandFly**, **Powiadomienia** i **Czytaj od góry**. Są pogrupowane tak jak w ustawieniach poleceń. Każdemu możesz przypisać klawisze monitora. Przy poleceniu bez przypisania dla podłączonego monitora pojawi się „Brak klawiszy”.
+
+Klawisze przesuwania treści i ustawiania kursora mają stałe funkcje. Wyjątkiem są ruchy w lewo i w prawo prawym joystickiem monitorów EuroBraille. Punkty naciskane bez spacji nadal wpisują brajl w polu tekstowym.
+
+Na EuroBraille spacja z punktem 2, 3, 5 lub 6 oraz Backspace z punktami czekają na przypisanie polecenia. Klawisze nad komórkami ustawiają kursor lub aktywują element. Naciśnięcie prawego joysticka aktywuje element. Jego ruch w bok przesuwa treść na monitorze. Lewy joystick przesuwa po znakach w lewo lub w prawo. Ruch w górę lub w dół przechodzi po słowach.
 
 #### Monitory innych aplikacji {#braille-displays-other-apps}
 
-Aplikacja może udostępnić na przykład klawisze i komórki notatnika brajlowskiego. SandFly traktuje je jak monitor. Może również korzystać z samych klawiszy bez komórek.
+Aplikacja może udostępnić monitor, z którym SandFly nie potrafi się bezpośrednio połączyć. Mogą to być na przykład klawisze i komórki wbudowane w notatnik brajlowski. SandFly korzysta z nich jak z podłączonego monitora. Można też używać urządzenia z samymi klawiszami.
 
-Przy pierwszym użyciu SandFly pyta o zgodę. Udostępnienie pozwala aplikacji czytać treść pokazywaną w brajlu i sterować urządzeniem. Wybierz **Zezwól** lub **Nie zezwalaj**. Zgodę zmienisz w **Brajl** > **Monitor brajlowski** > **Wyświetlacze z innych aplikacji**. Powiadomienie pokazuje używaną aplikację. Bezpośredni monitor Bluetooth lub USB ma pierwszeństwo. Zobacz [opis interfejsu](#api-braille-display).
+Po wykryciu takiej aplikacji pojawi się okno zgody z jej nazwą. Okno informuje, że aplikacja uzyska dostęp do całej treści wyświetlanej w brajlu i będzie mogła sterować urządzeniem. Wybierz **Zezwól** lub **Nie zezwalaj**. W **Brajl** > **Monitor brajlowski** > **Wyświetlacze z innych aplikacji** możesz zmieniać zgodę dla każdej aplikacji z listy. Gdy taki monitor jest używany, powiadomienie podaje nazwę aplikacji.
+
+Monitor podłączony bezpośrednio przez Bluetooth lub USB ma pierwszeństwo. Monitor z aplikacji jest używany tylko wtedy, gdy nie ma takiego połączenia.
+
+Interfejs dla programistów opisano w [](#api-braille-display).
 
 ### Słownik brajlowski i słownik symboli {#braille-dictionaries}
 
-Otwórz **Brajl** > **Słownik brajlowski**, aby zastąpić tekst widoczny na monitorze. Wpisy są osobne od słownika mowy.
+Otwórz **Brajl** > **Słownik brajlowski**, żeby zmienić tekst wyświetlany na monitorze. Możesz zastąpić symbol słowem albo pominąć wybrany fragment. Słownik mowy ma osobne wpisy, które wpływają na wymowę.
 
 1. Wybierz **Dodaj zamiennik**.
-2. Wpisz **Tekst** i tekst zastępujący. Pusty zamiennik pomija fragment.
-3. Jeśli potrzebujesz, wybierz **Tylko całe słowa** albo **Wyrażenie regularne**.
+2. Wpisz szukany **Tekst**, a w polu **Zamień na** wpisz zamiennik. Jeśli drugie pole jest puste, tekst zostanie pominięty.
+3. W razie potrzeby wybierz **Tylko całe słowa** lub **Wyrażenie regularne**.
 4. Wskaż **Wszystkie aplikacje** lub **Wybierz aplikację**.
 
-SandFly stosuje wpisy po kolei. Tekst wpisywany i ekrany SandFly wyświetla w oryginale. Użyj **Eksportuj do pliku** lub **Importuj z pliku**, żeby przenieść wpisy.
+Wpisy są stosowane w kolejności na liście. Tekst podczas wpisywania i tekst na ekranach SandFly jest wyświetlany bez zmian. Opcje **Eksportuj do pliku** i **Importuj z pliku** zapisują lub wczytują listę.
 
-**Brajl** > **Słownik symboli** otwiera ten sam słownik co w ustawieniach mowy. SandFly dopasowuje dokładny tekst również obok innego znaku. Zamienniki działają po słowniku brajlowskim. Zobacz [wymowę](#speech).
+**Brajl** > **Słownik symboli** otwiera tę samą listę co **Mowa** > **Słownik symboli**. Możesz w niej ustawić, czym zastąpić symbol lub ciąg symboli w mowie i na monitorze brajlowskim. Na przykład możesz zamienić kropkę na spację. Wpis pasuje do dokładnego tekstu, nawet bez odstępu od poprzedniego słowa. Zamienniki są stosowane po słowniku brajlowskim. Zobacz [](#speech).

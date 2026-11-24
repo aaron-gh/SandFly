@@ -1,113 +1,139 @@
 ## Aktualizacje, Shizuku i root {#updates}
 
-SandFly może pobierać wydania z GitHuba. Otwórz **Aktualizacje i instalacja**, żeby sprawdzić wersję i zmienić sposób aktualizowania. Niektóre funkcje Androida wymagają uprawnień ADB. SandFly może uzyskać je przez [Shizuku](#updates-shizuku) lub na zrootowanym urządzeniu przez [roota](#updates-root).
+SandFly pobiera aktualizacje ze strony wydań SandFly w serwisie GitHub. Opcje aktualizacji znajdziesz na ekranie **Aktualizacje i instalacja**.
 
-### Wydania stabilne i deweloperskie {#updates-channels}
+Niektóre funkcje wymagają uprawnień, które Android przyznaje tylko przez adb, czyli Android Debug Bridge. SandFly może je uzyskać za pomocą Shizuku lub przez dostęp root na urządzeniu z rootem. Opcja dotycząca dostępu root jest na ekranie **Shizuku i root**.
 
-[Strona wydań SandFly](https://github.com/aaron-gh/SandFly/releases) zawiera wersje stabilne, oznaczane na przykład jako 0.6.0. Kompilacje deweloperskie powstają po kolejnych zmianach. Dostają poprawki wcześniej i przechodzą mniej testów.
+### Wydania stabilne i wersje deweloperskie {#updates-channels}
 
-Każda kompilacja ma rosnący numer. **Aktualizacje i instalacja** > **Sprawdź aktualizacje** podaje wersję i bieżący numer. Domyślnie SandFly proponuje stabilne wydania. Włącz **Wersje deweloperskie**, żeby dostawać najnowszą z obu możliwości. SandFly będzie wtedy sprawdzać aktualizacje mniej więcej co godzinę.
+SandFly jest dostępny w dwóch rodzajach kompilacji.
 
-### Sprawdzanie aktualizacji {#updates-check}
+- Wydania stabilne mają numer wersji, np. SandFly 0.6.0. Są dostępne na [stronie wydań SandFly](https://github.com/aaron-gh/SandFly/releases).
+- Wersje deweloperskie powstają po każdej zmianie w SandFly. Zmiany trafiają do nich wcześniej, a kompilacje przechodzą mniej testów.
 
-Otwórz **Aktualizacje i instalacja** > **Sprawdź aktualizacje**. SandFly powie, czy wersja jest bieżąca. Jeśli znajdzie aktualizację, pokaże numer i opis zmian. Przy wydaniu stabilnym są to informacje o wydaniu, a przy deweloperskim zmiany od Twojej wersji. Wybierz **Zainstaluj** albo **Anuluj**.
+Numer kompilacji rośnie po każdej zmianie. Wybierz **Aktualizacje i instalacja** > **Sprawdź aktualizacje**, aby sprawdzić numer zainstalowanej wersji i kompilacji, np. „Wersja 0.6.1, kompilacja 1234”.
 
-Jeśli GitHub jest niedostępny, spróbuj później. Gdy trwa publikacja kompilacji deweloperskiej, SandFly może ponawiać sprawdzenie przez minutę.
+Domyślnie SandFly proponuje tylko wydania stabilne. Aby pobierać również kompilacje deweloperskie, włącz **Aktualizacje i instalacja** > **Wersje deweloperskie**. Od tej pory SandFly proponuje najnowszą dostępną kompilację, stabilną lub deweloperską, i sprawdza aktualizacje mniej więcej co godzinę zamiast raz na dobę.
 
-### Automatyczne sprawdzanie {#updates-automatic}
+### Sprawdź dostępność aktualizacji {#updates-check}
 
-**Automatycznie sprawdzaj aktualizacje** jest domyślnie włączone. Pierwsze sprawdzenie następuje po około 30 sekundach od uruchomienia SandFly, a potem raz dziennie lub co godzinę przy wersjach deweloperskich. **Dostępna aktualizacja SandFly** zawiera zmiany i pojawia się raz na kompilację. Do wyświetlenia powiadomienia potrzebna jest zgoda Androida. Po udzieleniu zgody SandFly może pokazać oczekującą aktualizację.
+1. Otwórz **Aktualizacje i instalacja**.
+2. Wybierz **Sprawdź aktualizacje**.
 
-Wyłącz tę opcję, jeśli chcesz sprawdzać wersję samodzielnie.
+Najpierw pojawi się komunikat „Sprawdzanie aktualizacji”, a potem jeden z poniższych wyników.
 
-### Instalacja aktualizacji {#updates-install}
+- „SandFly jest aktualny”.
+- Okno z numerem dostępnej kompilacji i opisem zmian. W przypadku wydania stabilnego są to informacje o wydaniu, a w przypadku wersji deweloperskiej zmiany od zainstalowanej kompilacji. Wybierz **Zainstaluj**, aby ją zainstalować, lub **Anuluj**.
+- „Nie udało się sprawdzić aktualizacji”. Ten komunikat pojawia się, gdy nie można połączyć się z GitHubem. Spróbuj ponownie później.
 
-1. Otwórz **Dostępna aktualizacja SandFly** albo wybierz **Zainstaluj** po ręcznym sprawdzeniu.
-2. Jeśli Android poprosi o zgodę na instalowanie aplikacji przez SandFly, włącz ją i powtórz pierwszy krok.
-3. Poczekaj na pobranie. SandFly pokazuje procent i po chwili szacowany czas.
-4. W instalatorze Androida użyj **Zaktualizuj** lub **Zainstaluj**.
+Jeśli właśnie trwa publikowanie nowej kompilacji deweloperskiej, SandFly czeka i ponawia sprawdzanie przez maksymalnie minutę.
 
-SandFly uruchomi się ponownie z zachowanymi ustawieniami. Gdy instalator się nie otworzy, na przykład przez wyłączony ekran, wybierz **Pobrano aktualizację SandFly**. Powiadomienie jest dostępne przez 10 minut.
+### Automatyczne sprawdzanie aktualizacji {#updates-automatic}
 
-SandFly przyjmuje pliki podpisane swoim kluczem. Jeśli połączenie się zerwie, podejmie do pięciu prób i wznowi od przerwanego miejsca. Ponowne rozpoczęcie instalacji tej samej kompilacji przed ponownym uruchomieniem też może wznowić pobieranie.
+Opcja **Aktualizacje i instalacja** > **Automatycznie sprawdzaj aktualizacje** jest domyślnie włączona. SandFly sprawdza dostępność nowej kompilacji 30 sekund od uruchomienia, a potem raz na dobę. Po włączeniu opcji **Wersje deweloperskie** sprawdza co godzinę. O nowej kompilacji informuje powiadomienie **Dostępna aktualizacja SandFly** z opisem zmian. Każda kompilacja jest ogłaszana raz.
 
-Samodzielnie zbudowana kompilacja ma inny podpis. Android nie pozwoli zastąpić nią oficjalnego wydania w tym samym pakiecie. [Zapisz ustawienia](#profiles-export) przed zmianą wydania, jeśli wymaga odinstalowania. Na zegarku zobacz [aktualizacje Wear OS](#devices-watch-updates).
+Aby powiadomienie się pojawiło, SandFly musi mieć uprawnienie do wyświetlania powiadomień. Jeśli powiadomienia dla SandFly są wyłączone, informacja o kompilacji pojawi się po ich włączeniu.
 
-### Google Play jako źródło instalacji {#updates-play-installer}
+Jeśli wolisz samodzielnie sprawdzać aktualizacje, wyłącz **Automatycznie sprawdzaj aktualizacje** i używaj opcji **Sprawdź aktualizacje**.
 
-Niektóre aplikacje wyłączają usługi dostępności zainstalowane spoza Google Play. Domyślnie wyłączona opcja **Pokazuj jako zainstalowane z Google Play** zmienia źródło instalacji zapisane przez Androida. Wymaga Shizuku albo roota.
+### Zainstaluj aktualizację {#updates-install}
 
-SandFly instaluje ponownie własny pakiet i przez chwilę milknie. Kod i ustawienia pozostają takie same. Inne aplikacje mogą także sprawdzać pochodzenie w inny sposób.
+1. Stuknij powiadomienie **Dostępna aktualizacja SandFly** albo wybierz **Zainstaluj** w oknie otwartym przez **Sprawdź aktualizacje**.
+2. Przy pierwszej aktualizacji Android otworzy ustawienie zezwalające SandFly na instalowanie aplikacji. Usłyszysz „Zezwól SandFly na instalowanie aplikacji, a następnie ponów aktualizację”. Włącz zezwolenie, wróć i powtórz pierwszy krok.
+3. SandFly pokaże „Pobieranie aktualizacji” oraz powiadomienie o postępie. Zobaczysz procent ukończenia, a po kilku sekundach także przybliżony pozostały czas, np. „40%, pozostała 1 minuta i 20 sekund”.
+4. Po pobraniu otworzy się systemowe okno instalacji. Wybierz **Zaktualizuj** lub **Zainstaluj**.
 
-Przy kolejnych aktualizacjach SandFly próbuje zachować źródło przez Shizuku. Po niepowodzeniu otworzy instalator Androida. Jeśli źródło się zmieniło, SandFly ustawi je ponownie po uzyskaniu dostępu do Shizuku. Do tego czasu informuje o bieżącym stanie. Wyłączenie funkcji przywraca poprzednie źródło.
+SandFly uruchomi się ponownie w nowej wersji, z dotychczasowymi ustawieniami. Jeśli okno instalacji się nie otworzy, np. gdy ekran zgaśnie podczas pobierania, stuknij powiadomienie **Pobrano aktualizację SandFly**. Powiadomienie znika po dziesięciu minutach.
 
-Opcja **Kopiuj polecenie** udostępnia odpowiednik dla ADB. Uruchom z katalogu zawierającego `sandfly.apk`:
+SandFly instaluje tylko własne kompilacje podpisane kluczem SandFly. Jeśli pobrano inny plik, pojawi się komunikat „Pobrany plik nie jest kompilacją tej aplikacji, więc nie został zainstalowany”. Po utracie połączenia SandFly do pięciu razy próbuje wznowić pobieranie od miejsca, w którym zostało przerwane. Jeśli mimo ponowień pobieranie się nie powiedzie, usłyszysz „Nie udało się pobrać aktualizacji”. Ponowne uruchomienie instalacji tej samej kompilacji przed ponownym uruchomieniem SandFly wznawia pobieranie.
+
+Samodzielnie zbudowana wersja SandFly ma inny podpis. Jeśli chcesz zamienić ją na wydanie SandFly lub odwrotnie, najpierw odinstaluj dotychczasową wersję, a potem zainstaluj wybraną.
+
+O aktualizacjach na zegarku przeczytasz w [](#devices-watch-updates).
+
+### Pokaż SandFly jako aplikację z Google Play {#updates-play-installer}
+
+Niektóre aplikacje, np. bankowe, wyłączają usługi ułatwień dostępu, jeżeli Android wskazuje dla nich źródło instalacji inne niż Google Play. Opcja **Aktualizacje i instalacja** > **Pokazuj jako zainstalowane z Google Play** powoduje, że Android zapisuje Google Play jako instalator SandFly. Dzięki temu te aplikacje mogą pozostawić SandFly włączony. Opcja jest domyślnie wyłączona i wymaga Shizuku lub dostępu root.
+
+Po włączeniu tej opcji SandFly ponownie instaluje swój pakiet APK przez Shizuku, wskazując Google Play jako instalator. W trakcie instalacji SandFly uruchamia się ponownie, więc mowa na chwilę się zatrzymuje. Aplikacja i ustawienia zostają takie same. Zmienia się informacja o instalatorze udostępniana innym aplikacjom. Aplikacja może ustalić w inny sposób, skąd faktycznie zainstalowano SandFly.
+
+Przy włączonej opcji aktualizacje działają następująco.
+
+- SandFly instaluje aktualizacje przez Shizuku, aby Google Play pozostał zapisany jako instalator. Jeśli się to nie uda, aktualizacja odbywa się przez systemowe okno instalacji.
+- Jeśli Android zapisze inny instalator, np. po aktualizacji bez uruchomionego Shizuku, SandFly ponownie zapisze Google Play po uzyskaniu dostępu do Shizuku. Do tego czasu przy opcji zobaczysz „Włączone, ale Google Play nie jest jeszcze zarejestrowany jako instalator. SandFly ustawia to, gdy Shizuku jest dostępne.”.
+
+Po wyłączeniu opcji SandFly przywraca nazwę poprzedniego instalatora.
+
+Jeśli zmiana instalatora z aplikacji jest niedostępna, użyj czynności **Kopiuj polecenie**. Skopiuje polecenie adb wykonujące tę samą operację. Uruchom je na komputerze z folderu, w którym znajduje się plik `sandfly.apk`.
 
 ```
 adb install -r -i com.android.vending sandfly.apk
 ```
 
-Aby przywrócić zwykłą instalację, użyj `adb install -r sandfly.apk`.
+Aby przywrócić zwykły zapis instalacji, uruchom `adb install -r sandfly.apk`.
 
 ### Shizuku {#updates-shizuku}
 
-[Shizuku](https://shizuku.rikka.app) wykonuje dla innych aplikacji polecenia z uprawnieniami ADB. SandFly wymaga Shizuku 11 lub nowszego.
+[Shizuku](https://shizuku.rikka.app) uruchamia polecenia innych aplikacji z uprawnieniami adb. Gdy Shizuku działa i ma dostęp do niego SandFly, SandFly może otrzymać uprawnienia przyznawane tylko przez adb i wykonać polecenia dostępne w adb. Potrzebujesz Shizuku w wersji 11 lub nowszej.
 
-#### Uruchamianie Shizuku {#updates-shizuku-setup}
+#### Skonfiguruj Shizuku {#updates-shizuku-setup}
 
-1. Zainstaluj Shizuku i uruchom zgodnie z instrukcjami aplikacji. W Androidzie 11 i nowszym możesz użyć debugowania bezprzewodowego bez komputera. Na zrootowanym telefonie dostępny jest start z rootem.
-2. Włącz SandFly. Jeśli już działa, wyłącz i włącz czytnik.
-3. Gdy Shizuku zapyta, zezwól na dostęp SandFly.
+1. Zainstaluj Shizuku i uruchom je zgodnie z instrukcjami w tej aplikacji. Na Androidzie 11 i nowszym możesz je uruchomić przez debugowanie bezprzewodowe, bez komputera. Na urządzeniu z rootem możesz też użyć dostępu root.
+2. Włącz SandFly. Jeśli jest już włączony, wyłącz go i włącz ponownie.
+3. Gdy SandFly uruchomi się przy działającym Shizuku, pojawi się okno wyboru uprawnień. Zezwól SandFly na dostęp.
 
-SandFly prosi sam przy pierwszym uruchomieniu. Później prośba pojawia się przy włączaniu funkcji, która go potrzebuje. Jeśli wybrano odmowę bez ponownego pytania, zmień zgodę w aplikacji Shizuku.
+SandFly samoczynnie wyświetla prośbę o dostęp do Shizuku tylko raz. Później prośba pojawia się przy włączaniu funkcji, która potrzebuje dostępu. Jeśli wybierzesz odmowę bez ponownego wyświetlania pytania, zmień uprawnienie SandFly w aplikacji Shizuku.
 
-Shizuku uruchomione przez debugowanie wyłącza się po ponownym uruchomieniu urządzenia. Włącz je wtedy w aplikacji.
+Shizuku uruchomione przez debugowanie bezprzewodowe lub adb zatrzymuje się przy ponownym uruchomieniu urządzenia. Uruchom je wtedy ponownie w aplikacji Shizuku.
 
 #### Funkcje korzystające z Shizuku lub roota {#updates-shizuku-features}
 
-| Funkcja | Do czego potrzebuje dodatkowych uprawnień |
-| --- | --- |
-| [Napraw zablokowaną eksplorację dotykową](#touch) | Uprawnienie DUMP pozwala naprawić dotyk pozostawiony przez Androida w stanie przytrzymania. Bez niego SandFly sygnalizuje problem. |
-| [Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha](#sound) | Zarządzanie trwającym połączeniem, od Androida 12. |
-| [Resetuj dźwięk ułatwień dostępu po połączeniach](#sound) | Reset wyjścia po rozmowie, od Androida 13. |
-| [Skróty przy wygaszonym ekranie](#buttons) | Odbieranie klawiszy głośności przy wygaszonym ekranie. Działa przez Shizuku. |
-| [Przegląd SandFly](#display) | Ostatnie aplikacje, Alt + Tab, otwieranie w podziale ekranu i nawigacja po ostatnich aplikacjach. Bez uprawnień dostępny jest przegląd systemowy. |
-| [Panel szybkich ustawień](#display) | Zmiana ustawień systemu. Bez uprawnień część kafelków otwiera odpowiednie ustawienia. |
-| [Pisanie i schowek](#typing) | Dodawanie kopii z innych aplikacji do historii schowka i odtwarzanie dźwięków lub wibracji Gboard przy eksploracji klawiszy. |
-| [Polecenia dostępności](#commands) | Uruchamianie skrótu innej usługi dostępności. |
-| [Skrypty](#scripts) i [makra](#macros) | Naciskanie klawiszy, pisanie bez pola tekstu i zmienianie wskazanych szybkich ustawień. |
-| [Źródło instalacji](#updates-play-installer) | Zapis Google Play jako instalatora. |
+Bez Shizuku lub dostępu root poniższe funkcje są niedostępne albo działają w ograniczonym zakresie.
 
-Po uruchomieniu z dostępem do Shizuku lub roota SandFly nadaje sobie uprawnienia potrzebne włączonym funkcjom.
+- **Dotyk** > **Napraw zablokowaną eksplorację dotykową** jest domyślnie włączone. Potrzebuje uprawnienia DUMP, aby wznowić eksplorację, gdy Android pozostawi dotknięcie w stanie aktywnym. Bez uprawnienia SandFly tylko informuje, że eksploracja dotykowa mogła się zablokować. Zobacz [](#touch).
+- **Wyjście audio** > **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha** wymaga uprawnienia do zarządzania połączeniami. Działa od Androida 12. Zobacz [](#sound).
+- **Wyjście audio** > **Resetuj dźwięk ułatwień dostępu po połączeniach** działa przez Shizuku lub dostęp root, od Androida 13. Zobacz [](#sound).
+- **Klawisze głośności** > **Skróty przy wygaszonym ekranie** działają wyłącznie przez Shizuku. Zobacz [](#buttons).
+- **Przegląd** > **Używaj przeglądu SandFly** odczytuje i otwiera ostatnie aplikacje z pomocą Shizuku lub dostępu root. Bez nich otwiera się systemowy przegląd. Shizuku lub roota wymagają też Alt+Tab, otwieranie aplikacji na podzielonym ekranie oraz polecenia **Starsza aplikacja** i **Nowsza aplikacja**. Zobacz [](#display).
+- Panel szybkich ustawień SandFly korzysta z Shizuku lub roota do obsługi m.in. Wi-Fi, Bluetooth, danych komórkowych i trybu samolotowego. Dotyczy to też jasności, automatycznego obracania, podświetlenia nocnego, dodatkowego przyciemnienia, kolorów i rozmiaru elementów na ekranie. Bez tych uprawnień niektóre przełączniki otwierają odpowiednie ustawienia Androida. Zobacz [](#display).
+- Jeśli w historii schowka włączysz **Dodawaj kopie z innych aplikacji**, dołączenie tekstu skopiowanego poza SandFly wymaga Shizuku lub roota. Zobacz [](#typing).
+- Gboard odtwarza własne sygnały klawiszy, np. z opcji **Wibracja przy naciśnięciu klawisza**, podczas eksplorowania klawiszy tylko z Shizuku lub dostępem root. Zobacz [](#typing).
+- Polecenia uruchamiające skrót ułatwień dostępu innej usługi wymagają Shizuku lub roota. Zobacz [](#commands).
+- Tych uprawnień wymagają też skrypty i makra naciskające klawisze lub wpisujące tekst poza polem edycji oraz kroki makr zmieniające wymienione wyżej opcje w szybkich ustawieniach. Zobacz [](#scripts) i [](#macros).
+- **Aktualizacje i instalacja** > **Pokazuj jako zainstalowane z Google Play** wymaga dostępu opisanego w [](#updates-play-installer).
 
-#### Nadawanie zgód przez ADB {#updates-adb}
+Jeśli przy uruchomieniu SandFly ma dostęp do Shizuku lub roota, przyznaje sobie uprawnienia wymagane przez włączone funkcje.
 
-Jeśli do działania wystarczy jedno uprawnienie ADB, bez Shizuku SandFly pokazuje polecenie w opisie opcji i udostępnia **Kopiuj polecenie**. Podłącz urządzenie do komputera z ADB przez USB lub debugowanie bezprzewodowe, wykonaj polecenie i wróć do ustawienia.
+#### Przyznaj uprawnienia przez adb {#updates-adb}
 
-Dla **Napraw zablokowaną eksplorację dotykową**:
+Jeśli nie korzystasz z Shizuku, przy ustawieniach wymagających dodatkowego uprawnienia znajdziesz w opisie polecenie adb. Czynność **Kopiuj polecenie** zapisze je w schowku. Podłącz urządzenie do komputera z adb, włącz debugowanie przez USB lub debugowanie bezprzewodowe, uruchom polecenie i wróć do ustawienia.
 
-```
-adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
-```
+Polecenie zależy od funkcji.
 
-Dla **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha**:
+- Aby użyć opcji **Napraw zablokowaną eksplorację dotykową**, uruchom poniższe polecenie.
 
-```
-adb shell appops set io.github.aaron_gh.sandfly MANAGE_ONGOING_CALLS allow
-```
+  ```
+  adb shell pm grant io.github.aaron_gh.sandfly android.permission.DUMP
+  ```
 
-Dla [przenoszenia skrótów dostępności z Backtalka Aaron](#getting-started-backtalk):
+- Aby użyć opcji **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha**, uruchom poniższe polecenie.
 
-```
-adb shell pm grant io.github.aaron_gh.sandfly android.permission.WRITE_SECURE_SETTINGS
-```
+  ```
+  adb shell appops set io.github.aaron_gh.sandfly MANAGE_ONGOING_CALLS allow
+  ```
 
-Przy opcji **Resetuj dźwięk ułatwień dostępu po połączeniach** ADB może jednorazowo zmienić wyjście. Skopiuj polecenie z SandFly. Zawiera ścieżkę do zainstalowanego pakietu, więc po aktualizacji trzeba skopiować je ponownie.
+- Aby przenieść skróty ułatwień dostępu z Backtalk Aaron, uruchom poniższe polecenie. Zobacz [](#getting-started-backtalk).
 
-### Root zamiast Shizuku {#updates-root}
+  ```
+  adb shell pm grant io.github.aaron_gh.sandfly android.permission.WRITE_SECURE_SETTINGS
+  ```
 
-Na zrootowanym urządzeniu możesz włączyć **Shizuku i root** > **Używaj roota zamiast Shizuku**. Domyślnie ta opcja jest wyłączona. Menedżer roota, na przykład Magisk lub KernelSU, poprosi o zgodę.
+Dla opcji **Resetuj dźwięk ułatwień dostępu po połączeniach** adb nie udostępnia uprawnienia. Bez Shizuku przy tym ustawieniu pojawia się polecenie, które jednorazowo resetuje wyjście audio ułatwień dostępu. Przydaje się, gdy po rozmowie mowa nadal jest odtwarzana przez słuchawkę telefonu. Polecenie wskazuje zainstalowany pakiet APK, więc skopiuj je ponownie po aktualizacji SandFly.
 
-SandFly używa `su` i próbuje wykonywać polecenia jako użytkownik `shell`, tak jak przez ADB lub Shizuku. W tym trybie skróty klawiszy głośności przy wygaszonym ekranie nie są dostępne. Gdy zgody na root nie ma, przegląd i podział ekranu podadzą tę przyczynę.
+### Użyj dostępu root zamiast Shizuku {#updates-root}
 
-Jeśli `su` nie może wykonać polecenia jako `shell`, SandFly użyje roota. W tej sytuacji nie działa dodawanie kopii z innych aplikacji do historii schowka ani przełącznik hotspotu.
+Na urządzeniu z rootem SandFly może wykonywać polecenia za pomocą dostępu root. Włącz **Shizuku i root** > **Używaj roota zamiast Shizuku**. Opcja jest domyślnie wyłączona.
+
+SandFly uruchamia wtedy polecenia przez `su` jako użytkownik `shell`, z którego korzystają też adb i Shizuku. Menedżer dostępu root, np. Magisk lub KernelSU, wyświetli prośbę o przyznanie dostępu SandFly. Po włączeniu opcji funkcje wymagające Shizuku używają dostępu root. Wyjątkiem jest opcja **Skróty przy wygaszonym ekranie**, ukryta w tym trybie. Jeśli `su` nie przyzna dostępu root, w przeglądzie aplikacji i na podzielonym ekranie usłyszysz „Brak dostępu do roota”.
+
+Uwaga: Jeśli `su` na Twoim urządzeniu nie może uruchomić polecenia jako użytkownik `shell`, SandFly wykonuje je jako użytkownik root. Dodawanie kopii z innych aplikacji do historii schowka i przełącznik hotspotu są wtedy niedostępne.

@@ -1,5 +1,5 @@
 ## API monitora brajlowskiego {#api-braille-display}
 
-Zewnętrzna aplikacja może dostarczyć SandFly obsługę własnego monitora brajlowskiego. Zobacz też [ustawienia dostępu dla aplikacji](#braille-displays-other-apps).
+W tym dodatku znajdziesz opis, jak udostępnić SandFly monitor brajlowski z innej aplikacji. Instrukcję przyznawania dostępu aplikacjom znajdziesz w [](#braille-displays-other-apps).
 
 <!-- include: braille-display-api.md -->

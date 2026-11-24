@@ -1,74 +1,101 @@
 ## Tłumaczenie {#translation}
 
-SandFly może przetłumaczyć ostatnią wypowiedź, zawartość pola tekstowego albo automatycznie tłumaczyć mowę i powiadomienia w innym języku. W ustawieniach **Tłumaczenie** wybierzesz języki oraz tłumaczenie na urządzeniu lub przez usługę.
+SandFly może przetłumaczyć ostatnią wypowiedź lub zawartość pola tekstowego. Po włączeniu automatycznego tłumaczenia może też tłumaczyć wszystkie komunikaty i powiadomienia w innych językach. Tekst może być tłumaczony na telefonie albo przez wybraną usługę tłumaczenia lub usługę AI. Wszystkie opcje są na ekranie **Tłumaczenie**.
 
-### Tłumaczenie ostatniej wypowiedzi {#translation-last-phrase}
+### Przetłumacz ostatnią wypowiedź {#translation-last-phrase}
 
-Użyj **Przetłumacz ostatnią wypowiedź**. Polecenie przeczyta przekład tego, co SandFly powiedział przed chwilą. Jeśli fokus jest w polu tekstowym, użyje zawartości pola. Pola haseł są pomijane.
+Polecenie **Przetłumacz ostatnią wypowiedź** tłumaczy to, co SandFly przeczytał przed chwilą, i odczytuje wynik. Jeśli fokus jest w polu tekstowym, polecenie działa na jego zawartości. Pola haseł są pomijane.
 
-Polecenie znajdziesz w kategorii **Czytanie**. Początkowo nie ma przypisanego gestu. Możesz [wybrać gest lub klawisz](#commands).
+Znajdziesz je na ekranie **Polecenia** w grupie **Czytanie**. Domyślnie nie ma przypisanego gestu. Na tym samym ekranie przypiszesz gest lub skrót klawiszowy. Zobacz [](#commands).
 
-SandFly informuje, kiedy nie ma tekstu lub tekst jest już w języku docelowym. Ponowne użycie tłumaczy ten sam oryginał, więc możesz wcześniej zmienić język. Wynik jest zapamiętany, dopóki nie zmieni się tekst lub ustawienie. Dzięki temu kolejna próba nie wysyła ponownie tych samych danych.
+1. Przejdź do elementu lub zaczekaj, aż SandFly coś odczyta.
+2. Użyj polecenia **Przetłumacz ostatnią wypowiedź**.
 
-Przekład trafia do historii mowy. Możesz go powtórzyć, przeliterować lub skopiować tak samo jak inną wypowiedź. Przy długim tekście tłumaczenie obejmuje do 5000 znaków.
+SandFly odczytuje tłumaczenie. Jeśli tekst jest już w języku docelowym, usłyszysz „Już w języku” i jego nazwę. Jeśli nie ma tekstu, usłyszysz „Brak tekstu do przetłumaczenia”.
 
-### Wybór usługi {#translation-service}
+Jeśli od razu ponowisz polecenie, SandFly jeszcze raz tłumaczy tekst źródłowy. Dzięki temu możesz w międzyczasie zmienić język. Dopóki tekst i ustawienia pozostają takie same, SandFly używa zapisanego wyniku i ponowne wywołanie nie wysyła tekstu do usługi.
 
-Otwórz **Tłumaczenie** > **Usługa tłumaczenia**. Dostępne są:
+Wynik pojawia się w historii mowy. Możesz go powtórzyć, przeliterować lub skopiować poleceniami dotyczącymi ostatniej wypowiedzi. Dłuższe teksty są obcinane do 5000 znaków.
 
-- **Na urządzeniu**. Domyślny wybór na telefonie. Korzysta z [pobranych języków](#translation-on-device). Nie działa na zegarku.
-- **Usługa AI**. Domyślny wybór na zegarku. Używa modelu lokalnego, jeśli jest włączony, lub [skonfigurowanej usługi AI](#descriptions-ai-services).
-- **Google Cloud Translation**, **DeepL** i **Microsoft Translator**. Wymagają klucza API.
-- **LibreTranslate**. Podaj adres serwera HTTPS i klucz, jeśli serwer go wymaga.
+### Wybierz usługę tłumaczenia {#translation-service}
 
-SandFly prosi o potrzebne dane po wybraniu usługi. Aby zmienić klucz, otwórz sekcję dostawcy, wklej klucz i wybierz **Zapisz**. Żeby go usunąć, wyczyść pole i zapisz. W LibreTranslate ustaw **Adres**, a w Microsoft Translator podaj **Region** zasobu Azure, na przykład `westeurope`. Przy zasobie globalnym zostaw region pusty.
+1. Otwórz **Tłumaczenie** > **Usługa tłumaczenia**.
+2. Wybierz usługę.
 
-SandFly oznacza niegotowe usługi w ustawieniach. Przy usługach sieciowych przekazuje tekst dostawcy. W trybie **Na urządzeniu** oraz przy **Usługa AI** z lokalnym modelem tekst pozostaje na urządzeniu. Klucze są zapisywane na telefonie i pomijane przy eksporcie ustawień.
+Masz do wyboru następujące usługi.
 
-### Język źródłowy i docelowy {#translation-languages}
+- **Na urządzeniu** korzysta z języków pobranych na telefon. To domyślna opcja na telefonach. Jest dostępna tylko na telefonach. Zobacz [](#translation-on-device).
+- **Usługa AI** używa lokalnego modelu, jeśli włączono **Używaj AI na urządzeniu**. W przeciwnym razie korzysta z aktywnej usługi wybranej na ekranie **Usługi AI**, np. SandFly Pro, Gemini lub Claude. To domyślna opcja na zegarkach. Zobacz [](#descriptions-ai-services).
+- **Google Cloud Translation**, **DeepL** i **Microsoft Translator** wymagają klucza API z wybranej usługi.
+- **LibreTranslate** wymaga adresu serwera, np. `https://libretranslate.com` albo własnego serwera. Jeśli serwer tego wymaga, potrzebny jest również klucz API.
 
-- Opcja **Tłumacz z** pozwala wybrać język albo zostawić domyślne **Wykryj język**.
-- Opcja **Tłumacz na** pozwala wybrać język przekładu. Domyślnie jest to język urządzenia.
-- Przy automatycznym wykrywaniu pojawia się **Tekst w języku docelowym tłumacz na**. Możesz wybrać drugi język albo zostawić **Nie tłumacz** dla tekstu już zapisanego w języku docelowym.
-- **Zamień języki** przełącza język źródłowy i docelowy. Opcja pojawia się, jeśli wskazujesz język źródłowy samodzielnie.
+Po wybraniu usługi wymagającej klucza API lub adresu pole do wpisania danych otwiera się od razu. Na ekranie **Tłumaczenie** pojawia się też osobna grupa ustawień tej usługi, np. **Ustawienia DeepL**.
 
-W trybie **Na urządzeniu** listy obejmują obsługiwane języki. Rozpoznawanie języka działa na telefonie. Przy pierwszym użyciu aplikacja może potrzebować chwili na pobranie modelu.
+- W polu klucza API, np. **Klucz API DeepL**, wklej klucz i wybierz **Zapisz**. Aby go usunąć, wyczyść pole i wybierz **Zapisz**.
+- W polu **Adres** wpisz adres serwera LibreTranslate. Musi zaczynać się od `https://`.
+- W polu **Region** dla Microsoft Translator podaj region zasobu Translator w Azure, np. `westeurope`. Jeśli korzystasz z zasobu globalnego (**Globalny**), pozostaw pole puste.
 
-### Pobieranie języków {#translation-on-device}
+Przy nazwie usługi, która nie jest gotowa do pracy, pojawia się „nie skonfigurowano”. Tekst do tłumaczenia trafia do wybranej usługi, chyba że ustawiono **Na urządzeniu** albo **Usługa AI** z włączonym AI na urządzeniu. Klucze API pozostają na telefonie i są pomijane przy eksportowaniu ustawień.
 
-Jeśli tłumaczenie na urządzeniu jest wybrane jako usługa zwykła albo automatyczna, otwórz **Języki na urządzeniu**. Wybierz język do pobrania lub usunięcia. Pobranie jednego języka zajmuje około 30 MB.
+### Wybierz języki {#translation-languages}
 
-**Pobierz wszystkie języki** pokazuje liczbę i rozmiar, a po zatwierdzeniu pobiera je po kolei. SandFly pokazuje postęp i odczytuje kolejne ćwiartki, gdy ekran **Tłumaczenie** jest otwarty. Pobieranie trwa po wyjściu z ustawień. Możesz wrócić i wybrać tę opcję ponownie, żeby je zatrzymać.
+- W opcji **Tłumacz z** wybierz język lub pozostaw domyślne **Wykryj język**.
+- W opcji **Tłumacz na** wybierz język docelowy lub pozostaw domyślny język urządzenia.
+- Opcja **Tekst w języku docelowym tłumacz na** pozwala wybrać drugi język dla tekstu, który jest już w języku docelowym. Jeśli znasz np. niemiecki i angielski, a zwykle tłumaczysz na angielski, możesz tu wybrać niemiecki. Domyślne ustawienie to **Nie tłumacz**. Opcja jest widoczna, gdy w polu **Tłumacz z** ustawiono **Wykryj język**.
+- **Zamień języki** zamienia wartości w polach **Tłumacz z** i **Tłumacz na**. SandFly odczytuje nową parę. Opcja jest widoczna tylko wtedy, gdy w polu **Tłumacz z** wybrano konkretny język.
 
-**Pobieraj języki tylko przez Wi-Fi** jest domyślnie wyłączone. Jeśli potrzebnego języka jeszcze nie ma, SandFly pobierze go przy pierwszym użyciu i powie, co pobiera. Pobierze także angielski, przez który tłumaczone są pary pozostałych języków.
+Po wybraniu usługi **Na urządzeniu** listy zawierają języki dostępne w tłumaczeniu lokalnym. Język jest wykrywany na telefonie. Przy pierwszym użyciu możesz usłyszeć „Trwa pobieranie wykrywania języka. Spróbuj ponownie za chwilę.”.
 
-### Tłumaczenie automatyczne {#translation-automatic}
+### Języki na urządzeniu {#translation-on-device}
 
-- **Automatyczne tłumaczenie** przekłada mowę w innych językach, także powiadomienia.
-- **Tłumacz powiadomienia** tłumaczy same powiadomienia, jeśli tłumaczenie automatyczne pozostałej mowy jest wyłączone.
+Jeśli w ustawieniach tłumaczenia ręcznego lub automatycznego wybrano **Na urządzeniu**, pojawia się grupa ustawień tłumaczenia na urządzeniu z trzema opcjami.
 
-Obie opcje są domyślnie wyłączone. Po włączeniu którejś pojawiają się **Usługa automatycznego tłumaczenia** oraz **Języki bez tłumaczenia**. Usługa automatyczna może korzystać z urządzenia, Google Cloud Translation, DeepL, Microsoft Translator albo LibreTranslate. Bierze usługę wybraną do zwykłego tłumaczenia, a przy **Usługa AI** domyślnie przechodzi na **Na urządzeniu**. Na liście języków bez tłumaczenia możesz dodać na przykład te, które rozumiesz. Początkowo lista jest pusta.
+- **Języki na urządzeniu** pokazują listę języków i informują, które są już pobrane. Wybierz niepobrany język, aby pobrać około 30 MB danych. Wybierz pobrany język, aby go usunąć.
+- **Pobierz wszystkie języki** po wyświetleniu ich liczby i rozmiaru pobiera po kolei wszystkie brakujące języki. W trakcie pobierania pozycja pokazuje liczbę gotowych języków. Jeśli ekran **Tłumaczenie** jest otwarty, SandFly oznajmia ukończenie kolejnych 25 procent. Pobieranie trwa także po wyjściu z ekranu. Aby je zatrzymać, wybierz tę opcję ponownie.
+- **Pobieraj języki tylko przez Wi-Fi** ogranicza pobieranie do Wi-Fi. Domyślnie opcja jest wyłączona.
 
-Automatyczne tłumaczenie możesz też przełączać w trakcie czytania. Dodaj **Automatyczne tłumaczenie** na ekranie [Sterowanie czytaniem](#commands) i wybierz tę opcję podczas nawigacji.
+Jeśli przy tłumaczeniu potrzebujesz języka, którego jeszcze nie ma na telefonie, SandFly zaczyna go pobierać razem z angielskim. Angielski służy jako język pośredni przy tłumaczeniu między innymi językami. SandFly odczytuje nazwy pobieranych języków.
 
-#### Co dzieje się przed odczytem {#translation-automatic-details}
+### Automatyczne tłumaczenie {#translation-automatic}
 
-SandFly rozpoznaje język wypowiedzi na urządzeniu. Czyta oryginał, jeśli jest w języku docelowym lub na liście pomijanych. Jeśli wskazano język źródłowy, tłumaczy tylko z tego języka. Tekst krótszy niż trzy litery pomija przy rozpoznawaniu.
+W grupie **Automatyczne tłumaczenie** znajdziesz poniższe opcje.
 
-Dźwięk i wibracje pojawiają się od razu. Mowa czeka na przekład do 3 sekund. Przy błędzie lub przekroczeniu czasu zabrzmi oryginał. SandFly zapamiętuje ostatnie przekłady, dzięki czemu może od razu odczytać ten sam element ponownie.
+- **Automatyczne tłumaczenie** tłumaczy mowę przed jej odczytaniem, także w powiadomieniach, jeśli tekst jest w innym języku niż ustawiony w opcji **Tłumacz na**. Domyślnie opcja jest wyłączona.
+- **Tłumacz powiadomienia** tłumaczy tylko powiadomienia i działa, gdy **Automatyczne tłumaczenie** jest wyłączone. Domyślnie ta opcja też jest wyłączona.
+- W opcji **Usługa automatycznego tłumaczenia** możesz wybrać **Na urządzeniu**, **Google Cloud Translation**, **DeepL**, **Microsoft Translator** lub **LibreTranslate**. Domyślnie używana jest usługa tłumaczenia ręcznego. Jeśli jest nią **Usługa AI**, tłumaczenie automatyczne korzysta domyślnie z usługi **Na urządzeniu**.
+- Na liście **Języki bez tłumaczenia** możesz wskazać języki, które SandFly ma czytać w oryginale, np. języki, które rozumiesz. Domyślnie lista jest pusta.
 
-Jeśli w trybie lokalnym brakuje języka, SandFly zacznie go pobierać po potwierdzeniu rozpoznania. W trakcie pobierania czyta oryginał. Po zakończeniu odczyta tłumaczenie elementu, jeśli wciąż na nim jesteś. Powiadomienie może czekać na pobranie do 30 sekund.
+Dwie ostatnie opcje są dostępne, gdy włączono **Automatyczne tłumaczenie** lub **Tłumacz powiadomienia**.
 
-[Powiadomienia](#notifications) są tłumaczone przed dodaniem do kolejki mowy, zachowują więc swoją kolejność. Jeśli mają przypisany profil głosu, zostanie użyty. Treść prywatnych powiadomień nie jest tłumaczona ani wysyłana do usługi.
+Aby przełączać automatyczne tłumaczenie bez wchodzenia w ustawienia, użyj elementu **Automatyczne tłumaczenie** w sterowaniu czytaniem. Domyślnie jest ukryty. Włącz go na ekranie **Sterowanie czytaniem**. Zobacz [](#commands).
 
-### Odczyt tłumaczenia {#translation-speech}
+#### Jak działa automatyczne tłumaczenie {#translation-automatic-details}
 
-W **Tłumaczenie** > **Mowa** znajdziesz:
+SandFly wykrywa język każdej wypowiedzi na telefonie. Tekst zostaje odczytany w oryginale i pozostaje na telefonie, jeśli jest już w języku docelowym albo w jednym z języków z listy **Języki bez tłumaczenia**. Gdy w opcji **Tłumacz z** wybierzesz konkretny język, tekst w każdym innym języku również pozostaje w oryginale. Wykrywanie języka pomija teksty złożone z mniej niż trzech liter.
 
-- **Używaj głosu dla języka docelowego**. Domyślnie włączone. Oznacza przekład językiem dla [ustawień mowy](#speech).
-- **Podawaj język oryginału**. Przed przekładem podaje, z jakiego języka pochodzi tekst. Domyślnie wyłączone.
-- **Kopiuj tłumaczenia do schowka**. Kopiuje każdy przekład. Domyślnie wyłączone.
+Dźwięki i wibracje są odtwarzane od razu. Mowa zaczyna się, gdy tłumaczenie jest gotowe. Jeśli tłumaczenie trwa dłużej niż trzy sekundy albo się nie powiedzie, SandFly odczytuje oryginał. Ostatnie wyniki są zapamiętywane, więc powrót do tego samego elementu nie uruchamia ponownego tłumaczenia.
 
-### Gdy tłumaczenie się nie udaje {#translation-errors}
+Jeśli wybrano **Na urządzeniu**, SandFly zacznie pobierać brakujący język, gdy tylko go rozpozna. W trakcie pobierania czyta oryginał. Gdy język będzie gotowy, ponownie przeczyta aktualny element, tym razem po przetłumaczeniu, o ile nadal na nim jesteś. Powiadomienie może czekać na pobranie języka do 30 sekund.
 
-SandFly może poprosić o klucz albo o adres LibreTranslate. Powie również, jeśli dostawca odrzucił klucz, wyczerpał się limit, nie można połączyć się z usługą, język nie jest obsługiwany albo nie udało się go wykryć. Przy tłumaczeniu lokalnym poinformuje o trwającym lub przerwanym pobieraniu języka. Przy innych błędach odczyta komunikat dostawcy.
+Powiadomienia są tłumaczone przed dodaniem do kolejki, dzięki czemu zachowują kolejność. Powiadomienie czytane z profilem głosu zachowuje głos z tego profilu. Powiadomienia prywatne są czytane w oryginale, a ich tekst pozostaje na telefonie. Zobacz [](#notifications).
+
+### Jak SandFly odczytuje tłumaczenia {#translation-speech}
+
+W grupie **Mowa** są trzy opcje dotyczące tłumaczeń.
+
+- **Używaj głosu dla języka docelowego** przypisuje tłumaczeniu informację o języku, aby SandFly mógł dobrać głos tak jak przy innym tekście w tym języku. Zastosowanie mają ustawienia języka w menu **Mowa**. Opcja jest domyślnie włączona. Zobacz [](#speech).
+- **Podawaj język oryginału** sprawia, że przed tłumaczeniem usłyszysz nazwę języka źródłowego, np. „Język oryginału: niemiecki”. Domyślnie opcja jest wyłączona.
+- **Kopiuj tłumaczenia do schowka** zapisuje każde tłumaczenie do schowka. Domyślnie opcja jest wyłączona.
+
+### Komunikaty o błędach tłumaczenia {#translation-errors}
+
+Jeśli nie uda się przetłumaczyć tekstu, SandFly podaje przyczynę.
+
+- Brakuje klucza API lub adresu LibreTranslate. Możesz np. usłyszeć „Wpisz klucz API usługi DeepL w ustawieniach tłumaczenia.”.
+- Usługa nie zaakceptowała klucza API lub wyczerpano limit korzystania z usługi.
+- Nie można połączyć się z usługą.
+- Usługa nie obsługuje tego języka.
+- Nie wykryto języka.
+- Języki do tłumaczenia na urządzeniu jeszcze się pobierają albo nie udało się ich pobrać.
+
+W pozostałych przypadkach SandFly informuje, że usługa nie przetłumaczyła tekstu, i odczytuje jej komunikat.

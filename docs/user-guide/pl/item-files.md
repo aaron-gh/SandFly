@@ -1,10 +1,12 @@
 # Pliki pojedynczych elementów SandFly
 
-Taki plik pozwala przenieść wybrane makra, profile, skróty, słowniki, znaki brajlowskie lub polecenia głosowe. Możesz go wyeksportować, udostępnić, edytować i zaimportować na innym telefonie z SandFly. Do pełnej kopii służy **Kopia zapasowa i przywracanie** > **Eksportuj ustawienia**.
+Plik pojedynczych elementów może zawierać makra, profile gestów, mapy klawiszy, gesty i skróty klawiszowe w aplikacjach, profile ustawień, wpisy słowników, własne znaki brajlowskie i własne polecenia głosowe. Możesz go wyeksportować, udostępnić, edytować lub napisać od początku. Możesz też wygenerować go za pomocą czatu AI. Gotowy plik zaimportujesz na dowolnym telefonie z SandFly.
+
+Taki plik zawiera tylko elementy, które w nim zapisano. Wszystkie ustawienia zapiszesz przez **Kopia zapasowa i przywracanie** > **Eksportuj ustawienia**.
 
 ## Eksport i import {#export-and-import}
 
-**Eksportuj do pliku** zapisuje całą listę lub pojedynczą pozycję, zależnie od otwartego ekranu.
+Na każdym z poniższych ekranów znajdziesz **Eksportuj do pliku** i **Importuj z pliku**. Jeśli wybierzesz **Eksportuj do pliku** na ekranie listy, plik obejmie wszystkie pozycje z listy. Jeśli użyjesz tej opcji na ekranie pojedynczej pozycji, plik obejmie tylko tę pozycję.
 
 | Zawartość | Gdzie ją znaleźć w ustawieniach |
 | --- | --- |
@@ -20,9 +22,11 @@ Taki plik pozwala przenieść wybrane makra, profile, skróty, słowniki, znaki 
 | Własne znaki brajlowskie | **Brajl** > **Klawiatura brajlowska** > **Własne znaki brajlowskie** |
 | Własne polecenia głosowe | **Polecenia głosowe** |
 
-Przycisk **Importuj z pliku** na każdym z tych ekranów wczytuje wszystkie pozycje z pliku. Nowa pozycja zastępuje pozycję tego samego rodzaju o tej samej nazwie, niezależnie od wielkości liter. Gdy importujesz słownik, liczy się szukany tekst i aplikacja. Dla znaków brajlowskich liczy się tekst i tablica, a dla poleceń głosowych fraza. SandFly podaje pominięte pozycje, na przykład nieznane polecenia, niepoprawne skróty, brakujące nazwy i odrzucone wyrażenia.
+Przycisk **Importuj z pliku** na każdym z tych ekranów wczytuje wszystkie pozycje z pliku. Nowa pozycja zastępuje pozycję tego samego rodzaju o tej samej nazwie, niezależnie od wielkości liter. Gdy importujesz słownik, liczy się szukany tekst i aplikacja. Dla znaków brajlowskich liczą się tekst i tabela, a dla poleceń głosowych fraza. Pozostałe pozycje pozostają bez zmian.
 
-**Kopia zapasowa i przywracanie** > **Opis formatu pliku eksportu** zapisuje opis wraz z gestami, poleceniami i ustawieniami dostępnymi na urządzeniu oraz ich aktualnymi wartościami. Jeśli chcesz, żeby AI przygotowała Ci plik, dołącz ten opis do polecenia.
+Po imporcie SandFly wyświetla listę pominiętych pozycji. Mogą to być nieznane polecenia, gesty, klawisze lub ustawienia, wpisy bez nazwy i odrzucone wyrażenia regularne.
+
+**Kopia zapasowa i przywracanie** > **Opis formatu pliku eksportu** zapisuje opis wraz z gestami, poleceniami i ustawieniami dostępnymi na urządzeniu oraz ich aktualnymi wartościami. Jeśli chcesz przygotować plik za pomocą czatu AI, dołącz ten opis i podaj, jakie pozycje mają powstać.
 
 ## Struktura pliku {#the-file}
 
@@ -49,7 +53,7 @@ SandFly ignoruje tekst przed pierwszym `{` i po ostatnim `}`. Możesz więc zapi
 
 ## Polecenia {#commands}
 
-Użyj identyfikatora działania, na przykład `"READ_FROM_TOP"` albo `"NEXT"`. Opis formatu z urządzenia zawiera bieżące nazwy i identyfikatory. `"UNASSIGNED"` wyłącza przypisanie w danej aplikacji lub profilu.
+Gesty, skróty klawiszowe, kroki makr i polecenia głosowe uruchamiają polecenia. Zapisz polecenie za pomocą jego identyfikatora, na przykład `"READ_FROM_TOP"` albo `"NEXT"`. Opis formatu z urządzenia zawiera bieżące nazwy i identyfikatory. `"UNASSIGNED"` wyłącza przypisanie w danej aplikacji lub profilu.
 
 Do otwarcia aplikacji użyj `"OPEN_APP:"` z nazwą pakietu, na przykład `"OPEN_APP:com.google.android.gm"`. Możesz też podać komponent z opisu formatu. Aplikacja musi być zainstalowana przy imporcie.
 
@@ -57,7 +61,7 @@ Makro zapisujesz jako `"MACRO:"` z jego `id` lub nazwą, na przykład `"MACRO:Op
 
 ## Gesty {#gestures}
 
-Użyj klucza z opisu formatu. Na przykład `"pref_shortcut_up"` oznacza przesunięcie w górę.
+Zapisz gest za pomocą jego klucza. Na przykład `"pref_shortcut_up"` oznacza gest **Przesuń w górę**. Opis formatu z urządzenia podaje klucz i nazwę każdego gestu.
 
 ## Skróty klawiszowe {#keyboard-shortcuts}
 
@@ -67,7 +71,7 @@ Możesz podać literę, cyfrę lub nazwę. Przykłady to `Left`, `Right`, `Up`, 
 
 Przecinek rozdziela części skrótu sekwencyjnego, na przykład `"SandFly+O, H"`. `"SandFly twice"` oznacza dwa naciśnięcia klawisza SandFly.
 
-Mapa telefonu z klawiaturą obsługuje dodatkowe zapisy. `alone` rozpoznaje sam modyfikator (`"SandFly alone"`), `twice` podwójne naciśnięcie (`"Enter twice"`, `"Alt alone twice"`), a `held` przytrzymanie (`"Alt+Shift held"`, `"K held"`). Poza wpisywaniem krótki nacisk klawisza z przypisaniem `held` nadal wykonuje zwykły skrót.
+Mapa telefonu z klawiaturą obsługuje dodatkowe zapisy. Dopisek `alone` oznacza naciśnięcie samych modyfikatorów, na przykład `"SandFly alone"` albo `"SandFly+Shift alone"`. Dopisek `twice` oznacza dwa naciśnięcia z rzędu, na przykład `"Enter twice"` albo `"Alt alone twice"`. Dopisek `held` oznacza przytrzymanie. Możesz go użyć z samymi modyfikatorami, na przykład `"Alt+Shift held"`, lub z innym klawiszem, na przykład `"K held"`. Poza wpisywaniem krótki nacisk klawisza z przypisaniem `held` nadal wykonuje jego zwykły skrót.
 
 ## Makra {#macros}
 
@@ -85,9 +89,9 @@ Mapa telefonu z klawiaturą obsługuje dodatkowe zapisy. `alone` rozpoznaje sam 
 }
 ```
 
-`id` jest opcjonalne. Inne pozycje mogą się nim posłużyć. `condition` jest opcjonalne. Bez niego makro można uruchomić zawsze. `app` ogranicza je do pakietu, na przykład `"com.whatsapp"`. Jeśli pole jest pominięte, a nieodwrócony warunek `app` nie ma alternatywy `"or"`, SandFly może przejąć pakiet z warunku.
+`id` jest opcjonalne. Inne pozycje mogą się nim posłużyć. `condition` jest opcjonalne. Bez warunku makro może uruchomić się za każdym razem. Opcjonalne `app` ogranicza je do pakietu, na przykład `"com.whatsapp"`. Bez `app` makro działa we wszystkich aplikacjach. Jeśli pole `app` pominięto, ale `condition` zawiera test `app` bez zaprzeczenia i nie ma w nim `"or"`, SandFly ustawi pakiet zgodnie z tym testem.
 
-`"actions": true` dodaje makro do menu **Czynności**. `actionsCondition` ma tę samą strukturę co `condition` i ogranicza widoczność pozycji, na przykład `[{ "test": "focused", "label": "Send", "not": true }]`.
+`"actions": true` dodaje makro do menu **Czynności** elementów w danej aplikacji albo we wszystkich aplikacjach. Opcjonalne `actionsCondition` ma tę samą strukturę co `condition`. Jeśli je ustawisz, makro pojawi się w menu tylko po spełnieniu warunku, na przykład `[{ "test": "focused", "label": "Send", "not": true }]`.
 
 Rodzaje kroków:
 
@@ -95,15 +99,15 @@ Rodzaje kroków:
 | --- | --- | --- |
 | `command` | `command` | Wykonuje polecenie. |
 | `wait` | `ms` | Czeka do 600 000 ms. |
-| `tap` | `label`, `timeout`, `regex`, `field`, `kind` | Dotyka elementu pasującego do `label`. |
+| `tap` | `label`, `timeout`, `regex`, `field`, `kind` | Dotyka elementu, którego tekst zawiera `label`. |
 | `tap_position` | `x`, `y` | Stuka w punkt w pikselach od lewego górnego rogu. |
 | `touch_hold` | `label`, `hold`, `slide`, `distance`, `timeout`, `regex`, `field`, `kind` | Przytrzymuje środek przez `hold` ms, opcjonalnie przesuwa o `distance` dp w stronę `slide` i unosi. |
-| `focus_item` | `label`, `timeout`, `regex`, `field`, `kind` | Przenosi fokus dostępności. |
+| `focus_item` | `label`, `timeout`, `regex`, `field`, `kind` | Przenosi fokus dostępności na znaleziony element. |
 | `speak_item` | `label`, `timeout`, `regex`, `field`, `kind` | Czyta element. |
-| `act_item` | `act`, `label`, `times`, `timeout`, `regex`, `field`, `kind` | Przytrzymuje lub przewija `times` razy. `act` to `"long_press"`, `"scroll_forward"` lub `"scroll_backward"`. Bez `label` przewija największą listę. |
+| `act_item` | `act`, `label`, `times`, `timeout`, `regex`, `field`, `kind` | Przytrzymuje lub przewija `times` razy. `act` to `"long_press"`, `"scroll_forward"` lub `"scroll_backward"`. Jeśli w kroku przewijania nie ma `label`, SandFly przewija największą listę na ekranie. |
 | `speak_text` | `text` | Czyta tekst. |
 | `open_app` | `app` | Otwiera aplikację. Podaj polecenie otwarcia. |
-| `type_text` | `text`, `replace` | Wpisuje tekst. `replace` zastępuje całą zawartość. |
+| `type_text` | `text`, `replace` | Wpisuje tekst w polu, na którym jest fokus. `replace` zastępuje zawartość tego pola. |
 | `if` | `condition` | Wykonuje kroki po spełnieniu warunku, do `else_if`, `else` lub `end_if`. |
 | `else_if` | `condition` | Sprawdza kolejną możliwość. |
 | `else` | | Obejmuje pozostałe przypadki. |
@@ -115,9 +119,9 @@ Rodzaje kroków:
 | `stop` | | Zatrzymuje makro. |
 | `wait_until` | `condition`, `timeout` | Czeka na spełnienie warunku. Po upływie `timeout` ms zatrzymuje makro. |
 
-Przy wyszukiwaniu `timeout` określa oczekiwanie od 500 do 60 000 ms. Domyślnie wynosi 3000 ms. `label` pasuje do fragmentu zawartości niezależnie od wielkości liter. `"regex": true` włącza wyrażenie regularne. `field` zawęża dopasowanie do `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` lub `"id"`. `kind` pozwala wybrać typ. Bez niego pasuje każdy.
+Pole `timeout` w krokach `tap`, `touch_hold`, `focus_item`, `speak_item` i `act_item` określa czas oczekiwania na element, od 500 do 60 000 ms. Domyślnie wynosi 3000 ms. `label` może pasować w dowolnym miejscu w tekście, opisie, podpowiedzi, stanie lub dymku elementu. Wielkość liter nie ma znaczenia. `"regex": true` traktuje `label` jako wyrażenie regularne. `field` ogranicza szukanie do `"text"`, `"description"`, `"hint"`, `"state"`, `"tooltip"` albo `"id"`, czyli identyfikatora zasobu. `kind` ogranicza szukanie do jednego typu, tak jak w teście `item`. Bez niego pasuje każdy typ.
 
-`x` i `y` przyjmują wartości od 0 do 10 000. Punkt poza ekranem kończy krok błędem. `hold` przyjmuje od 100 do 600 000 ms, domyślnie 1000. `slide` to `"up"`, `"down"`, `"left"` lub `"right"`. Bez kierunku palec zostaje uniesiony w tym samym miejscu. `distance` określa od 1 do 1000 dp, domyślnie 100. Koniec przesunięcia zostaje na ekranie. Polecenie odczytu współrzędnych odczytuje i kopiuje środek elementu. Makro mieści do 200 kroków.
+`x` i `y` przyjmują wartości od 0 do 10 000. Punkt poza ekranem kończy krok błędem. `hold` przyjmuje od 100 do 600 000 ms, domyślnie 1000. `slide` to `"up"`, `"down"`, `"left"` lub `"right"`. Bez kierunku palec zostaje uniesiony w tym samym miejscu. `distance` określa od 1 do 1000 dp, domyślnie 100. Koniec przesunięcia zostaje na ekranie. Polecenie **Odczytaj współrzędne** odczytuje i kopiuje położenie środka elementu, na którym jest fokus. Makro mieści do 200 kroków.
 
 Warunek to lista do 20 testów połączonych przez „i”. `"or": true` przy teście rozpoczyna grupę połączoną z poprzednią przez „lub”. `"not": true` odwraca wynik.
 
@@ -145,7 +149,7 @@ Opcjonalne `kind` może mieć wartość `clickable`, `long_clickable`, `editable
 }
 ```
 
-Gesty pominięte w `gestures` zachowują wcześniejsze działanie. `swipesBeforeLift` ustawia rozpoznawanie przed uniesieniem w tym profilu i jest opcjonalne. Nazwa profilu domyślnego jest zarezerwowana.
+Gesty pominięte w `gestures` zachowują wcześniejsze działanie. Opcjonalne `swipesBeforeLift` ustawia w tym profilu opcję **Rozpoznawaj przesunięcia przed uniesieniem palca**. Nazwa profilu **Domyślny** jest zajęta.
 
 ## Mapy klawiatury {#keymaps}
 
@@ -164,7 +168,7 @@ Gesty pominięte w `gestures` zachowują wcześniejsze działanie. `swipesBefore
 }
 ```
 
-Po imporcie mapa trafia do własnych map. Otwórz **Skróty klawiszowe** i wybierz ją z listy. Działania pominięte w `shortcuts` nie mają skrótu. Aby zmienić kilka skrótów, zacznij od eksportu działającej mapy. Każde polecenie ma jeden skrót i każdy skrót prowadzi do jednego polecenia.
+Po imporcie mapa trafia do własnych map. Otwórz **Skróty klawiszowe** > **Wybierz mapę klawiszy** i wybierz ją z listy. Działania pominięte w `shortcuts` nie mają skrótu. Aby zmienić kilka skrótów, zacznij od eksportu działającej mapy. Każde polecenie ma jeden skrót i każdy skrót prowadzi do jednego polecenia.
 
 `sandFlyKey` przyjmuje `Meta`, `Alt`, `Ctrl+Alt`, `Ctrl+Meta`, `Insert`, `Numpad Insert`, `Sym`, `Right Alt`, `Ctrl`, `Right Shift` lub `Fn`. Domyślnie jest to `Meta`. `sequences` pozwala na skróty złożone. `arrowsNavigate` pozwala używać skrótów bez klawisza SandFly również poza trybem przeglądania, jak w NVDA. `plainKeys` pozwala wywoływać skrót dla zwykłego klawisza z dodanym klawiszem SandFly także podczas wpisywania, jak w mapie telefonu z klawiaturą. Początkowo jest wyłączone.
 
@@ -179,7 +183,7 @@ Po imporcie mapa trafia do własnych map. Otwórz **Skróty klawiszowe** i wybie
 }
 ```
 
-Każde pole odpowiada jednej aplikacji według pakietu i zastępuje jej zestaw. Skrót w `keys` bez składnika `SandFly` działa bez tego klawisza.
+Każda pozycja odpowiada jednej aplikacji wskazanej nazwą pakietu. Import zastępuje jej dotychczasowe przypisania. Skrót w `keys` bez składnika `SandFly` działa bez tego klawisza.
 
 ## Profile ustawień {#settings-profiles}
 
@@ -200,7 +204,7 @@ Każde pole odpowiada jednej aplikacji według pakietu i zastępuje jej zestaw. 
 
 `apps`, `web`, `reading`, `editing` i `keyboards` określają automatyczny wybór profilu w aplikacji, treści WWW, czytaniu ciągłym, edycji oraz przy wyświetlonej klawiaturze. `keyboards` zawiera identyfikatory klawiatur z listy danego urządzenia.
 
-W `settings` podaj klucze i wartości, które mają obowiązywać przy włączonym profilu. Użyj formatu z opisu urządzenia: wartości logicznej, liczby, napisu lub listy napisów. Ustawienie zapisane jako tekst wymaga cudzysłowów, na przykład `"1.5"`. `null` przywraca dla profilu wartość domyślną. Dla klawiatury i monitora brajlowskiego użyj prefiksu pliku, na przykład `"braille_keyboard/key"`.
+W `settings` podaj klucze i wartości, które mają obowiązywać przy włączonym profilu. Użyj formatu z opisu urządzenia: wartości logicznej, liczby, napisu lub listy napisów. Ustawienie zapisane jako tekst wymaga cudzysłowów, na przykład `"1.5"`. `null` przywraca dla profilu wartość domyślną. Przy ustawieniach klawiatury i monitora brajlowskiego nazwę pliku podaj przed kluczem, tak jak w opisie formatu, na przykład `"braille_keyboard/key"`.
 
 Profil pomija klucze API, licencję Pro i stan urządzenia, na przykład informację o wyświetlonych samouczkach.
 
@@ -216,13 +220,13 @@ Puste `replace` usuwa dopasowany tekst. `regex` i `wholeWord` są opcjonalne. S�
 
 ## Własne znaki brajlowskie {#custom-braille-characters}
 
-W `brailleCharacters` można przypisać tekst do własnej kombinacji komórek w jednej tablicy.
+W `brailleCharacters` można przypisać tekst do własnej kombinacji komórek w jednej tabeli.
 
 ```json
 { "text": ")", "cells": "56-2356", "table": "POLISH" }
 ```
 
-`text` ma od 1 do 50 znaków. `cells` to punkty od 1 do 8 w każdej komórce. Oddziel komórki myślnikiem. Maksimum to 20 komórek. `table` identyfikuje tablicę, na przykład `"POLISH"`, `"POLISH_COMP8"`, `"UEB"` lub `"GERMAN"`. Identyfikatory swoich tablic znajdziesz w pliku wyeksportowanym z ekranu własnych znaków. SandFly zachowuje do 500 znaków niestandardowych.
+`text` ma od 1 do 50 znaków. `cells` to punkty od 1 do 8 w każdej komórce. Oddziel komórki myślnikiem. Maksimum to 20 komórek. `table` identyfikuje tablicę, na przykład `"POLISH"`, `"POLISH_COMP8"`, `"UEB"` lub `"GERMAN"`. Identyfikatory używanych tabel znajdziesz w pliku wyeksportowanym z ekranu **Własne znaki brajlowskie**. SandFly zachowuje do 500 znaków niestandardowych.
 
 ## Własne polecenia głosowe {#custom-voice-commands}
 

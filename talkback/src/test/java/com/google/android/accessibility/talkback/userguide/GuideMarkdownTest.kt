@@ -265,6 +265,7 @@ class GuideMarkdownTest {
       Files(included, mapOf("gestures" to "Gebaren.", "keyboard-shortcuts" to "Sneltoetsen."))
     assertEquals(emptyList<String>(), GuideMarkdown.problems(chapters, sources))
   }
+
   /** The Polish guide ships the same chapters as English, with translated API references. */
   @Test
   fun polishGuideHasNoProblems() {

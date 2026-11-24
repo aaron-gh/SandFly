@@ -1,234 +1,290 @@
 ## Pisanie i edycja tekstu {#typing}
 
-SandFly odczytuje klawisz pod palcem i może mówić, co wpisałeś. Możesz też dyktować lub pisać odręcznie. Osobne rozdziały opisują [klawiaturę brajlowską](#braille) i [klawiatury fizyczne](#keyboards), w tym metodę wprowadzania Klawiatura SandFly.
+SandFly odczytuje klawisze ekranowe pod palcem oraz tekst, który wpisujesz. Możesz też dyktować, pisać odręcznie na ekranie lub wprowadzać tekst brajlem. Ten rozdział opisuje ekran **Pisanie**, klawiaturę ekranową, przesuwanie kursora, zaznaczanie i kopiowanie, historię schowka, szczegółową edycję, dyktowanie i klawiaturę pisma ręcznego.
+
+Klawiaturę brajlowską opisuje [](#braille), a klawiatury fizyczne i metodę wprowadzania tekstu Klawiatura SandFly opisuje [](#keyboards).
 
 ### Ustawienia pisania {#typing-settings}
 
-Otwórz **Pisanie** w ustawieniach SandFly. Wybierz [**Echo klawiatury**](#typing-keyboard-echo), żeby ustawić, co usłyszysz podczas wpisywania. Na tym ekranie są też [ruch kursora dwukrotnym stuknięciem](#typing-double-tap-cursor), [ustawienia klawiatury ekranowej](#typing-on-screen-keyboard) oraz, po podłączeniu sprzętu, [ustawienia klawiatury fizycznej](#typing-physical-keyboard). W sekcji **Inne sposoby pisania** znajdziesz [dyktowanie](#typing-dictation) i [pismo odręczne](#typing-handwriting).
+W ustawieniach SandFly otwórz ekran **Pisanie**. Znajdziesz tam poniższe opcje.
+
+- **Echo klawiatury** określa odczyt podczas pisania na poszczególnych klawiaturach. Zobacz [](#typing-keyboard-echo).
+- **Dwukrotne kliknięcie przenosi kursor na początek lub koniec** zmienia działanie stuknięcia w edytowanym polu. Zobacz [](#typing-double-tap-cursor).
+- W grupie **Klawiatura ekranowa** znajdziesz **Metoda pisania**, **Opóźnienie podczas naciskania i przytrzymywania w czasie pisania**, **Przytrzymuj klawisze po upływie opóźnienia naciśnięcia i przytrzymania**, **Opóźnienie zaznaczenia podczas pisania** i **Szybciej odczytuj przyciski klawiatury ekranowej**. Zobacz [](#typing-on-screen-keyboard).
+- **Klawiatura fizyczna** pojawia się po podłączeniu klawiatury. Zobacz [](#typing-physical-keyboard).
+- W grupie **Inne sposoby pisania** znajdziesz **Dyktowanie**, **Klawiatura pisma ręcznego** oraz **Oczekiwanie po napisaniu**. Zobacz [](#typing-dictation) i [](#typing-handwriting).
 
 ### Pisz na klawiaturze ekranowej {#typing-on-screen-keyboard}
 
-Przesuwaj palcem po klawiaturze. SandFly odczytuje klawisz pod palcem. To, jak go naciskasz, zależy od wybranej metody pisania.
+Dotknij klawiatury i przesuwaj palec po klawiszach. SandFly odczytuje każdy klawisz pod palcem. To, w jaki sposób go wpiszesz, zależy od metody pisania.
 
 #### Wybierz metodę pisania {#typing-method}
 
-Otwórz **Pisanie** > **Metoda pisania**. Opcje odpowiadają następującym sposobom.
+1. Otwórz **Pisanie** > **Metoda pisania**.
+2. Wybierz jedną z poniższych metod.
+   - **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie kliknij dwukrotnie**. Unieś palec, a potem stuknij dwukrotnie w dowolnym miejscu, żeby wpisać ostatni odczytany klawisz.
+   - **Przytrzymaj palec, aby wybrać przycisk z literą, a następnie podnieś palec. Pozostałe przyciski wymagają dwukrotnego kliknięcia.** Unieś palec, aby wpisać literę. Pozostałe klawisze, np. Usuń lub Enter, aktywujesz dwukrotnym stuknięciem. To ustawienie domyślne.
+   - **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec**. Uniesienie palca wpisuje dowolny klawisz. Ta metoda ma najmniejsze opóźnienie.
+   - **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec. Przyciski Enter, Gotowe lub Wyślij wymagają dwukrotnego kliknięcia.** Uniesienie palca wpisuje każdy klawisz poza klawiszem zatwierdzającym, takim jak Enter, Gotowe, Wyślij, Szukaj lub Przejdź. Ten klawisz wymaga dwóch stuknięć. SandFly rozpoznaje go na Gboardzie. W innych klawiaturach uniesienie palca wpisuje każdy klawisz.
+   - **Stuknij dowolny klawisz, aby go wpisać, lub przytrzymaj palec, aby wybrać dowolny klawisz, a następnie podnieś**. Szybkie stuknięcie od razu wpisuje znak, a dwa szybkie stuknięcia wpisują go dwa razy. Przytrzymanie palca pozwala czytać klawisze pod palcem. Uniesienie wpisuje bieżący klawisz. Metoda jest dostępna od Androida 13.
 
-- **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie kliknij dwukrotnie**. Unieś palec i stuknij dwa razy w dowolnym miejscu. Wpiszesz ostatni odczytany klawisz.
-- **Przytrzymaj palec, aby wybrać przycisk z literą, a następnie podnieś palec. Pozostałe przyciski wymagają dwukrotnego kliknięcia.** Literę wpiszesz po uniesieniu palca. Do innych klawiszy, na przykład usuwania lub Enter, użyj dwukrotnego stuknięcia. To ustawienie domyślne.
-- **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec**. Każdy klawisz działa po uniesieniu palca. Ta metoda ma najmniejsze opóźnienie.
-- **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie podnieś palec. Przyciski Enter, Gotowe lub Wyślij wymagają dwukrotnego kliknięcia.** W Gboard trzeba stuknąć dwa razy na klawiszu zatwierdzania, na przykład Enter, Gotowe, Wyślij lub Szukaj. Na pozostałych klawiszach i w innych klawiaturach wystarcza uniesienie palca.
-- **Stuknij dowolny klawisz, aby go wpisać, lub przytrzymaj palec, aby wybrać dowolny klawisz, a następnie podnieś**. Krótkie stuknięcie wpisuje znak od razu. Dwa szybkie stuknięcia wpisują go dwa razy. Możesz też przesuwać palec po klawiszach i wpisać wybrany po uniesieniu. Metoda jest dostępna od Androida 13.
+W każdej metodzie możesz też przytrzymać klawisz jednym palcem i stuknąć ekran drugim, aby go wpisać.
 
-W każdej metodzie możesz przytrzymać jeden palec na klawiszu i stuknąć drugim palcem, żeby go wpisać. Na Androidzie 13 lub nowszym trzy ostatnie metody ustawiają [opóźnienie zaznaczenia podczas pisania](#typing-focus-delay) na 0,15 sekundy.
+Na Androidzie 13 i nowszym wybranie jednej z trzech ostatnich metod ustawia **Opóźnienie zaznaczenia podczas pisania** na 0,15 sekundy. Zobacz [](#typing-focus-delay).
 
-#### Przytrzymaj klawisz {#typing-touch-and-hold}
+#### Naciśnij i przytrzymaj klawisz {#typing-touch-and-hold}
 
-W **Pisanie** > **Opóźnienie podczas naciskania i przytrzymywania w czasie pisania** wybierz 0,5, 1, 2, 3 lub 5 sekund. Domyślnie SandFly czeka trzy sekundy, zanim wykona długie naciśnięcie, na przykład otworzy znaki alternatywne. Ustawienia nie ma przy metodzie, w której każdy klawisz wpisujesz dwukrotnym stuknięciem.
+**Pisanie** > **Opóźnienie podczas naciskania i przytrzymywania w czasie pisania** określa, po jakim czasie przytrzymanie palca na klawiszu wykonuje długie naciśnięcie. Możesz tak np. wyświetlić dodatkowe znaki klawisza. Do wyboru są 0,5, 1, 2, 3 i 5 sekund. Domyślnie ustawiono trzy sekundy. Opcja jest niedostępna przy metodzie **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie kliknij dwukrotnie**.
 
-Włączenie **Przytrzymuj klawisze po upływie opóźnienia naciśnięcia i przytrzymania** przekazuje klawiaturze dalszy dotyk po upływie ustawionego czasu. Klawiatura może wtedy na przykład powtarzać usuwanie podczas trzymania klawisza. Opcja jest domyślnie wyłączona. Działa przy metodach pisania po uniesieniu palca, z wyjątkiem Gboard i Pixelboard w wersjach wcześniejszych niż 18.8.
+Po włączeniu **Pisanie** > **Przytrzymuj klawisze po upływie opóźnienia naciśnięcia i przytrzymania** SandFly naciska klawisz po upływie opóźnienia i przekazuje resztę dotknięcia klawiaturze. Działa to podobnie do dwukrotnego stuknięcia i przytrzymania. Klawiatura obsługuje wtedy długie naciśnięcie po swojemu, np. klawisz kasowania powtarza się w trakcie trzymania. Opcja dotyczy metod pisania z unoszeniem palca. Wyjątkiem są Gboard i Pixelboard, gdzie długie naciśnięcie otwiera okno dodatkowych znaków. Domyślnie opcja jest wyłączona.
 
-#### Znaki alternatywne w Gboard {#typing-gboard-alternatives}
+#### Dodatkowe znaki w Gboardzie {#typing-gboard-alternatives}
 
-Przytrzymaj klawisz. Po ustawionym czasie Gboard pokaże znaki alternatywne, a SandFly odczyta wybrany znak. Przesuń palec do innego znaku, żeby go usłyszeć. Unieś palec, żeby go wpisać.
+Gdy przytrzymasz klawisz w Gboardzie, po ustawionym czasie SandFly wykona długie naciśnięcie, a Gboard otworzy okno dodatkowych znaków. Po otwarciu SandFly od razu czyta wybrany znak, np. „przecinek”. Przesuń palec, aby usłyszeć inne znaki. Unieś go, aby wpisać bieżący.
 
-Od wersji 18.8 Gboard korzysta z eksploracji Androida. W starszym Gboard i Pixelboard od Androida 11 SandFly sam obsługuje dotyk na klawiaturze. Gdy okno znaków jest otwarte, palec poza nim wskazuje najbliższy znak. Uniesienie palca wpisuje znak i zamyka okno. Jeśli okno nie jest otwarte, wyjście palcem poza klawiaturę przełącza na zwykłą eksplorację ekranu. Uniesienie palca poza klawiaturą nic nie wpisuje. Ta obsługa starszych klawiatur nie dotyczy metody, w której wszystkie klawisze wpisujesz dwukrotnym stuknięciem.
+Gboard 18.8 i nowszy otrzymuje dotknięcia przez eksplorację dotykową Androida, tak jak inne klawiatury. Przy starszych wersjach Gboarda i opartym na nim Pixelboardzie na Androidzie 11 lub nowszym SandFly samodzielnie obsługuje dotykanie klawiatury. Gdy otworzysz okno dodatkowych znaków, położenie palca wybiera jeden z nich. Gdy palec jest poza oknem, wybierany jest najbliższy znak. Uniesienie palca wpisuje znak i zamyka okno. Jeśli przesuniesz palec poza klawiaturę bez otwartego okna znaków, włączy się zwykłe czytanie dotykiem. Uniesienie palca poza klawiaturą wtedy niczego nie wpisze. Zasada ta nie dotyczy metody **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie kliknij dwukrotnie**.
 
-#### Wibracja klawiszy Gboard {#typing-gboard-vibration}
+#### Wibracje klawiszy Gboarda {#typing-gboard-vibration}
 
-Gboard od wersji 18.8 stosuje własne ustawienia sygnałów klawiszy. Starszy Gboard i Pixelboard potrzebują informacji o przesunięciu nad klawiszem. Jeśli masz skonfigurowane [Shizuku lub root](#updates), SandFly przekazuje tę informację do klawiatury. Bez niej w starszych wersjach sygnały klawiatury nie działają podczas eksploracji obsługiwanej przez SandFly. Nie ma osobnego przełącznika.
+Gboard 18.8 i nowszy odtwarza sygnały zgodnie z jego własnymi ustawieniami, np. **Wibracja przy naciśnięciu klawisza**.
 
-#### Ustaw czas odczytu klawisza po dotknięciu {#typing-focus-delay}
+Starsze wersje Gboarda i Pixelboarda odtwarzają sygnały tylko wtedy, gdy klawisz otrzymuje zdarzenia przesuwania palca nad klawiszami. Nie powstają one, gdy SandFly samodzielnie eksploruje klawiaturę. Jeśli skonfigurujesz Shizuku lub dostęp root, SandFly przekaże te zdarzenia, a klawiatura odtworzy własne sygnały. Bez tych uprawnień starsze wersje nie odtwarzają sygnałów w trakcie eksploracji przez SandFly. Działanie jest automatyczne i nie ma osobnego przełącznika. Zobacz [](#updates).
 
-Wybierz **Pisanie** > **Opóźnienie zaznaczenia podczas pisania**. Możesz ustawić 0,15, 0,2, 0,25 lub 0,3 sekundy. Domyślne 0,3 sekundy dają najwięcej czasu przed odczytem. Opcja wymaga Androida 13 lub nowszego.
+#### Zmień opóźnienie zaznaczenia podczas pisania {#typing-focus-delay}
 
-Możesz zmieniać ten sam czas podczas pisania, jeśli dodasz **Opóźnienie zaznaczenia podczas pisania** w grupie **Dotyk** na ekranie [**Sterowanie czytaniem**](#commands).
+W menu **Pisanie** > **Opóźnienie zaznaczenia podczas pisania** wybierzesz, po jakim czasie od dotknięcia klawiatury SandFly odczytuje klawisz. Możesz ustawić 0,15, 0,2, 0,25 lub 0,3 sekundy. Domyślnie ustawiono 0,3 sekundy. Krótszy czas przyspiesza odczyt. Opcja działa od Androida 13.
 
-#### Szybszy odczyt klawiszy {#typing-faster-keys}
+Opóźnienie możesz zmieniać także w trakcie pisania. Dodaj **Opóźnienie zaznaczenia podczas pisania** z grupy **Dotyk** na ekranie **Sterowanie czytaniem**. Zobacz [](#commands).
 
-**Pisanie** > **Szybciej odczytuj przyciski klawiatury ekranowej** przygotowuje wcześniej dźwięk nazw klawiszy. Dzięki temu SandFly może szybciej je odczytać. Opcja jest domyślnie wyłączona i działa z syntezatorem Google.
+#### Przyspiesz odczyt klawiszy {#typing-faster-keys}
 
-#### Przesunięcia a klawiatura {#typing-swipes-keyboard}
+Opcja **Pisanie** > **Szybciej odczytuj przyciski klawiatury ekranowej** przygotowuje mowę klawiszy z wyprzedzeniem. Dzięki temu krócej czekasz na ich odczyt. Domyślnie opcja jest wyłączona. Jest dostępna tylko z syntezatorem Google.
 
-Żeby wejść na klawiaturę z aplikacji lub paska systemowego, dotknij jej. Zwykłe przesunięcie nie przejdzie na klawiaturę. Jeśli fokus jest na klawiszu, przesunięcie zwykle wraca do aplikacji i kontynuuje od pola tekstowego. W metodzie z dwukrotnym stuknięciem każdego klawisza przesunięcia przechodzą po klawiszach. Możesz nimi również wyjść z klawiatury.
+#### Przesunięcia palcem a klawiatura {#typing-swipes-keyboard}
+
+Przesunięcia z aplikacji, paska stanu lub paska nawigacji nie przenoszą fokusu na klawiaturę. Przy większości metod, jeśli fokus jest na klawiszu, przesunięcie palcem kontynuuje nawigację w aplikacji od pola, w którym piszesz. Wyjątkiem jest metoda **Przytrzymaj palec, aby wybrać przycisk klawiatury, a następnie kliknij dwukrotnie**, przy której przesunięcie przechodzi po klawiszach. Przesunięciem z klawiatury nadal możesz z niej wyjść.
 
 ### Echo klawiatury {#typing-keyboard-echo}
 
+Echo klawiatury określa odczyt podczas pisania. Dla każdego rodzaju klawiatury ustawisz je osobno.
+
 1. Otwórz **Pisanie** > **Echo klawiatury**.
-2. Wybierz **Klawiatura ekranowa**, **Klawiatura fizyczna**, **Klawiatura brajlowska**, **Monitor brajlowski** albo **Klawiatura pisma ręcznego**.
-3. Wybierz **Znaki**, **Słowa**, **Znaki i słowa** lub wyłącz echo. Domyślnie każda klawiatura używa opcji **Znaki i słowa**.
+2. Wybierz **Klawiatura ekranowa**, **Klawiatura fizyczna**, **Klawiatura brajlowska**, **Monitor brajlowski** lub **Klawiatura pisma ręcznego**.
+3. Wybierz **Brak**, **Znaki**, **Słowa** lub **Znaki i słowa**. We wszystkich rodzajach opcja domyślna to **Znaki i słowa**.
 
-Echo słów czyta wyraz w postaci wpisanej w polu, do poprzedniej spacji. Apostrof lub łącznik w słowie go nie dzieli. Adres WWW lub e-mail też jest jednym słowem. Jeśli klawiatura od razu wstawi wyraz, interpunkcję i spację, usłyszysz wyraz.
+Echo słów odczytuje całe słowo zapisane w polu, cofając się do ostatniej spacji. Słowo z apostrofem lub łącznikiem, np. „don't”, jest traktowane jako całość. Tak samo jest z adresem strony lub e-mail. Jeśli klawiatura dodaje razem słowo, znak przestankowy i spację, jak klawiatura brajlowska przy skrótach brajlowskich, SandFly odczytuje słowo.
 
-Echo każdej klawiatury ma własną pozycję na ekranie [**Sterowanie czytaniem**](#commands), w **Menu SandFly** i w kategorii poleceń **Mowa**. Pozycje menu i sterowania czytaniem dodajesz samodzielnie w grupie **Echo klawiatury**. Skrót **Włącz lub wyłącz echo klawiatury podczas pisania** przełącza następną opcję klawiatury fizycznej. Zobacz [wykaz skrótów](#appendix-keyboard-shortcuts).
+Każde ustawienie echa jest też pozycją sterowania czytaniem, pozycją menu SandFly i poleceniem z grupy **Mowa**. To **Echo klawiatury ekranowej**, **Echo klawiatury fizycznej**, **Echo klawiatury brajlowskiej**, **Echo monitora brajlowskiego** i **Echo klawiatury pisma ręcznego**. Domyślnie pozycje są ukryte w sterowaniu i menu. Aby je dodać, otwórz **Sterowanie czytaniem** lub **Menu SandFly** i wybierz je w grupie **Echo klawiatury**. Zobacz [](#commands).
 
-### Przenieś kursor {#typing-move-cursor}
+Skrót **Włącz lub wyłącz echo klawiatury podczas pisania** wybiera następną wartość echa dla **Klawiatura fizyczna**. Zobacz [](#appendix-keyboard-shortcuts).
 
-W polu tekstowym opcje **Znaki**, **Słowa**, **Wiersze**, **Zdania** i **Akapity** przenoszą kursor. SandFly czyta mijany tekst. Używając [domyślnych gestów](#appendix-gestures), najpierw wybierz [opcję sterowania czytaniem](#commands) ruchem w górę i w dół, w dół i w górę albo przesunięciem trzech palców w pionie. Potem przesuń jeden palec w dół, żeby przenieść kursor w przód, albo w górę, żeby się cofnąć.
+### Przesuwaj kursor {#typing-move-cursor}
 
-**Przenieś kursor na początek** i **Przenieś kursor na koniec** są w kategorii **Edytowanie tekstu** oraz w [czynnościach pola tekstowego](#typing-editing-actions).
+Gdy fokus jest w polu tekstowym, pozycje **Znaki**, **Słowa**, **Wiersze**, **Zdania** i **Akapity** przesuwają kursor, a SandFly odczytuje mijany tekst. Domyślnymi gestami zrobisz to tak.
 
-#### Przenieś kursor dwukrotnym stuknięciem {#typing-double-tap-cursor}
+1. Przesuń palec w górę, a potem w dół, lub w dół, a potem w górę, aby wybrać pozycję sterowania czytaniem. Możesz też przesunąć trzy palce w górę lub w dół.
+2. Przesuń palec w dół, żeby przesunąć kursor do przodu, albo w górę, żeby go cofnąć.
 
-Włącz **Pisanie** > **Dwukrotne kliknięcie przenosi kursor na początek lub koniec**. Gdy edytujesz pole i masz aktywną klawiaturę, stuknięcie dwa razy przeniesie kursor na początek. Jeśli kursor już jest na początku, przeniesie go na koniec. SandFly podaje, na którym końcu jest kursor.
+Polecenia **Przenieś kursor na początek** i **Przenieś kursor na koniec** znajdziesz na ekranie **Polecenia** w grupie **Edytowanie tekstu**. Przenoszą kursor na początek lub koniec tekstu. Są też dostępne w czynnościach pola tekstowego. Zobacz [](#typing-editing-actions).
 
-W pozostałych elementach oraz w polach, których nie edytujesz, dwukrotne stuknięcie zachowuje zwykłe działanie. Opcja wymaga Androida 13 i jest domyślnie wyłączona.
+Domyślne gesty opisuje [](#appendix-gestures), a sterowanie czytaniem [](#commands).
 
-### Zaznaczanie, kopiowanie, wycinanie i wklejanie {#typing-select-copy-paste}
+#### Przenoś kursor dwukrotnym stuknięciem {#typing-double-tap-cursor}
+
+Po włączeniu **Pisanie** > **Dwukrotne kliknięcie przenosi kursor na początek lub koniec** dwukrotne stuknięcie przenosi kursor w bieżącym polu tekstowym.
+
+- Gdy kursor jest poza początkiem, dwa stuknięcia przenoszą go na początek tekstu. SandFly ogłasza początek pola.
+- Gdy kursor jest na początku, dwa stuknięcia przenoszą go na koniec. SandFly ogłasza koniec pola.
+
+Na innych elementach oraz w polu bez fokusu wprowadzania i widocznej klawiatury dwukrotne stuknięcie aktywuje element jak zwykle. Opcja jest domyślnie wyłączona. Działa od Androida 13.
+
+### Zaznaczaj, kopiuj, wycinaj i wklejaj {#typing-select-copy-paste}
 
 #### Zaznacz tekst {#typing-select-text}
 
-1. Przenieś kursor na początek zakresu.
-2. Użyj **Włącz lub wyłącz tryb zaznaczania**. SandFly potwierdzi włączenie.
-3. Przenieś kursor, na przykład po znakach lub słowach. Zaznaczysz mijany tekst.
-4. Użyj ponownie tego samego polecenia, żeby zakończyć tryb.
+1. Przenieś kursor do miejsca, od którego chcesz zacząć zaznaczanie.
+2. Użyj **Włącz lub wyłącz tryb zaznaczania**. SandFly potwierdzi włączenie trybu.
+3. Przesuwaj kursor za pomocą pozycji sterowania czytaniem, np. **Znaki** lub **Słowa**. Zaznaczysz tekst, przez który przechodzi kursor.
+4. Ponownie użyj **Włącz lub wyłącz tryb zaznaczania**, aby zakończyć zaznaczanie.
 
-Możesz też użyć **Zaznacz wszystko** lub usunąć zaznaczenie. Tryb działa również w wiadomościach, na stronach i między elementami. Po wejściu do innego elementu SandFly rozpoczyna tam osobny zakres. Polecenie **Kopiuj** zapisuje wtedy każdy zakres w osobnym wierszu.
+**Zaznacz wszystko** zaznacza cały tekst pola. **Odznacz cały tekst** usuwa zaznaczenie.
 
-#### Skopiuj, wytnij lub wklej {#typing-copy-cut-paste}
+Tryb zaznaczania działa również poza polami tekstowymi, np. w wiadomościach lub na stronach, także przy przechodzeniu między elementami. SandFly przechowuje wtedy zaznaczenie samodzielnie. Zaznacza tylko tekst mijany przez kursor. Po przejściu do innego elementu zaczyna osobne zaznaczenie. **Kopiuj** kopiuje wszystkie zaznaczone fragmenty, po jednym na wiersz.
 
-- **Kopiuj** kopiuje zaznaczony tekst albo element, na którym jest fokus.
-- **Dodaj do schowka** dopisuje tekst do bieżącej zawartości schowka w nowym wierszu.
-- Wycinanie usuwa zaznaczony tekst z pola i kopiuje go do schowka.
-- **Wklej** wstawia tekst ze schowka przy kursorze.
+#### Kopiuj, wycinaj i wklejaj {#typing-copy-cut-paste}
 
-Domyślnie dwukrotne stuknięcie trzema palcami z przytrzymaniem wycina. Trzykrotne stuknięcie trzema palcami z przytrzymaniem wkleja. Zobacz [wykaz gestów](#appendix-gestures) i [ustawienia poleceń](#commands).
+- **Kopiuj** kopiuje zaznaczony tekst lub tekst elementu, na którym jest fokus.
+- **Dodaj do schowka** dopisuje zaznaczony tekst lub tekst elementu na końcu bieżącej zawartości schowka, w nowym wierszu.
+- **Wytnij** wycina zaznaczony tekst z pola.
+- **Wklej** wstawia zawartość schowka w polu tekstowym w miejscu kursora.
 
-#### Czynności pola i menu edycji {#typing-editing-actions}
+Domyślnie **Wytnij** to dwukrotne stuknięcie trzema palcami z przytrzymaniem, a **Wklej** to trzykrotne stuknięcie trzema palcami z przytrzymaniem. Każdemu z tych poleceń możesz przypisać gest. Zobacz [](#appendix-gestures) i [](#commands).
 
-Gdy fokus jest w polu tekstowym, opcja **Czynności** w menu SandFly i w sterowaniu czytaniem pozwala ustawić kursor, zaznaczać, wycinać, kopiować i wklejać. Możesz też uruchomić **Szczegółowa edycja**. Tej czynności nie ma w polu hasła.
+#### Czynności edycji i menu edycji {#typing-editing-actions}
 
-Polecenie **Menu edycji** otwiera historię schowka, kopiowanie, dodawanie do schowka, wycinanie, wklejanie, czyszczenie tekstu, zaznaczanie wszystkiego i przełączanie trybu zaznaczania.
+Gdy fokus jest na polu tekstowym, pozycja **Czynności** w sterowaniu czytaniem i pozycja **Czynności** w menu SandFly zawierają **Przenieś kursor na początek**, **Przenieś kursor na koniec**, **Włącz lub wyłącz tryb zaznaczania**, **Wytnij**, **Kopiuj**, **Wklej**, **Zaznacz wszystko** i **Szczegółowa edycja**. Ostatnia opcja jest niedostępna w polach haseł.
 
-#### Pozostałe polecenia edycji {#typing-editing-commands}
+Polecenie **Menu edycji** otwiera menu z pozycjami **Historia schowka**, **Kopiuj**, **Dodaj do schowka**, **Wytnij**, **Wklej**, **Wyczyść tekst**, **Zaznacz wszystko** i **Włącz lub wyłącz tryb zaznaczania**.
 
-- **Prześlij tekst** naciska klawisz zatwierdzający klawiatury, na przykład Wyślij, Szukaj lub Gotowe.
-- **Wyczyść tekst** usuwa zawartość pola.
-- **Liczba znaków** liczy znaki i słowa. W polu hasła podaje tylko znaki.
-- **Czytaj pole tekstowe** czyta całą zawartość lub informuje o pustym polu i odczytuje wskazówkę.
-- **Podpowiedzi ortograficzne/gramatyczne** otwierają podpowiedzi dla błędu pod kursorem. Między błędami przechodzisz przez **Korekta**.
-- **Dyktuj** [wstawia tekst z mowy](#typing-dictate).
-- **Przełącz klawiaturę** wybiera następną klawiaturę. Wymaga Androida 11.
-- **Wyszukaj emotikony**, **Wybierz symbol** i **Włącz lub wyłącz tryb edycji** działają z [klawiaturą SandFly](#keyboards).
+#### Inne polecenia edycji tekstu {#typing-editing-commands}
 
-Domyślnie te polecenia nie mają gestów. Możesz je ustawić na ekranie [**Polecenia**](#commands).
+W grupie **Edytowanie tekstu** na ekranie **Polecenia** znajdziesz też poniższe polecenia.
+
+- **Prześlij tekst** naciska klawisz wysyłający lub zatwierdzający tekst, np. Wyślij, Szukaj lub Gotowe.
+- **Wyczyść tekst** usuwa całą zawartość pola.
+- **Liczba znaków** podaje długość tekstu, np. „12 znaków, 3 słowa”. W polach haseł zlicza tylko znaki.
+- **Czytaj pole tekstowe** odczytuje cały tekst pola. W pustym polu ogłasza, że jest puste, i czyta podpowiedź.
+- **Podpowiedzi ortograficzne/gramatyczne** otwierają sugestie dla błędu w miejscu kursora. Pozycja **Korekta** w sterowaniu czytaniem przechodzi między błędami.
+- Działanie **Dyktuj** opisuje [](#typing-dictate).
+- **Przełącz klawiaturę** przełącza na następną klawiaturę. Polecenie jest dostępne od Androida 11.
+- **Wyszukaj emotikony**, **Wybierz symbol** i **Włącz lub wyłącz tryb edycji** to polecenia klawiatury SandFly. Zobacz [](#keyboards).
+
+Domyślnie polecenia z tej listy nie mają gestów. O przypisywaniu przeczytasz w [](#commands).
 
 ### Historia schowka {#typing-clipboard-history}
 
-SandFly pamięta do 50 tekstów, od najnowszego. Zapisuje kopie wykonane w SandFly i kopie z innych aplikacji, gdy okno czytnika ma fokus. Aby zbierać też kopie w tle, użyj Shizuku lub roota i włącz **Dodawaj kopie z innych aplikacji** na górze historii. Kopia zapasowa ustawień pomija historię schowka.
+SandFly zachowuje do 50 skopiowanych tekstów, od najnowszego. Obejmuje to tekst skopiowany przez SandFly oraz tekst kopiowany w innych aplikacjach, gdy fokus znajduje się w oknie SandFly. Android ogranicza dostęp do schowka w tle. Dzięki Shizuku lub dostępowi root przełącznik **Dodawaj kopie z innych aplikacji** u góry historii może zapisywać wszystkie teksty kopiowane przez inne aplikacje. Historia jest przechowywana osobno od ustawień, poza kopią zapasową.
 
-Otwórz **Historia schowka** przez **Menu edycji** lub kategorię **Edytowanie tekstu**.
+Aby otworzyć historię nad bieżącym ekranem, wybierz **Historia schowka** w grupie poleceń **Edytowanie tekstu** lub w menu **Menu edycji**.
 
-- Stuknij dwa razy na wpisie, żeby wkleić go do pola, z którego otworzyłeś historię. Jeśli wcześniej nie było pola, otworzą się czynności wpisu.
-- Stuknij dwa razy i przytrzymaj, żeby wkleić, skopiować ponownie, dodać do schowka, edytować, eksportować lub usunąć wpis. Te same możliwości są w **Czynności**.
-- Włącz zaznaczanie i zaznacz kilka wpisów, żeby je razem usunąć lub eksportować.
-- **Eksportuj do pliku** zapisuje całą historię. Między tekstami są trzy łączniki w osobnym wierszu, oddzielone pustymi wierszami.
+- Stuknij tekst dwukrotnie, aby wkleić go do pola, z którego otwarto historię. Jeśli nie otwarto jej z pola, dwa stuknięcia otworzą czynności tekstu.
+- Stuknij tekst dwukrotnie i przytrzymaj, aby otworzyć czynności. Możesz wybrać **Wklej**, ponownie **Kopiuj**, **Dodaj do schowka**, **Edytuj**, **Eksportuj do pliku** lub **Usuń**. Te same opcje są w menu **Czynności** danego wpisu.
+- **Zaznacz** pokazuje wpisy jako pola wyboru. Stuknij wybrane wpisy dwa razy, a potem użyj **Usuń** lub **Eksportuj do pliku**.
+- **Eksportuj do pliku** zapisuje całą historię w pliku tekstowym. Poszczególne teksty oddziela wiersz z trzema łącznikami i pustym wierszem z każdej strony.
 - **Wyczyść historię** usuwa wszystkie wpisy.
 
-Jeśli chcesz wklejać bez otwierania okna historii, dodaj **Historia schowka** w **Sterowanie czytaniem** > **Czynności dla bieżącego elementu**. W polu tekstowym przesuwaj w górę lub w dół, aby wybrać wpis. Stuknij dwa razy, by wkleić ostatni odczytany wpis. Zobacz [ustawienia sterowania czytaniem](#commands).
+Aby wklejać bez otwierania historii, dodaj **Historia schowka** z grupy **Czynności dla bieżącego elementu** na ekranie **Sterowanie czytaniem**. W polu tekstowym przesuwaj palec w górę lub w dół po wpisach historii. Stuknij dwukrotnie, aby wkleić ostatnio odczytany wpis. Domyślnie pozycji nie ma na liście. Zobacz [](#commands).
 
-### Kopiowanie treści ekranu {#typing-copy-from-screen}
+### Kopiuj tekst z ekranu {#typing-copy-from-screen}
 
-- **Skopiuj ostatnią wypowiedź** kopiuje ostatni tekst. Domyślnie uruchomisz je trzykrotnym stuknięciem trzema palcami.
-- **Wybierz ostatnią wypowiedź słowo po słowie** otwiera listę słów do zaznaczenia.
-- **Kopiuj tekst z ekranu** pozwala [wybrać fragmenty tekstu](#reading-copy-text), na przykład akapity lub adresy.
-- **Kopiowanie ciągłe** zbiera tekst kolejnych elementów. Zaczyna od miejsca, w którym jest fokus, i przewija bez mowy. Zatrzymasz je dotknięciem, klawiszem lub innym poleceniem. Po zakończeniu zaznacz potrzebne fragmenty i wybierz **Zapisz**. Limit to 2000 elementów lub dziesięć minut.
+W grupie **Edytowanie tekstu** na ekranie **Polecenia** są poniższe polecenia.
 
-W oknach z listą możesz zaznaczyć zakres od jednego wpisu do drugiego przez czynności rozpoczęcia i zakończenia zaznaczania albo dwukrotne stuknięcie z przytrzymaniem na obu końcach.
+- **Skopiuj ostatnią wypowiedź** kopiuje ostatni odczytany tekst. Domyślnie uruchamia się po trzykrotnym stuknięciu trzema palcami.
+- **Wybierz ostatnią wypowiedź słowo po słowie** otwiera listę słów ostatniej wypowiedzi. Zaznacz słowa, które chcesz skopiować.
+- **Kopiuj tekst z ekranu** otwiera tekst ekranu podzielony na adresy i numery, znaki, słowa lub akapity. Zaznacz fragmenty do skopiowania. Zobacz [](#reading-copy-text).
+- **Kopiowanie ciągłe** przenosi fokus z bieżącego elementu przez kolejne, bez mowy. Przewija po drodze listy i strony oraz zbiera tekst z każdego elementu. Dotknij ekranu, naciśnij klawisz lub użyj innego polecenia, żeby zakończyć. Na końcu przy każdym tekście jest pole wyboru. Zaznacz teksty do skopiowania i wybierz **Zapisz**. Kopiowanie kończy się najpóźniej po 2000 elementów lub dziesięciu minutach.
+
+Na tych listach użyj **Rozpocznij zaznaczanie** i **Zakończ zaznaczanie**, aby zaznaczyć wszystkie pozycje między dwiema wybranymi. Tak samo działa dwukrotne stuknięcie pozycji z przytrzymaniem.
 
 ### Szczegółowa edycja {#typing-granular-editing}
 
-Otwórz **Szczegółowa edycja** w czynnościach pola albo użyj polecenia z kategorii **Edytowanie tekstu**. SandFly otworzy tekst w osobnym oknie, podzielony na fragmenty. Pola haseł są niedostępne.
+Szczegółowa edycja pokazuje tekst pola lub innego elementu, na którym jest fokus, na osobnym ekranie podzielonym na fragmenty. Wybierz **Szczegółowa edycja** w czynnościach pola albo użyj polecenia o tej nazwie na ekranie **Polecenia**, w grupie **Edytowanie tekstu**. Pola haseł nie otwierają się w tym trybie.
 
-- W opcji **Podziel według** wybierz **Znaki**, **Słowa**, **Zdania**, **Wiersze** lub **Akapity**. Początkowo są **Słowa**. SandFly zapamiętuje ostatni wybór.
-- Stuknij dwa razy na fragmencie, żeby go zmienić. Puste pole usuwa fragment. Możesz też zaznaczyć go, wstawić tekst przed lub po nim, albo go usunąć. Stuknięcie z przytrzymaniem po drugim dotknięciu otwiera czynności fragmentu.
-- Spacje, tabulatory, nowe i puste wiersze mają osobne pozycje.
-- **Kopiuj** kopiuje zaznaczone fragmenty lub cały tekst, jeśli nic nie zaznaczysz.
-- Menu **Więcej** pozwala cofać i ponawiać zmiany, znajdować tekst i kolejne wyniki, zastępować tekst, dopisać tekst na końcu, zaznaczać, usuwać zaznaczenie, wycinać i usuwać wybrane wpisy. Zamiana działa na wszystkich pasujących fragmentach bez względu na wielkość liter.
-- **Zapisz** przenosi zmiany do pola i zamyka okno. Jeśli pole zniknęło, SandFly kopiuje tekst. Cofnięcie otwiera wybór zapisu albo odrzucenia zmian.
+- W opcji **Podziel według** wybierz **Znaki**, **Słowa**, **Zdania**, **Wiersze** lub **Akapity**. Domyślnie wybrane są **Słowa**. SandFly zapamiętuje ostatni wybór.
+- Stuknij fragment dwa razy, aby go zmienić. Pozostawienie pustego pola usuwa fragment.
+- Przy każdym fragmencie są działania **Zaznacz**, **Wstaw przed**, **Wstaw po** i **Usuń**. Stuknij go dwukrotnie i przytrzymaj, aby otworzyć je w oknie. **Rozpocznij zaznaczanie** i **Zakończ zaznaczanie** pozwalają zaznaczyć wszystkie pośrednie fragmenty.
+- Spacje, tabulatory i podziały wierszy między fragmentami są osobnymi pozycjami, np. „2 spacje” lub „Nowy wiersz”. Pusty wiersz jest odczytywany jako „Pusty wiersz”.
+- **Kopiuj** kopiuje zaznaczone fragmenty. Jeśli nic nie zaznaczysz, skopiuje cały tekst.
+- W menu **Więcej** są **Cofnij**, **Ponów**, **Znajdź**, **Znajdź następny**, **Znajdź poprzedni**, **Zastąp**, **Dodaj tekst na końcu**, **Zaznacz wszystko**, **Odznacz cały tekst**, **Wytnij zaznaczony tekst** i **Usuń wybrane**. **Zastąp** zmienia wszystkie dopasowania, niezależnie od wielkości liter.
+- **Zapisz** wstawia tekst z powrotem do pola i zamyka ekran. Jeśli pola już nie ma, tekst trafia do schowka.
+- Użycie Wstecz otwiera okno z wyborem zapisu lub odrzucenia zmian.
 
-Jeżeli edytujesz tekst spoza pola, na przykład odebraną wiadomość, możesz go poprawić i skopiować. Nie można zapisać zmian w wiadomości źródłowej.
+Tekst spoza pola, np. otrzymaną wiadomość, możesz edytować i skopiować. Zmian nie da się zapisać w oryginale.
 
 ### Dyktowanie {#typing-dictation}
 
-#### Podyktuj tekst do pola {#typing-dictate}
+#### Dyktuj tekst do pola {#typing-dictate}
 
-1. Ustaw fokus w polu tekstowym.
-2. Uruchom **Dyktuj**. Po sygnale rozpocznie się nagrywanie. SandFly wycisza odczyt na czas nagrania.
-3. Mów. Przerwy nie kończą domyślnie nagrywania.
-4. Uruchom **Dyktuj** ponownie. Usłyszysz drugi sygnał, a SandFly wstawi wynik przy kursorze.
+Polecenie **Dyktuj** wpisuje to, co powiesz, w miejscu kursora w polu tekstowym, na którym jest fokus.
 
-Nagrywanie kończy się po 15 minutach lub po [ustawionym czasie ciszy](#typing-dictation-settings). Domyślnie dwa stuknięcia dwoma palcami uruchamiają **Dyktuj, odtwórz lub wstrzymaj multimedia**. Gest zaczyna dyktowanie przy aktywnym polu i pokazanej lub podłączonej klawiaturze, poza rozmową. Jeśli nagrywanie już trwa, gest je kończy. W pozostałych sytuacjach steruje odtwarzaniem. Zobacz [domyślne gesty](#appendix-gestures).
+1. Przenieś fokus do pola tekstowego.
+2. Użyj **Dyktuj**. Usłyszysz sygnał i zacznie się nagrywanie. Mowa SandFly jest wtedy wyciszona.
+3. Mów. Przerwy w mówieniu nie kończą nagrania.
+4. Użyj ponownie **Dyktuj**. Usłyszysz drugi sygnał, a SandFly wpisze tekst.
 
-#### Wybierz rozpoznawanie mowy {#typing-speech-recognition}
+Nagrywanie zatrzymuje się po 15 minutach lub po ustawionym przez Ciebie czasie ciszy. Zobacz [](#typing-dictation-settings).
 
-Otwórz **Pisanie** > **Dyktowanie** > **Rozpoznawanie mowy**. Przy wyborze automatycznym SandFly próbuje kolejno rozpoznawania Google na urządzeniu z pakietem języka telefonu, Rambler z kluczem Gemini API i obsługiwanym językiem, pobranego modelu Whisper i rozpoznawania Androida. Ekran podaje używaną metodę. Ten sam wybór zastępczy działa, gdy wskazana ręcznie metoda jest niedostępna.
+Domyślnie dwukrotne stuknięcie dwoma palcami uruchamia **Dyktuj, odtwórz lub wstrzymaj multimedia**. Gdy pole tekstowe ma fokus wprowadzania, klawiatura jest widoczna lub podłączona i nie trwa rozmowa, polecenie uruchamia **Dyktuj**. Jeśli dyktowanie jest w toku, zatrzymuje je. W pozostałych sytuacjach odtwarza lub wstrzymuje multimedia. Domyślne gesty znajdziesz w [](#appendix-gestures).
 
-- **Rozpoznawanie mowy Google na urządzeniu** używa pakietu języka telefonu. Od Androida 13 może dodawać interpunkcję i wielkie litery. Jeśli brakuje pakietu, użyj przycisku pobierania w ustawieniach.
-- **Rambler (Gemini API)** używa modelu Gemini 3.5 Transcribe przez klucz z [ustawień usług AI](#descriptions). Usuwa słowa wypełniające, uwzględnia poprawki w mowie i formatuje interpunkcję, liczby i listy.
-- **Whisper** działa na telefonie po [pobraniu modelu](#typing-whisper-models).
-- **Rozpoznawanie mowy Androida** używa usługi wybranej w systemie.
+#### Wybierz sposób rozpoznawania mowy {#typing-speech-recognition}
 
-Rozpoznawanie Google i Androida wznawia pracę po pauzach aż do końca dyktowania. Przy braku odpowiedzi Rambler SandFly może użyć pobranego modelu Whisper. Domyślna **Transkrypcja na żywo Rambler** przesyła wypowiedź w trakcie mówienia. Jeśli przesyłanie nie działa, SandFly wyśle całe nagranie po zatrzymaniu. Przełącznik pojawia się po podaniu klucza Gemini API.
+Otwórz **Pisanie** > **Dyktowanie** > **Rozpoznawanie mowy** i wybierz jedną z poniższych opcji.
 
-Rambler przesyła nagranie do Google. Przy bezpłatnym kluczu Gemini API usługa może używać dźwięku i tekstu do doskonalenia produktów. Przy płatnym kluczu te dane nie są w tym celu używane.
+- **Automatycznie** to ustawienie domyślne. SandFly wybiera rozpoznawanie Google na urządzeniu, jeśli jest zainstalowane i obsługuje język telefonu. W przeciwnym razie próbuje Ramblera, jeśli masz klucz Gemini API i Rambler obsługuje język. Następnie sprawdza, czy pobrano model Whisper, a na końcu korzysta z rozpoznawania mowy Androida. Na ekranie widać aktualny wybór, np. „Automatycznie: Rambler”.
+- **Rozpoznawanie mowy Google na urządzeniu** używa aplikacji Rozpoznawanie i synteza mowy Google oraz pobranych pakietów języka telefonu. Na Androidzie 13 i nowszym po włączeniu **Automatyczna interpunkcja** dodaje znaki przestankowe i wielkie litery. Gdy brakuje pakietu, pozycja **Pobierz** z nazwą języka otwiera ekran pobrania w aplikacji Google.
+- **Rambler (Gemini API)** korzysta z modelu Gemini 3.5 Transcribe przez klucz Gemini API z ustawień usług AI. Usuwa zbędne wtrącenia, uwzględnia poprawki w trakcie wypowiedzi oraz formatuje interpunkcję, liczby i listy. Konfigurację klucza Gemini API opisuje [](#descriptions).
+- **Whisper** rozpoznaje mowę na telefonie z użyciem pobranego modelu. Zobacz [](#typing-whisper-models).
+- **Rozpoznawanie mowy Androida** korzysta z usługi wybranej w ustawieniach Androida.
+
+Gdy wybrana metoda jest niedostępna, SandFly stosuje kolejność opcji **Automatycznie**. Rozpoznawanie Google na urządzeniu oraz rozpoznawanie Androida zaczynają kolejny fragment po każdej pauzie, dopóki nie zakończysz dyktowania. Jeśli Rambler nie odpowie, SandFly rozpozna nagranie w Whisperze, o ile masz pobrany model.
+
+Przy włączonej opcji **Transkrypcja na żywo Rambler** SandFly przesyła nagranie w trakcie mówienia i odbiera tekst kolejnych fragmentów po pauzach. Dzięki temu tekst szybciej pojawia się po zatrzymaniu. Jeśli przesyłanie się nie uda, SandFly wyśle całe nagranie po zakończeniu. Domyślnie opcja jest włączona i pojawia się po dodaniu klucza Gemini API.
+
+Uwaga: Rambler wysyła nagranie do Google. Przy kluczu Gemini API w darmowym planie Google może użyć dźwięku i tekstu do ulepszania swoich produktów. Przy kluczu w płatnym planie dane nie są używane w tym celu.
 
 #### Modele Whisper {#typing-whisper-models}
 
-W **Pisanie** > **Dyktowanie** > **Modele Whisper** wybierz model. Nagranie jest rozpoznawane na urządzeniu. Modele wielojęzyczne to **Whisper Tiny** 32 MB, **Whisper Base** 60 MB, **Whisper Small** 190 MB i **Whisper Large v3 Turbo** 574 MB. Większe modele są zwykle dokładniejsze i wolniejsze. Są też modele **FUTO Tiny**, **FUTO Base** i **FUTO Small** oraz ich wersje tylko do angielskiego.
+Whisper rozpoznaje mowę na telefonie, więc nagranie zostaje na urządzeniu. W menu **Pisanie** > **Dyktowanie** > **Modele Whisper** znajdziesz poniższe modele.
 
-Wybierz model do pobrania. Przy danych komórkowych SandFly poprosi o potwierdzenie. Pierwszy pobrany model będzie używany od razu. Potem możesz wybrać inny z listy i użyć **Używaj** albo **Usuń**. Jeśli model zna język telefonu, używa go. W innym przypadku rozpoznaje język nagrania.
+- **Whisper Tiny** (32 MB), **Whisper Base** (60 MB), **Whisper Small** (190 MB) i **Whisper Large v3 Turbo** (574 MB) obsługują wiele języków. Większy model jest dokładniejszy i wolniejszy.
+- **FUTO Tiny**, **FUTO Base** i **FUTO Small** oraz ich wersje tylko dla języka angielskiego pochodzą od FUTO.
 
-Przez **Plik modelu** możesz dodać własny plik whisper.cpp do 4 GB. Po dodaniu możesz go użyć, zastąpić przez **Wybierz inny plik** lub usunąć. Inny format nie zostanie przyjęty. Na telefonie z GPU Adreno i sterownikiem OpenCL możesz wybrać **CPU** albo **GPU** w **Procesor**. Jeśli GPU nie zadziała, model uruchomi się na procesorze.
+Aby skorzystać z modelu, wykonaj poniższe czynności.
 
-#### Popraw dyktowanie za pomocą AI {#typing-dictation-correction}
+1. Wybierz model. SandFly go pobierze. Przy danych komórkowych najpierw pojawi się okno potwierdzenia.
+2. Aby przełączyć się na inny pobrany model, wybierz go, a następnie **Używaj**. Aby usunąć model, wybierz go, a następnie **Usuń**.
 
-Domyślne ustawienie **Pisanie** > **Dyktowanie** > **Poprawiaj dyktowanie za pomocą AI** przekazuje transkrypcję z Google, Whisper lub Androida do wybranej usługi przed wpisaniem. Dołącza do 300 znaków sprzed kursora. Usługa może poprawić błędnie usłyszane słowa, dodać interpunkcję, usunąć zawahania i uwzględnić poprawki w mowie. Wynik Rambler nie jest wysyłany ponownie. Tekst dyktowany w polu hasła nie trafia do usługi.
+SandFly używa pierwszego pobranego modelu. Whisper korzysta z języka telefonu, gdy jest znany. W przeciwnym razie rozpoznaje język nagrania.
 
-W opcji **Usługa AI do dyktowania** możesz wybrać domyślne **Jak w sekcji „Usługi AI”**, inną skonfigurowaną usługę lub **AI na urządzeniu** po pobraniu modelu. Użyj rozpoznawania i korekty lokalnej, żeby dyktowanie pozostało na telefonie. Zobacz [ustawienia usług AI](#descriptions). W polu **Instrukcje poprawiania** możesz określić język i styl. Puste lub niezmienione pole używa wbudowanych instrukcji.
+Opcja **Plik modelu** umożliwia dodanie własnego modelu w formacie whisper.cpp, np. wytrenowanego dla konkretnego języka. Wybierz plik z telefonu, o rozmiarze do 4 GB. Po dodaniu możesz użyć modelu, podmienić go przez **Wybierz inny plik** lub go usunąć. Pliki w innym formacie są odrzucane.
 
-Po 20 sekundach bez odpowiedzi, po 60 przy modelu lokalnym, albo gdy odpowiedź jest znacznie dłuższa od wypowiedzi, SandFly wstawi rozpoznany tekst bez korekty. Ponowne **Dyktuj** podczas oczekiwania od razu wstawi ten tekst.
+Ustawienie **Procesor** jest widoczne tylko na telefonach z układem graficznym Adreno i sterownikiem OpenCL. Wybierz **CPU** lub **GPU**. Jeśli Whisper nie uruchomi się na GPU, użyje CPU.
+
+#### Poprawiaj dyktowanie za pomocą AI {#typing-dictation-correction}
+
+Po włączeniu **Pisanie** > **Dyktowanie** > **Poprawiaj dyktowanie za pomocą AI** SandFly przesyła do usługi AI tekst rozpoznany przez Google na urządzeniu, Whisper lub rozpoznawanie Androida. Dołącza do 300 znaków sprzed kursora. Usługa usuwa zbędne wtrącenia, zająknięcia i urwane początki, uwzględnia poprawki w mowie, dodaje interpunkcję i wielkie litery, poprawia błędnie rozpoznane słowa i formatuje liczby, daty i listy. Jeśli powiesz „dwa, nie, trzy”, wynikiem jest „trzy”. Domyślnie opcja jest włączona. Tekst z Ramblera nie jest wysyłany ponownie, a tekst dyktowany do pola hasła nie jest wysyłany.
+
+- W opcji **Usługa AI do dyktowania** wybierz **Jak w sekcji „Usługi AI”** (domyślnie), dowolną skonfigurowaną usługę lub **AI na urządzeniu**, jeśli model jest pobrany. W ostatnim przypadku całe dyktowanie pozostaje na telefonie. Zobacz [](#descriptions).
+- W polu **Instrukcje poprawiania** możesz podać język, styl lub inne wskazówki dla modelu. Początkowo pole zawiera wbudowaną instrukcję. Zapis bez zmian lub z pustym polem zachowuje wbudowaną instrukcję.
+
+Gdy odpowiedź nie nadejdzie w ciągu 20 sekund (60 sekund dla AI na urządzeniu) albo wynik jest znacznie dłuższy od wypowiedzi, SandFly wpisze tekst w postaci rozpoznanej przez mechanizm rozpoznawania mowy. Możesz to zrobić od razu, używając **Dyktuj** przed nadejściem odpowiedzi.
 
 #### Pozostałe ustawienia dyktowania {#typing-dictation-settings}
 
-- **Automatyczna interpunkcja** włącza interpunkcję i wielkie litery w rozpoznawaniu Google. Jest domyślnie włączona i wymaga odpowiedniej usługi oraz Androida 13.
-- **Blokuj obraźliwe słowa** maskuje takie słowa w rozpoznawaniu Google. Jest domyślnie włączone. Pojawia się z opcją interpunkcji.
-- **Automatyczne zatrzymanie po ciszy** może kończyć nagranie po 1, 2, 3, 5, 10, 15 lub 30 sekundach albo minucie. Domyślnie jest wyłączone.
-- **Odczytuj podyktowany tekst** czyta wpisany wynik z wyjątkiem pól haseł. Domyślnie jest wyłączone.
-- **Utrzymuj modele rozpoznawania w pamięci** pozwala wybrać **Zwolnij po użyciu**, 5, 15 lub 30 minut albo **Do zatrzymania SandFly**. Pozostawiony model uruchamia się szybciej i zajmuje pamięć. Domyślnie SandFly zwalnia model po użyciu.
-- **Serwer pobierania modeli** pozwala wybrać domyślne **Hugging Face** lub **hf-mirror.com**.
+W menu **Pisanie** > **Dyktowanie** znajdziesz poniższe opcje.
 
-### Klawiatura pisma odręcznego {#typing-handwriting}
+- **Automatyczna interpunkcja** pozwala mechanizmowi Google wstawiać znaki przestankowe i wielkie litery. Domyślnie opcja jest włączona. Jest widoczna na Androidzie 13 lub nowszym z zainstalowanym rozpoznawaniem mowy Google.
+- **Blokuj obraźliwe słowa** pozwala mechanizmowi Google ukrywać obraźliwe słowa. Domyślnie opcja jest włączona. Jest widoczna razem z **Automatyczna interpunkcja**.
+- **Automatyczne zatrzymanie po ciszy** kończy nagrywanie po 1, 2, 3, 5, 10, 15 lub 30 sekundach albo po minucie bez mowy. Domyślnie ustawione jest **Wyłączone**.
+- **Odczytuj podyktowany tekst** czyta wpisany tekst poza polami haseł. Domyślnie opcja jest wyłączona.
+- **Utrzymuj modele rozpoznawania w pamięci** ustala, jak długo pozostają w pamięci modele Whisper i AI na urządzeniu. Możesz wybrać **Zwolnij po użyciu** (domyślnie), 5, 15 lub 30 minut albo **Do zatrzymania SandFly**. Wczytany model zaczyna pracę szybciej, ale zajmuje pamięć.
+- **Serwer pobierania modeli** pozwala wybrać **Hugging Face** (domyślnie) lub **hf-mirror.com**.
 
-Pismo odręczne SandFly to klawiatura dla telefonów i tabletów z Androidem 11 lub nowszym. Piszesz palcem na całym ekranie. Gdy klawiatura jest otwarta, dotknięcia trafiają bezpośrednio do niej.
+### Klawiatura pisma ręcznego {#typing-handwriting}
 
-#### Włącz klawiaturę pisma odręcznego {#typing-handwriting-turn-on}
+Pismo odręczne SandFly to klawiatura, która wpisuje to, co napiszesz palcem na ekranie. Jest dostępna na telefonach i tabletach od Androida 11. Zajmuje cały ekran. Przy włączonym SandFly dotknięcia klawiatury trafiają do niej bezpośrednio.
 
-1. Otwórz **Pisanie** > **Klawiatura pisma ręcznego**.
-2. W ustawieniach Androida włącz **Pismo odręczne SandFly**.
-3. W polu tekstowym wybierz tę klawiaturę przez **Przełącz klawiaturę** lub przełącznik Androida.
+#### Włącz klawiaturę pisma ręcznego {#typing-handwriting-turn-on}
 
-Przy pierwszym otwarciu samouczek przeprowadza przez literę, słowo i gesty, bez wpisywania do pola. Możesz go zakończyć przesunięciem trzech palców w dół i później otworzyć stuknięciem trzema palcami. Rozpoznawanie odbywa się na urządzeniu w języku telefonu. Za pierwszym razem SandFly poprosi o pobranie modelu Google ML Kit, który ma około 20 MB.
+1. Otwórz **Pisanie** > **Klawiatura pisma ręcznego**. Otworzą się ustawienia klawiatur Androida.
+2. Włącz **Pismo odręczne SandFly**.
+3. W polu tekstowym wybierz **Pismo odręczne SandFly** za pomocą **Przełącz klawiaturę** lub systemowego przełącznika klawiatur.
 
-#### Pisz palcem {#typing-handwriting-write}
+Przy pierwszym otwarciu samouczek pokazuje pisanie litery, słowa i każdy gest. Przechodzi dalej, gdy wykonasz dany krok. W trakcie samouczka do pola nic nie jest wpisywane. Aby skończyć wcześniej, przesuń trzy palce w dół. Aby otworzyć samouczek ponownie, stuknij trzema palcami.
 
-Napisz literę, kilka liter albo słowo w dowolnym miejscu. Ruchy rozpoczęte przed upływem czasu oczekiwania są odczytywane razem. Kropka nad literą również liczy się jako ruch.
+Pismo jest rozpoznawane na telefonie przez Google ML Kit w języku telefonu. Przy pierwszym użyciu SandFly pokazuje okno pobrania modelu rozpoznawania, około 20 MB, i informuje, gdy pobieranie się zakończy.
 
-W **Pisanie** > **Oczekiwanie po napisaniu** ustaw od 0,2 do 1 sekundy. Domyślnie jest to 0,6 sekundy. Przy krótszym czasie SandFly szybciej wpisuje wynik. Musisz jednak rozpocząć każdą kreskę wieloczęściowej litery w tym czasie. Dotyczy to też poleceń [pisania litery lub nazwy aplikacji](#commands).
+#### Pisz odręcznie {#typing-handwriting-write}
+
+Napisz literę, kilka liter lub całe słowo w dowolnym miejscu ekranu. Ruchy wykonane w ustawionym odstępie są traktowane jako jeden zapis, który SandFly wpisuje i odczytuje. Kropka, np. nad i, również jest osobnym ruchem.
+
+**Pisanie** > **Oczekiwanie po napisaniu** określa czas od 0,2 do 1 sekundy. Domyślna wartość to 0,6 sekundy. Krótszy czas szybciej wpisuje tekst, ale każdy kolejny ruch przy pisaniu litery, np. H, trzeba zacząć przed upływem ustawionego czasu. Ustawienie dotyczy również poleceń **Napisz literę opcji sterowania czytaniem** i **Napisz nazwę aplikacji, aby ją otworzyć**. Zobacz [](#commands).
 
 | Gest | Działanie |
 | --- | --- |
-| Dwa palce w prawo | Wstaw spację. |
-| Dwa palce w lewo | Usuń znak przed kursorem. |
-| Dwa palce w dół | Wstaw nowy wiersz lub wykonaj działanie pola, na przykład Wyślij. |
-| Dwa palce w górę | Wybierz następną wersję odczytu tej samej długości. |
-| Stuknięcie dwoma palcami | Przeczytaj tekst przed kursorem. |
-| Trzy palce w dół | Schowaj klawiaturę. |
-| Trzy palce w prawo lub w lewo | Wybierz następną lub poprzednią klawiaturę od Androida 9. |
-| Stuknięcie trzema palcami | Otwórz samouczek. |
+| Przesunięcie dwóch palców w prawo | Wpisuje spację. |
+| Przesunięcie dwóch palców w lewo | Usuwa znak przed kursorem. |
+| Przesunięcie dwóch palców w dół | Wstawia nowy wiersz albo wykonuje czynność pola, np. Wyślij, Szukaj lub Gotowe. |
+| Przesunięcie dwóch palców w górę | Zastępuje ostatni zapis kolejnym wynikiem tej samej długości, np. H przez h. |
+| Stuknięcie dwoma palcami | Odczytuje tekst przed kursorem. |
+| Przesunięcie trzech palców w dół | Ukrywa klawiaturę. |
+| Przesunięcie trzech palców w prawo lub w lewo | Przełącza na następną lub poprzednią klawiaturę (Android 9 i nowsze). |
+| Stuknięcie trzema palcami | Otwiera samouczek. |
 
-W **Pisanie** > **Echo klawiatury** > **Klawiatura pisma ręcznego** wybierz odczyt fragmentu, wyrazu zakończonego spacją lub nowym wierszem, obu albo żadnego. Usunięty znak i następna wersja odczytu są odczytywane niezależnie od echa. W polach SandFly tekst przed kursorem jest pomijany, a przy usuwaniu usłyszysz tylko informację o usunięciu. Gdy klawiatura jest otwarta, działają polecenia, które nie otwierają nowego okna.
+W menu **Pisanie** > **Echo klawiatury** > **Klawiatura pisma ręcznego** wybierzesz, co słyszysz w trakcie pisania. Może to być każdy zapis, całe słowo zakończone spacją lub nowym wierszem, oba albo cisza. Usunięte znaki i wyniki zastępujące ostatni zapis są odczytywane niezależnie od echa. W polach tekstowych SandFly tekst przed kursorem jest pomijany, a przy usunięciu usłyszysz tylko „Usunięto”.
 
-### Klawiatura fizyczna {#typing-physical-keyboard}
+Gdy klawiatura pisma ręcznego jest widoczna, działają tylko polecenia bez otwierania okna, np. nawigacja i sterowanie czytaniem.
 
-Po podłączeniu klawiatury znajdziesz w **Pisanie** sekcję **Klawiatura fizyczna**. Obejmuje ustawienia przycisków numerycznych, wysyłania klawiszem Enter, Klawiatury SandFly, przytrzymań, podwójnych naciśnięć, kropki po dwóch spacjach i układu Androida. Szczegóły są w [rozdziale o klawiaturach](#keyboards).
+### Klawiatury fizyczne {#typing-physical-keyboard}
+
+Przy podłączonej klawiaturze fizycznej w menu **Pisanie** > **Klawiatura fizyczna** znajdziesz **Klawisze liter naciskają przyciski klawiatury numerycznej**, **Enter wysyła wiadomości**, **Klawiatura SandFly**, **Wpisywanie po przytrzymaniu klawisza**, **Znaki podwójnego naciśnięcia**, **Podwójna spacja wstawia kropkę** i **Ustawienia klawiatury fizycznej Androida**. Wszystkie opisuje [](#keyboards).

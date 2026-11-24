@@ -1,195 +1,224 @@
 ## Polecenia i menu {#commands}
 
-SandFly wykonuje polecenie, gdy przenosi fokus, czyta od góry, opisuje obraz lub uruchamia makro. To samo polecenie możesz wywołać na kilka sposobów, na przykład gestem, klawiszem, komórką brajlowską, pozycją w menu albo głosem.
+SandFly wykonuje polecenia, gdy chcesz np. przenieść fokus, przeczytać treść od góry, opisać obraz, otworzyć menu SandFly lub uruchomić makro. Polecenie możesz uruchomić gestem, skrótem klawiszowym, strzałką, znakiem brajlowskim, pozycją menu, elementem sterowania czytaniem lub głosem. W tym rozdziale znajdziesz wykaz poleceń oraz opis menu SandFly, własnych menu i sterowania czytaniem.
 
-Zobacz też rozdziały o [gestach](#gestures), [klawiaturach](#keyboards), [czytaniu](#reading), [poleceniach głosowych](#voice-commands) i [makrach](#macros).
+Gesty i profile gestów opisuje [](#gestures). Skróty klawiszowe i mapy klawiszy znajdziesz w [](#keyboards). O korzystaniu ze sterowania czytaniem przeczytasz w [](#reading), a o obsłudze głosem i makrach w [](#voice-commands) i [](#macros).
 
-### Lista poleceń {#commands-list}
+### Polecenia {#commands-list}
 
-Otwórz **Polecenia** w ustawieniach SandFly. Rozwiń kategorię i wybierz polecenie. Pod jego nazwą znajdziesz przypisane gesty i skrót klawiszowy. SandFly pokazuje tylko polecenia obsługiwane na danym urządzeniu. Na przykład do części z nich potrzebujesz Androida 11, wibracji albo monitora brajlowskiego.
+Na ekranie **Polecenia** w ustawieniach SandFly wszystkie polecenia są pogrupowane według zastosowania. Otwórz grupę, aby zobaczyć jej polecenia. Pod nazwą każdego polecenia SandFly pokazuje przypisane do niego gesty i skrót klawiszowy.
 
-#### Kategorie poleceń {#commands-categories}
+Na liście są tylko polecenia obsługiwane na danym urządzeniu. Jeśli urządzenie ma starszą wersję Androida, nie ma wibracji albo nie obsługuje monitora brajlowskiego, odpowiednie polecenia są ukryte.
 
-- **Nawigacja** obejmuje ruch między elementami, kontenerami i oknami. Tu znajdziesz też **Zaznaczaj osobno tekst wewnątrz elementów**.
-- **Ustawienie nawigacji** pozwala otworzyć menu **Nawigacja**, użyć **Nawigacja po stronach** lub przejść do poprzedniego albo następnego ustawienia nawigacji.
-- **Nawigacja obiektowa** i **Przegląd ekranu** zawierają polecenia podobne do tych z czytników komputerowych. Przydają się przede wszystkim przy [używaniu klawiatury](#keyboards).
-- W **Aktywacja** są **Aktywuj**, **Naciśnij i przytrzymaj**, **Aktywuj dotknięciem**, aktywowanie przycisków potwierdzenia i anulowania oraz wyświetlanie czynności. Tu są też **Adresy i numery**, etykiety, otwarcie menu SandFly, przepuszczenie gestu do systemu, przełączanie dotyku bezpośredniego i zmiana działania dwukrotnego stuknięcia w danej aplikacji.
-- **Przewijanie** obejmuje wszystkie kierunki, przejście na początek lub koniec i polecenie **Odśwież**.
-- **Nawigacja według tekstu** i **Nawigacja według elementu** pozwalają przechodzić między znakami, słowami, wierszami, akapitami, nagłówkami, linkami, przyciskami, listami i innymi rodzajami elementów.
-- **Tabele** służą do przechodzenia po wierszach i kolumnach. Możesz też przejść na ich początek lub koniec albo odczytać nagłówek.
-- W **Strony internetowe** przełączysz tryb przeglądania, otworzysz listę nagłówków, punktów orientacyjnych, linków, elementów sterujących lub tabel albo odczytasz adres strony lub linku. Zobacz [nawigację w treści WWW](#web).
-- **Czytanie** obejmuje czytanie ciągłe, powtarzanie, literowanie i tłumaczenie wypowiedzi, historię mowy, odczyt stanu i pozycji, współrzędnych, bieżącej daty i godziny, poziomu baterii oraz tytułu okna.
-- W kategorii **Mowa** możesz wstrzymywać i wznawiać mowę, włączać ją i wyłączać, zmieniać szybkość, ton, głośność, język, profil, interpunkcję, echo klawiatury, efekty głosu, wyciszanie tła i wibracje.
-- **Sterowanie czytaniem** obejmuje przechodzenie do pierwszej, następnej lub poprzedniej opcji, użycie wybranej opcji w górę i w dół, wybór przez napisanie litery i przełączanie list. Możesz też przypisać polecenie bezpośredniego wyboru każdej opcji z listy. Zobacz [ustawienia sterowania czytaniem](#commands-reading-controls).
-- **Edytowanie tekstu** obejmuje ruch kursora, zaznaczanie, kopiowanie, wycinanie i wklejanie. Tu są historia schowka, menu edycji, przesłanie i czyszczenie tekstu, kopiowanie ostatniej wypowiedzi, tekstu z ekranu i kopiowanie ciągłe. Znajdziesz też szczegółową edycję, korektę, wybór symbolu i emoji, dyktowanie, zmianę trybu edycji i przełączanie klawiatury. Zobacz [pisanie](#typing).
-- W kategorii **Czynności systemowe** znajdziesz między innymi ekran główny, cofanie, przegląd, przełączanie aplikacji, zrzut ekranu, odbieranie połączeń, podział ekranu, powiadomienia, szybkie ustawienia, blokadę, menu zasilania i wszystkie aplikacje. Z tej kategorii możesz też wywołać skrót dostępności, powiększenie, odwrócenie kolorów, otwarcie aplikacji po wpisaniu nazwy lub polecenie głosowe.
-- **Multimedia i głośność** pozwala sterować odtwarzaniem, utworami, przewijaniem i głośnością.
-- **Powiadomienia** obejmują odczyt i powtórzenie powiadomienia, przerwanie odczytu oraz włączanie i wyłączanie odczytu powiadomień i godziny. Zobacz [powiadomienia](#notifications).
-- **Opisy obrazów i ekranu** pozwalają zrobić zdjęcie, opisać obraz albo ekran, odsłuchać opis lub zadać pytanie. Tu też udostępnisz obraz albo zrzut i zgłosisz odpowiedź AI. W SandFly Pro znajdziesz polecenia rozpoznawania ekranu. Zobacz [opisy obrazów](#descriptions).
-- **Rozpoznawanie na żywo** ma polecenie dla każdego trybu i **Zatrzymaj rozpoznawanie na żywo**.
-- **Brajl** to klawiatura brajlowska, polecenia, wyszukiwanie, profile i polecenia monitora. Zobacz [brajl](#braille).
-- W **SandFly** są między innymi wstrzymanie i wyłączenie czytnika, ukrywanie ekranu i ramki, wyszukiwanie, profile i **Gesty dla tej aplikacji**. Tu też przełączysz nawigację strzałkami, blokadę dotyku, skrypty i szczegółowość albo otworzysz samouczek. SandFly Pro dodaje polecenie rozpoczęcia lub zatrzymania zadania agenta AI.
-- W kategorii **Ustawienia programisty** możesz sprawdzić element, skopiować jego szczegóły i skopiować drzewo ekranu. Zobacz [sprawdzanie elementów](#macros-inspect).
-- **Wartości ustawień** pozwalają przejść do następnej lub poprzedniej wartości opcji sterowania czytaniem. Tu są też polecenia włączające i wyłączające funkcje takie jak **Zawijanie**.
+#### Grupy poleceń {#commands-categories}
 
-Niektóre kategorie SandFly pokazuje dopiero, gdy mają polecenia.
+- **Nawigacja** obejmuje przejście do następnego lub poprzedniego elementu, elementu wyżej, niżej, po lewej lub po prawej oraz pierwszego i ostatniego elementu ekranu. Znajdziesz tu też polecenia do przechodzenia po kontenerach i oknach oraz **Zaznaczaj osobno tekst wewnątrz elementów**.
+- **Ustawienie nawigacji** obejmuje menu **Nawigacja**, polecenie **Nawigacja po stronach** oraz przechodzenie do następnego i poprzedniego ustawienia nawigacji.
+- **Nawigacja obiektowa** i **Przegląd ekranu** służą do nawigacji po obiektach i obsługi kursora przeglądu, podobnie jak na komputerze, głównie przy użyciu klawiatury. Zobacz [](#keyboards).
+- **Aktywacja** zawiera **Aktywuj**, **Naciśnij i przytrzymaj**, **Aktywuj dotknięciem**, **Aktywuj przycisk potwierdzenia**, **Aktywuj przycisk anulowania**, **Pokaż czynności niestandardowe**, **Adresy i numery**, **Dodawanie i edytowanie etykiet**, **Otwórz menu SandFly**, **Gest systemowy przepuszczenia**, **Włącz lub wyłącz dotyk bezpośredni dla tej aplikacji** i **Dwukrotne kliknięcie stuka w ekran w tej aplikacji**.
+- **Przewijanie** obejmuje przewijanie do przodu, wstecz, w górę, w dół, w lewo i w prawo, do początku i do końca oraz polecenie **Odśwież**.
+- **Nawigacja według tekstu** i **Nawigacja według elementu** służą do przechodzenia do następnego lub poprzedniego znaku, słowa, wiersza, akapitu, nagłówka, linku, kontrolki, przycisku, listy, tabeli, punktu orientacyjnego i innych rodzajów elementów.
+- **Tabele** pozwalają przechodzić do następnego lub poprzedniego wiersza lub kolumny, do początku lub końca wiersza, kolumny lub tabeli oraz odczytywać nagłówki wierszy i kolumn.
+- **Strony internetowe** zawierają polecenie **Włącz lub wyłącz tryb przeglądania**, listy nagłówków, punktów orientacyjnych, linków, elementów sterujących i tabel oraz polecenia odczytania adresu linku lub strony. Zobacz [](#web).
+- **Czytanie** obejmuje **Czytaj od góry**, **Czytaj od zaznaczonego elementu**, **Czytaj od zaznaczonego elementu według sterowania czytaniem** oraz powtarzanie, literowanie i tłumaczenie ostatniej wypowiedzi. Są tu również **Historia mowy**, **Odczytaj stan urządzenia**, **Odczytaj pozycję**, **Odczytaj współrzędne** i polecenia odczytywania daty, godziny, poziomu baterii i tytułu okna.
+- **Mowa** zawiera **Wstrzymaj lub wznów komunikaty głosowe** oraz **Włącz lub wyłącz komunikaty głosowe**. Tu znajdziesz też polecenia dotyczące szybkości, wysokości i głośności mowy, języka, profili głosowych, znaków przestankowych i odczytywania podczas pisania oraz **Używaj efektów głosu**, **Wyciszanie tła** i **Sygnał wibracyjny**.
+- **Sterowanie czytaniem** obejmuje następny i poprzedni element sterowania, **Pierwszy element sterowania czytaniem**, **Przenieś element sterowania czytaniem w dół lub do przodu**, **Przenieś element sterowania czytaniem w górę lub do tyłu** i **Napisz literę opcji sterowania czytaniem**. Są też polecenia do zmiany listy na następną lub poprzednią oraz osobne polecenie ustawiające każdą pozycję z listy. Zobacz [](#commands-reading-controls).
+- **Edytowanie tekstu** obejmuje tryb zaznaczania, przesuwanie kursora, zaznaczanie całości, kopiowanie, wycinanie i wklejanie. Zawiera też **Historia schowka**, **Menu edycji**, **Prześlij tekst**, **Wyczyść tekst**, **Skopiuj ostatnią wypowiedź**, **Kopiuj tekst z ekranu**, **Kopiowanie ciągłe**, **Szczegółowa edycja**, **Podpowiedzi ortograficzne/gramatyczne**, **Wyszukaj emotikony**, **Wybierz symbol**, **Włącz lub wyłącz tryb edycji**, **Dyktuj** i **Przełącz klawiaturę**. Zobacz [](#typing).
+- **Czynności systemowe** obejmują **Ekran główny**, **Wstecz**, **Przegląd**, przejście do poprzedniej, starszej lub nowszej aplikacji, **Zrób zrzut ekranu**, **Odbierz połączenie**, **Podziel ekran**, otwieranie powiadomień i szybkich ustawień, **Zablokuj ekran urządzenia**, **Menu zasilania** oraz **Wszystkie aplikacje**. Do tej grupy należą również skrót ułatwień dostępu, powiększenie, odwrócenie kolorów, **Napisz nazwę aplikacji, aby ją otworzyć**, **Wpisz nazwę aplikacji w brajlu, aby ją otworzyć** i **Użyj polecenia głosowego**.
+- **Multimedia i głośność** obejmują odtwarzanie, pauzę, przechodzenie do następnego i poprzedniego utworu, przewijanie wstecz i w przód oraz regulację głośności.
+- **Powiadomienia** obejmują odczytywanie powiadomień, powtarzanie ostatniego powiadomienia, zatrzymywanie odczytu oraz przełączanie mowy dla powiadomień i podawania czasu. Zobacz [](#notifications).
+- **Opisy obrazów i ekranu** zawierają **Zrób zdjęcie i opisz**, **Opisz obraz**, **Opisz ekran**, ich warianty odczytu i zadawania pytań oraz **Udostępnij obraz zaznaczonego elementu**, **Udostępnij zrzut ekranu** i **Zgłoś odpowiedź AI**. SandFly Pro udostępnia tu również polecenia rozpoznawania ekranu. Zobacz [](#descriptions).
+- **Rozpoznawanie na żywo** zawiera osobne polecenie dla każdego trybu oraz **Zatrzymaj rozpoznawanie na żywo**.
+- **Brajl** zawiera **Włącz klawiaturę brajlowską**, **Polecenia brajlowskie**, **Znajdź tekst**, profile poleceń brajlowskich i polecenia monitora brajlowskiego. Zobacz [](#braille).
+- **SandFly** zawiera **Wstrzymaj SandFly**, **Ukryj lub pokaż ekran**, **Pokazuj wskaźnik zaznaczenia**, **Wyszukiwanie zawartości ekranu**, profile gestów i ustawień, **Gesty dla tej aplikacji**, **Włącz lub wyłącz nawigację strzałkami**, **Zablokuj lub odblokuj dotyk**, **Włącz lub wyłącz wszystkie skrypty**, **Polecenia skryptów**, **Szczegółowość**, **Wyłącz SandFly**, **Otwórz samouczek** i **Ćwiczenie gestów**. SandFly Pro udostępnia także polecenie uruchamiania i zatrzymywania zadania agenta AI.
+- **Ustawienia programisty** zawierają **Sprawdź element z fokusem**, **Kopiuj szczegóły elementu** i **Kopiuj drzewo ekranu**. Zobacz [](#macros-inspect).
+- **Wartości ustawień** obejmują przechodzenie do następnej i poprzedniej wartości każdego elementu sterowania czytaniem zmieniającego ustawienie, np. znaków przestankowych. Obejmują też polecenia przełączające ustawienia, np. **Zawijanie**.
 
-- **Skrypty**, **Własne menu** i **Makra** zawierają odpowiednio polecenia [skryptów](#scripts), [Twoich menu](#commands-custom-menus) i [makr](#macros). Wśród poleceń makr są także **Zatrzymaj makro** i **Nagraj makro**.
-- **Profile gestów**, **Profile poleceń brajlowskich** i **Profile głosowe** zawierają polecenia włączające poszczególne profile.
-- W **Listy sterowania czytaniem** każda [lista](#commands-reading-control-lists) ma polecenie następnej i poprzedniej pozycji.
-- **Otwórz aplikację** zawiera polecenie dla każdej zainstalowanej aplikacji. **Skróty aplikacji** i **Skróty ułatwień dostępu** pokazują skróty aplikacji oraz usług dostępności. Zobacz [gesty](#gestures).
+Poniższe grupy pojawiają się, gdy zawierają polecenia.
+
+- **Skrypty** zawierają polecenia dodane przez zainstalowane skrypty. Zobacz [](#scripts).
+- **Własne menu** zawierają osobne polecenie do otwierania każdego z Twoich menu. Zobacz [](#commands-custom-menus).
+- **Makra** zawierają osobne polecenie dla każdego makra oraz **Zatrzymaj makro** i **Nagraj makro**. Zobacz [](#macros).
+- **Profile gestów**, **Profile poleceń brajlowskich** i **Profile głosowe** zawierają po jednym poleceniu włączającym każdy profil.
+- **Listy sterowania czytaniem** zawierają polecenia przechodzenia do następnego i poprzedniego elementu w każdej liście. Zobacz [](#commands-reading-control-lists).
+- **Otwórz aplikację** zawiera po jednym poleceniu dla każdej zainstalowanej aplikacji.
+- **Skróty aplikacji** i **Skróty ułatwień dostępu** zawierają skróty aplikacji i innych funkcji ułatwień dostępu. Zobacz [](#gestures).
 
 #### Odczytaj stan urządzenia {#commands-status}
 
-Stuknij trzy razy dwoma palcami, aby odczytać stan urządzenia. Polecenie **Odczytaj stan urządzenia** jest w kategorii **Czytanie**. Podaje na przykład godzinę, poziom baterii, sieć i informację o ukryciu ekranu. To, co i w jakiej kolejności usłyszysz, ustawisz w **Szczegółowość** > **Odczytywanie stanu urządzenia**. Zobacz [szczegółowość](#verbosity).
+Polecenie **Odczytaj stan urządzenia** z grupy **Czytanie** odczytuje informacje z paska stanu, np. godzinę, poziom baterii i sieć. Informuje też, czy ekran jest ukryty. Domyślnie uruchomisz je trzykrotnym stuknięciem dwoma palcami. Zawartość i kolejność odczytu ustawisz w menu **Szczegółowość** > **Odczytywanie stanu urządzenia**. Zobacz [](#verbosity).
 
-#### Naciśnij przycisk potwierdzenia albo anulowania {#commands-button-commands}
+#### Aktywuj przycisk potwierdzenia lub anulowania {#commands-button-commands}
 
-W kategorii **Aktywacja** wybierz **Aktywuj przycisk potwierdzenia** albo **Aktywuj przycisk anulowania**. Polecenia wyszukują przycisk po etykiecie i naciskają go bez przenoszenia fokusu. Domyślnie nie mają gestów.
+Polecenia **Aktywuj przycisk potwierdzenia** i **Aktywuj przycisk anulowania** z grupy **Aktywacja** naciskają przycisk o pasującej etykiecie bez zmieniania fokusu. Domyślnie nie mają przypisań. **Aktywuj przycisk potwierdzenia** szuka nazw takich jak **OK**, **Tak**, **Wyślij**, **Ukończono**, **Dalej**, **Zapisz** lub **Zezwól**. **Aktywuj przycisk anulowania** szuka nazw takich jak **Anuluj**, **Nie**, **Zamknij**, **Wstecz**, **Nie teraz** lub **Pomiń**. Liczy się całe słowo. Wielkość liter i znaki przestankowe na końcu etykiety są pomijane.
 
-- Potwierdzenie szuka nazw takich jak „OK”, „Tak”, „Wyślij”, „Ukończono”, „Dalej”, „Zapisz” i „Zezwól”.
-- Anulowanie szuka nazw takich jak „Anuluj”, „Nie”, „Zamknij”, „Wstecz”, „Nie teraz” i „Pomiń”.
+SandFly najpierw sprawdza aktywne okno, np. okno dialogowe, a następnie pozostałe okna od góry. Jeśli pasuje kilka przycisków, wybiera ten najbliżej elementu, na którym jest fokus. Przy braku fokusu wybiera przycisk położony najniżej. Jeśli żadna etykieta nie pasuje, SandFly odczytuje komunikat o braku przycisku potwierdzenia lub anulowania.
 
-Etykieta musi pasować w całości. SandFly pomija wielkość liter i interpunkcję na końcu. Szuka najpierw w aktywnym oknie, na przykład dialogu, a potem w pozostałych oknach aplikacji od góry. Jeśli znajdzie kilka przycisków, wybiera najbliższy elementowi, na którym jest fokus. Gdy fokusu nie ma, naciska najniżej położony przycisk. Jeśli nic nie pasuje, SandFly poda komunikat o braku przycisku.
+Aby zmienić etykiety, wybierz polecenie na ekranie **Polecenia**, a potem **Etykiety przycisków**. Wpisz po jednej etykiecie w wierszu. Twoja lista zastępuje wbudowaną. Aby przywrócić wbudowaną listę, usuń wszystkie wpisane etykiety.
 
-Aby zmienić listę, otwórz polecenie i wybierz **Etykiety przycisków**. Wpisz po jednej etykiecie w wierszu. Własna lista zastępuje fabryczną. Usuń wszystkie wpisy, żeby wrócić do fabrycznej.
+### Przypisz gest lub skrót do polecenia {#commands-assign}
 
-### Przypisz gest lub skrót klawiszowy do polecenia {#commands-assign}
+1. W ustawieniach SandFly wybierz **Polecenia**.
+2. Wybierz grupę, a w niej polecenie.
+3. W sekcji **Gesty** wybierz **Dodaj gest**, a potem gest. Jeśli gest wykonuje już inne polecenie, nazwa tego polecenia pojawi się obok nazwy gestu.
+4. Jeśli gest ma inne przypisanie, pojawi się okno potwierdzenia. Wybierz **Zastąp**, aby używać go z nowym poleceniem.
 
-1. Otwórz **Polecenia** w ustawieniach SandFly.
-2. Rozwiń kategorię.
-3. Wybierz polecenie.
-4. W sekcji **Gesty** wybierz **Dodaj gest**.
-5. Wskaż gest. Jeśli ma już przypisanie, usłyszysz je po nazwie gestu.
-6. Jeśli SandFly spyta o zmianę przypisania, wybierz **Zastąp**.
+Na ekranie polecenia znajdziesz te grupy.
 
-Na ekranie polecenia możesz znaleźć więcej ustawień.
+- **Etykiety przycisków** są dostępne dla poleceń **Aktywuj przycisk potwierdzenia** i **Aktywuj przycisk anulowania**. Zawierają etykiety, których polecenie ma szukać. Zobacz [](#commands-button-commands).
+- **Gesty** pokazują gesty wykonujące polecenie. Aby usunąć przypisanie, wybierz gest, a potem **Usuń gest**.
+- **Nawigacja strzałkami** pokazuje strzałki przypisane do polecenia. Przypisania zmienisz przez **Dodaj klawisze strzałek** lub **Usuń klawisze strzałek**. Grupa jest widoczna tylko przy mapie klawiszy zawierającej nawigację strzałkami. Zobacz [](#keyboards).
+- **Komórki brajlowskie** pokazują znaki uruchamiające polecenie w profilu **Domyślny**. Wybierz **Dodaj komórkę brajlowską** i wpisz znak na powierzchni brajlowskiej SandFly. Aby usunąć przypisanie, wybierz znak, a następnie **Usuń komórkę brajlowską**. Zobacz [](#braille).
+- **Skrót klawiszowy** pokazuje przypisany skrót. Wybierz tę pozycję i naciśnij nowe klawisze. Nagrywanie skrótu działa, gdy SandFly jest włączony.
 
-- Sekcja **Gesty** pokazuje przypisane gesty. Żeby skasować przypisanie, wybierz gest, a potem **Usuń gest**.
-- W **Nawigacja strzałkami** użyj **Dodaj klawisze strzałek** lub **Usuń klawisze strzałek**. Sekcja pojawia się w układach z [nawigacją strzałkami](#keyboards).
-- Wybierz **Dodaj komórkę brajlowską** w sekcji **Komórki brajlowskie** i wpisz komórkę na klawiaturze SandFly. Powiązanie należy do domyślnych [poleceń brajlowskich](#braille). Usuniesz je, wybierając komórkę i **Usuń komórkę brajlowską**.
-- Wybierz **Skrót klawiszowy** i naciśnij klawisze, które chcesz przypisać. SandFly musi być włączony, żeby je zarejestrować.
-- Przy poleceniach [potwierdzenia i anulowania](#commands-button-commands) dostępne są **Etykiety przycisków**.
+Jeden gest lub jedna strzałka uruchamia jedno polecenie. Do jednego polecenia możesz przypisać kilka gestów. Wszystkie gesty znajdziesz na ekranie **Gesty**. Zobacz [](#gestures).
 
-Każdy gest lub skrót strzałek uruchamia jedno polecenie. Do polecenia możesz przypisać kilka gestów. Skorzystaj z ekranu [**Gesty**](#gestures), żeby przeglądać przypisania od strony gestu. W menu, makrach i poleceniach głosowych skrót **Gesty i skrót klawiszowy** otwiera tę stronę dla wybranego polecenia.
+Do tego samego ekranu przypisania prowadzi pozycja **Gesty i skrót klawiszowy** na ekranach własnych menu, makr i poleceń głosowych.
 
 ### Menu SandFly {#commands-sandfly-menu}
 
-W układzie **Gesty SandFly** stuknij trzema palcami, żeby otworzyć menu. Możesz też przesunąć palec w górę i w prawo albo w dół i w prawo. Zobacz [domyślne gesty](#appendix-gestures).
+W menu znajdziesz polecenia i ustawienia SandFly oraz czynności dostępne dla elementu, na którym jest fokus. Użyj polecenia **Otwórz menu SandFly**. W układzie gestów SandFly przesuń palec w górę, a potem w prawo, w dół, a potem w prawo, lub stuknij trzema palcami. Zobacz [](#appendix-gestures).
 
-Menu zawiera czynności dotyczące elementu, na którym jest fokus, oraz polecenia czytnika. Przesuwaj palcem w prawo lub w lewo, aby przeglądać pozycje. Stuknij dwa razy, aby wybrać polecenie albo otworzyć podmenu. Użyj **Wstecz**, żeby zamknąć listę.
+Menu otwiera się jako lista. Przesuwaj palec w prawo lub w lewo, żeby przechodzić po pozycjach. Stuknij dwukrotnie, aby wybrać pozycję. Pozycja z dodatkowymi elementami otworzy podmenu. Aby zamknąć menu bez wyboru, użyj **Wstecz**.
 
-SandFly pokazuje część pozycji zależnie od miejsca, w którym jesteś. Przykładowo **Podpowiedzi ortograficzne/gramatyczne** pojawią się przy błędzie pod kursorem, a **Czynności**, gdy element ma dodatkowe czynności. **Nawigacja po stronach** wymaga kilku stron, a **Dodawanie i edytowanie etykiet** pojawia się przy elemencie bez etykiety. **Adresy i numery** wymagają tekstu z adresem, numerem lub kodem. **Podziel ekran** pojawia się przy widocznym rozdzielaczu ekranu. Skrypty mogą dodawać własne pozycje.
+Niektóre pozycje pojawiają się zależnie od bieżącego elementu lub ekranu.
+
+- **Podpowiedzi ortograficzne/gramatyczne** są dostępne, gdy kursor jest na błędzie.
+- **Czynności** pojawiają się, gdy element, na którym jest fokus, udostępnia np. otwarcie linku, kopiowanie, wklejanie lub zaznaczanie.
+- **Nawigacja po stronach** pojawia się w treści podzielonej na strony.
+- **Dodawanie i edytowanie etykiet** pojawia się na elemencie bez etykiety.
+- **Adresy i numery** pojawiają się, gdy tekst elementu zawiera adresy stron, adresy e-mail, numery telefonu lub kody.
+- **Podziel ekran** pojawia się, gdy na ekranie jest separator dzielący ekran.
+- Pozycje skryptów pojawiają się, gdy zainstalowany skrypt doda je do menu.
 
 #### Menu kołowe {#commands-circle-menu}
 
-Włącz **Menu SandFly** > **Menu kołowe**, żeby wybierać pozycje rozmieszczone wokół środka ekranu. Przesuń palec do wybranej pozycji i go unieś. Unieś go na środku, żeby zamknąć menu. Podmenu otwiera kolejne koło. Domyślnie funkcja jest wyłączona.
+Opcja **Menu SandFly** > **Menu kołowe** układa pozycje w kole na środku ekranu. Każda z nich zajmuje osobny wycinek. Przesuń palec do pozycji i unieś go, aby ją wybrać. Unieś palec w środku koła, aby zamknąć menu. Jeśli pozycja otwiera podmenu, jego opcje pojawią się w nowym kole. Domyślnie ustawienie jest wyłączone.
 
-Jeśli otworzysz menu gestem z przytrzymaniem, punkt pod palcami staje się środkiem koła. Przesuń palce nad wybraną pozycję i unieś je.
+Jeśli otworzysz menu gestem, po którym palce zostają na ekranie, np. dwukrotnym stuknięciem z przytrzymaniem, przesuń je do wybranej pozycji i unieś. Środek koła jest tam, gdzie palce znajdowały się przy otwarciu menu.
 
 ### Zmień zawartość menu SandFly {#commands-edit-menu}
 
-1. Otwórz **Menu SandFly** w ustawieniach.
-2. Wybierz **Dodaj polecenie**.
-3. Rozwiń kategorię dwukrotnym stuknięciem.
-4. Stuknij dwa razy na poleceniu. SandFly doda je na końcu menu. Fokus zostanie w kategorii, a dodane polecenie zniknie z listy dostępnych.
+Menu SandFly to lista poleceń i podmenu. Możesz do niego dodać dowolne polecenie.
 
-Żeby dodać podmenu, wybierz **Dodaj podmenu** i wpisz nazwę. Wybierz nowe podmenu i **Otwórz**, żeby dodać w nim polecenia lub dalsze podmenu. Możesz zagnieżdżać je na 12 poziomach.
+1. W ustawieniach wybierz **Menu SandFly**.
+2. Wybierz **Dodaj polecenie**. Polecenia są podzielone na zwinięte grupy. Stuknij dwukrotnie grupę, aby ją rozwinąć.
+3. Stuknij dwukrotnie polecenie. SandFly doda je na końcu menu i odczyta potwierdzenie. Polecenie zniknie z listy dodawania, a fokus pozostanie w grupie.
 
-W sekcji **Bieżące** są pozycje w kolejności menu. Wybierz pozycję, aby ją otworzyć, przesunąć o miejsce przez **Przenieś w górę** lub **Przenieś w dół** albo użyć **Przenieś do**. Ostatnia opcja przenosi pozycję na koniec innego menu. SandFly podaje jego pełną ścieżkę i nie dodaje drugi raz tego samego polecenia. **Zmień nazwę** zmienia nazwę podmenu, a **Usuń** kasuje polecenie lub całe podmenu z jego zawartością. Te czynności są też dostępne jako czynności dostępności.
+Aby dodać podmenu, wybierz **Dodaj podmenu** i wpisz nazwę. Wybierz podmenu na liście, a następnie **Otwórz**. Na jego ekranie użyj **Dodaj polecenie** lub **Dodaj podmenu**. Możesz zagnieżdżać podmenu do dwunastu poziomów.
 
-Po dodaniu **Adresy i numery** pojawia się **Uwzględniane adresy i numery**. Możesz wybrać używane rodzaje. Domyślnie SandFly pokazuje wszystkie. Po dodaniu **Nawigacja** możesz użyć **Edytuj opcje nawigacji**, żeby ustawić pozycje tego podmenu.
+Sekcja **Bieżące** pokazuje pozycje w kolejności menu. Wybierz pozycję, aby otworzyć jej opcje. Są też dostępne jako czynności ułatwień dostępu tej pozycji.
 
-Pod listą znajduje się [**Menu kołowe**](#commands-circle-menu). Po potwierdzeniu opcji **Przywróć domyślne** SandFly odtwarza fabryczną listę i jej kolejność.
+- **Otwórz** otwiera podmenu.
+- **Przenieś w górę** i **Przenieś w dół** przesuwają pozycję o jedno miejsce.
+- **Przenieś do** przenosi element na koniec innego menu lub podmenu. Cel poznasz po ścieżce, np. **Menu SandFly** > **Czytanie**. Polecenie, które jest już w menu docelowym, nie zostanie dodane drugi raz.
+- **Zmień nazwę** umożliwia zmianę nazwy podmenu. **Usuń** usuwa je wraz z całą zawartością.
+- **Usuń** na poleceniu usuwa to polecenie z menu.
 
-#### Domyślne pozycje menu {#commands-menu-defaults}
+Dodatkowe opcje niektórych pozycji pojawiają się tuż za nimi w sekcji **Bieżące**. Są widoczne tylko wtedy, gdy dana pozycja jest w menu.
 
-Domyślnie menu obejmuje podpowiedzi korekty, pozycje skryptów, opisy obrazu i ekranu, czytanie od zaznaczonego elementu, profil gestów i gesty dla danej aplikacji. Są w nim również ukrywanie ekranu, wstrzymanie i wyłączenie SandFly, ustawienia, przesłanie opinii, ustawienia zamiany tekstu na mowę i podział ekranu. SandFly Pro dodaje rozpoznawanie ekranu.
+- **Uwzględniane adresy i numery**, pod pozycją **Adresy i numery**, ustawia, które typy ma pokazywać lista. Do wyboru są **Adresy internetowe**, **Adresy e-mail**, **Numery telefonów** i **Kody**. Domyślnie pokazywane są wszystkie.
+- **Edytuj opcje nawigacji**, pod pozycją **Nawigacja**, wybiera ustawienia dostępne w podmenu **Nawigacja**.
 
-Pozycje takie jak **Czynności**, **Wyszukiwanie zawartości ekranu**, **Nawigacja**, **Czytaj od góry**, **Skopiuj ostatnią wypowiedź**, **Polecenia głosowe**, **Szczegółowość**, **Język wypowiedzi**, **Sprawdź element z fokusem** i **Kopiuj szczegóły elementu** możesz włączyć przez **Dodaj polecenie**.
+Pod listą znajdziesz ustawienie **Menu kołowe**. Zobacz [](#commands-circle-menu).
 
-Na [zegarku](#devices) ustawienia menu mają postać przełączników w stałej kolejności.
+Opcja **Przywróć domyślne** po potwierdzeniu odtwarza domyślną zawartość i kolejność menu SandFly.
+
+#### Domyślna zawartość menu {#commands-menu-defaults}
+
+W menu SandFly domyślnie znajdziesz **Podpowiedzi ortograficzne/gramatyczne**, pozycje skryptów, **Opisz obraz**, **Opisz ekran**, **Czytaj od zaznaczonego elementu**, **Profil gestów**, **Gesty dla tej aplikacji**, **Ukryj lub pokaż ekran**, **Wstrzymaj SandFly**, **Wyłącz SandFly**, **Ustawienia SandFly**, **Prześlij opinię**, **Zamiana tekstu na mowę** i **Podziel ekran**. SandFly Pro dodaje do menu pozycje rozpoznawania ekranu. Aby dodać pozostałe pozycje, użyj **Dodaj polecenie**. Dotyczy to np. **Czynności**, **Wyszukiwanie zawartości ekranu**, **Nawigacja**, **Czytaj od góry**, **Skopiuj ostatnią wypowiedź**, **Polecenia głosowe**, **Szczegółowość**, **Język wypowiedzi**, **Sprawdź element z fokusem** i **Kopiuj szczegóły elementu**.
+
+Na zegarku ustawienia menu SandFly mają postać listy przełączników w stałej kolejności. Zobacz [](#devices).
 
 ### Własne menu {#commands-custom-menus}
 
-Każde własne menu pojawia się jako polecenie w kategorii **Własne menu**. Możesz je otwierać gestem, skrótem, strzałką lub pozycją innego menu.
+Możesz tworzyć własne menu z poleceniami i podmenu, niezależnie od menu SandFly. Każde własne menu ma polecenie w grupie **Własne menu**, więc możesz otworzyć je gestem, skrótem klawiszowym, strzałką lub pozycją menu.
 
-1. Otwórz **Własne menu**.
-2. Wybierz **Dodaj menu**.
-3. Wpisz nazwę.
-4. Otwórz nowe menu. Wybierz **Dodaj polecenie** lub **Dodaj podmenu**. Zobacz [edytowanie menu](#commands-edit-menu).
-5. Jeśli chcesz je otwierać gestem lub klawiszami, wybierz [**Gesty i skrót klawiszowy**](#commands-assign).
+1. W ustawieniach SandFly wybierz **Własne menu**.
+2. Wybierz **Dodaj menu** i wpisz nazwę.
+3. Otwórz nowe menu. Wybierz **Dodaj polecenie** lub **Dodaj podmenu**. Ekran działa tak samo jak przy edycji menu SandFly. Zobacz [](#commands-edit-menu).
+4. Jeśli chcesz otwierać menu gestem lub skrótem klawiszowym, wybierz **Gesty i skrót klawiszowy**. Zobacz [](#commands-assign).
 
-Na ekranie menu są również **Zmień nazwę** i **Usuń**. Usunięcie menu usuwa jego pozycje. Własne menu możesz dodać jako podmenu do innego menu albo do menu SandFly. Zobaczysz w nim bieżące pozycje. Jeśli dodasz menu do niego samego, SandFly je pominie.
+Na ekranie menu znajdziesz także przyciski **Zmień nazwę** i **Usuń**. Usunięcie menu usuwa całą jego zawartość.
+
+Własne menu dodane do innego menu albo do menu SandFly pojawia się w nim jako podmenu ze swoją bieżącą zawartością. Jeśli dodasz menu do niego samego, SandFly pominie tę pozycję.
 
 ### Ustawienia sterowania czytaniem {#commands-reading-controls}
 
-Wybierz **Sterowanie czytaniem**, aby ustawić listę opcji używanych przy [czytaniu](#reading) i zmienić ich kolejność.
+Sterowanie czytaniem decyduje o tym, co robią przesunięcia w górę i w dół. Mogą np. przechodzić po słowach lub nagłówkach albo zmieniać szybkość mowy. Na ekranie **Sterowanie czytaniem** w ustawieniach SandFly wybierzesz, które pozycje mają być dostępne i w jakiej kolejności. Sposób używania opisuje [](#reading).
 
-- W sekcji **Bieżące** wybierz pozycję, aby użyć **Przenieś w górę**, **Przenieś w dół** albo **Usuń**. Możesz użyć tych samych czynności z menu dostępności.
-- W sekcji [**Opcje**](#commands-reading-control-options) znajdziesz ustawienia całego ekranu.
-- W sekcji **Niedodane do sterowania czytaniem** rozwiń kategorię dwukrotnym stuknięciem. Stuknij dwa razy na pozycji, aby dodać ją na końcu listy **Bieżące**.
+Ekran ma trzy grupy.
 
-Po zmianie opcji lub wartości gestem SandFly pokazuje ją na ekranie przez około trzy sekundy.
+- **Bieżące** pokazują pozycje w kolejności listy. Po wybraniu pozycji możesz użyć **Przenieś w górę**, **Przenieś w dół** lub **Usuń**. Te same opcje są dostępne jako czynności ułatwień dostępu pozycji.
+- **Opcje** zawierają ustawienia tego ekranu. Zobacz [](#commands-reading-control-options).
+- **Niedodane do sterowania czytaniem** zawierają pogrupowane pozycje spoza listy. Stuknij dwukrotnie grupę, aby ją rozwinąć. Stuknij dwukrotnie pozycję, aby dodać ją na końcu sekcji **Bieżące**.
 
-#### Opcje, które możesz dodać {#commands-reading-control-groups}
+Gdy zmieniasz gestem pozycję sterowania czytaniem albo jej wartość, SandFly na około trzy sekundy pokazuje zmianę również na ekranie.
 
-- **Czynności dla bieżącego elementu** obejmują **Czynności**, **Adresy i numery**, **Historia schowka** i **Korekta**.
-- **Nawigacja podstawowa** obejmuje nawigację domyślną i pionową, okna, kontenery, wyszukiwanie, przewijanie i zawijanie.
-- Kategoria **Nawigacja według tekstu** zawiera znaki, słowa, wiersze, zdania i akapity.
-- W kategorii **Nawigacja po elementach** możesz dodać nagłówki, linki, elementy sterujące, punkty orientacyjne, przyciski, pola wyboru, przyciski opcji, pola edycji, pola kombi, elementy przyjmujące fokus, obrazy i filmy, listy i ich pozycje, tabele oraz odwiedzone i nieodwiedzone linki.
-- Opcja **Poziomy nagłówków** pozwala wybrać poziomy od 1 do 6. W kategorii **Tabele** są opcje przechodzenia po wierszach i kolumnach razem lub oddzielnie.
-- **Mowa** obejmuje szybkość, interpunkcję, emoji, formatowanie, język, syntezator, głośność, urządzenie odtwarzające, profil, tłumaczenie oraz odczyt wyłącznie fokusu przeniesionego przez użytkownika.
-- W kategorii **Echo klawiatury** możesz dodać echo klawiatury ekranowej, fizycznej, brajlowskiej, pisma odręcznego i monitora brajlowskiego.
-- **Efekty głosu** obejmują włączanie efektów i pasma korektora od 64 Hz do 16 kHz. Zobacz [efekty głosu](#voice-effects).
-- W **Opisy obrazów i ekranu** są rozpoznawanie na żywo i [czynności AI](#commands-ai-actions).
-- W **Dźwięk i wibracje** są wyciszanie tła, głośność dostępności, multimediów, połączeń, dzwonka, powiadomień i alarmu oraz tryb dźwięku.
-- W kategorii **Wyświetlanie** możesz dodać ukrywanie ekranu i jasność. Jest tam także opcja **Uniesiony tablet ekranem od siebie** dla klawiatury brajlowskiej na tablecie lub rozłożonym telefonie.
-- W kategorii **Dotyk** możesz dodać opóźnienie zaznaczenia, opóźnienie zaznaczenia podczas pisania, aktywowanie po puszczeniu oraz profil gestów.
-- **Własne sterowanie czytaniem** obejmuje [utworzone przez Ciebie opcje](#commands-custom-reading-controls).
+#### Dostępne pozycje sterowania czytaniem {#commands-reading-control-groups}
 
-Na domyślnej liście są czynności, korekta, wyniki wyszukiwania ekranu, znaki, słowa, wiersze, akapity, nagłówki, linki i elementy sterujące. Są też wiersze i kolumny, szybkość mowy, rozpoznawanie na żywo, czynności AI, jasność i profil gestów. Opcje dodane przez skrypty są na końcu listy.
+- **Czynności dla bieżącego elementu** obejmują **Czynności**, **Adresy i numery**, **Historia schowka** i **Korekta**. Ostatnia pozycja przechodzi między podpowiedziami ortograficznymi i gramatycznymi.
+- **Nawigacja podstawowa** obejmuje **Domyślna nawigacja**, **Okna**, **Kontenery**, **Wyszukiwanie zawartości ekranu**, **Nawigacja pionowa**, **Przewijanie** i **Zawijanie**.
+- **Nawigacja według tekstu** obejmuje **Znaki**, **Słowa**, **Wiersze**, **Zdania** i **Akapity**.
+- **Nawigacja po elementach** zawiera **Nagłówki**, **Linki**, **Kontrolki**, **Punkty orientacyjne**, **Przyciski**, **Pola wyboru**, **Opcje**, **Pola edycji**, **Pola wyboru** odpowiadające polom kombi, **Elementy możliwe do zaznaczenia**, **Obrazy i filmy**, **Listy**, **Pozycje na liście**, **Tabele**, **Kliknięte linki** i **Nieotwarte linki**.
+- **Poziomy nagłówków** zawierają pozycje od **Nagłówek 1** do **Nagłówek 6**.
+- **Tabele** zawierają **Wiersze i kolumny**, **Wiersz** i **Kolumna**.
+- **Mowa** zawiera **Szybkość mowy**, **Odczytuj znaki interpunkcyjne i symbole**, **Emoji**, **Informuj o formatowaniu tekstu**, **Język wypowiedzi**, **Syntezator mowy**, **Głośność mowy**, **Urządzenie odtwarzające**, **Profil głosowy**, **Automatyczne tłumaczenie** i **Odczytuj tylko fokus przeniesiony przez użytkownika**.
+- **Echo klawiatury** obejmuje echo klawiatury ekranowej, fizycznej i brajlowskiej, monitora brajlowskiego oraz klawiatury do pisania odręcznego.
+- **Efekty głosu** zawierają pozycję **Efekty głosu** i po jednej pozycji na każde pasmo korektora od 64 Hz do 16 kHz. Zobacz [](#voice-effects).
+- **Opisy obrazów i ekranu** zawierają **Rozpoznawanie na żywo** i **Czynności AI**. Zobacz [](#commands-ai-actions).
+- **Dźwięk i wibracje** obejmują **Wyciszanie tła**, **Głośność dostępności**, **Głośność multimediów**, **Głośność połączenia**, **Głośność dzwonka**, **Głośność powiadomień**, **Głośność alarmu** i **Tryb dźwięku**.
+- **Wyświetlanie** zawiera **Ukrywanie ekranu**, **Jasność** i **Uniesiony tablet ekranem od siebie** dla klawiatury brajlowskiej na tablecie lub rozłożonym telefonie.
+- **Dotyk** zawiera **Opóźnienie zaznaczenia**, **Opóźnienie zaznaczenia podczas pisania**, **Aktywowanie po puszczeniu** i **Profil gestów**.
+- **Własne sterowanie czytaniem** zawiera pozycje utworzone samodzielnie. Zobacz [](#commands-custom-reading-controls).
 
-Czynności, adresy i numery, historia schowka, rozpoznawanie na żywo, czynności AI i własne opcje wymagają Androida 11 lub nowszego.
+Domyślna lista obejmuje **Czynności**, **Korekta**, **Wyszukiwanie zawartości ekranu**, **Znaki**, **Słowa**, **Wiersze**, **Akapity**, **Nagłówki**, **Linki**, **Kontrolki**, **Wiersze i kolumny**, **Szybkość mowy**, **Rozpoznawanie na żywo**, **Czynności AI**, **Jasność** i **Profil gestów**. Skrypty mogą dodać własne pozycje, które znajdziesz na końcu listy.
 
-Po dodaniu pozycji możesz zobaczyć pod nią dodatkowe opcje. **Uwzględniane adresy i numery** wybiera rodzaje wyników. **Łącza i elementy sterujące tylko w treści internetowej** ogranicza te dwie pozycje do WWW i jest domyślnie wyłączone. **Uwzględniane czynności AI** pozwala wybrać polecenia AI.
+Pozycje **Czynności**, **Adresy i numery**, **Historia schowka**, **Rozpoznawanie na żywo**, **Czynności AI** oraz pozycje własnego sterowania czytaniem wymagają Androida 11 lub nowszego.
 
-#### Opcje sterowania czytaniem {#commands-reading-control-options}
+Jeśli pozycja ma dodatkowe opcje, znajdziesz je tuż za nią w sekcji **Bieżące**. Gdy usuniesz pozycję z listy, jej opcje się ukryją.
 
-Domyślnie **Automatycznie zmieniaj opcję sterowania czytaniem** jest włączone. Gdy SandFly trafi na element z własnym sposobem obsługi, wybierze pasującą opcję, na przykład **Czynności**. Po opuszczeniu elementu wróci do poprzedniego wyboru. Wyłącz przełącznik, żeby zmieniać opcję samodzielnie.
+- **Uwzględniane adresy i numery** pod pozycją **Adresy i numery** pozwala wybrać rodzaje wyświetlanych adresów i numerów.
+- **Łącza i elementy sterujące tylko w treści internetowej** pod pozycjami **Linki** i **Kontrolki** udostępnia te dwie pozycje tylko na stronach internetowych. Opcja jest domyślnie wyłączona.
+- **Uwzględniane czynności AI** pod pozycją **Czynności AI** pozwala wybrać polecenia dostępne przy sterowaniu czytaniem.
 
-Na tym ekranie znajdziesz też [**Odręczne litery alfabetu**](#commands-handwriting-letters), [**Własne sterowanie czytaniem**](#commands-custom-reading-controls) i [**Listy sterowania czytaniem**](#commands-reading-control-lists).
+#### Opcje {#commands-reading-control-options}
 
-#### Wybierz opcję za pomocą litery {#commands-handwriting-letters}
+- **Automatycznie zmieniaj opcję sterowania czytaniem** wybiera pozycję odpowiednią do elementu, na który przechodzi fokus, np. **Czynności** na elemencie z dostępnymi czynnościami. Po przejściu dalej SandFly przywraca poprzednią pozycję. Opcja jest domyślnie włączona. Po jej wyłączeniu SandFly zmienia pozycję tylko na Twoje polecenie.
+- **Odręczne litery alfabetu** określają litery przypisane do poszczególnych pozycji. Zobacz [](#commands-handwriting-letters).
+- **Własne sterowanie czytaniem** otwiera ustawienia własnych pozycji. Zobacz [](#commands-custom-reading-controls).
+- **Listy sterowania czytaniem** otwierają ustawienia list. Zobacz [](#commands-reading-control-lists).
 
-Uruchom **Napisz literę opcji sterowania czytaniem**. Napisz palcem literę na ekranie. SandFly wybierze następną opcję z tą literą albo następną, której nazwa zaczyna się od tej litery. Stuknięcie zamyka obszar pisania. Przy pierwszym użyciu SandFly poprosi o zgodę na pobranie modelu rozpoznawania pisma.
+#### Odręczne litery alfabetu {#commands-handwriting-letters}
 
-Wybierz **Sterowanie czytaniem** > **Odręczne litery alfabetu**, aby przypisać literę od A do Z albo usunąć przypisanie. Jeśli ta sama litera pasuje do kilku opcji, napisanie jej ponownie wybiera następną. Domyślne litery to między innymi H dla nagłówków, K dla linków, L dla wierszy, A dla punktów orientacyjnych, W dla słów, C dla znaków, P dla akapitów, O dla elementów sterujących, B dla przycisków, E dla pól edycji, T dla tabel i S dla szybkości mowy.
+Polecenie **Napisz literę opcji sterowania czytaniem** otwiera obszar do pisania na całym ekranie. Napisz literę jednym palcem. SandFly wybierze następną pozycję przypisaną do tej litery. Jeśli litera nie jest przypisana, wybierze następną pozycję, której nazwa od niej się zaczyna. Stuknięcie zamyka obszar pisania. Do rozpoznawania pisma SandFly potrzebuje modelu. Przy pierwszym użyciu możesz potwierdzić jego pobranie.
 
-#### Utwórz własną opcję sterowania czytaniem {#commands-custom-reading-controls}
+Ścieżka **Sterowanie czytaniem** > **Odręczne litery alfabetu** pokazuje listę pozycji z przypisanymi literami. Wybierz pozycję, aby ustawić literę od A do Z lub **Brak**. Kilka pozycji może mieć tę samą literę. Jeśli napiszesz ją ponownie, przejdziesz do następnej. Domyślne przypisania to m.in. H dla **Nagłówki**, K dla **Linki**, L dla **Wiersze**, A dla **Punkty orientacyjne**, W dla **Słowa**, C dla **Znaki**, P dla **Akapity**, O dla **Kontrolki**, B dla **Przyciski**, E dla **Pola edycji**, T dla **Tabele** i S dla **Szybkość mowy**.
 
-Własna opcja zawiera wybrane przez Ciebie polecenia. Po jej wybraniu przesuwaj palcem w górę lub w dół, żeby znaleźć polecenie, i stuknij dwa razy, żeby je wykonać. Funkcja wymaga Androida 11 lub nowszego.
+#### Własne sterowanie czytaniem {#commands-custom-reading-controls}
+
+Własna pozycja sterowania czytaniem składa się z wybranych poleceń. Po przejściu do tej pozycji przesuń palec w górę lub w dół, aby wybrać polecenie, i stuknij dwukrotnie, żeby je uruchomić. Wymaga Androida 11 lub nowszego.
 
 1. Otwórz **Sterowanie czytaniem** > **Własne sterowanie czytaniem**.
 2. Wybierz **Dodaj sterowanie czytaniem** i wpisz nazwę.
-3. Otwórz nową opcję.
-4. Wybierz **Dodaj polecenie**. Stuknij dwa razy na każdym, które chcesz dodać.
+3. Otwórz nową pozycję i wybierz **Dodaj polecenie**. Stukaj dwukrotnie polecenia, które chcesz dodać.
 
-W sekcji **Bieżące** możesz zmieniać kolejność poleceń tak jak w menu SandFly. Dostępne są też **Gesty i skrót klawiszowy**, **Zmień nazwę** i **Usuń**. Nowa opcja pojawia się na końcu listy sterowania czytaniem, jeśli zawiera przynajmniej jedno polecenie. Możesz ją przesunąć lub usunąć jak inne pozycje. Własna opcja mieści same polecenia, bez podmenu.
+Na ekranie własnej pozycji sekcja **Bieżące** pokazuje polecenia z tymi samymi czynnościami co w menu SandFly. Na tym ekranie znajdziesz również **Gesty i skrót klawiszowy**, **Zmień nazwę** i **Usuń**. Własna pozycja zawiera polecenia bez podmenu. Po utworzeniu trafia na koniec listy, gdzie możesz ją przenieść albo usunąć tak samo jak inne pozycje. Pusta pozycja nie pojawia się na liście.
 
-#### Przygotuj osobną listę sterowania czytaniem {#commands-reading-control-lists}
+#### Listy sterowania czytaniem {#commands-reading-control-lists}
 
-Możesz zgrupować opcje na osobnej liście, na przykład zebrać tylko te od mowy.
+Możesz tworzyć nazwane listy sterowania czytaniem, osobne od głównej listy i z własną kolejnością. Możesz np. przygotować listę zawierającą tylko opcje mowy.
 
 1. Otwórz **Sterowanie czytaniem** > **Listy sterowania czytaniem**.
-2. Wybierz **Dodaj listę**. Wpisz nazwę lub zostaw proponowaną.
-3. Otwórz listę. Stuknij dwa razy na opcji spoza listy, żeby ją dodać.
-4. W sekcji **Bieżące** zmień kolejność lub usuń wybrane pozycje.
+2. Wybierz **Dodaj listę**. Wpisz nazwę lub zostaw sugerowaną, np. „Lista 1”.
+3. Otwórz listę. W sekcji **Poza listą** stuknij dwukrotnie każdą pozycję, którą chcesz dodać. Aby przenieść lub usunąć pozycję, wybierz ją w sekcji **Bieżące**.
 
-Listę możesz zmienić przez **Zmień nazwę** i **Usuń listę**. Każda lista ma osobne polecenia **Następny element na liście** i **Poprzedni element na liście** z jej nazwą. Polecenia **Następna lista sterowania czytaniem** i **Poprzednia lista sterowania czytaniem** wybierają listę, po której przechodzisz. **Pierwszy element sterowania czytaniem** wybiera pierwszą opcję na bieżącej liście.
+Na ekranie listy są też opcje **Zmień nazwę** i **Usuń listę**.
+
+Każda lista dodaje do grupy **Listy sterowania czytaniem** dwa polecenia. **Następny element na liście** oraz **Poprzedni element na liście** zawierają w nazwie nazwę listy i wybierają na niej następną lub poprzednią pozycję. **Następna lista sterowania czytaniem** i **Poprzednia lista sterowania czytaniem** z grupy **Sterowanie czytaniem** pozwalają przełączyć się z głównej listy na własną lub odwrotnie. Od wyboru listy zależy, po których pozycjach przechodzą polecenia następnej i poprzedniej opcji sterowania czytaniem. **Pierwszy element sterowania czytaniem** wybiera początek aktualnej listy.
 
 #### Czynności AI {#commands-ai-actions}
 
-Wybierz **Czynności AI**. Przesuwaj palec w górę albo w dół, aby wybrać polecenie. Stuknij dwa razy, żeby je uruchomić. Możesz opisać ekran lub obraz, odczytać opis lub zadać pytanie. Możesz też udostępnić obraz zaznaczonego elementu albo zrzut ekranu. SandFly Pro dodaje polecenia uruchomienia, zatrzymania i wpisania zadania agenta AI.
+Pozycja **Czynności AI** zawiera polecenia **Opisz ekran**, **Odczytaj opis ekranu**, **Zapytaj o ekran**, **Opisz obraz**, **Odczytaj opis obrazu**, **Zapytaj o obraz**, **Udostępnij obraz zaznaczonego elementu** i **Udostępnij zrzut ekranu**. W SandFly Pro dochodzą polecenia rozpoczęcia lub zatrzymania zadania agenta AI oraz wpisania zadania agenta AI. Przesuń palec w górę lub w dół, aby wybrać polecenie, a potem stuknij dwukrotnie, aby je uruchomić. Lista pokazuje tylko polecenia obsługiwane przez urządzenie i dostępne przy wybranych usługach AI. Jeśli żadne polecenie nie jest dostępne, pozycja się nie pojawi.
 
-W sekcji **Bieżące** znajdziesz **Uwzględniane czynności AI** zaraz po **Czynności AI**. Domyślnie SandFly uwzględnia wszystkie dostępne polecenia. Lista zależy od urządzenia i ustawień usług AI. SandFly ukrywa opcję, gdy nie ma dostępnych poleceń. Zobacz [opisy obrazów i ekranu](#descriptions) oraz [SandFly Pro](#pro).
+Za pozycją **Czynności AI** w sekcji **Bieżące** znajdziesz **Uwzględniane czynności AI**. Wybierzesz tam, które polecenia mają się pojawiać. Domyślnie uwzględniane są wszystkie. Opis poleceń znajdziesz w [](#descriptions) i [](#pro).

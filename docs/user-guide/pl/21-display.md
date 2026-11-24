@@ -1,106 +1,148 @@
 ## Wyświetlanie, ostatnie aplikacje i szybkie ustawienia {#display}
 
-W ustawieniach **Wyświetlanie** możesz zmienić obramowanie fokusu, animacje i tapetę. Z tego rozdziału dowiesz się też, jak ukryć ekran, zmienić jasność oraz korzystać z przeglądu aplikacji i panelu szybkich ustawień SandFly.
+Na ekranie **Wyświetlanie** w ustawieniach SandFly możesz zmienić obramowanie fokusu, animacje okien i tapetę. W tym rozdziale opisano też ukrywanie ekranu, zmianę jasności, listę ostatnich aplikacji w **Przegląd**, podzielony ekran i panel **Szybkie ustawienia** SandFly.
 
-### Obramowanie fokusu {#display-focus-indicator}
+### Zmień obramowanie fokusu {#display-focus-indicator}
 
-W Androidzie 12 i nowszym otwórz **Wyświetlanie** > **Wskaźnik zaznaczenia**. SandFly może obrysować element, na którym jest fokus dostępności.
+Wskaźnik zaznaczenia to ramka, którą SandFly rysuje wokół elementu, na którym jest fokus. Od Androida 12 znajdziesz jej ustawienia w **Wyświetlanie** > **Wskaźnik zaznaczenia**.
 
-- **Pokazuj wskaźnik zaznaczenia** jest domyślnie włączone.
-- **Grube obramowanie** poszerza obrys.
-- W ustawieniu koloru możesz użyć domyślnego albo wybrać czerwony, pomarańczowy, żółty, zielony, niebieski lub szary.
+- **Pokazuj wskaźnik zaznaczenia** włącza ramkę. Opcja jest domyślnie włączona.
+- **Grube obramowanie** poszerza ramkę.
+- W ustawieniu **Kolor** wybierz **Domyślny**, **Czerwony**, **Pomarańczowy**, **Żółty**, **Zielony**, **Niebieski** lub **Szary**.
 
-[Polecenie](#commands) **Pokazuj wskaźnik zaznaczenia** w kategorii **SandFly** przełącza obrys bez wchodzenia w ustawienia.
+Polecenie **Pokazuj wskaźnik zaznaczenia** w kategorii **SandFly** włącza lub wyłącza ramkę. Zobacz [](#commands).
 
-### Animacje {#display-animations}
+### Wyłącz animacje {#display-animations}
 
-Domyślnie włączone **Wyświetlanie** > **Wyłącz animacje** usuwa animacje okien w całym telefonie, żeby szybciej czytać nowe ekrany. Działa od Androida 13. Po wyłączeniu tej opcji albo samego SandFly wracają poprzednie ustawienia animacji.
+Opcja **Wyświetlanie** > **Wyłącz animacje** wyłącza animacje okien w całym telefonie. Dzięki temu SandFly szybciej odczytuje nowe ekrany. Opcja jest domyślnie włączona i działa od Androida 13. Gdy ją wyłączysz lub wyłączysz SandFly, wróci poprzednie ustawienie animacji.
 
-### Ukrywanie ekranu {#display-hide-screen}
+### Ukryj ekran {#display-hide-screen}
 
-Ukrycie zasłania ekran na czarno, wraz z paskiem nawigacji. SandFly i aplikacje działają dalej.
+Ukrywanie ekranu zasłania go na czarno, łącznie z paskiem nawigacji. Osoby obok nie widzą jego zawartości, a Ty nadal możesz normalnie korzystać z SandFly i aplikacji.
 
-1. Otwórz [menu SandFly](#commands) i wybierz **Ukryj lub pokaż ekran**.
-2. W oknie **Ukryć ekran?** wybierz **OK**.
-3. Po komunikacie ekran jest ukryty. Użyj tego samego polecenia, żeby go odsłonić.
+1. Otwórz [menu SandFly](#commands).
+2. Wybierz **Ukryj lub pokaż ekran**.
+3. W oknie **Ukryć ekran?** wybierz **OK**.
 
-Do polecenia możesz przypisać gest lub klawisz. Możesz też włączyć **Ukrywanie ekranu** na ekranie **Sterowanie czytaniem** i użyć ruchu w górę lub w dół. Jeśli nie chcesz za każdym razem potwierdzać ukrycia, odznacz **Zawsze pokazuj to ostrzeżenie**.
+SandFly odczyta „Ekran ukryty” i odtworzy dźwięk. Żeby odsłonić ekran, jeszcze raz wybierz **Ukryj lub pokaż ekran**. Usłyszysz „Ekran jest widoczny”.
 
-Po udzieleniu zgody na zmianę ustawień systemowych SandFly ogranicza też jasność do minimum i przywraca ją po odsłonięciu. Jeżeli zgody nie ma, otworzy ustawienia Androida przy pierwszym użyciu. Ekran zostaje ukryty po ponownym uruchomieniu czytnika. Na ekranie blokady nie można go ukryć. W wersjach starszych niż Android 14 ukrycie wyłącza możliwość opisywania obrazów.
+Możesz też ukrywać i odsłaniać ekran na dwa inne sposoby.
 
-Zobacz [sygnały ukrycia i pokazania](#sound) oraz [komunikaty po wybudzeniu](#verbosity).
+- Przypisz gest lub skrót do polecenia **Ukryj lub pokaż ekran** w grupie **SandFly**. Zobacz [](#commands).
+- Włącz **Ukrywanie ekranu** na ekranie **Sterowanie czytaniem**. Opcja jest domyślnie wyłączona. Po jej wybraniu przesuń palcem w górę lub w dół, żeby ukryć lub odsłonić ekran.
 
-### Jasność {#display-brightness}
+W oknie potwierdzenia możesz wyłączyć **Zawsze pokazuj to ostrzeżenie**. Po ukryciu ekranu usłyszysz wtedy sam komunikat o ukryciu, bez instrukcji odsłonięcia.
 
-Wybierz **Jasność** na liście [opcji sterowania czytaniem](#reading). Przesuń palec w górę, żeby rozjaśnić ekran, lub w dół, żeby go przyciemnić. Każdy ruch zmienia wartość o 10% skali systemowej. SandFly podaje wynik. Możesz to zrobić również przy ukrytym ekranie.
+Jeśli przyznasz uprawnienie **Zmienianie ustawień systemowych**, SandFly przy ukrywaniu ekranu zmniejszy też jasność do minimum. Przy odsłonięciu przywróci poprzednią jasność. Jeśli uprawnienia jeszcze nie ma, przy pierwszym ukryciu SandFly otworzy odpowiedni ekran ustawień Androida.
 
-Opcja jest domyślnie dostępna. Przy pierwszym użyciu przyznaj zgodę na zmianę ustawień systemowych. Jeśli działa automatyczna jasność, SandFly poprosi o jej wyłączenie.
+Uwaga: Ekran pozostaje ukryty po ponownym uruchomieniu SandFly. Nie możesz go ukryć, gdy telefon jest zablokowany. Przed Androidem 14 opisy obrazów są niedostępne przy ukrytym ekranie.
 
-### Tapeta SandFly {#display-wallpaper}
+Sygnały ukrycia i odsłonięcia możesz zmienić według instrukcji w [](#sound). Komunikat o ukryciu przy wybudzeniu opisano w [](#verbosity).
 
-Niektóre telefony, między innymi Vivo, potrafią zatrzymać czytnik w tle mimo wyłączenia optymalizacji baterii. Android utrzymuje aktywną tapetę i uruchamia ją ponownie w razie zatrzymania. Tapeta SandFly działa w jego procesie, więc może pomóc zachować działanie czytnika.
+### Zmień jasność ekranu {#display-brightness}
 
-Otwórz **Wyświetlanie** > **Użyj SandFly jako tapety**. Ustaw tapetę na otwartym ekranie Androida. Domyślnie jest czarna. Jeśli wolisz własny obraz, wybierz **Wyświetlanie** > **Obraz tapety**. Te opcje są dostępne na telefonach i tabletach.
+Opcja **Jasność** w sterowaniu czytaniem zmienia jasność systemową, również przy ukrytym ekranie. Jest domyślnie dostępna na ekranie **Sterowanie czytaniem**.
+
+1. Wybierz opcję sterowania czytaniem **Jasność**. Jak wybierać opcje, opisano w [](#reading-controls).
+2. Przesuń palcem w górę, żeby rozjaśnić ekran, lub w dół, żeby go przyciemnić.
+
+Każde przesunięcie zmienia jasność o 10 procent skali systemowego suwaka. SandFly podaje nowy poziom, na przykład „Jasność 40 procent”. Przy pierwszej zmianie SandFly otworzy ustawienia Androida, w których możesz przyznać uprawnienie **Zmienianie ustawień systemowych**. Przy włączonej jasności adaptacyjnej usłyszysz „Wyłącz jasność adaptacyjną, aby ustawić ją ręcznie”.
+
+### Ustaw tapetę SandFly {#display-wallpaper}
+
+Niektóre telefony, między innymi Vivo, mogą zatrzymać SandFly w tle mimo wyłączenia optymalizacji baterii. Android utrzymuje działanie aktywnej tapety i wznawia ją po zatrzymaniu. Tapeta SandFly działa w tym samym procesie co usługa dostępności. Na tych telefonach jej ustawienie pozwala utrzymać działanie SandFly.
+
+1. Otwórz **Wyświetlanie** > **Użyj SandFly jako tapety**.
+2. Ustaw tapetę na otwartym ekranie Androida.
+
+Po ustawieniu opcji jako tapety pozycja w ustawieniach informuje, że SandFly jest bieżącą tapetą. Domyślnie tapeta jest czarna. Żeby ustawić własną, wybierz **Wyświetlanie** > **Obraz tapety** i wskaż obraz. Usłyszysz „Ustawiono obraz tapety” lub „Nie można użyć tego obrazu”.
+
+Te ustawienia są dostępne na telefonach i tabletach.
 
 ### Przegląd ostatnich aplikacji SandFly {#display-overview}
 
-Otwórz **Przegląd** > **Używaj przeglądu SandFly**, żeby zamiast systemowej listy otwierać listę lub siatkę SandFly. Domyślnie opcja jest wyłączona.
+Przegląd SandFly pokazuje ostatnie aplikacje na liście lub w siatce. SandFly odczytuje je po kolei. Żeby otwierać ten przegląd zamiast systemowego, włącz **Przegląd** > **Używaj przeglądu SandFly**. Opcja jest domyślnie wyłączona.
 
-Do odczytu i otwierania ostatnich aplikacji potrzeba [Shizuku albo roota](#updates). Jeśli Shizuku nie działa lub nie zezwala na dostęp, SandFly poda przyczynę i otworzy przegląd systemowy. Na ekranie blokady działa przegląd systemu.
+SandFly używa Shizuku lub roota do pobierania i otwierania ostatnich aplikacji. Zobacz [](#updates). Jeśli Shizuku nie działa lub SandFly nie ma dostępu, usłyszysz „Shizuku nie działa” albo „Shizuku nie zezwala SandFly” i otworzy się przegląd systemowy. Na ekranie blokady otwiera się przegląd systemowy.
 
-**Najnowsza aplikacja na dole** otwiera listę przewiniętą na koniec. Początkowo jest wyłączone. Wybierz 1 kolumnę dla listy albo 2, 3 lub 4 dla siatki. Domyślnie jest jedna. Tych ustawień nie ma na telewizorach.
+W **Przegląd** znajdziesz także dwie opcje.
 
-#### Korzystanie z przeglądu {#display-overview-use}
+- **Najnowsza aplikacja na dole** umieszcza ostatnio używaną aplikację na końcu listy i od razu tam przewija. Opcja jest domyślnie wyłączona.
+- **Kolumny** ustawia układ. Jedna kolumna pokazuje listę. Dwie, trzy lub cztery pokazują siatkę o wybranej szerokości. Domyślnie ustawiona jest jedna kolumna.
 
-Jeśli włączysz przegląd SandFly, otworzy się po poleceniu **Przegląd**, po systemowym geście nawigacji i po użyciu przycisku ostatnich aplikacji.
+Tych ustawień nie ma na telewizorach.
+
+#### Korzystaj z przeglądu {#display-overview-use}
+
+Przy włączonym **Używaj przeglądu SandFly** polecenie **Przegląd** w kategorii **Czynności systemowe** otworzy listę SandFly. Przegląd SandFly pojawi się też nad systemowym po użyciu gestu nawigacji Androida lub przycisku ostatnich aplikacji.
 
 - Stuknij dwukrotnie na aplikacji, żeby do niej przejść.
-- W menu **Czynności** aplikacji użyj **Zamknij**, **Podziel ekran** lub **Informacje o aplikacji**. Podział otwiera aplikację obok tej, z której przyszedłeś. Informacje otwierają ustawienia Androida.
-- Delete na klawiaturze zamyka aplikację, na której jest fokus.
-- **Zamknij wszystkie** u dołu po lewej zamyka wszystkie ostatnie aplikacje. **Przegląd systemowy** u dołu po prawej otwiera listę Androida.
+- Otwórz menu **Czynności** danej aplikacji, żeby wybrać **Zamknij**, **Podziel ekran** lub **Informacje o aplikacji**. **Podziel ekran** otwiera wybraną aplikację obok tej, z której otwarto przegląd. **Informacje o aplikacji** otwiera odpowiednią stronę ustawień Androida.
+- Naciśnij Delete na klawiaturze fizycznej, żeby zamknąć aplikację, na której jest fokus.
+- U dołu po lewej wybierz **Zamknij wszystkie**, żeby zamknąć wszystkie ostatnie aplikacje.
+- U dołu po prawej wybierz **Przegląd systemowy**, żeby otworzyć systemową listę.
 
-Ponowne użycie **Przegląd** z otwartej listy przełącza do poprzedniej aplikacji. Polecenie **Przegląd systemowy** zawsze otwiera listę Androida.
+Gdy przegląd jest otwarty, ponownie uruchom **Przegląd**, żeby przejść do poprzedniej aplikacji. Osobne polecenie **Przegląd systemowy** otwiera listę Androida także wtedy, gdy **Używaj przeglądu SandFly** jest włączone.
 
-#### Przełączanie między aplikacjami {#display-switch-apps}
+#### Przełączaj się między aplikacjami {#display-switch-apps}
 
-W kategorii [Czynności systemowe](#commands) są trzy polecenia bez domyślnych skrótów:
+W kategorii **Czynności systemowe** znajdziesz trzy polecenia. Domyślnie nie mają przypisań. Zobacz [](#commands).
 
-- **Poprzednia aplikacja** otwiera ostatnią używaną przed bieżącą. Bez Shizuku SandFly robi to przez przegląd systemowy.
-- **Starsza aplikacja** przechodzi dalej wstecz po liście, za każdym razem podając nazwę lub koniec listy. Bez Shizuku działa jak poprzednie polecenie.
-- **Nowsza aplikacja** wraca w stronę najnowszej. Wymaga Shizuku.
+- **Poprzednia aplikacja** otwiera aplikację używaną bezpośrednio przed bieżącą. Jeśli nie ma dokąd przejść, usłyszysz „Brak poprzedniej aplikacji”. Bez Shizuku SandFly otworzy przegląd systemowy i wybierze w nim poprzednią aplikację.
+- **Starsza aplikacja** przechodzi do kolejnej starszej pozycji na liście. Wykonaj polecenie ponownie, żeby cofnąć się dalej. SandFly podaje nazwę każdej aplikacji, a na końcu listy „Brak starszej aplikacji”. Bez Shizuku polecenie działa jak **Poprzednia aplikacja**.
+- **Nowsza aplikacja** przechodzi w stronę najnowszej pozycji po użyciu **Starsza aplikacja**. Przy ostatniej pozycji usłyszysz „Brak nowszej aplikacji”. Polecenie wymaga Shizuku.
 
-Jeśli działa przegląd SandFly i Shizuku, przytrzymaj Alt i naciśnij Tab. SandFly poda poprzednią aplikację bez otwierania listy. Kolejne Tab przechodzą wstecz, a Shift + Tab w przód. Puść Alt, aby przełączyć się na odczytaną aplikację. Użyj Escape przed puszczeniem, żeby pozostać w bieżącej. Alt + Tab nie działa w ten sposób, jeśli [klawiszem SandFly](#keyboards) jest Alt.
+Gdy **Używaj przeglądu SandFly** jest włączone i Shizuku działa, możesz przełączać aplikacje z klawiatury fizycznej bez otwierania przeglądu.
 
-#### Podzielony ekran {#display-split-screen}
+1. Przytrzymaj Alt i naciśnij Tab. SandFly odczyta nazwę poprzedniej aplikacji.
+2. Naciśnij Tab ponownie, żeby przejść do starszych aplikacji, lub Shift + Tab, żeby wrócić w stronę nowszych.
+3. Puść Alt, żeby otworzyć ostatnio odczytaną aplikację. Żeby zostać w bieżącej aplikacji, naciśnij Escape przed puszczeniem Alt.
 
-Użyj **Podziel ekran** z menu czynności aplikacji w [przeglądzie](#display-overview-use). Przy podzielonym ekranie w menu SandFly pojawi się **Podziel ekran** z pozycją **Przejdź do separatora** i jego czynnościami, na przykład zmianą rozmiaru i zamianą aplikacji. To samo menu otwiera polecenie **Podziel ekran** z **Czynności systemowe**. Wstecz i klawisze wpisywania trafiają do aplikacji, w której ostatnio poruszałeś fokusem.
+Skrót Alt + Tab jest niedostępny, jeśli Alt jest [klawiszem SandFly](#keyboards).
+
+#### Podziel ekran {#display-split-screen}
+
+Żeby wyświetlić dwie aplikacje obok siebie, użyj **Podziel ekran** w menu **Czynności** aplikacji w [przeglądzie SandFly](#display-overview-use).
+
+Przy podzielonym ekranie w menu SandFly znajdziesz **Podziel ekran**. Otwiera **Przejdź do separatora** i czynności separatora, między innymi zmianę proporcji i zamianę aplikacji miejscami. To samo menu otwiera polecenie **Podziel ekran** z kategorii **Czynności systemowe**. Jeśli okna nie są podzielone, usłyszysz „Ekran nie jest podzielony”. W układzie dzielonym Wstecz i klawisze służące do wpisywania trafiają do aplikacji, w której ostatnio przenosiłeś fokus.
 
 ### Panel szybkich ustawień SandFly {#display-quick-settings}
 
-SandFly może wyświetlić własną siatkę przełączników, suwaków i przycisków. Włącz **Szybkie ustawienia** > **Używaj szybkich ustawień SandFly**. Domyślnie włącza się panel Androida.
+W panelu SandFly możesz ułożyć własną siatkę przełączników, suwaków i przycisków. Żeby otwierać ją zamiast panelu systemowego, włącz **Szybkie ustawienia** > **Używaj szybkich ustawień SandFly**. Opcja jest domyślnie wyłączona.
 
-#### Korzystanie z panelu {#display-quick-settings-use}
+#### Korzystaj z panelu {#display-quick-settings-use}
 
-Użyj polecenia **Szybkie ustawienia** lub przycisku **Szybkie ustawienia** na [liście powiadomień](#notifications). Przy zablokowanym ekranie otworzy się panel systemowy. Polecenie **Szybkie ustawienia systemu** otwiera go zawsze.
+Panel otwiera polecenie **Szybkie ustawienia** z kategorii **Czynności systemowe** lub przycisk **Szybkie ustawienia** na [liście powiadomień](#notifications) SandFly. Na ekranie blokady otwierają się szybkie ustawienia systemowe.
 
-- SandFly podaje wiersz, kolumnę, nazwę i stan, na przykład nazwę sieci Wi-Fi.
-- Stuknij dwukrotnie, żeby przełączyć opcję lub wybrać następną wartość, na przykład w **Tryb dźwięku** lub **Limit czasu ekranu**.
-- Na suwaku, takim jak **Jasność** lub **Głośność multimediów**, przesuń palec w górę albo w dół, żeby zmienić wartość o krok.
-- Stuknij dwukrotnie i przytrzymaj albo wybierz czynność **Otwórz ustawienia**, żeby otworzyć ustawienia Androida dla elementu.
-- **Edytuj** [zmienia zawartość panelu](#display-quick-settings-edit).
+- SandFly podaje wiersz i kolumnę elementu, jego nazwę i stan, na przykład nazwę połączonej sieci Wi-Fi.
+- Stuknij dwa razy, żeby zmienić stan przełącznika. W opcjach z kilkoma wartościami, takich jak **Tryb dźwięku** lub **Limit czasu ekranu**, dwukrotne stuknięcie wybiera następną wartość.
+- Na suwaku, takim jak **Jasność** lub **Głośność multimediów**, przesuń palcem w górę albo w dół, żeby zmienić wartość o jeden krok.
+- Stuknij dwa razy i przytrzymaj po drugim stuknięciu lub użyj czynności **Otwórz ustawienia**, żeby przejść do ustawień Androida dla danego elementu.
+- **Edytuj** otwiera ekran wyboru elementów. Zobacz [](#display-quick-settings-edit).
+- **Szybkie ustawienia systemu** otwiera panel systemowy.
 
-[Shizuku](#updates-shizuku) pozwala w panelu zmieniać między innymi Wi-Fi, Bluetooth, dane mobilne, hotspot, samolot, lokalizację, NFC, oszczędzanie baterii i danych, ciemny motyw oraz dostęp do mikrofonu i aparatu. Bez Shizuku takie przełączniki otwierają ustawienia Androida.
+Polecenie **Szybkie ustawienia systemu** otwiera panel Androida także przy włączonej opcji **Używaj szybkich ustawień SandFly**.
 
-Kafelki systemowe i kafelki aplikacji używane bez Shizuku muszą być dodane w systemowych szybkich ustawieniach. SandFly otwiera panel Androida, po cichu używa kafelka, zamyka panel i mówi o nowym stanie. Jeśli kafelka nie ma, podaje nazwę brakującej pozycji.
+Android pozwala zmieniać niektóre ustawienia tylko systemowi lub procesowi z uprawnieniami powłoki. Przy działającym Shizuku SandFly może bezpośrednio włączać lub wyłączać Wi-Fi, Bluetooth, dane mobilne, hotspot, tryb samolotowy, lokalizację, NFC, oszczędzanie baterii i danych, ciemny motyw oraz dostęp do mikrofonu i kamery. Nadaje sobie też uprawnienia potrzebne do pozostałych elementów panelu. Bez Shizuku te przełączniki otwierają odpowiednie ustawienia Androida. Zobacz [](#updates).
 
-#### Zawartość i układ panelu {#display-quick-settings-edit}
+Kafelki systemowe muszą znajdować się także w panelu Androida. Przy wyłączonym Shizuku dotyczy to również kafelków aplikacji. SandFly otwiera panel systemowy, aktywuje kafelek, zamyka panel bez odczytu i podaje nowy stan kafelka. Jeśli nie znajdzie kafelka, usłyszysz jego nazwę i komunikat „nie znajduje się w szybkich ustawieniach systemu”.
 
-Użyj **Edytuj** w panelu albo otwórz **Szybkie ustawienia** > **Panel szybkich ustawień**. Lista podaje wiersz i kolumnę każdej pozycji.
+#### Wybierz zawartość panelu {#display-quick-settings-edit}
 
-- **Dodaj element sterujący** wybiera spośród dostępnych opcji urządzenia. Należą do nich połączenia, dane, tryb samolotowy, Nie przeszkadzać, dźwięk, latarka i jej jasność, lokalizacja, obrót, oszczędzanie, motyw i kolory, NFC, mikrofon i aparat, jasność i jej automatyka, wygaszanie, rozmiar czcionki i ekranu, multimedia i ich wyjście, poszczególne kanały głośności, najbliższy alarm, bateria, ustawienia i menu zasilania.
-- **Dodaj kafelek aplikacji** i **Dodaj kafelek systemowy** wyświetlają odpowiednie listy. Jeśli SandFly ma własny element o tym samym działaniu, doda swój, na przykład hotspot.
-- Liczba kolumn wynosi od 1 do 4. Domyślny układ ma 2 kolumny.
+Otwórz **Szybkie ustawienia** > **Panel szybkich ustawień** lub wybierz **Edytuj** w samym panelu. Przy każdym elemencie na liście zobaczysz numer wiersza i kolumny.
 
-Stuknij dwukrotnie na pozycji lub użyj jej menu czynności. **Przenieś** pozwala wybrać nową komórkę. Pozostałe pozycje przesuną się o jedno miejsce. **Usuń** usuwa pozycję z panelu.
+- **Dodaj element sterujący** wyświetla elementy SandFly, których jeszcze nie ma w panelu. Na liście są tylko funkcje dostępne na urządzeniu.
+  - Połączenia i dane obejmują **Wi-Fi**, **Bluetooth**, **Dane mobilne**, **Hotspot**, **Tryb samolotowy**, **Oszczędzanie danych**, **Lokalizacja** i **NFC**.
+  - Dźwięk i zasilanie obejmują **Nie przeszkadzać**, **Tryb dźwięku**, **Oszczędzanie baterii**, **Głośność multimediów**, **Głośność połączenia**, **Głośność dzwonka**, **Głośność powiadomień**, **Głośność alarmu**, **Głośność dostępności**, **Głośność dźwięku systemowego**, **Następny alarm** i **Bateria**.
+  - Obraz i oświetlenie obejmują **Latarka**, **Jasność latarki**, **Automatyczne obracanie**, **Ciemny motyw**, **Nocne światło**, **Bardzo przyciemnione**, **Inwersja kolorów**, **Korekta koloru**, **Jasność**, **Jasność adaptacyjna**, **Limit czasu ekranu**, **Rozmiar czcionki** i **Rozmiar wyświetlacza**.
+  - Pozostałe elementy to **Dostęp do mikrofonu**, **Dostęp do kamery**, **Media**, **Wyjście multimedialne**, **Ustawienia** i **Menu zasilania**.
+- **Dodaj kafelek aplikacji** wyświetla kafelki szybkich ustawień oferowane przez zainstalowane aplikacje.
+- **Dodaj kafelek systemowy** wyświetla kafelki z szybkich ustawień Androida. Jeśli kafelek ma odpowiednik w SandFly, zostanie dodany jako element SandFly. Tak działa na przykład **Hotspot**.
+- **Liczba kolumn** pozwala ustawić od 1 do 4 kolumn siatki. Domyślnie są dwie.
 
-Domyślny zestaw to Wi-Fi, Bluetooth, dane mobilne, tryb samolotowy, Nie przeszkadzać, tryb dźwięku, latarka, lokalizacja, obrót, oszczędzanie baterii, jasność, głośność multimediów, dzwonka i dostępności, multimedia oraz bateria.
+Żeby zmienić pozycję elementu lub go usunąć, stuknij na nim dwa razy albo otwórz jego czynności.
+
+- **Przenieś** wyświetla komórki siatki. Element zajmie wybraną komórkę. Pozostałe pozycje pomiędzy starym a nowym miejscem przesuną się o jedną komórkę. SandFly poda, ile z nich zostało przesuniętych.
+- **Usuń** usuwa element z panelu.
+
+Domyślnie panel zawiera **Wi-Fi**, **Bluetooth**, **Dane mobilne**, **Tryb samolotowy**, **Nie przeszkadzać**, **Tryb dźwięku**, **Latarka**, **Lokalizacja**, **Automatyczne obracanie**, **Oszczędzanie baterii**, **Jasność**, **Głośność multimediów**, **Głośność dzwonka**, **Głośność dostępności**, **Media** i **Bateria**.

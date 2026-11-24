@@ -1,73 +1,112 @@
 ## Pomoc i opinie {#help}
 
-Otwórz **Pomoc i opinie** w ustawieniach. Znajdziesz tam [podręcznik](#getting-started-user-guide), [samouczek i ćwiczenie gestów](#help-tutorial), [formularz opinii](#help-feedback) oraz [historię wersji i politykę prywatności](#help-version-history). Opcje diagnostyczne są na ekranie [**Ustawienia programisty**](#help-developer).
+W ustawieniach SandFly otwórz **Pomoc i opinie**, aby uzyskać dostęp do tych opcji.
+
+- **Podręcznik użytkownika** otwiera ten poradnik. Zobacz [](#getting-started-user-guide).
+- **Samouczek SandFly** uruchamia interaktywny samouczek. Zobacz [](#help-tutorial).
+- **Ćwiczenie gestów** otwiera lekcję poświęconą gestom. Zobacz [](#help-tutorial).
+- **Prześlij opinię** pozwala zgłaszać problemy i sugestie autorowi SandFly oraz czytać odpowiedzi. Zobacz [](#help-feedback).
+- **Historia wersji** otwiera informacje o wszystkich wydaniach SandFly. Zobacz [](#help-version-history).
+- **Polityka prywatności** otwiera zasady dotyczące prywatności w SandFly. Zobacz [](#help-version-history).
+
+Opcje przydatne podczas pracy nad aplikacją i przy szukaniu przyczyn problemów znajdziesz w menu **Ustawienia programisty**. Zobacz [](#help-developer).
 
 ### Samouczek i ćwiczenie gestów {#help-tutorial}
 
-**Samouczek SandFly** wraca do ostatniej lekcji. Na urządzeniu z ekranem dotykowym i podłączoną klawiaturą najpierw wybierasz **Samouczek dotyczący obsługi dotykowej** albo **Samouczek dotyczący klawiatury**. Zobacz [pierwsze kroki](#getting-started-tutorial).
+Ścieżka **Pomoc i opinie** > **Samouczek SandFly** otwiera lekcję, na której ostatnio skończyłeś. Jeśli urządzenie ma ekran dotykowy i fizyczną klawiaturę, najpierw pojawi się wybór **Samouczek dotyczący obsługi dotykowej** lub **Samouczek dotyczący klawiatury**. Lekcje i działanie samouczka opisuje [](#getting-started-tutorial).
 
-Na ekranie **Ćwiczenie gestów** możesz sprawdzać gesty bez wykonywania poleceń. SandFly mówi nazwę gestu i przypisane działanie. Wybierz **Zakończ ćwiczenie**, żeby wyjść. Do tych ekranów prowadzą również polecenia **Otwórz samouczek** i **Ćwiczenie gestów**.
+Ścieżka **Pomoc i opinie** > **Ćwiczenie gestów** otwiera lekcję **Ćwiczenie gestów**. Gdy wykonasz gest, usłyszysz jego nazwę i nazwę przypisanego polecenia. Samo polecenie się nie wykona. Aby wyjść, przejdź do przycisku **Zakończ ćwiczenie** i go aktywuj.
 
-Zegarki i telewizory mają [własne samouczki](#devices). Jeśli telewizor nie ma samouczka, jego pozycja nazywa się **Pomoc**.
+Te same lekcje otwierają polecenia **Otwórz samouczek** i **Ćwiczenie gestów**. Zegarki i telewizory mają własne samouczki, więc pozycja **Ćwiczenie gestów** jest dostępna tylko na telefonach. Na telewizorze bez samouczka pozycja **Samouczek SandFly** nazywa się **Pomoc**. Zobacz [](#devices).
 
-### Przesyłanie opinii {#help-feedback}
+### Prześlij opinię {#help-feedback}
 
-Wejdź w **Pomoc i opinie** > **Prześlij opinię** albo wybierz **Prześlij opinię** w menu SandFly. Zgłoszenie lub sugestię możesz wysłać bez konta. Odpowiedzi trafiają do SandFly.
+Za pomocą opcji **Prześlij opinię** możesz zgłosić problem lub wysłać sugestię autorowi SandFly bez zakładania konta. Jeśli autor odpowie, wiadomość pojawi się w SandFly. Otwórz **Pomoc i opinie** > **Prześlij opinię** lub wybierz **Prześlij opinię** w menu SandFly.
 
-Na ekranie **Prześlij opinię** rozpoczniesz nowe zgłoszenie. **Skrzynka odbiorcza** pokazuje przesłane zgłoszenia, ich stan i odpowiedzi, a **Szkice** pozwalają wrócić do niewysłanych.
+Na ekranie **Prześlij opinię** znajdziesz trzy pozycje.
 
-#### Wysyłanie zgłoszenia {#help-feedback-send}
+- **Nowa opinia** otwiera formularz zgłoszenia.
+- **Skrzynka odbiorcza** zawiera wysłane zgłoszenia, ich stan i odpowiedzi.
+- **Szkice** zawierają zgłoszenia rozpoczęte i jeszcze niewysłane.
 
-1. Otwórz **Pomoc i opinie** > **Prześlij opinię** i wybierz **Prześlij opinię**.
-2. W **Rodzaj informacji zwrotnej** wskaż nieprawidłowe działanie, awarię, spowolnienie lub brak reakcji albo sugestię. Domyślnie wybrane jest **Nieprawidłowe działanie**.
-3. Wybierz **Obszar**, na przykład **Mowa**, **Gesty** lub **Aktualizacje**. Jeśli problem dotyczy jednej aplikacji, wpisz jej nazwę.
-4. Wypełnij **Tytuł** i **Opis**. Podaj, co się dzieje i czego się spodziewasz. Przy błędzie uzupełnij **Kroki do odtworzenia**.
-5. Jeśli chcesz, wpisz **E-mail do odpowiedzi**. Odpowiedzi w SandFly pojawią się niezależnie od adresu. Sprawdź, czy chcesz [dołączyć dane urządzenia lub dziennik](#help-feedback-contents).
-6. Wybierz **Wyślij**. SandFly potwierdzi i przeniesie zgłoszenie do skrzynki. Po nieudanej wysyłce opisze problem i zachowa szkic.
+#### Wyślij zgłoszenie {#help-feedback-send}
 
-Tekst zostaje w szkicu do chwili wysłania. **Usuń wersję roboczą** usuwa szkic. Adres e-mail i ustawienia obu załączników przechodzą do następnego zgłoszenia.
+1. Otwórz **Pomoc i opinie** > **Prześlij opinię**.
+2. Wybierz **Nowa opinia**.
+3. Uzupełnij formularz.
+   - W polu **Rodzaj informacji zwrotnej** wybierz **Nieprawidłowe działanie**, **Awaria aplikacji**, **Wolne działanie lub brak reakcji** albo **Sugestia**. Domyślna opcja to **Nieprawidłowe działanie**.
+   - W polu **Obszar** wybierz część SandFly, której dotyczy zgłoszenie, np. **Mowa**, **Gesty**, **Monitor brajlowski** lub **Aktualizacje**.
+   - W wymaganym polu **Tytuł** krótko podsumuj zgłoszenie.
+   - W polu **Aplikacja, w której to się dzieje** podaj nazwę aplikacji, jeśli problem dotyczy jednej aplikacji.
+   - W wymaganym polu **Opis** napisz, co się dzieje i czego oczekujesz.
+   - W polu **Kroki do odtworzenia** opisz, co zrobić, żeby wywołać problem. Pole pojawia się przy zgłoszeniach problemów.
+   - W polu **E-mail do odpowiedzi** możesz podać adres. Odpowiedzi trafią do SandFly także wtedy, gdy zostawisz pole puste.
+   - Opcja **Dołącz informacje o urządzeniu** jest domyślnie włączona. Zobacz [](#help-feedback-contents).
+   - Opcja **Dołącz dziennik SandFly** jest domyślnie wyłączona. Zobacz [](#help-feedback-contents).
+4. Wybierz **Wyślij**.
 
-#### Co znajdzie się w zgłoszeniu {#help-feedback-contents}
+Po wysłaniu usłyszysz „Opinia została wysłana.”, a zgłoszenie trafi do ekranu **Skrzynka odbiorcza**. Jeśli wysłanie się nie uda, SandFly poda powód, np. „Opinia nie została wysłana. Sprawdź połączenie internetowe.”. Zgłoszenie pozostanie w szkicach.
 
-Oprócz wypełnionych pól zgłoszenie zawiera wersję i numer kompilacji SandFly. Domyślnie włączone **Dołącz informacje o urządzeniu** dodaje wersję Androida, producenta i model. Pod przełącznikiem można sprawdzić te dane.
+Wpisany tekst zostaje w szkicach do chwili wysłania. Możesz go usunąć przez **Usuń wersję roboczą**. Adres e-mail oraz ustawienia obu przełączników dotyczących załączanych danych zostaną zapamiętane na potrzeby kolejnego zgłoszenia.
 
-**Dołącz dziennik SandFly** jest początkowo wyłączone. Dziennik może zawierać tekst z ekranu. Obejmuje ostatnie komunikaty czytnika, rozpoznane gesty, użycie klawiszy głośności, awarie i przerwy w działaniu, listę usług dostępności oraz zapisy innych procesów SandFly, takich jak lokalne AI.
+#### Co zawiera zgłoszenie {#help-feedback-contents}
 
-Otwórz formularz zaraz po błędzie, żeby SandFly zachował bieżący fragment dziennika. Przy podzielonym ekranie odczyt następuje dopiero po **Wyślij**, więc możesz odtworzyć problem w drugiej aplikacji.
+Każde zgłoszenie zawiera treść uzupełnionych pól oraz wersję i numer kompilacji SandFly.
 
-#### Stan i odpowiedzi {#help-feedback-inbox}
+Opcja **Dołącz informacje o urządzeniu** dodaje wersję Androida oraz nazwę producenta i model urządzenia. Dodawane dane są widoczne przy przełączniku.
 
-**Skrzynka odbiorcza** pokazuje stan zgłoszenia i liczbę nieprzeczytanych odpowiedzi. Zgłoszenie może być otwarte, zamknięte jako zakończone, nieplanowane lub powielone, albo usunięte z serwera.
+Opcja **Dołącz dziennik SandFly** dodaje ostatnie wpisy, które mogą pomóc autorowi znaleźć przyczynę problemu. Dziennik może zawierać tekst z ekranu. Trafiają do niego poniższe dane.
 
-Otwórz zgłoszenie. W części **Wiadomości** są odpowiedzi wraz z nadawcą i czasem. Aby odpowiedzieć, użyj **Twoja odpowiedź** i **Wyślij odpowiedź**.
+- Dziennik zapisany w chwili otwarcia ekranu **Prześlij opinię**, gdy jest w nim jeszcze zgłaszany problem. W trybie podzielonego ekranu dziennik jest pobierany po wybraniu **Wyślij**, dzięki czemu najpierw możesz wywołać problem w drugiej aplikacji.
+- Ostatnie gesty rozpoznane przez SandFly.
+- Ostatnia awaria, ostatnie wyłączenie SandFly oraz przypadki, w których aplikacja przez chwilę nie odpowiadała.
+- Lista włączonych usług ułatwień dostępu i ostatnie naciśnięcia przycisków głośności.
+- Dzienniki innych procesów SandFly, np. funkcji AI działających na urządzeniu.
 
-Gdy SandFly działa, sprawdza skrzynkę co godzinę i po wejściu w **Prześlij opinię**. Odpowiedź lub zmiana stanu daje dźwięk i powiadomienie w kategorii **Odpowiedzi na opinie**. Zamknięte zgłoszenia są sprawdzane przez 30 dni. **Usuń ze skrzynki odbiorczej** usuwa pozycję z urządzenia i wyłącza sprawdzanie. Zgłoszenie pozostaje u autora.
+Żeby w dzienniku pozostał zapis problemu, otwórz **Prześlij opinię** zaraz po jego wystąpieniu, przed wykonaniem innych czynności.
 
-#### Zgłoszenie odpowiedzi AI {#help-feedback-ai-response}
+#### Odpowiedzi i stan zgłoszenia {#help-feedback-inbox}
 
-[**Zgłoś odpowiedź AI**](#commands) otwiera formularz z ostatnią odpowiedzią modelu. Możesz zgłosić na przykład błędny opis, wynik rozpoznawania na żywo albo działanie agenta. SandFly przechowuje tylko ostatnią odpowiedź do zakończenia pracy czytnika. Jeśli jeszcze jej nie ma, poinformuje o tym. Zobacz też [opisy i pytania](#descriptions).
+Na ekranie **Skrzynka odbiorcza** znajdziesz wysłane zgłoszenia, stan każdego z nich oraz liczbę nieprzeczytanych odpowiedzi. Zgłoszenie może mieć jeden z poniższych stanów.
+
+- **Otwarte**.
+- **Zamknięte, zakończone**.
+- **Zamknięte, nieplanowane**.
+- **Zamknięte, duplikat**.
+- **Usunięto** oznacza, że zgłoszenia nie ma już na serwerze.
+
+Wybierz zgłoszenie, aby je otworzyć. Znajdziesz w nim sekcje **Stan**, **Twoja opinia** i **Wiadomości**. Przy każdej wiadomości, zarówno Twojej, jak i autora, podano nadawcę i czas wysłania. Aby odpowiedzieć, wykonaj dwa kroki.
+
+1. Wybierz **Twoja odpowiedź** i wpisz tekst.
+2. Wybierz **Wyślij odpowiedź**.
+
+Gdy SandFly jest włączony, sprawdza odpowiedzi i zmiany stanu co godzinę oraz po każdym otwarciu ekranu **Prześlij opinię**. Odpowiedź lub zmiana stanu wywołuje powiadomienie z dźwiękiem. Jego otwarcie prowadzi do zgłoszenia. SandFly sprawdza zamknięte zgłoszenia jeszcze przez 30 dni. Powiadomienia o odpowiedziach są w kategorii **Odpowiedzi na opinie** w ustawieniach powiadomień SandFly.
+
+Opcja **Usuń ze skrzynki odbiorczej** usuwa zgłoszenie z urządzenia i zatrzymuje sprawdzanie odpowiedzi. Autor nadal ma dostęp do zgłoszenia.
+
+#### Zgłoś odpowiedź AI {#help-feedback-ai-response}
+
+Polecenie **Zgłoś odpowiedź AI** otwiera nowe zgłoszenie z ostatnim tekstem zwróconym przez model. Może to być opis obrazu lub ekranu, wynik rozpoznawania na żywo albo wynik zadania agenta. Skorzystaj z niego, jeśli odpowiedź jest błędna lub obraźliwa. SandFly zachowuje tylko ostatnią odpowiedź, do chwili zakończenia działania. Jeśli funkcja AI jeszcze nie zwróciła odpowiedzi, SandFly odczyta odpowiedni komunikat. Przypiszesz to polecenie do gestu lub klawisza na ekranie **Polecenia**. Zobacz [](#commands) i [](#descriptions).
 
 ### Historia wersji i polityka prywatności {#help-version-history}
 
-**Historia wersji** otwiera [stronę wydań SandFly](https://github.com/aaron-gh/SandFly/releases). **Polityka prywatności** otwiera [politykę SandFly](https://sandfly.dev/privacy). Zegarek bez przeglądarki pokaże adres.
+**Historia wersji** otwiera w przeglądarce [stronę wydań SandFly](https://github.com/aaron-gh/SandFly/releases) z opisem zmian w każdym wydaniu. **Polityka prywatności** otwiera [politykę prywatności SandFly](https://sandfly.dev/privacy). Na zegarku bez przeglądarki SandFly wyświetla sam adres.
 
 ### Ustawienia programisty {#help-developer}
 
-Część ustawień zapisuje zawartość ekranu do dziennika systemowego. Mogą ją odczytać aplikacje, które mają dostęp do dziennika. Włączaj szczegółowy zapis na czas diagnozy.
+Na ekranie **Ustawienia programisty** znajdziesz opcje przydatne przy diagnozowaniu problemów i pracy nad aplikacją. Niektóre zapisują treść ekranu do dziennika systemowego. Inne aplikacje z dostępem do dziennika mogą odczytać te dane. Włączaj te opcje wtedy, gdy są potrzebne.
 
-| Opcja | Działanie |
-| --- | --- |
-| **Kod wersji** | Podaje wersję i kod wersji. W Androidzie 11 i starszym informacja jest pod tytułem ekranu. |
-| **Tryb diagnostyczny** | Stuknięcie czterema palcami zapisuje ekran w dzienniku. Tryb wymusza pokazywanie mowy, powtórzenie rozpoznanej mowy, zapis drzewa i nakładkę. Blokuje zmianę tych ustawień i poziomu rejestrowania. Wymaga potwierdzenia. |
-| **Pokazuj odpowiedzi głosowe na ekranie** | Wyświetla to, co SandFly wypowiada. |
-| **Używaj gestów w SandFly** | Rozpoznaje gesty w SandFly. Domyślnie włączone. Po zmianie wyłącz i włącz czytnik. Opcji nie ma na telewizorach. |
-| **Ignoruj limity pamięci RAM dla AI na urządzeniu** | Pokazuje wszystkie modele i pozwala je ładować bez kontroli wolnego RAM. Zobacz [opisy lokalne](#descriptions). |
-| **Powtórz rozpoznaną mowę** | Czyta tekst rozpoznany z [polecenia głosowego](#voice-commands). |
-| **Włącz statystyki wydajności** | Zbiera czasy działania. **Drukuj statystyki wydajności** zapisuje je do dziennika. Zbieranie zwiększa zużycie energii i pamięci. Wymaga potwierdzenia. |
-| **Czytanie dotykiem** | Domyślnie włączone. Wyłączenie zatrzymuje odczyt dotyku i gesty. Wymaga potwierdzenia. Opcji nie ma na telewizorach. |
-| **Włącz debugowanie drzewa węzłów** | **Wydrukuj drzewo węzłów** zapisuje elementy ekranu do dziennika. SandFly proponuje gest trzykrotnego stuknięcia czterema palcami. Na telewizorze zapis uruchamia przycisk wyszukiwania. |
-| **Włączyć nakładkę rejestrowania debugowania?** | Wyświetla dziennik na ekranie. |
-| **Poziom rejestrowania** | Ustala szczegółowość zapisu. Domyślnie **Błąd**. Najdokładniejszy poziom wymaga potwierdzenia i może zapisać dane osobowe. |
-| **Filtruj rejestrowanie zdarzeń ułatwiania dostępu** | Wybiera typy zapisywanych zdarzeń. |
+- **Kod wersji** pokazuje wersję SandFly i jej kod. Na Androidzie 11 i starszym wersja jest widoczna pod tytułem tego ekranu.
+- **Tryb diagnostyczny** jest domyślnie wyłączony. Po jego włączeniu stuknięcie czterema palcami zapisuje zawartość ekranu do dziennika systemowego. Opcje **Pokazuj odpowiedzi głosowe na ekranie**, **Powtórz rozpoznaną mowę**, **Włącz debugowanie drzewa węzłów** i **Włączyć nakładkę rejestrowania debugowania?** działają wtedy tak, jak po włączeniu. Zmiana tych opcji i ustawienia **Poziom rejestrowania** jest w tym czasie niedostępna. Włączenie trybu wymaga potwierdzenia.
+- **Pokazuj odpowiedzi głosowe na ekranie** wyświetla odczytywany tekst. Domyślnie opcja jest wyłączona.
+- **Używaj gestów w SandFly** jest domyślnie włączone. Przy tym ustawieniu gesty rozpoznaje SandFly, a po jego wyłączeniu rozpoznawanie gestów przejmuje Android. Wiele funkcji SandFly związanych z gestami wymaga tej opcji. Po zmianie ustawienia wyłącz i ponownie włącz SandFly. Na telewizorze ta opcja jest niedostępna.
+- **Ignoruj limity pamięci RAM dla AI na urządzeniu** pokazuje wszystkie modele AI działające lokalnie, również te, które potrzebują więcej pamięci niż ma urządzenie. Wybrany model uruchamia się wtedy bez sprawdzania wolnej pamięci. Domyślnie opcja jest wyłączona. Zobacz [](#descriptions).
+- **Powtórz rozpoznaną mowę** odczytuje tekst rozpoznany z polecenia głosowego. Domyślnie opcja jest wyłączona. Zobacz [](#voice-commands).
+- **Włącz statystyki wydajności** zbiera pomiary czasu, które polecenie **Drukuj statystyki wydajności** zapisuje do dziennika systemowego. Zbieranie statystyk zużywa więcej pamięci i energii. Domyślnie opcja jest wyłączona, a włączenie wymaga potwierdzenia.
+- **Czytanie dotykiem** jest domyślnie włączone. Po wyłączeniu SandFly przestaje odczytywać dotykane elementy i obsługiwać gesty. Wyłączenie wymaga potwierdzenia. Opcja jest niedostępna na telewizorach.
+- **Włącz debugowanie drzewa węzłów** pozwala zapisać drzewo elementów ekranu w dzienniku systemowym za pomocą polecenia **Wydrukuj drzewo węzłów**. Domyślnie opcja jest wyłączona. Przy włączaniu pojawia się propozycja przypisania polecenia do potrójnego stuknięcia czterema palcami. Na telewizorze drzewo zapiszesz przyciskiem wyszukiwania na pilocie.
+- **Włączyć nakładkę rejestrowania debugowania?** wyświetla dziennik SandFly na ekranie. Domyślnie opcja jest wyłączona.
+- **Poziom rejestrowania** określa ilość informacji zapisywanych do dziennika systemowego. Zakres sięga od **Brak** po rejestrowanie szczegółowe. Domyślna wartość to **Błąd**. Włączenie rejestrowania szczegółowego wymaga potwierdzenia, ponieważ w dzienniku mogą się znaleźć dane osobowe.
+- **Filtruj rejestrowanie zdarzeń ułatwiania dostępu** pozwala wybrać rodzaje zdarzeń dostępności zapisywane w dzienniku systemowym.
 
-Przełączniki diagnostyczne są domyślnie wyłączone. Aby skopiować dane pojedynczego elementu lub całe drzewo ekranu, zobacz [polecenia do sprawdzania elementów](#scripts-inspect) w rozdziale o [skryptach](#scripts).
+Polecenia do sprawdzania pojedynczych elementów oraz kopiowania ich szczegółów lub całego drzewa ekranu znajdziesz w [](#scripts).

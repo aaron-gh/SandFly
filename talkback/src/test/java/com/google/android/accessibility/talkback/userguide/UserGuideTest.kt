@@ -83,6 +83,7 @@ class UserGuideTest {
     assertTrue(diag, html.contains("<p class=\"note\">Opmerking:"))
     assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
   }
+
   @Test
   @Config(sdk = [35], qualifiers = "pl-rPL")
   fun buildsThePolishGuideWithItsGeneratedListsAndTranslatedReferences() {
@@ -96,6 +97,7 @@ class UserGuideTest {
     assertTrue(html.contains("<h3 id=\"appendix-keyboard-shortcuts-sandfly\">B.1 "))
     assertTrue(html.contains("<h3 id=\"scripting-rules\">D.5 Reguły</h3>"))
     assertTrue(html.contains("href=\"#item-files-macros\""))
+    assertTrue(html.contains("<p class=\"note\">Uwaga:"))
     assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
   }
 }

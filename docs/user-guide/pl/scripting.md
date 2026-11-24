@@ -1,6 +1,6 @@
 # Pisanie skryptów SandFly
 
-Ten dodatek opisuje API skryptów w wersji 6. Skrypt to program w Lua, który zmienia zachowanie SandFly w wybranej aplikacji, w całym systemie lub dodaje własne polecenia. Instalację i tworzenie skryptu bez kodu opisuje rozdział „Skrypty i własne etykiety”.
+Ten dodatek opisuje wersję 6 API skryptów SandFly. Skrypt to program w Lua, który zmienia działanie SandFly w wybranej aplikacji lub we wszystkich aplikacjach. Może też dodawać własne polecenia. Instalację, zarządzanie skryptami i tworzenie ich bez pisania kodu opisano w rozdziale „Skrypty i własne etykiety”.
 
 ## Możliwości {#overview}
 
@@ -8,27 +8,30 @@ Skrypty działają na telefonach i tabletach. Zegarki i telewizory ich nie obsł
 
 ### Co może zrobić skrypt {#what-a-script-can-do}
 
-- [Reguły](#rules) mogą nazwać lub ukryć element, przeczytać wiersz jako całość lub tylko jego wybrane części, zmienić kolejność albo dodać czynności.
+- [Reguły](#rules) mogą nazwać lub ukryć element, zmienić kolejność odczytu lub przeczytać wiersz jako jeden element. Mogą też ograniczyć odczyt do wybranych części elementu i dodać pozycje do jego menu **Czynności**.
 - [Obsługa mowy](#speech-hooks) pozwala zmienić wypowiedź dotyczącą elementu, powiadomienia lub komunikatu oraz całą mowę.
 - [Procedury obsługi zdarzeń](#hooks) reagują między innymi na otwarcie aplikacji, zmianę fokusu, edycję tekstu, przewinięcie i powiadomienie.
 - [Polecenia](#commands) mogą działać z gestu, klawiatury, menu i sterowania czytaniem. [Opcje nawigacji](#navigation) przechodzą po wybranych elementach.
-- Kod może czytać ekran, klikać, przewijać, pisać, naciskać klawisze i rozpoznawać tekst w wybranym obszarze.
-- Skrypt może mówić, odtwarzać dźwięki, wibrować i wyświetlać tekst w brajlu.
-- Może wyświetlać okna, zapisywać dane i ustawienia, pobierać treść, tłumaczyć, używać makr i poleceń, otwierać aplikacje lub adresy i zmieniać ustawienia urządzenia.
+- Kod może znajdować elementy na ekranie, klikać, przewijać, wpisywać tekst, przekazywać dotknięcia, naciskać klawisze i rozpoznawać tekst w wybranym obszarze.
+- Skrypt może odczytywać tekst, odtwarzać dźwięki i tony, uruchamiać wibracje i wyświetlać tekst w brajlu.
+- Może wyświetlać okna dialogowe i pełnoekranowe, zapisywać dane i ustawienia, pobierać dane z internetu, tłumaczyć tekst, uruchamiać makra i polecenia SandFly oraz otwierać aplikacje, linki i strony ustawień. Może też zmieniać ustawienia urządzenia, takie jak Wi-Fi i głośność.
 
 ### Ograniczenia skryptu {#what-a-script-cant-do}
 
-Obowiązują [uprawnienia z manifestu](#permissions), które użytkownik widzi przy instalacji i może wyłączyć. Skrypt nie zmienia [ekranów SandFly](#sandfly-screens). Ma dostęp do odczytu plików własnego pakietu. Funkcje `io`, `os.execute`, `debug` i `package` są niedostępne. Dostęp do Javy i Androida wymaga [uprawnienia java](#java).
-
-Każde wywołanie skryptu ma [limit 2 sekund](#limits). Skrypty nie działają po wstrzymaniu SandFly ani gdy użytkownik włączy **Wyłącz wszystkie skrypty**. [Przy wygaszonym ekranie](#with-the-screen-off) potrzebna jest osobna zgoda.
+- Skrypt może korzystać tylko z [uprawnień wymienionych w manifeście](#permissions). Użytkownik widzi je przed instalacją i może wyłączyć każde z osobna.
+- Skrypt nie zmienia [ekranów SandFly](#sandfly-screens), na przykład jego ustawień.
+- Dostęp do plików ogranicza się do odczytu zawartości własnego pakietu. Funkcje `io`, `os.execute`, `debug` i `package` są niedostępne.
+- Wywołania Javy lub Androida wymagają [uprawnienia `java`](#java).
+- Każde wywołanie skryptu ma limit 2 sekund. Zobacz [Limity](#limits).
+- Skrypty nie działają po wstrzymaniu SandFly ani po włączeniu **Wyłącz wszystkie skrypty**. [Działanie przy wygaszonym ekranie](#with-the-screen-off) wymaga osobnej zgody.
 
 ### Wersje API {#api-versions}
 
-`sf.apiVersion` zwraca wersję API w danej kompilacji SandFly. Pozycje dodane po wersji 1 mają adnotację o wersji. W `minApiVersion` podaj najwyższą z wersji wymaganych przez używane elementy. Wersje od 2 do 6 dodają funkcje i zachowują działanie istniejących.
+`sf.apiVersion` zwraca wersję API tej kompilacji SandFly, w której skrypt działa. Elementy dodane po wersji 1 mają adnotację, na przykład *Od wersji 2*. W `minApiVersion` w manifeście podaj najwyższą wersję wymaganą przez elementy, z których korzysta skrypt. Wersje od 2 do 6 rozszerzają API. Skrypty korzystające z wersji 1 działają dalej na tych samych zasadach.
 
 ## Pierwszy skrypt {#write-your-first-script}
 
-Przykład wita użytkownika po otwarciu ustawień Androida. Dodaje też polecenie, które podaje sposób wywołania.
+Ten skrypt odczytuje „Hello from a script” po otwarciu ustawień Androida. Dodaje też polecenie, które odczytuje, w jaki sposób je uruchomiono.
 
 ```lua
 local manifest = {
@@ -57,32 +60,41 @@ end)
 
 Tabela `manifest` opisuje skrypt, jego zasięg i uprawnienia. SandFly odczytuje ją bez wykonywania kodu. Reszta uruchamia się przy każdym załadowaniu. Dodaje obsługę `onAppEnter` i polecenia `hello`.
 
-1. Zapisz przykład jako `hello.lua` i przenieś do pamięci telefonu.
-2. Otwórz **Skrypty** > **Importuj skrypt**. Wybierz `hello.lua`, sprawdź dane i wybierz **Zainstaluj**.
-3. Otwórz ustawienia Androida. SandFly wypowie tekst z przykładu.
-4. Otwórz **Skrypty** > **Hello** > **Dziennik**. Znajdziesz tam wpis `Started in com.android.settings`.
-5. Otwórz **Polecenia** > **Skrypty** i przypisz gest do **Hello: Say hello**. Wróć do ustawień Androida i wykonaj gest. Odczyt będzie zawierał informację o sposobie uruchomienia.
+1. Zapisz skrypt jako plik tekstowy `hello.lua`. Umieść go na telefonie, na przykład w katalogu pobranych plików.
+2. W ustawieniach SandFly otwórz **Skrypty** > **Importuj skrypt** i wybierz `hello.lua`.
+3. Sprawdź dane w oknie instalacji i wybierz **Zainstaluj**. Po instalacji skrypt jest włączony.
+4. Otwórz ustawienia Androida. Usłyszysz „Hello from a script”.
+5. W ustawieniach SandFly otwórz **Skrypty** > **Hello** > **Dziennik**. Funkcja `print` zapisała tam wiersz `Started in com.android.settings`.
+6. Otwórz **Polecenia** > **Skrypty** i przypisz gest do **Hello: Say hello**. Wróć do ustawień Androida i wykonaj gest. Usłyszysz „Hello, run from command”.
 
-Żeby zaktualizować skrypt, zmień plik, zwiększ `version` i zaimportuj ponownie. Ten sam `id` zastąpi poprzednią wersję. Dane, ustawienia i wybory uprawnień zostaną zachowane. Zobacz też [diagnozowanie](#testing-and-debugging) i [przykładowe skrypty](#example-scripts).
+Żeby zaktualizować skrypt, zmień plik, zwiększ `version` i zaimportuj ponownie. Ten sam `id` zastąpi poprzednią wersję. Dane, ustawienia i wybory uprawnień zostaną zachowane. W [części o testowaniu i diagnozowaniu](#testing-and-debugging) opisano dziennik, błędy i przeładowywanie skryptów. Dłuższe skrypty do wykorzystania jako punkt wyjścia znajdziesz w [przykładach](#example-scripts).
 
 ## Pliki skryptów {#script-files}
 
 - Plik `.lua` do 1 MB jest plikiem `main.lua` skryptu.
 - Archiwum `.zip` może zawierać `main.lua`, kolejne pliki Lua, dźwięki, makra, dane i przekłady. Limit wynosi 5 MB archiwum, 5 MB po rozpakowaniu i 200 plików. `main.lua` może być na najwyższym poziomie albo w pojedynczym wspólnym katalogu. Wpisy zaczynające się od kropki i katalog `__MACOSX` są pomijane.
 
-Do plików w archiwum można sięgnąć przez [require i sf.readFile](#lua-and-files), [sf.playSound](#speech-sound-and-vibration) oraz [sf.macros.run](#macros). [Tłumaczenia](#translations) znajdują się w `locales`.
+Nazwa pliku musi mieć rozszerzenie `.lua` lub `.zip`. Do plików w archiwum można sięgnąć przez [require i sf.readFile](#lua-and-files), [sf.playSound](#speech-sound-and-vibration) oraz [sf.macros.run](#macros). [Tłumaczenia](#translations) znajdują się w `locales`.
 
-Instalację rozpocznij przez **Skrypty** > **Importuj skrypt** albo udostępnij plik lub jego adres HTTPS przez **Zainstaluj skrypt SandFly**. Przed instalacją SandFly pokaże źródło, podpis, uprawnienia i polecenia.
+Instalację rozpocznij przez **Skrypty** > **Importuj skrypt** albo otwórz lub udostępnij plik `.lua`, `.zip` lub prowadzący do niego adres `https` przez **Zainstaluj skrypt SandFly**. Okno instalacji pokazuje pochodzenie skryptu, informację o podpisie SandFly, uprawnienia i polecenia.
 
 ### Środowisko Lua {#the-lua-environment}
 
-SandFly wykonuje tekst [Lua 5.4](https://www.lua.org/manual/5.4/) przez [LuaJava](https://github.com/gudzpoz/luajava). Dostępne są:
+SandFly uruchamia [Lua 5.4](https://www.lua.org/manual/5.4/) przez [LuaJava](https://github.com/gudzpoz/luajava). Wczytuje wyłącznie tekst źródłowy. W skrypcie są dostępne następujące funkcje i biblioteki.
 
 - Funkcje `assert`, `error`, `ipairs`, `next`, `pairs`, `pcall`, `xpcall`, `print`, `rawequal`, `rawget`, `rawlen`, `rawset`, `select`, `tonumber`, `tostring`, `type`, `getmetatable`, `setmetatable`, `load`, `require`, `collectgarbage`, `_G`, `_VERSION`.
-- Biblioteki `string`, `table`, `math`, `utf8`, `coroutine`, `json` oraz funkcje `os.time`, `os.clock`, `os.date` i `os.difftime`.
-- Moduł `sf` opisany w tym dodatku.
+- Biblioteki `string`, `table`, `math`, `utf8` i `coroutine`.
+- Funkcje `os.time`, `os.clock`, `os.date` i `os.difftime`.
+- `json` do obsługi tekstu w formacie JSON oraz moduł `sf` opisany w tym dodatku.
 
-`load` przyjmuje tekst lub funkcję i używa środowiska skryptu, chyba że wskażesz inne. `setmetatable` odrzuca metatabele z `__gc`. Do `collectgarbage` można przekazać `'collect'`, `'count'` i `'step'`. `string.dump` jest niedostępne. `string.rep` nie tworzy tekstu dłuższego niż 8 MB. `pcall` i `xpcall` nie przechwytują błędów przekroczenia czasu lub pamięci. Korutynę, która [czeka na wynik](#waiting), wznawiaj wewnątrz zadania.
+Część funkcji działa w ograniczonym zakresie.
+
+- `load` przyjmuje tekst lub funkcję. Nie wczytuje skompilowanego Lua. Uruchamia fragment w środowisku skryptu, chyba że wskażesz inne.
+- `setmetatable` odrzuca metatabele z `__gc`.
+- `collectgarbage` przyjmuje tylko `'collect'`, `'count'` i `'step'`.
+- `string.dump` jest niedostępne. `string.rep` odmawia utworzenia tekstu dłuższego niż 8 MB.
+- `pcall` i `xpcall` nie mogą przechwycić błędów zatrzymujących skrypt po przekroczeniu limitu czasu lub pamięci.
+- Korutyny utworzone przez skrypt mogą wywoływać funkcje [czekające na wynik](#waiting), jeśli wznawiasz je z kodu wykonywanego w zadaniu.
 
 Pozostałe funkcje `os` oraz `io`, `debug`, `package`, `dofile` i `loadfile` są niedostępne.
 
@@ -94,14 +106,14 @@ Tabela z wartościami jest listą, na przykład `{ 'speech', 'screen' }`. Tabela
 
 | Pole | Typ | Zastosowanie |
 | --- | --- | --- |
-| `id` | Tekst | Wymagany. Do 64 znaków z małych liter, cyfr, kropek, myślników i podkreśleń. Pierwszy znak to litera albo cyfra. Skrypt o tym samym ID zastępuje poprzedni. |
+| `id` | Tekst | Wymagany. Do 64 znaków z małych liter, cyfr, kropek (`.`), łączników (`-`) i podkreśleń (`_`). Pierwszy znak to litera albo cyfra. Skrypt o tym samym ID zastępuje poprzedni. |
 | `name` | Tekst | Wymagany. Widoczny na liście skryptów i na początku tytułu okien skryptu. |
 | `author` | Tekst | Wymagany. |
 | `minApiVersion` | Liczba | Wymagana najstarsza [wersja API](#api-versions). |
 | `testedApiVersion` | Liczba | Najwyższa sprawdzona wersja. Wymagana, nie niższa od `minApiVersion`. SandFly może ostrzec o zmianie wywołań po podanej wersji. Między wersjami 1 i 6 takie zmiany nie występują. |
-| `version` | Tekst | Wersja skryptu, domyślnie `'1'`. Porównywana po częściach liczbowych, więc `'1.10'` jest nowsza od `'1.9'`. Zwiększ przy [publikacji zmian](#publish-a-script). |
+| `version` | Tekst | Wersja skryptu, na przykład `'1.2'`. Domyślna to `'1'`. Porównywana po częściach liczbowych, więc `'1.10'` jest nowsza od `'1.9'`. Zwiększ przy [publikacji zmian](#publish-a-script). |
 | `description` | Tekst | Opis na stronie skryptu i przy instalacji. |
-| `homepage` | Tekst | Adres HTTP lub HTTPS dla **Otwórz stronę domową**. |
+| `homepage` | Tekst | Adres `http` lub `https`. Na stronie skryptu pojawia się wtedy **Otwórz stronę domową**. |
 | `apps` | Tekst lub lista | [Zakres działania](#where-a-script-runs). Brak pola obejmuje wszystkie aplikacje. |
 | `permissions` | Lista | [Wymagane uprawnienia](#permissions). |
 | `settings` | Lista | [Ustawienia](#settings) na stronie skryptu. |
@@ -109,7 +121,7 @@ Tabela z wartościami jest listą, na przykład `{ 'speech', 'screen' }`. Tabela
 | `commands` | Lista | [Polecenia](#commands) dla użytkownika. |
 | `navigation` | Lista | [Sposoby nawigacji](#navigation). |
 | `onDemand` | Wartość logiczna | Od wersji 4. [Ładuje skrypt](#scripts-loaded-on-demand) wyłącznie do wykonania polecenia. |
-| `keepLoaded` | Wartość logiczna | Od wersji 5. Udostępnia [działanie przy wygaszonym ekranie](#with-the-screen-off). |
+| `keepLoaded` | Wartość logiczna | Od wersji 5. Dodaje **Działaj przy wyłączonym ekranie** na stronie skryptu. Zobacz [działanie przy wygaszonym ekranie](#with-the-screen-off). |
 
 SandFly ignoruje inne pola najwyższego poziomu. Nieznane pola reguł, zapytań, czynności lub nawigacji powodują odrzucenie manifestu. SandFly poda nazwę pola. Jeśli `minApiVersion` jest za wysokie, nadal możesz zainstalować skrypt, ale SandFly wyświetli informację o zgodności przy instalacji, na stronie i w dzienniku.
 
@@ -125,31 +137,40 @@ apps = {
 },
 ```
 
-`activity` porównuje nazwę klasy aktywności lub jej zakończenie. SandFly dowiaduje się o aktywności przy zmianie okna. Przed wykryciem, na przykład gdy SandFly włączył się w środku aplikacji, zakres obejmuje jej wszystkie ekrany. `window` porównuje fragment tytułu bez względu na wielkość liter.
+- `activity` ogranicza działanie do jednego ekranu aplikacji. Podaj pełną nazwę klasy aktywności albo końcową część tej nazwy. SandFly rozpoznaje aktywność, gdy zmienia się okno aplikacji. Do pierwszej zmiany, na przykład tuż po uruchomieniu SandFly przy otwartej aplikacji, skrypt działa na wszystkich jej ekranach.
+- `window` ogranicza działanie do okien, których tytuł zawiera podany tekst. Wielkość liter nie ma znaczenia.
 
 Skrypt aplikacji ładuje się, gdy ta pojawia się na pierwszym planie, i zostaje usunięty z pamięci po wyjściu. Za każdym razem startuje od nowa. Żeby zachować wartości, użyj [sf.storage](#storage). Jeśli nie podasz aktywności ani okna, pasuje również inne okno tego pakietu, w którym jest fokus SandFly, na przykład okno klawiatury.
 
-Skrypt bez `apps` pozostaje załadowany we wszystkich aplikacjach, chyba że [ładuje się na żądanie](#scripts-loaded-on-demand). Wstrzymanie SandFly, wyłączenie skryptów i wygaszenie ekranu kończą pracę. Wyjątek dla wygaszenia jest opisany poniżej. Przy usunięciu skryptu z pamięci SandFly zamyka związane z nim okna, liczniki i żądania.
+Skrypt bez `apps` działa we wszystkich aplikacjach. Pozostaje w pamięci, dopóki jest włączony, chyba że [ładuje się na żądanie](#scripts-loaded-on-demand).
+
+Wszystkie skrypty są zwalniane z pamięci po wstrzymaniu SandFly albo po włączeniu opcji **Wyłącz wszystkie skrypty**. Są zwalniane też po wygaszeniu ekranu, z wyjątkiem tych, które mają wtedy [pozostać aktywne](#with-the-screen-off). Po zwolnieniu skryptu kończą się jego liczniki czasu i żądania, a otwarte przez niego okna są zamykane.
 
 ### Ekrany SandFly {#sandfly-screens}
 
-Gdy widać ekran SandFly, czytnik pomija reguły, przechwytywanie mowy, skryptowe czynności, gesty, klawisze, menu i opcje czytania. Skrypt nie dostaje zdarzeń z SandFly. Przez to ekran **Skrypty** pozostaje dostępny nawet wtedy, gdy skrypt utrudnia obsługę programu.
+Skrypty nie zmieniają ekranów SandFly. Dzięki temu **Skrypty** w ustawieniach można otworzyć niezależnie od działania skryptu. Gdy ekran SandFly jest na pierwszym planie, obowiązują następujące zasady.
 
-Wywołania wymagające `screen`, `actions`, `system` lub `dialogs`, a także `sf.commands.run`, `sf.macros.run`, `sf.feedback.mute` i `sf.touch.lock` zwracają błąd. Te błędy nie wliczają się do limitu wyłączenia skryptu. `sf.speak` nie przerywa mowy, a `sf.speech.stop` jej nie zatrzymuje.
+- SandFly pomija reguły, przechwytywanie mowy, czynności, gesty, klawisze, pozycje menu i opcje sterowania czytaniem dodane przez skrypty. Skrypty nie otrzymują zdarzeń z SandFly.
+- Wywołania wymagające `screen`, `actions`, `system` lub `dialogs` zgłaszają błąd. Dotyczy to też `sf.commands.run`, `sf.macros.run`, `sf.feedback.mute` i `sf.touch.lock`. Tych błędów SandFly nie liczy do limitu powodującego wyłączenie skryptu.
+- `sf.speak` nie przerywa trwającej wypowiedzi, a `sf.speech.stop` nie zatrzymuje mowy.
 
 Nie można wskazać SandFly w `apps`. Skrypt globalny pozostaje załadowany, więc działają jego ustawienia. Uprawnienie `java` daje pełny dostęp i wykracza poza te ograniczenia.
 
 ### Działanie przy wygaszonym ekranie {#with-the-screen-off}
 
-Od wersji 5 globalny skrypt bez `onDemand` może zadeklarować `keepLoaded = true`. Użytkownik musi włączyć **Działaj przy wyłączonym ekranie** na stronie skryptu. Skrypt sam nie może tego ustawić.
+Od wersji 5 skrypt z `keepLoaded = true` może pozostać w pamięci przy wygaszonym ekranie. Dotyczy to na przykład skryptu odczytującego godzinę lub przypomnienia. Użytkownik włącza **Działaj przy wyłączonym ekranie** na stronie skryptu. Po instalacji opcja jest wyłączona. Skrypt nie może jej sam włączyć. Tylko skrypty bez `apps` i `onDemand` mogą używać `keepLoaded`.
 
 Przy wygaszonym ekranie nadal działają liczniki, żądania i `sf.speak`. Zdarzenia ekranu, takie jak `onFocus`, nie są obsługiwane. Liczniki nie budzą telefonu i mogą wykonać się później.
 
 ### Ładowanie na żądanie {#scripts-loaded-on-demand}
 
-Od wersji 4 `onDemand = true` ładuje skrypt przy użyciu jego polecenia. SandFly usuwa go z pamięci mniej więcej 2 sekundy po zamknięciu okien, ustaniu oczekiwania, zakończeniu liczników i wykorzystaniu [obiektów java.proxy](#java).
+Od wersji 4 `onDemand = true` pozwala trzymać skrypt poza pamięcią, dopóki nie uruchomisz jednego z jego poleceń. SandFly ładuje skrypt, wykonuje polecenie, a po zakończeniu czeka jeszcze około dwóch sekund przed zwolnieniem skryptu z pamięci. Odliczanie zaczyna się, gdy skrypt nie ma żadnych otwartych okien, liczników ani oczekujących operacji, w tym wywołań [obiektów `java.proxy`](#java).
 
-Zmienne nie przechodzą między załadowaniami. Użyj [sf.storage](#storage), aby zapisać wartości. Obsługa zdarzeń działa w trakcie załadowania. Skrypt musi mieć co najmniej jedno polecenie i w każdym podaje tylko `id` oraz `title`. Użytkownik przypisze polecenie w **Polecenia**. Nie dodawaj `apps`, `rules`, `navigation` ani ustawień typu przycisk. `sf.bind` i `sf.unbind` są niedostępne.
+Zmienne nie przechodzą między uruchomieniami. Do trwałych danych użyj [`sf.storage`](#storage). Obsługa zdarzeń działa tylko przy załadowanym skrypcie. Skrypt ładowany na żądanie ma następujące ograniczenia.
+
+- Musi mieć co najmniej jedno polecenie. Każde z nich ma tylko `id` i `title`. Użytkownik przypisze polecenia na ekranie **Polecenia**.
+- Nie może mieć `apps`, `rules`, `navigation` ani ustawień typu przycisk.
+- Nie może wywoływać `sf.bind` ani `sf.unbind`.
 
 Zobacz [przykład wyszukiwania w Wikipedii](scripting/examples/wikipedia-search.lua).
 
@@ -157,15 +178,15 @@ Zobacz [przykład wyszukiwania w Wikipedii](scripting/examples/wikipedia-search.
 
 Manifest określa dostęp. Instalacja nadaje uprawnienia po pokazaniu listy. Aktualizacja zachowuje poprzednie odmowy i dodaje nowe po potwierdzeniu. Każde uprawnienie można wyłączyć na stronie skryptu.
 
-Wywołanie bez zgody zgłasza błąd z nazwą uprawnienia. Procedura, reguła, czynność lub przypisanie wymagające dostępu są pomijane i pozostawiają jedno ostrzeżenie w dzienniku.
+Wywołanie bez wymaganego dostępu zgłosi błąd „This script needs the *name* permission”, gdzie *name* to nazwa uprawnienia. Procedura, reguła, czynność lub przypisanie wymagające dostępu są pomijane i pozostawiają jedno ostrzeżenie w dzienniku.
 
 | Uprawnienie | Dostęp |
 | --- | --- |
-| `screen` | Czytanie ekranu, w tym `sf.screen`, odczyty [elementu](#items), `sf.speech.last()` i rozpoznawanie tekstu. Elementy przekazywane do zdarzeń i poleceń mają bez niego wartość `nil`. Wymagają go `onFocus`, `onAnnouncement`, `onTextChange`, `onContentChange`, `onScroll`, `onSelectionChange`, `onClick`, `onLongClick`, `onInputFocus` i czynności odczytujące tekst elementu. W skrypcie globalnym obejmuje również `sf.app()`, `onAppEnter`, `onAppLeave` i `onWindowChange`. |
-| `actions` | Czynności elementu, zmiana fokusu i tekstu, dotyk, `sf.screen.click`, `sf.touch`, `sf.keys.type`, `sf.keys.press`, `buttonActions` i czynności reguł poza odczytem. |
+| `screen` | Czytanie ekranu, w tym `sf.screen`, odczyty [elementu](#items), `sf.speech.last()` i rozpoznawanie tekstu. Elementy przekazywane do procedur obsługi zdarzeń, poleceń i czynności mają bez tego uprawnienia wartość `nil`. Wymagają go `onFocus`, `onAnnouncement`, `onTextChange`, `onContentChange`, `onScroll`, `onSelectionChange`, `onClick`, `onLongClick`, `onInputFocus` i czynności odczytujące tekst elementu. W skrypcie globalnym obejmuje również `sf.app()`, `onAppEnter`, `onAppLeave` i `onWindowChange`. |
+| `actions` | Czynności elementu, w tym `item:focus()`, `item:setText()`, `item:tap()` i pozostałe operacje dotykowe, `sf.screen.click`, `sf.touch`, `sf.keys.type`, `sf.keys.press`, `buttonActions` i czynności reguł poza odczytem. |
 | `speech` | `sf.speak`, `sf.message`, `sf.speech.stop`, `sf.braille.show`, `sf.feedback.mute`, reguły modyfikujące element, `sf.rules` i zmienianie wypowiedzi, w tym `onSpeech`. |
 | `passwords` | Tekst pól haseł w elementach i zdarzeniach. Bez zgody ma wartość `nil`. |
-| `input` | Przypisania `gesture`, `keys`, `menu`, `control`, `sf.bind`, `sf.unbind`, `navigation`, `sf.commands.run`, `sf.keys.passAll`, `onActions` i czynności w regułach. Od wersji 6 polecenia bez przypisań go nie potrzebują. |
+| `input` | Przypisania `gesture`, `keys`, `menu`, `control`, `sf.bind`, `sf.unbind`, `navigation`, `sf.commands.run`, `sf.keys.passAll`, `onActions` i czynności w regułach. Od wersji 6 polecenia bez własnych przypisań go nie potrzebują. Wcześniej było wymagane dla każdego polecenia. |
 | `network` | `sf.fetch` i `sf.translate`. |
 | `clipboard` | `sf.clipboard`. |
 | `system` | `sf.system`, `sf.resume`, `sf.device.setVolume`, `sf.device.setRingerMode`, `sf.device.set` i `sf.device.media`. |
@@ -176,24 +197,24 @@ Wywołanie bez zgody zgłasza błąd z nazwą uprawnienia. Procedura, reguła, c
 
 Bez uprawnień można odtwarzać dźwięki, tony i wibracje, używać `sf.speech.isSpeaking`, odczytywać informacje o urządzeniu oraz używać danych, ustawień, liczników, `sf.text`, `sf.readFile`, `require`, `sf.commands.list`, dziennika, JSON i lokalizacji. `sf.app()` nie potrzebuje dodatkowej zgody w skrypcie z `apps`.
 
-SandFly oznacza `passwords`, `network`, `clipboard`, `system`, `notifications`, `events`, `dialogs` i `java` jako uprawnienia dla zaufanych skryptów. `navigation` i przypisania poleceń w manifeście wymagają `input`.
+SandFly oznacza `passwords`, `network`, `clipboard`, `system`, `notifications`, `events`, `dialogs` i `java` jako uprawnienia dla zaufanych skryptów. Bez `input` SandFly odrzuci manifest z `navigation` lub z poleceniami zawierającymi własne przypisania `gesture`, `keys`, `menu` albo `control`.
 
 ### Java {#java}
 
-Uprawnienie `java` włącza [moduł LuaJava](https://luajava.iroiro.party/api.html), między innymi `java.import`, `java.new` i `java.proxy`. Kod może wykonywać wywołania Javy z dostępem SandFly w każdej aplikacji. Pozostałe uprawnienia skryptu nie ograniczają wywołań Javy. Potrzebujesz go na przykład do operacji niedostępnych w `sf`, jak udostępnienie pliku innej aplikacji.
+Uprawnienie `java` włącza [moduł LuaJava](https://luajava.iroiro.party/api.html), między innymi `java.import`, `java.new` i `java.proxy`. Kod może wykonywać wywołania Javy z dostępem SandFly w każdej aplikacji. Pozostałe uprawnienia skryptu nie ograniczają wywołań Javy. Potrzebujesz go na przykład do operacji niedostępnych w `sf`, jak zapisanie zrzutu do pliku lub udostępnienie pliku innej aplikacji.
 
 ```lua
 local Build = java.import('android.os.Build')
 sf.speak('This is a ' .. Build.MODEL)
 ```
 
-Gdy skrypt działa, jego stan Lua jest zajęty. Wywołanie metody `java.proxy` z innego wątku poczeka na zakończenie bieżącego wywołania. Skrypt nie powinien czekać synchronicznie na czynność, która potrzebuje wątku głównego SandFly. Po usunięciu skryptu z pamięci metoda obiektu zwraca `nil`, 0 lub `false`. Wcześniej wyrejestruj obiekty w Androidzie, na przykład w `onAppLeave`.
+Gdy skrypt działa, jego stan Lua jest zajęty. Wywołanie metody `java.proxy` z innego wątku poczeka na zakończenie bieżącego wywołania. Skrypt nie powinien czekać synchronicznie na czynność, która potrzebuje wątku głównego SandFly. Po zwolnieniu skryptu z pamięci wywołanie metody obiektu z `java.proxy` nie wykona żadnej czynności. Zwróci `nil`, 0 lub `false`. Wcześniej wyrejestruj obiekty w Androidzie, na przykład w `onAppLeave`.
 
-W skrypcie [ładowanym na żądanie](#scripts-loaded-on-demand) taki obiekt utrzymuje skrypt w pamięci do końca pierwszego wywołania albo przez 30 sekund. Limit to 100 obiektów. Trwale zarejestrowany słuchacz potrzebuje skryptu bez `onDemand`. Tabela lub funkcja przekazana bezpośrednio do metody nie jest liczona do limitu. Gdy potrzebujesz utrzymać skrypt na czas wywołania, użyj `java.proxy`.
+W skrypcie [ładowanym na żądanie](#scripts-loaded-on-demand) taki obiekt utrzymuje skrypt w pamięci do końca pierwszego wywołania albo przez 30 sekund. Może tak czekać najwyżej 100 obiektów jednocześnie. Trwale zarejestrowany słuchacz potrzebuje skryptu bez `onDemand`. Tabela lub funkcja przekazana bezpośrednio do metody nie jest liczona do limitu. Gdy potrzebujesz utrzymać skrypt na czas wywołania, użyj `java.proxy`.
 
 ## Reguły {#rules}
 
-Reguły zmieniają elementy bez wywoływania kodu. Działają także wtedy, gdy skrypt ma inne zajęcie. Zmiany elementu wymagają `speech`, a czynności `input`.
+Reguły zmieniają elementy bez wywoływania kodu. To rozwiązanie nie wymaga uruchamiania skryptu przy każdym odczycie. Reguły działają także wtedy, gdy kod skryptu jest zajęty. Zmiany elementu wymagają `speech`, a czynności `input`.
 
 ```lua
 rules = {
@@ -203,7 +224,12 @@ rules = {
 },
 ```
 
-Wskaż element przez `id`, [zapytanie](#queries) w `match` lub oba pola. `id` może mieć formę krótką, na przykład `send_button`, albo pełną, na przykład `com.example:id/send_button`. `window` zawęża regułę do fragmentu tytułu, bez względu na wielkość liter. `activity` dopasowuje końcówkę nazwy klasy aktywności. Przed wykryciem aktywności reguła nadal może działać, tak jak przy [zasięgu skryptu](#where-a-script-runs).
+Wskaż element przez `id`, `match` lub oba pola.
+
+- `id` to identyfikator widoku, krótki, na przykład `send_button`, lub pełny, na przykład `com.example:id/send_button`.
+- `match` przyjmuje [zapytanie](#queries).
+
+`window` zawęża regułę do fragmentu tytułu, bez względu na wielkość liter. `activity` dopasowuje końcówkę nazwy klasy aktywności. Przed wykryciem aktywności reguła nadal może działać, tak jak przy [zasięgu skryptu](#where-a-script-runs).
 
 Reguła musi zawierać przynajmniej jedną zmianę:
 
@@ -211,23 +237,29 @@ Reguła musi zawierać przynajmniej jedną zmianę:
 | --- | --- | --- |
 | `label` | Tekst | Zastępuje nazwę elementu odczytywaną z aplikacji. |
 | `speak` | Tekst | Zastępuje całą wypowiedź o elemencie, łącznie z nazwą, rolą i stanem. |
-| `hide` | `true` lub `'all'` | Pomija element w nawigacji. `'all'` pomija też zawartość. Skrypt może nadal go kliknąć. |
-| `silence` | `true` lub `'all'` | Wycisza zmiany, zaznaczenia i komunikaty, na przykład zmianę postępu. `'all'` obejmuje też zawartość. Ustawienie fokusu nadal czyta element. |
+| `hide` | `true` lub `'all'` | `true` pomija element przy przesuwaniu fokusu. `'all'` pomija też jego zawartość. Ukryty element nadal jest na ekranie, więc skrypt może go kliknąć. |
+| `silence` | `true` lub `'all'` | `true` wycisza zmiany, zaznaczenia i komunikaty elementu, na przykład aktualizacje paska postępu. `'all'` wycisza także zawartość, na przykład suwak w zgrupowanym wierszu. Po przejściu fokusem na element SandFly nadal go odczytuje. |
 | `role` | Tekst | Zmienia rolę, na przykład na `'button'`. Nieznana wartość powoduje błąd z listą ról. |
-| `state`, `hint` | Tekst | Zmienia stan lub podpowiedź użytkowania. |
-| `heading` | Wartość logiczna | Określa, czy element jest nagłówkiem. |
+| `state` | Tekst | Ustawia stan elementu, na przykład `'Selected'`. |
+| `hint` | Tekst | Ustawia podpowiedź dotyczącą użycia elementu. |
+| `heading` | `true` lub `false` | Określa, czy element jest nagłówkiem. |
 | `group` | `true` | Czyta element i jego zawartość razem. Jeśli element ma własny opis lub tekst, używa go bez tekstów dzieci. |
 | `readBefore`, `readAfter` | ID lub zapytanie | Przesuwa element przed innym albo za nim. Użyj jednego pola. |
 | `activate` | Zapytanie | Wskazuje element wewnętrzny, który uaktywni podwójne stuknięcie, na przykład część wiersza otwierającą wpis. |
-| `liftToActivate` | `true` | Uaktywnia element po uniesieniu palca, niezależnie od ogólnych ustawień. |
+| `liftToActivate` | `true` | Uaktywnia element po uniesieniu palca, tak jak **Aktywowanie po puszczeniu**, niezależnie od stanu tej opcji. |
 | `longPressAfter` | Liczba | Przy `liftToActivate` ustala od 100 do 10 000 ms, po których następuje przytrzymanie. Uniesienie już niczego nie uruchamia. Elementy bez długiego kliknięcia zachowują poprzednią obsługę. |
 | `touchToActivate` | `true` | Dotyka elementu na ekranie, zamiast wysyłać kliknięcie dostępności. Wymaga Androida 11. W starszych wersjach działa zwykłe kliknięcie. |
-| `read` | Lista | Od wersji 6. Wybiera do 12 części do odczytu, oddzielonych przecinkami. |
+| `read` | Lista | Od wersji 6. Zastępuje zwykłą wypowiedź tekstem z maksymalnie 12 części, oddzielonych przecinkami. |
 | `actions` | Lista | Do dziesięciu [czynności](#actions-in-rules) w menu elementu. |
-| `buttonActions` | `true` | Od wersji 6. Dodaje do menu do 20 przycisków, do 8 poziomów w głąb. Nazwą jest opis, tekst lub pierwszy tekst wewnątrz. Przycisk zagnieżdżony w innym pomija się. Wymaga `actions` i `input`. |
+| `buttonActions` | `true` | Od wersji 6. Przy otwieraniu menu **Czynności** dodaje do niego maksymalnie 20 przycisków z elementu, do 8 poziomów w głąb. Nazwą jest opis, tekst lub pierwszy tekst wewnątrz. Przycisk zagnieżdżony w innym pomija się. Wymaga `actions` i `input`. |
 | `skipButtons` | Lista tekstów | Od wersji 6. `buttonActions` pomija przyciski z podanym fragmentem nazwy. Do 20 wpisów, bez rozróżniania wielkości liter. |
 
-Część `read` może wskazać ścieżkę `{ path = { 2, 1 } }` widocznych dzieci w kolejności czytania. Każdy numer liczy się od 1, a ścieżka ma do 12 pozycji. Tę samą kolejność zobaczysz w **Elementy wewnątrz**. Możesz też podać `{ from = query }`, żeby odczytać pierwszy pasujący element wewnątrz. `{ from = {} }` czyta tekst samego elementu. `before` dodaje słowa przed częścią. `fromAbove = true` przy braku tekstu sięga do najbliższego pasującego wpisu spośród czterech nad nim na tej samej liście, na przykład po nadawcę wiadomości.
+Każda część `read` wskazuje źródło tekstu. Może mieć także opcjonalne pola `before` i `fromAbove`.
+
+- `{ path = { 2, 1 } }` wskazuje numery kolejnych dzieci w ścieżce od elementu reguły. Numery zaczynają się od 1 i liczą tylko widoczne elementy w kolejności odczytu. Tę samą kolejność pokazuje **Elementy wewnątrz** po użyciu **Sprawdź element z fokusem**. Ścieżka może zawierać do 12 numerów.
+- `{ from = query }` wskazuje pierwszy pasujący element wewnątrz. `{ from = {} }` odczytuje tekst samego elementu.
+- `before = 'in reply to'` dodaje podane słowa przed częścią.
+- `fromAbove = true` uzupełnia pustą część z najbliższego pasującego spośród czterech elementów wyżej na tej samej liście. Możesz tak na przykład odczytać nadawcę wiadomości.
 
 ```lua
 { id = 'message_row', read = {
@@ -258,17 +290,17 @@ Każda czynność ma `title` i jedno z pól:
 | Pole | Wartość | Działanie |
 | --- | --- | --- |
 | `click`, `longClick` | ID lub zapytanie | Klika lub przytrzymuje. |
-| `touchHold` | ID lub zapytanie | Od wersji 6. Trzyma dotyk przez sekundę, tak jak podwójne stuknięcie i przytrzymanie. Przydaje się, gdy przycisk reaguje na fizycznie przytrzymany dotyk. |
+| `touchHold` | ID lub zapytanie | Od wersji 6. Trzyma dotyk przez sekundę, tak jak podwójne stuknięcie i przytrzymanie. Przydaje się, gdy przycisk reaguje tylko na przytrzymany dotyk, na przykład gdy przycisk polubienia w ten sposób pokazuje reakcje. |
 | `focus` | ID lub zapytanie | Przenosi fokus SandFly. |
 | `scrollForward`, `scrollBackward` | ID lub zapytanie | Przewija element. |
-| `speak` | Tekst albo `{ textOf = item }` | Czyta tekst lub treść elementu. `textOf` wymaga `screen`. |
+| `speak` | Tekst albo `{ textOf = item }` | Czyta podany tekst lub treść elementu określonego identyfikatorem albo zapytaniem. `textOf` wymaga `screen`. |
 | `steps` | Lista | Od wersji 6. Do dziesięciu kroków wykonywanych po kolei. |
 
-Wszystkie poza `speak` wymagają `actions`. Od wersji 5 możesz dodać `first = true`, żeby czynność pojawiała się przed pozycjami aplikacji. Domyślnie pojawia się po nich.
+Wszystkie poza `speak` wymagają `actions`. Od wersji 5 możesz dodać `first = true`, żeby czynność pojawiała się przed czynnościami aplikacji, na przykład `{ title = 'Archive', click = 'archive_button', first = true }`. Domyślnie czynności skryptu pojawiają się po czynnościach aplikacji.
 
 SandFly najpierw szuka wewnątrz elementu, do którego należy menu, potem w całym oknie. Jeśli znajduje na przykład napis przycisku, idzie do najbliższego rodzica obsługującego działanie, do sześciu poziomów wyżej. Gdy nie ma dopasowania, odtwarza dźwięk i wpisuje ostrzeżenie do dziennika. Jeśli w każdym wierszu jest taki sam przycisk, użyj [onActions](#hooks) i wyszukiwania od wiersza, żeby uniknąć kliknięcia pierwszego przycisku z okna.
 
-Każdy krok może użyć `click`, `longClick`, `touchHold`, `focus`, `scrollForward` lub `scrollBackward`. Wartością jest zapytanie, lista do sześciu kolejnych prób albo `{}` dla samego elementu czynności. Domyślne `where = 'item'` szuka wewnątrz niego. `where = 'screen'` szuka w oknach aplikacji, na przykład w menu z poprzedniego kroku. SandFly zamyka własne menu i czeka do 2 sekund na każdy krok. Po niepowodzeniu odtwarza dźwięk i naciska Wstecz, jeśli wcześniejszy krok się wykonał.
+Od wersji 6 krok w `steps` ma postać `{ click = item, where = 'item' }`. Zamiast `click` możesz podać `longClick`, `touchHold`, `focus`, `scrollForward` lub `scrollBackward`. Wartością jest zapytanie, lista do sześciu kolejnych prób albo `{}` dla samego elementu czynności. Domyślne `where = 'item'` szuka wewnątrz niego. `where = 'screen'` szuka w oknach aplikacji, na przykład w menu z poprzedniego kroku. SandFly zamyka własne menu i czeka do 2 sekund na każdy krok. Po niepowodzeniu odtwarza dźwięk i naciska Wstecz, jeśli wcześniejszy krok się wykonał.
 
 ```lua
 { title = 'Add to queue', steps = {
@@ -279,11 +311,11 @@ Każdy krok może użyć `click`, `longClick`, `touchHold`, `focus`, `scrollForw
 
 ### Jak sprawdzić dane elementu {#find-the-details-of-an-item}
 
-W kategorii **Ustawienia programisty** na ekranie **Polecenia** znajdziesz trzy przydatne działania. Możesz przypisać im gest albo dodać do menu.
+Do napisania reguły lub zapytania potrzebujesz identyfikatora, klasy, roli i tekstów elementu. Pokazują je trzy pozycje w kategorii **Ustawienia programisty** na ekranie **Polecenia**. Możesz przypisać im gest albo dodać je do menu SandFly.
 
-- **Sprawdź element z fokusem** otwiera **Szczegóły elementu**. W sekcji **Elementy wewnątrz** zobaczysz poziom (1 to bezpośrednie dzieci), klasę, klikalność i teksty w kolejności czytania.
+- **Sprawdź element z fokusem** otwiera **Szczegóły elementu**. W **Elementy wewnątrz** znajdziesz listę zawartości elementu w kolejności odczytu. Przy każdej pozycji zobaczysz poziom, klasę, klikalność i teksty. Poziom 1 oznacza bezpośrednie dzieci. Dzięki tym danym możesz odróżnić zwykły tekst od przycisku z takim samym napisem.
 - **Kopiuj szczegóły elementu** kopiuje te dane do schowka.
-- **Kopiuj drzewo ekranu** kopiuje aplikację, aktywność i tytuł okna, a następnie jeden wiersz na element. Zawiera poziom, klasę, ID, rolę, stany, tekst, nazwane działania i pasujące reguły. Poziom 0 to korzeń. Rodzicem jest najbliższy wcześniejszy wiersz o niższym poziomie.
+- **Kopiuj drzewo ekranu** kopiuje drzewo wszystkich elementów okna. Na początku podaje aplikację, aktywność i tytuł okna. Potem zapisuje po jednym wierszu na element, zawsze przed jego dziećmi. Każdy wiersz podaje poziom, klasę, ID, rolę, stany, teksty, nazwane działania i pasujące reguły skryptów. Przykład to `level 5: Button; id: send; clickable, focusable; description: Send`. Poziom 0 to najwyższy element okna. Rodzicem pozycji jest najbliższy wcześniejszy wiersz o niższym poziomie.
 
 ## Zapytania {#queries}
 
@@ -292,20 +324,21 @@ Zapytania służą do wyszukiwania w regułach, nawigacji i kodzie. Podaj ID jak
 | Pole | Dopasowanie |
 | --- | --- |
 | `id` | Identyfikator widoku. Krótkie `send` pasuje do końcówki po `:id/`. ID zawierające dwukropek wymaga pełnej zgodności. |
-| `text`, `contentDescription` | Dokładny tekst lub opis. |
+| `text` | Dokładny tekst elementu. |
+| `contentDescription` | Dokładny opis zawartości. |
 | `textContains` | Fragment tekstu lub opisu, niezależnie od wielkości liter. |
 | `className` | Końcówka klasy. `'Button'` pasuje do `android.widget.Button`. |
-| `role` | Rola z klasy elementu, na przykład `'button'` lub `'check_box'`. |
-| `clickable` | Wartość logiczna. |
+| `role` | Rola wynikająca z klasy elementu, tak jak w polu `role` obiektu, na przykład `'button'` lub `'check_box'`. |
+| `clickable` | `true` lub `false`. |
 | `parentId` | Krótkie lub pełne ID rodzica. |
-| `inside` | Jeden z przodków musi pasować do podanego zapytania. Na przykład `{ className = 'Button', inside = { textContains = 'play video' } }` pasuje do przycisków w wierszu filmu. W środku nie można użyć `inside` ani `has`. Od wersji 2 można podać do czterech zapytań. Każde musi pasować do któregoś z przodków. |
-| `has` | Sprawdza, czy pasuje któryś z elementów wewnątrz, do sześciu poziomów i 60 pozycji, od najbliższych. W środku nie można użyć `has` ani `inside`. Od wersji 6 `hasDepth` ustawia od 1 do 6 poziomów. Wartość 1 sprawdza tylko bezpośrednie dzieci. |
+| `inside` | Jeden z przodków musi pasować do podanego zapytania. Na przykład `{ className = 'Button', inside = { textContains = 'play video' } }` pasuje do przycisków wewnątrz wiersza filmu. Sam wiersz nie pasuje. W środku nie można użyć `inside` ani `has`. Od wersji 2 możesz podać listę do czterech zapytań. Każde musi pasować do któregoś z przodków. Na przykład `{ clickable = true, inside = { { clickable = true }, { id = 'results' } } }` wybiera klikalne elementy wewnątrz innych klikalnych elementów na liście `results`. Pomija same wiersze listy. |
+| `has` | Sprawdza, czy pasuje któryś z elementów wewnątrz, do sześciu poziomów i 60 pozycji, od najbliższych. Na przykład `{ parentId = 'results', has = { textContains = 'Subscribe to' } }` znajduje wiersz listy zawierający przycisk subskrypcji. W środku nie można użyć `has` ani `inside`. Od wersji 6 `hasDepth` ogranicza szukanie do od 1 do 6 poziomów. Wartość 1 sprawdza tylko bezpośrednie dzieci, dzięki czemu może pasować sam wiersz, a zawierająca całą listę karta już nie. |
 | `checkable`, `checked`, `longClickable`, `focusable`, `focused`, `selected`, `enabled`, `editable`, `scrollable`, `visible`, `heading`, `password` | Od wersji 2. Wartości logiczne, na przykład `{ className = 'CheckBox', checked = false }` dla niezaznaczonych pól. |
 | `hint`, `stateDescription` | Od wersji 6. Dokładna podpowiedź lub opis stanu. |
-| `contains` | Od wersji 6. Fragment tekstu, opisu, podpowiedzi, stanu lub dymka. Wielkość liter nie ma znaczenia. Użyj `field`, żeby sprawdzać tylko jedno pole. |
-| `matches` | Od wersji 6. Wyrażenie regularne dopasowane we wskazanych polach bez względu na wielkość liter. Sprawdza do 1000 znaków. Powtarzane grupy nie mogą zawierać powtórzeń ani alternatyw. |
-| `field` | Od wersji 6. Zawęża `contains` i `matches` do `'text'`, `'contentDescription'` lub `'description'`, `'hint'`, `'stateDescription'` lub `'state'`, `'tooltip'` albo `'id'`. Przy ID dopasowanie obejmuje nazwę z pakietem i bez pakietu. |
-| `kind` | Od wersji 6. Jeden lub kilka typów jak w makrach. Dozwolone są `'clickable'`, `'longClickable'`, `'editable'`, `'scrollable'`, `'adjustable'`, `'checkable'`, `'checked'`, `'selected'`, `'heading'`, `'enabled'`. Typy klikalne sięgają do przodków, najwyżej sześć poziomów. `'scrollable'` sprawdza czynność przewinięcia, a `'adjustable'` suwak lub pasek postępu. |
+| `contains` | Od wersji 6. Fragment tekstu, opisu zawartości, podpowiedzi, stanu lub dymka. Wielkość liter nie ma znaczenia. Działa jak **Dowolny tekst** w teście makra. Użyj `field`, żeby sprawdzać tylko jedno pole. |
+| `matches` | Od wersji 6. Szuka wyrażenia regularnego w tekście, opisie zawartości, podpowiedzi, stanie lub dymku. Wielkość liter nie ma znaczenia, tak jak przy polu **Wyrażenie regularne** w teście makra. Przy `field` szuka tylko we wskazanym polu. Na przykład `{ matches = '^new post$', field = 'contentDescription' }` pasuje do elementu, którego cały opis to „New post”. Powtarzane grupy nie mogą zawierać powtórzeń ani alternatyw (`\|`). W każdym polu sprawdzane jest tylko pierwsze 1000 znaków. |
+| `field` | Od wersji 6. Zawęża `contains` i `matches` tak jak opcja **Dopasuj w** w teście makra. Przyjmuje `'text'`, `'contentDescription'` lub `'description'`, `'hint'`, `'stateDescription'` lub `'state'`, `'tooltip'` albo `'id'`. Identyfikator jest porównywany z nazwą pakietu i bez niej. Na przykład `'^send$'` pasuje do `com.example:id/send`. |
+| `kind` | Od wersji 6. Typ elementu z testu makra lub lista typów, z których wszystkie muszą pasować. Dozwolone są `'clickable'`, `'longClickable'`, `'editable'`, `'scrollable'`, `'adjustable'`, `'checkable'`, `'checked'`, `'selected'`, `'heading'`, `'enabled'`. Typy klikalne sięgają do przodków, najwyżej sześć poziomów. `'scrollable'` sprawdza czynność przewinięcia, a `'adjustable'` suwak lub pasek postępu. Na przykład `{ contains = 'new post', field = 'description', kind = 'clickable' }` odpowiada testowi makra szukającemu klikalnego elementu z „new post” w opisie. |
 
 `contains` i `matches` pomijają białe znaki przy krawędziach. Pozostałe pola tekstowe porównują bez przycinania. Zapytanie w manifeście musi zawierać przynajmniej jedno pole. Błędny `kind`, `field` lub wzorzec w kodzie powoduje błąd w chwili użycia.
 
@@ -322,7 +355,7 @@ Obsługa zdarzeń, polecenia, czynności i `sf.screen` przekazują migawkę elem
 | `windowId`, `childCount` | Liczby. |
 | `bounds` | `{ left, top, right, bottom }` w pikselach ekranu. |
 | `selectionStart`, `selectionEnd` | Granice zaznaczenia od 0 albo -1. |
-| `checkable`, `checked`, `clickable`, `longClickable`, `focusable`, `focused`, `accessibilityFocused`, `selected`, `enabled`, `editable`, `password`, `scrollable`, `visible`, `heading` | Wartości logiczne. `focused` to fokus klawiatury, a `accessibilityFocused` to fokus SandFly. |
+| `checkable`, `checked`, `clickable`, `longClickable`, `focusable`, `focused`, `accessibilityFocused`, `selected`, `enabled`, `editable`, `password`, `scrollable`, `visible`, `heading` | `true` lub `false`. `focused` to fokus klawiatury, a `accessibilityFocused` to fokus SandFly. |
 | `actions` | Lista `{ id, label }` dla czynności z etykietą lub znanych metodzie `item:perform`. |
 | `roleDescription` | Od wersji 2. Rola podana przez aplikację, na przykład `"tab"` na stronie. |
 | `error` | Od wersji 2. Tekst błędu pola. |
@@ -343,23 +376,25 @@ Te metody wymagają `screen`.
 
 - `item:parent()` zwraca rodzica lub `nil`.
 - `item:children()` zwraca listę bezpośrednich dzieci. `item:child(index)` wybiera dziecko według numeru od 1.
-- `item:find(query)` szuka pierwszego dopasowania w elemencie i jego zawartości. `item:findAll(query, limit)` zwraca listę, domyślnie do 50, maksymalnie do 200 pozycji.
+- `item:find(query)` zwraca pierwszy element pasujący do [zapytania](#queries). Przeszukuje element i całą jego zawartość. Jeśli brak dopasowania, zwraca `nil`. `item:findAll(query, limit)` zwraca listę maksymalnie `limit` dopasowań. Domyślnie jest to 50, a maksymalna wartość to 200.
 - `item:refresh()` pobiera nową migawkę lub zwraca `nil`, jeśli element zniknął.
 - Od wersji 2 `item:labeledBy()` wskazuje element etykiety, a `item:labelFor()` element opisywany przez tę etykietę. Jeśli go nie ma, zwraca `nil`.
 - Od wersji 2 `item:recognizeText()` [rozpoznaje tekst](#recognizing-text) w obszarze elementu.
 
 ### Wykonywanie czynności na elemencie {#acting-on-an-item}
 
-Te metody wymagają `actions`. Jeśli mogą [poczekać](#waiting), zwracają `true` lub `false`. W wywołaniu, które musi odpowiedzieć od razu, wykonują działanie i zwracają `nil`.
+Te metody wymagają `actions`. Jeśli mogą [poczekać](#waiting), zwracają `true` lub `false`. W wywołaniu, które musi odpowiedzieć od razu, na przykład w procedurze mowy, wykonują działanie i zwracają `nil`.
 
 - `item:click()`, `item:longClick()`, `item:scrollForward()`, `item:scrollBackward()` klikają, przytrzymują i przewijają.
 - Od wersji 2 `item:showOnScreen()`, `item:expand()`, `item:collapse()`, `item:dismiss()` pokazują, rozwijają, zwijają i odrzucają.
-- `item:focus()` przenosi fokus, a `item:setText(text)` zastępuje tekst pola.
+- `item:focus()` przenosi fokus SandFly na element.
+- `item:setText(text)` zastępuje tekst w polu edycji.
 - Od wersji 2 `item:setSelection(start, end)` zaznacza tekst od pozycji liczonych od 0. Bez `end` przesuwa sam kursor.
-- Od wersji 2 `item:moveCursor(unit, direction, extend)` przechodzi po `'character'` (domyślnie), `'word'`, `'line'`, `'paragraph'` lub `'page'`, w kierunku `'next'` lub `'previous'`. `extend = true` zaznacza mijany tekst.
-- Od wersji 2 `item:setProgress(value)` ustawia wartość od `range.min` do `range.max`. `item:scrollTo(row, column)` przewija do wiersza i kolumny od 1.
-- Od wersji 2 `item:nextHtmlElement(element, direction)` przechodzi po wybranym rodzaju elementu WWW, na przykład `'HEADING'`, `'LINK'`, `'BUTTON'`, `'LANDMARK'` albo `'TABLE'`.
-- Od wersji 2 `item:tap()`, `item:doubleTap()` i `item:longPress(ms)` dotykają środka elementu w sposób opisany w [sekcji o dotyku](#touch-and-keys). Domyślne przytrzymanie to 1000 ms. Element bez położenia na ekranie powoduje błąd.
+- Od wersji 2 `item:moveCursor(unit, direction, extend)` przechodzi po `'character'` (domyślnie), `'word'`, `'line'`, `'paragraph'` lub `'page'`, w kierunku `'next'` (domyślnie) lub `'previous'`. `extend = true` zaznacza mijany tekst.
+- Od wersji 2 `item:setProgress(value)` ustawia wartość suwaka od `range.min` do `range.max`.
+- Od wersji 2 `item:scrollTo(row, column)` przewija listę lub siatkę do wskazanego wiersza i kolumny. Numeracja zaczyna się od 1.
+- Od wersji 2 `item:nextHtmlElement(element, direction)` przechodzi do następnego lub poprzedniego elementu określonego rodzaju w treści WWW, na przykład `'HEADING'`, `'LINK'`, `'BUTTON'`, `'LANDMARK'` albo `'TABLE'`.
+- Od wersji 2 `item:tap()`, `item:doubleTap()` i `item:longPress(ms)` dotykają środka elementu tak, jak zrobiłby to palec. Użyj ich dla elementów bez czynności kliknięcia. Domyślny czas `ms` to 1000 milisekund. Metody działają tak samo jak [`sf.touch`](#touch-and-keys). Przekazanie elementu, który nie ma położenia na ekranie, zgłasza błąd.
 
 `item:perform(action, args)` wybiera czynność przez nazwę, numer lub etykietę własnej czynności. Etykieta pomija wielkość liter.
 
@@ -374,7 +409,7 @@ if field then
 end
 ```
 
-SandFly pamięta do 500 ostatnio używanych elementów. Użycie starszego daje błąd o niedostępnym elemencie.
+SandFly pamięta do 500 ostatnio używanych elementów. Użycie starszego elementu powoduje błąd „That item is no longer available”.
 
 ## Oczekiwanie na wynik {#waiting}
 
@@ -390,7 +425,12 @@ sf.onCommand('delete', function()
 end)
 ```
 
-W procedurze, która musi odpowiedzieć natychmiast, takiej jak `onFocus`, czynności, dotyk, klawisze, polecenia, `sf.device.set`, `sf.system.openApp`, działania systemowe i `sf.playSound` wykonają się i zwrócą `nil`. Inne wywołania oczekujące spowodują błąd. Użyj `sf.run(function() ... end)`, żeby przenieść operację do zadania.
+Jeśli procedura musi odpowiedzieć natychmiast, tak jak `onFocus`, wywołania zachowują się na dwa sposoby.
+
+- Czynności elementów, dotyk, klawisze, `sf.commands.run`, `sf.device.set`, `sf.system.openApp`, działania systemowe i `sf.playSound` nadal wykonują działanie i zwracają `nil`.
+- Pozostałe wywołania oczekujące zgłaszają błąd „This waits for an answer, so call it from an event handler, a command, a timer or sf.run”.
+
+Użyj `sf.run(function() ... end)`, żeby wykonać operację oczekującą w zadaniu.
 
 ## Obsługa zdarzeń {#hooks}
 
@@ -405,7 +445,7 @@ stop() -- removes it
 | --- | --- | --- | --- |
 | `sf.onFocus` | Przed odczytaniem elementu, na którym jest fokus. | Element i planowany tekst. | `screen` |
 | `sf.onSpeech` | Przed wypowiedzią SandFly. | Tekst. | `speech` |
-| `sf.onNotification` | Przed odczytem powiadomienia lub krótkiego komunikatu Androida. | `{ package, toast, title, text, category }` i tekst odczytu. `toast` oznacza krótki komunikat. | `notifications` |
+| `sf.onNotification` | Przed odczytem powiadomienia lub krótkiego komunikatu Androida. | `{ package, toast, title, text, category }` i tekst odczytu. `toast` ma wartość `true` dla krótkiego komunikatu typu toast. | `notifications` |
 | `sf.onAnnouncement` | Przed komunikatem aplikacji obsługiwanej przez skrypt. | `{ package, text }` i tekst odczytu. | `screen` |
 | `sf.onAppEnter`, `sf.onAppLeave` | Przy ładowaniu i usuwaniu skryptu, a globalnie także przy zmianie aplikacji na pierwszym planie. | `{ package, activity, window, meta }`, jak z `sf.app()` bez `label`. | `screen` w skrypcie globalnym |
 | `sf.onWindowChange` | Przy otwarciu lub zmianie okna. | `{ package, activity, window, meta }`. | `screen` w skrypcie globalnym |
@@ -459,7 +499,7 @@ SandFly czeka łącznie do 30 ms, a po przekroczeniu czasu czyta bez zmian. Proc
 
 ## Polecenia {#commands}
 
-Zadeklaruj polecenie w manifeście i dodaj obsługę w kodzie. Użytkownik może je wywołać gestem, klawiszami, z menu, ze sterowania czytaniem albo przez własne przypisanie.
+Zadeklaruj polecenie w manifeście i dodaj obsługę w kodzie. Użytkownik może je wywołać gestem, klawiszami, z menu SandFly, ze sterowania czytaniem albo przez własne przypisanie na ekranie **Polecenia**.
 
 ```lua
 commands = {
@@ -472,14 +512,14 @@ commands = {
 
 | Pole | Zastosowanie |
 | --- | --- |
-| `id` | Wymagany i unikatowy w skrypcie. Do 64 liter, cyfr, kropek, myślników i podkreśleń. |
+| `id` | Wymagany i unikatowy w skrypcie. Do 64 liter, cyfr, kropek (`.`), łączników (`-`) i podkreśleń (`_`). |
 | `title` | Wymagana nazwa pokazywana na ekranie **Polecenia**, w menu i przy sterowaniu czytaniem. |
 | `gesture` | Nazwa [gestu](#gestures) lub lista nazw. |
 | `keys` | [Klawisze](#keys) lub ich lista. |
 | `menu` | `true` dodaje do menu SandFly. |
 | `control` | `true` dodaje do sterowania czytaniem. Ruch w górę lub w dół wywołuje polecenie z `direction` równym `'previous'` lub `'next'`. |
 
-`gesture`, `keys`, `menu` i `control` wymagają `input`. Od wersji 6 samo `id` i `title` można zadeklarować bez tej zgody. Skrypt nadal podaje uprawnienia potrzebne do wykonania zadania. Manifest mieści do 50 poleceń.
+`gesture`, `keys`, `menu` i `control` wymagają `input`. Od wersji 6 polecenie zawierające tylko `id` i `title` nie potrzebuje tego uprawnienia. Wcześniej wymagało go każde polecenie. Skrypt wykonujący zadanie po użyciu polecenia, na przykład włączający latarkę, deklaruje tylko uprawnienia potrzebne do wykonania zadania. Manifest mieści do 50 poleceń.
 
 `sf.onCommand(id, fn)` rejestruje procedurę i zwraca funkcję do usunięcia przypisania. ID spoza manifestu powoduje błąd. Dopiero zarejestrowana procedura wykonuje polecenie.
 
@@ -496,9 +536,11 @@ Rekord zdarzenia zawiera:
 - `direction` równe `'next'` albo `'previous'` przy sterowaniu czytaniem, w pozostałych przypadkach `nil`,
 - `node`, czyli element, na którym jest fokus lub na którym otwarto menu. Bez `screen` jest to `nil`.
 
-Zwróć `false` przed czekaniem na jakikolwiek wynik, żeby SandFly wykonał standardowe przypisanie gestu lub klawiszy. Skróty skryptu mają pierwszeństwo przed zwykłymi przypisaniami. Wyjątkiem jest gest **Włącz lub wyłącz wszystkie skrypty**. Przy konflikcie pierwszeństwo ma skrypt aplikacji, a później kolejność ze strony skryptów. Użytkownik może wyłączyć lub zmienić przypisanie na stronie skryptu.
+Zwróć `false` przed czekaniem na jakikolwiek wynik, żeby SandFly wykonał standardowe przypisanie gestu lub klawiszy. Skróty skryptu mają pierwszeństwo przed zwykłymi przypisaniami. Wyjątkiem jest gest **Włącz lub wyłącz wszystkie skrypty**. Gdy dwa skrypty używają tego samego gestu lub klawiszy, pierwszeństwo mają skrypty aplikacji. Później liczy się kolejność ustawiona przez **Uruchamiaj wcześniej** i **Uruchamiaj później** na stronach skryptów. Użytkownik może na stronie skryptu wyłączyć lub zmienić każdy gest i skrót.
 
-Od wersji 4 wszystkie polecenia włączonego skryptu widać w **Polecenia** > **Skrypty**. Użytkownik może je przypisać tak jak działania SandFly. Takie powiązania mają `event.via = 'command'` i nie pojawiają się na stronie skryptu. SandFly poinformuje, jeśli polecenie zostanie wybrane, gdy skrypt nie działa na bieżącym ekranie.
+Od wersji 4 wszystkie polecenia włączonego skryptu pojawiają się w **Polecenia** > **Skrypty**. Każda pozycja zawiera nazwę skryptu i polecenia, na przykład **Hello: Say hello**. Tak jak przy poleceniach SandFly użytkownik może przypisać pozycję do gestu lub skrótu, dodać ją do menu SandFly, własnego menu lub własnej opcji sterowania czytaniem albo przypisać do gestu w aplikacji. Takie przypisania mają `event.via = 'command'` i nie pojawiają się na stronie skryptu.
+
+Jeśli polecenie uruchomi się przy wyłączonym skrypcie, poza aplikacjami, w których ten działa, albo na ekranie SandFly, usłyszysz komunikat o niedostępności skryptu na tym ekranie.
 
 ### Skróty klawiszowe {#keys}
 
@@ -506,15 +548,15 @@ Podaj jedną kombinację albo dwie oddzielone przecinkiem. Elementy kombinacji �
 
 - `sf` to klawisz SandFly. Od wersji 2 można go pominąć.
 - Modyfikatory to `shift`, `ctrl` lub `control`, `alt` i `meta` lub `search`.
-- Używaj liter, cyfr, symboli, nazw Androida bez `KEYCODE_` albo nazw `up`, `down`, `left`, `right`, `backspace`, `delete`, `esc`, `home`, `end`, `pageup`, `pagedown` i `return`.
+- Możesz podać literę, cyfrę lub jeden z symboli (`.`, `/`, `;`, `'`, `-`, `=`, `[`, `]`, `\` lub znak grawisu). Możesz też użyć nazwy klawisza Androida bez prefiksu `KEYCODE_`, na przykład `space`, `enter`, `tab` lub `f5`, albo jednej z nazw `up`, `down`, `left`, `right`, `backspace`, `delete`, `esc`, `home`, `end`, `pageup`, `pagedown` i `return`.
 
-Przykłady to `'sf+shift+n'`, `'sf+t, s'`, `'k'`, `'shift+n'`, `'space'` i `'t, s'`. `sf` może być tylko w pierwszej kombinacji. Po pierwszej części SandFly gra dźwięk i czeka 3 sekundy. Niepasujący drugi klawisz oznajmia innym dźwiękiem.
+Przykłady to `'sf+shift+n'`, `'sf+t, s'`, `'k'`, `'shift+n'`, `'space'` i `'t, s'`. `sf` może być tylko w pierwszej kombinacji. Po pierwszej części SandFly gra dźwięk i czeka 3 sekundy. Jeśli drugi klawisz nie uruchamia żadnego polecenia, SandFly odtwarza inny dźwięk.
 
-Od wersji 2 skróty bez `sf` są pomijane w polu edycji. Poza nim SandFly czeka na procedurę do 30 ms. Aby klawisz trafił do aplikacji, procedura musi w tym czasie zwrócić `false` bez oczekiwania. Przytrzymanie powtarza polecenie przy każdym powtórzeniu klawisza. Włączona nawigacja strzałkami ma pierwszeństwo dla strzałek.
+Od wersji 2 skróty bez `sf` są pomijane w polu edycji. Poza nim SandFly czeka na procedurę do 30 ms. Żeby klawisz trafił do aplikacji, procedura musi w tym czasie zwrócić `false`, zanim zacznie czekać na wynik. Po tym czasie `false` nie przekaże już klawisza do aplikacji. Przytrzymanie powtarza polecenie przy każdym powtórzeniu klawisza. Włączona nawigacja strzałkami ma pierwszeństwo dla strzałek.
 
 ### Przypisywanie gestów i klawiszy w kodzie {#assign-gestures-and-keys-from-code}
 
-`sf.bind(command, assignment)` dodaje, a `sf.unbind(command, assignment)` usuwa przypisanie. Podaj `{ gesture = name }` albo `{ keys = keys }`. Zmiana jest trwała i widać ją na stronie skryptu. Funkcje wymagają `input`. Nieobsługiwany skrót, nieznane polecenie lub tryb ładowania na żądanie powodują błąd.
+`sf.bind(command, assignment)` dodaje, a `sf.unbind(command, assignment)` usuwa przypisanie. Podaj `{ gesture = name }` albo `{ keys = keys }`. Zmiana jest trwała i widać ją na stronie skryptu. Funkcje wymagają `input`. Funkcje zgłaszają błąd przy nieznanym geście lub skrócie, poleceniu niezadeklarowanym w manifeście albo skrypcie ładowanym na żądanie.
 
 ```lua
 sf.bind('unread', { gesture = 'twoFingerSwipeUpThenRight' })
@@ -533,14 +575,14 @@ Każdy wpis dodaje opcję sterowania czytaniem o nazwie `title`. Ruch w górę l
 
 ## Mowa, dźwięk i wibracje {#speech-sound-and-vibration}
 
-**`sf.speak(text, options)`** czyta tekst. Opcje:
+**`sf.speak(text, options)`** odczytuje `text`. W rekordzie `options` możesz podać poniższe pola.
 
-- `interrupt` (domyślnie `false`) przerywa obecny odczyt. Bez tego wypowiedź czeka w kolejce.
+- `interrupt` to wartość logiczna, domyślnie `false`. Gdy ustawisz `true`, funkcja przerywa obecny odczyt. Bez tego wypowiedź czeka w kolejce.
 - `rate` i `pitch` mnożą ustawienia użytkownika przez 0,25 do 4. Domyślnie jest to 1.
-- `language` podaje znacznik języka, na przykład `'de'`.
-- `wait` [czeka](#waiting) na zakończenie. Zwraca `true` przy pełnym odczycie albo `false` po przerwaniu, wyciszeniu lub upływie 2 minut.
+- `language` określa język tekstu. Podaj znacznik, na przykład `'de'`.
+- Gdy ustawisz `wait` na `true`, funkcja [czeka](#waiting) na zakończenie. Zwraca `true` przy pełnym odczycie albo `false` po przerwaniu, wyciszeniu lub upływie 2 minut.
 
-Funkcja działa podczas odtwarzania, rozmowy, nagrywania przez inną aplikację i dyktowania. Przy wyciszonej mowie nic nie wypowiada. Potrzebuje `speech`.
+Funkcja działa podczas odtwarzania multimediów, rozmowy telefonicznej, nagrywania mikrofonem przez inną aplikację i dyktowania. Przy wyciszonej mowie nic nie wypowiada. Potrzebuje `speech`.
 
 ```lua
 -- In a command: wait for Done to be said, then play a sound.
@@ -553,16 +595,18 @@ if sf.speak('Done', { wait = true }) then sf.playSound('end') end
 | `sf.message(text, options)` | Od wersji 2. Czyta i pokazuje tekst na podłączonym monitorze brajlowskim. Domyślnie `interrupt` to `true`. Wymaga `speech`. |
 | `sf.speech.stop()` | Od wersji 2. Zatrzymuje mowę. Wymaga `speech`. |
 | `sf.speech.isSpeaking()` | Od wersji 2. Sprawdza, czy SandFly mówi. |
-| `sf.speech.last()` | Od wersji 2. Czeka na ostatnią wypowiedź lub zwraca `nil`. Wymaga `screen`. |
-| `sf.braille.show(text)` | Od wersji 2. Pokazuje do 1000 znaków na monitorze tak jak komunikat. Wymaga `speech`. |
-| `sf.playSound(name)` | Odtwarza nazwany dźwięk lub plik pakietu, na przykład `'sounds/chime.wav'`. W zadaniu zwraca wynik i czeka na zakończenie pliku. |
-| `sf.playTone(frequency, ms, options)` | Sinusoida. Domyślnie 440 Hz przez 100 ms. `options.volume` od 0 do 1, domyślnie 0,5. |
+| `sf.speech.last()` | Od wersji 2. [Czeka na wynik](#waiting) i zwraca tekst ostatniej wypowiedzi SandFly lub `nil`. Wymaga `screen`. |
+| `sf.braille.show(text)` | Od wersji 2. Przez chwilę pokazuje do 1000 znaków na podłączonym monitorze, tak jak SandFly pokazuje komunikaty. Wymaga `speech`. |
+| `sf.playSound(name)` | Odtwarza nazwany dźwięk lub plik pakietu, na przykład `'sounds/chime.wav'`. W zadaniu zwraca informację, czy dźwięk został odtworzony. W przypadku pliku czeka na koniec odtwarzania. |
+| `sf.playTone(frequency, ms, options)` | Odtwarza ton sinusoidalny. `frequency` podaj w hercach, domyślnie 440. `ms` to czas w milisekundach, domyślnie 100. `options.volume` ma zakres od 0 do 1, domyślnie 0,5. |
 | `sf.playAudio(samples, options)` | Odtwarza próbki od -1 do 1, do 10 sekund. `options.sampleRate` od 8000 do 48 000, domyślnie 22 050. `options.volume` od 0 do 1, domyślnie 1. |
-| `sf.vibrate(pattern)` | Czas w ms, domyślnie 50, albo lista do 20 czasów wibracji i przerw na zmianę. Pojedynczy czas to do 2000 ms, suma do 5000 ms. |
+| `sf.vibrate(pattern)` | Czas w ms, domyślnie 50, albo lista do 20 wartości określających na przemian wibrację i przerwę. Pierwsza wartość to czas wibracji. Pojedynczy czas to do 2000 ms, suma do 5000 ms. |
 
-Nazwy wbudowanych dźwięków to `focus`, `actionable`, `click`, `longClick`, `scroll`, `listEnter`, `listExit`, `end`, `enter`, `typo` i `beep`. Dźwięki, tony i wibracje działają bez uprawnień i stosują ustawienia SandFly. Są pomijane przy wstrzymaniu lub wyciszeniu. Do czterech plików, tonów i strumieni próbek może grać równocześnie.
+Nazwy wbudowanych dźwięków to `focus`, `actionable`, `click`, `longClick`, `scroll`, `listEnter`, `listExit`, `end`, `enter`, `typo` i `beep`. Dźwięki, tony i wibracje nie wymagają uprawnień. Stosują ustawienia **Sygnał dźwiękowy** i **Sygnał wibracyjny**. Podczas wstrzymania lub wyciszenia SandFly nie są odtwarzane. Skrypt może odtwarzać równocześnie maksymalnie cztery pliki, tony i strumienie próbek. Następne są pomijane.
 
-Od wersji 6 `sf.feedback.mute(what, ms)` wycisza mowę, dźwięki lub wibracje do 10 000 ms. W rekordzie `what` ustaw co najmniej jedno z `speech`, `sounds`, `vibration` na `true`. Trwająca mowa zostaje przerwana. Nowe sygnały są pomijane, także ze skryptu. Uprawnienie `speech` jest wymagane. Wywołaj `release()` na zwróconym uchwycie albo `sf.feedback.unmute()`, żeby zakończyć wyciszenie własnego skryptu.
+Od wersji 6 `sf.feedback.mute(what, ms)` wycisza mowę, dźwięki lub wibracje do 10 000 ms. W rekordzie `what` ustaw co najmniej jedno z `speech`, `sounds`, `vibration` na `true`. Trwająca mowa zostaje przerwana. W czasie wyciszenia nowe wypowiedzi, dźwięki i wibracje są pomijane. Dotyczy to również `sf.speak` i dźwięków samego skryptu. Nic z tego nie trafia do kolejki. Uprawnienie `speech` jest wymagane. Wywołaj `release()` na zwróconym uchwycie, żeby zakończyć wyciszenie.
+
+Od wersji 6 `sf.feedback.unmute()` kończy wyciszenie rozpoczęte przez ten skrypt.
 
 Wyciszenie kończy się również po usunięciu skryptu lub błędzie, zmianie aplikacji oraz dotknięciu, geście lub klawiszu użytkownika. Działania skryptu go nie kończą. Kolejne wyciszenie zastępuje poprzednie. Wyciszenie na ekranie SandFly jest niedostępne.
 
@@ -588,14 +632,14 @@ Wywołania wymagają `screen` i działają na aktywnym oknie aplikacji. Na ekran
 | `sf.screen.find(query)` | Pierwsze [dopasowanie](#queries) albo `nil`. |
 | `sf.screen.findAll(query, limit)` | Lista do `limit` elementów, domyślnie 50, maksymalnie 200. Wyszukiwanie sprawdza rodzica przed dziećmi, maksymalnie 3000 elementów i do [końca czasu](#limits). |
 | `sf.screen.at(x, y)` | Od wersji 2. Najgłębiej zagnieżdżony widoczny element w punkcie podanym w pikselach, w najwyższym oknie w tym miejscu. |
-| `sf.screen.windows()` | Od wersji 2. Lista okien od najwyższego, bez okien SandFly. Każde to `{ id, type, title, layer, active, focused, bounds, root }`. Przez `window.root:find(query)` możesz szukać w innym oknie, na przykład klawiaturze. |
-| `sf.screen.waitFor(query, timeout, interval)` | Od wersji 2. Czeka na dopasowanie w aktywnym oknie lub zwraca `nil`. `timeout` to domyślnie 5000 ms, najwyżej 60 000. `interval` domyślnie 250 ms, minimum 100. |
+| `sf.screen.windows()` | Od wersji 2. Lista okien od najwyższego, bez okien SandFly, takich jak menu SandFly. Każde okno ma pola `{ id, type, title, layer, active, focused, bounds, root }`. `root` jest najwyższym elementem okna. Przez `window.root:find(query)` możesz szukać w innym oknie, na przykład klawiaturze. |
+| `sf.screen.waitFor(query, timeout, interval)` | Od wersji 2. [Czeka](#waiting), aż pojawi się dopasowanie w aktywnym oknie. Zwraca znaleziony element lub `nil` po upływie `timeout` milisekund. Domyślnie czeka 5000 ms, najwyżej 60 000. Sprawdza co `interval` milisekund, domyślnie co 250, co najmniej co 100. |
 | `sf.screen.click(query)` | Od wersji 2. Szuka elementu lub przyjmuje element i go klika, a bez czynności kliknięcia dotyka. Zwraca powodzenie lub `false`, gdy nie ma wyniku. Wymaga też `actions`. |
 | `sf.screen.recognizeText()` | Od wersji 2. [Rozpoznaje tekst](#recognizing-text) na całym ekranie. |
 
 Typy okien to `'application'`, `'inputMethod'`, `'system'`, `'accessibilityOverlay'`, `'splitScreenDivider'` i `'magnificationOverlay'`.
 
-**`sf.app()`** daje `{ package, label, activity, window, meta }`. `label` to nazwa aplikacji. `activity` może mieć wartość `nil` do chwili zmiany okna. `window` to tytuł, a `meta` zawiera tekstowe, liczbowe lub logiczne dane manifestu, na przykład `sf.app().meta['com.example.flag']`. Skrypt globalny potrzebuje `screen`.
+**`sf.app()`** opisuje aplikację na pierwszym planie jako `{ package, label, activity, window, meta }`. `label` to nazwa aplikacji. `activity` może mieć wartość `nil` do chwili zmiany okna. `window` to tytuł, a `meta` zawiera tekstowe, liczbowe lub logiczne dane manifestu, na przykład `sf.app().meta['com.example.flag']`. Skrypt globalny potrzebuje `screen`.
 
 ```lua
 sf.run(function()
@@ -608,7 +652,7 @@ end)
 
 Od wersji 2 `sf.screen.recognizeText()` i `item:recognizeText()` rozpoznają tekst ze zrzutu lokalnie. Wybór pisma zależy od języka mowy i urządzenia. Dostępne są alfabet łaciński, chiński, japoński, koreański i dewanagari.
 
-Wywołanie czeka na wynik, wymaga `screen` i Androida 11. Zwraca `{ text, blocks }`. Blok to `{ text, bounds, lines }`, a wiersz `{ text, bounds }`. Współrzędne są w pikselach. Możesz ich użyć do dotknięcia wyniku przez `sf.touch.tap`.
+Wywołanie [czeka na wynik](#waiting) i wymaga `screen` oraz Androida 11 lub nowszego. Zwraca `{ text, blocks }`. Blok to `{ text, bounds, lines }`, a wiersz `{ text, bounds }`. Współrzędne są w pikselach. Możesz ich użyć do dotknięcia wyniku przez `sf.touch.tap`.
 
 Skrypt może mieć dwa równoległe rozpoznania. Android ogranicza liczbę zrzutów na sekundę. SandFly ponawia odrzucony zrzut dwukrotnie, a potem zgłasza błąd. Zgłosi go także dla elementu spoza ekranu.
 
@@ -632,12 +676,13 @@ Od wersji 2. Wymagają `actions`, a gdy można [poczekać](#waiting), zwracają 
 
 ### Dotykanie ekranu {#touch-the-screen}
 
-Od Androida 11. Punkty to nieujemne współrzędne w pikselach. W trakcie dotyku skryptu gesty trafiają do aplikacji.
+Dotykanie ekranu wymaga Androida 11 lub nowszego. Punkty to współrzędne ekranu w pikselach, od 0. Podczas dotyku wykonywanego przez skrypt dotknięcia trafiają bezpośrednio do aplikacji. Dzięki temu SandFly nie rozpoznaje dotknięć skryptu jako swoich gestów.
 
-- `sf.touch.tap(x, y)` dotyka punktu. `sf.touch.doubleTap(x, y)` dotyka dwa razy.
+- `sf.touch.tap(x, y)` dotyka punktu.
+- `sf.touch.doubleTap(x, y)` dotyka go dwa razy.
 - `sf.touch.longPress(x, y, ms)` przytrzymuje, domyślnie przez 1000 ms.
 - `sf.touch.swipe(x1, y1, x2, y2, ms)` przesuwa od punktu do punktu, domyślnie w 300 ms.
-- `sf.touch.gesture(strokes)` wykonuje do dziesięciu ruchów naraz. Każdy ma `{ points, start, duration }`. Podaj od 1 do 100 punktów `{ x, y }`. Długość ruchu to od 1 do 10 000 ms, domyślnie 50. Początek liczy się od startu gestu, od 0 do 10 000 ms.
+- `sf.touch.gesture(strokes)` wykonuje do dziesięciu ruchów jednocześnie. Służy do gestów wykonywanych kilkoma palcami. Każdy ma `{ points, start, duration }`. Podaj od 1 do 100 punktów `{ x, y }`. Długość ruchu to od 1 do 10 000 ms, domyślnie 50. Początek liczy się od startu gestu, od 0 do 10 000 ms.
 
 ```lua
 -- A two-finger swipe up in the middle of a 1080-pixel-wide screen.
@@ -647,13 +692,15 @@ sf.touch.gesture({
 })
 ```
 
-Od wersji 6 `sf.touch.lock(ms)` blokuje dotyk użytkownika do 10 000 ms. `sf.touch` skryptu nadal działa. `release()` na uchwycie lub `sf.touch.unlock()` kończy blokadę. Kończy się też po błędzie albo usunięciu skryptu, zmianie aplikacji, naciśnięciu obu klawiszy głośności lub wykonaniu polecenia blokady dotyku. Następna blokada zastępuje poprzednią. Potrzeba Androida 13 i **Używaj gestów w SandFly**. Blokada nie działa na ekranach SandFly.
+Od wersji 6 `sf.touch.lock(ms)` blokuje dotyk przez `ms` milisekund, najwyżej 10 000. Dotknięcia i gesty użytkownika w tym czasie nie działają ani nie trafiają do aplikacji. Gesty skryptu z `sf.touch` nadal do niej trafiają. Funkcja zwraca uchwyt z metodą `release()`. Metoda kończy blokadę. Możesz też wywołać `sf.touch.unlock()`, żeby zakończyć blokadę rozpoczętą przez ten skrypt.
+
+Blokada kończy się, gdy skrypt zostanie zwolniony z pamięci, zgłosi błąd lub aplikacja, w której ją włączono, przestanie być widoczna. Użytkownik może ją zakończyć, naciskając oba klawisze głośności jednocześnie lub wykonując **Zablokuj lub odblokuj dotyk**. Nowa blokada zastępuje poprzednią także wtedy, gdy pochodzi z innego skryptu. Blokada jest niedostępna na ekranach SandFly. Do jej działania wymagany jest Android 13 lub nowszy oraz włączone **Używaj gestów w SandFly**.
 
 ### Pisanie i naciskanie klawiszy {#type-and-press-keys}
 
 `sf.keys.type(text)` wpisuje do 2000 znaków w polu z fokusem klawiatury, w miejscu kursora, i zastępuje zaznaczenie. W polu hasła lub bez pola korzysta z Shizuku. Nowy wiersz i tabulator przechodzą w Enter i Tab. Inne znaki sterujące są pomijane.
 
-`sf.keys.press(keys)` naciska przez Shizuku od 1 do 100 klawiszy po kolei. Podaj listę albo nazwy oddzielone spacją. Możesz użyć nazw Androida z `KEYCODE_` lub bez niego, niezależnie od wielkości liter. Działają między innymi `enter`, `tab`, `up`, `down`, `left`, `right`, `center`, `backspace`, `delete`, `esc`, `return`, `home`, `end`, `pageup`, `pagedown`, `playpause`, `next`, `previous`, `volumeup` i `volumedown`. `home` i `end` odnoszą się do wiersza. Aby przejść na ekran główny, użyj `sf.system.home()`.
+`sf.keys.press(keys)` naciska przez Shizuku od 1 do 100 klawiszy po kolei. Podaj listę albo nazwy oddzielone spacją. Możesz użyć nazw Androida z `KEYCODE_` lub bez niego, niezależnie od wielkości liter. Możesz na przykład podać `'enter'`, `'tab'` lub `'KEYCODE_MEDIA_PLAY_PAUSE'`. Dostępne są też `up`, `down`, `left`, `right`, `center`, `backspace`, `delete`, `esc`, `return`, `home`, `end`, `pageup`, `pagedown`, `playpause`, `next`, `previous`, `volumeup` i `volumedown`. `home` i `end` odnoszą się do wiersza. Aby przejść na ekran główny, użyj `sf.system.home()`.
 
 Bez uruchomionego Shizuku i zgody dla SandFly operacje wymagające Shizuku zgłoszą błąd. Zobacz ustawienia **Shizuku i root**.
 
@@ -664,9 +711,11 @@ sf.keys.press('enter')
 
 ### Przekazywanie wszystkich klawiszy do aplikacji {#pass-every-key-to-the-app}
 
-Od wersji 3 `sf.keys.passAll()` i `sf.keys.passAll(true)` oddają klawisze Androidowi i aplikacji, w tym klawisz SandFly, wybór w trybie przeglądania, nawigację strzałkami, kursor przeglądu i skróty skryptów. Tylko skrót przełączania klawiatury SandFly działa nadal. Wymagane jest `input`.
+Od wersji 3 `sf.keys.passAll(on)` przekazuje wszystkie klawisze Androidowi i aplikacji na pierwszym planie, tak jak polecenie **Włącz lub wyłącz obsługę klawiatury przez SandFly**. Dotyczy to klawisza SandFly i jego skrótów, klawiszy trybu przeglądania, nawigacji strzałkami, kursora przeglądu oraz skrótów wszystkich skryptów, w tym bieżącego. Nadal działa przypisanie samego polecenia **Włącz lub wyłącz obsługę klawiatury przez SandFly**.
 
-Wyłącz przez `sf.keys.passAll(false)` lub skrótem przełączenia klawiatury. Tryb działa w zasięgu załadowanego skryptu i nie obejmuje ekranów SandFly. Po zmianie skrótem skrypt musi ponownie zażądać przekazywania. SandFly sam tego nie ogłasza, więc poinformuj użytkownika.
+Użyj `sf.keys.passAll()` lub `sf.keys.passAll(true)`, żeby zacząć przekazywanie. `sf.keys.passAll(false)` je kończy. Wymagane jest `input`.
+
+Przekazywanie działa, dopóki skrypt jest w pamięci. Skrypt z `apps` kończy przekazywanie po opuszczeniu jego aplikacji. Skrypt działający we wszystkich aplikacjach przekazuje klawisze, dopóki nie zakończy pracy. Ekrany SandFly nie przekazują klawiszy w tym trybie. Użycie skrótu **Włącz lub wyłącz obsługę klawiatury przez SandFly** kończy przekazywanie aż do ponownego wywołania `sf.keys.passAll`. SandFly nie ogłasza początku ani końca przekazywania ze skryptu. Dodaj więc własny komunikat dla użytkownika.
 
 ```lua
 -- A game that uses every key.
@@ -683,11 +732,11 @@ sf.message('Keys go to the game')
 
 ## Makra {#macros}
 
-Od wersji 6 **`sf.macros.run(file, values)`** uruchamia pierwsze makro z pliku pakietu, na przykład `'macros/reply.json'`. Plik o rozmiarze do 1 MB ma [format eksportu makr](item-files.md#macros).
+Od wersji 6 **`sf.macros.run(file, values)`** uruchamia makro z pliku w pakiecie, na przykład `'macros/reply.json'`, tak jak SandFly uruchamia makra użytkownika. Plik może mieć do 1 MB i korzysta z tego samego formatu co **Eksportuj do pliku**. SandFly uruchamia pierwsze makro z pliku. Zobacz [Makra w opisie formatu plików](item-files.md#macros).
 
-Jeśli działa inne makro, zostanie zatrzymane. Funkcja zwraca `true` od razu. Kroki ruszają, gdy skrypt biegnie dalej, więc wywołanie działa także w procedurze zdarzenia. `values` to rekord tekstów wstawianych w miejsca `{name}` w krokach. Podaj do 200 nazw po najwyżej 64 znaki. Używaj liter, cyfr, kropek, myślników i podkreśleń. Każda wartość ma do 10 000 znaków. Makro otrzymuje też wartości zapisane przez inne makra tego skryptu przez **Ustaw wartość**, **Pobierz z linku** i **Przetłumacz tekst**.
-
-Wywołanie powoduje błąd na ekranie SandFly, przy pliku bez makra lub jeśli makro przełącza wszystkie skrypty albo klawiaturę SandFly.
+- Jeśli inne makro już działa, zostanie zatrzymane. Funkcja zwraca `true` od razu. Kroki są wykonywane po wznowieniu skryptu, więc możesz wywołać funkcję z dowolnej procedury obsługi zdarzenia.
+- `values` to rekord tekstów wstawianych w miejscach `{name}` w krokach, na przykład `{ text = item.text }`. Możesz podać do 200 nazw, każdą do 64 znaków. Używaj liter, cyfr, kropek (`.`), łączników (`-`) i podkreśleń (`_`). Każda wartość może mieć do 10 000 znaków. Makro otrzymuje też wartości zapisane przez makra tego skryptu krokami **Ustaw wartość**, **Pobierz z linku** i **Przetłumacz tekst**.
+- Wywołanie zgłasza błąd na ekranie SandFly, przy pliku bez makra lub jeśli makro używa polecenia **Włącz lub wyłącz wszystkie skrypty** albo **Włącz lub wyłącz obsługę klawiatury przez SandFly**.
 
 Skrypt potrzebuje uprawnień kroków:
 
@@ -697,7 +746,7 @@ Skrypt potrzebuje uprawnień kroków:
 | `screen` razem z `actions` | Klika, przytrzymuje, przenosi fokus lub działa na znalezionym elemencie. |
 | `actions` | Dotyk w punkcie, wpisywanie i naciskanie klawiszy. |
 | `speech` | Czytanie tekstu. |
-| `input` | Uruchamianie [poleceń](#run-sandfly-commands) wraz z uprawnieniami danego polecenia. |
+| `input` | Uruchamianie poleceń. Obowiązują również uprawnienia poszczególnych poleceń, tak jak przy [`sf.commands.run`](#run-sandfly-commands). |
 | `system` | Otwieranie aplikacji, adresów i ustawień, udostępnianie, zmiany głośności i trybu dzwonka, opcje urządzenia, multimedia, alarmy, minutniki, połączenia, wiadomości i aparat. |
 | `clipboard` | Kopiowanie i `{clipboard}`. |
 | `dialogs` | Wyświetlanie komunikatu. |
@@ -707,11 +756,16 @@ Skrypt potrzebuje uprawnień kroków:
 
 ## Uruchamianie poleceń SandFly {#run-sandfly-commands}
 
-Od wersji 2 **`sf.commands.list()`** zwraca rekordy `{ id, title, category }` w kolejności ekranu **Polecenia**. Pomija przełączanie wszystkich skryptów i klawiatury SandFly, otwieranie aplikacji i ich skrótów oraz polecenia skryptowe.
+Od wersji 2 skrypt może uruchamiać polecenia, którym w SandFly można przypisać gest lub klawisze. Może na przykład przejść do następnego nagłówka, rozpocząć czytanie od góry lub zmienić sterowanie czytaniem.
+
+**`sf.commands.list()`** zwraca rekordy `{ id, title, category }` w kolejności z ekranu **Polecenia** w ustawieniach SandFly. Lista pomija **Włącz lub wyłącz wszystkie skrypty**, **Włącz lub wyłącz obsługę klawiatury przez SandFly**, **Otwórz aplikację**, skróty do aplikacji oraz polecenia skryptów.
 
 **`sf.commands.run(id)`** uruchamia działanie z listy i zwraca wynik, tak jak jego gest. Wymaga `input`. Na ekranie SandFly albo przy nieznanym ID powoduje błąd.
 
-Dodatkowo `system` jest potrzebne do poleceń systemowych, wstrzymania lub wyciszenia SandFly, przełączania odczytu powiadomień, odbioru połączeń, regulacji głośności, zmiany klawiatury, używania mikrofonu, przełączania powiększenia, brajla, przekazania gestu i dotyku bezpośredniego, a także do poleceń SandFly Pro. `clipboard` jest potrzebne do kopiowania, wycinania, wklejania, zaznaczania wypowiedzi, odczytów kopiowanych do schowka i otwierania historii schowka lub mowy.
+Niektóre polecenia wymagają dodatkowych uprawnień.
+
+- `system` jest potrzebne do wstrzymania lub wyciszenia SandFly oraz do zmiany odczytu powiadomień. Dotyczy też poleceń systemowych, takich jak Wstecz, ekran główny, ostatnie aplikacje, poprzednia aplikacja, powiadomienia, szybkie ustawienia, zrzuty, blokada ekranu, menu zasilania, wszystkie aplikacje i przycisk ułatwień dostępu. Wymagają go również odbieranie połączeń, regulacja głośności, zmiana klawiatury, użycie mikrofonu do dyktowania lub poleceń głosowych, przełączanie powiększenia, monitora brajlowskiego, przekazywania gestu i dotyku bezpośredniego oraz polecenia SandFly Pro.
+- `clipboard` jest potrzebne do kopiowania, wycinania, wklejania i dodawania do schowka. Wymagają go również kopiowanie tekstu z ekranu, ostatniej wypowiedzi, drzewa ekranu lub szczegółów elementu, zaznaczanie ostatniej wypowiedzi oraz otwieranie schowka lub historii mowy.
 
 ```lua
 sf.commands.run('NEXT')          -- Next item
@@ -732,10 +786,10 @@ local rule = sf.rules.add({ id = 'promo_banner', hide = 'all' })
 
 ## Trwałe dane {#storage}
 
-`sf.storage` działa między uruchomieniami i aktualizacjami skryptu. Klucz ma od 1 do 200 znaków. Wartością może być tekst, liczba, wartość logiczna lub tabela z takich wartości.
+`sf.storage` zachowuje dane, dopóki skrypt jest zainstalowany. Dane pozostają dostępne po ponownym załadowaniu i aktualizacji. Klucz ma od 1 do 200 znaków. Wartością może być tekst, liczba, `true`, `false` lub tabela z takimi wartościami.
 
 - **`sf.storage.get(key, fallback)`** zwraca zapisaną wartość lub `fallback`.
-- **`sf.storage.set(key, value)`** zapisuje. `nil` usuwa wartość. Błąd po przepełnieniu pojawia się, gdy wspólny JSON kluczy i wartości przekroczyłby 524 288 znaków.
+- **`sf.storage.set(key, value)`** zapisuje. `nil` usuwa wartość. Błąd „Storage is full” pojawia się, gdy klucze i wartości skryptu zapisane jako tekst JSON przekroczyłyby 524 288 znaków.
 - **`sf.storage.remove(key)`** usuwa wartość.
 - **`sf.storage.keys()`** podaje listę kluczy.
 - **`sf.storage.clear()`** usuwa wszystkie wartości.
@@ -763,36 +817,36 @@ settings = {
 
 | Pole | Zastosowanie |
 | --- | --- |
-| `key` | Wymagany i unikatowy. Do 64 liter, cyfr, kropek, myślników i podkreśleń. |
+| `key` | Wymagany i unikatowy. Do 64 liter, cyfr, kropek (`.`), łączników (`-`) i podkreśleń (`_`). |
 | `type` | `'switch'` (domyślnie), `'list'`, `'text'`, `'number'` albo `'button'`. |
 | `title` | Wymagana nazwa. |
 | `summary` | Tekst pod nazwą. Lista pokazuje zamiast niego bieżącą opcję. |
 | `default` | Wartość początkowa. Bez pola to `false`, pierwsza opcja listy, `''` lub 0, zależnie od typu. |
 | `options` | Wymagana dla listy. Wartości lub rekordy `{ value, label }`. |
 
-Przycisk nie ma wartości. Wywołuje [sf.onButton](#hooks) z kluczem. Jeśli skrypt jest wyłączony, SandFly prosi o włączenie.
+Przycisk nie ma wartości. Jego naciśnięcie wywołuje [`sf.onButton`](#hooks) z kluczem przycisku. Przy wyłączonym skrypcie pojawi się komunikat o konieczności włączenia skryptu.
 
 - **`sf.settings.get(key)`** zwraca wartość. Brak klucza w manifeście lub klucz przycisku powoduje błąd.
 - **`sf.settings.all()`** zwraca rekord wszystkich wartości.
 - **`sf.settings.set(key, value)`** zmienia i wywołuje `onSettingChange`. Wartość jako JSON ma do 16 384 znaków.
 - **`sf.settings.setOptions(key, options)`** zastępuje od 1 do 500 opcji listy, do 16 384 znaków łącznie.
-- **`sf.settings.setTitle(key, text)`** i **`sf.settings.setSummary(key, text)`** od wersji 3 zmieniają nazwę lub opis do 500 znaków. `nil` przywraca wartość manifestu.
+- **`sf.settings.setTitle(key, text)`** i **`sf.settings.setSummary(key, text)`** od wersji 3 zmieniają tytuł lub opis widoczny przy ustawieniu. Możesz na przykład ustawić przyciskowi tytuł „Miejsce 1: Przewiń wstecz, YouTube”. Tekst może mieć do 500 znaków. `nil` przywraca tekst manifestu.
 
 ## Okna i komunikaty {#dialogs-and-windows}
 
-Każde okno wymaga `dialogs`. Tytuł zaczyna się od nazwy skryptu, żeby użytkownik mógł rozpoznać, skąd pochodzi. Teksty mają do 20 000 znaków.
+Każde okno wymaga `dialogs`. Tytuł każdego okna ma postać „nazwa skryptu: tytuł”. Dzięki nazwie można odróżnić okno skryptu od okna aplikacji lub systemu. Tekst jest przycinany do 20 000 znaków.
 
 | Funkcja | Działanie |
 | --- | --- |
 | `sf.ui.alert(message, options)` | Pokazuje komunikat z **OK** i czeka na zamknięcie. `options.title` podaje tytuł. |
-| `sf.ui.confirm(message, options)` | Pyta i zwraca `true` po zatwierdzeniu, w innym przypadku `false`. Opcje to `title`, `ok` i `cancel`. |
-| `sf.ui.prompt(title, options)` | Zwraca wpisany tekst lub `nil` po anulowaniu. Opcje to początkowy `text` i `hint`. |
+| `sf.ui.confirm(message, options)` | Pokazuje komunikat z przyciskami **OK** i **Anuluj**. Zwraca `true` po wybraniu **OK**, w pozostałych przypadkach `false`. Opcje to `title` z tytułem oraz `ok` i `cancel` z napisami przycisków. |
+| `sf.ui.prompt(title, options)` | Pokazuje pole edycji. Zwraca wpisany tekst lub `nil` po anulowaniu. Opcje to początkowa treść `text` i podpowiedź `hint`. |
 | `sf.ui.choose(title, choices, options)` | Pokazuje listę 1–500 wartości lub rekordów `{ value, label }`. Zwraca wybór lub `nil`. `options.selected` ustawia wartość początkową. Powyżej 10 pozycji dodaje filtr. |
-| `sf.ui.text(title, text)` | Od wersji 2. Pokazuje tekst do przeglądania i zaznaczania znakami, słowami i wierszami. Czeka na zamknięcie. |
+| `sf.ui.text(title, text)` | Od wersji 2. Pokazuje tekst do przeglądania po znakach, słowach i wierszach. Tekst można zaznaczać. Funkcja czeka na zamknięcie. Użyj jej na przykład, gdy wynik jest za długi do odczytania na głos. |
 | `sf.ui.dialog(form)` | Otwiera formularz i zwraca go od razu. |
-| `sf.ui.window(form)` | Od wersji 2. Otwiera formularz na całym ekranie. Wstecz zamyka okno. |
+| `sf.ui.window(form)` | Od wersji 2. Otwiera formularz w pełnoekranowym oknie. Przydaje się w skryptach działających jak osobne aplikacje, na przykład w notatniku. Wstecz zamyka okno. |
 
-Pozostałe wywołania [czekają](#waiting). Od wersji 2 okna i komunikaty mogą układać się na sobie. Przy dziewiątym oknie najstarsze się zamknie. Usunięcie skryptu z pamięci zamyka jego okna, na przykład po opuszczeniu aplikacji. Wartości można zachować przez [sf.storage](#storage).
+Wszystkie te metody poza `dialog` i `window` [czekają na wynik](#waiting). Od wersji 2 okno może otworzyć się nad innym otwartym oknem. Na przykład `sf.ui.confirm` możesz wywołać z pełnoekranowego okna, które pozostanie otwarte pod potwierdzeniem. Możesz mieć maksymalnie osiem otwartych okien. Otwarcie następnego zamyka najstarsze. Zwolnienie skryptu z pamięci zamyka jego okna, na przykład po opuszczeniu aplikacji. Wartości wpisane przez użytkownika możesz zachować w [`sf.storage`](#storage).
 
 ### Formularze {#forms}
 
@@ -801,21 +855,24 @@ Formularz to `{ title, items, onClose }`. Podaj od 1 do 50 pozycji. `onClose` do
 | Typ | Pozostałe pola |
 | --- | --- |
 | `label` | `label` zawiera tekst. Od wersji 2 `selectable = true` pozwala czytać i zaznaczać znaki, słowa i wiersze. |
-| `heading` | Od wersji 2. Etykieta będąca nagłówkiem. |
+| `heading` | Od wersji 2. Etykieta pełniąca funkcję nagłówka, po której można przechodzić między częściami okna. |
 | `edit` | `value`, `hint`, `number`, `password`, `multiline`, `onChange`. Od wersji 2 `readOnly = true` pozostawia odczyt i zaznaczanie. `onSubmit` otrzymuje tekst po Enter lub przycisku zatwierdzenia w jednowierszowym polu. |
 | `switch` | `value` i `onChange`. |
 | `list` | `items` z wartościami lub rekordami `{ value, label }`, wybrane `value` i `onChange`. Wybierasz jedną pozycję. |
-| `items` | Od wersji 2. Do 500 otwieranych wierszy, `items` z wartościami lub rekordami, `empty` jako komunikat i `actions` z nazwami czynności. `onSelect` otrzymuje wartość po stuknięciu, `onLongPress` po przytrzymaniu, a `onAction` nazwę i wartość po wybraniu czynności. |
+| `items` | Od wersji 2. Wiersze, które można otworzyć, na przykład lista notatek. `items` zawiera do 500 wartości lub rekordów `{ value, label }`. `empty` to tekst pustej listy. `actions` zawiera nazwy czynności wiersza widoczne w menu **Czynności**. `onSelect` otrzymuje wartość po dwukrotnym stuknięciu, `onLongPress` po długim naciśnięciu, a `onAction` nazwę czynności i wartość wiersza. |
 | `slider` | Od wersji 2. `min`, `max`, `step` domyślnie 0, 100 i 1, do 10 000 kroków. `value` domyślnie równe `min`, dostępne `onChange`. |
 | `button` | `onClick`. `close = true` zamyka formularz po kliknięciu. |
 
-`onChange`, `onSelect`, `onLongPress` i `onSubmit` dostają wartość oraz formularz. `onClick` dostaje formularz, a `onAction` nazwę czynności, wartość i formularz. Wszystkie działają w zadaniach i mogą czekać.
+`onChange`, `onSelect`, `onLongPress` i `onSubmit` dostają wartość oraz formularz. `onClick` dostaje formularz, a `onAction` nazwę czynności, wartość i formularz. Wszystkie działają jako zadania i mogą [czekać na wynik](#waiting).
 
 - `form:get(id)` zwraca wartość, a `form:values()` wszystkie wartości według ID.
 - `form:set(id, changes)` zmienia `value`, `label`, `hint`, `items`, `actions`, `empty`, `min`, `max`, `step`, `enabled` lub `visible`.
-- `form:close()` zamyka formularz. `form.closed` przyjmuje wtedy `true`. `form:wait()` czeka na zamknięcie i zwraca wartości.
-- Od wersji 2 `form:add(item, options)` dodaje na końcu lub za pozycją `options.after` i zwraca ID. `form:remove(id)` usuwa.
-- Od wersji 2 `form:focus(id)` przenosi fokus na pozycję lub pierwszy wiersz listy `items`. `form:setTitle(title)` zmienia tytuł.
+- `form:close()` zamyka formularz. `form.closed` przyjmuje wtedy `true`.
+- `form:wait()` [czeka](#waiting) na zamknięcie i zwraca wartości.
+- Od wersji 2 `form:add(item, options)` dodaje na końcu lub za pozycją `options.after` i zwraca ID.
+- Od wersji 2 `form:remove(id)` usuwa pozycję.
+- Od wersji 2 `form:focus(id)` przenosi fokus na pozycję lub pierwszy wiersz listy `items`.
+- Od wersji 2 `form:setTitle(title)` zmienia tytuł formularza.
 
 ```lua
 -- In a command: ask for a number of minutes.
@@ -829,11 +886,14 @@ local form = sf.ui.dialog({
 local values = form:wait()
 ```
 
-[Przykład notatnika](scripting/examples/notepad.lua) otwiera notatki z listy, a przez menu **Czynności** kopiuje je lub usuwa.
+[Przykład notatnika](scripting/examples/notepad.lua) wyświetla listę notatek w oknie. Stuknij dwa razy w notatkę, żeby otworzyć ją w osobnym oknie. Menu **Czynności** pozwala skopiować lub usunąć notatkę.
 
 ## Schowek {#clipboard}
 
-`sf.clipboard.get()` zwraca tekst schowka lub `nil`. `sf.clipboard.set(text)` wstawia tekst. Obie funkcje wymagają `clipboard`.
+Obie funkcje wymagają `clipboard`.
+
+- **`sf.clipboard.get()`** zwraca tekst schowka lub `nil`.
+- **`sf.clipboard.set(text)`** zapisuje tekst w schowku.
 
 ## System {#system}
 
@@ -842,9 +902,9 @@ Te funkcje wymagają `system`.
 - **`sf.system.back()`**, **`home()`**, **`recents()`**, **`notifications()`**, **`quickSettings()`**, **`powerDialog()`**, **`lockScreen()`**, **`takeScreenshot()`** i **`allApps()`** wykonują czynność systemową i w zadaniu zwracają wynik. Zrzut Androida nie jest przekazywany skryptowi.
 - **`sf.system.openApp(packageName)`** otwiera aplikację i w zadaniu potwierdza wynik. **`sf.system.apps()`** od wersji 2 zwraca listę aplikacji z ikoną, według nazwy, w rekordach `{ package, label }`.
 - **`sf.system.openUrl(url)`** od wersji 2 przekazuje do aplikacji adres `http`, `https`, `mailto`, `tel`, `sms`, `smsto`, `geo` lub `market` i zwraca wynik.
-- **`sf.system.share(text, options)`** od wersji 2 otwiera udostępnianie. Opcje to `title` okna i `subject`.
+- **`sf.system.share(text, options)`** od wersji 2 otwiera ekran udostępniania Androida z podanym tekstem. W `options` możesz ustawić `title` tego ekranu i `subject`.
 - **`sf.system.openSettings(page, packageName)`** od wersji 2 otwiera ekran ustawień i wraca z wynikiem. Dozwolone wartości to `settings` (domyślnie), `wifi`, `bluetooth`, `mobileData`, `airplaneMode`, `nfc`, `location`, `sound`, `display`, `battery`, `batterySaver`, `accessibility`, `apps`, `defaultApps`, `notifications`, `doNotDisturb`, `dateTime`, `language`, `keyboard`, `storage`, `security`, `privacy`, `developer`, `about`, `castScreen`, `hotspot`. Z nazwą pakietu możesz podać `app` lub `appNotifications`.
-- **`sf.system.startActivity(intent)`** i **`sf.system.sendBroadcast(intent)`** od wersji 2 przyjmują `{ action, data, type, package, className, categories, extras }`. Konieczne jest `action` lub `className`, a przy klasie także `package`. Komunikat rozgłoszeniowy wymaga pakietu. `extras` zawiera tekst, liczby lub wartości logiczne. Tych wywołań nie można kierować do SandFly. Otwarcie aktywności zwraca powodzenie.
+- **`sf.system.startActivity(intent)`** i **`sf.system.sendBroadcast(intent)`** od wersji 2 przyjmują `{ action, data, type, package, className, categories, extras }`. Konieczne jest `action` lub `className`, a przy klasie także `package`. Komunikat rozgłoszeniowy wymaga pakietu. `extras` zawiera tekst, liczby, `true` lub `false`. Tych wywołań nie można kierować do SandFly. Otwarcie aktywności zwraca powodzenie.
 
 ```lua
 sf.system.startActivity({
@@ -856,7 +916,8 @@ sf.system.startActivity({
 
 Od wersji 6 kilka funkcji przekazuje żądanie do obsługującej je aplikacji i zwraca, czy je przyjęła:
 
-- **`sf.system.setTimer(seconds, label)`** uruchamia od 1 do 86 400 sekund. **`sf.system.setAlarm(hour, minute, label)`** ustawia godzinę. Jeśli aplikacja zegara pozwala, nie musi się otwierać.
+- **`sf.system.setTimer(seconds, label)`** uruchamia minutnik od 1 do 86 400 sekund w aplikacji zegara. Jeśli aplikacja to umożliwia, nie otwiera jej okna.
+- **`sf.system.setAlarm(hour, minute, label)`** ustawia alarm w aplikacji zegara. Jeśli aplikacja to umożliwia, nie otwiera jej okna.
 - **`sf.system.call(number)`** dzwoni albo otwiera ekran wybierania, jeśli brakuje zgody na połączenia.
 - **`sf.system.message(number, text)`** otwiera aplikację wiadomości z podanym tekstem.
 - **`sf.system.camera(video)`** otwiera aparat. `video = true` wybiera film.
@@ -865,14 +926,14 @@ Od wersji 6 kilka funkcji przekazuje żądanie do obsługującej je aplikacji i 
 
 ## Sieć {#network}
 
-**`sf.fetch(url, options)`** wymaga `network` i [czeka](#waiting) na odpowiedź z adresu HTTPS. Opcje:
+**`sf.fetch(url, options)`** wymaga `network` i [czeka](#waiting) na odpowiedź z adresu `https`. W `options` możesz podać poniższe pola.
 
 - `method` przyjmuje `GET` (domyślnie), `POST`, `PUT`, `DELETE`, `HEAD` lub `OPTIONS`.
-- `headers` to rekord nagłówków.
-- `body` to tekst albo tabela do wysłania jako JSON. Domyślny typ tabeli to `application/json`, chyba że podasz własny. Limit to 1 MB.
+- `headers` to rekord z nazwami i wartościami nagłówków.
+- `body` to tekst albo tabela wysyłana jako JSON. Dla tabeli domyślny nagłówek to `Content-Type: application/json`. Możesz go zmienić w `headers`. Treść ma do 1 MB.
 - `timeout` określa czas łączenia i odczytu w ms. Domyślnie 30 000, maksymalnie 60 000.
 
-Odpowiedź zawiera `status`, `statusText`, `ok` dla kodów od 200 do 299, `url`, `headers`, `body`, `response:json()` i `response:text()`. Nazwy nagłówków są małymi literami, a wspólne wartości rozdziela przecinek ze spacją. Odpowiedź ma do 5 MB. Jednocześnie można wysłać do ośmiu żądań. Kod taki jak 404 daje odpowiedź, a problem z połączeniem zwraca błąd sieciowy.
+Odpowiedź zawiera `status`, `statusText`, `ok`, `url`, `headers` i tekstowe `body`. `ok` ma wartość `true` dla kodów od 200 do 299. Nazwy nagłówków są zapisane małymi literami. Wartości tego samego nagłówka rozdziela przecinek ze spacją. `response:json()` dekoduje treść, a `response:text()` zwraca tekst. Odpowiedź może mieć do 5 MB. Skrypt może mieć w toku do ośmiu żądań naraz. Kod taki jak 404 daje odpowiedź. Nieudane połączenie zgłasza błąd zaczynający się od „Network error”.
 
 ```lua
 -- In a command, a hook or sf.run.
@@ -887,7 +948,7 @@ end
 
 ### Tłumaczenie tekstu {#translating-text}
 
-Od wersji 2 **`sf.translate(text, options)`** tłumaczy przez usługę wybraną na ekranie **Tłumaczenie**. Wymaga `network`, czeka i zwraca `{ text, from, to }`. W `options.from` i `options.to` podaj znaczniki języka, na przykład `'fr'`. Bez `from` usługa wykrywa język, a bez `to` tłumaczy na język z ustawień. Błąd usługi lub brak konfiguracji powoduje błąd funkcji. Przy tłumaczeniu lokalnym funkcja czeka na pobranie języków.
+Od wersji 2 **`sf.translate(text, options)`** tłumaczy przez usługę wybraną na ekranie **Tłumaczenie**. Wymaga `network`, [czeka na wynik](#waiting) i zwraca `{ text, from, to }`. W `options.from` i `options.to` podaj znaczniki języka, na przykład `'fr'`. Bez `from` usługa wykrywa język, a bez `to` tłumaczy na język z ustawień. Błąd usługi lub brak konfiguracji powoduje błąd funkcji. Przy tłumaczeniu lokalnym funkcja czeka na pobranie języków.
 
 ## Urządzenie {#device}
 
@@ -899,19 +960,23 @@ Od wersji 2 odczyty działają bez dodatkowych uprawnień.
 - **`sf.device.volume(stream)`** zwraca `{ level, min, max, muted }`. Kanały to `'media'` (domyślny), `'ring'`, `'notification'`, `'alarm'`, `'call'`, `'system'` i `'accessibility'`.
 - **`sf.device.ringerMode()`** zwraca `'normal'`, `'vibrate'` lub `'silent'`.
 
-Do zmian potrzebne jest `system`. **`sf.device.setVolume(stream, level)`** ogranicza wartość do przedziału `min`–`max`. **`sf.device.setRingerMode(mode)`** zmienia tryb i zgłasza błąd, jeśli Android go odrzuca, na przykład w trybie Nie przeszkadzać. Od wersji 6 **`sf.device.media(key)`** wysyła do odtwarzacza `'playPause'`, `'play'`, `'pause'`, `'next'`, `'previous'`, `'stop'`, `'rewind'` lub `'fastForward'`.
+Do zmian potrzebne jest `system`.
+
+- **`sf.device.setVolume(stream, level)`** ustawia głośność kanału. Wartość jest ograniczana do przedziału od `min` do `max`.
+- **`sf.device.setRingerMode(mode)`** zmienia tryb dzwonka. Android odrzuca niektóre zmiany, gdy działa tryb Nie przeszkadzać. Funkcja zgłosi wtedy błąd.
+- Od wersji 6 **`sf.device.media(key)`** przekazuje klawisz do aplikacji odtwarzającej multimedia. Dostępne są `'playPause'`, `'play'`, `'pause'`, `'next'`, `'previous'`, `'stop'`, `'rewind'` lub `'fastForward'`.
 
 ### Szybkie ustawienia urządzenia {#device-controls}
 
-Od wersji 6 funkcje sięgają do panelu SandFly przez nazwy:
+Od wersji 6 funkcje mogą odwoływać się do elementów panelu szybkich ustawień SandFly przez ich nazwy.
 
 `wifi`, `bluetooth`, `mobileData`, `hotspot`, `airplaneMode`, `dataSaver`, `doNotDisturb`, `soundMode`, `flashlight`, `flashlightBrightness`, `location`, `autoRotate`, `batterySaver`, `darkTheme`, `nightLight`, `extraDim`, `colorInversion`, `colorCorrection`, `nfc`, `microphoneAccess`, `cameraAccess`, `brightness`, `adaptiveBrightness`, `screenTimeout`, `fontSize`, `displaySize`, `mediaVolume`, `callVolume`, `ringVolume`, `notificationVolume`, `alarmVolume`, `accessibilityVolume` i `systemVolume`.
 
-- **`sf.device.controls()`** zwraca opcje dostępne na urządzeniu.
-- **`sf.device.get(name)`** zwraca wartość logiczną dla przełącznika, `{ value, min, max }` dla suwaka, `{ value, label, options }` dla listy. Lista przyjmująca także liczby zawiera `min` i `max`. Brak opcji lub odczytu daje `nil`.
-- **`sf.device.set(name, value)`** czeka i wymaga `system`. Przełącznik przyjmuje wartość logiczną, `'on'`, `'off'` lub `'toggle'`. Suwak przyjmuje liczbę, procent, na przykład `'50%'`, lub krok `'+1'` albo `'-1'`. Lista przyjmuje wartość, etykietę lub `'next'`. Funkcja zwraca `true` albo zgłasza przyczynę braku zmiany. Przy braku zgody może otworzyć ekran Androida.
+- **`sf.device.controls()`** zwraca listę nazw elementów dostępnych na urządzeniu.
+- **`sf.device.get(name)`** zwraca `true` lub `false` dla przełącznika, `{ value, min, max }` dla suwaka i `{ value, label, options }` dla listy wyboru. Lista przyjmująca także liczby z pewnego zakresu zawiera `min` i `max`. Jeśli urządzenie nie ma danego elementu lub nie można go odczytać, wynikiem jest `nil`.
+- **`sf.device.set(name, value)`** [czeka na wynik](#waiting) i wymaga `system`. Przełącznik przyjmuje `true`, `false`, `'on'`, `'off'` lub `'toggle'`. Suwak przyjmuje liczbę, procent swojego zakresu, na przykład `'50%'`, lub przesunięcie o krok `'+1'` albo `'-1'`. Lista przyjmuje wartość, etykietę pozycji lub `'next'`. Funkcja zwraca `true` po zmianie. Jeśli zmiana się nie uda, zgłosi błąd z przyczyną, na przykład przy zmianie Wi-Fi bez Shizuku. Gdy brakuje uprawnienia do zmiany ustawienia, otworzy się odpowiedni ekran Androida.
 
-`fontSize` przyjmuje również dowolny procent od 25 do 200, a przed Androidem 14 do 130. Możesz podać `50` lub `'50%'`, także poniżej 85% dostępnych w Androidzie. `displaySize` ustawia procent domyślnej gęstości. `min` utrzymuje krótszą krawędź poniżej 600 dp, a `max` co najmniej 320 dp. Potrzeba Shizuku. Zmiana rozmiaru może zmienić układ aplikacji, więc dotychczasowe reguły mogą przestać pasować.
+`fontSize` przyjmuje również dowolny procent od 25 do 200, a przed Androidem 14 do 130. Możesz podać `50` lub `'50%'`, także poniżej 85% dostępnych w Androidzie. `displaySize` ustawia wielkość obrazu tak, jak ustawienie rozmiaru wyświetlania w Androidzie, w procentach domyślnej gęstości. Możesz podać dowolną wartość od `min` do `max`. `min` utrzymuje krótszą krawędź poniżej 600 dp, bo przy 600 dp aplikacje mogą przełączyć się na układ tabletowy. `max` pozostawia na krótszej krawędzi co najmniej 320 dp. Zmiana wymaga Shizuku. Niektóre aplikacje zmieniają układ już przy mniejszym rozmiarze. Reguły dopasowane do aktywności lub pozycji listy mogą wtedy przestać pasować.
 
 ```lua
 sf.run(function()
@@ -922,7 +987,7 @@ end)
 
 ## Tłumaczenia {#translations}
 
-W katalogu `locales` archiwum umieść pliki JSON nazwane według znacznika języka, na przykład `locales/de.json` i `locales/pt-BR.json`. Kluczem jest tekst angielski. Tłumaczenie z liczbą mnogą podaj jako rekord z potrzebnymi formami spośród `zero`, `one`, `two`, `few`, `many` i `other`.
+W katalogu `locales` archiwum umieść pliki JSON nazwane według znacznika języka, na przykład `locales/de.json` i `locales/pt-BR.json`. W każdym pliku przypisz angielskiemu tekstowi jego tłumaczenie. Jeśli tekst ma formy liczby mnogiej, podaj rekord form używanych w danym języku. Do wyboru są `zero`, `one`, `two`, `few`, `many` i `other`.
 
 ```json
 {
@@ -935,7 +1000,8 @@ SandFly czyta plik dla języka urządzenia oraz języka bez regionu. Bardziej sz
 
 - **`sf._(text, params)`** zwraca tłumaczenie albo oryginał. Uzupełnia pola `{name}` z `params`.
 - **`sf.ngettext(singular, plural, count, params)`** szuka tłumaczenia według `singular` i wybiera formę dla `count`. Wstawia `{count}` i pozostałe pola.
-- **`sf.locale()`** podaje znacznik urządzenia, na przykład `'de-DE'`. **`sf.language()`** podaje znacznik języka odczytu tłumaczeń.
+- **`sf.locale()`** podaje znacznik języka urządzenia, na przykład `'de-DE'`.
+- **`sf.language()`** podaje znacznik języka używanego do odczytu tłumaczeń.
 
 ```lua
 local n = 3
@@ -944,7 +1010,7 @@ sf.speak(sf.ngettext('{count} message', '{count} messages', n)) -- '3 messages'
 
 ## Tekst {#text}
 
-Od wersji 6 dostępne są funkcje z wyrażeniami regularnymi Javy, bez dodatkowego uprawnienia. Wielkość liter nie ma znaczenia. Powtarzane grupy nie mogą zawierać powtórzeń ani alternatyw. Tekst ma do 10 000 znaków.
+Od wersji 6 dostępne są funkcje z wyrażeniami regularnymi Javy, bez dodatkowego uprawnienia. Wielkość liter nie ma znaczenia, tak jak przy dopasowywaniu w makrach. Powtarzane grupy nie mogą zawierać powtórzeń ani operatora alternatywy `|`. Tekst jest przycinany do 10 000 znaków.
 
 **`sf.text.replace(text, pattern, with)`** zastępuje wszystkie dopasowania. W `with` odwołaj się do pierwszej grupy przez `$1`. **`sf.text.find(text, pattern)`** sprawdza, czy wzorzec pasuje w tekście.
 
@@ -973,15 +1039,17 @@ end)
 
 ## Dziennik, liczniki, pliki i JSON {#logs-timers-files-and-json}
 
-- **`print(...)`** i **`sf.log(...)`** zapisują argumenty oddzielone spacjami na poziomie informacji. Użyj `sf.log.debug`, `sf.log.info`, `sf.log.warn` lub `sf.log.error`, aby podać poziom. Tabela bez metatabeli zostanie zapisana jako JSON. Zobacz [dziennik i błędy](#testing-and-debugging).
-- **`sf.setTimeout(fn, ms, ...)`** uruchamia funkcję po odczekaniu, a **`sf.setInterval(fn, ms, ...)`** ponawia ją w odstępach co najmniej 10 ms. Pozostałe argumenty trafiają do funkcji. Obie zwracają numer dla **`sf.clearTimer(number)`**. Może działać do 100 liczników. Funkcje liczników są zadaniami.
-- **`sf.sleep(ms)`** [czeka](#waiting) podaną liczbę milisekund. **`sf.run(fn, ...)`** uruchamia funkcję w zadaniu, które może czekać.
+- **`print(...)`** i **`sf.log(...)`** zapisują argumenty oddzielone spacjami w **Dziennik** skryptu na poziomie informacyjnym. Użyj `sf.log.debug`, `sf.log.info`, `sf.log.warn` lub `sf.log.error`, aby podać poziom. Tabela bez metatabeli zostanie zapisana jako JSON. Zobacz [dziennik i błędy](#testing-and-debugging).
+- **`sf.setTimeout(fn, ms, ...)`** uruchamia `fn` raz po `ms` milisekundach, a **`sf.setInterval(fn, ms, ...)`** uruchamia ją co `ms` milisekund, przy odstępie co najmniej 10 ms. Pozostałe argumenty trafiają do funkcji. Obie zwracają numer dla **`sf.clearTimer(number)`**. Może działać do 100 liczników. Funkcje liczników są zadaniami.
+- **`sf.sleep(ms)`** [czeka](#waiting) `ms` milisekund.
+- **`sf.run(fn, ...)`** uruchamia funkcję w zadaniu, które może czekać.
 - **`sf.clock()`** od wersji 2 zwraca monotoniczny czas w milisekundach do pomiarów. **`os.time()`** i **`os.date()`** podają datę i godzinę.
-- **`sf.apiVersion`** podaje wersję API, a **`sf.manifest()`** manifest.
+- **`sf.apiVersion`** podaje wersję API skryptów tej kompilacji SandFly.
+- **`sf.manifest()`** zwraca manifest skryptu.
 
 ### Lua i pliki {#lua-and-files}
 
-- **`require(name)`** ładuje plik Lua z pakietu raz i zwraca jego wynik. Na przykład `require('lib.words')` czyta `lib/words.lua`. Nazwa może zawierać litery, cyfry, podkreślenia, myślniki i kropki.
+- **`require(name)`** ładuje plik Lua z pakietu raz i zwraca jego wynik. Na przykład `require('lib.words')` czyta `lib/words.lua`. Nazwa może zawierać litery, cyfry, podkreślenia (`_`), łączniki (`-`) i kropki (`.`).
 - **`sf.readFile(path)`** od wersji 2 zwraca tekst pliku pakietu, na przykład `'data/words.txt'`, do 1 MB lub `nil` przy braku pliku.
 - **`json.encode(value)`** i **`json.decode(text)`**, dostępne też jako `sf.json`, przeliczają między Lua i JSON. Pusta tabela staje się `[]`, a tabela samych wartości listą. Użyj `json.null` dla `null`. Dekodowanie `null` zwraca `nil`.
 
@@ -997,6 +1065,8 @@ Nazw z tej listy używaj w polu `gesture` i w `sf.bind`.
 
 Poniższe dodatkowe gesty SandFly rozpoznaje tylko wtedy, gdy używa ich polecenie lub skrypt.
 
+- Trzy lub cztery stuknięcia jednym palcem. `tripleTap`, `quadrupleTap`.
+
 - Przesunięcia przy krawędzi. `edgeSwipeUpFromBottom`, `edgeLongSwipeUpFromBottom`, `edgeSwipeDownFromTopLeft`, `edgeLongSwipeDownFromTopLeft`, `edgeSwipeDownFromTopRight`, `edgeLongSwipeDownFromTopRight`, `edgeSwipeRightFromLeftTop`, `edgeLongSwipeRightFromLeftTop`, `edgeSwipeRightFromLeftBottom`, `edgeLongSwipeRightFromLeftBottom`, `edgeSwipeLeftFromRightTop`, `edgeLongSwipeLeftFromRightTop`, `edgeSwipeLeftFromRightBottom`, `edgeLongSwipeLeftFromRightBottom`, `edgeSwipeUpAlongLeft`, `edgeSwipeDownAlongLeft`, `edgeSwipeUpAlongRight`, `edgeSwipeDownAlongRight`, `edgeSwipeLeftAlongTop`, `edgeSwipeRightAlongTop`, `edgeSwipeLeftAlongBottom`, `edgeSwipeRightAlongBottom`.
 - Stuknięcia w rogu. `cornerTapTopLeft`, `cornerDoubleTapTopLeft`, `cornerTripleTapTopLeft`, `cornerDoubleTapAndHoldTopLeft`, `cornerTripleTapAndHoldTopLeft`, `cornerTapTopRight`, `cornerDoubleTapTopRight`, `cornerTripleTapTopRight`, `cornerDoubleTapAndHoldTopRight`, `cornerTripleTapAndHoldTopRight`, `cornerTapBottomLeft`, `cornerDoubleTapBottomLeft`, `cornerTripleTapBottomLeft`, `cornerDoubleTapAndHoldBottomLeft`, `cornerTripleTapAndHoldBottomLeft`, `cornerTapBottomRight`, `cornerDoubleTapBottomRight`, `cornerTripleTapBottomRight`, `cornerDoubleTapAndHoldBottomRight`, `cornerTripleTapAndHoldBottomRight`.
 - Stuknięcie i przesunięcie jednym palcem. `twoFingerTapThenOneFingerSwipeUp`, `twoFingerTapThenOneFingerSwipeDown`, `twoFingerTapThenOneFingerSwipeLeft`, `twoFingerTapThenOneFingerSwipeRight`, `twoFingerDoubleTapThenOneFingerSwipeUp`, `twoFingerDoubleTapThenOneFingerSwipeDown`, `twoFingerDoubleTapThenOneFingerSwipeLeft`, `twoFingerDoubleTapThenOneFingerSwipeRight`, `twoFingerTripleTapThenOneFingerSwipeUp`, `twoFingerTripleTapThenOneFingerSwipeDown`, `twoFingerTripleTapThenOneFingerSwipeLeft`, `twoFingerTripleTapThenOneFingerSwipeRight`.
@@ -1006,34 +1076,41 @@ Poniższe dodatkowe gesty SandFly rozpoznaje tylko wtedy, gdy używa ich polecen
 - Zsuwanie i rozsuwanie palców oraz szybki ruch dwoma palcami tam i z powrotem. `twoFingerPinch`, `twoFingerSpread`, `threeFingerPinch`, `threeFingerSpread`, `fourFingerPinch`, `fourFingerSpread`, `twoFingerScrub`.
 - Przesunięcie i przytrzymanie. `swipeUpAndHold`, `swipeDownAndHold`, `swipeLeftAndHold`, `swipeRightAndHold`, `swipeUpThenDownAndHold`, `swipeDownThenUpAndHold`, `swipeLeftThenRightAndHold`, `swipeRightThenLeftAndHold`, `swipeUpThenLeftAndHold`, `swipeUpThenRightAndHold`, `swipeDownThenLeftAndHold`, `swipeDownThenRightAndHold`, `swipeLeftThenUpAndHold`, `swipeLeftThenDownAndHold`, `swipeRightThenUpAndHold`, `swipeRightThenDownAndHold`.
 
-Przesunięcia trzyczęściowe mają nazwy takie jak `swipeRightThenUpThenRight`, `swipeUpThenDownThenUp`. Gesty oddzielone uniesieniem mają nazwy takie jak `swipeRightLiftSwipeUp`, `swipeDownLiftSwipeDown`, `swipeUpThenLeftLiftSwipeRight`, `swipeUpLiftSwipeRightThenDown`. Te ostatnie wymagają ustawienia czasu między przesunięciami. Gdy krawędź służy do otwierania menu, ruchy wzdłuż niej trafiają do menu.
+Przesunięcia trzyczęściowe mają nazwy takie jak `swipeRightThenUpThenRight`, `swipeUpThenDownThenUp`. Gesty oddzielone uniesieniem mają nazwy takie jak `swipeRightLiftSwipeUp`, `swipeDownLiftSwipeDown`, `swipeUpThenLeftLiftSwipeRight`, `swipeUpLiftSwipeRightThenDown`. Te ostatnie wymagają ustawienia **Odstęp między przesunięciami dwuetapowymi**. Gdy krawędź służy do otwierania menu, ruchy wzdłuż niej trafiają do menu.
 
 ## Testowanie i diagnozowanie {#testing-and-debugging}
 
 ### Dziennik {#the-log}
 
-**Dziennik** na stronie skryptu pokazuje najnowsze wpisy od uruchomienia SandFly, wraz z godziną i poziomem. Zawiera `print`, `sf.log`, błędy i ostrzeżenia SandFly. Zachowuje do 300 wpisów po 4000 znaków. **Kopiuj dziennik** kopiuje je od najstarszego. **Wyczyść dziennik** je usuwa.
+Na stronie skryptu otwórz **Dziennik**, żeby zobaczyć tekst zapisany przez `print` i `sf.log`, wszystkie błędy skryptu i ostrzeżenia SandFly. Wpisy są uporządkowane od najnowszego, a przy każdym jest czas i poziom. SandFly przechowuje 300 ostatnich wpisów na skrypt od chwili swojego uruchomienia. Każdy wpis ma do 4000 znaków. **Kopiuj dziennik** kopiuje wpisy od najstarszego. **Wyczyść dziennik** je usuwa.
 
-SandFly dodaje wpis poziomu diagnostycznego po załadowaniu dla pakietu i ostrzeżenie o brakującym uprawnieniu dla pominiętego działania. Ostrzega też, gdy czynność reguły nie znajduje elementu, procedura mowy przekracza czas lub wersja API nie pasuje.
+SandFly zapisuje też własne wpisy.
+
+- „Loaded for *pakiet*” na poziomie diagnostycznym przy każdym załadowaniu skryptu.
+- Jedno ostrzeżenie dla każdej procedury obsługi zdarzenia, reguły, czynności lub przypisania pominiętego z powodu braku uprawnienia, na przykład „onFocus needs the screen permission, so it is not used”.
+- Ostrzeżenie przy każdej czynności reguły, która nie znalazła elementu, oraz po jednym ostrzeżeniu dla każdej procedury mowy, która przekracza limit czasu.
+- Ostrzeżenie, jeśli wersje API z manifestu nie pasują do tej wersji SandFly.
 
 **Ustawienia programisty** > **Poziom rejestrowania** określa, które wpisy trafiają do dziennika systemowego z tagiem `BacktalkScript`. Mogą zawierać tekst ekranu. Dziennik skryptu zachowuje je także wtedy, gdy domyślne ustawienia pomijają je w dzienniku systemowym.
 
 ### Błędy {#errors}
 
-Po błędzie zdarzenia, polecenia, licznika lub odpowiedzi z okna dziennik podaje miejsce, wiadomość i stos wywołań. Skrypt nadal działa. Błąd podczas ładowania `main.lua` rozpoczyna się od `Loading:` i powstrzymuje załadowanie. Przy błędnym manifeście import podaje przyczynę, na przykład brak autora lub nieznane pole reguły.
+Gdy procedura obsługi zdarzenia, polecenie, licznik lub funkcja wywołana przez okno zgłosi błąd, w dzienniku pojawi się miejsce wystąpienia, komunikat i stos wywołań. Przykładowe oznaczenie miejsca to `onFocus:` albo `command unread:`. Skrypt pozostanie w pamięci, a pozostałe procedury nadal będą działać. Błąd podczas wykonywania `main.lua` przy ładowaniu zaczyna się od `Loading:`. Skrypt nie zostanie wtedy załadowany.
 
-SandFly wyłącza skrypt po pięciu błędach w minutę albo trzech przekroczeniach czasu w pięć minut. Podaje komunikat i zapisuje przyczynę. Jeśli wywołanie blokuje wszystkie skrypty ponad 20 sekund, SandFly wyłącza sprawcę i ponownie uruchamia resztę. Po naprawie użyj **Włącz** na stronie skryptu.
+Podczas importu SandFly odrzuca skrypt, jeśli nie może odczytać manifestu. Wyświetla powód, na przykład „The manifest needs author” lub „Unknown rule fields: lable”.
+
+SandFly wyłącza skrypt po pięciu błędach w minutę albo trzech przekroczeniach czasu w pięć minut. Usłyszysz nazwę wyłączonego skryptu i wskazówkę, żeby sprawdzić jego dziennik w **Skrypty**. Dziennik zawiera wpis „Turned off after repeated errors”. Jeśli pojedyncze wywołanie blokuje wszystkie skrypty przez ponad 20 sekund, SandFly wyłącza dany skrypt i ponownie uruchamia pozostałe. Po naprawie użyj **Włącz** na stronie skryptu.
 
 ### Ponowne ładowanie {#reload-a-script}
 
-- **Importuj skrypt** zastępuje kod, zachowując dane, ustawienia i wybory uprawnień.
-- Wyłączenie i ponowne włączenie wczytuje od nowa kod i zmienne.
+- Zaimportuj plik ponownie przez **Importuj skrypt**. Nowy kod zastąpi poprzedni, a dane, ustawienia i wybory uprawnień zostaną zachowane.
+- Na stronie skryptu wyłącz przełącznik **Włącz**, a potem włącz go ponownie. Skrypt wczyta się od nowa i zacznie z początkowymi wartościami zmiennych.
 - Skrypt z `apps` ładuje się za każdym razem, gdy jego aplikacja trafia na pierwszy plan.
 
 ### Wskazówki do testów {#tips}
 
 - Przypisz gest do **Włącz lub wyłącz wszystkie skrypty**, zanim zaczniesz próbę, jeśli nie wiesz, jak zadziała skrypt. Skrypt nie może przejąć tego gestu. Możesz też użyć **Skrypty** > **Wyłącz wszystkie skrypty**.
-- Dane do zapytań odczytaj przez [sprawdzanie elementu](#find-the-details-of-an-item).
+- Żeby poznać identyfikatory i teksty potrzebne do zapytań, użyj **Sprawdź element z fokusem**, **Kopiuj szczegóły elementu** i **Kopiuj drzewo ekranu**. Zobacz [Jak sprawdzić dane elementu](#find-the-details-of-an-item).
 - Użyj `print` na rekordzie zdarzenia. `sf.onScroll(function(e) print(e) end)` zapisze zdarzenie przewijania jako JSON.
 - Otocz `pcall` wywołania, które mogą się nie udać, na przykład `sf.fetch` i `sf.device.set`.
 - Krótkie procedury mowy mogą użyć zmiennych obliczonych wcześniej w `onAppEnter` lub liczniku.
@@ -1043,11 +1120,11 @@ SandFly wyłącza skrypt po pięciu błędach w minutę albo trzech przekroczeni
 | Zasób | Limit |
 | --- | --- |
 | Ładowanie i wywołanie | 2 sekundy na główny plik lub wywołanie. W zadaniu czekającym liczy się każda część między pauzami. |
-| Procedury mowy i menu | 30 ms łącznie na mowę. `onActions` może działać do 250 ms, ale pozycje trafią do menu tylko przy odpowiedzi w 50 ms. Szukanie elementów wlicza się do czasu. |
+| Procedury mowy i menu | 30 ms łącznie na mowę. `onActions` może działać do 250 ms, ale pozycje trafią do menu tylko przy odpowiedzi w 50 ms. Szukanie elementów wlicza się do czasu i zatrzymuje się po jego upływie. |
 | Pamięć | 32 MB dla skryptu i 8 MB tekstu z `string.rep`. |
 | Manifest | 500 reguł, w tym do 100 z `match`, 50 poleceń i 20 opcji nawigacji. Do 10 czynności w regule, 10 kroków w czynności i 12 części w `read`. |
-| Zasoby podczas działania | 200 dodatkowych reguł, 100 liczników, 8 żądań, 8 okien i formularzy, 2 rozpoznania tekstu. |
-| Dane | 524 288 znaków. Klucz od 1 do 200 znaków. Klucz ustawienia i ID polecenia do 64. |
+| Zasoby podczas działania | 200 dodatkowych reguł, 100 liczników, 8 żądań, 8 okien i formularzy oraz 2 rozpoznania tekstu równocześnie. |
+| Dane | 524 288 znaków w `sf.storage`. Klucz od 1 do 200 znaków. Klucz ustawienia i ID polecenia do 64. |
 | Tekst | Do 20 000 znaków mowy lub okna, 1000 znaków w brajlu, 4000 znaków wpisu i 10 000 znaków dla `sf.text`. |
 | Pliki | `.lua` do 1 MB. `.zip` do 5 MB przed i po rozpakowaniu oraz 200 plików. `sf.readFile` i plik makra do 1 MB. |
 
@@ -1055,7 +1132,7 @@ SandFly sprawdza czas i pamięć co 10 000 instrukcji Lua. Przekroczenie powodu
 
 ## Publikowanie skryptu {#publish-a-script}
 
-Aby udostępnić skrypt, umieść plik `.lua` lub `.zip` w publicznym repozytorium. Użytkownicy mogą dodać adres przez **Skrypty** > **Źródła skryptów** > **Dodaj źródło**. Możesz podać repozytorium lub konkretną gałąź i katalog, na przykład:
+Żeby udostępnić skrypt, umieść plik `.lua` lub `.zip` w publicznym repozytorium na GitHubie, GitLabie, Codebergu, Gitei (gitea.com) lub Bitbuckecie. Użytkownicy mogą dodać repozytorium, jego gałąź lub katalog jako źródło przez **Skrypty** > **Źródła skryptów** > **Dodaj źródło**. Przykładowe adresy znajdziesz poniżej.
 
 - `github.com/owner/repository` lub `github.com/owner/repository/tree/main/scripts`.
 - `gitlab.com/group/repository` lub `gitlab.com/group/subgroup/repository/-/tree/main/scripts`.
@@ -1063,24 +1140,27 @@ Aby udostępnić skrypt, umieść plik `.lua` lub `.zip` w publicznym repozytori
 - `gitea.com/owner/repository`, z układem ścieżki jak na Codebergu.
 - `bitbucket.org/workspace/repository` lub `bitbucket.org/workspace/repository/src/main/scripts`.
 
-Źródło pokazuje do 200 plików bezpośrednio w katalogu. Możesz też udostępnić adres HTTPS konkretnego pliku.
+Źródło pokazuje do 200 plików `.lua` i `.zip` umieszczonych bezpośrednio w danym katalogu. Skrypt możesz też zainstalować z adresu `https` prowadzącego do pliku.
 
-Raz dziennie SandFly sprawdza `version` w źródle i pod tą samą nazwą pliku. Skrypt bez zapamiętanego źródła może znaleźć przez plik nazwany według `id`, na przykład `my-script.lua`. Automatycznie instaluje zgodną aktualizację, jeśli pochodzi z tego samego źródła, ma tego samego autora i nie wymaga nowych uprawnień. Inne aktualizacje są w **Skrypty** > **Aktualizacje**. Przed instalacją zobaczysz nowe uprawnienia i ewentualną zmianę autora.
+Raz dziennie SandFly sprawdza, czy w źródle instalacji pod tą samą nazwą pliku jest nowsza `version`. Skrypt zainstalowany bez zapamiętanego źródła może znaleźć po nazwie pliku pochodzącej z `id`, na przykład `my-script.lua`. Gdy **Aktualizuj skrypty automatycznie** jest włączone, SandFly automatycznie instaluje nowszą wersję, jeśli pochodzi z tego samego źródła, ma ten sam `author`, nie wymaga nowych uprawnień i jest zgodna z wersją API tej kompilacji SandFly. Pozostałe aktualizacje znajdziesz w **Skrypty** > **Aktualizacje**. Okno instalacji pokazuje nowe uprawnienia i informuje o zmianie autora.
 
-SandFly podpisuje pliki w [oficjalnym repozytorium skryptów](https://github.com/aaron-gh/sandfly-scripts). Ostatni wiersz `main.lua` zaczyna się od `-- SandFly signature:`. Podpis obejmuje wszystkie pliki. Przy instalacji SandFly zgłasza poprawny podpis, brak podpisu lub niezgodność po zmianie. Aktualizacja z oficjalnego repozytorium instaluje się automatycznie tylko przy poprawnym podpisie.
+SandFly podpisuje pliki w [oficjalnym repozytorium skryptów](https://github.com/aaron-gh/sandfly-scripts). Ostatni wiersz `main.lua` zaczyna się od `-- SandFly signature:`. Podpis obejmuje wszystkie pliki. W oknie instalacji zobaczysz **Podpisany przez SandFly.** przy poprawnym podpisie lub **Niepodpisany przez SandFly.** przy braku podpisu. Jeśli plik zmienił się po podpisaniu, zobaczysz informację o niezgodności podpisu. Aktualizacja z oficjalnego repozytorium instaluje się automatycznie tylko przy poprawnym podpisie.
 
 ## Kreator skryptów {#the-script-builder}
 
-**Skrypty** > **Nowy skrypt** daje dostęp do kreatora opisanego w rozdziale „Skrypty i własne etykiety”. Kreator zapisuje zwykły skrypt. W `main.lua` umieszcza manifest, wiersze dla poleceń, wyzwalaczy i zmian mowy oraz **Kod Lua** na końcu. Kroki przechowuje w `macros/` i uruchamia przez [sf.macros.run](#macros).
+Przez **Skrypty** > **Nowy skrypt** możesz tworzyć skrypty bez pisania kodu. W kreatorze ustawisz aplikacje, reguły, sterowanie czytaniem, polecenia, wyzwalacze, zmiany mowy i ustawienia. Możesz też dodać kod Lua. Sposób użycia opisano w części „Utwórz skrypt w kreatorze” w rozdziale „Skrypty i własne etykiety”.
 
-Kreator sam wypełnia uprawnienia. **Kod** > **Dodatkowe uprawnienia** pozwala dodać kolejne, na przykład `java`. Przed zapisem kreator sprawdza składnię Lua i manifest. Przy niepoprawnej kombinacji, na przykład regułach w skrypcie na żądanie, pokazuje powód i nie zapisuje zmiany.
-
-**Kopiuj do kreatora skryptów** tworzy edytowalną kopię z części manifestu, kodu i pozostałych plików. **Eksportuj skrypt** zapisuje archiwum do ponownego importu i edycji. **Utwórz skrypt za pomocą SandFly Pro** i **Zmień za pomocą SandFly Pro** tworzą lub zmieniają projekt z opisu. Do akceptacji wynik działa bez uprawnień `network` i `java`.
+- Kreator zapisuje zwykły skrypt. W `main.lua` umieszcza manifest, po jednym wierszu Lua dla każdego polecenia, wyzwalacza i zmiany mowy oraz na końcu tekst z **Kod** > **Kod Lua**. Kroki poleceń i wyzwalaczy zapisuje w plikach w `macros/`, a uruchamia przez [`sf.macros.run`](#macros).
+- Kreator dodaje do manifestu uprawnienia wymagane przez używane funkcje. Przez **Kod** > **Dodatkowe uprawnienia** możesz dodać kolejne, na przykład `java`. Przed zapisem kreator sprawdza składnię Lua.
+- Jeśli zmiana utworzyłaby błędny manifest, na przykład reguły w skrypcie ładowanym na żądanie, kreator jej nie zapisze i poda powód.
+- Na stronie skryptu utworzonego poza kreatorem **Kopiuj do kreatora skryptów** tworzy jego edytowalną kopię. Przenosi pola manifestu do odpowiednich części kreatora, kod do **Kod Lua** i dołącza pozostałe pliki.
+- **Eksportuj skrypt** zapisuje projekt jako `.zip`. **Importuj skrypt** instaluje go z zachowaniem możliwości dalszej edycji w kreatorze.
+- **Utwórz skrypt za pomocą SandFly Pro** i **Zmień za pomocą SandFly Pro** tworzą lub zmieniają projekt na podstawie opisu. Dopóki użytkownik nie wybierze **Akceptuj**, skrypt działa bez uprawnień `network` i `java`.
 
 ## Przykładowe skrypty {#example-scripts}
 
 - [example-plugin.lua](scripting/examples/example-plugin.lua) odczytuje nazwę aplikacji po przełączeniu i liczy jej otwarcia. Pokazuje `onAppEnter`, `sf.storage` i przełącznik. Wbudowaną kopię znajdziesz w **Skrypty** > **Dodaj przykładowy skrypt**.
-- [notepad.lua](scripting/examples/notepad.lua) otwiera notatnik z menu lub skrótu klawisz SandFly + N. Pokazuje `sf.ui.window`, listę `items` z czynnościami, `sf.ui.confirm` i pamięć danych.
+- [notepad.lua](scripting/examples/notepad.lua) otwiera notatnik z menu SandFly lub po naciśnięciu klawisza SandFly z N. Pokazuje `sf.ui.window`, listy `items` z czynnościami, okno potwierdzenia `sf.ui.confirm` otwierane nad innym oknem oraz zapisywanie danych.
 - [wikipedia-search.lua](scripting/examples/wikipedia-search.lua) wyszukuje artykuł i otwiera wybrany. Pokazuje ładowanie na żądanie, `sf.ui.prompt`, `sf.fetch` z JSON, `sf.ui.choose` i `sf.system.openUrl`.
 - [talking-clock.lua](scripting/examples/talking-clock.lua) odczytuje godzinę co godzinę albo pół godziny i na polecenie. Pokazuje `keepLoaded`, ustawienia listy, `onSettingChange` i liczniki.
 

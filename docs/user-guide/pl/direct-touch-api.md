@@ -5,9 +5,9 @@ Dotyk bezpośredni przekazuje dotknięcia aplikacji z pominięciem eksploracji S
 ## Ustawienia użytkownika {#what-the-user-controls}
 
 - Jeśli aplikacja zadeklarowała obszary lub uprawnienie, SandFly włącza dotyk bezpośredni, gdy zobaczy ją po raz pierwszy. Użytkownik może go wyłączyć w **Dotyk** > **Dotyk bezpośredni**. Deklaracje i żądania aplikacji nie obowiązują wtedy.
-- SandFly przejmuje dotyk po otwarciu okna dialogowego, innej aplikacji, powiadomień lub szybkich ustawień, po przejściu do pola tekstowego i gdy ekran zgaśnie. Gdy ta przeszkoda ustąpi, dotyk bezpośredni wraca na obszary aplikacji.
-- Okna systemowe, takie jak pasek stanu, pozostają pod obsługą SandFly. Dotyczy to również klawiatury, chyba że użytkownik włączy pisanie bezpośrednie dla aplikacji. Pasek nawigacji przyjmuje zwykłe stuknięcia po włączeniu odpowiedniej opcji.
-- Jeśli użytkownik pozwolił ogłaszać zmianę trybu, SandFly mówi o włączeniu i wyłączeniu dotyku bezpośredniego.
+- SandFly przejmuje dotyk po otwarciu okna dialogowego, innej aplikacji, powiadomień lub szybkich ustawień, po przejściu do pola tekstowego i gdy ekran zgaśnie. Po zamknięciu takiego okna, opuszczeniu pola albo ponownym włączeniu ekranu dotyk bezpośredni wraca na obszary aplikacji.
+- Okna systemowe, takie jak pasek stanu, pozostają pod obsługą SandFly. Dotyczy to również klawiatury, chyba że użytkownik włączy pisanie bezpośrednie dla aplikacji. Pasek nawigacji przyjmuje dotknięcia bezpośrednio tylko wtedy, gdy użytkownik włączy **Aktywowanie przycisków paska nawigacji kliknięciem**.
+- Gdy obszary aplikacji zaczynają odbierać dotknięcia, SandFly mówi „Dotyk bezpośredni włączony”. Gdy przestają, mówi „Dotyk bezpośredni wyłączony”. Oba komunikaty można wyłączyć opcją **Odczytuj zmiany stanu dotyku bezpośredniego**.
 
 ## Wybór obszarów {#which-areas-apply}
 
@@ -16,7 +16,7 @@ Gdy aplikacja jest na pierwszym planie, obowiązuje pierwsza pasująca możliwo�
 1. Ostatnie żądanie aplikacji, aż do `reset`.
 2. Reguły manifestu odpowiadające bieżącej aktywności i stanowi.
 3. Brak dotyku bezpośredniego dla aplikacji z deklaracją lub uprawnieniem.
-4. Cały ekran dla innych aplikacji z włączoną funkcją. Tak działa na przykład gra wybrana w ustawieniach albo deklarująca `dev.nvgt.capability.DIRECT_TOUCH`.
+4. Cały ekran dla innych aplikacji z włączoną funkcją. Tak działa na przykład gra włączona przez użytkownika na liście **Aplikacje** albo gra deklarująca `dev.nvgt.capability.DIRECT_TOUCH`.
 
 ## Deklaracja w manifeście {#declaring-areas-in-the-manifest}
 
@@ -87,7 +87,7 @@ Jeśli podasz obie krawędzie na danej osi, rozmiar na tej osi jest ignorowany. 
 
 Jeśli pasuje reguła całego ekranu, obejmuje również poszczególne obszary. W innych przypadkach pasujące obszary się sumują. SandFly czyta do 64 reguł i pomija nieznane elementy. Puste `<direct-touch />` pozostawia obsługę SandFly aż do żądania aplikacji.
 
-SandFly rozpoznaje aktywność, gdy się otwiera. Jeśli już była otwarta podczas uruchamiania czytnika, reguła z nazwą aktywności zadziała od następnego otwartego okna aktywności. SandFly ponownie czyta deklarację po aktualizacji aplikacji.
+SandFly ustala bieżącą aktywność w chwili jej otwarcia. Jeśli jedna z aktywności aplikacji była już otwarta podczas uruchamiania SandFly, reguły wskazujące nazwę aktywności zaczną obowiązywać od chwili otwarcia następnej aktywności. Po aktualizacji aplikacji SandFly ponownie wczyta deklarację.
 
 ## Żądania w trakcie działania {#asking-while-your-app-runs}
 
@@ -145,6 +145,6 @@ directTouch.setState(client, null)
 | `reset(client)` | Usuwa żądanie i przywraca deklarację manifestu. |
 | `setState(client, state)` | Ustawia stan do dopasowania reguł. `null` go usuwa. |
 
-Każde żądanie zastępuje poprzednie. Wywołania są jednokierunkowe. Żądanie zaczyna działać dopiero na pierwszym planie i pozostaje w granicach okna. Gdy układ się zmienia, wyślij prostokąty ponownie albo użyj identyfikatorów widoków, których położenie SandFly odszuka po zmianie.
+Każde żądanie zastępuje poprzednie. Wywołania są jednokierunkowe i wracają od razu. Żądanie obowiązuje, tylko gdy aplikacja jest na pierwszym planie. Jeśli wyślesz je z tła, zacznie działać po przejściu aplikacji na pierwszy plan. Obszary są przycinane do okna aplikacji. Po zmianie układu wyślij ponownie prostokąty podane w pikselach ekranu. Możesz też użyć identyfikatorów widoków. SandFly przy zmianach zawartości ponownie ustali ich położenie.
 
 Po ponownym uruchomieniu SandFly połączenie zgłasza `onServiceDisconnected`, a potem `onServiceConnected`. Wyślij żądanie i stan ponownie w `onServiceConnected`.

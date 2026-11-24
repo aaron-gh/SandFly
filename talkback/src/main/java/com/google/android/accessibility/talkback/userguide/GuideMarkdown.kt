@@ -424,7 +424,9 @@ object GuideMarkdown {
           text.startsWith("Catatan:") ||
           text.startsWith("**Catatan:**") ||
           text.startsWith("Opmerking:") ||
-          text.startsWith("**Opmerking:**")
+          text.startsWith("**Opmerking:**") ||
+          text.startsWith("Uwaga:") ||
+          text.startsWith("**Uwaga:**")
       ) {
         html.append("<p class=\"note\">").append(Inline.render(text, byId)).append("</p>\n")
       } else {

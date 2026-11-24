@@ -1,80 +1,93 @@
 ## Polecenia głosowe {#voice-commands}
 
-Głosem możesz przejść do innej pozycji, odczytać ekran, edytować tekst, otworzyć aplikację albo wywołać inne [polecenie SandFly](#commands-list). Możesz też wybrać element ekranu po jego nazwie, zadzwonić do kontaktu i wysłać wiadomość. Ustawienia **Polecenia głosowe** pozwalają dodać własne frazy i włączyć rozumienie poleceń przez AI. Tego ekranu nie ma na zegarkach.
+Poleceniami głosowymi możesz przenosić fokus, czytać i edytować tekst, otwierać aplikacje, aktywować elementy ekranu, dzwonić, wysyłać wiadomości i opisywać ekran. Możesz też w jednej wypowiedzi podać kilka poleceń do wykonania po kolei. Na ekranie **Polecenia głosowe** dodasz własne zwroty i wybierzesz, czy niezrozumiałe polecenia ma obsługiwać AI. Tego ekranu nie ma na zegarku.
 
-### Jak powiedzieć polecenie {#voice-commands-start}
+Pełny wykaz zwrotów znajdziesz w [](#appendix-voice-commands).
 
-1. Uruchom **Użyj polecenia głosowego**. W domyślnym układzie SandFly przesuń palec w prawo, a potem w górę. Zobacz [domyślne gesty](#appendix-gestures).
-2. Przy pierwszym użyciu wybierz **Używaj poleceń głosowych**. Jeśli okno z przykładami ma się już nie pojawiać, odznacz **Zawsze pokazuj ten komunikat**.
-3. Powiedz, co chcesz zrobić.
+### Użyj polecenia głosowego {#voice-commands-start}
 
-SandFly potrzebuje zgody na używanie mikrofonu. Rozpoznaje głos w usłudze wybranej w **Pisanie** > **Dyktowanie**. Więcej znajdziesz w [rozdziale o pisaniu](#typing).
+1. Użyj polecenia **Użyj polecenia głosowego**. W układzie gestów SandFly przesuń palec w prawo, a potem w górę. Zobacz [](#appendix-gestures).
+2. Powiedz polecenie.
 
-Polecenia głosowe nie działają na zablokowanym ekranie ani podczas konfiguracji urządzenia. Na ekranie blokady SandFly wyjaśni przyczynę i poda gest otwierający jego menu.
+W oknie **Używanie poleceń głosowych podczas korzystania z SandFly** pojawiają się przykładowe zwroty. Wybierz **Używaj poleceń głosowych**, aby rozpocząć nagrywanie. Jeśli chcesz pominąć to okno przy kolejnych użyciach, odznacz **Zawsze pokazuj ten komunikat**.
 
-Powiedz „pomoc”, żeby otworzyć **Przegląd poleceń głosowych**. Możesz też [dodać polecenie](#commands-edit-menu) **Użyj polecenia głosowego** z kategorii **Czynności systemowe** do menu SandFly lub przypisać je do skrótu klawiszowego.
+Polecenia głosowe wymagają dostępu do mikrofonu. SandFly używa mechanizmu rozpoznawania mowy wybranego w menu **Pisanie** > **Dyktowanie**. Zobacz [](#typing).
+
+Polecenia głosowe są niedostępne podczas konfiguracji urządzenia i przy zablokowanym ekranie. Jeśli ekran jest zablokowany, SandFly informuje o tym i podaje gest otwierający menu SandFly.
+
+Aby wyświetlić listę, powiedz „Pomoc” lub „Co mogę powiedzieć?”. Otworzy się **Przegląd poleceń głosowych**.
+
+Polecenie **Użyj polecenia głosowego** jest też w grupie **Czynności systemowe**. Możesz uruchamiać je skrótem klawiszowym albo pozycją menu. O dodawaniu pozycji do menu SandFly przeczytasz w [](#commands-edit-menu).
 
 ### Co możesz powiedzieć {#voice-commands-phrases}
 
-SandFly sprawdza w tej kolejności:
+SandFly sprawdza to, co powiesz, w następującej kolejności.
 
-1. [Twoje własne frazy](#voice-commands-custom).
-2. Nazwy takie jak na ekranie **Polecenia**, na przykład „Czytaj od góry” i „Następny nagłówek”. Dotyczy to również nazw Twoich makr, menu i poleceń skryptu.
-3. [Podstawowe wzorce poleceń](#voice-commands-sandfly), na przykład „otwórz Chrome”, „kliknij Ustawienia” i „wpisz dzień dobry”.
-4. [Pozostałe polecenia głosowe](#appendix-voice-commands), na przykład „znajdź zapisz” i „mów szybciej”.
-5. [Usługę AI](#voice-commands-ai), jeśli została włączona.
+1. Szuka zwrotu zapisanego we własnych poleceniach głosowych. Zobacz [](#voice-commands-custom).
+2. Szuka nazwy polecenia takiej jak na ekranie **Polecenia**, np. **Czytaj od góry**, **Opisz obraz** albo **Następny nagłówek**. Możesz też powiedzieć nazwę swojego makra, menu lub polecenia skryptu. Zobacz [](#commands-list).
+3. Próbuje dopasować wzorzec wypowiedzi, np. „otwórz Chrome”, „wybierz Ustawienia”, „zadzwoń do Alex” lub „wpisz cześć”. Zobacz [](#voice-commands-sandfly).
+4. Sprawdza starsze polecenia głosowe, takie jak „Znajdź zapisz”, „Nawigacja typu słowa”, „Mów szybciej” lub „Kopiuj”. Zobacz [](#appendix-voice-commands).
+5. Jeśli włączono **Rozumiej polecenia głosowe za pomocą AI**, przekazuje nierozpoznaną wypowiedź do usługi AI. Zobacz [](#voice-commands-ai).
 
-Wielkość liter i interpunkcja dodana przez rozpoznawanie mowy nie mają znaczenia. Możesz zacząć od „proszę”, „czy możesz” lub „chcę” albo zakończyć „proszę”, „dla mnie” lub „teraz”. SandFly pomija te zwroty przy szukaniu polecenia. Jeśli go nie rozpozna, podpowie, jak otworzyć listę.
+Wielkość liter i znaki przestankowe dodane przy rozpoznawaniu mowy nie wpływają na dopasowanie. SandFly pomija też m.in. „proszę”, „czy możesz”, „możesz”, „chcę” i „teraz” na początku wypowiedzi oraz „proszę”, „dla mnie” i „teraz” na końcu.
 
-#### Otwieranie aplikacji, klikanie i pisanie {#voice-commands-sandfly}
+Jeśli SandFly nie rozpozna polecenia, odczyta odpowiedni komunikat i podpowie, jak otworzyć listę poleceń.
 
-- **Otwórz aplikację**. Powiedz „otwórz Chrome”, „uruchom Chrome” lub „przełącz na Chrome”. SandFly szuka pełnej nazwy, potem początku nazwy, a na koniec wspólnego słowa. Gdy nie ma wyniku lub kilka wyników pasuje tak samo, spróbuje wykonać polecenie o tej nazwie.
-- Żeby wybrać element na ekranie, powiedz na przykład „kliknij Ustawienia”, „stuknij Ustawienia” lub „wybierz Ustawienia”. SandFly najpierw szuka dokładnego tekstu, a potem pierwszej pozycji, która go zawiera.
-- **Wpisz tekst**. Powiedz „wpisz” lub „wprowadź”, a potem treść. SandFly wpisze ją do pola tekstowego, na którym jest fokus.
-- Żeby uruchomić działanie, powiedz „wykonaj” i nazwę działania albo „uruchom makro” i nazwę makra.
-- Żeby zrobić przerwę, powiedz „poczekaj”, „poczekaj sekundę” albo podaj przerwę, na przykład „poczekaj pięć sekund”. Najdłuższa przerwa trwa 60 sekund.
+#### Aplikacje, elementy i tekst {#voice-commands-sandfly}
+
+- Aby otworzyć aplikację, powiedz np. „otwórz”, „uruchom”, „włącz” lub „przełącz na”, a potem jej nazwę. SandFly najpierw szuka dokładnej nazwy. Jeśli nie znajdzie dokładnego dopasowania, szuka nazwy zaczynającej się od tego tekstu, a na końcu nazwy zawierającej jedno z jego słów. Jeśli brakuje dopasowania albo pasuje kilka aplikacji w równym stopniu, SandFly spróbuje uruchomić polecenie o tej nazwie, np. „otwórz powiadomienia”. Jeśli polecenia też nie ma, zwrot pozostaje nierozpoznany.
+- Aby aktywować element ekranu, powiedz np. „stuknij”, „dotknij dwukrotnie”, „kliknij”, „naciśnij”, „aktywuj” lub „wybierz” i podaj jego tekst. SandFly aktywuje pierwszy element o dokładnie takim tekście. Jeśli go nie znajdzie, użyje pierwszego elementu zawierającego podany tekst. Gdy żaden nie pasuje, usłyszysz „Nie znaleziono” i szukany tekst.
+- Aby użyć funkcji **Wpisz tekst**, powiedz „wpisz”, „napisz” lub „wprowadź”, a potem podyktuj treść. SandFly wpisze ją do pola edycji, na którym jest fokus.
+- Aby uruchomić polecenie lub makro, powiedz np. „wykonaj” i nazwę polecenia albo „uruchom makro” i nazwę makra. Przykładowy zwrot to „uruchom makro poranek”.
+- Polecenie **Czekaj** wstawia przerwę między poleceniami. Powiedz „poczekaj”, „poczekaj sekundę” lub „poczekaj” i podaj liczbę sekund. Możesz poczekać maksymalnie 60 sekund.
 
 #### Połączenia i wiadomości {#voice-commands-calls}
 
-Powiedz „zadzwoń do” i nazwę kontaktu albo „zadzwoń na” i numer. SandFly poda wybraną osobę i rozpocznie połączenie. Po pierwszej prośbie o zgodę na połączenia powtórz polecenie. Jeśli jej nie udzielisz, otworzy się aplikacja telefonu z wpisanym numerem.
+- Aby użyć funkcji **Zadzwoń**, powiedz np. „zadzwoń do”, „zadzwoń na”, „dzwoń do” lub „połącz z” i podaj nazwę kontaktu albo numer telefonu. Usłyszysz „Dzwonię do” i nazwę, a SandFly rozpocznie połączenie. Przy pierwszym użyciu pojawi się prośba o uprawnienie do wykonywania połączeń. Po przyznaniu uprawnienia powiedz polecenie ponownie. Bez uprawnienia aplikacja Telefon otworzy się z wpisanym numerem.
+- Aby wysłać wiadomość, powiedz np. „napisz do Alex już idę”, „wyślij SMS do Alex o treści już idę”, „wyślij wiadomość do Alex w WhatsApp o treści cześć” albo „napisz do Alex w Signal cześć”. Jeśli pominiesz treść, usłyszysz „Wiadomość do” i nazwę kontaktu, a następnie możesz podyktować wiadomość.
 
-Aby wysłać wiadomość, powiedz na przykład „napisz do” i nazwę kontaktu, a potem treść. Możesz podać komunikator, na przykład „wyślij wiadomość do” i nazwę kontaktu, „przez Signal o treści” i wiadomość. Bez treści SandFly dopyta i rozpocznie nagrywanie.
+Wyszukiwanie po nazwach kontaktów wymaga dostępu do kontaktów. Prośba o to uprawnienie pojawi się przy pierwszym użyciu. Jeśli kilka kontaktów ma tę samą nazwę, SandFly wymieni pełne nazwy. Powiedz wtedy pełną nazwę właściwego kontaktu. Jeśli kontaktu nie ma, SandFly odczyta komunikat „Brak kontaktu o nazwie” i podaną nazwę.
 
-Przy pierwszym użyciu nazwy kontaktu SandFly poprosi o dostęp do kontaktów. Jeśli znajdzie kilka takich samych imion, poda pełne nazwy. Powtórz polecenie z pełną nazwą odczytaną przez SandFly.
+Jeśli nie wskażesz aplikacji, SandFly użyje domyślnej aplikacji SMS. Przy wiadomości SMS lub WhatsApp otworzy rozmowę z wpisanym tekstem, odczyta odbiorcę i treść, a potem nagra odpowiedź. Powiedz „tak”, „wyślij”, „OK” lub „jasne”, aby SandFly nacisnął **Wyślij** i odczytał „Naciśnięto Wyślij”. Przy innej odpowiedzi lub braku odpowiedzi tekst pozostanie w aplikacji, a SandFly odczyta „Wiadomość nie została wysłana”. W pozostałych aplikacjach otworzy się ekran udostępniania z tekstem. Wybierz tam rozmowę.
 
-Domyślnym wyborem jest aplikacja SMS. W przypadku SMS lub WhatsApp SandFly wstawi tekst do rozmowy, przeczyta odbiorcę i treść oraz poprosi o potwierdzenie. Powiedz „tak” lub „wyślij”, żeby nacisnął **Wyślij**. Bez potwierdzenia treść pozostanie w aplikacji. W innych komunikatorach może się otworzyć ekran udostępniania. Wybierz tam rozmowę.
+#### Opisy {#voice-commands-describe}
 
-#### Opisy ekranu i obrazów {#voice-commands-describe}
+- Aby opisać ekran, powiedz „opisz ekran” lub „co jest na ekranie”.
+- Aby opisać obraz, na którym jest fokus, powiedz np. „opisz ten obraz”, „opisz zdjęcie” albo „co jest na tym zdjęciu”.
+- **Kopiuj**. Zwrot „skopiuj to” lub „skopiuj opis” kopiuje opis zwrócony przez poprzednie polecenie. Jeśli poprzednie polecenie nie zwróciło opisu, kopiuje ostatnią wypowiedź SandFly.
+- Zwrot „wyślij to do Alex”, „udostępnij to Alex” lub „wyślij to do Alex w WhatsApp” wysyła poprzedni opis albo, jeśli go nie ma, ostatnią wypowiedź. Możesz też powiedzieć np. „wyślij opis obrazu do Alex” lub „wyślij opis ekranu do Alex”, aby od razu opisać i wysłać. Przed naciśnięciem **Wyślij** SandFly odczytuje nazwę odbiorcy i prośbę o potwierdzenie.
 
-Powiedz „opisz ekran”, „opisz ten obraz” lub „opisz to zdjęcie”. SandFly używa [opisów lokalnych lub wybranej usługi AI](#descriptions). „Skopiuj opis” bierze treść poprzedniego opisu. Gdy opisu nie ma, kopiuje ostatnią wypowiedź SandFly.
+Te polecenia korzystają z usług AI lub opisów na urządzeniu określonych na ekranach **Opisy obrazów i ekranu** i **Usługi AI**. Zobacz [](#descriptions).
 
-„Wyślij opis do” i nazwa kontaktu podaje tę treść jako wiadomość. Możesz też podać komunikator, mówiąc „wyślij to do” i nazwę kontaktu, potem „przez” i nazwę aplikacji. „Wyślij opis ekranu do” lub „wyślij opis obrazu do” najpierw tworzy opis i zaczyna wysyłanie. SandFly podaje odbiorcę przed użyciem przycisku **Wyślij**.
+### Połącz kilka poleceń {#voice-commands-chains}
 
-### Kilka poleceń pod rząd {#voice-commands-chains}
+Jedna wypowiedź może zawierać kilka poleceń. Połącz je słowami „potem”, „a następnie”, „następnie”, „a potem” lub „po tym”. Możesz powiedzieć np. „otwórz Wiadomości, potem zadzwoń do Alex”. Słowo „i” też oddziela polecenia, gdy obie części są poleceniami. „Przejdź do ekranu głównego i otwórz Chrome” zawiera dwa polecenia, a „wybierz Sól i pieprz” jedno. SandFly wykonuje je kolejno, z krótką przerwą po każdym poleceniu zmieniającym ekran.
 
-Oddziel polecenia słowem „potem”, „następnie” lub „a potem”. Na przykład „otwórz Ustawienia, a potem kliknij Dostępność”. Możesz użyć też „i”, jeśli po obu stronach są osobne polecenia. Dzięki temu zdanie „kliknij Sól i pieprz” nadal może oznaczać jeden element o tej nazwie.
+Jeśli polecenie się nie powiedzie, np. brakuje elementu, SandFly poda przyczynę i zatrzyma wykonywanie. Gdy część wypowiedzi nie pasuje do polecenia, SandFly spróbuje potraktować ją jako jedno ze starszych poleceń głosowych. Jeśli i to się nie uda, odczyta „Nie zrozumiano” oraz nierozpoznaną część.
 
-SandFly wykonuje kroki po kolei. Po zmianie ekranu robi krótką przerwę. Gdy elementu nie da się znaleźć albo polecenie się nie powiedzie, poda przyczynę i zakończy sekwencję. Jeśli części zdania nie uda się zinterpretować, spróbuje rozpoznać ją jako jedno ze starszych poleceń.
+Aby zatrzymać wykonywanie, zacznij kolejne polecenie głosowe i powiedz „stop”, „anuluj”, „przerwij” lub „nieważne”. Rozpoczęcie nowej wypowiedzi również zatrzymuje poprzednią.
 
-Aby przerwać wykonywanie, rozpocznij nowe polecenie głosowe. Możesz też powiedzieć „stop”, „anuluj” lub „przerwij”.
+### Rozpoznawanie poleceń za pomocą AI {#voice-commands-ai}
 
-### Rozumienie poleceń przez AI {#voice-commands-ai}
+Opcja **Polecenia głosowe** > **Rozumiej polecenia głosowe za pomocą AI** przekazuje do bieżącej usługi AI wypowiedzi, których SandFly nie rozpoznał, w tym sekwencje rozpoznane tylko częściowo. Usługa zamienia je na polecenia. SandFly wysyła treść wypowiedzi, nazwy poleceń i teksty elementów widocznych na ekranie. Domyślnie opcja jest wyłączona.
 
-Włącz **Polecenia głosowe** > **Rozumiej polecenia głosowe za pomocą AI**, żeby użyć AI, gdy SandFly nie rozumie wypowiedzi lub części sekwencji. Do wybranej usługi trafiają Twoje słowa, nazwy dostępnych poleceń i tekst elementów na ekranie. Opcja jest domyślnie wyłączona.
-
-Najpierw skonfiguruj [Usługi AI](#descriptions), na przykład model na urządzeniu, [SandFly Pro](#pro) albo usługę z własnym kluczem. Odpowiedź może uruchomić polecenie, wybrać element, otworzyć aplikację, wpisać tekst, poczekać, zadzwonić, wysłać wiadomość, opisać obraz lub ekran, skopiować wynik albo wypowiedzieć krótką odpowiedź.
+Najpierw skonfiguruj usługę na ekranie **Usługi AI**. Może to być AI na urządzeniu, SandFly Pro lub inna usługa z kluczem. Zobacz [](#descriptions) i [](#pro). Odpowiedź AI może uruchomić polecenia, aktywować elementy, otworzyć aplikacje, wpisać tekst, poczekać, wykonać połączenie, wysłać wiadomość, opisać ekran lub obraz, skopiować tekst albo odczytać krótką odpowiedź.
 
 ### Własne polecenia głosowe {#voice-commands-custom}
 
-1. Otwórz **Polecenia głosowe** w ustawieniach.
+Własne polecenie głosowe to zwrot, który uruchamia wybrane polecenie. SandFly sprawdza własne zwroty przed innymi poleceniami głosowymi.
+
+1. W ustawieniach SandFly wybierz **Polecenia głosowe**.
 2. W sekcji **Własne polecenia głosowe** wybierz **Dodaj polecenie głosowe**.
-3. Wpisz frazę do 200 znaków.
-4. Wybierz kategorię i działanie.
+3. Wpisz zwrot o długości do 200 znaków.
+4. Wybierz grupę, a w niej polecenie.
 
-Własna fraza ma pierwszeństwo przy rozpoznawaniu. Każda musi mieć inną treść. Wybierz zapisane polecenie, żeby użyć **Zmień frazę**, **Zmień polecenie** lub **Usuń**.
+Wybierz zapisane polecenie, aby użyć opcji **Zmień frazę**, **Zmień polecenie** lub **Usuń**. Każde własne polecenie musi mieć inny zwrot.
 
-**Eksportuj do pliku** i **Importuj z pliku** pozwalają zapisać i dodać [zestaw poleceń](#api-item-files). Fraza może uruchamiać własne menu lub [makro](#macros). Jeśli kilka czynności ma zaczynać się od krótkiego hasła, umieść je w jednym makrze.
+Opcja **Eksportuj do pliku** zapisuje własne polecenia, a **Importuj z pliku** dodaje je z pliku. Zobacz [](#api-item-files).
 
-### Język poleceń {#voice-commands-languages}
+Własny zwrot może uruchomić dowolne polecenie, również makro lub własne menu. Jeśli chcesz wykonać kilka kroków za pomocą jednego zwrotu, utwórz makro i przypisz do niego zwrot. Zobacz [](#macros).
 
-Rozpoznawanie używa języka urządzenia. Frazy i słowa łączące zależą od tłumaczenia programu, a nazwy poleceń wypowiadasz tak, jak są wyświetlane przez SandFly. W [dodatku o poleceniach](#appendix-voice-commands) znajdziesz także starsze formuły i przykłady.
+### Języki {#voice-commands-languages}
+
+Rozpoznawanie mowy używa języka urządzenia. Starsze zwroty, wzorce wypowiedzi i słowa łączące polecenia są tłumaczone razem z SandFly. Nazwy poleceń rozpoznawane są w języku, w którym SandFly je wyświetla. W [](#appendix-voice-commands) znajdziesz zwroty rozpoznawane przez polską wersję.

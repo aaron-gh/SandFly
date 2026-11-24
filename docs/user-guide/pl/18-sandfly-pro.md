@@ -1,111 +1,170 @@
 ## SandFly Pro {#pro}
 
-SandFly Pro to płatny dodatek. Daje dostęp do [agenta AI](#pro-agent), [rozpoznawania elementów ekranu](#pro-screen-recognition), [tworzenia skryptów z opisu](#pro-scripts) oraz [opisów i tłumaczeń](#pro-ai-service) bez własnego klucza API.
+SandFly Pro to płatny dodatek z funkcjami AI.
 
-Funkcje Pro potrzebują internetu. Agent AI, rozpoznawanie ekranu i tworzenie skryptów wymagają co najmniej Androida 11. Współdzielą [miesięczny limit](#pro-usage).
+- Agent AI wykonuje w otwartej aplikacji zadanie, które wypowiesz lub wpiszesz. Możesz na przykład zlecić rozpoczęcie nowej gry. Zobacz [](#pro-agent).
+- Rozpoznawanie ekranu znajduje przyciski i inne elementy, których aplikacja nie udostępnia przez mechanizmy dostępności. Dodaje je do ekranu, żeby można je było odczytać, odnaleźć dotykiem i aktywować. Zobacz [](#pro-screen-recognition).
+- Agent do skryptów przygotowuje skrypt SandFly na podstawie opisu. Wynik możesz przejrzeć w kreatorze skryptów. Zobacz [](#pro-scripts).
+- SandFly Pro jako usługa AI opisuje obrazy i ekrany, odpowiada na pytania, obsługuje rozpoznawanie na żywo i tłumaczy tekst. Nie potrzebujesz własnego klucza API. Zobacz [](#pro-ai-service).
 
-Otwórz **SandFly Pro** na głównym ekranie ustawień. Możesz też wejść przez **Usługi AI** > **SandFly Pro settings**. W tym rozdziale część nazw pozostaje po angielsku, żeby zgadzała się z etykietami wydań, w których nie ma ich polskich odpowiedników.
+Funkcje Pro wymagają dostępu do internetu. Agent AI, rozpoznawanie ekranu i tworzenie skryptów wymagają Androida 11 lub nowszego. Każdy kod ma miesięczny limit użycia. Zobacz [](#pro-usage).
 
-### Zakup {#pro-buy}
+Na głównym ekranie ustawień pozycja **SandFly Pro** znajduje się za **Usługi AI**. Ten sam ekran otworzysz przez **Usługi AI** > **Ustawienia SandFly Pro**.
 
-1. Otwórz **SandFly Pro** i wybierz **Buy**. Strona zakupu otworzy się w przeglądarce.
-2. Wybierz pakiet i okres. Jeśli chcesz, włącz tam [automatyczne przedłużanie](#pro-auto-renewal). Dokończ płatność.
-3. Po zakupie strona pokaże kod i link do aktywacji w SandFly. Możesz też [wpisać kod ręcznie](#pro-enter-code).
+### Kup SandFly Pro {#pro-buy}
 
-Strona podaje ceny właściwe dla kraju. **Terms of sale** i **Polityka prywatności** otwierają warunki i zasady prywatności.
+1. Otwórz **SandFly Pro** i wybierz **Kup**. Strona zakupu otworzy się w przeglądarce.
+2. Wybierz pakiet i okres, a potem zapłać. Na tej samej stronie możesz włączyć automatyczne odnawianie. Zobacz [](#pro-auto-renewal).
+3. Po zakupie strona pokaże kod i odsyłacz, który otwiera SandFly i aktywuje kod na tym urządzeniu. Możesz też wpisać go ręcznie. Zobacz [](#pro-enter-code).
+
+Strona zakupu pokazuje ceny dla Twojego kraju. W ustawieniach **SandFly Pro** znajdziesz odsyłacze **Warunki sprzedaży** i **Polityka prywatności**.
 
 #### Pakiety {#pro-levels}
 
-**SandFly Pro**, **SandFly Pro (2x)** i **SandFly Pro (4x)** mają te same funkcje. Różni je limit miesięczny. Pakiety 2x i 4x zwiększają go dwa lub cztery razy.
+Do wyboru są **SandFly Pro**, **SandFly Pro (2x)** i **SandFly Pro (4x)**. Wszystkie pakiety oferują te same funkcje. **SandFly Pro (2x)** ma limit miesięczny dwukrotnie wyższy od podstawowego, a **SandFly Pro (4x)** czterokrotnie wyższy.
 
-### Wpisywanie kodu {#pro-enter-code}
+### Wpisz kod {#pro-enter-code}
 
-Otwórz **SandFly Pro** > **Enter code**, wpisz lub wklej kod, potem wybierz **Aktywuj**. SandFly poda datę ważności. Jeśli masz aktywny kod, nowy wydłuży ważność od końca bieżącego okresu.
+1. Otwórz **SandFly Pro** > **Wpisz kod**.
+2. Wpisz lub wklej kod.
+3. Wybierz **Aktywuj**.
 
-Jeśli kodu nie ma w systemie, sprawdź pisownię. Po wygaśnięciu **Add time** otwiera stronę przedłużenia. Kod może być również anulowany po zwrocie lub przez pomoc albo wykorzystany na maksymalnej [liczbie urządzeń](#pro-devices). Przy blokadzie po zbyt wielu próbach z jednej sieci odczekaj minutę.
+SandFly poda datę, do której Pro jest aktywny na tym urządzeniu. Jeśli masz już aktywny kod, nowy okres zacznie się po zakończeniu bieżącego. SandFly odczyta nową datę ważności.
+
+Jeśli aktywacja się nie powiedzie, SandFly poda powód.
+
+- Jeśli takiego kodu nie ma, sprawdź, czy nie ma w nim literówek.
+- Jeśli kod wygasł, **Dodaj czas** otworzy stronę odnowienia.
+- Kod mógł zostać anulowany po zwrocie pieniędzy lub przez pomoc techniczną.
+- Kod może być już używany na maksymalnej liczbie urządzeń. Zobacz [](#pro-devices).
+- Jeśli z tej sieci wykonano za dużo prób, poczekaj minutę i spróbuj ponownie.
 
 ### Ustawienia SandFly Pro {#pro-settings}
 
-Na ekranie **SandFly Pro** znajdziesz stan dostępu z datą ważności lub odnowienia. Przy aktywnym dostępie widać również wykorzystanie limitu. **Enter code** pozwala aktywować kod, a **Remove this device** zwalnia miejsce na inne urządzenie.
+Na ekranie **SandFly Pro** znajdziesz następujące pozycje.
 
-Przycisk **Buy** zmienia się na **Renew**, gdy masz kod, lub **Manage subscription**, jeśli kod odnawia się automatycznie. Bez automatycznego odnowienia pojawia się **Turn on automatic renewal**. Na tym ekranie możesz też zmienić [ustawienia rozpoznawania](#pro-screen-recognition) oraz otworzyć warunki sprzedaży i politykę prywatności.
+- Stan dostępu może zaczynać się od **Aktywny do**, **Aktywne. Odnowienie**, **Płatność nie powiodła się. Aktywne do** lub **Wygasł** i podawać datę. Jeśli Pro jest wyłączony, zobaczysz **Nieaktywny**. Przy aktywnym dostępie stan pokazuje również, ile miesięcznego limitu już wykorzystano.
+- **Wpisz kod** aktywuje kod na urządzeniu.
+- **Usuń to urządzenie** wyłącza tu SandFly Pro i zwalnia miejsce na innym urządzeniu. Pozycja jest widoczna, gdy na tym urządzeniu jest zapisany kod.
+- **Kup** otwiera stronę zakupu. Gdy na urządzeniu jest już kod, przycisk **Odnów** pozwala przedłużyć jego ważność. Przy automatycznym odnawianiu pojawia się **Zarządzaj subskrypcją**.
+- **Włącz automatyczne odnawianie** pojawia się przy kodzie, który nie odnawia się sam. Zobacz [](#pro-auto-renewal).
+- **Automatyczne rozpoznawanie ekranu** i **Zapomnij rozpoznane ekrany** dotyczą wykrywania elementów w aplikacjach. Zobacz [](#pro-screen-recognition).
+- **Warunki sprzedaży** i **Polityka prywatności** otwierają odpowiednie strony.
 
-### Automatyczne przedłużanie {#pro-auto-renewal}
+### Włącz automatyczne odnawianie {#pro-auto-renewal}
 
-Przedłużanie włącza się na życzenie. Jeśli chcesz je dodać do posiadanego kodu, wybierz **SandFly Pro** > **Turn on automatic renewal** i wykonaj kroki w przeglądarce. **Manage subscription** pozwala zmienić kartę lub anulować odnowienie.
+Automatyczne odnawianie jest domyślnie wyłączone. Możesz je wybrać podczas zakupu lub włączyć później dla posiadanego kodu.
 
-SandFly wysyła przypomnienie 7 dni przed odnowieniem oraz 7 dni i dzień przed wygaśnięciem. Informuje też o nieudanej płatności. Jeśli płatność się nie uda, sprawdź datę ważności i zaktualizuj kartę w **Manage subscription**.
+1. Otwórz **SandFly Pro** i wybierz **Włącz automatyczne odnawianie**. Strona otworzy się w przeglądarce.
+2. Wykonaj kroki podane na stronie.
+
+Przy aktywnym odnawianiu stan zaczyna się od **Aktywne. Odnowienie** i podaje datę. Żeby zmienić kartę lub anulować odnawianie, wybierz **Zarządzaj subskrypcją**.
+
+SandFly wyświetla powiadomienie 7 dni przed odnowieniem, a przed wygaśnięciem kodu 7 dni i dzień wcześniej. Informuje też o nieudanej płatności za odnowienie. Stan podaje wtedy **Płatność nie powiodła się. Aktywne do** i datę. Zaktualizuj kartę w **Zarządzaj subskrypcją** przed tym terminem.
 
 ### Limit użycia {#pro-usage}
 
-Agent, tworzenie skryptów, rozpoznawanie ekranu i używanie Pro jako usługi AI korzystają z limitu przypisanego do kodu. Stan znajdziesz na ekranie **SandFly Pro**. Raz w miesiącu po przekroczeniu 80% agent powie o wykorzystaniu po zadaniu. Przy wyczerpaniu funkcje czekają na następny okres. Tworzenie skryptu może zużyć znacznie więcej limitu niż jedno zadanie agenta.
+Każdy kod ma miesięczny limit. Wspólnie korzystają z niego agent AI, agent do skryptów, rozpoznawanie ekranu i SandFly Pro jako usługa AI. Wykorzystanie limitu sprawdzisz w stanie dostępu na ekranie **SandFly Pro**. Gdy osiągnie co najmniej 80%, SandFly poinformuje o tym po zadaniu agenta, raz w miesiącu.
 
-### Korzystanie na innym urządzeniu {#pro-devices}
+Po wyczerpaniu limitu usłyszysz „Osiągnięto limit użycia SandFly Pro w tym miesiącu”. Funkcje staną się ponownie dostępne w następnym miesiącu.
 
-Kod ma limit równocześnie aktywnych urządzeń. Na poprzednim otwórz **SandFly Pro** > **Remove this device** i wybierz **Usuń**. Na nowym [wpisz ten sam kod](#pro-enter-code). Jeśli nie masz dostępu do starego urządzenia, użyj **Pomoc i opinie** > **Prześlij opinię**, żeby [poprosić pomoc](#help) o zwolnienie miejsca.
+Tworzenie skryptu zużywa znacznie więcej limitu niż zadanie agenta. Zobacz [](#pro-scripts).
 
-Po przywróceniu ustawień z innego telefonu SandFly może wykryć tę samą aktywację na dwóch urządzeniach i wyłączyć Pro. W takim przypadku ponownie wpisz kod.
+### Użyj SandFly Pro na innym urządzeniu {#pro-devices}
 
-### SandFly Pro jako usługa AI {#pro-ai-service}
+Kod może być aktywny na ograniczonej liczbie urządzeń naraz. Żeby przenieść go na nowe urządzenie, wykonaj te kroki.
 
-Po aktywacji wybierz **Usługi AI** > **Usługa AI** > **SandFly Pro**. Od tej chwili usługa opisuje obrazy, zrzuty i widok z aparatu, odpowiada na pytania i tłumaczy tekst w trybie **Usługa AI**. Jeśli w chwili aktywacji nie używasz innej usługi, SandFly wybierze Pro sam. Gdy Pro wygaśnie, SandFly poprosi o kod. Zobacz [wybór usługi AI](#descriptions-ai-services).
+1. Na urządzeniu, na którym nie potrzebujesz już Pro, otwórz **SandFly Pro** > **Usuń to urządzenie**.
+2. Wybierz **Usuń**.
+3. Na drugim urządzeniu wpisz ten sam kod. Zobacz [](#pro-enter-code).
+
+Jeśli nie masz dostępu do starego urządzenia, otwórz **Pomoc i opinie** > **Prześlij opinię**. Pomoc techniczna może zwolnić zajęte miejsca. Zobacz [](#help).
+
+Jeśli ta sama aktywacja zostanie wykryta na dwóch urządzeniach, na przykład po skopiowaniu ustawień z jednego telefonu na drugi, SandFly wyłączy Pro na tym urządzeniu i poinformuje o tym. Wpisz kod ponownie na ekranie **SandFly Pro**.
+
+### Użyj SandFly Pro jako usługi AI {#pro-ai-service}
+
+Po aktywacji otwórz **Usługi AI** > **Usługa AI** i wybierz **SandFly Pro**. Bez własnego klucza API możesz wtedy opisywać obrazy i ekrany, zadawać o nie pytania, opisywać widok z aparatu w rozpoznawaniu na żywo oraz tłumaczyć w trybie **Usługa AI**. Jeśli w chwili aktywacji nie jest używana inna usługa, SandFly wybierze Pro automatycznie. Zobacz [](#descriptions-ai-services).
+
+Jeśli SandFly Pro jest wybraną usługą AI, ale nie jest aktywny, usłyszysz komunikat „SandFly Pro nie jest aktywny. Wpisz kod w ustawieniach, w sekcji «SandFly Pro»”.
 
 ### Agent AI {#pro-agent}
 
-Agent wykonuje zadanie w bieżącej aplikacji. Może dotykać ekranu, przesuwać, pisać i korzystać z elementów dostępności. Może działać również w aplikacji, która nie udostępnia swoich elementów, na przykład w grze.
+Agent wykonuje zadanie w otwartej aplikacji. Może stukać, przesuwać palcem, wpisywać tekst i korzystać z elementów ekranu. Działa również w aplikacjach, które nie udostępniają elementów przez mechanizmy dostępności, na przykład w grach.
 
-#### Rozpoczynanie zadania {#pro-agent-start}
+#### Rozpocznij zadanie {#pro-agent-start}
 
 1. Otwórz aplikację, której dotyczy zadanie.
-2. Użyj **Start or stop AI agent task**.
-3. Powiedz, co agent ma zrobić. Kiedy skończysz mówić, SandFly potwierdzi rozpoczęcie.
+2. Uruchom **Uruchom lub zatrzymaj zadanie agenta AI**. Rozpocznie się nagrywanie.
+3. Powiedz, co agent ma zrobić, na przykład „Rozpocznij nową grę”. Gdy skończysz mówić, usłyszysz „Agent uruchomiony”.
 
-Jeśli wolisz pisać, użyj **Type AI agent task**. Wpisz zadanie i zacznij albo wybierz nagranie. To samo okno otworzy się, gdy nagrywanie nie może się rozpocząć. Przy trwającym zadaniu SandFly o nim poinformuje.
+Żeby wpisać zadanie, użyj **Wpisz zadanie dla agenta AI**. W oknie **Zadanie agenta AI** opisz zadanie i wybierz **Rozpocznij**. Możesz też wybrać **Mów**, żeby je nagrać. To samo okno otworzy się, jeśli nagrywanie nie może się rozpocząć. Gdy agent już coś robi, po użyciu **Wpisz zadanie dla agenta AI** usłyszysz „Zadanie agenta jest w toku”.
 
-SandFly odczytuje odpowiedzi agenta i podsumowanie. Dźwięki sygnalizują rozpoczęcie, pytanie i koniec. Oba polecenia znajdziesz w [kategoriach poleceń](#commands) i w [Czynności AI](#descriptions-ai-actions).
+Podczas pracy SandFly odczytuje komunikaty agenta. Dźwięki sygnalizują uruchomienie, pytanie i koniec. Na końcu usłyszysz podsumowanie i komunikat „Zadanie zakończone” lub „Nie ukończono zadania”.
 
-#### Pytania i zgody {#pro-agent-questions}
+Oba polecenia znajdziesz w **Polecenia**, gdzie możesz przypisać je do gestów i klawiszy, oraz w opcji sterowania czytaniem **Czynności AI**. Zobacz [](#commands) i [](#descriptions-ai-actions).
 
-Gdy agent ma pytanie, SandFly je przeczyta i zacznie nagrywać odpowiedź. Przy zadaniu wpisanym z klawiatury pojawi się pole tekstowe i przycisk **Answer**.
+#### Odpowiedz na pytanie lub potwierdź czynność {#pro-agent-questions}
 
-Czynności takie jak płatność, wysłanie wiadomości, usunięcie danych, zmiana ustawień bezpieczeństwa lub dostępności, instalacja, udzielenie uprawnień czy nawiązanie połączenia wymagają zgody. W oknie potwierdzenia wybierz **Zezwól** lub **Nie zezwalaj**. Jeśli kontrola jest niedostępna, SandFly prosi o zgodę na każdą czynność.
+Gdy agent potrzebuje dodatkowych informacji, SandFly odczyta pytanie i zacznie nagrywać odpowiedź. Jeśli zadanie było wpisane, otworzy się pole tekstowe. Wpisz odpowiedź i wybierz **Odpowiedz**.
 
-Agent blokuje między innymi wpisywanie w polach haseł, używanie kodów, których mu nie podano, wyłączenie SandFly i wykonywanie instrukcji znalezionych na ekranie. SandFly odczyta przyczynę blokady.
+Niektóre czynności wymagają zgody. Należą do nich płatności, wysyłanie wiadomości lub wpisów, usuwanie danych, zmiana ustawień zabezpieczeń, prywatności lub dostępności, przyznawanie uprawnień, instalowanie aplikacji i wykonywanie połączeń. W oknie **Zezwolić na tę czynność?** wybierz **Zezwól** lub **Nie zezwalaj**. Gdy sprawdzenie bezpieczeństwa jest niedostępne, okno potwierdzenia pojawi się przy każdej czynności.
 
-#### Uzupełnianie zadania {#pro-agent-follow-up}
+Blokowane są między innymi wpisywanie haseł lub kodów, których nie podyktowałeś, wyłączanie SandFly oraz czynności zlecone agentowi przez tekst na ekranie. Usłyszysz „Kontrola bezpieczeństwa zablokowała czynność agenta” oraz powód. Agent nigdy nie wpisuje tekstu w polach haseł.
 
-Przez 10 minut od ukończenia możesz wydać kolejne polecenie w tej samej rozmowie. Agent pamięta, co zrobił przed chwilą. SandFly zapowie kontynuację. Ekran do wpisania takiego zadania ma tytuł **AI agent follow-up**.
+#### Dodaj kolejne polecenie {#pro-agent-follow-up}
 
-#### Zatrzymywanie agenta {#pro-agent-stop}
+Przez 10 minut po zakończeniu zadania kolejne zadanie kontynuuje tę samą rozmowę. Możesz zlecić następny krok bez powtarzania, co agent już zrobił. Usłyszysz „Rozpoczęto kontynuację”. Jeśli wpisujesz następne zadanie, okno ma tytuł **Kontynuacja zadania agenta AI**.
 
-Użyj ponownie **Start or stop AI agent task**. W trakcie nagrywania to samo polecenie kończy nagranie. Agent sam kończy pracę po przekroczeniu limitu kroków lub czasu i informuje o tym.
+#### Zatrzymaj agenta {#pro-agent-stop}
+
+Gdy agent pracuje, ponownie użyj **Uruchom lub zatrzymaj zadanie agenta AI**. Usłyszysz „Agent zatrzymany”. Jeśli w tym momencie trwa nagrywanie zadania, to samo polecenie kończy nagranie.
+
+Po osiągnięciu limitu kroków lub czasu agent zatrzyma się sam. SandFly odczyta odpowiedni komunikat.
 
 #### Wymagania i ograniczenia {#pro-agent-limits}
 
-Agent potrzebuje Androida 11 lub nowszego. W aplikacjach blokujących zrzuty SandFly może wysłać tylko dostępne elementy. Do pisania bez pola tekstowego i do naciskania klawiszy innych niż Wstecz, Ekran główny i Enter potrzebne jest [Shizuku](#updates-shizuku).
+- Agent wymaga Androida 11 lub nowszego.
+- W oknach blokujących zrzuty ekranu, na przykład w niektórych aplikacjach bankowych, przesyłana jest tylko lista elementów.
+- W aplikacjach bez pól tekstowych, na przykład w grach, wpisywanie tekstu wymaga Shizuku. Shizuku jest potrzebne także do naciskania klawiszy innych niż Wstecz, Ekran główny i Enter. Zobacz [](#updates-shizuku).
 
 ### Rozpoznawanie elementów ekranu {#pro-screen-recognition}
 
-SandFly przekazuje zrzut do Pro. Usługa wykrywa elementy, których aplikacja nie udostępniła czytnikowi, i dodaje brakujące nazwy. Po rozpoznaniu możesz odnajdywać te elementy dotykiem i gestami. Dwukrotne stuknięcie dotknie właściwego miejsca na ekranie.
+SandFly przesyła zrzut ekranu aplikacji do usługi Pro. Usługa znajduje elementy, których aplikacja nie udostępnia przez mechanizmy dostępności, i dodaje etykiety do elementów bez nazw. SandFly odczytuje znalezione elementy. Możesz do nich przejść dotykiem lub gestami. Dwukrotne stuknięcie powoduje dotknięcie ekranu w miejscu elementu.
 
-Otwórz aplikację i wybierz **Recognize screen** z menu SandFly. Czytnik poda liczbę znalezionych elementów albo poinformuje, że ich nie wykrył. Kolejne ekrany tej aplikacji będą rozpoznawane do przejścia do innej aplikacji.
+1. Otwórz aplikację.
+2. Wybierz **Rozpoznaj ekran** w menu SandFly lub użyj polecenia o tej samej nazwie.
 
-Żeby rozpoznawać ekrany przy każdym użyciu aplikacji, użyj **Turn screen recognition on or off in the current app** albo wybierz aplikację w **SandFly Pro** > **Automatic screen recognition**. Początkowo żadna aplikacja nie jest wybrana. Obie pozycje menu można ukryć w ustawieniach [Menu SandFly](#commands).
+Najpierw usłyszysz „Trwa rozpoznawanie ekranu”. Potem SandFly poda liczbę rozpoznanych elementów lub powie „Nie rozpoznano żadnych elementów”. Kolejne ekrany tej samej aplikacji będą rozpoznawane przy zmianach, dopóki nie przejdziesz do innej aplikacji albo na ekran główny.
 
-SandFly zapamiętuje wyniki. **Forget recognized screens** usuwa zapis, żeby ponownie rozpoznać ekrany. Funkcja wymaga Androida 11. Przed Androidem 14 nie zrobi zrzutu przy ukrytym ekranie. W rozpoznanym polu tekstowym możesz ustawić fokus stuknięciem, ale polecenia edycji tekstu SandFly nie działają w takim polu.
+Żeby zatrzymać rozpoznawanie w aplikacji i usunąć znalezione elementy, wybierz **Wyłącz rozpoznawanie ekranu w aplikacji** z nazwą aplikacji z menu SandFly lub użyj **Włącz lub wyłącz rozpoznawanie ekranu w bieżącej aplikacji**.
 
-### Tworzenie skryptów z SandFly Pro {#pro-scripts}
+Możesz też rozpoznawać wszystkie ekrany wybranej aplikacji przy każdym użyciu.
 
-Agent skryptów przygotowuje kod na podstawie opisu i testuje go na telefonie. Jeśli potrzebuje innego ekranu, poprosi Cię o jego otwarcie.
+- W otwartej aplikacji wybierz **Włącz rozpoznawanie ekranu w aplikacji** z jej nazwą w menu SandFly. Możesz użyć polecenia **Włącz lub wyłącz rozpoznawanie ekranu w bieżącej aplikacji**. Ta sama pozycja pozwala wyłączyć funkcję.
+- Możesz też otworzyć **SandFly Pro** > **Automatyczne rozpoznawanie ekranu** i wybrać aplikacje z listy. Domyślnie żadna nie jest wybrana.
 
-1. Otwórz aplikację i wybierz **Skrypty** > **Utwórz skrypt za pomocą SandFly Pro**. Możesz użyć też polecenia o tej nazwie.
-2. Sprawdź informację o wykorzystaniu limitu i wybierz **Agree and continue**.
-3. Wpisz nazwę aplikacji i opisz, co skrypt ma robić. Zacznij pracę agenta.
-4. Gdy powiadomienie poprosi o ekran, otwórz go i wybierz **Ukończono** albo ponownie użyj polecenia tworzenia skryptu. Jeśli agent prosi o test, wykonaj go. Możesz wybrać **Ukończono** lub odpowiedzieć, co się stało.
-5. Jeśli chcesz pominąć dany ekran, dopytać lub poprosić o zapis dotychczasowego wyniku, odpowiedz w powiadomieniu.
+SandFly zapamiętuje rozpoznane ekrany i pokazuje ich elementy bez kolejnego żądania. Żeby rozpoznać je od nowa, wybierz **SandFly Pro** > **Zapomnij rozpoznane ekrany**.
 
-Powiadomienie zawiera odpowiedź i **Zatrzymaj**. Agent odczyta Twoją wiadomość przy następnym kroku. Gdy nie czeka na Twoje działanie, polecenie tworzenia skryptu także go zatrzymuje. W menu może przy tym widnieć jako **Stop the SandFly Pro agent**.
+Obie pozycje rozpoznawania na liście **Menu SandFly** są domyślnie włączone. Możesz je tam ukryć. Zobacz [](#commands).
 
-Gotowy skrypt otworzy się w kreatorze pod nagłówkiem **Napisany przez SandFly Pro**. Przejrzyj podsumowanie i wybierz **Akceptuj**, **Poproś o zmiany** albo **Odrzuć**. Do przyjęcia wyniku nie działa dostęp skryptu do sieci ani do Javy. Jeżeli agent niczego nie zapisał, SandFly o tym powie.
+Rozpoznawanie ekranu wymaga Androida 11 lub nowszego. Przed Androidem 14 SandFly nie może zrobić zrzutu przy ukrytym ekranie. Możesz stuknąć rozpoznane pole tekstowe, żeby przenieść do niego fokus. Polecenia edycji tekstu SandFly są w takim polu niedostępne.
 
-Na ekranie skryptu użyj **Zmień za pomocą SandFly Pro**, żeby wrócić do edycji. Jedno tworzenie skryptu może zużyć sporą część miesięcznego limitu. Po osiągnięciu limitu zadania agent zapisuje to, co działa, i podaje, czego nie dokończył. Zobacz [skrypty i kreator](#scripts).
+### Utwórz skrypt za pomocą SandFly Pro {#pro-scripts}
+
+Agent przygotowuje skrypt na podstawie opisu i testuje go na telefonie. Korzysta z widocznego ekranu. Gdy potrzebuje innego, dostaniesz powiadomienie z informacją, co otworzyć.
+
+1. Otwórz aplikację, dla której ma powstać skrypt.
+2. Otwórz **Skrypty** i wybierz **Utwórz skrypt za pomocą SandFly Pro**. Możesz też użyć polecenia o tej samej nazwie.
+3. W oknie **Skrypty i limit użycia** sprawdź wykorzystanie miesięcznego limitu i wybierz **Zaakceptuj i kontynuuj**.
+4. W oknie **Utwórz skrypt** wpisz, co skrypt ma robić i w której aplikacji. Wybierz **Rozpocznij**. Usłyszysz „Tworzenie skryptu”.
+5. Gdy pojawi się powiadomienie **SandFly Pro czeka na ekran**, otwórz wskazany ekran, a potem wybierz **Gotowe** w powiadomieniu lub ponownie uruchom **Utwórz skrypt za pomocą SandFly Pro**. Jeśli potrzebny jest test, na przykład wykonanie gestu, instrukcję znajdziesz w powiadomieniu **SandFly Pro tworzy skrypt**. Wykonaj test i wybierz **Gotowe** lub użyj **Odpowiedz**, żeby opisać wynik.
+6. Żeby wysłać wiadomość, wybierz **Odpowiedz** w powiadomieniu. Możesz na przykład zlecić pominięcie ekranu albo zakończenie pracy z zapisaniem dotychczasowego wyniku.
+
+Podczas pracy w powiadomieniu **SandFly Pro tworzy skrypt** są przyciski **Odpowiedz** i **Zatrzymaj**. Wiadomość zostanie przekazana do agenta przy następnym kroku. Jeśli w menu SandFly masz **Utwórz skrypt za pomocą SandFly Pro**, podczas pracy pozycja zmienia się na **Zatrzymaj agenta SandFly Pro**. Kiedy agent pracuje i nie czeka na Twoje działanie, ponowne użycie polecenia **Utwórz skrypt za pomocą SandFly Pro** również go zatrzymuje.
+
+Po zakończeniu lub zatrzymaniu pracy skrypt otworzy się w kreatorze w sekcji **Napisany przez SandFly Pro**. Przeczytaj podsumowanie i wybierz **Akceptuj**, **Poproś o zmiany** albo **Odrzuć**. Dopóki nie zaakceptujesz wyniku, skrypt działa bez uprawnień do sieci i interfejsu Javy. Jeśli nic nie zapisano, usłyszysz „Nie zapisano żadnego skryptu”.
+
+Żeby zmienić utworzony skrypt, wybierz **Zmień za pomocą SandFly Pro** na jego ekranie lub w kreatorze.
+
+Tworzenie skryptu zużywa znacznie więcej miesięcznego limitu niż zadanie agenta. Jeden skrypt może wykorzystać dużą część limitu. Każdy skrypt ma też osobny limit tworzenia. Gdy zostanie osiągnięty, agent zapisuje to, co działa, i kończy pracę. Z podsumowania dowiesz się, czego nie udało się dokończyć. Zobacz [](#scripts).

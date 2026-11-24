@@ -1,18 +1,20 @@
 # Mowa SandFly w innych aplikacjach
 
-Aplikacja może poprosić SandFly o wypowiedzenie tekstu głosem użytkownika, z wybranym syntezatorem, tempem, wysokością i głośnością. Z tego interfejsu mogą korzystać na przykład gry, Tasker i narzędzia dostępu zdalnego bez własnego syntezatora.
+Aplikacja może przekazać SandFly tekst do odczytania. SandFly użyje głosu, syntezatora, tempa, wysokości i głośności wybranych przez użytkownika. To rozwiązanie sprawdzi się między innymi w grach, aplikacjach do automatyzacji, takich jak Tasker, i narzędziach dostępu zdalnego, które odczytują komunikaty osobom niewidomym bez własnego syntezatora.
 
 ## Zgody użytkownika {#what-the-user-controls}
 
+Żaden tekst z Twojej aplikacji nie zostanie odczytany przed uzyskaniem zgody użytkownika.
+
 1. Użytkownik włącza **Mowa** > **Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly**. Ta opcja jest początkowo wyłączona.
-2. Przy pierwszej próbie SandFly wyświetla powiadomienie z pytaniem o dostęp. Do czasu wybrania **Zezwól** SandFly odrzuca żądania i nie odczyta ich później.
-3. Po wywołaniu usługi lub wysłaniu komunikatu aplikacja pojawia się na liście pod tym ustawieniem. Użytkownik może ją dopuścić lub zablokować w dowolnym momencie.
+2. Po pierwszym żądaniu odczytu pojawi się powiadomienie z prośbą o zgodę. Dopóki użytkownik nie wybierze **Zezwól**, SandFly odrzuca żądania. Nie przechowuje ich do późniejszego odczytu.
+3. Po wywołaniu usługi lub wysłaniu komunikatu aplikacja pojawi się w **Mowa** > **Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly**. Stanie się tak również wtedy, gdy powiadomienie się nie pojawi. Użytkownik może tam zezwolić aplikacji na odczyt lub zablokować go w dowolnym momencie.
 
-Po udzieleniu zgody nadal obowiązują następujące zasady:
+Po udzieleniu zgody nadal obowiązują następujące zasady.
 
-- Jeśli użytkownik włączył dźwięk zapowiadający mowę innych aplikacji, SandFly odtwarza go przed każdą wypowiedzią.
+- Jeśli użytkownik włączył **Odtwarzaj dźwięk przed odczytaniem tekstu przekazanego przez inną aplikację**, przed każdą wypowiedzią pojawi się krótki sygnał. Dzięki niemu można odróżnić mowę aplikacji od własnych wypowiedzi SandFly.
 - Odczyt działa, dopóki SandFly jest włączony i aktywny.
-- Na ekranie blokady potrzebne jest osobne [zezwolenie](#speaking-while-the-device-is-locked).
+- Na ekranie blokady odczyt działa tylko wtedy, gdy aplikacja deklaruje tę możliwość i użytkownik osobno wyrazi na nią zgodę. Zobacz [Mowa przy zablokowanym urządzeniu](#speaking-while-the-device-is-locked).
 - Każda aplikacja może wysłać od razu kilka żądań, a potem mniej więcej jedno na sekundę. Nadmiarowe żądania są odrzucane.
 - Tekst jest odczytywany bez formatowania.
 - Żądania przerwania dotyczą mowy z innych aplikacji. Wypowiedzi samego SandFly trwają dalej. Bieżąca [klawiatura](#keyboards) działa według osobnych zasad.
@@ -43,9 +45,13 @@ Jeżeli aplikacja ma czytać także po zablokowaniu, na przykład ogłaszać now
 <uses-permission android:name="io.github.aaron_gh.sandfly.permission.SPEAK_WHEN_LOCKED" />
 ```
 
-To uprawnienie służy do poproszenia o osobną zgodę. Gdy aplikacja po raz pierwszy zażąda mowy przy blokadzie, SandFly pokaże drugie powiadomienie. Żeby nacisnąć **Zezwól**, trzeba odblokować urządzenie. Do czasu uzyskania zgody żądania na ekranie blokady są odrzucane.
+Sama deklaracja nie włącza odczytu po zablokowaniu ekranu. Zgoda jest oddzielna.
 
-W ustawieniach mowy przy aplikacji jest oddzielny przełącznik dla zablokowanego ekranu. Pojawia się tylko wtedy, gdy aplikacja deklaruje uprawnienie. Obowiązują te same limity i ustawienia dźwięku. Starsze wydania SandFly, które nie mają tego uprawnienia, nie przekazują mowy innych aplikacji na ekranie blokady.
+1. Zgoda na mowę aplikacji nie obejmuje odczytu przy zablokowanym urządzeniu.
+2. Gdy aplikacja po raz pierwszy zażąda odczytu przy blokadzie, pojawi się drugie powiadomienie. Żeby wybrać **Zezwól**, trzeba najpierw odblokować urządzenie. Do tego czasu żądania wysłane przy blokadzie są odrzucane.
+3. Użytkownik może w każdej chwili włączyć lub wyłączyć przełącznik opisany nazwą aplikacji i dopiskiem „gdy urządzenie jest zablokowane”. Znajdzie go w **Mowa** > **Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly**. Przełącznik jest widoczny tylko dla aplikacji, które deklarują uprawnienie.
+
+Aplikacje bez tej deklaracji nie mogą odczytywać tekstu na ekranie blokady. Limit żądań i sygnał dźwiękowy obowiązują jak zwykle. Starsze wydania SandFly bez tego uprawnienia nie przekazują mowy innych aplikacji podczas blokady.
 
 ## Połączenie z usługą {#binding-to-the-service}
 
@@ -76,9 +82,9 @@ Wywołania są jednokierunkowe i wracają od razu.
 
 ## Klawiatury {#keyboards}
 
-Bieżąca klawiatura systemowa używa usługi tak jak echo klawiatury SandFly. Działa bez zgody, bez limitu i sygnału, także przy zablokowanym ekranie. `interrupt` może przerwać również mowę samego SandFly. Bez tej opcji nowy odczyt poczeka. Komunikaty rozgłoszeniowe od klawiatury podlegają zwykłym zasadom dla aplikacji.
+Aplikacja wybrana jako bieżąca klawiatura korzysta z usługi tak jak echo klawiatury SandFly. Nie potrzebuje zgody użytkownika i nie pojawia się w **Zezwalaj innym aplikacjom na odczytywanie tekstu przez SandFly**. Nie obowiązuje jej limit żądań ani dźwięk przed wypowiedzią. Może odczytywać tekst także przy zablokowanym urządzeniu. `interrupt` zatrzymuje całą bieżącą mowę, również wypowiedzi SandFly. Bez tej opcji nowy odczyt poczeka na zakończenie bieżącej wypowiedzi. Te zasady dotyczą wywołań usługi. Komunikaty rozgłoszeniowe od klawiatury są obsługiwane tak jak komunikaty innych aplikacji.
 
-Klawiatura z własnym echem wywołuje `setTypingSpoken(true)` przy otwarciu i `setTypingSpoken(false)`, kiedy kończy odczyt. Dzięki temu SandFly nie powtarza zmian wykonanych klawiaturą ekranową, w tym wpisywania, kasowania, zastępowania, ruchu kursora i zaznaczenia. Nadal czyta własne polecenia edycji oraz zmiany z klawiatury fizycznej i monitora brajlowskiego. Po przełączeniu na inną klawiaturę SandFly wraca do echa. Wywołaj `setTypingSpoken(true)` ponownie, gdy twoja klawiatura stanie się bieżącą.
+Klawiatura z własnym echem wywołuje `setTypingSpoken(true)` przy otwarciu i `setTypingSpoken(false)`, kiedy kończy odczyt. Dzięki temu SandFly nie powtarza zmian wykonanych klawiaturą ekranową, w tym wpisywania, kasowania, zastępowania, ruchu kursora i zaznaczenia. Nadal czyta własne polecenia edycji oraz wpisywanie i ruch kursora z klawiatury fizycznej lub monitora brajlowskiego. Po przełączeniu na inną klawiaturę SandFly wraca do echa. Wywołaj `setTypingSpoken(true)` ponownie, gdy Twoja klawiatura znów będzie aktywna.
 
 ## Komunikat rozgłoszeniowy {#sending-a-broadcast}
 

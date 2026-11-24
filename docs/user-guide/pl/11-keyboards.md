@@ -1,255 +1,399 @@
 ## Klawiatury fizyczne {#keyboards}
 
-SandFly obsługuje klawiaturę Bluetooth, USB i klawiaturę wbudowaną w telefon. Możesz używać skrótów, poruszać się strzałkami lub literami i przekazywać klawisze aplikacji. Zobacz [fabryczne skróty](#appendix-keyboard-shortcuts) oraz [samouczek](#getting-started).
+Z SandFly możesz używać klawiatury Bluetooth, USB lub wbudowanej w telefon. Polecenia uruchamiasz skrótami. W zależności od wybranej mapy możesz też poruszać się strzałkami i pojedynczymi literami lub przekazywać klawisze używanej aplikacji. Ten rozdział opisuje ekran **Skróty klawiszowe** oraz ustawienia klawiatury fizycznej na ekranie **Pisanie**. Domyślne skróty poleceń znajdziesz w [](#appendix-keyboard-shortcuts).
+
+Aby poznać skróty krok po kroku, skorzystaj z samouczka klawiatury. Zobacz [](#getting-started).
 
 ### Klawisz SandFly {#keyboards-sandfly-key}
 
-Większość skrótów łączy klawisz SandFly z innym klawiszem. Na przykład klawisz SandFly ze strzałką w prawo może przejść do następnego elementu. Używane możliwości zależą od mapy.
+Większość skrótów składa się z klawisza SandFly i innych klawiszy. Na przykład klawisz SandFly + strzałka w prawo przenosi do następnego elementu. Klawisz SandFly to jeden klawisz lub dwa przytrzymywane razem. Wyboru dokonujesz osobno dla każdej mapy. W zależności od mapy masz do wyboru poniższe klawisze.
 
-- **Meta** to klawisz Windows lub Command.
-- Możliwe są także **Alt**, **Ctrl**, **Ctrl + Alt** i **Ctrl + Meta**. Przy kombinacji przytrzymaj oba klawisze.
-- **Klawisz Insert** zwykle znajduje się nad strzałkami. **Klawisz Insert na klawiaturze numerycznej** to zero przy wyłączonym Num Lock.
-- Na [telefonach z klawiaturą](#keyboards-phones) możesz użyć **Sym**, **Prawy Alt**, **Prawy Shift** lub **Fn**.
+- **Meta** to klawisz Windows obok lewego Alt. Na klawiaturach Apple jest to Command.
+- **Alt**.
+- **Ctrl + Alt** przytrzymywane jednocześnie.
+- **Ctrl + Meta** przytrzymywane jednocześnie.
+- **Ctrl**.
+- **Klawisz Insert**. Na większości klawiatur znajdziesz go w grupie sześciu klawiszy nad strzałkami.
+- **Klawisz Insert na klawiaturze numerycznej** to zero przy wyłączonym Num Lock.
+- **Sym**, **Prawy Alt**, **Prawy Shift** i **Fn** to klawisze dostępne w telefonach z klawiaturą. Zobacz [](#keyboards-phones).
 
-SandFly przechwytuje przytrzymany Insert, także numeryczny, oraz Sym, prawy Alt, prawy Shift i Fn. Gdy klawiszem SandFly jest Meta, pojedyncze naciśnięcie otwiera ekran wszystkich aplikacji. Podwójne naciśnięcie może przełączać [tryb przeglądania](#keyboards-browse-mode), zależnie od mapy. Zobacz [wybór klawisza](#keyboards-choose-sandfly-key).
+Android nie traktuje Insert, Insert na klawiaturze numerycznej, Sym, prawego Alt, prawego Shift i Fn jako klawiszy modyfikujących. Gdy je przytrzymasz, obsługuje je SandFly, więc aplikacja ich nie otrzymuje.
+
+Gdy klawiszem SandFly jest Meta, jedno naciśnięcie samego Meta otwiera listę wszystkich aplikacji tak jak w Androidzie. Dwa szybkie naciśnięcia klawisza SandFly przełączają tryb przeglądania w mapach, które mają taki skrót. Zobacz [](#keyboards-browse-mode).
+
+O wyborze klawisza SandFly przeczytasz w [](#keyboards-choose-sandfly-key).
 
 ### Mapy klawiszy {#keyboards-keymaps}
 
-Mapa klawiszy to zestaw przypisań.
+Mapa klawiszy to zestaw skrótów. W SandFly są poniższe mapy.
 
-- **Mapa klawiszy SandFly** domyślnie używa Meta. Możesz wybrać Insert lub Insert numeryczny.
-- **Mapa klawiszy VoiceOver** odwzorowuje sterowanie iPhone'a. Domyślnie używa Ctrl + Alt, do wyboru jest też Insert lub Insert numeryczny. Meta zastępuje Command. Litery w trybie przeglądania zachowują się jak szybka nawigacja VoiceOver.
-- **Mapa klawiszy NVDA** odpowiada układowi laptopowemu. **Mapa klawiszy JAWS** używa skrótów komputerowych i laptopowych klawiszy kursora oraz klikania. Obie domyślnie używają Insert. Możesz wybrać Insert numeryczny lub Meta.
-- **Mapa klawiszy Orca** używa układu laptopowego i domyślnego Insert. Możesz wybrać również Insert numeryczny, Meta lub Alt.
-- **Mapa klawiszy telefonu z klawiaturą** i **Mapa pojedynczych klawiszy telefonu** są przeznaczone do [telefonów z klawiszami](#keyboards-phones).
-- Możesz też [utworzyć własną mapę](#keyboards-custom-keymaps).
+- **Mapa klawiszy SandFly** jest domyślna. Klawiszem SandFly może być Meta, Insert lub Insert na klawiaturze numerycznej. Domyślnie jest to Meta.
+- **Mapa klawiszy VoiceOver** korzysta z poleceń klawiaturowych VoiceOver na iPhonie, z klawiszem SandFly w roli klawisza VO. Możesz wybrać Ctrl + Alt, Insert lub Insert na klawiaturze numerycznej. Domyślnie jest to Ctrl + Alt. Meta pełni rolę Command. W trybie przeglądania pojedyncze klawisze nawigują jak w trybie szybkiej nawigacji VoiceOver.
+- **Mapa klawiszy NVDA** odpowiada układowi laptopa NVDA, który nie wymaga klawiatury numerycznej. Klawisz SandFly pełni rolę klawisza NVDA. Możesz wybrać Insert (domyślnie), Insert na klawiaturze numerycznej lub Meta.
+- **Mapa klawiszy JAWS** korzysta ze skrótów układu stacjonarnego JAWS oraz klawiszy układu laptopa do kliknięć i kursorów. Klawisz SandFly pełni rolę klawisza JAWS. Możesz wybrać Insert (domyślnie), Insert na klawiaturze numerycznej lub Meta.
+- **Mapa klawiszy Orca** odpowiada układowi laptopa Orca. Klawisz SandFly jest modyfikatorem Orca. Do wyboru są Insert (domyślnie), Insert na klawiaturze numerycznej, Meta i Alt.
+- **Mapa klawiszy telefonu z klawiaturą** oraz **Mapa pojedynczych klawiszy telefonu** są przeznaczone dla urządzeń z wbudowaną klawiaturą bez Ctrl, Meta i strzałek. Zobacz [](#keyboards-phones).
+- Możesz też tworzyć własne mapy. Zobacz [](#keyboards-custom-keymaps).
 
-W NVDA, JAWS i Orca strzałki oraz Tab działają [jak na komputerze](#keyboards-desktop), bez klawisza SandFly. Przy pierwszym uruchomieniu na rozpoznanym telefonie z klawiaturą SandFly wybiera mapę telefonu.
+W mapach NVDA, JAWS i Orca strzałki i Tab nawigują bez klawisza SandFly, tak jak na komputerze. Zobacz [](#keyboards-desktop).
 
-#### Wybierz mapę {#keyboards-choose-keymap}
+Na telefonie z klawiaturą domyślna jest **Mapa klawiszy telefonu z klawiaturą**. Przy pierwszym uruchomieniu na takim telefonie SandFly jednorazowo przełącza mapę SandFly na mapę telefonu z klawiaturą.
 
-1. Otwórz **Skróty klawiszowe**.
+#### Wybierz mapę klawiszy {#keyboards-choose-keymap}
+
+1. W ustawieniach SandFly otwórz **Skróty klawiszowe**.
 2. Wybierz **Wybierz mapę klawiszy**.
-3. Wybierz mapę. SandFly odczyta jej nazwę.
+3. Wybierz mapę.
 
-Każda mapa zapamiętuje własne skróty, klawisz SandFly i ustawienia strzałek.
+SandFly odczytuje nazwę aktywnej mapy. Każda mapa przechowuje własne skróty, klawisz SandFly i ustawienia nawigacji strzałkami. Zmiana mapy nie modyfikuje innych map.
 
 #### Wybierz klawisz SandFly {#keyboards-choose-sandfly-key}
 
-Otwórz **Skróty klawiszowe** > **Wybierz klawisz SandFly**. W mapach wbudowanych zobaczysz klawisze, z którymi działają wszystkie domyślne skróty. Własna mapa pozwala wybrać każdy. W domyślnych skrótach SandFly podmieni modyfikator. Zmiany Twoich skrótów są zapamiętywane osobno dla każdego klawisza SandFly.
+1. W ustawieniach SandFly otwórz **Skróty klawiszowe**.
+2. Wybierz **Wybierz klawisz SandFly**.
+3. Wybierz klawisz.
 
-#### Utwórz własną mapę {#keyboards-custom-keymaps}
+Opcja **Wybierz klawisz SandFly** zmienia klawisz dla używanej mapy. Dla wbudowanej mapy lista obejmuje tylko klawisze, przy których nadal działają wszystkie domyślne skróty mapy. Własna mapa oferuje wszystkie klawisze SandFly. Domyślne skróty zachowują pozostałe klawisze, a miejsce poprzedniego klawisza SandFly zajmuje nowy. Twoje zmiany skrótów są zapisywane osobno dla każdego klawisza SandFly w danej mapie.
 
-1. [Wybierz mapę](#keyboards-choose-keymap), którą chcesz skopiować.
-2. Otwórz **Skróty klawiszowe** i wybierz **Nowa mapa klawiszy**.
-3. Wpisz nazwę lub zostaw proponowaną.
-4. Wybierz **OK**. Kopia od razu będzie używana.
+#### Własne mapy klawiszy {#keyboards-custom-keymaps}
 
-Kopia zachowuje skróty, modyfikator i sposób nawigacji wyjściowej mapy. Możesz też ustawiać skróty bez klawisza SandFly. Są aktywne poza edytowanymi polami. W kopiach SandFly i VoiceOver skróty z Ctrl lub Alt działają także podczas edycji. Sam modyfikator trafia do aplikacji.
+Nowa mapa jest kopią bieżącej mapy. Przejmuje jej skróty, klawisz SandFly i sposób działania klawiszy, np. nawigację strzałkami tak jak w mapie NVDA.
 
-Gdy korzystasz z własnej mapy, w tych ustawieniach są **Zmień nazwę mapy klawiszy** i **Usuń mapę klawiszy**. Po potwierdzeniu usunięcia SandFly włączy mapę domyślną.
+1. Wybierz mapę do skopiowania. Zobacz [](#keyboards-choose-keymap).
+2. Na ekranie **Skróty klawiszowe** wybierz **Nowa mapa klawiszy**.
+3. Wpisz nazwę albo pozostaw pole puste, aby użyć sugerowanej nazwy, np. „Kopia mapy klawiszy NVDA”.
+4. Wybierz **OK**.
 
-#### Przenieś mapę w pliku {#keyboards-keymap-files}
+Nowa mapa staje się aktywna. We własnej mapie możesz używać dowolnych klawiszy w skrótach, również bez klawisza SandFly. Skróty bez klawisza SandFly działają poza edytowanym polem tekstowym. Podczas edycji klawisze trafiają do pola. W mapach skopiowanych z SandFly lub VoiceOver skróty z Ctrl lub Alt działają także w polach tekstowych. Samodzielnie naciśnięte modyfikatory zawsze trafiają do aplikacji.
 
-**Eksportuj do pliku** zapisuje aktywną mapę wraz ze skrótami i klawiszem SandFly. **Importuj z pliku** dodaje mapę. Opcje są niedostępne na zegarku. Zobacz [format pliku](#api-item-files).
+Przy aktywnej własnej mapie na ekranie **Skróty klawiszowe** są dwie dodatkowe opcje.
 
-#### Przywróć domyślne skróty mapy {#keyboards-reset-keymap}
+- **Zmień nazwę mapy klawiszy** pozwala zmienić nazwę mapy.
+- **Usuń mapę klawiszy** usuwa ją po potwierdzeniu. Po usunięciu aktywuje się mapa domyślna.
 
-Wybierz **Zresetuj mapę klawiszy** i potwierdź. SandFly odtworzy fabryczne skróty i polecenia strzałek używanej mapy. Tej operacji nie da się cofnąć.
+#### Eksportuj i importuj mapy klawiszy {#keyboards-keymap-files}
 
-### Ekran skrótów klawiszowych {#keyboards-settings}
+- **Eksportuj do pliku** zapisuje aktywną mapę wraz z jej skrótami i klawiszem SandFly we wskazanym pliku.
+- **Importuj z pliku** dodaje mapę z pliku.
 
-- **Szukaj** znajduje polecenie lub strzałkę po nazwie lub klawiszach.
-- Ekran **Mapa klawiszy** pozwala wybrać mapę i klawisz SandFly. Tu też zmienisz, zapiszesz lub przywrócisz mapę. **Wyświetl systemowe skróty klawiszowe** pokazuje skróty Androida i bieżącej aplikacji.
-- **Skróty klawiszowe w aplikacjach** służą do [ustawiania osobnych przypisań](#keyboards-app-shortcuts).
-- **Nawigacja strzałkami** pojawia się w mapach, które ją [obsługują](#keyboards-arrow-keys).
-- Rozwiń kategorię, żeby zobaczyć polecenia i skróty. Przy skrócie działającym wyłącznie w trybie przeglądania SandFly podaje to w nazwie.
+Opcje są niedostępne na zegarkach. Format pliku opisuje [](#api-item-files).
 
-Żeby zmieniać skróty i resetować mapę, włącz czytnik. Możesz też otworzyć skrót na własnym ekranie [polecenia](#commands).
+#### Zresetuj mapę klawiszy {#keyboards-reset-keymap}
+
+**Zresetuj mapę klawiszy** przywraca domyślne skróty aktywnej mapy i domyślne polecenia strzałek. Najpierw pojawia się okno potwierdzenia. Resetu nie można cofnąć.
+
+### Ekran Skróty klawiszowe {#keyboards-settings}
+
+Na ekranie **Skróty klawiszowe** znajdziesz poniższe opcje.
+
+- **Szukaj** znajduje polecenie lub przypisanie strzałki według nazwy albo klawiszy oraz otwiera ekran skrótu.
+- **Mapa klawiszy** zawiera **Wybierz mapę klawiszy**, **Wybierz klawisz SandFly**, **Zresetuj mapę klawiszy**, **Wyświetl systemowe skróty klawiszowe**, **Nowa mapa klawiszy**, **Eksportuj do pliku** i **Importuj z pliku**. Własne mapy mają też **Zmień nazwę mapy klawiszy** i **Usuń mapę klawiszy**. Opcja **Wyświetl systemowe skróty klawiszowe** otwiera listę skrótów Androida i bieżącej aplikacji.
+- **Skróty klawiszowe w aplikacjach** pozwalają przypisać inne polecenia do skrótów w poszczególnych aplikacjach. Zobacz [](#keyboards-app-shortcuts).
+- **Nawigacja strzałkami** jest dostępna w mapach, które ją obsługują. Zobacz [](#keyboards-arrow-keys).
+- Polecenia są podzielone na rozwijane grupy. Przy każdym jest skrót. Jeśli skrót działa tylko w trybie przeglądania, nazwa zawiera informację „w trybie przeglądania”, np. „Nawiguj do następnego nagłówka w trybie przeglądania”.
+
+Zmiana skrótów i reset mapy są dostępne, gdy SandFly jest włączony.
+
+Możesz też sprawdzić lub zmienić skrót na ekranie danego polecenia w menu **Polecenia**. Zobacz [](#commands).
 
 ### Zmień skrót klawiszowy {#keyboards-change-shortcut}
 
-1. Otwórz **Skróty klawiszowe**.
-2. Otwórz kategorię lub użyj **Szukaj**.
-3. Wybierz polecenie i naciśnij nowe klawisze.
-4. Naciśnij Enter lub wybierz **Zapisz**.
+1. W ustawieniach SandFly otwórz **Skróty klawiszowe**.
+2. Rozwiń grupę polecenia albo użyj **Szukaj** i wpisz jego nazwę.
+3. Wybierz polecenie.
+4. Naciśnij nowe klawisze.
+5. Naciśnij Enter lub wybierz **Zapisz**.
 
-Backspace albo **Wyczyść** usuwa skrót. W mapach SandFly, VoiceOver i ich kopiach Ctrl + Backspace odtwarza skrót domyślny. Escape lub **Anuluj** zamyka okno bez zapisu. Jeśli kombinacja jest zajęta, SandFly poda poprzednie polecenie. Potwierdź w oknie **Klucz jest już używany**, żeby przenieść skrót.
+W oknie skrótu możesz użyć poniższych klawiszy.
 
-Dla **Włącz lub wyłącz tryb przeglądania** możesz zarejestrować dwa naciśnięcia klawisza SandFly w pół sekundy. Nie dotyczy to Ctrl + Alt i Ctrl + Meta.
+- Backspace usuwa skrót. Po jego naciśnięciu polecenie zostaje bez przypisania. To samo robi przycisk **Wyczyść**.
+- Ctrl + Backspace przywraca domyślny skrót w mapach SandFly i VoiceOver oraz mapach z nich skopiowanych.
+- Escape lub **Anuluj** zamyka okno bez zmiany.
 
-#### Skróty w dwóch krokach {#keyboards-sequences}
+Gdy klawisze są już przypisane, SandFly pokazuje nazwę polecenia, które ich używa. Przy zapisie otworzy się okno **Klucz jest już używany**. Wybierz **OK**, jeśli chcesz przypisać te klawisze do edytowanego polecenia.
 
-Mapy SandFly, VoiceOver i ich kopie pozwalają nacisnąć klawisz SandFly z R albo O, a potem kolejny klawisz. Na drugi krok masz trzy sekundy. Możesz wtedy puścić klawisz SandFly. Ostatnim klawiszem nie może być Escape, Backspace, Enter ani modyfikator. Tę samą sekwencję naciśnij w oknie nagrywania skrótu.
+Skrótem polecenia **Włącz lub wyłącz tryb przeglądania** mogą być dwa naciśnięcia klawisza SandFly w ciągu pół sekundy. Ta możliwość nie działa z kombinacjami Ctrl + Alt i Ctrl + Meta.
 
-#### Skróty używane tylko podczas pisania {#keyboards-while-editing}
+#### Skróty naciskane w dwóch etapach {#keyboards-sequences}
 
-Zaznacz **Tylko podczas edycji** przy ustawianiu skrótu. Naciśnij jego klawisze bez klawisza SandFly. Czytnik przejmie je tylko w edytowanym polu. Poza nim trafią do aplikacji. Przy kombinacji na liście zobaczysz adnotację o edycji.
+W mapach SandFly i VoiceOver oraz mapach z nich skopiowanych możesz użyć klawisza SandFly + R lub klawisza SandFly + O, a następnie nacisnąć trzeci klawisz. Przykład to klawisz SandFly + O, a potem H. Naciśnij trzeci klawisz w ciągu trzech sekund, z klawiszem SandFly lub bez niego. Trzecim klawiszem nie może być Escape, Backspace, Enter ani modyfikator.
 
-#### Dodatkowe naciśnięcia w mapach telefonu {#keyboards-presses}
+Aby zapisać taki skrót, naciśnij klawisz SandFly + R lub klawisz SandFly + O, a następnie trzeci klawisz.
 
-Możesz przypisać jeden modyfikator, na przykład Sym, dwa szybkie naciśnięcia lub przytrzymanie. Jeśli nagrywasz dwa naciśnięcia, pierwsze trafia do aplikacji, a drugie wykonuje przypisane polecenie. Modyfikatory możesz przytrzymać razem przez pół sekundy. Możesz też przytrzymać zwykły klawisz, na przykład K. W edytowanym polu przytrzymania nadal mogą służyć do pisania.
+#### Skróty działające tylko podczas edycji {#keyboards-while-editing}
 
-Nagraj naciśnięcia tak, jak później ich użyjesz. W tych mapach pojedynczy Enter po chwili zapisuje, a podwójny zapisuje sekwencję dwóch naciśnięć Enter. Backspace czyści przypisanie.
+Wybierz **Tylko podczas edycji** w oknie skrótu, aby działał wyłącznie podczas edycji pola tekstowego. Skrót naciskasz bez klawisza SandFly. Jego klawisze przejmuje SandFly, więc nie trafiają do pola. Poza polem działają jak bez skrótu. Przy nazwie skrótu jest dopisek o edycji, np. „Alt + spacja podczas edycji”.
 
-### Skróty w wybranej aplikacji {#keyboards-app-shortcuts}
+#### Naciśnięcia w mapach telefonu z klawiaturą {#keyboards-presses}
 
-Skrót aplikacji ma pierwszeństwo przed mapą. Jeśli wybierzesz **Nieprzypisany**, klawisze trafią do aplikacji.
+W mapach telefonu dodatkowo możesz przypisać następujące skróty.
 
-1. Otwórz **Skróty klawiszowe** > **Skróty klawiszowe w aplikacjach**.
-2. Wybierz **Dodaj aplikację** i wskaż aplikację.
-3. W sekcji **Skróty klawiszowe** wybierz **Dodaj skrót klawiszowy**. Naciśnij klawisze i zapisz.
-4. Wybierz kategorię i polecenie lub wartość bez przypisania.
+- Naciśnięcie samego modyfikatora, np. samego Sym lub kombinacji Shift + Sym. Jeśli nie ma przypisania, naciśnięcie trafia do aplikacji.
+- Dwa szybkie naciśnięcia klawisza lub modyfikatorów, np. dwukrotne naciśnięcie Alt. Pierwsze trafia do aplikacji. Drugie uruchamia skrót.
+- Przytrzymanie samych modyfikatorów przez pół sekundy, np. Alt + Shift.
+- Przytrzymanie innego klawisza, np. K. Podczas pisania przytrzymane klawisze nadal wpisują tekst.
 
-SandFly musi być włączony, żeby dodać skrót. Po wybraniu skrótu użyj **Wybierz polecenie** lub **Usuń**. **Usuń aplikację** kasuje jej przypisania. Na tym samym ekranie ustawisz też [gesty aplikacji](#gestures).
+Zapisując skrót, naciśnij klawisze w ten sam sposób w jego oknie. W tych mapach jedno naciśnięcie Enter zapisuje skrót po chwili. Dwa naciśnięcia zapisują dwukrotne naciśnięcie Enter jako skrót. Backspace usuwa przypisanie.
 
-### Znajdź skrót {#keyboards-shortcut-list}
+### Skróty klawiszowe w aplikacjach {#keyboards-app-shortcuts}
 
-**Pokaż listę skrótów klawiszowych** otwiera listę z wyszukiwaniem. W mapach SandFly, VoiceOver i Orca domyślnie użyj klawisza SandFly + Shift + ukośnik. W mapie telefonu użyj klawisza SandFly + Q, a w mapie pojedynczych klawiszy samego Q. W ustawieniach znajdziesz też osobne **Szukaj**. Zobacz [wykaz fabryczny](#appendix-keyboard-shortcuts).
+W menu **Skróty klawiszowe** > **Skróty klawiszowe w aplikacjach** przypiszesz skróty dla wybranej aplikacji. Mają pierwszeństwo przed skrótami mapy, gdy ta aplikacja jest na ekranie. Ustawienie **Nieprzypisany** oddaje klawisze aplikacji.
+
+1. Na ekranie **Skróty klawiszowe** wybierz **Skróty klawiszowe w aplikacjach**.
+2. Wybierz **Dodaj aplikację**, a potem aplikację.
+3. W sekcji **Skróty klawiszowe** wybierz **Dodaj skrót klawiszowy**. Naciśnij klawisze i wybierz **Zapisz**.
+4. Wybierz grupę i polecenie lub **Nieprzypisany**.
+
+**Dodaj skrót klawiszowy** jest dostępne tylko przy włączonym SandFly. Wybierz skrót, aby użyć **Wybierz polecenie** lub **Usuń**. **Usuń aplikację** usuwa zarówno gesty, jak i skróty tej aplikacji.
+
+Na tym samym ekranie znajdziesz gesty dla aplikacji. Więcej o nich w [](#gestures).
+
+### Znajdź skrót klawiszowy {#keyboards-shortcut-list}
+
+Polecenie **Pokaż listę skrótów klawiszowych** otwiera przeszukiwalną listę poleceń z ich skrótami. Domyślnie uruchomisz je przez klawisz SandFly + Shift + / w mapach SandFly, VoiceOver i Orca, przez klawisz SandFly + Q w mapie telefonu z klawiaturą lub przez Q w mapie pojedynczych klawiszy telefonu.
+
+Opcja **Skróty klawiszowe** > **Szukaj** pozwala znaleźć polecenie według nazwy lub jego klawiszy. Domyślne skróty każdej mapy znajdziesz w [](#appendix-keyboard-shortcuts).
 
 ### Tryb przeglądania {#keyboards-browse-mode}
 
-W tym trybie litery mogą przenosić fokus w aplikacjach i na stronach. W mapie SandFly H przechodzi do następnego nagłówka, K do linku, B do przycisku, D do punktu orientacyjnego, a F do elementu sterującego. Dodaj Shift, żeby cofnąć się w danej kategorii. Strzałki przenoszą po wierszach i znakach, a Ctrl ze strzałkami w bok po słowach.
+W trybie przeglądania pojedyncze klawisze same przesuwają fokus SandFly, tak jak w czytnikach ekranu na komputerze. W mapie SandFly klawisz H przechodzi do następnego nagłówka, K do linku, B do przycisku, D do punktu orientacyjnego, a F do kontrolki. Naciśnij ten sam klawisz razem z Shift, aby przejść wstecz. Strzałki poruszają się po wierszach i znakach, a Ctrl ze strzałką w lewo lub w prawo przechodzi po słowach. Tryb działa na stronach internetowych i w aplikacjach.
 
-| Mapa | Domyślny skrót trybu przeglądania |
+Domyślne skróty polecenia **Włącz lub wyłącz tryb przeglądania** zależą od mapy.
+
+| Mapa klawiszy | Skrót |
 | --- | --- |
-| SandFly | Dwa naciśnięcia klawisza SandFly |
-| VoiceOver | Klawisz SandFly + Q |
-| NVDA | Klawisz SandFly + spacja |
-| JAWS | Klawisz SandFly + Z |
-| Orca | Klawisz SandFly + A |
+| **Mapa klawiszy SandFly** | Dwa naciśnięcia klawisza SandFly |
+| **Mapa klawiszy VoiceOver** | Klawisz SandFly + Q |
+| **Mapa klawiszy NVDA** | Klawisz SandFly + spacja |
+| **Mapa klawiszy JAWS** | Klawisz SandFly + Z |
+| **Mapa klawiszy Orca** | Klawisz SandFly + A |
 
-SandFly podaje zmianę trybu dźwiękiem lub mową. W mapach telefonu odpowiednie polecenia działają bez przełączania. Domyślnie **Nawigacja** > **Inteligentny tryb przeglądania** zmienia tryb zależnie od tego, czy jesteś w polu edycji treści WWW. Domyślnie wyłączone **Zapamiętaj tryb przeglądania w każdej aplikacji** zapamiętuje Twój wybór osobno dla aplikacji. Zobacz [pełne zasady trybu](#web).
+SandFly odtworzy dźwięk lub odczyta „Tryb przeglądania włączony” albo „Tryb przeglądania wyłączony”.
+
+W mapach telefonu z klawiaturą polecenia wymagające trybu przeglądania w pozostałych mapach działają także bez niego.
+
+Na ekranie **Nawigacja** są dwie opcje dotyczące tego trybu.
+
+- **Nawigacja** > **Inteligentny tryb przeglądania** wyłącza tryb, gdy fokus przechodzi do pola tekstowego na stronie, dzięki czemu możesz pisać. Włącza go ponownie po przejściu do elementu poza polem tekstowym. Domyślnie opcja jest włączona.
+- **Nawigacja** > **Zapamiętaj tryb przeglądania w każdej aplikacji** przywraca ostatnią ręczną zmianę trybu w danej aplikacji. Jeśli jeszcze nie przełączano go w aplikacji, jest wyłączony, chyba że opcja **Inteligentny tryb przeglądania** włączy go na stronie. Domyślnie zapamiętywanie jest wyłączone.
+
+O nawigacji po elementach stron przeczytasz w [](#web).
 
 ### Nawigacja strzałkami {#keyboards-arrow-keys}
 
-Gdy jest włączona, same strzałki lub ich połączenia z Ctrl i Alt uruchamiają polecenia.
+Gdy nawigacja strzałkami jest włączona, strzałki uruchamiają polecenia bez klawisza SandFly. Naciśnij jedną, dwie jednocześnie albo połącz strzałkę z Ctrl lub Alt. Domyślne polecenia odpowiadają obsłudze strzałkami w VoiceOver na iPhonie.
 
-| Klawisze | Polecenie domyślne |
+| Klawisze | Polecenie |
 | --- | --- |
-| Prawo lub lewo | Następny lub poprzedni element. |
-| Dół lub góra | Użyj wybranej opcji sterowania czytaniem. |
-| Lewo i prawo razem | Przełącz nawigację strzałkami. |
-| Góra i dół razem | Aktywuj element. |
-| Góra i prawo lub góra i lewo | Następna lub poprzednia opcja sterowania czytaniem. |
-| Ctrl + góra lub Ctrl + dół | Pierwszy lub ostatni element. |
-| Alt + góra lub Alt + dół | Przewiń wstecz lub do przodu. |
-| Alt + lewo lub Alt + prawo | Przewiń w prawo lub w lewo. |
+| Strzałka w prawo lub w lewo | Następny lub poprzedni element |
+| Strzałka w dół lub w górę | Zmień wartość sterowania czytaniem w dół lub w górę |
+| Strzałki w lewo i w prawo razem | **Włącz lub wyłącz nawigację strzałkami** |
+| Strzałki w górę i w dół razem | Aktywuj element |
+| Strzałka w górę razem ze strzałką w prawo lub w lewo | Wybierz następny lub poprzedni element sterowania czytaniem |
+| Ctrl + strzałka w górę lub w dół | Pierwszy lub ostatni element ekranu |
+| Alt + strzałka w górę lub w dół | Przewiń wstecz lub do przodu |
+| Alt + strzałka w lewo lub w prawo | Przewiń w prawo lub w lewo |
 
-Dół z prawą lub lewą strzałką oraz Ctrl ze strzałką w lewo lub prawo domyślnie nie mają przypisania. Nawigację przełączysz lewą i prawą strzałką razem lub w **Skróty klawiszowe** > **Nawigacja strzałkami** > **Nawigacja strzałkami**. Dostępne jest też polecenie **Włącz lub wyłącz nawigację strzałkami**. Domyślnie funkcja działa w mapach telefonu, między innymi ze strzałkami wysyłanymi przez gładzik Zinwa Q25.
+Strzałka w dół ze strzałką w prawo lub w lewo oraz Ctrl ze strzałką w lewo lub w prawo domyślnie nie mają przypisań.
 
-Żeby zmienić przypisanie, wybierz kombinację na ekranie **Nawigacja strzałkami** i wybierz polecenie. Pojedyncza strzałka z kombinacji działa po zwolnieniu, jeśli wcześniej nie dołożysz drugiej. W polu edycji zwykła strzałka przenosi kursor. Kombinacje nadal działają, a lewo i prawo razem wyłączają nawigację po 0,4 sekundy. Każda mapa ma własne ustawienia. NVDA, JAWS i Orca używają własnej nawigacji zamiast tej funkcji.
+Aby włączyć lub wyłączyć nawigację strzałkami, naciśnij jednocześnie strzałki w lewo i w prawo. Możesz też użyć **Skróty klawiszowe** > **Nawigacja strzałkami** > **Nawigacja strzałkami**. Polecenie **Włącz lub wyłącz nawigację strzałkami** można także przypisać do gestu. Nawigacja strzałkami jest domyślnie wyłączona. Wyjątkiem są mapy telefonu z klawiaturą, w których działa dla strzałek wysyłanych przez gładzik, np. w Zinwa Q25.
+
+Aby zmienić polecenie klawisza strzałki, wykonaj trzy kroki.
+
+1. Otwórz **Skróty klawiszowe** > **Nawigacja strzałkami**.
+2. Wybierz strzałkę lub kombinację, np. strzałkę w górę ze strzałką w dół.
+3. Wybierz polecenie z listy. Jest taka sama jak przy przypisywaniu gestu.
+
+Jeśli klawisz wchodzi w skład kombinacji dwóch strzałek, jego polecenie uruchamia się po zwolnieniu. Naciśnięcie drugiej strzałki wcześniej uruchamia polecenie kombinacji. Podczas edycji pola tekstowego pojedyncze strzałki przesuwają kursor. Jednoczesne naciśnięcia nadal wykonują polecenia. Aby wyłączyć nawigację strzałkami, przytrzymaj wtedy strzałki w lewo i w prawo przez 0,4 sekundy.
+
+Każda mapa ma osobne polecenia strzałek i własny przełącznik. W mapach NVDA, JAWS i Orca nawigacja strzałkami nie występuje, ponieważ strzałki przenoszą w nich fokus SandFly. Użycie polecenia w tych mapach wywołuje komunikat, że mapa nie obsługuje nawigacji strzałkami.
 
 ### Nawigacja jak na komputerze {#keyboards-desktop}
 
-W mapach NVDA, JAWS i Orca oraz ich kopiach strzałki w pionie przechodzą po elementach, a w poziomie po znakach. Ctrl ze strzałką w bok przechodzi po słowach. Ctrl + Home i Ctrl + End prowadzą na początek lub koniec. Tab i Shift + Tab przenoszą fokus czytnika i klawiatury po elementach przyjmujących klawisze. Enter aktywuje element czytnika, chyba że już przyjmuje klawisze. Escape cofa. W edytowanym polu klawisze trafiają do pola. W trybie przeglądania litery prowadzą po rodzajach elementów.
+W mapach NVDA, JAWS i Orca oraz w mapach z nich skopiowanych klawisze działają następująco.
+
+- Strzałki w dół i w górę przenoszą do następnego i poprzedniego elementu. Strzałki w lewo i w prawo przechodzą po znakach, a z Ctrl po słowach. Ctrl + Home i Ctrl + End przechodzą do pierwszego i ostatniego elementu.
+- Tab i Shift + Tab przenoszą fokus wprowadzania i fokus SandFly do następnego lub poprzedniego elementu, który może otrzymać fokus wprowadzania.
+- Enter klika element, na którym jest fokus SandFly, chyba że element ma również fokus wprowadzania.
+- Escape działa jak **Wstecz**.
+- Podczas edycji pola tekstowego te klawisze trafiają do pola.
+
+W trybie przeglądania pojedyncze litery przechodzą według rodzaju elementu, tak jak skróty jednoliterowe w NVDA, klawisze szybkiej nawigacji w JAWS i nawigacja strukturalna w Orca.
 
 #### Nawigacja obiektowa {#keyboards-object-navigation}
 
-W kategorii **Nawigacja obiektowa** znajdziesz **Przejdź do obiektu nadrzędnego**, **Przejdź do pierwszego obiektu podrzędnego**, **Przejdź do następnego obiektu** i **Przejdź do poprzedniego obiektu**. Polecenia poruszają się po strukturze aplikacji, także po zwykle pomijanych grupach. SandFly podaje „Grupa” i jej liczebność przy kontenerze bez etykiety.
+Polecenia z grupy **Nawigacja obiektowa** przenoszą fokus w strukturze elementów udostępnionej przez aplikację. Obejmują kontenery, które SandFly zwykle pomija.
+
+- **Przejdź do obiektu nadrzędnego**.
+- **Przejdź do pierwszego obiektu podrzędnego**.
+- **Przejdź do następnego obiektu**.
+- **Przejdź do poprzedniego obiektu**.
+
+Kontener bez etykiety SandFly odczytuje jako grupę i podaje liczbę jej elementów.
 
 #### Kursor przeglądu {#keyboards-review-cursor}
 
-Kursor przeglądu pozwala czytać tekst w kolejności jego ułożenia na ekranie. Nie przenosi fokusu czytnika. Pozycje obok siebie mogą tworzyć jeden wiersz. Jeśli kursor jest wyłączony, polecenia zaczynają od fokusu SandFly.
+Kursor przeglądu odczytuje tekst na ekranie po wierszach, słowach i znakach w kolejności wyświetlania, od góry do dołu i od lewej do prawej. Fokus SandFly pozostaje na miejscu. Elementy obok siebie są czytane jako jeden wiersz. W grupie **Przegląd ekranu** znajdziesz poniższe polecenia.
 
-W kategorii **Przegląd ekranu** znajdziesz polecenia bieżącego, następnego i poprzedniego wiersza, słowa lub znaku, a także przejścia na początek i koniec wiersza albo listy wierszy. Możesz kliknąć lub przytrzymać w miejscu kursora, przenieść fokus do kursora lub odwrotnie, włączyć i wyłączyć kursor. **Rozpoznaj tekst na ekranie** od Androida 11 rozpoznaje też tekst ze zrzutu ekranu.
+- **Przegląd: poprzedni wiersz**, **Przegląd: bieżący wiersz** i **Przegląd: następny wiersz**.
+- **Przegląd: poprzednie słowo**, **Przegląd: bieżące słowo** i **Przegląd: następne słowo**.
+- **Przegląd: poprzedni znak**, **Przegląd: bieżący znak** i **Przegląd: następny znak**.
+- **Przegląd: pierwszy wiersz**, **Przegląd: ostatni wiersz**, **Przegląd: początek wiersza** i **Przegląd: koniec wiersza**.
+- **Wykonaj kliknięcie w miejscu kursora przeglądu** oraz **Wykonaj długie kliknięcie w miejscu kursora przeglądu** klikają element pod kursorem lub stukają w ekran w jego miejscu.
+- **Przenieś kursor przeglądu do fokusu SandFly** i **Przenieś fokus SandFly do kursora przeglądu** synchronizują pozycję w wybranym kierunku.
+- **Włącz kursor przeglądu** i **Wyłącz kursor przeglądu** przełączają kursor.
+- **Rozpoznaj tekst na ekranie** rozpoznaje tekst na zrzucie ekranu i pokazuje go w przeglądzie. Obejmuje to tekst, którego aplikacja nie udostępnia. Wymaga Androida 11 lub nowszego.
 
-Przy włączonym kursorze lub rozpoznanym tekście strzałki w pionie przenoszą po wierszach, strzałki w bok po znakach, a Ctrl ze strzałką w bok po słowach. Home i End prowadzą na krańce wiersza. Ctrl + Home, Ctrl + End oraz Page Up i Page Down prowadzą do skrajnego wiersza. Enter klika, Shift + Enter przytrzymuje, a Escape zamyka rozpoznany tekst.
+Gdy kursor przeglądu jest wyłączony, polecenia przeglądu zaczynają od fokusu SandFly. Przy włączonym kursorze lub na ekranie rozpoznanego tekstu poniższe klawisze obsługują kursor i kliknięcia zamiast trafiać do aplikacji.
 
-W JAWS działa to jak kursor JAWS, a w Orca jak płaski przegląd. Skróty są w mapach NVDA, JAWS i Orca. W innych możesz je ustawić na ekranie **Skróty klawiszowe**.
+- Strzałki w górę i w dół przechodzą do poprzedniego i następnego wiersza.
+- Strzałki w lewo i w prawo przechodzą do poprzedniego i następnego znaku. Z Ctrl przechodzą po słowach.
+- Home i End przechodzą na początek i koniec wiersza. Z Ctrl przechodzą do pierwszego i ostatniego wiersza.
+- Page Up i Page Down przechodzą do pierwszego i ostatniego wiersza.
+- Enter klika, a Shift + Enter wykonuje długie kliknięcie.
+- Escape zamyka rozpoznany tekst.
 
-### Przekaż klawisze aplikacji {#keyboards-pass-keys}
+W mapie JAWS kursor przeglądu działa jak kursor JAWS, a w mapie Orca jak płaski przegląd. Polecenia mają domyślne skróty w mapach NVDA, JAWS i Orca. W innych mapach możesz przypisać je na ekranie **Skróty klawiszowe**.
 
-- **Przekaż do systemu** oddaje następne naciśnięcie lub kombinację aplikacji.
-- **Przekazuj tej aplikacji klawisze bez klawisza SandFly** zapamiętuje wybór dla aplikacji. Dotyczy między innymi strzałek i liter trybu przeglądania. Ponowne polecenie cofa wybór. Aktywny kursor przeglądu nadal przejmuje swoje klawisze.
-- **Włącz lub wyłącz obsługę klawiatury przez SandFly** oddaje Androidowi również skróty z klawiszem SandFly. Naciśnij skrót tego polecenia ponownie, żeby wrócić. Ponowne uruchomienie czytnika włącza obsługę.
+### Przekazuj klawisze aplikacji {#keyboards-pass-keys}
 
-| Mapa | Następne naciśnięcie | Klawisze aplikacji | Obsługa klawiatury |
+Część aplikacji używa tych samych klawiszy co SandFly. Poniższe polecenia pozwalają je przekazać aplikacji.
+
+- **Przekaż do systemu** oddaje aplikacji następny klawisz lub klawisze naciśnięte razem. Po włączeniu usłyszysz, że następne naciśnięcie będzie pominięte przez SandFly.
+- **Przekazuj tej aplikacji klawisze bez klawisza SandFly** oddaje bieżącej aplikacji wszystkie klawisze naciskane bez klawisza SandFly, np. strzałki i litery trybu przeglądania. Zmiana działa w tej aplikacji do ponownego użycia polecenia. SandFly odczytuje nazwę aplikacji i informuje, czy przekazywanie jest włączone. Zapamiętuje wybór osobno dla każdej aplikacji. Włączony kursor przeglądu nadal przejmuje własne klawisze.
+- **Włącz lub wyłącz obsługę klawiatury przez SandFly** przekazuje Androidowi wszystkie klawisze, także skróty z klawiszem SandFly, aż jeszcze raz użyjesz skrótu tego polecenia. SandFly odczytuje, czy obsługa klawiatury jest włączona. Po ponownym uruchomieniu SandFly obsługa jest znów włączona.
+
+Poniższa tabela podaje domyślne skróty tych poleceń.
+
+| Mapa | **Przekaż do systemu** | **Przekazuj tej aplikacji klawisze bez klawisza SandFly** | **Włącz lub wyłącz obsługę klawiatury przez SandFly** |
 | --- | --- | --- | --- |
-| SandFly | Klawisz SandFly + Shift + Escape | Brak | Klawisz SandFly + Shift + K |
-| VoiceOver | Brak | Brak | Klawisz SandFly + Shift + średnik |
-| NVDA | Klawisz SandFly + F2 | Klawisz SandFly + Shift + spacja | Klawisz SandFly + Shift + K |
-| JAWS | Klawisz SandFly + 3 | Klawisz SandFly + Shift + Z | Klawisz SandFly + Shift + K |
-| Orca | Klawisz SandFly + Backspace | Klawisz SandFly + Shift + A | Klawisz SandFly + Shift + średnik |
-| Telefon z klawiaturą | Klawisz SandFly + P | Klawisz SandFly + Shift + Q | Klawisz SandFly + Shift + P |
-| Pojedyncze klawisze telefonu | Klawisz SandFly + P | Shift + Q | Klawisz SandFly + Shift + P |
+| **Mapa klawiszy SandFly** | Klawisz SandFly + Shift + Escape | Brak | Klawisz SandFly + Shift + K |
+| **Mapa klawiszy VoiceOver** | Brak | Brak | Klawisz SandFly + Shift + średnik |
+| **Mapa klawiszy NVDA** | Klawisz SandFly + F2 | Klawisz SandFly + Shift + spacja | Klawisz SandFly + Shift + K |
+| **Mapa klawiszy JAWS** | Klawisz SandFly + 3 | Klawisz SandFly + Shift + Z | Klawisz SandFly + Shift + K |
+| **Mapa klawiszy Orca** | Klawisz SandFly + Backspace | Klawisz SandFly + Shift + A | Klawisz SandFly + Shift + średnik |
+| **Mapa klawiszy telefonu z klawiaturą** | Klawisz SandFly + P | Klawisz SandFly + Shift + Q | Klawisz SandFly + Shift + P |
+| **Mapa pojedynczych klawiszy telefonu** | Klawisz SandFly + P | Shift + Q | Klawisz SandFly + Shift + P |
 
-Polecenia znajdziesz w kategorii **Aktywacja**. [Skrypt](#scripts) może oddać aplikacji wszystkie klawisze. Ponowne włączenie obsługi przez SandFly kończy to działanie.
+Polecenia są w grupie **Aktywacja**. Skrypt może też przekazywać wszystkie klawisze swojej aplikacji. Ponowne włączenie obsługi klawiatury przez SandFly zatrzymuje takie przekazywanie. Zobacz [](#scripts).
 
 ### Telefony z klawiaturą {#keyboards-phones}
 
-SandFly rozpoznaje między innymi Unihertz Titan, BlackBerry KEYone, KEY2 i KEY2 LE oraz Zinwa Q25. Te telefony mają litery i modyfikatory takie jak Shift i Alt, ale zwykle brak strzałek, Ctrl i Meta. Mapa telefonu jest wybierana automatycznie przy pierwszym użyciu. Obie mapy możesz wybrać też ręcznie.
+Niektóre telefony mają wbudowaną klawiaturę z literami, Shift, Alt i często Sym, a bez Ctrl, Meta i strzałek. Należą do nich telefony Unihertz Titan, BlackBerry KEYone, KEY2 i KEY2 LE oraz telefony Zinwa, np. Q25. Na tych urządzeniach SandFly wykrywa klawiaturę i uruchamia **Mapa klawiszy telefonu z klawiaturą**. Obie mapy telefonu możesz wybrać na dowolnym telefonie.
 
-Jeśli wybierzesz **Mapa klawiszy telefonu z klawiaturą**, sam klawisz SandFly przechodzi do następnego elementu, a z Shift do poprzedniego. Enter uaktywnia element, na którym jest fokus. Podwójny Alt steruje multimediami i odbiera rozmowę. Przytrzymanie Alt + Shift wybiera następną opcję sterowania czytaniem. Klawisz SandFly z J, I lub K steruje czytaniem, a z T lub B prowadzi na początek lub koniec. Klawisz SandFly z L przełącza [blokadę dotyku](#touch).
+- **Mapa klawiszy telefonu z klawiaturą** przypisuje najczęściej używane skróty do klawiszy, których nie potrzebujesz do pisania. Działają wszędzie, także w polach tekstowych. Sam klawisz SandFly przenosi do następnego elementu, a Shift z klawiszem SandFly do poprzedniego. Enter aktywuje element, na który przeniesiono fokus SandFly. Dwukrotny Alt odtwarza lub wstrzymuje multimedia i odbiera połączenia. Przytrzymanie Alt + Shift wybiera następny element sterowania czytaniem. Inne skróty łączą klawisz SandFly z literą, np. J, I i K do sterowania czytaniem, a T i B do początku lub końca ekranu.
+- **Mapa pojedynczych klawiszy telefonu** pozwala uruchamiać polecenia pojedynczymi klawiszami. Spacja przechodzi do następnego elementu, Shift + spacja do poprzedniego, H do następnego nagłówka, a J, L, I i K służą do sterowania czytaniem. Pojedyncze klawisze działają poza polami tekstowymi w trakcie edycji. Z klawiszem SandFly działają także w tych polach, więc klawisz SandFly + spacja pozwala wyjść z pola. Shift + Z blokuje lub odblokowuje dotyk.
 
-Po wybraniu **Mapa pojedynczych klawiszy telefonu** spacja i Shift + spacja przechodzą do następnego lub poprzedniego elementu. H przechodzi do nagłówka, a J, L, I i K sterują czytaniem. Te klawisze działają poza edytowanym polem. Dodaj klawisz SandFly, żeby użyć ich także w polu. Shift + Z przełącza blokadę dotyku.
+Poniższe zasady dotyczą obu map.
 
-W obu mapach Enter aktywuje element po przejściu fokusu. W używanym polu i po wpisaniu tekstu trafia do aplikacji. Klawisze działają bez trybu przeglądania. Nawigacja strzałkami jest domyślnie włączona. Gładzik wysyłający Enter może aktywować element. Jeśli klawiszem SandFly jest Alt, Alt z literą w polu wpisuje przypisaną cyfrę lub symbol. Skróty z Sym, Fn i Ctrl działają także w polach. Zobacz [wykaz skrótów](#appendix-keyboard-shortcuts).
+- Enter aktywuje element, na który tuż wcześniej przeszedł fokus SandFly. Po wpisaniu tekstu Enter trafia do aplikacji, np. aby wysłać wiadomość. Gdy fokus jest na edytowanym polu, Enter również trafia do aplikacji.
+- Polecenia dostępne w trybie przeglądania w innych mapach działają bez niego.
+- Nawigacja strzałkami jest domyślnie włączona. Naciśnięcie gładzika, który wysyła Enter, np. w Zinwa Q25, aktywuje element.
+- Jeśli klawiszem SandFly jest Alt, Alt z literą wpisuje w edytowane pole przypisaną cyfrę lub symbol.
+- Skróty z Sym, Fn lub Ctrl działają także w polach tekstowych.
+- Klawisz SandFly + L blokuje lub odblokowuje dotyk w mapie telefonu z klawiaturą. Zobacz [](#touch).
 
-#### Domyślny klawisz SandFly na telefonie {#keyboards-phone-sandfly-key}
+Pełna lista skrótów jest w [](#appendix-keyboard-shortcuts).
 
-Możesz wybrać Sym, Ctrl, prawy Shift, Fn, prawy Alt, Alt albo Meta. Domyślnie SandFly wybiera klawisz, który nie przeszkadza w pisaniu.
+#### Klawisz SandFly na telefonie z klawiaturą {#keyboards-phone-sandfly-key}
 
-- Ctrl na telefonach Unihertz, gdy Fn działa jako Ctrl, z wyjątkiem Titan 2 Elite.
-- Prawy Shift na Titan 2 Elite, Zinwa Q25 i BlackBerry z prawym Shift.
+W mapach telefonu klawiszem SandFly może być Sym, Ctrl, prawy Shift, Fn, prawy Alt, Alt lub Meta. Domyślnie SandFly wybiera dla danego modelu klawisz, którego nie potrzeba do pisania.
+
+- Ctrl na telefonach Unihertz z Fn ustawionym w opcjach klawiatury na Ctrl, z wyjątkiem Titan 2 Elite.
+- Prawy Shift na Unihertz Titan 2 Elite, Zinwa Q25 i telefonach BlackBerry z prawym Shift.
 - Sym na pozostałych telefonach z klawiszem Sym.
-- Alt bez klawisza Sym, na przykład w pierwszym modelu Titan.
+- Alt na telefonach bez Sym, np. pierwszym Unihertz Titan.
 
-Gdy klawiszem czytnika jest Sym, nie otwiera dotychczasowej warstwy symboli. W Zinwa Q25 klawisz Sym wysyła prawy Alt. W KEY2 Fn odpowiada klawiszowi Speed.
+Gdy Sym jest klawiszem SandFly, nie otworzysz nim warstwy symboli klawiatury. W telefonie Zinwa Q25 przycisk opisany jako Sym wysyła prawy Alt. W BlackBerry KEY2 funkcję Fn pełni klawisz Speed.
 
-#### Ustawienia pisania klawiaturą fizyczną {#keyboards-typing-settings}
+#### Ustawienia klawiatury fizycznej na ekranie Pisanie {#keyboards-typing-settings}
 
-Po podłączeniu klawiatury otwórz **Pisanie** > **Klawiatura fizyczna**.
+Menu **Pisanie** > **Klawiatura fizyczna** pojawia się po podłączeniu klawiatury fizycznej.
 
-- **Klawisze liter naciskają przyciski klawiatury numerycznej** pojawia się na telefonach, gdzie litery mają dodatkowe cyfry. W, E i R mogą odpowiadać 1, 2 i 3. Działa na ekranie PIN, klawiaturze połączeń i w kalkulatorze. Kalkulator używa też operatorów dostępnych z Alt. Na ekranie blokady litera otwiera klawiaturę PIN. Zmodyfikowane klawisze, cyfry i pisanie w polu zachowują swoje działanie. Opcja jest domyślnie włączona.
-- **Enter wysyła wiadomości** naciska przycisk wysyłania, gdy w polu komunikatora jest tekst. Shift + Enter i Alt + Enter trafiają do aplikacji jako nowy wiersz. Działa z dowolną klawiaturą fizyczną. Domyślnie jest wyłączone.
-- **Klawiatura SandFly** otwiera [konfigurację metody wprowadzania](#keyboards-sandfly-keyboard). Możesz ustawić działanie przytrzymania, [podwójnego naciśnięcia](#keyboards-double-press) i [dwóch spacji](#keyboards-double-press).
-- **Ustawienia klawiatury fizycznej Androida** otwierają ustawienia systemowe, między innymi układ językowy.
+- **Klawisze liter naciskają przyciski klawiatury numerycznej** działa z klawiaturami, których litery mają również cyfry, np. w BlackBerry, Unihertz i Zinwa, gdzie W, E i R oznaczają 1, 2 i 3. Litery naciskają przyciski klawiatury PIN na ekranie blokady oraz klawiatury połączeń, która odtwarza przypisane tony. W kalkulatorach znaki dostępne z Alt, takie jak + i −, naciskają przyciski operatorów. Gdy na ekranie blokady klawiatura PIN jest jeszcze ukryta, naciśnięcie litery ją otwiera. Opcja pomija klawisze z modyfikatorem, klawisze cyfr oraz znaki wpisywane do pola tekstowego. Na obsługiwanych klawiaturach jest widoczna i domyślnie włączona.
+- **Enter wysyła wiadomości** naciska przycisk wysyłania, gdy w polu wiadomości jest tekst. Działa m.in. w aplikacjach Wiadomości, WhatsApp, Telegram, Signal i Slack. Shift + Enter i Alt + Enter trafiają do aplikacji, aby wstawić nowy wiersz. Opcja działa z każdą klawiaturą fizyczną. Domyślnie jest wyłączona.
+- **Klawiatura SandFly** otwiera ustawienia klawiatur Androida, w których ją włączysz. Zobacz [](#keyboards-sandfly-keyboard).
+- **Wpisywanie po przytrzymaniu klawisza** określa, jaki znak klawiatura SandFly wpisuje po przytrzymaniu klawisza.
+- **Znaki podwójnego naciśnięcia** określają, co klawiatura SandFly wpisuje po naciśnięciu klawisza dwa razy. Zobacz [](#keyboards-double-press).
+- **Podwójna spacja wstawia kropkę** sprawia, że dwukrotna spacja po słowie wpisuje kropkę i spację. Działa z klawiaturą SandFly i domyślnie jest wyłączona.
+- **Ustawienia klawiatury fizycznej Androida** otwierają systemowe ustawienia klawiatury, np. wybór układu.
 
 ### Klawiatura SandFly {#keyboards-sandfly-keyboard}
 
-To opcjonalna metoda wprowadzania dla klawiatur fizycznych. Dzięki niej SandFly wie, kiedy pole rzeczywiście przyjmuje tekst, i może w odpowiednim momencie zmienić działanie liter i Enter. Dodaje wpisywanie przez przytrzymanie i podwójne naciśnięcie, wyszukiwanie emoji, wybór symbolu i tryb edycji. Zwykłe klawisze nadal wpisują znaki. Metoda jest niedostępna na zegarkach i telewizorach.
+Klawiatura SandFly to metoda wprowadzania tekstu dla klawiatur fizycznych. Nie wyświetla klawiszy na ekranie. Fizyczne klawisze wpisują tekst jak wcześniej, a klawiatura SandFly dodaje poniższe możliwości.
 
-#### Włącz Klawiaturę SandFly {#keyboards-turn-on-sandfly-keyboard}
+- Dokładna informacja o tym, czy pole tekstowe przyjmuje wpisywany tekst. Dzięki niej pojedyncze skróty i Enter w mapach telefonów z klawiaturą działają we właściwych miejscach.
+- Wpisywanie znaku Alt lub wielkiej litery po przytrzymaniu klawisza.
+- Wpisywanie znaku z Shift po naciśnięciu i zwolnieniu Shift przed tym znakiem, jak na klawiaturze BlackBerry. Ponowne naciśnięcie i zwolnienie Shift przed znakiem anuluje zmianę.
+- Wpisywanie dodatkowych znaków po dwóch naciśnięciach, np. ğ po dwóch G i kropki po dwóch spacjach.
+- Wyszukiwanie emoji i listę symboli.
+- Tryb edycji, w którym pojedyncze klawisze przesuwają kursor, zaznaczają, kopiują, wycinają i wklejają.
 
-1. Podłącz klawiaturę lub użyj wbudowanej.
-2. Otwórz **Pisanie** > **Klawiatura fizyczna** > **Klawiatura SandFly**.
-3. Włącz **Klawiatura SandFly** na systemowej liście metod wprowadzania.
-4. W polu tekstowym wybierz ją przełącznikiem Androida lub poleceniem **Przełącz klawiaturę**. Polecenie wymaga Androida 11 i przechodzi do następnej włączonej klawiatury.
+Klawiatura SandFly jest dostępna na telefonach i tabletach. Jest niedostępna na zegarkach i telewizorach.
 
-Po wybraniu tej metody klawiatura dotykowa jest ukryta.
+#### Włącz klawiaturę SandFly {#keyboards-turn-on-sandfly-keyboard}
 
-#### Przytrzymywanie klawiszy {#keyboards-held-keys}
+1. Podłącz klawiaturę lub użyj klawiatury wbudowanej w telefon.
+2. W ustawieniach SandFly otwórz **Pisanie** > **Klawiatura fizyczna** > **Klawiatura SandFly**.
+3. Na liście klawiatur włącz **Klawiatura SandFly**.
+4. Przejdź do pola tekstowego i wybierz klawiaturę SandFly w systemowym przełączniku klawiatur. Możesz też użyć polecenia **Przełącz klawiaturę**, które przechodzi do następnej włączonej klawiatury. To polecenie wymaga Androida 11 lub nowszego.
 
-Otwórz **Pisanie** > **Klawiatura fizyczna** > **Wpisywanie po przytrzymaniu klawisza**. Domyślnie SandFly wpisuje znak dostępny z Alt, a jeśli go nie ma, wielką literę. Możesz też wybrać samą wielką literę lub powtarzanie znaku. Najpierw pojawia się zwykły znak klawisza. Gdy Android zacznie powtarzać naciśnięcie, SandFly zastępuje go wynikiem przytrzymania.
+Gdy używasz klawiatury SandFly, klawiatura ekranowa się nie pojawia.
 
-#### Podwójne naciśnięcie {#keyboards-double-press}
+#### Wpisuj po przytrzymaniu klawisza {#keyboards-held-keys}
 
-Otwórz **Pisanie** > **Klawiatura fizyczna** > **Znaki podwójnego naciśnięcia**. Użyj **Dodaj klawisz**. Wpisz znak w **Klawisz** i od 1 do 16 znaków w **Podwójne naciśnięcie wpisuje**. Wpis możesz edytować lub usunąć. Lista jest początkowo pusta.
+W menu **Pisanie** > **Klawiatura fizyczna** > **Wpisywanie po przytrzymaniu klawisza** wybierz, co ma wpisać przytrzymany klawisz drukowalny.
 
-Pierwsze naciśnięcie wpisuje zwykły znak. Drugie w ciągu 350 ms zastępuje go nowym, jeśli między nimi nie naciśniesz innego klawisza ani nie przesuniesz kursora. Dla wielkiej litery SandFly używa wielkiego zamiennika. Możesz na przykład wpisać ğ dwoma naciśnięciami G. Domyślnie wyłączone **Podwójna spacja wstawia kropkę** dodaje kropkę i spację po literze lub cyfrze. Te funkcje są pomijane w polach hasła.
+- **Znak Alt** wpisuje znak przypisany do klawisza z Alt, jak na klawiaturach BlackBerry. Jeśli klawisz go nie ma, wpisuje wielką literę. To ustawienie domyślne.
+- **Wielka litera** wpisuje wielką literę.
+- **Powtórzony znak** powtarza zwykły znak, tak jak bez klawiatury SandFly.
 
-#### Wyszukaj emoji lub wybierz symbol {#keyboards-emoji}
+Z początku klawisz wpisuje zwykły znak. Gdy Android zaczyna go powtarzać, klawiatura SandFly zastępuje go znakiem przypisanym do przytrzymania.
 
-1. W edytowanym polu z Klawiaturą SandFly uruchom **Wyszukaj emotikony** albo **Wybierz symbol**. Ostatnio używane znaki są pierwsze.
-2. Wpisz początek jednego lub kilku słów nazwy. Nazwy emoji pojawiają się w języku telefonu.
-3. Przejdź po wynikach strzałkami lub Tab i Shift + Tab. SandFly podaje pozycję.
-4. Naciśnij Enter, żeby wstawić znak.
+#### Dwa naciśnięcia klawisza {#keyboards-double-press}
 
-Backspace usuwa literę, a przy pustym wyszukiwaniu zamyka listę. Escape lub Wstecz również ją zamykają. W mapach telefonu emoji otworzysz klawiszem SandFly + O, a symbole przez Alt + spacja podczas edycji. Alt + spacja działa też na Zinwa Q25. W innej mapie ustaw skrót w kategorii **Edytowanie tekstu**.
+Ekran **Pisanie** > **Klawiatura fizyczna** > **Znaki podwójnego naciśnięcia** pokazuje klawisze i wynik podwójnego naciśnięcia, np. ğ dla G, ö dla O lub ä dla E. Wybierz **Dodaj klawisz**. W polu **Klawisz** wpisz znak klawisza, a w polu **Podwójne naciśnięcie wpisuje** wpisz od jednego do 16 znaków. Wybierz zapisany klawisz, aby użyć **Edytuj** lub **Usuń**. Domyślnie lista jest pusta.
+
+Pierwsze naciśnięcie wpisuje zwykły znak klawisza. Jeśli naciśniesz ten sam klawisz ponownie w ciągu 350 milisekund, pozostanie przypisany tekst zamiast pierwszego znaku, o ile w międzyczasie nie naciśniesz innego klawisza ani nie przesuniesz kursora. Gdy pierwszy znak jest wielką literą, np. po użyciu Shift, wynik też jest wielką literą, np. Ğ. Klawisze spoza listy działają jak zwykle.
+
+Po włączeniu **Podwójna spacja wstawia kropkę** dwa naciśnięcia spacji po literze lub cyfrze zastępują pierwszą spację kropką i spacją.
+
+Ta funkcja jest pomijana w polach haseł.
+
+#### Wyszukuj emotikony i wybieraj symbole {#keyboards-emoji}
+
+Polecenia **Wyszukaj emotikony** i **Wybierz symbol** otwierają listę w edytowanym polu tekstowym.
+
+1. Użyj **Wyszukaj emotikony** lub **Wybierz symbol**. Usłyszysz „Wyszukiwanie emotikonów” lub „Symbole”. Na początku są ostatnio wybrane znaki.
+2. Wpisz słowa z nazwy znaku, np. „kciuk w górę”. Każde wpisane słowo musi pasować do początku jednego ze słów nazwy. Nazwy emoji są w języku telefonu.
+3. Przechodź po wynikach strzałkami albo klawiszami Tab i Shift + Tab. SandFly podaje wynik i pozycję, np. „1 z 5”.
+4. Naciśnij Enter, aby wpisać znak.
+
+Backspace usuwa ostatnią literę zapytania. Przy pustym zapytaniu zamyka listę. Wstecz lub Escape również zamyka listę. Jeśli w polu tekstowym nie działa klawiatura SandFly, usłyszysz „Wymaga klawiatury SandFly w polu tekstowym”.
+
+W mapach telefonu z klawiaturą skrót **Wyszukaj emotikony** to klawisz SandFly + O, a skrót **Wybierz symbol** to Alt + spacja podczas edycji. W Zinwa Q25 Alt + spacja też otwiera listę symboli. W innych mapach przypiszesz je na ekranie **Skróty klawiszowe** w grupie **Edytowanie tekstu**.
 
 #### Tryb edycji {#keyboards-editing-mode}
 
-Uruchom **Włącz lub wyłącz tryb edycji** w polu z Klawiaturą SandFly. W mapach telefonu użyj klawisza SandFly + C. W tym trybie litery służą do edycji.
+Polecenie **Włącz lub wyłącz tryb edycji** włącza tryb edycji w bieżącym polu tekstowym. Usłyszysz „Tryb edycji włączony”. W tym trybie pojedyncze klawisze przesuwają kursor i edytują tekst. SandFly odczytuje zmiany pozycji.
 
-- J i L lub lewa i prawa strzałka przechodzą po znakach. I i K lub strzałki pionowe przechodzą po wierszach. U i O przechodzą po słowach.
-- Alt + J i Alt + L przechodzą na początek i koniec wiersza. Alt + I i Alt + K idą na początek i koniec tekstu. T i B też prowadzą na krańce tekstu. Home i End dotyczą wiersza, a z Ctrl całego tekstu.
-- Shift z ruchem zaznacza. S zaczyna lub kończy zaznaczanie. A zaznacza wszystko, C kopiuje, X wycina, a V wkleja.
-- Z cofa, Shift + Z ponawia, R czyta zaznaczenie albo wiersz. Klawisze usuwania usuwają tekst.
-- Enter, Escape lub Wstecz kończą tryb. Inne klawisze piszące są wtedy pomijane.
+- J i L lub strzałki w lewo i w prawo przechodzą do poprzedniego i następnego znaku.
+- I i K lub strzałki w górę i w dół przechodzą do poprzedniego i następnego wiersza.
+- U i O przechodzą do poprzedniego i następnego słowa.
+- Alt + J i Alt + L przechodzą na początek i koniec wiersza. Alt + I i Alt + K przechodzą na początek i koniec tekstu.
+- T i B przechodzą na początek i koniec tekstu.
+- Home i End przechodzą na początek i koniec wiersza. Z Ctrl przechodzą na początek i koniec tekstu.
+- Przytrzymaj Shift podczas przenoszenia kursora, aby zaznaczać. S włącza zaznaczanie i wywołuje komunikat „Zaznaczanie włączone”. Naciśnij S jeszcze raz, aby zakończyć zaznaczanie.
+- A zaznacza wszystko, C kopiuje, X wycina, a V wkleja.
+- Z cofa zmianę, a Shift + Z ją ponawia.
+- R odczytuje zaznaczenie. Jeśli nic nie zaznaczono, czyta bieżący wiersz.
+- Klawisze usuwania kasują tekst.
+- Enter, Escape lub Wstecz wyłącza tryb edycji.
+
+Pozostałe klawisze wpisujące znaki są w tym trybie nieaktywne. Tryb wymaga klawiatury SandFly. W mapach telefonu z klawiaturą jego skrót to klawisz SandFly + C.
 
 ### Pozostałe ustawienia klawiatury {#keyboards-other-settings}
 
-Otwórz **Pisanie** > **Echo klawiatury** > **Klawiatura fizyczna**, żeby ustawić [odczyt podczas pisania](#typing). Większość klawiszy przerywa mowę. Klawisze blokad, modyfikatory i głośność są wyjątkami. Znaki i Enter podlegają [ustawieniom mowy](#speech-stop), a sam Ctrl wstrzymuje lub wznawia odczyt.
-
-Jeśli przy pierwszym uruchomieniu jest podłączona klawiatura, SandFly otwiera samouczek klawiszy. Gdy masz też ekran dotykowy, możesz później wybrać [samouczek dotykowy lub klawiaturowy](#getting-started).
+- **Pisanie** > **Echo klawiatury** > **Klawiatura fizyczna** ustala, co SandFly odczytuje podczas pisania na klawiaturze fizycznej. Zobacz [](#typing).
+- Na klawiaturze fizycznej mowę zatrzymują wszystkie klawisze poza modyfikatorami, klawiszami blokad, np. Caps Lock, Num Lock i Scroll Lock, oraz klawiszami głośności. **Mowa** > **Przerywaj mowę podczas pisania** określa, kiedy znak zatrzymuje mowę. **Mowa** > **Przerywaj mowę po naciśnięciu klawisza Enter** określa, czy robi to Enter. Sam Ctrl wstrzymuje lub wznawia mowę. Zobacz [](#speech-stop).
+- Jeśli klawiatura fizyczna jest podłączona przy pierwszym uruchomieniu SandFly, otwiera się samouczek klawiatury. Jeśli później otworzysz samouczek na urządzeniu z ekranem dotykowym i podłączoną klawiaturą, wybierzesz **Samouczek dotyczący obsługi dotykowej** lub **Samouczek dotyczący klawiatury**. Zobacz [](#getting-started).

@@ -1,174 +1,274 @@
 ## Skrypty i własne etykiety {#scripts}
 
-Skrypt może zmienić działanie SandFly w wybranych aplikacjach albo w całym systemie. Może na przykład nazwać przycisk, ukryć element, zmienić wypowiedź, dodać polecenie lub zareagować na zmianę ekranu. Możesz instalować gotowe skrypty, tworzyć je w kreatorze albo [pisać w Lua](#api-scripting).
+Skrypt może zmienić działanie SandFly w jednej aplikacji lub we wszystkich, a także dodać nowe polecenia. Za pomocą skryptu możesz zmieniać etykiety i treść odczytywanych komunikatów, ukrywać elementy, dodawać czynności, gesty i skróty klawiszowe oraz uruchamiać kroki po określonym zdarzeniu na ekranie. Możesz instalować skrypty innych osób albo stworzyć własny w kreatorze bez pisania kodu.
 
-Jeśli potrzebujesz tylko nadać nazwę elementowi, użyj [etykiety niestandardowej](#scripts-labels). Skrypty działają na telefonach i tabletach. Zegarki i telewizory ich nie obsługują.
+Własna etykieta to nadana przez Ciebie nazwa elementu, takiego jak przycisk, który nie ma nazwy albo ma niewłaściwą.
 
-### Ekran Skrypty {#scripts-overview}
+Skrypty działają na telefonach i tabletach. Na zegarkach i telewizorach SandFly informuje, że skrypty są niedostępne na tym urządzeniu.
 
-Otwórz **Skrypty** w ustawieniach. **Skrypty aplikacji** działają w wybranych aplikacjach, a **Wtyczki globalne** w całym systemie. Przy każdym skrypcie zobaczysz stan, wersję i miejsce działania. Wybierz go, żeby [otworzyć jego ustawienia](#scripts-manage).
+O pisaniu skryptów w Lua przeczytasz w [](#api-scripting).
 
-Z ekranu głównego możesz [wyłączyć wszystkie skrypty](#scripts-turn-off), [utworzyć nowy](#scripts-builder), [użyć SandFly Pro](#scripts-builder-pro), [importować](#scripts-install) lub [poszukać gotowych skryptów](#scripts-sources). Są tu też [opcje aktualizacji](#scripts-updates). **Dodaj przykładowy skrypt** instaluje przykład, który podaje nazwę aplikacji po przełączeniu. Przycisk znika po instalacji.
+### Skrypty {#scripts-overview}
 
-Skrypty nie zmieniają ekranów SandFly. Zatrzymują się po wstrzymaniu czytnika. Po wyłączeniu ekranu mogą działać dalej tylko skrypty, którym na to zezwoliłeś.
+Ekran **Skrypty** w ustawieniach SandFly dzieli zainstalowane skrypty na dwie grupy.
 
-### Instalowanie skryptu {#scripts-install}
+- **Skrypty aplikacji** działają tylko w aplikacjach wskazanych przez skrypt.
+- **Wtyczki globalne** działają we wszystkich aplikacjach.
 
-SandFly przyjmuje pliki `.lua` do 1 MB i archiwa `.zip` do 5 MB zawierające `main.lua`.
+Przy każdym skrypcie znajdziesz informację, czy jest włączony, gdzie działa i jaką ma wersję. Wybierz skrypt, aby otworzyć jego ekran. Zobacz [](#scripts-manage).
+
+Na ekranie **Skrypty** znajdziesz także te opcje.
+
+- **Wyłącz wszystkie skrypty** zatrzymuje wszystkie skrypty. Zachowuje zainstalowane skrypty i ustawienia ich przełączników.
+- **Nowy skrypt** otwiera kreator skryptów. Zobacz [](#scripts-builder).
+- **Utwórz skrypt za pomocą SandFly Pro** tworzy skrypt na podstawie Twojego opisu. Zobacz [](#scripts-builder-pro).
+- **Importuj skrypt** pozwala zainstalować skrypt z pliku. Zobacz [](#scripts-install).
+- **Źródła skryptów** pokazują miejsca, w których możesz znaleźć skrypty. Zobacz [](#scripts-sources).
+- **Aktualizuj skrypty automatycznie** i **Sprawdź aktualizacje** służą do aktualizacji skryptów. Zobacz [](#scripts-updates).
+- **Dodaj przykładowy skrypt** instaluje skrypt, który odczytuje nazwę aplikacji po przejściu do niej. Możesz użyć go jako punktu wyjścia. Opcja znika po zainstalowaniu przykładu.
+
+Skrypty pomijają ekrany SandFly, np. ustawienia. Przestają działać, gdy wstrzymasz SandFly lub ekran zgaśnie. Przy wygaszonym ekranie nadal mogą działać skrypty, którym na to zezwolisz.
+
+### Zainstaluj skrypt {#scripts-install}
+
+Skrypt to plik `.lua` o rozmiarze do 1 MB albo plik `.zip` o rozmiarze do 5 MB, który zawiera `main.lua`.
 
 1. Otwórz **Skrypty** > **Importuj skrypt**.
-2. Wybierz plik.
-3. [Przejrzyj dane](#scripts-install-dialog) i wybierz **Zainstaluj**.
+2. Wybierz plik `.lua` lub `.zip`.
+3. Sprawdź informacje w oknie instalacji, a potem wybierz **Zainstaluj**. Zobacz [](#scripts-install-dialog).
 
-W menedżerze plików, przeglądarce lub komunikatorze możesz otworzyć lub udostępnić plik albo link HTTPS przez **Zainstaluj skrypt SandFly**. Przy linku SandFly wyświetli adres i pobierze plik dopiero po wybraniu **Pobierz**. Udostępnij link do konkretnego skryptu. Adres całego repozytorium dodaje się jako źródło.
+Możesz też otworzyć lub udostępnić plik skryptu albo prowadzący do niego link `https` za pomocą opcji **Zainstaluj skrypt SandFly**. Opcja jest dostępna m.in. w komunikatorach, menedżerach plików i na liście pobranych plików przeglądarki. Przy linku z innej aplikacji SandFly pokazuje adres i zaczyna pobierać plik po wybraniu **Pobierz**. Aby udostępnić skrypt z repozytorium, otwórz sam skrypt i udostępnij jego adres. Link do całego repozytorium tu nie zadziała.
 
-#### Źródła skryptów {#scripts-sources}
+#### Znajdź skrypty w źródłach {#scripts-sources}
 
-Źródło to publiczne repozytorium w GitHubie, GitLabie, Codebergu, Gitei lub Bitbuckecie. Oficjalne repozytorium SandFly jest już na liście.
+Źródło skryptów to publiczne repozytorium skryptów w serwisie GitHub, GitLab, Codeberg, Gitea lub Bitbucket. Listę znajdziesz w menu **Skrypty** > **Źródła skryptów**. Repozytorium skryptów SandFly jest dodane domyślnie.
 
 1. Otwórz **Skrypty** > **Źródła skryptów** > **Dodaj źródło**.
-2. Podaj adres repozytorium, gałęzi lub katalogu, na przykład `github.com/owner/repository`.
-3. Wybierz **Dodaj**, potem otwórz źródło i wybierz skrypt.
+2. Wpisz adres repozytorium, jego gałęzi lub folderu, np. `github.com/owner/repository`.
+3. Wybierz **Dodaj**.
 
-Jeśli lista się nie otwiera, użyj **Spróbuj ponownie**. **Usuń źródło** usuwa adres z listy. Skrypty zainstalowane wcześniej pozostają na urządzeniu.
+Wybierz źródło, aby wyświetlić zawarte w nim skrypty. Wybierz skrypt, aby go pobrać i otworzyć okno instalacji. Jeśli lista się nie wczyta, wybierz **Spróbuj ponownie**. **Usuń źródło** usuwa je z listy. Skrypty już zainstalowane z tego źródła zostają na urządzeniu.
 
-#### Informacje przed instalacją {#scripts-install-dialog}
+#### Sprawdź skrypt przed instalacją {#scripts-install-dialog}
 
-Okno pokazuje źródło, podpis, wymagane uprawnienia oraz polecenia, gesty i skróty, które skrypt doda. Nazwę autora wpisuje właściciel skryptu. Jeżeli chcesz potwierdzić pochodzenie z SandFly, sprawdź komunikat **Podpisany przez SandFly**. Czytnik podaje osobno brak podpisu lub niezgodność podpisu po zmianie pliku.
+W oknie instalacji SandFly pokazuje poniższe informacje.
 
-Przeczytaj **Możliwości skryptu** i [uprawnienia](#scripts-permissions). Przy wersji przeznaczonej do innego wydania możesz użyć **Zainstaluj mimo to**. Niektóre funkcje mogą wtedy nie działać.
+- Pochodzenie skryptu. Może to być plik, link lub źródło skryptów. Przy skrypcie dostarczonym z SandFly widnieje **Dołączony do SandFly.**
+- Podpis skryptu. SandFly podpisuje skrypty z własnego repozytorium. Przy podpisanym skrypcie z dowolnego źródła widnieje **Podpisany przez SandFly.**. Przy innych pojawia się **Niepodpisany przez SandFly.**. Jeśli ktoś zmienił skrypt po podpisaniu, SandFly informuje, że podpis się nie zgadza. Nazwę autora może wpisać dowolna osoba tworząca skrypt. To podpis potwierdza jego pochodzenie z SandFly.
+- **Możliwości skryptu:** lista potrzebnych uprawnień. Uprawnienia oznaczone jako przeznaczone tylko dla zaufanych skryptów dają dostęp do wrażliwych danych lub do wszystkich funkcji SandFly. Zobacz [](#scripts-permissions).
+- **Dodawane polecenia:** polecenia skryptu wraz z gestami, klawiszami, pozycjami menu SandFly i sterowaniem czytaniem.
 
-Import tej samej pozycji aktualizuje skrypt i zachowuje dane oraz ustawienia. Okno podaje zastępowaną wersję i nowe uprawnienia. SandFly informuje też o zmianie autora.
+Jeśli skrypt napisano dla innej wersji SandFly, w oknie pojawi się informacja, że niektóre części mogą nie działać. Przycisk instalacji zmieni się na **Zainstaluj mimo to**.
 
-### Aktualizowanie skryptów {#scripts-updates}
+Import zainstalowanego już skryptu aktualizuje go i zachowuje jego dane oraz ustawienia. W oknie instalacji znajdziesz numer zastępowanej wersji i nowe uprawnienia. Jeśli nowa wersja ma innego autora, pojawi się ostrzeżenie.
 
-SandFly sprawdza źródła raz dziennie. Aby zrobić to od razu, otwórz **Skrypty** > **Sprawdź aktualizacje**.
+### Aktualizuj skrypty {#scripts-updates}
 
-Domyślnie działa **Aktualizuj skrypty automatycznie**. SandFly instaluje nową wersję, jeśli pochodzi z tego samego źródła, ma tego samego autora, jest zgodna z wydaniem SandFly i nie wymaga nowych uprawnień. Przy oficjalnym repozytorium potrzebny jest także podpis SandFly. Pozostałe aktualizacje wybierasz samodzielnie w sekcji **Aktualizacje**.
+Raz na dobę SandFly sprawdza w źródłach, czy są nowsze wersje zainstalowanych skryptów. Aby sprawdzić teraz, wybierz **Skrypty** > **Sprawdź aktualizacje**.
 
-### Ustawienia zainstalowanego skryptu {#scripts-manage}
+Przy włączonej opcji **Aktualizuj skrypty automatycznie** SandFly samodzielnie instaluje wersję, która pochodzi ze źródła skryptu, ma tego samego autora, nie wymaga nowych uprawnień i pasuje do wersji SandFly. Nowsza wersja z repozytorium SandFly instaluje się automatycznie tylko wtedy, gdy ma podpis SandFly. Opcja **Aktualizuj skrypty automatycznie** jest domyślnie włączona.
 
-Otwórz **Skrypty** i wybierz nazwę. Na stronie skryptu znajdziesz:
+Pozostałe nowsze wersje są wymienione w sekcji **Aktualizacje** na ekranie **Skrypty**. Wybierz wersję, aby otworzyć okno instalacji.
 
-- **Włącz** i, jeśli skrypt to przewiduje, **Działaj przy wyłączonym ekranie**. Drugi przełącznik jest początkowo wyłączony.
-- Opis, wersję, autora, zakres działania, informacje o **Zgodność** i **Otwórz stronę domową**. Przed otwarciem strony zatwierdzasz adres.
-- **Edytuj w kreatorze skryptów** lub **Kopiuj do kreatora skryptów**. Zobacz [edycję i eksport](#scripts-builder-manage).
-- **Ustawienia** skryptu, [**Uprawnienia**](#scripts-permissions), [**Polecenia**](#scripts-commands) i [**Dziennik**](#scripts-log).
-- **Uruchamiaj wcześniej** i **Uruchamiaj później**, żeby wybrać kolejność skryptów zmieniających tę samą wypowiedź. Skrypty aplikacji działają przed globalnymi.
-- **Wyczyść zapisane dane** usuwa dane skryptu. **Usuń** po potwierdzeniu usuwa też kod i ustawienia.
+### Zarządzaj zainstalowanym skryptem {#scripts-manage}
+
+Otwórz **Skrypty** i wybierz skrypt. Na jego ekranie znajdziesz poniższe opcje i informacje.
+
+- **Włącz** przełącza działanie skryptu.
+- **Działaj przy wyłączonym ekranie** utrzymuje działanie skryptu przy wygaszonym ekranie, np. gdy skrypt odczytuje godzinę. Opcja jest widoczna tylko w skryptach, które ją udostępniają, i jest wyłączona po instalacji.
+- Nazwa, opis, wersja, autor i informacja o tym, gdzie skrypt działa.
+- **Edytuj w kreatorze skryptów** dla skryptów utworzonych w kreatorze albo **Kopiuj do kreatora skryptów** dla pozostałych. Zobacz [](#scripts-builder-manage).
+- **Zgodność** jest widoczna, gdy skrypt napisano dla innej wersji SandFly.
+- **Otwórz stronę domową** otwiera stronę skryptu po potwierdzeniu adresu.
+- **Ustawienia** otwierają ustawienia skryptu, jeśli je udostępnia.
+- **Uprawnienia** zawierają przełącznik dla każdego uprawnienia wymaganego przez skrypt. Zobacz [](#scripts-permissions).
+- **Polecenia** pokazują polecenia skryptu oraz ich gesty i klawisze. Zobacz [](#scripts-commands).
+- **Uruchamiaj wcześniej** i **Uruchamiaj później** zmieniają kolejność skryptów, które modyfikują ten sam komunikat. Skrypty aplikacji działają jako pierwsze.
+- **Dziennik** pokazuje dane wyjściowe i błędy skryptu od uruchomienia SandFly. Zobacz [](#scripts-log).
+- **Wyczyść zapisane dane** usuwa dane zapisane przez skrypt.
+- **Usuń** usuwa skrypt wraz z jego kodem, danymi i ustawieniami po potwierdzeniu.
 
 #### Uprawnienia skryptu {#scripts-permissions}
 
-Skrypt może użyć zadeklarowanych uprawnień. W sekcji **Uprawnienia** możesz każde z nich wyłączyć. Części skryptu, które go potrzebują, przestaną działać.
+Skrypt może korzystać tylko z uprawnień, które wymienia. Na jego ekranie w sekcji **Uprawnienia** możesz wyłączyć każde z nich. Wyłączenie zatrzymuje te części skryptu, które go potrzebują.
 
-Uprawnienia obejmują czytanie ekranu, klikanie i przewijanie, wpisywanie oraz przenoszenie fokusu, dostęp do mowy, odczyt haseł, dodawanie poleceń i skrótów, internet, schowek, akcje systemowe, powiadomienia, śledzenie zdarzeń w aplikacjach, okna dialogowe i kod Java.
+Skrypt może prosić o następujące uprawnienia.
 
-Działania systemowe obejmują między innymi nawigację, otwieranie aplikacji i adresów, wysyłanie komunikatów do aplikacji, sterowanie głośnością, Wi-Fi i latarką, multimedia, timery, alarmy, połączenia i wiadomości. Kod Java daje pełny dostęp SandFly w każdej aplikacji. Pozostałe przełączniki nie ograniczają skryptu, który ma to uprawnienie. Dostęp do haseł, schowka, sieci, działań systemowych, powiadomień, wszystkich zdarzeń, okien i Javy przyznawaj tylko zaufanym skryptom.
+- **Odczytywanie ekranu**.
+- **Klikanie, przewijanie, wpisywanie tekstu i przenoszenie fokusu**.
+- **Dostęp do wypowiedzi SandFly i ich zmienianie**.
+- **Odczytywanie pól haseł**.
+- **Dodawanie gestów, skrótów klawiszowych, pozycji menu i opcji sterowania czytaniem oraz uruchamianie poleceń SandFly**.
+- **Korzystanie z internetu**.
+- **Odczytywanie i zmienianie zawartości schowka**.
+- **Cofanie, przechodzenie do ekranu głównego, otwieranie powiadomień, wyświetlanie listy aplikacji, otwieranie aplikacji, ustawień i linków, wysyłanie intencji do aplikacji, zmiana głośności, trybu dzwonka i ustawień urządzenia, takich jak Wi-Fi i latarka, sterowanie multimediami, ustawianie timerów i alarmów oraz rozpoczynanie połączeń i wiadomości**.
+- **Odczytywanie i zmienianie treści odczytywanych powiadomień**.
+- **Śledzenie wszystkich zdarzeń w każdej aplikacji, w tym wpisywania tekstu**.
+- **Wyświetlanie okien dialogowych nad dowolną aplikacją**.
+- **Uruchamianie kodu Java z pełnym dostępem SandFly, w każdej aplikacji**. Inne wyłączone uprawnienia nie ograniczają skryptu, który może uruchamiać kod Java.
+
+Zezwalaj na dostęp do internetu, schowka i haseł, czynności systemowe, odczyt powiadomień, śledzenie zdarzeń, otwieranie okien oraz uruchamianie kodu Java tylko skryptom z zaufanego źródła.
 
 #### Polecenia skryptów {#scripts-commands}
 
-W [Polecenia](#commands) otwórz kategorię **Skrypty**. Każda pozycja zawiera nazwę skryptu i nazwę jego polecenia. Możesz [przypisać](#commands-assign) je do gestu, klawisza, menu i sterowania czytaniem.
+Skrypt może dodawać polecenia, które uruchomisz gestem, skrótem klawiszowym, z menu SandFly lub za pomocą sterowania czytaniem. Polecenia zainstalowanych skryptów są też w grupie **Skrypty** na ekranie **Polecenia**. W nazwie polecenia najpierw widnieje nazwa skryptu. Przypiszesz je tak samo jak pozostałe polecenia. Zobacz [](#commands).
 
-Aby zmienić przypisania na stronie skryptu, otwórz **Polecenia** i wybierz nazwę. Użyj **Wykonaj gest lub naciśnij skrót**, **Wybierz gest** lub **Wpisz skrót klawiszowy**. Przykładowa składnia to `sf+shift+n`, `sf+t`, `s` i `shift+n`. Przy zapisanym geście **Wyłącz** przywraca działanie SandFly dla tego gestu, a **Usuń** usuwa zapis ze skryptu. **Przywróć domyślne przypisania** pojawia się po zmianie.
+Aby zmienić gesty lub klawisze polecenia skryptu, wykonaj poniższe czynności.
 
-Kiedy skrypt działa, jego skróty mają pierwszeństwo. Polecenia skryptów ładowanych tylko na żądanie znajdziesz w głównym ekranie **Polecenia**. Jeśli skrypt nie może działać na bieżącym ekranie, SandFly o tym poinformuje.
+1. Otwórz **Skrypty**, wybierz skrypt, a pod nagłówkiem **Polecenia** wybierz polecenie.
+2. Skorzystaj z jednej z dostępnych opcji.
+   - Wybierz gest lub klawisz z listy. **Wyłącz** pozostawia dla niego polecenie SandFly. **Usuń** usuwa przypisanie do polecenia skryptu.
+   - **Wykonaj gest lub naciśnij skrót** zapisuje następny wykonany gest albo klawisze naciśnięte z klawiszem SandFly.
+   - **Wybierz gest** otwiera listę gestów.
+   - **Wpisz skrót klawiszowy** pozwala wpisać klawisze, np. `sf+shift+n`, `sf+t`, `s` lub `shift+n`.
+   - **Przywróć domyślne przypisania** przywraca gesty i klawisze skonfigurowane w skrypcie. Opcja pojawia się po ich zmianie.
 
-#### Dziennik skryptu {#scripts-log}
+Podczas działania skryptu jego gesty i klawisze mają pierwszeństwo przed przypisaniami SandFly. Niektóre skrypty są wczytywane tylko w celu wykonania polecenia. Ich polecenia znajdziesz wyłącznie na ekranie **Polecenia**. Jeśli spróbujesz wywołać polecenie skryptu, który nie działa na bieżącym ekranie, SandFly odczyta komunikat o tym.
 
-**Dziennik** pokazuje wyniki i błędy od uruchomienia SandFly, wraz z godziną. **Kopiuj dziennik** ułatwia przekazanie informacji autorowi. **Wyczyść dziennik** usuwa wpisy. SandFly wyłącza skrypt po powtarzających się błędach i kieruje do dziennika.
+#### Dziennik i błędy skryptu {#scripts-log}
 
-### Wyłączanie skryptów {#scripts-turn-off}
+Opcja **Dziennik** na ekranie skryptu pokazuje wyniki i błędy od uruchomienia SandFly. Przy każdym wpisie jest czas. **Kopiuj dziennik** kopiuje zawartość, aby można ją było np. wysłać autorowi skryptu. **Wyczyść dziennik** usuwa wpisy.
 
-Pojedynczy skrypt wyłączysz na jego stronie przełącznikiem **Włącz**. **Skrypty** > **Wyłącz wszystkie skrypty** wstrzymuje wszystkie i zapamiętuje ich indywidualne stany. To samo robi polecenie **Włącz lub wyłącz wszystkie skrypty** w kategorii **SandFly**. Przydaje się, gdy skrypt przeszkadza w obsłudze aplikacji.
+Jeśli błędy się powtarzają, SandFly wyłącza skrypt, podaje jego nazwę i odsyła do dziennika na ekranie **Skrypty**.
 
-### Kreator skryptów {#scripts-builder}
+### Wyłącz skrypty {#scripts-turn-off}
 
-Otwórz **Skrypty** > **Nowy skrypt**, wpisz nazwę i wybierz **OK**. Zmiany są zapisywane i stosowane od razu.
+- Aby wyłączyć jeden skrypt, wyłącz przełącznik **Włącz** na ekranie tego skryptu.
+- Aby wyłączyć wszystkie skrypty, włącz **Skrypty** > **Wyłącz wszystkie skrypty**. Poszczególne przełączniki zostają zapamiętane i zadziałają po ponownym włączeniu skryptów.
 
-- W sekcji **Aplikacje** użyj **Dodaj aplikację**. Możesz dodatkowo ograniczyć działanie przez **Tylko w aktywności** lub **Tylko w oknie**. Bez wybranej aplikacji skrypt jest globalny.
-- Sekcja [**Reguły**](#scripts-builder-rules) zmienia elementy. **Sterowanie czytaniem** pozwala dodać sposób przechodzenia między dopasowanymi elementami.
-- W sekcji [**Polecenia**](#scripts-builder-commands) dodajesz działania dla użytkownika. [**Wyzwalacze**](#scripts-builder-triggers) reagują na zdarzenia, a **Zmiany mowy** zmieniają treść odczytu.
-- Pozostałe części dotyczą [ustawień i kodu](#scripts-builder-settings) oraz [eksportu i kopiowania](#scripts-builder-manage).
+Polecenie **Włącz lub wyłącz wszystkie skrypty** z grupy **SandFly** przełącza to samo ustawienie co **Wyłącz wszystkie skrypty** i odczytuje aktualny stan. Skorzystaj z niego, jeśli skrypt uniemożliwia obsługę aplikacji. Zobacz [](#commands).
 
-**Strona skryptu** otwiera ekran z przełącznikiem, uprawnieniami i dziennikiem. Niedokończona część podaje, czego brakuje, i zacznie działać po uzupełnieniu.
+### Utwórz skrypt w kreatorze {#scripts-builder}
+
+W kreatorze możesz utworzyć skrypt bez pisania kodu.
+
+1. Otwórz **Skrypty** > **Nowy skrypt**.
+2. Wpisz nazwę i wybierz **OK**.
+
+Otworzy się kreator. Każda zmiana jest od razu zapisywana i stosowana. Części skryptu są podzielone na grupy.
+
+- **Nazwa** to nazwa skryptu.
+- **Aplikacje** określają, gdzie działa skrypt. Gdy lista jest pusta, obowiązuje ustawienie **Wszystkie aplikacje**. Aby dodać aplikację, wybierz **Dodaj aplikację**. W obrębie aplikacji możesz ograniczyć skrypt przez **Tylko w aktywności** lub **Tylko w oknie**.
+- **Reguły** zmieniają elementy. Zobacz [](#scripts-builder-rules).
+- **Sterowanie czytaniem** zawiera pozycje przechodzące po określonym rodzaju elementów. Wybierz **Dodaj opcję sterowania czytaniem** i wskaż element, na który ma przechodzić.
+- **Polecenia** zawierają kroki uruchamiane gestem, klawiszami, z menu SandFly lub za pomocą sterowania czytaniem. Zobacz [](#scripts-builder-commands).
+- **Wyzwalacze** zawierają kroki, które uruchamiają się automatycznie. Zobacz [](#scripts-builder-triggers).
+- **Zmiany mowy** określają, co odczytuje SandFly. Zobacz [](#scripts-builder-speech).
+- **Ustawienia**, **Informacje** i **Kod** dotyczą konfiguracji i treści skryptu. Zobacz [](#scripts-builder-settings).
+- W grupie **Skrypt** znajdziesz **Eksportuj skrypt** i **Duplikuj skrypt**. Zobacz [](#scripts-builder-manage).
+
+Opcja **Strona skryptu** otwiera ekran skryptu z przełącznikiem, uprawnieniami i dziennikiem. Przy niedokończonej części pojawia się informacja o brakujących danych, np. o konieczności wskazania elementu. Dopóki jej nie uzupełnisz, ta część jest pomijana.
 
 #### Reguły {#scripts-builder-rules}
 
-Użyj **Dodaj regułę**. W części **Element** określ, co ma pasować. Dostępne są tekst, pola tekstu, wyrażenie regularne i typy znane z [makr](#macros), a także **Dokładny tekst**, ID zasobu i jego rodzica, nazwa klasy, rola, stan oraz element zawierający albo zawarty. **Użyj sprawdzonego elementu** uzupełnia dane z [ostatniej inspekcji](#scripts-inspect).
+Reguła wybiera element i określa, jak go zmienić. Wybierz **Dodaj regułę**, aby utworzyć nową.
 
-W części **Zmiany** możesz zmienić etykietę, odczytywaną treść, podpowiedź, stan, rolę lub nagłówek. Możesz ukryć sam element albo razem z zawartością, wyciszyć aktualizacje, czytać go jako jedną pozycję lub zmienić kolejność czytania. Możesz wskazać element uaktywniany dwukrotnym stuknięciem, ustawić aktywację po uniesieniu, czas przytrzymania lub aktywację dotknięciem. **Zmień mowę** korzysta z [edycji wypowiedzi](#scripts-builder-speech). **Ustal, co jest czytane** pozwala wybierać części elementu i kolejność. Użyj **Dodaj część**, żeby dodać jego tekst lub zawartość.
+W sekcji **Element** określasz, do których elementów stosować regułę. Dostępne są te same warunki co w makrze. Możesz dopasować tekst przez **Dopasuj w** i **Wyrażenie regularne**, a także użyć typu elementu oraz pól **Dokładny tekst**, **Identyfikator zasobu**, **Identyfikator zasobu elementu nadrzędnego**, **Nazwa klasy**, **Rola**, **Stany**, **Wewnątrz elementu** i **Zawiera element**. Zobacz [](#macros). Możesz też wybrać **Użyj sprawdzonego elementu**. Wtedy pola zostaną uzupełnione danymi elementu ostatnio sprawdzonego poleceniem **Sprawdź element z fokusem** lub **Kopiuj szczegóły elementu**. Zobacz [](#scripts-inspect).
 
-W **Czynności** użyj **Dodaj czynność**. Może kliknąć element, przytrzymać, przenieść fokus, przewinąć lub przeczytać tekst. Ustal, czy ma się pojawiać przed czynnościami aplikacji, czy po nich. **Przyciski w środku jako czynności** przenosi przyciski elementu na tę listę. **Przyciski do pominięcia** pozwala wybrać wyjątki.
+W sekcji **Zmiany** wybierasz działanie reguły.
 
-Do nagrania czynności użyj **Nagraj czynność**. W aplikacji wykonaj kliknięcia lub przytrzymania, otwórz powiadomienie o nagrywaniu i wybierz **Zapisz** lub **Nagraj ponownie**.
+- **Etykieta**, **Odczytuj zamiast tego**, **Wskazówka użytkowania**, **Stan**, **Rola** i **Nagłówek** zmieniają właściwości elementu.
+- W polu **Ukryj** możesz wybrać **Ukryj element** lub **Ukryj element i elementy w nim**.
+- **Wycisz zmiany** pomija odczyt zmian elementu, a w razie potrzeby również jego zawartości.
+- **Czytaj jako jeden element** odczytuje element wraz z zawartością jako jedną pozycję.
+- W polu **Kolejność czytania** użyj **Czytaj przed elementem** lub **Czytaj po elemencie**.
+- **Kliknięcie dwukrotne aktywuje** pozwala wskazać inny element do aktywowania. Są tu też opcje **Aktywowanie po puszczeniu**, **Przytrzymanie po (ms)** i **Aktywuj dotknięciem ekranu**.
+- **Zmień mowę** usuwa, zastępuje lub przestawia części wypowiedzi, którą SandFly odczytuje przy elemencie. Zobacz [](#scripts-builder-speech).
+- **Ustal, co jest czytane** określa części wypowiedzi i ich kolejność. Za pomocą **Dodaj część** dodasz jeden z tekstów elementu, własny tekst lub element wewnętrzny.
 
-Gdy reguła dotyczy sprawdzonego elementu, możesz grupować wiersz wraz z przyciskami i wybrać czytane części. Ustawienie **Reguła dla** pozwala wybrać podobne wiersze albo podobne elementy. **Duplikuj regułę**, **Kopiuj regułę do skryptu** i **Usuń regułę** pozwalają zarządzać utworzoną regułą.
+Sekcja **Czynności** dodaje pozycje do menu czynności elementu. Wybierz **Dodaj czynność**. W polu **Działanie** możesz wybrać **Kliknij element**, **Kliknij element z przytrzymaniem**, **Przenieś fokus na element**, **Przewiń element do przodu**, **Przewiń element do tyłu**, **Odczytaj tekst** lub **Odczytaj tekst elementu**. Ustal też, czy pozycja ma być przed czynnościami aplikacji, czy za nimi. Opcja **Przyciski w środku jako czynności** zamienia przyciski wewnątrz elementu na czynności. W polu **Przyciski do pominięcia** wybierzesz wyjątki.
 
-#### Własne polecenia {#scripts-builder-commands}
+Możesz też nagrać czynność.
 
-Wybierz **Dodaj polecenie** i wpisz tytuł. W części **Kroki** użyjesz edytora [makr](#macros). **Gesty i skrót klawiszowy** ustawia przypisania na bieżącym urządzeniu. **Domyślne przy udostępnianiu** pozwala podać gest, klawisze i ustawienia **W menu SandFly** oraz **Jako opcja sterowania czytaniem** używane po zainstalowaniu skryptu. Możesz też zmienić nazwę lub usunąć polecenie.
+1. W sekcji **Czynności** wybierz **Nagraj czynność**. Otworzy się aplikacja skryptu.
+2. Naciśnij lub naciśnij i przytrzymaj wybrane elementy. Możesz to zrobić za pomocą SandFly albo dotykiem.
+3. Otwórz powiadomienie o nagrywaniu czynności.
+4. Wybierz **Zapisz** lub **Nagraj ponownie**.
+
+Jeśli reguła wskazuje sprawdzony element, sekcja **Sprawdzony element** udostępnia **Czytaj jako jeden element, z jego przyciskami jako czynnościami** oraz **Wybierz, co jest czytane**. Druga opcja pokazuje części treści odczytywane przez SandFly. Odznacz fragmenty, które mają być pomijane w każdym podobnym elemencie. W polu **Reguła dla** wybierz **Każdy wiersz podobny do tego, w którym jest** lub **Każdy element podobny do sprawdzonego elementu**.
+
+**Duplikuj regułę** tworzy kopię w tym samym skrypcie. **Kopiuj regułę do skryptu** przenosi kopię do innego skryptu utworzonego w kreatorze. **Usuń regułę** usuwa regułę.
+
+#### Polecenia {#scripts-builder-commands}
+
+Opcja **Dodaj polecenie** tworzy polecenie o podanej nazwie. Na jego ekranie znajdziesz poniższe ustawienia.
+
+- **Kroki** zawierają czynności polecenia. Edytuje się je tak samo jak kroki makra. Zobacz [](#macros).
+- **Gesty i skrót klawiszowy** służą do ustawienia przypisań na tym telefonie. Zobacz [](#scripts-commands).
+- **Domyślne przy udostępnianiu** określa przypisania nadawane poleceniu przy instalowaniu skryptu. Możesz ustawić gest, klawisze, **W menu SandFly** i **Jako opcja sterowania czytaniem**.
+- **Zmień nazwę** i **Usuń** pozwalają zmienić nazwę lub skasować polecenie.
 
 #### Wyzwalacze {#scripts-builder-triggers}
 
-Użyj **Dodaj wyzwalacz**. Wybierz zdarzenie, a potem kroki, które mają się wykonać. Wyzwalaczem może być:
+Opcja **Dodaj wyzwalacz** tworzy kroki wykonywane samoczynnie. Wybierz zdarzenie, które ma je uruchamiać.
 
-- przejście fokusu na element, otwarcie lub zamknięcie aplikacji i zmiana okna,
-- komunikat lub powiadomienie z pasującym tekstem,
-- zmiana tekstu lub ekranu, przewinięcie listy, ruch kursora, kliknięcie, przytrzymanie i przejście fokusu klawiatury do pola tekstowego. Możesz wskazać konkretny element,
-- upływ określonego czasu, dana godzina w ciągu dnia lub użycie przycisku skryptu.
+- **Gdy fokus przejdzie na element**.
+- **Gdy aplikacja się otworzy** lub **Gdy aplikacja się zamknie**.
+- **Gdy zmieni się okno**.
+- **Gdy komunikat zawiera tekst** lub **Gdy powiadomienie zawiera tekst**.
+- **Gdy zmieni się tekst**, **Gdy zmieni się ekran**, **Gdy lista się przewinie**, **Gdy kursor się przesunie**, **Gdy element zostanie kliknięty**, **Gdy element zostanie kliknięty z przytrzymaniem** lub **Gdy pole edycji otrzyma fokus wprowadzania**. Możesz wybrać dowolny albo konkretny element.
+- **Co określoną liczbę minut** lub **Codziennie o określonej godzinie**.
+- **Gdy zostanie naciśnięty przycisk ustawienia**.
 
-Wyzwalacze czasowe działają, dopóki działa skrypt.
+Wyzwalacze czasowe działają tylko wtedy, gdy skrypt jest uruchomiony.
 
 #### Zmiany mowy {#scripts-builder-speech}
 
-Użyj **Dodaj zmianę mowy**. W **Zmieniana mowa** wskaż mowę elementu, powiadomienia (również z wybranej aplikacji), komunikaty albo całą mowę. Możesz dodać warunek **Zawiera tekst (puste: dowolny)**.
+Opcja **Dodaj zmianę mowy** pozwala zmienić to, co odczytuje SandFly. W polu **Zmieniana mowa** wybierz **Mowa dla elementu**, **Powiadomienia** (ewentualnie z wybraną pozycją **Aplikacja**), **Komunikaty** lub **Cała mowa**. Pole **Zawiera tekst (puste: dowolny)** zawęża dopasowanie do podanego tekstu, jeśli je uzupełnisz.
 
-W części **Edycje** określ kolejno, który tekst usunąć lub zastąpić. Możesz usunąć powtarzające się części, pominąć części z określonym tekstem, zostawić pierwsze części, coś powiedzieć zamiast oryginału, przed nim lub po nim albo wyciszyć wypowiedź. Części to fragmenty rozdzielone przecinkami. W polach **Powiedz zamiast tego**, **Powiedz przed** i **Powiedz po** zmienna `{text}` wstawia pierwotną wypowiedź SandFly.
-
-**Podgląd na sprawdzonym elemencie** stosuje edycję do elementu z ostatniej inspekcji i pokazuje wynik.
+W sekcji **Edycje** zmiany wykonują się w kolejności na liście. Dostępne są **Usuń tekst**, **Zastąp tekst**, **Usuń powtarzające się części**, **Usuń części zawierające tekst**, **Zachowaj pierwsze części**, **Powiedz zamiast tego**, **Powiedz przed**, **Powiedz po** i **Nic nie mów**. Części wypowiedzi są oddzielone przecinkami. W ustawieniach **Powiedz zamiast tego**, **Powiedz przed** i **Powiedz po** zapis `{text}` oznacza tekst, który SandFly normalnie by wypowiedział. Użyj **Podgląd na sprawdzonym elemencie**, aby zobaczyć wynik na ostatnim sprawdzonym elemencie.
 
 #### Ustawienia, informacje i kod {#scripts-builder-settings}
 
-**Ustawienia** > **Dodaj ustawienie** dodaje na stronie skryptu przełącznik, listę, tekst, liczbę lub przycisk. Kroki mogą odczytywać wartość, a przycisk uruchamia wyzwalacz.
+- **Ustawienia** > **Dodaj ustawienie** dodaje na ekranie skryptu element typu **Przełącznik**, **Lista**, **Tekst**, **Liczba** albo **Przycisk**. Kroki mogą korzystać z wartości ustawienia. Przycisk uruchamia wyzwalacz.
+- **Informacje** zawierają **Opis**, **Wersja**, **Strona główna**, **Wczytuj tylko do uruchomienia polecenia** oraz **Działaj przy wyłączonym ekranie**.
+- **Kod** zawiera pole **Kod Lua** i pozycję **Dodatkowe uprawnienia**, wymagane przez ten kod. Kod jest dołączany do końca skryptu. SandFly sprawdza, czy nie ma w nim błędów, przed zapisem.
 
-Na ekranie **Informacje** podasz opis, wersję i stronę główną. Ustawisz też ładowanie na żądanie i dostępność przy wygaszonym ekranie. Na ekranie **Kod** możesz dopisać własny **Kod Lua** i wskazać **Dodatkowe uprawnienia**. SandFly sprawdza kod przed zapisem.
+#### Eksportuj, duplikuj i kopiuj skrypty {#scripts-builder-manage}
 
-#### Eksport i kopiowanie {#scripts-builder-manage}
+- **Eksportuj skrypt** w kreatorze zapisuje skrypt jako plik `.zip`. Zainstaluj go przez **Importuj skrypt**. Po imporcie nadal można go zmieniać w kreatorze.
+- **Duplikuj skrypt** tworzy kopię.
+- **Kopiuj do kreatora skryptów** na ekranie skryptu, który powstał poza kreatorem, tworzy kopię do edycji w kreatorze.
+- **Edytuj w kreatorze skryptów** na ekranie skryptu utworzonego w kreatorze otwiera go do edycji.
 
-**Eksportuj skrypt** zapisuje `.zip`. Po ponownym imporcie przez **Importuj skrypt** możesz go dalej edytować w kreatorze. **Duplikuj skrypt** tworzy kopię. **Kopiuj do kreatora skryptów** kopiuje skrypt spoza kreatora, a **Edytuj w kreatorze skryptów** pozwala wrócić do już utworzonego projektu.
+#### Utwórz skrypt za pomocą SandFly Pro {#scripts-builder-pro}
 
-#### Tworzenie z SandFly Pro {#scripts-builder-pro}
+Jeśli korzystasz z SandFly Pro, wybierz **Utwórz skrypt za pomocą SandFly Pro** na ekranie **Skrypty** i opisz, co skrypt ma robić. Opcja **Zmień za pomocą SandFly Pro** na ekranie gotowego skryptu i w kreatorze pozwala zmienić istniejący skrypt. SandFly Pro odczytuje bieżący ekran i testuje skrypt. W powiadomieniu mogą się pojawić instrukcje otwarcia kolejnych ekranów lub wypróbowania części skryptu. Po wykonaniu instrukcji wybierz **Ukończono** lub **Odpowiedz** w powiadomieniu.
 
-Użyj **Utwórz skrypt za pomocą SandFly Pro** na ekranie **Skrypty** albo **Zmień za pomocą SandFly Pro** na stronie istniejącego skryptu. Agent napisze skrypt, sprawdzi go i poprosi o ekrany lub próby, których potrzebuje. Po skończeniu wybierz **Akceptuj**, **Poproś o zmiany** albo **Odrzuć**. Przed akceptacją skrypt nie używa internetu ani Javy. Zobacz [pracę z agentem i limity](#pro-scripts).
+Skrypt otworzy się w kreatorze w sekcji **Napisany przez SandFly Pro**. Zobaczysz podsumowanie i przyciski **Akceptuj**, **Poproś o zmiany** i **Odrzuć**. Do chwili akceptacji skrypt działa bez uprawnień do korzystania z internetu i uruchamiania kodu Java. Utworzenie skryptu zużywa znacznie więcej miesięcznego limitu SandFly Pro niż pozostałe zadania. Zobacz [](#pro-scripts).
 
-### Sprawdzanie elementów {#scripts-inspect}
+### Sprawdź elementy ekranu {#scripts-inspect}
 
-W kategorii **Ustawienia programisty** znajdziesz **Sprawdź element z fokusem**, **Kopiuj szczegóły elementu** i **Kopiuj drzewo ekranu**. Możesz [dodać je do menu SandFly](#commands).
+Poniższe polecenia pokazują szczegóły, po których skrypty i makra rozpoznają elementy. Znajdziesz je w grupie **Ustawienia programisty** na ekranie poleceń. Domyślnie nie mają przypisań. Możesz dodać je do menu SandFly. Zobacz [](#commands).
 
-Przenieś fokus na element i wybierz pierwsze polecenie. Okno **Szczegóły elementu** pokazuje teksty, typy, zawartość, dane do skryptów i aplikację. Stuknij dwukrotnie na wierszu, żeby skopiować jego wartość, lub użyj **Kopiuj wszystko**. **Dodaj regułę dla tego elementu** otwiera kreator z uzupełnioną regułą w istniejącym albo nowym skrypcie dla aplikacji.
+- **Sprawdź element z fokusem** otwiera okno **Szczegóły elementu** z sekcjami **Teksty**, **Typy elementu**, **Elementy wewnątrz**, **Szczegóły dla skryptów** i **Aplikacja**. Stuknij dwukrotnie wiersz, aby skopiować jego wartość. **Kopiuj wszystko** kopiuje wszystkie szczegóły. **Dodaj regułę dla tego elementu** dodaje regułę do skryptu utworzonego w kreatorze albo do nowego skryptu dla aplikacji i otwiera ją do edycji.
+- **Kopiuj szczegóły elementu** kopiuje te same dane jako tekst i odczytuje potwierdzenie.
+- **Kopiuj drzewo ekranu** kopiuje wszystkie elementy ekranu jako tekst, po jednym w wierszu, i ogłasza liczbę skopiowanych elementów.
 
-**Kopiuj szczegóły elementu** robi to bez okna. **Kopiuj drzewo ekranu** kopiuje wszystkie elementy i podaje ich liczbę. Jeśli nie ma elementu do sprawdzenia, SandFly o tym powie.
+Jeśli żaden element nie ma fokusu, SandFly odczyta odpowiedni komunikat.
 
 ### Etykiety niestandardowe {#scripts-labels}
 
-Etykieta nadaje własną nazwę elementowi, na przykład przyciskowi bez opisu. SandFly będzie ją odczytywać przy każdym przejściu na element. Element musi mieć identyfikator zasobu w aplikacji.
+Własna etykieta zastępuje nazwę elementu, np. przycisku bez etykiety. SandFly odczytuje etykietę za każdym razem, gdy czyta ten element. Etykiety możesz dodawać do elementów mających w aplikacji identyfikator zasobu.
 
-#### Dodanie, edycja lub usunięcie etykiety {#scripts-labels-add}
+#### Dodaj lub zmień etykietę {#scripts-labels-add}
 
 1. Przenieś fokus na element.
-2. Użyj **Dodawanie i edytowanie etykiet** z kategorii **Aktywacja**.
-3. W **Dodaj etykietę** lub **Edytuj etykietę** wpisz nazwę i wybierz **OK**.
+2. Użyj polecenia **Dodawanie i edytowanie etykiet** z grupy **Aktywacja**. Zobacz [](#commands).
+3. W oknie **Dodaj etykietę** lub **Edytuj etykietę** wpisz etykietę i wybierz **OK**.
 
-Aby usunąć nazwę, użyj tego samego polecenia i wybierz **Usuń etykietę**. SandFly powie, jeśli elementu nie da się nazwać. W ustawieniach **Menu SandFly** możesz dodać **Dodawanie i edytowanie etykiet**. Menu pokaże wtedy **Etykiety**, gdy bieżący element da się nazwać.
+Aby usunąć etykietę, uruchom **Dodawanie i edytowanie etykiet** dla odpowiedniego elementu, a następnie wybierz **Usuń etykietę**. Jeśli elementu nie da się oznaczyć, SandFly odczyta odpowiedni komunikat.
 
-#### Zarządzanie etykietami {#scripts-labels-manage}
+Aby dodawać etykiety z menu SandFly, dodaj **Dodawanie i edytowanie etykiet** na ekranie **Menu SandFly**. Domyślnie polecenia tam nie ma. Menu będzie odtąd zawierało pozycję **Etykiety** dla elementów, którym można nadać etykietę. Gdy fokus jest na elemencie bez etykiety, SandFly informuje, że można ją dodać.
 
-Otwórz **Etykiety niestandardowe** w ustawieniach. Wybierz aplikację, żeby zobaczyć jej etykiety i daty zmian. Wybierz etykietę, żeby ją zmienić lub usunąć.
+#### Zarządzaj własnymi etykietami {#scripts-labels-manage}
 
-#### Import i eksport etykiet {#scripts-labels-export}
+Na ekranie **Etykiety niestandardowe** w ustawieniach SandFly znajdziesz aplikacje z własnymi etykietami. Wybierz aplikację, aby zobaczyć etykiety i czas ostatniej zmiany każdej z nich. Wybierz etykietę, aby ją zmienić lub usunąć.
 
-Etykiety trafiają do [kopii ustawień](#profiles-export). Możesz też zachować je osobno:
+#### Eksportuj i importuj własne etykiety {#scripts-labels-export}
 
-- **Eksportuj niestandardowe etykiety** zapisuje je do pliku i otwiera udostępnianie Androida. Jeśli nie ma etykiet, SandFly o tym powie.
-- **Importuj niestandardowe etykiety** otwiera plik. Gdy plik i telefon mają etykietę dla tego samego elementu, **Zastąp** użyje nowej, a **Pomiń** zostawi Twoją.
-- **Wycofaj zaimportowane etykiety** pojawia się po imporcie. Usuwa dodane etykiety i przywraca zastąpione.
+Opcja **Kopia zapasowa i przywracanie** > **Eksportuj ustawienia** zapisuje także własne etykiety. Zobacz [](#profiles-export). Jeśli chcesz udostępnić same etykiety, wyeksportuj je do osobnego pliku.
+
+- **Eksportuj niestandardowe etykiety** zapisuje wszystkie własne etykiety w pliku i otwiera panel udostępniania Androida. Wybierzesz w nim miejsce wysłania lub zapisu pliku. Jeśli nie ma żadnych własnych etykiet, SandFly informuje, że nie ma czego wyeksportować.
+- **Importuj niestandardowe etykiety** odczytuje plik etykiet. Jeśli etykieta z pliku i etykieta na telefonie dotyczą tego samego elementu, w oknie **Zaimportuj niestandardowe etykiety do SandFly** wybierz **Zastąp**, aby użyć etykiety z pliku, albo **Pomiń**, aby zostawić własną.
+- **Wycofaj zaimportowane etykiety** usuwa etykiety z importu i przywraca etykiety, które import zastąpił. Opcja pojawia się po imporcie.

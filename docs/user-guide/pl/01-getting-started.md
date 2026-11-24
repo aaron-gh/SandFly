@@ -1,6 +1,6 @@
 ## Pierwsze kroki {#getting-started}
 
-SandFly to czytnik ekranu dla Androida. Czyta treść ekranu na głos i daje znać o zmianach za pomocą dźwięków i wibracji. Dzięki gestom czytnika możesz obsługiwać urządzenie bez patrzenia na ekran. Możesz też korzystać z monitora brajlowskiego, ekranowej klawiatury brajlowskiej albo klawiatury fizycznej.
+SandFly to czytnik ekranu dla Androida. Za pomocą syntezy mowy odczytuje treść ekranu, odtwarza dźwięki i wibruje. Dzięki gestom SandFly możesz obsługiwać urządzenie bez patrzenia na ekran. Możesz też korzystać z monitora brajlowskiego, ekranowej klawiatury brajlowskiej albo klawiatury fizycznej.
 
 ### Urządzenia i wersje Androida {#getting-started-devices}
 
@@ -8,7 +8,7 @@ SandFly to czytnik ekranu dla Androida. Czyta treść ekranu na głos i daje zna
 - Na zegarkach działa z systemem [Wear OS](#devices-watch).
 - Na telewizorach obsługuje [Android TV i Google TV](#devices-tv).
 
-Niektóre funkcje wymagają nowszego Androida albo dostępu przez [Shizuku lub root](#updates-shizuku). Wymagania znajdziesz przy opisie danej funkcji. [SandFly Pro](#pro) to subskrypcja, która udostępnia dodatkowe funkcje AI.
+Niektóre funkcje wymagają nowszego Androida albo dostępu przez [Shizuku lub root](#updates-shizuku). Shizuku i root udostępniają uprawnienia, które Android przyznaje tylko przez adb. Wymagania znajdziesz przy opisie danej funkcji. [SandFly Pro](#pro) to subskrypcja, która udostępnia dodatkowe funkcje AI.
 
 ### Zainstaluj SandFly {#getting-started-install}
 
@@ -18,23 +18,24 @@ Na telefonie lub tablecie wykonaj te kroki.
 
 1. Otwórz w przeglądarce [najnowsze wydanie](https://github.com/aaron-gh/SandFly/releases/latest).
 2. Pobierz `sandfly.apk`.
-3. Otwórz pobrany plik. Jeśli Android poprosi o zgodę na instalowanie aplikacji z przeglądarki lub menedżera plików, udziel jej i otwórz plik ponownie.
-4. Wybierz **Zainstaluj**.
+3. Otwórz pobrany plik.
+4. Jeśli Android wyświetli prośbę o zgodę na instalowanie aplikacji z przeglądarki lub menedżera plików, zezwól na to, wróć i otwórz plik ponownie.
+5. Wybierz **Zainstaluj**.
 
 SandFly to osobna aplikacja z własnymi ustawieniami. Możesz ją zainstalować obok innego czytnika. Kolejne [aktualizacje](#updates) zainstalujesz już z poziomu SandFly.
 
-Jeśli Android 13 lub nowszy blokuje włączenie usługi dostępności, otwórz informacje o aplikacji SandFly w ustawieniach Androida. Wejdź w menu **Więcej** i zezwól na ograniczone ustawienia. Nazwy opcji mogą się różnić zależnie od telefonu.
+Uwaga: Android 13 i nowsze mogą blokować usługi ułatwień dostępu zainstalowane z przeglądarki lub menedżera plików. Jeśli nie da się włączyć SandFly w ustawieniach ułatwień dostępu, otwórz informacje o aplikacji SandFly w ustawieniach Androida. Otwórz menu **Więcej** i wybierz **Zezwól na ograniczone ustawienia**. Nazwy opcji mogą się różnić zależnie od telefonu.
 
 ### Włącz SandFly {#getting-started-turn-on}
 
 Najpierw wyłącz dotychczasowy czytnik. Dwa włączone czytniki mogą jednocześnie reagować na gesty i czytać ekran.
 
 1. Otwórz **Ustawienia** Androida.
-2. Wejdź w **Ułatwienia dostępu**. Na niektórych telefonach SandFly znajdziesz wśród zainstalowanych lub pobranych aplikacji.
+2. Wejdź w **Ułatwienia dostępu**. Na niektórych telefonach SandFly znajdziesz w podsekcji **Zainstalowane aplikacje** lub **Pobrane aplikacje**.
 3. Wybierz **SandFly**.
 4. Włącz przełącznik i potwierdź.
 
-Usłyszysz „SandFly włączony”. Przy [pierwszym uruchomieniu](#getting-started-first-start) czytnik otworzy okno wyboru gestów i samouczek.
+Usłyszysz „SandFly włączony”. Przy [pierwszym uruchomieniu](#getting-started-first-start) SandFly otworzy okno wyboru gestów i samouczek.
 
 #### Włączaj i wyłączaj SandFly skrótem dostępności {#getting-started-shortcut}
 
@@ -42,9 +43,12 @@ W ustawieniach Androida otwórz **Ułatwienia dostępu** > **SandFly** i włącz
 
 ### Co się dzieje przy pierwszym uruchomieniu {#getting-started-first-start}
 
-Na urządzeniu z ekranem dotykowym najpierw otworzy się okno [**Wybierz gesty**](#getting-started-gesture-layout). Potem SandFly uruchomi [samouczek](#getting-started-tutorial).
+Przy pierwszym włączeniu SandFly otwiera kolejno dwa ekrany.
 
-Jeśli korzystasz już z SandFly i właśnie go zaktualizowałeś, czytnik pokaże [strony o nowych funkcjach](#getting-started-new-features). Jeśli masz Backtalk Aaron, SandFly może [przenieść z niego ustawienia i własne etykiety](#getting-started-backtalk).
+1. Okno **Wybierz gesty** na urządzeniach z ekranem dotykowym. Zobacz [](#getting-started-gesture-layout).
+2. Samouczek SandFly. Zobacz [](#getting-started-tutorial).
+
+Jeśli korzystasz już z SandFly i właśnie go zaktualizowałeś, SandFly otworzy [strony o nowych funkcjach](#getting-started-new-features) zamiast samouczka. Jeśli jest zainstalowany Backtalk Aaron, SandFly najpierw [przenosi z niego ustawienia i własne etykiety](#getting-started-backtalk).
 
 #### Wybierz układ gestów {#getting-started-gesture-layout}
 
@@ -61,25 +65,25 @@ Później możesz zmienić układ. Wybierz **Gesty** > **Układ gestów**. Więc
 
 Podstawowych gestów nauczysz się, wykonując ćwiczenia na ekranie. Aby wrócić do samouczka, wybierz **Pomoc i opinie** > **Samouczek SandFly** lub użyj polecenia **Otwórz samouczek**.
 
-Lekcje są podzielone na pięć części.
+Samouczek składa się z 16 lekcji w pięciu częściach.
 
-- **Podstawy** obejmują powitanie, czytanie dotykiem, przechodzenie między elementami, aktywowanie i wstrzymywanie mowy.
+- **Podstawy** obejmują lekcje o rozpoczęciu pracy, czytaniu dotykiem, przechodzeniu między elementami, aktywowaniu elementów i wstrzymywaniu mowy.
 - W części **Czytanie** poznasz sterowanie czytaniem, nagłówki i czytanie ciągłe.
 - **Elementy sterujące i tekst** obejmują przewijanie list, suwaki, czynności i pisanie.
 - W części **Poruszanie się** przećwiczysz cofanie, powrót na ekran główny, otwieranie powiadomień i menu SandFly oraz przydatne polecenia.
 - W części **Ćwiczenia** możesz praktykować gesty.
 
-Instrukcja jest pierwszym elementem po nazwie lekcji. Wykonaj opisany gest, żeby przejść do następnego kroku. SandFly odczytuje instrukcje także wtedy, gdy w tle gra dźwięk. Jeśli przez 25 sekund nie dotkniesz ekranu, czytnik powtórzy instrukcję. Zrobi to najwyżej trzy razy.
+Instrukcja jest pierwszym elementem po nazwie lekcji. Wykonaj opisany gest, żeby przejść do następnego kroku. SandFly odczytuje instrukcje także wtedy, gdy w tle gra dźwięk. Jeśli przez 25 sekund nie dotkniesz ekranu, SandFly powtórzy instrukcję. Zrobi to najwyżej trzy razy.
 
-Samouczek korzysta z Twoich przypisań. Jeśli czynność nie ma gestu, dowiesz się o tym w instrukcji i możesz użyć **Pomiń krok**. Na końcu lekcji SandFly poda gest potrzebny do przejścia dalej i ustawi fokus na przycisku „Następna lekcja” z nazwą lekcji. Ostatnią lekcję zamkniesz przyciskiem **Zakończ samouczek**.
+Samouczek korzysta z Twoich przypisań. Jeśli czynność nie ma gestu, dowiesz się o tym w instrukcji i możesz użyć **Pomiń krok**. Na końcu lekcji SandFly poda gest potrzebny do przejścia dalej i ustawi fokus na przycisku **Następna lekcja** z nazwą lekcji. Ostatnią lekcję zamkniesz przyciskiem **Zakończ samouczek**.
 
-Podczas lekcji SandFly opisuje działanie gestów cofania, powrotu na ekran główny, ostatnich aplikacji i powiadomień, zamiast opuścić samouczek. Tak samo opisuje gesty wyłączania mowy i wstrzymywania czytnika. Polecenie **Wstecz** nadal zamyka klawiaturę i menu.
+Podczas lekcji SandFly opisuje działanie gestów cofania, powrotu na ekran główny, ostatnich aplikacji i powiadomień, zamiast opuścić samouczek. Tak samo opisuje gesty wyłączania mowy i wstrzymywania SandFly. Polecenie **Wstecz** nadal zamyka klawiaturę i menu.
 
 Wybierz **Spis treści**, żeby otworzyć dowolną lekcję lub sprawdzić swoje postępy. Tam też znajdziesz **Zamknij samouczek**. Po ponownym otwarciu trafisz do ostatnio wybranej lekcji lub do następnej, jeśli poprzednią udało Ci się ukończyć.
 
-W trybie **Ćwiczenie gestów** SandFly podaje nazwę gestu i przypisanego polecenia. Żeby dojść do **Zakończ ćwiczenie**, możesz nadal przechodzić między elementami i je aktywować. Aby od razu wejść do tej lekcji, wybierz **Pomoc i opinie** > **Ćwiczenie gestów** lub otwórz **Ćwiczenie gestów** na ekranie **Gesty**.
+W trybie **Ćwiczenie gestów** SandFly podaje nazwę gestu i przypisanego polecenia. Polecenie się wtedy nie wykonuje. Żeby dojść do **Zakończ ćwiczenie**, możesz nadal przechodzić między elementami i je aktywować. Aby od razu wejść do tej lekcji, wybierz **Pomoc i opinie** > **Ćwiczenie gestów** lub otwórz **Ćwiczenie gestów** na ekranie **Gesty**.
 
-Samouczek przechwytuje gesty rozpoznawane przez SandFly. Jeśli wyłączysz **Ustawienia programisty** > **Używaj gestów w SandFly**, za nawigację odpowiada Android i jego gesty mogą wyprowadzić Cię z lekcji. Do lekcji o suwakach i czynnościach potrzebujesz włączonej opcji **Sterowanie czytaniem** > **Automatycznie zmieniaj opcję sterowania czytaniem**. Domyślnie ta opcja jest włączona.
+Uwaga: Samouczek przechwytuje gesty rozpoznawane przez SandFly. Jeśli wyłączysz **Ustawienia programisty** > **Używaj gestów w SandFly**, za nawigację odpowiada Android i jego gesty mogą wyprowadzić Cię z lekcji. Do lekcji o suwakach i czynnościach potrzebujesz włączonej opcji **Sterowanie czytaniem** > **Automatycznie zmieniaj opcję sterowania czytaniem**. Domyślnie ta opcja jest włączona.
 
 #### Samouczek klawiatury {#getting-started-keyboard-tutorial}
 
@@ -95,24 +99,24 @@ Po aktualizacji z nowymi funkcjami SandFly pokaże ich opis przy kolejnym urucho
 
 Poniższe gesty dotyczą układu **Gesty SandFly**. W układzie VoiceOver część poleceń ma inne przypisania. Możesz sprawdzić [pełny wykaz](#appendix-gestures) albo [zmienić przypisania](#gestures).
 
-- Przesuwaj palcem po ekranie, żeby czytać elementy pod palcem.
+- **Czytanie dotykiem**. Przesuwaj palcem po ekranie, żeby czytać elementy pod palcem.
 - Przesuń palcem w prawo, żeby przejść do następnego elementu, lub w lewo, żeby wrócić do poprzedniego.
 - Stuknij dwa razy w dowolnym miejscu, żeby aktywować element, na którym jest fokus. Jeśli chcesz go nacisnąć i przytrzymać, po drugim stuknięciu zostaw palec na ekranie.
-- Przesuń dwa palce w górę lub w dół, żeby przewinąć listę. SandFly przewija też sam, gdy przechodzisz do kolejnego elementu poza ekranem.
+- **Przewijanie**. Przesuń dwa palce w górę lub w dół, żeby przewinąć listę. SandFly przewija też sam, gdy przechodzisz do kolejnego elementu poza ekranem.
 - Stuknij dwoma palcami, żeby wstrzymać mowę. Powtórz gest, żeby ją wznowić. Dwukrotne stuknięcie trzema palcami włącza lub wyłącza mowę.
-- Przesuń trzy palce w dół albo obróć dwa palce zgodnie z ruchem wskazówek zegara, żeby wybrać następną opcję sterowania czytaniem, na przykład **Słowa**, **Nagłówki** lub **Szybkość mowy**. Przesuń trzy palce w górę lub obróć dwa palce w przeciwną stronę, żeby wrócić do poprzedniej opcji. Potem przesuwaj jednym palcem w dół lub w górę, żeby użyć wybranej opcji. Zobacz [rozdział o czytaniu ekranu](#reading).
-- Otwórz menu SandFly stuknięciem trzema palcami. Możesz też przesunąć palec w górę, a potem w prawo, lub w dół, a potem w prawo. Zobacz [rozdział o poleceniach i menu](#commands).
-- Żeby się cofnąć, przesuń palec w dół, a potem w lewo. Możesz też szybko przesunąć dwa palce tam i z powrotem.
-- Na ekran główny wrócisz ruchem w górę, a potem w lewo lub przesunięciem w górę od dolnej krawędzi.
-- Ostatnie aplikacje otworzysz ruchem w lewo, a potem w górę.
-- Powiadomienia otworzysz ruchem w prawo, a potem w dół.
+- **Sterowanie czytaniem**. Przesuń trzy palce w dół albo obróć dwa palce zgodnie z ruchem wskazówek zegara, żeby wybrać następną opcję sterowania czytaniem, na przykład **Słowa**, **Nagłówki** lub **Szybkość mowy**. Przesuń trzy palce w górę lub obróć dwa palce w przeciwną stronę, żeby wrócić do poprzedniej opcji. Potem przesuwaj jednym palcem w dół lub w górę, żeby użyć wybranej opcji. Zobacz [rozdział o czytaniu ekranu](#reading).
+- **Menu SandFly** otworzysz stuknięciem trzema palcami. Możesz też przesunąć palec w górę, a potem w prawo, lub w dół, a potem w prawo. Zobacz [rozdział o poleceniach i menu](#commands).
+- **Wstecz**. Przesuń palec w dół, a potem w lewo. Możesz też szybko przesunąć dwa palce tam i z powrotem.
+- **Ekran główny**. Przesuń palec w górę, a potem w lewo, lub przesuń go w górę od dolnej krawędzi.
+- **Ostatnie aplikacje** otworzysz ruchem w lewo, a potem w górę.
+- **Powiadomienia** otworzysz ruchem w prawo, a potem w dół.
 - Żeby wyszukać tekst na ekranie, przesuń palec w lewo, a potem w dół.
 
 Więcej sposobów nawigacji znajdziesz w rozdziałach o [czytaniu ekranu](#reading) i [stronach internetowych](#web).
 
 ### Otwórz ustawienia SandFly {#getting-started-settings}
 
-- Na ekranie aplikacji Androida otwórz **SandFly**. Ikona prowadzi do ustawień także wtedy, gdy usługa czytnika jest wyłączona.
+- Na ekranie aplikacji Androida otwórz **SandFly**. Ikona prowadzi do ustawień także przy wyłączonej usłudze SandFly. Możesz więc zmienić ustawienia przed jego włączeniem.
 - W menu SandFly wybierz **Ustawienia SandFly**.
 - W ustawieniach Androida wybierz **Ułatwienia dostępu** > **SandFly** > **Ustawienia**.
 
@@ -125,12 +129,12 @@ Na tym samym ekranie znajdziesz też wstrzymywanie i wyłączanie, profile ustaw
 #### Znajdź ustawienie {#getting-started-search}
 
 1. U góry głównego ekranu ustawień wybierz **Szukaj**.
-2. Wpisz jedno lub kilka słów.
+2. Wpisz jedno lub kilka słów i rozpocznij wyszukiwanie.
 3. Wybierz wynik.
 
 Wynik musi mieć wszystkie wpisane słowa w nazwie lub opisie. Możesz wpisać też fragment słowa. Wielkość liter i znaki diakrytyczne nie wpływają na wynik. SandFly podaje nazwę wyniku i drogę do niego, na przykład **Mowa** > **Zatrzymywanie mowy**. Po wybraniu ustawienia fokus przechodzi na nie na właściwym ekranie. Wynik będący poleceniem otwiera się na ekranie **Polecenia**.
 
-Ekrany **Gesty** i **Skróty klawiszowe** mają osobne wyszukiwanie. Wyszukasz tam gest lub skrót po nazwie albo po poleceniu, które uruchamia.
+Ekrany **Gesty** i **Skróty klawiszowe** mają własną opcję **Szukaj**. Wyszukasz tam gest lub skrót po nazwie albo po poleceniu, które uruchamia.
 
 ### Podręcznik użytkownika {#getting-started-user-guide}
 
@@ -138,18 +142,18 @@ Otwórz **Pomoc i opinie** > **Podręcznik użytkownika**. Ze spisu treści na p
 
 ### Przejdź z Backtalk Aaron na SandFly {#getting-started-backtalk}
 
-SandFly zastępuje Backtalk Aaron. Ostatnia wersja Backtalk Aaron proponuje przejście w powiadomieniu lub w oknie **Backtalk Aaron to teraz SandFly**.
+SandFly zastępuje Backtalk Aaron, który nie otrzymuje już aktualizacji. Ostatnia wersja Backtalk Aaron proponuje przejście w powiadomieniu lub w oknie **Backtalk Aaron to teraz SandFly**.
 
 1. Otwórz powiadomienie o aktualizacji lub wybierz **Sprawdź aktualizacje**, a następnie **Zainstaluj**.
 2. Poczekaj na zakończenie instalacji SandFly obok Backtalk Aaron. Otworzą się ustawienia dostępności Androida.
-3. Włącz SandFly. Czytnik skopiuje ustawienia i własne etykiety. Backtalk Aaron wyłączy się sam.
+3. Włącz SandFly. Aplikacja skopiuje ustawienia i własne etykiety. Backtalk Aaron wyłączy się sam.
 4. Aby odinstalować poprzednią aplikację, otwórz powiadomienie **Ustawienia skopiowane z Backtalk Aaron**.
 
 SandFly otrzymuje wydania stabilne. Jeśli chcesz także nowe kompilacje testowe, włącz **Aktualizacje i instalacja** > **Wersje deweloperskie**. Zobacz [opis kanałów aktualizacji](#updates-channels).
 
-[Modele AI działające na urządzeniu](#descriptions) pobierz ponownie w SandFly. Jeśli używasz [klawiatury brajlowskiej](#braille), włącz ją w nowym czytniku.
+[Modele AI działające na urządzeniu](#descriptions) pobierz ponownie w SandFly. Jeśli używasz [klawiatury brajlowskiej](#braille), włącz ją ponownie dla SandFly.
 
-Żeby SandFly przeniósł skróty dostępności i klawiaturę brajlowską z Backtalk Aaron, przyznaj mu uprawnienie do zmiany ustawień systemowych przed włączeniem czytnika. Wykonaj na komputerze polecenie `adb`.
+Żeby SandFly przeniósł skróty dostępności i klawiaturę brajlowską z Backtalk Aaron, przyznaj mu uprawnienie do zmiany ustawień systemowych przed włączeniem SandFly. Wykonaj na komputerze polecenie `adb`.
 
 ```
 adb shell pm grant io.github.aaron_gh.sandfly android.permission.WRITE_SECURE_SETTINGS

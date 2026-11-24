@@ -1,84 +1,131 @@
 ## Profile ustawień i kopie zapasowe {#profiles}
 
-Profil zmienia wybrane ustawienia SandFly. Możesz włączyć go wszędzie albo tylko w określonych aplikacjach i sytuacjach. Kopia zapasowa służy do zapisania i przeniesienia ustawień czytnika. Osobne pliki mogą zawierać na przykład same makra albo profile gestów.
+Profil ustawień to nazwany zestaw ustawień. Gdy jest aktywny, SandFly stosuje zawarte w nim wartości zamiast Twoich zwykłych ustawień. Profil może działać wszędzie albo tylko w wybranych aplikacjach i sytuacjach. Opcja **Kopia zapasowa i przywracanie** zapisuje wszystkie ustawienia SandFly w pliku i pozwala je z niego odtworzyć. Za pomocą plików poszczególnych elementów możesz udostępniać na przykład same makra lub profile gestów albo przenosić je na inny telefon.
 
-[Profile gestów](#gestures) zmieniają przypisania gestów, a [profile głosowe](#speech) ustawienia głosu.
+O profilach, które zmieniają tylko przypisania gestów, przeczytasz w [](#gestures). Profile głosów opisuje [](#speech).
 
 ### Co zawiera profil ustawień {#profiles-settings-profiles}
 
-Profil zawiera ustawienia, które w nim zmienisz. W pozostałych sprawach nadal obowiązują ustawienia ogólne. Na liście **Profile ustawień** SandFly oznacza pozycje używane w tej chwili.
+Profil przechowuje tylko te ustawienia, które w nim zmienisz. Wszystkie pozostałe zachowują wartości obowiązujące bez profili. Listę znajdziesz na ekranie **Profile ustawień** w ustawieniach SandFly. Aktywny profil ma oznaczenie **Używany**.
 
-[**Użyj teraz**](#profiles-use) włącza jeden profil ręcznie. [**Używaj automatycznie**](#profiles-automatic) pozwala włączać profile między innymi na stronach, podczas czytania ciągłego i podczas edycji. Możesz też wybrać aplikacje lub klawiatury.
+Profilu możesz używać na dwa sposoby.
 
-W profilu można zmienić ustawienia SandFly, klawiatury i monitora brajlowskiego, gesty, skróty, profile gestów oraz wybór aktywnego profilu gestów. Profil nie obejmuje kluczy API, licencji Pro, czasu ostatniego sprawdzenia aktualizacji, skryptów i ich ustawień, roboczych motywów dźwiękowych ani stanu urządzenia, na przykład informacji o wyświetlonych samouczkach.
+- **Użyj teraz** włącza profil we wszystkich aplikacjach aż do jego wyłączenia. W ten sposób można używać tylko jednego profilu naraz. Zobacz [](#profiles-use).
+- Opcje **Używaj automatycznie** i **Aplikacje** pozwalają włączyć profil podczas przeglądania treści internetowych, czytania ciągłego lub edycji tekstu, a także po otwarciu wybranej aplikacji lub klawiatury. Zobacz [](#profiles-automatic).
 
-### Nowy profil {#profiles-add}
+Profil może zawierać ustawienia główne SandFly oraz ustawienia klawiatury brajlowskiej i monitora brajlowskiego. Możesz w nim zapisać także gesty, skróty klawiszowe, profile gestów i wybór aktywnego profilu gestów. Poza profilem pozostają klucze API, licencja SandFly Pro, czas ostatniego sprawdzenia dostępności aktualizacji, zainstalowane skrypty i ich ustawienia oraz szkice motywów dźwiękowych. Profil nie przechowuje też informacji związanych z konkretnym telefonem, na przykład o wyświetlonych samouczkach i oknach dialogowych.
 
-Otwórz **Profile ustawień** > **Nowy profil ustawień**. Wpisz nazwę albo pozostaw pustą, by przyjąć podpowiedź SandFly. Wybierz **OK**. Na początku profil jest pusty. Możesz teraz [dodać do niego ustawienia](#profiles-change-settings).
+### Dodaj profil ustawień {#profiles-add}
 
-### Zmiana ustawień profilu {#profiles-change-settings}
+1. Otwórz **Profile ustawień** > **Nowy profil ustawień**.
+2. Wpisz nazwę lub zostaw pole puste, aby użyć sugerowanej nazwy, np. „Profil 2”.
+3. Wybierz **OK**.
 
-1. Wybierz profil i użyj **Zmień ustawienia**.
-2. SandFly otworzy ustawienia z włączonym profilem i poda jego nazwę. Wszystkie wprowadzane zmiany trafią do niego.
-3. Wróć na ekran profilu lub do listy albo otwórz inną aplikację. SandFly potwierdzi zapis.
+Nowy profil jest pusty. Ustawienia dodasz według instrukcji w [](#profiles-change-settings).
 
-Gdy zmienisz ustawienie w trakcie używania profilu, na przykład tempo mowy podczas czytania, zmiana trafi do profilu, jeśli to on ustawia tempo. Pozostałe zmiany trafiają do ustawień ogólnych.
+### Zmień ustawienia profilu {#profiles-change-settings}
 
-W części **Ustawienia w tym profilu** zobaczysz nazwy zmienionych opcji i ich miejsce w menu. Żeby znów korzystać z ustawienia ogólnego, wybierz wpis w profilu i użyj **Usuń**.
+1. Otwórz ekran **Profile ustawień** i wybierz profil.
+2. Wybierz **Zmień ustawienia**.
 
-### Ręczne włączanie profilu {#profiles-use}
+SandFly odczyta komunikat „Zmiany trafiają do profilu” z jego nazwą i otworzy ustawienia SandFly z zastosowanym profilem. Każde ustawienie, które teraz zmienisz, zostanie zapisane w tym profilu. Gdy wrócisz na ekran profilu, przejdziesz do ekranu **Profile ustawień** lub otworzysz inną aplikację, usłyszysz komunikat „Zmiany zapisano w profilu” z jego nazwą.
 
-Wybierz profil i użyj **Użyj teraz**. Zadziała wszędzie, również w ustawieniach SandFly. **Przestań używać** na tym samym ekranie wyłącza go.
+Jeśli profil ustawia już daną opcję, jej późniejsza zmiana podczas korzystania z profilu również zostanie w nim zapisana. Tak zadziała na przykład zmiana szybkości mowy za pomocą elementów sterujących czytaniem. Zmiany pozostałych opcji obowiązują także bez profilu.
 
-W kategorii [SandFly](#commands) znajdziesz też **Wybierz profil ustawień**, **Następny profil ustawień** i **Poprzedni profil ustawień**. Początkowo nie mają przypisanych gestów. Obejmują opcję **Brak profilu ustawień**, a przy wyborze czytnik podaje nowy profil.
+Na ekranie profilu znajdziesz listę **Ustawienia w tym profilu**. Przy każdej pozycji podano nazwę ustawienia i jego miejsce w ustawieniach SandFly. Aby usunąć je z profilu, wybierz tę pozycję, a następnie **Usuń**. Opcja przyjmie wtedy wartość obowiązującą bez profilu.
 
-### Automatyczny wybór profilu {#profiles-automatic}
+### Włącz profil od razu {#profiles-use}
 
-Na ekranie profilu w opcji **Używaj automatycznie** możesz wskazać treści WWW, **Czytanie ciągłe** lub **Edytowanie tekstu**. W ostatnim przypadku profil działa w polu edycji i na wpisującej do niego klawiaturze.
+1. Otwórz ekran **Profile ustawień** i wybierz profil.
+2. Wybierz **Użyj teraz**.
 
-**Aplikacje** > **Dodaj aplikację** stosuje profil, gdy wybrana aplikacja jest na ekranie. **Klawiatury** > **Dodaj klawiaturę** robi to samo dla klawiatury ekranowej. Lista pokazuje klawiatury włączone w Androidzie. W obu przypadkach wybierz wpis i **Usuń**, żeby wyłączyć powiązanie.
+Profil obowiązuje wszędzie, również w ustawieniach SandFly. Aby go wyłączyć, wybierz **Przestań używać** na tym samym ekranie.
 
-Profile automatyczne nie obowiązują w ustawieniach SandFly ani przy wyłączonym czytniku.
+Poniższe polecenia z grupy **SandFly** służą do wyboru profilu, który ma obowiązywać wszędzie. Domyślnie nie mają przypisań. Zobacz [](#commands).
 
-#### Kolejność profili {#profiles-order}
+- **Wybierz profil ustawień** otwiera menu z pozycją **Brak profilu ustawień** i dostępnymi profilami.
+- **Następny profil ustawień** i **Poprzedni profil ustawień** przełączają między profilami oraz pozycją **Brak profilu ustawień**.
 
-Może działać kilka profili jednocześnie. Gdy ustawiają tę samą opcję, pierwszeństwo ma profil włączony przez **Użyj teraz**. Potem liczy się kolejność na liście **Profile ustawień**. Użyj **Przenieś w górę** lub **Przenieś w dół**, aby ją zmienić.
+SandFly odczytuje nazwę wybranego profilu, np. „Profil Czytanie”, albo komunikat „Brak profilu ustawień”.
 
-### Zmiana nazwy, kolejności i usuwanie {#profiles-manage}
+### Włączaj profil automatycznie {#profiles-automatic}
 
-Na ekranie profilu użyj **Zmień nazwę**, opcji przenoszenia lub **Usuń**. Przed usunięciem SandFly poprosi o potwierdzenie. **Eksportuj do pliku** zapisuje [sam profil](#profiles-item-files).
+Na ekranie wybranego profilu możesz ustawić, kiedy ma się włączać.
 
-### Kopia zapasowa i przywracanie {#profiles-backup}
+- **Używaj automatycznie** > **Treści internetowe** stosuje profil, gdy fokus znajduje się w treści internetowej.
+- **Używaj automatycznie** > **Czytanie ciągłe** stosuje profil podczas czytania ciągłego, na przykład po uruchomieniu polecenia czytania od góry.
+- **Używaj automatycznie** > **Edytowanie tekstu** stosuje profil, gdy fokus jest w polu edycji albo na klawiaturze służącej do wpisywania tekstu w tym polu.
+- **Aplikacje** > **Dodaj aplikację** stosuje profil, gdy wyświetlana jest wybrana aplikacja. Aby usunąć aplikację z listy, wybierz ją, a następnie wybierz **Usuń**.
+- **Klawiatury** > **Dodaj klawiaturę** stosuje profil, gdy wyświetlana jest wybrana klawiatura. Lista zawiera klawiatury włączone w ustawieniach Androida. Aby usunąć klawiaturę z listy, wybierz ją, a następnie wybierz **Usuń**.
 
-Na ekranie **Kopia zapasowa i przywracanie** możesz zapisać ustawienia i własną zawartość SandFly albo wczytać je z innego urządzenia. Te opcje nie są dostępne na zegarkach.
+Automatyczne profile są pomijane w ustawieniach SandFly, dzięki czemu widzisz tam zwykłe wartości. Są także nieaktywne po wyłączeniu SandFly.
 
-#### Eksport ustawień {#profiles-export}
+#### Gdy kilka profili zmienia to samo ustawienie {#profiles-order}
 
-Otwórz **Kopia zapasowa i przywracanie** > **Eksportuj ustawienia** i wybierz miejsce zapisu. Sugerowana nazwa to `sandfly-settings.zip`.
+Kilka profili może działać jednocześnie. Jeśli zmieniają tę samą opcję, pierwszeństwo ma profil włączony przez **Użyj teraz**, a następnie profil znajdujący się wyżej na liście **Profile ustawień**. Kolejność zmienisz przyciskami **Przenieś w górę** i **Przenieś w dół** na ekranie profilu.
 
-Archiwum zawiera ustawienia główne, własne etykiety, osobno zapisane profile, zainstalowane skrypty, motywy dźwiękowe i zmiany w motywie Backtalk oraz obraz tapety. Ustawienia główne są zapisane w takiej postaci, w jakiej obowiązują bez profili.
+### Zmień nazwę, kolejność lub usuń profil {#profiles-manage}
 
-Klucze API pozostają na urządzeniu. Kopia pomija też licencję [SandFly Pro](#pro), czas ostatniego sprawdzenia aktualizacji, pobrane modele AI i rozpoznawania mowy, dzienniki, zgłoszenia oraz robocze motywy dźwiękowe.
+Na ekranie profilu są także następujące opcje.
 
-#### Import ustawień {#profiles-import}
+- **Zmień nazwę** pozwala zmienić nazwę profilu.
+- **Przenieś w górę** i **Przenieś w dół** zmieniają miejsce profilu na liście.
+- **Eksportuj do pliku** zapisuje profil jako plik pojedynczego elementu. Zobacz [](#profiles-item-files).
+- **Usuń** usuwa profil po potwierdzeniu.
 
-Otwórz **Kopia zapasowa i przywracanie** > **Importuj ustawienia** i wybierz plik. Ustawienia z pliku zastąpią odpowiadające im ustawienia telefonu. Te, których plik nie zawiera, i klucze API zostają. Aktywne profile zostaną ponownie zastosowane.
+### Kopia zapasowa i przywracanie ustawień {#profiles-backup}
 
-Importowane etykiety, profile, skrypty i motywy zastępują pozycje o tej samej nazwie, identyfikatorze lub przypisaniu. Pozostałe pozycje zostają. Obraz tapety z pliku zastępuje obecny.
+Opcja **Kopia zapasowa i przywracanie** zapisuje wszystkie ustawienia i własną zawartość SandFly w pliku. Pozwala też zastąpić bieżące ustawienia i zawartość danymi z pliku, by na przykład tak samo skonfigurować drugi telefon. Opcje te są dostępne na telefonach.
 
-SandFly przyjmuje również starszy plik `.json` oraz kopię z Backtalka. Własne ustawienia SandFly, których Backtalk nie ma, pozostają. Jeśli plik jest uszkodzony, ma zły format, przekracza 5 MB dla JSON lub 300 MB po rozpakowaniu ZIP, SandFly zgłosi błąd bez wprowadzania zmian.
+#### Eksportuj ustawienia {#profiles-export}
+
+1. Otwórz **Kopia zapasowa i przywracanie** > **Eksportuj ustawienia**.
+2. Wybierz miejsce zapisu pliku. Sugerowana nazwa to `sandfly-settings.zip`.
+
+SandFly odczytuje potwierdzenie eksportu i informuje, że w pliku nie ma kluczy API.
+
+Archiwum ZIP zawiera wszystkie ustawienia SandFly oraz dodatkowe dane.
+
+- Własne etykiety.
+- Profile ustawień. Ustawienia główne zapisują się w takiej postaci, w jakiej obowiązują bez profili, a profile są zapisane osobno.
+- Zainstalowane skrypty.
+- Motywy dźwiękowe i dźwięki zmienione w motywie Backtalk.
+- Obraz tapety.
+
+Poniższe dane pozostają na urządzeniu.
+
+- Klucze API, dzięki czemu możesz udostępniać lub synchronizować plik kopii zapasowej.
+- Licencja SandFly Pro. Aby korzystać z niej na drugim telefonie, aktywuj SandFly Pro na nim jako na osobnym urządzeniu. Zobacz [](#pro).
+- Czas ostatniego sprawdzenia dostępności aktualizacji.
+- Pobrane modele AI i rozpoznawania mowy, dzienniki oraz zgłoszenia problemów.
+- Szkice motywów dźwiękowych.
+
+#### Importuj ustawienia {#profiles-import}
+
+1. Otwórz **Kopia zapasowa i przywracanie** > **Importuj ustawienia**.
+2. Wybierz plik ustawień.
+
+Ustawienia z pliku zastępują bieżące, a SandFly odczytuje potwierdzenie importu. Klucze API na telefonie i ustawienia, których nie ma w pliku, zachowują swoje wartości. Aktywne profile zostają ponownie zastosowane do zaimportowanych ustawień.
+
+Własne etykiety, profile ustawień, skrypty i motywy dźwiękowe z pliku zostają dodane do telefonu. Każdy z nich zastępuje odpowiadający mu element, na przykład o tej samej nazwie lub identyfikatorze. Pozostałe elementy zostają. Obraz tapety z pliku zastępuje obraz na telefonie.
+
+Opcja **Importuj ustawienia** obsługuje również pliki z rozszerzeniem `.json` wyeksportowane przez starszą wersję SandFly oraz pliki ustawień z Backtalka. Ustawienia z pliku Backtalka zastępują odpowiadające im ustawienia SandFly. Opcje dostępne tylko w SandFly zachowują swoje wartości.
+
+Jeśli usłyszysz „Ten plik nie jest plikiem ustawień SandFly ani Backtalk lub nie można go odczytać”, sprawdź format i rozmiar pliku. Plik może być uszkodzony lub mieć niewłaściwy format. Limit to 5 MB dla pliku `.json` i 300 MB po rozpakowaniu dla pliku `.zip`. W razie błędu ustawienia pozostają bez zmian.
 
 ### Pliki pojedynczych elementów {#profiles-item-files}
 
-Do udostępniania wybranej zawartości służą **Eksportuj do pliku** i **Importuj z pliku**. Taki plik możesz zmienić lub napisać samodzielnie. Pełną kopię ustawień otwiera się przez **Importuj ustawienia**.
+W takim pliku możesz przechować elementy jednego lub kilku rodzajów bez pozostałych ustawień SandFly. Możesz je wyeksportować, udostępnić, zmienić, napisać ręcznie lub za pomocą czatu AI i wczytać na dowolnym telefonie z SandFly. Pełną kopię ustawień wczytasz przez **Importuj ustawienia**, a plik pojedynczych elementów przez **Importuj z pliku**.
 
-| Zawartość | Gdzie jej szukać |
+Na każdym z poniższych ekranów znajdziesz opcje **Eksportuj do pliku** i **Importuj z pliku**.
+
+| Elementy | Ekran |
 | --- | --- |
 | Makra | **Makra** |
 | Profile gestów | **Gesty** > **Profile gestów** |
 | Gesty w aplikacjach | **Gesty** > **Gesty w aplikacjach** |
-| Skróty w aplikacjach | **Skróty klawiszowe** > **Skróty klawiszowe w aplikacjach** |
-| Mapa klawiatury | **Skróty klawiszowe**. Eksport dotyczy bieżącej mapy. |
+| Skróty klawiszowe w aplikacjach | **Skróty klawiszowe** > **Skróty klawiszowe w aplikacjach** |
+| Mapy klawiszy | **Skróty klawiszowe**. Eksportowana jest aktualnie używana mapa. |
 | Profile ustawień | **Profile ustawień** |
 | Słownik mowy | **Mowa** > **Słownik mowy** |
 | Słownik symboli | **Mowa** > **Słownik symboli** |
@@ -86,22 +133,28 @@ Do udostępniania wybranej zawartości służą **Eksportuj do pliku** i **Impor
 | Własne znaki brajlowskie | **Brajl** > **Klawiatura brajlowska** > **Własne znaki brajlowskie** |
 | Własne polecenia głosowe | **Polecenia głosowe** |
 
-Plików pojedynczych elementów nie obsługują zegarki.
+Pliki pojedynczych elementów są dostępne na telefonach.
 
-#### Eksport wybranych pozycji {#profiles-item-export}
+#### Eksportuj elementy do pliku {#profiles-item-export}
 
-Otwórz odpowiedni ekran, wybierz **Eksportuj do pliku** i wskaż miejsce zapisu. Na ekranie listy zapiszesz całą listę. Z ekranu pojedynczej pozycji, na przykład profilu ustawień, zapiszesz tylko tę pozycję. SandFly poda wynik.
+1. Otwórz ekran z wybranymi elementami.
+2. Wybierz **Eksportuj do pliku**.
+3. Wybierz miejsce zapisu pliku.
 
-#### Import wybranych pozycji {#profiles-item-import}
+Na ekranie listy **Eksportuj do pliku** zapisuje wszystkie pozycje. Na ekranie pojedynczego elementu, na przykład profilu ustawień, zapisuje tylko ten element. SandFly odczytuje „Wyeksportowano” lub „Nie można wyeksportować”.
 
-Na dowolnym [ekranie z tabeli](#profiles-item-files) użyj **Importuj z pliku**. SandFly doda całą zawartość, również jeśli plik zawiera inny rodzaj pozycji niż otwarty ekran. Potem poda, co dodał.
+#### Importuj elementy z pliku {#profiles-item-import}
 
-Nowy wpis zastępuje pozycję tego samego rodzaju o tej samej nazwie bez względu na wielkość liter. W słowniku liczy się szukany tekst i aplikacja, dla znaków brajlowskich tekst i tabela, a dla poleceń głosowych fraza. Mapy klawiatury trafiają do własnych map.
+1. Otwórz dowolny ekran wymieniony w tabeli w [](#profiles-item-files).
+2. Wybierz **Importuj z pliku**.
+3. Wybierz plik z elementami.
 
-Po imporcie SandFly podaje pominięte wpisy, na przykład nieznane polecenia, ustawienia, gesty, skróty lub nieobsługiwane wyrażenia regularne. Jeśli wybrano kopię ustawień, skieruje do **Importuj ustawienia**.
+SandFly wczytuje wszystkie elementy zawarte w pliku bez względu na to, z którego ekranu uruchomisz import. Następnie podaje wynik, np. „Zaimportowano: 2 makra, 1 profil gestów”. Element zastępuje istniejącą pozycję tego samego rodzaju i o tej samej nazwie, bez względu na wielkość liter. Pozostałe pozycje zostają. Wpisy słownika zastępują wpisy wyszukujące ten sam tekst w tej samej aplikacji. Własne znaki brajlowskie zastępują pozycje o tym samym tekście w tej samej tablicy brajlowskiej. Własne polecenia głosowe zastępują polecenia o tym samym wyrażeniu. Zaimportowane mapy klawiszy są zawsze zapisywane jako mapy niestandardowe.
 
-#### Jak przygotować własny plik {#profiles-item-reference}
+Po imporcie SandFly wymienia pominięte pozycje, na przykład nierozpoznane polecenia, gesty, klawisze, ustawienia i odrzucone wyrażenia regularne. Jeśli wybierzesz pełną kopię, usłyszysz „To jest plik ustawień. Zaimportuj go przez Kopia zapasowa i przywracanie > Importuj ustawienia”.
 
-**Kopia zapasowa i przywracanie** > **Opis formatu pliku eksportu** zapisuje `sandfly-file-format.md`. Dokument opisuje format i zawiera listę gestów, poleceń i ustawień dostępnych na urządzeniu wraz z bieżącymi wartościami. Jeżeli tworzysz plik z pomocą czatu AI, podaj mu ten opis oraz listę potrzebnych pozycji. Zapisz wynik i otwórz go przez **Importuj z pliku**.
+#### Przygotuj własny plik z elementami {#profiles-item-reference}
 
-Zobacz także [specyfikację plików](#api-item-files).
+Opcja **Kopia zapasowa i przywracanie** > **Opis formatu pliku eksportu** zapisuje dokument `sandfly-file-format.md`. Zawiera opis plików poszczególnych elementów, a dalej listy gestów, poleceń i ustawień dostępnych na tym telefonie, z bieżącą wartością każdego ustawienia. Aby utworzyć elementy za pomocą czatu AI, udostępnij mu ten dokument i opisz, czego potrzebujesz. Zapisz odpowiedź jako plik i wczytaj ją przez **Importuj z pliku**.
+
+Dokładny opis formatu znajdziesz w [](#api-item-files).

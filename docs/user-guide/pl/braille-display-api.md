@@ -6,13 +6,15 @@ Aplikacja może udostępnić monitor, którego SandFly nie obsługuje bezpośred
 
 Monitor może odczytać wszystko, co SandFly pokazuje w brajlu, a jego klawisze mogą sterować urządzeniem. SandFly korzysta z aplikacji dopiero po wyświetleniu tej informacji i udzieleniu zgody.
 
-Gdy SandFly znajdzie nową aplikację, wyświetli powiadomienie otwierające pytanie. Aplikacja również może je otworzyć. W ustawieniach monitora brajlowskiego jest lista monitorów z innych aplikacji, z której użytkownik może nadać lub cofnąć zgodę.
+- Jeśli SandFly znajdzie aplikację, która może działać jako monitor, a użytkownik jeszcze nie zdecydował o dostępie, pojawi się powiadomienie. Otwiera ono ostrzeżenie opisujące zakres dostępu.
+- Aplikacja może też od razu otworzyć ostrzeżenie. Zobacz [Manifest aplikacji](#your-apps-manifest).
+- W ustawieniach **Brajl** > **Monitor brajlowski** > **Wyświetlacze z innych aplikacji** znajduje się lista wszystkich aplikacji, które mogą działać jako monitor. Użytkownik może tam nadać lub cofnąć zgodę dla każdej z nich. Przy udzielaniu zgody również pojawi się ostrzeżenie.
 
 Gdy monitor aplikacji działa, SandFly wyświetla powiadomienie z jej nazwą. Po udzieleniu zgody SandFly nie ogranicza treści ani częstotliwości danych, które wysyła monitor.
 
 ## Manifest aplikacji {#your-apps-manifest}
 
-Zadeklaruj uprawnienie do zgłoszenia monitora i usługę, z którą może połączyć się SandFly:
+Zadeklaruj uprawnienie, które umożliwia zgłoszenie aplikacji jako monitora. Udostępnij też usługę, z którą może się połączyć wyłącznie SandFly.
 
 ```xml
 <uses-permission android:name="io.github.aaron_gh.sandfly.permission.BRAILLE_DISPLAY" />
@@ -37,7 +39,7 @@ Od Androida 11 dodaj widoczność pakietu:
 </queries>
 ```
 
-Po uzyskaniu zgody SandFly łączy się z usługą i utrzymuje połączenie przez cały czas pracy. Po zatrzymaniu usługi może połączyć się ponownie. SandFly szuka monitorów przy starcie, po instalacji lub aktualizacji aplikacji oraz po nadaniu lub cofnięciu zgody.
+Po uzyskaniu zgody SandFly łączy się z usługą. Utrzymuje połączenie przez cały czas działania, więc aplikacja działa razem z SandFly. Po zatrzymaniu usługi SandFly łączy się ponownie. Szuka monitorów przy starcie, po instalacji lub aktualizacji aplikacji oraz po nadaniu lub cofnięciu zgody.
 
 Żeby od razu otworzyć ekran zgody, użyj:
 
@@ -86,10 +88,10 @@ class DisplayService : Service() {
 | `start(name, cellCount)` | Zgłasza gotowy monitor, jego nazwę i liczbę komórek. Użyj 0 dla urządzenia z samymi klawiszami. Wywołaj ponownie po zmianie nazwy lub liczby. |
 | `stop()` | Zgłasza niedostępność monitora, na przykład po rozłączeniu. Kiedy wróci, wywołaj `start`. |
 | `brailleKeys(dots, space)` | Przekazuje punkty naciśnięte razem. Bit 0 oznacza punkt 1, a bit 7 punkt 8. `space` oznacza spację. Kombinacja wykonuje przypisane polecenie lub wpisuje znak. Dla samej spacji przekaż `brailleKeys(0, true)`. |
-| `command(name, argument)` | Przypisuje innemu klawiszowi polecenie z `BrailleInputEvent` bez prefiksu `CMD_`, na przykład `NAV_ITEM_NEXT`, `NAV_PAN_DOWN`, `ACTIVATE_CURRENT` lub `GLOBAL_BACK`. W `ROUTE` argument to numer komórki od 0. W pozostałych poleceniach przekaż 0. |
+| `command(name, argument)` | Uruchamia dla innego klawisza polecenie z `BrailleInputEvent` bez prefiksu `CMD_`, na przykład `NAV_ITEM_NEXT`, `NAV_PAN_DOWN`, `ACTIVATE_CURRENT` lub `GLOBAL_BACK`. W `ROUTE` argument to numer komórki od 0. W pozostałych poleceniach przekaż 0. |
 
 `showCells(cells)` przekazuje jeden bajt na komórkę. Punkty mają te same bity co w `brailleKeys`. Wywołania są jednokierunkowe i wracają od razu.
 
 ## Pierwszeństwo monitorów {#one-display-at-a-time}
 
-SandFly używa jednego monitora naraz. Połączenie Bluetooth lub USB ma pierwszeństwo. Gdy taki monitor się pojawi, SandFly go użyje, a po rozłączeniu wróci do monitora z aplikacji. Jeżeli kilka dopuszczonych aplikacji zgłosi sprzęt, pierwsza zachowa dostęp do czasu zakończenia pracy.
+SandFly używa jednego monitora naraz. Monitor Bluetooth lub USB ma pierwszeństwo. Gdy jest podłączony, monitory udostępniane przez aplikacje czekają. Jeśli jeden z nich był używany wcześniej, po rozłączeniu monitora Bluetooth lub USB SandFly do niego wróci. Gdy kilka aplikacji z udzieloną zgodą uruchomi swoje monitory, SandFly użyje pierwszego. Pozostałe czekają, aż pierwszy zakończy pracę.

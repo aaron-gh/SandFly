@@ -1,5 +1,5 @@
 ## Domyślne gesty {#appendix-gestures}
 
-Poniżej znajdziesz polecenia przypisane do gestów w poszczególnych układach. Gest bez przypisania możesz uzupełnić samodzielnie. Zobacz [wybór układu i zmianę gestów](#gestures).
+W tym wykazie znajdziesz pierwotne przypisania poleceń w każdym z układów gestów. Gest spoza wykazu zacznie wykonywać polecenie, gdy mu je przypiszesz. O zmianie przypisań i wyborze układu przeczytasz w [](#gestures).
 
 <!-- generate: gestures -->
