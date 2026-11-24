@@ -2231,6 +2231,7 @@
   <!-- Time between two-stroke swipes entries: how long after the first swipe the second may start. -->
     <string-array name="pref_two_stroke_swipe_time_entries">
       <item>@string/value_two_stroke_swipe_time_off</item>
+      <item>@string/value_touch_explore_time_out_250ms</item>
       <item>@string/value_typing_long_press_500ms</item>
       <item>@string/value_typing_long_press_1000ms</item>
       <item>@string/value_two_stroke_swipe_time_1500</item>
@@ -2240,6 +2241,7 @@
   <!-- Time between two-stroke swipes values, in milliseconds; 0 is off. -->
     <string-array name="pref_two_stroke_swipe_time_values" translatable="false">
       <item>0</item>
+      <item>250</item>
       <item>500</item>
       <item>1000</item>
       <item>1500</item>
