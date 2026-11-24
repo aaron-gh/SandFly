@@ -325,6 +325,7 @@ In both keymaps:
 - Shortcuts with Sym, Fn or Ctrl work in text fields too.
 - SandFly key + L locks or unlocks touch in the keyboard phone keymap. See [](#touch).
 - SandFly key + V holds a touch on the focused item, such as the voice message button of a messaging app. See [](#keyboards-touch-hold).
+- SandFly key + Y spells the password field being edited. See [](#keyboards-passwords).
 
 For the full list of shortcuts, see [](#appendix-keyboard-shortcuts).
 
@@ -349,6 +350,7 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 - **Held keys type**: what a key held down types with the SandFly keyboard.
 - **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).
 - **Double space types a period**: with the SandFly keyboard, Space pressed twice after a word types a period and a space. Off by default.
+- **Speak password characters**: with the SandFly keyboard, in password fields, SandFly says each character typed, deleted or passed over instead of "bullet". Off by default. See [](#keyboards-passwords).
 - **Android physical keyboard settings**: opens the physical keyboard settings of Android, such as the keyboard layout.
 
 ### The SandFly keyboard {#keyboards-sandfly-keyboard}
@@ -361,6 +363,7 @@ The SandFly keyboard is an input method for physical keyboards. It shows no keys
 - Double presses that type other characters, such as G G for ğ, and a period for Space pressed twice.
 - Emoji search and a symbol list.
 - Editing mode, in which single keys move the cursor and select, copy, cut and paste.
+- The characters of password fields, which Android gives screen readers only as bullets.
 
 The SandFly keyboard isn't available on watches and TVs.
 
@@ -423,7 +426,26 @@ In the keyboard phone keymaps, **Search emoji** is SandFly key + O, and **Choose
 - Delete keys delete.
 - Enter, Escape or Back turns editing mode off.
 
-Other keys that type do nothing in editing mode. Editing mode needs the SandFly keyboard. In the keyboard phone keymaps, its shortcut is SandFly key + C.
+Other keys that type do nothing in editing mode. In a password field, R says "Not read in password fields", and C copies without saying the text. Editing mode needs the SandFly keyboard. In the keyboard phone keymaps, its shortcut is SandFly key + C.
+
+#### Password fields {#keyboards-passwords}
+
+Android gives screen readers only bullets for the text of a password field, so SandFly says "bullet" for each character. The SandFly keyboard reads the text of the field it types into, and SandFly can say the characters in two ways.
+
+**Typing** > **Physical keyboard** > **Speak password characters**, off by default: in a password field being edited with the SandFly keyboard, SandFly says:
+
+- Each character typed, such as "capital P", "at" or "1". Characters are named as in other text fields, and capital letters follow **Verbosity** > **Capital letters**.
+- Each character deleted with Backspace or Delete, such as "a deleted".
+- The character the cursor passes over with Left Arrow or Right Arrow, the trackpad or editing mode.
+- For a key held down for its Alt character, the character and the one it replaced, such as "at replaced a".
+
+Text pasted or filled in, a cleared field, a selection and moves over more than one character are spoken as before, with bullets.
+
+**Spell the password field**, in the **Text editing** category of commands, spells the whole text of the password field being edited, each character with its position, such as "1 capital P, 2 a, 3 at, 4 1". Capital letters are always said as "capital". It works whether **Speak password characters** is on or off. In a text field that isn't a password field, it says "Not a password field"; without the SandFly keyboard in a text field, "Needs the SandFly keyboard in a text field". In the keyboard phone keymaps, its shortcut is SandFly key + Y. In other keymaps, assign it in **Keyboard shortcuts**. You can also assign it to a gesture or add it to the SandFly menu.
+
+Password characters are spoken only in these two ways. They aren't kept for **Repeat last spoken phrase**, **Spell last spoken phrase**, **Copy last spoken phrase** or **Speech history**, and SandFly logs only how many characters a field has.
+
+Android's own text fields give the SandFly keyboard their text, and so do most apps. Where an app gives none, SandFly says "bullet" as before, and **Spell the password field** says "Password field text not available".
 
 ### Other keyboard settings {#keyboards-other-settings}
 

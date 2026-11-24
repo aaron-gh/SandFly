@@ -3557,6 +3557,9 @@ public class TalkBackService extends AccessibilityServiceCompat
     textEventFilter.setOnScreenKeyboardEchoSuppressor(() -> KeyboardSpeech.isTypingSpoken(this));
     // Dictation that speaks the text it types.
     textEventFilter.setTextChangeSuppressor(SandflyDictation::typedSpokenText);
+    // The SandFly keyboard, which says the characters of a password field with Speak password
+    // characters on.
+    textEventFilter.setPasswordCharacterSuppressor(SandFlyKeyboardHost::speaksPasswordCharacters);
     textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();

@@ -149,6 +149,71 @@ public class TextEventFilterDropTest {
     assertEquals(TextEventInterpretation.TEXT_REPLACE, sent.get(0).getEvent());
   }
 
+  /** A change of [added] and [removed] characters in a field, a password field when [password]. */
+  private void passwordChange(long time, boolean password, int added, int removed) {
+    AccessibilityEvent event = AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED);
+    event.setEventTime(time);
+    event.setPackageName("app");
+    event.setPassword(password);
+    event.setAddedCount(added);
+    event.setRemovedCount(removed);
+    filter.filterAndSendInterpretation(
+        event,
+        /* eventId= */ null,
+        new TextEventInterpretation(
+            removed > 0 && added == 0
+                ? TextEventInterpretation.TEXT_REMOVE
+                : TextEventInterpretation.TEXT_ADD));
+  }
+
+  /** A cursor move over [traversed] in a focused field, a password field when [password]. */
+  private void passwordMove(long time, boolean password, String traversed) {
+    AccessibilityEvent event =
+        AccessibilityEvent.obtain(AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED);
+    event.setEventTime(time);
+    event.setPackageName("app");
+    event.setPassword(password);
+    AccessibilityNodeInfo field =
+        new EditText(RuntimeEnvironment.getApplication()).createAccessibilityNodeInfo();
+    field.setFocused(true);
+    field.setEditable(true);
+    shadowOf(event).setSourceNode(field);
+    TextEventInterpretation interpretation =
+        new TextEventInterpretation(TextEventInterpretation.SELECTION_MOVE_CURSOR_NO_SELECTION);
+    interpretation.setTraversedText(traversed);
+    filter.filterAndSendInterpretation(event, /* eventId= */ null, interpretation);
+  }
+
+  @Test
+  public void passwordCharacterIsDroppedWhileTheSandFlyKeyboardSaysIt() {
+    filter.setPasswordCharacterSuppressor(() -> true);
+    passwordChange(START, /* password= */ true, /* added= */ 1, /* removed= */ 0);
+    passwordChange(START + 1000, /* password= */ true, /* added= */ 0, /* removed= */ 1);
+    passwordChange(START + 2000, /* password= */ true, /* added= */ 1, /* removed= */ 1);
+    passwordMove(START + 3000, /* password= */ true, "\u2022");
+    assertEquals(0, sent.size());
+  }
+
+  @Test
+  public void passwordCharacterIsSentWhileTheSandFlyKeyboardDoesNotSayIt() {
+    filter.setPasswordCharacterSuppressor(() -> false);
+    passwordChange(START, /* password= */ true, /* added= */ 1, /* removed= */ 0);
+    passwordMove(START + 1000, /* password= */ true, "\u2022");
+    assertEquals(2, sent.size());
+  }
+
+  @Test
+  public void longerPasswordChangesAndOtherFieldsAreSent() {
+    filter.setPasswordCharacterSuppressor(() -> true);
+    // Pasted text and a move over more than one character, which the keyboard doesn't say.
+    passwordChange(START, /* password= */ true, /* added= */ 8, /* removed= */ 0);
+    passwordMove(START + 1000, /* password= */ true, "\u2022\u2022\u2022");
+    // A field that isn't a password field.
+    passwordChange(START + 2000, /* password= */ false, /* added= */ 1, /* removed= */ 0);
+    passwordMove(START + 3000, /* password= */ false, "a");
+    assertEquals(4, sent.size());
+  }
+
   @Test
   public void changeSoonAfterAnotherIsDropped() {
     change(START, "");

@@ -4454,6 +4454,10 @@
     <string name="title_pref_sandfly_keyboard_double_press">Double-press characters</string>
     <!-- Typing > Physical keyboard: with the SandFly keyboard, Space pressed twice after a word types a period and a space. -->
     <string name="title_pref_sandfly_keyboard_double_space_period">Double space types a period</string>
+    <!-- Typing > Physical keyboard: with the SandFly keyboard, in a password field, SandFly speaks each character typed, deleted or passed over by the cursor, instead of "bullet". -->
+    <string name="title_pref_speak_password_characters">Speak password characters</string>
+    <!-- Summary of Speak password characters. -->
+    <string name="summary_pref_speak_password_characters">With the SandFly keyboard, speaks the characters typed, deleted and passed over in password fields</string>
     <!-- Double-press characters: button that adds a key with the characters its double press types. -->
     <string name="double_press_add">Add a key</string>
     <!-- Double-press characters: a key and the characters its double press types, such as "g: ğ". -->
@@ -4484,6 +4488,16 @@
     <string name="sandfly_keyboard_needed">Needs the SandFly keyboard in a text field</string>
     <!-- Command: with the SandFly keyboard, in a text field, single keys move the cursor and select, copy, cut and paste instead of typing, until it is turned off. -->
     <string name="shortcut_toggle_editing_mode">Turn editing mode on or off</string>
+    <!-- Command: with the SandFly keyboard, spells the whole text of the password field being edited, one character at a time with its position. -->
+    <string name="shortcut_spell_password_field">Spell the password field</string>
+    <!-- One character of a spelled password field: its position, from 1, and its name, such as "2 capital B". The items are joined with commas. -->
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <!-- Spoken when Spell the password field runs in a text field that isn't a password field. -->
+    <string name="sandfly_keyboard_not_password_field">Not a password field</string>
+    <!-- Spoken when Spell the password field runs in a password field whose app gives the SandFly keyboard no text. -->
+    <string name="sandfly_keyboard_password_not_available">Password field text not available</string>
+    <!-- Spoken when R, which reads the line in the SandFly keyboard's editing mode, is pressed in a password field. -->
+    <string name="sandfly_keyboard_password_not_read">Not read in password fields</string>
     <!-- Spoken when the SandFly keyboard's editing mode turns on. -->
     <string name="sandfly_keyboard_editing_mode_on">Editing mode on</string>
     <!-- Spoken when the SandFly keyboard's editing mode turns off. -->

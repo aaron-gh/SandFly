@@ -184,6 +184,22 @@ class KeyPracticeTest {
   }
 
   @Test
+  fun spellThePasswordFieldIsNamedLikeOtherCommands() {
+    start(Keymap.KEYBOARD_PHONE, SandFlyKey.RIGHT_SHIFT)
+    practiceOn()
+    assertTrue(down(KeyEvent.KEYCODE_SHIFT_RIGHT, rightShift))
+    assertTrue(down(KeyEvent.KEYCODE_Y, rightShift))
+    assertEquals(
+      "Right Shift + " +
+        name(KeyEvent.KEYCODE_Y) +
+        ", " +
+        context.getString(R.string.shortcut_spell_password_field),
+      spoken.last(),
+    )
+    assertTrue(ran.isEmpty())
+  }
+
+  @Test
   fun repeatsAreNotSpokenAgain() {
     start(Keymap.KEYBOARD_PHONE, SandFlyKey.RIGHT_SHIFT)
     practiceOn()

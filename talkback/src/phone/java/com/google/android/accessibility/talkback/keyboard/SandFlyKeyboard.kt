@@ -20,10 +20,14 @@ import android.text.InputType
 import android.view.KeyCharacterMap
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.ExtractedText
+import android.view.inputmethod.ExtractedTextRequest
+import android.view.inputmethod.InputConnection
 import androidx.core.content.edit
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.output.EmojiSearch
+import com.google.android.accessibility.utils.output.SpeechController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Locale
 
@@ -44,6 +48,10 @@ import java.util.Locale
  *   in place of the character the first press typed, and Space pressed twice types a period.
  * - Shift pressed and released alone types the next letter as a capital, as on BlackBerry
  *   keyboards; pressed again, it doesn't.
+ * - The characters of password fields, which Android gives accessibility services only as bullets
+ *   but gives the input method through its input connection: with Speak password characters on,
+ *   it says a character typed, deleted or moved over, and Spell the password field spells the
+ *   field ([PasswordSpeech]). Only lengths are logged.
  */
 class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   private val prefs by lazy { SharedPreferencesUtils.getSharedPreferences(this) }
@@ -56,7 +64,10 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
 
   /** The modifier keys of the open chooser, whose meta key states are cleared when it closes. */
   private val chooserMetaKeys = ChooserMetaKeys()
-  private val editingMode by lazy { EditingMode(this) }
+  private val editingMode by lazy { EditingMode(this) { password } }
+
+  /** Follows the password field being edited for Speak password characters. */
+  private val passwordEcho by lazy { PasswordSpeech.Echo(this) }
 
   /** Keys whose press the keyboard took, so that their repeats and release are taken too. */
   private val takenKeys = mutableSetOf<Int>()
@@ -92,6 +103,38 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
 
   override val isEditingModeOn: Boolean
     get() = editingMode.isOn
+
+  override val speaksPasswordCharacters: Boolean
+    get() = editing && password && passwordEcho.isFollowing && PasswordSpeech.isOn(this, prefs)
+
+  override fun spellPasswordField(): Boolean {
+    val connection = currentInputConnection
+    if (!editing || connection == null) {
+      return false
+    }
+    if (!password) {
+      LogUtils.w(TAG, "Spell the password field: not a password field")
+      SandFlyKeyboardHost.speak(getString(R.string.sandfly_keyboard_not_password_field))
+      return true
+    }
+    val field = readField(connection, monitor = false)
+    LogUtils.w(
+      TAG,
+      "Spell the password field: %s",
+      if (field == null) "text not available" else "${field.text.length} characters",
+    )
+    when {
+      field == null ->
+        SandFlyKeyboardHost.speak(getString(R.string.sandfly_keyboard_password_not_available))
+      field.text.isEmpty() -> SandFlyKeyboardHost.speak(getString(R.string.text_field_empty))
+      else ->
+        SandFlyKeyboardHost.speakPassword(
+          PasswordSpeech.spell(this, field.text),
+          queueMode = SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH,
+        )
+    }
+    return true
+  }
 
   override fun toggleEditingMode(): Boolean {
     if (editingMode.isOn) {
@@ -161,10 +204,13 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       editingMode.turnOff(announce = false)
     }
     heldKey = KeyEvent.KEYCODE_UNKNOWN
+    passwordEcho.stop()
+    followPasswordField()
   }
 
   override fun onFinishInput() {
     editing = false
+    passwordEcho.stop()
     if (chooser != null) closeChooser("input finished")
     editingMode.turnOff(announce = false)
     heldKey = KeyEvent.KEYCODE_UNKNOWN
@@ -306,6 +352,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     candidatesEnd: Int,
   ) {
     super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd, candidatesStart, candidatesEnd)
+    if (password) followPasswordField()
     // Typing a character moves the cursor one place on; any other move ends the double press.
     if (
       lastPress != null &&
@@ -313,6 +360,67 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     ) {
       lastPress = null
     }
+  }
+
+  /** A text change that leaves the selection where it was, such as Delete, comes only here. */
+  override fun onUpdateExtractedText(token: Int, text: ExtractedText?) {
+    super.onUpdateExtractedText(token, text)
+    if (token == PASSWORD_TOKEN && password) followPasswordField()
+  }
+
+  /**
+   * Reads the password field being edited again, with Speak password characters on, and says the
+   * character one key typed, deleted, replaced or moved over since the last reading. The first
+   * reading asks the field to report every text change, so that Delete, which doesn't move the
+   * cursor, is followed too.
+   */
+  private fun followPasswordField() {
+    val on = editing && password && PasswordSpeech.isOn(this, prefs)
+    val connection = currentInputConnection
+    val starting = !passwordEcho.isFollowing
+    val field = if (on && connection != null) readField(connection, monitor = starting) else null
+    val said =
+      passwordEcho.follow(field, on, password, sayCapital = PasswordSpeech.saysCapital(this, prefs))
+    if (on && starting) {
+      LogUtils.w(
+        TAG,
+        "Speak password characters: %s",
+        if (field == null) "the field's text is not available" else "following a password field",
+      )
+    }
+    if (said != null) {
+      SandFlyKeyboardHost.speakPassword(said.text, said.pitch)
+    }
+  }
+
+  /**
+   * The text and selection of the field of [connection], read together where the field gives its
+   * extracted text, or null where it gives no text. With [monitor], the field reports its later
+   * changes to [onUpdateExtractedText].
+   */
+  private fun readField(connection: InputConnection, monitor: Boolean): PasswordSpeech.Field? {
+    val request = ExtractedTextRequest().apply { token = PASSWORD_TOKEN }
+    val extracted =
+      connection.getExtractedText(
+        request,
+        if (monitor) InputConnection.GET_EXTRACTED_TEXT_MONITOR else 0,
+      )
+    val text = extracted?.text
+    if (text != null) {
+      val start = minOf(extracted.selectionStart, extracted.selectionEnd)
+      val end = maxOf(extracted.selectionStart, extracted.selectionEnd)
+      if (start >= 0 && end <= text.length) {
+        return PasswordSpeech.Field(text.toString(), start, end)
+      }
+    }
+    val before = connection.getTextBeforeCursor(MAX_PASSWORD, 0) ?: return null
+    val after = connection.getTextAfterCursor(MAX_PASSWORD, 0) ?: return null
+    val selected = connection.getSelectedText(0) ?: ""
+    return PasswordSpeech.Field(
+      "$before$selected$after",
+      before.length,
+      before.length + selected.length,
+    )
   }
 
   /**
@@ -545,6 +653,12 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     const val MAX_EMOJI = 200
     const val PREF_RECENT = "pref_sandfly_keyboard_recent_"
     const val MAX_RECENT = 20
+
+    /** The token of the extracted text requests that follow a password field. */
+    const val PASSWORD_TOKEN = 0x5046
+
+    /** The most characters read each side of the cursor where a field gives no extracted text. */
+    const val MAX_PASSWORD = 1000
 
     /** The values of the held keys setting. */
     const val HELD_ALT = "alt"

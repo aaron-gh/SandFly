@@ -554,4 +554,20 @@ class KeymapTest {
       }
     }
   }
+
+  @Test
+  fun keyboardPhoneKeymapsSpellThePasswordFieldWithSandFlyKeyY() {
+    val key = Commands.shortcutKey(context.getString(R.string.shortcut_value_spell_password_field))
+    for (keymap in listOf(Keymap.KEYBOARD_PHONE, Keymap.KEYBOARD_PHONE_SINGLE_KEYS)) {
+      for (sandFlyKey in keymap.sandFlyKeys) {
+        assertEquals(
+          "$keymap with $sandFlyKey",
+          KeyCombo(0, 0, KeyEvent.KEYCODE_Y, true),
+          defaults(keymap, sandFlyKey)[key],
+        )
+      }
+    }
+    // Other keymaps have no default.
+    assertEquals(null, defaults(Keymap.SANDFLY, Keymap.SANDFLY.nativeKey)[key])
+  }
 }

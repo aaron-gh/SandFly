@@ -923,6 +923,11 @@ object Commands {
           R.string.shortcut_toggle_editing_mode,
           available = !FormFactorUtils.isAndroidWear(),
         )
+        gesture(
+          R.string.shortcut_value_spell_password_field,
+          R.string.shortcut_spell_password_field,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
         gesture(
           R.string.shortcut_value_switch_keyboard,
