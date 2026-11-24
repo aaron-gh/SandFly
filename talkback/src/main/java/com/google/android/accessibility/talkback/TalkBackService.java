@@ -320,6 +320,7 @@ import com.google.android.accessibility.talkback.report.ProblemReportSender;
 import com.google.android.accessibility.talkback.report.ReportInbox;
 import com.google.android.accessibility.talkback.report.StallLog;
 import com.google.android.accessibility.talkback.report.TurnOffLog;
+import com.google.android.accessibility.talkback.report.EnterKeyLog;
 import com.google.android.accessibility.talkback.report.VolumeKeyLog;
 import com.google.android.accessibility.talkback.translation.AutomaticTranslation;
 import com.google.android.accessibility.talkback.translation.WordLanguageGuesser;
@@ -1815,6 +1816,14 @@ public class TalkBackService extends AccessibilityServiceCompat
     boolean result = onKeyEventInternal(keyEvent);
     if (result && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
       SandFlyKeyboardHost.onKeyTaken();
+    }
+    if (EnterKeyLog.isLogged(keyEvent.getKeyCode())
+        && keyEvent.getAction() == KeyEvent.ACTION_DOWN
+        && keyEvent.getRepeatCount() == 0) {
+      EnterKeyLog.onKeyDown(
+          keyEvent,
+          result,
+          keyComboManager == null ? "no keyboard shortcuts" : keyComboManager.describeEnterState());
     }
     if (VolumeKeyPresses.isVolumeKey(keyEvent.getKeyCode())) {
       VolumeKeyLog.onKeyEvent(

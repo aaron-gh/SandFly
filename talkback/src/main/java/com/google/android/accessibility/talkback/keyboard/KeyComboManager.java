@@ -57,6 +57,7 @@ import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.report.EnterKeyLog;
 import com.google.android.accessibility.talkback.review.ScreenReview;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
@@ -84,6 +85,7 @@ import com.google.common.collect.ImmutableSet;
 import java.time.Duration;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executors;
@@ -603,9 +605,61 @@ public class KeyComboManager
     if (event.getAction() == KeyEvent.ACTION_DOWN
         && !KeyEvent.isModifierKey(event.getKeyCode())
         && !isEnterKey(event.getKeyCode())) {
+      if (navigatedSinceTyping && !handled) {
+        EnterKeyLog.note(
+            "Typing again after "
+                + (event.isPrintingKey()
+                    ? "a printing key"
+                    : KeyEvent.keyCodeToString(event.getKeyCode()))
+                + " went to the app");
+      }
       navigatedSinceTyping = handled;
     }
     return handled;
+  }
+
+  /**
+   * The state that decides where Enter goes, for the Enter key log: whether the user is typing,
+   * and the kinds and view IDs of the items with SandFly focus and input focus, without their text.
+   */
+  public String describeEnterState() {
+    @Nullable Boolean editing = SandFlyKeyboardHost.isEditing();
+    @Nullable AccessibilityNodeInfoCompat focus =
+        accessibilityFocusMonitor == null
+            ? null
+            : accessibilityFocusMonitor.getAccessibilityFocus(/* useInputFocusIfEmpty= */ false);
+    @Nullable AccessibilityNodeInfoCompat inputFocus =
+        accessibilityFocusMonitor == null ? null : accessibilityFocusMonitor.getInputFocus();
+    return String.format(
+        Locale.ROOT,
+        "typing %s, moved since typing %s, SandFly keyboard %s, SandFly focus %s, input focus %s,"
+            + " SandFly focus on input focus %s, keymap %s",
+        yesNo(isTyping()),
+        yesNo(navigatedSinceTyping),
+        editing == null ? "not in use" : (editing ? "editing" : "not editing"),
+        describeForLog(focus),
+        describeForLog(inputFocus),
+        yesNo(focus != null && focus.equals(inputFocus)),
+        getKeymap());
+  }
+
+  private static String yesNo(boolean value) {
+    return value ? "yes" : "no";
+  }
+
+  /** The kind and view ID of {@code node}, without its text. */
+  private static String describeForLog(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return "none";
+    }
+    return "["
+        + node.getClassName()
+        + " "
+        + node.getViewIdResourceName()
+        + (node.isEditable() ? " editable" : "")
+        + (node.isFocused() ? " focused" : "")
+        + (AccessibilityNodeInfoUtils.isClickable(node) ? " clickable" : "")
+        + "]";
   }
 
   @Override
@@ -640,6 +694,14 @@ public class KeyComboManager
     }
     // A new screen starts with typing where a text field has input focus; a touch moves around.
     if (event.getEventType() == AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED) {
+      if (navigatedSinceTyping) {
+        EnterKeyLog.note(
+            String.format(
+                Locale.ROOT,
+                "Typing again after a window change in %s, content change types %d",
+                event.getPackageName(),
+                event.getContentChangeTypes()));
+      }
       navigatedSinceTyping = false;
     } else if (event.getEventType() == AccessibilityEvent.TYPE_TOUCH_INTERACTION_START) {
       navigatedSinceTyping = true;
