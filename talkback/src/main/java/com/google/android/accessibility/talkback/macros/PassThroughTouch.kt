@@ -25,6 +25,7 @@ import android.graphics.Region
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.os.SystemClock
 import android.view.ViewConfiguration
 import androidx.annotation.ChecksSdkIntAtLeast
 import com.google.android.accessibility.talkback.Feedback
@@ -52,6 +53,12 @@ object PassThroughTouch {
 
   /** The length of each part of a touch held by [hold]. */
   const val HOLD_STEP_MS = 250L
+
+  /**
+   * How far a part of a touch that stays in place moves while the touch continues: to a point this
+   * far beside it, then back. Far less than the touch slop, so apps take it as a touch held still.
+   */
+  const val NUDGE_PX = 1f
 
   private val main = Handler(Looper.getMainLooper())
 
@@ -132,8 +139,8 @@ object PassThroughTouch {
 
   /**
    * Touches [point] and holds the touch down until [stopped] turns true, then lifts it and calls
-   * [done]. The touch is dispatched in parts of [HOLD_STEP_MS], so it lifts at most that long after
-   * [stopped] turns true. Returns false, without calling [done], when the touch can't start, as
+   * [done]. The touch is dispatched in parts of [HOLD_STEP_MS], each moving [NUDGE_PX] aside or
+   * back, so it lifts at most that long after [stopped] turns true. Returns false, without calling [done], when the touch can't start, as
    * [perform] does.
    */
   internal fun hold(
@@ -146,6 +153,43 @@ object PassThroughTouch {
     if (service.feedbackReturner == null) return false
     val part = TouchSegment(point.x, point.y, point.x, point.y, HOLD_STEP_MS, true)
     return performParts(service, { part }, stopped, done)
+  }
+
+  /** How a touch ended, as logged. */
+  private enum class Ending {
+    /** Every part was performed and the touch lifted. */
+    COMPLETED,
+    /** Stopped by the caller; the touch lifted where it was. */
+    STOPPED,
+    /** Android cancelled a part: another gesture, a real touch or touch handling changing. */
+    CANCELLED,
+    /** Android didn't take a part, or there was none. */
+    NOT_DISPATCHED,
+  }
+
+  /**
+   * The part [segment] as it is dispatched, after [previous], the part dispatched before it, or
+   * first when null. It starts where [previous] ended, as a continued stroke has to. A part that
+   * continues without moving goes [NUDGE_PX] to a point beside it, or back from there: Android sends
+   * no event for a part of a continued touch that doesn't move. The first such part would then be
+   * reported done as soon as the touch goes down, and the next, with no event at all, cancelled,
+   * while the app keeps the touch down. A part that lifts without moving lifts where the touch is.
+   * [maxX] is the largest x on the screen.
+   */
+  internal fun dispatchedPart(segment: TouchSegment, previous: TouchSegment?, maxX: Float): TouchSegment {
+    val fromX = previous?.toX ?: segment.fromX
+    val fromY = previous?.toY ?: segment.fromY
+    return when {
+      segment.moves -> segment.copy(fromX = fromX, fromY = fromY)
+      !segment.willContinue -> segment.copy(fromX = fromX, fromY = fromY, toX = fromX, toY = fromY)
+      fromX == segment.fromX && fromY == segment.fromY -> {
+        val besideX =
+          if (segment.fromX + NUDGE_PX <= maxX) segment.fromX + NUDGE_PX
+          else segment.fromX - NUDGE_PX
+        segment.copy(toX = besideX)
+      }
+      else -> segment.copy(fromX = fromX, fromY = fromY)
+    }
   }
 
   /**
@@ -161,8 +205,9 @@ object PassThroughTouch {
   ): Boolean {
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R) return false
     val pipeline = service.feedbackReturner ?: return false
+    val size = ScreenUtils.getRealScreenSize(service)
+    val maxX = (size.x - 1).toFloat()
     if (holds == 0) {
-      val size = ScreenUtils.getRealScreenSize(service)
       pipeline.returnFeedback(
         EVENT_ID_UNTRACKED,
         Feedback.passThroughMode(LOCK_PASS_THROUGH, Region(0, 0, size.x, size.y)),
@@ -170,23 +215,34 @@ object PassThroughTouch {
     }
     holds++
     var ended = false
-    val end = { performed: Boolean ->
+    // When the touch went down, in uptime, or 0 before it did.
+    var downTime = 0L
+    // The parts dispatched so far.
+    var parts = 0
+    val end = { ending: Ending ->
       if (!ended) {
         ended = true
         holds--
         if (holds == 0) {
           pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.passThroughMode(LOCK_PASS_THROUGH, null))
         }
-        done(performed)
+        LogUtils.w(
+          TAG,
+          "Touch ended: %s, after %d parts, %d ms after it went down",
+          ending,
+          parts,
+          if (downTime == 0L) 0L else SystemClock.uptimeMillis() - downTime,
+        )
+        done(ending == Ending.COMPLETED)
       }
     }
-    // The stroke and segment that ended last, which the next one continues.
+    // The stroke and part, as dispatched, that ended last, which the next one continues.
     var previous: GestureDescription.StrokeDescription? = null
-    var previousSegment: TouchSegment? = null
+    var previousPart: TouchSegment? = null
     lateinit var dispatch: (Int) -> Unit
     dispatch = dispatch@{ i ->
       val stop = stopped()
-      val last = previousSegment
+      val last = previousPart
       val segment =
         when {
           // No part left: the touch lifts where it is.
@@ -196,38 +252,61 @@ object PassThroughTouch {
           else -> last.lift()
         }
       if (segment == null) {
-        end(false)
+        // Nothing was performed.
+        end(if (stop) Ending.STOPPED else Ending.NOT_DISPATCHED)
         return@dispatch
       }
       val continues = segment.willContinue && !stop
+      val dispatched = dispatchedPart(segment.copy(willContinue = continues), last, maxX)
       val path =
         Path().apply {
-          moveTo(segment.fromX, segment.fromY)
-          if (segment.moves) lineTo(segment.toX, segment.toY)
+          moveTo(dispatched.fromX, dispatched.fromY)
+          if (dispatched.moves) lineTo(dispatched.toX, dispatched.toY)
         }
       try {
         val stroke =
-          previous?.continueStroke(path, 0, segment.durationMs, continues)
-            ?: GestureDescription.StrokeDescription(path, 0, segment.durationMs, continues)
+          previous?.continueStroke(path, 0, dispatched.durationMs, continues)
+            ?: GestureDescription.StrokeDescription(path, 0, dispatched.durationMs, continues)
         val callback =
           object : AccessibilityService.GestureResultCallback() {
             override fun onCompleted(description: GestureDescription) {
               previous = stroke
-              previousSegment = segment
+              previousPart = dispatched
               when {
-                stop -> end(false)
+                stop -> end(Ending.STOPPED)
                 continues -> dispatch(i + 1)
-                else -> end(true)
+                else -> end(Ending.COMPLETED)
               }
             }
 
-            override fun onCancelled(description: GestureDescription) = end(false)
+            override fun onCancelled(description: GestureDescription) {
+              LogUtils.w(TAG, "Touch part %d cancelled", i)
+              end(Ending.CANCELLED)
+            }
           }
         val gesture = GestureDescription.Builder().addStroke(stroke).build()
-        if (!service.dispatchGesture(gesture, callback, main)) end(false)
+        if (!service.dispatchGesture(gesture, callback, main)) {
+          end(Ending.NOT_DISPATCHED)
+          return@dispatch
+        }
+        parts++
+        if (i == 0) {
+          downTime = SystemClock.uptimeMillis()
+          LogUtils.w(TAG, "Touch going down at %.1f, %.1f", dispatched.fromX, dispatched.fromY)
+        }
+        if (!continues) {
+          LogUtils.w(
+            TAG,
+            "Touch lifting at %.1f, %.1f in %d ms: %s",
+            dispatched.toX,
+            dispatched.toY,
+            dispatched.durationMs,
+            if (stop) "stopped" else "last part",
+          )
+        }
       } catch (e: RuntimeException) {
         LogUtils.w(TAG, "Cannot touch: %s", e)
-        end(false)
+        end(Ending.NOT_DISPATCHED)
       }
     }
     // Android applies the pass-through region a moment later.
