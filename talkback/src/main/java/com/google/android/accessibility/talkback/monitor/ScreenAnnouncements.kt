@@ -57,6 +57,12 @@ object ScreenAnnouncementSettings {
   const val SCREEN_OFF_RINGER = "pref_screen_off_ringer_mode"
   const val SAY_UNLOCKED = "pref_unlock_say_unlocked"
 
+  /**
+   * Speaks the screen-off and unlock announcements during media playback, which otherwise silences
+   * them. The screen-on announcement is always spoken during media playback.
+   */
+  const val OVER_MEDIA = "pref_screen_announcements_over_media"
+
   /** The screen-on time switch, which is older than the other events' time switches. */
   const val SCREEN_ON_TIME = "pref_speak_time_key"
 
@@ -139,7 +145,12 @@ object ScreenAnnouncementSettings {
    * default in the resources.
    */
   val DEFAULTS: Map<String, Boolean> =
-    mapOf(SAY_SCREEN_OFF to true, SCREEN_OFF_RINGER to true, SAY_UNLOCKED to true) +
+    mapOf(
+      SAY_SCREEN_OFF to true,
+      SCREEN_OFF_RINGER to true,
+      SAY_UNLOCKED to true,
+      OVER_MEDIA to false,
+    ) +
       ScreenEvent.entries.flatMap { event ->
         listOfNotNull(
           timeKey(event).takeUnless { event == ScreenEvent.SCREEN_ON },

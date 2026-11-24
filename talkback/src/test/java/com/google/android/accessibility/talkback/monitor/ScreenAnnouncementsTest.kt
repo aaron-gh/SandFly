@@ -75,6 +75,14 @@ class ScreenAnnouncementsTest {
   }
 
   @Test
+  fun speakingDuringMediaPlaybackIsOffByDefault() {
+    val prefs = FakeSharedPreferences()
+    assertFalse(ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.OVER_MEDIA))
+    prefs.edit().putBoolean(ScreenAnnouncementSettings.OVER_MEDIA, true).apply()
+    assertTrue(ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.OVER_MEDIA))
+  }
+
+  @Test
   fun screenOnStatusIsChosenItemByItemInAFixedOrder() {
     val prefs = FakeSharedPreferences()
     prefs

@@ -384,7 +384,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
             SpeakOptions.create()
                 .setQueueMode(
                     SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
-                .setFlags(FeedbackItem.FLAG_SKIP_DUPLICATE);
+                .setFlags(FeedbackItem.FLAG_SKIP_DUPLICATE | overMediaFlag(prefs));
         if (ttsText.length() > 0) {
           pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
         }
@@ -444,7 +444,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
               SpeakOptions.create()
                   .setQueueMode(
                       SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
-                  .setFlags(FeedbackItem.FLAG_NO_HISTORY);
+                  .setFlags(
+                      FeedbackItem.FLAG_NO_HISTORY
+                          | overMediaFlag(SharedPreferencesUtils.getSharedPreferences(service)));
           Feedback.Part.@Nullable Builder feedback = null;
           if (screenOffSoundVolume >= 0) {
             // Normally we'll play the volume beep on the ring stream.
@@ -461,6 +463,13 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
             pipeline.returnFeedback(eventId, feedback);
           }
         });
+  }
+
+  /** The flag that speaks an announcement during media playback while the setting is on. */
+  private static int overMediaFlag(SharedPreferences prefs) {
+    return ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.OVER_MEDIA)
+        ? FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
+        : 0;
   }
 
   /** "Screen off", the ringer mode and the items chosen for the screen turning off. */
