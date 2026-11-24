@@ -23,9 +23,9 @@ import android.os.Bundle;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import androidx.preference.PreferenceFragmentCompat;
-import com.google.android.accessibility.braille.common.BrailleStringUtils;
 import com.google.android.accessibility.braille.common.R;
 import com.google.android.accessibility.braille.common.translate.BrailleLanguages;
+import com.google.android.accessibility.braille.common.translate.BrailleLanguages.Code;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.preference.PreferencesActivity;
 import java.text.Collator;
@@ -75,8 +75,10 @@ public class AddLanguageActivity extends PreferencesActivity {
     }
 
     private void initPreferences() {
+      List<Code> codes = BrailleLanguages.getAvailableCodes(getContext());
       List<Locale> locales =
-          BrailleLanguages.getAvailableCodes(getContext()).stream()
+          codes.stream()
+              .filter(code -> !code.hasNoLanguage())
               .map(code -> Locale.forLanguageTag(code.getLocale().getLanguage()))
               .distinct()
               .collect(Collectors.toList());
@@ -96,6 +98,10 @@ public class AddLanguageActivity extends PreferencesActivity {
       if (systemLocaleIndex != -1) {
         locales.add(/* index= */ 0, locales.remove(systemLocaleIndex));
       }
+      // Tables of no language, such as Unicode braille, follow the languages.
+      if (codes.stream().anyMatch(Code::hasNoLanguage)) {
+        locales.add(BrailleLanguages.LOCALE_NONE);
+      }
       for (Locale locale : locales) {
         localeCategoryPreference.addPreference(createAvailableLocalePreference(locale));
       }
@@ -106,7 +112,7 @@ public class AddLanguageActivity extends PreferencesActivity {
 
     private Preference createAvailableLocalePreference(Locale locale) {
       Preference preference = new Preference(getContext());
-      preference.setTitle(BrailleStringUtils.toCharacterTitleCase(locale.getDisplayLanguage()));
+      preference.setTitle(LocaleLanguageActivity.title(getContext(), locale));
       preference.setOnPreferenceClickListener(
           preference1 -> {
             Intent intent = new Intent(getContext(), LocaleLanguageActivity.class);
