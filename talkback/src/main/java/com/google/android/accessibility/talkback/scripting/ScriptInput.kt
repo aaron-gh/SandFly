@@ -99,6 +99,8 @@ object ScriptInput {
       "fourFingerSwipeLeft" to AccessibilityService.GESTURE_4_FINGER_SWIPE_LEFT,
       "fourFingerSwipeRight" to AccessibilityService.GESTURE_4_FINGER_SWIPE_RIGHT,
       // SandFly's own gestures, which it recognizes only while a command or a script uses them.
+      "tripleTap" to GestureManifold.GESTURE_TRIPLE_TAP,
+      "quadrupleTap" to GestureManifold.GESTURE_QUADRUPLE_TAP,
       "edgeSwipeUpFromBottom" to GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM,
       "edgeLongSwipeUpFromBottom" to GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM,
       "edgeSwipeDownFromTopLeft" to GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT,

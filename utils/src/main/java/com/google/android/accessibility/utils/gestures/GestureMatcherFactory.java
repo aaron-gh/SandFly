@@ -90,6 +90,9 @@ class GestureMatcherFactory {
     // Start with double tap.
     MAPPER_GESTURE_DOUBLE_TAP(GESTURE_DOUBLE_TAP, 1, 2, NONE, NONE),
     MAPPER_GESTURE_DOUBLE_TAP_AND_HOLD(GESTURE_DOUBLE_TAP_AND_HOLD, 1, 2, true, NONE, NONE),
+    // Triple and quadruple taps with one finger.
+    MAPPER_GESTURE_TRIPLE_TAP(GestureManifold.GESTURE_TRIPLE_TAP, 1, 3, NONE, NONE),
+    MAPPER_GESTURE_QUADRUPLE_TAP(GestureManifold.GESTURE_QUADRUPLE_TAP, 1, 4, NONE, NONE),
     // Second-finger tap.
     MAPPER_GESTURE_FAKED_SPLIT_TYPING(
         GestureManifold.GESTURE_FAKED_SPLIT_TYPING, 1, 1, true, NONE, NONE),
@@ -524,6 +527,16 @@ class GestureMatcherFactory {
         } else {
           return null;
         }
+      }
+      // triple and quadruple taps
+      if (gestureMatchConfig.tap > 2 && !gestureMatchConfig.isHold) {
+        return new MultiTap(
+            context,
+            gestureMatchConfig.tap,
+            gestureMatchConfig.gestureId,
+            listener,
+            configResolver,
+            logger);
       }
       // double-taps
       if (gestureMatchConfig.tap == 2) {

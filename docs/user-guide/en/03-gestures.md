@@ -8,18 +8,20 @@ The commands that each gesture runs by default are listed in [](#appendix-gestur
 
 A touch that rests on the screen or moves slowly is touch exploration: SandFly reads the item under the finger. A touch that moves quickly, or taps, is a gesture. See [](#reading) for touch exploration.
 
-On Android 13 and later, SandFly recognizes gestures itself. Many gestures in this chapter need this: the rotor, edge gestures, corner gestures, the scrub, pinch and spread, swipe and hold, three-part swipes, two-stroke swipes, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers, the two-finger double-tap at the top and bottom of the screen and the four-finger taps on the top or bottom half of the screen. The timing settings on the **Gestures** screen need it too. Gestures with two or more fingers need Android 11 or later.
+On Android 13 and later, SandFly recognizes gestures itself. Many gestures in this chapter need this: the rotor, edge gestures, corner gestures, the scrub, pinch and spread, swipe and hold, three-part swipes, two-stroke swipes, tap then swipe, two-finger angle gestures, the one-finger triple-tap and quadruple-tap, the quadruple-tap with three fingers, the two-finger double-tap at the top and bottom of the screen and the four-finger taps on the top or bottom half of the screen. The timing settings on the **Gestures** screen need it too. Gestures with two or more fingers need Android 11 or later.
 
 Recognition by SandFly is controlled by **Developer settings** > **Handle gestures in SandFly**, which is on by default. When you turn it off, Android recognizes gestures, and the gestures and settings above are not available. Turn SandFly off and on again after you change this setting.
 
 ### Taps {#gestures-taps}
 
-- **One finger**: double-tap activates the focused item, and double-tap and hold touches and holds it. These gestures can't be changed.
+- **One finger**: double-tap activates the focused item, and double-tap and hold touches and holds it. These gestures can't be changed. **Triple-tap** and **Quadruple-tap**, in the **1 finger** category, do nothing by default and work anywhere on the screen.
 - **Two, three and four fingers**: a tap, double-tap and triple-tap with each number of fingers, and double-tap and hold. Two and three fingers also have triple-tap and hold, and three fingers have tap and hold and a quadruple-tap.
 - **Two fingers at the top and bottom**: **Double-tap with 2 fingers, top and bottom** is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third runs it instead of **Double-tap with 2 fingers**. Top and bottom follow the screen as displayed, also in landscape.
 - **Four fingers on half of the screen**: **Tap with 4 fingers on top half** and **Tap with 4 fingers on bottom half** are separate gestures. While one of them has a command, a four-finger tap on that half runs it instead of **Tap with 4 fingers**.
 
 A tap with two, three or four fingers runs its command as the fingers lift, unless a longer gesture that starts with the same taps has a command, such as a further tap, a tap and hold, or a tap then swipe. Then SandFly waits for the next tap. When any finger moves during a multi-finger tap, the touch is no longer a tap. A quadruple-tap with three fingers always runs at once.
+
+A one-finger double-tap runs as the finger lifts, unless **Triple-tap** or **Quadruple-tap** has a command. Then SandFly waits for a further tap, and a double-tap activates after that wait. A triple-tap waits only while **Quadruple-tap** has a command. In a corner with a corner gesture, taps are corner taps; see [](#gestures-corners).
 
 **Time between one-finger taps** sets how long SandFly waits for a further one-finger tap. See [](#gestures-timing).
 
