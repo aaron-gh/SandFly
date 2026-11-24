@@ -31,6 +31,7 @@ import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.AppGestures
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneInCallService
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -247,7 +248,17 @@ class KeypadKeys(private val service: AccessibilityService) {
       GestureDescription.Builder()
         .addStroke(GestureDescription.StrokeDescription(path, 0, SWIPE_MS))
         .build()
-    return service.dispatchGesture(gesture, null, null)
+    // Where SandFly recognizes gestures itself, a plain dispatched swipe goes through its gesture
+    // detection, which takes it as a SandFly gesture, and touch lock drops it; as SandFly's own
+    // touch it goes to the lock screen as it is.
+    val sent =
+      if (SyntheticTouches.isAvailable()) {
+        SyntheticTouches.dispatch(service, gesture, SWIPE_MS)
+      } else {
+        service.dispatchGesture(gesture, null, null)
+      }
+    LogUtils.e(TAG, "PIN pad swipe sent: %s, as SandFly's own touch: %s", sent, SyntheticTouches.isAvailable())
+    return sent
   }
 
   private fun isInCall(): Boolean =
