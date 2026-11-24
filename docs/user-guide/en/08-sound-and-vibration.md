@@ -11,7 +11,7 @@ The **Sounds** group of **Sound and vibration** has these settings:
 - **Sound feedback**: plays the SandFly sounds. On by default. With it off, vibrations still play.
 - **Sound feedback volume**: the volume of the sounds, from 5 to 100 percent in steps of 5. The default is 50 percent.
 - **Sound themes**: opens the installed sound themes, control sounds and 3D audio. See [](#sound-themes).
-- **Actions available sound**: when the **Actions available** sound plays: **When the item gets focus**, the default, or **After the item is spoken**. See [](#sound-actions-available).
+- **Actions available sound**: when the **Actions available** sound plays: **Off**, **When the item gets focus**, the default, or **After the item is spoken**. See [](#sound-actions-available).
 
 The **Turn sound feedback (earcons) on or off** keyboard shortcut turns **Sound feedback** on or off. See [](#appendix-keyboard-shortcuts).
 
@@ -82,10 +82,11 @@ SandFly plays no sound when a gesture starts or ends. These sounds give feedback
 
 The **Actions available** sound plays for an item with actions of its app beyond the standard ones, such as Reply and Forward on a chat message in a messaging app. Activating, long pressing, scrolling, expanding and other standard actions don't count, so an ordinary button plays no **Actions available** sound. Keys of on-screen keyboards don't count either. The actions are in the **Actions** reading control and in the SandFly menu.
 
-The sound has no vibration of SandFly's own; a sound theme can give it one. To turn the sound off, turn off **Actions available** in **Individual sounds and vibrations** (see [](#sound-individual)).
+The sound has no vibration of SandFly's own; a sound theme can give it one.
 
 **Sound and vibration** > **Actions available sound** sets when it plays:
 
+- **Off**: the sound doesn't play.
 - **When the item gets focus**: after the focus sound. The default. A vibration that the theme gives it plays in place of the focus vibration.
 - **After the item is spoken**: once the description of the item has been spoken to the end. If you move on before then, it doesn't play.
 

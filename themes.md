@@ -260,7 +260,7 @@ vibration.
 item with custom actions of its app, which have a label and an ID
 that isn't one of Android's, such as Reply and Forward on a chat message. Android's actions, such as
 click, long click, scroll, expand and dismiss, don't count, and neither do keys of on-screen
-keyboards. **Sound and vibration** > **Actions available sound** sets when it plays: **When the
+keyboards. **Sound and vibration** > **Actions available sound** turns it **Off** or sets when it plays: **When the
 item gets focus**, after the focus sound, with its vibration in place of the focus vibration, or
 **After the item is spoken**.
 

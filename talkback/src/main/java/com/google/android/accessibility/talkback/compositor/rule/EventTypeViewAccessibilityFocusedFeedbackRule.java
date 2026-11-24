@@ -181,9 +181,11 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
 
     // An item with actions of its app plays the Actions available sound after the other sounds,
     // or once the item has been spoken. A vibration that a sound theme gives it is the one felt.
-    // Not when focus stayed at the end of a grid.
+    // Not when the sound is off, or when focus stayed at the end of a grid.
     int actionsEarcon =
-        (columnWrap != ColumnWrap.EDGE && ActionsAvailable.has(srcNode))
+        (globalVariables.isActionsSoundOn()
+                && columnWrap != ColumnWrap.EDGE
+                && ActionsAvailable.has(srcNode))
             ? R.raw.actions_available
             : -1;
 

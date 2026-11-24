@@ -774,7 +774,7 @@ With **Verbosity** > **Speak item type without a pause** on, SandFly joins the n
 TalkBack says that an item has actions only in its usage hint. SandFly also has:
 
 - **Verbosity** > **Speak Actions available**: says "Actions available" after an item with actions of its app, with usage hints on or off. With usage hints on, the hint then gives only the gesture that shows the actions, such as "Use tap with 2 fingers to view actions". Off by default.
-- The **Actions available** sound, two short rising tones. **Sound and vibration** > **Actions available sound** plays it **When the item gets focus**, after the focus sound, which is the default, or **After the item is spoken**. It has a switch in **Individual sounds and vibrations**, a sound theme can replace it, and a theme can give it a vibration; it has none of its own.
+- The **Actions available** sound, two short rising tones. **Sound and vibration** > **Actions available sound** turns it **Off** or plays it **When the item gets focus**, after the focus sound, which is the default, or **After the item is spoken**. It has a switch in **Individual sounds and vibrations**, a sound theme can replace it, and a theme can give it a vibration; it has none of its own.
 
 Both are for items with custom actions of their app, such as Reply and Forward on a chat message. Android's actions, such as activating, long pressing, scrolling and expanding, don't count, so an ordinary button has neither. Keys of on-screen keyboards don't count either.
 

@@ -5132,6 +5132,7 @@ public class TalkBackService extends AccessibilityServiceCompat
 
       // Update preferences: Speak Actions available, and when the Actions available sound plays.
       globalVariables.setSpeakActionsAvailable(ActionsAvailable.isSpoken(prefs));
+      globalVariables.setActionsSoundOn(ActionsAvailable.isSoundOn(prefs));
       globalVariables.setActionsSoundAfterSpeech(ActionsAvailable.isSoundAfterSpeech(prefs));
 
       // Update preference: speak phonetic letters.

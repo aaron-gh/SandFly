@@ -28,13 +28,19 @@ import com.google.android.accessibility.utils.Role
  * ones, such as Reply and Forward on a chat message.
  */
 object ActionsAvailable {
-  /** When the sound plays: [TIMING_FOCUS] or [TIMING_AFTER_SPEECH]. */
+  /** When the sound plays: [TIMING_OFF], [TIMING_FOCUS] or [TIMING_AFTER_SPEECH]. */
   const val PREF_SOUND_TIMING = "pref_actions_available_sound_timing"
+  const val TIMING_OFF = "off"
   const val TIMING_FOCUS = "focus"
   const val TIMING_AFTER_SPEECH = "after_speech"
 
   /** Whether "Actions available" is spoken after the item. Off by default. */
   const val PREF_SPEAK = "pref_speak_actions_available"
+
+  /** Whether the Actions available sound plays at all. */
+  @JvmStatic
+  fun isSoundOn(prefs: SharedPreferences): Boolean =
+    prefs.getString(PREF_SOUND_TIMING, TIMING_FOCUS) != TIMING_OFF
 
   @JvmStatic
   fun isSoundAfterSpeech(prefs: SharedPreferences): Boolean =

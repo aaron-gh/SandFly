@@ -107,4 +107,13 @@ class ActionsAvailableTest {
     assertTrue(ActionsAvailable.isSoundAfterSpeech(prefs))
     assertTrue(ActionsAvailable.isSpoken(prefs))
   }
+
+  @Test
+  fun soundIsOnUntilTurnedOff() {
+    val prefs = FakeSharedPreferences()
+    assertTrue(ActionsAvailable.isSoundOn(prefs))
+    prefs.edit().putString(ActionsAvailable.PREF_SOUND_TIMING, ActionsAvailable.TIMING_OFF).apply()
+    assertFalse(ActionsAvailable.isSoundOn(prefs))
+    assertFalse(ActionsAvailable.isSoundAfterSpeech(prefs))
+  }
 }

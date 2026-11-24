@@ -1880,6 +1880,8 @@
     </string-array>
     <!-- List setting: when the Actions available sound plays for an item with actions of its app. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_actions_available_sound">Actions available sound</string>
+    <!-- Actions available sound: the sound doesn't play. [CHAR_LIMIT=NONE] -->
+    <string name="value_actions_available_sound_off">Off</string>
     <!-- Actions available sound: plays with the focus sound. [CHAR_LIMIT=NONE] -->
     <string name="value_actions_available_sound_focus">When the item gets focus</string>
     <!-- Actions available sound: plays once the item's speech ends. [CHAR_LIMIT=NONE] -->
