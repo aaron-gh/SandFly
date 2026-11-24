@@ -15,6 +15,8 @@
     <string name="individual_sound_focus">Focus on an item</string>
     <!-- Sound played when focus moves to an item that can be activated. [CHAR LIMIT=60] -->
     <string name="individual_sound_focus_actionable">Focus on an actionable item</string>
+    <!-- Sound played for an item with actions of its app, such as Reply on a chat message. It has no sound of SandFly's own and plays only a sound chosen in Sound themes. [CHAR LIMIT=60] -->
+    <string name="individual_sound_actions_available">Actions available</string>
     <!-- Sound played when touch exploration finds nothing to focus under the finger. [CHAR LIMIT=60] -->
     <string name="individual_sound_view_entered">Touching an empty area</string>
     <!-- Sound played when an item is activated. [CHAR LIMIT=60] -->

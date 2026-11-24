@@ -659,6 +659,9 @@ public class AccessibilityNodeFeedbackUtils {
    *   <li>4. Otherwise, e.g. "Tap with 3 fingers" is configured to open TalkBack menu -> "Actions
    *       available, use tap with 3 fingers to view"
    * </ul>
+   *
+   * <p>With Speak Actions available on, an item with actions of its app gets no hint for the
+   * "Actions" item, as its description already says "Actions available".
    */
   public static CharSequence getHintForNodeActions(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
@@ -670,7 +673,10 @@ public class AccessibilityNodeFeedbackUtils {
       StringBuilder hint = new StringBuilder();
       if (!TextUtils.isEmpty(actionMenuItemName) && menuTypeList.contains(actionMenuItemName)) {
         CharSequence hintArgument = globalVariables.getGestureStringForActionShortcut();
-        if (!TextUtils.isEmpty(hintArgument)) {
+        if (globalVariables.getSpeakActionsAvailable() && ActionsAvailable.has(node)) {
+          // The item's description already said "Actions available".
+          menuTypeList.remove(actionMenuItemName);
+        } else if (!TextUtils.isEmpty(hintArgument)) {
           // Custom-Action is a configured gesture shortcut.
           hint.append(
                   context.getString(

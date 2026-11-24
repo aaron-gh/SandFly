@@ -118,6 +118,9 @@ object SoundVibrations {
     mapOf(
       "focus" to "view_hovered_pattern",
       "focus_actionable" to "view_actionable_pattern",
+      // No pattern of SandFly's own: only a sound theme gives it one.
+      IndividualFeedbackSettings.ACTIONS_AVAILABLE to
+        "${IndividualFeedbackSettings.ACTIONS_AVAILABLE}_pattern",
       "view_entered" to "view_entered_pattern",
       "tick" to "view_clicked_pattern",
       "long_clicked" to "view_long_clicked_pattern",

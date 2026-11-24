@@ -3886,6 +3886,20 @@
     <item name="web_control" type="id"/>
     <item name="web_landmark" type="id"/>
 
+    <!-- The Actions available sound. It has no sound file of SandFly's own: it plays only a sound
+         file of the sound theme, found by this name. -->
+    <item name="actions_available" type="id"/>
+
+    <!-- Actions available sound: values match ActionsAvailable. -->
+    <string-array name="pref_actions_available_sound_entries" translatable="false">
+        <item>@string/value_actions_available_sound_focus</item>
+        <item>@string/value_actions_available_sound_after_speech</item>
+    </string-array>
+    <string-array name="pref_actions_available_sound_values" translatable="false">
+        <item>focus</item>
+        <item>after_speech</item>
+    </string-array>
+
     <!-- Talkback Context Menu preferences -->
     <string name="pref_show_context_menu_custom_action_setting_key" translatable="false">pref_custom_action_menu_setting_key</string>
     <string name="pref_show_context_menu_text_entities_setting_key" translatable="false">pref_text_entities_menu_setting_key</string>
