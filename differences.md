@@ -1279,7 +1279,7 @@ In TalkBack, the braille keyboard follows the echo setting of the on-screen keyb
 
 ### Next braille table
 
-Hold dots 4, 5 and 6 and swipe down to switch to the next language of the braille keyboard. Contracted braille is turned on or off as it was when you last used that language, and SandFly announces the language and whether it's contracted. Speech changes to your first voice profile in that language, if you have one, and back to **SandFly default** when the new language has none. You can change the gesture in **Braille** > **Braille keyboard** > **Gestures**.
+Hold dots 4, 5 and 6 and swipe down to switch to the next language of the braille keyboard. Contracted braille is turned on or off as it was when you last used that language, and SandFly announces the language and whether it's contracted. Speech changes to your first voice profile in that language, if you have one, and back to **SandFly default** when the new language has none. Unicode braille keeps the voice in use. You can change the gesture in **Braille** > **Braille keyboard** > **Gestures**.
 
 ### Emoji search
 
@@ -1288,6 +1288,10 @@ Hold dots 4, 5 and 6 and swipe right to search for an emoji. Type words of its n
 ### Mongolian and Romanian braille
 
 The braille languages include Mongolian, uncontracted and contracted, from the liblouis tables, and **Romanian**, 6-dot uncontracted braille, besides **Romanian 8-dot Computer Braille**. Both are on the braille keyboard and on braille displays.
+
+### Unicode braille
+
+**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
 
 ### Custom braille characters
 

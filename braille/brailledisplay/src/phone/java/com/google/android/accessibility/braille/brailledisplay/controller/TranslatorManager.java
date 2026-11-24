@@ -24,6 +24,7 @@ import com.google.android.accessibility.braille.brailledisplay.R;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.translate.BrailleLanguages.Code;
 import com.google.android.accessibility.braille.translate.BrailleTranslator;
+import com.google.android.accessibility.braille.translate.SplitTranslator;
 import com.google.android.accessibility.braille.translate.TranslatorFactory;
 import com.google.common.base.Preconditions;
 import java.util.ArrayList;
@@ -129,6 +130,9 @@ public class TranslatorManager implements SharedPreferences.OnSharedPreferenceCh
   public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
     if (context.getString(R.string.pref_bd_output_code).equals(key)) {
       updateOutputTranslators();
+      if (BrailleUserPreferences.readCurrentActiveInputCodeAndCorrect(context).isInputOnly()) {
+        updateInputTranslator();
+      }
     } else if (context.getString(R.string.pref_brailleime_translator_code).equals(key)) {
       updateInputTranslator();
     } else if (context.getString(R.string.pref_braille_contracted_mode).equals(key)) {
@@ -152,6 +156,14 @@ public class TranslatorManager implements SharedPreferences.OnSharedPreferenceCh
     Code code = BrailleUserPreferences.readCurrentActiveInputCodeAndCorrect(context);
     boolean contracted = BrailleUserPreferences.readContractedMode(context);
     BrailleTranslator newTranslator = translatorFactory.create(context, code.name(), contracted);
+    if (code.isInputOnly()) {
+      // A typing-only table, such as Unicode braille, has no braille for the text of the field,
+      // which is shown in the reading table instead.
+      Code outputCode = BrailleUserPreferences.readCurrentActiveOutputCodeAndCorrect(context);
+      newTranslator =
+          new SplitTranslator(
+              newTranslator, translatorFactory.create(context, outputCode.name(), contracted));
+    }
     boolean changed = !newTranslator.equals(inputTranslator);
     inputTranslator = newTranslator;
     if (changed) {

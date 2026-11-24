@@ -82,7 +82,26 @@ public class BraillePreferenceUtils {
       Function<Context, Code> readCode,
       BiConsumer<Context, Code> writeCode,
       @Nullable OnPreferenceChangeListener onPreferenceChangeListener) {
-    List<Code> preferredCodes = BrailleUserPreferences.readAvailablePreferredCodes(context);
+    setupLanguageListPreference(
+        context,
+        listPreference,
+        BrailleUserPreferences.readAvailablePreferredCodes(context),
+        readCode,
+        writeCode,
+        onPreferenceChangeListener);
+  }
+
+  /**
+   * Configures the {@link ListPreference} object to choose one of {@code preferredCodes}, with
+   * appropriate listeners and value providers.
+   */
+  public static void setupLanguageListPreference(
+      Context context,
+      ListPreference listPreference,
+      List<Code> preferredCodes,
+      Function<Context, Code> readCode,
+      BiConsumer<Context, Code> writeCode,
+      @Nullable OnPreferenceChangeListener onPreferenceChangeListener) {
     listPreference.setEntryValues(
         preferredCodes.stream().map(Enum::name).toArray(CharSequence[]::new));
     listPreference.setEntries(
