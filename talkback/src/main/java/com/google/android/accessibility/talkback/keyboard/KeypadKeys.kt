@@ -113,7 +113,14 @@ class KeypadKeys(private val service: AccessibilityService) {
       // Repeats of a taken key.
       return true
     }
-    if (event.repeatCount > 0 || !event.hasNoModifiers() || isDigitKey(keyCode) || !isOn(service)) {
+    // Digit keys type for themselves, except on the lock screen, where one before the PIN pad shows
+    // opens it, as a letter does.
+    if (
+      event.repeatCount > 0 ||
+        !event.hasNoModifiers() ||
+        (isDigitKey(keyCode) && !isKeyguardLocked()) ||
+        !isOn(service)
+    ) {
       return false
     }
     val taken =
@@ -129,6 +136,9 @@ class KeypadKeys(private val service: AccessibilityService) {
     }
     return taken
   }
+
+  private fun isKeyguardLocked(): Boolean =
+    service.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true
 
   /** Clears what is waiting: keys held and digits for a PIN pad that is opening. */
   fun reset() {
