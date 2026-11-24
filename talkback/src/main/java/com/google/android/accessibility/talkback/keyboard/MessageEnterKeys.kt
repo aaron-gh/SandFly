@@ -17,10 +17,13 @@ package com.google.android.accessibility.talkback.keyboard
 
 import android.accessibilityservice.AccessibilityService
 import android.content.Context
+import android.graphics.Rect
 import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.TalkBackService
+import com.google.android.accessibility.talkback.macros.PassThroughTouch
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Locale
@@ -81,9 +84,38 @@ class MessageEnterKeys(private val context: Context) {
     val root = service.rootInActiveWindow ?: return false
     val packageName = root.packageName?.toString() ?: return false
     if (!isMessagingApp(packageName)) return false
-    val button = findSendButton(root) ?: return false
-    LogUtils.e(TAG, "Send key pressed the Send button on screen in %s", packageName)
-    return button.performAction(AccessibilityNodeInfo.ACTION_CLICK)
+    val button = findSendButton(root) ?: findSendLabel(root) ?: return false
+    if (button.performAction(AccessibilityNodeInfo.ACTION_CLICK)) {
+      LogUtils.e(TAG, "Send key clicked the Send button on screen in %s", packageName)
+      return true
+    }
+    // A Send button drawn by the app, such as blindGram's for a voice message being recorded, may
+    // not take the accessibility click: it is tapped instead.
+    val bounds = Rect().also(button::getBoundsInScreen)
+    val tapped = service is TalkBackService && PassThroughTouch.tap(service, bounds)
+    LogUtils.e(TAG, "Send key tapped the Send button on screen in %s: %s", packageName, tapped)
+    return tapped
+  }
+
+  /**
+   * Finds a visible item labelled Send that isn't marked clickable, as an app draws for its own
+   * buttons, among a few hundred items.
+   */
+  private fun findSendLabel(root: AccessibilityNodeInfo): AccessibilityNodeInfo? {
+    val queue = ArrayDeque<AccessibilityNodeInfo>()
+    queue.addLast(root)
+    var seen = 0
+    while (queue.isNotEmpty() && seen < MAX_NODES) {
+      val node = queue.removeFirst()
+      seen++
+      if (node.isVisibleToUser && !node.isEditable && isSendLabel(node.contentDescription ?: node.text)) {
+        return node
+      }
+      for (i in 0 until node.childCount) {
+        node.getChild(i)?.let(queue::addLast)
+      }
+    }
+    return null
   }
 
   fun reset() {
