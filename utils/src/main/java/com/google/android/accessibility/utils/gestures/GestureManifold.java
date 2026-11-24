@@ -267,6 +267,11 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   // tap while it has an action.
   public static final int GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM = -194;
 
+  // Three and four taps with one finger. Android has no one-finger gestures beyond the double tap,
+  // so SandFly's own detection adds these. Recognized only while they have an action.
+  public static final int GESTURE_TRIPLE_TAP = -195;
+  public static final int GESTURE_QUADRUPLE_TAP = -196;
+
   // Two-stroke swipes with a back-and-forth or angle swipe as either stroke, numbered down from
   // -1000, sixteen for each first stroke; see TwoStrokeSwipeIds.
   public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_DOWN = -1004;
@@ -666,10 +671,29 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   }
 
   /**
-   * Gives each plain multi-finger multi-tap the gestures that start with its taps and go on after
-   * them, such as more taps or a tap and hold with as many fingers.
+   * Gives each plain one-finger and multi-finger multi-tap the gestures that start with its taps and
+   * go on after them, such as more taps or a tap and hold with as many fingers.
    */
   private void setFollowingTapGestures(GestureConfigProvider configResolver) {
+    // One finger: a double or triple tap waits for a further tap only while a gesture of more taps
+    // has an action.
+    for (GestureMatcher matcher : gestures) {
+      if (matcher.getClass() != MultiTap.class) {
+        continue;
+      }
+      MultiTap taps = (MultiTap) matcher;
+      List<Integer> following = new ArrayList<>();
+      for (GestureMatcher other : gestures) {
+        if (other instanceof MultiTap longer && longer.continuesAfterTaps(taps.targetTaps)) {
+          following.add(other.getGestureId());
+        }
+      }
+      int[] gestureIds = new int[following.size()];
+      for (int i = 0; i < gestureIds.length; i++) {
+        gestureIds[i] = following.get(i);
+      }
+      taps.setFollowingGestures(gestureIds);
+    }
     for (GestureMatcher matcher : multiFingerGestures) {
       if (matcher.getClass() != MultiFingerMultiTap.class) {
         continue;

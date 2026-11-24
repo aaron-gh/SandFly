@@ -1046,6 +1046,8 @@
 
     <string name="pref_shortcut_1finger_2tap_key">pref_shortcut_one_finger_double_tap</string>
     <string name="pref_shortcut_1finger_2tap_hold_key">pref_shortcut_one_finger_double_tap_and_hold</string>
+    <string name="pref_shortcut_1finger_3tap_key" translatable="false">pref_shortcut_one_finger_triple_tap</string>
+    <string name="pref_shortcut_1finger_4tap_key" translatable="false">pref_shortcut_one_finger_quadruple_tap</string>
 
     <string name="pref_shortcut_2finger_1tap_key">pref_shortcut_two_finger_single_tap</string>
     <string name="pref_shortcut_2finger_2tap_key">pref_shortcut_two_finger_double_tap</string>
@@ -1438,6 +1440,8 @@
       <item>@string/pref_shortcut_right_and_down_key</item>
       <item>@string/pref_shortcut_right_and_up_key</item>
       <item>@string/pref_shortcut_left_and_down_key</item>
+      <item>@string/pref_shortcut_1finger_3tap_key</item>
+      <item>@string/pref_shortcut_1finger_4tap_key</item>
       <item>@string/pref_shortcut_up_and_hold_key</item>
       <item>@string/pref_shortcut_down_and_hold_key</item>
       <item>@string/pref_shortcut_left_and_hold_key</item>
@@ -2930,6 +2934,9 @@
       <!-- Start with double tap. -->
       <item>MAPPER_GESTURE_DOUBLE_TAP</item>
       <item>MAPPER_GESTURE_DOUBLE_TAP_AND_HOLD</item>
+      <!-- Triple and quadruple taps with one finger. -->
+      <item>MAPPER_GESTURE_TRIPLE_TAP</item>
+      <item>MAPPER_GESTURE_QUADRUPLE_TAP</item>
       <!-- Second-finger tap. -->
       <item>MAPPER_GESTURE_FAKED_SPLIT_TYPING</item>
       <item>MAPPER_GESTURE_FAKED_SPLIT_TYPING_AND_HOLD</item>
@@ -3380,6 +3387,8 @@
 
     <string name="pref_shortcut_1finger_2tap_default">@string/shortcut_value_action_setting_activate_current_action</string>
     <string name="pref_shortcut_1finger_2tap_hold_default">@string/shortcut_value_perform_long_click_action</string>
+    <string name="pref_shortcut_1finger_3tap_default">@string/shortcut_value_unassigned</string>
+    <string name="pref_shortcut_1finger_4tap_default">@string/shortcut_value_unassigned</string>
 
     <string name="pref_shortcut_2finger_1tap_default">@string/shortcut_value_pause_or_resume_feedback</string>
     <string name="pref_shortcut_2finger_2tap_default">@string/shortcut_value_dictate_or_media_control</string>

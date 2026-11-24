@@ -201,7 +201,7 @@ For every gesture and its settings, see the user guide chapter [Gestures](docs/u
 
 ### Gestures recognized by SandFly
 
-On Android 13 and later, SandFly recognizes gestures itself by default, instead of leaving this to Android, as the TalkBack source release does. Gesture recognition by SandFly is needed for the rotor, edge gestures and edge menus, corner gestures, the scrub, pinch and spread, swipe and hold, three-part and two-stroke swipes, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers, the four-finger taps on half of the screen, the timing settings on the **Gestures** screen and touch lock.
+On Android 13 and later, SandFly recognizes gestures itself by default, instead of leaving this to Android, as the TalkBack source release does. Gesture recognition by SandFly is needed for the rotor, edge gestures and edge menus, corner gestures, the scrub, pinch and spread, swipe and hold, three-part and two-stroke swipes, tap then swipe, two-finger angle gestures, the one-finger triple-tap and quadruple-tap, the quadruple-tap with three fingers, the four-finger taps on half of the screen, the timing settings on the **Gestures** screen and touch lock.
 
 To have Android recognize gestures again, turn off **Developer settings** > **Handle gestures in SandFly**, then turn SandFly off and on again. The gestures and settings above are then unavailable.
 
@@ -326,6 +326,10 @@ The 16 gestures are at the end of the **1 finger**, **1 finger back-and-forth** 
 ### Two-finger double-tap at the top and bottom
 
 **Double-tap with 2 fingers, top and bottom**, in **Gestures** > **2 fingers**, is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third, as displayed, runs it instead of **Double-tap with 2 fingers**. It is unassigned by default, requires Android 13 or later and **Handle gestures in SandFly** turned on, and isn't on watches.
+
+### One-finger triple-tap and quadruple-tap
+
+**Triple-tap** and **Quadruple-tap**, in **Gestures** > **1 finger**, are one-finger taps anywhere on the screen. TalkBack has no one-finger tap gestures beyond the double-tap. Both are unassigned by default. A one-finger double-tap runs at once while neither has a command; while one has a command, a double-tap waits for a further tap for **Time between one-finger taps**. A triple-tap waits only while **Quadruple-tap** has a command. They require Android 13 or later and **Handle gestures in SandFly** turned on, and aren't on watches.
 
 ### Gestures on the cover screen of a flip phone
 

@@ -108,6 +108,16 @@
         android:summary="%s"
         android:title="@string/title_pref_shortcut_right"/>
     <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_1finger_3tap_default"
+        android:key="@string/pref_shortcut_1finger_3tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_1finger_3tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
+        android:defaultValue="@string/pref_shortcut_1finger_4tap_default"
+        android:key="@string/pref_shortcut_1finger_4tap_key"
+        android:summary="%s"
+        android:title="@string/title_pref_shortcut_1finger_4tap"/>
+    <com.google.android.accessibility.talkback.preference.base.GestureListPreference
         android:defaultValue="@string/pref_shortcut_up_and_hold_default"
         android:key="@string/pref_shortcut_up_and_hold_key"
         android:summary="%s"
