@@ -24,7 +24,9 @@ import android.os.Handler
 import android.os.Looper
 import android.service.quicksettings.Tile
 import android.service.quicksettings.TileService
+import androidx.core.content.edit
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants
+import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.IOException
 
@@ -52,6 +54,7 @@ data class TileState(
  */
 object SystemTiles {
   private const val TAG = "SystemTiles"
+  private const val PREF_FOUND = "pref_system_tiles_found"
   /** The tiles that installed apps offer, by label. */
   fun appTiles(context: Context): List<AppTile> {
     val packageManager = context.packageManager
@@ -80,20 +83,57 @@ object SystemTiles {
   /**
    * Finds the system's own tiles, such as Hotspot, from SystemUI's dump when SandFly can read it,
    * giving itself what that needs through Shizuku first, and otherwise by looking through the
-   * system's quick settings, which takes a few seconds. [onDone] gets them, or null, on the main
-   * thread.
+   * system's quick settings, which takes a few seconds, unless [lookThrough] is false. [onDone]
+   * gets them, or null, on the main thread. The names the dump gives apps' tiles are kept too.
    */
-  fun find(context: Context, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
+  fun find(context: Context, lookThrough: Boolean = true, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
     val handler = Handler(Looper.getMainLooper())
+    val found: (List<QuickItem.SystemTile>?) -> Unit = { tiles ->
+      tiles?.let { remember(context, it) }
+      onDone(tiles?.filterNot { isAppTile(it.spec) })
+    }
     if (!canRead(context) && ShizukuGrants.isReady()) {
-      ShizukuGrants.requestAll(context, GRANTS) { handler.post { findNow(context, handler, onDone) } }
+      ShizukuGrants.requestAll(context, GRANTS) { handler.post { findNow(context, handler, lookThrough, found) } }
     } else {
-      findNow(context, handler, onDone)
+      findNow(context, handler, lookThrough, found)
     }
   }
 
-  private fun findNow(context: Context, handler: Handler, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
+  /** Keeps [tiles] as the ones [find] found last. */
+  internal fun remember(context: Context, tiles: List<QuickItem.SystemTile>) {
+    SharedPreferencesUtils.getSharedPreferences(context).edit {
+      putString(PREF_FOUND, tiles.joinToString("\n") { it.id })
+    }
+  }
+
+  /** The system's own tiles that [find] found last, which the lists of commands offer. */
+  fun lastFound(context: Context): List<QuickItem.SystemTile> =
+    remembered(context).filterNot { isAppTile(it.spec) }
+
+  /**
+   * The names that the system's quick settings gave apps' tiles when [find] last read them, by
+   * spec, such as a device's name that a tile shows in place of its own.
+   */
+  fun appTileNames(context: Context): Map<String, String> =
+    remembered(context).filter { isAppTile(it.spec) }.associate { it.spec to it.label }
+
+  private fun remembered(context: Context): List<QuickItem.SystemTile> =
+    SharedPreferencesUtils.getSharedPreferences(context)
+      .getString(PREF_FOUND, null)
+      .orEmpty()
+      .split('\n')
+      .mapNotNull { QuickItem.parse(it) as? QuickItem.SystemTile }
+
+  private fun isAppTile(spec: String): Boolean = spec.startsWith("custom(")
+
+  private fun findNow(
+    context: Context,
+    handler: Handler,
+    lookThrough: Boolean,
+    onDone: (List<QuickItem.SystemTile>?) -> Unit,
+  ) {
     if (!canRead(context)) {
+      if (!lookThrough) return onDone(null)
       SystemPanelClicker.scan { labels -> onDone(labels?.map { QuickItem.SystemTile("", it) }) }
       return
     }
@@ -105,9 +145,7 @@ object SystemTiles {
             null
           }
         val found =
-          tiles?.values?.filter { !it.spec.startsWith("custom(") && it.label != null }?.map {
-            QuickItem.SystemTile(it.spec, it.label!!)
-          }
+          tiles?.values?.filter { it.label != null }?.map { QuickItem.SystemTile(it.spec, it.label!!) }
         handler.post { onDone(found) }
       }, "QuickSettingsTiles")
       .start()

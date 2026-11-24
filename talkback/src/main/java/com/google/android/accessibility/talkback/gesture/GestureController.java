@@ -140,6 +140,7 @@ import com.google.android.accessibility.talkback.monitor.VolumeMonitor;
 import com.google.android.accessibility.talkback.monitor.VolumeMonitor.VolumeChangedListener;
 import com.google.android.accessibility.talkback.notifications.NotificationReader;
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules;
+import com.google.android.accessibility.talkback.quicksettings.TileCommands;
 import com.google.android.accessibility.talkback.recognition.LiveRecognition;
 import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptCommands;
@@ -652,6 +653,14 @@ public class GestureController {
             if (!ran) {
               pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.complete));
             }
+            return kotlin.Unit.INSTANCE;
+          });
+    } else if (TileCommands.isAction(action)) {
+      TileCommands.run(
+          service,
+          action,
+          text -> {
+            speak(text);
             return kotlin.Unit.INSTANCE;
           });
     } else if (Commands.keyboardActionOf(service, action) != null) {
