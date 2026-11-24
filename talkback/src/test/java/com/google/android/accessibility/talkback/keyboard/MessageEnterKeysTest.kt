@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.keyboard
 
+import android.view.KeyEvent
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -43,5 +44,15 @@ class MessageEnterKeysTest {
   fun onlyMessagingApps() {
     assertTrue(MessageEnterKeys.isMessagingApp("com.whatsapp"))
     assertFalse(MessageEnterKeys.isMessagingApp("com.google.android.gm"))
+  }
+
+  @Test
+  fun sendKeyAlwaysSendsEnterOnlyWhenOn() {
+    assertTrue(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_CALL, enterSendsMessages = false))
+    assertTrue(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_CALL, enterSendsMessages = true))
+    assertFalse(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_ENTER, enterSendsMessages = false))
+    assertTrue(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_ENTER, enterSendsMessages = true))
+    assertTrue(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_NUMPAD_ENTER, enterSendsMessages = true))
+    assertFalse(MessageEnterKeys.sendsMessage(KeyEvent.KEYCODE_A, enterSendsMessages = true))
   }
 }

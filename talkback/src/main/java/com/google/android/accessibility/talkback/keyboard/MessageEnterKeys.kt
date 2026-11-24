@@ -35,7 +35,7 @@ class MessageEnterKeys(private val context: Context) {
   private val takenKeys = mutableSetOf<Int>()
 
   /**
-   * Handles [event] when it is Enter in a message field. [inputFocus] gives the item with input
+   * Handles [event] when it is Enter or the Send key in a message field. [inputFocus] gives the item with input
    * focus, where the user is typing when [typing] says so; both are asked only for Enter.
    */
   fun onKeyEvent(
@@ -51,10 +51,9 @@ class MessageEnterKeys(private val context: Context) {
       return true
     }
     if (
-      (keyCode != KeyEvent.KEYCODE_ENTER && keyCode != KeyEvent.KEYCODE_NUMPAD_ENTER) ||
+      !sendsMessage(keyCode, isOn(context)) ||
         event.repeatCount > 0 ||
         !event.hasNoModifiers() ||
-        !isOn(context) ||
         !typing.asBoolean
     ) {
       return false
@@ -183,6 +182,16 @@ class MessageEnterKeys(private val context: Context) {
       )
 
     internal fun isMessagingApp(packageName: String): Boolean = packageName in MESSAGING_APPS
+
+    /**
+     * Whether a key sends the message in a message field: the Send key of a keyboard phone, such as
+     * the Zinwa Q25's, always does, as it would otherwise open the phone app; Enter does when
+     * [enterSendsMessages] is on.
+     */
+    internal fun sendsMessage(keyCode: Int, enterSendsMessages: Boolean): Boolean =
+      keyCode == KeyEvent.KEYCODE_CALL ||
+        (enterSendsMessages &&
+          (keyCode == KeyEvent.KEYCODE_ENTER || keyCode == KeyEvent.KEYCODE_NUMPAD_ENTER))
 
     /** Whether a view ID, such as com.whatsapp:id/send or Compose:Draft:Send, names a Send button. */
     internal fun isSendId(viewId: String?): Boolean {
