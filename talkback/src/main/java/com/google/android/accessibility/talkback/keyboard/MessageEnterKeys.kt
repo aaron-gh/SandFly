@@ -15,6 +15,7 @@
  */
 package com.google.android.accessibility.talkback.keyboard
 
+import android.accessibilityservice.AccessibilityService
 import android.content.Context
 import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
@@ -50,18 +51,19 @@ class MessageEnterKeys(private val context: Context) {
     if (takenKeys.contains(keyCode)) {
       return true
     }
-    if (
-      !sendsMessage(keyCode, isOn(context)) ||
-        event.repeatCount > 0 ||
-        !event.hasNoModifiers() ||
-        !typing.asBoolean
-    ) {
+    if (!sendsMessage(keyCode, isOn(context)) || event.repeatCount > 0 || !event.hasNoModifiers()) {
       return false
     }
-    val field = inputFocus.get() ?: return false
+    val typingNow = typing.asBoolean
+    // Outside the message field, the Send key still presses a Send button on screen, such as the
+    // one a messaging app shows for a voice message being recorded.
+    if (!typingNow && keyCode != KeyEvent.KEYCODE_CALL) {
+      return false
+    }
     val sent =
       try {
-        send(field)
+        val field = if (typingNow) inputFocus.get() else null
+        if (field != null) send(field) else pressSendOnScreen()
       } catch (e: RuntimeException) {
         // The app's window may go away while it is read.
         LogUtils.w(TAG, "Message not sent: %s", e)
@@ -71,6 +73,17 @@ class MessageEnterKeys(private val context: Context) {
       takenKeys.add(keyCode)
     }
     return sent
+  }
+
+  /** Presses the Send button of the messaging app in front, if it shows one. */
+  private fun pressSendOnScreen(): Boolean {
+    val service = context as? AccessibilityService ?: return false
+    val root = service.rootInActiveWindow ?: return false
+    val packageName = root.packageName?.toString() ?: return false
+    if (!isMessagingApp(packageName)) return false
+    val button = findSendButton(root) ?: return false
+    LogUtils.e(TAG, "Send key pressed the Send button on screen in %s", packageName)
+    return button.performAction(AccessibilityNodeInfo.ACTION_CLICK)
   }
 
   fun reset() {
