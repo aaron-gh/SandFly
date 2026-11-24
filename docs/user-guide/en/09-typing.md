@@ -36,7 +36,7 @@ On Android 13 and later, choosing one of the last three methods sets **Typing fo
 
 **Typing** > **Touch and hold delay when typing** sets how long you keep your finger on a key before SandFly long-presses it, for example to open the alternative characters of a key. The choices are 0.5, 1, 2, 3 and 5 seconds; the default is 3 seconds. The setting isn't available with the typing method **Hold finger to select any key, then double-tap**.
 
-With **Typing** > **Hold keys down after the touch and hold delay** on, SandFly presses the key down at the end of the delay and passes the rest of the touch to the keyboard, as a double-tap and hold does. The keyboard then handles the touch as a long press of its own, such as a Delete key that repeats while held. This applies with the lift-to-type methods, on all keyboards except Gboard and Pixelboard versions before 18.8. It's off by default.
+With **Typing** > **Hold keys down after the touch and hold delay** on, SandFly presses the key down at the end of the delay and passes the rest of the touch to the keyboard, as a double-tap and hold does. The keyboard then handles the touch as a long press of its own, such as a Delete key that repeats while held. This applies with the lift-to-type methods, on all keyboards except Gboard and Pixelboard: their keys are long-pressed, which opens the popup of alternative characters. It's off by default.
 
 #### Alternative characters in Gboard {#typing-gboard-alternatives}
 
