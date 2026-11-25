@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- Title of the setting on the Gestures screen that chooses which gestures SandFly starts from: SandFly's own or those of VoiceOver on iPhone. -->
+    <!-- Title of the setting on the Gestures screen that chooses which gestures SandFly starts from: SandFly's own, those of VoiceOver on iPhone or those of the BlackBerry 10 Screen Reader. -->
     <string name="title_pref_gesture_layout">Gesture layout</string>
     <!-- Name of SandFly's own gesture layout, in the Gesture layout list and the first-run dialog. -->
     <string name="gesture_layout_sandfly">SandFly gestures</string>
     <!-- Name of the gesture layout that matches VoiceOver on iPhone, in the Gesture layout list and the first-run dialog. Keep "VoiceOver" untranslated. -->
     <string name="gesture_layout_voiceover">VoiceOver gestures</string>
+    <!-- Name of the gesture layout that matches the BlackBerry 10 Screen Reader, in the Gesture layout list and the first-run dialog. Keep "BlackBerry" untranslated. -->
+    <string name="gesture_layout_blackberry">BlackBerry gestures</string>
     <!-- Title of the dialog shown the first time SandFly starts, which chooses the gesture layout. -->
     <string name="gesture_layout_dialog_title">Choose gestures</string>
     <!-- Title of the switch on the Gestures screen. On, two-finger swipes run the commands assigned to them; off, they scroll in the app. -->

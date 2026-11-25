@@ -33,6 +33,7 @@ A keymap is a set of keyboard shortcuts. SandFly has these keymaps:
 - **JAWS keymap**: the desktop keystrokes of JAWS, with its laptop keys for clicks and cursors, with the SandFly key as the JAWS key. Its SandFly key is Insert, Numpad Insert or Meta, Insert by default.
 - **Orca keymap**: the laptop layout of Orca, with the SandFly key as the Orca modifier. Its SandFly key is Insert, Numpad Insert, Meta or Alt, Insert by default.
 - **Keyboard phone keymap** and **Keyboard phone single-key keymap**: for phones with a built-in keyboard that has no Ctrl, Meta or arrow keys. See [](#keyboards-phones).
+- **BlackBerry keymap**: the keys of the BlackBerry 10 Screen Reader, for keyboard phones. See [](#keyboards-phones).
 - Keymaps that you make. See [](#keyboards-custom-keymaps).
 
 In the NVDA, JAWS and Orca keymaps, the arrow keys and Tab move without the SandFly key, as on a computer. See [](#keyboards-desktop).
@@ -316,9 +317,10 @@ The command is in the **Activation** category, so you can also assign it to a ge
 Keyboard phones are phones with a built-in keyboard that has letters, Shift, Alt and often Sym, but no Ctrl, Meta or arrow keys: the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25. SandFly recognizes these phones and uses the **Keyboard phone keymap** on them. You can choose either keymap for keyboard phones on any phone.
 
 - **Keyboard phone keymap**: the most used shortcuts are presses of keys that typing doesn't use, and work anywhere, text fields too. The SandFly key pressed alone moves to the next item, and Shift + the SandFly key to the previous item. Enter activates the item that SandFly focus moved to. Alt pressed twice plays or pauses media and answers calls. Alt + Shift held selects the next reading control. The other shortcuts are the SandFly key with a letter, such as SandFly key + J, I and K for reading controls, and T and B for the top and bottom of the screen.
+- **BlackBerry keymap**: the keyboard phone keymap with the keys of the BlackBerry 10 Screen Reader for an external keyboard, with the SandFly key in place of Ctrl. SandFly key + A reads from the top, and SandFly key + Shift + A from the focused item. SandFly key + Enter speaks the focused item. SandFly key + S pauses speech, and SandFly key + Shift + S hides or shows the screen. SandFly key + . says the title of the screen. SandFly key + Shift + T starts Quick Tasks; see [](#gestures-quick-tasks). The arrow keys, such as those of the Zinwa Q25 trackpad, move by the navigation setting with Right and Left, and choose the next and previous navigation setting with Up and Down. Shortcuts of the keyboard phone keymap on those keys move: long press to SandFly key + Shift + Enter, **Search on screen** to SandFly key + Shift + Space, **Open SandFly settings** to SandFly key + Shift + O, and **Describe image** to SandFly key + Z.
 - **Keyboard phone single-key keymap**: single keys run commands, such as Space for the next item and Shift + Space for the previous item, H for the next heading, and J, L, I and K for reading controls. Single keys work outside text fields being edited. The SandFly key with any of these keys does the same anywhere, text fields too, so SandFly key + Space moves out of a text field. Shift + Z locks or unlocks touch.
 
-In both keymaps:
+In all three keymaps:
 
 - Enter, pressed after SandFly focus moved to an item, activates that item. After you type, Enter goes to the app, so that it sends a message. Where SandFly focus is on the text field being edited, Enter goes to the app. On a text field that SandFly focus moved to, Enter activates the field, even where it has input focus.
 - The commands that need browse mode in other keymaps work without it.
@@ -333,7 +335,7 @@ For the full list of shortcuts, see [](#appendix-keyboard-shortcuts).
 
 #### The SandFly key on keyboard phones {#keyboards-phone-sandfly-key}
 
-The keyboard phone keymaps offer Sym, Ctrl, Right Shift, Fn, Right Alt, Alt and Meta as the SandFly key. By default, SandFly chooses a key that typing doesn't need on the phone:
+The keyboard phone keymaps and the BlackBerry keymap offer Sym, Ctrl, Right Shift, Fn, Right Alt, Alt and Meta as the SandFly key. By default, SandFly chooses a key that typing doesn't need on the phone:
 
 - Ctrl, on Unihertz phones whose keyboard settings set the Fn key to work as Ctrl, except the Titan 2 Elite.
 - Right Shift, on the Unihertz Titan 2 Elite, the Zinwa Q25 and BlackBerry phones with a right Shift key.

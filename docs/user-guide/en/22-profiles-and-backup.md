@@ -15,6 +15,19 @@ A profile can be used in two ways:
 
 A profile can hold the main SandFly settings, the braille keyboard settings and the braille display settings, including gestures, keyboard shortcuts, gesture profiles and the gesture profile in use. A profile doesn't hold API keys, the SandFly Pro license, the time of the last update check, installed scripts and their settings, sound theme drafts, or the state of this phone, such as which tutorials and dialogs were shown.
 
+### BlackBerry mode {#profiles-blackberry-mode}
+
+**BlackBerry mode**, in SandFly settings, makes SandFly work as the BlackBerry 10 Screen Reader did. The first time you turn it on, SandFly makes a settings profile, **BlackBerry mode**, and uses it now. The profile sets:
+
+- **Gestures** > **Gesture layout** to **BlackBerry gestures**, with **Handle two-finger swipes in SandFly** on. See [](#gestures-layout).
+- On keyboard phones, the **BlackBerry keymap**. See [](#keyboards-phones).
+- The **BlackBerry** sound theme, which SandFly installs: no sound when focus moves, and sounds for screen changes, clicks, scrolling, the end of a list, errors and the keyboard showing or hiding. **Control sounds and vibrations** are off. See [](#sound).
+- No usage hints, list and grid positions, actions available or keyboard shown and hidden announcements. Kinds of control are still said, and pitch changes are on.
+
+Every other setting stays as it is. To change what BlackBerry mode sets, change the settings of the **BlackBerry mode** profile; see [](#profiles-change-settings). Turning BlackBerry mode off stops using the profile, and turning it on again uses the profile with your changes. To start again from the defaults, delete the profile. **Turn BlackBerry mode on or off**, under **SandFly** on the **Commands** screen, does the same from a gesture or a key.
+
+BlackBerry mode is used everywhere, as **Use now** uses a profile, so it replaces another profile used that way.
+
 ### Add a settings profile {#profiles-add}
 
 1. Go to **Settings profiles** > **New settings profile**.

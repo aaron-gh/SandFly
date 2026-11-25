@@ -129,6 +129,7 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
+import com.google.android.accessibility.talkback.blackberry.BlackBerryMode;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping.TalkbackAction;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
 import com.google.android.accessibility.talkback.macros.MacroRecorder;
@@ -334,6 +335,7 @@ public class GestureController {
     // Before dictation, whose shutdown answers the recording of voice editing.
     VoiceEditing.shutdown();
     dictation.shutdown();
+    QuickTasks.stop();
   }
 
   /**
@@ -440,6 +442,8 @@ public class GestureController {
     R.string.shortcut_value_first_in_screen,
     R.string.shortcut_value_last_in_screen,
     R.string.shortcut_value_next_granularity,
+    R.string.shortcut_value_next_by_navigation_setting,
+    R.string.shortcut_value_previous_by_navigation_setting,
     R.string.shortcut_value_previous_granularity,
     R.string.shortcut_value_prev_container,
     R.string.shortcut_value_next_container,
@@ -563,6 +567,8 @@ public class GestureController {
     R.string.shortcut_value_next_gesture_profile,
     R.string.shortcut_value_previous_settings_profile,
     R.string.shortcut_value_next_settings_profile,
+    R.string.shortcut_value_toggle_blackberry_mode,
+    R.string.shortcut_value_quick_tasks,
     R.string.shortcut_value_previous_braille_command_profile,
     R.string.shortcut_value_next_braille_command_profile,
   };
@@ -632,6 +638,27 @@ public class GestureController {
                   .setDefaultToInputFocus(true)
                   .setScroll(true)
                   .setWrap(true));
+    } else if (action.equals(service.getString(R.string.shortcut_value_next_by_navigation_setting))
+        || action.equals(
+            service.getString(R.string.shortcut_value_previous_by_navigation_setting))) {
+      // By the navigation setting chosen, such as words, as the keyboard's Next by navigation
+      // setting moves.
+      boolean next =
+          action.equals(service.getString(R.string.shortcut_value_next_by_navigation_setting));
+      Feedback.FocusDirection.Builder builder =
+          Feedback.focusDirection(next ? SEARCH_FOCUS_FORWARD : SEARCH_FOCUS_BACKWARD)
+              .setInputMode(INPUT_MODE_TOUCH)
+              .setDefaultToInputFocus(true)
+              .setScroll(true)
+              .setWrap(true);
+      CursorGranularity granularity =
+          actorState.getDirectionNavigation().getCurrentGranularity();
+      if (granularity == CursorGranularity.CONTAINER) {
+        builder.setToContainer(true);
+      } else if (granularity == CursorGranularity.WINDOWS) {
+        builder.setToWindow(true);
+      }
+      result = pipeline.returnFeedback(eventId, builder);
     } else if (action.equals(service.getString(R.string.shortcut_value_move_to_item_below))) {
       selectorController.moveVertically(eventId, /* isNext= */ true);
     } else if (action.equals(service.getString(R.string.shortcut_value_move_to_item_above))) {
@@ -837,10 +864,10 @@ public class GestureController {
           pipeline.returnFeedback(
               eventId, Feedback.systemAction(AccessibilityService.GLOBAL_ACTION_BACK));
     } else if (action.equals(service.getString(R.string.shortcut_value_home))
-        && GestureLayout.isVoiceOver(SharedPreferencesUtils.getSharedPreferences(service))
+        && GestureLayout.isOtherScreenReader(SharedPreferencesUtils.getSharedPreferences(service))
         && SyntheticTouches.isAvailable()
         && swipeUp.isLockScreenShown()) {
-      // As on an iPhone, Home on the lock screen unlocks it, or shows the PIN, pattern or
+      // As on an iPhone or a BlackBerry 10 phone, Home on the lock screen unlocks it, or shows the PIN, pattern or
       // password: Android's lock screen does that for a two-finger swipe up.
       result = swipeUp.swipeUp(/* fingers= */ 2);
     } else if (action.equals(service.getString(R.string.shortcut_value_home))) {
@@ -969,6 +996,16 @@ public class GestureController {
           service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
     } else if (action.equals(service.getString(R.string.shortcut_value_next_settings_profile))) {
       SettingsProfiles.switchToNext(
+          service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
+    } else if (action.equals(service.getString(R.string.shortcut_value_quick_tasks))) {
+      QuickTasks.start(
+          service,
+          () ->
+              pipeline.returnFeedback(
+                  EVENT_ID_UNTRACKED, Feedback.vibration(R.array.view_clicked_pattern)));
+      speak(service.getString(R.string.shortcut_quick_tasks));
+    } else if (action.equals(service.getString(R.string.shortcut_value_toggle_blackberry_mode))) {
+      BlackBerryMode.toggle(
           service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
     } else if (ReadingControlCommands.isSelection(action)) {
       result =
@@ -1646,6 +1683,12 @@ public class GestureController {
         && GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(service))
         && swipeUp.isHomeScreenShown()
         && swipeUp.swipeUp(/* fingers= */ 1)) {
+      return;
+    }
+    // Quick Tasks take a few gestures for the three seconds after the Quick Tasks command.
+    String quickTask = QuickTasks.action(gestureShortcutMapping.getGestureKey(gestureId));
+    if (quickTask != null) {
+      performGestureAction(quickTask, eventId, /* doubleTap= */ false);
       return;
     }
     // A gesture profile's own gestures come before scripts.

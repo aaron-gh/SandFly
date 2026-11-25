@@ -199,7 +199,7 @@ object CommandBindings {
       GestureSlot(
         ArrowKeyNav.prefKey(context, it),
         manager.getArrowKeysStringRepresentation(it.keys),
-        it.defaultCommand,
+        ArrowKeyNav.defaultCommand(context, it),
       )
     }
   }

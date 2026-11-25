@@ -2662,6 +2662,9 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_toggle_browse_mode, R.string.keycombo_menu_other_toggle_browse_mode),
     TOGGLE_ARROW_KEY_NAV(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle),
     TOGGLE_TOUCH_LOCK(R.string.shortcut_value_toggle_touch_lock, R.string.shortcut_toggle_touch_lock),
+    QUICK_TASKS(R.string.shortcut_value_quick_tasks, R.string.shortcut_quick_tasks),
+    TOGGLE_BLACKBERRY_MODE(
+        R.string.shortcut_value_toggle_blackberry_mode, R.string.shortcut_toggle_blackberry_mode),
     SEARCH_EMOJI(R.string.shortcut_value_search_emoji, R.string.shortcut_search_emoji),
     CHOOSE_SYMBOL(R.string.shortcut_value_choose_symbol, R.string.shortcut_choose_symbol),
     TOGGLE_EDITING_MODE(
@@ -3165,6 +3168,12 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     return GestureProfiles.action(gestureIdToKey.get(gestureId));
   }
 
+  /** Returns the preference key of the gesture {@code gestureId}, without a gesture set, or null. */
+  @Nullable
+  public String getGestureKey(int gestureId) {
+    return gestureIdToKey.get(gestureId);
+  }
+
   private void loadGestureKeys() {
     Map<Integer, String> keys = new HashMap<>();
     for (TalkBackGesture gesture : TalkBackGesture.values()) {
@@ -3346,9 +3355,10 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
           continue;
         }
 
-        // With VoiceOver's gestures, two-finger swipes that scroll in the app run nothing here.
+        // With VoiceOver's or BlackBerry's gestures, two-finger swipes that scroll in the app run
+        // nothing here.
         if (isTwoFingerSwipe(gesture)
-            && GestureLayout.isVoiceOver(prefs)
+            && GestureLayout.isOtherScreenReader(prefs)
             && !GestureLayout.handlesTwoFingerSwipes(prefs)) {
           continue;
         }

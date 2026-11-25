@@ -134,6 +134,17 @@ enum class Keymap(
     usesSequences = false,
     arrowsNavigate = true,
     plainKeys = true,
+  ),
+  BLACKBERRY(
+    R.string.blackberry_keymap_entry_value,
+    R.string.value_blackberry_keymap,
+    "blackberry_key_combo_model",
+    "pref_blackberry_keymap_trigger_modifier",
+    KEYBOARD_PHONE_SANDFLY_KEYS,
+    BlackBerryKeymap,
+    usesSequences = false,
+    arrowsNavigate = true,
+    plainKeys = true,
   );
 
   /** The SandFly key its defaults are written for. */

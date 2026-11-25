@@ -135,6 +135,8 @@ object SettingsBackup {
       BACKUP_STATE_KEY_CONNECTED_APPS,
       // The folder of Choose from folder, whose read permission is held on this phone only.
       "pref_theme_sound_folder",
+      // Which profile is BlackBerry mode's, which turning it on uses.
+      "pref_blackberry_mode_profile",
     )
 
   /**
