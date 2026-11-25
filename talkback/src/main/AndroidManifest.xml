@@ -693,6 +693,9 @@
             <intent-filter>
                 <action android:name="fyi.quin.backtalk.action.DIRECT_TOUCH" />
             </intent-filter>
+            <meta-data
+                android:name="fyi.quin.backtalk.keeps_keyboard_region"
+                android:value="true" />
         </service>
 
         <receiver
