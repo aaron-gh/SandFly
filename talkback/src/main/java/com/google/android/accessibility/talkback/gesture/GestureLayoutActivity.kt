@@ -27,7 +27,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
  * The dialog shown the first time SandFly starts, which chooses the gesture layout: SandFly's
- * gestures, VoiceOver's or BlackBerry's. Closing it chooses SandFly's. Then it opens the next screen, the
+ * gestures or VoiceOver's. BlackBerry's are only in Gestures > Gesture layout, as few people know
+ * them. Closing it chooses SandFly's. Then it opens the next screen, the
  * tutorial, which teaches the gestures chosen.
  */
 class GestureLayoutActivity : Activity() {
@@ -43,9 +44,6 @@ class GestureLayoutActivity : Activity() {
     }
     findViewById<View>(R.id.voiceover_gestures_button).setOnClickListener {
       choose(GestureLayout.VOICEOVER)
-    }
-    findViewById<View>(R.id.blackberry_gestures_button).setOnClickListener {
-      choose(GestureLayout.BLACKBERRY)
     }
   }
 

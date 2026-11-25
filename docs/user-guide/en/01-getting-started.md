@@ -56,11 +56,10 @@ If Backtalk Aaron is installed, SandFly first copies its settings and custom lab
 
 #### Choose a gesture layout {#getting-started-gesture-layout}
 
-The **Choose gestures** dialog has three buttons:
+The **Choose gestures** dialog has two buttons:
 
 - **SandFly gestures**: the default SandFly gestures. Two-finger swipes go to the app, where they scroll.
 - **VoiceOver gestures**: gestures that match VoiceOver on iPhone. Two-finger swipes run SandFly commands, such as reading from the top of the screen.
-- **BlackBerry gestures**: gestures that match the BlackBerry 10 Screen Reader. Two-finger swipes run SandFly commands, such as scrolling.
 
 Closing the dialog without a choice selects SandFly gestures. If you leave the dialog with Home, it opens again the next time SandFly starts. The tutorial opens after the choice and teaches the gestures of the layout you chose.
 

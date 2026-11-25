@@ -25,9 +25,4 @@
         style="@style/TutorialChooserButton"
         android:text="@string/gesture_layout_voiceover" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/blackberry_gestures_button"
-        style="@style/TutorialChooserButton"
-        android:text="@string/gesture_layout_blackberry" />
-
 </LinearLayout>
