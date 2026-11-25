@@ -124,7 +124,11 @@ public class CustomActionMenu implements NodeMenu {
     addScriptItems(context, scriptActions, /* first= */ true, customItems);
     HashSet<AccessibilityNodeInfoCompat> visitedNodes = new HashSet<>();
     if (acceptCustomActionMenu(node)) {
-      populateCustomMenuItemsForNode(context, node, customItems, includeAncestors, visitedNodes);
+      // The app's actions go in a list of their own: the search up the ancestors stops at the first
+      // node that has any, and the scripts' actions placed first aren't the app's.
+      List<ContextMenuItem> appItems = new ArrayList<>();
+      populateCustomMenuItemsForNode(context, node, appItems, includeAncestors, visitedNodes);
+      customItems.addAll(appItems);
     }
     addOpenInSplitItem(context, node, customItems);
     addPictureInPictureControls(context, node, customItems);
