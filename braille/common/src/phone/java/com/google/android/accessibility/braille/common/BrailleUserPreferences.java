@@ -74,7 +74,7 @@ public class BrailleUserPreferences {
   private static final boolean TABLET_HELD_UP_FACES_AWAY_DEFAULT = true;
   private static final boolean TYPING_SOUNDS_DEFAULT = false;
   private static final boolean SPEAK_SUBMITTING_DEFAULT = true;
-  private static final boolean KEEP_OPEN_AFTER_SENDING_DEFAULT = true;
+  private static final boolean KEEP_OPEN_AFTER_SENDING_DEFAULT = false;
   private static final boolean RETURN_TO_PREVIOUS_KEYBOARD_DEFAULT = false;
   private static final boolean CAPITALIZE_SENTENCES_DEFAULT = false;
   private static final boolean QUICK_CALIBRATION_DEFAULT = true;
