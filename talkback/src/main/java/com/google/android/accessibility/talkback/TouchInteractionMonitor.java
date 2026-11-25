@@ -865,7 +865,7 @@ public class TouchInteractionMonitor
     if (menu.getSize() == 0) {
       List<String> practiceItems = GestureTrainerHooks.practiceMenuItems(edge);
       if (practiceItems != null) {
-        menu = new EdgeMenus.Menu(practiceItems);
+        menu = EdgeMenus.Menu.sample(practiceItems);
       }
     }
     if (edgeGesturesOff || menu.getSize() == 0 || isOnKeyboard(lastFingerX, lastFingerY)) {
@@ -994,7 +994,6 @@ public class TouchInteractionMonitor
     if (passingSyntheticTouch) {
       return;
     }
-    GestureTrainerHooks.onTouch(event);
     // While touch is locked, a touch does nothing and nothing reaches the app. A gesture SandFly
     // sends itself, such as a script's, is expected and handed on above.
     if (event.getActionMasked() == ACTION_DOWN) {
@@ -1011,6 +1010,8 @@ public class TouchInteractionMonitor
       }
       return;
     }
+    // After the touch lock: a locked touch is no try of the gesture trainer either.
+    GestureTrainerHooks.onTouch(event);
     runDueCornerTapTimeout(event);
     trackFingerAtScreenEdge(event);
     if (exploringKeyboard) {
