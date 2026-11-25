@@ -3516,6 +3516,26 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     return derivedKey;
   }
 
+  /**
+   * Returns the key of the setting that assigns a command to the gesture {@code gestureId}, without
+   * gesture layout or gesture set, or null when no setting does. {@code fingerprint} says the ID is
+   * a fingerprint gesture's, which are numbered apart from the others.
+   */
+  @Nullable
+  public static String getGestureBaseKey(Context context, int gestureId, boolean fingerprint) {
+    boolean rtl = WindowUtils.isScreenLayoutRTL(context);
+    for (TalkBackGesture gesture : TalkBackGesture.values()) {
+      if (gesture.gestureId != gestureId || (gesture.gestureType == FINGERPRINT) != fingerprint) {
+        continue;
+      }
+      if ((rtl && gesture.rtlType == LTR_GESTURE) || (!rtl && gesture.rtlType == RTL_GESTURE)) {
+        continue;
+      }
+      return context.getString(gesture.keyId);
+    }
+    return null;
+  }
+
   /** Returns the corresponding TalkBack action null when undefined. */
   @Nullable
   public TalkbackAction getActionEvent(String actionKeyString) {
