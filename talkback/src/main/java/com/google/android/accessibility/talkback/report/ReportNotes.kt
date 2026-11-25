@@ -65,5 +65,8 @@ class ReportNotes(@VisibleForTesting internal val maxEntries: Int) {
      * Whether a list item activated before Back was kept and focused again after it, and why not.
      */
     @JvmField val focusAfterBack = ReportNotes(MAX_ENTRIES)
+
+    /** How long the tests of macros' Show in Actions only when conditions took, per item. */
+    @JvmField val macroConditions = ReportNotes(MAX_ENTRIES)
   }
 }
