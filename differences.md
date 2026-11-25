@@ -500,7 +500,7 @@ realme UI reports some volume sliders as not focusable and unlabeled, so TalkBac
 
 ### realme image descriptions
 
-On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes or window changes of com.oplus.viewtalk.
+On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes, window changes, toasts or notifications of com.oplus.viewtalk.
 
 ### Telegram reply quotes
 
