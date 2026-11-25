@@ -700,6 +700,11 @@
                 <!-- Deprecated: returns the interface under fyi.quin.backtalk. -->
                 <action android:name="fyi.quin.backtalk.action.DIRECT_TOUCH" />
             </intent-filter>
+            <!-- Tells keyboards that draw in their own accessibility overlay that SandFly keeps the
+                 overlay in every pass-through region it sets. See docs/direct-touch-api.md. -->
+            <meta-data
+                android:name="io.github.aaron_gh.sandfly.keeps_keyboard_region"
+                android:value="true" />
         </service>
 
         <receiver

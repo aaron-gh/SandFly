@@ -153,6 +153,27 @@ Each request replaces the one before it. Calls are one-way and return at once. T
 
 If SandFly restarts, the connection reports `onServiceDisconnected`, then `onServiceConnected` when SandFly is back. Send your request and state again in `onServiceConnected`.
 
+## Keyboards in an accessibility overlay
+
+A keyboard that has an accessibility service of its own and draws its keys in an accessibility overlay sets the touch exploration pass-through region for that overlay itself. Android keeps one region for all accessibility services, so any region SandFly set would replace the keyboard's. While such a keyboard is the default keyboard, its accessibility service is on and its overlay is on screen, SandFly adds the overlay's bounds to every pass-through region it sets, such as for direct touch or the navigation bar. A SandFly feature that takes the whole pass-through region for a moment, such as the circle menu, still gets it alone, and locking touch still clears it.
+
+To check whether the installed SandFly does this, read the `io.github.aaron_gh.sandfly.keeps_keyboard_region` meta-data of its direct touch service. It needs no permission, only the `<queries>` element above:
+
+```kotlin
+val keepsKeyboardRegion =
+  context.packageManager
+    .queryIntentServices(
+      Intent("io.github.aaron_gh.sandfly.action.DIRECT_TOUCH").setPackage("io.github.aaron_gh.sandfly"),
+      PackageManager.GET_META_DATA,
+    )
+    .firstOrNull()
+    ?.serviceInfo
+    ?.metaData
+    ?.getBoolean("io.github.aaron_gh.sandfly.keeps_keyboard_region") == true
+```
+
+SandFly 0.7.0 and earlier have no such meta-data, and can replace the keyboard's region.
+
 ## Deprecated names
 
 These names are deprecated:
