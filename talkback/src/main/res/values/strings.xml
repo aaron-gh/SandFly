@@ -4433,6 +4433,10 @@
     <string name="title_pref_volume_down_long_press">Volume down long press</string>
     <!-- Title of the setting that chooses how long a volume key is held to run its long press command. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_key_long_press_duration">Volume key long press duration</string>
+    <!-- Title of the switch that makes holding the mute key in a text field record speech and type it, until the key is released. The mute key is a hardware key on some phones, such as the Zinwa Q25. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_key_dictates">Hold mute key to dictate in text fields</string>
+    <!-- Title of the setting that chooses the command run by pressing the mute key. The mute key is a hardware key on some phones, such as the Zinwa Q25. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_key_press">Mute key press</string>
     <!-- Summary of the wrap around setting in the reading controls list. [CHAR LIMIT=NONE]-->
     <string name="summary_support_wrap_around">Turn wrapping from the last item to the first on or off</string>
     <!-- Spoken when wrap around is turned on. [CHAR LIMIT=NONE]-->
