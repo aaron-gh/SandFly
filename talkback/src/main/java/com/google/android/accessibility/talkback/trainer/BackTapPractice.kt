@@ -47,11 +47,18 @@ class BackTapPractice(private val context: Context, private val listener: Listen
   private var detector: BackTapDetector? = null
   private var sensorListener: SensorEventListener? = null
 
+  /**
+   * Counts starts and stops: a jolt posted by the detector of an earlier start, such as before
+   * Repeat, reaches no try of a later one.
+   */
+  private var generation = 0
+
   /** Starts feeling taps. Returns false when the device has no accelerometer. */
   fun start(): Boolean {
     if (sensorListener != null) return true
     val sensors = context.getSystemService(SensorManager::class.java) ?: return false
     val sensor = sensors.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) ?: return false
+    val started = ++generation
     val thread = HandlerThread("BackTapPractice").apply { start() }
     val handler = Handler(thread.looper)
     val detector =
@@ -60,11 +67,11 @@ class BackTapPractice(private val context: Context, private val listener: Listen
           override fun onTaps(count: Int) {}
 
           override fun onJoltJudged(jolt: BackTapDetector.Jolt) {
-            mainHandler.post { if (sensorListener != null) listener.onJolt(jolt) }
+            mainHandler.post { if (generation == started) listener.onJolt(jolt) }
           }
 
           override fun onRunEnded(count: Int) {
-            mainHandler.post { if (sensorListener != null) listener.onRunEnded(count) }
+            mainHandler.post { if (generation == started) listener.onRunEnded(count) }
           }
         }
       )
@@ -92,6 +99,7 @@ class BackTapPractice(private val context: Context, private val listener: Listen
   }
 
   fun stop() {
+    generation++
     sensorListener?.let { context.getSystemService(SensorManager::class.java)?.unregisterListener(it) }
     sensorListener = null
     thread?.quitSafely()

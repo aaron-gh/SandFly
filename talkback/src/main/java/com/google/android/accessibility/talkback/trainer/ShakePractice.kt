@@ -48,6 +48,12 @@ class ShakePractice(private val context: Context, private val listener: Listener
   private var thread: HandlerThread? = null
   private var sensorListener: SensorEventListener? = null
 
+  /**
+   * Counts starts and stops: a movement posted by the detector of an earlier start, such as before
+   * Repeat, reaches no try of a later one.
+   */
+  private var generation = 0
+
   /** How strong each swing must be, in m/s² beyond gravity, with the user's sensitivity. */
   val threshold: Float
     get() = sensitivity().threshold
@@ -57,7 +63,11 @@ class ShakePractice(private val context: Context, private val listener: Listener
     if (sensorListener != null) return true
     val sensors = context.getSystemService(SensorManager::class.java) ?: return false
     val sensor = sensors.getDefaultSensor(Sensor.TYPE_ACCELEROMETER) ?: return false
+    val started = ++generation
     val thread = HandlerThread("ShakePractice").apply { start() }
+    fun post(call: () -> Unit) {
+      mainHandler.post { if (generation == started) call() }
+    }
     val detector = ShakeDetector { post { listener.onShake() } }
     detector.threshold = threshold
     detector.observer =
@@ -98,15 +108,11 @@ class ShakePractice(private val context: Context, private val listener: Listener
   }
 
   fun stop() {
+    generation++
     sensorListener?.let { context.getSystemService(SensorManager::class.java)?.unregisterListener(it) }
     sensorListener = null
     thread?.quitSafely()
     thread = null
-  }
-
-  /** Runs [call] on the main thread, unless the practice stopped meanwhile. */
-  private fun post(call: () -> Unit) {
-    mainHandler.post { if (sensorListener != null) call() }
   }
 
   private fun sensitivity(): ShakeDetector.Sensitivity {
