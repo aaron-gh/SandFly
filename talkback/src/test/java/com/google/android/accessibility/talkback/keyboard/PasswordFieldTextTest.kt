@@ -63,7 +63,7 @@ class PasswordFieldTextTest {
       val field = field(inputType)
       val connection = connection(field)
       assertEquals(password, connection.getTextBeforeCursor(100, 0).toString())
-      assertEquals(password, connection.getExtractedText(ExtractedTextRequest(), 0).text.toString())
+      assertEquals(password, connection.getExtractedText(ExtractedTextRequest(), 0)!!.text.toString())
       field.setSelection(1)
       assertEquals("a@1", connection.getTextAfterCursor(100, 0).toString())
       field.setSelection(0, 2)

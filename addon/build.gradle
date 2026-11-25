@@ -7,7 +7,9 @@ plugins {
 // key, since only apps signed with that key may bind to it, and SandFly checks the add-on's key.
 android {
     namespace = "io.github.aaron_gh.sandfly.addon"
-    compileSdk = 37
+    compileSdk {
+        version = release(37) { minorApiLevel = 2 }
+    }
     if (rootProject.signWithSandflyKey) {
         signingConfigs {
             sandfly {
