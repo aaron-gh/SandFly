@@ -342,7 +342,7 @@ Profile gestów nie zmieniają przypisań na czytniku linii papilarnych ani skr�
 
 ### Skróty aplikacji {#gestures-app-shortcuts}
 
-Android może pokazać skróty po długim naciśnięciu ikony aplikacji na ekranie głównym. Przykładem jest skrót do napisania nowej wiadomości. SandFly wyświetla takie pozycje w kategorii poleceń **Skróty aplikacji**. Są tam też własne skróty dodane na ekranie o tej samej nazwie. Lista pomija skróty tworzone przez aplikację w trakcie jej działania.
+Android może pokazać skróty po długim naciśnięciu ikony aplikacji na ekranie głównym. Przykładem jest skrót do napisania nowej wiadomości. SandFly wyświetla takie pozycje w kategorii poleceń **Skróty aplikacji**. Są tam też własne skróty dodane na ekranie o tej samej nazwie. Skróty tworzone przez aplikację w trakcie jej działania, na przykład ostatnie rozmowy, oraz skróty, które może otwierać tylko aplikacja ekranu głównego, pojawiają się na liście od Androida 12, gdy Shizuku jest uruchomione przez adb lub debugowanie bezprzewodowe albo z uprawnieniami roota. Lista poleceń odczytuje je przy każdym otwarciu.
 
 Skróty z listy możesz uruchamiać gestem, poleceniem z menu krawędzi lub kombinacją klawiszy.
 
