@@ -167,4 +167,6 @@ SandFly 27.0 i nowsze nadal przyjmują te nazwy od aplikacji, które z nich korz
 adb logcat -s SandFlyApi
 ```
 
+Gdy aplikacja jest kompilacją z możliwością debugowania, SandFly wyświetla też powiadomienie z listą użytych przez nią przestarzałych nazw.
+
 Przestarzałe nazwy zostaną usunięte w jednej z kolejnych wersji. SandFly 0.7.0 i starsze przyjmują tylko przestarzałe nazwy. Aby obsługiwać także te wersje, połącz się z usługą najpierw przez nową akcję, a gdy `bindService` zwróci false, przez przestarzałą.

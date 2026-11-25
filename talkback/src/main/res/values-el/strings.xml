@@ -2821,4 +2821,6 @@
     <string name="shortcut_title_app_tiles">Πλακίδια εφαρμογών</string>
     <string name="shortcut_title_system_tiles">Πλακίδια συστήματος</string>
     <string name="app_shortcut_needs_shizuku">Η συντόμευση εφαρμογής απαιτεί το Shizuku με εκκίνηση μέσω adb ή ασύρματου εντοπισμού σφαλμάτων</string>
+    <string name="deprecated_api_title">Η εφαρμογή <xliff:g id="app" example="Example Game">%1$s</xliff:g> χρησιμοποιεί καταργημένα ονόματα του API του SandFly</string>
+    <string name="deprecated_api_replace">Αντικαταστήστε το <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> με το <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

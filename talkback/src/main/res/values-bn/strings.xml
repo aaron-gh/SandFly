@@ -2821,4 +2821,6 @@
     <string name="shortcut_title_app_tiles">অ্যাপ টাইল</string>
     <string name="shortcut_title_system_tiles">সিস্টেম টাইল</string>
     <string name="app_shortcut_needs_shizuku">অ্যাপ শর্টকাটের জন্য adb বা ওয়্যারলেস ডিবাগিং দিয়ে চালু করা Shizuku প্রয়োজন</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> অপ্রচলিত SandFly API নাম ব্যবহার করে</string>
+    <string name="deprecated_api_replace"><xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g>-এর বদলে <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g> ব্যবহার করুন।</string>
 </resources>

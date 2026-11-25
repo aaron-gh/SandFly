@@ -35,6 +35,14 @@ object DeprecatedApiNames {
 
   private val warned = Collections.synchronizedSet(HashSet<String>())
 
+  /** Told about each warning that names its app, on the thread of the call that used the name. */
+  fun interface Listener {
+    fun onDeprecatedName(app: String, legacyName: String, name: String)
+  }
+
+  /** Set once when SandFly starts. */
+  @JvmStatic @Volatile var listener: Listener? = null
+
   /**
    * Logs once per app and name, while SandFly runs, that [app] used [legacyName] in place of
    * [name]. [app] is null when SandFly can't tell which app it was.
@@ -51,5 +59,8 @@ object DeprecatedApiNames {
       TAG,
       "${app ?: "An app"} uses $legacyName, which is deprecated and will be removed. Use $name.",
     )
+    if (app != null) {
+      listener?.onDeprecatedName(app, legacyName, name)
+    }
   }
 }

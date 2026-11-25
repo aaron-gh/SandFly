@@ -2822,4 +2822,6 @@
     <string name="shortcut_title_app_tiles">Uygulama kutucukları</string>
     <string name="shortcut_title_system_tiles">Sistem kutucukları</string>
     <string name="app_shortcut_needs_shizuku">Uygulama kısayolu için adb veya kablosuz hata ayıklama ile başlatılmış Shizuku gerekir</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g>, desteği sonlandırılmış SandFly API adlarını kullanıyor</string>
+    <string name="deprecated_api_replace"><xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> yerine <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g> kullanın.</string>
 </resources>

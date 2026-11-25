@@ -10,4 +10,6 @@
     <string name="speech_control_deny">Nepovolit</string>
     <string name="permission_speak_label">mluvit prostřednictvím SandFly</string>
     <string name="permission_speak_description">Umožňuje aplikaci požádat o vyslovení textu hlasem SandFly. Než bude aplikace moci mluvit, SandFly vás požádá o svolení.</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> používá zastaralé názvy rozhraní API SandFly</string>
+    <string name="deprecated_api_replace">Nahraďte <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> názvem <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

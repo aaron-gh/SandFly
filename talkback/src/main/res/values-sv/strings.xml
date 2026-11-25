@@ -2821,4 +2821,6 @@
     <string name="shortcut_title_app_tiles">Appbrickor</string>
     <string name="shortcut_title_system_tiles">Systembrickor</string>
     <string name="app_shortcut_needs_shizuku">Appgenvägen kräver Shizuku startat via adb eller trådlös felsökning</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> använder utfasade namn i SandFlys API</string>
+    <string name="deprecated_api_replace">Ersätt <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> med <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

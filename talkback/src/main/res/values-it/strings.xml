@@ -2831,4 +2831,6 @@
     <string name="shortcut_title_app_tiles">Riquadri delle app</string>
     <string name="shortcut_title_system_tiles">Riquadri di sistema</string>
     <string name="app_shortcut_needs_shizuku">La scorciatoia dell\'app richiede Shizuku avviato tramite adb o debug wireless</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> usa nomi obsoleti dell\'API di SandFly</string>
+    <string name="deprecated_api_replace">Sostituisci <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> con <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

@@ -2832,4 +2832,6 @@
     <string name="shortcut_title_app_tiles">משבצות אפליקציות</string>
     <string name="shortcut_title_system_tiles">משבצות מערכת</string>
     <string name="app_shortcut_needs_shizuku">קיצור הדרך של האפליקציה דורש את Shizuku שהופעל דרך adb או ניפוי באגים אלחוטי</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> משתמשת בשמות API של SandFly שהוצאו משימוש</string>
+    <string name="deprecated_api_replace">יש להחליף את <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> ב-<xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

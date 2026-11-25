@@ -2843,4 +2843,6 @@
     <string name="shortcut_title_app_tiles">Programų plytelės</string>
     <string name="shortcut_title_system_tiles">Sistemos plytelės</string>
     <string name="app_shortcut_needs_shizuku">Programos sparčiajam klavišui reikia Shizuku, paleisto per adb arba belaidžio ryšio derinimą</string>
+    <string name="deprecated_api_title">„<xliff:g id="app" example="Example Game">%1$s</xliff:g>“ naudoja nebenaudojamus SandFly API pavadinimus</string>
+    <string name="deprecated_api_replace">Pakeiskite <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> į <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>
