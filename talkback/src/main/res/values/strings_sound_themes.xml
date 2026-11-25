@@ -142,6 +142,18 @@
     <string name="theme_sound_dialog_title"><xliff:g id="sound" example="Click">%1$s</xliff:g> (<xliff:g id="name" example="tick">%2$s</xliff:g>)</string>
     <!-- Theme sounds: choice that opens the file picker to choose a sound file. [CHAR LIMIT=50] -->
     <string name="theme_sound_choose">Choose a sound file</string>
+    <!-- Theme sounds: choice that lists the sound files of a folder, picked the first time, to choose one; the file in screen reader focus plays. Also the title of that list when the folder has no name. [CHAR LIMIT=50] -->
+    <string name="theme_sound_choose_from_folder">Choose from folder</string>
+    <!-- Theme sounds: choice that picks another folder for Choose from folder. [CHAR LIMIT=50] -->
+    <string name="theme_sound_change_folder">Change folder</string>
+    <!-- Theme sounds: row at the top of the list of a subfolder in Choose from folder, which lists the folder above it. [CHAR LIMIT=50] -->
+    <string name="theme_sound_parent_folder">Parent folder</string>
+    <!-- Theme sounds: row for a subfolder in the list of Choose from folder, such as "Clicks, folder". [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_folder_entry"><xliff:g id="folder" example="Clicks">%1$s</xliff:g>, folder</string>
+    <!-- Theme sounds: message when the folder of Choose from folder has no sound files or subfolders. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_folder_empty">No sound files in this folder.</string>
+    <!-- Theme sounds: message when the folder of Choose from folder cannot be read. [CHAR LIMIT=NONE] -->
+    <string name="theme_sound_folder_failed">SandFly couldn\'t read that folder.</string>
     <!-- Theme sounds: choice that plays the sound. [CHAR LIMIT=50] -->
     <string name="theme_sound_preview">Preview</string>
     <!-- Theme sounds: choice that sets an event to play no sound. [CHAR LIMIT=50] -->
