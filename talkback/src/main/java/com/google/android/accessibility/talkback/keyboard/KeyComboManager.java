@@ -293,6 +293,9 @@ public class KeyComboManager
 
   /** Keys pressed while a chooser of the SandFly keyboard was open, released there too. */
   private final Set<Integer> keysPassedToChooser = new HashSet<>();
+
+  /** Browse mode's fast search, which focuses items by their first letter or digit. */
+  private @Nullable FastSearch fastSearch;
   // Whether the user ran a SandFly command or touched the screen since a key last went to the app
   // or a new screen opened. While not, and a text field has input focus, the keyboard phone keymaps'
   // single keys and Enter go to the text field.
@@ -463,6 +466,7 @@ public class KeyComboManager
               () ->
                   accessibilityFocusMonitor.getAccessibilityFocus(
                       /* useInputFocusIfEmpty= */ false)));
+      fastSearch = new FastSearch(context, talkBack::focusItemStartingWith, this::sayNotFound);
     }
     keyComboMapper =
         new KeyComboMapper(
@@ -550,6 +554,9 @@ public class KeyComboManager
     messageEnterKeys.reset();
     keysPassedToChooser.clear();
     editingShortcutKeys.clear();
+    if (fastSearch != null) {
+      fastSearch.clear();
+    }
     textFieldActivation.reset();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
@@ -660,6 +667,14 @@ public class KeyComboManager
     }
 
     if (onEditingShortcut(event)) {
+      arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+      return true;
+    }
+
+    // In browse mode, the fast search key with a letter or digit focuses the next item starting
+    // with it, with Shift the previous one.
+    if (fastSearch != null && fastSearch.onKeyEvent(event, getSandFlyKey(), this::canFastSearch)) {
+      navigatedSinceTyping = true;
       arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
       return true;
     }
@@ -1457,6 +1472,45 @@ public class KeyComboManager
       editingShortcutKeys.add(keyCode);
     }
     return performed;
+  }
+
+  /**
+   * Whether fast search works now: browse mode is on, keys aren't going to the app and no text
+   * field is being edited, where browse mode's letters type too.
+   */
+  private boolean canFastSearch() {
+    return serviceState == SERVICE_STATE_ACTIVE
+        && matchKeyCombo
+        && isBrowseModeEnabled()
+        && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
+        && !sandFlyKeyHeld
+        && !isPassingKeysToApp()
+        && !isEditingTextWithAccessibilityFocus()
+        && !(plainKeys() && isTyping());
+  }
+
+  /** Says that fast search found no item. */
+  private void sayNotFound() {
+    if (fastSearchSpeech != null) {
+      fastSearchSpeech.accept(context.getString(R.string.granular_editing_not_found));
+      return;
+    }
+    if (pipeline != null) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              context.getString(R.string.granular_editing_not_found), INTERRUPTIVE_SPEAK_OPTIONS));
+    }
+  }
+
+  /** Where fast search speaks, for tests; null speaks through the pipeline. */
+  private @Nullable Consumer<String> fastSearchSpeech;
+
+  /** Sets what fast search focuses items with, and where it speaks, for tests. */
+  @VisibleForTesting
+  void setFastSearch(FastSearch.Searcher searcher, Consumer<String> speech) {
+    fastSearchSpeech = speech;
+    fastSearch = new FastSearch(context, searcher, this::sayNotFound);
   }
 
   /** Whether the user is typing in a text field or SandFly focus is on the one being edited. */
