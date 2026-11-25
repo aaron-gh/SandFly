@@ -25,7 +25,7 @@ import java.util.Locale
  * note the same as the one before it counts as a repeat of it, so a check that runs on every event
  * fills one line.
  */
-class ReportNotes(@VisibleForTesting internal val maxEntries: Int) {
+class ReportNotes(@get:VisibleForTesting internal val maxEntries: Int) {
   private class Entry(val time: String, val text: String, var repeats: Int = 0)
 
   private val entries = ArrayDeque<Entry>()
