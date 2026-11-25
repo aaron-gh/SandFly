@@ -165,14 +165,17 @@ class ScriptStore private constructor(private val context: Context) {
   @Synchronized
   @Throws(IOException::class)
   fun codeFiles(): Map<String, Map<String, ByteArray>> =
-    scripts.associate { script ->
-      val code = codeDir(script.id)
-      val files =
-        code.walkTopDown().filter { it.isFile }.associate { file ->
-          file.relativeTo(code).invariantSeparatorsPath to file.readBytes()
-        }
-      script.id to files
-    }.filterValues { it.isNotEmpty() }
+    scripts.associate { script -> script.id to codeFilesOf(script.id) }.filterValues { it.isNotEmpty() }
+
+  /** The files of the script [id] by path, or none when it has no code. */
+  @Synchronized
+  @Throws(IOException::class)
+  fun codeFilesOf(id: String): Map<String, ByteArray> {
+    val code = codeDir(id)
+    return code.walkTopDown().filter { it.isFile }.associate { file ->
+      file.relativeTo(code).invariantSeparatorsPath to file.readBytes()
+    }
+  }
 
   /**
    * Writes [files] as the code of the script [id], replacing its code, without changing the list

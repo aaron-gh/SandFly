@@ -42,7 +42,24 @@ class ScriptPackage(
       manifestCheck(bytes.size <= if (zip) MAX_BYTES else MAX_LUA_BYTES) {
         if (zip) "The zip is larger than 5 MB" else "The script is larger than 1 MB"
       }
-      val files = if (zip) unzip(bytes) else mapOf(MAIN to bytes)
+      return of(if (zip) unzip(bytes) else mapOf(MAIN to bytes))
+    }
+
+    /**
+     * The script of [files] with [main] as its main.lua, checked as [read] checks a script file:
+     * code typed in SandFly, with the other files of the installed script it replaces, if any.
+     */
+    fun withMain(files: Map<String, ByteArray>, main: String): ScriptPackage {
+      val bytes = main.encodeToByteArray()
+      manifestCheck(bytes.size <= MAX_LUA_BYTES) { "The script is larger than 1 MB" }
+      val all = files + (MAIN to bytes)
+      manifestCheck(all.size <= MAX_FILES && all.values.sumOf { it.size.toLong() } <= MAX_BYTES) {
+        "The script's files are larger than 5 MB"
+      }
+      return of(all)
+    }
+
+    private fun of(files: Map<String, ByteArray>): ScriptPackage {
       val main = files[MAIN] ?: manifestError("The zip has no main.lua")
       val manifest =
         try {
