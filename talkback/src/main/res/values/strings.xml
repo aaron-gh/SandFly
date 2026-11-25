@@ -1231,6 +1231,8 @@
     <string name="quick_settings_no_system_tiles">No system tiles to add</string>
     <!-- Spoken when SandFly can't find a tile in the system's quick settings to use it. %1$s is the tile's name. [CHAR_LIMIT=NONE] -->
     <string name="quick_settings_tile_not_found">%1$s isn\'t in the system\'s quick settings</string>
+    <!-- Spoken when a quick settings tile command fails, such as when the system's quick settings don't open or SystemUI rejects the command. %1$s is the tile's name. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_tile_failed"><xliff:g id="tile_name" example="Hotspot">%1$s</xliff:g> failed</string>
     <!-- A screen timeout in SandFly's quick settings panel: the screen never turns off by itself. [CHAR_LIMIT=NONE] -->
     <string name="quick_settings_never">Never</string>
     <!-- A screen timeout in SandFly's quick settings panel, in seconds. [CHAR_LIMIT=NONE] -->

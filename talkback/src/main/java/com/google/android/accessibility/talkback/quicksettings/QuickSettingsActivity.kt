@@ -54,7 +54,6 @@ import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService
 import com.google.android.accessibility.talkback.preference.TalkBackPreferencesActivity
 import com.google.android.accessibility.talkback.preference.base.announce
-import com.google.android.accessibility.talkback.shizuku.ShizukuCommand
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -500,74 +499,59 @@ class QuickSettingsActivity : AppCompatActivity() {
 
   /**
    * Clicks a tile in the system's quick settings through SandFly's accessibility service, then
-   * focuses its row again and says its new state. [onNotFound] runs instead of saying that the tile
-   * wasn't found, if given.
+   * focuses its row again and says its new state.
    */
-  private fun clickThroughSystem(id: String, label: String, onNotFound: (() -> Unit)? = null) {
+  private fun clickThroughSystem(id: String, label: String) {
     SystemPanelClicker.click(label) { result ->
       if (isFinishing || isDestroyed) return@click
-      when (result) {
-        is SystemPanelClicker.Result.Clicked -> {
-          clickedStates[id] = result.state to result.checked
-          refresh()
-          readTiles()
-        }
-        else ->
-          if (onNotFound != null) {
-            onNotFound()
-            return@click
-          } else {
-            announce(column, getString(R.string.quick_settings_tile_not_found, label))
-          }
-      }
-      // After the row's new state has gone out: a row that kept focus says only the new state,
-      // and one that lost it says everything once focused.
-      rows[id]?.let { row ->
-        row.postDelayed(
-          { row.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null) },
-          REFOCUS_DELAY_MS,
-        )
+      if (result is SystemPanelClicker.Result.Clicked) {
+        onClicked(id, result.state, result.checked)
+      } else {
+        onNotFound(id, label)
       }
     }
   }
 
+  private fun onClicked(id: String, state: CharSequence?, checked: Boolean?) {
+    clickedStates[id] = state to checked
+    refresh()
+    readTiles()
+    refocus(id)
+  }
+
+  private fun onNotFound(id: String, label: String) {
+    announce(column, getString(R.string.quick_settings_tile_not_found, label))
+    refocus(id)
+  }
+
   /**
-   * Clicks an app's tile in the system's quick settings, adding it there first if it isn't there,
-   * since SystemUI runs only the tiles it shows.
-   *
-   * The tile is clicked in the open system quick settings, as a finger would. Many tiles act on the
-   * state they last showed, such as a VPN's that connects when it shows disconnected, and a tile
-   * shows its state only while the system's quick settings are open; a tile clicked with them closed
-   * may act on a state it never showed, and do nothing. Shizuku's click, with them closed, is kept
-   * for a tile that isn't found there.
+   * Focuses [id]'s row again after its new state has gone out: a row that kept focus says only the
+   * new state, and one that lost it says everything once focused.
    */
+  private fun refocus(id: String) {
+    rows[id]?.let { row ->
+      row.postDelayed(
+        { row.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null) },
+        REFOCUS_DELAY_MS,
+      )
+    }
+  }
+
+  /** Clicks an app's tile as [AppTileClicker] does. */
   private fun clickTile(component: ComponentName, label: String) {
     val id = QuickItem.Tile(component).id
-    if (!ShizukuGrants.isReady()) {
-      // Without Shizuku, the tile can still be used in the system's quick settings, if it's there.
-      clickThroughSystem(id, label)
-      return
-    }
-    val argument = component.flattenToString()
-    val click = {
-      clickThroughSystem(id, label) {
-        ShizukuShell.run(this, ShizukuCommand.CLICK_TILE, argument) { worked ->
-          if (worked) readTilesLater()
-        }
-      }
-    }
-    val inSystemPanel =
-      SystemTiles.spec(component) in tileStates || component in addedTiles
-    if (inSystemPanel) {
-      click()
-      return
-    }
-    ShizukuShell.run(this, ShizukuCommand.ADD_TILE, argument) { added ->
-      if (added) {
-        addedTiles += component
-        handler.postDelayed(click, ADD_TILE_DELAY_MS)
-      } else {
-        announce(column, getString(R.string.quick_settings_tile_not_found, label))
+    val inSystem = if (SystemTiles.spec(component) in tileStates) true else null
+    val isWanted = { !isFinishing && !isDestroyed }
+    AppTileClicker.click(this, component, label, inSystem, isWanted) { result ->
+      if (isFinishing || isDestroyed) return@click
+      when (result) {
+        is AppTileClicker.Result.Clicked -> onClicked(id, result.state, result.checked)
+        AppTileClicker.Result.ClickedByShell -> readTilesLater()
+        AppTileClicker.Result.NotFound,
+        AppTileClicker.Result.PanelFailed -> onNotFound(id, label)
+        AppTileClicker.Result.AddFailed ->
+          announce(column, getString(R.string.quick_settings_tile_not_found, label))
+        AppTileClicker.Result.ClickFailed -> {}
       }
     }
   }
@@ -931,12 +915,7 @@ class QuickSettingsActivity : AppCompatActivity() {
     private const val REFOCUS_DELAY_MS = 300L
     /** How long a switch shows what it was set to before it shows its state again. */
     private const val PENDING_MS = 5_000L
-    /** How long SystemUI takes to start a tile that was just added. */
-    private const val ADD_TILE_DELAY_MS = 1_000L
     private val TILE_READ_DELAYS_MS = listOf(300L, 1_500L)
-
-    /** Tiles added to the system's quick settings while SandFly runs. */
-    private val addedTiles = HashSet<ComponentName>()
 
     private val ACTION_IDS =
       intArrayOf(

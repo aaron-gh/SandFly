@@ -32,24 +32,22 @@ import com.google.android.accessibility.talkback.shizuku.ShizukuShell
  * Commands that activate a quick settings tile: an app's tile, or one of the system's own that
  * [SystemTiles.find] found. Their values are [PREFIX] and the tile's [QuickItem.id]. A system tile
  * that SandFly has a control for is that control, named as SandFly's quick settings panel names
- * it, since such tiles, such as the sound mode, often show their state as their name.
+ * it.
  *
- * SystemUI clicks an app's tile through Shizuku. A system tile that SandFly has a control for,
- * such as Wi-Fi or the sound mode, changes that control through Android or Shizuku. Without
- * Shizuku, a tile that needs it says so. Only a system tile that nothing else can change is clicked
- * in the system's quick settings, which SandFly opens and closes.
+ * An app's tile is clicked as [AppTileClicker] clicks it. A system tile that SandFly has a control
+ * for, such as Wi-Fi or the sound mode, changes that control through Android or Shizuku. Without
+ * Shizuku, the command for a control that needs it announces "Shizuku not running". Only a system
+ * tile that nothing else can change is clicked in the system's quick settings, which SandFly opens
+ * and closes.
  */
 object TileCommands {
   /** Starts every saved value of these commands. It must never change once released. */
   private const val PREFIX = "QS_TILE:"
 
-  /** How long SystemUI takes to add a tile to the system's quick settings. */
-  private const val ADD_TILE_DELAY_MS = 1_000L
+  /** How long a tile takes to show its new state after SystemUI clicked it. */
+  private const val STATE_DELAY_MS = 500L
 
   private val mainHandler = Handler(Looper.getMainLooper())
-
-  /** The apps' tiles SandFly has added to the system's quick settings since it started. */
-  private val added = HashSet<ComponentName>()
 
   /** A tile, by the name the lists of commands show, and the command that activates it. */
   data class Tile(val label: String, val value: String)
@@ -68,10 +66,14 @@ object TileCommands {
     when (item) {
       is QuickItem.Control -> context.getString(item.control.title)
       // As the system names it now, which changes with the phone's language, as in the panel.
-      is QuickItem.SystemTile ->
-        SystemTiles.lastFound(context).firstOrNull { item.spec.isNotEmpty() && it.spec == item.spec }?.label
-          ?: item.label
+      is QuickItem.SystemTile -> currentLabel(context, item) ?: item.label
       is QuickItem.Tile -> tileLabel(context, item.component)
+    }
+
+  /** A system tile's name as SandFly found it last, by its spec, if it has one. */
+  private fun currentLabel(context: Context, item: QuickItem.SystemTile): String? =
+    item.spec.takeIf { it.isNotEmpty() }?.let { spec ->
+      SystemTiles.lastFound(context).firstOrNull { it.spec == spec }?.label
     }
 
   /**
@@ -92,7 +94,7 @@ object TileCommands {
 
   /**
    * The tiles of installed apps, each named with its app when the names differ. None where this
-   * build can't use Shizuku, which clicks them.
+   * build can't use Shizuku.
    */
   fun appTiles(context: Context): List<Tile> {
     if (!ShizukuShell.isAvailable(context)) return emptyList()
@@ -126,61 +128,113 @@ object TileCommands {
       is QuickItem.Control -> {
         val controls = QuickControls(context)
         val control = item.control
+        val name = context.getString(control.title)
+        val failed = { onDone(failed(context, name)) }
         when {
-          controls.needsShizuku(control) -> onDone(shizukuMissing(context))
-          control.kind == QuickControl.Kind.SWITCH -> toggle(context, controls, control, onDone)
-          control.kind == QuickControl.Kind.CHOICE -> next(controls, control, onDone)
-          else -> controls.press(control)
+          controls.needsShizuku(control) -> onDone(shellFailure(context, name))
+          control.kind == QuickControl.Kind.SWITCH -> toggle(context, controls, control, onDone, failed)
+          control.kind == QuickControl.Kind.CHOICE -> next(controls, control, onDone, failed)
+          controls.press(control) == QuickControls.Change.FAILED -> failed()
         }
       }
-      is QuickItem.SystemTile -> clickInSystem(context, name(context, item), onDone)
+      is QuickItem.SystemTile -> clickInSystem(context, item, name(context, item), retry = true, onDone)
       null -> {}
     }
   }
 
   /**
-   * Has SystemUI click an app's tile through Shizuku, adding it to the system's quick settings
-   * first, since SystemUI clicks only the tiles there. The system's quick settings stay closed, so
-   * a tile that acts on the state it last showed there may do nothing.
+   * Clicks an app's tile as [AppTileClicker] does, after reading from SystemUI's dump whether it is
+   * in the system's quick settings and its name there, and gives [onDone] its new state.
    */
   private fun click(context: Context, component: ComponentName, onDone: (String) -> Unit) {
-    val argument = component.flattenToString()
-    val click = {
-      ShizukuShell.run(context, ShizukuCommand.CLICK_TILE, argument) { worked ->
-        if (!worked) onDone(shizukuMissing(context))
-      }
-    }
-    if (component in added) {
-      click()
+    try {
+      context.packageManager.getServiceInfo(component, /* flags= */ 0)
+    } catch (e: PackageManager.NameNotFoundException) {
+      onDone(context.getString(R.string.quick_settings_tile_not_found, tileLabel(context, component)))
       return
     }
-    ShizukuShell.run(context, ShizukuCommand.ADD_TILE, argument) { worked ->
-      if (worked) {
-        added += component
-        mainHandler.postDelayed(click, ADD_TILE_DELAY_MS)
-      } else {
-        onDone(shizukuMissing(context))
+    val spec = SystemTiles.spec(component)
+    readTiles(context) { tiles ->
+      val label = tiles?.get(spec)?.label ?: tileLabel(context, component)
+      AppTileClicker.click(context, component, label, inSystem = tiles?.containsKey(spec)) { result ->
+        when (result) {
+          is AppTileClicker.Result.Clicked ->
+            onDone(stateText(context, result.state, result.checked) ?: label)
+          AppTileClicker.Result.ClickedByShell -> sayStateLater(context, spec, label, onDone)
+          AppTileClicker.Result.NotFound ->
+            onDone(context.getString(R.string.quick_settings_tile_not_found, label))
+          AppTileClicker.Result.PanelFailed -> onDone(failed(context, label))
+          AppTileClicker.Result.AddFailed,
+          AppTileClicker.Result.ClickFailed -> onDone(shellFailure(context, label))
+        }
       }
     }
   }
 
   /**
-   * Turns [control] on or off, and gives [onDone] its new state, or what Shizuku lacks when
-   * SandFly can't read whether it is on.
+   * Reads the system's tiles from SystemUI's dump, by spec, and gives [onDone] them, or null when
+   * SandFly can't read them, on the main thread.
+   */
+  private fun readTiles(context: Context, onDone: (Map<String, TileState>?) -> Unit) {
+    if (!SystemTiles.canRead(context)) {
+      onDone(null)
+      return
+    }
+    Thread({
+        val tiles =
+          try {
+            SystemTiles.read()?.takeIf { it.isNotEmpty() }
+          } catch (e: Throwable) {
+            null
+          }
+        mainHandler.post { onDone(tiles) }
+      }, "TileCommands")
+      .start()
+  }
+
+  /** Gives [onDone] the state of the tile [spec] once it shows it, or [label] if it can't be read. */
+  private fun sayStateLater(context: Context, spec: String, label: String, onDone: (String) -> Unit) {
+    mainHandler.postDelayed(
+      {
+        readTiles(context) { tiles ->
+          val state =
+            when (tiles?.get(spec)?.state) {
+              android.service.quicksettings.Tile.STATE_ACTIVE -> onOff(context, true)
+              android.service.quicksettings.Tile.STATE_INACTIVE -> onOff(context, false)
+              android.service.quicksettings.Tile.STATE_UNAVAILABLE ->
+                context.getString(R.string.quick_settings_unavailable)
+              else -> null
+            }
+          onDone(state ?: label)
+        }
+      },
+      STATE_DELAY_MS,
+    )
+  }
+
+  /**
+   * Turns [control] on or off, and gives [onDone] its new state, or why it can't. [failed] runs
+   * when the change fails.
    */
   private fun toggle(
     context: Context,
     controls: QuickControls,
     control: QuickControl,
     onDone: (String) -> Unit,
+    failed: () -> Unit,
   ) {
-    val unreadable = { onDone(shizukuMissing(context)) }
+    val unreadable = { onDone(shellFailure(context, context.getString(control.title))) }
     fun set(on: Boolean) {
-      val text = context.getString(if (on) R.string.quick_settings_on else R.string.quick_settings_off)
-      val change = controls.setSwitch(control, on, onDone = { onDone(text) }, onFailed = {})
-      if (change == QuickControls.Change.DONE) {
-        if (control == QuickControl.FLASHLIGHT) Flashlight.saw(on)
-        onDone(text)
+      val text = onOff(context, on)
+      when (controls.setSwitch(control, on, onDone = { onDone(text) }, onFailed = failed)) {
+        QuickControls.Change.DONE -> {
+          if (control == QuickControl.FLASHLIGHT) Flashlight.saw(on)
+          onDone(text)
+        }
+        QuickControls.Change.FAILED -> failed()
+        // A settings screen opened, or the change says when it is made.
+        QuickControls.Change.OPENED,
+        QuickControls.Change.STARTED -> {}
       }
     }
     // Android tells only a callback whether the flashlight is on, and only the shell the hotspot
@@ -207,39 +261,87 @@ object TileCommands {
 
   /**
    * Moves [control], such as the sound mode, to its next value, as its tile and SandFly's quick
-   * settings panel do, and gives [onDone] that value.
+   * settings panel do, and gives [onDone] that value. [failed] runs when it can't.
    */
-  private fun next(controls: QuickControls, control: QuickControl, onDone: (String) -> Unit) {
-    val choice = controls.choice(control)?.takeIf { it.options.isNotEmpty() } ?: return
-    val options = choice.options
-    val next = options[(options.indexOfFirst { it.value == choice.current.value } + 1) % options.size]
-    val change = controls.setChoice(control, next.value) {}
-    if (change == QuickControls.Change.DONE || change == QuickControls.Change.STARTED) onDone(next.label)
+  private fun next(
+    controls: QuickControls,
+    control: QuickControl,
+    onDone: (String) -> Unit,
+    failed: () -> Unit,
+  ) {
+    val next = controls.choice(control)?.let { nextOption(it) } ?: return failed()
+    when (controls.setChoice(control, next.value, onFailed = failed)) {
+      QuickControls.Change.DONE,
+      QuickControls.Change.STARTED -> onDone(next.label)
+      QuickControls.Change.FAILED -> failed()
+      QuickControls.Change.OPENED -> {}
+    }
   }
 
-  /** Clicks the tile named [label] in the system's quick settings, and says its new state. */
-  private fun clickInSystem(context: Context, label: String, onDone: (String) -> Unit) {
+  /** The option after [choice]'s current one, the first after the last, or null without options. */
+  internal fun nextOption(choice: ChoiceState): Choice? {
+    val options = choice.options.ifEmpty { return null }
+    return options[(options.indexOfFirst { it.value == choice.current.value } + 1) % options.size]
+  }
+
+  /**
+   * Clicks [item] in the system's quick settings by [label], and gives [onDone] its new state. When
+   * it isn't found and [retry] is true, SystemUI's dump is read again, since a tile can change its
+   * name, such as to its state, and the tile is looked for again by its name there.
+   */
+  private fun clickInSystem(
+    context: Context,
+    item: QuickItem.SystemTile,
+    label: String,
+    retry: Boolean,
+    onDone: (String) -> Unit,
+  ) {
     SystemPanelClicker.click(label) { result ->
-      if (result is SystemPanelClicker.Result.Clicked) {
-        val state =
-          result.state?.toString()
-            ?: result.checked?.let {
-              context.getString(if (it) R.string.quick_settings_on else R.string.quick_settings_off)
+      when (result) {
+        is SystemPanelClicker.Result.Clicked ->
+          onDone(stateText(context, result.state, result.checked) ?: label)
+        SystemPanelClicker.Result.Failed -> onDone(failed(context, label))
+        SystemPanelClicker.Result.NotFound -> {
+          val notFound = { onDone(context.getString(R.string.quick_settings_tile_not_found, label)) }
+          if (!retry || item.spec.isEmpty() || !SystemTiles.canRead(context)) {
+            notFound()
+            return@click
+          }
+          SystemTiles.readLater(context) { tiles ->
+            SystemTiles.keep(context, tiles)
+            val now = tiles?.firstOrNull { it.spec == item.spec }?.label
+            if (now == null || SystemPanelClicker.normalize(now) == SystemPanelClicker.normalize(label)) {
+              notFound()
+            } else {
+              clickInSystem(context, item, now, retry = false, onDone)
             }
-        state?.let(onDone)
-      } else {
-        onDone(context.getString(R.string.quick_settings_tile_not_found, label))
+          }
+        }
       }
     }
   }
 
-  /** What SandFly says elsewhere when Shizuku, or root, doesn't let it run a command. */
-  private fun shizukuMissing(context: Context): String =
-    context.getString(
-      when {
-        ShizukuShell.usesRoot() -> R.string.no_root_access
-        ShizukuGrants.isReady() -> R.string.overview_shizuku_not_allowed
-        else -> R.string.overview_shizuku_not_running
-      }
-    )
+  /** What a tile said its state was after a click, if it said. */
+  private fun stateText(context: Context, state: CharSequence?, checked: Boolean?): String? =
+    state?.toString()?.takeIf { it.isNotBlank() } ?: checked?.let { onOff(context, it) }
+
+  private fun onOff(context: Context, on: Boolean): String =
+    context.getString(if (on) R.string.quick_settings_on else R.string.quick_settings_off)
+
+  private fun failed(context: Context, name: String): String =
+    context.getString(R.string.quick_settings_tile_failed, name)
+
+  /**
+   * Why a command through Shizuku, or root, didn't run: Shizuku isn't running or doesn't allow
+   * SandFly, or the command failed.
+   */
+  private fun shellFailure(context: Context, name: String): String =
+    when {
+      !ShizukuGrants.isReady() -> context.getString(R.string.overview_shizuku_not_running)
+      !ShizukuShell.isAllowed() ->
+        context.getString(
+          if (ShizukuShell.usesRoot()) R.string.no_root_access else R.string.overview_shizuku_not_allowed
+        )
+      else -> failed(context, name)
+    }
 }

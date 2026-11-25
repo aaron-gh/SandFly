@@ -16,17 +16,20 @@
 
 package com.google.android.accessibility.talkback.quicksettings
 
+import android.Manifest
 import android.app.Application
 import android.content.ComponentName
 import android.content.pm.ApplicationInfo
 import android.content.pm.ServiceInfo
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.Commands
+import com.google.android.accessibility.utils.FormFactorUtils
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -40,6 +43,12 @@ class TileCommandsTest {
   private val context: Application = RuntimeEnvironment.getApplication()
   private val smartThings = QuickItem.SystemTile("DeviceControl", "SmartThings")
   private val vpn = ComponentName("com.example.vpn", "com.example.vpn.ConnectTile")
+
+  @Before
+  fun setUp() {
+    // The lists of commands check for a watch.
+    FormFactorUtils.initialize(context)
+  }
 
   @After
   fun tearDown() {
@@ -135,5 +144,66 @@ class TileCommandsTest {
       context.getString(R.string.quick_settings_sound_mode),
       Commands.label(context, "QS_TILE:SOUND_MODE"),
     )
+  }
+
+  @Test
+  fun anEmptyDumpKeepsTheTilesFoundBefore() {
+    val found = listOf(QuickItem.SystemTile("hotspot", "Hotspot"), smartThings)
+    SystemTiles.remember(context, found)
+    // A SystemUI that dumps its tiles in another way, or a dump of tiles without names.
+    assertNull(SystemTiles.fromDump(emptyMap()))
+    assertNull(SystemTiles.fromDump(mapOf("wifi" to TileState("wifi", null, null, 2, true))))
+    SystemTiles.keep(context, SystemTiles.fromDump(emptyMap()))
+    SystemTiles.keep(context, emptyList())
+    assertEquals(found, SystemTiles.lastFound(context))
+  }
+
+  @Test
+  fun tilesFoundByLookingThroughReplaceThoseFromTheDump() {
+    val fromDump =
+      SystemTiles.fromDump(
+        mapOf(
+          "hotspot" to TileState("hotspot", "Hotspot", null, 1, true),
+          SystemTiles.spec(vpn) to TileState(SystemTiles.spec(vpn), "Office", null, 1, false),
+        )
+      )
+    SystemTiles.keep(context, fromDump)
+    assertEquals(listOf(QuickItem.SystemTile("hotspot", "Hotspot")), SystemTiles.lastFound(context))
+    assertEquals(mapOf(SystemTiles.spec(vpn) to "Office"), SystemTiles.appTileNames(context))
+
+    val scanned = listOf(QuickItem.SystemTile("", "Hotspot"), QuickItem.SystemTile("", "Screen record"))
+    SystemTiles.keep(context, scanned)
+    assertEquals(scanned, SystemTiles.lastFound(context))
+    assertTrue(SystemTiles.appTileNames(context).isEmpty())
+  }
+
+  @Test
+  fun controlsNeedShizukuOnlyForWhatAndroidDoesNotLetSandFlyChange() {
+    val controls = QuickControls(context)
+    assertTrue(controls.needsShizuku(QuickControl.WIFI))
+    assertFalse(controls.needsShizuku(QuickControl.SOUND_MODE))
+    assertTrue(controls.needsShizuku(QuickControl.COLOR_INVERSION))
+    shadowOf(context).grantPermissions(Manifest.permission.WRITE_SECURE_SETTINGS)
+    assertFalse(controls.needsShizuku(QuickControl.COLOR_INVERSION))
+  }
+
+  @Test
+  fun appTileOfARemovedAppIsNotFound() {
+    var said: String? = null
+    TileCommands.run(context, TileCommands.valueOf(QuickItem.Tile(vpn))) { said = it }
+    assertEquals(context.getString(R.string.quick_settings_tile_not_found, "com.example.vpn"), said)
+  }
+
+  @Test
+  fun choiceMovesToTheNextOptionAndWrapsAround() {
+    val sound = Choice("Sound", 2)
+    val vibrate = Choice("Vibrate", 1)
+    val mute = Choice("Mute", 0)
+    val options = listOf(sound, vibrate, mute)
+    assertEquals(vibrate, TileCommands.nextOption(ChoiceState(sound, options)))
+    assertEquals(sound, TileCommands.nextOption(ChoiceState(mute, options)))
+    // A value that isn't one of the options moves to the first.
+    assertEquals(sound, TileCommands.nextOption(ChoiceState(Choice("Other", 7), options)))
+    assertNull(TileCommands.nextOption(ChoiceState(sound, emptyList())))
   }
 }
