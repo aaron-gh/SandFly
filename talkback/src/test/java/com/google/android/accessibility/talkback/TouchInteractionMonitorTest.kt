@@ -259,6 +259,24 @@ class TouchInteractionMonitorTest {
   }
 
   @Test
+  fun fastTypingWhoseTouchesOverlapLeavesTheTouchExplorerAsItIs() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 300f, 1800f, 1)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 10)
+    for (i in 1..4) {
+      val at = i * 200L
+      // The finger lifts, and the next key's finger goes down before the touch ends, so the touch
+      // ends in touch exploration with Android reporting the new finger.
+      stateChangeAt(STATE_TOUCH_INTERACTING, at)
+      touchAt(ACTION_DOWN, 300f + i * 50f, 1800f, at + 20)
+      stateChangeAt(STATE_TOUCH_EXPLORING, at + 30)
+    }
+    runUntil(1000)
+
+    assertEquals(listOf<String>(), service.touchExplorerResets)
+  }
+
+  @Test
   fun fingerSlidOffTheBottomOfTheScreenIsAtTheEdgeAndMovingBackInIsNot() {
     val height =
       service
