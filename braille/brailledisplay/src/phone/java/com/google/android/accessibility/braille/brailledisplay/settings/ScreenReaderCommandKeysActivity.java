@@ -26,11 +26,12 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.braille.brailledisplay.R;
+import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayCommandProfile;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayKeys;
 import com.google.android.accessibility.braille.brailledisplay.platform.Connectioneer;
 import com.google.android.accessibility.braille.brailledisplay.platform.Connectioneer.AspectDisplayer;
 import com.google.android.accessibility.braille.brltty.BrailleDisplayProperties;
-import com.google.android.accessibility.braille.common.BrailleUserPreferences;
+
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderCommands;
 import com.google.android.accessibility.utils.preference.PreferencesActivity;
@@ -110,7 +111,7 @@ public class ScreenReaderCommandKeysActivity extends PreferencesActivity {
       ScreenReaderCommands.Category category = categories.get(index);
       getActivity().setTitle(category.title);
       DisplayKeys.Describer describer = new DisplayKeys.Describer(getContext(), props);
-      DisplayKeyOverrides overrides = BrailleUserPreferences.readDisplayKeyOverrides(getContext());
+      DisplayKeyOverrides overrides = DisplayCommandProfile.readOverrides(getContext());
       for (ScreenReaderCommands.Command command : category.commands) {
         String target = DisplayKeyOverrides.screenReaderTarget(command.value);
         if (DisplayKeyOverrides.screenReaderValueOf(target) == null) {

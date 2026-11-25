@@ -49,6 +49,21 @@ public interface BrailleImeForBrailleDisplay {
   /** Tells BrailleIme commit holdings to the editor and performs enter key action. */
   boolean commitHoldingsAndPerformEnterKeyAction();
 
+  /** Commits pending braille and sends Tab or Shift Tab to the editor. */
+  default boolean sendTab(boolean shift) {
+    return false;
+  }
+
+  /** Commits pending braille and asks the editor to undo or redo. */
+  default boolean changeTypingHistory(boolean redo) {
+    return false;
+  }
+
+  /** Shows or hides the on-screen keyboard. */
+  default boolean toggleKeyboardVisibility() {
+    return false;
+  }
+
   /** Tells BrailleIme to update result. */
   void updateResultForDisplay();
 

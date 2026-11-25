@@ -61,6 +61,16 @@ public class DisplayKeysTest {
   }
 
   @Test
+  public void boundSpaceChordKeepsItsPhysicalDotsAndNativeCommand() {
+    int argument = BrailleInputEvent.BOUND_SPACE_CHORD | 0b100100;
+    assertEquals(DisplayKeyOverrides.chordKey(0b100100), DisplayKeys.boundSpaceChordKey(argument));
+    assertEquals(
+        DisplayKeyOverrides.commandKey(BrailleInputEvent.CMD_KEY_ENTER),
+        DisplayKeys.keyOf(BrailleInputEvent.CMD_KEY_ENTER, argument));
+    assertNull(DisplayKeys.boundSpaceChordKey(0b100100));
+  }
+
+  @Test
   public void backspaceChordsAreKeysOnlyWithDots() {
     int withBackspace = BrailleInputEvent.DOTS_WITH_BACKSPACE;
     assertEquals(

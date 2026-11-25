@@ -43,6 +43,30 @@ class DisplayKeyOverridesTest {
   private val deleteKey = 206
 
   @Test
+  fun selectedDefaultsChangeKeysWithoutWritingOverrides() {
+    val chord = chordKey(0b100100)
+    val activateKey = commandKey(70)
+    val activate = commandTarget(70)
+    val profile = mapOf(activateKey to NONE, chord to activate)
+    val overrides = DisplayKeyOverrides.parse(null).withDefaults(profile)
+
+    assertEquals(listOf(chord), overrides.keysFor(activate))
+    assertEquals(NONE, overrides.resolve(activateKey))
+    assertFalse(overrides.isChanged(activate))
+    assertTrue(overrides.isEmpty)
+
+    overrides.assign(activate, activateKey)
+    val loaded = DisplayKeyOverrides.parse(overrides.serialize()).withDefaults(profile)
+    assertEquals(listOf(activateKey), loaded.keysFor(activate))
+    assertEquals(NONE, loaded.resolve(chord))
+
+    loaded.reset(activate)
+    assertEquals(listOf(chord), loaded.keysFor(activate))
+    assertTrue(loaded.isEmpty)
+    assertEquals(listOf(activateKey), loaded.withDefaults(emptyMap()).keysFor(activate))
+  }
+
+  @Test
   fun nothingSavedKeepsTheDefaults() {
     val overrides = DisplayKeyOverrides.parse(null)
     assertTrue(overrides.isEmpty)

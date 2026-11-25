@@ -228,7 +228,8 @@ class DefaultConsumer implements EventConsumer {
         case CMD_BRAILLE_KEY ->
             success = behaviorFocus.handleBrailleKeyWithoutKeyboardOpen(event.getArgument());
         case CMD_NAV_ITEM_PREVIOUS -> success = itemPrevious();
-        case CMD_NAV_ITEM_NEXT -> success = itemNext();
+        case CMD_NAV_ITEM_NEXT, BrailleInputEvent.CMD_KEY_TAB -> success = itemNext();
+        case BrailleInputEvent.CMD_KEY_SHIFT_TAB -> success = itemPrevious();
         case CMD_NAV_LINE_PREVIOUS ->
             success =
                 behaviorScreenReaderAction.performAction(ScreenReaderAction.FOCUS_PREVIOUS_LINE);

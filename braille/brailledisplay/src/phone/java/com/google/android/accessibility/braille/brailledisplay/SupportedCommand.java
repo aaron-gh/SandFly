@@ -568,6 +568,69 @@ public class SupportedCommand {
                   KeyDescriptor.builder().setDots(new BrailleCharacter(8)).build()))
           .add(
               new SupportedCommand(
+                  BrailleInputEvent.CMD_KEY_RETURN,
+                  R.string.bd_cmd_return,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_TRANSLATE_PENDING,
+                  R.string.bd_cmd_translate_pending,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_KEY_TAB,
+                  R.string.bd_cmd_tab,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_KEY_SHIFT_TAB,
+                  R.string.bd_cmd_shift_tab,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_UNDO_TYPING,
+                  R.string.bd_cmd_undo_typing,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_REDO_TYPING,
+                  R.string.bd_cmd_redo_typing,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_TOGGLE_KEYBOARD_VISIBILITY,
+                  R.string.bd_cmd_toggle_keyboard_visibility,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_NAV_STATUS_BAR,
+                  R.string.bd_cmd_nav_status_bar,
+                  Category.NAVIGATION,
+                  Subcategory.WINDOW,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
+                  BrailleInputEvent.CMD_ANNOUNCE_SCROLL_POSITION,
+                  R.string.bd_cmd_announce_scroll_position,
+                  Category.NAVIGATION,
+                  Subcategory.BASIC,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
                   BrailleInputEvent.CMD_SHOW_POPUP_MESSAGE_HISTORY,
                   R.string.bd_cmd_show_popup_message_history,
                   Category.BASIC,

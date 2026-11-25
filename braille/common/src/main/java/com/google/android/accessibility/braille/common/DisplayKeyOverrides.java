@@ -21,6 +21,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -72,6 +73,18 @@ public final class DisplayKeyOverrides {
   private static final int[][] SEPARATE_KEY_COMMANDS = {{204, 5}, {205, 6}, {206, 71}};
 
   private final LinkedHashMap<String, String> overrides = new LinkedHashMap<>();
+  private Map<String, String> defaults = Collections.emptyMap();
+
+  /** Uses the selected profile's defaults without changing the stored overrides. */
+  public DisplayKeyOverrides withDefaults(Map<String, String> defaults) {
+    this.defaults = defaults;
+    return this;
+  }
+
+  /** Returns the target supplied by the selected profile. */
+  public String defaultFor(String key) {
+    return defaults.getOrDefault(key, defaultTarget(key));
+  }
 
   /** Returns the key of a display command. */
   public static String commandKey(int command) {
@@ -176,7 +189,7 @@ public final class DisplayKeyOverrides {
       String key = entry.substring(0, separator);
       String target = decode(entry.substring(separator + 1));
       if (isKey(key) && isTarget(target) && !result.overrides.containsKey(key)) {
-        result.set(key, target);
+        result.overrides.put(key, target);
       }
     }
     return result;
@@ -209,7 +222,7 @@ public final class DisplayKeyOverrides {
   /** Returns what {@code key} runs. */
   public String resolve(String key) {
     String target = overrides.get(key);
-    return target != null ? target : defaultTarget(key);
+    return target != null ? target : defaultFor(key);
   }
 
   /**
@@ -296,11 +309,20 @@ public final class DisplayKeyOverrides {
     overrides.clear();
   }
 
-  /**
-   * Returns the keys that run {@code target} when nothing is overridden: the key of its display
-   * command, and the separate keys that stand in for that command.
-   */
-  private static List<String> defaultKeysFor(String target) {
+  /** Returns the keys supplied by the selected profile, including ordinary fallback keys. */
+  private List<String> defaultKeysFor(String target) {
+    List<String> keys = standardKeysFor(target);
+    keys.removeIf(defaults::containsKey);
+    defaults.forEach(
+        (key, value) -> {
+          if (target.equals(value)) {
+            keys.add(key);
+          }
+        });
+    return keys;
+  }
+
+  private static List<String> standardKeysFor(String target) {
     List<String> keys = new ArrayList<>();
     int command = commandOf(target);
     if (command < 0) {
@@ -318,7 +340,7 @@ public final class DisplayKeyOverrides {
   }
 
   private void set(String key, String target) {
-    if (target.equals(defaultTarget(key))) {
+    if (target.equals(defaultFor(key))) {
       overrides.remove(key);
     } else if (overrides.containsKey(key) || overrides.size() < MAX_ENTRIES) {
       overrides.put(key, target);

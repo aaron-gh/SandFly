@@ -62,6 +62,15 @@ public final class DisplayKeys {
     return DisplayKeyOverrides.commandKey(command);
   }
 
+  /** Returns the physical Space chord for a driver-bound command, if available. */
+  @Nullable
+  public static String boundSpaceChordKey(int argument) {
+    int dots = argument & DOTS_MASK;
+    return dots == 0 || (argument & BrailleInputEvent.BOUND_SPACE_CHORD) == 0
+        ? null
+        : DisplayKeyOverrides.chordKey(dots);
+  }
+
   /** Returns whether an unbound Space or Backspace chord produced the input event. */
   public static boolean isUnboundChord(int command, int argument) {
     return command == BrailleInputEvent.CMD_BRAILLE_KEY
@@ -200,14 +209,13 @@ public final class DisplayKeys {
     }
 
     /**
-     * Returns how to press the separate keys that still run display command {@code command}, or an
-     * empty string for none.
+     * Returns how to press additional keys for display command {@code command}, or an empty string.
      */
-    public String describeSeparateKeysFor(DisplayKeyOverrides overrides, int command) {
+    public String describeAdditionalKeysFor(DisplayKeyOverrides overrides, int command) {
       List<String> keys = new ArrayList<>();
       for (String key : overrides.keysFor(DisplayKeyOverrides.commandTarget(command))) {
         int keyCommand = DisplayKeyOverrides.commandOf(key);
-        if (keyCommand >= 0 && DisplayKeyOverrides.defaultCommandOf(keyCommand) != keyCommand) {
+        if (keyCommand != command) {
           keys.add(key);
         }
       }

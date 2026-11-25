@@ -2573,6 +2573,45 @@ public class BrailleIme extends InputMethodService {
         }
 
         @Override
+        public boolean sendTab(boolean shift) {
+          InputConnection connection = getCurrentInputConnection();
+          if (connection == null) {
+            return false;
+          }
+          commitHoldings();
+          long time = SystemClock.uptimeMillis();
+          int modifiers = shift ? KeyEvent.META_SHIFT_ON : 0;
+          return connection.sendKeyEvent(
+                  new KeyEvent(time, time, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_TAB, 0, modifiers))
+              && connection.sendKeyEvent(
+                  new KeyEvent(time, time, KeyEvent.ACTION_UP, KeyEvent.KEYCODE_TAB, 0, modifiers));
+        }
+
+        @Override
+        public boolean changeTypingHistory(boolean redo) {
+          InputConnection connection = getCurrentInputConnection();
+          if (connection == null) {
+            return false;
+          }
+          commitHoldings();
+          return connection.performContextMenuAction(redo ? android.R.id.redo : android.R.id.undo);
+        }
+
+        @Override
+        public boolean toggleKeyboardVisibility() {
+          if (getCurrentInputConnection() == null) {
+            return false;
+          }
+          if (isInputViewShown()) {
+            commitHoldings();
+            requestHideSelf(0);
+          } else {
+            requestShowSelf(0);
+          }
+          return true;
+        }
+
+        @Override
         public void updateResultForDisplay() {
           showOnBrailleDisplay();
         }

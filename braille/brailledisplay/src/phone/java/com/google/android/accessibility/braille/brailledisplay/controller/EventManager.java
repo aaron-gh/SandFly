@@ -192,6 +192,14 @@ public class EventManager implements EventConsumer {
   @Override
   @CanIgnoreReturnValue
   public boolean onMappedInputEvent(BrailleInputEvent event) {
+    return dispatchInputEvent(event, /* explicitCommand= */ false);
+  }
+
+  void onCommandInputEvent(BrailleInputEvent event) {
+    dispatchInputEvent(event, /* explicitCommand= */ true);
+  }
+
+  private boolean dispatchInputEvent(BrailleInputEvent event, boolean explicitCommand) {
     BrailleDisplayLog.v(TAG, "onMappedInputEvent: " + event.getCommand());
     int command = event.getCommand();
     logBrailleCommands(command);
@@ -222,7 +230,7 @@ public class EventManager implements EventConsumer {
       if (handleGeneralCommands(event)) {
         return true;
       }
-      if (handleOtherCommands(event)) {
+      if (handleOtherCommands(event, explicitCommand)) {
         return true;
       }
       feedbackManager.emitFeedback(FeedbackManager.Type.UNKNOWN_COMMAND);
@@ -429,6 +437,10 @@ public class EventManager implements EventConsumer {
     boolean success = false;
     AccessibilityNodeInfoCompat node;
     switch (event.getCommand()) {
+      case BrailleInputEvent.CMD_NAV_STATUS_BAR ->
+          success = behaviorScreenReader.performAction(ScreenReaderAction.NAVIGATE_TO_STATUS_BAR);
+      case BrailleInputEvent.CMD_ANNOUNCE_SCROLL_POSITION ->
+          success = behaviorScreenReader.performAction(ScreenReaderAction.ANNOUNCE_SCROLL_POSITION);
       case BrailleInputEvent.CMD_TOGGLE_SCREEN_SEARCH ->
           success = behaviorScreenReader.performAction(ScreenReaderAction.SCREEN_SEARCH);
       case BrailleInputEvent.CMD_EDIT_CUSTOM_LABEL -> {
@@ -473,6 +485,8 @@ public class EventManager implements EventConsumer {
         }
         success = behaviorScreenReader.performAction(ScreenReaderAction.LONG_CLICK_NODE, node);
       }
+      case BrailleInputEvent.CMD_TOGGLE_KEYBOARD_VISIBILITY ->
+          success = behaviorIme.toggleKeyboardVisibility();
       case BrailleInputEvent.CMD_NEXT_INPUT_METHOD ->
           success = behaviorIme.switchToNextInputMethod();
       case CMD_TOGGLE_BRAILLE_GRADE -> {
@@ -550,13 +564,26 @@ public class EventManager implements EventConsumer {
     return cellsContentConsumer.isTimedMessageDisplaying();
   }
 
-  private boolean handleOtherCommands(BrailleInputEvent event) {
+  private boolean handleOtherCommands(BrailleInputEvent event, boolean explicitCommand) {
     updateConsumer(/* event= */ null);
-    if (currentConsumer == editorConsumer
-        && EditorConsumer.switchesLanguage(context, event.getCommand())) {
+    int command = event.getCommand();
+    if (currentConsumer != editorConsumer) {
+      return currentConsumer.onMappedInputEvent(event);
+    }
+    if (explicitCommand
+        && BrailleUserPreferences.usesIosDisplayCommands(context)
+        && (command == BrailleInputEvent.CMD_KEY_ENTER
+            || command == BrailleInputEvent.CMD_NAV_TOP
+            || command == BrailleInputEvent.CMD_NAV_BOTTOM)) {
+      behaviorIme.commitHoldings();
       return defaultConsumer.onMappedInputEvent(event);
     }
-    return currentConsumer.onMappedInputEvent(event);
+    if (EditorConsumer.handlesWhileEditing(command)
+        || (!explicitCommand && EditorConsumer.typesDots(context, command))) {
+      return editorConsumer.onMappedInputEvent(event);
+    }
+    behaviorIme.commitHoldings();
+    return defaultConsumer.onMappedInputEvent(event);
   }
 
   private void handleCommandCompletion(boolean success) {

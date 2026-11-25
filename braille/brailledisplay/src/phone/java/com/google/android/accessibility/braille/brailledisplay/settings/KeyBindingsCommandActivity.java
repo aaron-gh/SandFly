@@ -36,10 +36,12 @@ import com.google.android.accessibility.braille.brailledisplay.SupportedCommand;
 import com.google.android.accessibility.braille.brailledisplay.SupportedCommand.Category;
 import com.google.android.accessibility.braille.brailledisplay.SupportedCommand.Subcategory;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.BrailleKeyBindingUtils;
+import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayCommandProfile;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayKeys;
 import com.google.android.accessibility.braille.brailledisplay.platform.Connectioneer;
 import com.google.android.accessibility.braille.brailledisplay.platform.Connectioneer.AspectDisplayer;
 import com.google.android.accessibility.braille.brltty.BrailleDisplayProperties;
+import com.google.android.accessibility.braille.brltty.BrailleInputEvent;
 import com.google.android.accessibility.braille.brltty.BrailleKeyBinding;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides;
@@ -122,17 +124,26 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
         }
       }
       DisplayKeys.Describer describer = new DisplayKeys.Describer(getContext(), props);
-      DisplayKeyOverrides overrides = BrailleUserPreferences.readDisplayKeyOverrides(getContext());
+      DisplayKeyOverrides overrides = DisplayCommandProfile.readOverrides(getContext());
       for (SupportedCommand supportedCommand :
           SupportedCommand.getAvailableSupportedCommands(getContext())) {
         if (supportedCommand.getCategory().equals(supportedCommandCategory)) {
           int command = supportedCommand.getCommand();
+          boolean ios = BrailleUserPreferences.usesIosDisplayCommands(getContext());
+          if (ios
+              && command == BrailleInputEvent.CMD_KEY_ENTER
+              && supportedCommandCategory == SupportedCommand.Category.EDITING) {
+            continue;
+          }
           String commandDescription = supportedCommand.getCommandDescription(getResources());
-          if (!DisplayKeys.isAssignable(command)) {
+          boolean profilePan =
+              ios && (command == BrailleInputEvent.CMD_NAV_PAN_UP
+                  || command == BrailleInputEvent.CMD_NAV_PAN_DOWN);
+          if (!DisplayKeys.isAssignable(command) && !profilePan) {
             String keys =
                 describer.join(
                     getKeyDescription(supportedCommand, props),
-                    describer.describeSeparateKeysFor(overrides, command));
+                    describer.describeAdditionalKeysFor(overrides, command));
             if (TextUtils.isEmpty(keys)) {
               continue;
             }
@@ -144,6 +155,9 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
           }
           String target = DisplayKeyOverrides.commandTarget(command);
           String keys = describer.describeKeysFor(overrides, target);
+          if (profilePan && keys.isEmpty()) {
+            keys = getKeyDescription(supportedCommand, props);
+          }
           Preference preference =
               createPreference(
                   commandDescription,

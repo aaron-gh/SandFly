@@ -182,6 +182,9 @@ public class BrailleInputEvent implements Parcelable {
    */
   public static final int DOTS_WITH_BACKSPACE = 0x200;
 
+  /** Argument flag for a Space chord that also has a native display command. */
+  public static final int BOUND_SPACE_CHORD = 0x4000;
+
   // Editing keys.
 
   /** Keyboard command: Enter key. */
@@ -192,6 +195,20 @@ public class BrailleInputEvent implements Parcelable {
 
   /** Keyboard command: Delete a word backward. */
   public static final int CMD_DEL_WORD = 72;
+
+  /** Return in the editor, separate from activation of a focused item. */
+  public static final int CMD_KEY_RETURN = 73;
+
+  /** Commits any pending contracted braille. */
+  public static final int CMD_TRANSLATE_PENDING = 74;
+
+  public static final int CMD_KEY_TAB = 75;
+  public static final int CMD_KEY_SHIFT_TAB = 76;
+  public static final int CMD_UNDO_TYPING = 207;
+  public static final int CMD_REDO_TYPING = 208;
+  public static final int CMD_TOGGLE_KEYBOARD_VISIBILITY = 209;
+  public static final int CMD_NAV_STATUS_BAR = 210;
+  public static final int CMD_ANNOUNCE_SCROLL_POSITION = 211;
 
   /** Keyboard command: Select previous character. */
   public static final int CMD_SELECT_PREVIOUS_CHARACTER = 77;

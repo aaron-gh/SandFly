@@ -52,6 +52,14 @@ extern "C" {
 #define BRL_MSK_EXT BRL_MSK(EXT)
 #define BRL_MSK_CMD (BRL_MSK_BLK | BRL_MSK_ARG)
 
+#ifdef __ANDROID__
+/* SandFly transport metadata for a physical Space+dots chord with a bound command.
+ * Use the flags byte for dots only when the original command has no flags, and an
+ * unused extended argument bit as a marker. Strip both before interpreting the command. */
+#define SANDFLY_SPACE_CHORD 0X40000000
+#define SANDFLY_CHORD_METADATA (SANDFLY_SPACE_CHORD | BRL_MSK_FLG)
+#endif
+
 #define BRL_ARG_GET(code) (BRL_CODE_GET(ARG, (code)) | (BRL_CODE_GET(EXT, (code)) << BRL_BITS_ARG))
 #define BRL_ARG_SET(value) (BRL_CODE_SET(ARG, (value)) | BRL_CODE_SET(EXT, ((value) >> BRL_BITS_ARG)))
 

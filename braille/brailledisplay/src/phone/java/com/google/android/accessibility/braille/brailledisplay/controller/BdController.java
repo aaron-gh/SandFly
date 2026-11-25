@@ -180,7 +180,7 @@ public class BdController implements Controller {
     if (!isAvailable()) {
       return;
     }
-    if (DisplayKeyCapture.offer(brailleInputEvent)) {
+    if (DisplayKeyCapture.offer(context, brailleInputEvent)) {
       return;
     }
     String target = keyRemapper.targetFor(brailleInputEvent, behaviorIme.acceptInput());
@@ -204,7 +204,15 @@ public class BdController implements Controller {
       getBrailleImeForBrailleDisplay().onBrailleDisplayConnected();
       putAccessibilityFocusOnInputFocus();
     } else if (target == null) {
-      eventManager.onMappedInputEvent(brailleInputEvent);
+      boolean boundSpaceChord =
+          (brailleInputEvent.getArgument() & BrailleInputEvent.BOUND_SPACE_CHORD) != 0;
+      if (boundSpaceChord) {
+        eventManager.onCommandInputEvent(
+            new BrailleInputEvent(
+                brailleInputEvent.getCommand(), 0, brailleInputEvent.getEventTime()));
+      } else {
+        eventManager.onMappedInputEvent(brailleInputEvent);
+      }
     } else {
       performAssignedCommand(target, brailleInputEvent.getEventTime());
     }
@@ -214,12 +222,15 @@ public class BdController implements Controller {
   private void performAssignedCommand(String target, long eventTime) {
     int command = DisplayKeyOverrides.commandOf(target);
     if (command >= 0) {
-      eventManager.onMappedInputEvent(
+      eventManager.onCommandInputEvent(
           new BrailleInputEvent(command, /* argument= */ 0, eventTime));
       return;
     }
     if (eventManager.stopAutoScrollOrDismissTimedMessage()) {
       return;
+    }
+    if (behaviorIme.acceptInput()) {
+      behaviorIme.commitHoldings();
     }
     String value = DisplayKeyOverrides.screenReaderValueOf(target);
     if (value == null || !talkBackForBrailleDisplay.performCommand(value)) {
@@ -696,6 +707,19 @@ public class BdController implements Controller {
     /** Tells BrailleIme to update the result on a braille display. */
     public void triggerUpdateDisplay() {
       getBrailleImeForBrailleDisplay().updateResultForDisplay();
+    }
+
+    public boolean sendTab(boolean shift) {
+      return getBrailleImeForBrailleDisplay().sendTab(shift);
+    }
+
+    public boolean changeTypingHistory(boolean redo) {
+      return getBrailleImeForBrailleDisplay().changeTypingHistory(redo);
+    }
+
+    public boolean toggleKeyboardVisibility() {
+      BrailleImeForBrailleDisplay ime = getBrailleImeForBrailleDisplay();
+      return ime != null && ime.toggleKeyboardVisibility();
     }
 
     /** Performs enter key action. */

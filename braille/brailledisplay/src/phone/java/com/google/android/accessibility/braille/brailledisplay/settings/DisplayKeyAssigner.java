@@ -27,6 +27,7 @@ import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import com.google.android.accessibility.braille.brailledisplay.R;
 import com.google.android.accessibility.braille.brailledisplay.controller.DisplayKeyCapture;
+import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayCommandProfile;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayKeys;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides;
@@ -49,7 +50,7 @@ final class DisplayKeyAssigner {
       String label,
       DisplayKeys.Describer describer,
       Runnable onChanged) {
-    boolean changed = BrailleUserPreferences.readDisplayKeyOverrides(context).isChanged(target);
+    boolean changed = DisplayCommandProfile.readOverrides(context).isChanged(target);
     List<CharSequence> items = new ArrayList<>();
     items.add(context.getString(R.string.bd_key_bindings_change_keys));
     if (changed) {
@@ -75,7 +76,7 @@ final class DisplayKeyAssigner {
       Context context, String target, String label, Runnable onChanged) {
     @Nullable
     String loser =
-        BrailleUserPreferences.readDisplayKeyOverrides(context).targetLosingKeyOnReset(target);
+        DisplayCommandProfile.readOverrides(context).targetLosingKeyOnReset(target);
     if (loser == null) {
       reset(context, target, onChanged);
       return;
@@ -93,7 +94,7 @@ final class DisplayKeyAssigner {
   }
 
   private static void reset(Context context, String target, Runnable onChanged) {
-    DisplayKeyOverrides overrides = BrailleUserPreferences.readDisplayKeyOverrides(context);
+    DisplayKeyOverrides overrides = DisplayCommandProfile.readOverrides(context);
     overrides.reset(target);
     BrailleUserPreferences.writeDisplayKeyOverrides(context, overrides);
     onChanged.run();
@@ -157,7 +158,7 @@ final class DisplayKeyAssigner {
             if (message.isEmpty()) {
               message =
                   DisplayKeys.targetLabel(
-                      context, DisplayKeyOverrides.defaultTarget(assignable));
+                      context, DisplayCommandProfile.readOverrides(context).defaultFor(assignable));
             }
           }
           dialog.setMessage(message);
@@ -204,7 +205,7 @@ final class DisplayKeyAssigner {
   /** Assigns {@code key}, first asking to move it when another command runs it. */
   private static void confirmAndAssign(
       Context context, String target, String label, String key, Runnable onChanged) {
-    String current = BrailleUserPreferences.readDisplayKeyOverrides(context).resolve(key);
+    String current = DisplayCommandProfile.readOverrides(context).resolve(key);
     if (current.equals(DisplayKeyOverrides.NONE) || current.equals(target)) {
       assign(context, target, key, onChanged);
       return;
@@ -223,7 +224,7 @@ final class DisplayKeyAssigner {
   }
 
   private static void assign(Context context, String target, String key, Runnable onChanged) {
-    DisplayKeyOverrides overrides = BrailleUserPreferences.readDisplayKeyOverrides(context);
+    DisplayKeyOverrides overrides = DisplayCommandProfile.readOverrides(context);
     overrides.assign(target, key);
     BrailleUserPreferences.writeDisplayKeyOverrides(context, overrides);
     onChanged.run();
