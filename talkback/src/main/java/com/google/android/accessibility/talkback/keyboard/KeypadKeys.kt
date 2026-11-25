@@ -232,7 +232,12 @@ class KeypadKeys(private val service: AccessibilityService) {
     if (keyCode == KeyEvent.KEYCODE_DEL) {
       return findById(roots, SYSTEM_UI, "delete_button")?.let(::click) ?: false
     }
-    val digit = keypadCharacter(event.keyCharacterMap, keyCode)?.takeIf { it.isDigit() } ?: return false
+    // A digit key's digit is its key code's: the Zinwa Q25 sends digit key codes for the letter keys
+    // on the lock screen, and its character map has no keys 1 to 9.
+    val digit =
+      digitOf(keyCode)
+        ?: keypadCharacter(event.keyCharacterMap, keyCode)?.takeIf { it.isDigit() }
+        ?: return false
     if (pendingDigits.isNotEmpty()) {
       if (pendingDigits.length < MAX_PENDING_DIGITS) {
         pendingDigits.append(digit)
@@ -477,6 +482,15 @@ class KeypadKeys(private val service: AccessibilityService) {
     private fun isDigitKey(keyCode: Int): Boolean =
       keyCode in KeyEvent.KEYCODE_0..KeyEvent.KEYCODE_9 ||
         keyCode in KeyEvent.KEYCODE_NUMPAD_0..KeyEvent.KEYCODE_NUMPAD_RIGHT_PAREN
+
+    /** The digit of a digit key, from the number row or the numeric keypad. */
+    internal fun digitOf(keyCode: Int): Char? =
+      when (keyCode) {
+        in KeyEvent.KEYCODE_0..KeyEvent.KEYCODE_9 -> '0' + (keyCode - KeyEvent.KEYCODE_0)
+        in KeyEvent.KEYCODE_NUMPAD_0..KeyEvent.KEYCODE_NUMPAD_9 ->
+          '0' + (keyCode - KeyEvent.KEYCODE_NUMPAD_0)
+        else -> null
+      }
 
     internal fun isCalculator(packageName: String): Boolean =
       packageName in CALCULATORS || packageName.lowercase().contains("calculator")
