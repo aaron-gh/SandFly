@@ -190,6 +190,9 @@ final class ReadingControlValues {
                     R.string.pref_audio_output_device_default));
         return index >= 0 ? choices.get(index).getSecond() : null;
       }
+      case AI_SERVICE -> {
+        return AiServiceControl.current(context, prefs);
+      }
       case SWITCH_VOICE_PROFILE -> {
         return VoiceProfileNames.nameOf(context, prefs, VoiceProfiles.activeId(prefs));
       }
