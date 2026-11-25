@@ -861,6 +861,10 @@ public class SelectorController implements UserInputEventListener {
   // Whether a command, not a gesture on the selected reading control, is changing a value.
   private boolean adjustingByCommand;
 
+  // Whether the swipe adjusting the selected reading control increases a value, or null when no
+  // swipe sets the direction. See SwipeValueDirection.
+  private @Nullable Boolean swipeIncreases;
+
   /** Lists all {@link Setting} that should be hidden for users. */
   private final ImmutableList<Setting> hiddenSettings;
 
@@ -2719,6 +2723,30 @@ public class SelectorController implements UserInputEventListener {
     return adjustSelectedSettingGestureNames;
   }
 
+  /**
+   * Changes the value of the selected reading control, as {@link #adjustSelectedSetting(EventId,
+   * boolean)} does, for a swipe: a value such as a slider's goes up when {@code swipeIncreases} is
+   * true and down when it is false. Null leaves it to {@code isNext}.
+   */
+  public void adjustSelectedSetting(
+      EventId eventId, boolean isNext, @Nullable Boolean swipeIncreases) {
+    @Nullable Boolean previous = this.swipeIncreases;
+    this.swipeIncreases = swipeIncreases;
+    try {
+      adjustSelectedSetting(eventId, isNext);
+    } finally {
+      this.swipeIncreases = previous;
+    }
+  }
+
+  /**
+   * Whether adjusting a reading control with {@code isNext} increases a value, such as a slider's or
+   * Speech rate's.
+   */
+  private boolean increases(boolean isNext) {
+    return SwipeValueDirection.commandIncreases(isNext, swipeIncreases);
+  }
+
   /** Change the value of the selected setting or scroll forward/backard of the seeker. */
   public void adjustSelectedSetting(EventId eventId, boolean isNext) {
     applyPendingSwitch();
@@ -2812,9 +2840,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case SPEECH_RATE -> {
-        // TODO: Increase speech rate when swipe-up is assigned to the selected setting's
-        // previous action, which will be the default assignment.
-        changeSpeechRate(eventId, !isNext);
+        changeSpeechRate(eventId, increases(isNext));
         return;
       }
       case LANGUAGE -> {
@@ -2858,13 +2884,15 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
-        changeAccessibilityVolume(eventId, isNext);
+        changeAccessibilityVolume(eventId, /* decreaseVolume= */ !increases(isNext));
         return;
       }
       case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
         String displayText =
             StreamVolumeControl.change(
-                context, STREAM_VOLUMES.get(currentSetting).stream, /* lower= */ isNext);
+                context,
+                STREAM_VOLUMES.get(currentSetting).stream,
+                /* lower= */ !increases(isNext));
         announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
         showQuickMenuActionOverlay(eventId, displayText);
         return;
@@ -2884,7 +2912,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case CHANGE_BRIGHTNESS -> {
-        changeBrightness(eventId, /* increase= */ !isNext);
+        changeBrightness(eventId, /* increase= */ increases(isNext));
         return;
       }
       case CHANGE_TOUCH_FOCUS_LATENCY -> {
@@ -2952,7 +2980,7 @@ public class SelectorController implements UserInputEventListener {
           EQUALIZER_6K,
           EQUALIZER_8K,
           EQUALIZER_16K -> {
-        changeEqualizerGain(eventId, EQUALIZER_BANDS.indexOf(currentSetting), !isNext);
+        changeEqualizerGain(eventId, EQUALIZER_BANDS.indexOf(currentSetting), increases(isNext));
         return;
       }
       case GESTURE_PROFILE -> {
@@ -3240,7 +3268,7 @@ public class SelectorController implements UserInputEventListener {
 
   private void handleAdjustable(EventId eventId, boolean isNext) {
     pipeline.returnFeedback(
-        eventId, Feedback.adjustValue(isNext ? DECREASE_VALUE : INCREASE_VALUE));
+        eventId, Feedback.adjustValue(increases(isNext) ? INCREASE_VALUE : DECREASE_VALUE));
   }
 
   private void navigateTypo(EventId eventId, boolean isNext) {
