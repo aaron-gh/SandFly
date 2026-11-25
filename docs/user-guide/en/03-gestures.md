@@ -117,7 +117,9 @@ Each command has **Change command**, **Move up**, **Move down** and **Remove**.
 
 To use the menu, start at the very edge and slide up or down along it. The commands divide the length of the edge equally, from the top, so each command is always at the same place. SandFly speaks the name of each command with a tick when the finger reaches it, and lifting runs the command under the finger. Moving in from the edge more than three times the edge width speaks "Cancel", and lifting there runs nothing; moving back to the edge returns to the commands.
 
-While an edge is a menu, the gestures that slide along it and scrolling along it are not used. Slides in from that edge stay gestures. A slide that starts on the keyboard is not a menu, so the keys at the edge type as usual.
+While an edge is a menu, the gestures that slide along it and scrolling along it are not used. Slides in from that edge stay gestures, unless the menu goes across the screen, as described below. A slide that starts on the keyboard is not a menu, so the keys at the edge type as usual.
+
+To slide across the screen instead, turn on **Use horizontal edge menu** on the same screen; it can be changed while the edge is a menu. Each edge has its own switch, off by default. Start at the very edge and slide in toward the middle of the screen. The menu starts at the distance to the first click, and the commands divide the rest of the width, from the distance to the first click to the other edge of the screen, equally, so each command is always at the same place. Sliding back toward the edge goes back through the commands. Moving up or down more than three times the edge width speaks "Cancel", and lifting there runs nothing; moving back returns to the commands. The menu then replaces the slides in from that edge, including from its corners, and the gestures and scripts that use them. From the top and bottom corners, scrolling along the top and bottom edges and the slides in from the top and bottom edges still take the touch. The gestures that slide along the edge and scrolling along it work again. With scrolling along that edge on, a slide in that drifts up or down early on scrolls instead.
 
 #### Edge settings {#gestures-edge-settings}
 
@@ -307,4 +309,4 @@ The shortcut is added to the list, where you can rename or delete it. See [](#co
 
 While the tries are taken, each touch is a try, and gestures run no commands. After the last try, the screen lists the measurements of each try, what to change, and the settings that change the limits, with a button for each. **Repeat** takes the tries again, **Next exercise** goes to the next gesture, and **Contents** lists the exercises of the group.
 
-A group leaves out gestures that your settings turn off, and says which setting. An edge without an edge menu is practised with sample items, which run no commands.
+A group leaves out gestures that your settings turn off, and says which setting. An edge without an edge menu is practised with sample items, which run no commands. An edge menu with **Use horizontal edge menu** on is practised by sliding in from the edge, and **Swipes from the edges** leaves out the swipes in from that edge.

@@ -19,7 +19,9 @@ package com.google.android.accessibility.talkback.gesture
 import android.content.Context
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
@@ -49,5 +51,22 @@ class EdgeMenusTest {
     EdgeMenus.setItems(prefs, MenuEdge.LEFT, listOf("COMMAND_1", "COMMAND_2"))
     assertEquals(listOf("COMMAND_1", "COMMAND_2"), EdgeMenus.items(prefs, MenuEdge.LEFT, "UNASSIGNED"))
     assertNull(prefs.getString(EdgeMenus.itemKey(MenuEdge.LEFT, 20), null))
+  }
+
+  @Test
+  fun horizontalSwitchIsReadWithTheMenu() {
+    prefs.edit().clear().commit()
+    EdgeMenus.setItems(prefs, MenuEdge.LEFT, listOf("COMMAND_1"))
+    prefs
+      .edit()
+      .putBoolean(EdgeMenus.switchKey(MenuEdge.LEFT), true)
+      .putBoolean(EdgeMenus.horizontalKey(MenuEdge.LEFT), true)
+      .commit()
+    EdgeMenus.setItems(prefs, MenuEdge.LEFT, listOf("COMMAND_1", "COMMAND_2"))
+    assertTrue(EdgeMenus.isKey(EdgeMenus.horizontalKey(MenuEdge.LEFT)))
+    val left = EdgeMenus.read(prefs, MenuEdge.LEFT, "UNASSIGNED")
+    assertTrue(left.horizontal)
+    assertEquals(2, left.size)
+    assertFalse(EdgeMenus.read(prefs, MenuEdge.RIGHT, "UNASSIGNED").horizontal)
   }
 }
