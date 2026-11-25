@@ -760,7 +760,9 @@ initCommandTables(JNIEnv* env) {
       // so that they can be assigned apart from the other keys of that command.
       {"CMD_NAV_PAN_UP_SEPARATE_KEY", CUSTOM_KEY + 124},
       {"CMD_NAV_PAN_DOWN_SEPARATE_KEY", CUSTOM_KEY + 125},
-      {"CMD_KEY_DEL_SEPARATE_KEY", CUSTOM_KEY + 126}};
+      {"CMD_KEY_DEL_SEPARATE_KEY", CUSTOM_KEY + 126},
+      {"CMD_NAV_ITEM_PREVIOUS_SEPARATE_KEY", CUSTOM_KEY + 127},
+      {"CMD_NAV_ITEM_NEXT_SEPARATE_KEY", CUSTOM_KEY + 128}};
   unifiedCommandMap = createCommandMap(
       env, cls, unifiedCommands,
       sizeof(unifiedCommands) / sizeof(unifiedCommands[0]));

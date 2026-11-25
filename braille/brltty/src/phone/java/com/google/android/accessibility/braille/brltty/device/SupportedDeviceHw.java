@@ -59,6 +59,8 @@ public class SupportedDeviceHw extends SupportedDevice {
         .add("Press", R.string.key_JoystickCenter)
         .add("ThumbLeft", R.string.key_pan_left)
         .add("ThumbRight", R.string.key_pan_right)
+        .add("ThumbPrevious", R.string.key_brailliant_Thumb1)
+        .add("ThumbNext", R.string.key_brailliant_Thumb4)
         .routing()
         .add("Space", R.string.key_Space)
         .add("Power", R.string.key_brailliant_Power)

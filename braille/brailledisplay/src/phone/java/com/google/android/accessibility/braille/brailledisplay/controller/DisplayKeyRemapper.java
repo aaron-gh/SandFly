@@ -81,7 +81,13 @@ final class DisplayKeyRemapper {
     if (target != null) {
       return target;
     }
-    if (ios && boundChord != null) {
+    if (editing && command == BrailleInputEvent.CMD_NAV_ITEM_PREVIOUS_SEPARATE_KEY) {
+      return DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_NAV_PAN_UP);
+    }
+    if (editing && command == BrailleInputEvent.CMD_NAV_ITEM_NEXT_SEPARATE_KEY) {
+      return DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_NAV_PAN_DOWN);
+    }
+    if (boundChord != null) {
       String chordTarget = bindings.defaultFor(boundChord);
       if (!DisplayKeyOverrides.NONE.equals(chordTarget)) {
         return chordTarget;

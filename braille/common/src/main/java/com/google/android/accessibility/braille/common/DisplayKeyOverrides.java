@@ -67,10 +67,12 @@ public final class DisplayKeyOverrides {
   /**
    * Display commands of separate keys, each with the display command that it runs until assigned.
    * They are BrailleInputEvent.CMD_NAV_PAN_UP_SEPARATE_KEY, CMD_NAV_PAN_DOWN_SEPARATE_KEY and
-   * CMD_KEY_DEL_SEPARATE_KEY, which run CMD_NAV_PAN_UP, CMD_NAV_PAN_DOWN and CMD_KEY_DEL.
+   * CMD_KEY_DEL_SEPARATE_KEY and the two separate previous/next item keys.
    * BrailleInputEvent is in a module that depends on this one; DisplayKeysTest checks the values.
    */
-  private static final int[][] SEPARATE_KEY_COMMANDS = {{204, 5}, {205, 6}, {206, 71}};
+  private static final int[][] SEPARATE_KEY_COMMANDS = {
+    {204, 5}, {205, 6}, {206, 71}, {212, 3}, {213, 4}
+  };
 
   private final LinkedHashMap<String, String> overrides = new LinkedHashMap<>();
   private Map<String, String> defaults = Collections.emptyMap();

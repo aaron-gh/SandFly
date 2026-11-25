@@ -523,6 +523,12 @@ public class BrailleInputEvent implements Parcelable {
   /** Keyboard command: Deletes backward, as {@link #CMD_KEY_DEL} does. */
   public static final int CMD_KEY_DEL_SEPARATE_KEY = 206;
 
+  /** Physical previous-item key, also able to pan out of an editor. */
+  public static final int CMD_NAV_ITEM_PREVIOUS_SEPARATE_KEY = 212;
+
+  /** Physical next-item key, also able to pan out of an editor. */
+  public static final int CMD_NAV_ITEM_NEXT_SEPARATE_KEY = 213;
+
   // Meanings of the argument to a command.
 
   /** This command doesn't have an argument. */

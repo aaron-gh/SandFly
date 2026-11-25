@@ -11,8 +11,8 @@ map SpaceRight SPACE
 note Panning and Rocker keys
 note     PanLeft/RockerUp move the Braille cell window left
 note     PanRight/RockerDown move the Braille cell window right
-bind PanLeft FWINLT
-bind PanRight FWINRT
+bind PanLeft KEY_FUNCTION+224
+bind PanRight KEY_FUNCTION+225
 bind RockerUp FWINLT
 bind RockerDown FWINRT
 bind RockerPress KEY_ENTER
@@ -21,8 +21,8 @@ note D-Pad
 note     DPadLeft moves to previous item, DPadRight moves to next item
 note     DPadUp moves up a line, DPadDown moves down a line
 note     DPadCenter is KEY_ENTER
-bind DPadLeft CHRLT
-bind DPadRight CHRRT
+bind DPadLeft KEY_FUNCTION+227
+bind DPadRight KEY_FUNCTION+228
 bind DPadUp LNUP
 bind DPadDown LNDN
 bind DPadCenter KEY_ENTER
