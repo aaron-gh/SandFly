@@ -149,6 +149,27 @@ Każde żądanie zastępuje poprzednie. Wywołania są jednokierunkowe i wracaj�
 
 Po ponownym uruchomieniu SandFly połączenie zgłasza `onServiceDisconnected`, a potem `onServiceConnected`. Wyślij żądanie i stan ponownie w `onServiceConnected`.
 
+## Klawiatury w nakładce ułatwień dostępu {#keyboards-in-an-accessibility-overlay}
+
+Klawiatura z własną usługą ułatwień dostępu, która rysuje klawisze w nakładce ułatwień dostępu, sama ustawia dla tej nakładki obszar przepuszczania dotyku z pominięciem czytania dotykiem. Android przechowuje jeden taki obszar dla wszystkich usług ułatwień dostępu, więc każdy obszar ustawiony przez SandFly zastępowałby obszar klawiatury. Gdy taka klawiatura jest klawiaturą domyślną, jej usługa ułatwień dostępu jest włączona, a nakładka widoczna na ekranie, SandFly dodaje granice nakładki do każdego ustawianego obszaru przepuszczania, na przykład dla dotyku bezpośredniego lub paska nawigacji. Funkcja SandFly, która na chwilę przejmuje cały obszar przepuszczania, na przykład menu kołowe, nadal dostaje go w całości, a zablokowanie dotyku nadal go czyści.
+
+Aby sprawdzić, czy zainstalowany SandFly tak działa, odczytaj metadane `io.github.aaron_gh.sandfly.keeps_keyboard_region` jego usługi dotyku bezpośredniego. Nie wymaga to uprawnień, tylko opisanego wyżej elementu `<queries>`:
+
+```kotlin
+val keepsKeyboardRegion =
+  context.packageManager
+    .queryIntentServices(
+      Intent("io.github.aaron_gh.sandfly.action.DIRECT_TOUCH").setPackage("io.github.aaron_gh.sandfly"),
+      PackageManager.GET_META_DATA,
+    )
+    .firstOrNull()
+    ?.serviceInfo
+    ?.metaData
+    ?.getBoolean("io.github.aaron_gh.sandfly.keeps_keyboard_region") == true
+```
+
+SandFly 0.7.0 i starsze nie mają tych metadanych i mogą zastąpić obszar klawiatury.
+
 ## Przestarzałe nazwy {#deprecated-names}
 
 Te nazwy są przestarzałe:
