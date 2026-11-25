@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Omhoog en naar links swipen</string>
   <string name="title_pref_shortcut_up_and_right">Omhoog en naar rechts swipen</string>
   <string name="title_pref_shortcut_right_and_down">Naar rechts en omlaag swipen</string>
+  <string name="title_pref_shortcut_1finger_3tap">3 keer tikken</string>
+  <string name="title_pref_shortcut_1finger_4tap">Viervoudig tikken</string>
   <string name="title_pref_shortcut_right_and_up">Naar rechts en omhoog swipen</string>
   <string name="title_pref_shortcut_left_and_down">Naar links en omlaag swipen</string>
   <string name="title_pref_shortcut_left_and_up">Naar links en omhoog swipen</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Oplader aangesloten</string>
     <string name="title_pref_screen_announcements">Scherm aan en uit</string>
     <string name="summary_pref_screen_announcements">Kies wat SandFly zegt wanneer het scherm wordt in- of uitgeschakeld en wanneer de telefoon wordt ontgrendeld</string>
+    <string name="title_pref_screen_announcements_over_media">Uitspreken tijdens het afspelen van media</string>
     <string name="title_screen_announcements_screen_off">Wanneer het scherm wordt uitgeschakeld</string>
     <string name="title_screen_announcements_screen_on">Wanneer het scherm wordt ingeschakeld</string>
     <string name="title_screen_announcements_unlock">Wanneer de telefoon wordt ontgrendeld</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Lijstinformatie uitspreken</string>
     <string name="pref_speak_grid_positions_title">Raster- en tabelinformatie uitspreken</string>
     <string name="pref_speak_role_without_pause_title">Itemtype uitspreken zonder pauze</string>
+    <string name="title_pref_speak_actions_available">Acties beschikbaar uitspreken</string>
     <string name="title_pref_overview">Overzicht van SandFly gebruiken</string>
     <string name="title_pref_overview_newest_last">Meest recente app onderaan</string>
     <string name="title_pref_overview_columns">Kolommen</string>
@@ -2267,6 +2271,10 @@
     <string name="vibration_type_effects">Haptische effecten</string>
     <string name="vibration_type_pulses">Pulsen</string>
     <string name="vibration_type_on_off">Aan en uit</string>
+    <string name="title_pref_actions_available_sound">Geluid voor Acties beschikbaar</string>
+    <string name="value_actions_available_sound_off">Uit</string>
+    <string name="value_actions_available_sound_focus">Als het item focus krijgt</string>
+    <string name="value_actions_available_sound_after_speech">Nadat het item is uitgesproken</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2767,4 +2775,47 @@
     <string name="double_tap_taps_on">Dubbeltikken tikt op het scherm aan</string>
     <string name="double_tap_taps_off">Dubbeltikken tikt op het scherm uit</string>
     <string name="double_tap_taps_no_app">Geen app op de voorgrond</string>
+    <string name="keycombo_menu_toggle_key_practice">Toetsenbordoefening aan- of uitzetten</string>
+    <string name="key_practice_on">Toetsenbordoefening aan</string>
+    <string name="key_practice_off">Toetsenbordoefening uit</string>
+    <string name="key_practice_sandfly_key">SandFly-toets</string>
+    <string name="key_practice_title">Toetsenbordoefening</string>
+    <string name="key_practice_summary">Spreekt elke ingedrukte toets en de bijbehorende opdracht uit in plaats van die uit te voeren. Terug of Escape zet het uit.</string>
+    <string name="keycombo_menu_touch_hold_focus">Aanraking op het gefocuste item vasthouden</string>
+    <string name="touch_hold_held">Aanraking vastgehouden</string>
+    <string name="touch_hold_lifted">Aanraking losgelaten</string>
+    <string name="touch_hold_unavailable">Niet beschikbaar</string>
+    <string name="touch_hold_no_focus">Geen enkel item heeft focus</string>
+    <string name="title_pref_speak_password_characters">Wachtwoordtekens uitspreken</string>
+    <string name="summary_pref_speak_password_characters">Spreekt met het SandFly-toetsenbord in wachtwoordvelden de getypte, verwijderde en door de cursor gepasseerde tekens uit</string>
+    <string name="shortcut_spell_password_field">Wachtwoordveld spellen</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Geen wachtwoordveld</string>
+    <string name="sandfly_keyboard_password_not_available">Tekst van wachtwoordveld niet beschikbaar</string>
+    <string name="sandfly_keyboard_password_not_read">Wordt niet voorgelezen in wachtwoordvelden</string>
+    <string name="title_pref_voice_profile_play_sample">Voorbeeld afspelen</string>
+    <string name="voice_profile_sample_text">Dit is een voorbeeld van dit stemprofiel.</string>
+    <string name="voice_profile_sample_failed">Voorbeeld niet afgespeeld</string>
+    <string name="title_pref_speech_rate_step">Stapgrootte spreeksnelheid</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> van de snelheid</string>
+    <string name="shortcut_end_call">Gesprek beëindigen</string>
+    <string name="end_call_no_call">Geen gesprek</string>
+    <string name="end_call_permission">Toestemming nodig om gesprekken te beëindigen</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Naar volgende alinea gaan, tweede toets</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Naar vorige alinea gaan, tweede toets</string>
+    <string name="title_pref_mute_key_dictates">Dempknop ingedrukt houden om te dicteren in tekstvelden</string>
+    <string name="title_pref_mute_key_press">Dempknop indrukken</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Naar volgende link gaan, tweede toets</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Naar vorige link gaan, tweede toets</string>
+    <string name="keycombo_only_in_browse_mode">Alleen in browsemodus</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> in browsemodus</string>
+    <string name="title_pref_category_fast_search">Snel zoeken</string>
+    <string name="title_pref_fast_search_key">Toets voor snel zoeken</string>
+    <string name="fast_search_key_off">Uit</string>
+    <string name="title_pref_fast_search_wrap">Rondgaan</string>
+    <string name="fast_search_key_left_alt">Linker Alt</string>
+    <string name="fast_search_key_left_ctrl">Linker Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Rechter Ctrl</string>
+    <string name="fast_search_key_left_meta">Linker Meta</string>
+    <string name="fast_search_key_right_meta">Rechter Meta</string>
 </resources>

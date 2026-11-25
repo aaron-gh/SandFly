@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">উপরের দিকে তারপর বাঁদিকে সোয়াইপ করুন</string>
   <string name="title_pref_shortcut_up_and_right">উপরের দিকে তারপর ডানদিকে সোয়াইপ করুন</string>
   <string name="title_pref_shortcut_right_and_down">ডানদিকে তারপর নিচের দিকে সোয়াইপ করুন</string>
+  <string name="title_pref_shortcut_1finger_3tap">তিনবার ট্যাপ করে করা জেসচার</string>
+  <string name="title_pref_shortcut_1finger_4tap">চারবার ট্যাপ করে করা জেসচার</string>
   <string name="title_pref_shortcut_right_and_up">ডানদিকে তারপর উপরের দিকে সোয়াইপ করুন</string>
   <string name="title_pref_shortcut_left_and_down">বাঁদিকে তারপর নিচের দিকে সোয়াইপ করুন</string>
   <string name="title_pref_shortcut_left_and_up">বাঁদিকে তারপর উপরের দিকে সোয়াইপ করুন</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">চার্জার কানেক্ট করা আছে</string>
     <string name="title_pref_screen_announcements">স্ক্রিন চালু ও বন্ধ</string>
     <string name="summary_pref_screen_announcements">স্ক্রিন বন্ধ বা চালু হলে এবং ফোন আনলক হলে SandFly কী বলবে তা বেছে নিন</string>
+    <string name="title_pref_screen_announcements_over_media">মিডিয়া বাজার সময় বলুন</string>
     <string name="title_screen_announcements_screen_off">স্ক্রিন বন্ধ হলে</string>
     <string name="title_screen_announcements_screen_on">স্ক্রিন চালু হলে</string>
     <string name="title_screen_announcements_unlock">ফোন আনলক হলে</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">তালিকার তথ্য বলুন</string>
     <string name="pref_speak_grid_positions_title">গ্রিড ও টেবিলের তথ্য বলুন</string>
     <string name="pref_speak_role_without_pause_title">বিরতি ছাড়া আইটেমের ধরন বলুন</string>
+    <string name="title_pref_speak_actions_available">অ্যাকশন উপলভ্য আছে বলুন</string>
     <string name="title_pref_overview">SandFly-এর এক নজরে ব্যবহার করুন</string>
     <string name="title_pref_overview_newest_last">সাম্প্রতিকতম অ্যাপ নিচে</string>
     <string name="title_pref_overview_columns">কলাম</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">হ্যাপটিক এফেক্ট</string>
     <string name="vibration_type_pulses">পালস</string>
     <string name="vibration_type_on_off">চালু ও বন্ধ</string>
+    <string name="title_pref_actions_available_sound">অ্যাকশন উপলভ্য থাকার সাউন্ড</string>
+    <string name="value_actions_available_sound_off">বন্ধ</string>
+    <string name="value_actions_available_sound_focus">আইটেমে ফোকাস হলে</string>
+    <string name="value_actions_available_sound_after_speech">আইটেম বলার পরে</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">ডবল ট্যাপে স্ক্রিনে ট্যাপ চালু</string>
     <string name="double_tap_taps_off">ডবল ট্যাপে স্ক্রিনে ট্যাপ বন্ধ</string>
     <string name="double_tap_taps_no_app">সামনে কোনও অ্যাপ নেই</string>
+    <string name="keycombo_menu_toggle_key_practice">কীবোর্ড অনুশীলন চালু বা বন্ধ করুন</string>
+    <string name="key_practice_on">কীবোর্ড অনুশীলন চালু</string>
+    <string name="key_practice_off">কীবোর্ড অনুশীলন বন্ধ</string>
+    <string name="key_practice_sandfly_key">SandFly কী</string>
+    <string name="key_practice_title">কীবোর্ড অনুশীলন</string>
+    <string name="key_practice_summary">প্রেস করা প্রতিটি কী ও তার কমান্ড চালানোর বদলে বলে। ফিরে আসুন বা Escape প্রেস করলে এটি বন্ধ হয়।</string>
+    <string name="keycombo_menu_touch_hold_focus">ফোকাস করা আইটেমে টাচ ধরে রাখুন</string>
+    <string name="touch_hold_held">টাচ ধরে রাখা হয়েছে</string>
+    <string name="touch_hold_lifted">টাচ তুলে নেওয়া হয়েছে</string>
+    <string name="touch_hold_unavailable">উপলভ্য নয়</string>
+    <string name="touch_hold_no_focus">কোনও আইটেমে ফোকাস নেই</string>
+    <string name="title_pref_speak_password_characters">পাসওয়ার্ডের অক্ষর বলুন</string>
+    <string name="summary_pref_speak_password_characters">SandFly কীবোর্ডে, পাসওয়ার্ড ফিল্ডে টাইপ করা, মুছে ফেলা ও কার্সর দিয়ে পেরোনো অক্ষর বলে</string>
+    <string name="shortcut_spell_password_field">পাসওয়ার্ড ফিল্ডের বানান বলুন</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">পাসওয়ার্ড ফিল্ড নয়</string>
+    <string name="sandfly_keyboard_password_not_available">পাসওয়ার্ড ফিল্ডের টেক্সট উপলভ্য নয়</string>
+    <string name="sandfly_keyboard_password_not_read">পাসওয়ার্ড ফিল্ডে পড়া হয় না</string>
+    <string name="title_pref_voice_profile_play_sample">নমুনা চালান</string>
+    <string name="voice_profile_sample_text">এটি এই ভয়েস প্রোফাইলের একটি নমুনা।</string>
+    <string name="voice_profile_sample_failed">নমুনা চালানো হয়নি</string>
+    <string name="title_pref_speech_rate_step">স্পিচ রেটের ধাপ</string>
+    <string name="value_speech_rate_step_relative">রেটের <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">কল শেষ করুন</string>
+    <string name="end_call_no_call">কোনও কল নেই</string>
+    <string name="end_call_permission">কল শেষ করতে অনুমতি প্রয়োজন</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">নেভিগেট করে পরের অনুচ্ছেদে যান, দ্বিতীয় কী</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">আগের অনুচ্ছেদে নেভিগেট করুন, দ্বিতীয় কী</string>
+    <string name="title_pref_mute_key_dictates">টেক্সট ফিল্ডে ডিকটেট করতে মিউট বোতাম ধরে রাখুন</string>
+    <string name="title_pref_mute_key_press">মিউট বোতাম প্রেস করা</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">নেভিগেট করে পরের লিঙ্কে যান, দ্বিতীয় কী</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">আগের লিঙ্কে নেভিগেট করুন, দ্বিতীয় কী</string>
+    <string name="keycombo_only_in_browse_mode">শুধু ব্রাউজ মোডে</string>
+    <string name="keycombo_keys_in_browse_mode">ব্রাউজ মোডে <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">দ্রুত সার্চ</string>
+    <string name="title_pref_fast_search_key">দ্রুত সার্চের কী</string>
+    <string name="fast_search_key_off">বন্ধ</string>
+    <string name="title_pref_fast_search_wrap">শুরুতে ফিরে যান</string>
+    <string name="fast_search_key_left_alt">বাম Alt</string>
+    <string name="fast_search_key_left_ctrl">বাম Ctrl</string>
+    <string name="fast_search_key_right_ctrl">ডান Ctrl</string>
+    <string name="fast_search_key_left_meta">বাম Meta</string>
+    <string name="fast_search_key_right_meta">ডান Meta</string>
 </resources>

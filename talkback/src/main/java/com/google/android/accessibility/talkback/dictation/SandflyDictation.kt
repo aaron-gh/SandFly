@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+
 /**
  * SandFly's dictation for speech input that isn't typed into a field: questions about images and
  * the screen, voice commands, the SandFly Pro agent's prompt. It records with the engine and AI
@@ -48,13 +50,38 @@ object SandflyDictation {
    */
   @JvmStatic
   @JvmOverloads
-  fun listen(correct: Boolean = true, onText: (String?) -> Unit): Boolean {
+  fun listen(correct: Boolean = true, onText: (String?) -> Unit): Boolean =
+    listen(correct, false, true, onText)
+
+  /**
+   * [listen] for Start voice editing, which listens again and again: nothing recognized isn't said,
+   * the start chime plays only with [startChime], and the stop chime only when speech was heard.
+   */
+  @JvmStatic
+  fun listen(correct: Boolean, session: Boolean, startChime: Boolean, onText: (String?) -> Unit): Boolean {
     val dictation = instance
     if (dictation == null) {
       onText(null)
       return false
     }
-    return dictation.listen(correct, onText)
+    return dictation.listen(correct, session, startChime, onText)
+  }
+
+  /**
+   * The error that ended the last [listen] without text: a SpeechRecognizer error, or
+   * [LISTEN_TRANSCRIPTION_FAILED]; 0 when nothing was said.
+   */
+  @JvmStatic
+  val lastListenError: Int
+    get() = instance?.lastListenError ?: 0
+
+  /** [lastListenError] when the recording couldn't be transcribed. */
+  const val LISTEN_TRANSCRIPTION_FAILED = -1
+
+  /** Stops [listen] and drops what was recorded, without giving it to its callback. */
+  @JvmStatic
+  fun cancelListen() {
+    instance?.cancelListen()
   }
 
   /**
@@ -63,6 +90,19 @@ object SandflyDictation {
    */
   @JvmStatic
   fun typedSpokenText(eventTime: Long): Boolean = instance?.typedSpokenText(eventTime) == true
+
+  /**
+   * Starts recording for text to type into [field], or stops a dictation that is on, as Dictate
+   * does. Returns false when it can't start.
+   */
+  @JvmStatic
+  fun dictate(field: AccessibilityNodeInfoCompat?): Boolean = instance?.start(field) == true
+
+  /** Stops recording a dictation into a field, so that what was said is typed. */
+  @JvmStatic
+  fun stopFieldRecording() {
+    instance?.stopFieldRecording()
+  }
 
   /** Stops recording for [listen], so that what was said is recognized. */
   @JvmStatic

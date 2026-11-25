@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Движења за оваа апликација</string>
     <string name="title_pref_shizuku_root_screen">Shizuku и root</string>
     <string name="title_pref_use_root">Користи root наместо Shizuku</string>
+    <string name="command_perform_gesture">Изведи движење</string>
+    <string name="command_perform_gesture_message">Изведете го движењето.</string>
+    <string name="command_gesture_not_assignable">Не може да се додели <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Изврши наредба</string>
+    <string name="command_add_to_sandfly_menu">Додај во менито на SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Отстрани од менито на SandFly</string>
+    <string name="command_added_to_sandfly_menu">Додадено во менито на SandFly: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="command_removed_from_sandfly_menu">Отстрането од менито на SandFly: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="commands_search_hint">Пребарај наредби</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> наредба</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> наредби</item>
+    </plurals>
 </resources>

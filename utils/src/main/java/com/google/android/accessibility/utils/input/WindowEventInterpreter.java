@@ -1504,6 +1504,15 @@ public class WindowEventInterpreter implements WindowsDelegate, DisplayStateChan
   }
 
   /**
+   * Returns the package of the window state change event that gave the window {@code windowId} its
+   * title, or null. Unlike {@link #getWindowPackageName}, this doesn't ask the window's app.
+   */
+  public @Nullable CharSequence getWindowEventPackageName(int windowId) {
+    @Nullable Window window = windowIdToData.get(windowId);
+    return (window == null) ? null : window.eventPackageName;
+  }
+
+  /**
    * Returns the package of the root of the window {@code windowId} that is on screen, or null. See
    * {@link #getRootPackageName}.
    */

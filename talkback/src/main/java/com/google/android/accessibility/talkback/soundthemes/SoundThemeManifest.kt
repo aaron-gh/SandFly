@@ -84,7 +84,7 @@ data class SoundThemeManifest(
     const val FORMAT_VERSION = 1
     const val NONE = "none"
 
-    val AUDIO_3D_VALUES = setOf("headphones", "always", "never")
+    val AUDIO_3D_VALUES = setOf("headphones", "always", "never", "headphones_centred")
 
     private const val FORMAT = "format"
     private const val NAME = "name"

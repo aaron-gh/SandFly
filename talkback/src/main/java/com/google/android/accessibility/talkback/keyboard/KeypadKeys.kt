@@ -31,6 +31,7 @@ import android.view.KeyEvent
 import android.view.accessibility.AccessibilityNodeInfo
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.AppGestures
+import com.google.android.accessibility.talkback.gesture.SyntheticTouches
 import com.google.android.accessibility.talkback.speakerphone.SpeakerphoneInCallService
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -112,7 +113,23 @@ class KeypadKeys(private val service: AccessibilityService) {
       // Repeats of a taken key.
       return true
     }
-    if (event.repeatCount > 0 || !event.hasNoModifiers() || isDigitKey(keyCode) || !isOn(service)) {
+    // Digit keys type for themselves, except on the lock screen, where one before the PIN pad shows
+    // opens it, as a letter does.
+    if (
+      event.repeatCount > 0 ||
+        !event.hasNoModifiers() ||
+        (isDigitKey(keyCode) && !isKeyguardLocked()) ||
+        !isOn(service)
+    ) {
+      if (event.repeatCount == 0 && isKeyguardLocked()) {
+        LogUtils.e(
+          TAG,
+          "Lock screen key %s left alone: modifiers %s, setting on %s",
+          KeyEvent.keyCodeToString(keyCode),
+          !event.hasNoModifiers(),
+          isOn(service),
+        )
+      }
       return false
     }
     val taken =
@@ -128,6 +145,9 @@ class KeypadKeys(private val service: AccessibilityService) {
     }
     return taken
   }
+
+  private fun isKeyguardLocked(): Boolean =
+    service.getSystemService(KeyguardManager::class.java)?.isKeyguardLocked == true
 
   /** Clears what is waiting: keys held and digits for a PIN pad that is opening. */
   fun reset() {
@@ -145,6 +165,21 @@ class KeypadKeys(private val service: AccessibilityService) {
     val keyguard = service.getSystemService(KeyguardManager::class.java)
     if (keyguard != null && keyguard.isKeyguardLocked) {
       val onLockScreen = pressOnLockScreen(event, keyguard)
+      // Logged at error level so that it shows in the published builds, which log only errors: a
+      // key on the lock screen that types nothing is otherwise impossible to trace. No digits.
+      LogUtils.e(
+        TAG,
+        "Lock screen key %s: %s; window in front %s, PIN pad %s, digits waiting %d",
+        KeyEvent.keyCodeToString(event.keyCode),
+        when (onLockScreen) {
+          true -> "taken"
+          false -> "left to the lock screen"
+          null -> "no lock screen window in front"
+        },
+        service.rootInActiveWindow?.packageName,
+        lockScreenRoots().let { it.isNotEmpty() && hasPinPad(it) },
+        pendingDigits.length,
+      )
       if (onLockScreen != null) {
         return onLockScreen
       }
@@ -182,8 +217,12 @@ class KeypadKeys(private val service: AccessibilityService) {
     if (roots.isEmpty()) {
       return null
     }
-    // A password field gets the letters.
-    if (roots.any { it.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.isEditable == true }) {
+    // A password field gets the letters. A PIN pad's own entry can be an editable field with input
+    // focus too, as on the Zinwa Q25, so the field is the password's only where no PIN pad shows.
+    if (
+      roots.any { it.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.isEditable == true } &&
+        !hasPinPad(roots)
+    ) {
       return false
     }
     val keyCode = event.keyCode
@@ -193,7 +232,12 @@ class KeypadKeys(private val service: AccessibilityService) {
     if (keyCode == KeyEvent.KEYCODE_DEL) {
       return findById(roots, SYSTEM_UI, "delete_button")?.let(::click) ?: false
     }
-    val digit = keypadCharacter(event.keyCharacterMap, keyCode)?.takeIf { it.isDigit() } ?: return false
+    // A digit key's digit is its key code's: the Zinwa Q25 sends digit key codes for the letter keys
+    // on the lock screen, and its character map has no keys 1 to 9.
+    val digit =
+      digitOf(keyCode)
+        ?: keypadCharacter(event.keyCharacterMap, keyCode)?.takeIf { it.isDigit() }
+        ?: return false
     if (pendingDigits.isNotEmpty()) {
       if (pendingDigits.length < MAX_PENDING_DIGITS) {
         pendingDigits.append(digit)
@@ -212,6 +256,10 @@ class KeypadKeys(private val service: AccessibilityService) {
     handler.postDelayed(typePendingDigits, PENDING_CHECK_MS)
     return true
   }
+
+  /** Whether the lock screen shows its PIN pad: its button for 1 is on screen. */
+  private fun hasPinPad(roots: List<AccessibilityNodeInfo>): Boolean =
+    findById(roots, SYSTEM_UI, buttonIds('1', Screen.LOCK_SCREEN).first()) != null
 
   /** The roots of the lock screen's windows in front. */
   private fun lockScreenRoots(): List<AccessibilityNodeInfo> {
@@ -239,7 +287,17 @@ class KeypadKeys(private val service: AccessibilityService) {
       GestureDescription.Builder()
         .addStroke(GestureDescription.StrokeDescription(path, 0, SWIPE_MS))
         .build()
-    return service.dispatchGesture(gesture, null, null)
+    // Where SandFly recognizes gestures itself, a plain dispatched swipe goes through its gesture
+    // detection, which takes it as a SandFly gesture, and touch lock drops it; as SandFly's own
+    // touch it goes to the lock screen as it is.
+    val sent =
+      if (SyntheticTouches.isAvailable()) {
+        SyntheticTouches.dispatch(service, gesture, SWIPE_MS)
+      } else {
+        service.dispatchGesture(gesture, null, null)
+      }
+    LogUtils.e(TAG, "PIN pad swipe sent: %s, as SandFly's own touch: %s", sent, SyntheticTouches.isAvailable())
+    return sent
   }
 
   private fun isInCall(): Boolean =
@@ -424,6 +482,15 @@ class KeypadKeys(private val service: AccessibilityService) {
     private fun isDigitKey(keyCode: Int): Boolean =
       keyCode in KeyEvent.KEYCODE_0..KeyEvent.KEYCODE_9 ||
         keyCode in KeyEvent.KEYCODE_NUMPAD_0..KeyEvent.KEYCODE_NUMPAD_RIGHT_PAREN
+
+    /** The digit of a digit key, from the number row or the numeric keypad. */
+    internal fun digitOf(keyCode: Int): Char? =
+      when (keyCode) {
+        in KeyEvent.KEYCODE_0..KeyEvent.KEYCODE_9 -> '0' + (keyCode - KeyEvent.KEYCODE_0)
+        in KeyEvent.KEYCODE_NUMPAD_0..KeyEvent.KEYCODE_NUMPAD_9 ->
+          '0' + (keyCode - KeyEvent.KEYCODE_NUMPAD_0)
+        else -> null
+      }
 
     internal fun isCalculator(packageName: String): Boolean =
       packageName in CALCULATORS || packageName.lowercase().contains("calculator")

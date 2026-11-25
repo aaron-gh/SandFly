@@ -24,6 +24,7 @@ import androidx.annotation.VisibleForTesting;
 import androidx.collection.LruCache;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenState;
+import com.google.android.accessibility.talkback.report.ReportNotes;
 import com.google.android.accessibility.utils.AccessibilityEventUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.FocusFinder;
@@ -39,6 +40,7 @@ import java.util.Collection;
 import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -551,12 +553,15 @@ public final class AccessibilityFocusActionHistory {
     if (windowIds != null) {
       activatedItems.removeIf(item -> !windowIds.contains(item.windowId));
     }
-    LogUtils.d(
-        TAG,
-        "Back in window %d, windows %s, activated items kept: %d",
-        windowId,
-        windowIds,
-        activatedItems.size());
+    String note =
+        String.format(
+            Locale.ROOT,
+            "Back in window %d, windows %s, activated items kept: %d",
+            windowId,
+            windowIds,
+            activatedItems.size());
+    LogUtils.d(TAG, "%s", note);
+    ReportNotes.focusAfterBack.add(note);
     if (activatedItems.isEmpty()) {
       return;
     }
@@ -596,6 +601,8 @@ public final class AccessibilityFocusActionHistory {
       return false;
     }
     if (now - backTime > RESTORE_AFTER_BACK_MS) {
+      ReportNotes.focusAfterBack.add(
+          "After Back: activated item not found within " + RESTORE_AFTER_BACK_MS + " ms");
       endBack();
       return false;
     }

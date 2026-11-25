@@ -200,4 +200,18 @@
         <item>chọn {label}</item>
         <item>kích hoạt {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Bắt đầu chỉnh sửa bằng giọng nói</string>
+    <string name="voice_editing_on">Đã bật chỉnh sửa bằng giọng nói</string>
+    <string name="voice_editing_off">Đã tắt chỉnh sửa bằng giọng nói</string>
+    <string name="title_pref_voice_editing_time_limit">Giới hạn thời gian chỉnh sửa bằng giọng nói</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> phút</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>dừng chỉnh sửa</item>
+        <item>dừng chỉnh sửa bằng giọng nói</item>
+        <item>kết thúc chỉnh sửa</item>
+        <item>kết thúc chỉnh sửa bằng giọng nói</item>
+        <item>tắt chỉnh sửa bằng giọng nói</item>
+    </string-array>
 </resources>

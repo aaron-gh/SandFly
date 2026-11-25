@@ -171,4 +171,19 @@
         <item>เปิดใช้งาน {label}</item>
         <item>เลือก {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">เริ่มการแก้ไขด้วยเสียง</string>
+    <string name="voice_editing_on">การแก้ไขด้วยเสียงเปิดอยู่</string>
+    <string name="voice_editing_off">การแก้ไขด้วยเสียงปิดอยู่</string>
+    <string name="title_pref_voice_editing_time_limit">เวลาจำกัดของการแก้ไขด้วยเสียง</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> นาที</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> นาที</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>หยุดแก้ไข</item>
+        <item>หยุดแก้ไขด้วยเสียง</item>
+        <item>จบการแก้ไข</item>
+        <item>จบการแก้ไขด้วยเสียง</item>
+        <item>ปิดการแก้ไขด้วยเสียง</item>
+    </string-array>
 </resources>

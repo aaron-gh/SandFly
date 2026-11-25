@@ -51,6 +51,12 @@ public class MultiTap extends GestureMatcher {
   float baseY;
   long lastDownTime;
   long lastUpTime;
+  // The one-finger gestures of more taps, which this gesture waits for after its last tap only
+  // while one of them has an action. Set by GestureManifold.
+  private int[] followingGestureIds = new int[0];
+  // Whether this gesture was kept waiting for its next tap into a new touch interaction, so that a
+  // first touch that is no further tap of it starts it over rather than cancelling it.
+  private boolean keptForNextInteraction;
 
   public MultiTap(
       Context context,
@@ -89,11 +95,65 @@ public class MultiTap extends GestureMatcher {
     baseY = Float.NaN;
     lastDownTime = Long.MAX_VALUE;
     lastUpTime = Long.MAX_VALUE;
+    keptForNextInteraction = false;
     super.clear();
+  }
+
+  /**
+   * Sets the one-finger gestures of more taps than this one. While one of them has an action, this
+   * gesture waits for another tap after its last tap.
+   */
+  void setFollowingGestures(int[] gestureIds) {
+    followingGestureIds = gestureIds;
+  }
+
+  /** Returns whether this matcher's gesture is a plain tap gesture of more than {@code taps}. */
+  boolean continuesAfterTaps(int taps) {
+    return getClass() == MultiTap.class && targetTaps > taps;
+  }
+
+  /**
+   * Returns whether this gesture has had a tap and waits for the next one, or for its time to
+   * complete after its last tap.
+   */
+  boolean waitsForNextTap() {
+    int state = getState();
+    return currentTaps > 0 && state != STATE_GESTURE_CANCELED && state != STATE_GESTURE_COMPLETED;
+  }
+
+  /** Keeps this gesture waiting for its next tap into a new touch interaction. */
+  void keepForNextInteraction() {
+    keptForNextInteraction = true;
+  }
+
+  /** Returns whether no gesture of more taps has an action. */
+  private boolean nothingFollows() {
+    for (int gestureId : followingGestureIds) {
+      if (configProvider.isGestureAssigned(gestureId)) {
+        return false;
+      }
+    }
+    return true;
   }
 
   @Override
   protected void onDown(EventId eventId, MotionEvent event) {
+    if (keptForNextInteraction) {
+      keptForNextInteraction = false;
+      if (currentTaps < targetTaps
+          && (event.getEventTime() - lastUpTime > GestureConfiguration.getMultiTapTimeoutMs()
+              || !isInsideSlop(event, doubleTapSlop, /* isTouchSlop= */ true))) {
+        // The first touch of the new interaction is too late or too far away to be the next tap,
+        // but may be the first tap of this gesture.
+        clear();
+      }
+    }
+    if (currentTaps == targetTaps) {
+      // A further tap while this gesture waits after its last tap: a gesture of more taps.
+      debugMotionEvent(TAG, "onDown/Too many taps. Gesture:%d", getGestureId());
+      cancelGesture(event);
+      return;
+    }
     long time = event.getEventTime();
     long timeDelta = time - lastUpTime;
     if (timeDelta > GestureConfiguration.getMultiTapTimeoutMs()) {
@@ -132,8 +192,13 @@ public class MultiTap extends GestureMatcher {
     if (getState() == STATE_GESTURE_STARTED || getState() == STATE_CLEAR) {
       currentTaps++;
       if (currentTaps == targetTaps) {
-        // Done.
-        completeGesture(eventId, event);
+        // Done. Another tap can only make a gesture of more taps, so without one that has an
+        // action there is nothing to wait for.
+        if (nothingFollows()) {
+          completeGesture(eventId, event);
+        } else {
+          completeAfterDoubleTapTimeout(eventId, event);
+        }
       } else {
         processGesture(eventId, event);
       }

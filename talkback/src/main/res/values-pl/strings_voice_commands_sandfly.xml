@@ -166,4 +166,21 @@
         <item>aktywuj {label}</item>
         <item>wybierz {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Rozpocznij edycję głosową</string>
+    <string name="voice_editing_on">Edycja głosowa włączona</string>
+    <string name="voice_editing_off">Edycja głosowa wyłączona</string>
+    <string name="title_pref_voice_editing_time_limit">Limit czasu edycji głosowej</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuta</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> minuty</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> minut</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minuty</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>zakończ edycję</item>
+        <item>zakończ edycję głosową</item>
+        <item>przestań edytować</item>
+        <item>wyłącz edycję głosową</item>
+        <item>koniec edycji</item>
+    </string-array>
 </resources>

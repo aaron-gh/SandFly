@@ -13,6 +13,7 @@ The **Items** group sets what SandFly says about each item:
 - **Speak usage hints**: after an item is described, says how to use it, such as "Double-tap to activate". On by default.
 - **Speak item type**: says the type of an item, such as "Button" or "Checkbox". On by default.
 - **Speak item type without a pause**: joins the name and the type of an item with a space instead of a pause. Off by default.
+- **Speak Actions available**: says "Actions available" after an item with actions of its app, such as Reply on a chat message. Works with **Speak usage hints** on or off; with usage hints on, the hint then gives only the gesture that shows the actions, such as "Use tap with 2 fingers to view actions". Off by default. For the items it applies to and the **Actions available** sound, see [](#sound-actions-available).
 - **Speak list information**: says list positions and list details. On by default.
 - **Speak grid and table information**: says rows and columns in grids, tables, and pagers laid out in rows and columns, such as a folder on a home screen. On by default. The **Tables** settings apply only while it's on. See [](#verbosity-tables).
 - **Order of item details**: the order of the name, type and state of an item. See [](#verbosity-item-order).
@@ -113,6 +114,8 @@ The **Announcements** group sets what SandFly says when something changes:
 - **Ringer and Do Not Disturb**: only when the ringer is not set to ring, or Do Not Disturb is on. Off by default.
 - **Airplane mode**: only when airplane mode is on. Off by default.
 
+**Speak during media playback**, above the groups, speaks the screen-off and unlock announcements while media plays. Off by default. The screen-on announcement is always spoken during media playback.
+
 #### Status readout {#verbosity-status-readout}
 
 **Verbosity** > **Status readout** lists the items that the **Speak status** command says, in order: **Time**, **Battery**, **Wi-Fi**, **Mobile network**, **Ringer and Do Not Disturb**, **Airplane mode** and **Hidden screen**. All are on by default. Items in their usual state, such as the ringer when it rings, are left out.
@@ -130,5 +133,7 @@ Some apps and keyboards speak by themselves, such as an assistant that speaks it
 - **Chosen apps**: the apps for **In chosen apps**. Available only while **Speak only focus moved by the user** is **In chosen apps**. Choose **Add app** to add one, and choose an app to remove it.
 - **Speak only focus moved by the user while an assistant or call plays audio**: does the same in all apps while another app plays audio as an assistant or a call. Focus that you move is still spoken. Off by default.
 - **Keyboards with their own speech**: while a keyboard in this list is shown, SandFly doesn't speak its keys, the text typed or deleted, or the cursor moving in the edit field. Gestures and commands still work, and moving through text with reading controls is still spoken. Choose **Add keyboard** to add one.
+
+SandFly never speaks the announcements, live region changes, window changes, toasts or notifications of com.oplus.viewtalk, an accessibility service on realme and OPPO phones that sends image descriptions such as "Image may contain…".
 
 The **Speak only focus moved by the user** reading control changes the first setting. Its command turns the setting off, or back on with **In chosen apps** when there are chosen apps and **In all apps** otherwise. The reading control isn't in the reading controls by default. See [](#commands).

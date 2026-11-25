@@ -82,4 +82,19 @@
     <string name="shortcut_app_gestures_for_app">Gesta pro tuto aplikaci</string>
     <string name="title_pref_shizuku_root_screen">Shizuku a root</string>
     <string name="title_pref_use_root">Používat root místo Shizuku</string>
+    <string name="command_perform_gesture">Provést gesto</string>
+    <string name="command_perform_gesture_message">Proveďte gesto.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> nelze přiřadit</string>
+    <string name="command_run">Spustit příkaz</string>
+    <string name="command_add_to_sandfly_menu">Přidat do nabídky SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Odebrat z nabídky SandFly</string>
+    <string name="command_added_to_sandfly_menu">Přidáno do nabídky SandFly: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="command_removed_from_sandfly_menu">Odebráno z nabídky SandFly: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="commands_search_hint">Hledat příkazy</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> příkaz</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> příkazy</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> příkazu</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> příkazů</item>
+    </plurals>
 </resources>

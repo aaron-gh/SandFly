@@ -22,7 +22,12 @@ import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.OpenableColumns
+import android.view.KeyEvent
+import android.view.View
+import android.view.ViewGroup
+import android.view.accessibility.AccessibilityEvent
 import android.webkit.MimeTypeMap
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
@@ -71,6 +76,22 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
       choosingFor = null
       if (uri != null && item != null) setSound(item, uri)
     }
+
+  private val chooseFolder: ActivityResultLauncher<Uri?> =
+    registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) { tree ->
+      val item = SoundThemes.SOUNDS.firstOrNull { it.key == choosingFor }
+      choosingFor = null
+      if (tree == null || item == null || closing || !available()) return@registerForActivityResult
+      if (SoundFolder.remember(requireContext(), settings(), tree)) {
+        showFolder(item, tree, FolderLevel(SoundFolder.rootId(tree), null))
+      } else {
+        showMessage(getString(R.string.theme_sound_folder_failed))
+      }
+    }
+
+  // Plays the file in accessibility focus in the list of a sound folder.
+  private var folderPlayer: FolderSoundPlayer? = null
+  private var folderDialog: AlertDialog? = null
 
   private val exportTheme = registerForActivityResult(ActivityResultContracts.CreateDocument("application/zip")) { uri ->
     if (uri != null) {
@@ -247,11 +268,15 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
   override fun onPause() {
     super.onPause()
     soundPreview.stop()
+    folderPlayer?.stop()
   }
 
   override fun onDestroy() {
     super.onDestroy()
     discardDialog?.dismiss()
+    folderDialog?.dismiss()
+    folderPlayer?.shutdown()
+    folderPlayer = null
     executor.shutdown()
   }
 
@@ -431,6 +456,11 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
         {
           launchChooser(item)
         }
+    choices += R.string.theme_sound_choose_from_folder to { chooseFromFolder(item) }
+    val folder = SoundFolder.folder(settings())
+    if (folder != null) {
+      choices += R.string.theme_sound_change_folder to { pickFolder(item, folder) }
+    }
     if (!isNone) {
       choices += R.string.theme_sound_preview to { preview(item) }
     }
@@ -472,6 +502,150 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
       choosingFor = null
       showMessage(getString(R.string.sound_theme_no_picker))
     }
+  }
+
+  /** SandFly's settings, where the sound folder is kept for every theme and draft. */
+  private fun settings(): SharedPreferences =
+    SharedPreferencesUtils.getSharedPreferences(requireContext())
+
+  /** Lists the sound folder, or picks one first if there is none or it can't be read any more. */
+  private fun chooseFromFolder(item: FeedbackItem) {
+    if (closing || !available()) return
+    val context = requireContext()
+    val tree = SoundFolder.folder(settings())
+    val root =
+      try {
+        tree?.takeIf { SoundFolder.hasAccess(context, it) }?.let(SoundFolder::rootId)
+      } catch (e: IllegalArgumentException) {
+        // Not a folder URI.
+        null
+      }
+    if (tree == null || root == null) {
+      if (tree != null) SoundFolder.forget(context, settings())
+      pickFolder(item, null)
+    } else {
+      showFolder(item, tree, FolderLevel(root, null))
+    }
+  }
+
+  private fun pickFolder(item: FeedbackItem, initial: Uri?) {
+    if (closing || !available()) return
+    choosingFor = item.key
+    try {
+      chooseFolder.launch(initial)
+    } catch (e: ActivityNotFoundException) {
+      choosingFor = null
+      showMessage(getString(R.string.sound_theme_no_picker))
+    }
+  }
+
+  /** Reads a folder on a background thread, then lists it. */
+  private fun showFolder(item: FeedbackItem, tree: Uri, level: FolderLevel) {
+    if (closing || !available()) return
+    val app = requireContext().applicationContext
+    val activity = requireActivity()
+    executor.execute {
+      val listing = SoundFolder.list(app, tree, level.documentId)
+      activity.runOnUiThread {
+        if (!isAdded || closing) return@runOnUiThread
+        when {
+          listing != null -> showListing(item, tree, level, listing)
+          level.parent == null -> {
+            // Revoked, or removed: the folder is picked again.
+            SoundFolder.forget(app, settings())
+            pickFolder(item, null)
+          }
+          else -> showMessage(getString(R.string.theme_sound_folder_failed))
+        }
+      }
+    }
+  }
+
+  /**
+   * Lists the sound files and subfolders of a folder. The file in accessibility focus plays, and
+   * choosing a file uses it for [item].
+   */
+  private fun showListing(item: FeedbackItem, tree: Uri, level: FolderLevel, listing: SoundFolder.Listing) {
+    if (!available()) return
+    val builder = AlertDialog.Builder(requireContext())
+    val title = listing.name ?: getString(R.string.theme_sound_choose_from_folder)
+    if (listing.entries.isEmpty() && level.parent == null) {
+      builder
+        .setTitle(title)
+        .setMessage(R.string.theme_sound_folder_empty)
+        .setPositiveButton(android.R.string.ok, null)
+        .setNeutralButton(R.string.theme_sound_change_folder) { _, _ -> pickFolder(item, tree) }
+        .show()
+      return
+    }
+    val player = folderPlayer ?: FolderSoundPlayer(requireContext()).also { folderPlayer = it }
+    // Null for the row that goes to the parent folder.
+    val entries = ArrayList<SoundFolder.Entry?>()
+    val labels = ArrayList<String>()
+    if (level.parent != null) {
+      entries += null
+      labels += getString(R.string.theme_sound_parent_folder)
+    }
+    for (entry in listing.entries) {
+      entries += entry
+      labels += if (entry.isFolder) getString(R.string.theme_sound_folder_entry, entry.name) else entry.name
+    }
+    fun fileAt(position: Int): Uri? =
+      entries.getOrNull(position)?.takeUnless { it.isFolder }?.let { SoundFolder.documentUri(tree, it.documentId) }
+    val playOnFocus =
+      object : View.AccessibilityDelegate() {
+        override fun sendAccessibilityEvent(host: View, eventType: Int) {
+          super.sendAccessibilityEvent(host, eventType)
+          val file = (host.tag as? Int)?.let(::fileAt)
+          when (eventType) {
+            AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUSED ->
+              if (file != null) player.play(file) else player.stop()
+            AccessibilityEvent.TYPE_VIEW_ACCESSIBILITY_FOCUS_CLEARED ->
+              if (file != null && player.playing == file) player.stop()
+          }
+        }
+      }
+    val adapter =
+      object : ArrayAdapter<String>(builder.context, android.R.layout.simple_list_item_1, labels) {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup): View =
+          super.getView(position, convertView, parent).apply {
+            // Rows are reused for other positions as the list scrolls.
+            tag = position
+            setAccessibilityDelegate(playOnFocus)
+          }
+      }
+    val dialog =
+      builder
+        .setTitle(title)
+        .setAdapter(adapter) { _, which ->
+          player.stop()
+          if (closing || !available()) return@setAdapter
+          val entry = entries.getOrNull(which)
+          when {
+            entry == null -> level.parent?.let { showFolder(item, tree, it) }
+            entry.isFolder -> showFolder(item, tree, FolderLevel(entry.documentId, level))
+            else -> setSound(item, SoundFolder.documentUri(tree, entry.documentId))
+          }
+        }
+        .setNegativeButton(android.R.string.cancel, null)
+        .create()
+    // Back goes up to the parent folder.
+    dialog.setOnKeyListener { _, keyCode, event ->
+      val parent = level.parent
+      if (keyCode != KeyEvent.KEYCODE_BACK || parent == null) return@setOnKeyListener false
+      if (event.action == KeyEvent.ACTION_UP && !event.isCanceled) {
+        dialog.dismiss()
+        showFolder(item, tree, parent)
+      }
+      true
+    }
+    dialog.setOnDismissListener {
+      player.stop()
+      if (folderDialog === dialog) folderDialog = null
+    }
+    folderDialog?.dismiss()
+    folderDialog = dialog
+    dialog.show()
   }
 
   private fun confirmReset() {
@@ -542,6 +716,9 @@ class ThemeSoundsFragment : TalkbackBaseFragment() {
     val fromType = type?.let { MimeTypeMap.getSingleton().getExtensionFromMimeType(it) }
     return SoundThemes.extensionOf("sound.$fromType") ?: DEFAULT_EXTENSION
   }
+
+  /** A folder in the sound folder, with the folders above it up to the one that was picked. */
+  private class FolderLevel(val documentId: String, val parent: FolderLevel?)
 
   /** A row for one sound, with accessibility actions. */
   private class SoundRow(

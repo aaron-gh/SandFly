@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Өйдө, анан солго сүрүү</string>
   <string name="title_pref_shortcut_up_and_right">Өйдө, анан оңго сүрүү</string>
   <string name="title_pref_shortcut_right_and_down">Оңго, анан ылдый сүрүү</string>
+  <string name="title_pref_shortcut_1finger_3tap">Үч жолу таптоо</string>
+  <string name="title_pref_shortcut_1finger_4tap">Төрт жолу таптоо</string>
   <string name="title_pref_shortcut_right_and_up">Оңго, анан өйдө сүрүү</string>
   <string name="title_pref_shortcut_left_and_down">Солго, анан ылдый сүрүү</string>
   <string name="title_pref_shortcut_left_and_up">Солго, анан өйдө сүрүү</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Заряддоочу туташтырылган</string>
     <string name="title_pref_screen_announcements">Экранды күйгүзүү жана өчүрүү</string>
     <string name="summary_pref_screen_announcements">Экран өчкөндө же күйгөндө жана телефон кулпусу ачылганда SandFly эмне айта турганын тандаңыз</string>
+    <string name="title_pref_screen_announcements_over_media">Медиа ойнотулуп жатканда айтуу</string>
     <string name="title_screen_announcements_screen_off">Экран өчкөндө</string>
     <string name="title_screen_announcements_screen_on">Экран күйгөндө</string>
     <string name="title_screen_announcements_unlock">Телефондун кулпусу ачылганда</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Тизме маалыматын окуу</string>
     <string name="pref_speak_grid_positions_title">Тор жана таблица маалыматын окуу</string>
     <string name="pref_speak_role_without_pause_title">Элементтин түрүн тыныгуусуз окуу</string>
+    <string name="title_pref_speak_actions_available">«Аракеттер жеткиликтүү» деп айтуу</string>
     <string name="title_pref_overview">SandFly назарын колдонуу</string>
     <string name="title_pref_overview_newest_last">Эң акыркы колдонмо ылдыйда</string>
     <string name="title_pref_overview_columns">Мамычалар</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Хаптикалык эффекттер</string>
     <string name="vibration_type_pulses">Импульстар</string>
     <string name="vibration_type_on_off">Күйгүзүү жана өчүрүү</string>
+    <string name="title_pref_actions_available_sound">«Аракеттер жеткиликтүү» үнү</string>
+    <string name="value_actions_available_sound_off">Өчүк</string>
+    <string name="value_actions_available_sound_focus">Элементке фокус келгенде</string>
+    <string name="value_actions_available_sound_after_speech">Элемент айтылгандан кийин</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Эки жолу таптоо экранды таптайт: күйүк</string>
     <string name="double_tap_taps_off">Эки жолу таптоо экранды таптайт: өчүк</string>
     <string name="double_tap_taps_no_app">Алдыңкы планда колдонмо жок</string>
+    <string name="keycombo_menu_toggle_key_practice">Баскычтоп көнүгүүсүн күйгүзүү же өчүрүү</string>
+    <string name="key_practice_on">Баскычтоп көнүгүүсү күйүк</string>
+    <string name="key_practice_off">Баскычтоп көнүгүүсү өчүк</string>
+    <string name="key_practice_sandfly_key">SandFly баскычы</string>
+    <string name="key_practice_title">Баскычтоп көнүгүүсү</string>
+    <string name="key_practice_summary">Ар бир басылган баскычты жана анын буйругун аткарбай айтат. «Артка» баскычы же Escape аны өчүрөт.</string>
+    <string name="keycombo_menu_touch_hold_focus">Фокустагы элементте тийүүнү кармап туруу</string>
+    <string name="touch_hold_held">Тийүү кармалып турат</string>
+    <string name="touch_hold_lifted">Тийүү коё берилди</string>
+    <string name="touch_hold_unavailable">Жеткиликсиз</string>
+    <string name="touch_hold_no_focus">Эч бир элементте фокус жок</string>
+    <string name="title_pref_speak_password_characters">Сырсөз белгилерин айтуу</string>
+    <string name="summary_pref_speak_password_characters">SandFly баскычтобу менен сырсөз талааларында терилген, өчүрүлгөн жана курсор өткөн белгилерди айтат</string>
+    <string name="shortcut_spell_password_field">Сырсөз талаасын тамгалап айтуу</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Бул сырсөз талаасы эмес</string>
+    <string name="sandfly_keyboard_password_not_available">Сырсөз талаасынын тексти жеткиликсиз</string>
+    <string name="sandfly_keyboard_password_not_read">Сырсөз талааларында окулбайт</string>
+    <string name="title_pref_voice_profile_play_sample">Үлгүнү ойнотуу</string>
+    <string name="voice_profile_sample_text">Бул үн профилинин үлгүсү.</string>
+    <string name="voice_profile_sample_failed">Үлгү ойнотулган жок</string>
+    <string name="title_pref_speech_rate_step">Кеп ылдамдыгынын кадамы</string>
+    <string name="value_speech_rate_step_relative">Ылдамдыктын <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">Чалууну аяктоо</string>
+    <string name="end_call_no_call">Чалуу жок</string>
+    <string name="end_call_permission">Чалууларды аяктоо үчүн уруксат керек</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Кийинки абзацка өтүү, экинчи баскыч</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Мурунку абзацка кайтуу, экинчи баскыч</string>
+    <string name="title_pref_mute_key_dictates">Текст талааларында айтып жаздыруу үчүн үнсүз баскычын басып туруңуз</string>
+    <string name="title_pref_mute_key_press">Үнсүз баскычын басуу</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Кийинки шилтемеге өтүү, экинчи баскыч</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Мурунку шилтемеге өтүү, экинчи баскыч</string>
+    <string name="keycombo_only_in_browse_mode">Кароо режиминде гана</string>
+    <string name="keycombo_keys_in_browse_mode">Кароо режиминде <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">Тез издөө</string>
+    <string name="title_pref_fast_search_key">Тез издөө баскычы</string>
+    <string name="fast_search_key_off">Өчүк</string>
+    <string name="title_pref_fast_search_wrap">Циклдик өтүү</string>
+    <string name="fast_search_key_left_alt">Сол Alt</string>
+    <string name="fast_search_key_left_ctrl">Сол Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Оң Ctrl</string>
+    <string name="fast_search_key_left_meta">Сол Meta</string>
+    <string name="fast_search_key_right_meta">Оң Meta</string>
 </resources>

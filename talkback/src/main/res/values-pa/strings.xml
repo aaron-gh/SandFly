@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ਉੱਪਰ ਫਿਰ ਖੱਬੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ</string>
   <string name="title_pref_shortcut_up_and_right">ਉੱਪਰ ਫਿਰ ਸੱਜੇ ਪਾਸੇ ਸਵਾਈਪ ਕਰੋ</string>
   <string name="title_pref_shortcut_right_and_down">ਸੱਜੇ ਪਾਸੇ ਫਿਰ ਹੇਠਾਂ ਸਵਾਈਪ ਕਰੋ</string>
+  <string name="title_pref_shortcut_1finger_3tap">ਟ੍ਰਿਪਲ ਟੈਪ ਕਰੋ</string>
+  <string name="title_pref_shortcut_1finger_4tap">ਚਾਰ ਵਾਰ ਟੈਪ ਕਰੋ</string>
   <string name="title_pref_shortcut_right_and_up">ਸੱਜੇ ਪਾਸੇ ਫਿਰ ਉੱਪਰ ਸਵਾਈਪ ਕਰੋ</string>
   <string name="title_pref_shortcut_left_and_down">ਖੱਬੇ ਪਾਸੇ ਫਿਰ ਹੇਠਾਂ ਸਵਾਈਪ ਕਰੋ</string>
   <string name="title_pref_shortcut_left_and_up">ਖੱਬੇ ਪਾਸੇ ਫਿਰ ਉੱਪਰ ਸਵਾਈਪ ਕਰੋ</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">ਚਾਰਜਰ ਕਨੈਕਟ ਕੀਤਾ ਗਿਆ</string>
     <string name="title_pref_screen_announcements">ਸਕ੍ਰੀਨ ਚਾਲੂ ਅਤੇ ਬੰਦ</string>
     <string name="summary_pref_screen_announcements">ਚੁਣੋ ਕਿ ਜਦੋਂ ਸਕ੍ਰੀਨ ਬੰਦ ਜਾਂ ਚਾਲੂ ਹੁੰਦੀ ਹੈ, ਅਤੇ ਜਦੋਂ ਫ਼ੋਨ ਅਨਲੌਕ ਹੁੰਦਾ ਹੈ ਤਾਂ SandFly ਕੀ ਕਹਿੰਦਾ ਹੈ</string>
+    <string name="title_pref_screen_announcements_over_media">ਮੀਡੀਆ ਚੱਲਣ ਦੌਰਾਨ ਬੋਲੋ</string>
     <string name="title_screen_announcements_screen_off">ਜਦੋਂ ਸਕ੍ਰੀਨ ਬੰਦ ਹੋ ਜਾਂਦੀ ਹੈ</string>
     <string name="title_screen_announcements_screen_on">ਜਦੋਂ ਸਕ੍ਰੀਨ ਚਾਲੂ ਹੁੰਦੀ ਹੈ</string>
     <string name="title_screen_announcements_unlock">ਜਦੋਂ ਫ਼ੋਨ ਅਨਲੌਕ ਹੁੰਦਾ ਹੈ</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">ਸੂਚੀ ਦੀ ਜਾਣਕਾਰੀ ਬੋਲੋ</string>
     <string name="pref_speak_grid_positions_title">ਗ੍ਰਿਡ ਅਤੇ ਸਾਰਣੀ ਦੀ ਜਾਣਕਾਰੀ ਬੋਲੋ</string>
     <string name="pref_speak_role_without_pause_title">ਆਈਟਮ ਦੀ ਕਿਸਮ ਬਿਨਾਂ ਵਿਰਾਮ ਦੇ ਬੋਲੋ</string>
+    <string name="title_pref_speak_actions_available">ਕਾਰਵਾਈਆਂ ਉਪਲਬਧ ਹਨ ਬੋਲੋ</string>
     <string name="title_pref_overview">SandFly ਦੀ ਰੂਪ-ਰੇਖਾ ਵਰਤੋ</string>
     <string name="title_pref_overview_newest_last">ਸਭ ਤੋਂ ਨਵੀਂ ਐਪ ਹੇਠਾਂ</string>
     <string name="title_pref_overview_columns">ਕਾਲਮ</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">ਹੈਪਟਿਕ ਪ੍ਰਭਾਵ</string>
     <string name="vibration_type_pulses">ਪਲਸਾਂ</string>
     <string name="vibration_type_on_off">ਸਿਰਫ਼ ਚਾਲੂ ਅਤੇ ਬੰਦ</string>
+    <string name="title_pref_actions_available_sound">ਕਾਰਵਾਈਆਂ ਉਪਲਬਧ ਹਨ ਦੀ ਆਵਾਜ਼</string>
+    <string name="value_actions_available_sound_off">ਬੰਦ ਹੈ</string>
+    <string name="value_actions_available_sound_focus">ਜਦੋਂ ਆਈਟਮ \'ਤੇ ਫੋਕਸ ਹੁੰਦਾ ਹੈ</string>
+    <string name="value_actions_available_sound_after_speech">ਆਈਟਮ ਬੋਲੇ ਜਾਣ ਤੋਂ ਬਾਅਦ</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">ਡਬਲ ਟੈਪ ਸਕ੍ਰੀਨ \'ਤੇ ਟੈਪ ਕਰਦਾ ਹੈ: ਚਾਲੂ</string>
     <string name="double_tap_taps_off">ਡਬਲ ਟੈਪ ਸਕ੍ਰੀਨ \'ਤੇ ਟੈਪ ਕਰਦਾ ਹੈ: ਬੰਦ</string>
     <string name="double_tap_taps_no_app">ਸਾਹਮਣੇ ਕੋਈ ਐਪ ਨਹੀਂ</string>
+    <string name="keycombo_menu_toggle_key_practice">ਕੀ-ਬੋਰਡ ਅਭਿਆਸ ਚਾਲੂ ਜਾਂ ਬੰਦ ਕਰੋ</string>
+    <string name="key_practice_on">ਕੀ-ਬੋਰਡ ਅਭਿਆਸ ਚਾਲੂ ਹੈ</string>
+    <string name="key_practice_off">ਕੀ-ਬੋਰਡ ਅਭਿਆਸ ਬੰਦ ਹੈ</string>
+    <string name="key_practice_sandfly_key">SandFly ਕੁੰਜੀ</string>
+    <string name="key_practice_title">ਕੀ-ਬੋਰਡ ਅਭਿਆਸ</string>
+    <string name="key_practice_summary">ਦਬਾਈ ਗਈ ਹਰ ਕੁੰਜੀ ਅਤੇ ਉਸਦੀ ਕਮਾਂਡ ਚਲਾਉਣ ਦੀ ਬਜਾਏ ਬੋਲਦਾ ਹੈ। ਪਿੱਛੇ ਜਾਂ Escape ਦਬਾਉਣ ਨਾਲ ਇਹ ਬੰਦ ਹੋ ਜਾਂਦਾ ਹੈ।</string>
+    <string name="keycombo_menu_touch_hold_focus">ਫੋਕਸ ਆਈਟਮ \'ਤੇ ਟੱਚ ਦਬਾ ਕੇ ਰੱਖੋ</string>
+    <string name="touch_hold_held">ਟੱਚ ਦਬਾ ਕੇ ਰੱਖਿਆ ਗਿਆ</string>
+    <string name="touch_hold_lifted">ਟੱਚ ਚੁੱਕਿਆ ਗਿਆ</string>
+    <string name="touch_hold_unavailable">ਉਪਲਬਧ ਨਹੀਂ</string>
+    <string name="touch_hold_no_focus">ਕਿਸੇ ਵੀ ਆਈਟਮ \'ਤੇ ਫੋਕਸ ਨਹੀਂ ਹੈ</string>
+    <string name="title_pref_speak_password_characters">ਪਾਸਵਰਡ ਦੇ ਅੱਖਰ ਬੋਲੋ</string>
+    <string name="summary_pref_speak_password_characters">SandFly ਕੀ-ਬੋਰਡ ਨਾਲ, ਪਾਸਵਰਡ ਖੇਤਰਾਂ ਵਿੱਚ ਟਾਈਪ ਕੀਤੇ, ਮਿਟਾਏ ਅਤੇ ਕਰਸਰ ਨਾਲ ਲੰਘੇ ਅੱਖਰ ਬੋਲਦਾ ਹੈ</string>
+    <string name="shortcut_spell_password_field">ਪਾਸਵਰਡ ਖੇਤਰ ਦੇ ਸ਼ਬਦ-ਜੋੜ ਬੋਲੋ</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">ਪਾਸਵਰਡ ਖੇਤਰ ਨਹੀਂ ਹੈ</string>
+    <string name="sandfly_keyboard_password_not_available">ਪਾਸਵਰਡ ਖੇਤਰ ਦੀ ਲਿਖਤ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="sandfly_keyboard_password_not_read">ਪਾਸਵਰਡ ਖੇਤਰਾਂ ਵਿੱਚ ਨਹੀਂ ਪੜ੍ਹਿਆ ਜਾਂਦਾ</string>
+    <string name="title_pref_voice_profile_play_sample">ਨਮੂਨਾ ਚਲਾਓ</string>
+    <string name="voice_profile_sample_text">ਇਹ ਇਸ ਵੌਇਸ ਪ੍ਰੋਫਾਈਲ ਦਾ ਨਮੂਨਾ ਹੈ।</string>
+    <string name="voice_profile_sample_failed">ਨਮੂਨਾ ਨਹੀਂ ਚਲਾਇਆ ਗਿਆ</string>
+    <string name="title_pref_speech_rate_step">ਬੋਲਣ ਦੀ ਗਤੀ ਦਾ ਪੜਾਅ</string>
+    <string name="value_speech_rate_step_relative">ਗਤੀ ਦਾ <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">ਕਾਲ ਸਮਾਪਤ ਕਰੋ</string>
+    <string name="end_call_no_call">ਕੋਈ ਕਾਲ ਨਹੀਂ</string>
+    <string name="end_call_permission">ਕਾਲਾਂ ਸਮਾਪਤ ਕਰਨ ਲਈ ਇਜਾਜ਼ਤ ਦੀ ਲੋੜ ਹੈ</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">ਅਗਲੇ ਪੈਰੇ \'ਤੇ ਜਾਓ, ਦੂਜੀ ਕੁੰਜੀ</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">ਪਿਛਲੇ ਪੈਰੇ \'ਤੇ ਜਾਓ, ਦੂਜੀ ਕੁੰਜੀ</string>
+    <string name="title_pref_mute_key_dictates">ਟੈਕਸਟ ਖੇਤਰਾਂ ਵਿੱਚ ਬੋਲ ਕੇ ਲਿਖਣ ਲਈ ਮਿਊਟ ਕੁੰਜੀ ਦਬਾ ਕੇ ਰੱਖੋ</string>
+    <string name="title_pref_mute_key_press">ਮਿਊਟ ਕੁੰਜੀ ਦਬਾਉਣਾ</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">ਅਗਲੇ ਲਿੰਕ \'ਤੇ ਜਾਓ, ਦੂਜੀ ਕੁੰਜੀ</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">ਪਿਛਲੇ ਲਿੰਕ \'ਤੇ ਜਾਓ, ਦੂਜੀ ਕੁੰਜੀ</string>
+    <string name="keycombo_only_in_browse_mode">ਸਿਰਫ਼ ਬ੍ਰਾਊਜ਼ ਮੋਡ ਵਿੱਚ</string>
+    <string name="keycombo_keys_in_browse_mode">ਬ੍ਰਾਊਜ਼ ਮੋਡ ਵਿੱਚ <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">ਤੇਜ਼ ਖੋਜ</string>
+    <string name="title_pref_fast_search_key">ਤੇਜ਼ ਖੋਜ ਕੁੰਜੀ</string>
+    <string name="fast_search_key_off">ਬੰਦ</string>
+    <string name="title_pref_fast_search_wrap">ਸ਼ੁਰੂ ਵਿੱਚ ਵਾਪਸ ਜਾਓ</string>
+    <string name="fast_search_key_left_alt">ਖੱਬਾ Alt</string>
+    <string name="fast_search_key_left_ctrl">ਖੱਬਾ Ctrl</string>
+    <string name="fast_search_key_right_ctrl">ਸੱਜਾ Ctrl</string>
+    <string name="fast_search_key_left_meta">ਖੱਬਾ Meta</string>
+    <string name="fast_search_key_right_meta">ਸੱਜਾ Meta</string>
 </resources>

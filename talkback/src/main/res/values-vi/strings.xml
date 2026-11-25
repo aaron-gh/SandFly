@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Vuốt lên rồi sang trái</string>
   <string name="title_pref_shortcut_up_and_right">Vuốt lên rồi sang phải</string>
   <string name="title_pref_shortcut_right_and_down">Vuốt sang phải rồi xuống dưới</string>
+  <string name="title_pref_shortcut_1finger_3tap">Nhấn 3 lần</string>
+  <string name="title_pref_shortcut_1finger_4tap">Nhấn 4 lần</string>
   <string name="title_pref_shortcut_right_and_up">Vuốt sang phải rồi lên trên</string>
   <string name="title_pref_shortcut_left_and_down">Vuốt sang trái rồi xuống dưới</string>
   <string name="title_pref_shortcut_left_and_up">Vuốt sang trái rồi lên trên</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Đã kết nối bộ sạc</string>
     <string name="title_pref_screen_announcements">Bật và tắt màn hình</string>
     <string name="summary_pref_screen_announcements">Chọn nội dung SandFly đọc khi màn hình tắt hoặc bật, và khi mở khoá điện thoại</string>
+    <string name="title_pref_screen_announcements_over_media">Đọc khi đang phát nội dung nghe nhìn</string>
     <string name="title_screen_announcements_screen_off">Khi màn hình tắt</string>
     <string name="title_screen_announcements_screen_on">Khi màn hình bật</string>
     <string name="title_screen_announcements_unlock">Khi mở khoá điện thoại</string>
@@ -2003,6 +2006,7 @@
     <string name="pref_speak_list_positions_title">Đọc thông tin danh sách</string>
     <string name="pref_speak_grid_positions_title">Đọc thông tin lưới và bảng</string>
     <string name="pref_speak_role_without_pause_title">Đọc loại mục không ngắt quãng</string>
+    <string name="title_pref_speak_actions_available">Đọc thông báo Có thao tác</string>
     <string name="title_pref_overview">Dùng chế độ tổng quan của SandFly</string>
     <string name="title_pref_overview_newest_last">Ứng dụng gần đây nhất ở dưới cùng</string>
     <string name="title_pref_overview_columns">Cột</string>
@@ -2260,6 +2264,10 @@
     <string name="vibration_type_effects">Hiệu ứng xúc giác</string>
     <string name="vibration_type_pulses">Xung rung</string>
     <string name="vibration_type_on_off">Chỉ bật và tắt</string>
+    <string name="title_pref_actions_available_sound">Âm thanh Có thao tác</string>
+    <string name="value_actions_available_sound_off">Tắt</string>
+    <string name="value_actions_available_sound_focus">Khi mục được tập trung</string>
+    <string name="value_actions_available_sound_after_speech">Sau khi đọc mục</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2755,4 +2763,47 @@
     <string name="double_tap_taps_on">Đã bật Nhấn đúp thực hiện thao tác nhấn trên màn hình</string>
     <string name="double_tap_taps_off">Đã tắt Nhấn đúp thực hiện thao tác nhấn trên màn hình</string>
     <string name="double_tap_taps_no_app">Không có ứng dụng nào ở phía trước</string>
+    <string name="keycombo_menu_toggle_key_practice">Bật hoặc tắt thực hành bàn phím</string>
+    <string name="key_practice_on">Đã bật thực hành bàn phím</string>
+    <string name="key_practice_off">Đã tắt thực hành bàn phím</string>
+    <string name="key_practice_sandfly_key">Phím SandFly</string>
+    <string name="key_practice_title">Thực hành bàn phím</string>
+    <string name="key_practice_summary">Đọc từng phím được nhấn và lệnh của phím đó thay vì chạy lệnh. Phím Quay lại hoặc Escape sẽ tắt chế độ này.</string>
+    <string name="keycombo_menu_touch_hold_focus">Giữ chạm trên mục đang có tiêu điểm</string>
+    <string name="touch_hold_held">Đang giữ chạm</string>
+    <string name="touch_hold_lifted">Đã nhả chạm</string>
+    <string name="touch_hold_unavailable">Không có sẵn</string>
+    <string name="touch_hold_no_focus">Không có mục nào có tiêu điểm</string>
+    <string name="title_pref_speak_password_characters">Đọc ký tự mật khẩu</string>
+    <string name="summary_pref_speak_password_characters">Khi dùng bàn phím SandFly, đọc các ký tự được nhập, xoá và con trỏ đi qua trong trường mật khẩu</string>
+    <string name="shortcut_spell_password_field">Đánh vần trường mật khẩu</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Không phải trường mật khẩu</string>
+    <string name="sandfly_keyboard_password_not_available">Không lấy được văn bản trường mật khẩu</string>
+    <string name="sandfly_keyboard_password_not_read">Không đọc trong trường mật khẩu</string>
+    <string name="title_pref_voice_profile_play_sample">Phát mẫu</string>
+    <string name="voice_profile_sample_text">Đây là mẫu của hồ sơ giọng nói này.</string>
+    <string name="voice_profile_sample_failed">Không phát được mẫu</string>
+    <string name="title_pref_speech_rate_step">Bước tốc độ lời nói</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> tốc độ</string>
+    <string name="shortcut_end_call">Kết thúc cuộc gọi</string>
+    <string name="end_call_no_call">Không có cuộc gọi</string>
+    <string name="end_call_permission">Cần quyền để kết thúc cuộc gọi</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Chuyển đến đoạn tiếp theo, phím thứ hai</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Chuyển về đoạn trước, phím thứ hai</string>
+    <string name="title_pref_mute_key_dictates">Giữ phím tắt tiếng để nhập bằng giọng nói trong trường văn bản</string>
+    <string name="title_pref_mute_key_press">Nhấn phím tắt tiếng</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Chuyển đến liên kết tiếp theo, phím thứ hai</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Chuyển về liên kết trước, phím thứ hai</string>
+    <string name="keycombo_only_in_browse_mode">Chỉ trong chế độ duyệt web</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> trong chế độ duyệt web</string>
+    <string name="title_pref_category_fast_search">Tìm kiếm nhanh</string>
+    <string name="title_pref_fast_search_key">Phím tìm kiếm nhanh</string>
+    <string name="fast_search_key_off">Tắt</string>
+    <string name="title_pref_fast_search_wrap">Quay vòng</string>
+    <string name="fast_search_key_left_alt">Alt trái</string>
+    <string name="fast_search_key_left_ctrl">Ctrl trái</string>
+    <string name="fast_search_key_right_ctrl">Ctrl phải</string>
+    <string name="fast_search_key_left_meta">Meta trái</string>
+    <string name="fast_search_key_right_meta">Meta phải</string>
 </resources>

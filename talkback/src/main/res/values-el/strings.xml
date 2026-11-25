@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Σύρετε προς τα πάνω και αριστερά</string>
   <string name="title_pref_shortcut_up_and_right">Σύρετε προς τα πάνω και δεξιά</string>
   <string name="title_pref_shortcut_right_and_down">Σύρετε προς τα δεξιά και κάτω</string>
+  <string name="title_pref_shortcut_1finger_3tap">Τριπλό πάτημα</string>
+  <string name="title_pref_shortcut_1finger_4tap">Τετραπλό πάτημα</string>
   <string name="title_pref_shortcut_right_and_up">Σύρετε προς τα δεξιά και πάνω</string>
   <string name="title_pref_shortcut_left_and_down">Σύρετε προς τα αριστερά και κάτω</string>
   <string name="title_pref_shortcut_left_and_up">Σύρετε προς τα αριστερά και πάνω</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Ο φορτιστής συνδέθηκε</string>
     <string name="title_pref_screen_announcements">Ενεργοποίηση και απενεργοποίηση οθόνης</string>
     <string name="summary_pref_screen_announcements">Επιλογή του τι εκφωνεί το SandFly όταν η οθόνη απενεργοποιείται ή ενεργοποιείται και όταν ξεκλειδώνεται το τηλέφωνο</string>
+    <string name="title_pref_screen_announcements_over_media">Εκφώνηση κατά την αναπαραγωγή πολυμέσων</string>
     <string name="title_screen_announcements_screen_off">Όταν απενεργοποιείται η οθόνη</string>
     <string name="title_screen_announcements_screen_on">Όταν ενεργοποιείται η οθόνη</string>
     <string name="title_screen_announcements_unlock">Όταν ξεκλειδώνεται το τηλέφωνο</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Εκφώνηση πληροφοριών λίστας</string>
     <string name="pref_speak_grid_positions_title">Εκφώνηση πληροφοριών πλέγματος και πίνακα</string>
     <string name="pref_speak_role_without_pause_title">Εκφώνηση τύπου στοιχείου χωρίς παύση</string>
+    <string name="title_pref_speak_actions_available">Εκφώνηση του «Διατίθενται ενέργειες»</string>
     <string name="title_pref_overview">Χρήση της επισκόπησης του SandFly</string>
     <string name="title_pref_overview_newest_last">Η πιο πρόσφατη εφαρμογή στο τέλος</string>
     <string name="title_pref_overview_columns">Στήλες</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Απτικά εφέ</string>
     <string name="vibration_type_pulses">Παλμοί</string>
     <string name="vibration_type_on_off">Απλή δόνηση</string>
+    <string name="title_pref_actions_available_sound">Ήχος «Διατίθενται ενέργειες»</string>
+    <string name="value_actions_available_sound_off">Ανενεργό</string>
+    <string name="value_actions_available_sound_focus">Όταν το στοιχείο αποκτά εστίαση</string>
+    <string name="value_actions_available_sound_after_speech">Μετά την εκφώνηση του στοιχείου</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Το διπλό πάτημα πατά την οθόνη: ενεργό</string>
     <string name="double_tap_taps_off">Το διπλό πάτημα πατά την οθόνη: ανενεργό</string>
     <string name="double_tap_taps_no_app">Καμία εφαρμογή σε πρώτο πλάνο</string>
+    <string name="keycombo_menu_toggle_key_practice">Ενεργοποίηση ή απενεργοποίηση εξάσκησης πληκτρολογίου</string>
+    <string name="key_practice_on">Εξάσκηση πληκτρολογίου ενεργή</string>
+    <string name="key_practice_off">Εξάσκηση πληκτρολογίου ανενεργή</string>
+    <string name="key_practice_sandfly_key">Πλήκτρο SandFly</string>
+    <string name="key_practice_title">Εξάσκηση πληκτρολογίου</string>
+    <string name="key_practice_summary">Εκφωνεί κάθε πλήκτρο που πατιέται και την εντολή του αντί να την εκτελεί. Το Πίσω ή το Esc την απενεργοποιεί.</string>
+    <string name="keycombo_menu_touch_hold_focus">Κράτημα αφής στο εστιασμένο στοιχείο</string>
+    <string name="touch_hold_held">Η αφή διατηρείται</string>
+    <string name="touch_hold_lifted">Η αφή απελευθερώθηκε</string>
+    <string name="touch_hold_unavailable">Μη διαθέσιμο</string>
+    <string name="touch_hold_no_focus">Κανένα στοιχείο δεν έχει εστίαση</string>
+    <string name="title_pref_speak_password_characters">Εκφώνηση χαρακτήρων κωδικού πρόσβασης</string>
+    <string name="summary_pref_speak_password_characters">Με το πληκτρολόγιο SandFly, εκφωνεί τους χαρακτήρες που πληκτρολογούνται, διαγράφονται και προσπερνώνται στα πεδία κωδικού πρόσβασης</string>
+    <string name="shortcut_spell_password_field">Συλλαβισμός πεδίου κωδικού πρόσβασης</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Δεν είναι πεδίο κωδικού πρόσβασης</string>
+    <string name="sandfly_keyboard_password_not_available">Το κείμενο του πεδίου κωδικού πρόσβασης δεν είναι διαθέσιμο</string>
+    <string name="sandfly_keyboard_password_not_read">Δεν εκφωνείται στα πεδία κωδικού πρόσβασης</string>
+    <string name="title_pref_voice_profile_play_sample">Αναπαραγωγή δείγματος</string>
+    <string name="voice_profile_sample_text">Αυτό είναι ένα δείγμα αυτού του προφίλ φωνής.</string>
+    <string name="voice_profile_sample_failed">Το δείγμα δεν αναπαράχθηκε</string>
+    <string name="title_pref_speech_rate_step">Βήμα ταχύτητας ομιλίας</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> της ταχύτητας</string>
+    <string name="shortcut_end_call">Τερματισμός κλήσης</string>
+    <string name="end_call_no_call">Καμία κλήση</string>
+    <string name="end_call_permission">Απαιτείται άδεια για τον τερματισμό κλήσεων</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Πλοήγηση στην επόμενη παράγραφο, δεύτερο πλήκτρο</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Πλοήγηση στην προηγούμενη παράγραφο, δεύτερο πλήκτρο</string>
+    <string name="title_pref_mute_key_dictates">Παρατεταμένο πάτημα του πλήκτρου σίγασης για υπαγόρευση σε πεδία κειμένου</string>
+    <string name="title_pref_mute_key_press">Πάτημα πλήκτρου σίγασης</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Πλοήγηση στον επόμενο σύνδεσμο, δεύτερο πλήκτρο</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Πλοήγηση στον προηγούμενο σύνδεσμο, δεύτερο πλήκτρο</string>
+    <string name="keycombo_only_in_browse_mode">Μόνο στη λειτουργία περιήγησης</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> στη λειτουργία περιήγησης</string>
+    <string name="title_pref_category_fast_search">Γρήγορη αναζήτηση</string>
+    <string name="title_pref_fast_search_key">Πλήκτρο γρήγορης αναζήτησης</string>
+    <string name="fast_search_key_off">Ανενεργό</string>
+    <string name="title_pref_fast_search_wrap">Κυκλική πλοήγηση</string>
+    <string name="fast_search_key_left_alt">Αριστερό Alt</string>
+    <string name="fast_search_key_left_ctrl">Αριστερό Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Δεξί Ctrl</string>
+    <string name="fast_search_key_left_meta">Αριστερό Meta</string>
+    <string name="fast_search_key_right_meta">Δεξί Meta</string>
 </resources>

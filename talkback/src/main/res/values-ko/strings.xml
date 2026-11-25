@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">위쪽 왼쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_up_and_right">위쪽 오른쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_right_and_down">오른쪽 아래쪽 순으로 스와이프</string>
+  <string name="title_pref_shortcut_1finger_3tap">세 번 탭</string>
+  <string name="title_pref_shortcut_1finger_4tap">네 번 탭</string>
   <string name="title_pref_shortcut_right_and_up">오른쪽 위쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_left_and_down">왼쪽 아래쪽 순으로 스와이프</string>
   <string name="title_pref_shortcut_left_and_up">왼쪽 위쪽 순으로 스와이프</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">충전기 연결됨</string>
     <string name="title_pref_screen_announcements">화면 켜기 및 끄기</string>
     <string name="summary_pref_screen_announcements">화면이 꺼지거나 켜질 때, 그리고 휴대전화가 잠금 해제되었을 때 SandFly가 말하는 내용을 선택하세요.</string>
+    <string name="title_pref_screen_announcements_over_media">미디어 재생 중에 읽기</string>
     <string name="title_screen_announcements_screen_off">화면이 꺼지면</string>
     <string name="title_screen_announcements_screen_on">화면이 켜질 때</string>
     <string name="title_screen_announcements_unlock">휴대폰 잠금이 해제될 때</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">목록 정보 읽기</string>
     <string name="pref_speak_grid_positions_title">그리드 및 표 정보 읽기</string>
     <string name="pref_speak_role_without_pause_title">항목 유형을 끊지 않고 읽기</string>
+    <string name="title_pref_speak_actions_available">작업 사용 가능 읽기</string>
     <string name="title_pref_overview">SandFly 최근 앱 사용</string>
     <string name="title_pref_overview_newest_last">가장 최근 앱을 아래에 표시</string>
     <string name="title_pref_overview_columns">열</string>
@@ -2264,6 +2268,10 @@
     <string name="vibration_type_effects">햅틱 효과</string>
     <string name="vibration_type_pulses">펄스</string>
     <string name="vibration_type_on_off">켜기/끄기</string>
+    <string name="title_pref_actions_available_sound">작업 사용 가능 소리</string>
+    <string name="value_actions_available_sound_off">사용 안함</string>
+    <string name="value_actions_available_sound_focus">항목에 포커스가 이동할 때</string>
+    <string name="value_actions_available_sound_after_speech">항목을 읽은 후</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2759,4 +2767,47 @@
     <string name="double_tap_taps_on">두 번 탭하면 화면 탭 켜짐</string>
     <string name="double_tap_taps_off">두 번 탭하면 화면 탭 꺼짐</string>
     <string name="double_tap_taps_no_app">앞에 표시된 앱 없음</string>
+    <string name="keycombo_menu_toggle_key_practice">키보드 연습 켜기 또는 끄기</string>
+    <string name="key_practice_on">키보드 연습 켜짐</string>
+    <string name="key_practice_off">키보드 연습 꺼짐</string>
+    <string name="key_practice_sandfly_key">SandFly 키</string>
+    <string name="key_practice_title">키보드 연습</string>
+    <string name="key_practice_summary">누른 키와 해당 명령을 실행하지 않고 읽습니다. 뒤로 또는 Esc 키를 누르면 꺼집니다.</string>
+    <string name="keycombo_menu_touch_hold_focus">포커스된 항목에서 터치 유지</string>
+    <string name="touch_hold_held">터치 유지됨</string>
+    <string name="touch_hold_lifted">터치 해제됨</string>
+    <string name="touch_hold_unavailable">사용할 수 없음</string>
+    <string name="touch_hold_no_focus">포커스가 있는 항목이 없습니다</string>
+    <string name="title_pref_speak_password_characters">비밀번호 문자 읽기</string>
+    <string name="summary_pref_speak_password_characters">SandFly 키보드 사용 시 비밀번호 필드에서 입력하거나 삭제하거나 커서가 지나간 문자를 읽습니다</string>
+    <string name="shortcut_spell_password_field">비밀번호 필드 철자 읽기</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">비밀번호 필드가 아닙니다</string>
+    <string name="sandfly_keyboard_password_not_available">비밀번호 필드 텍스트를 가져올 수 없습니다</string>
+    <string name="sandfly_keyboard_password_not_read">비밀번호 필드에서는 읽지 않습니다</string>
+    <string name="title_pref_voice_profile_play_sample">샘플 재생</string>
+    <string name="voice_profile_sample_text">이 음성 프로필의 샘플입니다.</string>
+    <string name="voice_profile_sample_failed">샘플이 재생되지 않음</string>
+    <string name="title_pref_speech_rate_step">말하기 속도 변경 단위</string>
+    <string name="value_speech_rate_step_relative">속도의 <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">통화 종료</string>
+    <string name="end_call_no_call">통화 없음</string>
+    <string name="end_call_permission">통화를 종료하려면 권한이 필요함</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">다음 단락으로 이동, 두 번째 키</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">이전 단락으로 이동, 두 번째 키</string>
+    <string name="title_pref_mute_key_dictates">텍스트 입력란에서 음소거 키를 길게 눌러 받아쓰기</string>
+    <string name="title_pref_mute_key_press">음소거 키 누르기</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">다음 링크로 이동, 두 번째 키</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">이전 링크로 이동, 두 번째 키</string>
+    <string name="keycombo_only_in_browse_mode">탐색 모드에서만</string>
+    <string name="keycombo_keys_in_browse_mode">탐색 모드에서 <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">빠른 검색</string>
+    <string name="title_pref_fast_search_key">빠른 검색 키</string>
+    <string name="fast_search_key_off">사용 안함</string>
+    <string name="title_pref_fast_search_wrap">순환 탐색</string>
+    <string name="fast_search_key_left_alt">왼쪽 Alt</string>
+    <string name="fast_search_key_left_ctrl">왼쪽 Ctrl</string>
+    <string name="fast_search_key_right_ctrl">오른쪽 Ctrl</string>
+    <string name="fast_search_key_left_meta">왼쪽 Meta</string>
+    <string name="fast_search_key_right_meta">오른쪽 Meta</string>
 </resources>

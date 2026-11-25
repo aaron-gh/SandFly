@@ -322,6 +322,10 @@ public class LibLouis implements TranslatorFactory {
       case "UKRAINIAN_COMP8" -> {
         return new LibLouisTranslator(context, codeName, "uk-comp.utb");
       }
+      case "UNICODE_BRAILLE", "UNICODE_BRAILLE_8" -> {
+        // Back-translates each cell to the Unicode braille character with its dots.
+        return new LibLouisTranslator(context, codeName, "unicode-braille.utb");
+      }
       case "URDU" -> {
         return getBrailleTranslator(context, codeName, contractedMode, "ur-pk-g1.utb", "ur-pk-g2.ctb");
       }

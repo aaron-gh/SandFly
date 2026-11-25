@@ -42,7 +42,7 @@
     <!-- Entry shown while downloading. %1$d is the percent. [CHAR LIMIT=60] -->
     <string name="pref_on_device_ai_downloading">正在下载，%1$d%%</string>
     <!-- Summary while downloading. %1$s is how much is done, like "880 MB of 2.6 GB". [CHAR LIMIT=NONE] -->
-    <string name="pref_on_device_ai_downloading_summary">%1$s。点按可停止。再次开始时会从此处继续。</string>
+    <string name="pref_on_device_ai_downloading_summary">%1$s。单击可停止。再次开始时会从此处继续。</string>
     <!-- How much of the download is done. %1$s is the downloaded size, %2$s the full size. [CHAR LIMIT=60] -->
     <string name="on_device_ai_progress_sizes">%1$s，共 %2$s</string>
     <!-- Progress with the time left. %1$s is the sizes text, %2$s the time left like "4:32". [CHAR LIMIT=80] -->
@@ -126,7 +126,7 @@
     <!-- Download failed: not enough free storage. [CHAR LIMIT=NONE] -->
     <string name="on_device_ai_error_low_space">可用存储空间不足以存放该模型。</string>
     <!-- Download paused: Android stopped it after several hours in the background. The downloaded part is kept. [CHAR LIMIT=NONE] -->
-    <string name="on_device_ai_error_time_limit">后台下载数小时后 Android 暂停了下载。点按可从中断处继续。</string>
+    <string name="on_device_ai_error_time_limit">后台下载数小时后 Android 暂停了下载。单击可从中断处继续。</string>
 
     <!-- Title of the dialog that asks before downloading on mobile data. [CHAR LIMIT=60] -->
     <string name="on_device_ai_metered_title">使用移动数据下载？</string>

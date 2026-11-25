@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Swipe up then left</string>
   <string name="title_pref_shortcut_up_and_right">Swipe up then right</string>
   <string name="title_pref_shortcut_right_and_down">Swipe right then down</string>
+  <string name="title_pref_shortcut_1finger_3tap">Triple-tap</string>
+  <string name="title_pref_shortcut_1finger_4tap">Quadruple-tap</string>
   <string name="title_pref_shortcut_right_and_up">Swipe right then up</string>
   <string name="title_pref_shortcut_left_and_down">Swipe left then down</string>
   <string name="title_pref_shortcut_left_and_up">Swipe left then up</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Charger connected</string>
     <string name="title_pref_screen_announcements">Screen on and off</string>
     <string name="summary_pref_screen_announcements">Choose what SandFly says when the screen turns off or on, and when the phone is unlocked</string>
+    <string name="title_pref_screen_announcements_over_media">Speak during media playback</string>
     <string name="title_screen_announcements_screen_off">When the screen turns off</string>
     <string name="title_screen_announcements_screen_on">When the screen turns on</string>
     <string name="title_screen_announcements_unlock">When the phone is unlocked</string>
@@ -2015,6 +2018,7 @@
     <string name="pref_speak_list_positions_title">Speak list information</string>
     <string name="pref_speak_grid_positions_title">Speak grid and table information</string>
     <string name="pref_speak_role_without_pause_title">Speak item type without a pause</string>
+    <string name="title_pref_speak_actions_available">Speak Actions available</string>
     <string name="title_pref_overview">Use SandFly\'s overview</string>
     <string name="title_pref_overview_newest_last">Most recent app at the bottom</string>
     <string name="title_pref_overview_columns">Columns</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Haptic effects</string>
     <string name="vibration_type_pulses">Pulses</string>
     <string name="vibration_type_on_off">On and off</string>
+    <string name="title_pref_actions_available_sound">Actions available sound</string>
+    <string name="value_actions_available_sound_off">Off</string>
+    <string name="value_actions_available_sound_focus">When the item gets focus</string>
+    <string name="value_actions_available_sound_after_speech">After the item is spoken</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Double tap taps the screen on</string>
     <string name="double_tap_taps_off">Double tap taps the screen off</string>
     <string name="double_tap_taps_no_app">No app in front</string>
+    <string name="keycombo_menu_toggle_key_practice">Turn keyboard practice on or off</string>
+    <string name="key_practice_on">Keyboard practice on</string>
+    <string name="key_practice_off">Keyboard practice off</string>
+    <string name="key_practice_sandfly_key">SandFly key</string>
+    <string name="key_practice_title">Keyboard practice</string>
+    <string name="key_practice_summary">Speaks each key pressed and its command instead of running it. Back or Escape turns it off.</string>
+    <string name="keycombo_menu_touch_hold_focus">Hold a touch on the focused item</string>
+    <string name="touch_hold_held">Touch held</string>
+    <string name="touch_hold_lifted">Touch lifted</string>
+    <string name="touch_hold_unavailable">Not available</string>
+    <string name="touch_hold_no_focus">No item has focus</string>
+    <string name="title_pref_speak_password_characters">Speak password characters</string>
+    <string name="summary_pref_speak_password_characters">With the SandFly keyboard, speaks the characters typed, deleted and passed over in password fields</string>
+    <string name="shortcut_spell_password_field">Spell the password field</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Not a password field</string>
+    <string name="sandfly_keyboard_password_not_available">Password field text not available</string>
+    <string name="sandfly_keyboard_password_not_read">Not read in password fields</string>
+    <string name="title_pref_voice_profile_play_sample">Play sample</string>
+    <string name="voice_profile_sample_text">This is a sample of this voice profile.</string>
+    <string name="voice_profile_sample_failed">Sample not played</string>
+    <string name="title_pref_speech_rate_step">Speech rate step</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> of the rate</string>
+    <string name="shortcut_end_call">End call</string>
+    <string name="end_call_no_call">No call</string>
+    <string name="end_call_permission">Permission needed to end calls</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Navigate to next paragraph, second key</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navigate to previous paragraph, second key</string>
+    <string name="title_pref_mute_key_dictates">Hold mute key to dictate in text fields</string>
+    <string name="title_pref_mute_key_press">Mute key press</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Navigate to next link, second key</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navigate to previous link, second key</string>
+    <string name="keycombo_only_in_browse_mode">Only in browse mode</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> in browse mode</string>
+    <string name="title_pref_category_fast_search">Fast search</string>
+    <string name="title_pref_fast_search_key">Fast search key</string>
+    <string name="fast_search_key_off">Off</string>
+    <string name="title_pref_fast_search_wrap">Wrap around</string>
+    <string name="fast_search_key_left_alt">Left Alt</string>
+    <string name="fast_search_key_left_ctrl">Left Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Right Ctrl</string>
+    <string name="fast_search_key_left_meta">Left Meta</string>
+    <string name="fast_search_key_right_meta">Right Meta</string>
 </resources>

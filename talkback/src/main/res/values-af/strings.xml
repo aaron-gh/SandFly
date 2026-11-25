@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Swiep op, dan links</string>
   <string name="title_pref_shortcut_up_and_right">Swiep op, dan regs</string>
   <string name="title_pref_shortcut_right_and_down">Swiep regs, dan af</string>
+  <string name="title_pref_shortcut_1finger_3tap">Tripeltik</string>
+  <string name="title_pref_shortcut_1finger_4tap">Tik 4 keer</string>
   <string name="title_pref_shortcut_right_and_up">Swiep regs, dan op</string>
   <string name="title_pref_shortcut_left_and_down">Swiep links, dan af</string>
   <string name="title_pref_shortcut_left_and_up">Swiep links, dan op</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Laaier gekoppel</string>
     <string name="title_pref_screen_announcements">Skerm aan en af</string>
     <string name="summary_pref_screen_announcements">Kies wat SandFly sê wanneer die skerm af- of aanskakel, en wanneer die foon ontsluit word</string>
+    <string name="title_pref_screen_announcements_over_media">Praat terwyl media speel</string>
     <string name="title_screen_announcements_screen_off">Wanneer die skerm afskakel</string>
     <string name="title_screen_announcements_screen_on">Wanneer die skerm aanskakel</string>
     <string name="title_screen_announcements_unlock">Wanneer die foon ontsluit word</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Praat lysinligting</string>
     <string name="pref_speak_grid_positions_title">Praat rooster- en tabelinligting</string>
     <string name="pref_speak_role_without_pause_title">Praat itemtipe sonder pouse</string>
+    <string name="title_pref_speak_actions_available">Sê Handelinge beskikbaar</string>
     <string name="title_pref_overview">Gebruik SandFly se oorsig</string>
     <string name="title_pref_overview_newest_last">Mees onlangse program onderaan</string>
     <string name="title_pref_overview_columns">Kolomme</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Haptiese effekte</string>
     <string name="vibration_type_pulses">Pulse</string>
     <string name="vibration_type_on_off">Aan en af</string>
+    <string name="title_pref_actions_available_sound">Klank vir Handelinge beskikbaar</string>
+    <string name="value_actions_available_sound_off">Af</string>
+    <string name="value_actions_available_sound_focus">Wanneer die item fokus kry</string>
+    <string name="value_actions_available_sound_after_speech">Nadat die item gesê is</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Dubbeltik tik op die skerm aan</string>
     <string name="double_tap_taps_off">Dubbeltik tik op die skerm af</string>
     <string name="double_tap_taps_no_app">Geen app voor nie</string>
+    <string name="keycombo_menu_toggle_key_practice">Skakel sleutelbordoefening aan of af</string>
+    <string name="key_practice_on">Sleutelbordoefening aan</string>
+    <string name="key_practice_off">Sleutelbordoefening af</string>
+    <string name="key_practice_sandfly_key">SandFly-sleutel</string>
+    <string name="key_practice_title">Sleutelbordoefening</string>
+    <string name="key_practice_summary">Sê elke sleutel wat gedruk word en sy opdrag in plaas daarvan om dit uit te voer. Terug of Escape skakel dit af.</string>
+    <string name="keycombo_menu_touch_hold_focus">Hou \'n aanraking op die item met fokus</string>
+    <string name="touch_hold_held">Aanraking gehou</string>
+    <string name="touch_hold_lifted">Aanraking gelig</string>
+    <string name="touch_hold_unavailable">Nie beskikbaar nie</string>
+    <string name="touch_hold_no_focus">Geen item het fokus nie</string>
+    <string name="title_pref_speak_password_characters">Sê wagwoordkarakters</string>
+    <string name="summary_pref_speak_password_characters">Sê met die SandFly-sleutelbord die karakters wat in wagwoordvelde getik, uitgevee en deur die wyser verbygegaan word</string>
+    <string name="shortcut_spell_password_field">Spel die wagwoordveld</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Nie \'n wagwoordveld nie</string>
+    <string name="sandfly_keyboard_password_not_available">Wagwoordveldteks nie beskikbaar nie</string>
+    <string name="sandfly_keyboard_password_not_read">Word nie in wagwoordvelde gelees nie</string>
+    <string name="title_pref_voice_profile_play_sample">Speel voorbeeld</string>
+    <string name="voice_profile_sample_text">Dit is ’n voorbeeld van hierdie stemprofiel.</string>
+    <string name="voice_profile_sample_failed">Voorbeeld nie gespeel nie</string>
+    <string name="title_pref_speech_rate_step">Spraaktempo-stap</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> van die tempo</string>
+    <string name="shortcut_end_call">Beëindig oproep</string>
+    <string name="end_call_no_call">Geen oproep nie</string>
+    <string name="end_call_permission">Toestemming nodig om oproepe te beëindig</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Navigeer na volgende paragraaf, tweede sleutel</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navigeer na vorige paragraaf, tweede sleutel</string>
+    <string name="title_pref_mute_key_dictates">Hou die demptoets in om in teksvelde te dikteer</string>
+    <string name="title_pref_mute_key_press">Druk op demptoets</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Navigeer na volgende skakel, tweede sleutel</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navigeer na vorige skakel, tweede sleutel</string>
+    <string name="keycombo_only_in_browse_mode">Slegs in blaaimodus</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> in blaaimodus</string>
+    <string name="title_pref_category_fast_search">Vinnige soek</string>
+    <string name="title_pref_fast_search_key">Sleutel vir vinnige soek</string>
+    <string name="fast_search_key_off">Af</string>
+    <string name="title_pref_fast_search_wrap">Omloop</string>
+    <string name="fast_search_key_left_alt">Linker-Alt</string>
+    <string name="fast_search_key_left_ctrl">Linker-Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Regter-Ctrl</string>
+    <string name="fast_search_key_left_meta">Linker-Meta</string>
+    <string name="fast_search_key_right_meta">Regter-Meta</string>
 </resources>

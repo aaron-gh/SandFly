@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Geser ke atas lalu ke kiri</string>
   <string name="title_pref_shortcut_up_and_right">Geser ke atas lalu ke kanan</string>
   <string name="title_pref_shortcut_right_and_down">Geser ke kanan lalu ke bawah</string>
+  <string name="title_pref_shortcut_1finger_3tap">Ketuk tiga kali</string>
+  <string name="title_pref_shortcut_1finger_4tap">Ketuk empat kali</string>
   <string name="title_pref_shortcut_right_and_up">Geser ke kanan lalu ke atas</string>
   <string name="title_pref_shortcut_left_and_down">Geser ke kiri lalu ke bawah</string>
   <string name="title_pref_shortcut_left_and_up">Geser ke kiri lalu ke atas</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Pengisi daya terhubung</string>
     <string name="title_pref_screen_announcements">Layar aktif dan mati</string>
     <string name="summary_pref_screen_announcements">Pilih yang diucapkan SandFly saat layar mati atau aktif, dan saat kunci ponsel dibuka</string>
+    <string name="title_pref_screen_announcements_over_media">Ucapkan saat media diputar</string>
     <string name="title_screen_announcements_screen_off">Saat layar mati</string>
     <string name="title_screen_announcements_screen_on">Saat layar aktif</string>
     <string name="title_screen_announcements_unlock">Saat kunci ponsel dibuka</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Ucapkan informasi daftar</string>
     <string name="pref_speak_grid_positions_title">Ucapkan informasi kisi dan tabel</string>
     <string name="pref_speak_role_without_pause_title">Ucapkan jenis item tanpa jeda</string>
+    <string name="title_pref_speak_actions_available">Ucapkan Tindakan tersedia</string>
     <string name="title_pref_overview">Gunakan ringkasan SandFly</string>
     <string name="title_pref_overview_newest_last">Aplikasi terbaru di bagian bawah</string>
     <string name="title_pref_overview_columns">Kolom</string>
@@ -2245,6 +2249,10 @@
     <string name="vibration_type_effects">Efek haptik</string>
     <string name="vibration_type_pulses">Denyut</string>
     <string name="vibration_type_on_off">Aktif dan nonaktif</string>
+    <string name="title_pref_actions_available_sound">Suara Tindakan tersedia</string>
+    <string name="value_actions_available_sound_off">Nonaktif</string>
+    <string name="value_actions_available_sound_focus">Saat item difokuskan</string>
+    <string name="value_actions_available_sound_after_speech">Setelah item diucapkan</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2759,4 +2767,47 @@
     <string name="double_tap_taps_on">Ketuk dua kali mengetuk layar aktif</string>
     <string name="double_tap_taps_off">Ketuk dua kali mengetuk layar nonaktif</string>
     <string name="double_tap_taps_no_app">Tidak ada aplikasi di depan</string>
+    <string name="keycombo_menu_toggle_key_practice">Aktifkan atau nonaktifkan latihan keyboard</string>
+    <string name="key_practice_on">Latihan keyboard aktif</string>
+    <string name="key_practice_off">Latihan keyboard nonaktif</string>
+    <string name="key_practice_sandfly_key">Tombol SandFly</string>
+    <string name="key_practice_title">Latihan keyboard</string>
+    <string name="key_practice_summary">Mengucapkan setiap tombol yang ditekan dan perintahnya tanpa menjalankannya. Tombol Kembali atau Escape menonaktifkannya.</string>
+    <string name="keycombo_menu_touch_hold_focus">Tahan sentuhan pada item yang difokuskan</string>
+    <string name="touch_hold_held">Sentuhan ditahan</string>
+    <string name="touch_hold_lifted">Sentuhan dilepas</string>
+    <string name="touch_hold_unavailable">Tidak tersedia</string>
+    <string name="touch_hold_no_focus">Tidak ada item yang difokuskan</string>
+    <string name="title_pref_speak_password_characters">Ucapkan karakter sandi</string>
+    <string name="summary_pref_speak_password_characters">Dengan keyboard SandFly, mengucapkan karakter yang diketik, dihapus, dan dilewati kursor di kolom sandi</string>
+    <string name="shortcut_spell_password_field">Eja kolom sandi</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Bukan kolom sandi</string>
+    <string name="sandfly_keyboard_password_not_available">Teks kolom sandi tidak tersedia</string>
+    <string name="sandfly_keyboard_password_not_read">Tidak dibacakan di kolom sandi</string>
+    <string name="title_pref_voice_profile_play_sample">Putar sampel</string>
+    <string name="voice_profile_sample_text">Ini adalah sampel profil suara ini.</string>
+    <string name="voice_profile_sample_failed">Sampel tidak diputar</string>
+    <string name="title_pref_speech_rate_step">Langkah kecepatan bicara</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> dari kecepatan</string>
+    <string name="shortcut_end_call">Akhiri panggilan</string>
+    <string name="end_call_no_call">Tidak ada panggilan</string>
+    <string name="end_call_permission">Izin diperlukan untuk mengakhiri panggilan</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Berpindah ke paragraf berikutnya, tombol kedua</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Berpindah ke paragraf sebelumnya, tombol kedua</string>
+    <string name="title_pref_mute_key_dictates">Tahan tombol bisukan untuk mendikte di kolom teks</string>
+    <string name="title_pref_mute_key_press">Tekan tombol bisukan</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Berpindah ke link berikutnya, tombol kedua</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Berpindah ke link sebelumnya, tombol kedua</string>
+    <string name="keycombo_only_in_browse_mode">Hanya dalam mode penjelajahan</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> dalam mode penjelajahan</string>
+    <string name="title_pref_category_fast_search">Penelusuran cepat</string>
+    <string name="title_pref_fast_search_key">Tombol penelusuran cepat</string>
+    <string name="fast_search_key_off">Nonaktif</string>
+    <string name="title_pref_fast_search_wrap">Kembali ke awal</string>
+    <string name="fast_search_key_left_alt">Alt Kiri</string>
+    <string name="fast_search_key_left_ctrl">Ctrl Kiri</string>
+    <string name="fast_search_key_right_ctrl">Ctrl Kanan</string>
+    <string name="fast_search_key_left_meta">Meta Kiri</string>
+    <string name="fast_search_key_right_meta">Meta Kanan</string>
 </resources>

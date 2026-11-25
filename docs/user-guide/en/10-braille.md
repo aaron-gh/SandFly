@@ -124,11 +124,11 @@ Limitations:
 
 #### Braille languages {#braille-keyboard-languages}
 
-- **Languages**: the braille tables that the keyboard and braille displays can use. Choose **Add a language** to add one. Japanese braille needs a dictionary of about 15 MB, which SandFly downloads when you add the language. **Romanian** is 6-dot uncontracted braille: dots 46 capital letter, dots 56 capital word, dots 3456 number sign, dots 2356 parentheses, and UEB signs for operators; **Romanian 8-dot Computer Braille** uses one 8-dot cell per character.
+- **Languages**: the braille tables that the keyboard and braille displays can use. Choose **Add a language** to add one. Japanese braille needs a dictionary of about 15 MB, which SandFly downloads when you add the language. **Romanian** is 6-dot uncontracted braille: dots 46 capital letter, dots 56 capital word, dots 3456 number sign, dots 2356 parentheses, and UEB signs for operators; **Romanian 8-dot Computer Braille** uses one 8-dot cell per character. **Add a language** > **Unicode Braille**, at the end of the list, has **Unicode Braille** and **Unicode 8-dot Braille**, which type each cell as its Unicode braille character, such as ⠞ for dots 2, 3, 4 and 5; a space is the blank braille cell U+2800, which SandFly speaks as "blank braille cell". They are for typing only and aren't choices for **Preferred reading language** on braille displays.
 - **Preferred typing language**: the table that the keyboard starts with.
 - **Preferred braille grade**: **Contracted braille** or **Uncontracted braille**. The default is uncontracted.
 
-To change to the next language while you type, hold dots 4, 5 and 6 and swipe down. SandFly turns contracted braille on or off as it was when you last used that language, and announces the language and the grade. Speech changes to your first voice profile in that language, if you have one, and back to **SandFly default** when the new language has none. See [](#speech).
+To change to the next language while you type, hold dots 4, 5 and 6 and swipe down. SandFly turns contracted braille on or off as it was when you last used that language, and announces the language and the grade. Speech changes to your first voice profile in that language, if you have one, and back to **SandFly default** when the new language has none. Unicode braille keeps the voice in use. See [](#speech).
 
 #### Custom braille characters {#braille-keyboard-custom-characters}
 
@@ -268,7 +268,7 @@ EuroBraille displays are supported, including the b.note, b.note 2, b.book and b
 In **Braille** > **Braille display**, the **Languages and commands** group has:
 
 - **Languages**: the braille tables in use, shared with the braille keyboard. See [](#braille-keyboard-languages).
-- **Preferred reading language** and **Preferred typing language**: the tables for text shown on the display and for typing on it.
+- **Preferred reading language** and **Preferred typing language**: the tables for text shown on the display and for typing on it. While you type in Unicode braille, the display shows the text of the field in the reading language.
 - **Preferred braille grade**: **Contracted braille** or **Uncontracted braille**.
 - **Braille display commands**: the keys of each command. See [](#braille-displays-keys).
 - **Braille elements**: the abbreviations that the display shows for elements on the screen, such as "btn" for a button or "lnk" for a link.

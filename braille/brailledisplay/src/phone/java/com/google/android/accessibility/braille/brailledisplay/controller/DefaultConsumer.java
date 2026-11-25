@@ -305,7 +305,7 @@ class DefaultConsumer implements EventConsumer {
         case CMD_NAV_WINDOW_PREVIOUS ->
             success = behaviorScreenReaderAction.performAction(ScreenReaderAction.PREVIOUS_WINDOW);
         case CMD_SWITCH_TO_NEXT_OUTPUT_LANGUAGE -> {
-          if (BrailleUserPreferences.readAvailablePreferredCodes(context).size() > 1) {
+          if (BrailleUserPreferences.readAvailablePreferredOutputCodes(context).size() > 1) {
             Code nextCode = BrailleUserPreferences.getNextOutputCode(context);
             String userFacingName = nextCode.getUserFacingName(context);
             BrailleUserPreferences.writeCurrentActiveOutputCode(context, nextCode);
@@ -634,6 +634,16 @@ class DefaultConsumer implements EventConsumer {
     // the first focusable node.
     if (!brailleFocusedNodeAndEvent(Reason.START_UP, /* event= */ null)) {
       brailleFirstFocusableNode(Reason.START_UP, /* event= */ null);
+    }
+  }
+
+  /**
+   * Activates without forgetting the last focused node, so the pan position stays when that node
+   * is still focused. Used after a consumer that only showed timed content.
+   */
+  public void onActivateKeepingPosition() {
+    if (!brailleFocusedNodeAndEvent(Reason.WINDOW_CHANGED, /* event= */ null)) {
+      brailleFirstFocusableNode(Reason.WINDOW_CHANGED, /* event= */ null);
     }
   }
 

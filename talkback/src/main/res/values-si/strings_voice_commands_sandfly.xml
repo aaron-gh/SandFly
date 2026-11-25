@@ -159,4 +159,19 @@
         <item>{label} සක්‍රිය කරන්න</item>
         <item>{label} තෝරන්න</item>
     </string-array>
+    <string name="shortcut_voice_editing">හඬ සංස්කරණය අරඹන්න</string>
+    <string name="voice_editing_on">හඬ සංස්කරණය ක්‍රියාත්මකයි</string>
+    <string name="voice_editing_off">හඬ සංස්කරණය අක්‍රියයි</string>
+    <string name="title_pref_voice_editing_time_limit">හඬ සංස්කරණ කාල සීමාව</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> විනාඩි</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> විනාඩි</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>සංස්කරණය නවත්වන්න</item>
+        <item>හඬ සංස්කරණය නවත්වන්න</item>
+        <item>සංස්කරණය අවසන් කරන්න</item>
+        <item>හඬ සංස්කරණය අවසන් කරන්න</item>
+        <item>හඬ සංස්කරණය අක්‍රිය කරන්න</item>
+    </string-array>
 </resources>

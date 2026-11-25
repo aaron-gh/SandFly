@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Deslizar hacia arriba y luego hacia la izquierda</string>
   <string name="title_pref_shortcut_up_and_right">Deslizar hacia arriba y luego hacia la derecha</string>
   <string name="title_pref_shortcut_right_and_down">Deslizar hacia la derecha y luego hacia abajo</string>
+  <string name="title_pref_shortcut_1finger_3tap">Triple toque</string>
+  <string name="title_pref_shortcut_1finger_4tap">Cuádruple toque</string>
   <string name="title_pref_shortcut_right_and_up">Deslizar hacia la derecha y luego hacia arriba</string>
   <string name="title_pref_shortcut_left_and_down">Deslizar hacia la izquierda y luego hacia abajo</string>
   <string name="title_pref_shortcut_left_and_up">Deslizar hacia la izquierda y luego hacia arriba</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Cargador conectado</string>
     <string name="title_pref_screen_announcements">Pantalla encendida y apagada</string>
     <string name="summary_pref_screen_announcements">Elige qué dice SandFly cuando la pantalla se apaga o se enciende, y cuando se desbloquea el teléfono</string>
+    <string name="title_pref_screen_announcements_over_media">Enunciar durante la reproducción de contenido multimedia</string>
     <string name="title_screen_announcements_screen_off">Al apagarse la pantalla</string>
     <string name="title_screen_announcements_screen_on">Al encenderse la pantalla</string>
     <string name="title_screen_announcements_unlock">Al desbloquear el teléfono</string>
@@ -2011,6 +2014,7 @@
     <string name="pref_speak_list_positions_title">Decir información de listas</string>
     <string name="pref_speak_grid_positions_title">Decir información de cuadrículas y tablas</string>
     <string name="pref_speak_role_without_pause_title">Decir el tipo de elemento sin pausa</string>
+    <string name="title_pref_speak_actions_available">Enunciar Acciones disponibles</string>
     <string name="title_pref_overview">Usar la lista de aplicaciones recientes de SandFly</string>
     <string name="title_pref_overview_newest_last">Aplicación más reciente al final</string>
     <string name="title_pref_overview_columns">Columnas</string>
@@ -2271,6 +2275,10 @@
     <string name="vibration_type_effects">Efectos hápticos</string>
     <string name="vibration_type_pulses">Pulsos</string>
     <string name="vibration_type_on_off">Activada y desactivada</string>
+    <string name="title_pref_actions_available_sound">Sonido de Acciones disponibles</string>
+    <string name="value_actions_available_sound_off">Desactivado</string>
+    <string name="value_actions_available_sound_focus">Cuando el elemento recibe el foco</string>
+    <string name="value_actions_available_sound_after_speech">Después de enunciar el elemento</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2776,4 +2784,47 @@
     <string name="double_tap_taps_on">El doble toque toca la pantalla activado</string>
     <string name="double_tap_taps_off">El doble toque toca la pantalla desactivado</string>
     <string name="double_tap_taps_no_app">No hay ninguna aplicación en primer plano</string>
+    <string name="keycombo_menu_toggle_key_practice">Activar o desactivar la práctica de teclado</string>
+    <string name="key_practice_on">Práctica de teclado activada</string>
+    <string name="key_practice_off">Práctica de teclado desactivada</string>
+    <string name="key_practice_sandfly_key">Tecla de SandFly</string>
+    <string name="key_practice_title">Práctica de teclado</string>
+    <string name="key_practice_summary">Enuncia cada tecla pulsada y su comando en lugar de ejecutarlo. Atrás o Escape la desactiva.</string>
+    <string name="keycombo_menu_touch_hold_focus">Mantener un toque en el elemento enfocado</string>
+    <string name="touch_hold_held">Toque mantenido</string>
+    <string name="touch_hold_lifted">Toque levantado</string>
+    <string name="touch_hold_unavailable">No disponible</string>
+    <string name="touch_hold_no_focus">Ningún elemento tiene el foco</string>
+    <string name="title_pref_speak_password_characters">Enunciar caracteres de contraseñas</string>
+    <string name="summary_pref_speak_password_characters">Con el teclado SandFly, enuncia los caracteres escritos, eliminados y recorridos por el cursor en los campos de contraseña</string>
+    <string name="shortcut_spell_password_field">Deletrear el campo de contraseña</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">No es un campo de contraseña</string>
+    <string name="sandfly_keyboard_password_not_available">Texto del campo de contraseña no disponible</string>
+    <string name="sandfly_keyboard_password_not_read">No se lee en los campos de contraseña</string>
+    <string name="title_pref_voice_profile_play_sample">Reproducir muestra</string>
+    <string name="voice_profile_sample_text">Esta es una muestra de este perfil de voz.</string>
+    <string name="voice_profile_sample_failed">Muestra no reproducida</string>
+    <string name="title_pref_speech_rate_step">Paso de la velocidad de la voz</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> de la velocidad</string>
+    <string name="shortcut_end_call">Finalizar llamada</string>
+    <string name="end_call_no_call">No hay ninguna llamada</string>
+    <string name="end_call_permission">Se necesita permiso para finalizar llamadas</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Ir al párrafo siguiente, segunda tecla</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Ir al párrafo anterior, segunda tecla</string>
+    <string name="title_pref_mute_key_dictates">Mantener pulsada la tecla de silencio para dictar en campos de texto</string>
+    <string name="title_pref_mute_key_press">Pulsación de la tecla de silencio</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Ir al enlace siguiente, segunda tecla</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Ir al enlace anterior, segunda tecla</string>
+    <string name="keycombo_only_in_browse_mode">Solo en el modo de navegación</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> en el modo de navegación</string>
+    <string name="title_pref_category_fast_search">Búsqueda rápida</string>
+    <string name="title_pref_fast_search_key">Tecla de búsqueda rápida</string>
+    <string name="fast_search_key_off">Desactivado</string>
+    <string name="title_pref_fast_search_wrap">Navegación circular</string>
+    <string name="fast_search_key_left_alt">Alt izquierda</string>
+    <string name="fast_search_key_left_ctrl">Ctrl izquierda</string>
+    <string name="fast_search_key_right_ctrl">Ctrl derecha</string>
+    <string name="fast_search_key_left_meta">Meta izquierda</string>
+    <string name="fast_search_key_right_meta">Meta derecha</string>
 </resources>

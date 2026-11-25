@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Vilkt uz augšu, pēc tam pa kreisi</string>
   <string name="title_pref_shortcut_up_and_right">Vilkt uz augšu, pēc tam pa labi</string>
   <string name="title_pref_shortcut_right_and_down">Vilkt pa labi, pēc tam uz leju</string>
+  <string name="title_pref_shortcut_1finger_3tap">Trīsreiz pieskarties</string>
+  <string name="title_pref_shortcut_1finger_4tap">Četrreiz pieskarties</string>
   <string name="title_pref_shortcut_right_and_up">Vilkt pa labi, pēc tam uz augšu</string>
   <string name="title_pref_shortcut_left_and_down">Vilkt pa kreisi, pēc tam uz leju</string>
   <string name="title_pref_shortcut_left_and_up">Vilkt pa kreisi, pēc tam uz augšu</string>
@@ -1366,6 +1368,7 @@
     <string name="value_charger_connected">Pieslēgts lādētājs</string>
     <string name="title_pref_screen_announcements">Ekrāns ieslēgts un izslēgts</string>
     <string name="summary_pref_screen_announcements">Izvēlieties, ko SandFly saka, kad ekrāns izslēdzas vai ieslēdzas un kad tālrunis ir atbloķēts</string>
+    <string name="title_pref_screen_announcements_over_media">Izrunāt, kamēr tiek atskaņoti mediji</string>
     <string name="title_screen_announcements_screen_off">Kad ekrāns izslēdzas</string>
     <string name="title_screen_announcements_screen_on">Kad ekrāns ieslēdzas</string>
     <string name="title_screen_announcements_unlock">Kad tālrunis tiek atbloķēts</string>
@@ -2012,6 +2015,7 @@
     <string name="pref_speak_list_positions_title">Lasīt saraksta informāciju</string>
     <string name="pref_speak_grid_positions_title">Lasīt režģa un tabulas informāciju</string>
     <string name="pref_speak_role_without_pause_title">Lasīt vienuma veidu bez pauzes</string>
+    <string name="title_pref_speak_actions_available">Izrunāt “Pieejamas darbības”</string>
     <string name="title_pref_overview">Izmantot SandFly pārskatu</string>
     <string name="title_pref_overview_newest_last">Jaunākā lietotne apakšā</string>
     <string name="title_pref_overview_columns">Kolonnas</string>
@@ -2255,6 +2259,10 @@
     <string name="vibration_type_effects">Haptiskie efekti</string>
     <string name="vibration_type_pulses">Impulsi</string>
     <string name="vibration_type_on_off">Ieslēgta vai izslēgta</string>
+    <string name="title_pref_actions_available_sound">Skaņa “Pieejamas darbības”</string>
+    <string name="value_actions_available_sound_off">Izslēgts</string>
+    <string name="value_actions_available_sound_focus">Kad vienums tiek fokusēts</string>
+    <string name="value_actions_available_sound_after_speech">Pēc vienuma nolasīšanas</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2760,4 +2768,47 @@
     <string name="double_tap_taps_on">Dubultskāriens veic pieskārienu ekrānam: ieslēgts</string>
     <string name="double_tap_taps_off">Dubultskāriens veic pieskārienu ekrānam: izslēgts</string>
     <string name="double_tap_taps_no_app">Priekšplānā nav lietotnes</string>
+    <string name="keycombo_menu_toggle_key_practice">Ieslēgt vai izslēgt tastatūras praksi</string>
+    <string name="key_practice_on">Tastatūras prakse ieslēgta</string>
+    <string name="key_practice_off">Tastatūras prakse izslēgta</string>
+    <string name="key_practice_sandfly_key">SandFly taustiņš</string>
+    <string name="key_practice_title">Tastatūras prakse</string>
+    <string name="key_practice_summary">Izrunā katru nospiesto taustiņu un tā komandu, to neizpildot. Atpakaļ vai Esc to izslēdz.</string>
+    <string name="keycombo_menu_touch_hold_focus">Turēt pieskārienu uz fokusētā vienuma</string>
+    <string name="touch_hold_held">Pieskāriens tiek turēts</string>
+    <string name="touch_hold_lifted">Pieskāriens atlaists</string>
+    <string name="touch_hold_unavailable">Nav pieejams</string>
+    <string name="touch_hold_no_focus">Nevienam vienumam nav fokusa</string>
+    <string name="title_pref_speak_password_characters">Izrunāt paroles rakstzīmes</string>
+    <string name="summary_pref_speak_password_characters">Izmantojot SandFly tastatūru, paroles laukos izrunā ierakstītās, izdzēstās un ar kursoru šķērsotās rakstzīmes</string>
+    <string name="shortcut_spell_password_field">Nosaukt paroles lauku pa burtiem</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Nav paroles lauks</string>
+    <string name="sandfly_keyboard_password_not_available">Paroles lauka teksts nav pieejams</string>
+    <string name="sandfly_keyboard_password_not_read">Paroles laukos netiek lasīts</string>
+    <string name="title_pref_voice_profile_play_sample">Atskaņot paraugu</string>
+    <string name="voice_profile_sample_text">Šis ir šī balss profila paraugs.</string>
+    <string name="voice_profile_sample_failed">Paraugs netika atskaņots</string>
+    <string name="title_pref_speech_rate_step">Runas ātruma solis</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> no ātruma</string>
+    <string name="shortcut_end_call">Beigt zvanu</string>
+    <string name="end_call_no_call">Nav zvana</string>
+    <string name="end_call_permission">Lai beigtu zvanus, nepieciešama atļauja</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Pāriet uz nākamo rindkopu, otrais taustiņš</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Pāriet uz iepriekšējo rindkopu, otrais taustiņš</string>
+    <string name="title_pref_mute_key_dictates">Turiet skaņas izslēgšanas taustiņu, lai diktētu teksta laukos</string>
+    <string name="title_pref_mute_key_press">Skaņas izslēgšanas taustiņa nospiešana</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Pāriet uz nākamo saiti, otrais taustiņš</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Pāriet uz iepriekšējo saiti, otrais taustiņš</string>
+    <string name="keycombo_only_in_browse_mode">Tikai pārlūkošanas režīmā</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> pārlūkošanas režīmā</string>
+    <string name="title_pref_category_fast_search">Ātrā meklēšana</string>
+    <string name="title_pref_fast_search_key">Ātrās meklēšanas taustiņš</string>
+    <string name="fast_search_key_off">Izslēgts</string>
+    <string name="title_pref_fast_search_wrap">Cikliska pārvietošanās</string>
+    <string name="fast_search_key_left_alt">Kreisais alternēšanas taustiņš</string>
+    <string name="fast_search_key_left_ctrl">Kreisais vadīšanas taustiņš</string>
+    <string name="fast_search_key_right_ctrl">Labais vadīšanas taustiņš</string>
+    <string name="fast_search_key_left_meta">Kreisais Meta taustiņš</string>
+    <string name="fast_search_key_right_meta">Labais Meta taustiņš</string>
 </resources>

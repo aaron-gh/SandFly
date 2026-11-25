@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Повлекување нагоре, па налево</string>
   <string name="title_pref_shortcut_up_and_right">Повлекување нагоре, па надесно</string>
   <string name="title_pref_shortcut_right_and_down">Повлекување надесно, па надолу</string>
+  <string name="title_pref_shortcut_1finger_3tap">Троен допир</string>
+  <string name="title_pref_shortcut_1finger_4tap">Четирикратен допир</string>
   <string name="title_pref_shortcut_right_and_up">Повлекување надесно, па нагоре</string>
   <string name="title_pref_shortcut_left_and_down">Повлекување налево, па надолу</string>
   <string name="title_pref_shortcut_left_and_up">Повлекување налево, па нагоре</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Полначот е поврзан</string>
     <string name="title_pref_screen_announcements">Вклучување и исклучување на екранот</string>
     <string name="summary_pref_screen_announcements">Изберете што вели SandFly кога екранот се исклучува или вклучува и кога телефонот е отклучен</string>
+    <string name="title_pref_screen_announcements_over_media">Изговарај додека се репродуцираат медиумите</string>
     <string name="title_screen_announcements_screen_off">Кога екранот ќе се исклучи</string>
     <string name="title_screen_announcements_screen_on">Кога ќе се вклучи екранот</string>
     <string name="title_screen_announcements_unlock">Кога телефонот ќе се отклучи</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Читај информации за списокот</string>
     <string name="pref_speak_grid_positions_title">Читај информации за мрежата и табелата</string>
     <string name="pref_speak_role_without_pause_title">Читај го типот на ставката без пауза</string>
+    <string name="title_pref_speak_actions_available">Изговарај „Достапни се дејства“</string>
     <string name="title_pref_overview">Користи го прегледот на SandFly</string>
     <string name="title_pref_overview_newest_last">Најновата апликација долу</string>
     <string name="title_pref_overview_columns">Колони</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Хаптички ефекти</string>
     <string name="vibration_type_pulses">Импулси</string>
     <string name="vibration_type_on_off">Вклучено и исклучено</string>
+    <string name="title_pref_actions_available_sound">Звук „Достапни се дејства“</string>
+    <string name="value_actions_available_sound_off">Исклучено</string>
+    <string name="value_actions_available_sound_focus">Кога ставката ќе добие фокус</string>
+    <string name="value_actions_available_sound_after_speech">Откако ќе се прочита ставката</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Двоен допир допира по екранот: вклучено</string>
     <string name="double_tap_taps_off">Двоен допир допира по екранот: исклучено</string>
     <string name="double_tap_taps_no_app">Нема апликација во преден план</string>
+    <string name="keycombo_menu_toggle_key_practice">Вклучи или исклучи вежбање на тастатура</string>
+    <string name="key_practice_on">Вежбањето на тастатура е вклучено</string>
+    <string name="key_practice_off">Вежбањето на тастатура е исклучено</string>
+    <string name="key_practice_sandfly_key">копче за SandFly</string>
+    <string name="key_practice_title">Вежбање на тастатура</string>
+    <string name="key_practice_summary">Го изговара секое притиснато копче и неговата наредба наместо да ја изврши. Се исклучува со копчето Назад или Escape.</string>
+    <string name="keycombo_menu_touch_hold_focus">Задржи допир на фокусираната ставка</string>
+    <string name="touch_hold_held">Допирот е задржан</string>
+    <string name="touch_hold_lifted">Допирот е отпуштен</string>
+    <string name="touch_hold_unavailable">Недостапно</string>
+    <string name="touch_hold_no_focus">Ниту една ставка нема фокус</string>
+    <string name="title_pref_speak_password_characters">Изговарај ги знаците од лозинката</string>
+    <string name="summary_pref_speak_password_characters">Со тастатурата SandFly ги изговара знаците напишани, избришани и поминати со курсорот во полињата за лозинка</string>
+    <string name="shortcut_spell_password_field">Изговори го буква по буква полето за лозинка</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Ова не е поле за лозинка</string>
+    <string name="sandfly_keyboard_password_not_available">Текстот од полето за лозинка не е достапен</string>
+    <string name="sandfly_keyboard_password_not_read">Не се чита во полињата за лозинка</string>
+    <string name="title_pref_voice_profile_play_sample">Пушти примерок</string>
+    <string name="voice_profile_sample_text">Ова е примерок од овој гласовен профил.</string>
+    <string name="voice_profile_sample_failed">Примерокот не е пуштен</string>
+    <string name="title_pref_speech_rate_step">Чекор на брзината на говорот</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> од брзината</string>
+    <string name="shortcut_end_call">Заврши повик</string>
+    <string name="end_call_no_call">Нема повик</string>
+    <string name="end_call_permission">Потребна е дозвола за завршување повици</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Оди на следниот пасус, второ копче</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Оди на претходниот пасус, второ копче</string>
+    <string name="title_pref_mute_key_dictates">Држете го копчето за исклучување на звукот за диктирање во текстуални полиња</string>
+    <string name="title_pref_mute_key_press">Притискање на копчето за исклучување на звукот</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Оди на следната врска, второ копче</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Оди на претходната врска, второ копче</string>
+    <string name="keycombo_only_in_browse_mode">Само во режимот на прелистување</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> во режимот на прелистување</string>
+    <string name="title_pref_category_fast_search">Брзо пребарување</string>
+    <string name="title_pref_fast_search_key">Копче за брзо пребарување</string>
+    <string name="fast_search_key_off">Исклучено</string>
+    <string name="title_pref_fast_search_wrap">Циклично движење</string>
+    <string name="fast_search_key_left_alt">Лев Alt</string>
+    <string name="fast_search_key_left_ctrl">Лев Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Десен Ctrl</string>
+    <string name="fast_search_key_left_meta">Лев Meta</string>
+    <string name="fast_search_key_right_meta">Десен Meta</string>
 </resources>

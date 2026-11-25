@@ -96,6 +96,9 @@ public class BrailleLanguages {
   public static final Locale LOCALE_ZH_CN = Locale.SIMPLIFIED_CHINESE;
   public static final Locale LOCALE_ZH_TW = Locale.TRADITIONAL_CHINESE;
 
+  /** The locale of tables of no language, such as Unicode braille. */
+  public static final Locale LOCALE_NONE = Locale.ROOT;
+
   /**
    * Finds and produces a {@link EditBuffer} based on {@code code}, {@code translatorFactory}, and
    * {@code contractedMode}.
@@ -140,6 +143,7 @@ public class BrailleLanguages {
     }
     List<Code> localeLanguageCodes =
         BrailleLanguages.getAvailableCodes(context).stream()
+            .filter(code -> !code.isInputOnly())
             .filter(code -> code.getLocale().getLanguage().equals(systemLocale.getLanguage()))
             .collect(toImmutableList());
     Optional<Code> firstLocaleCountryCode =
@@ -938,6 +942,34 @@ public class BrailleLanguages {
         R.string.code_user_facing_name_ukrainian_comp8,
         /* supportedContracted= */ false,
         /* eightDot= */ true),
+    UNICODE_BRAILLE(
+        LOCALE_NONE,
+        R.string.code_user_facing_name_unicode_braille,
+        /* supportedContracted= */ false,
+        /* eightDot= */ false) {
+      @Override
+      EditBuffer createEditBuffer(
+          Context context,
+          TalkBackSpeaker talkBack,
+          BrailleTranslator translator,
+          boolean contractedMode) {
+        return new EditBufferUnicodeBraille(context, translator, talkBack);
+      }
+    },
+    UNICODE_BRAILLE_8(
+        LOCALE_NONE,
+        R.string.code_user_facing_name_unicode_braille_8,
+        /* supportedContracted= */ false,
+        /* eightDot= */ true) {
+      @Override
+      EditBuffer createEditBuffer(
+          Context context,
+          TalkBackSpeaker talkBack,
+          BrailleTranslator translator,
+          boolean contractedMode) {
+        return new EditBufferUnicodeBraille(context, translator, talkBack);
+      }
+    },
     URDU(
         LOCALE_UR,
         R.string.code_user_facing_name_urdu,
@@ -1067,6 +1099,22 @@ public class BrailleLanguages {
 
     public boolean isEightDot() {
       return eightDot;
+    }
+
+    /**
+     * Whether the table is for typing only: it types each cell as its Unicode braille character,
+     * and has no braille for print text, so braille displays don't show text in it.
+     */
+    public boolean isInputOnly() {
+      return switch (this) {
+        case UNICODE_BRAILLE, UNICODE_BRAILLE_8 -> true;
+        default -> false;
+      };
+    }
+
+    /** Whether the table is for no language, such as Unicode braille. */
+    public boolean hasNoLanguage() {
+      return locale.getLanguage().isEmpty();
     }
   }
 

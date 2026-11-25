@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">वर नंतर डावीकडे स्वाइप करा</string>
   <string name="title_pref_shortcut_up_and_right">वर नंतर उजवीकडे स्वाइप करा</string>
   <string name="title_pref_shortcut_right_and_down">उजवीकडे नंतर खाली स्वाइप करा</string>
+  <string name="title_pref_shortcut_1finger_3tap">तीनदा टॅप करा</string>
+  <string name="title_pref_shortcut_1finger_4tap">चार वेळा टॅप करा</string>
   <string name="title_pref_shortcut_right_and_up">उजवीकडे नंतर वर स्वाइप करा</string>
   <string name="title_pref_shortcut_left_and_down">डावीकडे नंतर खाली स्वाइप करा</string>
   <string name="title_pref_shortcut_left_and_up">डावीकडे नंतर वर स्वाइप करा</string>
@@ -1368,6 +1370,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="value_charger_connected">चार्जर जोडला</string>
     <string name="title_pref_screen_announcements">स्क्रीन चालू आणि बंद</string>
     <string name="summary_pref_screen_announcements">स्क्रीन बंद किंवा चालू झाल्यावर आणि फोन अनलॉक केल्यावर SandFly काय म्हणते ते निवडा</string>
+    <string name="title_pref_screen_announcements_over_media">मीडिया प्ले होत असताना बोला</string>
     <string name="title_screen_announcements_screen_off">जेव्हा स्क्रीन बंद होते</string>
     <string name="title_screen_announcements_screen_on">स्क्रीन चालू झाल्यावर</string>
     <string name="title_screen_announcements_unlock">फोन अनलॉक केल्यावर</string>
@@ -2010,6 +2013,7 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="pref_speak_list_positions_title">यादीची माहिती बोला</string>
     <string name="pref_speak_grid_positions_title">ग्रिड आणि तक्त्याची माहिती बोला</string>
     <string name="pref_speak_role_without_pause_title">आयटमचा प्रकार विराम न घेता बोला</string>
+    <string name="title_pref_speak_actions_available">कृती उपलब्ध आहेत बोला</string>
     <string name="title_pref_overview">SandFly अवलोकन वापरा</string>
     <string name="title_pref_overview_newest_last">सर्वात अलीकडील अॅप तळाशी</string>
     <string name="title_pref_overview_columns">स्तंभ</string>
@@ -2269,6 +2273,10 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="vibration_type_effects">हॅप्टिक इफेक्ट</string>
     <string name="vibration_type_pulses">पल्स</string>
     <string name="vibration_type_on_off">फक्त सुरू आणि बंद</string>
+    <string name="title_pref_actions_available_sound">कृती उपलब्ध आहेत याचा आवाज</string>
+    <string name="value_actions_available_sound_off">बंद आहे</string>
+    <string name="value_actions_available_sound_focus">आयटमवर फोकस आल्यावर</string>
+    <string name="value_actions_available_sound_after_speech">आयटम बोलून झाल्यावर</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2769,4 +2777,47 @@ SandFly सेटिंग्जमध्ये SandFly मेनू आणि �
     <string name="double_tap_taps_on">डबल-टॅप स्क्रीनवर टॅप करतो: सुरू</string>
     <string name="double_tap_taps_off">डबल-टॅप स्क्रीनवर टॅप करतो: बंद</string>
     <string name="double_tap_taps_no_app">समोर कोणतेही ॲप नाही</string>
+    <string name="keycombo_menu_toggle_key_practice">कीबोर्ड सराव सुरू किंवा बंद करा</string>
+    <string name="key_practice_on">कीबोर्ड सराव सुरू केला</string>
+    <string name="key_practice_off">कीबोर्ड सराव बंद केला</string>
+    <string name="key_practice_sandfly_key">SandFly की</string>
+    <string name="key_practice_title">कीबोर्ड सराव</string>
+    <string name="key_practice_summary">प्रेस केलेली प्रत्येक की आणि तिची कमांड चालवण्याऐवजी सांगते. मागे जा किंवा एस्केप प्रेस केल्यावर हे बंद होते.</string>
+    <string name="keycombo_menu_touch_hold_focus">फोकस केलेल्या आयटमवर टच धरून ठेवा</string>
+    <string name="touch_hold_held">टच धरून ठेवला</string>
+    <string name="touch_hold_lifted">टच उचलला</string>
+    <string name="touch_hold_unavailable">उपलब्ध नाही</string>
+    <string name="touch_hold_no_focus">कोणत्याही आयटमवर फोकस नाही</string>
+    <string name="title_pref_speak_password_characters">पासवर्डमधील वर्ण सांगा</string>
+    <string name="summary_pref_speak_password_characters">SandFly कीबोर्डसह, पासवर्ड फील्डमध्ये टाइप केलेले, हटवलेले आणि कर्सरने ओलांडलेले वर्ण सांगते</string>
+    <string name="shortcut_spell_password_field">पासवर्ड फील्डचे स्पेलिंग सांगा</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">पासवर्ड फील्ड नाही</string>
+    <string name="sandfly_keyboard_password_not_available">पासवर्ड फील्डचा मजकूर उपलब्ध नाही</string>
+    <string name="sandfly_keyboard_password_not_read">पासवर्ड फील्डमध्ये वाचले जात नाही</string>
+    <string name="title_pref_voice_profile_play_sample">नमुना प्ले करा</string>
+    <string name="voice_profile_sample_text">हा या व्हॉइस प्रोफाइलचा नमुना आहे.</string>
+    <string name="voice_profile_sample_failed">नमुना प्ले झाला नाही</string>
+    <string name="title_pref_speech_rate_step">स्पीच रेटचा टप्पा</string>
+    <string name="value_speech_rate_step_relative">रेटच्या <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">कॉल संपवा</string>
+    <string name="end_call_no_call">कॉल नाही</string>
+    <string name="end_call_permission">कॉल संपवण्यासाठी परवानगी आवश्यक</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">पुढील परिच्छेदावर नेव्हिगेट करा, दुसरी की</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">मागील परिच्छेदावर नेव्हिगेट करा, दुसरी की</string>
+    <string name="title_pref_mute_key_dictates">टेक्स्ट फील्डमध्ये बोलून लिहिण्यासाठी म्यूट बटण दाबून ठेवा</string>
+    <string name="title_pref_mute_key_press">म्यूट बटण दाबणे</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">पुढील दुव्यावर नेव्हिगेट करा, दुसरी की</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">मागील दुव्यावर नेव्हिगेट करा, दुसरी की</string>
+    <string name="keycombo_only_in_browse_mode">फक्त ब्राउझ मोडमध्ये</string>
+    <string name="keycombo_keys_in_browse_mode">ब्राउझ मोडमध्ये <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">जलद शोध</string>
+    <string name="title_pref_fast_search_key">जलद शोध की</string>
+    <string name="fast_search_key_off">बंद</string>
+    <string name="title_pref_fast_search_wrap">सुरुवातीला परत जा</string>
+    <string name="fast_search_key_left_alt">डावी Alt</string>
+    <string name="fast_search_key_left_ctrl">डावी Ctrl</string>
+    <string name="fast_search_key_right_ctrl">उजवी Ctrl</string>
+    <string name="fast_search_key_left_meta">डावी Meta</string>
+    <string name="fast_search_key_right_meta">उजवी Meta</string>
 </resources>

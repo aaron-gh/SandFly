@@ -18,6 +18,11 @@
         android:defaultValue="@bool/pref_speak_role_without_pause_default"
         android:key="@string/pref_speak_role_without_pause_key"
         android:title="@string/pref_speak_role_without_pause_title" />
+    <!-- Key matches ActionsAvailable. -->
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_speak_actions_available"
+        android:title="@string/title_pref_speak_actions_available" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_speak_container_element_positions_default"
         android:key="@string/pref_speak_container_element_positions_key"

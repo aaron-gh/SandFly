@@ -169,4 +169,19 @@
         <item>vula {label}</item>
         <item>khetha {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Qalisa ukuhlela ngezwi</string>
+    <string name="voice_editing_on">Ukuhlela ngezwi kuvuliwe</string>
+    <string name="voice_editing_off">Ukuhlela ngezwi kuvaliwe</string>
+    <string name="title_pref_voice_editing_time_limit">Umkhawulo wesikhathi wokuhlela ngezwi</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> iminithi</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> amaminithi</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>misa ukuhlela</item>
+        <item>misa ukuhlela ngezwi</item>
+        <item>qeda ukuhlela</item>
+        <item>qeda ukuhlela ngezwi</item>
+        <item>vala ukuhlela ngezwi</item>
+    </string-array>
 </resources>

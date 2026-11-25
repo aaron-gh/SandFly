@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Strjúka upp og síðan til vinstri</string>
   <string name="title_pref_shortcut_up_and_right">Strjúka upp og síðan til hægri</string>
   <string name="title_pref_shortcut_right_and_down">Strjúka til hægri og síðan niður</string>
+  <string name="title_pref_shortcut_1finger_3tap">Ýta þrisvar</string>
+  <string name="title_pref_shortcut_1finger_4tap">Ýta fjórum sinnum</string>
   <string name="title_pref_shortcut_right_and_up">Strjúka til hægri og síðan upp</string>
   <string name="title_pref_shortcut_left_and_down">Strjúka til vinstri og síðan niður</string>
   <string name="title_pref_shortcut_left_and_up">Strjúka til vinstri og síðan upp</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Hleðslutæki tengt</string>
     <string name="title_pref_screen_announcements">Kveikt og slökkt á skjá</string>
     <string name="summary_pref_screen_announcements">Veldu hvað SandFly les upp þegar slokknar eða kviknar á skjánum og þegar síminn er tekinn úr lás</string>
+    <string name="title_pref_screen_announcements_over_media">Lesa upp meðan margmiðlunarefni er spilað</string>
     <string name="title_screen_announcements_screen_off">Þegar slokknar á skjánum</string>
     <string name="title_screen_announcements_screen_on">Þegar kveikt er á skjánum</string>
     <string name="title_screen_announcements_unlock">Þegar síminn er tekinn úr lás</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Segja upplýsingar um lista</string>
     <string name="pref_speak_grid_positions_title">Segja upplýsingar um reiti og töflur</string>
     <string name="pref_speak_role_without_pause_title">Segja gerð atriðis án hlés</string>
+    <string name="title_pref_speak_actions_available">Lesa upp Aðgerðir í boði</string>
     <string name="title_pref_overview">Nota yfirlit SandFly</string>
     <string name="title_pref_overview_newest_last">Nýjasta forritið neðst</string>
     <string name="title_pref_overview_columns">Dálkar</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Snertiáhrif</string>
     <string name="vibration_type_pulses">Púlsar</string>
     <string name="vibration_type_on_off">Kveikt og slökkt</string>
+    <string name="title_pref_actions_available_sound">Hljóð fyrir Aðgerðir í boði</string>
+    <string name="value_actions_available_sound_off">Slökkt</string>
+    <string name="value_actions_available_sound_focus">Þegar atriðið fær fókus</string>
+    <string name="value_actions_available_sound_after_speech">Eftir að atriðið er lesið upp</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Að ýta tvisvar ýtir á skjáinn: kveikt</string>
     <string name="double_tap_taps_off">Að ýta tvisvar ýtir á skjáinn: slökkt</string>
     <string name="double_tap_taps_no_app">Ekkert forrit í forgrunni</string>
+    <string name="keycombo_menu_toggle_key_practice">Kveikja eða slökkva á lyklaborðsæfingu</string>
+    <string name="key_practice_on">Kveikt á lyklaborðsæfingu</string>
+    <string name="key_practice_off">Slökkt á lyklaborðsæfingu</string>
+    <string name="key_practice_sandfly_key">SandFly-lykill</string>
+    <string name="key_practice_title">Lyklaborðsæfing</string>
+    <string name="key_practice_summary">Les upp hvern lykil sem ýtt er á og skipun hans í stað þess að keyra hana. Til baka eða Esc slekkur á henni.</string>
+    <string name="keycombo_menu_touch_hold_focus">Halda snertingu á atriði í fókus</string>
+    <string name="touch_hold_held">Snertingu haldið</string>
+    <string name="touch_hold_lifted">Snertingu sleppt</string>
+    <string name="touch_hold_unavailable">Ekki tiltækt</string>
+    <string name="touch_hold_no_focus">Ekkert atriði í fókus</string>
+    <string name="title_pref_speak_password_characters">Lesa upp stafi aðgangsorða</string>
+    <string name="summary_pref_speak_password_characters">Með SandFly-lyklaborðinu eru stafir sem eru slegnir inn, eytt eða farið yfir í aðgangsorðsreitum lesnir upp</string>
+    <string name="shortcut_spell_password_field">Stafa aðgangsorðsreitinn</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Ekki aðgangsorðsreitur</string>
+    <string name="sandfly_keyboard_password_not_available">Texti aðgangsorðsreits ekki tiltækur</string>
+    <string name="sandfly_keyboard_password_not_read">Ekki lesið í aðgangsorðsreitum</string>
+    <string name="title_pref_voice_profile_play_sample">Spila sýnishorn</string>
+    <string name="voice_profile_sample_text">Þetta er sýnishorn af þessu raddsniði.</string>
+    <string name="voice_profile_sample_failed">Sýnishorn ekki spilað</string>
+    <string name="title_pref_speech_rate_step">Skref talhraða</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> af hraðanum</string>
+    <string name="shortcut_end_call">Ljúka símtali</string>
+    <string name="end_call_no_call">Ekkert símtal</string>
+    <string name="end_call_permission">Heimild þarf til að ljúka símtölum</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Fara í næstu efnisgrein, annar lykill</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Fara í fyrri efnisgrein, annar lykill</string>
+    <string name="title_pref_mute_key_dictates">Halda hljóðnematakka inni til að lesa fyrir í textareitum</string>
+    <string name="title_pref_mute_key_press">Ýtt á hljóðnematakka</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Fara á næsta tengil, annar lykill</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Fara á fyrri tengil, annar lykill</string>
+    <string name="keycombo_only_in_browse_mode">Aðeins í flettiham</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> í flettiham</string>
+    <string name="title_pref_category_fast_search">Flýtileit</string>
+    <string name="title_pref_fast_search_key">Flýtileitarlykill</string>
+    <string name="fast_search_key_off">Slökkt</string>
+    <string name="title_pref_fast_search_wrap">Hringferð</string>
+    <string name="fast_search_key_left_alt">Vinstri Alt</string>
+    <string name="fast_search_key_left_ctrl">Vinstri Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Hægri Ctrl</string>
+    <string name="fast_search_key_left_meta">Vinstri Meta</string>
+    <string name="fast_search_key_right_meta">Hægri Meta</string>
 </resources>

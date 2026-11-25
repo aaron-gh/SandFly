@@ -99,6 +99,8 @@ object ScriptInput {
       "fourFingerSwipeLeft" to AccessibilityService.GESTURE_4_FINGER_SWIPE_LEFT,
       "fourFingerSwipeRight" to AccessibilityService.GESTURE_4_FINGER_SWIPE_RIGHT,
       // SandFly's own gestures, which it recognizes only while a command or a script uses them.
+      "tripleTap" to GestureManifold.GESTURE_TRIPLE_TAP,
+      "quadrupleTap" to GestureManifold.GESTURE_QUADRUPLE_TAP,
       "edgeSwipeUpFromBottom" to GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM,
       "edgeLongSwipeUpFromBottom" to GestureManifold.GESTURE_EDGE_LONG_SWIPE_UP_FROM_BOTTOM,
       "edgeSwipeDownFromTopLeft" to GestureManifold.GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT,
@@ -387,6 +389,16 @@ object ScriptInput {
         GestureShortcutMapping.getFingerprintGestureString(context, it)
       }
       ?: name
+
+  /**
+   * Returns the key of the gesture setting of the gesture [name], without gesture layout or set, or
+   * null when no setting assigns it.
+   */
+  fun gestureBaseKey(context: Context, name: String): String? =
+    gestures[name]?.let { GestureShortcutMapping.getGestureBaseKey(context, it, false) }
+      ?: fingerprintGestures[name]?.let {
+        GestureShortcutMapping.getGestureBaseKey(context, it, true)
+      }
 
   fun parseKeys(text: String): Keys {
     val steps = text.split(',').map { it.trim() }

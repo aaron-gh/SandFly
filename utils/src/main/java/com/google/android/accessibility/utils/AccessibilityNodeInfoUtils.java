@@ -2840,6 +2840,22 @@ public class AccessibilityNodeInfoUtils {
   }
 
   /**
+   * Returns whether {@code node} is a text field that editing commands, such as Clear text and
+   * Paste, act on: an EditText, or another view that the app marks editable, such as a code
+   * editor. Editable web content is left out unless it is an EditText: inside a rich text editor,
+   * each paragraph is marked editable but is not a field of its own.
+   */
+  public static boolean isEditField(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+      return true;
+    }
+    return node.isEditable() && !WebInterfaceUtils.isWebContainer(node);
+  }
+
+  /**
    * Checks if the app keeps a selection in {@code node} that can be read from it: editable text,
    * or selectable text that is not web content. Chrome marks text on web pages selectable, but the
    * item does not show a selection made by moving through it, so Backtalk keeps that selection.

@@ -27,6 +27,7 @@ import androidx.preference.PreferenceViewHolder;
 import com.google.android.accessibility.material.preference.AccessibilitySeekBarPreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.actor.SpeechRateAndPitchActor;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
@@ -62,12 +63,7 @@ public class SpeechRatePreference extends AccessibilitySeekBarPreference {
         AccessibilityActionCompat.ACTION_SCROLL_BACKWARD,
         null,
         (view, arguments) -> {
-          int newRate =
-              (int)
-                  Math.max(
-                      getValue() / SpeechRateAndPitchActor.RATE_STEP,
-                      SpeechRateAndPitchActor.RATE_MINIMUM * 100);
-          setSeekBarValue(newRate);
+          setSeekBarValue(steppedValue(/* isIncrease= */ false));
           return true;
         });
 
@@ -76,14 +72,19 @@ public class SpeechRatePreference extends AccessibilitySeekBarPreference {
         AccessibilityActionCompat.ACTION_SCROLL_FORWARD,
         null,
         (view, arguments) -> {
-          int newRate =
-              (int)
-                  Math.min(
-                      getValue() * SpeechRateAndPitchActor.RATE_STEP,
-                      SpeechRateAndPitchActor.RATE_MAXIMUM * 100);
-          setSeekBarValue(newRate);
+          setSeekBarValue(steppedValue(/* isIncrease= */ true));
           return true;
         });
+  }
+
+  /** Returns the rate in percent one step from the value, by the step chosen for speech rate. */
+  private int steppedValue(boolean isIncrease) {
+    return Math.round(
+        SpeechRateAndPitchActor.steppedRate(
+                SharedPreferencesUtils.getSharedPreferences(getContext()),
+                getValue() / 100f,
+                isIncrease)
+            * 100);
   }
 
   public @Nullable SeekBar getSeekBar() {
@@ -95,10 +96,6 @@ public class SpeechRatePreference extends AccessibilitySeekBarPreference {
       return;
     }
 
-    int forcedValue =
-        (int)
-            (SpeechRateAndPitchActor.forceRateToDefaultWhenClose((float) newValue / 100.0f) * 100);
-
     // We can't call seekBar.setProgress() because it calls setProgressInternal(int progress,
     // boolean fromUser, boolean animate) with fromUser being false. Use set progress accessibility
     // action instead so that fromUser will be true when calling setProgressInternal(int progress,
@@ -106,7 +103,7 @@ public class SpeechRatePreference extends AccessibilitySeekBarPreference {
     // when fromUser is true.
     Bundle arg = new Bundle();
     arg.putFloat(
-        AccessibilityNodeInfoCompat.ACTION_ARGUMENT_PROGRESS_VALUE, forcedValue - getMin());
+        AccessibilityNodeInfoCompat.ACTION_ARGUMENT_PROGRESS_VALUE, newValue - getMin());
     seekBar.performAccessibilityAction(android.R.id.accessibilityActionSetProgress, arg);
   }
 }

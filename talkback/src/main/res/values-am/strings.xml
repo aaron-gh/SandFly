@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ወደ ላይ ከዚያ ወደ ግራ ያንሸራትቱ</string>
   <string name="title_pref_shortcut_up_and_right">ወደ ላይ ከዚያ ወደ ቀኝ ያንሸራትቱ</string>
   <string name="title_pref_shortcut_right_and_down">ወደ ቀኝ ከዚያ ወደ ታች ያንሸራትቱ</string>
+  <string name="title_pref_shortcut_1finger_3tap">ሶስቴ መታ ያድርጉ</string>
+  <string name="title_pref_shortcut_1finger_4tap">አራቴ መታ ያድርጉ</string>
   <string name="title_pref_shortcut_right_and_up">ወደ ቀኝ ከዚያ ወደ ላይ ያንሸራትቱ</string>
   <string name="title_pref_shortcut_left_and_down">ወደ ግራ ከዚያ ወደ ታች ያንሸራትቱ</string>
   <string name="title_pref_shortcut_left_and_up">ወደ ግራ ከዚያ ወደ ላይ ያንሸራትቱ</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">ኃይል መሙያ ተገናኝቷል</string>
     <string name="title_pref_screen_announcements">ማያ ገፅ ማብራት እና ማጥፋት</string>
     <string name="summary_pref_screen_announcements">ማያ ገፁ ሲጠፋ ወይም ሲበራ፣ እና ስልኩ ሲከፈት SandFly የሚናገረውን ይምረጡ</string>
+    <string name="title_pref_screen_announcements_over_media">ሚዲያ ሲጫወት ተናገር</string>
     <string name="title_screen_announcements_screen_off">ማያ ገፁ ሲጠፋ</string>
     <string name="title_screen_announcements_screen_on">ማያ ገፁ ሲበራ</string>
     <string name="title_screen_announcements_unlock">ስልኩ ሲከፈት</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">የዝርዝር መረጃ ተናገር</string>
     <string name="pref_speak_grid_positions_title">የፍርግርግ እና የሠንጠረዥ መረጃ ተናገር</string>
     <string name="pref_speak_role_without_pause_title">የንጥል ዓይነትን ያለ ቆም ብለህ ተናገር</string>
+    <string name="title_pref_speak_actions_available">እርምጃዎች ይገኛሉ ተናገር</string>
     <string name="title_pref_overview">የSandFlyን ማጠቃለያ ተጠቀም</string>
     <string name="title_pref_overview_newest_last">በቅርቡ የተጠቀሙበት መተግበሪያ ከታች</string>
     <string name="title_pref_overview_columns">አምዶች</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">የሃፕቲክ ውጤቶች</string>
     <string name="vibration_type_pulses">ምቶች</string>
     <string name="vibration_type_on_off">ማብራት እና ማጥፋት</string>
+    <string name="title_pref_actions_available_sound">የእርምጃዎች ይገኛሉ ድምፅ</string>
+    <string name="value_actions_available_sound_off">ጠፍቷል</string>
+    <string name="value_actions_available_sound_focus">ንጥሉ ትኩረት ሲያገኝ</string>
+    <string name="value_actions_available_sound_after_speech">ንጥሉ ከተነገረ በኋላ</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">ሁለቴ መታ ማድረግ ማያ ገጹን መታ ያደርጋል በርቷል</string>
     <string name="double_tap_taps_off">ሁለቴ መታ ማድረግ ማያ ገጹን መታ ያደርጋል ጠፍቷል</string>
     <string name="double_tap_taps_no_app">ፊት ለፊት ምንም መተግበሪያ የለም</string>
+    <string name="keycombo_menu_toggle_key_practice">የቁልፍ ሰሌዳ ልምምድን ያብሩ ወይም ያጥፉ</string>
+    <string name="key_practice_on">የቁልፍ ሰሌዳ ልምምድ በርቷል</string>
+    <string name="key_practice_off">የቁልፍ ሰሌዳ ልምምድ ጠፍቷል</string>
+    <string name="key_practice_sandfly_key">የSandFly ቁልፍ</string>
+    <string name="key_practice_title">የቁልፍ ሰሌዳ ልምምድ</string>
+    <string name="key_practice_summary">እያንዳንዱን የተጫነ ቁልፍ እና ትዕዛዙን ከማስኬድ ይልቅ ይናገራል። Back ወይም Escape ያጠፋዋል።</string>
+    <string name="keycombo_menu_touch_hold_focus">ትኩረት በተደረገበት ንጥል ላይ ንክኪን ይያዙ</string>
+    <string name="touch_hold_held">ንክኪ ተይዟል</string>
+    <string name="touch_hold_lifted">ንክኪ ተነስቷል</string>
+    <string name="touch_hold_unavailable">አይገኝም</string>
+    <string name="touch_hold_no_focus">ምንም ንጥል ትኩረት የለውም</string>
+    <string name="title_pref_speak_password_characters">የይለፍ ቃል ቁምፊዎችን ተናገር</string>
+    <string name="summary_pref_speak_password_characters">በSandFly ቁልፍ ሰሌዳ፣ በይለፍ ቃል መስኮች ውስጥ የተተየቡትን፣ የተሰረዙትን እና ጠቋሚው ያለፋቸውን ቁምፊዎች ይናገራል</string>
+    <string name="shortcut_spell_password_field">የይለፍ ቃል መስኩን ፊደል በፊደል ተናገር</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">የይለፍ ቃል መስክ አይደለም</string>
+    <string name="sandfly_keyboard_password_not_available">የይለፍ ቃል መስክ ጽሑፍ አይገኝም</string>
+    <string name="sandfly_keyboard_password_not_read">በይለፍ ቃል መስኮች ውስጥ አይነበብም</string>
+    <string name="title_pref_voice_profile_play_sample">ናሙና አጫውት</string>
+    <string name="voice_profile_sample_text">ይህ የዚህ የድምፅ መገለጫ ናሙና ነው።</string>
+    <string name="voice_profile_sample_failed">ናሙናው አልተጫወተም</string>
+    <string name="title_pref_speech_rate_step">የንግግር ፍጥነት ደረጃ</string>
+    <string name="value_speech_rate_step_relative">ከፍጥነቱ <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">ጥሪ ጨርስ</string>
+    <string name="end_call_no_call">ምንም ጥሪ የለም</string>
+    <string name="end_call_permission">ጥሪዎችን ለመጨረስ ፈቃድ ያስፈልጋል</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">ወደ ቀጣዩ አንቀጽ አስስ፣ ሁለተኛ ቁልፍ</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">ወደ ቀዳሚው አንቀጽ አስስ፣ ሁለተኛ ቁልፍ</string>
+    <string name="title_pref_mute_key_dictates">በጽሑፍ መስኮች በቃል ለማስጻፍ የድምፅ ማጥፊያ ቁልፉን ይያዙ</string>
+    <string name="title_pref_mute_key_press">የድምፅ ማጥፊያ ቁልፍ መጫን</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">ወደ ቀጣዩ አገናኝ አስስ፣ ሁለተኛ ቁልፍ</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">ወደ ቀዳሚው አገናኝ አስስ፣ ሁለተኛ ቁልፍ</string>
+    <string name="keycombo_only_in_browse_mode">በአሰሳ ሁነታ ብቻ</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> በአሰሳ ሁነታ</string>
+    <string name="title_pref_category_fast_search">ፈጣን ፍለጋ</string>
+    <string name="title_pref_fast_search_key">የፈጣን ፍለጋ ቁልፍ</string>
+    <string name="fast_search_key_off">ጠፍቷል</string>
+    <string name="title_pref_fast_search_wrap">ወደ መጀመሪያ ተመለስ</string>
+    <string name="fast_search_key_left_alt">የግራ Alt</string>
+    <string name="fast_search_key_left_ctrl">የግራ Ctrl</string>
+    <string name="fast_search_key_right_ctrl">የቀኝ Ctrl</string>
+    <string name="fast_search_key_left_meta">የግራ Meta</string>
+    <string name="fast_search_key_right_meta">የቀኝ Meta</string>
 </resources>

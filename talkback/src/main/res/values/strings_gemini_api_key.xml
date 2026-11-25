@@ -82,6 +82,10 @@
     <string name="title_pref_category_ai_services">AI services</string>
     <!-- Setting: which AI service describes images and screens. [CHAR LIMIT=40] -->
     <string name="title_pref_ai_provider">AI service</string>
+    <!-- Spoken when the AI service reading control is adjusted and no AI service is set up in AI services settings. [CHAR LIMIT=NONE] -->
+    <string name="ai_service_control_none">No AI service set up</string>
+    <!-- Spoken when the AI service reading control is adjusted and only one AI service is set up in AI services settings, so there is none to switch to. [CHAR LIMIT=NONE] -->
+    <string name="ai_service_control_one">Only one AI service set up</string>
     <!-- Title of the settings screen of one AI service, such as "Claude settings". [CHAR LIMIT=50] -->
     <string name="title_ai_provider_settings"><xliff:g id="service" example="Claude">%1$s</xliff:g> settings</string>
     <!-- Summary of the AI service setting when the chosen one is not set up. [CHAR LIMIT=NONE] -->

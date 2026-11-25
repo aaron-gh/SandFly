@@ -194,4 +194,19 @@
         <item>{label} চালু করো</item>
         <item>{label} বেছে নাও</item>
     </string-array>
+    <string name="shortcut_voice_editing">ভয়েস এডিটিং শুরু করুন</string>
+    <string name="voice_editing_on">ভয়েস এডিটিং চালু</string>
+    <string name="voice_editing_off">ভয়েস এডিটিং বন্ধ</string>
+    <string name="title_pref_voice_editing_time_limit">ভয়েস এডিটিংয়ের সময়সীমা</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> মিনিট</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> মিনিট</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>এডিটিং থামাও</item>
+        <item>ভয়েস এডিটিং থামাও</item>
+        <item>এডিটিং শেষ করো</item>
+        <item>ভয়েস এডিটিং শেষ করো</item>
+        <item>ভয়েস এডিটিং বন্ধ করো</item>
+    </string-array>
 </resources>

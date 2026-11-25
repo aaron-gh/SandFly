@@ -174,4 +174,20 @@
         <item>הפעל את {label}</item>
         <item>בחר את {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">התחלת עריכה קולית</string>
+    <string name="voice_editing_on">העריכה הקולית מופעלת</string>
+    <string name="voice_editing_off">העריכה הקולית מושבתת</string>
+    <string name="title_pref_voice_editing_time_limit">מגבלת זמן לעריכה קולית</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> דקה</item>
+        <item quantity="two"><xliff:g id="count" example="2">%d</xliff:g> דקות</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> דקות</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>עצור עריכה</item>
+        <item>הפסק עריכה קולית</item>
+        <item>סיים עריכה</item>
+        <item>סיום עריכה קולית</item>
+        <item>כבה עריכה קולית</item>
+    </string-array>
 </resources>

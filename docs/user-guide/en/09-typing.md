@@ -36,7 +36,7 @@ On Android 13 and later, choosing one of the last three methods sets **Typing fo
 
 **Typing** > **Touch and hold delay when typing** sets how long you keep your finger on a key before SandFly long-presses it, for example to open the alternative characters of a key. The choices are 0.5, 1, 2, 3 and 5 seconds; the default is 3 seconds. The setting isn't available with the typing method **Hold finger to select any key, then double-tap**.
 
-With **Typing** > **Hold keys down after the touch and hold delay** on, SandFly presses the key down at the end of the delay and passes the rest of the touch to the keyboard, as a double-tap and hold does. The keyboard then handles the touch as a long press of its own, such as a Delete key that repeats while held. This applies with the lift-to-type methods, on all keyboards except Gboard and Pixelboard versions before 18.8. It's off by default.
+With **Typing** > **Hold keys down after the touch and hold delay** on, SandFly presses the key down at the end of the delay and passes the rest of the touch to the keyboard, as a double-tap and hold does. The keyboard then handles the touch as a long press of its own, such as a Delete key that repeats while held. This applies with the lift-to-type methods, on all keyboards except Gboard and Pixelboard: their keys are long-pressed, which opens the popup of alternative characters. It's off by default.
 
 #### Alternative characters in Gboard {#typing-gboard-alternatives}
 
@@ -136,14 +136,15 @@ The **Text editing** group of **Commands** also has:
 - **Read text field**: reads the whole text of the text field, or "Empty" and the hint when it has no text.
 - **Spelling / grammar suggestions**: opens the suggestions for the typo at the cursor. The **Proofread** reading control moves between typos.
 - **Dictate**: see [](#typing-dictate).
+- **Start voice editing**: records voice commands for the text field one after another. See [](#voice-commands-editing).
 - **Switch keyboard**: changes to the next keyboard. Available on Android 11 and later.
-- **Search emoji**, **Choose a symbol** and **Turn editing mode on or off**: commands of the SandFly keyboard. See [](#keyboards).
+- **Search emoji**, **Choose a symbol**, **Turn editing mode on or off** and **Spell the password field**: commands of the SandFly keyboard. See [](#keyboards).
 
 None of these commands has a gesture by default. To give one a gesture, see [](#commands).
 
 ### Clipboard history {#typing-clipboard-history}
 
-SandFly keeps a history of up to 50 texts copied, newest first. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
+SandFly keeps a history of up to 50 texts copied, newest first. Each text is kept up to 200,000 characters, and the history up to 1,000,000 characters in all: older texts past that are removed. **Add to clipboard** also stops at 200,000 characters. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
 
 To open the history, run **Clipboard history**, from the **Text editing** commands or the **Editing menu**. The history opens over the current screen.
 
@@ -195,6 +196,8 @@ The **Dictate** command types what you say into the focused text field, at the c
 Recording stops by itself after 15 minutes, or after a time of silence that you set. See [](#typing-dictation-settings).
 
 By default, a two-finger double-tap runs **Dictate, play or pause media**. It starts **Dictate** when a text field has input focus, a keyboard is shown or connected, and no call is active; it stops a dictation that is recording; otherwise it plays or pauses media. For the default gestures, see [](#appendix-gestures).
+
+On phones with a mute key, such as the Zinwa Q25, hold the mute key in a text field to dictate: recording starts when you press the key and stops when you release it. See [](#buttons-mute-key).
 
 #### Choose how speech is recognized {#typing-speech-recognition}
 
@@ -287,4 +290,4 @@ While the handwriting keyboard is shown, only commands that open no window run, 
 
 ### Physical keyboards {#typing-physical-keyboard}
 
-While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period** and **Android physical keyboard settings**. These settings are described in [](#keyboards).
+While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters** and **Android physical keyboard settings**. These settings are described in [](#keyboards).

@@ -66,6 +66,7 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
 
   // Null when the context isn't the running service, as in tests.
   private final @Nullable VoiceCommandEngine engine;
+  private final @Nullable VoiceEditing voiceEditing;
 
   @Override
   public boolean onResult(String command, boolean isPartialResult) {
@@ -78,10 +79,13 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
     return voiceCommandProcessor.handleSpeechCommand(commandText(command), isPartialResult);
   }
 
-  /** Stops the voice command running, if one is. */
+  /** Stops the voice command running, if one is, and voice editing. */
   public void stopCommand() {
     if (engine != null) {
       engine.stop();
+    }
+    if (voiceEditing != null) {
+      voiceEditing.stop(/* announce= */ false);
     }
   }
 
@@ -169,6 +173,10 @@ public class VoiceCommandActor implements SpeechRecognizerRequester {
     engine =
         context instanceof TalkBackService talkBackService
             ? new VoiceCommandEngine(talkBackService, voiceCommandProcessor)
+            : null;
+    voiceEditing =
+        context instanceof TalkBackService service
+            ? new VoiceEditing(service, voiceCommandProcessor)
             : null;
     speechRecognizerPerformer.setListener(this);
     speechRecognizerPerformer.setCorrectsDictation(false);

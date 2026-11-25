@@ -73,6 +73,7 @@
   <string name="value_device_unlocked">تم فتح قفل الجهاز.</string>
   <string name="title_pref_screen_announcements">تشغيل الشاشة وإيقافها</string>
   <string name="summary_pref_screen_announcements">‏اختيار ما يقوله SandFly عند إيقاف الشاشة أو تشغيلها، وعند فتح قفل الهاتف</string>
+  <string name="title_pref_screen_announcements_over_media">النطق أثناء تشغيل الوسائط</string>
   <string name="title_screen_announcements_screen_off">عند إيقاف الشاشة</string>
   <string name="title_screen_announcements_screen_on">عند تشغيل الشاشة</string>
   <string name="title_screen_announcements_unlock">عند فتح قفل الهاتف</string>
@@ -680,6 +681,8 @@
   <string name="title_pref_shortcut_up_and_left">التمرير للأعلى ثم لليسار</string>
   <string name="title_pref_shortcut_up_and_right">التمرير للأعلى ثم لليمين</string>
   <string name="title_pref_shortcut_right_and_down">التمرير لليمين ثم للأسفل</string>
+  <string name="title_pref_shortcut_1finger_3tap">النقر ثلاث مرات</string>
+  <string name="title_pref_shortcut_1finger_4tap">النقر 4 مرّات</string>
   <string name="title_pref_shortcut_right_and_up">التمرير لليمين ثم للأعلى</string>
   <string name="title_pref_shortcut_left_and_down">التمرير لليسار ثم للأسفل</string>
   <string name="title_pref_shortcut_left_and_up">التمرير لليسار ثم للأعلى</string>
@@ -2023,6 +2026,7 @@
     <string name="pref_speak_list_positions_title">نطق معلومات القائمة</string>
     <string name="pref_speak_grid_positions_title">نطق معلومات الشبكة والجدول</string>
     <string name="pref_speak_role_without_pause_title">نطق نوع العنصر دون توقف</string>
+    <string name="title_pref_speak_actions_available">نطق الإجراءات المتاحة</string>
     <string name="title_pref_overview">استخدام نظرة عامة من SandFly</string>
     <string name="title_pref_overview_newest_last">أحدث تطبيق في الأسفل</string>
     <string name="title_pref_overview_columns">الأعمدة</string>
@@ -2291,6 +2295,10 @@
     <string name="vibration_type_effects">التأثيرات اللمسية</string>
     <string name="vibration_type_pulses">نبضات</string>
     <string name="vibration_type_on_off">تشغيل وإيقاف</string>
+    <string name="title_pref_actions_available_sound">صوت الإجراءات المتاحة</string>
+    <string name="value_actions_available_sound_off">غير مفعَّل</string>
+    <string name="value_actions_available_sound_focus">عند التركيز على العنصر</string>
+    <string name="value_actions_available_sound_after_speech">بعد نطق العنصر</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2811,4 +2819,47 @@
     <string name="double_tap_taps_on">تم تفعيل «النقر مرتين ينقر على الشاشة»</string>
     <string name="double_tap_taps_off">تم إيقاف «النقر مرتين ينقر على الشاشة»</string>
     <string name="double_tap_taps_no_app">لا يوجد تطبيق في المقدمة</string>
+    <string name="keycombo_menu_toggle_key_practice">تفعيل التدريب على لوحة المفاتيح أو إيقافه</string>
+    <string name="key_practice_on">تم تفعيل التدريب على لوحة المفاتيح</string>
+    <string name="key_practice_off">تم إيقاف التدريب على لوحة المفاتيح</string>
+    <string name="key_practice_sandfly_key">مفتاح SandFly</string>
+    <string name="key_practice_title">التدريب على لوحة المفاتيح</string>
+    <string name="key_practice_summary">ينطق كل مفتاح يتم الضغط عليه وأمره بدلًا من تنفيذ الأمر. يتوقف عند الضغط على رجوع أو Escape.</string>
+    <string name="keycombo_menu_touch_hold_focus">إبقاء اللمس على العنصر محلّ التركيز</string>
+    <string name="touch_hold_held">اللمس مستمر</string>
+    <string name="touch_hold_lifted">تم رفع اللمس</string>
+    <string name="touch_hold_unavailable">غير متاح</string>
+    <string name="touch_hold_no_focus">لا يوجد عنصر محلّ التركيز</string>
+    <string name="title_pref_speak_password_characters">نطق أحرف كلمة المرور</string>
+    <string name="summary_pref_speak_password_characters">مع لوحة مفاتيح SandFly، ينطق الأحرف المكتوبة والمحذوفة والتي يتجاوزها المؤشر في حقول كلمات المرور</string>
+    <string name="shortcut_spell_password_field">تهجئة حقل كلمة المرور</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">ليس حقل كلمة مرور</string>
+    <string name="sandfly_keyboard_password_not_available">نص حقل كلمة المرور غير متاح</string>
+    <string name="sandfly_keyboard_password_not_read">لا تتم القراءة في حقول كلمات المرور</string>
+    <string name="title_pref_voice_profile_play_sample">تشغيل نموذج</string>
+    <string name="voice_profile_sample_text">هذا نموذج لهذا الملف الصوتي.</string>
+    <string name="voice_profile_sample_failed">لم يتم تشغيل النموذج</string>
+    <string name="title_pref_speech_rate_step">مقدار تغيير سرعة الكلام</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> من السرعة</string>
+    <string name="shortcut_end_call">إنهاء المكالمة</string>
+    <string name="end_call_no_call">لا توجد مكالمة</string>
+    <string name="end_call_permission">يلزم الإذن لإنهاء المكالمات</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">الانتقال إلى الفقرة التالية، المفتاح الثاني</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">الانتقال إلى الفقرة السابقة، المفتاح الثاني</string>
+    <string name="title_pref_mute_key_dictates">اضغط مع الاستمرار على مفتاح كتم الصوت للإملاء في حقول النص</string>
+    <string name="title_pref_mute_key_press">الضغط على مفتاح كتم الصوت</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">الانتقال إلى الرابط التالي، المفتاح الثاني</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">الانتقال إلى الرابط السابق، المفتاح الثاني</string>
+    <string name="keycombo_only_in_browse_mode">في \"وضع التصفّح\" فقط</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> في \"وضع التصفّح\"</string>
+    <string name="title_pref_category_fast_search">البحث السريع</string>
+    <string name="title_pref_fast_search_key">مفتاح البحث السريع</string>
+    <string name="fast_search_key_off">غير مفعَّل</string>
+    <string name="title_pref_fast_search_wrap">الالتفاف</string>
+    <string name="fast_search_key_left_alt">Alt الأيسر</string>
+    <string name="fast_search_key_left_ctrl">Ctrl الأيسر</string>
+    <string name="fast_search_key_right_ctrl">Ctrl الأيمن</string>
+    <string name="fast_search_key_left_meta">Meta الأيسر</string>
+    <string name="fast_search_key_right_meta">Meta الأيمن</string>
 </resources>

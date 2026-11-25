@@ -36,6 +36,9 @@ object IndividualFeedbackSettings {
   const val PREF_MUTED_SOUNDS = "pref_individual_muted_sounds"
   const val PREF_MUTED_VIBRATIONS = "pref_individual_muted_vibrations"
 
+  /** The Actions available sound, for items with actions of their app. */
+  const val ACTIONS_AVAILABLE = "actions_available"
+
   /** SandFly AI's agent sounds, which builds without SandFly AI leave out. */
   val AGENT_SOUNDS =
     listOf(
@@ -59,6 +62,7 @@ object IndividualFeedbackSettings {
     listOf(
       FeedbackItem("focus", R.string.individual_sound_focus),
       FeedbackItem("focus_actionable", R.string.individual_sound_focus_actionable),
+      FeedbackItem(ACTIONS_AVAILABLE, R.string.individual_sound_actions_available),
       FeedbackItem("view_entered", R.string.individual_sound_view_entered),
       FeedbackItem("tick", R.string.individual_sound_tick),
       FeedbackItem("long_clicked", R.string.individual_sound_long_clicked),
@@ -165,6 +169,7 @@ object IndividualFeedbackSettings {
     listOf(
       FeedbackItem("view_hovered_pattern", R.string.individual_vibration_focus),
       FeedbackItem("view_actionable_pattern", R.string.individual_vibration_focus_actionable),
+      FeedbackItem("${ACTIONS_AVAILABLE}_pattern", R.string.individual_sound_actions_available),
       FeedbackItem("view_entered_pattern", R.string.individual_sound_view_entered),
       FeedbackItem("view_clicked_pattern", R.string.individual_vibration_clicked),
       FeedbackItem("view_long_clicked_pattern", R.string.individual_vibration_long_clicked),

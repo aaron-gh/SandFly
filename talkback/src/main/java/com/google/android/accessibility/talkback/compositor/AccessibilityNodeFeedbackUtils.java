@@ -659,6 +659,10 @@ public class AccessibilityNodeFeedbackUtils {
    *   <li>4. Otherwise, e.g. "Tap with 3 fingers" is configured to open TalkBack menu -> "Actions
    *       available, use tap with 3 fingers to view"
    * </ul>
+   *
+   * <p>With Speak Actions available on, the hint for the "Actions" item of an item with actions of
+   * its app gives only the gesture, such as "Use tap with 2 fingers to view actions", as the item's
+   * description already says "Actions available".
    */
   public static CharSequence getHintForNodeActions(
       AccessibilityNodeInfoCompat node, Context context, GlobalVariables globalVariables) {
@@ -668,15 +672,21 @@ public class AccessibilityNodeFeedbackUtils {
       List<String> menuTypeList = nodeMenuProvider.getSelfNodeMenuActionTypes(node);
       String actionMenuItemName = nodeMenuProvider.getActionMenuName();
       StringBuilder hint = new StringBuilder();
+      // The item's description already said "Actions available", so the hint gives only the
+      // gesture that shows them.
+      boolean actionsSaid =
+          globalVariables.getSpeakActionsAvailable() && ActionsAvailable.has(node);
       if (!TextUtils.isEmpty(actionMenuItemName) && menuTypeList.contains(actionMenuItemName)) {
         CharSequence hintArgument = globalVariables.getGestureStringForActionShortcut();
         if (!TextUtils.isEmpty(hintArgument)) {
           // Custom-Action is a configured gesture shortcut.
           hint.append(
-                  context.getString(
-                      R.string.template_hint_menu_type_high_verbosity,
-                      actionMenuItemName,
-                      hintArgument))
+                  actionsSaid
+                      ? context.getString(R.string.template_hint_view_actions, hintArgument)
+                      : context.getString(
+                          R.string.template_hint_menu_type_high_verbosity,
+                          actionMenuItemName,
+                          hintArgument))
               .append(CompositorUtils.getSeparator());
           // Actions item hint exists, so it's unnecessary to generate another hint for it.
           menuTypeList.remove(actionMenuItemName);
@@ -690,10 +700,12 @@ public class AccessibilityNodeFeedbackUtils {
             String actionDescription = globalVariables.getReadingMenuActionSettingsDescription();
             if (!TextUtils.isEmpty(actionDescription)) {
               hint.append(
-                      context.getString(
-                          R.string.template_hint_for_reading_control_actions_in_high_verbosity,
-                          actionDescription,
-                          hintArgument))
+                      actionsSaid
+                          ? context.getString(R.string.template_hint_view_actions, hintArgument)
+                          : context.getString(
+                              R.string.template_hint_for_reading_control_actions_in_high_verbosity,
+                              actionDescription,
+                              hintArgument))
                   .append(CompositorUtils.getSeparator());
               // Actions item hint exists, so it's unnecessary to generate another hint for it.
               menuTypeList.remove(actionMenuItemName);
@@ -704,6 +716,14 @@ public class AccessibilityNodeFeedbackUtils {
 
       // Gets a hint for node actions in the TalkBack menu, if a gesture or key opens it.
       CharSequence menuShortcut = globalVariables.getGestureStringForNodeActions();
+      if (actionsSaid
+          && !TextUtils.isEmpty(menuShortcut)
+          && menuTypeList.remove(actionMenuItemName)) {
+        hint.append(context.getString(R.string.template_hint_view_actions, menuShortcut));
+        if (!menuTypeList.isEmpty()) {
+          hint.append(CompositorUtils.getSeparator());
+        }
+      }
       if (!menuTypeList.isEmpty() && !TextUtils.isEmpty(menuShortcut)) {
         hint.append(
             context.getString(

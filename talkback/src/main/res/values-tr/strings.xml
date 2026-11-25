@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Yukarı ve sonra sola hızlıca kaydırma</string>
   <string name="title_pref_shortcut_up_and_right">Yukarı ve sonra sağa hızlıca kaydırma</string>
   <string name="title_pref_shortcut_right_and_down">Sağa ve sonra aşağı hızlıca kaydırma</string>
+  <string name="title_pref_shortcut_1finger_3tap">Üç kez dokunma</string>
+  <string name="title_pref_shortcut_1finger_4tap">Dört kez dokunma</string>
   <string name="title_pref_shortcut_right_and_up">Sağa ve sonra yukarı hızlıca kaydırma</string>
   <string name="title_pref_shortcut_left_and_down">Sola ve sonra aşağı hızlıca kaydırma</string>
   <string name="title_pref_shortcut_left_and_up">Sola ve sonra yukarı hızlıca kaydırma</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Şarj cihazı bağlı</string>
     <string name="title_pref_screen_announcements">Ekran açık ve kapalı</string>
     <string name="summary_pref_screen_announcements">Ekran kapatıldığında veya açıldığında ve telefonun kilidi açıldığında SandFly\'nin ne söyleyeceğini seçin</string>
+    <string name="title_pref_screen_announcements_over_media">Medya oynatılırken sesli oku</string>
     <string name="title_screen_announcements_screen_off">Ekran kapandığında</string>
     <string name="title_screen_announcements_screen_on">Ekran açıldığında</string>
     <string name="title_screen_announcements_unlock">Telefonun kilidi açıldığında</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Liste bilgilerini seslendir</string>
     <string name="pref_speak_grid_positions_title">Tablo ve ızgara bilgilerini seslendir</string>
     <string name="pref_speak_role_without_pause_title">Öğe türünü duraksamadan seslendir</string>
+    <string name="title_pref_speak_actions_available">İşlemler kullanılabilir ifadesini sesli oku</string>
     <string name="title_pref_overview">SandFly genel bakışını kullan</string>
     <string name="title_pref_overview_newest_last">En son uygulama altta</string>
     <string name="title_pref_overview_columns">Sütunlar</string>
@@ -2267,6 +2271,10 @@
     <string name="vibration_type_effects">Dokunsal efektler</string>
     <string name="vibration_type_pulses">Darbeler</string>
     <string name="vibration_type_on_off">Açık ve kapalı</string>
+    <string name="title_pref_actions_available_sound">İşlemler kullanılabilir sesi</string>
+    <string name="value_actions_available_sound_off">Kapalı</string>
+    <string name="value_actions_available_sound_focus">Öğeye odaklanıldığında</string>
+    <string name="value_actions_available_sound_after_speech">Öğe seslendirildikten sonra</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2767,4 +2775,47 @@
     <string name="double_tap_taps_on">İki kez dokunma ekrana dokunur açık</string>
     <string name="double_tap_taps_off">İki kez dokunma ekrana dokunur kapalı</string>
     <string name="double_tap_taps_no_app">Ön planda uygulama yok</string>
+    <string name="keycombo_menu_toggle_key_practice">Klavye alıştırmasını aç veya kapat</string>
+    <string name="key_practice_on">Klavye alıştırması açık</string>
+    <string name="key_practice_off">Klavye alıştırması kapalı</string>
+    <string name="key_practice_sandfly_key">SandFly tuşu</string>
+    <string name="key_practice_title">Klavye alıştırması</string>
+    <string name="key_practice_summary">Basılan her tuşu ve komutunu, komutu çalıştırmak yerine seslendirir. Geri veya Escape alıştırmayı kapatır.</string>
+    <string name="keycombo_menu_touch_hold_focus">Odaklanılan öğede dokunmayı basılı tut</string>
+    <string name="touch_hold_held">Dokunma basılı tutuluyor</string>
+    <string name="touch_hold_lifted">Dokunma bırakıldı</string>
+    <string name="touch_hold_unavailable">Kullanılamıyor</string>
+    <string name="touch_hold_no_focus">Odakta öğe yok</string>
+    <string name="title_pref_speak_password_characters">Şifre karakterlerini seslendir</string>
+    <string name="summary_pref_speak_password_characters">SandFly klavyesiyle şifre alanlarında yazılan, silinen ve imlecin üzerinden geçtiği karakterleri seslendirir</string>
+    <string name="shortcut_spell_password_field">Şifre alanını harf harf oku</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Şifre alanı değil</string>
+    <string name="sandfly_keyboard_password_not_available">Şifre alanı metni kullanılamıyor</string>
+    <string name="sandfly_keyboard_password_not_read">Şifre alanlarında okunmaz</string>
+    <string name="title_pref_voice_profile_play_sample">Örneği oynat</string>
+    <string name="voice_profile_sample_text">Bu, bu ses profilinin bir örneğidir.</string>
+    <string name="voice_profile_sample_failed">Örnek oynatılmadı</string>
+    <string name="title_pref_speech_rate_step">Konuşma hızı adımı</string>
+    <string name="value_speech_rate_step_relative">Hızın <xliff:g id="percent" example="10%">%1$s</xliff:g> kadarı</string>
+    <string name="shortcut_end_call">Aramayı sonlandır</string>
+    <string name="end_call_no_call">Arama yok</string>
+    <string name="end_call_permission">Aramaları sonlandırmak için izin gerekli</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Sonraki paragrafa git, ikinci tuş</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Önceki paragrafa git, ikinci tuş</string>
+    <string name="title_pref_mute_key_dictates">Metin alanlarında sesle yazmak için sessiz tuşunu basılı tutun</string>
+    <string name="title_pref_mute_key_press">Sessiz tuşuna basma</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Sonraki bağlantıya git, ikinci tuş</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Önceki bağlantıya git, ikinci tuş</string>
+    <string name="keycombo_only_in_browse_mode">Yalnızca tarayıcı modunda</string>
+    <string name="keycombo_keys_in_browse_mode">Tarayıcı modunda <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">Hızlı arama</string>
+    <string name="title_pref_fast_search_key">Hızlı arama tuşu</string>
+    <string name="fast_search_key_off">Kapalı</string>
+    <string name="title_pref_fast_search_wrap">Başa dön</string>
+    <string name="fast_search_key_left_alt">Sol Alt</string>
+    <string name="fast_search_key_left_ctrl">Sol Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Sağ Ctrl</string>
+    <string name="fast_search_key_left_meta">Sol Meta</string>
+    <string name="fast_search_key_right_meta">Sağ Meta</string>
 </resources>

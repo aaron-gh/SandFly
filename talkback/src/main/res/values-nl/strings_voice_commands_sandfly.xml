@@ -176,4 +176,19 @@
         <item>activeer {label}</item>
         <item>selecteer {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Spraakbewerking starten</string>
+    <string name="voice_editing_on">Spraakbewerking aan</string>
+    <string name="voice_editing_off">Spraakbewerking uit</string>
+    <string name="title_pref_voice_editing_time_limit">Tijdslimiet spraakbewerking</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuut</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minuten</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>stop bewerken</item>
+        <item>stop spraakbewerking</item>
+        <item>bewerken beëindigen</item>
+        <item>spraakbewerking beëindigen</item>
+        <item>spraakbewerking uit</item>
+    </string-array>
 </resources>

@@ -12,16 +12,20 @@
     <string name="pref_control_sounds_3d_always">Always</string>
     <!-- Sound and vibration settings: control sounds only move between the left and right speakers. [CHAR LIMIT=60] -->
     <string name="pref_control_sounds_3d_never">Never, only left and right</string>
+    <!-- Sound and vibration settings: control sounds play in 3D with headphones, and from the centre, without moving between the left and right speakers, otherwise. [CHAR LIMIT=60] -->
+    <string name="pref_control_sounds_3d_headphones_centred">With headphones, centred otherwise</string>
 
     <string-array name="pref_control_sounds_3d_entries" translatable="false">
         <item>@string/pref_control_sounds_3d_headphones</item>
         <item>@string/pref_control_sounds_3d_always</item>
         <item>@string/pref_control_sounds_3d_never</item>
+        <item>@string/pref_control_sounds_3d_headphones_centred</item>
     </string-array>
     <string-array name="pref_control_sounds_3d_values" translatable="false">
         <item>headphones</item>
         <item>always</item>
         <item>never</item>
+        <item>headphones_centred</item>
     </string-array>
 
     <!-- Individual sounds and vibrations: control sound for buttons. [CHAR LIMIT=60] -->

@@ -52,6 +52,13 @@ class SoundThemeManifestTest {
   }
 
   @Test
+  fun readsCentredWithoutHeadphones() {
+    val manifest = parse("""{"settings": {"3d_audio": "headphones_centred"}}""")
+    assertEquals("headphones_centred", manifest.audio3d)
+    assertTrue(manifest.warnings.isEmpty())
+  }
+
+  @Test
   fun missingSettingsAreLeftToTheDefaults() {
     val manifest = parse("{}")
     assertEquals("fallback", manifest.name)

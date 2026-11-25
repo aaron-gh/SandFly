@@ -39,7 +39,7 @@ import com.google.android.accessibility.talkback.R
  * too, and Alt, where Alt + Shift held and Alt twice become the SandFly key's.
  */
 object KeyboardPhoneKeymap : KeymapDefaults() {
-  override val defaults: Map<Int, KeyCombo> =
+  public override val defaults: Map<Int, KeyCombo> =
     buildMap {
       // Presses that work anywhere.
       put(R.string.keycombo_shortcut_navigate_next_default, KeyCombo.modifierKeys(NONE, true))
@@ -119,6 +119,11 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
         sandFly(NONE, KeyEvent.KEYCODE_P),
       )
       put(R.string.keycombo_shortcut_toggle_keyboard_input, sandFly(SHIFT, KeyEvent.KEYCODE_P))
+      // Keyboard practice speaks each key and its command: K for keys.
+      put(R.string.keycombo_shortcut_toggle_key_practice, sandFly(SHIFT, KeyEvent.KEYCODE_K))
+      // A touch held on the focused item, as for recording a voice message: V for voice. The SandFly
+      // key and V are under the two thumbs, so both are easy to hold down.
+      put(R.string.keycombo_shortcut_touch_hold_focus, sandFly(NONE, KeyEvent.KEYCODE_V))
       // No Ctrl: the SandFly key with the volume keys changes the speech rate, with Shift the speech
       // volume.
       put(R.string.keycombo_shortcut_global_speech_rate_increase, sandFly(NONE, KeyEvent.KEYCODE_VOLUME_UP))
@@ -134,13 +139,16 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
     }
 
   // Touch can be locked from the keyboard, for people who use only the keyboard. In text fields,
-  // with the SandFly keyboard, O searches emoji, C turns editing mode on or off, and Alt + Space
-  // chooses a symbol, as on BlackBerry keyboards.
-  override val commandDefaults: Map<Int, KeyCombo> =
+  // with the SandFly keyboard, O searches emoji, C turns editing mode on or off, Y spells the
+  // password field (the one letter left free with the SandFly key, and two keys with Right Shift as
+  // the SandFly key, where SandFly key + Shift would need both Shift keys), and Alt + Space chooses
+  // a symbol, as on BlackBerry keyboards.
+  public override val commandDefaults: Map<Int, KeyCombo> =
     mapOf(
       R.string.shortcut_value_toggle_touch_lock to sandFly(NONE, KeyEvent.KEYCODE_L),
       R.string.shortcut_value_search_emoji to sandFly(NONE, KeyEvent.KEYCODE_O),
       R.string.shortcut_value_toggle_editing_mode to sandFly(NONE, KeyEvent.KEYCODE_C),
+      R.string.shortcut_value_spell_password_field to sandFly(NONE, KeyEvent.KEYCODE_Y),
       R.string.shortcut_value_choose_symbol to editing(ALT, KeyEvent.KEYCODE_SPACE),
     )
 

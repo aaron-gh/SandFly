@@ -184,6 +184,22 @@ public class BrailleUserPreferences {
     return BrailleLanguages.extractAvailableCodes(context, readPreferredCodes(context));
   }
 
+  /**
+   * Retrieves the user preferred and available {@link Code} that braille displays can show text in,
+   * leaving out typing-only tables, or the default code when there is none.
+   */
+  public static List<Code> readAvailablePreferredOutputCodes(Context context) {
+    List<Code> outputCodes = new ArrayList<>();
+    for (Code code : readAvailablePreferredCodes(context)) {
+      if (!code.isInputOnly()) {
+        outputCodes.add(code);
+      }
+    }
+    return outputCodes.isEmpty()
+        ? ImmutableList.of(BrailleLanguages.getDefaultCode(context))
+        : outputCodes;
+  }
+
   /** Writes user preferred {@link List<Code>}. */
   public static void writePreferredCodes(Context context, List<Code> preferredCodes) {
     Set<String> selectedCodesInStringSet = new HashSet<>();
@@ -224,7 +240,7 @@ public class BrailleUserPreferences {
 
   /** Gets the next preferred output {@link Code}. */
   public static Code getNextOutputCode(Context context) {
-    List<Code> preferredCodes = readAvailablePreferredCodes(context);
+    List<Code> preferredCodes = readAvailablePreferredOutputCodes(context);
     Code currentCode = readCurrentActiveOutputCodeAndCorrect(context);
     int currentCodeIndex = preferredCodes.indexOf(currentCode) + 1;
     if (currentCodeIndex >= preferredCodes.size()) {
@@ -866,7 +882,7 @@ public class BrailleUserPreferences {
                 context.getString(R.string.pref_bd_output_code),
                 BrailleLanguages.getDefaultCode(context).name());
     returnCode = BrailleCommonUtils.valueOfSafe(codeName, BrailleLanguages.getDefaultCode(context));
-    List<Code> availablePreferredCodes = readAvailablePreferredCodes(context);
+    List<Code> availablePreferredCodes = readAvailablePreferredOutputCodes(context);
     if (!availablePreferredCodes.contains(returnCode)) {
       returnCode = availablePreferredCodes.get(0);
     }

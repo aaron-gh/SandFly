@@ -57,6 +57,27 @@ class AppSpeechFilterTest {
   }
 
   @Test
+  fun ignoredPackages_alwaysMuteAppSpeechOnly() {
+    val viewtalk = "com.oplus.viewtalk"
+    assertTrue(viewtalk in AppSpeechFilter.IGNORED_PACKAGES)
+    assertTrue(AppSpeechFilter.alwaysMutes(Source.APP_SPEECH, viewtalk))
+    assertFalse(AppSpeechFilter.alwaysMutes(Source.APP_FOCUS, viewtalk))
+    assertFalse(AppSpeechFilter.alwaysMutes(Source.USER_FOCUS, viewtalk))
+    assertFalse(AppSpeechFilter.alwaysMutes(Source.TEXT_EDIT, viewtalk))
+    assertFalse(AppSpeechFilter.alwaysMutes(Source.APP_SPEECH, other))
+    assertFalse(AppSpeechFilter.alwaysMutes(Source.APP_SPEECH, null))
+  }
+
+  @Test
+  fun isIgnoredPackage_matchesIgnoredPackagesOnly() {
+    assertTrue(AppSpeechFilter.isIgnoredPackage("com.oplus.viewtalk"))
+    assertTrue(AppSpeechFilter.isIgnoredPackage(StringBuilder("com.oplus.viewtalk")))
+    assertFalse(AppSpeechFilter.isIgnoredPackage("com.oplus.viewtalk.other"))
+    assertFalse(AppSpeechFilter.isIgnoredPackage(other))
+    assertFalse(AppSpeechFilter.isIgnoredPackage(null))
+  }
+
+  @Test
   fun inAllApps_mutesAppFocusAndAppSpeech_notUserFocusOrTyping() {
     val state = State(mode = MODE_ALL_APPS, ownPackage = own)
     assertTrue(state.active)

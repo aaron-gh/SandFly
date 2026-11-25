@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">ඉහළට අනතුරුව වමට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_up_and_right">ඉහළට අනතුරුව දකුණට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_right_and_down">දකුණට අනතුරුව පහළට ස්වයිප් කරන්න</string>
+  <string name="title_pref_shortcut_1finger_3tap">තෙවරක් තට්ටු කරන්න</string>
+  <string name="title_pref_shortcut_1finger_4tap">හතර වතාවක් තට්ටු කරන්න</string>
   <string name="title_pref_shortcut_right_and_up">දකුණට අනතුරුව ඉහළට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_left_and_down">වමට අනතුරුව පහළට ස්වයිප් කරන්න</string>
   <string name="title_pref_shortcut_left_and_up">වමට අනතුරුව ඉහළට ස්වයිප් කරන්න</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">චාජරය සම්බන්ධ කර ඇත</string>
     <string name="title_pref_screen_announcements">තිරය ක්‍රියාත්මක සහ අක්‍රිය වීම</string>
     <string name="summary_pref_screen_announcements">තිරය ක්‍රියාවිරහිත වූ විට හෝ ක්‍රියාත්මක වන විට සහ දුරකථනය අගුලු හැර ඇති විට SandFly පවසන දේ තෝරන්න</string>
+    <string name="title_pref_screen_announcements_over_media">මාධ්‍ය වාදනය කරන අතරතුර කියවන්න</string>
     <string name="title_screen_announcements_screen_off">තිරය නිවා දැමූ විට</string>
     <string name="title_screen_announcements_screen_on">තිරය ක්‍රියාත්මක වන විට</string>
     <string name="title_screen_announcements_unlock">දුරකථනය අගුළු හරින විට</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">ලැයිස්තු තොරතුරු කියන්න</string>
     <string name="pref_speak_grid_positions_title">දැල සහ වගු තොරතුරු කියන්න</string>
     <string name="pref_speak_role_without_pause_title">විරාමයකින් තොරව අයිතමයේ වර්ගය කියන්න</string>
+    <string name="title_pref_speak_actions_available">ක්‍රියා ලබා ගත හැකි බව කියවන්න</string>
     <string name="title_pref_overview">SandFly හි දළ විශ්ලේෂණය භාවිත කරන්න</string>
     <string name="title_pref_overview_newest_last">නවතම යෙදුම පතුලේ</string>
     <string name="title_pref_overview_columns">තීරු</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">හැප්ටික් ප්‍රයෝග</string>
     <string name="vibration_type_pulses">ස්පන්දන</string>
     <string name="vibration_type_on_off">ක්‍රියාත්මක සහ අක්‍රිය</string>
+    <string name="title_pref_actions_available_sound">ක්‍රියා ලබා ගත හැකි ශබ්දය</string>
+    <string name="value_actions_available_sound_off">ක්‍රියාවිරහිතයි</string>
+    <string name="value_actions_available_sound_focus">අයිතමයට අවධානය ලැබෙන විට</string>
+    <string name="value_actions_available_sound_after_speech">අයිතමය කියවූ පසු</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">දෙවරක් තට්ටු කිරීම තිරය තට්ටු කරයි: ක්‍රියාත්මකයි</string>
     <string name="double_tap_taps_off">දෙවරක් තට්ටු කිරීම තිරය තට්ටු කරයි: ක්‍රියාවිරහිතයි</string>
     <string name="double_tap_taps_no_app">ඉදිරියෙන් යෙදුමක් නැත</string>
+    <string name="keycombo_menu_toggle_key_practice">යතුරු පුවරු පුහුණුව ක්‍රියාත්මක හෝ ක්‍රියාවිරහිත කරන්න</string>
+    <string name="key_practice_on">යතුරු පුවරු පුහුණුව ක්‍රියාත්මකයි</string>
+    <string name="key_practice_off">යතුරු පුවරු පුහුණුව ක්‍රියාවිරහිතයි</string>
+    <string name="key_practice_sandfly_key">SandFly යතුර</string>
+    <string name="key_practice_title">යතුරු පුවරු පුහුණුව</string>
+    <string name="key_practice_summary">ඔබන ලද සෑම යතුරක්ම සහ එහි විධානය, එය ක්‍රියාත්මක කරනවා වෙනුවට කියයි. ආපසු හෝ Escape එබීමෙන් එය ක්‍රියාවිරහිත වේ.</string>
+    <string name="keycombo_menu_touch_hold_focus">ෆෝකස් කළ අයිතමය මත ස්පර්ශය අල්ලා සිටින්න</string>
+    <string name="touch_hold_held">ස්පර්ශය අල්ලා ඇත</string>
+    <string name="touch_hold_lifted">ස්පර්ශය ඉවත් කළා</string>
+    <string name="touch_hold_unavailable">නොමැත</string>
+    <string name="touch_hold_no_focus">කිසිදු අයිතමයක් නාභිගත කර නැත</string>
+    <string name="title_pref_speak_password_characters">මුරපද අනුලකුණු කියන්න</string>
+    <string name="summary_pref_speak_password_characters">SandFly යතුරු පුවරුව සමඟ, මුරපද ක්ෂේත්‍රවල ටයිප් කළ, මැකූ සහ කර්සරය පසු කළ අනුලකුණු කියයි</string>
+    <string name="shortcut_spell_password_field">මුරපද ක්ෂේත්‍රය අකුරින් අකුර කියන්න</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">මුරපද ක්ෂේත්‍රයක් නොවේ</string>
+    <string name="sandfly_keyboard_password_not_available">මුරපද ක්ෂේත්‍රයේ පෙළ නොමැත</string>
+    <string name="sandfly_keyboard_password_not_read">මුරපද ක්ෂේත්‍රවල කියවනු නොලැබේ</string>
+    <string name="title_pref_voice_profile_play_sample">නියැදිය වාදනය කරන්න</string>
+    <string name="voice_profile_sample_text">මෙය මෙම හඬ පැතිකඩේ නියැදියකි.</string>
+    <string name="voice_profile_sample_failed">නියැදිය වාදනය නොවීය</string>
+    <string name="title_pref_speech_rate_step">කථන ශීඝ්‍රතා පියවර</string>
+    <string name="value_speech_rate_step_relative">ශීඝ්‍රතාවෙන් <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">ඇමතුම අවසන් කරන්න</string>
+    <string name="end_call_no_call">ඇමතුමක් නැත</string>
+    <string name="end_call_permission">ඇමතුම් අවසන් කිරීමට අවසරය අවශ්‍යයි</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">ඊළඟ ඡේදයට සංචාලනය කරන්න, දෙවන යතුර</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">පෙර ඡේදයට සංචාලනය කරන්න, දෙවන යතුර</string>
+    <string name="title_pref_mute_key_dictates">පෙළ ක්ෂේත්‍රවල කියමින් ලියවීමට නිහඬ යතුර අල්ලාගෙන සිටින්න</string>
+    <string name="title_pref_mute_key_press">නිහඬ යතුර එබීම</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">ඊළඟ සබැඳිය වෙත සංචාලනය කරන්න, දෙවන යතුර</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">පෙර සබැඳිය වෙත සංචාලනය කරන්න, දෙවන යතුර</string>
+    <string name="keycombo_only_in_browse_mode">බ්‍රවුස් කිරීමේ ප්‍රකාරයේදී පමණි</string>
+    <string name="keycombo_keys_in_browse_mode">බ්‍රවුස් කිරීමේ ප්‍රකාරයේදී <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">ඉක්මන් සෙවීම</string>
+    <string name="title_pref_fast_search_key">ඉක්මන් සෙවීම් යතුර</string>
+    <string name="fast_search_key_off">ක්‍රියාවිරහිතයි</string>
+    <string name="title_pref_fast_search_wrap">ආරම්භයට ආපසු යන්න</string>
+    <string name="fast_search_key_left_alt">වම් Alt</string>
+    <string name="fast_search_key_left_ctrl">වම් Ctrl</string>
+    <string name="fast_search_key_right_ctrl">දකුණු Ctrl</string>
+    <string name="fast_search_key_left_meta">වම් Meta</string>
+    <string name="fast_search_key_right_meta">දකුණු Meta</string>
 </resources>

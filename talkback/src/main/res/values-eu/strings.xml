@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Pasatu hatza gora eta, gero, ezkerrera</string>
   <string name="title_pref_shortcut_up_and_right">Pasatu hatza gora eta, gero, eskuinera</string>
   <string name="title_pref_shortcut_right_and_down">Pasatu hatza eskuinera eta, gero, behera</string>
+  <string name="title_pref_shortcut_1finger_3tap">Sakatu hirutan</string>
+  <string name="title_pref_shortcut_1finger_4tap">Sakatu lau aldiz</string>
   <string name="title_pref_shortcut_right_and_up">Pasatu hatza eskuinera eta, gero, gora</string>
   <string name="title_pref_shortcut_left_and_down">Pasatu hatza ezkerrera eta, gero, behera</string>
   <string name="title_pref_shortcut_left_and_up">Pasatu hatza ezkerrera eta, gero, gora</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Kargagailua konektatuta</string>
     <string name="title_pref_screen_announcements">Pantaila piztea eta itzaltzea</string>
     <string name="summary_pref_screen_announcements">Aukeratu SandFly-ek zer esaten duen pantaila itzali edo piztean eta telefonoa desblokeatzean</string>
+    <string name="title_pref_screen_announcements_over_media">Irakurri ozen multimedia erreproduzitzen den bitartean</string>
     <string name="title_screen_announcements_screen_off">Pantaila itzaltzean</string>
     <string name="title_screen_announcements_screen_on">Pantaila piztean</string>
     <string name="title_screen_announcements_unlock">Telefonoa desblokeatzean</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Esan zerrenden informazioa</string>
     <string name="pref_speak_grid_positions_title">Esan sareten eta taulen informazioa</string>
     <string name="pref_speak_role_without_pause_title">Esan elementu-mota etenaldirik gabe</string>
+    <string name="title_pref_speak_actions_available">Irakurri ozen Ekintzak erabilgarri daude</string>
     <string name="title_pref_overview">Erabili SandFly-ren ikuspegi orokorra</string>
     <string name="title_pref_overview_newest_last">Azken aplikazioa behean</string>
     <string name="title_pref_overview_columns">Zutabeak</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Efektu haptikoak</string>
     <string name="vibration_type_pulses">Pultsuak</string>
     <string name="vibration_type_on_off">Piztu eta itzali</string>
+    <string name="title_pref_actions_available_sound">Ekintzak erabilgarri daude adierazteko soinua</string>
+    <string name="value_actions_available_sound_off">Desaktibatuta</string>
+    <string name="value_actions_available_sound_focus">Elementua fokuratzen denean</string>
+    <string name="value_actions_available_sound_after_speech">Elementua irakurri ondoren</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Birritan sakatuta, pantaila sakatzen da: aktibatuta</string>
     <string name="double_tap_taps_off">Birritan sakatuta, pantaila sakatzen da: desaktibatuta</string>
     <string name="double_tap_taps_no_app">Ez dago aplikaziorik aurrean</string>
+    <string name="keycombo_menu_toggle_key_practice">Aktibatu edo desaktibatu teklatu-praktika</string>
+    <string name="key_practice_on">Teklatu-praktika aktibatuta</string>
+    <string name="key_practice_off">Teklatu-praktika desaktibatuta</string>
+    <string name="key_practice_sandfly_key">SandFly-en tekla</string>
+    <string name="key_practice_title">Teklatu-praktika</string>
+    <string name="key_practice_summary">Sakatutako tekla bakoitza eta haren komandoa esaten ditu, komandoa exekutatu beharrean. Atzera edo Escape sakatuta desaktibatzen da.</string>
+    <string name="keycombo_menu_touch_hold_focus">Mantendu ukipena fokuratutako elementuan</string>
+    <string name="touch_hold_held">Ukipena mantenduta</string>
+    <string name="touch_hold_lifted">Ukipena altxatuta</string>
+    <string name="touch_hold_unavailable">Ez dago erabilgarri</string>
+    <string name="touch_hold_no_focus">Ez dago elementu fokuraturik</string>
+    <string name="title_pref_speak_password_characters">Esan pasahitzaren karaktereak</string>
+    <string name="summary_pref_speak_password_characters">SandFly teklatuarekin, pasahitz-eremuetan idatzitako, ezabatutako eta kurtsoreak igarotako karaktereak esaten ditu</string>
+    <string name="shortcut_spell_password_field">Letrakatu pasahitz-eremua</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Ez da pasahitz-eremu bat</string>
+    <string name="sandfly_keyboard_password_not_available">Pasahitz-eremuaren testua ez dago erabilgarri</string>
+    <string name="sandfly_keyboard_password_not_read">Ez da irakurtzen pasahitz-eremuetan</string>
+    <string name="title_pref_voice_profile_play_sample">Erreproduzitu lagina</string>
+    <string name="voice_profile_sample_text">Ahots-profil honen lagin bat da hau.</string>
+    <string name="voice_profile_sample_failed">Ez da erreproduzitu lagina</string>
+    <string name="title_pref_speech_rate_step">Hizketaren abiaduraren urratsa</string>
+    <string name="value_speech_rate_step_relative">Abiaduraren <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">Amaitu deia</string>
+    <string name="end_call_no_call">Ez dago deirik</string>
+    <string name="end_call_permission">Baimena behar da deiak amaitzeko</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Joan hurrengo paragrafora, bigarren tekla</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Joan aurreko paragrafora, bigarren tekla</string>
+    <string name="title_pref_mute_key_dictates">Eduki sakatuta isilarazteko tekla testu-eremuetan diktatzeko</string>
+    <string name="title_pref_mute_key_press">Isilarazteko teklaren sakatzea</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Joan hurrengo estekara, bigarren tekla</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Joan aurreko estekara, bigarren tekla</string>
+    <string name="keycombo_only_in_browse_mode">Arakatze moduan soilik</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> arakatze moduan</string>
+    <string name="title_pref_category_fast_search">Bilaketa azkarra</string>
+    <string name="title_pref_fast_search_key">Bilaketa azkarraren tekla</string>
+    <string name="fast_search_key_off">Desaktibatuta</string>
+    <string name="title_pref_fast_search_wrap">Nabigazio ziklikoa</string>
+    <string name="fast_search_key_left_alt">Ezkerreko Alt</string>
+    <string name="fast_search_key_left_ctrl">Ezkerreko Ktrl</string>
+    <string name="fast_search_key_right_ctrl">Eskuineko Ktrl</string>
+    <string name="fast_search_key_left_meta">Ezkerreko Meta</string>
+    <string name="fast_search_key_right_meta">Eskuineko Meta</string>
 </resources>

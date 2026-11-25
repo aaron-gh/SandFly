@@ -569,15 +569,20 @@ public class Compositor {
     // Compose earcons.
     SpeakOptions speakOptions = null;
     int earcon = eventFeedback.earcon();
+    int actionsEarcon = eventFeedback.actionsEarcon();
+    boolean actionsAfterSpeech = actionsEarcon != -1 && eventFeedback.actionsEarconAfterSpeech();
     if (earcon != -1) {
       if (speakOptions == null) {
         speakOptions = SpeakOptions.create();
       }
-      // In order: the second earcon's vibration is the one felt.
+      // In order: the vibration of the last earcon that has one is the one felt.
       Set<Integer> earcons = new LinkedHashSet<>();
       earcons.add(earcon);
       if (eventFeedback.secondEarcon() != -1) {
         earcons.add(eventFeedback.secondEarcon());
+      }
+      if (actionsEarcon != -1 && !actionsAfterSpeech) {
+        earcons.add(actionsEarcon);
       }
       speakOptions.setEarcons(earcons);
 
@@ -629,10 +634,8 @@ public class Compositor {
     if (scripted != null) {
       ttsOutput = scripted;
     }
-    if (!TextUtils.isEmpty(ttsOutput)
-        && AppSpeechFilter.isActive()
-        && isLeftUnsaid(event, options)) {
-      LogUtils.d(TAG, "Not spoken, from an app or keyboard with its own speech: event=%d", event);
+    if (!TextUtils.isEmpty(ttsOutput) && isLeftUnsaid(event, options)) {
+      LogUtils.d(TAG, "Not spoken, left out by the app speech filter: event=%d", event);
       ttsOutput = "";
     }
     if (!TextUtils.isEmpty(ttsOutput)) {
@@ -658,6 +661,10 @@ public class Compositor {
       Bundle speechParams = new Bundle();
       speechParams.putFloat(SpeechParam.PITCH, (float) speechPitch);
 
+      if (actionsAfterSpeech) {
+        runnable = thenEarcon(runnable, actionsEarcon, eventFeedback, eventId);
+      }
+
       // Output feedback: speech, haptics, earcons.
       if (speakOptions == null) {
         speakOptions = SpeakOptions.create();
@@ -674,6 +681,10 @@ public class Compositor {
         speak(ttsOutput, eventId, speakOptions);
       }
     } else {
+      // With nothing to speak, the Actions available sound plays with the other earcons.
+      if (actionsAfterSpeech && speakOptions != null && speakOptions.mEarcons != null) {
+        speakOptions.mEarcons.add(actionsEarcon);
+      }
       if (speakOptions != null) {
         speakOptions.mFlags |= FeedbackItem.FLAG_NO_SPEECH;
         // TODO: Return feedback as output when feedback-mappers are separated from
@@ -689,12 +700,28 @@ public class Compositor {
   /**
    * Whether the speech for {@code event} is left unsaid by {@link AppSpeechFilter}: focus an app
    * moved, an announcement, a live region or a window change in the apps the settings name, or
-   * keyboard keys and text editing while a keyboard with its own speech is shown.
+   * keyboard keys and text editing while a keyboard with its own speech is shown, and app speech,
+   * toasts and notifications of the packages it always leaves unsaid.
    */
   private static boolean isLeftUnsaid(int event, HandleEventOptions options) {
+    // The package that sent the event. An announcement can name a source node of another app.
+    @Nullable CharSequence eventPackage =
+        (options.eventObject == null) ? null : options.eventObject.getPackageName();
     AppSpeechFilter.@Nullable Source source = speechSource(event, options);
     if (source == null) {
+      return event == EVENT_TYPE_NOTIFICATION_STATE_CHANGED
+          && AppSpeechFilter.isIgnoredPackage(eventPackage);
+    }
+    // Only app speech can be left unsaid while the settings are at their defaults.
+    boolean active = AppSpeechFilter.isActive();
+    if (!active && source != AppSpeechFilter.Source.APP_SPEECH) {
       return false;
+    }
+    if (source == AppSpeechFilter.Source.APP_SPEECH
+        && eventPackage != null
+        && (AppSpeechFilter.alwaysMutes(source, eventPackage)
+            || (active && AppSpeechFilter.mutes(source, eventPackage)))) {
+      return true;
     }
     @Nullable CharSequence packageName = null;
     if (options.sourceNode != null) {
@@ -706,7 +733,8 @@ public class Compositor {
     if (packageName == null && options.eventInterpretation != null) {
       packageName = options.eventInterpretation.getPackageName();
     }
-    return AppSpeechFilter.mutes(source, packageName);
+    return AppSpeechFilter.alwaysMutes(source, packageName)
+        || (active && AppSpeechFilter.mutes(source, packageName));
   }
 
   /** What caused the speech for {@code event}, or null for speech the filter always lets through. */
@@ -852,6 +880,40 @@ public class Compositor {
       onCompleteRunnable = runnableArg;
       return this;
     }
+  }
+
+  /**
+   * Returns {@code completed} followed by {@code earcon}, which plays once the speech has been
+   * spoken to the end, from where the event's earcons come from.
+   */
+  private UtteranceCompleteRunnable thenEarcon(
+      @Nullable UtteranceCompleteRunnable completed,
+      int earcon,
+      EventFeedback eventFeedback,
+      @Nullable EventId eventId) {
+    float earconX = (float) eventFeedback.earconX();
+    float earconY = (float) eventFeedback.earconY();
+    return status -> {
+      if (completed != null) {
+        completed.run(status);
+      }
+      if (status != SpeechController.STATUS_SPOKEN) {
+        return;
+      }
+      SpeakOptions options = SpeakOptions.create();
+      Set<Integer> earcons = new LinkedHashSet<>();
+      earcons.add(earcon);
+      options.setEarcons(earcons);
+      if (earconX >= 0 && earconY >= 0) {
+        Bundle nonSpeechParams = new Bundle();
+        nonSpeechParams.putFloat(Utterance.KEY_METADATA_EARCON_X, earconX);
+        nonSpeechParams.putFloat(Utterance.KEY_METADATA_EARCON_Y, earconY);
+        options.setNonSpeechParams(nonSpeechParams);
+      }
+      // Played at once, leaving the speech queue as it is.
+      options.mFlags |= FeedbackItem.FLAG_NO_SPEECH;
+      speak("", eventId, options);
+    };
   }
 
   private void speak(CharSequence ttsOutput, @Nullable EventId eventId, SpeakOptions speakOptions) {

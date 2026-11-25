@@ -25,6 +25,8 @@ The sliders in the **Voice** group set the speech of **SandFly default**. They'r
 - **Speech pitch**: from 20% to 200%. The default is 100%.
 - **Speech volume**: from 25 to 100. The default is 100.
 
+**Speech rate step**, below **Speech rate**, sets how much the rate changes at a time with the **Speech rate** sliders of this screen and of voice profiles, the **Speech rate** reading control and the speech rate commands. **10% of the rate**, the default, changes the rate in use by a tenth of it. **1%**, **2%**, **5%**, **10%** and **20%** move to the next multiple of that step, such as from 133% to 135% with **5%**.
+
 While a voice profile is in use, the **Voice profiles** item shows "In use:" and the name of the profile, and these sliders don't change how it sounds. Changing the rate or pitch with commands or reading controls then changes the profile in use. See [](#speech-voice-profiles).
 
 You can also change speech without opening settings:
@@ -68,6 +70,7 @@ To change a profile, go to **Speech** > **Voice profiles** and choose the profil
 - **Language**: **Default**, or one of the languages of the engine.
 - **Voice**: **Default**, or one of the voices of the engine in the chosen language.
 - **Speech volume**, **Speech rate** and **Speech pitch**: as on the **Speech** screen, for this profile.
+- **Play sample**: speaks a sample sentence with the engine, voice, volume, rate, pitch and voice effects set here, in the language of the profile where SandFly has the sentence in it. "Sample not played" means that the engine didn't start or returned an error.
 - **Voice effects**: the voice effects of this profile. See [](#voice-effects). Not on watches.
 - **Send long text a sentence at a time**: as on the **Speech** screen, for this profile. See [](#speech-pronunciation).
 - **Keep the engine started**: keeps the engine of this profile running while another engine is in use and the screen is on, so that switching to the profile doesn't wait for the engine to start. Each engine kept started runs as a process of its own. Off by default.

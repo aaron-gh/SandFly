@@ -8,18 +8,20 @@ The commands that each gesture runs by default are listed in [](#appendix-gestur
 
 A touch that rests on the screen or moves slowly is touch exploration: SandFly reads the item under the finger. A touch that moves quickly, or taps, is a gesture. See [](#reading) for touch exploration.
 
-On Android 13 and later, SandFly recognizes gestures itself. Many gestures in this chapter need this: the rotor, edge gestures, corner gestures, the scrub, pinch and spread, swipe and hold, three-part swipes, two-stroke swipes, tap then swipe, two-finger angle gestures, the quadruple-tap with three fingers, the two-finger double-tap at the top and bottom of the screen and the four-finger taps on the top or bottom half of the screen. The timing settings on the **Gestures** screen need it too. Gestures with two or more fingers need Android 11 or later.
+On Android 13 and later, SandFly recognizes gestures itself. Many gestures in this chapter need this: the rotor, edge gestures, corner gestures, the scrub, pinch and spread, swipe and hold, three-part swipes, two-stroke swipes, tap then swipe, two-finger angle gestures, the one-finger triple-tap and quadruple-tap, the quadruple-tap with three fingers, the two-finger double-tap at the top and bottom of the screen and the four-finger taps on the top or bottom half of the screen. The timing settings on the **Gestures** screen need it too. Gestures with two or more fingers need Android 11 or later.
 
 Recognition by SandFly is controlled by **Developer settings** > **Handle gestures in SandFly**, which is on by default. When you turn it off, Android recognizes gestures, and the gestures and settings above are not available. Turn SandFly off and on again after you change this setting.
 
 ### Taps {#gestures-taps}
 
-- **One finger**: double-tap activates the focused item, and double-tap and hold touches and holds it. These gestures can't be changed.
+- **One finger**: double-tap activates the focused item, and double-tap and hold touches and holds it. These gestures can't be changed. **Triple-tap** and **Quadruple-tap**, in the **1 finger** category, do nothing by default and work anywhere on the screen.
 - **Two, three and four fingers**: a tap, double-tap and triple-tap with each number of fingers, and double-tap and hold. Two and three fingers also have triple-tap and hold, and three fingers have tap and hold and a quadruple-tap.
 - **Two fingers at the top and bottom**: **Double-tap with 2 fingers, top and bottom** is a separate gesture. While it has a command, a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third runs it instead of **Double-tap with 2 fingers**. Top and bottom follow the screen as displayed, also in landscape.
 - **Four fingers on half of the screen**: **Tap with 4 fingers on top half** and **Tap with 4 fingers on bottom half** are separate gestures. While one of them has a command, a four-finger tap on that half runs it instead of **Tap with 4 fingers**.
 
 A tap with two, three or four fingers runs its command as the fingers lift, unless a longer gesture that starts with the same taps has a command, such as a further tap, a tap and hold, or a tap then swipe. Then SandFly waits for the next tap. When any finger moves during a multi-finger tap, the touch is no longer a tap. A quadruple-tap with three fingers always runs at once.
+
+A one-finger double-tap runs as the finger lifts, unless **Triple-tap** or **Quadruple-tap** has a command. Then SandFly waits for a further tap, and a double-tap activates after that wait. A triple-tap waits only while **Quadruple-tap** has a command. In a corner with a corner gesture, taps are corner taps; see [](#gestures-corners).
 
 **Time between one-finger taps** sets how long SandFly waits for a further one-finger tap. See [](#gestures-timing).
 
@@ -186,8 +188,23 @@ On a watch, the screen also has **Reserve gestures for Vibration Watch**; see []
 
 - **SandFly gestures**: the default gestures of SandFly.
 - **VoiceOver gestures**: the gestures of VoiceOver on iPhone, such as a two-finger tap to pause speech, a two-finger double-tap for **Dictate, play or pause media**, three-finger swipes to scroll and a three-finger tap for **Speak position**. Gestures that VoiceOver doesn't have are **Unassigned**, and you can assign them.
+- **BlackBerry gestures**: gestures similar to those of the BlackBerry 10 Screen Reader (BlackBerry 10 OS 10.3). Not every gesture is the same. Swipe right and left move by the navigation setting, and swipe up and down choose the next and previous navigation setting, such as characters, words or lines. Swipe down then left pauses speech, swipe down then right starts Quick Tasks, swipe down then up says the time and date, and swipe up then down says the status. A two-finger tap says the title of the screen, a two-finger double-tap is **Dictate, play or pause media**, which answers and ends calls, and a two-finger double-tap and hold ends a call. Two-finger swipe up and down scroll back and forward. A three-finger swipe down reads from the top. Gestures that the BlackBerry 10 Screen Reader doesn't have are **Unassigned**, and you can assign them. See [](#gestures-quick-tasks). These gestures are likely to be unfamiliar if you haven't used BlackBerry 10, so choosing them opens the **Use BlackBerry gestures?** dialog; select **Use** to confirm. They aren't in the **Choose gestures** dialog.
 
-The first time SandFly starts, it opens the **Choose gestures** dialog, where you choose a layout. Each layout keeps its own changes, so switching back restores the gestures as you set them. Choosing a layout turns **Handle two-finger swipes in SandFly** on for **VoiceOver gestures** and off for **SandFly gestures**. Gestures in apps and gesture profiles apply to both layouts.
+The first time SandFly starts, it opens the **Choose gestures** dialog, where you choose **SandFly gestures** or **VoiceOver gestures**. Each layout keeps its own changes, so switching back restores the gestures as you set them. Choosing a layout turns **Handle two-finger swipes in SandFly** on for **VoiceOver gestures** and **BlackBerry gestures**, and off for **SandFly gestures**. Gestures in apps and gesture profiles apply to every layout.
+
+#### Quick Tasks {#gestures-quick-tasks}
+
+**Quick Tasks** is similar to Quick Tasks mode of the BlackBerry 10 Screen Reader. SandFly says "Quick Tasks", and for 3 seconds these gestures run these commands:
+
+| Gesture | Command |
+| --- | --- |
+| Swipe up, swipe down | Increase volume, decrease volume |
+| Swipe right, swipe left | Increase speech rate, decrease speech rate |
+| Two-finger swipe up | Repeat last spoken phrase |
+| Two-finger swipe down | Spell last spoken phrase |
+| Two-finger tap | Hide or show screen |
+
+Each of these gestures gives another 3 seconds. Any other gesture ends Quick Tasks and runs its own command. When the time runs out, the phone vibrates. In the BlackBerry layout, Quick Tasks is swipe down then right. In other layouts, assign it on the **Gestures** screen; it's under **SandFly** on the **Commands** screen.
 
 #### Handle two-finger swipes in SandFly {#gestures-two-finger-swipes}
 
@@ -198,7 +215,7 @@ With **Handle two-finger swipes in SandFly** off, two-finger swipes go to the ap
 - **Time between one-finger taps**: how long SandFly waits for a further tap before it decides that a one-finger tap gesture is finished, from 0.1 to 2 seconds. The default is 0.25 seconds. A shorter time makes one-finger double-taps respond faster, but a slow double-tap can then count as two taps. With a longer time, two taps on an item within that time activate it, and corner taps and multi-finger single taps wait longer. Taps with two or more fingers always allow at least 0.25 seconds between taps.
 - **Hold time after a swipe**: how long the finger rests after a swipe for a swipe and hold gesture, from 0.1 to 0.5 seconds. The default is 0.25 seconds. See [](#gestures-swipe-and-hold).
 - **Gesture start time**: how long a one-finger swipe can take to move its first centimeter before the touch becomes touch exploration, from 0.15 to 0.3 seconds. The default is 0.15 seconds. Choose a longer time if slow swipes start touch exploration.
-- **Time between two-stroke swipes**: how long after a swipe the second swipe of a two-stroke swipe can start: **Off**, 0.5, 1, 1.5 or 2 seconds. The default is **Off**, which turns two-stroke swipes off and hides their categories. See [](#gestures-two-stroke).
+- **Time between two-stroke swipes**: how long after a swipe the second swipe of a two-stroke swipe can start: **Off**, 0.25, 0.5, 1, 1.5 or 2 seconds. The default is **Off**, which turns two-stroke swipes off and hides their categories. See [](#gestures-two-stroke).
 
 These settings need gesture recognition by SandFly; see [](#gestures-recognition). **Hold time after a swipe**, **Gesture start time** and **Time between two-stroke swipes** aren't on watches.
 

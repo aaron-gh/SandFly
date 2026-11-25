@@ -153,4 +153,19 @@
         <item>ակտիվացրու {label}</item>
         <item>ընտրիր {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Սկսել ձայնային խմբագրումը</string>
+    <string name="voice_editing_on">Ձայնային խմբագրումը միացված է</string>
+    <string name="voice_editing_off">Ձայնային խմբագրումն անջատված է</string>
+    <string name="title_pref_voice_editing_time_limit">Ձայնային խմբագրման ժամանակի սահմանաչափ</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> րոպե</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> րոպե</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>դադարեցնել խմբագրումը</item>
+        <item>դադարեցնել ձայնային խմբագրումը</item>
+        <item>ավարտել խմբագրումը</item>
+        <item>ավարտել ձայնային խմբագրումը</item>
+        <item>անջատել ձայնային խմբագրումը</item>
+    </string-array>
 </resources>

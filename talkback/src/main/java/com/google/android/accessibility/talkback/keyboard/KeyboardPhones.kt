@@ -43,14 +43,20 @@ object KeyboardPhones {
       maker.contains("blackberry") || maker.contains("tcl") ->
         BLACKBERRY_KEYBOARD_MODELS.any { name.startsWith(it) }
       maker.contains("zinwa") -> true
+      isZinwaQ25(manufacturer, model) -> true
       else -> false
     }
   }
 
-  /** Whether this phone is a Zinwa Q25, whose Sym key is Right Alt. */
-  private fun isZinwaQ25(manufacturer: String?, model: String?): Boolean =
-    manufacturer.orEmpty().lowercase(Locale.ROOT).contains("zinwa") &&
+  /**
+   * Whether this phone is a Zinwa Q25, whose Sym key is Right Alt. Its firmware names Xelex as the
+   * manufacturer.
+   */
+  private fun isZinwaQ25(manufacturer: String?, model: String?): Boolean {
+    val maker = manufacturer.orEmpty().lowercase(Locale.ROOT)
+    return (maker.contains("zinwa") || maker.contains("xelex")) &&
       model.orEmpty().uppercase(Locale.ROOT).contains("Q25")
+  }
 
   private fun isUnihertz(manufacturer: String?): Boolean =
     manufacturer.orEmpty().lowercase(Locale.ROOT).contains("unihertz")

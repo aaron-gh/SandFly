@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Սահեցնել վերև, ապա ձախ</string>
   <string name="title_pref_shortcut_up_and_right">Սահեցնել վերև, ապա աջ</string>
   <string name="title_pref_shortcut_right_and_down">Սահեցնել աջ, ապա ներքև</string>
+  <string name="title_pref_shortcut_1finger_3tap">Երեք անգամ հպել</string>
+  <string name="title_pref_shortcut_1finger_4tap">Չորս անգամ հպել</string>
   <string name="title_pref_shortcut_right_and_up">Սահեցնել աջ, ապա վերև</string>
   <string name="title_pref_shortcut_left_and_down">Սահեցնել ձախ, ապա ներքև</string>
   <string name="title_pref_shortcut_left_and_up">Սահեցնել ձախ, ապա վերև</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Լիցքավորիչը միացված է</string>
     <string name="title_pref_screen_announcements">Էկրանի միացում և անջատում</string>
     <string name="summary_pref_screen_announcements">Ընտրեք, թե ինչ հնչեցնի SandFly-ը, երբ էկրանն անջատվում կամ միանում է, և երբ հեռախոսն ապակողպվում է</string>
+    <string name="title_pref_screen_announcements_over_media">Բարձրաձայն արտասանել մեդիայի նվագարկման ժամանակ</string>
     <string name="title_screen_announcements_screen_off">Երբ էկրանն անջատվում է</string>
     <string name="title_screen_announcements_screen_on">Երբ էկրանը միանում է</string>
     <string name="title_screen_announcements_unlock">Երբ հեռախոսն ապակողպվում է</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Հնչեցնել ցանկի մասին տեղեկությունները</string>
     <string name="pref_speak_grid_positions_title">Հնչեցնել ցանցի և աղյուսակի մասին տեղեկությունները</string>
     <string name="pref_speak_role_without_pause_title">Հնչեցնել տարրի տեսակը առանց դադարի</string>
+    <string name="title_pref_speak_actions_available">Բարձրաձայն արտասանել «Գործողությունները հասանելի են»</string>
     <string name="title_pref_overview">Օգտագործել SandFly-ի ընդհանուր տեսքը</string>
     <string name="title_pref_overview_newest_last">Ամենավերջին հավելվածը ներքևում</string>
     <string name="title_pref_overview_columns">Սյունակներ</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Հապտիկ էֆեկտներ</string>
     <string name="vibration_type_pulses">Իմպուլսներ</string>
     <string name="vibration_type_on_off">Միացում և անջատում</string>
+    <string name="title_pref_actions_available_sound">«Գործողությունները հասանելի են» ձայն</string>
+    <string name="value_actions_available_sound_off">Անջատված</string>
+    <string name="value_actions_available_sound_focus">Երբ տարրը ֆոկուսում է</string>
+    <string name="value_actions_available_sound_after_speech">Տարրը հնչեցնելուց հետո</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">«Կրկնակի հպումը հպում է էկրանին»-ը միացված է</string>
     <string name="double_tap_taps_off">«Կրկնակի հպումը հպում է էկրանին»-ն անջատված է</string>
     <string name="double_tap_taps_no_app">Առջևում հավելված չկա</string>
+    <string name="keycombo_menu_toggle_key_practice">Միացնել կամ անջատել ստեղնաշարի վարժանքը</string>
+    <string name="key_practice_on">Ստեղնաշարի վարժանքը միացված է</string>
+    <string name="key_practice_off">Ստեղնաշարի վարժանքն անջատված է</string>
+    <string name="key_practice_sandfly_key">SandFly-ի ստեղն</string>
+    <string name="key_practice_title">Ստեղնաշարի վարժանք</string>
+    <string name="key_practice_summary">Հնչեցնում է սեղմված յուրաքանչյուր ստեղն ու դրա հրամանը՝ հրամանը կատարելու փոխարեն։ Անջատվում է Հետ կամ Escape ստեղնով։</string>
+    <string name="keycombo_menu_touch_hold_focus">Պահել հպումը ֆոկուսում գտնվող տարրի վրա</string>
+    <string name="touch_hold_held">Հպումը պահված է</string>
+    <string name="touch_hold_lifted">Հպումը բաց է թողնված</string>
+    <string name="touch_hold_unavailable">Հասանելի չէ</string>
+    <string name="touch_hold_no_focus">Ֆոկուսում տարր չկա</string>
+    <string name="title_pref_speak_password_characters">Հնչեցնել գաղտնաբառի նիշերը</string>
+    <string name="summary_pref_speak_password_characters">SandFly ստեղնաշարով հնչեցնում է գաղտնաբառի դաշտերում մուտքագրված, ջնջված և կուրսորով անցած նիշերը</string>
+    <string name="shortcut_spell_password_field">Տառ առ տառ կարդալ գաղտնաբառի դաշտը</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Գաղտնաբառի դաշտ չէ</string>
+    <string name="sandfly_keyboard_password_not_available">Գաղտնաբառի դաշտի տեքստը հասանելի չէ</string>
+    <string name="sandfly_keyboard_password_not_read">Գաղտնաբառի դաշտերում չի կարդացվում</string>
+    <string name="title_pref_voice_profile_play_sample">Նվագարկել նմուշը</string>
+    <string name="voice_profile_sample_text">Սա այս ձայնի պրոֆիլի նմուշն է։</string>
+    <string name="voice_profile_sample_failed">Նմուշը չնվագարկվեց</string>
+    <string name="title_pref_speech_rate_step">Խոսքի արագության քայլը</string>
+    <string name="value_speech_rate_step_relative">Արագության <xliff:g id="percent" example="10%">%1$s</xliff:g>-ը</string>
+    <string name="shortcut_end_call">Ավարտել զանգը</string>
+    <string name="end_call_no_call">Զանգ չկա</string>
+    <string name="end_call_permission">Զանգերն ավարտելու համար թույլտվություն է պետք</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Անցնել հաջորդ պարբերությանը, երկրորդ ստեղն</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Անցնել նախորդ պարբերությանը, երկրորդ ստեղն</string>
+    <string name="title_pref_mute_key_dictates">Պահեք անձայն ռեժիմի ստեղնը՝ տեքստային դաշտերում թելադրելու համար</string>
+    <string name="title_pref_mute_key_press">Անձայն ռեժիմի ստեղնի սեղմում</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Անցնել հաջորդ հղմանը, երկրորդ ստեղն</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Անցնել նախորդ հղմանը, երկրորդ ստեղն</string>
+    <string name="keycombo_only_in_browse_mode">Միայն դիտարկման ռեժիմում</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> դիտարկման ռեժիմում</string>
+    <string name="title_pref_category_fast_search">Արագ որոնում</string>
+    <string name="title_pref_fast_search_key">Արագ որոնման ստեղն</string>
+    <string name="fast_search_key_off">Անջատված</string>
+    <string name="title_pref_fast_search_wrap">Ցիկլիկ անցում</string>
+    <string name="fast_search_key_left_alt">Ձախ Alt</string>
+    <string name="fast_search_key_left_ctrl">Ձախ Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Աջ Ctrl</string>
+    <string name="fast_search_key_left_meta">Ձախ Meta</string>
+    <string name="fast_search_key_right_meta">Աջ Meta</string>
 </resources>

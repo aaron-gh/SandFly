@@ -188,6 +188,13 @@ public class TalkBackPreferenceFilter {
     SWIPES_BEFORE_LIFT(
         R.string.pref_swipes_before_lift_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
+    // One-finger taps beyond the double tap, which only SandFly's own gesture detection recognizes.
+    CUSTOMIZE_GESTURE_1FINGER_3TAP(
+        R.string.pref_shortcut_1finger_3tap_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_1FINGER_4TAP(
+        R.string.pref_shortcut_1finger_4tap_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     // Swipes that end with a rest, which only SandFly's own gesture detection recognizes.
     CUSTOMIZE_GESTURE_UP_AND_HOLD(
         R.string.pref_shortcut_up_and_hold_key,
@@ -299,6 +306,8 @@ public class TalkBackPreferenceFilter {
     SANDFLY_KEYBOARD_DOUBLE_SPACE_PERIOD(
         R.string.pref_sandfly_keyboard_double_space_period_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SPEAK_PASSWORD_CHARACTERS(
+        R.string.pref_speak_password_characters_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     BRAILLE_DISPLAY(
         R.string.pref_brailledisplay_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),

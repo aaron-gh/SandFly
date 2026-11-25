@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.preference.base;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -40,6 +41,7 @@ import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.utils.FormFactorUtils;
 import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech;
+import com.google.android.accessibility.utils.output.VoiceProfileSample;
 import com.google.android.accessibility.utils.output.VoiceProfiles;
 import com.google.android.accessibility.utils.output.VoiceProfiles.VoiceProfile;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -88,6 +90,9 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
   private @Nullable Preference moveUp;
   private @Nullable Preference moveDown;
   private @Nullable Preference equalizer;
+
+  /** Says the sample for Play sample, or null until it is first pressed. */
+  private @Nullable VoiceProfileSample sample;
 
   // The rate, pitch and equalizer also change from gestures and the reading controls.
   private final OnSharedPreferenceChangeListener prefsListener =
@@ -165,6 +170,17 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
         TextToSpeechSettingsFragment.toPercent(SpeechRateAndPitchActor.PITCH_MAXIMUM),
         TextToSpeechSettingsFragment::fromPercent);
 
+    Preference playSample = new AccessibilitySuitePreference(context);
+    playSample.setTitle(R.string.title_pref_voice_profile_play_sample);
+    playSample.setPersistent(false);
+    playSample.setIconSpaceReserved(false);
+    playSample.setOnPreferenceClickListener(
+        preference -> {
+          playSample();
+          return true;
+        });
+    screen.addPreference(playSample);
+
     if (!FormFactorUtils.isAndroidWear()) {
       // Watches have no low-latency audio, which the equalizer needs.
       equalizer = new AccessibilitySuitePreference(context);
@@ -229,6 +245,9 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
   public void onPause() {
     super.onPause();
     prefs.unregisterOnSharedPreferenceChangeListener(prefsListener);
+    if (sample != null) {
+      sample.stop();
+    }
   }
 
   @Override
@@ -236,6 +255,45 @@ public class VoiceProfileFragment extends TalkbackBaseFragment {
     super.onDestroy();
     mainHandler.removeCallbacksAndMessages(null);
     shutDownTts();
+    if (sample != null) {
+      sample.shutdown();
+      sample = null;
+    }
+  }
+
+  /**
+   * Says a sample sentence with this profile as it is set, in the profile's language where SandFly
+   * has the sentence in it.
+   */
+  private void playSample() {
+    if (!VoiceProfiles.ids(prefs).contains(id)) {
+      return;
+    }
+    VoiceProfile profile = profile();
+    Context context = requireContext();
+    if (sample == null) {
+      sample = new VoiceProfileSample(context);
+    }
+    sample.play(
+        prefs,
+        profile,
+        sampleText(context, profile.language()),
+        () -> {
+          if (isAdded()) {
+            getListView().announceForAccessibility(getString(R.string.voice_profile_sample_failed));
+          }
+        });
+  }
+
+  private static String sampleText(Context context, String language) {
+    if (language.isEmpty()) {
+      return context.getString(R.string.voice_profile_sample_text);
+    }
+    Configuration configuration = new Configuration(context.getResources().getConfiguration());
+    configuration.setLocale(Locale.forLanguageTag(language));
+    return context
+        .createConfigurationContext(configuration)
+        .getString(R.string.voice_profile_sample_text);
   }
 
   private Preference addMove(Context context, PreferenceScreen screen, int titleResId, int step) {

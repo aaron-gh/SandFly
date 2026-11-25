@@ -155,4 +155,18 @@
         <item>{label} ကို ရွေးပါ</item>
         <item>{label} ကို အသက်သွင်းပါ</item>
     </string-array>
+    <string name="shortcut_voice_editing">အသံဖြင့် တည်းဖြတ်ခြင်း စတင်ရန်</string>
+    <string name="voice_editing_on">အသံဖြင့် တည်းဖြတ်ခြင်း ဖွင့်ထားသည်</string>
+    <string name="voice_editing_off">အသံဖြင့် တည်းဖြတ်ခြင်း ပိတ်ထားသည်</string>
+    <string name="title_pref_voice_editing_time_limit">အသံဖြင့် တည်းဖြတ်ခြင်း အချိန်ကန့်သတ်ချက်</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> မိနစ်</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>တည်းဖြတ်ခြင်း ရပ်ပါ</item>
+        <item>အသံဖြင့် တည်းဖြတ်ခြင်း ရပ်ပါ</item>
+        <item>တည်းဖြတ်ခြင်း အဆုံးသတ်ပါ</item>
+        <item>အသံဖြင့် တည်းဖြတ်ခြင်း အဆုံးသတ်ပါ</item>
+        <item>အသံဖြင့် တည်းဖြတ်ခြင်း ပိတ်ပါ</item>
+    </string-array>
 </resources>

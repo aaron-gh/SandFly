@@ -570,6 +570,8 @@
   <string name="title_pref_shortcut_up_and_left">上にスワイプしてから左にスワイプ</string>
   <string name="title_pref_shortcut_up_and_right">上にスワイプしてから右にスワイプ</string>
   <string name="title_pref_shortcut_right_and_down">右にスワイプしてから下にスワイプ</string>
+  <string name="title_pref_shortcut_1finger_3tap">トリプルタップ</string>
+  <string name="title_pref_shortcut_1finger_4tap">4回タップ</string>
   <string name="title_pref_shortcut_right_and_up">右にスワイプしてから上にスワイプ</string>
   <string name="title_pref_shortcut_left_and_down">左にスワイプしてから下にスワイプ</string>
   <string name="title_pref_shortcut_left_and_up">左にスワイプしてから上にスワイプ</string>
@@ -1362,6 +1364,7 @@
     <string name="value_charger_connected">充電器が接続されています</string>
     <string name="title_pref_screen_announcements">画面のオンとオフ</string>
     <string name="summary_pref_screen_announcements">画面がオフまたはオンになったとき、および電話のロックが解除されたときにSandFlyが何を言うかを選択します</string>
+    <string name="title_pref_screen_announcements_over_media">メディアの再生中も読み上げる</string>
     <string name="title_screen_announcements_screen_off">画面がオフになるとき</string>
     <string name="title_screen_announcements_screen_on">画面がオンになるとき</string>
     <string name="title_screen_announcements_unlock">電話機のロックが解除されたとき</string>
@@ -2004,6 +2007,7 @@
     <string name="pref_speak_list_positions_title">リスト情報を読み上げる</string>
     <string name="pref_speak_grid_positions_title">グリッドと表の情報を読み上げる</string>
     <string name="pref_speak_role_without_pause_title">項目の種類を間を空けずに読み上げる</string>
+    <string name="title_pref_speak_actions_available">「操作を使用できます」を読み上げる</string>
     <string name="title_pref_overview">SandFly の概要を使用</string>
     <string name="title_pref_overview_newest_last">最新のアプリを下に表示</string>
     <string name="title_pref_overview_columns">列数</string>
@@ -2262,6 +2266,10 @@
     <string name="vibration_type_effects">触覚エフェクト</string>
     <string name="vibration_type_pulses">パルス</string>
     <string name="vibration_type_on_off">オン / オフのみ</string>
+    <string name="title_pref_actions_available_sound">「操作を使用できます」のサウンド</string>
+    <string name="value_actions_available_sound_off">オフ</string>
+    <string name="value_actions_available_sound_focus">項目にフォーカスしたとき</string>
+    <string name="value_actions_available_sound_after_speech">項目の読み上げ後</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2757,4 +2765,47 @@
     <string name="double_tap_taps_on">ダブルタップで画面をタップ: オン</string>
     <string name="double_tap_taps_off">ダブルタップで画面をタップ: オフ</string>
     <string name="double_tap_taps_no_app">前面にアプリがありません</string>
+    <string name="keycombo_menu_toggle_key_practice">キーボード練習のオン/オフを切り替える</string>
+    <string name="key_practice_on">キーボード練習オン</string>
+    <string name="key_practice_off">キーボード練習オフ</string>
+    <string name="key_practice_sandfly_key">SandFly キー</string>
+    <string name="key_practice_title">キーボード練習</string>
+    <string name="key_practice_summary">押したキーとそのコマンドを、実行せずに読み上げます。戻るキーまたは Esc キーでオフになります。</string>
+    <string name="keycombo_menu_touch_hold_focus">フォーカス中の項目をタッチしたままにする</string>
+    <string name="touch_hold_held">タッチを保持中</string>
+    <string name="touch_hold_lifted">タッチを離しました</string>
+    <string name="touch_hold_unavailable">利用できません</string>
+    <string name="touch_hold_no_focus">フォーカスのある項目はありません</string>
+    <string name="title_pref_speak_password_characters">パスワードの文字を読み上げる</string>
+    <string name="summary_pref_speak_password_characters">SandFly キーボードの使用時に、パスワード フィールドで入力、削除、カーソルが通過した文字を読み上げます</string>
+    <string name="shortcut_spell_password_field">パスワード フィールドのスペルを読み上げる</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">パスワード フィールドではありません</string>
+    <string name="sandfly_keyboard_password_not_available">パスワード フィールドのテキストを取得できません</string>
+    <string name="sandfly_keyboard_password_not_read">パスワード フィールドでは読み上げません</string>
+    <string name="title_pref_voice_profile_play_sample">サンプルを再生</string>
+    <string name="voice_profile_sample_text">これはこの音声プロファイルのサンプルです。</string>
+    <string name="voice_profile_sample_failed">サンプルを再生できませんでした</string>
+    <string name="title_pref_speech_rate_step">音声の速度の変更幅</string>
+    <string name="value_speech_rate_step_relative">速度の <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">通話を終了</string>
+    <string name="end_call_no_call">通話がありません</string>
+    <string name="end_call_permission">通話を終了するには権限が必要です</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">次の段落に移動（2 番目のキー）</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">前の段落に移動（2 番目のキー）</string>
+    <string name="title_pref_mute_key_dictates">テキスト フィールドでミュートボタンを長押しして音声入力</string>
+    <string name="title_pref_mute_key_press">ミュートボタンを押す</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">次のリンクに移動（2 番目のキー）</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">前のリンクに移動（2 番目のキー）</string>
+    <string name="keycombo_only_in_browse_mode">ブラウズモード中のみ</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g>（ブラウズモード中）</string>
+    <string name="title_pref_category_fast_search">クイック検索</string>
+    <string name="title_pref_fast_search_key">クイック検索キー</string>
+    <string name="fast_search_key_off">オフ</string>
+    <string name="title_pref_fast_search_wrap">最初に戻る</string>
+    <string name="fast_search_key_left_alt">左 Alt</string>
+    <string name="fast_search_key_left_ctrl">左 Ctrl</string>
+    <string name="fast_search_key_right_ctrl">右 Ctrl</string>
+    <string name="fast_search_key_left_meta">左 Meta</string>
+    <string name="fast_search_key_right_meta">右 Meta</string>
 </resources>

@@ -28,6 +28,7 @@
   <string name="value_screen_on">Ekran włączony.</string>
   <string name="value_screen_off">Ekran wyłączony.</string>
   <string name="value_device_unlocked">Urządzenie zostało odblokowane.</string>
+  <string name="title_pref_screen_announcements_over_media">Odczytuj podczas odtwarzania multimediów</string>
   <string name="title_pref_speech_volume">Głośność mowy</string>
   <string name="title_pref_verbose_scroll_announcement">Zawsze odczytuj liczbę elementów z listy</string>
   <string name="summary_pref_verbose_scroll_announcement">Po każdym przewinięciu mówi, które elementy są widoczne</string>
@@ -379,9 +380,9 @@
   <string name="shortcut_read_from_current">Czytaj od zaznaczonego elementu</string>
   <string name="shortcut_print_node_tree">Wydrukuj drzewo węzłów</string>
   <string name="shortcut_print_performance_stats">Drukuj statystyki wydajności</string>
-  <string name="shortcut_first_in_screen">Zaznacz pierwszy element na ekranie</string>
+  <string name="shortcut_first_in_screen">Przejdź do pierwszego elementu na ekranie</string>
   <string name="shortcut_voice_commands">Użyj polecenia głosowego</string>
-  <string name="shortcut_last_in_screen">Zaznacz ostatni element na ekranie</string>
+  <string name="shortcut_last_in_screen">Przejdź do ostatniego elementu na ekranie</string>
   <string name="shortcut_enable_dimming">Ukrywanie ekranu</string>
   <string name="shortcut_disable_dimming">Pokaż ekran</string>
   <string name="shortcut_perform_click_action">Aktywuj</string>
@@ -571,6 +572,8 @@
   <string name="title_pref_shortcut_up_and_left">Przesuń w górę, a potem w lewo</string>
   <string name="title_pref_shortcut_up_and_right">Przesuń w górę, a potem w prawo</string>
   <string name="title_pref_shortcut_right_and_down">Przesuń w prawo, a potem w dół</string>
+  <string name="title_pref_shortcut_1finger_3tap">Kliknij trzykrotnie</string>
+  <string name="title_pref_shortcut_1finger_4tap">Kliknij czterokrotnie</string>
   <string name="title_pref_shortcut_right_and_up">Przesuń w prawo, a potem w górę</string>
   <string name="title_pref_shortcut_left_and_down">Przesuń w lewo, a potem w dół</string>
   <string name="title_pref_shortcut_left_and_up">Przesuń w lewo, a potem w górę</string>
@@ -1458,7 +1461,7 @@
     <string name="summary_pref_speaker_devices_no_devices">Nie podłączono jeszcze żadnych urządzeń Bluetooth ani przewodowych</string>
     <string name="shortcut_title_open_app">Otwórz aplikację</string>
     <string name="shortcut_open_app">Otwórz <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Przewiń do góry</string>
+    <string name="shortcut_scroll_to_top">Przewiń na początek</string>
     <string name="shortcut_write_reading_control">Napisz literę opcji sterowania czytaniem</string>
     <string name="title_pref_reading_control_letters">Odręczne litery alfabetu</string>
     <string name="reading_control_letter_none">Brak</string>
@@ -1506,7 +1509,7 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> z <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Pusty tekst</string>
     <string name="handwriting_not_available">Rozpoznawanie pisma ręcznego nie jest dostępne na tym urządzeniu</string>
-    <string name="shortcut_scroll_to_bottom">Przewiń w dół</string>
+    <string name="shortcut_scroll_to_bottom">Przewiń na koniec</string>
     <string name="shortcut_refresh">Odśwież</string>
     <string name="shortcut_system_notifications">Systemowy obszar powiadomień</string>
     <string name="shortcut_system_quick_settings">Szybkie ustawienia systemu</string>
@@ -1844,6 +1847,7 @@
     <string name="pref_speak_list_positions_title">Odczytywanie informacji o listach</string>
     <string name="pref_speak_grid_positions_title">Odczytywanie informacji o siatkach i tabelach</string>
     <string name="pref_speak_role_without_pause_title">Odczytywanie typu elementu bez pauzy</string>
+    <string name="title_pref_speak_actions_available">Odczytuj „Dostępne czynności”</string>
     <string name="title_pref_overview">Używaj przeglądu SandFly</string>
     <string name="title_pref_overview_newest_last">Najnowsza aplikacja na dole</string>
     <string name="title_pref_overview_columns">Kolumny</string>
@@ -2109,6 +2113,10 @@
     <string name="vibration_type_effects">Efekty haptyczne</string>
     <string name="vibration_type_pulses">Impulsy</string>
     <string name="vibration_type_on_off">Włączanie i wyłączanie</string>
+    <string name="title_pref_actions_available_sound">Dźwięk „Dostępne czynności”</string>
+    <string name="value_actions_available_sound_off">Wyłączony</string>
+    <string name="value_actions_available_sound_focus">Gdy element zostanie zaznaczony</string>
+    <string name="value_actions_available_sound_after_speech">Po odczytaniu elementu</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2618,4 +2626,47 @@
     <string name="double_tap_taps_on">Dwukrotne kliknięcie stuka w ekran: włączone</string>
     <string name="double_tap_taps_off">Dwukrotne kliknięcie stuka w ekran: wyłączone</string>
     <string name="double_tap_taps_no_app">Brak aplikacji na pierwszym planie</string>
+    <string name="keycombo_menu_toggle_key_practice">Włącz lub wyłącz ćwiczenie klawiatury</string>
+    <string name="key_practice_on">Ćwiczenie klawiatury włączone</string>
+    <string name="key_practice_off">Ćwiczenie klawiatury wyłączone</string>
+    <string name="key_practice_sandfly_key">klawisz SandFly</string>
+    <string name="key_practice_title">Ćwiczenie klawiatury</string>
+    <string name="key_practice_summary">Odczytuje każdy naciśnięty klawisz i jego polecenie zamiast je wykonywać. Wstecz lub Escape wyłącza ćwiczenie.</string>
+    <string name="keycombo_menu_touch_hold_focus">Przytrzymaj dotyk na elemencie z fokusem</string>
+    <string name="touch_hold_held">Dotyk przytrzymany</string>
+    <string name="touch_hold_lifted">Dotyk zwolniony</string>
+    <string name="touch_hold_unavailable">Niedostępne</string>
+    <string name="touch_hold_no_focus">Żaden element nie ma fokusu</string>
+    <string name="title_pref_speak_password_characters">Odczytuj znaki hasła</string>
+    <string name="summary_pref_speak_password_characters">Z klawiaturą SandFly odczytuje w polach haseł znaki wpisane, usunięte i mijane przez kursor</string>
+    <string name="shortcut_spell_password_field">Przeliteruj pole hasła</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">To nie jest pole hasła</string>
+    <string name="sandfly_keyboard_password_not_available">Tekst pola hasła niedostępny</string>
+    <string name="sandfly_keyboard_password_not_read">Nie jest odczytywane w polach haseł</string>
+    <string name="title_pref_voice_profile_play_sample">Odtwórz próbkę</string>
+    <string name="voice_profile_sample_text">To jest próbka tego profilu głosowego.</string>
+    <string name="voice_profile_sample_failed">Nie odtworzono próbki</string>
+    <string name="title_pref_speech_rate_step">Krok szybkości mowy</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> szybkości</string>
+    <string name="shortcut_end_call">Zakończ połączenie</string>
+    <string name="end_call_no_call">Brak połączenia</string>
+    <string name="end_call_permission">Wymagane uprawnienie do kończenia połączeń</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Przejdź do następnego akapitu, drugi klawisz</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Przejdź do poprzedniego akapitu, drugi klawisz</string>
+    <string name="title_pref_mute_key_dictates">Przytrzymaj klawisz wyciszenia, aby dyktować w polach tekstowych</string>
+    <string name="title_pref_mute_key_press">Naciśnięcie klawisza wyciszenia</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Przejdź do następnego linku, drugi klawisz</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Przejdź do poprzedniego linku, drugi klawisz</string>
+    <string name="keycombo_only_in_browse_mode">Tylko w trybie przeglądania</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> w trybie przeglądania</string>
+    <string name="title_pref_category_fast_search">Szybkie wyszukiwanie</string>
+    <string name="title_pref_fast_search_key">Klawisz szybkiego wyszukiwania</string>
+    <string name="fast_search_key_off">Wyłączone</string>
+    <string name="title_pref_fast_search_wrap">Zawijanie</string>
+    <string name="fast_search_key_left_alt">Lewy Alt</string>
+    <string name="fast_search_key_left_ctrl">Lewy Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Prawy Ctrl</string>
+    <string name="fast_search_key_left_meta">Lewy Meta</string>
+    <string name="fast_search_key_right_meta">Prawy Meta</string>
 </resources>

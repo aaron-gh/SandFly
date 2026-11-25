@@ -158,4 +158,19 @@
         <item>{label} সক্ৰিয় কৰক</item>
         <item>{label} বাছনি কৰক</item>
     </string-array>
+    <string name="shortcut_voice_editing">ভইচ সম্পাদনা আৰম্ভ কৰক</string>
+    <string name="voice_editing_on">ভইচ সম্পাদনা অন</string>
+    <string name="voice_editing_off">ভইচ সম্পাদনা অফ</string>
+    <string name="title_pref_voice_editing_time_limit">ভইচ সম্পাদনাৰ সময়সীমা</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> মিনিট</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> মিনিট</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>সম্পাদনা বন্ধ কৰক</item>
+        <item>ভইচ সম্পাদনা বন্ধ কৰক</item>
+        <item>সম্পাদনা শেষ কৰক</item>
+        <item>ভইচ সম্পাদনা শেষ কৰক</item>
+        <item>ভইচ সম্পাদনা অফ</item>
+    </string-array>
 </resources>

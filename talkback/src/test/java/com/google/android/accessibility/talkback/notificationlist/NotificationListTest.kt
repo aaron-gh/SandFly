@@ -208,4 +208,59 @@ class NotificationListTest {
 
     assertEquals(listOf("12°, rain 30%", "Sunny", null), texts)
   }
+
+  @Test
+  fun customLayoutText_standsInForBlankText() {
+    val layout = RemoteViews(context.packageName, android.R.layout.simple_list_item_1)
+    layout.setTextViewText(android.R.id.text1, "12°, rain 30%")
+    val weather = Notification.Builder(context, "weather").setContentTitle("Weather").build()
+    weather.extras.putCharSequence(Notification.EXTRA_TEXT, " ")
+    @Suppress("DEPRECATION")
+    weather.contentView = layout
+    NotificationList.onConnected(arrayOf(posted("com.example.weather", 1, weather)), null)
+
+    val texts = NotificationList.items(context).flatMap { it.entries }.map { it.text?.toString() }
+
+    assertEquals(listOf("12°, rain 30%"), texts)
+  }
+
+  @Test
+  fun subInfoAndSummaryText_onlyWhenNothingElse() {
+    val layout = RemoteViews(context.packageName, android.R.layout.simple_list_item_1)
+    layout.setTextViewText(android.R.id.text1, "12°, rain 30%")
+    fun withExtra(title: String, key: String, value: String) =
+      Notification.Builder(context, "texts").setContentTitle(title).build().also {
+        it.extras.putCharSequence(key, value)
+      }
+    val sub = withExtra("Sub", Notification.EXTRA_SUB_TEXT, "Work account")
+    val info = withExtra("Info", Notification.EXTRA_INFO_TEXT, "3 new")
+    val summary = withExtra("Summary", Notification.EXTRA_SUMMARY_TEXT, "2 more")
+    val subAndText = withExtra("SubAndText", Notification.EXTRA_SUB_TEXT, "Work account")
+    subAndText.extras.putCharSequence(Notification.EXTRA_TEXT, "Meeting at 10")
+    val subAndTicker = withExtra("SubAndTicker", Notification.EXTRA_SUB_TEXT, "Work account")
+    subAndTicker.tickerText = "New mail"
+    val subAndLayout = withExtra("SubAndLayout", Notification.EXTRA_SUB_TEXT, "Work account")
+    @Suppress("DEPRECATION")
+    subAndLayout.contentView = layout
+    val notifications =
+      listOf(sub, info, summary, subAndText, subAndTicker, subAndLayout).mapIndexed { index, notification ->
+        posted("com.example.app$index", index + 1, notification)
+      }
+    NotificationList.onConnected(notifications.toTypedArray(), null)
+
+    val texts =
+      NotificationList.items(context).flatMap { it.entries }.associate { it.title?.toString() to it.text?.toString() }
+
+    assertEquals(
+      mapOf(
+        "Sub" to "Work account",
+        "Info" to "3 new",
+        "Summary" to "2 more",
+        "SubAndText" to "Meeting at 10",
+        "SubAndTicker" to "New mail",
+        "SubAndLayout" to "12°, rain 30%",
+      ),
+      texts,
+    )
+  }
 }

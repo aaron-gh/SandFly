@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">先往上再往左滑動</string>
   <string name="title_pref_shortcut_up_and_right">先往上再往右滑動</string>
   <string name="title_pref_shortcut_right_and_down">先往右再往下滑動</string>
+  <string name="title_pref_shortcut_1finger_3tap">輕觸三下</string>
+  <string name="title_pref_shortcut_1finger_4tap">連按四次</string>
   <string name="title_pref_shortcut_right_and_up">先往右再往上滑動</string>
   <string name="title_pref_shortcut_left_and_down">先往左再往下滑動</string>
   <string name="title_pref_shortcut_left_and_up">先往左再往上滑動</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">充電器已連接</string>
     <string name="title_pref_screen_announcements">螢幕開啟和關閉</string>
     <string name="summary_pref_screen_announcements">選擇螢幕關閉或開啟以及手機解鎖時 SandFly 所說的內容</string>
+    <string name="title_pref_screen_announcements_over_media">播放媒體時讀出</string>
     <string name="title_screen_announcements_screen_off">當螢幕關閉時</string>
     <string name="title_screen_announcements_screen_on">當螢幕亮起時</string>
     <string name="title_screen_announcements_unlock">當手機解鎖時</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">朗讀清單資訊</string>
     <string name="pref_speak_grid_positions_title">朗讀格線和表格資訊</string>
     <string name="pref_speak_role_without_pause_title">不停頓朗讀項目類型</string>
+    <string name="title_pref_speak_actions_available">讀出「有可用的動作」</string>
     <string name="title_pref_overview">使用 SandFly 總覽</string>
     <string name="title_pref_overview_newest_last">最近使用的應用程式置底</string>
     <string name="title_pref_overview_columns">欄數</string>
@@ -2265,6 +2269,10 @@
     <string name="vibration_type_effects">觸覺效果</string>
     <string name="vibration_type_pulses">脈衝</string>
     <string name="vibration_type_on_off">開與關</string>
+    <string name="title_pref_actions_available_sound">「有可用的動作」提示音</string>
+    <string name="value_actions_available_sound_off">關閉</string>
+    <string name="value_actions_available_sound_focus">項目獲得焦點時</string>
+    <string name="value_actions_available_sound_after_speech">讀出項目後</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2760,4 +2768,47 @@
     <string name="double_tap_taps_on">輕觸兩下時輕觸螢幕已開啟</string>
     <string name="double_tap_taps_off">輕觸兩下時輕觸螢幕已關閉</string>
     <string name="double_tap_taps_no_app">前景沒有應用程式</string>
+    <string name="keycombo_menu_toggle_key_practice">開啟或關閉鍵盤練習</string>
+    <string name="key_practice_on">鍵盤練習已開啟</string>
+    <string name="key_practice_off">鍵盤練習已關閉</string>
+    <string name="key_practice_sandfly_key">SandFly 鍵</string>
+    <string name="key_practice_title">鍵盤練習</string>
+    <string name="key_practice_summary">唸出按下的每個按鍵及其指令，但不執行指令。按返回鍵或 Esc 鍵即可關閉。</string>
+    <string name="keycombo_menu_touch_hold_focus">在焦點項目上保持觸控</string>
+    <string name="touch_hold_held">已保持觸控</string>
+    <string name="touch_hold_lifted">已放開觸控</string>
+    <string name="touch_hold_unavailable">無法使用</string>
+    <string name="touch_hold_no_focus">沒有項目取得焦點</string>
+    <string name="title_pref_speak_password_characters">讀出密碼字元</string>
+    <string name="summary_pref_speak_password_characters">使用 SandFly 鍵盤時，讀出在密碼欄位中輸入、刪除及游標經過的字元</string>
+    <string name="shortcut_spell_password_field">拼出密碼欄位</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">不是密碼欄位</string>
+    <string name="sandfly_keyboard_password_not_available">無法取得密碼欄位文字</string>
+    <string name="sandfly_keyboard_password_not_read">密碼欄位中不會讀出</string>
+    <string name="title_pref_voice_profile_play_sample">播放範例</string>
+    <string name="voice_profile_sample_text">這是這個語音設定檔的範例。</string>
+    <string name="voice_profile_sample_failed">未播放範例</string>
+    <string name="title_pref_speech_rate_step">語音速率調整幅度</string>
+    <string name="value_speech_rate_step_relative">目前速率的 <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">結束通話</string>
+    <string name="end_call_no_call">沒有通話</string>
+    <string name="end_call_permission">需要權限才能結束通話</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">前往下一個段落（第二個鍵）</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">前往上一個段落（第二個鍵）</string>
+    <string name="title_pref_mute_key_dictates">在文字欄位中按住靜音鍵進行語音輸入</string>
+    <string name="title_pref_mute_key_press">按下靜音鍵</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">前往下一個連結（第二個鍵）</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">前往上一個連結（第二個鍵）</string>
+    <string name="keycombo_only_in_browse_mode">僅限瀏覽模式</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g>（瀏覽模式）</string>
+    <string name="title_pref_category_fast_search">快速搜尋</string>
+    <string name="title_pref_fast_search_key">快速搜尋鍵</string>
+    <string name="fast_search_key_off">關閉</string>
+    <string name="title_pref_fast_search_wrap">循環瀏覽</string>
+    <string name="fast_search_key_left_alt">左 Alt</string>
+    <string name="fast_search_key_left_ctrl">左 Ctrl</string>
+    <string name="fast_search_key_right_ctrl">右 Ctrl</string>
+    <string name="fast_search_key_left_meta">左 Meta</string>
+    <string name="fast_search_key_right_meta">右 Meta</string>
 </resources>

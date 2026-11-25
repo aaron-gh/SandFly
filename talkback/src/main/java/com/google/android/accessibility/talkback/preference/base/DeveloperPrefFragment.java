@@ -610,7 +610,7 @@ public class DeveloperPrefFragment extends TalkbackBaseFragment {
 
     // For each gesture that matches shortcut, in either gesture layout... unassign gesture.
     for (String baseKey : gesturePrefKeys) {
-      for (String layout : new String[] {GestureLayout.SANDFLY, GestureLayout.VOICEOVER}) {
+      for (String layout : GestureLayout.LAYOUTS) {
         String prefKey = GestureLayout.key(layout, baseKey);
         final String currentValue = prefs.getString(prefKey, null);
         if (getString(shortcutRes).equals(currentValue)) {

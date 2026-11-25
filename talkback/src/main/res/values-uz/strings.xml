@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Tepaga, keyin chapga surish</string>
   <string name="title_pref_shortcut_up_and_right">Tepaga, keyin oʻngga surish</string>
   <string name="title_pref_shortcut_right_and_down">Oʻngga, keyin pastga surish</string>
+  <string name="title_pref_shortcut_1finger_3tap">Uch marta teginish</string>
+  <string name="title_pref_shortcut_1finger_4tap">Toʻrt marta teginish</string>
   <string name="title_pref_shortcut_right_and_up">Oʻngga, keyin tepaga surish</string>
   <string name="title_pref_shortcut_left_and_down">Chapga, keyin pastga surish</string>
   <string name="title_pref_shortcut_left_and_up">Chapga, keyin tepaga surish</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Zaryadlovchi ulangan</string>
     <string name="title_pref_screen_announcements">Ekranni yoqish va oʻchirish</string>
     <string name="summary_pref_screen_announcements">Ekran oʻchgan yoki yoqilganda va telefon qulfdan chiqarilganda SandFly nima deyishini tanlang</string>
+    <string name="title_pref_screen_announcements_over_media">Media ijro etilayotganda aytilsin</string>
     <string name="title_screen_announcements_screen_off">Ekran oʻchganda</string>
     <string name="title_screen_announcements_screen_on">Ekran yoqilganda</string>
     <string name="title_screen_announcements_unlock">Telefon qulfdan chiqarilganda</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Roʻyxat haqidagi maʼlumotni aytish</string>
     <string name="pref_speak_grid_positions_title">Setka va jadval haqidagi maʼlumotni aytish</string>
     <string name="pref_speak_role_without_pause_title">Element turini pauzasiz aytish</string>
+    <string name="title_pref_speak_actions_available">“Amallar mavjud” aytilsin</string>
     <string name="title_pref_overview">SandFly umumiy koʻrinishidan foydalanish</string>
     <string name="title_pref_overview_newest_last">Eng yangi ilova pastda</string>
     <string name="title_pref_overview_columns">Ustunlar</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Haptik effektlar</string>
     <string name="vibration_type_pulses">Impulslar</string>
     <string name="vibration_type_on_off">Yoqish va oʻchirish</string>
+    <string name="title_pref_actions_available_sound">“Amallar mavjud” ovozi</string>
+    <string name="value_actions_available_sound_off">Oʻchiq</string>
+    <string name="value_actions_available_sound_focus">Element fokusga olinganda</string>
+    <string name="value_actions_available_sound_after_speech">Element aytilgandan keyin</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Ikki marta teginish ekranga teginadi: yoniq</string>
     <string name="double_tap_taps_off">Ikki marta teginish ekranga teginadi: oʻchiq</string>
     <string name="double_tap_taps_no_app">Oldingi planda ilova yoʻq</string>
+    <string name="keycombo_menu_toggle_key_practice">Klaviatura mashqini yoqish yoki oʻchirish</string>
+    <string name="key_practice_on">Klaviatura mashqi yoniq</string>
+    <string name="key_practice_off">Klaviatura mashqi oʻchiq</string>
+    <string name="key_practice_sandfly_key">SandFly tugmasi</string>
+    <string name="key_practice_title">Klaviatura mashqi</string>
+    <string name="key_practice_summary">Har bir bosilgan tugmani va uning buyrugʻini bajarmasdan aytadi. «Orqaga» tugmasi yoki Escape uni oʻchiradi.</string>
+    <string name="keycombo_menu_touch_hold_focus">Fokusdagi elementda teginishni ushlab turish</string>
+    <string name="touch_hold_held">Teginish ushlab turilibdi</string>
+    <string name="touch_hold_lifted">Teginish qoʻyib yuborildi</string>
+    <string name="touch_hold_unavailable">Mavjud emas</string>
+    <string name="touch_hold_no_focus">Hech bir elementda fokus yoʻq</string>
+    <string name="title_pref_speak_password_characters">Parol belgilarini aytish</string>
+    <string name="summary_pref_speak_password_characters">SandFly klaviaturasi bilan parol maydonlarida kiritilgan, oʻchirilgan va kursor oʻtgan belgilarni aytadi</string>
+    <string name="shortcut_spell_password_field">Parol maydonini harflab oʻqish</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Bu parol maydoni emas</string>
+    <string name="sandfly_keyboard_password_not_available">Parol maydoni matni mavjud emas</string>
+    <string name="sandfly_keyboard_password_not_read">Parol maydonlarida oʻqilmaydi</string>
+    <string name="title_pref_voice_profile_play_sample">Namunani ijro etish</string>
+    <string name="voice_profile_sample_text">Bu ushbu ovozli profilning namunasi.</string>
+    <string name="voice_profile_sample_failed">Namuna ijro etilmadi</string>
+    <string name="title_pref_speech_rate_step">Nutq tezligi qadami</string>
+    <string name="value_speech_rate_step_relative">Tezlikning <xliff:g id="percent" example="10%">%1$s</xliff:g> qismi</string>
+    <string name="shortcut_end_call">Qoʻngʻiroqni tugatish</string>
+    <string name="end_call_no_call">Qoʻngʻiroq yoʻq</string>
+    <string name="end_call_permission">Qoʻngʻiroqlarni tugatish uchun ruxsat kerak</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Keyingi paragrafga oʻtish, ikkinchi tugma</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Avvalgi paragrafga oʻtish, ikkinchi tugma</string>
+    <string name="title_pref_mute_key_dictates">Matn maydonlarida ovoz bilan yozish uchun ovozsiz tugmasini bosib turing</string>
+    <string name="title_pref_mute_key_press">Ovozsiz tugmasini bosish</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Keyingi havolaga oʻtish, ikkinchi tugma</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Avvalgi havolaga oʻtish, ikkinchi tugma</string>
+    <string name="keycombo_only_in_browse_mode">Faqat kezish rejimida</string>
+    <string name="keycombo_keys_in_browse_mode">Kezish rejimida <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">Tezkor qidiruv</string>
+    <string name="title_pref_fast_search_key">Tezkor qidiruv tugmasi</string>
+    <string name="fast_search_key_off">Oʻchiq</string>
+    <string name="title_pref_fast_search_wrap">Boshiga qaytish</string>
+    <string name="fast_search_key_left_alt">Chap Alt</string>
+    <string name="fast_search_key_left_ctrl">Chap Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Oʻng Ctrl</string>
+    <string name="fast_search_key_left_meta">Chap Meta</string>
+    <string name="fast_search_key_right_meta">Oʻng Meta</string>
 </resources>

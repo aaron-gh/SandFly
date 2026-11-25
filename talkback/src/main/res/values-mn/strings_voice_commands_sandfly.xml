@@ -154,4 +154,19 @@
         <item>{label} идэвхжүүл</item>
         <item>{label} сонго</item>
     </string-array>
+    <string name="shortcut_voice_editing">Дуут засварыг эхлүүлэх</string>
+    <string name="voice_editing_on">Дуут засвар асаалттай</string>
+    <string name="voice_editing_off">Дуут засвар унтраалттай</string>
+    <string name="title_pref_voice_editing_time_limit">Дуут засварын хугацааны хязгаар</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> минут</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> минут</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>засварыг зогсоо</item>
+        <item>дуут засварыг зогсоо</item>
+        <item>засварыг дуусга</item>
+        <item>дуут засварыг дуусга</item>
+        <item>дуут засварыг унтраа</item>
+    </string-array>
 </resources>

@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Üles, seejärel vasakule pühkimine</string>
   <string name="title_pref_shortcut_up_and_right">Üles, seejärel paremale pühkimine</string>
   <string name="title_pref_shortcut_right_and_down">Paremale, seejärel alla pühkimine</string>
+  <string name="title_pref_shortcut_1finger_3tap">Kolmikpuudutamine</string>
+  <string name="title_pref_shortcut_1finger_4tap">Neljakordne puudutamine</string>
   <string name="title_pref_shortcut_right_and_up">Paremale, seejärel üles pühkimine</string>
   <string name="title_pref_shortcut_left_and_down">Vasakule, seejärel alla pühkimine</string>
   <string name="title_pref_shortcut_left_and_up">Vasakule, seejärel üles pühkimine</string>
@@ -1351,6 +1353,7 @@
     <string name="value_charger_connected">Laadija on ühendatud</string>
     <string name="title_pref_screen_announcements">Ekraan sees ja väljas</string>
     <string name="summary_pref_screen_announcements">Valige, mida SandFly ütleb, kui ekraan lülitub välja või sisse ja kui telefon avatakse</string>
+    <string name="title_pref_screen_announcements_over_media">Loe ette meedia esitamise ajal</string>
     <string name="title_screen_announcements_screen_off">Kui ekraan lülitub välja</string>
     <string name="title_screen_announcements_screen_on">Kui ekraan lülitub sisse</string>
     <string name="title_screen_announcements_unlock">Kui telefon avatakse</string>
@@ -2007,6 +2010,7 @@
     <string name="pref_speak_list_positions_title">Öelda loendi teave</string>
     <string name="pref_speak_grid_positions_title">Öelda ruudustiku ja tabeli teave</string>
     <string name="pref_speak_role_without_pause_title">Öelda üksuse tüüp pausita</string>
+    <string name="title_pref_speak_actions_available">Loe ette „Toimingud on saadaval”</string>
     <string name="title_pref_overview">Kasuta SandFlyi ülevaadet</string>
     <string name="title_pref_overview_newest_last">Viimati kasutatud rakendus all</string>
     <string name="title_pref_overview_columns">Veerud</string>
@@ -2266,6 +2270,10 @@
     <string name="vibration_type_effects">Haptilised efektid</string>
     <string name="vibration_type_pulses">Impulsid</string>
     <string name="vibration_type_on_off">Sees ja väljas</string>
+    <string name="title_pref_actions_available_sound">Heli „Toimingud on saadaval”</string>
+    <string name="value_actions_available_sound_off">Väljas</string>
+    <string name="value_actions_available_sound_focus">Kui üksus saab fookuse</string>
+    <string name="value_actions_available_sound_after_speech">Pärast üksuse ettelugemist</string>
     <string-array name="pref_vibration_type_entries">
         <item>@string/vibration_type_effects</item>
         <item>@string/vibration_type_pulses</item>
@@ -2766,4 +2774,47 @@
     <string name="double_tap_taps_on">Topeltpuudutus puudutab ekraani sees</string>
     <string name="double_tap_taps_off">Topeltpuudutus puudutab ekraani väljas</string>
     <string name="double_tap_taps_no_app">Ükski rakendus pole esiplaanil</string>
+    <string name="keycombo_menu_toggle_key_practice">Klaviatuuri harjutamine sisse/välja</string>
+    <string name="key_practice_on">Klaviatuuri harjutamine sees</string>
+    <string name="key_practice_off">Klaviatuuri harjutamine väljas</string>
+    <string name="key_practice_sandfly_key">SandFly klahv</string>
+    <string name="key_practice_title">Klaviatuuri harjutamine</string>
+    <string name="key_practice_summary">Loeb ette iga vajutatud klahvi ja selle käsu, ilma käsku käivitamata. Tagasi või Esc lülitab selle välja.</string>
+    <string name="keycombo_menu_touch_hold_focus">Fookuses oleva üksuse puudutuse hoidmine</string>
+    <string name="touch_hold_held">Puudutust hoitakse</string>
+    <string name="touch_hold_lifted">Puudutus vabastatud</string>
+    <string name="touch_hold_unavailable">Pole saadaval</string>
+    <string name="touch_hold_no_focus">Ükski üksus pole fookuses</string>
+    <string name="title_pref_speak_password_characters">Paroolimärkide ettelugemine</string>
+    <string name="summary_pref_speak_password_characters">SandFly klaviatuuriga loetakse parooliväljadel ette sisestatud, kustutatud ja kursoriga ületatud märgid</string>
+    <string name="shortcut_spell_password_field">Paroolivälja tähthaaval ettelugemine</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Pole parooliväli</string>
+    <string name="sandfly_keyboard_password_not_available">Paroolivälja tekst pole saadaval</string>
+    <string name="sandfly_keyboard_password_not_read">Parooliväljadel ei loeta</string>
+    <string name="title_pref_voice_profile_play_sample">Esita näidis</string>
+    <string name="voice_profile_sample_text">See on selle hääleprofiili näidis.</string>
+    <string name="voice_profile_sample_failed">Näidist ei esitatud</string>
+    <string name="title_pref_speech_rate_step">Kõne kiiruse samm</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> kiirusest</string>
+    <string name="shortcut_end_call">Lõpeta kõne</string>
+    <string name="end_call_no_call">Kõnet pole</string>
+    <string name="end_call_permission">Kõnede lõpetamiseks on vaja luba</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Järgmise lõigu juurde navigeerimine, teine klahv</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Eelmise lõigu juurde navigeerimine, teine klahv</string>
+    <string name="title_pref_mute_key_dictates">Hoia vaigistusklahvi all, et tekstiväljadele dikteerida</string>
+    <string name="title_pref_mute_key_press">Vaigistusklahvi vajutus</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Järgmise lingi juurde navigeerimine, teine klahv</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Eelmise lingi juurde navigeerimine, teine klahv</string>
+    <string name="keycombo_only_in_browse_mode">Ainult sirvimisrežiimis</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> sirvimisrežiimis</string>
+    <string name="title_pref_category_fast_search">Kiirotsing</string>
+    <string name="title_pref_fast_search_key">Kiirotsingu klahv</string>
+    <string name="fast_search_key_off">Väljas</string>
+    <string name="title_pref_fast_search_wrap">Ringiga liikumine</string>
+    <string name="fast_search_key_left_alt">Vasak Alt</string>
+    <string name="fast_search_key_left_ctrl">Vasak Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Parem Ctrl</string>
+    <string name="fast_search_key_left_meta">Vasak Meta</string>
+    <string name="fast_search_key_right_meta">Parem Meta</string>
 </resources>
