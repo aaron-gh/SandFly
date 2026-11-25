@@ -1317,7 +1317,7 @@ The braille languages include Mongolian, uncontracted and contracted, from the l
 
 ### Unicode braille
 
-**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
+**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. A space is the blank braille cell U+2800, which SandFly speaks as "blank braille cell" wherever it is read. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
 
 ### Custom braille characters
 
