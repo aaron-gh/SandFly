@@ -20,6 +20,7 @@ import android.accessibilityservice.AccessibilityService
 import com.google.android.accessibility.talkback.gesture.BackTapDetector
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker.Corner
 import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.Edge
+import com.google.android.accessibility.talkback.gesture.EdgeSwipeTracker.MenuEdge
 import com.google.android.accessibility.utils.gestures.GestureManifold
 import kotlin.math.cos
 import kotlin.math.sin
@@ -352,6 +353,121 @@ class AttemptAnalyzerTest {
     assertEquals(ScreenSide.TOP, wrongEdge.expectedSide)
     assertTrue(report.problems.any { it.kind == FindingKind.MENU_OPENED_INSTEAD })
     assertTrue(report.problems.none { it.kind == FindingKind.EDGE_START_TOO_FAR })
+  }
+
+  private val swipeRightLiftSwipeDown =
+    Exercise(
+      GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_DOWN,
+      Shape.TwoStroke(Direction.RIGHT, Direction.DOWN),
+    )
+
+  @Test
+  fun twoStrokeWithOneSwipe_missesTheSecondStroke() {
+    val first = touch(line(0, 300f, 500f, 600f, 500f, durationMs = 120))
+    val report = analyzer.analyze(swipeRightLiftSwipeDown, listOf(first), emptyList())
+    assertFalse(report.success)
+    assertEquals(FindingKind.SECOND_STROKE_MISSING, report.problems.single().kind)
+  }
+
+  @Test
+  fun twoStrokeWithALateSecondSwipe_isLate() {
+    val first = touch(line(0, 300f, 500f, 600f, 500f, durationMs = 120))
+    val second = touch(line(1620, 500f, 800f, 500f, 1100f, durationMs = 120))
+    val report = analyzer.analyze(swipeRightLiftSwipeDown, listOf(first, second), emptyList())
+    val late = report.problems.single()
+    assertEquals(FindingKind.SECOND_STROKE_LATE, late.kind)
+    assertEquals(1500f, late.value)
+    assertEquals(1000f, late.limit)
+    assertEquals(1500f, report.measures.single { it.kind == MeasureKind.STROKE_GAP_MS }.value)
+  }
+
+  @Test
+  fun twoStrokeWithTheSecondSwipeTheWrongWay_namesTheSecondStroke() {
+    val first = touch(line(0, 300f, 500f, 600f, 500f, durationMs = 120))
+    val second = touch(line(400, 500f, 1100f, 500f, 800f, durationMs = 120))
+    val report = analyzer.analyze(swipeRightLiftSwipeDown, listOf(first, second), emptyList())
+    val wrong = report.problems.single()
+    assertEquals(FindingKind.STROKE_WRONG_DIRECTION, wrong.kind)
+    assertEquals(2f, wrong.value)
+    assertEquals(Direction.UP, wrong.direction)
+  }
+
+  @Test
+  fun twoStrokeRecognized_succeeds() {
+    val first = touch(line(0, 300f, 500f, 600f, 500f, durationMs = 120))
+    val second = touch(line(400, 500f, 800f, 500f, 1100f, durationMs = 120))
+    val report =
+      analyzer.analyze(
+        swipeRightLiftSwipeDown,
+        listOf(first, second),
+        listOf(swipeRightLiftSwipeDown.gestureId),
+      )
+    assertTrue(report.success)
+    assertTrue(report.problems.isEmpty())
+  }
+
+  // The left edge menu with four items, each 5 cm of the 20 cm screen; the third is wanted.
+  private val leftMenuThirdItem =
+    Exercise(
+      TrainerExercises.MENU_GESTURE_ID,
+      Shape.EdgeMenu(
+        MenuEdge.LEFT,
+        item = 2,
+        names = listOf("Option 1", "Option 2", "Option 3", "Option 4"),
+        sample = true,
+      ),
+    )
+
+  @Test
+  fun edgeMenuLiftedAtTheWantedItem_succeeds() {
+    val path = line(0, 10f, 300f, 10f, 1200f, durationMs = 300)
+    val report = analyzer.analyze(leftMenuThirdItem, listOf(touch(path)), emptyList(), menuChoice = 2)
+    assertTrue(report.success)
+    assertEquals(3f, report.measures.single { it.kind == MeasureKind.MENU_ITEM }.value)
+  }
+
+  @Test
+  fun edgeMenuLiftedAtAnotherItem_namesBothItems() {
+    val path = line(0, 10f, 300f, 10f, 1700f, durationMs = 400)
+    val report = analyzer.analyze(leftMenuThirdItem, listOf(touch(path)), emptyList(), menuChoice = 3)
+    assertFalse(report.success)
+    val wrong = report.problems.single { it.kind == FindingKind.MENU_WRONG_ITEM }
+    assertEquals(4f, wrong.value)
+    assertEquals(3f, wrong.limit)
+  }
+
+  @Test
+  fun edgeMenuLeftFarFromTheEdge_isCancelled() {
+    val path = line(0, 10f, 300f, 400f, 1200f, durationMs = 300)
+    val report =
+      analyzer.analyze(
+        leftMenuThirdItem,
+        listOf(touch(path)),
+        emptyList(),
+        menuChoice = AttemptAnalyzer.NO_MENU_ITEM,
+      )
+    assertFalse(report.success)
+    assertTrue(report.problems.any { it.kind == FindingKind.MENU_LEFT_EDGE })
+  }
+
+  @Test
+  fun edgeMenuStartedAtTheTopEnd_isInTheCorner() {
+    val path = line(0, 10f, 20f, 10f, 1200f, durationMs = 300)
+    val report = analyzer.analyze(leftMenuThirdItem, listOf(touch(path)), emptyList(), menuChoice = 2)
+    assertTrue(report.success)
+    val failed = analyzer.analyze(leftMenuThirdItem, listOf(touch(path)), emptyList(), menuChoice = 1)
+    assertTrue(failed.problems.any { it.kind == FindingKind.MENU_IN_CORNER })
+  }
+
+  @Test
+  fun lightShake_isTooLight() {
+    val shake = Exercise(TrainerExercises.SHAKE_ID, Shape.Shake)
+    val report = analyzer.analyzeShake(shake, strongest = 6f, needed = 12f, mostSwings = 2, shaken = false)
+    assertFalse(report.success)
+    val light = report.problems.single()
+    assertEquals(FindingKind.SHAKE_TOO_LIGHT, light.kind)
+    assertEquals(6f, light.value)
+    assertEquals(12f, light.limit)
   }
 
   @Test
