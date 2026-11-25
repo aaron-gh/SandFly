@@ -43,6 +43,7 @@ import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.content.ContextCompat
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.DIRECT_TOUCH_REGION
+import com.google.android.accessibility.talkback.Feedback.PassThroughMode.Action.KEYBOARD_REGION
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.monitor.RingerModeAndScreenMonitor
@@ -67,8 +68,10 @@ import com.google.android.accessibility.utils.output.ThemeVibrations
  * field needs the screen reader, or the screen turns off. The keyboard stays with Backtalk without
  * ending direct touch, because its window is cut out of the passthrough region unless direct typing
  * is on for the app. A keyboard that is itself in the list, such as a self-voicing braille keyboard,
- * takes touches directly in every app, whether or not direct touch is on. While a keyboard whose app
- * has an accessibility service of its own is shown, the region that service sets stays.
+ * takes touches directly in every app, whether or not direct touch is on. A keyboard whose app has an
+ * accessibility service of its own and draws in an accessibility overlay, such as Advanced Braille
+ * Keyboard, takes touches directly over the overlay. While such a keyboard is shown in an input
+ * method window alone, the region its service sets stays.
  *
  * An app can also choose where it gets direct touch: in its manifest, by activity and by a state
  * it sets, and while it runs through [DirectTouchService]. See docs/direct-touch-api.md. Areas that
@@ -107,6 +110,8 @@ constructor(
   // Whether the passthrough region now holds just the navigation bar or a keyboard in the list,
   // while direct touch is off.
   private var partRegionSent = false
+  // The accessibility overlays of a keyboard with its own accessibility service, last sent.
+  private var keyboardOverlay = Region()
   private var paused = false
   // The value of takesTouchesDirectly() last reported to onTouchesDirectChanged.
   private var reportedTouchesDirect = false
@@ -362,6 +367,7 @@ constructor(
       partRegionSent = false
       clearRegion()
     }
+    sendKeyboardOverlay(Region())
   }
 
   private fun scheduleEvaluate() {
@@ -394,6 +400,12 @@ constructor(
       mainPackage.takeIf { target is DirectTouchTarget.Areas && target.viewIds.isNotEmpty() }
     val navBarDirect = isNavBarDirect()
     val keyboards = directKeyboards(windows)
+    val ownKeyboard = keyboardWithOwnService(windows, keyboards)
+    // The overlays go with every region sent, so they also come back after any region replaced
+    // the one the keyboard's service set.
+    sendKeyboardOverlay(ownKeyboard?.overlay ?: Region())
+    // A keyboard in an input method window alone, whose region SandFly doesn't know.
+    val keepsKeyboardRegion = ownKeyboard != null && ownKeyboard.overlay.isEmpty
     val region =
       when (target) {
         DirectTouchTarget.None -> null
@@ -406,7 +418,7 @@ constructor(
       partRegionSent = false
       // The keyboard's own accessibility service may have set the region for the keyboard, and the
       // app's would replace it. The region already sent stays until the keyboard closes.
-      if (!keyboardHasOwnService(windows, keyboards)) {
+      if (!keepsKeyboardRegion) {
         sendRegion(region)
       }
     }
@@ -419,7 +431,7 @@ constructor(
       announce(active)
     }
     if (!active) {
-      updatePartRegion(windows, navBarDirect, keyboards)
+      updatePartRegion(windows, navBarDirect, keyboards, keepsKeyboardRegion)
     }
     reportTouchesDirect()
   }
@@ -485,15 +497,16 @@ constructor(
    * While direct touch is off, keeps the navigation bar in the passthrough region if tap to
    * activate navigation bar buttons is on, and a keyboard in the direct touch list while it shows,
    * and takes them out again once they aren't. The region is sent again on every look, because
-   * other services can clear the shared one, except while [keyboardHasOwnService] with tap to
-   * activate navigation bar buttons on: then nothing is sent, and the region already sent stays.
+   * other services can clear the shared one, except with [keepsKeyboardRegion] and tap to activate
+   * navigation bar buttons on: then nothing is sent, and the region already sent stays.
    */
   private fun updatePartRegion(
     windows: List<AccessibilityWindowInfo>,
     navBarDirect: Boolean,
     keyboards: List<AccessibilityWindowInfo>,
+    keepsKeyboardRegion: Boolean,
   ) {
-    if (navBarDirect && keyboardHasOwnService(windows, keyboards)) {
+    if (navBarDirect && keepsKeyboardRegion) {
       // The system keeps one passthrough region for all services. The keyboard's own accessibility
       // service may have set one so that the keyboard gets touches directly, as some braille
       // keyboards do, and the navigation bar's would replace it. The region already sent stays.
@@ -511,38 +524,51 @@ constructor(
     }
   }
 
+  /** A keyboard whose app has an accessibility service of its own, and its overlays' bounds. */
+  private class KeyboardWithService(val overlay: Region)
+
   /**
-   * Whether a keyboard is shown that isn't in [keyboards], the direct touch list's, and whose app
-   * has an enabled accessibility service of its own, which may set the passthrough region for it.
-   * The keyboard is the default input method's [AccessibilityWindowInfo.TYPE_INPUT_METHOD] window,
-   * or an [AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY] window of the default input
-   * method's package, as some full-screen braille keyboards draw.
+   * The keyboard shown that isn't in [keyboards], the direct touch list's, and whose app has an
+   * enabled accessibility service of its own, which may set the passthrough region for it. Null when
+   * there is none. The keyboard is the default input method's
+   * [AccessibilityWindowInfo.TYPE_INPUT_METHOD] window, or an
+   * [AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY] window of the default input method's
+   * package, as some full-screen braille keyboards draw. The overlay holds those overlay windows'
+   * bounds, and is empty for a keyboard in an input method window alone.
    */
-  private fun keyboardHasOwnService(
+  private fun keyboardWithOwnService(
     windows: List<AccessibilityWindowInfo>,
     keyboards: List<AccessibilityWindowInfo>,
-  ): Boolean {
+  ): KeyboardWithService? {
     val inputMethodShown =
       windows.any { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD && it !in keyboards }
     val overlays = windows.filter { it.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY }
     if (!inputMethodShown && overlays.isEmpty()) {
-      return false
+      return null
     }
     val keyboard =
       Settings.Secure.getString(service.contentResolver, Settings.Secure.DEFAULT_INPUT_METHOD)
         ?.let { ComponentName.unflattenFromString(it)?.packageName }
-        ?: return false
+        ?: return null
     if (keyboard == service.packageName) {
-      return false
+      return null
     }
-    if (!inputMethodShown && overlays.none { rootPackage(it) == keyboard }) {
-      return false
+    val keyboardOverlays = overlays.filter { rootPackage(it) == keyboard }
+    if (!inputMethodShown && keyboardOverlays.isEmpty()) {
+      return null
     }
-    return service
-      .getSystemService(AccessibilityManager::class.java)
-      ?.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK)
-      .orEmpty()
-      .any { it.resolveInfo?.serviceInfo?.packageName == keyboard }
+    val hasService =
+      service
+        .getSystemService(AccessibilityManager::class.java)
+        ?.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK)
+        .orEmpty()
+        .any { it.resolveInfo?.serviceInfo?.packageName == keyboard }
+    if (!hasService) {
+      return null
+    }
+    val overlay = Region()
+    keyboardOverlays.forEach { overlay.union(boundsOf(it)) }
+    return KeyboardWithService(overlay)
   }
 
   /**
@@ -791,6 +817,18 @@ constructor(
   }
 
   private fun clearRegion() = sendRegion(Region())
+
+  /** Sends the keyboard's overlays when they change; every region sent afterwards includes them. */
+  private fun sendKeyboardOverlay(overlay: Region) {
+    if (overlay == keyboardOverlay) {
+      return
+    }
+    keyboardOverlay = Region(overlay)
+    feedback.returnFeedback(
+      Performance.EVENT_ID_UNTRACKED,
+      Feedback.passThroughMode(KEYBOARD_REGION, overlay),
+    )
+  }
 
   private fun sendRegion(region: Region) {
     feedback.returnFeedback(

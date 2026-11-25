@@ -381,7 +381,7 @@ class DirectTouchControllerTest {
   }
 
   @Test
-  fun keyboardOverlayWithItsOwnServiceKeepsTheRegionThatServiceSets() {
+  fun keyboardOverlayWithItsOwnServiceTakesTouchesDirectlyWithTheNavigationBar() {
     prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR_TAP, true).apply()
     useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
     enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
@@ -390,6 +390,8 @@ class DirectTouchControllerTest {
     assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
 
     // The keyboard draws itself in an accessibility overlay instead of an input method window.
+    // The overlay goes with every region sent, so a region sent before SandFly saw the overlay
+    // can't keep the keyboard's touches.
     transcript.clear()
     windowsChange(
       OVERLAY,
@@ -399,9 +401,69 @@ class DirectTouchControllerTest {
       game(),
       overlay(BRAILLE_KEYBOARD_PACKAGE),
     )
-    assertTranscript()
+    assertEquals(listOf(SCREEN_KEYBOARD_REGION, NAVIGATION_BAR_REGION), transcript.distinct())
 
+    transcript.clear()
     windowsChange(OVERLAY, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+    assertEquals(listOf("keyboard region none", NAVIGATION_BAR_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardOverlayBesideItsInputMethodWindowTakesTouchesDirectly() {
+    // As Advanced Braille Keyboard draws: a full-screen accessibility overlay, and a strip at the
+    // bottom in an input method window.
+    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR_TAP, true).apply()
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(BRAILLE_KEYBOARD_PACKAGE, Rect(0, 2220, 1080, 2340)),
+      overlay(BRAILLE_KEYBOARD_PACKAGE),
+    )
+
+    assertEquals(listOf(SCREEN_KEYBOARD_REGION, NAVIGATION_BAR_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardOverlayTakesTouchesDirectlyWithTheNavigationBarOff() {
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
+
+    windowsChange(
+      OVERLAY,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      overlay(BRAILLE_KEYBOARD_PACKAGE),
+    )
+    assertTranscript(SCREEN_KEYBOARD_REGION)
+
+    transcript.clear()
+    windowsChange(OVERLAY, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+    assertTranscript("keyboard region none")
+  }
+
+  @Test
+  fun keyboardOverlayWithoutAServiceTakesNoRegion() {
+    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR_TAP, true).apply()
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf("com.example.other")
+
+    windowsChange(
+      OVERLAY,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      overlay(BRAILLE_KEYBOARD_PACKAGE),
+    )
+
     assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
   }
 
@@ -441,6 +503,10 @@ class DirectTouchControllerTest {
       game(),
       keyboard(BRAILLE_KEYBOARD_PACKAGE),
     )
+    assertTranscript()
+
+    // A keyboard in an accessibility overlay takes touches directly over it. The game's region
+    // leaves out the windows above the game, here all of it.
     windowsChange(
       OVERLAY,
       WINDOWS_CHANGE_ADDED,
@@ -449,10 +515,11 @@ class DirectTouchControllerTest {
       game(),
       overlay(BRAILLE_KEYBOARD_PACKAGE),
     )
-    assertTranscript()
+    assertEquals(listOf(SCREEN_KEYBOARD_REGION, "region none"), transcript.distinct())
 
+    transcript.clear()
     windowsChange(OVERLAY, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
-    assertEquals(listOf(GAME_REGION), transcript.distinct())
+    assertEquals(listOf("keyboard region none", GAME_REGION), transcript.distinct())
   }
 
   @Test
@@ -636,10 +703,13 @@ class DirectTouchControllerTest {
     }
     part.passThroughMode()?.let {
       val region = it.region()
+      val name =
+        if (it.action() == Feedback.PassThroughMode.Action.KEYBOARD_REGION) "keyboard region"
+        else "region"
       return if (region.isEmpty) {
-        "region none"
+        "$name none"
       } else {
-        "region ${region.bounds.toShortString()} complex=${region.isComplex}"
+        "$name ${region.bounds.toShortString()} complex=${region.isComplex}"
       }
     }
     return part.toString()
@@ -667,6 +737,7 @@ class DirectTouchControllerTest {
     const val MAGNIFIER_PACKAGE = "com.example.magnifier"
     const val NAVIGATION_BAR_REGION = "region [0,2220][1080,2340] complex=false"
     const val GAME_REGION = "region [0,80][1080,2220] complex=false"
+    const val SCREEN_KEYBOARD_REGION = "keyboard region [0,0][1080,2340] complex=false"
     val SCREEN = Rect(0, 0, 1080, 2340)
   }
 }

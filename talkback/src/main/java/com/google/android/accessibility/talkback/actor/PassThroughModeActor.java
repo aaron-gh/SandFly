@@ -57,6 +57,12 @@ public class PassThroughModeActor {
   private Region wantedRegion = new Region();
   // Whether touch is locked, which keeps every region empty.
   private boolean touchLocked;
+  // The accessibility overlays of a keyboard whose own accessibility service sets the region for
+  // them, such as Advanced Braille Keyboard's. The system keeps one region for all services, so
+  // every region set here includes them, except while a feature holds the pass-through lock.
+  private Region keyboardRegion = new Region();
+  // The region given to the system last, to log changes. Null before the first.
+  @Nullable private Region appliedRegion;
   private PassThroughModeDialog passThroughDialog;
   // The exit runs on the main thread, like everything else here, not on a thread of its own.
   private final Handler handler = new Handler(Looper.getMainLooper());
@@ -148,7 +154,23 @@ public class PassThroughModeActor {
       return;
     }
     this.touchLocked = touchLocked;
-    service.setTouchExplorationPassthroughRegion(Display.DEFAULT_DISPLAY, appliedRegion());
+    applyRegion(Display.DEFAULT_DISPLAY);
+  }
+
+  /**
+   * Sets the accessibility overlays of a keyboard whose own accessibility service sets the
+   * passthrough region for them, or clears them with null. Every region set afterwards includes
+   * them, so that the keyboard keeps getting touches directly.
+   */
+  public void setKeyboardRegion(@Nullable Region region) {
+    Region next = region == null ? new Region() : new Region(region);
+    if (next.equals(keyboardRegion)) {
+      return;
+    }
+    keyboardRegion = next;
+    if (FeatureSupport.supportPassthrough()) {
+      applyRegion(Display.DEFAULT_DISPLAY);
+    }
   }
 
   /**
@@ -158,12 +180,47 @@ public class PassThroughModeActor {
    */
   private void setRegion(int displayId, Region region) {
     wantedRegion = region;
-    service.setTouchExplorationPassthroughRegion(displayId, appliedRegion());
+    applyRegion(displayId);
   }
 
-  /** The region that applies now: none while touch is locked and no feature holds the lock. */
+  /**
+   * Gives the system the region that applies now. It is set again even when unchanged, because
+   * other services can replace the shared one.
+   */
+  private void applyRegion(int displayId) {
+    Region region = appliedRegion();
+    if (!region.equals(appliedRegion)) {
+      LogUtils.i(
+          TAG,
+          "Passthrough region %s, keyboard overlay %s",
+          describe(region),
+          describe(keyboardRegion));
+    }
+    appliedRegion = region;
+    service.setTouchExplorationPassthroughRegion(displayId, region);
+  }
+
+  /**
+   * The region that applies now: none while touch is locked and no feature holds the lock, the
+   * lock's own while a feature holds it, and otherwise the region wanted with the keyboard's.
+   */
   private Region appliedRegion() {
-    return touchLocked && !locked ? new Region() : wantedRegion;
+    if (touchLocked && !locked) {
+      return new Region();
+    }
+    if (locked || keyboardRegion.isEmpty()) {
+      return wantedRegion;
+    }
+    Region region = new Region(wantedRegion);
+    region.op(keyboardRegion, Region.Op.UNION);
+    return region;
+  }
+
+  private static String describe(Region region) {
+    if (region.isEmpty()) {
+      return "none";
+    }
+    return region.getBounds().toShortString() + (region.isComplex() ? " complex" : "");
   }
 
   public void showEducationDialog() {

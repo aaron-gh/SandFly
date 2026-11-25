@@ -126,6 +126,50 @@ class PassThroughModeActorTest {
   }
 
   @Test
+  fun everyRegionIncludesTheKeyboardsOverlay() {
+    val navigationBar = Rect(0, 2220, 1080, 2340)
+    val keyboard = Rect(0, 0, 1080, 1200)
+    actor.setDirectTouchRegion(Region(navigationBar))
+    actor.setKeyboardRegion(Region(keyboard))
+    assertEquals(Rect(0, 0, 1080, 2340), service.regions.last())
+
+    // Setting the same keyboard region again changes nothing.
+    val count = service.regions.size
+    actor.setKeyboardRegion(Region(keyboard))
+    assertEquals(count, service.regions.size)
+
+    // The pass-through gesture ending sets the direct touch region again, with the keyboard's.
+    actor.setTouchExplorePassThrough(false)
+    assertEquals(Rect(0, 0, 1080, 2340), service.regions.last())
+
+    actor.setKeyboardRegion(null)
+    assertEquals(navigationBar, service.regions.last())
+  }
+
+  @Test
+  fun aLockHoldsItsOwnRegionAndTheKeyboardsComesBackAfterIt() {
+    val keyboard = Rect(0, 0, 1080, 1200)
+    val menu = Rect(100, 1300, 900, 2000)
+    actor.setKeyboardRegion(Region(keyboard))
+    actor.lockTouchExplorePassThrough(Region(menu))
+    assertEquals(menu, service.regions.last())
+
+    actor.lockTouchExplorePassThrough(null)
+    assertEquals(keyboard, service.regions.last())
+  }
+
+  @Test
+  fun lockedTouchClearsTheKeyboardsRegionUntilItUnlocks() {
+    val keyboard = Rect(0, 0, 1080, 1200)
+    actor.setKeyboardRegion(Region(keyboard))
+    actor.setTouchLocked(true)
+    assertEquals(Rect(), service.regions.last())
+
+    actor.setTouchLocked(false)
+    assertEquals(keyboard, service.regions.last())
+  }
+
+  @Test
   fun aTouchThatStartsKeepsTheModeOn() {
     actor.setTouchExplorePassThrough(true)
     pass(1000)
