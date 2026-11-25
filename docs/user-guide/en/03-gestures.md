@@ -296,3 +296,15 @@ The shortcut is added to the list, where you can rename or delete it. See [](#co
 ### Practice gestures {#gestures-practice}
 
 **Gestures** > **Practice gestures** opens a page where you can try any gesture. SandFly says what the gesture does instead of running it. The **Practice gestures** command opens the same page.
+
+### Gesture trainer {#gestures-trainer}
+
+**Help & feedback** > **Gesture trainer** measures gestures against the limits SandFly uses with your settings. It needs Android 13 or later.
+
+1. Choose a group, such as **One finger**, **Edge menus** or **Back tap**.
+2. Read the description of the gesture, and choose **Start**.
+3. Make the gesture 3 times. The result of each try is spoken.
+
+While the tries are taken, each touch is a try, and gestures run no commands. After the last try, the screen lists the measurements of each try, what to change, and the settings that change the limits, with a button for each. **Repeat** takes the tries again, **Next exercise** goes to the next gesture, and **Contents** lists the exercises of the group.
+
+A group leaves out gestures that your settings turn off, and says which setting. An edge without an edge menu is practised with sample items, which run no commands.
