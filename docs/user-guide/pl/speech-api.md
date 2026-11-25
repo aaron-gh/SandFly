@@ -55,11 +55,11 @@ Aplikacje bez tej deklaracji nie mogą odczytywać tekstu na ekranie blokady. Li
 
 ## Połączenie z usługą {#binding-to-the-service}
 
-To najbardziej niezawodna metoda i działa we wszystkich wersjach Androida obsługiwanych przez SandFly. Skopiuj plik `talkback/src/main/aidl/fyi/quin/backtalk/speech/ISpeechControl.aidl` do aplikacji, zachowując pakiet `fyi.quin.backtalk.speech`. Połącz się z usługą:
+To najbardziej niezawodna metoda i działa we wszystkich wersjach Androida obsługiwanych przez SandFly. Skopiuj plik `talkback/src/main/aidl/io/github/aaron_gh/sandfly/speech/ISpeechControl.aidl` do aplikacji, zachowując pakiet `io.github.aaron_gh.sandfly.speech`. Połącz się z usługą:
 
 ```kotlin
 val intent =
-  Intent("fyi.quin.backtalk.action.SPEECH_CONTROL").setPackage("io.github.aaron_gh.sandfly")
+  Intent("io.github.aaron_gh.sandfly.action.SPEECH_CONTROL").setPackage("io.github.aaron_gh.sandfly")
 context.bindService(intent, connection, Context.BIND_AUTO_CREATE)
 ```
 
@@ -92,7 +92,7 @@ Aplikacja do automatyzacji może użyć komunikatu, żeby uniknąć łączenia z
 
 ```kotlin
 val intent =
-  Intent("fyi.quin.backtalk.action.SPEAK")
+  Intent("io.github.aaron_gh.sandfly.action.SPEAK")
     .setPackage("io.github.aaron_gh.sandfly")
     .putExtra("text", "Download finished")
     .putExtra("interrupt", false)
@@ -102,11 +102,32 @@ context.sendBroadcast(intent, null, options.toBundle())
 
 | Akcja | Dodatkowe pola |
 | --- | --- |
-| `fyi.quin.backtalk.action.SPEAK` | `text` jest wymaganym ciągiem znaków. `interrupt` jest wartością logiczną. `rate`, `pitch` i `volume` przyjmują liczby tak samo jak w `speak`. |
-| `fyi.quin.backtalk.action.STOP_SPEECH` | Bez dodatkowych pól. |
+| `io.github.aaron_gh.sandfly.action.SPEAK` | `text` jest wymaganym ciągiem znaków. `interrupt` jest wartością logiczną. `rate`, `pitch` i `volume` przyjmują liczby tak samo jak w `speak`. |
+| `io.github.aaron_gh.sandfly.action.STOP_SPEECH` | Bez dodatkowych pól. |
 
 SandFly pomija komunikaty bez informacji o nadawcy.
 
 ## Skrypty {#scripts}
 
 Skrypt Lua może użyć bezpośrednio `sf.speak`. Zobacz [API skryptów](scripting.md).
+
+## Przestarzałe nazwy {#deprecated-names}
+
+Te nazwy, pochodzące z Backtalk, są przestarzałe:
+
+| Przestarzała nazwa | Nowa nazwa |
+| --- | --- |
+| `fyi.quin.backtalk.action.SPEECH_CONTROL` | `io.github.aaron_gh.sandfly.action.SPEECH_CONTROL` |
+| `fyi.quin.backtalk.speech.ISpeechControl` | `io.github.aaron_gh.sandfly.speech.ISpeechControl` |
+| `fyi.quin.backtalk.action.SPEAK` | `io.github.aaron_gh.sandfly.action.SPEAK` |
+| `fyi.quin.backtalk.action.STOP_SPEECH` | `io.github.aaron_gh.sandfly.action.STOP_SPEECH` |
+
+Przestarzała akcja łączy się z przestarzałym interfejsem, więc zmień obie nazwy jednocześnie.
+
+SandFly 27.0 i nowsze nadal przyjmują te nazwy od aplikacji, które z nich korzystają. Gdy aplikacja użyje jednej z nich po raz pierwszy od uruchomienia SandFly, SandFly zapisuje w logu ostrzeżenie z tagiem `SandFlyApi`. Aby wyświetlić ostrzeżenia:
+
+```sh
+adb logcat -s SandFlyApi
+```
+
+Przestarzałe nazwy zostaną usunięte w jednej z kolejnych wersji. SandFly 0.7.0 i starsze przyjmują tylko przestarzałe nazwy. Aby obsługiwać także te wersje, połącz się z usługą najpierw przez nową akcję, a gdy `bindService` zwróci false, przez przestarzałą.

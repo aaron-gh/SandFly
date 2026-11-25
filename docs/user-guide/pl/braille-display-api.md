@@ -25,7 +25,7 @@ Zadeklaruj uprawnienie, które umożliwia zgłoszenie aplikacji jako monitora. U
         android:exported="true"
         android:permission="io.github.aaron_gh.sandfly.permission.BIND_BRAILLE_DISPLAY">
         <intent-filter>
-            <action android:name="fyi.quin.backtalk.action.BRAILLE_DISPLAY" />
+            <action android:name="io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAY" />
         </intent-filter>
     </service>
 </application>
@@ -45,9 +45,9 @@ Po uzyskaniu zgody SandFly łączy się z usługą. Utrzymuje połączenie przez
 
 ```kotlin
 context.startActivity(
-  Intent("fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY")
+  Intent("io.github.aaron_gh.sandfly.action.ASK_BRAILLE_DISPLAY")
     .setPackage("io.github.aaron_gh.sandfly")
-    .putExtra("fyi.quin.backtalk.extra.PACKAGE", context.packageName)
+    .putExtra("io.github.aaron_gh.sandfly.extra.PACKAGE", context.packageName)
     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
 ```
 
@@ -55,12 +55,12 @@ Jeśli zgoda już jest, nic się nie wyświetli. Jeżeli aplikacja chce ponowić
 
 ```kotlin
 context.sendBroadcast(
-  Intent("fyi.quin.backtalk.action.BRAILLE_DISPLAYS_CHANGED").setPackage("io.github.aaron_gh.sandfly"))
+  Intent("io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAYS_CHANGED").setPackage("io.github.aaron_gh.sandfly"))
 ```
 
 ## Interfejs {#the-interface}
 
-Skopiuj pliki `IBrailleDisplay.aidl` i `IBrailleDisplayHost.aidl` z katalogu `braille/brailledisplay/src/phone/aidl/fyi/quin/backtalk/braille/`. Zachowaj pakiet `fyi.quin.backtalk.braille`. Usługa zwraca `IBrailleDisplay`. SandFly przekazuje jej `IBrailleDisplayHost` do wywołań w drugą stronę:
+Skopiuj pliki `IBrailleDisplay.aidl` i `IBrailleDisplayHost.aidl` z katalogu `braille/brailledisplay/src/phone/aidl/io/github/aaron_gh/sandfly/braille/`. Zachowaj pakiet `io.github.aaron_gh.sandfly.braille`. Usługa zwraca `IBrailleDisplay`. SandFly przekazuje jej `IBrailleDisplayHost` do wywołań w drugą stronę:
 
 ```kotlin
 class DisplayService : Service() {
@@ -95,3 +95,26 @@ class DisplayService : Service() {
 ## Pierwszeństwo monitorów {#one-display-at-a-time}
 
 SandFly używa jednego monitora naraz. Monitor Bluetooth lub USB ma pierwszeństwo. Gdy jest podłączony, monitory udostępniane przez aplikacje czekają. Jeśli jeden z nich był używany wcześniej, po rozłączeniu monitora Bluetooth lub USB SandFly do niego wróci. Gdy kilka aplikacji z udzieloną zgodą uruchomi swoje monitory, SandFly użyje pierwszego. Pozostałe czekają, aż pierwszy zakończy pracę.
+
+## Przestarzałe nazwy {#deprecated-names}
+
+Te nazwy, pochodzące z Backtalk, są przestarzałe:
+
+| Przestarzała nazwa | Nowa nazwa |
+| --- | --- |
+| `fyi.quin.backtalk.action.BRAILLE_DISPLAY` | `io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAY` |
+| `fyi.quin.backtalk.braille.IBrailleDisplay` | `io.github.aaron_gh.sandfly.braille.IBrailleDisplay` |
+| `fyi.quin.backtalk.braille.IBrailleDisplayHost` | `io.github.aaron_gh.sandfly.braille.IBrailleDisplayHost` |
+| `fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY` | `io.github.aaron_gh.sandfly.action.ASK_BRAILLE_DISPLAY` |
+| `fyi.quin.backtalk.extra.PACKAGE` | `io.github.aaron_gh.sandfly.extra.PACKAGE` |
+| `fyi.quin.backtalk.action.BRAILLE_DISPLAYS_CHANGED` | `io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAYS_CHANGED` |
+
+Z usługą zadeklarowaną z przestarzałą akcją SandFly łączy się przez przestarzałe interfejsy, więc zmień akcję i oba interfejsy jednocześnie. Usługa z obiema akcjami jest łączona przez nowe interfejsy. W przypadku `BRAILLE_DISPLAYS_CHANGED` ostrzeżenie podaje nazwę aplikacji tylko w Androidzie 14 i nowszym, gdy komunikat rozgłoszeniowy udostępnia tożsamość nadawcy.
+
+SandFly 27.0 i nowsze nadal przyjmują te nazwy od aplikacji, które z nich korzystają. Gdy aplikacja użyje jednej z nich po raz pierwszy od uruchomienia SandFly, SandFly zapisuje w logu ostrzeżenie z tagiem `SandFlyApi`. Aby wyświetlić ostrzeżenia:
+
+```sh
+adb logcat -s SandFlyApi
+```
+
+Przestarzałe nazwy zostaną usunięte w jednej z kolejnych wersji. SandFly 0.7.0 i starsze przyjmują tylko przestarzałe nazwy. Aby obsługiwać także te wersje, zadeklaruj obie akcje, a w `onBind` zwróć interfejs pasujący do akcji intencji.

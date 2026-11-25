@@ -20,10 +20,11 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import com.google.android.accessibility.utils.DeprecatedApiNames
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
- * Takes speech requests sent as broadcasts. Backtalk has to know which app sent each one, to ask
+ * Takes speech requests sent as broadcasts. SandFly has to know which app sent each one, to ask
  * the user about it, so a broadcast is only taken from Android 14, and only when the app shares
  * its identity with BroadcastOptions.setShareIdentityEnabled. Apps that can't can bind to
  * [SpeechControlService] instead.
@@ -39,7 +40,14 @@ class SpeechControlReceiver : BroadcastReceiver() {
     val apps = listOf(sender)
     SpeechControl.recordCaller(context, apps)
     when (intent.action) {
-      SpeechControl.ACTION_SPEAK ->
+      SpeechControl.LEGACY_ACTION_SPEAK ->
+        DeprecatedApiNames.warn(sender, SpeechControl.LEGACY_ACTION_SPEAK, SpeechControl.ACTION_SPEAK)
+      SpeechControl.LEGACY_ACTION_STOP ->
+        DeprecatedApiNames.warn(sender, SpeechControl.LEGACY_ACTION_STOP, SpeechControl.ACTION_STOP)
+    }
+    when (intent.action) {
+      SpeechControl.ACTION_SPEAK,
+      SpeechControl.LEGACY_ACTION_SPEAK ->
         SpeechControl.speak(
           apps,
           intent.getStringExtra(SpeechControl.EXTRA_TEXT),
@@ -48,7 +56,8 @@ class SpeechControlReceiver : BroadcastReceiver() {
           pitch = floatExtra(intent, SpeechControl.EXTRA_PITCH),
           volume = floatExtra(intent, SpeechControl.EXTRA_VOLUME),
         )
-      SpeechControl.ACTION_STOP -> SpeechControl.stop(apps)
+      SpeechControl.ACTION_STOP,
+      SpeechControl.LEGACY_ACTION_STOP -> SpeechControl.stop(apps)
     }
   }
 

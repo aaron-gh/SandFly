@@ -19,6 +19,9 @@ package fyi.quin.backtalk.directtouch;
 import android.graphics.Rect;
 
 /**
+ * Deprecated: use io.github.aaron_gh.sandfly.directtouch.IDirectTouch, which is the same.
+ * SandFly still takes this one from apps built against it.
+ *
  * Lets an app choose where it gets direct touch while it is in front. See docs/direct-touch-api.md.
  *
  * Every call passes client, a Binder the app keeps for as long as its process runs. SandFly drops

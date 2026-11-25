@@ -32,18 +32,20 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
- * Asks the user, with a notification, whether an app may speak through Backtalk, the first time
+ * Asks the user, with a notification, whether an app may speak through SandFly, the first time
  * it tries. Nothing the app sends is said until the user allows it, so that an app the user never
- * chose can't speak in Backtalk's voice.
+ * chose can't speak in SandFly's voice.
  */
 object SpeechControlApproval {
   private const val TAG = "SpeechControlApproval"
-  private const val ACTION_ALLOW = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH"
-  private const val ACTION_DENY = "fyi.quin.backtalk.action.DENY_APP_SPEECH"
-  private const val ACTION_DISMISSED = "fyi.quin.backtalk.action.DISMISS_APP_SPEECH"
-  internal const val ACTION_ALLOW_LOCKED = "fyi.quin.backtalk.action.ALLOW_APP_SPEECH_LOCKED"
-  private const val ACTION_DENY_LOCKED = "fyi.quin.backtalk.action.DENY_APP_SPEECH_LOCKED"
-  private const val ACTION_DISMISSED_LOCKED = "fyi.quin.backtalk.action.DISMISS_APP_SPEECH_LOCKED"
+  private const val ACTION_ALLOW = "io.github.aaron_gh.sandfly.action.ALLOW_APP_SPEECH"
+  private const val ACTION_DENY = "io.github.aaron_gh.sandfly.action.DENY_APP_SPEECH"
+  private const val ACTION_DISMISSED = "io.github.aaron_gh.sandfly.action.DISMISS_APP_SPEECH"
+  internal const val ACTION_ALLOW_LOCKED =
+    "io.github.aaron_gh.sandfly.action.ALLOW_APP_SPEECH_LOCKED"
+  private const val ACTION_DENY_LOCKED = "io.github.aaron_gh.sandfly.action.DENY_APP_SPEECH_LOCKED"
+  private const val ACTION_DISMISSED_LOCKED =
+    "io.github.aaron_gh.sandfly.action.DISMISS_APP_SPEECH_LOCKED"
   internal const val EXTRA_APP = "app"
   private const val NOTIFICATION_ID_BASE = 0x5ec0
 

@@ -40,11 +40,19 @@ import org.checkerframework.checker.nullness.qual.Nullable;
 
 /**
  * The apps that can provide a braille display, and which of them the user has allowed. An app can
- * only ask to be one; Backtalk uses it once the user allows it in Backtalk, not before.
+ * only ask to be one; SandFly uses it once the user allows it in SandFly, not before.
  */
 public final class ExternalDisplayApps {
   /** The action of a display app's service. */
-  public static final String ACTION_BRAILLE_DISPLAY = "fyi.quin.backtalk.action.BRAILLE_DISPLAY";
+  public static final String ACTION_BRAILLE_DISPLAY =
+      "io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAY";
+
+  /**
+   * The deprecated action from Backtalk, whose service returns the deprecated interface. See
+   * DeprecatedApiNames.
+   */
+  public static final String LEGACY_ACTION_BRAILLE_DISPLAY =
+      "fyi.quin.backtalk.action.BRAILLE_DISPLAY";
 
   /**
    * The permission a display app holds to ask to be one. Named after the app ID, as the manifest
@@ -55,7 +63,7 @@ public final class ExternalDisplayApps {
     return context.getPackageName() + ".permission.BRAILLE_DISPLAY";
   }
 
-  /** The permission a display app's service requires, which only Backtalk holds. */
+  /** The permission a display app's service requires, which only SandFly holds. */
   private static String permissionBindBrailleDisplay(Context context) {
     return context.getPackageName() + ".permission.BIND_BRAILLE_DISPLAY";
   }
@@ -188,23 +196,48 @@ public final class ExternalDisplayApps {
     }
   }
 
+  /** An app's display service, and whether it has only the deprecated action and interface. */
+  public static final class DisplayService {
+    public final ComponentName component;
+    public final boolean legacy;
+
+    DisplayService(ComponentName component, boolean legacy) {
+      this.component = component;
+      this.legacy = legacy;
+    }
+  }
+
   /**
    * The display services of installed apps that can be displays, by package: the service must be one
-   * that only Backtalk can bind, as an accessibility service must be one that only Android can bind,
-   * and the app must hold the permission. Whether the user allowed them isn't checked here.
+   * that only SandFly can bind, as an accessibility service must be one that only Android can bind,
+   * and the app must hold the permission. A service with {@link #ACTION_BRAILLE_DISPLAY} comes before
+   * one with only {@link #LEGACY_ACTION_BRAILLE_DISPLAY}. Whether the user allowed them isn't
+   * checked here.
    */
-  public static Map<String, ComponentName> displayServices(Context context, int flags) {
-    PackageManager packageManager = context.getPackageManager();
-    Map<String, ComponentName> services = new HashMap<>();
+  public static Map<String, DisplayService> displayServices(Context context, int flags) {
+    Map<String, DisplayService> services = new HashMap<>();
+    addDisplayServices(context, flags, ACTION_BRAILLE_DISPLAY, /* legacy= */ false, services);
+    addDisplayServices(context, flags, LEGACY_ACTION_BRAILLE_DISPLAY, /* legacy= */ true, services);
+    return services;
+  }
+
+  private static void addDisplayServices(
+      Context context,
+      int flags,
+      String action,
+      boolean legacy,
+      Map<String, DisplayService> services) {
     for (ResolveInfo resolveInfo :
-        packageManager.queryIntentServices(new Intent(ACTION_BRAILLE_DISPLAY), flags)) {
+        context.getPackageManager().queryIntentServices(new Intent(action), flags)) {
       ServiceInfo service = resolveInfo.serviceInfo;
-      if (permissionBindBrailleDisplay(context).equals(service.permission)
+      if (!services.containsKey(service.packageName)
+          && permissionBindBrailleDisplay(context).equals(service.permission)
           && holdsPermission(context, service.packageName)) {
-        services.put(service.packageName, new ComponentName(service.packageName, service.name));
+        services.put(
+            service.packageName,
+            new DisplayService(new ComponentName(service.packageName, service.name), legacy));
       }
     }
-    return services;
   }
 
   static boolean holdsPermission(Context context, String app) {

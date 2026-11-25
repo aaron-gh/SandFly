@@ -21,7 +21,6 @@ import com.google.android.accessibility.braille.brailledisplay.BrailleDisplayLog
 import com.google.android.accessibility.braille.brailledisplay.platform.DisplayerInterface;
 import com.google.android.accessibility.braille.brltty.BrailleDisplayProperties;
 import com.google.android.accessibility.braille.brltty.BrailleKeyBinding;
-import fyi.quin.backtalk.braille.IBrailleDisplay;
 import java.util.Collections;
 
 /**
@@ -31,10 +30,15 @@ import java.util.Collections;
 final class ExternalDisplayer implements DisplayerInterface {
   private static final String TAG = "ExternalDisplayer";
 
-  private final BrailleDisplayProperties properties;
-  private final IBrailleDisplay display;
+  /** Shows cells on a display app's display, through whichever interface the app has. */
+  interface Cells {
+    void showCells(byte[] cells) throws RemoteException;
+  }
 
-  ExternalDisplayer(String name, int cellCount, IBrailleDisplay display) {
+  private final BrailleDisplayProperties properties;
+  private final Cells display;
+
+  ExternalDisplayer(String name, int cellCount, Cells display) {
     this.properties =
         new BrailleDisplayProperties(
             name,

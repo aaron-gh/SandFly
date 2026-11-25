@@ -25,7 +25,7 @@ Ask for the permission, which only lets your app ask to be a display, and provid
         android:exported="true"
         android:permission="io.github.aaron_gh.sandfly.permission.BIND_BRAILLE_DISPLAY">
         <intent-filter>
-            <action android:name="fyi.quin.backtalk.action.BRAILLE_DISPLAY" />
+            <action android:name="io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAY" />
         </intent-filter>
     </service>
 </application>
@@ -45,9 +45,9 @@ To ask the user straight away, rather than waiting for SandFly's notification, o
 
 ```kotlin
 context.startActivity(
-  Intent("fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY")
+  Intent("io.github.aaron_gh.sandfly.action.ASK_BRAILLE_DISPLAY")
     .setPackage("io.github.aaron_gh.sandfly")
-    .putExtra("fyi.quin.backtalk.extra.PACKAGE", context.packageName)
+    .putExtra("io.github.aaron_gh.sandfly.extra.PACKAGE", context.packageName)
     .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
 ```
 
@@ -55,12 +55,12 @@ It does nothing if your app is allowed already. To have SandFly look for display
 
 ```kotlin
 context.sendBroadcast(
-  Intent("fyi.quin.backtalk.action.BRAILLE_DISPLAYS_CHANGED").setPackage("io.github.aaron_gh.sandfly"))
+  Intent("io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAYS_CHANGED").setPackage("io.github.aaron_gh.sandfly"))
 ```
 
 ## The interface
 
-Copy `braille/brailledisplay/src/phone/aidl/fyi/quin/backtalk/braille/IBrailleDisplay.aidl` and `IBrailleDisplayHost.aidl` into your app, keeping the package `fyi.quin.backtalk.braille`. Your service returns an `IBrailleDisplay`, and SandFly gives it an `IBrailleDisplayHost` to call:
+Copy `braille/brailledisplay/src/phone/aidl/io/github/aaron_gh/sandfly/braille/IBrailleDisplay.aidl` and `IBrailleDisplayHost.aidl` into your app, keeping the package `io.github.aaron_gh.sandfly.braille`. Your service returns an `IBrailleDisplay`, and SandFly gives it an `IBrailleDisplayHost` to call:
 
 ```kotlin
 class DisplayService : Service() {
@@ -97,3 +97,26 @@ All of these calls are one-way, so they return at once.
 ## One display at a time
 
 SandFly uses one display at a time. A display connected through Bluetooth or USB comes first: while one is connected, displays from apps wait, and one that is in use steps aside when it connects and comes back when it disconnects. If several allowed apps start a display, SandFly uses the first, and the others wait until it stops.
+
+## Deprecated names
+
+These names, from Backtalk, are deprecated:
+
+| Deprecated | Use |
+| --- | --- |
+| `fyi.quin.backtalk.action.BRAILLE_DISPLAY` | `io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAY` |
+| `fyi.quin.backtalk.braille.IBrailleDisplay` | `io.github.aaron_gh.sandfly.braille.IBrailleDisplay` |
+| `fyi.quin.backtalk.braille.IBrailleDisplayHost` | `io.github.aaron_gh.sandfly.braille.IBrailleDisplayHost` |
+| `fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY` | `io.github.aaron_gh.sandfly.action.ASK_BRAILLE_DISPLAY` |
+| `fyi.quin.backtalk.extra.PACKAGE` | `io.github.aaron_gh.sandfly.extra.PACKAGE` |
+| `fyi.quin.backtalk.action.BRAILLE_DISPLAYS_CHANGED` | `io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAYS_CHANGED` |
+
+SandFly binds a service with the deprecated action through the deprecated interfaces, so change the action and both interfaces together. A service with both actions is bound through the new interfaces. For `BRAILLE_DISPLAYS_CHANGED`, the warning names your app only on Android 14 and later, when the broadcast shares its identity.
+
+SandFly 27.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
+
+```sh
+adb logcat -s SandFlyApi
+```
+
+The deprecated names will be removed in a later release. SandFly 0.7.0 and earlier take only the deprecated names. To work with those too, declare both actions, and in `onBind` return the interface that matches the intent's action.

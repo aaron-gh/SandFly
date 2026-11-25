@@ -32,7 +32,7 @@ import java.util.Set;
 
 /**
  * Asks the user whether an app may be a braille display, and says while one is in use. A display
- * can read everything Backtalk shows and act as the user, so Backtalk uses an app only once the
+ * can read everything SandFly shows and act as the user, so SandFly uses an app only once the
  * user allows it, after a warning that says so.
  */
 public final class ExternalDisplayApproval {
@@ -41,7 +41,7 @@ public final class ExternalDisplayApproval {
   private static final int NOTIFICATION_ID_ASK_BASE = 0x6b00;
   private static final int NOTIFICATION_ID_IN_USE = 0x6bff;
 
-  // Apps already asked about since Backtalk started, so that each is asked once at a time.
+  // Apps already asked about since SandFly started, so that each is asked once at a time.
   private static final Set<String> asked = new HashSet<>();
 
   private ExternalDisplayApproval() {}
@@ -55,7 +55,7 @@ public final class ExternalDisplayApproval {
       return;
     }
     if (!NotificationManagerCompat.from(context).areNotificationsEnabled()) {
-      BrailleDisplayLog.w(TAG, "can't ask about " + app + ", since Backtalk can't post notifications");
+      BrailleDisplayLog.w(TAG, "can't ask about " + app + ", since SandFly can't post notifications");
       return;
     }
     CharSequence label = ExternalDisplayApps.label(context, app);

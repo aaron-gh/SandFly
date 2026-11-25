@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback.directtouch
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Bundle
+import com.google.android.accessibility.utils.DeprecatedApiNames
 
 /**
  * What an app's manifest says about direct touch.
@@ -64,16 +65,31 @@ object DirectTouchCapability {
     }
   }
 
-  /** The declaration in the XML resource that [DirectTouchDeclaration.META_DATA_KEY] names. */
+  /**
+   * The declaration in the XML resource that [DirectTouchDeclaration.META_DATA_KEY] names, or else
+   * the deprecated [DirectTouchDeclaration.LEGACY_META_DATA_KEY].
+   */
   private fun readDeclaration(
     pm: PackageManager,
     appInfo: ApplicationInfo,
     packageName: String,
   ): DirectTouchDeclaration? {
-    if (appInfo.metaData?.containsKey(DirectTouchDeclaration.META_DATA_KEY) != true) {
-      return null
-    }
-    val parser = appInfo.loadXmlMetaData(pm, DirectTouchDeclaration.META_DATA_KEY)
+    val metaData = appInfo.metaData ?: return null
+    val key =
+      when {
+        metaData.containsKey(DirectTouchDeclaration.META_DATA_KEY) ->
+          DirectTouchDeclaration.META_DATA_KEY
+        metaData.containsKey(DirectTouchDeclaration.LEGACY_META_DATA_KEY) -> {
+          DeprecatedApiNames.warn(
+            packageName,
+            DirectTouchDeclaration.LEGACY_META_DATA_KEY,
+            DirectTouchDeclaration.META_DATA_KEY,
+          )
+          DirectTouchDeclaration.LEGACY_META_DATA_KEY
+        }
+        else -> return null
+      }
+    val parser = appInfo.loadXmlMetaData(pm, key)
     if (parser == null) {
       // The key names no XML resource, so the declaration is empty: no direct touch until asked.
       return DirectTouchDeclaration(emptyList())

@@ -17,6 +17,9 @@
 package fyi.quin.backtalk.braille;
 
 /**
+ * Deprecated: use io.github.aaron_gh.sandfly.braille.IBrailleDisplayHost, which is the same.
+ * SandFly still takes this one from apps built against it.
+ *
  * Backtalk's side of a braille display that another app provides. See docs/braille-display-api.md.
  */
 oneway interface IBrailleDisplayHost {

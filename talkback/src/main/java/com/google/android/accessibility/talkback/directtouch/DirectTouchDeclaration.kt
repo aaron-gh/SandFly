@@ -87,7 +87,10 @@ class DirectTouchDeclaration(val rules: List<DirectTouchRule>) {
 
   companion object {
     /** Application meta-data that names the declaration's XML resource. */
-    const val META_DATA_KEY = "fyi.quin.backtalk.direct_touch"
+    const val META_DATA_KEY = "io.github.aaron_gh.sandfly.direct_touch"
+
+    /** The deprecated key, read when an app has no [META_DATA_KEY]; see DeprecatedApiNames. */
+    const val LEGACY_META_DATA_KEY = "fyi.quin.backtalk.direct_touch"
 
     /** Rules after this many are ignored. */
     const val MAX_RULES = 64

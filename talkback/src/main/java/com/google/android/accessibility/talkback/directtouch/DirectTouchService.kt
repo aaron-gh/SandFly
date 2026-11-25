@@ -23,7 +23,9 @@ import android.os.Binder
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import fyi.quin.backtalk.directtouch.IDirectTouch
+import com.google.android.accessibility.utils.DeprecatedApiNames
+import fyi.quin.backtalk.directtouch.IDirectTouch as LegacyDirectTouch
+import io.github.aaron_gh.sandfly.directtouch.IDirectTouch
 
 /**
  * Takes direct touch requests from apps that bind to it, for the app making each call, which
@@ -79,14 +81,58 @@ class DirectTouchService : Service() {
     mainHandler.post { DirectTouchRequests.setRequest(uid, packages, client, target) }
   }
 
-  override fun onBind(intent: Intent): IBinder = binder
+  /** The same calls, for apps built against the deprecated interface. */
+  private val legacyBinder =
+    object : LegacyDirectTouch.Stub() {
+      override fun requestScreen(client: IBinder?) {
+        warnLegacy()
+        binder.requestScreen(client)
+      }
+
+      override fun requestAreas(client: IBinder?, areas: Array<Rect?>?, viewIds: Array<String?>?) {
+        warnLegacy()
+        binder.requestAreas(client, areas, viewIds)
+      }
+
+      override fun stop(client: IBinder?) {
+        warnLegacy()
+        binder.stop(client)
+      }
+
+      override fun reset(client: IBinder?) {
+        warnLegacy()
+        binder.reset(client)
+      }
+
+      override fun setState(client: IBinder?, state: String?) {
+        warnLegacy()
+        binder.setState(client, state)
+      }
+    }
+
+  override fun onBind(intent: Intent): IBinder =
+    if (intent.action == LEGACY_ACTION_DIRECT_TOUCH) legacyBinder else binder
+
+  /** Read on the binder thread, as the caller is. */
+  private fun warnLegacy() {
+    DeprecatedApiNames.warn(
+      callingApps().firstOrNull(),
+      "fyi.quin.backtalk.directtouch.IDirectTouch",
+      "io.github.aaron_gh.sandfly.directtouch.IDirectTouch",
+    )
+  }
 
   /** The packages of the app making the current call. */
   private fun callingApps(): List<String> =
     packageManager.getPackagesForUid(Binder.getCallingUid())?.toList().orEmpty()
 
-  private companion object {
-    const val MAX_AREAS = 32
-    const val MAX_ID_LENGTH = 256
+  companion object {
+    /** The action that binds this service. */
+    const val ACTION_DIRECT_TOUCH = "io.github.aaron_gh.sandfly.action.DIRECT_TOUCH"
+    /** Deprecated; see DeprecatedApiNames. */
+    const val LEGACY_ACTION_DIRECT_TOUCH = "fyi.quin.backtalk.action.DIRECT_TOUCH"
+
+    private const val MAX_AREAS = 32
+    private const val MAX_ID_LENGTH = 256
   }
 }

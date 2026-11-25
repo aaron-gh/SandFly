@@ -37,18 +37,18 @@ import com.google.android.accessibility.utils.output.SpeechControllerImpl
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 
 /**
- * Lets apps the user chose speak through Backtalk, in the user's voice and settings, from
+ * Lets apps the user chose speak through SandFly, in the user's voice and settings, from
  * [SpeechControlReceiver] and [SpeechControlService]. See docs/speech-api.md.
  *
  * Speech from other apps can't be turned against the user:
  * - Nothing is said unless Let other apps speak is on and the user allowed that app, which
- *   Backtalk asks about the first time the app tries.
- * - A sound can play before each thing an app says, so it can't pass for Backtalk.
- * - Nothing is said while Backtalk is off or paused. While the device is locked, nothing is said
+ *   SandFly asks about the first time the app tries.
+ * - A sound can play before each thing an app says, so it can't pass for SandFly.
+ * - Nothing is said while SandFly is off or paused. While the device is locked, nothing is said
  *   unless the app declares [permissionWhenLocked] in its manifest and the user separately allowed
- *   it to speak while locked, which Backtalk asks about the first time it tries.
+ *   it to speak while locked, which SandFly asks about the first time it tries.
  * - Each app can speak a few times at once, then about once a second.
- * - Apps can replace or stop only speech from other apps, never Backtalk's own.
+ * - Apps can replace or stop only speech from other apps, never SandFly's own.
  *
  * The current keyboard is the exception, see [KeyboardSpeech].
  *
@@ -57,11 +57,17 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
 object SpeechControl {
   private const val TAG = "SpeechControl"
 
-  const val PERMISSION = "fyi.quin.backtalk.permission.SPEAK"
   private const val PERMISSION_WHEN_LOCKED_SUFFIX = ".permission.SPEAK_WHEN_LOCKED"
 
-  const val ACTION_SPEAK = "fyi.quin.backtalk.action.SPEAK"
-  const val ACTION_STOP = "fyi.quin.backtalk.action.STOP_SPEECH"
+  const val ACTION_SPEAK = "io.github.aaron_gh.sandfly.action.SPEAK"
+  const val ACTION_STOP = "io.github.aaron_gh.sandfly.action.STOP_SPEECH"
+  /** The action that binds [SpeechControlService]. */
+  const val ACTION_SPEECH_CONTROL = "io.github.aaron_gh.sandfly.action.SPEECH_CONTROL"
+
+  // Deprecated names from Backtalk, still taken from apps; see DeprecatedApiNames.
+  const val LEGACY_ACTION_SPEAK = "fyi.quin.backtalk.action.SPEAK"
+  const val LEGACY_ACTION_STOP = "fyi.quin.backtalk.action.STOP_SPEECH"
+  const val LEGACY_ACTION_SPEECH_CONTROL = "fyi.quin.backtalk.action.SPEECH_CONTROL"
 
   const val EXTRA_TEXT = "text"
   const val EXTRA_INTERRUPT = "interrupt"
@@ -78,7 +84,7 @@ object SpeechControl {
   private var stopOtherAppsSpeech: Runnable? = null
   private val rateLimiter = SpeechControlPolicy.RateLimiter()
 
-  /** Called by Backtalk when it starts, so that apps can speak through it. */
+  /** Called by SandFly when it starts, so that apps can speak through it. */
   @JvmStatic
   @MainThread
   fun attach(
@@ -97,7 +103,7 @@ object SpeechControl {
     this.stopOtherAppsSpeech = stopOtherAppsSpeech
   }
 
-  /** Called by Backtalk when it stops. */
+  /** Called by SandFly when it stops. */
   @JvmStatic
   @MainThread
   fun detach() {
@@ -109,7 +115,7 @@ object SpeechControl {
 
   /**
    * The permission an app declares to ask to speak while the device is locked. Named after the app
-   * ID, as SPEAK is: under fyi.quin.backtalk it is fyi.quin.backtalk.permission.SPEAK_WHEN_LOCKED.
+   * ID, as SPEAK is: io.github.aaron_gh.sandfly.permission.SPEAK_WHEN_LOCKED.
    */
   fun permissionWhenLocked(context: Context): String =
     context.packageName + PERMISSION_WHEN_LOCKED_SUFFIX
@@ -194,7 +200,7 @@ object SpeechControl {
           SpeechControlPolicy.clampScale(pitch),
           SpeechControlPolicy.clampVolume(volume),
         ),
-        // Replaces only what other apps were saying, never Backtalk's own speech.
+        // Replaces only what other apps were saying, never SandFly's own speech.
         if (interrupt) {
           FLAG_CLEAR_QUEUED_UTTERANCES_WITH_SAME_UTTERANCE_GROUP or
             FLAG_INTERRUPT_CURRENT_UTTERANCE_WITH_SAME_UTTERANCE_GROUP

@@ -81,6 +81,8 @@
         android:noHistory="true"
         android:theme="@style/Theme.Transparent">
       <intent-filter>
+        <action android:name="io.github.aaron_gh.sandfly.action.ASK_BRAILLE_DISPLAY" />
+        <!-- Deprecated, for apps that use the name from Backtalk. No new names under it. -->
         <action android:name="fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY" />
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
