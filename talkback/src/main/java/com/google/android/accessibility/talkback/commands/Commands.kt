@@ -465,10 +465,26 @@ object Commands {
       category(R.string.commands_category_navigation_setting) {
         gesture(R.string.shortcut_value_granularity_menu, R.string.title_granularity)
         gesture(R.string.shortcut_value_page_navigation, R.string.title_viewpager_controls)
-        keyboard(Key.NAVIGATE_NEXT)
-        keyboard(Key.NAVIGATE_PREVIOUS)
-        keyboard(Key.NEXT_NAVIGATION_SETTING)
-        keyboard(Key.PREVIOUS_NAVIGATION_SETTING)
+        gesture(
+          R.string.shortcut_value_next_by_navigation_setting,
+          R.string.keycombo_menu_navigate_next_by_setting,
+          Key.NAVIGATE_NEXT,
+        )
+        gesture(
+          R.string.shortcut_value_previous_by_navigation_setting,
+          R.string.keycombo_menu_navigate_previous_by_setting,
+          Key.NAVIGATE_PREVIOUS,
+        )
+        gesture(
+          R.string.shortcut_value_next_granularity,
+          R.string.keycombo_menu_granularity_increase,
+          Key.NEXT_NAVIGATION_SETTING,
+        )
+        gesture(
+          R.string.shortcut_value_previous_granularity,
+          R.string.keycombo_menu_granularity_decrease,
+          Key.PREVIOUS_NAVIGATION_SETTING,
+        )
       }
 
     private fun objectNavigation() =
@@ -1239,6 +1255,11 @@ object Commands {
         gesture(
           R.string.shortcut_value_previous_settings_profile,
           R.string.shortcut_previous_settings_profile,
+        )
+        gesture(R.string.shortcut_value_quick_tasks, R.string.shortcut_quick_tasks)
+        gesture(
+          R.string.shortcut_value_toggle_blackberry_mode,
+          R.string.shortcut_toggle_blackberry_mode,
         )
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(

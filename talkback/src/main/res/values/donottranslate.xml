@@ -1239,6 +1239,7 @@
   <string name="orca_keymap_entry_value">orca_keymap</string>
   <string name="keyboard_phone_keymap_entry_value">keyboard_phone_keymap</string>
   <string name="keyboard_phone_single_key_keymap_entry_value">keyboard_phone_single_key_keymap</string>
+  <string name="blackberry_keymap_entry_value">blackberry_keymap</string>
 
   <string name="trigger_modifier_meta_entry_value">trigger_modifier_meta</string>
   <string name="trigger_modifier_alt_entry_value">trigger_modifier_alt</string>
@@ -1920,14 +1921,16 @@
       <item>@string/pref_shortcut_shake_key</item>
     </string-array>
 
-    <!-- Gestures > Gesture layout: the values match GestureLayout.SANDFLY and VOICEOVER. -->
+    <!-- Gestures > Gesture layout: the values match GestureLayout.SANDFLY, VOICEOVER and BLACKBERRY. -->
     <string-array name="pref_gesture_layout_entries" translatable="false">
       <item>@string/gesture_layout_sandfly</item>
       <item>@string/gesture_layout_voiceover</item>
+      <item>@string/gesture_layout_blackberry</item>
     </string-array>
     <string-array name="pref_gesture_layout_values" translatable="false">
       <item>sandfly</item>
       <item>voiceover</item>
+      <item>blackberry</item>
     </string-array>
 
     <!-- Array of 2-finger pass-through gesture shortcut keys -->
@@ -1963,6 +1966,7 @@
         <item>@string/value_orca_keymap</item>
         <item>@string/value_keyboard_phone_keymap</item>
         <item>@string/value_keyboard_phone_single_key_keymap</item>
+        <item>@string/value_blackberry_keymap</item>
     </string-array>
 
     <string-array name="pref_select_keymap_values">
@@ -1973,6 +1977,7 @@
         <item>@string/orca_keymap_entry_value</item>
         <item>@string/keyboard_phone_keymap_entry_value</item>
         <item>@string/keyboard_phone_single_key_keymap_entry_value</item>
+        <item>@string/blackberry_keymap_entry_value</item>
     </string-array>
 
 
@@ -2600,6 +2605,8 @@
   <string name="shortcut_value_last_in_screen">LAST_IN_SCREEN</string>
   <string name="shortcut_value_next_granularity">NEXT_GRANULARITY</string>
   <string name="shortcut_value_previous_granularity">PREVIOUS_GRANULARITY</string>
+  <string name="shortcut_value_next_by_navigation_setting" translatable="false">NEXT_BY_NAVIGATION_SETTING</string>
+  <string name="shortcut_value_previous_by_navigation_setting" translatable="false">PREVIOUS_BY_NAVIGATION_SETTING</string>
   <string name="shortcut_value_prev_container">PREV_CONTAINER</string>
   <string name="shortcut_value_next_container">NEXT_CONTAINER</string>
   <string name="shortcut_value_previous_window">PREVIOUS_WINDOW</string>
@@ -2612,6 +2619,8 @@
   <string name="shortcut_value_toggle_browse_mode" translatable="false">TOGGLE_BROWSE_MODE</string>
   <string name="shortcut_value_toggle_arrow_key_nav" translatable="false">TOGGLE_ARROW_KEY_NAV</string>
   <string name="shortcut_value_toggle_touch_lock" translatable="false">TOGGLE_TOUCH_LOCK</string>
+  <string name="shortcut_value_toggle_blackberry_mode" translatable="false">TOGGLE_BLACKBERRY_MODE</string>
+  <string name="shortcut_value_quick_tasks" translatable="false">QUICK_TASKS</string>
   <string name="shortcut_value_search_emoji" translatable="false">SEARCH_EMOJI</string>
   <string name="shortcut_value_choose_symbol" translatable="false">CHOOSE_SYMBOL</string>
   <string name="shortcut_value_toggle_editing_mode" translatable="false">TOGGLE_EDITING_MODE</string>

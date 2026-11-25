@@ -188,8 +188,23 @@ On a watch, the screen also has **Reserve gestures for Vibration Watch**; see []
 
 - **SandFly gestures**: the default gestures of SandFly.
 - **VoiceOver gestures**: the gestures of VoiceOver on iPhone, such as a two-finger tap to pause speech, a two-finger double-tap for **Dictate, play or pause media**, three-finger swipes to scroll and a three-finger tap for **Speak position**. Gestures that VoiceOver doesn't have are **Unassigned**, and you can assign them.
+- **BlackBerry gestures**: the gestures of the BlackBerry 10 Screen Reader (BlackBerry 10 OS 10.3). Swipe right and left move by the navigation setting, and swipe up and down choose the next and previous navigation setting, such as characters, words or lines. Swipe down then left pauses speech, swipe down then right starts Quick Tasks, swipe down then up says the time and date, and swipe up then down says the status. A two-finger tap says the title of the screen, a two-finger double-tap is **Dictate, play or pause media**, which answers and ends calls, and a two-finger double-tap and hold ends a call. Two-finger swipe up and down scroll back and forward. A three-finger swipe down reads from the top. Gestures that the BlackBerry 10 Screen Reader doesn't have are **Unassigned**, and you can assign them. See [](#gestures-quick-tasks).
 
-The first time SandFly starts, it opens the **Choose gestures** dialog, where you choose a layout. Each layout keeps its own changes, so switching back restores the gestures as you set them. Choosing a layout turns **Handle two-finger swipes in SandFly** on for **VoiceOver gestures** and off for **SandFly gestures**. Gestures in apps and gesture profiles apply to both layouts.
+The first time SandFly starts, it opens the **Choose gestures** dialog, where you choose a layout. Each layout keeps its own changes, so switching back restores the gestures as you set them. Choosing a layout turns **Handle two-finger swipes in SandFly** on for **VoiceOver gestures** and **BlackBerry gestures**, and off for **SandFly gestures**. Gestures in apps and gesture profiles apply to every layout.
+
+#### Quick Tasks {#gestures-quick-tasks}
+
+**Quick Tasks** works as Quick Tasks mode of the BlackBerry 10 Screen Reader. SandFly says "Quick Tasks", and for 3 seconds these gestures run these commands:
+
+| Gesture | Command |
+| --- | --- |
+| Swipe up, swipe down | Increase volume, decrease volume |
+| Swipe right, swipe left | Increase speech rate, decrease speech rate |
+| Two-finger swipe up | Repeat last spoken phrase |
+| Two-finger swipe down | Spell last spoken phrase |
+| Two-finger tap | Hide or show screen |
+
+Each of these gestures gives another 3 seconds. Any other gesture ends Quick Tasks and runs its own command. When the time runs out, the phone vibrates. In the BlackBerry layout, Quick Tasks is swipe down then right. In other layouts, assign it on the **Gestures** screen; it's under **SandFly** on the **Commands** screen.
 
 #### Handle two-finger swipes in SandFly {#gestures-two-finger-swipes}
 
