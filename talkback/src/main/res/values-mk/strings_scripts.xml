@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Копирани ставки: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Нема прозорец за копирање</string>
     <string name="script_tree_clip_label">Дрво на екранот</string>
-    <string name="summary_copy_screen_tree_menu">Копирање на сите ставки на екранот како JSON, за пишување скрипти</string>
+    <string name="summary_copy_screen_tree_menu">Копирање на сите ставки на екранот како текст, за пишување скрипти</string>
     <string name="script_inspect_clip_label">Детали за ставката</string>
-    <string name="summary_inspect_item_menu">Изговарање и копирање детали за последната фокусирана ставка, за пишување скрипти</string>
+    <string name="summary_inspect_item_menu">Прикажување детали за последната фокусирана ставка, за пишување скрипти и макра</string>
     <string name="script_keys_backtalk_modifier">Модификаторско копче на SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, потоа <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Наредби</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Детали за скрипти</string>
     <string name="item_details_app">Апликација</string>
     <string name="script_permission_system">Враќање назад или на почетниот екран, отворање известувања, прикажување список со апликации, отворање апликации, поставки и врски, испраќање Intent објекти до апликации, менување на јачината на звукот, режимот на ѕвонење и поставките на уредот како Wi-Fi и фенерчето, управување со мултимедија, поставување тајмери и аларми и започнување повици и пораки</string>
+    <string name="script_from_code">Внесено во SandFly.</string>
+    <string name="script_code_view">Прикажи код</string>
+    <string name="script_code_edit">Уреди код</string>
+    <string name="script_code_new">Нова скрипта од код</string>
+    <string name="script_code_field">Код</string>
+    <string name="script_code_save">Зачувај</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> е зачувана</string>
+    <string name="script_code_not_saved">Скриптата не е зачувана</string>
+    <string name="script_code_id_changed">ID-то на манифестот мора да остане <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Кодот не може да се прочита.</string>
+    <string name="script_code_discard_title">Да се отфрлат промените?</string>
+    <string name="script_code_discard">Отфрли</string>
+    <string name="script_code_keep_editing">Продолжи со уредување</string>
 </resources>

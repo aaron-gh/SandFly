@@ -79,4 +79,20 @@
     <string name="menu_reset">Visszaállítás az alapértelmezettre</string>
     <string name="menu_reset_confirm">Visszaállítja a SandFly-menüt az alapértelmezett elemekre és sorrendre?</string>
     <string name="menu_assign">Kézmozdulatok és billentyűparancs</string>
+    <string name="shortcut_app_gestures_for_app">Kézmozdulatok ehhez az alkalmazáshoz</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku és root</string>
+    <string name="title_pref_use_root">Root használata a Shizuku helyett</string>
+    <string name="command_perform_gesture">Kézmozdulat végrehajtása</string>
+    <string name="command_perform_gesture_message">Hajtsa végre a kézmozdulatot.</string>
+    <string name="command_gesture_not_assignable">Nem rendelhető hozzá: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Parancs futtatása</string>
+    <string name="command_add_to_sandfly_menu">Hozzáadás a SandFly-menühöz</string>
+    <string name="command_remove_from_sandfly_menu">Eltávolítás a SandFly-menüből</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> hozzáadva a SandFly-menühöz</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> eltávolítva a SandFly-menüből</string>
+    <string name="commands_search_hint">Parancsok keresése</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> parancs</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> parancs</item>
+    </plurals>
 </resources>

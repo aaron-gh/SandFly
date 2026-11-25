@@ -8,7 +8,7 @@ $root = $PSScriptRoot
 if (-not (Test-Path "$root\local.properties")) {
 	$sdk = $env:ANDROID_HOME ?? $env:ANDROID_SDK_ROOT ?? $env:ANDROID_SDK
 	if (-not $sdk) { throw 'Set ANDROID_HOME to your Android SDK path.' }
-	"sdk.dir=$($sdk -replace '\\', '/')" | Set-Content "$root\local.properties"
+	"sdk.dir=$(($sdk -replace '\\', '/') -replace ':', '\:')" | Set-Content "$root\local.properties"
 }
 if (-not $SkipBuild) {
 	& "$root\gradlew.bat" assemblePhoneFullDebug --console=plain

@@ -239,6 +239,8 @@
   <string name="value_text_cleared">Cleared text</string>
   <!-- Description spoken when maximum length reached from a text box -->
   <string name="value_text_max_length">Maximum length reached</string>
+  <!-- Spoken after an item with actions of its app, such as Reply on a chat message. [CHAR LIMIT=NONE] -->
+  <string name="value_actions_available">Actions available</string>
   <!--
     Source: A value for announcing the selected state of a widget.
     Description: This is spoken to the user. [CHAR LIMIT=NONE]
@@ -726,6 +728,8 @@
 
   <!-- Hint spoken when the menu item available in high verbosity.[CHAR_LIMIT=100] -->
   <string name="template_hint_menu_type_high_verbosity"><xliff:g id="type" example="action">%1$s</xliff:g> available, use <xliff:g id="gesture" example="up-then-right">%2$s</xliff:g> to view</string>
+  <!-- Hint spoken after an item whose description already said "Actions available": the gesture that shows its actions.[CHAR_LIMIT=100] -->
+  <string name="template_hint_view_actions">Use <xliff:g id="gesture" example="up-then-right">%1$s</xliff:g> to view actions</string>
   <!-- Hint spoken when the reading control actions is available in high verbosity.[CHAR_LIMIT=NONE] -->
   <string name="template_hint_for_reading_control_actions_in_high_verbosity"><xliff:g id="type" example="action">%1$s</xliff:g> available, <xliff:g id="gesture" example="up-then-right">%2$s</xliff:g> and double-tap to activate</string>
 

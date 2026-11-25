@@ -79,4 +79,20 @@
     <string name="menu_reset">I-reset sa default</string>
     <string name="menu_reset_confirm">I-reset ang menu ng SandFly sa mga default na item at pagkakasunod-sunod nito?</string>
     <string name="menu_assign">Mga galaw at keyboard shortcut</string>
+    <string name="shortcut_app_gestures_for_app">Mga galaw para sa app na ito</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku at root</string>
+    <string name="title_pref_use_root">Gamitin ang root sa halip na Shizuku</string>
+    <string name="command_perform_gesture">Gawin ang galaw</string>
+    <string name="command_perform_gesture_message">Gawin ang galaw.</string>
+    <string name="command_gesture_not_assignable">Hindi maitatalaga ang <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Patakbuhin ang command</string>
+    <string name="command_add_to_sandfly_menu">Idagdag sa menu ng SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Alisin sa menu ng SandFly</string>
+    <string name="command_added_to_sandfly_menu">Naidagdag ang <xliff:g id="command" example="Describe image">%1$s</xliff:g> sa menu ng SandFly</string>
+    <string name="command_removed_from_sandfly_menu">Inalis ang <xliff:g id="command" example="Describe image">%1$s</xliff:g> sa menu ng SandFly</string>
+    <string name="commands_search_hint">Maghanap ng mga command</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> command</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> na command</item>
+    </plurals>
 </resources>

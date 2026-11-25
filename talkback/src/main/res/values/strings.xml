@@ -85,6 +85,12 @@
     <string name="title_ask_about_screen">Ask about screen</string>
     <!-- Command: takes a screenshot of the focused image, records a spoken question about it, and speaks the answer. -->
     <string name="title_ask_about_image">Ask about image</string>
+    <!-- Command: takes a screenshot of the focused item and opens the Android share sheet with it. -->
+    <string name="title_share_focused_image">Share image of focused item</string>
+    <!-- Command: takes a screenshot of the whole screen and opens the Android share sheet with it. -->
+    <string name="title_share_screenshot">Share screenshot</string>
+    <!-- Spoken when Share image of focused item or Share screenshot can't take or save the screenshot. -->
+    <string name="share_image_failed">Screenshot failed</string>
     <!-- Hint of the text field for the question in the Ask about screen and Ask about image windows. -->
     <string name="ai_question_hint">Question</string>
     <!-- Button that sends the question in the Ask about screen and Ask about image windows. -->
@@ -166,20 +172,38 @@
     <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
     <!-- Switch on a voice profile's screen. When on, the profile's text-to-speech engine stays connected while another engine is in use, so that changing to the profile, and notifications read with it, don't wait for the engine to start. [CHAR LIMIT=NONE] -->
     <string name="title_pref_voice_profile_keep_engine_started">Keep the engine started</string>
-    <!-- Title of the settings screen with the speech equalizer. [CHAR LIMIT=40] -->
-    <string name="title_pref_speech_equalizer">Equalizer</string>
+    <!-- Title of the button on a voice profile's settings screen that speaks a sample sentence with the profile's engine, voice, volume, rate, pitch and equalizer as they are set. [CHAR LIMIT=40] -->
+    <string name="title_pref_voice_profile_play_sample">Play sample</string>
+    <!-- Sentence spoken by Play sample on a voice profile's settings screen, in the language of the profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_sample_text">This is a sample of this voice profile.</string>
+    <!-- Spoken when Play sample can't speak the sample because the profile's speech engine didn't start or returned an error. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_sample_failed">Sample not played</string>
+    <!-- Title of the settings screen with the speech equalizer and compression effects, and of the reading control that turns them on or off. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer">Voice effects</string>
     <!-- Title of the list of equalizer presets. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer_preset">Preset</string>
-    <!-- Switch on the Equalizer screen that turns the equalizer on or off. Off keeps the band settings. [CHAR LIMIT=40] -->
-    <string name="title_pref_speech_equalizer_on">Use equalizer</string>
-    <!-- Summary of Equalizer while Use equalizer is off. [CHAR LIMIT=20] -->
+    <!-- Switch on the Voice effects screen that turns the equalizer and effects on or off. Off keeps their settings. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer_on">Use voice effects</string>
+    <!-- Summary of Voice effects while Use voice effects is off, and the Off level of a voice effect. [CHAR LIMIT=20] -->
     <string name="speech_equalizer_off">Off</string>
-    <!-- Spoken when the Equalizer reading control turns the equalizer on. [CHAR LIMIT=NONE] -->
-    <string name="speech_equalizer_turned_on">Equalizer on</string>
-    <!-- Spoken when the Equalizer reading control turns the equalizer off. [CHAR LIMIT=NONE] -->
-    <string name="speech_equalizer_turned_off">Equalizer off</string>
-    <!-- Reading control that changes the gain of the equalizer band at 32 Hz. [CHAR LIMIT=40] -->
-    <string name="title_selector_equalizer_32">Equalizer 32 Hz</string>
+    <!-- Spoken when the Voice effects reading control turns the voice effects on. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_turned_on">Voice effects on</string>
+    <!-- Spoken when the Voice effects reading control turns the voice effects off. [CHAR LIMIT=NONE] -->
+    <string name="speech_equalizer_turned_off">Voice effects off</string>
+    <!-- Heading of the equalizer band sliders on the Voice effects screen. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_equalizer_bands">Equalizer</string>
+    <!-- Voice effect that compresses speech below 200 Hz and raises its level. Audio term. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_effect_bass_compression">Bass compression</string>
+    <!-- Voice effect that compresses speech from 200 Hz to 4 kHz and raises its level. Audio term. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_effect_voice_compression">Voice compression</string>
+    <!-- Voice effect that compresses speech above 4 kHz and raises its level. Audio term. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_effect_treble_compression">Treble compression</string>
+    <!-- Lowest level of a voice effect that is on. [CHAR LIMIT=20] -->
+    <string name="speech_effect_low">Low</string>
+    <!-- Middle level of a voice effect. [CHAR LIMIT=20] -->
+    <string name="speech_effect_medium">Medium</string>
+    <!-- Highest level of a voice effect. [CHAR LIMIT=20] -->
+    <string name="speech_effect_high">High</string>
     <!-- Reading control that changes the gain of the equalizer band at 64 Hz. [CHAR LIMIT=40] -->
     <string name="title_selector_equalizer_64">Equalizer 64 Hz</string>
     <!-- Reading control that changes the gain of the equalizer band at 125 Hz. [CHAR LIMIT=40] -->
@@ -202,7 +226,7 @@
     <string name="title_selector_equalizer_8k">Equalizer 8 kHz</string>
     <!-- Reading control that changes the gain of the equalizer band at 16 kHz. [CHAR LIMIT=40] -->
     <string name="title_selector_equalizer_16k">Equalizer 16 kHz</string>
-    <!-- Summary of Equalizer while Low-latency audio, on the Audio output screen, is off. "Audio output" and "Low-latency audio" are the titles of those settings. [CHAR LIMIT=80] -->
+    <!-- Summary of Voice effects while Low-latency audio, on the Audio output screen, is off. "Audio output" and "Low-latency audio" are the titles of those settings. [CHAR LIMIT=80] -->
     <string name="summary_speech_equalizer_needs_low_latency">Needs Audio output &gt; Low-latency audio</string>
     <!-- Equalizer preset with every band at 0 dB. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_flat">Flat</string>
@@ -224,7 +248,9 @@
     <string name="speech_equalizer_reduce_sibilance">Reduce sibilance</string>
     <!-- Equalizer preset cutting the low frequencies a phone speaker can't play. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_small_speaker">Small speaker</string>
-    <!-- Equalizer preset list item shown when the bands match no preset. [CHAR LIMIT=40] -->
+    <!-- Equalizer preset boosting low frequencies, cutting 1 to 6 kHz, with Bass compression at Medium. [CHAR LIMIT=40] -->
+    <string name="speech_equalizer_deep_bass">Deep bass</string>
+    <!-- Equalizer preset list item shown when the bands and effects match no preset. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_custom">Custom</string>
     <!-- Title of an equalizer band slider, its frequency in hertz, such as "500 Hz". [CHAR LIMIT=20] -->
     <string name="speech_equalizer_band_hz"><xliff:g id="frequency">%1$s</xliff:g> Hz</string>
@@ -232,9 +258,9 @@
     <string name="speech_equalizer_band_khz"><xliff:g id="frequency">%1$s</xliff:g> kHz</string>
     <!-- Spoken value of an equalizer band slider, its gain in decibels, such as "+3 dB" or "-6 dB". [CHAR LIMIT=20] -->
     <string name="speech_equalizer_gain_db"><xliff:g id="gain">%1$s</xliff:g> dB</string>
-    <!-- Button on the Equalizer screen that saves the current band settings as a preset with a name, and title of the dialog that asks for the name. [CHAR LIMIT=40] -->
+    <!-- Button on the Voice effects screen that saves the current band and effect settings as a preset with a name, and title of the dialog that asks for the name. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer_save_preset">Save as preset</string>
-    <!-- Button on the Equalizer screen that lists the presets the user saved, to rename or delete them, and title of that list. [CHAR LIMIT=40] -->
+    <!-- Button on the Voice effects screen that lists the presets the user saved, to rename or delete them, and title of that list. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer_saved_presets">Saved presets</string>
     <!-- Hint of the name field in the dialog that saves or renames an equalizer preset. [CHAR LIMIT=40] -->
     <string name="speech_equalizer_preset_name">Name</string>
@@ -314,6 +340,10 @@
     <string name="title_pref_emoji_rate">Emoji speech rate</string>
     <!-- Title of the text-to-speech setting for how much slower the Repeat last spoken phrase slower command says the phrase, as a percentage of the rate it was said at. [CHAR LIMIT=40] -->
     <string name="title_pref_repeat_slower_by">Repeat slower by</string>
+    <!-- Title of the text-to-speech setting for how much the speech rate commands, the Speech rate reading control and the Speech rate slider change the rate at a time. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_rate_step">Speech rate step</string>
+    <!-- Choice of Speech rate step: each change makes the rate in use faster or slower by this percentage of it, such as "10%". [CHAR LIMIT=40] -->
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> of the rate</string>
     <!-- Title of the setting, and of the reading control, that chooses which volume speech and sounds play at: accessibility, media, ring or call. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_stream">Speech volume</string>
     <!-- Summary of the Speech volume reading control in the reading controls settings. [CHAR LIMIT=NONE] -->
@@ -480,6 +510,20 @@
     <string name="template_charging_lite">Charging <xliff:g id="changing_status" example="Started">%1$s</xliff:g></string>
     <!-- Switch: SandFly says when the battery is fully charged while the charger is connected. -->
     <string name="title_pref_announce_full_charge">Announce full charge</string>
+    <!-- List: how often SandFly says the battery level while the screen is on, charging or not. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_battery_level_interval">Battery level</string>
+    <!-- Choice in the Battery level list: say the battery level each time it reaches a multiple of 5 percent. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_5_percent" formatted="false">Every 5%</string>
+    <!-- Choice in the Battery level list: say the battery level each time it reaches a multiple of 10 percent. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_10_percent" formatted="false">Every 10%</string>
+    <!-- Choice in the Battery level list: say the battery level every 15 minutes. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_15_minutes">Every 15 minutes</string>
+    <!-- Choice in the Battery level list: say the battery level every 30 minutes. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_30_minutes">Every 30 minutes</string>
+    <!-- Choice in the Battery level list: say the battery level every hour. [CHAR LIMIT=40] -->
+    <string name="battery_level_every_hour">Every hour</string>
+    <!-- List: the voice the Battery level announcements are said with: the notification voice, SandFly's voice or a voice profile. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_battery_level_voice">Battery level voice</string>
     <!-- Title of the switch that says how long a phone call lasted when it ends. [CHAR LIMIT=NONE] -->
     <string name="title_pref_announce_call_length">Announce call length</string>
     <!-- Spoken when a phone call ends, with Announce call length on. %1$s is how long it lasted, such as "3 minutes, 12 seconds". [CHAR LIMIT=NONE] -->
@@ -540,6 +584,8 @@
     <string name="title_pref_screen_announcements">Screen on and off</string>
     <!-- [CHAR LIMIT=NONE] -->
     <string name="summary_pref_screen_announcements">Choose what SandFly says when the screen turns off or on, and when the phone is unlocked</string>
+    <!-- Switch in Screen on and off: speaks the screen-off and unlock announcements while media plays, which otherwise silences them. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_screen_announcements_over_media">Speak during media playback</string>
     <!-- Heading for the settings used when the screen turns off. [CHAR LIMIT=NONE] -->
     <string name="title_screen_announcements_screen_off">When the screen turns off</string>
     <!-- Heading for the settings used when the screen turns on. [CHAR LIMIT=NONE] -->
@@ -638,7 +684,7 @@
     <string name="title_pref_speech_control_sound">Play a sound before other apps speak</string>
     <!-- Heading of the list of apps that connected to SandFly's speech service, each with a switch that allows it to speak through SandFly. [CHAR LIMIT=NONE] -->
     <string name="speech_control_apps_category">Apps</string>
-    <!-- Shown in that list before any app has connected to SandFly's speech service. [CHAR LIMIT=NONE] -->
+    <!-- Shown in the list of apps on the Let other apps speak screen before any app has connected to SandFly's speech service. [CHAR LIMIT=NONE] -->
     <string name="speech_control_no_apps">No app has connected yet.</string>
     <!-- Title of the notification that asks whether an app may speak through SandFly. The app's name is filled in. [CHAR LIMIT=NONE] -->
     <string name="speech_control_ask_title">Allow <xliff:g id="app" example="Tasker">%1$s</xliff:g> to speak through SandFly?</string>
@@ -716,6 +762,8 @@
       Source: Speak punctuation and symbols choice: no punctuation or symbol is said, except a character said on its own. [CHAR LIMIT=45]
     -->
     <string name="punctuation_none">None</string>
+    <!-- Title of the switch shown while Speak punctuation and symbols is None: plus and minus signs before numbers, degree, percent, per mille and currency signs, and math symbols between numbers are still said. [CHAR LIMIT=60] -->
+    <string name="title_pref_punctuation_none_keep_meaning">Say symbols that change meaning</string>
     <!--
       Source: Preference for how emoji are spoken. [CHAR LIMIT=45]
     -->
@@ -877,6 +925,8 @@
     <string name="pref_speak_roles_title">Speak item type</string>
     <!-- Switch: the item's name and type, such as Back button, are spoken without a comma between them. [CHAR_LIMIT=NONE] -->
     <string name="pref_speak_role_without_pause_title">Speak item type without a pause</string>
+    <!-- Switch: "Actions available" is spoken after an item with actions of its app, such as Reply on a chat message. Keep "Actions available" as in value_actions_available. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_speak_actions_available">Speak Actions available</string>
     <!--
       Source: Summary subtext for preference to speak roles of elements.
       Description: Explains that TalkBack will speak the element type of a focused item. [CHAR LIMIT=NONE]
@@ -1428,6 +1478,14 @@
     <string name="keycombo_menu_navigate_next_paragraph">Navigate to next paragraph</string>
     <!-- Keyboard key combination assignment for Navigate to previous paragraph action [CHAR LIMIT=40] -->
     <string name="keycombo_menu_navigate_previous_paragraph">Navigate to previous paragraph</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the next paragraph, besides the one of Next paragraph, such as P in browse mode in the NVDA keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Navigate to next paragraph, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the previous paragraph, besides the one of Previous paragraph, such as Shift + P in browse mode in the NVDA keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navigate to previous paragraph, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the next link, besides the one of Next link, such as K in browse mode in the keyboard phone single-key keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_next_link_second_key">Navigate to next link, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the previous link, besides the one of Previous link, such as Shift + K in browse mode in the keyboard phone single-key keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navigate to previous link, second key</string>
     <!-- Keyboard key combination assignment for Navigate to next container [CHAR LIMIT=40] -->
     <string name="keycombo_menu_navigate_next_container">Navigate to next container</string>
     <!-- Keyboard key combination assignment for Navigate to previous container [CHAR LIMIT=40] -->
@@ -1550,7 +1608,7 @@
     <string name="keycombo_menu_other_cycle_typing_echo">Cycle typing echo</string>
     <!-- Keyboard key combination assignment for show the keyboard shortcuts dialog. [CHAR LIMIT=60] -->
     <string name="keycombo_menu_other_show_keyboard_shortcuts_dialog">Show keyboard shortcuts list</string>
-    <!-- Web navigation actions group name title [CHAR LIMIT=40] -->
+    <!-- Element navigation actions group name title [CHAR LIMIT=40] -->
     <string name="keycombo_menu_category_web">Element navigation actions</string>
     <!-- Keyboard shortcut text representation for reading current web page URL. [CHAR LIMIT=40] -->
     <string name="keycombo_menu_other_read_current_url">Speak page URL</string>
@@ -1576,6 +1634,28 @@
     <string name="arrow_key_nav_page_right">Page right</string>
     <!-- Instructions in the dialog that assigns keys to an arrow key navigation shortcut. [CHAR LIMIT=NONE] -->
     <string name="arrow_key_nav_assign_instruction">Press a key or two keys together, with or without modifier keys. Press Backspace to clear, Ctrl + Backspace to reset to default, Enter to save, or Escape to cancel.</string>
+    <!-- Name of a command that turns keyboard practice on or off. While keyboard practice is on, each key pressed is spoken with the command it runs, and nothing runs. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_toggle_key_practice">Turn keyboard practice on or off</string>
+    <!-- Spoken when keyboard practice turns on: from now on, each key pressed is spoken with its command instead of running it. [CHAR LIMIT=NONE] -->
+    <string name="key_practice_on">Keyboard practice on</string>
+    <!-- Spoken when keyboard practice turns off and keys work again. [CHAR LIMIT=NONE] -->
+    <string name="key_practice_off">Keyboard practice off</string>
+    <!-- Spoken in keyboard practice after the name of a key that is the SandFly key, such as "Right Shift, SandFly key". SandFly is the app name. [CHAR LIMIT=NONE] -->
+    <string name="key_practice_sandfly_key">SandFly key</string>
+    <!-- Title of the item in Keyboard shortcuts settings that turns keyboard practice on. [CHAR LIMIT=40] -->
+    <string name="key_practice_title">Keyboard practice</string>
+    <!-- Summary of the item in Keyboard shortcuts settings that turns keyboard practice on. [CHAR LIMIT=NONE] -->
+    <string name="key_practice_summary">Speaks each key pressed and its command instead of running it. Back or Escape turns it off.</string>
+    <!-- Name of a command that holds a touch down on the item with SandFly focus while its keys are held, or until it runs again after a short press, as for recording a voice message. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_touch_hold_focus">Hold a touch on the focused item</string>
+    <!-- Spoken when the touch on the focused item stays down after its keys are released, until the command runs again or Back or Escape is pressed. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_held">Touch held</string>
+    <!-- Spoken when a touch held on the focused item is lifted. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_lifted">Touch lifted</string>
+    <!-- Spoken when a touch can't be held on the focused item: before Android 11, while another feature passes touch through, or when the item isn't on the screen. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_unavailable">Not available</string>
+    <!-- Spoken when a touch can't be held because no item has SandFly focus. [CHAR LIMIT=NONE] -->
+    <string name="touch_hold_no_focus">No item has focus</string>
     <!-- Keyboard key combination assignment for navigating to next button [CHAR LIMIT=40] -->
     <string name="keycombo_menu_web_navigate_to_next_button">Navigate to next button</string>
     <!-- Keyboard key combination assignment for navigating to previous button [CHAR LIMIT=40] -->
@@ -1752,6 +1832,24 @@
     <string name="keycombo_key_modifier_right_shift">Right Shift</string>
     <!-- The Fn key, such as the Speed key of the BlackBerry KEY2, as the SandFly key. e.g. Fn + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_function">Fn</string>
+    <!-- Title of the settings group for fast search, which in browse mode focuses the next item starting with a letter or digit pressed with a chosen key. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_fast_search">Fast search</string>
+    <!-- Title of the setting that chooses the key which, pressed with a letter or digit in browse mode, focuses the next item starting with it. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_key">Fast search key</string>
+    <!-- Fast search key setting: fast search is off. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_off">Off</string>
+    <!-- Title of the setting that makes fast search go on from the other end of the screen when nothing is found. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_wrap">Wrap around</string>
+    <!-- The left Alt key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_alt">Left Alt</string>
+    <!-- The left Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_ctrl">Left Ctrl</string>
+    <!-- The right Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_ctrl">Right Ctrl</string>
+    <!-- The left Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_meta">Left Meta</string>
+    <!-- The right Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_meta">Right Meta</string>
     <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
     <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
@@ -1838,6 +1936,14 @@
         <item>@string/vibration_type_pulses</item>
         <item>@string/vibration_type_on_off</item>
     </string-array>
+    <!-- List setting: when the Actions available sound plays for an item with actions of its app. [CHAR_LIMIT=NONE] -->
+    <string name="title_pref_actions_available_sound">Actions available sound</string>
+    <!-- Actions available sound: the sound doesn't play. [CHAR_LIMIT=NONE] -->
+    <string name="value_actions_available_sound_off">Off</string>
+    <!-- Actions available sound: plays with the focus sound. [CHAR_LIMIT=NONE] -->
+    <string name="value_actions_available_sound_focus">When the item gets focus</string>
+    <!-- Actions available sound: plays once the item's speech ends. [CHAR_LIMIT=NONE] -->
+    <string name="value_actions_available_sound_after_speech">After the item is spoken</string>
     <!--
       Source: Preference for whether to provide sound feedback in response to system events.
       Description: The user can check or not check this. [CHAR LIMIT=25]
@@ -2545,12 +2651,18 @@
     <string name="shortcut_newer_app">Newer app</string>
     <!-- Label for the shortcut that takes a screenshot. [CHAR_LIMIT=40] -->
     <string name="shortcut_take_screenshot">Take screenshot</string>
-    <!-- Label for the shortcut that answers the incoming phone call that is ringing. [CHAR_LIMIT=40] -->
+    <!-- Label for the shortcut that answers the incoming phone call or app call, such as a WhatsApp call, that is ringing. [CHAR_LIMIT=40] -->
     <string name="shortcut_answer_call">Answer call</string>
-    <!-- Spoken when the Answer call shortcut runs while no phone call is ringing. [CHAR_LIMIT=40] -->
+    <!-- Spoken when the Answer call shortcut runs while no call is ringing. [CHAR_LIMIT=40] -->
     <string name="answer_call_no_call">No incoming call</string>
     <!-- Spoken when the Answer call shortcut runs before the user has allowed the screen reader to answer phone calls; Android then asks for that permission. [CHAR_LIMIT=60] -->
     <string name="answer_call_permission">Permission needed to answer calls</string>
+    <!-- Label for the shortcut that ends the current phone call or app call, such as a WhatsApp call, or declines the call that is ringing. [CHAR_LIMIT=40] -->
+    <string name="shortcut_end_call">End call</string>
+    <!-- Spoken when the End call shortcut runs while no call is ringing or in progress. [CHAR_LIMIT=40] -->
+    <string name="end_call_no_call">No call</string>
+    <!-- Spoken when the End call shortcut runs before the user has allowed the screen reader to end phone calls; Android then asks for that permission. [CHAR_LIMIT=60] -->
+    <string name="end_call_permission">Permission needed to end calls</string>
     <string name="title_split_screen">Split screen</string>
     <string name="split_screen_go_to_divider">Go to divider</string>
     <string name="split_screen_not_active">Not in split screen</string>
@@ -2640,6 +2752,8 @@
   <string name="shortcut_select_next_setting">Next reading control</string>
   <!--Label for the shortcut that selects the previous setting [CHAR_LIMIT=100]-->
   <string name="shortcut_select_previous_setting">Previous reading control</string>
+  <!-- Command that selects the first reading control of the list that next and previous reading control go through. [CHAR_LIMIT=100] -->
+  <string name="shortcut_select_first_setting">First reading control</string>
   <!--Label for the shortcut that enables pass-through [CHAR_LIMIT=NONE] -->
   <string name="shortcut_pass_through_next">Pass through system gesture</string>
   <!--Label for the shortcut that triggers clicking the Accessibility button -->
@@ -2849,6 +2963,8 @@
     <string name="clipboard_history_hint">Swipe up or down to choose, then double-tap to paste</string>
     <!-- Action at the end of the clipboard history that removes every text from it. [CHAR_LIMIT=40] -->
     <string name="clipboard_history_clear">Clear history</string>
+    <!-- Button in the clipboard history that shows the texts as check boxes, with Remove and Export to file for the checked texts. [CHAR_LIMIT=40] -->
+    <string name="clipboard_history_select">Select</string>
     <!-- Title of the screen and command listing the texts SandFly spoke lately, newest first. [CHAR_LIMIT=40] -->
     <string name="title_speech_history">Speech history</string>
     <!-- Shown in the speech history when it has no texts. [CHAR_LIMIT=NONE] -->
@@ -2917,7 +3033,7 @@
     <string name="menu_category_special_features">Special features</string>
     <!-- Others group name title [CHAR LIMIT=40] -->
     <string name="context_menu_category_others">Other</string>
-    <!-- Web navigation options group name title [CHAR LIMIT=40] -->
+    <!-- Element navigation options group name title [CHAR LIMIT=40] -->
     <string name="menu_category_web_navigation">Element navigation</string>
     <!-- Basic navigation options group name title [CHAR LIMIT=40] -->
     <string name="menu_category_basic_navigation">Basic navigation</string>
@@ -3120,6 +3236,10 @@
     <string name="title_pref_shortcut_up_and_right">Swipe up then right</string>
     <!-- Label for the preference that assigns an action to the "swipe right then down" gesture. [CHAR_LIMIT=40] -->
     <string name="title_pref_shortcut_right_and_down">Swipe right then down</string>
+    <!-- Label for the preference that assigns an action to one finger tapping three times anywhere on the screen. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_1finger_3tap">Triple-tap</string>
+    <!-- Label for the preference that assigns an action to one finger tapping four times anywhere on the screen. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_1finger_4tap">Quadruple-tap</string>
     <!-- Label for the preference that assigns an action to the "swipe up" gesture, with the finger resting at the end before it lifts. [CHAR_LIMIT=75] -->
     <string name="title_pref_shortcut_up_and_hold">Swipe up and hold</string>
     <!-- Label for the preference that assigns an action to the "swipe down" gesture, with the finger resting at the end before it lifts. [CHAR_LIMIT=75] -->
@@ -3165,6 +3285,8 @@
     <string name="title_pref_shortcut_2finger_1tap_xr">Tap touchpad with 1 finger</string>
     <!-- Label for the preference that assigns an action to the "two-finger double-tap" gesture. [CHAR_LIMIT=75] -->
     <string name="title_pref_shortcut_2finger_2tap">Double-tap with 2 fingers</string>
+    <!-- Label for the preference that assigns an action to a two-finger double-tap with one finger in the top third of the screen and the other in the bottom third. [CHAR_LIMIT=75] -->
+    <string name="title_pref_shortcut_2finger_2tap_top_bottom">Double-tap with 2 fingers, top and bottom</string>
     <!-- Label for the preference that assigns an action to the "two-finger triple-tap" gesture. [CHAR_LIMIT=75] -->
     <string name="title_pref_shortcut_2finger_3tap">Triple-tap with 2 fingers</string>
     <!-- Label for the preference that assigns an action to the "three-finger tap" gesture. [CHAR_LIMIT=60] -->
@@ -4305,6 +4427,8 @@
     <string name="title_pref_volume_change_speech_during_media">Silence speech during media playback</string>
     <!-- Title of the switch that makes the spoken announcement of the new volume stop the speech already playing instead of waiting for it to end. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_change_interrupts_speech">Interrupt speech to announce the volume</string>
+    <!-- Title of the switch that leaves out the spoken announcement of the new speech volume when the volume keys change it while SandFly is speaking, so speech continues at the new volume. The tone still plays if chosen. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_volume_change_silent_while_speaking">Change speech volume silently while speaking</string>
     <!-- Title of the switch, shown on Samsung phones only, that makes the volume keys change the speech volume while SandFly is speaking, instead of the media or ring volume. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_keys_speech_volume_while_speaking">Volume keys change speech volume while speaking</string>
     <!-- Title of the switch that keeps every press of the hardware volume keys from Android while the screen is on: presses with an assigned SandFly command run it, and other presses do nothing instead of changing the volume. Calls, pressing both volume keys and touching the screen are excepted. [CHAR LIMIT=NONE] -->
@@ -4331,6 +4455,10 @@
     <string name="title_pref_volume_down_long_press">Volume down long press</string>
     <!-- Title of the setting that chooses how long a volume key is held to run its long press command. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_key_long_press_duration">Volume key long press duration</string>
+    <!-- Title of the switch that makes holding the mute key in a text field record speech and type it, until the key is released. The mute key is a hardware key on some phones, such as the Zinwa Q25. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_key_dictates">Hold mute key to dictate in text fields</string>
+    <!-- Title of the setting that chooses the command run by pressing the mute key. The mute key is a hardware key on some phones, such as the Zinwa Q25. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_key_press">Mute key press</string>
     <!-- Summary of the wrap around setting in the reading controls list. [CHAR LIMIT=NONE]-->
     <string name="summary_support_wrap_around">Turn wrapping from the last item to the first on or off</string>
     <!-- Spoken when wrap around is turned on. [CHAR LIMIT=NONE]-->
@@ -4372,6 +4500,10 @@
     <string name="title_pref_sandfly_keyboard_double_press">Double-press characters</string>
     <!-- Typing > Physical keyboard: with the SandFly keyboard, Space pressed twice after a word types a period and a space. -->
     <string name="title_pref_sandfly_keyboard_double_space_period">Double space types a period</string>
+    <!-- Typing > Physical keyboard: with the SandFly keyboard, in a password field, SandFly speaks each character typed, deleted or passed over by the cursor, instead of "bullet". -->
+    <string name="title_pref_speak_password_characters">Speak password characters</string>
+    <!-- Summary of Speak password characters. -->
+    <string name="summary_pref_speak_password_characters">With the SandFly keyboard, speaks the characters typed, deleted and passed over in password fields</string>
     <!-- Double-press characters: button that adds a key with the characters its double press types. -->
     <string name="double_press_add">Add a key</string>
     <!-- Double-press characters: a key and the characters its double press types, such as "g: ğ". -->
@@ -4402,6 +4534,16 @@
     <string name="sandfly_keyboard_needed">Needs the SandFly keyboard in a text field</string>
     <!-- Command: with the SandFly keyboard, in a text field, single keys move the cursor and select, copy, cut and paste instead of typing, until it is turned off. -->
     <string name="shortcut_toggle_editing_mode">Turn editing mode on or off</string>
+    <!-- Command: with the SandFly keyboard, spells the whole text of the password field being edited, one character at a time with its position. -->
+    <string name="shortcut_spell_password_field">Spell the password field</string>
+    <!-- One character of a spelled password field: its position, from 1, and its name, such as "2 capital B". The items are joined with commas. -->
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <!-- Spoken when Spell the password field runs in a text field that isn't a password field. -->
+    <string name="sandfly_keyboard_not_password_field">Not a password field</string>
+    <!-- Spoken when Spell the password field runs in a password field whose app gives the SandFly keyboard no text. -->
+    <string name="sandfly_keyboard_password_not_available">Password field text not available</string>
+    <!-- Spoken when R, which reads the line in the SandFly keyboard's editing mode, is pressed in a password field. -->
+    <string name="sandfly_keyboard_password_not_read">Not read in password fields</string>
     <!-- Spoken when the SandFly keyboard's editing mode turns on. -->
     <string name="sandfly_keyboard_editing_mode_on">Editing mode on</string>
     <!-- Spoken when the SandFly keyboard's editing mode turns off. -->
@@ -4414,6 +4556,10 @@
     <string name="keycombo_only_while_editing">Only while editing</string>
     <!-- A keyboard shortcut that works only while a text field is being edited, such as "Alt+Space while editing". -->
     <string name="keycombo_keys_while_editing"><xliff:g id="keys" example="Alt+Space">%1$s</xliff:g> while editing</string>
+    <!-- Keyboard shortcut dialog, keyboard phone keymaps: check box that makes the shortcut work only in browse mode, before the same keys' shortcut outside browse mode. -->
+    <string name="keycombo_only_in_browse_mode">Only in browse mode</string>
+    <!-- A keyboard shortcut that works only in browse mode, such as "B in browse mode". -->
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> in browse mode</string>
     <!-- Title of the switch that makes a double tap on the text field being edited move the cursor to the start of its text, or to the end when the cursor is at the start, instead of activating the field. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_double_tap_moves_cursor">Double-tap moves cursor to start or end</string>
     <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->
@@ -5946,7 +6092,7 @@
   <string name="gemini_screenshot_unavailable">Screen capture unavailable</string>
   <!-- Gemini response parsing error. [CHAR_LIMIT=NONE]-->
   <string name="gemini_error_parsing_result">Gemini response parsing error</string>
-  <!-- Gemini rejected the API key the user entered in Automatic descriptions settings. [CHAR_LIMIT=NONE]-->
+  <!-- Gemini rejected the API key the user entered in AI services settings. "AI services" is a setting name. [CHAR_LIMIT=NONE]-->
   <string name="gemini_error_api_key">Gemini didn\'t accept the API key. Check the key in AI services settings.</string>
   <!-- The usage limit of the user's Gemini API key was reached. [CHAR_LIMIT=NONE]-->
   <string name="gemini_error_quota">The usage limit for your Gemini API key has been reached. Try again later.</string>
@@ -6142,6 +6288,8 @@
   <!-- Choices of Auto stop after silence. [CHAR_LIMIT=30] -->
   <string-array name="pref_dictation_auto_stop_entries">
     <item>Off</item>
+    <item>1 second</item>
+    <item>2 seconds</item>
     <item>3 seconds</item>
     <item>5 seconds</item>
     <item>10 seconds</item>
@@ -6183,7 +6331,7 @@
   <string name="dictation_whisper_use">Use</string>
   <!-- Dictation setting: the AI service that corrects dictated text. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_dictation_ai_service">AI service for dictation</string>
-  <!-- AI service for dictation choice: the AI service chosen in the Image and screen descriptions settings. "Image and screen descriptions" is a setting name. [CHAR_LIMIT=NONE] -->
+  <!-- AI service for dictation choice: the AI service chosen in the AI services settings. "AI services" is a setting name. [CHAR_LIMIT=NONE] -->
   <string name="dictation_ai_same">Same as AI services</string>
   <!-- Switch that keeps browse mode on or off in each app as the user last left it there. [CHAR_LIMIT=NONE] -->
   <string name="title_pref_browse_mode_per_app">Remember browse mode in each app</string>
@@ -6298,6 +6446,13 @@
   <string name="no_phrase_to_select" tools:ignore="MissingTranslation">No phrase to select</string>
   <!-- Shown and spoken in the Copy text from screen dialog when it lists only part of the text. [CHAR_LIMIT=NONE] -->
   <string name="word_selection_list_cut_off" tools:ignore="MissingTranslation">List cut off at <xliff:g id="count" example="1000">%1$d</xliff:g> items</string>
+  <!-- Spoken after Scroll up or Scroll down in the Copy text from screen dialog added the text of a page of the list. [CHAR_LIMIT=NONE] -->
+  <plurals name="word_selection_added" tools:ignore="MissingTranslation">
+    <item quantity="one">Added <xliff:g id="count" example="1">%1$d</xliff:g> item</item>
+    <item quantity="other">Added <xliff:g id="count" example="5">%1$d</xliff:g> items</item>
+  </plurals>
+  <!-- Spoken after Scroll up or Scroll down in the Copy text from screen dialog when the list is at its start or end. [CHAR_LIMIT=NONE] -->
+  <string name="word_selection_no_more_text" tools:ignore="MissingTranslation">No more text</string>
   <!-- Spoken after the checked items of the Copy text from screen dialog were copied. [CHAR_LIMIT=NONE] -->
   <plurals name="word_selection_copied" tools:ignore="MissingTranslation">
     <item quantity="one">Copied <xliff:g id="count" example="1">%1$d</xliff:g> item</item>
@@ -6353,4 +6508,14 @@
   <string name="update_download_progress">%1$d%%</string>
   <!-- Text of the update download notification. %1$d is the percentage downloaded, %2$s the time left, such as "2 minutes, 10 seconds". [CHAR LIMIT=NONE] -->
   <string name="update_download_progress_time">%1$d%%, %2$s left</string>
+  <!-- Touch settings: title of the screen that lists the apps where activating an item, such as with a double tap, taps it on the screen instead of sending a click. [CHAR LIMIT=NONE] -->
+  <string name="title_pref_double_tap_taps">Double tap taps the screen</string>
+  <!-- Label of the command that turns Double tap taps the screen on or off for the app in front, which can be assigned to a gesture or a key. [CHAR LIMIT=NONE] -->
+  <string name="shortcut_toggle_double_tap_taps_app">Double tap taps the screen in this app</string>
+  <!-- Spoken when the Double tap taps the screen in this app command turns the setting on for the app in front. [CHAR LIMIT=NONE] -->
+  <string name="double_tap_taps_on">Double tap taps the screen on</string>
+  <!-- Spoken when the Double tap taps the screen in this app command turns the setting off for the app in front. [CHAR LIMIT=NONE] -->
+  <string name="double_tap_taps_off">Double tap taps the screen off</string>
+  <!-- Spoken when the Double tap taps the screen in this app command runs while no app is in front, such as when SandFly or the notification shade is. [CHAR LIMIT=NONE] -->
+  <string name="double_tap_taps_no_app">No app in front</string>
 </resources>

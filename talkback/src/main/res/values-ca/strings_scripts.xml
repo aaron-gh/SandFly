@@ -100,9 +100,9 @@
     <string name="script_tree_copied">S\'han copiat <xliff:g id="count">%1$d</xliff:g> elements</string>
     <string name="script_tree_none">No hi ha cap finestra per copiar</string>
     <string name="script_tree_clip_label">Arbre de la pantalla</string>
-    <string name="summary_copy_screen_tree_menu">Copia tots els elements de la pantalla com a JSON, per escriure scripts</string>
+    <string name="summary_copy_screen_tree_menu">Copia tots els elements de la pantalla com a text, per escriure scripts</string>
     <string name="script_inspect_clip_label">Detalls de l\'element</string>
-    <string name="summary_inspect_item_menu">Enuncia i copia els detalls de l\'element on eres, per escriure scripts</string>
+    <string name="summary_inspect_item_menu">Mostra els detalls de l\'element on eres, per escriure scripts i macros</string>
     <string name="script_keys_backtalk_modifier">Tecla modificadora de SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> i després <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Ordres</string>
@@ -169,4 +169,17 @@
     <string name="item_details_script">Detalls per a scripts</string>
     <string name="item_details_app">Aplicació</string>
     <string name="script_permission_system">Anar enrere o a l\'inici, obrir les notificacions, mostrar la llista d\'aplicacions, obrir aplicacions, la configuració i enllaços, enviar intents a les aplicacions, canviar el volum, el mode de so i la configuració del dispositiu, com ara la Wi-Fi i la llanterna, controlar el contingut multimèdia, definir temporitzadors i alarmes, i iniciar trucades i missatges</string>
+    <string name="script_from_code">Introduït a SandFly.</string>
+    <string name="script_code_view">Mostra el codi</string>
+    <string name="script_code_edit">Edita el codi</string>
+    <string name="script_code_new">Script nou des de codi</string>
+    <string name="script_code_field">Codi</string>
+    <string name="script_code_save">Desa</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> desat</string>
+    <string name="script_code_not_saved">Script no desat</string>
+    <string name="script_code_id_changed">L\'identificador del manifest ha de continuar sent <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">No s\'ha pogut llegir el codi.</string>
+    <string name="script_code_discard_title">Vols descartar els canvis?</string>
+    <string name="script_code_discard">Descarta</string>
+    <string name="script_code_keep_editing">Continua editant</string>
 </resources>

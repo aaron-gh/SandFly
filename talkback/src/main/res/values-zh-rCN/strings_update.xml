@@ -11,7 +11,7 @@
     <!-- Title of the notification that says a new build is available. [CHAR LIMIT=NONE] -->
     <string name="update_notification_title">有可用的 SandFly 更新</string>
     <!-- Text of the update notification when it has no list of changes. [CHAR LIMIT=NONE] -->
-    <string name="update_notification_text">构建 <xliff:g id="build" example="97">%1$d</xliff:g>。点按以安装。</string>
+    <string name="update_notification_text">构建 <xliff:g id="build" example="97">%1$d</xliff:g>。单击以安装。</string>
     <!-- Title of the dialog that offers to install a new build. [CHAR LIMIT=NONE] -->
     <string name="update_dialog_title">SandFly 构建 <xliff:g id="build" example="97">%1$d</xliff:g> 已推出</string>
     <!-- Button in the update dialog that downloads and installs the new build. [CHAR LIMIT=20] -->
@@ -35,6 +35,6 @@
     <string name="title_pref_dev_builds">开发构建</string>
     <string name="update_already_downloading">更新已经在下载</string>
     <string name="update_ready_title">SandFly 更新已下载</string>
-    <string name="update_ready_text">点按即可安装。</string>
+    <string name="update_ready_text">单击即可安装。</string>
     <string name="update_download_failed">无法下载更新</string>
 </resources>

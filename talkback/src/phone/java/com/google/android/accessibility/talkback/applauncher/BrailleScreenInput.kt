@@ -97,7 +97,9 @@ class BrailleScreenInput(
   private val handler = Handler(Looper.getMainLooper())
   private val title = service.getString(R.string.title_braille_commands)
   private val overlay = HandwritingOverlay(service, pipeline, actorState, title)
-  private val search = AppNameSearch(service, pipeline, R.string.braille_app_prompt, ::dismiss)
+  private val search = AppNameSearch(service, pipeline, R.string.braille_app_prompt, ::closeForApp)
+  /** Whether app search was entered from braille commands, which show again once an app opens. */
+  private var appsFromCommands = false
   private val closeIdle = Runnable { if (mode == Mode.FIND) cancelFind() else cancel() }
   private var orientator: LayoutOrientator? = null
   private var inputView: BrailleInputView? = null
@@ -318,7 +320,10 @@ class BrailleScreenInput(
   /** Shows the surface in [newMode], or changes to it, or says why it can't show. */
   private fun show(newMode: Mode): Boolean {
     if (isShowing) {
-      if (mode != Mode.RECORD) enter(newMode)
+      if (mode != Mode.RECORD) {
+        if (newMode == Mode.APPS && mode != Mode.APPS) appsFromCommands = mode == Mode.COMMANDS
+        enter(newMode)
+      }
       return true
     }
     // Touches reach the surface only where they can pass touch exploration by, from Android 11.
@@ -428,10 +433,25 @@ class BrailleScreenInput(
   /** Changes to the next mode: app search after braille commands, then the braille keyboard. */
   private fun nextMode() {
     when (mode) {
-      Mode.COMMANDS -> enter(Mode.APPS)
+      Mode.COMMANDS -> {
+        appsFromCommands = true
+        enter(Mode.APPS)
+      }
       Mode.APPS -> if (!typeOnBrailleKeyboard()) enter(Mode.COMMANDS)
       Mode.FIND -> cancelFind()
       Mode.RECORD -> {}
+    }
+  }
+
+  /**
+   * Called before an app opens from app search: goes back to braille commands when app search was
+   * entered from them, and closes the surface otherwise.
+   */
+  private fun closeForApp() {
+    if (appsFromCommands && isShowing) {
+      enter(Mode.COMMANDS, quiet = true)
+    } else {
+      dismiss()
     }
   }
 
@@ -460,6 +480,7 @@ class BrailleScreenInput(
     handler.removeCallbacks(coveredCheck)
     handler.removeCallbacks(reclaimPassthrough)
     returnAfterKeyboard = false
+    appsFromCommands = false
     orientator?.stop()
     orientator = null
     if (enabledOrientationMonitor) {

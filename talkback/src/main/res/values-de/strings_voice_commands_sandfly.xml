@@ -180,4 +180,19 @@
         <item>aktiviere {label}</item>
         <item>wähle {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Sprachbearbeitung starten</string>
+    <string name="voice_editing_on">Sprachbearbeitung an</string>
+    <string name="voice_editing_off">Sprachbearbeitung aus</string>
+    <string name="title_pref_voice_editing_time_limit">Zeitlimit für Sprachbearbeitung</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Minute</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> Minuten</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>bearbeitung beenden</item>
+        <item>sprachbearbeitung beenden</item>
+        <item>bearbeitung stoppen</item>
+        <item>sprachbearbeitung stoppen</item>
+        <item>sprachbearbeitung aus</item>
+    </string-array>
 </resources>

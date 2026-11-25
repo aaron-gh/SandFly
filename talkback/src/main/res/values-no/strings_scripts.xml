@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elementer kopiert</string>
     <string name="script_tree_none">Ingen vindu å kopiere</string>
     <string name="script_tree_clip_label">Skjermtre</string>
-    <string name="summary_copy_screen_tree_menu">Kopiere alle elementer på skjermen som JSON, for å skrive skript</string>
+    <string name="summary_copy_screen_tree_menu">Kopiere alle elementer på skjermen som tekst, for å skrive skript</string>
     <string name="script_inspect_clip_label">Elementdetaljer</string>
-    <string name="summary_inspect_item_menu">Lese opp og kopiere detaljer om elementet som sist var i fokus, for å skrive skript</string>
+    <string name="summary_inspect_item_menu">Vis detaljer om elementet som sist var i fokus, for å skrive skript og makroer</string>
     <string name="script_keys_backtalk_modifier">SandFly-modifikatortast</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, deretter <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandoer</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Skriptdetaljer</string>
     <string name="item_details_app">App</string>
     <string name="script_permission_system">Gå tilbake eller til startskjermen, åpne varsler, vise en liste over apper, åpne apper, innstillinger og lenker, sende intents til apper, endre volumet, ringemodusen og enhetsinnstillinger som Wi-Fi og lommelykten, styre medier, angi tidtakere og alarmer og starte anrop og meldinger</string>
+    <string name="script_from_code">Skrevet inn i SandFly.</string>
+    <string name="script_code_view">Vis kode</string>
+    <string name="script_code_edit">Rediger kode</string>
+    <string name="script_code_new">Nytt skript fra kode</string>
+    <string name="script_code_field">Kode</string>
+    <string name="script_code_save">Lagre</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> er lagret</string>
+    <string name="script_code_not_saved">Skriptet ble ikke lagret</string>
+    <string name="script_code_id_changed">Manifest-ID-en må forbli <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Koden kunne ikke leses.</string>
+    <string name="script_code_discard_title">Forkaste endringene?</string>
+    <string name="script_code_discard">Forkast</string>
+    <string name="script_code_keep_editing">Fortsett å redigere</string>
 </resources>

@@ -203,10 +203,11 @@ public class CustomGestureView extends FrameLayout
   @ColorInt
   private int getTextColor(boolean warning) {
     Context themeContext = new ContextThemeWrapper(getContext(), R.style.CustomGestureView);
+    // The default keeps a theme without these Material 3 attributes from throwing.
     return MaterialColors.getColor(
         themeContext,
         warning ? R.attr.colorErrorContainer : R.attr.colorTertiaryFixed,
-        "Unsupported color palette");
+        warning ? 0xFFF9DEDC : 0xFFFFD8E4);
   }
 
   @VisibleForTesting

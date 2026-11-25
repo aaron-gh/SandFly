@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Khoá hoặc mở khoá cảm ứng</string>
+    <string name="touch_locked">Đã khoá cảm ứng</string>
+    <string name="touch_unlocked">Đã mở khoá cảm ứng</string>
+    <string name="touch_lock_unavailable">Khoá cảm ứng cần Android 13 trở lên</string>
+    <string name="title_pref_lock_touch_automatically">Tự động khoá cảm ứng</string>
+    <string name="value_lock_touch_never">Không bao giờ</string>
+    <string name="value_lock_touch_screen_on">Khi màn hình bật</string>
+    <string name="value_lock_touch_lock_screen">Trên màn hình khoá</string>
+    <string name="value_lock_touch_proximity">Khi cảm biến tiệm cận bị che</string>
+    <string name="title_pref_locked_touch_feedback">Thao tác chạm khi cảm ứng bị khoá</string>
+    <string name="value_locked_touch_nothing">Không có gì</string>
+    <string name="value_locked_touch_sound">Âm thanh</string>
+    <string name="value_locked_touch_vibration">Rung</string>
+</resources>

@@ -123,8 +123,18 @@ public class EmojiNamesTest {
   @Test
   public void textStyleSymbolsNeedTheSelector() {
     assertEquals(Arrays.asList("❤️=red heart"), found(english, "I ❤️ it"));
-    assertTrue(found(english, "I ❤ it").isEmpty());
     assertTrue(found(english, "© 2026, #1 ™").isEmpty());
+    assertTrue(found(english, "▶ Play ↔ ▪ ‼").isEmpty());
+    assertFalse(index.mayHaveEmoji("© 2026 ™"));
+  }
+
+  @Test
+  public void textStylePictographsNeedNoSelector() {
+    // Telegram's reactions, such as "2 people reacted with ❤", have no variation selector.
+    assertEquals(Arrays.asList("❤=red heart"), found(english, "2 people reacted with ❤"));
+    assertEquals(
+        Arrays.asList("✈=airplane", "🕊=dove", "☺=smiling face"), found(english, "✈ 🕊 ☺"));
+    assertEquals(Arrays.asList("❤︎=red heart"), found(english, "❤︎"));
   }
 
   @Test

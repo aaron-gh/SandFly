@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Kohdistus on kohteen sisällä</string>
     <string name="macro_test_focus_inside_value">Kohdistus sisällä: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Kohdistus ei sisällä: %1$s</string>
+    <string name="macro_step_tap_position">Napauta sijaintia</string>
+    <string name="macro_step_tap_position_value">Napauta sijaintia <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pikseleinä vasemmalta</string>
+    <string name="macro_tap_y">Y, pikseleinä ylhäältä</string>
+    <string name="macro_invalid_position">Anna X ja Y väliltä 0–<xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Työkaluvihje</string>
+    <string name="macro_step_touch_hold">Kosketa kohdetta pitkään</string>
+    <string name="macro_step_touch_hold_value">Kosketa kohdetta <xliff:g id="label" example="Voice message">%1$s</xliff:g> pitkään <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Kosketa kohdetta <xliff:g id="label" example="Voice message">%1$s</xliff:g> pitkään <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Pitoaika sekunteina</string>
+    <string name="macro_slide">Ennen nostamista</string>
+    <string name="macro_slide_none">Nosta paikallaan</string>
+    <string name="macro_slide_up">Liu\'uta ylös</string>
+    <string name="macro_slide_down">Liu\'uta alas</string>
+    <string name="macro_slide_left">Liu\'uta vasemmalle</string>
+    <string name="macro_slide_right">Liu\'uta oikealle</string>
+    <string name="macro_slide_distance">Etäisyys dp:nä</string>
+    <string name="macro_app">Sovellus</string>
+    <string name="macro_all_apps">Kaikki sovellukset</string>
+    <string name="macro_add_app">Lisää sovellus</string>
+    <string name="macro_apps">Sovellukset</string>
+    <string name="macro_in_actions">Näytä kohdassa Toiminnot</string>
+    <string name="macro_in_actions_only_when">Näytä kohdassa Toiminnot vain, kun</string>
+    <string name="macro_not_in_app">Makroa ei suoritettu. Toimii vain sovelluksessa <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makroa</item>
+    </plurals>
+    <string name="macro_record">Nauhoita vaiheet</string>
+    <string name="macro_record_new">Nauhoita makro</string>
+    <string name="macro_recording_notification">Nauhoitetaan makron vaiheita: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Nauhoitetaan. Lopeta suorittamalla Nauhoita makro tai Lopeta makro tai avaamalla ilmoitus Nauhoitetaan makron vaiheita.</string>
+    <string name="macro_recorded">Nauhoitetut vaiheet</string>
+    <string name="macro_recorded_no_passwords">Salasanakenttiin kirjoitettua tekstiä ei nauhoiteta.</string>
+    <string name="macro_recorded_too_many">Ei lisätty. Makrossa voi olla enintään <xliff:g id="count" example="200">%1$d</xliff:g> vaihetta.</string>
+    <string name="macro_recorded_name">Nauhoitettu <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Näytön luettelo</string>
 </resources>

@@ -79,4 +79,19 @@
     <string name="menu_reset">Đặt lại về mặc định</string>
     <string name="menu_reset_confirm">Đặt lại trình đơn SandFly về các mục và thứ tự mặc định?</string>
     <string name="menu_assign">Cử chỉ và phím tắt</string>
+    <string name="shortcut_app_gestures_for_app">Cử chỉ cho ứng dụng này</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku và root</string>
+    <string name="title_pref_use_root">Dùng root thay cho Shizuku</string>
+    <string name="command_perform_gesture">Thực hiện cử chỉ</string>
+    <string name="command_perform_gesture_message">Hãy thực hiện cử chỉ.</string>
+    <string name="command_gesture_not_assignable">Không gán được <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Chạy lệnh</string>
+    <string name="command_add_to_sandfly_menu">Thêm vào trình đơn SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Xoá khỏi trình đơn SandFly</string>
+    <string name="command_added_to_sandfly_menu">Đã thêm <xliff:g id="command" example="Describe image">%1$s</xliff:g> vào trình đơn SandFly</string>
+    <string name="command_removed_from_sandfly_menu">Đã xoá <xliff:g id="command" example="Describe image">%1$s</xliff:g> khỏi trình đơn SandFly</string>
+    <string name="commands_search_hint">Tìm lệnh</string>
+    <plurals name="commands_search_results">
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> lệnh</item>
+    </plurals>
 </resources>

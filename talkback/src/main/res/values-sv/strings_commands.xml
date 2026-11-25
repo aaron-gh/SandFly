@@ -79,4 +79,20 @@
     <string name="menu_reset">Återställ till standard</string>
     <string name="menu_reset_confirm">Återställa SandFly-menyn till standardobjekt och standardordning?</string>
     <string name="menu_assign">Rörelser och kortkommando</string>
+    <string name="shortcut_app_gestures_for_app">Rörelser för den här appen</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku och root</string>
+    <string name="title_pref_use_root">Använd root i stället för Shizuku</string>
+    <string name="command_perform_gesture">Utför rörelse</string>
+    <string name="command_perform_gesture_message">Gör rörelsen.</string>
+    <string name="command_gesture_not_assignable">Det går inte att tilldela <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Kör kommando</string>
+    <string name="command_add_to_sandfly_menu">Lägg till i SandFly-menyn</string>
+    <string name="command_remove_from_sandfly_menu">Ta bort från SandFly-menyn</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> har lagts till i SandFly-menyn</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> har tagits bort från SandFly-menyn</string>
+    <string name="commands_search_hint">Sök kommandon</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> kommando</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> kommandon</item>
+    </plurals>
 </resources>

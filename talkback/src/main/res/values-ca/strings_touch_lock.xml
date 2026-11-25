@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Bloqueja o desbloqueja el tacte</string>
+    <string name="touch_locked">Tacte bloquejat</string>
+    <string name="touch_unlocked">Tacte desbloquejat</string>
+    <string name="touch_lock_unavailable">El bloqueig del tacte requereix Android 13 o posterior</string>
+    <string name="title_pref_lock_touch_automatically">Bloqueja el tacte automàticament</string>
+    <string name="value_lock_touch_never">Mai</string>
+    <string name="value_lock_touch_screen_on">Quan s\'encén la pantalla</string>
+    <string name="value_lock_touch_lock_screen">A la pantalla de bloqueig</string>
+    <string name="value_lock_touch_proximity">Mentre el sensor de proximitat està tapat</string>
+    <string name="title_pref_locked_touch_feedback">Tocs amb el tacte bloquejat</string>
+    <string name="value_locked_touch_nothing">Res</string>
+    <string name="value_locked_touch_sound">So</string>
+    <string name="value_locked_touch_vibration">Vibració</string>
+</resources>

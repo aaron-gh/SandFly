@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Κλείδωμα ή ξεκλείδωμα αφής</string>
+    <string name="touch_locked">Η αφή κλειδώθηκε</string>
+    <string name="touch_unlocked">Η αφή ξεκλειδώθηκε</string>
+    <string name="touch_lock_unavailable">Το κλείδωμα αφής απαιτεί Android 13 ή νεότερη έκδοση</string>
+    <string name="title_pref_lock_touch_automatically">Αυτόματο κλείδωμα αφής</string>
+    <string name="value_lock_touch_never">Ποτέ</string>
+    <string name="value_lock_touch_screen_on">Όταν ενεργοποιείται η οθόνη</string>
+    <string name="value_lock_touch_lock_screen">Στην οθόνη κλειδώματος</string>
+    <string name="value_lock_touch_proximity">Όσο ο αισθητήρας εγγύτητας είναι καλυμμένος</string>
+    <string name="title_pref_locked_touch_feedback">Αγγίγματα όσο η αφή είναι κλειδωμένη</string>
+    <string name="value_locked_touch_nothing">Τίποτα</string>
+    <string name="value_locked_touch_sound">Ήχος</string>
+    <string name="value_locked_touch_vibration">Δόνηση</string>
+</resources>

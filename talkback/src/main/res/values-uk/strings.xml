@@ -351,7 +351,7 @@
   <string name="shortcut_title_menu_control">Меню й елементи керування</string>
   <string name="shortcut_title_text_editing">Редагування тексту</string>
   <string name="shortcut_title_special_features">Інше</string>
-  <string name="shortcut_unassigned">Натисніть, щоб призначити</string>
+    <string name="shortcut_unassigned">Не призначено</string>
   <string name="shortcut_not_customizable">%1$s, не можна налаштувати</string>
   <string name="shortcut_disabled_due_to_vibration_watch">Недоступно, коли ввімкнено вібрацію годинника</string>
   <string name="shortcut_next">Наступний елемент</string>
@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Провести пальцем угору, потім ліворуч</string>
   <string name="title_pref_shortcut_up_and_right">Провести пальцем угору, потім праворуч</string>
   <string name="title_pref_shortcut_right_and_down">Провести пальцем праворуч, потім униз</string>
+  <string name="title_pref_shortcut_1finger_3tap">Потрійний дотик</string>
+  <string name="title_pref_shortcut_1finger_4tap">Чотири дотики</string>
   <string name="title_pref_shortcut_right_and_up">Провести пальцем праворуч, потім угору</string>
   <string name="title_pref_shortcut_left_and_down">Провести пальцем ліворуч, потім униз</string>
   <string name="title_pref_shortcut_left_and_up">Провести пальцем ліворуч, потім угору</string>
@@ -1365,6 +1367,7 @@
     <string name="value_charger_connected">Зарядний пристрій підключено</string>
     <string name="title_pref_screen_announcements">Увімкнення і вимкнення екрана</string>
     <string name="summary_pref_screen_announcements">Виберіть, що SandFly говорить, коли екран вимикається або вмикається, а також коли телефон розблоковано</string>
+    <string name="title_pref_screen_announcements_over_media">Озвучувати під час відтворення медіа</string>
     <string name="title_screen_announcements_screen_off">Коли екран вимикається</string>
     <string name="title_screen_announcements_screen_on">Коли екран увімкнеться</string>
     <string name="title_screen_announcements_unlock">Коли телефон розблоковано</string>
@@ -1390,7 +1393,7 @@
     <string name="summary_pref_speech_control">Дозволені додатки можуть промовляти текст голосом SandFly. Поки пристрій заблоковано, текст промовляють лише додатки, яким це також дозволено на заблокованому пристрої.</string>
     <string name="title_pref_speech_control_sound">Відтворювати звук перед мовленням інших програм</string>
     <string name="speech_control_apps_category">Додатки</string>
-    <string name="speech_control_no_apps">Жодна програма ще не попросила говорити.</string>
+    <string name="speech_control_no_apps">Жодна програма ще не підключилася.</string>
     <string name="speech_control_ask_title">Дозволити <xliff:g id="app" example="Tasker">%1$s</xliff:g> говорити через SandFly?</string>
     <string name="speech_control_allow">Дозволити</string>
     <string name="speech_control_deny">Не дозволяти</string>
@@ -1790,6 +1793,8 @@
     <string name="keycombo_menu_category_arrow_key_nav">Навігація стрілками</string>
     <string-array name="pref_dictation_auto_stop_entries">
         <item>Вимкнено</item>
+        <item>1 секунда</item>
+        <item>2 секунди</item>
         <item>3 секунди</item>
         <item>5 секунд</item>
         <item>10 секунд</item>
@@ -1910,13 +1915,12 @@
     <string name="shortcut_use_voice_profile">Використати голосовий профіль <xliff:g id="name" example="English">%1$s</xliff:g></string>
     <string name="title_pref_keep_previous_voice_engine">Тримати запущеним синтезатор мовлення попереднього голосового профілю</string>
     <string name="title_pref_voice_profile_keep_engine_started">Тримати синтезатор мовлення запущеним</string>
-    <string name="title_pref_speech_equalizer">Еквалайзер</string>
+    <string name="title_pref_speech_equalizer">Голосові ефекти</string>
     <string name="title_pref_speech_equalizer_preset">Набір налаштувань</string>
-    <string name="title_pref_speech_equalizer_on">Використовувати еквалайзер</string>
+    <string name="title_pref_speech_equalizer_on">Використовувати голосові ефекти</string>
     <string name="speech_equalizer_off">Вимкнено</string>
-    <string name="speech_equalizer_turned_on">Еквалайзер увімкнено</string>
-    <string name="speech_equalizer_turned_off">Еквалайзер вимкнено</string>
-    <string name="title_selector_equalizer_32">Еквалайзер 32 Гц</string>
+    <string name="speech_equalizer_turned_on">Голосові ефекти ввімкнено</string>
+    <string name="speech_equalizer_turned_off">Голосові ефекти вимкнено</string>
     <string name="title_selector_equalizer_64">Еквалайзер 64 Гц</string>
     <string name="title_selector_equalizer_125">Еквалайзер 125 Гц</string>
     <string name="title_selector_equalizer_250">Еквалайзер 250 Гц</string>
@@ -2014,6 +2018,7 @@
     <string name="pref_speak_list_positions_title">Озвучувати відомості про список</string>
     <string name="pref_speak_grid_positions_title">Озвучувати відомості про сітку й таблицю</string>
     <string name="pref_speak_role_without_pause_title">Вимовляти тип елемента без паузи</string>
+    <string name="title_pref_speak_actions_available">Озвучувати «Доступні дії»</string>
     <string name="title_pref_overview">Використовувати огляд SandFly</string>
     <string name="title_pref_overview_newest_last">Найновіший додаток унизу</string>
     <string name="title_pref_overview_columns">Стовпці</string>
@@ -2192,4 +2197,636 @@
     <string name="no_phrase_to_select">Немає фрази для вибору</string>
     <string name="word_selection_list_cut_off">Список обрізано до <xliff:g id="count" example="1000">%1$d</xliff:g> елементів</string>
     <plurals name="word_selection_copied"><item quantity="one">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елемент</item><item quantity="few">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елементи</item><item quantity="many">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елементів</item><item quantity="other">Скопійовано <xliff:g id="count" example="5">%1$d</xliff:g> елемента</item></plurals>
+    <string name="title_share_focused_image">Поділитися зображенням елемента у фокусі</string>
+    <string name="title_share_screenshot">Поділитися знімком екрана</string>
+    <string name="share_image_failed">Не вдалося зробити знімок екрана</string>
+    <string name="title_pref_speech_equalizer_bands">Еквалайзер</string>
+    <string name="title_pref_speech_effect_bass_compression">Компресія низьких частот</string>
+    <string name="title_pref_speech_effect_voice_compression">Компресія голосу</string>
+    <string name="title_pref_speech_effect_treble_compression">Компресія високих частот</string>
+    <string name="speech_effect_low">Низький</string>
+    <string name="speech_effect_medium">Середній</string>
+    <string name="speech_effect_high">Високий</string>
+    <string name="speech_equalizer_deep_bass">Глибокий бас</string>
+    <string name="title_pref_repeat_slower_by">Повторювати повільніше на</string>
+    <string name="switch_languages_now_on">Автоматичне перемикання мови ввімкнено</string>
+    <string name="switch_languages_now_off">Автоматичне перемикання мови вимкнено</string>
+    <string name="identify_languages_from_words_now_on">Визначення мов за словами ввімкнено</string>
+    <string name="identify_languages_from_words_now_off">Визначення мов за словами вимкнено</string>
+    <string name="title_pref_battery_level_interval">Рівень заряду акумулятора</string>
+    <string name="battery_level_every_5_percent" formatted="false">Кожні 5%</string>
+    <string name="battery_level_every_10_percent" formatted="false">Кожні 10%</string>
+    <string name="battery_level_every_15_minutes">Кожні 15 хвилин</string>
+    <string name="battery_level_every_30_minutes">Кожні 30 хвилин</string>
+    <string name="battery_level_every_hour">Щогодини</string>
+    <string name="title_pref_battery_level_voice">Голос для рівня заряду акумулятора</string>
+    <string name="title_pref_announce_call_length">Повідомляти тривалість виклику</string>
+    <string name="template_call_ended">Виклик завершено, <xliff:g id="duration" example="3 minutes, 12 seconds">%1$s</xliff:g></string>
+    <string name="screen_on_battery_off">Вимкнено</string>
+    <string name="screen_on_battery_always">Завжди</string>
+    <string name="screen_on_battery_while_charging">Лише під час заряджання</string>
+    <string name="title_pref_screen_on_low_battery">Низький заряд акумулятора</string>
+    <string name="screen_on_low_battery_10" formatted="false">Нижче 10%</string>
+    <string name="screen_on_low_battery_15" formatted="false">Нижче 15%</string>
+    <string name="screen_on_low_battery_20" formatted="false">Нижче 20%</string>
+    <string name="screen_on_low_battery_30" formatted="false">Нижче 30%</string>
+    <string name="screen_on_low_battery_50" formatted="false">Нижче 50%</string>
+    <string name="permission_direct_touch_label">вибирати, де SandFly надає додатку прямий дотик</string>
+    <string name="permission_direct_touch_description">Дає додатку змогу вмикати або вимикати прямий дотик SandFly для частин свого екрана, поки додаток на передньому плані. Прямий дотик для додатка можна вимкнути в налаштуваннях SandFly.</string>
+    <string name="punctuation_none">Жодних</string>
+    <string name="title_pref_punctuation_none_keep_meaning">Озвучувати символи, що змінюють значення</string>
+    <string name="title_pref_version_history">Історія версій</string>
+    <string name="title_pref_category_shake">Струшування</string>
+    <string name="title_pref_notification_list_by_time">Показувати сповіщення від нових до старих, без груп</string>
+    <string name="title_pref_notification_list_skip_media">Не показувати медіапрогравачі в списку сповіщень</string>
+    <string name="no_root_access">Немає root-доступу</string>
+    <string name="quick_settings_display_size">Розмір відображення</string>
+    <string name="three_part_swipe_gestures_title">Проведення з трьох частин</string>
+    <string name="two_stroke_swipe_gestures_title">Проведення у два рухи</string>
+    <string name="two_stroke_swipe_gestures_turn_second_title">Два рухи: другий — уперед і назад або кутовий</string>
+    <string name="two_stroke_swipe_gestures_up_and_down_title">Два рухи: спершу «Провести пальцем угору, потім униз»</string>
+    <string name="two_stroke_swipe_gestures_down_and_up_title">Два рухи: спершу «Провести пальцем униз, потім угору»</string>
+    <string name="two_stroke_swipe_gestures_left_and_right_title">Два рухи: спершу «Провести пальцем ліворуч, потім праворуч»</string>
+    <string name="two_stroke_swipe_gestures_right_and_left_title">Два рухи: спершу «Провести пальцем праворуч, потім ліворуч»</string>
+    <string name="two_stroke_swipe_gestures_up_and_left_title">Два рухи: спершу «Провести пальцем угору, потім ліворуч»</string>
+    <string name="two_stroke_swipe_gestures_up_and_right_title">Два рухи: спершу «Провести пальцем угору, потім праворуч»</string>
+    <string name="two_stroke_swipe_gestures_down_and_left_title">Два рухи: спершу «Провести пальцем униз, потім ліворуч»</string>
+    <string name="two_stroke_swipe_gestures_down_and_right_title">Два рухи: спершу «Провести пальцем униз, потім праворуч»</string>
+    <string name="two_stroke_swipe_gestures_left_and_up_title">Два рухи: спершу «Провести пальцем ліворуч, потім угору»</string>
+    <string name="two_stroke_swipe_gestures_left_and_down_title">Два рухи: спершу «Провести пальцем ліворуч, потім униз»</string>
+    <string name="two_stroke_swipe_gestures_right_and_up_title">Два рухи: спершу «Провести пальцем праворуч, потім угору»</string>
+    <string name="two_stroke_swipe_gestures_right_and_down_title">Два рухи: спершу «Провести пальцем праворуч, потім униз»</string>
+    <string name="tap_swipe_gestures_title">Дотик, потім проведення</string>
+    <string name="two_finger_angle_gestures_title">Кутові жести двома пальцями</string>
+    <string name="value_keyboard_phone_keymap">Прив’язка для телефона з клавіатурою</string>
+    <string name="value_keyboard_phone_single_key_keymap">Окремі клавіші: телефон із клавіатурою</string>
+    <string name="keycombo_menu_other_open_keyboard_shortcuts">Відкрити налаштування комбінацій клавіш</string>
+    <string name="keycombo_key_modifier_sym">Sym</string>
+    <string name="keycombo_key_modifier_right_alt">Правий Alt</string>
+    <string name="keycombo_key_modifier_right_shift">Правий Shift</string>
+    <string name="keycombo_key_modifier_function">Fn</string>
+    <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> (утримання)</string>
+    <string name="title_pref_time_seconds">Додавати секунди до часу</string>
+    <string name="title_pref_time_seconds_screen_on">Додавати секунди, коли вмикається екран</string>
+    <string name="title_pref_vibration_type">Тип вібрації</string>
+    <string name="vibration_type_effects">Тактильні ефекти</string>
+    <string name="vibration_type_pulses">Імпульси</string>
+    <string name="vibration_type_on_off">Проста вібрація</string>
+    <string name="title_pref_actions_available_sound">Звук «Доступні дії»</string>
+    <string name="value_actions_available_sound_off">Вимкнено</string>
+    <string name="value_actions_available_sound_focus">Коли елемент отримує фокус</string>
+    <string name="value_actions_available_sound_after_speech">Після озвучення елемента</string>
+    <string-array name="pref_vibration_type_entries">
+        <item>@string/vibration_type_effects</item>
+        <item>@string/vibration_type_pulses</item>
+        <item>@string/vibration_type_on_off</item>
+    </string-array>
+    <string name="title_pref_typing_hold_keys_down">Утримувати клавіші натиснутими після затримки натискання й утримування</string>
+    <string name="shortcut_move_to_item_left">Перейти до елемента ліворуч</string>
+    <string name="shortcut_move_to_item_right">Перейти до елемента праворуч</string>
+    <string name="shortcut_speak_coordinates">Озвучити координати</string>
+    <string name="speak_coordinates_value">X <xliff:g id="x" example="540">%1$d</xliff:g>, Y <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="speak_coordinates_copied"><xliff:g id="coordinates" example="X 540, Y 1200">%1$s</xliff:g>. Скопійовано</string>
+    <string name="item_list_not_in_reading_control_list">Не входить до «<xliff:g id="name" example="Speech">%1$s</xliff:g>»</string>
+    <string name="shortcut_next_reading_control_list">Наступний список елементів керування читанням</string>
+    <string name="shortcut_previous_reading_control_list">Попередній список елементів керування читанням</string>
+    <string name="no_reading_control_lists">Немає списків елементів керування читанням</string>
+    <string name="reading_control_list_changed"><xliff:g id="list" example="Speech">%1$s</xliff:g>, <xliff:g id="control" example="Words">%2$s</xliff:g></string>
+    <string name="title_braille_commands">Команди Брайля</string>
+    <string name="shortcut_braille_commands">Команди Брайля</string>
+    <string name="braille_commands_with_profile">Команди Брайля, <xliff:g id="profile" example="Reading">%1$s</xliff:g></string>
+    <string name="shortcut_braille_find_text">Знайти текст</string>
+    <string name="shortcut_braille_find_next_text">Знайти наступний текст</string>
+    <string name="shortcut_braille_find_previous_text">Знайти попередній текст</string>
+    <string name="braille_find_prompt">Введіть текст для пошуку</string>
+    <string name="braille_find_wrapped">Пошук із початку</string>
+    <string name="braille_commands_closed">Команди Брайля закрито</string>
+    <string name="braille_command_none">Немає команди для <xliff:g id="cell" example="dots 2 3 6">%1$s</xliff:g></string>
+    <string name="braille_command_record_prompt">Введіть клітинку Брайля</string>
+    <string name="braille_mode_no_text_field">Немає текстового поля</string>
+    <plurals name="braille_command_cell">
+        <item quantity="one">Крапка <xliff:g id="dots" example="4">%1$s</xliff:g></item>
+        <item quantity="few">Крапки <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="many">Крапки <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="other">Крапки <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+    </plurals>
+    <string name="title_braille_command_profiles">Профілі команд Брайля</string>
+    <string name="title_braille_command_profile">Профіль команд Брайля</string>
+    <string name="no_braille_command_profiles">Немає профілів команд Брайля</string>
+    <string name="shortcut_braille_command_profiles">Вибрати профіль команд Брайля</string>
+    <string name="shortcut_next_braille_command_profile">Наступний профіль команд Брайля</string>
+    <string name="shortcut_previous_braille_command_profile">Попередній профіль команд Брайля</string>
+    <string name="shortcut_use_braille_command_profile">Використовувати профіль команд Брайля <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="title_pref_braille_command_profile_in_use">Поточний профіль команд Брайля</string>
+    <string name="braille_commands_add">Додати команду Брайля</string>
+    <string name="title_braille_commands_in_apps">Команди Брайля в додатках</string>
+    <string name="braille_commands_reset_confirm">Скинути команди Брайля до стандартних клітинок?</string>
+    <string name="braille_command_profile_add">Додати профіль команд Брайля</string>
+    <string name="braille_command_profile_new_name">Профіль команд Брайля <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="braille_command_profile_name_taken">Профіль команд Брайля з назвою <xliff:g id="name" example="Reading">%1$s</xliff:g> уже існує</string>
+    <string name="braille_command_profile_delete">Видалити профіль команд Брайля</string>
+    <string name="braille_command_change_cell">Змінити клітинку Брайля</string>
+    <string name="command_braille_cells">Клітинки Брайля</string>
+    <string name="command_no_braille_cells">Немає клітинок Брайля</string>
+    <string name="command_add_braille_cell">Додати клітинку Брайля</string>
+    <string name="command_remove_braille_cell">Вилучити клітинку Брайля</string>
+    <string name="shortcut_read_from_current_by_reading_control">Читати від виділеного об’єкта за елементом керування</string>
+    <string name="shortcut_activate_confirm_button">Активувати кнопку підтвердження</string>
+    <string name="shortcut_activate_cancel_button">Активувати кнопку скасування</string>
+    <string name="confirm_button_words_default">OK\nТак\nНадіслати\nГотово\nПродовжити\nДалі\nЗберегти\nДозволити\nПрийняти\nПідтвердити\nНадіслати\nВідповісти\nОК\nВідправити</string>
+    <string name="cancel_button_words_default">Скасувати\nНі\nЗакрити\nНазад\nВідхилити\nЗаборонити\nНе дозволяти\nНе зараз\nПропустити\nПізніше</string>
+    <string name="no_confirm_button">Немає кнопки підтвердження</string>
+    <string name="no_cancel_button">Немає кнопки скасування</string>
+    <string name="title_button_command_words">Мітки кнопок</string>
+    <string name="shortcut_select_first_setting">Перший елемент керування читанням</string>
+    <string name="shortcut_character_count">Кількість символів</string>
+    <string name="character_count_template"><xliff:g id="characters" example="12 characters">%1$s</xliff:g>, <xliff:g id="words" example="3 words">%2$s</xliff:g></string>
+    <string name="shortcut_read_text_field">Прочитати текстове поле</string>
+    <string name="text_field_empty">Порожньо</string>
+    <plurals name="character_count_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> символ</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> символи</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> символів</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> символу</item>
+    </plurals>
+    <plurals name="character_count_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> слово</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> слова</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> слів</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> слова</item>
+    </plurals>
+    <string name="title_continuous_copy">Безперервне копіювання</string>
+    <string name="continuous_copy_save">Зберегти</string>
+    <string name="continuous_copy_no_focus">Жоден елемент не у фокусі</string>
+    <string name="clipboard_history_select">Вибрати</string>
+    <string name="title_repeat_last_spoken_phrase_slower">Повторити останню озвучену фразу повільніше</string>
+    <string name="title_sheets_edit_cell">Редагувати клітинку</string>
+    <string name="title_sheets_insert_formula">Вставити формулу</string>
+    <string name="title_pref_shortcut_2finger_2tap_top_bottom">Подвійний дотик двома пальцями, вгорі та внизу</string>
+    <string name="title_pref_shortcut_2finger_up_and_left">Провести двома пальцями вгору, потім ліворуч</string>
+    <string name="title_pref_shortcut_2finger_up_and_right">Провести двома пальцями вгору, потім праворуч</string>
+    <string name="title_pref_shortcut_2finger_down_and_left">Провести двома пальцями вниз, потім ліворуч</string>
+    <string name="title_pref_shortcut_2finger_down_and_right">Провести двома пальцями вниз, потім праворуч</string>
+    <string name="title_pref_shortcut_2finger_left_and_up">Провести двома пальцями ліворуч, потім вгору</string>
+    <string name="title_pref_shortcut_2finger_left_and_down">Провести двома пальцями ліворуч, потім вниз</string>
+    <string name="title_pref_shortcut_2finger_right_and_up">Провести двома пальцями праворуч, потім вгору</string>
+    <string name="title_pref_shortcut_2finger_right_and_down">Провести двома пальцями праворуч, потім вниз</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_up">Торкнутися, потім провести двома пальцями вгору</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_down">Торкнутися, потім провести двома пальцями вниз</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_left">Торкнутися, потім провести двома пальцями ліворуч</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_right">Торкнутися, потім провести двома пальцями праворуч</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_up">Двічі торкнутися, потім провести двома пальцями вгору</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_down">Двічі торкнутися, потім провести двома пальцями вниз</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_left">Двічі торкнутися, потім провести двома пальцями ліворуч</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_right">Двічі торкнутися, потім провести двома пальцями праворуч</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_up">Тричі торкнутися, потім провести двома пальцями вгору</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_down">Тричі торкнутися, потім провести двома пальцями вниз</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_left">Тричі торкнутися, потім провести двома пальцями ліворуч</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_right">Тричі торкнутися, потім провести двома пальцями праворуч</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_up">Торкнутися, потім провести трьома пальцями вгору</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_down">Торкнутися, потім провести трьома пальцями вниз</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_left">Торкнутися, потім провести трьома пальцями ліворуч</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_right">Торкнутися, потім провести трьома пальцями праворуч</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_up">Двічі торкнутися, потім провести трьома пальцями вгору</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_down">Двічі торкнутися, потім провести трьома пальцями вниз</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_left">Двічі торкнутися, потім провести трьома пальцями ліворуч</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_right">Двічі торкнутися, потім провести трьома пальцями праворуч</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_up">Тричі торкнутися, потім провести трьома пальцями вгору</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_down">Тричі торкнутися, потім провести трьома пальцями вниз</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_left">Тричі торкнутися, потім провести трьома пальцями ліворуч</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_right">Тричі торкнутися, потім провести трьома пальцями праворуч</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_up">Торкнутися, потім провести чотирма пальцями вгору</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_down">Торкнутися, потім провести чотирма пальцями вниз</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_left">Торкнутися, потім провести чотирма пальцями ліворуч</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_right">Торкнутися, потім провести чотирма пальцями праворуч</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_up">Двічі торкнутися, потім провести чотирма пальцями вгору</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_down">Двічі торкнутися, потім провести чотирма пальцями вниз</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_left">Двічі торкнутися, потім провести чотирма пальцями ліворуч</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_right">Двічі торкнутися, потім провести чотирма пальцями праворуч</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_up">Тричі торкнутися, потім провести чотирма пальцями вгору</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_down">Тричі торкнутися, потім провести чотирма пальцями вниз</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_left">Тричі торкнутися, потім провести чотирма пальцями ліворуч</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_right">Тричі торкнутися, потім провести чотирма пальцями праворуч</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Дотик двома пальцями, потім провести пальцем угору</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Дотик двома пальцями, потім провести пальцем униз</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Дотик двома пальцями, потім провести пальцем ліворуч</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Дотик двома пальцями, потім провести пальцем праворуч</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Подвійний дотик двома пальцями, потім провести пальцем угору</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Подвійний дотик двома пальцями, потім провести пальцем униз</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Подвійний дотик двома пальцями, потім провести пальцем ліворуч</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Подвійний дотик двома пальцями, потім провести пальцем праворуч</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Потрійний дотик двома пальцями, потім провести пальцем угору</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Потрійний дотик двома пальцями, потім провести пальцем униз</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Потрійний дотик двома пальцями, потім провести пальцем ліворуч</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Потрійний дотик двома пальцями, потім провести пальцем праворуч</string>
+    <string name="title_pref_shortcut_up_and_down_and_up">Провести пальцем угору, униз, потім угору</string>
+    <string name="title_pref_shortcut_up_and_down_and_left">Провести пальцем угору, униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_down_and_right">Провести пальцем угору, униз, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_left_and_up">Провести пальцем угору, ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_left_and_down">Провести пальцем угору, ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_left_and_right">Провести пальцем угору, ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_right_and_up">Провести пальцем угору, праворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_right_and_down">Провести пальцем угору, праворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_right_and_left">Провести пальцем угору, праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_up_and_down">Провести пальцем униз, угору, потім униз</string>
+    <string name="title_pref_shortcut_down_and_up_and_left">Провести пальцем униз, угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_up_and_right">Провести пальцем униз, угору, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_left_and_up">Провести пальцем униз, ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_left_and_down">Провести пальцем униз, ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_left_and_right">Провести пальцем униз, ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_right_and_up">Провести пальцем униз, праворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_right_and_down">Провести пальцем униз, праворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_right_and_left">Провести пальцем униз, праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_up_and_down">Провести пальцем ліворуч, угору, потім униз</string>
+    <string name="title_pref_shortcut_left_and_up_and_left">Провести пальцем ліворуч, угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_up_and_right">Провести пальцем ліворуч, угору, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_down_and_up">Провести пальцем ліворуч, униз, потім угору</string>
+    <string name="title_pref_shortcut_left_and_down_and_left">Провести пальцем ліворуч, униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_down_and_right">Провести пальцем ліворуч, униз, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_right_and_up">Провести пальцем ліворуч, праворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_and_right_and_down">Провести пальцем ліворуч, праворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_and_right_and_left">Провести пальцем ліворуч, праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_up_and_down">Провести пальцем праворуч, угору, потім униз</string>
+    <string name="title_pref_shortcut_right_and_up_and_left">Провести пальцем праворуч, угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_up_and_right">Провести пальцем праворуч, угору, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_down_and_up">Провести пальцем праворуч, униз, потім угору</string>
+    <string name="title_pref_shortcut_right_and_down_and_left">Провести пальцем праворуч, униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_down_and_right">Провести пальцем праворуч, униз, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_left_and_up">Провести пальцем праворуч, ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_and_left_and_down">Провести пальцем праворуч, ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_and_left_and_right">Провести пальцем праворуч, ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_up_lift_up">Провести угору, підняти, провести угору</string>
+    <string name="title_pref_shortcut_up_lift_down">Провести угору, підняти, провести униз</string>
+    <string name="title_pref_shortcut_up_lift_left">Провести угору, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_up_lift_right">Провести угору, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_down_lift_up">Провести униз, підняти, провести угору</string>
+    <string name="title_pref_shortcut_down_lift_down">Провести униз, підняти, провести униз</string>
+    <string name="title_pref_shortcut_down_lift_left">Провести униз, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_down_lift_right">Провести униз, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_left_lift_up">Провести ліворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_left_lift_down">Провести ліворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_left_lift_left">Провести ліворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_left_lift_right">Провести ліворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_right_lift_up">Провести праворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_right_lift_down">Провести праворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_right_lift_left">Провести праворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_right_lift_right">Провести праворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_up_lift_up_and_down">Провести угору, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_up_lift_down_and_up">Провести угору, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_up_lift_left_and_right">Провести угору, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_up_lift_right_and_left">Провести угору, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_lift_up_and_left">Провести угору, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_lift_up_and_right">Провести угору, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_up_lift_down_and_left">Провести угору, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_lift_down_and_right">Провести угору, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_up_lift_left_and_up">Провести угору, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_lift_left_and_down">Провести угору, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_lift_right_and_up">Провести угору, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_lift_right_and_down">Провести угору, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_lift_up_and_down">Провести униз, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_down_lift_down_and_up">Провести униз, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_down_lift_left_and_right">Провести униз, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_down_lift_right_and_left">Провести униз, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_lift_up_and_left">Провести униз, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_lift_up_and_right">Провести униз, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_down_lift_down_and_left">Провести униз, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_lift_down_and_right">Провести униз, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_down_lift_left_and_up">Провести униз, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_lift_left_and_down">Провести униз, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_lift_right_and_up">Провести униз, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_lift_right_and_down">Провести униз, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_lift_up_and_down">Провести ліворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_left_lift_down_and_up">Провести ліворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_left_lift_left_and_right">Провести ліворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_left_lift_right_and_left">Провести ліворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_lift_up_and_left">Провести ліворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_lift_up_and_right">Провести ліворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_left_lift_down_and_left">Провести ліворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_lift_down_and_right">Провести ліворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_left_lift_left_and_up">Провести ліворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_lift_left_and_down">Провести ліворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_lift_right_and_up">Провести ліворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_lift_right_and_down">Провести ліворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_lift_up_and_down">Провести праворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_right_lift_down_and_up">Провести праворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_right_lift_left_and_right">Провести праворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_right_lift_right_and_left">Провести праворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_lift_up_and_left">Провести праворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_lift_up_and_right">Провести праворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_right_lift_down_and_left">Провести праворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_lift_down_and_right">Провести праворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_right_lift_left_and_up">Провести праворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_lift_left_and_down">Провести праворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_lift_right_and_up">Провести праворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_lift_right_and_down">Провести праворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up">Провести угору, потім униз, підняти, провести угору</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down">Провести угору, потім униз, підняти, провести униз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left">Провести угору, потім униз, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right">Провести угору, потім униз, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_down">Провести угору, потім униз, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_up">Провести угору, потім униз, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_right">Провести угору, потім униз, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_left">Провести угору, потім униз, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_left">Провести угору, потім униз, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_right">Провести угору, потім униз, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_left">Провести угору, потім униз, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_right">Провести угору, потім униз, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_up">Провести угору, потім униз, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_down">Провести угору, потім униз, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_up">Провести угору, потім униз, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_down">Провести угору, потім униз, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up">Провести униз, потім угору, підняти, провести угору</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down">Провести униз, потім угору, підняти, провести униз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left">Провести униз, потім угору, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right">Провести униз, потім угору, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_down">Провести униз, потім угору, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_up">Провести униз, потім угору, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_right">Провести униз, потім угору, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_left">Провести униз, потім угору, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_left">Провести униз, потім угору, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_right">Провести униз, потім угору, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_left">Провести униз, потім угору, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_right">Провести униз, потім угору, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_up">Провести униз, потім угору, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_down">Провести униз, потім угору, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_up">Провести униз, потім угору, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_down">Провести униз, потім угору, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up">Провести ліворуч, потім праворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down">Провести ліворуч, потім праворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left">Провести ліворуч, потім праворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right">Провести ліворуч, потім праворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_down">Провести ліворуч, потім праворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_up">Провести ліворуч, потім праворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_right">Провести ліворуч, потім праворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_left">Провести ліворуч, потім праворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_left">Провести ліворуч, потім праворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_right">Провести ліворуч, потім праворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_left">Провести ліворуч, потім праворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_right">Провести ліворуч, потім праворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_up">Провести ліворуч, потім праворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_down">Провести ліворуч, потім праворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_up">Провести ліворуч, потім праворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_down">Провести ліворуч, потім праворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up">Провести праворуч, потім ліворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down">Провести праворуч, потім ліворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left">Провести праворуч, потім ліворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right">Провести праворуч, потім ліворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_down">Провести праворуч, потім ліворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_up">Провести праворуч, потім ліворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_right">Провести праворуч, потім ліворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_left">Провести праворуч, потім ліворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_left">Провести праворуч, потім ліворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_right">Провести праворуч, потім ліворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_left">Провести праворуч, потім ліворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_right">Провести праворуч, потім ліворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_up">Провести праворуч, потім ліворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_down">Провести праворуч, потім ліворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_up">Провести праворуч, потім ліворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_down">Провести праворуч, потім ліворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up">Провести угору, потім ліворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down">Провести угору, потім ліворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left">Провести угору, потім ліворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right">Провести угору, потім ліворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_down">Провести угору, потім ліворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_up">Провести угору, потім ліворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_right">Провести угору, потім ліворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_left">Провести угору, потім ліворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_left">Провести угору, потім ліворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_right">Провести угору, потім ліворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_left">Провести угору, потім ліворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_right">Провести угору, потім ліворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_up">Провести угору, потім ліворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_down">Провести угору, потім ліворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_up">Провести угору, потім ліворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_down">Провести угору, потім ліворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up">Провести угору, потім праворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down">Провести угору, потім праворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left">Провести угору, потім праворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right">Провести угору, потім праворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_down">Провести угору, потім праворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_up">Провести угору, потім праворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_right">Провести угору, потім праворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_left">Провести угору, потім праворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_left">Провести угору, потім праворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_right">Провести угору, потім праворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_left">Провести угору, потім праворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_right">Провести угору, потім праворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_up">Провести угору, потім праворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_down">Провести угору, потім праворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_up">Провести угору, потім праворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_down">Провести угору, потім праворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up">Провести униз, потім ліворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down">Провести униз, потім ліворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left">Провести униз, потім ліворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right">Провести униз, потім ліворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_down">Провести униз, потім ліворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_up">Провести униз, потім ліворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_right">Провести униз, потім ліворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_left">Провести униз, потім ліворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_left">Провести униз, потім ліворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_right">Провести униз, потім ліворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_left">Провести униз, потім ліворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_right">Провести униз, потім ліворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_up">Провести униз, потім ліворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_down">Провести униз, потім ліворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_up">Провести униз, потім ліворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_down">Провести униз, потім ліворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up">Провести униз, потім праворуч, підняти, провести угору</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down">Провести униз, потім праворуч, підняти, провести униз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left">Провести униз, потім праворуч, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right">Провести униз, потім праворуч, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_down">Провести униз, потім праворуч, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_up">Провести униз, потім праворуч, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_right">Провести униз, потім праворуч, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_left">Провести униз, потім праворуч, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_left">Провести униз, потім праворуч, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_right">Провести униз, потім праворуч, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_left">Провести униз, потім праворуч, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_right">Провести униз, потім праворуч, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_up">Провести униз, потім праворуч, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_down">Провести униз, потім праворуч, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_up">Провести униз, потім праворуч, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_down">Провести униз, потім праворуч, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up">Провести ліворуч, потім угору, підняти, провести угору</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down">Провести ліворуч, потім угору, підняти, провести униз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left">Провести ліворуч, потім угору, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right">Провести ліворуч, потім угору, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_down">Провести ліворуч, потім угору, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_up">Провести ліворуч, потім угору, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_right">Провести ліворуч, потім угору, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_left">Провести ліворуч, потім угору, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_left">Провести ліворуч, потім угору, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_right">Провести ліворуч, потім угору, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_left">Провести ліворуч, потім угору, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_right">Провести ліворуч, потім угору, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_up">Провести ліворуч, потім угору, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_down">Провести ліворуч, потім угору, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_up">Провести ліворуч, потім угору, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_down">Провести ліворуч, потім угору, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up">Провести ліворуч, потім униз, підняти, провести угору</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down">Провести ліворуч, потім униз, підняти, провести униз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left">Провести ліворуч, потім униз, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right">Провести ліворуч, потім униз, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_down">Провести ліворуч, потім униз, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_up">Провести ліворуч, потім униз, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_right">Провести ліворуч, потім униз, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_left">Провести ліворуч, потім униз, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_left">Провести ліворуч, потім униз, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_right">Провести ліворуч, потім униз, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_left">Провести ліворуч, потім униз, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_right">Провести ліворуч, потім униз, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_up">Провести ліворуч, потім униз, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_down">Провести ліворуч, потім униз, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_up">Провести ліворуч, потім униз, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_down">Провести ліворуч, потім униз, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up">Провести праворуч, потім угору, підняти, провести угору</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down">Провести праворуч, потім угору, підняти, провести униз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left">Провести праворуч, потім угору, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right">Провести праворуч, потім угору, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_down">Провести праворуч, потім угору, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_up">Провести праворуч, потім угору, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_right">Провести праворуч, потім угору, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_left">Провести праворуч, потім угору, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_left">Провести праворуч, потім угору, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_right">Провести праворуч, потім угору, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_left">Провести праворуч, потім угору, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_right">Провести праворуч, потім угору, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_up">Провести праворуч, потім угору, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_down">Провести праворуч, потім угору, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_up">Провести праворуч, потім угору, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_down">Провести праворуч, потім угору, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up">Провести праворуч, потім униз, підняти, провести угору</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down">Провести праворуч, потім униз, підняти, провести униз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left">Провести праворуч, потім униз, підняти, провести ліворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right">Провести праворуч, потім униз, підняти, провести праворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_down">Провести праворуч, потім униз, підняти, провести угору, потім униз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_up">Провести праворуч, потім униз, підняти, провести униз, потім угору</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_right">Провести праворуч, потім униз, підняти, провести ліворуч, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_left">Провести праворуч, потім униз, підняти, провести праворуч, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_left">Провести праворуч, потім униз, підняти, провести угору, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_right">Провести праворуч, потім униз, підняти, провести угору, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_left">Провести праворуч, потім униз, підняти, провести униз, потім ліворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_right">Провести праворуч, потім униз, підняти, провести униз, потім праворуч</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_up">Провести праворуч, потім униз, підняти, провести ліворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_down">Провести праворуч, потім униз, підняти, провести ліворуч, потім униз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_up">Провести праворуч, потім униз, підняти, провести праворуч, потім угору</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_down">Провести праворуч, потім униз, підняти, провести праворуч, потім униз</string>
+    <string name="title_pref_shortcut_back_tap_quadruple">Четверний дотик до задньої панелі</string>
+    <string name="title_pref_shortcut_shake">Струшування</string>
+    <string name="title_pref_shake_sensitivity">Чутливість струшування</string>
+    <string name="title_pref_two_stroke_swipe_time">Проведення у два рухи: час між рухами</string>
+    <string name="value_two_stroke_swipe_time_off">Вимкнено</string>
+    <string name="value_two_stroke_swipe_time_1500">1,5 секунди</string>
+    <string name="value_multi_tap_timeout_750ms">0,75 секунди</string>
+    <string name="value_multi_tap_timeout_1500ms">1,5 секунди</string>
+    <string name="title_pref_stop_before_wrap">Зупинятися на останньому елементі перед циклічним переходом</string>
+    <string name="title_pref_wrap_around_reading_controls">Циклічна навігація в елементах керування читанням</string>
+    <string name="title_pref_leave_system_bars">Переходити з рядка стану й панелі навігації до інших вікон</string>
+    <string name="title_pref_volume_change_silent_while_speaking">Змінювати гучність мовлення без оголошення під час мовлення</string>
+    <string name="title_pref_volume_keys_take_all">SandFly обробляє кожне натискання клавіш гучності</string>
+    <string name="title_pref_volume_keys_hide_panel">Приховувати панель гучності</string>
+    <string name="title_pref_volume_keys_screen_off">Команди клавіш гучності, коли екран вимкнено</string>
+    <string name="title_pref_volume_up_press">Натискання клавіші збільшення гучності</string>
+    <string name="title_pref_volume_down_press">Натискання клавіші зменшення гучності</string>
+    <string name="title_pref_sandfly_keyboard_double_press">Символи подвійного натискання</string>
+    <string name="title_pref_sandfly_keyboard_double_space_period">Подвійний пробіл вводить крапку</string>
+    <string name="double_press_add">Додати клавішу</string>
+    <string name="double_press_item"><xliff:g id="key" example="g">%1$s</xliff:g>: <xliff:g id="characters" example="ğ">%2$s</xliff:g></string>
+    <string name="double_press_key">Клавіша</string>
+    <string name="double_press_characters">Подвійне натискання вводить</string>
+    <string name="double_press_enter_key">Введіть один символ</string>
+    <string name="double_press_enter_characters">Введіть від 1 до 16 символів</string>
+    <string name="title_pref_focus_text_inside_items">Фокусувати текст усередині елементів окремо</string>
+    <string name="focus_text_inside_items_now_on">Окреме фокусування тексту всередині елементів увімкнено</string>
+    <string name="focus_text_inside_items_now_off">Окреме фокусування тексту всередині елементів вимкнено</string>
+    <string name="focus_indicator_now_on">Індикатор фокусування ввімкнено</string>
+    <string name="focus_indicator_now_off">Індикатор фокусування вимкнено</string>
+    <string name="title_pref_dictation_speak_text">Озвучувати продиктований текст</string>
+    <string name="title_pref_dictation_punctuation">Автоматична пунктуація</string>
+    <string name="title_pref_dictation_block_offensive">Блокувати образливі слова</string>
+    <string name="settings_profile_keyboards">Клавіатури</string>
+    <string name="settings_profile_add_keyboard">Додати клавіатуру</string>
+    <plurals name="word_selection_added">
+        <item quantity="one">Додано <xliff:g id="count" example="1">%1$d</xliff:g> елемент</item>
+        <item quantity="few">Додано <xliff:g id="count" example="5">%1$d</xliff:g> елементи</item>
+        <item quantity="many">Додано <xliff:g id="count" example="5">%1$d</xliff:g> елементів</item>
+        <item quantity="other">Додано <xliff:g id="count" example="5">%1$d</xliff:g> елемента</item>
+    </plurals>
+    <string name="word_selection_no_more_text">Більше немає тексту</string>
+    <string name="selection_range_start">Початок виділення</string>
+    <string name="selection_range_end">Кінець виділення</string>
+    <string name="selection_range_started">Початок виділення позначено</string>
+    <plurals name="selection_range_selected">
+        <item quantity="one">Виділено <xliff:g id="count" example="1">%1$d</xliff:g> елемент</item>
+        <item quantity="few">Виділено <xliff:g id="count" example="5">%1$d</xliff:g> елементи</item>
+        <item quantity="many">Виділено <xliff:g id="count" example="5">%1$d</xliff:g> елементів</item>
+        <item quantity="other">Виділено <xliff:g id="count" example="5">%1$d</xliff:g> елемента</item>
+    </plurals>
+    <string name="network_notification_channel">Мережеві запити</string>
+    <string name="network_notification_title">Мережевий запит</string>
+    <string name="title_pref_category_own_speech">Додатки з власним мовленням</string>
+    <string name="title_pref_speak_user_focus">Озвучувати лише фокус, переміщений користувачем</string>
+    <string name="speak_user_focus_off">Вимкнено</string>
+    <string name="speak_user_focus_all_apps">У всіх додатках</string>
+    <string name="speak_user_focus_chosen_apps">У вибраних додатках</string>
+    <string name="title_pref_speak_user_focus_apps">Вибрані додатки</string>
+    <string name="title_pref_speak_user_focus_assistant_audio">Озвучувати лише фокус, переміщений користувачем, коли асистент або виклик відтворює звук</string>
+    <string name="title_pref_keyboards_with_own_speech">Клавіатури з власним мовленням</string>
+    <string name="template_speak_user_focus_changed">Озвучувати лише фокус, переміщений користувачем: <xliff:g id="choice" example="In all apps">%1$s</xliff:g></string>
+    <string name="macro_add_to_home_screen">Додати на головний екран</string>
+    <string name="macro_shortcut_unsupported">Панель запуску не підтримує ярлики на головному екрані</string>
+    <string name="macro_shortcut_already_added">Уже на головному екрані</string>
+    <string name="macro_shortcut_failed">Ярлик не додано</string>
+    <string name="macro_shortcut_deleted">Макрос видалено</string>
+    <string name="macro_shortcut_invalid">Ярлик недійсний. Додайте макрос на головний екран ще раз.</string>
+    <string name="update_download_progress">%1$d%%</string>
+    <string name="update_download_progress_time">%1$d%%, залишилося %2$s</string>
+    <string name="title_pref_double_tap_taps">Подвійний дотик торкається екрана</string>
+    <string name="shortcut_toggle_double_tap_taps_app">Подвійний дотик торкається екрана в цьому додатку</string>
+    <string name="double_tap_taps_on">«Подвійний дотик торкається екрана» ввімкнено</string>
+    <string name="double_tap_taps_off">«Подвійний дотик торкається екрана» вимкнено</string>
+    <string name="double_tap_taps_no_app">Немає додатка на передньому плані</string>
+    <string name="keycombo_menu_toggle_key_practice">Увімкнути або вимкнути тренування клавіатури</string>
+    <string name="key_practice_on">Тренування клавіатури ввімкнено</string>
+    <string name="key_practice_off">Тренування клавіатури вимкнено</string>
+    <string name="key_practice_sandfly_key">Клавіша SandFly</string>
+    <string name="key_practice_title">Тренування клавіатури</string>
+    <string name="key_practice_summary">Озвучує кожну натиснуту клавішу та її команду замість виконання команди. Кнопка «Назад» або Escape вимикає тренування.</string>
+    <string name="keycombo_menu_touch_hold_focus">Утримувати дотик на елементі у фокусі</string>
+    <string name="touch_hold_held">Дотик утримується</string>
+    <string name="touch_hold_lifted">Дотик відпущено</string>
+    <string name="touch_hold_unavailable">Недоступно</string>
+    <string name="touch_hold_no_focus">Жоден елемент не має фокусу</string>
+    <string name="title_pref_speak_password_characters">Озвучувати символи пароля</string>
+    <string name="summary_pref_speak_password_characters">З клавіатурою SandFly озвучує введені, видалені та пройдені курсором символи в полях пароля</string>
+    <string name="shortcut_spell_password_field">Продиктувати по буквах поле пароля</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Це не поле пароля</string>
+    <string name="sandfly_keyboard_password_not_available">Текст поля пароля недоступний</string>
+    <string name="sandfly_keyboard_password_not_read">Не читається в полях пароля</string>
+    <string name="title_pref_voice_profile_play_sample">Відтворити зразок</string>
+    <string name="voice_profile_sample_text">Це зразок цього голосового профілю.</string>
+    <string name="voice_profile_sample_failed">Зразок не відтворено</string>
+    <string name="title_pref_speech_rate_step">Крок темпу мовлення</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> від темпу</string>
+    <string name="shortcut_end_call">Завершити виклик</string>
+    <string name="end_call_no_call">Немає виклику</string>
+    <string name="end_call_permission">Потрібен дозвіл на завершення викликів</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Перейти до наступного абзацу, друга клавіша</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Перейти до попереднього абзацу, друга клавіша</string>
+    <string name="title_pref_mute_key_dictates">Утримуйте клавішу вимкнення звуку, щоб диктувати в текстових полях</string>
+    <string name="title_pref_mute_key_press">Натискання клавіші вимкнення звуку</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Перейти до наступного посилання, друга клавіша</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Перейти до попереднього посилання, друга клавіша</string>
+    <string name="keycombo_only_in_browse_mode">Лише в режимі перегляду</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> у режимі перегляду</string>
+    <string name="title_pref_category_fast_search">Швидкий пошук</string>
+    <string name="title_pref_fast_search_key">Клавіша швидкого пошуку</string>
+    <string name="fast_search_key_off">Вимкнено</string>
+    <string name="title_pref_fast_search_wrap">Циклічна навігація</string>
+    <string name="fast_search_key_left_alt">Лівий Alt</string>
+    <string name="fast_search_key_left_ctrl">Лівий Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Правий Ctrl</string>
+    <string name="fast_search_key_left_meta">Лівий Meta</string>
+    <string name="fast_search_key_right_meta">Правий Meta</string>
 </resources>

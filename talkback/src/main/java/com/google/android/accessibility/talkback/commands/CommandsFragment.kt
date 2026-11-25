@@ -16,24 +16,161 @@
 
 package com.google.android.accessibility.talkback.commands
 
+import android.content.Context
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.text.InputType
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
+import android.widget.LinearLayout
+import androidx.core.widget.doAfterTextChanged
 import androidx.preference.Preference
+import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift
+import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
+import com.google.android.accessibility.talkback.preference.search.SettingsSearch
 import com.google.android.accessibility.utils.SharedPreferencesUtils
+import com.google.android.accessibility.utils.widget.KeyboardSafeEditText
 
-/** Commands: one entry per category of commands. */
+/**
+ * Commands: a search field, which stays at the top, then one entry per category of commands, or
+ * the commands whose names have the words typed in the field.
+ */
 class CommandsFragment : TalkbackBaseFragment() {
 
   override fun getTitle(): CharSequence = getString(R.string.title_pref_commands)
 
+  private var categories: List<Commands.Category> = emptyList()
+
+  /** The text of the search field. */
+  private var query = ""
+
+  /** The query whose rows are shown, or null before any are. */
+  private var shownQuery: String? = null
+
+  private val handler = Handler(Looper.getMainLooper())
+  private val update = Runnable { show(announce = true) }
+
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
     val context = requireContext()
-    val screen = preferenceManager.createPreferenceScreen(context)
-    for (category in Commands.categories(context)) {
+    query = savedInstanceState?.getString(STATE_QUERY).orEmpty()
+    categories = Commands.categories(context)
+    preferenceScreen = preferenceManager.createPreferenceScreen(context)
+    show(announce = false)
+  }
+
+  override fun onCreateView(
+    inflater: LayoutInflater,
+    container: ViewGroup?,
+    savedInstanceState: Bundle?,
+  ): View {
+    val list = super.onCreateView(inflater, container, savedInstanceState)
+    val context = requireContext()
+    val padding = (16 * resources.displayMetrics.density).toInt()
+    val field =
+      KeyboardSafeEditText(context).apply {
+        hint = getString(R.string.commands_search_hint)
+        inputType = InputType.TYPE_CLASS_TEXT
+        imeOptions = EditorInfo.IME_ACTION_SEARCH
+        isSingleLine = true
+        // The fragment keeps the query, and shows its rows.
+        isSaveEnabled = false
+        setText(query)
+        doAfterTextChanged { text ->
+          query = text?.toString().orEmpty()
+          handler.removeCallbacks(update)
+          handler.postDelayed(update, UPDATE_DELAY_MS)
+        }
+        setOnEditorActionListener { view, actionId, event ->
+          when (SettingsSearch.editorAction(actionId, event?.action, event?.repeatCount ?: 0)) {
+            SettingsSearch.EditorAction.SEARCH -> {
+              handler.removeCallbacks(update)
+              show(announce = true)
+              (context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager)
+                ?.hideSoftInputFromWindow(view.windowToken, 0)
+              true
+            }
+            SettingsSearch.EditorAction.CONSUME -> true
+            SettingsSearch.EditorAction.IGNORE -> false
+          }
+        }
+      }
+    // Outside the list, so that it stays at the top while the list scrolls.
+    return LinearLayout(context).apply {
+      orientation = LinearLayout.VERTICAL
+      addView(
+        field,
+        LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT,
+          )
+          .apply { setMargins(padding, padding / 2, padding, 0) },
+      )
+      addView(list, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 0, 1f))
+    }
+  }
+
+  override fun onSaveInstanceState(outState: Bundle) {
+    super.onSaveInstanceState(outState)
+    outState.putString(STATE_QUERY, query)
+  }
+
+  override fun onDestroyView() {
+    handler.removeCallbacks(update)
+    super.onDestroyView()
+  }
+
+  /**
+   * Shows the categories while the search field has no words, otherwise the commands found, unless
+   * they are shown already. With [announce], says how many commands are found.
+   */
+  private fun show(announce: Boolean) {
+    val context = context ?: return
+    val screen = preferenceScreen ?: return
+    val trimmed = query.trim()
+    if (trimmed == shownQuery) {
+      return
+    }
+    shownQuery = trimmed
+    screen.removeAll()
+    if (SettingsSearch.words(trimmed).isEmpty()) {
+      addCategories(context, screen)
+    } else {
+      val found = CommandSearch.find(categories, trimmed)
+      for (result in found) {
+        screen.addPreference(
+          AccessibilitySuitePreference(context).apply {
+            key = "pref_commands_found_${result.command.value}"
+            isPersistent = false
+            isIconSpaceReserved = false
+            title = result.command.label
+            summary = getString(result.category.titleRes)
+            fragment = CommandFragment::class.java.name
+            extras.putString(CommandFragment.ARG_COMMAND, result.command.value)
+          }
+        )
+      }
+      if (announce) {
+        PreferencesActivityUtils.announceText(
+          if (found.isEmpty()) getString(R.string.keyboard_shortcuts_no_results)
+          else resources.getQuantityString(R.plurals.commands_search_results, found.size, found.size),
+          context,
+        )
+      }
+    }
+    listView?.scrollToPosition(0)
+  }
+
+  private fun addCategories(context: Context, screen: PreferenceScreen) {
+    for (category in categories) {
       screen.addPreference(
         AccessibilitySuitePreference(context).apply {
           key = "pref_commands_${category.titleRes}"
@@ -45,7 +182,13 @@ class CommandsFragment : TalkbackBaseFragment() {
         }
       )
     }
-    preferenceScreen = screen
+  }
+
+  private companion object {
+    const val STATE_QUERY = "commands_search_query"
+
+    /** How long after the last change to the search field its results are shown. */
+    const val UPDATE_DELAY_MS = 400L
   }
 }
 

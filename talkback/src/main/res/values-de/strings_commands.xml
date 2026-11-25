@@ -79,4 +79,20 @@
     <string name="menu_reset">Auf Standard zurücksetzen</string>
     <string name="menu_reset_confirm">SandFly-Menü auf die Standardelemente und -reihenfolge zurücksetzen?</string>
     <string name="menu_assign">Gesten und Tastenkombination</string>
+    <string name="shortcut_app_gestures_for_app">Touch-Gesten für diese App</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku und Root</string>
+    <string name="title_pref_use_root">Root statt Shizuku verwenden</string>
+    <string name="command_perform_gesture">Geste ausführen</string>
+    <string name="command_perform_gesture_message">Führe die Geste aus.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> kann nicht zugewiesen werden</string>
+    <string name="command_run">Befehl ausführen</string>
+    <string name="command_add_to_sandfly_menu">Zum SandFly-Menü hinzufügen</string>
+    <string name="command_remove_from_sandfly_menu">Aus dem SandFly-Menü entfernen</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> zum SandFly-Menü hinzugefügt</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> aus dem SandFly-Menü entfernt</string>
+    <string name="commands_search_hint">Befehle suchen</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> Befehl</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> Befehle</item>
+    </plurals>
 </resources>

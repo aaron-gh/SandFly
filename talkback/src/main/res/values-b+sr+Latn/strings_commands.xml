@@ -79,4 +79,21 @@
     <string name="menu_reset">Vrati na podrazumevano</string>
     <string name="menu_reset_confirm">Vratiti SandFly meni na podrazumevane stavke i redosled?</string>
     <string name="menu_assign">Pokreti i tasterska prečica</string>
+    <string name="shortcut_app_gestures_for_app">Pokreti za ovu aplikaciju</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku i root</string>
+    <string name="title_pref_use_root">Koristi root umesto Shizuku-a</string>
+    <string name="command_perform_gesture">Izvedi pokret</string>
+    <string name="command_perform_gesture_message">Izvedite pokret.</string>
+    <string name="command_gesture_not_assignable">Nije moguće dodeliti: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Pokreni komandu</string>
+    <string name="command_add_to_sandfly_menu">Dodaj u SandFly meni</string>
+    <string name="command_remove_from_sandfly_menu">Ukloni iz SandFly menija</string>
+    <string name="command_added_to_sandfly_menu">„<xliff:g id="command" example="Describe image">%1$s</xliff:g>“ je dodato u SandFly meni</string>
+    <string name="command_removed_from_sandfly_menu">„<xliff:g id="command" example="Describe image">%1$s</xliff:g>“ je uklonjeno iz SandFly menija</string>
+    <string name="commands_search_hint">Pretraži komande</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> komanda</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> komande</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> komandi</item>
+    </plurals>
 </resources>

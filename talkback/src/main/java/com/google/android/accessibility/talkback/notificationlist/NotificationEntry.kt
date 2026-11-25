@@ -77,17 +77,34 @@ class NotificationEntry(
   private class Message(val text: CharSequence, val sender: CharSequence?, val timeMillis: Long)
 
   companion object {
-    fun from(notification: StatusBarNotification, appName: CharSequence): NotificationEntry {
+    /**
+     * The entry for [notification]. [customText] gives the text of its custom layout, read only
+     * when its text fields have none, from the title and app name to leave out.
+     */
+    fun from(
+      notification: StatusBarNotification,
+      appName: CharSequence,
+      customText: ((skip: List<CharSequence?>) -> CharSequence?)? = null,
+    ): NotificationEntry {
       val extras = notification.notification.extras ?: Bundle.EMPTY
       val title =
         extras.getCharSequence(Notification.EXTRA_TITLE_BIG)
           ?: extras.getCharSequence(Notification.EXTRA_TITLE)
       val text =
-        extras.getCharSequence(Notification.EXTRA_BIG_TEXT)
-          ?: extras.getCharSequence(Notification.EXTRA_TEXT)
+        extras.nonBlank(Notification.EXTRA_BIG_TEXT)
+          ?: extras.nonBlank(Notification.EXTRA_TEXT)
           ?: lastMessage(extras)
-          ?: extras.getCharSequenceArray(Notification.EXTRA_TEXT_LINES)?.joinToString("\n")
-          ?: notification.notification.tickerText
+          ?: extras
+            .getCharSequenceArray(Notification.EXTRA_TEXT_LINES)
+            ?.filterNotNull()
+            ?.filter { it.isNotBlank() }
+            ?.joinToString("\n")
+            ?.takeIf { it.isNotEmpty() }
+          ?: notification.notification.tickerText?.takeIf { it.isNotBlank() }
+          ?: customText?.invoke(listOf(title, appName))
+          ?: extras.nonBlank(Notification.EXTRA_SUB_TEXT)
+          ?: extras.nonBlank(Notification.EXTRA_INFO_TEXT)
+          ?: extras.nonBlank(Notification.EXTRA_SUMMARY_TEXT)
       val timeMillis = timeMillis(notification)
       return NotificationEntry(
         notification,
@@ -103,6 +120,9 @@ class NotificationEntry(
         timeMillis,
       )
     }
+
+    private fun Bundle.nonBlank(key: String): CharSequence? =
+      getCharSequence(key)?.takeIf { it.isNotBlank() }
 
     /** Android's own limit for a notification's texts, which apps can get around. */
     private const val MAX_LENGTH = 5 * 1024

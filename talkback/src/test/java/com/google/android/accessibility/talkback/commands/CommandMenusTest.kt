@@ -131,6 +131,33 @@ class CommandMenusTest {
   }
 
   @Test
+  fun aCommandIsAddedToTheEndOfTheSandflyMenuOnce() {
+    CommandMenus.setChildren(context, prefs, top, listOf(Submenu("s", "Reading", listOf(Command("a")))))
+    assertTrue(CommandMenus.isInSandfly(context, prefs, "a"))
+    CommandMenus.addToSandfly(context, prefs, "a")
+    assertEquals(listOf(Submenu("s", "Reading", listOf(Command("a")))), sandfly())
+    assertFalse(CommandMenus.isInSandfly(context, prefs, "b"))
+    CommandMenus.addToSandfly(context, prefs, "b")
+    assertEquals(listOf(Submenu("s", "Reading", listOf(Command("a"))), Command("b")), sandfly())
+    assertTrue(CommandMenus.isInSandfly(context, prefs, "b"))
+  }
+
+  @Test
+  fun removingFromTheSandflyMenuLeavesCustomMenus() {
+    CommandMenus.writeCustom(prefs, listOf(Menu("m", "AI", listOf(Command("a")))))
+    CommandMenus.setChildren(
+      context,
+      prefs,
+      top,
+      listOf(Command("a"), Submenu("s", "Reading", listOf(Command("a"), Command("b")))),
+    )
+    CommandMenus.removeFromSandfly(context, prefs, "a")
+    assertEquals(listOf(Submenu("s", "Reading", listOf(Command("b")))), sandfly())
+    assertFalse(CommandMenus.isInSandfly(context, prefs, "a"))
+    assertEquals(listOf(Command("a")), CommandMenus.items(context, prefs, "m"))
+  }
+
+  @Test
   fun aCommandAlreadyThereIsNotAddedTwice() {
     CommandMenus.writeCustom(prefs, listOf(Menu("m", "AI", listOf(Command("a")))))
     CommandMenus.setChildren(context, prefs, top, listOf(Command("a")))

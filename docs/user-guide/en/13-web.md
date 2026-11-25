@@ -20,7 +20,7 @@ How some elements are read:
 - Check boxes and radio buttons are read with their labels.
 - When a page moves focus to an element such as a post, as Mastodon does with the J and K keys, SandFly reads the text of the links in it, such as the author, the time and the hashtags, but not its buttons. Spaces between links aren't read.
 
-Note: Some speech engines, such as Gryphon, stop only between the pieces of text they receive. If speech of the next item starts late after you swipe away from a long paragraph, turn on **Speech** > **Send long text a sentence at a time**. See [](#speech).
+Note: Some speech engines, such as Gryphon, stop only between the pieces of text they receive. If speech of the next item starts late after you swipe away from a long paragraph, turn on **Speech** > **Send long text a sentence at a time**. See [](#speech-pronunciation).
 
 ### Move by element {#web-elements}
 
@@ -51,7 +51,7 @@ You can add these reading controls on the **Reading controls** screen, under **E
 
 To add a reading control, see [](#commands). To select reading controls, see [](#reading-controls).
 
-You can also move by element without changing the reading control: assign gestures to the commands under **Navigate by element** and **Navigate by heading level**, such as **Next heading** and **Previous heading**. See [](#gestures). On a physical keyboard, each element has a keyboard shortcut; see [](#keyboards).
+You can also move by element without changing the reading control: assign gestures to the commands in the **Navigate by element** category, such as **Next heading**, **Previous heading** and **Next heading 1**. See [](#gestures). On a physical keyboard, each element has a keyboard shortcut; see [](#keyboards).
 
 The command **Navigation**, which you can add to the SandFly menu, lists kinds of navigation to choose from, such as characters, headings or landmarks. When it is in the SandFly menu, **Edit navigation options**, below it on the **SandFly menu** screen, chooses which kinds it lists. See [](#commands).
 
@@ -102,7 +102,7 @@ To turn browse mode on or off, use the command **Turn browse mode on or off**, i
 
 These settings are on the **Navigation** screen:
 
-- **Smart browse mode**: Automatically turns browse mode on or off based on the item you're on. This syncs input focus with SandFly focus. On by default. SandFly turns browse mode on when focus moves onto an item in web content, and off on text fields and on controls that use the arrow keys, such as sliders, list boxes, menu bars, menus, tree views, grids, combo boxes and spin buttons. When you turn browse mode off yourself in web content, moving focus within the web content doesn't turn it back on. Browse mode is also turned off when input focus moves to a text field or slider in an app.
+- **Smart browse mode**: turns browse mode on or off for the focused item. On by default. SandFly turns browse mode on when focus moves onto an item in web content, and off on text fields and on controls that use the arrow keys, such as sliders, list boxes, menu bars, menus, tree views, grids, combo boxes and spin buttons. When a keyboard command moves SandFly focus to one of these items, input focus moves there too. When you turn browse mode off yourself in web content, moving focus within the web content doesn't turn it back on. Browse mode is also turned off when input focus moves to a text field or slider in an app.
 - **Remember browse mode in each app**: SandFly keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless **Smart browse mode** turns it on in web content. Off by default.
 
 ### Lists of elements and addresses {#web-lists}

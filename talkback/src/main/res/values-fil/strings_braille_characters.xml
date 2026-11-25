@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Magdagdag ng character</string>
+    <string name="custom_braille_characters_text">Character o text</string>
+    <string name="custom_braille_characters_cells">Mga tuldok</string>
+    <string name="custom_braille_characters_table">Braille table</string>
+    <string name="custom_braille_characters_cells_help">Mga numero ng tuldok ng bawat cell, na pinaghihiwalay ng gitling ang mga cell, gaya ng 2356 o 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Maglagay ng mga numero ng tuldok na 1 hanggang 8, hanggang <xliff:g id="number" example="20">%1$d</xliff:g> cell</string>
+    <string name="custom_braille_characters_invalid_text">Maglagay ng 1 hanggang <xliff:g id="number" example="50">%1$d</xliff:g> character</string>
+</resources>

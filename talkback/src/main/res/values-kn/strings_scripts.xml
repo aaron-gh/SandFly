@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> ಐಟಂಗಳನ್ನು ನಕಲಿಸಲಾಗಿದೆ</string>
     <string name="script_tree_none">ನಕಲಿಸಲು ಯಾವುದೇ ವಿಂಡೋ ಇಲ್ಲ</string>
     <string name="script_tree_clip_label">ಸ್ಕ್ರೀನ್ ಟ್ರೀ</string>
-    <string name="summary_copy_screen_tree_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಬರೆಯಲು ಸ್ಕ್ರೀನ್‌ನ ಎಲ್ಲಾ ಐಟಂಗಳನ್ನು JSON ಆಗಿ ನಕಲಿಸುವುದು</string>
+    <string name="summary_copy_screen_tree_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಬರೆಯಲು ಸ್ಕ್ರೀನ್‌ನ ಎಲ್ಲಾ ಐಟಂಗಳನ್ನು ಪಠ್ಯವಾಗಿ ನಕಲಿಸುವುದು</string>
     <string name="script_inspect_clip_label">ಐಟಂ ವಿವರಗಳು</string>
-    <string name="summary_inspect_item_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳನ್ನು ಬರೆಯಲು ಕೊನೆಯದಾಗಿ ಫೋಕಸ್ ಆದ ಐಟಂನ ವಿವರಗಳನ್ನು ಹೇಳುವುದು ಮತ್ತು ನಕಲಿಸುವುದು</string>
+    <string name="summary_inspect_item_menu">ಸ್ಕ್ರಿಪ್ಟ್‌ಗಳು ಮತ್ತು ಮ್ಯಾಕ್ರೋಗಳನ್ನು ಬರೆಯಲು, ಕೊನೆಯದಾಗಿ ಫೋಕಸ್ ಆದ ಐಟಂನ ವಿವರಗಳನ್ನು ತೋರಿಸುತ್ತದೆ</string>
     <string name="script_keys_backtalk_modifier">SandFly ಪರಿವರ್ತಕ</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ನಂತರ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ಆಜ್ಞೆಗಳು</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">ಸ್ಕ್ರಿಪ್ಟ್ ವಿವರಗಳು</string>
     <string name="item_details_app">ಆ್ಯಪ್</string>
     <string name="script_permission_system">ಹಿಂತಿರುಗುವುದು ಅಥವಾ ಹೋಮ್‌ಗೆ ಹೋಗುವುದು, ಅಧಿಸೂಚನೆಗಳನ್ನು ತೆರೆಯುವುದು, ಆ್ಯಪ್‌ಗಳ ಪಟ್ಟಿಯನ್ನು ತೋರಿಸುವುದು, ಆ್ಯಪ್‌ಗಳು, ಸೆಟ್ಟಿಂಗ್‌ಗಳು ಮತ್ತು ಲಿಂಕ್‌ಗಳನ್ನು ತೆರೆಯುವುದು, ಆ್ಯಪ್‌ಗಳಿಗೆ Intent ಕಳುಹಿಸುವುದು, ವಾಲ್ಯೂಮ್, ರಿಂಗರ್ ಮೋಡ್ ಮತ್ತು Wi-Fi ಹಾಗೂ ಫ್ಲ್ಯಾಶ್‌ಲೈಟ್‌ನಂತಹ ಸಾಧನದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬದಲಾಯಿಸುವುದು, ಮೀಡಿಯಾವನ್ನು ನಿಯಂತ್ರಿಸುವುದು, ಟೈಮರ್‌ಗಳು ಮತ್ತು ಅಲಾರಮ್‌ಗಳನ್ನು ಹೊಂದಿಸುವುದು, ಹಾಗೂ ಕರೆಗಳು ಮತ್ತು ಸಂದೇಶಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದು</string>
+    <string name="script_from_code">SandFly ನಲ್ಲಿ ನಮೂದಿಸಲಾಗಿದೆ.</string>
+    <string name="script_code_view">ಕೋಡ್ ವೀಕ್ಷಿಸಿ</string>
+    <string name="script_code_edit">ಕೋಡ್ ಸಂಪಾದಿಸಿ</string>
+    <string name="script_code_new">ಕೋಡ್‌ನಿಂದ ಹೊಸ ಸ್ಕ್ರಿಪ್ಟ್</string>
+    <string name="script_code_field">ಕೋಡ್</string>
+    <string name="script_code_save">ಸೇವ್ ಮಾಡಿ</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> ಉಳಿಸಲಾಗಿದೆ</string>
+    <string name="script_code_not_saved">ಸ್ಕ್ರಿಪ್ಟ್ ಉಳಿಸಲಾಗಿಲ್ಲ</string>
+    <string name="script_code_id_changed">ಮ್ಯಾನಿಫೆಸ್ಟ್‌ನ id <xliff:g id="id">%1$s</xliff:g> ಆಗಿಯೇ ಇರಬೇಕು.</string>
+    <string name="script_code_load_failed">ಕೋಡ್ ಅನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.</string>
+    <string name="script_code_discard_title">ಬದಲಾವಣೆಗಳನ್ನು ತಿರಸ್ಕರಿಸುವುದೇ?</string>
+    <string name="script_code_discard">ತಿರಸ್ಕರಿಸು</string>
+    <string name="script_code_keep_editing">ಸಂಪಾದನೆ ಮುಂದುವರಿಸಿ</string>
 </resources>

@@ -35,8 +35,9 @@ The presses don't run commands, and the keys change the volume as usual, in thes
 - During a phone call, or while an app plays call audio.
 - While a finger is on the screen, or during continuous reading.
 - When the key adjusts a slider or moves the cursor.
+- While the Shortcut Menu app is shown.
 
-While a call rings, only a volume key with the **Answer call** command assigned to one of its presses runs commands.
+While a phone call rings, only a volume key with the **Answer call** or **End call** command assigned to one of its presses runs commands.
 
 ### Keep volume key presses from Android {#buttons-take-all}
 
@@ -47,7 +48,16 @@ Both settings leave the keys to Android while the screen is off, during a phone 
 
 ### Volume key shortcuts with the screen off {#buttons-screen-off}
 
-With **Volume key shortcuts with the screen off** on, the volume key presses that have commands run them while the display is off. Presses without a command change the volume. The setting needs Shizuku, and isn't shown when SandFly uses root instead of Shizuku or on watches; see [](#updates). The first time you turn it on, Shizuku shows a request to allow SandFly. It's off by default.
+With **Volume key shortcuts with the screen off** on, the volume key presses that have commands run them while the display is off. Presses without a command change the volume. The setting needs Shizuku, and isn't shown when SandFly uses root instead of Shizuku or on watches; see [](#updates-shizuku). The first time you turn it on, Shizuku shows a request to allow SandFly. It's off by default.
+
+### Mute key {#buttons-mute-key}
+
+On phones with a mute key, such as the Zinwa Q25, **Volume keys** has two more settings:
+
+- **Hold mute key to dictate in text fields**: when a text field has input focus, a keyboard is shown or connected, and no call is active, holding the mute key runs **Dictate**: recording starts when you press the key, and stops when you release it, and SandFly types the text. Pressing the key during a dictation into a text field stops that dictation. On by default. See [](#typing-dictate).
+- **Mute key press**: the command that a press of the mute key runs everywhere else. The list is the same as for gestures. Unassigned by default.
+
+When neither setting takes a press, it goes to the keymap, where the mute key can be a keyboard shortcut of its own in the keyboard phone keymaps and in custom keymaps (see [](#keyboards-keymaps)), and then to Android.
 
 ### Speech volume on Samsung phones {#buttons-samsung}
 
@@ -66,6 +76,8 @@ To have the volume keys change the speech volume while SandFly speaks, turn on *
 
 With a tone, **Silence tone during media playback** turns off the tone while an app plays media. With speech, **Silence speech during media playback** turns off the announcement while an app plays media, and **Interrupt speech to announce the volume** stops the speech that is playing to announce the volume. The two media switches are off by default, and **Interrupt speech to announce the volume** is on.
 
+With speech, **Change speech volume silently while speaking** leaves out the announcement when the volume keys change the speech volume while SandFly speaks or has speech queued, so speech continues at the new volume. Presses that follow each other within a second count as one series, which stays silent after speech ends. The tone still plays if chosen. Presses while a finger is on the screen, presses while SandFly is silent, and changes from the volume panel or apps are announced. On Samsung phones, outside continuous reading, the keys change the speech volume while SandFly speaks only with **Volume keys change speech volume while speaking** on. Off by default.
+
 Volume changes that SandFly makes, such as with a volume command, get no feedback. Volume changes that other apps make do. There's no tone during a call or while SandFly is paused.
 
 ### Sensors {#buttons-sensors}
@@ -74,7 +86,7 @@ These features use the sensors of the phone. Each is set on the screen named her
 
 - **Back tap**: two, three or four taps on the back of the phone run commands. **Gestures** > **Back tap**; see [](#gestures-back-tap).
 - **Shake**: shaking the phone runs a command. **Gestures** > **Shake**; see [](#gestures-shake).
-- **Cover proximity sensor to stop speech**: covering the proximity sensor stops speech. Off by default. **Speech** > **Cover proximity sensor to stop speech**; see [](#speech).
+- **Cover proximity sensor to stop speech**: covering the proximity sensor stops speech. Off by default. **Speech** > **Cover proximity sensor to stop speech**; see [](#speech-stop).
 - **Lock touch automatically** > **While the proximity sensor is covered**: touch is locked while something covers the proximity sensor. See [](#touch-lock).
-- **Shake to stop** and **Wave to stop**: shaking the phone, or moving a hand over the proximity sensor, stops the reading of a notification. **Notifications** > **Stop reading**; see [](#notifications).
-- **Speaker when away from your ear**: a call moves to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up. **Audio output** > **Speaker when away from your ear**; see [](#sound).
+- **Shake to stop** and **Wave to stop**: shaking the phone, or moving a hand over the proximity sensor, stops the reading of a notification. **Notifications** > **Stop reading**; see [](#notifications-stop).
+- **Speaker when away from your ear**: a call moves to the speaker when you take the phone away from your ear, and back to the earpiece when you hold it up. **Audio output** > **Speaker when away from your ear**. It needs Android 12 or later. See [](#sound-calls).

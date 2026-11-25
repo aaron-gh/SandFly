@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Αντιγράφηκαν <xliff:g id="count">%1$d</xliff:g> στοιχεία</string>
     <string name="script_tree_none">Δεν υπάρχει παράθυρο για αντιγραφή</string>
     <string name="script_tree_clip_label">Δέντρο οθόνης</string>
-    <string name="summary_copy_screen_tree_menu">Αντιγραφή όλων των στοιχείων της οθόνης ως JSON, για τη σύνταξη σεναρίων</string>
+    <string name="summary_copy_screen_tree_menu">Αντιγραφή όλων των στοιχείων της οθόνης ως κείμενο, για τη σύνταξη σεναρίων</string>
     <string name="script_inspect_clip_label">Λεπτομέρειες στοιχείου</string>
-    <string name="summary_inspect_item_menu">Εκφώνηση και αντιγραφή λεπτομερειών του τρέχοντος στοιχείου, για τη σύνταξη σεναρίων</string>
+    <string name="summary_inspect_item_menu">Εμφάνιση λεπτομερειών του στοιχείου στο οποίο βρισκόσασταν, για τη σύνταξη σεναρίων και μακροεντολών</string>
     <string name="script_keys_backtalk_modifier">Πλήκτρο τροποποίησης SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, μετά <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Εντολές</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Λεπτομέρειες σεναρίου</string>
     <string name="item_details_app">Εφαρμογή</string>
     <string name="script_permission_system">Μετάβαση πίσω ή στην αρχική οθόνη, άνοιγμα ειδοποιήσεων, εμφάνιση λίστας εφαρμογών, άνοιγμα εφαρμογών, ρυθμίσεων και συνδέσμων, αποστολή intent σε εφαρμογές, αλλαγή της έντασης ήχου, της λειτουργίας κουδουνίσματος και ρυθμίσεων συσκευής όπως το Wi-Fi και ο φακός, έλεγχος μέσων, ορισμός χρονομέτρων και ξυπνητηριών, και έναρξη κλήσεων και μηνυμάτων</string>
+    <string name="script_from_code">Καταχωρίστηκε στο SandFly.</string>
+    <string name="script_code_view">Προβολή κώδικα</string>
+    <string name="script_code_edit">Επεξεργασία κώδικα</string>
+    <string name="script_code_new">Νέο σενάριο από κώδικα</string>
+    <string name="script_code_field">Κώδικας</string>
+    <string name="script_code_save">Αποθήκευση</string>
+    <string name="script_code_saved">Αποθηκεύτηκε: <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_code_not_saved">Το σενάριο δεν αποθηκεύτηκε</string>
+    <string name="script_code_id_changed">Το αναγνωριστικό του μανιφέστου πρέπει να παραμείνει <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Δεν ήταν δυνατή η ανάγνωση του κώδικα.</string>
+    <string name="script_code_discard_title">Απόρριψη αλλαγών;</string>
+    <string name="script_code_discard">Απόρριψη</string>
+    <string name="script_code_keep_editing">Συνέχεια επεξεργασίας</string>
 </resources>

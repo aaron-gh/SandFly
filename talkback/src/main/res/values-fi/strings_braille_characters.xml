@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Lisää merkki</string>
+    <string name="custom_braille_characters_text">Merkki tai teksti</string>
+    <string name="custom_braille_characters_cells">Pisteet</string>
+    <string name="custom_braille_characters_table">Pistekirjoitustaulukko</string>
+    <string name="custom_braille_characters_cells_help">Kunkin merkin pistenumerot, merkit yhdysmerkeillä erotettuina, esimerkiksi 2356 tai 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Anna pistenumeroita 1–8, enintään <xliff:g id="number" example="20">%1$d</xliff:g> merkkiä</string>
+    <string name="custom_braille_characters_invalid_text">Anna 1–<xliff:g id="number" example="50">%1$d</xliff:g> merkkiä</string>
+</resources>

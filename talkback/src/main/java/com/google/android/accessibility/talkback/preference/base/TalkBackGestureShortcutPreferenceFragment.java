@@ -29,6 +29,7 @@ import androidx.fragment.app.Fragment;
 import android.text.TextUtils;
 import androidx.annotation.Nullable;
 import androidx.preference.ListPreference;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceDialogFragmentCompat;
 import androidx.preference.PreferenceGroup;
@@ -366,7 +367,24 @@ public class TalkBackGestureShortcutPreferenceFragment extends TalkbackBaseFragm
       layout.setValue(GestureLayout.current(prefs));
       layout.setOnPreferenceChangeListener(
           (preference, newValue) -> {
-            GestureLayout.select(prefs, String.valueOf(newValue));
+            String chosen = String.valueOf(newValue);
+            // BlackBerry's gestures are unfamiliar to most people, so they ask first.
+            if (GestureLayout.BLACKBERRY.equals(chosen)
+                && !GestureLayout.BLACKBERRY.equals(GestureLayout.current(prefs))) {
+              new MaterialAlertDialogBuilder(requireActivity())
+                  .setTitle(R.string.blackberry_gestures_confirm_title)
+                  .setMessage(R.string.blackberry_gestures_confirm_message)
+                  .setPositiveButton(
+                      R.string.blackberry_gestures_confirm_button,
+                      (dialog, which) -> {
+                        GestureLayout.select(prefs, chosen);
+                        layout.setValue(chosen);
+                      })
+                  .setNegativeButton(android.R.string.cancel, null)
+                  .show();
+              return false;
+            }
+            GestureLayout.select(prefs, chosen);
             return true;
           });
     }

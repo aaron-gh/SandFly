@@ -1639,9 +1639,13 @@ public class BrailleIme extends InputMethodService {
 
   /**
    * Turns on the first voice profile in the language of {@code next}, or, when there is none and
-   * the profile in use is in the language of {@code previous}, SandFly's default voice.
+   * the profile in use is in the language of {@code previous}, SandFly's default voice. A table of
+   * no language, such as Unicode braille, keeps the voice in use.
    */
   private void useVoiceProfileFor(Code previous, Code next) {
+    if (next.hasNoLanguage()) {
+      return;
+    }
     SharedPreferences prefs = SharedPreferencesUtils.getSharedPreferences(this);
     String activeId = VoiceProfiles.activeId(prefs);
     String activeLanguage =

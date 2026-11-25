@@ -165,4 +165,19 @@
         <item>aktiver {label}</item>
         <item>velg {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Start taleredigering</string>
+    <string name="voice_editing_on">Taleredigering på</string>
+    <string name="voice_editing_off">Taleredigering av</string>
+    <string name="title_pref_voice_editing_time_limit">Tidsgrense for taleredigering</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minutt</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minutter</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>stopp redigering</item>
+        <item>stopp taleredigering</item>
+        <item>avslutt redigering</item>
+        <item>avslutt taleredigering</item>
+        <item>taleredigering av</item>
+    </string-array>
 </resources>

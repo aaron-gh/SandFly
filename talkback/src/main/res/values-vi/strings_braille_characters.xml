@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Thêm ký tự</string>
+    <string name="custom_braille_characters_text">Ký tự hoặc văn bản</string>
+    <string name="custom_braille_characters_cells">Chấm</string>
+    <string name="custom_braille_characters_table">Bảng chữ nổi</string>
+    <string name="custom_braille_characters_cells_help">Số chấm của từng ô, các ô cách nhau bằng dấu gạch nối, chẳng hạn 2356 hoặc 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Nhập số chấm từ 1 đến 8, tối đa <xliff:g id="number" example="20">%1$d</xliff:g> ô</string>
+    <string name="custom_braille_characters_invalid_text">Nhập từ 1 đến <xliff:g id="number" example="50">%1$d</xliff:g> ký tự</string>
+</resources>

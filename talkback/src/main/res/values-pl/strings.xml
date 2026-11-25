@@ -28,6 +28,7 @@
   <string name="value_screen_on">Ekran włączony.</string>
   <string name="value_screen_off">Ekran wyłączony.</string>
   <string name="value_device_unlocked">Urządzenie zostało odblokowane.</string>
+  <string name="title_pref_screen_announcements_over_media">Odczytuj podczas odtwarzania multimediów</string>
   <string name="title_pref_speech_volume">Głośność mowy</string>
   <string name="title_pref_verbose_scroll_announcement">Zawsze odczytuj liczbę elementów z listy</string>
   <string name="summary_pref_verbose_scroll_announcement">Po każdym przewinięciu mówi, które elementy są widoczne</string>
@@ -351,7 +352,7 @@
   <string name="shortcut_title_menu_control">Menu i elementy sterujące</string>
   <string name="shortcut_title_text_editing">Edytowanie tekstu</string>
   <string name="shortcut_title_special_features">Inne</string>
-  <string name="shortcut_unassigned">Kliknij, by przypisać</string>
+    <string name="shortcut_unassigned">Nieprzypisany</string>
   <string name="shortcut_not_customizable">%1$s, nie można dostosować</string>
   <string name="shortcut_disabled_due_to_vibration_watch">Niedostępne, gdy włączona jest funkcja Vibration Watch</string>
   <string name="shortcut_next">Następny element</string>
@@ -379,9 +380,9 @@
   <string name="shortcut_read_from_current">Czytaj od zaznaczonego elementu</string>
   <string name="shortcut_print_node_tree">Wydrukuj drzewo węzłów</string>
   <string name="shortcut_print_performance_stats">Drukuj statystyki wydajności</string>
-  <string name="shortcut_first_in_screen">Zaznacz pierwszy element na ekranie</string>
+  <string name="shortcut_first_in_screen">Przejdź do pierwszego elementu na ekranie</string>
   <string name="shortcut_voice_commands">Użyj polecenia głosowego</string>
-  <string name="shortcut_last_in_screen">Zaznacz ostatni element na ekranie</string>
+  <string name="shortcut_last_in_screen">Przejdź do ostatniego elementu na ekranie</string>
   <string name="shortcut_enable_dimming">Ukrywanie ekranu</string>
   <string name="shortcut_disable_dimming">Pokaż ekran</string>
   <string name="shortcut_perform_click_action">Aktywuj</string>
@@ -571,6 +572,8 @@
   <string name="title_pref_shortcut_up_and_left">Przesuń w górę, a potem w lewo</string>
   <string name="title_pref_shortcut_up_and_right">Przesuń w górę, a potem w prawo</string>
   <string name="title_pref_shortcut_right_and_down">Przesuń w prawo, a potem w dół</string>
+  <string name="title_pref_shortcut_1finger_3tap">Kliknij trzykrotnie</string>
+  <string name="title_pref_shortcut_1finger_4tap">Kliknij czterokrotnie</string>
   <string name="title_pref_shortcut_right_and_up">Przesuń w prawo, a potem w górę</string>
   <string name="title_pref_shortcut_left_and_down">Przesuń w lewo, a potem w dół</string>
   <string name="title_pref_shortcut_left_and_up">Przesuń w lewo, a potem w górę</string>
@@ -1458,7 +1461,7 @@
     <string name="summary_pref_speaker_devices_no_devices">Nie podłączono jeszcze żadnych urządzeń Bluetooth ani przewodowych</string>
     <string name="shortcut_title_open_app">Otwórz aplikację</string>
     <string name="shortcut_open_app">Otwórz <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
-    <string name="shortcut_scroll_to_top">Przewiń do góry</string>
+    <string name="shortcut_scroll_to_top">Przewiń na początek</string>
     <string name="shortcut_write_reading_control">Napisz literę opcji sterowania czytaniem</string>
     <string name="title_pref_reading_control_letters">Odręczne litery alfabetu</string>
     <string name="reading_control_letter_none">Brak</string>
@@ -1506,7 +1509,7 @@
     <string name="handwriting_alternative"><xliff:g id="text" example="Hello">%1$s</xliff:g>, <xliff:g id="index" example="2">%2$d</xliff:g> z <xliff:g id="count" example="5">%3$d</xliff:g></string>
     <string name="handwriting_empty">Pusty tekst</string>
     <string name="handwriting_not_available">Rozpoznawanie pisma ręcznego nie jest dostępne na tym urządzeniu</string>
-    <string name="shortcut_scroll_to_bottom">Przewiń w dół</string>
+    <string name="shortcut_scroll_to_bottom">Przewiń na koniec</string>
     <string name="shortcut_refresh">Odśwież</string>
     <string name="shortcut_system_notifications">Systemowy obszar powiadomień</string>
     <string name="shortcut_system_quick_settings">Szybkie ustawienia systemu</string>
@@ -1619,6 +1622,8 @@
     <string name="keycombo_menu_category_arrow_key_nav">Nawigacja strzałkami</string>
     <string-array name="pref_dictation_auto_stop_entries">
         <item>Wyłączone</item>
+        <item>1 sekunda</item>
+        <item>2 sekundy</item>
         <item>3 sekundy</item>
         <item>5 sekund</item>
         <item>10 sekund</item>
@@ -1739,13 +1744,12 @@
     <string name="shortcut_use_voice_profile">Użyj profilu głosowego <xliff:g id="name" example="English">%1$s</xliff:g></string>
     <string name="title_pref_keep_previous_voice_engine">Utrzymuj uruchomiony syntezator mowy poprzedniego profilu głosowego</string>
     <string name="title_pref_voice_profile_keep_engine_started">Utrzymuj uruchomiony syntezator mowy</string>
-    <string name="title_pref_speech_equalizer">Korektor</string>
+    <string name="title_pref_speech_equalizer">Efekty głosu</string>
     <string name="title_pref_speech_equalizer_preset">Ustawienie wstępne</string>
-    <string name="title_pref_speech_equalizer_on">Używaj korektora</string>
+    <string name="title_pref_speech_equalizer_on">Używaj efektów głosu</string>
     <string name="speech_equalizer_off">Wyłączony</string>
-    <string name="speech_equalizer_turned_on">Korektor włączony</string>
-    <string name="speech_equalizer_turned_off">Korektor wyłączony</string>
-    <string name="title_selector_equalizer_32">Korektor 32 Hz</string>
+    <string name="speech_equalizer_turned_on">Efekty głosu włączone</string>
+    <string name="speech_equalizer_turned_off">Efekty głosu wyłączone</string>
     <string name="title_selector_equalizer_64">Korektor 64 Hz</string>
     <string name="title_selector_equalizer_125">Korektor 125 Hz</string>
     <string name="title_selector_equalizer_250">Korektor 250 Hz</string>
@@ -1843,6 +1847,7 @@
     <string name="pref_speak_list_positions_title">Odczytywanie informacji o listach</string>
     <string name="pref_speak_grid_positions_title">Odczytywanie informacji o siatkach i tabelach</string>
     <string name="pref_speak_role_without_pause_title">Odczytywanie typu elementu bez pauzy</string>
+    <string name="title_pref_speak_actions_available">Odczytuj „Dostępne czynności”</string>
     <string name="title_pref_overview">Używaj przeglądu SandFly</string>
     <string name="title_pref_overview_newest_last">Najnowsza aplikacja na dole</string>
     <string name="title_pref_overview_columns">Kolumny</string>
@@ -2033,4 +2038,635 @@
         <item quantity="other">Skopiowano <xliff:g id="count" example="5">%1$d</xliff:g> elementu</item>
     </plurals>
     <string name="title_pref_volume_keys_screen_off">Skróty przy wygaszonym ekranie</string>
+    <string name="title_share_focused_image">Udostępnij obraz zaznaczonego elementu</string>
+    <string name="title_share_screenshot">Udostępnij zrzut ekranu</string>
+    <string name="share_image_failed">Nie udało się wykonać zrzutu ekranu</string>
+    <string name="title_pref_speech_equalizer_bands">Korektor</string>
+    <string name="title_pref_speech_effect_bass_compression">Kompresja basów</string>
+    <string name="title_pref_speech_effect_voice_compression">Kompresja głosu</string>
+    <string name="title_pref_speech_effect_treble_compression">Kompresja wysokich tonów</string>
+    <string name="speech_effect_low">Niski</string>
+    <string name="speech_effect_medium">Średni</string>
+    <string name="speech_effect_high">Wysoki</string>
+    <string name="speech_equalizer_deep_bass">Głęboki bas</string>
+    <string name="title_pref_repeat_slower_by">Powtarzaj wolniej o</string>
+    <string name="switch_languages_now_on">Automatyczne przełączanie języka włączone</string>
+    <string name="switch_languages_now_off">Automatyczne przełączanie języka wyłączone</string>
+    <string name="identify_languages_from_words_now_on">Rozpoznawanie języków na podstawie słów włączone</string>
+    <string name="identify_languages_from_words_now_off">Rozpoznawanie języków na podstawie słów wyłączone</string>
+    <string name="title_pref_battery_level_interval">Poziom baterii</string>
+    <string name="battery_level_every_5_percent" formatted="false">Co 5%</string>
+    <string name="battery_level_every_10_percent" formatted="false">Co 10%</string>
+    <string name="battery_level_every_15_minutes">Co 15 minut</string>
+    <string name="battery_level_every_30_minutes">Co 30 minut</string>
+    <string name="battery_level_every_hour">Co godzinę</string>
+    <string name="title_pref_battery_level_voice">Głos poziomu baterii</string>
+    <string name="title_pref_announce_call_length">Informuj o czasie trwania połączenia</string>
+    <string name="template_call_ended">Połączenie zakończone, <xliff:g id="duration" example="3 minutes, 12 seconds">%1$s</xliff:g></string>
+    <string name="screen_on_battery_off">Wyłączone</string>
+    <string name="screen_on_battery_always">Zawsze</string>
+    <string name="screen_on_battery_while_charging">Tylko podczas ładowania</string>
+    <string name="title_pref_screen_on_low_battery">Niski poziom baterii</string>
+    <string name="screen_on_low_battery_10" formatted="false">Poniżej 10%</string>
+    <string name="screen_on_low_battery_15" formatted="false">Poniżej 15%</string>
+    <string name="screen_on_low_battery_20" formatted="false">Poniżej 20%</string>
+    <string name="screen_on_low_battery_30" formatted="false">Poniżej 30%</string>
+    <string name="screen_on_low_battery_50" formatted="false">Poniżej 50%</string>
+    <string name="permission_direct_touch_label">wybieranie miejsc, w których SandFly daje aplikacji dotyk bezpośredni</string>
+    <string name="permission_direct_touch_description">Pozwala aplikacji włączać i wyłączać dotyk bezpośredni SandFly dla części jej ekranu, gdy jest na pierwszym planie. Dotyk bezpośredni dla aplikacji można wyłączyć w ustawieniach SandFly.</string>
+    <string name="punctuation_none">Brak</string>
+    <string name="title_pref_punctuation_none_keep_meaning">Odczytuj symbole zmieniające znaczenie</string>
+    <string name="title_pref_version_history">Historia wersji</string>
+    <string name="title_pref_category_shake">Potrząśnięcie</string>
+    <string name="title_pref_notification_list_by_time">Wyświetlaj powiadomienia od najnowszych, bez grup</string>
+    <string name="title_pref_notification_list_skip_media">Pomijaj odtwarzacze multimediów na liście powiadomień</string>
+    <string name="no_root_access">Brak dostępu do roota</string>
+    <string name="quick_settings_display_size">Rozmiar wyświetlacza</string>
+    <string name="three_part_swipe_gestures_title">Przesunięcia trzyczęściowe</string>
+    <string name="two_stroke_swipe_gestures_title">Przesunięcia dwuetapowe</string>
+    <string name="two_stroke_swipe_gestures_turn_second_title">Przesunięcia dwuetapowe zakończone gestem tam i z powrotem lub pod kątem</string>
+    <string name="two_stroke_swipe_gestures_up_and_down_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w górę, a potem w dół”</string>
+    <string name="two_stroke_swipe_gestures_down_and_up_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w dół, a potem w górę”</string>
+    <string name="two_stroke_swipe_gestures_left_and_right_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w lewo, a potem w prawo”</string>
+    <string name="two_stroke_swipe_gestures_right_and_left_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w prawo, a potem w lewo”</string>
+    <string name="two_stroke_swipe_gestures_up_and_left_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w górę, a potem w lewo”</string>
+    <string name="two_stroke_swipe_gestures_up_and_right_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w górę, a potem w prawo”</string>
+    <string name="two_stroke_swipe_gestures_down_and_left_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w dół, a potem w lewo”</string>
+    <string name="two_stroke_swipe_gestures_down_and_right_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w dół, a potem w prawo”</string>
+    <string name="two_stroke_swipe_gestures_left_and_up_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w lewo, a potem w górę”</string>
+    <string name="two_stroke_swipe_gestures_left_and_down_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w lewo, a potem w dół”</string>
+    <string name="two_stroke_swipe_gestures_right_and_up_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w prawo, a potem w górę”</string>
+    <string name="two_stroke_swipe_gestures_right_and_down_title">Przesunięcia dwuetapowe zaczynające się od „Przesuń w prawo, a potem w dół”</string>
+    <string name="tap_swipe_gestures_title">Kliknij, a potem przesuń</string>
+    <string name="two_finger_angle_gestures_title">2 palce, linia łamana</string>
+    <string name="value_keyboard_phone_keymap">Mapa klawiszy telefonu z klawiaturą</string>
+    <string name="value_keyboard_phone_single_key_keymap">Mapa pojedynczych klawiszy telefonu</string>
+    <string name="keycombo_menu_other_open_keyboard_shortcuts">Otwórz ustawienia skrótów klawiszowych</string>
+    <string name="keycombo_key_modifier_sym">Sym</string>
+    <string name="keycombo_key_modifier_right_alt">Prawy Alt</string>
+    <string name="keycombo_key_modifier_right_shift">Prawy Shift</string>
+    <string name="keycombo_key_modifier_function">Fn</string>
+    <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> przytrzymane</string>
+    <string name="title_pref_time_seconds">Podawaj sekundy w godzinie</string>
+    <string name="title_pref_time_seconds_screen_on">Podawaj sekundy po włączeniu ekranu</string>
+    <string name="title_pref_vibration_type">Typ wibracji</string>
+    <string name="vibration_type_effects">Efekty haptyczne</string>
+    <string name="vibration_type_pulses">Impulsy</string>
+    <string name="vibration_type_on_off">Włączanie i wyłączanie</string>
+    <string name="title_pref_actions_available_sound">Dźwięk „Dostępne czynności”</string>
+    <string name="value_actions_available_sound_off">Wyłączony</string>
+    <string name="value_actions_available_sound_focus">Gdy element zostanie zaznaczony</string>
+    <string name="value_actions_available_sound_after_speech">Po odczytaniu elementu</string>
+    <string-array name="pref_vibration_type_entries">
+        <item>@string/vibration_type_effects</item>
+        <item>@string/vibration_type_pulses</item>
+        <item>@string/vibration_type_on_off</item>
+    </string-array>
+    <string name="title_pref_typing_hold_keys_down">Przytrzymuj klawisze po upływie opóźnienia naciśnięcia i przytrzymania</string>
+    <string name="shortcut_move_to_item_left">Przejdź do elementu po lewej</string>
+    <string name="shortcut_move_to_item_right">Przejdź do elementu po prawej</string>
+    <string name="shortcut_speak_coordinates">Odczytaj współrzędne</string>
+    <string name="speak_coordinates_value">X <xliff:g id="x" example="540">%1$d</xliff:g>, Y <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="speak_coordinates_copied"><xliff:g id="coordinates" example="X 540, Y 1200">%1$s</xliff:g>. Skopiowano</string>
+    <string name="item_list_not_in_reading_control_list">Poza listą <xliff:g id="name" example="Speech">%1$s</xliff:g></string>
+    <string name="shortcut_next_reading_control_list">Następna lista sterowania czytaniem</string>
+    <string name="shortcut_previous_reading_control_list">Poprzednia lista sterowania czytaniem</string>
+    <string name="no_reading_control_lists">Brak list sterowania czytaniem</string>
+    <string name="reading_control_list_changed"><xliff:g id="list" example="Speech">%1$s</xliff:g>, <xliff:g id="control" example="Words">%2$s</xliff:g></string>
+    <string name="title_braille_commands">Polecenia brajlowskie</string>
+    <string name="shortcut_braille_commands">Polecenia brajlowskie</string>
+    <string name="braille_commands_with_profile">Polecenia brajlowskie, <xliff:g id="profile" example="Reading">%1$s</xliff:g></string>
+    <string name="shortcut_braille_find_text">Znajdź tekst</string>
+    <string name="shortcut_braille_find_next_text">Znajdź następny tekst</string>
+    <string name="shortcut_braille_find_previous_text">Znajdź poprzedni tekst</string>
+    <string name="braille_find_prompt">Wpisz tekst do znalezienia</string>
+    <string name="braille_find_wrapped">Od początku</string>
+    <string name="braille_commands_closed">Polecenia brajlowskie zamknięte</string>
+    <string name="braille_command_none">Brak polecenia dla: <xliff:g id="cell" example="dots 2 3 6">%1$s</xliff:g></string>
+    <string name="braille_command_record_prompt">Wpisz komórkę brajlowską</string>
+    <string name="braille_mode_no_text_field">Brak pola tekstowego</string>
+    <plurals name="braille_command_cell">
+        <item quantity="one">Punkt <xliff:g id="dots" example="4">%1$s</xliff:g></item>
+        <item quantity="few">Punkty <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="many">Punkty <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="other">Punkty <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+    </plurals>
+    <string name="title_braille_command_profiles">Profile poleceń brajlowskich</string>
+    <string name="title_braille_command_profile">Profil poleceń brajlowskich</string>
+    <string name="no_braille_command_profiles">Brak profili poleceń brajlowskich</string>
+    <string name="shortcut_braille_command_profiles">Wybierz profil poleceń brajlowskich</string>
+    <string name="shortcut_next_braille_command_profile">Następny profil poleceń brajlowskich</string>
+    <string name="shortcut_previous_braille_command_profile">Poprzedni profil poleceń brajlowskich</string>
+    <string name="shortcut_use_braille_command_profile">Użyj profilu poleceń brajlowskich <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="title_pref_braille_command_profile_in_use">Używany profil poleceń brajlowskich</string>
+    <string name="braille_commands_add">Dodaj polecenie brajlowskie</string>
+    <string name="title_braille_commands_in_apps">Polecenia brajlowskie w aplikacjach</string>
+    <string name="braille_commands_reset_confirm">Przywrócić domyślne komórki poleceń brajlowskich?</string>
+    <string name="braille_command_profile_add">Dodaj profil poleceń brajlowskich</string>
+    <string name="braille_command_profile_new_name">Profil poleceń brajlowskich <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="braille_command_profile_name_taken">Profil poleceń brajlowskich o nazwie <xliff:g id="name" example="Reading">%1$s</xliff:g> już istnieje</string>
+    <string name="braille_command_profile_delete">Usuń profil poleceń brajlowskich</string>
+    <string name="braille_command_change_cell">Zmień komórkę brajlowską</string>
+    <string name="command_braille_cells">Komórki brajlowskie</string>
+    <string name="command_no_braille_cells">Brak komórek brajlowskich</string>
+    <string name="command_add_braille_cell">Dodaj komórkę brajlowską</string>
+    <string name="command_remove_braille_cell">Usuń komórkę brajlowską</string>
+    <string name="shortcut_read_from_current_by_reading_control">Czytaj od zaznaczonego elementu według sterowania czytaniem</string>
+    <string name="shortcut_activate_confirm_button">Aktywuj przycisk potwierdzenia</string>
+    <string name="shortcut_activate_cancel_button">Aktywuj przycisk anulowania</string>
+    <string name="confirm_button_words_default">OK\nTak\nWyślij\nGotowe\nKontynuuj\nDalej\nZapisz\nZezwól\nAkceptuj\nPotwierdź\nPrześlij\nOdpowiedz</string>
+    <string name="cancel_button_words_default">Anuluj\nNie\nZamknij\nWstecz\nOdrzuć\nOdmów\nNie zezwalaj\nNie teraz\nPomiń\nPóźniej</string>
+    <string name="no_confirm_button">Brak przycisku potwierdzenia</string>
+    <string name="no_cancel_button">Brak przycisku anulowania</string>
+    <string name="title_button_command_words">Etykiety przycisków</string>
+    <string name="shortcut_select_first_setting">Pierwszy element sterowania czytaniem</string>
+    <string name="shortcut_character_count">Liczba znaków</string>
+    <string name="character_count_template"><xliff:g id="characters" example="12 characters">%1$s</xliff:g>, <xliff:g id="words" example="3 words">%2$s</xliff:g></string>
+    <string name="shortcut_read_text_field">Czytaj pole tekstowe</string>
+    <string name="text_field_empty">Puste</string>
+    <plurals name="character_count_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> znak</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> znaki</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> znaków</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> znaku</item>
+    </plurals>
+    <plurals name="character_count_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> słowo</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> słowa</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> słów</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> słowa</item>
+    </plurals>
+    <string name="title_continuous_copy">Kopiowanie ciągłe</string>
+    <string name="continuous_copy_save">Zapisz</string>
+    <string name="continuous_copy_no_focus">Żaden element nie ma fokusu</string>
+    <string name="clipboard_history_select">Zaznacz</string>
+    <string name="title_repeat_last_spoken_phrase_slower">Powtórz wolniej ostatnią wypowiedź</string>
+    <string name="title_sheets_edit_cell">Edytuj komórkę</string>
+    <string name="title_sheets_insert_formula">Wstaw formułę</string>
+    <string name="title_pref_shortcut_2finger_2tap_top_bottom">Kliknij dwukrotnie 2 palcami, u góry i u dołu</string>
+    <string name="title_pref_shortcut_2finger_up_and_left">Przesuń w górę, a potem w lewo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_up_and_right">Przesuń w górę, a potem w prawo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_down_and_left">Przesuń w dół, a potem w lewo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_down_and_right">Przesuń w dół, a potem w prawo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_left_and_up">Przesuń w lewo, a potem w górę 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_left_and_down">Przesuń w lewo, a potem w dół 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_right_and_up">Przesuń w prawo, a potem w górę 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_right_and_down">Przesuń w prawo, a potem w dół 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_up">Kliknij, a potem przesuń w górę 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_down">Kliknij, a potem przesuń w dół 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_left">Kliknij, a potem przesuń w lewo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_right">Kliknij, a potem przesuń w prawo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_up">Kliknij dwukrotnie, a potem przesuń w górę 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_down">Kliknij dwukrotnie, a potem przesuń w dół 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_left">Kliknij dwukrotnie, a potem przesuń w lewo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_right">Kliknij dwukrotnie, a potem przesuń w prawo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_up">Kliknij trzykrotnie, a potem przesuń w górę 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_down">Kliknij trzykrotnie, a potem przesuń w dół 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_left">Kliknij trzykrotnie, a potem przesuń w lewo 2 palcami</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_right">Kliknij trzykrotnie, a potem przesuń w prawo 2 palcami</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_up">Kliknij, a potem przesuń w górę 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_down">Kliknij, a potem przesuń w dół 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_left">Kliknij, a potem przesuń w lewo 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_right">Kliknij, a potem przesuń w prawo 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_up">Kliknij dwukrotnie, a potem przesuń w górę 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_down">Kliknij dwukrotnie, a potem przesuń w dół 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_left">Kliknij dwukrotnie, a potem przesuń w lewo 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_right">Kliknij dwukrotnie, a potem przesuń w prawo 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_up">Kliknij trzykrotnie, a potem przesuń w górę 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_down">Kliknij trzykrotnie, a potem przesuń w dół 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_left">Kliknij trzykrotnie, a potem przesuń w lewo 3 palcami</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_right">Kliknij trzykrotnie, a potem przesuń w prawo 3 palcami</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_up">Kliknij, a potem przesuń w górę 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_down">Kliknij, a potem przesuń w dół 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_left">Kliknij, a potem przesuń w lewo 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_right">Kliknij, a potem przesuń w prawo 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_up">Kliknij dwukrotnie, a potem przesuń w górę 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_down">Kliknij dwukrotnie, a potem przesuń w dół 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_left">Kliknij dwukrotnie, a potem przesuń w lewo 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_right">Kliknij dwukrotnie, a potem przesuń w prawo 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_up">Kliknij trzykrotnie, a potem przesuń w górę 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_down">Kliknij trzykrotnie, a potem przesuń w dół 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_left">Kliknij trzykrotnie, a potem przesuń w lewo 4 palcami</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_right">Kliknij trzykrotnie, a potem przesuń w prawo 4 palcami</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Kliknij 2 palcami, a potem przesuń w górę</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Kliknij 2 palcami, a potem przesuń w dół</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Kliknij 2 palcami, a potem przesuń w lewo</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Kliknij 2 palcami, a potem przesuń w prawo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Kliknij dwukrotnie 2 palcami, a potem przesuń w górę</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Kliknij dwukrotnie 2 palcami, a potem przesuń w dół</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Kliknij dwukrotnie 2 palcami, a potem przesuń w lewo</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Kliknij dwukrotnie 2 palcami, a potem przesuń w prawo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Kliknij trzykrotnie 2 palcami, a potem przesuń w górę</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Kliknij trzykrotnie 2 palcami, a potem przesuń w dół</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Kliknij trzykrotnie 2 palcami, a potem przesuń w lewo</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Kliknij trzykrotnie 2 palcami, a potem przesuń w prawo</string>
+    <string name="title_pref_shortcut_up_and_down_and_up">Przesuń w górę, w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_down_and_left">Przesuń w górę, w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_down_and_right">Przesuń w górę, w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_left_and_up">Przesuń w górę, w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_left_and_down">Przesuń w górę, w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_left_and_right">Przesuń w górę, w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_right_and_up">Przesuń w górę, w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_right_and_down">Przesuń w górę, w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_right_and_left">Przesuń w górę, w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_up_and_down">Przesuń w dół, w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_up_and_left">Przesuń w dół, w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_up_and_right">Przesuń w dół, w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_left_and_up">Przesuń w dół, w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_left_and_down">Przesuń w dół, w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_left_and_right">Przesuń w dół, w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_right_and_up">Przesuń w dół, w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_right_and_down">Przesuń w dół, w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_right_and_left">Przesuń w dół, w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_up_and_down">Przesuń w lewo, w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_up_and_left">Przesuń w lewo, w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_up_and_right">Przesuń w lewo, w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_down_and_up">Przesuń w lewo, w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_down_and_left">Przesuń w lewo, w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_down_and_right">Przesuń w lewo, w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_right_and_up">Przesuń w lewo, w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_right_and_down">Przesuń w lewo, w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_right_and_left">Przesuń w lewo, w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_up_and_down">Przesuń w prawo, w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_up_and_left">Przesuń w prawo, w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_up_and_right">Przesuń w prawo, w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_down_and_up">Przesuń w prawo, w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_down_and_left">Przesuń w prawo, w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_down_and_right">Przesuń w prawo, w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_left_and_up">Przesuń w prawo, w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_left_and_down">Przesuń w prawo, w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_left_and_right">Przesuń w prawo, w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_lift_up">Przesuń w górę, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_up_lift_down">Przesuń w górę, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_up_lift_left">Przesuń w górę, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_up_lift_right">Przesuń w górę, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_down_lift_up">Przesuń w dół, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_down_lift_down">Przesuń w dół, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_down_lift_left">Przesuń w dół, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_down_lift_right">Przesuń w dół, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_left_lift_up">Przesuń w lewo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_left_lift_down">Przesuń w lewo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_left_lift_left">Przesuń w lewo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_left_lift_right">Przesuń w lewo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_right_lift_up">Przesuń w prawo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_right_lift_down">Przesuń w prawo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_right_lift_left">Przesuń w prawo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_right_lift_right">Przesuń w prawo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_up_lift_up_and_down">Przesuń w górę, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_up_lift_down_and_up">Przesuń w górę, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_up_lift_left_and_right">Przesuń w górę, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_lift_right_and_left">Przesuń w górę, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_lift_up_and_left">Przesuń w górę, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_lift_up_and_right">Przesuń w górę, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_lift_down_and_left">Przesuń w górę, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_lift_down_and_right">Przesuń w górę, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_lift_left_and_up">Przesuń w górę, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_lift_left_and_down">Przesuń w górę, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_lift_right_and_up">Przesuń w górę, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_lift_right_and_down">Przesuń w górę, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_lift_up_and_down">Przesuń w dół, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_down_lift_down_and_up">Przesuń w dół, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_down_lift_left_and_right">Przesuń w dół, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_lift_right_and_left">Przesuń w dół, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_lift_up_and_left">Przesuń w dół, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_lift_up_and_right">Przesuń w dół, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_lift_down_and_left">Przesuń w dół, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_lift_down_and_right">Przesuń w dół, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_lift_left_and_up">Przesuń w dół, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_lift_left_and_down">Przesuń w dół, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_lift_right_and_up">Przesuń w dół, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_lift_right_and_down">Przesuń w dół, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_lift_up_and_down">Przesuń w lewo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_left_lift_down_and_up">Przesuń w lewo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_left_lift_left_and_right">Przesuń w lewo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_lift_right_and_left">Przesuń w lewo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_lift_up_and_left">Przesuń w lewo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_lift_up_and_right">Przesuń w lewo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_lift_down_and_left">Przesuń w lewo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_lift_down_and_right">Przesuń w lewo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_lift_left_and_up">Przesuń w lewo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_lift_left_and_down">Przesuń w lewo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_lift_right_and_up">Przesuń w lewo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_lift_right_and_down">Przesuń w lewo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_lift_up_and_down">Przesuń w prawo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_right_lift_down_and_up">Przesuń w prawo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_right_lift_left_and_right">Przesuń w prawo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_lift_right_and_left">Przesuń w prawo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_lift_up_and_left">Przesuń w prawo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_lift_up_and_right">Przesuń w prawo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_lift_down_and_left">Przesuń w prawo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_lift_down_and_right">Przesuń w prawo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_lift_left_and_up">Przesuń w prawo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_lift_left_and_down">Przesuń w prawo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_lift_right_and_up">Przesuń w prawo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_lift_right_and_down">Przesuń w prawo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_down">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_up">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_right">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_left">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_left">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_right">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_left">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_right">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_up">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_down">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_up">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_down">Przesuń w górę, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_down">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_up">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_right">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_left">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_left">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_right">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_left">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_right">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_up">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_down">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_up">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_down">Przesuń w dół, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_down">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_up">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_right">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_left">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_left">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_right">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_left">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_right">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_up">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_down">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_up">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_down">Przesuń w lewo, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_down">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_up">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_right">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_left">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_left">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_right">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_left">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_right">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_up">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_down">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_up">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_down">Przesuń w prawo, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_down">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_up">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_right">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_left">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_left">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_right">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_left">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_right">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_up">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_down">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_up">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_down">Przesuń w górę, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_down">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_up">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_right">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_left">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_left">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_right">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_left">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_right">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_up">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_down">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_up">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_down">Przesuń w górę, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_down">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_up">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_right">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_left">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_left">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_right">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_left">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_right">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_up">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_down">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_up">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_down">Przesuń w dół, a potem w lewo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_down">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_up">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_right">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_left">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_left">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_right">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_left">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_right">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_up">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_down">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_up">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_down">Przesuń w dół, a potem w prawo, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_down">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_up">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_right">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_left">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_left">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_right">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_left">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_right">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_up">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_down">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_up">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_down">Przesuń w lewo, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_down">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_up">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_right">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_left">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_left">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_right">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_left">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_right">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_up">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_down">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_up">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_down">Przesuń w lewo, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_down">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_up">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_right">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_left">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_left">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_right">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_left">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_right">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_up">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_down">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_up">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_down">Przesuń w prawo, a potem w górę, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w górę</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w dół</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w lewo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w prawo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_down">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w górę, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_up">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w dół, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_right">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_left">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_left">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w górę, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_right">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w górę, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_left">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w dół, a potem w lewo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_right">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w dół, a potem w prawo</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_up">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_down">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w lewo, a potem w dół</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_up">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w górę</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_down">Przesuń w prawo, a potem w dół, unieś palec, następnie przesuń w prawo, a potem w dół</string>
+    <string name="title_pref_shortcut_back_tap_quadruple">Stuknij czterokrotnie w tył urządzenia</string>
+    <string name="title_pref_shortcut_shake">Potrząśnij</string>
+    <string name="title_pref_shake_sensitivity">Czułość potrząśnięcia</string>
+    <string name="title_pref_two_stroke_swipe_time">Odstęp między przesunięciami dwuetapowymi</string>
+    <string name="value_two_stroke_swipe_time_off">Wyłączone</string>
+    <string name="value_two_stroke_swipe_time_1500">1,5 sekundy</string>
+    <string name="value_multi_tap_timeout_750ms">0,75 sekundy</string>
+    <string name="value_multi_tap_timeout_1500ms">1,5 sekundy</string>
+    <string name="title_pref_stop_before_wrap">Zatrzymuj na ostatnim elemencie przed zawinięciem</string>
+    <string name="title_pref_wrap_around_reading_controls">Zawijanie w sterowaniu czytaniem</string>
+    <string name="title_pref_leave_system_bars">Przechodź z paska stanu i paska nawigacji do innych okien</string>
+    <string name="title_pref_volume_change_silent_while_speaking">Zmieniaj głośność mowy bez komunikatu podczas mówienia</string>
+    <string name="title_pref_volume_keys_take_all">SandFly obsługuje każde naciśnięcie klawisza głośności</string>
+    <string name="title_pref_volume_keys_hide_panel">Ukryj panel głośności</string>
+    <string name="title_pref_volume_up_press">Naciśnięcie klawisza zwiększania głośności</string>
+    <string name="title_pref_volume_down_press">Naciśnięcie klawisza zmniejszania głośności</string>
+    <string name="title_pref_sandfly_keyboard_double_press">Znaki podwójnego naciśnięcia</string>
+    <string name="title_pref_sandfly_keyboard_double_space_period">Podwójna spacja wstawia kropkę</string>
+    <string name="double_press_add">Dodaj klawisz</string>
+    <string name="double_press_item"><xliff:g id="key" example="g">%1$s</xliff:g>: <xliff:g id="characters" example="ğ">%2$s</xliff:g></string>
+    <string name="double_press_key">Klawisz</string>
+    <string name="double_press_characters">Podwójne naciśnięcie wpisuje</string>
+    <string name="double_press_enter_key">Wpisz jeden znak</string>
+    <string name="double_press_enter_characters">Wpisz od 1 do 16 znaków</string>
+    <string name="title_pref_focus_text_inside_items">Zaznaczaj osobno tekst wewnątrz elementów</string>
+    <string name="focus_text_inside_items_now_on">Osobne zaznaczanie tekstu wewnątrz elementów włączone</string>
+    <string name="focus_text_inside_items_now_off">Osobne zaznaczanie tekstu wewnątrz elementów wyłączone</string>
+    <string name="focus_indicator_now_on">Wskaźnik zaznaczenia włączony</string>
+    <string name="focus_indicator_now_off">Wskaźnik zaznaczenia wyłączony</string>
+    <string name="title_pref_dictation_speak_text">Odczytuj podyktowany tekst</string>
+    <string name="title_pref_dictation_punctuation">Automatyczna interpunkcja</string>
+    <string name="title_pref_dictation_block_offensive">Blokuj obraźliwe słowa</string>
+    <string name="settings_profile_keyboards">Klawiatury</string>
+    <string name="settings_profile_add_keyboard">Dodaj klawiaturę</string>
+    <plurals name="word_selection_added">
+        <item quantity="one">Dodano <xliff:g id="count" example="1">%1$d</xliff:g> element</item>
+        <item quantity="few">Dodano <xliff:g id="count" example="5">%1$d</xliff:g> elementy</item>
+        <item quantity="many">Dodano <xliff:g id="count" example="5">%1$d</xliff:g> elementów</item>
+        <item quantity="other">Dodano <xliff:g id="count" example="5">%1$d</xliff:g> elementu</item>
+    </plurals>
+    <string name="word_selection_no_more_text">Nie ma więcej tekstu</string>
+    <string name="selection_range_start">Rozpocznij zaznaczanie</string>
+    <string name="selection_range_end">Zakończ zaznaczanie</string>
+    <string name="selection_range_started">Oznaczono początek zaznaczenia</string>
+    <plurals name="selection_range_selected">
+        <item quantity="one">Zaznaczono <xliff:g id="count" example="1">%1$d</xliff:g> element</item>
+        <item quantity="few">Zaznaczono <xliff:g id="count" example="5">%1$d</xliff:g> elementy</item>
+        <item quantity="many">Zaznaczono <xliff:g id="count" example="5">%1$d</xliff:g> elementów</item>
+        <item quantity="other">Zaznaczono <xliff:g id="count" example="5">%1$d</xliff:g> elementu</item>
+    </plurals>
+    <string name="network_notification_channel">Żądania sieciowe</string>
+    <string name="network_notification_title">Żądanie sieciowe</string>
+    <string name="title_pref_category_own_speech">Aplikacje z własną mową</string>
+    <string name="title_pref_speak_user_focus">Odczytuj tylko fokus przeniesiony przez użytkownika</string>
+    <string name="speak_user_focus_off">Wyłączone</string>
+    <string name="speak_user_focus_all_apps">We wszystkich aplikacjach</string>
+    <string name="speak_user_focus_chosen_apps">W wybranych aplikacjach</string>
+    <string name="title_pref_speak_user_focus_apps">Wybrane aplikacje</string>
+    <string name="title_pref_speak_user_focus_assistant_audio">Odczytuj tylko fokus przeniesiony przez użytkownika, gdy asystent lub połączenie odtwarza dźwięk</string>
+    <string name="title_pref_keyboards_with_own_speech">Klawiatury z własną mową</string>
+    <string name="template_speak_user_focus_changed">Odczytuj tylko fokus przeniesiony przez użytkownika: <xliff:g id="choice" example="In all apps">%1$s</xliff:g></string>
+    <string name="macro_add_to_home_screen">Dodaj do ekranu głównego</string>
+    <string name="macro_shortcut_unsupported">Launcher nie obsługuje skrótów na ekranie głównym</string>
+    <string name="macro_shortcut_already_added">Już na ekranie głównym</string>
+    <string name="macro_shortcut_failed">Nie dodano skrótu</string>
+    <string name="macro_shortcut_deleted">Makro usunięte</string>
+    <string name="macro_shortcut_invalid">Nieprawidłowy skrót. Dodaj makro do ekranu głównego ponownie.</string>
+    <string name="update_download_progress">%1$d%%</string>
+    <string name="update_download_progress_time">%1$d%%, pozostało: %2$s</string>
+    <string name="title_pref_double_tap_taps">Dwukrotne kliknięcie stuka w ekran</string>
+    <string name="shortcut_toggle_double_tap_taps_app">Dwukrotne kliknięcie stuka w ekran w tej aplikacji</string>
+    <string name="double_tap_taps_on">Dwukrotne kliknięcie stuka w ekran: włączone</string>
+    <string name="double_tap_taps_off">Dwukrotne kliknięcie stuka w ekran: wyłączone</string>
+    <string name="double_tap_taps_no_app">Brak aplikacji na pierwszym planie</string>
+    <string name="keycombo_menu_toggle_key_practice">Włącz lub wyłącz ćwiczenie klawiatury</string>
+    <string name="key_practice_on">Ćwiczenie klawiatury włączone</string>
+    <string name="key_practice_off">Ćwiczenie klawiatury wyłączone</string>
+    <string name="key_practice_sandfly_key">klawisz SandFly</string>
+    <string name="key_practice_title">Ćwiczenie klawiatury</string>
+    <string name="key_practice_summary">Odczytuje każdy naciśnięty klawisz i jego polecenie zamiast je wykonywać. Wstecz lub Escape wyłącza ćwiczenie.</string>
+    <string name="keycombo_menu_touch_hold_focus">Przytrzymaj dotyk na elemencie z fokusem</string>
+    <string name="touch_hold_held">Dotyk przytrzymany</string>
+    <string name="touch_hold_lifted">Dotyk zwolniony</string>
+    <string name="touch_hold_unavailable">Niedostępne</string>
+    <string name="touch_hold_no_focus">Żaden element nie ma fokusu</string>
+    <string name="title_pref_speak_password_characters">Odczytuj znaki hasła</string>
+    <string name="summary_pref_speak_password_characters">Z klawiaturą SandFly odczytuje w polach haseł znaki wpisane, usunięte i mijane przez kursor</string>
+    <string name="shortcut_spell_password_field">Przeliteruj pole hasła</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">To nie jest pole hasła</string>
+    <string name="sandfly_keyboard_password_not_available">Tekst pola hasła niedostępny</string>
+    <string name="sandfly_keyboard_password_not_read">Nie jest odczytywane w polach haseł</string>
+    <string name="title_pref_voice_profile_play_sample">Odtwórz próbkę</string>
+    <string name="voice_profile_sample_text">To jest próbka tego profilu głosowego.</string>
+    <string name="voice_profile_sample_failed">Nie odtworzono próbki</string>
+    <string name="title_pref_speech_rate_step">Krok szybkości mowy</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> szybkości</string>
+    <string name="shortcut_end_call">Zakończ połączenie</string>
+    <string name="end_call_no_call">Brak połączenia</string>
+    <string name="end_call_permission">Wymagane uprawnienie do kończenia połączeń</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Przejdź do następnego akapitu, drugi klawisz</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Przejdź do poprzedniego akapitu, drugi klawisz</string>
+    <string name="title_pref_mute_key_dictates">Przytrzymaj klawisz wyciszenia, aby dyktować w polach tekstowych</string>
+    <string name="title_pref_mute_key_press">Naciśnięcie klawisza wyciszenia</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Przejdź do następnego linku, drugi klawisz</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Przejdź do poprzedniego linku, drugi klawisz</string>
+    <string name="keycombo_only_in_browse_mode">Tylko w trybie przeglądania</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> w trybie przeglądania</string>
+    <string name="title_pref_category_fast_search">Szybkie wyszukiwanie</string>
+    <string name="title_pref_fast_search_key">Klawisz szybkiego wyszukiwania</string>
+    <string name="fast_search_key_off">Wyłączone</string>
+    <string name="title_pref_fast_search_wrap">Zawijanie</string>
+    <string name="fast_search_key_left_alt">Lewy Alt</string>
+    <string name="fast_search_key_left_ctrl">Lewy Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Prawy Ctrl</string>
+    <string name="fast_search_key_left_meta">Lewy Meta</string>
+    <string name="fast_search_key_right_meta">Prawy Meta</string>
 </resources>

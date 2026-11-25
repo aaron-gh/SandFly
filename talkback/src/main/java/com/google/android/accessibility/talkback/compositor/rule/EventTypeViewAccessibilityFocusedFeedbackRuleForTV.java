@@ -24,6 +24,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.compositor.AccessibilityEventFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFeedbackUtils;
+import com.google.android.accessibility.talkback.compositor.ActionsAvailable;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.compositor.roledescription.TreeNodesDescription;
@@ -167,6 +168,12 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRuleForTV {
           processorPhoneticLetters.getPhoneticLetterForKeyboardFocusEvent(event);
       phoneticExample.ifPresent(outputJoinList::add);
       logString.append(String.format("\n    phoneticExample={%s}", phoneticExample));
+    }
+
+    // Say that the item has actions of its app. The Actions usage hint then leaves it out.
+    if (globalVariables.getSpeakActionsAvailable() && ActionsAvailable.has(node)) {
+      outputJoinList.add(context.getString(R.string.value_actions_available));
+      logString.append("\n    actionsAvailable");
     }
 
     LogUtils.v(TAG, "viewAccessibilityFocusedDescription: %s", logString);

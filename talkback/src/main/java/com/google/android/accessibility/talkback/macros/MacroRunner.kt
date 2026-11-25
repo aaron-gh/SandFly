@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager
+import com.google.android.accessibility.talkback.report.ReportNotes
 import com.google.android.accessibility.talkback.screenelements.ScreenElements
 import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
@@ -77,6 +78,11 @@ object MacroRunner {
   private const val MAX_CLICK_PARENTS = 6
   /** The most items of a row looked through for a checked switch. */
   private const val MAX_ROW_NODES = 30
+
+  /** How long the macros shown in the Actions menu of an item are reused for the same item. */
+  private const val SHOWN_IN_ACTIONS_REUSE_MS = 1_000L
+
+  private val shownInActionsCache = ShownInActions(SHOWN_IN_ACTIONS_REUSE_MS)
 
   private val mainHandler = Handler(Looper.getMainLooper())
 
@@ -1047,19 +1053,34 @@ object MacroRunner {
   }
 
   /**
-   * Returns whether [macro], listed in the Actions menu of the focused item's app, is shown there
-   * now: whether its [Macros.Macro.actionsCondition] is met. A test that fails to run counts as met,
-   * so the macro stays listed.
+   * Returns the [macros] listed in the Actions menu of [item], an item of their app, that are shown
+   * there now: those whose [Macros.Macro.actionsCondition] is met. A test that fails to run counts as
+   * met, so the macro stays listed. The result for the same item and macros is reused for
+   * [SHOWN_IN_ACTIONS_REUSE_MS]. The time the tests take in other apps is noted for problem reports.
    */
   @JvmStatic
-  fun isShownInActions(service: TalkBackService, macro: Macros.Macro): Boolean {
-    if (macro.actionsCondition.clauses.isEmpty()) return true
-    return try {
-      macro.actionsCondition.isMet { check(service, it, emptyMap()) }
-    } catch (e: RuntimeException) {
-      LogUtils.w(TAG, "Actions condition of a macro not checked: %s", e)
-      true
+  fun shownInActions(service: TalkBackService, item: Any?, macros: List<Macros.Macro>): List<Macros.Macro> {
+    val timing = ConditionTiming()
+    val shown =
+      shownInActionsCache.get(item, macros, SystemClock.uptimeMillis()) { test ->
+        timing.time(test) {
+          try {
+            check(service, test, emptyMap())
+          } catch (e: RuntimeException) {
+            LogUtils.w(TAG, "Actions condition of a macro not checked: %s", e)
+            true
+          }
+        }
+      }
+    val app = (item as? AccessibilityNodeInfoCompat)?.packageName?.toString()
+    if (!timing.isEmpty && app != service.packageName) {
+      val note =
+        "Actions conditions of ${macros.count { it.actionsCondition.clauses.isNotEmpty() }} macros " +
+          "in $app: ${timing.describe()}"
+      LogUtils.d(TAG, "%s", note)
+      ReportNotes.macroConditions.add(note)
     }
+    return shown
   }
 
   /** Returns whether the macro condition test [test] is met. Called on the search thread. */

@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elementer er kopieret</string>
     <string name="script_tree_none">Intet vindue at kopiere</string>
     <string name="script_tree_clip_label">Skærmtræ</string>
-    <string name="summary_copy_screen_tree_menu">Kopiér alle elementer på skærmen som JSON til skrivning af scripts</string>
+    <string name="summary_copy_screen_tree_menu">Kopiér alle elementer på skærmen som tekst til skrivning af scripts</string>
     <string name="script_inspect_clip_label">Elementdetaljer</string>
-    <string name="summary_inspect_item_menu">Læs og kopiér detaljer om det element, du var på, til skrivning af scripts</string>
+    <string name="summary_inspect_item_menu">Vis detaljer om det element, du var på, til skrivning af scripts og makroer</string>
     <string name="script_keys_backtalk_modifier">SandFly-ændringstast</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> og derefter <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Kommandoer</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Scriptdetaljer</string>
     <string name="item_details_app">App</string>
     <string name="script_permission_system">Gå tilbage eller til startskærmen, åbne notifikationer, vise en liste over apps, åbne apps, indstillinger og links, sende intents til apps, ændre lydstyrken, ringetilstanden og enhedsindstillinger som Wi-Fi og lommelygten, styre medier, indstille timere og alarmer og starte opkald og beskeder</string>
+    <string name="script_from_code">Indtastet i SandFly.</string>
+    <string name="script_code_view">Vis kode</string>
+    <string name="script_code_edit">Rediger kode</string>
+    <string name="script_code_new">Nyt script fra kode</string>
+    <string name="script_code_field">Kode</string>
+    <string name="script_code_save">Gem</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> er gemt</string>
+    <string name="script_code_not_saved">Scriptet blev ikke gemt</string>
+    <string name="script_code_id_changed">Id i manifestet skal forblive <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Koden kunne ikke læses.</string>
+    <string name="script_code_discard_title">Vil du kassere ændringerne?</string>
+    <string name="script_code_discard">Kassér</string>
+    <string name="script_code_keep_editing">Fortsæt redigering</string>
 </resources>

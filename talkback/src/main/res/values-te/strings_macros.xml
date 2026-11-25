@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">ఫోకస్ ఐటెమ్ లోపల ఉంది</string>
     <string name="macro_test_focus_inside_value">ఫోకస్ లోపల: %1$s</string>
     <string name="macro_test_not_focus_inside_value">ఫోకస్ లోపల లేదు: %1$s</string>
+    <string name="macro_step_tap_position">స్థానంలో ట్యాప్ చేయండి</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> వద్ద ట్యాప్ చేయండి</string>
+    <string name="macro_tap_x">X, ఎడమ నుండి పిక్సెల్‌లు</string>
+    <string name="macro_tap_y">Y, పై నుండి పిక్సెల్‌లు</string>
+    <string name="macro_invalid_position">0 నుండి <xliff:g id="max" example="10000">%1$d</xliff:g> వరకు X, Yలను ఎంటర్ చేయండి</string>
+    <string name="macro_field_tooltip">టూల్‌టిప్</string>
+    <string name="macro_step_touch_hold">ఐటెమ్‌ను నొక్కి పట్టుకోండి</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>ను <xliff:g id="seconds" example="1.5">%2$s</xliff:g> సె. నొక్కి పట్టుకోండి</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g>ను <xliff:g id="seconds" example="1">%2$s</xliff:g> సె. నొక్కి పట్టుకోండి. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">పట్టుకునే సెకన్లు</string>
+    <string name="macro_slide">ఎత్తే ముందు</string>
+    <string name="macro_slide_none">అదే చోట ఎత్తండి</string>
+    <string name="macro_slide_up">పైకి జరపండి</string>
+    <string name="macro_slide_down">కిందికి జరపండి</string>
+    <string name="macro_slide_left">ఎడమకు జరపండి</string>
+    <string name="macro_slide_right">కుడికి జరపండి</string>
+    <string name="macro_slide_distance">dpలో దూరం</string>
+    <string name="macro_app">యాప్</string>
+    <string name="macro_all_apps">అన్ని యాప్‌లు</string>
+    <string name="macro_add_app">యాప్‌ను జోడించండి</string>
+    <string name="macro_apps">యాప్‌లు</string>
+    <string name="macro_in_actions">చర్యలలో చూపండి</string>
+    <string name="macro_in_actions_only_when">ఇలా ఉన్నప్పుడు మాత్రమే చర్యలలో చూపండి</string>
+    <string name="macro_not_in_app">మాక్రో రన్ కాలేదు. <xliff:g id="app" example="WhatsApp">%1$s</xliff:g>లో మాత్రమే రన్ అవుతుంది</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> మాక్రో</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> మాక్రోలు</item>
+    </plurals>
+    <string name="macro_record">దశలను రికార్డ్ చేయండి</string>
+    <string name="macro_record_new">మాక్రోను రికార్డ్ చేయండి</string>
+    <string name="macro_recording_notification">మాక్రో దశలు రికార్డ్ అవుతున్నాయి: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">రికార్డ్ అవుతోంది. ఆపడానికి, “మాక్రోను రికార్డ్ చేయండి” లేదా “మాక్రోను ఆపండి”ని రన్ చేయండి, లేదా “మాక్రో దశలు రికార్డ్ అవుతున్నాయి” నోటిఫికేషన్‌ను తెరవండి.</string>
+    <string name="macro_recorded">రికార్డ్ చేసిన దశలు</string>
+    <string name="macro_recorded_no_passwords">పాస్‌వర్డ్ ఫీల్డ్‌లలో టైప్ చేసిన టెక్స్ట్ రికార్డ్ కాదు.</string>
+    <string name="macro_recorded_too_many">జోడించబడలేదు. మాక్రోలో గరిష్ఠంగా <xliff:g id="count" example="200">%1$d</xliff:g> దశలు ఉండవచ్చు.</string>
+    <string name="macro_recorded_name">రికార్డ్ చేయబడింది <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">స్క్రీన్‌పై ఉన్న జాబితా</string>
 </resources>

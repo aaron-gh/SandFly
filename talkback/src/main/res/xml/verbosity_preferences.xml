@@ -18,6 +18,11 @@
         android:defaultValue="@bool/pref_speak_role_without_pause_default"
         android:key="@string/pref_speak_role_without_pause_key"
         android:title="@string/pref_speak_role_without_pause_title" />
+    <!-- Key matches ActionsAvailable. -->
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="false"
+        android:key="pref_speak_actions_available"
+        android:title="@string/title_pref_speak_actions_available" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_speak_container_element_positions_default"
         android:key="@string/pref_speak_container_element_positions_key"
@@ -52,6 +57,10 @@
         android:key="@string/pref_punctuation_verbosity"
         android:summary="%s"
         android:title="@string/title_pref_punctuation" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_punctuation_none_keep_meaning_default"
+        android:key="@string/pref_punctuation_none_keep_meaning_key"
+        android:title="@string/title_pref_punctuation_none_keep_meaning" />
     <ListPreference
         android:defaultValue="@string/pref_capital_letters_default"
         android:entries="@array/pref_capital_letters_entries"
@@ -133,6 +142,21 @@
         android:defaultValue="@bool/pref_announce_full_charge_default"
         android:key="@string/pref_announce_full_charge_key"
         android:title="@string/title_pref_announce_full_charge" />
+    <!-- Keys and values match BatteryLevelAnnouncements. VerbosityPrefFragment lists the voices. -->
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="off"
+        android:dialogTitle="@string/title_pref_battery_level_interval"
+        android:entries="@array/pref_battery_level_interval_entries"
+        android:entryValues="@array/pref_battery_level_interval_values"
+        android:key="pref_battery_level_interval"
+        android:summary="%s"
+        android:title="@string/title_pref_battery_level_interval" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue=""
+        android:dialogTitle="@string/title_pref_battery_level_voice"
+        android:key="pref_battery_level_voice_profile"
+        android:summary="%s"
+        android:title="@string/title_pref_battery_level_voice" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_announce_call_length_default"
         android:key="@string/pref_announce_call_length_key"

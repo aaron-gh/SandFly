@@ -165,4 +165,19 @@
         <item>aktivera {label}</item>
         <item>välj {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Starta röstredigering</string>
+    <string name="voice_editing_on">Röstredigering på</string>
+    <string name="voice_editing_off">Röstredigering av</string>
+    <string name="title_pref_voice_editing_time_limit">Tidsgräns för röstredigering</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minut</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minuter</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>sluta redigera</item>
+        <item>sluta röstredigera</item>
+        <item>avsluta redigering</item>
+        <item>avsluta röstredigering</item>
+        <item>röstredigering av</item>
+    </string-array>
 </resources>

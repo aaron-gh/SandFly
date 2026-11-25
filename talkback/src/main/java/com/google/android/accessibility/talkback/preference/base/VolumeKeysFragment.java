@@ -24,6 +24,7 @@ import androidx.preference.PreferenceGroup;
 import androidx.preference.TwoStatePreference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.eventprocessor.OneUiVolumeKeys;
+import com.google.android.accessibility.talkback.keyboard.MuteKey;
 import com.google.android.accessibility.talkback.shizuku.ShizukuGrants;
 import com.google.android.accessibility.talkback.shizuku.ShizukuShell;
 import com.google.android.accessibility.utils.FormFactorUtils;
@@ -40,6 +41,9 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
     super.onCreatePreferences(savedInstanceState, rootKey);
     setVisible(
         R.string.pref_volume_keys_speech_volume_while_speaking_key, OneUiVolumeKeys.isSupported());
+    boolean muteKey = MuteKey.isAvailable();
+    setVisible(R.string.pref_mute_key_dictates_key, muteKey);
+    setVisible(R.string.pref_mute_key_press_key, muteKey);
     TwoStatePreference screenOff = findPreference(getString(R.string.pref_volume_keys_screen_off_key));
     if (screenOff != null) {
       // The root shell process can't load the native helper.
@@ -92,8 +96,8 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
   }
 
   /**
-   * Shows the media playback switch of the tone and of speech, and the interrupt switch of speech,
-   * only when {@code value} has it.
+   * Shows the media playback switch of the tone and of speech, and the interrupt and silent switches
+   * of speech, only when {@code value} has it.
    */
   private void showMediaSwitches(@Nullable String value) {
     boolean both = getString(R.string.value_volume_change_feedback_tone_and_spoken).equals(value);
@@ -103,6 +107,7 @@ public class VolumeKeysFragment extends AdvancedSettingFragment {
     boolean spoken = both || getString(R.string.value_volume_change_feedback_spoken).equals(value);
     setVisible(R.string.pref_volume_change_speech_during_media_key, spoken);
     setVisible(R.string.pref_volume_change_interrupts_speech_key, spoken);
+    setVisible(R.string.pref_volume_change_silent_while_speaking_key, spoken);
   }
 
   private void setVisible(int keyResId, boolean visible) {

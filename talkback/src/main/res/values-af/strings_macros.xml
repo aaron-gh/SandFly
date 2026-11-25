@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Fokus is binne ’n item</string>
     <string name="macro_test_focus_inside_value">Fokus binne: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokus nie binne: %1$s</string>
+    <string name="macro_step_tap_position">Tik by posisie</string>
+    <string name="macro_step_tap_position_value">Tik by <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pieksels van links</string>
+    <string name="macro_tap_y">Y, pieksels van bo</string>
+    <string name="macro_invalid_position">Voer X en Y van 0 tot <xliff:g id="max" example="10000">%1$d</xliff:g> in</string>
+    <string name="macro_field_tooltip">Wenkteks</string>
+    <string name="macro_step_touch_hold">Raak en hou item</string>
+    <string name="macro_step_touch_hold_value">Raak en hou <xliff:g id="label" example="Voice message">%1$s</xliff:g> vir <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Raak en hou <xliff:g id="label" example="Voice message">%1$s</xliff:g> vir <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Sekondes om te hou</string>
+    <string name="macro_slide">Voor oplig</string>
+    <string name="macro_slide_none">Lig op die plek op</string>
+    <string name="macro_slide_up">Gly op</string>
+    <string name="macro_slide_down">Gly af</string>
+    <string name="macro_slide_left">Gly links</string>
+    <string name="macro_slide_right">Gly regs</string>
+    <string name="macro_slide_distance">Afstand in dp</string>
+    <string name="macro_app">App</string>
+    <string name="macro_all_apps">Alle apps</string>
+    <string name="macro_add_app">Voeg app by</string>
+    <string name="macro_apps">Apps</string>
+    <string name="macro_in_actions">Wys in Handelinge</string>
+    <string name="macro_in_actions_only_when">Wys net in Handelinge wanneer</string>
+    <string name="macro_not_in_app">Makro nie uitgevoer nie. Loop net in <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makro’s</item>
+    </plurals>
+    <string name="macro_record">Neem stappe op</string>
+    <string name="macro_record_new">Neem ’n makro op</string>
+    <string name="macro_recording_notification">Makrostappe word opgeneem: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Neem op. Om te stop, voer Neem ’n makro op of Stop makro uit, of maak die kennisgewing Makrostappe word opgeneem oop.</string>
+    <string name="macro_recorded">Opgeneemde stappe</string>
+    <string name="macro_recorded_no_passwords">Teks wat in wagwoordvelde getik word, word nie opgeneem nie.</string>
+    <string name="macro_recorded_too_many">Nie bygevoeg nie. ’n Makro het hoogstens <xliff:g id="count" example="200">%1$d</xliff:g> stappe.</string>
+    <string name="macro_recorded_name">Opgeneem <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Lys op skerm</string>
 </resources>

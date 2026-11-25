@@ -23,7 +23,7 @@ import android.view.View
 import androidx.annotation.WorkerThread
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.Commands
-import com.google.android.accessibility.talkback.gesture.VoiceOverGestures
+import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.keyboard.Keymap
@@ -83,7 +83,7 @@ object UserGuide {
    * language, then English. Folders are named like resource folders, such as pt-rBR.
    */
   private fun languageFolders(context: Context, locale: Locale): List<String> {
-    val available = context.assets.list(ROOT).orEmpty().toSet()
+    val available = context.assets.list(ROOT).orEmpty().map { it.substringBefore('/') }.toSet()
     val languages = listOf(locale.language) + LEGACY[locale.language].orEmpty()
     val folders = mutableListOf<String>()
     for (language in languages) {
@@ -142,13 +142,19 @@ object UserGuide {
     }
     val unassigned = context.getString(R.string.shortcut_value_unassigned)
     val text = StringBuilder()
-    for ((layout, nameRes) in listOf("sandfly" to R.string.gesture_layout_sandfly, "voiceover" to R.string.gesture_layout_voiceover)) {
+    for ((layout, nameRes) in
+      listOf(
+        GestureLayout.SANDFLY to R.string.gesture_layout_sandfly,
+        GestureLayout.VOICEOVER to R.string.gesture_layout_voiceover,
+        GestureLayout.BLACKBERRY to R.string.gesture_layout_blackberry,
+      )) {
       text.append("### ").append(cell(context.getString(nameRes))).append(" {#appendix-gestures-").append(layout).append("}\n\n")
       for ((index, group) in groups.withIndex()) {
         val rows =
           group.second.mapNotNull { gesture ->
             val value =
-              if (layout == "sandfly") gesture.sandFlyDefault else VoiceOverGestures.defaultValue(context, gesture.key)
+              if (layout == GestureLayout.SANDFLY) gesture.sandFlyDefault
+              else GestureLayout.layoutDefault(context, layout, gesture.key)
             if (value == null || value == unassigned) return@mapNotNull null
             val command = Commands.label(context, value) ?: return@mapNotNull null
             gesture.title to command
@@ -173,12 +179,19 @@ object UserGuide {
       val seen = HashSet<String>()
       for ((index, category) in categories.withIndex()) {
         val rows =
-          category.commands.mapNotNull { command ->
-            val key = command.keyboardKey(context)
-            if (!seen.add(key)) return@mapNotNull null
-            val keyCombo = model.getDefaultKeyCombo(key)
-            if (keyCombo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) return@mapNotNull null
-            command.label to keyComboManager.getKeyComboStringRepresentation(keyCombo, model)
+          category.commands.flatMap { command ->
+            // A command's second key, such as P for Next paragraph in the NVDA keymap, follows it.
+            val second = command.secondKeyboardAction
+            listOfNotNull(
+                command.keyboardKey(context) to command.label,
+                second?.let { it.getKey(context.resources) to it.getDescription(context.resources) },
+              )
+              .mapNotNull { (key, label) ->
+                if (!seen.add(key)) return@mapNotNull null
+                val keyCombo = model.getDefaultKeyCombo(key)
+                if (keyCombo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) return@mapNotNull null
+                label to keyComboManager.getKeyComboStringRepresentation(keyCombo, model)
+              }
           }
         if (rows.isEmpty()) continue
         text.append("#### ").append(cell(context.getString(category.titleRes))).append(" {#appendix-keyboard-shortcuts-").append(id).append('-').append(index).append("}\n\n")

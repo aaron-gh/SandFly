@@ -37,6 +37,7 @@ import com.google.android.accessibility.talkback.compositor.AccessibilityEventFe
 import com.google.android.accessibility.talkback.compositor.AccessibilityFocusEventInterpretation;
 import com.google.android.accessibility.talkback.compositor.AccessibilityInterpretationFeedbackUtils;
 import com.google.android.accessibility.talkback.compositor.AccessibilityNodeFeedbackUtils;
+import com.google.android.accessibility.talkback.compositor.ActionsAvailable;
 import com.google.android.accessibility.talkback.compositor.Compositor;
 import com.google.android.accessibility.talkback.compositor.Compositor.HandleEventOptions;
 import com.google.android.accessibility.talkback.compositor.CompositorUtils;
@@ -178,6 +179,16 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
       }
     }
 
+    // An item with actions of its app plays the Actions available sound after the other sounds,
+    // or once the item has been spoken. A vibration that a sound theme gives it is the one felt.
+    // Not when the sound is off, or when focus stayed at the end of a grid.
+    int actionsEarcon =
+        (globalVariables.isActionsSoundOn()
+                && columnWrap != ColumnWrap.EDGE
+                && ActionsAvailable.has(srcNode))
+            ? R.raw.actions_available
+            : -1;
+
     // TYPE_VIEW_HOVER_ENTER handled the feedback in this case.
     CharSequence ttsOutput;
     try {
@@ -224,6 +235,8 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
         .setPreventDeviceSleep(true)
         .setEarcon(earcon)
         .setSecondEarcon(secondEarcon)
+        .setActionsEarcon(actionsEarcon)
+        .setActionsEarconAfterSpeech(globalVariables.isActionsSoundAfterSpeech())
         .setEarconX(earconPosition == null ? -1 : earconPosition[0])
         .setEarconY(earconPosition == null ? -1 : earconPosition[1])
         .setEarconVibrates(earconVibrates)
@@ -358,6 +371,13 @@ public final class EventTypeViewAccessibilityFocusedFeedbackRule {
           logString.append("\n    heading");
         }
       }
+    }
+
+    // Say that the item has actions of its app, after the item and before where it is. The Actions
+    // usage hint then leaves it out.
+    if (globalVariables.getSpeakActionsAvailable() && ActionsAvailable.has(node)) {
+      outputJoinList.add(context.getString(R.string.value_actions_available));
+      logString.append("\n    actionsAvailable");
     }
 
     // Prepare collection transition state if the collection transition happened for feedback.

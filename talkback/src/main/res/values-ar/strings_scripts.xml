@@ -100,9 +100,9 @@
     <string name="script_tree_copied">تم نسخ العناصر (<xliff:g id="count">%1$d</xliff:g>)</string>
     <string name="script_tree_none">ما مِن نافذة لنسخها</string>
     <string name="script_tree_clip_label">شجرة الشاشة</string>
-    <string name="summary_copy_screen_tree_menu">نسخ كل العناصر على الشاشة بتنسيق JSON، لكتابة النصوص البرمجية</string>
+    <string name="summary_copy_screen_tree_menu">نسخ كل العناصر على الشاشة كنص، لكتابة النصوص البرمجية</string>
     <string name="script_inspect_clip_label">تفاصيل العنصر</string>
-    <string name="summary_inspect_item_menu">نطق تفاصيل العنصر الذي كان محلّ التركيز ونسخها، لكتابة النصوص البرمجية</string>
+    <string name="summary_inspect_item_menu">عرض تفاصيل العنصر الذي كان محلّ التركيز، لكتابة النصوص البرمجية ووحدات الماكرو</string>
     <string name="script_keys_backtalk_modifier">مفتاح التعديل في SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>، ثم <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">الأوامر</string>
@@ -172,4 +172,17 @@
     <string name="item_details_script">تفاصيل النص البرمجي</string>
     <string name="item_details_app">التطبيق</string>
     <string name="script_permission_system">الرجوع أو الانتقال إلى الشاشة الرئيسية، وفتح الإشعارات، وعرض قائمة التطبيقات وفتحها، وفتح الإعدادات والروابط، وإرسال Intent إلى التطبيقات، وتغيير مستوى الصوت ووضع الرنين وإعدادات الجهاز مثل Wi-Fi والمصباح اليدوي، والتحكم في الوسائط، وضبط الموقتات والتنبيهات، وبدء المكالمات والرسائل</string>
+    <string name="script_from_code">تم إدخاله في SandFly.</string>
+    <string name="script_code_view">عرض الرمز البرمجي</string>
+    <string name="script_code_edit">تعديل الرمز البرمجي</string>
+    <string name="script_code_new">نص برمجي جديد من الرمز</string>
+    <string name="script_code_field">الرمز البرمجي</string>
+    <string name="script_code_save">حفظ</string>
+    <string name="script_code_saved">تم حفظ <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_code_not_saved">لم يتم حفظ النص البرمجي</string>
+    <string name="script_code_id_changed">يجب أن يبقى معرّف البيان <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">تعذّرت قراءة الرمز البرمجي.</string>
+    <string name="script_code_discard_title">هل تريد تجاهل التغييرات؟</string>
+    <string name="script_code_discard">تجاهل</string>
+    <string name="script_code_keep_editing">متابعة التعديل</string>
 </resources>

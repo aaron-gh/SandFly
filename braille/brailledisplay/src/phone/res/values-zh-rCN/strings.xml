@@ -52,7 +52,7 @@
   <string name="bd_bt_cancel_button">取消</string>
   <string name="bd_bt_connect_fail_dialog_title_with_name">无法连接到%s</string>
   <string name="bd_bt_connect_fail_dialog_title_without_name">无法连接到设备</string>
-  <string name="bd_bt_connect_fail_dialog_message">请确保此盲文显示屏已开启且就在附近。\n\n如果依然无法连接，请点按两次“了解详情”获取其他的问题排查建议。</string>
+  <string name="bd_bt_connect_fail_dialog_message">请确保此盲文显示屏已开启且就在附近。\n\n如果依然无法连接，请双击“了解详情”获取其他的问题排查建议。</string>
   <string name="bd_bt_connect_fail_positive_button">了解详情</string>
   <string name="bd_enhanced_keymap_dialog_title">切换到增强型按键映射即可使用浏览模式</string>
   <string name="bd_enhanced_keymap_dialog_message">如要使用浏览模式，您需要从默认按键映射切换到增强型按键映射。这样做会更新部分盲文显示屏命令</string>
@@ -98,7 +98,7 @@
   <string name="bd_braille_elements_lnk">• lnk 表示链接</string>
   <string name="bd_braille_elements_drbtn">• drbtn 表示下拉菜单按钮</string>
   <string name="bd_braille_elements_clickable">• ⠿⠄ 表示您可以激活的元素</string>
-  <string name="bd_braille_elements_longClickable">• ⠿⠤ 表示您可以轻触并按住的元素</string>
+  <string name="bd_braille_elements_longClickable">• ⠿⠤ 表示您可以轻触并长按的元素</string>
   <string name="bd_braille_elements_edt">• edt 表示可编辑的文本字段</string>
   <string name="bd_braille_elements_mln">• mln 表示可包含多行内容的文本字段</string>
   <string name="bd_braille_elements_checked">• () 或 (x) 表示复选框或单选按钮</string>
@@ -182,7 +182,7 @@
     <item quantity="one">%s 秒</item>
     <item quantity="other">%s 秒</item>
   </plurals>
-  <string name="bd_commands_touch_and_hold_template">轻触并按住 %s</string>
+  <string name="bd_commands_touch_and_hold_template">轻触并长按 %s</string>
   <string name="bd_commands_press_template">按 %s</string>
   <string name="bd_commands_delimiter">%1$s和%2$s</string>
   <string name="bd_commands_description_template">• %1$s：%2$s</string>
@@ -191,7 +191,7 @@
   <string name="bd_cmd_nav_pan_up">向上平移</string>
   <string name="bd_cmd_route">通过路由键激活</string>
   <string name="bd_cmd_activate_current">激活当前内容</string>
-  <string name="bd_cmd_touch_and_hold_current">轻触并按住当前内容</string>
+  <string name="bd_cmd_touch_and_hold_current">轻触并长按当前内容</string>
   <string name="bd_cmd_nav_item_next">下一项</string>
   <string name="bd_cmd_nav_item_previous">上一项</string>
   <string name="bd_cmd_scroll_forward">向前滚动</string>
@@ -508,4 +508,6 @@
     <!-- Shown when no installed app can be a braille display.  [CHAR_LIMIT=60] -->
     <string name="external_displays_none">没有应用可作为盲文显示屏。</string>
     <string name="bd_preference_hide_screen_keyboard_title">隐藏屏幕键盘</string>
+    <string name="bd_turn_braille_on_screen_overlay_on">屏幕盲文输出已开启</string>
+    <string name="bd_turn_braille_on_screen_overlay_off">屏幕盲文输出已关闭</string>
 </resources>

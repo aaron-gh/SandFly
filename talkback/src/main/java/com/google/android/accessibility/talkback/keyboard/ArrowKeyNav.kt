@@ -92,7 +92,29 @@ object ArrowKeyNav {
   /** The value of the command that [arrowKeys] run. */
   @JvmStatic
   fun commandFor(context: Context, arrowKeys: ArrowKeys): String =
-    prefs(context).getString(prefKey(context, arrowKeys), arrowKeys.defaultCommand) ?: UNASSIGNED
+    prefs(context).getString(prefKey(context, arrowKeys), defaultCommand(context, arrowKeys))
+      ?: UNASSIGNED
+
+  /**
+   * The command that [arrowKeys] run in the keymap in use until changed: in the BlackBerry keymap,
+   * up and down change the size of the text chunk, as on BlackBerry 10; elsewhere VoiceOver's.
+   */
+  @JvmStatic
+  fun defaultCommand(context: Context, arrowKeys: ArrowKeys): String =
+    if (CustomKeymaps.of(context, keymapValue(context)) == null &&
+        Keymap.of(context, keymapValue(context)) == Keymap.BLACKBERRY) {
+      BLACKBERRY_COMMANDS[arrowKeys] ?: arrowKeys.defaultCommand
+    } else {
+      arrowKeys.defaultCommand
+    }
+
+  private val BLACKBERRY_COMMANDS =
+    mapOf(
+      ArrowKeys.RIGHT to "NEXT_BY_NAVIGATION_SETTING",
+      ArrowKeys.LEFT to "PREVIOUS_BY_NAVIGATION_SETTING",
+      ArrowKeys.UP to "NEXT_GRANULARITY",
+      ArrowKeys.DOWN to "PREVIOUS_GRANULARITY",
+    )
 
   /** The keymap preference's value for the keymap in use, as Keymap and CustomKeymaps read it. */
   private fun keymapValue(context: Context): String? =

@@ -42,7 +42,10 @@ import com.google.android.accessibility.talkback.focusmanagement.FocusProcessorF
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.time.Duration
+import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.touchlock.TouchLock
+import com.google.android.accessibility.utils.gestures.GestureConfiguration
+import com.google.android.accessibility.utils.gestures.GestureManifold
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -71,6 +74,11 @@ class TouchInteractionMonitorTest {
     val fingerAtScreenEdge = mutableListOf<Boolean>()
     var tapActivatesAtOnce = false
     var tapExplorations = 0
+    val touchExplorerResets = mutableListOf<String>()
+
+    override fun resetTouchExplorer(reason: String) {
+      touchExplorerResets.add(reason)
+    }
 
     override fun quickTapActivatesAtOnce(): Boolean = tapActivatesAtOnce
 
@@ -208,6 +216,65 @@ class TouchInteractionMonitorTest {
   /** Lets time pass until [timeMs] after the start while the main thread is busy with other work. */
   private fun mainThreadBusyUntil(timeMs: Long) {
     ShadowSystemClock.advanceBy(Duration.ofMillis(start + timeMs - SystemClock.uptimeMillis()))
+  }
+
+  /** Android's touch explorer ends a touch at [timeMs] without reaching the clear state. */
+  private fun touchEndsInTouchExplorationAt(timeMs: Long) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, timeMs)
+    stateChangeAt(STATE_TOUCH_EXPLORING, timeMs + 1)
+  }
+
+  @Test
+  fun touchesThatEndInTouchExplorationSetUpTheTouchExplorerAgain() {
+    // A touch explorer that keeps lifted fingers starts each touch in touch exploration.
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 10)
+    touchEndsInTouchExplorationAt(500)
+    runUntil(600)
+    assertEquals(listOf<String>(), service.touchExplorerResets)
+
+    touchEndsInTouchExplorationAt(1000)
+    runUntil(1100)
+    assertEquals(1, service.touchExplorerResets.size)
+
+    // The count starts again after a reset.
+    touchEndsInTouchExplorationAt(1500)
+    runUntil(1600)
+    assertEquals(1, service.touchExplorerResets.size)
+  }
+
+  @Test
+  fun touchExplorationThatEndsInTheClearStateLeavesTheTouchExplorerAsItIs() {
+    for (i in 0 until 3) {
+      val at = i * 1000L
+      stateChangeAt(STATE_TOUCH_INTERACTING, at)
+      stateChangeAt(STATE_TOUCH_EXPLORING, at + 10)
+      // A finger down again before the end of the last touch, then lifted.
+      touchEndsInTouchExplorationAt(at + 500)
+      stateChangeAt(STATE_TOUCH_INTERACTING, at + 700)
+      stateChangeAt(STATE_CLEAR, at + 701)
+    }
+    runUntil(3000)
+
+    assertEquals(listOf<String>(), service.touchExplorerResets)
+  }
+
+  @Test
+  fun fastTypingWhoseTouchesOverlapLeavesTheTouchExplorerAsItIs() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 300f, 1800f, 1)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 10)
+    for (i in 1..4) {
+      val at = i * 200L
+      // The finger lifts, and the next key's finger goes down before the touch ends, so the touch
+      // ends in touch exploration with Android reporting the new finger.
+      stateChangeAt(STATE_TOUCH_INTERACTING, at)
+      touchAt(ACTION_DOWN, 300f + i * 50f, 1800f, at + 20)
+      stateChangeAt(STATE_TOUCH_EXPLORING, at + 30)
+    }
+    runUntil(1000)
+
+    assertEquals(listOf<String>(), service.touchExplorerResets)
   }
 
   @Test
@@ -390,6 +457,52 @@ class TouchInteractionMonitorTest {
     )
   }
 
+  /**
+   * One touch that moves 2 cm in each of [parts], as (x, y) steps, in four moves of 15 ms each, and
+   * lifts, with every gesture given a command, as a three-part swipe assigned in SandFly's layout.
+   */
+  private fun strokeWithEveryGestureAssigned(vararg parts: Pair<Float, Float>) {
+    Scripts.captureNext {}
+    try {
+      val cm = service.resources.displayMetrics.xdpi / 2.54f
+      var x = service.resources.displayMetrics.widthPixels / 4f
+      var y = service.resources.displayMetrics.heightPixels / 4f
+      stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+      touchAt(ACTION_DOWN, x, y, 0)
+      var at = 0L
+      for ((dx, dy) in parts) {
+        repeat(4) {
+          x += dx * cm / 2
+          y += dy * cm / 2
+          at += 15
+          touchAt(ACTION_MOVE, x, y, at)
+        }
+      }
+      touchAt(ACTION_UP, x, y, at + 10)
+      stateChangeAt(STATE_CLEAR, at + 300)
+      runUntil(at + 400)
+    } finally {
+      Scripts.captureNext(null)
+    }
+  }
+
+  @Test
+  fun threePartSwipeIsAGestureWithoutTouchExplorationAtTheLift() {
+    strokeWithEveryGestureAssigned(1f to 0f, 0f to 1f, 1f to 0f)
+
+    assertEquals(listOf<Thread>(), reporter.requests)
+    assertEquals(0, service.tapExplorations)
+    assertEquals(listOf(GestureManifold.GESTURE_SWIPE_RIGHT_AND_DOWN_AND_RIGHT), service.gestures)
+  }
+
+  @Test
+  fun strokeInFourPartsIsNoGestureAndExploresWhereTheFingerLifted() {
+    strokeWithEveryGestureAssigned(1f to 0f, 0f to 1f, 1f to 0f, 0f to -1f)
+
+    assertEquals(listOf(mainThread), reporter.requests)
+    assertEquals(listOf<Int>(), service.gestures)
+  }
+
   @Test
   fun doubleTapThatWaitedOnTheBusyMainThreadIsNotTakenForAHold() {
     stateChangeAt(STATE_TOUCH_INTERACTING, 0)
@@ -422,6 +535,68 @@ class TouchInteractionMonitorTest {
     runUntil(500)
 
     assertEquals(listOf(GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  /**
+   * One tap at 0-80 ms with a [timeMs] time between one-finger taps. Its touch exploration starts
+   * and ends, and Android ends the touch interaction, by 340 ms.
+   */
+  private fun tapExploredBeforeTheInteractionEnds(timeMs: Int) {
+    GestureConfiguration.setMultiTapTimeoutMs(timeMs)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 200f, 0)
+    touchAt(ACTION_UP, 160f, 200f, 80)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 335)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 336)
+    stateChangeAt(STATE_CLEAR, 337)
+    runUntil(340)
+  }
+
+  @Test
+  fun tapIsExploredBeforeAndroidEndsTheTouchInteractionWithALongTimeBetweenTaps() {
+    try {
+      // Android ends the interaction the system double-tap timeout, 300 ms, after the lift.
+      tapExploredBeforeTheInteractionEnds(2000)
+
+      assertEquals(listOf(mainThread), reporter.requests)
+      assertEquals(1, service.tapExplorations)
+    } finally {
+      GestureConfiguration.setMultiTapTimeoutMs(GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS)
+    }
+  }
+
+  @Test
+  fun secondTapAfterAndroidEndsTheTouchInteractionMakesADoubleTapWithinALongTimeBetweenTaps() {
+    try {
+      tapExploredBeforeTheInteractionEnds(2000)
+      stateChangeAt(STATE_TOUCH_INTERACTING, 1000)
+      touchAt(ACTION_DOWN, 160f, 200f, 1000)
+      touchAt(ACTION_UP, 160f, 200f, 1060)
+      runUntil(1100)
+
+      assertEquals(listOf(GESTURE_DOUBLE_TAP), service.gestures)
+      assertEquals(1, service.tapExplorations)
+    } finally {
+      GestureConfiguration.setMultiTapTimeoutMs(GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS)
+    }
+  }
+
+  @Test
+  fun swipeSoonAfterATapIsASwipeWithALongTimeBetweenTaps() {
+    try {
+      tapExploredBeforeTheInteractionEnds(2000)
+      stateChangeAt(STATE_TOUCH_INTERACTING, 1000)
+      touchAt(ACTION_DOWN, 40f, 200f, 1000)
+      for (step in 1..6) {
+        touchAt(ACTION_MOVE, 40f + 40f * step, 200f, 1010L + 15 * step)
+      }
+      touchAt(ACTION_UP, 280f, 200f, 1110)
+      runUntil(1200)
+
+      assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+    } finally {
+      GestureConfiguration.setMultiTapTimeoutMs(GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS)
+    }
   }
 
   @Test

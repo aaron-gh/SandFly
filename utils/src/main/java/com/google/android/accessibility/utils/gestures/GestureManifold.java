@@ -262,6 +262,16 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_LEFT = -192;
   public static final int GESTURE_SWIPE_RIGHT_LIFT_SWIPE_RIGHT = -193;
 
+  // A two-finger double tap with one finger in the top third of the screen and the other in the
+  // bottom third. Reported by TalkBack's TouchInteractionMonitor in place of the two-finger double
+  // tap while it has an action.
+  public static final int GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM = -194;
+
+  // Three and four taps with one finger. Android has no one-finger gestures beyond the double tap,
+  // so SandFly's own detection adds these. Recognized only while they have an action.
+  public static final int GESTURE_TRIPLE_TAP = -195;
+  public static final int GESTURE_QUADRUPLE_TAP = -196;
+
   // Two-stroke swipes with a back-and-forth or angle swipe as either stroke, numbered down from
   // -1000, sixteen for each first stroke; see TwoStrokeSwipeIds.
   public static final int GESTURE_SWIPE_UP_LIFT_SWIPE_UP_AND_DOWN = -1004;
@@ -661,10 +671,29 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   }
 
   /**
-   * Gives each plain multi-finger multi-tap the gestures that start with its taps and go on after
-   * them, such as more taps or a tap and hold with as many fingers.
+   * Gives each plain one-finger and multi-finger multi-tap the gestures that start with its taps and
+   * go on after them, such as more taps or a tap and hold with as many fingers.
    */
   private void setFollowingTapGestures(GestureConfigProvider configResolver) {
+    // One finger: a double or triple tap waits for a further tap only while a gesture of more taps
+    // has an action.
+    for (GestureMatcher matcher : gestures) {
+      if (matcher.getClass() != MultiTap.class) {
+        continue;
+      }
+      MultiTap taps = (MultiTap) matcher;
+      List<Integer> following = new ArrayList<>();
+      for (GestureMatcher other : gestures) {
+        if (other instanceof MultiTap longer && longer.continuesAfterTaps(taps.targetTaps)) {
+          following.add(other.getGestureId());
+        }
+      }
+      int[] gestureIds = new int[following.size()];
+      for (int i = 0; i < gestureIds.length; i++) {
+        gestureIds[i] = following.get(i);
+      }
+      taps.setFollowingGestures(gestureIds);
+    }
     for (GestureMatcher matcher : multiFingerGestures) {
       if (matcher.getClass() != MultiFingerMultiTap.class) {
         continue;
@@ -734,6 +763,23 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   public void clear() {
     for (GestureMatcher matcher : gestures) {
       matcher.clear();
+    }
+  }
+
+  /**
+   * Clears every matcher but the one-finger tap gestures that wait for a further tap, for a touch
+   * that starts after Android ended the touch interaction. Android ends it the system double-tap
+   * timeout after the finger lifts, which a longer time between one-finger taps outlasts. A kept
+   * matcher whose next tap comes too late or too far away starts over with that touch as its first
+   * tap.
+   */
+  public void clearExceptWaitingTaps() {
+    for (GestureMatcher matcher : gestures) {
+      if (matcher instanceof MultiTap taps && taps.waitsForNextTap()) {
+        taps.keepForNextInteraction();
+      } else {
+        matcher.clear();
+      }
     }
   }
 
@@ -824,6 +870,17 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
       }
     }
     listener.onGestureCompleted(gestureEvent);
+  }
+
+  /** Returns whether a one-finger swipe in three directions has started and not yet ended. */
+  public boolean isThreeDirectionSwipeStarted() {
+    for (GestureMatcher matcher : gestures) {
+      if (matcher.getState() == GestureMatcher.STATE_GESTURE_STARTED
+          && GestureConfiguration.isThreeDirectionSwipe(matcher.getGestureId())) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public boolean isMultiFingerGesturesEnabled() {

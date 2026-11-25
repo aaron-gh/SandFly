@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Kopēti vienumi: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nav loga, ko kopēt</string>
     <string name="script_tree_clip_label">Ekrāna koks</string>
-    <string name="summary_copy_screen_tree_menu">Visu ekrānā redzamo vienumu kopēšana JSON formātā skriptu rakstīšanai</string>
+    <string name="summary_copy_screen_tree_menu">Visu ekrānā redzamo vienumu kopēšana teksta formātā skriptu rakstīšanai</string>
     <string name="script_inspect_clip_label">Vienuma informācija</string>
-    <string name="summary_inspect_item_menu">Pēdējā fokusētā vienuma informācijas nolasīšana un kopēšana skriptu rakstīšanai</string>
+    <string name="summary_inspect_item_menu">Pēdējā fokusētā vienuma informācijas rādīšana skriptu un makro rakstīšanai</string>
     <string name="script_keys_backtalk_modifier">SandFly modifikatora taustiņš</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, pēc tam <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komandas</string>
@@ -169,4 +169,17 @@
     <string name="item_details_script">Informācija skriptiem</string>
     <string name="item_details_app">Lietotne</string>
     <string name="script_permission_system">Doties atpakaļ vai uz sākuma ekrānu, atvērt paziņojumus, rādīt lietotņu sarakstu, atvērt lietotnes, iestatījumus un saites, sūtīt lietotnēm Intent objektus, mainīt skaļumu, zvana režīmu un ierīces iestatījumus, piemēram, Wi-Fi un lukturi, vadīt multividi, iestatīt taimerus un signālus, sākt zvanus un ziņas</string>
+    <string name="script_from_code">Ievadīts SandFly.</string>
+    <string name="script_code_view">Skatīt kodu</string>
+    <string name="script_code_edit">Rediģēt kodu</string>
+    <string name="script_code_new">Jauns skripts no koda</string>
+    <string name="script_code_field">Kods</string>
+    <string name="script_code_save">Saglabāt</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> saglabāts</string>
+    <string name="script_code_not_saved">Skripts nav saglabāts</string>
+    <string name="script_code_id_changed">Manifesta id jāpaliek <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Kodu nevarēja nolasīt.</string>
+    <string name="script_code_discard_title">Vai atmest izmaiņas?</string>
+    <string name="script_code_discard">Atmest</string>
+    <string name="script_code_keep_editing">Turpināt rediģēt</string>
 </resources>

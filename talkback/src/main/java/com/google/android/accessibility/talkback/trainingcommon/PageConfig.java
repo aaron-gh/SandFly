@@ -1177,12 +1177,18 @@ public abstract class PageConfig {
           AccessibilityService.GESTURE_SWIPE_RIGHT_AND_UP, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           AccessibilityService.GESTURE_SWIPE_RIGHT_AND_DOWN, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_TRIPLE_TAP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_QUADRUPLE_TAP, ANNOUNCE_REAL_ACTION);
 
       // 2 fingers.
       this.captureGestureIdToAnnouncements.put(
           AccessibilityService.GESTURE_2_FINGER_SINGLE_TAP, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP, ANNOUNCE_REAL_ACTION);
+      this.captureGestureIdToAnnouncements.put(
+          GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(
           AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP_AND_HOLD, ANNOUNCE_REAL_ACTION);
       this.captureGestureIdToAnnouncements.put(

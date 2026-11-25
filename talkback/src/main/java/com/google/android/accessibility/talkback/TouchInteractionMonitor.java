@@ -129,6 +129,7 @@ import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
+import com.google.android.accessibility.talkback.gesture.TopAndBottomTap;
 import com.google.android.accessibility.talkback.gesture.TwoStrokeSwipes;
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils;
 import com.google.android.accessibility.talkback.scripting.Scripts;
@@ -195,6 +196,9 @@ public class TouchInteractionMonitor
 
   private static final String LOG_TAG = "TouchInteractionMonitor";
   private static final String DEBUG_GESTURE_TAG = "BacktalkGesture";
+
+  /** Touches in a row that end in touch exploration before the touch explorer is set up again. */
+  @VisibleForTesting static final int ENDS_WITHOUT_CLEAR_TO_RESET = 2;
   private static final float MAX_DRAGGING_ANGLE_COS = 0.525321989f; // cos(pi/4)
   // The height of the top and bottom edges for  edge-swipes.
   // For now this is only used to allow three-finger edge-swipes from the bottom.
@@ -305,6 +309,10 @@ public class TouchInteractionMonitor
   @Nullable private String twoFingerWait;
   // The screen size when the current touch started, for the edge gestures.
   private final Point screenSize = new Point();
+  // Where the fingers of the latest touch that reached gesture detection went down, kept after they
+  // lift, for Double-tap with 2 fingers, top and bottom.
+  private final float[] latestTouchDownY = new float[2];
+  private int latestTouchFingers;
   // Whether touch exploration was requested while an edge swipe could still start, and waits for
   // the edge swipe to be rejected.
   private boolean touchExplorationHeldForEdgeSwipe;
@@ -359,6 +367,11 @@ public class TouchInteractionMonitor
   private int touchFocusUserIntentTimeout;
 
   private final RequestTouchExplorationDelayed requestTouchExplorationDelayed;
+  // Touches since the last clear state that ended in touch exploration, as when Android's touch
+  // explorer keeps fingers that have lifted.
+  private int endsWithoutClear = 0;
+  // Whether a finger went down, as Android reported to SandFly, since touch interacting began.
+  private boolean fingerDownWhileInteracting = false;
   // A list of motion events that should be queued until a pending transition has taken place.
   private final Queue<MotionEvent> queuedMotionEvents = new LinkedList<>();
   // Whether this monitor is waiting for a state transition.
@@ -921,6 +934,9 @@ public class TouchInteractionMonitor
   @Override
   public void onMotionEvent(MotionEvent event) {
     int action = event == null ? -1 : event.getActionMasked();
+    if (action == ACTION_DOWN || action == ACTION_POINTER_DOWN) {
+      fingerDownWhileInteracting = true;
+    }
     if (action == ACTION_DOWN) {
       twoStrokeSwipes.onTouchDown();
     } else if (action == ACTION_POINTER_DOWN) {
@@ -1069,6 +1085,7 @@ public class TouchInteractionMonitor
         gestureDetector.clear();
         eventId = Performance.getInstance().onGestureEventReceived(displayId, event);
       }
+      trackLatestTouchDown(event);
       gestureDetector.onMotionEvent(eventId, event);
     }
     if (!gestureStarted) {
@@ -1278,6 +1295,7 @@ public class TouchInteractionMonitor
         TouchInteractionController.stateToString(this.state),
         TouchInteractionController.stateToString(state));
     touchExplorationModeFailureReporter.onTouchStateChanged(state);
+    checkTouchExplorerKeepsFingers(state);
     if (state == STATE_CLEAR && this.state != STATE_CLEAR) {
       // The interaction has ended, so taps in a corner waiting for the next tap end now, in the
       // state they were made in, rather than at their timeout in CLEAR.
@@ -1288,8 +1306,10 @@ public class TouchInteractionMonitor
     }
     touchPassedToApp = state == STATE_DELEGATING;
     if (this.state == STATE_CLEAR) {
-      // Clear on transition to a new interaction
-      clear();
+      // Clear on transition to a new interaction. Android ends an interaction the system double-tap
+      // timeout after the finger lifts, so with a longer time between one-finger taps the next tap
+      // of a double tap can start a new one: the taps waiting for it stay.
+      clear(/* keepWaitingTaps= */ state == STATE_TOUCH_INTERACTING);
     }
     if (state == STATE_CLEAR
         && (this.state == STATE_DELEGATING || this.state == STATE_DRAGGING)) {
@@ -1329,12 +1349,59 @@ public class TouchInteractionMonitor
     }
   }
 
+  /**
+   * Notices when Android's touch explorer keeps fingers that have lifted, which it does after a
+   * touch cancelled without its knowledge, and has it set up again.
+   *
+   * <p>Such a touch explorer ends each touch by going from touch exploration to touch interacting
+   * and back to touch exploration, never to the clear state, without SandFly asking for touch
+   * exploration. Android ends a touch only once its last finger lifts, so a finger is down at that
+   * moment only if the next touch began before the end of the last one, as in fast typing. Android
+   * then reports that touch's finger down to SandFly, while a stuck touch explorer reports none, as
+   * it takes the finger straight into touch exploration. It happening without a finger down for
+   * {@link #ENDS_WITHOUT_CLEAR_TO_RESET} touches in a row means the touch explorer is stuck.
+   */
+  private void checkTouchExplorerKeepsFingers(int newState) {
+    if (newState == STATE_CLEAR) {
+      endsWithoutClear = 0;
+      return;
+    }
+    if (newState == STATE_TOUCH_INTERACTING) {
+      fingerDownWhileInteracting = false;
+      return;
+    }
+    if (newState != STATE_TOUCH_EXPLORING
+        || this.state != STATE_TOUCH_INTERACTING
+        || previousState != STATE_TOUCH_EXPLORING
+        || stateChangeRequested) {
+      return;
+    }
+    if (fingerDownWhileInteracting) {
+      // The next touch began before this one ended: the touch explorer reported its finger.
+      endsWithoutClear = 0;
+      return;
+    }
+    endsWithoutClear++;
+    if (endsWithoutClear >= ENDS_WITHOUT_CLEAR_TO_RESET) {
+      endsWithoutClear = 0;
+      service.resetTouchExplorer("touches end in touch exploration");
+    }
+  }
+
   private void setSupportLiftToType(boolean isLiftToType) {
     LogUtils.d(LOG_TAG, "setSupportLiftToType/focused on Lift-to-type node:%B", isLiftToType);
     this.isLiftToType = isLiftToType;
   }
 
   private void clear() {
+    clear(/* keepWaitingTaps= */ false);
+  }
+
+  /**
+   * Clears the state of the touch. With {@code keepWaitingTaps}, one-finger tap gestures waiting
+   * for a further tap stay.
+   */
+  private void clear(boolean keepWaitingTaps) {
     assignedThisInteraction.clear();
     gestureAppThisInteraction = null;
     passingSyntheticTouch = false;
@@ -1362,7 +1429,11 @@ public class TouchInteractionMonitor
     lastExploredNode = null;
     skipLookupsInLastExploredBounds = false;
     stateChangeRequested = false;
-    gestureDetector.clear();
+    if (keepWaitingTaps) {
+      gestureDetector.clearExceptWaitingTaps();
+    } else {
+      gestureDetector.clear();
+    }
     receivedPointerTracker.clear();
     requestTouchExplorationDelayed.cancel();
     queuedMotionEvents.clear();
@@ -1690,6 +1761,8 @@ public class TouchInteractionMonitor
       eventId = Performance.getInstance().onGestureEventReceived(displayId, null);
     } else if (gestureId == AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP) {
       dispatchGestureToMainThreadAndClear(fourFingerTapByHalf(gestureEvent));
+    } else if (gestureId == AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP) {
+      dispatchGestureToMainThreadAndClear(twoFingerDoubleTapTopAndBottom(gestureEvent));
     } else {
       dispatchGestureToMainThreadAndClear(gestureEvent);
     }
@@ -1721,6 +1794,39 @@ public class TouchInteractionMonitor
       return tap;
     }
     return new AccessibilityGestureEvent(half, tap.getDisplayId(), events);
+  }
+
+  /** Records where the fingers of the touch went down, from its first finger on. */
+  private void trackLatestTouchDown(MotionEvent event) {
+    int action = event.getActionMasked();
+    if (action == ACTION_DOWN) {
+      latestTouchFingers = 0;
+    }
+    if (action == ACTION_DOWN || action == ACTION_POINTER_DOWN) {
+      // A third finger makes no two-finger tap.
+      if (latestTouchFingers < latestTouchDownY.length) {
+        latestTouchDownY[latestTouchFingers] = event.getY(event.getActionIndex());
+      }
+      latestTouchFingers++;
+    }
+  }
+
+  /**
+   * Returns a two-finger double tap with one finger in the top third of the screen and the other in
+   * the bottom third in place of {@code tap} when that gesture runs a command, otherwise {@code
+   * tap}. The fingers of the last tap decide; the screen is as displayed.
+   */
+  private AccessibilityGestureEvent twoFingerDoubleTapTopAndBottom(AccessibilityGestureEvent tap) {
+    int gestureId = GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM;
+    if (latestTouchFingers != 2 || !isGestureAssigned(gestureId)) {
+      return tap;
+    }
+    Point size = new Point();
+    display.getRealSize(size);
+    if (!TopAndBottomTap.isTopAndBottom(latestTouchDownY[0], latestTouchDownY[1], size.y)) {
+      return tap;
+    }
+    return new AccessibilityGestureEvent(gestureId, tap.getDisplayId(), tap.getMotionEvents());
   }
 
   /** Dispatch a gesture event to the main thread of the service. */
@@ -2530,10 +2636,14 @@ public class TouchInteractionMonitor
 
   @Override
   public void onGestureCancelled(int gestureId) {
-    if (touchExploreGate.remove(gestureId)) {
+    // A three-part swipe is matched after the one- and two-part swipes, which all fail at its lift:
+    // touch exploration waits until it ends too, or it explores where the finger lifted.
+    if (touchExploreGate.remove(gestureId)
+        || GestureConfiguration.isThreeDirectionSwipe(gestureId)) {
       if (keepMonitorTouchExplore
           && touchExploreGate.isEmpty()
-          && state == STATE_TOUCH_INTERACTING) {
+          && state == STATE_TOUCH_INTERACTING
+          && !gestureDetector.isThreeDirectionSwipeStarted()) {
         keepMonitorTouchExplore = false;
         requestTouchExplorationDelayed.cancel();
         requestTouchExploration("onGestureCancelled");
@@ -2566,7 +2676,15 @@ public class TouchInteractionMonitor
       // The first tap has ended. The second may come as late as the time between taps after it, as
       // the double tap allows, so touch exploration waits until then rather than counting from the
       // first tap's start, which made a double tap with a longer first tap or gap impossible.
-      requestTouchExplorationDelayed.extendTo(GestureConfiguration.getMultiTapCompletionTimeoutMs());
+      int completionMs = GestureConfiguration.getMultiTapCompletionTimeoutMs();
+      if (completionMs > ViewConfiguration.getDoubleTapTimeout()) {
+        // Android ends the touch interaction the system double-tap timeout after the finger lifts,
+        // and touch exploration of the tap can't start after that. With a longer time between
+        // taps, the tap is explored before then; a second tap within the time still makes a
+        // double tap.
+        completionMs = GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS;
+      }
+      requestTouchExplorationDelayed.extendTo(completionMs);
     }
   }
 
@@ -2944,7 +3062,7 @@ public class TouchInteractionMonitor
         || !isInGboardPopup(node)
         || typingMethod != FocusProcessorForTapAndTouchExploration.LIFT_TO_TYPE
         || Role.getRole(node) == Role.ROLE_TEXT_ENTRY_KEY
-        || !node.isClickable()) {
+        || !AccessibilityNodeInfoUtils.isClickable(node)) {
       return;
     }
     LogUtils.v(LOG_TAG, "Typing the popup character %s", node.getContentDescription());

@@ -36,17 +36,19 @@ On Android 13 and later, choosing one of the last three methods sets **Typing fo
 
 **Typing** > **Touch and hold delay when typing** sets how long you keep your finger on a key before SandFly long-presses it, for example to open the alternative characters of a key. The choices are 0.5, 1, 2, 3 and 5 seconds; the default is 3 seconds. The setting isn't available with the typing method **Hold finger to select any key, then double-tap**.
 
-With **Typing** > **Hold keys down after the touch and hold delay** on, SandFly presses the key down at the end of the delay and passes the rest of the touch to the keyboard, as a double-tap and hold does. The keyboard then handles the touch as a long press of its own, such as a Delete key that repeats while held. This applies with the lift-to-type methods, on keyboards other than Gboard. It's off by default.
+With **Typing** > **Hold keys down after the touch and hold delay** on, SandFly presses the key down at the end of the delay and passes the rest of the touch to the keyboard, as a double-tap and hold does. The keyboard then handles the touch as a long press of its own, such as a Delete key that repeats while held. This applies with the lift-to-type methods, on all keyboards except Gboard and Pixelboard: their keys are long-pressed, which opens the popup of alternative characters. It's off by default.
 
 #### Alternative characters in Gboard {#typing-gboard-alternatives}
 
 When you hold a key in Gboard, SandFly long-presses it after the touch and hold delay, and Gboard opens a popup of alternative characters. SandFly reads the selected character, such as "Comma", as soon as the popup opens. Slide your finger to the other characters to hear them, and lift your finger to type the one you're on.
 
-On Android 11 and later, SandFly explores touches on Gboard, and on Pixelboard, which is built from it, by itself instead of through touch exploration. While the popup is open, your finger selects one of its characters wherever it is, the nearest one when your finger is outside the popup, and lifting types it and closes the popup. When your finger leaves the keyboard with no popup open, touch exploration takes over for the rest of the screen, and lifting your finger there types nothing. This doesn't apply with the typing method **Hold finger to select any key, then double-tap**.
+Gboard 18.8 and later receive touches through Android touch exploration, as other keyboards do. With earlier versions of Gboard, and of Pixelboard, which is built from Gboard, SandFly explores touches on the keyboard by itself on Android 11 and later. While the popup of these versions is open, your finger selects one of its characters wherever it is, the nearest one when your finger is outside the popup, and lifting types it and closes the popup. When your finger leaves the keyboard with no popup open, touch exploration takes over for the rest of the screen, and lifting your finger there types nothing. This doesn't apply with the typing method **Hold finger to select any key, then double-tap**.
 
 #### Gboard key vibration {#typing-gboard-vibration}
 
-Gboard plays its key feedback, such as a vibration, only when a key receives hover events, which a touch that SandFly explores by itself doesn't send. When Shizuku or root is set up for SandFly, SandFly sends these hover events to Gboard, so that Gboard plays the feedback set in its own settings, such as **Vibrate on keypress**. Without Shizuku or root, Gboard plays no key feedback while SandFly explores the keyboard. There is no setting for this. To set up Shizuku or root, see [](#updates).
+Gboard 18.8 and later play the key feedback set in Gboard settings, such as **Vibrate on keypress**.
+
+Gboard and Pixelboard versions before 18.8 play key feedback only when a key receives hover events, which a touch that SandFly explores by itself doesn't send. When Shizuku or root is set up for SandFly, SandFly sends these hover events to the keyboard, so that it plays the feedback set in its own settings. Without Shizuku or root, these versions play no key feedback while SandFly explores the keyboard. There is no setting for this. To set up Shizuku or root, see [](#updates).
 
 #### Change the typing focus delay {#typing-focus-delay}
 
@@ -72,7 +74,9 @@ Keyboard echo sets what SandFly reads as you type. Each kind of keyboard has its
 
 Word echo reads the whole word as it is in the field, back to the last space. Words with apostrophes or hyphens, such as "don't", are one word, and a web or email address is one word. When a keyboard adds a word, its punctuation and a space at once, as the braille keyboard does in contracted braille, SandFly reads the word.
 
-Each echo setting is also a reading control and a SandFly menu item: **On-screen keyboard echo**, **Physical keyboard echo**, **Braille keyboard echo**, **Braille display echo** and **Handwriting keyboard echo**. They are off by default. To add them, go to **Reading controls** or **SandFly menu** and turn them on in the **Keyboard echo** group. See [](#commands).
+Each echo setting is also a reading control, a SandFly menu item and a command in the **Speech** group of commands: **On-screen keyboard echo**, **Physical keyboard echo**, **Braille keyboard echo**, **Braille display echo** and **Handwriting keyboard echo**. The reading controls and menu items are off by default. To add them, go to **Reading controls** or **SandFly menu** and turn them on in the **Keyboard echo** group. See [](#commands).
+
+The **Cycle typing echo** keyboard shortcut changes **Physical keyboard** to the next choice. See [](#appendix-keyboard-shortcuts).
 
 ### Move the cursor {#typing-move-cursor}
 
@@ -132,19 +136,22 @@ The **Text editing** group of **Commands** also has:
 - **Read text field**: reads the whole text of the text field, or "Empty" and the hint when it has no text.
 - **Spelling / grammar suggestions**: opens the suggestions for the typo at the cursor. The **Proofread** reading control moves between typos.
 - **Dictate**: see [](#typing-dictate).
+- **Start voice editing**: records voice commands for the text field one after another. See [](#voice-commands-editing).
 - **Switch keyboard**: changes to the next keyboard. Available on Android 11 and later.
-- **Search emoji**, **Choose a symbol** and **Turn editing mode on or off**: commands of the SandFly keyboard. See [](#keyboards).
+- **Search emoji**, **Choose a symbol**, **Turn editing mode on or off** and **Spell the password field**: commands of the SandFly keyboard. See [](#keyboards).
 
 None of these commands has a gesture by default. To give one a gesture, see [](#commands).
 
 ### Clipboard history {#typing-clipboard-history}
 
-SandFly keeps a history of up to 50 texts copied, newest first. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
+SandFly keeps a history of up to 50 texts copied, newest first. Each text is kept up to 200,000 characters, and the history up to 1,000,000 characters in all: older texts past that are removed. **Add to clipboard** also stops at 200,000 characters. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
 
 To open the history, run **Clipboard history**, from the **Text editing** commands or the **Editing menu**. The history opens over the current screen.
 
-- Double-tap a text to open its actions: **Paste** into the text field that the history was opened from, **Copy** it again, **Add to clipboard**, **Edit** its text, or **Remove** it.
-- **Export to file** saves the whole history as a text file.
+- Double-tap a text to paste it into the text field that the history was opened from. When the history was opened without a text field, double-tap opens the actions of the text.
+- Double-tap and hold a text to open its actions: **Paste**, **Copy** it again, **Add to clipboard**, **Edit** its text, **Export to file**, or **Remove** it. The actions are also in the **Actions** of each text.
+- **Select** shows the texts as check boxes. Double-tap texts to check them, then choose **Remove** or **Export to file** for the checked texts.
+- **Export to file** saves the whole history as a text file. Several texts are separated by a line of three hyphens between blank lines.
 - **Clear history** removes all the texts.
 
 To paste without opening the history, add the **Clipboard history** reading control, in the **Actions for current item** group of **Reading controls**. In a text field, swipe up or down to go through the texts in the history, and double-tap to paste the text that SandFly read last. The reading control is off by default. See [](#commands).
@@ -155,7 +162,7 @@ These commands are in the **Text editing** group of **Commands**:
 
 - **Copy last spoken phrase**: copies the last text that SandFly read. By default, a three-finger triple-tap runs it.
 - **Select last spoken phrase word by word**: opens a list of the words of the last phrase, to check the words to copy.
-- **Copy text from screen**: opens a list of the text on the screen, split into addresses and numbers, characters, words or paragraphs, to check the parts to copy.
+- **Copy text from screen**: opens a list of the text on the screen, split into addresses and numbers, characters, words or paragraphs, to check the parts to copy. See [](#reading-copy-text).
 - **Continuous copy**: moves focus from the focused item through every item after it, without speech, scrolling lists and pages on the way, and collects the text of each item. Touch the screen, press a key or run another command to stop. At the end, the texts are shown with a check box each; check the ones to copy and choose **Save**. Continuous copy stops after 2,000 items or 10 minutes.
 
 In these lists, the actions **Start selection** and **End selection** of an item check every item between two items. Double-tapping and holding an item does the same.
@@ -190,12 +197,14 @@ Recording stops by itself after 15 minutes, or after a time of silence that you 
 
 By default, a two-finger double-tap runs **Dictate, play or pause media**. It starts **Dictate** when a text field has input focus, a keyboard is shown or connected, and no call is active; it stops a dictation that is recording; otherwise it plays or pauses media. For the default gestures, see [](#appendix-gestures).
 
+On phones with a mute key, such as the Zinwa Q25, hold the mute key in a text field to dictate: recording starts when you press the key and stops when you release it. See [](#buttons-mute-key).
+
 #### Choose how speech is recognized {#typing-speech-recognition}
 
 Go to **Typing** > **Dictation** > **Speech recognition**, and choose one of the following:
 
 - **Automatic**: the default. SandFly uses Google on-device speech recognition when it is installed and has the language of the phone; otherwise Rambler, when there is a Gemini API key and Rambler supports the language; otherwise Whisper, when a model is downloaded; otherwise Android speech recognition. The screen shows which one is in use, such as "Automatic: Rambler".
-- **Google on-device speech recognition**: the recognizer of the Speech Recognition & Synthesis app, with its offline language packs, in the language of the phone. On Android 13 and later, it adds punctuation and capital letters. When the language of the phone has no language pack, the row **Download** (language) **for on-device recognition** opens the download screen of Speech Recognition & Synthesis.
+- **Google on-device speech recognition**: the recognizer of the Speech Recognition & Synthesis app, with its offline language packs, in the language of the phone. On Android 13 and later, it adds punctuation and capital letters while **Automatic punctuation** is on. When the language of the phone has no language pack, the row **Download** (language) **for on-device recognition** opens the download screen of Speech Recognition & Synthesis.
 - **Rambler (Gemini API)**: the Gemini 3.5 Transcribe model, through the Gemini API key set in AI services. It removes filler words, resolves self-corrections, and formats punctuation, numbers and lists. See [](#descriptions) for the Gemini API key.
 - **Whisper**: recognition on the phone, with a downloaded Whisper model. See [](#typing-whisper-models).
 - **Android speech recognition**: the speech recognition service chosen in Android settings.
@@ -239,7 +248,7 @@ In **Typing** > **Dictation**:
 
 - **Automatic punctuation**: Google speech recognition adds punctuation and capital letters. On by default. Shown on Android 13 or later with Google speech recognition installed.
 - **Block offensive words**: Google speech recognition masks offensive words. On by default. Shown with **Automatic punctuation**.
-- **Auto stop after silence**: stops recording after 3, 5, 10, 15 or 30 seconds, or 1 minute, without speech. The default is **Off**.
+- **Auto stop after silence**: stops recording after 1, 2, 3, 5, 10, 15 or 30 seconds, or 1 minute, without speech. The default is **Off**.
 - **Speak dictated text**: reads the text after SandFly types it, except in password fields. Off by default.
 - **Keep recognition models loaded**: how long a Whisper model and the On-device AI model stay in memory after use: **Unload after use** (the default), 5, 15 or 30 minutes, or **Until SandFly stops**. A loaded model starts sooner and uses memory.
 - **Model download server**: where models are downloaded from, **Hugging Face** (the default) or **hf-mirror.com**.
@@ -281,4 +290,4 @@ While the handwriting keyboard is shown, only commands that open no window run, 
 
 ### Physical keyboards {#typing-physical-keyboard}
 
-While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period** and **Android physical keyboard settings**. These settings are described in [](#keyboards).
+While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters** and **Android physical keyboard settings**. These settings are described in [](#keyboards).

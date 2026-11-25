@@ -100,9 +100,9 @@
     <string name="script_tree_copied">បានចម្លងធាតុ <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">មិនមានបង្អួចសម្រាប់ចម្លងទេ</string>
     <string name="script_tree_clip_label">រចនាសម្ព័ន្ធអេក្រង់</string>
-    <string name="summary_copy_screen_tree_menu">ចម្លងធាតុទាំងអស់នៅលើអេក្រង់ជា JSON សម្រាប់សរសេរស្គ្រីប</string>
+    <string name="summary_copy_screen_tree_menu">ចម្លងធាតុទាំងអស់នៅលើអេក្រង់ជាអត្ថបទ សម្រាប់សរសេរស្គ្រីប</string>
     <string name="script_inspect_clip_label">ព័ត៌មានលម្អិតអំពីធាតុ</string>
-    <string name="summary_inspect_item_menu">និយាយ និងចម្លងព័ត៌មានលម្អិតនៃធាតុដែលបានផ្ដោតចុងក្រោយ សម្រាប់សរសេរស្គ្រីប</string>
+    <string name="summary_inspect_item_menu">បង្ហាញព័ត៌មានលម្អិតនៃធាតុដែលបានផ្ដោតចុងក្រោយ សម្រាប់សរសេរស្គ្រីប និងម៉ាក្រូ</string>
     <string name="script_keys_backtalk_modifier">គ្រាប់ចុចកែប្រែ SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> បន្ទាប់មក <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ពាក្យបញ្ជា</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">ព័ត៌មានលម្អិតសម្រាប់ស្គ្រីប</string>
     <string name="item_details_app">កម្មវិធី</string>
     <string name="script_permission_system">ថយក្រោយ ឬទៅអេក្រង់ដើម បើកការជូនដំណឹង បង្ហាញបញ្ជីកម្មវិធី បើកកម្មវិធី ការកំណត់ និងតំណ ផ្ញើ Intent ទៅកម្មវិធី ប្ដូរកម្រិតសំឡេង របៀបរោទ៍ និងការកំណត់ឧបករណ៍ ដូចជា Wi-Fi និងពិល គ្រប់គ្រងមេឌៀ កំណត់កម្មវិធីកំណត់ម៉ោង និងម៉ោងរោទ៍ និងចាប់ផ្ដើមការហៅទូរសព្ទ និងសារ</string>
+    <string name="script_from_code">បានបញ្ចូលនៅក្នុង SandFly។</string>
+    <string name="script_code_view">មើលកូដ</string>
+    <string name="script_code_edit">កែសម្រួលកូដ</string>
+    <string name="script_code_new">ស្គ្រីបថ្មីពីកូដ</string>
+    <string name="script_code_field">កូដ</string>
+    <string name="script_code_save">រក្សាទុក</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> បានរក្សាទុក</string>
+    <string name="script_code_not_saved">មិនបានរក្សាទុកស្គ្រីប</string>
+    <string name="script_code_id_changed">id នៃម៉ានីហ្វេសត្រូវតែនៅដដែលជា <xliff:g id="id">%1$s</xliff:g>។</string>
+    <string name="script_code_load_failed">មិនអាចអានកូដបានទេ។</string>
+    <string name="script_code_discard_title">បោះបង់ការផ្លាស់ប្ដូរ?</string>
+    <string name="script_code_discard">បោះបង់</string>
+    <string name="script_code_keep_editing">បន្តកែសម្រួល</string>
 </resources>

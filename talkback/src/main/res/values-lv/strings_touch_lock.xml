@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Bloķēt vai atbloķēt pieskārienus</string>
+    <string name="touch_locked">Pieskārieni bloķēti</string>
+    <string name="touch_unlocked">Pieskārieni atbloķēti</string>
+    <string name="touch_lock_unavailable">Pieskārienu bloķēšanai nepieciešama Android 13 vai jaunāka versija</string>
+    <string name="title_pref_lock_touch_automatically">Automātiski bloķēt pieskārienus</string>
+    <string name="value_lock_touch_never">Nekad</string>
+    <string name="value_lock_touch_screen_on">Kad ekrāns ieslēdzas</string>
+    <string name="value_lock_touch_lock_screen">Bloķēšanas ekrānā</string>
+    <string name="value_lock_touch_proximity">Kamēr tuvuma sensors ir apklāts</string>
+    <string name="title_pref_locked_touch_feedback">Pieskārieni bloķēšanas laikā</string>
+    <string name="value_locked_touch_nothing">Nekas</string>
+    <string name="value_locked_touch_sound">Skaņa</string>
+    <string name="value_locked_touch_vibration">Vibrācija</string>
+</resources>

@@ -79,4 +79,20 @@
     <string name="menu_reset">รีเซ็ตเป็นค่าเริ่มต้น</string>
     <string name="menu_reset_confirm">รีเซ็ตเมนู SandFly เป็นรายการและลำดับเริ่มต้นหรือไม่</string>
     <string name="menu_assign">ท่าทางสัมผัสและแป้นพิมพ์ลัด</string>
+    <string name="shortcut_app_gestures_for_app">ท่าทางสัมผัสสำหรับแอปนี้</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku และรูท</string>
+    <string name="title_pref_use_root">ใช้รูทแทน Shizuku</string>
+    <string name="command_perform_gesture">ทำท่าทางสัมผัส</string>
+    <string name="command_perform_gesture_message">ทำท่าทางสัมผัสตอนนี้</string>
+    <string name="command_gesture_not_assignable">กำหนด <xliff:g id="gesture" example="Pinch">%1$s</xliff:g> ไม่ได้</string>
+    <string name="command_run">เรียกใช้คำสั่ง</string>
+    <string name="command_add_to_sandfly_menu">เพิ่มลงในเมนู SandFly</string>
+    <string name="command_remove_from_sandfly_menu">นำออกจากเมนู SandFly</string>
+    <string name="command_added_to_sandfly_menu">เพิ่ม <xliff:g id="command" example="Describe image">%1$s</xliff:g> ลงในเมนู SandFly แล้ว</string>
+    <string name="command_removed_from_sandfly_menu">นำ <xliff:g id="command" example="Describe image">%1$s</xliff:g> ออกจากเมนู SandFly แล้ว</string>
+    <string name="commands_search_hint">ค้นหาคำสั่ง</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> คำสั่ง</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> คำสั่ง</item>
+    </plurals>
 </resources>

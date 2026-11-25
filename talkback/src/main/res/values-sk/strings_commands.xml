@@ -79,4 +79,22 @@
     <string name="menu_reset">Obnoviť predvolené</string>
     <string name="menu_reset_confirm">Obnoviť predvolené položky a poradie ponuky SandFly?</string>
     <string name="menu_assign">Gestá a klávesová skratka</string>
+    <string name="shortcut_app_gestures_for_app">Gestá pre túto aplikáciu</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku a root</string>
+    <string name="title_pref_use_root">Používať root namiesto Shizuku</string>
+    <string name="command_perform_gesture">Vykonať gesto</string>
+    <string name="command_perform_gesture_message">Urobte gesto.</string>
+    <string name="command_gesture_not_assignable">Nie je možné priradiť <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Spustiť príkaz</string>
+    <string name="command_add_to_sandfly_menu">Pridať do ponuky SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Odstrániť z ponuky SandFly</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> pridané do ponuky SandFly</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> odstránené z ponuky SandFly</string>
+    <string name="commands_search_hint">Hľadať príkazy</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> príkaz</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> príkazy</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> príkazu</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> príkazov</item>
+    </plurals>
 </resources>

@@ -1037,7 +1037,9 @@ public class AccessibilityNodeInfoUtils {
       // End of the line. Don't check children and don't allow any recursion.
       // checkChildren is only false in the shouldFocusNode call below. This is to avoid
       // repetitive checks down the tree when looking up at the ancestors.
-      LogUtils.d(
+      // Verbose: building a traversal order logs this for each ancestor of each item, which filled
+      // Debug logs in reports (report 579).
+      LogUtils.v(
           TAG, "checkChildren=false and isAccessibilityFocusable=%s", accessibilityFocusable);
       return accessibilityFocusable;
     }
@@ -2835,6 +2837,22 @@ public class AccessibilityNodeInfoUtils {
     boolean isNonEditableSelectableText =
         AccessibilityNodeInfoUtils.isNonEditableSelectableText(node);
     return isEditable || isNonEditableSelectableText;
+  }
+
+  /**
+   * Returns whether {@code node} is a text field that editing commands, such as Clear text and
+   * Paste, act on: an EditText, or another view that the app marks editable, such as a code
+   * editor. Editable web content is left out unless it is an EditText: inside a rich text editor,
+   * each paragraph is marked editable but is not a field of its own.
+   */
+  public static boolean isEditField(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null) {
+      return false;
+    }
+    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+      return true;
+    }
+    return node.isEditable() && !WebInterfaceUtils.isWebContainer(node);
   }
 
   /**

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Uzamknúť alebo odomknúť dotyk</string>
+    <string name="touch_locked">Dotyk uzamknutý</string>
+    <string name="touch_unlocked">Dotyk odomknutý</string>
+    <string name="touch_lock_unavailable">Uzamknutie dotyku vyžaduje Android 13 alebo novší</string>
+    <string name="title_pref_lock_touch_automatically">Automaticky uzamknúť dotyk</string>
+    <string name="value_lock_touch_never">Nikdy</string>
+    <string name="value_lock_touch_screen_on">Keď sa zapne obrazovka</string>
+    <string name="value_lock_touch_lock_screen">Na uzamknutej obrazovke</string>
+    <string name="value_lock_touch_proximity">Kým je senzor priblíženia zakrytý</string>
+    <string name="title_pref_locked_touch_feedback">Dotyky pri uzamknutom dotyku</string>
+    <string name="value_locked_touch_nothing">Nič</string>
+    <string name="value_locked_touch_sound">Zvuk</string>
+    <string name="value_locked_touch_vibration">Vibrovanie</string>
+</resources>

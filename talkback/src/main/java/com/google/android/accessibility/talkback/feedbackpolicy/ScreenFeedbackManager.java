@@ -356,7 +356,7 @@ public class ScreenFeedbackManager
     boolean firstPart = true;
     boolean droppedWindowName = false;
     // Worked out at the first part it applies to, as finding the windows' apps can ask the apps.
-    @Nullable Boolean appSpeechLeftUnsaid = AppSpeechFilter.isActive() ? null : false;
+    @Nullable Boolean appSpeechLeftUnsaid = null;
     for (FeedbackPart feedbackPart : feedback.getParts()) {
       if (!windowNamesSpoken && feedbackPart.isWindowName()) {
         droppedWindowName = true;
@@ -401,12 +401,34 @@ public class ScreenFeedbackManager
 
   /**
    * Whether {@link AppSpeechFilter} leaves the window names and app announcements of {@code
-   * interpretation} unsaid: whether it does for the app of one of the windows that changed, or for
-   * any app when their apps aren't known.
+   * interpretation} unsaid: whether they come from a package it always leaves unsaid, or whether it
+   * does for the app of one of the windows that changed, or for any app when their apps aren't
+   * known.
    */
   private boolean leavesAppSpeechUnsaid(WindowEventInterpreter.EventInterpretation interpretation) {
-    boolean anyPackage = false;
     @Nullable Announcement announcement = interpretation.getAnnouncement();
+    if (announcement != null
+        && AppSpeechFilter.alwaysMutes(
+            AppSpeechFilter.Source.APP_SPEECH, announcement.packageName())) {
+      return true;
+    }
+    // Only the packages of the events that titled the windows, as asking the apps takes time.
+    int[] titledWindowIds = {
+      interpretation.getEventSourceWindow().getId(),
+      interpretation.getWindowA().getId(),
+      interpretation.getWindowB().getId(),
+    };
+    for (int windowId : titledWindowIds) {
+      if (windowId != WINDOW_ID_NONE
+          && AppSpeechFilter.alwaysMutes(
+              AppSpeechFilter.Source.APP_SPEECH, interpreter.getWindowEventPackageName(windowId))) {
+        return true;
+      }
+    }
+    if (!AppSpeechFilter.isActive()) {
+      return false;
+    }
+    boolean anyPackage = false;
     if (announcement != null && announcement.packageName() != null) {
       anyPackage = true;
       if (AppSpeechFilter.mutes(AppSpeechFilter.Source.APP_SPEECH, announcement.packageName())) {

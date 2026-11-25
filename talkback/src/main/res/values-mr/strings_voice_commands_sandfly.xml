@@ -162,4 +162,19 @@
         <item>{label} सुरू करा</item>
         <item>{label} निवडा</item>
     </string-array>
+    <string name="shortcut_voice_editing">व्हॉइस संपादन सुरू करा</string>
+    <string name="voice_editing_on">व्हॉइस संपादन सुरू</string>
+    <string name="voice_editing_off">व्हॉइस संपादन बंद</string>
+    <string name="title_pref_voice_editing_time_limit">व्हॉइस संपादनाची वेळ मर्यादा</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> मिनिट</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> मिनिटे</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>संपादन थांबवा</item>
+        <item>व्हॉइस संपादन थांबवा</item>
+        <item>संपादन संपवा</item>
+        <item>व्हॉइस संपादन संपवा</item>
+        <item>व्हॉइस संपादन बंद</item>
+    </string-array>
 </resources>

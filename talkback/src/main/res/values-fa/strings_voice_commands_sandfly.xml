@@ -170,4 +170,19 @@
         <item>{label} را فعال کن</item>
         <item>{label} را انتخاب کن</item>
     </string-array>
+    <string name="shortcut_voice_editing">شروع ویرایش صوتی</string>
+    <string name="voice_editing_on">ویرایش صوتی روشن</string>
+    <string name="voice_editing_off">ویرایش صوتی خاموش</string>
+    <string name="title_pref_voice_editing_time_limit">محدودیت زمان ویرایش صوتی</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> دقیقه</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> دقیقه</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>توقف ویرایش</item>
+        <item>توقف ویرایش صوتی</item>
+        <item>پایان ویرایش</item>
+        <item>پایان ویرایش صوتی</item>
+        <item>ویرایش صوتی خاموش</item>
+    </string-array>
 </resources>

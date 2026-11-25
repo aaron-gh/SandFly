@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Προσθήκη χαρακτήρα</string>
+    <string name="custom_braille_characters_text">Χαρακτήρας ή κείμενο</string>
+    <string name="custom_braille_characters_cells">Κουκκίδες</string>
+    <string name="custom_braille_characters_table">Πίνακας μπράιγ</string>
+    <string name="custom_braille_characters_cells_help">Αριθμοί κουκκίδων κάθε κελιού, με τα κελιά χωρισμένα με παύλες, π.χ. 2356 ή 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Εισαγάγετε αριθμούς κουκκίδων από 1 έως 8, έως <xliff:g id="number" example="20">%1$d</xliff:g> κελιά</string>
+    <string name="custom_braille_characters_invalid_text">Εισαγάγετε από 1 έως <xliff:g id="number" example="50">%1$d</xliff:g> χαρακτήρες</string>
+</resources>

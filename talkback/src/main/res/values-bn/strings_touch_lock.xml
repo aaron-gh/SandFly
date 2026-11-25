@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">টাচ লক বা আনলক করুন</string>
+    <string name="touch_locked">টাচ লক করা হয়েছে</string>
+    <string name="touch_unlocked">টাচ আনলক করা হয়েছে</string>
+    <string name="touch_lock_unavailable">টাচ লকের জন্য Android 13 বা তার পরের ভার্সন দরকার</string>
+    <string name="title_pref_lock_touch_automatically">অটোমেটিক টাচ লক করুন</string>
+    <string name="value_lock_touch_never">কখনও নয়</string>
+    <string name="value_lock_touch_screen_on">স্ক্রিন চালু হলে</string>
+    <string name="value_lock_touch_lock_screen">লক স্ক্রিনে</string>
+    <string name="value_lock_touch_proximity">প্রক্সিমিটি সেন্সর ঢাকা থাকলে</string>
+    <string name="title_pref_locked_touch_feedback">টাচ লক থাকার সময় টাচ</string>
+    <string name="value_locked_touch_nothing">কিছু না</string>
+    <string name="value_locked_touch_sound">সাউন্ড</string>
+    <string name="value_locked_touch_vibration">ভাইব্রেশন</string>
+</resources>

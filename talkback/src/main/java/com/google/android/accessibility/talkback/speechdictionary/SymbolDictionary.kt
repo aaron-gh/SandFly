@@ -72,12 +72,14 @@ object SymbolDictionary {
       if (find.isEmpty()) continue
       // Punctuation that the punctuation verbosity leaves out of speech, and that engines don't
       // read aloud, stays out. Where SandFly names the character, such as when moving by character
-      // or deleting it, SpeechCleanupUtils has already put in the entry's text.
-      if (forSpeech && find.length == 1 && isSilentWhenHidden(find[0])) continue
+      // or deleting it, SpeechCleanupUtils has already put in the entry's text. At None with Say
+      // symbols that change meaning, the entry applies where the symbol stays in speech.
+      val hidden = forSpeech && find.length == 1 && isSilentWhenHidden(find[0])
+      if (hidden && !keepsMeaningfulSymbols()) continue
       val starts = ArrayList<Int>()
       var index = subject.indexOf(find)
       while (index >= 0) {
-        starts += index
+        if (!hidden || SpeechCleanupUtils.changesMeaningAt(subject, index)) starts += index
         index = subject.indexOf(find, index + find.length)
       }
       if (starts.isEmpty()) continue
@@ -101,6 +103,9 @@ object SymbolDictionary {
   private fun isSilentWhenHidden(symbol: Char): Boolean =
     (symbol in ENGINE_SILENT_PUNCTUATION || SpeechCleanupUtils.hidesAllPunctuation()) &&
       SpeechCleanupUtils.isHiddenByVerbosity(symbol)
+
+  private fun keepsMeaningfulSymbols(): Boolean =
+    SpeechCleanupUtils.hidesAllPunctuation() && SpeechCleanupUtils.keepsSymbolsThatChangeMeaning()
 
   /** Punctuation that engines leave unsaid in text, pausing for it at most. */
   private const val ENGINE_SILENT_PUNCTUATION =

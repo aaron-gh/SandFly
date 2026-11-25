@@ -79,4 +79,20 @@
     <string name="menu_reset">Өгөгдмөл болгох</string>
     <string name="menu_reset_confirm">SandFly цэсийг өгөгдмөл зүйлс болон дарааллаар нь дахин тохируулах уу?</string>
     <string name="menu_assign">Зангаа ба гарын товчлол</string>
+    <string name="shortcut_app_gestures_for_app">Энэ аппын зангаа</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku ба root</string>
+    <string name="title_pref_use_root">Shizuku-н оронд root ашиглах</string>
+    <string name="command_perform_gesture">Зангаа хийх</string>
+    <string name="command_perform_gesture_message">Зангаагаа хийнэ үү.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g>-г оноох боломжгүй</string>
+    <string name="command_run">Тушаалыг ажиллуулах</string>
+    <string name="command_add_to_sandfly_menu">SandFly цэсэнд нэмэх</string>
+    <string name="command_remove_from_sandfly_menu">SandFly цэснээс хасах</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g>-г SandFly цэсэнд нэмлээ</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g>-г SandFly цэснээс хаслаа</string>
+    <string name="commands_search_hint">Тушаал хайх</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> тушаал</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> тушаал</item>
+    </plurals>
 </resources>

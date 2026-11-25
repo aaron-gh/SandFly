@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Kopioitu <xliff:g id="count">%1$d</xliff:g> kohdetta</string>
     <string name="script_tree_none">Ei kopioitavaa ikkunaa</string>
     <string name="script_tree_clip_label">Näytön puu</string>
-    <string name="summary_copy_screen_tree_menu">Kopioi kaikki näytön kohteet JSON-muodossa skriptien kirjoittamista varten</string>
+    <string name="summary_copy_screen_tree_menu">Kopioi kaikki näytön kohteet tekstinä skriptien kirjoittamista varten</string>
     <string name="script_inspect_clip_label">Kohteen tiedot</string>
-    <string name="summary_inspect_item_menu">Sano ja kopioi valitun kohteen tiedot skriptien kirjoittamista varten</string>
+    <string name="summary_inspect_item_menu">Näyttää valitun kohteen tiedot skriptien ja makrojen kirjoittamista varten</string>
     <string name="script_keys_backtalk_modifier">SandFly-muokkausnäppäin</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, sitten <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komennot</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Skriptin tiedot</string>
     <string name="item_details_app">Sovellus</string>
     <string name="script_permission_system">Palata takaisin tai aloitusnäytölle, avata ilmoituksia, näyttää sovellusluettelon, avata sovelluksia, asetuksia ja linkkejä, lähettää intentejä sovelluksille, muuttaa äänenvoimakkuutta, soittoäänitilaa ja laiteasetuksia, kuten Wi-Fiä ja taskulamppua, ohjata median toistoa, asettaa ajastimia ja herätyksiä sekä aloittaa puheluita ja viestejä</string>
+    <string name="script_from_code">Kirjoitettu SandFlyssa.</string>
+    <string name="script_code_view">Näytä koodi</string>
+    <string name="script_code_edit">Muokkaa koodia</string>
+    <string name="script_code_new">Uusi skripti koodista</string>
+    <string name="script_code_field">Koodi</string>
+    <string name="script_code_save">Tallenna</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> tallennettu</string>
+    <string name="script_code_not_saved">Skriptiä ei tallennettu</string>
+    <string name="script_code_id_changed">Manifestin tunnuksen on pysyttävä arvossa <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Koodia ei voitu lukea.</string>
+    <string name="script_code_discard_title">Hylätäänkö muutokset?</string>
+    <string name="script_code_discard">Hylkää</string>
+    <string name="script_code_keep_editing">Jatka muokkausta</string>
 </resources>

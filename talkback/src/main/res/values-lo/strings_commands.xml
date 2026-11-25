@@ -79,4 +79,19 @@
     <string name="menu_reset">ຣີເຊັດເປັນຄ່າເລີ່ມຕົ້ນ</string>
     <string name="menu_reset_confirm">ຣີເຊັດເມນູ SandFly ເປັນລາຍການ ແລະ ລຳດັບເລີ່ມຕົ້ນ?</string>
     <string name="menu_assign">ທ່າທາງ ແລະ ປຸ່ມລັດແປ້ນພິມ</string>
+    <string name="shortcut_app_gestures_for_app">ທ່າທາງສຳລັບແອັບນີ້</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku ແລະ root</string>
+    <string name="title_pref_use_root">ໃຊ້ root ແທນ Shizuku</string>
+    <string name="command_perform_gesture">ເຮັດທ່າທາງ</string>
+    <string name="command_perform_gesture_message">ເຮັດທ່າທາງ.</string>
+    <string name="command_gesture_not_assignable">ກຳນົດ <xliff:g id="gesture" example="Pinch">%1$s</xliff:g> ບໍ່ໄດ້</string>
+    <string name="command_run">ເອີ້ນໃຊ້ຄຳສັ່ງ</string>
+    <string name="command_add_to_sandfly_menu">ເພີ່ມໃສ່ເມນູ SandFly</string>
+    <string name="command_remove_from_sandfly_menu">ລຶບອອກຈາກເມນູ SandFly</string>
+    <string name="command_added_to_sandfly_menu">ເພີ່ມ <xliff:g id="command" example="Describe image">%1$s</xliff:g> ໃສ່ເມນູ SandFly ແລ້ວ</string>
+    <string name="command_removed_from_sandfly_menu">ລຶບ <xliff:g id="command" example="Describe image">%1$s</xliff:g> ອອກຈາກເມນູ SandFly ແລ້ວ</string>
+    <string name="commands_search_hint">ຊອກຫາຄຳສັ່ງ</string>
+    <plurals name="commands_search_results">
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ຄຳສັ່ງ</item>
+    </plurals>
 </resources>

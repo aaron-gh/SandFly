@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">เพิ่มอักขระ</string>
+    <string name="custom_braille_characters_text">อักขระหรือข้อความ</string>
+    <string name="custom_braille_characters_cells">จุด</string>
+    <string name="custom_braille_characters_table">ตารางอักษรเบรลล์</string>
+    <string name="custom_braille_characters_cells_help">หมายเลขจุดของแต่ละเซลล์ คั่นเซลล์ด้วยขีดกลาง เช่น 2356 หรือ 456-2356</string>
+    <string name="custom_braille_characters_invalid_cells">ป้อนหมายเลขจุด 1 ถึง 8 ไม่เกิน <xliff:g id="number" example="20">%1$d</xliff:g> เซลล์</string>
+    <string name="custom_braille_characters_invalid_text">ป้อนอักขระ 1 ถึง <xliff:g id="number" example="50">%1$d</xliff:g> ตัว</string>
+</resources>

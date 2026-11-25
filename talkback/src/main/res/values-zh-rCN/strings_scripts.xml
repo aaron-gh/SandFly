@@ -198,11 +198,11 @@
     <!-- Label of the clipboard entry with the screen tree. [CHAR LIMIT=40] -->
     <string name="script_tree_clip_label">屏幕树</string>
     <!-- Summary of the option that shows Copy screen tree in the SandFly menu. [CHAR LIMIT=NONE] -->
-    <string name="summary_copy_screen_tree_menu">把屏幕上的所有项目复制为 JSON，用于编写脚本</string>
+    <string name="summary_copy_screen_tree_menu">把屏幕上的所有项目复制为文本，用于编写脚本</string>
     <!-- Label of the clipboard entry with the focused item's details. [CHAR LIMIT=40] -->
     <string name="script_inspect_clip_label">项目详情</string>
     <!-- Summary of the option that shows Inspect focused item in the SandFly menu. [CHAR LIMIT=NONE] -->
-    <string name="summary_inspect_item_menu">朗读并复制你所在项目的详情，用于编写脚本</string>
+    <string name="summary_inspect_item_menu">显示你所在项目的详情，用于编写脚本和宏</string>
 
     <!-- In a script's keyboard shortcut, the key SandFly's shortcuts are pressed with. [CHAR LIMIT=40] -->
     <string name="script_keys_backtalk_modifier">SandFly 修饰键</string>
@@ -311,4 +311,17 @@
     <string name="item_details_script">脚本详情</string>
     <string name="item_details_app">应用</string>
     <string name="script_permission_system">返回、回到主屏幕、打开通知、列出并打开应用、打开设置和链接、向应用发送 intent、更改音量、铃声模式以及 Wi-Fi 和手电筒等设备设置、控制媒体、设置计时器和闹钟、拨打电话和发送消息</string>
+    <string name="script_from_code">在 SandFly 中输入。</string>
+    <string name="script_code_view">查看代码</string>
+    <string name="script_code_edit">编辑代码</string>
+    <string name="script_code_new">从代码新建脚本</string>
+    <string name="script_code_field">代码</string>
+    <string name="script_code_save">保存</string>
+    <string name="script_code_saved">已保存 <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_code_not_saved">脚本未保存</string>
+    <string name="script_code_id_changed">清单中的 id 必须保持为 <xliff:g id="id">%1$s</xliff:g>。</string>
+    <string name="script_code_load_failed">无法读取代码。</string>
+    <string name="script_code_discard_title">要丢弃更改吗？</string>
+    <string name="script_code_discard">丢弃</string>
+    <string name="script_code_keep_editing">继续编辑</string>
 </resources>

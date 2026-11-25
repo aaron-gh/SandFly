@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">افزودن نویسه</string>
+    <string name="custom_braille_characters_text">نویسه یا متن</string>
+    <string name="custom_braille_characters_cells">نقطه‌ها</string>
+    <string name="custom_braille_characters_table">جدول بریل</string>
+    <string name="custom_braille_characters_cells_help">شماره نقطه‌های هر خانه، با خط تیره بین خانه‌ها، مانند 2356 یا 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">شماره نقطه‌های ۱ تا ۸ را وارد کنید، حداکثر <xliff:g id="number" example="20">%1$d</xliff:g> خانه</string>
+    <string name="custom_braille_characters_invalid_text">۱ تا <xliff:g id="number" example="50">%1$d</xliff:g> نویسه وارد کنید</string>
+</resources>

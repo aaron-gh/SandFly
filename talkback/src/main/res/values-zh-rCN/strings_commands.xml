@@ -79,4 +79,20 @@
     <string name="menu_reset">重置为默认设置</string>
     <string name="menu_reset_confirm">将 SandFly 菜单重置为默认项目和顺序？</string>
     <string name="menu_assign">手势和键盘快捷键</string>
+    <string name="shortcut_app_gestures_for_app">此应用的手势</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku 和 root</string>
+    <string name="title_pref_use_root">使用 root 代替 Shizuku</string>
+    <string name="command_perform_gesture">执行手势</string>
+    <string name="command_perform_gesture_message">请做出手势。</string>
+    <string name="command_gesture_not_assignable">无法分配 <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">运行命令</string>
+    <string name="command_add_to_sandfly_menu">添加到 SandFly 菜单</string>
+    <string name="command_remove_from_sandfly_menu">从 SandFly 菜单中移除</string>
+    <string name="command_added_to_sandfly_menu">已将 <xliff:g id="command" example="Describe image">%1$s</xliff:g> 添加到 SandFly 菜单</string>
+    <string name="command_removed_from_sandfly_menu">已将 <xliff:g id="command" example="Describe image">%1$s</xliff:g> 从 SandFly 菜单中移除</string>
+    <string name="commands_search_hint">搜索命令</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 个命令</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> 个命令</item>
+    </plurals>
 </resources>

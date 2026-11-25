@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">قفل اللمس أو إلغاء قفله</string>
+    <string name="touch_locked">تم قفل اللمس</string>
+    <string name="touch_unlocked">تم إلغاء قفل اللمس</string>
+    <string name="touch_lock_unavailable">يتطلب قفل اللمس Android 13 أو أحدث</string>
+    <string name="title_pref_lock_touch_automatically">قفل اللمس تلقائيًا</string>
+    <string name="value_lock_touch_never">أبدًا</string>
+    <string name="value_lock_touch_screen_on">عند تشغيل الشاشة</string>
+    <string name="value_lock_touch_lock_screen">على شاشة القفل</string>
+    <string name="value_lock_touch_proximity">أثناء تغطية مستشعر القرب</string>
+    <string name="title_pref_locked_touch_feedback">اللمسات أثناء قفل اللمس</string>
+    <string name="value_locked_touch_nothing">لا شيء</string>
+    <string name="value_locked_touch_sound">صوت</string>
+    <string name="value_locked_touch_vibration">اهتزاز</string>
+</resources>

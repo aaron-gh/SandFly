@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Nasa loob ng item ang focus</string>
     <string name="macro_test_focus_inside_value">Focus sa loob ng: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Focus na wala sa loob ng: %1$s</string>
+    <string name="macro_step_tap_position">I-tap sa posisyon</string>
+    <string name="macro_step_tap_position_value">I-tap sa <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixel mula sa kaliwa</string>
+    <string name="macro_tap_y">Y, pixel mula sa itaas</string>
+    <string name="macro_invalid_position">Maglagay ng X at Y mula 0 hanggang <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Tooltip</string>
+    <string name="macro_step_touch_hold">Pindutin nang matagal ang item</string>
+    <string name="macro_step_touch_hold_value">Pindutin nang matagal ang <xliff:g id="label" example="Voice message">%1$s</xliff:g> nang <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Pindutin nang matagal ang <xliff:g id="label" example="Voice message">%1$s</xliff:g> nang <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Segundo ng pagpindot</string>
+    <string name="macro_slide">Bago iangat</string>
+    <string name="macro_slide_none">Iangat sa puwesto</string>
+    <string name="macro_slide_up">I-slide pataas</string>
+    <string name="macro_slide_down">I-slide pababa</string>
+    <string name="macro_slide_left">I-slide pakaliwa</string>
+    <string name="macro_slide_right">I-slide pakanan</string>
+    <string name="macro_slide_distance">Distansya sa dp</string>
+    <string name="macro_app">App</string>
+    <string name="macro_all_apps">Lahat ng app</string>
+    <string name="macro_add_app">Magdagdag ng app</string>
+    <string name="macro_apps">Mga app</string>
+    <string name="macro_in_actions">Ipakita sa Mga Pagkilos</string>
+    <string name="macro_in_actions_only_when">Ipakita sa Mga Pagkilos kapag lang</string>
+    <string name="macro_not_in_app">Hindi pinatakbo ang macro. Sa <xliff:g id="app" example="WhatsApp">%1$s</xliff:g> lang ito tumatakbo</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> macro</item>
+    </plurals>
+    <string name="macro_record">I-record ang mga hakbang</string>
+    <string name="macro_record_new">Mag-record ng macro</string>
+    <string name="macro_recording_notification">Nire-record ang mga hakbang ng macro: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Nagre-record. Para huminto, patakbuhin ang Mag-record ng macro o Ihinto ang macro, o buksan ang notification na Nire-record ang mga hakbang ng macro.</string>
+    <string name="macro_recorded">Mga na-record na hakbang</string>
+    <string name="macro_recorded_no_passwords">Hindi nire-record ang text na tina-type sa mga field ng password.</string>
+    <string name="macro_recorded_too_many">Hindi naidagdag. Hanggang <xliff:g id="count" example="200">%1$d</xliff:g> hakbang lang ang isang macro.</string>
+    <string name="macro_recorded_name">Na-record noong <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Listahan sa screen</string>
 </resources>

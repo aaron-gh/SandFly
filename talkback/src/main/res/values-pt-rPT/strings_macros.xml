@@ -197,4 +197,42 @@
     <string name="macro_test_focus_inside">Foco dentro de um item</string>
     <string name="macro_test_focus_inside_value">Foco dentro de: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Foco fora de: %1$s</string>
+    <string name="macro_step_tap_position">Tocar na posição</string>
+    <string name="macro_step_tap_position_value">Tocar em <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, píxeis a partir da esquerda</string>
+    <string name="macro_tap_y">Y, píxeis a partir do topo</string>
+    <string name="macro_invalid_position">Introduza X e Y de 0 a <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Sugestão</string>
+    <string name="macro_step_touch_hold">Tocar sem soltar no item</string>
+    <string name="macro_step_touch_hold_value">Tocar sem soltar em <xliff:g id="label" example="Voice message">%1$s</xliff:g> durante <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Tocar sem soltar em <xliff:g id="label" example="Voice message">%1$s</xliff:g> durante <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Segundos sem soltar</string>
+    <string name="macro_slide">Antes de levantar</string>
+    <string name="macro_slide_none">Levantar no mesmo sítio</string>
+    <string name="macro_slide_up">Deslizar para cima</string>
+    <string name="macro_slide_down">Deslizar para baixo</string>
+    <string name="macro_slide_left">Deslizar para a esquerda</string>
+    <string name="macro_slide_right">Deslizar para a direita</string>
+    <string name="macro_slide_distance">Distância em dp</string>
+    <string name="macro_app">App</string>
+    <string name="macro_all_apps">Todas as apps</string>
+    <string name="macro_add_app">Adicionar app</string>
+    <string name="macro_apps">Apps</string>
+    <string name="macro_in_actions">Mostrar em Ações</string>
+    <string name="macro_in_actions_only_when">Mostrar em Ações apenas quando</string>
+    <string name="macro_not_in_app">Macro não executada. Só é executada em <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macro</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> macros</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> macros</item>
+    </plurals>
+    <string name="macro_record">Gravar passos</string>
+    <string name="macro_record_new">Gravar uma macro</string>
+    <string name="macro_recording_notification">A gravar passos da macro: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">A gravar. Para parar, execute Gravar uma macro ou Parar macro, ou abra a notificação A gravar passos da macro.</string>
+    <string name="macro_recorded">Passos gravados</string>
+    <string name="macro_recorded_no_passwords">O texto escrito em campos de palavra-passe não é gravado.</string>
+    <string name="macro_recorded_too_many">Não adicionado. Uma macro tem no máximo <xliff:g id="count" example="200">%1$d</xliff:g> passos.</string>
+    <string name="macro_recorded_name">Gravada a <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Lista no ecrã</string>
 </resources>

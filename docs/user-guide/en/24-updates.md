@@ -26,6 +26,8 @@ SandFly shows "Checking for updates", then one of these:
 - A dialog **SandFly build** *number* **is available**, with the changes in the new build. For a stable release, the changes are the release notes. For a development build, they are the changes since the installed build. Choose **Install** to install it, or **Cancel**.
 - "Could not check for updates", when GitHub can't be reached. Try again later.
 
+While a new development build is being published, the check waits for it and tries again, for up to a minute.
+
 ### Automatic update checks {#updates-automatic}
 
 **Updates and installation** > **Automatically check for updates** is on by default. While SandFly is on, it checks for a new build 30 seconds after it starts and then once a day, or once an hour with **Development builds** on. When a new build is available, SandFly shows the notification **SandFly update available**, with the changes. Each build is announced once.

@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Kopirano stavki: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Nema prozora za kopiranje</string>
     <string name="script_tree_clip_label">Stablo zaslona</string>
-    <string name="summary_copy_screen_tree_menu">Kopiranje svih stavki na zaslonu kao JSON za pisanje skripti</string>
+    <string name="summary_copy_screen_tree_menu">Kopiranje svih stavki na zaslonu kao tekst za pisanje skripti</string>
     <string name="script_inspect_clip_label">Pojedinosti o stavci</string>
-    <string name="summary_inspect_item_menu">Izgovaranje i kopiranje pojedinosti o stavci na kojoj ste bili za pisanje skripti</string>
+    <string name="summary_inspect_item_menu">Prikazivanje pojedinosti o stavci na kojoj ste bili, za pisanje skripti i makroa</string>
     <string name="script_keys_backtalk_modifier">Modifikatorska tipka SandFlya</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, zatim <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Naredbe</string>
@@ -169,4 +169,17 @@
     <string name="item_details_script">Pojedinosti za skripte</string>
     <string name="item_details_app">Aplikacija</string>
     <string name="script_permission_system">Vraćati se natrag ili na početni zaslon, otvarati obavijesti, prikazivati popis aplikacija, otvarati aplikacije, postavke i veze, slati aplikacijama Intent objekte, mijenjati glasnoću, način zvona i postavke uređaja kao što su Wi-Fi i svjetiljka, upravljati medijima, postavljati mjerače vremena i alarme te pokretati pozive i poruke</string>
+    <string name="script_from_code">Uneseno u SandFlyju.</string>
+    <string name="script_code_view">Prikaži kôd</string>
+    <string name="script_code_edit">Uredi kôd</string>
+    <string name="script_code_new">Nova skripta iz koda</string>
+    <string name="script_code_field">Kôd</string>
+    <string name="script_code_save">Spremi</string>
+    <string name="script_code_saved">Skripta <xliff:g id="name">%1$s</xliff:g> je spremljena</string>
+    <string name="script_code_not_saved">Skripta nije spremljena</string>
+    <string name="script_code_id_changed">Id manifesta mora ostati <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Kôd nije moguće pročitati.</string>
+    <string name="script_code_discard_title">Odbaciti promjene?</string>
+    <string name="script_code_discard">Odbaci</string>
+    <string name="script_code_keep_editing">Nastavi uređivati</string>
 </resources>

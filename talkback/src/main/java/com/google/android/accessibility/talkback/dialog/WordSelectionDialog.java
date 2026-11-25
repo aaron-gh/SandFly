@@ -20,13 +20,15 @@ import static com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRAC
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.InsetDrawable;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.view.accessibility.AccessibilityWindowInfo;
+import android.view.ViewParent;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioGroup;
@@ -44,11 +46,8 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.granularediting.RangeSelection;
 import com.google.android.accessibility.talkback.menurules.TextEntityMenu;
-import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
-import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.ClipboardHistory;
 import com.google.android.accessibility.utils.SpannableUtils;
-import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.material.A11yAlertDialogWrapper;
 import com.google.android.accessibility.utils.output.EmojiSpeech;
 import com.google.android.accessibility.utils.output.FeedbackItem;
@@ -57,9 +56,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.BitSet;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -91,8 +88,6 @@ public class WordSelectionDialog extends BaseDialog {
   @VisibleForTesting static final int MAX_TEXT_CHARS = 20_000;
   /** The longest item; longer paragraphs and words are split into several items. */
   @VisibleForTesting static final int MAX_ITEM_CHARS = 300;
-  private static final int MAX_NODES = 1500;
-  private static final int MAX_DEPTH = 50;
 
   // One thread, which ends when it has been idle for a while.
   private static final ThreadPoolExecutor EXECUTOR = createExecutor();
@@ -177,9 +172,9 @@ public class WordSelectionDialog extends BaseDialog {
     }
   }
 
-  private final List<String> paragraphs;
-  private final List<String> entities;
-  private final boolean textTruncated;
+  private List<String> paragraphs;
+  private List<String> entities;
+  private boolean textTruncated;
   private final List<Token> tokens = new ArrayList<>();
   private boolean listTruncated;
   @Nullable private TextView truncatedNotice;
@@ -192,6 +187,11 @@ public class WordSelectionDialog extends BaseDialog {
   private final boolean showGranularityOptions;
   /** Whether every item starts checked, as the texts of Continuous copy do. */
   private boolean checkedAtFirst;
+  /** The screen's text, whose list Scroll up and Scroll down scroll; null for other lists. */
+  @Nullable private ScreenText.Session session;
+  /** Whether a Scroll up or Scroll down runs. */
+  private boolean scrolling;
+  @Nullable private View entitiesButton;
 
   public WordSelectionDialog(
       Context context,
@@ -219,6 +219,19 @@ public class WordSelectionDialog extends BaseDialog {
 
   @Override
   public void handleDialogDismiss() {
+    @Nullable ScreenText.Session scrolled = session;
+    if (scrolled != null) {
+      session = null;
+      EXECUTOR.execute(
+          () -> {
+            try {
+              scrolled.restore();
+            } catch (Throwable t) {
+              LogUtils.w(TAG, "Can't scroll the list back: %s", t);
+            }
+          });
+    }
+    entitiesButton = null;
     tokens.clear();
     checked.clear();
     range.clear();
@@ -247,11 +260,9 @@ public class WordSelectionDialog extends BaseDialog {
         radioGroup.setVisibility(View.GONE);
       }
     } else if (radioGroup != null) {
-      if (entities.isEmpty()) {
-        View entitiesButton = radioGroup.findViewById(R.id.radio_entities);
-        if (entitiesButton != null) {
-          entitiesButton.setVisibility(View.GONE);
-        }
+      entitiesButton = radioGroup.findViewById(R.id.radio_entities);
+      if (entitiesButton != null && entities.isEmpty()) {
+        entitiesButton.setVisibility(View.GONE);
       }
       radioGroup.setOnCheckedChangeListener(
           (group, checkedId) -> {
@@ -265,6 +276,16 @@ public class WordSelectionDialog extends BaseDialog {
               setGranularity(Granularity.WORDS);
             }
           });
+    }
+
+    boolean canScroll = session != null && session.canScroll();
+    for (int id : new int[] {R.id.scroll_up, R.id.scroll_down}) {
+      View button = view.findViewById(id);
+      if (button != null) {
+        button.setVisibility(canScroll ? View.VISIBLE : View.GONE);
+        boolean forward = id == R.id.scroll_down;
+        button.setOnClickListener(v -> scrollList(forward));
+      }
     }
 
     wordsRecyclerView = view.findViewById(R.id.words_recycler_view);
@@ -452,6 +473,7 @@ public class WordSelectionDialog extends BaseDialog {
   public A11yAlertDialogWrapper showDialog() {
     A11yAlertDialogWrapper dialog = super.showDialog();
     if (dialog != null) {
+      fillScreen(dialog);
       announceTruncated(SpeechController.QUEUE_MODE_QUEUE);
       Button neutralButton = dialog.getButton(DialogInterface.BUTTON_NEUTRAL);
       if (neutralButton != null) {
@@ -490,6 +512,144 @@ public class WordSelectionDialog extends BaseDialog {
       }
     }
     return dialog;
+  }
+
+  /**
+   * Makes the dialog fill the screen, with the list taking the height between the options and the
+   * buttons.
+   */
+  private void fillScreen(A11yAlertDialogWrapper dialog) {
+    Window window = dialog.getWindow();
+    if (window == null) {
+      return;
+    }
+    // The material background's insets keep the dialog away from the screen edges.
+    Drawable background = window.getDecorView().getBackground();
+    if (background instanceof InsetDrawable inset && inset.getDrawable() != null) {
+      window.setBackgroundDrawable(inset.getDrawable());
+    }
+    window.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+    // The dialog's panels wrap their content; up to the window's content they take its height.
+    View content = window.findViewById(android.R.id.content);
+    View view = wordsRecyclerView;
+    while (view != null && view != content) {
+      ViewParent parent = view.getParent();
+      if (view != wordsRecyclerView) {
+        ViewGroup.LayoutParams params = view.getLayoutParams();
+        if (params != null) {
+          params.height = ViewGroup.LayoutParams.MATCH_PARENT;
+          view.setLayoutParams(params);
+        }
+      }
+      view = (parent instanceof View parentView) ? parentView : null;
+    }
+  }
+
+  /**
+   * Scrolls the screen's list a page up or down, past the text read so far, and adds that page's
+   * text to the list, keeping the checked items.
+   */
+  private void scrollList(boolean forward) {
+    @Nullable ScreenText.Session scrolled = session;
+    if (scrolled == null || scrolling) {
+      return;
+    }
+    scrolling = true;
+    EXECUTOR.execute(
+        () -> {
+          int result;
+          @Nullable Collected collected = null;
+          try {
+            result = scrolled.scroll(forward);
+            if (result > 0) {
+              collected = scrolled.collected();
+              try {
+                collected.entities.addAll(findEntities(context, collected.paragraphs));
+              } catch (Throwable t) {
+                LogUtils.w(TAG, "Can't find addresses and numbers on the screen: %s", t);
+              }
+            }
+          } catch (Throwable t) {
+            LogUtils.w(TAG, "Can't scroll the list: %s", t);
+            result = ScreenText.NOT_SCROLLED;
+          }
+          int scrollResult = result;
+          @Nullable Collected added = collected;
+          new Handler(context.getMainLooper())
+              .post(
+                  () -> {
+                    scrolling = false;
+                    if (adapter == null || session != scrolled) {
+                      // Closed.
+                      return;
+                    }
+                    if (added != null) {
+                      addScrolledText(added, forward);
+                    } else if (scrollResult == ScreenText.FULL) {
+                      announceTruncated(SpeechController.QUEUE_MODE_INTERRUPT);
+                    } else {
+                      speak(context.getString(R.string.word_selection_no_more_text));
+                    }
+                  });
+        });
+  }
+
+  /**
+   * Shows {@code collected}, the text before with a page more of the list, keeping the checked
+   * items when they are all still listed.
+   */
+  private void addScrolledText(Collected collected, boolean forward) {
+    List<Token> before = new ArrayList<>(tokens);
+    BitSet checkedBefore = (BitSet) checked.clone();
+    paragraphs = collected.paragraphs;
+    entities = collected.entities;
+    textTruncated = collected.truncated;
+    if (entitiesButton != null && !entities.isEmpty()) {
+      entitiesButton.setVisibility(View.VISIBLE);
+    }
+    populateItems(currentGranularity);
+    int added = tokens.size() - before.size();
+    int offset = forward ? 0 : added;
+    if (added >= 0 && sameTexts(before, tokens, offset)) {
+      for (int i = checkedBefore.nextSetBit(0); i >= 0; i = checkedBefore.nextSetBit(i + 1)) {
+        checked.set(i + offset);
+      }
+      if (adapter != null) {
+        adapter.notifyDataSetChanged();
+      }
+    }
+    if (added > 0) {
+      speak(
+          context.getResources().getQuantityString(R.plurals.word_selection_added, added, added));
+    } else {
+      speak(context.getString(R.string.word_selection_no_more_text));
+    }
+    announceTruncated(SpeechController.QUEUE_MODE_QUEUE);
+  }
+
+  /** Whether {@code after}, from {@code offset}, starts with the texts of {@code before}. */
+  @VisibleForTesting
+  static boolean sameTexts(List<Token> before, List<Token> after, int offset) {
+    if (offset < 0 || offset + before.size() > after.size()) {
+      return false;
+    }
+    for (int i = 0; i < before.size(); i++) {
+      if (!before.get(i).text.equals(after.get(offset + i).text)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private void speak(String text) {
+    if (pipeline != null) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              text,
+              SpeechController.SpeakOptions.create()
+                  .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)));
+    }
   }
 
   /** Checks the item and marks it as the start of a range that End selection checks. */
@@ -648,13 +808,18 @@ public class WordSelectionDialog extends BaseDialog {
     dialog.showDialog();
   }
 
-  /** Collects the text on the screen off the main thread, then shows the dialog. */
+  /**
+   * Collects the text on the screen off the main thread, then shows the dialog, with Scroll up and
+   * Scroll down when the screen has a list that scrolls.
+   */
   public static void showForScreen(TalkBackService service, @Nullable FeedbackReturner pipeline) {
     EXECUTOR.execute(
         () -> {
           Collected collected;
+          @Nullable ScreenText.Session screen = null;
           try {
-            collected = extractScreenParagraphs(service);
+            screen = ScreenText.collect(service, pipeline);
+            collected = screen.collected();
           } catch (Throwable t) {
             LogUtils.w(TAG, "Can't collect the text on the screen: %s", t);
             collected = new Collected();
@@ -665,6 +830,7 @@ public class WordSelectionDialog extends BaseDialog {
             LogUtils.w(TAG, "Can't find addresses and numbers on the screen: %s", t);
           }
           Collected result = collected;
+          @Nullable ScreenText.Session session = screen;
           new Handler(service.getMainLooper())
               .post(
                   () -> {
@@ -687,6 +853,7 @@ public class WordSelectionDialog extends BaseDialog {
                             result,
                             pipeline,
                             /* showGranularityOptions= */ true);
+                    dialog.session = session;
                     dialog.showDialog();
                   });
         });
@@ -711,95 +878,6 @@ public class WordSelectionDialog extends BaseDialog {
       found.add(entity.getText());
     }
     return found;
-  }
-
-  private static Collected extractScreenParagraphs(TalkBackService service) {
-    Collected paragraphs = new Collected();
-    Set<AccessibilityNodeInfoCompat> visited = new HashSet<>();
-
-    List<AccessibilityWindowInfo> windows = AccessibilityServiceCompatUtils.getWindows(service);
-    if (windows != null && !windows.isEmpty()) {
-      for (AccessibilityWindowInfo window : windows) {
-        if (paragraphs.truncated) {
-          break;
-        }
-        if (window == null || WindowUtils.isSystemBar(service, window)) {
-          continue;
-        }
-        int type = window.getType();
-        if (type == AccessibilityWindowInfo.TYPE_APPLICATION
-            || type == AccessibilityWindowInfo.TYPE_SYSTEM) {
-          AccessibilityNodeInfo root = window.getRoot();
-          if (root != null) {
-            collectTexts(
-                AccessibilityNodeInfoCompat.wrap(root), paragraphs, visited, /* depth= */ 0);
-          }
-        }
-      }
-    }
-
-    if (paragraphs.paragraphs.isEmpty()) {
-      AccessibilityNodeInfo activeRoot = service.getRootInActiveWindow();
-      if (activeRoot != null) {
-        collectTexts(
-            AccessibilityNodeInfoCompat.wrap(activeRoot), paragraphs, visited, /* depth= */ 0);
-      }
-    }
-
-    return paragraphs;
-  }
-
-  private static boolean collectTexts(
-      @Nullable AccessibilityNodeInfoCompat node,
-      Collected paragraphs,
-      Set<AccessibilityNodeInfoCompat> visited,
-      int depth) {
-    if (node == null
-        || depth > MAX_DEPTH
-        || visited.size() >= MAX_NODES
-        || paragraphs.truncated) {
-      return false;
-    }
-    if (!visited.add(node)) {
-      return false;
-    }
-    if (!node.isVisibleToUser() || node.isPassword()) {
-      return false;
-    }
-
-    boolean hasText = false;
-    CharSequence text = AccessibilityNodeInfoUtils.getText(node);
-    if (!TextUtils.isEmpty(text)) {
-      String s = text.toString().trim();
-      if (!s.isEmpty()) {
-        paragraphs.add(s);
-        hasText = true;
-      }
-    }
-
-    boolean descendantHasText = false;
-    int childCount = node.getChildCount();
-    for (int i = 0; i < childCount; i++) {
-      AccessibilityNodeInfoCompat child = node.getChild(i);
-      if (child != null) {
-        if (collectTexts(child, paragraphs, visited, depth + 1)) {
-          descendantHasText = true;
-        }
-      }
-    }
-
-    if (!hasText && !descendantHasText) {
-      CharSequence contentDesc = node.getContentDescription();
-      if (!TextUtils.isEmpty(contentDesc)) {
-        String s = contentDesc.toString().trim();
-        if (!s.isEmpty()) {
-          paragraphs.add(s);
-          return true;
-        }
-      }
-    }
-
-    return hasText || descendantHasText;
   }
 
   private class TokenAdapter extends RecyclerView.Adapter<TokenViewHolder> {

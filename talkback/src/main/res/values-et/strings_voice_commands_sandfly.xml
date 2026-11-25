@@ -162,4 +162,19 @@
         <item>aktiveeri {label}</item>
         <item>vali {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Alusta häälega redigeerimist</string>
+    <string name="voice_editing_on">Häälega redigeerimine sees</string>
+    <string name="voice_editing_off">Häälega redigeerimine väljas</string>
+    <string name="title_pref_voice_editing_time_limit">Häälega redigeerimise ajapiir</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minut</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minutit</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>lõpeta redigeerimine</item>
+        <item>lõpeta häälega redigeerimine</item>
+        <item>peata redigeerimine</item>
+        <item>peata häälega redigeerimine</item>
+        <item>häälega redigeerimine välja</item>
+    </string-array>
 </resources>

@@ -163,7 +163,7 @@ object LanguageVoices {
     val codes = HashMap<String, String>()
     for (code in Locale.getISOLanguages()) {
       try {
-        val locale = Locale(code)
+        val locale = Locale.Builder().setLanguage(code).build()
         // The language as this Locale writes it, such as "iw" for Hebrew on older versions.
         codes[locale.isO3Language] = locale.language
       } catch (e: MissingResourceException) {
@@ -187,7 +187,7 @@ object LanguageVoices {
     val codes = HashMap<String, String>()
     for (code in Locale.getISOCountries()) {
       try {
-        codes[Locale("", code).isO3Country] = code
+        codes[Locale.Builder().setRegion(code).build().isO3Country] = code
       } catch (e: MissingResourceException) {
         // No three-letter code.
       }
@@ -221,7 +221,7 @@ object LanguageVoices {
       Locale.Builder().setLocale(locale).setLanguage(language).setRegion(region).build()
     } catch (e: IllformedLocaleException) {
       // Such as a three-letter region, which a language tag can't have.
-      Locale(language, region, locale.variant)
+      @Suppress("DEPRECATION") Locale(language, region, locale.variant)
     }
   }
 }

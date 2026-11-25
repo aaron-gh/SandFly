@@ -75,4 +75,10 @@
         <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> пользовательских голосовых команд</item>
         <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> пользовательские голосовые команды</item>
     </plurals>
+    <plurals name="item_file_count_braille_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> пользовательский символ Брайля</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> пользовательских символа Брайля</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> пользовательских символов Брайля</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> пользовательского символа Брайля</item>
+    </plurals>
 </resources>

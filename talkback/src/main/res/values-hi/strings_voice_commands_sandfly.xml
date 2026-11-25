@@ -193,4 +193,19 @@
         <item>{label} को सक्रिय करो</item>
         <item>{label} चुनो</item>
     </string-array>
+    <string name="shortcut_voice_editing">वॉइस एडिटिंग शुरू करें</string>
+    <string name="voice_editing_on">वॉइस एडिटिंग चालू</string>
+    <string name="voice_editing_off">वॉइस एडिटिंग बंद</string>
+    <string name="title_pref_voice_editing_time_limit">वॉइस एडिटिंग की समय सीमा</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> मिनट</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> मिनट</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>एडिटिंग बंद करो</item>
+        <item>वॉइस एडिटिंग बंद करो</item>
+        <item>एडिटिंग खत्म करो</item>
+        <item>वॉइस एडिटिंग खत्म करो</item>
+        <item>वॉइस एडिटिंग बंद</item>
+    </string-array>
 </resources>

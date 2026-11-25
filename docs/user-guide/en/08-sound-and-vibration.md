@@ -2,7 +2,7 @@
 
 SandFly plays a sound and a vibration for actions and events, such as moving focus, activating an item, scrolling and opening a window. **Sound and vibration** in SandFly settings turns sounds and vibrations on and off, sets their volume and strength, and holds sound themes and control sounds. **Audio output** sets where speech and sounds play, at which volume, and what happens to other audio and to calls while SandFly is on.
 
-For the speech engine, voices, speech rate, speech volume and the equalizer, see [](#speech). For the volume keys and **Volume change feedback**, see [](#buttons).
+For the speech engine, voices, speech rate, speech volume and voice effects, see [](#speech). For the volume keys and **Volume change feedback**, see [](#buttons).
 
 ### Turn sounds on or off {#sound-feedback}
 
@@ -11,6 +11,9 @@ The **Sounds** group of **Sound and vibration** has these settings:
 - **Sound feedback**: plays the SandFly sounds. On by default. With it off, vibrations still play.
 - **Sound feedback volume**: the volume of the sounds, from 5 to 100 percent in steps of 5. The default is 50 percent.
 - **Sound themes**: opens the installed sound themes, control sounds and 3D audio. See [](#sound-themes).
+- **Actions available sound**: when the **Actions available** sound plays: **Off**, **When the item gets focus**, the default, or **After the item is spoken**. See [](#sound-actions-available).
+
+The **Turn sound feedback (earcons) on or off** keyboard shortcut turns **Sound feedback** on or off. See [](#appendix-keyboard-shortcuts).
 
 To turn off a single sound and keep the rest, see [](#sound-individual).
 
@@ -27,6 +30,8 @@ The **Vibration** group of **Sound and vibration** has these settings. On device
 
 If vibrations feel weak with **Haptic effects**, choose **Pulses** and raise **Vibration strength**.
 
+The **Vibration feedback** command, in the **Speech** group of commands, turns **Vibration feedback** on or off. See [](#commands).
+
 ### Sounds and vibrations {#sound-events}
 
 Every sound has a vibration of its own, which plays with the sound and also plays with **Sound feedback** off. You can turn off all sounds and still tell actions apart by vibration. A few vibrations, such as the announcement vibration and the braille keyboard vibrations, play without a sound.
@@ -37,6 +42,7 @@ The sounds, by the names shown in **Individual sounds and vibrations** and in th
 | --- | --- |
 | **Focus on an item** | Focus moves to an item. |
 | **Focus on an actionable item** | Focus moves to an item that you can activate. |
+| **Actions available** | Focus moves to an item with actions of its app, such as Reply on a chat message. See [](#sound-actions-available). |
 | **Touching an empty area** | Your finger touches a part of the screen with no item. |
 | **Click** | An item is activated. |
 | **Long press** | An item is touched and held. |
@@ -71,6 +77,20 @@ SandFly plays no sound when a gesture starts or ends. These sounds give feedback
 - **Next reading control** and **Previous reading control** play when you select another reading control with a gesture, the circle menu, a keyboard shortcut or the braille keyboard.
 - The edge gesture sounds play when a finger touches an edge where an edge gesture starts (**Edge gesture bottom**, a low tick), when the gesture reaches its first stage (**Edge gesture middle**), and when it reaches its second stage (**Edge gesture top**). Sliding back plays the sound of the stage the finger returns to. Lifting the finger plays nothing. For edge gestures, see [](#gestures).
 - **Column wrap** plays when a swipe forward moves focus to an item on a row below the focused item, and **Column wrap back** when a swipe back moves focus to an item on a row above. Each list item is a row of its own. Items side by side, such as icons on a home screen or cells of a table, share a row. The sound plays with the focus sound, and its vibration replaces the focus vibration. It doesn't play when focus moves to another window.
+
+#### Actions available sound {#sound-actions-available}
+
+The **Actions available** sound plays for an item with actions of its app beyond the standard ones, such as Reply and Forward on a chat message in a messaging app. Activating, long pressing, scrolling, expanding and other standard actions don't count, so an ordinary button plays no **Actions available** sound. Keys of on-screen keyboards don't count either. The actions are in the **Actions** reading control and in the SandFly menu.
+
+The sound has no vibration of SandFly's own; a sound theme can give it one.
+
+**Sound and vibration** > **Actions available sound** sets when it plays:
+
+- **Off**: the sound doesn't play.
+- **When the item gets focus**: after the focus sound. The default. A vibration that the theme gives it plays in place of the focus vibration.
+- **After the item is spoken**: once the description of the item has been spoken to the end. If you move on before then, it doesn't play.
+
+To have SandFly say "Actions available" after such items, see [](#verbosity-items).
 
 #### Ticks while scrolling {#sound-scroll-ticks}
 
@@ -133,6 +153,8 @@ You can replace any sound of the theme in use with a sound file. To replace soun
 3. Choose a sound. The dialog title shows the sound and its file name, such as "Click (tick)".
 4. Choose one of these:
    - **Choose a sound file**: opens the file picker. A sound can be up to 5 MB, in WAV, OGG, MP3 or FLAC format.
+   - **Choose from folder**: lists the sound files and subfolders of a folder. The first time, the folder picker opens to choose the folder. See [](#sound-themes-folder).
+   - **Change folder**: opens the folder picker to choose another folder for **Choose from folder**. Shown after a folder is chosen.
    - **Preview**: plays the sound.
    - **No sound**: plays no sound for the event.
    - **Use SandFly's sound**: goes back to the built-in sound.
@@ -140,6 +162,18 @@ You can replace any sound of the theme in use with a sound file. To replace soun
 The summary of each sound shows **SandFly's sound**, **Theme sound** or **No sound**. The same actions are in the actions menu of each sound, as **Preview**, **Set to no sound**, **Use SandFly's sound** and **Choose a sound file**. **Use SandFly's sounds for all** removes every sound of the theme and uses the built-in sounds.
 
 The sound list also has sounds that **Individual sounds and vibrations** doesn't: **Volume change**, which plays for each volume step when **Volume change feedback** is set to a tone (see [](#buttons)), and the braille keyboard typing sounds, which play with **Typing sounds** on in the braille keyboard settings (see [](#braille)).
+
+#### Choose sounds from a folder {#sound-themes-folder}
+
+**Choose from folder** lists one folder on the phone. Choose a sound, then **Choose from folder**. The first time, choose the folder in the folder picker.
+
+The list shows subfolders first, then sound files, each sorted by name. Up to 2,000 entries are listed per folder.
+
+- The file in accessibility focus plays. Moving focus off the file stops it.
+- Choose a file to use it for the sound.
+- Choose a subfolder to list it. **Parent folder** or Back returns to the folder above.
+
+If the folder is removed or SandFly can no longer read it, the folder picker opens again.
 
 #### Create a sound theme {#sound-themes-create}
 
@@ -191,6 +225,7 @@ Control sounds play from the position of the control on the screen: from the lef
 - **With headphones**: the default. 3D audio plays when SandFly audio goes to wired or USB headphones, a Bluetooth headset or headphones, or hearing aids. On Android 13 and later, SandFly checks where its audio plays, so a connected Bluetooth speaker or car that doesn't play SandFly audio doesn't count. On earlier versions, any connected headphones count.
 - **Always**: 3D audio also on the phone speaker.
 - **Never, only left and right**: the sounds move only between left and right.
+- **With headphones, centred otherwise**: 3D audio with headphones, as **With headphones**. On the phone speaker and other outputs, the sounds play from the centre, without moving between left and right.
 
 ### Audio output settings {#sound-audio-output}
 
@@ -242,7 +277,7 @@ The **Speech volume** reading control switches between these volumes, and the **
 
 ### Lower other audio while SandFly speaks {#sound-ducking}
 
-**Audio output** > **Audio ducking** lowers the volume of other audio, such as music, while SandFly speaks. It's on by default. The **Audio ducking** reading control turns it on and off.
+**Audio output** > **Audio ducking** lowers the volume of other audio, such as music, while SandFly speaks. It's on by default. The **Audio ducking** reading control and the **Audio ducking** command, in the **Speech** group of commands, turn it on and off.
 
 ### Low-latency audio {#sound-low-latency}
 
@@ -250,7 +285,7 @@ The **Speech volume** reading control switches between these volumes, and the **
 
 - Speech uses the fast path on Android 11 and later. On earlier versions, only sounds use it.
 - Speech plays the usual way during calls, shortly after a call starts or ends, while an app records with the microphone, and with speech engines that play their own audio.
-- Resuming speech mid-word after a pause needs **Low-latency audio**. See [](#speech-pause). With it off, the speech equalizer works only where the device supports it as an audio effect. See [](#speech-equalizer).
+- Resuming speech mid-word after a pause needs **Low-latency audio**. See [](#speech-pause). With it off, voice effects work only where the device supports them as an audio effect. See [](#voice-effects).
 
 ### Keep speech on the phone while casting {#sound-casting}
 

@@ -388,6 +388,88 @@ class KeymapTest {
   }
 
   @Test
+  fun nvdaParagraphKeysAreCtrlArrowsAndPInBrowseMode() {
+    fun plain(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, false)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    fun key(res: Int) = model.getKeyComboForKey(context.getString(res))
+    assertEquals(
+      plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_DOWN),
+      key(R.string.keycombo_shortcut_navigate_next_paragraph),
+    )
+    assertEquals(
+      plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_UP),
+      key(R.string.keycombo_shortcut_navigate_previous_paragraph),
+    )
+    assertEquals(plain(0, KeyEvent.KEYCODE_P), key(R.string.keycombo_shortcut_navigate_next_paragraph_extra))
+    assertEquals(
+      plain(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_P),
+      key(R.string.keycombo_shortcut_navigate_previous_paragraph_extra),
+    )
+    // Other keymaps have no second paragraph keys.
+    for (keymap in listOf(Keymap.SANDFLY, Keymap.JAWS, Keymap.ORCA, Keymap.VOICEOVER)) {
+      assertEquals(
+        KeyCombo(),
+        NewKeyComboModel(context, keymap)
+          .getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra)),
+      )
+    }
+  }
+
+  @Test
+  fun savedNvdaKeymapGetsPForParagraphsAndKeepsCtrlArrows() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 6).commit()
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val next = context.getString(R.string.keycombo_shortcut_navigate_next_paragraph)
+    val ctrlDown = KeyCombo(KeyEvent.META_CTRL_ON, 0, KeyEvent.KEYCODE_DPAD_DOWN, false)
+    persister.saveKeyCombo(next, ctrlDown)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(ctrlDown, model.getKeyComboForKey(next))
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_P, false),
+      model.getKeyComboForKey(
+        context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra)
+      ),
+    )
+  }
+
+  @Test
+  fun pGivenToAnotherCommandIsntTakenForParagraphs() {
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val heading = context.getString(R.string.keycombo_shortcut_navigate_next_heading)
+    val p = KeyCombo(0, 0, KeyEvent.KEYCODE_P, false)
+    persister.saveKeyCombo(heading, p)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(p, model.getKeyComboForKey(heading))
+    assertEquals(
+      KeyCombo(),
+      model.getKeyComboForKey(
+        context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra)
+      ),
+    )
+  }
+
+  @Test
+  fun secondParagraphKeysAreListedWithTheParagraphCommands() {
+    val commands = Commands.categories(context).flatMap { it.commands }
+    val next =
+      commands.first { it.keyboardAction == TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_PARAGRAPH }
+    assertEquals(TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_PARAGRAPH_EXTRA, next.secondKeyboardAction)
+    // A key press of the second key is the same command.
+    assertEquals(
+      next.value,
+      Commands.valueOfKeyboardAction(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_PARAGRAPH_EXTRA),
+    )
+    assertEquals(
+      "Navigate to next paragraph, second key",
+      Commands.labelOfKeyboardKey(
+        context,
+        context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra),
+      ),
+    )
+  }
+
+  @Test
   fun version4SavedSpeechKeysGiveWayToNewOnes() {
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 4).commit()
@@ -511,9 +593,12 @@ class KeymapTest {
     assertTrue(KeyboardPhones.isKeyboardPhone("BlackBerry", "BBF100-1"))
     assertFalse(KeyboardPhones.isKeyboardPhone("BlackBerry", "BBD100-1"))
     assertTrue(KeyboardPhones.isKeyboardPhone("Zinwa", "Q25"))
+    assertTrue(KeyboardPhones.isKeyboardPhone("Xelex", "Q25"))
+    assertFalse(KeyboardPhones.isKeyboardPhone("Xelex", "X10"))
     assertFalse(KeyboardPhones.isKeyboardPhone("Google", "Pixel 9"))
     // Keys typing doesn't need come first, so that Sym stays the keyboard's.
     assertEquals(SandFlyKey.RIGHT_SHIFT, KeyboardPhones.sandFlyKey("Zinwa", "Q25", hasSym = false))
+    assertEquals(SandFlyKey.RIGHT_SHIFT, KeyboardPhones.sandFlyKey("Xelex", "Q25", hasSym = false))
     assertEquals(
       SandFlyKey.RIGHT_SHIFT,
       KeyboardPhones.sandFlyKey("Unihertz", "Titan 2 Elite", hasSym = true, fnIsCtrl = true),
@@ -550,5 +635,21 @@ class KeymapTest {
         assertEquals(key, KeyEvent.KEYCODE_ENTER, combo.keyCode)
       }
     }
+  }
+
+  @Test
+  fun keyboardPhoneKeymapsSpellThePasswordFieldWithSandFlyKeyY() {
+    val key = Commands.shortcutKey(context.getString(R.string.shortcut_value_spell_password_field))
+    for (keymap in listOf(Keymap.KEYBOARD_PHONE, Keymap.KEYBOARD_PHONE_SINGLE_KEYS)) {
+      for (sandFlyKey in keymap.sandFlyKeys) {
+        assertEquals(
+          "$keymap with $sandFlyKey",
+          KeyCombo(0, 0, KeyEvent.KEYCODE_Y, true),
+          defaults(keymap, sandFlyKey)[key],
+        )
+      }
+    }
+    // Other keymaps have no default.
+    assertEquals(null, defaults(Keymap.SANDFLY, Keymap.SANDFLY.nativeKey)[key])
   }
 }

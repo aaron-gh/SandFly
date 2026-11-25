@@ -288,4 +288,19 @@
         <item>активирай {label}</item>
         <item>избери {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Стартиране на гласово редактиране</string>
+    <string name="voice_editing_on">Гласовото редактиране е включено</string>
+    <string name="voice_editing_off">Гласовото редактиране е изключено</string>
+    <string name="title_pref_voice_editing_time_limit">Времеви лимит за гласово редактиране</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> минута</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> минути</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>спри редактирането</item>
+        <item>спри гласовото редактиране</item>
+        <item>край на редактирането</item>
+        <item>край на гласовото редактиране</item>
+        <item>изключи гласовото редактиране</item>
+    </string-array>
 </resources>

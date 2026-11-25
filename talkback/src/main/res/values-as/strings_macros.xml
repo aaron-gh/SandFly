@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">ফ’কাছ এটা বস্তুৰ ভিতৰত আছে</string>
     <string name="macro_test_focus_inside_value">ফ’কাছ ভিতৰত: %1$s</string>
     <string name="macro_test_not_focus_inside_value">ফ’কাছ ভিতৰত নাই: %1$s</string>
+    <string name="macro_step_tap_position">স্থানত টিপক</string>
+    <string name="macro_step_tap_position_value"><xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g> স্থানত টিপক</string>
+    <string name="macro_tap_x">X, বাওঁফালৰ পৰা পিক্সেল</string>
+    <string name="macro_tap_y">Y, ওপৰৰ পৰা পিক্সেল</string>
+    <string name="macro_invalid_position">0ৰ পৰা <xliff:g id="max" example="10000">%1$d</xliff:g>লৈ X আৰু Y দিয়ক</string>
+    <string name="macro_field_tooltip">টুলটিপ</string>
+    <string name="macro_step_touch_hold">বস্তু স্পৰ্শ কৰি ধৰি ৰাখক</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1.5">%2$s</xliff:g> ছেকেণ্ড স্পৰ্শ কৰি ধৰি ৰাখক</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1">%2$s</xliff:g> ছেকেণ্ড স্পৰ্শ কৰি ধৰি ৰাখক। <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">ধৰি ৰখাৰ ছেকেণ্ড</string>
+    <string name="macro_slide">আঙুলি তোলাৰ আগতে</string>
+    <string name="macro_slide_none">একে ঠাইতে আঙুলি তুলক</string>
+    <string name="macro_slide_up">ওপৰলৈ টানি নিয়ক</string>
+    <string name="macro_slide_down">তললৈ টানি নিয়ক</string>
+    <string name="macro_slide_left">বাওঁফালে টানি নিয়ক</string>
+    <string name="macro_slide_right">সোঁফালে টানি নিয়ক</string>
+    <string name="macro_slide_distance">dpত দূৰত্ব</string>
+    <string name="macro_app">এপ</string>
+    <string name="macro_all_apps">সকলো এপ</string>
+    <string name="macro_add_app">এপ যোগ দিয়ক</string>
+    <string name="macro_apps">এপ</string>
+    <string name="macro_in_actions">কাৰ্যত দেখুৱাওক</string>
+    <string name="macro_in_actions_only_when">কাৰ্যত দেখুওৱাৰ চৰ্ত</string>
+    <string name="macro_not_in_app">মেক্ৰ’ চলোৱা নহ’ল। কেৱল <xliff:g id="app" example="WhatsApp">%1$s</xliff:g>ত চলে</string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>টা মেক্ৰ’</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g>টা মেক্ৰ’</item>
+    </plurals>
+    <string name="macro_record">পদক্ষেপ ৰেকৰ্ড কৰক</string>
+    <string name="macro_record_new">এটা মেক্ৰ’ ৰেকৰ্ড কৰক</string>
+    <string name="macro_recording_notification">মেক্ৰ’ৰ পদক্ষেপ ৰেকৰ্ড কৰি থকা হৈছে: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">ৰেকৰ্ড কৰি থকা হৈছে। বন্ধ কৰিবলৈ “এটা মেক্ৰ’ ৰেকৰ্ড কৰক” বা “মেক্ৰ’ বন্ধ কৰক” চলাওক, বা “মেক্ৰ’ৰ পদক্ষেপ ৰেকৰ্ড কৰি থকা হৈছে” জাননীটো খোলক।</string>
+    <string name="macro_recorded">ৰেকৰ্ড কৰা পদক্ষেপ</string>
+    <string name="macro_recorded_no_passwords">পাছৱৰ্ড ক্ষেত্ৰত টাইপ কৰা পাঠ ৰেকৰ্ড কৰা নহয়।</string>
+    <string name="macro_recorded_too_many">যোগ দিয়া নহ’ল। এটা মেক্ৰ’ত সৰ্বাধিক <xliff:g id="count" example="200">%1$d</xliff:g>টা পদক্ষেপ থাকে।</string>
+    <string name="macro_recorded_name">ৰেকৰ্ড কৰা <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">স্ক্ৰীনৰ তালিকা</string>
 </resources>

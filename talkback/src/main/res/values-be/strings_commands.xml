@@ -79,4 +79,22 @@
     <string name="menu_reset">Скінуць да стандартных</string>
     <string name="menu_reset_confirm">Скінуць меню SandFly да стандартных элементаў і парадку?</string>
     <string name="menu_assign">Жэсты і спалучэнне клавіш</string>
+    <string name="shortcut_app_gestures_for_app">Жэсты для гэтай праграмы</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku і root</string>
+    <string name="title_pref_use_root">Выкарыстоўваць root замест Shizuku</string>
+    <string name="command_perform_gesture">Выканаць жэст</string>
+    <string name="command_perform_gesture_message">Выканайце жэст.</string>
+    <string name="command_gesture_not_assignable">Немагчыма прызначыць <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Выканаць каманду</string>
+    <string name="command_add_to_sandfly_menu">Дадаць у меню SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Выдаліць з меню SandFly</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g>: дададзена ў меню SandFly</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g>: выдалена з меню SandFly</string>
+    <string name="commands_search_hint">Пошук каманд</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> каманда</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> каманды</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> каманд</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> каманды</item>
+    </plurals>
 </resources>

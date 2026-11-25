@@ -73,6 +73,7 @@
   <string name="value_device_unlocked">تم فتح قفل الجهاز.</string>
   <string name="title_pref_screen_announcements">تشغيل الشاشة وإيقافها</string>
   <string name="summary_pref_screen_announcements">‏اختيار ما يقوله SandFly عند إيقاف الشاشة أو تشغيلها، وعند فتح قفل الهاتف</string>
+  <string name="title_pref_screen_announcements_over_media">النطق أثناء تشغيل الوسائط</string>
   <string name="title_screen_announcements_screen_off">عند إيقاف الشاشة</string>
   <string name="title_screen_announcements_screen_on">عند تشغيل الشاشة</string>
   <string name="title_screen_announcements_unlock">عند فتح قفل الهاتف</string>
@@ -96,7 +97,7 @@
   <string name="title_pref_speech_control">السماح للتطبيقات الأخرى بالنطق</string>
     <string name="summary_pref_speech_control">‏يمكن للتطبيقات التي تسمح لها نطق نص بصوت SandFly. أثناء قفل الجهاز، يمكن النطق فقط للتطبيقات التي تسمح لها أيضًا أثناء القفل.</string>
   <string name="speech_control_apps_category">التطبيقات</string>
-  <string name="speech_control_no_apps">لم يطلب أي تطبيق النطق حتى الآن.</string>
+    <string name="speech_control_no_apps">لم يتصل أي تطبيق حتى الآن.</string>
   <string name="speech_control_ask_title">‏هل تريد السماح لتطبيق %1$s بالنطق عبر SandFly؟</string>
   <string name="speech_control_allow">سماح</string>
   <string name="speech_control_deny">عدم السماح</string>
@@ -458,7 +459,7 @@
   <string name="shortcut_title_menu_control">القائمة وعناصر التحكّم</string>
   <string name="shortcut_title_text_editing">تعديل النصوص</string>
   <string name="shortcut_title_special_features">غير ذلك</string>
-  <string name="shortcut_unassigned">النقر لتخصيص الاختصار</string>
+    <string name="shortcut_unassigned">غير مخصص</string>
   <string name="shortcut_not_customizable">%1$s غير قابل للتخصيص.</string>
   <string name="shortcut_disabled_due_to_vibration_watch">غير متاح عند تفعيل Vibration Watch</string>
   <string name="shortcut_next">العنصر التالي</string>
@@ -680,6 +681,8 @@
   <string name="title_pref_shortcut_up_and_left">التمرير للأعلى ثم لليسار</string>
   <string name="title_pref_shortcut_up_and_right">التمرير للأعلى ثم لليمين</string>
   <string name="title_pref_shortcut_right_and_down">التمرير لليمين ثم للأسفل</string>
+  <string name="title_pref_shortcut_1finger_3tap">النقر ثلاث مرات</string>
+  <string name="title_pref_shortcut_1finger_4tap">النقر 4 مرّات</string>
   <string name="title_pref_shortcut_right_and_up">التمرير لليمين ثم للأعلى</string>
   <string name="title_pref_shortcut_left_and_down">التمرير لليسار ثم للأسفل</string>
   <string name="title_pref_shortcut_left_and_up">التمرير لليسار ثم للأعلى</string>
@@ -1798,6 +1801,8 @@
     <string name="keycombo_menu_category_arrow_key_nav">التنقّل بمفاتيح الأسهم</string>
     <string-array name="pref_dictation_auto_stop_entries">
         <item>غير مفعَّل</item>
+        <item>ثانية واحدة</item>
+        <item>ثانيتان</item>
         <item>3 ثوانٍ</item>
         <item>5 ثوانٍ</item>
         <item>10 ثوانٍ</item>
@@ -1918,13 +1923,12 @@
     <string name="shortcut_use_voice_profile">استخدام الملف الصوتي <xliff:g id="name" example="English">%1$s</xliff:g></string>
     <string name="title_pref_keep_previous_voice_engine">إبقاء محرّك الملف الصوتي السابق قيد التشغيل</string>
     <string name="title_pref_voice_profile_keep_engine_started">إبقاء المحرّك قيد التشغيل</string>
-    <string name="title_pref_speech_equalizer">معادل الصوت</string>
+    <string name="title_pref_speech_equalizer">تأثيرات الصوت</string>
     <string name="title_pref_speech_equalizer_preset">الإعداد المسبق</string>
-    <string name="title_pref_speech_equalizer_on">استخدام معادل الصوت</string>
+    <string name="title_pref_speech_equalizer_on">استخدام تأثيرات الصوت</string>
     <string name="speech_equalizer_off">غير مفعَّل</string>
-    <string name="speech_equalizer_turned_on">تم تفعيل معادل الصوت</string>
-    <string name="speech_equalizer_turned_off">تم إيقاف معادل الصوت</string>
-    <string name="title_selector_equalizer_32">معادل الصوت 32 هرتز</string>
+    <string name="speech_equalizer_turned_on">تم تفعيل تأثيرات الصوت</string>
+    <string name="speech_equalizer_turned_off">تم إيقاف تأثيرات الصوت</string>
     <string name="title_selector_equalizer_64">معادل الصوت 64 هرتز</string>
     <string name="title_selector_equalizer_125">معادل الصوت 125 هرتز</string>
     <string name="title_selector_equalizer_250">معادل الصوت 250 هرتز</string>
@@ -2022,6 +2026,7 @@
     <string name="pref_speak_list_positions_title">نطق معلومات القائمة</string>
     <string name="pref_speak_grid_positions_title">نطق معلومات الشبكة والجدول</string>
     <string name="pref_speak_role_without_pause_title">نطق نوع العنصر دون توقف</string>
+    <string name="title_pref_speak_actions_available">نطق الإجراءات المتاحة</string>
     <string name="title_pref_overview">استخدام نظرة عامة من SandFly</string>
     <string name="title_pref_overview_newest_last">أحدث تطبيق في الأسفل</string>
     <string name="title_pref_overview_columns">الأعمدة</string>
@@ -2215,4 +2220,646 @@
         <item quantity="many">تم نسخ <xliff:g id="count" example="5">%1$d</xliff:g> عنصرًا</item>
         <item quantity="other">تم نسخ <xliff:g id="count" example="5">%1$d</xliff:g> عنصر</item>
     </plurals>
+    <string name="title_share_focused_image">مشاركة صورة العنصر محلّ التركيز</string>
+    <string name="title_share_screenshot">مشاركة لقطة شاشة</string>
+    <string name="share_image_failed">تعذّر التقاط لقطة الشاشة</string>
+    <string name="title_pref_speech_equalizer_bands">المعادل</string>
+    <string name="title_pref_speech_effect_bass_compression">ضغط الترددات المنخفضة</string>
+    <string name="title_pref_speech_effect_voice_compression">ضغط الترددات المتوسطة</string>
+    <string name="title_pref_speech_effect_treble_compression">ضغط الترددات العالية</string>
+    <string name="speech_effect_low">منخفض</string>
+    <string name="speech_effect_medium">متوسط</string>
+    <string name="speech_effect_high">مرتفع</string>
+    <string name="speech_equalizer_deep_bass">جهير عميق</string>
+    <string name="title_pref_repeat_slower_by">التكرار بشكل أبطأ بنسبة</string>
+    <string name="switch_languages_now_on">تم تفعيل تبديل اللغة تلقائيًا</string>
+    <string name="switch_languages_now_off">تم إيقاف تبديل اللغة تلقائيًا</string>
+    <string name="identify_languages_from_words_now_on">تم تفعيل تحديد اللغات من الكلمات</string>
+    <string name="identify_languages_from_words_now_off">تم إيقاف تحديد اللغات من الكلمات</string>
+    <string name="title_pref_battery_level_interval">مستوى البطارية</string>
+    <string name="battery_level_every_5_percent" formatted="false">كل 5%</string>
+    <string name="battery_level_every_10_percent" formatted="false">كل 10%</string>
+    <string name="battery_level_every_15_minutes">كل 15 دقيقة</string>
+    <string name="battery_level_every_30_minutes">كل 30 دقيقة</string>
+    <string name="battery_level_every_hour">كل ساعة</string>
+    <string name="title_pref_battery_level_voice">صوت مستوى البطارية</string>
+    <string name="title_pref_announce_call_length">الإعلان عن مدة المكالمة</string>
+    <string name="template_call_ended">انتهت المكالمة، <xliff:g id="duration" example="3 minutes, 12 seconds">%1$s</xliff:g></string>
+    <string name="screen_on_battery_off">غير مفعَّل</string>
+    <string name="screen_on_battery_always">دائمًا</string>
+    <string name="screen_on_battery_while_charging">أثناء الشحن فقط</string>
+    <string name="title_pref_screen_on_low_battery">انخفاض البطارية</string>
+    <string name="screen_on_low_battery_10" formatted="false">أقل من 10%</string>
+    <string name="screen_on_low_battery_15" formatted="false">أقل من 15%</string>
+    <string name="screen_on_low_battery_20" formatted="false">أقل من 20%</string>
+    <string name="screen_on_low_battery_30" formatted="false">أقل من 30%</string>
+    <string name="screen_on_low_battery_50" formatted="false">أقل من 50%</string>
+    <string name="permission_direct_touch_label">اختيار أماكن منح التطبيق اللمس المباشر في SandFly</string>
+    <string name="permission_direct_touch_description">يتيح للتطبيق تفعيل اللمس المباشر في SandFly أو إيقافه لأجزاء من شاشته أثناء ظهوره في المقدمة. يمكنك إيقاف اللمس المباشر للتطبيق في إعدادات SandFly.</string>
+    <string name="punctuation_none">بلا</string>
+    <string name="title_pref_punctuation_none_keep_meaning">قول الرموز التي تغيّر المعنى</string>
+    <string name="title_pref_version_history">سجل الإصدارات</string>
+    <string name="title_pref_category_shake">الهز</string>
+    <string name="title_pref_notification_list_by_time">عرض الإشعارات من الأحدث إلى الأقدم، بدون مجموعات</string>
+    <string name="title_pref_notification_list_skip_media">استبعاد مشغّلات الوسائط من قائمة الإشعارات</string>
+    <string name="no_root_access">لا يتوفّر وصول الجذر</string>
+    <string name="quick_settings_display_size">حجم العرض</string>
+    <string name="three_part_swipe_gestures_title">تمريرات من ثلاثة أجزاء</string>
+    <string name="two_stroke_swipe_gestures_title">تمريرات من حركتين</string>
+    <string name="two_stroke_swipe_gestures_turn_second_title">تمريرات من حركتين تنتهي بذهاب وإياب أو بزاوية</string>
+    <string name="two_stroke_swipe_gestures_up_and_down_title">تمريرات من حركتين تبدأ بـ«التمرير للأعلى ثم للأسفل»</string>
+    <string name="two_stroke_swipe_gestures_down_and_up_title">تمريرات من حركتين تبدأ بـ«التمرير للأسفل ثم للأعلى»</string>
+    <string name="two_stroke_swipe_gestures_left_and_right_title">تمريرات من حركتين تبدأ بـ«التمرير لليسار ثم لليمين»</string>
+    <string name="two_stroke_swipe_gestures_right_and_left_title">تمريرات من حركتين تبدأ بـ«التمرير لليمين ثم لليسار»</string>
+    <string name="two_stroke_swipe_gestures_up_and_left_title">تمريرات من حركتين تبدأ بـ«التمرير للأعلى ثم لليسار»</string>
+    <string name="two_stroke_swipe_gestures_up_and_right_title">تمريرات من حركتين تبدأ بـ«التمرير للأعلى ثم لليمين»</string>
+    <string name="two_stroke_swipe_gestures_down_and_left_title">تمريرات من حركتين تبدأ بـ«التمرير للأسفل ثم لليسار»</string>
+    <string name="two_stroke_swipe_gestures_down_and_right_title">تمريرات من حركتين تبدأ بـ«التمرير للأسفل ثم لليمين»</string>
+    <string name="two_stroke_swipe_gestures_left_and_up_title">تمريرات من حركتين تبدأ بـ«التمرير لليسار ثم للأعلى»</string>
+    <string name="two_stroke_swipe_gestures_left_and_down_title">تمريرات من حركتين تبدأ بـ«التمرير لليسار ثم للأسفل»</string>
+    <string name="two_stroke_swipe_gestures_right_and_up_title">تمريرات من حركتين تبدأ بـ«التمرير لليمين ثم للأعلى»</string>
+    <string name="two_stroke_swipe_gestures_right_and_down_title">تمريرات من حركتين تبدأ بـ«التمرير لليمين ثم للأسفل»</string>
+    <string name="tap_swipe_gestures_title">النقر ثم التمرير</string>
+    <string name="two_finger_angle_gestures_title">إيماءات على شكل زاوية وبإصبعين</string>
+    <string name="value_keyboard_phone_keymap">خريطة مفاتيح هاتف بلوحة مفاتيح</string>
+    <string name="value_keyboard_phone_single_key_keymap">خريطة مفاتيح فردية لهاتف بلوحة مفاتيح</string>
+    <string name="keycombo_menu_other_open_keyboard_shortcuts">فتح إعدادات اختصارات لوحة المفاتيح</string>
+    <string name="keycombo_key_modifier_sym">Sym</string>
+    <string name="keycombo_key_modifier_right_alt">Alt الأيمن</string>
+    <string name="keycombo_key_modifier_right_shift">Shift الأيمن</string>
+    <string name="keycombo_key_modifier_function">Fn</string>
+    <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> مع الاستمرار بالضغط</string>
+    <string name="title_pref_time_seconds">تضمين الثواني في الوقت</string>
+    <string name="title_pref_time_seconds_screen_on">تضمين الثواني عند تشغيل الشاشة</string>
+    <string name="title_pref_vibration_type">نوع الاهتزاز</string>
+    <string name="vibration_type_effects">التأثيرات اللمسية</string>
+    <string name="vibration_type_pulses">نبضات</string>
+    <string name="vibration_type_on_off">تشغيل وإيقاف</string>
+    <string name="title_pref_actions_available_sound">صوت الإجراءات المتاحة</string>
+    <string name="value_actions_available_sound_off">غير مفعَّل</string>
+    <string name="value_actions_available_sound_focus">عند التركيز على العنصر</string>
+    <string name="value_actions_available_sound_after_speech">بعد نطق العنصر</string>
+    <string-array name="pref_vibration_type_entries">
+        <item>@string/vibration_type_effects</item>
+        <item>@string/vibration_type_pulses</item>
+        <item>@string/vibration_type_on_off</item>
+    </string-array>
+    <string name="title_pref_typing_hold_keys_down">إبقاء المفاتيح مضغوطة بعد مهلة النقر مع الاستمرار</string>
+    <string name="shortcut_move_to_item_left">الانتقال إلى العنصر على اليسار</string>
+    <string name="shortcut_move_to_item_right">الانتقال إلى العنصر على اليمين</string>
+    <string name="shortcut_speak_coordinates">قول الإحداثيات</string>
+    <string name="speak_coordinates_value">X <xliff:g id="x" example="540">%1$d</xliff:g>، Y <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="speak_coordinates_copied"><xliff:g id="coordinates" example="X 540, Y 1200">%1$s</xliff:g>. تم النسخ</string>
+    <string name="item_list_not_in_reading_control_list">غير موجود في <xliff:g id="name" example="Speech">%1$s</xliff:g></string>
+    <string name="shortcut_next_reading_control_list">قائمة عناصر التحكّم في القراءة التالية</string>
+    <string name="shortcut_previous_reading_control_list">قائمة عناصر التحكّم في القراءة السابقة</string>
+    <string name="no_reading_control_lists">لا توجد قوائم عناصر تحكّم في القراءة</string>
+    <string name="reading_control_list_changed"><xliff:g id="list" example="Speech">%1$s</xliff:g>، <xliff:g id="control" example="Words">%2$s</xliff:g></string>
+    <string name="title_braille_commands">أوامر برايل</string>
+    <string name="shortcut_braille_commands">أوامر برايل</string>
+    <string name="braille_commands_with_profile">أوامر برايل، <xliff:g id="profile" example="Reading">%1$s</xliff:g></string>
+    <string name="shortcut_braille_find_text">البحث عن نص</string>
+    <string name="shortcut_braille_find_next_text">البحث عن النص التالي</string>
+    <string name="shortcut_braille_find_previous_text">البحث عن النص السابق</string>
+    <string name="braille_find_prompt">اكتب النص المراد البحث عنه</string>
+    <string name="braille_find_wrapped">تم الرجوع إلى البداية</string>
+    <string name="braille_commands_closed">تم إغلاق أوامر برايل</string>
+    <string name="braille_command_none">لا يوجد أمر لـ<xliff:g id="cell" example="dots 2 3 6">%1$s</xliff:g></string>
+    <string name="braille_command_record_prompt">اكتب خلية برايل</string>
+    <string name="braille_mode_no_text_field">لا يوجد حقل نص</string>
+    <plurals name="braille_command_cell">
+        <item quantity="zero">النقاط <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="one">النقطة <xliff:g id="dots" example="4">%1$s</xliff:g></item>
+        <item quantity="two">النقطتان <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="few">النقاط <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="many">النقاط <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="other">النقاط <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+    </plurals>
+    <string name="title_braille_command_profiles">ملفات أوامر برايل</string>
+    <string name="title_braille_command_profile">ملف أوامر برايل</string>
+    <string name="no_braille_command_profiles">لا توجد ملفات أوامر برايل</string>
+    <string name="shortcut_braille_command_profiles">اختيار ملف أوامر برايل</string>
+    <string name="shortcut_next_braille_command_profile">ملف أوامر برايل التالي</string>
+    <string name="shortcut_previous_braille_command_profile">ملف أوامر برايل السابق</string>
+    <string name="shortcut_use_braille_command_profile">استخدام ملف أوامر برايل <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="title_pref_braille_command_profile_in_use">ملف أوامر برايل قيد الاستخدام</string>
+    <string name="braille_commands_add">إضافة أمر برايل</string>
+    <string name="title_braille_commands_in_apps">أوامر برايل في التطبيقات</string>
+    <string name="braille_commands_reset_confirm">هل تريد إعادة ضبط أوامر برايل إلى خلاياها التلقائية؟</string>
+    <string name="braille_command_profile_add">إضافة ملف أوامر برايل</string>
+    <string name="braille_command_profile_new_name">ملف أوامر برايل <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="braille_command_profile_name_taken">يوجد ملف أوامر برايل باسم <xliff:g id="name" example="Reading">%1$s</xliff:g> بالفعل</string>
+    <string name="braille_command_profile_delete">حذف ملف أوامر برايل</string>
+    <string name="braille_command_change_cell">تغيير خلية برايل</string>
+    <string name="command_braille_cells">خلايا برايل</string>
+    <string name="command_no_braille_cells">لا توجد خلايا برايل</string>
+    <string name="command_add_braille_cell">إضافة خلية برايل</string>
+    <string name="command_remove_braille_cell">إزالة خلية برايل</string>
+    <string name="shortcut_read_from_current_by_reading_control">القراءة من العنصر المركَّز عليه حسب عنصر التحكّم في القراءة</string>
+    <string name="shortcut_activate_confirm_button">تفعيل زر التأكيد</string>
+    <string name="shortcut_activate_cancel_button">تفعيل زر الإلغاء</string>
+    <string name="confirm_button_words_default">حسنًا\nنعم\nإرسال\nتم\nمتابعة\nالتالي\nحفظ\nالسماح\nقبول\nتأكيد\nتقديم\nرد</string>
+    <string name="cancel_button_words_default">إلغاء\nلا\nإغلاق\nرجوع\nتجاهل\nرفض\nعدم السماح\nليس الآن\nتخطي\nلاحقًا</string>
+    <string name="no_confirm_button">لا يوجد زر تأكيد</string>
+    <string name="no_cancel_button">لا يوجد زر إلغاء</string>
+    <string name="title_button_command_words">تسميات الأزرار</string>
+    <string name="shortcut_select_first_setting">العنصر الأول للتحكّم في القراءة</string>
+    <string name="shortcut_character_count">عدد الأحرف</string>
+    <string name="character_count_template"><xliff:g id="characters" example="12 characters">%1$s</xliff:g>، <xliff:g id="words" example="3 words">%2$s</xliff:g></string>
+    <string name="shortcut_read_text_field">قراءة حقل النص</string>
+    <string name="text_field_empty">فارغ</string>
+    <plurals name="character_count_characters">
+        <item quantity="zero"><xliff:g id="count" example="12">%d</xliff:g> حرف</item>
+        <item quantity="one">حرف واحد (<xliff:g id="count" example="1">%d</xliff:g>)</item>
+        <item quantity="two">حرفان (<xliff:g id="count" example="12">%d</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> أحرف</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> حرفًا</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> حرف</item>
+    </plurals>
+    <plurals name="character_count_words">
+        <item quantity="zero"><xliff:g id="count" example="3">%d</xliff:g> كلمة</item>
+        <item quantity="one">كلمة واحدة (<xliff:g id="count" example="1">%d</xliff:g>)</item>
+        <item quantity="two">كلمتان (<xliff:g id="count" example="3">%d</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> كلمات</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> كلمة</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> كلمة</item>
+    </plurals>
+    <string name="title_continuous_copy">النسخ المتواصل</string>
+    <string name="continuous_copy_save">حفظ</string>
+    <string name="continuous_copy_no_focus">لا يوجد عنصر محلّ التركيز</string>
+    <string name="clipboard_history_select">تحديد</string>
+    <string name="title_repeat_last_spoken_phrase_slower">تكرار آخر عبارة محكية بشكل أبطأ</string>
+    <string name="title_sheets_edit_cell">تعديل الخلية</string>
+    <string name="title_sheets_insert_formula">إدراج صيغة</string>
+    <string name="title_pref_shortcut_2finger_2tap_top_bottom">النقر مرتين بإصبعين، في الأعلى والأسفل</string>
+    <string name="title_pref_shortcut_2finger_up_and_left">التمرير سريعًا للأعلى ثم لليسار بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_up_and_right">التمرير سريعًا للأعلى ثم لليمين بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_down_and_left">التمرير سريعًا للأسفل ثم لليسار بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_down_and_right">التمرير سريعًا للأسفل ثم لليمين بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_left_and_up">التمرير سريعًا لليسار ثم للأعلى بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_left_and_down">التمرير سريعًا لليسار ثم للأسفل بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_right_and_up">التمرير سريعًا لليمين ثم للأعلى بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_right_and_down">التمرير سريعًا لليمين ثم للأسفل بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_up">النقر ثم التمرير سريعًا للأعلى بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_down">النقر ثم التمرير سريعًا للأسفل بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_left">النقر ثم التمرير سريعًا لليسار بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_right">النقر ثم التمرير سريعًا لليمين بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_up">النقر مرتين ثم التمرير سريعًا للأعلى بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_down">النقر مرتين ثم التمرير سريعًا للأسفل بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_left">النقر مرتين ثم التمرير سريعًا لليسار بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_right">النقر مرتين ثم التمرير سريعًا لليمين بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_up">النقر ثلاث مرات ثم التمرير سريعًا للأعلى بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_down">النقر ثلاث مرات ثم التمرير سريعًا للأسفل بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_left">النقر ثلاث مرات ثم التمرير سريعًا لليسار بإصبعين</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_right">النقر ثلاث مرات ثم التمرير سريعًا لليمين بإصبعين</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_up">النقر ثم التمرير سريعًا للأعلى باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_down">النقر ثم التمرير سريعًا للأسفل باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_left">النقر ثم التمرير سريعًا لليسار باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_right">النقر ثم التمرير سريعًا لليمين باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_up">النقر مرتين ثم التمرير سريعًا للأعلى باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_down">النقر مرتين ثم التمرير سريعًا للأسفل باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_left">النقر مرتين ثم التمرير سريعًا لليسار باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_right">النقر مرتين ثم التمرير سريعًا لليمين باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_up">النقر ثلاث مرات ثم التمرير سريعًا للأعلى باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_down">النقر ثلاث مرات ثم التمرير سريعًا للأسفل باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_left">النقر ثلاث مرات ثم التمرير سريعًا لليسار باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_right">النقر ثلاث مرات ثم التمرير سريعًا لليمين باستخدام 3 أصابع</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_up">النقر ثم التمرير سريعًا للأعلى باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_down">النقر ثم التمرير سريعًا للأسفل باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_left">النقر ثم التمرير سريعًا لليسار باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_right">النقر ثم التمرير سريعًا لليمين باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_up">النقر مرتين ثم التمرير سريعًا للأعلى باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_down">النقر مرتين ثم التمرير سريعًا للأسفل باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_left">النقر مرتين ثم التمرير سريعًا لليسار باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_right">النقر مرتين ثم التمرير سريعًا لليمين باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_up">النقر ثلاث مرات ثم التمرير سريعًا للأعلى باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_down">النقر ثلاث مرات ثم التمرير سريعًا للأسفل باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_left">النقر ثلاث مرات ثم التمرير سريعًا لليسار باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_right">النقر ثلاث مرات ثم التمرير سريعًا لليمين باستخدام 4 أصابع</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">النقر بإصبعين ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">النقر بإصبعين ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">النقر بإصبعين ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">النقر بإصبعين ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">النقر مرتين بإصبعين ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">النقر مرتين بإصبعين ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">النقر مرتين بإصبعين ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">النقر مرتين بإصبعين ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">النقر ثلاث مرات بإصبعين ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">النقر ثلاث مرات بإصبعين ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">النقر ثلاث مرات بإصبعين ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">النقر ثلاث مرات بإصبعين ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_up_and_down_and_up">التمرير للأعلى ثم للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_down_and_left">التمرير للأعلى ثم للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_down_and_right">التمرير للأعلى ثم للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_left_and_up">التمرير للأعلى ثم لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_left_and_down">التمرير للأعلى ثم لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_left_and_right">التمرير للأعلى ثم لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_right_and_up">التمرير للأعلى ثم لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_right_and_down">التمرير للأعلى ثم لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_right_and_left">التمرير للأعلى ثم لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_up_and_down">التمرير للأسفل ثم للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_up_and_left">التمرير للأسفل ثم للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_up_and_right">التمرير للأسفل ثم للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_left_and_up">التمرير للأسفل ثم لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_left_and_down">التمرير للأسفل ثم لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_left_and_right">التمرير للأسفل ثم لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_right_and_up">التمرير للأسفل ثم لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_right_and_down">التمرير للأسفل ثم لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_right_and_left">التمرير للأسفل ثم لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_up_and_down">التمرير لليسار ثم للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_up_and_left">التمرير لليسار ثم للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_up_and_right">التمرير لليسار ثم للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_down_and_up">التمرير لليسار ثم للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_down_and_left">التمرير لليسار ثم للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_down_and_right">التمرير لليسار ثم للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_right_and_up">التمرير لليسار ثم لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_right_and_down">التمرير لليسار ثم لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_right_and_left">التمرير لليسار ثم لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_up_and_down">التمرير لليمين ثم للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_up_and_left">التمرير لليمين ثم للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_up_and_right">التمرير لليمين ثم للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_down_and_up">التمرير لليمين ثم للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_down_and_left">التمرير لليمين ثم للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_down_and_right">التمرير لليمين ثم للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_left_and_up">التمرير لليمين ثم لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_left_and_down">التمرير لليمين ثم لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_left_and_right">التمرير لليمين ثم لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_up_lift_up">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_up_lift_down">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_up_lift_left">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_up_lift_right">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_down_lift_up">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_down_lift_down">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_down_lift_left">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_down_lift_right">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_left_lift_up">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_left_lift_down">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_left_lift_left">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_left_lift_right">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_right_lift_up">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_right_lift_down">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_right_lift_left">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_right_lift_right">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_up_lift_up_and_down">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_lift_down_and_up">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_lift_left_and_right">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_up_lift_right_and_left">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_up_lift_up_and_left">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_up_lift_up_and_right">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_up_lift_down_and_left">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_up_lift_down_and_right">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_up_lift_left_and_up">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_lift_left_and_down">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_lift_right_and_up">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_lift_right_and_down">التمرير للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_lift_up_and_down">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_lift_down_and_up">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_lift_left_and_right">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_down_lift_right_and_left">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_down_lift_up_and_left">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_down_lift_up_and_right">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_down_lift_down_and_left">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_down_lift_down_and_right">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_down_lift_left_and_up">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_lift_left_and_down">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_lift_right_and_up">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_lift_right_and_down">التمرير للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_lift_up_and_down">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_lift_down_and_up">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_lift_left_and_right">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_left_lift_right_and_left">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_left_lift_up_and_left">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_left_lift_up_and_right">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_left_lift_down_and_left">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_left_lift_down_and_right">التمرير لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_left_lift_left_and_up">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_lift_left_and_down">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_lift_right_and_up">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_lift_right_and_down">التمرير لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_lift_up_and_down">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_lift_down_and_up">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_lift_left_and_right">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_right_lift_right_and_left">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_right_lift_up_and_left">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_right_lift_up_and_right">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_right_lift_down_and_left">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_right_lift_down_and_right">التمرير لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_right_lift_left_and_up">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_lift_left_and_down">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_lift_right_and_up">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_lift_right_and_down">التمرير لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_down">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_up">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_right">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_left">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_left">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_right">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_left">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_right">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_up">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_down">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_up">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_down">التمرير للأعلى ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_down">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_up">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_right">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_left">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_left">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_right">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_left">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_right">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_up">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_down">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_up">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_down">التمرير للأسفل ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_down">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_up">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_right">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_left">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_left">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_right">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_left">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_right">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_up">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_down">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_up">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_down">التمرير لليسار ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_down">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_up">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_right">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_left">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_left">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_right">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_left">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_right">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_up">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_down">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_up">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_down">التمرير لليمين ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_down">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_up">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_right">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_left">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_left">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_right">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_left">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_right">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_up">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_down">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_up">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_down">التمرير للأعلى ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_down">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_up">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_right">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_left">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_left">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_right">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_left">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_right">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_up">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_down">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_up">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_down">التمرير للأعلى ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_down">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_up">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_right">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_left">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_left">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_right">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_left">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_right">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_up">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_down">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_up">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_down">التمرير للأسفل ثم لليسار، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_down">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_up">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_right">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_left">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_left">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_right">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_left">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_right">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_up">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_down">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_up">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_down">التمرير للأسفل ثم لليمين، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_down">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_up">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_right">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_left">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_left">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_right">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_left">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_right">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_up">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_down">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_up">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_down">التمرير لليسار ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_down">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_up">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_right">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_left">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_left">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_right">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_left">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_right">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_up">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_down">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_up">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_down">التمرير لليسار ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_down">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_up">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_right">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_left">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_left">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_right">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_left">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_right">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_up">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_down">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_up">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_down">التمرير لليمين ثم للأعلى، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_down">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_up">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_right">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_left">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_left">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_right">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأعلى ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_left">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليسار</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_right">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير للأسفل ثم لليمين</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_up">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_down">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليسار ثم للأسفل</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_up">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأعلى</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_down">التمرير لليمين ثم للأسفل، ثم رفع الإصبع، ثم التمرير لليمين ثم للأسفل</string>
+    <string name="title_pref_shortcut_back_tap_quadruple">النقر أربع مرات على ظهر الجهاز</string>
+    <string name="title_pref_shortcut_shake">الهز</string>
+    <string name="title_pref_shake_sensitivity">حساسية الهز</string>
+    <string name="title_pref_two_stroke_swipe_time">الوقت بين التمريرات من حركتين</string>
+    <string name="value_two_stroke_swipe_time_off">غير مفعَّل</string>
+    <string name="value_two_stroke_swipe_time_1500">1.5 ثانية</string>
+    <string name="value_multi_tap_timeout_750ms">0.75 ثانية</string>
+    <string name="value_multi_tap_timeout_1500ms">1.5 ثانية</string>
+    <string name="title_pref_stop_before_wrap">التوقف عند العنصر الأخير قبل الالتفاف</string>
+    <string name="title_pref_wrap_around_reading_controls">الالتفاف في عناصر التحكّم في القراءة</string>
+    <string name="title_pref_leave_system_bars">الانتقال من شريط الحالة وشريط التنقّل إلى النوافذ الأخرى</string>
+    <string name="title_pref_volume_change_silent_while_speaking">تغيير مستوى صوت الكلام بدون إعلان أثناء الكلام</string>
+    <string name="title_pref_volume_keys_take_all">يعالج SandFly كل ضغطة على مفاتيح مستوى الصوت</string>
+    <string name="title_pref_volume_keys_hide_panel">إخفاء لوحة مستوى الصوت</string>
+    <string name="title_pref_volume_keys_screen_off">اختصارات مفاتيح مستوى الصوت عند إيقاف الشاشة</string>
+    <string name="title_pref_volume_up_press">الضغط على رفع مستوى الصوت</string>
+    <string name="title_pref_volume_down_press">الضغط على خفض مستوى الصوت</string>
+    <string name="title_pref_sandfly_keyboard_double_press">أحرف الضغط مرتين</string>
+    <string name="title_pref_sandfly_keyboard_double_space_period">الضغط على المسافة مرتين يكتب نقطة</string>
+    <string name="double_press_add">إضافة مفتاح</string>
+    <string name="double_press_item"><xliff:g id="key" example="g">%1$s</xliff:g>: <xliff:g id="characters" example="ğ">%2$s</xliff:g></string>
+    <string name="double_press_key">المفتاح</string>
+    <string name="double_press_characters">ما يكتبه الضغط مرتين</string>
+    <string name="double_press_enter_key">أدخل حرفًا واحدًا</string>
+    <string name="double_press_enter_characters">أدخل من 1 إلى 16 حرفًا</string>
+    <string name="title_pref_focus_text_inside_items">التركيز على النص داخل العناصر بشكل منفصل</string>
+    <string name="focus_text_inside_items_now_on">تم تفعيل التركيز على النص داخل العناصر بشكل منفصل</string>
+    <string name="focus_text_inside_items_now_off">تم إيقاف التركيز على النص داخل العناصر بشكل منفصل</string>
+    <string name="focus_indicator_now_on">تم تفعيل مؤشر التركيز</string>
+    <string name="focus_indicator_now_off">تم إيقاف مؤشر التركيز</string>
+    <string name="title_pref_dictation_speak_text">قول النص المُملى</string>
+    <string name="title_pref_dictation_punctuation">علامات الترقيم التلقائية</string>
+    <string name="title_pref_dictation_block_offensive">حظر الكلمات المسيئة</string>
+    <string name="settings_profile_keyboards">لوحات المفاتيح</string>
+    <string name="settings_profile_add_keyboard">إضافة لوحة مفاتيح</string>
+    <plurals name="word_selection_added">
+        <item quantity="zero">تمت إضافة <xliff:g id="count" example="5">%1$d</xliff:g> عنصر</item>
+        <item quantity="one">تمت إضافة عنصر واحد (<xliff:g id="count" example="1">%1$d</xliff:g>)</item>
+        <item quantity="two">تمت إضافة عنصرين (<xliff:g id="count" example="5">%1$d</xliff:g>)</item>
+        <item quantity="few">تمت إضافة <xliff:g id="count" example="5">%1$d</xliff:g> عناصر</item>
+        <item quantity="many">تمت إضافة <xliff:g id="count" example="5">%1$d</xliff:g> عنصرًا</item>
+        <item quantity="other">تمت إضافة <xliff:g id="count" example="5">%1$d</xliff:g> عنصر</item>
+    </plurals>
+    <string name="word_selection_no_more_text">لا يوجد المزيد من النص</string>
+    <string name="selection_range_start">بدء التحديد</string>
+    <string name="selection_range_end">إنهاء التحديد</string>
+    <string name="selection_range_started">تم وضع علامة على بداية التحديد</string>
+    <plurals name="selection_range_selected">
+        <item quantity="zero">تم تحديد <xliff:g id="count" example="5">%1$d</xliff:g> عنصر</item>
+        <item quantity="one">تم تحديد عنصر واحد (<xliff:g id="count" example="1">%1$d</xliff:g>)</item>
+        <item quantity="two">تم تحديد عنصرين (<xliff:g id="count" example="5">%1$d</xliff:g>)</item>
+        <item quantity="few">تم تحديد <xliff:g id="count" example="5">%1$d</xliff:g> عناصر</item>
+        <item quantity="many">تم تحديد <xliff:g id="count" example="5">%1$d</xliff:g> عنصرًا</item>
+        <item quantity="other">تم تحديد <xliff:g id="count" example="5">%1$d</xliff:g> عنصر</item>
+    </plurals>
+    <string name="network_notification_channel">طلبات الشبكة</string>
+    <string name="network_notification_title">طلب شبكة</string>
+    <string name="title_pref_category_own_speech">التطبيقات ذات الكلام الخاص</string>
+    <string name="title_pref_speak_user_focus">قول التركيز الذي ينقله المستخدم فقط</string>
+    <string name="speak_user_focus_off">غير مفعَّل</string>
+    <string name="speak_user_focus_all_apps">في كل التطبيقات</string>
+    <string name="speak_user_focus_chosen_apps">في التطبيقات المختارة</string>
+    <string name="title_pref_speak_user_focus_apps">التطبيقات المختارة</string>
+    <string name="title_pref_speak_user_focus_assistant_audio">قول التركيز الذي ينقله المستخدم فقط أثناء تشغيل صوت مساعد أو مكالمة</string>
+    <string name="title_pref_keyboards_with_own_speech">لوحات المفاتيح ذات الكلام الخاص</string>
+    <string name="template_speak_user_focus_changed">قول التركيز الذي ينقله المستخدم فقط: <xliff:g id="choice" example="In all apps">%1$s</xliff:g></string>
+    <string name="macro_add_to_home_screen">إضافة إلى الشاشة الرئيسية</string>
+    <string name="macro_shortcut_unsupported">لا يتوافق تطبيق الشاشة الرئيسية مع اختصارات الشاشة الرئيسية</string>
+    <string name="macro_shortcut_already_added">موجود على الشاشة الرئيسية بالفعل</string>
+    <string name="macro_shortcut_failed">لم تتم إضافة الاختصار</string>
+    <string name="macro_shortcut_deleted">تم حذف الماكرو</string>
+    <string name="macro_shortcut_invalid">الاختصار غير صالح. أضِف الماكرو إلى الشاشة الرئيسية مرة أخرى.</string>
+    <string name="update_download_progress">%1$d%%</string>
+    <string name="update_download_progress_time">%1$d%%، يتبقى %2$s</string>
+    <string name="title_pref_double_tap_taps">النقر مرتين ينقر على الشاشة</string>
+    <string name="shortcut_toggle_double_tap_taps_app">النقر مرتين ينقر على الشاشة في هذا التطبيق</string>
+    <string name="double_tap_taps_on">تم تفعيل «النقر مرتين ينقر على الشاشة»</string>
+    <string name="double_tap_taps_off">تم إيقاف «النقر مرتين ينقر على الشاشة»</string>
+    <string name="double_tap_taps_no_app">لا يوجد تطبيق في المقدمة</string>
+    <string name="keycombo_menu_toggle_key_practice">تفعيل التدريب على لوحة المفاتيح أو إيقافه</string>
+    <string name="key_practice_on">تم تفعيل التدريب على لوحة المفاتيح</string>
+    <string name="key_practice_off">تم إيقاف التدريب على لوحة المفاتيح</string>
+    <string name="key_practice_sandfly_key">مفتاح SandFly</string>
+    <string name="key_practice_title">التدريب على لوحة المفاتيح</string>
+    <string name="key_practice_summary">ينطق كل مفتاح يتم الضغط عليه وأمره بدلًا من تنفيذ الأمر. يتوقف عند الضغط على رجوع أو Escape.</string>
+    <string name="keycombo_menu_touch_hold_focus">إبقاء اللمس على العنصر محلّ التركيز</string>
+    <string name="touch_hold_held">اللمس مستمر</string>
+    <string name="touch_hold_lifted">تم رفع اللمس</string>
+    <string name="touch_hold_unavailable">غير متاح</string>
+    <string name="touch_hold_no_focus">لا يوجد عنصر محلّ التركيز</string>
+    <string name="title_pref_speak_password_characters">نطق أحرف كلمة المرور</string>
+    <string name="summary_pref_speak_password_characters">مع لوحة مفاتيح SandFly، ينطق الأحرف المكتوبة والمحذوفة والتي يتجاوزها المؤشر في حقول كلمات المرور</string>
+    <string name="shortcut_spell_password_field">تهجئة حقل كلمة المرور</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">ليس حقل كلمة مرور</string>
+    <string name="sandfly_keyboard_password_not_available">نص حقل كلمة المرور غير متاح</string>
+    <string name="sandfly_keyboard_password_not_read">لا تتم القراءة في حقول كلمات المرور</string>
+    <string name="title_pref_voice_profile_play_sample">تشغيل نموذج</string>
+    <string name="voice_profile_sample_text">هذا نموذج لهذا الملف الصوتي.</string>
+    <string name="voice_profile_sample_failed">لم يتم تشغيل النموذج</string>
+    <string name="title_pref_speech_rate_step">مقدار تغيير سرعة الكلام</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> من السرعة</string>
+    <string name="shortcut_end_call">إنهاء المكالمة</string>
+    <string name="end_call_no_call">لا توجد مكالمة</string>
+    <string name="end_call_permission">يلزم الإذن لإنهاء المكالمات</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">الانتقال إلى الفقرة التالية، المفتاح الثاني</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">الانتقال إلى الفقرة السابقة، المفتاح الثاني</string>
+    <string name="title_pref_mute_key_dictates">اضغط مع الاستمرار على مفتاح كتم الصوت للإملاء في حقول النص</string>
+    <string name="title_pref_mute_key_press">الضغط على مفتاح كتم الصوت</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">الانتقال إلى الرابط التالي، المفتاح الثاني</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">الانتقال إلى الرابط السابق، المفتاح الثاني</string>
+    <string name="keycombo_only_in_browse_mode">في \"وضع التصفّح\" فقط</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> في \"وضع التصفّح\"</string>
+    <string name="title_pref_category_fast_search">البحث السريع</string>
+    <string name="title_pref_fast_search_key">مفتاح البحث السريع</string>
+    <string name="fast_search_key_off">غير مفعَّل</string>
+    <string name="title_pref_fast_search_wrap">الالتفاف</string>
+    <string name="fast_search_key_left_alt">Alt الأيسر</string>
+    <string name="fast_search_key_left_ctrl">Ctrl الأيسر</string>
+    <string name="fast_search_key_right_ctrl">Ctrl الأيمن</string>
+    <string name="fast_search_key_left_meta">Meta الأيسر</string>
+    <string name="fast_search_key_right_meta">Meta الأيمن</string>
 </resources>

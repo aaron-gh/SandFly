@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> öğe kopyalandı</string>
     <string name="script_tree_none">Kopyalanacak pencere yok</string>
     <string name="script_tree_clip_label">Ekran ağacı</string>
-    <string name="summary_copy_screen_tree_menu">Komut dosyası yazmak için ekrandaki tüm öğeleri JSON olarak kopyalama</string>
+    <string name="summary_copy_screen_tree_menu">Komut dosyası yazmak için ekrandaki tüm öğeleri metin olarak kopyalama</string>
     <string name="script_inspect_clip_label">Öğe ayrıntıları</string>
-    <string name="summary_inspect_item_menu">Komut dosyası yazmak için son odaklanılan öğenin ayrıntılarını söyleme ve kopyalama</string>
+    <string name="summary_inspect_item_menu">Komut dosyası ve makro yazmak için üzerinde bulunduğunuz öğenin ayrıntılarını gösterir</string>
     <string name="script_keys_backtalk_modifier">SandFly değiştirici tuşu</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ardından <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Komutlar</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Komut dosyası ayrıntıları</string>
     <string name="item_details_app">Uygulama</string>
     <string name="script_permission_system">Geri veya ana ekrana gitme, bildirimleri açma, uygulamaları listeleme ve açma, ayarları ve bağlantıları açma, uygulamalara intent gönderme, ses düzeyini, zil modunu ve Wi-Fi ile el feneri gibi cihaz ayarlarını değiştirme, medyayı kontrol etme, zamanlayıcı ve alarm kurma, arama ve mesaj başlatma</string>
+    <string name="script_from_code">SandFly\'da girildi.</string>
+    <string name="script_code_view">Kodu görüntüle</string>
+    <string name="script_code_edit">Kodu düzenle</string>
+    <string name="script_code_new">Koddan yeni komut dosyası</string>
+    <string name="script_code_field">Kod</string>
+    <string name="script_code_save">Kaydet</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> kaydedildi</string>
+    <string name="script_code_not_saved">Komut dosyası kaydedilmedi</string>
+    <string name="script_code_id_changed">Manifest kimliği <xliff:g id="id">%1$s</xliff:g> olarak kalmalıdır.</string>
+    <string name="script_code_load_failed">Kod okunamadı.</string>
+    <string name="script_code_discard_title">Değişiklikler silinsin mi?</string>
+    <string name="script_code_discard">Sil</string>
+    <string name="script_code_keep_editing">Düzenlemeye devam et</string>
 </resources>

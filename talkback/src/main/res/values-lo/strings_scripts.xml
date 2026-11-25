@@ -100,9 +100,9 @@
     <string name="script_tree_copied">ສຳເນົາລາຍການ <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">ບໍ່ມີປ່ອງຢ້ຽມໃຫ້ສຳເນົາ</string>
     <string name="script_tree_clip_label">ໂຄງສ້າງໜ້າຈໍ</string>
-    <string name="summary_copy_screen_tree_menu">ສຳເນົາລາຍການທັງໝົດໃນໜ້າຈໍເປັນ JSON, ເພື່ອຂຽນສະຄຣິບ</string>
+    <string name="summary_copy_screen_tree_menu">ສຳເນົາລາຍການທັງໝົດໃນໜ້າຈໍເປັນຂໍ້ຄວາມ, ເພື່ອຂຽນສະຄຣິບ</string>
     <string name="script_inspect_clip_label">ລາຍ​ລະ​ອຽດ​ລາຍ​ການ​</string>
-    <string name="summary_inspect_item_menu">ອ່ານ ແລະ ສຳເນົາລາຍລະອຽດຂອງລາຍການທີ່ໂຟກັສຫຼ້າສຸດ ເພື່ອຂຽນສະຄຣິບ</string>
+    <string name="summary_inspect_item_menu">ສະແດງລາຍລະອຽດຂອງລາຍການທີ່ທ່ານຢູ່ ເພື່ອຂຽນສະຄຣິບ ແລະ ມາໂຄຣ</string>
     <string name="script_keys_backtalk_modifier">ປຸ່ມປັບແຕ່ງ SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, ຈາກນັ້ນ <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">ຄໍາສັ່ງ</string>
@@ -167,5 +167,18 @@
     <string name="item_details_inside">ລາຍການທີ່ຢູ່ໃນ</string>
     <string name="item_details_script">ລາຍລະອຽດສະຄຣິບ</string>
     <string name="item_details_app">ແອັບ</string>
-    <string name="script_permission_system">ກັບຄືນ ຫຼື ໄປໜ້າຫຼັກ, ເປີດການແຈ້ງເຕືອນ, ສະແດງລາຍຊື່ແອັບ, ເປີດແອັບ, ການຕັ້ງຄ່າ ແລະ ລິ້ງ, ສົ່ງ Intent ໄປຫາແອັບ, ປ່ຽນລະດັບສຽງ, ໂໝດສຽງ ແລະ ການຕັ້ງຄ່າອຸປະກອນ ເຊັ່ນ Wi-Fi ແລະ ໄຟສາຍ, ຄວບຄຸມມີເດຍ, ຕັ້ງເຄື່ອງຈັບເວລາ ແລະ ໂມງປຸກ, ແລະ ເລີ່ມການໂທ ແລະ ຂໍ້ຄວາມ</string>
+    <string name="script_permission_system">ກັບຄືນ ຫຼື ໄປໜ້າຫຼັກ, ເປີດການແຈ້ງເຕືອນ, ສະແດງລາຍຊື່ ແລະ ເປີດແອັບ, ການຕັ້ງຄ່າ ແລະ ລິ້ງ, ສົ່ງ Intent ໄປຫາແອັບ, ປ່ຽນລະດັບສຽງ, ໂໝດສຽງ ແລະ ການຕັ້ງຄ່າອຸປະກອນ ເຊັ່ນ Wi-Fi ແລະ ໄຟສາຍ, ຄວບຄຸມມີເດຍ, ຕັ້ງເຄື່ອງຈັບເວລາ ແລະ ໂມງປຸກ, ແລະ ເລີ່ມການໂທ ແລະ ຂໍ້ຄວາມ</string>
+    <string name="script_from_code">ປ້ອນໃນ SandFly.</string>
+    <string name="script_code_view">ເບິ່ງລະຫັດ</string>
+    <string name="script_code_edit">ແກ້ໄຂລະຫັດ</string>
+    <string name="script_code_new">ສະຄຣິບໃໝ່ຈາກລະຫັດ</string>
+    <string name="script_code_field">ລະຫັດ</string>
+    <string name="script_code_save">ບັນທຶກ</string>
+    <string name="script_code_saved">ບັນທຶກ <xliff:g id="name">%1$s</xliff:g> ແລ້ວ</string>
+    <string name="script_code_not_saved">ບໍ່ໄດ້ບັນທຶກສະຄຣິບ</string>
+    <string name="script_code_id_changed">id ຂອງແມນິເຟສຕ້ອງຍັງເປັນ <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">ອ່ານລະຫັດບໍ່ໄດ້.</string>
+    <string name="script_code_discard_title">ຖິ້ມການປ່ຽນແປງບໍ?</string>
+    <string name="script_code_discard">ຖິ້ມ</string>
+    <string name="script_code_keep_editing">ແກ້ໄຂຕໍ່</string>
 </resources>

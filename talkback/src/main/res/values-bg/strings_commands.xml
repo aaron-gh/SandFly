@@ -79,4 +79,20 @@
     <string name="menu_reset">Връщане към стандартните</string>
     <string name="menu_reset_confirm">Да се върне ли менюто на SandFly към стандартните елементи и ред?</string>
     <string name="menu_assign">Жестове и клавишна комбинация</string>
+    <string name="shortcut_app_gestures_for_app">Жестове за това приложение</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku и root</string>
+    <string name="title_pref_use_root">Използване на root вместо Shizuku</string>
+    <string name="command_perform_gesture">Изпълнение на жест</string>
+    <string name="command_perform_gesture_message">Направете жеста.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> не може да бъде зададен</string>
+    <string name="command_run">Изпълнение на командата</string>
+    <string name="command_add_to_sandfly_menu">Добавяне в менюто на SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Премахване от менюто на SandFly</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> е добавено в менюто на SandFly</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> е премахнато от менюто на SandFly</string>
+    <string name="commands_search_hint">Търсене на команди</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> команда</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> команди</item>
+    </plurals>
 </resources>

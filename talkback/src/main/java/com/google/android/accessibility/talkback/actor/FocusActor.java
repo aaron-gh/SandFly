@@ -48,6 +48,7 @@ import com.google.android.accessibility.talkback.WebActor;
 import com.google.android.accessibility.talkback.actor.helper.FocusActorHelper;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
+import com.google.android.accessibility.talkback.doubletaptaps.DoubleTapTapsApps;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory;
@@ -63,6 +64,7 @@ import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
 import com.google.android.accessibility.utils.Filter;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.PerformActionUtils;
+import com.google.android.accessibility.utils.SharedPreferencesUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
 import com.google.android.accessibility.utils.WebInterfaceUtils;
 import com.google.android.libraries.accessibility.utils.log.LogUtils;
@@ -162,7 +164,12 @@ public class FocusActor implements UserInputEventListener {
     }
     ActivatedItem item = focusManagerInternal.describeActivatedItem(currentFocus);
     boolean activated =
-        (Scripts.touchesToActivate(currentFocus) && touchFocus(currentFocus, eventId))
+        (currentFocus != null
+                && DoubleTapTapsApps.tapsToActivate(
+                    SharedPreferencesUtils.getSharedPreferences(service),
+                    Scripts.touchesToActivate(currentFocus),
+                    currentFocus.getPackageName())
+                && touchFocus(currentFocus, eventId))
             || clickNode(currentFocus, eventId);
     if (activated && item != null) {
       focusManagerInternal.onItemActivated(item);

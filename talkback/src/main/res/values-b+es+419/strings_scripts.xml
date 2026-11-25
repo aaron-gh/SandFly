@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Se copiaron <xliff:g id="count">%1$d</xliff:g> elementos</string>
     <string name="script_tree_none">No hay ninguna ventana para copiar</string>
     <string name="script_tree_clip_label">Árbol de la pantalla</string>
-    <string name="summary_copy_screen_tree_menu">Copia todos los elementos de la pantalla como JSON, para escribir scripts</string>
+    <string name="summary_copy_screen_tree_menu">Copia todos los elementos de la pantalla como texto, para escribir scripts</string>
     <string name="script_inspect_clip_label">Detalles del elemento</string>
-    <string name="summary_inspect_item_menu">Lee y copia los detalles del elemento en el que estabas, para escribir scripts</string>
+    <string name="summary_inspect_item_menu">Muestra los detalles del elemento en el que estabas, para escribir scripts y macros</string>
     <string name="script_keys_backtalk_modifier">Tecla modificadora de SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g> y luego <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Comandos</string>
@@ -169,4 +169,17 @@
     <string name="item_details_script">Detalles para scripts</string>
     <string name="item_details_app">App</string>
     <string name="script_permission_system">Ir atrás o a la pantalla principal, abrir notificaciones, ver la lista de apps, abrir apps, la configuración y vínculos, enviar intents a apps, cambiar el volumen, el modo de timbre y la configuración del dispositivo, como Wi-Fi y la linterna, controlar contenido multimedia, establecer temporizadores y alarmas, e iniciar llamadas y mensajes</string>
+    <string name="script_from_code">Ingresado en SandFly.</string>
+    <string name="script_code_view">Ver código</string>
+    <string name="script_code_edit">Editar código</string>
+    <string name="script_code_new">Script nuevo desde código</string>
+    <string name="script_code_field">Código</string>
+    <string name="script_code_save">Guardar</string>
+    <string name="script_code_saved">Se guardó <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_code_not_saved">No se guardó el script</string>
+    <string name="script_code_id_changed">El id del manifiesto debe seguir siendo <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">No se pudo leer el código.</string>
+    <string name="script_code_discard_title">¿Descartar los cambios?</string>
+    <string name="script_code_discard">Descartar</string>
+    <string name="script_code_keep_editing">Seguir editando</string>
 </resources>

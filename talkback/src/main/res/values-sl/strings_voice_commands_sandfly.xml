@@ -177,4 +177,21 @@
         <item>aktiviraj {label}</item>
         <item>izberi {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Začni glasovno urejanje</string>
+    <string name="voice_editing_on">Glasovno urejanje vklopljeno</string>
+    <string name="voice_editing_off">Glasovno urejanje izklopljeno</string>
+    <string name="title_pref_voice_editing_time_limit">Časovna omejitev glasovnega urejanja</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuta</item>
+        <item quantity="two"><xliff:g id="count" example="10">%d</xliff:g> minuti</item>
+        <item quantity="few"><xliff:g id="count" example="10">%d</xliff:g> minute</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minut</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ustavi urejanje</item>
+        <item>ustavi glasovno urejanje</item>
+        <item>končaj urejanje</item>
+        <item>končaj glasovno urejanje</item>
+        <item>izklopi glasovno urejanje</item>
+    </string-array>
 </resources>

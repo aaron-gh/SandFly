@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Tilføj tegn</string>
+    <string name="custom_braille_characters_text">Tegn eller tekst</string>
+    <string name="custom_braille_characters_cells">Punkter</string>
+    <string name="custom_braille_characters_table">Brailletabel</string>
+    <string name="custom_braille_characters_cells_help">Punktnumre for hver celle, med celler adskilt af bindestreger, f.eks. 2356 eller 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Angiv punktnumre fra 1 til 8, højst <xliff:g id="number" example="20">%1$d</xliff:g> celler</string>
+    <string name="custom_braille_characters_invalid_text">Angiv 1 til <xliff:g id="number" example="50">%1$d</xliff:g> tegn</string>
+</resources>

@@ -79,4 +79,20 @@
     <string name="menu_reset">Әдепкіге қайтару</string>
     <string name="menu_reset_confirm">SandFly мәзірі әдепкі элементтері мен ретіне қайтарылсын ба?</string>
     <string name="menu_assign">Қимылдар және пернетақта төте жолы</string>
+    <string name="shortcut_app_gestures_for_app">Осы қолданбаға арналған қимылдар</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku және root</string>
+    <string name="title_pref_use_root">Shizuku орнына root пайдалану</string>
+    <string name="command_perform_gesture">Қимыл жасау</string>
+    <string name="command_perform_gesture_message">Қимыл жасаңыз.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> тағайындау мүмкін емес</string>
+    <string name="command_run">Команданы орындау</string>
+    <string name="command_add_to_sandfly_menu">SandFly мәзіріне қосу</string>
+    <string name="command_remove_from_sandfly_menu">SandFly мәзірінен алып тастау</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly мәзіріне қосылды</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly мәзірінен алып тасталды</string>
+    <string name="commands_search_hint">Командаларды іздеу</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> команда</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> команда</item>
+    </plurals>
 </resources>

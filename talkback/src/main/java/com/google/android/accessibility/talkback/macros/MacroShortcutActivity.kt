@@ -48,7 +48,7 @@ class MacroShortcutActivity : Activity() {
     if (macro == null) {
       // A macro deleted in a way that didn't disable its shortcut, such as a settings import.
       val deleted = macroId != null && MacroShortcuts.isMacroId(macroId) && Macros.find(prefs, macroId) == null
-      if (deleted) MacroShortcuts.disable(context, macroId!!)
+      if (deleted) MacroShortcuts.disable(context, macroId)
       val message = if (deleted) R.string.macro_shortcut_deleted else R.string.macro_shortcut_invalid
       Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
       return

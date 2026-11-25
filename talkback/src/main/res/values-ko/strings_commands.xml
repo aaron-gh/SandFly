@@ -79,4 +79,20 @@
     <string name="menu_reset">기본값으로 재설정</string>
     <string name="menu_reset_confirm">SandFly 메뉴를 기본 항목과 순서로 재설정하시겠습니까?</string>
     <string name="menu_assign">동작 및 단축키</string>
+    <string name="shortcut_app_gestures_for_app">이 앱의 동작</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku 및 루트</string>
+    <string name="title_pref_use_root">Shizuku 대신 루트 사용</string>
+    <string name="command_perform_gesture">동작 수행</string>
+    <string name="command_perform_gesture_message">동작을 하세요.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g>을(를) 할당할 수 없음</string>
+    <string name="command_run">명령 실행</string>
+    <string name="command_add_to_sandfly_menu">SandFly 메뉴에 추가</string>
+    <string name="command_remove_from_sandfly_menu">SandFly 메뉴에서 삭제</string>
+    <string name="command_added_to_sandfly_menu">SandFly 메뉴에 <xliff:g id="command" example="Describe image">%1$s</xliff:g> 추가됨</string>
+    <string name="command_removed_from_sandfly_menu">SandFly 메뉴에서 <xliff:g id="command" example="Describe image">%1$s</xliff:g> 삭제됨</string>
+    <string name="commands_search_hint">명령 검색</string>
+    <plurals name="commands_search_results">
+        <item quantity="one">명령 <xliff:g id="count" example="1">%d</xliff:g>개</item>
+        <item quantity="other">명령 <xliff:g id="count" example="12">%d</xliff:g>개</item>
+    </plurals>
 </resources>

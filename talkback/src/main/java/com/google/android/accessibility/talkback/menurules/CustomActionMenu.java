@@ -96,13 +96,7 @@ public class CustomActionMenu implements NodeMenu {
     if (macros.isEmpty() || service == null) {
       return macros;
     }
-    List<Macros.Macro> shown = new ArrayList<>();
-    for (Macros.Macro macro : macros) {
-      if (MacroRunner.isShownInActions(service, macro)) {
-        shown.add(macro);
-      }
-    }
-    return shown;
+    return MacroRunner.shownInActions(service, node, macros);
   }
 
   /**

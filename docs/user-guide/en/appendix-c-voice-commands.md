@@ -86,8 +86,8 @@ These phrases act on the focused edit field.
 | "Hide screen", or a phrase with "dim" or "darken" | Hides the screen. |
 | "Show screen", or "brighten screen", "restore screen" or "cancel hide screen" | Shows the screen again. |
 | "Label TEXT" | Gives the focused item the custom label. SandFly says "Label saved". |
-| "Help", or a phrase with "what" and "say", such as "What can I say" | Opens **Voice command overview**. |
-| "Stop", or "cancel", "quit", "never mind", "nevermind", "shut up", or a phrase with "quiet" or "pause" | Stops the voice command that is running. |
+| A phrase with "help", or with "what" and "say", such as "What can I say" | Opens **Voice command overview**. |
+| "Cancel", "never mind", "nevermind" or "shut up", or a phrase with "stop", "quit", "quiet" or "pause" | Stops the voice command that is running. |
 
 ### Apps, items and commands {#appendix-voice-commands-apps}
 
@@ -102,17 +102,17 @@ These phrases act on the focused edit field.
 
 ### Calls and messages {#appendix-voice-commands-calls}
 
-NAME is a contact name or a phone number. APP is the name of a messaging app, such as WhatsApp. Without an app, or with "SMS", "text", "text message" or "messages", the message goes to the default SMS app.
+NAME is a contact name or a phone number. APP is the name of a messaging app, such as WhatsApp. Without an app, or with "SMS", "text", "text message" or "messages", the message goes to the default SMS app. In the SMS app and WhatsApp, SandFly writes the message to the contact and then asks whether to send it. Other apps get only the text, and you choose the chat in the app.
 
 | Say | What happens |
 | --- | --- |
 | "Call NAME", or "phone NAME", "ring NAME", "dial NAME" or "make a call to NAME" | Calls the contact or number. |
-| "Message NAME saying TEXT", or "text NAME saying TEXT", "send (a) message to NAME saying TEXT", "send (a) message to NAME that says TEXT" or "send NAME (a) message saying TEXT" | Writes the message, then asks whether to send it. |
+| "Message NAME saying TEXT", or "text NAME saying TEXT", "send (a) message to NAME saying TEXT", "send (a) message to NAME that says TEXT" or "send NAME (a) message saying TEXT" | Writes the message. |
 | "Message NAME TEXT", or "text NAME TEXT" or "send (a) message to NAME TEXT" | Writes the message to the contact named at the start. |
 | "Message NAME on APP saying TEXT", or "send (a) message to NAME on APP saying TEXT", "send (a) message to NAME on APP that says TEXT", "send (a/an) APP message to NAME saying TEXT", "send (a/an) APP message to NAME that says TEXT" or "tell NAME on APP TEXT" | Writes the message in the app. |
 | "Send (a/an) APP message to NAME" | Records the text, then writes the message in the app. |
 
-To "Send to NAME?", say "yes", "yeah", "yep", "send", "send it", "OK", "okay", "sure" or "do it" to press **Send**. Any other answer leaves the message unsent.
+SandFly asks "Send to NAME: TEXT?", or "Send to NAME?" for a description. Say "yes", "yeah", "yep", "send", "send it", "OK", "okay", "sure" or "do it" to press **Send**. Any other answer leaves the message unsent, and SandFly says "Message not sent".
 
 ### Descriptions {#appendix-voice-commands-descriptions}
 

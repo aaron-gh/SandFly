@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Хүрэлтийг түгжих эсвэл тайлах</string>
+    <string name="touch_locked">Хүрэлт түгжигдсэн</string>
+    <string name="touch_unlocked">Хүрэлтийн түгжээ тайлагдсан</string>
+    <string name="touch_lock_unavailable">Хүрэлтийн түгжээнд Android 13 буюу түүнээс хойшх хувилбар шаардлагатай</string>
+    <string name="title_pref_lock_touch_automatically">Хүрэлтийг автоматаар түгжих</string>
+    <string name="value_lock_touch_never">Хэзээ ч үгүй</string>
+    <string name="value_lock_touch_screen_on">Дэлгэц асах үед</string>
+    <string name="value_lock_touch_lock_screen">Түгжих дэлгэц дээр</string>
+    <string name="value_lock_touch_proximity">Ойртолтын мэдрэгч халхлагдсан үед</string>
+    <string name="title_pref_locked_touch_feedback">Хүрэлт түгжигдсэн үеийн хүрэлт</string>
+    <string name="value_locked_touch_nothing">Юу ч үгүй</string>
+    <string name="value_locked_touch_sound">Дуу</string>
+    <string name="value_locked_touch_vibration">Чичиргээ</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">შეხების ჩაკეტვა ან განბლოკვა</string>
+    <string name="touch_locked">შეხება ჩაკეტილია</string>
+    <string name="touch_unlocked">შეხება განბლოკილია</string>
+    <string name="touch_lock_unavailable">შეხების ჩაკეტვას სჭირდება Android 13 ან უფრო ახალი</string>
+    <string name="title_pref_lock_touch_automatically">შეხების ავტომატური ჩაკეტვა</string>
+    <string name="value_lock_touch_never">არასოდეს</string>
+    <string name="value_lock_touch_screen_on">ეკრანის ჩართვისას</string>
+    <string name="value_lock_touch_lock_screen">დაბლოკვის ეკრანზე</string>
+    <string name="value_lock_touch_proximity">როცა სიახლოვის სენსორი დაფარულია</string>
+    <string name="title_pref_locked_touch_feedback">შეხებები, როცა შეხება ჩაკეტილია</string>
+    <string name="value_locked_touch_nothing">არაფერი</string>
+    <string name="value_locked_touch_sound">ხმა</string>
+    <string name="value_locked_touch_vibration">ვიბრაცია</string>
+</resources>

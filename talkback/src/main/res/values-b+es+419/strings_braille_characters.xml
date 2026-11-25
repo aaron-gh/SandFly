@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Agregar carácter</string>
+    <string name="custom_braille_characters_text">Carácter o texto</string>
+    <string name="custom_braille_characters_cells">Puntos</string>
+    <string name="custom_braille_characters_table">Tabla braille</string>
+    <string name="custom_braille_characters_cells_help">Números de puntos de cada celda, con las celdas separadas por guiones, como 2356 o 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Ingresa números de puntos del 1 al 8, como máximo <xliff:g id="number" example="20">%1$d</xliff:g> celdas</string>
+    <string name="custom_braille_characters_invalid_text">Ingresa de 1 a <xliff:g id="number" example="50">%1$d</xliff:g> caracteres</string>
+</resources>

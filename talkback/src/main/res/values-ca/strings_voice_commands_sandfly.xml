@@ -185,4 +185,20 @@
         <item>activa {label}</item>
         <item>selecciona {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Inicia l\'edició per veu</string>
+    <string name="voice_editing_on">Edició per veu activada</string>
+    <string name="voice_editing_off">Edició per veu desactivada</string>
+    <string name="title_pref_voice_editing_time_limit">Límit de temps de l\'edició per veu</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minut</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> minuts</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minuts</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>atura l\'edició</item>
+        <item>atura l\'edició per veu</item>
+        <item>acaba l\'edició</item>
+        <item>acaba l\'edició per veu</item>
+        <item>desactiva l\'edició per veu</item>
+    </string-array>
 </resources>

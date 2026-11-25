@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> elem másolva</string>
     <string name="script_tree_none">Nincs másolható ablak</string>
     <string name="script_tree_clip_label">Képernyőfa</string>
-    <string name="summary_copy_screen_tree_menu">A képernyő összes elemének másolása JSON formátumban, szkriptek írásához</string>
+    <string name="summary_copy_screen_tree_menu">A képernyő összes elemének másolása szövegként, szkriptek írásához</string>
     <string name="script_inspect_clip_label">Elem részletei</string>
-    <string name="summary_inspect_item_menu">Az utoljára fókuszált elem részleteinek kimondása és másolása, szkriptek írásához</string>
+    <string name="summary_inspect_item_menu">Az utoljára fókuszált elem részleteinek megjelenítése szkriptek és makrók írásához</string>
     <string name="script_keys_backtalk_modifier">SandFly-módosítóbillentyű</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, majd <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Parancsok</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Részletek szkriptekhez</string>
     <string name="item_details_app">Alkalmazás</string>
     <string name="script_permission_system">Vissza vagy a kezdőképernyőre lépés, értesítések megnyitása, alkalmazások listázása és megnyitása, beállítások és linkek megnyitása, intentek küldése alkalmazásoknak, a hangerő, a csengési mód és az eszközbeállítások (például a Wi-Fi és a zseblámpa) módosítása, médiavezérlés, időzítők és ébresztések beállítása, valamint hívások és üzenetek indítása</string>
+    <string name="script_from_code">A SandFlyban megadva.</string>
+    <string name="script_code_view">Kód megtekintése</string>
+    <string name="script_code_edit">Kód szerkesztése</string>
+    <string name="script_code_new">Új szkript kódból</string>
+    <string name="script_code_field">Kód</string>
+    <string name="script_code_save">Mentés</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> mentve</string>
+    <string name="script_code_not_saved">A szkript nincs mentve</string>
+    <string name="script_code_id_changed">A manifest azonosítójának <xliff:g id="id">%1$s</xliff:g> értékűnek kell maradnia.</string>
+    <string name="script_code_load_failed">A kódot nem sikerült beolvasni.</string>
+    <string name="script_code_discard_title">Elveti a módosításokat?</string>
+    <string name="script_code_discard">Elvetés</string>
+    <string name="script_code_keep_editing">Szerkesztés folytatása</string>
 </resources>

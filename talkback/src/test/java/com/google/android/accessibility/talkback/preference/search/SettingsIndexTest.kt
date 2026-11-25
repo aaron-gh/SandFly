@@ -50,6 +50,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.Shadows.shadowOf
 import org.robolectric.annotation.Config
+import org.robolectric.shadows.ShadowLog
 import org.robolectric.util.ReflectionHelpers
 
 @RunWith(RobolectricTestRunner::class)
@@ -149,11 +150,33 @@ class SettingsIndexTest {
     }
     val deadline = System.currentTimeMillis() + 60_000
     while (built == null && System.currentTimeMillis() < deadline) {
-      shadowOf(Looper.getMainLooper()).idle()
+      idleWhileTheBuildWaits()
       Thread.sleep(5)
     }
-    assertEquals(entries.map { it.screen to it.key }, built!!.map { it.screen to it.key })
+    assertNotNull("No entries within 60 s", built)
+    assertEquals(
+      ShadowLog.getLogsForTag("SettingsIndex").joinToString("\n") { "${it.msg} ${it.throwable}" },
+      entries.map { it.screen to it.key },
+      built!!.map { it.screen to it.key },
+    )
     assertSame(Looper.getMainLooper().thread, thread)
+  }
+
+  /**
+   * Runs the main looper only while the build's thread waits, for a screen created on the main
+   * thread or for its next build. Running it while the build reads screens would run main-thread
+   * messages at the same time, which Robolectric's shadows aren't made for.
+   */
+  private fun idleWhileTheBuildWaits() {
+    val worker = Thread.getAllStackTraces().keys.firstOrNull { it.name == "SettingsIndex" }
+    if (
+      worker == null ||
+        worker.state == Thread.State.WAITING ||
+        worker.state == Thread.State.TIMED_WAITING ||
+        worker.state == Thread.State.TERMINATED
+    ) {
+      shadowOf(Looper.getMainLooper()).idle()
+    }
   }
 
   @Test
@@ -163,7 +186,7 @@ class SettingsIndexTest {
     stop.run()
     repeat(20) {
       Thread.sleep(10)
-      shadowOf(Looper.getMainLooper()).idle()
+      idleWhileTheBuildWaits()
     }
     assertFalse(delivered)
   }

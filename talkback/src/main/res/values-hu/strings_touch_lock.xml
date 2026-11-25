@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="shortcut_toggle_touch_lock">Érintés zárolása vagy feloldása</string>
+    <string name="touch_locked">Érintés zárolva</string>
+    <string name="touch_unlocked">Érintés feloldva</string>
+    <string name="touch_lock_unavailable">Az érintés zárolásához Android 13 vagy újabb szükséges</string>
+    <string name="title_pref_lock_touch_automatically">Érintés automatikus zárolása</string>
+    <string name="value_lock_touch_never">Soha</string>
+    <string name="value_lock_touch_screen_on">A képernyő bekapcsolásakor</string>
+    <string name="value_lock_touch_lock_screen">A lezárási képernyőn</string>
+    <string name="value_lock_touch_proximity">Amíg a közelségérzékelő le van takarva</string>
+    <string name="title_pref_locked_touch_feedback">Érintések zárolt érintés közben</string>
+    <string name="value_locked_touch_nothing">Semmi</string>
+    <string name="value_locked_touch_sound">Hang</string>
+    <string name="value_locked_touch_vibration">Rezgés</string>
+</resources>

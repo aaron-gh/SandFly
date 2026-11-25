@@ -79,4 +79,20 @@
     <string name="menu_reset">డిఫాల్ట్‌కు రీసెట్ చేయండి</string>
     <string name="menu_reset_confirm">SandFly మెనూను దాని డిఫాల్ట్ ఐటెమ్‌లు, క్రమానికి రీసెట్ చేయాలా?</string>
     <string name="menu_assign">సంజ్ఞలు, కీబోర్డ్ షార్ట్‌కట్</string>
+    <string name="shortcut_app_gestures_for_app">ఈ యాప్ కోసం సంజ్ఞలు</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku మరియు రూట్</string>
+    <string name="title_pref_use_root">Shizukuకి బదులుగా రూట్‌ను ఉపయోగించండి</string>
+    <string name="command_perform_gesture">సంజ్ఞను చేయండి</string>
+    <string name="command_perform_gesture_message">సంజ్ఞను ఇప్పుడు చేయండి.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g>ను కేటాయించడం సాధ్యం కాదు</string>
+    <string name="command_run">ఆదేశాన్ని రన్ చేయండి</string>
+    <string name="command_add_to_sandfly_menu">SandFly మెనూకు జోడించండి</string>
+    <string name="command_remove_from_sandfly_menu">SandFly మెనూ నుండి తీసివేయండి</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly మెనూకు జోడించబడింది</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly మెనూ నుండి తీసివేయబడింది</string>
+    <string name="commands_search_hint">ఆదేశాలను సెర్చ్ చేయండి</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ఆదేశం</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ఆదేశాలు</item>
+    </plurals>
 </resources>

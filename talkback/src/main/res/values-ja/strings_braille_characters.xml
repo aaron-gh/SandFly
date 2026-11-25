@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">文字を追加</string>
+    <string name="custom_braille_characters_text">文字またはテキスト</string>
+    <string name="custom_braille_characters_cells">ドット</string>
+    <string name="custom_braille_characters_table">点字表</string>
+    <string name="custom_braille_characters_cells_help">各マスのドット番号。マスはハイフンで区切ります (例: 2356、456-2356)。</string>
+    <string name="custom_braille_characters_invalid_cells">ドット番号 1～8 を入力してください (最大 <xliff:g id="number" example="20">%1$d</xliff:g> マス)</string>
+    <string name="custom_braille_characters_invalid_text">1～<xliff:g id="number" example="50">%1$d</xliff:g> 文字で入力してください</string>
+</resources>

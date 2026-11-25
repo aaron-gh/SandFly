@@ -190,4 +190,19 @@
         <item>ativa {label}</item>
         <item>seleciona {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Iniciar edição por voz</string>
+    <string name="voice_editing_on">Edição por voz ativada</string>
+    <string name="voice_editing_off">Edição por voz desativada</string>
+    <string name="title_pref_voice_editing_time_limit">Limite de tempo da edição por voz</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuto</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minutos</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>parar edição</item>
+        <item>parar edição por voz</item>
+        <item>terminar edição</item>
+        <item>terminar edição por voz</item>
+        <item>desativar edição por voz</item>
+    </string-array>
 </resources>

@@ -79,4 +79,21 @@
     <string name="menu_reset">Vrati na zadano</string>
     <string name="menu_reset_confirm">Vratiti izbornik SandFlya na zadane stavke i redoslijed?</string>
     <string name="menu_assign">Pokreti i tipkovni prečac</string>
+    <string name="shortcut_app_gestures_for_app">Pokreti za ovu aplikaciju</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku i root</string>
+    <string name="title_pref_use_root">Koristi root umjesto Shizukua</string>
+    <string name="command_perform_gesture">Izvedi pokret</string>
+    <string name="command_perform_gesture_message">Izvedite pokret.</string>
+    <string name="command_gesture_not_assignable">Nije moguće dodijeliti: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Pokreni naredbu</string>
+    <string name="command_add_to_sandfly_menu">Dodaj u izbornik SandFlya</string>
+    <string name="command_remove_from_sandfly_menu">Ukloni iz izbornika SandFlya</string>
+    <string name="command_added_to_sandfly_menu">Dodano u izbornik SandFlya: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="command_removed_from_sandfly_menu">Uklonjeno iz izbornika SandFlya: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="commands_search_hint">Pretraži naredbe</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> naredba</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> naredbe</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> naredbi</item>
+    </plurals>
 </resources>

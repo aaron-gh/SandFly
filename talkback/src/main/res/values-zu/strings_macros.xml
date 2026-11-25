@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Ukugxila kungaphakathi kwento</string>
     <string name="macro_test_focus_inside_value">Ukugxila ngaphakathi: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Ukugxila akukho ngaphakathi: %1$s</string>
+    <string name="macro_step_tap_position">Thepha endaweni</string>
+    <string name="macro_step_tap_position_value">Thepha ku-<xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, amaphikseli ukusuka kwesokunxele</string>
+    <string name="macro_tap_y">Y, amaphikseli ukusuka phezulu</string>
+    <string name="macro_invalid_position">Faka u-X no-Y kusuka ku-0 kuya ku-<xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Ithiphu</string>
+    <string name="macro_step_touch_hold">Thinta futhi ubambe into</string>
+    <string name="macro_step_touch_hold_value">Thinta futhi ubambe <xliff:g id="label" example="Voice message">%1$s</xliff:g> okwemizuzwana engu-<xliff:g id="seconds" example="1.5">%2$s</xliff:g></string>
+    <string name="macro_step_touch_hold_slide_value">Thinta futhi ubambe <xliff:g id="label" example="Voice message">%1$s</xliff:g> okwemizuzwana engu-<xliff:g id="seconds" example="1">%2$s</xliff:g>. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Imizuzwana yokubamba</string>
+    <string name="macro_slide">Ngaphambi kokuphakamisa</string>
+    <string name="macro_slide_none">Phakamisa endaweni efanayo</string>
+    <string name="macro_slide_up">Shelela phezulu</string>
+    <string name="macro_slide_down">Shelela phansi</string>
+    <string name="macro_slide_left">Shelela ngakwesokunxele</string>
+    <string name="macro_slide_right">Shelela ngakwesokudla</string>
+    <string name="macro_slide_distance">Ibanga ku-dp</string>
+    <string name="macro_app">I-app</string>
+    <string name="macro_all_apps">Wonke ama-app</string>
+    <string name="macro_add_app">Engeza i-app</string>
+    <string name="macro_apps">Ama-app</string>
+    <string name="macro_in_actions">Bonisa ku-Izenzo</string>
+    <string name="macro_in_actions_only_when">Bonisa ku-Izenzo kuphela uma</string>
+    <string name="macro_not_in_app">Imakhro ayisebenzanga. Isebenza ku-<xliff:g id="app" example="WhatsApp">%1$s</xliff:g> kuphela</string>
+    <plurals name="macro_count">
+        <item quantity="one">imakhro engu-<xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">amamakhro angu-<xliff:g id="count" example="3">%d</xliff:g></item>
+    </plurals>
+    <string name="macro_record">Rekhoda izinyathelo</string>
+    <string name="macro_record_new">Rekhoda imakhro</string>
+    <string name="macro_recording_notification">Kurekhodwa izinyathelo zemakhro: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Kuyarekhodwa. Ukuze umise, sebenzisa okuthi Rekhoda imakhro noma Misa imakhro, noma uvule isaziso esithi Kurekhodwa izinyathelo zemakhro.</string>
+    <string name="macro_recorded">Izinyathelo ezirekhodiwe</string>
+    <string name="macro_recorded_no_passwords">Umbhalo othayiphwe ezinkambini zephasiwedi awurekhodwa.</string>
+    <string name="macro_recorded_too_many">Akungezwanga. Imakhro ingaba nezinyathelo ezingu-<xliff:g id="count" example="200">%1$d</xliff:g> ubuningi.</string>
+    <string name="macro_recorded_name">Irekhodwe <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Uhlu olusesikrinini</string>
 </resources>

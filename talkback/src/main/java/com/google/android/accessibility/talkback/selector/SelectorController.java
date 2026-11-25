@@ -147,6 +147,8 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -158,6 +160,7 @@ public class SelectorController implements UserInputEventListener {
 
   /** The type of granularity. */
   @IntDef({GRANULARITY_FOR_ALL_NODE, GRANULARITY_FOR_NATIVE_NODE})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface GranularityType {}
 
   private static final String TAG = "SelectorController";
@@ -504,10 +507,6 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_equalizer_key,
         R.string.selector_equalizer,
         R.bool.pref_selector_equalizer_default),
-    EQUALIZER_32(
-        R.string.pref_selector_equalizer_32_key,
-        R.string.selector_equalizer_32,
-        R.bool.pref_selector_equalizer_default),
     EQUALIZER_64(
         R.string.pref_selector_equalizer_64_key,
         R.string.selector_equalizer_64,
@@ -559,7 +558,11 @@ public class SelectorController implements UserInputEventListener {
     AUDIO_OUTPUT(
         R.string.pref_selector_audio_output_key,
         R.string.selector_audio_output,
-        R.bool.pref_selector_audio_output_default);
+        R.bool.pref_selector_audio_output_default),
+    AI_SERVICE(
+        R.string.pref_selector_ai_service_key,
+        R.string.selector_ai_service,
+        R.bool.pref_selector_ai_service_default);
 
     /** The preference key of the filter in the selector settings page. */
     final int prefKeyResId;
@@ -816,6 +819,7 @@ public class SelectorController implements UserInputEventListener {
           // TODO Supports sound feedback and vibration feedback.
           Setting.LIVE_RECOGNITION,
           Setting.AI_ACTIONS,
+          Setting.AI_SERVICE,
           Setting.HIDE_SCREEN,
           Setting.AUDIO_FOCUS,
           Setting.SCROLLING_SEQUENTIAL,
@@ -841,7 +845,6 @@ public class SelectorController implements UserInputEventListener {
           Setting.AUDIO_OUTPUT,
           Setting.SWITCH_VOICE_PROFILE,
           Setting.EQUALIZER,
-          Setting.EQUALIZER_32,
           Setting.EQUALIZER_64,
           Setting.EQUALIZER_125,
           Setting.EQUALIZER_250,
@@ -857,6 +860,10 @@ public class SelectorController implements UserInputEventListener {
 
   // Whether a command, not a gesture on the selected reading control, is changing a value.
   private boolean adjustingByCommand;
+
+  // Whether the swipe adjusting the selected reading control increases a value, or null when no
+  // swipe sets the direction. See SwipeValueDirection.
+  private @Nullable Boolean swipeIncreases;
 
   /** Lists all {@link Setting} that should be hidden for users. */
   private final ImmutableList<Setting> hiddenSettings;
@@ -962,6 +969,8 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.AUDIO_OUTPUT);
       // Nor Speak only focus moved by the user.
       hiddenSettingsBuilder.add(Setting.SPEAK_USER_FOCUS);
+      // Nor image and screen descriptions.
+      hiddenSettingsBuilder.add(Setting.AI_SERVICE);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
@@ -1259,6 +1268,10 @@ public class SelectorController implements UserInputEventListener {
         actionDescription = context.getString(R.string.title_pref_audio_output_device);
         hint = getAdjustSelectedSettingGestures();
       }
+      case AI_SERVICE -> {
+        actionDescription = context.getString(R.string.title_pref_ai_provider);
+        hint = getAdjustSelectedSettingGestures();
+      }
       case VERTICAL_NAVIGATION -> {
         actionDescription = context.getString(R.string.title_selector_vertical_navigation);
         hint = getAdjustSelectedSettingGestures();
@@ -1271,8 +1284,7 @@ public class SelectorController implements UserInputEventListener {
         actionDescription = context.getString(R.string.title_pref_speech_equalizer);
         hint = getAdjustSelectedSettingGestures();
       }
-      case EQUALIZER_32,
-          EQUALIZER_64,
+      case EQUALIZER_64,
           EQUALIZER_125,
           EQUALIZER_250,
           EQUALIZER_500,
@@ -1409,8 +1421,7 @@ public class SelectorController implements UserInputEventListener {
       case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
         return StreamVolumeControl.percentText(context, STREAM_VOLUMES.get(setting).stream);
       }
-      case EQUALIZER_32,
-          EQUALIZER_64,
+      case EQUALIZER_64,
           EQUALIZER_125,
           EQUALIZER_250,
           EQUALIZER_500,
@@ -1933,13 +1944,39 @@ public class SelectorController implements UserInputEventListener {
     pipeline.returnFeedback(
         eventId,
         Feedback.sound(isNext ? R.raw.next_reading_control : R.raw.previous_reading_control));
-    Object entry = entries.get(index);
+    selectRotorEntry(eventId, entries.get(index), announceType, showOverlay);
+    return true;
+  }
+
+  /**
+   * Selects the first reading control of the list that next and previous reading control go
+   * through, and announces it as they do. For selecting the setting via gesture.
+   */
+  public void selectFirstSetting(EventId eventId, AnnounceType announceType) {
+    applyPendingSwitch();
+    @Nullable Object entry = firstRotorEntry();
+    if (entry == null) {
+      return;
+    }
+    pipeline.returnFeedback(eventId, Feedback.sound(R.raw.previous_reading_control));
+    selectRotorEntry(eventId, entry, announceType, /* showOverlay= */ true);
+    analytics.onSelectorEvent();
+  }
+
+  /** The first of the reading controls that gestures move through, or null if there are none. */
+  @VisibleForTesting
+  @Nullable Object firstRotorEntry() {
+    List<Object> entries = rotorEntries();
+    return entries.isEmpty() ? null : entries.get(0);
+  }
+
+  private void selectRotorEntry(
+      EventId eventId, Object entry, AnnounceType announceType, boolean showOverlay) {
     if (entry instanceof Setting setting) {
       setCurrentSetting(eventId, setting, announceType, showOverlay);
     } else {
       selectScriptControl(eventId, (ScriptReadingControl) entry, announceType, showOverlay);
     }
-    return true;
   }
 
   /**
@@ -2686,6 +2723,30 @@ public class SelectorController implements UserInputEventListener {
     return adjustSelectedSettingGestureNames;
   }
 
+  /**
+   * Changes the value of the selected reading control, as {@link #adjustSelectedSetting(EventId,
+   * boolean)} does, for a swipe: a value such as a slider's goes up when {@code swipeIncreases} is
+   * true and down when it is false. Null leaves it to {@code isNext}.
+   */
+  public void adjustSelectedSetting(
+      EventId eventId, boolean isNext, @Nullable Boolean swipeIncreases) {
+    @Nullable Boolean previous = this.swipeIncreases;
+    this.swipeIncreases = swipeIncreases;
+    try {
+      adjustSelectedSetting(eventId, isNext);
+    } finally {
+      this.swipeIncreases = previous;
+    }
+  }
+
+  /**
+   * Whether adjusting a reading control with {@code isNext} increases a value, such as a slider's or
+   * Speech rate's.
+   */
+  private boolean increases(boolean isNext) {
+    return SwipeValueDirection.commandIncreases(isNext, swipeIncreases);
+  }
+
   /** Change the value of the selected setting or scroll forward/backard of the seeker. */
   public void adjustSelectedSetting(EventId eventId, boolean isNext) {
     applyPendingSwitch();
@@ -2779,9 +2840,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case SPEECH_RATE -> {
-        // TODO: Increase speech rate when swipe-up is assigned to the selected setting's
-        // previous action, which will be the default assignment.
-        changeSpeechRate(eventId, !isNext);
+        changeSpeechRate(eventId, increases(isNext));
         return;
       }
       case LANGUAGE -> {
@@ -2825,13 +2884,15 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case CHANGE_ACCESSIBILITY_VOLUME -> {
-        changeAccessibilityVolume(eventId, isNext);
+        changeAccessibilityVolume(eventId, /* decreaseVolume= */ !increases(isNext));
         return;
       }
       case MEDIA_VOLUME, CALL_VOLUME, RING_VOLUME, NOTIFICATION_VOLUME, ALARM_VOLUME -> {
         String displayText =
             StreamVolumeControl.change(
-                context, STREAM_VOLUMES.get(currentSetting).stream, /* lower= */ isNext);
+                context,
+                STREAM_VOLUMES.get(currentSetting).stream,
+                /* lower= */ !increases(isNext));
         announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
         showQuickMenuActionOverlay(eventId, displayText);
         return;
@@ -2851,7 +2912,7 @@ public class SelectorController implements UserInputEventListener {
         return;
       }
       case CHANGE_BRIGHTNESS -> {
-        changeBrightness(eventId, /* increase= */ !isNext);
+        changeBrightness(eventId, /* increase= */ increases(isNext));
         return;
       }
       case CHANGE_TOUCH_FOCUS_LATENCY -> {
@@ -2890,6 +2951,12 @@ public class SelectorController implements UserInputEventListener {
         changeAudioOutput(eventId, isNext);
         return;
       }
+      case AI_SERVICE -> {
+        String displayText = AiServiceControl.change(context, prefs, isNext);
+        announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
+        showQuickMenuActionOverlay(eventId, displayText);
+        return;
+      }
       case VERTICAL_NAVIGATION -> {
         moveVertically(eventId, isNext);
         return;
@@ -2902,8 +2969,7 @@ public class SelectorController implements UserInputEventListener {
         switchEqualizerOnOrOff(eventId, getAdjustSelectedSettingGestures());
         return;
       }
-      case EQUALIZER_32,
-          EQUALIZER_64,
+      case EQUALIZER_64,
           EQUALIZER_125,
           EQUALIZER_250,
           EQUALIZER_500,
@@ -2914,7 +2980,7 @@ public class SelectorController implements UserInputEventListener {
           EQUALIZER_6K,
           EQUALIZER_8K,
           EQUALIZER_16K -> {
-        changeEqualizerGain(eventId, EQUALIZER_BANDS.indexOf(currentSetting), !isNext);
+        changeEqualizerGain(eventId, EQUALIZER_BANDS.indexOf(currentSetting), increases(isNext));
         return;
       }
       case GESTURE_PROFILE -> {
@@ -3202,7 +3268,7 @@ public class SelectorController implements UserInputEventListener {
 
   private void handleAdjustable(EventId eventId, boolean isNext) {
     pipeline.returnFeedback(
-        eventId, Feedback.adjustValue(isNext ? DECREASE_VALUE : INCREASE_VALUE));
+        eventId, Feedback.adjustValue(increases(isNext) ? INCREASE_VALUE : DECREASE_VALUE));
   }
 
   private void navigateTypo(EventId eventId, boolean isNext) {
@@ -3259,7 +3325,6 @@ public class SelectorController implements UserInputEventListener {
   /** The reading controls of the equalizer bands, in the order of {@link SpeechEqualizer}. */
   private static final ImmutableList<Setting> EQUALIZER_BANDS =
       ImmutableList.of(
-          Setting.EQUALIZER_32,
           Setting.EQUALIZER_64,
           Setting.EQUALIZER_125,
           Setting.EQUALIZER_250,
@@ -3273,7 +3338,6 @@ public class SelectorController implements UserInputEventListener {
           Setting.EQUALIZER_16K);
 
   private static final int[] EQUALIZER_BAND_TITLES = {
-    R.string.title_selector_equalizer_32,
     R.string.title_selector_equalizer_64,
     R.string.title_selector_equalizer_125,
     R.string.title_selector_equalizer_250,

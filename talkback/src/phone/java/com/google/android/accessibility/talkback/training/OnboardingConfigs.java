@@ -103,7 +103,7 @@ final class OnboardingConfigs {
           .captureGesture(
               AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP_AND_HOLD,
               R.string.new_shortcut_gesture_selection_mode_on_announcement);
-  // SandFly 0.6.0: a page for each area, with a heading for each feature. Each release replaces
+  // SandFly 0.7.0: a page for each area, with a heading for each feature. Each release replaces
   // these pages and raises NEW_FEATURE_SHOWN_KEY in OnboardingInitiator, so that they show once
   // after the update.
   static final PageConfig.Builder sandflyAi = sandflyAiPage();
@@ -111,80 +111,78 @@ final class OnboardingConfigs {
   /** The SandFly Pro features show only in builds with SandFly Pro. */
   private static PageConfig.Builder sandflyAiPage() {
     PageConfig.Builder page =
-        PageConfig.builder(PAGE_ID_SANDFLY_AI, R.string.new_features_0_6_0_ai_title);
+        PageConfig.builder(PAGE_ID_SANDFLY_AI, R.string.new_features_0_7_0_scripts_title);
     if (SandflyAi.isAvailable()) {
-      page.addHeading(R.string.new_features_0_6_0_agent_heading)
-          .addText(R.string.new_features_0_6_0_agent)
-          .addHeading(R.string.new_features_0_6_0_usage_heading)
-          .addText(R.string.new_features_0_6_0_usage);
+      page.addHeading(R.string.new_features_0_7_0_script_agent_heading)
+          .addText(R.string.new_features_0_7_0_script_agent);
     }
-    return page.addHeading(R.string.new_features_0_6_0_voice_commands_heading)
-        .addText(R.string.new_features_0_6_0_voice_commands)
-        .addHeading(R.string.new_features_0_6_0_ai_services_heading)
-        .addText(R.string.new_features_0_6_0_ai_services);
+    return page.addHeading(R.string.new_features_0_7_0_script_builder_heading)
+        .addText(R.string.new_features_0_7_0_script_builder)
+        .addHeading(R.string.new_features_0_7_0_macro_recorder_heading)
+        .addText(R.string.new_features_0_7_0_macro_recorder)
+        .addHeading(R.string.new_features_0_7_0_macros_apps_heading)
+        .addText(R.string.new_features_0_7_0_macros_apps);
   }
 
   static final PageConfig.Builder sandflyNavigation =
-      PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_6_0_navigation_title)
-          .addHeading(R.string.new_features_0_6_0_scroll_ahead_heading)
-          .addText(R.string.new_features_0_6_0_scroll_ahead)
-          .addHeading(R.string.new_features_0_6_0_values_heading)
-          .addText(R.string.new_features_0_6_0_values)
-          .addHeading(R.string.new_features_0_6_0_clipboard_control_heading)
-          .addText(R.string.new_features_0_6_0_clipboard_control)
-          .addHeading(R.string.new_features_0_6_0_custom_controls_heading)
-          .addText(R.string.new_features_0_6_0_custom_controls)
-          .addHeading(R.string.new_features_0_6_0_volume_controls_heading)
-          .addText(R.string.new_features_0_6_0_volume_controls);
+      PageConfig.builder(PAGE_ID_SANDFLY_COMMANDS, R.string.new_features_0_7_0_gestures_title)
+          .addHeading(R.string.new_features_0_7_0_tap_swipe_heading)
+          .addText(R.string.new_features_0_7_0_tap_swipe)
+          .addHeading(R.string.new_features_0_7_0_angle_heading)
+          .addText(R.string.new_features_0_7_0_angle)
+          .addHeading(R.string.new_features_0_7_0_three_part_heading)
+          .addText(R.string.new_features_0_7_0_three_part)
+          .addHeading(R.string.new_features_0_7_0_two_stroke_heading)
+          .addText(R.string.new_features_0_7_0_two_stroke)
+          .addHeading(R.string.new_features_0_7_0_shake_heading)
+          .addText(R.string.new_features_0_7_0_shake)
+          .addHeading(R.string.new_features_0_7_0_touch_lock_heading)
+          .addText(R.string.new_features_0_7_0_touch_lock)
+          .addHeading(R.string.new_features_0_7_0_double_tap_taps_heading)
+          .addText(R.string.new_features_0_7_0_double_tap_taps);
 
   static final PageConfig.Builder sandflyCommands =
-      PageConfig.builder(PAGE_ID_SANDFLY_OTHER, R.string.new_features_0_6_0_commands_title)
-          .addHeading(R.string.new_features_0_6_0_macros_heading)
-          .addText(R.string.new_features_0_6_0_macros)
-          .addHeading(R.string.new_features_0_6_0_menus_heading)
-          .addText(R.string.new_features_0_6_0_menus)
-          .addHeading(R.string.new_features_0_6_0_profiles_heading)
-          .addText(R.string.new_features_0_6_0_profiles)
-          .addHeading(R.string.new_features_0_6_0_files_heading)
-          .addText(R.string.new_features_0_6_0_files)
-          .addHeading(R.string.new_features_0_6_0_speech_history_heading)
-          .addText(R.string.new_features_0_6_0_speech_history)
-          .addHeading(R.string.new_features_0_6_0_copy_text_heading)
-          .addText(R.string.new_features_0_6_0_copy_text)
-          .addHeading(R.string.new_features_0_6_0_commands_heading)
-          .addText(R.string.new_features_0_6_0_commands);
+      PageConfig.builder(PAGE_ID_SANDFLY_OTHER, R.string.new_features_0_7_0_navigation_title)
+          .addHeading(R.string.new_features_0_7_0_wrap_heading)
+          .addText(R.string.new_features_0_7_0_wrap)
+          .addHeading(R.string.new_features_0_7_0_inner_text_heading)
+          .addText(R.string.new_features_0_7_0_inner_text)
+          .addHeading(R.string.new_features_0_7_0_own_speech_heading)
+          .addText(R.string.new_features_0_7_0_own_speech)
+          .addHeading(R.string.new_features_0_7_0_continuous_copy_heading)
+          .addText(R.string.new_features_0_7_0_continuous_copy)
+          .addHeading(R.string.new_features_0_7_0_sheets_heading)
+          .addText(R.string.new_features_0_7_0_sheets)
+          .addHeading(R.string.new_features_0_7_0_commands_heading)
+          .addText(R.string.new_features_0_7_0_commands);
 
   static final PageConfig.Builder sandflyTouch =
-      PageConfig.builder(PAGE_ID_SANDFLY_GESTURES, R.string.new_features_0_6_0_touch_title)
-          .addHeading(R.string.new_features_0_6_0_corners_heading)
-          .addText(R.string.new_features_0_6_0_corners)
-          .addHeading(R.string.new_features_0_6_0_swipes_before_lift_heading)
-          .addText(R.string.new_features_0_6_0_swipes_before_lift)
-          .addHeading(R.string.new_features_0_6_0_gesture_start_heading)
-          .addText(R.string.new_features_0_6_0_gesture_start)
-          .addHeading(R.string.new_features_0_6_0_edge_click_heading)
-          .addText(R.string.new_features_0_6_0_edge_click)
-          .addHeading(R.string.new_features_0_6_0_cursor_heading)
-          .addText(R.string.new_features_0_6_0_cursor)
-          .addHeading(R.string.new_features_0_6_0_clipboard_edit_heading)
-          .addText(R.string.new_features_0_6_0_clipboard_edit)
-          .addHeading(R.string.new_features_0_6_0_capitalize_heading)
-          .addText(R.string.new_features_0_6_0_capitalize);
+      PageConfig.builder(PAGE_ID_SANDFLY_GESTURES, R.string.new_features_0_7_0_typing_title)
+          .addHeading(R.string.new_features_0_7_0_keyboard_heading)
+          .addText(R.string.new_features_0_7_0_keyboard)
+          .addHeading(R.string.new_features_0_7_0_keyboard_phone_heading)
+          .addText(R.string.new_features_0_7_0_keyboard_phone)
+          .addHeading(R.string.new_features_0_7_0_hold_keys_heading)
+          .addText(R.string.new_features_0_7_0_hold_keys)
+          .addHeading(R.string.new_features_0_7_0_braille_commands_heading)
+          .addText(R.string.new_features_0_7_0_braille_commands)
+          .addHeading(R.string.new_features_0_7_0_braille_keyboard_heading)
+          .addText(R.string.new_features_0_7_0_braille_keyboard);
 
   static final PageConfig.Builder sandflySpeech =
-      PageConfig.builder(PAGE_ID_SANDFLY_SPEECH, R.string.new_features_0_6_0_speech_title)
-          .addHeading(R.string.new_features_0_6_0_voices_by_language_heading)
-          .addText(R.string.new_features_0_6_0_voices_by_language)
-          .addHeading(R.string.new_features_0_6_0_emoji_heading)
-          .addText(R.string.new_features_0_6_0_emoji)
-          .addHeading(R.string.new_features_0_6_0_line_breaks_heading)
-          .addText(R.string.new_features_0_6_0_line_breaks)
-          .addHeading(R.string.new_features_0_6_0_presets_heading)
-          .addText(R.string.new_features_0_6_0_presets)
-          .addHeading(R.string.new_features_0_6_0_volume_keys_heading)
-          .addText(R.string.new_features_0_6_0_volume_keys)
-          .addHeading(R.string.new_features_0_6_0_notifications_heading)
-          .addText(R.string.new_features_0_6_0_notifications);
+      PageConfig.builder(PAGE_ID_SANDFLY_SPEECH, R.string.new_features_0_7_0_speech_title)
+          .addHeading(R.string.new_features_0_7_0_voice_effects_heading)
+          .addText(R.string.new_features_0_7_0_voice_effects)
+          .addHeading(R.string.new_features_0_7_0_punctuation_heading)
+          .addText(R.string.new_features_0_7_0_punctuation)
+          .addHeading(R.string.new_features_0_7_0_battery_heading)
+          .addText(R.string.new_features_0_7_0_battery)
+          .addHeading(R.string.new_features_0_7_0_notifications_heading)
+          .addText(R.string.new_features_0_7_0_notifications)
+          .addHeading(R.string.new_features_0_7_0_volume_keys_heading)
+          .addText(R.string.new_features_0_7_0_volume_keys)
+          .addHeading(R.string.new_features_0_7_0_user_guide_heading)
+          .addText(R.string.new_features_0_7_0_user_guide);
 
   // For TB 16.2
   static final PageConfig.Builder updateWelcome =

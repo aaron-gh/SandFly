@@ -243,8 +243,9 @@ object GuideMarkdown {
           titleSkipped = true
           continue
         }
-        val textOfHeading = heading.groupValues[2]
-        var id = gitHubSlug(textOfHeading)
+        val rawHeading = heading.groupValues[2]
+        val textOfHeading = rawHeading.replace(HEADING_ID, "")
+        var id = HEADING_ID.find(rawHeading)?.groupValues?.get(1) ?: gitHubSlug(textOfHeading)
         val seen = slugs[id]
         slugs[id] = (seen ?: 0) + 1
         if (seen != null) id += "-$seen"
@@ -417,7 +418,16 @@ object GuideMarkdown {
     }
 
     private fun paragraphText(text: String, html: StringBuilder) {
-      if (text.startsWith("Note:") || text.startsWith("**Note:**")) {
+      if (
+        text.startsWith("Note:") ||
+          text.startsWith("**Note:**") ||
+          text.startsWith("Catatan:") ||
+          text.startsWith("**Catatan:**") ||
+          text.startsWith("Opmerking:") ||
+          text.startsWith("**Opmerking:**") ||
+          text.startsWith("Uwaga:") ||
+          text.startsWith("**Uwaga:**")
+      ) {
         html.append("<p class=\"note\">").append(Inline.render(text, byId)).append("</p>\n")
       } else {
         html.append("<p>").append(Inline.render(text, byId)).append("</p>\n")

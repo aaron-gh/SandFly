@@ -45,7 +45,7 @@ Under **Settings of** the theme in use:
     control it is. A control's vibration plays even with **Sound feedback** off, so you can learn
     the kinds of control by touch alone. A kind of control whose sound the theme sets to no sound
     plays the focus sound with its own vibration, and SandFly says what kind of control it is.
-*   **3D audio** sets when control sounds play in 3D: with headphones, always, or never.
+*   **3D audio** sets when control sounds play in 3D: with headphones, always, never, or with headphones and centred otherwise.
 *   **Still say the kind of control** says the kind of control, such as "button", after its
     sound. It is on by default for SandFly's theme and off for others.
 *   **Sounds** lists every sound, where you can replace any of them with a sound file of your own,
@@ -133,7 +133,7 @@ Every field is optional.
 | `license` | The license of the sounds, such as `GPL-2.0` or `CC0-1.0`. Include its text in the theme too. |
 | `website` | Where to find out more, or get updates. |
 | `settings.control_sounds` | `true` or `false`: whether control sounds and vibrations are on with this theme. Without it, they are on when the theme has a control sound or a control vibration. |
-| `settings.3d_audio` | `"headphones"`, `"always"` or `"never"`: when control sounds play in 3D. Without it, `"headphones"`. |
+| `settings.3d_audio` | `"headphones"`, `"always"`, `"never"` or `"headphones_centred"`: when control sounds play in 3D. `"headphones_centred"` plays them in 3D with headphones and from the centre otherwise. Without it, `"headphones"`. |
 | `settings.speak_roles` | `true` or `false`: whether the kind of control is still said after its control sound. Without it, `false`. |
 | `sounds` | Settings for sounds by event name, such as `"scroll_tone": "none"` to play no sound for an event. |
 | `vibrations` | The theme's own vibrations, by the name of the sound they play with. See below. |
@@ -148,6 +148,7 @@ play is left out when the theme is installed, and SandFly says so.
 | --- | --- |
 | `focus` | Focus on an item |
 | `focus_actionable` | Focus on an actionable item |
+| `actions_available` | Focus on an item with actions of its app, such as Reply on a chat message |
 | `view_entered` | Touching an empty area |
 | `tick` | Click |
 | `long_clicked` | Long press |
@@ -254,6 +255,14 @@ selection. `radial_menu` replaces the vibrations of all eight circle menu notes.
 plays the vibration of `hyperlink`, but a theme can give it one of its own. `column_wrap` and
 `column_wrap_back` play with the focus sound, and their vibrations play in place of the focus
 vibration.
+
+`actions_available` has no vibration of SandFly's own; a theme can give it one. It plays for an
+item with custom actions of its app, which have a label and an ID
+that isn't one of Android's, such as Reply and Forward on a chat message. Android's actions, such as
+click, long click, scroll, expand and dismiss, don't count, and neither do keys of on-screen
+keyboards. **Sound and vibration** > **Actions available sound** turns it **Off** or sets when it plays: **When the
+item gets focus**, after the focus sound, with its vibration in place of the focus vibration, or
+**After the item is spoken**.
 
 These vibrations have no sound, and a theme replaces them by these names:
 

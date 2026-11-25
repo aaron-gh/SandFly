@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> éléments copiés</string>
     <string name="script_tree_none">Aucune fenêtre à copier</string>
     <string name="script_tree_clip_label">Arborescence de l\'écran</string>
-    <string name="summary_copy_screen_tree_menu">Copier tous les éléments à l\'écran au format JSON, pour l\'écriture de scripts</string>
+    <string name="summary_copy_screen_tree_menu">Copier tous les éléments à l\'écran au format texte, pour l\'écriture de scripts</string>
     <string name="script_inspect_clip_label">Détails de l\'élément</string>
-    <string name="summary_inspect_item_menu">Énoncer et copier les détails de l\'élément sélectionné, pour l\'écriture de scripts</string>
+    <string name="summary_inspect_item_menu">Afficher les détails de l\'élément sélectionné, pour l\'écriture de scripts et de macros</string>
     <string name="script_keys_backtalk_modifier">Touche de modification SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, puis <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Commandes</string>
@@ -169,4 +169,17 @@
     <string name="item_details_script">Détails pour les scripts</string>
     <string name="item_details_app">Application</string>
     <string name="script_permission_system">Revenir en arrière ou à l\'écran d\'accueil, ouvrir les notifications, lister et ouvrir les applications, ouvrir les paramètres et les liens, envoyer des intents aux applications, modifier le volume, le mode de sonnerie et les paramètres de l\'appareil tels que le Wi-Fi et la lampe de poche, contrôler les médias, régler des minuteries et des alarmes, et lancer des appels et des messages</string>
+    <string name="script_from_code">Saisi dans SandFly.</string>
+    <string name="script_code_view">Afficher le code</string>
+    <string name="script_code_edit">Modifier le code</string>
+    <string name="script_code_new">Nouveau script à partir du code</string>
+    <string name="script_code_field">Code</string>
+    <string name="script_code_save">Enregistrer</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> enregistré</string>
+    <string name="script_code_not_saved">Script non enregistré</string>
+    <string name="script_code_id_changed">L\'id du manifeste doit rester <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Impossible de lire le code.</string>
+    <string name="script_code_discard_title">Supprimer les modifications ?</string>
+    <string name="script_code_discard">Supprimer</string>
+    <string name="script_code_keep_editing">Continuer à modifier</string>
 </resources>

@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> आइटम कॉपी किए गए</string>
     <string name="script_tree_none">कॉपी करने के लिए कोई विंडो नहीं है</string>
     <string name="script_tree_clip_label">स्क्रीन ट्री</string>
-    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लिखने के लिए, स्क्रीन पर मौजूद सभी आइटम JSON के तौर पर कॉपी करें</string>
+    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लिखने के लिए, स्क्रीन पर मौजूद सभी आइटम टेक्स्ट के तौर पर कॉपी करें</string>
     <string name="script_inspect_clip_label">आइटम की जानकारी</string>
-    <string name="summary_inspect_item_menu">स्क्रिप्ट लिखने के लिए, जिस आइटम पर आप थे उसकी जानकारी बोलें और कॉपी करें</string>
+    <string name="summary_inspect_item_menu">स्क्रिप्ट और मैक्रो लिखने के लिए, जिस आइटम पर आप थे उसकी जानकारी दिखाएं</string>
     <string name="script_keys_backtalk_modifier">SandFly मॉडिफ़ायर</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, फिर <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">निर्देश</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">स्क्रिप्ट के लिए जानकारी</string>
     <string name="item_details_app">ऐप्लिकेशन</string>
     <string name="script_permission_system">वापस या होम पर जाना, सूचनाएं खोलना, ऐप्लिकेशन की सूची दिखाना, ऐप्लिकेशन, सेटिंग और लिंक खोलना, ऐप्लिकेशन को Intent भेजना, आवाज़, रिंगर मोड और Wi-Fi व टॉर्च जैसी डिवाइस सेटिंग बदलना, मीडिया कंट्रोल करना, टाइमर और अलार्म सेट करना, और कॉल व मैसेज शुरू करना</string>
+    <string name="script_from_code">SandFly में डाली गई.</string>
+    <string name="script_code_view">कोड देखें</string>
+    <string name="script_code_edit">कोड में बदलाव करें</string>
+    <string name="script_code_new">कोड से नई स्क्रिप्ट</string>
+    <string name="script_code_field">कोड</string>
+    <string name="script_code_save">सेव करें</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> सेव की गई</string>
+    <string name="script_code_not_saved">स्क्रिप्ट सेव नहीं की गई</string>
+    <string name="script_code_id_changed">मेनिफ़ेस्ट का id <xliff:g id="id">%1$s</xliff:g> ही रहना चाहिए.</string>
+    <string name="script_code_load_failed">कोड पढ़ा नहीं जा सका.</string>
+    <string name="script_code_discard_title">बदलाव खारिज करें?</string>
+    <string name="script_code_discard">खारिज करें</string>
+    <string name="script_code_keep_editing">बदलाव करना जारी रखें</string>
 </resources>

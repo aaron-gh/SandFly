@@ -81,4 +81,10 @@
     <string name="sound_theme_source_failed">Ääniteemojen lataaminen epäonnistui. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">Siitä asennetut ääniteemat pysyvät asennettuina.</string>
     <string name="theme_sound_volume_change">Äänenvoimakkuuden muutos</string>
+    <string name="theme_sound_choose_from_folder">Valitse kansiosta</string>
+    <string name="theme_sound_change_folder">Vaihda kansio</string>
+    <string name="theme_sound_parent_folder">Yläkansio</string>
+    <string name="theme_sound_folder_entry"><xliff:g id="folder" example="Clicks">%1$s</xliff:g>, kansio</string>
+    <string name="theme_sound_folder_empty">Tässä kansiossa ei ole äänitiedostoja.</string>
+    <string name="theme_sound_folder_failed">Kansiota ei voi lukea.</string>
 </resources>

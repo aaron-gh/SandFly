@@ -79,4 +79,20 @@
     <string name="menu_reset">ഡിഫോൾട്ടിലേക്ക് പുനഃസജ്ജമാക്കുക</string>
     <string name="menu_reset_confirm">SandFly മെനു അതിന്റെ ഡിഫോൾട്ട് ഇനങ്ങളിലേക്കും ക്രമത്തിലേക്കും പുനഃസജ്ജമാക്കണോ?</string>
     <string name="menu_assign">ജെസ്‌ച്ചറുകളും കീബോർഡ് കുറുക്കുവഴിയും</string>
+    <string name="shortcut_app_gestures_for_app">ഈ ആപ്പിനുള്ള ജെസ്‌ചറുകൾ</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku, റൂട്ട്</string>
+    <string name="title_pref_use_root">Shizuku-വിന് പകരം റൂട്ട് ഉപയോഗിക്കുക</string>
+    <string name="command_perform_gesture">ജെസ്‌ച്ചർ ചെയ്യുക</string>
+    <string name="command_perform_gesture_message">ജെസ്‌ച്ചർ ചെയ്യുക.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> അസൈൻ ചെയ്യാനാകില്ല</string>
+    <string name="command_run">കമാൻഡ് റൺ ചെയ്യുക</string>
+    <string name="command_add_to_sandfly_menu">SandFly മെനുവിലേക്ക് ചേർക്കുക</string>
+    <string name="command_remove_from_sandfly_menu">SandFly മെനുവിൽ നിന്ന് നീക്കം ചെയ്യുക</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly മെനുവിലേക്ക് ചേർത്തു</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly മെനുവിൽ നിന്ന് നീക്കം ചെയ്തു</string>
+    <string name="commands_search_hint">കമാൻഡുകൾ തിരയുക</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> കമാൻഡ്</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> കമാൻഡുകൾ</item>
+    </plurals>
 </resources>

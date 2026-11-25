@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Adaugă un caracter</string>
+    <string name="custom_braille_characters_text">Caracter sau text</string>
+    <string name="custom_braille_characters_cells">Puncte</string>
+    <string name="custom_braille_characters_table">Tabel braille</string>
+    <string name="custom_braille_characters_cells_help">Numerele punctelor fiecărei celule, cu celulele separate prin cratime, de exemplu 2356 sau 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Introdu numere de puncte de la 1 la 8, cel mult <xliff:g id="number" example="20">%1$d</xliff:g> celule</string>
+    <string name="custom_braille_characters_invalid_text">Introdu între 1 și <xliff:g id="number" example="50">%1$d</xliff:g> caractere</string>
+</resources>

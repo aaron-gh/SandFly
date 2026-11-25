@@ -99,9 +99,9 @@
   <string name="script_tree_copied">Скопировано элементов: <xliff:g id="count">%1$d</xliff:g></string>
   <string name="script_tree_none">Нет окна для копирования</string>
   <string name="script_tree_clip_label">Дерево экрана</string>
-  <string name="summary_copy_screen_tree_menu">Скопировать все элементы экрана в формате JSON для написания скриптов</string>
+    <string name="summary_copy_screen_tree_menu">Скопировать все элементы экрана в виде текста для написания скриптов</string>
   <string name="script_inspect_clip_label">Сведения об элементе</string>
-  <string name="summary_inspect_item_menu">Озвучить и скопировать сведения об элементе, на котором находился фокус, для написания скриптов</string>
+    <string name="summary_inspect_item_menu">Показать сведения об элементе, на котором находился фокус, для написания скриптов и макросов</string>
   <string name="script_keys_backtalk_modifier">Клавиша-модификатор SandFly</string>
   <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, затем <xliff:g id="second">%2$s</xliff:g></string>
   <string name="script_commands_category">Команды</string>
@@ -170,4 +170,17 @@
     <string name="item_details_script">Сведения для скриптов</string>
     <string name="item_details_app">Приложение</string>
     <string name="script_permission_system">Возвращаться назад и на главный экран, открывать уведомления, показывать список приложений, открывать приложения, настройки и ссылки, отправлять приложениям объекты Intent, менять громкость, режим звонка и настройки устройства, такие как Wi-Fi и фонарик, управлять воспроизведением мультимедиа, устанавливать таймеры и будильники, а также совершать звонки и создавать сообщения</string>
+    <string name="script_from_code">Введён в SandFly.</string>
+    <string name="script_code_view">Просмотреть код</string>
+    <string name="script_code_edit">Изменить код</string>
+    <string name="script_code_new">Новый скрипт из кода</string>
+    <string name="script_code_field">Код</string>
+    <string name="script_code_save">Сохранить</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g>: сохранено</string>
+    <string name="script_code_not_saved">Скрипт не сохранён</string>
+    <string name="script_code_id_changed">Идентификатор в манифесте должен остаться <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Не удалось прочитать код.</string>
+    <string name="script_code_discard_title">Не сохранять изменения?</string>
+    <string name="script_code_discard">Не сохранять</string>
+    <string name="script_code_keep_editing">Продолжить</string>
 </resources>

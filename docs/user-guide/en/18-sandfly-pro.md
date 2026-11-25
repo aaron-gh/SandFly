@@ -98,7 +98,7 @@ The AI agent carries out a task in the app in front, through taps, swipes, typin
 2. Run **Start or stop AI agent task**. SandFly starts recording.
 3. Say the task, such as "start a new game". When you stop speaking, SandFly says "Agent started."
 
-To type the task instead, run **Type AI agent task**. In the **AI agent task** window, type what the agent should do and choose **Start**, or choose **Speak** to record it.
+To type the task instead, run **Type AI agent task**. In the **AI agent task** window, type what the agent should do and choose **Start**, or choose **Speak** to record it. The same window opens when recording can't start. While a task runs, **Type AI agent task** says "An agent task is running."
 
 While the agent works, SandFly reads what the agent reports, plays a sound when it starts, asks and ends, and reads a summary at the end: "Task finished." or "Task not completed."
 
@@ -126,7 +126,7 @@ The agent stops by itself after a limit of steps or time, and SandFly says so.
 
 - The agent needs Android 11 or later.
 - Windows that block screenshots, such as some banking apps, send only their items.
-- In apps without a text field, such as games, typing needs Shizuku, and so do keys other than Back, Home and Enter. See [](#updates).
+- In apps without a text field, such as games, typing needs Shizuku, and so do keys other than Back, Home and Enter. See [](#updates-shizuku).
 
 ### Screen recognition {#pro-screen-recognition}
 
@@ -137,7 +137,9 @@ To recognize a screen:
 1. Open the app.
 2. Choose **Recognize screen** in the SandFly menu, or run the command **Recognize screen**.
 
-SandFly says "Recognizing screen", then the number of items found, such as "7 recognized items", or "No items recognized". Later screens of the same app are recognized as they change, until another app comes to the front.
+SandFly says "Recognizing screen", then the number of items found, such as "7 recognized items", or "No items recognized". Later screens of the same app are recognized as they change, until another app or the home screen comes to the front.
+
+To stop recognition in the app and remove the recognized items, choose **Turn off screen recognition in** and the name of the app in the SandFly menu, or run **Turn screen recognition on or off in the current app**.
 
 To have every screen of an app recognized:
 
@@ -158,11 +160,11 @@ The script agent writes a SandFly script from a description, and tests it on the
 2. Go to **Scripts** and choose **Build a script with SandFly Pro**, or run the command **Build a script with SandFly Pro**.
 3. Read the dialog **Scripts and the usage limit**, which says how much of the monthly limit is used, and choose **Agree and continue**.
 4. In **Build a script**, type what the script should do and in which app, and choose **Start**. SandFly says "Building the script".
-5. When the notification **SandFly Pro is waiting for a screen** appears, open the screen that the agent requests, then choose **Done** in the notification, or run **Build a script with SandFly Pro** again. When the agent requests a test, such as of a gesture, try it in the app, then choose **Done**.
+5. When the notification **SandFly Pro is waiting for a screen** appears, open the screen that the agent requests, then choose **Done** in the notification, or run **Build a script with SandFly Pro** again. When the agent requests a test, such as of a gesture, the notification **SandFly Pro is building a script** shows the request: try it in the app, then choose **Done**, or choose **Reply** and describe what happened.
 6. To send the agent a message instead, such as to skip a screen or to stop and keep what it has, choose **Reply** in the notification.
 
-While the script is built, the notification **SandFly Pro is building a script** has **Stop**. If you added **Build a script with SandFly Pro** to the SandFly menu, the menu item is **Stop the SandFly Pro agent** while the agent works. While the agent works and doesn't wait for you, **Build a script with SandFly Pro** also stops it. When the agent finishes or is stopped, the script opens in the script builder under **Written by SandFly Pro**, with a summary and **Accept**, **Ask for changes** and **Discard**. Until you accept it, the script runs without the network and Java permissions.
+While the script is built, the notification **SandFly Pro is building a script** has **Reply** and **Stop**. **Reply** sends a message that the agent reads with its next step. If you added **Build a script with SandFly Pro** to the SandFly menu, the menu item is **Stop the SandFly Pro agent** while the agent works. While the agent works and doesn't wait for you, **Build a script with SandFly Pro** also stops it. When the agent finishes or is stopped, the script opens in the script builder under **Written by SandFly Pro**, with a summary and **Accept**, **Ask for changes** and **Discard**. Until you accept it, the script runs without the network and Java permissions. When the agent saved no script, SandFly says "No script was saved".
 
 To change a built script, choose **Change with SandFly Pro** on its page or in the script builder.
 
-Building a script uses much more of the monthly usage limit than an agent task. One script can use a large part of it. For scripts and the script builder, see [](#scripts).
+Building a script uses much more of the monthly usage limit than an agent task. One script can use a large part of it. Each script has a spending limit of its own: when it is reached, the agent saves what works and finishes, and the summary lists what isn't done. For scripts and the script builder, see [](#scripts).

@@ -95,6 +95,11 @@ public class EventManager implements EventConsumer {
   private final FeedbackManager feedbackManager;
   private final PopUpHistory popUpHistory;
   private EventConsumer currentConsumer;
+  /**
+   * Whether the editor consumer was active after the default consumer, so the common display
+   * content no longer shows the focused node.
+   */
+  private boolean editorActiveSinceDefault;
   private boolean windowActive;
   private boolean learningModeActive;
   private static final String LEARNING_MODE_CLASS_NAME =
@@ -270,7 +275,18 @@ public class EventManager implements EventConsumer {
     if (currentConsumer != consumer) {
       currentConsumer.onDeactivate();
       currentConsumer = consumer;
-      currentConsumer.onActivate();
+      if (consumer == defaultConsumer && !editorActiveSinceDefault) {
+        // Popups, live regions and captions are timed content shown over the common content, which
+        // still shows the focused node. Keep its pan position.
+        defaultConsumer.onActivateKeepingPosition();
+      } else {
+        currentConsumer.onActivate();
+      }
+      if (consumer == editorConsumer) {
+        editorActiveSinceDefault = true;
+      } else if (consumer == defaultConsumer) {
+        editorActiveSinceDefault = false;
+      }
     }
   }
 

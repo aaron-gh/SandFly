@@ -30,6 +30,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.eventprocessor.VolumeKeyPresses
 import com.google.android.accessibility.talkback.pause.PauseController
 import com.google.android.accessibility.talkback.soundthemes.SoundThemeManifest
+import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.output.FailoverTextToSpeech
 import com.google.android.accessibility.utils.output.FeedbackController
 import com.google.android.libraries.accessibility.utils.log.LogUtils
@@ -48,6 +49,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  */
 class VolumeChangeFeedback(private val context: Context) {
   private val filter = VolumeChangeFilter()
+  private val silentSpeechVolume = SilentSpeechVolume()
   private val gate = VolumeToneGate()
   private val handler = Handler(Looper.getMainLooper())
   private val tone by lazy {
@@ -98,6 +100,11 @@ class VolumeChangeFeedback(private val context: Context) {
         context.getString(R.string.pref_volume_change_interrupts_speech_key),
         context.resources.getBoolean(R.bool.pref_volume_change_interrupts_speech_default),
       )
+    silentSpeechVolume.enabled =
+      prefs.getBoolean(
+        context.getString(R.string.pref_volume_change_silent_while_speaking_key),
+        context.resources.getBoolean(R.bool.pref_volume_change_silent_while_speaking_default),
+      )
     if (!playsTone) {
       release()
     }
@@ -133,10 +140,19 @@ class VolumeChangeFeedback(private val context: Context) {
   }
 
   /**
+   * Records a volume key press, or a repeat of a held key: [speaking] whether SandFly speaks or has
+   * speech queued, not counting its spoken volume, and [touching] whether a finger is on the screen.
+   */
+  fun onVolumeKeyDown(speaking: Boolean, touching: Boolean) {
+    silentSpeechVolume.onVolumeKeyDown(SystemClock.uptimeMillis(), speaking, touching)
+  }
+
+  /**
    * Handles a reported change of [stream], and plays the tone if it is a step made by the user and
    * neither a phone call, [phoneCallActive], nor an app call is going on. Returns whether this
    * change is to be announced. Media playback silences the tone or the announcement when the user
-   * has chosen so.
+   * has chosen so, and Change speech volume silently while speaking the announcement of a speech
+   * volume change made with the volume keys while SandFly speaks.
    */
   fun onVolumeChanged(stream: Int, value: Int, prevValue: Int, phoneCallActive: Boolean): Boolean {
     if (!playsTone && !speaksVolume) {
@@ -156,8 +172,15 @@ class VolumeChangeFeedback(private val context: Context) {
     }
     return speaksVolume &&
       (speechDuringMedia || !media) &&
-      (kind == VolumeChangeFilter.Kind.STEP || kind == VolumeChangeFilter.Kind.REPEAT)
+      (kind == VolumeChangeFilter.Kind.STEP || kind == VolumeChangeFilter.Kind.REPEAT) &&
+      !silentSpeechVolume.isSilent(stream, speechVolumeStream(), SystemClock.uptimeMillis())
   }
+
+  private fun speechVolumeStream(): Int =
+    SilentSpeechVolume.speechVolumeStream(
+      FailoverTextToSpeech.getSpeechAudioStream(context),
+      FeatureSupport.hasAccessibilityAudioStream(context),
+    )
 
   /** Releases the tone's track and player, for when the setting is turned off or SandFly stops. */
   fun release() {

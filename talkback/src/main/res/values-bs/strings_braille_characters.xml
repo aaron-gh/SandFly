@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">Dodaj znak</string>
+    <string name="custom_braille_characters_text">Znak ili tekst</string>
+    <string name="custom_braille_characters_cells">Tačke</string>
+    <string name="custom_braille_characters_table">Brajeva tabela</string>
+    <string name="custom_braille_characters_cells_help">Brojevi tačaka svake ćelije, s ćelijama odvojenim crticama, na primjer 2356 ili 456-2356.</string>
+    <string name="custom_braille_characters_invalid_cells">Unesite brojeve tačaka od 1 do 8, najviše <xliff:g id="number" example="20">%1$d</xliff:g> ćelija</string>
+    <string name="custom_braille_characters_invalid_text">Unesite od 1 do <xliff:g id="number" example="50">%1$d</xliff:g> znakova</string>
+</resources>

@@ -351,7 +351,7 @@
   <string name="shortcut_title_menu_control">Меню и элементы управления</string>
   <string name="shortcut_title_text_editing">Редактирование текста</string>
   <string name="shortcut_title_special_features">Другое</string>
-  <string name="shortcut_unassigned">Нажмите, чтобы назначить</string>
+    <string name="shortcut_unassigned">Не назначено</string>
   <string name="shortcut_not_customizable">%1$s, изменить нельзя</string>
   <string name="shortcut_disabled_due_to_vibration_watch">Недоступно, когда включено время по вибрации</string>
   <string name="shortcut_next">Следующий объект</string>
@@ -571,6 +571,8 @@
   <string name="title_pref_shortcut_up_and_left">Вверх, затем влево</string>
   <string name="title_pref_shortcut_up_and_right">Вверх, затем вправо</string>
   <string name="title_pref_shortcut_right_and_down">Вправо, затем вниз</string>
+  <string name="title_pref_shortcut_1finger_3tap">Тройное нажатие</string>
+  <string name="title_pref_shortcut_1finger_4tap">Четырёхкратное нажатие</string>
   <string name="title_pref_shortcut_right_and_up">Вправо, затем вверх</string>
   <string name="title_pref_shortcut_left_and_down">Влево, затем вниз</string>
   <string name="title_pref_shortcut_left_and_up">Влево, затем вверх</string>
@@ -1344,6 +1346,7 @@
   <string name="value_charger_connected">Зарядное устройство подключено</string>
   <string name="title_pref_screen_announcements">Включение и выключение экрана</string>
   <string name="summary_pref_screen_announcements">Выберите, что SandFly озвучивает при выключении и включении экрана, а также при разблокировке телефона</string>
+  <string name="title_pref_screen_announcements_over_media">Озвучивать во время воспроизведения медиа</string>
   <string name="title_screen_announcements_screen_off">При выключении экрана</string>
   <string name="title_screen_announcements_screen_on">При включении экрана</string>
   <string name="title_screen_announcements_unlock">При разблокировке телефона</string>
@@ -1364,7 +1367,7 @@
     <string name="summary_pref_speech_control">Разрешённые приложения могут озвучивать текст голосом SandFly. Пока устройство заблокировано, текст озвучивают только приложения, которым это разрешено и при блокировке.</string>
   <string name="title_pref_speech_control_sound">Воспроизводить звук перед озвучиванием из других приложений</string>
   <string name="speech_control_apps_category">Приложения</string>
-  <string name="speech_control_no_apps">Ни одно приложение пока не запрашивало озвучивание текста.</string>
+    <string name="speech_control_no_apps">Ни одно приложение ещё не подключилось.</string>
   <string name="speech_control_ask_title">Разрешить приложению <xliff:g id="app" example="Tasker">%1$s</xliff:g> озвучивать текст через SandFly?</string>
   <string name="speech_control_allow">Разрешить</string>
   <string name="speech_control_deny">Не разрешать</string>
@@ -1791,6 +1794,8 @@
     <string name="keycombo_menu_category_arrow_key_nav">Навигация стрелками</string>
     <string-array name="pref_dictation_auto_stop_entries">
         <item>Отключено</item>
+        <item>1 сек.</item>
+        <item>2 сек.</item>
         <item>3 секунды</item>
         <item>5 секунд</item>
         <item>10 секунд</item>
@@ -1911,13 +1916,12 @@
     <string name="shortcut_use_voice_profile">Использовать голосовой профиль <xliff:g id="name" example="English">%1$s</xliff:g></string>
     <string name="title_pref_keep_previous_voice_engine">Оставлять запущенным синтезатор речи предыдущего голосового профиля</string>
     <string name="title_pref_voice_profile_keep_engine_started">Оставлять синтезатор речи запущенным</string>
-    <string name="title_pref_speech_equalizer">Эквалайзер</string>
+    <string name="title_pref_speech_equalizer">Голосовые эффекты</string>
     <string name="title_pref_speech_equalizer_preset">Предустановка</string>
-    <string name="title_pref_speech_equalizer_on">Использовать эквалайзер</string>
+    <string name="title_pref_speech_equalizer_on">Использовать голосовые эффекты</string>
     <string name="speech_equalizer_off">Выключен</string>
-    <string name="speech_equalizer_turned_on">Эквалайзер включён</string>
-    <string name="speech_equalizer_turned_off">Эквалайзер выключен</string>
-    <string name="title_selector_equalizer_32">Эквалайзер 32 Гц</string>
+    <string name="speech_equalizer_turned_on">Голосовые эффекты включены</string>
+    <string name="speech_equalizer_turned_off">Голосовые эффекты выключены</string>
     <string name="title_selector_equalizer_64">Эквалайзер 64 Гц</string>
     <string name="title_selector_equalizer_125">Эквалайзер 125 Гц</string>
     <string name="title_selector_equalizer_250">Эквалайзер 250 Гц</string>
@@ -2015,6 +2019,7 @@
     <string name="pref_speak_list_positions_title">Произносить сведения о списках</string>
     <string name="pref_speak_grid_positions_title">Произносить сведения о сетках и таблицах</string>
     <string name="pref_speak_role_without_pause_title">Произносить тип элемента без паузы</string>
+    <string name="title_pref_speak_actions_available">Озвучивать «Доступны действия»</string>
     <string name="title_pref_overview">Использовать обзор SandFly</string>
     <string name="title_pref_overview_newest_last">Последнее приложение внизу</string>
     <string name="title_pref_overview_columns">Столбцы</string>
@@ -2204,4 +2209,636 @@
         <item quantity="many">Скопировано <xliff:g id="count" example="5">%1$d</xliff:g> объектов</item>
         <item quantity="other">Скопировано <xliff:g id="count" example="5">%1$d</xliff:g> объекта</item>
     </plurals>
+    <string name="title_share_focused_image">Поделиться изображением элемента в фокусе</string>
+    <string name="title_share_screenshot">Поделиться снимком экрана</string>
+    <string name="share_image_failed">Не удалось сделать снимок экрана</string>
+    <string name="title_pref_speech_equalizer_bands">Эквалайзер</string>
+    <string name="title_pref_speech_effect_bass_compression">Компрессия низких частот</string>
+    <string name="title_pref_speech_effect_voice_compression">Компрессия голоса</string>
+    <string name="title_pref_speech_effect_treble_compression">Компрессия высоких частот</string>
+    <string name="speech_effect_low">Низкий</string>
+    <string name="speech_effect_medium">Средний</string>
+    <string name="speech_effect_high">Высокий</string>
+    <string name="speech_equalizer_deep_bass">Глубокий бас</string>
+    <string name="title_pref_repeat_slower_by">Повторять медленнее на</string>
+    <string name="switch_languages_now_on">Автоматически переключать язык: вкл.</string>
+    <string name="switch_languages_now_off">Автоматически переключать язык: выкл.</string>
+    <string name="identify_languages_from_words_now_on">Определять язык по словам: вкл.</string>
+    <string name="identify_languages_from_words_now_off">Определять язык по словам: выкл.</string>
+    <string name="title_pref_battery_level_interval">Уровень заряда</string>
+    <string name="battery_level_every_5_percent" formatted="false">Каждые 5%</string>
+    <string name="battery_level_every_10_percent" formatted="false">Каждые 10%</string>
+    <string name="battery_level_every_15_minutes">Каждые 15 минут</string>
+    <string name="battery_level_every_30_minutes">Каждые 30 минут</string>
+    <string name="battery_level_every_hour">Каждый час</string>
+    <string name="title_pref_battery_level_voice">Голос для уровня заряда</string>
+    <string name="title_pref_announce_call_length">Сообщать длительность звонка</string>
+    <string name="template_call_ended">Звонок завершён, <xliff:g id="duration" example="3 minutes, 12 seconds">%1$s</xliff:g></string>
+    <string name="screen_on_battery_off">Выкл.</string>
+    <string name="screen_on_battery_always">Всегда</string>
+    <string name="screen_on_battery_while_charging">Только во время зарядки</string>
+    <string name="title_pref_screen_on_low_battery">Низкий заряд</string>
+    <string name="screen_on_low_battery_10" formatted="false">Ниже 10%</string>
+    <string name="screen_on_low_battery_15" formatted="false">Ниже 15%</string>
+    <string name="screen_on_low_battery_20" formatted="false">Ниже 20%</string>
+    <string name="screen_on_low_battery_30" formatted="false">Ниже 30%</string>
+    <string name="screen_on_low_battery_50" formatted="false">Ниже 50%</string>
+    <string name="permission_direct_touch_label">выбор областей, где SandFly включает прямое касание для приложения</string>
+    <string name="permission_direct_touch_description">Позволяет приложению включать или отключать прямое касание SandFly для частей своего экрана, пока оно на переднем плане. Прямое касание для приложения можно отключить в настройках SandFly.</string>
+    <string name="punctuation_none">Нет</string>
+    <string name="title_pref_punctuation_none_keep_meaning">Озвучивать символы, меняющие смысл</string>
+    <string name="title_pref_version_history">История версий</string>
+    <string name="title_pref_category_shake">Встряхивание</string>
+    <string name="title_pref_notification_list_by_time">Показывать уведомления по одному, сначала новые</string>
+    <string name="title_pref_notification_list_skip_media">Не включать медиаплееры в список уведомлений</string>
+    <string name="no_root_access">Нет root-доступа</string>
+    <string name="quick_settings_display_size">Размер экрана</string>
+    <string name="three_part_swipe_gestures_title">Свайпы из трёх частей</string>
+    <string name="two_stroke_swipe_gestures_title">Свайпы из двух движений</string>
+    <string name="two_stroke_swipe_gestures_turn_second_title">Свайпы из двух движений с жестом вперёд-назад или под углом в конце</string>
+    <string name="two_stroke_swipe_gestures_up_and_down_title">Свайпы из двух движений, начиная с «Вверх, затем вниз»</string>
+    <string name="two_stroke_swipe_gestures_down_and_up_title">Свайпы из двух движений, начиная с «Вниз, затем вверх»</string>
+    <string name="two_stroke_swipe_gestures_left_and_right_title">Свайпы из двух движений, начиная с «Влево, затем вправо»</string>
+    <string name="two_stroke_swipe_gestures_right_and_left_title">Свайпы из двух движений, начиная с «Вправо, затем влево»</string>
+    <string name="two_stroke_swipe_gestures_up_and_left_title">Свайпы из двух движений, начиная с «Вверх, затем влево»</string>
+    <string name="two_stroke_swipe_gestures_up_and_right_title">Свайпы из двух движений, начиная с «Вверх, затем вправо»</string>
+    <string name="two_stroke_swipe_gestures_down_and_left_title">Свайпы из двух движений, начиная с «Вниз, затем влево»</string>
+    <string name="two_stroke_swipe_gestures_down_and_right_title">Свайпы из двух движений, начиная с «Вниз, затем вправо»</string>
+    <string name="two_stroke_swipe_gestures_left_and_up_title">Свайпы из двух движений, начиная с «Влево, затем вверх»</string>
+    <string name="two_stroke_swipe_gestures_left_and_down_title">Свайпы из двух движений, начиная с «Влево, затем вниз»</string>
+    <string name="two_stroke_swipe_gestures_right_and_up_title">Свайпы из двух движений, начиная с «Вправо, затем вверх»</string>
+    <string name="two_stroke_swipe_gestures_right_and_down_title">Свайпы из двух движений, начиная с «Вправо, затем вниз»</string>
+    <string name="tap_swipe_gestures_title">Нажатие, затем свайп</string>
+    <string name="two_finger_angle_gestures_title">Угловые жесты двумя пальцами</string>
+    <string name="value_keyboard_phone_keymap">Раскладка для телефонов с клавиатурой</string>
+    <string name="value_keyboard_phone_single_key_keymap">Одноклавишная раскладка для телефонов с клавиатурой</string>
+    <string name="keycombo_menu_other_open_keyboard_shortcuts">Открыть настройки быстрых клавиш</string>
+    <string name="keycombo_key_modifier_sym">Sym</string>
+    <string name="keycombo_key_modifier_right_alt">Правый Alt</string>
+    <string name="keycombo_key_modifier_right_shift">Правый Shift</string>
+    <string name="keycombo_key_modifier_function">Fn</string>
+    <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> с удержанием</string>
+    <string name="title_pref_time_seconds">Включать секунды во время</string>
+    <string name="title_pref_time_seconds_screen_on">Включать секунды при включении экрана</string>
+    <string name="title_pref_vibration_type">Тип вибрации</string>
+    <string name="vibration_type_effects">Тактильные эффекты</string>
+    <string name="vibration_type_pulses">Импульсы</string>
+    <string name="vibration_type_on_off">Включение и выключение</string>
+    <string name="title_pref_actions_available_sound">Звук «Доступны действия»</string>
+    <string name="value_actions_available_sound_off">Отключено</string>
+    <string name="value_actions_available_sound_focus">Когда элемент получает фокус</string>
+    <string name="value_actions_available_sound_after_speech">После озвучивания элемента</string>
+    <string-array name="pref_vibration_type_entries">
+        <item>@string/vibration_type_effects</item>
+        <item>@string/vibration_type_pulses</item>
+        <item>@string/vibration_type_on_off</item>
+    </string-array>
+    <string name="title_pref_typing_hold_keys_down">Удерживать клавиши нажатыми после задержки нажатия и удержания</string>
+    <string name="shortcut_move_to_item_left">Перейти к объекту слева</string>
+    <string name="shortcut_move_to_item_right">Перейти к объекту справа</string>
+    <string name="shortcut_speak_coordinates">Озвучить координаты</string>
+    <string name="speak_coordinates_value">X <xliff:g id="x" example="540">%1$d</xliff:g>, Y <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="speak_coordinates_copied"><xliff:g id="coordinates" example="X 540, Y 1200">%1$s</xliff:g>. Скопировано</string>
+    <string name="item_list_not_in_reading_control_list">Нет в списке «<xliff:g id="name" example="Speech">%1$s</xliff:g>»</string>
+    <string name="shortcut_next_reading_control_list">Следующий список элементов управления чтением</string>
+    <string name="shortcut_previous_reading_control_list">Предыдущий список элементов управления чтением</string>
+    <string name="no_reading_control_lists">Нет списков элементов управления чтением</string>
+    <string name="reading_control_list_changed"><xliff:g id="list" example="Speech">%1$s</xliff:g>, <xliff:g id="control" example="Words">%2$s</xliff:g></string>
+    <string name="title_braille_commands">Команды Брайля</string>
+    <string name="shortcut_braille_commands">Команды Брайля</string>
+    <string name="braille_commands_with_profile">Команды Брайля, <xliff:g id="profile" example="Reading">%1$s</xliff:g></string>
+    <string name="shortcut_braille_find_text">Найти текст</string>
+    <string name="shortcut_braille_find_next_text">Найти текст далее</string>
+    <string name="shortcut_braille_find_previous_text">Найти текст ранее</string>
+    <string name="braille_find_prompt">Введите текст для поиска</string>
+    <string name="braille_find_wrapped">Поиск с начала</string>
+    <string name="braille_commands_closed">Команды Брайля закрыты</string>
+    <string name="braille_command_none">Нет команды для <xliff:g id="cell" example="dots 2 3 6">%1$s</xliff:g></string>
+    <string name="braille_command_record_prompt">Введите ячейку Брайля</string>
+    <string name="braille_mode_no_text_field">Нет текстового поля</string>
+    <plurals name="braille_command_cell">
+        <item quantity="one">Точка <xliff:g id="dots" example="4">%1$s</xliff:g></item>
+        <item quantity="few">Точки <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="many">Точки <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+        <item quantity="other">Точки <xliff:g id="dots" example="1 2 5">%1$s</xliff:g></item>
+    </plurals>
+    <string name="title_braille_command_profiles">Профили команд Брайля</string>
+    <string name="title_braille_command_profile">Профиль команд Брайля</string>
+    <string name="no_braille_command_profiles">Нет профилей команд Брайля</string>
+    <string name="shortcut_braille_command_profiles">Выбрать профиль команд Брайля</string>
+    <string name="shortcut_next_braille_command_profile">Следующий профиль команд Брайля</string>
+    <string name="shortcut_previous_braille_command_profile">Предыдущий профиль команд Брайля</string>
+    <string name="shortcut_use_braille_command_profile">Использовать профиль команд Брайля <xliff:g id="name" example="Reading">%1$s</xliff:g></string>
+    <string name="title_pref_braille_command_profile_in_use">Текущий профиль команд Брайля</string>
+    <string name="braille_commands_add">Добавить команду Брайля</string>
+    <string name="title_braille_commands_in_apps">Команды Брайля в приложениях</string>
+    <string name="braille_commands_reset_confirm">Вернуть командам Брайля ячейки по умолчанию?</string>
+    <string name="braille_command_profile_add">Добавить профиль команд Брайля</string>
+    <string name="braille_command_profile_new_name">Профиль команд Брайля <xliff:g id="number" example="2">%1$d</xliff:g></string>
+    <string name="braille_command_profile_name_taken">Профиль команд Брайля с названием «<xliff:g id="name" example="Reading">%1$s</xliff:g>» уже есть</string>
+    <string name="braille_command_profile_delete">Удалить профиль команд Брайля</string>
+    <string name="braille_command_change_cell">Изменить ячейку Брайля</string>
+    <string name="command_braille_cells">Ячейки Брайля</string>
+    <string name="command_no_braille_cells">Нет ячеек Брайля</string>
+    <string name="command_add_braille_cell">Добавить ячейку Брайля</string>
+    <string name="command_remove_braille_cell">Удалить ячейку Брайля</string>
+    <string name="shortcut_read_from_current_by_reading_control">Читать с элемента в фокусе по элементу управления чтением</string>
+    <string name="shortcut_activate_confirm_button">Нажать кнопку подтверждения</string>
+    <string name="shortcut_activate_cancel_button">Нажать кнопку отмены</string>
+    <string name="confirm_button_words_default">ОК\nДа\nОтправить\nГотово\nПродолжить\nДалее\nСохранить\nРазрешить\nПринять\nПодтвердить\nOK\nОтветить</string>
+    <string name="cancel_button_words_default">Отмена\nНет\nЗакрыть\nНазад\nОтклонить\nЗапретить\nНе разрешать\nНе сейчас\nПропустить\nПозже</string>
+    <string name="no_confirm_button">Нет кнопки подтверждения</string>
+    <string name="no_cancel_button">Нет кнопки отмены</string>
+    <string name="title_button_command_words">Надписи кнопок</string>
+    <string name="shortcut_select_first_setting">Первый элемент управления чтением</string>
+    <string name="shortcut_character_count">Количество символов</string>
+    <string name="character_count_template"><xliff:g id="characters" example="12 characters">%1$s</xliff:g>, <xliff:g id="words" example="3 words">%2$s</xliff:g></string>
+    <string name="shortcut_read_text_field">Прочитать текстовое поле</string>
+    <string name="text_field_empty">Пусто</string>
+    <plurals name="character_count_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> символ</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> символа</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> символов</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> символа</item>
+    </plurals>
+    <plurals name="character_count_words">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> слово</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> слова</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> слов</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> слова</item>
+    </plurals>
+    <string name="title_continuous_copy">Непрерывное копирование</string>
+    <string name="continuous_copy_save">Сохранить</string>
+    <string name="continuous_copy_no_focus">Нет элемента в фокусе</string>
+    <string name="clipboard_history_select">Выбрать</string>
+    <string name="title_repeat_last_spoken_phrase_slower">Повторить последнюю фразу медленнее</string>
+    <string name="title_sheets_edit_cell">Изменить ячейку</string>
+    <string name="title_sheets_insert_formula">Вставить формулу</string>
+    <string name="title_pref_shortcut_2finger_2tap_top_bottom">Двойное нажатие двумя пальцами, вверху и внизу</string>
+    <string name="title_pref_shortcut_2finger_up_and_left">Вверх, затем влево двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_up_and_right">Вверх, затем вправо двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_down_and_left">Вниз, затем влево двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_down_and_right">Вниз, затем вправо двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_left_and_up">Влево, затем вверх двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_left_and_down">Влево, затем вниз двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_right_and_up">Вправо, затем вверх двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_right_and_down">Вправо, затем вниз двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_up">Нажатие, затем вверх двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_down">Нажатие, затем вниз двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_left">Нажатие, затем влево двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_1tap_swipe_right">Нажатие, затем вправо двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_up">Двойное нажатие, затем вверх двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_down">Двойное нажатие, затем вниз двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_left">Двойное нажатие, затем влево двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_2tap_swipe_right">Двойное нажатие, затем вправо двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_up">Тройное нажатие, затем вверх двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_down">Тройное нажатие, затем вниз двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_left">Тройное нажатие, затем влево двумя пальцами</string>
+    <string name="title_pref_shortcut_2finger_3tap_swipe_right">Тройное нажатие, затем вправо двумя пальцами</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_up">Нажатие, затем вверх тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_down">Нажатие, затем вниз тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_left">Нажатие, затем влево тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_1tap_swipe_right">Нажатие, затем вправо тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_up">Двойное нажатие, затем вверх тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_down">Двойное нажатие, затем вниз тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_left">Двойное нажатие, затем влево тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_2tap_swipe_right">Двойное нажатие, затем вправо тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_up">Тройное нажатие, затем вверх тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_down">Тройное нажатие, затем вниз тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_left">Тройное нажатие, затем влево тремя пальцами</string>
+    <string name="title_pref_shortcut_3finger_3tap_swipe_right">Тройное нажатие, затем вправо тремя пальцами</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_up">Нажатие, затем вверх четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_down">Нажатие, затем вниз четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_left">Нажатие, затем влево четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_1tap_swipe_right">Нажатие, затем вправо четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_up">Двойное нажатие, затем вверх четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_down">Двойное нажатие, затем вниз четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_left">Двойное нажатие, затем влево четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_2tap_swipe_right">Двойное нажатие, затем вправо четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_up">Тройное нажатие, затем вверх четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_down">Тройное нажатие, затем вниз четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_left">Тройное нажатие, затем влево четырьмя пальцами</string>
+    <string name="title_pref_shortcut_4finger_3tap_swipe_right">Тройное нажатие, затем вправо четырьмя пальцами</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_up">Нажатие двумя пальцами, затем вверх</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_down">Нажатие двумя пальцами, затем вниз</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_left">Нажатие двумя пальцами, затем влево</string>
+    <string name="title_pref_shortcut_2finger_1tap_1finger_swipe_right">Нажатие двумя пальцами, затем вправо</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_up">Двойное нажатие двумя пальцами, затем вверх</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_down">Двойное нажатие двумя пальцами, затем вниз</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_left">Двойное нажатие двумя пальцами, затем влево</string>
+    <string name="title_pref_shortcut_2finger_2tap_1finger_swipe_right">Двойное нажатие двумя пальцами, затем вправо</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_up">Тройное нажатие двумя пальцами, затем вверх</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_down">Тройное нажатие двумя пальцами, затем вниз</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_left">Тройное нажатие двумя пальцами, затем влево</string>
+    <string name="title_pref_shortcut_2finger_3tap_1finger_swipe_right">Тройное нажатие двумя пальцами, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_down_and_up">Вверх, вниз, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_down_and_left">Вверх, вниз, затем влево</string>
+    <string name="title_pref_shortcut_up_and_down_and_right">Вверх, вниз, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_left_and_up">Вверх, влево, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_left_and_down">Вверх, влево, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_left_and_right">Вверх, влево, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_right_and_up">Вверх, вправо, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_right_and_down">Вверх, вправо, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_right_and_left">Вверх, вправо, затем влево</string>
+    <string name="title_pref_shortcut_down_and_up_and_down">Вниз, вверх, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_up_and_left">Вниз, вверх, затем влево</string>
+    <string name="title_pref_shortcut_down_and_up_and_right">Вниз, вверх, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_left_and_up">Вниз, влево, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_left_and_down">Вниз, влево, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_left_and_right">Вниз, влево, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_right_and_up">Вниз, вправо, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_right_and_down">Вниз, вправо, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_right_and_left">Вниз, вправо, затем влево</string>
+    <string name="title_pref_shortcut_left_and_up_and_down">Влево, вверх, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_up_and_left">Влево, вверх, затем влево</string>
+    <string name="title_pref_shortcut_left_and_up_and_right">Влево, вверх, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_down_and_up">Влево, вниз, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_down_and_left">Влево, вниз, затем влево</string>
+    <string name="title_pref_shortcut_left_and_down_and_right">Влево, вниз, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_right_and_up">Влево, вправо, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_right_and_down">Влево, вправо, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_right_and_left">Влево, вправо, затем влево</string>
+    <string name="title_pref_shortcut_right_and_up_and_down">Вправо, вверх, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_up_and_left">Вправо, вверх, затем влево</string>
+    <string name="title_pref_shortcut_right_and_up_and_right">Вправо, вверх, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_down_and_up">Вправо, вниз, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_down_and_left">Вправо, вниз, затем влево</string>
+    <string name="title_pref_shortcut_right_and_down_and_right">Вправо, вниз, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_left_and_up">Вправо, влево, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_left_and_down">Вправо, влево, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_left_and_right">Вправо, влево, затем вправо</string>
+    <string name="title_pref_shortcut_up_lift_up">Вверх, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_up_lift_down">Вверх, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_up_lift_left">Вверх, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_up_lift_right">Вверх, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_down_lift_up">Вниз, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_down_lift_down">Вниз, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_down_lift_left">Вниз, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_down_lift_right">Вниз, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_left_lift_up">Влево, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_left_lift_down">Влево, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_left_lift_left">Влево, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_left_lift_right">Влево, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_right_lift_up">Вправо, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_right_lift_down">Вправо, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_right_lift_left">Вправо, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_right_lift_right">Вправо, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_up_lift_up_and_down">Вверх, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_up_lift_down_and_up">Вверх, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_up_lift_left_and_right">Вверх, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_up_lift_right_and_left">Вверх, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_up_lift_up_and_left">Вверх, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_up_lift_up_and_right">Вверх, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_up_lift_down_and_left">Вверх, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_up_lift_down_and_right">Вверх, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_up_lift_left_and_up">Вверх, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_up_lift_left_and_down">Вверх, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_up_lift_right_and_up">Вверх, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_up_lift_right_and_down">Вверх, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_down_lift_up_and_down">Вниз, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_down_lift_down_and_up">Вниз, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_down_lift_left_and_right">Вниз, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_down_lift_right_and_left">Вниз, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_down_lift_up_and_left">Вниз, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_down_lift_up_and_right">Вниз, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_down_lift_down_and_left">Вниз, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_down_lift_down_and_right">Вниз, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_down_lift_left_and_up">Вниз, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_down_lift_left_and_down">Вниз, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_down_lift_right_and_up">Вниз, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_down_lift_right_and_down">Вниз, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_left_lift_up_and_down">Влево, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_left_lift_down_and_up">Влево, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_left_lift_left_and_right">Влево, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_left_lift_right_and_left">Влево, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_left_lift_up_and_left">Влево, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_left_lift_up_and_right">Влево, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_left_lift_down_and_left">Влево, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_left_lift_down_and_right">Влево, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_left_lift_left_and_up">Влево, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_left_lift_left_and_down">Влево, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_left_lift_right_and_up">Влево, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_left_lift_right_and_down">Влево, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_right_lift_up_and_down">Вправо, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_right_lift_down_and_up">Вправо, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_right_lift_left_and_right">Вправо, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_right_lift_right_and_left">Вправо, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_right_lift_up_and_left">Вправо, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_right_lift_up_and_right">Вправо, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_right_lift_down_and_left">Вправо, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_right_lift_down_and_right">Вправо, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_right_lift_left_and_up">Вправо, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_right_lift_left_and_down">Вправо, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_right_lift_right_and_up">Вправо, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_right_lift_right_and_down">Вправо, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up">Вверх, затем вниз, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down">Вверх, затем вниз, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left">Вверх, затем вниз, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right">Вверх, затем вниз, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_down">Вверх, затем вниз, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_up">Вверх, затем вниз, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_right">Вверх, затем вниз, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_left">Вверх, затем вниз, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_left">Вверх, затем вниз, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_up_and_down_lift_up_and_right">Вверх, затем вниз, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_left">Вверх, затем вниз, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_up_and_down_lift_down_and_right">Вверх, затем вниз, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_up">Вверх, затем вниз, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_down_lift_left_and_down">Вверх, затем вниз, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_up">Вверх, затем вниз, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_down_lift_right_and_down">Вверх, затем вниз, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up">Вниз, затем вверх, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down">Вниз, затем вверх, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left">Вниз, затем вверх, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right">Вниз, затем вверх, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_down">Вниз, затем вверх, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_up">Вниз, затем вверх, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_right">Вниз, затем вверх, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_left">Вниз, затем вверх, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_left">Вниз, затем вверх, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_down_and_up_lift_up_and_right">Вниз, затем вверх, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_left">Вниз, затем вверх, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_down_and_up_lift_down_and_right">Вниз, затем вверх, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_up">Вниз, затем вверх, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_up_lift_left_and_down">Вниз, затем вверх, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_up">Вниз, затем вверх, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_up_lift_right_and_down">Вниз, затем вверх, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up">Влево, затем вправо, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down">Влево, затем вправо, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left">Влево, затем вправо, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right">Влево, затем вправо, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_down">Влево, затем вправо, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_up">Влево, затем вправо, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_right">Влево, затем вправо, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_left">Влево, затем вправо, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_left">Влево, затем вправо, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_left_and_right_lift_up_and_right">Влево, затем вправо, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_left">Влево, затем вправо, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_left_and_right_lift_down_and_right">Влево, затем вправо, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_up">Влево, затем вправо, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_right_lift_left_and_down">Влево, затем вправо, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_up">Влево, затем вправо, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_right_lift_right_and_down">Влево, затем вправо, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up">Вправо, затем влево, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down">Вправо, затем влево, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left">Вправо, затем влево, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right">Вправо, затем влево, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_down">Вправо, затем влево, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_up">Вправо, затем влево, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_right">Вправо, затем влево, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_left">Вправо, затем влево, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_left">Вправо, затем влево, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_right_and_left_lift_up_and_right">Вправо, затем влево, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_left">Вправо, затем влево, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_right_and_left_lift_down_and_right">Вправо, затем влево, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_up">Вправо, затем влево, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_left_lift_left_and_down">Вправо, затем влево, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_up">Вправо, затем влево, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_left_lift_right_and_down">Вправо, затем влево, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up">Вверх, затем влево, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down">Вверх, затем влево, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left">Вверх, затем влево, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right">Вверх, затем влево, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_down">Вверх, затем влево, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_up">Вверх, затем влево, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_right">Вверх, затем влево, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_left">Вверх, затем влево, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_left">Вверх, затем влево, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_up_and_left_lift_up_and_right">Вверх, затем влево, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_left">Вверх, затем влево, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_up_and_left_lift_down_and_right">Вверх, затем влево, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_up">Вверх, затем влево, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_left_lift_left_and_down">Вверх, затем влево, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_up">Вверх, затем влево, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_left_lift_right_and_down">Вверх, затем влево, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up">Вверх, затем вправо, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down">Вверх, затем вправо, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left">Вверх, затем вправо, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right">Вверх, затем вправо, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_down">Вверх, затем вправо, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_up">Вверх, затем вправо, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_right">Вверх, затем вправо, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_left">Вверх, затем вправо, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_left">Вверх, затем вправо, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_up_and_right_lift_up_and_right">Вверх, затем вправо, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_left">Вверх, затем вправо, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_up_and_right_lift_down_and_right">Вверх, затем вправо, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_up">Вверх, затем вправо, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_right_lift_left_and_down">Вверх, затем вправо, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_up">Вверх, затем вправо, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_up_and_right_lift_right_and_down">Вверх, затем вправо, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up">Вниз, затем влево, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down">Вниз, затем влево, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left">Вниз, затем влево, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right">Вниз, затем влево, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_down">Вниз, затем влево, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_up">Вниз, затем влево, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_right">Вниз, затем влево, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_left">Вниз, затем влево, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_left">Вниз, затем влево, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_down_and_left_lift_up_and_right">Вниз, затем влево, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_left">Вниз, затем влево, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_down_and_left_lift_down_and_right">Вниз, затем влево, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_up">Вниз, затем влево, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_left_lift_left_and_down">Вниз, затем влево, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_up">Вниз, затем влево, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_left_lift_right_and_down">Вниз, затем влево, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up">Вниз, затем вправо, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down">Вниз, затем вправо, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left">Вниз, затем вправо, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right">Вниз, затем вправо, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_down">Вниз, затем вправо, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_up">Вниз, затем вправо, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_right">Вниз, затем вправо, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_left">Вниз, затем вправо, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_left">Вниз, затем вправо, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_down_and_right_lift_up_and_right">Вниз, затем вправо, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_left">Вниз, затем вправо, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_down_and_right_lift_down_and_right">Вниз, затем вправо, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_up">Вниз, затем вправо, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_right_lift_left_and_down">Вниз, затем вправо, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_up">Вниз, затем вправо, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_down_and_right_lift_right_and_down">Вниз, затем вправо, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up">Влево, затем вверх, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down">Влево, затем вверх, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left">Влево, затем вверх, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right">Влево, затем вверх, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_down">Влево, затем вверх, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_up">Влево, затем вверх, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_right">Влево, затем вверх, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_left">Влево, затем вверх, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_left">Влево, затем вверх, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_left_and_up_lift_up_and_right">Влево, затем вверх, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_left">Влево, затем вверх, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_left_and_up_lift_down_and_right">Влево, затем вверх, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_up">Влево, затем вверх, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_up_lift_left_and_down">Влево, затем вверх, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_up">Влево, затем вверх, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_up_lift_right_and_down">Влево, затем вверх, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up">Влево, затем вниз, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down">Влево, затем вниз, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left">Влево, затем вниз, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right">Влево, затем вниз, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_down">Влево, затем вниз, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_up">Влево, затем вниз, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_right">Влево, затем вниз, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_left">Влево, затем вниз, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_left">Влево, затем вниз, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_left_and_down_lift_up_and_right">Влево, затем вниз, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_left">Влево, затем вниз, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_left_and_down_lift_down_and_right">Влево, затем вниз, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_up">Влево, затем вниз, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_down_lift_left_and_down">Влево, затем вниз, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_up">Влево, затем вниз, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_left_and_down_lift_right_and_down">Влево, затем вниз, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up">Вправо, затем вверх, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down">Вправо, затем вверх, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left">Вправо, затем вверх, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right">Вправо, затем вверх, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_down">Вправо, затем вверх, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_up">Вправо, затем вверх, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_right">Вправо, затем вверх, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_left">Вправо, затем вверх, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_left">Вправо, затем вверх, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_right_and_up_lift_up_and_right">Вправо, затем вверх, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_left">Вправо, затем вверх, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_right_and_up_lift_down_and_right">Вправо, затем вверх, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_up">Вправо, затем вверх, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_up_lift_left_and_down">Вправо, затем вверх, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_up">Вправо, затем вверх, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_up_lift_right_and_down">Вправо, затем вверх, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up">Вправо, затем вниз, отрыв пальца, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down">Вправо, затем вниз, отрыв пальца, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left">Вправо, затем вниз, отрыв пальца, затем влево</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right">Вправо, затем вниз, отрыв пальца, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_down">Вправо, затем вниз, отрыв пальца, затем вверх, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_up">Вправо, затем вниз, отрыв пальца, затем вниз, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_right">Вправо, затем вниз, отрыв пальца, затем влево, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_left">Вправо, затем вниз, отрыв пальца, затем вправо, затем влево</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_left">Вправо, затем вниз, отрыв пальца, затем вверх, затем влево</string>
+    <string name="title_pref_shortcut_right_and_down_lift_up_and_right">Вправо, затем вниз, отрыв пальца, затем вверх, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_left">Вправо, затем вниз, отрыв пальца, затем вниз, затем влево</string>
+    <string name="title_pref_shortcut_right_and_down_lift_down_and_right">Вправо, затем вниз, отрыв пальца, затем вниз, затем вправо</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_up">Вправо, затем вниз, отрыв пальца, затем влево, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_down_lift_left_and_down">Вправо, затем вниз, отрыв пальца, затем влево, затем вниз</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_up">Вправо, затем вниз, отрыв пальца, затем вправо, затем вверх</string>
+    <string name="title_pref_shortcut_right_and_down_lift_right_and_down">Вправо, затем вниз, отрыв пальца, затем вправо, затем вниз</string>
+    <string name="title_pref_shortcut_back_tap_quadruple">Четверное касание задней панели</string>
+    <string name="title_pref_shortcut_shake">Встряхивание</string>
+    <string name="title_pref_shake_sensitivity">Чувствительность к встряхиванию</string>
+    <string name="title_pref_two_stroke_swipe_time">Время между движениями свайпов из двух движений</string>
+    <string name="value_two_stroke_swipe_time_off">Выкл.</string>
+    <string name="value_two_stroke_swipe_time_1500">1,5 секунды</string>
+    <string name="value_multi_tap_timeout_750ms">0,75 секунды</string>
+    <string name="value_multi_tap_timeout_1500ms">1,5 секунды</string>
+    <string name="title_pref_stop_before_wrap">Останавливаться на последнем элементе перед переходом</string>
+    <string name="title_pref_wrap_around_reading_controls">Циклическая навигация в элементах управления чтением</string>
+    <string name="title_pref_leave_system_bars">Переходить из строки состояния и панели навигации в другие окна</string>
+    <string name="title_pref_volume_change_silent_while_speaking">Менять громкость речи без объявления во время речи</string>
+    <string name="title_pref_volume_keys_take_all">SandFly обрабатывает все нажатия клавиш громкости</string>
+    <string name="title_pref_volume_keys_hide_panel">Скрывать панель громкости</string>
+    <string name="title_pref_volume_keys_screen_off">Команды клавиш громкости при выключенном экране</string>
+    <string name="title_pref_volume_up_press">Нажатие клавиши увеличения громкости</string>
+    <string name="title_pref_volume_down_press">Нажатие клавиши уменьшения громкости</string>
+    <string name="title_pref_sandfly_keyboard_double_press">Символы двойного нажатия</string>
+    <string name="title_pref_sandfly_keyboard_double_space_period">Двойной пробел ставит точку</string>
+    <string name="double_press_add">Добавить клавишу</string>
+    <string name="double_press_item"><xliff:g id="key" example="g">%1$s</xliff:g>: <xliff:g id="characters" example="ğ">%2$s</xliff:g></string>
+    <string name="double_press_key">Клавиша</string>
+    <string name="double_press_characters">Двойное нажатие вводит</string>
+    <string name="double_press_enter_key">Введите один символ</string>
+    <string name="double_press_enter_characters">Введите от 1 до 16 символов</string>
+    <string name="title_pref_focus_text_inside_items">Фокусировать текст внутри элементов по отдельности</string>
+    <string name="focus_text_inside_items_now_on">Фокусировать текст внутри элементов по отдельности: вкл.</string>
+    <string name="focus_text_inside_items_now_off">Фокусировать текст внутри элементов по отдельности: выкл.</string>
+    <string name="focus_indicator_now_on">Индикатор фокуса включён</string>
+    <string name="focus_indicator_now_off">Индикатор фокуса выключен</string>
+    <string name="title_pref_dictation_speak_text">Озвучивать надиктованный текст</string>
+    <string name="title_pref_dictation_punctuation">Автоматическая пунктуация</string>
+    <string name="title_pref_dictation_block_offensive">Скрывать нецензурные слова</string>
+    <string name="settings_profile_keyboards">Клавиатуры</string>
+    <string name="settings_profile_add_keyboard">Добавить клавиатуру</string>
+    <plurals name="word_selection_added">
+        <item quantity="one">Добавлен <xliff:g id="count" example="1">%1$d</xliff:g> объект</item>
+        <item quantity="few">Добавлено <xliff:g id="count" example="5">%1$d</xliff:g> объекта</item>
+        <item quantity="many">Добавлено <xliff:g id="count" example="5">%1$d</xliff:g> объектов</item>
+        <item quantity="other">Добавлено <xliff:g id="count" example="5">%1$d</xliff:g> объекта</item>
+    </plurals>
+    <string name="word_selection_no_more_text">Больше нет текста</string>
+    <string name="selection_range_start">Начать выделение</string>
+    <string name="selection_range_end">Завершить выделение</string>
+    <string name="selection_range_started">Начало выделения отмечено</string>
+    <plurals name="selection_range_selected">
+        <item quantity="one">Выделен <xliff:g id="count" example="1">%1$d</xliff:g> объект</item>
+        <item quantity="few">Выделено <xliff:g id="count" example="5">%1$d</xliff:g> объекта</item>
+        <item quantity="many">Выделено <xliff:g id="count" example="5">%1$d</xliff:g> объектов</item>
+        <item quantity="other">Выделено <xliff:g id="count" example="5">%1$d</xliff:g> объекта</item>
+    </plurals>
+    <string name="network_notification_channel">Сетевые запросы</string>
+    <string name="network_notification_title">Сетевой запрос</string>
+    <string name="title_pref_category_own_speech">Приложения с собственной речью</string>
+    <string name="title_pref_speak_user_focus">Озвучивать только фокус, перемещённый пользователем</string>
+    <string name="speak_user_focus_off">Выкл.</string>
+    <string name="speak_user_focus_all_apps">Во всех приложениях</string>
+    <string name="speak_user_focus_chosen_apps">В выбранных приложениях</string>
+    <string name="title_pref_speak_user_focus_apps">Выбранные приложения</string>
+    <string name="title_pref_speak_user_focus_assistant_audio">Озвучивать только фокус, перемещённый пользователем, когда звучит ассистент или звонок</string>
+    <string name="title_pref_keyboards_with_own_speech">Клавиатуры с собственной речью</string>
+    <string name="template_speak_user_focus_changed">Озвучивать только фокус, перемещённый пользователем: <xliff:g id="choice" example="In all apps">%1$s</xliff:g></string>
+    <string name="macro_add_to_home_screen">Добавить на главный экран</string>
+    <string name="macro_shortcut_unsupported">Панель запуска не поддерживает ярлыки на главном экране</string>
+    <string name="macro_shortcut_already_added">Уже на главном экране</string>
+    <string name="macro_shortcut_failed">Ярлык не добавлен</string>
+    <string name="macro_shortcut_deleted">Макрос удалён</string>
+    <string name="macro_shortcut_invalid">Ярлык недействителен. Добавьте макрос на главный экран ещё раз.</string>
+    <string name="update_download_progress">%1$d%%</string>
+    <string name="update_download_progress_time">%1$d%%, осталось %2$s</string>
+    <string name="title_pref_double_tap_taps">Двойное нажатие касается экрана</string>
+    <string name="shortcut_toggle_double_tap_taps_app">Двойное нажатие касается экрана в этом приложении</string>
+    <string name="double_tap_taps_on">Двойное нажатие касается экрана: вкл.</string>
+    <string name="double_tap_taps_off">Двойное нажатие касается экрана: выкл.</string>
+    <string name="double_tap_taps_no_app">Нет приложения на переднем плане</string>
+    <string name="keycombo_menu_toggle_key_practice">Включить или отключить тренировку клавиатуры</string>
+    <string name="key_practice_on">Тренировка клавиатуры включена</string>
+    <string name="key_practice_off">Тренировка клавиатуры отключена</string>
+    <string name="key_practice_sandfly_key">Клавиша SandFly</string>
+    <string name="key_practice_title">Тренировка клавиатуры</string>
+    <string name="key_practice_summary">Озвучивает каждую нажатую клавишу и её команду вместо выполнения команды. Кнопка «Назад» или Escape отключает тренировку.</string>
+    <string name="keycombo_menu_touch_hold_focus">Удерживать касание на элементе в фокусе</string>
+    <string name="touch_hold_held">Касание удерживается</string>
+    <string name="touch_hold_lifted">Касание отпущено</string>
+    <string name="touch_hold_unavailable">Недоступно</string>
+    <string name="touch_hold_no_focus">Нет элемента в фокусе</string>
+    <string name="title_pref_speak_password_characters">Озвучивать символы пароля</string>
+    <string name="summary_pref_speak_password_characters">При использовании клавиатуры SandFly озвучивает введённые, удалённые и пройденные курсором символы в полях пароля</string>
+    <string name="shortcut_spell_password_field">Произнести по буквам поле пароля</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Это не поле пароля</string>
+    <string name="sandfly_keyboard_password_not_available">Текст поля пароля недоступен</string>
+    <string name="sandfly_keyboard_password_not_read">Не читается в полях пароля</string>
+    <string name="title_pref_voice_profile_play_sample">Воспроизвести образец</string>
+    <string name="voice_profile_sample_text">Так звучит этот голосовой профиль.</string>
+    <string name="voice_profile_sample_failed">Образец не воспроизведён</string>
+    <string name="title_pref_speech_rate_step">Шаг скорости речи</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> от скорости</string>
+    <string name="shortcut_end_call">Завершить вызов</string>
+    <string name="end_call_no_call">Нет вызова</string>
+    <string name="end_call_permission">Нужно разрешение на завершение вызовов</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Перейти к следующему абзацу, вторая клавиша</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Перейти к предыдущему абзацу, вторая клавиша</string>
+    <string name="title_pref_mute_key_dictates">Удерживайте клавишу отключения звука для диктовки в текстовых полях</string>
+    <string name="title_pref_mute_key_press">Нажатие клавиши отключения звука</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Перейти к следующей ссылке, вторая клавиша</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Перейти к предыдущей ссылке, вторая клавиша</string>
+    <string name="keycombo_only_in_browse_mode">Только в режиме обзора</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> в режиме обзора</string>
+    <string name="title_pref_category_fast_search">Быстрый поиск</string>
+    <string name="title_pref_fast_search_key">Клавиша быстрого поиска</string>
+    <string name="fast_search_key_off">Выкл.</string>
+    <string name="title_pref_fast_search_wrap">Циклическая навигация</string>
+    <string name="fast_search_key_left_alt">Левый Alt</string>
+    <string name="fast_search_key_left_ctrl">Левый Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Правый Ctrl</string>
+    <string name="fast_search_key_left_meta">Левый Meta</string>
+    <string name="fast_search_key_right_meta">Правый Meta</string>
 </resources>

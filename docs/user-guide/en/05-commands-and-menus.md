@@ -8,6 +8,8 @@ For gestures and gesture profiles, see [](#gestures). For keyboard shortcuts and
 
 **Commands** in SandFly settings lists every command, in categories. Each category opens the list of its commands. Under the name of a command, SandFly lists the gestures and the keyboard shortcut that run it.
 
+**Search commands**, at the top of the screen, stays in place while the list scrolls. As you type, the list shows the commands of every category that have each word you typed in their names, also inside a word, with the category under each name. Names that start with what you typed come first. Case and accents are ignored. SandFly says how many commands it found. Clear the field to see the categories again.
+
 The list holds only the commands that the device supports. For example, commands that need Android 11 or later, a vibrator or a braille display aren't listed on devices without them.
 
 #### Command categories {#commands-categories}
@@ -15,22 +17,22 @@ The list holds only the commands that the device supports. For example, commands
 - **Navigation**: next and previous item, the item above, below, left and right, first and last item on the screen, containers, windows, and **Focus text inside items separately**.
 - **Navigation setting**: the **Navigation** menu, **Page navigation**, and next and previous navigation setting.
 - **Object navigation** and **Screen review**: commands for desktop-style object navigation and the review cursor, mostly for keyboards. See [](#keyboards).
-- **Activation**: **Activate**, **Touch and hold**, **Activate with a tap**, **Activate confirm button**, **Activate cancel button**, **Show custom actions**, **Addresses and numbers**, **Add or edit labels**, **Open SandFly menu**, **Pass through system gesture**, and **Turn direct touch on or off for this app**.
+- **Activation**: **Activate**, **Touch and hold**, **Activate with a tap**, **Hold a touch on the focused item**, **Activate confirm button**, **Activate cancel button**, **Show custom actions**, **Addresses and numbers**, **Add or edit labels**, **Open SandFly menu**, **Pass through system gesture**, **Turn direct touch on or off for this app**, and **Double tap taps the screen in this app**.
 - **Scrolling**: scroll forward, back, up, down, left and right, to the top and to the bottom, and **Refresh**.
 - **Navigate by text** and **Navigate by element**: next and previous character, word, line, paragraph, heading, link, control, button, list, table, landmark and other kinds of item.
 - **Tables**: next and previous row and column, the start and end of rows, columns and tables, and row and column headers.
 - **Web**: **Turn browse mode on or off**, lists of headings, landmarks, links, controls and tables, and the address of a link or page. See [](#web).
 - **Reading**: **Read from top**, **Read from focused item**, **Read from focused item by reading control**, repeat, spell and translate the last spoken phrase, **Speech history**, **Speak status**, **Speak position**, **Speak coordinates**, the date and time, the battery level and the window title.
-- **Speech**: **Pause or resume speech**, **Turn speech on or off**, speech rate, pitch and volume, spoken language, voice profiles, punctuation, keyboard echo, **Use equalizer**, **Audio ducking** and **Vibration feedback**.
-- **Reading controls**: next and previous reading control, **Move reading control down or forward** and **Move reading control up or backward**, **Write the letter of a reading control**, next and previous reading control list, and a **Set reading control to** command for each reading control in the list. See [](#commands-reading-controls).
-- **Text editing**: selection mode, cursor movement, select all, copy, cut, paste, **Clipboard history**, **Editing menu**, **Submit text**, **Clear text**, **Copy last spoken phrase**, **Copy text from screen**, **Continuous copy**, **Granular editing**, **Spelling / grammar suggestions**, **Search emoji**, **Choose a symbol**, **Turn editing mode on or off**, **Dictate** and **Switch keyboard**. See [](#typing).
-- **System actions**: **Home**, **Back**, **Overview**, previous, older and newer app, **Take screenshot**, **Answer call**, **Split screen**, notifications, Quick Settings, **Lock screen**, **Power menu**, **All apps**, the accessibility shortcut, magnification, color inversion, **Write an app's name to open it**, **Type an app's name in braille to open it**, and **Start voice command**.
+- **Speech**: **Pause or resume speech**, **Turn speech on or off**, speech rate, pitch and volume, spoken language, voice profiles, punctuation, keyboard echo, **Use voice effects**, **Audio ducking** and **Vibration feedback**.
+- **Reading controls**: next and previous reading control, **First reading control**, **Move reading control down or forward** and **Move reading control up or backward**, **Write the letter of a reading control**, next and previous reading control list, and a **Set reading control to** command for each reading control in the list. See [](#commands-reading-controls).
+- **Text editing**: selection mode, cursor movement, select all, copy, cut, paste, **Clipboard history**, **Editing menu**, **Submit text**, **Clear text**, **Copy last spoken phrase**, **Copy text from screen**, **Continuous copy**, **Granular editing**, **Spelling / grammar suggestions**, **Search emoji**, **Choose a symbol**, **Turn editing mode on or off**, **Spell the password field**, **Dictate**, **Start voice editing** and **Switch keyboard**. See [](#typing).
+- **System actions**: **Home**, **Back**, **Overview**, previous, older and newer app, **Take screenshot**, **Answer call**, **End call**, **Split screen**, notifications, Quick Settings, **Lock screen**, **Power menu**, **All apps**, the accessibility shortcut, magnification, color inversion, **Write an app's name to open it**, **Type an app's name in braille to open it**, and **Start voice command**.
 - **Media and volume**: play or pause, next and previous track, rewind, fast forward, and volume.
 - **Notifications**: read notifications, read the last notification again, stop reading, and turn notification speech and time announcements on or off. See [](#notifications).
-- **Image and screen descriptions**: **Take picture and describe**, **Describe image**, **Describe screen**, their **Speak** and **Ask about** versions, and **Report AI response**. With SandFly Pro, also the screen recognition commands. See [](#descriptions).
+- **Image and screen descriptions**: **Take picture and describe**, **Describe image**, **Describe screen**, their **Speak** and **Ask about** versions, **Share image of focused item**, **Share screenshot** and **Report AI response**. With SandFly Pro, also the screen recognition commands. See [](#descriptions).
 - **Live recognition**: a command for each Live recognition mode, and **Stop Live recognition**.
 - **Braille**: **Switch to braille keyboard**, **Braille commands**, **Find text**, braille command profiles, and braille display commands. See [](#braille).
-- **SandFly**: **Pause SandFly**, **Hide or show screen**, **Show the focus indicator**, **Screen search**, gesture and settings profiles, **Gestures for this app**, **Turn arrow key navigation on or off**, **Lock or unlock touch**, **Turn all scripts on or off**, **Script commands**, **Verbosity**, **Turn off SandFly**, **Open tutorial** and **Practice gestures**. With SandFly Pro, also **Start or stop AI agent task**.
+- **SandFly**: **Pause SandFly**, **Hide or show screen**, **Show the focus indicator**, **Screen search**, gesture and settings profiles, **Gestures for this app**, **Turn arrow key navigation on or off**, **Lock or unlock touch**, **Turn all scripts on or off**, **Script commands**, **Verbosity**, **Turn off SandFly**, **Open tutorial**, **Practice gestures** and **Turn keyboard practice on or off**. With SandFly Pro, also **Start or stop AI agent task**.
 - **Developer settings**: **Inspect focused item**, **Copy item details** and **Copy screen tree**. See [](#macros-inspect).
 - **Setting values**: a next value and a previous value command for each reading control that changes a setting, such as **Punctuation: next value**, and commands that turn settings such as **Wrap around** on or off.
 
@@ -56,15 +58,28 @@ SandFly looks in the active window first, such as a dialog, then in the other ap
 
 To change the labels, choose the command in **Commands**, then **Button labels**, and enter one label per line. Your list replaces the built-in one. To use the built-in list again, delete every label.
 
+#### Answer call and End call {#commands-calls}
+
+**Answer call** and **End call**, in the **System actions** category and unassigned by default, act on phone calls and on the calls of apps such as WhatsApp.
+
+- **Answer call** answers the ringing call. SandFly says "No incoming call" when none rings.
+- **End call** declines the ringing call, or else ends the call in progress. SandFly says "No call" when there is none.
+
+Phone calls are answered and ended through Android. The first time, SandFly requests permission to answer calls. The calls of apps are answered, declined and ended with the buttons of their call notification. Ending a call in progress needs notification access for SandFly. See [](#notifications-access).
+
 ### Assign a gesture or keyboard shortcut to a command {#commands-assign}
 
 1. In SandFly settings, choose **Commands**.
 2. Choose a category, then a command.
-3. Under **Gestures**, choose **Add gesture**, then a gesture. A gesture that runs another command shows that command after its name.
+3. Under **Gestures**, choose **Add gesture**, then a gesture. A gesture that runs another command shows that command after its name. Or choose **Perform gesture**, make the gesture, then choose **Assign**. **Perform gesture** works only while SandFly is on.
 4. If the gesture already runs another command, SandFly asks whether to use it for this command instead. Choose **Replace**.
 
-The command screen has these groups:
+While **Perform gesture** waits, the next gesture is taken for the command and doesn't run its own command. Some gestures still run their own command, such as those that the gesture profile in use gives a command. A gesture that can't be assigned on this screen isn't assigned; SandFly says "Can't assign" and the name of the gesture.
 
+The command screen has these items and groups:
+
+- **Run command**: closes SandFly settings, which brings back the app shown before, and runs the command there after one second. Available only while SandFly is on.
+- **Add to SandFly menu**: adds the command at the end of the SandFly menu. While the command is in the SandFly menu or one of its submenus, the item is **Remove from SandFly menu**, which takes it out of the SandFly menu and its submenus. Custom menus aren't changed. See [](#commands-edit-menu).
 - **Button labels**: only for **Activate confirm button** and **Activate cancel button**, the labels that the command looks for. See [](#commands-button-commands).
 - **Gestures**: the gestures that run the command. To remove one, choose it, then **Remove gesture**.
 - **Arrow key navigation**: the arrow keys of arrow key navigation that run the command, with **Add arrow keys** and **Remove arrow keys**. The group is shown only with a keymap that has arrow key navigation. See [](#keyboards).
@@ -104,6 +119,8 @@ The SandFly menu is a list of commands and submenus. Any command can be in it.
 1. In SandFly settings, choose **SandFly menu**.
 2. Choose **Add command**. The commands are listed by category. Categories are collapsed; double-tap a category to expand it.
 3. Double-tap a command. SandFly adds it at the end of the menu and announces "added". The command leaves the list, and focus stays in the category.
+
+You can also add a command from its screen in **Commands**, with **Add to SandFly menu**. See [](#commands-assign).
 
 To add a submenu, choose **Add submenu** and enter its name. Choose the submenu in the list and then **Open** to add commands and more submenus to it, with **Add command** and **Add submenu** on its own screen. Submenus can be nested up to 12 levels.
 
@@ -167,8 +184,8 @@ When you change the reading control or its value with a gesture, SandFly also sh
 - **Tables**: **Rows and columns**, **Row** and **Column**.
 - **Speech**: **Speech rate**, **Speak punctuation and symbols**, **Emoji**, **Speak text formatting**, **Spoken language**, **Speech engine**, **Speech volume**, **Audio output device**, **Voice profile**, **Automatic translation** and **Speak only focus moved by the user**.
 - **Keyboard echo**: the echo of the on-screen keyboard, physical keyboard, braille keyboard, braille display and handwriting keyboard.
-- **Equalizer**: **Equalizer**, and one control for each band from 32 Hz to 16 kHz. See [](#speech).
-- **Image and screen descriptions**: **Live recognition** and **AI actions**. See [](#commands-ai-actions).
+- **Voice effects**: **Voice effects**, and one control for each equalizer band from 64 Hz to 16 kHz. See [](#voice-effects).
+- **Image and screen descriptions**: **Live recognition**, **AI actions** and **AI service**. See [](#commands-ai-actions) and [](#descriptions-choose-service).
 - **Sound and vibration**: **Audio ducking**, **Accessibility volume**, **Media volume**, **Call volume**, **Ring volume**, **Notification volume**, **Alarm volume** and **Sound mode**.
 - **Display**: **Hide screen**, **Brightness**, and **Tablet held up faces away**, for the braille keyboard on a tablet or an unfolded phone.
 - **Touch**: **Focus delay**, **Typing focus delay**, **Lift to activate** and **Gesture profile**.
@@ -217,10 +234,10 @@ A reading control list is a named list of reading controls, apart from the main 
 
 The list screen also has **Rename** and **Delete list**.
 
-Each list adds two commands to the **Reading control lists** category: **Next item in** and **Previous item in** the list, which select the next or previous reading control of that list. The **Next reading control list** and **Previous reading control list** commands, in the **Reading controls** category, choose the list that next and previous reading control move through, the main list or one of yours.
+Each list adds two commands to the **Reading control lists** category: **Next item in** and **Previous item in** the list, which select the next or previous reading control of that list. The **Next reading control list** and **Previous reading control list** commands, in the **Reading controls** category, choose the list that next and previous reading control move through, the main list or one of yours. **First reading control** selects the first reading control of that list.
 
 #### AI actions {#commands-ai-actions}
 
-The **AI actions** reading control holds the AI commands: **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description** and **Ask about image**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. Swipe up or down to choose a command, then double-tap to run it. The control offers only the commands that the device and the AI services settings support, and isn't shown when there are none.
+The **AI actions** reading control holds the AI commands: **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image**, **Share image of focused item** and **Share screenshot**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. Swipe up or down to choose a command, then double-tap to run it. The control offers only the commands that the device and the AI services settings support, and isn't shown when there are none.
 
 **AI actions to include**, after **AI actions** in **Current**, chooses which commands the control offers. All are included until you change it. For the commands, see [](#descriptions) and [](#pro).

@@ -1007,10 +1007,10 @@ class AudioDeviceRouter @JvmOverloads constructor(
           context.getString(R.string.value_audio_output_device_speaker)
         is AudioTarget.SpecificDevice -> {
           val matchIndex = entryValues.indexOfFirst {
-            it.toString() == currentValue || it.toString().endsWith(":${currentTarget.name}")
+            it == currentValue || it.endsWith(":${currentTarget.name}")
           }
           if (matchIndex >= 0) {
-            entries[matchIndex].toString()
+            entries[matchIndex]
           } else {
             "${currentTarget.name} (${context.getString(R.string.value_audio_output_device_disconnected)})"
           }

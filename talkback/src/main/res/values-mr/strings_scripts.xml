@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> आयटम कॉपी केले</string>
     <string name="script_tree_none">कॉपी करण्यासाठी कोणतीही विंडो नाही</string>
     <string name="script_tree_clip_label">स्क्रीन ट्री</string>
-    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लिहिण्यासाठी स्क्रीनवरील सर्व आयटम JSON म्हणून कॉपी करणे</string>
+    <string name="summary_copy_screen_tree_menu">स्क्रिप्ट लिहिण्यासाठी स्क्रीनवरील सर्व आयटम मजकूर म्हणून कॉपी करणे</string>
     <string name="script_inspect_clip_label">आयटम तपशील</string>
-    <string name="summary_inspect_item_menu">स्क्रिप्ट लिहिण्यासाठी शेवटच्या फोकस केलेल्या आयटमचे तपशील सांगणे आणि कॉपी करणे</string>
+    <string name="summary_inspect_item_menu">स्क्रिप्ट आणि मॅक्रो लिहिण्यासाठी तुम्ही ज्या आयटमवर होता त्याचे तपशील दाखवते</string>
     <string name="script_keys_backtalk_modifier">SandFly मॉडिफायर की</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, नंतर <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">कमांड</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">स्क्रिप्ट तपशील</string>
     <string name="item_details_app">ॲप</string>
     <string name="script_permission_system">मागे किंवा होमवर जाणे, सूचना उघडणे, ॲप्सची सूची दाखवणे, ॲप्स, सेटिंग्ज आणि लिंक उघडणे, ॲप्सना Intent पाठवणे, व्हॉल्यूम, रिंगर मोड आणि Wi-Fi व फ्लॅशलाइट यांसारखी डिव्हाइस सेटिंग्ज बदलणे, मीडिया नियंत्रित करणे, टाइमर आणि अलार्म सेट करणे, आणि कॉल व मेसेज सुरू करणे</string>
+    <string name="script_from_code">SandFly मध्ये एंटर केले.</string>
+    <string name="script_code_view">कोड पहा</string>
+    <string name="script_code_edit">कोड संपादित करा</string>
+    <string name="script_code_new">कोडमधून नवीन स्क्रिप्ट</string>
+    <string name="script_code_field">कोड</string>
+    <string name="script_code_save">सेव्ह करा</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> सेव्ह केले</string>
+    <string name="script_code_not_saved">स्क्रिप्ट सेव्ह केली नाही</string>
+    <string name="script_code_id_changed">मॅनिफेस्टचा id <xliff:g id="id">%1$s</xliff:g> असाच राहिला पाहिजे.</string>
+    <string name="script_code_load_failed">कोड वाचता आला नाही.</string>
+    <string name="script_code_discard_title">बदल टाकून द्यायचे?</string>
+    <string name="script_code_discard">टाकून द्या</string>
+    <string name="script_code_keep_editing">संपादन सुरू ठेवा</string>
 </resources>

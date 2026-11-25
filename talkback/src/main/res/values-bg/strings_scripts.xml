@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Копирани елементи: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Няма прозорец за копиране</string>
     <string name="script_tree_clip_label">Дърво на екрана</string>
-    <string name="summary_copy_screen_tree_menu">Копиране на всички елементи на екрана като JSON за писане на скриптове</string>
+    <string name="summary_copy_screen_tree_menu">Копиране на всички елементи на екрана като текст за писане на скриптове</string>
     <string name="script_inspect_clip_label">Подробности за елемента</string>
-    <string name="summary_inspect_item_menu">Изговаряне и копиране на подробностите за текущия елемент за писане на скриптове</string>
+    <string name="summary_inspect_item_menu">Показване на подробностите за текущия елемент за писане на скриптове и макроси</string>
     <string name="script_keys_backtalk_modifier">Модифициращ клавиш на SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, след това <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Команди</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Подробности за скрипта</string>
     <string name="item_details_app">Приложение</string>
     <string name="script_permission_system">Връщане назад или към началния екран, отваряне на известия, показване на списък с приложения, отваряне на приложения, настройки и връзки, изпращане на Intent обекти до приложения, промяна на силата на звука, режима на звънене и настройки на устройството като Wi-Fi и фенерчето, управление на медията, задаване на таймери и будилници и започване на обаждания и съобщения</string>
+    <string name="script_from_code">Въведен в SandFly.</string>
+    <string name="script_code_view">Преглед на кода</string>
+    <string name="script_code_edit">Редактиране на кода</string>
+    <string name="script_code_new">Нов скрипт от код</string>
+    <string name="script_code_field">Код</string>
+    <string name="script_code_save">Запазване</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> е запазен</string>
+    <string name="script_code_not_saved">Скриптът не е запазен</string>
+    <string name="script_code_id_changed">Идентификаторът в манифеста трябва да остане <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Кодът не можа да бъде прочетен.</string>
+    <string name="script_code_discard_title">Да се отхвърлят ли промените?</string>
+    <string name="script_code_discard">Отхвърляне</string>
+    <string name="script_code_keep_editing">Продължаване</string>
 </resources>

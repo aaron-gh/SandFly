@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Fokus är inuti ett objekt</string>
     <string name="macro_test_focus_inside_value">Fokus inuti: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokus inte inuti: %1$s</string>
+    <string name="macro_step_tap_position">Tryck på position</string>
+    <string name="macro_step_tap_position_value">Tryck på <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixlar från vänster</string>
+    <string name="macro_tap_y">Y, pixlar uppifrån</string>
+    <string name="macro_invalid_position">Ange X och Y från 0 till <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Verktygstips</string>
+    <string name="macro_step_touch_hold">Tryck länge på objekt</string>
+    <string name="macro_step_touch_hold_value">Tryck länge på <xliff:g id="label" example="Voice message">%1$s</xliff:g> i <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Tryck länge på <xliff:g id="label" example="Voice message">%1$s</xliff:g> i <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Sekunder att hålla</string>
+    <string name="macro_slide">Innan fingret lyfts</string>
+    <string name="macro_slide_none">Lyft på stället</string>
+    <string name="macro_slide_up">Dra uppåt</string>
+    <string name="macro_slide_down">Dra nedåt</string>
+    <string name="macro_slide_left">Dra åt vänster</string>
+    <string name="macro_slide_right">Dra åt höger</string>
+    <string name="macro_slide_distance">Avstånd i dp</string>
+    <string name="macro_app">App</string>
+    <string name="macro_all_apps">Alla appar</string>
+    <string name="macro_add_app">Lägg till app</string>
+    <string name="macro_apps">Appar</string>
+    <string name="macro_in_actions">Visa i Åtgärder</string>
+    <string name="macro_in_actions_only_when">Visa i Åtgärder bara när</string>
+    <string name="macro_not_in_app">Makrot kördes inte. Körs bara i <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makron</item>
+    </plurals>
+    <string name="macro_record">Spela in steg</string>
+    <string name="macro_record_new">Spela in ett makro</string>
+    <string name="macro_recording_notification">Spelar in makrosteg: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Spelar in. Stoppa genom att köra Spela in ett makro eller Stoppa makro, eller öppna aviseringen Spelar in makrosteg.</string>
+    <string name="macro_recorded">Inspelade steg</string>
+    <string name="macro_recorded_no_passwords">Text som skrivs i lösenordsfält spelas inte in.</string>
+    <string name="macro_recorded_too_many">Inte tillagt. Ett makro har högst <xliff:g id="count" example="200">%1$d</xliff:g> steg.</string>
+    <string name="macro_recorded_name">Inspelat <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Lista på skärmen</string>
 </resources>

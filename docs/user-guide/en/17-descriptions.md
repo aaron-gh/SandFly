@@ -73,6 +73,7 @@ These commands are in the **Image and screen descriptions** category in **Comman
 - **Take picture and describe**: takes a picture with the rear camera and describes it. See [](#descriptions-take-picture).
 - **Describe image**, **Speak image description** and **Ask about image**: describe the focused image in a window, describe it aloud, or answer a spoken question about it.
 - **Describe screen**, **Speak screen description** and **Ask about screen**: the same for the whole screen.
+- **Share image of focused item** and **Share screenshot**: take a screenshot of the focused item or the whole screen and open the Android share sheet with it, to send it to another app. Needs Android 11 or later. Secure windows are black in the screenshot.
 - **Report AI response**: opens a problem report with the last text an AI model gave, such as a description or an answer. See [](#help).
 
 With SandFly Pro, the category also has the screen recognition commands. See [](#pro-screen-recognition).
@@ -83,7 +84,7 @@ For default gestures and keyboard shortcuts, see [](#appendix-gestures) and [](#
 
 #### AI actions reading control {#descriptions-ai-actions}
 
-The **AI actions** reading control runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description** and **Ask about image**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. It needs Android 11 or later.
+The **AI actions** reading control runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image**, **Share image of focused item** and **Share screenshot**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. It needs Android 11 or later.
 
 1. Choose the **AI actions** reading control.
 2. Swipe up or down to choose an action.
@@ -93,7 +94,7 @@ Double-tap runs the action that the reading control announced until focus moves.
 
 ### Take a picture and describe it {#descriptions-take-picture}
 
-**Take picture and describe** opens a screen that takes one picture with the rear camera and describes it as **Describe image** does, with the same window for questions.
+**Take picture and describe** opens a screen that takes one picture with the rear camera and describes it as **Describe image** does, with the same window for questions. It is available only on devices with a camera.
 
 1. Run **Take picture and describe**. SandFly says "Hold the phone steady" and takes the picture.
 2. Read the description, and ask questions about the picture if you need to.
@@ -130,6 +131,8 @@ API keys stay on the phone: exported settings don't include them. See [](#profil
 
 When no service is set up, SandFly says "No AI service is set up. Set one up in its settings below."
 
+The **AI service** reading control, off by default, changes the same setting. Swipe up or down to switch between the services that are set up; SandFly says the name of the service. **None** and SandFly Pro without a licence aren't in it. With fewer than two services set up, SandFly says "Only one AI service set up" or "No AI service set up" and the setting stays. Add it in **Reading controls**; see [](#commands). The **AI service: next value** and **AI service: previous value** commands, in **Setting values**, do the same without selecting the reading control.
+
 #### Gemini settings {#descriptions-gemini}
 
 **Gemini settings** has two items:
@@ -141,7 +144,7 @@ On the free tier of the Gemini API, Google can keep what it receives and use it 
 
 #### What is sent {#descriptions-privacy}
 
-Images, screenshots and questions that you send are sent to the service in use. Before the first image goes to a service, SandFly shows a dialog with the name of the service; its own terms and privacy policy apply. With **Use on-device AI** on, nothing is sent.
+Images, screenshots and questions that you send are sent to the service in use. Before the first image goes to a service, SandFly shows a dialog with the address of the service, such as api.anthropic.com; its own terms and privacy policy apply. With **Use on-device AI** on, nothing is sent.
 
 ### On-device AI {#descriptions-on-device}
 
@@ -153,7 +156,7 @@ While **Use on-device AI** is on, **Describe image**, **Describe screen**, quest
 
 1. Go to **AI services** > **On-device AI**.
 2. Choose **Model**, then choose a model. The list shows the size of each model, the memory it needs and a short note, and marks models that are **downloaded** or **experimental**. It lists only the models that the phone has enough memory for, and the ones already downloaded.
-3. Choose **Download model**. On mobile data, SandFly asks first.
+3. Choose **Download model**, which shows the size of the download. On mobile data, SandFly asks first.
 4. When the download finishes, turn on **Use on-device AI**.
 
 **Gemma 4 E2B** is the recommended model, and the default on phones with enough memory for it. On other phones the default is the largest model that fits. Experimental models may not work well.
@@ -226,7 +229,7 @@ Results are read with the SandFly voice, also while other audio plays. The micro
 - Otherwise the AI service in use, such as SandFly Pro or Claude, which gets a camera image every few seconds.
 - With Gemini as the AI service, the Gemini Live API, which gets a camera image every few seconds. SandFly reads the text of the answer.
 
-Before the first camera image goes to a service, SandFly asks with the dialog **Send camera images to** and the name of the service; choose **Send images**. A rejected API key, a used-up usage limit or repeated failures turn off the modes that use AI, and SandFly says so.
+Before the first camera image goes to a service, SandFly shows the dialog **Send camera images to Gemini?**, or for other services **Send camera images to** and the address of the service, such as api.anthropic.com. Choose **Send images**. A rejected API key, a used-up usage limit or repeated failures turn off the modes that use AI, and SandFly says so.
 
 ### Error messages {#descriptions-errors}
 

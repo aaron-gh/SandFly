@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> элемент көчүрүлдү</string>
     <string name="script_tree_none">Көчүрүү үчүн терезе жок</string>
     <string name="script_tree_clip_label">Экран дарагы</string>
-    <string name="summary_copy_screen_tree_menu">Скрипт жазуу үчүн экрандагы бардык элементтерди JSON катары көчүрүү</string>
+    <string name="summary_copy_screen_tree_menu">Скрипт жазуу үчүн экрандагы бардык элементтерди текст катары көчүрүү</string>
     <string name="script_inspect_clip_label">Элементтин чоо-жайы</string>
-    <string name="summary_inspect_item_menu">Скрипт жазуу үчүн акыркы фокустагы элементтин чоо-жайын айтуу жана көчүрүү</string>
+    <string name="summary_inspect_item_menu">Скрипттерди жана макросторду жазуу үчүн акыркы фокустагы элементтин чоо-жайын көрсөтүү</string>
     <string name="script_keys_backtalk_modifier">SandFly өзгөрткүч баскычы</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, андан кийин <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Командалар</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Скрипттин чоо-жайы</string>
     <string name="item_details_app">Колдонмо</string>
     <string name="script_permission_system">Артка же башкы экранга өтүү, билдирмелерди ачуу, колдонмолордун тизмесин көрсөтүү, колдонмолорду, жөндөөлөрдү жана шилтемелерди ачуу, колдонмолорго Intent жөнөтүү, үн катуулугун, коңгуроо режимин жана Wi-Fi, кол чырак сыяктуу түзмөк параметрлерин өзгөртүү, медианы башкаруу, таймерлерди жана ойготкучтарды коюу, чалууларды жана билдирүүлөрдү баштоо</string>
+    <string name="script_from_code">SandFly\'да киргизилген.</string>
+    <string name="script_code_view">Кодду көрүү</string>
+    <string name="script_code_edit">Кодду түзөтүү</string>
+    <string name="script_code_new">Коддон жаңы скрипт</string>
+    <string name="script_code_field">Код</string>
+    <string name="script_code_save">Сактоо</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> сакталды</string>
+    <string name="script_code_not_saved">Скрипт сакталган жок</string>
+    <string name="script_code_id_changed">Манифесттин id мааниси <xliff:g id="id">%1$s</xliff:g> бойдон калышы керек.</string>
+    <string name="script_code_load_failed">Кодду окуу мүмкүн болгон жок.</string>
+    <string name="script_code_discard_title">Өзгөртүүлөр жок кылынсынбы?</string>
+    <string name="script_code_discard">Жок кылуу</string>
+    <string name="script_code_keep_editing">Түзөтүүнү улантуу</string>
 </resources>

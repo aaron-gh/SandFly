@@ -79,7 +79,7 @@ The tutorial has 16 lessons in five chapters:
 
 Each lesson gives an instruction, waits until you have done it with your own gestures, then gives the next one. The instruction is the first item after the name of the lesson. SandFly speaks each instruction, also while other audio plays, and repeats it after 25 seconds without a gesture or touch, up to three times. The instructions name the gestures that are assigned to each action in your gesture settings. If an action has no gesture, the step says so, and **Skip step** goes on without it.
 
-When a lesson is complete, SandFly says which gesture starts the next lesson and moves focus to **Next lesson**. The last lesson has **Finish tutorial**.
+When a lesson is complete, SandFly says which gesture starts the next lesson and moves focus to **Next lesson**, followed by the name of the lesson. The last lesson has **Finish tutorial**.
 
 In a lesson, gestures that would leave the tutorial, such as Back, Home, recent apps and notifications, don't leave it. SandFly says what the gesture would have done. Turning speech off and pausing SandFly work the same way. Back still closes the keyboard and menus. To choose another lesson or leave the tutorial, use **Contents**, which lists the lessons, says which are done, and opens any of them. **Close tutorial** in **Contents** closes the tutorial.
 
@@ -126,7 +126,7 @@ To open the SandFly settings, do one of the following:
 - Choose **SandFly settings** in the SandFly menu.
 - In the Android settings, go to **Accessibility** > **SandFly** > **Settings**.
 
-The main settings screen lists the settings screens: Speech, Verbosity, Sound and vibration, Audio output, Touch, Gestures, Keyboard shortcuts, Volume keys, Commands, Reading controls, SandFly menu, Custom menus, Macros, Voice commands, Navigation, Typing, Braille, Display, Notifications, Translation, Image and screen descriptions, AI services, Scripts, Custom labels, Quick settings, Overview, Pause and turn off, Settings profiles, Back up and restore, Updates and installation, Shizuku and root, Help & feedback and Developer settings. Some screens are not shown on watches and TVs, or on devices that lack the hardware a feature needs.
+The main settings screen lists the settings screens: Speech, Verbosity, Sound and vibration, Audio output, Touch, Gestures, Keyboard shortcuts, Volume keys, Commands, Reading controls, SandFly menu, Custom menus, Macros, Voice commands, Navigation, Typing, Braille, Display, Notifications, Translation, Image and screen descriptions, AI services, SandFly Pro, Scripts, Custom labels, Quick settings, Overview, Pause and turn off, Settings profiles, Back up and restore, Updates and installation, Shizuku and root, Help & feedback and Developer settings. Some screens are not shown on watches and TVs, or on devices that lack the hardware a feature needs.
 
 #### Search the settings {#getting-started-search}
 

@@ -71,6 +71,32 @@
     <string name="script_from_link">From <xliff:g id="link">%1$s</xliff:g>.</string>
     <!-- In the install dialog, for a script from a script source, named owner/repository. [CHAR LIMIT=NONE] -->
     <string name="script_from_source">From the script source <xliff:g id="source">%1$s</xliff:g>.</string>
+    <!-- In the install dialog, for a script whose code was entered in SandFly, with New script from code or Edit code. [CHAR LIMIT=NONE] -->
+    <string name="script_from_code">Entered in SandFly.</string>
+    <!-- Action on a script's page that shows the script's code, its main.lua file with the manifest, as read-only text. Also the title of that screen. [CHAR LIMIT=40] -->
+    <string name="script_code_view">View code</string>
+    <!-- Action on a script's page that opens the script's code, its main.lua file with the manifest, in a text editor that changes the installed script. Also the title of that screen. [CHAR LIMIT=40] -->
+    <string name="script_code_edit">Edit code</string>
+    <!-- Action on the Scripts screen that opens an empty text editor, to enter a whole script with its manifest and install it. Also the title of that screen. [CHAR LIMIT=40] -->
+    <string name="script_code_new">New script from code</string>
+    <!-- Hint of the multi-line text field that holds a script's code in Edit code and New script from code. [CHAR LIMIT=40] -->
+    <string name="script_code_field">Code</string>
+    <!-- Button that checks and installs the code in Edit code and New script from code. [CHAR LIMIT=20] -->
+    <string name="script_code_save">Save</string>
+    <!-- Shown after Edit code replaced a script's code. [CHAR LIMIT=NONE] -->
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> saved</string>
+    <!-- Title of the dialog that says why the code in Edit code or New script from code wasn't installed. The editor stays open. [CHAR LIMIT=NONE] -->
+    <string name="script_code_not_saved">Script not saved</string>
+    <!-- In Edit code, when the code's manifest has a different id from the script being edited. [CHAR LIMIT=NONE] -->
+    <string name="script_code_id_changed">The manifest id must stay <xliff:g id="id">%1$s</xliff:g>.</string>
+    <!-- Shown when View code or Edit code can't read the script's main.lua file. [CHAR LIMIT=NONE] -->
+    <string name="script_code_load_failed">The code could not be read.</string>
+    <!-- Title of the dialog shown on Back in Edit code or New script from code when the code was changed and not saved. [CHAR LIMIT=NONE] -->
+    <string name="script_code_discard_title">Discard changes?</string>
+    <!-- Button that closes Edit code or New script from code without saving. [CHAR LIMIT=20] -->
+    <string name="script_code_discard">Discard</string>
+    <!-- Button that returns to Edit code or New script from code without closing it. [CHAR LIMIT=20] -->
+    <string name="script_code_keep_editing">Keep editing</string>
     <!-- In the install dialog, for the example script that comes with SandFly. [CHAR LIMIT=NONE] -->
     <string name="script_from_sandfly">Included with SandFly.</string>
     <!-- In the install dialog, for a script that asks for no permissions. [CHAR LIMIT=NONE] -->
@@ -213,7 +239,7 @@
     <!-- Label of the clipboard entry with the screen tree. [CHAR LIMIT=40] -->
     <string name="script_tree_clip_label">Screen tree</string>
     <!-- Summary of the option that shows Copy screen tree in the SandFly menu. [CHAR LIMIT=NONE] -->
-    <string name="summary_copy_screen_tree_menu">Copy all items on screen as JSON, for writing scripts</string>
+    <string name="summary_copy_screen_tree_menu">Copy all items on screen as text, for writing scripts</string>
     <!-- Label of the clipboard entry with the focused item's details. [CHAR LIMIT=40] -->
     <string name="script_inspect_clip_label">Item details</string>
     <!-- Summary of the option that shows Inspect focused item in the SandFly menu. [CHAR LIMIT=NONE] -->

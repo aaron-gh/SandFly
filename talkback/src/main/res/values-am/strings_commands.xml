@@ -79,4 +79,20 @@
     <string name="menu_reset">ወደ ነባሪ ዳግም አስጀምር</string>
     <string name="menu_reset_confirm">የSandFly ምናሌ ወደ ነባሪ ንጥሎቹ እና ቅደም ተከተሉ ዳግም ይጀምር?</string>
     <string name="menu_assign">የእጅ ምልክቶች እና የቁልፍ ሰሌዳ አቋራጭ</string>
+    <string name="shortcut_app_gestures_for_app">ለዚህ መተግበሪያ የእጅ ምልክቶች</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku እና root</string>
+    <string name="title_pref_use_root">ከShizuku ይልቅ root ተጠቀም</string>
+    <string name="command_perform_gesture">የእጅ ምልክት ያድርጉ</string>
+    <string name="command_perform_gesture_message">የእጅ ምልክቱን ያድርጉ።</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> መመደብ አይቻልም</string>
+    <string name="command_run">ትዕዛዝ አሂድ</string>
+    <string name="command_add_to_sandfly_menu">ወደ SandFly ምናሌ አክል</string>
+    <string name="command_remove_from_sandfly_menu">ከSandFly ምናሌ አስወግድ</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> ወደ SandFly ምናሌ ታክሏል</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> ከSandFly ምናሌ ተወግዷል</string>
+    <string name="commands_search_hint">ትዕዛዞችን ፈልግ</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ትዕዛዝ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ትዕዛዞች</item>
+    </plurals>
 </resources>

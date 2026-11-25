@@ -79,4 +79,20 @@
     <string name="menu_reset">Repor predefinição</string>
     <string name="menu_reset_confirm">Repor o menu do SandFly nos itens e na ordem predefinidos?</string>
     <string name="menu_assign">Gestos e atalho de teclado</string>
+    <string name="shortcut_app_gestures_for_app">Gestos para esta app</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku e root</string>
+    <string name="title_pref_use_root">Usar root em vez do Shizuku</string>
+    <string name="command_perform_gesture">Fazer gesto</string>
+    <string name="command_perform_gesture_message">Faça o gesto.</string>
+    <string name="command_gesture_not_assignable">Não é possível atribuir <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Executar comando</string>
+    <string name="command_add_to_sandfly_menu">Adicionar ao menu do SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Remover do menu do SandFly</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> adicionado ao menu do SandFly</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> removido do menu do SandFly</string>
+    <string name="commands_search_hint">Pesquisar comandos</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> comando</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> comandos</item>
+    </plurals>
 </resources>

@@ -188,6 +188,13 @@ public class TalkBackPreferenceFilter {
     SWIPES_BEFORE_LIFT(
         R.string.pref_swipes_before_lift_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | SHOW_IF_SERVICE_GESTURE_DETECTION),
+    // One-finger taps beyond the double tap, which only SandFly's own gesture detection recognizes.
+    CUSTOMIZE_GESTURE_1FINGER_3TAP(
+        R.string.pref_shortcut_1finger_3tap_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
+    CUSTOMIZE_GESTURE_1FINGER_4TAP(
+        R.string.pref_shortcut_1finger_4tap_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     // Swipes that end with a rest, which only SandFly's own gesture detection recognizes.
     CUSTOMIZE_GESTURE_UP_AND_HOLD(
         R.string.pref_shortcut_up_and_hold_key,
@@ -267,6 +274,7 @@ public class TalkBackPreferenceFilter {
         R.string.pref_show_context_menu_pause_backtalk_setting_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
     // A TV has no touchscreen for direct touch, and no gesture for the status readout.
     DIRECT_TOUCH(R.string.pref_direct_touch_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
+    DOUBLE_TAP_TAPS(R.string.pref_double_tap_taps_key, HIDDEN_ON_WATCH | HIDDEN_ON_TV),
     STATUS_READOUT(R.string.pref_status_readout_key, HIDDEN_ON_TV),
     // A TV has no notification shade for Backtalk's list to replace.
     NOTIFICATION_LIST(R.string.pref_notification_list_key, HIDDEN_ON_TV),
@@ -298,6 +306,8 @@ public class TalkBackPreferenceFilter {
     SANDFLY_KEYBOARD_DOUBLE_SPACE_PERIOD(
         R.string.pref_sandfly_keyboard_double_space_period_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SPEAK_PASSWORD_CHARACTERS(
+        R.string.pref_speak_password_characters_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     BRAILLE_DISPLAY(
         R.string.pref_brailledisplay_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
@@ -405,6 +415,9 @@ public class TalkBackPreferenceFilter {
         R.string.pref_shortcut_3finger_4tap_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     // Only SandFly's gesture detection reports where the fingers were.
+    CUSTOMIZE_GESTURE_2FINGER_2TAP_TOP_BOTTOM(
+        R.string.pref_shortcut_2finger_2tap_top_bottom_key,
+        SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),
     CUSTOMIZE_GESTURE_4FINGER_1TAP_TOP(
         R.string.pref_shortcut_4finger_1tap_top_key,
         SHOW_IF_SERVICE_GESTURE_DETECTION | HIDDEN_ON_WATCH),

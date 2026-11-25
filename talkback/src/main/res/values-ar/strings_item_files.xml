@@ -93,4 +93,12 @@
         <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> أمر صوتي مخصّص</item>
         <item quantity="zero">لا أوامر صوتية مخصّصة</item>
     </plurals>
+    <plurals name="item_file_count_braille_characters">
+        <item quantity="zero"><xliff:g id="count" example="2">%d</xliff:g> حرف برايل مخصص</item>
+        <item quantity="one">حرف برايل مخصص واحد (<xliff:g id="count" example="1">%d</xliff:g>)</item>
+        <item quantity="two">حرفا برايل مخصصان (<xliff:g id="count" example="2">%d</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> أحرف برايل مخصصة</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> حرف برايل مخصص</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> حرف برايل مخصص</item>
+    </plurals>
 </resources>

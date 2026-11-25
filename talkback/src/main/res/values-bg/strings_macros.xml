@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Фокусът е вътре в елемент</string>
     <string name="macro_test_focus_inside_value">Фокус вътре в: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Фокус не е вътре в: %1$s</string>
+    <string name="macro_step_tap_position">Докосване на позиция</string>
+    <string name="macro_step_tap_position_value">Докосване на <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, пиксели от левия край</string>
+    <string name="macro_tap_y">Y, пиксели от горния край</string>
+    <string name="macro_invalid_position">Въведете X и Y от 0 до <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Подсказка</string>
+    <string name="macro_step_touch_hold">Докосване и задържане на елемент</string>
+    <string name="macro_step_touch_hold_value">Докосване и задържане на <xliff:g id="label" example="Voice message">%1$s</xliff:g> за <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Докосване и задържане на <xliff:g id="label" example="Voice message">%1$s</xliff:g> за <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Секунди на задържане</string>
+    <string name="macro_slide">Преди вдигане</string>
+    <string name="macro_slide_none">Вдигане на място</string>
+    <string name="macro_slide_up">Плъзгане нагоре</string>
+    <string name="macro_slide_down">Плъзгане надолу</string>
+    <string name="macro_slide_left">Плъзгане наляво</string>
+    <string name="macro_slide_right">Плъзгане надясно</string>
+    <string name="macro_slide_distance">Разстояние в dp</string>
+    <string name="macro_app">Приложение</string>
+    <string name="macro_all_apps">Всички приложения</string>
+    <string name="macro_add_app">Добавяне на приложение</string>
+    <string name="macro_apps">Приложения</string>
+    <string name="macro_in_actions">Показване в „Действия“</string>
+    <string name="macro_in_actions_only_when">Показване в „Действия“ само когато</string>
+    <string name="macro_not_in_app">Макросът не е изпълнен. Изпълнява се само в <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> макрос</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> макроса</item>
+    </plurals>
+    <string name="macro_record">Записване на стъпки</string>
+    <string name="macro_record_new">Записване на макрос</string>
+    <string name="macro_recording_notification">Записване на стъпки на макрос: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Записва се. За спиране изпълнете „Записване на макрос“ или „Спиране на макрос“ или отворете известието „Записване на стъпки на макрос“.</string>
+    <string name="macro_recorded">Записани стъпки</string>
+    <string name="macro_recorded_no_passwords">Текстът, въведен в полета за парола, не се записва.</string>
+    <string name="macro_recorded_too_many">Не е добавено. Макросът може да има най-много <xliff:g id="count" example="200">%1$d</xliff:g> стъпки.</string>
+    <string name="macro_recorded_name">Записан <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Списък на екрана</string>
 </resources>

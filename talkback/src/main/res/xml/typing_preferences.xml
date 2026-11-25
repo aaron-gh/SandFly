@@ -72,6 +72,11 @@
         android:defaultValue="@bool/pref_sandfly_keyboard_double_space_period_default"
         android:key="@string/pref_sandfly_keyboard_double_space_period_key"
         android:title="@string/title_pref_sandfly_keyboard_double_space_period" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_speak_password_characters_default"
+        android:key="@string/pref_speak_password_characters_key"
+        android:summary="@string/summary_pref_speak_password_characters"
+        android:title="@string/title_pref_speak_password_characters" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:key="@string/pref_physical_keyboard_key"
         android:title="@string/title_pref_system_physical_keyboard" />

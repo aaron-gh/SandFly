@@ -30,4 +30,10 @@
     <plurals name="item_file_count_symbol_dictionary"><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> запис словника символів</item><item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> записи словника символів</item><item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> записів словника символів</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> запису словника символів</item></plurals>
     <plurals name="item_file_count_braille_dictionary"><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> запис брайлівського словника</item><item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> записи брайлівського словника</item><item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> записів брайлівського словника</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> запису брайлівського словника</item></plurals>
     <plurals name="item_file_count_voice_commands"><item quantity="one"><xliff:g id="count" example="2">%d</xliff:g> власна голосова команда</item><item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> власні голосові команди</item><item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> власних голосових команд</item><item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> власної голосової команди</item></plurals>
+    <plurals name="item_file_count_braille_characters">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> власний символ Брайля</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> власні символи Брайля</item>
+        <item quantity="many"><xliff:g id="count" example="2">%d</xliff:g> власних символів Брайля</item>
+        <item quantity="other"><xliff:g id="count" example="2">%d</xliff:g> власного символу Брайля</item>
+    </plurals>
 </resources>

@@ -79,4 +79,24 @@
     <string name="menu_reset">إعادة الضبط إلى الإعداد التلقائي</string>
     <string name="menu_reset_confirm">هل تريد إعادة ضبط قائمة SandFly إلى عناصرها وترتيبها التلقائيين؟</string>
     <string name="menu_assign">الإيماءات واختصارات لوحة المفاتيح</string>
+    <string name="shortcut_app_gestures_for_app">إيماءات هذا التطبيق</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku والجذر</string>
+    <string name="title_pref_use_root">استخدام الجذر بدلاً من Shizuku</string>
+    <string name="command_perform_gesture">تنفيذ إيماءة</string>
+    <string name="command_perform_gesture_message">نفّذ الإيماءة.</string>
+    <string name="command_gesture_not_assignable">يتعذّر تخصيص <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">تنفيذ الأمر</string>
+    <string name="command_add_to_sandfly_menu">إضافة إلى قائمة SandFly</string>
+    <string name="command_remove_from_sandfly_menu">إزالة من قائمة SandFly</string>
+    <string name="command_added_to_sandfly_menu">تمت إضافة <xliff:g id="command" example="Describe image">%1$s</xliff:g> إلى قائمة SandFly</string>
+    <string name="command_removed_from_sandfly_menu">تمت إزالة <xliff:g id="command" example="Describe image">%1$s</xliff:g> من قائمة SandFly</string>
+    <string name="commands_search_hint">البحث في الأوامر</string>
+    <plurals name="commands_search_results">
+        <item quantity="zero"><xliff:g id="count" example="12">%d</xliff:g> أمر</item>
+        <item quantity="one">أمر واحد (<xliff:g id="count" example="1">%d</xliff:g>)</item>
+        <item quantity="two">أمران (<xliff:g id="count" example="12">%d</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> أوامر</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> أمرًا</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> أمر</item>
+    </plurals>
 </resources>

@@ -79,4 +79,20 @@
     <string name="menu_reset">Defolta qaytarın</string>
     <string name="menu_reset_confirm">SandFly menyusu defolt elementlərə və ardıcıllığa qaytarılsın?</string>
     <string name="menu_assign">Jestlər və klaviatura qısayolu</string>
+    <string name="shortcut_app_gestures_for_app">Bu tətbiq üçün jestlər</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku və root</string>
+    <string name="title_pref_use_root">Shizuku əvəzinə root istifadə edin</string>
+    <string name="command_perform_gesture">Jesti edin</string>
+    <string name="command_perform_gesture_message">Jesti edin.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> təyin etmək olmur</string>
+    <string name="command_run">Əmri icra edin</string>
+    <string name="command_add_to_sandfly_menu">SandFly menyusuna əlavə edin</string>
+    <string name="command_remove_from_sandfly_menu">SandFly menyusundan silin</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly menyusuna əlavə edildi</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly menyusundan silindi</string>
+    <string name="commands_search_hint">Əmrləri axtarın</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> əmr</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> əmr</item>
+    </plurals>
 </resources>

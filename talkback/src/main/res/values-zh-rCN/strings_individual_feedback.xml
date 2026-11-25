@@ -7,6 +7,7 @@
   <string name="individual_feedback_action_preview">预览</string>
   <string name="individual_sound_focus">聚焦到项目</string>
   <string name="individual_sound_focus_actionable">聚焦到可操作的项目</string>
+  <string name="individual_sound_actions_available">有可用操作</string>
   <string name="individual_sound_view_entered">触摸空白区域</string>
   <string name="individual_sound_tick">点击</string>
   <string name="individual_sound_long_clicked">长按</string>
@@ -48,7 +49,7 @@
     <string name="individual_vibration_braille_new_line">盲文键盘：换行或删除单词</string>
 
     <!-- Vibration when fingers are held down on the braille keyboard. [CHAR LIMIT=60] -->
-    <string name="individual_vibration_braille_hold">盲文键盘：按住手指</string>
+    <string name="individual_vibration_braille_hold">盲文键盘：长按</string>
 
     <!-- Vibration for other gestures on the braille keyboard. [CHAR LIMIT=60] -->
     <string name="individual_vibration_braille_gesture">盲文键盘：其他手势</string>
@@ -74,4 +75,7 @@
     <string name="individual_sound_keyboard_closed">键盘已关闭</string>
     <string name="individual_sound_model_loading">端侧 AI 模型加载中</string>
     <string name="individual_sound_sandfly_notification">SandFly 通知</string>
+    <string name="individual_sound_screen_hidden">屏幕画面已隐藏</string>
+    <string name="individual_sound_screen_shown">屏幕画面已显示</string>
+    <string name="individual_sound_full_charge">电池已充满</string>
 </resources>

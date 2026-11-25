@@ -109,4 +109,4 @@ SandFly ignores broadcasts that don't share their identity.
 
 ## Scripts
 
-SandFly scripts don't need any of this. They speak with `backtalk.speak`, as described in [Writing SandFly scripts](scripting.md).
+SandFly scripts don't need any of this. They speak with `sf.speak`, as described in [Writing SandFly scripts](scripting.md).

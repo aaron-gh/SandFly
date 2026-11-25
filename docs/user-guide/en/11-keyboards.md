@@ -33,6 +33,7 @@ A keymap is a set of keyboard shortcuts. SandFly has these keymaps:
 - **JAWS keymap**: the desktop keystrokes of JAWS, with its laptop keys for clicks and cursors, with the SandFly key as the JAWS key. Its SandFly key is Insert, Numpad Insert or Meta, Insert by default.
 - **Orca keymap**: the laptop layout of Orca, with the SandFly key as the Orca modifier. Its SandFly key is Insert, Numpad Insert, Meta or Alt, Insert by default.
 - **Keyboard phone keymap** and **Keyboard phone single-key keymap**: for phones with a built-in keyboard that has no Ctrl, Meta or arrow keys. See [](#keyboards-phones).
+- **BlackBerry keymap**: keys similar to those of the BlackBerry 10 Screen Reader, for keyboard phones. See [](#keyboards-phones).
 - Keymaps that you make. See [](#keyboards-custom-keymaps).
 
 In the NVDA, JAWS and Orca keymaps, the arrow keys and Tab move without the SandFly key, as on a computer. See [](#keyboards-desktop).
@@ -88,10 +89,12 @@ These aren't available on watches. For the file format, see [](#api-item-files).
 
 **Keyboard shortcuts** in SandFly settings has:
 
+- **Search**: finds a command or an arrow key by its name or its keys, and opens its shortcut.
 - **Keymap**: **Choose a keymap**, **Choose SandFly key**, **Reset the keymap**, **View system keyboard shortcuts**, **New keymap**, **Export to file**, **Import from file**, and for keymaps that you made, **Rename keymap** and **Delete keymap**. **View system keyboard shortcuts** opens the list of the keyboard shortcuts of Android and the app in use.
 - **Keyboard shortcuts in apps**: shortcuts that run other commands in one app. See [](#keyboards-app-shortcuts).
-- **Search**: finds a command or an arrow key by its name or its keys, and opens its shortcut.
+- **Keyboard practice**: turns keyboard practice on. See [](#keyboards-practice).
 - **Arrow key navigation**: in keymaps that have it. See [](#keyboards-arrow-keys).
+- **Fast search**: **Fast search key** and **Wrap around**. See [](#keyboards-fast-search).
 - The commands, by category, each with its shortcut. Each category opens and closes. A command whose shortcut works only in browse mode has "in browse mode" after its name, such as "Navigate to next heading in browse mode".
 
 You can change shortcuts and reset the keymap only while SandFly is on.
@@ -109,7 +112,7 @@ You can also see and change the keyboard shortcut of a command on its screen in 
 In the dialog:
 
 - Backspace clears the shortcut, so the command has none. **Clear** does the same.
-- Ctrl + Backspace sets the default shortcut again.
+- Ctrl + Backspace sets the default shortcut again, in the SandFly and VoiceOver keymaps and in keymaps copied from them.
 - Escape, or **Cancel**, closes the dialog without a change.
 
 If another command has the keys, SandFly shows "Currently assigned to" and the name of that command. When you save, the **Key already in use** dialog asks whether to take the keys from that command; select **OK** to assign them to the command you are changing.
@@ -125,6 +128,10 @@ To record such a shortcut, press SandFly key + R or SandFly key + O, then the th
 #### Shortcuts that work only while editing {#keyboards-while-editing}
 
 Select **Only while editing** in the shortcut dialog for a shortcut that works only while a text field is being edited. Such a shortcut is pressed without the SandFly key, and SandFly takes its keys from the text field. Outside text fields, the keys work as they would without the shortcut. The shortcut is shown with "while editing" after its keys, such as "Alt + Space while editing".
+
+#### Shortcuts that work only in browse mode {#keyboards-in-browse-mode}
+
+In the keyboard phone keymaps, select **Only in browse mode** in the shortcut dialog for a shortcut that works only in browse mode. Such a shortcut is pressed without the SandFly key. In browse mode, it comes before a shortcut of the same keys without **Only in browse mode**, which the SandFly key with the keys then runs. Outside browse mode, the keys work as they would without the shortcut. The shortcut is shown with "in browse mode" after its keys, such as "B in browse mode".
 
 #### Presses in keyboard phone keymaps {#keyboards-presses}
 
@@ -143,16 +150,34 @@ To record these, press the keys the same way in the shortcut dialog. In these ke
 
 1. In **Keyboard shortcuts**, select **Keyboard shortcuts in apps**.
 2. Select **Add app**, and choose the app.
-3. Under **Keyboard shortcuts**, select **Add keyboard shortcut**, and press the keys.
-4. Choose a command.
+3. Under **Keyboard shortcuts**, select **Add keyboard shortcut**, press the keys, and select **Save**.
+4. Choose a category, then a command, or choose **Unassigned**.
+
+**Add keyboard shortcut** is available only while SandFly is on. Select a shortcut for **Choose command** or **Remove**. **Remove app** removes the gestures and shortcuts of the app.
 
 The same screen has the gestures of each app. For gestures in apps, see [](#gestures).
 
 ### Find a keyboard shortcut {#keyboards-shortcut-list}
 
-**Show keyboard shortcuts list** opens a list of every command and its shortcut, which you can search. Its default shortcut is SandFly key + Shift + / in the SandFly keymap, and SandFly key + Q in the keyboard phone keymap.
+**Show keyboard shortcuts list** opens a list of every command and its shortcut, which you can search. Its default shortcut is SandFly key + Shift + / in the SandFly, VoiceOver and Orca keymaps, SandFly key + Q in the keyboard phone keymap, and Q in the keyboard phone single-key keymap.
 
 **Keyboard shortcuts** > **Search** finds a command by its name or keys in settings. For the default shortcuts of every keymap, see [](#appendix-keyboard-shortcuts).
+
+### Keyboard practice {#keyboards-practice}
+
+While keyboard practice is on, SandFly says each key that you press and the command that it runs, and runs nothing. Keys don't reach apps. Use it to learn the keys of a keyboard and the shortcuts of your keymap.
+
+- Keys are said as the keyboard shortcuts list names them, followed by their command, such as "Right Shift + W, Speak window title". Keys without a command are said alone.
+- A modifier key is said when you press it, with the command of the modifier keys pressed alone. The SandFly key pressed alone is also said as the SandFly key, such as "Right Shift, SandFly key, Next item".
+- Keys pressed twice, keys held down and the second key of a shortcut of two keys in a row are said with their command, such as "Alt twice" or "Alt + Shift held".
+- While arrow key navigation is on, the arrow keys are said with their arrow key navigation commands.
+- A key held down is said once.
+
+To turn keyboard practice on, select **Keyboard shortcuts** > **Keyboard practice**, or press the shortcut of **Turn keyboard practice on or off**: SandFly key + Shift + K in the keyboard phone keymaps. Other keymaps have no default shortcut. SandFly says "Keyboard practice on".
+
+To turn it off, press the shortcut again, Back or Escape. SandFly says "Keyboard practice off". Keyboard practice is also off when SandFly restarts.
+
+**Turn keyboard practice on or off** is in the **SandFly** category, so you can also assign it to a gesture or add it to the SandFly menu. Volume keys pressed without the SandFly key change the volume as usual. The **Keyboard practice** lesson of the keyboard tutorial is different: it says only keyboard shortcuts, on the tutorial screen.
 
 ### Browse mode {#keyboards-browse-mode}
 
@@ -167,17 +192,28 @@ The default shortcut of **Turn browse mode on or off** is:
 | NVDA keymap | SandFly key + Space |
 | JAWS keymap | SandFly key + Z |
 | Orca keymap | SandFly key + A |
+| Keyboard phone single-key keymap | SandFly key pressed twice; SandFly key + Q with Alt as the SandFly key |
 
 SandFly plays a sound or says "Browse mode on" or "Browse mode off".
 
-In the keyboard phone keymaps, the commands that need browse mode in other keymaps work without it.
+In the keyboard phone keymaps, the commands that need browse mode in other keymaps work without it. In the keyboard phone single-key keymap, browse mode changes what letters do: B, C, D, I, K, L, R, T, U, V, X and the number keys 1 to 6 move as in the SandFly keymap's browse mode, and H, F, E and G move by heading, control, edit field and graphic in and outside browse mode. The SandFly key with one of these letters runs its shortcut outside browse mode, such as SandFly key + B for the bottom of the screen and SandFly key + K to move by the reading control. See [](#keyboards-phones).
 
 Two settings in **Navigation** change when browse mode is on:
 
-- **Navigation** > **Smart browse mode**: turns browse mode off when focus moves to a text field in web content, so that you can type, and on again when focus moves to an item that isn't a text field. It's on by default.
+- **Navigation** > **Smart browse mode**: turns browse mode off when focus moves to a text field in web content, so that you can type, and on again when focus moves to an item that isn't a text field. It's on by default. While arrow key navigation is on, and in the keyboard phone keymaps, moving to a text field doesn't give it input focus, so browse mode stays on until you activate the field.
 - **Navigation** > **Remember browse mode in each app**: keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless **Smart browse mode** turns it on in web content. It's off by default.
 
 For navigation by web elements, see [](#web).
+
+#### Fast search {#keyboards-fast-search}
+
+In browse mode, the fast search key with a letter or digit moves SandFly focus to the next item that starts with that letter or digit. Shift with both keys moves to the previous one. Case and accents don't matter: E finds "Email" and "Écran".
+
+To choose the key, go to **Keyboard shortcuts** > **Fast search** > **Fast search key**. It's Off by default. The list has Alt, Ctrl, Meta, each of them left or right, Sym and Fn, except keys that are part of the keymap's SandFly key. If you change the SandFly key to one that includes the fast search key, fast search is off for that keymap.
+
+Fast search doesn't work in a text field you are typing in. While the fast search key is held, its letters and digits don't run other shortcuts.
+
+**Keyboard shortcuts** > **Fast search** > **Wrap around**: when no item after SandFly focus starts with the letter, the search continues from the top of the screen, or from the bottom when moving back. It's on by default. When no item is found, SandFly says "Not found".
 
 ### Arrow key navigation {#keyboards-arrow-keys}
 
@@ -206,6 +242,8 @@ To change the command of an arrow key:
 
 A key that is part of two keys pressed together runs its command when you release it, unless you press the second key first. While a text field is being edited, single arrow keys move the cursor; keys pressed together still run their commands, and Left Arrow + Right Arrow turns arrow key navigation off once both are held for 0.4 seconds.
 
+While arrow key navigation is on, moving to a text field reads it without giving it input focus, and the arrow keys move on past it, also where the app already gave the field input focus. The field is being edited once you activate it, such as with Up Arrow + Down Arrow, or type into it. In the keyboard phone keymaps, Enter activates it too. A new screen that opens with SandFly focus on a text field with input focus starts with the field being edited. In the keyboard phone keymaps, on a new screen where another item has SandFly focus, letters type into the text field with input focus, and the arrow keys go to it once you have typed.
+
 Each keymap has its own arrow key commands and its own switch. The NVDA, JAWS and Orca keymaps don't have arrow key navigation, as their arrow keys move SandFly focus; there, the command says "No arrow key navigation in this keymap".
 
 ### Desktop navigation {#keyboards-desktop}
@@ -219,6 +257,8 @@ In the NVDA, JAWS and Orca keymaps, and in keymaps copied from them:
 - In a text field being edited, these keys go to the text field.
 
 In browse mode, single letters move by element, as single letter navigation, quick navigation keys and structural navigation do in NVDA, JAWS and Orca.
+
+Ctrl + Down Arrow and Ctrl + Up Arrow move to the next and previous paragraph. In the NVDA keymap, P and Shift + P also do, in browse mode. They are **Navigate to next paragraph, second key** and **Navigate to previous paragraph, second key** in **Keyboard shortcuts**, where you can change them or assign them in other keymaps.
 
 #### Object navigation {#keyboards-object-navigation}
 
@@ -259,33 +299,59 @@ In the JAWS keymap, the review cursor works as the JAWS cursor; in the Orca keym
 
 Some apps use keys that SandFly also uses. These commands leave keys to the app:
 
-- **Pass through to system**: the next key, or keys pressed together, that you press after the shortcut go to the app instead of SandFly. SandFly says "Ignoring next key press". Its default shortcut is SandFly key + Shift + Escape in the SandFly keymap, and SandFly key + P in the keyboard phone keymap.
-- **Pass keys without the SandFly key to this app**: the app shown gets every key pressed without the SandFly key, such as the arrow keys and the browse mode letters, until you run the command again in that app. SandFly says "Passing keys to" or "Not passing keys to" and the name of the app, and keeps the choice for each app. While the review cursor is on, it still takes its keys. Its default shortcut is SandFly key + Shift + Space in the NVDA keymap, and SandFly key + Shift + Q in the keyboard phone keymap.
-- **Turn SandFly keyboard input on or off**: every key goes to Android, shortcuts with the SandFly key too, until you press the shortcut of this command again. SandFly says "SandFly keyboard input off" or "SandFly keyboard input on". Keyboard input is on again when SandFly restarts. Its default shortcut is SandFly key + Shift + K in the SandFly, NVDA and JAWS keymaps, and SandFly key + Shift + P in the keyboard phone keymap.
+- **Pass through to system**: the next key, or keys pressed together, that you press after the shortcut go to the app instead of SandFly. SandFly says "Ignoring next key press".
+- **Pass keys without the SandFly key to this app**: the app shown gets every key pressed without the SandFly key, such as the arrow keys and the browse mode letters, until you run the command again in that app. SandFly says "Passing keys to" or "Not passing keys to" and the name of the app, and keeps the choice for each app. While the review cursor is on, it still takes its keys.
+- **Turn SandFly keyboard input on or off**: every key goes to Android, shortcuts with the SandFly key too, until you press the shortcut of this command again. SandFly says "SandFly keyboard input off" or "SandFly keyboard input on". Keyboard input is on again when SandFly restarts.
+
+The default shortcuts are:
+
+| Keymap | Pass through to system | Pass keys without the SandFly key to this app | Turn SandFly keyboard input on or off |
+| --- | --- | --- | --- |
+| SandFly keymap | SandFly key + Shift + Escape | None | SandFly key + Shift + K |
+| VoiceOver keymap | None | None | SandFly key + Shift + ; |
+| NVDA keymap | SandFly key + F2 | SandFly key + Shift + Space | SandFly key + Shift + K |
+| JAWS keymap | SandFly key + 3 | SandFly key + Shift + Z | SandFly key + Shift + K |
+| Orca keymap | SandFly key + Backspace | SandFly key + Shift + A | SandFly key + Shift + ; |
+| Keyboard phone keymap | SandFly key + P | SandFly key + Shift + Q | SandFly key + Shift + P |
+| Keyboard phone single-key keymap | SandFly key + P | Shift + Q | SandFly key + Shift + P |
 
 These commands are in the **Activation** category. A script can also have SandFly pass every key to its app; turning SandFly keyboard input on again ends that. See [](#scripts).
+
+### Hold a touch {#keyboards-touch-hold}
+
+**Hold a touch on the focused item** puts a touch down on the middle of the focused item, as a finger would, and holds it down for as long as you choose. Use it for buttons that act while a finger stays on them, such as the voice message button of Telegram: recording runs while the touch is down, and the message is sent when the touch lifts. **Touch and hold** doesn't do this.
+
+- Hold the keys down: the touch goes down and stays down while you hold them. Releasing the last key of the shortcut, such as V, lifts it; the SandFly key can be released first. SandFly says nothing.
+- Press and release the keys within half a second: the touch stays down without the keys. SandFly says "Touch held". To lift it, press the shortcut again, Back or Escape. SandFly says "Touch lifted".
+
+The default shortcut is SandFly key + V in the keyboard phone keymaps; other keymaps have none. While a touch is held, other keys work as usual, and touch is passed through to the app over the whole screen. The touch lifts after 10 minutes, when the item is no longer on the screen, and when SandFly is suspended. Another touch sent to the screen, such as **Activate with a tap**, cancels it.
+
+The command is in the **Activation** category, so you can also assign it to a gesture or add it to the SandFly menu; run that way, the touch stays down until you run the command again or press Back or Escape. It needs Android 11 or later; before that, and when the item isn't on the screen, SandFly says "Not available". When no item has focus, SandFly says "No item has focus".
 
 ### Keyboard phones {#keyboards-phones}
 
 Keyboard phones are phones with a built-in keyboard that has letters, Shift, Alt and often Sym, but no Ctrl, Meta or arrow keys: the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25. SandFly recognizes these phones and uses the **Keyboard phone keymap** on them. You can choose either keymap for keyboard phones on any phone.
 
 - **Keyboard phone keymap**: the most used shortcuts are presses of keys that typing doesn't use, and work anywhere, text fields too. The SandFly key pressed alone moves to the next item, and Shift + the SandFly key to the previous item. Enter activates the item that SandFly focus moved to. Alt pressed twice plays or pauses media and answers calls. Alt + Shift held selects the next reading control. The other shortcuts are the SandFly key with a letter, such as SandFly key + J, I and K for reading controls, and T and B for the top and bottom of the screen.
-- **Keyboard phone single-key keymap**: single keys run commands, such as Space for the next item and Shift + Space for the previous item, H for the next heading, and J, L, I and K for reading controls. Single keys work outside text fields being edited. The SandFly key with any of these keys does the same anywhere, text fields too, so SandFly key + Space moves out of a text field. Shift + Z locks or unlocks touch.
+- **BlackBerry keymap**: the keyboard phone keymap with keys similar to those of the BlackBerry 10 Screen Reader for an external keyboard, with the SandFly key in place of Ctrl. SandFly key + A reads from the top, and SandFly key + Shift + A from the focused item. SandFly key + Enter speaks the focused item. SandFly key + S pauses speech, and SandFly key + Shift + S hides or shows the screen. SandFly key + . says the title of the screen. SandFly key + Shift + T starts Quick Tasks; see [](#gestures-quick-tasks). The arrow keys, such as those of the Zinwa Q25 trackpad, move by the navigation setting with Right and Left, and choose the next and previous navigation setting with Up and Down. Shortcuts of the keyboard phone keymap on those keys move: long press to SandFly key + Shift + Enter, **Search on screen** to SandFly key + Shift + Space, **Open SandFly settings** to SandFly key + Shift + O, and **Describe image** to SandFly key + Z.
+- **Keyboard phone single-key keymap**: single keys run commands, such as Space for the next item and Shift + Space for the previous item, H for the next heading, and J, L, I and K for reading controls. Single keys work outside text fields being edited. The SandFly key with any of these keys does the same anywhere, text fields too, so SandFly key + Space moves out of a text field. Shift + Z locks or unlocks touch. The SandFly key pressed twice turns browse mode on or off. In browse mode, letters move by element as in the SandFly keymap, such as B to the next button and K to the next link, and the SandFly key with a letter runs its shortcut outside browse mode, such as SandFly key + T for the top of the screen. See [](#keyboards-browse-mode).
 
-In both keymaps:
+In all three keymaps:
 
-- Enter, pressed after SandFly focus moved to an item, activates that item. After you type, Enter goes to the app, so that it sends a message. Where SandFly focus is on the text field being edited, Enter goes to the app.
+- Enter, pressed after SandFly focus moved to an item, activates that item. After you type, Enter goes to the app, so that it sends a message. Where SandFly focus is on the text field being edited, Enter goes to the app. On a text field that SandFly focus moved to, Enter activates the field, even where it has input focus.
 - The commands that need browse mode in other keymaps work without it.
 - Arrow key navigation is on by default. A press of a trackpad that sends Enter, such as on the Zinwa Q25, activates the item.
 - With Alt as the SandFly key, Alt with a letter types its digit or symbol in a text field being edited.
 - Shortcuts with Sym, Fn or Ctrl work in text fields too.
 - SandFly key + L locks or unlocks touch in the keyboard phone keymap. See [](#touch).
+- SandFly key + V holds a touch on the focused item, such as the voice message button of a messaging app. See [](#keyboards-touch-hold).
+- SandFly key + Y spells the password field being edited. See [](#keyboards-passwords).
 
 For the full list of shortcuts, see [](#appendix-keyboard-shortcuts).
 
 #### The SandFly key on keyboard phones {#keyboards-phone-sandfly-key}
 
-The keyboard phone keymaps offer Sym, Ctrl, Right Shift, Fn, Right Alt, Alt and Meta as the SandFly key. By default, SandFly chooses a key that typing doesn't need on the phone:
+The keyboard phone keymaps and the BlackBerry keymap offer Sym, Ctrl, Right Shift, Fn, Right Alt, Alt and Meta as the SandFly key. By default, SandFly chooses a key that typing doesn't need on the phone:
 
 - Ctrl, on Unihertz phones whose keyboard settings set the Fn key to work as Ctrl, except the Titan 2 Elite.
 - Right Shift, on the Unihertz Titan 2 Elite, the Zinwa Q25 and BlackBerry phones with a right Shift key.
@@ -299,11 +365,12 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 **Typing** > **Physical keyboard** is shown while a physical keyboard is connected:
 
 - **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, as on BlackBerry, Unihertz and Zinwa phones where W, E and R are 1, 2 and 3, letter keys press the buttons of the lock screen PIN pad, the call keypad, where they play the keypad tones, and calculators, where the Alt characters of letters, such as + and -, press the operator buttons. A letter on the lock screen before the PIN pad shows opens it. Keys with a modifier, digit keys and keys typed into a text field aren't taken. It's on by default, and shown only for such keyboards.
-- **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter go to the app, which types a new line. It works with any physical keyboard, and is off by default.
+- **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter go to the app, which types a new line. While arrow key navigation is on, and in the keyboard phone keymaps, Enter on a message field that SandFly focus moved to doesn't send until the field is activated or typed into. It works with any physical keyboard, and is off by default. The Send key of a keyboard phone, such as the green call key of the Zinwa Q25, presses the Send button in the same message fields whether this setting is on or off. In those apps it also presses a Send button shown outside the field, such as the one for a voice message being recorded; elsewhere it goes to the phone as usual.
 - **SandFly keyboard**: opens the list of keyboards in Android settings, where you turn on the SandFly keyboard. See [](#keyboards-sandfly-keyboard).
 - **Held keys type**: what a key held down types with the SandFly keyboard.
 - **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).
 - **Double space types a period**: with the SandFly keyboard, Space pressed twice after a word types a period and a space. Off by default.
+- **Speak password characters**: with the SandFly keyboard, in password fields, SandFly says each character typed, deleted or passed over instead of "bullet". Off by default. See [](#keyboards-passwords).
 - **Android physical keyboard settings**: opens the physical keyboard settings of Android, such as the keyboard layout.
 
 ### The SandFly keyboard {#keyboards-sandfly-keyboard}
@@ -312,9 +379,11 @@ The SandFly keyboard is an input method for physical keyboards. It shows no keys
 
 - Exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places.
 - Held keys that type the Alt character of the key or its capital letter.
+- Shift pressed and released before a key, which types that key with Shift, as on BlackBerry keyboards. Shift pressed and released again before the key cancels it.
 - Double presses that type other characters, such as G G for ğ, and a period for Space pressed twice.
 - Emoji search and a symbol list.
 - Editing mode, in which single keys move the cursor and select, copy, cut and paste.
+- The characters of password fields, which Android gives screen readers only as bullets.
 
 The SandFly keyboard isn't available on watches and TVs.
 
@@ -339,9 +408,9 @@ The key types its own character first; when Android starts to repeat it, the San
 
 #### Double presses {#keyboards-double-press}
 
-**Typing** > **Physical keyboard** > **Double-press characters** lists keys and what each types when pressed twice with the SandFly keyboard, such as ğ for G, ö for O or ä for E. **Add a key** adds one: enter the key's character in **Key** and the characters in **Double press types**. Each key has **Edit** and **Remove**. The list is empty by default.
+**Typing** > **Physical keyboard** > **Double-press characters** lists keys and what each types when pressed twice with the SandFly keyboard, such as ğ for G, ö for O or ä for E. **Add a key** adds one: enter the character of the key in **Key**, and 1 to 16 characters in **Double press types**. Select a key for **Edit** or **Remove**. The list is empty by default.
 
-The first press types the key's character. A second press of the same key within 350 milliseconds, with no other key or cursor move between, puts the double-press characters in its place. After a capital, such as with Shift, the double press types the capital, such as Ğ. Keys not in the list type as usual.
+The first press types the character of the key. A second press of the same key within 350 milliseconds, with no other key or cursor move between, puts the double-press characters in its place. After a capital, such as with Shift, the double press types the capital, such as Ğ. Keys not in the list type as usual.
 
 With **Double space types a period** on, Space pressed twice after a letter or digit puts a period and a space in place of the first space.
 
@@ -369,6 +438,7 @@ In the keyboard phone keymaps, **Search emoji** is SandFly key + O, and **Choose
 - U and O: previous and next word.
 - Alt + J and Alt + L: start and end of the line. Alt + I and Alt + K: start and end of the text.
 - T and B: start and end of the text.
+- Home and End: start and end of the line. With Ctrl: start and end of the text.
 - Shift with a move selects. S starts selecting, and SandFly says "Selecting"; press S again to stop.
 - A selects all, C copies, X cuts, V pastes.
 - Z undoes, Shift + Z redoes.
@@ -376,10 +446,29 @@ In the keyboard phone keymaps, **Search emoji** is SandFly key + O, and **Choose
 - Delete keys delete.
 - Enter, Escape or Back turns editing mode off.
 
-Other keys that type do nothing in editing mode. Editing mode needs the SandFly keyboard. In the keyboard phone keymaps, its shortcut is SandFly key + C.
+Other keys that type do nothing in editing mode. In a password field, R says "Not read in password fields", and C copies without saying the text. Editing mode needs the SandFly keyboard. In the keyboard phone keymaps, its shortcut is SandFly key + C.
+
+#### Password fields {#keyboards-passwords}
+
+Android gives screen readers only bullets for the text of a password field, so SandFly says "bullet" for each character. The SandFly keyboard reads the text of the field it types into, and SandFly can say the characters in two ways.
+
+**Typing** > **Physical keyboard** > **Speak password characters**, off by default: in a password field being edited with the SandFly keyboard, SandFly says:
+
+- Each character typed, such as "capital P", "at" or "1". Characters are named as in other text fields, and capital letters follow **Verbosity** > **Capital letters**.
+- Each character deleted with Backspace or Delete, such as "a deleted".
+- The character the cursor passes over with Left Arrow or Right Arrow, the trackpad or editing mode.
+- For a key held down for its Alt character, the character and the one it replaced, such as "at replaced a".
+
+Text pasted or filled in, a cleared field, a selection and moves over more than one character are spoken as before, with bullets.
+
+**Spell the password field**, in the **Text editing** category of commands, spells the whole text of the password field being edited, each character with its position, such as "1 capital P, 2 a, 3 at, 4 1". Capital letters are always said as "capital". It works whether **Speak password characters** is on or off. In a text field that isn't a password field, it says "Not a password field"; without the SandFly keyboard in a text field, "Needs the SandFly keyboard in a text field". In the keyboard phone keymaps, its shortcut is SandFly key + Y. In other keymaps, assign it in **Keyboard shortcuts**. You can also assign it to a gesture or add it to the SandFly menu.
+
+Password characters are spoken only in these two ways. They aren't kept for **Repeat last spoken phrase**, **Spell last spoken phrase**, **Copy last spoken phrase** or **Speech history**, and SandFly logs only how many characters a field has.
+
+Android's own text fields give the SandFly keyboard their text, and so do most apps. Where an app gives none, SandFly says "bullet" as before, and **Spell the password field** says "Password field text not available".
 
 ### Other keyboard settings {#keyboards-other-settings}
 
 - **Typing** > **Keyboard echo** > **Physical keyboard** sets what SandFly says as you type on a physical keyboard. See [](#typing).
-- Every key on a physical keyboard stops speech, except modifier keys such as Shift. Ctrl pressed alone pauses speech. **Interrupt speech when typing**, in **Speech**, sets when typed characters stop speech. See [](#speech).
+- Every key on a physical keyboard stops speech, except modifier keys such as Shift, Caps Lock, Num Lock, Scroll Lock and the volume keys. **Speech** > **Interrupt speech when typing** sets when typed characters stop speech, and **Speech** > **Interrupt speech on Enter** whether Enter does. Ctrl pressed alone pauses or resumes speech. See [](#speech-stop).
 - With a physical keyboard connected the first time SandFly starts, the keyboard tutorial opens instead of the touch tutorial. When you open the tutorial later with a keyboard connected to a device with a touch screen, SandFly offers **Touch tutorial** and **Keyboard tutorial**. See [](#getting-started).

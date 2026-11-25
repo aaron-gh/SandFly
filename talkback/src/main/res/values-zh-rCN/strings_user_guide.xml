@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="title_pref_user_guide">用户指南</string>
+    <string name="user_guide_title">SandFly 用户指南</string>
+    <string name="user_guide_contents">目录</string>
+    <string name="user_guide_appendix">附录 <xliff:g id="letter" example="A">%1$s</xliff:g>：<xliff:g id="title" example="Default gestures">%2$s</xliff:g></string>
+    <string name="user_guide_back_to_contents">返回目录</string>
+    <string name="user_guide_gesture">手势</string>
+    <string name="user_guide_command">命令</string>
+    <string name="user_guide_keyboard_shortcut">键盘快捷键</string>
+    <string name="user_guide_sandfly_key">SandFly 键：<xliff:g id="key" example="Insert">%1$s</xliff:g></string>
+    <string name="user_guide_unavailable">无法在此设备上打开用户指南。</string>
+</resources>

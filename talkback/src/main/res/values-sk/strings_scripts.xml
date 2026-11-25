@@ -100,9 +100,9 @@
     <string name="script_tree_copied">Skopírované položky: <xliff:g id="count">%1$d</xliff:g></string>
     <string name="script_tree_none">Žiadne okno na kopírovanie</string>
     <string name="script_tree_clip_label">Strom obrazovky</string>
-    <string name="summary_copy_screen_tree_menu">Kopírovanie všetkých položiek na obrazovke ako JSON na písanie skriptov</string>
+    <string name="summary_copy_screen_tree_menu">Kopírovanie všetkých položiek na obrazovke ako text na písanie skriptov</string>
     <string name="script_inspect_clip_label">Podrobnosti položky</string>
-    <string name="summary_inspect_item_menu">Vyslovenie a skopírovanie podrobností o naposledy zameranej položke na písanie skriptov</string>
+    <string name="summary_inspect_item_menu">Zobrazenie podrobností o naposledy zameranej položke na písanie skriptov a makier</string>
     <string name="script_keys_backtalk_modifier">Modifikátor SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, potom <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Príkazy</string>
@@ -170,4 +170,17 @@
     <string name="item_details_script">Podrobnosti pre skripty</string>
     <string name="item_details_app">Aplikácia</string>
     <string name="script_permission_system">Prejsť späť alebo na plochu, otvárať upozornenia, zobrazovať zoznam aplikácií, otvárať aplikácie, nastavenia a odkazy, odosielať aplikáciám intenty, meniť hlasitosť, režim zvonenia a nastavenia zariadenia, napríklad Wi-Fi a baterku, ovládať médiá, nastavovať časovače a budíky a začínať hovory a správy</string>
+    <string name="script_from_code">Zadaný v SandFly.</string>
+    <string name="script_code_view">Zobraziť kód</string>
+    <string name="script_code_edit">Upraviť kód</string>
+    <string name="script_code_new">Nový skript z kódu</string>
+    <string name="script_code_field">Kód</string>
+    <string name="script_code_save">Uložiť</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> uložený</string>
+    <string name="script_code_not_saved">Skript nebol uložený</string>
+    <string name="script_code_id_changed">Id v manifeste musí zostať <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Kód sa nepodarilo prečítať.</string>
+    <string name="script_code_discard_title">Zahodiť zmeny?</string>
+    <string name="script_code_discard">Zahodiť</string>
+    <string name="script_code_keep_editing">Pokračovať v úpravách</string>
 </resources>

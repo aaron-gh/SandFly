@@ -410,6 +410,7 @@ import androidx.preference.PreferenceFragmentCompat;
       BraillePreferenceUtils.setupLanguageListPreference(
           getContext(),
           currentActiveOutputCodePreference,
+          BrailleUserPreferences.readAvailablePreferredOutputCodes(getContext()),
           BrailleUserPreferences::readCurrentActiveOutputCodeAndCorrect,
           BrailleUserPreferences::writeCurrentActiveOutputCode,
           (preference, newValue) -> {

@@ -194,4 +194,40 @@
     <string name="macro_test_focus_inside">Tiêu điểm nằm trong một mục</string>
     <string name="macro_test_focus_inside_value">Tiêu điểm bên trong: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Tiêu điểm không bên trong: %1$s</string>
+    <string name="macro_step_tap_position">Nhấn tại vị trí</string>
+    <string name="macro_step_tap_position_value">Nhấn tại <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, số pixel tính từ bên trái</string>
+    <string name="macro_tap_y">Y, số pixel tính từ trên cùng</string>
+    <string name="macro_invalid_position">Nhập X và Y từ 0 đến <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Chú giải công cụ</string>
+    <string name="macro_step_touch_hold">Chạm và giữ mục</string>
+    <string name="macro_step_touch_hold_value">Chạm và giữ <xliff:g id="label" example="Voice message">%1$s</xliff:g> trong <xliff:g id="seconds" example="1.5">%2$s</xliff:g> giây</string>
+    <string name="macro_step_touch_hold_slide_value">Chạm và giữ <xliff:g id="label" example="Voice message">%1$s</xliff:g> trong <xliff:g id="seconds" example="1">%2$s</xliff:g> giây. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Số giây giữ</string>
+    <string name="macro_slide">Trước khi nhấc ngón tay</string>
+    <string name="macro_slide_none">Nhấc tại chỗ</string>
+    <string name="macro_slide_up">Trượt lên</string>
+    <string name="macro_slide_down">Trượt xuống</string>
+    <string name="macro_slide_left">Trượt sang trái</string>
+    <string name="macro_slide_right">Trượt sang phải</string>
+    <string name="macro_slide_distance">Khoảng cách tính bằng dp</string>
+    <string name="macro_app">Ứng dụng</string>
+    <string name="macro_all_apps">Tất cả ứng dụng</string>
+    <string name="macro_add_app">Thêm ứng dụng</string>
+    <string name="macro_apps">Ứng dụng</string>
+    <string name="macro_in_actions">Hiện trong Thao tác</string>
+    <string name="macro_in_actions_only_when">Chỉ hiện trong Thao tác khi</string>
+    <string name="macro_not_in_app">Chưa chạy macro. Macro chỉ chạy trong <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> macro</item>
+    </plurals>
+    <string name="macro_record">Ghi các bước</string>
+    <string name="macro_record_new">Ghi macro</string>
+    <string name="macro_recording_notification">Đang ghi các bước của macro: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Đang ghi. Để dừng, hãy chạy Ghi macro hoặc Dừng macro, hoặc mở thông báo Đang ghi các bước của macro.</string>
+    <string name="macro_recorded">Các bước đã ghi</string>
+    <string name="macro_recorded_no_passwords">Văn bản nhập trong trường mật khẩu không được ghi lại.</string>
+    <string name="macro_recorded_too_many">Chưa thêm. Một macro có tối đa <xliff:g id="count" example="200">%1$d</xliff:g> bước.</string>
+    <string name="macro_recorded_name">Bản ghi <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Danh sách trên màn hình</string>
 </resources>

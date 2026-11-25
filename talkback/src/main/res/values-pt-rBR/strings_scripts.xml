@@ -100,9 +100,9 @@
     <string name="script_tree_copied"><xliff:g id="count">%1$d</xliff:g> itens copiados</string>
     <string name="script_tree_none">Nenhuma janela para copiar</string>
     <string name="script_tree_clip_label">Árvore de tela</string>
-    <string name="summary_copy_screen_tree_menu">Copiar todos os itens da tela como JSON, para escrever scripts</string>
+    <string name="summary_copy_screen_tree_menu">Copiar todos os itens da tela como texto, para escrever scripts</string>
     <string name="script_inspect_clip_label">Detalhes do item</string>
-    <string name="summary_inspect_item_menu">Falar e copiar os detalhes do último item em foco, para escrever scripts</string>
+    <string name="summary_inspect_item_menu">Mostrar os detalhes do último item em foco, para escrever scripts e macros</string>
     <string name="script_keys_backtalk_modifier">Tecla modificadora do SandFly</string>
     <string name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, depois <xliff:g id="second">%2$s</xliff:g></string>
     <string name="script_commands_category">Comandos</string>
@@ -168,4 +168,17 @@
     <string name="item_details_script">Detalhes para scripts</string>
     <string name="item_details_app">App</string>
     <string name="script_permission_system">Voltar ou ir para a tela inicial, abrir notificações, listar e abrir apps, configurações e links, enviar intents para apps, mudar o volume, o modo de campainha e configurações do dispositivo como Wi-Fi e lanterna, controlar mídia, definir temporizadores e alarmes e iniciar chamadas e mensagens</string>
+    <string name="script_from_code">Inserido no SandFly.</string>
+    <string name="script_code_view">Ver código</string>
+    <string name="script_code_edit">Editar código</string>
+    <string name="script_code_new">Novo script a partir de código</string>
+    <string name="script_code_field">Código</string>
+    <string name="script_code_save">Salvar</string>
+    <string name="script_code_saved"><xliff:g id="name">%1$s</xliff:g> salvo</string>
+    <string name="script_code_not_saved">Script não salvo</string>
+    <string name="script_code_id_changed">O id do manifesto precisa continuar sendo <xliff:g id="id">%1$s</xliff:g>.</string>
+    <string name="script_code_load_failed">Não foi possível ler o código.</string>
+    <string name="script_code_discard_title">Descartar alterações?</string>
+    <string name="script_code_discard">Descartar</string>
+    <string name="script_code_keep_editing">Continuar editando</string>
 </resources>

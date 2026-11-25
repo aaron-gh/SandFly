@@ -79,4 +79,20 @@
     <string name="menu_reset">ଡିଫଲ୍ଟକୁ ରିସେଟ କରନ୍ତୁ</string>
     <string name="menu_reset_confirm">SandFly ମେନୁକୁ ଏହାର ଡିଫଲ୍ଟ ଆଇଟମ ଓ କ୍ରମକୁ ରିସେଟ କରିବେ?</string>
     <string name="menu_assign">ଜେଶ୍ଚର ଓ କୀବୋର୍ଡ ସର୍ଟକଟ</string>
+    <string name="shortcut_app_gestures_for_app">ଏହି ଆପ ପାଇଁ ଜେଶ୍ଚର</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku ଓ ରୁଟ</string>
+    <string name="title_pref_use_root">Shizuku ବଦଳରେ ରୁଟ ବ୍ୟବହାର କରନ୍ତୁ</string>
+    <string name="command_perform_gesture">ଜେଶ୍ଚର କରନ୍ତୁ</string>
+    <string name="command_perform_gesture_message">ଜେଶ୍ଚରଟି କରନ୍ତୁ।</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> ଆସାଇନ କରିହେବ ନାହିଁ</string>
+    <string name="command_run">ନିର୍ଦ୍ଦେଶ ଚଲାନ୍ତୁ</string>
+    <string name="command_add_to_sandfly_menu">SandFly ମେନୁରେ ଯୋଗ କରନ୍ତୁ</string>
+    <string name="command_remove_from_sandfly_menu">SandFly ମେନୁରୁ କାଢ଼ନ୍ତୁ</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly ମେନୁରେ ଯୋଗ ହେଲା</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly ମେନୁରୁ କାଢ଼ିଦିଆଗଲା</string>
+    <string name="commands_search_hint">ନିର୍ଦ୍ଦେଶ ଖୋଜନ୍ତୁ</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ନିର୍ଦ୍ଦେଶ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ନିର୍ଦ୍ଦେଶ</item>
+    </plurals>
 </resources>

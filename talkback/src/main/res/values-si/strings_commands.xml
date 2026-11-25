@@ -79,4 +79,20 @@
     <string name="menu_reset">පෙරනිමියට යළි සකසන්න</string>
     <string name="menu_reset_confirm">SandFly මෙනුව එහි පෙරනිමි අයිතම සහ අනුපිළිවෙළට යළි සකසන්නද?</string>
     <string name="menu_assign">ඉංගිත සහ යතුරු පුවරු කෙටිමඟ</string>
+    <string name="shortcut_app_gestures_for_app">මෙම යෙදුම සඳහා ඉංගිත</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku සහ root</string>
+    <string name="title_pref_use_root">Shizuku වෙනුවට root භාවිතා කරන්න</string>
+    <string name="command_perform_gesture">ඉංගිතය සිදු කරන්න</string>
+    <string name="command_perform_gesture_message">ඉංගිතය කරන්න.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> පැවරිය නොහැක</string>
+    <string name="command_run">විධානය ධාවනය කරන්න</string>
+    <string name="command_add_to_sandfly_menu">SandFly මෙනුවට එක් කරන්න</string>
+    <string name="command_remove_from_sandfly_menu">SandFly මෙනුවෙන් ඉවත් කරන්න</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly මෙනුවට එක් කරන ලදී</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly මෙනුවෙන් ඉවත් කරන ලදී</string>
+    <string name="commands_search_hint">විධාන සොයන්න</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> විධාන</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> විධාන</item>
+    </plurals>
 </resources>

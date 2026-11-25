@@ -97,6 +97,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   private final FeedbackReturner pipeline;
   private final TelevisionNavigationController televisionNavigationController;
   private final AudioManager audioManager;
+  private final PowerManager powerManager;
   private final ListMenuManager menuManager;
   private final CallStateMonitor callStateMonitor;
   private final Set<DialogInterface> openDialogs = new HashSet<>();
@@ -193,9 +194,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
     // Otherwise the ringer mode stays normal until it changes after Backtalk starts.
     ringerMode = audioManager.getRingerMode();
     this.statusReader = statusReader;
+    powerManager = (PowerManager) service.getSystemService(Context.POWER_SERVICE);
     // noinspection deprecation
-    isInteractive =
-        ((PowerManager) service.getSystemService(Context.POWER_SERVICE)).isInteractive();
+    isInteractive = powerManager.isInteractive();
     isWatch = FormFactorUtils.isAndroidWear();
     displayManager = (DisplayManager) service.getSystemService(Context.DISPLAY_SERVICE);
     executor = Executors.newSingleThreadExecutor();
@@ -241,12 +242,18 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   @Override
   public void onReceiveIntent(Intent intent) {
-    if (!TalkBackService.isServiceActive()) {
-      return;
-    }
-
     String action = intent.getAction();
     if (action == null) {
+      return;
+    }
+    // The screen state is kept while SandFly is suspended too, so that it is right when SandFly
+    // resumes.
+    if (!TalkBackService.isServiceActive()) {
+      if (Intent.ACTION_SCREEN_ON.equals(action)) {
+        isInteractive = true;
+      } else if (Intent.ACTION_SCREEN_OFF.equals(action)) {
+        isInteractive = false;
+      }
       return;
     }
 
@@ -324,6 +331,11 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   public boolean isInteractive() {
+    // SCREEN_ON can come late or not at all, which kept volume key presses off with the screen on,
+    // so Android's own state is read while the screen is taken to be off.
+    if (!isInteractive && powerManager.isInteractive()) {
+      isInteractive = true;
+    }
     return isInteractive;
   }
 
@@ -372,7 +384,7 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
             SpeakOptions.create()
                 .setQueueMode(
                     SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
-                .setFlags(FeedbackItem.FLAG_SKIP_DUPLICATE);
+                .setFlags(FeedbackItem.FLAG_SKIP_DUPLICATE | overMediaFlag(prefs));
         if (ttsText.length() > 0) {
           pipeline.returnFeedback(eventId, Feedback.speech(ttsText, speakOptions));
         }
@@ -432,7 +444,9 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
               SpeakOptions.create()
                   .setQueueMode(
                       SpeechController.QUEUE_MODE_INTERRUPT_AND_UNINTERRUPTIBLE_BY_NEW_SPEECH)
-                  .setFlags(FeedbackItem.FLAG_NO_HISTORY);
+                  .setFlags(
+                      FeedbackItem.FLAG_NO_HISTORY
+                          | overMediaFlag(SharedPreferencesUtils.getSharedPreferences(service)));
           Feedback.Part.@Nullable Builder feedback = null;
           if (screenOffSoundVolume >= 0) {
             // Normally we'll play the volume beep on the ring stream.
@@ -449,6 +463,13 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
             pipeline.returnFeedback(eventId, feedback);
           }
         });
+  }
+
+  /** The flag that speaks an announcement during media playback while the setting is on. */
+  private static int overMediaFlag(SharedPreferences prefs) {
+    return ScreenAnnouncementSettings.isOn(prefs, ScreenAnnouncementSettings.OVER_MEDIA)
+        ? FeedbackItem.FLAG_FORCE_FEEDBACK_EVEN_IF_AUDIO_PLAYBACK_ACTIVE
+        : 0;
   }
 
   /** "Screen off", the ringer mode and the items chosen for the screen turning off. */

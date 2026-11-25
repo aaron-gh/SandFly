@@ -65,7 +65,7 @@
     <string name="summary_pref_speech_control">Aplikacje, którym zezwolisz, mogą odczytywać tekst głosem używanym w SandFly. Gdy urządzenie jest zablokowane, mogą to robić tylko aplikacje, którym zezwolisz także na czas blokady.</string>
   <string name="title_pref_speech_control_sound">Odtwarzaj dźwięk przed odczytaniem tekstu przekazanego przez inną aplikację</string>
   <string name="speech_control_apps_category">Aplikacje</string>
-  <string name="speech_control_no_apps">Żadna aplikacja nie poprosiła jeszcze o odczytywanie tekstu przez SandFly.</string>
+    <string name="speech_control_no_apps">Żadna aplikacja nie połączyła się jeszcze z usługą mowy SandFly.</string>
   <string name="speech_control_ask_title">Zezwolić aplikacji <xliff:g id="app" example="Tasker">%1$s</xliff:g> na odczytywanie tekstu przez SandFly?</string>
   <string name="speech_control_allow">Zezwól</string>
   <string name="speech_control_deny">Nie zezwalaj</string>
@@ -422,9 +422,9 @@
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_tree_copied">Skopiowane elementy: <xliff:g id="count">%1$d</xliff:g></string>
   <string name="script_tree_none">Brak okna do skopiowania</string>
   <string name="script_tree_clip_label">Drzewo ekranu</string>
-  <string name="summary_copy_screen_tree_menu">Kopiuj wszystkie elementy ekranu w formacie JSON na potrzeby tworzenia skryptów</string>
+    <string name="summary_copy_screen_tree_menu">Kopiuj wszystkie elementy ekranu jako tekst na potrzeby tworzenia skryptów</string>
   <string name="script_inspect_clip_label">Szczegóły elementu</string>
-  <string name="summary_inspect_item_menu">Odczytuj i kopiuj szczegóły elementu z fokusem na potrzeby tworzenia skryptów</string>
+    <string name="summary_inspect_item_menu">Pokazuje szczegóły elementu, na którym był fokus, na potrzeby tworzenia skryptów i makr</string>
   <string name="script_keys_backtalk_modifier">Klawisz modyfikujący SandFly</string>
   <string xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" name="script_keys_then"><xliff:g id="first">%1$s</xliff:g>, a następnie <xliff:g id="second">%2$s</xliff:g></string>
   <string name="script_commands_category">Polecenia</string>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="custom_braille_characters_add">অক্ষর যোগ করুন</string>
+    <string name="custom_braille_characters_text">অক্ষর বা টেক্সট</string>
+    <string name="custom_braille_characters_cells">ডট</string>
+    <string name="custom_braille_characters_table">ব্রেইল টেবিল</string>
+    <string name="custom_braille_characters_cells_help">প্রতিটি সেলের ডট নম্বর, সেলগুলো হাইফেন দিয়ে আলাদা, যেমন 2356 বা 456-2356।</string>
+    <string name="custom_braille_characters_invalid_cells">১ থেকে ৮ পর্যন্ত ডট নম্বর লিখুন, সর্বোচ্চ <xliff:g id="number" example="20">%1$d</xliff:g>টি সেল</string>
+    <string name="custom_braille_characters_invalid_text">১ থেকে <xliff:g id="number" example="50">%1$d</xliff:g>টি অক্ষর লিখুন</string>
+</resources>

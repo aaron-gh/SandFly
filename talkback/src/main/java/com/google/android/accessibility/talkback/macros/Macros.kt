@@ -247,7 +247,7 @@ object Macros {
     else VALUE_PATTERN.matcher(text).let { matcher ->
       val out = StringBuffer()
       while (matcher.find()) {
-        val value = values[matcher.group(1)] ?: matcher.group(0)
+        val value = matcher.group(1)?.let { values[it] } ?: matcher.group(0).orEmpty()
         matcher.appendReplacement(out, java.util.regex.Matcher.quoteReplacement(value))
       }
       matcher.appendTail(out)

@@ -79,4 +79,20 @@
     <string name="menu_reset">डीफॉल्टवर रीसेट करा</string>
     <string name="menu_reset_confirm">SandFly मेनू डीफॉल्ट आयटम आणि क्रमावर रीसेट करायचा?</string>
     <string name="menu_assign">जेश्चर आणि कीबोर्ड शॉर्टकट</string>
+    <string name="shortcut_app_gestures_for_app">या ॲपसाठी जेश्चर</string>
+    <string name="title_pref_shizuku_root_screen">Shizuku आणि रूट</string>
+    <string name="title_pref_use_root">Shizuku ऐवजी रूट वापरा</string>
+    <string name="command_perform_gesture">जेश्चर करा</string>
+    <string name="command_perform_gesture_message">जेश्चर करा.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> असाइन करता येत नाही</string>
+    <string name="command_run">कमांड चालवा</string>
+    <string name="command_add_to_sandfly_menu">SandFly मेनूमध्ये जोडा</string>
+    <string name="command_remove_from_sandfly_menu">SandFly मेनूमधून काढा</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly मेनूमध्ये जोडले</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly मेनूमधून काढले</string>
+    <string name="commands_search_hint">कमांड शोधा</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> कमांड</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> कमांड</item>
+    </plurals>
 </resources>

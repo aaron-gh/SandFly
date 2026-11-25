@@ -31,6 +31,8 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.IntDef;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
 import androidx.annotation.Nullable;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
@@ -96,6 +98,7 @@ public class KeyboardShortcutDialogPreference extends Preference
 
   /** Defines the state of the sequence key mode. */
   @IntDef({STATE_PREFIX_KEY_NOT_PRESSED, STATE_PREFIX_KEY_PRESSED})
+  @Retention(RetentionPolicy.SOURCE)
   public @interface SequenceKeyModeState {}
 
   private static final int STATE_PREFIX_KEY_NOT_PRESSED = 0;
@@ -177,6 +180,9 @@ public class KeyboardShortcutDialogPreference extends Preference
   private boolean whileEditing;
 
   @Nullable private CheckBox whileEditingBox;
+  /** Whether the shortcut being set works only in browse mode, in the keyboard phone keymaps. */
+  private boolean inBrowseMode;
+  @Nullable private CheckBox inBrowseModeBox;
 
   /**
    * Makes the dialog give the keys recorded to {@code listener}, which keeps them, instead of
@@ -306,10 +312,13 @@ public class KeyboardShortcutDialogPreference extends Preference
     applyWhileEditing();
   }
 
-  /** Marks the shortcut being set as working only while editing, as the check box says. */
+  /**
+   * Marks the shortcut being set as working only while editing, or only in browse mode, as the
+   * check boxes say.
+   */
   private void applyWhileEditing() {
     if (tempKeyCombo.getKeyComboCode() != KeyComboModel.KEY_COMBO_CODE_UNASSIGNED) {
-      tempKeyCombo = tempKeyCombo.withWhileEditing(whileEditing);
+      tempKeyCombo = tempKeyCombo.withWhileEditing(whileEditing).withInBrowseMode(inBrowseMode);
     }
   }
 
@@ -465,6 +474,9 @@ public class KeyboardShortcutDialogPreference extends Preference
       // The default may work only while editing, or everywhere.
       if (whileEditingBox != null) {
         whileEditingBox.setChecked(tempKeyCombo.isWhileEditing());
+      }
+      if (inBrowseModeBox != null) {
+        inBrowseModeBox.setChecked(tempKeyCombo.isInBrowseMode());
       }
       currentSequenceKeyState = STATE_PREFIX_KEY_NOT_PRESSED;
       updateKeyAssignmentText();
@@ -1041,6 +1053,7 @@ public class KeyboardShortcutDialogPreference extends Preference
 
     KeyCombo saved = getKeyComboForKey(key);
     whileEditing = saved.isWhileEditing();
+    inBrowseMode = saved.isInBrowseMode();
     setTemporaryKeyCombo(saved);
     keyAssignmentView = (TextView) dialogView.findViewById(R.id.assigned_combination);
     instructionText = (TextView) dialogView.findViewById(R.id.instruction);
@@ -1068,6 +1081,7 @@ public class KeyboardShortcutDialogPreference extends Preference
     keyComboManager.setMatchKeyCombo(false);
 
     whileEditingBox = null;
+    inBrowseModeBox = null;
     if (recordListener != null) {
       return dialogView;
     }
@@ -1079,6 +1093,9 @@ public class KeyboardShortcutDialogPreference extends Preference
     whileEditingBox.setOnCheckedChangeListener(
         (box, checked) -> {
           whileEditing = checked;
+          if (checked && inBrowseModeBox != null) {
+            inBrowseModeBox.setChecked(false);
+          }
           applyWhileEditing();
           keyAssignmentView.setText(
               keyComboManager.getKeyComboStringRepresentation(this.tempKeyCombo));
@@ -1093,6 +1110,25 @@ public class KeyboardShortcutDialogPreference extends Preference
             LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
     params.setMarginStart(padding);
     layout.addView(whileEditingBox, params);
+    // In the keyboard phone keymaps, single keys can have a shortcut in browse mode as well.
+    if (keyComboManager.getKeyComboModel() instanceof NewKeyComboModel model && model.plainKeys()) {
+      inBrowseModeBox = new CheckBox(getContext());
+      inBrowseModeBox.setText(R.string.keycombo_only_in_browse_mode);
+      inBrowseModeBox.setChecked(inBrowseMode);
+      inBrowseModeBox.setOnCheckedChangeListener(
+          (box, checked) -> {
+            inBrowseMode = checked;
+            if (checked && whileEditingBox != null) {
+              whileEditingBox.setChecked(false);
+            }
+            applyWhileEditing();
+            keyAssignmentView.setText(
+                keyComboManager.getKeyComboStringRepresentation(this.tempKeyCombo));
+          });
+      inBrowseModeBox.setPadding(padding / 4, 0, padding, 0);
+      LinearLayout.LayoutParams browseModeParams = new LinearLayout.LayoutParams(params);
+      layout.addView(inBrowseModeBox, browseModeParams);
+    }
     return layout;
   }
 

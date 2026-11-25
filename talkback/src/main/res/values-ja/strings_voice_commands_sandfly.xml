@@ -190,4 +190,19 @@
         <item>{label} を有効にして</item>
         <item>{label} を選択</item>
     </string-array>
+    <string name="shortcut_voice_editing">音声編集を開始</string>
+    <string name="voice_editing_on">音声編集: オン</string>
+    <string name="voice_editing_off">音声編集: オフ</string>
+    <string name="title_pref_voice_editing_time_limit">音声編集の制限時間</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>分</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g>分</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>編集を終了</item>
+        <item>音声編集を終了</item>
+        <item>編集をやめる</item>
+        <item>音声編集を停止</item>
+        <item>音声編集オフ</item>
+    </string-array>
 </resources>

@@ -16,7 +16,7 @@ An item can be a button, a line of text, a list row, a picture or anything else 
 
 Touch the screen and move your finger. SandFly focuses and reads the item under your finger. When your finger moves over an empty part of the screen, SandFly plays a sound.
 
-SandFly waits a short time after you touch the screen, to tell a gesture from a touch, before it focuses the item under your finger. To change this wait, go to **Touch** > **Focus delay**. The default is 150 ms. Touch settings are described in [](#touch).
+SandFly waits a short time after you touch the screen, to tell a gesture from a touch, before it focuses the item under your finger. To change this wait, go to **Touch** > **Focus delay**. The default is 0.15 seconds. Touch settings are described in [](#touch).
 
 - Touching between the icons of the home screen doesn't read the page, such as "Home screen 1 of 2". Swiping still reaches it.
 - A picture-in-picture window, such as a video that plays over the home screen, is one item, named after the app and "picture in picture". The controls in the window are actions of that item. Touch still reaches each control.
@@ -67,7 +67,9 @@ A reading control sets what a swipe up or swipe down does. Most reading controls
 
 - To select the next reading control, swipe down then up, swipe right or down with three fingers, or rotate clockwise with two fingers.
 - To select the previous reading control, swipe up then down, swipe left or up with three fingers, or rotate counterclockwise with two fingers.
+- To select the first reading control of the list in use, assign a gesture or keyboard shortcut to **First reading control**. It has none by default.
 - To move by the selected reading control, swipe down to go forward and swipe up to go back. These are the **Move reading control down or forward** and **Move reading control up or backward** commands.
+- On reading controls that change a value, such as **Adjust slider**, **Adjust value** and **Speech rate**, the direction of the swipe sets the change, whichever of the two commands the swipe runs: a swipe up or right increases the value, a swipe down or left decreases it. With a right-to-left language, a swipe left increases the value and a swipe right decreases it.
 
 SandFly reads the name of each reading control as you select it. Swiping right and left moves by item, whichever reading control is selected, except with **Rows and columns** in a table.
 
@@ -109,7 +111,7 @@ The reading controls under **Element navigation** and **Heading levels** on the 
 
 #### Move by text or element without a reading control {#reading-navigation-commands}
 
-You can assign a gesture or keyboard shortcut to move to the next or previous character, word, line, paragraph, heading, link, control, landmark, button, checkbox, radio button, edit field, combo box, focusable item, graphic, list, list item, table, visited link, unvisited link, or heading of a given level. These moves don't change the selected reading control. In the list of commands for a gesture, they are under **Navigate by text**, **Navigate by element** and **Navigate by heading level**. See [](#gestures).
+You can assign a gesture or keyboard shortcut to move to the next or previous character, word, line, paragraph, heading, link, control, landmark, button, checkbox, radio button, edit field, combo box, focusable item, graphic, list, list item, table, visited link, unvisited link, or heading of a given level. These moves don't change the selected reading control. In the list of commands for a gesture, they are under **Navigate by text** and **Navigate by element**. See [](#gestures).
 
 ### Read continuously {#reading-continuous}
 
@@ -139,12 +141,12 @@ Swiping right and left scrolls lists by itself when the next item is off screen.
 - To scroll back, swipe left then right. This is **Scroll back**. At the top of a list, **Scroll back** pulls the list down, which refreshes it in most apps.
 - To scroll the app directly, drag two fingers on the screen, as you would drag one finger without SandFly.
 
-In the default gesture layout, two-finger swipes go to the app and scroll it. With **Gestures** > **Handle two-finger swipes in SandFly** on, as in the VoiceOver gesture layout, two-finger swipes run commands instead: by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, which move the content in the direction of the swipe. These four commands need Android 11 or later, and aren't on watches.
+In the default gesture layout, two-finger swipes go to the app and scroll it. With **Gestures** > **Handle two-finger swipes in SandFly** on, as in the VoiceOver gesture layout, two-finger swipes run commands instead: by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, which move the content in the direction of the swipe. Where no item on the screen scrolls sideways, **Scroll left** and **Scroll right** send a one-finger swipe to the pager around the focused item, such as the folder tabs in Solid Explorer. These four commands need Android 11 or later, and aren't on watches.
 
 These commands, in the **Scrolling** category, have no gesture by default:
 
 - **Scroll to top** and **Scroll to bottom** scroll the list that has focus to its start or end, a page at a time, and then focus its first or last item. A touch, gesture or key stops them. Not on watches.
-- **Refresh** scrolls the list to its top and pulls it down. It needs Android 13 or later.
+- **Refresh** scrolls the list to its top and pulls it down. It needs Android 11 or later.
 
 While you scroll with two fingers, SandFly plays the scroll sound and a light vibration for each item that scrolls past. The pitch of the scroll sound rises from the top of the list to the bottom. Scrolls that SandFly makes to reach the next item make no sound. For sound and vibration settings, see [](#sound).
 
@@ -231,10 +233,12 @@ Phone numbers are found by the text classifier of Android, which also finds date
 
 **Copy text from screen**, a command in the **Text editing** category with no gesture by default, opens a window with the text on the screen as a list of check boxes.
 
+The window lists the text on the screen. When the screen has a list or page that scrolls, **Scroll up** above the list and **Scroll down** below it scroll that list a page past the text listed so far and add that page's text. SandFly announces "Added" and the number of pieces added. Checked pieces stay checked. When the list is at its start or end, SandFly says "No more text". The list scrolls back to where it was when the window closes.
+
 1. Run **Copy text from screen**.
 2. Under **Granularity**, choose how the text is divided: **Addresses and numbers**, **Characters**, **Words** or **Paragraphs**. **Words** is selected first.
 3. Check the pieces you want. To check a range, double-tap and hold the first piece and then the last, or use the **Start selection** and **End selection** actions. **Select all** checks every piece.
-4. Select **Copy**. The checked pieces are copied, one per line.
+4. Select **Copy**. The checked pieces are copied in order: words with a space between them, characters with nothing between them, paragraphs with a blank line between them, and addresses and numbers one per line.
 
 **Addresses and numbers** lists every web address, email address, phone number and code on the screen as written, so that you can copy a phone number instead of calling it. It appears only when the screen has any, and lists every kind, whatever **Addresses and numbers to include** is set to. Finding them can make the window take up to a second longer to open.
 

@@ -48,6 +48,7 @@ import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureConfiguration
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_SWIPE_UP
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_SINGLE_TAP_1_FINGER_SWIPE_UP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_PINCH
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_2_FINGER_ROTATE_CLOCKWISE
@@ -81,10 +82,12 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_E
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_ALONG_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_EDGE_SWIPE_UP_FROM_BOTTOM
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_QUADRUPLE_TAP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_AND_UP_AND_RIGHT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_RIGHT_LIFT_SWIPE_UP_AND_LEFT
 import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_SWIPE_UP_AND_LEFT_LIFT_SWIPE_RIGHT
+import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_TRIPLE_TAP
 import java.time.Duration
 import kotlin.math.cos
 import kotlin.math.sin
@@ -708,6 +711,48 @@ class TrackedGestureTest {
     assign(R.string.shortcut_value_first_in_screen, R.string.pref_shortcut_4finger_1tap_top_key)
     fourFingerTap(service.resources.displayMetrics.heightPixels - 40f)
     assertEquals(listOf(AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP), service.gestures)
+  }
+
+  /** Two fingers at [firstY] and [secondY] double-tap, and the triple taps wait no more. */
+  private fun twoFingerDoubleTapAt(firstY: Float, secondY: Float) {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    for (downMs in longArrayOf(0, 150)) {
+      touchAt(ACTION_DOWN, downMs, 100f, firstY)
+      touchAt(ACTION_POINTER_DOWN, downMs + 5, 100f, firstY, 200f, secondY, actionIndex = 1)
+      touchAt(ACTION_POINTER_UP, downMs + 60, 100f, firstY, 200f, secondY, actionIndex = 1)
+      touchAt(ACTION_UP, downMs + 80, 100f, firstY)
+    }
+    runUntil(1300)
+  }
+
+  @Test
+  fun twoFingerDoubleTapAtTopAndBottomIsItsOwnGestureWhenAssigned() {
+    assign(
+      R.string.shortcut_value_braille_keyboard,
+      R.string.pref_shortcut_2finger_2tap_top_bottom_key,
+    )
+    // The screen is 470 pixels high: the top third ends at 156 and the bottom third starts at 313.
+    twoFingerDoubleTapAt(80f, 400f)
+    assertEquals(
+      listOf(GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM),
+      service.gestures,
+    )
+  }
+
+  @Test
+  fun twoFingerDoubleTapWithAFingerInTheMiddleStaysTheDoubleTap() {
+    assign(
+      R.string.shortcut_value_braille_keyboard,
+      R.string.pref_shortcut_2finger_2tap_top_bottom_key,
+    )
+    twoFingerDoubleTapAt(80f, 240f)
+    assertEquals(listOf(AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun twoFingerDoubleTapAtTopAndBottomStaysTheDoubleTapWhileUnassigned() {
+    twoFingerDoubleTapAt(80f, 400f)
+    assertEquals(listOf(AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP), service.gestures)
   }
 
   /**
@@ -1347,5 +1392,54 @@ class TrackedGestureTest {
     assign(R.string.shortcut_value_home, R.string.pref_shortcut_corner_top_left_tap_key)
     slide(20f, 5f, 90f)
     assertEquals(listOf(GESTURE_EDGE_SWIPE_DOWN_FROM_TOP_LEFT), service.gestures)
+  }
+
+  @Test
+  fun oneFingerTripleTapIsItsGestureWhenAssigned() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_1finger_3tap_key)
+    tapsAt(160f, 240f, 0, 150, 300)
+    assertEquals(listOf(GESTURE_TRIPLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun oneFingerQuadrupleTapIsItsGestureWhenAssigned() {
+    assign(
+      R.string.shortcut_value_home,
+      R.string.pref_shortcut_1finger_3tap_key,
+      R.string.pref_shortcut_1finger_4tap_key,
+    )
+    tapsAt(160f, 240f, 0, 150, 300, 450)
+    assertEquals(listOf(GESTURE_QUADRUPLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun threeOneFingerTapsAreADoubleTapWhileTheTripleTapIsUnassigned() {
+    tapsAt(160f, 240f, 0, 150, 300)
+    assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun oneFingerDoubleTapRunsAtItsLastTapWhileNoTripleOrQuadrupleTapIsAssigned() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, 160f, 240f)
+    touchAt(ACTION_UP, 50, 160f, 240f)
+    touchAt(ACTION_DOWN, 150, 160f, 240f)
+    touchAt(ACTION_UP, 200, 160f, 240f)
+    runUntil(220)
+    assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  @Test
+  fun oneFingerDoubleTapWaitsWhileTheTripleTapIsAssigned() {
+    assign(R.string.shortcut_value_home, R.string.pref_shortcut_1finger_3tap_key)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 0, 160f, 240f)
+    touchAt(ACTION_UP, 50, 160f, 240f)
+    touchAt(ACTION_DOWN, 150, 160f, 240f)
+    touchAt(ACTION_UP, 200, 160f, 240f)
+    runUntil(220)
+    assertEquals(listOf<Int>(), service.gestures)
+    runUntil(1200)
+    assertEquals(listOf(AccessibilityService.GESTURE_DOUBLE_TAP), service.gestures)
   }
 }

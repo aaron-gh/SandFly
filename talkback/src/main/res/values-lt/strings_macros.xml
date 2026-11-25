@@ -203,4 +203,43 @@
     <string name="macro_test_focus_inside">Fokusas elemento viduje</string>
     <string name="macro_test_focus_inside_value">Fokusas viduje: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Fokusas ne viduje: %1$s</string>
+    <string name="macro_step_tap_position">Paliesti nurodytoje vietoje</string>
+    <string name="macro_step_tap_position_value">Paliesti ties <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pikseliai nuo kairės</string>
+    <string name="macro_tap_y">Y, pikseliai nuo viršaus</string>
+    <string name="macro_invalid_position">Įveskite X ir Y nuo 0 iki <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Patarimas</string>
+    <string name="macro_step_touch_hold">Paliesti ir palaikyti elementą</string>
+    <string name="macro_step_touch_hold_value">Paliesti ir palaikyti <xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s</string>
+    <string name="macro_step_touch_hold_slide_value">Paliesti ir palaikyti <xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1">%2$s</xliff:g> s. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Palaikymo sekundės</string>
+    <string name="macro_slide">Prieš pakeliant</string>
+    <string name="macro_slide_none">Pakelti vietoje</string>
+    <string name="macro_slide_up">Vilkti aukštyn</string>
+    <string name="macro_slide_down">Vilkti žemyn</string>
+    <string name="macro_slide_left">Vilkti kairėn</string>
+    <string name="macro_slide_right">Vilkti dešinėn</string>
+    <string name="macro_slide_distance">Atstumas dp</string>
+    <string name="macro_app">Programa</string>
+    <string name="macro_all_apps">Visos programos</string>
+    <string name="macro_add_app">Pridėti programą</string>
+    <string name="macro_apps">Programos</string>
+    <string name="macro_in_actions">Rodyti skiltyje „Veiksmai“</string>
+    <string name="macro_in_actions_only_when">Rodyti skiltyje „Veiksmai“, tik kai</string>
+    <string name="macro_not_in_app">Makrokomanda nevykdyta. Vykdoma tik programoje <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> makrokomanda</item>
+        <item quantity="few"><xliff:g id="count" example="3">%d</xliff:g> makrokomandos</item>
+        <item quantity="many"><xliff:g id="count" example="3">%d</xliff:g> makrokomandos</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> makrokomandų</item>
+    </plurals>
+    <string name="macro_record">Įrašyti veiksmus</string>
+    <string name="macro_record_new">Įrašyti makrokomandą</string>
+    <string name="macro_recording_notification">Įrašomi makrokomandos veiksmai: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Įrašoma. Norėdami sustabdyti, vykdykite „Įrašyti makrokomandą“ arba „Sustabdyti makrokomandą“ arba atidarykite pranešimą „Įrašomi makrokomandos veiksmai“.</string>
+    <string name="macro_recorded">Įrašyti veiksmai</string>
+    <string name="macro_recorded_no_passwords">Slaptažodžių laukuose įvestas tekstas neįrašomas.</string>
+    <string name="macro_recorded_too_many">Nepridėta. Makrokomandoje gali būti ne daugiau kaip <xliff:g id="count" example="200">%1$d</xliff:g> veiksmų.</string>
+    <string name="macro_recorded_name">Įrašyta <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Sąrašas ekrane</string>
 </resources>

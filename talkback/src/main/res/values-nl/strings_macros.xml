@@ -197,4 +197,41 @@
     <string name="macro_test_focus_inside">Focus is binnen een item</string>
     <string name="macro_test_focus_inside_value">Focus binnen: %1$s</string>
     <string name="macro_test_not_focus_inside_value">Focus niet binnen: %1$s</string>
+    <string name="macro_step_tap_position">Tikken op positie</string>
+    <string name="macro_step_tap_position_value">Tikken op <xliff:g id="x" example="540">%1$d</xliff:g>, <xliff:g id="y" example="1200">%2$d</xliff:g></string>
+    <string name="macro_tap_x">X, pixels vanaf links</string>
+    <string name="macro_tap_y">Y, pixels vanaf boven</string>
+    <string name="macro_invalid_position">Voer X en Y in van 0 tot <xliff:g id="max" example="10000">%1$d</xliff:g></string>
+    <string name="macro_field_tooltip">Tooltip</string>
+    <string name="macro_step_touch_hold">Item aanraken en vasthouden</string>
+    <string name="macro_step_touch_hold_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1.5">%2$s</xliff:g> s aanraken en vasthouden</string>
+    <string name="macro_step_touch_hold_slide_value"><xliff:g id="label" example="Voice message">%1$s</xliff:g> <xliff:g id="seconds" example="1">%2$s</xliff:g> s aanraken en vasthouden. <xliff:g id="slide" example="Slide up">%3$s</xliff:g> <xliff:g id="distance" example="100">%4$d</xliff:g> dp</string>
+    <string name="macro_hold_seconds">Seconden vasthouden</string>
+    <string name="macro_slide">Voor het loslaten</string>
+    <string name="macro_slide_none">Op dezelfde plek loslaten</string>
+    <string name="macro_slide_up">Omhoog schuiven</string>
+    <string name="macro_slide_down">Omlaag schuiven</string>
+    <string name="macro_slide_left">Naar links schuiven</string>
+    <string name="macro_slide_right">Naar rechts schuiven</string>
+    <string name="macro_slide_distance">Afstand in dp</string>
+    <string name="macro_app">App</string>
+    <string name="macro_all_apps">Alle apps</string>
+    <string name="macro_add_app">App toevoegen</string>
+    <string name="macro_apps">Apps</string>
+    <string name="macro_in_actions">Tonen in Acties</string>
+    <string name="macro_in_actions_only_when">Alleen tonen in Acties als</string>
+    <string name="macro_not_in_app">Macro niet uitgevoerd. Werkt alleen in <xliff:g id="app" example="WhatsApp">%1$s</xliff:g></string>
+    <plurals name="macro_count">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> macro</item>
+        <item quantity="other"><xliff:g id="count" example="3">%d</xliff:g> macro\'s</item>
+    </plurals>
+    <string name="macro_record">Stappen opnemen</string>
+    <string name="macro_record_new">Een macro opnemen</string>
+    <string name="macro_recording_notification">Macrostappen opnemen: <xliff:g id="macro" example="Turn on Wi-Fi">%1$s</xliff:g></string>
+    <string name="macro_recording_toast">Opname bezig. Voer Een macro opnemen of Macro stoppen uit of open de melding Macrostappen opnemen om te stoppen.</string>
+    <string name="macro_recorded">Opgenomen stappen</string>
+    <string name="macro_recorded_no_passwords">Tekst die in wachtwoordvelden is getypt, wordt niet opgenomen.</string>
+    <string name="macro_recorded_too_many">Niet toegevoegd. Een macro heeft maximaal <xliff:g id="count" example="200">%1$d</xliff:g> stappen.</string>
+    <string name="macro_recorded_name">Opgenomen <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
+    <string name="macro_list_on_screen">Lijst op het scherm</string>
 </resources>

@@ -84,4 +84,10 @@
     <string name="sound_theme_source_failed">Impossible de charger les thèmes sonores. <xliff:g id="reason" example="HTTP 404">%1$s</xliff:g></string>
     <string name="sound_theme_source_remove_message">Les thèmes sonores installés à partir de cette source restent installés.</string>
     <string name="theme_sound_volume_change">Changement de volume</string>
+    <string name="theme_sound_choose_from_folder">Choisir dans un dossier</string>
+    <string name="theme_sound_change_folder">Changer de dossier</string>
+    <string name="theme_sound_parent_folder">Dossier parent</string>
+    <string name="theme_sound_folder_entry"><xliff:g id="folder" example="Clicks">%1$s</xliff:g>, dossier</string>
+    <string name="theme_sound_folder_empty">Aucun fichier audio dans ce dossier.</string>
+    <string name="theme_sound_folder_failed">Impossible de lire le dossier.</string>
 </resources>
