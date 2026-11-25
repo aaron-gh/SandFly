@@ -31,6 +31,7 @@ object ControlSoundsSettings {
   const val VALUE_3D_WITH_HEADPHONES = "headphones"
   const val VALUE_3D_ALWAYS = "always"
   const val VALUE_3D_NEVER = "never"
+  const val VALUE_3D_WITH_HEADPHONES_CENTRED = "headphones_centred"
 
   @JvmStatic fun isOn(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_ON, false)
 
@@ -52,6 +53,7 @@ object ControlSoundsSettings {
     when (prefs.getString(PREF_3D, VALUE_3D_WITH_HEADPHONES)) {
       VALUE_3D_ALWAYS -> FeedbackController.SPATIAL_3D
       VALUE_3D_NEVER -> FeedbackController.SPATIAL_STEREO
+      VALUE_3D_WITH_HEADPHONES_CENTRED -> FeedbackController.SPATIAL_3D_WITH_HEADPHONES_CENTRED
       else -> FeedbackController.SPATIAL_3D_WITH_HEADPHONES
     }
 

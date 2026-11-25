@@ -225,6 +225,7 @@ Control sounds play from the position of the control on the screen: from the lef
 - **With headphones**: the default. 3D audio plays when SandFly audio goes to wired or USB headphones, a Bluetooth headset or headphones, or hearing aids. On Android 13 and later, SandFly checks where its audio plays, so a connected Bluetooth speaker or car that doesn't play SandFly audio doesn't count. On earlier versions, any connected headphones count.
 - **Always**: 3D audio also on the phone speaker.
 - **Never, only left and right**: the sounds move only between left and right.
+- **With headphones, centred otherwise**: 3D audio with headphones, as **With headphones**. On the phone speaker and other outputs, the sounds play from the centre, without moving between left and right.
 
 ### Audio output settings {#sound-audio-output}
 
