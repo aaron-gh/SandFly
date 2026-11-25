@@ -72,6 +72,8 @@ Each gesture with held dots also works with the matching dots of the other hand,
 
 The three-finger swipe up opens **Braille keyboard options**: **Switch to next language**, **Switch to** contracted or uncontracted **braille**, **Update dot positions**, **Review gestures**, **Open tutorial** and **Settings**.
 
+In fields with no action of their own or a send action, such as the message fields of Telegram, WhatsApp and Messages, Submit text presses the send button next to the field, and the braille keyboard stays open for the next message. In other fields, or when there is no send button, Submit text carries out the action of the field, such as search or next, or presses Enter, and hides the braille keyboard, so that focus can move on.
+
 When you swipe to another control before the braille keyboard opens, SandFly moves focus back to the text field before each command, so cursor movement and editing apply to the text field.
 
 #### Change the braille keyboard gestures {#braille-keyboard-gestures}
@@ -156,6 +158,7 @@ In **Braille** > **Braille keyboard**:
 - **Swap top and bottom dots**: dot 1 trades places with dot 3, and dot 4 with dot 6. Off by default. You can turn on both swaps.
 - **Typing sounds**: plays a sound for each character, and a sound each for space, delete and new line, at the SandFly sound volume. A sound theme can replace them. Off by default. See [](#sound).
 - **Say "Submitting text"**: announces "Submitting text" when you submit text with a two-finger swipe up. On by default.
+- **Return to the previous keyboard**: when you hide the braille keyboard with **Hide keyboard**, or leave its text field, SandFly changes back to the keyboard you used before it. Open the braille keyboard again with **Switch to braille keyboard**. It doesn't apply while a braille display is connected. Off by default.
 - **Capitalize sentences**: types the first letter of a sentence as a capital, at the start of a field, after a new line, and after a full stop, question mark or exclamation mark followed by a space. It doesn't change password, email address, web address or number fields. Off by default.
 
 The braille keyboard uses the same vibration effects as the rest of SandFly. Submitting text vibrates as closing or switching the keyboard does. Deleting in an empty field plays a soft vibration that fades out.

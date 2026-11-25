@@ -74,6 +74,7 @@ public class BrailleUserPreferences {
   private static final boolean TABLET_HELD_UP_FACES_AWAY_DEFAULT = true;
   private static final boolean TYPING_SOUNDS_DEFAULT = false;
   private static final boolean SPEAK_SUBMITTING_DEFAULT = true;
+  private static final boolean RETURN_TO_PREVIOUS_KEYBOARD_DEFAULT = false;
   private static final boolean CAPITALIZE_SENTENCES_DEFAULT = false;
   private static final boolean QUICK_CALIBRATION_DEFAULT = true;
   private static final boolean DOT_TRACKING_DEFAULT = true;
@@ -386,6 +387,30 @@ public class BrailleUserPreferences {
     getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
         .edit()
         .putBoolean(context.getString(R.string.pref_brailleime_speak_submitting), speakSubmitting)
+        .apply();
+  }
+
+  /**
+   * Reads whether the braille keyboard changes back to the previous keyboard when it's hidden or
+   * its text field is left.
+   */
+  public static boolean readReturnToPreviousKeyboard(Context context) {
+    return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .getBoolean(
+            context.getString(R.string.pref_brailleime_return_to_previous_keyboard),
+            RETURN_TO_PREVIOUS_KEYBOARD_DEFAULT);
+  }
+
+  /**
+   * Writes whether the braille keyboard changes back to the previous keyboard when it's hidden or
+   * its text field is left.
+   */
+  public static void writeReturnToPreviousKeyboard(Context context, boolean returnToPrevious) {
+    getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+        .edit()
+        .putBoolean(
+            context.getString(R.string.pref_brailleime_return_to_previous_keyboard),
+            returnToPrevious)
         .apply();
   }
 

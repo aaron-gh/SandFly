@@ -30,6 +30,7 @@ import static com.google.android.accessibility.utils.input.CursorGranularity.LIN
 import static com.google.android.accessibility.utils.input.CursorGranularity.PARAGRAPH;
 import static com.google.android.accessibility.utils.input.CursorGranularity.WORD;
 
+import android.app.KeyguardManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -217,6 +218,13 @@ public class BrailleIme extends InputMethodService {
    * the text just committed.
    */
   private static final int[] SEND_BUTTON_ATTEMPT_DELAYS_MS = {100, 200, 300};
+  /**
+   * How long Return to the previous keyboard waits after the input ends, so that the same field
+   * starting again, as when an app recreates its window, cancels it.
+   */
+  private static final long RETURN_TO_PREVIOUS_KEYBOARD_DELAY_MS = 500;
+  /** An input that ends this soon after a configuration change, such as rotation, isn't left. */
+  private static final long CONFIGURATION_CHANGE_FINISH_INPUT_MS = 1000;
 
   // An Immutable set includes the granularities which are related to editing.
   private static final ImmutableSet<CursorGranularity> VALID_GRANULARITIES =
@@ -277,6 +285,19 @@ public class BrailleIme extends InputMethodService {
   private Handler mainHandler;
   private Handler calibrationAnnouncementHandler;
   private boolean brailleDisplayConnectedAndNotSuspended;
+  // The braille keyboard was shown in the current text field, so leaving the field returns to the
+  // previous keyboard while that setting is on.
+  private boolean returnToPreviousKeyboardOnFinishInput;
+  // The field whose input ended while the return to the previous keyboard waits.
+  @Nullable private String finishedInputPackage;
+  private int finishedInputFieldId = View.NO_ID;
+  private long lastConfigurationChangeUptimeMs = -CONFIGURATION_CHANGE_FINISH_INPUT_MS;
+  private final Runnable returnToPreviousKeyboardAfterFinishInput =
+      () -> {
+        if (isScreenOnAndUnlocked() && !configurationChangedRecently()) {
+          returnToPreviousKeyboard(/* interruptSpeech= */ false);
+        }
+      };
   // Set while the Switch to next braille table gesture changes the language, which it says itself.
   private boolean switchingBrailleTable;
   private int orientation;
@@ -423,7 +444,11 @@ public class BrailleIme extends InputMethodService {
     // therefore we first confirm that the screen is indeed on before invoking activateIfNeeded.
     PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
     if (pm.isInteractive()) {
-      if (showKeyboardView() && !restarting) {
+      boolean shown = showKeyboardView();
+      if (shown) {
+        returnToPreviousKeyboardOnFinishInput = true;
+      }
+      if (shown && !restarting) {
         playActiveSound(true);
         if (isBrailleDisplayStateChanged()) {
           updateInputView();
@@ -439,6 +464,8 @@ public class BrailleIme extends InputMethodService {
   @Override
   public void onConfigurationChanged(Configuration newConfig) {
     super.onConfigurationChanged(newConfig);
+    lastConfigurationChangeUptimeMs = SystemClock.uptimeMillis();
+    mainHandler.removeCallbacks(returnToPreviousKeyboardAfterFinishInput);
     if (orientation != newConfig.orientation) {
       orientation = newConfig.orientation;
       keyboardView.onOrientationChanged(newConfig.orientation);
@@ -456,6 +483,85 @@ public class BrailleIme extends InputMethodService {
       return true;
     }
     return super.onEvaluateInputViewShown();
+  }
+
+  @Override
+  public void onStartInput(EditorInfo attribute, boolean restarting) {
+    super.onStartInput(attribute, restarting);
+    // The same field again: its app recreated the window rather than the field being left.
+    if (attribute != null
+        && attribute.inputType != InputType.TYPE_NULL
+        && attribute.fieldId != View.NO_ID
+        && attribute.fieldId != 0
+        && attribute.fieldId == finishedInputFieldId
+        && TextUtils.equals(attribute.packageName, finishedInputPackage)) {
+      mainHandler.removeCallbacks(returnToPreviousKeyboardAfterFinishInput);
+    }
+  }
+
+  @Override
+  public void onFinishInput() {
+    EditorInfo finishedInfo = getCurrentInputEditorInfo();
+    super.onFinishInput();
+    if (!returnToPreviousKeyboardOnFinishInput) {
+      return;
+    }
+    returnToPreviousKeyboardOnFinishInput = false;
+    if (!BrailleUserPreferences.readReturnToPreviousKeyboard(this)) {
+      return;
+    }
+    // The input also ends when the screen turns off or locks, and when an app recreates its window
+    // after a configuration change such as rotation. Neither leaves the field.
+    if (!isScreenOnAndUnlocked() || configurationChangedRecently()) {
+      return;
+    }
+    finishedInputPackage = finishedInfo == null ? null : finishedInfo.packageName;
+    finishedInputFieldId = finishedInfo == null ? View.NO_ID : finishedInfo.fieldId;
+    mainHandler.removeCallbacks(returnToPreviousKeyboardAfterFinishInput);
+    mainHandler.postDelayed(
+        returnToPreviousKeyboardAfterFinishInput, RETURN_TO_PREVIOUS_KEYBOARD_DELAY_MS);
+  }
+
+  private boolean isScreenOnAndUnlocked() {
+    PowerManager powerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
+    KeyguardManager keyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+    return powerManager != null
+        && powerManager.isInteractive()
+        && (keyguardManager == null || !keyguardManager.isKeyguardLocked());
+  }
+
+  private boolean configurationChangedRecently() {
+    return SystemClock.uptimeMillis() - lastConfigurationChangeUptimeMs
+        < CONFIGURATION_CHANGE_FINISH_INPUT_MS;
+  }
+
+  /**
+   * Changes to the keyboard used before the braille keyboard while Return to the previous keyboard
+   * is on, so that the braille keyboard only stays for the field it was opened in.
+   */
+  private void returnToPreviousKeyboard(boolean interruptSpeech) {
+    if (!BuildVersionUtils.isAtLeastP()
+        || !PreviousKeyboard.INSTANCE.shouldReturn(
+            BrailleUserPreferences.readReturnToPreviousKeyboard(this),
+            brailleDisplayConnectedAndNotSuspended,
+            KeyboardUtils.areMultipleImesEnabled(this),
+            PreviousKeyboard.INSTANCE.isCurrent(
+                KeyboardUtils.getCurrentInputMethod(this), getPackageName(), getClass().getName()))) {
+      return;
+    }
+    BrailleImeLog.d(TAG, "Returning to the previous keyboard");
+    if (isConnectionValid() && editBuffer != null) {
+      editBuffer.commit(getImeConnection());
+    }
+    // The system knows which keyboard was used before; without one, the next keyboard is used, as
+    // with the gesture that switches keyboards.
+    if (!switchToPreviousInputMethod()) {
+      if (interruptSpeech) {
+        switchToNextInputMethod();
+      } else {
+        switchToNextKeyboard();
+      }
+    }
   }
 
   @Override
@@ -502,6 +608,7 @@ public class BrailleIme extends InputMethodService {
     super.onDestroy();
     BrailleImeLog.d(TAG, "onDestroy");
     instance = null;
+    mainHandler.removeCallbacks(returnToPreviousKeyboardAfterFinishInput);
     if (talkBackForBrailleIme != null) {
       talkBackForBrailleIme.setBrailleImeForTalkBack(null);
     }
@@ -816,6 +923,16 @@ public class BrailleIme extends InputMethodService {
   }
 
   /**
+   * Hides the braille keyboard after Submit text, so that accessibility focus can go to the next
+   * field. The keyboard stays the current one.
+   */
+  private void hideAfterSubmit() {
+    returnToPreviousKeyboardOnFinishInput = false;
+    hideSelf();
+    escapeReminder.increaseExitKeyboardCounter();
+  }
+
+  /**
    * Performs the 'actions' specified, via imeOptions, by the application such as 'Send'. A typical
    * IME usually surfaces the trigger for such an action with an (often blue-colored) action button.
    *
@@ -826,14 +943,12 @@ public class BrailleIme extends InputMethodService {
    * instead: their fields specify no action, or say not to perform it on enter, and ignore it. For
    * those, the send button is pressed, and the action is the fallback when there is none.
    */
-  private void performEditorAction(InputConnection inputConnection) {
+  private void performEditorAction(InputConnection inputConnection, boolean hideUnlessSent) {
     EditorInfo editorInfo = getCurrentInputEditorInfo();
     int editorAction = editorInfo.imeOptions & EditorInfo.IME_MASK_ACTION;
     BrailleImeLog.d(TAG, "performEnterAction editorAction = " + editorAction);
-    if (!hasEditorAction(editorAction)
-        || editorAction == EditorInfo.IME_ACTION_SEND
-        || (editorInfo.imeOptions & EditorInfo.IME_FLAG_NO_ENTER_ACTION) != 0) {
-      clickSendButton(inputConnection, editorInfo, editorAction, /* attempt= */ 0);
+    if (SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
+      clickSendButton(inputConnection, editorInfo, editorAction, /* attempt= */ 0, hideUnlessSent);
     } else {
       performEditorAction(inputConnection, editorInfo, editorAction);
     }
@@ -865,18 +980,30 @@ public class BrailleIme extends InputMethodService {
   /**
    * Presses the send button next to the field, trying again while the app updates for the text
    * just committed, since some, like WhatsApp, only show it once the field has text. Without one,
-   * performs the editor action, or presses enter in a single line field.
+   * performs the editor action, or presses enter in a single line field. With {@code
+   * hideUnlessSent}, hides the braille keyboard unless the send button was pressed.
    */
   private void clickSendButton(
-      InputConnection inputConnection, EditorInfo editorInfo, int editorAction, int attempt) {
+      InputConnection inputConnection,
+      EditorInfo editorInfo,
+      int editorAction,
+      int attempt,
+      boolean hideUnlessSent) {
     mainHandler.postDelayed(
         () -> {
           if (talkBackForBrailleIme != null
               && talkBackForBrailleIme.clickSendButton(getSendWords(editorInfo))) {
             speakSubmitting();
-          } else if (attempt + 1 < SEND_BUTTON_ATTEMPT_DELAYS_MS.length) {
-            clickSendButton(inputConnection, editorInfo, editorAction, attempt + 1);
-          } else if (hasEditorAction(editorAction)) {
+            return;
+          }
+          if (attempt + 1 < SEND_BUTTON_ATTEMPT_DELAYS_MS.length) {
+            clickSendButton(inputConnection, editorInfo, editorAction, attempt + 1, hideUnlessSent);
+            return;
+          }
+          if (hideUnlessSent) {
+            hideAfterSubmit();
+          }
+          if (hasEditorAction(editorAction)) {
             performEditorAction(inputConnection, editorInfo, editorAction);
           } else if (!isMultiLine(editorInfo)) {
             inputConnection.sendKeyEvent(
@@ -941,6 +1068,11 @@ public class BrailleIme extends InputMethodService {
     if (talkBackForBrailleIme != null) {
       talkBackForBrailleIme.interruptSpeak();
     }
+    return switchToNextKeyboard();
+  }
+
+  /** Switches to the next keyboard as {@link #switchToNextInputMethod()} does, without silencing. */
+  private boolean switchToNextKeyboard() {
     if (isConnectionValid() && editBuffer != null) {
       // Commit holdings here, otherwise InputConnect will become invalid after switch keyboard.
       editBuffer.commit(getImeConnection());
@@ -1360,6 +1492,8 @@ public class BrailleIme extends InputMethodService {
         public void hideBrailleKeyboard() {
           hideSelf();
           escapeReminder.increaseExitKeyboardCounter();
+          returnToPreviousKeyboardOnFinishInput = false;
+          returnToPreviousKeyboard(/* interruptSpeech= */ true);
         }
 
         @Override
@@ -1377,7 +1511,22 @@ public class BrailleIme extends InputMethodService {
 
         @Override
         public void performEditorAction() {
-          BrailleIme.this.performEditorAction(getImeConnection().inputConnection);
+          BrailleIme.this.performEditorAction(
+              getImeConnection().inputConnection, /* hideUnlessSent= */ false);
+        }
+
+        @Override
+        public void submitText() {
+          EditorInfo editorInfo = getCurrentInputEditorInfo();
+          // The keyboard stays open only when the send button next to the field sends the text, as
+          // in chat apps, where the field stays for the next message. Otherwise it hides: that
+          // brings touch exploration back, so that accessibility focus can go to the next field.
+          // Neither returns to the previous keyboard.
+          if (editorInfo == null || !SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
+            hideAfterSubmit();
+          }
+          BrailleIme.this.performEditorAction(
+              getImeConnection().inputConnection, /* hideUnlessSent= */ true);
         }
 
         @Override
