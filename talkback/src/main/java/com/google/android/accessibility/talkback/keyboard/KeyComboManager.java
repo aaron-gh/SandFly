@@ -1679,6 +1679,9 @@ public class KeyComboManager
             context.getString(R.string.keycombo_shortcut_navigate_previous_line),
             context.getString(R.string.keycombo_shortcut_navigate_next_paragraph),
             context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph),
+            // Second paragraph keys, which are single letters in browse mode.
+            context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph_extra),
             // Jump commands
             context.getString(R.string.keycombo_shortcut_navigate_next_aria_landmark),
             context.getString(R.string.keycombo_shortcut_navigate_previous_aria_landmark),

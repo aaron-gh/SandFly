@@ -1416,6 +1416,8 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_line));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph_extra));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_button));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_button));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_control));

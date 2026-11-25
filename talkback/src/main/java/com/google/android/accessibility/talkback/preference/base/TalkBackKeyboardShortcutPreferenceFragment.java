@@ -422,18 +422,42 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           // A keymap without a key of its own for this command keeps it under the command.
           continue;
         }
-        CharSequence title =
-            browseModeOnlyCommands.contains(key)
-                ? String.format(browseModeTitle, command.getLabel())
-                : command.getLabel();
-        KeyboardShortcutDialogPreference preference =
-            new KeyboardShortcutDialogPreference(context, key, title);
-        preference.setIconSpaceReserved(false);
-        preference.setOnPreferenceChangeListener(preferenceChangeListener);
-        group.addPreference(preference);
+        addShortcutPreference(
+            context, group, key, command.getLabel(), browseModeOnlyCommands, browseModeTitle);
+        // A second key of the command, such as P for Next paragraph in the NVDA keymap.
+        @Nullable TalkBackPhysicalKeyboardShortcut second = command.getSecondKeyboardAction();
+        if (second != null) {
+          String secondKey = second.getKey(context.getResources());
+          if (model.getKeyComboMap().containsKey(secondKey) && findPreference(secondKey) == null) {
+            addShortcutPreference(
+                context,
+                group,
+                secondKey,
+                second.getDescription(context.getResources()),
+                browseModeOnlyCommands,
+                browseModeTitle);
+          }
+        }
       }
     }
     collapseCategories();
+  }
+
+  /** Adds the shortcut kept under {@code key}, titled {@code label}, to {@code group}. */
+  private void addShortcutPreference(
+      Context context,
+      AccessibilitySuitePreferenceCategory group,
+      String key,
+      String label,
+      Set<String> browseModeOnlyCommands,
+      String browseModeTitle) {
+    CharSequence title =
+        browseModeOnlyCommands.contains(key) ? String.format(browseModeTitle, label) : label;
+    KeyboardShortcutDialogPreference preference =
+        new KeyboardShortcutDialogPreference(context, key, title);
+    preference.setIconSpaceReserved(false);
+    preference.setOnPreferenceChangeListener(preferenceChangeListener);
+    group.addPreference(preference);
   }
 
   /**

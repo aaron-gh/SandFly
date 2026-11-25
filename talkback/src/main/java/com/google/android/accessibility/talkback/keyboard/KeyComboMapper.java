@@ -332,14 +332,14 @@ public class KeyComboMapper {
                       .setInputMode(INPUT_MODE_KEYBOARD)
                       .setGranularity(LINE)
                       .setSkipEdgeCheck(true));
-      case NAVIGATE_NEXT_PARAGRAPH ->
+      case NAVIGATE_NEXT_PARAGRAPH, NAVIGATE_NEXT_PARAGRAPH_EXTRA ->
           result =
               pipeline.returnFeedback(
                   eventId,
                   Feedback.focusDirection(SEARCH_FOCUS_FORWARD)
                       .setInputMode(INPUT_MODE_KEYBOARD)
                       .setGranularity(PARAGRAPH));
-      case NAVIGATE_PREVIOUS_PARAGRAPH ->
+      case NAVIGATE_PREVIOUS_PARAGRAPH, NAVIGATE_PREVIOUS_PARAGRAPH_EXTRA ->
           result =
               pipeline.returnFeedback(
                   eventId,

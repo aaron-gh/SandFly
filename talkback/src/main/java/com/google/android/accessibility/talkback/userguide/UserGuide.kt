@@ -173,12 +173,19 @@ object UserGuide {
       val seen = HashSet<String>()
       for ((index, category) in categories.withIndex()) {
         val rows =
-          category.commands.mapNotNull { command ->
-            val key = command.keyboardKey(context)
-            if (!seen.add(key)) return@mapNotNull null
-            val keyCombo = model.getDefaultKeyCombo(key)
-            if (keyCombo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) return@mapNotNull null
-            command.label to keyComboManager.getKeyComboStringRepresentation(keyCombo, model)
+          category.commands.flatMap { command ->
+            // A command's second key, such as P for Next paragraph in the NVDA keymap, follows it.
+            val second = command.secondKeyboardAction
+            listOfNotNull(
+                command.keyboardKey(context) to command.label,
+                second?.let { it.getKey(context.resources) to it.getDescription(context.resources) },
+              )
+              .mapNotNull { (key, label) ->
+                if (!seen.add(key)) return@mapNotNull null
+                val keyCombo = model.getDefaultKeyCombo(key)
+                if (keyCombo.keyComboCode == KeyComboModel.KEY_COMBO_CODE_UNASSIGNED.toLong()) return@mapNotNull null
+                label to keyComboManager.getKeyComboStringRepresentation(keyCombo, model)
+              }
           }
         if (rows.isEmpty()) continue
         text.append("#### ").append(cell(context.getString(category.titleRes))).append(" {#appendix-keyboard-shortcuts-").append(id).append('-').append(index).append("}\n\n")
