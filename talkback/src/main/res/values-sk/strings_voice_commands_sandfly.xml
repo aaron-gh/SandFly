@@ -182,4 +182,21 @@
         <item>aktivuj {label}</item>
         <item>vyber {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Spustiť hlasové úpravy</string>
+    <string name="voice_editing_on">Hlasové úpravy zapnuté</string>
+    <string name="voice_editing_off">Hlasové úpravy vypnuté</string>
+    <string name="title_pref_voice_editing_time_limit">Časový limit hlasových úprav</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minúta</item>
+        <item quantity="few"><xliff:g id="count" example="10">%d</xliff:g> minúty</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> minúty</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minút</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>zastaviť úpravy</item>
+        <item>zastaviť hlasové úpravy</item>
+        <item>ukončiť úpravy</item>
+        <item>ukončiť hlasové úpravy</item>
+        <item>vypnúť hlasové úpravy</item>
+    </string-array>
 </resources>

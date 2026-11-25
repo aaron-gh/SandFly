@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">এই এপৰ বাবে আঙুলিৰ স্পৰ্শৰে নিৰ্দেশ</string>
     <string name="title_pref_shizuku_root_screen">Shizuku আৰু ৰুট</string>
     <string name="title_pref_use_root">Shizukuৰ সলনি ৰুট ব্যৱহাৰ কৰক</string>
+    <string name="command_perform_gesture">জেষ্টাৰ কৰক</string>
+    <string name="command_perform_gesture_message">জেষ্টাৰটো কৰক।</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> অৰ্পণ কৰিব নোৱাৰি</string>
+    <string name="command_run">কামাণ্ড চলাওক</string>
+    <string name="command_add_to_sandfly_menu">SandFlyৰ মেনুত যোগ কৰক</string>
+    <string name="command_remove_from_sandfly_menu">SandFlyৰ মেনুৰ পৰা আঁতৰাওক</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFlyৰ মেনুত যোগ কৰা হ’ল</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFlyৰ মেনুৰ পৰা আঁতৰোৱা হ’ল</string>
+    <string name="commands_search_hint">কামাণ্ড সন্ধান কৰক</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>টা কামাণ্ড</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g>টা কামাণ্ড</item>
+    </plurals>
 </resources>

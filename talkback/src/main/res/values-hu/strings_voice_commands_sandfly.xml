@@ -171,4 +171,19 @@
         <item>aktiváld: {label}</item>
         <item>válaszd ki: {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Hangalapú szerkesztés indítása</string>
+    <string name="voice_editing_on">Hangalapú szerkesztés bekapcsolva</string>
+    <string name="voice_editing_off">Hangalapú szerkesztés kikapcsolva</string>
+    <string name="title_pref_voice_editing_time_limit">Hangalapú szerkesztés időkorlátja</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> perc</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> perc</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>szerkesztés leállítása</item>
+        <item>hangalapú szerkesztés leállítása</item>
+        <item>szerkesztés vége</item>
+        <item>hangalapú szerkesztés vége</item>
+        <item>hangalapú szerkesztés kikapcsolása</item>
+    </string-array>
 </resources>

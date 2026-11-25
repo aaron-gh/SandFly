@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">このアプリのジェスチャー</string>
     <string name="title_pref_shizuku_root_screen">Shizuku と root</string>
     <string name="title_pref_use_root">Shizuku の代わりに root を使用</string>
+    <string name="command_perform_gesture">ジェスチャーを実行</string>
+    <string name="command_perform_gesture_message">ジェスチャーを行ってください。</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> は割り当てられません</string>
+    <string name="command_run">コマンドを実行</string>
+    <string name="command_add_to_sandfly_menu">SandFly メニューに追加</string>
+    <string name="command_remove_from_sandfly_menu">SandFly メニューから削除</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> を SandFly メニューに追加しました</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> を SandFly メニューから削除しました</string>
+    <string name="commands_search_hint">コマンドを検索</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 件のコマンド</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> 件のコマンド</item>
+    </plurals>
 </resources>

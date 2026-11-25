@@ -166,4 +166,19 @@
         <item>virkjaðu {label}</item>
         <item>veldu {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Hefja breytingar með rödd</string>
+    <string name="voice_editing_on">Kveikt á breytingum með rödd</string>
+    <string name="voice_editing_off">Slökkt á breytingum með rödd</string>
+    <string name="title_pref_voice_editing_time_limit">Tímamörk breytinga með rödd</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> mínúta</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> mínútur</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>hætta að breyta</item>
+        <item>hætta breytingum með rödd</item>
+        <item>ljúka breytingum</item>
+        <item>ljúka breytingum með rödd</item>
+        <item>slökkva á breytingum með rödd</item>
+    </string-array>
 </resources>

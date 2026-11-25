@@ -161,4 +161,19 @@
         <item>{label} ચાલુ કરો</item>
         <item>{label} પસંદ કરો</item>
     </string-array>
+    <string name="shortcut_voice_editing">વૉઇસ એડિટિંગ શરૂ કરો</string>
+    <string name="voice_editing_on">વૉઇસ એડિટિંગ ચાલુ</string>
+    <string name="voice_editing_off">વૉઇસ એડિટિંગ બંધ</string>
+    <string name="title_pref_voice_editing_time_limit">વૉઇસ એડિટિંગની સમય મર્યાદા</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> મિનિટ</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> મિનિટ</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>એડિટિંગ બંધ કરો</item>
+        <item>વૉઇસ એડિટિંગ બંધ કરો</item>
+        <item>એડિટિંગ સમાપ્ત કરો</item>
+        <item>વૉઇસ એડિટિંગ સમાપ્ત કરો</item>
+        <item>વૉઇસ એડિટિંગ બંધ</item>
+    </string-array>
 </resources>

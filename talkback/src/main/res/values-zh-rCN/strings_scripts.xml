@@ -311,4 +311,17 @@
     <string name="item_details_script">脚本详情</string>
     <string name="item_details_app">应用</string>
     <string name="script_permission_system">返回、回到主屏幕、打开通知、列出并打开应用、打开设置和链接、向应用发送 intent、更改音量、铃声模式以及 Wi-Fi 和手电筒等设备设置、控制媒体、设置计时器和闹钟、拨打电话和发送消息</string>
+    <string name="script_from_code">在 SandFly 中输入。</string>
+    <string name="script_code_view">查看代码</string>
+    <string name="script_code_edit">编辑代码</string>
+    <string name="script_code_new">从代码新建脚本</string>
+    <string name="script_code_field">代码</string>
+    <string name="script_code_save">保存</string>
+    <string name="script_code_saved">已保存 <xliff:g id="name">%1$s</xliff:g></string>
+    <string name="script_code_not_saved">脚本未保存</string>
+    <string name="script_code_id_changed">清单中的 id 必须保持为 <xliff:g id="id">%1$s</xliff:g>。</string>
+    <string name="script_code_load_failed">无法读取代码。</string>
+    <string name="script_code_discard_title">要丢弃更改吗？</string>
+    <string name="script_code_discard">丢弃</string>
+    <string name="script_code_keep_editing">继续编辑</string>
 </resources>

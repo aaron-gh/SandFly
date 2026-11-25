@@ -171,4 +171,23 @@
         <item>فعّل {label}</item>
         <item>اختر {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">بدء التعديل الصوتي</string>
+    <string name="voice_editing_on">التعديل الصوتي قيد التشغيل</string>
+    <string name="voice_editing_off">التعديل الصوتي متوقّف</string>
+    <string name="title_pref_voice_editing_time_limit">الحد الزمني للتعديل الصوتي</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="zero"><xliff:g id="count" example="10">%d</xliff:g> دقيقة</item>
+        <item quantity="one">دقيقة واحدة (<xliff:g id="count" example="1">%d</xliff:g>)</item>
+        <item quantity="two">دقيقتان (<xliff:g id="count" example="10">%d</xliff:g>)</item>
+        <item quantity="few"><xliff:g id="count" example="10">%d</xliff:g> دقائق</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> دقيقةً</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> دقيقة</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>أوقف التعديل</item>
+        <item>أوقف التعديل الصوتي</item>
+        <item>إنهاء التعديل</item>
+        <item>إنهاء التعديل الصوتي</item>
+        <item>إيقاف التعديل الصوتي</item>
+    </string-array>
 </resources>

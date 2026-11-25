@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">ಈ ಆ್ಯಪ್‌ಗಾಗಿ ಜೆಸ್ಚರ್‌ಗಳು</string>
     <string name="title_pref_shizuku_root_screen">Shizuku ಮತ್ತು ರೂಟ್</string>
     <string name="title_pref_use_root">Shizuku ಬದಲಿಗೆ ರೂಟ್ ಬಳಸಿ</string>
+    <string name="command_perform_gesture">ಜೆಸ್ಚರ್ ಮಾಡಿ</string>
+    <string name="command_perform_gesture_message">ಜೆಸ್ಚರ್ ಮಾಡಿ.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> ಅನ್ನು ನಿಯೋಜಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ</string>
+    <string name="command_run">ಆಜ್ಞೆಯನ್ನು ರನ್ ಮಾಡಿ</string>
+    <string name="command_add_to_sandfly_menu">SandFly ಮೆನುಗೆ ಸೇರಿಸಿ</string>
+    <string name="command_remove_from_sandfly_menu">SandFly ಮೆನುವಿನಿಂದ ತೆಗೆದುಹಾಕಿ</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> ಅನ್ನು SandFly ಮೆನುಗೆ ಸೇರಿಸಲಾಗಿದೆ</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> ಅನ್ನು SandFly ಮೆನುವಿನಿಂದ ತೆಗೆದುಹಾಕಲಾಗಿದೆ</string>
+    <string name="commands_search_hint">ಆಜ್ಞೆಗಳನ್ನು ಹುಡುಕಿ</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ಆಜ್ಞೆ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ಆಜ್ಞೆಗಳು</item>
+    </plurals>
 </resources>

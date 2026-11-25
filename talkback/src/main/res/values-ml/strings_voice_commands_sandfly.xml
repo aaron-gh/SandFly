@@ -161,4 +161,19 @@
         <item>{label} സജീവമാക്കൂ</item>
         <item>{label} തിരഞ്ഞെടുക്കൂ</item>
     </string-array>
+    <string name="shortcut_voice_editing">ശബ്‌ദ എഡിറ്റിംഗ് ആരംഭിക്കുക</string>
+    <string name="voice_editing_on">ശബ്‌ദ എഡിറ്റിംഗ് ഓണാണ്</string>
+    <string name="voice_editing_off">ശബ്‌ദ എഡിറ്റിംഗ് ഓഫാണ്</string>
+    <string name="title_pref_voice_editing_time_limit">ശബ്‌ദ എഡിറ്റിംഗ് സമയപരിധി</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> മിനിറ്റ്</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> മിനിറ്റ്</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>എഡിറ്റിംഗ് നിർത്തുക</item>
+        <item>ശബ്ദ എഡിറ്റിംഗ് നിർത്തുക</item>
+        <item>എഡിറ്റിംഗ് അവസാനിപ്പിക്കുക</item>
+        <item>ശബ്ദ എഡിറ്റിംഗ് അവസാനിപ്പിക്കുക</item>
+        <item>ശബ്ദ എഡിറ്റിംഗ് ഓഫ്</item>
+    </string-array>
 </resources>

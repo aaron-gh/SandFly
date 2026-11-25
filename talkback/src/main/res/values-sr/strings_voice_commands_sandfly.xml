@@ -297,4 +297,20 @@
         <item>одабери {label}</item>
         <item>означи {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Покрени гласовно уређивање</string>
+    <string name="voice_editing_on">Гласовно уређивање је укључено</string>
+    <string name="voice_editing_off">Гласовно уређивање је искључено</string>
+    <string name="title_pref_voice_editing_time_limit">Временско ограничење гласовног уређивања</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> минут</item>
+        <item quantity="few"><xliff:g id="count" example="10">%d</xliff:g> минута</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> минута</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>заустави уређивање</item>
+        <item>заустави гласовно уређивање</item>
+        <item>заврши уређивање</item>
+        <item>заврши гласовно уређивање</item>
+        <item>искључи гласовно уређивање</item>
+    </string-array>
 </resources>

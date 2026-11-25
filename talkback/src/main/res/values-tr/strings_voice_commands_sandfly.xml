@@ -171,4 +171,19 @@
         <item>{label} öğesini etkinleştir</item>
         <item>{label} öğesini seç</item>
     </string-array>
+    <string name="shortcut_voice_editing">Sesli düzenlemeyi başlat</string>
+    <string name="voice_editing_on">Sesli düzenleme açık</string>
+    <string name="voice_editing_off">Sesli düzenleme kapalı</string>
+    <string name="title_pref_voice_editing_time_limit">Sesli düzenleme süre sınırı</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dakika</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> dakika</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>düzenlemeyi durdur</item>
+        <item>sesli düzenlemeyi durdur</item>
+        <item>düzenlemeyi bitir</item>
+        <item>sesli düzenlemeyi bitir</item>
+        <item>sesli düzenlemeyi kapat</item>
+    </string-array>
 </resources>

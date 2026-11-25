@@ -166,4 +166,19 @@
         <item>aktivizo {label}</item>
         <item>zgjidh {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Nis redaktimin me zë</string>
+    <string name="voice_editing_on">Redaktimi me zë aktiv</string>
+    <string name="voice_editing_off">Redaktimi me zë joaktiv</string>
+    <string name="title_pref_voice_editing_time_limit">Kufiri kohor i redaktimit me zë</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minutë</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minuta</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ndalo redaktimin</item>
+        <item>ndalo redaktimin me zë</item>
+        <item>përfundo redaktimin</item>
+        <item>përfundo redaktimin me zë</item>
+        <item>çaktivizo redaktimin me zë</item>
+    </string-array>
 </resources>

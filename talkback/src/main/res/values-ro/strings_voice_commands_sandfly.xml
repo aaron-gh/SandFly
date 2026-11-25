@@ -184,4 +184,20 @@
         <item>activează {label}</item>
         <item>selectează {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Pornește editarea vocală</string>
+    <string name="voice_editing_on">Editare vocală activată</string>
+    <string name="voice_editing_off">Editare vocală dezactivată</string>
+    <string name="title_pref_voice_editing_time_limit">Limită de timp pentru editarea vocală</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minut</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> minute</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de minute</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>oprește editarea</item>
+        <item>oprește editarea vocală</item>
+        <item>încheie editarea</item>
+        <item>încheie editarea vocală</item>
+        <item>dezactivează editarea vocală</item>
+    </string-array>
 </resources>

@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">এই অ্যাপের জেসচার</string>
     <string name="title_pref_shizuku_root_screen">Shizuku ও রুট</string>
     <string name="title_pref_use_root">Shizuku-এর বদলে রুট ব্যবহার করুন</string>
+    <string name="command_perform_gesture">জেসচার করুন</string>
+    <string name="command_perform_gesture_message">জেসচারটি করুন।</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> অ্যাসাইন করা যাবে না</string>
+    <string name="command_run">কমান্ড চালান</string>
+    <string name="command_add_to_sandfly_menu">SandFly মেনুতে যোগ করুন</string>
+    <string name="command_remove_from_sandfly_menu">SandFly মেনু থেকে সরান</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly মেনুতে যোগ করা হয়েছে</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly মেনু থেকে সরানো হয়েছে</string>
+    <string name="commands_search_hint">কমান্ড খুঁজুন</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>টি কমান্ড</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g>টি কমান্ড</item>
+    </plurals>
 </resources>

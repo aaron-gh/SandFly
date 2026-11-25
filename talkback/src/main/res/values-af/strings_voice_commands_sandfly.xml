@@ -155,4 +155,19 @@
         <item>aktiveer {label}</item>
         <item>kies {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Begin stemredigering</string>
+    <string name="voice_editing_on">Stemredigering aan</string>
+    <string name="voice_editing_off">Stemredigering af</string>
+    <string name="title_pref_voice_editing_time_limit">Tydlimiet vir stemredigering</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuut</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minute</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>stop redigering</item>
+        <item>stop stemredigering</item>
+        <item>beëindig redigering</item>
+        <item>beëindig stemredigering</item>
+        <item>stemredigering af</item>
+    </string-array>
 </resources>

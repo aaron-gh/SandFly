@@ -173,4 +173,19 @@
         <item>aktifkan {label}</item>
         <item>pilih {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Mulai pengeditan suara</string>
+    <string name="voice_editing_on">Pengeditan suara aktif</string>
+    <string name="voice_editing_off">Pengeditan suara nonaktif</string>
+    <string name="title_pref_voice_editing_time_limit">Batas waktu pengeditan suara</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> menit</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> menit</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>berhenti mengedit</item>
+        <item>hentikan pengeditan suara</item>
+        <item>selesai mengedit</item>
+        <item>akhiri pengeditan suara</item>
+        <item>pengeditan suara nonaktif</item>
+    </string-array>
 </resources>

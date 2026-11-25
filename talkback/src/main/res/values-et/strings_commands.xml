@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Selle rakenduse liigutused</string>
     <string name="title_pref_shizuku_root_screen">Shizuku ja juurõigused</string>
     <string name="title_pref_use_root">Kasuta Shizuku asemel juurõigusi</string>
+    <string name="command_perform_gesture">Tee liigutus</string>
+    <string name="command_perform_gesture_message">Tehke liigutus.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> ei saa määrata</string>
+    <string name="command_run">Käivita käsk</string>
+    <string name="command_add_to_sandfly_menu">Lisa SandFlyi menüüsse</string>
+    <string name="command_remove_from_sandfly_menu">Eemalda SandFlyi menüüst</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> lisati SandFlyi menüüsse</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> eemaldati SandFlyi menüüst</string>
+    <string name="commands_search_hint">Otsi käske</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> käsk</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> käsku</item>
+    </plurals>
 </resources>

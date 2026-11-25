@@ -163,4 +163,19 @@
         <item>{label}ను యాక్టివేట్ చేయండి</item>
         <item>{label}ను ఎంచుకోండి</item>
     </string-array>
+    <string name="shortcut_voice_editing">వాయిస్ ఎడిటింగ్‌ను ప్రారంభించండి</string>
+    <string name="voice_editing_on">వాయిస్ ఎడిటింగ్ ఆన్‌లో ఉంది</string>
+    <string name="voice_editing_off">వాయిస్ ఎడిటింగ్ ఆఫ్‌లో ఉంది</string>
+    <string name="title_pref_voice_editing_time_limit">వాయిస్ ఎడిటింగ్ సమయ పరిమితి</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> నిమిషం</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> నిమిషాలు</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ఎడిటింగ్ ఆపు</item>
+        <item>వాయిస్ ఎడిటింగ్ ఆపు</item>
+        <item>ఎడిటింగ్ ముగించు</item>
+        <item>వాయిస్ ఎడిటింగ్ ముగించు</item>
+        <item>వాయిస్ ఎడిటింగ్ ఆఫ్</item>
+    </string-array>
 </resources>

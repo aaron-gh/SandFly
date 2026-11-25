@@ -158,4 +158,19 @@
         <item>{label} элементін іске қос</item>
         <item>{label} элементін таңда</item>
     </string-array>
+    <string name="shortcut_voice_editing">Дауыспен өңдеуді бастау</string>
+    <string name="voice_editing_on">Дауыспен өңдеу қосулы</string>
+    <string name="voice_editing_off">Дауыспен өңдеу өшірулі</string>
+    <string name="title_pref_voice_editing_time_limit">Дауыспен өңдеудің уақыт шегі</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> минут</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> минут</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>өңдеуді тоқтату</item>
+        <item>дауыспен өңдеуді тоқтату</item>
+        <item>өңдеуді аяқтау</item>
+        <item>дауыспен өңдеуді аяқтау</item>
+        <item>дауыспен өңдеуді өшіру</item>
+    </string-array>
 </resources>

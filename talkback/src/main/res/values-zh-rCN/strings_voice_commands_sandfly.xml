@@ -197,4 +197,19 @@
         <item>激活 {label}</item>
         <item>选择 {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">开始语音编辑</string>
+    <string name="voice_editing_on">语音编辑已开启</string>
+    <string name="voice_editing_off">语音编辑已关闭</string>
+    <string name="title_pref_voice_editing_time_limit">语音编辑时间限制</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>分钟</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g>分钟</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>停止编辑</item>
+        <item>停止语音编辑</item>
+        <item>结束编辑</item>
+        <item>结束语音编辑</item>
+        <item>关闭语音编辑</item>
+    </string-array>
 </resources>

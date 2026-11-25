@@ -188,4 +188,19 @@
         <item>啟用 {label}</item>
         <item>選擇 {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">開始語音編輯</string>
+    <string name="voice_editing_on">語音編輯已開啟</string>
+    <string name="voice_editing_off">語音編輯已關閉</string>
+    <string name="title_pref_voice_editing_time_limit">語音編輯時間限制</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>分鐘</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g>分鐘</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>停止編輯</item>
+        <item>停止語音編輯</item>
+        <item>結束編輯</item>
+        <item>結束語音編輯</item>
+        <item>關閉語音編輯</item>
+    </string-array>
 </resources>
