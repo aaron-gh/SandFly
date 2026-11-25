@@ -94,6 +94,7 @@ These aren't available on watches. For the file format, see [](#api-item-files).
 - **Keyboard shortcuts in apps**: shortcuts that run other commands in one app. See [](#keyboards-app-shortcuts).
 - **Keyboard practice**: turns keyboard practice on. See [](#keyboards-practice).
 - **Arrow key navigation**: in keymaps that have it. See [](#keyboards-arrow-keys).
+- **Fast search**: **Fast search key** and **Wrap around**. See [](#keyboards-fast-search).
 - The commands, by category, each with its shortcut. Each category opens and closes. A command whose shortcut works only in browse mode has "in browse mode" after its name, such as "Navigate to next heading in browse mode".
 
 You can change shortcuts and reset the keymap only while SandFly is on.
@@ -203,6 +204,16 @@ Two settings in **Navigation** change when browse mode is on:
 - **Navigation** > **Remember browse mode in each app**: keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless **Smart browse mode** turns it on in web content. It's off by default.
 
 For navigation by web elements, see [](#web).
+
+#### Fast search {#keyboards-fast-search}
+
+In browse mode, the fast search key with a letter or digit moves SandFly focus to the next item that starts with that letter or digit. Shift with both keys moves to the previous one. Case and accents don't matter: E finds "Email" and "Écran".
+
+To choose the key, go to **Keyboard shortcuts** > **Fast search** > **Fast search key**. It's Off by default. The list has Alt, Ctrl, Meta, each of them left or right, Sym and Fn, except keys that are part of the keymap's SandFly key. If you change the SandFly key to one that includes the fast search key, fast search is off for that keymap.
+
+Fast search doesn't work in a text field you are typing in. While the fast search key is held, its letters and digits don't run other shortcuts.
+
+**Keyboard shortcuts** > **Fast search** > **Wrap around**: when no item after SandFly focus starts with the letter, the search continues from the top of the screen, or from the bottom when moving back. It's on by default. When no item is found, SandFly says "Not found".
 
 ### Arrow key navigation {#keyboards-arrow-keys}
 

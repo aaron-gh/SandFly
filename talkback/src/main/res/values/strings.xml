@@ -1832,6 +1832,24 @@
     <string name="keycombo_key_modifier_right_shift">Right Shift</string>
     <!-- The Fn key, such as the Speed key of the BlackBerry KEY2, as the SandFly key. e.g. Fn + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_function">Fn</string>
+    <!-- Title of the settings group for fast search, which in browse mode focuses the next item starting with a letter or digit pressed with a chosen key. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_fast_search">Fast search</string>
+    <!-- Title of the setting that chooses the key which, pressed with a letter or digit in browse mode, focuses the next item starting with it. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_key">Fast search key</string>
+    <!-- Fast search key setting: fast search is off. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_off">Off</string>
+    <!-- Title of the setting that makes fast search go on from the other end of the screen when nothing is found. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_wrap">Wrap around</string>
+    <!-- The left Alt key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_alt">Left Alt</string>
+    <!-- The left Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_ctrl">Left Ctrl</string>
+    <!-- The right Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_ctrl">Right Ctrl</string>
+    <!-- The left Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_meta">Left Meta</string>
+    <!-- The right Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_meta">Right Meta</string>
     <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
     <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
