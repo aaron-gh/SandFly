@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.commands.RemovedCommands
 import com.google.android.accessibility.talkback.labeling.LabelBackup
 import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
 import com.google.android.accessibility.talkback.migration.MigrationFiles
+import com.google.android.accessibility.talkback.quicksettings.SystemTiles
 import com.google.android.accessibility.talkback.scripting.ScriptHostFactory
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes
 import com.google.android.accessibility.talkback.soundthemes.StagedTheme
@@ -133,6 +134,7 @@ object SettingsBackup {
       "pref_speech_control_locked_allowed_apps",
       "pref_speech_control_locked_denied_apps",
       BACKUP_STATE_KEY_CONNECTED_APPS,
+      SystemTiles.PREF_FOUND,
       // The folder of Choose from folder, whose read permission is held on this phone only.
       "pref_theme_sound_folder",
       // Which profile is BlackBerry mode's, which turning it on uses.
@@ -141,9 +143,12 @@ object SettingsBackup {
 
   /**
    * Keys of the default file that are left out of the file and kept when one is imported: the
-   * apps that used the speech service on this phone without an answer.
+   * apps that used the speech service on this phone without an answer, and the quick settings
+   * tiles found on this phone.
    */
   private const val BACKUP_STATE_KEY_CONNECTED_APPS = "pref_speech_control_connected_apps"
+
+  private val BACKUP_STATE_KEYS = setOf(BACKUP_STATE_KEY_CONNECTED_APPS, SystemTiles.PREF_FOUND)
 
   /** Parts of the keys of [PROFILE_STATE_KEYS]-like state. */
   private val PROFILE_STATE_FRAGMENTS =
@@ -869,7 +874,7 @@ object SettingsBackup {
   /** The updater's state stays as it is on this phone. Null [name] means any file. */
   private fun isSkipped(context: Context, name: String?, key: String) =
     (name == null || name == defaultName(context)) &&
-      (key in MigrationFiles.SKIPPED_PREF_KEYS || key == BACKUP_STATE_KEY_CONNECTED_APPS)
+      (key in MigrationFiles.SKIPPED_PREF_KEYS || key in BACKUP_STATE_KEYS)
 
   @VisibleForTesting
   fun encode(value: Any?): JSONObject? =

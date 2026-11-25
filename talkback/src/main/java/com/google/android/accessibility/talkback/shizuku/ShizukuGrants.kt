@@ -178,12 +178,13 @@ object ShizukuGrants {
   /**
    * Called when the service starts. When Shizuku is or becomes ready, SandFly asks the user to
    * allow it in Shizuku, once, if Shizuku doesn't already, and then grants itself what the
-   * features that are on need and it doesn't have, and what reading the system's tiles for the
-   * System tiles commands needs.
+   * features that are on need and it doesn't have. The system's tiles are read again for the tile
+   * commands when SandFly can read them.
    */
   @JvmStatic
   fun onServiceConnected(context: Context) {
     serviceContext = context.applicationContext
+    SystemTiles.refresh(context.applicationContext)
     try {
       ShellAccess.addReadyListener(context.applicationContext, binderReceived)
     } catch (e: RuntimeException) {
@@ -208,8 +209,7 @@ object ShizukuGrants {
         ShizukuClipboard.start(context)
         requestAll(context, wantedAtStart(context, prefs)) { granted ->
           LogUtils.i(TAG, "Granted at start through Shizuku: %s", granted)
-          // For the System tiles commands, after the grants above, which can't run side by side.
-          SystemTiles.find(context, lookThrough = false) {}
+          if (granted.any { it in SystemTiles.GRANTS }) SystemTiles.refresh(context)
         }
         Distribution.onShizukuAllowed(context)
       }

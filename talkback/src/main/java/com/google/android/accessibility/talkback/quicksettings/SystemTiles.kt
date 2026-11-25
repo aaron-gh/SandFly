@@ -48,13 +48,15 @@ data class TileState(
 /**
  * The tiles of the system's quick settings. Android lets only SystemUI bind to apps' tiles, so
  * SandFly reads their state from SystemUI's dump, which needs the DUMP permission and usage access,
- * and clicks them
- * through Shizuku with `cmd statusbar click-tile`. Both work only for tiles that are in the
- * system's quick settings.
+ * and clicks them through Shizuku with `cmd statusbar click-tile`. Both work only for tiles that are
+ * in the system's quick settings.
  */
 object SystemTiles {
   private const val TAG = "SystemTiles"
-  private const val PREF_FOUND = "pref_system_tiles_found"
+
+  /** The tiles found last. State of this phone, left out of exported settings and profiles. */
+  const val PREF_FOUND = "pref_system_tiles_found"
+
   /** The tiles that installed apps offer, by label. */
   fun appTiles(context: Context): List<AppTile> {
     val packageManager = context.packageManager
@@ -81,37 +83,97 @@ object SystemTiles {
   fun spec(component: ComponentName): String = "custom(${component.flattenToShortString()})"
 
   /**
-   * Finds the system's own tiles, such as Hotspot, from SystemUI's dump when SandFly can read it,
-   * giving itself what that needs through Shizuku first, and otherwise by looking through the
-   * system's quick settings, which takes a few seconds, unless [lookThrough] is false. [onDone]
-   * gets them, or null, on the main thread. The names the dump gives apps' tiles are kept too.
+   * Finds the system's own tiles, such as Hotspot, for Add system tile: from SystemUI's dump,
+   * giving SandFly what reading it needs through Shizuku first, and otherwise, or when the dump has
+   * no tiles, by looking through the system's quick settings, which takes a few seconds. [onDone]
+   * gets them, or null, on the main thread. The tiles found, and the names the dump gives apps'
+   * tiles, are kept for the tile commands.
    */
-  fun find(context: Context, lookThrough: Boolean = true, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
+  fun find(context: Context, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
     val handler = Handler(Looper.getMainLooper())
-    val found: (List<QuickItem.SystemTile>?) -> Unit = { tiles ->
-      tiles?.let { remember(context, it) }
-      onDone(tiles?.filterNot { isAppTile(it.spec) })
-    }
     if (!canRead(context) && ShizukuGrants.isReady()) {
-      ShizukuGrants.requestAll(context, GRANTS) { handler.post { findNow(context, handler, lookThrough, found) } }
+      ShizukuGrants.requestAll(context, GRANTS) { handler.post { findNow(context, onDone) } }
     } else {
-      findNow(context, handler, lookThrough, found)
+      findNow(context, onDone)
     }
   }
 
-  /** Keeps [tiles] as the ones [find] found last. */
+  /**
+   * Reads the tiles from SystemUI's dump again and keeps them, when SandFly can read it. Grants
+   * nothing.
+   */
+  @JvmStatic
+  fun refresh(context: Context) {
+    if (!canRead(context)) return
+    readLater(context) { tiles -> keep(context, tiles) }
+  }
+
+  private fun findNow(context: Context, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
+    val scan = {
+      SystemPanelClicker.scan { labels ->
+        val tiles = labels?.map { QuickItem.SystemTile("", it) }
+        keep(context, tiles)
+        onDone(tiles)
+      }
+    }
+    if (!canRead(context)) {
+      scan()
+      return
+    }
+    readLater(context) { tiles ->
+      if (tiles == null) {
+        scan()
+      } else {
+        keep(context, tiles)
+        onDone(tiles.filterNot { isAppTile(it.spec) })
+      }
+    }
+  }
+
+  /** Reads SystemUI's dump on a thread of its own, and gives [onDone] its tiles on the main thread. */
+  internal fun readLater(context: Context, onDone: (List<QuickItem.SystemTile>?) -> Unit) {
+    val handler = Handler(context.mainLooper)
+    Thread({
+        val tiles =
+          try {
+            fromDump(read())
+          } catch (e: Throwable) {
+            LogUtils.w(TAG, "Cannot read the system's tiles: %s", e)
+            null
+          }
+        handler.post { onDone(tiles) }
+      }, "QuickSettingsTiles")
+      .start()
+  }
+
+  /**
+   * The named tiles of SystemUI's dump, or null when there are none, as on a phone whose SystemUI
+   * dumps its tiles in another way.
+   */
+  internal fun fromDump(tiles: Map<String, TileState>?): List<QuickItem.SystemTile>? =
+    tiles
+      ?.values
+      ?.mapNotNull { tile -> tile.label?.let { QuickItem.SystemTile(tile.spec, it) } }
+      ?.ifEmpty { null }
+
+  /** Keeps [tiles] as the ones found last, unless none were found. */
+  internal fun keep(context: Context, tiles: List<QuickItem.SystemTile>?) {
+    if (!tiles.isNullOrEmpty()) remember(context, tiles)
+  }
+
+  /** Keeps [tiles] as the ones found last. */
   internal fun remember(context: Context, tiles: List<QuickItem.SystemTile>) {
     SharedPreferencesUtils.getSharedPreferences(context).edit {
       putString(PREF_FOUND, tiles.joinToString("\n") { it.id })
     }
   }
 
-  /** The system's own tiles that [find] found last, which the lists of commands offer. */
+  /** The system's own tiles that were found last, which the lists of commands offer. */
   fun lastFound(context: Context): List<QuickItem.SystemTile> =
     remembered(context).filterNot { isAppTile(it.spec) }
 
   /**
-   * The names that the system's quick settings gave apps' tiles when [find] last read them, by
+   * The names that the system's quick settings gave apps' tiles when SandFly last read them, by
    * spec, such as a device's name that a tile shows in place of its own.
    */
   fun appTileNames(context: Context): Map<String, String> =
@@ -125,31 +187,6 @@ object SystemTiles {
       .mapNotNull { QuickItem.parse(it) as? QuickItem.SystemTile }
 
   private fun isAppTile(spec: String): Boolean = spec.startsWith("custom(")
-
-  private fun findNow(
-    context: Context,
-    handler: Handler,
-    lookThrough: Boolean,
-    onDone: (List<QuickItem.SystemTile>?) -> Unit,
-  ) {
-    if (!canRead(context)) {
-      if (!lookThrough) return onDone(null)
-      SystemPanelClicker.scan { labels -> onDone(labels?.map { QuickItem.SystemTile("", it) }) }
-      return
-    }
-    Thread({
-        val tiles =
-          try {
-            read()
-          } catch (e: Throwable) {
-            null
-          }
-        val found =
-          tiles?.values?.filter { it.label != null }?.map { QuickItem.SystemTile(it.spec, it.label!!) }
-        handler.post { onDone(found) }
-      }, "QuickSettingsTiles")
-      .start()
-  }
 
   /**
    * Reads the tiles from SystemUI's dump, by spec. Runs `dumpsys`, so it must not run on the main
