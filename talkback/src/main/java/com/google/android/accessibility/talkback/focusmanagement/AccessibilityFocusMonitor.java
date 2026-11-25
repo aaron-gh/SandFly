@@ -210,7 +210,7 @@ public class AccessibilityFocusMonitor {
       AccessibilityNodeInfoCompat inputFocus = getInputFocus();
       if (inputFocus != null
           && inputFocus.isVisibleToUser()
-          && Role.getRole(inputFocus) == Role.ROLE_EDIT_TEXT) {
+          && AccessibilityNodeInfoUtils.isEditField(inputFocus)) {
         LogUtils.d(TAG, "Get the editing node from input focus. node=%s", inputFocus);
         return inputFocus;
       }
@@ -241,7 +241,8 @@ public class AccessibilityFocusMonitor {
     if (node == null) {
       return null;
     }
-    if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+    // Also editors other than EditText that the app marks editable, such as code editors.
+    if (AccessibilityNodeInfoUtils.isEditField(node)) {
       return node;
     }
     return getEditingNodeFromFocusedKeyboard(node);

@@ -48,7 +48,6 @@ import com.google.android.accessibility.utils.FeatureSupport;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.PerformActionUtils;
 import com.google.android.accessibility.utils.Performance.EventId;
-import com.google.android.accessibility.utils.Role;
 import com.google.android.accessibility.utils.SpannableUtils;
 import com.google.android.accessibility.utils.input.TextCursorTracker;
 import com.google.android.accessibility.utils.output.CopySelection;
@@ -140,7 +139,7 @@ public class TextEditActor {
   /** Executes and announces move cursor to end of edit-text. */
   public boolean cursorToEnd(
       AccessibilityNodeInfoCompat node, boolean stopSelecting, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
 
@@ -182,7 +181,7 @@ public class TextEditActor {
   /** Executes and announces move cursor to start of edit-text. */
   public boolean cursorToBeginning(
       AccessibilityNodeInfoCompat node, boolean stopSelecting, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
 
@@ -464,7 +463,7 @@ public class TextEditActor {
     boolean result = true;
     if (hasSelection) {
       int cursor = max(start, end);
-      if (Role.getRole(node) == Role.ROLE_EDIT_TEXT) {
+      if (AccessibilityNodeInfoUtils.isEditField(node)) {
         result = moveCursor(node, cursor, eventId);
       } else {
         Bundle args = new Bundle();
@@ -625,7 +624,7 @@ public class TextEditActor {
 
   /** Executes and announces cut text in edit-text. Modifies edit history. */
   public boolean cut(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
 
@@ -660,7 +659,7 @@ public class TextEditActor {
    * set plays the end sound.
    */
   public boolean clearText(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
     boolean empty =
@@ -687,7 +686,7 @@ public class TextEditActor {
 
   /** Executes and announces delete text in edit-text. Modifies edit history. */
   public boolean delete(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
 
@@ -728,7 +727,7 @@ public class TextEditActor {
 
   /** Executes and announces paste text in edit-text. Modifies edit history. */
   public boolean paste(AccessibilityNodeInfoCompat node, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
 
@@ -761,7 +760,7 @@ public class TextEditActor {
   /** Inserts text in edit-text. Modifies edit history. */
   public boolean insert(
       AccessibilityNodeInfoCompat node, CharSequence textToInsert, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
 
@@ -827,7 +826,7 @@ public class TextEditActor {
       SpellingSuggestion spellingSuggestion,
       EventId eventId) {
     if (node == null
-        || Role.getRole(node) != Role.ROLE_EDIT_TEXT
+        || !AccessibilityNodeInfoUtils.isEditField(node)
         || TextUtils.isEmpty(suggestion)
         || spellingSuggestion == null) {
       return false;
@@ -879,7 +878,7 @@ public class TextEditActor {
    * @return {@code true} if the cursor move is successful.
    */
   public boolean moveCursor(AccessibilityNodeInfoCompat node, int cursorIndex, EventId eventId) {
-    if (node == null || Role.getRole(node) != Role.ROLE_EDIT_TEXT) {
+    if (node == null || !AccessibilityNodeInfoUtils.isEditField(node)) {
       return false;
     }
 
