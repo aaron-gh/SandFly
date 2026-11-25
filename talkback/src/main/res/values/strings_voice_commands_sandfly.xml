@@ -19,6 +19,20 @@
     <!-- Error: another custom voice command has these words. [CHAR LIMIT=NONE] -->
     <string name="voice_command_phrase_exists"><xliff:g id="phrase" example="Good morning">%1$s</xliff:g> is already a voice command</string>
 
+    <!-- Command in the Text editing category: records voice commands for editing the focused text field one after another, until it is run again, the time limit or input focus leaves the field. [CHAR LIMIT=NONE] -->
+    <string name="shortcut_voice_editing">Start voice editing</string>
+    <!-- Spoken when voice editing starts. [CHAR LIMIT=NONE] -->
+    <string name="voice_editing_on">Voice editing on</string>
+    <!-- Spoken when voice editing ends. [CHAR LIMIT=NONE] -->
+    <string name="voice_editing_off">Voice editing off</string>
+    <!-- Setting on the Voice commands screen: how long voice editing records commands before it ends. [CHAR LIMIT=60] -->
+    <string name="title_pref_voice_editing_time_limit">Voice editing time limit</string>
+    <!-- A choice of Voice editing time limit, in minutes. -->
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minute</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minutes</item>
+    </plurals>
+
     <!-- Spoken when a part of a chained voice command isn't a command. text is that part. [CHAR LIMIT=NONE] -->
     <string name="voice_commands_not_understood">Not understood: <xliff:g id="text" example="open the door">%1$s</xliff:g></string>
     <!-- Spoken when a voice command names a command that can't run now. name is its name. [CHAR LIMIT=NONE] -->
@@ -91,6 +105,14 @@
         <item>never mind</item>
         <item>nevermind</item>
         <item>shut up</item>
+    </string-array>
+    <!-- Whole voice commands that end voice editing, besides the words that stop a voice command. -->
+    <string-array name="voice_editing_stop_words">
+        <item>stop editing</item>
+        <item>stop voice editing</item>
+        <item>end editing</item>
+        <item>end voice editing</item>
+        <item>voice editing off</item>
     </string-array>
     <!-- Answers that mean yes to "Send to Sam?". -->
     <string-array name="voice_commands_yes">

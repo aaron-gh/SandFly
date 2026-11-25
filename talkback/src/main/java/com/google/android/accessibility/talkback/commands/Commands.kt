@@ -929,6 +929,7 @@ object Commands {
           available = !FormFactorUtils.isAndroidWear(),
         )
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
+        gesture(R.string.shortcut_value_voice_editing, R.string.shortcut_voice_editing)
         gesture(
           R.string.shortcut_value_switch_keyboard,
           R.string.shortcut_switch_keyboard,

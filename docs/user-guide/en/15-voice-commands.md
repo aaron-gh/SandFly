@@ -1,6 +1,6 @@
 ## Voice commands {#voice-commands}
 
-Voice commands run SandFly commands from speech: moving focus, reading, editing text, opening apps, activating items on the screen, calling a contact, sending a message, or describing the screen. One voice command can hold several commands one after another. **Voice commands** in SandFly settings turns on AI for commands that SandFly doesn't understand, and holds the voice commands that you make. The **Voice commands** screen isn't shown on watches.
+Voice commands run SandFly commands from speech: moving focus, reading, editing text, opening apps, activating items on the screen, calling a contact, sending a message, or describing the screen. One voice command can hold several commands one after another. **Voice commands** in SandFly settings turns on AI for commands that SandFly doesn't understand, sets the time limit of voice editing, and holds the voice commands that you make. The **Voice commands** screen isn't shown on watches.
 
 For the full list of phrases, see [](#appendix-voice-commands).
 
@@ -66,6 +66,34 @@ A voice command can hold several commands, joined by "then", "and then", "after 
 When a command fails, such as an item that isn't found, SandFly says why and stops. A part that isn't a command is read as one of the original voice commands; when it isn't one either, SandFly says "Not understood" and the part.
 
 To stop a voice command while it runs, start another voice command and say "stop", "cancel", "quit" or "never mind". Starting another voice command also stops the one running.
+
+### Voice editing {#voice-commands-editing}
+
+**Start voice editing**, in the **Text editing** category, records voice commands for the focused text field one after another, without a gesture for each command. It has no gesture by default. See [](#commands-list).
+
+1. Move focus to a text field.
+2. Run **Start voice editing**. SandFly says "Voice editing on", and a chime plays when recording starts.
+3. Say a command. SandFly runs it, speaks the result, and records again once its speech ends. The chime plays again when recording starts after a command.
+
+Voice editing runs only these commands:
+
+- The commands of the **Text editing** and **Navigate by text** categories, by name, such as "Select all", "Copy", "Paste", "Clear text", "Move cursor to end", "Next word" or "Previous character". **Dictate** and **Start voice editing** don't run. See [](#typing-editing-commands).
+- "Type", "write" or "enter", and a text, which SandFly types at the cursor.
+- The text editing phrases of the original voice commands, such as "Select", "Finish selection", "Delete", "Cut" or "Spell TEXT". Here they are matched as the whole command. See [](#appendix-voice-commands-text-editing).
+- Custom voice commands that run one of these commands or a macro. See [](#voice-commands-custom).
+- Chains of these commands, such as "select all then cut". See [](#voice-commands-chains).
+
+Anything else isn't run: SandFly says "Not understood" and what you said, and records again. Text that isn't a command isn't typed; say "type" before it.
+
+Voice editing ends, and SandFly says "Voice editing off", when:
+
+- You run **Start voice editing** again.
+- You say "stop editing", "stop voice editing", "end editing", "end voice editing", "voice editing off", "start voice editing", "stop", "cancel", "quit" or "never mind".
+- Focus leaves the text field.
+- **Voice commands** > **Voice editing time limit** passes since voice editing started: 5, 10, 20 or 30 minutes, 10 by default.
+- Speech recognition fails three times in a row, or the microphone permission is missing.
+
+Speech is silenced while SandFly records, so that it isn't recorded. When nothing is said, recording starts again without a chime. Voice editing records with the speech recognizer chosen in **Typing** > **Dictation**, without AI correction. **Dictate**, **Dictate, play or pause media** and **Start voice command** end voice editing without "Voice editing off".
 
 ### Understand voice commands with AI {#voice-commands-ai}
 
