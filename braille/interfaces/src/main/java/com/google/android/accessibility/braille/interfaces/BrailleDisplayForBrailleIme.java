@@ -52,8 +52,6 @@ public interface BrailleDisplayForBrailleIme {
     /** Represents the hints of the edit field. */
     public abstract String hint();
 
-    /** Represents the action of the text in the edit field. */
-    public abstract String action();
 
     /** Determines if the password should be displayed visibly. */
     public abstract boolean textMasked();
@@ -64,7 +62,6 @@ public interface BrailleDisplayForBrailleIme {
     public static ResultForDisplay.Builder builder() {
       return new AutoValue_BrailleDisplayForBrailleIme_ResultForDisplay.Builder()
           .setOnScreenText("")
-          .setAction("")
           .setHint("")
           .setTextSelection(new SelectionRange(0, 0))
           .setHoldingsInfo(HoldingsInfo.create(ByteBuffer.wrap(new byte[] {}), -1))
@@ -86,7 +83,6 @@ public interface BrailleDisplayForBrailleIme {
 
       public abstract Builder setHint(String hint);
 
-      public abstract Builder setAction(String action);
 
       public abstract Builder setTextMasked(boolean textMasked);
 

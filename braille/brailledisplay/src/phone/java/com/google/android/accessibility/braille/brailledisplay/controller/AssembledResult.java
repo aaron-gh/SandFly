@@ -24,7 +24,7 @@ import static java.lang.Math.min;
 
 import android.text.TextUtils;
 import android.util.Range;
-import com.google.android.accessibility.braille.brailledisplay.BrailleDisplayLog;
+
 import com.google.android.accessibility.braille.interfaces.BrailleDisplayForBrailleIme.ResultForDisplay;
 import com.google.android.accessibility.braille.interfaces.BrailleWord;
 import com.google.android.accessibility.braille.interfaces.SelectionRange;
@@ -34,69 +34,11 @@ import com.google.auto.value.AutoValue;
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableList;
 import com.google.errorprone.annotations.CanIgnoreReturnValue;
-import java.io.IOException;
+
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Assembles info of text field into the format:
- *
- * <p>{$hint}: {$text in the text field and holdings} [{$action}]
- *
- * <p>For example, if hint is "Name", action is "Done" and user types 1-12-14 (holdings). We will
- * show: 6-5-1345(Name)-25(:)-0(space)-1-12-14(abc)-78(cursor)-0(space)-46-126(left square
- * bracket)-6-145(D)-5-135(one)-46-345(right square bracket).
- *
- * <ul>
- *   The formatted result will stored in {@link AssembledResult} with following information:
- *   <li>textFieldTextClickableByteRange is empty.
- *   <li>blinkingCursorByteRange is 8-8
- *   <li>holdingsClickableByteRange is 5-8
- *   <li>overlayText is "Name: [Done]"
- *   <li>overlayTranslationResult is
- *       <ul>
- *         <li>byte array: 6-5-1345-25-0-1-12-14-78-0-46-126-6-145-5-135-46-345.
- *         <li>textToBraillePositions: [0, 0, 0, 0, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 14, 14, 16]
- *         <li>brailleToTextPositions: [0, 0, 0, 4, 5, 6, 7, 8, 9, 10, 11, 11, 12, 12, 13, 13, 16,
- *             16]
- *         <li>cursorPosition: 6
- *       </ul>
- * </ul>
- *
- * If 1-12-14 (holdings) is committed, the formatted result will be as following:
- *
- * <ul>
- *   <li>textFieldTextClickableByteRange is 5-8.
- *   <li>blinkingCursorByteRange is 8-8
- *   <li>holdingsClickableByteRange is empty
- *   <li>overlayText is "Name: abc&nbsp;&nbsp;[Done]"
- *   <li>overlayTranslationResult is
- *       <ul>
- *         <li>byte array: 6-5-1345-25-0-1-12-14-78-0-46-126-6-145-5-135-46-345.
- *         <li>textToBraillePositions: [0, 0, 0, 0, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 14, 14, 16]
- *         <li>brailleToTextPositions: [0, 0, 0, 4, 5, 6, 7, 8, 9, 10, 11, 11, 12, 12, 13, 13, 16,
- *             16]
- *         <li>cursorPosition: 9
- *       </ul>
- * </ul>
- *
- * If user enter dot 14 between a and b, the formatted result will be as following:
- *
- * <ul>
- *   <li>textFieldTextClickableByteRange is 5-5, 7-9
- *   <li>blinkingCursorByteRange is 7-7
- *   <li>holdingsClickableByteRange is 6-7
- *   <li>overlayText is "Name: a bc [Done]"
- *   <li>overlayTranslationResult is
- *       <ul>
- *         <li>byte array: 6-5-1345-25-0-1-14-1278-14-0-46-126-6-145-5-135-46-345.
- *         <li>textToBraillePositions: [0, 0, 0, 0, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 14, 14, 16]
- *         <li>brailleToTextPositions: [0, 0, 0, 4, 5, 6, 7, 8, 9, 10, 11, 11, 12, 12, 13, 13, 16,
- *             16]
- *         <li>cursorPosition: 7
- *       </ul>
- * </ul>
- */
+/** Assembles the field hint, text, and pending braille for the display. */
 @AutoValue
 abstract class AssembledResult {
   /** The index of the selected text in the byte array. */
@@ -105,16 +47,12 @@ abstract class AssembledResult {
   abstract ImmutableList<Range<Integer>> textFieldTextClickableByteRange();
   /** The range of clickable index of holdings in the byte array. */
   abstract Range<Integer> holdingsClickableByteRange();
-  /** The range of clickable index of action in the byte array. */
-  abstract Range<Integer> actionClickableByteRange();
+
   /** TranslationResult of overlayText. */
   abstract TranslationResult overlayTranslationResult();
   /** Builder class for {@link AssembledResult}. */
   static class Builder {
-    private static final String TAG = "AssembledResultBuilder";
     private static final String SPACE = " ";
-    private static final String LEFT_SQUARE_BRACKET = "[";
-    private static final String RIGHT_SQUARE_BRACKET = "]";
     private static final String COLON = ":";
     private final StringBuilder textOnOverlay = new StringBuilder();
     private final BrailleWord brailleWord = new BrailleWord();
@@ -132,10 +70,8 @@ abstract class AssembledResult {
     private final ImmutableList<Integer> textFieldTextBrailleToTextPositions;
     private final boolean textMasked;
     private Range<Integer> holdingsClickableByteRange;
-    private Range<Integer> actionClickableByteRange;
     private int textDisplacement;
     private boolean appendHint;
-    private boolean appendAction;
 
     public Builder(BrailleTranslator translator, ResultForDisplay resultForDisplay) {
       this.translator = translator;
@@ -165,7 +101,6 @@ abstract class AssembledResult {
       textFieldTextToBraillePositions = translationResult.textToBraillePositions();
       textFieldTextBrailleToTextPositions = translationResult.brailleToTextPositions();
       holdingsClickableByteRange = new Range<>(NO_CURSOR, NO_CURSOR);
-      actionClickableByteRange = new Range<>(NO_CURSOR, NO_CURSOR);
     }
 
     /** Whether to append hint. */
@@ -200,44 +135,6 @@ abstract class AssembledResult {
       textDisplacement += hint.length();
     }
 
-    /** Whether to append action. */
-    @CanIgnoreReturnValue
-    public Builder appendAction(boolean append) {
-      appendAction = append;
-      return this;
-    }
-
-    private void doAppendAction() throws IOException {
-      if (TextUtils.isEmpty(resultForDisplay.action())) {
-        return;
-      }
-      // Add a space between input and action.
-      appendSpace();
-      // Add action.
-      StringBuilder action =
-          new StringBuilder()
-              .append(LEFT_SQUARE_BRACKET)
-              .append(resultForDisplay.action())
-              .append(RIGHT_SQUARE_BRACKET);
-      TranslationResult result = translateIfPossible(action, NO_CURSOR);
-      appendPositionsToList(
-          textToBraillePositions,
-          /* base= */ brailleWord.size(),
-          /* startIndexToAppend= */ 0,
-          /* endIndexToAppend= */ result.textToBraillePositions().size(),
-          /* positionsToCopy= */ result.textToBraillePositions());
-      appendPositionsToList(
-          brailleToTextPositions,
-          /* base= */ textOnOverlay.length(),
-          /* startIndexToAppend= */ 0,
-          /* endIndexToAppend= */ result.brailleToTextPositions().size(),
-          /* positionsToCopy= */ result.brailleToTextPositions());
-      textOnOverlay.append(action);
-      actionClickableByteRange =
-          createValidatedRange(brailleWord.size(), brailleWord.size() + result.cells().size());
-      brailleWord.append(result.cells());
-    }
-
     private TranslationResult translateIfPossible(CharSequence text, int cursorPosition) {
       TranslationResult result = translator.translate(text, cursorPosition);
       if (result == null) {
@@ -247,21 +144,15 @@ abstract class AssembledResult {
     }
 
     public AssembledResult build() {
-      try {
-        if (appendHint) {
-          doAppendHint();
-        }
-        appendTextFieldTextBeforeSelection();
-        appendTextFieldTextBetweenSelection();
-        appendHoldings();
-        appendTextFieldTextAfterSelection();
-        extendTextFieldTextForCursor();
-        if (appendAction) {
-          doAppendAction();
-        }
-      } catch (IOException e) {
-        BrailleDisplayLog.w(TAG, "Build result failed: ", e);
+      if (appendHint) {
+        doAppendHint();
       }
+      appendTextFieldTextBeforeSelection();
+      appendTextFieldTextBetweenSelection();
+      appendHoldings();
+      appendTextFieldTextAfterSelection();
+      // Keep a cell available for the cursor at the end of the field.
+      appendSpace();
       int lowerByteIndex;
       if (textSelectionRange.getLower() == NO_CURSOR) {
         lowerByteIndex = NO_CURSOR;
@@ -294,7 +185,6 @@ abstract class AssembledResult {
           new SelectionRange(lowerByteIndex, upperByteIndex),
           ImmutableList.copyOf(textFieldTextClickableByteRange),
           holdingsClickableByteRange,
-          actionClickableByteRange,
           allTranslationResult);
     }
 
@@ -429,15 +319,6 @@ abstract class AssembledResult {
               brailleWord.size(), brailleWord.size() + textFieldSubwordAfterCursor.size()));
       textOnOverlay.append(textFieldTextAfterCursor);
       brailleWord.append(textFieldSubwordAfterCursor);
-    }
-
-    private void extendTextFieldTextForCursor() {
-      boolean extendForCursor =
-          TextUtils.isEmpty(resultForDisplay.action())
-              || (cursorInTheEnd() && noSelection() && holdingsWord.isEmpty());
-      if (extendForCursor) {
-        appendSpace();
-      }
     }
 
     private boolean cursorInTheEnd() {

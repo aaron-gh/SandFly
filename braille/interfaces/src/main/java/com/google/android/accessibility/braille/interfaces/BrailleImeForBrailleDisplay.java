@@ -59,6 +59,9 @@ public interface BrailleImeForBrailleDisplay {
     return false;
   }
 
+  /** Dismisses the keyboard when manual display panning moves focus out of the editor. */
+  default void hideKeyboardForDisplayNavigation() {}
+
   /** Shows or hides the on-screen keyboard. */
   default boolean toggleKeyboardVisibility() {
     return false;

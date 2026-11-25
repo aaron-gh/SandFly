@@ -102,7 +102,6 @@ class EditorConsumer implements EventConsumer {
           BrailleInputEvent.CMD_KEY_SHIFT_TAB,
           BrailleInputEvent.CMD_UNDO_TYPING,
           BrailleInputEvent.CMD_REDO_TYPING,
-          BrailleInputEvent.CMD_ACTIVATE_CURRENT,
           BrailleInputEvent.CMD_ROUTE,
           BrailleInputEvent.CMD_SELECTION_CUT,
           BrailleInputEvent.CMD_SELECTION_COPY,
@@ -169,9 +168,7 @@ class EditorConsumer implements EventConsumer {
           success = behaviorIme.performImeAction(BrailleImeAction.PREVIOUS_WORD);
       case BrailleInputEvent.CMD_NAV_WORD_NEXT ->
           success = behaviorIme.performImeAction(BrailleImeAction.NEXT_WORD);
-      case BrailleInputEvent.CMD_KEY_ENTER,
-          BrailleInputEvent.CMD_KEY_RETURN,
-          BrailleInputEvent.CMD_ACTIVATE_CURRENT ->
+      case BrailleInputEvent.CMD_KEY_ENTER, BrailleInputEvent.CMD_KEY_RETURN ->
           success = behaviorIme.performEnterKeyAction();
       case BrailleInputEvent.CMD_KEY_TAB, BrailleInputEvent.CMD_KEY_SHIFT_TAB ->
           success = behaviorIme.sendTab(event.getCommand() == BrailleInputEvent.CMD_KEY_SHIFT_TAB);

@@ -17,11 +17,52 @@
 package com.google.android.accessibility.brailleime
 
 import android.view.inputmethod.EditorInfo
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class SubmitActionTest {
+  @Test
+  fun displayEnterUsesTheEditorsAction() {
+    assertEquals(
+      EditorInfo.IME_ACTION_SEND,
+      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_SEND),
+    )
+    assertEquals(
+      EditorInfo.IME_ACTION_DONE,
+      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_DONE),
+    )
+    assertEquals(
+      EditorInfo.IME_ACTION_SEARCH,
+      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_SEARCH),
+    )
+  }
+
+  @Test
+  fun displayEnterFallsBackToTheRawKeyForMultilineFields() {
+    assertEquals(
+      EditorInfo.IME_ACTION_NONE,
+      SubmitAction.editorActionForEnter(
+        EditorInfo.IME_ACTION_DONE or EditorInfo.IME_FLAG_NO_ENTER_ACTION
+      ),
+    )
+    assertEquals(
+      EditorInfo.IME_ACTION_NONE,
+      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_UNSPECIFIED),
+    )
+  }
+
+  @Test
+  fun displayEnterCanStillSendWhenAppDisablesOtherEnterActions() {
+    assertEquals(
+      EditorInfo.IME_ACTION_SEND,
+      SubmitAction.editorActionForEnter(
+        EditorInfo.IME_ACTION_SEND or EditorInfo.IME_FLAG_NO_ENTER_ACTION
+      ),
+    )
+  }
+
   @Test
   fun chatFieldsSendWithTheButton() {
     // Telegram's message field: no action and no action on enter.
