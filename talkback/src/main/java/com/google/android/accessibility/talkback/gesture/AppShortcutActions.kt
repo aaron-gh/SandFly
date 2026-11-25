@@ -16,17 +16,21 @@
 
 package com.google.android.accessibility.talkback.gesture
 
+import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.content.res.Resources
+import android.os.Build
 import android.util.Log
 import android.util.Xml
 import androidx.annotation.VisibleForTesting
 import androidx.core.os.ConfigurationCompat
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.notificationlist.NotificationReplyActivity
+import com.google.android.accessibility.talkback.shizuku.ShizukuShell
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.net.URISyntaxException
 import java.util.UUID
@@ -42,8 +46,8 @@ import org.json.JSONObject
  * XML file; their actions save [PREFIX], the package name, "/" and the shortcut's ID, and the file
  * is read again to open one. Added shortcuts are those an app's create shortcut activity returned,
  * as launchers add them to the home screen; they are kept under [KEY], and their actions save
- * [ADDED_PREFIX] and the ID SandFly gave them. Shortcuts that apps publish while they run are only
- * readable by the default launcher, so they aren't listed.
+ * [ADDED_PREFIX] and the ID SandFly gave them. Shortcuts that only a launcher can read or open, such
+ * as those apps publish while they run, go through Shizuku from Android 11, as static shortcuts.
  *
  * Only activities are started, never the shortcut's selector, and never SandFly's own activities,
  * activities that aren't exported, or activities protected by a permission that the shortcut's app
@@ -60,6 +64,9 @@ object AppShortcutActions {
 
   /** The preference that keeps the added shortcuts, as a JSON array. */
   const val KEY = "pref_added_app_shortcuts"
+
+  /** The shortcut names Shizuku listed last, by package name, "/" and ID. Not backed up. */
+  const val LISTED_PREFS = "app_shortcuts"
 
   /** Flags that would give the started activity SandFly's access to the intent's URIs. */
   private const val GRANT_FLAGS =
@@ -127,7 +134,18 @@ object AppShortcutActions {
             Shortcut(label(context, app, it.label), staticValue(packageName, it.id))
           }
         }
-    return (added + static)
+    val listed =
+      if (!throughShizuku(context)) {
+        emptyList()
+      } else {
+        refreshListed(context)
+        listed(context).all.mapNotNull { (key, name) ->
+          (name as? String)?.let {
+            Shortcut(label(context, appName(packageManager, key.substringBefore('/')), it), PREFIX + key)
+          }
+        }
+      }
+    return (added + static + listed)
       .distinctBy { it.value }
       .sortedWith(compareBy(String.CASE_INSENSITIVE_ORDER, Shortcut::label).thenBy(Shortcut::value))
   }
@@ -139,8 +157,11 @@ object AppShortcutActions {
   @JvmStatic
   fun label(context: Context, value: String?): String? {
     staticRef(value)?.let { (packageName, id) ->
-      val shortcut = staticShortcuts(context, packageName).firstOrNull { it.id == id } ?: return null
-      return label(context, appName(context.packageManager, packageName), shortcut.label)
+      val name =
+        staticShortcuts(context, packageName).firstOrNull { it.id == id }?.label
+          ?: listed(context).getString("$packageName/$id", null)
+          ?: return null
+      return label(context, appName(context.packageManager, packageName), name)
     }
     addedId(value)?.let { id ->
       val added = findAdded(context, id) ?: return null
@@ -153,23 +174,64 @@ object AppShortcutActions {
     context.getString(R.string.app_shortcut_label, app, shortcut)
 
   /**
-   * Opens the shortcut of the action saved as [value]. Returns false when the shortcut is gone, or
+   * Opens the shortcut of the action saved as [value]. [onDone] gets whether it opened, at once, or
+   * when Shizuku has opened a shortcut that only a launcher can: false when the shortcut is gone, or
    * its activity can't or mustn't be started.
    */
   @JvmStatic
-  fun open(context: Context, value: String): Boolean {
+  fun open(context: Context, value: String, onDone: (Boolean) -> Unit) {
     val intents = intentsOf(context, value)
     if (intents.isNullOrEmpty()) {
+      val ref = staticRef(value)
+      if (ref != null && throughShizuku(context)) {
+        ShizukuShell.call(context.applicationContext, { it.appShortcutIntent(ref.first, ref.second) }) {
+          onDone(it != null && send(context, it))
+        }
+        return
+      }
       Log.w(TAG, "No shortcut to open for $value")
-      return false
+      onDone(false)
+      return
     }
-    return try {
+    try {
       context.startActivities(intents.toTypedArray())
-      true
+      onDone(true)
     } catch (e: RuntimeException) {
       // ActivityNotFoundException, SecurityException, or an intent with a file URI.
       Log.w(TAG, "Could not open $value", e)
+      onDone(false)
+    }
+  }
+
+  /** Sends a shortcut's [intent] as SandFly, which may start activities from the background. */
+  private fun send(context: Context, intent: PendingIntent): Boolean =
+    try {
+      intent.send(context, 0, null, null, null, null, NotificationReplyActivity.startOptions())
+      true
+    } catch (e: PendingIntent.CanceledException) {
+      Log.w(TAG, "Could not send a shortcut intent", e)
       false
+    }
+
+  // Shortcuts through Shizuku.
+
+  /** Whether Shizuku lets the shell read and open shortcuts as a launcher, from Android 11. */
+  private fun throughShizuku(context: Context): Boolean =
+    Build.VERSION.SDK_INT >= Build.VERSION_CODES.R &&
+      ShizukuShell.isAvailable(context) &&
+      ShizukuShell.isAllowed()
+
+  private fun listed(context: Context): SharedPreferences =
+    context.getSharedPreferences(LISTED_PREFS, Context.MODE_PRIVATE)
+
+  /** Reads every app's shortcuts through Shizuku into [LISTED_PREFS], for the next list. */
+  private fun refreshListed(context: Context) {
+    val appContext = context.applicationContext
+    ShizukuShell.call(appContext, { it.appShortcuts() }) { names ->
+      names ?: return@call
+      val editor = listed(appContext).edit().clear()
+      names.keySet().forEach { editor.putString(it, names.getString(it)) }
+      editor.apply()
     }
   }
 

@@ -145,6 +145,7 @@ Features that need Shizuku, root or adb:
 - **Volume keys** > **Volume key shortcuts with the screen off** works only through Shizuku.
 - The SandFly overview of recent apps, Alt+Tab and split screen.
 - The switches and sliders of the SandFly quick settings panel.
+- App shortcuts that apps add while they run, and those that only the home screen app may open, from Android 11.
 - Clipboard history of text copied in other apps, and the key vibration of Gboard versions before 18.8 while you explore the keyboard.
 - **Updates and installation** > **Appear installed from Google Play**.
 

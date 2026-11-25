@@ -678,11 +678,17 @@ public class GestureController {
     } else if (OpenAppActions.isAction(action)) {
       result = OpenAppActions.open(service, action);
     } else if (AppShortcutActions.isAction(action)) {
-      result = AppShortcutActions.open(service, action);
-      if (!result) {
-        pipeline.returnFeedback(
-            eventId, Feedback.requestedSpeech(service.getString(R.string.app_shortcut_not_opened)));
-      }
+      AppShortcutActions.open(
+          service,
+          action,
+          opened -> {
+            if (!opened) {
+              pipeline.returnFeedback(
+                  EVENT_ID_UNTRACKED,
+                  Feedback.requestedSpeech(service.getString(R.string.app_shortcut_not_opened)));
+            }
+            return kotlin.Unit.INSTANCE;
+          });
     } else if (AccessibilityShortcutActions.isAction(action)) {
       AccessibilityShortcutActions.run(
           service,

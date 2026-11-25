@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.shizuku;
 
+import android.app.PendingIntent;
 import android.os.Bundle;
 import com.google.android.accessibility.talkback.shizuku.IClipboardWatcher;
 import com.google.android.accessibility.talkback.shizuku.IVolumeKeyCommandListener;
@@ -109,4 +110,10 @@ interface IShizukuGrants {
 
     /** Returns the volume keys to Android immediately if this is still the current listener. */
     oneway void stopScreenOffVolumeKeys(IVolumeKeyCommandListener listener) = 13;
+
+    /** The apps' shortcut names as a launcher reads them, keyed by package name, "/" and ID. */
+    Bundle appShortcuts() = 14;
+
+    /** The PendingIntent that opens shortcut [id] of [packageName] as its app, or null. */
+    PendingIntent appShortcutIntent(String packageName, String id) = 15;
 }

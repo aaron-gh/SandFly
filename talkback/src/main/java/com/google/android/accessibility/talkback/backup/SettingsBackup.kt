@@ -31,6 +31,7 @@ import androidx.preference.PreferenceFragmentCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.commands.RemovedCommands
+import com.google.android.accessibility.talkback.gesture.AppShortcutActions
 import com.google.android.accessibility.talkback.labeling.LabelBackup
 import com.google.android.accessibility.talkback.monitor.ScreenAnnouncementSettings
 import com.google.android.accessibility.talkback.migration.MigrationFiles
@@ -96,7 +97,7 @@ object SettingsBackup {
    */
   @VisibleForTesting const val PRO_PREFS = "sandfly_ai"
 
-  private val SKIPPED_FILES = setOf(MigrationFiles.STATE_PREFS, PRO_PREFS)
+  private val SKIPPED_FILES = setOf(MigrationFiles.STATE_PREFS, PRO_PREFS, AppShortcutActions.LISTED_PREFS)
 
   /** Files of libraries, such as Google Play services and WebView, which hold their own state. */
   private val LIBRARY_PREFIXES = listOf("com.google.", "androidx.", "WebView", "Firebase")

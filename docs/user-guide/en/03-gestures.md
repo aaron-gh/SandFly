@@ -283,7 +283,7 @@ SandFly speaks the name of the profile when it changes. Next and previous go thr
 
 ### App shortcuts {#gestures-app-shortcuts}
 
-The **App shortcuts** category of commands lists the shortcuts that touching and holding an app icon on the home screen shows, such as a new message, and the shortcuts you add on the **App shortcuts** screen. Shortcuts that an app adds while it runs aren't listed. You can assign them to gestures, edge menus and keyboard shortcuts.
+The **App shortcuts** category of commands lists the shortcuts that touching and holding an app icon on the home screen shows, such as a new message, and the shortcuts you add on the **App shortcuts** screen. Shortcuts that an app adds while it runs, such as recent conversations, and shortcuts that only the home screen app may open are listed only through Shizuku, from Android 11. The list gets them each time it opens, so a new shortcut appears the next time. You can assign them to gestures, edge menus and keyboard shortcuts.
 
 To add a shortcut that an app makes for the home screen, such as a contact or a macro of another app:
 
