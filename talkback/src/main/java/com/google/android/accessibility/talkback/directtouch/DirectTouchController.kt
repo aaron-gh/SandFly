@@ -509,12 +509,20 @@ constructor(
   /**
    * Whether a keyboard is shown that isn't in [keyboards], the direct touch list's, and whose app
    * has an enabled accessibility service of its own, which may set the passthrough region for it.
+   * Includes keyboards that render via an overlay window (e.g. fullscreen braille keyboards)
+   * rather than a standard [AccessibilityWindowInfo.TYPE_INPUT_METHOD] window.
    */
   private fun keyboardHasOwnService(
     windows: List<AccessibilityWindowInfo>,
     keyboards: List<AccessibilityWindowInfo>,
   ): Boolean {
-    if (windows.none { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD && it !in keyboards }) {
+    val hasImeOrOverlayWindow =
+      windows.any {
+        (it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD && it !in keyboards) ||
+          it.type == AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY ||
+          it.type == AccessibilityWindowInfo.TYPE_SYSTEM
+      }
+    if (!hasImeOrOverlayWindow) {
       return false
     }
     val keyboard =
