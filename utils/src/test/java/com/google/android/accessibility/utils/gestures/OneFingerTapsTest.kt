@@ -28,6 +28,7 @@ import com.google.android.accessibility.utils.gestures.GestureManifold.GESTURE_T
 import com.google.android.accessibility.utils.gestures.GestureManifold.GestureConfigProvider
 import com.google.common.collect.ImmutableList
 import java.util.concurrent.TimeUnit
+import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -72,6 +73,11 @@ class OneFingerTapsTest {
     )
   }
   private var downTime = 0L
+
+  @After
+  fun tearDown() {
+    GestureConfiguration.setMultiTapTimeoutMs(GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS)
+  }
 
   private fun idle(ms: Long) = ShadowLooper.idleMainLooper(ms, TimeUnit.MILLISECONDS)
 
@@ -153,6 +159,26 @@ class OneFingerTapsTest {
   @Test
   fun threeTapsAreADoubleTapWhenNoGestureOfMoreTapsHasAnAction() {
     taps(3)
+    assertEquals(listOf(GESTURE_DOUBLE_TAP), completed)
+  }
+
+  @Test
+  fun secondTapAfterTheTouchInteractionEndedMakesADoubleTapWithinALongTimeBetweenTaps() {
+    GestureConfiguration.setMultiTapTimeoutMs(2000)
+    taps(1)
+    // Android ends the touch interaction 300 ms after the lift; the next tap starts a new one.
+    idle(800)
+    manifold.clearExceptWaitingTaps()
+    taps(1)
+    assertEquals(listOf(GESTURE_DOUBLE_TAP), completed)
+  }
+
+  @Test
+  fun tapTooLateForTheWaitingDoubleTapStartsANewOne() {
+    taps(1)
+    idle(800)
+    manifold.clearExceptWaitingTaps()
+    taps(2)
     assertEquals(listOf(GESTURE_DOUBLE_TAP), completed)
   }
 }

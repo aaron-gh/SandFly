@@ -1301,8 +1301,10 @@ public class TouchInteractionMonitor
     }
     touchPassedToApp = state == STATE_DELEGATING;
     if (this.state == STATE_CLEAR) {
-      // Clear on transition to a new interaction
-      clear();
+      // Clear on transition to a new interaction. Android ends an interaction the system double-tap
+      // timeout after the finger lifts, so with a longer time between one-finger taps the next tap
+      // of a double tap can start a new one: the taps waiting for it stay.
+      clear(/* keepWaitingTaps= */ state == STATE_TOUCH_INTERACTING);
     }
     if (state == STATE_CLEAR
         && (this.state == STATE_DELEGATING || this.state == STATE_DRAGGING)) {
@@ -1376,6 +1378,14 @@ public class TouchInteractionMonitor
   }
 
   private void clear() {
+    clear(/* keepWaitingTaps= */ false);
+  }
+
+  /**
+   * Clears the state of the touch. With {@code keepWaitingTaps}, one-finger tap gestures waiting
+   * for a further tap stay.
+   */
+  private void clear(boolean keepWaitingTaps) {
     assignedThisInteraction.clear();
     gestureAppThisInteraction = null;
     passingSyntheticTouch = false;
@@ -1403,7 +1413,11 @@ public class TouchInteractionMonitor
     lastExploredNode = null;
     skipLookupsInLastExploredBounds = false;
     stateChangeRequested = false;
-    gestureDetector.clear();
+    if (keepWaitingTaps) {
+      gestureDetector.clearExceptWaitingTaps();
+    } else {
+      gestureDetector.clear();
+    }
     receivedPointerTracker.clear();
     requestTouchExplorationDelayed.cancel();
     queuedMotionEvents.clear();
@@ -2646,7 +2660,15 @@ public class TouchInteractionMonitor
       // The first tap has ended. The second may come as late as the time between taps after it, as
       // the double tap allows, so touch exploration waits until then rather than counting from the
       // first tap's start, which made a double tap with a longer first tap or gap impossible.
-      requestTouchExplorationDelayed.extendTo(GestureConfiguration.getMultiTapCompletionTimeoutMs());
+      int completionMs = GestureConfiguration.getMultiTapCompletionTimeoutMs();
+      if (completionMs > ViewConfiguration.getDoubleTapTimeout()) {
+        // Android ends the touch interaction the system double-tap timeout after the finger lifts,
+        // and touch exploration of the tap can't start after that. With a longer time between
+        // taps, the tap is explored before then; a second tap within the time still makes a
+        // double tap.
+        completionMs = GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS;
+      }
+      requestTouchExplorationDelayed.extendTo(completionMs);
     }
   }
 
