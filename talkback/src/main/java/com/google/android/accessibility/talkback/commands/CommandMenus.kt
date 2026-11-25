@@ -258,6 +258,26 @@ object CommandMenus {
     }
   }
 
+  /** Returns whether the command saved as [value] is in the SandFly menu or its submenus. */
+  fun isInSandfly(context: Context, prefs: SharedPreferences, value: String): Boolean =
+    value in commandsIn(sandflyItems(context, prefs))
+
+  /** Adds the command saved as [value] to the end of the SandFly menu, unless it is in it. */
+  fun addToSandfly(context: Context, prefs: SharedPreferences, value: String) {
+    val items = sandflyItems(context, prefs)
+    if (value !in commandsIn(items)) {
+      write(context, prefs, SANDFLY_MENU, items + Command(value))
+    }
+  }
+
+  /** Takes the command saved as [value] out of the SandFly menu and its submenus. */
+  fun removeFromSandfly(context: Context, prefs: SharedPreferences, value: String) {
+    val items = sandflyItems(context, prefs)
+    if (value in commandsIn(items)) {
+      write(context, prefs, SANDFLY_MENU, withoutCommand(items, value))
+    }
+  }
+
   /** Returns [nodes] without the command saved as [value], in them or in their submenus. */
   internal fun withoutCommand(nodes: List<Node>, value: String): List<Node> =
     nodes.mapNotNull { node ->

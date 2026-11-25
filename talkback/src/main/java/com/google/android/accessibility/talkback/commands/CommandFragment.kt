@@ -17,6 +17,8 @@
 package com.google.android.accessibility.talkback.commands
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.InputFilter
 import android.text.InputType
 import androidx.annotation.StringRes
@@ -32,10 +34,12 @@ import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils
 import com.google.android.accessibility.talkback.preference.base.KeyboardShortcutDialogPreference
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
+import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
 /**
- * One command: the gestures, arrow keys and keyboard shortcut that run it, to change or add to.
+ * One command: Run command, its item in the SandFly menu, and the gestures, arrow keys and keyboard
+ * shortcut that run it, to change or add to.
  */
 class CommandFragment : TalkbackBaseFragment() {
 
@@ -62,13 +66,16 @@ class CommandFragment : TalkbackBaseFragment() {
 
   private val brailleCells by lazy { BrailleCellAssigner(this) { fill() } }
 
+  /** The dialog shown while Perform gesture waits for the gesture. */
+  private var waiting: AlertDialog? = null
+
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     preferenceManager.setStorageDeviceProtected()
     val gestures = readGestures(this)
     sections =
       listOfNotNull(
         Section(
-          "gestures",
+          GESTURES,
           R.string.command_gestures,
           R.string.command_no_gestures,
           R.string.command_add_gesture,
@@ -96,12 +103,20 @@ class CommandFragment : TalkbackBaseFragment() {
     fill()
   }
 
+  override fun onPause() {
+    // Stops waiting for a gesture, which would otherwise be taken from whatever is shown next.
+    waiting?.dismiss()
+    super.onPause()
+  }
+
   private fun fill() {
     val context = requireContext()
     val screen = preferenceScreen
     screen.removeAll()
     val command = command ?: return
 
+    addRun(command)
+    addSandflyMenu(command)
     ButtonCommands.kindOf(context, command.value)?.let { addButtonWords(it) }
     for (section in sections) {
       addSection(section, command)
@@ -175,6 +190,154 @@ class CommandFragment : TalkbackBaseFragment() {
         }
       }
     )
+    if (section.name == GESTURES) {
+      category.addPreference(
+        AccessibilitySuitePreference(context).apply {
+          key = "pref_command_perform_gesture"
+          isPersistent = false
+          isIconSpaceReserved = false
+          title = getString(R.string.command_perform_gesture)
+          // The screen reader recognizes the gesture.
+          isEnabled = TalkBackService.isServiceActive()
+          setOnPreferenceClickListener {
+            performGesture(command, section.slots)
+            true
+          }
+        }
+      )
+    }
+  }
+
+  /** Adds Run command, which leaves SandFly settings and runs [command] in the app shown before. */
+  private fun addRun(command: Commands.Command) {
+    preferenceScreen.addPreference(
+      AccessibilitySuitePreference(requireContext()).apply {
+        key = "pref_command_run"
+        isPersistent = false
+        isIconSpaceReserved = false
+        title = getString(R.string.command_run)
+        isEnabled = TalkBackService.isServiceActive()
+        setOnPreferenceClickListener {
+          runCommand(command)
+          true
+        }
+      }
+    )
+  }
+
+  /**
+   * Leaves SandFly settings, bringing back the app shown before, and runs [command] there once that
+   * app is in front.
+   */
+  private fun runCommand(command: Commands.Command) {
+    val value = command.value
+    requireActivity().moveTaskToBack(true)
+    Handler(Looper.getMainLooper())
+      .postDelayed({ TalkBackService.getInstance()?.performCommand(value) }, RUN_DELAY_MS)
+  }
+
+  /** Adds Add to SandFly menu, or Remove from SandFly menu while [command] is in it. */
+  private fun addSandflyMenu(command: Commands.Command) {
+    val context = requireContext()
+    preferenceScreen.addPreference(
+      AccessibilitySuitePreference(context).apply {
+        key = "pref_command_sandfly_menu"
+        isPersistent = false
+        isIconSpaceReserved = false
+        title = sandflyMenuTitle(CommandMenus.isInSandfly(context, prefs, command.value))
+        setOnPreferenceClickListener { row ->
+          val add = !CommandMenus.isInSandfly(context, prefs, command.value)
+          if (add) {
+            CommandMenus.addToSandfly(context, prefs, command.value)
+          } else {
+            CommandMenus.removeFromSandfly(context, prefs, command.value)
+          }
+          row.title = sandflyMenuTitle(add)
+          PreferencesActivityUtils.announceText(
+            getString(
+              if (add) R.string.command_added_to_sandfly_menu
+              else R.string.command_removed_from_sandfly_menu,
+              command.label,
+            ),
+            context,
+          )
+          true
+        }
+      }
+    )
+  }
+
+  private fun sandflyMenuTitle(inMenu: Boolean): String =
+    getString(
+      if (inMenu) R.string.command_remove_from_sandfly_menu
+      else R.string.command_add_to_sandfly_menu
+    )
+
+  /** Waits for a gesture, then asks to assign it to [command]. */
+  private fun performGesture(
+    command: Commands.Command,
+    gestures: List<CommandBindings.GestureSlot>,
+  ) {
+    waiting?.dismiss()
+    val dialog =
+      AlertDialog.Builder(requireContext())
+        .setTitle(R.string.command_perform_gesture)
+        .setMessage(R.string.command_perform_gesture_message)
+        .setNegativeButton(android.R.string.cancel, null)
+        .create()
+    dialog.setOnDismissListener {
+      Scripts.captureNext(null)
+      if (waiting === dialog) {
+        waiting = null
+      }
+    }
+    waiting = dialog
+    dialog.show()
+    Scripts.captureNext { binding ->
+      view?.post { onGesturePerformed(dialog, binding, command, gestures) }
+    }
+  }
+
+  private fun onGesturePerformed(
+    dialog: AlertDialog,
+    binding: String,
+    command: Commands.Command,
+    gestures: List<CommandBindings.GestureSlot>,
+  ) {
+    // Cancelled, or the screen closed, before the gesture.
+    if (!dialog.isShowing || !isAdded) {
+      return
+    }
+    dialog.dismiss()
+    val context = requireContext()
+    val gesture = CommandBindings.performedGesture(context, gestures, binding)
+    if (gesture == null) {
+      PreferencesActivityUtils.announceText(
+        getString(
+          R.string.command_gesture_not_assignable,
+          CommandBindings.performedTitle(context, binding),
+        ),
+        context,
+      )
+      return
+    }
+    val current = gesture.value(context, prefs)
+    when (current) {
+      command.value ->
+        PreferencesActivityUtils.announceText(
+          getString(R.string.command_gesture_assigned, gesture.name, command.label),
+          context,
+        )
+      getString(R.string.shortcut_value_unassigned) ->
+        AlertDialog.Builder(context)
+          .setTitle(getString(R.string.script_binding_assign_title, gesture.name, command.label))
+          .setPositiveButton(R.string.script_binding_assign) { _, _ ->
+            assign(gesture, command.value)
+          }
+          .setNegativeButton(android.R.string.cancel, null)
+          .show()
+      else -> confirmReplace(gesture, current, command)
+    }
   }
 
   /** Adds the labels of the buttons that Activate confirm button or cancel button looks for. */
@@ -348,5 +511,10 @@ class CommandFragment : TalkbackBaseFragment() {
 
   companion object {
     const val ARG_COMMAND = "command"
+
+    private const val GESTURES = "gestures"
+
+    /** How long Run command waits for the app shown before to come to the front. */
+    private const val RUN_DELAY_MS = 1000L
   }
 }
