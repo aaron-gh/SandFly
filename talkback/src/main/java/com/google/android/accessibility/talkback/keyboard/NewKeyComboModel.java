@@ -197,6 +197,10 @@ public class NewKeyComboModel implements KeyComboModel {
       return new KeyCombo(
           NO_MODIFIER, NO_PREFIX_KEY_CODE, KeyEvent.KEYCODE_Q, /* triggerModifierUsed= */ true);
     }
+    // A keymap's own fallback where the SandFly key makes two defaults the same keys.
+    if (keymap.getDefaults() != null) {
+      return keymap.getDefaults().defaultKeyCombo(context, key, keymap.getNativeKey(), sandFlyKey);
+    }
     return SandFlyKey.adapt(keyCombo, keymap.getNativeKey(), sandFlyKey);
   }
 
@@ -1371,6 +1375,16 @@ public class NewKeyComboModel implements KeyComboModel {
           && keyCombo.getPrefixKeyCode() == NO_PREFIX_KEY_CODE;
     }
 
+    // Shortcuts in browse mode are keys without the SandFly key, pressed once, in the keyboard phone
+    // keymaps.
+    if (keyCombo.isInBrowseMode()) {
+      return plainKeys()
+          && !keyCombo.isTriggerModifierUsed()
+          && !keyCombo.isWhileEditing()
+          && (keyCombo.getModifiers() & KeyCombo.PRESS_TYPES) == 0
+          && keyCombo.getPrefixKeyCode() == NO_PREFIX_KEY_CODE;
+    }
+
     // A custom keymap and the keyboard phone keymap take any keys; the others' shortcuts are
     // pressed with the SandFly key.
     return customKeymap != null || plainKeys() || keyCombo.isTriggerModifierUsed();
@@ -1450,6 +1464,8 @@ public class NewKeyComboModel implements KeyComboModel {
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_list_item));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_link));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_link));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_link_extra));
+    addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_link_extra));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_list));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_previous_list));
     addKeyCombo(context.getString(R.string.keycombo_shortcut_navigate_next_table));

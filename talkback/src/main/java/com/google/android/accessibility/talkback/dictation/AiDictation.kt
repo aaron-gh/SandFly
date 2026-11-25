@@ -270,6 +270,11 @@ class AiDictation(
   val isListening: Boolean
     get() = phase != Phase.IDLE && onText != null
 
+  /** Stops recording a dictation into a field, as when the key held for it is released. */
+  fun stopFieldRecording() {
+    if (phase == Phase.RECORDING && onText == null) stopRecording()
+  }
+
   /**
    * A dictated password stays on the phone, so Rambler, which sends the audio to Gemini, isn't used
    * for one.

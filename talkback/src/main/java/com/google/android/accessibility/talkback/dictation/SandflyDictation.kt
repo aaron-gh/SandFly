@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.dictation
 
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+
 /**
  * SandFly's dictation for speech input that isn't typed into a field: questions about images and
  * the screen, voice commands, the SandFly Pro agent's prompt. It records with the engine and AI
@@ -88,6 +90,19 @@ object SandflyDictation {
    */
   @JvmStatic
   fun typedSpokenText(eventTime: Long): Boolean = instance?.typedSpokenText(eventTime) == true
+
+  /**
+   * Starts recording for text to type into [field], or stops a dictation that is on, as Dictate
+   * does. Returns false when it can't start.
+   */
+  @JvmStatic
+  fun dictate(field: AccessibilityNodeInfoCompat?): Boolean = instance?.start(field) == true
+
+  /** Stops recording a dictation into a field, so that what was said is typed. */
+  @JvmStatic
+  fun stopFieldRecording() {
+    instance?.stopFieldRecording()
+  }
 
   /** Stops recording for [listen], so that what was said is recognized. */
   @JvmStatic

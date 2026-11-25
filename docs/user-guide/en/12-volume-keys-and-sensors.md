@@ -50,6 +50,15 @@ Both settings leave the keys to Android while the screen is off, during a phone 
 
 With **Volume key shortcuts with the screen off** on, the volume key presses that have commands run them while the display is off. Presses without a command change the volume. The setting needs Shizuku, and isn't shown when SandFly uses root instead of Shizuku or on watches; see [](#updates-shizuku). The first time you turn it on, Shizuku shows a request to allow SandFly. It's off by default.
 
+### Mute key {#buttons-mute-key}
+
+On phones with a mute key, such as the Zinwa Q25, **Volume keys** has two more settings:
+
+- **Hold mute key to dictate in text fields**: when a text field has input focus, a keyboard is shown or connected, and no call is active, holding the mute key runs **Dictate**: recording starts when you press the key, and stops when you release it, and SandFly types the text. Pressing the key during a dictation into a text field stops that dictation. On by default. See [](#typing-dictate).
+- **Mute key press**: the command that a press of the mute key runs everywhere else. The list is the same as for gestures. Unassigned by default.
+
+When neither setting takes a press, it goes to the keymap, where the mute key can be a keyboard shortcut of its own in the keyboard phone keymaps and in custom keymaps (see [](#keyboards-keymaps)), and then to Android.
+
 ### Speech volume on Samsung phones {#buttons-samsung}
 
 On Samsung phones, One UI changes the speech volume when you press a volume key while SandFly speaks, and for a second after. SandFly keeps these presses from One UI and changes the volume that the keys change when SandFly is silent, such as the media volume.

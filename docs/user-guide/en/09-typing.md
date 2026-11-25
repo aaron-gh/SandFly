@@ -197,6 +197,8 @@ Recording stops by itself after 15 minutes, or after a time of silence that you 
 
 By default, a two-finger double-tap runs **Dictate, play or pause media**. It starts **Dictate** when a text field has input focus, a keyboard is shown or connected, and no call is active; it stops a dictation that is recording; otherwise it plays or pauses media. For the default gestures, see [](#appendix-gestures).
 
+On phones with a mute key, such as the Zinwa Q25, hold the mute key in a text field to dictate: recording starts when you press the key and stops when you release it. See [](#buttons-mute-key).
+
 #### Choose how speech is recognized {#typing-speech-recognition}
 
 Go to **Typing** > **Dictation** > **Speech recognition**, and choose one of the following:

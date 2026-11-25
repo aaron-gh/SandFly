@@ -23,7 +23,7 @@ import android.view.View
 import androidx.annotation.WorkerThread
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.Commands
-import com.google.android.accessibility.talkback.gesture.VoiceOverGestures
+import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.keyboard.Keymap
@@ -142,13 +142,19 @@ object UserGuide {
     }
     val unassigned = context.getString(R.string.shortcut_value_unassigned)
     val text = StringBuilder()
-    for ((layout, nameRes) in listOf("sandfly" to R.string.gesture_layout_sandfly, "voiceover" to R.string.gesture_layout_voiceover)) {
+    for ((layout, nameRes) in
+      listOf(
+        GestureLayout.SANDFLY to R.string.gesture_layout_sandfly,
+        GestureLayout.VOICEOVER to R.string.gesture_layout_voiceover,
+        GestureLayout.BLACKBERRY to R.string.gesture_layout_blackberry,
+      )) {
       text.append("### ").append(cell(context.getString(nameRes))).append(" {#appendix-gestures-").append(layout).append("}\n\n")
       for ((index, group) in groups.withIndex()) {
         val rows =
           group.second.mapNotNull { gesture ->
             val value =
-              if (layout == "sandfly") gesture.sandFlyDefault else VoiceOverGestures.defaultValue(context, gesture.key)
+              if (layout == GestureLayout.SANDFLY) gesture.sandFlyDefault
+              else GestureLayout.layoutDefault(context, layout, gesture.key)
             if (value == null || value == unassigned) return@mapNotNull null
             val command = Commands.label(context, value) ?: return@mapNotNull null
             gesture.title to command

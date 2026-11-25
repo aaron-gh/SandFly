@@ -935,8 +935,12 @@ public class FocusProcessorForLogicalNavigation {
             direction,
             /* includeChildrenOfNodesWithWebActions= */ true,
             /* makeFabFirst= */ false);
+    // From the root, a backward search starts at the last node.
     AccessibilityNodeInfoCompat target =
-        TraversalStrategyUtils.searchFocus(traversalStrategy, start, direction, filter);
+        start == rootNode && direction == TraversalStrategy.SEARCH_FOCUS_BACKWARD
+            ? TraversalStrategyUtils.findFirstFocusInNodeTree(
+                traversalStrategy, rootNode, direction, filter)
+            : TraversalStrategyUtils.searchFocus(traversalStrategy, start, direction, filter);
     if (target == null) {
       return null;
     }

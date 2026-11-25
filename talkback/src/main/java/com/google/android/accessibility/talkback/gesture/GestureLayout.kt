@@ -22,26 +22,29 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.utils.FeatureSupport
 
 /**
- * Gestures > Gesture layout: the gestures the Gestures screen starts from, SandFly's own or
- * VoiceOver's. Each layout keeps its own changes: a gesture of the VoiceOver layout is saved under
- * its preference key with [VOICEOVER_SUFFIX], before any gesture set. Gesture profiles and the
- * gestures of apps name gestures by their keys without a layout, so they apply to both.
+ * Gestures > Gesture layout: the gestures the Gestures screen starts from: SandFly's own,
+ * VoiceOver's or the BlackBerry 10 Screen Reader's. Each layout keeps its own changes: a gesture of
+ * another layout than SandFly's is saved under its preference key with the layout's suffix, before
+ * any gesture set. Gesture profiles and the gestures of apps name gestures by their keys without a
+ * layout, so they apply to all of them.
  */
 object GestureLayout {
 
-  /** The layout in use, [SANDFLY] or [VOICEOVER]. Unset until chosen. */
+  /** The layout in use, [SANDFLY], [VOICEOVER] or [BLACKBERRY]. Unset until chosen. */
   const val KEY = "pref_gesture_layout"
 
   const val SANDFLY = "sandfly"
   const val VOICEOVER = "voiceover"
+  const val BLACKBERRY = "blackberry"
+
+  /** Every layout, in the order the Gesture layout list shows them. */
+  @JvmField val LAYOUTS = arrayOf(SANDFLY, VOICEOVER, BLACKBERRY)
 
   /**
    * Whether two-finger swipes run commands rather than passing to the app, where they scroll. Unset,
-   * it follows the layout: on for VoiceOver.
+   * it follows the layout: on for VoiceOver and BlackBerry.
    */
   const val TWO_FINGER_SWIPES_KEY = "pref_handle_two_finger_swipes"
-
-  private const val VOICEOVER_SUFFIX = "_voiceover"
 
   // Set once a layout is chosen in the first-run dialog or on the Gestures screen. KEY alone isn't
   // enough: the Gestures screen's list saves it when the screen opens.
@@ -65,22 +68,24 @@ object GestureLayout {
 
   /** The layout in use. */
   @JvmStatic
-  fun current(prefs: SharedPreferences): String =
-    if (prefs.getString(KEY, SANDFLY) == VOICEOVER) VOICEOVER else SANDFLY
+  fun current(prefs: SharedPreferences): String = valid(prefs.getString(KEY, SANDFLY))
 
-  @JvmStatic fun isVoiceOver(prefs: SharedPreferences): Boolean = current(prefs) == VOICEOVER
+  private fun valid(layout: String?): String = LAYOUTS.firstOrNull { it == layout } ?: SANDFLY
+
+  /** Whether the layout in use is another screen reader's, where gestures it lacks are Unassigned. */
+  @JvmStatic fun isOtherScreenReader(prefs: SharedPreferences): Boolean = current(prefs) != SANDFLY
 
   /**
-   * Starts using [layout], and has two-finger swipes run commands with VoiceOver's gestures, which
-   * read with them, and scroll with SandFly's.
+   * Starts using [layout], and has two-finger swipes run commands with VoiceOver's and BlackBerry's
+   * gestures, which read with them, and scroll with SandFly's.
    */
   @JvmStatic
   fun select(prefs: SharedPreferences, layout: String) {
-    val chosen = if (layout == VOICEOVER) VOICEOVER else SANDFLY
+    val chosen = valid(layout)
     prefs
       .edit()
       .putString(KEY, chosen)
-      .putBoolean(TWO_FINGER_SWIPES_KEY, chosen == VOICEOVER)
+      .putBoolean(TWO_FINGER_SWIPES_KEY, chosen != SANDFLY)
       .putBoolean(CHOSEN_KEY, true)
       .remove(ASK_PENDING_KEY)
       .apply()
@@ -90,7 +95,7 @@ object GestureLayout {
   @JvmStatic
   fun handlesTwoFingerSwipes(prefs: SharedPreferences): Boolean =
     FeatureSupport.isMultiFingerGestureSupported() &&
-      prefs.getBoolean(TWO_FINGER_SWIPES_KEY, isVoiceOver(prefs))
+      prefs.getBoolean(TWO_FINGER_SWIPES_KEY, isOtherScreenReader(prefs))
 
   /**
    * Returns the key under which the layout in use keeps the command of the gesture with preference
@@ -102,11 +107,11 @@ object GestureLayout {
   /** Returns the key under which [layout] keeps the command of the gesture [baseKey]. */
   @JvmStatic
   fun key(layout: String, baseKey: String): String =
-    if (layout == VOICEOVER) baseKey + VOICEOVER_SUFFIX else baseKey
+    if (layout == SANDFLY) baseKey else baseKey + "_" + valid(layout)
 
   /**
    * Returns the command the gesture [baseKey] runs until changed in the layout in use: [sandFlyDefault]
-   * with SandFly's gestures, VoiceOver's command or Unassigned with VoiceOver's.
+   * with SandFly's gestures, the other screen reader's command or Unassigned with another layout.
    */
   @JvmStatic
   fun defaultValue(
@@ -114,8 +119,19 @@ object GestureLayout {
     prefs: SharedPreferences,
     baseKey: String,
     sandFlyDefault: String,
-  ): String =
-    if (isVoiceOver(prefs)) VoiceOverGestures.defaultValue(context, baseKey) else sandFlyDefault
+  ): String = layoutDefault(context, current(prefs), baseKey) ?: sandFlyDefault
+
+  /**
+   * Returns the command the gesture [baseKey] runs in [layout] until changed, or null for SandFly's
+   * layout, whose defaults are the gestures' own.
+   */
+  @JvmStatic
+  fun layoutDefault(context: Context, layout: String, baseKey: String): String? =
+    when (valid(layout)) {
+      VOICEOVER -> VoiceOverGestures.defaultValue(context, baseKey)
+      BLACKBERRY -> BlackBerryGestures.defaultValue(context, baseKey)
+      else -> null
+    }
 
   /** Returns the command the gesture [baseKey] runs in the layout in use, before gesture sets. */
   @JvmStatic

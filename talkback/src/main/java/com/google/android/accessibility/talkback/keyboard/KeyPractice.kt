@@ -304,6 +304,17 @@ class KeyPractice(
       } else {
         combo
       }
+    // In browse mode, keys without the SandFly key run their browse mode shortcut first.
+    if (
+      plainKeys() &&
+        manager.isBrowseModeEnabled &&
+        !keys.isTriggerModifierUsed &&
+        keys.modifiers and KeyCombo.PRESS_TYPES == 0
+    ) {
+      find(keys.withInBrowseMode(true))?.let {
+        return it
+      }
+    }
     find(keys)?.let {
       return it
     }

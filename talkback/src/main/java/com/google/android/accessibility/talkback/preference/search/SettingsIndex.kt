@@ -49,6 +49,7 @@ import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.GestureLayout
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping
 import com.google.android.accessibility.talkback.keyboard.KeypadKeys
+import com.google.android.accessibility.talkback.keyboard.MuteKey
 import com.google.android.accessibility.talkback.notificationlist.NotificationList
 import com.google.android.accessibility.talkback.notifications.NotificationXmlFragment
 import com.google.android.accessibility.talkback.notifications.SpokenSchedules
@@ -459,6 +460,8 @@ object SettingsIndex {
       !OneUiVolumeKeys.isSupported(),
       R.string.pref_volume_keys_speech_volume_while_speaking_key,
     )
+    hideIf(!MuteKey.isAvailable(), R.string.pref_mute_key_dictates_key)
+    hideIf(!MuteKey.isAvailable(), R.string.pref_mute_key_press_key)
 
     // SoundAndVibrationFragment.
     hideIf(Build.VERSION.SDK_INT < Build.VERSION_CODES.S, R.string.pref_speakerphone_away_from_ear_key)
