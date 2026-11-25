@@ -266,7 +266,7 @@ SandFly mengucapkan nama profil saat berganti. Berikutnya dan sebelumnya menelus
 
 ### Pintasan aplikasi {#gestures-app-shortcuts}
 
-Kategori perintah **Pintasan aplikasi** mencantumkan pintasan yang muncul saat menyentuh lama ikon aplikasi di layar utama—seperti pesan baru—serta pintasan yang Anda tambahkan di layar **Pintasan aplikasi**. Pintasan yang ditambahkan aplikasi saat berjalan tidak dicantumkan. Anda dapat menetapkannya ke gestur, menu tepi, dan pintasan keyboard.
+Kategori perintah **Pintasan aplikasi** mencantumkan pintasan yang muncul saat menyentuh lama ikon aplikasi di layar utama—seperti pesan baru—serta pintasan yang Anda tambahkan di layar **Pintasan aplikasi**. Pintasan yang ditambahkan aplikasi saat berjalan, seperti percakapan terbaru, dan pintasan yang hanya boleh dibuka oleh aplikasi layar utama hanya dicantumkan mulai Android 12, melalui Shizuku yang dijalankan lewat adb atau debugging nirkabel, atau melalui root. Daftar perintah membacanya setiap kali dibuka. Anda dapat menetapkannya ke gestur, menu tepi, dan pintasan keyboard.
 
 Untuk menambahkan pintasan yang dibuat aplikasi bagi layar utama, seperti kontak atau makro dari aplikasi lain:
 

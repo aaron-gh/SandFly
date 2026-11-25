@@ -2378,6 +2378,8 @@
     <string name="app_shortcut_added">Added <xliff:g id="name" example="MacroDroid: Morning">%1$s</xliff:g></string>
     <!-- Said when a command that opens an app shortcut fails, because the app or shortcut is gone or its activity can't start. [CHAR_LIMIT=NONE] -->
     <string name="app_shortcut_not_opened">Could not open app shortcut</string>
+    <!-- Said when a command opens an app shortcut that only Shizuku can open, while Shizuku isn't allowed or runs as root. [CHAR_LIMIT=NONE] -->
+    <string name="app_shortcut_needs_shizuku">App shortcut needs Shizuku started through adb or wireless debugging</string>
 
     <!-- Label for a shortcut that is not assigned and does nothing. [CHAR_LIMIT=40] -->
     <string name="shortcut_unassigned">Unassigned</string>

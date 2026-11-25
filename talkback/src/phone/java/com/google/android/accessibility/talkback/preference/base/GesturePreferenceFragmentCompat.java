@@ -40,6 +40,7 @@ import androidx.preference.PreferenceScreen;
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory;
 import com.google.android.accessibility.material.preference.AccessibilitySuiteRadioButtonPreference;
 import com.google.android.accessibility.talkback.R;
+import com.google.android.accessibility.talkback.gesture.AppShortcutActions;
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference.ActionItem;
 import com.google.android.accessibility.talkback.preference.search.SettingsSearch;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
@@ -183,12 +184,23 @@ public class GesturePreferenceFragmentCompat extends TalkbackBaseFragment {
     }
     title = bundle.getCharSequence(GESTURE_TITLE);
     initialValue = bundle.getString(GESTURE_INITIAL_VALUE);
-    items =
-        GestureListPreference.buildActionItems(
-                requireContext(), bundle.getString(GESTURE_DEFAULT_ROW_TEXT))
-            .toArray(new ActionItem[0]);
     preferenceKey = rootKey;
+    String defaultRowText = bundle.getString(GESTURE_DEFAULT_ROW_TEXT);
+    showCommands(defaultRowText);
+    // Shizuku's app shortcuts can change the App shortcuts category.
+    AppShortcutActions.refresh(
+        requireContext(),
+        () -> {
+          if (isAdded()) {
+            showCommands(defaultRowText);
+          }
+        });
+  }
 
+  private void showCommands(@Nullable String defaultRowText) {
+    items =
+        GestureListPreference.buildActionItems(requireContext(), defaultRowText)
+            .toArray(new ActionItem[0]);
     PreferenceSettingsUtils.setPreferenceScreen(this, createPreferenceScreen());
   }
 

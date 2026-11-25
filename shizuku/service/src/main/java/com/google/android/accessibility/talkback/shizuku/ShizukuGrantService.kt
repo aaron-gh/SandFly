@@ -23,6 +23,8 @@ import android.content.ContextWrapper
 import android.content.Intent
 import android.net.wifi.WifiManager
 import android.app.ActivityManager
+import android.app.PendingIntent
+import android.content.pm.LauncherApps
 import android.content.pm.PackageManager
 import android.os.Binder
 import android.os.Build
@@ -167,6 +169,34 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
 
   /** A context of the shell's package, whose user ID this process has. */
   private fun shellContext(): Context? = context?.createPackageContext(SHELL_PACKAGE, 0)
+
+  /**
+   * LauncherApps as the shell, which may use shortcuts as a launcher. Null as root: Android refuses
+   * the shell's package from another user ID.
+   */
+  private fun launcherApps(): LauncherApps? =
+    if (runsAsRoot()) null else shellContext()?.getSystemService(LauncherApps::class.java)
+
+  override fun runsAsRoot(): Boolean = android.os.Process.myUid() % PER_USER_RANGE != SHELL_APP_ID
+
+  override fun appShortcuts(): Bundle? {
+    val query =
+      LauncherApps.ShortcutQuery()
+        .setQueryFlags(
+          LauncherApps.ShortcutQuery.FLAG_MATCH_DYNAMIC or LauncherApps.ShortcutQuery.FLAG_MATCH_MANIFEST
+        )
+    val shortcuts = launcherApps()?.getShortcuts(query, android.os.Process.myUserHandle()) ?: return null
+    return Bundle().apply {
+      for (shortcut in shortcuts) {
+        val label = shortcut.shortLabel ?: shortcut.longLabel ?: continue
+        if (shortcut.isEnabled) putString("${shortcut.`package`}/${shortcut.id}", label.toString())
+      }
+    }
+  }
+
+  override fun appShortcutIntent(packageName: String?, id: String?): PendingIntent? =
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || packageName == null || id == null) null
+    else launcherApps()?.getShortcutIntent(packageName, id, null, android.os.Process.myUserHandle())
 
   private var tethering: Any? = null
 
