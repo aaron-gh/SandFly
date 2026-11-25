@@ -31,6 +31,13 @@ abstract class KeymapDefaults {
    */
   protected open val commandDefaults: Map<Int, KeyCombo> = emptyMap()
 
+  /**
+   * Default shortcuts used instead of those in [defaults] where the chosen SandFly key makes one
+   * the same keys as another default, such as the SandFly key pressed twice where Alt, pressed
+   * twice for another command, is the SandFly key.
+   */
+  protected open val fallbackDefaults: Map<Int, KeyCombo> = emptyMap()
+
   /** The keys under which the commands with default shortcuts in [commandDefaults] are saved. */
   fun commandKeys(context: Context): List<String> =
     commandDefaults.keys.map { Commands.shortcutKey(context.getString(it)) }
@@ -48,6 +55,23 @@ abstract class KeymapDefaults {
       }
     }
     return KeyCombo()
+  }
+
+  /**
+   * Returns the default shortcut of the command saved under [key] as pressed with [chosen] instead
+   * of [native], or its fallback default where another default becomes the same keys.
+   */
+  fun defaultKeyCombo(context: Context, key: String, native: SandFlyKey, chosen: SandFlyKey): KeyCombo {
+    val combo = SandFlyKey.adapt(defaultKeyCombo(context, key), native, chosen)
+    val fallback =
+      fallbackDefaults.entries.firstOrNull { context.getString(it.key) == key }?.value ?: return combo
+    val others =
+      defaults.filterKeys { context.getString(it) != key }.values + commandDefaults.values
+    return if (others.any { SandFlyKey.adapt(it, native, chosen) == combo }) {
+      SandFlyKey.adapt(fallback, native, chosen)
+    } else {
+      combo
+    }
   }
 
   protected companion object {
@@ -68,6 +92,18 @@ abstract class KeymapDefaults {
     /** A key that works without the SandFly key in browse mode. */
     fun browse(modifiers: Int, keyCode: Int) =
       KeyCombo(modifiers, KeyComboModel.NO_PREFIX_KEY_CODE, keyCode, /* triggerModifierUsed= */ false)
+
+    /**
+     * A key without the SandFly key that works only in browse mode, in the keyboard phone keymaps,
+     * before the same key's [plain] shortcut, which the SandFly key with the key then runs.
+     */
+    fun inBrowseMode(modifiers: Int, keyCode: Int) = plain(modifiers, keyCode).withInBrowseMode(true)
+
+    /** Puts [keyCode] for [next] and Shift + [keyCode] for [previous], only in browse mode. */
+    fun MutableMap<Int, KeyCombo>.inBrowseModePair(next: Int, previous: Int, keyCode: Int) {
+      put(next, inBrowseMode(NONE, keyCode))
+      put(previous, inBrowseMode(SHIFT, keyCode))
+    }
 
     /** Keys that work only while a text field is being edited, taking them from the text field. */
     fun editing(modifiers: Int, keyCode: Int) = plain(modifiers, keyCode).withWhileEditing(true)

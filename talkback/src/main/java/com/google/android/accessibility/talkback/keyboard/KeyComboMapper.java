@@ -361,14 +361,14 @@ public class KeyComboMapper {
                   NavigationTarget.TARGET_HEADING,
                   /* forward= */ false,
                   eventId);
-      case NAVIGATE_NEXT_LINK ->
+      case NAVIGATE_NEXT_LINK, NAVIGATE_NEXT_LINK_EXTRA ->
           result =
               performNativeOrWebNavigationKeyCombo(
                   CursorGranularity.LINK,
                   NavigationTarget.TARGET_LINK,
                   /* forward= */ true,
                   eventId);
-      case NAVIGATE_PREVIOUS_LINK ->
+      case NAVIGATE_PREVIOUS_LINK, NAVIGATE_PREVIOUS_LINK_EXTRA ->
           result =
               performNativeOrWebNavigationKeyCombo(
                   CursorGranularity.LINK,
