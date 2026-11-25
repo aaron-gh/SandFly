@@ -36,6 +36,10 @@ import java.util.function.Consumer
  *
  * The profile is made the first time the mode is turned on, from [BlackBerrySettings], and kept
  * after that, so changes to it stay. Deleting it brings back the defaults the next time.
+ *
+ * Its switch is on the Settings profiles screen, not the main settings screen, and both the switch
+ * and the command ask before turning it on ([BlackBerryModeDialog]): most people never used
+ * BlackBerry 10, and its gestures would be unfamiliar to them.
  */
 object BlackBerryMode {
 
@@ -52,12 +56,6 @@ object BlackBerryMode {
   fun isOn(context: Context): Boolean {
     val id = profileId(context) ?: return false
     return SettingsProfiles.store(context).manual()?.id == id
-  }
-
-  /** Turns BlackBerry mode on or off, then runs [onDone] with what to say. */
-  @JvmStatic
-  fun toggle(context: Context, onDone: Consumer<String>) {
-    SettingsProfiles.inBackground(context, { setNow(it, !isOn(it)) }, onDone)
   }
 
   /** Turns BlackBerry mode on or off as [on] says, then runs [onDone] with what to say. */

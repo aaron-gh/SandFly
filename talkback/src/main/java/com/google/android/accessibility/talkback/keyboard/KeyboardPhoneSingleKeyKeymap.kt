@@ -25,10 +25,24 @@ import com.google.android.accessibility.talkback.R
  * too, so SandFly key + Space moves out of a text field. Space moves by item, as the space bar
  * scrolls on BlackBerry, and T and B go to the top and bottom, as on BlackBerry. Enter activates the
  * item SandFly focus moved to; after typing, it goes to the app. Alt pressed twice plays or pauses
- * media and answers calls. Written for Sym as the SandFly key; none uses Meta, so Right Alt, Alt and
- * Meta can be the SandFly key too.
+ * media and answers calls.
+ *
+ * In browse mode, letters move by element as in the SandFly keymap's browse mode: B buttons, C
+ * combo boxes, D landmarks, I list items, K links, L lists, R radio buttons, T tables, U unvisited
+ * links, V visited links, X check boxes and 1 to 6 heading levels, with Shift backwards, besides H,
+ * F, E and G, which do the same in and outside browse mode. The SandFly key with one of these
+ * letters does what the letter does outside browse mode, such as SandFly key + B to the bottom. The
+ * SandFly key pressed twice turns browse mode on or off.
+ *
+ * Written for Sym as the SandFly key; none uses Meta, so Right Alt, Alt and Meta can be the SandFly
+ * key too. Where Alt is the SandFly key, Alt pressed twice stays Play or pause, and SandFly key + Q
+ * turns browse mode on or off.
  */
 object KeyboardPhoneSingleKeyKeymap : KeymapDefaults() {
+  /** The SandFly key pressed twice on its own; before [defaults], which uses it. */
+  private val SANDFLY_KEY_TWICE: KeyCombo =
+    KeyCombo.modifierKeys(NONE, /* triggerModifierUsed= */ true).withPressType(KeyCombo.PRESSED_TWICE)
+
   override val defaults: Map<Int, KeyCombo> =
     buildMap {
       // Moving.
@@ -70,6 +84,72 @@ object KeyboardPhoneSingleKeyKeymap : KeymapDefaults() {
         R.string.keycombo_shortcut_navigate_previous_graphic,
         KeyEvent.KEYCODE_G,
       )
+
+      // Browse mode: the SandFly keymap's letters, which come before the keys above while browse
+      // mode is on. H, F, E and G are the same in both.
+      put(R.string.keycombo_shortcut_other_toggle_browse_mode_extra, SANDFLY_KEY_TWICE)
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_aria_landmark,
+        R.string.keycombo_shortcut_navigate_previous_aria_landmark,
+        KeyEvent.KEYCODE_D,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_button,
+        R.string.keycombo_shortcut_navigate_previous_button,
+        KeyEvent.KEYCODE_B,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_checkbox,
+        R.string.keycombo_shortcut_navigate_previous_checkbox,
+        KeyEvent.KEYCODE_X,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_combobox,
+        R.string.keycombo_shortcut_navigate_previous_combobox,
+        KeyEvent.KEYCODE_C,
+      )
+      // Links have U outside browse mode, so K is their second key.
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_link_extra,
+        R.string.keycombo_shortcut_navigate_previous_link_extra,
+        KeyEvent.KEYCODE_K,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_list,
+        R.string.keycombo_shortcut_navigate_previous_list,
+        KeyEvent.KEYCODE_L,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_list_item,
+        R.string.keycombo_shortcut_navigate_previous_list_item,
+        KeyEvent.KEYCODE_I,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_radio,
+        R.string.keycombo_shortcut_navigate_previous_radio,
+        KeyEvent.KEYCODE_R,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_table,
+        R.string.keycombo_shortcut_navigate_previous_table,
+        KeyEvent.KEYCODE_T,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_visited_link,
+        R.string.keycombo_shortcut_navigate_previous_visited_link,
+        KeyEvent.KEYCODE_V,
+      )
+      inBrowseModePair(
+        R.string.keycombo_shortcut_navigate_next_unvisited_link,
+        R.string.keycombo_shortcut_navigate_previous_unvisited_link,
+        KeyEvent.KEYCODE_U,
+      )
+      inBrowseModePair(R.string.keycombo_shortcut_navigate_next_heading_1, R.string.keycombo_shortcut_navigate_previous_heading_1, KeyEvent.KEYCODE_1)
+      inBrowseModePair(R.string.keycombo_shortcut_navigate_next_heading_2, R.string.keycombo_shortcut_navigate_previous_heading_2, KeyEvent.KEYCODE_2)
+      inBrowseModePair(R.string.keycombo_shortcut_navigate_next_heading_3, R.string.keycombo_shortcut_navigate_previous_heading_3, KeyEvent.KEYCODE_3)
+      inBrowseModePair(R.string.keycombo_shortcut_navigate_next_heading_4, R.string.keycombo_shortcut_navigate_previous_heading_4, KeyEvent.KEYCODE_4)
+      inBrowseModePair(R.string.keycombo_shortcut_navigate_next_heading_5, R.string.keycombo_shortcut_navigate_previous_heading_5, KeyEvent.KEYCODE_5)
+      inBrowseModePair(R.string.keycombo_shortcut_navigate_next_heading_6, R.string.keycombo_shortcut_navigate_previous_heading_6, KeyEvent.KEYCODE_6)
 
       // Acting.
       put(R.string.keycombo_shortcut_perform_click, plain(NONE, KeyEvent.KEYCODE_ENTER))
@@ -139,6 +219,11 @@ object KeyboardPhoneSingleKeyKeymap : KeymapDefaults() {
       R.string.shortcut_value_spell_password_field to sandFly(NONE, KeyEvent.KEYCODE_Y),
       R.string.shortcut_value_choose_symbol to editing(ALT, KeyEvent.KEYCODE_SPACE),
     )
+
+  // Alt pressed twice plays or pauses media; where Alt is the SandFly key, browse mode turns on and
+  // off with SandFly key + Q instead.
+  override val fallbackDefaults: Map<Int, KeyCombo> =
+    mapOf(R.string.keycombo_shortcut_other_toggle_browse_mode_extra to sandFly(NONE, KeyEvent.KEYCODE_Q))
 
   /** Puts [keyCode] for [next] and Shift + [keyCode] for [previous], outside text fields. */
   private fun MutableMap<Int, KeyCombo>.plainPair(next: Int, previous: Int, keyCode: Int) {

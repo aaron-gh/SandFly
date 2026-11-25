@@ -59,7 +59,7 @@ MANIFEST = {
     "name": "BlackBerry",
     "author": "SandFly",
     "description": "Sounds only for screen changes, clicks, scrolls, ends, errors and the keyboard, "
-                   "with none for moving the focus, as the BlackBerry 10 Screen Reader played.",
+                   "with none for moving the focus, similar to the BlackBerry 10 Screen Reader.",
     "license": "Apache-2.0",
     "settings": {"control_sounds": False, "speak_roles": True},
     "sounds": {name: "none" for name in SILENT},

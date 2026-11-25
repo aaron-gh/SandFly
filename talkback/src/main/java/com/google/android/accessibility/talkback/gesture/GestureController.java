@@ -130,6 +130,7 @@ import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFo
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.blackberry.BlackBerryMode;
+import com.google.android.accessibility.talkback.blackberry.BlackBerryModeDialog;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping.TalkbackAction;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
 import com.google.android.accessibility.talkback.macros.MacroRecorder;
@@ -170,6 +171,7 @@ import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.speech.VoiceProfileNames;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
 import com.google.android.accessibility.talkback.selector.SelectorController.Setting;
+import com.google.android.accessibility.talkback.selector.SwipeValueDirection;
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivity;
 import com.google.android.accessibility.talkback.trainingcommon.content.TutorialGestureUses;
@@ -213,6 +215,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.Map;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -265,6 +268,9 @@ public class GestureController {
       new HashMap<>();
   // Whether the action being performed is that of the one-finger double tap.
   private boolean performingDoubleTap;
+  // The gesture whose action is being performed, or NO_GESTURE.
+  private int performingGestureId = NO_GESTURE;
+  private static final int NO_GESTURE = -1;
 
   ////////////////////////////////////////////////////////////////////////////////////////////////
   // Constructor methods
@@ -1011,8 +1017,22 @@ public class GestureController {
                   EVENT_ID_UNTRACKED, Feedback.vibration(R.array.view_clicked_pattern)));
       speak(service.getString(R.string.shortcut_quick_tasks));
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_blackberry_mode))) {
-      BlackBerryMode.toggle(
-          service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
+      // Turning it off is at once; turning it on asks first, as its gestures are unfamiliar to
+      // most people.
+      SettingsProfiles.inBackground(
+          service,
+          BlackBerryMode::isOn,
+          on -> {
+            Consumer<String> say =
+                said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said));
+            if (on) {
+              BlackBerryMode.set(service, false, say);
+            } else {
+              new BlackBerryModeDialog(
+                      service, pipeline, () -> BlackBerryMode.set(service, true, say))
+                  .showDialog();
+            }
+          });
     } else if (ReadingControlCommands.isSelection(action)) {
       result =
           selectorController.selectReadingControlByKey(
@@ -1099,10 +1119,10 @@ public class GestureController {
       selectorController.selectFirstSetting(eventId, AnnounceType.DESCRIPTION_AND_HINT);
     } else if (action.equals(
         service.getString(R.string.shortcut_value_selected_setting_previous_action))) {
-      selectorController.adjustSelectedSetting(eventId, false);
+      selectorController.adjustSelectedSetting(eventId, false, swipeIncreasesValue());
     } else if (action.equals(
         service.getString(R.string.shortcut_value_selected_setting_next_action))) {
-      selectorController.adjustSelectedSetting(eventId, true);
+      selectorController.adjustSelectedSetting(eventId, true, swipeIncreasesValue());
     } else if (action.equals(
             service.getString(R.string.shortcut_value_action_setting_activate_current_action))
         || action.equals(service.getString(R.string.shortcut_value_perform_click_action))) {
@@ -1694,7 +1714,7 @@ public class GestureController {
     // Quick Tasks take a few gestures for the three seconds after the Quick Tasks command.
     String quickTask = QuickTasks.action(gestureShortcutMapping.getGestureKey(gestureId));
     if (quickTask != null) {
-      performGestureAction(quickTask, eventId, /* doubleTap= */ false);
+      performGestureAction(quickTask, eventId, gestureId, /* doubleTap= */ false);
       return;
     }
     // A gesture profile's own gestures come before scripts.
@@ -1724,16 +1744,18 @@ public class GestureController {
       return;
     }
     String fallbackAction = action;
+    int fallbackGestureId = gestureId;
     boolean doubleTap = gestureId == GESTURE_DOUBLE_TAP;
-    // A script can hand the gesture back later, so the fallback keeps whether it was a double tap.
+    // A script can hand the gesture back later, so the fallback keeps which gesture it was.
     if (!fromProfile
         && !columnSwipe
         && !turnsScriptsOff(action)
         && Scripts.onGesture(
-            gestureId, () -> performGestureAction(fallbackAction, eventId, doubleTap))) {
+            gestureId,
+            () -> performGestureAction(fallbackAction, eventId, fallbackGestureId, doubleTap))) {
       return;
     }
-    performGestureAction(action, eventId, doubleTap);
+    performGestureAction(action, eventId, gestureId, doubleTap);
   }
 
   /** Opens the Add label or Edit label dialog for the focused item. */
@@ -1754,15 +1776,34 @@ public class GestureController {
         : LabelDialogManager.editLabel(service, labelId, /* needToRestoreFocus= */ true, pipeline);
   }
 
-  /** Performs [action] of a gesture, noting whether the gesture is the one-finger double tap. */
-  private void performGestureAction(String action, EventId eventId, boolean doubleTap) {
-    boolean previous = performingDoubleTap;
+  /**
+   * Performs [action] of the gesture [gestureId], noting the gesture and whether it is the
+   * one-finger double tap.
+   */
+  private void performGestureAction(
+      String action, EventId eventId, int gestureId, boolean doubleTap) {
+    boolean previousDoubleTap = performingDoubleTap;
+    int previousGestureId = performingGestureId;
     performingDoubleTap = doubleTap;
+    performingGestureId = gestureId;
     try {
       performAction(action, eventId);
     } finally {
-      performingDoubleTap = previous;
+      performingDoubleTap = previousDoubleTap;
+      performingGestureId = previousGestureId;
     }
+  }
+
+  /**
+   * Whether the gesture being performed increases a value, such as a slider's, or null when no
+   * straight swipe is being performed.
+   */
+  private @Nullable Boolean swipeIncreasesValue() {
+    if (performingGestureId == NO_GESTURE) {
+      return null;
+    }
+    return SwipeValueDirection.increases(
+        performingGestureId, WindowUtils.isScreenLayoutRTL(service));
   }
 
   /**

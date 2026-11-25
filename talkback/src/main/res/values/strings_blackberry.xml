@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Title of the switch on the main settings screen that makes SandFly work like the BlackBerry 10 Screen Reader: its gestures, keys, sounds and short announcements. Keep "BlackBerry" untranslated. -->
+    <!-- Title of the switch on the Settings profiles screen that makes SandFly work similarly to the BlackBerry 10 Screen Reader: similar gestures, keys, sounds and short announcements. Keep "BlackBerry" untranslated. -->
     <string name="title_pref_blackberry_mode">BlackBerry mode</string>
     <!-- Name of the settings profile that BlackBerry mode makes and uses, in the Settings profiles list. Keep "BlackBerry" untranslated. -->
     <string name="blackberry_mode_profile_name">BlackBerry mode</string>
@@ -10,7 +10,7 @@
     <string name="shortcut_toggle_blackberry_mode">Turn BlackBerry mode on or off</string>
     <!-- Name of the command that, for three seconds, has a few gestures change the speech volume and rate, repeat or spell the last thing spoken, or hide the screen, as Quick Tasks did in the BlackBerry 10 Screen Reader. Also spoken when it starts. -->
     <string name="shortcut_quick_tasks">Quick Tasks</string>
-    <!-- Name of the keymap with the keys of the BlackBerry 10 Screen Reader, for keyboard phones, in the keymap list. Keep "BlackBerry" untranslated. -->
+    <!-- Name of the keymap with keys similar to those of the BlackBerry 10 Screen Reader, for keyboard phones, in the keymap list. Keep "BlackBerry" untranslated. -->
     <string name="value_blackberry_keymap">BlackBerry keymap</string>
     <!-- Spoken when BlackBerry mode is turned on. -->
     <string name="blackberry_mode_on">BlackBerry mode on</string>
@@ -18,4 +18,16 @@
     <string name="blackberry_mode_off">BlackBerry mode off</string>
     <!-- Spoken when BlackBerry mode can't be turned on, because its settings profile can't be saved. -->
     <string name="blackberry_mode_not_changed">BlackBerry mode not changed</string>
+    <!-- Title of the dialog shown before BlackBerry mode is turned on. Keep "BlackBerry" untranslated. -->
+    <string name="blackberry_mode_confirm_title">Turn on BlackBerry mode?</string>
+    <!-- Message of the dialog shown before BlackBerry mode is turned on. "Settings profiles" and "BlackBerry mode" are the titles of the screen and switch that turn it off. Keep "BlackBerry" untranslated. -->
+    <string name="blackberry_mode_confirm_message">BlackBerry mode replaces gestures, keyboard shortcuts, sounds and announcements with ones similar to those of the BlackBerry 10 Screen Reader. They are likely to be unfamiliar if you haven\'t used BlackBerry 10. To turn it off, go to SandFly settings > Settings profiles > BlackBerry mode.</string>
+    <!-- Button of the dialog shown before BlackBerry mode is turned on, which turns it on. -->
+    <string name="blackberry_mode_confirm_button">Turn on</string>
+    <!-- Title of the dialog shown when BlackBerry gestures are chosen in Gestures > Gesture layout. Keep "BlackBerry" untranslated. -->
+    <string name="blackberry_gestures_confirm_title">Use BlackBerry gestures?</string>
+    <!-- Message of the dialog shown when BlackBerry gestures are chosen in Gestures > Gesture layout. "Gestures", "Gesture layout" and "SandFly gestures" are the titles of the screen, list and layout. Keep "BlackBerry" untranslated. -->
+    <string name="blackberry_gestures_confirm_message">BlackBerry gestures are similar to those of the BlackBerry 10 Screen Reader. They are likely to be unfamiliar if you haven\'t used BlackBerry 10. To go back, set Gestures > Gesture layout to SandFly gestures.</string>
+    <!-- Button of the dialog shown when BlackBerry gestures are chosen, which uses them. -->
+    <string name="blackberry_gestures_confirm_button">Use</string>
 </resources>

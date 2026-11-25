@@ -33,7 +33,7 @@ A keymap is a set of keyboard shortcuts. SandFly has these keymaps:
 - **JAWS keymap**: the desktop keystrokes of JAWS, with its laptop keys for clicks and cursors, with the SandFly key as the JAWS key. Its SandFly key is Insert, Numpad Insert or Meta, Insert by default.
 - **Orca keymap**: the laptop layout of Orca, with the SandFly key as the Orca modifier. Its SandFly key is Insert, Numpad Insert, Meta or Alt, Insert by default.
 - **Keyboard phone keymap** and **Keyboard phone single-key keymap**: for phones with a built-in keyboard that has no Ctrl, Meta or arrow keys. See [](#keyboards-phones).
-- **BlackBerry keymap**: the keys of the BlackBerry 10 Screen Reader, for keyboard phones. See [](#keyboards-phones).
+- **BlackBerry keymap**: keys similar to those of the BlackBerry 10 Screen Reader, for keyboard phones. See [](#keyboards-phones).
 - Keymaps that you make. See [](#keyboards-custom-keymaps).
 
 In the NVDA, JAWS and Orca keymaps, the arrow keys and Tab move without the SandFly key, as on a computer. See [](#keyboards-desktop).
@@ -94,6 +94,7 @@ These aren't available on watches. For the file format, see [](#api-item-files).
 - **Keyboard shortcuts in apps**: shortcuts that run other commands in one app. See [](#keyboards-app-shortcuts).
 - **Keyboard practice**: turns keyboard practice on. See [](#keyboards-practice).
 - **Arrow key navigation**: in keymaps that have it. See [](#keyboards-arrow-keys).
+- **Fast search**: **Fast search key** and **Wrap around**. See [](#keyboards-fast-search).
 - The commands, by category, each with its shortcut. Each category opens and closes. A command whose shortcut works only in browse mode has "in browse mode" after its name, such as "Navigate to next heading in browse mode".
 
 You can change shortcuts and reset the keymap only while SandFly is on.
@@ -127,6 +128,10 @@ To record such a shortcut, press SandFly key + R or SandFly key + O, then the th
 #### Shortcuts that work only while editing {#keyboards-while-editing}
 
 Select **Only while editing** in the shortcut dialog for a shortcut that works only while a text field is being edited. Such a shortcut is pressed without the SandFly key, and SandFly takes its keys from the text field. Outside text fields, the keys work as they would without the shortcut. The shortcut is shown with "while editing" after its keys, such as "Alt + Space while editing".
+
+#### Shortcuts that work only in browse mode {#keyboards-in-browse-mode}
+
+In the keyboard phone keymaps, select **Only in browse mode** in the shortcut dialog for a shortcut that works only in browse mode. Such a shortcut is pressed without the SandFly key. In browse mode, it comes before a shortcut of the same keys without **Only in browse mode**, which the SandFly key with the keys then runs. Outside browse mode, the keys work as they would without the shortcut. The shortcut is shown with "in browse mode" after its keys, such as "B in browse mode".
 
 #### Presses in keyboard phone keymaps {#keyboards-presses}
 
@@ -187,10 +192,11 @@ The default shortcut of **Turn browse mode on or off** is:
 | NVDA keymap | SandFly key + Space |
 | JAWS keymap | SandFly key + Z |
 | Orca keymap | SandFly key + A |
+| Keyboard phone single-key keymap | SandFly key pressed twice; SandFly key + Q with Alt as the SandFly key |
 
 SandFly plays a sound or says "Browse mode on" or "Browse mode off".
 
-In the keyboard phone keymaps, the commands that need browse mode in other keymaps work without it.
+In the keyboard phone keymaps, the commands that need browse mode in other keymaps work without it. In the keyboard phone single-key keymap, browse mode changes what letters do: B, C, D, I, K, L, R, T, U, V, X and the number keys 1 to 6 move as in the SandFly keymap's browse mode, and H, F, E and G move by heading, control, edit field and graphic in and outside browse mode. The SandFly key with one of these letters runs its shortcut outside browse mode, such as SandFly key + B for the bottom of the screen and SandFly key + K to move by the reading control. See [](#keyboards-phones).
 
 Two settings in **Navigation** change when browse mode is on:
 
@@ -198,6 +204,16 @@ Two settings in **Navigation** change when browse mode is on:
 - **Navigation** > **Remember browse mode in each app**: keeps browse mode as you last turned it on or off in each app. In an app where you haven't turned it on or off, browse mode is off, unless **Smart browse mode** turns it on in web content. It's off by default.
 
 For navigation by web elements, see [](#web).
+
+#### Fast search {#keyboards-fast-search}
+
+In browse mode, the fast search key with a letter or digit moves SandFly focus to the next item that starts with that letter or digit. Shift with both keys moves to the previous one. Case and accents don't matter: E finds "Email" and "Écran".
+
+To choose the key, go to **Keyboard shortcuts** > **Fast search** > **Fast search key**. It's Off by default. The list has Alt, Ctrl, Meta, each of them left or right, Sym and Fn, except keys that are part of the keymap's SandFly key. If you change the SandFly key to one that includes the fast search key, fast search is off for that keymap.
+
+Fast search doesn't work in a text field you are typing in. While the fast search key is held, its letters and digits don't run other shortcuts.
+
+**Keyboard shortcuts** > **Fast search** > **Wrap around**: when no item after SandFly focus starts with the letter, the search continues from the top of the screen, or from the bottom when moving back. It's on by default. When no item is found, SandFly says "Not found".
 
 ### Arrow key navigation {#keyboards-arrow-keys}
 
@@ -317,8 +333,8 @@ The command is in the **Activation** category, so you can also assign it to a ge
 Keyboard phones are phones with a built-in keyboard that has letters, Shift, Alt and often Sym, but no Ctrl, Meta or arrow keys: the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25. SandFly recognizes these phones and uses the **Keyboard phone keymap** on them. You can choose either keymap for keyboard phones on any phone.
 
 - **Keyboard phone keymap**: the most used shortcuts are presses of keys that typing doesn't use, and work anywhere, text fields too. The SandFly key pressed alone moves to the next item, and Shift + the SandFly key to the previous item. Enter activates the item that SandFly focus moved to. Alt pressed twice plays or pauses media and answers calls. Alt + Shift held selects the next reading control. The other shortcuts are the SandFly key with a letter, such as SandFly key + J, I and K for reading controls, and T and B for the top and bottom of the screen.
-- **BlackBerry keymap**: the keyboard phone keymap with the keys of the BlackBerry 10 Screen Reader for an external keyboard, with the SandFly key in place of Ctrl. SandFly key + A reads from the top, and SandFly key + Shift + A from the focused item. SandFly key + Enter speaks the focused item. SandFly key + S pauses speech, and SandFly key + Shift + S hides or shows the screen. SandFly key + . says the title of the screen. SandFly key + Shift + T starts Quick Tasks; see [](#gestures-quick-tasks). The arrow keys, such as those of the Zinwa Q25 trackpad, move by the navigation setting with Right and Left, and choose the next and previous navigation setting with Up and Down. Shortcuts of the keyboard phone keymap on those keys move: long press to SandFly key + Shift + Enter, **Search on screen** to SandFly key + Shift + Space, **Open SandFly settings** to SandFly key + Shift + O, and **Describe image** to SandFly key + Z.
-- **Keyboard phone single-key keymap**: single keys run commands, such as Space for the next item and Shift + Space for the previous item, H for the next heading, and J, L, I and K for reading controls. Single keys work outside text fields being edited. The SandFly key with any of these keys does the same anywhere, text fields too, so SandFly key + Space moves out of a text field. Shift + Z locks or unlocks touch.
+- **BlackBerry keymap**: the keyboard phone keymap with keys similar to those of the BlackBerry 10 Screen Reader for an external keyboard, with the SandFly key in place of Ctrl. SandFly key + A reads from the top, and SandFly key + Shift + A from the focused item. SandFly key + Enter speaks the focused item. SandFly key + S pauses speech, and SandFly key + Shift + S hides or shows the screen. SandFly key + . says the title of the screen. SandFly key + Shift + T starts Quick Tasks; see [](#gestures-quick-tasks). The arrow keys, such as those of the Zinwa Q25 trackpad, move by the navigation setting with Right and Left, and choose the next and previous navigation setting with Up and Down. Shortcuts of the keyboard phone keymap on those keys move: long press to SandFly key + Shift + Enter, **Search on screen** to SandFly key + Shift + Space, **Open SandFly settings** to SandFly key + Shift + O, and **Describe image** to SandFly key + Z.
+- **Keyboard phone single-key keymap**: single keys run commands, such as Space for the next item and Shift + Space for the previous item, H for the next heading, and J, L, I and K for reading controls. Single keys work outside text fields being edited. The SandFly key with any of these keys does the same anywhere, text fields too, so SandFly key + Space moves out of a text field. Shift + Z locks or unlocks touch. The SandFly key pressed twice turns browse mode on or off. In browse mode, letters move by element as in the SandFly keymap, such as B to the next button and K to the next link, and the SandFly key with a letter runs its shortcut outside browse mode, such as SandFly key + T for the top of the screen. See [](#keyboards-browse-mode).
 
 In all three keymaps:
 

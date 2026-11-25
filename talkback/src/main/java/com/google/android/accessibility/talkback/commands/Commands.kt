@@ -1464,6 +1464,8 @@ object Commands {
     mapOf(
       Key.NAVIGATE_NEXT_PARAGRAPH to Key.NAVIGATE_NEXT_PARAGRAPH_EXTRA,
       Key.NAVIGATE_PREVIOUS_PARAGRAPH to Key.NAVIGATE_PREVIOUS_PARAGRAPH_EXTRA,
+      Key.NAVIGATE_NEXT_LINK to Key.NAVIGATE_NEXT_LINK_EXTRA,
+      Key.NAVIGATE_PREVIOUS_LINK to Key.NAVIGATE_PREVIOUS_LINK_EXTRA,
     )
 
   /** The keyboard actions that move to the same items as navigation gesture actions. */

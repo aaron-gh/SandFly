@@ -1482,6 +1482,10 @@
     <string name="keycombo_menu_navigate_next_paragraph_second_key">Navigate to next paragraph, second key</string>
     <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the previous paragraph, besides the one of Previous paragraph, such as Shift + P in browse mode in the NVDA keymap. [CHAR LIMIT=60] -->
     <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navigate to previous paragraph, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the next link, besides the one of Next link, such as K in browse mode in the keyboard phone single-key keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_next_link_second_key">Navigate to next link, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the previous link, besides the one of Previous link, such as Shift + K in browse mode in the keyboard phone single-key keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navigate to previous link, second key</string>
     <!-- Keyboard key combination assignment for Navigate to next container [CHAR LIMIT=40] -->
     <string name="keycombo_menu_navigate_next_container">Navigate to next container</string>
     <!-- Keyboard key combination assignment for Navigate to previous container [CHAR LIMIT=40] -->
@@ -1828,6 +1832,24 @@
     <string name="keycombo_key_modifier_right_shift">Right Shift</string>
     <!-- The Fn key, such as the Speed key of the BlackBerry KEY2, as the SandFly key. e.g. Fn + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_function">Fn</string>
+    <!-- Title of the settings group for fast search, which in browse mode focuses the next item starting with a letter or digit pressed with a chosen key. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_fast_search">Fast search</string>
+    <!-- Title of the setting that chooses the key which, pressed with a letter or digit in browse mode, focuses the next item starting with it. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_key">Fast search key</string>
+    <!-- Fast search key setting: fast search is off. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_off">Off</string>
+    <!-- Title of the setting that makes fast search go on from the other end of the screen when nothing is found. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_wrap">Wrap around</string>
+    <!-- The left Alt key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_alt">Left Alt</string>
+    <!-- The left Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_ctrl">Left Ctrl</string>
+    <!-- The right Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_ctrl">Right Ctrl</string>
+    <!-- The left Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_meta">Left Meta</string>
+    <!-- The right Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_meta">Right Meta</string>
     <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
     <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
@@ -4534,6 +4556,10 @@
     <string name="keycombo_only_while_editing">Only while editing</string>
     <!-- A keyboard shortcut that works only while a text field is being edited, such as "Alt+Space while editing". -->
     <string name="keycombo_keys_while_editing"><xliff:g id="keys" example="Alt+Space">%1$s</xliff:g> while editing</string>
+    <!-- Keyboard shortcut dialog, keyboard phone keymaps: check box that makes the shortcut work only in browse mode, before the same keys' shortcut outside browse mode. -->
+    <string name="keycombo_only_in_browse_mode">Only in browse mode</string>
+    <!-- A keyboard shortcut that works only in browse mode, such as "B in browse mode". -->
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> in browse mode</string>
     <!-- Title of the switch that makes a double tap on the text field being edited move the cursor to the start of its text, or to the end when the cursor is at the start, instead of activating the field. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_double_tap_moves_cursor">Double-tap moves cursor to start or end</string>
     <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->

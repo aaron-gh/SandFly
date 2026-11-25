@@ -19,11 +19,13 @@ package com.google.android.accessibility.talkback.backup
 import android.os.Bundle
 import androidx.preference.PreferenceGroup
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.blackberry.BlackBerryMode
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 
 /**
  * Settings > Settings profiles: New settings profile, and the profiles, with those in
- * use marked. Each profile opens its own screen, [SettingsProfileFragment].
+ * use marked. Each profile opens its own screen, [SettingsProfileFragment]. Last, the BlackBerry
+ * mode switch, which uses its own profile and asks before turning it on.
  */
 class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_settings_profiles) {
 
@@ -63,6 +65,23 @@ class SettingsProfilesFragment : NotificationCodeFragment(R.string.title_pref_se
         SettingsProfileFragment::class.java,
       ) {
         putString(SettingsProfileFragment.ARG_ID, profile.id)
+      }
+    }
+    val context = requireContext()
+    screen.switch(getString(R.string.title_pref_blackberry_mode), BlackBerryMode.isOn(context)) { on ->
+      if (on) {
+        // Stays off until the dialog turns it on.
+        listView?.post { if (isAdded) rebuild() }
+        dialog()
+          .setTitle(R.string.blackberry_mode_confirm_title)
+          .setMessage(R.string.blackberry_mode_confirm_message)
+          .setPositiveButton(R.string.blackberry_mode_confirm_button) { _, _ ->
+            BlackBerryMode.set(context, true) { said -> done(said) }
+          }
+          .setNegativeButton(android.R.string.cancel, null)
+          .show()
+      } else {
+        BlackBerryMode.set(context, false) { said -> done(said) }
       }
     }
   }

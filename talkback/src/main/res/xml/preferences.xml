@@ -118,10 +118,6 @@
       android:fragment="com.google.android.accessibility.talkback.preference.base.PauseFragment"
       android:key="pref_pause_screen"
       android:title="@string/title_pref_pause" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:key="pref_blackberry_mode_switch"
-      android:persistent="false"
-      android:title="@string/title_pref_blackberry_mode" />
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
       android:fragment="com.google.android.accessibility.talkback.backup.SettingsProfilesFragment"
       android:key="@string/pref_settings_profiles_key"
