@@ -334,6 +334,10 @@
     <string name="title_pref_emoji_rate">Emoji speech rate</string>
     <!-- Title of the text-to-speech setting for how much slower the Repeat last spoken phrase slower command says the phrase, as a percentage of the rate it was said at. [CHAR LIMIT=40] -->
     <string name="title_pref_repeat_slower_by">Repeat slower by</string>
+    <!-- Title of the text-to-speech setting for how much the speech rate commands, the Speech rate reading control and the Speech rate slider change the rate at a time. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_rate_step">Speech rate step</string>
+    <!-- Choice of Speech rate step: each change makes the rate in use faster or slower by this percentage of it, such as "10%". [CHAR LIMIT=40] -->
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> of the rate</string>
     <!-- Title of the setting, and of the reading control, that chooses which volume speech and sounds play at: accessibility, media, ring or call. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_stream">Speech volume</string>
     <!-- Summary of the Speech volume reading control in the reading controls settings. [CHAR LIMIT=NONE] -->
