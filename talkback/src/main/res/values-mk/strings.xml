@@ -2821,4 +2821,6 @@
     <string name="shortcut_title_app_tiles">Плочки на апликации</string>
     <string name="shortcut_title_system_tiles">Системски плочки</string>
     <string name="app_shortcut_needs_shizuku">Кратенката за апликација бара Shizuku стартуван преку adb или безжично отстранување грешки</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> користи застарени имиња на API на SandFly</string>
+    <string name="deprecated_api_replace">Заменете го <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> со <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

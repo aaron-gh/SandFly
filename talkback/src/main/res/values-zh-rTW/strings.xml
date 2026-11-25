@@ -2815,4 +2815,6 @@
     <string name="shortcut_title_app_tiles">應用程式圖塊</string>
     <string name="shortcut_title_system_tiles">系統圖塊</string>
     <string name="app_shortcut_needs_shizuku">應用程式捷徑需要透過 adb 或無線偵錯啟動的 Shizuku</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> 使用已淘汰的 SandFly API 名稱</string>
+    <string name="deprecated_api_replace">請將 <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> 替換為 <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>。</string>
 </resources>

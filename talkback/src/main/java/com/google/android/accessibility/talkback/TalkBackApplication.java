@@ -19,6 +19,7 @@ package com.google.android.accessibility.talkback;
 import android.app.Application;
 import android.os.Build;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderCommands;
+import com.google.android.accessibility.talkback.apinames.DeprecatedApiNotification;
 import com.google.android.accessibility.talkback.braille.BrailleDisplayCommands;
 import com.google.android.accessibility.talkback.report.CrashLog;
 import com.google.android.accessibility.talkback.report.ProblemReportSender;
@@ -53,6 +54,7 @@ public class TalkBackApplication extends Application {
         && getPackageName().equals(Application.getProcessName())) {
       NetworkForeground.initialize(this);
     }
+    DeprecatedApiNotification.install(this);
     MlKitHelper.initialize(this);
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
         && Application.getProcessName().endsWith(":mlkit")) {

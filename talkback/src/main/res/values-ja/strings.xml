@@ -2812,4 +2812,6 @@
     <string name="shortcut_title_app_tiles">アプリタイル</string>
     <string name="shortcut_title_system_tiles">システムタイル</string>
     <string name="app_shortcut_needs_shizuku">アプリのショートカットには adb またはワイヤレス デバッグで起動した Shizuku が必要です</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> は非推奨の SandFly API 名を使用しています</string>
+    <string name="deprecated_api_replace"><xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> を <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g> に置き換えてください。</string>
 </resources>

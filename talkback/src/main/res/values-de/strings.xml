@@ -2822,4 +2822,6 @@
     <string name="shortcut_title_app_tiles">App-Kacheln</string>
     <string name="shortcut_title_system_tiles">Systemkacheln</string>
     <string name="app_shortcut_needs_shizuku">App-Verknüpfung benötigt Shizuku, gestartet über adb oder Debugging über WLAN</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> verwendet veraltete Namen der SandFly-API</string>
+    <string name="deprecated_api_replace"><xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> durch <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g> ersetzen.</string>
 </resources>

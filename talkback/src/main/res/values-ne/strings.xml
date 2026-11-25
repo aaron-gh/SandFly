@@ -2822,4 +2822,6 @@
     <string name="shortcut_title_app_tiles">एप टाइलहरू</string>
     <string name="shortcut_title_system_tiles">प्रणाली टाइलहरू</string>
     <string name="app_shortcut_needs_shizuku">एप सर्टकटका लागि adb वा वायरलेस डिबगिङमार्फत सुरु गरिएको Shizuku आवश्यक पर्छ</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> ले पुराना SandFly API नामहरू प्रयोग गर्छ</string>
+    <string name="deprecated_api_replace"><xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> को सट्टा <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g> प्रयोग गर्नुहोस्।</string>
 </resources>

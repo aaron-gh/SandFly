@@ -171,4 +171,6 @@ SandFly 27.0 and later still take these names from apps built against them, and 
 adb logcat -s SandFlyApi
 ```
 
+If your app is a debuggable build, SandFly also posts a notification that lists the deprecated names it used.
+
 The deprecated names will be removed in a later release. SandFly 0.7.0 and earlier take only the deprecated names. To work with those too, bind with the new action first and with the deprecated one when `bindService` returns false.

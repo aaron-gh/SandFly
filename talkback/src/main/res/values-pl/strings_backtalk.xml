@@ -572,4 +572,6 @@
   <string xmlns:tools="http://schemas.android.com/tools" name="alternate_help" tools:ignore="HardCodedNumber">Możesz też otworzyć stronę https://support.google.com/accessibility/android/answer/6283677?hl=pl</string>
   <string name="title_pref_mute_speech_while_recording">Wyłączaj mowę podczas nagrywania</string>
   <string name="summary_pref_mute_speech_while_recording">Gdy aplikacja nagrywa bez podłączonych słuchawek, SandFly mówi tylko w odpowiedzi na Twoje gesty, klawisze i pisanie, a w przypadku np. powiadomień milczy, aby nie trafiły do nagrania.</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> używa wycofanych nazw interfejsu API SandFly</string>
+    <string name="deprecated_api_replace">Zastąp <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> nazwą <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>

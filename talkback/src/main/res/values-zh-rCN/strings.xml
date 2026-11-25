@@ -3375,4 +3375,6 @@
     <string name="shortcut_title_app_tiles">应用磁贴</string>
     <string name="shortcut_title_system_tiles">系统磁贴</string>
     <string name="app_shortcut_needs_shizuku">应用快捷方式需要通过 adb 或无线调试启动的 Shizuku</string>
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> 使用了已弃用的 SandFly API 名称</string>
+    <string name="deprecated_api_replace">请将 <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> 替换为 <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>。</string>
 </resources>

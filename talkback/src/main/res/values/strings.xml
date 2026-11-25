@@ -6526,4 +6526,8 @@
   <string name="double_tap_taps_off">Double tap taps the screen off</string>
   <!-- Spoken when the Double tap taps the screen in this app command runs while no app is in front, such as when SandFly or the notification shade is. [CHAR LIMIT=NONE] -->
   <string name="double_tap_taps_no_app">No app in front</string>
+    <!-- Title of the notification shown when a debuggable app, usually a developer's own build, uses a deprecated name of a SandFly API. The app's name is filled in. [CHAR LIMIT=NONE] -->
+    <string name="deprecated_api_title"><xliff:g id="app" example="Example Game">%1$s</xliff:g> uses deprecated SandFly API names</string>
+    <!-- One line of that notification for each deprecated name the app used: the deprecated name, then the name to use instead. [CHAR LIMIT=NONE] -->
+    <string name="deprecated_api_replace">Replace <xliff:g id="deprecated_name" example="fyi.quin.backtalk.action.SPEAK">%1$s</xliff:g> with <xliff:g id="name" example="io.github.aaron_gh.sandfly.action.SPEAK">%2$s</xliff:g>.</string>
 </resources>
