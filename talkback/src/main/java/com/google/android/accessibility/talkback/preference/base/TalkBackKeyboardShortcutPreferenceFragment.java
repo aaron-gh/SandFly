@@ -40,6 +40,7 @@ import com.google.android.accessibility.talkback.backup.ItemFileLauncher;
 import com.google.android.accessibility.talkback.backup.ItemFiles;
 import com.google.android.accessibility.talkback.commands.CommandBindings;
 import com.google.android.accessibility.talkback.commands.Commands;
+import com.google.android.accessibility.talkback.gesture.AppShortcutActions;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeys;
 import com.google.android.accessibility.talkback.keyboard.CustomKeymap;
@@ -276,6 +277,14 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
 
     updatePreference();
+    // Shizuku's app shortcuts can change the App shortcuts category.
+    AppShortcutActions.refresh(
+        requireContext(),
+        () -> {
+          if (isAdded()) {
+            updateFragment();
+          }
+        });
   }
 
   /** Updates Fragment when KeyComboModel changes or resets keymap. */

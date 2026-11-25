@@ -73,8 +73,8 @@ class AppShortcutActionsTest {
   }
 
   /** What open gives its callback, which it calls at once for these shortcuts, or null if it didn't. */
-  private fun open(value: String): Boolean? {
-    var opened: Boolean? = null
+  private fun open(value: String): AppShortcutActions.Opened? {
+    var opened: AppShortcutActions.Opened? = null
     AppShortcutActions.open(context, value) { opened = it }
     return opened
   }
@@ -200,6 +200,24 @@ class AppShortcutActionsTest {
   }
 
   @Test
+  fun openAShortcutThatShizukuListedWithoutShizukuSaysItNeedsShizuku() {
+    context
+      .getSharedPreferences(AppShortcutActions.LISTED_PREFS, 0)
+      .edit()
+      .putString("com.example.chat/new_session", "New session")
+      .commit()
+
+    assertEquals(
+      AppShortcutActions.Opened.NEEDS_SHIZUKU,
+      open(AppShortcutActions.staticValue("com.example.chat", "new_session")),
+    )
+    assertEquals(
+      AppShortcutActions.Opened.NO,
+      open(AppShortcutActions.staticValue("com.example.chat", "gone")),
+    )
+  }
+
+  @Test
   fun addedShortcutsAreListed() {
     add("m", "Morning", Intent("com.example.macro.RUN").setComponent(macro))
 
@@ -214,7 +232,7 @@ class AppShortcutActionsTest {
     install(macro, exported = true)
     add("m", "Morning", Intent("com.example.macro.RUN").setComponent(macro))
 
-    assertEquals(true, open(AppShortcutActions.addedValue("m")))
+    assertEquals(AppShortcutActions.Opened.YES, open(AppShortcutActions.addedValue("m")))
 
     val started = shadowOf(context).nextStartedActivity
     assertEquals(macro, started.component)
@@ -227,7 +245,7 @@ class AppShortcutActionsTest {
     install(macro, exported = false)
     add("m", "Morning", Intent("com.example.macro.RUN").setComponent(macro))
 
-    assertEquals(false, open(AppShortcutActions.addedValue("m")))
+    assertEquals(AppShortcutActions.Opened.NO, open(AppShortcutActions.addedValue("m")))
     assertNull(shadowOf(context).nextStartedActivity)
   }
 
@@ -237,12 +255,12 @@ class AppShortcutActionsTest {
     install(own, exported = false)
     add("own", "Settings", Intent().setComponent(own))
 
-    assertEquals(false, open(AppShortcutActions.addedValue("own")))
+    assertEquals(AppShortcutActions.Opened.NO, open(AppShortcutActions.addedValue("own")))
     assertNull(shadowOf(context).nextStartedActivity)
   }
 
   @Test
   fun openFailsForADeletedShortcut() {
-    assertEquals(false, open(AppShortcutActions.addedValue("deleted")))
+    assertEquals(AppShortcutActions.Opened.NO, open(AppShortcutActions.addedValue("deleted")))
   }
 }

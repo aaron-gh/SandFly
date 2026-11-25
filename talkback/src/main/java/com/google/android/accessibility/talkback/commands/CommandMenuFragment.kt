@@ -26,6 +26,7 @@ import androidx.preference.PreferenceViewHolder
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.commands.CommandMenus.Place
+import com.google.android.accessibility.talkback.gesture.AppShortcutActions
 import com.google.android.accessibility.talkback.notifications.NotificationCodeFragment
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils
 import com.google.android.accessibility.talkback.preference.base.ItemListFragment
@@ -438,6 +439,11 @@ class MenuAddCommandFragment : NotificationCodeFragment(R.string.edge_menu_add_c
       arguments?.getString(CommandMenuFragment.ARG_MENU) ?: CommandMenus.SANDFLY_MENU,
       arguments?.getString(CommandMenuFragment.ARG_PARENT),
     )
+  }
+
+  override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+    super.onCreatePreferences(savedInstanceState, rootKey)
+    AppShortcutActions.refresh(requireContext()) { if (isAdded) rebuild() }
   }
 
   override fun build(screen: PreferenceGroup) {

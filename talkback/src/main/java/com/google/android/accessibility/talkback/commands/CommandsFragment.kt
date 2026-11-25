@@ -32,6 +32,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceScreen
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.gesture.AppShortcutActions
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift
 import com.google.android.accessibility.talkback.preference.PreferencesActivityUtils
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment
@@ -65,6 +66,16 @@ class CommandsFragment : TalkbackBaseFragment() {
     categories = Commands.categories(context)
     preferenceScreen = preferenceManager.createPreferenceScreen(context)
     show(announce = false)
+    AppShortcutActions.refresh(context) {
+      if (!isAdded) return@refresh
+      val shown = categories.map { it.titleRes }
+      categories = Commands.categories(context)
+      // The categories, unless one came or went, stay as they are.
+      if (SettingsSearch.words(query.trim()).isNotEmpty() || categories.map { it.titleRes } != shown) {
+        shownQuery = null
+        show(announce = false)
+      }
+    }
   }
 
   override fun onCreateView(
@@ -207,6 +218,9 @@ class CommandCategoryFragment : TalkbackBaseFragment() {
     preferenceManager.setStorageDeviceProtected()
     gestures = readGestures(this) + CommandBindings.arrowKeys(requireContext())
     preferenceScreen = preferenceManager.createPreferenceScreen(requireContext())
+    if (categoryTitle == R.string.title_pref_app_shortcuts) {
+      AppShortcutActions.refresh(requireContext()) { if (isAdded) fill() }
+    }
   }
 
   override fun onResume() {
@@ -215,16 +229,20 @@ class CommandCategoryFragment : TalkbackBaseFragment() {
     fill()
   }
 
-  /** Adds a row for each command the first time, and updates what runs each command after. */
+  /**
+   * Adds a row for each command the first time, and updates what runs each command after. Rows of
+   * commands no longer in the category, such as a removed app shortcut, are removed.
+   */
   private fun fill() {
     val context = requireContext()
     val screen = preferenceScreen
-    val category =
-      Commands.categories(context).firstOrNull { it.titleRes == categoryTitle } ?: return
+    val commands =
+      Commands.categories(context).firstOrNull { it.titleRes == categoryTitle }?.commands.orEmpty()
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val manager = CommandBindings.keyComboManager(context)
     val model = manager.keyComboModel
-    for (command in category.commands) {
+    val keys = HashSet<String>()
+    for ((index, command) in commands.withIndex()) {
       val names = gestures.filter { it.value(context, prefs) == command.value }.map { it.name }
       val shortcut =
         model?.let {
@@ -247,6 +265,12 @@ class CommandCategoryFragment : TalkbackBaseFragment() {
             screen.addPreference(this)
           }
       row.summary = summary
+      row.order = index
+      keys += key
+    }
+    for (i in screen.preferenceCount - 1 downTo 0) {
+      val row = screen.getPreference(i)
+      if (row.key !in keys) screen.removePreference(row)
     }
   }
 

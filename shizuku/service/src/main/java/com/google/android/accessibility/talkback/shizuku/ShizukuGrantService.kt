@@ -170,8 +170,14 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
   /** A context of the shell's package, whose user ID this process has. */
   private fun shellContext(): Context? = context?.createPackageContext(SHELL_PACKAGE, 0)
 
-  /** LauncherApps as the shell, which may use shortcuts as a launcher. Not as root. */
-  private fun launcherApps(): LauncherApps? = shellContext()?.getSystemService(LauncherApps::class.java)
+  /**
+   * LauncherApps as the shell, which may use shortcuts as a launcher. Null as root: Android refuses
+   * the shell's package from another user ID.
+   */
+  private fun launcherApps(): LauncherApps? =
+    if (runsAsRoot()) null else shellContext()?.getSystemService(LauncherApps::class.java)
+
+  override fun runsAsRoot(): Boolean = android.os.Process.myUid() % PER_USER_RANGE != SHELL_APP_ID
 
   override fun appShortcuts(): Bundle? {
     val query =
@@ -189,7 +195,7 @@ class ShizukuGrantService(private val context: Context?) : IShizukuGrants.Stub()
   }
 
   override fun appShortcutIntent(packageName: String?, id: String?): PendingIntent? =
-    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.R || packageName == null || id == null) null
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S || packageName == null || id == null) null
     else launcherApps()?.getShortcutIntent(packageName, id, null, android.os.Process.myUserHandle())
 
   private var tethering: Any? = null

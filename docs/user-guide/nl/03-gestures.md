@@ -266,7 +266,7 @@ SandFly spreekt de naam van het profiel uit wanneer het verandert. Volgend en vo
 
 ### App-snelkoppelingen {#gestures-app-shortcuts}
 
-De categorie opdrachten **App-snelkoppelingen** vermeldt de snelkoppelingen die het aanraken en vasthouden van een app-pictogram op het startscherm toont, zoals een nieuw bericht, en de snelkoppelingen die je toevoegt op het scherm **App-snelkoppelingen**. Snelkoppelingen die een app toevoegt terwijl deze draait, worden niet vermeld. Je kunt ze toewijzen aan gebaren, randmenu's en sneltoetsen.
+De categorie opdrachten **App-snelkoppelingen** vermeldt de snelkoppelingen die het aanraken en vasthouden van een app-pictogram op het startscherm toont, zoals een nieuw bericht, en de snelkoppelingen die je toevoegt op het scherm **App-snelkoppelingen**. Snelkoppelingen die een app toevoegt terwijl deze draait, zoals recente gesprekken, en snelkoppelingen die alleen de startscherm-app mag openen, worden alleen vermeld vanaf Android 12, via Shizuku dat is gestart met adb of draadloos debuggen, of via root. Een lijst met opdrachten leest ze elke keer dat deze opent. Je kunt ze toewijzen aan gebaren, randmenu's en sneltoetsen.
 
 Zo voeg je een snelkoppeling toe die een app maakt voor het startscherm, zoals een contact of een macro van een andere app:
 

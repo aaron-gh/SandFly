@@ -116,4 +116,10 @@ interface IShizukuGrants {
 
     /** The PendingIntent that opens shortcut [id] of [packageName] as its app, or null. */
     PendingIntent appShortcutIntent(String packageName, String id) = 15;
+
+    /**
+     * Whether the service runs as root instead of the shell user, as under Shizuku started with
+     * root. Android then refuses the calls made with the shell's package, such as the shortcuts.
+     */
+    boolean runsAsRoot() = 16;
 }
