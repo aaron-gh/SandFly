@@ -37,6 +37,7 @@ class VoiceCommandsFragment : NotificationCodeFragment(R.string.title_pref_voice
     screen.switch(getString(R.string.title_pref_voice_commands_ai), prefs.getBoolean(aiKey, false)) {
       prefs.edit().putBoolean(aiKey, it).apply()
     }
+    timeLimit(screen)
     val custom = screen.category(R.string.voice_commands_custom)
     custom.action(getString(R.string.voice_command_add)) { add() }
     val context = requireContext()
@@ -52,6 +53,21 @@ class VoiceCommandsFragment : NotificationCodeFragment(R.string.title_pref_voice
     for (entry in entries) {
       val label = Commands.find(context, entry.value)?.label ?: entry.value
       custom.action(entry.phrase, label) { showActions(entry) }
+    }
+  }
+
+  /** Voice editing time limit: the minutes Start voice editing records commands for. */
+  private fun timeLimit(screen: PreferenceGroup) {
+    val key = getString(R.string.pref_voice_editing_time_limit_key)
+    val title = getString(R.string.title_pref_voice_editing_time_limit)
+    val minutes = VoiceEditingRules.timeLimitMinutes(prefs.getString(key, null))
+    val choices = VoiceEditingRules.TIME_LIMIT_MINUTES
+    fun text(value: Int): CharSequence = resources.getQuantityString(R.plurals.voice_editing_minutes, value, value)
+    screen.action(title, text(minutes)) {
+      choose(title, choices.map { text(it) }, choices.indexOf(minutes)) { index ->
+        prefs.edit().putString(key, choices[index].toString()).apply()
+        rebuild()
+      }
     }
   }
 

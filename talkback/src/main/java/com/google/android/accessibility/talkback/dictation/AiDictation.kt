@@ -114,6 +114,14 @@ class AiDictation(
   private var onText: ((String?) -> Unit)? = null
   /** Whether the text for [listen] is corrected when Correct dictation with AI is on. */
   private var listenCorrects = true
+  /**
+   * Whether [listen] is for Start voice editing, which listens again and again: nothing recognized
+   * isn't said, and no stop chime plays when no speech was heard.
+   */
+  private var listenSession = false
+  /** The error that ended the last [listen] without text, or 0. */
+  var lastListenError = 0
+    private set
 
   init {
     SandflyDictation.instance = this
@@ -170,6 +178,7 @@ class AiDictation(
       return false
     }
     field = node
+    listenSession = false
     phase = Phase.RECORDING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
     // Speech would be recorded with the user's.
@@ -182,9 +191,17 @@ class AiDictation(
    * it is on, as [start] does for a field. Recording also stops after a pause in speech, or when
    * nothing is said; Auto stop after silence applies to Dictate only. [callback] gets the
    * recognized and, when that is on and [correct] is true, corrected text, or null when nothing was
-   * recognized or recording could not start.
+   * recognized or recording could not start; [lastListenError] then tells which. With [session],
+   * for Start voice editing, nothing recognized isn't said, the start chime plays only with
+   * [startChime], and the stop chime only when speech was heard.
    */
-  fun listen(correct: Boolean = true, callback: (String?) -> Unit): Boolean {
+  fun listen(
+    correct: Boolean = true,
+    session: Boolean = false,
+    startChime: Boolean = true,
+    callback: (String?) -> Unit,
+  ): Boolean {
+    lastListenError = 0
     if (phase != Phase.IDLE) {
       // A dictation into a field goes on; an earlier listen stops. Either way this caller is
       // answered, or it would wait for good.
@@ -203,16 +220,46 @@ class AiDictation(
     field = null
     onText = callback
     listenCorrects = correct
+    listenSession = session
     if (!startRecording(DictationSettings.effectiveRecognition(service, prefs))) {
       onText = null
+      listenSession = false
       speak(service.getString(R.string.dictation_unavailable))
       callback(null)
       return false
     }
     phase = Phase.RECORDING
-    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
+    if (!session || startChime) {
+      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_up))
+    }
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(SILENCE))
     return true
+  }
+
+  /**
+   * Stops [listen] and drops what was recorded, without giving it to the callback, as when voice
+   * editing ends. Does nothing while a dictation into a field goes on.
+   */
+  fun cancelListen() {
+    if (phase == Phase.IDLE || onText == null) return
+    generation++
+    giveUp?.let { handler.removeCallbacks(it) }
+    continuous?.cancel()
+    continuous = null
+    capture?.stop()
+    capture = null
+    live?.cancel()
+    live = null
+    transcriber?.cancel()
+    onText = null
+    finish()
+    listenSession = false
+  }
+
+  /** Plays the stop chime, unless [listen] for voice editing heard no speech. */
+  private fun stopChime() {
+    if (listenSession && !speechHeard) return
+    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
   }
 
   /** Whether a dictation or [listen] is recording, or recognizing what it recorded. */
@@ -300,7 +347,7 @@ class AiDictation(
     val speech = capture?.speechRange()
     phase = Phase.WORKING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
-    pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
+    stopChime()
     continuous?.let {
       continuous = null
       it.stop()
@@ -363,6 +410,7 @@ class AiDictation(
         if (result == null) {
           finish()
           speak(service.getString(R.string.dictation_transcription_failed))
+          if (onText != null) lastListenError = SandflyDictation.LISTEN_TRANSCRIPTION_FAILED
           deliver(null)
         } else {
           recognized(result.first, cleaned = result.second)
@@ -443,6 +491,7 @@ class AiDictation(
     }
     // While recording, finish() unsilences speech and plays the stop chime.
     finish()
+    if (onText != null) lastListenError = error
     speak(
       service.getString(
         when (error) {
@@ -465,7 +514,9 @@ class AiDictation(
     val heard = text.trim()
     if ((target == null && onText == null) || heard.isEmpty()) {
       finish()
-      speak(service.getString(R.string.dictation_nothing_recognized))
+      if (!(onText != null && listenSession)) {
+        speak(service.getString(R.string.dictation_nothing_recognized))
+      }
       deliver(null)
       return
     }
@@ -573,7 +624,7 @@ class AiDictation(
       handler.removeCallbacks(autoStop)
       continuous = null
       pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
-      pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.chime_down))
+      stopChime()
     }
     // For the next dictation: a language pack downloaded since the last one is used from then on.
     if (phase != Phase.IDLE) GoogleSpeechLanguages.refresh(service)
@@ -608,6 +659,7 @@ class AiDictation(
   private fun deliver(text: String?) {
     val callback = onText ?: return
     onText = null
+    listenSession = false
     callback(text)
   }
 

@@ -145,6 +145,7 @@ import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptCommands;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.calls.AnswerCall;
+import com.google.android.accessibility.talkback.actor.voicecommands.VoiceEditing;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.doubletaptaps.DoubleTapTapsApps;
@@ -329,6 +330,8 @@ public class GestureController {
     handwritingAppLauncher.shutdown();
     brailleScreenInput.shutdown();
     translateCommand.shutdown();
+    // Before dictation, whose shutdown answers the recording of voice editing.
+    VoiceEditing.shutdown();
     dictation.shutdown();
   }
 
@@ -482,6 +485,7 @@ public class GestureController {
     R.string.shortcut_value_media_control,
     R.string.shortcut_value_dictate_or_media_control,
     R.string.shortcut_value_dictate,
+    R.string.shortcut_value_voice_editing,
     R.string.shortcut_value_increase_volume,
     R.string.shortcut_value_decrease_volume,
     R.string.shortcut_value_increase_media_volume,
@@ -585,6 +589,12 @@ public class GestureController {
     if (!continuousCopyAction) {
       // Another command ends a collection, as a touch or key does.
       service.stopContinuousCopy();
+    }
+    if (action.equals(service.getString(R.string.shortcut_value_dictate))
+        || action.equals(service.getString(R.string.shortcut_value_dictate_or_media_control))
+        || action.equals(service.getString(R.string.shortcut_value_voice_commands))) {
+      // These record speech too, which voice editing does between its commands.
+      VoiceEditing.end();
     }
     boolean result = true;
     if (action.equals(service.getString(R.string.switch_gesture_set))) {
@@ -1174,6 +1184,8 @@ public class GestureController {
       result = GranularEditing.open(service, editing != null ? editing : focus);
     } else if (action.equals(service.getString(R.string.shortcut_value_dictate))) {
       result = dictation.start(dictationTarget());
+    } else if (action.equals(service.getString(R.string.shortcut_value_voice_editing))) {
+      result = VoiceEditing.toggle(dictationTarget());
     } else if (action.equals(service.getString(R.string.shortcut_value_switch_keyboard))) {
       result = NextKeyboard.switchKeyboard(service, said -> speak(said.toString()));
     } else if (action.equals(service.getString(R.string.shortcut_value_clear_selection))) {

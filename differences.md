@@ -1500,6 +1500,10 @@ Words such as "please" and "can you" are left out.
 
 A voice command can hold several commands, joined by "then", "and then", "after that" or "afterwards", such as "open Messages then call Sam". "And" joins commands too, when each part is a command. SandFly runs the commands one after another, with a short pause after each command that changes the screen, and stops at the first command that fails. To stop a chain, start another voice command and say "stop", "cancel", "quit" or "never mind".
 
+### Voice editing
+
+**Start voice editing**, a **Text editing** command without a default gesture, records voice commands for the focused text field one after another until it runs again, a stop phrase such as "stop editing" is said, focus leaves the field, or **Voice commands** > **Voice editing time limit** passes: 5, 10, 20 or 30 minutes, 10 by default. It runs only **Text editing** and **Navigate by text** commands, "type" and a text, the text editing voice commands of TalkBack, and custom voice commands for these commands or for macros. Speech is silenced while SandFly records, and recording starts again after SandFly's speech of the result ends. TalkBack records one voice command per gesture.
+
 ### Voice commands understood with AI
 
 **Voice commands** > **Understand voice commands with AI**, off by default, sends a voice command that SandFly doesn't recognize, or a chain that SandFly recognizes only in part, to the AI service in use, which turns it into commands. SandFly sends what you said, the names of the commands and the texts of the items on the screen. The switch needs an AI service set up in **AI services**: on-device AI, SandFly Pro, or another service with a key.
