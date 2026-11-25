@@ -1333,11 +1333,11 @@ The braille languages include Mongolian, uncontracted and contracted, from the l
 
 ### Braille keyboard stays open after sending in chats
 
-TalkBack hides the braille keyboard each time you submit text. In SandFly, when Submit text sends with the send button next to the field, as in Telegram, WhatsApp and Messages, the braille keyboard stays open for the next message. Other fields, such as search fields, still hide it so that focus can move on.
+TalkBack hides the braille keyboard each time you submit text. In SandFly, the braille keyboard stays open for the next message when Submit text presses the send button next to the field, as in Telegram, WhatsApp and Messages. When Submit text carries out the action of the field, such as search or next, or presses Enter, it still hides the braille keyboard so that focus can move on.
 
 ### Return to the previous keyboard
 
-**Return to the previous keyboard** changes back to the keyboard used before the braille keyboard when you hide the braille keyboard with a two-finger swipe down or leave its text field, so that text fields open with your usual keyboard and the braille keyboard only when you switch to it. Submitting text and turning the screen don't count as leaving the field. It doesn't apply while a braille display is connected. It's off by default.
+**Return to the previous keyboard** changes back to the keyboard used before the braille keyboard when you hide the braille keyboard with **Hide keyboard** or leave its text field. It doesn't apply while a braille display is connected. It's off by default.
 
 ### Capitalize sentences
 
