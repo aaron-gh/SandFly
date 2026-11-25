@@ -388,6 +388,88 @@ class KeymapTest {
   }
 
   @Test
+  fun nvdaParagraphKeysAreCtrlArrowsAndPInBrowseMode() {
+    fun plain(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, false)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    fun key(res: Int) = model.getKeyComboForKey(context.getString(res))
+    assertEquals(
+      plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_DOWN),
+      key(R.string.keycombo_shortcut_navigate_next_paragraph),
+    )
+    assertEquals(
+      plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_UP),
+      key(R.string.keycombo_shortcut_navigate_previous_paragraph),
+    )
+    assertEquals(plain(0, KeyEvent.KEYCODE_P), key(R.string.keycombo_shortcut_navigate_next_paragraph_extra))
+    assertEquals(
+      plain(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_P),
+      key(R.string.keycombo_shortcut_navigate_previous_paragraph_extra),
+    )
+    // Other keymaps have no second paragraph keys.
+    for (keymap in listOf(Keymap.SANDFLY, Keymap.JAWS, Keymap.ORCA, Keymap.VOICEOVER)) {
+      assertEquals(
+        KeyCombo(),
+        NewKeyComboModel(context, keymap)
+          .getKeyComboForKey(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra)),
+      )
+    }
+  }
+
+  @Test
+  fun savedNvdaKeymapGetsPForParagraphsAndKeepsCtrlArrows() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 6).commit()
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val next = context.getString(R.string.keycombo_shortcut_navigate_next_paragraph)
+    val ctrlDown = KeyCombo(KeyEvent.META_CTRL_ON, 0, KeyEvent.KEYCODE_DPAD_DOWN, false)
+    persister.saveKeyCombo(next, ctrlDown)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(ctrlDown, model.getKeyComboForKey(next))
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_P, false),
+      model.getKeyComboForKey(
+        context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra)
+      ),
+    )
+  }
+
+  @Test
+  fun pGivenToAnotherCommandIsntTakenForParagraphs() {
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val heading = context.getString(R.string.keycombo_shortcut_navigate_next_heading)
+    val p = KeyCombo(0, 0, KeyEvent.KEYCODE_P, false)
+    persister.saveKeyCombo(heading, p)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(p, model.getKeyComboForKey(heading))
+    assertEquals(
+      KeyCombo(),
+      model.getKeyComboForKey(
+        context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra)
+      ),
+    )
+  }
+
+  @Test
+  fun secondParagraphKeysAreListedWithTheParagraphCommands() {
+    val commands = Commands.categories(context).flatMap { it.commands }
+    val next =
+      commands.first { it.keyboardAction == TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_PARAGRAPH }
+    assertEquals(TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_PARAGRAPH_EXTRA, next.secondKeyboardAction)
+    // A key press of the second key is the same command.
+    assertEquals(
+      next.value,
+      Commands.valueOfKeyboardAction(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_PARAGRAPH_EXTRA),
+    )
+    assertEquals(
+      "Next paragraph, second key",
+      Commands.labelOfKeyboardKey(
+        context,
+        context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra),
+      ),
+    )
+  }
+
+  @Test
   fun version4SavedSpeechKeysGiveWayToNewOnes() {
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 4).commit()

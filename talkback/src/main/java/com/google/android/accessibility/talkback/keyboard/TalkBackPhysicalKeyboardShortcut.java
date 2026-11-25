@@ -494,6 +494,16 @@ public enum TalkBackPhysicalKeyboardShortcut {
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_NAVIGATE_PREVIOUS_PARAGRAPH */ 144,
       R.string.keycombo_shortcut_navigate_previous_paragraph,
       R.string.keycombo_menu_navigate_previous_paragraph),
+  // Second keys of the paragraph commands, such as NVDA's P and Shift + P in browse mode, besides
+  // Ctrl + Down Arrow and Ctrl + Up Arrow.
+  NAVIGATE_NEXT_PARAGRAPH_EXTRA(
+      /* KEYBOARD_SHORTCUT_NAVIGATE_NEXT_PARAGRAPH_EXTRA */ 1039,
+      R.string.keycombo_shortcut_navigate_next_paragraph_extra,
+      R.string.keycombo_menu_navigate_next_paragraph_second_key),
+  NAVIGATE_PREVIOUS_PARAGRAPH_EXTRA(
+      /* KEYBOARD_SHORTCUT_NAVIGATE_PREVIOUS_PARAGRAPH_EXTRA */ 1040,
+      R.string.keycombo_shortcut_navigate_previous_paragraph_extra,
+      R.string.keycombo_menu_navigate_previous_paragraph_second_key),
   TOGGLE_BRAILLE_CONTRACTED_MODE(
       /* KeyboardShortcut.KEYBOARD_SHORTCUT_TOGGLE_BRAILLE_CONTRACTED_MODE */ 112,
       R.string.keycombo_shortcut_other_toggle_braille_contracted_mode,

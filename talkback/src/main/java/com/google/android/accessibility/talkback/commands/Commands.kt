@@ -70,12 +70,14 @@ object Commands {
 
   /**
    * One command. [keyboardAction] is the keyboard action that performs the same thing, if there is
-   * one.
+   * one. [secondKeyboardAction] performs it too, with a keyboard shortcut of its own, which only
+   * keyboard shortcut lists show.
    */
   class Command(
     val value: String,
     val label: String,
     val keyboardAction: TalkBackPhysicalKeyboardShortcut?,
+    val secondKeyboardAction: TalkBackPhysicalKeyboardShortcut? = null,
   ) {
     /** Returns the key under which the key combo model keeps this command's keyboard shortcut. */
     fun keyboardKey(context: Context): String =
@@ -138,7 +140,7 @@ object Commands {
 
   /**
    * Returns the value of the command that the keyboard [action] runs: the command that has it as
-   * its keyboard action, otherwise the keyboard action's own command.
+   * its keyboard action or second keyboard action, otherwise the keyboard action's own command.
    */
   @JvmStatic
   fun valueOfKeyboardAction(context: Context, action: TalkBackPhysicalKeyboardShortcut): String {
@@ -146,7 +148,11 @@ object Commands {
       actionValues
         ?: categoriesWithoutApps(context)
           .flatMap { it.commands }
-          .mapNotNull { command -> command.keyboardAction?.let { it to command.value } }
+          .flatMap { command ->
+            listOfNotNull(command.keyboardAction, command.secondKeyboardAction).map {
+              it to command.value
+            }
+          }
           .distinctBy { it.first }
           .toMap()
           .also { actionValues = it }
@@ -390,8 +396,14 @@ object Commands {
     /** Adds the navigation actions of [category], with the keyboard actions that match them. */
     private fun navigationActions(category: Int) {
       for (action in NavigationGestureActions.CATEGORIES[category].actions) {
+        val keyboardAction = NAVIGATION_KEYS[action.value]
         commands.add(
-          Command(action.value, context.getString(action.labelRes), NAVIGATION_KEYS[action.value])
+          Command(
+            action.value,
+            context.getString(action.labelRes),
+            keyboardAction,
+            SECOND_KEYS[keyboardAction],
+          )
         )
       }
     }
@@ -1425,6 +1437,13 @@ object Commands {
         }
       }
   }
+
+  /** The second keyboard actions of keyboard actions, which do the same with other keys. */
+  private val SECOND_KEYS: Map<TalkBackPhysicalKeyboardShortcut?, TalkBackPhysicalKeyboardShortcut> =
+    mapOf(
+      Key.NAVIGATE_NEXT_PARAGRAPH to Key.NAVIGATE_NEXT_PARAGRAPH_EXTRA,
+      Key.NAVIGATE_PREVIOUS_PARAGRAPH to Key.NAVIGATE_PREVIOUS_PARAGRAPH_EXTRA,
+    )
 
   /** The keyboard actions that move to the same items as navigation gesture actions. */
   private val NAVIGATION_KEYS: Map<String, TalkBackPhysicalKeyboardShortcut> =
