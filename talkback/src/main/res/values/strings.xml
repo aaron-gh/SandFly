@@ -1119,9 +1119,9 @@
     <string name="overview_empty">No recent apps</string>
     <!-- Shown in SandFly's overview when the recent apps can't be read through Shizuku. [CHAR_LIMIT=NONE] -->
     <string name="overview_unavailable">Recent apps unavailable</string>
-    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview because Shizuku isn't running. [CHAR_LIMIT=NONE] -->
+    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview, or a quick settings tile command can't run, because Shizuku isn't running. [CHAR_LIMIT=NONE] -->
     <string name="overview_shizuku_not_running">Shizuku not running</string>
-    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview because Shizuku doesn't allow SandFly. [CHAR_LIMIT=NONE] -->
+    <!-- Spoken when the system's recent apps screen opens in place of SandFly's overview, or a quick settings tile command can't run, because Shizuku doesn't allow SandFly. [CHAR_LIMIT=NONE] -->
     <string name="overview_shizuku_not_allowed">Shizuku doesn\'t allow SandFly</string>
     <!-- Spoken when a feature that needs root can't run because su doesn't give SandFly root, with Use root instead of Shizuku on. [CHAR_LIMIT=NONE] -->
     <string name="no_root_access">No root access</string>
@@ -1231,6 +1231,8 @@
     <string name="quick_settings_no_system_tiles">No system tiles to add</string>
     <!-- Spoken when SandFly can't find a tile in the system's quick settings to use it. %1$s is the tile's name. [CHAR_LIMIT=NONE] -->
     <string name="quick_settings_tile_not_found">%1$s isn\'t in the system\'s quick settings</string>
+    <!-- Spoken when a quick settings tile command fails, such as when the system's quick settings don't open or SystemUI rejects the command. %1$s is the tile's name. [CHAR_LIMIT=NONE] -->
+    <string name="quick_settings_tile_failed"><xliff:g id="tile_name" example="Hotspot">%1$s</xliff:g> failed</string>
     <!-- A screen timeout in SandFly's quick settings panel: the screen never turns off by itself. [CHAR_LIMIT=NONE] -->
     <string name="quick_settings_never">Never</string>
     <!-- A screen timeout in SandFly's quick settings panel, in seconds. [CHAR_LIMIT=NONE] -->
@@ -2356,6 +2358,10 @@
     <string name="shortcut_title_open_app">Open app</string>
     <!-- Title of the list of commands that run other features' accessibility shortcuts, such as Reading mode's. [CHAR_LIMIT=NONE] -->
     <string name="shortcut_title_accessibility_shortcuts">Accessibility shortcuts</string>
+    <!-- Title of the list of commands that activate the quick settings tiles of installed apps. [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_title_app_tiles">App tiles</string>
+    <!-- Title of the list of commands that activate the system's own quick settings tiles, such as Hotspot or Screen record, that SandFly last found in the system's quick settings. [CHAR_LIMIT=NONE] -->
+    <string name="shortcut_title_system_tiles">System tiles</string>
     <!-- Name of a shortcut that opens an app, such as "Open Gmail". [CHAR_LIMIT=NONE] -->
     <string name="shortcut_open_app">Open <xliff:g id="app_name" example="Gmail">%1$s</xliff:g></string>
     <!-- Title of the list of commands that open app shortcuts, as a long press on an app's icon on the home screen offers, and of the screen that adds them. [CHAR_LIMIT=NONE] -->

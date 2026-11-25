@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.backup
 
 import android.content.Context
+import com.google.android.accessibility.talkback.quicksettings.SystemTiles
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -95,6 +96,18 @@ class SettingsBackupTest {
     prefs.edit().putString("pref_speech_control_connected_apps", "com.example.second").commit()
     assertTrue(SettingsBackup.import(context, json))
     assertEquals("com.example.second", prefs.getString("pref_speech_control_connected_apps", null))
+  }
+
+  @Test
+  fun quickSettingsTilesFoundStayOnThePhone() {
+    prefs.edit().putString(SystemTiles.PREF_FOUND, "first-tiles").commit()
+    val json = SettingsBackup.export(context)
+    assertFalse(json.contains("first-tiles"))
+    assertTrue(SettingsBackup.isKeptOutOfProfiles(SystemTiles.PREF_FOUND))
+
+    prefs.edit().putString(SystemTiles.PREF_FOUND, "second-tiles").commit()
+    assertTrue(SettingsBackup.import(context, json))
+    assertEquals("second-tiles", prefs.getString(SystemTiles.PREF_FOUND, null))
   }
 
   @Test

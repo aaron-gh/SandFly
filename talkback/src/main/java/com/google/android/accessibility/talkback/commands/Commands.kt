@@ -33,6 +33,7 @@ import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut as Key
 import com.google.android.accessibility.talkback.macros.Macros
+import com.google.android.accessibility.talkback.quicksettings.TileCommands
 import com.google.android.accessibility.talkback.recognition.LiveRecognition
 import com.google.android.accessibility.talkback.recognition.RecognitionMode
 import com.google.android.accessibility.talkback.sandflyai.SandflyAi
@@ -188,6 +189,9 @@ object Commands {
     AccessibilityShortcutActions.label(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
+    TileCommands.label(context, value)?.let {
+      return Command(value, it, keyboardAction = null)
+    }
     gestureProfileLabel(context, value)?.let {
       return Command(value, it, keyboardAction = null)
     }
@@ -247,6 +251,7 @@ object Commands {
     OpenAppActions.label(context, value)
       ?: AppShortcutActions.label(context, value)
       ?: AccessibilityShortcutActions.label(context, value)
+      ?: TileCommands.label(context, value)
       ?: gestureProfileLabel(context, value)
       ?: BrailleCommands.label(context, SharedPreferencesUtils.getSharedPreferences(context), value)
       ?: readingControlListLabel(context, value)
@@ -356,6 +361,8 @@ object Commands {
         openApp()
         appShortcuts()
         accessibilityShortcuts()
+        tiles(R.string.shortcut_title_app_tiles, TileCommands.appTiles(context))
+        tiles(R.string.shortcut_title_system_tiles, TileCommands.systemTiles(context))
       }
       return categories
     }
@@ -1455,6 +1462,13 @@ object Commands {
       category(R.string.shortcut_title_accessibility_shortcuts) {
         for (target in AccessibilityShortcutActions.targets(context)) {
           commands.add(Command(target.value, target.label, keyboardAction = null))
+        }
+      }
+
+    private fun tiles(@StringRes titleRes: Int, tiles: List<TileCommands.Tile>) =
+      category(titleRes) {
+        for (tile in tiles) {
+          commands.add(Command(tile.value, tile.label, keyboardAction = null))
         }
       }
   }

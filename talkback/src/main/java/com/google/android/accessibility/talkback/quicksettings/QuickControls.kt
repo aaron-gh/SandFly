@@ -302,6 +302,17 @@ class QuickControls(private val context: Context) {
   /** Whether SandFly changes a switch through Shizuku. */
   fun usesShizuku(control: QuickControl): Boolean = control in COMMANDS
 
+  /** Whether [setSwitch] could change [control] only through Shizuku, which isn't running. */
+  fun needsShizuku(control: QuickControl): Boolean =
+    !ShizukuGrants.isReady() &&
+      when (control) {
+        QuickControl.AUTO_ROTATE,
+        QuickControl.ADAPTIVE_BRIGHTNESS -> !Settings.System.canWrite(context)
+        else ->
+          control in COMMANDS ||
+            (control in SECURE_SWITCHES && !ShizukuGrants.Grant.WRITE_SECURE_SETTINGS.isGranted(context))
+      }
+
   /**
    * Reads the switches that only the shell can read, which needs Shizuku to allow SandFly
    * already, then calls [onDone] if the panel is still open.

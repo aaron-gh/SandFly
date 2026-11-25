@@ -139,7 +139,7 @@ Go to **Quick settings** > **Quick settings panel**, or select **Edit** in the p
 
 - **Add control**: lists the controls of SandFly that aren't in the panel: Wi-Fi, Bluetooth, mobile data, hotspot, airplane mode, data saver, Do Not Disturb, sound mode, flashlight, flashlight brightness, location, auto-rotate, battery saver, dark theme, Night Light, Extra dim, color inversion, color correction, NFC, microphone access, camera access, brightness, adaptive brightness, screen timeout, font size, display size, media, media output, the media, call, ring, notification, alarm, accessibility and system volumes, next alarm, battery, Settings and power menu. Controls that the phone doesn't have aren't listed.
 - **Add app tile**: lists the quick settings tiles that installed apps offer.
-- **Add system tile**: lists the tiles of the system quick settings. A system tile that SandFly has a control for, such as Hotspot, is added as that control.
+- **Add system tile**: lists the tiles of the system quick settings. A system tile that SandFly has a control for, such as Hotspot, is added as that control. With Shizuku running, SandFly reads the list from the system; otherwise it looks through the system quick settings, which takes a few seconds.
 - **Columns**: the number of columns in the grid, from 1 to 4. The default is 2.
 
 To move or remove an item, double-tap it, or use its actions:

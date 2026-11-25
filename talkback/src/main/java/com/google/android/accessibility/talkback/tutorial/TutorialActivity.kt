@@ -66,6 +66,7 @@ import com.google.android.accessibility.talkback.keyboard.KeyCombo
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.keyboard.SandFlyKey
 import com.google.android.accessibility.talkback.keyboard.TalkBackPhysicalKeyboardShortcut
+import com.google.android.accessibility.talkback.quicksettings.TileCommands
 import com.google.android.accessibility.talkback.selector.SelectorController
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -681,6 +682,7 @@ class TutorialActivity : AppCompatActivity() {
     OpenAppActions.isAction(action) ||
       AppShortcutActions.isAction(action) ||
       AccessibilityShortcutActions.isAction(action) ||
+      TileCommands.isAction(action) ||
       TutorialLessons.LEAVING_ACTIONS.any { commandValue(it) == action }
 
   /** Starts the wait before the instruction is said again, as the user has done something. */
