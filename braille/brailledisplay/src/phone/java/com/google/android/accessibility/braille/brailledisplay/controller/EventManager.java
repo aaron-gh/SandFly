@@ -177,7 +177,9 @@ public class EventManager implements EventConsumer {
       boolean currentWindowActive = behaviorIme.isOnscreenKeyboardActive();
       if (windowActive != currentWindowActive) {
         windowActive = currentWindowActive;
-        displayKeyboardVisibilityChangedTimedMessage(windowActive);
+        if (windowActive || !behaviorNavigation.consumePanKeyboardDismissal()) {
+          displayKeyboardVisibilityChangedTimedMessage(windowActive);
+        }
       }
     }
     // Update learning mode state based on focused activity.

@@ -32,7 +32,6 @@ import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.inputmethodservice.InputMethodService;
 import android.os.Build;
 import android.provider.Settings;
 import android.text.Spannable;
@@ -49,7 +48,6 @@ import android.view.Display;
 import android.view.Surface;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
 import androidx.annotation.ColorInt;
@@ -361,25 +359,6 @@ public class Utils {
   public static boolean isPhonePermissionGranted(Context context) {
     return ContextCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE)
         == PackageManager.PERMISSION_GRANTED;
-  }
-
-  /** Returns text of the editor action. */
-  public static CharSequence getActionLabel(
-      InputMethodService inputMethodService, EditorInfo editorInfo) {
-    CharSequence action = null;
-    if (editorInfo == null) {
-      return "";
-    }
-    if (editorInfo.actionLabel != null) {
-      action = editorInfo.actionLabel;
-    }
-    if (action == null) {
-      action = inputMethodService.getTextForImeAction(editorInfo.imeOptions);
-    }
-    if (action == null) {
-      return "";
-    }
-    return action;
   }
 
   /** Returns hint of the edit field. */

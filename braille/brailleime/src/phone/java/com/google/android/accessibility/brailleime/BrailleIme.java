@@ -140,6 +140,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BooleanSupplier;
 
 /**
  * An input method intended for blind/low-vision users that displays braille dot touch targets and
@@ -948,7 +949,24 @@ public class BrailleIme extends InputMethodService {
     int editorAction = editorInfo.imeOptions & EditorInfo.IME_MASK_ACTION;
     BrailleImeLog.d(TAG, "performEnterAction editorAction = " + editorAction);
     if (SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
-      clickSendButton(inputConnection, editorInfo, editorAction, /* attempt= */ 0, hideUnlessSent);
+      clickSendButton(
+          editorInfo,
+          /* attempt= */ 0,
+          () -> {
+            if (hideUnlessSent) {
+              hideAfterSubmit();
+            }
+            if (hasEditorAction(editorAction)) {
+              performEditorAction(inputConnection, editorInfo, editorAction);
+            } else if (!isMultiLine(editorInfo)) {
+              sendEnterKey(inputConnection);
+              speakSubmitting();
+            } else {
+              BrailleCommonTalkBackSpeaker.getInstance()
+                  .speak(getString(R.string.perform_action_no_send_button));
+            }
+          },
+          () -> true);
     } else {
       performEditorAction(inputConnection, editorInfo, editorAction);
     }
@@ -977,45 +995,35 @@ public class BrailleIme extends InputMethodService {
     }
   }
 
-  /**
-   * Presses the send button next to the field, trying again while the app updates for the text
-   * just committed, since some, like WhatsApp, only show it once the field has text. Without one,
-   * performs the editor action, or presses enter in a single line field. With {@code
-   * hideUnlessSent}, hides the braille keyboard unless the send button was pressed.
-   */
+  /** Retries while the app updates its Send button for the newly committed text. */
   private void clickSendButton(
-      InputConnection inputConnection,
-      EditorInfo editorInfo,
-      int editorAction,
-      int attempt,
-      boolean hideUnlessSent) {
+      EditorInfo editorInfo, int attempt, Runnable onNotSent, BooleanSupplier canSend) {
     mainHandler.postDelayed(
         () -> {
+          if (!canSend.getAsBoolean()) {
+            return;
+          }
           if (talkBackForBrailleIme != null
               && talkBackForBrailleIme.clickSendButton(getSendWords(editorInfo))) {
             speakSubmitting();
-            return;
-          }
-          if (attempt + 1 < SEND_BUTTON_ATTEMPT_DELAYS_MS.length) {
-            clickSendButton(inputConnection, editorInfo, editorAction, attempt + 1, hideUnlessSent);
-            return;
-          }
-          if (hideUnlessSent) {
-            hideAfterSubmit();
-          }
-          if (hasEditorAction(editorAction)) {
-            performEditorAction(inputConnection, editorInfo, editorAction);
-          } else if (!isMultiLine(editorInfo)) {
-            inputConnection.sendKeyEvent(
-                new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
-            inputConnection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
-            speakSubmitting();
+          } else if (attempt + 1 < SEND_BUTTON_ATTEMPT_DELAYS_MS.length) {
+            clickSendButton(editorInfo, attempt + 1, onNotSent, canSend);
           } else {
-            BrailleCommonTalkBackSpeaker.getInstance()
-                .speak(getString(R.string.perform_action_no_send_button));
+            onNotSent.run();
           }
         },
         SEND_BUTTON_ATTEMPT_DELAYS_MS[attempt]);
+  }
+
+  private boolean performDisplayEnterFallback(InputConnection connection, EditorInfo editor) {
+    int action = SubmitAction.editorActionForEnter(editor.imeOptions);
+    return (action != EditorInfo.IME_ACTION_NONE && connection.performEditorAction(action))
+        || sendEnterKey(connection);
+  }
+
+  private static boolean sendEnterKey(InputConnection connection) {
+    return connection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))
+        && connection.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
   }
 
   /** Returns the words a send button for {@code editorInfo} can be labeled with. */
@@ -2212,7 +2220,6 @@ public class BrailleIme extends InputMethodService {
                       BrailleCommonUtils.getTextSelection(getCurrentInputConnection()))
                   .setIsMultiLine(
                       EditBufferUtils.isMultiLineField(getCurrentInputEditorInfo().inputType))
-                  .setAction(Utils.getActionLabel(this, getCurrentInputEditorInfo()).toString())
                   .setHint(Utils.getHint(getImeConnection()).toString())
                   .setTextMasked(
                       BrailleCommonUtils.isPasswordField(getCurrentInputEditorInfo())
@@ -2563,13 +2570,23 @@ public class BrailleIme extends InputMethodService {
 
         @Override
         public boolean commitHoldingsAndPerformEnterKeyAction() {
-          commitHoldings();
-          if (getCurrentInputConnection()
-              .sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER))) {
-            return getCurrentInputConnection()
-                .sendKeyEvent(new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_ENTER));
+          if (!isConnectionValid()) {
+            return false;
           }
-          return false;
+          InputConnection connection = getCurrentInputConnection();
+          EditorInfo editor = getCurrentInputEditorInfo();
+          commitHoldings();
+          if (SubmitAction.sendsWithButton(editor.imeOptions)) {
+            clickSendButton(
+                editor,
+                /* attempt= */ 0,
+                () -> performDisplayEnterFallback(connection, editor),
+                () -> isInputViewShown()
+                    && getCurrentInputConnection() == connection
+                    && getCurrentInputEditorInfo() == editor);
+            return true;
+          }
+          return performDisplayEnterFallback(connection, editor);
         }
 
         @Override
@@ -2595,6 +2612,12 @@ public class BrailleIme extends InputMethodService {
           }
           commitHoldings();
           return connection.performContextMenuAction(redo ? android.R.id.redo : android.R.id.undo);
+        }
+
+        @Override
+        public void hideKeyboardForDisplayNavigation() {
+          returnToPreviousKeyboardOnFinishInput = false;
+          hideSelf();
         }
 
         @Override

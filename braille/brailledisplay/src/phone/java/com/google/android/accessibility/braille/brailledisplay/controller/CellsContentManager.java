@@ -62,8 +62,7 @@ public class CellsContentManager implements CellsContentConsumer {
   abstract static class Cursor {
     enum Type {
       TEXT_FIELD,
-      HOLDINGS,
-      ACTION
+      HOLDINGS
     }
 
     static Cursor create(int position, Type cursorType) {
@@ -97,7 +96,6 @@ public class CellsContentManager implements CellsContentConsumer {
   private boolean panUpOverflow;
   private Range<Integer> holdingsRange;
   private List<Range<Integer>> onScreenRange;
-  private Range<Integer> actionRange;
   private DisplayInfoWrapper commonDisplayInfoWrapper;
   private DisplayInfoWrapper timedMessagePopupWrapper;
   private DisplayInfoWrapper timedMessageAnnouncementWrapper;
@@ -180,14 +178,12 @@ public class CellsContentManager implements CellsContentConsumer {
   public void setContent(
       List<Range<Integer>> onScreenRange,
       Range<Integer> holdingsRange,
-      Range<Integer> actionRange,
       SelectionRange selection,
       TranslationResult overlayTranslationResult,
       boolean isMultiLine,
       boolean retranslate) {
     this.onScreenRange = onScreenRange;
     this.holdingsRange = holdingsRange;
-    this.actionRange = actionRange;
     int beginningOfInput =
         onScreenRange.isEmpty()
             ? (holdingsRange.getLower() == NO_CURSOR
@@ -298,8 +294,6 @@ public class CellsContentManager implements CellsContentConsumer {
     int bytePositionInWhole = contentHelper.toWholeContentIndex(positionOnBrailleDisplay);
     if (bytePositionInWhole == NO_CURSOR) {
       throw new ExecutionException("Can't move cursor to " + positionOnBrailleDisplay, null);
-    } else if (actionRange.contains(bytePositionInWhole)) {
-      return Cursor.create(NO_CURSOR, Cursor.Type.ACTION);
     } else if (holdingsRange.contains(bytePositionInWhole)) {
       return Cursor.create(bytePositionInWhole - holdingsRange.getLower(), Cursor.Type.HOLDINGS);
     } else if (holdingsRange.getLower() != NO_CURSOR) {
