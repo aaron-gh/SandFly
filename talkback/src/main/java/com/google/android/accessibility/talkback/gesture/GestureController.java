@@ -130,6 +130,7 @@ import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFo
 import com.google.android.accessibility.talkback.focusmanagement.NavigationTarget;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
 import com.google.android.accessibility.talkback.blackberry.BlackBerryMode;
+import com.google.android.accessibility.talkback.blackberry.BlackBerryModeDialog;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping.TalkbackAction;
 import com.google.android.accessibility.talkback.interpreters.AccessibilityFocusInterpreter;
 import com.google.android.accessibility.talkback.macros.MacroRecorder;
@@ -213,6 +214,7 @@ import com.google.common.collect.ImmutableMap;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.Map;
 import java.util.Set;
 import org.checkerframework.checker.nullness.qual.NonNull;
@@ -1005,8 +1007,22 @@ public class GestureController {
                   EVENT_ID_UNTRACKED, Feedback.vibration(R.array.view_clicked_pattern)));
       speak(service.getString(R.string.shortcut_quick_tasks));
     } else if (action.equals(service.getString(R.string.shortcut_value_toggle_blackberry_mode))) {
-      BlackBerryMode.toggle(
-          service, said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said)));
+      // Turning it off is at once; turning it on asks first, as its gestures are unfamiliar to
+      // most people.
+      SettingsProfiles.inBackground(
+          service,
+          BlackBerryMode::isOn,
+          on -> {
+            Consumer<String> say =
+                said -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(said));
+            if (on) {
+              BlackBerryMode.set(service, false, say);
+            } else {
+              new BlackBerryModeDialog(
+                      service, pipeline, () -> BlackBerryMode.set(service, true, say))
+                  .showDialog();
+            }
+          });
     } else if (ReadingControlCommands.isSelection(action)) {
       result =
           selectorController.selectReadingControlByKey(

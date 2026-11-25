@@ -28,7 +28,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
-import androidx.preference.TwoStatePreference;
 import androidx.preference.PreferenceGroup;
 import androidx.preference.PreferenceScreen;
 import androidx.preference.TwoStatePreference;
@@ -40,8 +39,6 @@ import com.google.android.accessibility.talkback.NotificationActivity;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.distribution.Distribution;
 import com.google.android.accessibility.talkback.backup.SettingsBackup;
-import com.google.android.accessibility.talkback.backup.SettingsProfiles;
-import com.google.android.accessibility.talkback.blackberry.BlackBerryMode;
 import com.google.android.accessibility.talkback.TalkBackExitController;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.ImageCaptioner;
@@ -66,8 +63,6 @@ import java.util.Optional;
 
 /** Fragment that holds the preference of Talkback settings. */
 public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
-
-  private static final String BLACKBERRY_MODE_KEY = "pref_blackberry_mode_switch";
   private Context context;
   private SharedPreferences prefs;
   private SettingsMetricStore settingsMetricStore;
@@ -146,7 +141,6 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
       }
     }
     addSandflyAi();
-    setUpBlackBerryMode();
     SettingsSearch.addSearchItem(getPreferenceScreen(), () -> SettingsSearch.searchSettings(this));
   }
 
@@ -174,47 +168,9 @@ public class TalkBackPreferenceFragment extends TalkbackBaseFragment {
     screen.addPreference(ai);
   }
 
-  /** The BlackBerry mode switch, which uses or stops using BlackBerry mode's settings profile. */
-  private void setUpBlackBerryMode() {
-    TwoStatePreference blackBerry = findPreference(BLACKBERRY_MODE_KEY);
-    if (blackBerry == null) {
-      return;
-    }
-    blackBerry.setOnPreferenceChangeListener(
-        (preference, newValue) -> {
-          Context appContext = context.getApplicationContext();
-          BlackBerryMode.set(
-              appContext,
-              Boolean.TRUE.equals(newValue),
-              said -> {
-                if (isAdded()) {
-                  updateBlackBerryMode();
-                }
-              });
-          return true;
-        });
-  }
-
-  private void updateBlackBerryMode() {
-    TwoStatePreference blackBerry = findPreference(BLACKBERRY_MODE_KEY);
-    if (blackBerry == null) {
-      return;
-    }
-    Context appContext = context.getApplicationContext();
-    SettingsProfiles.inBackground(
-        appContext,
-        BlackBerryMode::isOn,
-        on -> {
-          if (isAdded()) {
-            blackBerry.setChecked(on);
-          }
-        });
-  }
-
   @Override
   public void onResume() {
     super.onResume();
-    updateBlackBerryMode();
     updateSurveyOption();
     updateTtsOverlay();
 
