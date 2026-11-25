@@ -21,6 +21,7 @@ The **Scripts** screen also has:
 
 - **Turn off all scripts**: stops all scripts. Scripts stay installed and keep their own switches.
 - **New script**: makes a script in the script builder. See [](#scripts-builder).
+- **New script from code**: installs a script that you enter as code. See [](#scripts-code).
 - **Build a script with SandFly Pro**: SandFly Pro writes a script from your description. See [](#scripts-builder-pro).
 - **Import script**: installs a script file. See [](#scripts-install).
 - **Script sources**: lists the places to find scripts. See [](#scripts-sources).
@@ -81,6 +82,8 @@ Go to **Scripts** and select the script. Its page has:
 - **Turn on**: turns the script on or off.
 - **Keep running with the screen off**: keeps the script running while the screen is off, such as for a talking clock. It is shown only for scripts that offer it, and is off when you install the script.
 - The name, description, version and author of the script, and where it runs.
+- **View code**: shows the `main.lua` file of the script, with its manifest. See [](#scripts-code).
+- **Edit code**: changes the code of the script. It is not shown for scripts made in the script builder. See [](#scripts-code).
 - **Edit in script builder**, for a script made in the script builder, or **Copy to script builder** for other scripts. See [](#scripts-builder-manage).
 - **Compatibility**: shown when the script was made for a different version of SandFly.
 - **Open homepage**: opens the web page of the script, after you confirm the address.
@@ -91,6 +94,20 @@ Go to **Scripts** and select the script. Its page has:
 - **Log**: the output and errors of the script since SandFly started. See [](#scripts-log).
 - **Clear stored data**: deletes the data that the script saved.
 - **Remove**: deletes the script, with its code, data and settings, after you confirm.
+
+#### View and edit the code of a script {#scripts-code}
+
+**View code**, on the page of a script, shows its `main.lua` file, with the manifest at the start, as text that you can read by line, word and character, and select.
+
+**Edit code**, on the page of a script that wasn't made in the script builder, opens the same file in a text field. **Save** checks the code as **Import script** checks a script file and replaces the code of the installed script. The script keeps its switch, permissions, gestures, keys, settings and stored data, and runs again with the new code. The `id` in the manifest must stay the same. If the code asks for permissions that the script didn't, the install dialog lists them first. See [](#scripts-install-dialog). The other files of a script from a `.zip` file stay as they are.
+
+**New script from code**, on the **Scripts** screen, opens an empty text field. Enter a whole `main.lua` file, with `local manifest = { ... }` before the code, and select **Save**. SandFly checks the code as it checks a script file and shows the install dialog. A manifest with the `id` of an installed script updates that script.
+
+If the code can't be installed, **Script not saved** shows the reason, and the code stays open to change. Back with changes that weren't saved asks whether to discard them.
+
+With **Update scripts automatically** on, a newer version from the source of the script replaces code changed with **Edit code**. See [](#scripts-updates).
+
+To write scripts, see [](#api-scripting).
 
 #### Script permissions {#scripts-permissions}
 

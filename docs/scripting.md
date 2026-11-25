@@ -80,7 +80,7 @@ A script is one of these:
 
 The name of the file must end in `.lua` or `.zip`. In a zip, code reaches the other files with [`require`](#lua-and-files), [`sf.readFile`](#lua-and-files), [`sf.playSound`](#speech-sound-and-vibration) and [`sf.macros.run`](#macros), and SandFly reads [translations](#translations) from the `locales` folder.
 
-To install a script, go to **Scripts** > **Import script**, or open or share a `.lua` or `.zip` file, or an `https` link to one, with **Install SandFly script**. The install dialog shows where the script came from, whether SandFly signed it, its permissions and its commands.
+To install a script, go to **Scripts** > **Import script**, or open or share a `.lua` or `.zip` file, or an `https` link to one, with **Install SandFly script**. The install dialog shows where the script came from, whether SandFly signed it, its permissions and its commands. **Scripts** > **New script from code** installs a `main.lua` entered in a text field, checked in the same way.
 
 ### The Lua environment
 
@@ -1090,6 +1090,7 @@ SandFly turns a script off after 5 errors in a minute, or after it runs out of t
 ### Reload a script
 
 *   Import the file again with **Import script**. The new code replaces the old, and stored data, settings and permission choices stay.
+*   Change the code with **Edit code** on the page of the script, and select **Save**. The same parts stay as with **Import script**.
 *   Turn the script off and on with **Turn on** on its page. The script loads again, and its variables start again.
 *   A script with `apps` loads again each time its app comes to the front.
 

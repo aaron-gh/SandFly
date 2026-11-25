@@ -68,6 +68,9 @@ class ScriptsFragment : ScriptInstallFragment() {
       store.allOff = it
     }
     screen.action(getString(R.string.script_builder_new)) { newScript() }
+    screen.action(getString(R.string.script_code_new)) {
+      startActivity(ScriptCodeActivity.newScriptIntent(requireContext()))
+    }
     com.google.android.accessibility.talkback.sandflyai.SandflyAi.features?.let { pro ->
       screen.action(getString(R.string.script_ai_build)) { pro.buildScript(requireContext(), null) }
     }
