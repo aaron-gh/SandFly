@@ -145,6 +145,7 @@ import com.google.android.accessibility.talkback.scripting.ItemInspector;
 import com.google.android.accessibility.talkback.scripting.ScriptCommands;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.talkback.calls.AnswerCall;
+import com.google.android.accessibility.talkback.calls.EndCall;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
 import com.google.android.accessibility.talkback.doubletaptaps.DoubleTapTapsApps;
@@ -479,6 +480,7 @@ public class GestureController {
     R.string.shortcut_value_lock_screen,
     R.string.shortcut_value_take_screenshot,
     R.string.shortcut_value_answer_call,
+    R.string.shortcut_value_end_call,
     R.string.shortcut_value_media_control,
     R.string.shortcut_value_dictate_or_media_control,
     R.string.shortcut_value_dictate,
@@ -864,12 +866,18 @@ public class GestureController {
           Build.VERSION.SDK_INT >= Build.VERSION_CODES.P
               && service.performGlobalAction(AccessibilityService.GLOBAL_ACTION_TAKE_SCREENSHOT);
     } else if (action.equals(service.getString(R.string.shortcut_value_answer_call))) {
-      switch (AnswerCall.answer(service, service.getVoiceActionMonitor().getCurrentCallState())) {
-        case NO_CALL -> speak(service.getString(R.string.answer_call_no_call));
-        case PERMISSION_REQUESTED -> speak(service.getString(R.string.answer_call_permission));
-        case FAILED -> result = false;
-        case ANSWERED -> {}
-      }
+      AnswerCall.answer(
+          service,
+          service.getVoiceActionMonitor().getCurrentCallState(),
+          callResult ->
+              onCallResult(
+                  callResult, R.string.answer_call_no_call, R.string.answer_call_permission));
+    } else if (action.equals(service.getString(R.string.shortcut_value_end_call))) {
+      EndCall.end(
+          service,
+          service.getVoiceActionMonitor().getCurrentCallState(),
+          callResult ->
+              onCallResult(callResult, R.string.end_call_no_call, R.string.end_call_permission));
     } else if (action.equals(service.getString(R.string.shortcut_value_previous_app))) {
       result = PreviousApp.switchTo(service);
     } else if (action.equals(service.getString(R.string.shortcut_value_older_app))) {
@@ -2037,6 +2045,19 @@ public class GestureController {
     @Override
     public boolean findText(String text, boolean forward, boolean wrap, Runnable onWrap) {
       return service.findText(text, forward, wrap, onWrap);
+    }
+  }
+
+  /**
+   * Speaks the result of Answer call or End call: {@code noCall} when there is no call, {@code
+   * permission} when Android asks for the permission, and the failure sound when it failed.
+   */
+  private void onCallResult(AnswerCall.Result callResult, int noCall, int permission) {
+    switch (callResult) {
+      case NO_CALL -> speak(service.getString(noCall));
+      case PERMISSION_REQUESTED -> speak(service.getString(permission));
+      case FAILED -> pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.sound(R.raw.complete));
+      case DONE -> {}
     }
   }
 

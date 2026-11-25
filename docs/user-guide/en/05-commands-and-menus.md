@@ -24,7 +24,7 @@ The list holds only the commands that the device supports. For example, commands
 - **Speech**: **Pause or resume speech**, **Turn speech on or off**, speech rate, pitch and volume, spoken language, voice profiles, punctuation, keyboard echo, **Use voice effects**, **Audio ducking** and **Vibration feedback**.
 - **Reading controls**: next and previous reading control, **First reading control**, **Move reading control down or forward** and **Move reading control up or backward**, **Write the letter of a reading control**, next and previous reading control list, and a **Set reading control to** command for each reading control in the list. See [](#commands-reading-controls).
 - **Text editing**: selection mode, cursor movement, select all, copy, cut, paste, **Clipboard history**, **Editing menu**, **Submit text**, **Clear text**, **Copy last spoken phrase**, **Copy text from screen**, **Continuous copy**, **Granular editing**, **Spelling / grammar suggestions**, **Search emoji**, **Choose a symbol**, **Turn editing mode on or off**, **Spell the password field**, **Dictate** and **Switch keyboard**. See [](#typing).
-- **System actions**: **Home**, **Back**, **Overview**, previous, older and newer app, **Take screenshot**, **Answer call**, **Split screen**, notifications, Quick Settings, **Lock screen**, **Power menu**, **All apps**, the accessibility shortcut, magnification, color inversion, **Write an app's name to open it**, **Type an app's name in braille to open it**, and **Start voice command**.
+- **System actions**: **Home**, **Back**, **Overview**, previous, older and newer app, **Take screenshot**, **Answer call**, **End call**, **Split screen**, notifications, Quick Settings, **Lock screen**, **Power menu**, **All apps**, the accessibility shortcut, magnification, color inversion, **Write an app's name to open it**, **Type an app's name in braille to open it**, and **Start voice command**.
 - **Media and volume**: play or pause, next and previous track, rewind, fast forward, and volume.
 - **Notifications**: read notifications, read the last notification again, stop reading, and turn notification speech and time announcements on or off. See [](#notifications).
 - **Image and screen descriptions**: **Take picture and describe**, **Describe image**, **Describe screen**, their **Speak** and **Ask about** versions, **Share image of focused item**, **Share screenshot** and **Report AI response**. With SandFly Pro, also the screen recognition commands. See [](#descriptions).
@@ -55,6 +55,15 @@ These categories list what you add yourself, and are shown only when they have c
 SandFly looks in the active window first, such as a dialog, then in the other app windows from the top. When several buttons match, the one nearest to the focused item is activated; with no focused item, the lowest one on the screen. When no button matches, SandFly says "No confirm button" or "No cancel button".
 
 To change the labels, choose the command in **Commands**, then **Button labels**, and enter one label per line. Your list replaces the built-in one. To use the built-in list again, delete every label.
+
+#### Answer call and End call {#commands-calls}
+
+**Answer call** and **End call**, in the **System actions** category and unassigned by default, act on phone calls and on the calls of apps such as WhatsApp.
+
+- **Answer call** answers the ringing call. SandFly says "No incoming call" when none rings.
+- **End call** declines the ringing call, or else ends the call in progress. SandFly says "No call" when there is none.
+
+Phone calls are answered and ended through Android. The first time, SandFly requests permission to answer calls. The calls of apps are answered, declined and ended with the buttons of their call notification. Ending a call in progress needs notification access for SandFly. See [](#notifications-access).
 
 ### Assign a gesture or keyboard shortcut to a command {#commands-assign}
 
