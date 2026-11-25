@@ -25,6 +25,7 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -40,19 +41,19 @@ import com.google.android.accessibility.braille.brailledisplay.platform.Controll
 import com.google.android.accessibility.braille.brailledisplay.platform.DisplayerInterface;
 import com.google.android.accessibility.braille.brailledisplay.platform.external.ExternalDisplayApps.State;
 import com.google.android.accessibility.braille.brltty.BrailleInputEvent;
-import fyi.quin.backtalk.braille.IBrailleDisplay;
-import fyi.quin.backtalk.braille.IBrailleDisplayHost;
+import com.google.android.accessibility.utils.DeprecatedApiNames;
+import io.github.aaron_gh.sandfly.braille.IBrailleDisplay;
+import io.github.aaron_gh.sandfly.braille.IBrailleDisplayHost;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
+import java.util.Objects;
 
 /**
- * Braille displays that other apps provide. Backtalk binds the display service of each app that the
- * user has allowed in Backtalk, and asks about apps it hasn't been told about. One display at a time
+ * Braille displays that other apps provide. SandFly binds the display service of each app that the
+ * user has allowed in SandFly, and asks about apps it hasn't been told about. One display at a time
  * drives the braille controller. A display connected through BRLTTY comes first: while one is, the
  * others wait, and one that is in use steps aside when it connects. See
  * docs/braille-display-api.md.
@@ -60,8 +61,12 @@ import java.util.Set;
 public final class ExternalBrailleDisplays {
   private static final String TAG = "ExternalBrailleDisplays";
 
-  /** A display app sends this to Backtalk to have it look for displays again. */
+  /** A display app sends this to SandFly to have it look for displays again. */
   public static final String ACTION_BRAILLE_DISPLAYS_CHANGED =
+      "io.github.aaron_gh.sandfly.action.BRAILLE_DISPLAYS_CHANGED";
+
+  /** The deprecated name of {@link #ACTION_BRAILLE_DISPLAYS_CHANGED}; see DeprecatedApiNames. */
+  public static final String LEGACY_ACTION_BRAILLE_DISPLAYS_CHANGED =
       "fyi.quin.backtalk.action.BRAILLE_DISPLAYS_CHANGED";
 
   private static final long UNLOCK_CHECK_MS = 1000;
@@ -92,6 +97,14 @@ public final class ExternalBrailleDisplays {
       new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
+          if (LEGACY_ACTION_BRAILLE_DISPLAYS_CHANGED.equals(intent.getAction())) {
+            DeprecatedApiNames.warn(
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE
+                    ? getSentFromPackage()
+                    : null,
+                LEGACY_ACTION_BRAILLE_DISPLAYS_CHANGED,
+                ACTION_BRAILLE_DISPLAYS_CHANGED);
+          }
           String packageName =
               intent.getData() == null ? null : intent.getData().getSchemeSpecificPart();
           // Apps change all the time, so look again only when one that can be a display changed.
@@ -185,10 +198,12 @@ public final class ExternalBrailleDisplays {
         ContextCompat.RECEIVER_NOT_EXPORTED);
     approvals.registerOnSharedPreferenceChangeListener(approvalsChanged);
     // Only an app that holds the permission can send this.
+    IntentFilter changed = new IntentFilter(ACTION_BRAILLE_DISPLAYS_CHANGED);
+    changed.addAction(LEGACY_ACTION_BRAILLE_DISPLAYS_CHANGED);
     ContextCompat.registerReceiver(
         context,
         displaysChanged,
-        new IntentFilter(ACTION_BRAILLE_DISPLAYS_CHANGED),
+        changed,
         ExternalDisplayApps.permissionBrailleDisplay(context),
         /* scheduler= */ null,
         ContextCompat.RECEIVER_EXPORTED);
@@ -232,7 +247,7 @@ public final class ExternalBrailleDisplays {
     }
     mainHandler.removeCallbacks(refreshWhenUnlocked);
     if (!context.getSystemService(UserManager.class).isUserUnlocked()) {
-      // After a reboot, Backtalk starts before the user is unlocked, and a display app that can't
+      // After a reboot, SandFly starts before the user is unlocked, and a display app that can't
       // run until then isn't found. The broadcast that says the user is unlocked can come many
       // seconds later, behind the rest of the boot, so if such a display is waiting, check every
       // second.
@@ -241,19 +256,21 @@ public final class ExternalBrailleDisplays {
         mainHandler.postDelayed(refreshWhenUnlocked, UNLOCK_CHECK_MS);
       }
     }
-    Set<ComponentName> allowed = allowedDisplays(0, /* ask= */ true);
+    Map<ComponentName, Boolean> allowed = allowedDisplays(0, /* ask= */ true);
     Iterator<Map.Entry<ComponentName, Connection>> it = connections.entrySet().iterator();
     while (it.hasNext()) {
       Map.Entry<ComponentName, Connection> entry = it.next();
-      if (!allowed.contains(entry.getKey())) {
+      // A display app updated from the deprecated interface to SandFly's is bound again.
+      if (!Objects.equals(allowed.get(entry.getKey()), entry.getValue().legacy)) {
         stopDisplay(entry.getValue());
         entry.getValue().unbind();
         it.remove();
       }
     }
-    for (ComponentName component : allowed) {
+    for (Map.Entry<ComponentName, Boolean> display : allowed.entrySet()) {
+      ComponentName component = display.getKey();
       if (!connections.containsKey(component)) {
-        Connection connection = new Connection(component);
+        Connection connection = new Connection(component, display.getValue());
         if (connection.bind()) {
           connections.put(component, connection);
         }
@@ -274,14 +291,17 @@ public final class ExternalBrailleDisplays {
     return !allowedDisplays(flags, /* ask= */ false).isEmpty();
   }
 
-  /** The display services of the apps the user allowed; {@code ask} asks about the others. */
-  private Set<ComponentName> allowedDisplays(int flags, boolean ask) {
-    Set<ComponentName> allowed = new HashSet<>();
-    for (Map.Entry<String, ComponentName> service :
+  /**
+   * The display services of the apps the user allowed, with whether each has only the deprecated
+   * interface; {@code ask} asks about the others.
+   */
+  private Map<ComponentName, Boolean> allowedDisplays(int flags, boolean ask) {
+    Map<ComponentName, Boolean> allowed = new HashMap<>();
+    for (Map.Entry<String, ExternalDisplayApps.DisplayService> service :
         ExternalDisplayApps.displayServices(context, flags).entrySet()) {
       State state = ExternalDisplayApps.state(context, approvals, service.getKey());
       if (state == State.ALLOWED) {
-        allowed.add(service.getValue());
+        allowed.put(service.getValue().component, service.getValue().legacy);
       } else if (state == State.UNKNOWN && ask) {
         ExternalDisplayApproval.ask(context, service.getKey());
       }
@@ -395,19 +415,33 @@ public final class ExternalBrailleDisplays {
   /** The binding to one display app's service. */
   private final class Connection implements ServiceConnection {
     final ComponentName component;
-    IBrailleDisplay display;
+    // The app's service has only the deprecated action and interface.
+    final boolean legacy;
+    ExternalDisplayer.Cells display;
     String name;
     int cellCount;
     // Started by its app, whether or not it is the display in use.
     boolean waiting;
     private boolean bound;
 
-    Connection(ComponentName component) {
+    Connection(ComponentName component, boolean legacy) {
       this.component = component;
+      this.legacy = legacy;
     }
 
     boolean bind() {
-      Intent intent = new Intent(ExternalDisplayApps.ACTION_BRAILLE_DISPLAY).setComponent(component);
+      if (legacy) {
+        DeprecatedApiNames.warn(
+            component.getPackageName(),
+            ExternalDisplayApps.LEGACY_ACTION_BRAILLE_DISPLAY,
+            ExternalDisplayApps.ACTION_BRAILLE_DISPLAY);
+      }
+      Intent intent =
+          new Intent(
+                  legacy
+                      ? ExternalDisplayApps.LEGACY_ACTION_BRAILLE_DISPLAY
+                      : ExternalDisplayApps.ACTION_BRAILLE_DISPLAY)
+              .setComponent(component);
       bound = context.bindService(intent, this, Context.BIND_AUTO_CREATE);
       if (!bound) {
         BrailleDisplayLog.w(TAG, "couldn't bind " + component.flattenToShortString());
@@ -444,9 +478,17 @@ public final class ExternalBrailleDisplays {
         connections.remove(component);
         return;
       }
-      display = IBrailleDisplay.Stub.asInterface(binder);
       try {
-        display.onHostConnected(new Host(this));
+        if (legacy) {
+          fyi.quin.backtalk.braille.IBrailleDisplay legacyDisplay =
+              fyi.quin.backtalk.braille.IBrailleDisplay.Stub.asInterface(binder);
+          display = legacyDisplay::showCells;
+          legacyDisplay.onHostConnected(new LegacyHost(new Host(this)));
+        } else {
+          IBrailleDisplay current = IBrailleDisplay.Stub.asInterface(binder);
+          display = current::showCells;
+          current.onHostConnected(new Host(this));
+        }
       } catch (RemoteException e) {
         BrailleDisplayLog.w(TAG, "couldn't connect " + name.flattenToShortString(), e);
       }
@@ -511,6 +553,35 @@ public final class ExternalBrailleDisplays {
     @Override
     public void command(String name, int argument) {
       post(() -> input(connection, commandEvent(name, argument)));
+    }
+  }
+
+  /** The host for a display app built against the deprecated interface, which calls {@link Host}. */
+  private static final class LegacyHost extends fyi.quin.backtalk.braille.IBrailleDisplayHost.Stub {
+    private final Host host;
+
+    LegacyHost(Host host) {
+      this.host = host;
+    }
+
+    @Override
+    public void start(String name, int cellCount) {
+      host.start(name, cellCount);
+    }
+
+    @Override
+    public void stop() {
+      host.stop();
+    }
+
+    @Override
+    public void brailleKeys(int dots, boolean space) {
+      host.brailleKeys(dots, space);
+    }
+
+    @Override
+    public void command(String name, int argument) {
+      host.command(name, argument);
     }
   }
 }

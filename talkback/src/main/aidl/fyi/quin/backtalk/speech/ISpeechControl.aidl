@@ -17,6 +17,9 @@
 package fyi.quin.backtalk.speech;
 
 /**
+ * Deprecated: use io.github.aaron_gh.sandfly.speech.ISpeechControl, which is the same.
+ * SandFly still takes this one from apps built against it.
+ *
  * Lets an app the user allowed speak through Backtalk. See docs/speech-api.md.
  */
 oneway interface ISpeechControl {

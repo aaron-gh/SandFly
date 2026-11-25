@@ -22,11 +22,13 @@ import android.os.Binder
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import fyi.quin.backtalk.speech.ISpeechControl
+import com.google.android.accessibility.utils.DeprecatedApiNames
+import fyi.quin.backtalk.speech.ISpeechControl as LegacySpeechControl
+import io.github.aaron_gh.sandfly.speech.ISpeechControl
 
 /**
  * Takes speech requests from apps that bind to it. Each call is checked against the app that made
- * it, which Android tells Backtalk, so it works on every version.
+ * it, which Android tells SandFly, so it works on every version.
  */
 class SpeechControlService : Service() {
   private val mainHandler = Handler(Looper.getMainLooper())
@@ -61,7 +63,42 @@ class SpeechControlService : Service() {
       }
     }
 
-  override fun onBind(intent: Intent): IBinder = binder
+  /** The same calls, for apps built against the deprecated interface from Backtalk. */
+  private val legacyBinder =
+    object : LegacySpeechControl.Stub() {
+      override fun speak(
+        text: String?,
+        interrupt: Boolean,
+        rate: Float,
+        pitch: Float,
+        volume: Float,
+      ) {
+        warnLegacy()
+        binder.speak(text, interrupt, rate, pitch, volume)
+      }
+
+      override fun stop() {
+        warnLegacy()
+        binder.stop()
+      }
+
+      override fun setTypingSpoken(spoken: Boolean) {
+        warnLegacy()
+        binder.setTypingSpoken(spoken)
+      }
+    }
+
+  override fun onBind(intent: Intent): IBinder =
+    if (intent.action == SpeechControl.LEGACY_ACTION_SPEECH_CONTROL) legacyBinder else binder
+
+  /** Read on the binder thread, as the caller is. */
+  private fun warnLegacy() {
+    DeprecatedApiNames.warn(
+      callingApps().firstOrNull(),
+      "fyi.quin.backtalk.speech.ISpeechControl",
+      "io.github.aaron_gh.sandfly.speech.ISpeechControl",
+    )
+  }
 
   /** The packages of the app making the current call. Read on the binder thread, before posting. */
   private fun callingApps(): List<String> =

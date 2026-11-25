@@ -20,17 +20,22 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import com.google.android.accessibility.utils.DeprecatedApiNames;
 
 /**
  * Asks the user, with a warning, whether an app may be a braille display. The notification that
- * Backtalk shows when it finds a new display app opens this, and a display app can open it too, with
+ * SandFly shows when it finds a new display app opens this, and a display app can open it too, with
  * {@link #ACTION_ASK} and its package name in {@link #EXTRA_PACKAGE}.
  */
 public final class ExternalDisplayApprovalActivity extends Activity {
   /** Opens the question about the app in {@link #EXTRA_PACKAGE}. */
-  public static final String ACTION_ASK = "fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY";
+  public static final String ACTION_ASK = "io.github.aaron_gh.sandfly.action.ASK_BRAILLE_DISPLAY";
 
-  public static final String EXTRA_PACKAGE = "fyi.quin.backtalk.extra.PACKAGE";
+  public static final String EXTRA_PACKAGE = "io.github.aaron_gh.sandfly.extra.PACKAGE";
+
+  // Deprecated names from Backtalk, still taken from apps; see DeprecatedApiNames.
+  public static final String LEGACY_ACTION_ASK = "fyi.quin.backtalk.action.ASK_BRAILLE_DISPLAY";
+  public static final String LEGACY_EXTRA_PACKAGE = "fyi.quin.backtalk.extra.PACKAGE";
 
   static Intent intent(Context context, String app) {
     return new Intent(ACTION_ASK)
@@ -43,9 +48,19 @@ public final class ExternalDisplayApprovalActivity extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // Also when made again, such as after rotation: the warning went with the old window.
-    String app = getIntent().getStringExtra(EXTRA_PACKAGE);
+    Intent intent = getIntent();
+    String app = intent.getStringExtra(EXTRA_PACKAGE);
+    if (app == null) {
+      app = intent.getStringExtra(LEGACY_EXTRA_PACKAGE);
+      if (app != null) {
+        DeprecatedApiNames.warn(app, LEGACY_EXTRA_PACKAGE, EXTRA_PACKAGE);
+      }
+    }
     if (app == null) {
       app = getCallingPackage();
+    }
+    if (LEGACY_ACTION_ASK.equals(intent.getAction())) {
+      DeprecatedApiNames.warn(app, LEGACY_ACTION_ASK, ACTION_ASK);
     }
     // Only an app that can be a display is asked about, and only once it's allowed is there nothing
     // to ask.

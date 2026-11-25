@@ -55,11 +55,11 @@ Apps that don't declare the permission never speak while the device is locked. T
 
 ## Binding to the service
 
-The service works on every Android version, and is the most reliable way. Copy `talkback/src/main/aidl/fyi/quin/backtalk/speech/ISpeechControl.aidl` into your app, keeping the package `fyi.quin.backtalk.speech`, then bind to it:
+The service works on every Android version, and is the most reliable way. Copy `talkback/src/main/aidl/io/github/aaron_gh/sandfly/speech/ISpeechControl.aidl` into your app, keeping the package `io.github.aaron_gh.sandfly.speech`, then bind to it:
 
 ```kotlin
 val intent =
-  Intent("fyi.quin.backtalk.action.SPEECH_CONTROL").setPackage("io.github.aaron_gh.sandfly")
+  Intent("io.github.aaron_gh.sandfly.action.SPEECH_CONTROL").setPackage("io.github.aaron_gh.sandfly")
 context.bindService(intent, connection, Context.BIND_AUTO_CREATE)
 ```
 
@@ -92,7 +92,7 @@ A broadcast is simpler to send, for example from an automation app, but SandFly 
 
 ```kotlin
 val intent =
-  Intent("fyi.quin.backtalk.action.SPEAK")
+  Intent("io.github.aaron_gh.sandfly.action.SPEAK")
     .setPackage("io.github.aaron_gh.sandfly")
     .putExtra("text", "Download finished")
     .putExtra("interrupt", false)
@@ -102,11 +102,32 @@ context.sendBroadcast(intent, null, options.toBundle())
 
 | Action | Extras |
 | --- | --- |
-| `fyi.quin.backtalk.action.SPEAK` | `text` (string, required), `interrupt` (boolean), `rate`, `pitch`, `volume` (numbers, as for `speak`) |
-| `fyi.quin.backtalk.action.STOP_SPEECH` | None |
+| `io.github.aaron_gh.sandfly.action.SPEAK` | `text` (string, required), `interrupt` (boolean), `rate`, `pitch`, `volume` (numbers, as for `speak`) |
+| `io.github.aaron_gh.sandfly.action.STOP_SPEECH` | None |
 
 SandFly ignores broadcasts that don't share their identity.
 
 ## Scripts
 
 SandFly scripts don't need any of this. They speak with `sf.speak`, as described in [Writing SandFly scripts](scripting.md).
+
+## Deprecated names
+
+These names, from Backtalk, are deprecated:
+
+| Deprecated | Use |
+| --- | --- |
+| `fyi.quin.backtalk.action.SPEECH_CONTROL` | `io.github.aaron_gh.sandfly.action.SPEECH_CONTROL` |
+| `fyi.quin.backtalk.speech.ISpeechControl` | `io.github.aaron_gh.sandfly.speech.ISpeechControl` |
+| `fyi.quin.backtalk.action.SPEAK` | `io.github.aaron_gh.sandfly.action.SPEAK` |
+| `fyi.quin.backtalk.action.STOP_SPEECH` | `io.github.aaron_gh.sandfly.action.STOP_SPEECH` |
+
+The deprecated action binds the deprecated interface, so change both together.
+
+SandFly 27.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
+
+```sh
+adb logcat -s SandFlyApi
+```
+
+The deprecated names will be removed in a later release. SandFly 0.7.0 and earlier take only the deprecated names. To work with those too, bind with the new action first and with the deprecated one when `bindService` returns false.
