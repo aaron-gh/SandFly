@@ -42,6 +42,18 @@ class FingerPath(val pointerId: Int) {
 
   /** How far the finger got from where it landed, at most. */
   fun farthestFromStart(): Float = points.maxOf { it.distanceTo(start) }
+
+  /**
+   * Adds [point] to the path. A finger held on the screen keeps sending points: past
+   * [MAX_POINTS] the last point is replaced, so that the path still ends where the finger is.
+   */
+  fun add(point: TouchPoint) {
+    if (points.size < MAX_POINTS) points += point else points[points.lastIndex] = point
+  }
+
+  companion object {
+    const val MAX_POINTS = 2000
+  }
 }
 
 /** Fingers on the screen from the first landing to the last lifting. */
@@ -119,7 +131,7 @@ class TouchRecorder {
   private fun land(event: MotionEvent, index: Int) {
     val touch = current ?: return
     val path = FingerPath(event.getPointerId(index))
-    path.points += TouchPoint(event.eventTime, event.getX(index), event.getY(index))
+    path.add(TouchPoint(event.eventTime, event.getX(index), event.getY(index)))
     touch.fingers += path
     down[path.pointerId] = path
   }
@@ -128,20 +140,21 @@ class TouchRecorder {
     for (index in 0 until event.pointerCount) {
       val path = down[event.getPointerId(index)] ?: continue
       for (h in 0 until event.historySize) {
-        path.points +=
+        path.add(
           TouchPoint(
             event.getHistoricalEventTime(h),
             event.getHistoricalX(index, h),
             event.getHistoricalY(index, h),
           )
+        )
       }
-      path.points += TouchPoint(event.eventTime, event.getX(index), event.getY(index))
+      path.add(TouchPoint(event.eventTime, event.getX(index), event.getY(index)))
     }
   }
 
   private fun lift(event: MotionEvent, index: Int) {
     val path = down.remove(event.getPointerId(index)) ?: return
-    path.points += TouchPoint(event.eventTime, event.getX(index), event.getY(index))
+    path.add(TouchPoint(event.eventTime, event.getX(index), event.getY(index)))
     path.upMs = event.eventTime
   }
 }
