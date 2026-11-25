@@ -16,11 +16,11 @@
 
 package com.google.android.accessibility.braille.brailledisplay.controller;
 
+import android.content.Context;
 import androidx.annotation.MainThread;
 import androidx.annotation.Nullable;
-import android.content.Context;
+import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayCommandProfile;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayKeys;
-import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.brltty.BrailleInputEvent;
 
 /**
@@ -71,8 +71,10 @@ public final class DisplayKeyCapture {
     if (current == null) {
       return false;
     }
-    String chord = BrailleUserPreferences.usesIosDisplayCommands(context)
-        ? DisplayKeys.boundSpaceChordKey(event.getArgument()) : null;
+    String chord = DisplayKeys.boundSpaceChordKey(event.getArgument());
+    if (chord != null && !DisplayCommandProfile.capturesPhysicalChord(context, chord)) {
+      chord = null;
+    }
     if (chord == null && DisplayKeys.passesCapture(event.getCommand())) {
       return false;
     }

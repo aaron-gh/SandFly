@@ -40,6 +40,7 @@ import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_NAVIGATE_BY_READING_GRANULARITY_OR_ADJUST_READING_CONTROL_BACKWARD;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_NAVIGATE_BY_READING_GRANULARITY_OR_ADJUST_READING_CONTROL_FORWARD;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_NEXT_READING_CONTROL;
+import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_OPEN_TALKBACK_MENU;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_PREVIOUS_READING_CONTROL;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_QUICK_SETTINGS;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_REDO_TYPING;
@@ -62,13 +63,13 @@ import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.
 import android.content.Context;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
 import com.google.android.accessibility.braille.common.DisplayKeyOverrides;
-import com.google.android.accessibility.braille.interfaces.BrailleCharacter;
 import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 /** Built-in defaults for refreshable braille displays. */
 public final class DisplayCommandProfile {
+  private static final Map<String, String> SANDFLY_DEFAULTS = createSandFlyDefaults();
   private static final Map<String, String> IOS_DEFAULTS = createIosDefaults();
 
   private DisplayCommandProfile() {}
@@ -78,18 +79,43 @@ public final class DisplayCommandProfile {
   }
 
   public static DisplayKeyOverrides applyDefaults(Context context, DisplayKeyOverrides overrides) {
-    return overrides.withDefaults(
-        BrailleUserPreferences.usesIosDisplayCommands(context) ? IOS_DEFAULTS : Collections.emptyMap());
+    return applyDefaults(BrailleUserPreferences.usesIosDisplayCommands(context), overrides);
+  }
+
+  static DisplayKeyOverrides applyDefaults(boolean ios, DisplayKeyOverrides overrides) {
+    return overrides.withDefaults(ios ? IOS_DEFAULTS : SANDFLY_DEFAULTS);
+  }
+
+  /** Whether to capture a driver-bound Space chord by its dots. */
+  public static boolean capturesPhysicalChord(Context context, String key) {
+    return SANDFLY_DEFAULTS.containsKey(key) || BrailleUserPreferences.usesIosDisplayCommands(context);
   }
 
   /** Returns the saved key for Space with the given dot numbers. */
   public static String spaceChordKey(String dots) {
-    return DisplayKeyOverrides.chordKey(new BrailleCharacter(dots).toInt());
+    int dotMask = 0;
+    for (int i = 0; i < dots.length(); i++) {
+      int bit = dots.charAt(i) - '1';
+      if (bit < 0 || bit >= 8) {
+        throw new IllegalArgumentException("Invalid braille dots: " + dots);
+      }
+      dotMask |= 1 << bit;
+    }
+    return DisplayKeyOverrides.chordKey(dotMask);
+  }
+
+  private static Map<String, String> createSandFlyDefaults() {
+    Map<String, String> defaults = new LinkedHashMap<>();
+    bindDisplay(defaults, CMD_OPEN_TALKBACK_MENU, "1348");
+    bindDisplay(defaults, CMD_EDIT_CUSTOM_LABEL, "12346");
+    bindScreenReader(defaults, "INCREASE_MEDIA_VOLUME", "345");
+    bindScreenReader(defaults, "DECREASE_MEDIA_VOLUME", "126");
+    return Collections.unmodifiableMap(defaults);
   }
 
   // https://support.apple.com/en-us/118665
   private static Map<String, String> createIosDefaults() {
-    Map<String, String> defaults = new LinkedHashMap<>();
+    Map<String, String> defaults = new LinkedHashMap<>(SANDFLY_DEFAULTS);
     bindDisplay(defaults, CMD_NAV_ITEM_PREVIOUS, "1");
     bindDisplay(defaults, CMD_NAV_ITEM_NEXT, "4");
     bindDisplay(defaults, CMD_NAV_TOP, "123");
@@ -116,8 +142,6 @@ public final class DisplayCommandProfile {
     bindDisplay(defaults, CMD_NEXT_READING_CONTROL, "56");
     bindDisplay(defaults, CMD_KEY_ENTER, "36");
     bindDisplay(defaults, CMD_GLOBAL_HOME, "125");
-    bindScreenReader(defaults, "INCREASE_VOLUME", "345");
-    bindScreenReader(defaults, "DECREASE_VOLUME", "126");
     bindDisplay(defaults, CMD_TOGGLE_KEYBOARD_VISIBILITY, "146");
     bindDisplay(defaults, CMD_LONG_PRESS_CURRENT, "356", "3678");
     bindScreenReader(defaults, "READ_FROM_CURRENT", "1235");
@@ -141,7 +165,6 @@ public final class DisplayCommandProfile {
     bindScreenReader(defaults, "PAUSE_FEEDBACK", "1234");
     bindDisplay(defaults, CMD_TOGGLE_VOICE_FEEDBACK, "134", "1347");
     bindDisplay(defaults, CMD_HELP, "13", "137");
-    bindDisplay(defaults, CMD_EDIT_CUSTOM_LABEL, "12346");
     bindDisplay(defaults, CMD_TOGGLE_BROWSE_MODE, "12345", "123457");
     bindDisplay(defaults, CMD_NAV_PAN_UP, "2");
     bindDisplay(defaults, CMD_NAV_PAN_DOWN, "5");

@@ -90,11 +90,42 @@ public class DisplayKeysTest {
   }
 
   @Test
+  public void bothProfilesHaveCustomizableMenuAndMediaVolumeChords() {
+    String menu = DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_OPEN_TALKBACK_MENU);
+    String louder = DisplayKeyOverrides.screenReaderTarget("INCREASE_MEDIA_VOLUME");
+    String quieter = DisplayKeyOverrides.screenReaderTarget("DECREASE_MEDIA_VOLUME");
+    String menuChord = DisplayKeyOverrides.chordKey(0b10001101);
+    String louderChord = DisplayKeyOverrides.chordKey(0b00011100);
+    String quieterChord = DisplayKeyOverrides.chordKey(0b00100011);
+
+    for (boolean ios : new boolean[] {false, true}) {
+      DisplayKeyOverrides overrides =
+          DisplayCommandProfile.applyDefaults(ios, DisplayKeyOverrides.parse(null));
+      assertEquals(menu, overrides.resolve(menuChord));
+      assertEquals(louder, overrides.resolve(louderChord));
+      assertEquals(quieter, overrides.resolve(quieterChord));
+      String physicalNext =
+          DisplayKeyOverrides.commandKey(BrailleInputEvent.CMD_NAV_ITEM_NEXT_SEPARATE_KEY);
+      assertEquals(
+          DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_NAV_ITEM_NEXT),
+          overrides.resolve(physicalNext));
+
+      String other = DisplayKeyOverrides.screenReaderTarget("INCREASE_VOLUME");
+      overrides.assign(other, louderChord);
+      assertEquals(other, overrides.resolve(louderChord));
+      overrides.reset(other);
+      assertEquals(louder, overrides.resolve(louderChord));
+    }
+  }
+
+  @Test
   public void separateKeysRunTheirCommandUntilAssigned() {
     int[][] separateKeys = {
       {BrailleInputEvent.CMD_NAV_PAN_UP_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_PAN_UP},
       {BrailleInputEvent.CMD_NAV_PAN_DOWN_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_PAN_DOWN},
       {BrailleInputEvent.CMD_KEY_DEL_SEPARATE_KEY, BrailleInputEvent.CMD_KEY_DEL},
+      {BrailleInputEvent.CMD_NAV_ITEM_PREVIOUS_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_ITEM_PREVIOUS},
+      {BrailleInputEvent.CMD_NAV_ITEM_NEXT_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_ITEM_NEXT},
     };
     DisplayKeyOverrides overrides = DisplayKeyOverrides.parse(null);
     for (int[] entry : separateKeys) {

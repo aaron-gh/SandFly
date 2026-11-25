@@ -31,10 +31,10 @@ note * Some models have a round key in the middle - it's the internal menu key.
 ####################
 
 bind ThumbLeft+ThumbRight HOME
-bind \{left} FWINLT
-bind \{right} FWINRT
-bind \{previous} LNUP
-bind \{next} LNDN
+bind \{left} KEY_FUNCTION+224
+bind \{right} KEY_FUNCTION+225
+bind \{previous} KEY_FUNCTION+227
+bind \{next} KEY_FUNCTION+228
 
 bind \{left}+\{previous} TOP_LEFT
 bind \{left}+\{next} BOT_LEFT
