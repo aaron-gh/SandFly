@@ -8,6 +8,10 @@
 
 <!-- Features: link the agreed issue, such as "Closes #123". Bug fixes: describe the problem and how it was reproduced. -->
 
+## Permissions, network and APIs
+
+<!-- New Android permissions, Shizuku or root use, exported components or intent actions, network connections and libraries, each agreed in the issue. Otherwise "None". -->
+
 ## Testing
 
 Device and Android version:
