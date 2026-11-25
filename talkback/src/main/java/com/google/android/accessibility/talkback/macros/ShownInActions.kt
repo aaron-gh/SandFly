@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.macros
 
+import java.util.Locale
+
 /**
  * The macros shown in the Actions menu of the last item asked for, kept for [reuseMillis]. One focus
  * change asks for the Actions of the focused item several times (reading control, usage hints), and
@@ -63,4 +65,38 @@ internal class ShownInActions(private val reuseMillis: Long) {
       }
     }
   }
+}
+
+/**
+ * How long the tests of Show in Actions only when conditions took for one item, by kind of test,
+ * for problem reports.
+ */
+internal class ConditionTiming(private val clock: () -> Long = System::nanoTime) {
+  private val counts = LinkedHashMap<String, Int>()
+  private val nanos = LinkedHashMap<String, Long>()
+
+  /** Runs [check], the check of [test], and adds the time it took to its kind of test. */
+  fun <T> time(test: Macros.Test, check: () -> T): T {
+    val start = clock()
+    try {
+      return check()
+    } finally {
+      val kind = test::class.java.simpleName
+      counts[kind] = (counts[kind] ?: 0) + 1
+      nanos[kind] = (nanos[kind] ?: 0L) + (clock() - start)
+    }
+  }
+
+  /** Whether no test was checked, as when the result for the item was reused. */
+  val isEmpty: Boolean
+    get() = counts.isEmpty()
+
+  /** Such as "3 tests in 45.0 ms: ItemOnScreen 2 in 40.0 ms, FocusedItem 1 in 5.0 ms". */
+  fun describe(): String {
+    val total = counts.values.sum()
+    return "$total ${if (total == 1) "test" else "tests"} in ${millis(nanos.values.sum())}: " +
+      counts.keys.joinToString(", ") { "$it ${counts[it]} in ${millis(nanos[it] ?: 0L)}" }
+  }
+
+  private fun millis(nanos: Long): String = String.format(Locale.ROOT, "%.1f ms", nanos / 1_000_000.0)
 }
