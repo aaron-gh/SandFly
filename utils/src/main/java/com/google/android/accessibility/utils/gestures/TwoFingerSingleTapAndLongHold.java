@@ -29,7 +29,7 @@ import com.google.android.accessibility.utils.Performance.EventId;
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 class TwoFingerSingleTapAndLongHold extends MultiFingerMultiTap {
 
-  private static final int LONG_HOLD_TIMEOUT_MS = 5000;
+  private static final int LONG_HOLD_TIMEOUT_MS = GestureConfiguration.TWO_FINGER_LONG_HOLD_MS;
 
   TwoFingerSingleTapAndLongHold(
       Context context, int gestureId, StateChangeListener listener, AnalyticsEventLogger logger) {

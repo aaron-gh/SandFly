@@ -29,6 +29,7 @@ import android.os.PowerManager
 import android.os.SystemClock
 import android.view.accessibility.AccessibilityEvent
 import com.google.android.accessibility.talkback.R
+import com.google.android.accessibility.talkback.trainer.GestureTrainerHooks
 import com.google.android.accessibility.utils.AccelerometerShare
 import com.google.android.accessibility.utils.AccessibilityEventListener
 import com.google.android.accessibility.utils.Performance.EventId
@@ -164,8 +165,9 @@ class AccelerometerGestures(
           override fun onTaps(count: Int) {
             val key = tapKeys.getOrNull(count - 2) ?: return
             mainHandler.post {
-              // Taps reported just before the readings stopped run nothing.
-              if (sensorListener != null) {
+              // Taps reported just before the readings stopped run nothing, and the gesture
+              // trainer takes back taps while it waits for tries.
+              if (sensorListener != null && !GestureTrainerHooks.isWaitingForAttempts()) {
                 perform(key)
               }
             }
@@ -182,7 +184,8 @@ class AccelerometerGestures(
         detector.dropTaps(timeNs)
         LogUtils.d(TAG, "Shake")
         mainHandler.post {
-          if (sensorListener != null && shakeUsed) {
+          // The gesture trainer takes shakes while it waits for tries.
+          if (sensorListener != null && shakeUsed && !GestureTrainerHooks.isWaitingForAttempts()) {
             perform(shakeKey)
           }
         }

@@ -176,6 +176,7 @@ import com.google.android.accessibility.talkback.selector.SwipeValueDirection;
 import com.google.android.accessibility.talkback.status.StatusReader;
 import com.google.android.accessibility.talkback.trainingcommon.TrainingActivity;
 import com.google.android.accessibility.talkback.trainingcommon.content.TutorialGestureUses;
+import com.google.android.accessibility.talkback.trainer.GestureTrainerHooks;
 import com.google.android.accessibility.talkback.tutorial.TutorialHooks;
 import com.google.android.accessibility.talkback.utils.DateTimeUtils;
 import com.google.android.accessibility.talkback.utils.DebugProperties;
@@ -1683,6 +1684,9 @@ public class GestureController {
     if (gestureId == GESTURE_FAKED_SPLIT_TYPING_AND_HOLD) {
       // The intended behavior is simulating the non-customizable gesture "double-tap-and-hold".
       gestureId = GESTURE_DOUBLE_TAP_AND_HOLD;
+    }
+    if (GestureTrainerHooks.onGesture(gestureId)) {
+      return;
     }
     if (gestureHandledByTraining(gestureId, /* isFingerprintGesture= */ false)) {
       return;

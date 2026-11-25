@@ -21,6 +21,7 @@ import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.backup.SettingsBackup;
 import com.google.android.accessibility.talkback.distribution.Distribution;
+import com.google.android.accessibility.talkback.trainer.GestureTrainerActivity;
 import com.google.android.accessibility.talkback.training.TutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.TvTutorialInitiator;
 import com.google.android.accessibility.talkback.trainingcommon.tv.VendorConfigReader;
@@ -82,6 +83,14 @@ public class AdvancedSettingFragment extends TalkbackBaseFragment {
         practice.setVisible(false);
       } else {
         practice.setIntent(TutorialInitiator.createPracticeGesturesIntent(getContext()));
+      }
+    }
+    Preference trainer = findPreference(getString(R.string.pref_gesture_trainer_entry_point_key));
+    if (trainer != null) {
+      if (FormFactorUtils.isAndroidWear() || FormFactorUtils.isAndroidTv()) {
+        trainer.setVisible(false);
+      } else {
+        trainer.setIntent(GestureTrainerActivity.intent(getContext()));
       }
     }
   }

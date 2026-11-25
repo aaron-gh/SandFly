@@ -5,6 +5,7 @@
 - **User guide**: this guide. See [](#getting-started-user-guide).
 - **SandFly tutorial**: the interactive tutorial. See [](#help-tutorial).
 - **Practice gestures**: the gesture practice lesson of the tutorial. See [](#help-tutorial).
+- **Gesture trainer**: exercises that measure gestures against the limits SandFly uses. See [](#gestures-trainer).
 - **Send feedback**: problem reports and suggestions to the SandFly developer, and the replies. See [](#help-feedback).
 - **Version history**: the release notes of every SandFly release. See [](#help-version-history).
 - **Privacy policy**: the SandFly privacy policy. See [](#help-version-history).

@@ -71,11 +71,14 @@ object EdgeMenus {
   class Menu(private val commands: List<String>) {
     private var names: List<String>? = null
 
+    /** Whether the menu is the gesture trainer's sample menu, whose items run no commands. */
+    private var sample = false
+
     val size: Int
       get() = commands.size
 
     /** The command at [index], or null when there is none. */
-    fun command(index: Int): String? = commands.getOrNull(index)
+    fun command(index: Int): String? = if (sample) null else commands.getOrNull(index)
 
     /** The name of the command at [index], as the command lists show it. */
     fun name(context: Context, index: Int): String {
@@ -92,6 +95,14 @@ object EdgeMenus {
 
     companion object {
       @JvmField val NONE = Menu(emptyList())
+
+      /** A menu of items named [names] that run no commands, for the gesture trainer. */
+      @JvmStatic
+      fun sample(names: List<String>): Menu =
+        Menu(names).also {
+          it.sample = true
+          it.names = names
+        }
     }
   }
 }

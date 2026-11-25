@@ -126,6 +126,7 @@ import com.google.android.accessibility.talkback.gesture.PinchTracker;
 import com.google.android.accessibility.talkback.gesture.SwipesBeforeLift;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.touchlock.TouchLock;
+import com.google.android.accessibility.talkback.trainer.GestureTrainerHooks;
 import com.google.android.accessibility.talkback.gesture.TapToTypeTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.TwoFingerScrubTracker;
@@ -590,7 +591,8 @@ public class TouchInteractionMonitor
               public boolean swipesBeforeLiftWhenNothingFollows() {
                 // Practice gestures says the back-and-forth or angle gesture performed.
                 return swipesBeforeLiftSupported
-                    && !GestureController.trainingTakesTwoDirectionSwipes();
+                    && !GestureController.trainingTakesTwoDirectionSwipes()
+                    && !GestureTrainerHooks.isWaitingForAttempts();
               }
 
               @Override
@@ -598,7 +600,8 @@ public class TouchInteractionMonitor
                 // Practice gestures and the tutorial's practice lesson say every gesture
                 // performed, assigned or not.
                 return !GestureController.trainingTakesGestures()
-                    && !TutorialHooks.takesAllGestures();
+                    && !TutorialHooks.takesAllGestures()
+                    && !GestureTrainerHooks.isWaitingForAttempts();
               }
             },
             logger,
@@ -859,6 +862,12 @@ public class TouchInteractionMonitor
    */
   private int edgeMenuItemCount(MenuEdge edge) {
     EdgeMenus.Menu menu = edge == MenuEdge.LEFT ? leftEdgeMenu : rightEdgeMenu;
+    if (menu.getSize() == 0) {
+      List<String> practiceItems = GestureTrainerHooks.practiceMenuItems(edge);
+      if (practiceItems != null) {
+        menu = EdgeMenus.Menu.sample(practiceItems);
+      }
+    }
     if (edgeGesturesOff || menu.getSize() == 0 || isOnKeyboard(lastFingerX, lastFingerY)) {
       touchEdgeMenu = EdgeMenus.Menu.NONE;
       return 0;
@@ -1001,6 +1010,8 @@ public class TouchInteractionMonitor
       }
       return;
     }
+    // After the touch lock: a locked touch is no try of the gesture trainer either.
+    GestureTrainerHooks.onTouch(event);
     runDueCornerTapTimeout(event);
     trackFingerAtScreenEdge(event);
     if (exploringKeyboard) {
@@ -1300,6 +1311,10 @@ public class TouchInteractionMonitor
       // The interaction has ended, so taps in a corner waiting for the next tap end now, in the
       // state they were made in, rather than at their timeout in CLEAR.
       onCornerTapResult(cornerTapTracker.resolveNow());
+      GestureTrainerHooks.onTouchInteractionEnded(
+          SystemClock.uptimeMillis(),
+          // Touch exploration ends through TOUCH_INTERACTING.
+          this.state == STATE_TOUCH_EXPLORING || previousState == STATE_TOUCH_EXPLORING);
     }
     if (state == STATE_DRAGGING || state == STATE_DELEGATING || state == STATE_TOUCH_EXPLORING) {
       ScrollEventInterpreter.clearNavigation();
@@ -1735,7 +1750,12 @@ public class TouchInteractionMonitor
     // Log isDefaultDisplay/gestureId/onGestureDetectedTime. The targetGestureTimeout is the current
     // time minus lastMotionEventTransmissionLatency
     Performance.getInstance().onGestureRecognized(eventId, gestureId);
-    if (gestureId == AccessibilityService.GESTURE_DOUBLE_TAP) {
+    if (GestureTrainerHooks.isWaitingForAttempts()
+        && (gestureId == AccessibilityService.GESTURE_DOUBLE_TAP
+            || gestureId == AccessibilityService.GESTURE_DOUBLE_TAP_AND_HOLD)) {
+      // The gesture trainer takes them, instead of a click or a long click on the focus.
+      dispatchGestureToMainThreadAndClear(gestureEvent);
+    } else if (gestureId == AccessibilityService.GESTURE_DOUBLE_TAP) {
       if (serviceHandlesDoubleTap) {
         dispatchGestureToMainThreadAndClear(gestureEvent);
       } else {
@@ -1790,7 +1810,9 @@ public class TouchInteractionMonitor
         y < height / 2f
             ? GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_TOP
             : GestureManifold.GESTURE_4_FINGER_SINGLE_TAP_BOTTOM;
-    if (!isGestureAssigned(half)) {
+    // The gesture trainer practising the four-finger tap takes it wherever it lands.
+    if (!isGestureAssigned(half)
+        || GestureTrainerHooks.isPractised(AccessibilityService.GESTURE_4_FINGER_SINGLE_TAP)) {
       return tap;
     }
     return new AccessibilityGestureEvent(half, tap.getDisplayId(), events);
@@ -1818,7 +1840,10 @@ public class TouchInteractionMonitor
    */
   private AccessibilityGestureEvent twoFingerDoubleTapTopAndBottom(AccessibilityGestureEvent tap) {
     int gestureId = GestureManifold.GESTURE_2_FINGER_DOUBLE_TAP_TOP_AND_BOTTOM;
-    if (latestTouchFingers != 2 || !isGestureAssigned(gestureId)) {
+    // The gesture trainer practising the two-finger double tap takes it wherever the fingers land.
+    if (latestTouchFingers != 2
+        || !isGestureAssigned(gestureId)
+        || GestureTrainerHooks.isPractised(AccessibilityService.GESTURE_2_FINGER_DOUBLE_TAP)) {
       return tap;
     }
     Point size = new Point();
@@ -2334,7 +2359,9 @@ public class TouchInteractionMonitor
   /** Returns whether the gesture runs a command, or a running script binds it. */
   private boolean isGestureAssigned(int gestureId) {
     GestureShortcutMapping mapping = service.getGestureShortcutMapping();
-    return (mapping != null && mapping.isAssigned(gestureId)) || Scripts.bindsGesture(gestureId);
+    return (mapping != null && mapping.isAssigned(gestureId))
+        || Scripts.bindsGesture(gestureId)
+        || GestureTrainerHooks.isPractised(gestureId);
   }
 
   private final EdgeSwipeTracker.Listener edgeSwipeListener =
@@ -2438,6 +2465,10 @@ public class TouchInteractionMonitor
         public void onEdgeMenuEnded(MenuEdge edge, int item) {
           @Nullable String command = touchEdgeMenu.command(item);
           touchEdgeMenu = EdgeMenus.Menu.NONE;
+          if (GestureTrainerHooks.isWaitingForAttempts()) {
+            mainHandler.post(() -> GestureTrainerHooks.onEdgeMenuChoice(edge, item));
+            return;
+          }
           if (command == null) {
             return;
           }
