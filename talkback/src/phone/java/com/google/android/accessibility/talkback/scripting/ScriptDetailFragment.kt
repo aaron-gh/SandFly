@@ -44,12 +44,20 @@ class ScriptDetailFragment : ScriptScreenFragment() {
       }
     }
     screen.info(manifest.name, context.scriptAbout(manifest))
+    screen.action(getString(R.string.script_code_view)) {
+      startActivity(ScriptCodeActivity.intent(context, scriptId, edit = false))
+    }
+    // The script builder writes the code of a built script again with each change, so only other
+    // scripts have Edit code.
     if (ScriptBuilder.isBuilt(store, scriptId)) {
       screen.link(getString(R.string.script_builder_edit), null, ScriptBuilderFragment::class.java, scriptId)
       com.google.android.accessibility.talkback.sandflyai.SandflyAi.features?.let { pro ->
         screen.action(getString(R.string.script_ai_change)) { pro.buildScript(context, scriptId) }
       }
     } else {
+      screen.action(getString(R.string.script_code_edit)) {
+        startActivity(ScriptCodeActivity.intent(context, scriptId, edit = true))
+      }
       screen.action(getString(R.string.script_builder_copy_to_builder)) {
         val id =
           try {

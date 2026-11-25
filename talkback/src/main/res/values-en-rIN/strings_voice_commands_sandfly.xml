@@ -171,4 +171,19 @@
         <item>activate {label}</item>
         <item>select {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Start voice editing</string>
+    <string name="voice_editing_on">Voice editing on</string>
+    <string name="voice_editing_off">Voice editing off</string>
+    <string name="title_pref_voice_editing_time_limit">Voice editing time limit</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minute</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minutes</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>stop editing</item>
+        <item>stop voice editing</item>
+        <item>end editing</item>
+        <item>end voice editing</item>
+        <item>voice editing off</item>
+    </string-array>
 </resources>

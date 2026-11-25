@@ -162,4 +162,19 @@
         <item>{label} ਚਾਲੂ ਕਰੋ</item>
         <item>{label} ਚੁਣੋ</item>
     </string-array>
+    <string name="shortcut_voice_editing">ਅਵਾਜ਼ੀ ਸੰਪਾਦਨ ਸ਼ੁਰੂ ਕਰੋ</string>
+    <string name="voice_editing_on">ਅਵਾਜ਼ੀ ਸੰਪਾਦਨ ਚਾਲੂ</string>
+    <string name="voice_editing_off">ਅਵਾਜ਼ੀ ਸੰਪਾਦਨ ਬੰਦ</string>
+    <string name="title_pref_voice_editing_time_limit">ਅਵਾਜ਼ੀ ਸੰਪਾਦਨ ਦੀ ਸਮਾਂ ਸੀਮਾ</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਮਿੰਟ</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> ਮਿੰਟ</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ਸੰਪਾਦਨ ਬੰਦ ਕਰੋ</item>
+        <item>ਅਵਾਜ਼ੀ ਸੰਪਾਦਨ ਬੰਦ ਕਰੋ</item>
+        <item>ਸੰਪਾਦਨ ਸਮਾਪਤ ਕਰੋ</item>
+        <item>ਅਵਾਜ਼ੀ ਸੰਪਾਦਨ ਸਮਾਪਤ ਕਰੋ</item>
+        <item>ਅਵਾਜ਼ੀ ਸੰਪਾਦਨ ਬੰਦ</item>
+    </string-array>
 </resources>

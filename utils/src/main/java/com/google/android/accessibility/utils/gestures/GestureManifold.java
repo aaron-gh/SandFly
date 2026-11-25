@@ -767,6 +767,23 @@ public class GestureManifold implements GestureMatcher.StateChangeListener {
   }
 
   /**
+   * Clears every matcher but the one-finger tap gestures that wait for a further tap, for a touch
+   * that starts after Android ended the touch interaction. Android ends it the system double-tap
+   * timeout after the finger lifts, which a longer time between one-finger taps outlasts. A kept
+   * matcher whose next tap comes too late or too far away starts over with that touch as its first
+   * tap.
+   */
+  public void clearExceptWaitingTaps() {
+    for (GestureMatcher matcher : gestures) {
+      if (matcher instanceof MultiTap taps && taps.waitsForNextTap()) {
+        taps.keepForNextInteraction();
+      } else {
+        matcher.clear();
+      }
+    }
+  }
+
+  /**
    * Listener that receives notifications of the state of the gesture detector. Listener functions
    * are called as a result of onMotionEvent(). The current MotionEvent in the context of these
    * functions is the event passed into onMotionEvent.

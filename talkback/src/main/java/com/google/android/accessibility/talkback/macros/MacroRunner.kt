@@ -34,6 +34,7 @@ import com.google.android.accessibility.talkback.TalkBackService
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo
 import com.google.android.accessibility.talkback.gesture.OpenAppActions
 import com.google.android.accessibility.talkback.labeling.TalkBackLabelManager
+import com.google.android.accessibility.talkback.report.ReportNotes
 import com.google.android.accessibility.talkback.screenelements.ScreenElements
 import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
@@ -1055,18 +1056,32 @@ object MacroRunner {
    * Returns the [macros] listed in the Actions menu of [item], an item of their app, that are shown
    * there now: those whose [Macros.Macro.actionsCondition] is met. A test that fails to run counts as
    * met, so the macro stays listed. The result for the same item and macros is reused for
-   * [SHOWN_IN_ACTIONS_REUSE_MS].
+   * [SHOWN_IN_ACTIONS_REUSE_MS]. The time the tests take in other apps is noted for problem reports.
    */
   @JvmStatic
-  fun shownInActions(service: TalkBackService, item: Any?, macros: List<Macros.Macro>): List<Macros.Macro> =
-    shownInActionsCache.get(item, macros, SystemClock.uptimeMillis()) { test ->
-      try {
-        check(service, test, emptyMap())
-      } catch (e: RuntimeException) {
-        LogUtils.w(TAG, "Actions condition of a macro not checked: %s", e)
-        true
+  fun shownInActions(service: TalkBackService, item: Any?, macros: List<Macros.Macro>): List<Macros.Macro> {
+    val timing = ConditionTiming()
+    val shown =
+      shownInActionsCache.get(item, macros, SystemClock.uptimeMillis()) { test ->
+        timing.time(test) {
+          try {
+            check(service, test, emptyMap())
+          } catch (e: RuntimeException) {
+            LogUtils.w(TAG, "Actions condition of a macro not checked: %s", e)
+            true
+          }
+        }
       }
+    val app = (item as? AccessibilityNodeInfoCompat)?.packageName?.toString()
+    if (!timing.isEmpty && app != service.packageName) {
+      val note =
+        "Actions conditions of ${macros.count { it.actionsCondition.clauses.isNotEmpty() }} macros " +
+          "in $app: ${timing.describe()}"
+      LogUtils.d(TAG, "%s", note)
+      ReportNotes.macroConditions.add(note)
     }
+    return shown
+  }
 
   /** Returns whether the macro condition test [test] is met. Called on the search thread. */
   private fun check(service: TalkBackService, test: Macros.Test, values: Map<String, String>): Boolean =

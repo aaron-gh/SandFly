@@ -500,7 +500,7 @@ realme UI reports some volume sliders as not focusable and unlabeled, so TalkBac
 
 ### realme image descriptions
 
-On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes or window changes of com.oplus.viewtalk.
+On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes, window changes, toasts or notifications of com.oplus.viewtalk.
 
 ### Telegram reply quotes
 
@@ -621,7 +621,7 @@ SandFly adds these commands, which you can assign to gestures, keyboard shortcut
 - **Lock screen**, **Power menu** and **Take screenshot**, in **System actions**.
 - **Turn magnification on or off**, in **System actions**, at the scale set in the Android magnification settings.
 - **Turn color inversion on or off**, in **System actions**. It needs Shizuku or root; without them, the Android accessibility settings open.
-- **Answer call**, in **System actions**, answers the ringing call, and announces "No incoming call" when none rings. The first time, SandFly requests permission to answer calls. While a call rings, only a volume key with **Answer call** assigned to one of its presses runs commands; Android keeps a volume key press that silences the ringer from SandFly.
+- **Answer call**, in **System actions**, answers the ringing call, and announces "No incoming call" when none rings. **End call**, in **System actions**, declines the ringing call or ends the call in progress, and announces "No call" when there is none. Phone calls go through Android; the first time, SandFly requests permission to answer calls. The calls of apps such as WhatsApp are answered, declined and ended with the buttons of their call notification; ending a call in progress needs notification access. While a phone call rings, only a volume key with **Answer call** or **End call** assigned to one of its presses runs commands; Android keeps a volume key press that silences the ringer from SandFly.
 - **Previous app**, in **System actions**, switches to the app before the one on screen. With Shizuku or root, SandFly reads the recent apps and opens that app, leaving out the launcher, and announces "No previous app" when there is none. Without them, it performs the Recents action of the system twice. **Overview**, performed again while the SandFly overview is on screen, opens the previous app the same way.
 - **Older app** and **Newer app**, in **System actions**, step through the recent apps. **Older app** opens the next older app and speaks its name; repeated, it goes further back. **Newer app** goes back toward the app where the steps started. The order of the apps is kept until 5 seconds pass without a step or an app that the steps didn't open comes to the front. SandFly announces "No older app" or "No newer app" at either end. They need Shizuku or root. Without them, **Older app** does what **Previous app** does, and **Newer app** announces "Recent apps unavailable".
 - **Write an app's name to open it**, in **System actions**, opens a writing surface on the whole screen. Write the start of the name of an app with one finger, a letter or several at a time, and SandFly speaks the first app whose name, or a later word of it, starts with what you wrote, and how many apps do: "WhatsApp, 1 of 3" for W H A. Case, spaces and accents don't count. Letters that leave no app are dropped, and SandFly announces "No apps". An app opens only when you open it, also when it is the only match. Swipe up with two fingers for the next app, down with two fingers for the previous app, left with two fingers to delete the last letter, and tap with two fingers to hear the app again. Swipe right with two fingers to switch between the language of the device and English, for app names in Latin letters. Double-tap with one finger to open the app, or swipe down with three fingers to open it in split screen. A tap closes the surface, and so do 10 seconds without a touch. Not on watches.
@@ -1317,7 +1317,7 @@ The braille languages include Mongolian, uncontracted and contracted, from the l
 
 ### Unicode braille
 
-**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
+**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. A space is the blank braille cell U+2800, which SandFly speaks as "blank braille cell" wherever it is read. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
 
 ### Custom braille characters
 
@@ -1445,7 +1445,7 @@ With **Volume keys** > **Volume keys adjust sliders** on, the volume keys change
 
 **Volume keys** > **Volume up double press**, **Volume up triple press**, **Volume up long press**, and the same three for volume down, each run a command from the list of commands for gestures. All are unassigned by default. A key with no assigned press changes the volume at once, as usual. When a key has a double or triple press assigned, a single press changes the volume 0.3 seconds after the key is released, once no further press follows. When a key has a long press assigned, holding it runs the command instead of changing the volume repeatedly. **Volume keys** > **Volume key long press duration** sets how long a key is held for its long press: **System default**, or from 0.3 to 1 second.
 
-The presses don't run commands, and the keys change the volume as usual, while the screen is off, except on an always-on display that shows the lock screen; during a phone call or while an app plays call audio; while a finger is on the screen; during continuous reading; and when the key adjusts a slider or moves the cursor. Pressing both volume keys together runs no command, so that the accessibility shortcut still works. While a call rings, only a volume key with **Answer call** assigned to one of its presses runs commands. A press kept from Android changes the volume that Android chooses for the key: that of the media session playing, including the volume of a cast session, when SandFly has notification access, or else that of the media playing or the ringer.
+The presses don't run commands, and the keys change the volume as usual, while the screen is off, except on an always-on display that shows the lock screen; during a phone call or while an app plays call audio; while a finger is on the screen; during continuous reading; and when the key adjusts a slider or moves the cursor. Pressing both volume keys together runs no command, so that the accessibility shortcut still works. While a phone call rings, only a volume key with **Answer call** or **End call** assigned to one of its presses runs commands. A press kept from Android changes the volume that Android chooses for the key: that of the media session playing, including the volume of a cast session, when SandFly has notification access, or else that of the media playing or the ringer.
 
 ### Every volume key press handled by SandFly
 
@@ -1499,6 +1499,10 @@ Words such as "please" and "can you" are left out.
 ### Chains of commands
 
 A voice command can hold several commands, joined by "then", "and then", "after that" or "afterwards", such as "open Messages then call Sam". "And" joins commands too, when each part is a command. SandFly runs the commands one after another, with a short pause after each command that changes the screen, and stops at the first command that fails. To stop a chain, start another voice command and say "stop", "cancel", "quit" or "never mind".
+
+### Voice editing
+
+**Start voice editing**, a **Text editing** command without a default gesture, records voice commands for the focused text field one after another until it runs again, a stop phrase such as "stop editing" is said, focus leaves the field, or **Voice commands** > **Voice editing time limit** passes: 5, 10, 20 or 30 minutes, 10 by default. It runs only **Text editing** and **Navigate by text** commands, "type" and a text, the text editing voice commands of TalkBack, and custom voice commands for these commands or for macros. Speech is silenced while SandFly records, and recording starts again after SandFly's speech of the result ends. TalkBack records one voice command per gesture.
 
 ### Voice commands understood with AI
 
@@ -1626,6 +1630,10 @@ With Gemini, SandFly requests as little thinking as the model allows, and reques
 ### AI actions reading control
 
 The **AI actions** reading control, in the reading controls by default, runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image**, **Share image of focused item** and **Share screenshot**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. Swipe up or down to choose an action, then double-tap to run it. Double-tap runs the action that the reading control announced until focus moves. **AI actions to include**, after **AI actions** in **Reading controls**, chooses which actions the reading control offers; all are included by default. Actions that aren't available, such as **Describe screen** in a phone language that it doesn't support, are left out, and the reading control is hidden when none is available. It needs Android 11 or later.
+
+### AI service reading control
+
+The **AI service** reading control, off by default, switches **AI services** > **AI service** between the services that are set up with a swipe up or down, and says the name of the service. **None** and SandFly Pro without a licence aren't in it. With fewer than two services set up, it says so and changes nothing. **AI service: next value** and **AI service: previous value** in **Commands** do the same.
 
 ### On-device AI
 

@@ -176,4 +176,19 @@
         <item>ενεργοποίησε {label}</item>
         <item>επίλεξε {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Έναρξη φωνητικής επεξεργασίας</string>
+    <string name="voice_editing_on">Φωνητική επεξεργασία ενεργή</string>
+    <string name="voice_editing_off">Φωνητική επεξεργασία ανενεργή</string>
+    <string name="title_pref_voice_editing_time_limit">Χρονικό όριο φωνητικής επεξεργασίας</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> λεπτό</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> λεπτά</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>σταμάτα την επεξεργασία</item>
+        <item>σταμάτα τη φωνητική επεξεργασία</item>
+        <item>τέλος επεξεργασίας</item>
+        <item>τέλος φωνητικής επεξεργασίας</item>
+        <item>απενεργοποίηση φωνητικής επεξεργασίας</item>
+    </string-array>
 </resources>

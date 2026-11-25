@@ -131,6 +131,8 @@ API keys stay on the phone: exported settings don't include them. See [](#profil
 
 When no service is set up, SandFly says "No AI service is set up. Set one up in its settings below."
 
+The **AI service** reading control, off by default, changes the same setting. Swipe up or down to switch between the services that are set up; SandFly says the name of the service. **None** and SandFly Pro without a licence aren't in it. With fewer than two services set up, SandFly says "Only one AI service set up" or "No AI service set up" and the setting stays. Add it in **Reading controls**; see [](#commands). The **AI service: next value** and **AI service: previous value** commands, in **Setting values**, do the same without selecting the reading control.
+
 #### Gemini settings {#descriptions-gemini}
 
 **Gemini settings** has two items:

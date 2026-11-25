@@ -82,4 +82,16 @@
     <string name="shortcut_app_gestures_for_app">ဤအက်ပ်အတွက် လက်ဟန်များ</string>
     <string name="title_pref_shizuku_root_screen">Shizuku နှင့် root</string>
     <string name="title_pref_use_root">Shizuku အစား root ကို သုံးရန်</string>
+    <string name="command_perform_gesture">လက်ဟန် လုပ်ရန်</string>
+    <string name="command_perform_gesture_message">လက်ဟန်ကို လုပ်ပါ။</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> ကို သတ်မှတ်၍မရပါ</string>
+    <string name="command_run">ကွန်မန်း လုပ်ဆောင်ရန်</string>
+    <string name="command_add_to_sandfly_menu">SandFly မီနူးသို့ ထည့်ရန်</string>
+    <string name="command_remove_from_sandfly_menu">SandFly မီနူးမှ ဖယ်ရှားရန်</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> ကို SandFly မီနူးသို့ ထည့်ပြီးပါပြီ</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> ကို SandFly မီနူးမှ ဖယ်ရှားပြီးပါပြီ</string>
+    <string name="commands_search_hint">ကွန်မန်းများ ရှာရန်</string>
+    <plurals name="commands_search_results">
+        <item quantity="other">ကွန်မန်း <xliff:g id="count" example="12">%d</xliff:g> ခု</item>
+    </plurals>
 </resources>

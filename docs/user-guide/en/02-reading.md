@@ -69,6 +69,7 @@ A reading control sets what a swipe up or swipe down does. Most reading controls
 - To select the previous reading control, swipe up then down, swipe left or up with three fingers, or rotate counterclockwise with two fingers.
 - To select the first reading control of the list in use, assign a gesture or keyboard shortcut to **First reading control**. It has none by default.
 - To move by the selected reading control, swipe down to go forward and swipe up to go back. These are the **Move reading control down or forward** and **Move reading control up or backward** commands.
+- On reading controls that change a value, such as **Adjust slider**, **Adjust value** and **Speech rate**, the direction of the swipe sets the change, whichever of the two commands the swipe runs: a swipe up or right increases the value, a swipe down or left decreases it. With a right-to-left language, a swipe left increases the value and a swipe right decreases it.
 
 SandFly reads the name of each reading control as you select it. Swiping right and left moves by item, whichever reading control is selected, except with **Rows and columns** in a table.
 

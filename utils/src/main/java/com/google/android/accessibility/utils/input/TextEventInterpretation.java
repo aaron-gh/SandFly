@@ -259,13 +259,21 @@ public class TextEventInterpretation extends ReadOnly {
         StringBuilderUtils.optionalTag("isPaste", mIsPasteAction),
         StringBuilderUtils.optionalTag("isClearText", isClearTextAction),
         StringBuilderUtils.optionalTag("isPassword", isPassword),
-        StringBuilderUtils.optionalText("textOrDescription", textOrDescription),
-        StringBuilderUtils.optionalText("removedText", mRemovedText),
-        StringBuilderUtils.optionalText("addedText", mAddedText),
-        StringBuilderUtils.optionalText("initialWord", mInitialWord),
-        StringBuilderUtils.optionalText("deselectedText", mDeselectedText),
-        StringBuilderUtils.optionalText("selectedText", mSelectedText),
-        StringBuilderUtils.optionalText("traversedText", mTraversedText));
+        StringBuilderUtils.optionalText("textOrDescription", loggable(textOrDescription)),
+        StringBuilderUtils.optionalText("removedText", loggable(mRemovedText)),
+        StringBuilderUtils.optionalText("addedText", loggable(mAddedText)),
+        StringBuilderUtils.optionalText("initialWord", loggable(mInitialWord)),
+        StringBuilderUtils.optionalText("deselectedText", loggable(mDeselectedText)),
+        StringBuilderUtils.optionalText("selectedText", loggable(mSelectedText)),
+        StringBuilderUtils.optionalText("traversedText", loggable(mTraversedText)));
+  }
+
+  /** The text of a password field is logged as its length only. */
+  private @Nullable CharSequence loggable(@Nullable CharSequence text) {
+    if (!isPassword || text == null) {
+      return text;
+    }
+    return "length " + text.length();
   }
 
   public static String eventTypeToString(@TextEvent int eventType) {

@@ -161,4 +161,19 @@
         <item>{label} ಅನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ</item>
         <item>{label} ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ</item>
     </string-array>
+    <string name="shortcut_voice_editing">ಧ್ವನಿ ಸಂಪಾದನೆ ಪ್ರಾರಂಭಿಸಿ</string>
+    <string name="voice_editing_on">ಧ್ವನಿ ಸಂಪಾದನೆ ಆನ್ ಆಗಿದೆ</string>
+    <string name="voice_editing_off">ಧ್ವನಿ ಸಂಪಾದನೆ ಆಫ್ ಆಗಿದೆ</string>
+    <string name="title_pref_voice_editing_time_limit">ಧ್ವನಿ ಸಂಪಾದನೆಯ ಸಮಯ ಮಿತಿ</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ನಿಮಿಷ</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> ನಿಮಿಷಗಳು</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ಸಂಪಾದನೆ ನಿಲ್ಲಿಸು</item>
+        <item>ಧ್ವನಿ ಸಂಪಾದನೆ ನಿಲ್ಲಿಸು</item>
+        <item>ಸಂಪಾದನೆ ಮುಗಿಸು</item>
+        <item>ಧ್ವನಿ ಸಂಪಾದನೆ ಮುಗಿಸು</item>
+        <item>ಧ್ವನಿ ಸಂಪಾದನೆ ಆಫ್</item>
+    </string-array>
 </resources>

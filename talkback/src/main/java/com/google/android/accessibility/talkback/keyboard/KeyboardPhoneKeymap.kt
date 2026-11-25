@@ -39,7 +39,7 @@ import com.google.android.accessibility.talkback.R
  * too, and Alt, where Alt + Shift held and Alt twice become the SandFly key's.
  */
 object KeyboardPhoneKeymap : KeymapDefaults() {
-  override val defaults: Map<Int, KeyCombo> =
+  public override val defaults: Map<Int, KeyCombo> =
     buildMap {
       // Presses that work anywhere.
       put(R.string.keycombo_shortcut_navigate_next_default, KeyCombo.modifierKeys(NONE, true))
@@ -143,7 +143,7 @@ object KeyboardPhoneKeymap : KeymapDefaults() {
   // password field (the one letter left free with the SandFly key, and two keys with Right Shift as
   // the SandFly key, where SandFly key + Shift would need both Shift keys), and Alt + Space chooses
   // a symbol, as on BlackBerry keyboards.
-  override val commandDefaults: Map<Int, KeyCombo> =
+  public override val commandDefaults: Map<Int, KeyCombo> =
     mapOf(
       R.string.shortcut_value_toggle_touch_lock to sandFly(NONE, KeyEvent.KEYCODE_L),
       R.string.shortcut_value_search_emoji to sandFly(NONE, KeyEvent.KEYCODE_O),

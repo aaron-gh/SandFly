@@ -156,4 +156,19 @@
         <item>გააქტიურე {label}</item>
         <item>აირჩიე {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">ხმოვანი რედაქტირების დაწყება</string>
+    <string name="voice_editing_on">ხმოვანი რედაქტირება ჩართულია</string>
+    <string name="voice_editing_off">ხმოვანი რედაქტირება გამორთულია</string>
+    <string name="title_pref_voice_editing_time_limit">ხმოვანი რედაქტირების დროის ლიმიტი</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> წუთი</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> წუთი</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>რედაქტირების შეწყვეტა</item>
+        <item>ხმოვანი რედაქტირების შეწყვეტა</item>
+        <item>რედაქტირების დასრულება</item>
+        <item>ხმოვანი რედაქტირების დასრულება</item>
+        <item>ხმოვანი რედაქტირების გამორთვა</item>
+    </string-array>
 </resources>

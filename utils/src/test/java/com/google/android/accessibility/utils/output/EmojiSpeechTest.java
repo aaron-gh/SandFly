@@ -122,6 +122,15 @@ public class EmojiSpeechTest {
   }
 
   @Test
+  public void namesReplaceEmojiWithoutTheSelector() {
+    // Telegram's reactions list, which sends ❤ without variation selector 16.
+    assertEquals(
+        "2 people reacted with red heart",
+        spoken(EmojiSpeech.MODE_NAMES, "2 people reacted with ❤"));
+    assertEquals("Hello © 2026 ▶", spoken(EmojiSpeech.MODE_NAMES, "Hello © 2026 ▶"));
+  }
+
+  @Test
   public void noneLeavesEmojiOut() {
     assertEquals("I love it   so much", spoken(EmojiSpeech.MODE_NONE, "I love it 👍🏽 so much"));
     assertEquals("well done", spoken(EmojiSpeech.MODE_NONE, "well👍🏽done"));

@@ -162,4 +162,19 @@
         <item>{label} सक्रिय गर्नुहोस्</item>
         <item>{label} चयन गर्नुहोस्</item>
     </string-array>
+    <string name="shortcut_voice_editing">आवाज सम्पादन सुरु गर्नुहोस्</string>
+    <string name="voice_editing_on">आवाज सम्पादन सक्रिय</string>
+    <string name="voice_editing_off">आवाज सम्पादन निष्क्रिय</string>
+    <string name="title_pref_voice_editing_time_limit">आवाज सम्पादनको समय सीमा</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> मिनेट</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> मिनेट</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>सम्पादन रोक्नुहोस्</item>
+        <item>आवाज सम्पादन रोक्नुहोस्</item>
+        <item>सम्पादन बन्द गर्नुहोस्</item>
+        <item>आवाज सम्पादन बन्द गर्नुहोस्</item>
+        <item>आवाज सम्पादन बन्द</item>
+    </string-array>
 </resources>

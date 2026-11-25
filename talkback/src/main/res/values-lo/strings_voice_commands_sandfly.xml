@@ -155,4 +155,18 @@
         <item>ເລືອກ {label}</item>
         <item>ເປີດໃຊ້ {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">ເລີ່ມການແກ້ໄຂດ້ວຍສຽງ</string>
+    <string name="voice_editing_on">ເປີດການແກ້ໄຂດ້ວຍສຽງ</string>
+    <string name="voice_editing_off">ປິດການແກ້ໄຂດ້ວຍສຽງ</string>
+    <string name="title_pref_voice_editing_time_limit">ເວລາຈຳກັດຂອງການແກ້ໄຂດ້ວຍສຽງ</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> ນາທີ</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ຢຸດແກ້ໄຂ</item>
+        <item>ຢຸດການແກ້ໄຂດ້ວຍສຽງ</item>
+        <item>ຈົບການແກ້ໄຂ</item>
+        <item>ຈົບການແກ້ໄຂດ້ວຍສຽງ</item>
+        <item>ປິດການແກ້ໄຂດ້ວຍສຽງ</item>
+    </string-array>
 </resources>

@@ -282,6 +282,9 @@ public class KeyComboManager
   /** Letter keys that press keypad buttons, on keyboards whose letters carry numbers. */
   private final @Nullable KeypadKeys keypadKeys;
 
+  /** The mute key: held in text fields, it dictates. */
+  private final @Nullable MuteKey muteKey;
+
   /** Enter that sends messages. */
   private final MessageEnterKeys messageEnterKeys;
 
@@ -290,6 +293,9 @@ public class KeyComboManager
 
   /** Keys pressed while a chooser of the SandFly keyboard was open, released there too. */
   private final Set<Integer> keysPassedToChooser = new HashSet<>();
+
+  /** Browse mode's fast search, which focuses items by their first letter or digit. */
+  private @Nullable FastSearch fastSearch;
   // Whether the user ran a SandFly command or touched the screen since a key last went to the app
   // or a new screen opened. While not, and a text field has input focus, the keyboard phone keymaps'
   // single keys and Enter go to the text field.
@@ -323,7 +329,7 @@ public class KeyComboManager
                   && matchKeyCombo
                   && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
                   && (combo.isTriggerModifierUsed() || !isPassingKeysToApp())
-                  && keyComboModel.getKeyComboMap().containsValue(combo);
+                  && keyComboModel.getKeyComboMap().containsValue(inBrowseModeIfAssigned(combo));
             }
 
             @Override
@@ -360,6 +366,17 @@ public class KeyComboManager
     this.context = context;
     keypadKeys = context instanceof AccessibilityService service ? new KeypadKeys(service) : null;
     messageEnterKeys = new MessageEnterKeys(context);
+    muteKey =
+        context instanceof AccessibilityService service
+            ? new MuteKey(
+                service,
+                command -> {
+                  if (commandPerformer != null) {
+                    commandPerformer.perform(command, EVENT_ID_UNTRACKED);
+                  }
+                  return kotlin.Unit.INSTANCE;
+                })
+            : null;
     keyPractice =
         new KeyPractice(
             context,
@@ -449,6 +466,7 @@ public class KeyComboManager
               () ->
                   accessibilityFocusMonitor.getAccessibilityFocus(
                       /* useInputFocusIfEmpty= */ false)));
+      fastSearch = new FastSearch(context, talkBack::focusItemStartingWith, this::sayNotFound);
     }
     keyComboMapper =
         new KeyComboMapper(
@@ -530,9 +548,15 @@ public class KeyComboManager
     if (keypadKeys != null) {
       keypadKeys.reset();
     }
+    if (muteKey != null) {
+      muteKey.reset();
+    }
     messageEnterKeys.reset();
     keysPassedToChooser.clear();
     editingShortcutKeys.clear();
+    if (fastSearch != null) {
+      fastSearch.clear();
+    }
     textFieldActivation.reset();
     keysPassedWhileInputOff.clear();
     keysTakenWhileInputOff.clear();
@@ -600,6 +624,16 @@ public class KeyComboManager
       return onKeyEventWhileInputOff(event);
     }
 
+    // The mute key held in a text field dictates; elsewhere it runs its own command, if it has one.
+    // After Pass the next key, it goes to the app.
+    if (muteKey != null
+        && muteKey.onKeyEvent(
+            event,
+            serviceState == SERVICE_STATE_ACTIVE
+                && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE)) {
+      return true;
+    }
+
     // While the SandFly keyboard's emoji search or symbol chooser is open, every key pressed is its
     // own, up to its release; in its editing mode, every key pressed without the SandFly key. Keys
     // pressed before, such as the shortcut that opened it, are released here.
@@ -633,6 +667,14 @@ public class KeyComboManager
     }
 
     if (onEditingShortcut(event)) {
+      arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
+      return true;
+    }
+
+    // In browse mode, the fast search key with a letter or digit focuses the next item starting
+    // with it, with Shift the previous one.
+    if (fastSearch != null && fastSearch.onKeyEvent(event, getSandFlyKey(), this::canFastSearch)) {
+      navigatedSinceTyping = true;
       arrowKeyNavKeyHandler.onKeyEventConsumedElsewhere(event);
       return true;
     }
@@ -932,6 +974,9 @@ public class KeyComboManager
     }
     if (keyCombo.isWhileEditing()) {
       return context.getString(R.string.keycombo_keys_while_editing, keys);
+    }
+    if (keyCombo.isInBrowseMode()) {
+      return context.getString(R.string.keycombo_keys_in_browse_mode, keys);
     }
     return keys;
   }
@@ -1292,6 +1337,27 @@ public class KeyComboManager
     return keyComboModel instanceof NewKeyComboModel model && model.plainKeys();
   }
 
+  /**
+   * Returns [keyCombo], pressed without the SandFly key, as the keymap's shortcut of the same keys
+   * in browse mode, where browse mode is on in a keyboard phone keymap and the keys have one;
+   * otherwise [keyCombo].
+   */
+  private KeyCombo inBrowseModeIfAssigned(KeyCombo keyCombo) {
+    if (!plainKeys()
+        || !isBrowseModeEnabled()
+        || keyCombo.isTriggerModifierUsed()
+        || keyCombo.getPrefixKeyCode() != KeyComboModel.NO_PREFIX_KEY_CODE
+        || (keyCombo.getModifiers()
+                & (KeyCombo.PRESS_TYPES | KeyCombo.WHILE_EDITING | KeyCombo.IN_BROWSE_MODE))
+            != 0) {
+      return keyCombo;
+    }
+    KeyCombo browseModeKeyCombo = keyCombo.withInBrowseMode(true);
+    return keyComboModel.getKeyComboMap().containsValue(browseModeKeyCombo)
+        ? browseModeKeyCombo
+        : keyCombo;
+  }
+
   /** Returns whether arrow keys without the SandFly key move SandFly focus, as in NVDA. */
   private boolean arrowsNavigate() {
     return keyComboModel instanceof NewKeyComboModel model && model.arrowsNavigate();
@@ -1303,6 +1369,10 @@ public class KeyComboManager
       if (keyCombo.matchWith(triggerModifier, appKey.getFirst()) != KeyCombo.NO_MATCH) {
         return true;
       }
+    }
+    KeyCombo browseModeKeyCombo = inBrowseModeIfAssigned(keyCombo);
+    if (browseModeKeyCombo != keyCombo) {
+      return true;
     }
     for (Map.Entry<String, KeyCombo> entry : keyComboModel.getKeyComboMap().entrySet()) {
       // Browse mode's letters are typing while browse mode is off, as in matchAndPerformKeyCombo.
@@ -1402,6 +1472,45 @@ public class KeyComboManager
       editingShortcutKeys.add(keyCode);
     }
     return performed;
+  }
+
+  /**
+   * Whether fast search works now: browse mode is on, keys aren't going to the app and no text
+   * field is being edited, where browse mode's letters type too.
+   */
+  private boolean canFastSearch() {
+    return serviceState == SERVICE_STATE_ACTIVE
+        && matchKeyCombo
+        && isBrowseModeEnabled()
+        && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE
+        && !sandFlyKeyHeld
+        && !isPassingKeysToApp()
+        && !isEditingTextWithAccessibilityFocus()
+        && !(plainKeys() && isTyping());
+  }
+
+  /** Says that fast search found no item. */
+  private void sayNotFound() {
+    if (fastSearchSpeech != null) {
+      fastSearchSpeech.accept(context.getString(R.string.granular_editing_not_found));
+      return;
+    }
+    if (pipeline != null) {
+      pipeline.returnFeedback(
+          EVENT_ID_UNTRACKED,
+          Feedback.speech(
+              context.getString(R.string.granular_editing_not_found), INTERRUPTIVE_SPEAK_OPTIONS));
+    }
+  }
+
+  /** Where fast search speaks, for tests; null speaks through the pipeline. */
+  private @Nullable Consumer<String> fastSearchSpeech;
+
+  /** Sets what fast search focuses items with, and where it speaks, for tests. */
+  @VisibleForTesting
+  void setFastSearch(FastSearch.Searcher searcher, Consumer<String> speech) {
+    fastSearchSpeech = speech;
+    fastSearch = new FastSearch(context, searcher, this::sayNotFound);
   }
 
   /** Whether the user is typing in a text field or SandFly focus is on the one being edited. */
@@ -1679,6 +1788,9 @@ public class KeyComboManager
             context.getString(R.string.keycombo_shortcut_navigate_previous_line),
             context.getString(R.string.keycombo_shortcut_navigate_next_paragraph),
             context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph),
+            // Second paragraph keys, which are single letters in browse mode.
+            context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph_extra),
             // Jump commands
             context.getString(R.string.keycombo_shortcut_navigate_next_aria_landmark),
             context.getString(R.string.keycombo_shortcut_navigate_previous_aria_landmark),
@@ -1710,6 +1822,8 @@ public class KeyComboManager
             context.getString(R.string.keycombo_shortcut_navigate_previous_heading_6),
             context.getString(R.string.keycombo_shortcut_navigate_next_link),
             context.getString(R.string.keycombo_shortcut_navigate_previous_link),
+            context.getString(R.string.keycombo_shortcut_navigate_next_link_extra),
+            context.getString(R.string.keycombo_shortcut_navigate_previous_link_extra),
             context.getString(R.string.keycombo_shortcut_navigate_next_list),
             context.getString(R.string.keycombo_shortcut_navigate_previous_list),
             context.getString(R.string.keycombo_shortcut_navigate_next_list_item),
@@ -2121,7 +2235,8 @@ public class KeyComboManager
       return true;
     }
     // The SandFly key with a single-key shortcut of a keyboard phone keymap does what the key does
-    // outside text fields, anywhere.
+    // outside text fields, anywhere, and outside browse mode where browse mode gives the key another
+    // shortcut.
     if (pressedTriggerModifier && plainKeys() && !KeyEvent.isModifierKey(event.getKeyCode())) {
       KeyCombo plainKeyCombo =
           new KeyCombo(
@@ -2129,7 +2244,8 @@ public class KeyComboManager
               KeyComboModel.NO_PREFIX_KEY_CODE,
               getConvertedKeyCode(event),
               /* triggerModifierUsed= */ false);
-      performedCombo = matchAndPerformKeyCombo(plainKeyCombo, triggerModifier);
+      performedCombo =
+          matchAndPerformKeyCombo(plainKeyCombo, triggerModifier, /* browseModeKeys= */ false);
       if (performedCombo) {
         return true;
       }
@@ -2186,6 +2302,15 @@ public class KeyComboManager
   }
 
   private boolean matchAndPerformKeyCombo(KeyCombo keyCombo, int triggerModifier) {
+    return matchAndPerformKeyCombo(keyCombo, triggerModifier, /* browseModeKeys= */ true);
+  }
+
+  /**
+   * Runs the shortcut [keyCombo] presses. With [browseModeKeys], keys without the SandFly key run
+   * the keymap's shortcut of the same keys in browse mode first while browse mode is on.
+   */
+  private boolean matchAndPerformKeyCombo(
+      KeyCombo keyCombo, int triggerModifier, boolean browseModeKeys) {
     // Check if it's a sequenced key combo.
     if (isSequenceKeyInfraSupported()) {
       if (keyCombo.isSequenceKeyPrefixCombo()) {
@@ -2228,10 +2353,11 @@ public class KeyComboManager
       }
     }
 
+    KeyCombo keymapKeyCombo = browseModeKeys ? inBrowseModeIfAssigned(keyCombo) : keyCombo;
     for (Map.Entry<String, KeyCombo> entry : keyComboModel.getKeyComboMap().entrySet()) {
       final String key = entry.getKey();
       final KeyCombo targetKeyCombo = entry.getValue();
-      final int match = keyCombo.matchWith(triggerModifier, targetKeyCombo);
+      final int match = keymapKeyCombo.matchWith(triggerModifier, targetKeyCombo);
       if (isBrowseModeSupported() && !browseModeEnabled && isBrowseModeOnly(key)) {
         continue;
       }

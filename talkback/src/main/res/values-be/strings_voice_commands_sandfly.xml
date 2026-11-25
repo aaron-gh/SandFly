@@ -241,4 +241,21 @@
         <item>выбяры {label}</item>
         <item>выберы {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Пачаць галасавое рэдагаванне</string>
+    <string name="voice_editing_on">Галасавое рэдагаванне ўключана</string>
+    <string name="voice_editing_off">Галасавое рэдагаванне выключана</string>
+    <string name="title_pref_voice_editing_time_limit">Ліміт часу галасавога рэдагавання</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> хвіліна</item>
+        <item quantity="few"><xliff:g id="count" example="10">%d</xliff:g> хвіліны</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> хвілін</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> хвіліны</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>спыніць рэдагаванне</item>
+        <item>спыніць галасавое рэдагаванне</item>
+        <item>завяршыць рэдагаванне</item>
+        <item>завяршыць галасавое рэдагаванне</item>
+        <item>выключыць галасавое рэдагаванне</item>
+    </string-array>
 </resources>

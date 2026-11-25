@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">此應用程式的手勢</string>
     <string name="title_pref_shizuku_root_screen">Shizuku 和 Root</string>
     <string name="title_pref_use_root">使用 Root 代替 Shizuku</string>
+    <string name="command_perform_gesture">執行手勢</string>
+    <string name="command_perform_gesture_message">請做出手勢。</string>
+    <string name="command_gesture_not_assignable">無法指派 <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">執行命令</string>
+    <string name="command_add_to_sandfly_menu">加入 SandFly 選單</string>
+    <string name="command_remove_from_sandfly_menu">從 SandFly 選單移除</string>
+    <string name="command_added_to_sandfly_menu">已將 <xliff:g id="command" example="Describe image">%1$s</xliff:g> 加入 SandFly 選單</string>
+    <string name="command_removed_from_sandfly_menu">已將 <xliff:g id="command" example="Describe image">%1$s</xliff:g> 從 SandFly 選單移除</string>
+    <string name="commands_search_hint">搜尋命令</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> 個命令</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> 個命令</item>
+    </plurals>
 </resources>

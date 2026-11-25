@@ -836,6 +836,34 @@ public class VoiceCommandProcessor {
     return recognized;
   }
 
+  /**
+   * Runs {@code command}, in lower case, when it is one of the text editing voice commands that came
+   * with TalkBack: typing, select all, selection mode, copy, cut, paste and delete. Returns whether
+   * it is one. Says nothing when it isn't. Used by voice editing, which runs only editing commands.
+   */
+  public boolean handleEditingIfRecognized(String command) {
+    if (TextUtils.isEmpty(command) || !isEditingCommand(command)) {
+      return false;
+    }
+    return handleIfRecognized(command);
+  }
+
+  /**
+   * Whether {@code command} is one of the text editing voice commands, said as the whole command,
+   * so that no other voice command before them in {@link #handleSpeechCommand} takes it.
+   */
+  private boolean isEditingCommand(String command) {
+    return equals(command, android.R.string.selectAll)
+        || equals(command, selectCommandResArray) >= 0
+        || equals(command, finishSelectCommandResArray) >= 0
+        || (startsWith(command, typeCommandResArray) >= 0
+            && startsWith(command, findCommandResArray) < 0)
+        || equals(command, R.string.voice_commands_copy)
+        || equals(command, R.string.voice_commands_cut)
+        || equals(command, R.string.voice_commands_paste)
+        || equals(command, R.string.voice_commands_delete);
+  }
+
   /** Says that {@code command} isn't a voice command, as when no command matches it. */
   public void sayNotRecognized(String command) {
     if (echoNotRecognizedTextEnabled) {

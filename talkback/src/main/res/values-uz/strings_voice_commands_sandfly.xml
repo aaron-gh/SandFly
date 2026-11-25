@@ -155,4 +155,19 @@
         <item>{label} elementini faollashtir</item>
         <item>{label} elementini tanla</item>
     </string-array>
+    <string name="shortcut_voice_editing">Ovozli tahrirlashni boshlash</string>
+    <string name="voice_editing_on">Ovozli tahrirlash yoqildi</string>
+    <string name="voice_editing_off">Ovozli tahrirlash oʻchirildi</string>
+    <string name="title_pref_voice_editing_time_limit">Ovozli tahrirlash vaqt chegarasi</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> daqiqa</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> daqiqa</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>tahrirlashni toʻxtat</item>
+        <item>ovozli tahrirlashni toʻxtat</item>
+        <item>tahrirlashni tugat</item>
+        <item>ovozli tahrirlashni tugat</item>
+        <item>ovozli tahrirlashni oʻchir</item>
+    </string-array>
 </resources>

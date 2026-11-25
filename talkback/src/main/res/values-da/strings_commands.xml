@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Bevægelser for denne app</string>
     <string name="title_pref_shizuku_root_screen">Shizuku og root</string>
     <string name="title_pref_use_root">Brug root i stedet for Shizuku</string>
+    <string name="command_perform_gesture">Udfør bevægelse</string>
+    <string name="command_perform_gesture_message">Udfør bevægelsen.</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> kan ikke tildeles</string>
+    <string name="command_run">Kør kommando</string>
+    <string name="command_add_to_sandfly_menu">Føj til SandFly-menuen</string>
+    <string name="command_remove_from_sandfly_menu">Fjern fra SandFly-menuen</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> er føjet til SandFly-menuen</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> er fjernet fra SandFly-menuen</string>
+    <string name="commands_search_hint">Søg efter kommandoer</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> kommando</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> kommandoer</item>
+    </plurals>
 </resources>

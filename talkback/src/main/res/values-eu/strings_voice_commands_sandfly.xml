@@ -162,4 +162,19 @@
         <item>aktibatu {label}</item>
         <item>hautatu {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Hasi ahots bidezko edizioa</string>
+    <string name="voice_editing_on">Ahots bidezko edizioa aktibatuta</string>
+    <string name="voice_editing_off">Ahots bidezko edizioa desaktibatuta</string>
+    <string name="title_pref_voice_editing_time_limit">Ahots bidezko edizioaren denbora-muga</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minutu</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minutu</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>utzi editatzeari</item>
+        <item>amaitu edizioa</item>
+        <item>amaitu ahots bidezko edizioa</item>
+        <item>gelditu ahots bidezko edizioa</item>
+        <item>desaktibatu ahots bidezko edizioa</item>
+    </string-array>
 </resources>

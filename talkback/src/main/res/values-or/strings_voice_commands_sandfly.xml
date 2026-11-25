@@ -159,4 +159,19 @@
         <item>{label} ସକ୍ରିୟ କରନ୍ତୁ</item>
         <item>{label} ବାଛନ୍ତୁ</item>
     </string-array>
+    <string name="shortcut_voice_editing">ଭଏସ ଏଡିଟିଂ ଆରମ୍ଭ କରନ୍ତୁ</string>
+    <string name="voice_editing_on">ଭଏସ ଏଡିଟିଂ ଚାଲୁ</string>
+    <string name="voice_editing_off">ଭଏସ ଏଡିଟିଂ ବନ୍ଦ</string>
+    <string name="title_pref_voice_editing_time_limit">ଭଏସ ଏଡିଟିଂ ସମୟ ସୀମା</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ମିନିଟ୍</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> ମିନିଟ୍</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ଏଡିଟିଂ ବନ୍ଦ କରନ୍ତୁ</item>
+        <item>ଭଏସ ଏଡିଟିଂ ବନ୍ଦ କରନ୍ତୁ</item>
+        <item>ଏଡିଟିଂ ଶେଷ କରନ୍ତୁ</item>
+        <item>ଭଏସ ଏଡିଟିଂ ଶେଷ କରନ୍ତୁ</item>
+        <item>ଭଏସ ଏଡିଟିଂ ବନ୍ଦ</item>
+    </string-array>
 </resources>

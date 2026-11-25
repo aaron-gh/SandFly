@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Ishara za programu hii</string>
     <string name="title_pref_shizuku_root_screen">Shizuku na root</string>
     <string name="title_pref_use_root">Tumia root badala ya Shizuku</string>
+    <string name="command_perform_gesture">Fanya ishara</string>
+    <string name="command_perform_gesture_message">Fanya ishara sasa.</string>
+    <string name="command_gesture_not_assignable">Haiwezekani kukabidhi <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Tekeleza amri</string>
+    <string name="command_add_to_sandfly_menu">Ongeza kwenye Menyu ya SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Ondoa kwenye Menyu ya SandFly</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> imeongezwa kwenye Menyu ya SandFly</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> imeondolewa kwenye Menyu ya SandFly</string>
+    <string name="commands_search_hint">Tafuta amri</string>
+    <plurals name="commands_search_results">
+        <item quantity="one">Amri <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">Amri <xliff:g id="count" example="12">%d</xliff:g></item>
+    </plurals>
 </resources>

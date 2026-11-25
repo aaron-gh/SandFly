@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Κινήσεις για αυτή την εφαρμογή</string>
     <string name="title_pref_shizuku_root_screen">Shizuku και root</string>
     <string name="title_pref_use_root">Χρήση root αντί για Shizuku</string>
+    <string name="command_perform_gesture">Εκτέλεση κίνησης</string>
+    <string name="command_perform_gesture_message">Εκτελέστε την κίνηση.</string>
+    <string name="command_gesture_not_assignable">Δεν είναι δυνατή η ανάθεση: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Εκτέλεση εντολής</string>
+    <string name="command_add_to_sandfly_menu">Προσθήκη στο μενού SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Κατάργηση από το μενού SandFly</string>
+    <string name="command_added_to_sandfly_menu">Προστέθηκε στο μενού SandFly: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="command_removed_from_sandfly_menu">Καταργήθηκε από το μενού SandFly: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="commands_search_hint">Αναζήτηση εντολών</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> εντολή</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> εντολές</item>
+    </plurals>
 </resources>

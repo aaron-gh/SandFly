@@ -2786,4 +2786,29 @@
     <string name="sandfly_keyboard_not_password_field">不是密碼欄位</string>
     <string name="sandfly_keyboard_password_not_available">無法取得密碼欄位文字</string>
     <string name="sandfly_keyboard_password_not_read">密碼欄位中不會讀出</string>
+    <string name="title_pref_voice_profile_play_sample">播放範例</string>
+    <string name="voice_profile_sample_text">這是這個語音設定檔的範例。</string>
+    <string name="voice_profile_sample_failed">未播放範例</string>
+    <string name="title_pref_speech_rate_step">語音速率調整幅度</string>
+    <string name="value_speech_rate_step_relative">目前速率的 <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">結束通話</string>
+    <string name="end_call_no_call">沒有通話</string>
+    <string name="end_call_permission">需要權限才能結束通話</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">前往下一個段落（第二個鍵）</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">前往上一個段落（第二個鍵）</string>
+    <string name="title_pref_mute_key_dictates">在文字欄位中按住靜音鍵進行語音輸入</string>
+    <string name="title_pref_mute_key_press">按下靜音鍵</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">前往下一個連結（第二個鍵）</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">前往上一個連結（第二個鍵）</string>
+    <string name="keycombo_only_in_browse_mode">僅限瀏覽模式</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g>（瀏覽模式）</string>
+    <string name="title_pref_category_fast_search">快速搜尋</string>
+    <string name="title_pref_fast_search_key">快速搜尋鍵</string>
+    <string name="fast_search_key_off">關閉</string>
+    <string name="title_pref_fast_search_wrap">循環瀏覽</string>
+    <string name="fast_search_key_left_alt">左 Alt</string>
+    <string name="fast_search_key_left_ctrl">左 Ctrl</string>
+    <string name="fast_search_key_right_ctrl">右 Ctrl</string>
+    <string name="fast_search_key_left_meta">左 Meta</string>
+    <string name="fast_search_key_right_meta">右 Meta</string>
 </resources>

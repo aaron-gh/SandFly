@@ -164,4 +164,19 @@
         <item>aktivoi {label}</item>
         <item>valitse {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Aloita äänimuokkaus</string>
+    <string name="voice_editing_on">Äänimuokkaus päällä</string>
+    <string name="voice_editing_off">Äänimuokkaus pois päältä</string>
+    <string name="title_pref_voice_editing_time_limit">Äänimuokkauksen aikaraja</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuutti</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minuuttia</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>lopeta muokkaus</item>
+        <item>lopeta äänimuokkaus</item>
+        <item>muokkaus valmis</item>
+        <item>äänimuokkaus valmis</item>
+        <item>äänimuokkaus pois päältä</item>
+    </string-array>
 </resources>

@@ -15,7 +15,7 @@
     <!-- Title of the notification shown while SandFly is paused. [CHAR LIMIT=NONE] -->
     <string name="notification_title_backtalk_paused">SandFly 已暂停</string>
     <!-- Text of the notification shown while SandFly is paused. Tapping it resumes SandFly. [CHAR LIMIT=NONE] -->
-    <string name="notification_message_backtalk_paused">点按以恢复</string>
+    <string name="notification_message_backtalk_paused">单击以恢复</string>
     <!-- Name of the notification channel for the notification shown while SandFly is paused, in the app's notification settings. [CHAR LIMIT=40] -->
     <string name="notification_channel_backtalk_paused">SandFly 已暂停</string>
 
@@ -26,11 +26,11 @@
     <!-- Message of the dialog that asks before pausing SandFly. [CHAR LIMIT=NONE] -->
     <string name="dialog_message_pause_backtalk">SandFly 暂停期间不会说话或响应手势，屏幕如同没有开启屏幕阅读器。</string>
     <!-- How to resume SandFly when it resumes at the lock screen. [CHAR LIMIT=NONE] -->
-    <string name="message_resume_keyguard">要恢复，请点按“SandFly 已暂停”通知、快速按三下音量减，或锁定并唤醒手机以显示锁屏。</string>
+    <string name="message_resume_keyguard">要恢复，请单击“SandFly 已暂停”通知、快速按三下音量减，或锁定并唤醒手机以显示锁屏。</string>
     <!-- How to resume SandFly when it resumes when the screen turns on. [CHAR LIMIT=NONE] -->
-    <string name="message_resume_screen_on">要恢复，请点按“SandFly 已暂停”通知、快速按三下音量减，或关闭再打开屏幕。</string>
+    <string name="message_resume_screen_on">要恢复，请单击“SandFly 已暂停”通知、快速按三下音量减，或关闭再打开屏幕。</string>
     <!-- How to resume SandFly when it only resumes from the notification or a shortcut. [CHAR LIMIT=NONE] -->
-    <string name="message_resume_manual">要恢复，请点按“SandFly 已暂停”通知或快速按三下音量减。</string>
+    <string name="message_resume_manual">要恢复，请单击“SandFly 已暂停”通知或快速按三下音量减。</string>
     <!-- Added to the pause dialog when a keyboard shortcut is set for pausing and resuming SandFly. [CHAR LIMIT=NONE] -->
     <string name="message_resume_key_combo">你也可以按 <xliff:g id="key_combo" example="Alt + P">%1$s</xliff:g>。</string>
 

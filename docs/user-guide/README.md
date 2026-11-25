@@ -33,6 +33,7 @@ The SandFly User Guide opens from **Help & feedback** > **User guide** in SandFl
 - A paragraph that starts with `Note: ` is shown as a note.
 - `<!-- generate: name -->` on a line of its own inserts a list that SandFly makes from its own defaults, in the language of the guide: `gestures` or `keyboard-shortcuts`.
 - `<!-- include: file.md -->` on a line of its own inserts a document from `docs/`, such as `scripting.md`. Its title is left out and its headings move one level down. Links inside it to its own headings and to the other included documents keep working. Documents that can be included are listed in the `userGuideAssets` task in `talkback/build.gradle`.
+- A language folder can supply a translation of an included document under the same file name. Add `{#original-anchor}` to each translated heading so that it keeps the original link target. Use `#original-anchor` in links within the document.
 - Other HTML is shown as text.
 
 ## Style

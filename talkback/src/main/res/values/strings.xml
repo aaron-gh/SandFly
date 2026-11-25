@@ -172,6 +172,12 @@
     <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
     <!-- Switch on a voice profile's screen. When on, the profile's text-to-speech engine stays connected while another engine is in use, so that changing to the profile, and notifications read with it, don't wait for the engine to start. [CHAR LIMIT=NONE] -->
     <string name="title_pref_voice_profile_keep_engine_started">Keep the engine started</string>
+    <!-- Title of the button on a voice profile's settings screen that speaks a sample sentence with the profile's engine, voice, volume, rate, pitch and equalizer as they are set. [CHAR LIMIT=40] -->
+    <string name="title_pref_voice_profile_play_sample">Play sample</string>
+    <!-- Sentence spoken by Play sample on a voice profile's settings screen, in the language of the profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_sample_text">This is a sample of this voice profile.</string>
+    <!-- Spoken when Play sample can't speak the sample because the profile's speech engine didn't start or returned an error. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_sample_failed">Sample not played</string>
     <!-- Title of the settings screen with the speech equalizer and compression effects, and of the reading control that turns them on or off. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer">Voice effects</string>
     <!-- Title of the list of equalizer presets. [CHAR LIMIT=40] -->
@@ -334,6 +340,10 @@
     <string name="title_pref_emoji_rate">Emoji speech rate</string>
     <!-- Title of the text-to-speech setting for how much slower the Repeat last spoken phrase slower command says the phrase, as a percentage of the rate it was said at. [CHAR LIMIT=40] -->
     <string name="title_pref_repeat_slower_by">Repeat slower by</string>
+    <!-- Title of the text-to-speech setting for how much the speech rate commands, the Speech rate reading control and the Speech rate slider change the rate at a time. [CHAR LIMIT=40] -->
+    <string name="title_pref_speech_rate_step">Speech rate step</string>
+    <!-- Choice of Speech rate step: each change makes the rate in use faster or slower by this percentage of it, such as "10%". [CHAR LIMIT=40] -->
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> of the rate</string>
     <!-- Title of the setting, and of the reading control, that chooses which volume speech and sounds play at: accessibility, media, ring or call. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_stream">Speech volume</string>
     <!-- Summary of the Speech volume reading control in the reading controls settings. [CHAR LIMIT=NONE] -->
@@ -1468,6 +1478,14 @@
     <string name="keycombo_menu_navigate_next_paragraph">Navigate to next paragraph</string>
     <!-- Keyboard key combination assignment for Navigate to previous paragraph action [CHAR LIMIT=40] -->
     <string name="keycombo_menu_navigate_previous_paragraph">Navigate to previous paragraph</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the next paragraph, besides the one of Next paragraph, such as P in browse mode in the NVDA keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Navigate to next paragraph, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the previous paragraph, besides the one of Previous paragraph, such as Shift + P in browse mode in the NVDA keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navigate to previous paragraph, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the next link, besides the one of Next link, such as K in browse mode in the keyboard phone single-key keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_next_link_second_key">Navigate to next link, second key</string>
+    <!-- Keyboard shortcuts: a second keyboard shortcut for moving to the previous link, besides the one of Previous link, such as Shift + K in browse mode in the keyboard phone single-key keymap. [CHAR LIMIT=60] -->
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navigate to previous link, second key</string>
     <!-- Keyboard key combination assignment for Navigate to next container [CHAR LIMIT=40] -->
     <string name="keycombo_menu_navigate_next_container">Navigate to next container</string>
     <!-- Keyboard key combination assignment for Navigate to previous container [CHAR LIMIT=40] -->
@@ -1814,6 +1832,24 @@
     <string name="keycombo_key_modifier_right_shift">Right Shift</string>
     <!-- The Fn key, such as the Speed key of the BlackBerry KEY2, as the SandFly key. e.g. Fn + A. [CHAR LIMIT=20] -->
     <string name="keycombo_key_modifier_function">Fn</string>
+    <!-- Title of the settings group for fast search, which in browse mode focuses the next item starting with a letter or digit pressed with a chosen key. [CHAR LIMIT=40] -->
+    <string name="title_pref_category_fast_search">Fast search</string>
+    <!-- Title of the setting that chooses the key which, pressed with a letter or digit in browse mode, focuses the next item starting with it. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_key">Fast search key</string>
+    <!-- Fast search key setting: fast search is off. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_off">Off</string>
+    <!-- Title of the setting that makes fast search go on from the other end of the screen when nothing is found. [CHAR LIMIT=40] -->
+    <string name="title_pref_fast_search_wrap">Wrap around</string>
+    <!-- The left Alt key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_alt">Left Alt</string>
+    <!-- The left Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_ctrl">Left Ctrl</string>
+    <!-- The right Ctrl key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_ctrl">Right Ctrl</string>
+    <!-- The left Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_left_meta">Left Meta</string>
+    <!-- The right Meta key, as the fast search key. [CHAR LIMIT=20] -->
+    <string name="fast_search_key_right_meta">Right Meta</string>
     <!-- A keyboard shortcut of keys held down on their own, such as "Alt + Shift held". [CHAR LIMIT=NONE] -->
     <string name="keycombo_keys_held"><xliff:g id="keys" example="Alt + Shift">%1$s</xliff:g> held</string>
     <!-- String representation of arrow right key. e.g. Meta + Arrow Right. -->
@@ -2615,12 +2651,18 @@
     <string name="shortcut_newer_app">Newer app</string>
     <!-- Label for the shortcut that takes a screenshot. [CHAR_LIMIT=40] -->
     <string name="shortcut_take_screenshot">Take screenshot</string>
-    <!-- Label for the shortcut that answers the incoming phone call that is ringing. [CHAR_LIMIT=40] -->
+    <!-- Label for the shortcut that answers the incoming phone call or app call, such as a WhatsApp call, that is ringing. [CHAR_LIMIT=40] -->
     <string name="shortcut_answer_call">Answer call</string>
-    <!-- Spoken when the Answer call shortcut runs while no phone call is ringing. [CHAR_LIMIT=40] -->
+    <!-- Spoken when the Answer call shortcut runs while no call is ringing. [CHAR_LIMIT=40] -->
     <string name="answer_call_no_call">No incoming call</string>
     <!-- Spoken when the Answer call shortcut runs before the user has allowed the screen reader to answer phone calls; Android then asks for that permission. [CHAR_LIMIT=60] -->
     <string name="answer_call_permission">Permission needed to answer calls</string>
+    <!-- Label for the shortcut that ends the current phone call or app call, such as a WhatsApp call, or declines the call that is ringing. [CHAR_LIMIT=40] -->
+    <string name="shortcut_end_call">End call</string>
+    <!-- Spoken when the End call shortcut runs while no call is ringing or in progress. [CHAR_LIMIT=40] -->
+    <string name="end_call_no_call">No call</string>
+    <!-- Spoken when the End call shortcut runs before the user has allowed the screen reader to end phone calls; Android then asks for that permission. [CHAR_LIMIT=60] -->
+    <string name="end_call_permission">Permission needed to end calls</string>
     <string name="title_split_screen">Split screen</string>
     <string name="split_screen_go_to_divider">Go to divider</string>
     <string name="split_screen_not_active">Not in split screen</string>
@@ -4413,6 +4455,10 @@
     <string name="title_pref_volume_down_long_press">Volume down long press</string>
     <!-- Title of the setting that chooses how long a volume key is held to run its long press command. [CHAR LIMIT=NONE] -->
     <string name="title_pref_volume_key_long_press_duration">Volume key long press duration</string>
+    <!-- Title of the switch that makes holding the mute key in a text field record speech and type it, until the key is released. The mute key is a hardware key on some phones, such as the Zinwa Q25. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_key_dictates">Hold mute key to dictate in text fields</string>
+    <!-- Title of the setting that chooses the command run by pressing the mute key. The mute key is a hardware key on some phones, such as the Zinwa Q25. [CHAR LIMIT=NONE] -->
+    <string name="title_pref_mute_key_press">Mute key press</string>
     <!-- Summary of the wrap around setting in the reading controls list. [CHAR LIMIT=NONE]-->
     <string name="summary_support_wrap_around">Turn wrapping from the last item to the first on or off</string>
     <!-- Spoken when wrap around is turned on. [CHAR LIMIT=NONE]-->
@@ -4510,6 +4556,10 @@
     <string name="keycombo_only_while_editing">Only while editing</string>
     <!-- A keyboard shortcut that works only while a text field is being edited, such as "Alt+Space while editing". -->
     <string name="keycombo_keys_while_editing"><xliff:g id="keys" example="Alt+Space">%1$s</xliff:g> while editing</string>
+    <!-- Keyboard shortcut dialog, keyboard phone keymaps: check box that makes the shortcut work only in browse mode, before the same keys' shortcut outside browse mode. -->
+    <string name="keycombo_only_in_browse_mode">Only in browse mode</string>
+    <!-- A keyboard shortcut that works only in browse mode, such as "B in browse mode". -->
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> in browse mode</string>
     <!-- Title of the switch that makes a double tap on the text field being edited move the cursor to the start of its text, or to the end when the cursor is at the start, instead of activating the field. [CHAR_LIMIT=NONE] -->
     <string name="title_pref_double_tap_moves_cursor">Double-tap moves cursor to start or end</string>
     <!-- Name of the on-screen keyboard's keyboard echo setting, in the reading controls and the SandFly menu. [CHAR_LIMIT=NONE] -->

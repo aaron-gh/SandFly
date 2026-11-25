@@ -49,8 +49,8 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils
  * Only speech is left out: focus moves, and sounds and vibrations play, as before. The settings are
  * read by [load]; while they are at their defaults nothing is watched and [isActive] is false.
  *
- * Whatever the settings, the announcements, live regions and window changes of [IGNORED_PACKAGES]
- * are never spoken; see [alwaysMutes].
+ * Whatever the settings, the announcements, live regions, window changes, toasts and
+ * notifications of [IGNORED_PACKAGES] are never spoken; see [alwaysMutes] and [isIgnoredPackage].
  */
 object AppSpeechFilter {
   private const val TAG = "AppSpeechFilter"
@@ -119,7 +119,15 @@ object AppSpeechFilter {
    */
   @JvmStatic
   fun alwaysMutes(source: Source, packageName: CharSequence?): Boolean =
-    source == Source.APP_SPEECH && packageName != null && packageName.toString() in IGNORED_PACKAGES
+    source == Source.APP_SPEECH && isIgnoredPackage(packageName)
+
+  /**
+   * Whether [packageName] is one of [IGNORED_PACKAGES], whose announcements, live regions, window
+   * changes, toasts and notifications are never spoken.
+   */
+  @JvmStatic
+  fun isIgnoredPackage(packageName: CharSequence?): Boolean =
+    packageName != null && packageName.toString() in IGNORED_PACKAGES
 
   /** Whether speech from [source] of [packageName] is left unsaid in [state]. */
   @JvmStatic

@@ -80,7 +80,7 @@ A script is one of these:
 
 The name of the file must end in `.lua` or `.zip`. In a zip, code reaches the other files with [`require`](#lua-and-files), [`sf.readFile`](#lua-and-files), [`sf.playSound`](#speech-sound-and-vibration) and [`sf.macros.run`](#macros), and SandFly reads [translations](#translations) from the `locales` folder.
 
-To install a script, go to **Scripts** > **Import script**, or open or share a `.lua` or `.zip` file, or an `https` link to one, with **Install SandFly script**. The install dialog shows where the script came from, whether SandFly signed it, its permissions and its commands.
+To install a script, go to **Scripts** > **Import script**, or open or share a `.lua` or `.zip` file, or an `https` link to one, with **Install SandFly script**. The install dialog shows where the script came from, whether SandFly signed it, its permissions and its commands. **Scripts** > **New script from code** installs a `main.lua` entered in a text field, checked in the same way.
 
 ### The Lua environment
 
@@ -725,7 +725,7 @@ sf.keys.press('enter')
 
 *Version 3.* `sf.keys.passAll(on)` sends every key to Android and the app in front, as **Turn SandFly keyboard input on or off** does: the SandFly key and its shortcuts, browse mode keys, arrow key navigation, the review cursor, and the keys of scripts, this one too. Only the keys of **Turn SandFly keyboard input on or off** still work. `sf.keys.passAll()` or `sf.keys.passAll(true)` starts it, and `sf.keys.passAll(false)` stops it. Needs `input`.
 
-It lasts while the script is loaded: a script with `apps` stops passing keys when its app leaves, and a script for all apps passes them in every app until it stops. Keys are never passed on SandFly screens. The keys of **Turn SandFly keyboard input on or off** stop it until the script calls `sf.keys.passAll` again. SandFly says nothing when a script starts or stops passing keys, so tell the user.
+It lasts while the script is loaded: a script with `apps` stops passing keys when its app leaves, and a script for all apps passes them in every app until it stops. Keys are never passed on SandFly screens or the lock screen. The keys of **Turn SandFly keyboard input on or off** stop it until the script calls `sf.keys.passAll` again. SandFly says nothing when a script starts or stops passing keys, so tell the user.
 
 ```lua
 -- A game that uses every key.
@@ -1090,6 +1090,7 @@ SandFly turns a script off after 5 errors in a minute, or after it runs out of t
 ### Reload a script
 
 *   Import the file again with **Import script**. The new code replaces the old, and stored data, settings and permission choices stay.
+*   Change the code with **Edit code** on the page of the script, and select **Save**. The same parts stay as with **Import script**.
 *   Turn the script off and on with **Turn on** on its page. The script loads again, and its variables start again.
 *   A script with `apps` loads again each time its app comes to the front.
 

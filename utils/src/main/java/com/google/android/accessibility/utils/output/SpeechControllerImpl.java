@@ -1502,13 +1502,20 @@ public class SpeechControllerImpl implements SpeechController {
     return spannable;
   }
 
-  private static CharSequence replaceBrailleSymbolByDescription(
-      Context context, CharSequence text) {
+  @VisibleForTesting
+  static CharSequence replaceBrailleSymbolByDescription(Context context, CharSequence text) {
     SpannableStringBuilder spannable = new SpannableStringBuilder(text);
     for (int index = 0; index < spannable.length(); index++) {
       char ch = spannable.charAt(index);
       if (BrailleUnicode.isBraille(ch)) {
         String dots = BrailleUnicode.toDotNumbersString(ch);
+        if (dots.isEmpty()) {
+          // U+2800 BRAILLE PATTERN BLANK has no dots to name.
+          String blank = context.getString(R.string.symbol_braille_blank) + " ";
+          spannable.replace(index, index + 1, blank);
+          index += blank.length() - 1;
+          continue;
+        }
         String dotsPattern =
             context.getResources().getQuantityString(R.plurals.dots, dots.length(), dots);
         SpannableStringBuilder sb = new SpannableStringBuilder();

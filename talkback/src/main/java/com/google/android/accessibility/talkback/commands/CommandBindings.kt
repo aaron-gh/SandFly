@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.keyboard.KeyComboManager
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel
 import com.google.android.accessibility.talkback.preference.TalkBackPreferenceFilter
 import com.google.android.accessibility.talkback.preference.base.GestureListPreference
+import com.google.android.accessibility.talkback.scripting.ScriptInput
 import com.google.android.accessibility.utils.FeatureSupport
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 
@@ -158,6 +159,34 @@ object CommandBindings {
         }
       }
 
+  /**
+   * Returns the gesture of [slots] that [binding] names, a gesture performed while one is chosen by
+   * performing it, or null for keys or a gesture that none of [slots] is.
+   */
+  @JvmStatic
+  fun performedGesture(context: Context, slots: List<GestureSlot>, binding: String): GestureSlot? {
+    if (!binding.startsWith(ScriptInput.GESTURE_BINDING)) {
+      return null
+    }
+    val baseKey =
+      ScriptInput.gestureBaseKey(context, binding.removePrefix(ScriptInput.GESTURE_BINDING))
+        ?: return null
+    return slots.firstOrNull { it.baseKey == baseKey }
+  }
+
+  /** Returns the name of the gesture or keys that [binding] names, as performed. */
+  @JvmStatic
+  fun performedTitle(context: Context, binding: String): String =
+    when {
+      binding.startsWith(ScriptInput.GESTURE_BINDING) ->
+        ScriptInput.gestureTitle(context, binding.removePrefix(ScriptInput.GESTURE_BINDING))
+      binding.startsWith(ScriptInput.KEYS_BINDING) ->
+        ScriptInput.keysFromId(binding.removePrefix(ScriptInput.KEYS_BINDING))?.let {
+          ScriptInput.keysTitle(context, it)
+        } ?: binding
+      else -> binding
+    }
+
   /** Returns the arrow keys of arrow key navigation, each of which runs a command. */
   @JvmStatic
   fun arrowKeys(context: Context): List<GestureSlot> {
@@ -170,7 +199,7 @@ object CommandBindings {
       GestureSlot(
         ArrowKeyNav.prefKey(context, it),
         manager.getArrowKeysStringRepresentation(it.keys),
-        it.defaultCommand,
+        ArrowKeyNav.defaultCommand(context, it),
       )
     }
   }

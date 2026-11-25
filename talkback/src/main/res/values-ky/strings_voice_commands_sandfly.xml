@@ -154,4 +154,19 @@
         <item>{label} объектисин активдештир</item>
         <item>{label} объектисин танда</item>
     </string-array>
+    <string name="shortcut_voice_editing">Үн менен түзөтүүнү баштоо</string>
+    <string name="voice_editing_on">Үн менен түзөтүү күйгүзүлдү</string>
+    <string name="voice_editing_off">Үн менен түзөтүү өчүрүлдү</string>
+    <string name="title_pref_voice_editing_time_limit">Үн менен түзөтүүнүн убакыт чеги</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> мүнөт</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> мүнөт</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>түзөтүүнү токтот</item>
+        <item>үн менен түзөтүүнү токтот</item>
+        <item>түзөтүүнү бүтүр</item>
+        <item>үн менен түзөтүүнү бүтүр</item>
+        <item>үн менен түзөтүүнү өчүр</item>
+    </string-array>
 </resources>

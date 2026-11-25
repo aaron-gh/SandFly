@@ -82,4 +82,18 @@
     <string name="shortcut_app_gestures_for_app">Žesti šai lietotnei</string>
     <string name="title_pref_shizuku_root_screen">Shizuku un root</string>
     <string name="title_pref_use_root">Izmantot root, nevis Shizuku</string>
+    <string name="command_perform_gesture">Veikt žestu</string>
+    <string name="command_perform_gesture_message">Veiciet žestu.</string>
+    <string name="command_gesture_not_assignable">Nevar piešķirt: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Izpildīt komandu</string>
+    <string name="command_add_to_sandfly_menu">Pievienot SandFly izvēlnei</string>
+    <string name="command_remove_from_sandfly_menu">Noņemt no SandFly izvēlnes</string>
+    <string name="command_added_to_sandfly_menu">Pievienots SandFly izvēlnei: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="command_removed_from_sandfly_menu">Noņemts no SandFly izvēlnes: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="commands_search_hint">Meklēt komandas</string>
+    <plurals name="commands_search_results">
+        <item quantity="zero"><xliff:g id="count" example="10">%d</xliff:g> komandu</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> komanda</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> komandas</item>
+    </plurals>
 </resources>

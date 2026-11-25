@@ -44,6 +44,7 @@ import com.google.android.accessibility.talkback.keyboard.ArrowKeyNav;
 import com.google.android.accessibility.talkback.keyboard.ArrowKeys;
 import com.google.android.accessibility.talkback.keyboard.CustomKeymap;
 import com.google.android.accessibility.talkback.keyboard.CustomKeymaps;
+import com.google.android.accessibility.talkback.keyboard.FastSearchKey;
 import com.google.android.accessibility.talkback.keyboard.KeyCombo;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboModel;
@@ -314,6 +315,7 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
 
     initPreferenceUIs(getPreferenceScreen());
     addArrowKeys();
+    addFastSearch();
     addCommandCategories();
     updateDialogAndResetKeymapPreference();
     // Finds a command or arrow key by its name or keys, and opens its keyboard shortcut.
@@ -372,6 +374,57 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
     }
   }
 
+  /**
+   * Adds fast search: the key that, with a letter or digit in browse mode, focuses the next item
+   * starting with it, from the modifiers that aren't the keymap's SandFly key, and Wrap around.
+   */
+  private void addFastSearch() {
+    Context context = getContext();
+    KeyComboManager keyComboManager = getKeyComboManager();
+    if (context == null || !keyComboManager.isBrowseModeSupported()) {
+      return;
+    }
+    @Nullable SandFlyKey sandFlyKey =
+        keyComboManager.getKeyComboModel() instanceof NewKeyComboModel model
+            ? model.getSandFlyKey()
+            : null;
+    PreferenceCategory category = new PreferenceCategory(context);
+    category.setKey("pref_fast_search_category");
+    category.setTitle(R.string.title_pref_category_fast_search);
+    category.setIconSpaceReserved(false);
+    getPreferenceScreen().addPreference(category);
+    List<CharSequence> entries = new ArrayList<>();
+    List<CharSequence> entryValues = new ArrayList<>();
+    entries.add(getString(R.string.fast_search_key_off));
+    entryValues.add(FastSearchKey.OFF);
+    for (FastSearchKey key : FastSearchKey.available(sandFlyKey)) {
+      entries.add(getString(key.getNameRes()));
+      entryValues.add(key.getValue());
+    }
+    ListPreference key = new ListPreference(context);
+    key.setKey(getString(R.string.pref_fast_search_key));
+    key.setTitle(R.string.title_pref_fast_search_key);
+    key.setDialogTitle(R.string.title_pref_fast_search_key);
+    key.setEntries(entries.toArray(new CharSequence[0]));
+    key.setEntryValues(entryValues.toArray(new CharSequence[0]));
+    key.setDefaultValue(FastSearchKey.OFF);
+    key.setSummary("%s");
+    key.setIconSpaceReserved(false);
+    category.addPreference(key);
+    // A key saved for a keymap whose SandFly key it isn't part of shows Off here, and stays saved.
+    if (key.findIndexOfValue(key.getValue()) < 0) {
+      key.setPersistent(false);
+      key.setValue(FastSearchKey.OFF);
+      key.setPersistent(true);
+    }
+    AccessibilitySuiteSwitchPreference wrap = new AccessibilitySuiteSwitchPreference(context);
+    wrap.setKey(getString(R.string.pref_fast_search_wrap_key));
+    wrap.setTitle(R.string.title_pref_fast_search_wrap);
+    wrap.setDefaultValue(getResources().getBoolean(R.bool.pref_fast_search_wrap_default));
+    wrap.setIconSpaceReserved(false);
+    category.addPreference(wrap);
+  }
+
   /** Shows the commands the arrow keys run now, such as after a reset or the list closes. */
   private void refreshArrowKeys() {
     for (ArrowKeys arrowKeys : ArrowKeys.values()) {
@@ -422,18 +475,42 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
           // A keymap without a key of its own for this command keeps it under the command.
           continue;
         }
-        CharSequence title =
-            browseModeOnlyCommands.contains(key)
-                ? String.format(browseModeTitle, command.getLabel())
-                : command.getLabel();
-        KeyboardShortcutDialogPreference preference =
-            new KeyboardShortcutDialogPreference(context, key, title);
-        preference.setIconSpaceReserved(false);
-        preference.setOnPreferenceChangeListener(preferenceChangeListener);
-        group.addPreference(preference);
+        addShortcutPreference(
+            context, group, key, command.getLabel(), browseModeOnlyCommands, browseModeTitle);
+        // A second key of the command, such as P for Next paragraph in the NVDA keymap.
+        @Nullable TalkBackPhysicalKeyboardShortcut second = command.getSecondKeyboardAction();
+        if (second != null) {
+          String secondKey = second.getKey(context.getResources());
+          if (model.getKeyComboMap().containsKey(secondKey) && findPreference(secondKey) == null) {
+            addShortcutPreference(
+                context,
+                group,
+                secondKey,
+                second.getDescription(context.getResources()),
+                browseModeOnlyCommands,
+                browseModeTitle);
+          }
+        }
       }
     }
     collapseCategories();
+  }
+
+  /** Adds the shortcut kept under {@code key}, titled {@code label}, to {@code group}. */
+  private void addShortcutPreference(
+      Context context,
+      AccessibilitySuitePreferenceCategory group,
+      String key,
+      String label,
+      Set<String> browseModeOnlyCommands,
+      String browseModeTitle) {
+    CharSequence title =
+        browseModeOnlyCommands.contains(key) ? String.format(browseModeTitle, label) : label;
+    KeyboardShortcutDialogPreference preference =
+        new KeyboardShortcutDialogPreference(context, key, title);
+    preference.setIconSpaceReserved(false);
+    preference.setOnPreferenceChangeListener(preferenceChangeListener);
+    group.addPreference(preference);
   }
 
   /**

@@ -637,6 +637,16 @@ class DefaultConsumer implements EventConsumer {
     }
   }
 
+  /**
+   * Activates without forgetting the last focused node, so the pan position stays when that node
+   * is still focused. Used after a consumer that only showed timed content.
+   */
+  public void onActivateKeepingPosition() {
+    if (!brailleFocusedNodeAndEvent(Reason.WINDOW_CHANGED, /* event= */ null)) {
+      brailleFirstFocusableNode(Reason.WINDOW_CHANGED, /* event= */ null);
+    }
+  }
+
   @Override
   public void onDeactivate() {
     if (turnOffBdDialog != null) {

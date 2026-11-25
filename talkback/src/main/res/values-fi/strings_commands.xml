@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Eleet tälle sovellukselle</string>
     <string name="title_pref_shizuku_root_screen">Shizuku ja root-oikeudet</string>
     <string name="title_pref_use_root">Käytä root-oikeuksia Shizukun sijaan</string>
+    <string name="command_perform_gesture">Tee ele</string>
+    <string name="command_perform_gesture_message">Tee ele nyt.</string>
+    <string name="command_gesture_not_assignable">Ei voi määrittää: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Suorita komento</string>
+    <string name="command_add_to_sandfly_menu">Lisää SandFly-valikkoon</string>
+    <string name="command_remove_from_sandfly_menu">Poista SandFly-valikosta</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> lisätty SandFly-valikkoon</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> poistettu SandFly-valikosta</string>
+    <string name="commands_search_hint">Hae komentoja</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> komento</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> komentoa</item>
+    </plurals>
 </resources>

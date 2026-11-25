@@ -136,6 +136,7 @@ The **Text editing** group of **Commands** also has:
 - **Read text field**: reads the whole text of the text field, or "Empty" and the hint when it has no text.
 - **Spelling / grammar suggestions**: opens the suggestions for the typo at the cursor. The **Proofread** reading control moves between typos.
 - **Dictate**: see [](#typing-dictate).
+- **Start voice editing**: records voice commands for the text field one after another. See [](#voice-commands-editing).
 - **Switch keyboard**: changes to the next keyboard. Available on Android 11 and later.
 - **Search emoji**, **Choose a symbol**, **Turn editing mode on or off** and **Spell the password field**: commands of the SandFly keyboard. See [](#keyboards).
 
@@ -143,7 +144,7 @@ None of these commands has a gesture by default. To give one a gesture, see [](#
 
 ### Clipboard history {#typing-clipboard-history}
 
-SandFly keeps a history of up to 50 texts copied, newest first. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
+SandFly keeps a history of up to 50 texts copied, newest first. Each text is kept up to 200,000 characters, and the history up to 1,000,000 characters in all: older texts past that are removed. **Add to clipboard** also stops at 200,000 characters. The history holds the texts that SandFly copies, and the texts that other apps copy while a window of SandFly has focus. Android doesn't let apps read the clipboard in the background, so with Shizuku or root, the switch **Add copies from other apps** at the top of the history adds every text that other apps copy. The history is kept apart from the settings and isn't included in a settings backup.
 
 To open the history, run **Clipboard history**, from the **Text editing** commands or the **Editing menu**. The history opens over the current screen.
 
@@ -195,6 +196,8 @@ The **Dictate** command types what you say into the focused text field, at the c
 Recording stops by itself after 15 minutes, or after a time of silence that you set. See [](#typing-dictation-settings).
 
 By default, a two-finger double-tap runs **Dictate, play or pause media**. It starts **Dictate** when a text field has input focus, a keyboard is shown or connected, and no call is active; it stops a dictation that is recording; otherwise it plays or pauses media. For the default gestures, see [](#appendix-gestures).
+
+On phones with a mute key, such as the Zinwa Q25, hold the mute key in a text field to dictate: recording starts when you press the key and stops when you release it. See [](#buttons-mute-key).
 
 #### Choose how speech is recognized {#typing-speech-recognition}
 

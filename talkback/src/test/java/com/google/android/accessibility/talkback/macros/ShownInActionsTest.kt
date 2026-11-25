@@ -21,7 +21,9 @@ import com.google.android.accessibility.talkback.macros.Macros.Condition
 import com.google.android.accessibility.talkback.macros.Macros.ItemOnScreen
 import com.google.android.accessibility.talkback.macros.Macros.Macro
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertFalse
 import org.junit.Assert.assertSame
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
 /** The macros shown in Actions: conditions checked once per item and test, not once per call. */
@@ -82,5 +84,20 @@ class ShownInActionsTest {
     val changed = listOf(copy.copy(actionsCondition = Condition(listOf(Clause(ItemOnScreen("Move"))))), always)
     assertEquals(changed, cache.get("other", changed, 2, check(setOf("Move"))))
     assertEquals(3, checked.size)
+  }
+
+  @Test
+  fun conditionTiming_addsTimeByKindOfTest() {
+    var now = 0L
+    val timing = ConditionTiming { now }
+    assertTrue(timing.isEmpty)
+    assertTrue(timing.time(ItemOnScreen("Copy")) { now += 30_000_000; true })
+    assertFalse(timing.time(ItemOnScreen("Move")) { now += 10_000_000; false })
+    timing.time(Macros.KeyboardShown) { now += 500_000; false }
+    assertFalse(timing.isEmpty)
+    assertEquals(
+      "3 tests in 40.5 ms: ItemOnScreen 2 in 40.0 ms, KeyboardShown 1 in 0.5 ms",
+      timing.describe(),
+    )
   }
 }

@@ -862,4 +862,21 @@ class SandFlyKeyTest {
     manager.up(KeyEvent.KEYCODE_ALT_RIGHT)
     assertEquals(listOf<String?>("Alt + Backspace"), keys)
   }
+
+  @Test
+  fun nvdaSecondParagraphKeysWorkOnlyInBrowseMode() {
+    val browseOnly = manager(Keymap.NVDA).browseModeOnlyCommands
+    assertTrue(
+      browseOnly.contains(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra))
+    )
+    assertTrue(
+      browseOnly.contains(
+        context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph_extra)
+      )
+    )
+    // Ctrl + Down Arrow and Ctrl + Up Arrow move by paragraph anywhere.
+    assertFalse(
+      browseOnly.contains(context.getString(R.string.keycombo_shortcut_navigate_next_paragraph))
+    )
+  }
 }
