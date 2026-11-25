@@ -14,7 +14,9 @@ def ccache = ((System.getenv("PATH") ?: "").split(File.pathSeparator).toList() +
         .find { it.canExecute() }
 
 android {
-    compileSdk = 37
+    compileSdk {
+        version = release(37) { minorApiLevel = 2 }
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

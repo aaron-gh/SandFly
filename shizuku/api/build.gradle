@@ -6,7 +6,9 @@ plugins {
 // interface and commands, and the add-on's interface.
 android {
     namespace = "io.github.aaron_gh.sandfly.shizuku.api"
-    compileSdk = 37
+    compileSdk {
+        version = release(37) { minorApiLevel = 2 }
+    }
     defaultConfig {
         minSdk = 26
     }
