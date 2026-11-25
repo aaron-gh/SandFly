@@ -1117,13 +1117,6 @@
   <com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
       android:key="@string/pref_category_back_tap_key"
       android:title="@string/title_pref_category_back_tap">
-    <ListPreference
-        android:defaultValue="@string/pref_back_tap_sensitivity_default"
-        android:entries="@array/pref_back_tap_sensitivity_entries"
-        android:entryValues="@array/pref_back_tap_sensitivity_values"
-        android:key="@string/pref_back_tap_sensitivity_key"
-        android:summary="%s"
-        android:title="@string/title_pref_back_tap_sensitivity"/>
     <com.google.android.accessibility.talkback.preference.base.GestureListPreference
         android:defaultValue="@string/shortcut_value_unassigned"
         android:key="@string/pref_shortcut_back_tap_double_key"
@@ -1139,6 +1132,13 @@
         android:key="@string/pref_shortcut_back_tap_quadruple_key"
         android:summary="%s"
         android:title="@string/title_pref_shortcut_back_tap_quadruple"/>
+    <ListPreference
+        android:defaultValue="@string/pref_back_tap_sensitivity_default"
+        android:entries="@array/pref_back_tap_sensitivity_entries"
+        android:entryValues="@array/pref_back_tap_sensitivity_values"
+        android:key="@string/pref_back_tap_sensitivity_key"
+        android:summary="%s"
+        android:title="@string/title_pref_back_tap_sensitivity"/>
   </com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory>
 
   <!-- Shaking the device, detected with the accelerometer -->

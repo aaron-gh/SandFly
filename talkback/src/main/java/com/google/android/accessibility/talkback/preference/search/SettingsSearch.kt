@@ -33,6 +33,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreference
 import com.google.android.accessibility.material.preference.AccessibilitySuitePreferenceCategory
 import com.google.android.accessibility.talkback.R
@@ -61,6 +62,9 @@ object SettingsSearch {
 
   private const val PATH_SEPARATOR = " > "
   private const val DETAILS_LENGTH = 120
+
+  /** How many times showing a found preference looks up its row before it gives up. */
+  private const val SHOW_TRIES = 3
 
   private val MARKS = Regex("\\p{Mn}+")
   private val SPACES = Regex("\\s+")
@@ -413,40 +417,54 @@ object SettingsSearch {
     }
     val list = fragment.listView ?: return
     // After the list shows the rows that expanding the categories showed.
-    list.post {
-      val adapter = list.adapter as? PreferenceGroup.PreferencePositionCallback ?: return@post
-      val position = adapter.getPreferenceAdapterPosition(preference)
-      if (position < 0) {
-        return@post
-      }
-      list.addOnLayoutChangeListener(
-        object : View.OnLayoutChangeListener {
-          override fun onLayoutChange(
-            v: View,
-            left: Int,
-            top: Int,
-            right: Int,
-            bottom: Int,
-            oldLeft: Int,
-            oldTop: Int,
-            oldRight: Int,
-            oldBottom: Int,
-          ) {
-            list.removeOnLayoutChangeListener(this)
+    list.post { scrollToAndFocus(list, preference, SHOW_TRIES) }
+  }
+
+  /**
+   * Scrolls [list] to the row of [preference] and focuses the row once a layout shows it. The rows
+   * can still change while the screen opens, which moves the row or keeps it out of the layout, so
+   * its position is looked up again and the scroll repeated, at most [triesLeft] times in all.
+   */
+  private fun scrollToAndFocus(list: RecyclerView, preference: Preference, triesLeft: Int) {
+    val adapter = list.adapter as? PreferenceGroup.PreferencePositionCallback ?: return
+    val position = adapter.getPreferenceAdapterPosition(preference)
+    if (position < 0) {
+      // The rows of the expanded categories are not in the list yet.
+      if (triesLeft > 1) list.post { scrollToAndFocus(list, preference, triesLeft - 1) }
+      return
+    }
+    list.addOnLayoutChangeListener(
+      object : View.OnLayoutChangeListener {
+        override fun onLayoutChange(
+          v: View,
+          left: Int,
+          top: Int,
+          right: Int,
+          bottom: Int,
+          oldLeft: Int,
+          oldTop: Int,
+          oldRight: Int,
+          oldBottom: Int,
+        ) {
+          list.removeOnLayoutChangeListener(this)
+          val row =
             list
-              .findViewHolderForAdapterPosition(position)
+              .findViewHolderForAdapterPosition(adapter.getPreferenceAdapterPosition(preference))
               ?.itemView
-              ?.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
+          if (row != null) {
+            row.performAccessibilityAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS, null)
+          } else if (triesLeft > 1) {
+            list.post { scrollToAndFocus(list, preference, triesLeft - 1) }
           }
         }
-      )
-      val layoutManager = list.layoutManager
-      if (layoutManager is LinearLayoutManager) {
-        layoutManager.scrollToPositionWithOffset(position, 0)
-      } else {
-        list.scrollToPosition(position)
       }
-      list.requestLayout()
+    )
+    val layoutManager = list.layoutManager
+    if (layoutManager is LinearLayoutManager) {
+      layoutManager.scrollToPositionWithOffset(position, 0)
+    } else {
+      list.scrollToPosition(position)
     }
+    list.requestLayout()
   }
 }
