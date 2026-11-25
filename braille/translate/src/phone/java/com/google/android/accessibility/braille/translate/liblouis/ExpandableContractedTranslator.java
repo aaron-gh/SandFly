@@ -43,10 +43,10 @@ import java.util.Objects;
  */
 public class ExpandableContractedTranslator implements BrailleTranslator {
   private final BrailleTranslator g1Translator;
-  private final BrailleTranslator g2Translator;
+  private final LibLouisTranslator g2Translator;
 
   public ExpandableContractedTranslator(
-      BrailleTranslator g1Translator, BrailleTranslator g2Translator) {
+      BrailleTranslator g1Translator, LibLouisTranslator g2Translator) {
     this.g1Translator = g1Translator;
     this.g2Translator = g2Translator;
   }
@@ -54,6 +54,36 @@ public class ExpandableContractedTranslator implements BrailleTranslator {
   @Override
   public String translateToPrint(BrailleWord brailleWord) {
     return g2Translator.translateToPrint(brailleWord);
+  }
+
+  @Override
+  public String translateToPrint(BrailleWord brailleWord, String before, String after) {
+    if (brailleWord.isEmpty() || (before.isEmpty() && after.isEmpty())) {
+      return translateToPrint(brailleWord);
+    }
+
+    // Spell out the existing text so it can supply word context to the new cells.
+    BrailleWord contextualWord = new BrailleWord();
+    if (!before.isEmpty()) {
+      TranslationResult beforeResult = g1Translator.translate(before, /* cursorPosition= */ -1);
+      if (beforeResult == null) {
+        return translateToPrintPartial(brailleWord);
+      }
+      contextualWord.append(beforeResult.cells());
+    }
+    int start = contextualWord.size();
+    contextualWord.append(brailleWord);
+    int end = contextualWord.size();
+    if (!after.isEmpty()) {
+      TranslationResult afterResult = g1Translator.translate(after, /* cursorPosition= */ -1);
+      if (afterResult == null) {
+        return translateToPrintPartial(brailleWord);
+      }
+      contextualWord.append(afterResult.cells());
+    }
+
+    return g2Translator.translateToPrintWithContext(
+        brailleWord, contextualWord, new int[] {start, end}, before, after);
   }
 
   @Override

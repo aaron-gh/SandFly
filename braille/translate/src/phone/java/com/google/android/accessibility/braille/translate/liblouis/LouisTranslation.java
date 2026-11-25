@@ -116,8 +116,13 @@ public class LouisTranslation {
 
   /** Back-translates a byte array of dot patterns into the corresponding String. */
   public static String backTranslate(byte[] cells, String tableName, int mode) {
+    return backTranslate(cells, tableName, mode, null);
+  }
+
+  /** If supplied, replaces the two cell boundaries in range with their print offsets. */
+  static String backTranslate(byte[] cells, String tableName, int mode, int[] range) {
     synchronized (LOCK) {
-      return nullToEmpty(backTranslateNative(cells, tableName, mode));
+      return nullToEmpty(backTranslateNative(cells, tableName, mode, range));
     }
   }
 
@@ -133,7 +138,8 @@ public class LouisTranslation {
   private static native TranslationResult translateNative(
       CharSequence text, String tableName, int cursorPosition);
 
-  private static native String backTranslateNative(byte[] dotPatterns, String tableName, int mode);
+  private static native String backTranslateNative(
+      byte[] dotPatterns, String tableName, int mode, int[] range);
 
   private static native boolean checkTableNative(String tableName);
 

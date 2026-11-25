@@ -185,7 +185,8 @@ JNIEXPORT jobject JNICALL JNI_METHOD(translateNative)(JNIEnv* env, jclass clazz,
 
 // Translates braille-cells to print-characters.
 JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
-    JNIEnv* env, jclass clazz, jbyteArray cells, jstring tableName, jint mode) {
+    JNIEnv* env, jclass clazz, jbyteArray cells, jstring tableName, jint mode,
+    jintArray range) {
   const char* table_name_utf8 = env->GetStringUTFChars(tableName, nullptr);
   if (!table_name_utf8) {
     return nullptr;
@@ -210,16 +211,23 @@ JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
   // 16).
   int out_used = 0;
   std::vector<widechar> out_buf;
+  std::vector<int> input_pos;
   const int max_out_len = in_len * 16;
   int out_len = std::max(8, in_len * 2);
   for (; out_len <= max_out_len; out_len *= 2) {
     int in_used = in_len;
     out_used = out_len;
     out_buf.assign(out_len, 0);
-    int result = lou_backTranslateString(table_name_utf8, in_buf.data(),
-                                         &in_used, out_buf.data(), &out_used,
-                                         /* typeform= */ nullptr,
-                                         /* spacing= */ nullptr, mode);
+    if (range != nullptr) {
+      input_pos.resize(out_len);
+    }
+    int result = lou_backTranslate(table_name_utf8, in_buf.data(), &in_used,
+                                   out_buf.data(), &out_used,
+                                   /* typeform= */ nullptr,
+                                   /* spacing= */ nullptr,
+                                   /* outputPos= */ nullptr,
+                                   range != nullptr ? input_pos.data() : nullptr,
+                                   /* cursorPos= */ nullptr, mode);
     if (result == 0) {
       LOGE("Back translation failed.");
       env->ReleaseStringUTFChars(tableName, table_name_utf8);
@@ -235,6 +243,15 @@ JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
     // we need 5. After lou_backTranslateString, inused = 1 and outused = 4.
     // So it appears that the translation finished, but we're missing a char.
     if (in_used == in_len && out_used < out_len) {
+      if (range != nullptr) {
+        jint bounds[2];
+        env->GetIntArrayRegion(range, 0, 2, bounds);
+        auto positions_end = input_pos.begin() + out_used;
+        for (jint& bound : bounds) {
+          bound = std::lower_bound(input_pos.begin(), positions_end, bound) - input_pos.begin();
+        }
+        env->SetIntArrayRegion(range, 0, 2, bounds);
+      }
       LOGI(
           "Successfully translated %d cells into %d characters, "
           "consuming %d cells",
@@ -243,6 +260,9 @@ JNIEXPORT jstring JNICALL JNI_METHOD(backTranslateNative)(
     }
   }
   env->ReleaseStringUTFChars(tableName, table_name_utf8);
+  if (range != nullptr && out_len > max_out_len) {
+    return nullptr;
+  }
   return env->NewString(out_buf.data(), out_used);
 }
 

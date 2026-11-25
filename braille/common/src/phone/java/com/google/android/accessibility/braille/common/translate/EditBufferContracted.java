@@ -48,6 +48,7 @@ public abstract class EditBufferContracted implements EditBuffer {
   private static final String DELIMITER = ",";
   private static final String NEW_LINE = "\n";
   private static final int DELETE_WORD_MAX = 50;
+  private static final int WORD_CONTEXT_MAX = 50;
   private final Context context;
   protected final BrailleTranslator translator;
   private final BrailleWord holdings = new BrailleWord();
@@ -281,9 +282,19 @@ public abstract class EditBufferContracted implements EditBuffer {
     if (ignoreHoldingsPosition) {
       holdingPosition = holdings.size();
     }
-    String holdingsBeforeCursor = translator.translateToPrint(holdings.subword(0, holdingPosition));
+    InputConnection inputConnection = imeConnection.inputConnection;
+    String wordBefore =
+        adjoiningLetters(inputConnection.getTextBeforeCursor(WORD_CONTEXT_MAX, 0), true);
+    String wordAfter =
+        adjoiningLetters(inputConnection.getTextAfterCursor(WORD_CONTEXT_MAX, 0), false);
+    String holdingsBeforeCursor =
+        translator.translateToPrint(
+            holdings.subword(0, holdingPosition),
+            wordBefore,
+            ignoreHoldingsPosition ? wordAfter : "");
     String holdingsAfterCursor =
-        translator.translateToPrint(holdings.subword(holdingPosition, holdings.size()));
+        translator.translateToPrint(
+            holdings.subword(holdingPosition, holdings.size()), "", wordAfter);
     if (SentenceCapitalization.shouldCapitalize(context, imeConnection)) {
       if (holdingsBeforeCursor.isEmpty()) {
         holdingsAfterCursor = SentenceCapitalization.apply(true, holdingsAfterCursor);
@@ -292,10 +303,10 @@ public abstract class EditBufferContracted implements EditBuffer {
       }
     }
 
-    int textCursorStartIndex = getTextCursorStartIndex(imeConnection.inputConnection);
+    int textCursorStartIndex = getTextCursorStartIndex(inputConnection);
 
     checkSpaceBetweenNumberAndChar(imeConnection, holdingsBeforeCursor);
-    imeConnection.inputConnection.commitText(
+    inputConnection.commitText(
         holdingsBeforeCursor + appendix + holdingsAfterCursor, /* newCursorPosition= */ 1);
 
     boolean unused =
@@ -305,6 +316,28 @@ public abstract class EditBufferContracted implements EditBuffer {
 
     holdings.clear();
     holdingPosition = NO_CURSOR;
+  }
+
+  private static String adjoiningLetters(CharSequence text, boolean beforeCursor) {
+    if (TextUtils.isEmpty(text)) {
+      return "";
+    }
+    int index = beforeCursor ? text.length() : 0;
+    while (beforeCursor ? index > 0 : index < text.length()) {
+      int codePoint =
+          beforeCursor ? Character.codePointBefore(text, index) : Character.codePointAt(text, index);
+      int type = Character.getType(codePoint);
+      if (!Character.isLetter(codePoint)
+          && type != Character.NON_SPACING_MARK
+          && type != Character.COMBINING_SPACING_MARK) {
+        break;
+      }
+      int length = Character.charCount(codePoint);
+      index += beforeCursor ? -length : length;
+    }
+    return beforeCursor
+        ? text.subSequence(index, text.length()).toString()
+        : text.subSequence(0, index).toString();
   }
 
   protected void checkSpaceBetweenNumberAndChar(ImeConnection imeConnection, String appendedText) {
