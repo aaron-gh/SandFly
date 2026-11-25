@@ -75,6 +75,10 @@
         android:title="@string/title_pref_speak_submitting" />
 
     <SwitchPreferenceCompat
+        android:key="@string/pref_brailleime_keep_open_after_sending"
+        android:title="@string/title_pref_keep_open_after_sending" />
+
+    <SwitchPreferenceCompat
         android:key="@string/pref_brailleime_return_to_previous_keyboard"
         android:title="@string/title_pref_return_to_previous_keyboard" />
 

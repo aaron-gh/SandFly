@@ -300,6 +300,19 @@ public class BrailleImePreferencesActivity extends PreferencesActivity {
       }
 
       {
+        SwitchPreferenceCompat keepOpenAfterSendingPref =
+            findPreference(getString(R.string.pref_brailleime_keep_open_after_sending));
+        keepOpenAfterSendingPref.setChecked(
+            BrailleUserPreferences.readKeepOpenAfterSending(getContext()));
+        keepOpenAfterSendingPref.setOnPreferenceClickListener(
+            preference -> {
+              BrailleUserPreferences.writeKeepOpenAfterSending(
+                  getContext(), ((SwitchPreferenceCompat) preference).isChecked());
+              return true;
+            });
+      }
+
+      {
         SwitchPreferenceCompat returnToPreviousKeyboardPref =
             findPreference(getString(R.string.pref_brailleime_return_to_previous_keyboard));
         returnToPreviousKeyboardPref.setChecked(
