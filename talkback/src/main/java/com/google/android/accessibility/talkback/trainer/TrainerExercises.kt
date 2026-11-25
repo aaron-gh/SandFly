@@ -168,7 +168,11 @@ object TrainerExercises {
           exercises += oneFingerAngles()
           exercises += oneFingerAngles().map(::andHold)
         } else {
-          leftOut += context.getString(R.string.gesture_trainer_left_out_swipes_before_lift)
+          leftOut +=
+            context.getString(
+              R.string.gesture_trainer_left_out_swipes_before_lift,
+              context.getString(R.string.title_pref_swipes_before_lift),
+            )
         }
       }
       TrainerGroup.TWO_FINGERS -> {
@@ -189,7 +193,11 @@ object TrainerExercises {
           exercises += swipes(2)
           if (twoDirectionSwipes) exercises += twoFingerAngles()
         } else {
-          leftOut += context.getString(R.string.gesture_trainer_left_out_two_finger_swipes)
+          leftOut +=
+            context.getString(
+              R.string.gesture_trainer_left_out_two_finger_swipes,
+              context.getString(R.string.title_pref_handle_two_finger_swipes),
+            )
         }
       }
       TrainerGroup.THREE_FINGERS -> {
@@ -241,7 +249,11 @@ object TrainerExercises {
       TrainerGroup.TAP_SWIPE -> {
         for (fingers in 2..4) {
           if (fingers == 2 && !twoFingerSwipes) {
-            leftOut += context.getString(R.string.gesture_trainer_left_out_two_finger_tap_swipes)
+            leftOut +=
+              context.getString(
+                R.string.gesture_trainer_left_out_two_finger_tap_swipes,
+                context.getString(R.string.title_pref_handle_two_finger_swipes),
+              )
             continue
           }
           exercises += tapSwipes(fingers, swipeFingers = fingers)
@@ -252,13 +264,22 @@ object TrainerExercises {
         if (twoDirectionSwipes) {
           exercises += threePartSwipes()
         } else {
-          leftOut += context.getString(R.string.gesture_trainer_left_out_three_part_before_lift)
+          leftOut +=
+            context.getString(
+              R.string.gesture_trainer_left_out_three_part_before_lift,
+              context.getString(R.string.title_pref_swipes_before_lift),
+            )
         }
       TrainerGroup.TWO_STROKE_SWIPES ->
         if (twoStrokeSwipeTimeMs(context) > 0) {
           exercises += twoStrokeSwipes()
         } else {
-          leftOut += context.getString(R.string.gesture_trainer_left_out_two_stroke_off)
+          leftOut +=
+            context.getString(
+              R.string.gesture_trainer_left_out_two_stroke_off,
+              context.getString(R.string.title_pref_two_stroke_swipe_time),
+              context.getString(R.string.value_two_stroke_swipe_time_off),
+            )
         }
       TrainerGroup.EDGE_SWIPES -> {
         exercises += edgeSlides(long = false)

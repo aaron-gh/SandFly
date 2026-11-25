@@ -434,15 +434,15 @@ class GestureTrainerActivity : AppCompatActivity() {
       }
     }
     if (exercise.shape is Shape.BackTaps) {
-      content.addView(text(getString(R.string.gesture_trainer_back_tap_info)))
       val key = R.string.pref_back_tap_sensitivity_key
+      content.addView(text(getString(R.string.gesture_trainer_back_tap_info, settingTitle(key))))
       content.addView(
         button(getString(R.string.gesture_trainer_open_setting, settingTitle(key))) { openSetting(key) }
       )
     }
     if (exercise.shape == Shape.Shake) {
-      content.addView(text(getString(R.string.gesture_trainer_shake_info)))
       val key = R.string.pref_shake_sensitivity_key
+      content.addView(text(getString(R.string.gesture_trainer_shake_info, settingTitle(key))))
       content.addView(
         button(getString(R.string.gesture_trainer_open_setting, settingTitle(key))) { openSetting(key) }
       )
@@ -770,7 +770,7 @@ class GestureTrainerActivity : AppCompatActivity() {
     for ((text, setting) in advice) {
       val more =
         if (setting == R.string.pref_corner_size_mm_key) "\n" + getString(R.string.gesture_trainer_corner_warning) else ""
-      content.addView(text(getString(text) + more))
+      content.addView(text(getString(text, settingTitle(setting)) + more))
       content.addView(
         button(getString(R.string.gesture_trainer_open_setting, settingTitle(setting))) { openSetting(setting) }
       )
@@ -800,14 +800,18 @@ class GestureTrainerActivity : AppCompatActivity() {
    */
   private fun addTwoFingerSwipesState() {
     val on = GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(this))
+    val title = getString(R.string.title_pref_handle_two_finger_swipes)
     content.addView(
-      text(getString(if (on) R.string.gesture_trainer_scrub_two_finger_on else R.string.gesture_trainer_scrub_two_finger_off))
+      text(
+        getString(
+          if (on) R.string.gesture_trainer_scrub_two_finger_on else R.string.gesture_trainer_scrub_two_finger_off,
+          title,
+        )
+      )
     )
     if (!on) {
       content.addView(
-        button(
-          getString(R.string.gesture_trainer_open_setting, getString(R.string.title_pref_handle_two_finger_swipes))
-        ) {
+        button(getString(R.string.gesture_trainer_open_setting, title)) {
           openSetting(GestureLayout.TWO_FINGER_SWIPES_KEY)
         }
       )
@@ -1355,7 +1359,13 @@ class GestureTrainerActivity : AppCompatActivity() {
   }
 
   private fun sizesText(): String =
-    getString(R.string.gesture_trainer_sizes, mm(limits.edgeZonePx), mm(limits.cornerSizePx))
+    getString(
+      R.string.gesture_trainer_sizes,
+      settingTitle(R.string.pref_edge_zone_mm_key),
+      mm(limits.edgeZonePx),
+      settingTitle(R.string.pref_corner_size_mm_key),
+      mm(limits.cornerSizePx),
+    )
 
   // Speech
 
