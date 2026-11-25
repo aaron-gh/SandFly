@@ -130,5 +130,13 @@ class ControlSoundsSettingsTest {
     assertEquals(FeedbackController.SPATIAL_3D, ControlSoundsSettings.spatialMode(prefs))
     prefs.edit().putString(ControlSoundsSettings.PREF_3D, ControlSoundsSettings.VALUE_3D_NEVER).apply()
     assertEquals(FeedbackController.SPATIAL_STEREO, ControlSoundsSettings.spatialMode(prefs))
+    prefs
+      .edit()
+      .putString(ControlSoundsSettings.PREF_3D, ControlSoundsSettings.VALUE_3D_WITH_HEADPHONES_CENTRED)
+      .apply()
+    assertEquals(
+      FeedbackController.SPATIAL_3D_WITH_HEADPHONES_CENTRED,
+      ControlSoundsSettings.spatialMode(prefs),
+    )
   }
 }

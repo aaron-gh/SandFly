@@ -78,6 +78,9 @@ public class FeedbackController {
   /** Positioned sounds are played in 3D when headphones are connected, and panned otherwise. */
   public static final int SPATIAL_3D_WITH_HEADPHONES = 2;
 
+  /** Positioned sounds are played in 3D when headphones are connected, and centred otherwise. */
+  public static final int SPATIAL_3D_WITH_HEADPHONES_CENTRED = 3;
+
   /**
    * How Backtalk's sounds play: as speech, so that they follow the audio output device and the
    * volume chosen for speech. Set by {@link #setSpeechUsage}.
@@ -496,6 +499,8 @@ public class FeedbackController {
         mSpatialSoundPlayer = new SpatialSoundPlayer(mContext);
       }
       mSpatialSoundPlayer.play(resId, customSoundPath(resId), x, y, adjustedVolume);
+    } else if (mSpatialMode == SPATIAL_3D_WITH_HEADPHONES_CENTRED) {
+      playFromPool(resId, rate, adjustedVolume, adjustedVolume);
     } else {
       // Full volume in the middle, fading out of the far speaker towards either edge.
       float pan = Math.max(-1f, Math.min(1f, (x - 0.5f) * 2));
@@ -619,6 +624,7 @@ public class FeedbackController {
       case SPATIAL_3D:
         return true;
       case SPATIAL_3D_WITH_HEADPHONES:
+      case SPATIAL_3D_WITH_HEADPHONES_CENTRED:
         return isHeadphoneOutput();
       default:
         return false;
@@ -867,8 +873,8 @@ public class FeedbackController {
   /**
    * Sets how sounds with a place on the screen are played.
    *
-   * @param mode {@link #SPATIAL_STEREO}, {@link #SPATIAL_3D} or {@link
-   *     #SPATIAL_3D_WITH_HEADPHONES}.
+   * @param mode {@link #SPATIAL_STEREO}, {@link #SPATIAL_3D}, {@link #SPATIAL_3D_WITH_HEADPHONES}
+   *     or {@link #SPATIAL_3D_WITH_HEADPHONES_CENTRED}.
    */
   public void setSpatialMode(int mode) {
     mSpatialMode = mode;
