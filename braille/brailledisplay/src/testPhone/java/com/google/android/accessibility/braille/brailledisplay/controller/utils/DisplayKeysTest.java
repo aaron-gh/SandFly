@@ -102,6 +102,12 @@ public class DisplayKeysTest {
       DisplayKeyOverrides overrides =
           DisplayCommandProfile.applyDefaults(ios, DisplayKeyOverrides.parse(null));
       assertEquals(menu, overrides.resolve(menuChord));
+      String plainM = DisplayKeyOverrides.chordKey(0b00001101);
+      String plainMTarget =
+          ios
+              ? DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_TOGGLE_VOICE_FEEDBACK)
+              : menu;
+      assertEquals(plainMTarget, overrides.resolve(plainM));
       assertEquals(louder, overrides.resolve(louderChord));
       assertEquals(quieter, overrides.resolve(quieterChord));
       String physicalNext =

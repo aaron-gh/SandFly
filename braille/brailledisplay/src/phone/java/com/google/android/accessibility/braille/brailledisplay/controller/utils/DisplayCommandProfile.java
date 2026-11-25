@@ -106,7 +106,7 @@ public final class DisplayCommandProfile {
 
   private static Map<String, String> createSandFlyDefaults() {
     Map<String, String> defaults = new LinkedHashMap<>();
-    bindDisplay(defaults, CMD_OPEN_TALKBACK_MENU, "1348");
+    bindDisplay(defaults, CMD_OPEN_TALKBACK_MENU, "134", "1348");
     bindDisplay(defaults, CMD_EDIT_CUSTOM_LABEL, "12346");
     bindScreenReader(defaults, "INCREASE_MEDIA_VOLUME", "345");
     bindScreenReader(defaults, "DECREASE_MEDIA_VOLUME", "126");
