@@ -8,6 +8,8 @@ For gestures and gesture profiles, see [](#gestures). For keyboard shortcuts and
 
 **Commands** in SandFly settings lists every command, in categories. Each category opens the list of its commands. Under the name of a command, SandFly lists the gestures and the keyboard shortcut that run it.
 
+**Search commands**, at the top of the screen, stays in place while the list scrolls. As you type, the list shows the commands of every category that have each word you typed in their names, also inside a word, with the category under each name. Names that start with what you typed come first. Case and accents are ignored. SandFly says how many commands it found. Clear the field to see the categories again.
+
 The list holds only the commands that the device supports. For example, commands that need Android 11 or later, a vibrator or a braille display aren't listed on devices without them.
 
 #### Command categories {#commands-categories}
