@@ -381,8 +381,9 @@ object ProblemReportSender {
   /**
    * The log, after SandFly's last crash, last turn-off and main thread stalls if there were any,
    * which the log doesn't reach back to, how its last processes ended, the accessibility services
-   * turned on and the last volume key and Enter key events, then the last gesture lines, and then
-   * the ends of the logs of SandFly's other processes, such as the one that runs on-device AI.
+   * turned on, the last volume key and Enter key events and focus returns after Back, then the last
+   * gesture lines, and then the ends of the logs of SandFly's other processes, such as the one that
+   * runs on-device AI.
    */
   @WorkerThread
   private fun logWithCrash(context: Context, snapshot: LogcatSnapshot?): String? {
@@ -393,6 +394,7 @@ object ProblemReportSender {
     val services = EnabledServices.describe(context)
     val volumeKeys = VolumeKeyLog.read()
     val enterKeys = EnterKeyLog.read()
+    val focusAfterBack = ReportNotes.focusAfterBack.read()
     val others = snapshot?.others ?: otherProcessLogs(context)
     val log = snapshot?.main ?: readLog(Process.myPid(), LOG_LINES, MAIN_LOG_PRIORITY)
     val gestures = snapshot?.gestures ?: readGestureLog(Process.myPid()).orEmpty()
@@ -405,6 +407,7 @@ object ProblemReportSender {
         "Enabled accessibility services" to services,
         "Volume key log" to volumeKeys,
         "Enter key log" to enterKeys,
+        "Focus after Back log" to focusAfterBack,
       )
     if (sections.all { it.second == null } && others.isEmpty() && gestures.isEmpty()) {
       return log
