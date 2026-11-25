@@ -2689,6 +2689,7 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
     NEWER_APP(R.string.shortcut_value_newer_app, R.string.shortcut_newer_app),
     TAKE_SCREENSHOT(R.string.shortcut_value_take_screenshot, R.string.shortcut_take_screenshot),
     ANSWER_CALL(R.string.shortcut_value_answer_call, R.string.shortcut_answer_call),
+    END_CALL(R.string.shortcut_value_end_call, R.string.shortcut_end_call),
     SPLIT_SCREEN(R.string.shortcut_value_split_screen, R.string.title_split_screen),
     NOTIFICATIONS(R.string.shortcut_value_notifications, R.string.shortcut_notifications),
     SYSTEM_NOTIFICATIONS(

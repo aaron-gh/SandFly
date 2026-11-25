@@ -947,6 +947,7 @@ object Commands {
         gesture(R.string.shortcut_value_newer_app, R.string.shortcut_newer_app)
         gesture(R.string.shortcut_value_take_screenshot, R.string.shortcut_take_screenshot)
         gesture(R.string.shortcut_value_answer_call, R.string.shortcut_answer_call)
+        gesture(R.string.shortcut_value_end_call, R.string.shortcut_end_call)
         gesture(R.string.shortcut_value_split_screen, R.string.title_split_screen, Key.SHOW_SPLIT_SCREEN)
         gesture(
           R.string.shortcut_value_notifications,

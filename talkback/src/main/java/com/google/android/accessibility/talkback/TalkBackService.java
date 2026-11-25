@@ -2046,7 +2046,7 @@ public class TalkBackService extends AccessibilityServiceCompat
    * Returns null when double, triple and long presses of the volume key {@code keyCode} run their
    * commands now, and otherwise why they don't. They run as for {@link #canUseVolumeKeyPresses},
    * and also while an always-on display shows the lock screen. While a call rings, only a key with
-   * Answer call among its presses' commands is counted.
+   * Answer call or End call among its presses' commands is counted.
    */
   private @Nullable String volumeKeyCommandsOffReason(boolean triggerModifierPressed, int keyCode) {
     String reason =
@@ -2064,12 +2064,15 @@ public class TalkBackService extends AccessibilityServiceCompat
     return null;
   }
 
-  /** Whether a call rings and a press of the volume key {@code keyCode} has Answer call. */
+  /**
+   * Whether a call rings and a press of the volume key {@code keyCode} has Answer call or End call.
+   */
   private boolean isRingingCallAnsweredBy(int keyCode) {
     return volumeKeyCommands != null
         && voiceActionMonitor != null
         && voiceActionMonitor.getCurrentCallState() == TelephonyManager.CALL_STATE_RINGING
-        && volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_answer_call));
+        && (volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_answer_call))
+            || volumeKeyCommands.hasCommand(keyCode, getString(R.string.shortcut_value_end_call)));
   }
 
   private boolean canTakeVolumeKeys(boolean triggerModifierPressed) {

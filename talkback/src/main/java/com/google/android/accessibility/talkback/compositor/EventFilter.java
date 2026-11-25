@@ -27,6 +27,7 @@ import android.text.TextUtils;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import com.google.android.accessibility.talkback.calls.CallNotifications;
 import com.google.android.accessibility.talkback.compositor.rule.EventTypeViewAccessibilityFocusedFeedbackRule;
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader;
@@ -299,6 +300,10 @@ public class EventFilter {
       }
       boolean isCall =
           (notification != null) && Notification.CATEGORY_CALL.equals(notification.category);
+      if (notification != null) {
+        // Answer call and End call use the call notifications of apps.
+        CallNotifications.onNotificationEvent(context, event.getPackageName(), notification);
+      }
       // Read now: the state kept in GlobalVariables changes only when a setting does.
       boolean dnd = SettingsUtils.getDoNotDisturbState(context) > 0;
       boolean touching = touchMonitor.isUserTouchingScreen();
