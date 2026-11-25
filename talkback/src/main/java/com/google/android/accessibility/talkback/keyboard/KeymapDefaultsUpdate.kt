@@ -27,7 +27,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  */
 object KeymapDefaultsUpdate {
   /** The version of the defaults of the NVDA, JAWS, Orca and keyboard phone keymaps. */
-  private const val VERSION = 6
+  private const val VERSION = 7
 
   private const val NONE = KeyComboModel.NO_MODIFIER
   private const val SHIFT = KeyEvent.META_SHIFT_ON
@@ -249,9 +249,30 @@ object KeymapDefaultsUpdate {
     mapOf(Keymap.KEYBOARD_PHONE to firstKeys.toMap())
   }
 
+  /**
+   * The version 6 defaults of the commands whose defaults changed in version 7, when the NVDA
+   * keymap's paragraph keys became P and Shift + P in browse mode.
+   */
+  private val VERSION_6: Map<Keymap, Map<Int, KeyCombo>> by lazy {
+    mapOf(
+      Keymap.NVDA to
+        mapOf(
+          R.string.keycombo_shortcut_navigate_next_paragraph to old(CTRL, KeyEvent.KEYCODE_DPAD_DOWN, sandFly = false),
+          R.string.keycombo_shortcut_navigate_previous_paragraph to old(CTRL, KeyEvent.KEYCODE_DPAD_UP, sandFly = false),
+        )
+    )
+  }
+
   /** Each version's earlier defaults of the commands it changed. */
   private val CHANGES: List<Pair<Int, Map<Keymap, Map<Int, KeyCombo>>>> by lazy {
-    listOf(2 to VERSION_1, 3 to VERSION_2, 4 to VERSION_3, 5 to VERSION_4, 6 to VERSION_5)
+    listOf(
+      2 to VERSION_1,
+      3 to VERSION_2,
+      4 to VERSION_3,
+      5 to VERSION_4,
+      6 to VERSION_5,
+      7 to VERSION_6,
+    )
   }
 
   @JvmStatic

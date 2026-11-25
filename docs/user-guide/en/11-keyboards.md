@@ -241,6 +241,8 @@ In the NVDA, JAWS and Orca keymaps, and in keymaps copied from them:
 
 In browse mode, single letters move by element, as single letter navigation, quick navigation keys and structural navigation do in NVDA, JAWS and Orca.
 
+Ctrl + Down Arrow and Ctrl + Up Arrow move to the next and previous paragraph in the JAWS and Orca keymaps. In the NVDA keymap, P and Shift + P do, in browse mode.
+
 #### Object navigation {#keyboards-object-navigation}
 
 The **Object navigation** commands move SandFly focus through the items as the app arranges them, including containers that SandFly focus otherwise skips:

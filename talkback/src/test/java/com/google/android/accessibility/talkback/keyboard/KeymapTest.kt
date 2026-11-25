@@ -89,10 +89,12 @@ class KeymapTest {
         plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_RIGHT),
         key(R.string.keycombo_shortcut_navigate_next_word),
       )
-      assertEquals(
-        plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_DOWN),
-        key(R.string.keycombo_shortcut_navigate_next_paragraph),
-      )
+      if (keymap != Keymap.NVDA) {
+        assertEquals(
+          plain(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_DPAD_DOWN),
+          key(R.string.keycombo_shortcut_navigate_next_paragraph),
+        )
+      }
       assertEquals(plain(0, KeyEvent.KEYCODE_TAB), key(R.string.keycombo_shortcut_navigate_next_focusable))
       assertEquals(
         plain(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_TAB),
@@ -385,6 +387,34 @@ class KeymapTest {
     assertEquals(nvda(0, KeyEvent.KEYCODE_X), model.getKeyComboForKey(repeat))
     assertEquals(nvda(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_X), model.getKeyComboForKey(copy))
     assertEquals(nvda(KeyEvent.META_CTRL_ON, KeyEvent.KEYCODE_V), model.getKeyComboForKey(tts))
+  }
+
+  @Test
+  fun nvdaBrowseModeParagraphKeysAreP() {
+    fun browse(modifiers: Int, keyCode: Int) = KeyCombo(modifiers, 0, keyCode, false)
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    val next = context.getString(R.string.keycombo_shortcut_navigate_next_paragraph)
+    val previous = context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph)
+    assertEquals(browse(0, KeyEvent.KEYCODE_P), model.getKeyComboForKey(next))
+    assertEquals(browse(KeyEvent.META_SHIFT_ON, KeyEvent.KEYCODE_P), model.getKeyComboForKey(previous))
+  }
+
+  @Test
+  fun version6SavedParagraphKeysGiveWayToP() {
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 6).commit()
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val next = context.getString(R.string.keycombo_shortcut_navigate_next_paragraph)
+    val previous = context.getString(R.string.keycombo_shortcut_navigate_previous_paragraph)
+    persister.saveKeyCombo(next, KeyCombo(KeyEvent.META_CTRL_ON, 0, KeyEvent.KEYCODE_DPAD_DOWN, false))
+    // The user changed the previous paragraph key.
+    persister.saveKeyCombo(previous, KeyCombo(KeyEvent.META_ALT_ON, 0, KeyEvent.KEYCODE_DPAD_UP, false))
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_P, false), model.getKeyComboForKey(next))
+    assertEquals(
+      KeyCombo(KeyEvent.META_ALT_ON, 0, KeyEvent.KEYCODE_DPAD_UP, false),
+      model.getKeyComboForKey(previous),
+    )
   }
 
   @Test
