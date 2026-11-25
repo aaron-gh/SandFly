@@ -362,19 +362,24 @@ jint JNIMETHOD(readCommandNative)(JNIEnv* env, jobject thiz) {
     }
     jint mappedCommand, mappedArg;
     jboolean isUnifiedCommand;
+    int chordKind = brlttyCommand & SANDFLY_CHORD_KIND;
     int chordDots = 0;
-    if (brlttyCommand & SANDFLY_SPACE_CHORD) {
+    if (chordKind) {
       chordDots = (brlttyCommand & BRL_MSK_FLG) >> 16;
       brlttyCommand &= ~SANDFLY_CHORD_METADATA;
     }
     mapBrlttyCommand(brlttyCommand, &mappedCommand, &mappedArg, &isUnifiedCommand);
     if (chordDots && mappedCommand < 0) {
-      mapBrlttyCommand(BRL_CMD_BLK(PASSDOTS) | BRL_DOTC | chordDots,
+      int dots = chordDots | (chordKind == SANDFLY_SPACE_CHORD ? BRL_DOTC : 0);
+      mapBrlttyCommand(BRL_CMD_BLK(PASSDOTS) | dots,
                        &mappedCommand, &mappedArg, &isUnifiedCommand);
+      if (chordKind == SANDFLY_BARE_DOTS) {
+        mappedArg = 0x2000 | chordDots; // BrailleInputEvent.BOUND_BARE_DOTS
+      }
     } else if (chordDots && mappedArg == 0
                && mappedCommand != cmdRoute && mappedCommand != cmdLongPressRoute) {
-      // BrailleInputEvent.BOUND_SPACE_CHORD; the original command is still available.
-      mappedArg = 0x4000 | chordDots;
+      // BrailleInputEvent.BOUND_SPACE_CHORD or BOUND_BARE_DOTS.
+      mappedArg = (chordKind == SANDFLY_SPACE_CHORD ? 0x4000 : 0x2000) | chordDots;
     }
     if (mappedCommand < 0) {
       // Filter out commands that we don't handle, including BRL_NOOP.

@@ -136,10 +136,7 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
             continue;
           }
           String commandDescription = supportedCommand.getCommandDescription(getResources());
-          boolean profilePan =
-              ios && (command == BrailleInputEvent.CMD_NAV_PAN_UP
-                  || command == BrailleInputEvent.CMD_NAV_PAN_DOWN);
-          if (!DisplayKeys.isAssignable(command) && !profilePan) {
+          if (!DisplayKeys.isAssignable(command)) {
             String keys =
                 describer.join(
                     getKeyDescription(supportedCommand, props),
@@ -155,9 +152,7 @@ public class KeyBindingsCommandActivity extends PreferencesActivity {
           }
           String target = DisplayKeyOverrides.commandTarget(command);
           String keys = describer.describeKeysFor(overrides, target);
-          if (profilePan && keys.isEmpty()) {
-            keys = getKeyDescription(supportedCommand, props);
-          }
+
           Preference preference =
               createPreference(
                   commandDescription,

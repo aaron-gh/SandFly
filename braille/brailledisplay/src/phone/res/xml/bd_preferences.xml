@@ -46,9 +46,11 @@
         android:title="@string/pref_preferred_braille_grade_title"/>
 
     <ListPreference
-        android:key="pref_bd_command_profile"
+        android:key="@string/pref_bd_command_profile"
         android:title="@string/bd_command_profile_title"
         android:defaultValue="sandfly"
+        android:entries="@array/bd_command_profile_entries"
+        android:entryValues="@array/bd_command_profile_values"
         app:useSimpleSummaryProvider="true" />
 
     <Preference

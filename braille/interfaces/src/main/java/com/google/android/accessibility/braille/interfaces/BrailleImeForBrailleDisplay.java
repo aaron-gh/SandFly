@@ -46,8 +46,20 @@ public interface BrailleImeForBrailleDisplay {
   /** Tells BrailleIme commit holdings to the editor. */
   void commitHoldings();
 
-  /** Tells BrailleIme commit holdings to the editor and performs enter key action. */
-  boolean commitHoldingsAndPerformEnterKeyAction();
+  /** Commits pending braille and submits the focused field. */
+  default boolean submitTextFromDisplay() {
+    return false;
+  }
+
+  /** Commits pending braille and inserts a line break. */
+  default boolean insertNewLine() {
+    return false;
+  }
+
+  /** Returns whether the current editor accepts multiple lines. */
+  default boolean isMultilineEditor() {
+    return false;
+  }
 
   /** Commits pending braille and sends Tab or Shift Tab to the editor. */
   default boolean sendTab(boolean shift) {

@@ -203,7 +203,7 @@ findMappedKeyEntry (const KeyContext *ctx, const KeyValue *keyValue) {
 }
 
 static int
-makeKeyboardCommand (KeyTable *table, unsigned char context, int allowChords) {
+makeKeyboardCommand (KeyTable *table, unsigned char context, int allowChords, int superimpose) {
   const KeyContext *ctx;
 
   if ((ctx = getKeyContext(table, context))) {
@@ -226,7 +226,7 @@ makeKeyboardCommand (KeyTable *table, unsigned char context, int allowChords) {
         bits &= ~BRL_DOTC;
       }
 
-      if (dots) bits |= ctx->mappedKeys.superimpose;
+      if (dots && superimpose) bits |= ctx->mappedKeys.superimpose;
     }
 
     return BRL_CMD_BLK(PASSDOTS) | bits;
@@ -317,7 +317,7 @@ processCommand (KeyTable *table, int command) {
   int isInput = 0;
 #ifdef __ANDROID__
   int chordMetadata = 0;
-  if (command >= 0 && (command & SANDFLY_SPACE_CHORD)) {
+  if (command >= 0 && (command & SANDFLY_CHORD_KIND)) {
     chordMetadata = command & SANDFLY_CHORD_METADATA;
     command &= ~SANDFLY_CHORD_METADATA;
   }
@@ -646,7 +646,7 @@ processKeyEvent (
       );
 
       if (command == EOF) {
-        if ((command = makeKeyboardCommand(table, context, 0)) != EOF) {
+        if ((command = makeKeyboardCommand(table, context, 0, 1)) != EOF) {
           isImmediate = 0;
         }       ;
       }
@@ -688,7 +688,7 @@ processKeyEvent (
       if (command == EOF) {
         /* SandFly: report an unbound Space + dots chord, with BRL_DOTC set, so that the
          * user can assign a command to it. SandFly ignores chords that have no command. */
-        int cmd = makeKeyboardCommand(table, context, 1);
+        int cmd = makeKeyboardCommand(table, context, 1, 1);
 
         if ((cmd != EOF) && (cmd & BRL_DOTC) && (cmd & BRL_ALL_DOTS)) {
           command = cmd;
@@ -698,7 +698,7 @@ processKeyEvent (
 #endif
 
       if (prefs.brailleQuickSpace) {
-        int cmd = makeKeyboardCommand(table, context, 1);
+        int cmd = makeKeyboardCommand(table, context, 1, 1);
 
         if (cmd != EOF) {
           command = cmd;
@@ -737,12 +737,21 @@ processKeyEvent (
 
 #ifdef __ANDROID__
           if (binding && command != BRL_CMD_NOOP
-              && !(command & (BRL_MSK_FLG | SANDFLY_SPACE_CHORD))) {
-            int chord = makeKeyboardCommand(table, context, 1);
-            if (chord != EOF && (chord & BRL_DOTC) && (chord & BRL_ALL_DOTS)) {
-              int metadata = SANDFLY_SPACE_CHORD | ((chord & BRL_ALL_DOTS) << 16);
-              if (secondaryCommand == command) secondaryCommand |= metadata;
-              command |= metadata;
+              && !(command & SANDFLY_CHORD_METADATA)) {
+            int chord = makeKeyboardCommand(table, context, 1, 0);
+            int dots = chord & BRL_ALL_DOTS;
+            if (chord != EOF && dots) {
+              int kind = 0;
+              if (chord & BRL_DOTC) {
+                kind = SANDFLY_SPACE_CHORD;
+              } else if (chord == (BRL_CMD_BLK(PASSDOTS) | dots)) {
+                kind = SANDFLY_BARE_DOTS;
+              }
+              if (kind) {
+                int metadata = kind | (dots << 16);
+                if (secondaryCommand == command) secondaryCommand |= metadata;
+                command |= metadata;
+              }
             }
           }
 #endif
@@ -757,7 +766,7 @@ processKeyEvent (
             table->longPress.command = secondaryCommand;
 #ifdef __ANDROID__
             int repeatCommand = secondaryCommand;
-            if (repeatCommand & SANDFLY_SPACE_CHORD) repeatCommand &= ~SANDFLY_CHORD_METADATA;
+            if (repeatCommand & SANDFLY_CHORD_KIND) repeatCommand &= ~SANDFLY_CHORD_METADATA;
             table->longPress.repeat = isRepeatableCommand(repeatCommand);
 #else
             table->longPress.repeat = isRepeatableCommand(secondaryCommand);

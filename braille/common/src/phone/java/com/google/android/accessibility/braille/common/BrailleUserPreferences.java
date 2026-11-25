@@ -57,8 +57,6 @@ import java.util.stream.Collectors;
 /** Controls the braille common user preferences. */
 public class BrailleUserPreferences {
   public static final String BRAILLE_SHARED_PREFS_FILENAME = "braille_keyboard";
-  public static final String PREF_BD_COMMAND_PROFILE = "pref_bd_command_profile";
-  public static final String BD_COMMAND_PROFILE_IOS = "ios";
 
   private static final String SHARED_PREFS_VERSION = "brailleime_shared_prefs_version";
   private static final int AAS12_0_SHARED_PREFS_VERSION = 1;
@@ -124,7 +122,9 @@ public class BrailleUserPreferences {
 
   private static final String CONTRACTED_MODE_FOR_CODE_PREFIX = "pref_braille_contracted_mode_";
 
+  // Keep saved display customizations under the original key for the SandFly defaults.
   private static final String PREF_BD_KEY_OVERRIDES = "pref_bd_key_overrides";
+  private static final String PREF_BD_IOS_KEY_OVERRIDES = "pref_bd_ios_key_overrides";
 
   private BrailleUserPreferences() {}
 
@@ -1054,16 +1054,16 @@ public class BrailleUserPreferences {
 
   /** Returns whether the iOS braille display defaults are selected. */
   public static boolean usesIosDisplayCommands(Context context) {
-    return BD_COMMAND_PROFILE_IOS.equals(
+    return "ios".equals(
         getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
-            .getString(PREF_BD_COMMAND_PROFILE, "sandfly"));
+            .getString(context.getString(R.string.pref_bd_command_profile), "sandfly"));
   }
 
   /** Reads the saved text of the braille display keys assigned to other commands, or null. */
   @Nullable
   public static String readDisplayKeyOverridesText(Context context) {
     return getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
-        .getString(PREF_BD_KEY_OVERRIDES, null);
+        .getString(displayKeyOverridesKey(context), null);
   }
 
   /** Reads the braille display keys assigned to other commands. */
@@ -1073,14 +1073,19 @@ public class BrailleUserPreferences {
 
   /** Writes the braille display keys assigned to other commands. */
   public static void writeDisplayKeyOverrides(Context context, DisplayKeyOverrides overrides) {
+    String key = displayKeyOverridesKey(context);
     SharedPreferences.Editor editor =
         getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME).edit();
     if (overrides.isEmpty()) {
-      editor.remove(PREF_BD_KEY_OVERRIDES);
+      editor.remove(key);
     } else {
-      editor.putString(PREF_BD_KEY_OVERRIDES, overrides.serialize());
+      editor.putString(key, overrides.serialize());
     }
     editor.apply();
+  }
+
+  private static String displayKeyOverridesKey(Context context) {
+    return usesIosDisplayCommands(context) ? PREF_BD_IOS_KEY_OVERRIDES : PREF_BD_KEY_OVERRIDES;
   }
 
   /** Reads the timed message duration fraction user preference. */

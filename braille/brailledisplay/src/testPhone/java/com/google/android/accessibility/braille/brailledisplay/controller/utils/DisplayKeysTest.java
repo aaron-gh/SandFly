@@ -125,6 +125,40 @@ public class DisplayKeysTest {
   }
 
   @Test
+  public void bareBoundDotsTypeInAnEditorAndKeepTheDriverCommandOutside() {
+    int dots = 0b10001000; // Dots 4 and 8, bound to Next item by the driver.
+    int command = BrailleInputEvent.CMD_NAV_ITEM_NEXT;
+    BrailleInputEvent event =
+        new BrailleInputEvent(command, BrailleInputEvent.BOUND_BARE_DOTS | dots, 10);
+    BrailleInputEvent editing = DisplayKeys.normalizeBareDots(event, true);
+    assertEquals(BrailleInputEvent.CMD_BRAILLE_KEY, editing.getCommand());
+    assertEquals(dots, editing.getArgument());
+    assertEquals(10, editing.getEventTime());
+
+    BrailleInputEvent browsing = DisplayKeys.normalizeBareDots(event, false);
+    assertEquals(command, browsing.getCommand());
+    assertEquals(0, browsing.getArgument());
+  }
+
+  @Test
+  public void submitNewlineAndScreenSearchUseDisplayCommands() {
+    String submit = DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_SUBMIT_TEXT);
+    String submitChord = DisplayCommandProfile.spaceChordKey("15");
+    DisplayKeyOverrides sandfly =
+        DisplayCommandProfile.applyDefaults(false, DisplayKeyOverrides.parse(null));
+    DisplayKeyOverrides ios =
+        DisplayCommandProfile.applyDefaults(true, DisplayKeyOverrides.parse(null));
+    assertEquals(submit, sandfly.resolve(submitChord));
+    assertEquals(submit, ios.resolve(submitChord));
+    assertEquals(
+        DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_KEY_RETURN),
+        ios.resolve(DisplayCommandProfile.spaceChordKey("8")));
+    assertEquals(
+        DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_TOGGLE_SCREEN_SEARCH),
+        ios.resolve(DisplayCommandProfile.spaceChordKey("124")));
+  }
+
+  @Test
   public void separateKeysRunTheirCommandUntilAssigned() {
     int[][] separateKeys = {
       {BrailleInputEvent.CMD_NAV_PAN_UP_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_PAN_UP},

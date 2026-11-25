@@ -51,6 +51,7 @@ import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_SELECTION_PASTE;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_SELECTION_SELECT_ALL;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_SHOW_POPUP_MESSAGE_HISTORY;
+import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_SUBMIT_TEXT;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_SWITCH_TO_NEXT_INPUT_LANGUAGE;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_TOGGLE_BRAILLE_GRADE;
 import static com.google.android.accessibility.braille.brltty.BrailleInputEvent.CMD_TOGGLE_BROWSE_MODE;
@@ -107,6 +108,7 @@ public final class DisplayCommandProfile {
   private static Map<String, String> createSandFlyDefaults() {
     Map<String, String> defaults = new LinkedHashMap<>();
     bindDisplay(defaults, CMD_OPEN_TALKBACK_MENU, "134", "1348");
+    bindDisplay(defaults, CMD_SUBMIT_TEXT, "15");
     bindDisplay(defaults, CMD_EDIT_CUSTOM_LABEL, "12346");
     bindScreenReader(defaults, "INCREASE_MEDIA_VOLUME", "345");
     bindScreenReader(defaults, "DECREASE_MEDIA_VOLUME", "126");
@@ -122,7 +124,7 @@ public final class DisplayCommandProfile {
     bindDisplay(defaults, CMD_NAV_BOTTOM, "456");
     defaults.put(DisplayKeyOverrides.commandKey(CMD_NAV_TOP_OR_KEY_ACTIVATE), DisplayKeyOverrides.NONE);
     defaults.put(DisplayKeyOverrides.commandKey(CMD_NAV_BOTTOM_OR_KEY_ACTIVATE), DisplayKeyOverrides.NONE);
-    bindDisplay(defaults, CMD_TOGGLE_SCREEN_SEARCH, "24");
+    bindDisplay(defaults, CMD_TOGGLE_SCREEN_SEARCH, "24", "124");
     bindDisplay(defaults, CMD_NAV_STATUS_BAR, "234");
     bindDisplay(defaults, CMD_GLOBAL_NOTIFICATIONS, "46");
     bindDisplay(defaults, CMD_QUICK_SETTINGS, "25");
@@ -155,10 +157,9 @@ public final class DisplayCommandProfile {
     bindDisplay(defaults, CMD_SELECTION_COPY, "14");
     bindDisplay(defaults, CMD_SELECTION_PASTE, "1236");
     bindDisplay(defaults, CMD_KEY_DEL, "145", "7");
-    bindDisplay(defaults, CMD_KEY_RETURN, "15", "8");
+    bindDisplay(defaults, CMD_KEY_RETURN, "8");
     bindDisplay(defaults, CMD_UNDO_TYPING, "1356");
     bindDisplay(defaults, CMD_REDO_TYPING, "2346");
-    bindScreenReader(defaults, "BRAILLE_FIND_TEXT", "124");
     bindScreenReader(defaults, "DESCRIBE_TEXT_FORMATTING", "23456");
     bindScreenReader(defaults, "DICTATE_OR_MEDIA_CONTROL", "156");
     bindScreenReader(defaults, "SHOW_HIDE SCREEN", "123456");

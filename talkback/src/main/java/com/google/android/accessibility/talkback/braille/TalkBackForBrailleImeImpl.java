@@ -170,13 +170,14 @@ public class TalkBackForBrailleImeImpl implements TalkBackForBrailleIme {
   }
 
   @Override
-  public boolean clickSendButton(List<String> sendWords) {
+  public boolean clickSendButton(List<String> sendWords, boolean requireSameRow) {
     AccessibilityNodeInfoCompat inputFocus = createFocusFinder().findFocusCompat(FOCUS_INPUT);
     if (inputFocus == null) {
       return false;
     }
     inputFocus.refresh();
-    AccessibilityNodeInfoCompat sendButton = SendButtonFinder.find(inputFocus, sendWords);
+    AccessibilityNodeInfoCompat sendButton =
+        SendButtonFinder.find(inputFocus, sendWords, requireSameRow);
     return sendButton != null
         && sendButton.performAction(AccessibilityNodeInfoCompat.ACTION_CLICK);
   }

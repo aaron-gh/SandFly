@@ -20,9 +20,9 @@ import android.view.inputmethod.EditorInfo
 
 /** Decides how the braille keyboard submits the text of a field. */
 object SubmitAction {
-  /** Returns the action for display Enter, or the signal to deliver a raw Enter key. */
+  /** Returns the explicit editor action available to the display Submit command. */
   @JvmStatic
-  fun editorActionForEnter(imeOptions: Int): Int {
+  fun editorActionForSubmit(imeOptions: Int): Int {
     val action = imeOptions and EditorInfo.IME_MASK_ACTION
     return if (
       action == EditorInfo.IME_ACTION_SEND ||

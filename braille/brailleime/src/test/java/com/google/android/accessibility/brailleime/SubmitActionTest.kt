@@ -24,40 +24,40 @@ import org.junit.Test
 
 class SubmitActionTest {
   @Test
-  fun displayEnterUsesTheEditorsAction() {
+  fun displaySubmitUsesTheEditorsAction() {
     assertEquals(
       EditorInfo.IME_ACTION_SEND,
-      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_SEND),
+      SubmitAction.editorActionForSubmit(EditorInfo.IME_ACTION_SEND),
     )
     assertEquals(
       EditorInfo.IME_ACTION_DONE,
-      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_DONE),
+      SubmitAction.editorActionForSubmit(EditorInfo.IME_ACTION_DONE),
     )
     assertEquals(
       EditorInfo.IME_ACTION_SEARCH,
-      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_SEARCH),
+      SubmitAction.editorActionForSubmit(EditorInfo.IME_ACTION_SEARCH),
     )
   }
 
   @Test
-  fun displayEnterFallsBackToTheRawKeyForMultilineFields() {
+  fun displaySubmitRespectsFieldsWithoutAnEnterAction() {
     assertEquals(
       EditorInfo.IME_ACTION_NONE,
-      SubmitAction.editorActionForEnter(
+      SubmitAction.editorActionForSubmit(
         EditorInfo.IME_ACTION_DONE or EditorInfo.IME_FLAG_NO_ENTER_ACTION
       ),
     )
     assertEquals(
       EditorInfo.IME_ACTION_NONE,
-      SubmitAction.editorActionForEnter(EditorInfo.IME_ACTION_UNSPECIFIED),
+      SubmitAction.editorActionForSubmit(EditorInfo.IME_ACTION_UNSPECIFIED),
     )
   }
 
   @Test
-  fun displayEnterCanStillSendWhenAppDisablesOtherEnterActions() {
+  fun displaySubmitCanSendWhenAppDisablesOtherEnterActions() {
     assertEquals(
       EditorInfo.IME_ACTION_SEND,
-      SubmitAction.editorActionForEnter(
+      SubmitAction.editorActionForSubmit(
         EditorInfo.IME_ACTION_SEND or EditorInfo.IME_FLAG_NO_ENTER_ACTION
       ),
     )

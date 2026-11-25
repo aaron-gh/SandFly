@@ -44,6 +44,7 @@ import com.google.android.accessibility.braille.brailledisplay.R;
 import com.google.android.accessibility.braille.brailledisplay.analytics.BrailleDisplayAnalytics;
 import com.google.android.accessibility.braille.brailledisplay.controller.CellsContentManager.Cursor;
 import com.google.android.accessibility.braille.brailledisplay.controller.CellsContentManager.OnDisplayContentChangeListener;
+import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayKeys;
 import com.google.android.accessibility.braille.brailledisplay.platform.Controller;
 import com.google.android.accessibility.braille.brailledisplay.platform.DisplayerInterface;
 import com.google.android.accessibility.braille.brailledisplay.platform.PersistentStorage;
@@ -189,7 +190,13 @@ public class BdController implements Controller {
     if (DisplayKeyCapture.offer(context, brailleInputEvent)) {
       return;
     }
-    String target = keyRemapper.targetFor(brailleInputEvent, behaviorIme.acceptInput());
+    boolean editing = behaviorIme.acceptInput();
+    brailleInputEvent = DisplayKeys.normalizeBareDots(brailleInputEvent, editing);
+    if (brailleInputEvent == null) {
+      return;
+    }
+    String target = keyRemapper.targetFor(
+        brailleInputEvent, editing, editing && behaviorIme.isMultilineEditor());
     if (DisplayKeyOverrides.NONE.equals(target)) {
       return;
     }
@@ -728,9 +735,16 @@ public class BdController implements Controller {
       return ime != null && ime.toggleKeyboardVisibility();
     }
 
-    /** Performs enter key action. */
-    public boolean performEnterKeyAction() {
-      return getBrailleImeForBrailleDisplay().commitHoldingsAndPerformEnterKeyAction();
+    public boolean isMultilineEditor() {
+      return getBrailleImeForBrailleDisplay().isMultilineEditor();
+    }
+
+    public boolean insertNewLine() {
+      return getBrailleImeForBrailleDisplay().insertNewLine();
+    }
+
+    public boolean submitTextFromDisplay() {
+      return getBrailleImeForBrailleDisplay().submitTextFromDisplay();
     }
 
     /** Commits holdings. */

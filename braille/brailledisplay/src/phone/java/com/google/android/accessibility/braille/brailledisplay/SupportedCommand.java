@@ -568,6 +568,13 @@ public class SupportedCommand {
                   KeyDescriptor.builder().setDots(new BrailleCharacter(8)).build()))
           .add(
               new SupportedCommand(
+                  BrailleInputEvent.CMD_SUBMIT_TEXT,
+                  R.string.bd_cmd_submit_text,
+                  Category.EDITING,
+                  Subcategory.EDIT,
+                  KeyDescriptor.builder().build()))
+          .add(
+              new SupportedCommand(
                   BrailleInputEvent.CMD_KEY_RETURN,
                   R.string.bd_cmd_return,
                   Category.EDITING,
