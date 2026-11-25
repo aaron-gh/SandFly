@@ -44,6 +44,18 @@ public class SpeechRateAndPitchActor {
   public static final float RATE_MINIMUM = 0.1f;
   public static final float RATE_MAXIMUM = 6.0f;
   public static final float RATE_STEP = 1.1f;
+
+  /**
+   * The step of speech rate changes in percent of the normal rate, as a string, or {@link
+   * #RATE_STEP_RELATIVE} for 10% of the rate in use.
+   */
+  public static final String PREF_RATE_STEP = "pref_speech_rate_step";
+
+  /** The {@link #PREF_RATE_STEP} value for steps of 10% of the rate in use, as {@link #RATE_STEP}. */
+  public static final int RATE_STEP_RELATIVE = 0;
+
+  /** The choices of {@link #PREF_RATE_STEP}. */
+  public static final int[] RATE_STEPS = {RATE_STEP_RELATIVE, 1, 2, 5, 10, 20};
   // Speech pitch
   public static final float PITCH_MINIMUM = 0.2f;
   public static final float PITCH_MAXIMUM = 2.0f;
@@ -54,7 +66,7 @@ public class SpeechRateAndPitchActor {
   public SpeechRateAndPitchActor(Context context) {
     this.context = context;
     prefs = SharedPreferencesUtils.getSharedPreferences(context);
-    speechRatePercent = (int) (getCurrentOrDefaultSpeechRate(/* isCurrent= */ true) * 100);
+    speechRatePercent = Math.round(getCurrentOrDefaultSpeechRate(/* isCurrent= */ true) * 100);
     speechPitch = getCurrentOrDefaultSpeechPitch(/* isCurrent= */ true);
   }
 
@@ -102,14 +114,9 @@ public class SpeechRateAndPitchActor {
    */
   public boolean changeSpeechRate(boolean isIncrease) {
     float currentRate = getCurrentOrDefaultSpeechRate(/* isCurrent= */ true);
-    float newRate =
-        isIncrease
-            ? Math.min(currentRate * RATE_STEP, RATE_MAXIMUM)
-            : Math.max(currentRate / RATE_STEP, RATE_MINIMUM);
+    float newRate = steppedRate(prefs, currentRate, isIncrease);
 
-    newRate = forceRateToDefaultWhenClose(newRate);
-
-    speechRatePercent = (int) (newRate * 100);
+    speechRatePercent = Math.round(newRate * 100);
     applySpeechRateToPrefs(newRate, speechRatePercent);
 
     return true;
@@ -119,7 +126,7 @@ public class SpeechRateAndPitchActor {
   public void resetSpeechRate() {
     float defaultRate = getCurrentOrDefaultSpeechRate(/* isCurrent= */ false);
 
-    speechRatePercent = (int) (defaultRate * 100);
+    speechRatePercent = Math.round(defaultRate * 100);
     applySpeechRateToPrefs(defaultRate, speechRatePercent);
   }
 
@@ -204,6 +211,48 @@ public class SpeechRateAndPitchActor {
 
   public float getSpeechPitch() {
     return speechPitch;
+  }
+
+  /** Returns the step chosen in {@link #PREF_RATE_STEP}, one of {@link #RATE_STEPS}. */
+  public static int rateStep(SharedPreferences prefs) {
+    try {
+      int step = Integer.parseInt(prefs.getString(PREF_RATE_STEP, "0"));
+      for (int choice : RATE_STEPS) {
+        if (choice == step) {
+          return step;
+        }
+      }
+    } catch (NumberFormatException e) {
+      // The default below.
+    }
+    return RATE_STEP_RELATIVE;
+  }
+
+  /**
+   * Returns {@code rate} one step faster or slower, by the step chosen in {@link #PREF_RATE_STEP},
+   * within {@link #RATE_MINIMUM} and {@link #RATE_MAXIMUM}. A fixed step moves to the next multiple
+   * of the step, so that a rate between two multiples reaches one.
+   */
+  public static float steppedRate(SharedPreferences prefs, float rate, boolean isIncrease) {
+    return steppedRate(rateStep(prefs), rate, isIncrease);
+  }
+
+  /** As {@link #steppedRate(SharedPreferences, float, boolean)}, with {@code step} in percent. */
+  public static float steppedRate(int step, float rate, boolean isIncrease) {
+    if (step <= RATE_STEP_RELATIVE) {
+      return forceRateToDefaultWhenClose(
+          isIncrease
+              ? Math.min(rate * RATE_STEP, RATE_MAXIMUM)
+              : Math.max(rate / RATE_STEP, RATE_MINIMUM));
+    }
+    int percent = Math.round(rate * 100);
+    int newPercent =
+        isIncrease
+            ? (Math.floorDiv(percent, step) + 1) * step
+            : (Math.floorDiv(percent + step - 1, step) - 1) * step;
+    int min = Math.round(RATE_MINIMUM * 100);
+    int max = Math.round(RATE_MAXIMUM * 100);
+    return Math.max(min, Math.min(max, newPercent)) / 100f;
   }
 
   /**

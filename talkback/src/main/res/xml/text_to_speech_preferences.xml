@@ -17,6 +17,11 @@
         android:key="@string/pref_speech_rate_seekbar_key_int"
         android:title="@string/title_pref_talkback_speech_rate" />
     <ListPreference
+        android:defaultValue="0"
+        android:key="pref_speech_rate_step"
+        android:summary="%s"
+        android:title="@string/title_pref_speech_rate_step" />
+    <ListPreference
         android:defaultValue="15"
         android:key="@string/pref_repeat_slower_by_key"
         android:summary="%s"

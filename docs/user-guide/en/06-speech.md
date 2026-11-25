@@ -25,6 +25,8 @@ The sliders in the **Voice** group set the speech of **SandFly default**. They'r
 - **Speech pitch**: from 20% to 200%. The default is 100%.
 - **Speech volume**: from 25 to 100. The default is 100.
 
+**Speech rate step**, below **Speech rate**, sets how much the rate changes at a time with the **Speech rate** sliders of this screen and of voice profiles, the **Speech rate** reading control and the speech rate commands. **10% of the rate**, the default, changes the rate in use by a tenth of it. **1%**, **2%**, **5%**, **10%** and **20%** move to the next multiple of that step, such as from 133% to 135% with **5%**.
+
 While a voice profile is in use, the **Voice profiles** item shows "In use:" and the name of the profile, and these sliders don't change how it sounds. Changing the rate or pitch with commands or reading controls then changes the profile in use. See [](#speech-voice-profiles).
 
 You can also change speech without opening settings:
