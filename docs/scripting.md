@@ -725,7 +725,7 @@ sf.keys.press('enter')
 
 *Version 3.* `sf.keys.passAll(on)` sends every key to Android and the app in front, as **Turn SandFly keyboard input on or off** does: the SandFly key and its shortcuts, browse mode keys, arrow key navigation, the review cursor, and the keys of scripts, this one too. Only the keys of **Turn SandFly keyboard input on or off** still work. `sf.keys.passAll()` or `sf.keys.passAll(true)` starts it, and `sf.keys.passAll(false)` stops it. Needs `input`.
 
-It lasts while the script is loaded: a script with `apps` stops passing keys when its app leaves, and a script for all apps passes them in every app until it stops. Keys are never passed on SandFly screens. The keys of **Turn SandFly keyboard input on or off** stop it until the script calls `sf.keys.passAll` again. SandFly says nothing when a script starts or stops passing keys, so tell the user.
+It lasts while the script is loaded: a script with `apps` stops passing keys when its app leaves, and a script for all apps passes them in every app until it stops. Keys are never passed on SandFly screens or the lock screen. The keys of **Turn SandFly keyboard input on or off** stop it until the script calls `sf.keys.passAll` again. SandFly says nothing when a script starts or stops passing keys, so tell the user.
 
 ```lua
 -- A game that uses every key.
