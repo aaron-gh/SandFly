@@ -20,6 +20,7 @@ import android.accessibilityservice.AccessibilityService
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.Point
 import android.os.Bundle
 import android.os.Handler
@@ -284,6 +285,21 @@ class GestureTrainerActivity : AppCompatActivity() {
   /** Whether the trainer is in the foreground, between onResume and onPause. */
   private var resumed = false
 
+  /**
+   * Tries are taken only while the trainer's window has focus: the notification shade, a call or a
+   * system dialog over it leaves it resumed, and gestures there must work.
+   */
+  override fun onWindowFocusChanged(hasFocus: Boolean) {
+    super.onWindowFocusChanged(hasFocus)
+    if (hasFocus) {
+      if (takingTries) listen()
+    } else if (takingTries) {
+      stopListening()
+      // Touches of a try left open never end it: the next try starts afresh.
+      newTry()
+    }
+  }
+
   override fun onResume() {
     super.onResume()
     resumed = true
@@ -337,6 +353,21 @@ class GestureTrainerActivity : AppCompatActivity() {
     handler.removeCallbacksAndMessages(null)
   }
 
+  /**
+   * Folding, unfolding or rotating changes the screen size, which the limits of halves, corners,
+   * edges and edge menus depend on. The exercise's text gives sizes in mm, so it is shown again.
+   */
+  override fun onConfigurationChanged(newConfig: Configuration) {
+    super.onConfigurationChanged(newConfig)
+    val before = limits
+    readLimits()
+    val changed =
+      before.screenWidth != limits.screenWidth ||
+        before.screenHeight != limits.screenHeight ||
+        before.pxPerCm != limits.pxPerCm
+    if (changed && screen == Screen.EXERCISE) showExercise()
+  }
+
   /** Reads the limits again, as settings may have changed in a settings screen opened from here. */
   private fun readLimits() {
     val size = Point()
@@ -352,7 +383,7 @@ class GestureTrainerActivity : AppCompatActivity() {
     enterScreen(Screen.GROUPS)
     group = null
     content.removeAllViews()
-    val title = heading(getString(R.string.gesture_trainer_title_version, VERSION))
+    val title = heading(getString(R.string.gesture_trainer_title))
     content.addView(title)
     if (!FeatureSupport.supportGestureDetection()) {
       content.addView(text(getString(R.string.gesture_trainer_no_detection)))
@@ -463,11 +494,11 @@ class GestureTrainerActivity : AppCompatActivity() {
   private var triesStartMs = 0L
 
   /**
-   * Takes every gesture as a try, so only while the trainer is on the screen: a trainer that took
-   * gestures from the background would leave the user with none that work.
+   * Takes every gesture as a try, so only while the trainer is on the screen with focus: a trainer
+   * that took gestures from the background would leave the user with none that work.
    */
   private fun listen() {
-    if (!resumed || isFinishing) return
+    if (!resumed || !hasWindowFocus() || isFinishing) return
     GestureTrainerHooks.listener = hooks
     if ((practisesBackTaps && !backTaps.start()) || (practisesShake && !shakes.start())) {
       stopTries()
@@ -505,8 +536,13 @@ class GestureTrainerActivity : AppCompatActivity() {
 
   private fun stopTries() {
     takingTries = false
-    // A gesture still being recognized after the last try must not act outside the trainer.
-    handler.postDelayed(stopListeningAfterTries, waitForGestureMs())
+    // A gesture still being recognized after the last try must not act outside the trainer. Only a
+    // two-stroke swipe waits longer than a multi-tap for its rest; meanwhile gestures do nothing.
+    val waitMs =
+      if (exercise?.shape is Shape.TwoStroke) waitForGestureMs()
+      else GestureConfiguration.getMultiTapCompletionTimeoutMs().toLong()
+    handler.removeCallbacks(stopListeningAfterTries)
+    handler.postDelayed(stopListeningAfterTries, waitMs)
     newTry()
   }
 
@@ -630,7 +666,7 @@ class GestureTrainerActivity : AppCompatActivity() {
       }
     Log.d(
       LOG_TAG,
-      "v$VERSION try ${reports.size + 1} of ${exercise?.gestureId} ${exercise?.shape} " +
+      "try ${reports.size + 1} of ${exercise?.gestureId} ${exercise?.shape} " +
         "screen=${limits.screenWidth}x${limits.screenHeight} pxPerCm=${limits.pxPerCm}: " +
         "recognized=${report.recognized} menu=${report.menuChoice} " +
         "rating=${report.rating} " +
@@ -1391,9 +1427,7 @@ class GestureTrainerActivity : AppCompatActivity() {
 
   companion object {
     const val TRIES = 3
-    /** The trainer's version, raised with each round of changes the user tests. */
-    const val VERSION = "0.26"
-    private const val LOG_TAG = "BacktalkTrainer"
+    private const val LOG_TAG = "GestureTrainer"
     private const val SETTLE_MS = 120L
     private const val SLOW_TAPS_GRACE_MS = 1000L
     private const val GESTURE_MARGIN_MS = 250L
