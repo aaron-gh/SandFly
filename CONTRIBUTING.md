@@ -83,6 +83,10 @@ A crash or a hang leaves the user without speech.
 *   Update the user guide in `docs/user-guide/en` for each change users can see.
 *   Write plainly. Controls and messages say what happens, in as few words as possible.
 
+## AI-assisted contributions
+
+AI-assisted contributions are permitted. The contributor is responsible for every line, and must know what it does as though they had written it themselves.
+
 ## Licence
 
 SandFly is under the Apache License 2.0. Contributions are under the same licence. Do not copy code from sources with an incompatible licence, and credit the source of any code that is copied.
