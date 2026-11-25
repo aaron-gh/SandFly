@@ -160,7 +160,7 @@ You can also open an [issue on GitHub](https://github.com/aaron-gh/SandFly/issue
 
 SandFly is translated into Afrikaans, Albanian, Amharic, Arabic, Armenian, Assamese, Azerbaijani, Bangla, Basque, Belarusian, Bosnian, Bulgarian, Burmese, Catalan, Chinese (Simplified, Traditional and Hong Kong), Croatian, Czech, Danish, Dutch, English (United Kingdom, Australia and India), Estonian, Filipino, Finnish, French (France and Canada), Galician, Georgian, German, Greek, Gujarati, Hebrew, Hindi, Hungarian, Icelandic, Indonesian, Italian, Japanese, Kannada, Kazakh, Khmer, Korean, Kyrgyz, Lao, Latvian, Lithuanian, Macedonian, Malay, Malayalam, Marathi, Mongolian, Nepali, Norwegian, Odia, Persian, Polish, Portuguese (Brazil and Portugal), Punjabi, Romanian, Russian, Serbian (Cyrillic and Latin), Sinhala, Slovak, Slovenian, Spanish (Spain and Latin America), Swahili, Swedish, Tamil, Telugu, Thai, Turkish, Ukrainian, Urdu, Uzbek, Vietnamese and Zulu.
 
-The user guide is in English, Dutch and Indonesian, and shows in English in other languages. Its lists of default gestures and keyboard shortcuts are shown in the language of SandFly. To translate the guide, see [docs/user-guide/README.md](docs/user-guide/README.md).
+The user guide is in English, Dutch, Indonesian and Polish, and shows in English in other languages. Its lists of default gestures and keyboard shortcuts are shown in the language of SandFly. To translate the guide, see [docs/user-guide/README.md](docs/user-guide/README.md).
 
 ## For developers
 
