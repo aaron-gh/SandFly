@@ -35,8 +35,15 @@ object ClipboardHistory {
 
   const val MAX_ENTRIES = 50
 
-  // Longer texts are kept cut to this length.
-  const val MAX_LENGTH = 10_000
+  /**
+   * Longer texts are kept, and appended texts put on the clipboard, cut to this length: as many
+   * characters as continuous copy collects. The clip goes to the clipboard service in one Binder
+   * transaction, of about 2 bytes a character.
+   */
+  const val MAX_LENGTH = 200_000
+
+  /** The most characters of all entries together: older entries past it are dropped. */
+  const val MAX_TOTAL_LENGTH = 1_000_000
 
   private const val FILE = "clipboard_history"
   private const val KEY = "entries"
@@ -92,13 +99,17 @@ object ClipboardHistory {
   @JvmStatic
   fun append(context: Context, added: CharSequence): String {
     val before = current(context)
-    val combined = if (before.isNullOrEmpty()) added.toString() else before + "\n" + added
+    val combined =
+      (if (before.isNullOrEmpty()) added.toString() else before + "\n" + added).take(MAX_LENGTH)
     val clipboard = context.getSystemService(ClipboardManager::class.java) ?: return combined
     clipboard.setPrimaryClip(ClipData.newPlainText(null, combined))
     readClipTime = clipboard.primaryClipDescription?.timestamp ?: readClipTime
-    val entry = combined.take(MAX_LENGTH)
     synchronized(this) {
-      write(context, (listOf(entry) + read(context).filter { it != entry && it != before }).take(MAX_ENTRIES))
+      write(
+        context,
+        (listOf(combined) + read(context).filter { it != combined && it != before })
+          .take(MAX_ENTRIES),
+      )
     }
     return combined
   }
@@ -183,7 +194,8 @@ object ClipboardHistory {
   /**
    * The text of the exported history or entries: [entries] newest first, each as it is, with a
    * blank line, a line of [EXPORT_SEPARATOR] and a blank line between two entries, and a line
-   * break at the end. The history holds at most [MAX_ENTRIES] texts of [MAX_LENGTH] characters.
+   * break at the end. The history holds at most [MAX_ENTRIES] texts of [MAX_LENGTH] characters,
+   * [MAX_TOTAL_LENGTH] in all.
    */
   @JvmStatic
   fun exportText(entries: List<String>): String =
@@ -216,6 +228,16 @@ object ClipboardHistory {
     return app.getSharedPreferences(FILE, Context.MODE_PRIVATE)
   }
 
+  /** The first of [entries] whose lengths add up to [MAX_TOTAL_LENGTH] at most, and the first. */
+  private fun withinTotal(entries: List<String>): List<String> {
+    var total = 0
+    val kept = entries.takeWhile {
+      total += it.length
+      total <= MAX_TOTAL_LENGTH
+    }
+    return if (kept.isEmpty()) entries.take(1) else kept
+  }
+
   private fun read(context: Context): List<String> {
     val json = prefs(context)?.getString(KEY, null) ?: return emptyList()
     return try {
@@ -228,7 +250,7 @@ object ClipboardHistory {
 
   private fun write(context: Context, entries: List<String>) {
     val prefs = prefs(context) ?: return
-    prefs.edit().putString(KEY, JSONArray(entries).toString()).apply()
+    prefs.edit().putString(KEY, JSONArray(withinTotal(entries)).toString()).apply()
     val copy = synchronized(listeners) { listeners.toList() }
     android.os.Handler(android.os.Looper.getMainLooper()).post { copy.forEach { it() } }
   }
