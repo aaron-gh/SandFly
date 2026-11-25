@@ -66,6 +66,9 @@ final class EmojiNames {
   private static final char ZERO_WIDTH_JOINER = '\u200D';
   private static final char COMBINING_KEYCAP = '\u20E3';
 
+  /** The first emoji of the Symbols group in the list, which keeps emoji-test.txt's order. */
+  private static final String FIRST_SYMBOL = "\uD83C\uDFE7"; // 🏧
+
   /** An emoji in text, from {@code start} to {@code end}, and where it is in the {@link Index}. */
   record Match(int start, int end, int emoji) {}
 
@@ -77,8 +80,15 @@ final class EmojiNames {
     /** Every shorter start of an emoji, so matching stops when none can follow. */
     private final Set<String> prefixes = new HashSet<>();
 
-    /** Single characters that are only emoji when variation selector 16 follows them. */
+    /**
+     * Single characters of the Symbols group that are only emoji when variation selector 16
+     * follows them, such as ©, ™, ▶ and ↔, which text uses as symbols. Those of the other groups,
+     * such as ❤, ✈ and 🕊, are emoji with or without it: apps such as Telegram send them without.
+     */
     private final Set<String> textStyle = new HashSet<>();
+
+    /** Whether {@link #add} has reached the Symbols group, which {@link #FIRST_SYMBOL} starts. */
+    private boolean inSymbols;
 
     /** The characters emoji start with. */
     private final BitSet starts = new BitSet();
@@ -109,10 +119,13 @@ final class EmojiNames {
         return;
       }
       positions.put(key, position);
+      if (key.equals(FIRST_SYMBOL)) {
+        inSymbols = true;
+      }
       int first = key.codePointAt(0);
       starts.set(first);
       int firstLength = Character.charCount(first);
-      if (key.length() == firstLength && emoji.length() > key.length()) {
+      if (inSymbols && key.length() == firstLength && emoji.length() > key.length()) {
         textStyle.add(key);
         textStyleCharacters.set(first);
       }
