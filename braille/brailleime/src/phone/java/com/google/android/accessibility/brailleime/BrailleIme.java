@@ -1518,15 +1518,18 @@ public class BrailleIme extends InputMethodService {
         @Override
         public void submitText() {
           EditorInfo editorInfo = getCurrentInputEditorInfo();
-          // The keyboard stays open only when the send button next to the field sends the text, as
-          // in chat apps, where the field stays for the next message. Otherwise it hides: that
-          // brings touch exploration back, so that accessibility focus can go to the next field.
-          // Neither returns to the previous keyboard.
-          if (editorInfo == null || !SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
+          // With Keep the keyboard open after sending on, the keyboard stays open only when the send
+          // button next to the field sends the text, as in chat apps, where the field stays for the
+          // next message. Otherwise it hides: that brings touch exploration back, so that
+          // accessibility focus can go to the next field. Neither returns to the previous keyboard.
+          boolean keepOpen = BrailleUserPreferences.readKeepOpenAfterSending(BrailleIme.this);
+          if (editorInfo == null
+              || !keepOpen
+              || !SubmitAction.sendsWithButton(editorInfo.imeOptions)) {
             hideAfterSubmit();
           }
           BrailleIme.this.performEditorAction(
-              getImeConnection().inputConnection, /* hideUnlessSent= */ true);
+              getImeConnection().inputConnection, /* hideUnlessSent= */ keepOpen);
         }
 
         @Override

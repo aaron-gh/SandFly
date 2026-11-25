@@ -184,6 +184,8 @@
   <string name="summary_pref_typing_sounds">Play keyboard clicks when you type a character, a space, a new line, or delete</string>
   <!-- Title of the option that speaks "Submitting text" when the braille keyboard sends text. "Submitting text" is the announcement perform_action_submitting. [CHAR_LIMIT=60]-->
   <string name="title_pref_speak_submitting">Say \"Submitting text\"</string>
+  <!-- Title of the option that keeps the braille keyboard open after Submit text presses the send button next to a text field, as in chat apps, so that the next message can be typed. When off, the braille keyboard hides after every Submit text. [CHAR_LIMIT=60]-->
+  <string name="title_pref_keep_open_after_sending">Keep the keyboard open after sending</string>
   <!-- Title of the option that changes back to the keyboard used before the braille keyboard when the braille keyboard is hidden or its text field is left. [CHAR_LIMIT=60]-->
   <string name="title_pref_return_to_previous_keyboard">Return to the previous keyboard</string>
   <!-- Title of the option that changes the first letter typed at the start of a sentence to a capital letter. [CHAR_LIMIT=60]-->
