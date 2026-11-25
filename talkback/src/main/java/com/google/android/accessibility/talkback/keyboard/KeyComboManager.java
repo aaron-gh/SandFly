@@ -282,6 +282,9 @@ public class KeyComboManager
   /** Letter keys that press keypad buttons, on keyboards whose letters carry numbers. */
   private final @Nullable KeypadKeys keypadKeys;
 
+  /** The mute key: held in text fields, it dictates. */
+  private final @Nullable MuteKey muteKey;
+
   /** Enter that sends messages. */
   private final MessageEnterKeys messageEnterKeys;
 
@@ -360,6 +363,17 @@ public class KeyComboManager
     this.context = context;
     keypadKeys = context instanceof AccessibilityService service ? new KeypadKeys(service) : null;
     messageEnterKeys = new MessageEnterKeys(context);
+    muteKey =
+        context instanceof AccessibilityService service
+            ? new MuteKey(
+                service,
+                command -> {
+                  if (commandPerformer != null) {
+                    commandPerformer.perform(command, EVENT_ID_UNTRACKED);
+                  }
+                  return kotlin.Unit.INSTANCE;
+                })
+            : null;
     keyPractice =
         new KeyPractice(
             context,
@@ -530,6 +544,9 @@ public class KeyComboManager
     if (keypadKeys != null) {
       keypadKeys.reset();
     }
+    if (muteKey != null) {
+      muteKey.reset();
+    }
     messageEnterKeys.reset();
     keysPassedToChooser.clear();
     editingShortcutKeys.clear();
@@ -598,6 +615,16 @@ public class KeyComboManager
 
     if (isKeyboardInputOff()) {
       return onKeyEventWhileInputOff(event);
+    }
+
+    // The mute key held in a text field dictates; elsewhere it runs its own command, if it has one.
+    // After Pass the next key, it goes to the app.
+    if (muteKey != null
+        && muteKey.onKeyEvent(
+            event,
+            serviceState == SERVICE_STATE_ACTIVE
+                && keyComboPassThroughState != KeyComboPassThroughState.ACTIVE)) {
+      return true;
     }
 
     // While the SandFly keyboard's emoji search or symbol chooser is open, every key pressed is its

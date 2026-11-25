@@ -422,6 +422,8 @@
     <string name="pref_volume_down_double_press_key" translatable="false">pref_volume_down_double_press</string>
     <string name="pref_volume_down_triple_press_key" translatable="false">pref_volume_down_triple_press</string>
     <string name="pref_volume_down_long_press_key" translatable="false">pref_volume_down_long_press</string>
+    <string name="pref_mute_key_dictates_key" translatable="false">pref_mute_key_dictates</string>
+    <string name="pref_mute_key_press_key" translatable="false">pref_mute_key_press</string>
     <string name="pref_volume_key_long_press_duration_key" translatable="false">pref_volume_key_long_press_duration</string>
     <string name="pref_speak_items_before_scroll_key" translatable="false">pref_speak_items_before_scroll_key</string>
     <string name="pref_scroll_ahead_key" translatable="false">pref_scroll_ahead</string>
@@ -3175,6 +3177,7 @@
     <bool name="pref_volume_change_silent_while_speaking_default">false</bool>
     <bool name="pref_volume_keys_speech_volume_while_speaking_default">false</bool>
     <bool name="pref_volume_keys_take_all_default">false</bool>
+    <bool name="pref_mute_key_dictates_default">true</bool>
     <bool name="pref_volume_keys_hide_panel_default">false</bool>
     <bool name="pref_speak_items_before_scroll_default">false</bool>
     <bool name="pref_scroll_ahead_default">true</bool>
