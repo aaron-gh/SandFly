@@ -284,6 +284,8 @@ Perintah **Buka setelan penampil braille**, di grup **Braille** pada **Perintah*
 
 #### Memilih tombol untuk perintah {#braille-displays-keys}
 
+<!-- Translation follow-up: see the English braille-displays-settings and braille-displays-keys sections for Default display keys, profile shortcuts, separate Enter and Submit commands, and thumb-key changes. -->
+
 1. Hubungkan layar braille.
 2. Buka **Braille** > **Penampil braille** > **Perintah penampil braille**.
 3. Pilih grup, lalu pilih perintah.

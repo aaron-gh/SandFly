@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:tools="http://schemas.android.com/tools">
 
   <!-- Name of the input method for typing using the braille keys on the display. [CHAR_LIMIT=30] -->
   <string name="braille_ime_name">Braille hardware keyboard</string>
@@ -912,4 +912,17 @@
   <string name="external_displays_summary">Apps that you allow can be braille displays for SandFly. An app that is a braille display can read the screen and control the device.</string>
   <!-- Shown when no installed app can be a braille display.  [CHAR_LIMIT=60] -->
   <string name="external_displays_none">No apps can be braille displays.</string>
+
+  <!-- Display key profile strings awaiting translation. -->
+  <string name="bd_command_profile_title" tools:ignore="MissingTranslation">Default display keys</string>
+  <string name="bd_cmd_return" tools:ignore="MissingTranslation">Insert new line</string>
+  <string name="bd_cmd_translate_pending" tools:ignore="MissingTranslation">Translate braille now</string>
+  <string name="bd_cmd_tab" tools:ignore="MissingTranslation">Tab</string>
+  <string name="bd_cmd_shift_tab" tools:ignore="MissingTranslation">Shift Tab</string>
+  <string name="bd_cmd_undo_typing" tools:ignore="MissingTranslation">Undo typing</string>
+  <string name="bd_cmd_redo_typing" tools:ignore="MissingTranslation">Redo typing</string>
+  <string name="bd_cmd_toggle_keyboard_visibility" tools:ignore="MissingTranslation">Show or hide on-screen keyboard</string>
+  <string name="bd_cmd_nav_status_bar" tools:ignore="MissingTranslation">Move to the status bar</string>
+  <string name="bd_cmd_announce_scroll_position" tools:ignore="MissingTranslation">Announce page or visible items</string>
+  <string name="bd_cmd_submit_text" tools:ignore="MissingTranslation">Submit text</string>
 </resources>

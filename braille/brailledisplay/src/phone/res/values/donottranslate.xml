@@ -32,4 +32,14 @@
   <string name="pref_key_bd_braille_elements_checked" translatable="false">pref_key_bd_braille_elements_checked</string>
   <string name="pref_key_bd_braille_elements_expanded" translatable="false">pref_key_bd_braille_elements_expanded</string>
   <string name="pref_key_bd_learning_mode" translatable="false">pref_key_bd_learning_mode</string>
+  <string name="bd_command_profile_sandfly" translatable="false">SandFly</string>
+  <string name="bd_command_profile_ios" translatable="false">iOS</string>
+  <string-array name="bd_command_profile_entries" translatable="false">
+    <item>@string/bd_command_profile_sandfly</item>
+    <item>@string/bd_command_profile_ios</item>
+  </string-array>
+  <string-array name="bd_command_profile_values" translatable="false">
+    <item>sandfly</item>
+    <item>ios</item>
+  </string-array>
 </resources>

@@ -288,6 +288,8 @@ Polecenie **Przejdź do ustawień monitora brajlowskiego** z grupy **Brajl** w u
 
 #### Ustaw klawisze monitora {#braille-displays-keys}
 
+<!-- Translation follow-up: see the English braille-displays-settings and braille-displays-keys sections for Default display keys, profile shortcuts, separate Enter and Submit commands, and thumb-key changes. -->
+
 1. Podłącz monitor.
 2. Otwórz **Brajl** > **Monitor brajlowski** > **Polecenia na monitorze brajlowskim**.
 3. Wybierz grupę, a potem polecenie.

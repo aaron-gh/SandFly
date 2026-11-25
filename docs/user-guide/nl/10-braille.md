@@ -284,6 +284,8 @@ De opdracht **Naar instellingen voor brailleleesregel**, in de groep **Braille**
 
 #### Kies de toetsen van een opdracht {#braille-displays-keys}
 
+<!-- Translation follow-up: see the English braille-displays-settings and braille-displays-keys sections for Default display keys, profile shortcuts, separate Enter and Submit commands, and thumb-key changes. -->
+
 1. Verbind de leesregel.
 2. Ga naar **Braille** > **Brailleleesregel** > **Opdrachten voor brailleleesregels**.
 3. Kies een groep, dan een opdracht.

@@ -62,6 +62,21 @@ public final class DisplayKeys {
     return DisplayKeyOverrides.commandKey(command);
   }
 
+  /** Uses the physical dots in an editor and preserves the driver command elsewhere. */
+  @Nullable
+  public static BrailleInputEvent normalizeBareDots(BrailleInputEvent event, boolean editing) {
+    if ((event.getArgument() & BrailleInputEvent.BOUND_BARE_DOTS) == 0) {
+      return event;
+    }
+    if (editing) {
+      return new BrailleInputEvent(
+          BrailleInputEvent.CMD_BRAILLE_KEY, event.getArgument() & DOTS_MASK, event.getEventTime());
+    }
+    return event.getCommand() == BrailleInputEvent.CMD_BRAILLE_KEY
+        ? null
+        : new BrailleInputEvent(event.getCommand(), 0, event.getEventTime());
+  }
+
   /** Returns the physical Space chord for a driver-bound command, if available. */
   @Nullable
   public static String boundSpaceChordKey(int argument) {

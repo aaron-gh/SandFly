@@ -47,11 +47,13 @@ object SendButtonFinder {
    * [sendWords] are the words a send button can be labeled with, such as "Send" in the user's
    * language. A button in the same row as the field wins over one elsewhere in the window, so a
    * message in the conversation that is labeled like a button can't be pressed instead.
+   * With [requireSameRow], buttons elsewhere in the window are excluded.
    */
   @JvmStatic
   fun find(
     field: AccessibilityNodeInfoCompat,
     sendWords: Collection<String>,
+    requireSameRow: Boolean = false,
   ): AccessibilityNodeInfoCompat? {
     val root = AccessibilityNodeInfoUtils.getRoot(field) ?: return null
     val fieldBounds = Rect().also { field.getBoundsInScreen(it) }
@@ -78,6 +80,9 @@ object SendButtonFinder {
         continue
       }
       val sameRow = bounds.top < fieldBounds.bottom && bounds.bottom > fieldBounds.top
+      if (requireSameRow && (!sameRow || bounds.isEmpty || fieldBounds.isEmpty)) {
+        continue
+      }
       // Away from the field, such as in the toolbar under Pachli's post field, only a view the app
       // calls a send button or a button labeled like one will do, not a message that says "Send".
       if (

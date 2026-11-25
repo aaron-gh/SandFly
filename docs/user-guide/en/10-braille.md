@@ -271,6 +271,7 @@ In **Braille** > **Braille display**, the **Languages and commands** group has:
 - **Languages**: the braille tables in use, shared with the braille keyboard. See [](#braille-keyboard-languages).
 - **Preferred reading language** and **Preferred typing language**: the tables for text shown on the display and for typing on it. While you type in Unicode braille, the display shows the text of the field in the reading language.
 - **Preferred braille grade**: **Contracted braille** or **Uncontracted braille**.
+- **Default display keys**: choose **SandFly** or **iOS** for the physical display. Each choice saves your custom bindings separately.
 - **Braille display commands**: the keys of each command. See [](#braille-displays-keys).
 - **Braille elements**: the abbreviations that the display shows for elements on the screen, such as "btn" for a button or "lnk" for a link.
 - **Practice braille display commands**: with a display connected, press a key to hear its command.
@@ -293,13 +294,19 @@ The **Navigate to braille display settings** command, in the **Braille** group o
 3. Choose a group, then a command.
 4. Choose **Change keys**, and press the new keys on the display: one of its keys, Space with dots, or on EuroBraille displays, Backspace with dots.
 
-If the keys already run another command, a dialog offers to move them to the new command; the other command then has no keys. **Reset** gives a command its default keys back, and **Reset all keys** does so for every command.
+If the keys already run another command, a dialog offers to move them to the new command. **Reset** restores the selected command's defaults, and **Reset all keys** restores all defaults for the current display key profile.
 
 **SandFly commands** lists the commands that gestures run, such as **Open SandFly menu**, **Notifications** or **Read from top**, by group, so that you can give each one display keys. Commands without keys on the connected display are listed with "No keys".
 
-Panning and routing keys can't be changed, except right joystick left and right on EuroBraille displays. Keys without Space still type their dots in text fields.
+SandFly defaults use Enter to activate an item while browsing. iOS defaults use Space with dots 3 and 6 to activate, Space with dots 1 or 4 for the previous or next item, and Space with dots 2 or 5 to pan left or right. Space with dots 2, 3 or dots 5, 6 selects the previous or next reading control. Space with dots 1, 2, 4 opens screen search so you can type a query on the display.
 
-On EuroBraille displays, Space with dot 2, 3, 5 or 6, and Backspace with dots, run nothing until you assign them a command. The cursor routing keys move the cursor and activate items. Pressing the right joystick activates, and left and right on it pan. On the left joystick, left and right move by character, and up and down by word.
+Both profiles use Space with dots 1, 3, 4, 8 for the SandFly menu and Space with dots 3, 4, 5 or 1, 2, 6 to raise or lower media volume. With SandFly defaults, Space with dots 1, 3, 4 also opens the menu. Other commands include Tab, Shift Tab, Undo and Redo typing, Translate braille now, moving to the status bar, announcing the page or visible items, and showing or hiding the on-screen keyboard on Android 9 or later.
+
+In a text field, dot combinations without Space type their dots. The standalone Delete key deletes, and Enter inserts a line break immediately, including in chat fields. In the iOS profile, Space with dot 8 also inserts a line break. To send or submit text, press Space with dots 1 and 5 (Space+E) in either profile. **Submit text** presses a Send button beside the field or uses the app's editor action.
+
+Panning past an edit field commits pending braille and hides the keyboard when focus moves away. You can pan back to the field. On Brailliant and compatible displays with dedicated previous and next thumb keys, those keys move between items while browsing, pan in a single-line editor, and move the cursor by line in a multiline editor. Physical pan and routing keys remain available alongside the iOS panning chords. Some separately reported pan keys can be reassigned, including the right joystick directions on supported EuroBraille displays.
+
+With SandFly defaults on EuroBraille displays, Space with dot 2, 3, 5 or 6 and Backspace with dots are available to assign. The cursor routing keys move the cursor and activate items. Pressing the right joystick activates, and left and right on it pan. On the left joystick, left and right move by character, and up and down by word.
 
 #### Displays from other apps {#braille-displays-other-apps}
 

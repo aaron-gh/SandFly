@@ -16,14 +16,56 @@
 
 package com.google.android.accessibility.talkback.braille
 
+import android.graphics.Rect
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.braille.SendButtonFinder.Strength
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.Shadows.shadowOf
+import org.robolectric.annotation.Config
 
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [34])
 class SendButtonFinderTest {
   private val sendWords = listOf("Send", "Envoyer")
+
+  @Test
+  fun displaySubmitRequiresTheSendButtonToBeBesideTheField() {
+    val root = AccessibilityNodeInfo.obtain()
+    val field = AccessibilityNodeInfo.obtain().apply {
+      isEditable = true
+      setBoundsInScreen(Rect(0, 200, 250, 500))
+    }
+    val toolbar = sendButton("app:id/send", Rect(260, 10, 300, 50))
+    shadowOf(root).addChild(field)
+    shadowOf(root).addChild(toolbar)
+    val editor = AccessibilityNodeInfoCompat.wrap(field)
+
+    assertNull(SendButtonFinder.find(editor, sendWords, requireSameRow = true))
+    assertEquals("app:id/send", SendButtonFinder.find(editor, sendWords)?.viewIdResourceName)
+
+    val besideField = sendButton("app:id/send_message", Rect(260, 440, 300, 490))
+    shadowOf(root).addChild(besideField)
+    assertEquals(
+      "app:id/send_message",
+      SendButtonFinder.find(editor, sendWords, requireSameRow = true)?.viewIdResourceName,
+    )
+  }
+
+  private fun sendButton(id: String, bounds: Rect): AccessibilityNodeInfo =
+    AccessibilityNodeInfo.obtain().apply {
+      viewIdResourceName = id
+      isEnabled = true
+      isClickable = true
+      isVisibleToUser = true
+      setBoundsInScreen(bounds)
+    }
 
   @Test
   fun viewIdsOfChatAppSendButtons_areSendButtons() {
