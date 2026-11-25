@@ -58,23 +58,30 @@ import static com.google.android.accessibility.utils.traversal.TraversalStrategy
 
 import android.accessibilityservice.AccessibilityService;
 import android.content.Context;
+import android.view.accessibility.AccessibilityWindowInfo;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.braille.interfaces.ScreenReaderActionPerformer;
 import com.google.android.accessibility.talkback.ActorState;
 import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.talkback.Feedback.EditText.Action;
 import com.google.android.accessibility.talkback.Pipeline.FeedbackReturner;
+import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.actor.SystemActionPerformer;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.keyboard.KeyComboManager;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.talkback.selector.SelectorController.AnnounceType;
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils.SpellingSuggestion;
+import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
+import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.monitor.RecentUserInput;
 import com.google.android.accessibility.utils.FocusFinder;
 import com.google.android.accessibility.utils.Performance;
 import com.google.android.accessibility.utils.input.CursorGranularity;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.function.Predicate;
 
 /** Helper that handles the screen reader actions come from braille display or braille keyboard. */
@@ -99,6 +106,68 @@ public final class BrailleHelper implements ScreenReaderActionPerformer {
     this.menuManager = menuManager;
     this.selectorController = selectorController;
     this.focusFinder = focusFinder;
+  }
+
+  private boolean focusStatusBar() {
+    for (AccessibilityWindowInfo window :
+        AccessibilityServiceCompatUtils.getWindows(accessibilityService)) {
+      if (window == null
+          || window.getType() != AccessibilityWindowInfo.TYPE_SYSTEM
+          || !WindowUtils.isStatusBar(accessibilityService, window)) {
+        continue;
+      }
+      var root = window.getRoot();
+      if (root == null) {
+        continue;
+      }
+      var node =
+          AccessibilityNodeInfoUtils.searchFromBfs(
+              AccessibilityNodeInfoCompat.wrap(root), AccessibilityNodeInfoUtils.FILTER_SHOULD_FOCUS);
+      if (node != null) {
+        return node.performAction(AccessibilityNodeInfoCompat.ACTION_ACCESSIBILITY_FOCUS);
+      }
+    }
+    return false;
+  }
+
+  private boolean announceScrollPosition() {
+    Set<AccessibilityNodeInfoCompat> visited = new HashSet<>();
+    for (var node = focusFinder.findAccessibilityFocus();
+        node != null && visited.add(node);
+        node = node.getParent()) {
+      var collection = node.getCollectionInfo();
+      if (collection == null) {
+        continue;
+      }
+      boolean horizontal = collection.getRowCount() <= 1 && collection.getColumnCount() > 1;
+      int count = horizontal ? collection.getColumnCount() : collection.getRowCount();
+      int first = count;
+      int last = -1;
+      for (int i = 0; i < node.getChildCount(); i++) {
+        var child = node.getChild(i);
+        if (child == null || !child.isVisibleToUser()) {
+          continue;
+        }
+        var item = child.getCollectionItemInfo();
+        if (item == null) {
+          continue;
+        }
+        int index = horizontal ? item.getColumnIndex() : item.getRowIndex();
+        if (index >= 0 && index < count) {
+          first = Math.min(first, index);
+          last = Math.max(last, index);
+        }
+      }
+      if (last >= first) {
+        String announcement =
+            first == last
+                ? accessibilityService.getString(R.string.template_scroll_from_count, first + 1, count)
+                : accessibilityService.getString(
+                    R.string.template_scroll_from_to_count, first + 1, last + 1, count);
+        return feedbackReturner.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(announcement));
+      }
+    }
+    return false;
   }
 
   @Override
@@ -169,6 +238,12 @@ public final class BrailleHelper implements ScreenReaderActionPerformer {
       case NAVIGATE_TO_TOP -> {
         return feedbackReturner.returnFeedback(
             Performance.EVENT_ID_UNTRACKED, Feedback.focusTop(INPUT_MODE_BRAILLE_DISPLAY));
+      }
+      case NAVIGATE_TO_STATUS_BAR -> {
+        return focusStatusBar();
+      }
+      case ANNOUNCE_SCROLL_POSITION -> {
+        return announceScrollPosition();
       }
       case NAVIGATE_TO_BOTTOM -> {
         return feedbackReturner.returnFeedback(

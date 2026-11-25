@@ -64,7 +64,9 @@ class EditorConsumer implements EventConsumer {
             context, new BrailleInputEvent(command, /* argument= */ 0, /* eventTime= */ 0));
     return supportedCommand != null
         && !supportedCommand.hasSpace()
-        && !supportedCommand.getPressDot().equals(BrailleCharacter.EMPTY_CELL);
+        && !supportedCommand.getPressDot().equals(BrailleCharacter.EMPTY_CELL)
+        && (BrailleUserPreferences.isCurrentActiveInputCodeEightDot(context)
+            || (supportedCommand.getPressDot().toInt() & 0xC0) == 0);
   }
 
   /**
@@ -78,7 +80,7 @@ class EditorConsumer implements EventConsumer {
   }
 
   /** Returns whether {@link #onMappedInputEvent} runs the command rather than typing its dots. */
-  private static boolean handlesWhileEditing(int command) {
+  static boolean handlesWhileEditing(int command) {
     return switch (command) {
       case BrailleInputEvent.CMD_KEY_DEL,
           BrailleInputEvent.CMD_DEL_WORD,
@@ -94,6 +96,12 @@ class EditorConsumer implements EventConsumer {
           BrailleInputEvent.CMD_NAV_WORD_PREVIOUS,
           BrailleInputEvent.CMD_NAV_WORD_NEXT,
           BrailleInputEvent.CMD_KEY_ENTER,
+          BrailleInputEvent.CMD_KEY_RETURN,
+          BrailleInputEvent.CMD_TRANSLATE_PENDING,
+          BrailleInputEvent.CMD_KEY_TAB,
+          BrailleInputEvent.CMD_KEY_SHIFT_TAB,
+          BrailleInputEvent.CMD_UNDO_TYPING,
+          BrailleInputEvent.CMD_REDO_TYPING,
           BrailleInputEvent.CMD_ACTIVATE_CURRENT,
           BrailleInputEvent.CMD_ROUTE,
           BrailleInputEvent.CMD_SELECTION_CUT,
@@ -161,8 +169,19 @@ class EditorConsumer implements EventConsumer {
           success = behaviorIme.performImeAction(BrailleImeAction.PREVIOUS_WORD);
       case BrailleInputEvent.CMD_NAV_WORD_NEXT ->
           success = behaviorIme.performImeAction(BrailleImeAction.NEXT_WORD);
-      case BrailleInputEvent.CMD_KEY_ENTER, BrailleInputEvent.CMD_ACTIVATE_CURRENT ->
+      case BrailleInputEvent.CMD_KEY_ENTER,
+          BrailleInputEvent.CMD_KEY_RETURN,
+          BrailleInputEvent.CMD_ACTIVATE_CURRENT ->
           success = behaviorIme.performEnterKeyAction();
+      case BrailleInputEvent.CMD_KEY_TAB, BrailleInputEvent.CMD_KEY_SHIFT_TAB ->
+          success = behaviorIme.sendTab(event.getCommand() == BrailleInputEvent.CMD_KEY_SHIFT_TAB);
+      case BrailleInputEvent.CMD_UNDO_TYPING, BrailleInputEvent.CMD_REDO_TYPING ->
+          success =
+              behaviorIme.changeTypingHistory(event.getCommand() == BrailleInputEvent.CMD_REDO_TYPING);
+      case BrailleInputEvent.CMD_TRANSLATE_PENDING -> {
+        behaviorIme.commitHoldings();
+        success = true;
+      }
       case BrailleInputEvent.CMD_ROUTE -> success = behaviorIme.moveCursor(event.getArgument());
       case BrailleInputEvent.CMD_SELECTION_CUT ->
           success = behaviorIme.performImeAction(BrailleImeAction.CUT);
@@ -195,22 +214,11 @@ class EditorConsumer implements EventConsumer {
       case BrailleInputEvent.CMD_SELECT_NEXT_LINE ->
           success = behaviorIme.performImeAction(BrailleImeAction.SELECT_NEXT_LINE);
       default -> {
-        // Forbid navigation commands while editing. Instead, we extract the dots and act as
-        // typing. Keep handlesWhileEditing() in step with the cases above.
-        SupportedCommand command = BrailleKeyBindingUtils.convertToCommand(context, event);
-        if (command != null) {
-          BrailleCharacter character = command.getPressDot();
-          if (character != null
-              && !character.equals(BrailleCharacter.EMPTY_CELL)
-              && command.hasSpace()) {
-            // Consumed event since they are available while editing.
-            return false;
-          } else {
-            success = behaviorIme.sendBrailleDots(character.toInt());
-          }
-        } else {
+        if (!typesDots(context, event.getCommand())) {
           return false;
         }
+        SupportedCommand command = BrailleKeyBindingUtils.convertToCommand(context, event);
+        success = behaviorIme.sendBrailleDots(command.getPressDot().toInt());
       }
     }
     if (!success) {

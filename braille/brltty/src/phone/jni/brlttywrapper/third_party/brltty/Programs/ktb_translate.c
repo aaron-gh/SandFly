@@ -315,6 +315,13 @@ isInputKey (BRL_Key key) {
 static int
 processCommand (KeyTable *table, int command) {
   int isInput = 0;
+#ifdef __ANDROID__
+  int chordMetadata = 0;
+  if (command >= 0 && (command & SANDFLY_SPACE_CHORD)) {
+    chordMetadata = command & SANDFLY_CHORD_METADATA;
+    command &= ~SANDFLY_CHORD_METADATA;
+  }
+#endif
 
   switch (command) {
     default: {
@@ -438,6 +445,11 @@ processCommand (KeyTable *table, int command) {
     }
   }
 
+#ifdef __ANDROID__
+  if (command != BRL_CMD_NOOP && command != BRL_CMD_ALERT(COMMAND_REJECTED)) {
+    command |= chordMetadata;
+  }
+#endif
   return enqueueCommand(command);
 }
 
@@ -723,6 +735,17 @@ processKeyEvent (
             }
           }
 
+#ifdef __ANDROID__
+          if (binding && command != BRL_CMD_NOOP
+              && !(command & (BRL_MSK_FLG | SANDFLY_SPACE_CHORD))) {
+            int chord = makeKeyboardCommand(table, context, 1);
+            if (chord != EOF && (chord & BRL_DOTC) && (chord & BRL_ALL_DOTS)) {
+              int metadata = SANDFLY_SPACE_CHORD | ((chord & BRL_ALL_DOTS) << 16);
+              if (secondaryCommand == command) secondaryCommand |= metadata;
+              command |= metadata;
+            }
+          }
+#endif
           if (isImmediate) {
             table->release.command = BRL_CMD_NOOP;
           } else {
@@ -732,7 +755,13 @@ processKeyEvent (
 
           if (secondaryCommand != BRL_CMD_NOOP) {
             table->longPress.command = secondaryCommand;
+#ifdef __ANDROID__
+            int repeatCommand = secondaryCommand;
+            if (repeatCommand & SANDFLY_SPACE_CHORD) repeatCommand &= ~SANDFLY_CHORD_METADATA;
+            table->longPress.repeat = isRepeatableCommand(repeatCommand);
+#else
             table->longPress.repeat = isRepeatableCommand(secondaryCommand);
+#endif
 
             table->longPress.keyAction = "long";
             table->longPress.keyContext = context;

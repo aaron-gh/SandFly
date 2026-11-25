@@ -57,6 +57,9 @@ import java.util.stream.Collectors;
 /** Controls the braille common user preferences. */
 public class BrailleUserPreferences {
   public static final String BRAILLE_SHARED_PREFS_FILENAME = "braille_keyboard";
+  public static final String PREF_BD_COMMAND_PROFILE = "pref_bd_command_profile";
+  public static final String BD_COMMAND_PROFILE_IOS = "ios";
+
   private static final String SHARED_PREFS_VERSION = "brailleime_shared_prefs_version";
   private static final int AAS12_0_SHARED_PREFS_VERSION = 1;
   private static final int AAS12_2_SHARED_PREFS_VERSION = 2;
@@ -1047,6 +1050,13 @@ public class BrailleUserPreferences {
         .putBoolean(
             context.getString(R.string.pref_bd_reverse_panning_buttons), reversePanningButtons)
         .apply();
+  }
+
+  /** Returns whether the iOS braille display defaults are selected. */
+  public static boolean usesIosDisplayCommands(Context context) {
+    return BD_COMMAND_PROFILE_IOS.equals(
+        getSharedPreferences(context, BRAILLE_SHARED_PREFS_FILENAME)
+            .getString(PREF_BD_COMMAND_PROFILE, "sandfly"));
   }
 
   /** Reads the saved text of the braille display keys assigned to other commands, or null. */

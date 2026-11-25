@@ -17,7 +17,9 @@
 package com.google.android.accessibility.braille.brailledisplay.controller;
 
 import android.content.Context;
+import android.view.ViewConfiguration;
 import androidx.annotation.Nullable;
+import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayCommandProfile;
 import com.google.android.accessibility.braille.brailledisplay.controller.utils.DisplayKeys;
 import com.google.android.accessibility.braille.brltty.BrailleInputEvent;
 import com.google.android.accessibility.braille.common.BrailleUserPreferences;
@@ -26,7 +28,10 @@ import java.util.Objects;
 
 /** Finds what a braille display key runs when the user assigned it to another command. */
 final class DisplayKeyRemapper {
+  private static final String IOS_HOME_CHORD = DisplayCommandProfile.spaceChordKey("125");
+
   private final Context context;
+  private long lastIosHome = -1;
   @Nullable private String savedText;
   private DisplayKeyOverrides overrides = DisplayKeyOverrides.parse(null);
 
@@ -42,34 +47,55 @@ final class DisplayKeyRemapper {
    */
   @Nullable
   String targetFor(BrailleInputEvent event, boolean editing) {
-    String key = DisplayKeys.keyOf(event.getCommand(), event.getArgument());
+    int command = event.getCommand();
+    int argument = event.getArgument();
+    String key = DisplayKeys.keyOf(command, argument);
+    String boundChord = DisplayKeys.boundSpaceChordKey(argument);
+    boolean ios = BrailleUserPreferences.usesIosDisplayCommands(context);
+    DisplayKeyOverrides bindings = current();
+    String physicalKey = boundChord != null ? boundChord : key;
+    String target = physicalKey == null ? null : bindings.get(physicalKey);
+    if (target == null && key != null) {
+      target = bindings.get(key);
+    }
+
+    if (boundChord == null && editing && EditorConsumer.typesDots(context, command)) {
+      lastIosHome = -1;
+      return null;
+    }
+
+    boolean iosHome =
+        ios && target == null && IOS_HOME_CHORD.equals(physicalKey)
+            && bindings.defaultFor(physicalKey)
+                .equals(DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_GLOBAL_HOME));
+    if (iosHome) {
+      long time = event.getEventTime();
+      boolean doublePress =
+          lastIosHome >= 0 && time >= lastIosHome
+              && time - lastIosHome <= ViewConfiguration.getDoubleTapTimeout();
+      lastIosHome = doublePress ? -1 : time;
+      return DisplayKeyOverrides.commandTarget(
+          doublePress ? BrailleInputEvent.CMD_GLOBAL_RECENTS : BrailleInputEvent.CMD_GLOBAL_HOME);
+    }
+    lastIosHome = -1;
+    if (target != null) {
+      return target;
+    }
+    if (ios && boundChord != null) {
+      String chordTarget = bindings.defaultFor(boundChord);
+      if (!DisplayKeyOverrides.NONE.equals(chordTarget)) {
+        return chordTarget;
+      }
+    }
     if (key == null) {
-      return DisplayKeys.isUnboundChord(event.getCommand(), event.getArgument())
-          ? DisplayKeyOverrides.NONE
-          : null;
+      return DisplayKeys.isUnboundChord(command, argument) ? DisplayKeyOverrides.NONE : null;
     }
-    String target = current().get(key);
-    if (target == null) {
-      // Unassigned, a chord runs nothing, a separate key runs the command it stands in for, and
-      // other keys run their own command.
-      int command = DisplayKeyOverrides.commandOf(key);
-      if (command < 0) {
-        return DisplayKeyOverrides.NONE;
-      }
-      int defaultCommand = DisplayKeyOverrides.defaultCommandOf(command);
-      return defaultCommand == command ? null : DisplayKeyOverrides.commandTarget(defaultCommand);
+    // Preserve the editor's Enter key even when the profile moves the activation command.
+    if (editing && command == BrailleInputEvent.CMD_KEY_ENTER && boundChord == null) {
+      return null;
     }
-    if (editing) {
-      // Keys of commands without Space type their dots in text fields.
-      if (EditorConsumer.typesDots(context, DisplayKeyOverrides.commandOf(key))) {
-        return null;
-      }
-      int command = DisplayKeyOverrides.commandOf(target);
-      if (command >= 0 && EditorConsumer.typesDots(context, command)) {
-        return DisplayKeyOverrides.NONE;
-      }
-    }
-    return target;
+    target = bindings.defaultFor(key);
+    return target.equals(DisplayKeyOverrides.commandTarget(command)) ? null : target;
   }
 
   private DisplayKeyOverrides current() {
@@ -78,6 +104,6 @@ final class DisplayKeyRemapper {
       savedText = text;
       overrides = DisplayKeyOverrides.parse(text);
     }
-    return overrides;
+    return DisplayCommandProfile.applyDefaults(context, overrides);
   }
 }

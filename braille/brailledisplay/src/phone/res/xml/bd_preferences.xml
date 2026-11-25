@@ -45,6 +45,12 @@
         android:key="@string/pref_braille_contracted_mode"
         android:title="@string/pref_preferred_braille_grade_title"/>
 
+    <ListPreference
+        android:key="pref_bd_command_profile"
+        android:title="@string/bd_command_profile_title"
+        android:defaultValue="sandfly"
+        app:useSimpleSummaryProvider="true" />
+
     <Preference
         android:key="@string/pref_key_bindings_key"
         android:title="@string/bd_preference_key_bindings_title"

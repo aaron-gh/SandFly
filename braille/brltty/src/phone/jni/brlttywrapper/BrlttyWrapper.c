@@ -362,7 +362,20 @@ jint JNIMETHOD(readCommandNative)(JNIEnv* env, jobject thiz) {
     }
     jint mappedCommand, mappedArg;
     jboolean isUnifiedCommand;
+    int chordDots = 0;
+    if (brlttyCommand & SANDFLY_SPACE_CHORD) {
+      chordDots = (brlttyCommand & BRL_MSK_FLG) >> 16;
+      brlttyCommand &= ~SANDFLY_CHORD_METADATA;
+    }
     mapBrlttyCommand(brlttyCommand, &mappedCommand, &mappedArg, &isUnifiedCommand);
+    if (chordDots && mappedCommand < 0) {
+      mapBrlttyCommand(BRL_CMD_BLK(PASSDOTS) | BRL_DOTC | chordDots,
+                       &mappedCommand, &mappedArg, &isUnifiedCommand);
+    } else if (chordDots && mappedArg == 0
+               && mappedCommand != cmdRoute && mappedCommand != cmdLongPressRoute) {
+      // BrailleInputEvent.BOUND_SPACE_CHORD; the original command is still available.
+      mappedArg = 0x4000 | chordDots;
+    }
     if (mappedCommand < 0) {
       // Filter out commands that we don't handle, including BRL_NOOP.
       // Get the next command, until we get a valid command or EOF, in both

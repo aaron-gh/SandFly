@@ -155,6 +155,11 @@ import androidx.preference.PreferenceFragmentCompat;
     brailleGradePreference = findPreference(getString(R.string.pref_braille_contracted_mode));
     brailleGradePreference.setIntent(new Intent(getContext(), BrailleGradeActivity.class));
 
+    ListPreference commandProfile = findPreference(BrailleUserPreferences.PREF_BD_COMMAND_PROFILE);
+    commandProfile.setEntries(new CharSequence[] {"SandFly", "iOS"});
+    commandProfile.setEntryValues(
+        new CharSequence[] {"sandfly", BrailleUserPreferences.BD_COMMAND_PROFILE_IOS});
+
     keyBindingsPreference = findPreference(getString(R.string.pref_key_bindings_key));
     keyBindingsPreference.setIntent(new Intent(getContext(), KeyBindingsActivity.class));
 
