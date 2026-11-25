@@ -558,7 +558,11 @@ public class SelectorController implements UserInputEventListener {
     AUDIO_OUTPUT(
         R.string.pref_selector_audio_output_key,
         R.string.selector_audio_output,
-        R.bool.pref_selector_audio_output_default);
+        R.bool.pref_selector_audio_output_default),
+    AI_SERVICE(
+        R.string.pref_selector_ai_service_key,
+        R.string.selector_ai_service,
+        R.bool.pref_selector_ai_service_default);
 
     /** The preference key of the filter in the selector settings page. */
     final int prefKeyResId;
@@ -815,6 +819,7 @@ public class SelectorController implements UserInputEventListener {
           // TODO Supports sound feedback and vibration feedback.
           Setting.LIVE_RECOGNITION,
           Setting.AI_ACTIONS,
+          Setting.AI_SERVICE,
           Setting.HIDE_SCREEN,
           Setting.AUDIO_FOCUS,
           Setting.SCROLLING_SEQUENTIAL,
@@ -960,6 +965,8 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.AUDIO_OUTPUT);
       // Nor Speak only focus moved by the user.
       hiddenSettingsBuilder.add(Setting.SPEAK_USER_FOCUS);
+      // Nor image and screen descriptions.
+      hiddenSettingsBuilder.add(Setting.AI_SERVICE);
     } else if (!FeatureSupport.doesServiceHandleDoubleTap()) {
       hiddenSettingsBuilder.add(ACTIONS);
       hiddenSettingsBuilder.add(Setting.LIVE_RECOGNITION);
@@ -1255,6 +1262,10 @@ public class SelectorController implements UserInputEventListener {
       }
       case AUDIO_OUTPUT -> {
         actionDescription = context.getString(R.string.title_pref_audio_output_device);
+        hint = getAdjustSelectedSettingGestures();
+      }
+      case AI_SERVICE -> {
+        actionDescription = context.getString(R.string.title_pref_ai_provider);
         hint = getAdjustSelectedSettingGestures();
       }
       case VERTICAL_NAVIGATION -> {
@@ -2910,6 +2921,12 @@ public class SelectorController implements UserInputEventListener {
       }
       case AUDIO_OUTPUT -> {
         changeAudioOutput(eventId, isNext);
+        return;
+      }
+      case AI_SERVICE -> {
+        String displayText = AiServiceControl.change(context, prefs, isNext);
+        announceSetting(eventId, displayText, getAdjustSelectedSettingGestures());
+        showQuickMenuActionOverlay(eventId, displayText);
         return;
       }
       case VERTICAL_NAVIGATION -> {
