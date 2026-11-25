@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="keycombo_menu_navigate_next_focusable">Navigasikan ke item berikutnya yang dapat difokuskan</string>
-    <string name="keycombo_menu_navigate_previous_focusable">Navigasikan ke item sebelumnya yang dapat difokuskan</string>
-    <string name="keycombo_menu_object_parent">Navigasikan ke objek penampung</string>
-    <string name="keycombo_menu_object_first_child">Navigasikan ke objek pertama di dalamnya</string>
-    <string name="keycombo_menu_object_next">Navigasikan ke objek berikutnya</string>
-    <string name="keycombo_menu_object_previous">Navigasikan ke objek sebelumnya</string>
+    <string name="keycombo_menu_navigate_next_focusable">Pindah ke item berikutnya yang dapat difokuskan</string>
+    <string name="keycombo_menu_navigate_previous_focusable">Pindah ke item sebelumnya yang dapat difokuskan</string>
+    <string name="keycombo_menu_object_parent">Pindah ke objek penampung</string>
+    <string name="keycombo_menu_object_first_child">Pindah ke objek pertama di dalamnya</string>
+    <string name="keycombo_menu_object_next">Pindah ke objek berikutnya</string>
+    <string name="keycombo_menu_object_previous">Pindah ke objek sebelumnya</string>
     <string name="keycombo_menu_review_previous_line">Tinjau baris sebelumnya</string>
     <string name="keycombo_menu_review_current_line">Tinjau baris saat ini</string>
     <string name="keycombo_menu_review_next_line">Tinjau baris berikutnya</string>
@@ -19,8 +19,8 @@
     <string name="keycombo_menu_review_bottom">Tinjau baris terbawah</string>
     <string name="keycombo_menu_review_line_start">Tinjau awal baris</string>
     <string name="keycombo_menu_review_line_end">Tinjau akhir baris</string>
-    <string name="keycombo_menu_review_click">Lakukan klik di kursor tinjauan</string>
-    <string name="keycombo_menu_review_long_click">Lakukan klik panjang di kursor tinjauan</string>
+    <string name="keycombo_menu_review_click">Klik di kursor tinjauan</string>
+    <string name="keycombo_menu_review_long_click">Klik lama di kursor tinjauan</string>
     <string name="keycombo_menu_review_move_to_focus">Pindahkan kursor tinjauan ke fokus SandFly</string>
     <string name="keycombo_menu_focus_review_cursor">Pindahkan fokus SandFly ke kursor tinjauan</string>
     <string name="keycombo_menu_review_cursor_on">Aktifkan kursor tinjauan</string>
@@ -39,7 +39,7 @@
     <string name="recognize_screen_text_started">Mengenali teks</string>
     <string name="recognize_screen_text_none">Tidak ada teks yang dikenali</string>
     <string name="recognize_screen_text_failed">Pengenalan teks gagal</string>
-    <string name="recognize_screen_text_downloading">Mendownload pengenalan teks. Coba lagi dalam satu menit.</string>
+    <string name="recognize_screen_text_downloading">Mengunduh pengenalan teks. Coba lagi dalam satu menit.</string>
     <string name="recognized_text_closed">Teks yang dikenali ditutup</string>
     <string name="object_navigation_no_parent">Tidak ada objek penampung</string>
     <string name="object_navigation_no_child">Tidak ada objek di dalamnya</string>

@@ -1,6 +1,6 @@
 ## Memulai {#getting-started}
 
-SandFly adalah pembaca layar untuk Android. SandFly membacakan apa yang ada di layar dengan text-to-speech, memutar suara dan getaran, serta mengubah cara kerja gestur sentuh agar Anda dapat menggunakan perangkat tanpa melihat layar. SandFly juga dapat menampilkan layar pada layar braille serta menerima masukan dari keyboard braille di layar atau keyboard fisik.
+SandFly adalah pembaca layar untuk Android. SandFly membacakan apa yang ada di layar dengan text-to-speech, memutar suara dan getaran, serta mengubah cara kerja gerakan sentuh agar Anda dapat menggunakan perangkat tanpa melihat layar. SandFly juga dapat menampilkan layar di penampil braille serta menerima masukan dari keyboard braille di layar atau keyboard fisik.
 
 ### Perangkat dan versi Android {#getting-started-devices}
 
@@ -30,14 +30,14 @@ Catatan: Di Android 13 dan yang lebih baru, Android dapat memblokir layanan akse
 
 ### Mengaktifkan SandFly {#getting-started-turn-on}
 
-Nonaktifkan pembaca layar lain sebelum Anda mengaktifkan SandFly. Dua pembaca layar yang aktif bersamaan akan sama-sama membacakan layar dan sama-sama menangani gestur.
+Nonaktifkan pembaca layar lain sebelum Anda mengaktifkan SandFly. Dua pembaca layar yang aktif bersamaan akan sama-sama membacakan layar dan sama-sama menangani gerakan.
 
 1. Buka aplikasi **Setelan** Android.
 2. Buka **Aksesibilitas**. Di beberapa ponsel, SandFly berada di subbagian seperti **Aplikasi terinstal** atau **Aplikasi yang didownload**.
 3. Pilih **SandFly**.
 4. Aktifkan tombol pengalihnya, lalu konfirmasi.
 
-SandFly mengucapkan "SandFly aktif". Pada saat pertama kali, SandFly membuka dialog tata letak gestur dan tutorial. Lihat [](#getting-started-first-start).
+SandFly mengucapkan "SandFly aktif". Pada saat pertama kali, SandFly membuka dialog tata letak gerakan dan tutorial. Lihat [](#getting-started-first-start).
 
 #### Mengaktifkan dan menonaktifkan SandFly dengan pintasan aksesibilitas {#getting-started-shortcut}
 
@@ -47,51 +47,51 @@ Android dapat mengaktifkan dan menonaktifkan SandFly dengan pintasan aksesibilit
 
 Saat pertama kali SandFly diaktifkan, layar berikut terbuka secara berurutan:
 
-1. Dialog **Pilih gestur**, di perangkat dengan layar sentuh. Lihat [](#getting-started-gesture-layout).
+1. Dialog **Pilih gerakan**, di perangkat dengan layar sentuh. Lihat [](#getting-started-gesture-layout).
 2. Tutorial SandFly. Lihat [](#getting-started-tutorial).
 
 Jika Anda sebelumnya menggunakan versi SandFly yang lebih lama, SandFly akan membuka halaman tentang fitur baru dari pembaruan tersebut, bukan tutorial. Lihat [](#getting-started-new-features).
 
 Jika Backtalk Aaron terinstal, SandFly terlebih dahulu menyalin setelan dan label khususnya. Lihat [](#getting-started-backtalk).
 
-#### Memilih tata letak gestur {#getting-started-gesture-layout}
+#### Memilih tata letak gerakan {#getting-started-gesture-layout}
 
-Dialog **Pilih gestur** memiliki dua tombol:
+Dialog **Pilih gerakan** memiliki dua tombol:
 
-- **Gestur SandFly**: gestur default SandFly. Geseran dua jari diteruskan ke aplikasi untuk men-scroll.
-- **Gestur VoiceOver**: gestur yang menyerupai VoiceOver di iPhone. Geseran dua jari menjalankan perintah SandFly, seperti membaca dari bagian atas layar.
+- **Gerakan SandFly**: gerakan default SandFly. Geseran dua jari diteruskan ke aplikasi, yang menggunakannya untuk menggulir.
+- **Gerakan VoiceOver**: gerakan yang menyerupai VoiceOver di iPhone. Geseran dua jari menjalankan perintah SandFly, seperti membaca dari bagian atas layar.
 
-Menutup dialog tanpa memilih akan memilih Gestur SandFly. Jika Anda meninggalkan dialog dengan Layar utama, dialog akan terbuka lagi saat SandFly dimulai berikutnya. Tutorial terbuka setelah pilihan dibuat dan mengajarkan gestur dari tata letak yang Anda pilih.
+Menutup dialog tanpa memilih akan memilih gerakan SandFly. Jika Anda keluar dari dialog dengan Layar utama, dialog terbuka lagi saat SandFly dimulai berikutnya. Setelah Anda memilih, tutorial terbuka dan mengajarkan gerakan dari tata letak pilihan Anda.
 
-Untuk mengubah tata letak nanti, buka **Gestur** > **Tata letak gestur**. Lihat [](#gestures).
+Untuk mengubah tata letak nanti, buka **Gerakan** > **Tata letak gerakan**. Lihat [](#gestures).
 
 #### Tutorial SandFly {#getting-started-tutorial}
 
-Tutorial SandFly mengajarkan gestur dasar melalui pelajaran yang Anda praktikkan langsung di layar. Tutorial ini terbuka saat pertama kali SandFly diaktifkan. Untuk membukanya lagi nanti, buka **Bantuan & masukan** > **Tutorial SandFly**, atau gunakan perintah **Buka tutorial**.
+Tutorial SandFly mengajarkan gerakan dasar melalui pelajaran yang Anda praktikkan langsung di layar. Tutorial ini terbuka saat pertama kali SandFly diaktifkan. Untuk membukanya lagi nanti, buka **Bantuan & masukan** > **Tutorial SandFly**, atau gunakan perintah **Buka tutorial**.
 
 Tutorial ini memiliki 16 pelajaran dalam lima bab:
 
 - **Dasar-dasar**: Selamat datang, Jelajahi dengan sentuhan, Berpindah antar-item, Mengaktifkan item, Menjeda ucapan.
 - **Membaca**: Kontrol pembacaan, Judul, Membaca terus-menerus.
-- **Kontrol dan teks**: Men-scroll daftar, Penggeser, Tindakan, Mengetik.
-- **Berpindah-pindah**: Kembali, Layar utama, dan notifikasi; Menu SandFly; Perintah yang berguna.
-- **Latihan**: Latihan gestur.
+- **Kontrol dan teks**: Menggulir daftar, Penggeser, Tindakan, Mengetik.
+- **Berpindah-pindah**: Kembali, Layar utama, dan notifikasi, Menu SandFly, Perintah yang berguna.
+- **Latihan**: Latihan gerakan.
 
-Setiap pelajaran memberikan instruksi, menunggu hingga Anda melakukannya dengan gestur Anda sendiri, lalu memberikan instruksi berikutnya. Instruksi adalah item pertama setelah nama pelajaran. SandFly mengucapkan setiap instruksi, termasuk saat audio lain sedang diputar, dan mengulanginya setelah 25 detik tanpa gestur atau sentuhan, hingga tiga kali. Instruksi menyebutkan gestur yang ditetapkan untuk setiap tindakan di setelan gestur Anda. Jika suatu tindakan tidak memiliki gestur, langkah tersebut akan menyatakannya, dan **Lewati langkah** melanjutkan tanpa langkah itu.
+Setiap pelajaran memberikan satu instruksi, menunggu sampai Anda melakukannya dengan gerakan Anda sendiri, lalu memberikan instruksi berikutnya. Instruksi adalah item pertama setelah nama pelajaran. SandFly mengucapkan setiap instruksi, juga saat audio lain sedang diputar. Jika tidak ada gerakan atau sentuhan selama 25 detik, SandFly mengulanginya, paling banyak tiga kali. Instruksi menyebutkan gerakan yang ditetapkan untuk setiap tindakan di setelan gerakan Anda. Jika suatu tindakan tidak memiliki gerakan, langkah tersebut memberi tahu Anda, dan **Lewati langkah** melanjutkan tanpa langkah itu.
 
-Saat suatu pelajaran selesai, SandFly menyebutkan gestur mana yang memulai pelajaran berikutnya dan memindahkan fokus ke **Pelajaran berikutnya**, diikuti nama pelajaran tersebut. Pelajaran terakhir memiliki **Selesaikan tutorial**.
+Saat suatu pelajaran selesai, SandFly menyebutkan gerakan mana yang memulai pelajaran berikutnya dan memindahkan fokus ke **Pelajaran berikutnya**, diikuti nama pelajaran tersebut. Pelajaran terakhir memiliki **Selesaikan tutorial**.
 
-Di dalam pelajaran, gestur yang biasanya keluar dari tutorial, seperti Kembali, Layar utama, aplikasi terbaru, dan notifikasi, tidak keluar dari tutorial. SandFly mengucapkan apa yang seharusnya dilakukan gestur tersebut. Menonaktifkan ucapan dan menjeda SandFly bekerja dengan cara yang sama. Kembali tetap menutup keyboard dan menu. Untuk memilih pelajaran lain atau keluar dari tutorial, gunakan **Daftar isi**, yang mencantumkan semua pelajaran, menunjukkan mana yang sudah selesai, dan membuka pelajaran mana pun. **Tutup tutorial** di dalam **Daftar isi** menutup tutorial.
+Di dalam pelajaran, gerakan yang biasanya membuat Anda keluar dari tutorial, seperti Kembali, Layar utama, aplikasi terbaru, dan notifikasi, tidak keluar dari tutorial. SandFly mengucapkan apa yang akan dilakukan gerakan tersebut. Menonaktifkan ucapan dan menjeda SandFly bekerja dengan cara yang sama. Kembali tetap menutup keyboard dan menu. Untuk memilih pelajaran lain atau keluar dari tutorial, gunakan **Daftar isi**, yang mencantumkan semua pelajaran, menunjukkan mana yang sudah selesai, dan membuka pelajaran mana pun. **Tutup tutorial** di dalam **Daftar isi** menutup tutorial.
 
 Tutorial terbuka kembali pada pelajaran yang sedang Anda ikuti, atau pada pelajaran berikutnya jika pelajaran tersebut sudah selesai.
 
-Di **Latihan gestur**, setiap gestur mengucapkan nama gestur dan perintah yang ditetapkan padanya, tanpa menjalankan perintah tersebut. Berpindah ke item berikutnya dan sebelumnya serta mengaktifkan tetap berfungsi agar Anda dapat mencapai **Akhiri latihan**. Untuk membuka pelajaran ini secara langsung, gunakan **Bantuan & masukan** > **Berlatih gestur**, atau **Berlatih gestur** di bagian atas layar **Gestur**.
+Di **Latihan gerakan**, setiap gerakan mengucapkan nama gerakan dan perintah yang ditetapkan padanya, tanpa menjalankan perintah tersebut. Berpindah ke item berikutnya dan sebelumnya serta mengaktifkan tetap berfungsi agar Anda dapat mencapai **Akhiri latihan**. Untuk membuka pelajaran ini secara langsung, gunakan **Bantuan & masukan** > **Berlatih gerakan**, atau **Berlatih gerakan** di bagian atas layar **Gerakan**.
 
-Catatan: Tutorial hanya menerima gestur yang dikenali oleh SandFly. Jika **Kelola gestur di SandFly** nonaktif di **Setelan developer**, Android yang mengenali gestur, dan gestur navigasi Android dapat keluar dari tutorial. Pelajaran tentang penggeser dan tindakan memerlukan **Kontrol pembacaan** > **Ubah kontrol pembacaan secara otomatis**, yang aktif secara default.
+Catatan: Tutorial hanya menerima gerakan yang dikenali oleh SandFly. Jika **Kelola gerakan di SandFly** nonaktif di **Setelan developer**, Android yang mengenali gerakan, dan gerakan navigasi Android dapat keluar dari tutorial. Pelajaran tentang penggeser dan tindakan memerlukan **Kontrol pembacaan** > **Ubah kontrol pembacaan secara otomatis**, yang aktif secara default.
 
 #### Tutorial keyboard {#getting-started-keyboard-tutorial}
 
-Jika keyboard fisik tersambung saat SandFly dimulai untuk pertama kali, SandFly membuka **Tutorial keyboard SandFly** sebagai gantinya. Tutorial ini mengajarkan pintasan keyboard dari peta tombol Anda dalam 15 pelajaran, termasuk **Daftar pintasan keyboard**, **Mode penjelajahan** untuk halaman web, dan **Latihan keyboard**. Saat perangkat memiliki layar sentuh sekaligus keyboard fisik, **Tutorial SandFly** membuka dialog berisi **Tutorial gestur sentuh** dan **Tutorial keyboard**. Lihat [](#keyboards).
+Jika keyboard fisik tersambung saat SandFly dimulai untuk pertama kali, SandFly membuka **Tutorial keyboard SandFly** sebagai gantinya. Tutorial ini mengajarkan pintasan keyboard dari peta tombol Anda dalam 15 pelajaran, termasuk **Daftar pintasan keyboard**, **Mode penjelajahan** untuk halaman web, dan **Latihan keyboard**. Saat perangkat memiliki layar sentuh sekaligus keyboard fisik, **Tutorial SandFly** membuka dialog berisi **Tutorial gerakan sentuh** dan **Tutorial keyboard**. Lihat [](#keyboards).
 
 Jam tangan dan TV memiliki tutorialnya sendiri. Lihat [](#devices).
 
@@ -99,15 +99,15 @@ Jam tangan dan TV memiliki tutorialnya sendiri. Lihat [](#devices).
 
 Setelah pembaruan yang menambahkan fitur, SandFly membuka halaman yang menjelaskan fitur-fitur tersebut pada saat berikutnya SandFly dimulai. Untuk membacanya lagi, pilih **Fitur-fitur baru di SandFly** di bagian atas layar utama setelan SandFly.
 
-### Gestur dasar {#getting-started-basics}
+### Gerakan dasar {#getting-started-basics}
 
-Berikut adalah gestur dari tata letak SandFly. Tata letak VoiceOver menetapkan sebagian gestur secara berbeda. Untuk melihat semua gestur default, lihat [](#appendix-gestures). Untuk mengubah gestur, lihat [](#gestures).
+Berikut adalah gerakan dari tata letak SandFly. Tata letak VoiceOver menetapkan sebagian gerakan secara berbeda. Untuk melihat semua gerakan default, lihat [](#appendix-gestures). Untuk mengubah gerakan, lihat [](#gestures).
 
 - **Jelajahi dengan sentuhan**: Gerakkan satu jari di layar. SandFly membacakan item di bawah jari Anda.
 - **Pindah ke item berikutnya atau sebelumnya**: Geser ke kanan atau geser ke kiri.
-- **Aktifkan item**: Ketuk dua kali di mana saja di layar. Ketuk dua kali dan tahan untuk menyentuh lama item tersebut.
-- **Scroll**: Geser ke atas atau ke bawah dengan dua jari. SandFly juga men-scroll daftar saat Anda menggeser melewati item terakhir di layar.
-- **Hentikan ucapan**: Ketuk dengan dua jari. Ketuk dengan dua jari lagi untuk melanjutkan. Ketuk dua kali dengan tiga jari menonaktifkan dan mengaktifkan ucapan.
+- **Aktifkan item**: Ketuk dua kali di mana saja di layar. Ketuk dua kali lalu tahan untuk menyentuh lama item tersebut.
+- **Gulir**: Geser ke atas atau ke bawah dengan dua jari. SandFly juga menggulir daftar saat Anda menggeser melewati item terakhir di layar.
+- **Hentikan ucapan**: Ketuk dengan dua jari. Ketuk lagi dengan dua jari untuk melanjutkan. Ketuk dua kali dengan tiga jari untuk menonaktifkan atau mengaktifkan ucapan.
 - **Kontrol pembacaan**: Geser ke bawah dengan tiga jari, atau putar dua jari searah jarum jam di layar, untuk memilih kontrol pembacaan berikutnya, seperti **Kata**, **Judul**, atau **Kecepatan bicara**. Geser ke atas dengan tiga jari, atau putar dua jari berlawanan arah jarum jam, untuk kontrol pembacaan sebelumnya. Lalu geser ke bawah atau ke atas untuk berpindah menurut item yang dipilih atau mengubah setelan yang dipilih. Lihat [](#reading).
 - **Menu SandFly**: Ketuk dengan tiga jari, geser ke atas lalu ke kanan, atau geser ke bawah lalu ke kanan. Lihat [](#commands).
 - **Kembali**: Geser ke bawah lalu ke kiri, atau usap bolak-balik dengan dua jari.
@@ -126,7 +126,7 @@ Untuk membuka setelan SandFly, lakukan salah satu langkah berikut:
 - Pilih **Setelan SandFly** di menu SandFly.
 - Di setelan Android, buka **Aksesibilitas** > **SandFly** > **Setelan**.
 
-Layar setelan utama mencantumkan layar setelan berikut: Ucapan, Panjang respons, Suara dan getaran, Output audio, Sentuhan, Gestur, Pintasan keyboard, Tombol volume, Perintah, Kontrol pembacaan, Menu SandFly, Menu kustom, Makro, Perintah suara, Navigasi, Mengetik, Braille, Tampilan, Notifikasi, Terjemahan, Deskripsi gambar dan layar, Layanan AI, SandFly Pro, Skrip, Label khusus, Setelan cepat, Ringkasan, Jeda dan nonaktifkan, Profil setelan, Cadangkan dan pulihkan, Update dan penginstalan, Shizuku dan root, Bantuan & masukan, dan Setelan developer. Beberapa layar tidak ditampilkan di jam tangan dan TV, atau di perangkat yang tidak memiliki perangkat keras yang diperlukan fitur tersebut.
+Layar setelan utama mencantumkan layar setelan berikut: Ucapan, Panjang respons, Suara dan getaran, Output audio, Sentuhan, Gerakan, Pintasan keyboard, Tombol volume, Perintah, Kontrol pembacaan, Menu SandFly, Menu kustom, Makro, Perintah suara, Navigasi, Mengetik, Braille, Tampilan, Notifikasi, Terjemahan, Deskripsi gambar dan layar, Layanan AI, SandFly Pro, Skrip, Label khusus, Setelan cepat, Ringkasan, Jeda dan nonaktifkan, Profil setelan, Cadangkan dan pulihkan, Update dan penginstalan, Shizuku dan root, Bantuan & masukan, dan Setelan developer. Beberapa layar tidak ditampilkan di jam tangan dan TV, atau di perangkat yang tidak memiliki perangkat keras yang diperlukan fitur tersebut.
 
 #### Menelusuri setelan {#getting-started-search}
 
@@ -138,7 +138,7 @@ Layar setelan utama mencantumkan layar setelan berikut: Ucapan, Panjang respons,
 
 Setiap hasil memuat semua kata yang Anda ketik di judul atau deskripsinya, termasuk di dalam sebuah kata. Huruf besar/kecil dan aksen diabaikan. Setiap hasil menampilkan judulnya serta layar dan kategori yang mengarah ke sana, seperti **Ucapan** > **Menghentikan ucapan**. Memilih suatu setelan akan membuka layarnya dengan setelan tersebut difokuskan. Memilih suatu perintah akan membukanya di **Perintah**.
 
-Layar **Gestur** dan **Pintasan keyboard** memiliki **Telusuri** sendiri, yang mencari gestur atau pintasan berdasarkan namanya atau perintah yang ditetapkan padanya.
+Layar **Gerakan** dan **Pintasan keyboard** memiliki **Telusuri** sendiri, yang mencari gerakan atau pintasan berdasarkan namanya atau perintah yang ditetapkan padanya.
 
 ### Panduan pengguna {#getting-started-user-guide}
 
@@ -151,7 +151,7 @@ SandFly menggantikan Backtalk Aaron, yang tidak lagi menerima pembaruan. Build t
 1. Di Backtalk Aaron, ketuk notifikasi pembaruan, atau pilih **Periksa pembaruan**, lalu **Instal**.
 2. SandFly terinstal berdampingan dengan Backtalk Aaron, dan setelan aksesibilitas Android terbuka.
 3. Aktifkan SandFly. SandFly menyalin setelan dan label khusus dari Backtalk Aaron, lalu Backtalk Aaron menonaktifkan dirinya sendiri.
-4. Ketuk notifikasi **Setelan disalin dari Backtalk Aaron** untuk mencopot pemasangan Backtalk Aaron.
+4. Ketuk notifikasi **Setelan disalin dari Backtalk Aaron** untuk menghapus instalan Backtalk Aaron.
 
 SandFly menerima rilis stabil. Untuk mendapatkan build pengembangan juga, aktifkan **Update dan penginstalan** > **Build pengembangan**. Lihat [](#updates-channels).
 

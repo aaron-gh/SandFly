@@ -9,7 +9,7 @@ SandFly Pro adalah add-on berbayar yang menambahkan fitur AI ke SandFly:
 
 SandFly Pro memerlukan koneksi internet. Agen AI, pengenalan layar, dan agen skrip memerlukan Android 11 atau versi lebih baru. Setiap kode memiliki batas penggunaan bulanan. Lihat [](#pro-usage).
 
-Setelan SandFly Pro berada di **SandFly Pro**, setelah **Layanan AI** di setelan utama SandFly. **Layanan AI** > **Pengaturan SandFly Pro** membuka layar yang sama.
+Setelan SandFly Pro berada di **SandFly Pro**, setelah **Layanan AI** di setelan utama SandFly. **Layanan AI** > **Setelan SandFly Pro** membuka layar yang sama.
 
 ### Membeli SandFly Pro {#pro-buy}
 
@@ -60,7 +60,7 @@ Perpanjangan otomatis nonaktif kecuali Anda memilihnya. Anda dapat memilihnya sa
 
 Saat kode diperpanjang secara otomatis, status menampilkan **Aktif. Diperpanjang pada** diikuti tanggalnya. Untuk mengganti kartu pembayaran atau membatalkan perpanjangan, pilih **Kelola langganan**.
 
-SandFly menampilkan notifikasi 7 hari sebelum perpanjangan, 7 hari dan 1 hari sebelum masa berlaku kode berakhir, serta saat pembayaran perpanjangan gagal. Setelah pembayaran gagal, status menampilkan **Pembayaran gagal. Aktif hingga** diikuti tanggalnya; perbarui kartu di **Kelola langganan** sebelum tanggal tersebut.
+SandFly menampilkan notifikasi 7 hari sebelum perpanjangan, 7 hari dan 1 hari sebelum masa berlaku kode berakhir, serta saat pembayaran perpanjangan gagal. Setelah pembayaran gagal, status menampilkan **Pembayaran gagal. Aktif hingga** diikuti tanggalnya. Perbarui kartu di **Kelola langganan** sebelum tanggal tersebut.
 
 ### Batas penggunaan {#pro-usage}
 
@@ -78,7 +78,7 @@ Sebuah kode dapat aktif pada jumlah perangkat terbatas sekaligus. Untuk memindah
 2. Pilih **Hapus**.
 3. Pada perangkat lain, masukkan kode tersebut. Lihat [](#pro-enter-code).
 
-Jika Anda tidak memiliki akses ke perangkat lama, kirim masukan melalui **Bantuan & masukan** > **Kirim masukan**, dan tim dukungan akan melepas perangkat tersebut. Lihat [](#help).
+Jika Anda tidak memiliki akses ke perangkat lama, kirim masukan melalui **Bantuan & masukan** > **Kirim masukan**, dan tim dukungan akan melepaskan perangkat yang terhubung dengan kode Anda. Lihat [](#help).
 
 Jika aktivasi yang sama terdeteksi di dua perangkat, misalnya setelah setelan satu ponsel disalin ke ponsel lain, SandFly menonaktifkan SandFly Pro di perangkat ini dan memberi tahu Anda. Masukkan kembali kode di **SandFly Pro**.
 
@@ -86,7 +86,7 @@ Jika aktivasi yang sama terdeteksi di dua perangkat, misalnya setelah setelan sa
 
 Saat SandFly Pro aktif, Anda dapat memilih **SandFly Pro** di **Layanan AI** > **Layanan AI**. SandFly Pro kemudian mendeskripsikan gambar dan layar, menjawab pertanyaan tentangnya, mendeskripsikan tampilan kamera di Pengenalan langsung, serta menerjemahkan dengan opsi **Layanan AI**, tanpa kunci API. Saat Anda mengaktifkan kode dan belum ada layanan lain yang digunakan, SandFly langsung memakai SandFly Pro. Untuk layanan AI, lihat [](#descriptions-ai-services).
 
-Jika SandFly Pro dipilih sebagai layanan AI tetapi sedang tidak aktif, SandFly mengucapkan "SandFly Pro tidak aktif. Masukkan kode di pengaturan SandFly Pro."
+Jika SandFly Pro dipilih sebagai layanan AI tetapi sedang tidak aktif, SandFly mengucapkan "SandFly Pro tidak aktif. Masukkan kode di setelan SandFly Pro."
 
 ### Agen AI {#pro-agent}
 
@@ -102,7 +102,7 @@ Untuk mengetik tugas sebagai gantinya, jalankan **Ketik tugas agen AI**. Di jend
 
 Saat agen bekerja, SandFly membacakan laporan agen, memutar suara saat agen mulai, bertanya, dan selesai, serta membacakan ringkasan di akhir: "Tugas selesai." atau "Tugas tidak selesai."
 
-Kedua perintah tersebut ada di **Perintah**, tempat Anda dapat menetapkannya ke gestur dan tombol, serta di kontrol pembacaan **Tindakan AI**. Lihat [](#commands) dan [](#descriptions-ai-actions).
+Kedua perintah tersebut ada di **Perintah**, tempat Anda dapat menetapkannya ke gerakan dan tombol, serta di kontrol pembacaan **Tindakan AI**. Lihat [](#commands) dan [](#descriptions-ai-actions).
 
 #### Menjawab pertanyaan dan mengizinkan tindakan {#pro-agent-questions}
 
@@ -137,7 +137,9 @@ Untuk mengenali sebuah layar:
 1. Buka aplikasi.
 2. Pilih **Kenali layar** di Menu SandFly, atau jalankan perintah **Kenali layar**.
 
-SandFly mengucapkan "Mengenali layar", lalu jumlah item yang ditemukan, misalnya "7 item dikenali", atau "Tidak ada item yang dikenali". Layar-layar berikutnya dari aplikasi yang sama juga dikenali saat berubah, hingga aplikasi lain dibuka ke depan.
+SandFly mengucapkan "Mengenali layar", lalu jumlah item yang ditemukan, misalnya "7 item dikenali", atau "Tidak ada item yang dikenali". Layar-layar berikutnya dari aplikasi yang sama juga dikenali saat berubah, hingga aplikasi lain atau layar utama dibuka ke depan.
+
+Untuk menghentikan pengenalan di aplikasi tersebut dan menghapus item yang dikenali, pilih **Nonaktifkan pengenalan layar di** diikuti nama aplikasi di Menu SandFly, atau jalankan **Aktifkan atau nonaktifkan pengenalan layar di aplikasi saat ini**.
 
 Agar setiap layar dalam suatu aplikasi selalu dikenali:
 
@@ -158,10 +160,10 @@ Agen skrip menulis skrip SandFly dari deskripsi Anda, lalu mengujinya di ponsel.
 2. Buka **Skrip** lalu pilih **Buat skrip dengan SandFly Pro**, atau jalankan perintah **Buat skrip dengan SandFly Pro**.
 3. Baca dialog **Skrip dan batas penggunaan**, yang menunjukkan seberapa banyak batas bulanan yang telah terpakai, lalu pilih **Setuju dan lanjutkan**.
 4. Di **Buat skrip**, ketik apa yang harus dilakukan skrip dan di aplikasi mana, lalu pilih **Mulai**. SandFly mengucapkan "Membuat skrip".
-5. Saat notifikasi **SandFly Pro sedang menunggu layar** muncul, buka layar yang diminta agen, lalu pilih **Selesai** di notifikasi, atau jalankan **Buat skrip dengan SandFly Pro** lagi. Saat agen meminta pengujian, misalnya untuk suatu gestur, notifikasi **SandFly Pro sedang membuat skrip** menampilkan permintaan tersebut: coba di aplikasi, lalu pilih **Selesai**, atau pilih **Balas** dan jelaskan apa yang terjadi.
+5. Saat notifikasi **SandFly Pro sedang menunggu layar** muncul, buka layar yang diminta agen, lalu pilih **Selesai** di notifikasi, atau jalankan **Buat skrip dengan SandFly Pro** lagi. Saat agen meminta pengujian, misalnya untuk suatu gerakan, notifikasi **SandFly Pro sedang membuat skrip** menampilkan permintaan tersebut: coba di aplikasi, lalu pilih **Selesai**, atau pilih **Balas** dan jelaskan apa yang terjadi.
 6. Untuk mengirim pesan kepada agen sebagai gantinya, misalnya untuk melewati layar atau berhenti dan menyimpan hasil sementara, pilih **Balas** di notifikasi.
 
-Selama skrip dibuat, notifikasi **SandFly Pro sedang membuat skrip** memiliki tombol **Balas** dan **Berhenti**. **Balas** mengirim pesan yang dibaca agen pada langkah berikutnya. Jika Anda menambahkan **Buat skrip dengan SandFly Pro** ke Menu SandFly, item menu tersebut berubah menjadi **Hentikan agen SandFly Pro** saat agen sedang bekerja. Saat agen bekerja dan tidak sedang menunggu Anda, **Buat skrip dengan SandFly Pro** juga menghentikannya. Saat agen selesai atau dihentikan, skrip terbuka di pembuat skrip di bawah **Ditulis oleh SandFly Pro**, disertai ringkasan serta tombol **Terima**, **Minta perubahan**, dan **Buang**. Sebelum Anda menerimanya, skrip berjalan tanpa izin jaringan dan kode Java. Jika agen tidak menyimpan skrip, SandFly mengucapkan "Tidak ada skrip yang disimpan".
+Selama skrip dibuat, notifikasi **SandFly Pro sedang membuat skrip** memiliki tombol **Balas** dan **Berhenti**. **Balas** mengirim pesan yang dibaca agen pada langkah berikutnya. Jika Anda menambahkan **Buat skrip dengan SandFly Pro** ke Menu SandFly, item menu tersebut berubah menjadi **Hentikan agen SandFly Pro** saat agen sedang bekerja. Saat agen bekerja dan tidak sedang menunggu Anda, **Buat skrip dengan SandFly Pro** juga menghentikannya. Saat agen selesai atau dihentikan, skrip terbuka di pembuat skrip di bawah **Ditulis oleh SandFly Pro**, disertai ringkasan serta tombol **Terima**, **Minta perubahan**, dan **Buang**. Sebelum Anda menerimanya, skrip berjalan tanpa izin jaringan dan izin Java. Jika agen tidak menyimpan skrip, SandFly mengucapkan "Tidak ada skrip yang disimpan".
 
 Untuk mengubah skrip yang sudah dibuat, pilih **Ubah dengan SandFly Pro** di halaman skrip atau di pembuat skrip.
 

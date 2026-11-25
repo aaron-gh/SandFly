@@ -35,7 +35,7 @@
     <string name="macro_seconds">Detik</string>
     <string name="macro_invalid_seconds">Masukkan jumlah detik hingga <xliff:g id="max" example="600">%1$d</xliff:g></string>
     <string name="macro_tap_label">Teks item</string>
-    <string name="macro_tap_timeout">Detik menunggu item</string>
+    <string name="macro_tap_timeout">Lama menunggu item (detik)</string>
     <string name="macro_text">Teks</string>
     <string name="macro_replace_text">Ganti teks di kolom</string>
     <string name="macro_item_not_found">Makro dihentikan. Tidak ditemukan: <xliff:g id="label" example="Send">%1$s</xliff:g></string>
@@ -96,9 +96,9 @@
     <string name="macro_item_kind">Jenis item</string>
     <string name="macro_kind_any">Jenis apa pun</string>
     <string name="macro_kind_clickable">Dapat diklik</string>
-    <string name="macro_kind_long_clickable">Dapat diklik lama</string>
+    <string name="macro_kind_long_clickable">Dapat disentuh lama</string>
     <string name="macro_kind_editable">Dapat diedit</string>
-    <string name="macro_kind_scrollable">Dapat di-scroll</string>
+    <string name="macro_kind_scrollable">Dapat digulir</string>
     <string name="macro_kind_adjustable">Dapat disesuaikan</string>
     <string name="macro_kind_checkable">Dapat dicentang</string>
     <string name="macro_kind_checked">Dicentang</string>
@@ -106,15 +106,15 @@
     <string name="macro_kind_heading">Judul</string>
     <string name="macro_kind_enabled">Diaktifkan</string>
     <string name="macro_change_to">Ubah ke: <xliff:g id="test" example="Keyboard hidden">%1$s</xliff:g></string>
-    <string name="macro_join_with_and">Gabungkan dengan dan</string>
-    <string name="macro_join_with_or">Gabungkan dengan atau</string>
+    <string name="macro_join_with_and">Gabungkan dengan \"dan\"</string>
+    <string name="macro_join_with_or">Gabungkan dengan \"atau\"</string>
     <string name="macro_clause_and">dan <xliff:g id="test" example="Keyboard shown">%1$s</xliff:g></string>
     <string name="macro_clause_or">atau <xliff:g id="test" example="Screen locked">%1$s</xliff:g></string>
-    <string name="macro_wait_timeout">Detik menunggu</string>
+    <string name="macro_wait_timeout">Lama menunggu (detik)</string>
     <string name="macro_add_step_after">Tambahkan langkah setelah</string>
     <string name="macro_problem">Langkah <xliff:g id="step" example="3">%1$d</xliff:g>: <xliff:g id="problem" example="If without End if">%2$s</xliff:g></string>
-    <string name="macro_problem_no_if">Jika tidak, jika, Jika tidak, atau Akhir jika tanpa Jika</string>
-    <string name="macro_problem_after_else">Jika tidak, jika atau Jika tidak setelah Jika tidak</string>
+    <string name="macro_problem_no_if">“Jika tidak, jika”, “Jika tidak”, atau “Akhir jika” tanpa “Jika”</string>
+    <string name="macro_problem_after_else">“Jika tidak, jika” atau “Jika tidak” setelah “Jika tidak”</string>
     <string name="macro_problem_no_repeat">Akhir ulangi tanpa Ulangi</string>
     <string name="macro_problem_no_end_if">Jika tanpa Akhir jika</string>
     <string name="macro_problem_no_end_repeat">Ulangi tanpa Akhir ulangi</string>
@@ -128,7 +128,7 @@
     <string name="macro_do_vibrate">Getar</string>
     <string name="macro_do_play_tone">Putar nada</string>
     <string name="macro_do_copy_text">Salin teks</string>
-    <string name="macro_do_open_link">Buka link</string>
+    <string name="macro_do_open_link">Buka tautan</string>
     <string name="macro_do_open_settings">Buka halaman setelan</string>
     <string name="macro_do_share_text">Bagikan teks</string>
     <string name="macro_do_set_volume">Setel volume</string>
@@ -136,7 +136,7 @@
     <string name="macro_do_press_keys">Tekan tombol</string>
     <string name="macro_do_show_message">Tampilkan pesan</string>
     <string name="macro_do_set_value">Setel nilai</string>
-    <string name="macro_do_fetch">Ambil link</string>
+    <string name="macro_do_fetch">Ambil isi tautan</string>
     <string name="macro_do_translate">Terjemahkan teks</string>
     <string name="macro_do_value">%1$s: %2$s</string>
     <string name="macro_do_into_value">%1$s: %2$s, ke %3$s</string>
@@ -171,7 +171,7 @@
     <string name="macro_media_rewind">Mundur</string>
     <string name="macro_media_fast_forward">Maju cepat</string>
     <string name="macro_do_set_timer">Setel pengatur waktu</string>
-    <string name="macro_do_set_timer_value">Setel pengatur waktu: %1$s s, %2$s</string>
+    <string name="macro_do_set_timer_value">Setel pengatur waktu: %1$s detik, %2$s</string>
     <string name="macro_do_timer_seconds">Detik</string>
     <string name="macro_do_label">Label (opsional)</string>
     <string name="macro_do_set_alarm">Setel alarm</string>
@@ -183,12 +183,12 @@
     <string name="macro_do_open_camera">Buka kamera</string>
     <string name="macro_do_camera_photo">Foto</string>
     <string name="macro_do_camera_video">Video</string>
-    <string name="macro_do_set_timer_short">Setel pengatur waktu: %1$s s</string>
+    <string name="macro_do_set_timer_short">Setel pengatur waktu: %1$s detik</string>
     <string name="macro_do_set_alarm_short">Setel alarm: %1$s</string>
-    <string name="macro_step_act_item">Tekan lama atau scroll item</string>
-    <string name="macro_act_long_press">Tekan lama</string>
-    <string name="macro_act_scroll_forward">Scroll maju</string>
-    <string name="macro_act_scroll_backward">Scroll mundur</string>
+    <string name="macro_step_act_item">Sentuh lama atau gulir item</string>
+    <string name="macro_act_long_press">Sentuh lama</string>
+    <string name="macro_act_scroll_forward">Gulir maju</string>
+    <string name="macro_act_scroll_backward">Gulir mundur</string>
     <string name="macro_step_act_value">%1$s: %2$s</string>
     <string name="macro_step_act_times_value">%1$s: %2$s, %3$d kali</string>
     <string name="macro_test_focus_inside">Fokus ada di dalam item</string>
@@ -227,7 +227,7 @@
     <string name="macro_recording_toast">Merekam. Untuk berhenti, jalankan Rekam makro atau Hentikan makro, atau buka notifikasi Merekam langkah makro.</string>
     <string name="macro_recorded">Langkah yang direkam</string>
     <string name="macro_recorded_no_passwords">Teks yang diketik di kolom sandi tidak direkam.</string>
-    <string name="macro_recorded_too_many">Tidak ditambahkan. Sebuah makro maksimal memiliki <xliff:g id="count" example="200">%1$d</xliff:g> langkah.</string>
+    <string name="macro_recorded_too_many">Tidak ditambahkan. Satu makro berisi maksimal <xliff:g id="count" example="200">%1$d</xliff:g> langkah.</string>
     <string name="macro_recorded_name">Rekaman <xliff:g id="time" example="19 Nov 2026, 14:52">%1$s</xliff:g></string>
     <string name="macro_list_on_screen">Daftar di layar</string>
 </resources>

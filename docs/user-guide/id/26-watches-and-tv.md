@@ -6,9 +6,9 @@ SandFly berjalan di jam tangan Wear OS serta di Android TV dan Google TV. Bab in
 
 Jam tangan memiliki build SandFly tersendiri, yaitu `sandfly-wear.apk`. Build ini memiliki setelan yang sama seperti di ponsel, kecuali setelan untuk fitur yang tidak didukung jam tangan.
 
-#### Memasang SandFly di jam tangan {#devices-watch-install}
+#### Menginstal SandFly di jam tangan {#devices-watch-install}
 
-Anda memasang `sandfly-wear.apk` dari komputer menggunakan adb.
+Anda menginstal `sandfly-wear.apk` dari komputer menggunakan adb.
 
 1. Unduh `sandfly-wear.apk` dari [rilis terbaru](https://github.com/aaron-gh/SandFly/releases/latest) ke komputer.
 2. Di jam tangan, aktifkan opsi developer, lalu aktifkan **ADB debugging** dan debugging nirkabel. Langkahnya bergantung pada jam tangan. Pada sebagian besar jam tangan, ketuk nomor build di setelan **Tentang** tujuh kali untuk memunculkan opsi developer.
@@ -25,45 +25,45 @@ Untuk membuka setelan SandFly di jam tangan, buka **SandFly** di daftar aplikasi
 
 #### Gestur di jam tangan {#devices-watch-gestures}
 
-Layar jam tangan hanya melacak maksimal dua jari, sehingga gestur tiga atau empat jari tidak tersedia. Geseran dua jari diteruskan ke aplikasi untuk menggulir.
+Layar jam tangan hanya melacak maksimal dua jari, sehingga gerakan tiga atau empat jari tidak tersedia. Geseran dua jari diteruskan ke aplikasi untuk menggulir.
 
-Jam tangan menggunakan gestur default ponsel, kecuali:
+Jam tangan menggunakan gerakan default ponsel, kecuali:
 
-| Gestur | Perintah di jam tangan |
+| Gerakan | Perintah di jam tangan |
 | --- | --- |
-| Ketuk dua kali dan tahan dengan 2 jari | Buka menu SandFly |
-| Ketuk tiga kali dan tahan dengan 2 jari | Aktifkan atau nonaktifkan ucapan |
+| Ketuk dua kali lalu tahan dengan 2 jari | Buka menu SandFly |
+| Ketuk tiga kali lalu tahan dengan 2 jari | Aktifkan atau nonaktifkan ucapan |
 | Geser kiri lalu atas | Ulangi frasa terakhir yang diucapkan |
 | Geser kanan lalu atas | Naikkan volume |
 | Geser kanan lalu bawah | Turunkan volume |
 | Geser kiri lalu bawah | Tidak ditetapkan |
 
-Untuk gestur default ponsel, lihat [](#appendix-gestures). Untuk mengubah gestur, buka **Gestur**. Lihat [](#gestures).
+Untuk gerakan default ponsel, lihat [](#appendix-gestures). Untuk mengubah gerakan, buka **Gerakan**. Lihat [](#gestures).
 
 #### Setelan dan fitur di jam tangan {#devices-watch-settings}
 
 Di jam tangan:
 
-- Kontrol pembacaan menyertakan **Scroll** dan **Volume aksesibilitas** secara default. Lihat [](#reading).
+- Kontrol pembacaan menyertakan **Gulir** dan **Volume aksesibilitas** secara default. Lihat [](#reading).
 - Menu SandFly dapat digulir agar setiap item dapat dijangkau. **Deskripsikan layar** tidak ada di menu secara default. Item untuk menonaktifkan SandFly bernama **Nonaktifkan**. Lihat [](#commands).
 - **Fitur-fitur baru di SandFly** bernama **Yang baru**.
 - Fitur menjeda SandFly tidak tersedia, dan **Lanjutkan SandFly** tidak ditampilkan. Lihat [](#pause).
-- **Berlatih gestur** tidak ada di **Bantuan & masukan**. Gunakan **Berlatih gestur** di bagian atas **Gestur**, yang membuka latihan gestur dari tutorial jam tangan.
+- **Berlatih gerakan** tidak ada di **Bantuan & masukan**. Gunakan **Berlatih gerakan** di bagian atas **Gerakan**, yang membuka latihan gerakan dari tutorial jam tangan.
 - **Riwayat versi** dan **Kebijakan privasi** menampilkan alamat halaman jika jam tangan tidak memiliki browser.
 
-Fitur-fitur berikut tidak tersedia di jam tangan, dan setelannya tidak ditampilkan: skrip, makro, menu kustom, kontrol pembacaan kustom, perintah suara, sentuhan langsung, ketuk belakang, goyang, setelan gestur tepi dan sudut, keyboard braille, keyboard tulisan tangan, keyboard SandFly, AI di perangkat, **Gunakan SandFly sebagai wallpaper**, **Speaker saat jauh dari telinga**, **Setel ulang audio aksesibilitas setelah panggilan**, **Pintasan tombol volume saat layar mati**, dan **Tampilkan petunjuk untuk menonaktifkan SandFly**.
+Fitur-fitur berikut tidak tersedia di jam tangan, dan setelannya tidak ditampilkan: skrip, makro, menu kustom, kontrol pembacaan kustom, perintah suara, sentuhan langsung, ketuk belakang, goyang, setelan gerakan tepi dan sudut, keyboard braille, keyboard tulisan tangan, keyboard SandFly, AI di perangkat, **Gunakan SandFly sebagai wallpaper**, **Speaker saat jauh dari telinga**, **Setel ulang audio aksesibilitas setelah panggilan**, **Pintasan tombol volume saat layar mati**, dan **Tampilkan petunjuk untuk menonaktifkan SandFly**.
 
 Untuk notifikasi di jam tangan Samsung, lihat [](#notifications).
 
 #### Pembaruan di jam tangan {#devices-watch-updates}
 
-Jam tangan memperbarui ke build baru `sandfly-wear.apk`, seperti dijelaskan di [](#updates). Jam tangan mengunduh pembaruan melalui Wi-Fi-nya sendiri jika Wi-Fi tersedia, bukan melalui ponsel, dan menampilkan progresnya di notifikasi. Jika dialog pemasangan tidak terbuka, misalnya karena layar mati selama pengunduhan, ketuk notifikasi **Pembaruan SandFly telah diunduh**.
+Jam tangan memperbarui ke build baru `sandfly-wear.apk`, seperti dijelaskan di [](#updates). Jam tangan mengunduh pembaruan melalui Wi-Fi-nya sendiri jika Wi-Fi tersedia, bukan melalui ponsel, dan menampilkan progresnya di notifikasi. Jika dialog penginstalan tidak terbuka, misalnya karena layar mati selama pengunduhan, ketuk notifikasi **Pembaruan SandFly telah diunduh**.
 
 ### Android TV {#devices-tv}
 
-File `sandfly.apk` yang sama dengan versi ponsel dapat dipasang di Android TV dan Google TV.
+File `sandfly.apk` yang sama dengan versi ponsel dapat diinstal di Android TV dan Google TV.
 
-#### Memasang SandFly di TV {#devices-tv-install}
+#### Menginstal SandFly di TV {#devices-tv-install}
 
 1. Di TV, aktifkan opsi developer dan debugging jaringan. Langkahnya bergantung pada TV.
 2. Di komputer pada jaringan yang sama, hubungkan ke TV dengan `adb connect` diikuti alamat IP TV.
@@ -95,7 +95,7 @@ SandFly tidak menangani tombol panah dan tombol Pilih saat keyboard di layar sed
 
 Di TV:
 
-- Setelan untuk fitur yang memerlukan layar sentuh atau ponsel tidak ditampilkan, seperti **Gestur**, **Sentuhan langsung**, **Pembacaan status**, **Gunakan ringkasan SandFly**, **Gunakan daftar notifikasi SandFly**, **Speaker saat jauh dari telinga**, dan **Deskripsi gambar dan layar**. Layar setelan **Menu SandFly** dan **Kontrol pembacaan** juga tidak ditampilkan.
+- Setelan untuk fitur yang memerlukan layar sentuh atau ponsel tidak ditampilkan. Contohnya **Gerakan**, **Sentuhan langsung**, **Pembacaan status**, **Gunakan ringkasan SandFly**, **Gunakan daftar notifikasi SandFly**, **Speaker saat jauh dari telinga**, dan **Deskripsi gambar dan layar**. Layar setelan **Menu SandFly** dan **Kontrol pembacaan** juga tidak ditampilkan.
 - Fitur menjeda SandFly tidak tersedia, dan **Lanjutkan SandFly** tidak ditampilkan. Lihat [](#pause).
 - Item pertama di **Bantuan & masukan** membuka tutorial TV jika TV memilikinya. Jika tidak, item tersebut bernama **Bantuan**.
 - TV sering kali tidak menampilkan notifikasi, sehingga notifikasi pembaruan mungkin tidak muncul. Untuk memperbarui, buka **Update dan penginstalan** > **Periksa pembaruan**. Lihat [](#updates-check).

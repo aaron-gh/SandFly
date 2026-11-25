@@ -2,8 +2,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="talkback_on">SandFly aktif</string>
   <string name="talkback_disabled">SandFly nonaktif</string>
-  <string name="notification_type_beginning_of_field">Awal bidang</string>
-  <string name="notification_type_end_of_field">Akhir bidang</string>
+  <string name="notification_type_beginning_of_field">Awal kolom</string>
+  <string name="notification_type_end_of_field">Akhir kolom</string>
   <string name="notification_type_selection_mode_on">Mode pemilihan aktif</string>
   <string name="notification_type_selection_mode_off">Mode pemilihan nonaktif</string>
   <string name="notification_type_selection_cleared">Pilihan dihapus</string>
@@ -28,7 +28,7 @@
   <string name="template_announce_selected_text">Teks yang dipilih: %1$s</string>
   <string name="template_text_unselected">%1$s tidak dipilih</string>
   <string name="template_text_error">Input tidak valid: %1$s</string>
-  <string name="template_replaced_characters">Karakter %1$s diganti dengan karakter %2$s</string>
+  <string name="template_replaced_characters">%1$s karakter diganti dengan %2$s karakter</string>
   <string name="template_labeled_item">%1$s untuk %2$s</string>
   <string name="tb_template_percent">%1$s persen</string>
   <string name="template_value">%1$s</string>
@@ -45,8 +45,8 @@
   <string name="value_radio_button">Tombol pilihan</string>
   <string name="value_button">Tombol</string>
   <string name="value_seek_bar">Penggeser</string>
-  <string name="value_switch">Tombol</string>
-  <string name="value_edit_box">Kotak edit</string>
+  <string name="value_switch">Sakelar</string>
+  <string name="value_edit_box">Kolom teks</string>
   <string name="value_edit_box_editing">Mengedit</string>
   <string name="value_image">Gambar</string>
   <string name="value_unlabelled">Tak berlabel</string>
@@ -78,13 +78,13 @@
   <string name="value_press_select">Tekan pilih</string>
   <string name="template_hint_clickable">%1$s untuk mengaktifkan</string>
   <string name="template_hint_clickable_keyboard">Tekan %1$s untuk mengaktifkan</string>
-  <string name="template_hint_long_clickable">%1$s dan tahan untuk menekan lama</string>
+  <string name="template_hint_long_clickable">%1$s lalu tahan untuk menyentuh lama</string>
   <string name="template_hint_long_clickable_keyboard">Tekan %1$s untuk menekan lama</string>
   <string name="template_hint_checkable">%1$s untuk beralih</string>
   <string name="template_hint_checkable_keyboard">Tekan %1$s untuk beralih</string>
   <string name="template_hint_adjustable_2gesture">\"%1$s\" atau \"%2$s\" untuk menyesuaikan</string>
   <string name="template_hint_adjustable_1gesture">\"%1$s\" untuk menyesuaikan</string>
-  <string name="template_hint_wear_input_focused_adjustable">Gunakan geser 2 jari, atau putar kenop jam atau bingkai untuk mengubah</string>
+  <string name="template_hint_wear_input_focused_adjustable">Untuk mengubah, geser dengan 2 jari, atau putar kenop atau bingkai jam</string>
   <string name="template_hint_edit_text">%1$s untuk mengedit teks</string>
   <string name="template_hint_edit_text_keyboard">Tekan %1$s untuk mengedit teks</string>
   <string name="template_hint_spinner">%1$s untuk mengubah</string>
@@ -95,9 +95,9 @@
   <string name="template_hint_seek_control_tv">%1$s untuk mengubah</string>
   <string name="template_custom_hint_for_actions">%1$s untuk %2$s</string>
   <string name="template_custom_hint_for_actions_keyboard">Tekan %1$s untuk %2$s</string>
-  <string name="template_custom_hint_for_long_clickable_actions">%1$s dan tahan untuk %2$s</string>
-  <string name="template_hint_clickable_link">%1$s untuk membuka link</string>
-  <string name="template_hint_clickable_link_keyboard">Tekan %1$s untuk membuka link</string>
+  <string name="template_custom_hint_for_long_clickable_actions">%1$s lalu tahan untuk %2$s</string>
+  <string name="template_hint_clickable_link">%1$s untuk membuka tautan</string>
+  <string name="template_hint_clickable_link_keyboard">Tekan %1$s untuk membuka tautan</string>
   <string name="value_caps_lock_on">Caps Lock aktif</string>
   <string name="value_caps_lock_off">Caps Lock nonaktif</string>
   <string name="value_num_lock_on">Num Lock aktif</string>
@@ -123,25 +123,25 @@
   <string name="out_of_role_description">Di luar %1$s</string>
   <string name="out_of_list_with_name">Di luar daftar %1$s</string>
   <string name="out_of_list">Di luar daftar</string>
-  <string name="in_grid_with_name">Dalam petak %1$s</string>
-  <string name="in_grid">Dalam petak</string>
-  <string name="out_of_grid_with_name">Di luar petak %1$s</string>
-  <string name="out_of_grid">Di luar petak</string>
+  <string name="in_grid_with_name">Dalam kisi %1$s</string>
+  <string name="in_grid">Dalam kisi</string>
+  <string name="out_of_grid_with_name">Di luar kisi %1$s</string>
+  <string name="out_of_grid">Di luar kisi</string>
   <string name="in_pager_with_name">Dalam pager %1$s</string>
   <string name="in_pager">Dalam pager</string>
   <string name="out_of_pager_with_name">Keluar dari pager %1$s</string>
-  <string name="out_of_pager">Keluar dari halaman</string>
+  <string name="out_of_pager">Keluar dari pager</string>
   <string name="in_vertical_pager_with_name">Dalam pager vertikal %1$s</string>
   <string name="in_vertical_pager">Dalam pager vertikal</string>
   <string name="out_of_vertical_pager_with_name">Keluar dari pager vertikal %1$s</string>
   <string name="out_of_vertical_pager">Keluar dari pager vertikal</string>
   <string name="in_horizontal_pager_with_name">Dalam pager horizontal %1$s</string>
-  <string name="in_horizontal_pager">Dalam halaman horizontal</string>
+  <string name="in_horizontal_pager">Dalam pager horizontal</string>
   <string name="out_of_horizontal_pager">Keluar dari pager horizontal</string>
-  <string name="in_grid_pager_with_name">Dalam grid petak %1$s</string>
-  <string name="in_grid_pager">Dalam pager petak</string>
-  <string name="out_of_grid_pager_with_name">Keluar dari pager petak %1$s</string>
-  <string name="out_of_grid_pager">Keluar dari pager petak</string>
+  <string name="in_grid_pager_with_name">Dalam pager kisi %1$s</string>
+  <string name="in_grid_pager">Dalam pager kisi</string>
+  <string name="out_of_grid_pager_with_name">Keluar dari pager kisi %1$s</string>
+  <string name="out_of_grid_pager">Keluar dari pager kisi</string>
   <string name="template_collection_level">Level %1$d</string>
   <plurals name="template_list_total_count">
     <item quantity="one">%1$d item</item>
@@ -171,8 +171,8 @@
   <string name="template_partial_magnification_scale_changed">Pembesaran sebagian %1$d%%</string>
   <string name="magnification_off">Pembesaran nonaktif</string>
   <string name="template_speech_rate_change">Kecepatan bicara %1$d%%</string>
-  <string name="template_accessibility_volume_change_increase">Naikkan volume aksesibilitas ke %1$d persen.</string>
-  <string name="template_accessibility_volume_change_decrease">Turunkan volume aksesibilitas ke %1$d persen.</string>
+  <string name="template_accessibility_volume_change_increase">Volume aksesibilitas dinaikkan ke %1$d persen.</string>
+  <string name="template_accessibility_volume_change_decrease">Volume aksesibilitas diturunkan ke %1$d persen.</string>
   <string name="template_touch_latency_reach_maximum">Maksimum</string>
   <string name="template_touch_latency_reach_minimum">Minimum</string>
   <string name="template_volume_change_maximum">Maksimum</string>
@@ -193,7 +193,7 @@
   <string name="drag_dropped">Item yang ditarik dilepas</string>
   <string name="drag_cancelled">Tarik dibatalkan</string>
     <string name="template_brightness_changed">Kecerahan <xliff:g id="percent">%1$d</xliff:g> persen.</string>
-    <string name="brightness_needs_permission">Izinkan ubah setelan sistem untuk mengubah kecerahan.</string>
+    <string name="brightness_needs_permission">Izinkan \"Ubah setelan sistem\" untuk mengubah kecerahan.</string>
     <string name="brightness_adaptive_on">Nonaktifkan kecerahan adaptif untuk mengubah kecerahan.</string>
     <string name="telegram_replying_to">membalas <xliff:g id="name" example="Ronan">%1$s</xliff:g>: <xliff:g id="text" example="What other features do you like?">%2$s</xliff:g></string>
 </resources>

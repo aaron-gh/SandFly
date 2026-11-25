@@ -1,6 +1,6 @@
 ## Perintah suara {#appendix-voice-commands}
 
-Ini adalah frasa bahasa Indonesia yang diterima SandFly sebagai perintah suara. Kata dengan huruf kapital mewakili kata yang Anda ucapkan sebagai penggantinya, seperti nama atau teks. Kata di dalam tanda kurung bersifat opsional, dan garis miring memisahkan kata yang dapat saling menggantikan: "deskripsikan (gambar/foto) (ini)" berarti "deskripsikan gambar", "deskripsikan foto", "deskripsikan gambar ini", atau "deskripsikan foto ini". Huruf besar/kecil dan tanda baca yang ditambahkan oleh pengenal ucapan tidak berpengaruh. Untuk cara memulai perintah suara, merangkai perintah, dan membuat frasa Anda sendiri, lihat [](#voice-commands).
+Daftar ini berisi frasa bahasa Indonesia yang diterima SandFly sebagai perintah suara. Kata dengan huruf kapital mewakili kata yang Anda ucapkan sebagai penggantinya, seperti nama atau teks. Kata di dalam tanda kurung bersifat opsional, dan garis miring memisahkan kata yang dapat saling menggantikan: "deskripsikan (gambar/foto) (ini)" berarti "deskripsikan gambar", "deskripsikan foto", "deskripsikan gambar ini", atau "deskripsikan foto ini". Huruf besar/kecil dan tanda baca yang ditambahkan oleh pengenal ucapan tidak berpengaruh. Untuk cara memulai perintah suara, merangkai perintah, dan membuat frasa Anda sendiri, lihat [](#voice-commands).
 
 Selain frasa-frasa ini, Anda dapat mengucapkan nama perintah apa pun sebagaimana ditampilkan di layar **Perintah**, seperti "Baca dari atas", "Item berikutnya", atau "Deskripsikan gambar", termasuk nama makro, menu kustom, dan perintah skrip. Perintah suara kustom diprioritaskan di atas semua frasa di sini. Lihat [](#voice-commands-phrases).
 
@@ -12,7 +12,7 @@ Beberapa frasa dikenali di bagian mana pun dari ucapan Anda: frasa tersebut dita
 | --- | --- |
 | "Judul berikutnya" | Berpindah ke judul berikutnya. |
 | "Kontrol berikutnya" | Berpindah ke kontrol berikutnya. |
-| "Link berikutnya" | Berpindah ke link berikutnya. |
+| "Tautan berikutnya" | Berpindah ke tautan berikutnya. |
 | "Penanda berikutnya" | Berpindah ke penanda berikutnya di halaman web. |
 | Frasa yang mengandung "pertama" atau "atas" | Berpindah ke item pertama di layar. |
 | Frasa yang mengandung "terakhir" atau "bawah" | Berpindah ke item terakhir di layar. |
@@ -31,7 +31,7 @@ Beberapa frasa dikenali di bagian mana pun dari ucapan Anda: frasa tersebut dita
 | "Navigasi paragraf", atau "navigasi menurut paragraf", "perincian paragraf", atau "baca menurut paragraf" | Memilih kontrol pembacaan **Paragraf**. |
 | "Navigasi judul", atau "navigasi menurut judul", "perincian judul", atau "baca menurut judul" | Memilih kontrol pembacaan **Judul**. |
 | "Navigasi kontrol", atau "navigasi menurut kontrol", "perincian kontrol", atau "baca menurut kontrol" | Memilih kontrol pembacaan **Kontrol**. |
-| "Navigasi penanda", atau "navigasi menurut penanda", "perincian penanda", atau "baca menurut penanda" | Memilih kontrol pembacaan **Penanda**. |
+| "Navigasi penanda", atau "navigasi menurut penanda", "perincian penanda", atau "baca menurut penanda" | Memilih kontrol pembacaan **Penunjuk**. |
 | "Navigasi jendela", atau "navigasi menurut jendela", "perincian jendela", atau "baca menurut jendela" | Memilih kontrol pembacaan **Jendela**. |
 | "Navigasi default", atau "navigasi menurut default", "perincian default", atau "baca menurut default" | Memilih **Navigasi default**. |
 
@@ -45,7 +45,7 @@ Beberapa frasa dikenali di bagian mana pun dari ucapan Anda: frasa tersebut dita
 
 ### Pengeditan teks {#appendix-voice-commands-text-editing}
 
-Frasa ini berlaku pada kolom edit yang difokuskan.
+Frasa ini berlaku pada kolom teks yang difokuskan.
 
 | Ucapkan | Yang terjadi |
 | --- | --- |
@@ -85,7 +85,7 @@ Frasa ini berlaku pada kolom edit yang difokuskan.
 | "Setelan SandFly", atau "Setelan TalkBack" | Membuka setelan SandFly. |
 | "Sembunyikan layar", atau frasa yang mengandung "redupkan" atau "gelapkan" | Menyembunyikan layar. |
 | "Tampilkan layar", atau "cerahkan layar", "kembalikan kecerahan layar", atau "batal sembunyikan layar" | Menampilkan layar kembali. |
-| "Label TEKS" | Memberi item yang difokuskan label kustom. SandFly mengucapkan "Label disimpan". |
+| "Label TEKS" | Memberi item yang difokuskan label khusus. SandFly mengucapkan "Label disimpan". |
 | Frasa yang mengandung "bantuan", atau yang mengandung "apa" dan "ucapkan", seperti "Apa yang bisa saya ucapkan" | Membuka **Ringkasan perintah suara**. |
 | "Stop", "batal", "batalkan", "tidak jadi", "lupakan", "sudahlah", atau "diam", atau frasa yang mengandung "berhenti", "keluar", "bisukan", atau "jeda" | Menghentikan perintah suara yang sedang berjalan. |
 

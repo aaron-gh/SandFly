@@ -12,15 +12,15 @@
     <string name="summary_pref_gemini_model_chosen"><xliff:g id="model" example="gemini-3.6-flash">%1$s</xliff:g>, lalu Flash-Lite saat sedang sibuk</string>
     <string name="gemini_model_loading">Mendapatkan model…</string>
     <string name="gemini_model_list_failed">Tidak dapat mengambil model: <xliff:g id="reason" example="HTTP 403">%1$s</xliff:g></string>
-    <string name="gemini_model_needs_key">Tetapkan kunci API Gemini terlebih dahulu</string>
+    <string name="gemini_model_needs_key">Setel kunci API Gemini terlebih dahulu</string>
     <string name="gemini_api_terms_link">Persyaratan Layanan Tambahan Gemini API</string>
     <string name="ai_service_address_hint">Alamat, seperti https://openrouter.ai/api/v1</string>
     <string name="ai_service_model_hint">Model</string>
     <string name="ai_service_address_invalid">Alamat harus dimulai dengan https://. Tidak ada yang disimpan.</string>
-    <string name="dialog_message_ai_service_consent">Gambar dan screenshot dikirim ke <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> untuk dideskripsikan, yang memerlukan beberapa detik. Persyaratan dan kebijakan privasi layanan tersebut berlaku. AI generatif masih eksperimental, jadi akan membuat kesalahan.</string>
+    <string name="dialog_message_ai_service_consent">Gambar dan tangkapan layar dikirim ke <xliff:g id="host" example="openrouter.ai">%1$s</xliff:g> untuk dideskripsikan. Proses ini memerlukan beberapa detik. Persyaratan dan kebijakan privasi layanan tersebut berlaku. AI generatif masih eksperimental, jadi akan membuat kesalahan.</string>
     <string name="ai_service_error_api_key">Layanan AI tidak menerima kunci API. Periksa setelannya di Layanan AI.</string>
     <string name="ai_service_error_quota">Batas penggunaan layanan AI telah tercapai. Coba lagi nanti.</string>
-    <string name="ai_service_error_busy">Layanan AI sedang sibuk saat ini. Coba lagi sebentar lagi.</string>
+    <string name="ai_service_error_busy">Layanan AI sedang sibuk. Tunggu sebentar, lalu coba lagi.</string>
     <string name="ai_service_error_timeout">Layanan AI membutuhkan waktu terlalu lama untuk menjawab. Coba lagi.</string>
     <string name="ai_provider_gemini">Gemini</string>
     <string name="ai_provider_claude">Claude</string>
@@ -31,25 +31,25 @@
     <string name="ai_provider_ollama">Ollama Cloud</string>
     <string name="ai_provider_none">Tidak ada</string>
     <string name="ai_service_not_set_up">Tidak ada layanan AI yang digunakan. Siapkan satu atau pilih salah satu di setelan Layanan AI.</string>
-    <string name="ai_provider_none_set_up">Tidak ada layanan AI yang disiapkan. Atur satu dalam pengaturannya di bawah.</string>
+    <string name="ai_provider_none_set_up">Tidak ada layanan AI yang disiapkan. Siapkan salah satunya di setelan di bawah.</string>
     <string name="ai_provider_other">Layanan lainnya</string>
     <string name="title_pref_category_ai_services">Layanan AI</string>
     <string name="title_pref_ai_provider">Layanan AI</string>
-    <string name="title_ai_provider_settings">Pengaturan <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
-    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, belum diatur</string>
+    <string name="title_ai_provider_settings">Setelan <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
+    <string name="ai_provider_chosen_not_ready"><xliff:g id="service" example="Claude">%1$s</xliff:g>, belum disiapkan</string>
     <string name="ai_provider_in_use">Sedang digunakan</string>
-    <string name="ai_provider_not_set_up">Tidak diatur</string>
+    <string name="ai_provider_not_set_up">Belum disiapkan</string>
     <string name="ai_provider_not_ready">Pilih model terlebih dahulu</string>
     <string name="ai_provider_address">Alamat</string>
     <string name="ai_provider_address_message">Alamat layanan dengan API obrolan dan masukan gambar yang kompatibel dengan OpenAI, seperti https://example.com/v1.</string>
     <string name="ai_provider_not_set">Tidak disetel</string>
-    <string name="ai_provider_set">Dikonfigurasi</string>
+    <string name="ai_provider_set">Disetel</string>
     <string name="title_pref_gemini_api_key_of">Kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="title_pref_gemini_model_of">Model <xliff:g id="service" example="Claude">%1$s</xliff:g></string>
     <string name="ai_provider_choose_model">Tidak dipilih</string>
     <string name="ai_provider_key_message">Tempel kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g> Anda. Untuk menghapusnya, kosongkan kolom lalu simpan. Gambar dan layar yang Anda minta dideskripsikan dikirim ke <xliff:g id="service" example="Claude">%1$s</xliff:g>.</string>
     <string name="ai_provider_needs_key">Setel kunci API <xliff:g id="service" example="Claude">%1$s</xliff:g> terlebih dahulu</string>
-    <string name="ai_provider_needs_address">Tetapkan alamatnya terlebih dahulu</string>
+    <string name="ai_provider_needs_address">Setel alamat terlebih dahulu</string>
     <string name="ai_provider_enter_model">Masukkan nama model</string>
     <string name="ai_provider_qwen">Qwen</string>
     <string name="ai_provider_zhipu">Zhipu GLM</string>

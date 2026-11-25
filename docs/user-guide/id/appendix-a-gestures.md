@@ -1,5 +1,5 @@
-## Gestur default {#appendix-gestures}
+## Gerakan default {#appendix-gestures}
 
-Ini adalah perintah yang dijalankan gestur sebelum Anda mengubahnya, pada setiap tata letak gestur. Gestur yang tidak tercantum tidak menjalankan perintah apa pun hingga Anda menetapkannya. Untuk mengubah fungsi gestur atau memilih tata letak gestur, lihat [](#gestures).
+Daftar ini berisi perintah yang dijalankan setiap gerakan sebelum Anda mengubahnya, untuk setiap tata letak gerakan. Gerakan yang tidak tercantum tidak menjalankan perintah apa pun sampai Anda menetapkan perintah untuknya. Untuk mengubah fungsi gerakan atau memilih tata letak gerakan, lihat [](#gestures).
 
 <!-- generate: gestures -->

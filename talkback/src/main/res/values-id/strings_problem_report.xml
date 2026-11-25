@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="title_pref_problem_report">Kirim masukan</string>
-    <string name="title_pref_problem_report_type">Jenis umpan balik</string>
+    <string name="title_pref_problem_report_type">Jenis masukan</string>
     <string name="title_pref_problem_report_area">Bagian</string>
     <string name="title_pref_problem_report_title">Judul</string>
-    <string name="title_pref_problem_report_app">Aplikasi tempat hal itu terjadi</string>
+    <string name="title_pref_problem_report_app">Aplikasi tempat masalah terjadi</string>
     <string name="title_pref_problem_report_description">Deskripsi</string>
     <string name="dialog_message_problem_report_description">Apa yang terjadi dan apa yang Anda harapkan.</string>
     <string name="title_pref_problem_report_steps">Langkah untuk mereproduksi</string>
@@ -16,19 +16,19 @@
     <string name="summary_pref_problem_report_sending">Mengirim</string>
     <string name="problem_report_missing_fields">Masukkan judul dan deskripsi.</string>
     <string name="problem_report_invalid_email">Masukkan alamat email yang valid.</string>
-    <string name="problem_report_sent">Umpan balik dikirim.</string>
+    <string name="problem_report_sent">Masukan terkirim.</string>
     <string name="problem_report_rate_limited">Terlalu banyak masukan yang dikirim. Coba lagi nanti.</string>
-    <string name="problem_report_no_connection">Umpan balik tidak dikirim. Periksa koneksi internet.</string>
-    <string name="problem_report_not_sent">Umpan balik tidak dikirim. Coba lagi nanti.</string>
+    <string name="problem_report_no_connection">Masukan tidak terkirim. Periksa koneksi internet.</string>
+    <string name="problem_report_not_sent">Masukan tidak terkirim. Coba lagi nanti.</string>
     <string-array name="problem_report_type_entries">
         <item>Perilaku salah</item>
-        <item>Error tiba-tiba</item>
+        <item>Berhenti mendadak</item>
         <item>Lambat atau tidak merespons</item>
         <item>Saran</item>
     </string-array>
     <string-array name="problem_report_area_entries">
         <item>Ucapan</item>
-        <item>Gestur</item>
+        <item>Gerakan</item>
         <item>Jelajahi dengan sentuhan</item>
         <item>Kontrol pembacaan dan menu</item>
         <item>Mengetik dan keyboard</item>
@@ -45,7 +45,7 @@
     <string name="title_report_new">Masukan baru</string>
     <string name="title_report_inbox">Kotak masuk</string>
     <string name="title_report_drafts">Draf</string>
-    <string name="report_inbox_empty">Tidak ada umpan balik yang dikirim</string>
+    <string name="report_inbox_empty">Belum ada masukan yang dikirim</string>
     <string name="report_drafts_empty">Tidak ada draf</string>
     <string name="report_just_now">baru saja</string>
     <string name="report_untitled">Tanpa judul</string>
@@ -59,10 +59,10 @@
     <string name="report_status_open">Terbuka</string>
     <string name="report_status_completed">Ditutup, selesai</string>
     <string name="report_status_not_planned">Ditutup, tidak direncanakan</string>
-    <string name="report_status_duplicate">Tertutup, duplikat</string>
+    <string name="report_status_duplicate">Ditutup, duplikat</string>
     <string name="report_status_unknown">Dihapus</string>
     <string name="title_report_status">Status</string>
-    <string name="title_report_your_report">Tanggapan Anda</string>
+    <string name="title_report_your_report">Masukan Anda</string>
     <string name="title_report_messages">Pesan</string>
     <string name="report_message_from_developer">Pengembang, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
     <string name="report_message_from_you">Anda, <xliff:g id="when" example="2 hours ago">%1$s</xliff:g></string>
@@ -78,7 +78,7 @@
     <string name="dialog_title_report_delete_draft">Hapus draf ini?</string>
     <string name="button_report_delete">Hapus</string>
     <string name="report_missing">Masukan ini tidak lagi ada di kotak masuk.</string>
-    <string name="notification_channel_problem_reports">Balasan umpan balik</string>
+    <string name="notification_channel_problem_reports">Balasan masukan</string>
     <string name="report_notification_reply">Balasan untuk <xliff:g id="title" example="Focus skips a row">%1$s</xliff:g></string>
     <string name="report_notification_status"><xliff:g id="title" example="Focus skips a row">%1$s</xliff:g>: <xliff:g id="status" example="Closed, completed">%2$s</xliff:g></string>
     <string name="title_pref_privacy_policy">Kebijakan privasi</string>
