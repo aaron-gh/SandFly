@@ -18,7 +18,9 @@ package com.google.android.accessibility.talkback.trainer
 
 import android.accessibilityservice.AccessibilityService
 import android.content.Context
+import android.os.Build
 import android.view.ViewConfiguration
+import androidx.annotation.RequiresApi
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.flags.FeatureFlagReader
 import com.google.android.accessibility.talkback.gesture.CornerTapTracker
@@ -33,6 +35,7 @@ import com.google.android.accessibility.talkback.trainer.Direction.DOWN
 import com.google.android.accessibility.talkback.trainer.Direction.LEFT
 import com.google.android.accessibility.talkback.trainer.Direction.RIGHT
 import com.google.android.accessibility.talkback.trainer.Direction.UP
+import com.google.android.accessibility.utils.BuildVersionUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
 import com.google.android.accessibility.utils.gestures.GestureConfiguration
 import com.google.android.accessibility.utils.gestures.GestureManifold
@@ -146,6 +149,8 @@ class ExerciseList(val exercises: List<Exercise>, val leftOut: List<String>)
 object TrainerExercises {
   /** The exercises of [group] that SandFly recognizes with the settings in use. */
   fun of(context: Context, group: TrainerGroup): ExerciseList {
+    // SandFly recognizes gestures itself from Android 13.
+    if (!BuildVersionUtils.isAtLeastT()) return ExerciseList(emptyList(), emptyList())
     val prefs = SharedPreferencesUtils.getSharedPreferences(context)
     val twoDirectionSwipes = !SwipesBeforeLift.isOn(context)
     val twoFingerSwipes = GestureLayout.handlesTwoFingerSwipes(prefs)
@@ -390,14 +395,16 @@ object TrainerExercises {
   }
 
   /** Time between two-stroke swipes, in ms, or 0 while they are off, as TwoStrokeSwipes takes it. */
-  fun twoStrokeSwipeTimeMs(context: Context): Int =
-    SharedPreferencesUtils.getIntFromStringPref(
+  fun twoStrokeSwipeTimeMs(context: Context): Int {
+    if (!BuildVersionUtils.isAtLeastT()) return 0
+    return SharedPreferencesUtils.getIntFromStringPref(
         SharedPreferencesUtils.getSharedPreferences(context),
         context.resources,
         R.string.pref_two_stroke_swipe_time_key,
         R.string.pref_two_stroke_swipe_time_default,
       )
       .takeIf { it in TwoStrokeSwipes.TIMES_MS } ?: 0
+  }
 
   /** Corner taps, the simplest first: every corner with one tap, then with two, and so on. */
   private fun cornerTaps(): List<Exercise> =
@@ -457,6 +464,7 @@ object TrainerExercises {
     )
 
   /** The swipe and hold version of a one-finger [swipe] exercise. */
+  @RequiresApi(Build.VERSION_CODES.TIRAMISU)
   private fun andHold(swipe: Exercise): Exercise =
     Exercise(
       GestureManifold.swipeAndHoldOf(swipe.gestureId),
