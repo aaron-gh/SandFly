@@ -26,7 +26,8 @@ import java.util.Locale
  * pressed twice is "SandFly twice". Presses of the keyboard phone keymap end with words: modifier
  * keys on their own with "alone", such as "SandFly+Shift alone" or "Alt alone twice", any key pressed
  * twice with "twice", such as "Enter twice", and keys held down with "held", such as "Alt+Shift
- * held" or "K held".
+ * held" or "K held". Shortcuts that work only while editing end with "while editing", and those
+ * that work only in browse mode with "in browse mode", such as "B in browse mode".
  */
 object KeyText {
   const val SANDFLY = "SandFly"
@@ -35,6 +36,7 @@ object KeyText {
   private const val PRESSED_TWICE = " twice"
   private const val HELD = " held"
   private const val WHILE_EDITING = " while editing"
+  private const val IN_BROWSE_MODE = " in browse mode"
   private const val MAX_LENGTH = 100
 
   private val MODIFIERS =
@@ -123,6 +125,9 @@ object KeyText {
     if (keyCombo.isWhileEditing) {
       return of(keyCombo.withWhileEditing(false))?.let { it + WHILE_EDITING }
     }
+    if (keyCombo.isInBrowseMode) {
+      return of(keyCombo.withInBrowseMode(false))?.let { it + IN_BROWSE_MODE }
+    }
     if (keyCombo.isSandFlyKeyPressedTwice) return TWICE
     val parts = mutableListOf<String>()
     if (keyCombo.isTriggerModifierUsed) parts += SANDFLY
@@ -162,6 +167,14 @@ object KeyText {
       // Only keys without the SandFly key, pressed once, work while editing.
       if (keys.isTriggerModifierUsed || keys.modifiers and KeyCombo.PRESS_TYPES != 0) return null
       return keys.withWhileEditing(true)
+    }
+    if (trimmed.lowercase(Locale.ROOT).endsWith(IN_BROWSE_MODE)) {
+      val keys = parse(trimmed.dropLast(IN_BROWSE_MODE.length)) ?: return null
+      // Only keys without the SandFly key, pressed once, work in browse mode.
+      if (keys.isTriggerModifierUsed || keys.modifiers and KeyCombo.PRESS_TYPES != 0 || keys.isWhileEditing) {
+        return null
+      }
+      return keys.withInBrowseMode(true)
     }
     if (trimmed.equals(TWICE, ignoreCase = true)) return KeyCombo.sandFlyKeyPressedTwice()
     parsePress(trimmed)?.let {

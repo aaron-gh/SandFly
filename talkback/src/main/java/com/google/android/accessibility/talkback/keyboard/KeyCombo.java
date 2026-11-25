@@ -225,6 +225,28 @@ public final class KeyCombo {
         triggerModifierUsed);
   }
 
+  /**
+   * Modifier bit of a shortcut, pressed without the SandFly key, that works only in browse mode, in
+   * the keyboard phone keymaps. In browse mode it comes before the same keys without it, which the
+   * SandFly key with the keys then runs; outside browse mode the keys do what they do without it.
+   */
+  public static final int IN_BROWSE_MODE = 0x04000000;
+
+  /** Whether this works only in browse mode. */
+  public boolean isInBrowseMode() {
+    return (getModifiers() & IN_BROWSE_MODE) != 0;
+  }
+
+  /** Returns this shortcut working only in browse mode, or outside it too. */
+  public KeyCombo withInBrowseMode(boolean inBrowseMode) {
+    int modifiers = getModifiers() & ~IN_BROWSE_MODE;
+    return new KeyCombo(
+        inBrowseMode ? modifiers | IN_BROWSE_MODE : modifiers,
+        getPrefixKeyCode(),
+        getKeyCode(),
+        triggerModifierUsed);
+  }
+
   /** Returns the shortcut of modifier keys pressed on their own. */
   public static KeyCombo modifierKeys(int modifiers, boolean triggerModifierUsed) {
     return new KeyCombo(
