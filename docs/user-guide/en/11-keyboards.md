@@ -241,7 +241,7 @@ In the NVDA, JAWS and Orca keymaps, and in keymaps copied from them:
 
 In browse mode, single letters move by element, as single letter navigation, quick navigation keys and structural navigation do in NVDA, JAWS and Orca.
 
-Ctrl + Down Arrow and Ctrl + Up Arrow move to the next and previous paragraph. In the NVDA keymap, P and Shift + P also do, in browse mode. They are **Next paragraph, second key** and **Previous paragraph, second key** in **Keyboard shortcuts**, where you can change them or assign them in other keymaps.
+Ctrl + Down Arrow and Ctrl + Up Arrow move to the next and previous paragraph. In the NVDA keymap, P and Shift + P also do, in browse mode. They are **Navigate to next paragraph, second key** and **Navigate to previous paragraph, second key** in **Keyboard shortcuts**, where you can change them or assign them in other keymaps.
 
 #### Object navigation {#keyboards-object-navigation}
 

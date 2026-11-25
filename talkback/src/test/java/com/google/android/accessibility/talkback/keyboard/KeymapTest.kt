@@ -461,7 +461,7 @@ class KeymapTest {
       Commands.valueOfKeyboardAction(context, TalkBackPhysicalKeyboardShortcut.NAVIGATE_NEXT_PARAGRAPH_EXTRA),
     )
     assertEquals(
-      "Next paragraph, second key",
+      "Navigate to next paragraph, second key",
       Commands.labelOfKeyboardKey(
         context,
         context.getString(R.string.keycombo_shortcut_navigate_next_paragraph_extra),
