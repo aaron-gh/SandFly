@@ -14,6 +14,7 @@ Some features need notification access for SandFly, which Android settings give:
 - Stopping a notification when it is dismissed or removed.
 - Summaries of the notifications in the shade.
 - The SandFly notification list.
+- Ending the call in progress of an app, such as WhatsApp, with **End call**. See [](#commands-calls).
 
 To give notification access, select **Turn on notification access** on the **When to read**, **Stop reading** or **Summary and time** screen, and turn on SandFly in the list. The item is shown only while SandFly has no notification access. SandFly connects to notifications only while SandFly is on.
 

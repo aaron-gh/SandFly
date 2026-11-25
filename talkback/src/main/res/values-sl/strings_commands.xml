@@ -82,4 +82,19 @@
     <string name="shortcut_app_gestures_for_app">Poteze za to aplikacijo</string>
     <string name="title_pref_shizuku_root_screen">Shizuku in korenski dostop</string>
     <string name="title_pref_use_root">Uporabi korenski dostop namesto Shizuku</string>
+    <string name="command_perform_gesture">Izvedi potezo</string>
+    <string name="command_perform_gesture_message">Izvedite potezo.</string>
+    <string name="command_gesture_not_assignable">Ni mogoče dodeliti: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Zaženi ukaz</string>
+    <string name="command_add_to_sandfly_menu">Dodaj v meni SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Odstrani iz menija SandFly</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> dodano v meni SandFly</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> odstranjeno iz menija SandFly</string>
+    <string name="commands_search_hint">Iskanje ukazov</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ukaz</item>
+        <item quantity="two"><xliff:g id="count" example="12">%d</xliff:g> ukaza</item>
+        <item quantity="few"><xliff:g id="count" example="12">%d</xliff:g> ukazi</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ukazov</item>
+    </plurals>
 </resources>

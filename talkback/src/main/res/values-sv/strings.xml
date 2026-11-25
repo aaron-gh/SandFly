@@ -2774,4 +2774,47 @@
     <string name="double_tap_taps_on">Dubbeltryck trycker på skärmen: på</string>
     <string name="double_tap_taps_off">Dubbeltryck trycker på skärmen: av</string>
     <string name="double_tap_taps_no_app">Ingen app i förgrunden</string>
+    <string name="keycombo_menu_toggle_key_practice">Slå på eller av tangentbordsövning</string>
+    <string name="key_practice_on">Tangentbordsövning på</string>
+    <string name="key_practice_off">Tangentbordsövning av</string>
+    <string name="key_practice_sandfly_key">SandFly-tangent</string>
+    <string name="key_practice_title">Tangentbordsövning</string>
+    <string name="key_practice_summary">Läser upp varje tangent som trycks ned och dess kommando i stället för att köra det. Bakåt eller Esc stänger av den.</string>
+    <string name="keycombo_menu_touch_hold_focus">Håll en beröring på objektet i fokus</string>
+    <string name="touch_hold_held">Beröring hålls kvar</string>
+    <string name="touch_hold_lifted">Beröring släppt</string>
+    <string name="touch_hold_unavailable">Inte tillgängligt</string>
+    <string name="touch_hold_no_focus">Inget objekt har fokus</string>
+    <string name="title_pref_speak_password_characters">Läs upp lösenordstecken</string>
+    <string name="summary_pref_speak_password_characters">Med SandFly-tangentbordet läses tecken som skrivs, raderas och passeras i lösenordsfält upp</string>
+    <string name="shortcut_spell_password_field">Bokstavera lösenordsfältet</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Inte ett lösenordsfält</string>
+    <string name="sandfly_keyboard_password_not_available">Lösenordsfältets text är inte tillgänglig</string>
+    <string name="sandfly_keyboard_password_not_read">Läses inte upp i lösenordsfält</string>
+    <string name="title_pref_voice_profile_play_sample">Spela upp prov</string>
+    <string name="voice_profile_sample_text">Det här är ett prov på den här röstprofilen.</string>
+    <string name="voice_profile_sample_failed">Provet spelades inte upp</string>
+    <string name="title_pref_speech_rate_step">Steg för talhastighet</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> av hastigheten</string>
+    <string name="shortcut_end_call">Avsluta samtal</string>
+    <string name="end_call_no_call">Inget samtal</string>
+    <string name="end_call_permission">Behörighet krävs för att avsluta samtal</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Navigera till nästa stycke, andra tangenten</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navigera till föregående stycke, andra tangenten</string>
+    <string name="title_pref_mute_key_dictates">Håll ned ljud av-knappen för att diktera i textfält</string>
+    <string name="title_pref_mute_key_press">Tryck på ljud av-knappen</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Navigera till nästa länk, andra tangenten</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navigera till föregående länk, andra tangenten</string>
+    <string name="keycombo_only_in_browse_mode">Endast i läsläget</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> i läsläget</string>
+    <string name="title_pref_category_fast_search">Snabbsökning</string>
+    <string name="title_pref_fast_search_key">Tangent för snabbsökning</string>
+    <string name="fast_search_key_off">Av</string>
+    <string name="title_pref_fast_search_wrap">Börja om från början</string>
+    <string name="fast_search_key_left_alt">Vänster Alt</string>
+    <string name="fast_search_key_left_ctrl">Vänster Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Höger Ctrl</string>
+    <string name="fast_search_key_left_meta">Vänster Meta</string>
+    <string name="fast_search_key_right_meta">Höger Meta</string>
 </resources>

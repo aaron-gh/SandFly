@@ -34,8 +34,11 @@ import com.google.android.accessibility.talkback.R
  * text's start and end. Shift with them selects, as S does until pressed again. A selects all, C
  * copies, X cuts, V pastes, Z undoes, Shift + Z redoes, R reads the selection or the line. Delete
  * deletes. Enter, Escape or Back ends editing mode.
+ *
+ * In a password field, when [isPassword] says the field is one, R and C don't speak the text:
+ * password characters are spoken only by Speak password characters and Spell the password field.
  */
-class EditingMode(private val context: Context) {
+class EditingMode(private val context: Context, private val isPassword: () -> Boolean) {
   var isOn = false
     private set
 
@@ -109,7 +112,9 @@ class EditingMode(private val context: Context) {
           SandFlyKeyboardHost.speak(context.getString(R.string.template_no_text_selected))
         } else {
           connection.performContextMenuAction(android.R.id.copy)
-          SandFlyKeyboardHost.speak(context.getString(R.string.template_text_copied, selected))
+          if (!isPassword()) {
+            SandFlyKeyboardHost.speak(context.getString(R.string.template_text_copied, selected))
+          }
         }
       }
       KeyEvent.KEYCODE_X ->
@@ -120,10 +125,13 @@ class EditingMode(private val context: Context) {
         }
       KeyEvent.KEYCODE_V -> connection.performContextMenuAction(android.R.id.paste)
       KeyEvent.KEYCODE_Z -> send(connection, KeyEvent.KEYCODE_Z, event.isShiftPressed, ctrl = true)
-      KeyEvent.KEYCODE_R -> {
-        val text = selection(connection) ?: line(connection)
-        if (text.isNotBlank()) SandFlyKeyboardHost.speak(text)
-      }
+      KeyEvent.KEYCODE_R ->
+        if (isPassword()) {
+          SandFlyKeyboardHost.speak(context.getString(R.string.sandfly_keyboard_password_not_read))
+        } else {
+          val text = selection(connection) ?: line(connection)
+          if (text.isNotBlank()) SandFlyKeyboardHost.speak(text)
+        }
       KeyEvent.KEYCODE_ENTER,
       KeyEvent.KEYCODE_NUMPAD_ENTER,
       KeyEvent.KEYCODE_DPAD_CENTER,

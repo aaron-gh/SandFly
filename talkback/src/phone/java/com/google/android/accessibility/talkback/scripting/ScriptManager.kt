@@ -31,6 +31,7 @@ import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.focusmanagement.TraversalTreeCache
 import com.google.android.accessibility.talkback.translation.Translator
 import com.google.android.accessibility.utils.Role
+import com.google.android.accessibility.utils.monitor.ScreenMonitor
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CountDownLatch
@@ -404,7 +405,10 @@ class ScriptManager(
         }
       }
 
-  override fun passesAllKeys(): Boolean = keyPassers.isNotEmpty() && !activation.inBacktalk
+  // Not on the lock screen: when the screen turns on, the windows can still show the app that was
+  // in front when it was locked, and its script then passes the keys of the lock screen.
+  override fun passesAllKeys(): Boolean =
+    keyPassers.isNotEmpty() && !activation.inBacktalk && !ScreenMonitor.isDeviceLocked(service)
 
   override fun stopPassingAllKeys() = keyPassers.clear()
 

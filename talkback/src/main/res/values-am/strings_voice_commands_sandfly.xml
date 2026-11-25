@@ -167,4 +167,19 @@
         <item>{label} አንቃ</item>
         <item>{label} ምረጥ</item>
     </string-array>
+    <string name="shortcut_voice_editing">የድምፅ አርትዖት ጀምር</string>
+    <string name="voice_editing_on">የድምፅ አርትዖት በርቷል</string>
+    <string name="voice_editing_off">የድምፅ አርትዖት ጠፍቷል</string>
+    <string name="title_pref_voice_editing_time_limit">የድምፅ አርትዖት የጊዜ ገደብ</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ደቂቃ</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> ደቂቃዎች</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>አርትዖት አቁም</item>
+        <item>የድምፅ አርትዖት አቁም</item>
+        <item>አርትዖት ጨርስ</item>
+        <item>የድምፅ አርትዖት ጨርስ</item>
+        <item>የድምፅ አርትዖት አጥፋ</item>
+    </string-array>
 </resources>

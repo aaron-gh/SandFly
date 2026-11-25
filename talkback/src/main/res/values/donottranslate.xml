@@ -236,6 +236,8 @@
     <string name="pref_sandfly_keyboard_double_press_key" translatable="false">pref_sandfly_keyboard_double_press_screen</string>
     <string name="pref_sandfly_keyboard_double_space_period_key" translatable="false">pref_sandfly_keyboard_double_space_period</string>
     <bool name="pref_sandfly_keyboard_double_space_period_default">false</bool>
+    <string name="pref_speak_password_characters_key" translatable="false">pref_speak_password_characters</string>
+    <bool name="pref_speak_password_characters_default">false</bool>
     <string-array name="pref_sandfly_keyboard_held_keys_values" translatable="false">
         <item>alt</item>
         <item>capital</item>
@@ -420,6 +422,8 @@
     <string name="pref_volume_down_double_press_key" translatable="false">pref_volume_down_double_press</string>
     <string name="pref_volume_down_triple_press_key" translatable="false">pref_volume_down_triple_press</string>
     <string name="pref_volume_down_long_press_key" translatable="false">pref_volume_down_long_press</string>
+    <string name="pref_mute_key_dictates_key" translatable="false">pref_mute_key_dictates</string>
+    <string name="pref_mute_key_press_key" translatable="false">pref_mute_key_press</string>
     <string name="pref_volume_key_long_press_duration_key" translatable="false">pref_volume_key_long_press_duration</string>
     <string name="pref_speak_items_before_scroll_key" translatable="false">pref_speak_items_before_scroll_key</string>
     <string name="pref_scroll_ahead_key" translatable="false">pref_scroll_ahead</string>
@@ -562,6 +566,7 @@
     <string name="pref_selector_switch_tts_engine_key" translatable="false">pref_selector_switch_tts_engine_key</string>
     <string name="pref_selector_speech_stream_key" translatable="false">pref_selector_speech_stream_key</string>
     <string name="pref_selector_audio_output_key" translatable="false">pref_selector_audio_output_key</string>
+    <string name="pref_selector_ai_service_key" translatable="false">pref_selector_ai_service_key</string>
     <string name="pref_selector_sound_mode_key" translatable="false">pref_selector_sound_mode_key</string>
     <string name="pref_selector_media_volume_key" translatable="false">pref_selector_media_volume_key</string>
     <string name="pref_selector_call_volume_key" translatable="false">pref_selector_call_volume_key</string>
@@ -630,11 +635,14 @@
     <string name="pref_keymap_category_key">pref_keymap_category</string>
     <string name="pref_reset_keymap_key">pref_reset_keymap</string>
     <string name="pref_view_system_keyboard_shortcuts_key">pref_view_system_keyboard_shortcuts</string>
+    <string name="pref_key_practice_key">pref_key_practice</string>
     <string name="pref_navigation_actions_category_key">pref_navigation_actions_category_key</string>
     <string name="pref_global_actions_category_key">pref_global_actions_category_key</string>
     <string name="pref_other_actions_category_key">pref_other_actions_category_key</string>
     <string name="pref_web_navigation_actions_category_key">pref_web_navigation_actions_category_key</string>
     <string name="pref_smart_browse_mode_key">pref_smart_browse_mode_key</string>
+    <string name="pref_fast_search_key">pref_fast_search_key</string>
+    <string name="pref_fast_search_wrap_key">pref_fast_search_wrap_key</string>
     <string name="pref_browse_mode_per_app_key" translatable="false">pref_browse_mode_per_app</string>
     <string name="pref_telegram_reply_quotes_key" translatable="false">pref_telegram_reply_quotes</string>
 
@@ -1233,6 +1241,7 @@
   <string name="orca_keymap_entry_value">orca_keymap</string>
   <string name="keyboard_phone_keymap_entry_value">keyboard_phone_keymap</string>
   <string name="keyboard_phone_single_key_keymap_entry_value">keyboard_phone_single_key_keymap</string>
+  <string name="blackberry_keymap_entry_value">blackberry_keymap</string>
 
   <string name="trigger_modifier_meta_entry_value">trigger_modifier_meta</string>
   <string name="trigger_modifier_alt_entry_value">trigger_modifier_alt</string>
@@ -1323,10 +1332,14 @@
   <string name="keycombo_shortcut_review_cursor_off">keycombo_shortcut_review_cursor_off</string>
   <string name="keycombo_shortcut_toggle_pass_keys_to_app">keycombo_shortcut_toggle_pass_keys_to_app</string>
   <string name="keycombo_shortcut_toggle_keyboard_input">keycombo_shortcut_toggle_keyboard_input</string>
+  <string name="keycombo_shortcut_toggle_key_practice">keycombo_shortcut_toggle_key_practice</string>
+  <string name="keycombo_shortcut_touch_hold_focus">keycombo_shortcut_touch_hold_focus</string>
   <string name="keycombo_shortcut_split_screen">keycombo_shortcut_split_screen</string>
   <string name="keycombo_shortcut_recognize_screen_text">keycombo_shortcut_recognize_screen_text</string>
   <string name="keycombo_shortcut_navigate_next_paragraph">keycombo_shortcut_navigate_next_paragraph</string>
   <string name="keycombo_shortcut_navigate_previous_paragraph">keycombo_shortcut_navigate_previous_paragraph</string>
+  <string name="keycombo_shortcut_navigate_next_paragraph_extra" translatable="false">keycombo_shortcut_navigate_next_paragraph_extra</string>
+  <string name="keycombo_shortcut_navigate_previous_paragraph_extra" translatable="false">keycombo_shortcut_navigate_previous_paragraph_extra</string>
   <string name="keycombo_shortcut_navigate_previous_word">keycombo_shortcut_navigate_previous_word</string>
   <string name="keycombo_shortcut_navigate_next_character">keycombo_shortcut_navigate_next_character</string>
   <string name="keycombo_shortcut_navigate_previous_character">keycombo_shortcut_navigate_previous_character</string>
@@ -1366,6 +1379,8 @@
   <string name="keycombo_shortcut_navigate_previous_list_item">keycombo_shortcut_navigate_previous_list_item</string>
   <string name="keycombo_shortcut_navigate_next_link">keycombo_shortcut_navigate_next_link</string>
   <string name="keycombo_shortcut_navigate_previous_link">keycombo_shortcut_navigate_previous_link</string>
+  <string name="keycombo_shortcut_navigate_next_link_extra" translatable="false">keycombo_shortcut_navigate_next_link_extra</string>
+  <string name="keycombo_shortcut_navigate_previous_link_extra" translatable="false">keycombo_shortcut_navigate_previous_link_extra</string>
   <string name="keycombo_shortcut_navigate_next_list">keycombo_shortcut_navigate_next_list</string>
   <string name="keycombo_shortcut_navigate_previous_list">keycombo_shortcut_navigate_previous_list</string>
   <string name="keycombo_shortcut_navigate_next_table">keycombo_shortcut_navigate_next_table</string>
@@ -1910,14 +1925,16 @@
       <item>@string/pref_shortcut_shake_key</item>
     </string-array>
 
-    <!-- Gestures > Gesture layout: the values match GestureLayout.SANDFLY and VOICEOVER. -->
+    <!-- Gestures > Gesture layout: the values match GestureLayout.SANDFLY, VOICEOVER and BLACKBERRY. -->
     <string-array name="pref_gesture_layout_entries" translatable="false">
       <item>@string/gesture_layout_sandfly</item>
       <item>@string/gesture_layout_voiceover</item>
+      <item>@string/gesture_layout_blackberry</item>
     </string-array>
     <string-array name="pref_gesture_layout_values" translatable="false">
       <item>sandfly</item>
       <item>voiceover</item>
+      <item>blackberry</item>
     </string-array>
 
     <!-- Array of 2-finger pass-through gesture shortcut keys -->
@@ -1953,6 +1970,7 @@
         <item>@string/value_orca_keymap</item>
         <item>@string/value_keyboard_phone_keymap</item>
         <item>@string/value_keyboard_phone_single_key_keymap</item>
+        <item>@string/value_blackberry_keymap</item>
     </string-array>
 
     <string-array name="pref_select_keymap_values">
@@ -1963,6 +1981,7 @@
         <item>@string/orca_keymap_entry_value</item>
         <item>@string/keyboard_phone_keymap_entry_value</item>
         <item>@string/keyboard_phone_single_key_keymap_entry_value</item>
+        <item>@string/blackberry_keymap_entry_value</item>
     </string-array>
 
 
@@ -2442,6 +2461,7 @@
         <item>@string/shortcut_newer_app</item>
         <item>@string/shortcut_take_screenshot</item>
         <item>@string/shortcut_answer_call</item>
+        <item>@string/shortcut_end_call</item>
         <item>@string/title_split_screen</item>
         <item>@string/shortcut_notifications</item>
         <item>@string/shortcut_system_notifications</item>
@@ -2464,6 +2484,7 @@
         <item>@string/shortcut_value_newer_app</item>
         <item>@string/shortcut_value_take_screenshot</item>
         <item>@string/shortcut_value_answer_call</item>
+        <item>@string/shortcut_value_end_call</item>
         <item>@string/shortcut_value_split_screen</item>
         <item>@string/shortcut_value_notifications</item>
         <item>@string/shortcut_value_system_notifications</item>
@@ -2588,6 +2609,8 @@
   <string name="shortcut_value_last_in_screen">LAST_IN_SCREEN</string>
   <string name="shortcut_value_next_granularity">NEXT_GRANULARITY</string>
   <string name="shortcut_value_previous_granularity">PREVIOUS_GRANULARITY</string>
+  <string name="shortcut_value_next_by_navigation_setting" translatable="false">NEXT_BY_NAVIGATION_SETTING</string>
+  <string name="shortcut_value_previous_by_navigation_setting" translatable="false">PREVIOUS_BY_NAVIGATION_SETTING</string>
   <string name="shortcut_value_prev_container">PREV_CONTAINER</string>
   <string name="shortcut_value_next_container">NEXT_CONTAINER</string>
   <string name="shortcut_value_previous_window">PREVIOUS_WINDOW</string>
@@ -2600,12 +2623,16 @@
   <string name="shortcut_value_toggle_browse_mode" translatable="false">TOGGLE_BROWSE_MODE</string>
   <string name="shortcut_value_toggle_arrow_key_nav" translatable="false">TOGGLE_ARROW_KEY_NAV</string>
   <string name="shortcut_value_toggle_touch_lock" translatable="false">TOGGLE_TOUCH_LOCK</string>
+  <string name="shortcut_value_toggle_blackberry_mode" translatable="false">TOGGLE_BLACKBERRY_MODE</string>
+  <string name="shortcut_value_quick_tasks" translatable="false">QUICK_TASKS</string>
   <string name="shortcut_value_search_emoji" translatable="false">SEARCH_EMOJI</string>
   <string name="shortcut_value_choose_symbol" translatable="false">CHOOSE_SYMBOL</string>
   <string name="shortcut_value_toggle_editing_mode" translatable="false">TOGGLE_EDITING_MODE</string>
+  <string name="shortcut_value_spell_password_field" translatable="false">SPELL_PASSWORD_FIELD</string>
   <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="shortcut_value_dictate" translatable="false">DICTATE</string>
+  <string name="shortcut_value_voice_editing" translatable="false">VOICE_EDITING</string>
   <string name="pref_ai_dictation_key" translatable="false">pref_ai_dictation</string>
   <bool name="pref_ai_dictation_default">true</bool>
   <string name="pref_dictation_correction_prompt_key" translatable="false">pref_dictation_correction_prompt</string>
@@ -2633,6 +2660,7 @@
   <string name="shortcut_value_newer_app" translatable="false">NEWER_APP</string>
   <string name="shortcut_value_take_screenshot" translatable="false">TAKE_SCREENSHOT</string>
   <string name="shortcut_value_answer_call" translatable="false">ANSWER_CALL</string>
+  <string name="shortcut_value_end_call" translatable="false">END_CALL</string>
   <string name="shortcut_value_split_screen" translatable="false">SPLIT_SCREEN</string>
   <string name="shortcut_value_lock_screen">LOCK_SCREEN</string>
   <string name="shortcut_value_power_menu">POWER_MENU</string>
@@ -2802,6 +2830,7 @@
   <string name="pref_macros_key" translatable="false">pref_macros_screen</string>
   <string name="pref_voice_commands_screen_key" translatable="false">pref_voice_commands_screen</string>
   <string name="pref_voice_commands_ai_key" translatable="false">pref_voice_commands_ai</string>
+  <string name="pref_voice_editing_time_limit_key" translatable="false">pref_voice_editing_time_limit</string>
   <string name="shortcut_value_toggle_auto_translation" translatable="false">TOGGLE_AUTO_TRANSLATION</string>
   <string name="shortcut_value_toggle_equalizer" translatable="false">TOGGLE_EQUALIZER</string>
   <string name="shortcut_value_toggle_focus_indicator" translatable="false">TOGGLE_FOCUS_INDICATOR</string>
@@ -3161,6 +3190,7 @@
     <bool name="pref_volume_change_silent_while_speaking_default">false</bool>
     <bool name="pref_volume_keys_speech_volume_while_speaking_default">false</bool>
     <bool name="pref_volume_keys_take_all_default">false</bool>
+    <bool name="pref_mute_key_dictates_default">true</bool>
     <bool name="pref_volume_keys_hide_panel_default">false</bool>
     <bool name="pref_speak_items_before_scroll_default">false</bool>
     <bool name="pref_scroll_ahead_default">true</bool>
@@ -3208,6 +3238,7 @@
     <bool name="pref_gemini_opt_in_default">false</bool>
     <bool name="pref_formatting_inline_default">false</bool>
     <bool name="pref_smart_browse_mode_default">true</bool>
+    <bool name="pref_fast_search_wrap_default">true</bool>
     <bool name="pref_browse_mode_per_app_default">false</bool>
     <bool name="pref_telegram_reply_quotes_default">true</bool>
 
@@ -3239,6 +3270,7 @@
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_audio_output_default">false</bool>
+    <bool name="pref_selector_ai_service_default">false</bool>
     <bool name="pref_selector_sound_mode_default">false</bool>
     <bool name="pref_selector_stream_volume_default">false</bool>
     <bool name="pref_selector_equalizer_default">false</bool>
@@ -4004,6 +4036,7 @@
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_audio_output" translatable="false">SELECTOR_AUDIO_OUTPUT</string>
+    <string name="selector_ai_service" translatable="false">SELECTOR_AI_SERVICE</string>
     <string name="selector_sound_mode" translatable="false">SELECTOR_SOUND_MODE</string>
     <string name="selector_media_volume" translatable="false">SELECTOR_MEDIA_VOLUME</string>
     <string name="selector_call_volume" translatable="false">SELECTOR_CALL_VOLUME</string>

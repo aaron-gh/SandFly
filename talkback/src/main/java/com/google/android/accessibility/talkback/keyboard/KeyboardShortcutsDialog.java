@@ -244,14 +244,29 @@ public class KeyboardShortcutsDialog extends BaseDialog {
       for (Commands.Command command : category.getCommands()) {
         String key = CommandBindings.keyboardKey(context, model, command);
         String keyComboString = CommandBindings.keyboardShortcutText(keyComboManager, key);
-        if (keyComboString == null) {
+        if (keyComboString != null) {
+          String commandName =
+              browseModeOnlyCommands.contains(key)
+                  ? String.format(browseModeCommandTitleTemplate, command.getLabel())
+                  : command.getLabel();
+          commands.add(new ItemData(commandName, keyComboString));
+        }
+        @Nullable TalkBackPhysicalKeyboardShortcut second = command.getSecondKeyboardAction();
+        if (second == null) {
           continue;
         }
-        String commandName =
-            browseModeOnlyCommands.contains(key)
-                ? String.format(browseModeCommandTitleTemplate, command.getLabel())
-                : command.getLabel();
-        commands.add(new ItemData(commandName, keyComboString));
+        String secondKey = second.getKey(context.getResources());
+        @Nullable String secondKeyComboString =
+            CommandBindings.keyboardShortcutText(keyComboManager, secondKey);
+        if (secondKeyComboString != null) {
+          String secondName = second.getDescription(context.getResources());
+          commands.add(
+              new ItemData(
+                  browseModeOnlyCommands.contains(secondKey)
+                      ? String.format(browseModeCommandTitleTemplate, secondName)
+                      : secondName,
+                  secondKeyComboString));
+        }
       }
       if (!commands.isEmpty()) {
         categoryToCommandsMap.put(context.getString(category.getTitleRes()), commands);

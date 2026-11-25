@@ -54,6 +54,29 @@
     <string name="command_replace">Replace</string>
     <!-- Announcement after a gesture is assigned to a command. %1$s is the gesture, %2$s the command. [CHAR LIMIT=NONE] -->
     <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
+    <!-- Button under Gestures on a command's screen: assigns the next gesture the user performs to the command. [CHAR LIMIT=40] -->
+    <string name="command_perform_gesture">Perform gesture</string>
+    <!-- Message of the dialog that waits for the gesture to assign to a command. [CHAR LIMIT=NONE] -->
+    <string name="command_perform_gesture_message">Make the gesture.</string>
+    <!-- Spoken when the gesture or keys performed have no setting that assigns them a command. %1$s is the gesture or keys. [CHAR LIMIT=NONE] -->
+    <string name="command_gesture_not_assignable">Can\'t assign <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <!-- Item on a command's screen: leaves SandFly settings and runs the command in the app shown before. [CHAR LIMIT=40] -->
+    <string name="command_run">Run command</string>
+    <!-- Item on a command's screen: adds the command to the end of the SandFly menu. [CHAR LIMIT=40] -->
+    <string name="command_add_to_sandfly_menu">Add to SandFly menu</string>
+    <!-- Item on a command's screen, shown while the command is in the SandFly menu: takes it out. [CHAR LIMIT=40] -->
+    <string name="command_remove_from_sandfly_menu">Remove from SandFly menu</string>
+    <!-- Spoken after a command is added to the SandFly menu. %1$s is the command. [CHAR LIMIT=NONE] -->
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> added to SandFly menu</string>
+    <!-- Spoken after a command is taken out of the SandFly menu. %1$s is the command. [CHAR LIMIT=NONE] -->
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> removed from SandFly menu</string>
+    <!-- Hint of the search field at the top of the Commands screen, which lists the commands whose names have the words typed. [CHAR LIMIT=40] -->
+    <string name="commands_search_hint">Search commands</string>
+    <!-- Spoken after the commands found by the search field of the Commands screen are listed. [CHAR LIMIT=NONE] -->
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> command</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> commands</item>
+    </plurals>
     <!-- Title of the settings entry and screen with braille display and braille keyboard settings. [CHAR LIMIT=40] -->
     <string name="title_pref_braille">Braille</string>
     <!-- Title of the settings entry and screen for automatic image descriptions, describing the screen and live recognition. [CHAR LIMIT=40] -->

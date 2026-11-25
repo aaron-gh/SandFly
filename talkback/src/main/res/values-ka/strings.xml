@@ -2774,4 +2774,47 @@
     <string name="double_tap_taps_on">ორმაგი შეხებით ეკრანზე შეხება ჩართულია</string>
     <string name="double_tap_taps_off">ორმაგი შეხებით ეკრანზე შეხება გამორთულია</string>
     <string name="double_tap_taps_no_app">წინა პლანზე აპი არ არის</string>
+    <string name="keycombo_menu_toggle_key_practice">კლავიატურის ვარჯიშის ჩართვა ან გამორთვა</string>
+    <string name="key_practice_on">კლავიატურის ვარჯიში ჩართულია</string>
+    <string name="key_practice_off">კლავიატურის ვარჯიში გამორთულია</string>
+    <string name="key_practice_sandfly_key">SandFly-ის კლავიში</string>
+    <string name="key_practice_title">კლავიატურის ვარჯიში</string>
+    <string name="key_practice_summary">წარმოთქვამს თითოეულ დაჭერილ კლავიშს და მის ბრძანებას ბრძანების შესრულების ნაცვლად. გამოირთვება კლავიშით „უკან“ ან Escape.</string>
+    <string name="keycombo_menu_touch_hold_focus">შეხების შენარჩუნება ფოკუსირებულ ელემენტზე</string>
+    <string name="touch_hold_held">შეხება შენარჩუნებულია</string>
+    <string name="touch_hold_lifted">შეხება მოხსნილია</string>
+    <string name="touch_hold_unavailable">მიუწვდომელია</string>
+    <string name="touch_hold_no_focus">ფოკუსში ერთეული არ არის</string>
+    <string name="title_pref_speak_password_characters">პაროლის სიმბოლოების წარმოთქმა</string>
+    <string name="summary_pref_speak_password_characters">SandFly კლავიატურით პაროლის ველებში წარმოთქვამს აკრეფილ, წაშლილ და კურსორით გავლილ სიმბოლოებს</string>
+    <string name="shortcut_spell_password_field">პაროლის ველის ასო-ასო წაკითხვა</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">ეს არ არის პაროლის ველი</string>
+    <string name="sandfly_keyboard_password_not_available">პაროლის ველის ტექსტი მიუწვდომელია</string>
+    <string name="sandfly_keyboard_password_not_read">პაროლის ველებში არ იკითხება</string>
+    <string name="title_pref_voice_profile_play_sample">ნიმუშის დაკვრა</string>
+    <string name="voice_profile_sample_text">ეს არის ამ ხმის პროფილის ნიმუში.</string>
+    <string name="voice_profile_sample_failed">ნიმუში ვერ დაიკრა</string>
+    <string name="title_pref_speech_rate_step">მეტყველების ტემპის ბიჯი</string>
+    <string name="value_speech_rate_step_relative">ტემპის <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">ზარის დასრულება</string>
+    <string name="end_call_no_call">ზარი არ არის</string>
+    <string name="end_call_permission">ზარების დასასრულებლად საჭიროა ნებართვა</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">შემდეგ აბზაცზე გადასვლა, მეორე კლავიში</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">წინა აბზაცზე გადასვლა, მეორე კლავიში</string>
+    <string name="title_pref_mute_key_dictates">დააჭირეთ და გეჭიროთ დადუმების კლავიში ტექსტურ ველებში კარნახისთვის</string>
+    <string name="title_pref_mute_key_press">დადუმების კლავიშის დაჭერა</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">შემდეგ ბმულზე გადასვლა, მეორე კლავიში</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">წინა ბმულზე გადასვლა, მეორე კლავიში</string>
+    <string name="keycombo_only_in_browse_mode">მხოლოდ დათვალიერების რეჟიმში</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> დათვალიერების რეჟიმში</string>
+    <string name="title_pref_category_fast_search">სწრაფი ძიება</string>
+    <string name="title_pref_fast_search_key">სწრაფი ძიების კლავიში</string>
+    <string name="fast_search_key_off">გამორთული</string>
+    <string name="title_pref_fast_search_wrap">ციკლური გადასვლა</string>
+    <string name="fast_search_key_left_alt">მარცხენა Alt</string>
+    <string name="fast_search_key_left_ctrl">მარცხენა Ctrl</string>
+    <string name="fast_search_key_right_ctrl">მარჯვენა Ctrl</string>
+    <string name="fast_search_key_left_meta">მარცხენა Meta</string>
+    <string name="fast_search_key_right_meta">მარჯვენა Meta</string>
 </resources>

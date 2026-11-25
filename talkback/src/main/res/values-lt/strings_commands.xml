@@ -82,4 +82,19 @@
     <string name="shortcut_app_gestures_for_app">Šios programos gestai</string>
     <string name="title_pref_shizuku_root_screen">Shizuku ir root</string>
     <string name="title_pref_use_root">Naudoti root vietoj Shizuku</string>
+    <string name="command_perform_gesture">Atlikti gestą</string>
+    <string name="command_perform_gesture_message">Atlikite gestą.</string>
+    <string name="command_gesture_not_assignable">Negalima priskirti: <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Vykdyti komandą</string>
+    <string name="command_add_to_sandfly_menu">Pridėti prie SandFly meniu</string>
+    <string name="command_remove_from_sandfly_menu">Pašalinti iš SandFly meniu</string>
+    <string name="command_added_to_sandfly_menu">Pridėta prie SandFly meniu: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="command_removed_from_sandfly_menu">Pašalinta iš SandFly meniu: <xliff:g id="command" example="Describe image">%1$s</xliff:g></string>
+    <string name="commands_search_hint">Ieškoti komandų</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> komanda</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> komandos</item>
+        <item quantity="many"><xliff:g id="count" example="12">%d</xliff:g> komandos</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> komandų</item>
+    </plurals>
 </resources>

@@ -2767,4 +2767,47 @@
     <string name="double_tap_taps_on">နှစ်ချက်တို့လျှင် ဖန်သားပြင်ကို တို့ရန် ဖွင့်</string>
     <string name="double_tap_taps_off">နှစ်ချက်တို့လျှင် ဖန်သားပြင်ကို တို့ရန် ပိတ်</string>
     <string name="double_tap_taps_no_app">ရှေ့တွင် အက်ပ် မရှိပါ</string>
+    <string name="keycombo_menu_toggle_key_practice">ကီးဘုတ် လေ့ကျင့်ခြင်းကို ဖွင့်ရန် သို့မဟုတ် ပိတ်ရန်</string>
+    <string name="key_practice_on">ကီးဘုတ် လေ့ကျင့်ခြင်း ဖွင့်ထားသည်</string>
+    <string name="key_practice_off">ကီးဘုတ် လေ့ကျင့်ခြင်း ပိတ်ထားသည်</string>
+    <string name="key_practice_sandfly_key">SandFly ကီး</string>
+    <string name="key_practice_title">ကီးဘုတ် လေ့ကျင့်ခြင်း</string>
+    <string name="key_practice_summary">နှိပ်သည့် ကီးတစ်ခုစီနှင့် ၎င်း၏ ကွန်မန်းကို လုပ်ဆောင်မည့်အစား ပြောသည်။ Back သို့မဟုတ် Escape ဖြင့် ပိတ်သည်။</string>
+    <string name="keycombo_menu_touch_hold_focus">ဖိုကပ်စ်ရှိ အရာပေါ်တွင် ထိတွေ့မှုကို ဖိထားရန်</string>
+    <string name="touch_hold_held">ထိတွေ့မှု ဖိထားသည်</string>
+    <string name="touch_hold_lifted">ထိတွေ့မှု ကြွလိုက်သည်</string>
+    <string name="touch_hold_unavailable">မရနိုင်ပါ</string>
+    <string name="touch_hold_no_focus">ဖိုကပ်စ်ရှိသော အရာ မရှိပါ</string>
+    <string name="title_pref_speak_password_characters">စကားဝှက် အက္ခရာများကို ပြောခြင်း</string>
+    <string name="summary_pref_speak_password_characters">SandFly ကီးဘုတ်ဖြင့် စကားဝှက်အကွက်များတွင် ရိုက်ထည့်၊ ဖျက်ပြီး ကာဆာ ဖြတ်သွားသော အက္ခရာများကို ပြောသည်</string>
+    <string name="shortcut_spell_password_field">စကားဝှက်အကွက်ကို စာလုံးပေါင်းရန်</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">စကားဝှက်အကွက် မဟုတ်ပါ</string>
+    <string name="sandfly_keyboard_password_not_available">စကားဝှက်အကွက်၏ စာသား မရနိုင်ပါ</string>
+    <string name="sandfly_keyboard_password_not_read">စကားဝှက်အကွက်များတွင် မဖတ်ပါ</string>
+    <string name="title_pref_voice_profile_play_sample">နမူနာ ဖွင့်ရန်</string>
+    <string name="voice_profile_sample_text">ဤသည်မှာ ဤအသံပရိုဖိုင်၏ နမူနာ ဖြစ်သည်။</string>
+    <string name="voice_profile_sample_failed">နမူနာ မဖွင့်နိုင်ပါ</string>
+    <string name="title_pref_speech_rate_step">စကားပြောနှုန်း အဆင့်</string>
+    <string name="value_speech_rate_step_relative">နှုန်း၏ <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">ဖုန်းချရန်</string>
+    <string name="end_call_no_call">ဖုန်းခေါ်ဆိုမှု မရှိပါ</string>
+    <string name="end_call_permission">ဖုန်းချရန် ခွင့်ပြုချက် လိုအပ်သည်</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">နောက်စာပိုဒ်သို့ သွားရန်၊ ဒုတိယ ကီး</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">ယခင်စာပိုဒ်သို့ သွားရန်၊ ဒုတိယ ကီး</string>
+    <string name="title_pref_mute_key_dictates">စာသားအကွက်များတွင် နှုတ်တိုက်ချရန် အသံပိတ်ခလုတ်ကို ဖိထားပါ</string>
+    <string name="title_pref_mute_key_press">အသံပိတ်ခလုတ် နှိပ်ခြင်း</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">နောက်လင့်ခ်သို့ သွားရန်၊ ဒုတိယ ကီး</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">ယခင်လင့်ခ်သို့ သွားရန်၊ ဒုတိယ ကီး</string>
+    <string name="keycombo_only_in_browse_mode">ဘရောက်စ်မုဒ်တွင်သာ</string>
+    <string name="keycombo_keys_in_browse_mode">ဘရောက်စ်မုဒ်တွင် <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">အမြန်ရှာဖွေမှု</string>
+    <string name="title_pref_fast_search_key">အမြန်ရှာဖွေမှု ကီး</string>
+    <string name="fast_search_key_off">ပိတ်</string>
+    <string name="title_pref_fast_search_wrap">အစသို့ ပြန်ပတ်ပါ</string>
+    <string name="fast_search_key_left_alt">ဘယ် Alt</string>
+    <string name="fast_search_key_left_ctrl">ဘယ် Ctrl</string>
+    <string name="fast_search_key_right_ctrl">ညာ Ctrl</string>
+    <string name="fast_search_key_left_meta">ဘယ် Meta</string>
+    <string name="fast_search_key_right_meta">ညာ Meta</string>
 </resources>

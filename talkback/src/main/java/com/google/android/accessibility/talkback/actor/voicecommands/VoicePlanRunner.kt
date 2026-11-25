@@ -84,14 +84,25 @@ object VoicePlanRunner {
 
   /**
    * Runs [steps]. [legacy] runs the text of a [VoiceStep.Legacy] step as one of TalkBack's voice
-   * commands, and returns whether it is one.
+   * commands, and returns whether it is one. [onEnd] runs once when the steps end, fail or are
+   * stopped, or at once when there are none.
    */
   @JvmStatic
-  fun run(service: TalkBackService, steps: List<VoiceStep>, locale: Locale, legacy: (String) -> Boolean) {
+  @JvmOverloads
+  fun run(
+    service: TalkBackService,
+    steps: List<VoiceStep>,
+    locale: Locale,
+    legacy: (String) -> Boolean,
+    onEnd: (() -> Unit)? = null,
+  ) {
     stop()
-    if (steps.isEmpty()) return
+    if (steps.isEmpty()) {
+      onEnd?.invoke()
+      return
+    }
     LogUtils.i(TAG, "Running %d steps: %s", steps.size, steps.joinToString { it::class.java.simpleName })
-    val run = Run(service, steps, locale, legacy)
+    val run = Run(service, steps, locale, legacy, onEnd)
     current = run
     run.later(0) { run.runStep(0) }
   }
@@ -108,6 +119,7 @@ object VoicePlanRunner {
     val steps: List<VoiceStep>,
     val locale: Locale,
     val legacy: (String) -> Boolean,
+    val onEnd: (() -> Unit)?,
   ) {
     var finished = false
 
@@ -659,6 +671,7 @@ object VoicePlanRunner {
         macroRunning = false
         MacroRunner.stop()
       }
+      onEnd?.invoke()
     }
   }
 }

@@ -47,4 +47,20 @@
     <string-array name="voice_commands_run"><item>palaid makro {command}</item><item>palaid [komandu] {command}</item><item>izpildi {command}</item><item>dari {command}</item></string-array>
     <string-array name="voice_commands_open"><item>atver {app}</item><item>atveries {app}</item><item>palaid {app}</item><item>startē {app}</item><item>pārslēdzies uz {app}</item></string-array>
     <string-array name="voice_commands_tap"><item>veic dubultskārienu [uz] {label}</item><item>pieskaries {label}</item><item>uzklikšķini [uz] {label}</item><item>nospied {label}</item><item>aktivizē {label}</item><item>atlasi {label}</item></string-array>
+    <string name="shortcut_voice_editing">Sākt balss rediģēšanu</string>
+    <string name="voice_editing_on">Balss rediģēšana ieslēgta</string>
+    <string name="voice_editing_off">Balss rediģēšana izslēgta</string>
+    <string name="title_pref_voice_editing_time_limit">Balss rediģēšanas laika ierobežojums</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="zero"><xliff:g id="count" example="10">%d</xliff:g> minūšu</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minūte</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> minūtes</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>apturēt rediģēšanu</item>
+        <item>apturēt balss rediģēšanu</item>
+        <item>beigt rediģēšanu</item>
+        <item>beigt balss rediģēšanu</item>
+        <item>izslēgt balss rediģēšanu</item>
+    </string-array>
 </resources>

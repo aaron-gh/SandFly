@@ -51,6 +51,7 @@ import com.google.android.accessibility.talkback.focusmanagement.record.Accessib
 import com.google.android.accessibility.talkback.focusmanagement.record.AccessibilityFocusActionHistory.WindowIdentifier;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionInfo;
 import com.google.android.accessibility.talkback.focusmanagement.record.FocusActionRecord;
+import com.google.android.accessibility.talkback.report.ReportNotes;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
 import com.google.android.accessibility.utils.AccessibilityWindowInfoUtils;
@@ -70,6 +71,7 @@ import com.google.android.libraries.accessibility.utils.log.LogUtils;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.checkerframework.checker.nullness.qual.Nullable;
@@ -412,6 +414,35 @@ public class FocusManagerInternal {
     return pipeline.returnFeedback(Feedback.create(eventId, feedbackFailovers));
   }
 
+  /** Indexes of the search results of {@link #findActivatedItem}, for problem reports. */
+  private static final int SEARCH_STOPPED = 0;
+
+  private static final int SEARCH_SAME_KIND = 1;
+
+  private static final int SEARCH_SAME_LABEL = 2;
+
+  private static final int SEARCH_STATS = 3;
+
+  /**
+   * Logs {@code format} with {@code args} at Debug level and notes it for problem reports, which
+   * get it whatever the log level is. Notes name no texts of items, only their kinds.
+   */
+  private static void noteBack(String format, Object... args) {
+    String text = String.format(Locale.ROOT, format, args);
+    LogUtils.d(TAG, "%s", text);
+    ReportNotes.focusAfterBack.add(text);
+  }
+
+  private static int lineCount(String text) {
+    int lines = 1;
+    for (int i = 0; i < text.length(); i++) {
+      if (text.charAt(i) == '\n') {
+        lines++;
+      }
+    }
+    return lines;
+  }
+
   /** Most nodes read to find an activated list item again after Back. */
   private static final int MAX_ACTIVATED_ITEM_NODES = 2000;
 
@@ -432,12 +463,14 @@ public class FocusManagerInternal {
     if (item == null
         || item.getClassName() == null
         || !AccessibilityNodeInfoUtils.isInCollection(item)) {
-      LogUtils.d(TAG, "Activated item not kept for Back: not in a list.");
+      noteBack(
+          "Activated item not kept for Back: not in a list, class %s",
+          (item == null) ? null : item.getClassName());
       return null;
     }
     String label = itemLabel(item);
     if (label == null) {
-      LogUtils.d(TAG, "Activated item not kept for Back: no text.");
+      noteBack("Activated item not kept for Back: no text, class %s", item.getClassName());
       return null;
     }
     Rect bounds = new Rect();
@@ -452,7 +485,9 @@ public class FocusManagerInternal {
 
   /** Keeps {@code item}, a list item just activated, to focus it again after Back. */
   void onItemActivated(@NonNull ActivatedItem item) {
-    LogUtils.d(TAG, "Activated list item kept for Back, window %d.", item.windowId);
+    noteBack(
+        "Activated list item kept for Back: window %d, class %s, view ID %s, text of %d lines",
+        item.windowId, item.className, item.viewId, lineCount(item.label));
     history.onItemActivated(item);
   }
 
@@ -500,7 +535,9 @@ public class FocusManagerInternal {
     @Nullable FocusActionRecord last = history.getLastFocusActionRecord();
     boolean placedSinceBack = last != null && last.getActionTime() >= history.getBackTime();
     if (placedSinceBack && !isPlacedAutomatically(last.getExtraInfo().sourceAction)) {
-      LogUtils.d(TAG, "After Back: focus moved by the user, activated item not focused.");
+      noteBack(
+          "After Back: focus moved by the user (source %d), activated item not focused",
+          last.getExtraInfo().sourceAction);
       history.endBack();
       return false;
     }
@@ -508,39 +545,48 @@ public class FocusManagerInternal {
     AccessibilityNodeInfoCompat focus = focusFinder.findFocusCompat(FOCUS_ACCESSIBILITY);
     if (focus != null) {
       if (focus.getWindowId() != windowId) {
-        LogUtils.d(
-            TAG, "After Back: focus in window %d, Back in window %d.", focus.getWindowId(), windowId);
+        noteBack(
+            "After Back: focus in window %d, Back in window %d", focus.getWindowId(), windowId);
         return false;
       }
       if (!placedSinceBack
           && focus.equals(history.getFocusAtBack())
           && AccessibilityNodeInfoUtils.isInCollection(focus)
           && TextUtils.equals(itemLabel(focus), history.getFocusLabelAtBack())) {
-        LogUtils.d(TAG, "After Back: list not changed yet.");
+        noteBack("After Back: list not changed yet");
         return false;
       }
     }
     List<ActivatedItem> items = history.getActivatedItemsAfterBack(now);
     if (items.isEmpty()) {
+      noteBack("After Back: no activated items in window %d", windowId);
       return false;
     }
     AccessibilityNodeInfoCompat root = windowRoot(windowId);
     if (root == null) {
-      LogUtils.d(TAG, "After Back: window %d not on screen.", windowId);
+      noteBack("After Back: window %d not on screen", windowId);
       return false;
     }
     ActivatedItem[] found = new ActivatedItem[1];
-    AccessibilityNodeInfoCompat node = findActivatedItem(root, items, found);
+    int[] search = new int[SEARCH_STATS];
+    AccessibilityNodeInfoCompat node = findActivatedItem(root, items, found, search);
     if (node == null) {
-      LogUtils.d(
-          TAG, "After Back: none of %d activated items found in window %d.", items.size(), windowId);
+      noteBack(
+          "After Back: none of %d activated items found in window %d; newest item: %d of its class"
+              + " and view ID, %d with its text%s",
+          items.size(),
+          windowId,
+          search[SEARCH_SAME_KIND],
+          search[SEARCH_SAME_LABEL],
+          (search[SEARCH_STOPPED] != 0) ? ", search stopped at its limit" : "");
       return false;
     }
     history.onActivatedItemRestored(found[0]);
     if (node.isAccessibilityFocused()) {
+      noteBack("After Back: activated item already focused");
       return true;
     }
-    LogUtils.d(TAG, "Focus returns after Back to the list item activated before.");
+    noteBack("Focus returns after Back to the list item activated before");
     FocusActionInfo focusActionInfo =
         FocusActionInfo.builder()
             .setSourceAction(FocusActionInfo.SCREEN_STATE_CHANGE)
@@ -615,11 +661,14 @@ public class FocusManagerInternal {
    * Returns the node under {@code root} that is the newest of {@code items}, newest first, found
    * with its class, view ID and label, the one nearest where it was when several are, and sets
    * {@code found[0]} to that item. When the search stops at its limits, only the newest item counts.
+   * {@code search} gets, for problem reports, whether the search stopped at its limits and how many
+   * nodes had the class and view ID of the newest item, and also its label.
    */
   private static @Nullable AccessibilityNodeInfoCompat findActivatedItem(
       AccessibilityNodeInfoCompat root,
       List<ActivatedItem> items,
-      ActivatedItem[] found) {
+      ActivatedItem[] found,
+      int[] search) {
     AccessibilityNodeInfoCompat[] best = new AccessibilityNodeInfoCompat[items.size()];
     int[] bestDistance = new int[items.size()];
     Rect bounds = new Rect();
@@ -631,6 +680,7 @@ public class FocusManagerInternal {
     while (!queue.isEmpty()) {
       if (read >= MAX_ACTIVATED_ITEM_NODES || SystemClock.uptimeMillis() > deadline) {
         stopped = true;
+        search[SEARCH_STOPPED] = 1;
         break;
       }
       AccessibilityNodeInfoCompat node = queue.poll();
@@ -653,13 +703,22 @@ public class FocusManagerInternal {
               || (item.viewId != null && !item.viewId.equals(child.getViewIdResourceName()))) {
             continue;
           }
+          if (k == 0) {
+            search[SEARCH_SAME_KIND]++;
+          }
           if (label == null) {
             label = itemLabel(child);
             if (label == null) {
               break;
             }
           }
-          if (!item.label.equals(label) || !AccessibilityNodeInfoUtils.shouldFocusNode(child)) {
+          if (!item.label.equals(label)) {
+            continue;
+          }
+          if (k == 0) {
+            search[SEARCH_SAME_LABEL]++;
+          }
+          if (!AccessibilityNodeInfoUtils.shouldFocusNode(child)) {
             continue;
           }
           child.getBoundsInScreen(bounds);

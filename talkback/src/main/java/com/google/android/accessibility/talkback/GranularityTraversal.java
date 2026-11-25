@@ -123,6 +123,9 @@ public final class GranularityTraversal {
    *   <li>Views with text that have no content description and no movement granularities.
    *   <li>Edit texts with no input focus.
    *   <li>Edit texts with input focus and a non-active keyboard.
+   *   <li>Web elements that are not editable and have no movement granularities, such as an element
+   *       named with aria-label: Chrome puts that name in the content description, leaves the text
+   *       empty and gives the element no movement granularities.
    * </ul>
    *
    * <p>Cases not handled by Talkback and rely on framework:
@@ -130,21 +133,23 @@ public final class GranularityTraversal {
    * <ul>
    *   <li>Views with no content description whose text has movement granularities.
    *   <li>Edit texts which have input focus with an active keyboard.
-   *   <li>Webviews.
+   *   <li>Web elements with movement granularities, and editable web elements.
    *   <li>View with selectable text that aren't edit texts.
    * </ul>
    */
   static boolean shouldHandleGranularityTraversalInTalkback(AccessibilityNodeInfoCompat node) {
 
-    // Webviews are handled by the framework.
     if (WebInterfaceUtils.isWebContainer(node)) {
-      LogUtils.v(TAG, "Granularity traversal not handled by Talkback since its a webview");
-      return false;
-    }
-    // Edit texts that have input focus or non-editable selectable texts are handled by the
-    // framework.
-    if ((Role.getRole(node) == Role.ROLE_EDIT_TEXT) && node.isFocused()
+      // The browser moves through the web text it gives movement granularities to. Chrome marks
+      // web text selectable, so the selectable text check below does not apply to web content.
+      if (node.getMovementGranularities() != 0 || node.isEditable()) {
+        LogUtils.v(TAG, "Granularity traversal not handled by Talkback since its a webview");
+        return false;
+      }
+    } else if ((Role.getRole(node) == Role.ROLE_EDIT_TEXT) && node.isFocused()
         || AccessibilityNodeInfoUtils.isNonEditableSelectableText(node)) {
+      // Edit texts that have input focus or non-editable selectable texts are handled by the
+      // framework.
       LogUtils.v(TAG, "Granularity traversal not handled by Talkback as node is focused");
       return false;
     }

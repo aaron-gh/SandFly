@@ -946,12 +946,30 @@ public class BrailleLanguages {
         LOCALE_NONE,
         R.string.code_user_facing_name_unicode_braille,
         /* supportedContracted= */ false,
-        /* eightDot= */ false),
+        /* eightDot= */ false) {
+      @Override
+      EditBuffer createEditBuffer(
+          Context context,
+          TalkBackSpeaker talkBack,
+          BrailleTranslator translator,
+          boolean contractedMode) {
+        return new EditBufferUnicodeBraille(context, translator, talkBack);
+      }
+    },
     UNICODE_BRAILLE_8(
         LOCALE_NONE,
         R.string.code_user_facing_name_unicode_braille_8,
         /* supportedContracted= */ false,
-        /* eightDot= */ true),
+        /* eightDot= */ true) {
+      @Override
+      EditBuffer createEditBuffer(
+          Context context,
+          TalkBackSpeaker talkBack,
+          BrailleTranslator translator,
+          boolean contractedMode) {
+        return new EditBufferUnicodeBraille(context, translator, talkBack);
+      }
+    },
     URDU(
         LOCALE_UR,
         R.string.code_user_facing_name_urdu,

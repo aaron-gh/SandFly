@@ -293,7 +293,7 @@ public class SpeechCacheController
                           /* speechParams= */ null,
                           /* eventId= */ null);
               speechInfos.clear();
-              synthesisFailureSpeeches.forEach(synthesisTask);
+              retryEach(synthesisFailureSpeeches, synthesisTask);
               speechInfosCopy.forEach(synthesisTask);
             });
   }
@@ -544,6 +544,19 @@ public class SpeechCacheController
     workerHandler.post(() -> speechInfos.forEach(speechController::removeSpeech));
   }
 
+  /**
+   * Runs {@code retry} for each of {@code failures}, which is emptied first: a synthesis that fails
+   * again adds its speech back to the list. Retrying without emptying it kept every failure as well
+   * as its copy, so that the list doubled at each retry, such as at each screen-off, until memory
+   * ran out.
+   */
+  @VisibleForTesting
+  static <T> void retryEach(List<T> failures, Consumer<T> retry) {
+    ImmutableList<T> copy = ImmutableList.copyOf(failures);
+    failures.clear();
+    copy.forEach(retry);
+  }
+
   private void refillCacheWithDelay() {
     if (!isActivated()) {
       return;
@@ -571,7 +584,8 @@ public class SpeechCacheController
 
             SynthesisCallback callback =
                 new SynthesisCallback(successSpeeches, speechInfos, workerHandler);
-            speechInfos.forEach(
+            retryEach(
+                speechInfos,
                 speechInfo ->
                     speechController.addSpeech(
                         speechInfo.charsequence, callback, /* speechParams= */ null, eventId));

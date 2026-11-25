@@ -82,4 +82,18 @@
     <string name="shortcut_app_gestures_for_app">Gesturi pentru această aplicație</string>
     <string name="title_pref_shizuku_root_screen">Shizuku și root</string>
     <string name="title_pref_use_root">Folosește root în loc de Shizuku</string>
+    <string name="command_perform_gesture">Execută gestul</string>
+    <string name="command_perform_gesture_message">Fă gestul.</string>
+    <string name="command_gesture_not_assignable">Nu se poate atribui <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Rulează comanda</string>
+    <string name="command_add_to_sandfly_menu">Adaugă în meniul SandFly</string>
+    <string name="command_remove_from_sandfly_menu">Elimină din meniul SandFly</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> adăugată în meniul SandFly</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> eliminată din meniul SandFly</string>
+    <string name="commands_search_hint">Caută comenzi</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> comandă</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> comenzi</item>
+        <item quantity="other"><xliff:g id="count" example="20">%d</xliff:g> de comenzi</item>
+    </plurals>
 </resources>

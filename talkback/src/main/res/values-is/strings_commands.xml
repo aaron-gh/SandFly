@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Bendingar fyrir þetta forrit</string>
     <string name="title_pref_shizuku_root_screen">Shizuku og rót</string>
     <string name="title_pref_use_root">Nota rót í stað Shizuku</string>
+    <string name="command_perform_gesture">Framkvæma bendingu</string>
+    <string name="command_perform_gesture_message">Gerðu bendinguna.</string>
+    <string name="command_gesture_not_assignable">Ekki hægt að úthluta <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
+    <string name="command_run">Keyra skipun</string>
+    <string name="command_add_to_sandfly_menu">Bæta við SandFly-valmynd</string>
+    <string name="command_remove_from_sandfly_menu">Fjarlægja úr SandFly-valmynd</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> bætt við SandFly-valmynd</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> fjarlægt úr SandFly-valmynd</string>
+    <string name="commands_search_hint">Leita í skipunum</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> skipun</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> skipanir</item>
+    </plurals>
 </resources>

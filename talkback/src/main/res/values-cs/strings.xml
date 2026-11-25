@@ -2612,4 +2612,47 @@
     <string name="double_tap_taps_on">Dvojité klepnutí klepne na obrazovku zapnuto</string>
     <string name="double_tap_taps_off">Dvojité klepnutí klepne na obrazovku vypnuto</string>
     <string name="double_tap_taps_no_app">Žádná aplikace v popředí</string>
+    <string name="keycombo_menu_toggle_key_practice">Zapnout nebo vypnout nácvik klávesnice</string>
+    <string name="key_practice_on">Nácvik klávesnice zapnut</string>
+    <string name="key_practice_off">Nácvik klávesnice vypnut</string>
+    <string name="key_practice_sandfly_key">klávesa SandFly</string>
+    <string name="key_practice_title">Nácvik klávesnice</string>
+    <string name="key_practice_summary">Vysloví každou stisknutou klávesu a její příkaz, místo aby ho provedl. Vypíná se klávesou Zpět nebo Escape.</string>
+    <string name="keycombo_menu_touch_hold_focus">Podržet dotyk na položce s fokusem</string>
+    <string name="touch_hold_held">Dotyk podržen</string>
+    <string name="touch_hold_lifted">Dotyk uvolněn</string>
+    <string name="touch_hold_unavailable">Není k dispozici</string>
+    <string name="touch_hold_no_focus">Žádná položka nemá fokus</string>
+    <string name="title_pref_speak_password_characters">Vyslovovat znaky hesla</string>
+    <string name="summary_pref_speak_password_characters">S klávesnicí SandFly vyslovuje v polích hesla napsané, smazané a kurzorem přejeté znaky</string>
+    <string name="shortcut_spell_password_field">Hláskovat pole hesla</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Toto není pole hesla</string>
+    <string name="sandfly_keyboard_password_not_available">Text pole hesla není k dispozici</string>
+    <string name="sandfly_keyboard_password_not_read">V polích hesla se nečte</string>
+    <string name="title_pref_voice_profile_play_sample">Přehrát ukázku</string>
+    <string name="voice_profile_sample_text">Toto je ukázka tohoto hlasového profilu.</string>
+    <string name="voice_profile_sample_failed">Ukázka nebyla přehrána</string>
+    <string name="title_pref_speech_rate_step">Krok rychlosti řeči</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> rychlosti</string>
+    <string name="shortcut_end_call">Ukončit hovor</string>
+    <string name="end_call_no_call">Žádný hovor</string>
+    <string name="end_call_permission">K ukončování hovorů je potřeba oprávnění</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Přejít na další odstavec, druhá klávesa</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Přejít na předchozí odstavec, druhá klávesa</string>
+    <string name="title_pref_mute_key_dictates">Podržením tlačítka ztlumení diktovat do textových polí</string>
+    <string name="title_pref_mute_key_press">Stisknutí tlačítka ztlumení</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Přejít na další odkaz, druhá klávesa</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Přejít na předchozí odkaz, druhá klávesa</string>
+    <string name="keycombo_only_in_browse_mode">Pouze v režimu procházení</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> v režimu procházení</string>
+    <string name="title_pref_category_fast_search">Rychlé hledání</string>
+    <string name="title_pref_fast_search_key">Klávesa rychlého hledání</string>
+    <string name="fast_search_key_off">Vypnuto</string>
+    <string name="title_pref_fast_search_wrap">Přecházet přes okraj</string>
+    <string name="fast_search_key_left_alt">Levý Alt</string>
+    <string name="fast_search_key_left_ctrl">Levý Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Pravý Ctrl</string>
+    <string name="fast_search_key_left_meta">Levý Meta</string>
+    <string name="fast_search_key_right_meta">Pravý Meta</string>
 </resources>

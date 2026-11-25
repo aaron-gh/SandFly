@@ -71,6 +71,35 @@ class ClipboardHistoryTest {
   }
 
   @Test
+  fun addedTextPastTenThousandCharactersIsKept() {
+    // Report #612: text copied and added to was cut to 10,000 characters.
+    val first = "a".repeat(9_000)
+    val added = "b".repeat(2_000)
+    ClipboardHistory.copy(context, first)
+    repeat(3) { ClipboardHistory.append(context, added) }
+    val expected = first + "\n$added".repeat(3)
+    assertEquals(expected, clip())
+    assertEquals(listOf(expected), ClipboardHistory.entries(context))
+  }
+
+  @Test
+  fun addedTextIsCutToTheLongestEntry() {
+    ClipboardHistory.copy(context, "x".repeat(ClipboardHistory.MAX_LENGTH - 5))
+    ClipboardHistory.append(context, "more text")
+    assertEquals(ClipboardHistory.MAX_LENGTH, clip()?.length)
+    assertEquals(ClipboardHistory.MAX_LENGTH, ClipboardHistory.entries(context).single().length)
+  }
+
+  @Test
+  fun historyKeepsOnlyTheNewestCharacters() {
+    val count = ClipboardHistory.MAX_TOTAL_LENGTH / ClipboardHistory.MAX_LENGTH
+    repeat(count + 1) { ClipboardHistory.record(context, "$it".repeat(ClipboardHistory.MAX_LENGTH)) }
+    val entries = ClipboardHistory.entries(context)
+    assertEquals(count, entries.size)
+    assertEquals("$count".repeat(ClipboardHistory.MAX_LENGTH), entries.first())
+  }
+
+  @Test
   fun addedTextIsAllThereIsWhenNothingWasCopied() {
     assertEquals("only", ClipboardHistory.append(context, "only"))
   }

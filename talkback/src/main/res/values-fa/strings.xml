@@ -2775,4 +2775,47 @@
     <string name="double_tap_taps_on">ضربه روی صفحه با دو تک‌ضرب روشن</string>
     <string name="double_tap_taps_off">ضربه روی صفحه با دو تک‌ضرب خاموش</string>
     <string name="double_tap_taps_no_app">هیچ برنامه‌ای در جلو نیست</string>
+    <string name="keycombo_menu_toggle_key_practice">روشن یا خاموش کردن تمرین صفحه‌کلید</string>
+    <string name="key_practice_on">تمرین صفحه‌کلید روشن</string>
+    <string name="key_practice_off">تمرین صفحه‌کلید خاموش</string>
+    <string name="key_practice_sandfly_key">کلید SandFly</string>
+    <string name="key_practice_title">تمرین صفحه‌کلید</string>
+    <string name="key_practice_summary">هر کلید فشرده‌شده و فرمان آن را به‌جای اجرای فرمان می‌گوید. با «برگشتن» یا Escape خاموش می‌شود.</string>
+    <string name="keycombo_menu_touch_hold_focus">نگه داشتن لمس روی مورد متمرکز</string>
+    <string name="touch_hold_held">لمس نگه داشته شد</string>
+    <string name="touch_hold_lifted">لمس برداشته شد</string>
+    <string name="touch_hold_unavailable">در دسترس نیست</string>
+    <string name="touch_hold_no_focus">هیچ موردی متمرکز نیست</string>
+    <string name="title_pref_speak_password_characters">گفتن نویسه‌های گذرواژه</string>
+    <string name="summary_pref_speak_password_characters">با صفحه‌کلید SandFly، نویسه‌های تایپ‌شده، حذف‌شده و ردشده با مکان‌نما را در فیلدهای گذرواژه می‌گوید</string>
+    <string name="shortcut_spell_password_field">هجی کردن فیلد گذرواژه</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">فیلد گذرواژه نیست</string>
+    <string name="sandfly_keyboard_password_not_available">متن فیلد گذرواژه در دسترس نیست</string>
+    <string name="sandfly_keyboard_password_not_read">در فیلدهای گذرواژه خوانده نمی‌شود</string>
+    <string name="title_pref_voice_profile_play_sample">پخش نمونه</string>
+    <string name="voice_profile_sample_text">این نمونه‌ای از این نمایه صدا است.</string>
+    <string name="voice_profile_sample_failed">نمونه پخش نشد</string>
+    <string name="title_pref_speech_rate_step">گام سرعت گفتار</string>
+    <string name="value_speech_rate_step_relative">‏<xliff:g id="percent" example="10%">%1$s</xliff:g> از سرعت</string>
+    <string name="shortcut_end_call">پایان دادن به تماس</string>
+    <string name="end_call_no_call">تماسی وجود ندارد</string>
+    <string name="end_call_permission">برای پایان دادن به تماس‌ها اجازه لازم است</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">پیمایش به پاراگراف بعدی، کلید دوم</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">پیمایش به پاراگراف قبلی، کلید دوم</string>
+    <string name="title_pref_mute_key_dictates">برای دیکته در فیلدهای متنی، کلید بی‌صدا را نگه دارید</string>
+    <string name="title_pref_mute_key_press">فشار کلید بی‌صدا</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">پیمایش به پیوند بعدی، کلید دوم</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">پیمایش به پیوند قبلی، کلید دوم</string>
+    <string name="keycombo_only_in_browse_mode">فقط در حالت مرور</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> در حالت مرور</string>
+    <string name="title_pref_category_fast_search">جستجوی سریع</string>
+    <string name="title_pref_fast_search_key">کلید جستجوی سریع</string>
+    <string name="fast_search_key_off">خاموش</string>
+    <string name="title_pref_fast_search_wrap">چرخش از انتها به ابتدا</string>
+    <string name="fast_search_key_left_alt">Alt چپ</string>
+    <string name="fast_search_key_left_ctrl">Ctrl چپ</string>
+    <string name="fast_search_key_right_ctrl">Ctrl راست</string>
+    <string name="fast_search_key_left_meta">Meta چپ</string>
+    <string name="fast_search_key_right_meta">Meta راست</string>
 </resources>

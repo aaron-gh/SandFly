@@ -2784,4 +2784,47 @@
     <string name="double_tap_taps_on">Le double appui appuie sur l\'écran : activé</string>
     <string name="double_tap_taps_off">Le double appui appuie sur l\'écran : désactivé</string>
     <string name="double_tap_taps_no_app">Aucune application au premier plan</string>
+    <string name="keycombo_menu_toggle_key_practice">Activer ou désactiver l\'entraînement au clavier</string>
+    <string name="key_practice_on">Entraînement au clavier activé</string>
+    <string name="key_practice_off">Entraînement au clavier désactivé</string>
+    <string name="key_practice_sandfly_key">Touche SandFly</string>
+    <string name="key_practice_title">Entraînement au clavier</string>
+    <string name="key_practice_summary">Énonce chaque touche enfoncée et sa commande au lieu de l\'exécuter. Retour ou Échap le désactive.</string>
+    <string name="keycombo_menu_touch_hold_focus">Maintenir un appui sur l\'élément sélectionné</string>
+    <string name="touch_hold_held">Appui maintenu</string>
+    <string name="touch_hold_lifted">Appui relâché</string>
+    <string name="touch_hold_unavailable">Indisponible</string>
+    <string name="touch_hold_no_focus">Aucun élément n\'a le focus</string>
+    <string name="title_pref_speak_password_characters">Énoncer les caractères des mots de passe</string>
+    <string name="summary_pref_speak_password_characters">Avec le clavier SandFly, énonce les caractères saisis, supprimés et parcourus par le curseur dans les champs de mot de passe</string>
+    <string name="shortcut_spell_password_field">Épeler le champ de mot de passe</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Pas un champ de mot de passe</string>
+    <string name="sandfly_keyboard_password_not_available">Texte du champ de mot de passe indisponible</string>
+    <string name="sandfly_keyboard_password_not_read">Non lu dans les champs de mot de passe</string>
+    <string name="title_pref_voice_profile_play_sample">Écouter un extrait</string>
+    <string name="voice_profile_sample_text">Ceci est un extrait de ce profil vocal.</string>
+    <string name="voice_profile_sample_failed">Extrait non lu</string>
+    <string name="title_pref_speech_rate_step">Pas de la vitesse d\'élocution</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> de la vitesse</string>
+    <string name="shortcut_end_call">Raccrocher</string>
+    <string name="end_call_no_call">Aucun appel</string>
+    <string name="end_call_permission">Autorisation requise pour raccrocher les appels</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Accéder au paragraphe suivant, deuxième touche</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Accéder au paragraphe précédent, deuxième touche</string>
+    <string name="title_pref_mute_key_dictates">Maintenir la touche Muet pour dicter dans les champs de texte</string>
+    <string name="title_pref_mute_key_press">Appui sur la touche Muet</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Accéder au lien suivant, deuxième touche</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Accéder au lien précédent, deuxième touche</string>
+    <string name="keycombo_only_in_browse_mode">Uniquement en mode navigation</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> en mode navigation</string>
+    <string name="title_pref_category_fast_search">Recherche rapide</string>
+    <string name="title_pref_fast_search_key">Touche de recherche rapide</string>
+    <string name="fast_search_key_off">Désactivé</string>
+    <string name="title_pref_fast_search_wrap">Navigation en boucle</string>
+    <string name="fast_search_key_left_alt">Alt gauche</string>
+    <string name="fast_search_key_left_ctrl">Ctrl gauche</string>
+    <string name="fast_search_key_right_ctrl">Ctrl droite</string>
+    <string name="fast_search_key_left_meta">Meta gauche</string>
+    <string name="fast_search_key_right_meta">Meta droite</string>
 </resources>

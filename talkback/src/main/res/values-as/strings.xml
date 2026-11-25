@@ -2771,4 +2771,47 @@
     <string name="double_tap_taps_on">দুবাৰ টিপিলে স্ক্ৰীনত টিপা হয় অন</string>
     <string name="double_tap_taps_off">দুবাৰ টিপিলে স্ক্ৰীনত টিপা হয় অফ</string>
     <string name="double_tap_taps_no_app">সন্মুখত কোনো এপ নাই</string>
+    <string name="keycombo_menu_toggle_key_practice">কীব’ৰ্ডৰ অনুশীলন অন অথবা অফ কৰক</string>
+    <string name="key_practice_on">কীব’ৰ্ডৰ অনুশীলন অন আছে</string>
+    <string name="key_practice_off">কীব’ৰ্ডৰ অনুশীলন অফ আছে</string>
+    <string name="key_practice_sandfly_key">SandFly কী</string>
+    <string name="key_practice_title">কীব’ৰ্ডৰ অনুশীলন</string>
+    <string name="key_practice_summary">টিপা প্ৰতিটো কী আৰু তাৰ কামাণ্ড চলোৱাৰ সলনি কয়। উভতি যাওক বা এস্কে’প টিপিলে এইটো অফ হয়।</string>
+    <string name="keycombo_menu_touch_hold_focus">ফ’কাছ কৰা বস্তুটোত স্পৰ্শ ধৰি ৰাখক</string>
+    <string name="touch_hold_held">স্পৰ্শ ধৰি ৰখা হৈছে</string>
+    <string name="touch_hold_lifted">স্পৰ্শ আঁতৰোৱা হ’ল</string>
+    <string name="touch_hold_unavailable">উপলব্ধ নহয়</string>
+    <string name="touch_hold_no_focus">কোনো বস্তুত ফ’কাছ নাই</string>
+    <string name="title_pref_speak_password_characters">পাছৱৰ্ডৰ বৰ্ণ কওক</string>
+    <string name="summary_pref_speak_password_characters">SandFly কীব’ৰ্ডৰ সৈতে, পাছৱৰ্ডৰ ফিল্ডত টাইপ কৰা, মচা আৰু কাৰ্ছৰে পাৰ হোৱা বৰ্ণসমূহ কয়</string>
+    <string name="shortcut_spell_password_field">পাছৱৰ্ডৰ ফিল্ডৰ বানান কওক</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">পাছৱৰ্ডৰ ফিল্ড নহয়</string>
+    <string name="sandfly_keyboard_password_not_available">পাছৱৰ্ডৰ ফিল্ডৰ পাঠ উপলব্ধ নহয়</string>
+    <string name="sandfly_keyboard_password_not_read">পাছৱৰ্ডৰ ফিল্ডত পঢ়া নহয়</string>
+    <string name="title_pref_voice_profile_play_sample">নমুনা প্লে’ কৰক</string>
+    <string name="voice_profile_sample_text">এইটো এই কণ্ঠৰ প্ৰ’ফাইলৰ এটা নমুনা।</string>
+    <string name="voice_profile_sample_failed">নমুনা প্লে’ কৰা নহ’ল</string>
+    <string name="title_pref_speech_rate_step">কথা কোৱাৰ হাৰৰ পদক্ষেপ</string>
+    <string name="value_speech_rate_step_relative">হাৰৰ <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">কল সমাপ্ত কৰক</string>
+    <string name="end_call_no_call">কোনো কল নাই</string>
+    <string name="end_call_permission">কল সমাপ্ত কৰিবলৈ অনুমতিৰ প্ৰয়োজন</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">পৰৱৰ্তী দফাটোলৈ যাওক, দ্বিতীয় কী</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">পূৰ্বৱৰ্তী দফাটোলৈ যাওক, দ্বিতীয় কী</string>
+    <string name="title_pref_mute_key_dictates">পাঠ ক্ষেত্ৰত শ্ৰুতিলিখনৰ বাবে মিউট কী টিপি ধৰি ৰাখক</string>
+    <string name="title_pref_mute_key_press">মিউট কী টিপা</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">পৰৱৰ্তী লিংকলৈ যাওক, দ্বিতীয় কী</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">পূৰ্বৱৰ্তী লিংকলৈ যাওক, দ্বিতীয় কী</string>
+    <string name="keycombo_only_in_browse_mode">কেৱল ব্ৰাউজ ম’ডত</string>
+    <string name="keycombo_keys_in_browse_mode">ব্ৰাউজ ম’ডত <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">দ্ৰুত সন্ধান</string>
+    <string name="title_pref_fast_search_key">দ্ৰুত সন্ধানৰ কী</string>
+    <string name="fast_search_key_off">অফ</string>
+    <string name="title_pref_fast_search_wrap">ঘূৰি আৰম্ভলৈ যাওক</string>
+    <string name="fast_search_key_left_alt">বাওঁফালৰ Alt</string>
+    <string name="fast_search_key_left_ctrl">বাওঁফালৰ Ctrl</string>
+    <string name="fast_search_key_right_ctrl">সোঁফালৰ Ctrl</string>
+    <string name="fast_search_key_left_meta">বাওঁফালৰ Meta</string>
+    <string name="fast_search_key_right_meta">সোঁফালৰ Meta</string>
 </resources>

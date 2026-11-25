@@ -2775,4 +2775,47 @@
     <string name="double_tap_taps_on">İki dəfə toxunma ekrana toxunur aktivdir</string>
     <string name="double_tap_taps_off">İki dəfə toxunma ekrana toxunur deaktivdir</string>
     <string name="double_tap_taps_no_app">Öndə tətbiq yoxdur</string>
+    <string name="keycombo_menu_toggle_key_practice">Klaviatura məşqini yandır və ya söndür</string>
+    <string name="key_practice_on">Klaviatura məşqi aktivdir</string>
+    <string name="key_practice_off">Klaviatura məşqi deaktivdir</string>
+    <string name="key_practice_sandfly_key">SandFly düyməsi</string>
+    <string name="key_practice_title">Klaviatura məşqi</string>
+    <string name="key_practice_summary">Hər basılan düyməni və onun əmrini icra etmək əvəzinə səsləndirir. «Geri» düyməsi və ya Escape onu söndürür.</string>
+    <string name="keycombo_menu_touch_hold_focus">Fokuslanmış elementdə toxunuşu saxla</string>
+    <string name="touch_hold_held">Toxunuş saxlanılır</string>
+    <string name="touch_hold_lifted">Toxunuş buraxıldı</string>
+    <string name="touch_hold_unavailable">Əlçatan deyil</string>
+    <string name="touch_hold_no_focus">Heç bir elementdə fokus yoxdur</string>
+    <string name="title_pref_speak_password_characters">Parol simvollarını səsləndir</string>
+    <string name="summary_pref_speak_password_characters">SandFly klaviaturası ilə parol sahələrində yazılan, silinən və kursorun keçdiyi simvolları səsləndirir</string>
+    <string name="shortcut_spell_password_field">Parol sahəsini hərflər üzrə tələffüz et</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Parol sahəsi deyil</string>
+    <string name="sandfly_keyboard_password_not_available">Parol sahəsinin mətni əlçatan deyil</string>
+    <string name="sandfly_keyboard_password_not_read">Parol sahələrində oxunmur</string>
+    <string name="title_pref_voice_profile_play_sample">Nümunəni oxut</string>
+    <string name="voice_profile_sample_text">Bu, bu səs profilinin nümunəsidir.</string>
+    <string name="voice_profile_sample_failed">Nümunə oxudulmadı</string>
+    <string name="title_pref_speech_rate_step">Nitq sürəti addımı</string>
+    <string name="value_speech_rate_step_relative">Sürətin <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">Zəngi bitirin</string>
+    <string name="end_call_no_call">Zəng yoxdur</string>
+    <string name="end_call_permission">Zəngləri bitirmək üçün icazə lazımdır</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Növbəti abzasa keçin, ikinci düymə</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Əvvəlki abzasa keçin, ikinci düymə</string>
+    <string name="title_pref_mute_key_dictates">Mətn sahələrində diktə etmək üçün səssiz düyməsini basıb saxlayın</string>
+    <string name="title_pref_mute_key_press">Səssiz düyməsinin basılması</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Növbəti linkə keçin, ikinci düymə</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Əvvəlki linkə keçin, ikinci düymə</string>
+    <string name="keycombo_only_in_browse_mode">Yalnız axtarış rejimində</string>
+    <string name="keycombo_keys_in_browse_mode">Axtarış rejimində <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">Sürətli axtarış</string>
+    <string name="title_pref_fast_search_key">Sürətli axtarış düyməsi</string>
+    <string name="fast_search_key_off">Deaktiv</string>
+    <string name="title_pref_fast_search_wrap">Dövri keçid</string>
+    <string name="fast_search_key_left_alt">Sol Alt</string>
+    <string name="fast_search_key_left_ctrl">Sol Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Sağ Ctrl</string>
+    <string name="fast_search_key_left_meta">Sol Meta</string>
+    <string name="fast_search_key_right_meta">Sağ Meta</string>
 </resources>

@@ -36,15 +36,13 @@ public class KeyComboPersister {
     this.keyPrefix = keyPrefix;
   }
 
+  // One edit for both values, so preference listeners run once per shortcut, not twice.
   public void saveKeyCombo(String key, KeyCombo keyCombo) {
     prefs
         .edit()
         .putLong(
             TalkBackSharedPreferencesUtils.getKeyForKeyComboCode(this.keyPrefix, key),
             keyCombo.getKeyComboCode())
-        .apply();
-    prefs
-        .edit()
         .putBoolean(
             TalkBackSharedPreferencesUtils.getKeyForTriggerModifierUsed(
                 this.keyPrefix, key, FeatureFlagReader.enableBrowseMode(context)),
@@ -56,9 +54,6 @@ public class KeyComboPersister {
     prefs
         .edit()
         .remove(TalkBackSharedPreferencesUtils.getKeyForKeyComboCode(this.keyPrefix, key))
-        .apply();
-    prefs
-        .edit()
         .remove(
             TalkBackSharedPreferencesUtils.getKeyForTriggerModifierUsed(
                 this.keyPrefix, key, FeatureFlagReader.enableBrowseMode(context)))

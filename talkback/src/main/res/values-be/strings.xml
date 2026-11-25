@@ -2794,4 +2794,47 @@
     <string name="double_tap_taps_on">Двайны дотык націскае на экран: уключана</string>
     <string name="double_tap_taps_off">Двайны дотык націскае на экран: выключана</string>
     <string name="double_tap_taps_no_app">Няма праграмы на пярэднім плане</string>
+    <string name="keycombo_menu_toggle_key_practice">Уключыць або выключыць трэніроўку клавіятуры</string>
+    <string name="key_practice_on">Трэніроўка клавіятуры ўключана</string>
+    <string name="key_practice_off">Трэніроўка клавіятуры выключана</string>
+    <string name="key_practice_sandfly_key">Клавіша SandFly</string>
+    <string name="key_practice_title">Трэніроўка клавіятуры</string>
+    <string name="key_practice_summary">Агучвае кожную націснутую клавішу і яе каманду замест выканання каманды. Кнопка «Назад» або Escape выключае трэніроўку.</string>
+    <string name="keycombo_menu_touch_hold_focus">Утрымліваць дотык на элеменце ў фокусе</string>
+    <string name="touch_hold_held">Дотык утрымліваецца</string>
+    <string name="touch_hold_lifted">Дотык адпушчаны</string>
+    <string name="touch_hold_unavailable">Недаступна</string>
+    <string name="touch_hold_no_focus">Няма элемента ў фокусе</string>
+    <string name="title_pref_speak_password_characters">Агучваць сімвалы пароля</string>
+    <string name="summary_pref_speak_password_characters">З клавіятурай SandFly агучвае ўведзеныя, выдаленыя і пройдзеныя курсорам сімвалы ў палях пароляў</string>
+    <string name="shortcut_spell_password_field">Вымавіць па літарах поле пароля</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Гэта не поле пароля</string>
+    <string name="sandfly_keyboard_password_not_available">Тэкст поля пароля недаступны</string>
+    <string name="sandfly_keyboard_password_not_read">Не чытаецца ў палях пароляў</string>
+    <string name="title_pref_voice_profile_play_sample">Прайграць узор</string>
+    <string name="voice_profile_sample_text">Гэта ўзор гэтага галасавога профілю.</string>
+    <string name="voice_profile_sample_failed">Узор не прайграны</string>
+    <string name="title_pref_speech_rate_step">Крок хуткасці маўлення</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> ад хуткасці</string>
+    <string name="shortcut_end_call">Завяршыць выклік</string>
+    <string name="end_call_no_call">Няма выкліку</string>
+    <string name="end_call_permission">Патрэбны дазвол на завяршэнне выклікаў</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Перайсці да наступнага абзаца, другая клавіша</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Перайсці да папярэдняга абзаца, другая клавіша</string>
+    <string name="title_pref_mute_key_dictates">Утрымлівайце клавішу выключэння гуку, каб дыктаваць у тэкставых палях</string>
+    <string name="title_pref_mute_key_press">Націск клавішы выключэння гуку</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Перайсці да наступнай спасылкі, другая клавіша</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Перайсці да папярэдняй спасылкі, другая клавіша</string>
+    <string name="keycombo_only_in_browse_mode">Толькі ў рэжыме прагляду</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> у рэжыме прагляду</string>
+    <string name="title_pref_category_fast_search">Хуткі пошук</string>
+    <string name="title_pref_fast_search_key">Клавіша хуткага пошуку</string>
+    <string name="fast_search_key_off">Выключаны</string>
+    <string name="title_pref_fast_search_wrap">Цыклічны пераход</string>
+    <string name="fast_search_key_left_alt">Левы Alt</string>
+    <string name="fast_search_key_left_ctrl">Левы Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Правы Ctrl</string>
+    <string name="fast_search_key_left_meta">Левы Meta</string>
+    <string name="fast_search_key_right_meta">Правы Meta</string>
 </resources>

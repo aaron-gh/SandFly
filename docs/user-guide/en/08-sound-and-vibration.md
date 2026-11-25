@@ -153,6 +153,8 @@ You can replace any sound of the theme in use with a sound file. To replace soun
 3. Choose a sound. The dialog title shows the sound and its file name, such as "Click (tick)".
 4. Choose one of these:
    - **Choose a sound file**: opens the file picker. A sound can be up to 5 MB, in WAV, OGG, MP3 or FLAC format.
+   - **Choose from folder**: lists the sound files and subfolders of a folder. The first time, the folder picker opens to choose the folder. See [](#sound-themes-folder).
+   - **Change folder**: opens the folder picker to choose another folder for **Choose from folder**. Shown after a folder is chosen.
    - **Preview**: plays the sound.
    - **No sound**: plays no sound for the event.
    - **Use SandFly's sound**: goes back to the built-in sound.
@@ -160,6 +162,18 @@ You can replace any sound of the theme in use with a sound file. To replace soun
 The summary of each sound shows **SandFly's sound**, **Theme sound** or **No sound**. The same actions are in the actions menu of each sound, as **Preview**, **Set to no sound**, **Use SandFly's sound** and **Choose a sound file**. **Use SandFly's sounds for all** removes every sound of the theme and uses the built-in sounds.
 
 The sound list also has sounds that **Individual sounds and vibrations** doesn't: **Volume change**, which plays for each volume step when **Volume change feedback** is set to a tone (see [](#buttons)), and the braille keyboard typing sounds, which play with **Typing sounds** on in the braille keyboard settings (see [](#braille)).
+
+#### Choose sounds from a folder {#sound-themes-folder}
+
+**Choose from folder** lists one folder on the phone. Choose a sound, then **Choose from folder**. The first time, choose the folder in the folder picker.
+
+The list shows subfolders first, then sound files, each sorted by name. Up to 2,000 entries are listed per folder.
+
+- The file in accessibility focus plays. Moving focus off the file stops it.
+- Choose a file to use it for the sound.
+- Choose a subfolder to list it. **Parent folder** or Back returns to the folder above.
+
+If the folder is removed or SandFly can no longer read it, the folder picker opens again.
 
 #### Create a sound theme {#sound-themes-create}
 
@@ -211,6 +225,7 @@ Control sounds play from the position of the control on the screen: from the lef
 - **With headphones**: the default. 3D audio plays when SandFly audio goes to wired or USB headphones, a Bluetooth headset or headphones, or hearing aids. On Android 13 and later, SandFly checks where its audio plays, so a connected Bluetooth speaker or car that doesn't play SandFly audio doesn't count. On earlier versions, any connected headphones count.
 - **Always**: 3D audio also on the phone speaker.
 - **Never, only left and right**: the sounds move only between left and right.
+- **With headphones, centred otherwise**: 3D audio with headphones, as **With headphones**. On the phone speaker and other outputs, the sounds play from the centre, without moving between left and right.
 
 ### Audio output settings {#sound-audio-output}
 

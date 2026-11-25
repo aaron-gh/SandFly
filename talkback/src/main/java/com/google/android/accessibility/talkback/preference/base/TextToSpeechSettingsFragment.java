@@ -83,6 +83,7 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     updateSpeechStreamValue();
     setUpEmojiRate();
     setUpRepeatSlowerBy();
+    setUpRateStep();
 
     setUpSeekBar(
         R.string.pref_speech_volume_seekbar_key_int,
@@ -224,6 +225,31 @@ public class TextToSpeechSettingsFragment extends TalkbackBaseFragment {
     String value = list.getValue();
     if (value == null || list.findIndexOfValue(value) < 0) {
       list.setValue(Integer.toString(SlowerRepeat.PERCENT_DEFAULT));
+    }
+  }
+
+  private void setUpRateStep() {
+    if (!(findPreference(SpeechRateAndPitchActor.PREF_RATE_STEP) instanceof ListPreference list)) {
+      return;
+    }
+    NumberFormat percent = NumberFormat.getPercentInstance();
+    int[] steps = SpeechRateAndPitchActor.RATE_STEPS;
+    CharSequence[] entries = new CharSequence[steps.length];
+    CharSequence[] values = new CharSequence[steps.length];
+    for (int i = 0; i < steps.length; i++) {
+      entries[i] =
+          steps[i] == SpeechRateAndPitchActor.RATE_STEP_RELATIVE
+              ? getString(
+                  R.string.value_speech_rate_step_relative,
+                  percent.format(SpeechRateAndPitchActor.RATE_STEP - 1))
+              : percent.format(steps[i] / 100.0);
+      values[i] = Integer.toString(steps[i]);
+    }
+    list.setEntries(entries);
+    list.setEntryValues(values);
+    String value = list.getValue();
+    if (value == null || list.findIndexOfValue(value) < 0) {
+      list.setValue(Integer.toString(SpeechRateAndPitchActor.RATE_STEP_RELATIVE));
     }
   }
 

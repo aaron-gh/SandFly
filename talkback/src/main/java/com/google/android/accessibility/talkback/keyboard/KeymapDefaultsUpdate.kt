@@ -27,7 +27,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  */
 object KeymapDefaultsUpdate {
   /** The version of the defaults of the NVDA, JAWS, Orca and keyboard phone keymaps. */
-  private const val VERSION = 6
+  private const val VERSION = 7
 
   private const val NONE = KeyComboModel.NO_MODIFIER
   private const val SHIFT = KeyEvent.META_SHIFT_ON
@@ -249,9 +249,61 @@ object KeymapDefaultsUpdate {
     mapOf(Keymap.KEYBOARD_PHONE to firstKeys.toMap())
   }
 
+  /**
+   * The version 6 defaults of the commands whose defaults changed in version 7, when the keyboard
+   * phone single-key keymap got browse mode, with the SandFly keymap's letters: none.
+   */
+  private val VERSION_6: Map<Keymap, Map<Int, KeyCombo>> by lazy {
+    val browseModeKeys =
+      listOf(
+          R.string.keycombo_shortcut_other_toggle_browse_mode_extra,
+          R.string.keycombo_shortcut_navigate_next_aria_landmark,
+          R.string.keycombo_shortcut_navigate_previous_aria_landmark,
+          R.string.keycombo_shortcut_navigate_next_button,
+          R.string.keycombo_shortcut_navigate_previous_button,
+          R.string.keycombo_shortcut_navigate_next_checkbox,
+          R.string.keycombo_shortcut_navigate_previous_checkbox,
+          R.string.keycombo_shortcut_navigate_next_combobox,
+          R.string.keycombo_shortcut_navigate_previous_combobox,
+          R.string.keycombo_shortcut_navigate_next_list,
+          R.string.keycombo_shortcut_navigate_previous_list,
+          R.string.keycombo_shortcut_navigate_next_list_item,
+          R.string.keycombo_shortcut_navigate_previous_list_item,
+          R.string.keycombo_shortcut_navigate_next_radio,
+          R.string.keycombo_shortcut_navigate_previous_radio,
+          R.string.keycombo_shortcut_navigate_next_table,
+          R.string.keycombo_shortcut_navigate_previous_table,
+          R.string.keycombo_shortcut_navigate_next_visited_link,
+          R.string.keycombo_shortcut_navigate_previous_visited_link,
+          R.string.keycombo_shortcut_navigate_next_unvisited_link,
+          R.string.keycombo_shortcut_navigate_previous_unvisited_link,
+          R.string.keycombo_shortcut_navigate_next_heading_1,
+          R.string.keycombo_shortcut_navigate_previous_heading_1,
+          R.string.keycombo_shortcut_navigate_next_heading_2,
+          R.string.keycombo_shortcut_navigate_previous_heading_2,
+          R.string.keycombo_shortcut_navigate_next_heading_3,
+          R.string.keycombo_shortcut_navigate_previous_heading_3,
+          R.string.keycombo_shortcut_navigate_next_heading_4,
+          R.string.keycombo_shortcut_navigate_previous_heading_4,
+          R.string.keycombo_shortcut_navigate_next_heading_5,
+          R.string.keycombo_shortcut_navigate_previous_heading_5,
+          R.string.keycombo_shortcut_navigate_next_heading_6,
+          R.string.keycombo_shortcut_navigate_previous_heading_6,
+        )
+        .associateWith { KeyCombo() }
+    mapOf(Keymap.KEYBOARD_PHONE_SINGLE_KEYS to browseModeKeys)
+  }
+
   /** Each version's earlier defaults of the commands it changed. */
   private val CHANGES: List<Pair<Int, Map<Keymap, Map<Int, KeyCombo>>>> by lazy {
-    listOf(2 to VERSION_1, 3 to VERSION_2, 4 to VERSION_3, 5 to VERSION_4, 6 to VERSION_5)
+    listOf(
+      2 to VERSION_1,
+      3 to VERSION_2,
+      4 to VERSION_3,
+      5 to VERSION_4,
+      6 to VERSION_5,
+      7 to VERSION_6,
+    )
   }
 
   @JvmStatic

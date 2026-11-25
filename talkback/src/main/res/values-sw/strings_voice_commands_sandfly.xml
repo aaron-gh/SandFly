@@ -172,4 +172,19 @@
         <item>washa {label}</item>
         <item>chagua {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Anza kuhariri kwa sauti</string>
+    <string name="voice_editing_on">Kuhariri kwa sauti kumewashwa</string>
+    <string name="voice_editing_off">Kuhariri kwa sauti kumezimwa</string>
+    <string name="title_pref_voice_editing_time_limit">Muda wa kuhariri kwa sauti</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one">Dakika <xliff:g id="count" example="1">%d</xliff:g></item>
+        <item quantity="other">Dakika <xliff:g id="count" example="10">%d</xliff:g></item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>acha kuhariri</item>
+        <item>acha kuhariri kwa sauti</item>
+        <item>maliza kuhariri</item>
+        <item>maliza kuhariri kwa sauti</item>
+        <item>zima kuhariri kwa sauti</item>
+    </string-array>
 </resources>

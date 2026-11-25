@@ -71,12 +71,14 @@ object Commands {
 
   /**
    * One command. [keyboardAction] is the keyboard action that performs the same thing, if there is
-   * one.
+   * one. [secondKeyboardAction] performs it too, with a keyboard shortcut of its own, which only
+   * keyboard shortcut lists show.
    */
   class Command(
     val value: String,
     val label: String,
     val keyboardAction: TalkBackPhysicalKeyboardShortcut?,
+    val secondKeyboardAction: TalkBackPhysicalKeyboardShortcut? = null,
   ) {
     /** Returns the key under which the key combo model keeps this command's keyboard shortcut. */
     fun keyboardKey(context: Context): String =
@@ -139,7 +141,7 @@ object Commands {
 
   /**
    * Returns the value of the command that the keyboard [action] runs: the command that has it as
-   * its keyboard action, otherwise the keyboard action's own command.
+   * its keyboard action or second keyboard action, otherwise the keyboard action's own command.
    */
   @JvmStatic
   fun valueOfKeyboardAction(context: Context, action: TalkBackPhysicalKeyboardShortcut): String {
@@ -147,7 +149,11 @@ object Commands {
       actionValues
         ?: categoriesWithoutApps(context)
           .flatMap { it.commands }
-          .mapNotNull { command -> command.keyboardAction?.let { it to command.value } }
+          .flatMap { command ->
+            listOfNotNull(command.keyboardAction, command.secondKeyboardAction).map {
+              it to command.value
+            }
+          }
           .distinctBy { it.first }
           .toMap()
           .also { actionValues = it }
@@ -397,8 +403,14 @@ object Commands {
     /** Adds the navigation actions of [category], with the keyboard actions that match them. */
     private fun navigationActions(category: Int) {
       for (action in NavigationGestureActions.CATEGORIES[category].actions) {
+        val keyboardAction = NAVIGATION_KEYS[action.value]
         commands.add(
-          Command(action.value, context.getString(action.labelRes), NAVIGATION_KEYS[action.value])
+          Command(
+            action.value,
+            context.getString(action.labelRes),
+            keyboardAction,
+            SECOND_KEYS[keyboardAction],
+          )
         )
       }
     }
@@ -460,10 +472,26 @@ object Commands {
       category(R.string.commands_category_navigation_setting) {
         gesture(R.string.shortcut_value_granularity_menu, R.string.title_granularity)
         gesture(R.string.shortcut_value_page_navigation, R.string.title_viewpager_controls)
-        keyboard(Key.NAVIGATE_NEXT)
-        keyboard(Key.NAVIGATE_PREVIOUS)
-        keyboard(Key.NEXT_NAVIGATION_SETTING)
-        keyboard(Key.PREVIOUS_NAVIGATION_SETTING)
+        gesture(
+          R.string.shortcut_value_next_by_navigation_setting,
+          R.string.keycombo_menu_navigate_next_by_setting,
+          Key.NAVIGATE_NEXT,
+        )
+        gesture(
+          R.string.shortcut_value_previous_by_navigation_setting,
+          R.string.keycombo_menu_navigate_previous_by_setting,
+          Key.NAVIGATE_PREVIOUS,
+        )
+        gesture(
+          R.string.shortcut_value_next_granularity,
+          R.string.keycombo_menu_granularity_increase,
+          Key.NEXT_NAVIGATION_SETTING,
+        )
+        gesture(
+          R.string.shortcut_value_previous_granularity,
+          R.string.keycombo_menu_granularity_decrease,
+          Key.PREVIOUS_NAVIGATION_SETTING,
+        )
       }
 
     private fun objectNavigation() =
@@ -511,6 +539,7 @@ object Commands {
           Key.PERFORM_LONG_CLICK,
         )
         gesture(R.string.shortcut_value_touch_click_action, R.string.shortcut_touch_click_action)
+        keyboard(Key.TOUCH_HOLD_FOCUS, available = Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
         for (kind in ButtonCommands.Kind.entries) {
           gesture(kind.valueRes, kind.labelRes)
         }
@@ -929,7 +958,13 @@ object Commands {
           R.string.shortcut_toggle_editing_mode,
           available = !FormFactorUtils.isAndroidWear(),
         )
+        gesture(
+          R.string.shortcut_value_spell_password_field,
+          R.string.shortcut_spell_password_field,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
+        gesture(R.string.shortcut_value_voice_editing, R.string.shortcut_voice_editing)
         gesture(
           R.string.shortcut_value_switch_keyboard,
           R.string.shortcut_switch_keyboard,
@@ -948,6 +983,7 @@ object Commands {
         gesture(R.string.shortcut_value_newer_app, R.string.shortcut_newer_app)
         gesture(R.string.shortcut_value_take_screenshot, R.string.shortcut_take_screenshot)
         gesture(R.string.shortcut_value_answer_call, R.string.shortcut_answer_call)
+        gesture(R.string.shortcut_value_end_call, R.string.shortcut_end_call)
         gesture(R.string.shortcut_value_split_screen, R.string.title_split_screen, Key.SHOW_SPLIT_SCREEN)
         gesture(
           R.string.shortcut_value_notifications,
@@ -1227,6 +1263,11 @@ object Commands {
           R.string.shortcut_value_previous_settings_profile,
           R.string.shortcut_previous_settings_profile,
         )
+        gesture(R.string.shortcut_value_quick_tasks, R.string.shortcut_quick_tasks)
+        gesture(
+          R.string.shortcut_value_toggle_blackberry_mode,
+          R.string.shortcut_toggle_blackberry_mode,
+        )
         gesture(R.string.shortcut_value_toggle_arrow_key_nav, R.string.arrow_key_nav_toggle)
         gesture(
           R.string.shortcut_value_toggle_touch_lock,
@@ -1249,6 +1290,7 @@ object Commands {
           Key.SHOW_LEARN_MODE_PAGE,
           available = FeatureFlagReader.enableKeyboardLearnModePage(context),
         )
+        keyboard(Key.TOGGLE_KEY_PRACTICE)
         keyboard(Key.SHOW_KEYBOARD_SHORTCUTS_DIALOG)
         keyboard(Key.REPORT_ISSUE)
       }
@@ -1430,6 +1472,15 @@ object Commands {
         }
       }
   }
+
+  /** The second keyboard actions of keyboard actions, which do the same with other keys. */
+  private val SECOND_KEYS: Map<TalkBackPhysicalKeyboardShortcut?, TalkBackPhysicalKeyboardShortcut> =
+    mapOf(
+      Key.NAVIGATE_NEXT_PARAGRAPH to Key.NAVIGATE_NEXT_PARAGRAPH_EXTRA,
+      Key.NAVIGATE_PREVIOUS_PARAGRAPH to Key.NAVIGATE_PREVIOUS_PARAGRAPH_EXTRA,
+      Key.NAVIGATE_NEXT_LINK to Key.NAVIGATE_NEXT_LINK_EXTRA,
+      Key.NAVIGATE_PREVIOUS_LINK to Key.NAVIGATE_PREVIOUS_LINK_EXTRA,
+    )
 
   /** The keyboard actions that move to the same items as navigation gesture actions. */
   private val NAVIGATION_KEYS: Map<String, TalkBackPhysicalKeyboardShortcut> =

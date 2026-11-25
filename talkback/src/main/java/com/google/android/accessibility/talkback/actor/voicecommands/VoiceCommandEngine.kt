@@ -100,7 +100,7 @@ class VoiceCommandEngine(
   }
 
   private fun run(steps: List<VoiceStep>, locale: Locale) {
-    VoicePlanRunner.run(service, steps, locale) { text -> processor.handleIfRecognized(text) }
+    VoicePlanRunner.run(service, steps, locale, legacy = { text -> processor.handleIfRecognized(text) })
   }
 
   private fun askAi(id: Int, said: String, targets: VoiceTargets, locale: Locale) {

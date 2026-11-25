@@ -95,10 +95,25 @@ public class KeyComboManagerHelper {
     return shouldTurnOffBrowseModeHelper(sourceNode);
   }
 
+  /** Returns true if {@code node} is a text field, or in one. */
+  public static boolean isTextField(AccessibilityNodeInfoCompat node) {
+    return AccessibilityNodeInfoUtils.isSelfOrAncestorEditable(node)
+        || AccessibilityNodeInfoUtils.isSelfOrAncestorRoleEditText(node);
+  }
+
+  /**
+   * Returns true if keyboard navigation onto a text field leaves input focus where it is, so that
+   * the field is read and editing starts when the user activates it or types into it: while arrow
+   * key navigation is on, whose arrow keys would go to a field with input focus, and in the keyboard
+   * phone keymaps, whose single keys and Enter would.
+   */
+  public static boolean textFieldsWaitForActivation(Context context) {
+    return ArrowKeyNav.isOn(context) || ArrowKeyNav.isOnByDefault(context);
+  }
+
   private static boolean shouldTurnOffBrowseModeHelper(AccessibilityNodeInfoCompat sourceNode) {
     // Turn off browse mode if the focused node is editable so that the user can start typing.
-    if (AccessibilityNodeInfoUtils.isSelfOrAncestorEditable(sourceNode)
-        || AccessibilityNodeInfoUtils.isSelfOrAncestorRoleEditText(sourceNode)) {
+    if (isTextField(sourceNode)) {
       return true;
     }
 

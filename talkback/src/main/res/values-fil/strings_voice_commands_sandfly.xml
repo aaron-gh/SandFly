@@ -174,4 +174,19 @@
         <item>i-activate ang {label}</item>
         <item>piliin ang {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Simulan ang pag-edit gamit ang boses</string>
+    <string name="voice_editing_on">Naka-on ang pag-edit gamit ang boses</string>
+    <string name="voice_editing_off">Naka-off ang pag-edit gamit ang boses</string>
+    <string name="title_pref_voice_editing_time_limit">Limitasyon sa oras ng pag-edit gamit ang boses</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minuto</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minuto</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>itigil ang pag-edit</item>
+        <item>itigil ang pag-edit gamit ang boses</item>
+        <item>tapusin ang pag-edit</item>
+        <item>tapusin ang pag-edit gamit ang boses</item>
+        <item>i-off ang pag-edit gamit ang boses</item>
+    </string-array>
 </resources>

@@ -2765,4 +2765,47 @@
     <string name="double_tap_taps_on">రెండుసార్లు నొక్కితే స్క్రీన్‌పై ట్యాప్ అవుతుంది ఆన్</string>
     <string name="double_tap_taps_off">రెండుసార్లు నొక్కితే స్క్రీన్‌పై ట్యాప్ అవుతుంది ఆఫ్</string>
     <string name="double_tap_taps_no_app">ముందు ఏ యాప్ లేదు</string>
+    <string name="keycombo_menu_toggle_key_practice">కీబోర్డ్ ప్రాక్టీస్‌ను ఆన్ లేదా ఆఫ్ చేయండి</string>
+    <string name="key_practice_on">కీబోర్డ్ ప్రాక్టీస్ ఆన్</string>
+    <string name="key_practice_off">కీబోర్డ్ ప్రాక్టీస్ ఆఫ్</string>
+    <string name="key_practice_sandfly_key">SandFly కీ</string>
+    <string name="key_practice_title">కీబోర్డ్ ప్రాక్టీస్</string>
+    <string name="key_practice_summary">నొక్కిన ప్రతి కీని, దాని కమాండ్‌ను అమలు చేయకుండా చదువుతుంది. Back లేదా Escape దీన్ని ఆఫ్ చేస్తుంది.</string>
+    <string name="keycombo_menu_touch_hold_focus">ఫోకస్ చేసిన ఐటెమ్‌పై టచ్‌ను నొక్కి ఉంచండి</string>
+    <string name="touch_hold_held">టచ్ నొక్కి ఉంచబడింది</string>
+    <string name="touch_hold_lifted">టచ్ తీసివేయబడింది</string>
+    <string name="touch_hold_unavailable">అందుబాటులో లేదు</string>
+    <string name="touch_hold_no_focus">ఏ ఐటెమ్‌పైనా ఫోకస్ లేదు</string>
+    <string name="title_pref_speak_password_characters">పాస్‌వర్డ్ అక్షరాలను చదవడం</string>
+    <string name="summary_pref_speak_password_characters">SandFly కీబోర్డ్‌తో, పాస్‌వర్డ్ ఫీల్డ్‌లలో టైప్ చేసిన, తొలగించిన, కర్సర్ దాటిన అక్షరాలను చదువుతుంది</string>
+    <string name="shortcut_spell_password_field">పాస్‌వర్డ్ ఫీల్డ్ స్పెల్లింగ్ చెప్పండి</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">పాస్‌వర్డ్ ఫీల్డ్ కాదు</string>
+    <string name="sandfly_keyboard_password_not_available">పాస్‌వర్డ్ ఫీల్డ్ టెక్స్ట్ అందుబాటులో లేదు</string>
+    <string name="sandfly_keyboard_password_not_read">పాస్‌వర్డ్ ఫీల్డ్‌లలో చదవబడదు</string>
+    <string name="title_pref_voice_profile_play_sample">నమూనాను ప్లే చేయండి</string>
+    <string name="voice_profile_sample_text">ఇది ఈ వాయిస్ ప్రొఫైల్ యొక్క నమూనా.</string>
+    <string name="voice_profile_sample_failed">నమూనా ప్లే కాలేదు</string>
+    <string name="title_pref_speech_rate_step">స్పీచ్ రేట్ స్టెప్</string>
+    <string name="value_speech_rate_step_relative">రేట్‌లో <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">కాల్‌ను ముగించండి</string>
+    <string name="end_call_no_call">కాల్ లేదు</string>
+    <string name="end_call_permission">కాల్‌లను ముగించడానికి అనుమతి అవసరం</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">తదుపరి పేరాకు నావిగేట్ చేయండి, రెండవ కీ</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">మునుపటి పేరాకు నావిగేట్ చేయండి, రెండవ కీ</string>
+    <string name="title_pref_mute_key_dictates">టెక్స్ట్ ఫీల్డ్‌లలో మాట్లాడి టైప్ చేయడానికి మ్యూట్ కీని నొక్కి పట్టుకోండి</string>
+    <string name="title_pref_mute_key_press">మ్యూట్ కీ నొక్కడం</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">తదుపరి లింక్‌కు నావిగేట్ చేయండి, రెండవ కీ</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">మునుపటి లింక్‌కు నావిగేట్ చేయండి, రెండవ కీ</string>
+    <string name="keycombo_only_in_browse_mode">బ్రౌజింగ్ మోడ్‌లో మాత్రమే</string>
+    <string name="keycombo_keys_in_browse_mode">బ్రౌజింగ్ మోడ్‌లో <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">వేగవంతమైన సెర్చ్</string>
+    <string name="title_pref_fast_search_key">వేగవంతమైన సెర్చ్ కీ</string>
+    <string name="fast_search_key_off">ఆఫ్‌లో ఉంది</string>
+    <string name="title_pref_fast_search_wrap">ప్రారంభానికి తిరిగి వెళ్లు</string>
+    <string name="fast_search_key_left_alt">ఎడమ Alt</string>
+    <string name="fast_search_key_left_ctrl">ఎడమ Ctrl</string>
+    <string name="fast_search_key_right_ctrl">కుడి Ctrl</string>
+    <string name="fast_search_key_left_meta">ఎడమ Meta</string>
+    <string name="fast_search_key_right_meta">కుడి Meta</string>
 </resources>

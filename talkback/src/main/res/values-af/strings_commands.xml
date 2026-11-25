@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Gebare vir hierdie app</string>
     <string name="title_pref_shizuku_root_screen">Shizuku en root</string>
     <string name="title_pref_use_root">Gebruik root in plaas van Shizuku</string>
+    <string name="command_perform_gesture">Voer gebaar uit</string>
+    <string name="command_perform_gesture_message">Voer die gebaar uit.</string>
+    <string name="command_gesture_not_assignable">Kan nie <xliff:g id="gesture" example="Pinch">%1$s</xliff:g> toewys nie</string>
+    <string name="command_run">Voer opdrag uit</string>
+    <string name="command_add_to_sandfly_menu">Voeg by SandFly-kieslys</string>
+    <string name="command_remove_from_sandfly_menu">Verwyder uit SandFly-kieslys</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> by SandFly-kieslys gevoeg</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> uit SandFly-kieslys verwyder</string>
+    <string name="commands_search_hint">Soek opdragte</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> opdrag</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> opdragte</item>
+    </plurals>
 </resources>

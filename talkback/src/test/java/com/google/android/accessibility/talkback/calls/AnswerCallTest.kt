@@ -50,4 +50,12 @@ class AnswerCallTest {
   fun idle_isNotRinging() {
     assertFalse(AnswerCall.isRinging(TelephonyManager.CALL_STATE_IDLE, AudioManager.MODE_NORMAL))
   }
+
+  @Test
+  fun endCall_phoneCallAudio_isRingtoneOrInCall_notVoip() {
+    assertTrue(EndCall.isPhoneCallAudio(AudioManager.MODE_RINGTONE))
+    assertTrue(EndCall.isPhoneCallAudio(AudioManager.MODE_IN_CALL))
+    assertFalse(EndCall.isPhoneCallAudio(AudioManager.MODE_IN_COMMUNICATION))
+    assertFalse(EndCall.isPhoneCallAudio(AudioManager.MODE_NORMAL))
+  }
 }

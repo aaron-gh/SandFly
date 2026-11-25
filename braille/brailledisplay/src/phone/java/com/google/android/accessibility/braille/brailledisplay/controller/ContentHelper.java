@@ -122,7 +122,8 @@ public class ContentHelper {
             translationResult.text(),
             currentTranslationResult,
             translationResult,
-            wrapStrategy.getDisplayStart());
+            wrapStrategy.getDisplayStart(),
+            wrapStrategy.getDisplayEnd());
     this.isSplitParagraphs = isSplitParagraphs;
     if (max(selection.start, selection.end) >= translationResult.cells().size()) {
       translationResult = TranslationResult.appendOneEmptyCell(translationResult);
@@ -306,23 +307,20 @@ public class ContentHelper {
       Spanned newSpanned,
       TranslationResult oldTranslationResult,
       TranslationResult newTranslationResult,
-      int oldDisplayPosition) {
+      int oldDisplayStart,
+      int oldDisplayEnd) {
     if (oldSpanned == null || newSpanned == null) {
       return NO_CURSOR;
     }
-    // When the translation is unchanged, keep the display position as it is. Mapping it through
-    // the text positions and back can land on an earlier cell and move the display backward.
-    if (oldDisplayPosition >= 0
-        && oldTranslationResult.text().toString().equals(newTranslationResult.text().toString())
-        && oldTranslationResult
-            .brailleToTextPositions()
-            .equals(newTranslationResult.brailleToTextPositions())) {
-      return oldDisplayPosition;
-    }
-    // Map the current display start and past-the-end positions
-    // to the corresponding input positions.
-    int oldTextStart = displayToTextPosition(oldTranslationResult, oldDisplayPosition);
-    return textToDisplayPosition(newTranslationResult, oldTextStart);
+    return PanPositionMatcher.matchDisplayPosition(
+        oldSpanned,
+        oldTranslationResult.brailleToTextPositions(),
+        oldTranslationResult.textToBraillePositions(),
+        newSpanned,
+        newTranslationResult.brailleToTextPositions(),
+        newTranslationResult.textToBraillePositions(),
+        oldDisplayStart,
+        oldDisplayEnd);
   }
 
   private int getPanPosition(
@@ -330,7 +328,8 @@ public class ContentHelper {
       CharSequence newText,
       TranslationResult oldTranslationResult,
       TranslationResult newTranslationResult,
-      int oldDisplayPosition) {
+      int oldDisplayStart,
+      int oldDisplayEnd) {
     // Adjust the pan position according to the panning strategy.
     // Setting the position to -1 below means that the cursor position
     // returned by markCursor() will be used instead; if the pan
@@ -352,7 +351,8 @@ public class ContentHelper {
                   new SpannedString(newText),
                   oldTranslationResult,
                   newTranslationResult,
-                  oldDisplayPosition);
+                  oldDisplayStart,
+                  oldDisplayEnd);
         }
       }
       case CellsContent.PAN_CURSOR -> {}

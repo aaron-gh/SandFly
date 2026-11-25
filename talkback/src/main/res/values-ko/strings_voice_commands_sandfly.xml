@@ -218,4 +218,19 @@
         <item>{label} 활성화</item>
         <item>{label} 선택</item>
     </string-array>
+    <string name="shortcut_voice_editing">음성 편집 시작</string>
+    <string name="voice_editing_on">음성 편집 사용 중</string>
+    <string name="voice_editing_off">음성 편집 사용 안함</string>
+    <string name="title_pref_voice_editing_time_limit">음성 편집 시간 제한</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g>분</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g>분</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>편집 중지</item>
+        <item>음성 편집 중지</item>
+        <item>편집 종료</item>
+        <item>음성 편집 종료</item>
+        <item>음성 편집 끄기</item>
+    </string-array>
 </resources>

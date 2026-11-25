@@ -220,4 +220,20 @@
         <item>sélectionne {label}</item>
         <item>sélectionnez {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Démarrer la modification vocale</string>
+    <string name="voice_editing_on">Modification vocale activée</string>
+    <string name="voice_editing_off">Modification vocale désactivée</string>
+    <string name="title_pref_voice_editing_time_limit">Durée maximale de la modification vocale</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minute</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> minutes</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minutes</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>arrêter la modification</item>
+        <item>arrêter la modification vocale</item>
+        <item>terminer la modification</item>
+        <item>terminer la modification vocale</item>
+        <item>désactiver la modification vocale</item>
+    </string-array>
 </resources>

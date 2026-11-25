@@ -2774,4 +2774,47 @@
     <string name="double_tap_taps_on">Dobbelttrykk trykker på skjermen på</string>
     <string name="double_tap_taps_off">Dobbelttrykk trykker på skjermen av</string>
     <string name="double_tap_taps_no_app">Ingen app i forgrunnen</string>
+    <string name="keycombo_menu_toggle_key_practice">Slå tastaturøving på eller av</string>
+    <string name="key_practice_on">Tastaturøving på</string>
+    <string name="key_practice_off">Tastaturøving av</string>
+    <string name="key_practice_sandfly_key">SandFly-tast</string>
+    <string name="key_practice_title">Tastaturøving</string>
+    <string name="key_practice_summary">Leser opp hver tast som trykkes, og kommandoen dens i stedet for å kjøre den. Tilbake eller Escape slår den av.</string>
+    <string name="keycombo_menu_touch_hold_focus">Hold en berøring på det fokuserte elementet</string>
+    <string name="touch_hold_held">Berøring holdt</string>
+    <string name="touch_hold_lifted">Berøring løftet</string>
+    <string name="touch_hold_unavailable">Ikke tilgjengelig</string>
+    <string name="touch_hold_no_focus">Ingen elementer har fokus</string>
+    <string name="title_pref_speak_password_characters">Les opp passordtegn</string>
+    <string name="summary_pref_speak_password_characters">Med SandFly-tastaturet leses tegn som skrives, slettes og passeres, opp i passordfelt</string>
+    <string name="shortcut_spell_password_field">Stav passordfeltet</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Ikke et passordfelt</string>
+    <string name="sandfly_keyboard_password_not_available">Teksten i passordfeltet er ikke tilgjengelig</string>
+    <string name="sandfly_keyboard_password_not_read">Leses ikke opp i passordfelt</string>
+    <string name="title_pref_voice_profile_play_sample">Spill av eksempel</string>
+    <string name="voice_profile_sample_text">Dette er et eksempel på denne stemmeprofilen.</string>
+    <string name="voice_profile_sample_failed">Eksemplet ble ikke spilt av</string>
+    <string name="title_pref_speech_rate_step">Trinn for talehastighet</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> av hastigheten</string>
+    <string name="shortcut_end_call">Avslutt samtale</string>
+    <string name="end_call_no_call">Ingen samtale</string>
+    <string name="end_call_permission">Tillatelse kreves for å avslutte samtaler</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Gå til neste avsnitt, andre tast</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Gå til forrige avsnitt, andre tast</string>
+    <string name="title_pref_mute_key_dictates">Hold inne lydløs-tasten for å diktere i tekstfelt</string>
+    <string name="title_pref_mute_key_press">Trykk på lydløs-tasten</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Gå til neste link, andre tast</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Gå til forrige link, andre tast</string>
+    <string name="keycombo_only_in_browse_mode">Bare i surfemodus</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> i surfemodus</string>
+    <string name="title_pref_category_fast_search">Hurtigsøk</string>
+    <string name="title_pref_fast_search_key">Hurtigsøktast</string>
+    <string name="fast_search_key_off">Av</string>
+    <string name="title_pref_fast_search_wrap">Gå rundt</string>
+    <string name="fast_search_key_left_alt">Venstre Alt</string>
+    <string name="fast_search_key_left_ctrl">Venstre Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Høyre Ctrl</string>
+    <string name="fast_search_key_left_meta">Venstre Meta</string>
+    <string name="fast_search_key_right_meta">Høyre Meta</string>
 </resources>

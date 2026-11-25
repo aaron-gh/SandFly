@@ -57,7 +57,12 @@ class EditBufferUnicodeBrailleTest {
     }
 
   private val buffer =
-    object : EditBufferUnContracted(RuntimeEnvironment.getApplication(), unicodeBraille, speaker) {}
+    BrailleLanguages.Code.UNICODE_BRAILLE.createEditBuffer(
+      RuntimeEnvironment.getApplication(),
+      speaker,
+      unicodeBraille,
+      /* contractedMode= */ false,
+    )
 
   @Test
   fun cellsTypeTheirUnicodeBrailleCharacters() {
@@ -74,9 +79,35 @@ class EditBufferUnicodeBrailleTest {
   }
 
   @Test
-  fun spaceTypesASpace() {
+  fun spaceTypesTheBlankBrailleCell() {
     buffer.appendBraille(connection(TEXT), BrailleCharacter("1"))
     buffer.appendSpace(connection(TEXT))
+    assertEquals("\u2800", committed.toString())
+  }
+
+  @Test
+  fun eightDotTableSpaceTypesTheBlankBrailleCell() {
+    val eightDot =
+      BrailleLanguages.Code.UNICODE_BRAILLE_8.createEditBuffer(
+        RuntimeEnvironment.getApplication(),
+        speaker,
+        unicodeBraille,
+        /* contractedMode= */ false,
+      )
+    eightDot.appendSpace(connection(TEXT))
+    assertEquals("\u2800", committed.toString())
+  }
+
+  @Test
+  fun otherTablesTypeASpace() {
+    val english =
+      BrailleLanguages.Code.EN_NABCC.createEditBuffer(
+        RuntimeEnvironment.getApplication(),
+        speaker,
+        unicodeBraille,
+        /* contractedMode= */ false,
+      )
+    english.appendSpace(connection(TEXT))
     assertEquals(" ", committed.toString())
   }
 

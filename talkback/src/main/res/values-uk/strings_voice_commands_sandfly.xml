@@ -195,4 +195,21 @@
         <item>вибери {label}</item>
         <item>виберіть {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Почати голосове редагування</string>
+    <string name="voice_editing_on">Голосове редагування ввімкнено</string>
+    <string name="voice_editing_off">Голосове редагування вимкнено</string>
+    <string name="title_pref_voice_editing_time_limit">Ліміт часу голосового редагування</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> хвилина</item>
+        <item quantity="few"><xliff:g id="count" example="10">%d</xliff:g> хвилини</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> хвилин</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> хвилини</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>зупинити редагування</item>
+        <item>зупинити голосове редагування</item>
+        <item>завершити редагування</item>
+        <item>завершити голосове редагування</item>
+        <item>вимкнути голосове редагування</item>
+    </string-array>
 </resources>

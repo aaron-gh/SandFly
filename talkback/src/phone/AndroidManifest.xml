@@ -59,6 +59,14 @@
                 <data android:mimeType="text/plain" />
             </intent-filter>
         </activity>
+        <!-- View code, Edit code and New script from code: the main.lua of a script. -->
+        <activity
+            android:name="com.google.android.accessibility.talkback.scripting.ScriptCodeActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode|fontScale"
+            android:exported="false"
+            android:label="@string/script_code_view"
+            android:theme="@style/NotificationListTheme"
+            android:windowSoftInputMode="adjustResize" />
         <!-- SandFly's live wallpaper. Android keeps the current wallpaper's process running, so
              battery savers that stop background apps leave SandFly running. -->
         <service

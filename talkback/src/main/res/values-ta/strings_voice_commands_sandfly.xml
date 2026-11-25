@@ -171,4 +171,19 @@
         <item>{label} ஐ செயல்படுத்து</item>
         <item>{label} ஐத் தேர்ந்தெடு</item>
     </string-array>
+    <string name="shortcut_voice_editing">குரல் திருத்தத்தைத் தொடங்கு</string>
+    <string name="voice_editing_on">குரல் திருத்தம் இயக்கத்தில்</string>
+    <string name="voice_editing_off">குரல் திருத்தம் முடக்கத்தில்</string>
+    <string name="title_pref_voice_editing_time_limit">குரல் திருத்த நேர வரம்பு</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> நிமிடம்</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> நிமிடங்கள்</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>திருத்தத்தை நிறுத்து</item>
+        <item>குரல் திருத்தத்தை நிறுத்து</item>
+        <item>திருத்தத்தை முடி</item>
+        <item>குரல் திருத்தத்தை முடி</item>
+        <item>குரல் திருத்தத்தை முடக்கு</item>
+    </string-array>
 </resources>

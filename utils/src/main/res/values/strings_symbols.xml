@@ -301,6 +301,8 @@
     <string name="symbol_sukun" translatable="false">سُكُونْ</string>
     <!-- Spoken description for the braille symbol. [CHAR_LIMIT=30] -->
     <string name="symbol_braille">braille <xliff:g id="dots">%s</xliff:g></string>
+    <!-- Spoken description for the braille cell with no dots, U+2800, which Unicode braille text uses as a space. [CHAR_LIMIT=30] -->
+    <string name="symbol_braille_blank">blank braille cell</string>
     <!-- Spoken description for the braille dot pattern. [CHAR_LIMIT=8] -->
     <plurals name="dots">
         <item quantity="one">dot %s</item>

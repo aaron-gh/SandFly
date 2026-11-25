@@ -161,4 +161,19 @@
         <item>{label} elementini seç</item>
         <item>{label} bas</item>
     </string-array>
+    <string name="shortcut_voice_editing">Səsli redaktəni başladın</string>
+    <string name="voice_editing_on">Səsli redaktə aktivdir</string>
+    <string name="voice_editing_off">Səsli redaktə deaktivdir</string>
+    <string name="title_pref_voice_editing_time_limit">Səsli redaktə vaxt limiti</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> dəqiqə</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> dəqiqə</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>redaktəni dayandır</item>
+        <item>səsli redaktəni dayandır</item>
+        <item>redaktəni bitir</item>
+        <item>səsli redaktəni bitir</item>
+        <item>səsli redaktəni söndür</item>
+    </string-array>
 </resources>

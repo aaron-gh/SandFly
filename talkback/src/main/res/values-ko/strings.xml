@@ -2767,4 +2767,47 @@
     <string name="double_tap_taps_on">두 번 탭하면 화면 탭 켜짐</string>
     <string name="double_tap_taps_off">두 번 탭하면 화면 탭 꺼짐</string>
     <string name="double_tap_taps_no_app">앞에 표시된 앱 없음</string>
+    <string name="keycombo_menu_toggle_key_practice">키보드 연습 켜기 또는 끄기</string>
+    <string name="key_practice_on">키보드 연습 켜짐</string>
+    <string name="key_practice_off">키보드 연습 꺼짐</string>
+    <string name="key_practice_sandfly_key">SandFly 키</string>
+    <string name="key_practice_title">키보드 연습</string>
+    <string name="key_practice_summary">누른 키와 해당 명령을 실행하지 않고 읽습니다. 뒤로 또는 Esc 키를 누르면 꺼집니다.</string>
+    <string name="keycombo_menu_touch_hold_focus">포커스된 항목에서 터치 유지</string>
+    <string name="touch_hold_held">터치 유지됨</string>
+    <string name="touch_hold_lifted">터치 해제됨</string>
+    <string name="touch_hold_unavailable">사용할 수 없음</string>
+    <string name="touch_hold_no_focus">포커스가 있는 항목이 없습니다</string>
+    <string name="title_pref_speak_password_characters">비밀번호 문자 읽기</string>
+    <string name="summary_pref_speak_password_characters">SandFly 키보드 사용 시 비밀번호 필드에서 입력하거나 삭제하거나 커서가 지나간 문자를 읽습니다</string>
+    <string name="shortcut_spell_password_field">비밀번호 필드 철자 읽기</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">비밀번호 필드가 아닙니다</string>
+    <string name="sandfly_keyboard_password_not_available">비밀번호 필드 텍스트를 가져올 수 없습니다</string>
+    <string name="sandfly_keyboard_password_not_read">비밀번호 필드에서는 읽지 않습니다</string>
+    <string name="title_pref_voice_profile_play_sample">샘플 재생</string>
+    <string name="voice_profile_sample_text">이 음성 프로필의 샘플입니다.</string>
+    <string name="voice_profile_sample_failed">샘플이 재생되지 않음</string>
+    <string name="title_pref_speech_rate_step">말하기 속도 변경 단위</string>
+    <string name="value_speech_rate_step_relative">속도의 <xliff:g id="percent" example="10%">%1$s</xliff:g></string>
+    <string name="shortcut_end_call">통화 종료</string>
+    <string name="end_call_no_call">통화 없음</string>
+    <string name="end_call_permission">통화를 종료하려면 권한이 필요함</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">다음 단락으로 이동, 두 번째 키</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">이전 단락으로 이동, 두 번째 키</string>
+    <string name="title_pref_mute_key_dictates">텍스트 입력란에서 음소거 키를 길게 눌러 받아쓰기</string>
+    <string name="title_pref_mute_key_press">음소거 키 누르기</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">다음 링크로 이동, 두 번째 키</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">이전 링크로 이동, 두 번째 키</string>
+    <string name="keycombo_only_in_browse_mode">탐색 모드에서만</string>
+    <string name="keycombo_keys_in_browse_mode">탐색 모드에서 <xliff:g id="keys" example="B">%1$s</xliff:g></string>
+    <string name="title_pref_category_fast_search">빠른 검색</string>
+    <string name="title_pref_fast_search_key">빠른 검색 키</string>
+    <string name="fast_search_key_off">사용 안함</string>
+    <string name="title_pref_fast_search_wrap">순환 탐색</string>
+    <string name="fast_search_key_left_alt">왼쪽 Alt</string>
+    <string name="fast_search_key_left_ctrl">왼쪽 Ctrl</string>
+    <string name="fast_search_key_right_ctrl">오른쪽 Ctrl</string>
+    <string name="fast_search_key_left_meta">왼쪽 Meta</string>
+    <string name="fast_search_key_right_meta">오른쪽 Meta</string>
 </resources>

@@ -168,4 +168,19 @@
         <item>{label} کو فعال کریں</item>
         <item>{label} منتخب کریں</item>
     </string-array>
+    <string name="shortcut_voice_editing">صوتی ترمیم شروع کریں</string>
+    <string name="voice_editing_on">صوتی ترمیم آن</string>
+    <string name="voice_editing_off">صوتی ترمیم آف</string>
+    <string name="title_pref_voice_editing_time_limit">صوتی ترمیم کی وقت کی حد</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> منٹ</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> منٹ</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ترمیم روکیں</item>
+        <item>صوتی ترمیم روکیں</item>
+        <item>ترمیم ختم کریں</item>
+        <item>صوتی ترمیم ختم کریں</item>
+        <item>صوتی ترمیم بند کریں</item>
+    </string-array>
 </resources>

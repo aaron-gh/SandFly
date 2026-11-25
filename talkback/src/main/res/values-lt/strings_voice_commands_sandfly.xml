@@ -162,4 +162,21 @@
         <item>aktyvuok {label}</item>
         <item>pasirink {label}</item>
     </string-array>
+    <string name="shortcut_voice_editing">Pradėti redagavimą balsu</string>
+    <string name="voice_editing_on">Redagavimas balsu įjungtas</string>
+    <string name="voice_editing_off">Redagavimas balsu išjungtas</string>
+    <string name="title_pref_voice_editing_time_limit">Redagavimo balsu laiko riba</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> minutė</item>
+        <item quantity="few"><xliff:g id="count" example="2">%d</xliff:g> minutės</item>
+        <item quantity="many"><xliff:g id="count" example="10">%d</xliff:g> minutės</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> minučių</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>sustabdyti redagavimą</item>
+        <item>sustabdyti redagavimą balsu</item>
+        <item>baigti redagavimą</item>
+        <item>baigti redagavimą balsu</item>
+        <item>išjungti redagavimą balsu</item>
+    </string-array>
 </resources>

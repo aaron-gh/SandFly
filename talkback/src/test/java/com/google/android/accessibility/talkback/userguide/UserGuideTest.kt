@@ -83,4 +83,21 @@ class UserGuideTest {
     assertTrue(diag, html.contains("<p class=\"note\">Opmerking:"))
     assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
   }
+
+  @Test
+  @Config(sdk = [35], qualifiers = "pl-rPL")
+  fun buildsThePolishGuideWithItsGeneratedListsAndTranslatedReferences() {
+    val context = RuntimeEnvironment.getApplication() as Context
+    FormFactorUtils.initialize(context)
+    val html = UserGuide.build(context, KeyComboManager.create(context))
+    assertTrue(html.contains("<html lang=\"pl\""))
+    assertTrue(html.contains("<title>Podręcznik użytkownika SandFly</title>"))
+    assertTrue(html.contains("<h2 id=\"getting-started\">1 Pierwsze kroki</h2>"))
+    assertTrue(html.contains("<h3 id=\"appendix-gestures-sandfly\">A.1 "))
+    assertTrue(html.contains("<h3 id=\"appendix-keyboard-shortcuts-sandfly\">B.1 "))
+    assertTrue(html.contains("<h3 id=\"scripting-rules\">D.5 Reguły</h3>"))
+    assertTrue(html.contains("href=\"#item-files-macros\""))
+    assertTrue(html.contains("<p class=\"note\">Uwaga:"))
+    assertTrue(Regex("<td>[^<]+</td><td>[^<]+</td>").findAll(html).count() > 200)
+  }
 }

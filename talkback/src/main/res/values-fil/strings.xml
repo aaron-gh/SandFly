@@ -2774,4 +2774,47 @@
     <string name="double_tap_taps_on">Naka-on ang Tina-tap ng double tap ang screen</string>
     <string name="double_tap_taps_off">Naka-off ang Tina-tap ng double tap ang screen</string>
     <string name="double_tap_taps_no_app">Walang app sa harap</string>
+    <string name="keycombo_menu_toggle_key_practice">I-on o i-off ang pagsasanay sa keyboard</string>
+    <string name="key_practice_on">Naka-on ang pagsasanay sa keyboard</string>
+    <string name="key_practice_off">Naka-off ang pagsasanay sa keyboard</string>
+    <string name="key_practice_sandfly_key">SandFly key</string>
+    <string name="key_practice_title">Pagsasanay sa keyboard</string>
+    <string name="key_practice_summary">Binibigkas ang bawat pinindot na key at ang command nito sa halip na patakbuhin ito. Ino-off ito ng Bumalik o Escape.</string>
+    <string name="keycombo_menu_touch_hold_focus">Panatilihin ang pagpindot sa naka-focus na item</string>
+    <string name="touch_hold_held">Naka-hold ang pagpindot</string>
+    <string name="touch_hold_lifted">Inangat ang pagpindot</string>
+    <string name="touch_hold_unavailable">Hindi available</string>
+    <string name="touch_hold_no_focus">Walang item na naka-focus</string>
+    <string name="title_pref_speak_password_characters">Bigkasin ang mga character ng password</string>
+    <string name="summary_pref_speak_password_characters">Gamit ang SandFly keyboard, binibigkas ang mga character na na-type, na-delete at nadaanan ng cursor sa mga field ng password</string>
+    <string name="shortcut_spell_password_field">I-spell ang field ng password</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Hindi field ng password</string>
+    <string name="sandfly_keyboard_password_not_available">Hindi available ang text ng field ng password</string>
+    <string name="sandfly_keyboard_password_not_read">Hindi binabasa sa mga field ng password</string>
+    <string name="title_pref_voice_profile_play_sample">I-play ang sample</string>
+    <string name="voice_profile_sample_text">Ito ay sample ng profile ng boses na ito.</string>
+    <string name="voice_profile_sample_failed">Hindi na-play ang sample</string>
+    <string name="title_pref_speech_rate_step">Hakbang ng bilis ng pagsasalita</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> ng bilis</string>
+    <string name="shortcut_end_call">Tapusin ang tawag</string>
+    <string name="end_call_no_call">Walang tawag</string>
+    <string name="end_call_permission">Kailangan ng pahintulot para tapusin ang mga tawag</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Mag-navigate sa susunod na talata, pangalawang key</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Mag-navigate sa nakaraang talata, pangalawang key</string>
+    <string name="title_pref_mute_key_dictates">Pindutin nang matagal ang mute key para mag-dictate sa mga text field</string>
+    <string name="title_pref_mute_key_press">Pagpindot sa mute key</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Mag-navigate sa susunod na link, pangalawang key</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Mag-navigate sa nakaraang link, pangalawang key</string>
+    <string name="keycombo_only_in_browse_mode">Sa browse mode lang</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> sa browse mode</string>
+    <string name="title_pref_category_fast_search">Mabilis na paghahanap</string>
+    <string name="title_pref_fast_search_key">Key ng mabilis na paghahanap</string>
+    <string name="fast_search_key_off">Naka-off</string>
+    <string name="title_pref_fast_search_wrap">Bumalik sa simula</string>
+    <string name="fast_search_key_left_alt">Kaliwang Alt</string>
+    <string name="fast_search_key_left_ctrl">Kaliwang Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Kanang Ctrl</string>
+    <string name="fast_search_key_left_meta">Kaliwang Meta</string>
+    <string name="fast_search_key_right_meta">Kanang Meta</string>
 </resources>

@@ -2785,4 +2785,47 @@
     <string name="double_tap_taps_on">Atingerea dublă atinge ecranul: activat</string>
     <string name="double_tap_taps_off">Atingerea dublă atinge ecranul: dezactivat</string>
     <string name="double_tap_taps_no_app">Nicio aplicație în prim-plan</string>
+    <string name="keycombo_menu_toggle_key_practice">Activează sau dezactivează exersarea tastaturii</string>
+    <string name="key_practice_on">Exersarea tastaturii activată</string>
+    <string name="key_practice_off">Exersarea tastaturii dezactivată</string>
+    <string name="key_practice_sandfly_key">tasta SandFly</string>
+    <string name="key_practice_title">Exersarea tastaturii</string>
+    <string name="key_practice_summary">Rostește fiecare tastă apăsată și comanda ei, în loc să o execute. Înapoi sau Esc o dezactivează.</string>
+    <string name="keycombo_menu_touch_hold_focus">Menține o atingere pe elementul focalizat</string>
+    <string name="touch_hold_held">Atingere menținută</string>
+    <string name="touch_hold_lifted">Atingere eliberată</string>
+    <string name="touch_hold_unavailable">Indisponibil</string>
+    <string name="touch_hold_no_focus">Niciun element nu are focalizarea</string>
+    <string name="title_pref_speak_password_characters">Rostește caracterele parolei</string>
+    <string name="summary_pref_speak_password_characters">Cu tastatura SandFly, rostește caracterele introduse, șterse și parcurse cu cursorul în câmpurile de parolă</string>
+    <string name="shortcut_spell_password_field">Rostește pe litere câmpul de parolă</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Nu este un câmp de parolă</string>
+    <string name="sandfly_keyboard_password_not_available">Textul câmpului de parolă nu este disponibil</string>
+    <string name="sandfly_keyboard_password_not_read">Nu se citește în câmpurile de parolă</string>
+    <string name="title_pref_voice_profile_play_sample">Redă un exemplu</string>
+    <string name="voice_profile_sample_text">Acesta este un exemplu al acestui profil vocal.</string>
+    <string name="voice_profile_sample_failed">Exemplul nu a fost redat</string>
+    <string name="title_pref_speech_rate_step">Pasul vitezei vorbirii</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> din viteză</string>
+    <string name="shortcut_end_call">Încheie apelul</string>
+    <string name="end_call_no_call">Niciun apel</string>
+    <string name="end_call_permission">Este necesară permisiunea de a încheia apeluri</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Navighează la paragraful următor, a doua tastă</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navighează la paragraful anterior, a doua tastă</string>
+    <string name="title_pref_mute_key_dictates">Țineți apăsată tasta de dezactivare a sunetului pentru a dicta în câmpurile de text</string>
+    <string name="title_pref_mute_key_press">Apăsarea tastei de dezactivare a sunetului</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Navighează la linkul următor, a doua tastă</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navighează la linkul anterior, a doua tastă</string>
+    <string name="keycombo_only_in_browse_mode">Numai în modul de navigare</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> în modul de navigare</string>
+    <string name="title_pref_category_fast_search">Căutare rapidă</string>
+    <string name="title_pref_fast_search_key">Tasta pentru căutare rapidă</string>
+    <string name="fast_search_key_off">Dezactivată</string>
+    <string name="title_pref_fast_search_wrap">Navigare circulară</string>
+    <string name="fast_search_key_left_alt">Alt stânga</string>
+    <string name="fast_search_key_left_ctrl">Ctrl stânga</string>
+    <string name="fast_search_key_right_ctrl">Ctrl dreapta</string>
+    <string name="fast_search_key_left_meta">Meta stânga</string>
+    <string name="fast_search_key_right_meta">Meta dreapta</string>
 </resources>

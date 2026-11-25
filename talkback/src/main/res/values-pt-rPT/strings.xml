@@ -2784,4 +2784,47 @@
     <string name="double_tap_taps_on">Tocar duas vezes toca no ecrã ativado</string>
     <string name="double_tap_taps_off">Tocar duas vezes toca no ecrã desativado</string>
     <string name="double_tap_taps_no_app">Nenhuma app em primeiro plano</string>
+    <string name="keycombo_menu_toggle_key_practice">Ativar ou desativar a prática de teclado</string>
+    <string name="key_practice_on">Prática de teclado ativada</string>
+    <string name="key_practice_off">Prática de teclado desativada</string>
+    <string name="key_practice_sandfly_key">tecla do SandFly</string>
+    <string name="key_practice_title">Prática de teclado</string>
+    <string name="key_practice_summary">Diz cada tecla premida e o respetivo comando, em vez de o executar. Anterior ou Esc desativa-a.</string>
+    <string name="keycombo_menu_touch_hold_focus">Manter um toque no item em foco</string>
+    <string name="touch_hold_held">Toque mantido</string>
+    <string name="touch_hold_lifted">Toque solto</string>
+    <string name="touch_hold_unavailable">Indisponível</string>
+    <string name="touch_hold_no_focus">Nenhum item tem foco</string>
+    <string name="title_pref_speak_password_characters">Dizer caracteres da palavra-passe</string>
+    <string name="summary_pref_speak_password_characters">Com o teclado SandFly, diz os caracteres escritos, apagados e percorridos pelo cursor nos campos de palavra-passe</string>
+    <string name="shortcut_spell_password_field">Soletrar o campo de palavra-passe</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Não é um campo de palavra-passe</string>
+    <string name="sandfly_keyboard_password_not_available">Texto do campo de palavra-passe indisponível</string>
+    <string name="sandfly_keyboard_password_not_read">Não é lido em campos de palavra-passe</string>
+    <string name="title_pref_voice_profile_play_sample">Reproduzir amostra</string>
+    <string name="voice_profile_sample_text">Esta é uma amostra deste perfil de voz.</string>
+    <string name="voice_profile_sample_failed">Amostra não reproduzida</string>
+    <string name="title_pref_speech_rate_step">Passo da velocidade de voz</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> da velocidade</string>
+    <string name="shortcut_end_call">Terminar chamada</string>
+    <string name="end_call_no_call">Nenhuma chamada</string>
+    <string name="end_call_permission">Permissão necessária para terminar chamadas</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Navegar para o parágrafo seguinte, segunda tecla</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Navegar para o parágrafo anterior, segunda tecla</string>
+    <string name="title_pref_mute_key_dictates">Manter premida a tecla de silêncio para ditar em campos de texto</string>
+    <string name="title_pref_mute_key_press">Pressão da tecla de silêncio</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Navegar para o link seguinte, segunda tecla</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Navegar para o link anterior, segunda tecla</string>
+    <string name="keycombo_only_in_browse_mode">Apenas no modo de navegação</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> no modo de navegação</string>
+    <string name="title_pref_category_fast_search">Pesquisa rápida</string>
+    <string name="title_pref_fast_search_key">Tecla de pesquisa rápida</string>
+    <string name="fast_search_key_off">Desativado</string>
+    <string name="title_pref_fast_search_wrap">Navegação circular</string>
+    <string name="fast_search_key_left_alt">Alt esquerdo</string>
+    <string name="fast_search_key_left_ctrl">Ctrl esquerdo</string>
+    <string name="fast_search_key_right_ctrl">Ctrl direito</string>
+    <string name="fast_search_key_left_meta">Meta esquerdo</string>
+    <string name="fast_search_key_right_meta">Meta direito</string>
 </resources>

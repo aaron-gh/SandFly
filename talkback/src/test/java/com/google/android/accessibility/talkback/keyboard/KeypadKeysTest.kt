@@ -16,7 +16,10 @@
 
 package com.google.android.accessibility.talkback.keyboard
 
+import android.view.KeyEvent
+import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
+import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
 
@@ -51,5 +54,15 @@ class KeypadKeysTest {
     assertTrue(KeypadKeys.isCalculator("com.google.android.calculator"))
     assertTrue(KeypadKeys.isCalculator("com.sec.android.app.popupcalculator"))
     assertFalse(KeypadKeys.isCalculator("com.whatsapp"))
+  }
+
+  @Test
+  fun digitKeysCarryTheirKeyCodesDigit() {
+    assertEquals('0', KeypadKeys.digitOf(KeyEvent.KEYCODE_0))
+    assertEquals('5', KeypadKeys.digitOf(KeyEvent.KEYCODE_5))
+    assertEquals('9', KeypadKeys.digitOf(KeyEvent.KEYCODE_9))
+    assertEquals('7', KeypadKeys.digitOf(KeyEvent.KEYCODE_NUMPAD_7))
+    assertNull(KeypadKeys.digitOf(KeyEvent.KEYCODE_D))
+    assertNull(KeypadKeys.digitOf(KeyEvent.KEYCODE_NUMPAD_ADD))
   }
 }

@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">اس ایپ کے لیے اشارے</string>
     <string name="title_pref_shizuku_root_screen">Shizuku اور روٹ</string>
     <string name="title_pref_use_root">Shizuku کے بجائے روٹ استعمال کریں</string>
+    <string name="command_perform_gesture">اشارہ کریں</string>
+    <string name="command_perform_gesture_message">اشارہ کریں۔</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> تفویض نہیں کیا جا سکتا</string>
+    <string name="command_run">کمانڈ چلائیں</string>
+    <string name="command_add_to_sandfly_menu">SandFly مینو میں شامل کریں</string>
+    <string name="command_remove_from_sandfly_menu">SandFly مینو سے ہٹائیں</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly مینو میں شامل ہو گئی</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly مینو سے ہٹا دی گئی</string>
+    <string name="commands_search_hint">کمانڈز تلاش کریں</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> کمانڈ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> کمانڈز</item>
+    </plurals>
 </resources>

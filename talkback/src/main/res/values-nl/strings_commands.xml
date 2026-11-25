@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">Gebaren voor deze app</string>
     <string name="title_pref_shizuku_root_screen">Shizuku en root</string>
     <string name="title_pref_use_root">Root gebruiken in plaats van Shizuku</string>
+    <string name="command_perform_gesture">Gebaar uitvoeren</string>
+    <string name="command_perform_gesture_message">Voer het gebaar uit.</string>
+    <string name="command_gesture_not_assignable">Kan <xliff:g id="gesture" example="Pinch">%1$s</xliff:g> niet toewijzen</string>
+    <string name="command_run">Commando uitvoeren</string>
+    <string name="command_add_to_sandfly_menu">Toevoegen aan SandFly-menu</string>
+    <string name="command_remove_from_sandfly_menu">Verwijderen uit SandFly-menu</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> toegevoegd aan SandFly-menu</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> verwijderd uit SandFly-menu</string>
+    <string name="commands_search_hint">Commando\'s zoeken</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> commando</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> commando\'s</item>
+    </plurals>
 </resources>

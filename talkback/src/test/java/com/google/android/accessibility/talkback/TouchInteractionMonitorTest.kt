@@ -44,6 +44,7 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
 import java.time.Duration
 import com.google.android.accessibility.talkback.scripting.Scripts
 import com.google.android.accessibility.talkback.touchlock.TouchLock
+import com.google.android.accessibility.utils.gestures.GestureConfiguration
 import com.google.android.accessibility.utils.gestures.GestureManifold
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -254,6 +255,24 @@ class TouchInteractionMonitorTest {
       stateChangeAt(STATE_CLEAR, at + 701)
     }
     runUntil(3000)
+
+    assertEquals(listOf<String>(), service.touchExplorerResets)
+  }
+
+  @Test
+  fun fastTypingWhoseTouchesOverlapLeavesTheTouchExplorerAsItIs() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 300f, 1800f, 1)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 10)
+    for (i in 1..4) {
+      val at = i * 200L
+      // The finger lifts, and the next key's finger goes down before the touch ends, so the touch
+      // ends in touch exploration with Android reporting the new finger.
+      stateChangeAt(STATE_TOUCH_INTERACTING, at)
+      touchAt(ACTION_DOWN, 300f + i * 50f, 1800f, at + 20)
+      stateChangeAt(STATE_TOUCH_EXPLORING, at + 30)
+    }
+    runUntil(1000)
 
     assertEquals(listOf<String>(), service.touchExplorerResets)
   }
@@ -516,6 +535,68 @@ class TouchInteractionMonitorTest {
     runUntil(500)
 
     assertEquals(listOf(GESTURE_DOUBLE_TAP), service.gestures)
+  }
+
+  /**
+   * One tap at 0-80 ms with a [timeMs] time between one-finger taps. Its touch exploration starts
+   * and ends, and Android ends the touch interaction, by 340 ms.
+   */
+  private fun tapExploredBeforeTheInteractionEnds(timeMs: Int) {
+    GestureConfiguration.setMultiTapTimeoutMs(timeMs)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 160f, 200f, 0)
+    touchAt(ACTION_UP, 160f, 200f, 80)
+    stateChangeAt(STATE_TOUCH_EXPLORING, 335)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 336)
+    stateChangeAt(STATE_CLEAR, 337)
+    runUntil(340)
+  }
+
+  @Test
+  fun tapIsExploredBeforeAndroidEndsTheTouchInteractionWithALongTimeBetweenTaps() {
+    try {
+      // Android ends the interaction the system double-tap timeout, 300 ms, after the lift.
+      tapExploredBeforeTheInteractionEnds(2000)
+
+      assertEquals(listOf(mainThread), reporter.requests)
+      assertEquals(1, service.tapExplorations)
+    } finally {
+      GestureConfiguration.setMultiTapTimeoutMs(GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS)
+    }
+  }
+
+  @Test
+  fun secondTapAfterAndroidEndsTheTouchInteractionMakesADoubleTapWithinALongTimeBetweenTaps() {
+    try {
+      tapExploredBeforeTheInteractionEnds(2000)
+      stateChangeAt(STATE_TOUCH_INTERACTING, 1000)
+      touchAt(ACTION_DOWN, 160f, 200f, 1000)
+      touchAt(ACTION_UP, 160f, 200f, 1060)
+      runUntil(1100)
+
+      assertEquals(listOf(GESTURE_DOUBLE_TAP), service.gestures)
+      assertEquals(1, service.tapExplorations)
+    } finally {
+      GestureConfiguration.setMultiTapTimeoutMs(GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS)
+    }
+  }
+
+  @Test
+  fun swipeSoonAfterATapIsASwipeWithALongTimeBetweenTaps() {
+    try {
+      tapExploredBeforeTheInteractionEnds(2000)
+      stateChangeAt(STATE_TOUCH_INTERACTING, 1000)
+      touchAt(ACTION_DOWN, 40f, 200f, 1000)
+      for (step in 1..6) {
+        touchAt(ACTION_MOVE, 40f + 40f * step, 200f, 1010L + 15 * step)
+      }
+      touchAt(ACTION_UP, 280f, 200f, 1110)
+      runUntil(1200)
+
+      assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+    } finally {
+      GestureConfiguration.setMultiTapTimeoutMs(GestureConfiguration.DOUBLE_TAP_TIMEOUT_MS)
+    }
   }
 
   @Test

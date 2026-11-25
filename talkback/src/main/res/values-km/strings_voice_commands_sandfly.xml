@@ -163,4 +163,19 @@
         <item>ជ្រើសរើស {label}</item>
         <item>ធ្វើឱ្យ {label} សកម្ម</item>
     </string-array>
+    <string name="shortcut_voice_editing">ចាប់ផ្ដើមការកែសម្រួលដោយសំឡេង</string>
+    <string name="voice_editing_on">បានបើកការកែសម្រួលដោយសំឡេង</string>
+    <string name="voice_editing_off">បានបិទការកែសម្រួលដោយសំឡេង</string>
+    <string name="title_pref_voice_editing_time_limit">រយៈពេលកំណត់នៃការកែសម្រួលដោយសំឡេង</string>
+    <plurals name="voice_editing_minutes">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> នាទី</item>
+        <item quantity="other"><xliff:g id="count" example="10">%d</xliff:g> នាទី</item>
+    </plurals>
+    <string-array name="voice_editing_stop_words">
+        <item>ឈប់កែសម្រួល</item>
+        <item>ឈប់កែសម្រួលដោយសំឡេង</item>
+        <item>បញ្ចប់ការកែសម្រួល</item>
+        <item>បញ្ចប់ការកែសម្រួលដោយសំឡេង</item>
+        <item>បិទការកែសម្រួលដោយសំឡេង</item>
+    </string-array>
 </resources>

@@ -133,6 +133,8 @@ object NvdaKeymap : KeymapDefaults() {
     browsePair(R.string.keycombo_shortcut_navigate_next_aria_landmark, R.string.keycombo_shortcut_navigate_previous_aria_landmark, KeyEvent.KEYCODE_D)
     browsePair(R.string.keycombo_shortcut_navigate_next_unvisited_link, R.string.keycombo_shortcut_navigate_previous_unvisited_link, KeyEvent.KEYCODE_U)
     browsePair(R.string.keycombo_shortcut_navigate_next_visited_link, R.string.keycombo_shortcut_navigate_previous_visited_link, KeyEvent.KEYCODE_V)
+    // NVDA's text paragraph keys, besides Ctrl + Down and Up Arrow.
+    browsePair(R.string.keycombo_shortcut_navigate_next_paragraph_extra, R.string.keycombo_shortcut_navigate_previous_paragraph_extra, KeyEvent.KEYCODE_P)
     headingLevels()
   }
 }

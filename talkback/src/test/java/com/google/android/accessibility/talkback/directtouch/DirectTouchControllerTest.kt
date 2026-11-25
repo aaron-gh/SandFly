@@ -17,20 +17,25 @@
 package com.google.android.accessibility.talkback.directtouch
 
 import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.AccessibilityServiceInfo
 import android.content.pm.ActivityInfo
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
+import android.content.pm.ResolveInfo
+import android.content.pm.ServiceInfo
 import android.graphics.Rect
 import android.os.Binder
 import android.os.Bundle
 import android.os.Looper
 import android.os.SystemClock
+import android.provider.Settings
 import android.util.SparseArray
 import android.view.Display
 import android.view.accessibility.AccessibilityEvent
 import android.view.accessibility.AccessibilityEvent.WINDOWS_CHANGE_ADDED
 import android.view.accessibility.AccessibilityEvent.WINDOWS_CHANGE_REMOVED
+import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.Feedback
@@ -332,6 +337,49 @@ class DirectTouchControllerTest {
     )
   }
 
+  @Test
+  fun keyboardWithItsOwnServiceKeepsTheRegionThatServiceSets() {
+    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR_TAP, true).apply()
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
+
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
+
+    // The keyboard's service sets the region for it, which the navigation bar's would replace.
+    transcript.clear()
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(BRAILLE_KEYBOARD_PACKAGE),
+    )
+    assertTranscript()
+
+    windowsChange(KEYBOARD, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+    assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardWithoutAServiceKeepsTheNavigationBarRegion() {
+    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR_TAP, true).apply()
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf("com.example.other")
+
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(BRAILLE_KEYBOARD_PACKAGE),
+    )
+
+    assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
+  }
+
   // Screens
 
   private fun statusBar() =
@@ -346,6 +394,9 @@ class DirectTouchControllerTest {
   private fun game2() = window(GAME2, APPLICATION, "Game 2", SCREEN, GAME2_PACKAGE, active = true)
 
   private fun toast() = window(TOAST, SYSTEM, "Saved", Rect(200, 1900, 880, 2050), SYSTEM_UI)
+
+  private fun keyboard(rootPackage: String) =
+    window(KEYBOARD, INPUT_METHOD, "Keyboard", Rect(0, 80, 1080, 2220), rootPackage, layer = 3)
 
   private fun shade() =
     window(SHADE, SYSTEM, "Notification shade", SCREEN, SYSTEM_UI, active = true, layer = 9)
@@ -398,6 +449,34 @@ class DirectTouchControllerTest {
         }
       }
     shadowOf(service.packageManager).installPackage(info)
+  }
+
+  // Keyboards and services
+
+  private fun useKeyboard(packageName: String) {
+    Settings.Secure.putString(
+      service.contentResolver,
+      Settings.Secure.DEFAULT_INPUT_METHOD,
+      "$packageName/.Keyboard",
+    )
+  }
+
+  /** Lists an enabled accessibility service of [packageName]. */
+  private fun enableServiceOf(packageName: String) {
+    val info = AccessibilityServiceInfo()
+    ReflectionHelpers.setField(
+      info,
+      "mResolveInfo",
+      ResolveInfo().apply {
+        serviceInfo =
+          ServiceInfo().apply {
+            this.packageName = packageName
+            name = "$packageName.Service"
+          }
+      },
+    )
+    shadowOf(service.getSystemService(AccessibilityManager::class.java))
+      .setEnabledAccessibilityServiceList(listOf(info))
   }
 
   // Requests
@@ -472,6 +551,7 @@ class DirectTouchControllerTest {
     const val NAVIGATION_BAR = 2
     const val SHADE = 3
     const val TOAST = 4
+    const val KEYBOARD = 5
     const val GAME = 10
     const val GAME2 = 11
     const val GAME_PACKAGE = "com.example.game"
@@ -481,6 +561,9 @@ class DirectTouchControllerTest {
     const val SYSTEM_UI = "com.android.systemui"
     const val SYSTEM = AccessibilityWindowInfo.TYPE_SYSTEM
     const val APPLICATION = AccessibilityWindowInfo.TYPE_APPLICATION
+    const val INPUT_METHOD = AccessibilityWindowInfo.TYPE_INPUT_METHOD
+    const val BRAILLE_KEYBOARD_PACKAGE = "com.example.braillekeyboard"
+    const val NAVIGATION_BAR_REGION = "region [0,2220][1080,2340] complex=false"
     val SCREEN = Rect(0, 0, 1080, 2340)
   }
 }

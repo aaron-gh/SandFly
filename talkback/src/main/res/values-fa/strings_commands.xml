@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">اشاره‌ها برای این برنامه</string>
     <string name="title_pref_shizuku_root_screen">‏Shizuku و روت</string>
     <string name="title_pref_use_root">‏استفاده از روت به‌جای Shizuku</string>
+    <string name="command_perform_gesture">انجام اشاره</string>
+    <string name="command_perform_gesture_message">اشاره را انجام دهید.</string>
+    <string name="command_gesture_not_assignable">نمی‌توان <xliff:g id="gesture" example="Pinch">%1$s</xliff:g> را اختصاص داد</string>
+    <string name="command_run">اجرای فرمان</string>
+    <string name="command_add_to_sandfly_menu">افزودن به منو SandFly</string>
+    <string name="command_remove_from_sandfly_menu">حذف از منو SandFly</string>
+    <string name="command_added_to_sandfly_menu">«<xliff:g id="command" example="Describe image">%1$s</xliff:g>» به منو SandFly افزوده شد</string>
+    <string name="command_removed_from_sandfly_menu">«<xliff:g id="command" example="Describe image">%1$s</xliff:g>» از منو SandFly حذف شد</string>
+    <string name="commands_search_hint">جستجوی فرمان‌ها</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> فرمان</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> فرمان</item>
+    </plurals>
 </resources>

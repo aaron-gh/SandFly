@@ -17,6 +17,7 @@
 package com.google.android.accessibility.talkback.directtouch
 
 import android.accessibilityservice.AccessibilityService
+import android.accessibilityservice.AccessibilityServiceInfo
 import android.annotation.SuppressLint
 import android.content.BroadcastReceiver
 import android.content.ComponentName
@@ -33,8 +34,10 @@ import android.os.Looper
 import android.os.SystemClock
 import android.os.VibrationEffect
 import android.os.Vibrator
+import android.provider.Settings
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
+import android.view.accessibility.AccessibilityManager
 import android.view.accessibility.AccessibilityNodeInfo
 import android.view.accessibility.AccessibilityWindowInfo
 import androidx.core.content.ContextCompat
@@ -477,13 +480,20 @@ constructor(
    * While direct touch is off, keeps the navigation bar in the passthrough region if tap to
    * activate navigation bar buttons is on, and a keyboard in the direct touch list while it shows,
    * and takes them out again once they aren't. The region is sent again on every look, because
-   * other services can clear the shared one.
+   * other services can clear the shared one, except while a keyboard with an accessibility service
+   * of its own is shown.
    */
   private fun updatePartRegion(
     windows: List<AccessibilityWindowInfo>,
     navBarDirect: Boolean,
     keyboards: List<AccessibilityWindowInfo>,
   ) {
+    if (navBarDirect && keyboardHasOwnService(windows, keyboards)) {
+      // The system keeps one passthrough region for all services. The keyboard's own accessibility
+      // service may have set one so that the keyboard gets touches directly, as some braille
+      // keyboards do, and the navigation bar's would replace it. The region already sent stays.
+      return
+    }
     val parts = (if (navBarDirect) navigationBarBounds(windows) else emptyList()) + keyboards.map(::boundsOf)
     if (parts.isNotEmpty()) {
       val region = Region()
@@ -494,6 +504,31 @@ constructor(
       clearRegion()
       partRegionSent = false
     }
+  }
+
+  /**
+   * Whether a keyboard is shown that isn't in [keyboards], the direct touch list's, and whose app
+   * has an enabled accessibility service of its own, which may set the passthrough region for it.
+   */
+  private fun keyboardHasOwnService(
+    windows: List<AccessibilityWindowInfo>,
+    keyboards: List<AccessibilityWindowInfo>,
+  ): Boolean {
+    if (windows.none { it.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD && it !in keyboards }) {
+      return false
+    }
+    val keyboard =
+      Settings.Secure.getString(service.contentResolver, Settings.Secure.DEFAULT_INPUT_METHOD)
+        ?.let { ComponentName.unflattenFromString(it)?.packageName }
+        ?: return false
+    if (keyboard == service.packageName) {
+      return false
+    }
+    return service
+      .getSystemService(AccessibilityManager::class.java)
+      ?.getEnabledAccessibilityServiceList(AccessibilityServiceInfo.FEEDBACK_ALL_MASK)
+      .orEmpty()
+      .any { it.resolveInfo?.serviceInfo?.packageName == keyboard }
   }
 
   /**

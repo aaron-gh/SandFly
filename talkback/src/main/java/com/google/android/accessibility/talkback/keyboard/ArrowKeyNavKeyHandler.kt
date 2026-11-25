@@ -35,7 +35,10 @@ class ArrowKeyNavKeyHandler(private val context: Context, private val callbacks:
     /** Runs the command saved as [command], including turning arrow key navigation off. */
     fun perform(command: String)
 
-    /** Whether the focused input is a text field being edited. */
+    /**
+     * Whether a text field is being edited, so that single arrow keys go to it. A text field that
+     * SandFly focus moved to isn't, until it is activated or typed into.
+     */
     fun isEditingText(): Boolean
   }
 

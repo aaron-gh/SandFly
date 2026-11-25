@@ -134,6 +134,6 @@ Some apps and keyboards speak by themselves, such as an assistant that speaks it
 - **Speak only focus moved by the user while an assistant or call plays audio**: does the same in all apps while another app plays audio as an assistant or a call. Focus that you move is still spoken. Off by default.
 - **Keyboards with their own speech**: while a keyboard in this list is shown, SandFly doesn't speak its keys, the text typed or deleted, or the cursor moving in the edit field. Gestures and commands still work, and moving through text with reading controls is still spoken. Choose **Add keyboard** to add one.
 
-SandFly never speaks the announcements, live region changes or window changes of com.oplus.viewtalk, an accessibility service on realme and OPPO phones that sends image descriptions such as "Image may contain…".
+SandFly never speaks the announcements, live region changes, window changes, toasts or notifications of com.oplus.viewtalk, an accessibility service on realme and OPPO phones that sends image descriptions such as "Image may contain…".
 
 The **Speak only focus moved by the user** reading control changes the first setting. Its command turns the setting off, or back on with **In chosen apps** when there are chosen apps and **In all apps** otherwise. The reading control isn't in the reading controls by default. See [](#commands).

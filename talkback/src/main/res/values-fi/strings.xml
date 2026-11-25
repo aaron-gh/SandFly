@@ -2774,4 +2774,47 @@
     <string name="double_tap_taps_on">Kaksoisnapautus napauttaa näyttöä päällä</string>
     <string name="double_tap_taps_off">Kaksoisnapautus napauttaa näyttöä pois päältä</string>
     <string name="double_tap_taps_no_app">Ei sovellusta etualalla</string>
+    <string name="keycombo_menu_toggle_key_practice">Näppäimistöharjoittelu päälle tai pois</string>
+    <string name="key_practice_on">Näppäimistöharjoittelu päällä</string>
+    <string name="key_practice_off">Näppäimistöharjoittelu pois päältä</string>
+    <string name="key_practice_sandfly_key">SandFly-näppäin</string>
+    <string name="key_practice_title">Näppäimistöharjoittelu</string>
+    <string name="key_practice_summary">Sanoo jokaisen painetun näppäimen ja sen komennon suorittamatta sitä. Takaisin tai Esc poistaa sen käytöstä.</string>
+    <string name="keycombo_menu_touch_hold_focus">Pidä kosketus valitussa kohteessa</string>
+    <string name="touch_hold_held">Kosketus pidossa</string>
+    <string name="touch_hold_lifted">Kosketus nostettu</string>
+    <string name="touch_hold_unavailable">Ei käytettävissä</string>
+    <string name="touch_hold_no_focus">Mikään kohde ei ole korostettuna</string>
+    <string name="title_pref_speak_password_characters">Sano salasanan merkit</string>
+    <string name="summary_pref_speak_password_characters">SandFly-näppäimistöä käytettäessä sanoo salasanakentissä kirjoitetut, poistetut ja ohitetut merkit</string>
+    <string name="shortcut_spell_password_field">Tavaa salasanakenttä</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Ei salasanakenttä</string>
+    <string name="sandfly_keyboard_password_not_available">Salasanakentän teksti ei ole käytettävissä</string>
+    <string name="sandfly_keyboard_password_not_read">Ei lueta salasanakentissä</string>
+    <string name="title_pref_voice_profile_play_sample">Toista näyte</string>
+    <string name="voice_profile_sample_text">Tämä on tämän ääniprofiilin näyte.</string>
+    <string name="voice_profile_sample_failed">Näytettä ei toistettu</string>
+    <string name="title_pref_speech_rate_step">Puhenopeuden muutosaskel</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> nopeudesta</string>
+    <string name="shortcut_end_call">Lopeta puhelu</string>
+    <string name="end_call_no_call">Ei puhelua</string>
+    <string name="end_call_permission">Puhelujen lopettaminen vaatii käyttöoikeuden</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Siirry seuraavaan kappaleeseen, toinen näppäin</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Siirry edelliseen kappaleeseen, toinen näppäin</string>
+    <string name="title_pref_mute_key_dictates">Pidä mykistysnäppäintä painettuna sanellaksesi tekstikenttiin</string>
+    <string name="title_pref_mute_key_press">Mykistysnäppäimen painallus</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Siirry seuraavaan linkkiin, toinen näppäin</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Siirry edelliseen linkkiin, toinen näppäin</string>
+    <string name="keycombo_only_in_browse_mode">Vain selaustilassa</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> selaustilassa</string>
+    <string name="title_pref_category_fast_search">Pikahaku</string>
+    <string name="title_pref_fast_search_key">Pikahakunäppäin</string>
+    <string name="fast_search_key_off">Pois päältä</string>
+    <string name="title_pref_fast_search_wrap">Kierrä alkuun</string>
+    <string name="fast_search_key_left_alt">Vasen Alt</string>
+    <string name="fast_search_key_left_ctrl">Vasen Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Oikea Ctrl</string>
+    <string name="fast_search_key_left_meta">Vasen Meta</string>
+    <string name="fast_search_key_right_meta">Oikea Meta</string>
 </resources>

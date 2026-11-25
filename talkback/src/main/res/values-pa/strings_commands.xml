@@ -82,4 +82,17 @@
     <string name="shortcut_app_gestures_for_app">ਇਸ ਐਪ ਲਈ ਇਸ਼ਾਰੇ</string>
     <string name="title_pref_shizuku_root_screen">Shizuku ਅਤੇ ਰੂਟ</string>
     <string name="title_pref_use_root">Shizuku ਦੀ ਥਾਂ ਰੂਟ ਵਰਤੋ</string>
+    <string name="command_perform_gesture">ਇਸ਼ਾਰਾ ਕਰੋ</string>
+    <string name="command_perform_gesture_message">ਹੁਣ ਇਸ਼ਾਰਾ ਕਰੋ।</string>
+    <string name="command_gesture_not_assignable"><xliff:g id="gesture" example="Pinch">%1$s</xliff:g> ਨੂੰ ਨਿਰਧਾਰਤ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ</string>
+    <string name="command_run">ਕਮਾਂਡ ਚਲਾਓ</string>
+    <string name="command_add_to_sandfly_menu">SandFly ਮੀਨੂ ਵਿੱਚ ਸ਼ਾਮਲ ਕਰੋ</string>
+    <string name="command_remove_from_sandfly_menu">SandFly ਮੀਨੂ ਵਿੱਚੋਂ ਹਟਾਓ</string>
+    <string name="command_added_to_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly ਮੀਨੂ ਵਿੱਚ ਸ਼ਾਮਲ ਕੀਤੀ ਗਈ</string>
+    <string name="command_removed_from_sandfly_menu"><xliff:g id="command" example="Describe image">%1$s</xliff:g> SandFly ਮੀਨੂ ਵਿੱਚੋਂ ਹਟਾਈ ਗਈ</string>
+    <string name="commands_search_hint">ਕਮਾਂਡਾਂ ਖੋਜੋ</string>
+    <plurals name="commands_search_results">
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> ਕਮਾਂਡ</item>
+        <item quantity="other"><xliff:g id="count" example="12">%d</xliff:g> ਕਮਾਂਡਾਂ</item>
+    </plurals>
 </resources>

@@ -2785,4 +2785,47 @@
     <string name="double_tap_taps_on">Dvostruki dodir dodiruje zaslon uključeno</string>
     <string name="double_tap_taps_off">Dvostruki dodir dodiruje zaslon isključeno</string>
     <string name="double_tap_taps_no_app">Nema aplikacije u prvom planu</string>
+    <string name="keycombo_menu_toggle_key_practice">Uključi ili isključi vježbu tipkovnice</string>
+    <string name="key_practice_on">Vježba tipkovnice uključena</string>
+    <string name="key_practice_off">Vježba tipkovnice isključena</string>
+    <string name="key_practice_sandfly_key">tipka SandFlya</string>
+    <string name="key_practice_title">Vježba tipkovnice</string>
+    <string name="key_practice_summary">Izgovara svaku pritisnutu tipku i njezinu naredbu umjesto da je izvrši. Isključuje se tipkom Natrag ili Esc.</string>
+    <string name="keycombo_menu_touch_hold_focus">Zadrži dodir na fokusiranoj stavci</string>
+    <string name="touch_hold_held">Dodir zadržan</string>
+    <string name="touch_hold_lifted">Dodir otpušten</string>
+    <string name="touch_hold_unavailable">Nije dostupno</string>
+    <string name="touch_hold_no_focus">Nijedna stavka nije fokusirana</string>
+    <string name="title_pref_speak_password_characters">Izgovaraj znakove zaporke</string>
+    <string name="summary_pref_speak_password_characters">Uz SandFly tipkovnicu izgovara znakove upisane, izbrisane i prijeđene kursorom u poljima zaporke</string>
+    <string name="shortcut_spell_password_field">Slovkanje polja za zaporku</string>
+    <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
+    <string name="sandfly_keyboard_not_password_field">Ovo nije polje za zaporku</string>
+    <string name="sandfly_keyboard_password_not_available">Tekst polja za zaporku nije dostupan</string>
+    <string name="sandfly_keyboard_password_not_read">Ne čita se u poljima zaporke</string>
+    <string name="title_pref_voice_profile_play_sample">Reproduciraj uzorak</string>
+    <string name="voice_profile_sample_text">Ovo je uzorak ovog glasovnog profila.</string>
+    <string name="voice_profile_sample_failed">Uzorak nije reproduciran</string>
+    <string name="title_pref_speech_rate_step">Korak brzine govora</string>
+    <string name="value_speech_rate_step_relative"><xliff:g id="percent" example="10%">%1$s</xliff:g> brzine</string>
+    <string name="shortcut_end_call">Završi poziv</string>
+    <string name="end_call_no_call">Nema poziva</string>
+    <string name="end_call_permission">Potrebno je dopuštenje za završavanje poziva</string>
+    <string name="keycombo_menu_navigate_next_paragraph_second_key">Prelazak na sljedeći odlomak, druga tipka</string>
+    <string name="keycombo_menu_navigate_previous_paragraph_second_key">Prelazak na prethodni odlomak, druga tipka</string>
+    <string name="title_pref_mute_key_dictates">Držite tipku za isključivanje zvuka za diktiranje u tekstnim poljima</string>
+    <string name="title_pref_mute_key_press">Pritisak tipke za isključivanje zvuka</string>
+    <string name="keycombo_menu_navigate_next_link_second_key">Prelazak na sljedeću vezu, druga tipka</string>
+    <string name="keycombo_menu_navigate_previous_link_second_key">Prelazak na prethodnu vezu, druga tipka</string>
+    <string name="keycombo_only_in_browse_mode">Samo tijekom pregledavanja</string>
+    <string name="keycombo_keys_in_browse_mode"><xliff:g id="keys" example="B">%1$s</xliff:g> tijekom pregledavanja</string>
+    <string name="title_pref_category_fast_search">Brzo pretraživanje</string>
+    <string name="title_pref_fast_search_key">Tipka za brzo pretraživanje</string>
+    <string name="fast_search_key_off">Isključeno</string>
+    <string name="title_pref_fast_search_wrap">Kružno kretanje</string>
+    <string name="fast_search_key_left_alt">Lijevi Alt</string>
+    <string name="fast_search_key_left_ctrl">Lijevi Ctrl</string>
+    <string name="fast_search_key_right_ctrl">Desni Ctrl</string>
+    <string name="fast_search_key_left_meta">Lijevi Meta</string>
+    <string name="fast_search_key_right_meta">Desni Meta</string>
 </resources>

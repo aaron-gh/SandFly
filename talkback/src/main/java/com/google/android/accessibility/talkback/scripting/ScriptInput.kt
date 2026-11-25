@@ -390,6 +390,16 @@ object ScriptInput {
       }
       ?: name
 
+  /**
+   * Returns the key of the gesture setting of the gesture [name], without gesture layout or set, or
+   * null when no setting assigns it.
+   */
+  fun gestureBaseKey(context: Context, name: String): String? =
+    gestures[name]?.let { GestureShortcutMapping.getGestureBaseKey(context, it, false) }
+      ?: fingerprintGestures[name]?.let {
+        GestureShortcutMapping.getGestureBaseKey(context, it, true)
+      }
+
   fun parseKeys(text: String): Keys {
     val steps = text.split(',').map { it.trim() }
     require(steps.size <= 2) { "Keys are one combination, or two after each other: $text" }

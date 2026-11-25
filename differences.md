@@ -500,7 +500,7 @@ realme UI reports some volume sliders as not focusable and unlabeled, so TalkBac
 
 ### realme image descriptions
 
-On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes or window changes of com.oplus.viewtalk.
+On realme and OPPO phones, the accessibility service com.oplus.viewtalk sends announcements such as "Image may contain…", which TalkBack speaks. SandFly doesn't speak the announcements, live region changes, window changes, toasts or notifications of com.oplus.viewtalk.
 
 ### Telegram reply quotes
 
@@ -622,7 +622,7 @@ SandFly adds these commands, which you can assign to gestures, keyboard shortcut
 - **Lock screen**, **Power menu** and **Take screenshot**, in **System actions**.
 - **Turn magnification on or off**, in **System actions**, at the scale set in the Android magnification settings.
 - **Turn color inversion on or off**, in **System actions**. It needs Shizuku or root; without them, the Android accessibility settings open.
-- **Answer call**, in **System actions**, answers the ringing call, and announces "No incoming call" when none rings. The first time, SandFly requests permission to answer calls. While a call rings, only a volume key with **Answer call** assigned to one of its presses runs commands; Android keeps a volume key press that silences the ringer from SandFly.
+- **Answer call**, in **System actions**, answers the ringing call, and announces "No incoming call" when none rings. **End call**, in **System actions**, declines the ringing call or ends the call in progress, and announces "No call" when there is none. Phone calls go through Android; the first time, SandFly requests permission to answer calls. The calls of apps such as WhatsApp are answered, declined and ended with the buttons of their call notification; ending a call in progress needs notification access. While a phone call rings, only a volume key with **Answer call** or **End call** assigned to one of its presses runs commands; Android keeps a volume key press that silences the ringer from SandFly.
 - **Previous app**, in **System actions**, switches to the app before the one on screen. With Shizuku or root, SandFly reads the recent apps and opens that app, leaving out the launcher, and announces "No previous app" when there is none. Without them, it performs the Recents action of the system twice. **Overview**, performed again while the SandFly overview is on screen, opens the previous app the same way.
 - **Older app** and **Newer app**, in **System actions**, step through the recent apps. **Older app** opens the next older app and speaks its name; repeated, it goes further back. **Newer app** goes back toward the app where the steps started. The order of the apps is kept until 5 seconds pass without a step or an app that the steps didn't open comes to the front. SandFly announces "No older app" or "No newer app" at either end. They need Shizuku or root. Without them, **Older app** does what **Previous app** does, and **Newer app** announces "Recent apps unavailable".
 - **Write an app's name to open it**, in **System actions**, opens a writing surface on the whole screen. Write the start of the name of an app with one finger, a letter or several at a time, and SandFly speaks the first app whose name, or a later word of it, starts with what you wrote, and how many apps do: "WhatsApp, 1 of 3" for W H A. Case, spaces and accents don't count. Letters that leave no app are dropped, and SandFly announces "No apps". An app opens only when you open it, also when it is the only match. Swipe up with two fingers for the next app, down with two fingers for the previous app, left with two fingers to delete the last letter, and tap with two fingers to hear the app again. Swipe right with two fingers to switch between the language of the device and English, for app names in Latin letters. Double-tap with one finger to open the app, or swipe down with three fingers to open it in split screen. A tap closes the surface, and so do 10 seconds without a touch. Not on watches.
@@ -1261,6 +1261,14 @@ These commands, in the **Activation** category, leave keys to the app:
 - **Pass keys without the SandFly key to this app**: the app shown receives every key pressed without the SandFly key, such as the arrow keys and the browse mode letters, until you run the command again in that app. SandFly keeps the choice for each app.
 - **Turn SandFly keyboard input on or off**: every key goes to Android, shortcuts with the SandFly key too, until you press the shortcut of this command again. Keyboard input is on again when SandFly restarts.
 
+### Keyboard practice
+
+**Turn keyboard practice on or off**, in the **SandFly** category, and **Keyboard shortcuts** > **Keyboard practice** turn on keyboard practice, as NVDA's input help: SandFly says each key pressed, with the modifier keys held, and the command its keys run in the keymap in use, and runs nothing; no key reaches the app. The SandFly key pressed alone is also said as the SandFly key. Keys pressed twice, keys held down, two keys in a row and arrow key navigation are said with their commands. The shortcut again, Back or Escape turns it off. Its default shortcut is SandFly key + Shift + K in the keyboard phone keymaps.
+
+### Hold a touch on the focused item
+
+**Hold a touch on the focused item**, in the **Activation** category, puts a touch down on the middle of the part of the focused item on the screen, with touch passed through to the app, for as long as you choose: for buttons that act while a finger stays on them, such as the voice message button of Telegram, which records while the touch is down and sends the message when it lifts. While its keys are held, the touch stays down; releasing them lifts it. Keys released within half a second latch the touch, and SandFly says "Touch held"; the shortcut again, Back or Escape lifts it, and SandFly says "Touch lifted". Run from a gesture or the SandFly menu, the touch latches too. Other keys work as usual while the touch is held. The touch lifts after 10 minutes, when the item is no longer on the screen and when SandFly is suspended. Its default shortcut is SandFly key + V in the keyboard phone keymaps. It needs Android 11 or later.
+
 ### Keyboard phones
 
 On phones with a built-in keyboard that has no Ctrl, Meta or arrow keys, such as the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25, SandFly uses the **Keyboard phone keymap**. Its most used shortcuts are presses of keys that typing doesn't use, such as the SandFly key pressed alone for the next item and Alt pressed twice to play or pause media and answer calls. The **Keyboard phone single-key keymap** runs commands with single keys outside text fields, such as Space for the next item and H for the next heading. Shortcuts can also be a modifier key pressed alone, keys pressed twice, or keys held down. In both keymaps, Enter after SandFly focus moved activates the item, and arrow key navigation is on for the arrow keys that a trackpad sends. SandFly chooses a SandFly key that typing on the phone doesn't need, such as Right Shift on the Zinwa Q25.
@@ -1269,11 +1277,20 @@ While a physical keyboard is connected, **Typing** > **Physical keyboard** has:
 
 - **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, letter keys press the buttons of the lock screen PIN pad, the call keypad and calculators. On by default, shown only for such keyboards.
 - **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter type a new line. Off by default.
-- **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period** and **Android physical keyboard settings**.
+- **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters** and **Android physical keyboard settings**.
 
 ### SandFly keyboard
 
 The SandFly keyboard is an input method for physical keyboards that shows no keys on the screen. Keys type as they do without it. It adds exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places; held keys that type the Alt character or the capital letter of the key, set with **Typing** > **Physical keyboard** > **Held keys type**; **Search emoji** and **Choose a symbol**, which list characters by name while you type; double presses, set in **Typing** > **Physical keyboard** > **Double-press characters**, such as G pressed twice for ğ, and with **Double space types a period** on, a period for Space pressed twice after a word; and **Turn editing mode on or off**, in which single keys move the cursor and select, copy, cut and paste. To turn it on, go to **Typing** > **Physical keyboard** > **SandFly keyboard**. Not on watches and TVs.
+
+### Password characters
+
+TalkBack's **Speak passwords** setting was removed, and Android gives screen readers only bullets for password text. The SandFly keyboard reads the text of the field it types into, so SandFly can say the characters of password fields:
+
+- **Typing** > **Physical keyboard** > **Speak password characters**, off by default: in a password field being edited with the SandFly keyboard, each character typed, such as "capital P", "at" or "1", each character deleted with Backspace or Delete, such as "a deleted", and the character the cursor passes over, named as in other text fields. Pasted text, a cleared field and longer moves are spoken with bullets as before.
+- **Spell the password field**, in the **Text editing** category: spells the whole password field being edited with the position of each character, such as "1 capital P, 2 a, 3 at", whether or not the setting is on. Outside a password field it says "Not a password field". Its default shortcut is SandFly key + Y in the keyboard phone keymaps.
+
+The characters are kept out of the speech history, **Repeat last spoken phrase** and **Copy last spoken phrase**, and only their number is logged. In editing mode, R and C no longer say the text of a password field.
 
 ## Braille keyboard
 
@@ -1301,7 +1318,7 @@ The braille languages include Mongolian, uncontracted and contracted, from the l
 
 ### Unicode braille
 
-**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
+**Unicode Braille** and **Unicode 8-dot Braille** type each cell as its Unicode braille character, from U+2800 to U+28FF, such as ⠞⠡, on the braille keyboard and on a braille display. A space is the blank braille cell U+2800, which SandFly speaks as "blank braille cell" wherever it is read. They are in **Add a language** > **Unicode Braille**, at the end of the list, and are for typing only: they aren't reading languages of braille displays, and switching to the next reading language skips them.
 
 ### Custom braille characters
 
@@ -1429,7 +1446,7 @@ With **Volume keys** > **Volume keys adjust sliders** on, the volume keys change
 
 **Volume keys** > **Volume up double press**, **Volume up triple press**, **Volume up long press**, and the same three for volume down, each run a command from the list of commands for gestures. All are unassigned by default. A key with no assigned press changes the volume at once, as usual. When a key has a double or triple press assigned, a single press changes the volume 0.3 seconds after the key is released, once no further press follows. When a key has a long press assigned, holding it runs the command instead of changing the volume repeatedly. **Volume keys** > **Volume key long press duration** sets how long a key is held for its long press: **System default**, or from 0.3 to 1 second.
 
-The presses don't run commands, and the keys change the volume as usual, while the screen is off, except on an always-on display that shows the lock screen; during a phone call or while an app plays call audio; while a finger is on the screen; during continuous reading; and when the key adjusts a slider or moves the cursor. Pressing both volume keys together runs no command, so that the accessibility shortcut still works. While a call rings, only a volume key with **Answer call** assigned to one of its presses runs commands. A press kept from Android changes the volume that Android chooses for the key: that of the media session playing, including the volume of a cast session, when SandFly has notification access, or else that of the media playing or the ringer.
+The presses don't run commands, and the keys change the volume as usual, while the screen is off, except on an always-on display that shows the lock screen; during a phone call or while an app plays call audio; while a finger is on the screen; during continuous reading; and when the key adjusts a slider or moves the cursor. Pressing both volume keys together runs no command, so that the accessibility shortcut still works. While a phone call rings, only a volume key with **Answer call** or **End call** assigned to one of its presses runs commands. A press kept from Android changes the volume that Android chooses for the key: that of the media session playing, including the volume of a cast session, when SandFly has notification access, or else that of the media playing or the ringer.
 
 ### Every volume key press handled by SandFly
 
@@ -1483,6 +1500,10 @@ Words such as "please" and "can you" are left out.
 ### Chains of commands
 
 A voice command can hold several commands, joined by "then", "and then", "after that" or "afterwards", such as "open Messages then call Sam". "And" joins commands too, when each part is a command. SandFly runs the commands one after another, with a short pause after each command that changes the screen, and stops at the first command that fails. To stop a chain, start another voice command and say "stop", "cancel", "quit" or "never mind".
+
+### Voice editing
+
+**Start voice editing**, a **Text editing** command without a default gesture, records voice commands for the focused text field one after another until it runs again, a stop phrase such as "stop editing" is said, focus leaves the field, or **Voice commands** > **Voice editing time limit** passes: 5, 10, 20 or 30 minutes, 10 by default. It runs only **Text editing** and **Navigate by text** commands, "type" and a text, the text editing voice commands of TalkBack, and custom voice commands for these commands or for macros. Speech is silenced while SandFly records, and recording starts again after SandFly's speech of the result ends. TalkBack records one voice command per gesture.
 
 ### Voice commands understood with AI
 
@@ -1610,6 +1631,10 @@ With Gemini, SandFly requests as little thinking as the model allows, and reques
 ### AI actions reading control
 
 The **AI actions** reading control, in the reading controls by default, runs **Describe screen**, **Speak screen description**, **Ask about screen**, **Describe image**, **Speak image description**, **Ask about image**, **Share image of focused item** and **Share screenshot**, and with SandFly Pro, **Start or stop AI agent task** and **Type AI agent task**. Swipe up or down to choose an action, then double-tap to run it. Double-tap runs the action that the reading control announced until focus moves. **AI actions to include**, after **AI actions** in **Reading controls**, chooses which actions the reading control offers; all are included by default. Actions that aren't available, such as **Describe screen** in a phone language that it doesn't support, are left out, and the reading control is hidden when none is available. It needs Android 11 or later.
+
+### AI service reading control
+
+The **AI service** reading control, off by default, switches **AI services** > **AI service** between the services that are set up with a swipe up or down, and says the name of the service. **None** and SandFly Pro without a licence aren't in it. With fewer than two services set up, it says so and changes nothing. **AI service: next value** and **AI service: previous value** in **Commands** do the same.
 
 ### On-device AI
 

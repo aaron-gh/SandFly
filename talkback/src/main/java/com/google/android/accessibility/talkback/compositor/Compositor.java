@@ -700,18 +700,28 @@ public class Compositor {
   /**
    * Whether the speech for {@code event} is left unsaid by {@link AppSpeechFilter}: focus an app
    * moved, an announcement, a live region or a window change in the apps the settings name, or
-   * keyboard keys and text editing while a keyboard with its own speech is shown, and app speech
-   * of the packages it always leaves unsaid.
+   * keyboard keys and text editing while a keyboard with its own speech is shown, and app speech,
+   * toasts and notifications of the packages it always leaves unsaid.
    */
   private static boolean isLeftUnsaid(int event, HandleEventOptions options) {
+    // The package that sent the event. An announcement can name a source node of another app.
+    @Nullable CharSequence eventPackage =
+        (options.eventObject == null) ? null : options.eventObject.getPackageName();
     AppSpeechFilter.@Nullable Source source = speechSource(event, options);
     if (source == null) {
-      return false;
+      return event == EVENT_TYPE_NOTIFICATION_STATE_CHANGED
+          && AppSpeechFilter.isIgnoredPackage(eventPackage);
     }
     // Only app speech can be left unsaid while the settings are at their defaults.
     boolean active = AppSpeechFilter.isActive();
     if (!active && source != AppSpeechFilter.Source.APP_SPEECH) {
       return false;
+    }
+    if (source == AppSpeechFilter.Source.APP_SPEECH
+        && eventPackage != null
+        && (AppSpeechFilter.alwaysMutes(source, eventPackage)
+            || (active && AppSpeechFilter.mutes(source, eventPackage)))) {
+      return true;
     }
     @Nullable CharSequence packageName = null;
     if (options.sourceNode != null) {
