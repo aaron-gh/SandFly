@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Imo-ishora trenajyori</string>
+    <string name="gesture_trainer_intro">Imo-ishoralar guruhini tanlang. Har bir mashq bitta imo-ishorani tasvirlaydi. Imo-ishorani <xliff:g id="tries">%1$d</xliff:g> marta bajaring; har bir urinish natijasi aytiladi. Oxirgi urinishdan keyin ekranda har bir urinish oʻlchovlari, nimani oʻzgartirish kerakligi va tegishli sozlamalar chiqadi.</string>
+    <string name="gesture_trainer_group_one_finger">Bir barmoq</string>
+    <string name="gesture_trainer_group_two_fingers">Ikki barmoq</string>
+    <string name="gesture_trainer_group_three_fingers">Uch barmoq</string>
+    <string name="gesture_trainer_group_four_fingers">Toʻrt barmoq</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Chimchilash, aylantirish va ishqalash</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> ta mashq</string>
+    <string name="gesture_trainer_close">Yopish</string>
+    <string name="gesture_trainer_no_detection">Imo-ishora trenajyori uchun Android 13 yoki undan yangi versiya kerak.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Oldinga-orqaga va burchakli imo-ishoralar chiqarib tashlandi: <xliff:g id="setting">%1$s</xliff:g> yoqilgan.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Ikki barmoq bilan surishlar chiqarib tashlandi: <xliff:g id="setting">%1$s</xliff:g> oʻchirilgan, shuning uchun ular ilovalarni aylantiradi.</string>
+    <string name="gesture_trainer_exercise_heading">Mashq <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Boshlash</string>
+    <string name="gesture_trainer_skip">Bu mashqni oʻtkazib yuborish</string>
+    <string name="gesture_trainer_back_to_groups">Guruhlarga qaytish</string>
+    <string name="gesture_trainer_go">Imo-ishorani ekranning istalgan joyida <xliff:g id="tries">%1$d</xliff:g> marta bajaring. Har bir teginish bitta urinish hisoblanadi.</string>
+    <string name="gesture_trainer_fingers_1">bir barmoq bilan</string>
+    <string name="gesture_trainer_fingers_2">yonma-yon, taxminan 1 sm oraliqdagi ikki barmoq bilan</string>
+    <string name="gesture_trainer_fingers_3">yonma-yon, biroz ochiq turgan uch barmoq bilan</string>
+    <string name="gesture_trainer_fingers_4">yonma-yon, biroz ochiq turgan toʻrt barmoq bilan</string>
+    <string name="gesture_trainer_direction_up">tepaga</string>
+    <string name="gesture_trainer_direction_down">pastga</string>
+    <string name="gesture_trainer_direction_left">chapga</string>
+    <string name="gesture_trainer_direction_right">oʻngga</string>
+    <string name="gesture_trainer_how_swipe">Ekranga <xliff:g id="fingers">%1$s</xliff:g> teging va kutmasdan <xliff:g id="direction">%2$s</xliff:g> toʻgʻri chiziq boʻylab taxminan 2–3 sm suring, keyin barmoqni koʻtaring. Darhol harakatlana boshlang: avval bir joyda turib qolgan barmoq teginib oʻrganishni boshlaydi.</string>
+    <string name="gesture_trainer_how_swipe_multi">Barmoqlarni bir vaqtda, ayni bir paytda qoʻying va hammasini bir xil yoʻnalishda harakatlantiring. Har bir barmoq butun vaqt davomida <xliff:g id="direction">%1$s</xliff:g> borishi kerak, shuning uchun chiziqni toʻgʻri tuting.</string>
+    <string name="gesture_trainer_how_back_and_forth">Ekranga bir barmoq bilan teging va <xliff:g id="first">%1$s</xliff:g> taxminan 2 sm suring, keyin koʻtarmasdan toʻgʻri <xliff:g id="second">%2$s</xliff:g> taxminan 2 sm qayting va koʻtaring. Buni bitta tez, silliq harakat bilan bajaring.</string>
+    <string name="gesture_trainer_how_angle">Ekranga <xliff:g id="fingers">%1$s</xliff:g> teging va <xliff:g id="first">%2$s</xliff:g> taxminan 2 sm suring, keyin koʻtarmasdan keskin burilib <xliff:g id="second">%3$s</xliff:g> taxminan 2 sm suring va koʻtaring. Burilish yoy emas, L harfi kabi keskin burchak boʻlsin.</string>
+    <string name="gesture_trainer_taps_1">bir marta</string>
+    <string name="gesture_trainer_taps_2">ikki marta</string>
+    <string name="gesture_trainer_taps_3">uch marta</string>
+    <string name="gesture_trainer_taps_4">toʻrt marta</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> teging. Barmoqlarni birga qoʻying va birga, tez, surmasdan koʻtaring.</string>
+    <string name="gesture_trainer_how_taps_quick">Teginishlar tez va bir joyda boʻlsin: keyingi teginish oldingisidan keyin <xliff:g id="gap">%1$d</xliff:g> ms ichida boʻlishi kerak.</string>
+    <string name="gesture_trainer_how_hold">Ekranga <xliff:g id="fingers">%1$s</xliff:g> bir vaqtda teging va surmasdan, qimirlatmasdan kamida <xliff:g id="hold">%2$d</xliff:g> ms ushlab turing.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Boshqa buyruq tayinlanmagan boʻlsa, bu imo-ishora SandFlyni oʻchiradi. Trenajyorda u hech narsani bajarmaydi.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> teging va oxirgi teginishda barmoqlarni ekranda kamida <xliff:g id="hold">%3$d</xliff:g> ms qimirlatmay qoldiring.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Bosh barmoq, koʻrsatkich barmoq va oʻrta barmoqdan foydalaning.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Koʻrsatkich va oʻrta barmoqni yonma-yon qoʻying, bosh barmoq va nomsiz barmoqni esa ikki tomonda bir necha santimetr uzoqroqqa qoʻying. Keyin toʻrtala barmoq uchini bitta nuqtaga yigʻing.</string>
+    <string name="gesture_trainer_how_pinch">Ekranga <xliff:g id="fingers">%1$d</xliff:g> ta barmoqni keng ochib qoʻying. Keyin ularni biror narsani olayotgandek bir-biriga qarab kamida 1 sm toʻgʻri yaqinlashtiring va ekrandan koʻtaring. Butun qoʻlni emas, faqat barmoqlarni harakatlantiring, yoy boʻylab emas.</string>
+    <string name="gesture_trainer_how_spread">Ekranga <xliff:g id="fingers">%1$d</xliff:g> ta barmoqni bir-biriga yaqin qoʻying. Keyin ularni kamida 1 sm toʻgʻri bir-biridan uzoqlashtiring va ekrandan koʻtaring. Butun qoʻlni emas, faqat barmoqlarni harakatlantiring, yoy boʻylab emas.</string>
+    <string name="gesture_trainer_clockwise">soat yoʻnalishi boʻyicha</string>
+    <string name="gesture_trainer_counterclockwise">soat miliga teskari</string>
+    <string name="gesture_trainer_how_rotate">Ekranga ikki barmoqni taxminan 2–3 sm oraliqda qoʻying va ularni oʻrtasi atrofida, murvat burayotgandek, <xliff:g id="way">%1$s</xliff:g> taxminan chorak aylanaga aylantiring. Keyin koʻtaring.</string>
+    <string name="gesture_trainer_how_scrub">Ekranga ikki barmoqni qoʻying va ularni biror narsani oʻchirayotgandek tez bir tomonga taxminan 2 sm surib, orqaga qaytaring, hammasi taxminan bir soniya ichida. Keyin koʻtaring.</string>
+    <string name="gesture_trainer_edge_bottom">pastki chetda</string>
+    <string name="gesture_trainer_edge_top_left">yuqori chetda, uning chap yarmida</string>
+    <string name="gesture_trainer_edge_top_right">yuqori chetda, uning oʻng yarmida</string>
+    <string name="gesture_trainer_edge_left_top">chap chetda, uning yuqori yarmida</string>
+    <string name="gesture_trainer_edge_left_bottom">chap chetda, uning pastki yarmida</string>
+    <string name="gesture_trainer_edge_right_top">oʻng chetda, uning yuqori yarmida</string>
+    <string name="gesture_trainer_edge_right_bottom">oʻng chetda, uning pastki yarmida</string>
+    <string name="gesture_trainer_edge_left">chap chetda</string>
+    <string name="gesture_trainer_edge_right">oʻng chetda</string>
+    <string name="gesture_trainer_edge_top">yuqori chetda</string>
+    <string name="gesture_trainer_how_edge">Bir barmoq bilan <xliff:g id="edge">%1$s</xliff:g>, chetdan koʻpi bilan <xliff:g id="edge_width">%2$d</xliff:g> mm masofada teging va ekran ichiga <xliff:g id="direction">%3$s</xliff:g> birinchi chiqillashgacha, taxminan <xliff:g id="distance">%4$d</xliff:g> mm suring. Keyin darhol koʻtaring: ikkinchi chiqillashdan keyin surish uzun surishga aylanadi.</string>
+    <string name="gesture_trainer_how_edge_long">Bir barmoq bilan <xliff:g id="edge">%1$s</xliff:g>, chetdan koʻpi bilan <xliff:g id="edge_width">%2$d</xliff:g> mm masofada teging va ekran ichiga <xliff:g id="direction">%3$s</xliff:g> birinchi chiqillashdan oʻtib ikkinchisigacha, taxminan <xliff:g id="distance">%4$d</xliff:g> mm suring. Keyin koʻtaring.</string>
+    <string name="gesture_trainer_how_along">Bir barmoqni <xliff:g id="edge">%1$s</xliff:g> boʻylab <xliff:g id="direction">%2$s</xliff:g> kamida <xliff:g id="distance">%3$d</xliff:g> mm suring.</string>
+    <string name="gesture_trainer_corner_top_left">yuqori chap</string>
+    <string name="gesture_trainer_corner_top_right">yuqori oʻng</string>
+    <string name="gesture_trainer_corner_bottom_left">pastki chap</string>
+    <string name="gesture_trainer_corner_bottom_right">pastki oʻng</string>
+    <string name="gesture_trainer_how_corner">Ekranning <xliff:g id="corner">%2$s</xliff:g> burchagiga <xliff:g id="taps">%1$s</xliff:g> teging. Barmoqni aynan burchakka, ikkala chetdan koʻpi bilan <xliff:g id="size">%3$d</xliff:g> mm masofada qoʻying va <xliff:g id="time">%4$d</xliff:g> ms ichida tez koʻtaring.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Burchaklar kattaroq boʻlsa, burchak yaqinidagi boshqaruv elementiga, masalan, yuqori chapdagi Orqaga tugmasiga teginish uning oʻrniga burchak imo-ishorasini bajarishi mumkin.</string>
+    <string name="gesture_trainer_rating_precise">tanildi, aniq</string>
+    <string name="gesture_trainer_rating_good">tanildi, yaxshi</string>
+    <string name="gesture_trainer_rating_borderline">tanildi, lekin chegaraga yaqin</string>
+    <string name="gesture_trainer_try_recognized">Urinish <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Urinish <xliff:g id="number">%1$d</xliff:g>: tanilmadi.</string>
+    <string name="gesture_trainer_try_other">Urinish <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> sifatida tanildi.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> tadan <xliff:g id="recognized">%2$d</xliff:g> tasi tanildi</string>
+    <string name="gesture_trainer_results_tries">Urinishlaringiz</string>
+    <string name="gesture_trainer_results_change">Nimani oʻzgartirish kerak</string>
+    <string name="gesture_trainer_results_close">Chegaraga yaqin</string>
+    <string name="gesture_trainer_results_all_good">Barcha urinishlar chegaralar ichida tanildi.</string>
+    <string name="gesture_trainer_results_settings">Yordam berishi mumkin boʻlgan sozlamalar</string>
+    <string name="gesture_trainer_next">Keyingi mashq</string>
+    <string name="gesture_trainer_repeat">Takrorlash</string>
+    <string name="gesture_trainer_finish">Tugatish</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> guruhidagi barcha mashqlarni tugatdingiz.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> sozlamasini oʻzgartirish</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms davom etdi</string>
+    <string name="gesture_trainer_measure_length">uzunligi <xliff:g id="cm">%1$.1f</xliff:g> sm</string>
+    <string name="gesture_trainer_measure_speed">soniyasiga <xliff:g id="speed">%1$.0f</xliff:g> sm</string>
+    <string name="gesture_trainer_measure_angle">toʻgʻri chiziqdan <xliff:g id="degrees">%1$.0f</xliff:g> daraja chetlanish</string>
+    <string name="gesture_trainer_measure_start">birinchi santimetr <xliff:g id="ms">%1$d</xliff:g> ms da</string>
+    <string name="gesture_trainer_measure_landing">barmoqlar <xliff:g id="ms">%1$d</xliff:g> ms farq bilan tegdi</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms lik teginish</string>
+    <string name="gesture_trainer_measure_gap">teginishlar orasida <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">barmoqlar <xliff:g id="mm">%1$.0f</xliff:g> mm siljidi</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> daraja burildi</string>
+    <string name="gesture_trainer_measure_corner">burchak chetlaridan <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_edge">chetdan <xliff:g id="mm">%1$.0f</xliff:g> mm da boshlandi</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Ekrandagi barmoqlar: <xliff:g id="wanted">%2$d</xliff:g> oʻrniga <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Barmoqlar <xliff:g id="ms">%1$d</xliff:g> ms farq bilan tegdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Barcha barmoqlar tegishidan oldin bitta barmoq koʻtarildi.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Barmoqlar <xliff:g id="ms">%1$d</xliff:g> ms farq bilan koʻtarildi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Barmoq juda uzoq qimirlamay turdi yoki boshida juda sekin harakatlandi, shuning uchun teginish teginib oʻrganishga aylandi.</string>
+    <string name="gesture_trainer_finding_slow_start">Birinchi santimetr <xliff:g id="ms">%1$d</xliff:g> ms davom etdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Barmoq <xliff:g id="ms">%1$d</xliff:g> ms sekinlashdi, har bir santimetr esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms davom etishi mumkin.</string>
+    <string name="gesture_trainer_finding_too_short">Harakat atigi <xliff:g id="mm">%1$.0f</xliff:g> mm boʻldi, u kamida <xliff:g id="limit">%2$.0f</xliff:g> mm boʻlishi kerak.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Barmoq <xliff:g id="direction">%1$s</xliff:g> keta boshladi.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Barmoqlar <xliff:g id="direction">%1$s</xliff:g> keta boshladi.</string>
+    <string name="gesture_trainer_finding_off_line">Yoʻl toʻgʻri chiziqdan <xliff:g id="degrees">%1$.0f</xliff:g> daraja chetlandi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Yoʻl <xliff:g id="wanted">%2$d</xliff:g> oʻrniga <xliff:g id="parts">%1$d</xliff:g> qismga egildi.</string>
+    <string name="gesture_trainer_finding_turn_missing">Burilish topilmadi.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Burilishdan keyin barmoq <xliff:g id="direction">%1$s</xliff:g> ketdi.</string>
+    <string name="gesture_trainer_finding_tap_moved">Teginish paytida barmoq <xliff:g id="mm">%1$.1f</xliff:g> mm siljidi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Teginish <xliff:g id="ms">%1$d</xliff:g> ms davom etdi, bu <xliff:g id="limit">%2$d</xliff:g> ms dan uzoq.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Oxirgi teginish <xliff:g id="ms">%1$d</xliff:g> ms ushlab turildi, u kamida <xliff:g id="limit">%2$d</xliff:g> ms boʻlishi kerak.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> oʻrniga <xliff:g id="taps">%1$d</xliff:g> ta teginish.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> oʻrniga <xliff:g id="taps">%1$d</xliff:g> ta teginish.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Teginishlar orasida <xliff:g id="ms">%1$d</xliff:g> ms oʻtdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Teginishlar bir-biridan <xliff:g id="mm">%1$.0f</xliff:g> mm uzoqda tushdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Barmoqlar atigi <xliff:g id="mm">%1$.0f</xliff:g> mm siljidi, ular kamida <xliff:g id="limit">%2$.0f</xliff:g> mm siljishi kerak.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Barmoqlar teskari tomonga harakatlandi.</string>
+    <string name="gesture_trainer_finding_moved_together">Butun qoʻl ekran boʻylab <xliff:g id="mm">%1$.0f</xliff:g> mm siljidi, bu barmoqlarning bir-biriga yaqinlashishi yoki uzoqlashishidan koʻp.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Barmoqlar atigi <xliff:g id="degrees">%1$.0f</xliff:g> daraja burildi, ular kamida <xliff:g id="limit">%2$.0f</xliff:g> daraja burilishi kerak.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Barmoqlar teskari tomonga burildi.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Birinchi harakat <xliff:g id="mm">%1$.0f</xliff:g> mm boʻldi, u kamida <xliff:g id="limit">%2$.0f</xliff:g> mm boʻlishi kerak.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Qaytish harakati <xliff:g id="mm">%1$.0f</xliff:g> mm boʻldi, u kamida <xliff:g id="limit">%2$.0f</xliff:g> mm boʻlishi kerak.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Ishqalash <xliff:g id="ms">%1$d</xliff:g> ms davom etdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Barmoq chetdan <xliff:g id="mm">%1$.0f</xliff:g> mm uzoqda tegdi, chetning kengligi esa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Barmoq chetning boshqa yarmidan boshlandi.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Barmoq <xliff:g id="mm">%1$.0f</xliff:g> mm surildi, u kamida <xliff:g id="limit">%2$.0f</xliff:g> mm surilishi kerak.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Surish juda uzun: barmoq ikkinchi chiqillashdan oʻtib ketdi, <xliff:g id="mm">%1$.0f</xliff:g> mm, ikkinchi chiqillash esa <xliff:g id="limit">%2$.0f</xliff:g> mm da.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Chiqillashgacha yetish <xliff:g id="ms">%1$d</xliff:g> ms davom etdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Surish yon tomonga <xliff:g id="degrees">%1$.0f</xliff:g> daraja ogʻdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Teginish burchak chetlaridan <xliff:g id="mm">%1$.0f</xliff:g> mm uzoqda tushdi, burchak esa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Burchakka teginish <xliff:g id="ms">%1$d</xliff:g> ms davom etdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Imo-ishoraga mos harakat aniqlanmadi.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Oynaga nechta barmoq tegayotganini tekshiring. Ekranda turgan kaft yoki boshqa barmoq ham hisoblanadi.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Barcha barmoqlarni ketma-ket emas, bitta qoʻl kabi ayni bir paytda qoʻying.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Avval barcha barmoqlarni qoʻying, keyin ularni harakatlantiring yoki koʻtaring.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Barcha barmoqlarni ayni bir paytda koʻtaring.</string>
+    <string name="gesture_trainer_tip_slow_start">Ekranga tekkan zahoti harakatni boshlang va boshida tezroq harakatlaning.</string>
+    <string name="gesture_trainer_tip_paused">Barmoqni koʻtarguningizcha bir xil tezlikda harakatlantiring. Oxiriga yaqin sekinlashmang.</string>
+    <string name="gesture_trainer_tip_too_short">Harakatni uzunroq, taxminan 2–3 sm qiling.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Yoʻnalishni harakatning eng boshida tekshiring. Telefonni toʻgʻri oldingizda ushlash yordam beradi.</string>
+    <string name="gesture_trainer_tip_off_line">Diagonal emas, faqat yoʻnalish boʻylab harakatlaning. Koʻrsatkich barmoq bosh barmoqqa qaraganda toʻgʻriroq chiziq chizadi.</string>
+    <string name="gesture_trainer_tip_curved">Chiziqni toʻgʻri tuting va aynan oxirida koʻtaring, koʻtarayotganda barmoqni yon tomonga burmang.</string>
+    <string name="gesture_trainer_tip_turn_missing">Yoʻnalishni koʻtarmasdan, toʻgʻri burchak ostida yoki toʻgʻri orqaga keskin oʻzgartiring. Har bir qism taxminan 2 sm boʻlishi kerak.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Burilishdan keyin qayerga ketayotganingizni tekshiring: ikkinchi qism imo-ishora nomidagi ikkinchi yoʻnalishda borishi kerak.</string>
+    <string name="gesture_trainer_tip_tap_moved">Barmoq uchi bilan toʻgʻri pastga va yuqoriga, surmasdan teging.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Har bir teginishni qisqa qiling: teging va darhol koʻtaring.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Oxirgi teginishda barmoqlarni ushlab turish vaqti davomida ekranda qimirlatmay tuting.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Teginishlarni sanang va hammasini tez, bir yoʻla bajaring.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Teginishlarni sanang. Oynadan sakrab ketgan barmoq qoʻshimcha teginish hosil qiladi.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Tezroq teging: keyingi teginishni koʻtarishingiz bilan boshlang.</string>
+    <string name="gesture_trainer_tip_taps_apart">Har safar bir joyga teging.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Barmoqlarni koʻproq, bir-biriga kamida 1 sm yaqinroq yoki uzoqroq harakatlantiring.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Chimchilash – barmoqlar bir-biriga qarab harakatlanishi, yoyish – barmoqlar bir-biridan uzoqlashishi.</string>
+    <string name="gesture_trainer_tip_moved_together">Faqat barmoqlarni bir-biriga yaqinlashtiring yoki uzoqlashtiring. Butun qoʻlni ekran boʻylab surmang.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Murvatni chorak aylanaga burayotgandek koʻproq aylantiring.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Soat yoʻnalishi boʻyicha – soat millari yuradigan tomonga aylantirish: yuqoridagi barmoq oʻngga harakatlanadi.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Birinchi harakatni kamida 1 sm uzunlikda qiling.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Birinchi harakatdan keyin koʻtarishdan oldin teskari tomonga qayting.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Ishqalashni tez, borib-kelishni taxminan bir soniyada bajaring.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Barmoq uchi qisman ekrandan tashqarida boʻlgan holda aynan chetdan boshlang.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Chetning qaysi yarmidan boshlayotganingizni tekshiring.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Chiqillashni eshitguningizcha uzoqroq suring, keyin koʻtaring.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Birinchi chiqillashdan keyin, ikkinchisidan oldin darhol koʻtaring.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Chiqillashdan oldin toʻxtamasdan tezroq suring.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Diagonal emas, chetdan toʻgʻri ichkariga yoki uning boʻylab toʻgʻri suring.</string>
+    <string name="gesture_trainer_tip_corner_missed">Barmoqni aynan burchakka, ikkala chetga tegadigan qilib qoʻying.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Burchakka tekkandan keyin tezroq koʻtaring.</string>
+    <string name="gesture_trainer_close_to_limit">Chegaraga yaqin: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Surishlar sekin boshlanadi. <xliff:g id="setting">%1$s</xliff:g> uzunroq boʻlsa, sekinroq boshlashga ruxsat beriladi.</string>
+    <string name="gesture_trainer_advice_tap_time">Teginishlar sekin. <xliff:g id="setting">%1$s</xliff:g> uzunroq boʻlsa, sekinroq teginishlarga ruxsat beriladi.</string>
+    <string name="gesture_trainer_advice_edge_width">Surishlar chetdan juda uzoqda boshlanadi. <xliff:g id="setting">%1$s</xliff:g> kattaroq boʻlsa, chet yaqinida boshlanadigan surishlar ham chetdan surishga aylanadi.</string>
+    <string name="gesture_trainer_advice_corner_size">Teginishlar burchakdan tashqariga tushadi. <xliff:g id="setting">%1$s</xliff:g> kattaroq boʻlsa, burchaklar kattalashadi.</string>
+    <string name="gesture_trainer_advice_corner_time">Burchakka teginishlar sekin. <xliff:g id="setting">%1$s</xliff:g> uzunroq boʻlsa, sekinroq teginishlarga ruxsat beriladi.</string>
+    <string name="gesture_trainer_menu_option"><xliff:g id="number">%1$d</xliff:g>-variant</string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: <xliff:g id="number">%3$d</xliff:g>-elementni tanlang, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Menyuni ochish uchun <xliff:g id="edge">%1$s</xliff:g> bir barmoqni tepaga yoki pastga kamida <xliff:g id="distance">%2$d</xliff:g> mm suring. Unda yuqoridan pastga <xliff:g id="count">%3$d</xliff:g> ta element bor, har biri taxminan <xliff:g id="size">%6$s</xliff:g> sm balandlikda. <xliff:g id="number">%4$d</xliff:g>-element, <xliff:g id="item">%5$s</xliff:g>, ekran tepasidan <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> sm pastda joylashgan. Element aytilganda barmoqni koʻtaring.</string>
+    <string name="gesture_trainer_menu_sample">Bu chetda menyu yoʻq. Mashqda <xliff:g id="count">%1$d</xliff:g> ta namunaviy element ishlatiladi.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Urinish <xliff:g id="number">%1$d</xliff:g>: menyu tanlovsiz yopildi.</string>
+    <string name="gesture_trainer_try_menu_other">Urinish <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> tanlandi.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g>-elementda koʻtarildi</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Barmoq chetning eng yuqori yoki eng pastki qismidan boshlandi, u yerda burchaklar hamda yuqori va pastki chetlar joylashgan.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Barmoq chetdan <xliff:g id="mm">%1$.0f</xliff:g> mm uzoqda koʻtarildi, menyu esa <xliff:g id="limit">%2$.0f</xliff:g> mm dan nariroqda yopiladi.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Barmoq <xliff:g id="target">%2$d</xliff:g>-element oʻrniga <xliff:g id="item">%1$d</xliff:g>-elementda koʻtarildi.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Chetning yuqori va pastki uchlaridan biroz uzoqroqdan boshlang.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Surayotganda barmoqni chetga yaqin tuting va oʻsha yerda koʻtaring.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Har bir element chet boʻylab qatʼiy joyga ega va barmoq koʻtarilgan joydagi element tanlanadi. Element aytilganda koʻtaring.</string>
+    <string name="gesture_trainer_contents">Mundarija</string>
+    <string name="gesture_trainer_contents_heading">Mundarija: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">bajarildi, <xliff:g id="tries">%2$d</xliff:g> tadan <xliff:g id="hits">%1$d</xliff:g> tasi tanildi</string>
+    <string name="gesture_trainer_group_tap_swipe">Teginish va surish</string>
+    <string name="gesture_trainer_group_edge_swipes">Chetlardan surishlar</string>
+    <string name="gesture_trainer_group_along_edges">Chetlar boʻylab surishlar</string>
+    <string name="gesture_trainer_group_edge_menus">Chet menyulari</string>
+    <string name="gesture_trainer_group_corners">Burchaklar</string>
+    <string name="gesture_trainer_group_back_tap">Orqa tomonga teginish</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Ikki barmoq bilan teginishdan keyin ikki barmoq bilan surish chiqarib tashlandi: <xliff:g id="setting">%1$s</xliff:g> oʻchirilgan.</string>
+    <string name="gesture_trainer_how_swipe_hold">Keyin koʻtarmasdan barmoqni kamida <xliff:g id="hold">%1$d</xliff:g> ms qimirlatmay tuting va koʻtaring.</string>
+    <string name="gesture_trainer_half_top">yuqori</string>
+    <string name="gesture_trainer_half_bottom">pastki</string>
+    <string name="gesture_trainer_how_taps_half">Ekranning <xliff:g id="half">%1$s</xliff:g> yarmiga teging. Barmoqlar orasidagi nuqta yarmni belgilaydi.</string>
+    <string name="gesture_trainer_same_fingers">oʻsha barmoqlar bilan</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> teging. Oxirgi teginishdan keyin darhol, <xliff:g id="gap">%3$d</xliff:g> ms ichida, ekranga yana <xliff:g id="swipe_fingers">%4$s</xliff:g> teging va <xliff:g id="direction">%5$s</xliff:g> toʻgʻri chiziq boʻylab taxminan 2–3 sm suring, keyin koʻtaring.</string>
+    <string name="gesture_trainer_how_corner_hold">Oxirgi teginishda barmoqni burchakda kamida <xliff:g id="hold">%1$d</xliff:g> ms qimirlatmay qoldiring.</string>
+    <string name="gesture_trainer_how_back_tap">Telefonni yon tomonlaridan qoʻlingizda ushlang va uning orqa tomoni oʻrtasiga barmoq uchi bilan, eshik taqillatayotgandek, qattiq va tez <xliff:g id="taps">%1$s</xliff:g> teging. Teginishlar bir-biriga yaqin boʻlsin: ular orasida koʻpi bilan <xliff:g id="gap">%2$d</xliff:g> ms. Teginayotganda ekranga tegmang.</string>
+    <string name="gesture_trainer_back_tap_info">Mashq davomida orqa tomonga teginishlar buyruqlarni bajarmaydi. <xliff:g id="setting">%1$s</xliff:g> teginish qanchalik kuchli boʻlishi kerakligini belgilaydi.</string>
+    <string name="gesture_trainer_go_placed">Imo-ishorani <xliff:g id="tries">%1$d</xliff:g> marta bajaring.</string>
+    <string name="gesture_trainer_along_left">chap chet</string>
+    <string name="gesture_trainer_along_right">oʻng chet</string>
+    <string name="gesture_trainer_along_top">yuqori chet</string>
+    <string name="gesture_trainer_along_bottom">pastki chet</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> boʻylab surishlar chiqarib tashlandi: unda chet menyusi bor, shuning uchun uning boʻylab surish imo-ishora oʻrniga menyuni ochadi.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> boʻylab surishlar chiqarib tashlandi: u aylantiradi, shuning uchun uning boʻylab surish imo-ishora oʻrniga ilovani aylantiradi.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Barmoq chetdan juda uzoqlashdi.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Barmoqni oynaning eng chekkasida, chet boʻylab toʻgʻri tuting.</string>
+    <string name="gesture_trainer_go_back_tap">Orqa tomonga teginish imo-ishorasini <xliff:g id="tries">%1$d</xliff:g> marta bajaring. Ekranga teginish urinishni bekor qiladi.</string>
+    <string name="gesture_trainer_no_accelerometer">Bu mashq uchun akselerometr kerak. Akselerometr mavjud emas.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms qimirlamay turdi</string>
+    <string name="gesture_trainer_measure_back_tap_strength">teginish kuchi <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Oxirida barmoq <xliff:g id="ms">%1$d</xliff:g> ms qimirlamay turdi, u kamida <xliff:g id="limit">%2$d</xliff:g> ms qimirlamay turishi kerak.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Barmoqlar ekranning boshqa yarmiga tegdi.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Teginishlardan keyin surish boʻlmadi.</string>
+    <string name="gesture_trainer_finding_swipe_late">Surish oxirgi teginishdan <xliff:g id="ms">%1$d</xliff:g> ms keyin boshlandi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Orqa tomonga teginish juda yengil: kerakli kuchning <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Teginish telefonni orqa tomoni orqali emas, koʻproq yon tomonga silkitdi.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Teginishdan sal oldin telefon harakatlanayotgan edi.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Ekranga tegildi, ekranga tegilib turganda teginishlar hisoblanmaydi.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Orqa tomonga teginishlar orasida <xliff:g id="ms">%1$d</xliff:g> ms oʻtdi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Surishdan keyin barmoqni ushlab turish vaqti davomida ekranda qimirlatmay tuting. Keyin koʻtaring.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Qaysi yarmiga tegayotganingizni tekshiring: ekran oʻrtasi yuqori yarmni pastki yarmdan ajratadi.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Oxirgi teginishdan keyin darhol ekranga yana teging va suring.</string>
+    <string name="gesture_trainer_tip_swipe_late">Surishni oxirgi teginishdan keyin pauzasiz darhol boshlang.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Orqa tomonning oʻrtasiga yaqin joyga barmoq uchi yoki tirnoq bilan qattiqroq teging.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Telefonning chetiga yoki qiya emas, toʻgʻri orqa tomoniga teging.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Teginishdan oldin telefonni bir lahza qimirlatmay ushlang va qoʻlingiz uni siljitmasligi uchun erkin ushlang.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Orqa tomonga teginayotganda barmoqlaringizni ekrandan uzoq tuting: telefonni yon tomonlaridan ushlang.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Tezroq, bir teginishdan keyin darhol boshqasini bajaring.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Surishdan keyin barmoq juda erta koʻtariladi. <xliff:g id="setting">%1$s</xliff:g> qisqaroq boʻlsa, qisqaroq ushlab turishga ruxsat beriladi.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Orqa tomonga teginishlar yengil. <xliff:g id="setting">%1$s</xliff:g> yuqoriroq boʻlsa, yengilroq teginishlar aniqlanadi, lekin turtkilar ham teginish sifatida aniqlanishi mumkin.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Barmoqlar <xliff:g id="degrees">%1$.0f</xliff:g> daraja burildi, <xliff:g id="limit">%2$.0f</xliff:g> darajadan boshlab harakat aylantirish hisoblanadi.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Barmoqlarni bir-biri atrofida yoy boʻylab emas, bir-biriga qarab yoki bir-biridan toʻgʻri chiziq boʻylab harakatlantiring.</string>
+    <string name="gesture_trainer_finding_other_gesture">Harakat uning oʻrniga oʻsha imo-ishoraga mos keldi.</string>
+    <string name="gesture_trainer_side_left">chap</string>
+    <string name="gesture_trainer_side_right">oʻng</string>
+    <string name="gesture_trainer_side_top">yuqori</string>
+    <string name="gesture_trainer_side_bottom">pastki</string>
+    <string name="gesture_trainer_finding_wrong_edge">Barmoq <xliff:g id="side">%1$s</xliff:g> chetdan boshlandi, bu mashq esa <xliff:g id="expected">%2$s</xliff:g> chetda.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Aynan mashqda koʻrsatilgan chetdan boshlang.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Bu imo-ishora oʻrniga chet menyusi ochildi.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Menyusi bor chet boʻylab surish menyuni ochadi. Mashqda koʻrsatilgan chetdan boshlang.</string>
+    <string name="gesture_trainer_group_three_part">Uch qismli surishlar</string>
+    <string name="gesture_trainer_group_two_stroke">Ikki bosqichli surishlar</string>
+    <string name="gesture_trainer_group_shake">Silkitish</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Uch qismli surishlar chiqarib tashlandi: <xliff:g id="setting">%1$s</xliff:g> yoqilgan.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Ikki bosqichli surishlar chiqarib tashlandi: <xliff:g id="setting">%1$s</xliff:g> – <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Mashq davomida silkitish hech qanday buyruqni bajarmaydi. <xliff:g id="setting">%1$s</xliff:g> silkitish qanchalik kuchli boʻlishi kerakligini belgilaydi.</string>
+    <string name="gesture_trainer_go_shake">Telefonni har bir silkitishdan keyin qisqa pauza qilib, <xliff:g id="tries">%1$d</xliff:g> marta silkiting.</string>
+    <string name="gesture_trainer_how_shake">Telefonni mahkam ushlang va suv tomchisini silkitib tushirayotgandek tez oldinga-orqaga silkiting: har tomonga kamida ikki marta, hammasi taxminan soniyaning uchdan ikki qismida. Keyin uni qimirlatmay ushlang.</string>
+    <string name="gesture_trainer_how_two_stroke">Bir barmoq bilan <xliff:g id="first">%1$s</xliff:g> taxminan 2 sm suring va koʻtaring. Keyin darhol, <xliff:g id="time">%3$d</xliff:g> ms ichida, bir barmoq bilan <xliff:g id="second">%2$s</xliff:g> taxminan 2 sm suring va koʻtaring.</string>
+    <string name="gesture_trainer_how_three_part">Ekranga bir barmoq bilan teging va koʻtarmasdan <xliff:g id="first">%1$s</xliff:g> suring, keyin keskin burilib <xliff:g id="second">%2$s</xliff:g> suring, keyin yana keskin burilib <xliff:g id="third">%3$s</xliff:g> suring, har bir qism taxminan 2 sm, va koʻtaring. Buni yoylar emas, keskin burchakli bitta tez, silliq harakat bilan bajaring.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Bir barmoqni ekranning yuqori uchdan bir qismiga, ikkinchisini pastki uchdan bir qismiga qoʻying, masalan, bosh barmoqni pastga, koʻrsatkich barmoqni yuqoriga.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Barmoqlarning biri ekranning yuqori uchdan bir qismida, ikkinchisi pastki uchdan bir qismida emas edi.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Ikkinchi surish boʻlmadi.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Ikkinchi surish birinchisidan <xliff:g id="ms">%1$d</xliff:g> ms keyin boshlandi, ruxsat etilgani esa koʻpi bilan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Birinchi surish <xliff:g id="direction">%1$s</xliff:g> ketdi.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Ikkinchi surish <xliff:g id="direction">%1$s</xliff:g> ketdi.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Silkitish juda yengil boʻldi: kerakli kuchning <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Oldinga-orqaga tebranishlar: kerakli <xliff:g id="wanted">%2$d</xliff:g> tadan <xliff:g id="swings">%1$d</xliff:g> ta.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Barmoqlarni keng oching, biri yuqori chetga, ikkinchisi pastki chetga yaqin boʻlsin.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Birinchi surishdan keyin barmoqni koʻtaring va darhol yana suring.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Ikkinchi surishni barmoqni koʻtarishingiz bilan boshlang.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Kuchliroq va tezroq silkiting.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Tezroq, toʻxtamasdan har tomonga kamida ikki marta oldinga-orqaga silkiting.</string>
+    <string name="gesture_trainer_measure_shake_strength">eng kuchli harakat <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Silkitishlar yengil. <xliff:g id="setting">%1$s</xliff:g> yuqoriroq boʻlsa, yengilroq silkitishlar aniqlanadi, lekin telefonni olib yurish ham silkitish sifatida aniqlanishi mumkin.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Ikkinchi surish kech boshlanadi. <xliff:g id="setting">%1$s</xliff:g> uzunroq boʻlsa, ikkinchi surishni kechroq boshlash mumkin, bitta surish esa bajarilishidan oldin uzoqroq kutadi.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> yoqilgan.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> oʻchirilgan: ikki barmoq bilan surishlar ilovani aylantiradi, ishqalash ham asosan aylantiradi. Sozlama yoqilganda ikki barmoq bilan surishlar aylantirish oʻrniga SandFly buyruqlarini bajaradi.</string>
+    <string name="gesture_trainer_measure_first_stroke">birinchi surish <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ikkinchi surish <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">butun imo-ishora <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">ular orasida <xliff:g id="ms">%1$d</xliff:g> ms koʻtarilgan</string>
+</resources>

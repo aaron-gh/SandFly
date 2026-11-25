@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">手勢訓練</string>
+    <string name="gesture_trainer_intro">選擇一組手勢。每個練習說明一個手勢。請將手勢做 <xliff:g id="tries">%1$d</xliff:g> 次，每次嘗試的結果都會讀出。最後一次嘗試後，畫面會列出每次嘗試的測量值、需要調整的地方和相關設定。</string>
+    <string name="gesture_trainer_group_one_finger">單指</string>
+    <string name="gesture_trainer_group_two_fingers">雙指</string>
+    <string name="gesture_trainer_group_three_fingers">三指</string>
+    <string name="gesture_trainer_group_four_fingers">四指</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">捏合、旋轉和來回滑動</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>，<xliff:g id="count">%2$d</xliff:g> 個練習</string>
+    <string name="gesture_trainer_close">關閉</string>
+    <string name="gesture_trainer_no_detection">手勢訓練需要 Android 13 以上版本。</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">已略過往返手勢和角度手勢：「<xliff:g id="setting">%1$s</xliff:g>」已開啟。</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">已略過雙指滑動：「<xliff:g id="setting">%1$s</xliff:g>」已關閉，因此雙指滑動會捲動應用程式。</string>
+    <string name="gesture_trainer_exercise_heading">練習 <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>：<xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">開始</string>
+    <string name="gesture_trainer_skip">略過這個練習</string>
+    <string name="gesture_trainer_back_to_groups">返回手勢組</string>
+    <string name="gesture_trainer_go">請在螢幕任意位置將手勢做 <xliff:g id="tries">%1$d</xliff:g> 次。每次觸碰算一次嘗試。</string>
+    <string name="gesture_trainer_fingers_1">一根手指</string>
+    <string name="gesture_trainer_fingers_2">兩根手指並排，相距約 1 公分</string>
+    <string name="gesture_trainer_fingers_3">三根手指並排，稍微分開</string>
+    <string name="gesture_trainer_fingers_4">四根手指並排，稍微分開</string>
+    <string name="gesture_trainer_direction_up">上</string>
+    <string name="gesture_trainer_direction_down">下</string>
+    <string name="gesture_trainer_direction_left">左</string>
+    <string name="gesture_trainer_direction_right">右</string>
+    <string name="gesture_trainer_how_swipe">用<xliff:g id="fingers">%1$s</xliff:g>觸碰螢幕，不要停頓，立即以直線向<xliff:g id="direction">%2$s</xliff:g>滑動約 2 到 3 公分，然後放開。請立即開始移動：手指先停住會啟動觸控探索。</string>
+    <string name="gesture_trainer_how_swipe_multi">所有手指同時放下，並朝同一方向移動。每根手指都必須全程向<xliff:g id="direction">%1$s</xliff:g>移動，因此請保持直線。</string>
+    <string name="gesture_trainer_how_back_and_forth">用一根手指觸碰螢幕，向<xliff:g id="first">%1$s</xliff:g>滑動約 2 公分，然後不放開，直接向<xliff:g id="second">%2$s</xliff:g>滑回約 2 公分，再放開。整個動作要快速流暢、一氣呵成。</string>
+    <string name="gesture_trainer_how_angle">用<xliff:g id="fingers">%1$s</xliff:g>觸碰螢幕，向<xliff:g id="first">%2$s</xliff:g>滑動約 2 公分，然後不放開，急轉向<xliff:g id="second">%3$s</xliff:g>滑動約 2 公分，再放開。轉彎要像字母 L 一樣是銳角，而不是弧線。</string>
+    <string name="gesture_trainer_taps_1">一下</string>
+    <string name="gesture_trainer_taps_2">兩下</string>
+    <string name="gesture_trainer_taps_3">三下</string>
+    <string name="gesture_trainer_taps_4">四下</string>
+    <string name="gesture_trainer_how_taps">用<xliff:g id="fingers">%2$s</xliff:g>輕觸<xliff:g id="taps">%1$s</xliff:g>。手指同時放下、同時抬起，動作要快，不要滑動。</string>
+    <string name="gesture_trainer_how_taps_quick">每次輕觸要快且在同一位置：下一次輕觸必須在上一次之後 <xliff:g id="gap">%1$d</xliff:g> 毫秒內。</string>
+    <string name="gesture_trainer_how_hold">將<xliff:g id="fingers">%1$s</xliff:g>同時放在螢幕上並保持不動，不要滑動，至少 <xliff:g id="hold">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">如果沒有指派其他指令，這個手勢會關閉 SandFly。在訓練中，它不會執行任何動作。</string>
+    <string name="gesture_trainer_how_taps_hold">用<xliff:g id="fingers">%2$s</xliff:g>輕觸<xliff:g id="taps">%1$s</xliff:g>，最後一次輕觸時將手指留在螢幕上保持不動，至少 <xliff:g id="hold">%3$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_how_three_finger_hand">使用拇指、食指和中指。</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">將食指和中指並排放下，拇指和無名指放在兩側幾公分外。然後將四個指尖一起併攏到同一點。</string>
+    <string name="gesture_trainer_how_pinch">將 <xliff:g id="fingers">%1$d</xliff:g> 根手指放在螢幕上，盡量張開。然後讓手指直線互相靠近至少 1 公分，就像要撿起東西一樣，再從螢幕上抬起。只移動手指，不要移動整隻手，也不要畫弧線。</string>
+    <string name="gesture_trainer_how_spread">將 <xliff:g id="fingers">%1$d</xliff:g> 根手指併攏放在螢幕上。然後讓手指直線分開至少 1 公分，再從螢幕上抬起。只移動手指，不要移動整隻手，也不要畫弧線。</string>
+    <string name="gesture_trainer_clockwise">順時針</string>
+    <string name="gesture_trainer_counterclockwise">逆時針</string>
+    <string name="gesture_trainer_how_rotate">將兩根手指放在螢幕上，相距約 2 到 3 公分，然後以兩指中點為中心<xliff:g id="way">%1$s</xliff:g>旋轉約四分之一圈，就像轉動旋鈕一樣。然後放開。</string>
+    <string name="gesture_trainer_how_scrub">將兩根手指放在螢幕上，快速向一側移動約 2 公分再移回，就像擦掉東西一樣，全部在約一秒內完成。然後放開。</string>
+    <string name="gesture_trainer_edge_bottom">在底部邊緣</string>
+    <string name="gesture_trainer_edge_top_left">在頂部邊緣的左半部</string>
+    <string name="gesture_trainer_edge_top_right">在頂部邊緣的右半部</string>
+    <string name="gesture_trainer_edge_left_top">在左邊緣的上半部</string>
+    <string name="gesture_trainer_edge_left_bottom">在左邊緣的下半部</string>
+    <string name="gesture_trainer_edge_right_top">在右邊緣的上半部</string>
+    <string name="gesture_trainer_edge_right_bottom">在右邊緣的下半部</string>
+    <string name="gesture_trainer_edge_left">在左邊緣</string>
+    <string name="gesture_trainer_edge_right">在右邊緣</string>
+    <string name="gesture_trainer_edge_top">在頂部邊緣</string>
+    <string name="gesture_trainer_how_edge">將一根手指放<xliff:g id="edge">%1$s</xliff:g>，距離邊緣不超過 <xliff:g id="edge_width">%2$d</xliff:g> 公釐，然後向<xliff:g id="direction">%3$s</xliff:g>滑入螢幕，直到第一次點擊，約 <xliff:g id="distance">%4$d</xliff:g> 公釐。然後立即放開：超過第二次點擊就會變成長滑動。</string>
+    <string name="gesture_trainer_how_edge_long">將一根手指放<xliff:g id="edge">%1$s</xliff:g>，距離邊緣不超過 <xliff:g id="edge_width">%2$d</xliff:g> 公釐，然後向<xliff:g id="direction">%3$s</xliff:g>滑入螢幕，越過第一次點擊直到第二次點擊，約 <xliff:g id="distance">%4$d</xliff:g> 公釐。然後放開。</string>
+    <string name="gesture_trainer_how_along">用一根手指沿<xliff:g id="edge">%1$s</xliff:g>向<xliff:g id="direction">%2$s</xliff:g>滑動，至少 <xliff:g id="distance">%3$d</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_corner_top_left">左上</string>
+    <string name="gesture_trainer_corner_top_right">右上</string>
+    <string name="gesture_trainer_corner_bottom_left">左下</string>
+    <string name="gesture_trainer_corner_bottom_right">右下</string>
+    <string name="gesture_trainer_how_corner">在螢幕<xliff:g id="corner">%2$s</xliff:g>角輕觸<xliff:g id="taps">%1$s</xliff:g>。將手指放在角落正中，距離兩側邊緣都不超過 <xliff:g id="size">%3$d</xliff:g> 公釐，並在 <xliff:g id="time">%4$d</xliff:g> 毫秒內快速抬起。</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>：<xliff:g id="edge">%2$d</xliff:g> 公釐。<xliff:g id="corner_setting">%3$s</xliff:g>：<xliff:g id="corner">%4$d</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_corner_warning">角落越大，輕觸角落附近的控制項 (例如左上角的「返回」) 時，可能會改為執行角落手勢。</string>
+    <string name="gesture_trainer_rating_precise">已辨識，精確</string>
+    <string name="gesture_trainer_rating_good">已辨識，良好</string>
+    <string name="gesture_trainer_rating_borderline">已辨識，但接近限制值</string>
+    <string name="gesture_trainer_try_recognized">第 <xliff:g id="number">%1$d</xliff:g> 次嘗試：<xliff:g id="rating">%2$s</xliff:g>。</string>
+    <string name="gesture_trainer_try_nothing">第 <xliff:g id="number">%1$d</xliff:g> 次嘗試：無法辨識。</string>
+    <string name="gesture_trainer_try_other">第 <xliff:g id="number">%1$d</xliff:g> 次嘗試：辨識為<xliff:g id="gesture">%2$s</xliff:g>。</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>：<xliff:g id="tries">%3$d</xliff:g> 次中辨識 <xliff:g id="recognized">%2$d</xliff:g> 次</string>
+    <string name="gesture_trainer_results_tries">你的嘗試</string>
+    <string name="gesture_trainer_results_change">需要調整的地方</string>
+    <string name="gesture_trainer_results_close">接近限制值</string>
+    <string name="gesture_trainer_results_all_good">所有嘗試都在限制值內辨識成功。</string>
+    <string name="gesture_trainer_results_settings">可能有幫助的設定</string>
+    <string name="gesture_trainer_next">下一個練習</string>
+    <string name="gesture_trainer_repeat">重複</string>
+    <string name="gesture_trainer_finish">完成</string>
+    <string name="gesture_trainer_group_done">你已完成「<xliff:g id="group">%1$s</xliff:g>」中的所有練習。</string>
+    <string name="gesture_trainer_open_setting">變更「<xliff:g id="setting">%1$s</xliff:g>」</string>
+    <string name="gesture_trainer_measure_duration">耗時 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_length">長 <xliff:g id="cm">%1$.1f</xliff:g> 公分</string>
+    <string name="gesture_trainer_measure_speed">每秒 <xliff:g id="speed">%1$.0f</xliff:g> 公分</string>
+    <string name="gesture_trainer_measure_angle">偏離直線 <xliff:g id="degrees">%1$.0f</xliff:g> 度</string>
+    <string name="gesture_trainer_measure_start">第一公分用了 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_landing">手指落下時間相差 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_tap">輕觸 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_gap">輕觸間隔 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_spread">手指移動了 <xliff:g id="mm">%1$.0f</xliff:g> 公釐</string>
+    <string name="gesture_trainer_measure_rotation">旋轉了 <xliff:g id="degrees">%1$.0f</xliff:g> 度</string>
+    <string name="gesture_trainer_measure_corner">距離角落邊緣 <xliff:g id="mm">%1$.0f</xliff:g> 公釐</string>
+    <string name="gesture_trainer_measure_edge">從距離邊緣 <xliff:g id="mm">%1$.0f</xliff:g> 公釐處開始</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">螢幕上的手指：<xliff:g id="fingers">%1$d</xliff:g> 根，而不是 <xliff:g id="wanted">%2$d</xliff:g> 根。</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">手指落下時間相差 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">有一根手指在所有手指放下前就抬起了。</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">手指抬起時間相差 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_became_exploration">手指停住太久或一開始移動太慢，因此這次觸碰變成了觸控探索。</string>
+    <string name="gesture_trainer_finding_slow_start">第一公分用了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_paused">手指減速了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，每公分最多只能用 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_too_short">移動距離只有 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，至少需要 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">手指一開始向<xliff:g id="direction">%1$s</xliff:g>移動。</string>
+    <string name="gesture_trainer_finding_wrong_direction">手指一開始向<xliff:g id="direction">%1$s</xliff:g>移動。</string>
+    <string name="gesture_trainer_finding_off_line">路徑偏離直線 <xliff:g id="degrees">%1$.0f</xliff:g> 度，最多允許 <xliff:g id="limit">%2$.0f</xliff:g> 度。</string>
+    <string name="gesture_trainer_finding_curved">路徑彎成了 <xliff:g id="parts">%1$d</xliff:g> 段，而不是 <xliff:g id="wanted">%2$d</xliff:g> 段。</string>
+    <string name="gesture_trainer_finding_turn_missing">未偵測到轉彎。</string>
+    <string name="gesture_trainer_finding_second_part_wrong">轉彎後，手指向<xliff:g id="direction">%1$s</xliff:g>移動。</string>
+    <string name="gesture_trainer_finding_tap_moved">輕觸時手指滑動了 <xliff:g id="mm">%1$.1f</xliff:g> 公釐，最多允許 <xliff:g id="limit">%2$.1f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_tap_held_long">一次輕觸持續了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，超過 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_hold_too_short">最後一次輕觸按住了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，至少需要 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_too_few_taps">輕觸了 <xliff:g id="taps">%1$d</xliff:g> 次，而不是 <xliff:g id="wanted">%2$d</xliff:g> 次。</string>
+    <string name="gesture_trainer_finding_too_many_taps">輕觸了 <xliff:g id="taps">%1$d</xliff:g> 次，而不是 <xliff:g id="wanted">%2$d</xliff:g> 次。</string>
+    <string name="gesture_trainer_finding_taps_too_slow">輕觸之間間隔了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_taps_apart">每次輕觸的位置相距 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，最多允許 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_pinch_too_small">手指只移動了 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，至少需要移動 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">手指往相反方向移動。</string>
+    <string name="gesture_trainer_finding_moved_together">整隻手在螢幕上滑動了 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，比手指互相靠近或分開的距離還多。</string>
+    <string name="gesture_trainer_finding_rotate_too_small">手指只旋轉了 <xliff:g id="degrees">%1$.0f</xliff:g> 度，至少需要旋轉 <xliff:g id="limit">%2$.0f</xliff:g> 度。</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">手指往相反方向旋轉。</string>
+    <string name="gesture_trainer_finding_scrub_too_short">第一筆劃為 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，至少需要 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_scrub_no_return">返回的筆劃為 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，至少需要 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">來回滑動用了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">手指落在距離邊緣 <xliff:g id="mm">%1$.0f</xliff:g> 公釐處，而邊緣寬度是 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">手指從邊緣的另一半開始。</string>
+    <string name="gesture_trainer_finding_edge_too_short">手指滑動了 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，至少需要滑動 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_edge_too_long">滑動太長：手指越過了第二次點擊，<xliff:g id="mm">%1$.0f</xliff:g> 公釐，而第二次點擊在 <xliff:g id="limit">%2$.0f</xliff:g> 公釐處。</string>
+    <string name="gesture_trainer_finding_edge_too_slow">到達點擊位置用了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_edge_sideways">滑動向側邊偏了 <xliff:g id="degrees">%1$.0f</xliff:g> 度，最多允許 <xliff:g id="limit">%2$.0f</xliff:g> 度。</string>
+    <string name="gesture_trainer_finding_corner_missed">輕觸位置距離角落邊緣 <xliff:g id="mm">%1$.0f</xliff:g> 公釐，而角落大小是 <xliff:g id="limit">%2$.0f</xliff:g> 公釐。</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">一次角落輕觸持續了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_none">未偵測到符合手勢的動作。</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">檢查有幾根手指碰到玻璃。放在螢幕上的手掌或其他手指也會被計算在內。</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">所有手指要在同一時刻放下，像一隻手一樣，不要一根接一根。</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">先放下所有手指，再移動或抬起。</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">所有手指要在同一時刻抬起。</string>
+    <string name="gesture_trainer_tip_slow_start">碰到螢幕的同時就開始移動，並在開始時移動得快一些。</string>
+    <string name="gesture_trainer_tip_paused">手指以均勻的速度移動，直到抬起。接近結尾時不要減速。</string>
+    <string name="gesture_trainer_tip_too_short">將動作拉長，約 2 到 3 公分。</string>
+    <string name="gesture_trainer_tip_wrong_direction">在動作一開始就確認方向。將手機正對著自己拿會比較容易。</string>
+    <string name="gesture_trainer_tip_off_line">只沿著指定方向移動，不要斜向。食指比拇指更容易保持直線。</string>
+    <string name="gesture_trainer_tip_curved">保持直線，並在結尾直接抬起，抬起時不要將手指往側邊勾。</string>
+    <string name="gesture_trainer_tip_turn_missing">不放開手指，急轉改變方向，轉成直角或直接往回。每段約 2 公分。</string>
+    <string name="gesture_trainer_tip_second_part_wrong">轉彎後確認方向：第二段必須朝手勢名稱中的另一個方向。</string>
+    <string name="gesture_trainer_tip_tap_moved">用指尖垂直點下再抬起，不要滑動。</string>
+    <string name="gesture_trainer_tip_tap_held_long">每次輕觸要短：碰到後立即抬起。</string>
+    <string name="gesture_trainer_tip_hold_too_short">最後一次輕觸時，手指在螢幕上保持不動，直到按住時間結束。</string>
+    <string name="gesture_trainer_tip_too_few_taps">數一數輕觸次數，並一口氣快速完成所有輕觸。</string>
+    <string name="gesture_trainer_tip_too_many_taps">數一數輕觸次數。手指從玻璃彈起會多算一次輕觸。</string>
+    <string name="gesture_trainer_tip_taps_too_slow">輕觸快一點：抬起後立即開始下一次輕觸。</string>
+    <string name="gesture_trainer_tip_taps_apart">每次都輕觸同一位置。</string>
+    <string name="gesture_trainer_tip_pinch_too_small">手指移動得更多一些，至少靠近或分開 1 公分。</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">捏合是手指互相靠近，展開是手指互相分開。</string>
+    <string name="gesture_trainer_tip_moved_together">只讓手指互相靠近或分開。不要讓整隻手在螢幕上滑動。</string>
+    <string name="gesture_trainer_tip_rotate_too_small">轉多一點，就像將旋鈕轉四分之一圈。</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">順時針是指時鐘指針轉動的方向：上方的手指向右移動。</string>
+    <string name="gesture_trainer_tip_scrub_too_short">第一筆劃至少要 1 公分長。</string>
+    <string name="gesture_trainer_tip_scrub_no_return">第一筆劃之後，先往反方向移回再抬起。</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">來回滑動要快，一來一回約一秒。</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">從邊緣正上方開始，指尖有一部分在螢幕外。</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">確認你從邊緣的哪一半開始。</string>
+    <string name="gesture_trainer_tip_edge_too_short">滑得更遠一些，直到聽到點擊聲，然後放開。</string>
+    <string name="gesture_trainer_tip_edge_too_long">在第一次點擊後、第二次點擊前立即放開。</string>
+    <string name="gesture_trainer_tip_edge_too_slow">滑入得快一些，在點擊前不要停下。</string>
+    <string name="gesture_trainer_tip_edge_sideways">從邊緣直直滑入，或沿著邊緣直直滑動，不要斜向。</string>
+    <string name="gesture_trainer_tip_corner_missed">將手指放到角落正中，同時碰到兩側邊緣。</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">碰到角落後更快抬起。</string>
+    <string name="gesture_trainer_close_to_limit">接近限制值：<xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">滑動開始得慢。將「<xliff:g id="setting">%1$s</xliff:g>」設長一點可以允許較慢的開始。</string>
+    <string name="gesture_trainer_advice_tap_time">輕觸較慢。將「<xliff:g id="setting">%1$s</xliff:g>」設長一點可以允許較慢的輕觸。</string>
+    <string name="gesture_trainer_advice_edge_width">滑動開始的位置離邊緣太遠。將「<xliff:g id="setting">%1$s</xliff:g>」設大一點，也會讓從邊緣附近開始的滑動變成邊緣滑動。</string>
+    <string name="gesture_trainer_advice_corner_size">輕觸落在角落之外。將「<xliff:g id="setting">%1$s</xliff:g>」設大一點可以放大角落。</string>
+    <string name="gesture_trainer_advice_corner_time">角落輕觸較慢。將「<xliff:g id="setting">%1$s</xliff:g>」設長一點可以允許較慢的輕觸。</string>
+    <string name="gesture_trainer_menu_option">選項 <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>：選擇第 <xliff:g id="number">%3$d</xliff:g> 個項目「<xliff:g id="item">%2$s</xliff:g>」</string>
+    <string name="gesture_trainer_how_menu">用一根手指<xliff:g id="edge">%1$s</xliff:g>向上或向下滑動至少 <xliff:g id="distance">%2$d</xliff:g> 公釐以開啟選單。選單由上到下有 <xliff:g id="count">%3$d</xliff:g> 個項目，每個高約 <xliff:g id="size">%6$s</xliff:g> 公分。第 <xliff:g id="number">%4$d</xliff:g> 個項目「<xliff:g id="item">%5$s</xliff:g>」位於螢幕頂端下方 <xliff:g id="from">%7$s</xliff:g> 到 <xliff:g id="to">%8$s</xliff:g> 公分處。讀出該項目時放開手指。</string>
+    <string name="gesture_trainer_menu_sample">這個邊緣沒有選單。此練習使用 <xliff:g id="count">%1$d</xliff:g> 個範例項目。</string>
+    <string name="gesture_trainer_try_menu_cancelled">第 <xliff:g id="number">%1$d</xliff:g> 次嘗試：選單已關閉，未選擇任何項目。</string>
+    <string name="gesture_trainer_try_menu_other">第 <xliff:g id="number">%1$d</xliff:g> 次嘗試：選擇了「<xliff:g id="item">%2$s</xliff:g>」。</string>
+    <string name="gesture_trainer_measure_menu_item">在第 <xliff:g id="number">%1$d</xliff:g> 個項目放開</string>
+    <string name="gesture_trainer_finding_menu_in_corner">手指從邊緣的最上方或最下方開始，那裡是角落以及頂部和底部邊緣的位置。</string>
+    <string name="gesture_trainer_finding_menu_left_edge">手指在距離邊緣 <xliff:g id="mm">%1$.0f</xliff:g> 公釐處放開，超過 <xliff:g id="limit">%2$.0f</xliff:g> 公釐選單就會關閉。</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">手指在第 <xliff:g id="item">%1$d</xliff:g> 個項目放開，而不是第 <xliff:g id="target">%2$d</xliff:g> 個項目。</string>
+    <string name="gesture_trainer_tip_menu_in_corner">從離邊緣頂端和底端稍遠的位置開始。</string>
+    <string name="gesture_trainer_tip_menu_left_edge">滑動時讓手指保持靠近邊緣，並在那裡放開。</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">每個項目在邊緣上都有固定位置，手指放開處的項目會被選擇。讀出該項目時放開手指。</string>
+    <string name="gesture_trainer_contents">目錄</string>
+    <string name="gesture_trainer_contents_heading">目錄：<xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">已完成，<xliff:g id="tries">%2$d</xliff:g> 次中辨識 <xliff:g id="hits">%1$d</xliff:g> 次</string>
+    <string name="gesture_trainer_group_tap_swipe">輕觸和滑動</string>
+    <string name="gesture_trainer_group_edge_swipes">從邊緣滑動</string>
+    <string name="gesture_trainer_group_along_edges">沿邊緣滑動</string>
+    <string name="gesture_trainer_group_edge_menus">邊緣選單</string>
+    <string name="gesture_trainer_group_corners">螢幕角落</string>
+    <string name="gesture_trainer_group_back_tap">背面輕觸</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">已略過雙指輕觸後接雙指滑動：「<xliff:g id="setting">%1$s</xliff:g>」已關閉。</string>
+    <string name="gesture_trainer_how_swipe_hold">然後不要放開，讓手指保持不動至少 <xliff:g id="hold">%1$d</xliff:g> 毫秒，再放開。</string>
+    <string name="gesture_trainer_half_top">上</string>
+    <string name="gesture_trainer_half_bottom">下</string>
+    <string name="gesture_trainer_how_taps_half">在螢幕的<xliff:g id="half">%1$s</xliff:g>半部輕觸。以手指之間的中點決定在哪一半。</string>
+    <string name="gesture_trainer_same_fingers">相同的手指</string>
+    <string name="gesture_trainer_how_tap_swipe">用<xliff:g id="fingers">%2$s</xliff:g>輕觸<xliff:g id="taps">%1$s</xliff:g>。最後一次輕觸後立即在 <xliff:g id="gap">%3$d</xliff:g> 毫秒內用<xliff:g id="swipe_fingers">%4$s</xliff:g>再次觸碰螢幕，以直線向<xliff:g id="direction">%5$s</xliff:g>滑動約 2 到 3 公分，然後放開。</string>
+    <string name="gesture_trainer_how_corner_hold">最後一次輕觸時，將手指留在角落保持不動至少 <xliff:g id="hold">%1$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_how_back_tap">握住手機兩側，用指尖在手機背面中央輕觸<xliff:g id="taps">%1$s</xliff:g>，要用力且快速，就像敲門一樣。輕觸之間要緊湊：間隔最多 <xliff:g id="gap">%2$d</xliff:g> 毫秒。輕觸時不要碰到螢幕。</string>
+    <string name="gesture_trainer_back_tap_info">練習期間背面輕觸不會執行任何指令。「<xliff:g id="setting">%1$s</xliff:g>」決定輕觸需要多大力道。</string>
+    <string name="gesture_trainer_go_placed">請將手勢做 <xliff:g id="tries">%1$d</xliff:g> 次。</string>
+    <string name="gesture_trainer_along_left">左邊緣</string>
+    <string name="gesture_trainer_along_right">右邊緣</string>
+    <string name="gesture_trainer_along_top">頂部邊緣</string>
+    <string name="gesture_trainer_along_bottom">底部邊緣</string>
+    <string name="gesture_trainer_left_out_along_menu">已略過沿<xliff:g id="edge">%1$s</xliff:g>滑動：該邊緣有邊緣選單，因此沿著它滑動會開啟選單，而不會執行手勢。</string>
+    <string name="gesture_trainer_left_out_along_scroll">已略過沿<xliff:g id="edge">%1$s</xliff:g>滑動：該邊緣用於捲動，因此沿著它滑動會捲動應用程式，而不會執行手勢。</string>
+    <string name="gesture_trainer_finding_along_off_edge">手指離邊緣太遠。</string>
+    <string name="gesture_trainer_tip_along_off_edge">讓手指保持在玻璃的最邊緣，沿著邊緣直直滑動。</string>
+    <string name="gesture_trainer_go_back_tap">請做 <xliff:g id="tries">%1$d</xliff:g> 次背面輕觸手勢。觸碰螢幕會讓該次嘗試失敗。</string>
+    <string name="gesture_trainer_no_accelerometer">這個練習需要加速度感應器，但目前沒有可用的感應器。</string>
+    <string name="gesture_trainer_measure_hold">保持不動 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_back_tap_strength">輕觸強度 <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">手指在結尾保持不動 <xliff:g id="ms">%1$d</xliff:g> 毫秒，至少需要保持不動 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">手指輕觸了螢幕的另一半。</string>
+    <string name="gesture_trainer_finding_swipe_missing">輕觸後沒有接著滑動。</string>
+    <string name="gesture_trainer_finding_swipe_late">滑動在最後一次輕觸後 <xliff:g id="ms">%1$d</xliff:g> 毫秒才開始，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">背面輕觸太輕：只有所需力道的 <xliff:g id="percent">%1$d</xliff:g>%%。</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">輕觸讓手機向側邊晃動，多於穿過背面的晃動。</string>
+    <string name="gesture_trainer_finding_back_tap_moving">輕觸前手機正在移動。</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">螢幕被觸碰了，觸碰螢幕期間的輕觸不算數。</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">背面輕觸之間間隔了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">滑動後，手指在螢幕上保持不動，直到按住時間結束。然後放開。</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">確認你輕觸的是哪一半：螢幕中線將上半部和下半部分開。</string>
+    <string name="gesture_trainer_tip_swipe_missing">最後一次輕觸後，立即再次觸碰螢幕並滑動。</string>
+    <string name="gesture_trainer_tip_swipe_late">最後一次輕觸後立即開始滑動，不要停頓。</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">用指尖或指甲在背面中央附近用力一點輕觸。</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">垂直輕觸手機背面，不要輕觸邊框或斜著輕觸。</string>
+    <string name="gesture_trainer_tip_back_tap_moving">輕觸前先讓手機靜止片刻，並輕輕握住，避免手讓手機移動。</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">輕觸背面時手指不要碰到螢幕：握住手機兩側。</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">輕觸快一點，一下緊接著一下。</string>
+    <string name="gesture_trainer_advice_swipe_hold">滑動後手指太早放開。將「<xliff:g id="setting">%1$s</xliff:g>」設短一點可以允許較短的按住時間。</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">背面輕觸較輕。將「<xliff:g id="setting">%1$s</xliff:g>」設高一點可以偵測較輕的輕觸，但可能會將碰撞偵測為輕觸。</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">手指旋轉了 <xliff:g id="degrees">%1$.0f</xliff:g> 度，達到 <xliff:g id="limit">%2$.0f</xliff:g> 度時動作就會被視為旋轉。</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">讓手指以直線互相靠近或分開，不要繞著彼此畫弧線。</string>
+    <string name="gesture_trainer_finding_other_gesture">這個動作符合的是那個手勢。</string>
+    <string name="gesture_trainer_side_left">左</string>
+    <string name="gesture_trainer_side_right">右</string>
+    <string name="gesture_trainer_side_top">頂部</string>
+    <string name="gesture_trainer_side_bottom">底部</string>
+    <string name="gesture_trainer_finding_wrong_edge">手指從<xliff:g id="side">%1$s</xliff:g>邊緣開始，但這個練習在<xliff:g id="expected">%2$s</xliff:g>邊緣。</string>
+    <string name="gesture_trainer_tip_wrong_edge">從練習指定的邊緣正上方開始。</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">開啟了邊緣選單，而不是這個手勢。</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">沿著有選單的邊緣滑動會開啟選單。請從練習指定的邊緣開始。</string>
+    <string name="gesture_trainer_group_three_part">三段式滑動</string>
+    <string name="gesture_trainer_group_two_stroke">兩段式滑動</string>
+    <string name="gesture_trainer_group_shake">搖晃</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">已略過三段式滑動：「<xliff:g id="setting">%1$s</xliff:g>」已開啟。</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">已略過兩段式滑動：「<xliff:g id="setting">%1$s</xliff:g>」為<xliff:g id="value">%2$s</xliff:g>。</string>
+    <string name="gesture_trainer_shake_info">練習期間搖晃不會執行任何指令。「<xliff:g id="setting">%1$s</xliff:g>」決定搖晃需要多大力道。</string>
+    <string name="gesture_trainer_go_shake">將手機搖晃 <xliff:g id="tries">%1$d</xliff:g> 次，每次搖晃後稍停一下。</string>
+    <string name="gesture_trainer_how_shake">握緊手機，快速來回搖晃，就像甩掉一滴水一樣：每個方向至少兩次，全部在約三分之二秒內完成。然後拿穩不動。</string>
+    <string name="gesture_trainer_how_two_stroke">用一根手指向<xliff:g id="first">%1$s</xliff:g>滑動約 2 公分，然後放開。接著立即在 <xliff:g id="time">%3$d</xliff:g> 毫秒內，用一根手指向<xliff:g id="second">%2$s</xliff:g>滑動約 2 公分，然後放開。</string>
+    <string name="gesture_trainer_how_three_part">用一根手指觸碰螢幕，不放開，向<xliff:g id="first">%1$s</xliff:g>滑動，接著急轉向<xliff:g id="second">%2$s</xliff:g>滑動，再急轉向<xliff:g id="third">%3$s</xliff:g>滑動，每段約 2 公分，然後放開。整個動作要快速流暢、一氣呵成，轉角要銳利，不要畫弧線。</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">將一根手指放在螢幕上方三分之一處，另一根放在下方三分之一處，例如拇指在下、食指在上。</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">手指不是一根在螢幕上方三分之一處、一根在下方三分之一處。</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">沒有第二次滑動。</string>
+    <string name="gesture_trainer_finding_second_stroke_late">第二次滑動在第一次之後 <xliff:g id="ms">%1$d</xliff:g> 毫秒才開始，最多允許 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">第一次滑動向<xliff:g id="direction">%1$s</xliff:g>移動。</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">第二次滑動向<xliff:g id="direction">%1$s</xliff:g>移動。</string>
+    <string name="gesture_trainer_finding_shake_too_light">搖晃太輕：只有所需力道的 <xliff:g id="percent">%1$d</xliff:g>%%。</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">來回擺動：<xliff:g id="swings">%1$d</xliff:g> 次，需要 <xliff:g id="wanted">%2$d</xliff:g> 次。</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">將手指張得很開，一根靠近頂部邊緣，一根靠近底部邊緣。</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">第一次滑動後，抬起手指並立即再次滑動。</string>
+    <string name="gesture_trainer_tip_second_stroke_late">抬起手指後立即開始第二次滑動。</string>
+    <string name="gesture_trainer_tip_shake_too_light">搖晃得更用力、更快。</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">搖晃得更快，每個方向來回至少兩次，中間不要停。</string>
+    <string name="gesture_trainer_measure_shake_strength">最強動作 <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">搖晃較輕。將「<xliff:g id="setting">%1$s</xliff:g>」設高一點可以偵測較輕的搖晃，但可能會將攜帶手機偵測為搖晃。</string>
+    <string name="gesture_trainer_advice_two_stroke_time">第二次滑動開始得晚。將「<xliff:g id="setting">%1$s</xliff:g>」設長一點可以允許較晚的第二次滑動，但單次滑動在執行前也會等待較久。</string>
+    <string name="gesture_trainer_scrub_two_finger_on">「<xliff:g id="setting">%1$s</xliff:g>」已開啟。</string>
+    <string name="gesture_trainer_scrub_two_finger_off">「<xliff:g id="setting">%1$s</xliff:g>」已關閉：雙指滑動會捲動應用程式，來回滑動通常也會捲動。開啟此設定後，雙指滑動會執行 SandFly 指令，而不是捲動。</string>
+    <string name="gesture_trainer_measure_first_stroke">第一次滑動 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_second_stroke">第二次滑動 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_whole_gesture">整個手勢 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+    <string name="gesture_trainer_measure_stroke_gap">中間抬起 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
+</resources>

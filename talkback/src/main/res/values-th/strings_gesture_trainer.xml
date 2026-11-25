@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">ตัวฝึกท่าทางสัมผัส</string>
+    <string name="gesture_trainer_intro">เลือกกลุ่มท่าทางสัมผัส แต่ละแบบฝึกหัดจะอธิบายท่าทางสัมผัสหนึ่งท่า ทำท่าทางสัมผัสนั้น <xliff:g id="tries">%1$d</xliff:g> ครั้ง ระบบจะพูดผลของแต่ละครั้ง หลังจากครั้งสุดท้าย หน้าจอจะแสดงค่าที่วัดได้ของแต่ละครั้ง สิ่งที่ควรเปลี่ยน และการตั้งค่าที่เกี่ยวข้อง</string>
+    <string name="gesture_trainer_group_one_finger">นิ้วเดียว</string>
+    <string name="gesture_trainer_group_two_fingers">สองนิ้ว</string>
+    <string name="gesture_trainer_group_three_fingers">สามนิ้ว</string>
+    <string name="gesture_trainer_group_four_fingers">สี่นิ้ว</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">บีบ หมุน และขัด</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> แบบฝึกหัด</string>
+    <string name="gesture_trainer_close">ปิด</string>
+    <string name="gesture_trainer_no_detection">ตัวฝึกท่าทางสัมผัสต้องใช้ Android 13 ขึ้นไป</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">ไม่รวมท่าทางสัมผัสแบบไปกลับและแบบมุม: <xliff:g id="setting">%1$s</xliff:g> เปิดอยู่</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">ไม่รวมการปัดด้วย 2 นิ้ว: <xliff:g id="setting">%1$s</xliff:g> ปิดอยู่ การปัดด้วย 2 นิ้วจึงเลื่อนแอป</string>
+    <string name="gesture_trainer_exercise_heading">แบบฝึกหัดที่ <xliff:g id="number">%1$d</xliff:g> จาก <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">เริ่ม</string>
+    <string name="gesture_trainer_skip">ข้ามแบบฝึกหัดนี้</string>
+    <string name="gesture_trainer_back_to_groups">กลับไปที่กลุ่ม</string>
+    <string name="gesture_trainer_go">ทำท่าทางสัมผัส <xliff:g id="tries">%1$d</xliff:g> ครั้ง ที่ใดก็ได้บนหน้าจอ การสัมผัสแต่ละครั้งนับเป็นหนึ่งครั้ง</string>
+    <string name="gesture_trainer_fingers_1">นิ้วเดียว</string>
+    <string name="gesture_trainer_fingers_2">สองนิ้ววางเคียงกัน ห่างกันประมาณ 1 ซม</string>
+    <string name="gesture_trainer_fingers_3">สามนิ้ววางเคียงกัน ห่างกันเล็กน้อย</string>
+    <string name="gesture_trainer_fingers_4">สี่นิ้ววางเคียงกัน ห่างกันเล็กน้อย</string>
+    <string name="gesture_trainer_direction_up">ขึ้น</string>
+    <string name="gesture_trainer_direction_down">ลง</string>
+    <string name="gesture_trainer_direction_left">ไปทางซ้าย</string>
+    <string name="gesture_trainer_direction_right">ไปทางขวา</string>
+    <string name="gesture_trainer_how_swipe">แตะหน้าจอด้วย<xliff:g id="fingers">%1$s</xliff:g> แล้วเลื่อน<xliff:g id="direction">%2$s</xliff:g>เป็นเส้นตรงทันทีประมาณ 2 ถึง 3 ซม จากนั้นยกนิ้ว เริ่มเคลื่อนทันที นิ้วที่วางนิ่งก่อนจะเริ่มการสำรวจการสัมผัส</string>
+    <string name="gesture_trainer_how_swipe_multi">วางนิ้วลงพร้อมกันในเวลาเดียวกัน และเคลื่อนทุกนิ้วไปทางเดียวกัน ทุกนิ้วต้องเคลื่อน<xliff:g id="direction">%1$s</xliff:g>ตลอดเวลา จึงต้องรักษาแนวให้ตรง</string>
+    <string name="gesture_trainer_how_back_and_forth">แตะหน้าจอด้วยนิ้วเดียวแล้วเลื่อน<xliff:g id="first">%1$s</xliff:g>ประมาณ 2 ซม จากนั้นเลื่อนกลับ<xliff:g id="second">%2$s</xliff:g>ตรงๆ ประมาณ 2 ซม โดยไม่ยกนิ้ว แล้วยกนิ้ว ทำให้เป็นการเคลื่อนไหวเดียวที่เร็วและต่อเนื่อง</string>
+    <string name="gesture_trainer_how_angle">แตะหน้าจอด้วย<xliff:g id="fingers">%1$s</xliff:g>แล้วเลื่อน<xliff:g id="first">%2$s</xliff:g>ประมาณ 2 ซม จากนั้นหักเลี้ยวทันทีโดยไม่ยกนิ้วและเลื่อน<xliff:g id="second">%3$s</xliff:g>ประมาณ 2 ซม แล้วยกนิ้ว ทำมุมให้คมเหมือนตัวอักษร L ไม่ใช่เส้นโค้ง</string>
+    <string name="gesture_trainer_taps_1">หนึ่งครั้ง</string>
+    <string name="gesture_trainer_taps_2">สองครั้ง</string>
+    <string name="gesture_trainer_taps_3">สามครั้ง</string>
+    <string name="gesture_trainer_taps_4">สี่ครั้ง</string>
+    <string name="gesture_trainer_how_taps">แตะ<xliff:g id="taps">%1$s</xliff:g>ด้วย<xliff:g id="fingers">%2$s</xliff:g> วางนิ้วลงพร้อมกันและยกขึ้นพร้อมกันอย่างรวดเร็ว โดยไม่เลื่อนนิ้ว</string>
+    <string name="gesture_trainer_how_taps_quick">แตะให้เร็วและที่จุดเดิม การแตะครั้งถัดไปต้องเกิดขึ้นภายใน <xliff:g id="gap">%1$d</xliff:g> ms หลังครั้งก่อน</string>
+    <string name="gesture_trainer_how_hold">วาง<xliff:g id="fingers">%1$s</xliff:g>บนหน้าจอพร้อมกันและค้างไว้นิ่งๆ โดยไม่เลื่อน อย่างน้อย <xliff:g id="hold">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">หากไม่ได้กำหนดคำสั่งอื่น ท่าทางสัมผัสนี้จะปิด SandFly ในตัวฝึก ท่าทางนี้จะไม่เรียกใช้สิ่งใด</string>
+    <string name="gesture_trainer_how_taps_hold">แตะ<xliff:g id="taps">%1$s</xliff:g>ด้วย<xliff:g id="fingers">%2$s</xliff:g> และในการแตะครั้งสุดท้าย ให้วางนิ้วค้างไว้นิ่งๆ บนหน้าจออย่างน้อย <xliff:g id="hold">%3$d</xliff:g> ms</string>
+    <string name="gesture_trainer_how_three_finger_hand">ใช้นิ้วโป้ง นิ้วชี้ และนิ้วกลาง</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">วางนิ้วชี้และนิ้วกลางชิดกัน และวางนิ้วโป้งกับนิ้วนางห่างออกไปสองสามเซนติเมตรด้านละนิ้ว จากนั้นบีบปลายนิ้วทั้งสี่เข้าหาจุดเดียวกัน</string>
+    <string name="gesture_trainer_how_pinch">วาง <xliff:g id="fingers">%1$d</xliff:g> นิ้วบนหน้าจอโดยกางห่างกันมาก จากนั้นเลื่อนนิ้วเข้าหากันเป็นเส้นตรงอย่างน้อย 1 ซม เหมือนกำลังหยิบของ แล้วยกนิ้วออกจากหน้าจอ เคลื่อนเฉพาะนิ้ว ไม่ใช่ทั้งมือ และไม่เคลื่อนเป็นวงโค้ง</string>
+    <string name="gesture_trainer_how_spread">วาง <xliff:g id="fingers">%1$d</xliff:g> นิ้วบนหน้าจอโดยให้ชิดกัน จากนั้นเลื่อนนิ้วแยกออกจากกันเป็นเส้นตรงอย่างน้อย 1 ซม แล้วยกนิ้วออกจากหน้าจอ เคลื่อนเฉพาะนิ้ว ไม่ใช่ทั้งมือ และไม่เคลื่อนเป็นวงโค้ง</string>
+    <string name="gesture_trainer_clockwise">ตามเข็มนาฬิกา</string>
+    <string name="gesture_trainer_counterclockwise">ทวนเข็มนาฬิกา</string>
+    <string name="gesture_trainer_how_rotate">วางสองนิ้วบนหน้าจอ ห่างกันประมาณ 2 ถึง 3 ซม แล้วหมุนนิ้ว<xliff:g id="way">%1$s</xliff:g>รอบจุดกึ่งกลางเหมือนหมุนปุ่มหมุน ประมาณหนึ่งในสี่รอบ จากนั้นยกนิ้ว</string>
+    <string name="gesture_trainer_how_scrub">วางสองนิ้วบนหน้าจอแล้วเลื่อนไปด้านหนึ่งอย่างรวดเร็วประมาณ 2 ซม และกลับมา เหมือนกำลังลบบางอย่าง ทั้งหมดภายในประมาณหนึ่งวินาที จากนั้นยกนิ้ว</string>
+    <string name="gesture_trainer_edge_bottom">ที่ขอบด้านล่าง</string>
+    <string name="gesture_trainer_edge_top_left">ที่ขอบด้านบน ในครึ่งซ้าย</string>
+    <string name="gesture_trainer_edge_top_right">ที่ขอบด้านบน ในครึ่งขวา</string>
+    <string name="gesture_trainer_edge_left_top">ที่ขอบซ้าย ในครึ่งบน</string>
+    <string name="gesture_trainer_edge_left_bottom">ที่ขอบซ้าย ในครึ่งล่าง</string>
+    <string name="gesture_trainer_edge_right_top">ที่ขอบขวา ในครึ่งบน</string>
+    <string name="gesture_trainer_edge_right_bottom">ที่ขอบขวา ในครึ่งล่าง</string>
+    <string name="gesture_trainer_edge_left">ที่ขอบซ้าย</string>
+    <string name="gesture_trainer_edge_right">ที่ขอบขวา</string>
+    <string name="gesture_trainer_edge_top">ที่ขอบด้านบน</string>
+    <string name="gesture_trainer_how_edge">วางนิ้วเดียว<xliff:g id="edge">%1$s</xliff:g> ห่างจากขอบไม่เกิน <xliff:g id="edge_width">%2$d</xliff:g> มม แล้วเลื่อน<xliff:g id="direction">%3$s</xliff:g>เข้าไปในหน้าจอจนถึงเสียงคลิกแรก ประมาณ <xliff:g id="distance">%4$d</xliff:g> มม จากนั้นยกนิ้วทันที หากเลยเสียงคลิกที่สอง จะเป็นการปัดยาว</string>
+    <string name="gesture_trainer_how_edge_long">วางนิ้วเดียว<xliff:g id="edge">%1$s</xliff:g> ห่างจากขอบไม่เกิน <xliff:g id="edge_width">%2$d</xliff:g> มม แล้วเลื่อน<xliff:g id="direction">%3$s</xliff:g>เข้าไปในหน้าจอผ่านเสียงคลิกแรกจนถึงเสียงคลิกที่สอง ประมาณ <xliff:g id="distance">%4$d</xliff:g> มม จากนั้นยกนิ้ว</string>
+    <string name="gesture_trainer_how_along">เลื่อนนิ้วเดียว<xliff:g id="direction">%2$s</xliff:g>ตาม<xliff:g id="edge">%1$s</xliff:g> อย่างน้อย <xliff:g id="distance">%3$d</xliff:g> มม</string>
+    <string name="gesture_trainer_corner_top_left">ซ้ายบน</string>
+    <string name="gesture_trainer_corner_top_right">ขวาบน</string>
+    <string name="gesture_trainer_corner_bottom_left">ซ้ายล่าง</string>
+    <string name="gesture_trainer_corner_bottom_right">ขวาล่าง</string>
+    <string name="gesture_trainer_how_corner">แตะ<xliff:g id="taps">%1$s</xliff:g>ที่มุม<xliff:g id="corner">%2$s</xliff:g>ของหน้าจอ วางนิ้วตรงมุมพอดี ห่างจากขอบทั้งสองไม่เกิน <xliff:g id="size">%3$d</xliff:g> มม และยกนิ้วอย่างรวดเร็วภายใน <xliff:g id="time">%4$d</xliff:g> ms</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> มม <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> มม</string>
+    <string name="gesture_trainer_corner_warning">เมื่อมุมใหญ่ขึ้น การแตะตัวควบคุมที่อยู่ใกล้มุม เช่น กลับ ที่มุมซ้ายบน อาจเรียกใช้ท่าทางสัมผัสที่มุมแทน</string>
+    <string name="gesture_trainer_rating_precise">จดจำได้ แม่นยำ</string>
+    <string name="gesture_trainer_rating_good">จดจำได้ ดี</string>
+    <string name="gesture_trainer_rating_borderline">จดจำได้ แต่ใกล้ขีดจำกัด</string>
+    <string name="gesture_trainer_try_recognized">ครั้งที่ <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g></string>
+    <string name="gesture_trainer_try_nothing">ครั้งที่ <xliff:g id="number">%1$d</xliff:g>: จดจำไม่ได้</string>
+    <string name="gesture_trainer_try_other">ครั้งที่ <xliff:g id="number">%1$d</xliff:g>: จดจำเป็น <xliff:g id="gesture">%2$s</xliff:g></string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: จดจำได้ <xliff:g id="recognized">%2$d</xliff:g> จาก <xliff:g id="tries">%3$d</xliff:g> ครั้ง</string>
+    <string name="gesture_trainer_results_tries">ผลการทำของคุณ</string>
+    <string name="gesture_trainer_results_change">สิ่งที่ควรเปลี่ยน</string>
+    <string name="gesture_trainer_results_close">ใกล้ขีดจำกัด</string>
+    <string name="gesture_trainer_results_all_good">จดจำได้ทุกครั้งภายในขีดจำกัด</string>
+    <string name="gesture_trainer_results_settings">การตั้งค่าที่ช่วยได้</string>
+    <string name="gesture_trainer_next">แบบฝึกหัดถัดไป</string>
+    <string name="gesture_trainer_repeat">ทำซ้ำ</string>
+    <string name="gesture_trainer_finish">เสร็จสิ้น</string>
+    <string name="gesture_trainer_group_done">คุณทำแบบฝึกหัดทั้งหมดใน <xliff:g id="group">%1$s</xliff:g> เสร็จแล้ว</string>
+    <string name="gesture_trainer_open_setting">เปลี่ยน <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">ใช้เวลา <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">ยาว <xliff:g id="cm">%1$.1f</xliff:g> ซม</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> ซม ต่อวินาที</string>
+    <string name="gesture_trainer_measure_angle">เบี่ยงจากเส้นตรง <xliff:g id="degrees">%1$.0f</xliff:g> องศา</string>
+    <string name="gesture_trainer_measure_start">เซนติเมตรแรกใน <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">นิ้ววางห่างกัน <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">แตะ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms ระหว่างการแตะ</string>
+    <string name="gesture_trainer_measure_spread">นิ้วเคลื่อน <xliff:g id="mm">%1$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_measure_rotation">หมุน <xliff:g id="degrees">%1$.0f</xliff:g> องศา</string>
+    <string name="gesture_trainer_measure_corner">ห่างจากขอบของมุม <xliff:g id="mm">%1$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_measure_edge">เริ่มห่างจากขอบ <xliff:g id="mm">%1$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">นิ้วบนหน้าจอ: <xliff:g id="fingers">%1$d</xliff:g> แทนที่จะเป็น <xliff:g id="wanted">%2$d</xliff:g></string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">นิ้ววางห่างกัน <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">มีนิ้วยกขึ้นก่อนที่ทุกนิ้วจะวางลง</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">นิ้วยกขึ้นห่างกัน <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_became_exploration">นิ้วอยู่นิ่งนานเกินไปหรือเคลื่อนช้าเกินไปในตอนแรก การสัมผัสจึงกลายเป็นการสำรวจการสัมผัส</string>
+    <string name="gesture_trainer_finding_slow_start">เซนติเมตรแรกใช้เวลา <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_paused">นิ้วชะลอลงเป็นเวลา <xliff:g id="ms">%1$d</xliff:g> ms และแต่ละเซนติเมตรใช้เวลาได้สูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_too_short">การเคลื่อนไหวยาวเพียง <xliff:g id="mm">%1$.0f</xliff:g> มม และต้องยาวอย่างน้อย <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">นิ้วเริ่มเคลื่อน<xliff:g id="direction">%1$s</xliff:g></string>
+    <string name="gesture_trainer_finding_wrong_direction">นิ้วเริ่มเคลื่อน<xliff:g id="direction">%1$s</xliff:g></string>
+    <string name="gesture_trainer_finding_off_line">เส้นทางเบี่ยงจากเส้นตรง <xliff:g id="degrees">%1$.0f</xliff:g> องศา และอนุญาตสูงสุด <xliff:g id="limit">%2$.0f</xliff:g></string>
+    <string name="gesture_trainer_finding_curved">เส้นทางหักเป็น <xliff:g id="parts">%1$d</xliff:g> ส่วนแทนที่จะเป็น <xliff:g id="wanted">%2$d</xliff:g></string>
+    <string name="gesture_trainer_finding_turn_missing">ไม่พบการเลี้ยว</string>
+    <string name="gesture_trainer_finding_second_part_wrong">หลังการเลี้ยว นิ้วเคลื่อน<xliff:g id="direction">%1$s</xliff:g></string>
+    <string name="gesture_trainer_finding_tap_moved">นิ้วเลื่อน <xliff:g id="mm">%1$.1f</xliff:g> มม ระหว่างการแตะ และอนุญาตสูงสุด <xliff:g id="limit">%2$.1f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_tap_held_long">การแตะครั้งหนึ่งใช้เวลา <xliff:g id="ms">%1$d</xliff:g> ms นานกว่า <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_hold_too_short">การแตะครั้งสุดท้ายค้างไว้ <xliff:g id="ms">%1$d</xliff:g> ms และต้องค้างอย่างน้อย <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_too_few_taps">แตะ <xliff:g id="taps">%1$d</xliff:g> ครั้งแทนที่จะเป็น <xliff:g id="wanted">%2$d</xliff:g></string>
+    <string name="gesture_trainer_finding_too_many_taps">แตะ <xliff:g id="taps">%1$d</xliff:g> ครั้งแทนที่จะเป็น <xliff:g id="wanted">%2$d</xliff:g></string>
+    <string name="gesture_trainer_finding_taps_too_slow">ผ่านไป <xliff:g id="ms">%1$d</xliff:g> ms ระหว่างการแตะ และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_taps_apart">การแตะห่างกัน <xliff:g id="mm">%1$.0f</xliff:g> มม และอนุญาตสูงสุด <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_pinch_too_small">นิ้วเคลื่อนเพียง <xliff:g id="mm">%1$.0f</xliff:g> มม และต้องเคลื่อนอย่างน้อย <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">นิ้วเคลื่อนไปในทิศทางตรงข้าม</string>
+    <string name="gesture_trainer_finding_moved_together">ทั้งมือเลื่อนไปบนหน้าจอ <xliff:g id="mm">%1$.0f</xliff:g> มม มากกว่าที่นิ้วเคลื่อนเข้าหาหรือออกจากกัน</string>
+    <string name="gesture_trainer_finding_rotate_too_small">นิ้วหมุนเพียง <xliff:g id="degrees">%1$.0f</xliff:g> องศา และต้องหมุนอย่างน้อย <xliff:g id="limit">%2$.0f</xliff:g></string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">นิ้วหมุนไปในทิศทางตรงข้าม</string>
+    <string name="gesture_trainer_finding_scrub_too_short">การลากครั้งแรกยาว <xliff:g id="mm">%1$.0f</xliff:g> มม และต้องยาวอย่างน้อย <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_scrub_no_return">การลากกลับยาว <xliff:g id="mm">%1$.0f</xliff:g> มม และต้องยาวอย่างน้อย <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">การขัดใช้เวลา <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">นิ้ววางห่างจากขอบ <xliff:g id="mm">%1$.0f</xliff:g> มม และขอบกว้าง <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">นิ้วเริ่มที่อีกครึ่งหนึ่งของขอบ</string>
+    <string name="gesture_trainer_finding_edge_too_short">นิ้วเลื่อน <xliff:g id="mm">%1$.0f</xliff:g> มม และต้องเลื่อนอย่างน้อย <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_edge_too_long">เลื่อนยาวเกินไป: นิ้วเลยเสียงคลิกที่สอง <xliff:g id="mm">%1$.0f</xliff:g> มม และเสียงคลิกที่สองอยู่ที่ <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_edge_too_slow">การเลื่อนถึงเสียงคลิกใช้เวลา <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_edge_sideways">การเลื่อนเบี่ยงไปด้านข้าง <xliff:g id="degrees">%1$.0f</xliff:g> องศา และอนุญาตสูงสุด <xliff:g id="limit">%2$.0f</xliff:g></string>
+    <string name="gesture_trainer_finding_corner_missed">การแตะห่างจากขอบของมุม <xliff:g id="mm">%1$.0f</xliff:g> มม และมุมมีขนาด <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">การแตะมุมครั้งหนึ่งใช้เวลา <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_none">ไม่พบการเคลื่อนไหวที่ตรงกับท่าทางสัมผัส</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">ตรวจดูว่ามีกี่นิ้วที่สัมผัสกระจก ฝ่ามือหรือนิ้วอื่นที่วางอยู่บนหน้าจอก็นับด้วย</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">วางทุกนิ้วลงในเวลาเดียวกันเหมือนเป็นมือเดียว ไม่ใช่ทีละนิ้ว</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">วางทุกนิ้วลงก่อน แล้วจึงเคลื่อนหรือยกนิ้ว</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">ยกทุกนิ้วขึ้นในเวลาเดียวกัน</string>
+    <string name="gesture_trainer_tip_slow_start">เริ่มเคลื่อนทันทีที่สัมผัสหน้าจอ และเคลื่อนให้เร็วขึ้นในช่วงเริ่มต้น</string>
+    <string name="gesture_trainer_tip_paused">เคลื่อนนิ้วด้วยความเร็วสม่ำเสมอจนกว่าจะยกนิ้ว อย่าชะลอใกล้ตอนท้าย</string>
+    <string name="gesture_trainer_tip_too_short">เคลื่อนให้ยาวขึ้น ประมาณ 2 ถึง 3 ซม</string>
+    <string name="gesture_trainer_tip_wrong_direction">ตรวจดูทิศทางตั้งแต่เริ่มเคลื่อน การถือโทรศัพท์ตรงๆ ไว้ตรงหน้าช่วยได้</string>
+    <string name="gesture_trainer_tip_off_line">เคลื่อนตามทิศทางเท่านั้น ไม่ใช่ในแนวทแยง นิ้วชี้รักษาเส้นตรงได้ดีกว่านิ้วโป้ง</string>
+    <string name="gesture_trainer_tip_curved">รักษาเส้นให้ตรงและยกนิ้วตรงตอนท้ายพอดี โดยไม่ตวัดนิ้วไปด้านข้างขณะยก</string>
+    <string name="gesture_trainer_tip_turn_missing">เปลี่ยนทิศทางอย่างฉับพลัน เป็นมุมฉากหรือย้อนกลับตรงๆ โดยไม่ยกนิ้ว แต่ละส่วนควรยาวประมาณ 2 ซม</string>
+    <string name="gesture_trainer_tip_second_part_wrong">หลังการเลี้ยว ให้ตรวจดูว่าเคลื่อนไปทางไหน ส่วนที่สองต้องเคลื่อนไปตามทิศทางที่สองในชื่อท่าทางสัมผัส</string>
+    <string name="gesture_trainer_tip_tap_moved">แตะลงและยกขึ้นตรงๆ ด้วยปลายนิ้ว โดยไม่เลื่อน</string>
+    <string name="gesture_trainer_tip_tap_held_long">แตะแต่ละครั้งให้สั้น สัมผัสแล้วยกขึ้นทันที</string>
+    <string name="gesture_trainer_tip_hold_too_short">ในการแตะครั้งสุดท้าย ให้วางนิ้วนิ่งบนหน้าจอจนครบเวลาค้าง</string>
+    <string name="gesture_trainer_tip_too_few_taps">นับจำนวนการแตะ และแตะทั้งหมดอย่างรวดเร็วในครั้งเดียว</string>
+    <string name="gesture_trainer_tip_too_many_taps">นับจำนวนการแตะ นิ้วที่เด้งออกจากกระจกจะทำให้เกิดการแตะเพิ่ม</string>
+    <string name="gesture_trainer_tip_taps_too_slow">แตะให้เร็วขึ้น เริ่มการแตะครั้งถัดไปทันทีหลังยกนิ้ว</string>
+    <string name="gesture_trainer_tip_taps_apart">แตะที่จุดเดิมทุกครั้ง</string>
+    <string name="gesture_trainer_tip_pinch_too_small">เคลื่อนนิ้วให้มากขึ้น เข้าหากันหรือแยกออกจากกันอย่างน้อย 1 ซม</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">บีบคือการเคลื่อนนิ้วเข้าหากัน กางคือการเคลื่อนนิ้วแยกออกจากกัน</string>
+    <string name="gesture_trainer_tip_moved_together">เคลื่อนเฉพาะนิ้วเข้าหาหรือออกจากกัน อย่าเลื่อนทั้งมือไปบนหน้าจอ</string>
+    <string name="gesture_trainer_tip_rotate_too_small">หมุนให้มากขึ้น เหมือนหมุนปุ่มหมุนหนึ่งในสี่รอบ</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">ตามเข็มนาฬิกาหมายถึงหมุนไปทางเดียวกับเข็มนาฬิกา นิ้วที่อยู่ด้านบนจะเคลื่อนไปทางขวา</string>
+    <string name="gesture_trainer_tip_scrub_too_short">ลากครั้งแรกให้ยาวอย่างน้อย 1 ซม</string>
+    <string name="gesture_trainer_tip_scrub_no_return">หลังการลากครั้งแรก ให้ลากกลับในทิศทางตรงข้ามก่อนยกนิ้ว</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">ขัดให้เร็ว ไปและกลับภายในประมาณหนึ่งวินาที</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">เริ่มที่ขอบพอดี โดยให้ปลายนิ้วเลยออกนอกหน้าจอเล็กน้อย</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">ตรวจดูว่าเริ่มที่ครึ่งไหนของขอบ</string>
+    <string name="gesture_trainer_tip_edge_too_short">เลื่อนให้ไกลขึ้นจนได้ยินเสียงคลิก แล้วยกนิ้ว</string>
+    <string name="gesture_trainer_tip_edge_too_long">ยกนิ้วทันทีหลังเสียงคลิกแรก ก่อนเสียงคลิกที่สอง</string>
+    <string name="gesture_trainer_tip_edge_too_slow">เลื่อนเข้าให้เร็วขึ้น โดยไม่หยุดก่อนเสียงคลิก</string>
+    <string name="gesture_trainer_tip_edge_sideways">เลื่อนเข้าจากขอบตรงๆ หรือเลื่อนตามขอบตรงๆ ไม่ใช่ในแนวทแยง</string>
+    <string name="gesture_trainer_tip_corner_missed">วางนิ้วตรงมุมพอดี ให้สัมผัสขอบทั้งสอง</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">ยกนิ้วให้เร็วขึ้นหลังสัมผัสมุม</string>
+    <string name="gesture_trainer_close_to_limit">ใกล้ขีดจำกัด: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">การปัดเริ่มช้า <xliff:g id="setting">%1$s</xliff:g> ที่ยาวขึ้นจะยอมให้เริ่มช้าลงได้</string>
+    <string name="gesture_trainer_advice_tap_time">การแตะช้า <xliff:g id="setting">%1$s</xliff:g> ที่ยาวขึ้นจะยอมให้แตะช้าลงได้</string>
+    <string name="gesture_trainer_advice_edge_width">การปัดเริ่มไกลจากขอบเกินไป <xliff:g id="setting">%1$s</xliff:g> ที่มากขึ้นจะทำให้การปัดที่เริ่มใกล้ขอบกลายเป็นการปัดจากขอบด้วย</string>
+    <string name="gesture_trainer_advice_corner_size">การแตะอยู่นอกมุม <xliff:g id="setting">%1$s</xliff:g> ที่มากขึ้นจะทำให้มุมใหญ่ขึ้น</string>
+    <string name="gesture_trainer_advice_corner_time">การแตะมุมช้า <xliff:g id="setting">%1$s</xliff:g> ที่ยาวขึ้นจะยอมให้แตะช้าลงได้</string>
+    <string name="gesture_trainer_menu_option">ตัวเลือก <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: เลือกรายการที่ <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">เลื่อนนิ้วเดียวขึ้นหรือลง<xliff:g id="edge">%1$s</xliff:g>อย่างน้อย <xliff:g id="distance">%2$d</xliff:g> มม เพื่อเปิดเมนู เมนูมี <xliff:g id="count">%3$d</xliff:g> รายการ เรียงจากบนลงล่าง แต่ละรายการสูงประมาณ <xliff:g id="size">%6$s</xliff:g> ซม รายการที่ <xliff:g id="number">%4$d</xliff:g> <xliff:g id="item">%5$s</xliff:g> อยู่ห่างจากด้านบนของหน้าจอ <xliff:g id="from">%7$s</xliff:g> ถึง <xliff:g id="to">%8$s</xliff:g> ซม ยกนิ้วเมื่อได้ยินชื่อรายการ</string>
+    <string name="gesture_trainer_menu_sample">ขอบนี้ไม่มีเมนู แบบฝึกหัดนี้ใช้รายการตัวอย่าง <xliff:g id="count">%1$d</xliff:g> รายการ</string>
+    <string name="gesture_trainer_try_menu_cancelled">ครั้งที่ <xliff:g id="number">%1$d</xliff:g>: เมนูปิดโดยไม่มีการเลือก</string>
+    <string name="gesture_trainer_try_menu_other">ครั้งที่ <xliff:g id="number">%1$d</xliff:g>: เลือก <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_measure_menu_item">ยกนิ้วที่รายการที่ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">นิ้วเริ่มที่ส่วนบนสุดหรือล่างสุดของขอบ ซึ่งเป็นตำแหน่งของมุมและขอบด้านบนและด้านล่าง</string>
+    <string name="gesture_trainer_finding_menu_left_edge">นิ้วยกขึ้นห่างจากขอบ <xliff:g id="mm">%1$.0f</xliff:g> มม และเมนูจะปิดเมื่อห่างเกิน <xliff:g id="limit">%2$.0f</xliff:g> มม</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">นิ้วยกขึ้นที่รายการที่ <xliff:g id="item">%1$d</xliff:g> แทนที่จะเป็นรายการที่ <xliff:g id="target">%2$d</xliff:g></string>
+    <string name="gesture_trainer_tip_menu_in_corner">เริ่มให้ห่างจากปลายด้านบนและด้านล่างของขอบเล็กน้อย</string>
+    <string name="gesture_trainer_tip_menu_left_edge">ให้นิ้วอยู่ใกล้ขอบขณะเลื่อน และยกนิ้วที่ตรงนั้น</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">แต่ละรายการมีตำแหน่งคงที่ตามแนวขอบ และรายการที่ยกนิ้วจะถูกเลือก ยกนิ้วเมื่อได้ยินชื่อรายการ</string>
+    <string name="gesture_trainer_contents">สารบัญ</string>
+    <string name="gesture_trainer_contents_heading">สารบัญ: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">เสร็จแล้ว จดจำได้ <xliff:g id="hits">%1$d</xliff:g> จาก <xliff:g id="tries">%2$d</xliff:g> ครั้ง</string>
+    <string name="gesture_trainer_group_tap_swipe">แตะและปัด</string>
+    <string name="gesture_trainer_group_edge_swipes">การปัดจากขอบ</string>
+    <string name="gesture_trainer_group_along_edges">การเลื่อนตามขอบ</string>
+    <string name="gesture_trainer_group_edge_menus">เมนูขอบ</string>
+    <string name="gesture_trainer_group_corners">มุม</string>
+    <string name="gesture_trainer_group_back_tap">แตะด้านหลัง</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">ไม่รวมการแตะด้วย 2 นิ้วตามด้วยการปัดด้วย 2 นิ้ว: <xliff:g id="setting">%1$s</xliff:g> ปิดอยู่</string>
+    <string name="gesture_trainer_how_swipe_hold">จากนั้นค้างนิ้วไว้นิ่งๆ โดยไม่ยกนิ้วอย่างน้อย <xliff:g id="hold">%1$d</xliff:g> ms แล้วยกนิ้ว</string>
+    <string name="gesture_trainer_half_top">บน</string>
+    <string name="gesture_trainer_half_bottom">ล่าง</string>
+    <string name="gesture_trainer_how_taps_half">แตะที่ครึ่ง<xliff:g id="half">%1$s</xliff:g>ของหน้าจอ จุดกึ่งกลางระหว่างนิ้วเป็นตัวกำหนดครึ่ง</string>
+    <string name="gesture_trainer_same_fingers">นิ้วชุดเดิม</string>
+    <string name="gesture_trainer_how_tap_swipe">แตะ<xliff:g id="taps">%1$s</xliff:g>ด้วย<xliff:g id="fingers">%2$s</xliff:g> ทันทีหลังการแตะครั้งสุดท้าย ภายใน <xliff:g id="gap">%3$d</xliff:g> ms ให้สัมผัสหน้าจออีกครั้งด้วย<xliff:g id="swipe_fingers">%4$s</xliff:g> แล้วเลื่อน<xliff:g id="direction">%5$s</xliff:g>เป็นเส้นตรงประมาณ 2 ถึง 3 ซม จากนั้นยกนิ้ว</string>
+    <string name="gesture_trainer_how_corner_hold">ในการแตะครั้งสุดท้าย ให้วางนิ้วค้างไว้นิ่งๆ ที่มุมอย่างน้อย <xliff:g id="hold">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_how_back_tap">ถือโทรศัพท์ไว้ในมือโดยจับที่ด้านข้าง แล้วใช้ปลายนิ้วแตะกึ่งกลางด้านหลัง<xliff:g id="taps">%1$s</xliff:g>อย่างหนักแน่นและรวดเร็ว เหมือนเคาะประตู แตะให้ติดกัน ห่างกันไม่เกิน <xliff:g id="gap">%2$d</xliff:g> ms อย่าสัมผัสหน้าจอขณะแตะ</string>
+    <string name="gesture_trainer_back_tap_info">การแตะด้านหลังจะไม่เรียกใช้คำสั่งใดระหว่างแบบฝึกหัด <xliff:g id="setting">%1$s</xliff:g> กำหนดว่าการแตะต้องแรงเพียงใด</string>
+    <string name="gesture_trainer_go_placed">ทำท่าทางสัมผัส <xliff:g id="tries">%1$d</xliff:g> ครั้ง</string>
+    <string name="gesture_trainer_along_left">ขอบซ้าย</string>
+    <string name="gesture_trainer_along_right">ขอบขวา</string>
+    <string name="gesture_trainer_along_top">ขอบด้านบน</string>
+    <string name="gesture_trainer_along_bottom">ขอบด้านล่าง</string>
+    <string name="gesture_trainer_left_out_along_menu">ไม่รวมการเลื่อนตาม<xliff:g id="edge">%1$s</xliff:g>: ขอบนี้มีเมนูขอบ การเลื่อนตามขอบนี้จึงเปิดเมนูแทนการเรียกใช้ท่าทางสัมผัส</string>
+    <string name="gesture_trainer_left_out_along_scroll">ไม่รวมการเลื่อนตาม<xliff:g id="edge">%1$s</xliff:g>: ขอบนี้ใช้เลื่อนหน้าจอ การเลื่อนตามขอบนี้จึงเลื่อนแอปแทนการเรียกใช้ท่าทางสัมผัส</string>
+    <string name="gesture_trainer_finding_along_off_edge">นิ้วเคลื่อนออกห่างจากขอบมากเกินไป</string>
+    <string name="gesture_trainer_tip_along_off_edge">ให้นิ้วอยู่บนขอบสุดของกระจก ตรงไปตามขอบ</string>
+    <string name="gesture_trainer_go_back_tap">ทำท่าแตะด้านหลัง <xliff:g id="tries">%1$d</xliff:g> ครั้ง การสัมผัสหน้าจอจะทำให้ครั้งนั้นไม่ผ่าน</string>
+    <string name="gesture_trainer_no_accelerometer">แบบฝึกหัดนี้ต้องใช้มาตรความเร่ง แต่ไม่มีให้ใช้</string>
+    <string name="gesture_trainer_measure_hold">ค้างนิ่ง <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">แตะด้วยความแรง <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">นิ้วอยู่นิ่ง <xliff:g id="ms">%1$d</xliff:g> ms ในตอนท้าย และต้องอยู่นิ่งอย่างน้อย <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">นิ้วแตะที่อีกครึ่งหนึ่งของหน้าจอ</string>
+    <string name="gesture_trainer_finding_swipe_missing">ไม่มีการปัดหลังการแตะ</string>
+    <string name="gesture_trainer_finding_swipe_late">การปัดเริ่มหลังการแตะครั้งสุดท้าย <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">แตะด้านหลังเบาเกินไป: <xliff:g id="percent">%1$d</xliff:g>%% ของความแรงที่ต้องการ</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">การแตะทำให้โทรศัพท์สั่นไปด้านข้างมากกว่าผ่านด้านหลัง</string>
+    <string name="gesture_trainer_finding_back_tap_moving">โทรศัพท์กำลังเคลื่อนที่ก่อนการแตะ</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">มีการสัมผัสหน้าจอ และการแตะขณะสัมผัสหน้าจอจะไม่นับ</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">ผ่านไป <xliff:g id="ms">%1$d</xliff:g> ms ระหว่างการแตะด้านหลัง และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">หลังการปัด ให้วางนิ้วนิ่งบนหน้าจอจนครบเวลาค้าง แล้วยกนิ้ว</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">ตรวจดูว่าแตะที่ครึ่งไหน กึ่งกลางหน้าจอแบ่งครึ่งบนออกจากครึ่งล่าง</string>
+    <string name="gesture_trainer_tip_swipe_missing">หลังการแตะครั้งสุดท้าย ให้สัมผัสหน้าจออีกครั้งทันทีแล้วปัด</string>
+    <string name="gesture_trainer_tip_swipe_late">เริ่มปัดทันทีหลังการแตะครั้งสุดท้าย โดยไม่หยุด</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">แตะให้แรงขึ้นด้วยปลายนิ้วหรือเล็บ ใกล้กึ่งกลางด้านหลัง</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">แตะตรงเข้าที่ด้านหลังของโทรศัพท์ ไม่ใช่ที่ขอบหรือแตะเฉียง</string>
+    <string name="gesture_trainer_tip_back_tap_moving">ถือโทรศัพท์ให้นิ่งสักครู่ก่อนแตะ และถือหลวมๆ เพื่อไม่ให้มือทำให้โทรศัพท์ขยับ</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">อย่าให้นิ้วสัมผัสหน้าจอขณะแตะด้านหลัง ให้จับโทรศัพท์ที่ด้านข้าง</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">แตะให้เร็วขึ้น แตะต่อเนื่องกันทันที</string>
+    <string name="gesture_trainer_advice_swipe_hold">นิ้วยกขึ้นเร็วเกินไปหลังการปัด <xliff:g id="setting">%1$s</xliff:g> ที่สั้นลงจะยอมให้ค้างสั้นลงได้</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">การแตะด้านหลังเบา <xliff:g id="setting">%1$s</xliff:g> ที่สูงขึ้นจะตรวจจับการแตะที่เบากว่าได้ และอาจตรวจจับการกระแทกเป็นการแตะ</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">นิ้วหมุน <xliff:g id="degrees">%1$.0f</xliff:g> องศา และตั้งแต่ <xliff:g id="limit">%2$.0f</xliff:g> องศา การเคลื่อนไหวจะนับเป็นการหมุน</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">เคลื่อนนิ้วเป็นเส้นตรงเข้าหาหรือออกจากกัน ไม่ใช่เป็นวงโค้งรอบกัน</string>
+    <string name="gesture_trainer_finding_other_gesture">การเคลื่อนไหวตรงกับท่าทางสัมผัสนั้นแทน</string>
+    <string name="gesture_trainer_side_left">ซ้าย</string>
+    <string name="gesture_trainer_side_right">ขวา</string>
+    <string name="gesture_trainer_side_top">ด้านบน</string>
+    <string name="gesture_trainer_side_bottom">ด้านล่าง</string>
+    <string name="gesture_trainer_finding_wrong_edge">นิ้วเริ่มที่ขอบ<xliff:g id="side">%1$s</xliff:g> และแบบฝึกหัดนี้อยู่ที่ขอบ<xliff:g id="expected">%2$s</xliff:g></string>
+    <string name="gesture_trainer_tip_wrong_edge">เริ่มที่ขอบที่แบบฝึกหัดระบุพอดี</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">เมนูขอบเปิดขึ้นแทนท่าทางสัมผัสนี้</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">การเลื่อนตามขอบที่มีเมนูจะเปิดเมนู เริ่มที่ขอบที่แบบฝึกหัดระบุ</string>
+    <string name="gesture_trainer_group_three_part">การปัดสามส่วน</string>
+    <string name="gesture_trainer_group_two_stroke">การปัดสองจังหวะ</string>
+    <string name="gesture_trainer_group_shake">เขย่า</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">ไม่รวมการปัดสามส่วน: <xliff:g id="setting">%1$s</xliff:g> เปิดอยู่</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">ไม่รวมการปัดสองจังหวะ: <xliff:g id="setting">%1$s</xliff:g> เป็น <xliff:g id="value">%2$s</xliff:g></string>
+    <string name="gesture_trainer_shake_info">การเขย่าจะไม่เรียกใช้คำสั่งใดระหว่างแบบฝึกหัด <xliff:g id="setting">%1$s</xliff:g> กำหนดว่าการเขย่าต้องแรงเพียงใด</string>
+    <string name="gesture_trainer_go_shake">เขย่าโทรศัพท์ <xliff:g id="tries">%1$d</xliff:g> ครั้ง โดยหยุดสั้นๆ หลังการเขย่าแต่ละครั้ง</string>
+    <string name="gesture_trainer_how_shake">ถือโทรศัพท์ให้แน่นแล้วเขย่าไปมาอย่างรวดเร็ว เหมือนสะบัดหยดน้ำออก อย่างน้อยสองครั้งในแต่ละทิศทาง ทั้งหมดภายในประมาณสองในสามวินาที จากนั้นถือให้นิ่ง</string>
+    <string name="gesture_trainer_how_two_stroke">ปัด<xliff:g id="first">%1$s</xliff:g>ด้วยนิ้วเดียว ประมาณ 2 ซม แล้วยกนิ้ว จากนั้นทันที ภายใน <xliff:g id="time">%3$d</xliff:g> ms ให้ปัด<xliff:g id="second">%2$s</xliff:g>ด้วยนิ้วเดียว ประมาณ 2 ซม แล้วยกนิ้ว</string>
+    <string name="gesture_trainer_how_three_part">แตะหน้าจอด้วยนิ้วเดียว และโดยไม่ยกนิ้ว ให้ปัด<xliff:g id="first">%1$s</xliff:g> จากนั้นหักเลี้ยวทันทีแล้วปัด<xliff:g id="second">%2$s</xliff:g> จากนั้นหักเลี้ยวอีกครั้งแล้วปัด<xliff:g id="third">%3$s</xliff:g> แต่ละส่วนประมาณ 2 ซม แล้วยกนิ้ว ทำให้เป็นการเคลื่อนไหวเดียวที่เร็วและต่อเนื่อง มีมุมคม ไม่ใช่เส้นโค้ง</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">วางนิ้วหนึ่งในส่วนหนึ่งในสามด้านบนของหน้าจอ และอีกนิ้วในส่วนหนึ่งในสามด้านล่าง เช่น นิ้วโป้งอยู่ด้านล่างและนิ้วชี้อยู่ด้านบน</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">นิ้วไม่ได้อยู่ในส่วนหนึ่งในสามด้านบนของหน้าจอหนึ่งนิ้ว และในส่วนหนึ่งในสามด้านล่างหนึ่งนิ้ว</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">ไม่มีการปัดครั้งที่สอง</string>
+    <string name="gesture_trainer_finding_second_stroke_late">การปัดครั้งที่สองเริ่มหลังครั้งแรก <xliff:g id="ms">%1$d</xliff:g> ms และอนุญาตสูงสุด <xliff:g id="limit">%2$d</xliff:g> ms</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">การปัดครั้งแรกเคลื่อน<xliff:g id="direction">%1$s</xliff:g></string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">การปัดครั้งที่สองเคลื่อน<xliff:g id="direction">%1$s</xliff:g></string>
+    <string name="gesture_trainer_finding_shake_too_light">เขย่าเบาเกินไป: <xliff:g id="percent">%1$d</xliff:g>%% ของความแรงที่ต้องการ</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">การเหวี่ยงไปมา: <xliff:g id="swings">%1$d</xliff:g> จาก <xliff:g id="wanted">%2$d</xliff:g> ครั้งที่ต้องการ</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">กางนิ้วให้ห่างกันมาก นิ้วหนึ่งใกล้ขอบด้านบนและอีกนิ้วใกล้ขอบด้านล่าง</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">หลังการปัดครั้งแรก ให้ยกนิ้วแล้วปัดอีกครั้งทันที</string>
+    <string name="gesture_trainer_tip_second_stroke_late">เริ่มการปัดครั้งที่สองทันทีหลังยกนิ้ว</string>
+    <string name="gesture_trainer_tip_shake_too_light">เขย่าให้แรงขึ้นและเร็วขึ้น</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">เขย่าให้เร็วขึ้น ไปมาอย่างน้อยสองครั้งในแต่ละทิศทาง โดยไม่หยุดระหว่างนั้น</string>
+    <string name="gesture_trainer_measure_shake_strength">การเคลื่อนไหวที่แรงที่สุด <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">การเขย่าเบา <xliff:g id="setting">%1$s</xliff:g> ที่สูงขึ้นจะตรวจจับการเขย่าที่เบากว่าได้ และอาจตรวจจับการถือโทรศัพท์เดินเป็นการเขย่า</string>
+    <string name="gesture_trainer_advice_two_stroke_time">การปัดครั้งที่สองเริ่มช้า <xliff:g id="setting">%1$s</xliff:g> ที่ยาวขึ้นจะยอมให้การปัดครั้งที่สองเริ่มช้าลงได้ และการปัดครั้งเดียวจะรอนานขึ้นก่อนทำงาน</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> เปิดอยู่</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> ปิดอยู่: การปัดด้วย 2 นิ้วจะเลื่อนแอป และการขัดส่วนใหญ่ก็จะเลื่อนด้วย เมื่อเปิดการตั้งค่านี้ การปัดด้วย 2 นิ้วจะเรียกใช้คำสั่งของ SandFly แทนการเลื่อน</string>
+    <string name="gesture_trainer_measure_first_stroke">การปัดครั้งแรก <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">การปัดครั้งที่สอง <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">ทั้งท่าทางสัมผัส <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">ยกนิ้วระหว่างกัน <xliff:g id="ms">%1$d</xliff:g> ms</string>
+</resources>

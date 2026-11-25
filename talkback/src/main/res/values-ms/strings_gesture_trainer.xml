@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Jurulatih gerak isyarat</string>
+    <string name="gesture_trainer_intro">Pilih kumpulan gerak isyarat. Setiap latihan menerangkan satu gerak isyarat. Buat gerak isyarat itu <xliff:g id="tries">%1$d</xliff:g> kali; hasil setiap cubaan disebut. Selepas cubaan terakhir, skrin menyenaraikan ukuran setiap cubaan, perkara yang perlu diubah dan tetapan berkaitan.</string>
+    <string name="gesture_trainer_group_one_finger">Satu jari</string>
+    <string name="gesture_trainer_group_two_fingers">Dua jari</string>
+    <string name="gesture_trainer_group_three_fingers">Tiga jari</string>
+    <string name="gesture_trainer_group_four_fingers">Empat jari</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Cubit, putar dan gosok</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> latihan</string>
+    <string name="gesture_trainer_close">Tutup</string>
+    <string name="gesture_trainer_no_detection">Jurulatih gerak isyarat memerlukan Android 13 atau lebih baharu.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Gerak isyarat ulang-alik dan sudut dikecualikan: <xliff:g id="setting">%1$s</xliff:g> hidup.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Leretan dua jari dikecualikan: <xliff:g id="setting">%1$s</xliff:g> mati, jadi leretan itu menatal apl.</string>
+    <string name="gesture_trainer_exercise_heading">Latihan <xliff:g id="number">%1$d</xliff:g> daripada <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Mula</string>
+    <string name="gesture_trainer_skip">Langkau latihan ini</string>
+    <string name="gesture_trainer_back_to_groups">Kembali ke kumpulan</string>
+    <string name="gesture_trainer_go">Buat gerak isyarat itu <xliff:g id="tries">%1$d</xliff:g> kali, di mana-mana pada skrin. Setiap sentuhan ialah satu cubaan.</string>
+    <string name="gesture_trainer_fingers_1">satu jari</string>
+    <string name="gesture_trainer_fingers_2">dua jari bersebelahan, kira-kira 1 sm jaraknya</string>
+    <string name="gesture_trainer_fingers_3">tiga jari bersebelahan, sedikit berjarak</string>
+    <string name="gesture_trainer_fingers_4">empat jari bersebelahan, sedikit berjarak</string>
+    <string name="gesture_trainer_direction_up">ke atas</string>
+    <string name="gesture_trainer_direction_down">ke bawah</string>
+    <string name="gesture_trainer_direction_left">ke kiri</string>
+    <string name="gesture_trainer_direction_right">ke kanan</string>
+    <string name="gesture_trainer_how_swipe">Sentuh skrin dengan <xliff:g id="fingers">%1$s</xliff:g> dan, tanpa menunggu, gelongsor <xliff:g id="direction">%2$s</xliff:g> dalam garis lurus kira-kira 2 hingga 3 sm, kemudian angkat. Mula bergerak serta-merta: jari yang berhenti dahulu memulakan penerokaan sentuhan.</string>
+    <string name="gesture_trainer_how_swipe_multi">Letakkan jari serentak, pada saat yang sama, dan gerakkan semuanya ke arah yang sama. Setiap jari mesti bergerak <xliff:g id="direction">%1$s</xliff:g> sepanjang masa, jadi pastikan garisnya lurus.</string>
+    <string name="gesture_trainer_how_back_and_forth">Sentuh skrin dengan satu jari dan gelongsor <xliff:g id="first">%1$s</xliff:g> kira-kira 2 sm, kemudian tanpa mengangkat kembali terus <xliff:g id="second">%2$s</xliff:g> kira-kira 2 sm, dan angkat. Buat dalam satu gerakan yang pantas dan lancar.</string>
+    <string name="gesture_trainer_how_angle">Sentuh skrin dengan <xliff:g id="fingers">%1$s</xliff:g> dan gelongsor <xliff:g id="first">%2$s</xliff:g> kira-kira 2 sm, kemudian tanpa mengangkat belok dengan tajam dan gelongsor <xliff:g id="second">%3$s</xliff:g> kira-kira 2 sm, dan angkat. Buat belokan sebagai sudut tajam, seperti huruf L, bukan lengkung.</string>
+    <string name="gesture_trainer_taps_1">sekali</string>
+    <string name="gesture_trainer_taps_2">dua kali</string>
+    <string name="gesture_trainer_taps_3">tiga kali</string>
+    <string name="gesture_trainer_taps_4">empat kali</string>
+    <string name="gesture_trainer_how_taps">Ketik <xliff:g id="taps">%1$s</xliff:g> dengan <xliff:g id="fingers">%2$s</xliff:g>. Letakkan jari serentak dan angkat serentak, dengan pantas, tanpa menggelongsor.</string>
+    <string name="gesture_trainer_how_taps_quick">Pastikan ketikan pantas dan di tempat yang sama: ketikan seterusnya mesti berlaku dalam <xliff:g id="gap">%1$d</xliff:g> ms selepas ketikan sebelumnya.</string>
+    <string name="gesture_trainer_how_hold">Letakkan <xliff:g id="fingers">%1$s</xliff:g> pada skrin serentak dan tahan tanpa bergerak, tanpa menggelongsor, sekurang-kurangnya <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Jika tiada perintah lain ditetapkan, gerak isyarat ini mematikan SandFly. Dalam jurulatih, gerak isyarat ini tidak menjalankan apa-apa.</string>
+    <string name="gesture_trainer_how_taps_hold">Ketik <xliff:g id="taps">%1$s</xliff:g> dengan <xliff:g id="fingers">%2$s</xliff:g>, dan pada ketikan terakhir biarkan jari pada skrin, tanpa bergerak, sekurang-kurangnya <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Gunakan ibu jari, jari telunjuk dan jari hantu.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Letakkan jari telunjuk dan jari hantu bersebelahan, dan ibu jari serta jari manis beberapa sentimeter jauhnya di kedua-dua sisi. Kemudian rapatkan keempat-empat hujung jari ke satu titik.</string>
+    <string name="gesture_trainer_how_pinch">Letakkan <xliff:g id="fingers">%1$d</xliff:g> jari pada skrin, berjauhan. Kemudian rapatkan jari secara lurus sekurang-kurangnya 1 sm, seperti mengutip sesuatu, dan angkat dari skrin. Gerakkan jari sahaja, bukan seluruh tangan, dan bukan dalam lengkok.</string>
+    <string name="gesture_trainer_how_spread">Letakkan <xliff:g id="fingers">%1$d</xliff:g> jari pada skrin, rapat. Kemudian jarakkan jari secara lurus sekurang-kurangnya 1 sm dan angkat dari skrin. Gerakkan jari sahaja, bukan seluruh tangan, dan bukan dalam lengkok.</string>
+    <string name="gesture_trainer_clockwise">mengikut arah jam</string>
+    <string name="gesture_trainer_counterclockwise">lawan arah jam</string>
+    <string name="gesture_trainer_how_rotate">Letakkan dua jari pada skrin, kira-kira 2 hingga 3 sm jaraknya, dan putar <xliff:g id="way">%1$s</xliff:g> di sekeliling titik tengahnya, seperti memutar tombol, kira-kira suku pusingan. Kemudian angkat.</string>
+    <string name="gesture_trainer_how_scrub">Letakkan dua jari pada skrin dan gerakkan dengan pantas ke satu sisi kira-kira 2 sm dan kembali, seperti memadam sesuatu, semuanya dalam kira-kira satu saat. Kemudian angkat.</string>
+    <string name="gesture_trainer_edge_bottom">di tepi bawah</string>
+    <string name="gesture_trainer_edge_top_left">di tepi atas, pada separuh kirinya</string>
+    <string name="gesture_trainer_edge_top_right">di tepi atas, pada separuh kanannya</string>
+    <string name="gesture_trainer_edge_left_top">di tepi kiri, pada separuh atasnya</string>
+    <string name="gesture_trainer_edge_left_bottom">di tepi kiri, pada separuh bawahnya</string>
+    <string name="gesture_trainer_edge_right_top">di tepi kanan, pada separuh atasnya</string>
+    <string name="gesture_trainer_edge_right_bottom">di tepi kanan, pada separuh bawahnya</string>
+    <string name="gesture_trainer_edge_left">di tepi kiri</string>
+    <string name="gesture_trainer_edge_right">di tepi kanan</string>
+    <string name="gesture_trainer_edge_top">di tepi atas</string>
+    <string name="gesture_trainer_how_edge">Letakkan satu jari <xliff:g id="edge">%1$s</xliff:g>, tidak lebih <xliff:g id="edge_width">%2$d</xliff:g> mm dari tepi, dan gelongsor <xliff:g id="direction">%3$s</xliff:g> ke dalam skrin hingga klik pertama, kira-kira <xliff:g id="distance">%4$d</xliff:g> mm. Kemudian angkat serta-merta: melepasi klik kedua, gelongsoran itu ialah gelongsoran panjang.</string>
+    <string name="gesture_trainer_how_edge_long">Letakkan satu jari <xliff:g id="edge">%1$s</xliff:g>, tidak lebih <xliff:g id="edge_width">%2$d</xliff:g> mm dari tepi, dan gelongsor <xliff:g id="direction">%3$s</xliff:g> ke dalam skrin melepasi klik pertama hingga klik kedua, kira-kira <xliff:g id="distance">%4$d</xliff:g> mm. Kemudian angkat.</string>
+    <string name="gesture_trainer_how_along">Gelongsor satu jari <xliff:g id="direction">%2$s</xliff:g> di sepanjang <xliff:g id="edge">%1$s</xliff:g>, sekurang-kurangnya <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">kiri atas</string>
+    <string name="gesture_trainer_corner_top_right">kanan atas</string>
+    <string name="gesture_trainer_corner_bottom_left">kiri bawah</string>
+    <string name="gesture_trainer_corner_bottom_right">kanan bawah</string>
+    <string name="gesture_trainer_how_corner">Ketik <xliff:g id="taps">%1$s</xliff:g> di penjuru <xliff:g id="corner">%2$s</xliff:g> skrin. Letakkan jari betul-betul di penjuru, tidak lebih <xliff:g id="size">%3$d</xliff:g> mm dari kedua-dua tepi, dan angkat dengan pantas, dalam <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Dengan penjuru yang lebih besar, ketikan pada kawalan berhampiran penjuru, seperti Kembali di kiri atas, boleh menjalankan gerak isyarat penjuru.</string>
+    <string name="gesture_trainer_rating_precise">dikenali, tepat</string>
+    <string name="gesture_trainer_rating_good">dikenali, baik</string>
+    <string name="gesture_trainer_rating_borderline">dikenali, tetapi hampir dengan had</string>
+    <string name="gesture_trainer_try_recognized">Cubaan <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Cubaan <xliff:g id="number">%1$d</xliff:g>: tidak dikenali.</string>
+    <string name="gesture_trainer_try_other">Cubaan <xliff:g id="number">%1$d</xliff:g>: dikenali sebagai <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> daripada <xliff:g id="tries">%3$d</xliff:g> dikenali</string>
+    <string name="gesture_trainer_results_tries">Cubaan anda</string>
+    <string name="gesture_trainer_results_change">Perkara yang perlu diubah</string>
+    <string name="gesture_trainer_results_close">Hampir dengan had</string>
+    <string name="gesture_trainer_results_all_good">Semua cubaan dikenali dalam had.</string>
+    <string name="gesture_trainer_results_settings">Tetapan yang boleh membantu</string>
+    <string name="gesture_trainer_next">Latihan seterusnya</string>
+    <string name="gesture_trainer_repeat">Ulang</string>
+    <string name="gesture_trainer_finish">Selesai</string>
+    <string name="gesture_trainer_group_done">Anda telah menyelesaikan semua latihan dalam <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Ubah <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">mengambil masa <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> sm panjang</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> sm sesaat</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> darjah terpesong daripada garis lurus</string>
+    <string name="gesture_trainer_measure_start">sentimeter pertama dalam <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">jari mendarat <xliff:g id="ms">%1$d</xliff:g> ms berselang</string>
+    <string name="gesture_trainer_measure_tap">ketikan <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms antara ketikan</string>
+    <string name="gesture_trainer_measure_spread">jari bergerak <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">berputar <xliff:g id="degrees">%1$.0f</xliff:g> darjah</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm dari tepi penjuru</string>
+    <string name="gesture_trainer_measure_edge">bermula <xliff:g id="mm">%1$.0f</xliff:g> mm dari tepi</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Jari pada skrin: <xliff:g id="fingers">%1$d</xliff:g> dan bukannya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Jari mendarat <xliff:g id="ms">%1$d</xliff:g> ms berselang, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Satu jari diangkat sebelum semua jari diletakkan.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Jari diangkat <xliff:g id="ms">%1$d</xliff:g> ms berselang, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_became_exploration">Jari berhenti terlalu lama atau bergerak terlalu perlahan pada mulanya, jadi sentuhan itu menjadi penerokaan sentuhan.</string>
+    <string name="gesture_trainer_finding_slow_start">Sentimeter pertama mengambil masa <xliff:g id="ms">%1$d</xliff:g> ms, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_paused">Jari menjadi perlahan selama <xliff:g id="ms">%1$d</xliff:g> ms, dan setiap sentimeter boleh mengambil masa paling lama <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Gerakan hanya <xliff:g id="mm">%1$.0f</xliff:g> mm, dan mesti sekurang-kurangnya <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Jari mula bergerak <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Jari-jari mula bergerak <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Laluan terpesong <xliff:g id="degrees">%1$.0f</xliff:g> darjah daripada garis lurus, dan paling banyak <xliff:g id="limit">%2$.0f</xliff:g> dibenarkan.</string>
+    <string name="gesture_trainer_finding_curved">Laluan membengkok kepada <xliff:g id="parts">%1$d</xliff:g> bahagian dan bukannya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Belokan tidak ditemukan.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Selepas belokan, jari bergerak <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Jari menggelongsor <xliff:g id="mm">%1$.1f</xliff:g> mm semasa ketikan, dan paling banyak <xliff:g id="limit">%2$.1f</xliff:g> mm dibenarkan.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Satu ketikan berlangsung <xliff:g id="ms">%1$d</xliff:g> ms, lebih lama daripada <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Ketikan terakhir ditahan selama <xliff:g id="ms">%1$d</xliff:g> ms, dan mesti sekurang-kurangnya <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> ketikan dan bukannya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> ketikan dan bukannya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms berlalu antara ketikan, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_taps_apart">Ketikan mendarat <xliff:g id="mm">%1$.0f</xliff:g> mm berjauhan, dan paling banyak <xliff:g id="limit">%2$.0f</xliff:g> mm dibenarkan.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Jari bergerak hanya <xliff:g id="mm">%1$.0f</xliff:g> mm, dan mesti bergerak sekurang-kurangnya <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Jari bergerak ke arah yang bertentangan.</string>
+    <string name="gesture_trainer_finding_moved_together">Seluruh tangan menggelongsor <xliff:g id="mm">%1$.0f</xliff:g> mm merentasi skrin, lebih jauh daripada jari bergerak mendekati atau menjauhi satu sama lain.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Jari berputar hanya <xliff:g id="degrees">%1$.0f</xliff:g> darjah, dan mesti berputar sekurang-kurangnya <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Jari berputar ke arah yang bertentangan.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Lejang pertama ialah <xliff:g id="mm">%1$.0f</xliff:g> mm, dan mesti sekurang-kurangnya <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Lejang kembali ialah <xliff:g id="mm">%1$.0f</xliff:g> mm, dan mesti sekurang-kurangnya <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Gosokan mengambil masa <xliff:g id="ms">%1$d</xliff:g> ms, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Jari mendarat <xliff:g id="mm">%1$.0f</xliff:g> mm dari tepi, dan tepi itu <xliff:g id="limit">%2$.0f</xliff:g> mm lebarnya.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Jari bermula pada separuh tepi yang lain.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Jari menggelongsor <xliff:g id="mm">%1$.0f</xliff:g> mm, dan mesti menggelongsor sekurang-kurangnya <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Gelongsoran terlalu panjang: jari melepasi klik kedua, <xliff:g id="mm">%1$.0f</xliff:g> mm, dan klik kedua berada pada <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Mencapai klik mengambil masa <xliff:g id="ms">%1$d</xliff:g> ms, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Gelongsoran terpesong <xliff:g id="degrees">%1$.0f</xliff:g> darjah ke sisi, dan paling banyak <xliff:g id="limit">%2$.0f</xliff:g> dibenarkan.</string>
+    <string name="gesture_trainer_finding_corner_missed">Ketikan mendarat <xliff:g id="mm">%1$.0f</xliff:g> mm dari tepi penjuru, dan penjuru itu <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Ketikan penjuru berlangsung <xliff:g id="ms">%1$d</xliff:g> ms, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_none">Tiada gerakan yang sepadan dengan gerak isyarat dikesan.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Semak berapa banyak jari yang menyentuh kaca. Tapak tangan atau jari lain yang terletak pada skrin juga dikira.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Letakkan semua jari pada saat yang sama, sebagai satu tangan, bukan satu demi satu.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Letakkan semua jari dahulu, kemudian gerakkan atau angkat.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Angkat semua jari pada saat yang sama.</string>
+    <string name="gesture_trainer_tip_slow_start">Mula bergerak sebaik sahaja anda menyentuh skrin, dan bergerak lebih pantas pada permulaan.</string>
+    <string name="gesture_trainer_tip_paused">Teruskan menggerakkan jari pada kelajuan sekata sehingga anda mengangkat. Jangan perlahankan berhampiran penghujung.</string>
+    <string name="gesture_trainer_tip_too_short">Panjangkan gerakan, kira-kira 2 hingga 3 sm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Semak arah pada permulaan gerakan. Memegang telefon lurus di hadapan anda membantu.</string>
+    <string name="gesture_trainer_tip_off_line">Bergerak hanya mengikut arah itu, bukan secara pepenjuru. Jari telunjuk membuat garis yang lebih lurus daripada ibu jari.</string>
+    <string name="gesture_trainer_tip_curved">Pastikan garis lurus dan angkat tepat pada penghujung, tanpa membengkokkan jari ke sisi semasa mengangkat.</string>
+    <string name="gesture_trainer_tip_turn_missing">Tukar arah dengan tajam, pada sudut tegak atau terus kembali, tanpa mengangkat. Setiap bahagian sepatutnya kira-kira 2 sm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Selepas belokan, semak arah yang anda tuju: bahagian kedua mesti mengikut arah lain yang dinamakan oleh gerak isyarat.</string>
+    <string name="gesture_trainer_tip_tap_moved">Ketik terus ke bawah dan ke atas, dengan hujung jari, tanpa menggelongsor.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Pendekkan setiap ketikan: sentuh dan angkat serta-merta.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Pada ketikan terakhir, biarkan jari pada skrin tanpa bergerak sepanjang masa tahan.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Kira ketikan, dan buat semuanya dengan pantas sekali gus.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Kira ketikan. Jari yang melantun dari kaca membuat ketikan tambahan.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Ketik lebih pantas: mulakan ketikan seterusnya sejurus selepas mengangkat.</string>
+    <string name="gesture_trainer_tip_taps_apart">Ketik di tempat yang sama setiap kali.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Gerakkan jari lebih jauh, sekurang-kurangnya 1 sm lebih rapat atau lebih jauh.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Cubit ialah jari bergerak mendekati satu sama lain, rentang ialah jari bergerak menjauhi satu sama lain.</string>
+    <string name="gesture_trainer_tip_moved_together">Gerakkan jari sahaja, mendekati atau menjauhi satu sama lain. Jangan gelongsorkan seluruh tangan merentasi skrin.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Putar lebih jauh, seperti memutar tombol suku pusingan.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Mengikut arah jam bermaksud berputar seperti jarum jam: jari di atas bergerak ke kanan.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Buat lejang pertama sekurang-kurangnya 1 sm panjang.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Selepas lejang pertama, kembali ke arah bertentangan sebelum mengangkat.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Buat gosokan dengan pantas, pergi dan balik dalam kira-kira satu saat.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Mula betul-betul di tepi, dengan hujung jari sebahagiannya di luar skrin.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Semak separuh tepi yang mana anda mulakan.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Gelongsor lebih jauh, sehingga anda mendengar klik, kemudian angkat.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Angkat sejurus selepas klik pertama, sebelum klik kedua.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Gelongsor masuk lebih pantas, tanpa berhenti sebelum klik.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Gelongsor terus masuk dari tepi, atau terus di sepanjangnya, bukan secara pepenjuru.</string>
+    <string name="gesture_trainer_tip_corner_missed">Letakkan jari betul-betul di penjuru, menyentuh kedua-dua tepi.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Angkat lebih pantas selepas menyentuh penjuru.</string>
+    <string name="gesture_trainer_close_to_limit">Hampir dengan had: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Leretan bermula perlahan. <xliff:g id="setting">%1$s</xliff:g> yang lebih lama membenarkan permulaan yang lebih perlahan.</string>
+    <string name="gesture_trainer_advice_tap_time">Ketikan perlahan. <xliff:g id="setting">%1$s</xliff:g> yang lebih lama membenarkan ketikan yang lebih perlahan.</string>
+    <string name="gesture_trainer_advice_edge_width">Leretan bermula terlalu jauh dari tepi. <xliff:g id="setting">%1$s</xliff:g> yang lebih besar juga menukar leretan yang bermula berhampiran tepi menjadi leretan tepi.</string>
+    <string name="gesture_trainer_advice_corner_size">Ketikan mendarat di luar penjuru. <xliff:g id="setting">%1$s</xliff:g> yang lebih besar membesarkan penjuru.</string>
+    <string name="gesture_trainer_advice_corner_time">Ketikan penjuru perlahan. <xliff:g id="setting">%1$s</xliff:g> yang lebih lama membenarkan ketikan yang lebih perlahan.</string>
+    <string name="gesture_trainer_menu_option">Pilihan <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: pilih item <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Gelongsor satu jari ke atas atau ke bawah <xliff:g id="edge">%1$s</xliff:g> sekurang-kurangnya <xliff:g id="distance">%2$d</xliff:g> mm untuk membuka menu. Menu ini mempunyai <xliff:g id="count">%3$d</xliff:g> item, dari atas ke bawah, setiap satu kira-kira <xliff:g id="size">%6$s</xliff:g> sm tinggi. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, berada <xliff:g id="from">%7$s</xliff:g> hingga <xliff:g id="to">%8$s</xliff:g> sm di bawah bahagian atas skrin. Angkat jari apabila item itu disebut.</string>
+    <string name="gesture_trainer_menu_sample">Tepi ini tiada menu. Latihan ini menggunakan <xliff:g id="count">%1$d</xliff:g> item contoh.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Cubaan <xliff:g id="number">%1$d</xliff:g>: menu ditutup tanpa pilihan.</string>
+    <string name="gesture_trainer_try_menu_other">Cubaan <xliff:g id="number">%1$d</xliff:g>: memilih <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">diangkat pada item <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Jari bermula di hujung paling atas atau paling bawah tepi, tempat penjuru serta tepi atas dan bawah berada.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Jari diangkat <xliff:g id="mm">%1$.0f</xliff:g> mm dari tepi, dan menu ditutup melepasi <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Jari diangkat pada item <xliff:g id="item">%1$d</xliff:g> dan bukannya item <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Mula sedikit jauh dari hujung atas dan bawah tepi.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Pastikan jari dekat dengan tepi semasa menggelongsor, dan angkat di situ.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Setiap item mempunyai tempat tetap di sepanjang tepi, dan item tempat jari diangkat akan dipilih. Angkat apabila item itu disebut.</string>
+    <string name="gesture_trainer_contents">Kandungan</string>
+    <string name="gesture_trainer_contents_heading">Kandungan: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">selesai, <xliff:g id="hits">%1$d</xliff:g> daripada <xliff:g id="tries">%2$d</xliff:g> dikenali</string>
+    <string name="gesture_trainer_group_tap_swipe">Ketik dan leret</string>
+    <string name="gesture_trainer_group_edge_swipes">Leretan dari tepi</string>
+    <string name="gesture_trainer_group_along_edges">Gelongsoran di sepanjang tepi</string>
+    <string name="gesture_trainer_group_edge_menus">Menu tepi</string>
+    <string name="gesture_trainer_group_corners">Penjuru</string>
+    <string name="gesture_trainer_group_back_tap">Ketik belakang</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Ketikan dua jari diikuti leretan dua jari dikecualikan: <xliff:g id="setting">%1$s</xliff:g> mati.</string>
+    <string name="gesture_trainer_how_swipe_hold">Kemudian, tanpa mengangkat, tahan jari tanpa bergerak sekurang-kurangnya <xliff:g id="hold">%1$d</xliff:g> ms, dan angkat.</string>
+    <string name="gesture_trainer_half_top">atas</string>
+    <string name="gesture_trainer_half_bottom">bawah</string>
+    <string name="gesture_trainer_how_taps_half">Ketik pada separuh <xliff:g id="half">%1$s</xliff:g> skrin. Titik antara jari menentukan separuh itu.</string>
+    <string name="gesture_trainer_same_fingers">jari yang sama</string>
+    <string name="gesture_trainer_how_tap_swipe">Ketik <xliff:g id="taps">%1$s</xliff:g> dengan <xliff:g id="fingers">%2$s</xliff:g>. Sejurus selepas ketikan terakhir, dalam <xliff:g id="gap">%3$d</xliff:g> ms, sentuh skrin sekali lagi dengan <xliff:g id="swipe_fingers">%4$s</xliff:g> dan gelongsor <xliff:g id="direction">%5$s</xliff:g> dalam garis lurus kira-kira 2 hingga 3 sm, kemudian angkat.</string>
+    <string name="gesture_trainer_how_corner_hold">Pada ketikan terakhir, biarkan jari di penjuru, tanpa bergerak, sekurang-kurangnya <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Pegang telefon di tangan anda, pada sisinya, dan ketik bahagian tengah belakangnya <xliff:g id="taps">%1$s</xliff:g> dengan hujung jari, dengan kuat dan pantas, seperti mengetuk pintu. Pastikan ketikan rapat: paling lama <xliff:g id="gap">%2$d</xliff:g> ms antaranya. Jangan sentuh skrin semasa anda mengetik.</string>
+    <string name="gesture_trainer_back_tap_info">Ketik belakang tidak menjalankan perintah semasa latihan. <xliff:g id="setting">%1$s</xliff:g> menetapkan sekuat mana ketikan mesti dibuat.</string>
+    <string name="gesture_trainer_go_placed">Buat gerak isyarat itu <xliff:g id="tries">%1$d</xliff:g> kali.</string>
+    <string name="gesture_trainer_along_left">tepi kiri</string>
+    <string name="gesture_trainer_along_right">tepi kanan</string>
+    <string name="gesture_trainer_along_top">tepi atas</string>
+    <string name="gesture_trainer_along_bottom">tepi bawah</string>
+    <string name="gesture_trainer_left_out_along_menu">Gelongsoran di sepanjang <xliff:g id="edge">%1$s</xliff:g> dikecualikan: tepi itu mempunyai menu tepi, jadi gelongsoran di sepanjangnya membuka menu dan tidak menjalankan gerak isyarat.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Gelongsoran di sepanjang <xliff:g id="edge">%1$s</xliff:g> dikecualikan: tepi itu menatal, jadi gelongsoran di sepanjangnya menatal apl dan tidak menjalankan gerak isyarat.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Jari bergerak terlalu jauh dari tepi.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Pastikan jari di bibir kaca, lurus di sepanjang tepi.</string>
+    <string name="gesture_trainer_go_back_tap">Buat gerak isyarat ketik belakang <xliff:g id="tries">%1$d</xliff:g> kali. Sentuhan pada skrin menggagalkan cubaan itu.</string>
+    <string name="gesture_trainer_no_accelerometer">Latihan ini memerlukan meter pecutan. Tiada meter pecutan tersedia.</string>
+    <string name="gesture_trainer_measure_hold">ditahan tanpa bergerak <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">ketikan dengan kekuatan <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Jari ditahan tanpa bergerak selama <xliff:g id="ms">%1$d</xliff:g> ms pada penghujung, dan mesti ditahan sekurang-kurangnya <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Jari mengetik pada separuh skrin yang lain.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Tiada leretan selepas ketikan.</string>
+    <string name="gesture_trainer_finding_swipe_late">Leretan bermula <xliff:g id="ms">%1$d</xliff:g> ms selepas ketikan terakhir, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Ketik belakang terlalu lemah: <xliff:g id="percent">%1$d</xliff:g>%% daripada kekuatan yang diperlukan.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Satu ketikan menggoncang telefon lebih ke sisi daripada menembusi belakangnya.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefon bergerak sejurus sebelum ketikan.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Skrin disentuh, dan ketikan semasa skrin disentuh tidak dikira.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms berlalu antara ketikan pada belakang, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Selepas leretan, tahan jari pada skrin tanpa bergerak sepanjang masa tahan. Kemudian angkat.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Semak separuh yang anda ketik: bahagian tengah skrin memisahkan separuh atas daripada separuh bawah.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Selepas ketikan terakhir, sentuh skrin sekali lagi dengan serta-merta dan leret.</string>
+    <string name="gesture_trainer_tip_swipe_late">Mulakan leretan sejurus selepas ketikan terakhir, tanpa berhenti.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Ketik lebih kuat, dengan hujung jari atau kuku, berhampiran bahagian tengah belakang.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Ketik terus ke belakang telefon, bukan pada tepinya atau secara menyerong.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Pegang telefon tanpa bergerak seketika sebelum mengetik, dan pegang dengan longgar supaya tangan anda tidak menggerakkannya.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Jauhkan jari anda dari skrin semasa mengetik belakang: pegang telefon pada sisinya.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Ketik lebih pantas, satu ketikan sejurus selepas yang lain.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Jari diangkat terlalu awal selepas leretan. <xliff:g id="setting">%1$s</xliff:g> yang lebih pendek membenarkan tahanan yang lebih pendek.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Ketik belakang lemah. <xliff:g id="setting">%1$s</xliff:g> yang lebih tinggi mengesan ketikan yang lebih lemah, dan mungkin mengesan hentakan sebagai ketikan.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Jari berputar <xliff:g id="degrees">%1$.0f</xliff:g> darjah, dan mulai <xliff:g id="limit">%2$.0f</xliff:g> darjah gerakan itu ialah putaran.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Gerakkan jari dalam garis lurus mendekati atau menjauhi satu sama lain, bukan dalam lengkok mengelilingi satu sama lain.</string>
+    <string name="gesture_trainer_finding_other_gesture">Gerakan itu sebaliknya sepadan dengan gerak isyarat itu.</string>
+    <string name="gesture_trainer_side_left">kiri</string>
+    <string name="gesture_trainer_side_right">kanan</string>
+    <string name="gesture_trainer_side_top">atas</string>
+    <string name="gesture_trainer_side_bottom">bawah</string>
+    <string name="gesture_trainer_finding_wrong_edge">Jari bermula di tepi <xliff:g id="side">%1$s</xliff:g>, dan latihan ini di tepi <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Mula betul-betul di tepi yang dinamakan oleh latihan.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Menu tepi dibuka dan bukannya gerak isyarat ini.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Gelongsoran di sepanjang tepi yang mempunyai menu membuka menu itu. Mula di tepi yang dinamakan oleh latihan.</string>
+    <string name="gesture_trainer_group_three_part">Leretan tiga bahagian</string>
+    <string name="gesture_trainer_group_two_stroke">Leretan dua lejang</string>
+    <string name="gesture_trainer_group_shake">Goncang</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Leretan tiga bahagian dikecualikan: <xliff:g id="setting">%1$s</xliff:g> hidup.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Leretan dua lejang dikecualikan: <xliff:g id="setting">%1$s</xliff:g> ialah <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Goncangan tidak menjalankan perintah semasa latihan. <xliff:g id="setting">%1$s</xliff:g> menetapkan sekuat mana goncangan mesti dibuat.</string>
+    <string name="gesture_trainer_go_shake">Goncang telefon <xliff:g id="tries">%1$d</xliff:g> kali, dengan jeda singkat selepas setiap goncangan.</string>
+    <string name="gesture_trainer_how_shake">Pegang telefon dengan kuat dan goncang dengan pantas ke depan dan ke belakang, seperti mengibas titisan air: sekurang-kurangnya dua kali ke setiap arah, semuanya dalam kira-kira dua pertiga saat. Kemudian pegang tanpa bergerak.</string>
+    <string name="gesture_trainer_how_two_stroke">Leret <xliff:g id="first">%1$s</xliff:g> dengan satu jari, kira-kira 2 sm, dan angkat. Kemudian serta-merta, dalam <xliff:g id="time">%3$d</xliff:g> ms, leret <xliff:g id="second">%2$s</xliff:g> dengan satu jari, kira-kira 2 sm, dan angkat.</string>
+    <string name="gesture_trainer_how_three_part">Sentuh skrin dengan satu jari dan, tanpa mengangkat, leret <xliff:g id="first">%1$s</xliff:g>, kemudian belok dengan tajam dan leret <xliff:g id="second">%2$s</xliff:g>, kemudian belok dengan tajam sekali lagi dan leret <xliff:g id="third">%3$s</xliff:g>, setiap bahagian kira-kira 2 sm, dan angkat. Buat dalam satu gerakan yang pantas dan lancar dengan sudut tajam, bukan lengkung.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Letakkan satu jari di satu pertiga atas skrin dan satu lagi di satu pertiga bawah, contohnya ibu jari di bawah dan jari telunjuk di atas.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Jari tidak berada satu di satu pertiga atas skrin dan satu di satu pertiga bawah.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Tiada leretan kedua.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Leretan kedua bermula <xliff:g id="ms">%1$d</xliff:g> ms selepas leretan pertama, dan paling banyak <xliff:g id="limit">%2$d</xliff:g> ms dibenarkan.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Leretan pertama bergerak <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Leretan kedua bergerak <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Goncangan terlalu lemah: <xliff:g id="percent">%1$d</xliff:g>%% daripada kekuatan yang diperlukan.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Hayunan ke depan dan ke belakang: <xliff:g id="swings">%1$d</xliff:g> daripada <xliff:g id="wanted">%2$d</xliff:g> yang diperlukan.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Jarakkan jari jauh-jauh, satu berhampiran tepi atas dan satu berhampiran tepi bawah.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Selepas leretan pertama, angkat jari dan leret sekali lagi dengan serta-merta.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Mulakan leretan kedua sejurus selepas mengangkat jari.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Goncang lebih kuat dan lebih pantas.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Goncang lebih pantas, ke depan dan ke belakang sekurang-kurangnya dua kali ke setiap arah, tanpa berhenti di antaranya.</string>
+    <string name="gesture_trainer_measure_shake_strength">gerakan paling kuat <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Goncangan lemah. <xliff:g id="setting">%1$s</xliff:g> yang lebih tinggi mengesan goncangan yang lebih lemah, dan mungkin mengesan telefon yang dibawa sebagai goncangan.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Leretan kedua bermula lewat. <xliff:g id="setting">%1$s</xliff:g> yang lebih lama membenarkan leretan kedua yang lebih lewat, dan leretan tunggal kemudian menunggu lebih lama sebelum dijalankan.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> hidup.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> mati: leretan dua jari menatal apl, dan gosokan kebanyakannya menatal juga. Dengan tetapan ini hidup, leretan dua jari menjalankan perintah SandFly dan tidak menatal.</string>
+    <string name="gesture_trainer_measure_first_stroke">leretan pertama <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">leretan kedua <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">seluruh gerak isyarat <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">diangkat selama <xliff:g id="ms">%1$d</xliff:g> ms di antaranya</string>
+</resources>

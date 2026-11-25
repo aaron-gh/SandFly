@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">जेश्चर प्रशिक्षक</string>
+    <string name="gesture_trainer_intro">जेश्चरचा गट निवडा. प्रत्येक सराव एका जेश्चरचे वर्णन करतो. जेश्चर <xliff:g id="tries">%1$d</xliff:g> वेळा करा; प्रत्येक प्रयत्नाचा निकाल बोलला जातो. शेवटच्या प्रयत्नानंतर स्क्रीनवर प्रत्येक प्रयत्नाची मोजमापे, काय बदलायचे आणि संबंधित सेटिंग्ज दाखवल्या जातात.</string>
+    <string name="gesture_trainer_group_one_finger">एक बोट</string>
+    <string name="gesture_trainer_group_two_fingers">दोन बोटे</string>
+    <string name="gesture_trainer_group_three_fingers">तीन बोटे</string>
+    <string name="gesture_trainer_group_four_fingers">चार बोटे</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">पिंच, फिरवणे आणि घासणे</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> सराव</string>
+    <string name="gesture_trainer_close">बंद करा</string>
+    <string name="gesture_trainer_no_detection">जेश्चर प्रशिक्षकासाठी Android 13 किंवा त्यानंतरची आवृत्ती आवश्यक आहे.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">मागे-पुढे आणि कोनाचे जेश्चर वगळले आहेत: <xliff:g id="setting">%1$s</xliff:g> सुरू आहे.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">दोन बोटांचे स्वाइप वगळले आहेत: <xliff:g id="setting">%1$s</xliff:g> बंद आहे, त्यामुळे ते ॲप्स स्क्रोल करतात.</string>
+    <string name="gesture_trainer_exercise_heading">सराव <xliff:g id="number">%1$d</xliff:g> / <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">सुरू करा</string>
+    <string name="gesture_trainer_skip">हा सराव वगळा</string>
+    <string name="gesture_trainer_back_to_groups">गटांवर परत जा</string>
+    <string name="gesture_trainer_go">जेश्चर स्क्रीनवर कुठेही <xliff:g id="tries">%1$d</xliff:g> वेळा करा. प्रत्येक स्पर्श एक प्रयत्न आहे.</string>
+    <string name="gesture_trainer_fingers_1">एका बोटाने</string>
+    <string name="gesture_trainer_fingers_2">शेजारी शेजारी, सुमारे 1 सेमी अंतरावर ठेवलेल्या दोन बोटांनी</string>
+    <string name="gesture_trainer_fingers_3">शेजारी शेजारी, थोड्या अंतरावर ठेवलेल्या तीन बोटांनी</string>
+    <string name="gesture_trainer_fingers_4">शेजारी शेजारी, थोड्या अंतरावर ठेवलेल्या चार बोटांनी</string>
+    <string name="gesture_trainer_direction_up">वर</string>
+    <string name="gesture_trainer_direction_down">खाली</string>
+    <string name="gesture_trainer_direction_left">डावीकडे</string>
+    <string name="gesture_trainer_direction_right">उजवीकडे</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g> स्क्रीनला स्पर्श करा आणि न थांबता सरळ रेषेत सुमारे 2 ते 3 सेमी <xliff:g id="direction">%2$s</xliff:g> सरकवा, नंतर उचला. लगेच हालचाल सुरू करा: आधी स्थिर राहिलेले बोट स्पर्श अन्वेषण सुरू करते.</string>
+    <string name="gesture_trainer_how_swipe_multi">बोटे एकत्र, एकाच क्षणी ठेवा आणि ती सर्व एकाच दिशेने हलवा. प्रत्येक बोट संपूर्ण वेळ <xliff:g id="direction">%1$s</xliff:g> गेले पाहिजे, म्हणून रेषा सरळ ठेवा.</string>
+    <string name="gesture_trainer_how_back_and_forth">एका बोटाने स्क्रीनला स्पर्श करा आणि सुमारे 2 सेमी <xliff:g id="first">%1$s</xliff:g> सरकवा, नंतर न उचलता सरळ सुमारे 2 सेमी <xliff:g id="second">%2$s</xliff:g> परत या आणि उचला. ही एक जलद, सलग हालचाल करा.</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g> स्क्रीनला स्पर्श करा आणि सुमारे 2 सेमी <xliff:g id="first">%2$s</xliff:g> सरकवा, नंतर न उचलता तीव्रपणे वळा आणि सुमारे 2 सेमी <xliff:g id="second">%3$s</xliff:g> सरकवा, आणि उचला. वळण L अक्षरासारखा तीक्ष्ण कोपरा करा, वक्र नाही.</string>
+    <string name="gesture_trainer_taps_1">एकदा</string>
+    <string name="gesture_trainer_taps_2">दोनदा</string>
+    <string name="gesture_trainer_taps_3">तीनदा</string>
+    <string name="gesture_trainer_taps_4">चार वेळा</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> टॅप करा. बोटे एकत्र ठेवा आणि एकत्र उचला, पटकन, न सरकवता.</string>
+    <string name="gesture_trainer_how_taps_quick">टॅप जलद आणि एकाच जागी करा: पुढचा टॅप मागच्या टॅपनंतर <xliff:g id="gap">%1$d</xliff:g> ms च्या आत आला पाहिजे.</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> स्क्रीनला एकत्र स्पर्श करा आणि न सरकवता किमान <xliff:g id="hold">%2$d</xliff:g> ms बोटे स्थिर ठेवा.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">इतर कोणतीही कमांड नियुक्त नसल्यास हे जेश्चर SandFly बंद करते. प्रशिक्षकात ते काहीही चालवत नाही.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> टॅप करा, आणि शेवटच्या टॅपवर बोटे स्क्रीनवर किमान <xliff:g id="hold">%3$d</xliff:g> ms स्थिर ठेवा.</string>
+    <string name="gesture_trainer_how_three_finger_hand">अंगठा, तर्जनी आणि मधले बोट वापरा.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">तर्जनी आणि मधले बोट एकमेकांशेजारी ठेवा, आणि अंगठा व अनामिका दोन्ही बाजूंना काही सेंटिमीटर दूर ठेवा. नंतर चारही बोटांची टोके एका बिंदूवर एकत्र आणा.</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g> बोटे स्क्रीनवर एकमेकांपासून दूर पसरून ठेवा. नंतर काहीतरी उचलल्याप्रमाणे ती किमान 1 सेमी सरळ एकमेकांकडे आणा आणि स्क्रीनवरून उचला. फक्त बोटे हलवा, संपूर्ण हात नाही, आणि कमानीसारखी नाही.</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g> बोटे स्क्रीनवर एकमेकांजवळ ठेवा. नंतर ती किमान 1 सेमी सरळ एकमेकांपासून दूर हलवा आणि स्क्रीनवरून उचला. फक्त बोटे हलवा, संपूर्ण हात नाही, आणि कमानीसारखी नाही.</string>
+    <string name="gesture_trainer_clockwise">घड्याळाच्या दिशेने</string>
+    <string name="gesture_trainer_counterclockwise">घड्याळाच्या उलट दिशेने</string>
+    <string name="gesture_trainer_how_rotate">दोन बोटे स्क्रीनवर सुमारे 2 ते 3 सेमी अंतरावर ठेवा आणि डायल फिरवल्याप्रमाणे ती त्यांच्या मध्याभोवती <xliff:g id="way">%1$s</xliff:g> सुमारे पाव फेरा फिरवा. नंतर उचला.</string>
+    <string name="gesture_trainer_how_scrub">दोन बोटे स्क्रीनवर ठेवा आणि काहीतरी खोडल्याप्रमाणे ती पटकन एका बाजूला सुमारे 2 सेमी आणि परत हलवा, सर्व सुमारे एका सेकंदात. नंतर उचला.</string>
+    <string name="gesture_trainer_edge_bottom">खालच्या काठावर</string>
+    <string name="gesture_trainer_edge_top_left">वरच्या काठावर, त्याच्या डाव्या अर्ध्या भागात</string>
+    <string name="gesture_trainer_edge_top_right">वरच्या काठावर, त्याच्या उजव्या अर्ध्या भागात</string>
+    <string name="gesture_trainer_edge_left_top">डाव्या काठावर, त्याच्या वरच्या अर्ध्या भागात</string>
+    <string name="gesture_trainer_edge_left_bottom">डाव्या काठावर, त्याच्या खालच्या अर्ध्या भागात</string>
+    <string name="gesture_trainer_edge_right_top">उजव्या काठावर, त्याच्या वरच्या अर्ध्या भागात</string>
+    <string name="gesture_trainer_edge_right_bottom">उजव्या काठावर, त्याच्या खालच्या अर्ध्या भागात</string>
+    <string name="gesture_trainer_edge_left">डाव्या काठावर</string>
+    <string name="gesture_trainer_edge_right">उजव्या काठावर</string>
+    <string name="gesture_trainer_edge_top">वरच्या काठावर</string>
+    <string name="gesture_trainer_how_edge">एक बोट <xliff:g id="edge">%1$s</xliff:g>, काठापासून जास्तीत जास्त <xliff:g id="edge_width">%2$d</xliff:g> मिमी अंतरावर ठेवा आणि पहिल्या क्लिकपर्यंत, सुमारे <xliff:g id="distance">%4$d</xliff:g> मिमी, स्क्रीनमध्ये <xliff:g id="direction">%3$s</xliff:g> सरकवा. नंतर लगेच उचला: दुसऱ्या क्लिकनंतर तो लांब स्वाइप होतो.</string>
+    <string name="gesture_trainer_how_edge_long">एक बोट <xliff:g id="edge">%1$s</xliff:g>, काठापासून जास्तीत जास्त <xliff:g id="edge_width">%2$d</xliff:g> मिमी अंतरावर ठेवा आणि पहिल्या क्लिकच्या पुढे दुसऱ्या क्लिकपर्यंत, सुमारे <xliff:g id="distance">%4$d</xliff:g> मिमी, स्क्रीनमध्ये <xliff:g id="direction">%3$s</xliff:g> सरकवा. नंतर उचला.</string>
+    <string name="gesture_trainer_how_along">एक बोट <xliff:g id="edge">%1$s</xliff:g> किमान <xliff:g id="distance">%3$d</xliff:g> मिमी <xliff:g id="direction">%2$s</xliff:g> सरकवा.</string>
+    <string name="gesture_trainer_corner_top_left">वरच्या डाव्या</string>
+    <string name="gesture_trainer_corner_top_right">वरच्या उजव्या</string>
+    <string name="gesture_trainer_corner_bottom_left">खालच्या डाव्या</string>
+    <string name="gesture_trainer_corner_bottom_right">खालच्या उजव्या</string>
+    <string name="gesture_trainer_how_corner">स्क्रीनच्या <xliff:g id="corner">%2$s</xliff:g> कोपऱ्यात <xliff:g id="taps">%1$s</xliff:g> टॅप करा. बोट अगदी कोपऱ्यात, दोन्ही काठांपासून <xliff:g id="size">%3$d</xliff:g> मिमी पेक्षा जास्त नाही अशा अंतरावर ठेवा, आणि पटकन, <xliff:g id="time">%4$d</xliff:g> ms च्या आत उचला.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> मिमी. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> मिमी.</string>
+    <string name="gesture_trainer_corner_warning">मोठे कोपरे असल्यास, कोपऱ्याजवळील नियंत्रणावर टॅप केल्यास (जसे की वरच्या डावीकडील मागे जा बटण) त्याऐवजी कोपऱ्याचे जेश्चर चालू शकते.</string>
+    <string name="gesture_trainer_rating_precise">ओळखले, अचूक</string>
+    <string name="gesture_trainer_rating_good">ओळखले, चांगले</string>
+    <string name="gesture_trainer_rating_borderline">ओळखले, पण मर्यादेच्या जवळ</string>
+    <string name="gesture_trainer_try_recognized">प्रयत्न <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">प्रयत्न <xliff:g id="number">%1$d</xliff:g>: ओळखले नाही.</string>
+    <string name="gesture_trainer_try_other">प्रयत्न <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> म्हणून ओळखले.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> पैकी <xliff:g id="recognized">%2$d</xliff:g> ओळखले</string>
+    <string name="gesture_trainer_results_tries">तुमचे प्रयत्न</string>
+    <string name="gesture_trainer_results_change">काय बदलायचे</string>
+    <string name="gesture_trainer_results_close">मर्यादेच्या जवळ</string>
+    <string name="gesture_trainer_results_all_good">सर्व प्रयत्न मर्यादेत ओळखले गेले.</string>
+    <string name="gesture_trainer_results_settings">उपयोगी ठरू शकणाऱ्या सेटिंग्ज</string>
+    <string name="gesture_trainer_next">पुढील सराव</string>
+    <string name="gesture_trainer_repeat">पुन्हा करा</string>
+    <string name="gesture_trainer_finish">पूर्ण करा</string>
+    <string name="gesture_trainer_group_done">तुम्ही <xliff:g id="group">%1$s</xliff:g> मधील सर्व सराव पूर्ण केले.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> बदला</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms लागले</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> सेमी लांब</string>
+    <string name="gesture_trainer_measure_speed">प्रति सेकंद <xliff:g id="speed">%1$.0f</xliff:g> सेमी</string>
+    <string name="gesture_trainer_measure_angle">सरळ रेषेपासून <xliff:g id="degrees">%1$.0f</xliff:g> अंश दूर</string>
+    <string name="gesture_trainer_measure_start">पहिला सेंटिमीटर <xliff:g id="ms">%1$d</xliff:g> ms मध्ये</string>
+    <string name="gesture_trainer_measure_landing">बोटे <xliff:g id="ms">%1$d</xliff:g> ms च्या अंतराने टेकली</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms चा टॅप</string>
+    <string name="gesture_trainer_measure_gap">टॅपमध्ये <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">बोटे <xliff:g id="mm">%1$.0f</xliff:g> मिमी हलली</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> अंश फिरले</string>
+    <string name="gesture_trainer_measure_corner">कोपऱ्याच्या काठांपासून <xliff:g id="mm">%1$.0f</xliff:g> मिमी</string>
+    <string name="gesture_trainer_measure_edge">काठापासून <xliff:g id="mm">%1$.0f</xliff:g> मिमी वर सुरू झाले</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">स्क्रीनवरील बोटे: <xliff:g id="wanted">%2$d</xliff:g> ऐवजी <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">बोटे <xliff:g id="ms">%1$d</xliff:g> ms च्या अंतराने टेकली, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">सर्व बोटे टेकण्यापूर्वी एक बोट उचलले गेले.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">बोटे <xliff:g id="ms">%1$d</xliff:g> ms च्या अंतराने उचलली गेली, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_became_exploration">बोट खूप वेळ स्थिर राहिले किंवा सुरुवातीला खूप हळू हलले, त्यामुळे स्पर्शाचे स्पर्श अन्वेषण झाले.</string>
+    <string name="gesture_trainer_finding_slow_start">पहिल्या सेंटिमीटरला <xliff:g id="ms">%1$d</xliff:g> ms लागले, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_paused">बोट <xliff:g id="ms">%1$d</xliff:g> ms साठी मंदावले, आणि प्रत्येक सेंटिमीटरला जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms लागू शकतात.</string>
+    <string name="gesture_trainer_finding_too_short">हालचाल फक्त <xliff:g id="mm">%1$.0f</xliff:g> मिमी होती, आणि ती किमान <xliff:g id="limit">%2$.0f</xliff:g> मिमी असणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">बोट <xliff:g id="direction">%1$s</xliff:g> जाऊ लागले.</string>
+    <string name="gesture_trainer_finding_wrong_direction">बोटे <xliff:g id="direction">%1$s</xliff:g> जाऊ लागली.</string>
+    <string name="gesture_trainer_finding_off_line">मार्ग सरळ रेषेपासून <xliff:g id="degrees">%1$.0f</xliff:g> अंश वळला, आणि जास्तीत जास्त <xliff:g id="limit">%2$.0f</xliff:g> ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_curved">मार्ग <xliff:g id="wanted">%2$d</xliff:g> ऐवजी <xliff:g id="parts">%1$d</xliff:g> भागांमध्ये वाकला.</string>
+    <string name="gesture_trainer_finding_turn_missing">वळण आढळले नाही.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">वळणानंतर बोट <xliff:g id="direction">%1$s</xliff:g> गेले.</string>
+    <string name="gesture_trainer_finding_tap_moved">टॅप करताना बोट <xliff:g id="mm">%1$.1f</xliff:g> मिमी सरकले, आणि जास्तीत जास्त <xliff:g id="limit">%2$.1f</xliff:g> मिमी ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_tap_held_long">एक टॅप <xliff:g id="ms">%1$d</xliff:g> ms टिकला, <xliff:g id="limit">%2$d</xliff:g> ms पेक्षा जास्त.</string>
+    <string name="gesture_trainer_finding_hold_too_short">शेवटचा टॅप <xliff:g id="ms">%1$d</xliff:g> ms धरून ठेवला, आणि तो किमान <xliff:g id="limit">%2$d</xliff:g> ms असणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> ऐवजी <xliff:g id="taps">%1$d</xliff:g> टॅप.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> ऐवजी <xliff:g id="taps">%1$d</xliff:g> टॅप.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">टॅपमध्ये <xliff:g id="ms">%1$d</xliff:g> ms गेले, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_taps_apart">टॅप <xliff:g id="mm">%1$.0f</xliff:g> मिमी अंतरावर पडले, आणि जास्तीत जास्त <xliff:g id="limit">%2$.0f</xliff:g> मिमी ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">बोटे फक्त <xliff:g id="mm">%1$.0f</xliff:g> मिमी हलली, आणि ती किमान <xliff:g id="limit">%2$.0f</xliff:g> मिमी हलणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">बोटे उलट दिशेने हलली.</string>
+    <string name="gesture_trainer_finding_moved_together">संपूर्ण हात स्क्रीनवर <xliff:g id="mm">%1$.0f</xliff:g> मिमी सरकला, बोटे एकमेकांकडे किंवा एकमेकांपासून दूर हलली त्यापेक्षा जास्त.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">बोटे फक्त <xliff:g id="degrees">%1$.0f</xliff:g> अंश फिरली, आणि ती किमान <xliff:g id="limit">%2$.0f</xliff:g> अंश फिरणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">बोटे उलट दिशेने फिरली.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">पहिला स्ट्रोक <xliff:g id="mm">%1$.0f</xliff:g> मिमी होता, आणि तो किमान <xliff:g id="limit">%2$.0f</xliff:g> मिमी असणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">परतीचा स्ट्रोक <xliff:g id="mm">%1$.0f</xliff:g> मिमी होता, आणि तो किमान <xliff:g id="limit">%2$.0f</xliff:g> मिमी असणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">घासण्याला <xliff:g id="ms">%1$d</xliff:g> ms लागले, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">बोट काठापासून <xliff:g id="mm">%1$.0f</xliff:g> मिमी वर टेकले, आणि काठ <xliff:g id="limit">%2$.0f</xliff:g> मिमी रुंद आहे.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">बोट काठाच्या दुसऱ्या अर्ध्या भागात सुरू झाले.</string>
+    <string name="gesture_trainer_finding_edge_too_short">बोट <xliff:g id="mm">%1$.0f</xliff:g> मिमी सरकले, आणि ते किमान <xliff:g id="limit">%2$.0f</xliff:g> मिमी सरकणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_edge_too_long">स्वाइप खूप लांब: बोट दुसऱ्या क्लिकच्या पुढे <xliff:g id="mm">%1$.0f</xliff:g> मिमी गेले, आणि दुसरा क्लिक <xliff:g id="limit">%2$.0f</xliff:g> मिमी वर आहे.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">क्लिकपर्यंत पोहोचायला <xliff:g id="ms">%1$d</xliff:g> ms लागले, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_edge_sideways">स्वाइप <xliff:g id="degrees">%1$.0f</xliff:g> अंश बाजूला गेला, आणि जास्तीत जास्त <xliff:g id="limit">%2$.0f</xliff:g> ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_corner_missed">टॅप कोपऱ्याच्या काठांपासून <xliff:g id="mm">%1$.0f</xliff:g> मिमी वर पडला, आणि कोपरा <xliff:g id="limit">%2$.0f</xliff:g> मिमी आहे.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">कोपऱ्यावरील टॅप <xliff:g id="ms">%1$d</xliff:g> ms टिकला, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_none">जेश्चरशी जुळणारी कोणतीही हालचाल आढळली नाही.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">किती बोटे काचेला स्पर्श करतात ते तपासा. स्क्रीनवर टेकलेला तळहात किंवा दुसरे बोटही मोजले जाते.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">सर्व बोटे एकाच क्षणी, एका हाताप्रमाणे टेकवा, एकामागून एक नाही.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">आधी सर्व बोटे टेकवा, नंतर ती हलवा किंवा उचला.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">सर्व बोटे एकाच क्षणी उचला.</string>
+    <string name="gesture_trainer_tip_slow_start">स्क्रीनला स्पर्श करताच हालचाल सुरू करा, आणि सुरुवातीला जलद हलवा.</string>
+    <string name="gesture_trainer_tip_paused">उचलेपर्यंत बोट समान वेगाने हलवत ठेवा. शेवटी मंद होऊ नका.</string>
+    <string name="gesture_trainer_tip_too_short">हालचाल लांब करा, सुमारे 2 ते 3 सेमी.</string>
+    <string name="gesture_trainer_tip_wrong_direction">हालचालीच्या अगदी सुरुवातीला दिशा तपासा. फोन तुमच्या समोर सरळ धरल्याने मदत होते.</string>
+    <string name="gesture_trainer_tip_off_line">फक्त दिशेनुसार हलवा, तिरके नाही. अंगठ्यापेक्षा तर्जनीने रेषा अधिक सरळ राहते.</string>
+    <string name="gesture_trainer_tip_curved">रेषा सरळ ठेवा आणि अगदी शेवटी उचला, उचलताना बोट बाजूला न वळवता.</string>
+    <string name="gesture_trainer_tip_turn_missing">न उचलता, काटकोनात किंवा सरळ मागे, तीव्रपणे दिशा बदला. प्रत्येक भाग सुमारे 2 सेमी असावा.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">वळणानंतर तुम्ही कोणत्या दिशेने जाता ते तपासा: दुसरा भाग जेश्चरमध्ये नमूद केलेल्या दुसऱ्या दिशेने गेला पाहिजे.</string>
+    <string name="gesture_trainer_tip_tap_moved">बोटाच्या टोकाने सरळ खाली आणि वर टॅप करा, न सरकवता.</string>
+    <string name="gesture_trainer_tip_tap_held_long">प्रत्येक टॅप लहान करा: स्पर्श करा आणि लगेच उचला.</string>
+    <string name="gesture_trainer_tip_hold_too_short">शेवटच्या टॅपवर, धरण्याची पूर्ण वेळ होईपर्यंत बोटे स्क्रीनवर स्थिर ठेवा.</string>
+    <string name="gesture_trainer_tip_too_few_taps">टॅप मोजा, आणि ते सर्व एका दमात पटकन करा.</string>
+    <string name="gesture_trainer_tip_too_many_taps">टॅप मोजा. काचेवरून उसळणाऱ्या बोटामुळे एक जास्तीचा टॅप होतो.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">जलद टॅप करा: उचलल्यानंतर लगेच पुढचा टॅप सुरू करा.</string>
+    <string name="gesture_trainer_tip_taps_apart">प्रत्येक वेळी एकाच जागी टॅप करा.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">बोटे आणखी हलवा, किमान 1 सेमी जवळ किंवा दूर.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">पिंच म्हणजे बोटे एकमेकांकडे हलवणे, पसरवणे म्हणजे बोटे एकमेकांपासून दूर हलवणे.</string>
+    <string name="gesture_trainer_tip_moved_together">फक्त बोटे एकमेकांकडे किंवा एकमेकांपासून दूर हलवा. संपूर्ण हात स्क्रीनवर सरकवू नका.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">डायल पाव फेरा फिरवल्याप्रमाणे आणखी फिरवा.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">घड्याळाच्या दिशेने म्हणजे घड्याळाचे काटे फिरतात त्या दिशेने फिरवणे: वरचे बोट उजवीकडे जाते.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">पहिला स्ट्रोक किमान 1 सेमी लांब करा.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">पहिल्या स्ट्रोकनंतर, उचलण्यापूर्वी उलट दिशेने परत या.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">घासणे जलद करा, सुमारे एका सेकंदात जाऊन परत.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">अगदी काठावरून सुरू करा, बोटाचे टोक अंशतः स्क्रीनच्या बाहेर ठेवून.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">तुम्ही काठाच्या कोणत्या अर्ध्या भागात सुरू करता ते तपासा.</string>
+    <string name="gesture_trainer_tip_edge_too_short">क्लिक ऐकू येईपर्यंत आणखी सरकवा, नंतर उचला.</string>
+    <string name="gesture_trainer_tip_edge_too_long">पहिल्या क्लिकनंतर लगेच, दुसऱ्या क्लिकपूर्वी उचला.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">क्लिकपूर्वी न थांबता जलद आत सरकवा.</string>
+    <string name="gesture_trainer_tip_edge_sideways">काठावरून सरळ आत, किंवा काठाच्या बाजूने सरळ सरकवा, तिरके नाही.</string>
+    <string name="gesture_trainer_tip_corner_missed">बोट अगदी कोपऱ्यात, दोन्ही काठांना स्पर्श करून ठेवा.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">कोपऱ्याला स्पर्श केल्यानंतर जलद उचला.</string>
+    <string name="gesture_trainer_close_to_limit">मर्यादेच्या जवळ: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">स्वाइप हळू सुरू होतात. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास हळू सुरुवात स्वीकारली जाते.</string>
+    <string name="gesture_trainer_advice_tap_time">टॅप हळू आहेत. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास हळू टॅप स्वीकारले जातात.</string>
+    <string name="gesture_trainer_advice_edge_width">स्वाइप काठापासून खूप दूर सुरू होतात. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास काठाजवळ सुरू होणारे स्वाइपही काठावरील स्वाइप होतात.</string>
+    <string name="gesture_trainer_advice_corner_size">टॅप कोपऱ्याबाहेर पडतात. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास कोपरे मोठे होतात.</string>
+    <string name="gesture_trainer_advice_corner_time">कोपऱ्यावरील टॅप हळू आहेत. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास हळू टॅप स्वीकारले जातात.</string>
+    <string name="gesture_trainer_menu_option">पर्याय <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: आयटम <xliff:g id="number">%3$d</xliff:g> निवडा, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">मेनू उघडण्यासाठी एक बोट <xliff:g id="edge">%1$s</xliff:g> किमान <xliff:g id="distance">%2$d</xliff:g> मिमी वर किंवा खाली सरकवा. त्यात वरपासून खालपर्यंत <xliff:g id="count">%3$d</xliff:g> आयटम आहेत, प्रत्येक सुमारे <xliff:g id="size">%6$s</xliff:g> सेमी उंच. आयटम <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, स्क्रीनच्या वरच्या टोकापासून <xliff:g id="from">%7$s</xliff:g> ते <xliff:g id="to">%8$s</xliff:g> सेमी खाली आहे. आयटम बोलला गेल्यावर बोट उचला.</string>
+    <string name="gesture_trainer_menu_sample">या काठावर मेनू नाही. सराव <xliff:g id="count">%1$d</xliff:g> नमुना आयटम वापरतो.</string>
+    <string name="gesture_trainer_try_menu_cancelled">प्रयत्न <xliff:g id="number">%1$d</xliff:g>: निवड न करता मेनू बंद झाला.</string>
+    <string name="gesture_trainer_try_menu_other">प्रयत्न <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> निवडले.</string>
+    <string name="gesture_trainer_measure_menu_item">आयटम <xliff:g id="number">%1$d</xliff:g> वर उचलले</string>
+    <string name="gesture_trainer_finding_menu_in_corner">बोट काठाच्या अगदी वरच्या किंवा खालच्या टोकाला सुरू झाले, जिथे कोपरे आणि वरचा व खालचा काठ आहेत.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">बोट काठापासून <xliff:g id="mm">%1$.0f</xliff:g> मिमी वर उचलले गेले, आणि <xliff:g id="limit">%2$.0f</xliff:g> मिमी पलीकडे मेनू बंद होतो.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">बोट आयटम <xliff:g id="target">%2$d</xliff:g> ऐवजी आयटम <xliff:g id="item">%1$d</xliff:g> वर उचलले गेले.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">काठाच्या वरच्या आणि खालच्या टोकांपासून थोडे दूर सुरू करा.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">सरकवताना बोट काठाजवळ ठेवा, आणि तिथेच उचला.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">प्रत्येक आयटमची काठावर निश्चित जागा असते, आणि जिथे बोट उचलले जाते तो आयटम निवडला जातो. आयटम बोलला गेल्यावर उचला.</string>
+    <string name="gesture_trainer_contents">अनुक्रमणिका</string>
+    <string name="gesture_trainer_contents_heading">अनुक्रमणिका: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">पूर्ण, <xliff:g id="tries">%2$d</xliff:g> पैकी <xliff:g id="hits">%1$d</xliff:g> ओळखले</string>
+    <string name="gesture_trainer_group_tap_swipe">टॅप आणि स्वाइप</string>
+    <string name="gesture_trainer_group_edge_swipes">काठांवरून स्वाइप</string>
+    <string name="gesture_trainer_group_along_edges">काठांच्या बाजूने सरकवणे</string>
+    <string name="gesture_trainer_group_edge_menus">काठाचे मेनू</string>
+    <string name="gesture_trainer_group_corners">कोपरे</string>
+    <string name="gesture_trainer_group_back_tap">डिव्हाइसच्या मागे टॅप</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">दोन बोटांच्या टॅपनंतर दोन बोटांचा स्वाइप असलेले जेश्चर वगळले आहेत: <xliff:g id="setting">%1$s</xliff:g> बंद आहे.</string>
+    <string name="gesture_trainer_how_swipe_hold">नंतर, न उचलता, बोट किमान <xliff:g id="hold">%1$d</xliff:g> ms स्थिर ठेवा, आणि उचला.</string>
+    <string name="gesture_trainer_half_top">वरच्या</string>
+    <string name="gesture_trainer_half_bottom">खालच्या</string>
+    <string name="gesture_trainer_how_taps_half">स्क्रीनच्या <xliff:g id="half">%1$s</xliff:g> अर्ध्या भागात टॅप करा. बोटांमधील बिंदूवरून अर्धा भाग ठरतो.</string>
+    <string name="gesture_trainer_same_fingers">त्याच बोटांनी</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> टॅप करा. शेवटच्या टॅपनंतर लगेच, <xliff:g id="gap">%3$d</xliff:g> ms च्या आत, <xliff:g id="swipe_fingers">%4$s</xliff:g> स्क्रीनला पुन्हा स्पर्श करा आणि सरळ रेषेत सुमारे 2 ते 3 सेमी <xliff:g id="direction">%5$s</xliff:g> सरकवा, नंतर उचला.</string>
+    <string name="gesture_trainer_how_corner_hold">शेवटच्या टॅपवर, बोट कोपऱ्यात किमान <xliff:g id="hold">%1$d</xliff:g> ms स्थिर ठेवा.</string>
+    <string name="gesture_trainer_how_back_tap">फोन हातात त्याच्या बाजूंनी धरा, आणि त्याच्या मागच्या बाजूच्या मध्यभागी बोटाच्या टोकाने, दारावर ठोठावल्याप्रमाणे, घट्टपणे आणि पटकन <xliff:g id="taps">%1$s</xliff:g> टॅप करा. टॅप एकमेकांच्या जवळ ठेवा: त्यांच्यामध्ये जास्तीत जास्त <xliff:g id="gap">%2$d</xliff:g> ms. टॅप करताना स्क्रीनला स्पर्श करू नका.</string>
+    <string name="gesture_trainer_back_tap_info">सरावादरम्यान डिव्हाइसच्या मागे टॅप कोणतीही कमांड चालवत नाहीत. टॅप किती जोरात असावा हे <xliff:g id="setting">%1$s</xliff:g> ठरवते.</string>
+    <string name="gesture_trainer_go_placed">जेश्चर <xliff:g id="tries">%1$d</xliff:g> वेळा करा.</string>
+    <string name="gesture_trainer_along_left">डाव्या काठाने</string>
+    <string name="gesture_trainer_along_right">उजव्या काठाने</string>
+    <string name="gesture_trainer_along_top">वरच्या काठाने</string>
+    <string name="gesture_trainer_along_bottom">खालच्या काठाने</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> सरकवणे वगळले आहे: त्या काठावर काठाचा मेनू आहे, त्यामुळे त्याच्या बाजूने सरकवल्यास जेश्चर चालण्याऐवजी मेनू उघडतो.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> सरकवणे वगळले आहे: तो काठ स्क्रोल करतो, त्यामुळे त्याच्या बाजूने सरकवल्यास जेश्चर चालण्याऐवजी ॲप स्क्रोल होते.</string>
+    <string name="gesture_trainer_finding_along_off_edge">बोट काठापासून खूप दूर गेले.</string>
+    <string name="gesture_trainer_tip_along_off_edge">बोट काचेच्या अगदी कडेवर, काठाच्या बाजूने सरळ ठेवा.</string>
+    <string name="gesture_trainer_go_back_tap">डिव्हाइसच्या मागे टॅप जेश्चर <xliff:g id="tries">%1$d</xliff:g> वेळा करा. स्क्रीनला स्पर्श केल्यास प्रयत्न अयशस्वी होतो.</string>
+    <string name="gesture_trainer_no_accelerometer">या सरावासाठी ॲक्सिलरोमीटर आवश्यक आहे. कोणताही उपलब्ध नाही.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms स्थिर धरले</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> तीव्रतेचा टॅप</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">शेवटी बोट <xliff:g id="ms">%1$d</xliff:g> ms स्थिर राहिले, आणि ते किमान <xliff:g id="limit">%2$d</xliff:g> ms स्थिर राहणे आवश्यक आहे.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">बोटांनी स्क्रीनच्या दुसऱ्या अर्ध्या भागात टॅप केले.</string>
+    <string name="gesture_trainer_finding_swipe_missing">टॅपनंतर स्वाइप आला नाही.</string>
+    <string name="gesture_trainer_finding_swipe_late">शेवटच्या टॅपनंतर <xliff:g id="ms">%1$d</xliff:g> ms नी स्वाइप सुरू झाला, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">मागे टॅप खूप हलका: आवश्यक तीव्रतेच्या <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">एका टॅपमुळे फोन मागच्या बाजूने येण्यापेक्षा बाजूला जास्त हलला.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">टॅपच्या अगदी आधी फोन हलत होता.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">स्क्रीनला स्पर्श झाला, आणि स्पर्श होत असताना केलेले टॅप मोजले जात नाहीत.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">मागच्या बाजूवरील टॅपमध्ये <xliff:g id="ms">%1$d</xliff:g> ms गेले, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">स्वाइपनंतर, धरण्याची पूर्ण वेळ होईपर्यंत बोट स्क्रीनवर स्थिर ठेवा. नंतर उचला.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">तुम्ही कोणत्या अर्ध्या भागात टॅप करता ते तपासा: स्क्रीनचा मध्य वरच्या अर्ध्या भागाला खालच्या अर्ध्या भागापासून वेगळे करतो.</string>
+    <string name="gesture_trainer_tip_swipe_missing">शेवटच्या टॅपनंतर लगेच स्क्रीनला पुन्हा स्पर्श करा आणि स्वाइप करा.</string>
+    <string name="gesture_trainer_tip_swipe_late">शेवटच्या टॅपनंतर विराम न घेता लगेच स्वाइप सुरू करा.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">मागच्या बाजूच्या मध्यभागाजवळ, बोटाच्या टोकाने किंवा नखाने, जोरात टॅप करा.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">फोनच्या मागच्या बाजूवर सरळ टॅप करा, त्याच्या कडेवर किंवा तिरके नाही.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">टॅप करण्यापूर्वी क्षणभर फोन स्थिर धरा, आणि तो सैलपणे धरा जेणेकरून तुमचा हात तो हलवणार नाही.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">मागच्या बाजूवर टॅप करताना बोटे स्क्रीनपासून दूर ठेवा: फोन त्याच्या बाजूंनी धरा.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">जलद टॅप करा, एकामागून एक लगेच.</string>
+    <string name="gesture_trainer_advice_swipe_hold">स्वाइपनंतर बोट खूप लवकर उचलले जाते. <xliff:g id="setting">%1$s</xliff:g> कमी केल्यास कमी वेळ धरणे स्वीकारले जाते.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">मागे टॅप हलके आहेत. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास हलके टॅप ओळखले जातात, आणि धक्केही टॅप म्हणून ओळखले जाऊ शकतात.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">बोटे <xliff:g id="degrees">%1$.0f</xliff:g> अंश फिरली, आणि <xliff:g id="limit">%2$.0f</xliff:g> अंशांपासून हालचाल फिरवणे मानली जाते.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">बोटे सरळ रेषेत एकमेकांकडे किंवा एकमेकांपासून दूर हलवा, एकमेकांभोवती कमानीसारखी नाही.</string>
+    <string name="gesture_trainer_finding_other_gesture">हालचाल त्याऐवजी त्या जेश्चरशी जुळली.</string>
+    <string name="gesture_trainer_side_left">डाव्या</string>
+    <string name="gesture_trainer_side_right">उजव्या</string>
+    <string name="gesture_trainer_side_top">वरच्या</string>
+    <string name="gesture_trainer_side_bottom">खालच्या</string>
+    <string name="gesture_trainer_finding_wrong_edge">बोट <xliff:g id="side">%1$s</xliff:g> काठावर सुरू झाले, आणि हा सराव <xliff:g id="expected">%2$s</xliff:g> काठावर आहे.</string>
+    <string name="gesture_trainer_tip_wrong_edge">सरावात नमूद केलेल्या काठावरच सुरू करा.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">या जेश्चरऐवजी काठाचा मेनू उघडला.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">मेनू असलेल्या काठाच्या बाजूने सरकवल्यास मेनू उघडतो. सरावात नमूद केलेल्या काठावर सुरू करा.</string>
+    <string name="gesture_trainer_group_three_part">तीन-भागांचे स्वाइप</string>
+    <string name="gesture_trainer_group_two_stroke">दोन-स्ट्रोक स्वाइप</string>
+    <string name="gesture_trainer_group_shake">हलवणे</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">तीन-भागांचे स्वाइप वगळले आहेत: <xliff:g id="setting">%1$s</xliff:g> सुरू आहे.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">दोन-स्ट्रोक स्वाइप वगळले आहेत: <xliff:g id="setting">%1$s</xliff:g>: <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">सरावादरम्यान हलवणे कोणतीही कमांड चालवत नाही. फोन किती जोरात हलवावा हे <xliff:g id="setting">%1$s</xliff:g> ठरवते.</string>
+    <string name="gesture_trainer_go_shake">प्रत्येक वेळी हलवल्यानंतर थोडा विराम घेऊन फोन <xliff:g id="tries">%1$d</xliff:g> वेळा हलवा.</string>
+    <string name="gesture_trainer_how_shake">फोन घट्ट धरा आणि पाण्याचा थेंब झटकल्याप्रमाणे तो पटकन मागे-पुढे हलवा: प्रत्येक दिशेने किमान दोनदा, सर्व सुमारे दोन तृतीयांश सेकंदात. नंतर तो स्थिर धरा.</string>
+    <string name="gesture_trainer_how_two_stroke">एका बोटाने सुमारे 2 सेमी <xliff:g id="first">%1$s</xliff:g> स्वाइप करा आणि उचला. नंतर लगेच, <xliff:g id="time">%3$d</xliff:g> ms च्या आत, एका बोटाने सुमारे 2 सेमी <xliff:g id="second">%2$s</xliff:g> स्वाइप करा आणि उचला.</string>
+    <string name="gesture_trainer_how_three_part">एका बोटाने स्क्रीनला स्पर्श करा आणि न उचलता <xliff:g id="first">%1$s</xliff:g> स्वाइप करा, नंतर तीव्रपणे वळा आणि <xliff:g id="second">%2$s</xliff:g> स्वाइप करा, नंतर पुन्हा तीव्रपणे वळा आणि <xliff:g id="third">%3$s</xliff:g> स्वाइप करा, प्रत्येक भाग सुमारे 2 सेमी, आणि उचला. तीक्ष्ण कोपऱ्यांसह एक जलद, सलग हालचाल करा, वक्र नाही.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">एक बोट स्क्रीनच्या वरच्या एक तृतीयांश भागात आणि दुसरे खालच्या एक तृतीयांश भागात ठेवा, उदाहरणार्थ अंगठा खाली आणि तर्जनी वर.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">एक बोट स्क्रीनच्या वरच्या एक तृतीयांश भागात आणि एक खालच्या एक तृतीयांश भागात नव्हते.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">दुसरा स्वाइप झाला नाही.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">दुसरा स्वाइप पहिल्यानंतर <xliff:g id="ms">%1$d</xliff:g> ms नी सुरू झाला, आणि जास्तीत जास्त <xliff:g id="limit">%2$d</xliff:g> ms ची परवानगी आहे.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">पहिला स्वाइप <xliff:g id="direction">%1$s</xliff:g> गेला.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">दुसरा स्वाइप <xliff:g id="direction">%1$s</xliff:g> गेला.</string>
+    <string name="gesture_trainer_finding_shake_too_light">हलवणे खूप हलके होते: आवश्यक तीव्रतेच्या <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">मागे-पुढे हालचाली: आवश्यक <xliff:g id="wanted">%2$d</xliff:g> पैकी <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">बोटे एकमेकांपासून दूर पसरवा, एक वरच्या काठाजवळ आणि एक खालच्या काठाजवळ.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">पहिल्या स्वाइपनंतर बोट उचला आणि लगेच पुन्हा स्वाइप करा.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">बोट उचलल्यानंतर लगेच दुसरा स्वाइप सुरू करा.</string>
+    <string name="gesture_trainer_tip_shake_too_light">आणखी जोरात आणि जलद हलवा.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">मध्ये न थांबता, प्रत्येक दिशेने किमान दोनदा मागे-पुढे, जलद हलवा.</string>
+    <string name="gesture_trainer_measure_shake_strength">सर्वात जोरदार हालचाल <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">हलवणे हलके आहे. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास हलके हलवणे ओळखले जाते, आणि फोन सोबत नेणेही हलवणे म्हणून ओळखले जाऊ शकते.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">दुसरा स्वाइप उशिरा सुरू होतो. <xliff:g id="setting">%1$s</xliff:g> वाढवल्यास दुसरा स्वाइप उशिरा सुरू करता येतो, आणि एकच स्वाइप चालण्यापूर्वी जास्त वेळ थांबतो.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> सुरू आहे.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> बंद आहे: दोन बोटांचे स्वाइप ॲप स्क्रोल करतात, आणि घासणेही बहुतेक वेळा स्क्रोल करते. सेटिंग सुरू असल्यास, दोन बोटांचे स्वाइप स्क्रोल करण्याऐवजी SandFly कमांड चालवतात.</string>
+    <string name="gesture_trainer_measure_first_stroke">पहिला स्वाइप <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">दुसरा स्वाइप <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">संपूर्ण जेश्चर <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">त्यांच्या दरम्यान <xliff:g id="ms">%1$d</xliff:g> ms उचलले</string>
+</resources>

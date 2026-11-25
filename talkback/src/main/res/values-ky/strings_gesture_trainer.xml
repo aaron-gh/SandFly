@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Жаңсоо машыктыргычы</string>
+    <string name="gesture_trainer_intro">Жаңсоолордун тобун тандаңыз. Ар бир көнүгүү бир жаңсоону сүрөттөйт. Жаңсоону <xliff:g id="tries">%1$d</xliff:g> жолу жасаңыз; ар бир аракеттин жыйынтыгы айтылат. Акыркы аракеттен кийин экранда ар бир аракеттин өлчөөлөрү, эмнени өзгөртүү керек жана тиешелүү жөндөөлөр көрсөтүлөт.</string>
+    <string name="gesture_trainer_group_one_finger">Бир манжа</string>
+    <string name="gesture_trainer_group_two_fingers">Эки манжа</string>
+    <string name="gesture_trainer_group_three_fingers">Үч манжа</string>
+    <string name="gesture_trainer_group_four_fingers">Төрт манжа</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Кысуу, айлантуу жана сүртүү</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> көнүгүү</string>
+    <string name="gesture_trainer_close">Жабуу</string>
+    <string name="gesture_trainer_no_detection">Жаңсоо машыктыргычы үчүн Android 13 же андан кийинкиси керек.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Ары-бери жана бурчтук жаңсоолор калтырылды: <xliff:g id="setting">%1$s</xliff:g> күйүк.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">2 манжа менен сүрүүлөр калтырылды: <xliff:g id="setting">%1$s</xliff:g> өчүк, ошондуктан алар колдонмолорду сыдырат.</string>
+    <string name="gesture_trainer_exercise_heading">Көнүгүү <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Баштоо</string>
+    <string name="gesture_trainer_skip">Бул көнүгүүнү өткөрүп жиберүү</string>
+    <string name="gesture_trainer_back_to_groups">Топторго кайтуу</string>
+    <string name="gesture_trainer_go">Жаңсоону экрандын каалаган жеринде <xliff:g id="tries">%1$d</xliff:g> жолу жасаңыз. Ар бир тийүү бир аракет болуп саналат.</string>
+    <string name="gesture_trainer_fingers_1">бир манжа</string>
+    <string name="gesture_trainer_fingers_2">бири-биринен 1 смдей аралыкта жанаша эки манжа</string>
+    <string name="gesture_trainer_fingers_3">бир аз ажыратылган жанаша үч манжа</string>
+    <string name="gesture_trainer_fingers_4">бир аз ажыратылган жанаша төрт манжа</string>
+    <string name="gesture_trainer_direction_up">өйдө</string>
+    <string name="gesture_trainer_direction_down">ылдый</string>
+    <string name="gesture_trainer_direction_left">солго</string>
+    <string name="gesture_trainer_direction_right">оңго</string>
+    <string name="gesture_trainer_how_swipe">Экранга <xliff:g id="fingers">%1$s</xliff:g> менен тийип, күтпөстөн түз сызык боюнча <xliff:g id="direction">%2$s</xliff:g> 2–3 смдей сүрүп, манжаны көтөрүңүз. Дароо кыймылдай баштаңыз: адегенде кыймылсыз турган манжа тийүү менен изилдөөнү баштайт.</string>
+    <string name="gesture_trainer_how_swipe_multi">Манжаларды бир убакта, бир эле учурда коюп, баарын бирдей жылдырыңыз. Ар бир манжа бүт убакыт <xliff:g id="direction">%1$s</xliff:g> жылышы керек, ошондуктан сызыкты түз кармаңыз.</string>
+    <string name="gesture_trainer_how_back_and_forth">Экранга бир манжа менен тийип, <xliff:g id="first">%1$s</xliff:g> 2 смдей сүрүңүз, анан көтөрбөстөн түз <xliff:g id="second">%2$s</xliff:g> 2 смдей кайтып, манжаны көтөрүңүз. Аны бир тез, жылмакай кыймыл менен жасаңыз.</string>
+    <string name="gesture_trainer_how_angle">Экранга <xliff:g id="fingers">%1$s</xliff:g> менен тийип, <xliff:g id="first">%2$s</xliff:g> 2 смдей сүрүңүз, анан көтөрбөстөн кескин бурулуп, <xliff:g id="second">%3$s</xliff:g> 2 смдей сүрүп, көтөрүңүз. Бурулушту ийри эмес, L тамгасындай кескин бурч кылыңыз.</string>
+    <string name="gesture_trainer_taps_1">бир жолу</string>
+    <string name="gesture_trainer_taps_2">эки жолу</string>
+    <string name="gesture_trainer_taps_3">үч жолу</string>
+    <string name="gesture_trainer_taps_4">төрт жолу</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> менен <xliff:g id="taps">%1$s</xliff:g> таптаңыз. Манжаларды бирге коюп, бирге, тез жана жылдырбастан көтөрүңүз.</string>
+    <string name="gesture_trainer_how_taps_quick">Таптоолорду тез жана бир жерге жасаңыз: кийинки таптоо мурункусунан кийин <xliff:g id="gap">%1$d</xliff:g> мс ичинде болушу керек.</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> экранга бирге коюп, жылдырбастан кеминде <xliff:g id="hold">%2$d</xliff:g> мс кыймылсыз кармаңыз.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Башка буйрук дайындалбаса, бул жаңсоо SandFly\'ды өчүрөт. Машыктыргычта ал эч нерсе аткарбайт.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> менен <xliff:g id="taps">%1$s</xliff:g> таптап, акыркы таптоодо манжаларды экранда кеминде <xliff:g id="hold">%3$d</xliff:g> мс кыймылсыз калтырыңыз.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Бармакты, сөөмөйдү жана ортон манжаны колдонуңуз.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Сөөмөй менен ортон манжаны жанаша коюп, бармак менен аты жок манжаны эки тарапка бир нече сантиметр алыс коюңуз. Анан төрт манжанын учун бир чекитке чогултуңуз.</string>
+    <string name="gesture_trainer_how_pinch">Экранга <xliff:g id="fingers">%1$d</xliff:g> манжаны кенен ажыратып коюңуз. Анан бир нерсени көтөрүп алгандай, аларды бири-бирине түз кеминде 1 см жакындатып, экрандан көтөрүңүз. Бүт колду эмес, манжаларды гана жылдырыңыз, жаа сыяктуу эмес.</string>
+    <string name="gesture_trainer_how_spread">Экранга <xliff:g id="fingers">%1$d</xliff:g> манжаны жакын коюңуз. Анан аларды түз кеминде 1 см ажыратып, экрандан көтөрүңүз. Бүт колду эмес, манжаларды гана жылдырыңыз, жаа сыяктуу эмес.</string>
+    <string name="gesture_trainer_clockwise">саат жебеси боюнча</string>
+    <string name="gesture_trainer_counterclockwise">саат жебесине каршы</string>
+    <string name="gesture_trainer_how_rotate">Экранга эки манжаны 2–3 смдей аралыкта коюп, аларды ортосунун айланасында тегеректи бурагандай <xliff:g id="way">%1$s</xliff:g> чейрек айланымдай айлантыңыз. Анан көтөрүңүз.</string>
+    <string name="gesture_trainer_how_scrub">Экранга эки манжаны коюп, бир нерсени өчүргөндөй, аларды тез бир тарапка 2 смдей жылдырып, кайра кайтарыңыз, баары бир секунддун ичинде. Анан көтөрүңүз.</string>
+    <string name="gesture_trainer_edge_bottom">төмөнкү четте</string>
+    <string name="gesture_trainer_edge_top_left">үстүнкү четтин сол жарымында</string>
+    <string name="gesture_trainer_edge_top_right">үстүнкү четтин оң жарымында</string>
+    <string name="gesture_trainer_edge_left_top">сол четтин үстүнкү жарымында</string>
+    <string name="gesture_trainer_edge_left_bottom">сол четтин төмөнкү жарымында</string>
+    <string name="gesture_trainer_edge_right_top">оң четтин үстүнкү жарымында</string>
+    <string name="gesture_trainer_edge_right_bottom">оң четтин төмөнкү жарымында</string>
+    <string name="gesture_trainer_edge_left">сол четте</string>
+    <string name="gesture_trainer_edge_right">оң четте</string>
+    <string name="gesture_trainer_edge_top">үстүнкү четте</string>
+    <string name="gesture_trainer_how_edge">Бир манжаны <xliff:g id="edge">%1$s</xliff:g>, четтен эң көп <xliff:g id="edge_width">%2$d</xliff:g> мм аралыкта коюп, экрандын ичине <xliff:g id="direction">%3$s</xliff:g> биринчи чыкылдатууга чейин, <xliff:g id="distance">%4$d</xliff:g> ммдей сүрүңүз. Анан дароо көтөрүңүз: экинчи чыкылдатуудан өткөндө сүрүү узун сүрүү болуп калат.</string>
+    <string name="gesture_trainer_how_edge_long">Бир манжаны <xliff:g id="edge">%1$s</xliff:g>, четтен эң көп <xliff:g id="edge_width">%2$d</xliff:g> мм аралыкта коюп, экрандын ичине <xliff:g id="direction">%3$s</xliff:g> биринчи чыкылдатуудан өтүп экинчисине чейин, <xliff:g id="distance">%4$d</xliff:g> ммдей сүрүңүз. Анан көтөрүңүз.</string>
+    <string name="gesture_trainer_how_along">Бир манжаны <xliff:g id="edge">%1$s</xliff:g> боюнча <xliff:g id="direction">%2$s</xliff:g> кеминде <xliff:g id="distance">%3$d</xliff:g> мм сүрүңүз.</string>
+    <string name="gesture_trainer_corner_top_left">жогорку сол</string>
+    <string name="gesture_trainer_corner_top_right">жогорку оң</string>
+    <string name="gesture_trainer_corner_bottom_left">төмөнкү сол</string>
+    <string name="gesture_trainer_corner_bottom_right">төмөнкү оң</string>
+    <string name="gesture_trainer_how_corner">Экрандын <xliff:g id="corner">%2$s</xliff:g> бурчунда <xliff:g id="taps">%1$s</xliff:g> таптаңыз. Манжаны так бурчка, эки четтен <xliff:g id="size">%3$d</xliff:g> ммден ашпаган аралыкта коюп, <xliff:g id="time">%4$d</xliff:g> мс ичинде тез көтөрүңүз.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> мм. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> мм.</string>
+    <string name="gesture_trainer_corner_warning">Бурчтар чоңураак болсо, бурчка жакын башкаруу элементин, мисалы, жогорку сол жактагы Артка баскычын таптоо анын ордуна бурч жаңсоосун аткарышы мүмкүн.</string>
+    <string name="gesture_trainer_rating_precise">таанылды, так</string>
+    <string name="gesture_trainer_rating_good">таанылды, жакшы</string>
+    <string name="gesture_trainer_rating_borderline">таанылды, бирок чекке жакын</string>
+    <string name="gesture_trainer_try_recognized">Аракет <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Аракет <xliff:g id="number">%1$d</xliff:g>: таанылган жок.</string>
+    <string name="gesture_trainer_try_other">Аракет <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> катары таанылды.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> аракеттин <xliff:g id="recognized">%2$d</xliff:g> таанылды</string>
+    <string name="gesture_trainer_results_tries">Сиздин аракеттериңиз</string>
+    <string name="gesture_trainer_results_change">Эмнени өзгөртүү керек</string>
+    <string name="gesture_trainer_results_close">Чекке жакын</string>
+    <string name="gesture_trainer_results_all_good">Бардык аракеттер чектердин ичинде таанылды.</string>
+    <string name="gesture_trainer_results_settings">Жардам бере турган жөндөөлөр</string>
+    <string name="gesture_trainer_next">Кийинки көнүгүү</string>
+    <string name="gesture_trainer_repeat">Кайталоо</string>
+    <string name="gesture_trainer_finish">Бүтүрүү</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> тобундагы бардык көнүгүүлөрдү бүтүрдүңүз.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> өзгөртүү</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> мс созулду</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> см узундукта</string>
+    <string name="gesture_trainer_measure_speed">секундасына <xliff:g id="speed">%1$.0f</xliff:g> см</string>
+    <string name="gesture_trainer_measure_angle">түз сызыктан <xliff:g id="degrees">%1$.0f</xliff:g> градус четтеди</string>
+    <string name="gesture_trainer_measure_start">биринчи сантиметр <xliff:g id="ms">%1$d</xliff:g> мс ичинде</string>
+    <string name="gesture_trainer_measure_landing">манжалар <xliff:g id="ms">%1$d</xliff:g> мс айырма менен тийди</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> мс таптоо</string>
+    <string name="gesture_trainer_measure_gap">таптоолордун ортосунда <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_spread">манжалар <xliff:g id="mm">%1$.0f</xliff:g> мм жылды</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> градус бурулду</string>
+    <string name="gesture_trainer_measure_corner">бурчтун четтеринен <xliff:g id="mm">%1$.0f</xliff:g> мм</string>
+    <string name="gesture_trainer_measure_edge">четтен <xliff:g id="mm">%1$.0f</xliff:g> мм алыста башталды</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Экрандагы манжалар: <xliff:g id="wanted">%2$d</xliff:g> ордуна <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Манжалар <xliff:g id="ms">%1$d</xliff:g> мс айырма менен тийди, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Бардык манжалар коюлганга чейин бир манжа көтөрүлдү.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Манжалар <xliff:g id="ms">%1$d</xliff:g> мс айырма менен көтөрүлдү, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_became_exploration">Манжа өтө узак кыймылсыз турду же башында өтө жай жылды, ошондуктан тийүү тийүү менен изилдөөгө айланды.</string>
+    <string name="gesture_trainer_finding_slow_start">Биринчи сантиметр <xliff:g id="ms">%1$d</xliff:g> мс алды, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_paused">Манжа <xliff:g id="ms">%1$d</xliff:g> мс жайлады, ал эми ар бир сантиметр эң көп <xliff:g id="limit">%2$d</xliff:g> мс алышы мүмкүн.</string>
+    <string name="gesture_trainer_finding_too_short">Кыймыл болгону <xliff:g id="mm">%1$.0f</xliff:g> мм болду, ал эми кеминде <xliff:g id="limit">%2$.0f</xliff:g> мм болушу керек.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Манжа <xliff:g id="direction">%1$s</xliff:g> кете баштады.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Манжалар <xliff:g id="direction">%1$s</xliff:g> кете баштады.</string>
+    <string name="gesture_trainer_finding_off_line">Жол түз сызыктан <xliff:g id="degrees">%1$.0f</xliff:g> градус четтеди, ал эми эң көп <xliff:g id="limit">%2$.0f</xliff:g> уруксат.</string>
+    <string name="gesture_trainer_finding_curved">Жол <xliff:g id="wanted">%2$d</xliff:g> ордуна <xliff:g id="parts">%1$d</xliff:g> бөлүккө ийилди.</string>
+    <string name="gesture_trainer_finding_turn_missing">Бурулуш табылган жок.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Бурулуштан кийин манжа <xliff:g id="direction">%1$s</xliff:g> кетти.</string>
+    <string name="gesture_trainer_finding_tap_moved">Таптоо учурунда манжа <xliff:g id="mm">%1$.1f</xliff:g> мм жылды, ал эми эң көп <xliff:g id="limit">%2$.1f</xliff:g> мм уруксат.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Таптоо <xliff:g id="ms">%1$d</xliff:g> мс созулду, бул <xliff:g id="limit">%2$d</xliff:g> мс ашык.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Акыркы таптоо <xliff:g id="ms">%1$d</xliff:g> мс кармалды, ал эми кеминде <xliff:g id="limit">%2$d</xliff:g> мс болушу керек.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> ордуна <xliff:g id="taps">%1$d</xliff:g> таптоо.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> ордуна <xliff:g id="taps">%1$d</xliff:g> таптоо.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Таптоолордун ортосунда <xliff:g id="ms">%1$d</xliff:g> мс өттү, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_taps_apart">Таптоолор бири-биринен <xliff:g id="mm">%1$.0f</xliff:g> мм алыс тийди, ал эми эң көп <xliff:g id="limit">%2$.0f</xliff:g> мм уруксат.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Манжалар болгону <xliff:g id="mm">%1$.0f</xliff:g> мм жылды, ал эми кеминде <xliff:g id="limit">%2$.0f</xliff:g> мм жылышы керек.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Манжалар тескери багытта жылды.</string>
+    <string name="gesture_trainer_finding_moved_together">Бүт кол экран боюнча <xliff:g id="mm">%1$.0f</xliff:g> мм жылды, бул манжалардын бири-бирине жакындаганынан же алыстаганынан көп.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Манжалар болгону <xliff:g id="degrees">%1$.0f</xliff:g> градус бурулду, ал эми кеминде <xliff:g id="limit">%2$.0f</xliff:g> бурулушу керек.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Манжалар тескери багытта бурулду.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Биринчи сызык <xliff:g id="mm">%1$.0f</xliff:g> мм болду, ал эми кеминде <xliff:g id="limit">%2$.0f</xliff:g> мм болушу керек.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Кайтуу сызыгы <xliff:g id="mm">%1$.0f</xliff:g> мм болду, ал эми кеминде <xliff:g id="limit">%2$.0f</xliff:g> мм болушу керек.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Сүртүү <xliff:g id="ms">%1$d</xliff:g> мс алды, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Манжа четтен <xliff:g id="mm">%1$.0f</xliff:g> мм алыс тийди, ал эми чет <xliff:g id="limit">%2$.0f</xliff:g> мм кең.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Манжа четтин башка жарымында башталды.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Манжа <xliff:g id="mm">%1$.0f</xliff:g> мм сүрүлдү, ал эми кеминде <xliff:g id="limit">%2$.0f</xliff:g> мм сүрүлүшү керек.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Сүрүү өтө узун: манжа экинчи чыкылдатуудан өтүп, <xliff:g id="mm">%1$.0f</xliff:g> мм кетти, ал эми экинчи чыкылдатуу <xliff:g id="limit">%2$.0f</xliff:g> ммде.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Чыкылдатууга жетүү <xliff:g id="ms">%1$d</xliff:g> мс алды, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Сүрүү капталга <xliff:g id="degrees">%1$.0f</xliff:g> градус кетти, ал эми эң көп <xliff:g id="limit">%2$.0f</xliff:g> уруксат.</string>
+    <string name="gesture_trainer_finding_corner_missed">Таптоо бурчтун четтеринен <xliff:g id="mm">%1$.0f</xliff:g> мм алыс тийди, ал эми бурч <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Бурчту таптоо <xliff:g id="ms">%1$d</xliff:g> мс созулду, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_none">Жаңсоого дал келген кыймыл аныкталган жок.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Айнекке канча манжа тийип турганын текшериңиз. Экранда жаткан алакан же башка манжа да эсептелет.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Бардык манжаларды бир эле учурда, бир колдой коюңуз, биринен сала бири эмес.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Адегенде бардык манжаларды коюп, анан аларды жылдырыңыз же көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Бардык манжаларды бир эле учурда көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_slow_start">Экранга тийген замат кыймылдай баштаңыз жана башында тезирээк жылдырыңыз.</string>
+    <string name="gesture_trainer_tip_paused">Манжаны көтөргөнгө чейин бирдей ылдамдыкта жылдыра бериңиз. Аягына жакын жайлабаңыз.</string>
+    <string name="gesture_trainer_tip_too_short">Кыймылды узунураак, 2–3 смдей кылыңыз.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Кыймылдын эң башында багытты текшериңиз. Телефонду алдыңызда түз кармоо жардам берет.</string>
+    <string name="gesture_trainer_tip_off_line">Кыйгач эмес, багыт боюнча гана жылдырыңыз. Сөөмөй бармакка караганда түзүрөөк сызык кармайт.</string>
+    <string name="gesture_trainer_tip_curved">Сызыкты түз кармап, так аягында көтөрүңүз, көтөрүп жатканда манжаны капталга имербеңиз.</string>
+    <string name="gesture_trainer_tip_turn_missing">Көтөрбөстөн багытты кескин, тик бурч менен же түз артка өзгөртүңүз. Ар бир бөлүк 2 смдей болушу керек.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Бурулуштан кийин кайсы жакка баратканыңызды текшериңиз: экинчи бөлүк жаңсоонун аталышындагы башка багытка жылышы керек.</string>
+    <string name="gesture_trainer_tip_tap_moved">Манжанын учу менен түз ылдый жана өйдө, жылдырбастан таптаңыз.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Ар бир таптоону кыска кылыңыз: тийип, дароо көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Акыркы таптоодо манжаларды кармоонун бүт убактысында экранда кыймылсыз кармаңыз.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Таптоолорду санап, баарын тез, бир жолу жасаңыз.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Таптоолорду санаңыз. Айнектен секирип кеткен манжа кошумча таптоо жасайт.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Тезирээк таптаңыз: кийинки таптоону көтөргөндөн кийин дароо баштаңыз.</string>
+    <string name="gesture_trainer_tip_taps_apart">Ар бир жолу бир эле жерди таптаңыз.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Манжаларды көбүрөөк, кеминде 1 см жакыныраак же алысыраак жылдырыңыз.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Кысуу — манжалардын бири-бирине жакындашы, ачуу — манжалардын бири-биринен алыстоосу.</string>
+    <string name="gesture_trainer_tip_moved_together">Манжаларды гана бири-бирине же бири-биринен жылдырыңыз. Бүт колду экран боюнча сүрбөңүз.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Тегеректи чейрек айланымга бурагандай көбүрөөк айлантыңыз.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Саат жебеси боюнча — сааттын жебелери жылган тарапка айлантуу: үстүнкү манжа оңго жылат.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Биринчи сызыкты кеминде 1 см узундукта кылыңыз.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Биринчи сызыктан кийин көтөрүүдөн мурун тескери тарапка кайтыңыз.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Сүртүүнү тез, барып-келүүнү бир секунддай ичинде жасаңыз.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Манжанын учу экрандан бир аз чыгып турган абалда так четтен баштаңыз.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Четтин кайсы жарымынан баштаганыңызды текшериңиз.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Чыкылдатууну укканча алысыраак сүрүп, анан көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Биринчи чыкылдатуудан кийин, экинчисине чейин дароо көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Чыкылдатууга чейин токтобостон, тезирээк ичке сүрүңүз.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Четтен түз ичке, же чет боюнча түз сүрүңүз, кыйгач эмес.</string>
+    <string name="gesture_trainer_tip_corner_missed">Манжаны эки четке тең тийгизип, так бурчка коюңуз.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Бурчка тийгенден кийин тезирээк көтөрүңүз.</string>
+    <string name="gesture_trainer_close_to_limit">Чекке жакын: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Сүрүүлөр жай башталат. <xliff:g id="setting">%1$s</xliff:g> узунураак болсо, жайыраак баштоого уруксат берет.</string>
+    <string name="gesture_trainer_advice_tap_time">Таптоолор жай. <xliff:g id="setting">%1$s</xliff:g> узунураак болсо, жайыраак таптоолорго уруксат берет.</string>
+    <string name="gesture_trainer_advice_edge_width">Сүрүүлөр четтен өтө алыс башталат. <xliff:g id="setting">%1$s</xliff:g> чоңураак болсо, четке жакын башталган сүрүүлөр да чет сүрүүлөрүнө айланат.</string>
+    <string name="gesture_trainer_advice_corner_size">Таптоолор бурчтан тышкары тийет. <xliff:g id="setting">%1$s</xliff:g> чоңураак болсо, бурчтар чоңоёт.</string>
+    <string name="gesture_trainer_advice_corner_time">Бурчту таптоолор жай. <xliff:g id="setting">%1$s</xliff:g> узунураак болсо, жайыраак таптоолорго уруксат берет.</string>
+    <string name="gesture_trainer_menu_option">Параметр <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: <xliff:g id="number">%3$d</xliff:g>-элементти тандаңыз, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Менюну ачуу үчүн бир манжаны <xliff:g id="edge">%1$s</xliff:g> кеминде <xliff:g id="distance">%2$d</xliff:g> мм өйдө же ылдый сүрүңүз. Анда үстүнөн ылдый карай <xliff:g id="count">%3$d</xliff:g> элемент бар, ар бири <xliff:g id="size">%6$s</xliff:g> смдей бийиктикте. <xliff:g id="number">%4$d</xliff:g>-элемент, <xliff:g id="item">%5$s</xliff:g>, экрандын үстүнөн <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> см ылдыйда. Элемент айтылганда манжаны көтөрүңүз.</string>
+    <string name="gesture_trainer_menu_sample">Бул четте меню жок. Көнүгүүдө <xliff:g id="count">%1$d</xliff:g> үлгү элемент колдонулат.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Аракет <xliff:g id="number">%1$d</xliff:g>: меню эч нерсе тандалбай жабылды.</string>
+    <string name="gesture_trainer_try_menu_other">Аракет <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> тандалды.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g>-элементте көтөрүлдү</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Манжа четтин эң үстүндө же эң ылдыйында башталды, ал жерде бурчтар жана үстүнкү, төмөнкү четтер жайгашкан.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Манжа четтен <xliff:g id="mm">%1$.0f</xliff:g> мм алыста көтөрүлдү, ал эми меню <xliff:g id="limit">%2$.0f</xliff:g> ммден ары жабылат.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Манжа <xliff:g id="target">%2$d</xliff:g>-элементтин ордуна <xliff:g id="item">%1$d</xliff:g>-элементте көтөрүлдү.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Четтин үстүнкү жана төмөнкү учтарынан бир аз алысыраак баштаңыз.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Сүрүп жатканда манжаны четке жакын кармап, ошол жерде көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Ар бир элементтин чет боюнча туруктуу орду бар, манжа көтөрүлгөн жердеги элемент тандалат. Элемент айтылганда көтөрүңүз.</string>
+    <string name="gesture_trainer_contents">Мазмуну</string>
+    <string name="gesture_trainer_contents_heading">Мазмуну: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">бүттү, <xliff:g id="tries">%2$d</xliff:g> аракеттин <xliff:g id="hits">%1$d</xliff:g> таанылды</string>
+    <string name="gesture_trainer_group_tap_swipe">Таптоо жана сүрүү</string>
+    <string name="gesture_trainer_group_edge_swipes">Четтерден сүрүүлөр</string>
+    <string name="gesture_trainer_group_along_edges">Четтер боюнча сүрүүлөр</string>
+    <string name="gesture_trainer_group_edge_menus">Чет менюлары</string>
+    <string name="gesture_trainer_group_corners">Бурчтар</string>
+    <string name="gesture_trainer_group_back_tap">Аркасын таптоо</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">2 манжа менен таптоодон кийинки 2 манжа менен сүрүүлөр калтырылды: <xliff:g id="setting">%1$s</xliff:g> өчүк.</string>
+    <string name="gesture_trainer_how_swipe_hold">Анан көтөрбөстөн манжаны кеминде <xliff:g id="hold">%1$d</xliff:g> мс кыймылсыз кармап, көтөрүңүз.</string>
+    <string name="gesture_trainer_half_top">үстүнкү</string>
+    <string name="gesture_trainer_half_bottom">төмөнкү</string>
+    <string name="gesture_trainer_how_taps_half">Экрандын <xliff:g id="half">%1$s</xliff:g> жарымында таптаңыз. Манжалардын ортосундагы чекит жарымды аныктайт.</string>
+    <string name="gesture_trainer_same_fingers">ошол эле манжалар</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> менен <xliff:g id="taps">%1$s</xliff:g> таптаңыз. Акыркы таптоодон кийин дароо, <xliff:g id="gap">%3$d</xliff:g> мс ичинде, экранга кайра <xliff:g id="swipe_fingers">%4$s</xliff:g> менен тийип, түз сызык боюнча <xliff:g id="direction">%5$s</xliff:g> 2–3 смдей сүрүп, көтөрүңүз.</string>
+    <string name="gesture_trainer_how_corner_hold">Акыркы таптоодо манжаны бурчта кеминде <xliff:g id="hold">%1$d</xliff:g> мс кыймылсыз калтырыңыз.</string>
+    <string name="gesture_trainer_how_back_tap">Телефонду капталдарынан колуңузга кармап, анын аркасынын ортосун манжанын учу менен эшик тыкылдаткандай катуу жана тез <xliff:g id="taps">%1$s</xliff:g> таптаңыз. Таптоолорду жакын кармаңыз: алардын ортосунда эң көп <xliff:g id="gap">%2$d</xliff:g> мс. Таптап жатканда экранга тийбеңиз.</string>
+    <string name="gesture_trainer_back_tap_info">Көнүгүү учурунда аркасын таптоо буйруктарды аткарбайт. Таптоо канчалык катуу болушу керектигин <xliff:g id="setting">%1$s</xliff:g> аныктайт.</string>
+    <string name="gesture_trainer_go_placed">Жаңсоону <xliff:g id="tries">%1$d</xliff:g> жолу жасаңыз.</string>
+    <string name="gesture_trainer_along_left">сол чет</string>
+    <string name="gesture_trainer_along_right">оң чет</string>
+    <string name="gesture_trainer_along_top">үстүнкү чет</string>
+    <string name="gesture_trainer_along_bottom">төмөнкү чет</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> боюнча сүрүүлөр калтырылды: анда чет менюсу бар, ошондуктан аны бойлото сүрүү жаңсоону аткаруунун ордуна менюну ачат.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> боюнча сүрүүлөр калтырылды: ал сыдырат, ошондуктан аны бойлото сүрүү жаңсоону аткаруунун ордуна колдонмону сыдырат.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Манжа четтен өтө алыстап кетти.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Манжаны айнектин эң кырында, чет боюнча түз кармаңыз.</string>
+    <string name="gesture_trainer_go_back_tap">Аркасын таптоо жаңсоосун <xliff:g id="tries">%1$d</xliff:g> жолу жасаңыз. Экранга тийүү аракетти жокко чыгарат.</string>
+    <string name="gesture_trainer_no_accelerometer">Бул көнүгүү үчүн акселерометр керек. Эч бири жеткиликтүү эмес.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> мс кыймылсыз кармалды</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> күчтөгү таптоо</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Аягында манжа <xliff:g id="ms">%1$d</xliff:g> мс кыймылсыз турду, ал эми кеминде <xliff:g id="limit">%2$d</xliff:g> мс кыймылсыз турушу керек.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Манжалар экрандын башка жарымында таптады.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Таптоолордон кийин сүрүү болгон жок.</string>
+    <string name="gesture_trainer_finding_swipe_late">Сүрүү акыркы таптоодон <xliff:g id="ms">%1$d</xliff:g> мс кийин башталды, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Аркасын таптоо өтө жеңил: керектүү күчтүн <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Таптоо телефонду аркасы аркылуу эмес, капталга көбүрөөк силкти.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Таптоонун алдында телефон кыймылдап жаткан.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Экранга тийилди, ал эми экранга тийип турганда таптоолор эсептелбейт.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Аркасындагы таптоолордун ортосунда <xliff:g id="ms">%1$d</xliff:g> мс өттү, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Сүрүүдөн кийин манжаны кармоонун бүт убактысында экранда кыймылсыз кармаңыз. Анан көтөрүңүз.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Кайсы жарымда таптап жатканыңызды текшериңиз: экрандын ортосу үстүнкү жарымды төмөнкүдөн бөлөт.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Акыркы таптоодон кийин экранга дароо кайра тийип, сүрүңүз.</string>
+    <string name="gesture_trainer_tip_swipe_late">Сүрүүнү акыркы таптоодон кийин дароо, тыныгуусуз баштаңыз.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Аркасынын ортосуна жакын жерди манжанын учу же тырмак менен катуураак таптаңыз.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Телефондун аркасын түз таптаңыз, четин же кыйгач эмес.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Таптоодон мурун телефонду бир азга кыймылсыз кармаңыз жана колуңуз аны жылдырбашы үчүн бош кармаңыз.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Аркасын таптап жатканда манжаларыңызды экрандан алыс кармаңыз: телефонду капталдарынан кармаңыз.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Тезирээк, бир таптоодон кийин дароо экинчисин таптаңыз.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Сүрүүдөн кийин манжа өтө эрте көтөрүлөт. <xliff:g id="setting">%1$s</xliff:g> кыскараак болсо, кыскараак кармоого уруксат берет.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Аркасын таптоолор жеңил. <xliff:g id="setting">%1$s</xliff:g> жогорураак болсо, жеңилирээк таптоолорду аныктайт жана урунууларды таптоо катары аныкташы мүмкүн.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Манжалар <xliff:g id="degrees">%1$.0f</xliff:g> градус бурулду, ал эми <xliff:g id="limit">%2$.0f</xliff:g> градустан баштап кыймыл айлантуу болуп саналат.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Манжаларды бири-бирине же бири-биринен түз сызык боюнча жылдырыңыз, бири-биринин айланасында жаа сыяктуу эмес.</string>
+    <string name="gesture_trainer_finding_other_gesture">Кыймыл анын ордуна ошол жаңсоого дал келди.</string>
+    <string name="gesture_trainer_side_left">сол</string>
+    <string name="gesture_trainer_side_right">оң</string>
+    <string name="gesture_trainer_side_top">үстүнкү</string>
+    <string name="gesture_trainer_side_bottom">төмөнкү</string>
+    <string name="gesture_trainer_finding_wrong_edge">Манжа <xliff:g id="side">%1$s</xliff:g> четте башталды, ал эми бул көнүгүү <xliff:g id="expected">%2$s</xliff:g> четте.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Көнүгүүдө аталган четтен так баштаңыз.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Бул жаңсоонун ордуна чет менюсу ачылды.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Менюсу бар чет боюнча сүрүү менюну ачат. Көнүгүүдө аталган четтен баштаңыз.</string>
+    <string name="gesture_trainer_group_three_part">Үч бөлүктүү сүрүүлөр</string>
+    <string name="gesture_trainer_group_two_stroke">Эки соккулуу сүрүүлөр</string>
+    <string name="gesture_trainer_group_shake">Силкилдетүү</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Үч бөлүктүү сүрүүлөр калтырылды: <xliff:g id="setting">%1$s</xliff:g> күйүк.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Эки соккулуу сүрүүлөр калтырылды: <xliff:g id="setting">%1$s</xliff:g> – <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Көнүгүү учурунда силкилдетүү эч кандай буйрук аткарбайт. Силкилдетүү канчалык катуу болушу керектигин <xliff:g id="setting">%1$s</xliff:g> аныктайт.</string>
+    <string name="gesture_trainer_go_shake">Телефонду <xliff:g id="tries">%1$d</xliff:g> жолу силкилдетиңиз, ар бир силкилдетүүдөн кийин кыска тыныгуу менен.</string>
+    <string name="gesture_trainer_how_shake">Телефонду бекем кармап, суунун тамчысын силкип түшүргөндөй тез ары-бери силкилдетиңиз: ар бир тарапка кеминде эки жолу, баары секунддун үчтөн экисиндей ичинде. Анан аны кыймылсыз кармаңыз.</string>
+    <string name="gesture_trainer_how_two_stroke">Бир манжа менен <xliff:g id="first">%1$s</xliff:g> 2 смдей сүрүп, көтөрүңүз. Анан дароо, <xliff:g id="time">%3$d</xliff:g> мс ичинде, бир манжа менен <xliff:g id="second">%2$s</xliff:g> 2 смдей сүрүп, көтөрүңүз.</string>
+    <string name="gesture_trainer_how_three_part">Экранга бир манжа менен тийип, көтөрбөстөн <xliff:g id="first">%1$s</xliff:g> сүрүңүз, анан кескин бурулуп <xliff:g id="second">%2$s</xliff:g> сүрүңүз, анан кайра кескин бурулуп <xliff:g id="third">%3$s</xliff:g> сүрүңүз, ар бир бөлүк 2 смдей, анан көтөрүңүз. Аны ийри эмес, кескин бурчтары бар бир тез, жылмакай кыймыл менен жасаңыз.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Бир манжаны экрандын үстүнкү үчтөн бирине, экинчисин төмөнкү үчтөн бирине коюңуз, мисалы, бармакты ылдыйга, сөөмөйдү өйдөгө.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Манжалардын бири экрандын үстүнкү үчтөн биринде, экинчиси төмөнкү үчтөн биринде болгон жок.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Экинчи сүрүү болгон жок.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Экинчи сүрүү биринчисинен <xliff:g id="ms">%1$d</xliff:g> мс кийин башталды, ал эми эң көп <xliff:g id="limit">%2$d</xliff:g> мс уруксат.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Биринчи сүрүү <xliff:g id="direction">%1$s</xliff:g> кетти.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Экинчи сүрүү <xliff:g id="direction">%1$s</xliff:g> кетти.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Силкилдетүү өтө жеңил болду: керектүү күчтүн <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Ары-бери силкинүүлөр: керектүү <xliff:g id="wanted">%2$d</xliff:g> ичинен <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Манжаларды кенен ажыратыңыз, бирин үстүнкү четке жакын, экинчисин төмөнкү четке жакын.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Биринчи сүрүүдөн кийин манжаны көтөрүп, дароо кайра сүрүңүз.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Экинчи сүрүүнү манжаны көтөргөндөн кийин дароо баштаңыз.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Катуураак жана тезирээк силкилдетиңиз.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Тезирээк, ар бир тарапка кеминде эки жолу ары-бери, ортосунда токтобостон силкилдетиңиз.</string>
+    <string name="gesture_trainer_measure_shake_strength">эң күчтүү кыймыл <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Силкилдетүүлөр жеңил. <xliff:g id="setting">%1$s</xliff:g> жогорураак болсо, жеңилирээк силкилдетүүлөрдү аныктайт жана телефонду көтөрүп жүрүүнү силкилдетүү катары аныкташы мүмкүн.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Экинчи сүрүү кеч башталат. <xliff:g id="setting">%1$s</xliff:g> узунураак болсо, экинчи сүрүүнү кечирээк баштоого уруксат берет, ал эми жалгыз сүрүү аткарылганга чейин узагыраак күтөт.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> күйүк.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> өчүк: 2 манжа менен сүрүүлөр колдонмону сыдырат, сүртүү да көбүнчө сыдырат. Жөндөө күйүк болсо, 2 манжа менен сүрүүлөр сыдыруунун ордуна SandFly буйруктарын аткарат.</string>
+    <string name="gesture_trainer_measure_first_stroke">биринчи сүрүү <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_second_stroke">экинчи сүрүү <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_whole_gesture">бүт жаңсоо <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_stroke_gap">алардын ортосунда <xliff:g id="ms">%1$d</xliff:g> мс көтөрүлүп турду</string>
+</resources>

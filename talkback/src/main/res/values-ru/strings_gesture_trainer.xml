@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Тренажёр жестов</string>
+    <string name="gesture_trainer_intro">Выберите группу жестов. Каждое упражнение описывает один жест. Выполните жест несколько раз (попыток: <xliff:g id="tries">%1$d</xliff:g>); результат каждой попытки озвучивается. После последней попытки на экране показаны измерения каждой попытки, что изменить и связанные настройки.</string>
+    <string name="gesture_trainer_group_one_finger">Один палец</string>
+    <string name="gesture_trainer_group_two_fingers">Два пальца</string>
+    <string name="gesture_trainer_group_three_fingers">Три пальца</string>
+    <string name="gesture_trainer_group_four_fingers">Четыре пальца</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Сведение, вращение и потирание</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, упражнений: <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Закрыть</string>
+    <string name="gesture_trainer_no_detection">Для тренажёра жестов нужен Android 13 или более поздней версии.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Жесты вперёд-назад и угловые жесты пропущены: параметр «<xliff:g id="setting">%1$s</xliff:g>» включён.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Свайпы двумя пальцами пропущены: параметр «<xliff:g id="setting">%1$s</xliff:g>» выключен, поэтому они прокручивают приложения.</string>
+    <string name="gesture_trainer_exercise_heading">Упражнение <xliff:g id="number">%1$d</xliff:g> из <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Начать</string>
+    <string name="gesture_trainer_skip">Пропустить упражнение</string>
+    <string name="gesture_trainer_back_to_groups">К группам</string>
+    <string name="gesture_trainer_go">Выполните жест в любом месте экрана (попыток: <xliff:g id="tries">%1$d</xliff:g>). Каждое касание — одна попытка.</string>
+    <string name="gesture_trainer_fingers_1">одним пальцем</string>
+    <string name="gesture_trainer_fingers_2">двумя пальцами рядом, на расстоянии около 1 см</string>
+    <string name="gesture_trainer_fingers_3">тремя пальцами рядом, слегка расставленными</string>
+    <string name="gesture_trainer_fingers_4">четырьмя пальцами рядом, слегка расставленными</string>
+    <string name="gesture_trainer_direction_up">вверх</string>
+    <string name="gesture_trainer_direction_down">вниз</string>
+    <string name="gesture_trainer_direction_left">влево</string>
+    <string name="gesture_trainer_direction_right">вправо</string>
+    <string name="gesture_trainer_how_swipe">Коснитесь экрана <xliff:g id="fingers">%1$s</xliff:g> и без паузы проведите <xliff:g id="direction">%2$s</xliff:g> по прямой примерно на 2–3 см, затем оторвите. Начинайте движение сразу: если палец сначала остаётся на месте, включается изучение касанием.</string>
+    <string name="gesture_trainer_how_swipe_multi">Поставьте пальцы одновременно, в один момент, и ведите их все в одну сторону. Каждый палец должен всё время двигаться <xliff:g id="direction">%1$s</xliff:g>, поэтому держите линию прямой.</string>
+    <string name="gesture_trainer_how_back_and_forth">Коснитесь экрана одним пальцем и проведите <xliff:g id="first">%1$s</xliff:g> примерно на 2 см, затем, не отрывая, ведите прямо обратно <xliff:g id="second">%2$s</xliff:g> примерно на 2 см и оторвите. Сделайте это одним быстрым плавным движением.</string>
+    <string name="gesture_trainer_how_angle">Коснитесь экрана <xliff:g id="fingers">%1$s</xliff:g> и проведите <xliff:g id="first">%2$s</xliff:g> примерно на 2 см, затем, не отрывая, резко поверните и проведите <xliff:g id="second">%3$s</xliff:g> примерно на 2 см и оторвите. Поворот должен быть острым углом, как буква L, а не дугой.</string>
+    <string name="gesture_trainer_taps_1">один раз</string>
+    <string name="gesture_trainer_taps_2">дважды</string>
+    <string name="gesture_trainer_taps_3">трижды</string>
+    <string name="gesture_trainer_taps_4">четыре раза</string>
+    <string name="gesture_trainer_how_taps">Коснитесь <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Ставьте пальцы одновременно и отрывайте одновременно, быстро, без скольжения.</string>
+    <string name="gesture_trainer_how_taps_quick">Касайтесь быстро и в одном месте: следующее касание должно быть не позже чем через <xliff:g id="gap">%1$d</xliff:g> мс после предыдущего.</string>
+    <string name="gesture_trainer_how_hold">Одновременно коснитесь экрана <xliff:g id="fingers">%1$s</xliff:g> и держите пальцы неподвижно, без скольжения, не менее <xliff:g id="hold">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Если не назначена другая команда, этот жест выключает SandFly. В тренажёре он ничего не выполняет.</string>
+    <string name="gesture_trainer_how_taps_hold">Коснитесь <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, а при последнем касании оставьте пальцы на экране неподвижно не менее <xliff:g id="hold">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Используйте большой, указательный и средний пальцы.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Поставьте указательный и средний пальцы рядом, а большой и безымянный — в нескольких сантиметрах от них с обеих сторон. Затем сведите все четыре кончика пальцев в одну точку.</string>
+    <string name="gesture_trainer_how_pinch">Поставьте на экран пальцы (количество: <xliff:g id="fingers">%1$d</xliff:g>), широко расставив их. Затем сведите их прямо друг к другу не менее чем на 1 см, как будто что-то поднимаете, и оторвите от экрана. Двигайте только пальцами, не всей рукой и не по дуге.</string>
+    <string name="gesture_trainer_how_spread">Поставьте на экран пальцы (количество: <xliff:g id="fingers">%1$d</xliff:g>) близко друг к другу. Затем разведите их прямо в стороны не менее чем на 1 см и оторвите от экрана. Двигайте только пальцами, не всей рукой и не по дуге.</string>
+    <string name="gesture_trainer_clockwise">по часовой стрелке</string>
+    <string name="gesture_trainer_counterclockwise">против часовой стрелки</string>
+    <string name="gesture_trainer_how_rotate">Поставьте на экран два пальца на расстоянии примерно 2–3 см и поверните их <xliff:g id="way">%1$s</xliff:g> вокруг их середины, как поворачивают ручку, примерно на четверть оборота. Затем оторвите.</string>
+    <string name="gesture_trainer_how_scrub">Поставьте на экран два пальца и быстро сдвиньте их в сторону примерно на 2 см и обратно, как будто что-то стираете, всё примерно за секунду. Затем оторвите.</string>
+    <string name="gesture_trainer_edge_bottom">у нижнего края</string>
+    <string name="gesture_trainer_edge_top_left">у верхнего края, в его левой половине</string>
+    <string name="gesture_trainer_edge_top_right">у верхнего края, в его правой половине</string>
+    <string name="gesture_trainer_edge_left_top">у левого края, в его верхней половине</string>
+    <string name="gesture_trainer_edge_left_bottom">у левого края, в его нижней половине</string>
+    <string name="gesture_trainer_edge_right_top">у правого края, в его верхней половине</string>
+    <string name="gesture_trainer_edge_right_bottom">у правого края, в его нижней половине</string>
+    <string name="gesture_trainer_edge_left">у левого края</string>
+    <string name="gesture_trainer_edge_right">у правого края</string>
+    <string name="gesture_trainer_edge_top">у верхнего края</string>
+    <string name="gesture_trainer_how_edge">Поставьте один палец <xliff:g id="edge">%1$s</xliff:g>, не дальше <xliff:g id="edge_width">%2$d</xliff:g> мм от края, и проведите <xliff:g id="direction">%3$s</xliff:g> внутрь экрана до первого щелчка, примерно <xliff:g id="distance">%4$d</xliff:g> мм. Затем сразу оторвите: после второго щелчка свайп становится длинным.</string>
+    <string name="gesture_trainer_how_edge_long">Поставьте один палец <xliff:g id="edge">%1$s</xliff:g>, не дальше <xliff:g id="edge_width">%2$d</xliff:g> мм от края, и проведите <xliff:g id="direction">%3$s</xliff:g> внутрь экрана за первый щелчок до второго, примерно <xliff:g id="distance">%4$d</xliff:g> мм. Затем оторвите.</string>
+    <string name="gesture_trainer_how_along">Проведите одним пальцем <xliff:g id="direction">%2$s</xliff:g> вдоль <xliff:g id="edge">%1$s</xliff:g>, не менее <xliff:g id="distance">%3$d</xliff:g> мм.</string>
+    <string name="gesture_trainer_corner_top_left">левом верхнем</string>
+    <string name="gesture_trainer_corner_top_right">правом верхнем</string>
+    <string name="gesture_trainer_corner_bottom_left">левом нижнем</string>
+    <string name="gesture_trainer_corner_bottom_right">правом нижнем</string>
+    <string name="gesture_trainer_how_corner">Коснитесь <xliff:g id="taps">%1$s</xliff:g> в <xliff:g id="corner">%2$s</xliff:g> углу экрана. Поставьте палец точно в угол, не дальше <xliff:g id="size">%3$d</xliff:g> мм от обоих краёв, и быстро оторвите, в пределах <xliff:g id="time">%4$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> мм. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> мм.</string>
+    <string name="gesture_trainer_corner_warning">С бо́льшими углами касание элемента рядом с углом, например кнопки «Назад» вверху слева, может вместо этого выполнить жест угла.</string>
+    <string name="gesture_trainer_rating_precise">распознано, точно</string>
+    <string name="gesture_trainer_rating_good">распознано, хорошо</string>
+    <string name="gesture_trainer_rating_borderline">распознано, но близко к пределу</string>
+    <string name="gesture_trainer_try_recognized">Попытка <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Попытка <xliff:g id="number">%1$d</xliff:g>: не распознано.</string>
+    <string name="gesture_trainer_try_other">Попытка <xliff:g id="number">%1$d</xliff:g>: распознано как <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: распознано <xliff:g id="recognized">%2$d</xliff:g> из <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Ваши попытки</string>
+    <string name="gesture_trainer_results_change">Что изменить</string>
+    <string name="gesture_trainer_results_close">Близко к пределу</string>
+    <string name="gesture_trainer_results_all_good">Все попытки распознаны в пределах допусков.</string>
+    <string name="gesture_trainer_results_settings">Настройки, которые могут помочь</string>
+    <string name="gesture_trainer_next">Следующее упражнение</string>
+    <string name="gesture_trainer_repeat">Повторить</string>
+    <string name="gesture_trainer_finish">Готово</string>
+    <string name="gesture_trainer_group_done">Вы выполнили все упражнения группы «<xliff:g id="group">%1$s</xliff:g>».</string>
+    <string name="gesture_trainer_open_setting">Изменить «<xliff:g id="setting">%1$s</xliff:g>»</string>
+    <string name="gesture_trainer_measure_duration">длительность <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_length">длина <xliff:g id="cm">%1$.1f</xliff:g> см</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> см/с</string>
+    <string name="gesture_trainer_measure_angle">отклонение от прямой <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_start">первый сантиметр за <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_landing">пальцы коснулись с разницей <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_tap">касание <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> мс между касаниями</string>
+    <string name="gesture_trainer_measure_spread">пальцы сместились на <xliff:g id="mm">%1$.0f</xliff:g> мм</string>
+    <string name="gesture_trainer_measure_rotation">поворот на <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> мм от краёв угла</string>
+    <string name="gesture_trainer_measure_edge">начало в <xliff:g id="mm">%1$.0f</xliff:g> мм от края</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Пальцев на экране: <xliff:g id="fingers">%1$d</xliff:g> вместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Пальцы коснулись экрана с разницей <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Один палец оторвался раньше, чем были поставлены все пальцы.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Пальцы оторвались с разницей <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_became_exploration">Палец слишком долго оставался на месте или сначала двигался слишком медленно, поэтому касание стало изучением касанием.</string>
+    <string name="gesture_trainer_finding_slow_start">Первый сантиметр занял <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_paused">Палец замедлился на <xliff:g id="ms">%1$d</xliff:g> мс, а каждый сантиметр должен занимать не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_too_short">Движение было всего <xliff:g id="mm">%1$.0f</xliff:g> мм, а должно быть не менее <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Палец начал двигаться <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Пальцы начали двигаться <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Траектория отклонилась от прямой на <xliff:g id="degrees">%1$.0f</xliff:g>°, а допускается не более <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_curved">Частей траектории: <xliff:g id="parts">%1$d</xliff:g> вместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Поворот не найден.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">После поворота палец пошёл <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Во время касания палец сместился на <xliff:g id="mm">%1$.1f</xliff:g> мм, а допускается не более <xliff:g id="limit">%2$.1f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Касание длилось <xliff:g id="ms">%1$d</xliff:g> мс, дольше <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Последнее касание удерживалось <xliff:g id="ms">%1$d</xliff:g> мс, а должно не менее <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Касаний: <xliff:g id="taps">%1$d</xliff:g> вместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Касаний: <xliff:g id="taps">%1$d</xliff:g> вместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Между касаниями прошло <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_taps_apart">Касания пришлись на расстоянии <xliff:g id="mm">%1$.0f</xliff:g> мм друг от друга, а допускается не более <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Пальцы сместились всего на <xliff:g id="mm">%1$.0f</xliff:g> мм, а должны сместиться не менее чем на <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Пальцы двигались в обратную сторону.</string>
+    <string name="gesture_trainer_finding_moved_together">Вся рука сдвинулась по экрану на <xliff:g id="mm">%1$.0f</xliff:g> мм, больше, чем пальцы сблизились или разошлись.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Пальцы повернулись всего на <xliff:g id="degrees">%1$.0f</xliff:g>°, а должны повернуться не менее чем на <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Пальцы повернулись в обратную сторону.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Первый штрих был <xliff:g id="mm">%1$.0f</xliff:g> мм, а должен быть не менее <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Обратный штрих был <xliff:g id="mm">%1$.0f</xliff:g> мм, а должен быть не менее <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Потирание заняло <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Палец коснулся экрана в <xliff:g id="mm">%1$.0f</xliff:g> мм от края, а ширина края <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Палец начал в другой половине края.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Палец прошёл <xliff:g id="mm">%1$.0f</xliff:g> мм, а должен пройти не менее <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Слишком длинный свайп: палец прошёл за второй щелчок, <xliff:g id="mm">%1$.0f</xliff:g> мм, а второй щелчок находится на <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Путь до щелчка занял <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Свайп отклонился в сторону на <xliff:g id="degrees">%1$.0f</xliff:g>°, а допускается не более <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_corner_missed">Касание пришлось в <xliff:g id="mm">%1$.0f</xliff:g> мм от краёв угла, а размер угла <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Касание угла длилось <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_none">Движение, соответствующее жесту, не обнаружено.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Проверьте, сколько пальцев касается стекла. Ладонь или другой палец, лежащий на экране, тоже считаются.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Ставьте все пальцы в один момент, как одну руку, а не один за другим.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Сначала поставьте все пальцы, затем двигайте или отрывайте их.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Отрывайте все пальцы в один момент.</string>
+    <string name="gesture_trainer_tip_slow_start">Начинайте движение в момент касания экрана и в начале двигайтесь быстрее.</string>
+    <string name="gesture_trainer_tip_paused">Ведите палец с ровной скоростью до самого отрыва. Не замедляйтесь в конце.</string>
+    <string name="gesture_trainer_tip_too_short">Сделайте движение длиннее, примерно 2–3 см.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Проверьте направление в самом начале движения. Помогает держать телефон прямо перед собой.</string>
+    <string name="gesture_trainer_tip_off_line">Двигайтесь только в заданном направлении, не по диагонали. Указательный палец держит линию ровнее, чем большой.</string>
+    <string name="gesture_trainer_tip_curved">Держите линию прямой и отрывайте палец точно в конце, не уводя его в сторону при отрыве.</string>
+    <string name="gesture_trainer_tip_turn_missing">Меняйте направление резко, под прямым углом или прямо назад, не отрывая палец. Каждая часть — примерно 2 см.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">После поворота проверьте, куда вы ведёте: вторая часть должна идти во втором направлении из названия жеста.</string>
+    <string name="gesture_trainer_tip_tap_moved">Касайтесь прямо вниз и вверх, кончиком пальца, без скольжения.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Делайте каждое касание коротким: коснитесь и сразу оторвите.</string>
+    <string name="gesture_trainer_tip_hold_too_short">При последнем касании держите пальцы на экране неподвижно в течение всего времени удержания.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Считайте касания и делайте их все быстро, подряд.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Считайте касания. Палец, отскочивший от стекла, даёт лишнее касание.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Касайтесь быстрее: начинайте следующее касание сразу после отрыва.</string>
+    <string name="gesture_trainer_tip_taps_apart">Касайтесь каждый раз одного и того же места.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Сдвигайте пальцы дальше, не менее чем на 1 см ближе друг к другу или дальше.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Сведение — пальцы движутся друг к другу, разведение — пальцы расходятся.</string>
+    <string name="gesture_trainer_tip_moved_together">Двигайте только пальцы друг к другу или друг от друга. Не сдвигайте всю руку по экрану.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Поворачивайте сильнее, как ручку на четверть оборота.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">По часовой стрелке — значит в ту сторону, куда идут стрелки часов: верхний палец движется вправо.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Сделайте первый штрих длиной не менее 1 см.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">После первого штриха ведите обратно в другую сторону, прежде чем оторвать палец.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Потирайте быстро, туда и обратно примерно за секунду.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Начинайте точно на краю, чтобы кончик пальца частично выходил за экран.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Проверьте, в какой половине края вы начинаете.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Ведите дальше, пока не услышите щелчок, затем оторвите.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Отрывайте палец сразу после первого щелчка, до второго.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Ведите внутрь быстрее, не останавливаясь перед щелчком.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Ведите прямо внутрь от края или прямо вдоль него, не по диагонали.</string>
+    <string name="gesture_trainer_tip_corner_missed">Ставьте палец точно в угол, касаясь обоих краёв.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Отрывайте палец быстрее после касания угла.</string>
+    <string name="gesture_trainer_close_to_limit">Близко к пределу: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Свайпы начинаются медленно. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» допускает более медленное начало.</string>
+    <string name="gesture_trainer_advice_tap_time">Касания медленные. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» допускает более медленные касания.</string>
+    <string name="gesture_trainer_advice_edge_width">Свайпы начинаются слишком далеко от края. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» также превращает свайпы, начатые рядом с краем, в свайпы от края.</string>
+    <string name="gesture_trainer_advice_corner_size">Касания попадают за пределы угла. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» увеличивает углы.</string>
+    <string name="gesture_trainer_advice_corner_time">Касания углов медленные. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» допускает более медленные касания.</string>
+    <string name="gesture_trainer_menu_option">Вариант <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: выберите пункт <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Проведите одним пальцем вверх или вниз <xliff:g id="edge">%1$s</xliff:g> не менее <xliff:g id="distance">%2$d</xliff:g> мм, чтобы открыть меню. Пунктов: <xliff:g id="count">%3$d</xliff:g>, сверху вниз, высота каждого около <xliff:g id="size">%6$s</xliff:g> см. Пункт <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, находится на <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> см ниже верха экрана. Оторвите палец, когда пункт будет озвучен.</string>
+    <string name="gesture_trainer_menu_sample">У этого края нет меню. В упражнении используются примеры пунктов (количество: <xliff:g id="count">%1$d</xliff:g>).</string>
+    <string name="gesture_trainer_try_menu_cancelled">Попытка <xliff:g id="number">%1$d</xliff:g>: меню закрылось без выбора.</string>
+    <string name="gesture_trainer_try_menu_other">Попытка <xliff:g id="number">%1$d</xliff:g>: выбрано «<xliff:g id="item">%2$s</xliff:g>».</string>
+    <string name="gesture_trainer_measure_menu_item">отрыв на пункте <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Палец начал в самом верху или внизу края, где находятся углы и верхний и нижний края.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Палец оторвался в <xliff:g id="mm">%1$.0f</xliff:g> мм от края, а меню закрывается дальше <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Палец оторвался на пункте <xliff:g id="item">%1$d</xliff:g> вместо пункта <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Начинайте немного дальше от верхнего и нижнего концов края.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Во время движения держите палец рядом с краем и отрывайте его там же.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">У каждого пункта постоянное место вдоль края, и выбирается пункт, на котором палец отрывается. Оторвите палец, когда пункт будет озвучен.</string>
+    <string name="gesture_trainer_contents">Содержание</string>
+    <string name="gesture_trainer_contents_heading">Содержание: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">выполнено, распознано <xliff:g id="hits">%1$d</xliff:g> из <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Нажатие и свайп</string>
+    <string name="gesture_trainer_group_edge_swipes">Свайпы от краёв</string>
+    <string name="gesture_trainer_group_along_edges">Свайпы вдоль краёв</string>
+    <string name="gesture_trainer_group_edge_menus">Меню краёв</string>
+    <string name="gesture_trainer_group_corners">Углы</string>
+    <string name="gesture_trainer_group_back_tap">Касание задней панели</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Нажатия двумя пальцами со свайпом двумя пальцами после них пропущены: параметр «<xliff:g id="setting">%1$s</xliff:g>» выключен.</string>
+    <string name="gesture_trainer_how_swipe_hold">Затем, не отрывая, держите палец неподвижно не менее <xliff:g id="hold">%1$d</xliff:g> мс и оторвите.</string>
+    <string name="gesture_trainer_half_top">верхней</string>
+    <string name="gesture_trainer_half_bottom">нижней</string>
+    <string name="gesture_trainer_how_taps_half">Коснитесь в <xliff:g id="half">%1$s</xliff:g> половине экрана. Половину определяет точка между пальцами.</string>
+    <string name="gesture_trainer_same_fingers">теми же пальцами</string>
+    <string name="gesture_trainer_how_tap_swipe">Коснитесь <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Сразу после последнего касания, в пределах <xliff:g id="gap">%3$d</xliff:g> мс, снова коснитесь экрана <xliff:g id="swipe_fingers">%4$s</xliff:g> и проведите <xliff:g id="direction">%5$s</xliff:g> по прямой примерно на 2–3 см, затем оторвите.</string>
+    <string name="gesture_trainer_how_corner_hold">При последнем касании оставьте палец в углу неподвижно не менее <xliff:g id="hold">%1$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_how_back_tap">Держите телефон в руке за боковые грани и коснитесь середины задней панели <xliff:g id="taps">%1$s</xliff:g> кончиком пальца, твёрдо и быстро, как стучат в дверь. Касайтесь часто: не более <xliff:g id="gap">%2$d</xliff:g> мс между касаниями. Во время касаний не трогайте экран.</string>
+    <string name="gesture_trainer_back_tap_info">Во время упражнения касания задней панели не выполняют команды. Параметр «<xliff:g id="setting">%1$s</xliff:g>» задаёт, насколько сильным должно быть касание.</string>
+    <string name="gesture_trainer_go_placed">Выполните жест (попыток: <xliff:g id="tries">%1$d</xliff:g>).</string>
+    <string name="gesture_trainer_along_left">левого края</string>
+    <string name="gesture_trainer_along_right">правого края</string>
+    <string name="gesture_trainer_along_top">верхнего края</string>
+    <string name="gesture_trainer_along_bottom">нижнего края</string>
+    <string name="gesture_trainer_left_out_along_menu">Свайпы вдоль <xliff:g id="edge">%1$s</xliff:g> пропущены: у этого края есть меню, поэтому свайп вдоль него открывает меню, а не выполняет жест.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Свайпы вдоль <xliff:g id="edge">%1$s</xliff:g> пропущены: этот край прокручивает, поэтому свайп вдоль него прокручивает приложение, а не выполняет жест.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Палец отошёл слишком далеко от края.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Держите палец на самой кромке стекла, прямо вдоль края.</string>
+    <string name="gesture_trainer_go_back_tap">Выполните жест касания задней панели (попыток: <xliff:g id="tries">%1$d</xliff:g>). Касание экрана засчитывает попытку как неудачную.</string>
+    <string name="gesture_trainer_no_accelerometer">Для этого упражнения нужен акселерометр. Он недоступен.</string>
+    <string name="gesture_trainer_measure_hold">неподвижно <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_back_tap_strength">сила касания <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">В конце палец оставался неподвижным <xliff:g id="ms">%1$d</xliff:g> мс, а должен не менее <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Пальцы коснулись другой половины экрана.</string>
+    <string name="gesture_trainer_finding_swipe_missing">После касаний не было свайпа.</string>
+    <string name="gesture_trainer_finding_swipe_late">Свайп начался через <xliff:g id="ms">%1$d</xliff:g> мс после последнего касания, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Касание задней панели слишком слабое: <xliff:g id="percent">%1$d</xliff:g>%% от нужной силы.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Касание качнуло телефон больше в сторону, чем сквозь заднюю панель.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Телефон двигался непосредственно перед касанием.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Было касание экрана, а касания во время касания экрана не засчитываются.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Между касаниями задней панели прошло <xliff:g id="ms">%1$d</xliff:g> мс, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">После свайпа держите палец на экране неподвижно в течение всего времени удержания. Затем оторвите.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Проверьте, в какой половине вы касаетесь: середина экрана отделяет верхнюю половину от нижней.</string>
+    <string name="gesture_trainer_tip_swipe_missing">После последнего касания сразу снова коснитесь экрана и проведите.</string>
+    <string name="gesture_trainer_tip_swipe_late">Начинайте свайп сразу после последнего касания, без паузы.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Касайтесь сильнее, кончиком пальца или ногтем, ближе к середине задней панели.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Касайтесь прямо в заднюю панель телефона, а не в его грань или под углом.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Перед касанием немного подержите телефон неподвижно и держите его свободно, чтобы рука его не двигала.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Касаясь задней панели, не трогайте экран: держите телефон за боковые грани.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Касайтесь быстрее, одно касание сразу за другим.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Палец отрывается слишком рано после свайпа. Меньшее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» допускает более короткое удержание.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Касания задней панели слабые. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» распознаёт более слабые касания, но может принимать толчки за касания.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Пальцы повернулись на <xliff:g id="degrees">%1$.0f</xliff:g>°, а начиная с <xliff:g id="limit">%2$.0f</xliff:g>° движение считается вращением.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Двигайте пальцы по прямой друг к другу или друг от друга, а не по дуге друг вокруг друга.</string>
+    <string name="gesture_trainer_finding_other_gesture">Движение соответствовало другому жесту.</string>
+    <string name="gesture_trainer_side_left">левого</string>
+    <string name="gesture_trainer_side_right">правого</string>
+    <string name="gesture_trainer_side_top">верхнего</string>
+    <string name="gesture_trainer_side_bottom">нижнего</string>
+    <string name="gesture_trainer_finding_wrong_edge">Палец начал у <xliff:g id="side">%1$s</xliff:g> края, а это упражнение — у <xliff:g id="expected">%2$s</xliff:g> края.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Начинайте точно на том краю, который указан в упражнении.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Вместо этого жеста открылось меню края.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Свайп вдоль края с меню открывает меню. Начинайте у края, указанного в упражнении.</string>
+    <string name="gesture_trainer_group_three_part">Свайпы из трёх частей</string>
+    <string name="gesture_trainer_group_two_stroke">Свайпы из двух движений</string>
+    <string name="gesture_trainer_group_shake">Встряхивание</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Свайпы из трёх частей пропущены: параметр «<xliff:g id="setting">%1$s</xliff:g>» включён.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Свайпы из двух движений пропущены: параметр «<xliff:g id="setting">%1$s</xliff:g>» имеет значение «<xliff:g id="value">%2$s</xliff:g>».</string>
+    <string name="gesture_trainer_shake_info">Во время упражнения встряхивание не выполняет команду. Параметр «<xliff:g id="setting">%1$s</xliff:g>» задаёт, насколько сильным должно быть встряхивание.</string>
+    <string name="gesture_trainer_go_shake">Встряхните телефон несколько раз (попыток: <xliff:g id="tries">%1$d</xliff:g>), делая короткую паузу после каждого встряхивания.</string>
+    <string name="gesture_trainer_how_shake">Крепко держите телефон и быстро встряхните его туда и обратно, как будто стряхиваете каплю воды: не менее двух раз в каждую сторону, всё примерно за две трети секунды. Затем держите его неподвижно.</string>
+    <string name="gesture_trainer_how_two_stroke">Проведите одним пальцем <xliff:g id="first">%1$s</xliff:g> примерно на 2 см и оторвите. Затем сразу, в пределах <xliff:g id="time">%3$d</xliff:g> мс, проведите одним пальцем <xliff:g id="second">%2$s</xliff:g> примерно на 2 см и оторвите.</string>
+    <string name="gesture_trainer_how_three_part">Коснитесь экрана одним пальцем и, не отрывая, проведите <xliff:g id="first">%1$s</xliff:g>, затем резко поверните и проведите <xliff:g id="second">%2$s</xliff:g>, затем снова резко поверните и проведите <xliff:g id="third">%3$s</xliff:g>, каждая часть примерно 2 см, и оторвите. Сделайте это одним быстрым плавным движением с острыми углами, а не дугами.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Поставьте один палец в верхнюю треть экрана, а другой — в нижнюю треть, например большой палец внизу, а указательный вверху.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Пальцы не находились один в верхней трети экрана, а другой в нижней.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Второго свайпа не было.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Второй свайп начался через <xliff:g id="ms">%1$d</xliff:g> мс после первого, а допускается не более <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Первый свайп пошёл <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Второй свайп пошёл <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Встряхивание было слишком слабым: <xliff:g id="percent">%1$d</xliff:g>%% от нужной силы.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Взмахов туда и обратно: <xliff:g id="swings">%1$d</xliff:g> из нужных <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Разведите пальцы далеко друг от друга, один у верхнего края, другой у нижнего.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">После первого свайпа оторвите палец и сразу проведите снова.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Начинайте второй свайп сразу после отрыва пальца.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Встряхивайте сильнее и быстрее.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Встряхивайте быстрее, туда и обратно не менее двух раз в каждую сторону, без остановок.</string>
+    <string name="gesture_trainer_measure_shake_strength">самое сильное движение <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Встряхивания слабые. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» распознаёт более слабые встряхивания, но может принимать переноску телефона за встряхивание.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Второй свайп начинается поздно. Большее значение параметра «<xliff:g id="setting">%1$s</xliff:g>» допускает более поздний второй свайп, но одиночный свайп тогда дольше ждёт перед выполнением.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Параметр «<xliff:g id="setting">%1$s</xliff:g>» включён.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Параметр «<xliff:g id="setting">%1$s</xliff:g>» выключен: свайпы двумя пальцами прокручивают приложение, и потирание тоже в основном прокручивает. Когда параметр включён, свайпы двумя пальцами выполняют команды SandFly вместо прокрутки.</string>
+    <string name="gesture_trainer_measure_first_stroke">первый свайп <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_second_stroke">второй свайп <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_whole_gesture">весь жест <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_stroke_gap">палец оторван на <xliff:g id="ms">%1$d</xliff:g> мс между ними</string>
+</resources>

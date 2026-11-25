@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">تمرین‌دهنده اشاره‌ها</string>
+    <string name="gesture_trainer_intro">یک گروه اشاره انتخاب کنید. هر تمرین یک اشاره را توصیف می‌کند. اشاره را <xliff:g id="tries">%1$d</xliff:g> بار انجام دهید؛ نتیجه هر تلاش گفته می‌شود. پس از آخرین تلاش، صفحه اندازه‌گیری‌های هر تلاش، آنچه باید تغییر کند و تنظیمات مرتبط را فهرست می‌کند.</string>
+    <string name="gesture_trainer_group_one_finger">یک انگشت</string>
+    <string name="gesture_trainer_group_two_fingers">دو انگشت</string>
+    <string name="gesture_trainer_group_three_fingers">سه انگشت</string>
+    <string name="gesture_trainer_group_four_fingers">چهار انگشت</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">به‌هم نزدیک کردن، چرخاندن و مالش</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>، <xliff:g id="count">%2$d</xliff:g> تمرین</string>
+    <string name="gesture_trainer_close">بستن</string>
+    <string name="gesture_trainer_no_detection">تمرین‌دهنده اشاره‌ها به Android 13 یا جدیدتر نیاز دارد.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">اشاره‌های رفت‌وبرگشتی و زاویه‌ای حذف شده‌اند: <xliff:g id="setting">%1$s</xliff:g> روشن است.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">تند کشیدن‌های دوانگشتی حذف شده‌اند: <xliff:g id="setting">%1$s</xliff:g> خاموش است، پس برنامه‌ها را پیمایش می‌کنند.</string>
+    <string name="gesture_trainer_exercise_heading">تمرین <xliff:g id="number">%1$d</xliff:g> از <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">شروع</string>
+    <string name="gesture_trainer_skip">رد شدن از این تمرین</string>
+    <string name="gesture_trainer_back_to_groups">بازگشت به گروه‌ها</string>
+    <string name="gesture_trainer_go">اشاره را <xliff:g id="tries">%1$d</xliff:g> بار در هر جای صفحه انجام دهید. هر لمس یک تلاش است.</string>
+    <string name="gesture_trainer_fingers_1">یک انگشت</string>
+    <string name="gesture_trainer_fingers_2">دو انگشت کنار هم، با فاصله حدود ۱ سانتی‌متر</string>
+    <string name="gesture_trainer_fingers_3">سه انگشت کنار هم، با کمی فاصله</string>
+    <string name="gesture_trainer_fingers_4">چهار انگشت کنار هم، با کمی فاصله</string>
+    <string name="gesture_trainer_direction_up">به‌بالا</string>
+    <string name="gesture_trainer_direction_down">به‌پایین</string>
+    <string name="gesture_trainer_direction_left">به‌چپ</string>
+    <string name="gesture_trainer_direction_right">به‌راست</string>
+    <string name="gesture_trainer_how_swipe">صفحه را با <xliff:g id="fingers">%1$s</xliff:g> لمس کنید و بدون مکث، در یک خط مستقیم حدود ۲ تا ۳ سانتی‌متر <xliff:g id="direction">%2$s</xliff:g> بکشید، سپس بلند کنید. فوراً حرکت را شروع کنید: انگشتی که اول ثابت بماند، کاوش با لمس را شروع می‌کند.</string>
+    <string name="gesture_trainer_how_swipe_multi">انگشتان را با هم، در یک لحظه، روی صفحه بگذارید و همه را در یک جهت حرکت دهید. هر انگشت باید در تمام مدت <xliff:g id="direction">%1$s</xliff:g> برود، پس خط را مستقیم نگه دارید.</string>
+    <string name="gesture_trainer_how_back_and_forth">صفحه را با یک انگشت لمس کنید و حدود ۲ سانتی‌متر <xliff:g id="first">%1$s</xliff:g> بکشید، سپس بدون بلند کردن، حدود ۲ سانتی‌متر مستقیم <xliff:g id="second">%2$s</xliff:g> برگردید و بلند کنید. آن را یک حرکت سریع و نرم انجام دهید.</string>
+    <string name="gesture_trainer_how_angle">صفحه را با <xliff:g id="fingers">%1$s</xliff:g> لمس کنید و حدود ۲ سانتی‌متر <xliff:g id="first">%2$s</xliff:g> بکشید، سپس بدون بلند کردن، تند بچرخید و حدود ۲ سانتی‌متر <xliff:g id="second">%3$s</xliff:g> بکشید و بلند کنید. چرخش را یک گوشه تیز مانند حرف L انجام دهید، نه یک منحنی.</string>
+    <string name="gesture_trainer_taps_1">یک بار</string>
+    <string name="gesture_trainer_taps_2">دو بار</string>
+    <string name="gesture_trainer_taps_3">سه بار</string>
+    <string name="gesture_trainer_taps_4">چهار بار</string>
+    <string name="gesture_trainer_how_taps">با <xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> تک‌ضرب بزنید. انگشتان را با هم بگذارید و با هم، سریع و بدون لغزیدن، بلند کنید.</string>
+    <string name="gesture_trainer_how_taps_quick">تک‌ضرب‌ها را سریع و در یک نقطه بزنید: تک‌ضرب بعدی باید در <xliff:g id="gap">%1$d</xliff:g> میلی‌ثانیه پس از قبلی بیاید.</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> را با هم روی صفحه بگذارید و دست‌کم <xliff:g id="hold">%2$d</xliff:g> میلی‌ثانیه بدون لغزیدن ثابت نگه دارید.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">اگر فرمان دیگری اختصاص داده نشده باشد، این اشاره SandFly را خاموش می‌کند. در تمرین‌دهنده، هیچ کاری اجرا نمی‌کند.</string>
+    <string name="gesture_trainer_how_taps_hold">با <xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> تک‌ضرب بزنید و در آخرین تک‌ضرب، انگشتان را دست‌کم <xliff:g id="hold">%3$d</xliff:g> میلی‌ثانیه ثابت روی صفحه نگه دارید.</string>
+    <string name="gesture_trainer_how_three_finger_hand">از شست، انگشت اشاره و انگشت میانی استفاده کنید.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">انگشت اشاره و میانی را کنار هم بگذارید و شست و انگشت حلقه را چند سانتی‌متر دورتر در دو طرف. سپس هر چهار سر انگشت را در یک نقطه به هم برسانید.</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g> انگشت را با فاصله زیاد از هم روی صفحه بگذارید. سپس آن‌ها را دست‌کم ۱ سانتی‌متر مستقیم به هم نزدیک کنید، مانند برداشتن چیزی، و از صفحه بلند کنید. فقط انگشتان را حرکت دهید، نه کل دست را، و نه در یک کمان.</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g> انگشت را نزدیک هم روی صفحه بگذارید. سپس آن‌ها را دست‌کم ۱ سانتی‌متر مستقیم از هم دور کنید و از صفحه بلند کنید. فقط انگشتان را حرکت دهید، نه کل دست را، و نه در یک کمان.</string>
+    <string name="gesture_trainer_clockwise">در جهت عقربه‌های ساعت</string>
+    <string name="gesture_trainer_counterclockwise">در خلاف جهت عقربه‌های ساعت</string>
+    <string name="gesture_trainer_how_rotate">دو انگشت را با فاصله حدود ۲ تا ۳ سانتی‌متر روی صفحه بگذارید و آن‌ها را حدود یک‌چهارم دور <xliff:g id="way">%1$s</xliff:g> حول مرکزشان بچرخانید، مانند چرخاندن یک پیچ تنظیم. سپس بلند کنید.</string>
+    <string name="gesture_trainer_how_scrub">دو انگشت را روی صفحه بگذارید و سریع حدود ۲ سانتی‌متر به یک طرف ببرید و برگردانید، مانند پاک کردن چیزی، همه در حدود یک ثانیه. سپس بلند کنید.</string>
+    <string name="gesture_trainer_edge_bottom">در لبه پایین</string>
+    <string name="gesture_trainer_edge_top_left">در لبه بالا، در نیمه چپ آن</string>
+    <string name="gesture_trainer_edge_top_right">در لبه بالا، در نیمه راست آن</string>
+    <string name="gesture_trainer_edge_left_top">در لبه چپ، در نیمه بالای آن</string>
+    <string name="gesture_trainer_edge_left_bottom">در لبه چپ، در نیمه پایین آن</string>
+    <string name="gesture_trainer_edge_right_top">در لبه راست، در نیمه بالای آن</string>
+    <string name="gesture_trainer_edge_right_bottom">در لبه راست، در نیمه پایین آن</string>
+    <string name="gesture_trainer_edge_left">در لبه چپ</string>
+    <string name="gesture_trainer_edge_right">در لبه راست</string>
+    <string name="gesture_trainer_edge_top">در لبه بالا</string>
+    <string name="gesture_trainer_how_edge">یک انگشت را <xliff:g id="edge">%1$s</xliff:g>، حداکثر <xliff:g id="edge_width">%2$d</xliff:g> میلی‌متر از لبه، بگذارید و <xliff:g id="direction">%3$s</xliff:g> به داخل صفحه تا اولین کلیک، حدود <xliff:g id="distance">%4$d</xliff:g> میلی‌متر، بکشید. سپس فوراً بلند کنید: پس از کلیک دوم، کشیدن یک کشیدن طولانی است.</string>
+    <string name="gesture_trainer_how_edge_long">یک انگشت را <xliff:g id="edge">%1$s</xliff:g>، حداکثر <xliff:g id="edge_width">%2$d</xliff:g> میلی‌متر از لبه، بگذارید و <xliff:g id="direction">%3$s</xliff:g> به داخل صفحه، از اولین کلیک تا کلیک دوم، حدود <xliff:g id="distance">%4$d</xliff:g> میلی‌متر، بکشید. سپس بلند کنید.</string>
+    <string name="gesture_trainer_how_along">یک انگشت را دست‌کم <xliff:g id="distance">%3$d</xliff:g> میلی‌متر در امتداد <xliff:g id="edge">%1$s</xliff:g> <xliff:g id="direction">%2$s</xliff:g> بکشید.</string>
+    <string name="gesture_trainer_corner_top_left">بالا سمت چپ</string>
+    <string name="gesture_trainer_corner_top_right">بالا سمت راست</string>
+    <string name="gesture_trainer_corner_bottom_left">پایین سمت چپ</string>
+    <string name="gesture_trainer_corner_bottom_right">پایین سمت راست</string>
+    <string name="gesture_trainer_how_corner">در گوشه <xliff:g id="corner">%2$s</xliff:g> صفحه <xliff:g id="taps">%1$s</xliff:g> تک‌ضرب بزنید. انگشت را دقیقاً در گوشه، حداکثر <xliff:g id="size">%3$d</xliff:g> میلی‌متر از هر دو لبه، بگذارید و سریع، در <xliff:g id="time">%4$d</xliff:g> میلی‌ثانیه، بلند کنید.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> میلی‌متر. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> میلی‌متر.</string>
+    <string name="gesture_trainer_corner_warning">با گوشه‌های بزرگ‌تر، تک‌ضرب روی کنترلی نزدیک گوشه، مانند «برگشتن» در بالا سمت چپ، ممکن است به‌جای آن اشاره گوشه را اجرا کند.</string>
+    <string name="gesture_trainer_rating_precise">تشخیص داده شد، دقیق</string>
+    <string name="gesture_trainer_rating_good">تشخیص داده شد، خوب</string>
+    <string name="gesture_trainer_rating_borderline">تشخیص داده شد، اما نزدیک به یک حد</string>
+    <string name="gesture_trainer_try_recognized">تلاش <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">تلاش <xliff:g id="number">%1$d</xliff:g>: تشخیص داده نشد.</string>
+    <string name="gesture_trainer_try_other">تلاش <xliff:g id="number">%1$d</xliff:g>: به‌عنوان <xliff:g id="gesture">%2$s</xliff:g> تشخیص داده شد.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> از <xliff:g id="tries">%3$d</xliff:g> تشخیص داده شد</string>
+    <string name="gesture_trainer_results_tries">تلاش‌های شما</string>
+    <string name="gesture_trainer_results_change">آنچه باید تغییر کند</string>
+    <string name="gesture_trainer_results_close">نزدیک به یک حد</string>
+    <string name="gesture_trainer_results_all_good">همه تلاش‌ها در محدوده حدها تشخیص داده شدند.</string>
+    <string name="gesture_trainer_results_settings">تنظیماتی که می‌توانند کمک کنند</string>
+    <string name="gesture_trainer_next">تمرین بعدی</string>
+    <string name="gesture_trainer_repeat">تکرار</string>
+    <string name="gesture_trainer_finish">پایان</string>
+    <string name="gesture_trainer_group_done">همه تمرین‌های <xliff:g id="group">%1$s</xliff:g> را تمام کردید.</string>
+    <string name="gesture_trainer_open_setting">تغییر <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه طول کشید</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> سانتی‌متر طول</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> سانتی‌متر در ثانیه</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> درجه انحراف از خط مستقیم</string>
+    <string name="gesture_trainer_measure_start">اولین سانتی‌متر در <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه</string>
+    <string name="gesture_trainer_measure_landing">انگشتان با فاصله <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه فرود آمدند</string>
+    <string name="gesture_trainer_measure_tap">تک‌ضرب <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه‌ای</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه بین تک‌ضرب‌ها</string>
+    <string name="gesture_trainer_measure_spread">انگشتان <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر حرکت کردند</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> درجه چرخید</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر از لبه‌های گوشه</string>
+    <string name="gesture_trainer_measure_edge">در <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متری لبه شروع شد</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">انگشتان روی صفحه: <xliff:g id="fingers">%1$d</xliff:g> به‌جای <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">انگشتان با فاصله <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه فرود آمدند و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">یک انگشت پیش از قرار گرفتن همه انگشتان بلند شد.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">انگشتان با فاصله <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه بلند شدند و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_became_exploration">انگشت بیش از حد ثابت ماند یا در ابتدا بیش از حد آهسته حرکت کرد، پس لمس به کاوش با لمس تبدیل شد.</string>
+    <string name="gesture_trainer_finding_slow_start">اولین سانتی‌متر <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه طول کشید و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_paused">انگشت به مدت <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه کند شد و هر سانتی‌متر حداکثر می‌تواند <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه طول بکشد.</string>
+    <string name="gesture_trainer_finding_too_short">حرکت فقط <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر بود و باید دست‌کم <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر باشد.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">انگشت در ابتدا <xliff:g id="direction">%1$s</xliff:g> رفت.</string>
+    <string name="gesture_trainer_finding_wrong_direction">انگشتان در ابتدا <xliff:g id="direction">%1$s</xliff:g> رفتند.</string>
+    <string name="gesture_trainer_finding_off_line">مسیر <xliff:g id="degrees">%1$.0f</xliff:g> درجه از خط مستقیم منحرف شد و حداکثر <xliff:g id="limit">%2$.0f</xliff:g> مجاز است.</string>
+    <string name="gesture_trainer_finding_curved">مسیر به‌جای <xliff:g id="wanted">%2$d</xliff:g> بخش، به <xliff:g id="parts">%1$d</xliff:g> بخش خم شد.</string>
+    <string name="gesture_trainer_finding_turn_missing">چرخش پیدا نشد.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">پس از چرخش، انگشت <xliff:g id="direction">%1$s</xliff:g> رفت.</string>
+    <string name="gesture_trainer_finding_tap_moved">انگشت در هنگام تک‌ضرب <xliff:g id="mm">%1$.1f</xliff:g> میلی‌متر لغزید و حداکثر <xliff:g id="limit">%2$.1f</xliff:g> میلی‌متر مجاز است.</string>
+    <string name="gesture_trainer_finding_tap_held_long">یک تک‌ضرب <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه طول کشید، بیشتر از <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه.</string>
+    <string name="gesture_trainer_finding_hold_too_short">آخرین تک‌ضرب <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه نگه داشته شد و باید دست‌کم <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه باشد.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> تک‌ضرب به‌جای <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> تک‌ضرب به‌جای <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">بین تک‌ضرب‌ها <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه گذشت و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_taps_apart">تک‌ضرب‌ها با فاصله <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر از هم فرود آمدند و حداکثر <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر مجاز است.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">انگشتان فقط <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر حرکت کردند و باید دست‌کم <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر حرکت کنند.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">انگشتان در جهت مخالف حرکت کردند.</string>
+    <string name="gesture_trainer_finding_moved_together">کل دست <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر روی صفحه لغزید، بیشتر از آنچه انگشتان به هم نزدیک یا از هم دور شدند.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">انگشتان فقط <xliff:g id="degrees">%1$.0f</xliff:g> درجه چرخیدند و باید دست‌کم <xliff:g id="limit">%2$.0f</xliff:g> درجه بچرخند.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">انگشتان در جهت مخالف چرخیدند.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">حرکت اول <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر بود و باید دست‌کم <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر باشد.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">حرکت برگشت <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر بود و باید دست‌کم <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر باشد.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">مالش <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه طول کشید و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">انگشت در <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متری لبه فرود آمد و پهنای لبه <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر است.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">انگشت در نیمه دیگر لبه شروع کرد.</string>
+    <string name="gesture_trainer_finding_edge_too_short">انگشت <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر لغزید و باید دست‌کم <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر بلغزد.</string>
+    <string name="gesture_trainer_finding_edge_too_long">کشیدن بیش از حد طولانی: انگشت از کلیک دوم گذشت، <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متر، و کلیک دوم در <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر است.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">رسیدن به کلیک <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه طول کشید و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_edge_sideways">کشیدن <xliff:g id="degrees">%1$.0f</xliff:g> درجه به پهلو رفت و حداکثر <xliff:g id="limit">%2$.0f</xliff:g> مجاز است.</string>
+    <string name="gesture_trainer_finding_corner_missed">تک‌ضرب در <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متری لبه‌های گوشه فرود آمد و اندازه گوشه <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر است.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">یک تک‌ضرب گوشه <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه طول کشید و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_none">هیچ حرکتی مطابق با اشاره تشخیص داده نشد.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">بررسی کنید چند انگشت شیشه را لمس می‌کنند. کف دست یا انگشت دیگری که روی صفحه قرار دارد هم شمرده می‌شود.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">همه انگشتان را در یک لحظه، مانند یک دست، بگذارید، نه یکی پس از دیگری.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">ابتدا همه انگشتان را بگذارید، سپس آن‌ها را حرکت دهید یا بلند کنید.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">همه انگشتان را در یک لحظه بلند کنید.</string>
+    <string name="gesture_trainer_tip_slow_start">به محض لمس صفحه حرکت را شروع کنید و در ابتدا سریع‌تر حرکت کنید.</string>
+    <string name="gesture_trainer_tip_paused">انگشت را تا زمان بلند کردن با سرعت یکنواخت حرکت دهید. نزدیک پایان کند نکنید.</string>
+    <string name="gesture_trainer_tip_too_short">حرکت را طولانی‌تر کنید، حدود ۲ تا ۳ سانتی‌متر.</string>
+    <string name="gesture_trainer_tip_wrong_direction">جهت را درست در ابتدای حرکت بررسی کنید. نگه داشتن تلفن مستقیم جلوی خود کمک می‌کند.</string>
+    <string name="gesture_trainer_tip_off_line">فقط در امتداد جهت حرکت کنید، نه مورب. انگشت اشاره خط مستقیم‌تری از شست نگه می‌دارد.</string>
+    <string name="gesture_trainer_tip_curved">خط را مستقیم نگه دارید و درست در پایان بلند کنید، بدون اینکه هنگام بلند کردن انگشت را به پهلو کج کنید.</string>
+    <string name="gesture_trainer_tip_turn_missing">جهت را تند تغییر دهید، با زاویه قائمه یا مستقیم به عقب، بدون بلند کردن. هر بخش باید حدود ۲ سانتی‌متر باشد.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">پس از چرخش، بررسی کنید به کدام سو می‌روید: بخش دوم باید به جهت دیگری برود که نام اشاره می‌گوید.</string>
+    <string name="gesture_trainer_tip_tap_moved">مستقیم به پایین و بالا تک‌ضرب بزنید، با سر انگشت، بدون لغزیدن.</string>
+    <string name="gesture_trainer_tip_tap_held_long">هر تک‌ضرب را کوتاه کنید: لمس کنید و فوراً بلند کنید.</string>
+    <string name="gesture_trainer_tip_hold_too_short">در آخرین تک‌ضرب، انگشتان را در تمام زمان نگه داشتن ثابت روی صفحه نگه دارید.</string>
+    <string name="gesture_trainer_tip_too_few_taps">تک‌ضرب‌ها را بشمارید و همه را سریع و پشت سر هم بزنید.</string>
+    <string name="gesture_trainer_tip_too_many_taps">تک‌ضرب‌ها را بشمارید. انگشتی که از شیشه برمی‌جهد یک تک‌ضرب اضافه ایجاد می‌کند.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">سریع‌تر تک‌ضرب بزنید: تک‌ضرب بعدی را درست پس از بلند کردن شروع کنید.</string>
+    <string name="gesture_trainer_tip_taps_apart">هر بار در همان نقطه تک‌ضرب بزنید.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">انگشتان را بیشتر حرکت دهید، دست‌کم ۱ سانتی‌متر به هم نزدیک‌تر یا از هم دورتر.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">به‌هم نزدیک کردن یعنی حرکت انگشتان به سوی هم، باز کردن یعنی حرکت انگشتان از هم دور.</string>
+    <string name="gesture_trainer_tip_moved_together">فقط انگشتان را به سوی هم یا دور از هم حرکت دهید. کل دست را روی صفحه نلغزانید.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">بیشتر بچرخانید، مانند چرخاندن یک پیچ تنظیم به اندازه یک‌چهارم دور.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">جهت عقربه‌های ساعت یعنی چرخاندن به همان سویی که عقربه‌های ساعت می‌روند: انگشت بالایی به راست حرکت می‌کند.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">حرکت اول را دست‌کم ۱ سانتی‌متر طولانی کنید.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">پس از حرکت اول، پیش از بلند کردن در جهت مخالف برگردید.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">مالش را سریع انجام دهید، رفت و برگشت در حدود یک ثانیه.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">درست از لبه شروع کنید، طوری که سر انگشت تا حدی بیرون از صفحه باشد.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">بررسی کنید از کدام نیمه لبه شروع می‌کنید.</string>
+    <string name="gesture_trainer_tip_edge_too_short">بیشتر بکشید، تا کلیک را بشنوید، سپس بلند کنید.</string>
+    <string name="gesture_trainer_tip_edge_too_long">درست پس از اولین کلیک، پیش از دومی، بلند کنید.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">سریع‌تر به داخل بکشید، بدون توقف پیش از کلیک.</string>
+    <string name="gesture_trainer_tip_edge_sideways">مستقیم از لبه به داخل بکشید، یا مستقیم در امتداد آن، نه مورب.</string>
+    <string name="gesture_trainer_tip_corner_missed">انگشت را درست در گوشه بگذارید، طوری که هر دو لبه را لمس کند.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">پس از لمس گوشه سریع‌تر بلند کنید.</string>
+    <string name="gesture_trainer_close_to_limit">نزدیک به حد: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">تند کشیدن‌ها آهسته شروع می‌شوند. <xliff:g id="setting">%1$s</xliff:g> طولانی‌تر شروع آهسته‌تری را مجاز می‌کند.</string>
+    <string name="gesture_trainer_advice_tap_time">تک‌ضرب‌ها آهسته‌اند. <xliff:g id="setting">%1$s</xliff:g> طولانی‌تر تک‌ضرب‌های آهسته‌تری را مجاز می‌کند.</string>
+    <string name="gesture_trainer_advice_edge_width">تند کشیدن‌ها بیش از حد دور از لبه شروع می‌شوند. <xliff:g id="setting">%1$s</xliff:g> بزرگ‌تر همچنین تند کشیدن‌هایی را که نزدیک لبه شروع می‌شوند به تند کشیدن‌های لبه تبدیل می‌کند.</string>
+    <string name="gesture_trainer_advice_corner_size">تک‌ضرب‌ها بیرون از گوشه فرود می‌آیند. <xliff:g id="setting">%1$s</xliff:g> بزرگ‌تر گوشه‌ها را بزرگ‌تر می‌کند.</string>
+    <string name="gesture_trainer_advice_corner_time">تک‌ضرب‌های گوشه آهسته‌اند. <xliff:g id="setting">%1$s</xliff:g> طولانی‌تر تک‌ضرب‌های آهسته‌تری را مجاز می‌کند.</string>
+    <string name="gesture_trainer_menu_option">گزینه <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: مورد <xliff:g id="number">%3$d</xliff:g>، <xliff:g id="item">%2$s</xliff:g> را انتخاب کنید</string>
+    <string name="gesture_trainer_how_menu">یک انگشت را دست‌کم <xliff:g id="distance">%2$d</xliff:g> میلی‌متر <xliff:g id="edge">%1$s</xliff:g> به‌بالا یا به‌پایین بکشید تا منو باز شود. منو <xliff:g id="count">%3$d</xliff:g> مورد دارد، از بالا به پایین، هر کدام حدود <xliff:g id="size">%6$s</xliff:g> سانتی‌متر ارتفاع. مورد <xliff:g id="number">%4$d</xliff:g>، <xliff:g id="item">%5$s</xliff:g>، از <xliff:g id="from">%7$s</xliff:g> تا <xliff:g id="to">%8$s</xliff:g> سانتی‌متر پایین‌تر از بالای صفحه است. وقتی مورد گفته شد، انگشت را بلند کنید.</string>
+    <string name="gesture_trainer_menu_sample">این لبه منو ندارد. تمرین از <xliff:g id="count">%1$d</xliff:g> مورد نمونه استفاده می‌کند.</string>
+    <string name="gesture_trainer_try_menu_cancelled">تلاش <xliff:g id="number">%1$d</xliff:g>: منو بدون انتخاب بسته شد.</string>
+    <string name="gesture_trainer_try_menu_other">تلاش <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> انتخاب شد.</string>
+    <string name="gesture_trainer_measure_menu_item">در مورد <xliff:g id="number">%1$d</xliff:g> بلند شد</string>
+    <string name="gesture_trainer_finding_menu_in_corner">انگشت در بالاترین یا پایین‌ترین قسمت لبه شروع کرد، جایی که گوشه‌ها و لبه‌های بالا و پایین قرار دارند.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">انگشت در <xliff:g id="mm">%1$.0f</xliff:g> میلی‌متری لبه بلند شد و منو فراتر از <xliff:g id="limit">%2$.0f</xliff:g> میلی‌متر بسته می‌شود.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">انگشت به‌جای مورد <xliff:g id="target">%2$d</xliff:g> در مورد <xliff:g id="item">%1$d</xliff:g> بلند شد.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">کمی دورتر از دو سر بالا و پایین لبه شروع کنید.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">هنگام کشیدن، انگشت را نزدیک لبه نگه دارید و همان‌جا بلند کنید.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">هر مورد جای ثابتی در امتداد لبه دارد و موردی که انگشت در آن بلند می‌شود انتخاب می‌شود. وقتی مورد گفته شد، بلند کنید.</string>
+    <string name="gesture_trainer_contents">فهرست مطالب</string>
+    <string name="gesture_trainer_contents_heading">فهرست مطالب: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">انجام شد، <xliff:g id="hits">%1$d</xliff:g> از <xliff:g id="tries">%2$d</xliff:g> تشخیص داده شد</string>
+    <string name="gesture_trainer_group_tap_swipe">تک‌ضرب و تند کشیدن</string>
+    <string name="gesture_trainer_group_edge_swipes">تند کشیدن از لبه‌ها</string>
+    <string name="gesture_trainer_group_along_edges">کشیدن در امتداد لبه‌ها</string>
+    <string name="gesture_trainer_group_edge_menus">منوهای لبه</string>
+    <string name="gesture_trainer_group_corners">گوشه‌ها</string>
+    <string name="gesture_trainer_group_back_tap">ضربه به پشت دستگاه</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">تک‌ضرب‌های دوانگشتی که پس از آن‌ها تند کشیدن دوانگشتی می‌آید حذف شده‌اند: <xliff:g id="setting">%1$s</xliff:g> خاموش است.</string>
+    <string name="gesture_trainer_how_swipe_hold">سپس، بدون بلند کردن، انگشت را دست‌کم <xliff:g id="hold">%1$d</xliff:g> میلی‌ثانیه ثابت نگه دارید و بلند کنید.</string>
+    <string name="gesture_trainer_half_top">بالایی</string>
+    <string name="gesture_trainer_half_bottom">پایینی</string>
+    <string name="gesture_trainer_how_taps_half">در نیمه <xliff:g id="half">%1$s</xliff:g> صفحه تک‌ضرب بزنید. نقطه میان انگشتان نیمه را تعیین می‌کند.</string>
+    <string name="gesture_trainer_same_fingers">همان انگشتان</string>
+    <string name="gesture_trainer_how_tap_swipe">با <xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> تک‌ضرب بزنید. درست پس از آخرین تک‌ضرب، در <xliff:g id="gap">%3$d</xliff:g> میلی‌ثانیه، دوباره صفحه را با <xliff:g id="swipe_fingers">%4$s</xliff:g> لمس کنید و در یک خط مستقیم حدود ۲ تا ۳ سانتی‌متر <xliff:g id="direction">%5$s</xliff:g> بکشید، سپس بلند کنید.</string>
+    <string name="gesture_trainer_how_corner_hold">در آخرین تک‌ضرب، انگشت را دست‌کم <xliff:g id="hold">%1$d</xliff:g> میلی‌ثانیه ثابت در گوشه نگه دارید.</string>
+    <string name="gesture_trainer_how_back_tap">تلفن را از دو طرف در دست بگیرید و با سر انگشت، محکم و سریع، مانند در زدن، <xliff:g id="taps">%1$s</xliff:g> روی وسط پشت آن ضربه بزنید. ضربه‌ها را نزدیک به هم بزنید: حداکثر <xliff:g id="gap">%2$d</xliff:g> میلی‌ثانیه بین آن‌ها. هنگام ضربه زدن صفحه را لمس نکنید.</string>
+    <string name="gesture_trainer_back_tap_info">ضربه‌های پشت دستگاه در طول تمرین هیچ فرمانی اجرا نمی‌کنند. <xliff:g id="setting">%1$s</xliff:g> تعیین می‌کند ضربه چقدر باید محکم باشد.</string>
+    <string name="gesture_trainer_go_placed">اشاره را <xliff:g id="tries">%1$d</xliff:g> بار انجام دهید.</string>
+    <string name="gesture_trainer_along_left">لبه چپ</string>
+    <string name="gesture_trainer_along_right">لبه راست</string>
+    <string name="gesture_trainer_along_top">لبه بالا</string>
+    <string name="gesture_trainer_along_bottom">لبه پایین</string>
+    <string name="gesture_trainer_left_out_along_menu">کشیدن در امتداد <xliff:g id="edge">%1$s</xliff:g> حذف شده است: این لبه منوی لبه دارد، پس کشیدن در امتداد آن به‌جای اجرای اشاره منو را باز می‌کند.</string>
+    <string name="gesture_trainer_left_out_along_scroll">کشیدن در امتداد <xliff:g id="edge">%1$s</xliff:g> حذف شده است: این لبه پیمایش می‌کند، پس کشیدن در امتداد آن به‌جای اجرای اشاره برنامه را پیمایش می‌کند.</string>
+    <string name="gesture_trainer_finding_along_off_edge">انگشت بیش از حد از لبه دور شد.</string>
+    <string name="gesture_trainer_tip_along_off_edge">انگشت را درست روی کناره شیشه، مستقیم در امتداد لبه نگه دارید.</string>
+    <string name="gesture_trainer_go_back_tap">اشاره ضربه به پشت دستگاه را <xliff:g id="tries">%1$d</xliff:g> بار انجام دهید. لمس صفحه تلاش را ناموفق می‌کند.</string>
+    <string name="gesture_trainer_no_accelerometer">این تمرین به شتاب‌سنج نیاز دارد. هیچ شتاب‌سنجی در دسترس نیست.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه ثابت نگه داشته شد</string>
+    <string name="gesture_trainer_measure_back_tap_strength">ضربه با قدرت <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">انگشت در پایان <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه ثابت ماند و باید دست‌کم <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه ثابت بماند.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">انگشتان در نیمه دیگر صفحه تک‌ضرب زدند.</string>
+    <string name="gesture_trainer_finding_swipe_missing">پس از تک‌ضرب‌ها هیچ تند کشیدنی انجام نشد.</string>
+    <string name="gesture_trainer_finding_swipe_late">تند کشیدن <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه پس از آخرین تک‌ضرب شروع شد و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">ضربه به پشت دستگاه بیش از حد آرام: <xliff:g id="percent">%1$d</xliff:g>%% از قدرت لازم.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">یک ضربه تلفن را بیشتر به پهلو تکان داد تا از پشت آن.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">تلفن درست پیش از یک ضربه در حال حرکت بود.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">صفحه لمس شد و ضربه‌ها در حین لمس صفحه شمرده نمی‌شوند.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">بین ضربه‌ها روی پشت دستگاه <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه گذشت و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">پس از تند کشیدن، انگشت را در تمام زمان نگه داشتن ثابت روی صفحه نگه دارید. سپس بلند کنید.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">بررسی کنید در کدام نیمه تک‌ضرب می‌زنید: وسط صفحه نیمه بالایی را از نیمه پایینی جدا می‌کند.</string>
+    <string name="gesture_trainer_tip_swipe_missing">پس از آخرین تک‌ضرب، فوراً دوباره صفحه را لمس کنید و تند بکشید.</string>
+    <string name="gesture_trainer_tip_swipe_late">تند کشیدن را درست پس از آخرین تک‌ضرب، بدون مکث، شروع کنید.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">محکم‌تر ضربه بزنید، با سر انگشت یا ناخن، نزدیک وسط پشت دستگاه.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">مستقیم به پشت تلفن ضربه بزنید، نه به لبه آن یا با زاویه.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">تلفن را پیش از ضربه زدن لحظه‌ای ثابت نگه دارید و آن را شل نگه دارید تا دستتان آن را حرکت ندهد.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">هنگام ضربه زدن به پشت، انگشتانتان را از صفحه دور نگه دارید: تلفن را از دو طرف بگیرید.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">سریع‌تر ضربه بزنید، یک ضربه درست پس از دیگری.</string>
+    <string name="gesture_trainer_advice_swipe_hold">انگشت پس از تند کشیدن خیلی زود بلند می‌شود. <xliff:g id="setting">%1$s</xliff:g> کوتاه‌تر نگه داشتن کوتاه‌تری را مجاز می‌کند.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">ضربه‌های پشت دستگاه آرام‌اند. <xliff:g id="setting">%1$s</xliff:g> بالاتر ضربه‌های آرام‌تر را تشخیص می‌دهد و ممکن است تکان‌های اتفاقی را ضربه تشخیص دهد.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">انگشتان <xliff:g id="degrees">%1$.0f</xliff:g> درجه چرخیدند و از <xliff:g id="limit">%2$.0f</xliff:g> درجه به بعد، حرکت یک چرخش است.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">انگشتان را در یک خط مستقیم به سوی هم یا دور از هم حرکت دهید، نه در یک کمان به دور یکدیگر.</string>
+    <string name="gesture_trainer_finding_other_gesture">حرکت به‌جای آن با آن اشاره مطابقت داشت.</string>
+    <string name="gesture_trainer_side_left">چپ</string>
+    <string name="gesture_trainer_side_right">راست</string>
+    <string name="gesture_trainer_side_top">بالا</string>
+    <string name="gesture_trainer_side_bottom">پایین</string>
+    <string name="gesture_trainer_finding_wrong_edge">انگشت از لبه <xliff:g id="side">%1$s</xliff:g> شروع کرد و این تمرین در لبه <xliff:g id="expected">%2$s</xliff:g> است.</string>
+    <string name="gesture_trainer_tip_wrong_edge">درست روی لبه‌ای که تمرین نام می‌برد شروع کنید.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">به‌جای این اشاره یک منوی لبه باز شد.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">کشیدن در امتداد لبه‌ای که منو دارد، منو را باز می‌کند. از لبه‌ای که تمرین نام می‌برد شروع کنید.</string>
+    <string name="gesture_trainer_group_three_part">تند کشیدن‌های سه‌بخشی</string>
+    <string name="gesture_trainer_group_two_stroke">تند کشیدن‌های دومرحله‌ای</string>
+    <string name="gesture_trainer_group_shake">تکان دادن</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">تند کشیدن‌های سه‌بخشی حذف شده‌اند: <xliff:g id="setting">%1$s</xliff:g> روشن است.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">تند کشیدن‌های دومرحله‌ای حذف شده‌اند: <xliff:g id="setting">%1$s</xliff:g> <xliff:g id="value">%2$s</xliff:g> است.</string>
+    <string name="gesture_trainer_shake_info">تکان دادن در طول تمرین هیچ فرمانی اجرا نمی‌کند. <xliff:g id="setting">%1$s</xliff:g> تعیین می‌کند تکان چقدر باید شدید باشد.</string>
+    <string name="gesture_trainer_go_shake">تلفن را <xliff:g id="tries">%1$d</xliff:g> بار تکان دهید، با مکثی کوتاه پس از هر تکان.</string>
+    <string name="gesture_trainer_how_shake">تلفن را محکم نگه دارید و سریع به جلو و عقب تکان دهید، مانند تکاندن یک قطره آب: دست‌کم دو بار در هر جهت، همه در حدود دوسوم ثانیه. سپس آن را ثابت نگه دارید.</string>
+    <string name="gesture_trainer_how_two_stroke">با یک انگشت حدود ۲ سانتی‌متر <xliff:g id="first">%1$s</xliff:g> تند بکشید و بلند کنید. سپس فوراً، در <xliff:g id="time">%3$d</xliff:g> میلی‌ثانیه، با یک انگشت حدود ۲ سانتی‌متر <xliff:g id="second">%2$s</xliff:g> تند بکشید و بلند کنید.</string>
+    <string name="gesture_trainer_how_three_part">صفحه را با یک انگشت لمس کنید و بدون بلند کردن <xliff:g id="first">%1$s</xliff:g> تند بکشید، سپس تند بچرخید و <xliff:g id="second">%2$s</xliff:g> تند بکشید، سپس دوباره تند بچرخید و <xliff:g id="third">%3$s</xliff:g> تند بکشید، هر بخش حدود ۲ سانتی‌متر، و بلند کنید. آن را یک حرکت سریع و نرم با گوشه‌های تیز انجام دهید، نه منحنی.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">یک انگشت را در یک‌سوم بالای صفحه و دیگری را در یک‌سوم پایین بگذارید، برای مثال شست پایین و انگشت اشاره بالا.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">انگشتان یکی در یک‌سوم بالای صفحه و یکی در یک‌سوم پایین نبودند.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">تند کشیدن دومی انجام نشد.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">تند کشیدن دوم <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه پس از اولی شروع شد و حداکثر <xliff:g id="limit">%2$d</xliff:g> میلی‌ثانیه مجاز است.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">تند کشیدن اول <xliff:g id="direction">%1$s</xliff:g> رفت.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">تند کشیدن دوم <xliff:g id="direction">%1$s</xliff:g> رفت.</string>
+    <string name="gesture_trainer_finding_shake_too_light">تکان بیش از حد آرام بود: <xliff:g id="percent">%1$d</xliff:g>%% از قدرت لازم.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">نوسان‌های رفت‌وبرگشتی: <xliff:g id="swings">%1$d</xliff:g> از <xliff:g id="wanted">%2$d</xliff:g> لازم.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">انگشتان را از هم دور کنید، یکی نزدیک لبه بالا و یکی نزدیک لبه پایین.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">پس از تند کشیدن اول، انگشت را بلند کنید و فوراً دوباره تند بکشید.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">تند کشیدن دوم را درست پس از بلند کردن انگشت شروع کنید.</string>
+    <string name="gesture_trainer_tip_shake_too_light">محکم‌تر و سریع‌تر تکان دهید.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">سریع‌تر تکان دهید، دست‌کم دو بار در هر جهت به جلو و عقب، بدون توقف در میان.</string>
+    <string name="gesture_trainer_measure_shake_strength">قوی‌ترین حرکت <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">تکان‌ها آرام‌اند. <xliff:g id="setting">%1$s</xliff:g> بالاتر تکان‌های آرام‌تر را تشخیص می‌دهد و ممکن است حمل تلفن را تکان تشخیص دهد.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">تند کشیدن دوم دیر شروع می‌شود. <xliff:g id="setting">%1$s</xliff:g> طولانی‌تر تند کشیدن دوم دیرتری را مجاز می‌کند و در این صورت یک تند کشیدن تکی پیش از اجرا بیشتر منتظر می‌ماند.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> روشن است.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> خاموش است: تند کشیدن‌های دوانگشتی برنامه را پیمایش می‌کنند و مالش هم بیشتر پیمایش می‌کند. با روشن بودن این تنظیم، تند کشیدن‌های دوانگشتی به‌جای پیمایش، فرمان‌های SandFly را اجرا می‌کنند.</string>
+    <string name="gesture_trainer_measure_first_stroke">تند کشیدن اول <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه</string>
+    <string name="gesture_trainer_measure_second_stroke">تند کشیدن دوم <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه</string>
+    <string name="gesture_trainer_measure_whole_gesture">کل اشاره <xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه</string>
+    <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> میلی‌ثانیه بین آن‌ها بلند بود</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">동작 트레이너</string>
+    <string name="gesture_trainer_intro">동작 그룹을 선택하세요. 각 연습에서 동작 하나를 설명합니다. 동작을 <xliff:g id="tries">%1$d</xliff:g>번 하세요. 각 시도의 결과가 음성으로 출력됩니다. 마지막 시도 후 화면에 각 시도의 측정값, 고칠 점, 관련 설정이 표시됩니다.</string>
+    <string name="gesture_trainer_group_one_finger">한 손가락</string>
+    <string name="gesture_trainer_group_two_fingers">두 손가락</string>
+    <string name="gesture_trainer_group_three_fingers">세 손가락</string>
+    <string name="gesture_trainer_group_four_fingers">네 손가락</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">핀치, 회전 및 문지르기</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, 연습 <xliff:g id="count">%2$d</xliff:g>개</string>
+    <string name="gesture_trainer_close">닫기</string>
+    <string name="gesture_trainer_no_detection">동작 트레이너를 사용하려면 Android 13 이상이 필요합니다.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">왕복 및 연속 동작은 제외됩니다: ‘<xliff:g id="setting">%1$s</xliff:g>’ 설정이 켜져 있습니다.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">두 손가락 스와이프는 제외됩니다: ‘<xliff:g id="setting">%1$s</xliff:g>’ 설정이 꺼져 있어 앱이 스크롤됩니다.</string>
+    <string name="gesture_trainer_exercise_heading">연습 <xliff:g id="count">%2$d</xliff:g>개 중 <xliff:g id="number">%1$d</xliff:g>번째: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">시작</string>
+    <string name="gesture_trainer_skip">이 연습 건너뛰기</string>
+    <string name="gesture_trainer_back_to_groups">그룹으로 돌아가기</string>
+    <string name="gesture_trainer_go">화면의 아무 곳에서나 동작을 <xliff:g id="tries">%1$d</xliff:g>번 하세요. 터치할 때마다 한 번의 시도입니다.</string>
+    <string name="gesture_trainer_fingers_1">한 손가락</string>
+    <string name="gesture_trainer_fingers_2">약 1cm 간격으로 나란히 놓은 두 손가락</string>
+    <string name="gesture_trainer_fingers_3">살짝 벌려 나란히 놓은 세 손가락</string>
+    <string name="gesture_trainer_fingers_4">살짝 벌려 나란히 놓은 네 손가락</string>
+    <string name="gesture_trainer_direction_up">위로</string>
+    <string name="gesture_trainer_direction_down">아래로</string>
+    <string name="gesture_trainer_direction_left">왼쪽으로</string>
+    <string name="gesture_trainer_direction_right">오른쪽으로</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g>으로 화면을 터치하고 기다리지 말고 <xliff:g id="direction">%2$s</xliff:g> 직선으로 약 2~3cm 민 다음 손가락을 떼세요. 바로 움직이기 시작하세요. 손가락이 먼저 멈춰 있으면 터치하여 탐색이 시작됩니다.</string>
+    <string name="gesture_trainer_how_swipe_multi">손가락을 동시에 함께 내려놓고 모두 같은 방향으로 움직이세요. 모든 손가락이 처음부터 끝까지 <xliff:g id="direction">%1$s</xliff:g> 가야 하므로 직선을 유지하세요.</string>
+    <string name="gesture_trainer_how_back_and_forth">한 손가락으로 화면을 터치하고 <xliff:g id="first">%1$s</xliff:g> 약 2cm 민 다음, 손가락을 떼지 말고 곧바로 <xliff:g id="second">%2$s</xliff:g> 약 2cm 되돌아온 후 손가락을 떼세요. 빠르고 매끄러운 한 동작으로 하세요.</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g>으로 화면을 터치하고 <xliff:g id="first">%2$s</xliff:g> 약 2cm 민 다음, 손가락을 떼지 말고 방향을 급하게 꺾어 <xliff:g id="second">%3$s</xliff:g> 약 2cm 밀고 손가락을 떼세요. 곡선이 아니라 L자처럼 꺾인 모서리가 되도록 하세요.</string>
+    <string name="gesture_trainer_taps_1">한 번</string>
+    <string name="gesture_trainer_taps_2">두 번</string>
+    <string name="gesture_trainer_taps_3">세 번</string>
+    <string name="gesture_trainer_taps_4">네 번</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g>으로 <xliff:g id="taps">%1$s</xliff:g> 탭하세요. 손가락을 함께 내려놓고 함께 빠르게 떼며, 밀지 마세요.</string>
+    <string name="gesture_trainer_how_taps_quick">탭을 빠르게, 같은 위치에서 하세요. 다음 탭은 이전 탭 후 <xliff:g id="gap">%1$d</xliff:g> ms 이내에 해야 합니다.</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g>을 화면에 함께 올려놓고 밀지 말고 <xliff:g id="hold">%2$d</xliff:g> ms 이상 움직이지 마세요.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">다른 명령이 할당되지 않은 경우 이 동작은 SandFly를 끕니다. 트레이너에서는 아무것도 실행하지 않습니다.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g>으로 <xliff:g id="taps">%1$s</xliff:g> 탭하고, 마지막 탭에서 손가락을 화면에 댄 채 <xliff:g id="hold">%3$d</xliff:g> ms 이상 움직이지 마세요.</string>
+    <string name="gesture_trainer_how_three_finger_hand">엄지, 검지, 중지를 사용하세요.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">검지와 중지를 나란히 놓고, 엄지와 약지를 양쪽으로 몇 센티미터 떨어뜨려 놓으세요. 그런 다음 네 손가락 끝을 한 점으로 모으세요.</string>
+    <string name="gesture_trainer_how_pinch">손가락 <xliff:g id="fingers">%1$d</xliff:g>개를 넓게 벌려 화면에 올려놓으세요. 그런 다음 무언가를 집듯이 손가락을 서로를 향해 곧게 1cm 이상 모으고 화면에서 떼세요. 손 전체가 아니라 손가락만 움직이고, 호를 그리지 마세요.</string>
+    <string name="gesture_trainer_how_spread">손가락 <xliff:g id="fingers">%1$d</xliff:g>개를 서로 가깝게 화면에 올려놓으세요. 그런 다음 손가락을 곧게 1cm 이상 벌리고 화면에서 떼세요. 손 전체가 아니라 손가락만 움직이고, 호를 그리지 마세요.</string>
+    <string name="gesture_trainer_clockwise">시계 방향</string>
+    <string name="gesture_trainer_counterclockwise">시계 반대 방향</string>
+    <string name="gesture_trainer_how_rotate">두 손가락을 약 2~3cm 간격으로 화면에 올려놓고, 다이얼을 돌리듯이 두 손가락의 가운데를 중심으로 <xliff:g id="way">%1$s</xliff:g>으로 약 4분의 1바퀴 돌리세요. 그런 다음 손가락을 떼세요.</string>
+    <string name="gesture_trainer_how_scrub">두 손가락을 화면에 올려놓고, 무언가를 지우듯이 한쪽으로 약 2cm 빠르게 움직였다가 되돌아오세요. 전체를 약 1초 안에 하세요. 그런 다음 손가락을 떼세요.</string>
+    <string name="gesture_trainer_edge_bottom">하단 가장자리에</string>
+    <string name="gesture_trainer_edge_top_left">상단 가장자리의 왼쪽 절반에</string>
+    <string name="gesture_trainer_edge_top_right">상단 가장자리의 오른쪽 절반에</string>
+    <string name="gesture_trainer_edge_left_top">왼쪽 가장자리의 위쪽 절반에</string>
+    <string name="gesture_trainer_edge_left_bottom">왼쪽 가장자리의 아래쪽 절반에</string>
+    <string name="gesture_trainer_edge_right_top">오른쪽 가장자리의 위쪽 절반에</string>
+    <string name="gesture_trainer_edge_right_bottom">오른쪽 가장자리의 아래쪽 절반에</string>
+    <string name="gesture_trainer_edge_left">왼쪽 가장자리에</string>
+    <string name="gesture_trainer_edge_right">오른쪽 가장자리에</string>
+    <string name="gesture_trainer_edge_top">상단 가장자리에</string>
+    <string name="gesture_trainer_how_edge">한 손가락을 <xliff:g id="edge">%1$s</xliff:g>, 가장자리에서 <xliff:g id="edge_width">%2$d</xliff:g>mm 이내에 놓고 <xliff:g id="direction">%3$s</xliff:g> 화면 안쪽으로 첫 번째 클릭까지 약 <xliff:g id="distance">%4$d</xliff:g>mm 미세요. 그런 다음 바로 손가락을 떼세요. 두 번째 클릭을 지나면 길게 스와이프가 됩니다.</string>
+    <string name="gesture_trainer_how_edge_long">한 손가락을 <xliff:g id="edge">%1$s</xliff:g>, 가장자리에서 <xliff:g id="edge_width">%2$d</xliff:g>mm 이내에 놓고 <xliff:g id="direction">%3$s</xliff:g> 화면 안쪽으로 첫 번째 클릭을 지나 두 번째 클릭까지 약 <xliff:g id="distance">%4$d</xliff:g>mm 미세요. 그런 다음 손가락을 떼세요.</string>
+    <string name="gesture_trainer_how_along">한 손가락으로 <xliff:g id="edge">%1$s</xliff:g>를 따라 <xliff:g id="direction">%2$s</xliff:g> <xliff:g id="distance">%3$d</xliff:g>mm 이상 미세요.</string>
+    <string name="gesture_trainer_corner_top_left">왼쪽 위</string>
+    <string name="gesture_trainer_corner_top_right">오른쪽 위</string>
+    <string name="gesture_trainer_corner_bottom_left">왼쪽 아래</string>
+    <string name="gesture_trainer_corner_bottom_right">오른쪽 아래</string>
+    <string name="gesture_trainer_how_corner">화면의 <xliff:g id="corner">%2$s</xliff:g> 모서리를 <xliff:g id="taps">%1$s</xliff:g> 탭하세요. 손가락을 모서리에 정확히 놓아 양쪽 가장자리에서 <xliff:g id="size">%3$d</xliff:g>mm 이내에 두고, <xliff:g id="time">%4$d</xliff:g> ms 이내에 빠르게 떼세요.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g>mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g>mm.</string>
+    <string name="gesture_trainer_corner_warning">모서리가 클수록 왼쪽 위의 뒤로 버튼처럼 모서리 근처의 컨트롤을 탭하면 대신 모서리 동작이 실행될 수 있습니다.</string>
+    <string name="gesture_trainer_rating_precise">인식됨, 정확함</string>
+    <string name="gesture_trainer_rating_good">인식됨, 양호</string>
+    <string name="gesture_trainer_rating_borderline">인식됨, 한도에 가까움</string>
+    <string name="gesture_trainer_try_recognized">시도 <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">시도 <xliff:g id="number">%1$d</xliff:g>: 인식되지 않음.</string>
+    <string name="gesture_trainer_try_other">시도 <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g>(으)로 인식됨.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g>번 중 <xliff:g id="recognized">%2$d</xliff:g>번 인식됨</string>
+    <string name="gesture_trainer_results_tries">내 시도</string>
+    <string name="gesture_trainer_results_change">고칠 점</string>
+    <string name="gesture_trainer_results_close">한도에 가까움</string>
+    <string name="gesture_trainer_results_all_good">모든 시도가 한도 안에서 인식되었습니다.</string>
+    <string name="gesture_trainer_results_settings">도움이 될 수 있는 설정</string>
+    <string name="gesture_trainer_next">다음 연습</string>
+    <string name="gesture_trainer_repeat">반복</string>
+    <string name="gesture_trainer_finish">완료</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g>의 모든 연습을 마쳤습니다.</string>
+    <string name="gesture_trainer_open_setting">‘<xliff:g id="setting">%1$s</xliff:g>’ 변경</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms 걸림</string>
+    <string name="gesture_trainer_measure_length">길이 <xliff:g id="cm">%1$.1f</xliff:g>cm</string>
+    <string name="gesture_trainer_measure_speed">초당 <xliff:g id="speed">%1$.0f</xliff:g>cm</string>
+    <string name="gesture_trainer_measure_angle">직선에서 <xliff:g id="degrees">%1$.0f</xliff:g>도 벗어남</string>
+    <string name="gesture_trainer_measure_start">첫 1cm에 <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">손가락이 <xliff:g id="ms">%1$d</xliff:g> ms 간격으로 닿음</string>
+    <string name="gesture_trainer_measure_tap">탭 <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap">탭 사이 <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">손가락이 <xliff:g id="mm">%1$.0f</xliff:g>mm 움직임</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g>도 회전</string>
+    <string name="gesture_trainer_measure_corner">모서리의 가장자리에서 <xliff:g id="mm">%1$.0f</xliff:g>mm</string>
+    <string name="gesture_trainer_measure_edge">가장자리에서 <xliff:g id="mm">%1$.0f</xliff:g>mm 떨어져 시작</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">화면에 닿은 손가락: <xliff:g id="wanted">%2$d</xliff:g>개가 아니라 <xliff:g id="fingers">%1$d</xliff:g>개.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">손가락이 <xliff:g id="ms">%1$d</xliff:g> ms 간격으로 닿았으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">모든 손가락이 닿기 전에 한 손가락이 떨어졌습니다.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">손가락이 <xliff:g id="ms">%1$d</xliff:g> ms 간격으로 떨어졌으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_became_exploration">손가락이 너무 오래 멈춰 있었거나 처음에 너무 느리게 움직여 터치하여 탐색이 되었습니다.</string>
+    <string name="gesture_trainer_finding_slow_start">첫 1cm에 <xliff:g id="ms">%1$d</xliff:g> ms가 걸렸으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_paused">손가락이 <xliff:g id="ms">%1$d</xliff:g> ms 동안 느려졌으며, 1cm마다 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 걸릴 수 있습니다.</string>
+    <string name="gesture_trainer_finding_too_short">움직임이 <xliff:g id="mm">%1$.0f</xliff:g>mm에 불과했으며, <xliff:g id="limit">%2$.0f</xliff:g>mm 이상이어야 합니다.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">손가락이 <xliff:g id="direction">%1$s</xliff:g> 움직이기 시작했습니다.</string>
+    <string name="gesture_trainer_finding_wrong_direction">손가락들이 <xliff:g id="direction">%1$s</xliff:g> 움직이기 시작했습니다.</string>
+    <string name="gesture_trainer_finding_off_line">경로가 직선에서 <xliff:g id="degrees">%1$.0f</xliff:g>도 벗어났으며, 최대 <xliff:g id="limit">%2$.0f</xliff:g>도까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_curved">경로가 <xliff:g id="wanted">%2$d</xliff:g>개가 아니라 <xliff:g id="parts">%1$d</xliff:g>개 부분으로 꺾였습니다.</string>
+    <string name="gesture_trainer_finding_turn_missing">방향 전환이 감지되지 않았습니다.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">방향을 바꾼 후 손가락이 <xliff:g id="direction">%1$s</xliff:g> 움직였습니다.</string>
+    <string name="gesture_trainer_finding_tap_moved">탭하는 동안 손가락이 <xliff:g id="mm">%1$.1f</xliff:g>mm 밀렸으며, 최대 <xliff:g id="limit">%2$.1f</xliff:g>mm까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_tap_held_long">탭이 <xliff:g id="limit">%2$d</xliff:g> ms보다 긴 <xliff:g id="ms">%1$d</xliff:g> ms 동안 지속되었습니다.</string>
+    <string name="gesture_trainer_finding_hold_too_short">마지막 탭을 <xliff:g id="ms">%1$d</xliff:g> ms 동안 유지했으며, <xliff:g id="limit">%2$d</xliff:g> ms 이상이어야 합니다.</string>
+    <string name="gesture_trainer_finding_too_few_taps">탭 <xliff:g id="wanted">%2$d</xliff:g>번이 아니라 <xliff:g id="taps">%1$d</xliff:g>번.</string>
+    <string name="gesture_trainer_finding_too_many_taps">탭 <xliff:g id="wanted">%2$d</xliff:g>번이 아니라 <xliff:g id="taps">%1$d</xliff:g>번.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">탭 사이에 <xliff:g id="ms">%1$d</xliff:g> ms가 지났으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_taps_apart">탭 위치가 <xliff:g id="mm">%1$.0f</xliff:g>mm 떨어져 있었으며, 최대 <xliff:g id="limit">%2$.0f</xliff:g>mm까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">손가락이 <xliff:g id="mm">%1$.0f</xliff:g>mm만 움직였으며, <xliff:g id="limit">%2$.0f</xliff:g>mm 이상 움직여야 합니다.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">손가락이 반대 방향으로 움직였습니다.</string>
+    <string name="gesture_trainer_finding_moved_together">손 전체가 화면 위에서 <xliff:g id="mm">%1$.0f</xliff:g>mm 밀렸으며, 이는 손가락이 서로 가까워지거나 멀어진 거리보다 큽니다.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">손가락이 <xliff:g id="degrees">%1$.0f</xliff:g>도만 회전했으며, <xliff:g id="limit">%2$.0f</xliff:g>도 이상 회전해야 합니다.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">손가락이 반대 방향으로 회전했습니다.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">첫 번째 획이 <xliff:g id="mm">%1$.0f</xliff:g>mm였으며, <xliff:g id="limit">%2$.0f</xliff:g>mm 이상이어야 합니다.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">되돌아오는 획이 <xliff:g id="mm">%1$.0f</xliff:g>mm였으며, <xliff:g id="limit">%2$.0f</xliff:g>mm 이상이어야 합니다.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">문지르기에 <xliff:g id="ms">%1$d</xliff:g> ms가 걸렸으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">손가락이 가장자리에서 <xliff:g id="mm">%1$.0f</xliff:g>mm 떨어진 곳에 닿았으며, 가장자리 너비는 <xliff:g id="limit">%2$.0f</xliff:g>mm입니다.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">손가락이 가장자리의 다른 쪽 절반에서 시작했습니다.</string>
+    <string name="gesture_trainer_finding_edge_too_short">손가락이 <xliff:g id="mm">%1$.0f</xliff:g>mm 밀렸으며, <xliff:g id="limit">%2$.0f</xliff:g>mm 이상 밀어야 합니다.</string>
+    <string name="gesture_trainer_finding_edge_too_long">너무 길게 밀었습니다: 손가락이 두 번째 클릭을 지나 <xliff:g id="mm">%1$.0f</xliff:g>mm까지 갔으며, 두 번째 클릭은 <xliff:g id="limit">%2$.0f</xliff:g>mm에 있습니다.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">클릭에 도달하는 데 <xliff:g id="ms">%1$d</xliff:g> ms가 걸렸으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_edge_sideways">옆으로 <xliff:g id="degrees">%1$.0f</xliff:g>도 벗어나게 밀었으며, 최대 <xliff:g id="limit">%2$.0f</xliff:g>도까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_corner_missed">탭이 모서리의 가장자리에서 <xliff:g id="mm">%1$.0f</xliff:g>mm 떨어진 곳에 닿았으며, 모서리 크기는 <xliff:g id="limit">%2$.0f</xliff:g>mm입니다.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">모서리 탭이 <xliff:g id="ms">%1$d</xliff:g> ms 동안 지속되었으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_none">동작과 일치하는 움직임이 감지되지 않았습니다.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">화면에 닿는 손가락 수를 확인하세요. 화면에 닿아 있는 손바닥이나 다른 손가락도 포함됩니다.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">손가락을 하나씩이 아니라 한 손처럼 모두 동시에 내려놓으세요.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">먼저 모든 손가락을 내려놓은 다음 움직이거나 떼세요.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">모든 손가락을 동시에 떼세요.</string>
+    <string name="gesture_trainer_tip_slow_start">화면을 터치하는 순간 움직이기 시작하고, 처음에 더 빠르게 움직이세요.</string>
+    <string name="gesture_trainer_tip_paused">손가락을 뗄 때까지 일정한 속도로 계속 움직이세요. 끝부분에서 속도를 늦추지 마세요.</string>
+    <string name="gesture_trainer_tip_too_short">움직임을 약 2~3cm로 더 길게 하세요.</string>
+    <string name="gesture_trainer_tip_wrong_direction">움직임을 시작할 때의 방향을 확인하세요. 휴대전화를 몸 정면에 똑바로 들면 도움이 됩니다.</string>
+    <string name="gesture_trainer_tip_off_line">대각선이 아니라 방향을 따라서만 움직이세요. 검지가 엄지보다 더 곧은 선을 유지합니다.</string>
+    <string name="gesture_trainer_tip_curved">직선을 유지하고 끝에서 바로 손가락을 떼세요. 뗄 때 손가락을 옆으로 휘지 마세요.</string>
+    <string name="gesture_trainer_tip_turn_missing">손가락을 떼지 말고 직각으로 또는 정반대로 방향을 급하게 바꾸세요. 각 부분은 약 2cm여야 합니다.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">방향을 바꾼 후 가는 방향을 확인하세요. 두 번째 부분은 동작 이름에 있는 다른 방향으로 가야 합니다.</string>
+    <string name="gesture_trainer_tip_tap_moved">손가락 끝으로 밀지 말고 곧게 눌렀다 떼세요.</string>
+    <string name="gesture_trainer_tip_tap_held_long">각 탭을 짧게 하세요. 터치하고 바로 떼세요.</string>
+    <string name="gesture_trainer_tip_hold_too_short">마지막 탭에서 유지 시간 동안 손가락을 화면에 댄 채 움직이지 마세요.</string>
+    <string name="gesture_trainer_tip_too_few_taps">탭 수를 세고, 모두 빠르게 한 번에 하세요.</string>
+    <string name="gesture_trainer_tip_too_many_taps">탭 수를 세세요. 손가락이 화면에서 튕기면 탭이 하나 더 추가됩니다.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">더 빠르게 탭하세요. 손가락을 뗀 직후 다음 탭을 시작하세요.</string>
+    <string name="gesture_trainer_tip_taps_apart">매번 같은 위치를 탭하세요.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">손가락을 더 많이, 1cm 이상 더 가깝게 또는 더 멀게 움직이세요.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">핀치는 손가락을 서로 모으는 것이고, 펼치기는 손가락을 서로 벌리는 것입니다.</string>
+    <string name="gesture_trainer_tip_moved_together">손가락만 서로 가까워지거나 멀어지게 움직이세요. 손 전체를 화면 위에서 밀지 마세요.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">다이얼을 4분의 1바퀴 돌리듯이 더 많이 돌리세요.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">시계 방향은 시계 바늘이 도는 방향입니다. 위쪽 손가락이 오른쪽으로 움직입니다.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">첫 번째 획을 1cm 이상으로 하세요.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">첫 번째 획 후 손가락을 떼기 전에 반대 방향으로 되돌아오세요.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">문지르기를 빠르게, 약 1초 안에 갔다가 되돌아오세요.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">손가락 끝이 화면 밖으로 약간 나가도록 가장자리에서 바로 시작하세요.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">가장자리의 어느 쪽 절반에서 시작하는지 확인하세요.</string>
+    <string name="gesture_trainer_tip_edge_too_short">클릭 소리가 들릴 때까지 더 밀고 나서 손가락을 떼세요.</string>
+    <string name="gesture_trainer_tip_edge_too_long">첫 번째 클릭 직후, 두 번째 클릭 전에 손가락을 떼세요.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">클릭 전에 멈추지 말고 더 빠르게 미세요.</string>
+    <string name="gesture_trainer_tip_edge_sideways">대각선이 아니라 가장자리에서 곧게 안쪽으로, 또는 가장자리를 따라 곧게 미세요.</string>
+    <string name="gesture_trainer_tip_corner_missed">손가락을 모서리에 정확히 놓아 양쪽 가장자리에 닿게 하세요.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">모서리를 터치한 후 더 빨리 떼세요.</string>
+    <string name="gesture_trainer_close_to_limit">한도에 가까움: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">스와이프가 느리게 시작됩니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 길게 하면 더 느리게 시작해도 됩니다.</string>
+    <string name="gesture_trainer_advice_tap_time">탭이 느립니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 길게 하면 더 느리게 탭해도 됩니다.</string>
+    <string name="gesture_trainer_advice_edge_width">스와이프가 가장자리에서 너무 멀리 시작됩니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 크게 하면 가장자리 근처에서 시작하는 스와이프도 가장자리 스와이프가 됩니다.</string>
+    <string name="gesture_trainer_advice_corner_size">탭이 모서리 밖에 닿습니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 크게 하면 모서리가 커집니다.</string>
+    <string name="gesture_trainer_advice_corner_time">모서리 탭이 느립니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 길게 하면 더 느리게 탭해도 됩니다.</string>
+    <string name="gesture_trainer_menu_option">옵션 <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: <xliff:g id="number">%3$d</xliff:g>번 항목, <xliff:g id="item">%2$s</xliff:g> 선택</string>
+    <string name="gesture_trainer_how_menu"><xliff:g id="edge">%1$s</xliff:g> 한 손가락을 대고 위나 아래로 <xliff:g id="distance">%2$d</xliff:g>mm 이상 밀어 메뉴를 여세요. 메뉴에는 위에서 아래로 항목이 <xliff:g id="count">%3$d</xliff:g>개 있으며, 각 항목의 높이는 약 <xliff:g id="size">%6$s</xliff:g>cm입니다. <xliff:g id="number">%4$d</xliff:g>번 항목인 <xliff:g id="item">%5$s</xliff:g>은(는) 화면 상단에서 <xliff:g id="from">%7$s</xliff:g>~<xliff:g id="to">%8$s</xliff:g>cm 아래에 있습니다. 항목이 음성으로 출력되면 손가락을 떼세요.</string>
+    <string name="gesture_trainer_menu_sample">이 가장자리에는 메뉴가 없습니다. 이 연습에서는 예시 항목 <xliff:g id="count">%1$d</xliff:g>개를 사용합니다.</string>
+    <string name="gesture_trainer_try_menu_cancelled">시도 <xliff:g id="number">%1$d</xliff:g>: 선택 없이 메뉴가 닫혔습니다.</string>
+    <string name="gesture_trainer_try_menu_other">시도 <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> 선택됨.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g>번 항목에서 뗌</string>
+    <string name="gesture_trainer_finding_menu_in_corner">손가락이 가장자리의 맨 위나 맨 아래, 즉 모서리와 상단 및 하단 가장자리가 있는 곳에서 시작했습니다.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">손가락을 뗀 위치가 가장자리에서 <xliff:g id="mm">%1$.0f</xliff:g>mm였으며, <xliff:g id="limit">%2$.0f</xliff:g>mm를 넘으면 메뉴가 닫힙니다.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">손가락을 <xliff:g id="target">%2$d</xliff:g>번 항목이 아니라 <xliff:g id="item">%1$d</xliff:g>번 항목에서 뗐습니다.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">가장자리의 위쪽과 아래쪽 끝에서 조금 떨어진 곳에서 시작하세요.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">미는 동안 손가락을 가장자리 가까이에 두고, 그곳에서 떼세요.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">각 항목은 가장자리를 따라 정해진 위치에 있으며, 손가락을 뗀 위치의 항목이 선택됩니다. 항목이 음성으로 출력되면 손가락을 떼세요.</string>
+    <string name="gesture_trainer_contents">목차</string>
+    <string name="gesture_trainer_contents_heading">목차: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">완료, <xliff:g id="tries">%2$d</xliff:g>번 중 <xliff:g id="hits">%1$d</xliff:g>번 인식됨</string>
+    <string name="gesture_trainer_group_tap_swipe">탭과 스와이프</string>
+    <string name="gesture_trainer_group_edge_swipes">가장자리에서 스와이프</string>
+    <string name="gesture_trainer_group_along_edges">가장자리를 따라 스와이프</string>
+    <string name="gesture_trainer_group_edge_menus">가장자리 메뉴</string>
+    <string name="gesture_trainer_group_corners">모서리</string>
+    <string name="gesture_trainer_group_back_tap">뒷면 탭</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">두 손가락 탭 후 두 손가락 스와이프는 제외됩니다: ‘<xliff:g id="setting">%1$s</xliff:g>’ 설정이 꺼져 있습니다.</string>
+    <string name="gesture_trainer_how_swipe_hold">그런 다음 손가락을 떼지 말고 <xliff:g id="hold">%1$d</xliff:g> ms 이상 움직이지 않은 후 떼세요.</string>
+    <string name="gesture_trainer_half_top">위쪽</string>
+    <string name="gesture_trainer_half_bottom">아래쪽</string>
+    <string name="gesture_trainer_how_taps_half">화면의 <xliff:g id="half">%1$s</xliff:g> 절반을 탭하세요. 손가락 사이의 중간 지점으로 절반이 결정됩니다.</string>
+    <string name="gesture_trainer_same_fingers">같은 손가락</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g>으로 <xliff:g id="taps">%1$s</xliff:g> 탭하세요. 마지막 탭 직후 <xliff:g id="gap">%3$d</xliff:g> ms 이내에 <xliff:g id="swipe_fingers">%4$s</xliff:g>으로 화면을 다시 터치하고 <xliff:g id="direction">%5$s</xliff:g> 직선으로 약 2~3cm 민 다음 손가락을 떼세요.</string>
+    <string name="gesture_trainer_how_corner_hold">마지막 탭에서 손가락을 모서리에 댄 채 <xliff:g id="hold">%1$d</xliff:g> ms 이상 움직이지 마세요.</string>
+    <string name="gesture_trainer_how_back_tap">휴대전화 양옆을 손으로 잡고, 문을 두드리듯이 손가락 끝으로 뒷면 가운데를 세게 빠르게 <xliff:g id="taps">%1$s</xliff:g> 탭하세요. 탭 사이 간격은 최대 <xliff:g id="gap">%2$d</xliff:g> ms로 짧게 하세요. 탭하는 동안 화면을 터치하지 마세요.</string>
+    <string name="gesture_trainer_back_tap_info">연습 중에는 뒷면 탭으로 명령이 실행되지 않습니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 설정에 따라 필요한 탭 세기가 정해집니다.</string>
+    <string name="gesture_trainer_go_placed">동작을 <xliff:g id="tries">%1$d</xliff:g>번 하세요.</string>
+    <string name="gesture_trainer_along_left">왼쪽 가장자리</string>
+    <string name="gesture_trainer_along_right">오른쪽 가장자리</string>
+    <string name="gesture_trainer_along_top">상단 가장자리</string>
+    <string name="gesture_trainer_along_bottom">하단 가장자리</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g>를 따라 미는 동작은 제외됩니다: 이 가장자리에는 가장자리 메뉴가 있어 따라 밀면 동작 대신 메뉴가 열립니다.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g>를 따라 미는 동작은 제외됩니다: 이 가장자리는 스크롤에 사용되어 따라 밀면 동작 대신 앱이 스크롤됩니다.</string>
+    <string name="gesture_trainer_finding_along_off_edge">손가락이 가장자리에서 너무 멀어졌습니다.</string>
+    <string name="gesture_trainer_tip_along_off_edge">손가락을 화면 가장자리 끝에 대고 가장자리를 따라 곧게 움직이세요.</string>
+    <string name="gesture_trainer_go_back_tap">뒷면 탭 동작을 <xliff:g id="tries">%1$d</xliff:g>번 하세요. 화면을 터치하면 시도가 실패합니다.</string>
+    <string name="gesture_trainer_no_accelerometer">이 연습에는 가속도계가 필요합니다. 사용 가능한 가속도계가 없습니다.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms 유지</string>
+    <string name="gesture_trainer_measure_back_tap_strength">탭 세기 <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">끝에서 손가락이 <xliff:g id="ms">%1$d</xliff:g> ms 동안 멈춰 있었으며, <xliff:g id="limit">%2$d</xliff:g> ms 이상 멈춰 있어야 합니다.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">손가락이 화면의 다른 쪽 절반을 탭했습니다.</string>
+    <string name="gesture_trainer_finding_swipe_missing">탭 후 스와이프가 없었습니다.</string>
+    <string name="gesture_trainer_finding_swipe_late">마지막 탭 후 <xliff:g id="ms">%1$d</xliff:g> ms 뒤에 스와이프가 시작되었으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">뒷면 탭이 너무 약함: 필요한 세기의 <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">탭이 휴대전화를 뒷면 방향보다 옆 방향으로 더 많이 흔들었습니다.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">탭 직전에 휴대전화가 움직이고 있었습니다.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">화면이 터치되었습니다. 화면을 터치하는 동안의 탭은 인정되지 않습니다.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">뒷면 탭 사이에 <xliff:g id="ms">%1$d</xliff:g> ms가 지났으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">스와이프 후 유지 시간 동안 손가락을 화면에 댄 채 움직이지 마세요. 그런 다음 떼세요.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">탭하는 절반을 확인하세요. 화면 가운데를 기준으로 위쪽 절반과 아래쪽 절반이 나뉩니다.</string>
+    <string name="gesture_trainer_tip_swipe_missing">마지막 탭 후 바로 화면을 다시 터치하고 스와이프하세요.</string>
+    <string name="gesture_trainer_tip_swipe_late">마지막 탭 직후 멈추지 말고 스와이프를 시작하세요.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">손가락 끝이나 손톱으로 뒷면 가운데 근처를 더 세게 탭하세요.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">휴대전화 가장자리나 비스듬한 각도가 아니라 뒷면을 곧게 탭하세요.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">탭하기 전에 잠시 휴대전화를 움직이지 말고, 손이 휴대전화를 움직이지 않도록 가볍게 잡으세요.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">뒷면을 탭하는 동안 화면에 손가락이 닿지 않게 하세요. 휴대전화 양옆을 잡으세요.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">연달아 더 빠르게 탭하세요.</string>
+    <string name="gesture_trainer_advice_swipe_hold">스와이프 후 손가락을 너무 빨리 뗍니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 짧게 하면 더 짧게 유지해도 됩니다.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">뒷면 탭이 약합니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 높이면 더 약한 탭도 감지되지만, 충격도 탭으로 감지될 수 있습니다.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">손가락이 <xliff:g id="degrees">%1$.0f</xliff:g>도 회전했으며, <xliff:g id="limit">%2$.0f</xliff:g>도부터는 회전 동작이 됩니다.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">손가락을 서로의 주위로 호를 그리지 말고, 서로를 향하거나 멀어지도록 직선으로 움직이세요.</string>
+    <string name="gesture_trainer_finding_other_gesture">움직임이 대신 그 동작과 일치했습니다.</string>
+    <string name="gesture_trainer_side_left">왼쪽</string>
+    <string name="gesture_trainer_side_right">오른쪽</string>
+    <string name="gesture_trainer_side_top">상단</string>
+    <string name="gesture_trainer_side_bottom">하단</string>
+    <string name="gesture_trainer_finding_wrong_edge">손가락이 <xliff:g id="side">%1$s</xliff:g> 가장자리에서 시작했지만, 이 연습은 <xliff:g id="expected">%2$s</xliff:g> 가장자리에서 합니다.</string>
+    <string name="gesture_trainer_tip_wrong_edge">연습에 표시된 가장자리에서 바로 시작하세요.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">이 동작 대신 가장자리 메뉴가 열렸습니다.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">메뉴가 있는 가장자리를 따라 밀면 메뉴가 열립니다. 연습에 표시된 가장자리에서 시작하세요.</string>
+    <string name="gesture_trainer_group_three_part">3단계 스와이프</string>
+    <string name="gesture_trainer_group_two_stroke">두 획 스와이프</string>
+    <string name="gesture_trainer_group_shake">흔들기</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">3단계 스와이프는 제외됩니다: ‘<xliff:g id="setting">%1$s</xliff:g>’ 설정이 켜져 있습니다.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">두 획 스와이프는 제외됩니다: ‘<xliff:g id="setting">%1$s</xliff:g>’ 설정이 <xliff:g id="value">%2$s</xliff:g>입니다.</string>
+    <string name="gesture_trainer_shake_info">연습 중에는 흔들기로 명령이 실행되지 않습니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 설정에 따라 필요한 흔들기 세기가 정해집니다.</string>
+    <string name="gesture_trainer_go_shake">휴대전화를 <xliff:g id="tries">%1$d</xliff:g>번 흔드세요. 흔들 때마다 잠시 멈추세요.</string>
+    <string name="gesture_trainer_how_shake">휴대전화를 단단히 잡고 물방울을 털어내듯이 빠르게 앞뒤로 흔드세요. 각 방향으로 두 번 이상, 전체를 약 3분의 2초 안에 하세요. 그런 다음 움직이지 마세요.</string>
+    <string name="gesture_trainer_how_two_stroke">한 손가락으로 <xliff:g id="first">%1$s</xliff:g> 약 2cm 스와이프하고 손가락을 떼세요. 그런 다음 바로 <xliff:g id="time">%3$d</xliff:g> ms 이내에 한 손가락으로 <xliff:g id="second">%2$s</xliff:g> 약 2cm 스와이프하고 손가락을 떼세요.</string>
+    <string name="gesture_trainer_how_three_part">한 손가락으로 화면을 터치하고 손가락을 떼지 말고 <xliff:g id="first">%1$s</xliff:g> 스와이프한 다음, 방향을 급하게 꺾어 <xliff:g id="second">%2$s</xliff:g> 스와이프하고, 다시 방향을 급하게 꺾어 <xliff:g id="third">%3$s</xliff:g> 스와이프하세요. 각 부분은 약 2cm로 하고 손가락을 떼세요. 곡선이 아니라 꺾인 모서리가 있는 빠르고 매끄러운 한 동작으로 하세요.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">한 손가락은 화면의 위쪽 3분의 1에, 다른 손가락은 아래쪽 3분의 1에 놓으세요. 예를 들어 엄지는 아래에, 검지는 위에 놓으세요.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">손가락이 화면의 위쪽 3분의 1과 아래쪽 3분의 1에 하나씩 있지 않았습니다.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">두 번째 스와이프가 없었습니다.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">두 번째 스와이프가 첫 번째 스와이프 후 <xliff:g id="ms">%1$d</xliff:g> ms 뒤에 시작되었으며, 최대 <xliff:g id="limit">%2$d</xliff:g> ms까지 허용됩니다.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">첫 번째 스와이프가 <xliff:g id="direction">%1$s</xliff:g> 움직였습니다.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">두 번째 스와이프가 <xliff:g id="direction">%1$s</xliff:g> 움직였습니다.</string>
+    <string name="gesture_trainer_finding_shake_too_light">흔들기가 너무 약했습니다: 필요한 세기의 <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">앞뒤로 흔든 횟수: 필요한 <xliff:g id="wanted">%2$d</xliff:g>번 중 <xliff:g id="swings">%1$d</xliff:g>번.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">손가락을 넓게 벌려 하나는 상단 가장자리 가까이, 다른 하나는 하단 가장자리 가까이에 놓으세요.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">첫 번째 스와이프 후 손가락을 떼고 바로 다시 스와이프하세요.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">손가락을 뗀 직후 두 번째 스와이프를 시작하세요.</string>
+    <string name="gesture_trainer_tip_shake_too_light">더 세고 빠르게 흔드세요.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">중간에 멈추지 말고 각 방향으로 두 번 이상 더 빠르게 앞뒤로 흔드세요.</string>
+    <string name="gesture_trainer_measure_shake_strength">가장 강한 움직임 <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">흔들기가 약합니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 높이면 더 약한 흔들기도 감지되지만, 휴대전화를 들고 다니는 것도 흔들기로 감지될 수 있습니다.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">두 번째 스와이프가 늦게 시작됩니다. ‘<xliff:g id="setting">%1$s</xliff:g>’ 값을 길게 하면 두 번째 스와이프를 더 늦게 시작해도 되지만, 한 번의 스와이프는 실행되기 전에 더 오래 기다립니다.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">‘<xliff:g id="setting">%1$s</xliff:g>’ 설정이 켜져 있습니다.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">‘<xliff:g id="setting">%1$s</xliff:g>’ 설정이 꺼져 있습니다: 두 손가락 스와이프는 앱을 스크롤하며, 문지르기도 대부분 스크롤됩니다. 이 설정을 켜면 두 손가락 스와이프가 스크롤 대신 SandFly 명령을 실행합니다.</string>
+    <string name="gesture_trainer_measure_first_stroke">첫 번째 스와이프 <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">두 번째 스와이프 <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">전체 동작 <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">사이에 <xliff:g id="ms">%1$d</xliff:g> ms 동안 손가락을 뗌</string>
+</resources>

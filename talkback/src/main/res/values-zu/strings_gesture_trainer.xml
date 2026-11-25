@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Umqeqeshi wokunyakaza</string>
+    <string name="gesture_trainer_intro">Khetha iqembu lokunyakaza. Isivivinyo ngasinye sichaza ukunyakaza okukodwa. Yenza ukunyakaza izikhathi ezingu-<xliff:g id="tries">%1$d</xliff:g>; umphumela womzamo ngamunye uyashiwo. Ngemva komzamo wokugcina, isikrini sibonisa izilinganiso zomzamo ngamunye, okumele ukushintshe namasethingi ahlobene.</string>
+    <string name="gesture_trainer_group_one_finger">Umunwe owodwa</string>
+    <string name="gesture_trainer_group_two_fingers">Iminwe emibili</string>
+    <string name="gesture_trainer_group_three_fingers">Iminwe emithathu</string>
+    <string name="gesture_trainer_group_four_fingers">Iminwe emine</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Ukuncinza, ukuzungezisa nokukhuhla</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, izivivinyo ezingu-<xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Vala</string>
+    <string name="gesture_trainer_no_detection">Umqeqeshi wokunyakaza udinga i-Android 13 noma kamuva.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Ukunyakaza okuya emuva nangaphambili nokwekhoneni kushiyiwe: <xliff:g id="setting">%1$s</xliff:g> kuvuliwe.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Ukuswayipha ngeminwe emi-2 kushiyiwe: <xliff:g id="setting">%1$s</xliff:g> kuvaliwe, ngakho kuskrola ama-app.</string>
+    <string name="gesture_trainer_exercise_heading">Isivivinyo <xliff:g id="number">%1$d</xliff:g> kokungu-<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Qala</string>
+    <string name="gesture_trainer_skip">Yeqa lesi sivivinyo</string>
+    <string name="gesture_trainer_back_to_groups">Buyela emaqenjini</string>
+    <string name="gesture_trainer_go">Yenza ukunyakaza izikhathi ezingu-<xliff:g id="tries">%1$d</xliff:g>, noma kuphi esikrinini. Ukuthinta ngakunye kungumzamo.</string>
+    <string name="gesture_trainer_fingers_1">ngomunwe owodwa</string>
+    <string name="gesture_trainer_fingers_2">ngeminwe emibili eseceleni kwomunye nomunye, ehlukene cishe ngo-1 cm</string>
+    <string name="gesture_trainer_fingers_3">ngeminwe emithathu eseceleni kwomunye nomunye, ehlukene kancane</string>
+    <string name="gesture_trainer_fingers_4">ngeminwe emine eseceleni kwomunye nomunye, ehlukene kancane</string>
+    <string name="gesture_trainer_direction_up">phezulu</string>
+    <string name="gesture_trainer_direction_down">phansi</string>
+    <string name="gesture_trainer_direction_left">ngakwesokunxele</string>
+    <string name="gesture_trainer_direction_right">ngakwesokudla</string>
+    <string name="gesture_trainer_how_swipe">Thinta isikrini <xliff:g id="fingers">%1$s</xliff:g> futhi, ngaphandle kokulinda, shelelisa <xliff:g id="direction">%2$s</xliff:g> ngomugqa oqondile cishe u-2 kuya ku-3 cm, bese uphakamisa. Qala ukunyakaza ngokushesha: umunwe ohlala uthule kuqala uqala ukuhlola kokuthinta.</string>
+    <string name="gesture_trainer_how_swipe_multi">Beka iminwe ndawonye, ngesikhathi esisodwa, futhi uyihambise yonke ngendlela efanayo. Umunwe ngamunye kumele uye <xliff:g id="direction">%1$s</xliff:g> ngaso sonke isikhathi, ngakho gcina umugqa uqondile.</string>
+    <string name="gesture_trainer_how_back_and_forth">Thinta isikrini ngomunwe owodwa bese ushelelisa <xliff:g id="first">%1$s</xliff:g> cishe u-2 cm, bese ngaphandle kokuphakamisa ubuyela uqonde <xliff:g id="second">%2$s</xliff:g> cishe u-2 cm, bese uphakamisa. Kwenze kube ukunyakaza okukodwa okusheshayo nokushelelayo.</string>
+    <string name="gesture_trainer_how_angle">Thinta isikrini <xliff:g id="fingers">%1$s</xliff:g> bese ushelelisa <xliff:g id="first">%2$s</xliff:g> cishe u-2 cm, bese ngaphandle kokuphakamisa ujika kakhulu ushelelise <xliff:g id="second">%3$s</xliff:g> cishe u-2 cm, bese uphakamisa. Ukujika makube yikhona elibukhali, njengohlamvu L, hhayi ijika.</string>
+    <string name="gesture_trainer_taps_1">kanye</string>
+    <string name="gesture_trainer_taps_2">kabili</string>
+    <string name="gesture_trainer_taps_3">kathathu</string>
+    <string name="gesture_trainer_taps_4">kane</string>
+    <string name="gesture_trainer_how_taps">Thepha <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Beka iminwe ndawonye futhi uyiphakamise ndawonye, ngokushesha, ngaphandle kokushelela.</string>
+    <string name="gesture_trainer_how_taps_quick">Gcina ukuthepha kusheshayo futhi kusendaweni efanayo: ukuthepha okulandelayo kumele kufike kungakapheli ama-ms angu-<xliff:g id="gap">%1$d</xliff:g> ngemva kokwedlule.</string>
+    <string name="gesture_trainer_how_hold">Thinta isikrini <xliff:g id="fingers">%1$s</xliff:g> ngesikhathi esisodwa futhi uhlale uthule, ngaphandle kokushelela, okungenani ama-ms angu-<xliff:g id="hold">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Uma kungekho omunye umyalo onikeziwe, lokhu kunyakaza kuvala i-SandFly. Kumqeqeshi, akuqalisi lutho.</string>
+    <string name="gesture_trainer_how_taps_hold">Thepha <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, futhi ekuthepheni kokugcina shiya iminwe esikrinini, ithule, okungenani ama-ms angu-<xliff:g id="hold">%3$d</xliff:g>.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Sebenzisa isithupha, umunwe wokukhomba nomunwe ophakathi.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Beka umunwe wokukhomba nomunwe ophakathi eduze komunye nomunye, bese isithupha nomunwe weringi kude ngamasentimitha ambalwa ohlangothini ngalunye. Bese uhlanganisa zonke izihloko zeminwe emine endaweni eyodwa.</string>
+    <string name="gesture_trainer_how_pinch">Beka iminwe engu-<xliff:g id="fingers">%1$d</xliff:g> esikrinini, ihlukane kakhulu. Bese uyisondeza ngqo komunye nomunye okungenani ngo-1 cm, sengathi ucosha okuthile, bese uyiphakamisa esikrinini. Hambisa iminwe kuphela, hhayi isandla sonke, futhi hhayi ngejika.</string>
+    <string name="gesture_trainer_how_spread">Beka iminwe engu-<xliff:g id="fingers">%1$d</xliff:g> esikrinini, iseduze. Bese uyihlukanisa ngqo okungenani ngo-1 cm bese uyiphakamisa esikrinini. Hambisa iminwe kuphela, hhayi isandla sonke, futhi hhayi ngejika.</string>
+    <string name="gesture_trainer_clockwise">ngokwewashi</string>
+    <string name="gesture_trainer_counterclockwise">ngokuphambene newashi</string>
+    <string name="gesture_trainer_how_rotate">Beka iminwe emibili esikrinini, ihlukene cishe ngo-2 kuya ku-3 cm, bese uyizungezisa <xliff:g id="way">%1$s</xliff:g> ezungeze phakathi nendawo yayo, njengokujikisa inkinobho, cishe ngekota yokujika. Bese uphakamisa.</string>
+    <string name="gesture_trainer_how_scrub">Beka iminwe emibili esikrinini bese uyihambisa ngokushesha ohlangothini olulodwa cishe u-2 cm bese uyibuyisa, njengokusula okuthile, konke cishe kumzuzwana owodwa. Bese uphakamisa.</string>
+    <string name="gesture_trainer_edge_bottom">onqenqemeni olungezansi</string>
+    <string name="gesture_trainer_edge_top_left">onqenqemeni olungaphezulu, engxenyeni yalo yesokunxele</string>
+    <string name="gesture_trainer_edge_top_right">onqenqemeni olungaphezulu, engxenyeni yalo yesokudla</string>
+    <string name="gesture_trainer_edge_left_top">onqenqemeni lwesokunxele, engxenyeni yalo ephezulu</string>
+    <string name="gesture_trainer_edge_left_bottom">onqenqemeni lwesokunxele, engxenyeni yalo engezansi</string>
+    <string name="gesture_trainer_edge_right_top">onqenqemeni lwesokudla, engxenyeni yalo ephezulu</string>
+    <string name="gesture_trainer_edge_right_bottom">onqenqemeni lwesokudla, engxenyeni yalo engezansi</string>
+    <string name="gesture_trainer_edge_left">onqenqemeni lwesokunxele</string>
+    <string name="gesture_trainer_edge_right">onqenqemeni lwesokudla</string>
+    <string name="gesture_trainer_edge_top">onqenqemeni olungaphezulu</string>
+    <string name="gesture_trainer_how_edge">Beka umunwe owodwa <xliff:g id="edge">%1$s</xliff:g>, kungabi ngaphezu kwama-mm angu-<xliff:g id="edge_width">%2$d</xliff:g> ukusuka onqenqemeni, bese ushelelisa <xliff:g id="direction">%3$s</xliff:g> ungene esikrinini kuze kube sekuchofozeni kokuqala, cishe ama-mm angu-<xliff:g id="distance">%4$d</xliff:g>. Bese uphakamisa ngokushesha: ngemva kokuchofoza kwesibili, ukushelela kuba ukushelela okude.</string>
+    <string name="gesture_trainer_how_edge_long">Beka umunwe owodwa <xliff:g id="edge">%1$s</xliff:g>, kungabi ngaphezu kwama-mm angu-<xliff:g id="edge_width">%2$d</xliff:g> ukusuka onqenqemeni, bese ushelelisa <xliff:g id="direction">%3$s</xliff:g> ungene esikrinini wedlule ukuchofoza kokuqala uze ufike kokwesibili, cishe ama-mm angu-<xliff:g id="distance">%4$d</xliff:g>. Bese uphakamisa.</string>
+    <string name="gesture_trainer_how_along">Shelelisa umunwe owodwa <xliff:g id="direction">%2$s</xliff:g> ngokulandela <xliff:g id="edge">%1$s</xliff:g>, okungenani ama-mm angu-<xliff:g id="distance">%3$d</xliff:g>.</string>
+    <string name="gesture_trainer_corner_top_left">eliphezulu kwesokunxele</string>
+    <string name="gesture_trainer_corner_top_right">eliphezulu kwesokudla</string>
+    <string name="gesture_trainer_corner_bottom_left">elingezansi kwesokunxele</string>
+    <string name="gesture_trainer_corner_bottom_right">elingezansi kwesokudla</string>
+    <string name="gesture_trainer_how_corner">Thepha <xliff:g id="taps">%1$s</xliff:g> ekhoneni <xliff:g id="corner">%2$s</xliff:g> lesikrini. Beka umunwe ngqo ekhoneni, kungabi ngaphezu kwama-mm angu-<xliff:g id="size">%3$d</xliff:g> ukusuka kuyo yomibili imiphetho, bese uphakamisa ngokushesha, kungakapheli ama-ms angu-<xliff:g id="time">%4$d</xliff:g>.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Ngamakhona amakhulu, ukuthepha isilawuli esiseduze kwekhona, njengokuthi Emuva phezulu kwesokunxele, kungaqalisa ukunyakaza kwekhona esikhundleni salokho.</string>
+    <string name="gesture_trainer_rating_precise">kubonakele, kunembile</string>
+    <string name="gesture_trainer_rating_good">kubonakele, kuhle</string>
+    <string name="gesture_trainer_rating_borderline">kubonakele, kodwa kuseduze komkhawulo</string>
+    <string name="gesture_trainer_try_recognized">Umzamo <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Umzamo <xliff:g id="number">%1$d</xliff:g>: akubonakalanga.</string>
+    <string name="gesture_trainer_try_other">Umzamo <xliff:g id="number">%1$d</xliff:g>: kubonakale njengo-<xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: kubonakale <xliff:g id="recognized">%2$d</xliff:g> kokungu-<xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Imizamo yakho</string>
+    <string name="gesture_trainer_results_change">Okumele ukushintshe</string>
+    <string name="gesture_trainer_results_close">Kuseduze komkhawulo</string>
+    <string name="gesture_trainer_results_all_good">Yonke imizamo ibonakele ngaphakathi kwemikhawulo.</string>
+    <string name="gesture_trainer_results_settings">Amasethingi angasiza</string>
+    <string name="gesture_trainer_next">Isivivinyo esilandelayo</string>
+    <string name="gesture_trainer_repeat">Phinda</string>
+    <string name="gesture_trainer_finish">Qeda</string>
+    <string name="gesture_trainer_group_done">Uqedile zonke izivivinyo ku-<xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Shintsha <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">kuthathe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_length">ubude buka-<xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm ngomzuzwana</string>
+    <string name="gesture_trainer_measure_angle">amadigri angu-<xliff:g id="degrees">%1$.0f</xliff:g> ukusuka emugqeni oqondile</string>
+    <string name="gesture_trainer_measure_start">isentimitha lokuqala kuma-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_landing">iminwe ifike ihlukene ngama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_tap">ukuthepha kwama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_gap">ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> phakathi kokuthepha</string>
+    <string name="gesture_trainer_measure_spread">iminwe ihambe ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g></string>
+    <string name="gesture_trainer_measure_rotation">kuzungeze amadigri angu-<xliff:g id="degrees">%1$.0f</xliff:g></string>
+    <string name="gesture_trainer_measure_corner">ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> ukusuka emaphethelweni ekhona</string>
+    <string name="gesture_trainer_measure_edge">kuqale ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> ukusuka onqenqemeni</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Iminwe esikrinini: <xliff:g id="fingers">%1$d</xliff:g> esikhundleni sika-<xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Iminwe ifike ihlukene ngama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Umunwe uphakanyisiwe ngaphambi kokuba yonke iminwe ibekwe phansi.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Iminwe iphakanyiswe ihlukene ngama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_became_exploration">Umunwe uhlale uthule isikhathi eside kakhulu noma uhambe kancane kakhulu ekuqaleni, ngakho ukuthinta kwaba ukuhlola kokuthinta.</string>
+    <string name="gesture_trainer_finding_slow_start">Isentimitha lokuqala lithathe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_paused">Umunwe wehlise ijubane ama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi isentimitha ngalinye lingathatha ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_too_short">Ukunyakaza bekungama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> kuphela, futhi kumele kube okungenani ama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Umunwe uqale ukuya <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Iminwe iqale ukuya <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Indlela iphambuke ngamadigri angu-<xliff:g id="degrees">%1$.0f</xliff:g> emugqeni oqondile, futhi kuvunyelwe angu-<xliff:g id="limit">%2$.0f</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_curved">Indlela igobeke yaba izingxenye ezingu-<xliff:g id="parts">%1$d</xliff:g> esikhundleni sika-<xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Ukujika akutholakalanga.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Ngemva kokujika, umunwe uye <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Umunwe ushelele ama-mm angu-<xliff:g id="mm">%1$.1f</xliff:g> ngesikhathi sokuthepha, futhi kuvunyelwe ama-mm angu-<xliff:g id="limit">%2$.1f</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Ukuthepha kuthathe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, isikhathi eside kunama-ms angu-<xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Ukuthepha kokugcina kubanjwe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi kumele kube okungenani ama-ms angu-<xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Ukuthepha okungu-<xliff:g id="taps">%1$d</xliff:g> esikhundleni sika-<xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Ukuthepha okungu-<xliff:g id="taps">%1$d</xliff:g> esikhundleni sika-<xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Kudlule ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> phakathi kokuthepha, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_taps_apart">Ukuthepha kwehlukene ngama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g>, futhi kuvunyelwe ama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Iminwe ihambe ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> kuphela, futhi kumele ihambe okungenani ama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Iminwe ihambe ngakolunye uhlangothi.</string>
+    <string name="gesture_trainer_finding_moved_together">Isandla sonke sishelele ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> esikrinini, ngaphezu kokuthi iminwe isondelane noma ihlukane.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Iminwe izungeze amadigri angu-<xliff:g id="degrees">%1$.0f</xliff:g> kuphela, futhi kumele izungeze okungenani angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Iminwe izungeze ngakolunye uhlangothi.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Ukudweba kokuqala bekungama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g>, futhi kumele kube okungenani ama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Ukudweba kokubuya bekungama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g>, futhi kumele kube okungenani ama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Ukukhuhla kuthathe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Umunwe ufike ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> ukusuka onqenqemeni, futhi unqenqema lunobubanzi bama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Umunwe uqale kwenye ingxenye yonqenqema.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Umunwe ushelele ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g>, futhi kumele ushelele okungenani ama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Ukushelela kude kakhulu: umunwe wedlule ukuchofoza kwesibili, ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g>, futhi ukuchofoza kwesibili kusema-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Ukufika ekuchofozeni kuthathe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Ukushelela kuphambukele eceleni ngamadigri angu-<xliff:g id="degrees">%1$.0f</xliff:g>, futhi kuvunyelwe angu-<xliff:g id="limit">%2$.0f</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_corner_missed">Ukuthepha kufike ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> ukusuka emaphethelweni ekhona, futhi ikhona lingama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Ukuthepha kwekhona kuthathe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g>, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_none">Akukho ukunyakaza okufana nalokhu kunyakaza okutholakele.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Hlola ukuthi mingaki iminwe ethinta ingilazi. Intende lesandla noma omunye umunwe ophumule esikrinini nakho kuyabalwa.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Beka yonke iminwe ngesikhathi esisodwa, njengesandla esisodwa, hhayi omunye ngemva komunye.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Beka yonke iminwe kuqala, bese uyihambisa noma uyiphakamisa.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Phakamisa yonke iminwe ngesikhathi esisodwa.</string>
+    <string name="gesture_trainer_tip_slow_start">Qala ukunyakaza ngokushesha nje uma uthinta isikrini, futhi uhambe ngokushesha ekuqaleni.</string>
+    <string name="gesture_trainer_tip_paused">Qhubeka uhambisa umunwe ngejubane elilinganayo uze uphakamise. Ungehlisi ijubane ngasekupheleni.</string>
+    <string name="gesture_trainer_tip_too_short">Yenza ukunyakaza kube kude, cishe u-2 kuya ku-3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Hlola isiqondiso ekuqaleni kwangempela kokunyakaza. Ukubamba ifoni iqonde phambi kwakho kuyasiza.</string>
+    <string name="gesture_trainer_tip_off_line">Hamba kuphela ngesiqondiso, hhayi ngokutsheka. Umunwe wokukhomba ugcina umugqa oqonde kakhulu kunesithupha.</string>
+    <string name="gesture_trainer_tip_curved">Gcina umugqa uqondile futhi uphakamise ngqo ekugcineni, ngaphandle kokugobisela umunwe eceleni lapho uphakamisa.</string>
+    <string name="gesture_trainer_tip_turn_missing">Shintsha isiqondiso ngokukhulu ukushesha, nge-engeli engu-90 noma ubuyele emuva ngqo, ngaphandle kokuphakamisa. Ingxenye ngayinye kumele ibe cishe u-2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Ngemva kokujika, hlola ukuthi uyaphi: ingxenye yesibili kumele iye kwesinye isiqondiso esishiwo ukunyakaza.</string>
+    <string name="gesture_trainer_tip_tap_moved">Thepha uqonde phansi naphezulu, ngesihloko somunwe, ngaphandle kokushelela.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Yenza ukuthepha ngakunye kube kufushane: thinta bese uphakamisa ngokushesha.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Ekuthepheni kokugcina, gcina iminwe ithule esikrinini isikhathi sonke sokubamba.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Bala ukuthepha, futhi ukwenze konke ngokushesha ngesikhathi esisodwa.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Bala ukuthepha. Umunwe ogxumayo engilazini wenza ukuthepha okwengeziwe.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Thepha ngokushesha: qala ukuthepha okulandelayo ngokushesha ngemva kokuphakamisa.</string>
+    <string name="gesture_trainer_tip_taps_apart">Thepha endaweni efanayo isikhathi ngasinye.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Hambisa iminwe kude kakhulu, okungenani u-1 cm isondelane noma ihlukane.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Ukuncinza yiminwe eya komunye nomunye, ukunweba yiminwe ehlukana.</string>
+    <string name="gesture_trainer_tip_moved_together">Hambisa kuphela iminwe isondelane noma ihlukane. Ungasheleleli isandla sonke esikrinini.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Zungezisa kakhulu, njengokujikisa inkinobho ngekota yokujika.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Ngokwewashi kusho ukujika ngendlela izinaliti zewashi ezihamba ngayo: umunwe ophezulu uya ngakwesokudla.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Yenza ukudweba kokuqala kube okungenani u-1 cm ubude.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Ngemva kokudweba kokuqala, buya ngakolunye uhlangothi ngaphambi kokuphakamisa.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Yenza ukukhuhla kusheshe, uye ubuye cishe kumzuzwana owodwa.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Qala ngqo onqenqemeni, isihloko somunwe singaphandle kwesikrini kancane.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Hlola ukuthi uqala kuyiphi ingxenye yonqenqema.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Shelela uqhubeke, uze uzwe ukuchofoza, bese uphakamisa.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Phakamisa ngokushesha ngemva kokuchofoza kokuqala, ngaphambi kokwesibili.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Shelela ungene ngokushesha, ngaphandle kokuma ngaphambi kokuchofoza.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Shelela uqonde ungene usuka onqenqemeni, noma uqonde ngokulandela unqenqema, hhayi ngokutsheka.</string>
+    <string name="gesture_trainer_tip_corner_missed">Beka umunwe ngqo ekhoneni, uthinta yomibili imiphetho.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Phakamisa ngokushesha ngemva kokuthinta ikhona.</string>
+    <string name="gesture_trainer_close_to_limit">Kuseduze komkhawulo: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Ukuswayipha kuqala kancane. I-<xliff:g id="setting">%1$s</xliff:g> ende ivumela ukuqala kancane.</string>
+    <string name="gesture_trainer_advice_tap_time">Ukuthepha kuhamba kancane. I-<xliff:g id="setting">%1$s</xliff:g> ende ivumela ukuthepha kancane.</string>
+    <string name="gesture_trainer_advice_edge_width">Ukuswayipha kuqala kude kakhulu nonqenqema. I-<xliff:g id="setting">%1$s</xliff:g> enkulu iphinde yenze ukuswayipha okuqala eduze konqenqema kube ukuswayipha konqenqema.</string>
+    <string name="gesture_trainer_advice_corner_size">Ukuthepha kufika ngaphandle kwekhona. I-<xliff:g id="setting">%1$s</xliff:g> enkulu yenza amakhona abe makhulu.</string>
+    <string name="gesture_trainer_advice_corner_time">Ukuthepha kwekhona kuhamba kancane. I-<xliff:g id="setting">%1$s</xliff:g> ende ivumela ukuthepha kancane.</string>
+    <string name="gesture_trainer_menu_option">Inketho <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: khetha into <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Shelelisa umunwe owodwa phezulu noma phansi <xliff:g id="edge">%1$s</xliff:g> okungenani ama-mm angu-<xliff:g id="distance">%2$d</xliff:g> ukuze uvule imenyu. Inezinto ezingu-<xliff:g id="count">%3$d</xliff:g>, kusukela phezulu kuya phansi, ngayinye cishe ingu-<xliff:g id="size">%6$s</xliff:g> cm ukuphakama. Into <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, iku-<xliff:g id="from">%7$s</xliff:g> kuya ku-<xliff:g id="to">%8$s</xliff:g> cm ngaphansi kwengaphezulu lesikrini. Phakamisa umunwe lapho into ishiwo.</string>
+    <string name="gesture_trainer_menu_sample">Lo nqenqema alunayo imenyu. Isivivinyo sisebenzisa izinto eziyisampula ezingu-<xliff:g id="count">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Umzamo <xliff:g id="number">%1$d</xliff:g>: imenyu ivaliwe ngaphandle kokukhetha.</string>
+    <string name="gesture_trainer_try_menu_other">Umzamo <xliff:g id="number">%1$d</xliff:g>: kukhethwe <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">kuphakanyiswe entweni <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Umunwe uqale phezulu ngqo noma phansi ngqo konqenqema, lapho kukhona amakhona nemiphetho ephezulu nengezansi.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Umunwe uphakanyiswe ama-mm angu-<xliff:g id="mm">%1$.0f</xliff:g> ukusuka onqenqemeni, futhi imenyu iyavaleka ngaphezu kwama-mm angu-<xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Umunwe uphakanyiswe entweni <xliff:g id="item">%1$d</xliff:g> esikhundleni sento <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Qala kude kancane nemikhawulo ephezulu nengezansi yonqenqema.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Gcina umunwe useduze konqenqema ngesikhathi ushelela, bese uwuphakamisa lapho.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Into ngayinye inendawo engaguquki ngokulandela unqenqema, futhi kukhethwa into lapho umunwe uphakanyiswa khona. Phakamisa lapho into ishiwo.</string>
+    <string name="gesture_trainer_contents">Okuqukethwe</string>
+    <string name="gesture_trainer_contents_heading">Okuqukethwe: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">kuqediwe, kubonakale <xliff:g id="hits">%1$d</xliff:g> kokungu-<xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Thepha bese uswayipha</string>
+    <string name="gesture_trainer_group_edge_swipes">Ukuswayipha kusuka emaphethelweni</string>
+    <string name="gesture_trainer_group_along_edges">Ukushelela ngokulandela imiphetho</string>
+    <string name="gesture_trainer_group_edge_menus">Amamenyu onqenqema</string>
+    <string name="gesture_trainer_group_corners">Amakhona</string>
+    <string name="gesture_trainer_group_back_tap">Ukuthepha ngemuva</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Ukuthepha ngeminwe emi-2 okulandelwa ukuswayipha ngeminwe emi-2 kushiyiwe: <xliff:g id="setting">%1$s</xliff:g> kuvaliwe.</string>
+    <string name="gesture_trainer_how_swipe_hold">Bese, ngaphandle kokuphakamisa, ugcine umunwe uthule okungenani ama-ms angu-<xliff:g id="hold">%1$d</xliff:g>, bese uphakamisa.</string>
+    <string name="gesture_trainer_half_top">ophezulu</string>
+    <string name="gesture_trainer_half_bottom">ongezansi</string>
+    <string name="gesture_trainer_how_taps_half">Thepha kuhhafu <xliff:g id="half">%1$s</xliff:g> wesikrini. Iphoyinti eliphakathi kweminwe linquma uhhafu.</string>
+    <string name="gesture_trainer_same_fingers">ngeminwe efanayo</string>
+    <string name="gesture_trainer_how_tap_swipe">Thepha <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Ngokushesha ngemva kokuthepha kokugcina, kungakapheli ama-ms angu-<xliff:g id="gap">%3$d</xliff:g>, thinta isikrini futhi <xliff:g id="swipe_fingers">%4$s</xliff:g> bese ushelelisa <xliff:g id="direction">%5$s</xliff:g> ngomugqa oqondile cishe u-2 kuya ku-3 cm, bese uphakamisa.</string>
+    <string name="gesture_trainer_how_corner_hold">Ekuthepheni kokugcina, shiya umunwe ekhoneni, uthule, okungenani ama-ms angu-<xliff:g id="hold">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_how_back_tap">Bamba ifoni esandleni sakho, ezinhlangothini zayo, bese uthepha phakathi nendawo kwengemuva layo <xliff:g id="taps">%1$s</xliff:g> ngesihloko somunwe, ngokuqinile nangokushesha, njengokungqongqoza emnyango. Gcina ukuthepha kuseduze: ama-ms angu-<xliff:g id="gap">%2$d</xliff:g> ubuningi phakathi kwakho. Ungasithinti isikrini ngesikhathi uthepha.</string>
+    <string name="gesture_trainer_back_tap_info">Ukuthepha ngemuva akuqalisi miyalo ngesikhathi sesivivinyo. I-<xliff:g id="setting">%1$s</xliff:g> isetha ukuthi ukuthepha kumele kube namandla kangakanani.</string>
+    <string name="gesture_trainer_go_placed">Yenza ukunyakaza izikhathi ezingu-<xliff:g id="tries">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_along_left">unqenqema lwesokunxele</string>
+    <string name="gesture_trainer_along_right">unqenqema lwesokudla</string>
+    <string name="gesture_trainer_along_top">unqenqema olungaphezulu</string>
+    <string name="gesture_trainer_along_bottom">unqenqema olungezansi</string>
+    <string name="gesture_trainer_left_out_along_menu">Ukushelela ngokulandela <xliff:g id="edge">%1$s</xliff:g> kushiyiwe: lunemenyu yonqenqema, ngakho ukushelela ngokulandela lona kuvula imenyu esikhundleni sokuqalisa ukunyakaza.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Ukushelela ngokulandela <xliff:g id="edge">%1$s</xliff:g> kushiyiwe: luyaskrola, ngakho ukushelela ngokulandela lona kuskrola i-app esikhundleni sokuqalisa ukunyakaza.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Umunwe uye kude kakhulu nonqenqema.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Gcina umunwe emphethweni wangempela wengilazi, uqonde ngokulandela unqenqema.</string>
+    <string name="gesture_trainer_go_back_tap">Yenza ukunyakaza kokuthepha ngemuva izikhathi ezingu-<xliff:g id="tries">%1$d</xliff:g>. Ukuthinta isikrini kwehlulekisa umzamo.</string>
+    <string name="gesture_trainer_no_accelerometer">Lesi sivivinyo sidinga i-accelerometer. Ayikho etholakalayo.</string>
+    <string name="gesture_trainer_measure_hold">kubanjwe kuthule ama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_back_tap_strength">ukuthepha kwamandla angu-<xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Umunwe uhlale uthule ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> ekugcineni, futhi kumele uhlale uthule okungenani ama-ms angu-<xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Iminwe ithephe kwenye ingxenye yesikrini.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Akukho ukuswayipha okulandele ukuthepha.</string>
+    <string name="gesture_trainer_finding_swipe_late">Ukuswayipha kuqale ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> ngemva kokuthepha kokugcina, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Ukuthepha ngemuva kulula kakhulu: <xliff:g id="percent">%1$d</xliff:g>%% wamandla adingekayo.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Ukuthepha kunyakazise ifoni kakhulu eceleni kunangengemuva layo.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Ifoni ibinyakaza ngaphambi nje kokuthepha.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Isikrini sithintiwe, futhi ukuthepha ngesikhathi sithintwa akubalwa.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Kudlule ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> phakathi kokuthepha ngemuva, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Ngemva kokuswayipha, gcina umunwe uthule esikrinini isikhathi sonke sokubamba. Bese uphakamisa.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Hlola ukuthi uthepha kuyiphi ingxenye: maphakathi nesikrini kuhlukanisa uhhafu ophezulu nohhafu ongezansi.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Ngemva kokuthepha kokugcina, thinta isikrini futhi ngokushesha bese uswayipha.</string>
+    <string name="gesture_trainer_tip_swipe_late">Qala ukuswayipha ngokushesha ngemva kokuthepha kokugcina, ngaphandle kokumisa.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Thepha ngamandla, ngesihloko somunwe noma ngozipho, eduze maphakathi nengemuva.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Thepha uqonde engemuva lefoni, hhayi onqenqemeni lwayo noma nge-engeli.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Bamba ifoni ithule isikhashana ngaphambi kokuthepha, futhi uyibambe kalula ukuze isandla sakho singayinyakazisi.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Gcina iminwe yakho ingasithinti isikrini ngesikhathi uthepha ingemuva: bamba ifoni ezinhlangothini zayo.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Thepha ngokushesha, ukuthepha okukodwa ngokushesha ngemva kokunye.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Umunwe uphakanyiswa ngokushesha kakhulu ngemva kokuswayipha. I-<xliff:g id="setting">%1$s</xliff:g> emfushane ivumela ukubamba okufushane.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Ukuthepha ngemuva kulula. I-<xliff:g id="setting">%1$s</xliff:g> ephezulu ithola ukuthepha okulula, futhi ingathola ukushayisa njengokuthepha.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Iminwe izungeze amadigri angu-<xliff:g id="degrees">%1$.0f</xliff:g>, futhi kusukela kumadigri angu-<xliff:g id="limit">%2$.0f</xliff:g> ukunyakaza kuwukuzungezisa.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Hambisa iminwe ngomugqa oqondile isondelane noma ihlukane, hhayi ngejika izungezana.</string>
+    <string name="gesture_trainer_finding_other_gesture">Ukunyakaza kufane nalokho kunyakaza esikhundleni salokho.</string>
+    <string name="gesture_trainer_side_left">lwesokunxele</string>
+    <string name="gesture_trainer_side_right">lwesokudla</string>
+    <string name="gesture_trainer_side_top">olungaphezulu</string>
+    <string name="gesture_trainer_side_bottom">olungezansi</string>
+    <string name="gesture_trainer_finding_wrong_edge">Umunwe uqale onqenqemeni <xliff:g id="side">%1$s</xliff:g>, futhi lesi sivivinyo sisonqenqemeni <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Qala ngqo onqenqemeni olushiwo isivivinyo.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Imenyu yonqenqema ivuleke esikhundleni salokhu kunyakaza.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Ukushelela ngokulandela unqenqema olunemenyu kuvula imenyu. Qala onqenqemeni olushiwo isivivinyo.</string>
+    <string name="gesture_trainer_group_three_part">Ukuswayipha kwezingxenye ezintathu</string>
+    <string name="gesture_trainer_group_two_stroke">Ukuswayipha kabili</string>
+    <string name="gesture_trainer_group_shake">Nyakazisa</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Ukuswayipha kwezingxenye ezintathu kushiyiwe: <xliff:g id="setting">%1$s</xliff:g> kuvuliwe.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Ukuswayipha kabili kushiyiwe: <xliff:g id="setting">%1$s</xliff:g> ngu-<xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Ukunyakazisa akuqalisi umyalo ngesikhathi sesivivinyo. I-<xliff:g id="setting">%1$s</xliff:g> isetha ukuthi ukunyakazisa kumele kube namandla kangakanani.</string>
+    <string name="gesture_trainer_go_shake">Nyakazisa ifoni izikhathi ezingu-<xliff:g id="tries">%1$d</xliff:g>, ngekhefu elifushane ngemva kokunyakazisa ngakunye.</string>
+    <string name="gesture_trainer_how_shake">Bamba ifoni uqinise bese uyinyakazisa ngokushesha uye emuva naphambili, sengathi uvuthulula iconsi lamanzi: okungenani kabili ngasohlangothini ngalunye, konke cishe ezingxenyeni ezimbili kwezintathu zomzuzwana. Bese uyibamba ithule.</string>
+    <string name="gesture_trainer_how_two_stroke">Swayiphela <xliff:g id="first">%1$s</xliff:g> ngomunwe owodwa, cishe u-2 cm, bese uphakamisa. Bese ngokushesha, kungakapheli ama-ms angu-<xliff:g id="time">%3$d</xliff:g>, swayiphela <xliff:g id="second">%2$s</xliff:g> ngomunwe owodwa, cishe u-2 cm, bese uphakamisa.</string>
+    <string name="gesture_trainer_how_three_part">Thinta isikrini ngomunwe owodwa futhi, ngaphandle kokuphakamisa, swayiphela <xliff:g id="first">%1$s</xliff:g>, bese ujika kakhulu uswayiphele <xliff:g id="second">%2$s</xliff:g>, bese ujika kakhulu futhi uswayiphele <xliff:g id="third">%3$s</xliff:g>, ingxenye ngayinye cishe u-2 cm, bese uphakamisa. Kwenze kube ukunyakaza okukodwa okusheshayo nokushelelayo okunamakhona abukhali, hhayi amajika.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Beka umunwe owodwa engxenyeni yesithathu ephezulu yesikrini bese omunye engxenyeni yesithathu engezansi, isibonelo isithupha ngezansi nomunwe wokukhomba phezulu.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Iminwe ibingeyona eyodwa engxenyeni yesithathu ephezulu yesikrini nenye engxenyeni yesithathu engezansi.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Akubanga khona ukuswayipha kwesibili.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Ukuswayipha kwesibili kuqale ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> ngemva kokokuqala, futhi kuvunyelwe ama-ms angu-<xliff:g id="limit">%2$d</xliff:g> ubuningi.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Ukuswayipha kokuqala kuye <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Ukuswayipha kwesibili kuye <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Ukunyakazisa bekulula kakhulu: <xliff:g id="percent">%1$d</xliff:g>%% wamandla adingekayo.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Ukunyakaza uye emuva naphambili: <xliff:g id="swings">%1$d</xliff:g> kokungu-<xliff:g id="wanted">%2$d</xliff:g> okudingekayo.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Hlukanisa iminwe kakhulu, omunye eduze konqenqema olungaphezulu nomunye eduze konqenqema olungezansi.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Ngemva kokuswayipha kokuqala, phakamisa umunwe bese uswayipha futhi ngokushesha.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Qala ukuswayipha kwesibili ngokushesha ngemva kokuphakamisa umunwe.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Nyakazisa ngamandla nangokushesha.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Nyakazisa ngokushesha, uye emuva naphambili okungenani kabili ngasohlangothini ngalunye, ngaphandle kokuma phakathi.</string>
+    <string name="gesture_trainer_measure_shake_strength">ukunyakaza okunamandla kakhulu <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Ukunyakazisa kulula. I-<xliff:g id="setting">%1$s</xliff:g> ephezulu ithola ukunyakazisa okulula, futhi ingathola ukuphatha ifoni njengokunyakazisa.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Ukuswayipha kwesibili kuqala sekwephuzile. I-<xliff:g id="setting">%1$s</xliff:g> ende ivumela ukuswayipha kwesibili kamuva, futhi ukuswayipha okukodwa bese kulinda isikhathi eside ngaphambi kokuqalisa.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> kuvuliwe.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> kuvaliwe: ukuswayipha ngeminwe emi-2 kuskrola i-app, futhi ukukhuhla nakho kuvamise ukuskrola. Uma isethingi ivuliwe, ukuswayipha ngeminwe emi-2 kuqalisa imiyalo ye-SandFly esikhundleni sokuskrola.</string>
+    <string name="gesture_trainer_measure_first_stroke">ukuswayipha kokuqala ama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_second_stroke">ukuswayipha kwesibili ama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_whole_gesture">ukunyakaza konke ama-ms angu-<xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_stroke_gap">kuphakanyisiwe ama-ms angu-<xliff:g id="ms">%1$d</xliff:g> phakathi kwakho</string>
+</resources>

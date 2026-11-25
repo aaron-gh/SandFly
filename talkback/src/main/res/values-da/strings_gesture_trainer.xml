@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Bevægelsestræning</string>
+    <string name="gesture_trainer_intro">Vælg en gruppe bevægelser. Hver øvelse beskriver en bevægelse. Lav bevægelsen <xliff:g id="tries">%1$d</xliff:g> gange; resultatet af hvert forsøg læses op. Efter det sidste forsøg viser skærmen målingerne for hvert forsøg, hvad du skal ændre, og relevante indstillinger.</string>
+    <string name="gesture_trainer_group_one_finger">Én finger</string>
+    <string name="gesture_trainer_group_two_fingers">To fingre</string>
+    <string name="gesture_trainer_group_three_fingers">Tre fingre</string>
+    <string name="gesture_trainer_group_four_fingers">Fire fingre</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Knib, drej og frem og tilbage</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> øvelser</string>
+    <string name="gesture_trainer_close">Luk</string>
+    <string name="gesture_trainer_no_detection">Bevægelsestræning kræver Android 13 eller nyere.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Frem-og-tilbage-bevægelser og vinkelbevægelser er udeladt: <xliff:g id="setting">%1$s</xliff:g> er slået til.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Strygninger med to fingre er udeladt: <xliff:g id="setting">%1$s</xliff:g> er slået fra, så de ruller i apps.</string>
+    <string name="gesture_trainer_exercise_heading">Øvelse <xliff:g id="number">%1$d</xliff:g> af <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Start</string>
+    <string name="gesture_trainer_skip">Spring denne øvelse over</string>
+    <string name="gesture_trainer_back_to_groups">Tilbage til grupper</string>
+    <string name="gesture_trainer_go">Lav bevægelsen <xliff:g id="tries">%1$d</xliff:g> gange et vilkårligt sted på skærmen. Hver berøring er et forsøg.</string>
+    <string name="gesture_trainer_fingers_1">én finger</string>
+    <string name="gesture_trainer_fingers_2">to fingre side om side, ca. 1 cm fra hinanden</string>
+    <string name="gesture_trainer_fingers_3">tre fingre side om side, lidt fra hinanden</string>
+    <string name="gesture_trainer_fingers_4">fire fingre side om side, lidt fra hinanden</string>
+    <string name="gesture_trainer_direction_up">op</string>
+    <string name="gesture_trainer_direction_down">ned</string>
+    <string name="gesture_trainer_direction_left">til venstre</string>
+    <string name="gesture_trainer_direction_right">til højre</string>
+    <string name="gesture_trainer_how_swipe">Rør ved skærmen med <xliff:g id="fingers">%1$s</xliff:g>, og glid straks <xliff:g id="direction">%2$s</xliff:g> i en lige linje i ca. 2 til 3 cm, og løft. Begynd at bevæge med det samme: en finger, der først hviler, starter Udforsk ved berøring.</string>
+    <string name="gesture_trainer_how_swipe_multi">Sæt fingrene ned samtidig, i samme øjeblik, og bevæg dem alle i samme retning. Alle fingre skal gå <xliff:g id="direction">%1$s</xliff:g> hele tiden, så hold linjen lige.</string>
+    <string name="gesture_trainer_how_back_and_forth">Rør ved skærmen med én finger, og glid <xliff:g id="first">%1$s</xliff:g> i ca. 2 cm, og gå derefter uden at løfte lige tilbage <xliff:g id="second">%2$s</xliff:g> i ca. 2 cm, og løft. Gør det til én hurtig, jævn bevægelse.</string>
+    <string name="gesture_trainer_how_angle">Rør ved skærmen med <xliff:g id="fingers">%1$s</xliff:g>, og glid <xliff:g id="first">%2$s</xliff:g> i ca. 2 cm, drej derefter skarpt uden at løfte, og glid <xliff:g id="second">%3$s</xliff:g> i ca. 2 cm, og løft. Lav drejet som et skarpt hjørne, som bogstavet L, ikke som en bue.</string>
+    <string name="gesture_trainer_taps_1">én gang</string>
+    <string name="gesture_trainer_taps_2">to gange</string>
+    <string name="gesture_trainer_taps_3">tre gange</string>
+    <string name="gesture_trainer_taps_4">fire gange</string>
+    <string name="gesture_trainer_how_taps">Tryk <xliff:g id="taps">%1$s</xliff:g> med <xliff:g id="fingers">%2$s</xliff:g>. Sæt fingrene ned samtidig, og løft dem samtidig, hurtigt og uden at glide.</string>
+    <string name="gesture_trainer_how_taps_quick">Hold trykkene hurtige og på samme sted: det næste tryk skal komme inden for <xliff:g id="gap">%1$d</xliff:g> ms efter det forrige.</string>
+    <string name="gesture_trainer_how_hold">Sæt <xliff:g id="fingers">%1$s</xliff:g> på skærmen samtidig, og hold dem stille uden at glide i mindst <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Uden en anden tildelt kommando slår denne bevægelse SandFly fra. I træningen kører den intet.</string>
+    <string name="gesture_trainer_how_taps_hold">Tryk <xliff:g id="taps">%1$s</xliff:g> med <xliff:g id="fingers">%2$s</xliff:g>, og lad fingrene blive stille på skærmen ved sidste tryk i mindst <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Brug tommelfingeren, pegefingeren og langfingeren.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Sæt pegefingeren og langfingeren ved siden af hinanden og tommelfingeren og ringfingeren et par centimeter væk på hver side. Før derefter alle fire fingerspidser sammen til ét punkt.</string>
+    <string name="gesture_trainer_how_pinch">Sæt <xliff:g id="fingers">%1$d</xliff:g> fingre på skærmen, spredt langt fra hinanden. Før dem derefter lige mod hinanden med mindst 1 cm, som om du samler noget op, og løft dem fra skærmen. Bevæg kun fingrene, ikke hele hånden, og ikke i en bue.</string>
+    <string name="gesture_trainer_how_spread">Sæt <xliff:g id="fingers">%1$d</xliff:g> fingre på skærmen tæt sammen. Bevæg dem derefter lige fra hinanden med mindst 1 cm, og løft dem fra skærmen. Bevæg kun fingrene, ikke hele hånden, og ikke i en bue.</string>
+    <string name="gesture_trainer_clockwise">med uret</string>
+    <string name="gesture_trainer_counterclockwise">mod uret</string>
+    <string name="gesture_trainer_how_rotate">Sæt to fingre på skærmen, ca. 2 til 3 cm fra hinanden, og drej dem <xliff:g id="way">%1$s</xliff:g> om deres midtpunkt, som når du drejer på en drejeknap, ca. en kvart omgang. Løft derefter.</string>
+    <string name="gesture_trainer_how_scrub">Sæt to fingre på skærmen, og bevæg dem hurtigt ca. 2 cm til den ene side og tilbage, som når du visker noget ud, alt sammen inden for ca. et sekund. Løft derefter.</string>
+    <string name="gesture_trainer_edge_bottom">ved den nederste kant</string>
+    <string name="gesture_trainer_edge_top_left">ved den øverste kant, i dens venstre halvdel</string>
+    <string name="gesture_trainer_edge_top_right">ved den øverste kant, i dens højre halvdel</string>
+    <string name="gesture_trainer_edge_left_top">ved den venstre kant, i dens øverste halvdel</string>
+    <string name="gesture_trainer_edge_left_bottom">ved den venstre kant, i dens nederste halvdel</string>
+    <string name="gesture_trainer_edge_right_top">ved den højre kant, i dens øverste halvdel</string>
+    <string name="gesture_trainer_edge_right_bottom">ved den højre kant, i dens nederste halvdel</string>
+    <string name="gesture_trainer_edge_left">ved den venstre kant</string>
+    <string name="gesture_trainer_edge_right">ved den højre kant</string>
+    <string name="gesture_trainer_edge_top">ved den øverste kant</string>
+    <string name="gesture_trainer_how_edge">Sæt én finger <xliff:g id="edge">%1$s</xliff:g>, højst <xliff:g id="edge_width">%2$d</xliff:g> mm fra kanten, og glid <xliff:g id="direction">%3$s</xliff:g> ind på skærmen til det første klik, ca. <xliff:g id="distance">%4$d</xliff:g> mm. Løft derefter med det samme: efter det andet klik er glidningen en lang glidning.</string>
+    <string name="gesture_trainer_how_edge_long">Sæt én finger <xliff:g id="edge">%1$s</xliff:g>, højst <xliff:g id="edge_width">%2$d</xliff:g> mm fra kanten, og glid <xliff:g id="direction">%3$s</xliff:g> ind på skærmen forbi det første klik til det andet, ca. <xliff:g id="distance">%4$d</xliff:g> mm. Løft derefter.</string>
+    <string name="gesture_trainer_how_along">Glid én finger <xliff:g id="direction">%2$s</xliff:g> langs <xliff:g id="edge">%1$s</xliff:g>, mindst <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">øverste venstre</string>
+    <string name="gesture_trainer_corner_top_right">øverste højre</string>
+    <string name="gesture_trainer_corner_bottom_left">nederste venstre</string>
+    <string name="gesture_trainer_corner_bottom_right">nederste højre</string>
+    <string name="gesture_trainer_how_corner">Tryk <xliff:g id="taps">%1$s</xliff:g> i skærmens <xliff:g id="corner">%2$s</xliff:g> hjørne. Sæt fingeren helt ude i hjørnet, højst <xliff:g id="size">%3$d</xliff:g> mm fra begge kanter, og løft hurtigt, inden for <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Med større hjørner kan et tryk på en knap nær et hjørne, f.eks. Tilbage øverst til venstre, køre hjørnebevægelsen i stedet.</string>
+    <string name="gesture_trainer_rating_precise">genkendt, præcis</string>
+    <string name="gesture_trainer_rating_good">genkendt, god</string>
+    <string name="gesture_trainer_rating_borderline">genkendt, men tæt på en grænse</string>
+    <string name="gesture_trainer_try_recognized">Forsøg <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Forsøg <xliff:g id="number">%1$d</xliff:g>: ikke genkendt.</string>
+    <string name="gesture_trainer_try_other">Forsøg <xliff:g id="number">%1$d</xliff:g>: genkendt som <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> af <xliff:g id="tries">%3$d</xliff:g> genkendt</string>
+    <string name="gesture_trainer_results_tries">Dine forsøg</string>
+    <string name="gesture_trainer_results_change">Hvad du skal ændre</string>
+    <string name="gesture_trainer_results_close">Tæt på en grænse</string>
+    <string name="gesture_trainer_results_all_good">Alle forsøg blev genkendt inden for grænserne.</string>
+    <string name="gesture_trainer_results_settings">Indstillinger, der kan hjælpe</string>
+    <string name="gesture_trainer_next">Næste øvelse</string>
+    <string name="gesture_trainer_repeat">Gentag</string>
+    <string name="gesture_trainer_finish">Afslut</string>
+    <string name="gesture_trainer_group_done">Du har gennemført alle øvelser i <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Skift <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">tog <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm lang</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm pr. sekund</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> grader fra en lige linje</string>
+    <string name="gesture_trainer_measure_start">første centimeter på <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">fingrene landede med <xliff:g id="ms">%1$d</xliff:g> ms mellemrum</string>
+    <string name="gesture_trainer_measure_tap">tryk på <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms mellem tryk</string>
+    <string name="gesture_trainer_measure_spread">fingrene flyttede sig <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">drejede <xliff:g id="degrees">%1$.0f</xliff:g> grader</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm fra hjørnets kanter</string>
+    <string name="gesture_trainer_measure_edge">startede <xliff:g id="mm">%1$.0f</xliff:g> mm fra kanten</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Fingre på skærmen: <xliff:g id="fingers">%1$d</xliff:g> i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Fingrene landede med <xliff:g id="ms">%1$d</xliff:g> ms mellemrum, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">En finger blev løftet, før alle fingre var nede.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Fingrene blev løftet med <xliff:g id="ms">%1$d</xliff:g> ms mellemrum, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_became_exploration">Fingeren holdt stille for længe eller bevægede sig for langsomt i starten, så berøringen blev til Udforsk ved berøring.</string>
+    <string name="gesture_trainer_finding_slow_start">Den første centimeter tog <xliff:g id="ms">%1$d</xliff:g> ms, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_paused">Fingeren sænkede farten i <xliff:g id="ms">%1$d</xliff:g> ms, og hver centimeter må højst tage <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Bevægelsen var kun <xliff:g id="mm">%1$.0f</xliff:g> mm, og den skal være mindst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Fingeren begyndte at gå <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Fingrene begyndte at gå <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Banen afveg <xliff:g id="degrees">%1$.0f</xliff:g> grader fra en lige linje, og højst <xliff:g id="limit">%2$.0f</xliff:g> er tilladt.</string>
+    <string name="gesture_trainer_finding_curved">Banen knækkede i <xliff:g id="parts">%1$d</xliff:g> dele i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Drejet blev ikke fundet.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Efter drejet gik fingeren <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Fingeren gled <xliff:g id="mm">%1$.1f</xliff:g> mm under et tryk, og højst <xliff:g id="limit">%2$.1f</xliff:g> mm er tilladt.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Et tryk varede <xliff:g id="ms">%1$d</xliff:g> ms, længere end <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Det sidste tryk blev holdt i <xliff:g id="ms">%1$d</xliff:g> ms, og det skal være mindst <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> tryk i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> tryk i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Der gik <xliff:g id="ms">%1$d</xliff:g> ms mellem tryk, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_taps_apart">Trykkene landede <xliff:g id="mm">%1$.0f</xliff:g> mm fra hinanden, og højst <xliff:g id="limit">%2$.0f</xliff:g> mm er tilladt.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Fingrene flyttede sig kun <xliff:g id="mm">%1$.0f</xliff:g> mm, og de skal flytte sig mindst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Fingrene bevægede sig den anden vej.</string>
+    <string name="gesture_trainer_finding_moved_together">Hele hånden gled <xliff:g id="mm">%1$.0f</xliff:g> mm hen over skærmen, mere end fingrene bevægede sig mod eller fra hinanden.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Fingrene drejede kun <xliff:g id="degrees">%1$.0f</xliff:g> grader, og de skal dreje mindst <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Fingrene drejede den anden vej.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Det første strøg var <xliff:g id="mm">%1$.0f</xliff:g> mm, og det skal være mindst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Strøget tilbage var <xliff:g id="mm">%1$.0f</xliff:g> mm, og det skal være mindst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Frem og tilbage tog <xliff:g id="ms">%1$d</xliff:g> ms, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Fingeren landede <xliff:g id="mm">%1$.0f</xliff:g> mm fra kanten, og kanten er <xliff:g id="limit">%2$.0f</xliff:g> mm bred.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Fingeren startede i den anden halvdel af kanten.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Fingeren gled <xliff:g id="mm">%1$.0f</xliff:g> mm, og den skal glide mindst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">For lang glidning: fingeren gik forbi det andet klik, <xliff:g id="mm">%1$.0f</xliff:g> mm, og det andet klik er ved <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Det tog <xliff:g id="ms">%1$d</xliff:g> ms at nå klikket, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Glidningen gik <xliff:g id="degrees">%1$.0f</xliff:g> grader til siden, og højst <xliff:g id="limit">%2$.0f</xliff:g> er tilladt.</string>
+    <string name="gesture_trainer_finding_corner_missed">Trykket landede <xliff:g id="mm">%1$.0f</xliff:g> mm fra hjørnets kanter, og hjørnet er <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Et hjørnetryk varede <xliff:g id="ms">%1$d</xliff:g> ms, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_none">Der blev ikke registreret nogen berøring, der svarer til bevægelsen.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Kontrollér, hvor mange fingre der rører glasset. En håndflade eller en anden finger, der hviler på skærmen, tæller også.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Sæt alle fingre ned i samme øjeblik, som én hånd, ikke én efter én.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Sæt først alle fingre ned, og bevæg eller løft dem derefter.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Løft alle fingre i samme øjeblik.</string>
+    <string name="gesture_trainer_tip_slow_start">Begynd at bevæge fingeren i det øjeblik, du rører ved skærmen, og bevæg hurtigere i starten.</string>
+    <string name="gesture_trainer_tip_paused">Hold fingeren i bevægelse med jævn fart, indtil du løfter. Sæt ikke farten ned mod slutningen.</string>
+    <string name="gesture_trainer_tip_too_short">Gør bevægelsen længere, ca. 2 til 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Kontrollér retningen helt i starten af bevægelsen. Det hjælper at holde telefonen lige foran dig.</string>
+    <string name="gesture_trainer_tip_off_line">Bevæg kun i retningen, ikke diagonalt. Pegefingeren holder en mere lige linje end tommelfingeren.</string>
+    <string name="gesture_trainer_tip_curved">Hold linjen lige, og løft lige ved slutningen uden at krumme fingeren til siden, når du løfter.</string>
+    <string name="gesture_trainer_tip_turn_missing">Skift retning skarpt, i en ret vinkel eller lige tilbage, uden at løfte. Hver del skal være ca. 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Kontrollér efter drejet, hvilken vej du går: den anden del skal gå i den anden retning, som bevægelsen nævner.</string>
+    <string name="gesture_trainer_tip_tap_moved">Tryk lige ned og op med fingerspidsen uden at glide.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Gør hvert tryk kort: rør, og løft med det samme.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Hold fingrene stille på skærmen ved det sidste tryk i hele holdetiden.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Tæl trykkene, og lav dem alle hurtigt i ét træk.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Tæl trykkene. En finger, der hopper på glasset, giver et ekstra tryk.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Tryk hurtigere: start næste tryk lige efter, du har løftet.</string>
+    <string name="gesture_trainer_tip_taps_apart">Tryk på samme sted hver gang.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Bevæg fingrene længere, mindst 1 cm tættere sammen eller fra hinanden.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Knib er fingre, der bevæger sig mod hinanden, spred er fingre, der bevæger sig fra hinanden.</string>
+    <string name="gesture_trainer_tip_moved_together">Bevæg kun fingrene mod eller fra hinanden. Lad ikke hele hånden glide hen over skærmen.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Drej længere, som når du drejer en drejeknap en kvart omgang.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Med uret betyder at dreje samme vej som urets visere: den øverste finger bevæger sig til højre.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Gør det første strøg mindst 1 cm langt.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Kom tilbage den anden vej efter det første strøg, før du løfter.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Gør frem og tilbage hurtigt, frem og tilbage på ca. et sekund.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Start helt ude ved kanten med fingerspidsen delvist uden for skærmen.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Kontrollér, hvilken halvdel af kanten du starter i.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Glid længere, indtil du hører klikket, og løft derefter.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Løft lige efter det første klik, før det andet.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Glid hurtigere ind uden at stoppe før klikket.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Glid lige ind fra kanten eller lige langs den, ikke diagonalt.</string>
+    <string name="gesture_trainer_tip_corner_missed">Sæt fingeren helt ind i hjørnet, så den rører begge kanter.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Løft hurtigere efter at have rørt hjørnet.</string>
+    <string name="gesture_trainer_close_to_limit">Tæt på grænsen: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Strygninger starter langsomt. En længere <xliff:g id="setting">%1$s</xliff:g> tillader en langsommere start.</string>
+    <string name="gesture_trainer_advice_tap_time">Tryk er langsomme. En længere <xliff:g id="setting">%1$s</xliff:g> tillader langsommere tryk.</string>
+    <string name="gesture_trainer_advice_edge_width">Strygninger starter for langt fra kanten. En større <xliff:g id="setting">%1$s</xliff:g> gør også strygninger, der starter nær en kant, til kantstrygninger.</string>
+    <string name="gesture_trainer_advice_corner_size">Tryk lander uden for hjørnet. En større <xliff:g id="setting">%1$s</xliff:g> gør hjørnerne større.</string>
+    <string name="gesture_trainer_advice_corner_time">Hjørnetryk er langsomme. En længere <xliff:g id="setting">%1$s</xliff:g> tillader langsommere tryk.</string>
+    <string name="gesture_trainer_menu_option">Valgmulighed <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: vælg element <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Glid én finger op eller ned <xliff:g id="edge">%1$s</xliff:g> i mindst <xliff:g id="distance">%2$d</xliff:g> mm for at åbne menuen. Den har <xliff:g id="count">%3$d</xliff:g> elementer fra top til bund, hver ca. <xliff:g id="size">%6$s</xliff:g> cm høj. Element <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, er <xliff:g id="from">%7$s</xliff:g> til <xliff:g id="to">%8$s</xliff:g> cm under skærmens top. Løft fingeren, når elementet læses op.</string>
+    <string name="gesture_trainer_menu_sample">Denne kant har ingen menu. Øvelsen bruger <xliff:g id="count">%1$d</xliff:g> eksempelelementer.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Forsøg <xliff:g id="number">%1$d</xliff:g>: menuen lukkede uden et valg.</string>
+    <string name="gesture_trainer_try_menu_other">Forsøg <xliff:g id="number">%1$d</xliff:g>: valgte <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">løftet ved element <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Fingeren startede helt øverst eller nederst på kanten, hvor hjørnerne og den øverste og nederste kant er.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Fingeren blev løftet <xliff:g id="mm">%1$.0f</xliff:g> mm fra kanten, og menuen lukker efter <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Fingeren blev løftet ved element <xliff:g id="item">%1$d</xliff:g> i stedet for element <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Start lidt væk fra kantens øverste og nederste ende.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Hold fingeren tæt på kanten, mens du glider, og løft den dér.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Hvert element har en fast plads langs kanten, og elementet, hvor fingeren løftes, vælges. Løft, når elementet læses op.</string>
+    <string name="gesture_trainer_contents">Indhold</string>
+    <string name="gesture_trainer_contents_heading">Indhold: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">udført, <xliff:g id="hits">%1$d</xliff:g> af <xliff:g id="tries">%2$d</xliff:g> genkendt</string>
+    <string name="gesture_trainer_group_tap_swipe">Tryk og stryg</string>
+    <string name="gesture_trainer_group_edge_swipes">Strygninger fra kanterne</string>
+    <string name="gesture_trainer_group_along_edges">Glidninger langs kanterne</string>
+    <string name="gesture_trainer_group_edge_menus">Kantmenuer</string>
+    <string name="gesture_trainer_group_corners">Hjørner</string>
+    <string name="gesture_trainer_group_back_tap">Tryk på bagsiden</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Tryk med to fingre efterfulgt af en strygning med to fingre er udeladt: <xliff:g id="setting">%1$s</xliff:g> er slået fra.</string>
+    <string name="gesture_trainer_how_swipe_hold">Hold derefter fingeren stille uden at løfte i mindst <xliff:g id="hold">%1$d</xliff:g> ms, og løft.</string>
+    <string name="gesture_trainer_half_top">øverste</string>
+    <string name="gesture_trainer_half_bottom">nederste</string>
+    <string name="gesture_trainer_how_taps_half">Tryk i skærmens <xliff:g id="half">%1$s</xliff:g> halvdel. Punktet mellem fingrene bestemmer halvdelen.</string>
+    <string name="gesture_trainer_same_fingers">de samme fingre</string>
+    <string name="gesture_trainer_how_tap_swipe">Tryk <xliff:g id="taps">%1$s</xliff:g> med <xliff:g id="fingers">%2$s</xliff:g>. Lige efter det sidste tryk, inden for <xliff:g id="gap">%3$d</xliff:g> ms, skal du røre ved skærmen igen med <xliff:g id="swipe_fingers">%4$s</xliff:g> og glide <xliff:g id="direction">%5$s</xliff:g> i en lige linje i ca. 2 til 3 cm, og løft derefter.</string>
+    <string name="gesture_trainer_how_corner_hold">Lad fingeren blive stille i hjørnet ved det sidste tryk i mindst <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Hold telefonen i hånden i siderne, og tryk midt på bagsiden <xliff:g id="taps">%1$s</xliff:g> med en fingerspids, fast og hurtigt, som når du banker på en dør. Hold trykkene tæt efter hinanden: højst <xliff:g id="gap">%2$d</xliff:g> ms mellem dem. Rør ikke ved skærmen, mens du trykker.</string>
+    <string name="gesture_trainer_back_tap_info">Tryk på bagsiden kører ingen kommandoer under øvelsen. <xliff:g id="setting">%1$s</xliff:g> bestemmer, hvor hårdt et tryk skal være.</string>
+    <string name="gesture_trainer_go_placed">Lav bevægelsen <xliff:g id="tries">%1$d</xliff:g> gange.</string>
+    <string name="gesture_trainer_along_left">den venstre kant</string>
+    <string name="gesture_trainer_along_right">den højre kant</string>
+    <string name="gesture_trainer_along_top">den øverste kant</string>
+    <string name="gesture_trainer_along_bottom">den nederste kant</string>
+    <string name="gesture_trainer_left_out_along_menu">Glidninger langs <xliff:g id="edge">%1$s</xliff:g> er udeladt: den har en kantmenu, så en glidning langs den åbner menuen i stedet for at køre en bevægelse.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Glidninger langs <xliff:g id="edge">%1$s</xliff:g> er udeladt: den ruller, så en glidning langs den ruller appen i stedet for at køre en bevægelse.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Fingeren bevægede sig for langt væk fra kanten.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Hold fingeren helt ude på glassets kant, lige langs kanten.</string>
+    <string name="gesture_trainer_go_back_tap">Lav bevægelsen Tryk på bagsiden <xliff:g id="tries">%1$d</xliff:g> gange. En berøring af skærmen gør forsøget mislykket.</string>
+    <string name="gesture_trainer_no_accelerometer">Denne øvelse kræver et accelerometer. Der er intet tilgængeligt.</string>
+    <string name="gesture_trainer_measure_hold">holdt stille <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">tryk med styrke <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Fingeren holdt stille i <xliff:g id="ms">%1$d</xliff:g> ms ved slutningen, og den skal holde stille i mindst <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Fingrene trykkede i den anden halvdel af skærmen.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Der kom ingen strygning efter trykkene.</string>
+    <string name="gesture_trainer_finding_swipe_late">Strygningen startede <xliff:g id="ms">%1$d</xliff:g> ms efter det sidste tryk, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Tryk på bagsiden for let: <xliff:g id="percent">%1$d</xliff:g>%% af den nødvendige styrke.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Et tryk rystede telefonen mere til siden end gennem bagsiden.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefonen var i bevægelse lige før et tryk.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Skærmen blev rørt, og tryk, mens den røres, tæller ikke.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Der gik <xliff:g id="ms">%1$d</xliff:g> ms mellem trykkene på bagsiden, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Hold fingeren stille på skærmen efter strygningen i hele holdetiden. Løft derefter.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Kontrollér, hvilken halvdel du trykker i: midten af skærmen deler den øverste halvdel fra den nederste.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Rør ved skærmen igen med det samme efter det sidste tryk, og stryg.</string>
+    <string name="gesture_trainer_tip_swipe_late">Start strygningen lige efter det sidste tryk, uden pause.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Tryk fastere med fingerspidsen eller en negl nær midten af bagsiden.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Tryk lige ind i telefonens bagside, ikke på kanten eller på skrå.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Hold telefonen stille et øjeblik, før du trykker, og hold den løst, så din hånd ikke bevæger den.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Hold fingrene væk fra skærmen, mens du trykker på bagsiden: hold telefonen i siderne.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Tryk hurtigere, det ene tryk lige efter det andet.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Fingeren løftes for tidligt efter strygningen. En kortere <xliff:g id="setting">%1$s</xliff:g> tillader et kortere hold.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Tryk på bagsiden er lette. En højere <xliff:g id="setting">%1$s</xliff:g> registrerer lettere tryk og kan registrere stød som tryk.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Fingrene drejede <xliff:g id="degrees">%1$.0f</xliff:g> grader, og fra <xliff:g id="limit">%2$.0f</xliff:g> grader er bevægelsen en drejning.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Bevæg fingrene i en lige linje mod eller fra hinanden, ikke i en bue om hinanden.</string>
+    <string name="gesture_trainer_finding_other_gesture">Berøringen svarede i stedet til den bevægelse.</string>
+    <string name="gesture_trainer_side_left">venstre</string>
+    <string name="gesture_trainer_side_right">højre</string>
+    <string name="gesture_trainer_side_top">øverste</string>
+    <string name="gesture_trainer_side_bottom">nederste</string>
+    <string name="gesture_trainer_finding_wrong_edge">Fingeren startede ved den <xliff:g id="side">%1$s</xliff:g> kant, og denne øvelse er ved den <xliff:g id="expected">%2$s</xliff:g> kant.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Start helt ude på den kant, som øvelsen nævner.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">En kantmenu åbnede i stedet for denne bevægelse.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">En glidning langs en kant med en menu åbner menuen. Start ved den kant, som øvelsen nævner.</string>
+    <string name="gesture_trainer_group_three_part">Tredelte strygninger</string>
+    <string name="gesture_trainer_group_two_stroke">Strygninger i to strøg</string>
+    <string name="gesture_trainer_group_shake">Ryst</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Tredelte strygninger er udeladt: <xliff:g id="setting">%1$s</xliff:g> er slået til.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Strygninger i to strøg er udeladt: <xliff:g id="setting">%1$s</xliff:g> er <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Rystelsen kører ingen kommando under øvelsen. <xliff:g id="setting">%1$s</xliff:g> bestemmer, hvor kraftig en rystelse skal være.</string>
+    <string name="gesture_trainer_go_shake">Ryst telefonen <xliff:g id="tries">%1$d</xliff:g> gange med en kort pause efter hver rystelse.</string>
+    <string name="gesture_trainer_how_shake">Hold telefonen fast, og ryst den hurtigt frem og tilbage, som når du ryster en vanddråbe af: mindst to gange i hver retning, alt sammen inden for ca. to tredjedele af et sekund. Hold den derefter stille.</string>
+    <string name="gesture_trainer_how_two_stroke">Stryg <xliff:g id="first">%1$s</xliff:g> med én finger, ca. 2 cm, og løft. Stryg derefter med det samme, inden for <xliff:g id="time">%3$d</xliff:g> ms, <xliff:g id="second">%2$s</xliff:g> med én finger, ca. 2 cm, og løft.</string>
+    <string name="gesture_trainer_how_three_part">Rør ved skærmen med én finger, og stryg uden at løfte <xliff:g id="first">%1$s</xliff:g>, drej derefter skarpt og stryg <xliff:g id="second">%2$s</xliff:g>, drej derefter skarpt igen og stryg <xliff:g id="third">%3$s</xliff:g>, hver del ca. 2 cm, og løft. Gør det til én hurtig, jævn bevægelse med skarpe hjørner, ikke buer.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Sæt én finger i skærmens øverste tredjedel og den anden i den nederste tredjedel, f.eks. tommelfingeren nederst og pegefingeren øverst.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Fingrene var ikke én i skærmens øverste tredjedel og én i den nederste tredjedel.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Der var ingen anden strygning.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Den anden strygning startede <xliff:g id="ms">%1$d</xliff:g> ms efter den første, og højst <xliff:g id="limit">%2$d</xliff:g> ms er tilladt.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Den første strygning gik <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Den anden strygning gik <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Rystelsen var for let: <xliff:g id="percent">%1$d</xliff:g>%% af den nødvendige styrke.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Udsving frem og tilbage: <xliff:g id="swings">%1$d</xliff:g> af de <xliff:g id="wanted">%2$d</xliff:g> nødvendige.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Spred fingrene langt fra hinanden, én nær den øverste kant og én nær den nederste kant.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Løft fingeren efter den første strygning, og stryg igen med det samme.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Start den anden strygning lige efter, du har løftet fingeren.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Ryst hårdere og hurtigere.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Ryst hurtigere, frem og tilbage mindst to gange i hver retning, uden at stoppe undervejs.</string>
+    <string name="gesture_trainer_measure_shake_strength">kraftigste bevægelse <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Rystelser er lette. En højere <xliff:g id="setting">%1$s</xliff:g> registrerer lettere rystelser og kan registrere, at telefonen bæres, som en rystelse.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Den anden strygning starter sent. En længere <xliff:g id="setting">%1$s</xliff:g> tillader en senere anden strygning, og en enkelt strygning venter så længere, før den kører.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> er slået til.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> er slået fra: strygninger med to fingre ruller i appen, og frem og tilbage ruller oftest også. Med indstillingen slået til kører strygninger med to fingre SandFly-kommandoer i stedet for at rulle.</string>
+    <string name="gesture_trainer_measure_first_stroke">første strygning <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">anden strygning <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">hele bevægelsen <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">løftet i <xliff:g id="ms">%1$d</xliff:g> ms mellem dem</string>
+</resources>

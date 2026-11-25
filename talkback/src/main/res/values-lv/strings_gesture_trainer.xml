@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Žestu trenažieris</string>
+    <string name="gesture_trainer_intro">Izvēlieties žestu grupu. Katrs vingrinājums apraksta vienu žestu. Veiciet žestu <xliff:g id="tries">%1$d</xliff:g> reizes; katra mēģinājuma rezultāts tiek izrunāts. Pēc pēdējā mēģinājuma ekrānā ir redzami katra mēģinājuma mērījumi, kas jāmaina un saistītie iestatījumi.</string>
+    <string name="gesture_trainer_group_one_finger">Viens pirksts</string>
+    <string name="gesture_trainer_group_two_fingers">Divi pirksti</string>
+    <string name="gesture_trainer_group_three_fingers">Trīs pirksti</string>
+    <string name="gesture_trainer_group_four_fingers">Četri pirksti</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Savilkšana, pagriešana un ātra vilkšana šurpu turpu</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, vingrinājumu skaits: <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Aizvērt</string>
+    <string name="gesture_trainer_no_detection">Žestu trenažierim nepieciešama Android 13 vai jaunāka versija.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Divvirzienu un leņķveida žesti ir izlaisti: iestatījums <xliff:g id="setting">%1$s</xliff:g> ir ieslēgts.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Vilkšana ar 2 pirkstiem ir izlaista: iestatījums <xliff:g id="setting">%1$s</xliff:g> ir izslēgts, tāpēc tā ritina lietotnes.</string>
+    <string name="gesture_trainer_exercise_heading">Vingrinājums <xliff:g id="number">%1$d</xliff:g> no <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Sākt</string>
+    <string name="gesture_trainer_skip">Izlaist šo vingrinājumu</string>
+    <string name="gesture_trainer_back_to_groups">Atpakaļ uz grupām</string>
+    <string name="gesture_trainer_go">Veiciet žestu <xliff:g id="tries">%1$d</xliff:g> reizes jebkurā ekrāna vietā. Katrs pieskāriens ir viens mēģinājums.</string>
+    <string name="gesture_trainer_fingers_1">ar vienu pirkstu</string>
+    <string name="gesture_trainer_fingers_2">ar diviem pirkstiem blakus, apmēram 1 cm attālumā</string>
+    <string name="gesture_trainer_fingers_3">ar trim pirkstiem blakus, nedaudz atstatus</string>
+    <string name="gesture_trainer_fingers_4">ar četriem pirkstiem blakus, nedaudz atstatus</string>
+    <string name="gesture_trainer_direction_up">uz augšu</string>
+    <string name="gesture_trainer_direction_down">uz leju</string>
+    <string name="gesture_trainer_direction_left">pa kreisi</string>
+    <string name="gesture_trainer_direction_right">pa labi</string>
+    <string name="gesture_trainer_how_swipe">Pieskarieties ekrānam <xliff:g id="fingers">%1$s</xliff:g> un, negaidot, velciet <xliff:g id="direction">%2$s</xliff:g> taisnā līnijā apmēram 2 līdz 3 cm, tad paceliet. Sāciet kustību uzreiz: pirksts, kas vispirms paliek uz vietas, sāk izpēti pieskaroties.</string>
+    <string name="gesture_trainer_how_swipe_multi">Novietojiet pirkstus vienlaikus, vienā mirklī, un kustiniet tos visus vienā virzienā. Katram pirkstam visu laiku jāvirzās <xliff:g id="direction">%1$s</xliff:g>, tāpēc turiet līniju taisnu.</string>
+    <string name="gesture_trainer_how_back_and_forth">Pieskarieties ekrānam ar vienu pirkstu un velciet <xliff:g id="first">%1$s</xliff:g> apmēram 2 cm, tad nepaceļot velciet taisni atpakaļ <xliff:g id="second">%2$s</xliff:g> apmēram 2 cm un paceliet. Veiciet to vienā ātrā, vienmērīgā kustībā.</string>
+    <string name="gesture_trainer_how_angle">Pieskarieties ekrānam <xliff:g id="fingers">%1$s</xliff:g> un velciet <xliff:g id="first">%2$s</xliff:g> apmēram 2 cm, tad nepaceļot asi pagriezieties un velciet <xliff:g id="second">%3$s</xliff:g> apmēram 2 cm, un paceliet. Pagriezienam jābūt asam stūrim kā burtā L, nevis lokam.</string>
+    <string name="gesture_trainer_taps_1">vienreiz</string>
+    <string name="gesture_trainer_taps_2">divreiz</string>
+    <string name="gesture_trainer_taps_3">trīsreiz</string>
+    <string name="gesture_trainer_taps_4">četrreiz</string>
+    <string name="gesture_trainer_how_taps">Pieskarieties <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Novietojiet pirkstus vienlaikus un paceliet tos vienlaikus, ātri, nevelkot.</string>
+    <string name="gesture_trainer_how_taps_quick">Pieskārieniem jābūt ātriem un vienā vietā: nākamajam pieskārienam jānotiek <xliff:g id="gap">%1$d</xliff:g> ms laikā pēc iepriekšējā.</string>
+    <string name="gesture_trainer_how_hold">Vienlaikus pieskarieties ekrānam <xliff:g id="fingers">%1$s</xliff:g> un turiet pirkstus nekustīgi, nevelkot, vismaz <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Ja nav piešķirta cita komanda, šis žests izslēdz SandFly. Trenažierī tas neko nepalaiž.</string>
+    <string name="gesture_trainer_how_taps_hold">Pieskarieties <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g> un pēdējā pieskārienā atstājiet pirkstus uz ekrāna nekustīgi vismaz <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Izmantojiet īkšķi, rādītājpirkstu un vidējo pirkstu.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Novietojiet rādītājpirkstu un vidējo pirkstu blakus, bet īkšķi un zeltnesi dažus centimetrus atstatus katrā pusē. Tad savelciet visus četrus pirkstu galus vienā punktā.</string>
+    <string name="gesture_trainer_how_pinch">Novietojiet uz ekrāna pirkstus (<xliff:g id="fingers">%1$d</xliff:g>) plaši atstatus. Tad virziet tos taisni vienu pret otru vismaz par 1 cm, it kā kaut ko paceltu, un paceliet tos no ekrāna. Kustiniet tikai pirkstus, nevis visu roku, un ne pa loku.</string>
+    <string name="gesture_trainer_how_spread">Novietojiet uz ekrāna pirkstus (<xliff:g id="fingers">%1$d</xliff:g>) cieši kopā. Tad virziet tos taisni vienu no otra vismaz par 1 cm un paceliet tos no ekrāna. Kustiniet tikai pirkstus, nevis visu roku, un ne pa loku.</string>
+    <string name="gesture_trainer_clockwise">pulksteņrādītāja virzienā</string>
+    <string name="gesture_trainer_counterclockwise">pretēji pulksteņrādītāja virzienam</string>
+    <string name="gesture_trainer_how_rotate">Novietojiet uz ekrāna divus pirkstus apmēram 2 līdz 3 cm atstatus un pagrieziet tos <xliff:g id="way">%1$s</xliff:g> ap to vidu, kā griežot regulatoru, apmēram par ceturtdaļapgriezienu. Tad paceliet.</string>
+    <string name="gesture_trainer_how_scrub">Novietojiet uz ekrāna divus pirkstus un ātri pavelciet tos uz sāniem apmēram 2 cm un atpakaļ, it kā kaut ko dzēšot, visu apmēram vienas sekundes laikā. Tad paceliet.</string>
+    <string name="gesture_trainer_edge_bottom">pie apakšējās malas</string>
+    <string name="gesture_trainer_edge_top_left">pie augšējās malas, tās kreisajā pusē</string>
+    <string name="gesture_trainer_edge_top_right">pie augšējās malas, tās labajā pusē</string>
+    <string name="gesture_trainer_edge_left_top">pie kreisās malas, tās augšējā pusē</string>
+    <string name="gesture_trainer_edge_left_bottom">pie kreisās malas, tās apakšējā pusē</string>
+    <string name="gesture_trainer_edge_right_top">pie labās malas, tās augšējā pusē</string>
+    <string name="gesture_trainer_edge_right_bottom">pie labās malas, tās apakšējā pusē</string>
+    <string name="gesture_trainer_edge_left">pie kreisās malas</string>
+    <string name="gesture_trainer_edge_right">pie labās malas</string>
+    <string name="gesture_trainer_edge_top">pie augšējās malas</string>
+    <string name="gesture_trainer_how_edge">Novietojiet vienu pirkstu <xliff:g id="edge">%1$s</xliff:g>, ne tālāk kā <xliff:g id="edge_width">%2$d</xliff:g> mm no malas, un velciet <xliff:g id="direction">%3$s</xliff:g> ekrānā līdz pirmajam klikšķim, apmēram <xliff:g id="distance">%4$d</xliff:g> mm. Tad uzreiz paceliet: aiz otrā klikšķa vilkums ir garš vilkums.</string>
+    <string name="gesture_trainer_how_edge_long">Novietojiet vienu pirkstu <xliff:g id="edge">%1$s</xliff:g>, ne tālāk kā <xliff:g id="edge_width">%2$d</xliff:g> mm no malas, un velciet <xliff:g id="direction">%3$s</xliff:g> ekrānā garām pirmajam klikšķim līdz otrajam, apmēram <xliff:g id="distance">%4$d</xliff:g> mm. Tad paceliet.</string>
+    <string name="gesture_trainer_how_along">Velciet ar vienu pirkstu <xliff:g id="direction">%2$s</xliff:g> gar <xliff:g id="edge">%1$s</xliff:g>, vismaz <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">augšējā kreisajā</string>
+    <string name="gesture_trainer_corner_top_right">augšējā labajā</string>
+    <string name="gesture_trainer_corner_bottom_left">apakšējā kreisajā</string>
+    <string name="gesture_trainer_corner_bottom_right">apakšējā labajā</string>
+    <string name="gesture_trainer_how_corner">Pieskarieties <xliff:g id="taps">%1$s</xliff:g> ekrāna <xliff:g id="corner">%2$s</xliff:g> stūrī. Novietojiet pirkstu tieši stūrī, ne tālāk kā <xliff:g id="size">%3$d</xliff:g> mm no abām malām, un ātri paceliet, <xliff:g id="time">%4$d</xliff:g> ms laikā.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Ar lielākiem stūriem pieskāriens vadīklai stūra tuvumā, piemēram, pogai Atpakaļ augšējā kreisajā stūrī, var tā vietā palaist stūra žestu.</string>
+    <string name="gesture_trainer_rating_precise">atpazīts, precīzi</string>
+    <string name="gesture_trainer_rating_good">atpazīts, labi</string>
+    <string name="gesture_trainer_rating_borderline">atpazīts, bet tuvu robežai</string>
+    <string name="gesture_trainer_try_recognized"><xliff:g id="number">%1$d</xliff:g>. mēģinājums: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing"><xliff:g id="number">%1$d</xliff:g>. mēģinājums: nav atpazīts.</string>
+    <string name="gesture_trainer_try_other"><xliff:g id="number">%1$d</xliff:g>. mēģinājums: atpazīts kā <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: atpazīti <xliff:g id="recognized">%2$d</xliff:g> no <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Jūsu mēģinājumi</string>
+    <string name="gesture_trainer_results_change">Kas jāmaina</string>
+    <string name="gesture_trainer_results_close">Tuvu robežai</string>
+    <string name="gesture_trainer_results_all_good">Visi mēģinājumi tika atpazīti robežu ietvaros.</string>
+    <string name="gesture_trainer_results_settings">Iestatījumi, kas var palīdzēt</string>
+    <string name="gesture_trainer_next">Nākamais vingrinājums</string>
+    <string name="gesture_trainer_repeat">Atkārtot</string>
+    <string name="gesture_trainer_finish">Pabeigt</string>
+    <string name="gesture_trainer_group_done">Jūs pabeidzāt visus grupas <xliff:g id="group">%1$s</xliff:g> vingrinājumus.</string>
+    <string name="gesture_trainer_open_setting">Mainīt: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">ilga <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">garums <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm sekundē</string>
+    <string name="gesture_trainer_measure_angle">novirze no taisnes <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_start">pirmais centimetrs <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">pirksti pieskārās ar <xliff:g id="ms">%1$d</xliff:g> ms starpību</string>
+    <string name="gesture_trainer_measure_tap">pieskāriens <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms starp pieskārieniem</string>
+    <string name="gesture_trainer_measure_spread">pirksti pārvietojās <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">pagrieziens <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm no stūra malām</string>
+    <string name="gesture_trainer_measure_edge">sākums <xliff:g id="mm">%1$.0f</xliff:g> mm no malas</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Pirksti uz ekrāna: <xliff:g id="fingers">%1$d</xliff:g>, nevis <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Pirksti pieskārās ar <xliff:g id="ms">%1$d</xliff:g> ms starpību, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Kāds pirksts tika pacelts, pirms visi pirksti bija novietoti.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Pirksti tika pacelti ar <xliff:g id="ms">%1$d</xliff:g> ms starpību, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Pirksts pārāk ilgi palika uz vietas vai sākumā kustējās pārāk lēni, tāpēc pieskāriens kļuva par izpēti pieskaroties.</string>
+    <string name="gesture_trainer_finding_slow_start">Pirmais centimetrs ilga <xliff:g id="ms">%1$d</xliff:g> ms, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Pirksts palēninājās uz <xliff:g id="ms">%1$d</xliff:g> ms, bet katrs centimetrs drīkst ilgt ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Kustība bija tikai <xliff:g id="mm">%1$.0f</xliff:g> mm, bet tai jābūt vismaz <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Pirksts sāka virzīties <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Pirksti sāka virzīties <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Ceļš novirzījās no taisnes par <xliff:g id="degrees">%1$.0f</xliff:g>°, bet atļauts ne vairāk kā <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_curved">Ceļa daļu skaits: <xliff:g id="parts">%1$d</xliff:g>, nevis <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Pagrieziens netika atrasts.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Pēc pagrieziena pirksts virzījās <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Pieskāriena laikā pirksts pārvietojās <xliff:g id="mm">%1$.1f</xliff:g> mm, bet atļauts ne vairāk kā <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Pieskāriens ilga <xliff:g id="ms">%1$d</xliff:g> ms, ilgāk nekā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Pēdējais pieskāriens tika turēts <xliff:g id="ms">%1$d</xliff:g> ms, bet tam jābūt vismaz <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Pieskārieni: <xliff:g id="taps">%1$d</xliff:g>, nevis <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Pieskārieni: <xliff:g id="taps">%1$d</xliff:g>, nevis <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Starp pieskārieniem pagāja <xliff:g id="ms">%1$d</xliff:g> ms, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Pieskārieni bija <xliff:g id="mm">%1$.0f</xliff:g> mm atstatus, bet atļauts ne vairāk kā <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Pirksti pārvietojās tikai <xliff:g id="mm">%1$.0f</xliff:g> mm, bet tiem jāpārvietojas vismaz <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Pirksti pārvietojās pretējā virzienā.</string>
+    <string name="gesture_trainer_finding_moved_together">Visa roka pārvietojās pa ekrānu <xliff:g id="mm">%1$.0f</xliff:g> mm, vairāk, nekā pirksti tuvojās vai attālinājās viens no otra.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Pirksti pagriezās tikai par <xliff:g id="degrees">%1$.0f</xliff:g>°, bet tiem jāpagriežas vismaz par <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Pirksti pagriezās pretējā virzienā.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Pirmais vilkums bija <xliff:g id="mm">%1$.0f</xliff:g> mm, bet tam jābūt vismaz <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Vilkums atpakaļ bija <xliff:g id="mm">%1$.0f</xliff:g> mm, bet tam jābūt vismaz <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Vilkšana šurpu turpu ilga <xliff:g id="ms">%1$d</xliff:g> ms, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Pirksts pieskārās <xliff:g id="mm">%1$.0f</xliff:g> mm no malas, bet mala ir <xliff:g id="limit">%2$.0f</xliff:g> mm plata.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Pirksts sāka otrā malas pusē.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Pirksts pārvietojās <xliff:g id="mm">%1$.0f</xliff:g> mm, bet tam jāpārvietojas vismaz <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Vilkums pārāk garš: pirksts aizgāja aiz otrā klikšķa, <xliff:g id="mm">%1$.0f</xliff:g> mm, bet otrais klikšķis ir pie <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Klikšķa sasniegšana ilga <xliff:g id="ms">%1$d</xliff:g> ms, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Vilkums novirzījās uz sāniem par <xliff:g id="degrees">%1$.0f</xliff:g>°, bet atļauts ne vairāk kā <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_corner_missed">Pieskāriens bija <xliff:g id="mm">%1$.0f</xliff:g> mm no stūra malām, bet stūris ir <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Pieskāriens stūrim ilga <xliff:g id="ms">%1$d</xliff:g> ms, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Netika noteikta neviena žestam atbilstoša kustība.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Pārbaudiet, cik pirksti pieskaras stiklam. Skaitās arī plauksta vai cits pirksts, kas atbalstās uz ekrāna.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Novietojiet visus pirkstus vienā mirklī, kā vienu roku, nevis vienu pēc otra.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Vispirms novietojiet visus pirkstus, tad kustiniet vai paceliet tos.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Paceliet visus pirkstus vienā mirklī.</string>
+    <string name="gesture_trainer_tip_slow_start">Sāciet kustību tajā brīdī, kad pieskaraties ekrānam, un sākumā kustieties ātrāk.</string>
+    <string name="gesture_trainer_tip_paused">Kustiniet pirkstu vienmērīgā ātrumā līdz pacelšanai. Nepalēniniet beigās.</string>
+    <string name="gesture_trainer_tip_too_short">Padariet kustību garāku, apmēram 2 līdz 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Pārbaudiet virzienu pašā kustības sākumā. Palīdz tālruni turēt taisni sev priekšā.</string>
+    <string name="gesture_trainer_tip_off_line">Kustieties tikai norādītajā virzienā, nevis pa diagonāli. Rādītājpirksts tur taisnāku līniju nekā īkšķis.</string>
+    <string name="gesture_trainer_tip_curved">Turiet līniju taisnu un paceliet pirkstu tieši beigās, nepavelkot to uz sāniem pacelšanas brīdī.</string>
+    <string name="gesture_trainer_tip_turn_missing">Mainiet virzienu asi, taisnā leņķī vai taisni atpakaļ, nepaceļot pirkstu. Katrai daļai jābūt apmēram 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Pēc pagrieziena pārbaudiet, kurp virzāties: otrajai daļai jāiet otrajā virzienā, ko nosaka žests.</string>
+    <string name="gesture_trainer_tip_tap_moved">Pieskarieties taisni uz leju un augšup, ar pirksta galu, nevelkot.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Katrs pieskāriens lai ir īss: pieskarieties un uzreiz paceliet.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Pēdējā pieskārienā turiet pirkstus nekustīgi uz ekrāna visu turēšanas laiku.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Skaitiet pieskārienus un veiciet tos visus ātri vienā piegājienā.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Skaitiet pieskārienus. Pirksts, kas atlec no stikla, rada papildu pieskārienu.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Pieskarieties ātrāk: sāciet nākamo pieskārienu tūlīt pēc pacelšanas.</string>
+    <string name="gesture_trainer_tip_taps_apart">Katru reizi pieskarieties tajā pašā vietā.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Virziet pirkstus tālāk, vismaz par 1 cm tuvāk vai tālāk vienu no otra.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Savilkšana ir pirkstu tuvināšana vienu otram, izplešana ir pirkstu attālināšana.</string>
+    <string name="gesture_trainer_tip_moved_together">Kustiniet tikai pirkstus vienu pret otru vai vienu no otra. Nevelciet visu roku pāri ekrānam.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Pagrieziet vairāk, kā griežot regulatoru par ceturtdaļapgriezienu.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Pulksteņrādītāja virzienā nozīmē griezt tā, kā kustas pulksteņa rādītāji: augšējais pirksts virzās pa labi.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Pirmajam vilkumam jābūt vismaz 1 cm garam.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Pēc pirmā vilkuma pirms pacelšanas velciet atpakaļ pretējā virzienā.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Velciet šurpu turpu ātri, turp un atpakaļ apmēram sekundes laikā.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Sāciet tieši pie malas, pirksta galam daļēji atrodoties ārpus ekrāna.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Pārbaudiet, kurā malas pusē sākat.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Velciet tālāk, līdz dzirdat klikšķi, tad paceliet.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Paceliet pirkstu tūlīt pēc pirmā klikšķa, pirms otrā.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Velciet iekšā ātrāk, neapstājoties pirms klikšķa.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Velciet taisni iekšā no malas vai taisni gar to, nevis pa diagonāli.</string>
+    <string name="gesture_trainer_tip_corner_missed">Novietojiet pirkstu tieši stūrī, lai tas pieskaras abām malām.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Pēc pieskāriena stūrim paceliet pirkstu ātrāk.</string>
+    <string name="gesture_trainer_close_to_limit">Tuvu robežai: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Vilkšana sākas lēni. Garāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība ļauj lēnāku sākumu.</string>
+    <string name="gesture_trainer_advice_tap_time">Pieskārieni ir lēni. Garāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība ļauj lēnākus pieskārienus.</string>
+    <string name="gesture_trainer_advice_edge_width">Vilkšana sākas pārāk tālu no malas. Lielāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība arī pārvērš vilkšanu, kas sākas malas tuvumā, par vilkšanu no malas.</string>
+    <string name="gesture_trainer_advice_corner_size">Pieskārieni trāpa ārpus stūra. Lielāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība padara stūrus lielākus.</string>
+    <string name="gesture_trainer_advice_corner_time">Pieskārieni stūriem ir lēni. Garāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība ļauj lēnākus pieskārienus.</string>
+    <string name="gesture_trainer_menu_option">Opcija <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: izvēlieties <xliff:g id="number">%3$d</xliff:g>. vienumu, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Velciet ar vienu pirkstu uz augšu vai uz leju <xliff:g id="edge">%1$s</xliff:g> vismaz <xliff:g id="distance">%2$d</xliff:g> mm, lai atvērtu izvēlni. Vienumu skaits: <xliff:g id="count">%3$d</xliff:g>, no augšas uz leju, katrs apmēram <xliff:g id="size">%6$s</xliff:g> cm augsts. <xliff:g id="number">%4$d</xliff:g>. vienums, <xliff:g id="item">%5$s</xliff:g>, atrodas <xliff:g id="from">%7$s</xliff:g> līdz <xliff:g id="to">%8$s</xliff:g> cm zem ekrāna augšmalas. Paceliet pirkstu, kad vienums tiek izrunāts.</string>
+    <string name="gesture_trainer_menu_sample">Šai malai nav izvēlnes. Vingrinājumā izmantoti parauga vienumi, skaits: <xliff:g id="count">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_try_menu_cancelled"><xliff:g id="number">%1$d</xliff:g>. mēģinājums: izvēlne aizvērās bez izvēles.</string>
+    <string name="gesture_trainer_try_menu_other"><xliff:g id="number">%1$d</xliff:g>. mēģinājums: izvēlēts <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">pacelts pie <xliff:g id="number">%1$d</xliff:g>. vienuma</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Pirksts sāka pašā malas augšā vai apakšā, kur atrodas stūri un augšējā un apakšējā mala.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Pirksts tika pacelts <xliff:g id="mm">%1$.0f</xliff:g> mm no malas, bet izvēlne aizveras tālāk par <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Pirksts tika pacelts pie <xliff:g id="item">%1$d</xliff:g>. vienuma, nevis pie <xliff:g id="target">%2$d</xliff:g>. vienuma.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Sāciet nedaudz attālāk no malas augšējā un apakšējā gala.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Velkot turiet pirkstu tuvu malai un paceliet to tur.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Katram vienumam ir noteikta vieta gar malu, un tiek izvēlēts vienums, pie kura pirksts tiek pacelts. Paceliet pirkstu, kad vienums tiek izrunāts.</string>
+    <string name="gesture_trainer_contents">Saturs</string>
+    <string name="gesture_trainer_contents_heading">Saturs: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">pabeigts, atpazīti <xliff:g id="hits">%1$d</xliff:g> no <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Pieskaršanās un vilkšana</string>
+    <string name="gesture_trainer_group_edge_swipes">Vilkšana no malām</string>
+    <string name="gesture_trainer_group_along_edges">Vilkšana gar malām</string>
+    <string name="gesture_trainer_group_edge_menus">Malu izvēlnes</string>
+    <string name="gesture_trainer_group_corners">Stūri</string>
+    <string name="gesture_trainer_group_back_tap">Pieskāriens aizmugurei</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Pieskārieni ar 2 pirkstiem, kam seko vilkšana ar 2 pirkstiem, ir izlaisti: iestatījums <xliff:g id="setting">%1$s</xliff:g> ir izslēgts.</string>
+    <string name="gesture_trainer_how_swipe_hold">Tad, nepaceļot, turiet pirkstu nekustīgi vismaz <xliff:g id="hold">%1$d</xliff:g> ms un paceliet.</string>
+    <string name="gesture_trainer_half_top">augšējā</string>
+    <string name="gesture_trainer_half_bottom">apakšējā</string>
+    <string name="gesture_trainer_how_taps_half">Pieskarieties ekrāna <xliff:g id="half">%1$s</xliff:g> pusē. Pusi nosaka punkts starp pirkstiem.</string>
+    <string name="gesture_trainer_same_fingers">ar tiem pašiem pirkstiem</string>
+    <string name="gesture_trainer_how_tap_swipe">Pieskarieties <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Tūlīt pēc pēdējā pieskāriena, <xliff:g id="gap">%3$d</xliff:g> ms laikā, atkal pieskarieties ekrānam <xliff:g id="swipe_fingers">%4$s</xliff:g> un velciet <xliff:g id="direction">%5$s</xliff:g> taisnā līnijā apmēram 2 līdz 3 cm, tad paceliet.</string>
+    <string name="gesture_trainer_how_corner_hold">Pēdējā pieskārienā atstājiet pirkstu stūrī nekustīgi vismaz <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Turiet tālruni rokā aiz sāniem un pieskarieties tā aizmugures vidum <xliff:g id="taps">%1$s</xliff:g> ar pirksta galu, stingri un ātri, kā klauvējot pie durvīm. Pieskārieniem jābūt tuvu vienam otram: ne vairāk kā <xliff:g id="gap">%2$d</xliff:g> ms starp tiem. Pieskaroties neaiztieciet ekrānu.</string>
+    <string name="gesture_trainer_back_tap_info">Vingrinājuma laikā pieskārieni aizmugurei nepalaiž komandas. <xliff:g id="setting">%1$s</xliff:g> nosaka, cik stipram jābūt pieskārienam.</string>
+    <string name="gesture_trainer_go_placed">Veiciet žestu <xliff:g id="tries">%1$d</xliff:g> reizes.</string>
+    <string name="gesture_trainer_along_left">kreiso malu</string>
+    <string name="gesture_trainer_along_right">labo malu</string>
+    <string name="gesture_trainer_along_top">augšējo malu</string>
+    <string name="gesture_trainer_along_bottom">apakšējo malu</string>
+    <string name="gesture_trainer_left_out_along_menu">Vilkšana gar <xliff:g id="edge">%1$s</xliff:g> ir izlaista: tai ir malas izvēlne, tāpēc vilkšana gar to atver izvēlni, nevis palaiž žestu.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Vilkšana gar <xliff:g id="edge">%1$s</xliff:g> ir izlaista: tā ritina, tāpēc vilkšana gar to ritina lietotni, nevis palaiž žestu.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Pirksts attālinājās pārāk tālu no malas.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Turiet pirkstu pašā stikla malā, taisni gar malu.</string>
+    <string name="gesture_trainer_go_back_tap">Veiciet pieskāriena aizmugurei žestu <xliff:g id="tries">%1$d</xliff:g> reizes. Pieskāriens ekrānam nozīmē neizdevušos mēģinājumu.</string>
+    <string name="gesture_trainer_no_accelerometer">Šim vingrinājumam nepieciešams akselerometrs. Tas nav pieejams.</string>
+    <string name="gesture_trainer_measure_hold">nekustīgi <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">pieskāriena stiprums <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Beigās pirksts palika nekustīgs <xliff:g id="ms">%1$d</xliff:g> ms, bet tam jāpaliek nekustīgam vismaz <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Pirksti pieskārās otrā ekrāna pusē.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Pēc pieskārieniem nesekoja vilkšana.</string>
+    <string name="gesture_trainer_finding_swipe_late">Vilkšana sākās <xliff:g id="ms">%1$d</xliff:g> ms pēc pēdējā pieskāriena, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Pieskāriens aizmugurei pārāk viegls: <xliff:g id="percent">%1$d</xliff:g>%% no nepieciešamā stipruma.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Pieskāriens sakustināja tālruni vairāk uz sāniem nekā caur aizmuguri.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Tālrunis kustējās tieši pirms pieskāriena.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Tika pieskarts ekrānam, un pieskārieni, kamēr tam pieskaras, netiek skaitīti.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Starp pieskārieniem aizmugurei pagāja <xliff:g id="ms">%1$d</xliff:g> ms, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Pēc vilkšanas turiet pirkstu nekustīgi uz ekrāna visu turēšanas laiku. Tad paceliet.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Pārbaudiet, kurā pusē pieskaraties: ekrāna vidus atdala augšējo pusi no apakšējās.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Pēc pēdējā pieskāriena uzreiz atkal pieskarieties ekrānam un velciet.</string>
+    <string name="gesture_trainer_tip_swipe_late">Sāciet vilkšanu tūlīt pēc pēdējā pieskāriena, bez pauzes.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Pieskarieties stiprāk, ar pirksta galu vai nagu, tuvu aizmugures vidum.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Pieskarieties taisni tālruņa aizmugurei, nevis tā malai vai slīpi.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Pirms pieskāriena brīdi turiet tālruni nekustīgi un turiet to brīvi, lai roka to nekustinātu.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Pieskaroties aizmugurei, neturiet pirkstus uz ekrāna: turiet tālruni aiz sāniem.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Pieskarieties ātrāk, vienu pieskārienu tūlīt pēc otra.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Pirksts pēc vilkšanas tiek pacelts par agru. Īsāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība ļauj īsāku turēšanu.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Pieskārieni aizmugurei ir viegli. Augstāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība nosaka vieglākus pieskārienus un var uztvert triecienus kā pieskārienus.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Pirksti pagriezās par <xliff:g id="degrees">%1$.0f</xliff:g>°, un no <xliff:g id="limit">%2$.0f</xliff:g>° kustība ir pagriešana.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Virziet pirkstus taisnā līnijā vienu pret otru vai vienu no otra, nevis pa loku vienu ap otru.</string>
+    <string name="gesture_trainer_finding_other_gesture">Kustība tā vietā atbilda tam žestam.</string>
+    <string name="gesture_trainer_side_left">kreisās</string>
+    <string name="gesture_trainer_side_right">labās</string>
+    <string name="gesture_trainer_side_top">augšējās</string>
+    <string name="gesture_trainer_side_bottom">apakšējās</string>
+    <string name="gesture_trainer_finding_wrong_edge">Pirksts sāka pie <xliff:g id="side">%1$s</xliff:g> malas, bet šis vingrinājums ir pie <xliff:g id="expected">%2$s</xliff:g> malas.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Sāciet tieši pie malas, ko norāda vingrinājums.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Šī žesta vietā atvērās malas izvēlne.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Vilkšana gar malu ar izvēlni atver izvēlni. Sāciet pie malas, ko norāda vingrinājums.</string>
+    <string name="gesture_trainer_group_three_part">Trīsdaļīgi vilkšanas žesti</string>
+    <string name="gesture_trainer_group_two_stroke">Divposmu vilkšanas žesti</string>
+    <string name="gesture_trainer_group_shake">Kratīšana</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Trīsdaļīgi vilkšanas žesti ir izlaisti: iestatījums <xliff:g id="setting">%1$s</xliff:g> ir ieslēgts.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Divposmu vilkšanas žesti ir izlaisti: iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība ir <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Vingrinājuma laikā kratīšana nepalaiž komandu. <xliff:g id="setting">%1$s</xliff:g> nosaka, cik stiprai jābūt kratīšanai.</string>
+    <string name="gesture_trainer_go_shake">Pakratiet tālruni <xliff:g id="tries">%1$d</xliff:g> reizes, pēc katras kratīšanas ieturot īsu pauzi.</string>
+    <string name="gesture_trainer_how_shake">Turiet tālruni stingri un ātri pakratiet to šurpu turpu, it kā nokratot ūdens lāsi: vismaz divreiz katrā virzienā, visu apmēram divu trešdaļu sekundes laikā. Tad turiet to nekustīgi.</string>
+    <string name="gesture_trainer_how_two_stroke">Velciet ar vienu pirkstu <xliff:g id="first">%1$s</xliff:g>, apmēram 2 cm, un paceliet. Tad uzreiz, <xliff:g id="time">%3$d</xliff:g> ms laikā, velciet ar vienu pirkstu <xliff:g id="second">%2$s</xliff:g>, apmēram 2 cm, un paceliet.</string>
+    <string name="gesture_trainer_how_three_part">Pieskarieties ekrānam ar vienu pirkstu un, nepaceļot, velciet <xliff:g id="first">%1$s</xliff:g>, tad asi pagriezieties un velciet <xliff:g id="second">%2$s</xliff:g>, tad atkal asi pagriezieties un velciet <xliff:g id="third">%3$s</xliff:g>, katru daļu apmēram 2 cm, un paceliet. Veiciet to vienā ātrā, vienmērīgā kustībā ar asiem stūriem, nevis lokiem.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Novietojiet vienu pirkstu ekrāna augšējā trešdaļā un otru apakšējā trešdaļā, piemēram, īkšķi lejā un rādītājpirkstu augšā.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Pirksti nebija viens ekrāna augšējā trešdaļā un otrs apakšējā trešdaļā.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Otrā vilkuma nebija.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Otrais vilkums sākās <xliff:g id="ms">%1$d</xliff:g> ms pēc pirmā, bet atļauts ne vairāk kā <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Pirmais vilkums virzījās <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Otrais vilkums virzījās <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Kratīšana bija pārāk viegla: <xliff:g id="percent">%1$d</xliff:g>%% no nepieciešamā stipruma.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Šūpojumi šurpu turpu: <xliff:g id="swings">%1$d</xliff:g> no nepieciešamajiem <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Izpletiet pirkstus tālu vienu no otra, vienu tuvu augšējai malai un otru tuvu apakšējai malai.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Pēc pirmā vilkuma paceliet pirkstu un uzreiz velciet vēlreiz.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Sāciet otro vilkumu tūlīt pēc pirksta pacelšanas.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Kratiet stiprāk un ātrāk.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Kratiet ātrāk, šurpu turpu vismaz divreiz katrā virzienā, neapstājoties starplaikā.</string>
+    <string name="gesture_trainer_measure_shake_strength">spēcīgākā kustība <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Kratīšana ir viegla. Augstāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība nosaka vieglāku kratīšanu un var uztvert tālruņa nešanu kā kratīšanu.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Otrais vilkums sākas vēlu. Garāka iestatījuma <xliff:g id="setting">%1$s</xliff:g> vērtība ļauj vēlāku otro vilkumu, un vienkāršs vilkums tad ilgāk gaida, pirms tiek izpildīts.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Iestatījums <xliff:g id="setting">%1$s</xliff:g> ir ieslēgts.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Iestatījums <xliff:g id="setting">%1$s</xliff:g> ir izslēgts: vilkšana ar 2 pirkstiem ritina lietotni, un ātra vilkšana šurpu turpu parasti arī ritina. Kad iestatījums ir ieslēgts, vilkšana ar 2 pirkstiem ritināšanas vietā palaiž SandFly komandas.</string>
+    <string name="gesture_trainer_measure_first_stroke">pirmais vilkums <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">otrais vilkums <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">viss žests <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">pacelts <xliff:g id="ms">%1$d</xliff:g> ms starp tiem</string>
+</resources>

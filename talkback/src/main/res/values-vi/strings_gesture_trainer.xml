@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Luyện cử chỉ</string>
+    <string name="gesture_trainer_intro">Chọn một nhóm cử chỉ. Mỗi bài tập mô tả một cử chỉ. Thực hiện cử chỉ <xliff:g id="tries">%1$d</xliff:g> lần; kết quả của mỗi lần thử được đọc. Sau lần thử cuối cùng, màn hình liệt kê số đo của từng lần thử, những gì cần thay đổi và các cài đặt liên quan.</string>
+    <string name="gesture_trainer_group_one_finger">Một ngón tay</string>
+    <string name="gesture_trainer_group_two_fingers">Hai ngón tay</string>
+    <string name="gesture_trainer_group_three_fingers">Ba ngón tay</string>
+    <string name="gesture_trainer_group_four_fingers">Bốn ngón tay</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Chụm, xoay và chà</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> bài tập</string>
+    <string name="gesture_trainer_close">Đóng</string>
+    <string name="gesture_trainer_no_detection">Luyện cử chỉ cần Android 13 trở lên.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Đã bỏ qua cử chỉ qua lại và cử chỉ theo góc: <xliff:g id="setting">%1$s</xliff:g> đang bật.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Đã bỏ qua thao tác vuốt bằng 2 ngón tay: <xliff:g id="setting">%1$s</xliff:g> đang tắt, nên các thao tác này cuộn ứng dụng.</string>
+    <string name="gesture_trainer_exercise_heading">Bài tập <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Bắt đầu</string>
+    <string name="gesture_trainer_skip">Bỏ qua bài tập này</string>
+    <string name="gesture_trainer_back_to_groups">Quay lại danh sách nhóm</string>
+    <string name="gesture_trainer_go">Thực hiện cử chỉ <xliff:g id="tries">%1$d</xliff:g> lần, ở vị trí bất kỳ trên màn hình. Mỗi lần chạm là một lần thử.</string>
+    <string name="gesture_trainer_fingers_1">một ngón tay</string>
+    <string name="gesture_trainer_fingers_2">hai ngón tay đặt cạnh nhau, cách nhau khoảng 1 cm</string>
+    <string name="gesture_trainer_fingers_3">ba ngón tay đặt cạnh nhau, hơi cách nhau</string>
+    <string name="gesture_trainer_fingers_4">bốn ngón tay đặt cạnh nhau, hơi cách nhau</string>
+    <string name="gesture_trainer_direction_up">lên</string>
+    <string name="gesture_trainer_direction_down">xuống</string>
+    <string name="gesture_trainer_direction_left">sang trái</string>
+    <string name="gesture_trainer_direction_right">sang phải</string>
+    <string name="gesture_trainer_how_swipe">Chạm vào màn hình bằng <xliff:g id="fingers">%1$s</xliff:g> và không chờ, trượt <xliff:g id="direction">%2$s</xliff:g> theo đường thẳng khoảng 2 đến 3 cm, rồi nhấc lên. Bắt đầu di chuyển ngay: ngón tay đứng yên trước sẽ bắt đầu khám phá bằng cách chạm.</string>
+    <string name="gesture_trainer_how_swipe_multi">Đặt các ngón tay xuống cùng lúc và di chuyển tất cả theo cùng một hướng. Mọi ngón tay phải đi <xliff:g id="direction">%1$s</xliff:g> trong suốt thao tác, vì vậy hãy giữ đường thẳng.</string>
+    <string name="gesture_trainer_how_back_and_forth">Chạm vào màn hình bằng một ngón tay và trượt <xliff:g id="first">%1$s</xliff:g> khoảng 2 cm, rồi không nhấc lên, quay thẳng lại <xliff:g id="second">%2$s</xliff:g> khoảng 2 cm và nhấc lên. Thực hiện thành một chuyển động nhanh, liền mạch.</string>
+    <string name="gesture_trainer_how_angle">Chạm vào màn hình bằng <xliff:g id="fingers">%1$s</xliff:g> và trượt <xliff:g id="first">%2$s</xliff:g> khoảng 2 cm, rồi không nhấc lên, rẽ gấp và trượt <xliff:g id="second">%3$s</xliff:g> khoảng 2 cm, rồi nhấc lên. Chỗ rẽ phải là một góc nhọn như chữ L, không phải đường cong.</string>
+    <string name="gesture_trainer_taps_1">một lần</string>
+    <string name="gesture_trainer_taps_2">hai lần</string>
+    <string name="gesture_trainer_taps_3">ba lần</string>
+    <string name="gesture_trainer_taps_4">bốn lần</string>
+    <string name="gesture_trainer_how_taps">Nhấn <xliff:g id="taps">%1$s</xliff:g> bằng <xliff:g id="fingers">%2$s</xliff:g>. Đặt các ngón tay xuống cùng lúc và nhấc lên cùng lúc, thật nhanh, không trượt.</string>
+    <string name="gesture_trainer_how_taps_quick">Nhấn nhanh và ở cùng một chỗ: lần nhấn tiếp theo phải đến trong vòng <xliff:g id="gap">%1$d</xliff:g> ms sau lần trước.</string>
+    <string name="gesture_trainer_how_hold">Đặt <xliff:g id="fingers">%1$s</xliff:g> lên màn hình cùng lúc và giữ yên, không trượt, trong ít nhất <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Khi không được gán lệnh khác, cử chỉ này tắt SandFly. Trong phần luyện tập, cử chỉ này không chạy gì.</string>
+    <string name="gesture_trainer_how_taps_hold">Nhấn <xliff:g id="taps">%1$s</xliff:g> bằng <xliff:g id="fingers">%2$s</xliff:g>, và ở lần nhấn cuối, để yên các ngón tay trên màn hình trong ít nhất <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Dùng ngón cái, ngón trỏ và ngón giữa.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Đặt ngón trỏ và ngón giữa cạnh nhau, ngón cái và ngón áp út cách vài centimet ở hai bên. Sau đó chụm cả bốn đầu ngón tay lại một điểm.</string>
+    <string name="gesture_trainer_how_pinch">Đặt <xliff:g id="fingers">%1$d</xliff:g> ngón tay lên màn hình, dang rộng. Sau đó đưa chúng thẳng về phía nhau ít nhất 1 cm, như đang nhặt một vật, rồi nhấc khỏi màn hình. Chỉ di chuyển các ngón tay, không di chuyển cả bàn tay và không theo đường vòng cung.</string>
+    <string name="gesture_trainer_how_spread">Đặt <xliff:g id="fingers">%1$d</xliff:g> ngón tay lên màn hình, sát nhau. Sau đó tách chúng thẳng ra xa nhau ít nhất 1 cm rồi nhấc khỏi màn hình. Chỉ di chuyển các ngón tay, không di chuyển cả bàn tay và không theo đường vòng cung.</string>
+    <string name="gesture_trainer_clockwise">theo chiều kim đồng hồ</string>
+    <string name="gesture_trainer_counterclockwise">ngược chiều kim đồng hồ</string>
+    <string name="gesture_trainer_how_rotate">Đặt hai ngón tay lên màn hình, cách nhau khoảng 2 đến 3 cm, và xoay chúng <xliff:g id="way">%1$s</xliff:g> quanh điểm giữa, như vặn núm xoay, khoảng một phần tư vòng. Sau đó nhấc lên.</string>
+    <string name="gesture_trainer_how_scrub">Đặt hai ngón tay lên màn hình và nhanh chóng di chuyển chúng sang một bên khoảng 2 cm rồi quay lại, như đang tẩy xoá, tất cả trong khoảng một giây. Sau đó nhấc lên.</string>
+    <string name="gesture_trainer_edge_bottom">ở cạnh dưới</string>
+    <string name="gesture_trainer_edge_top_left">ở cạnh trên, nửa bên trái</string>
+    <string name="gesture_trainer_edge_top_right">ở cạnh trên, nửa bên phải</string>
+    <string name="gesture_trainer_edge_left_top">ở cạnh trái, nửa trên</string>
+    <string name="gesture_trainer_edge_left_bottom">ở cạnh trái, nửa dưới</string>
+    <string name="gesture_trainer_edge_right_top">ở cạnh phải, nửa trên</string>
+    <string name="gesture_trainer_edge_right_bottom">ở cạnh phải, nửa dưới</string>
+    <string name="gesture_trainer_edge_left">ở cạnh trái</string>
+    <string name="gesture_trainer_edge_right">ở cạnh phải</string>
+    <string name="gesture_trainer_edge_top">ở cạnh trên</string>
+    <string name="gesture_trainer_how_edge">Đặt một ngón tay <xliff:g id="edge">%1$s</xliff:g>, cách cạnh tối đa <xliff:g id="edge_width">%2$d</xliff:g> mm, và trượt <xliff:g id="direction">%3$s</xliff:g> vào trong màn hình đến tiếng tách đầu tiên, khoảng <xliff:g id="distance">%4$d</xliff:g> mm. Sau đó nhấc lên ngay: quá tiếng tách thứ hai, thao tác trượt sẽ thành trượt dài.</string>
+    <string name="gesture_trainer_how_edge_long">Đặt một ngón tay <xliff:g id="edge">%1$s</xliff:g>, cách cạnh tối đa <xliff:g id="edge_width">%2$d</xliff:g> mm, và trượt <xliff:g id="direction">%3$s</xliff:g> vào trong màn hình qua tiếng tách đầu tiên đến tiếng tách thứ hai, khoảng <xliff:g id="distance">%4$d</xliff:g> mm. Sau đó nhấc lên.</string>
+    <string name="gesture_trainer_how_along">Trượt một ngón tay <xliff:g id="direction">%2$s</xliff:g> dọc theo <xliff:g id="edge">%1$s</xliff:g>, ít nhất <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">trên bên trái</string>
+    <string name="gesture_trainer_corner_top_right">trên bên phải</string>
+    <string name="gesture_trainer_corner_bottom_left">dưới bên trái</string>
+    <string name="gesture_trainer_corner_bottom_right">dưới bên phải</string>
+    <string name="gesture_trainer_how_corner">Nhấn <xliff:g id="taps">%1$s</xliff:g> vào góc <xliff:g id="corner">%2$s</xliff:g> của màn hình. Đặt ngón tay sát vào góc, cách cả hai cạnh không quá <xliff:g id="size">%3$d</xliff:g> mm, và nhấc lên nhanh, trong vòng <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Khi góc lớn hơn, lần nhấn vào một nút điều khiển gần góc, chẳng hạn như Quay lại ở trên cùng bên trái, có thể chạy cử chỉ góc thay vì nút đó.</string>
+    <string name="gesture_trainer_rating_precise">đã nhận dạng, chính xác</string>
+    <string name="gesture_trainer_rating_good">đã nhận dạng, tốt</string>
+    <string name="gesture_trainer_rating_borderline">đã nhận dạng, nhưng gần giới hạn</string>
+    <string name="gesture_trainer_try_recognized">Lần thử <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Lần thử <xliff:g id="number">%1$d</xliff:g>: không nhận dạng được.</string>
+    <string name="gesture_trainer_try_other">Lần thử <xliff:g id="number">%1$d</xliff:g>: được nhận dạng là <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: nhận dạng được <xliff:g id="recognized">%2$d</xliff:g>/<xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Các lần thử của bạn</string>
+    <string name="gesture_trainer_results_change">Những gì cần thay đổi</string>
+    <string name="gesture_trainer_results_close">Gần giới hạn</string>
+    <string name="gesture_trainer_results_all_good">Tất cả các lần thử đều được nhận dạng trong giới hạn.</string>
+    <string name="gesture_trainer_results_settings">Cài đặt có thể giúp ích</string>
+    <string name="gesture_trainer_next">Bài tập tiếp theo</string>
+    <string name="gesture_trainer_repeat">Lặp lại</string>
+    <string name="gesture_trainer_finish">Hoàn tất</string>
+    <string name="gesture_trainer_group_done">Bạn đã hoàn thành tất cả bài tập trong <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Thay đổi <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">mất <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">dài <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm mỗi giây</string>
+    <string name="gesture_trainer_measure_angle">lệch <xliff:g id="degrees">%1$.0f</xliff:g> độ so với đường thẳng</string>
+    <string name="gesture_trainer_measure_start">centimet đầu tiên trong <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">các ngón tay chạm xuống cách nhau <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">lần nhấn <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms giữa các lần nhấn</string>
+    <string name="gesture_trainer_measure_spread">các ngón tay di chuyển <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">xoay <xliff:g id="degrees">%1$.0f</xliff:g> độ</string>
+    <string name="gesture_trainer_measure_corner">cách các cạnh của góc <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_edge">bắt đầu cách cạnh <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Số ngón tay trên màn hình: <xliff:g id="fingers">%1$d</xliff:g> thay vì <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Các ngón tay chạm xuống cách nhau <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Một ngón tay đã nhấc lên trước khi tất cả các ngón tay chạm xuống.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Các ngón tay nhấc lên cách nhau <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Ngón tay đứng yên quá lâu hoặc lúc đầu di chuyển quá chậm, nên lần chạm trở thành khám phá bằng cách chạm.</string>
+    <string name="gesture_trainer_finding_slow_start">Centimet đầu tiên mất <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Ngón tay chậm lại trong <xliff:g id="ms">%1$d</xliff:g> ms, trong khi mỗi centimet chỉ được mất tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Chuyển động chỉ dài <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi phải dài ít nhất <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Ngón tay bắt đầu đi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Các ngón tay bắt đầu đi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Đường đi lệch <xliff:g id="degrees">%1$.0f</xliff:g> độ so với đường thẳng, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Đường đi bị gãy thành <xliff:g id="parts">%1$d</xliff:g> đoạn thay vì <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Không tìm thấy chỗ rẽ.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Sau chỗ rẽ, ngón tay đã đi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Ngón tay trượt <xliff:g id="mm">%1$.1f</xliff:g> mm trong một lần nhấn, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Một lần nhấn kéo dài <xliff:g id="ms">%1$d</xliff:g> ms, lâu hơn <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Lần nhấn cuối được giữ <xliff:g id="ms">%1$d</xliff:g> ms, trong khi phải giữ ít nhất <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> lần nhấn thay vì <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> lần nhấn thay vì <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Giữa các lần nhấn có <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Các lần nhấn cách nhau <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Các ngón tay chỉ di chuyển <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi phải di chuyển ít nhất <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Các ngón tay di chuyển theo hướng ngược lại.</string>
+    <string name="gesture_trainer_finding_moved_together">Cả bàn tay trượt <xliff:g id="mm">%1$.0f</xliff:g> mm trên màn hình, nhiều hơn mức các ngón tay di chuyển lại gần hoặc ra xa nhau.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Các ngón tay chỉ xoay <xliff:g id="degrees">%1$.0f</xliff:g> độ, trong khi phải xoay ít nhất <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Các ngón tay xoay theo chiều ngược lại.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Nét đầu tiên dài <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi phải dài ít nhất <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Nét quay lại dài <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi phải dài ít nhất <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Thao tác chà mất <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Ngón tay chạm xuống cách cạnh <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi cạnh rộng <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Ngón tay bắt đầu ở nửa còn lại của cạnh.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Ngón tay trượt <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi phải trượt ít nhất <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Trượt quá dài: ngón tay đã đi quá tiếng tách thứ hai, <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi tiếng tách thứ hai ở <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Đến tiếng tách mất <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Thao tác trượt lệch sang bên <xliff:g id="degrees">%1$.0f</xliff:g> độ, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Lần nhấn cách các cạnh của góc <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi góc có kích thước <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Một lần nhấn góc kéo dài <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Không phát hiện chuyển động nào khớp với cử chỉ.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Kiểm tra số ngón tay chạm vào mặt kính. Lòng bàn tay hoặc ngón tay khác đặt trên màn hình cũng được tính.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Đặt tất cả ngón tay xuống cùng lúc, như một bàn tay, không lần lượt từng ngón.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Đặt tất cả ngón tay xuống trước, sau đó mới di chuyển hoặc nhấc lên.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Nhấc tất cả ngón tay lên cùng lúc.</string>
+    <string name="gesture_trainer_tip_slow_start">Bắt đầu di chuyển ngay khi chạm vào màn hình, và di chuyển nhanh hơn lúc đầu.</string>
+    <string name="gesture_trainer_tip_paused">Di chuyển ngón tay với tốc độ đều cho đến khi nhấc lên. Không giảm tốc gần cuối.</string>
+    <string name="gesture_trainer_tip_too_short">Di chuyển dài hơn, khoảng 2 đến 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Kiểm tra hướng ngay khi bắt đầu chuyển động. Cầm điện thoại thẳng trước mặt sẽ giúp ích.</string>
+    <string name="gesture_trainer_tip_off_line">Chỉ di chuyển theo hướng đã nêu, không đi chéo. Ngón trỏ giữ đường thẳng tốt hơn ngón cái.</string>
+    <string name="gesture_trainer_tip_curved">Giữ đường thẳng và nhấc lên đúng ở cuối, không móc ngón tay sang bên khi nhấc.</string>
+    <string name="gesture_trainer_tip_turn_missing">Đổi hướng gấp, theo góc vuông hoặc quay thẳng lại, không nhấc lên. Mỗi đoạn khoảng 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Sau chỗ rẽ, kiểm tra bạn đi hướng nào: đoạn thứ hai phải đi theo hướng còn lại mà tên cử chỉ nêu.</string>
+    <string name="gesture_trainer_tip_tap_moved">Nhấn thẳng xuống rồi nhấc thẳng lên bằng đầu ngón tay, không trượt.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Nhấn thật ngắn: chạm rồi nhấc lên ngay.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Ở lần nhấn cuối, giữ yên các ngón tay trên màn hình trong toàn bộ thời gian giữ.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Đếm số lần nhấn và nhấn nhanh liền một lượt.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Đếm số lần nhấn. Ngón tay nảy khỏi mặt kính sẽ tạo thêm một lần nhấn.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Nhấn nhanh hơn: bắt đầu lần nhấn tiếp theo ngay sau khi nhấc lên.</string>
+    <string name="gesture_trainer_tip_taps_apart">Nhấn vào cùng một chỗ mỗi lần.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Di chuyển các ngón tay xa hơn, lại gần hoặc ra xa nhau thêm ít nhất 1 cm.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Chụm là các ngón tay di chuyển lại gần nhau, tách là các ngón tay di chuyển ra xa nhau.</string>
+    <string name="gesture_trainer_tip_moved_together">Chỉ di chuyển các ngón tay lại gần hoặc ra xa nhau. Không trượt cả bàn tay trên màn hình.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Xoay nhiều hơn, như vặn núm xoay một phần tư vòng.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Theo chiều kim đồng hồ là xoay theo hướng kim đồng hồ chạy: ngón tay ở trên di chuyển sang phải.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Làm nét đầu tiên dài ít nhất 1 cm.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Sau nét đầu tiên, quay lại theo hướng ngược lại trước khi nhấc lên.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Chà thật nhanh, đi và về trong khoảng một giây.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Bắt đầu ngay tại cạnh, với đầu ngón tay nằm một phần ngoài màn hình.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Kiểm tra bạn bắt đầu ở nửa nào của cạnh.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Trượt xa hơn cho đến khi nghe tiếng tách, rồi nhấc lên.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Nhấc lên ngay sau tiếng tách đầu tiên, trước tiếng tách thứ hai.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Trượt vào nhanh hơn, không dừng lại trước tiếng tách.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Trượt thẳng vào từ cạnh, hoặc thẳng dọc theo cạnh, không đi chéo.</string>
+    <string name="gesture_trainer_tip_corner_missed">Đặt ngón tay sát vào góc, chạm cả hai cạnh.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Nhấc lên nhanh hơn sau khi chạm vào góc.</string>
+    <string name="gesture_trainer_close_to_limit">Gần giới hạn: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Thao tác vuốt bắt đầu chậm. <xliff:g id="setting">%1$s</xliff:g> dài hơn cho phép bắt đầu chậm hơn.</string>
+    <string name="gesture_trainer_advice_tap_time">Thao tác nhấn chậm. <xliff:g id="setting">%1$s</xliff:g> dài hơn cho phép nhấn chậm hơn.</string>
+    <string name="gesture_trainer_advice_edge_width">Thao tác vuốt bắt đầu quá xa cạnh. <xliff:g id="setting">%1$s</xliff:g> lớn hơn cũng biến các thao tác vuốt bắt đầu gần cạnh thành vuốt từ cạnh.</string>
+    <string name="gesture_trainer_advice_corner_size">Lần nhấn rơi ra ngoài góc. <xliff:g id="setting">%1$s</xliff:g> lớn hơn làm cho các góc lớn hơn.</string>
+    <string name="gesture_trainer_advice_corner_time">Thao tác nhấn góc chậm. <xliff:g id="setting">%1$s</xliff:g> dài hơn cho phép nhấn chậm hơn.</string>
+    <string name="gesture_trainer_menu_option">Tuỳ chọn <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: chọn mục <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Trượt một ngón tay lên hoặc xuống <xliff:g id="edge">%1$s</xliff:g> ít nhất <xliff:g id="distance">%2$d</xliff:g> mm để mở trình đơn. Trình đơn có <xliff:g id="count">%3$d</xliff:g> mục, từ trên xuống dưới, mỗi mục cao khoảng <xliff:g id="size">%6$s</xliff:g> cm. Mục <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, nằm từ <xliff:g id="from">%7$s</xliff:g> đến <xliff:g id="to">%8$s</xliff:g> cm bên dưới cạnh trên của màn hình. Nhấc ngón tay lên khi mục được đọc.</string>
+    <string name="gesture_trainer_menu_sample">Cạnh này không có trình đơn. Bài tập dùng <xliff:g id="count">%1$d</xliff:g> mục mẫu.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Lần thử <xliff:g id="number">%1$d</xliff:g>: trình đơn đã đóng mà không có lựa chọn nào.</string>
+    <string name="gesture_trainer_try_menu_other">Lần thử <xliff:g id="number">%1$d</xliff:g>: đã chọn <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">nhấc lên ở mục <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Ngón tay bắt đầu ở đầu trên cùng hoặc dưới cùng của cạnh, nơi có các góc và cạnh trên, cạnh dưới.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Ngón tay nhấc lên cách cạnh <xliff:g id="mm">%1$.0f</xliff:g> mm, trong khi trình đơn đóng khi xa hơn <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Ngón tay nhấc lên ở mục <xliff:g id="item">%1$d</xliff:g> thay vì mục <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Bắt đầu cách xa đầu trên và đầu dưới của cạnh một chút.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Giữ ngón tay gần cạnh khi trượt, và nhấc lên tại đó.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Mỗi mục có vị trí cố định dọc theo cạnh, và mục tại vị trí nhấc ngón tay sẽ được chọn. Nhấc lên khi mục được đọc.</string>
+    <string name="gesture_trainer_contents">Mục lục</string>
+    <string name="gesture_trainer_contents_heading">Mục lục: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">đã xong, nhận dạng được <xliff:g id="hits">%1$d</xliff:g>/<xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Nhấn và vuốt</string>
+    <string name="gesture_trainer_group_edge_swipes">Vuốt từ cạnh</string>
+    <string name="gesture_trainer_group_along_edges">Trượt dọc theo cạnh</string>
+    <string name="gesture_trainer_group_edge_menus">Trình đơn cạnh</string>
+    <string name="gesture_trainer_group_corners">Góc màn hình</string>
+    <string name="gesture_trainer_group_back_tap">Nhấn vào mặt sau</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Đã bỏ qua thao tác nhấn bằng 2 ngón tay rồi vuốt bằng 2 ngón tay: <xliff:g id="setting">%1$s</xliff:g> đang tắt.</string>
+    <string name="gesture_trainer_how_swipe_hold">Sau đó, không nhấc lên, giữ yên ngón tay trong ít nhất <xliff:g id="hold">%1$d</xliff:g> ms rồi nhấc lên.</string>
+    <string name="gesture_trainer_half_top">trên</string>
+    <string name="gesture_trainer_half_bottom">dưới</string>
+    <string name="gesture_trainer_how_taps_half">Nhấn vào nửa <xliff:g id="half">%1$s</xliff:g> của màn hình. Điểm giữa các ngón tay quyết định nửa màn hình.</string>
+    <string name="gesture_trainer_same_fingers">chính các ngón tay đó</string>
+    <string name="gesture_trainer_how_tap_swipe">Nhấn <xliff:g id="taps">%1$s</xliff:g> bằng <xliff:g id="fingers">%2$s</xliff:g>. Ngay sau lần nhấn cuối, trong vòng <xliff:g id="gap">%3$d</xliff:g> ms, chạm lại vào màn hình bằng <xliff:g id="swipe_fingers">%4$s</xliff:g> và trượt <xliff:g id="direction">%5$s</xliff:g> theo đường thẳng khoảng 2 đến 3 cm, rồi nhấc lên.</string>
+    <string name="gesture_trainer_how_corner_hold">Ở lần nhấn cuối, để yên ngón tay trong góc ít nhất <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Cầm điện thoại trong tay, giữ ở hai bên cạnh, và dùng đầu ngón tay nhấn vào giữa mặt sau <xliff:g id="taps">%1$s</xliff:g>, mạnh và nhanh, như gõ cửa. Nhấn liên tiếp: cách nhau tối đa <xliff:g id="gap">%2$d</xliff:g> ms. Không chạm vào màn hình trong khi nhấn.</string>
+    <string name="gesture_trainer_back_tap_info">Thao tác nhấn vào mặt sau không chạy lệnh nào trong khi làm bài tập. <xliff:g id="setting">%1$s</xliff:g> đặt độ mạnh cần thiết của lần nhấn.</string>
+    <string name="gesture_trainer_go_placed">Thực hiện cử chỉ <xliff:g id="tries">%1$d</xliff:g> lần.</string>
+    <string name="gesture_trainer_along_left">cạnh trái</string>
+    <string name="gesture_trainer_along_right">cạnh phải</string>
+    <string name="gesture_trainer_along_top">cạnh trên</string>
+    <string name="gesture_trainer_along_bottom">cạnh dưới</string>
+    <string name="gesture_trainer_left_out_along_menu">Đã bỏ qua thao tác trượt dọc theo <xliff:g id="edge">%1$s</xliff:g>: cạnh này có trình đơn cạnh, nên trượt dọc theo cạnh sẽ mở trình đơn thay vì chạy cử chỉ.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Đã bỏ qua thao tác trượt dọc theo <xliff:g id="edge">%1$s</xliff:g>: cạnh này dùng để cuộn, nên trượt dọc theo cạnh sẽ cuộn ứng dụng thay vì chạy cử chỉ.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Ngón tay đã di chuyển quá xa khỏi cạnh.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Giữ ngón tay ngay trên mép kính, thẳng dọc theo cạnh.</string>
+    <string name="gesture_trainer_go_back_tap">Thực hiện cử chỉ nhấn vào mặt sau <xliff:g id="tries">%1$d</xliff:g> lần. Chạm vào màn hình sẽ làm lần thử thất bại.</string>
+    <string name="gesture_trainer_no_accelerometer">Bài tập này cần gia tốc kế. Không có gia tốc kế nào.</string>
+    <string name="gesture_trainer_measure_hold">giữ yên <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">lần nhấn có độ mạnh <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Ngón tay đứng yên <xliff:g id="ms">%1$d</xliff:g> ms ở cuối, trong khi phải đứng yên ít nhất <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Các ngón tay đã nhấn vào nửa còn lại của màn hình.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Không có thao tác vuốt sau các lần nhấn.</string>
+    <string name="gesture_trainer_finding_swipe_late">Thao tác vuốt bắt đầu <xliff:g id="ms">%1$d</xliff:g> ms sau lần nhấn cuối, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Nhấn vào mặt sau quá nhẹ: <xliff:g id="percent">%1$d</xliff:g>%% độ mạnh cần thiết.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Một lần nhấn làm điện thoại rung sang bên nhiều hơn là xuyên qua mặt sau.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Điện thoại đang di chuyển ngay trước một lần nhấn.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Màn hình đã bị chạm, và các lần nhấn trong khi màn hình đang bị chạm không được tính.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Giữa các lần nhấn vào mặt sau có <xliff:g id="ms">%1$d</xliff:g> ms, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Sau khi vuốt, giữ yên ngón tay trên màn hình trong toàn bộ thời gian giữ. Sau đó nhấc lên.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Kiểm tra bạn nhấn vào nửa nào: giữa màn hình chia nửa trên và nửa dưới.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Sau lần nhấn cuối, chạm lại vào màn hình ngay và vuốt.</string>
+    <string name="gesture_trainer_tip_swipe_late">Bắt đầu vuốt ngay sau lần nhấn cuối, không ngừng lại.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Nhấn mạnh hơn, bằng đầu ngón tay hoặc móng tay, gần giữa mặt sau.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Nhấn thẳng vào mặt sau điện thoại, không nhấn vào cạnh hoặc nhấn xiên.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Giữ yên điện thoại một lát trước khi nhấn, và cầm lỏng tay để tay không làm điện thoại di chuyển.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Không để ngón tay chạm vào màn hình khi nhấn vào mặt sau: cầm điện thoại ở hai bên cạnh.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Nhấn nhanh hơn, lần này ngay sau lần kia.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Ngón tay nhấc lên quá sớm sau khi vuốt. <xliff:g id="setting">%1$s</xliff:g> ngắn hơn cho phép giữ ngắn hơn.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Thao tác nhấn vào mặt sau nhẹ. <xliff:g id="setting">%1$s</xliff:g> cao hơn phát hiện lần nhấn nhẹ hơn, và có thể nhận va chạm thành lần nhấn.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Các ngón tay xoay <xliff:g id="degrees">%1$.0f</xliff:g> độ, và từ <xliff:g id="limit">%2$.0f</xliff:g> độ trở lên, chuyển động được xem là xoay.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Di chuyển các ngón tay theo đường thẳng lại gần hoặc ra xa nhau, không theo vòng cung quanh nhau.</string>
+    <string name="gesture_trainer_finding_other_gesture">Chuyển động khớp với cử chỉ đó.</string>
+    <string name="gesture_trainer_side_left">trái</string>
+    <string name="gesture_trainer_side_right">phải</string>
+    <string name="gesture_trainer_side_top">trên</string>
+    <string name="gesture_trainer_side_bottom">dưới</string>
+    <string name="gesture_trainer_finding_wrong_edge">Ngón tay bắt đầu ở cạnh <xliff:g id="side">%1$s</xliff:g>, trong khi bài tập này ở cạnh <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Bắt đầu ngay trên cạnh mà bài tập nêu.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Trình đơn cạnh đã mở thay vì cử chỉ này.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Trượt dọc theo cạnh có trình đơn sẽ mở trình đơn. Bắt đầu ở cạnh mà bài tập nêu.</string>
+    <string name="gesture_trainer_group_three_part">Vuốt ba đoạn</string>
+    <string name="gesture_trainer_group_two_stroke">Vuốt hai nét</string>
+    <string name="gesture_trainer_group_shake">Lắc</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Đã bỏ qua vuốt ba đoạn: <xliff:g id="setting">%1$s</xliff:g> đang bật.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Đã bỏ qua vuốt hai nét: <xliff:g id="setting">%1$s</xliff:g> là <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Thao tác lắc không chạy lệnh nào trong khi làm bài tập. <xliff:g id="setting">%1$s</xliff:g> đặt độ mạnh cần thiết của lần lắc.</string>
+    <string name="gesture_trainer_go_shake">Lắc điện thoại <xliff:g id="tries">%1$d</xliff:g> lần, dừng ngắn sau mỗi lần lắc.</string>
+    <string name="gesture_trainer_how_shake">Cầm chắc điện thoại và lắc nhanh qua lại, như đang vẩy một giọt nước: ít nhất hai lần mỗi chiều, tất cả trong khoảng hai phần ba giây. Sau đó giữ yên.</string>
+    <string name="gesture_trainer_how_two_stroke">Vuốt <xliff:g id="first">%1$s</xliff:g> bằng một ngón tay, khoảng 2 cm, rồi nhấc lên. Sau đó ngay lập tức, trong vòng <xliff:g id="time">%3$d</xliff:g> ms, vuốt <xliff:g id="second">%2$s</xliff:g> bằng một ngón tay, khoảng 2 cm, rồi nhấc lên.</string>
+    <string name="gesture_trainer_how_three_part">Chạm vào màn hình bằng một ngón tay và không nhấc lên, vuốt <xliff:g id="first">%1$s</xliff:g>, rồi rẽ gấp và vuốt <xliff:g id="second">%2$s</xliff:g>, rồi rẽ gấp lần nữa và vuốt <xliff:g id="third">%3$s</xliff:g>, mỗi đoạn khoảng 2 cm, rồi nhấc lên. Thực hiện thành một chuyển động nhanh, liền mạch với các góc nhọn, không phải đường cong.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Đặt một ngón tay ở một phần ba phía trên màn hình và ngón kia ở một phần ba phía dưới, ví dụ ngón cái ở dưới và ngón trỏ ở trên.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Các ngón tay không đặt một ngón ở một phần ba phía trên màn hình và một ngón ở một phần ba phía dưới.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Không có lần vuốt thứ hai.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Lần vuốt thứ hai bắt đầu <xliff:g id="ms">%1$d</xliff:g> ms sau lần đầu, trong khi chỉ cho phép tối đa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Lần vuốt đầu tiên đi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Lần vuốt thứ hai đi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Lắc quá nhẹ: <xliff:g id="percent">%1$d</xliff:g>%% độ mạnh cần thiết.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Số lần lắc qua lại: <xliff:g id="swings">%1$d</xliff:g>/<xliff:g id="wanted">%2$d</xliff:g> lần cần thiết.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Dang rộng các ngón tay, một ngón gần cạnh trên và một ngón gần cạnh dưới.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Sau lần vuốt đầu tiên, nhấc ngón tay lên và vuốt lại ngay.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Bắt đầu lần vuốt thứ hai ngay sau khi nhấc ngón tay lên.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Lắc mạnh hơn và nhanh hơn.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Lắc nhanh hơn, qua lại ít nhất hai lần mỗi chiều, không dừng giữa chừng.</string>
+    <string name="gesture_trainer_measure_shake_strength">chuyển động mạnh nhất <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Thao tác lắc nhẹ. <xliff:g id="setting">%1$s</xliff:g> cao hơn phát hiện lần lắc nhẹ hơn, và có thể nhận việc mang theo điện thoại thành lần lắc.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Lần vuốt thứ hai bắt đầu muộn. <xliff:g id="setting">%1$s</xliff:g> dài hơn cho phép lần vuốt thứ hai muộn hơn, và khi đó một lần vuốt đơn sẽ chờ lâu hơn trước khi chạy.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> đang bật.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> đang tắt: thao tác vuốt bằng 2 ngón tay cuộn ứng dụng, và thao tác chà phần lớn cũng cuộn. Khi bật cài đặt này, thao tác vuốt bằng 2 ngón tay chạy lệnh SandFly thay vì cuộn.</string>
+    <string name="gesture_trainer_measure_first_stroke">lần vuốt đầu tiên <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">lần vuốt thứ hai <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">toàn bộ cử chỉ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">nhấc lên <xliff:g id="ms">%1$d</xliff:g> ms giữa hai lần</string>
+</resources>

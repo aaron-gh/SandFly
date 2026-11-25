@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Tagasanay ng mga galaw</string>
+    <string name="gesture_trainer_intro">Pumili ng grupo ng mga galaw. Inilalarawan ng bawat ehersisyo ang isang galaw. Gawin ang galaw nang <xliff:g id="tries">%1$d</xliff:g> beses; sinasabi ang resulta ng bawat subok. Pagkatapos ng huling subok, ipinapakita ng screen ang mga sukat ng bawat subok, kung ano ang babaguhin at ang mga kaugnay na setting.</string>
+    <string name="gesture_trainer_group_one_finger">Isang daliri</string>
+    <string name="gesture_trainer_group_two_fingers">Dalawang daliri</string>
+    <string name="gesture_trainer_group_three_fingers">Tatlong daliri</string>
+    <string name="gesture_trainer_group_four_fingers">Apat na daliri</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Pinch, pag-ikot at scrub</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> ehersisyo</string>
+    <string name="gesture_trainer_close">Isara</string>
+    <string name="gesture_trainer_no_detection">Kailangan ng tagasanay ng mga galaw ang Android 13 o mas bago.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Hindi kasama ang mga pabalik-balik at angle na galaw: naka-on ang <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Hindi kasama ang mga pag-swipe gamit ang 2 daliri: naka-off ang <xliff:g id="setting">%1$s</xliff:g>, kaya nag-i-scroll ang mga ito ng mga app.</string>
+    <string name="gesture_trainer_exercise_heading">Ehersisyo <xliff:g id="number">%1$d</xliff:g> ng <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Simulan</string>
+    <string name="gesture_trainer_skip">Laktawan ang ehersisyong ito</string>
+    <string name="gesture_trainer_back_to_groups">Bumalik sa mga grupo</string>
+    <string name="gesture_trainer_go">Gawin ang galaw nang <xliff:g id="tries">%1$d</xliff:g> beses, kahit saan sa screen. Bawat pagpindot ay isang subok.</string>
+    <string name="gesture_trainer_fingers_1">isang daliri</string>
+    <string name="gesture_trainer_fingers_2">dalawang daliring magkatabi, mga 1 cm ang layo</string>
+    <string name="gesture_trainer_fingers_3">tatlong daliring magkatabi, bahagyang magkahiwalay</string>
+    <string name="gesture_trainer_fingers_4">apat na daliring magkatabi, bahagyang magkahiwalay</string>
+    <string name="gesture_trainer_direction_up">pataas</string>
+    <string name="gesture_trainer_direction_down">pababa</string>
+    <string name="gesture_trainer_direction_left">pakaliwa</string>
+    <string name="gesture_trainer_direction_right">pakanan</string>
+    <string name="gesture_trainer_how_swipe">Pindutin ang screen gamit ang <xliff:g id="fingers">%1$s</xliff:g> at, nang hindi naghihintay, mag-slide <xliff:g id="direction">%2$s</xliff:g> nang tuwid nang mga 2 hanggang 3 cm, pagkatapos ay iangat. Gumalaw agad: ang daliring unang nakapahinga ay nagsisimula ng pag-explore ng pagpindot.</string>
+    <string name="gesture_trainer_how_swipe_multi">Ilapat nang sabay-sabay ang mga daliri, sa parehong sandali, at igalaw silang lahat sa parehong paraan. Dapat pumunta <xliff:g id="direction">%1$s</xliff:g> ang bawat daliri sa buong oras, kaya panatilihing tuwid ang linya.</string>
+    <string name="gesture_trainer_how_back_and_forth">Pindutin ang screen gamit ang isang daliri at mag-slide <xliff:g id="first">%1$s</xliff:g> nang mga 2 cm, pagkatapos nang hindi iniaangat ay bumalik nang diretso <xliff:g id="second">%2$s</xliff:g> nang mga 2 cm, at iangat. Gawin ito bilang isang mabilis at tuloy-tuloy na galaw.</string>
+    <string name="gesture_trainer_how_angle">Pindutin ang screen gamit ang <xliff:g id="fingers">%1$s</xliff:g> at mag-slide <xliff:g id="first">%2$s</xliff:g> nang mga 2 cm, pagkatapos nang hindi iniaangat ay lumiko nang matalim at mag-slide <xliff:g id="second">%3$s</xliff:g> nang mga 2 cm, at iangat. Gawing matalim na sulok ang liko, gaya ng letrang L, hindi kurba.</string>
+    <string name="gesture_trainer_taps_1">nang isang beses</string>
+    <string name="gesture_trainer_taps_2">nang dalawang beses</string>
+    <string name="gesture_trainer_taps_3">nang tatlong beses</string>
+    <string name="gesture_trainer_taps_4">nang apat na beses</string>
+    <string name="gesture_trainer_how_taps">Mag-tap <xliff:g id="taps">%1$s</xliff:g> gamit ang <xliff:g id="fingers">%2$s</xliff:g>. Ilapat nang sabay ang mga daliri at iangat nang sabay, nang mabilis, nang hindi nag-i-slide.</string>
+    <string name="gesture_trainer_how_taps_quick">Panatilihing mabilis at nasa parehong lugar ang mga tap: dapat dumating ang susunod na tap sa loob ng <xliff:g id="gap">%1$d</xliff:g> ms mula sa nauna.</string>
+    <string name="gesture_trainer_how_hold">Ilapat nang sabay ang <xliff:g id="fingers">%1$s</xliff:g> sa screen at panatilihing hindi gumagalaw, nang hindi nag-i-slide, nang hindi bababa sa <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Kapag walang ibang command na nakatalaga, ino-off ng galaw na ito ang SandFly. Sa tagasanay, wala itong pinapatakbo.</string>
+    <string name="gesture_trainer_how_taps_hold">Mag-tap <xliff:g id="taps">%1$s</xliff:g> gamit ang <xliff:g id="fingers">%2$s</xliff:g>, at sa huling tap ay iwan ang mga daliri sa screen, nang hindi gumagalaw, nang hindi bababa sa <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Gamitin ang hinlalaki, hintuturo at hinlalato.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Ilagay nang magkatabi ang hintuturo at hinlalato, at ang hinlalaki at palasingsingan nang ilang sentimetro ang layo sa magkabilang gilid. Pagkatapos ay pagdikitin ang apat na dulo ng daliri sa iisang punto.</string>
+    <string name="gesture_trainer_how_pinch">Ilapat ang <xliff:g id="fingers">%1$d</xliff:g> daliri sa screen, magkakalayo nang malawak. Pagkatapos ay ilapit sila nang diretso sa isa\'t isa nang hindi bababa sa 1 cm, na parang may dinadampot, at iangat mula sa screen. Igalaw lang ang mga daliri, hindi ang buong kamay, at hindi paarko.</string>
+    <string name="gesture_trainer_how_spread">Ilapat ang <xliff:g id="fingers">%1$d</xliff:g> daliri sa screen, magkakadikit. Pagkatapos ay ilayo sila nang diretso sa isa\'t isa nang hindi bababa sa 1 cm at iangat mula sa screen. Igalaw lang ang mga daliri, hindi ang buong kamay, at hindi paarko.</string>
+    <string name="gesture_trainer_clockwise">pakanan</string>
+    <string name="gesture_trainer_counterclockwise">pakaliwa</string>
+    <string name="gesture_trainer_how_rotate">Ilapat ang dalawang daliri sa screen, mga 2 hanggang 3 cm ang layo, at iikot ang mga ito <xliff:g id="way">%1$s</xliff:g> sa paligid ng kanilang gitna, gaya ng pag-ikot ng dial, nang mga isang-kapat na ikot. Pagkatapos ay iangat.</string>
+    <string name="gesture_trainer_how_scrub">Ilapat ang dalawang daliri sa screen at mabilis na igalaw ang mga ito sa isang gilid nang mga 2 cm at pabalik, na parang may binubura, lahat sa loob ng mga isang segundo. Pagkatapos ay iangat.</string>
+    <string name="gesture_trainer_edge_bottom">sa ibabang gilid</string>
+    <string name="gesture_trainer_edge_top_left">sa itaas na gilid, sa kaliwang kalahati nito</string>
+    <string name="gesture_trainer_edge_top_right">sa itaas na gilid, sa kanang kalahati nito</string>
+    <string name="gesture_trainer_edge_left_top">sa kaliwang gilid, sa itaas na kalahati nito</string>
+    <string name="gesture_trainer_edge_left_bottom">sa kaliwang gilid, sa ibabang kalahati nito</string>
+    <string name="gesture_trainer_edge_right_top">sa kanang gilid, sa itaas na kalahati nito</string>
+    <string name="gesture_trainer_edge_right_bottom">sa kanang gilid, sa ibabang kalahati nito</string>
+    <string name="gesture_trainer_edge_left">sa kaliwang gilid</string>
+    <string name="gesture_trainer_edge_right">sa kanang gilid</string>
+    <string name="gesture_trainer_edge_top">sa itaas na gilid</string>
+    <string name="gesture_trainer_how_edge">Ilapat ang isang daliri <xliff:g id="edge">%1$s</xliff:g>, hindi hihigit sa <xliff:g id="edge_width">%2$d</xliff:g> mm mula sa gilid, at mag-slide <xliff:g id="direction">%3$s</xliff:g> papasok sa screen hanggang sa unang click, mga <xliff:g id="distance">%4$d</xliff:g> mm. Pagkatapos ay iangat agad: lampas sa ikalawang click, mahabang pag-slide na ito.</string>
+    <string name="gesture_trainer_how_edge_long">Ilapat ang isang daliri <xliff:g id="edge">%1$s</xliff:g>, hindi hihigit sa <xliff:g id="edge_width">%2$d</xliff:g> mm mula sa gilid, at mag-slide <xliff:g id="direction">%3$s</xliff:g> papasok sa screen lampas sa unang click hanggang sa ikalawa, mga <xliff:g id="distance">%4$d</xliff:g> mm. Pagkatapos ay iangat.</string>
+    <string name="gesture_trainer_how_along">Mag-slide ng isang daliri <xliff:g id="direction">%2$s</xliff:g> sa kahabaan ng <xliff:g id="edge">%1$s</xliff:g>, nang hindi bababa sa <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">kaliwang itaas</string>
+    <string name="gesture_trainer_corner_top_right">kanang itaas</string>
+    <string name="gesture_trainer_corner_bottom_left">kaliwang ibaba</string>
+    <string name="gesture_trainer_corner_bottom_right">kanang ibaba</string>
+    <string name="gesture_trainer_how_corner">Mag-tap <xliff:g id="taps">%1$s</xliff:g> sa sulok sa <xliff:g id="corner">%2$s</xliff:g> ng screen. Ilagay ang daliri mismo sa sulok, hindi hihigit sa <xliff:g id="size">%3$d</xliff:g> mm mula sa parehong gilid, at iangat nang mabilis, sa loob ng <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Kapag mas malaki ang mga sulok, ang pag-tap sa isang control malapit sa sulok, gaya ng Bumalik sa kaliwang itaas, ay maaaring magpatakbo sa halip ng galaw sa sulok.</string>
+    <string name="gesture_trainer_rating_precise">nakilala, eksakto</string>
+    <string name="gesture_trainer_rating_good">nakilala, maayos</string>
+    <string name="gesture_trainer_rating_borderline">nakilala, pero malapit sa limitasyon</string>
+    <string name="gesture_trainer_try_recognized">Subok <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Subok <xliff:g id="number">%1$d</xliff:g>: hindi nakilala.</string>
+    <string name="gesture_trainer_try_other">Subok <xliff:g id="number">%1$d</xliff:g>: nakilala bilang <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> sa <xliff:g id="tries">%3$d</xliff:g> ang nakilala</string>
+    <string name="gesture_trainer_results_tries">Mga subok mo</string>
+    <string name="gesture_trainer_results_change">Ano ang babaguhin</string>
+    <string name="gesture_trainer_results_close">Malapit sa limitasyon</string>
+    <string name="gesture_trainer_results_all_good">Nakilala ang lahat ng subok sa loob ng mga limitasyon.</string>
+    <string name="gesture_trainer_results_settings">Mga setting na makakatulong</string>
+    <string name="gesture_trainer_next">Susunod na ehersisyo</string>
+    <string name="gesture_trainer_repeat">Ulitin</string>
+    <string name="gesture_trainer_finish">Tapusin</string>
+    <string name="gesture_trainer_group_done">Natapos mo ang lahat ng ehersisyo sa <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Baguhin ang <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">tumagal nang <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm ang haba</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm bawat segundo</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> degree ang layo sa tuwid na linya</string>
+    <string name="gesture_trainer_measure_start">unang sentimetro sa <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">lumapat ang mga daliri nang may <xliff:g id="ms">%1$d</xliff:g> ms na pagitan</string>
+    <string name="gesture_trainer_measure_tap">tap na <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms sa pagitan ng mga tap</string>
+    <string name="gesture_trainer_measure_spread">gumalaw ang mga daliri nang <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">umikot nang <xliff:g id="degrees">%1$.0f</xliff:g> degree</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm mula sa mga gilid ng sulok</string>
+    <string name="gesture_trainer_measure_edge">nagsimula nang <xliff:g id="mm">%1$.0f</xliff:g> mm mula sa gilid</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Mga daliri sa screen: <xliff:g id="fingers">%1$d</xliff:g> sa halip na <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Lumapat ang mga daliri nang may <xliff:g id="ms">%1$d</xliff:g> ms na pagitan, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">May daliring naiangat bago lumapat ang lahat ng daliri.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Naiangat ang mga daliri nang may <xliff:g id="ms">%1$d</xliff:g> ms na pagitan, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_became_exploration">Masyadong matagal na hindi gumalaw ang daliri o masyadong mabagal ang galaw sa simula, kaya naging pag-explore ng pagpindot ang pagpindot.</string>
+    <string name="gesture_trainer_finding_slow_start">Tumagal nang <xliff:g id="ms">%1$d</xliff:g> ms ang unang sentimetro, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_paused">Bumagal ang daliri nang <xliff:g id="ms">%1$d</xliff:g> ms, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang puwedeng itagal ng bawat sentimetro.</string>
+    <string name="gesture_trainer_finding_too_short"><xliff:g id="mm">%1$.0f</xliff:g> mm lang ang galaw, at dapat ay hindi bababa sa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Nagsimulang pumunta <xliff:g id="direction">%1$s</xliff:g> ang daliri.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Nagsimulang pumunta <xliff:g id="direction">%1$s</xliff:g> ang mga daliri.</string>
+    <string name="gesture_trainer_finding_off_line">Lumihis ang daanan nang <xliff:g id="degrees">%1$.0f</xliff:g> degree mula sa tuwid na linya, at hanggang <xliff:g id="limit">%2$.0f</xliff:g> lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_curved">Nahati ang daanan sa <xliff:g id="parts">%1$d</xliff:g> bahagi sa halip na <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Hindi nakita ang liko.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Pagkatapos ng liko, pumunta <xliff:g id="direction">%1$s</xliff:g> ang daliri.</string>
+    <string name="gesture_trainer_finding_tap_moved">Nag-slide ang daliri nang <xliff:g id="mm">%1$.1f</xliff:g> mm habang nagta-tap, at hanggang <xliff:g id="limit">%2$.1f</xliff:g> mm lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Tumagal nang <xliff:g id="ms">%1$d</xliff:g> ms ang isang tap, mas mahaba sa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Pinindot nang <xliff:g id="ms">%1$d</xliff:g> ms ang huling tap, at dapat ay hindi bababa sa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> tap sa halip na <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> tap sa halip na <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms ang lumipas sa pagitan ng mga tap, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_taps_apart">Lumapat ang mga tap nang <xliff:g id="mm">%1$.0f</xliff:g> mm ang layo, at hanggang <xliff:g id="limit">%2$.0f</xliff:g> mm lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_pinch_too_small"><xliff:g id="mm">%1$.0f</xliff:g> mm lang gumalaw ang mga daliri, at dapat silang gumalaw nang hindi bababa sa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Gumalaw ang mga daliri sa kabilang direksyon.</string>
+    <string name="gesture_trainer_finding_moved_together">Nag-slide ang buong kamay nang <xliff:g id="mm">%1$.0f</xliff:g> mm sa screen, higit pa sa paglapit o paglayo ng mga daliri sa isa\'t isa.</string>
+    <string name="gesture_trainer_finding_rotate_too_small"><xliff:g id="degrees">%1$.0f</xliff:g> degree lang umikot ang mga daliri, at dapat silang umikot nang hindi bababa sa <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Umikot ang mga daliri sa kabilang direksyon.</string>
+    <string name="gesture_trainer_finding_scrub_too_short"><xliff:g id="mm">%1$.0f</xliff:g> mm ang unang hagod, at dapat ay hindi bababa sa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return"><xliff:g id="mm">%1$.0f</xliff:g> mm ang pabalik na hagod, at dapat ay hindi bababa sa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Tumagal nang <xliff:g id="ms">%1$d</xliff:g> ms ang scrub, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Lumapat ang daliri nang <xliff:g id="mm">%1$.0f</xliff:g> mm mula sa gilid, at <xliff:g id="limit">%2$.0f</xliff:g> mm ang lapad ng gilid.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Nagsimula ang daliri sa kabilang kalahati ng gilid.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Nag-slide ang daliri nang <xliff:g id="mm">%1$.0f</xliff:g> mm, at dapat itong mag-slide nang hindi bababa sa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Masyadong mahaba ang pag-slide: lumampas ang daliri sa ikalawang click, <xliff:g id="mm">%1$.0f</xliff:g> mm, at nasa <xliff:g id="limit">%2$.0f</xliff:g> mm ang ikalawang click.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Tumagal nang <xliff:g id="ms">%1$d</xliff:g> ms bago naabot ang click, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Lumihis patagilid ang pag-slide nang <xliff:g id="degrees">%1$.0f</xliff:g> degree, at hanggang <xliff:g id="limit">%2$.0f</xliff:g> lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_corner_missed">Lumapat ang tap nang <xliff:g id="mm">%1$.0f</xliff:g> mm mula sa mga gilid ng sulok, at <xliff:g id="limit">%2$.0f</xliff:g> mm ang sulok.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Tumagal nang <xliff:g id="ms">%1$d</xliff:g> ms ang isang tap sa sulok, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_none">Walang natukoy na galaw na tumutugma sa galaw.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Tingnan kung ilang daliri ang nakadikit sa salamin. Kasama rin sa bilang ang palad o ibang daliring nakapatong sa screen.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Ilapat ang lahat ng daliri sa parehong sandali, bilang isang kamay, hindi isa-isa.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Ilapat muna ang lahat ng daliri, pagkatapos ay igalaw o iangat ang mga ito.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Iangat ang lahat ng daliri sa parehong sandali.</string>
+    <string name="gesture_trainer_tip_slow_start">Gumalaw sa sandaling mapindot mo ang screen, at gumalaw nang mas mabilis sa simula.</string>
+    <string name="gesture_trainer_tip_paused">Panatilihing gumagalaw ang daliri sa pantay na bilis hanggang sa iangat mo. Huwag bumagal malapit sa dulo.</string>
+    <string name="gesture_trainer_tip_too_short">Habaan ang galaw, mga 2 hanggang 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Tingnan ang direksyon sa pinakasimula ng galaw. Nakakatulong ang paghawak ng telepono nang tuwid sa harap mo.</string>
+    <string name="gesture_trainer_tip_off_line">Gumalaw lang sa direksyon, hindi pahilis. Mas tuwid ang linyang nagagawa ng hintuturo kaysa sa hinlalaki.</string>
+    <string name="gesture_trainer_tip_curved">Panatilihing tuwid ang linya at iangat mismo sa dulo, nang hindi ibinabaluktot patagilid ang daliri habang iniaangat.</string>
+    <string name="gesture_trainer_tip_turn_missing">Magpalit ng direksyon nang matalim, sa tamang anggulo o diretsong pabalik, nang hindi iniaangat. Dapat mga 2 cm ang bawat bahagi.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Pagkatapos ng liko, tingnan kung saan ka pupunta: dapat pumunta ang ikalawang bahagi sa ikalawang direksyong nasa pangalan ng galaw.</string>
+    <string name="gesture_trainer_tip_tap_moved">Mag-tap nang diretsong pababa at pataas, gamit ang dulo ng daliri, nang hindi nag-i-slide.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Gawing maikli ang bawat tap: pindutin at iangat agad.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Sa huling tap, panatilihing hindi gumagalaw ang mga daliri sa screen sa buong tagal ng pagpindot.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Bilangin ang mga tap, at gawin silang lahat nang mabilis nang tuloy-tuloy.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Bilangin ang mga tap. Ang daliring tumatalbog sa salamin ay gumagawa ng dagdag na tap.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Mag-tap nang mas mabilis: simulan ang susunod na tap kaagad pagkatapos iangat.</string>
+    <string name="gesture_trainer_tip_taps_apart">Mag-tap sa parehong lugar sa bawat pagkakataon.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Igalaw pa ang mga daliri, nang hindi bababa sa 1 cm palapit o palayo sa isa\'t isa.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Ang pinch ay paglapit ng mga daliri sa isa\'t isa, ang spread ay paglayo ng mga daliri.</string>
+    <string name="gesture_trainer_tip_moved_together">Igalaw lang ang mga daliri palapit o palayo sa isa\'t isa. Huwag i-slide ang buong kamay sa screen.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Umikot pa, gaya ng pag-ikot ng dial nang isang-kapat na ikot.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Ang pakanan ay pag-ikot sa direksyon ng mga kamay ng orasan: pakanan gumagalaw ang daliri sa itaas.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Gawing hindi bababa sa 1 cm ang haba ng unang hagod.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Pagkatapos ng unang hagod, bumalik sa kabilang direksyon bago iangat.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Gawing mabilis ang scrub, papunta at pabalik sa loob ng mga isang segundo.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Magsimula mismo sa gilid, na bahagyang nasa labas ng screen ang dulo ng daliri.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Tingnan kung saang kalahati ng gilid ka nagsisimula.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Mag-slide pa, hanggang marinig mo ang click, pagkatapos ay iangat.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Iangat kaagad pagkatapos ng unang click, bago ang ikalawa.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Mag-slide papasok nang mas mabilis, nang hindi humihinto bago ang click.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Mag-slide nang diretso papasok mula sa gilid, o diretso sa kahabaan nito, hindi pahilis.</string>
+    <string name="gesture_trainer_tip_corner_missed">Ilagay ang daliri mismo sa sulok, nakadikit sa parehong gilid.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Iangat nang mas mabilis pagkatapos pindutin ang sulok.</string>
+    <string name="gesture_trainer_close_to_limit">Malapit sa limitasyon: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Mabagal magsimula ang mga swipe. Pinapayagan ng mas mahabang <xliff:g id="setting">%1$s</xliff:g> ang mas mabagal na simula.</string>
+    <string name="gesture_trainer_advice_tap_time">Mabagal ang mga tap. Pinapayagan ng mas mahabang <xliff:g id="setting">%1$s</xliff:g> ang mas mabagal na mga tap.</string>
+    <string name="gesture_trainer_advice_edge_width">Masyadong malayo sa gilid nagsisimula ang mga swipe. Ginagawa rin ng mas malaking <xliff:g id="setting">%1$s</xliff:g> na swipe mula sa gilid ang mga swipe na nagsisimula malapit sa gilid.</string>
+    <string name="gesture_trainer_advice_corner_size">Lumalapat ang mga tap sa labas ng sulok. Pinalalaki ng mas malaking <xliff:g id="setting">%1$s</xliff:g> ang mga sulok.</string>
+    <string name="gesture_trainer_advice_corner_time">Mabagal ang mga tap sa sulok. Pinapayagan ng mas mahabang <xliff:g id="setting">%1$s</xliff:g> ang mas mabagal na mga tap.</string>
+    <string name="gesture_trainer_menu_option">Opsyon <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: piliin ang item <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Mag-slide ng isang daliri pataas o pababa <xliff:g id="edge">%1$s</xliff:g> nang hindi bababa sa <xliff:g id="distance">%2$d</xliff:g> mm para buksan ang menu. Mayroon itong <xliff:g id="count">%3$d</xliff:g> item, mula itaas pababa, bawat isa ay mga <xliff:g id="size">%6$s</xliff:g> cm ang taas. Ang item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ay <xliff:g id="from">%7$s</xliff:g> hanggang <xliff:g id="to">%8$s</xliff:g> cm sa ibaba ng itaas ng screen. Iangat ang daliri kapag sinabi ang item.</string>
+    <string name="gesture_trainer_menu_sample">Walang menu ang gilid na ito. Gumagamit ang ehersisyo ng <xliff:g id="count">%1$d</xliff:g> sample na item.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Subok <xliff:g id="number">%1$d</xliff:g>: nagsara ang menu nang walang napili.</string>
+    <string name="gesture_trainer_try_menu_other">Subok <xliff:g id="number">%1$d</xliff:g>: napili ang <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">naiangat sa item <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Nagsimula ang daliri sa pinakaitaas o pinakaibaba ng gilid, kung nasaan ang mga sulok at ang itaas at ibabang gilid.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Naiangat ang daliri nang <xliff:g id="mm">%1$.0f</xliff:g> mm mula sa gilid, at nagsasara ang menu kapag lampas sa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Naiangat ang daliri sa item <xliff:g id="item">%1$d</xliff:g> sa halip na item <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Magsimula nang bahagyang malayo sa itaas at ibabang dulo ng gilid.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Panatilihing malapit sa gilid ang daliri habang nag-i-slide, at doon ito iangat.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">May nakapirming lugar ang bawat item sa kahabaan ng gilid, at napipili ang item kung saan iniangat ang daliri. Iangat kapag sinabi ang item.</string>
+    <string name="gesture_trainer_contents">Nilalaman</string>
+    <string name="gesture_trainer_contents_heading">Nilalaman: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">tapos na, <xliff:g id="hits">%1$d</xliff:g> sa <xliff:g id="tries">%2$d</xliff:g> ang nakilala</string>
+    <string name="gesture_trainer_group_tap_swipe">Mag-tap at mag-swipe</string>
+    <string name="gesture_trainer_group_edge_swipes">Mga swipe mula sa mga gilid</string>
+    <string name="gesture_trainer_group_along_edges">Mga pag-slide sa kahabaan ng mga gilid</string>
+    <string name="gesture_trainer_group_edge_menus">Mga menu sa gilid</string>
+    <string name="gesture_trainer_group_corners">Mga sulok</string>
+    <string name="gesture_trainer_group_back_tap">Pag-tap sa likod</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Hindi kasama ang mga tap gamit ang 2 daliri na sinusundan ng swipe gamit ang 2 daliri: naka-off ang <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_how_swipe_hold">Pagkatapos, nang hindi iniaangat, panatilihing hindi gumagalaw ang daliri nang hindi bababa sa <xliff:g id="hold">%1$d</xliff:g> ms, at iangat.</string>
+    <string name="gesture_trainer_half_top">itaas</string>
+    <string name="gesture_trainer_half_bottom">ibaba</string>
+    <string name="gesture_trainer_how_taps_half">Mag-tap sa <xliff:g id="half">%1$s</xliff:g> na kalahati ng screen. Ang punto sa pagitan ng mga daliri ang nagtatakda ng kalahati.</string>
+    <string name="gesture_trainer_same_fingers">ang parehong mga daliri</string>
+    <string name="gesture_trainer_how_tap_swipe">Mag-tap <xliff:g id="taps">%1$s</xliff:g> gamit ang <xliff:g id="fingers">%2$s</xliff:g>. Kaagad pagkatapos ng huling tap, sa loob ng <xliff:g id="gap">%3$d</xliff:g> ms, pindutin muli ang screen gamit ang <xliff:g id="swipe_fingers">%4$s</xliff:g> at mag-slide <xliff:g id="direction">%5$s</xliff:g> nang tuwid nang mga 2 hanggang 3 cm, pagkatapos ay iangat.</string>
+    <string name="gesture_trainer_how_corner_hold">Sa huling tap, iwan ang daliri sa sulok, nang hindi gumagalaw, nang hindi bababa sa <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Hawakan ang telepono sa iyong kamay, sa mga gilid nito, at i-tap ang gitna ng likod nito <xliff:g id="taps">%1$s</xliff:g> gamit ang dulo ng daliri, nang mariin at mabilis, na parang kumakatok sa pinto. Panatilihing magkakalapit ang mga tap: hanggang <xliff:g id="gap">%2$d</xliff:g> ms ang pagitan. Huwag pindutin ang screen habang nagta-tap.</string>
+    <string name="gesture_trainer_back_tap_info">Walang pinapatakbong command ang mga tap sa likod habang nasa ehersisyo. Itinatakda ng <xliff:g id="setting">%1$s</xliff:g> kung gaano kalakas dapat ang isang tap.</string>
+    <string name="gesture_trainer_go_placed">Gawin ang galaw nang <xliff:g id="tries">%1$d</xliff:g> beses.</string>
+    <string name="gesture_trainer_along_left">kaliwang gilid</string>
+    <string name="gesture_trainer_along_right">kanang gilid</string>
+    <string name="gesture_trainer_along_top">itaas na gilid</string>
+    <string name="gesture_trainer_along_bottom">ibabang gilid</string>
+    <string name="gesture_trainer_left_out_along_menu">Hindi kasama ang mga pag-slide sa kahabaan ng <xliff:g id="edge">%1$s</xliff:g>: may menu sa gilid ito, kaya binubuksan ng pag-slide sa kahabaan nito ang menu sa halip na magpatakbo ng galaw.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Hindi kasama ang mga pag-slide sa kahabaan ng <xliff:g id="edge">%1$s</xliff:g>: nag-i-scroll ito, kaya ini-scroll ng pag-slide sa kahabaan nito ang app sa halip na magpatakbo ng galaw.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Masyadong lumayo ang daliri mula sa gilid.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Panatilihin ang daliri sa pinakagilid ng salamin, nang diretso sa kahabaan ng gilid.</string>
+    <string name="gesture_trainer_go_back_tap">Gawin ang galaw na pag-tap sa likod nang <xliff:g id="tries">%1$d</xliff:g> beses. Bigo ang subok kapag may pagpindot sa screen.</string>
+    <string name="gesture_trainer_no_accelerometer">Kailangan ng ehersisyong ito ng accelerometer. Walang available.</string>
+    <string name="gesture_trainer_measure_hold">hindi gumalaw nang <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">tap na may lakas na <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Hindi gumalaw ang daliri nang <xliff:g id="ms">%1$d</xliff:g> ms sa dulo, at dapat itong hindi gumalaw nang hindi bababa sa <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Nag-tap ang mga daliri sa kabilang kalahati ng screen.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Walang swipe pagkatapos ng mga tap.</string>
+    <string name="gesture_trainer_finding_swipe_late">Nagsimula ang swipe nang <xliff:g id="ms">%1$d</xliff:g> ms pagkatapos ng huling tap, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Masyadong mahina ang tap sa likod: <xliff:g id="percent">%1$d</xliff:g>%% ng kinakailangang lakas.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Mas niyugyog ng isang tap ang telepono patagilid kaysa sa likod nito.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Gumagalaw ang telepono bago ang isang tap.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Napindot ang screen, at hindi binibilang ang mga tap habang pinipindot ito.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms ang lumipas sa pagitan ng mga tap sa likod, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Pagkatapos ng swipe, panatilihing hindi gumagalaw ang daliri sa screen sa buong tagal ng pagpindot. Pagkatapos ay iangat.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Tingnan kung saang kalahati ka nagta-tap: hinahati ng gitna ng screen ang itaas na kalahati at ang ibabang kalahati.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Pagkatapos ng huling tap, pindutin muli agad ang screen at mag-swipe.</string>
+    <string name="gesture_trainer_tip_swipe_late">Simulan ang swipe kaagad pagkatapos ng huling tap, nang walang hinto.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Mag-tap nang mas mariin, gamit ang dulo ng daliri o kuko, malapit sa gitna ng likod.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Mag-tap nang diretso sa likod ng telepono, hindi sa gilid nito o nang pahilis.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Panatilihing hindi gumagalaw ang telepono sandali bago mag-tap, at hawakan ito nang maluwag para hindi ito magalaw ng iyong kamay.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Huwag idikit ang mga daliri sa screen habang nagta-tap sa likod: hawakan ang telepono sa mga gilid nito.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Mag-tap nang mas mabilis, sunod-sunod.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Masyadong maagang naiaangat ang daliri pagkatapos ng swipe. Pinapayagan ng mas maikling <xliff:g id="setting">%1$s</xliff:g> ang mas maikling pagpindot.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Mahina ang mga tap sa likod. Natutukoy ng mas mataas na <xliff:g id="setting">%1$s</xliff:g> ang mas mahihinang tap, at maaaring matukoy ang mga bunggo bilang tap.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Umikot ang mga daliri nang <xliff:g id="degrees">%1$.0f</xliff:g> degree, at mula <xliff:g id="limit">%2$.0f</xliff:g> degree ay pag-ikot na ang galaw.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Igalaw ang mga daliri nang tuwid palapit o palayo sa isa\'t isa, hindi paarko sa paligid ng isa\'t isa.</string>
+    <string name="gesture_trainer_finding_other_gesture">Tumugma ang galaw sa galaw na iyon sa halip.</string>
+    <string name="gesture_trainer_side_left">kaliwa</string>
+    <string name="gesture_trainer_side_right">kanan</string>
+    <string name="gesture_trainer_side_top">itaas</string>
+    <string name="gesture_trainer_side_bottom">ibaba</string>
+    <string name="gesture_trainer_finding_wrong_edge">Nagsimula ang daliri sa gilid sa <xliff:g id="side">%1$s</xliff:g>, at nasa gilid sa <xliff:g id="expected">%2$s</xliff:g> ang ehersisyong ito.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Magsimula mismo sa gilid na sinasabi ng ehersisyo.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Isang menu sa gilid ang nabuksan sa halip na ang galaw na ito.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Binubuksan ng pag-slide sa kahabaan ng gilid na may menu ang menu. Magsimula sa gilid na sinasabi ng ehersisyo.</string>
+    <string name="gesture_trainer_group_three_part">Mga swipe na may 3 bahagi</string>
+    <string name="gesture_trainer_group_two_stroke">Mga swipe na may 2 hagod</string>
+    <string name="gesture_trainer_group_shake">Pag-alog</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Hindi kasama ang mga swipe na may 3 bahagi: naka-on ang <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Hindi kasama ang mga swipe na may 2 hagod: <xliff:g id="value">%2$s</xliff:g> ang <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Walang pinapatakbong command ang pag-alog habang nasa ehersisyo. Itinatakda ng <xliff:g id="setting">%1$s</xliff:g> kung gaano kalakas dapat ang pag-alog.</string>
+    <string name="gesture_trainer_go_shake">Alugin ang telepono nang <xliff:g id="tries">%1$d</xliff:g> beses, na may maikling hinto pagkatapos ng bawat pag-alog.</string>
+    <string name="gesture_trainer_how_shake">Hawakan nang mahigpit ang telepono at alugin ito nang mabilis nang pabalik-balik, na parang nagpapagpag ng patak ng tubig: hindi bababa sa dalawang beses sa bawat direksyon, lahat sa loob ng mga dalawang-katlo ng isang segundo. Pagkatapos ay panatilihin itong hindi gumagalaw.</string>
+    <string name="gesture_trainer_how_two_stroke">Mag-swipe <xliff:g id="first">%1$s</xliff:g> gamit ang isang daliri, mga 2 cm, at iangat. Pagkatapos ay agad, sa loob ng <xliff:g id="time">%3$d</xliff:g> ms, mag-swipe <xliff:g id="second">%2$s</xliff:g> gamit ang isang daliri, mga 2 cm, at iangat.</string>
+    <string name="gesture_trainer_how_three_part">Pindutin ang screen gamit ang isang daliri at, nang hindi iniaangat, mag-swipe <xliff:g id="first">%1$s</xliff:g>, pagkatapos ay lumiko nang matalim at mag-swipe <xliff:g id="second">%2$s</xliff:g>, pagkatapos ay lumiko muli nang matalim at mag-swipe <xliff:g id="third">%3$s</xliff:g>, mga 2 cm bawat bahagi, at iangat. Gawin ito bilang isang mabilis at tuloy-tuloy na galaw na may matatalim na sulok, hindi mga kurba.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Ilagay ang isang daliri sa itaas na ikatlong bahagi ng screen at ang isa pa sa ibabang ikatlong bahagi, halimbawa ang hinlalaki sa ibaba at ang hintuturo sa itaas.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Hindi nasa itaas na ikatlong bahagi ng screen ang isang daliri at nasa ibabang ikatlong bahagi ang isa pa.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Walang ikalawang swipe.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Nagsimula ang ikalawang swipe nang <xliff:g id="ms">%1$d</xliff:g> ms pagkatapos ng una, at hanggang <xliff:g id="limit">%2$d</xliff:g> ms lang ang pinapayagan.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Pumunta <xliff:g id="direction">%1$s</xliff:g> ang unang swipe.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Pumunta <xliff:g id="direction">%1$s</xliff:g> ang ikalawang swipe.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Masyadong mahina ang pag-alog: <xliff:g id="percent">%1$d</xliff:g>%% ng kinakailangang lakas.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Mga pabalik-balik na galaw: <xliff:g id="swings">%1$d</xliff:g> sa <xliff:g id="wanted">%2$d</xliff:g> na kinakailangan.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Paglayuin nang malaki ang mga daliri, isa malapit sa itaas na gilid at isa malapit sa ibabang gilid.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Pagkatapos ng unang swipe, iangat ang daliri at mag-swipe muli agad.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Simulan ang ikalawang swipe kaagad pagkatapos iangat ang daliri.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Alugin nang mas malakas at mas mabilis.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Alugin nang mas mabilis, pabalik-balik nang hindi bababa sa dalawang beses sa bawat direksyon, nang hindi humihinto sa pagitan.</string>
+    <string name="gesture_trainer_measure_shake_strength">pinakamalakas na galaw <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Mahina ang mga pag-alog. Natutukoy ng mas mataas na <xliff:g id="setting">%1$s</xliff:g> ang mas mahihinang pag-alog, at maaaring matukoy ang pagdadala ng telepono bilang pag-alog.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Huli nang nagsisimula ang ikalawang swipe. Pinapayagan ng mas mahabang <xliff:g id="setting">%1$s</xliff:g> ang mas huling ikalawang swipe, at mas matagal namang naghihintay ang isang swipe bago ito tumakbo.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Naka-on ang <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Naka-off ang <xliff:g id="setting">%1$s</xliff:g>: nag-i-scroll ng app ang mga pag-swipe gamit ang 2 daliri, at kadalasang nag-i-scroll din ang scrub. Kapag naka-on ang setting, nagpapatakbo ng mga command ng SandFly ang mga pag-swipe gamit ang 2 daliri sa halip na mag-scroll.</string>
+    <string name="gesture_trainer_measure_first_stroke">unang swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ikalawang swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">buong galaw <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">naiangat nang <xliff:g id="ms">%1$d</xliff:g> ms sa pagitan ng mga ito</string>
+</resources>

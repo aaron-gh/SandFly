@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">ჟესტების ტრენაჟორი</string>
+    <string name="gesture_trainer_intro">აირჩიეთ ჟესტების ჯგუფი. თითოეული სავარჯიშო აღწერს ერთ ჟესტს. შეასრულეთ ჟესტი <xliff:g id="tries">%1$d</xliff:g>-ჯერ; თითოეული ცდის შედეგი ხმამაღლა ითქმის. ბოლო ცდის შემდეგ ეკრანზე ჩამოთვლილია თითოეული ცდის გაზომვები, რა უნდა შეიცვალოს და შესაბამისი პარამეტრები.</string>
+    <string name="gesture_trainer_group_one_finger">ერთი თითი</string>
+    <string name="gesture_trainer_group_two_fingers">ორი თითი</string>
+    <string name="gesture_trainer_group_three_fingers">სამი თითი</string>
+    <string name="gesture_trainer_group_four_fingers">ოთხი თითი</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">შეკუმშვა, დატრიალება და წინ-უკან გასმა</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> სავარჯიშო</string>
+    <string name="gesture_trainer_close">დახურვა</string>
+    <string name="gesture_trainer_no_detection">ჟესტების ტრენაჟორს სჭირდება Android 13 ან უფრო ახალი.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">წინ-უკან და კუთხიანი ჟესტები გამოტოვებულია: <xliff:g id="setting">%1$s</xliff:g> ჩართულია.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">ორი თითით გადაფურცვლები გამოტოვებულია: <xliff:g id="setting">%1$s</xliff:g> გამორთულია, ამიტომ ისინი აპებს გადაახვევენ.</string>
+    <string name="gesture_trainer_exercise_heading">სავარჯიშო <xliff:g id="number">%1$d</xliff:g> / <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">დაწყება</string>
+    <string name="gesture_trainer_skip">ამ სავარჯიშოს გამოტოვება</string>
+    <string name="gesture_trainer_back_to_groups">ჯგუფებზე დაბრუნება</string>
+    <string name="gesture_trainer_go">შეასრულეთ ჟესტი <xliff:g id="tries">%1$d</xliff:g>-ჯერ, ეკრანის ნებისმიერ ადგილას. თითოეული შეხება ერთი ცდაა.</string>
+    <string name="gesture_trainer_fingers_1">ერთი თითით</string>
+    <string name="gesture_trainer_fingers_2">ორი თითით, გვერდიგვერდ, დაახლოებით 1 სმ დაშორებით</string>
+    <string name="gesture_trainer_fingers_3">სამი თითით, გვერდიგვერდ, ოდნავ დაშორებით</string>
+    <string name="gesture_trainer_fingers_4">ოთხი თითით, გვერდიგვერდ, ოდნავ დაშორებით</string>
+    <string name="gesture_trainer_direction_up">ზემოთ</string>
+    <string name="gesture_trainer_direction_down">ქვემოთ</string>
+    <string name="gesture_trainer_direction_left">მარცხნივ</string>
+    <string name="gesture_trainer_direction_right">მარჯვნივ</string>
+    <string name="gesture_trainer_how_swipe">შეეხეთ ეკრანს <xliff:g id="fingers">%1$s</xliff:g> და დაუყოვნებლივ გაასრიალეთ <xliff:g id="direction">%2$s</xliff:g> სწორ ხაზზე დაახლოებით 2–3 სმ, შემდეგ აწიეთ. მოძრაობა მაშინვე დაიწყეთ: თითი, რომელიც ჯერ გაჩერდება, შეხებით დათვალიერებას იწყებს.</string>
+    <string name="gesture_trainer_how_swipe_multi">დადეთ თითები ერთად, ერთსა და იმავე მომენტში, და ყველა ერთი მიმართულებით გაამოძრავეთ. ყოველი თითი მთელი დროის განმავლობაში <xliff:g id="direction">%1$s</xliff:g> უნდა მიდიოდეს, ამიტომ ხაზი სწორი შეინარჩუნეთ.</string>
+    <string name="gesture_trainer_how_back_and_forth">შეეხეთ ეკრანს ერთი თითით და გაასრიალეთ <xliff:g id="first">%1$s</xliff:g> დაახლოებით 2 სმ, შემდეგ აუწევლად პირდაპირ დაბრუნდით <xliff:g id="second">%2$s</xliff:g> დაახლოებით 2 სმ და აწიეთ. შეასრულეთ ეს ერთი სწრაფი, მდორე მოძრაობით.</string>
+    <string name="gesture_trainer_how_angle">შეეხეთ ეკრანს <xliff:g id="fingers">%1$s</xliff:g> და გაასრიალეთ <xliff:g id="first">%2$s</xliff:g> დაახლოებით 2 სმ, შემდეგ აუწევლად მკვეთრად მოუხვიეთ და გაასრიალეთ <xliff:g id="second">%3$s</xliff:g> დაახლოებით 2 სმ, და აწიეთ. მოხვევა იყოს მკვეთრი კუთხე, როგორც ასო L, და არა რკალი.</string>
+    <string name="gesture_trainer_taps_1">ერთხელ</string>
+    <string name="gesture_trainer_taps_2">ორჯერ</string>
+    <string name="gesture_trainer_taps_3">სამჯერ</string>
+    <string name="gesture_trainer_taps_4">ოთხჯერ</string>
+    <string name="gesture_trainer_how_taps">შეეხეთ <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. თითები ერთად დადეთ და ერთად აწიეთ, სწრაფად, გასრიალების გარეშე.</string>
+    <string name="gesture_trainer_how_taps_quick">შეხებები იყოს სწრაფი და ერთსა და იმავე ადგილას: შემდეგი შეხება წინადან <xliff:g id="gap">%1$d</xliff:g> მწ-ში უნდა მოხდეს.</string>
+    <string name="gesture_trainer_how_hold">შეეხეთ ეკრანს <xliff:g id="fingers">%1$s</xliff:g> ერთდროულად და გააჩერეთ თითები, გასრიალების გარეშე, სულ მცირე <xliff:g id="hold">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">თუ სხვა ბრძანება არ არის მინიჭებული, ეს ჟესტი SandFly-ს გამორთავს. ტრენაჟორში ის არაფერს უშვებს.</string>
+    <string name="gesture_trainer_how_taps_hold">შეეხეთ <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g> და ბოლო შეხებისას დატოვეთ თითები ეკრანზე უძრავად სულ მცირე <xliff:g id="hold">%3$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_how_three_finger_hand">გამოიყენეთ ცერი, საჩვენებელი და შუა თითი.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">საჩვენებელი და შუა თითი ერთმანეთის გვერდით დადეთ, ხოლო ცერი და არათითი რამდენიმე სანტიმეტრის მოშორებით ორივე მხარეს. შემდეგ ოთხივე თითის წვერი ერთ წერტილში შეაერთეთ.</string>
+    <string name="gesture_trainer_how_pinch">დადეთ <xliff:g id="fingers">%1$d</xliff:g> თითი ეკრანზე, ფართოდ გაშლილი. შემდეგ პირდაპირ მიუახლოვეთ ერთმანეთს სულ მცირე 1 სმ-ით, თითქოს რაღაცას იღებთ, და აწიეთ ეკრანიდან. ამოძრავეთ მხოლოდ თითები, არა მთელი ხელი და არა რკალად.</string>
+    <string name="gesture_trainer_how_spread">დადეთ <xliff:g id="fingers">%1$d</xliff:g> თითი ეკრანზე, ერთმანეთთან ახლოს. შემდეგ პირდაპირ დააშორეთ ერთმანეთს სულ მცირე 1 სმ-ით და აწიეთ ეკრანიდან. ამოძრავეთ მხოლოდ თითები, არა მთელი ხელი და არა რკალად.</string>
+    <string name="gesture_trainer_clockwise">საათის ისრის მიმართულებით</string>
+    <string name="gesture_trainer_counterclockwise">საათის ისრის საწინააღმდეგოდ</string>
+    <string name="gesture_trainer_how_rotate">დადეთ ორი თითი ეკრანზე, დაახლოებით 2–3 სმ დაშორებით, და დაატრიალეთ ისინი <xliff:g id="way">%1$s</xliff:g> მათი შუა წერტილის გარშემო, როგორც სახელურის მობრუნება, დაახლოებით მეოთხედი ბრუნით. შემდეგ აწიეთ.</string>
+    <string name="gesture_trainer_how_scrub">დადეთ ორი თითი ეკრანზე და სწრაფად გაასრიალეთ ერთ მხარეს დაახლოებით 2 სმ და უკან, თითქოს რაღაცას შლით, ყველაფერი დაახლოებით ერთ წამში. შემდეგ აწიეთ.</string>
+    <string name="gesture_trainer_edge_bottom">ქვედა კიდეზე</string>
+    <string name="gesture_trainer_edge_top_left">ზედა კიდეზე, მის მარცხენა ნახევარში</string>
+    <string name="gesture_trainer_edge_top_right">ზედა კიდეზე, მის მარჯვენა ნახევარში</string>
+    <string name="gesture_trainer_edge_left_top">მარცხენა კიდეზე, მის ზედა ნახევარში</string>
+    <string name="gesture_trainer_edge_left_bottom">მარცხენა კიდეზე, მის ქვედა ნახევარში</string>
+    <string name="gesture_trainer_edge_right_top">მარჯვენა კიდეზე, მის ზედა ნახევარში</string>
+    <string name="gesture_trainer_edge_right_bottom">მარჯვენა კიდეზე, მის ქვედა ნახევარში</string>
+    <string name="gesture_trainer_edge_left">მარცხენა კიდეზე</string>
+    <string name="gesture_trainer_edge_right">მარჯვენა კიდეზე</string>
+    <string name="gesture_trainer_edge_top">ზედა კიდეზე</string>
+    <string name="gesture_trainer_how_edge">დადეთ ერთი თითი <xliff:g id="edge">%1$s</xliff:g>, კიდიდან არაუმეტეს <xliff:g id="edge_width">%2$d</xliff:g> მმ-ზე, და გაასრიალეთ <xliff:g id="direction">%3$s</xliff:g> ეკრანის შიგნით პირველ წკაპამდე, დაახლოებით <xliff:g id="distance">%4$d</xliff:g> მმ. შემდეგ მაშინვე აწიეთ: მეორე წკაპის შემდეგ გასრიალება გრძელი გასრიალებაა.</string>
+    <string name="gesture_trainer_how_edge_long">დადეთ ერთი თითი <xliff:g id="edge">%1$s</xliff:g>, კიდიდან არაუმეტეს <xliff:g id="edge_width">%2$d</xliff:g> მმ-ზე, და გაასრიალეთ <xliff:g id="direction">%3$s</xliff:g> ეკრანის შიგნით პირველი წკაპის გავლით მეორემდე, დაახლოებით <xliff:g id="distance">%4$d</xliff:g> მმ. შემდეგ აწიეთ.</string>
+    <string name="gesture_trainer_how_along">გაასრიალეთ ერთი თითი <xliff:g id="direction">%2$s</xliff:g> <xliff:g id="edge">%1$s</xliff:g> გასწვრივ, სულ მცირე <xliff:g id="distance">%3$d</xliff:g> მმ.</string>
+    <string name="gesture_trainer_corner_top_left">ზედა მარცხენა</string>
+    <string name="gesture_trainer_corner_top_right">ზედა მარჯვენა</string>
+    <string name="gesture_trainer_corner_bottom_left">ქვედა მარცხენა</string>
+    <string name="gesture_trainer_corner_bottom_right">ქვედა მარჯვენა</string>
+    <string name="gesture_trainer_how_corner">შეეხეთ <xliff:g id="taps">%1$s</xliff:g> ეკრანის <xliff:g id="corner">%2$s</xliff:g> კუთხეში. დადეთ თითი ზუსტად კუთხეში, ორივე კიდიდან არაუმეტეს <xliff:g id="size">%3$d</xliff:g> მმ-ზე, და სწრაფად აწიეთ, <xliff:g id="time">%4$d</xliff:g> მწ-ში.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> მმ. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> მმ.</string>
+    <string name="gesture_trainer_corner_warning">უფრო დიდი კუთხეების შემთხვევაში კუთხესთან ახლოს მდებარე მართვის ელემენტზე შეხებამ, მაგალითად „უკან“ ზედა მარცხენა მხარეს, შეიძლება მის ნაცვლად კუთხის ჟესტი გაუშვას.</string>
+    <string name="gesture_trainer_rating_precise">ამოცნობილია, ზუსტი</string>
+    <string name="gesture_trainer_rating_good">ამოცნობილია, კარგი</string>
+    <string name="gesture_trainer_rating_borderline">ამოცნობილია, მაგრამ ზღვართან ახლოს</string>
+    <string name="gesture_trainer_try_recognized">ცდა <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">ცდა <xliff:g id="number">%1$d</xliff:g>: არ არის ამოცნობილი.</string>
+    <string name="gesture_trainer_try_other">ცდა <xliff:g id="number">%1$d</xliff:g>: ამოცნობილია, როგორც <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: ამოცნობილია <xliff:g id="recognized">%2$d</xliff:g> / <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">თქვენი ცდები</string>
+    <string name="gesture_trainer_results_change">რა უნდა შეიცვალოს</string>
+    <string name="gesture_trainer_results_close">ზღვართან ახლოს</string>
+    <string name="gesture_trainer_results_all_good">ყველა ცდა ამოცნობილია ზღვრებში.</string>
+    <string name="gesture_trainer_results_settings">პარამეტრები, რომლებიც შეიძლება დაგეხმაროთ</string>
+    <string name="gesture_trainer_next">შემდეგი სავარჯიშო</string>
+    <string name="gesture_trainer_repeat">გამეორება</string>
+    <string name="gesture_trainer_finish">დასრულება</string>
+    <string name="gesture_trainer_group_done">ჯგუფის „<xliff:g id="group">%1$s</xliff:g>“ ყველა სავარჯიშო დაასრულეთ.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g>: შეცვლა</string>
+    <string name="gesture_trainer_measure_duration">გაგრძელდა <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+    <string name="gesture_trainer_measure_length">სიგრძე <xliff:g id="cm">%1$.1f</xliff:g> სმ</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> სმ წამში</string>
+    <string name="gesture_trainer_measure_angle">სწორი ხაზიდან გადახრა <xliff:g id="degrees">%1$.0f</xliff:g> გრადუსი</string>
+    <string name="gesture_trainer_measure_start">პირველი სანტიმეტრი <xliff:g id="ms">%1$d</xliff:g> მწ-ში</string>
+    <string name="gesture_trainer_measure_landing">თითები დაეშვა <xliff:g id="ms">%1$d</xliff:g> მწ-ის სხვაობით</string>
+    <string name="gesture_trainer_measure_tap">შეხება <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> მწ შეხებებს შორის</string>
+    <string name="gesture_trainer_measure_spread">თითები გადაადგილდა <xliff:g id="mm">%1$.0f</xliff:g> მმ-ით</string>
+    <string name="gesture_trainer_measure_rotation">დატრიალდა <xliff:g id="degrees">%1$.0f</xliff:g> გრადუსით</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> მმ კუთხის კიდეებიდან</string>
+    <string name="gesture_trainer_measure_edge">დაიწყო კიდიდან <xliff:g id="mm">%1$.0f</xliff:g> მმ-ზე</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">თითები ეკრანზე: <xliff:g id="fingers">%1$d</xliff:g> <xliff:g id="wanted">%2$d</xliff:g>-ის ნაცვლად.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">თითები დაეშვა <xliff:g id="ms">%1$d</xliff:g> მწ-ის სხვაობით, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">ერთი თითი აიწია, სანამ ყველა თითი დაეშვებოდა.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">თითები აიწია <xliff:g id="ms">%1$d</xliff:g> მწ-ის სხვაობით, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_became_exploration">თითი ზედმეტად დიდხანს იდგა უძრავად ან თავიდან ზედმეტად ნელა მოძრაობდა, ამიტომ შეხება შეხებით დათვალიერებად იქცა.</string>
+    <string name="gesture_trainer_finding_slow_start">პირველ სანტიმეტრს <xliff:g id="ms">%1$d</xliff:g> მწ დასჭირდა, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_paused">თითი შენელდა <xliff:g id="ms">%1$d</xliff:g> მწ-ით, თითოეულ სანტიმეტრს კი მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ შეიძლება დასჭირდეს.</string>
+    <string name="gesture_trainer_finding_too_short">მოძრაობა მხოლოდ <xliff:g id="mm">%1$.0f</xliff:g> მმ იყო, უნდა იყოს სულ მცირე <xliff:g id="limit">%2$.0f</xliff:g> მმ.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">თითმა მოძრაობა დაიწყო <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">თითებმა მოძრაობა დაიწყეს <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">გზა სწორი ხაზიდან <xliff:g id="degrees">%1$.0f</xliff:g> გრადუსით გადაიხარა, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">გზა გაიყო <xliff:g id="parts">%1$d</xliff:g> ნაწილად <xliff:g id="wanted">%2$d</xliff:g>-ის ნაცვლად.</string>
+    <string name="gesture_trainer_finding_turn_missing">მოხვევა ვერ მოიძებნა.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">მოხვევის შემდეგ თითი წავიდა <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">შეხებისას თითი <xliff:g id="mm">%1$.1f</xliff:g> მმ-ით გასრიალდა, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$.1f</xliff:g> მმ.</string>
+    <string name="gesture_trainer_finding_tap_held_long">შეხება გაგრძელდა <xliff:g id="ms">%1$d</xliff:g> მწ, <xliff:g id="limit">%2$d</xliff:g> მწ-ზე მეტხანს.</string>
+    <string name="gesture_trainer_finding_hold_too_short">ბოლო შეხება <xliff:g id="ms">%1$d</xliff:g> მწ გაგრძელდა, უნდა იყოს სულ მცირე <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> შეხება <xliff:g id="wanted">%2$d</xliff:g>-ის ნაცვლად.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> შეხება <xliff:g id="wanted">%2$d</xliff:g>-ის ნაცვლად.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">შეხებებს შორის გავიდა <xliff:g id="ms">%1$d</xliff:g> მწ, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_taps_apart">შეხებები ერთმანეთისგან <xliff:g id="mm">%1$.0f</xliff:g> მმ-ით დაშორებით დაეშვა, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$.0f</xliff:g> მმ.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">თითები მხოლოდ <xliff:g id="mm">%1$.0f</xliff:g> მმ-ით გადაადგილდა, უნდა გადაადგილდეს სულ მცირე <xliff:g id="limit">%2$.0f</xliff:g> მმ-ით.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">თითები საპირისპირო მიმართულებით გადაადგილდა.</string>
+    <string name="gesture_trainer_finding_moved_together">მთელი ხელი <xliff:g id="mm">%1$.0f</xliff:g> მმ-ით გასრიალდა ეკრანზე, უფრო მეტად, ვიდრე თითები ერთმანეთს მიუახლოვდა ან დაშორდა.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">თითები მხოლოდ <xliff:g id="degrees">%1$.0f</xliff:g> გრადუსით დატრიალდა, უნდა დატრიალდეს სულ მცირე <xliff:g id="limit">%2$.0f</xliff:g> გრადუსით.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">თითები საპირისპირო მიმართულებით დატრიალდა.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">პირველი მოსმა <xliff:g id="mm">%1$.0f</xliff:g> მმ იყო, უნდა იყოს სულ მცირე <xliff:g id="limit">%2$.0f</xliff:g> მმ.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">უკან მოსმა <xliff:g id="mm">%1$.0f</xliff:g> მმ იყო, უნდა იყოს სულ მცირე <xliff:g id="limit">%2$.0f</xliff:g> მმ.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">წინ-უკან გასმას <xliff:g id="ms">%1$d</xliff:g> მწ დასჭირდა, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">თითი კიდიდან <xliff:g id="mm">%1$.0f</xliff:g> მმ-ზე დაეშვა, კიდის სიგანე კი <xliff:g id="limit">%2$.0f</xliff:g> მმ-ია.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">თითმა კიდის მეორე ნახევარში დაიწყო.</string>
+    <string name="gesture_trainer_finding_edge_too_short">თითი <xliff:g id="mm">%1$.0f</xliff:g> მმ-ით გასრიალდა, უნდა გასრიალდეს სულ მცირე <xliff:g id="limit">%2$.0f</xliff:g> მმ-ით.</string>
+    <string name="gesture_trainer_finding_edge_too_long">ზედმეტად გრძელი გასრიალება: თითმა მეორე წკაპს გადააცილა, <xliff:g id="mm">%1$.0f</xliff:g> მმ, მეორე წკაპი კი <xliff:g id="limit">%2$.0f</xliff:g> მმ-ზეა.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">წკაპამდე მისვლას <xliff:g id="ms">%1$d</xliff:g> მწ დასჭირდა, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_edge_sideways">გასრიალება <xliff:g id="degrees">%1$.0f</xliff:g> გრადუსით გადაიხარა გვერდზე, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">შეხება კუთხის კიდეებიდან <xliff:g id="mm">%1$.0f</xliff:g> მმ-ზე დაეშვა, კუთხე კი <xliff:g id="limit">%2$.0f</xliff:g> მმ-ია.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">კუთხეზე შეხება გაგრძელდა <xliff:g id="ms">%1$d</xliff:g> მწ, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_none">ჟესტის შესაბამისი მოძრაობა ვერ ამოიცნო.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">შეამოწმეთ, რამდენი თითი ეხება მინას. ეკრანზე დადებული ხელისგული ან სხვა თითიც ითვლება.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">ყველა თითი ერთსა და იმავე მომენტში დადეთ, როგორც ერთი ხელი, და არა ერთმანეთის მიყოლებით.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">ჯერ ყველა თითი დადეთ, შემდეგ გაამოძრავეთ ან აწიეთ.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">ყველა თითი ერთსა და იმავე მომენტში აწიეთ.</string>
+    <string name="gesture_trainer_tip_slow_start">მოძრაობა ეკრანზე შეხებისთანავე დაიწყეთ და დასაწყისში უფრო სწრაფად იმოძრავეთ.</string>
+    <string name="gesture_trainer_tip_paused">თითი თანაბარი სიჩქარით ამოძრავეთ აწევამდე. ბოლოსკენ ნუ შეანელებთ.</string>
+    <string name="gesture_trainer_tip_too_short">მოძრაობა გაახანგრძლივეთ, დაახლოებით 2–3 სმ-მდე.</string>
+    <string name="gesture_trainer_tip_wrong_direction">მიმართულება მოძრაობის დასაწყისშივე შეამოწმეთ. ტელეფონის პირდაპირ თქვენს წინ დაჭერა გეხმარებათ.</string>
+    <string name="gesture_trainer_tip_off_line">იმოძრავეთ მხოლოდ მიმართულების გასწვრივ, არა დიაგონალურად. საჩვენებელი თითი ცერზე უფრო სწორ ხაზს ინარჩუნებს.</string>
+    <string name="gesture_trainer_tip_curved">ხაზი სწორი შეინარჩუნეთ და აწიეთ ზუსტად ბოლოს, აწევისას თითის გვერდზე მოხრის გარეშე.</string>
+    <string name="gesture_trainer_tip_turn_missing">მიმართულება მკვეთრად შეცვალეთ, მართი კუთხით ან პირდაპირ უკან, აწევის გარეშე. თითოეული ნაწილი დაახლოებით 2 სმ უნდა იყოს.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">მოხვევის შემდეგ შეამოწმეთ, საით მიდიხართ: მეორე ნაწილი ჟესტის სახელში მითითებული მეორე მიმართულებით უნდა წავიდეს.</string>
+    <string name="gesture_trainer_tip_tap_moved">შეეხეთ პირდაპირ ზემოდან ქვემოთ და აწიეთ, თითის წვერით, გასრიალების გარეშე.</string>
+    <string name="gesture_trainer_tip_tap_held_long">თითოეული შეხება მოკლე იყოს: შეეხეთ და მაშინვე აწიეთ.</string>
+    <string name="gesture_trainer_tip_hold_too_short">ბოლო შეხებისას თითები ეკრანზე უძრავად დატოვეთ დაჭერის მთელი დროის განმავლობაში.</string>
+    <string name="gesture_trainer_tip_too_few_taps">დაითვალეთ შეხებები და ყველა სწრაფად, ერთბაშად შეასრულეთ.</string>
+    <string name="gesture_trainer_tip_too_many_taps">დაითვალეთ შეხებები. მინიდან ახტომილი თითი დამატებით შეხებას ქმნის.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">შეეხეთ უფრო სწრაფად: შემდეგი შეხება აწევისთანავე დაიწყეთ.</string>
+    <string name="gesture_trainer_tip_taps_apart">ყოველ ჯერზე ერთსა და იმავე ადგილას შეეხეთ.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">თითები უფრო შორს გადაადგილეთ, სულ მცირე 1 სმ-ით ერთმანეთთან ახლოს ან შორს.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">შეკუმშვა ნიშნავს თითების ერთმანეთისკენ მოძრაობას, გაშლა — თითების ერთმანეთისგან დაშორებას.</string>
+    <string name="gesture_trainer_tip_moved_together">ამოძრავეთ მხოლოდ თითები ერთმანეთისკენ ან ერთმანეთისგან. ნუ გაასრიალებთ მთელ ხელს ეკრანზე.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">დაატრიალეთ მეტად, როგორც სახელურის მეოთხედი ბრუნით მობრუნება.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">საათის ისრის მიმართულებით ნიშნავს ბრუნვას იმ მიმართულებით, რომლითაც საათის ისრები მოძრაობს: ზედა თითი მარჯვნივ მიდის.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">პირველი მოსმა სულ მცირე 1 სმ სიგრძის გააკეთეთ.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">პირველი მოსმის შემდეგ აწევამდე საპირისპირო მიმართულებით დაბრუნდით.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">წინ-უკან გასმა სწრაფად შეასრულეთ, იქით და აქეთ დაახლოებით ერთ წამში.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">დაიწყეთ ზუსტად კიდიდან, ისე, რომ თითის წვერი ნაწილობრივ ეკრანის გარეთ იყოს.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">შეამოწმეთ, კიდის რომელ ნახევარში იწყებთ.</string>
+    <string name="gesture_trainer_tip_edge_too_short">გაასრიალეთ უფრო შორს, სანამ წკაპს გაიგონებთ, შემდეგ აწიეთ.</string>
+    <string name="gesture_trainer_tip_edge_too_long">აწიეთ პირველი წკაპისთანავე, მეორემდე.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">გაასრიალეთ შიგნით უფრო სწრაფად, წკაპამდე გაჩერების გარეშე.</string>
+    <string name="gesture_trainer_tip_edge_sideways">გაასრიალეთ პირდაპირ კიდიდან შიგნით ან პირდაპირ მის გასწვრივ, არა დიაგონალურად.</string>
+    <string name="gesture_trainer_tip_corner_missed">დადეთ თითი ზუსტად კუთხეში, ისე, რომ ორივე კიდეს ეხებოდეს.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">კუთხეზე შეხების შემდეგ უფრო სწრაფად აწიეთ.</string>
+    <string name="gesture_trainer_close_to_limit">ზღვართან ახლოს: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">გადაფურცვლები ნელა იწყება. უფრო გრძელი „<xliff:g id="setting">%1$s</xliff:g>“ უფრო ნელ დაწყებას უშვებს.</string>
+    <string name="gesture_trainer_advice_tap_time">შეხებები ნელია. უფრო გრძელი „<xliff:g id="setting">%1$s</xliff:g>“ უფრო ნელ შეხებებს უშვებს.</string>
+    <string name="gesture_trainer_advice_edge_width">გადაფურცვლები კიდიდან ზედმეტად შორს იწყება. უფრო დიდი „<xliff:g id="setting">%1$s</xliff:g>“ ასევე კიდესთან ახლოს დაწყებულ გადაფურცვლებს კიდიდან გადაფურცვლებად აქცევს.</string>
+    <string name="gesture_trainer_advice_corner_size">შეხებები კუთხის გარეთ ხვდება. უფრო დიდი „<xliff:g id="setting">%1$s</xliff:g>“ კუთხეებს ადიდებს.</string>
+    <string name="gesture_trainer_advice_corner_time">კუთხეზე შეხებები ნელია. უფრო გრძელი „<xliff:g id="setting">%1$s</xliff:g>“ უფრო ნელ შეხებებს უშვებს.</string>
+    <string name="gesture_trainer_menu_option">ვარიანტი <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: აირჩიეთ ელემენტი <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">გაასრიალეთ ერთი თითი ზემოთ ან ქვემოთ <xliff:g id="edge">%1$s</xliff:g> სულ მცირე <xliff:g id="distance">%2$d</xliff:g> მმ, რომ მენიუ გაიხსნას. მასში <xliff:g id="count">%3$d</xliff:g> ელემენტია, ზემოდან ქვემოთ, თითოეული დაახლოებით <xliff:g id="size">%6$s</xliff:g> სმ სიმაღლის. ელემენტი <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ეკრანის ზედა კიდიდან <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> სმ-ით ქვემოთაა. აწიეთ თითი, როცა ელემენტი წარმოითქმება.</string>
+    <string name="gesture_trainer_menu_sample">ამ კიდეს მენიუ არ აქვს. სავარჯიშო იყენებს <xliff:g id="count">%1$d</xliff:g> სანიმუშო ელემენტს.</string>
+    <string name="gesture_trainer_try_menu_cancelled">ცდა <xliff:g id="number">%1$d</xliff:g>: მენიუ არჩევანის გარეშე დაიხურა.</string>
+    <string name="gesture_trainer_try_menu_other">ცდა <xliff:g id="number">%1$d</xliff:g>: არჩეულია <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">აიწია ელემენტზე <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">თითმა კიდის ყველაზე ზედა ან ქვედა ნაწილში დაიწყო, სადაც კუთხეები და ზედა და ქვედა კიდეებია.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">თითი კიდიდან <xliff:g id="mm">%1$.0f</xliff:g> მმ-ზე აიწია, მენიუ კი <xliff:g id="limit">%2$.0f</xliff:g> მმ-ის მიღმა იხურება.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">თითი აიწია ელემენტზე <xliff:g id="item">%1$d</xliff:g> ელემენტის <xliff:g id="target">%2$d</xliff:g> ნაცვლად.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">დაიწყეთ კიდის ზედა და ქვედა ბოლოებიდან ოდნავ მოშორებით.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">გასრიალებისას თითი კიდესთან ახლოს შეინარჩუნეთ და იქვე აწიეთ.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">თითოეულ ელემენტს კიდის გასწვრივ ფიქსირებული ადგილი აქვს და აირჩევა ის ელემენტი, სადაც თითი აიწევა. აწიეთ, როცა ელემენტი წარმოითქმება.</string>
+    <string name="gesture_trainer_contents">სარჩევი</string>
+    <string name="gesture_trainer_contents_heading">სარჩევი: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">შესრულებულია, ამოცნობილია <xliff:g id="hits">%1$d</xliff:g> / <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">შეხება და გადაფურცვლა</string>
+    <string name="gesture_trainer_group_edge_swipes">გადაფურცვლები კიდეებიდან</string>
+    <string name="gesture_trainer_group_along_edges">გასრიალება კიდეების გასწვრივ</string>
+    <string name="gesture_trainer_group_edge_menus">კიდის მენიუები</string>
+    <string name="gesture_trainer_group_corners">კუთხეები</string>
+    <string name="gesture_trainer_group_back_tap">უკანა მხარეზე შეხება</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">ორი თითით შეხებები, რომლებსაც ორი თითით გადაფურცვლა მოსდევს, გამოტოვებულია: <xliff:g id="setting">%1$s</xliff:g> გამორთულია.</string>
+    <string name="gesture_trainer_how_swipe_hold">შემდეგ, აწევის გარეშე, გააჩერეთ თითი სულ მცირე <xliff:g id="hold">%1$d</xliff:g> მწ და აწიეთ.</string>
+    <string name="gesture_trainer_half_top">ზედა</string>
+    <string name="gesture_trainer_half_bottom">ქვედა</string>
+    <string name="gesture_trainer_how_taps_half">შეეხეთ ეკრანის <xliff:g id="half">%1$s</xliff:g> ნახევარში. ნახევარს თითებს შორის წერტილი განსაზღვრავს.</string>
+    <string name="gesture_trainer_same_fingers">იგივე თითებით</string>
+    <string name="gesture_trainer_how_tap_swipe">შეეხეთ <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. ბოლო შეხებისთანავე, <xliff:g id="gap">%3$d</xliff:g> მწ-ში, კვლავ შეეხეთ ეკრანს <xliff:g id="swipe_fingers">%4$s</xliff:g> და გაასრიალეთ <xliff:g id="direction">%5$s</xliff:g> სწორ ხაზზე დაახლოებით 2–3 სმ, შემდეგ აწიეთ.</string>
+    <string name="gesture_trainer_how_corner_hold">ბოლო შეხებისას დატოვეთ თითი კუთხეში უძრავად სულ მცირე <xliff:g id="hold">%1$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_how_back_tap">დაიჭირეთ ტელეფონი ხელში გვერდებით და შეეხეთ მისი უკანა მხრის შუა ნაწილს <xliff:g id="taps">%1$s</xliff:g> თითის წვერით, მტკიცედ და სწრაფად, როგორც კარზე კაკუნისას. შეხებები ერთმანეთთან ახლოს იყოს: მათ შორის მაქსიმუმ <xliff:g id="gap">%2$d</xliff:g> მწ. შეხებისას ეკრანს ნუ შეეხებით.</string>
+    <string name="gesture_trainer_back_tap_info">სავარჯიშოს დროს უკანა მხარეზე შეხებები ბრძანებებს არ უშვებს. „<xliff:g id="setting">%1$s</xliff:g>“ განსაზღვრავს, რამდენად ძლიერი უნდა იყოს შეხება.</string>
+    <string name="gesture_trainer_go_placed">შეასრულეთ ჟესტი <xliff:g id="tries">%1$d</xliff:g>-ჯერ.</string>
+    <string name="gesture_trainer_along_left">მარცხენა კიდის</string>
+    <string name="gesture_trainer_along_right">მარჯვენა კიდის</string>
+    <string name="gesture_trainer_along_top">ზედა კიდის</string>
+    <string name="gesture_trainer_along_bottom">ქვედა კიდის</string>
+    <string name="gesture_trainer_left_out_along_menu">გასრიალებები <xliff:g id="edge">%1$s</xliff:g> გასწვრივ გამოტოვებულია: მას კიდის მენიუ აქვს, ამიტომ მის გასწვრივ გასრიალება ჟესტის გაშვების ნაცვლად მენიუს ხსნის.</string>
+    <string name="gesture_trainer_left_out_along_scroll">გასრიალებები <xliff:g id="edge">%1$s</xliff:g> გასწვრივ გამოტოვებულია: ის გადახვევისთვისაა, ამიტომ მის გასწვრივ გასრიალება ჟესტის გაშვების ნაცვლად აპს გადაახვევს.</string>
+    <string name="gesture_trainer_finding_along_off_edge">თითი კიდეს ზედმეტად დაშორდა.</string>
+    <string name="gesture_trainer_tip_along_off_edge">თითი მინის სულ კიდეზე შეინარჩუნეთ, პირდაპირ კიდის გასწვრივ.</string>
+    <string name="gesture_trainer_go_back_tap">შეასრულეთ უკანა მხარეზე შეხების ჟესტი <xliff:g id="tries">%1$d</xliff:g>-ჯერ. ეკრანზე შეხება ცდას აფუჭებს.</string>
+    <string name="gesture_trainer_no_accelerometer">ამ სავარჯიშოს აქსელერომეტრი სჭირდება. ის ხელმისაწვდომი არ არის.</string>
+    <string name="gesture_trainer_measure_hold">უძრავად იყო <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+    <string name="gesture_trainer_measure_back_tap_strength">შეხების სიძლიერე <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">ბოლოს თითი უძრავად იყო <xliff:g id="ms">%1$d</xliff:g> მწ, უნდა იყოს სულ მცირე <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">თითები ეკრანის მეორე ნახევარს შეეხო.</string>
+    <string name="gesture_trainer_finding_swipe_missing">შეხებებს გადაფურცვლა არ მოჰყოლია.</string>
+    <string name="gesture_trainer_finding_swipe_late">გადაფურცვლა ბოლო შეხებიდან <xliff:g id="ms">%1$d</xliff:g> მწ-ის შემდეგ დაიწყო, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">უკანა მხარეზე შეხება ზედმეტად სუსტია: საჭირო სიძლიერის <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">შეხებამ ტელეფონი უფრო გვერდულად შეარყია, ვიდრე უკანა მხრიდან.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">ტელეფონი შეხებამდე ცოტა ხნით ადრე მოძრაობდა.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">ეკრანს შეეხნენ, ხოლო შეხებები, სანამ ეკრანს ეხებიან, არ ითვლება.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">უკანა მხარეზე შეხებებს შორის გავიდა <xliff:g id="ms">%1$d</xliff:g> მწ, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">გადაფურცვლის შემდეგ თითი ეკრანზე უძრავად დატოვეთ დაჭერის მთელი დროის განმავლობაში. შემდეგ აწიეთ.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">შეამოწმეთ, რომელ ნახევარში ეხებით: ეკრანის შუა ზედა ნახევარს ქვედა ნახევრისგან ყოფს.</string>
+    <string name="gesture_trainer_tip_swipe_missing">ბოლო შეხების შემდეგ მაშინვე კვლავ შეეხეთ ეკრანს და გადაფურცლეთ.</string>
+    <string name="gesture_trainer_tip_swipe_late">გადაფურცვლა ბოლო შეხებისთანავე დაიწყეთ, პაუზის გარეშე.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">შეეხეთ უფრო მტკიცედ, თითის წვერით ან ფრჩხილით, უკანა მხრის შუასთან ახლოს.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">შეეხეთ პირდაპირ ტელეფონის უკანა მხარეს, არა კიდეზე და არა კუთხით.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">შეხებამდე ერთი წამით უძრავად დაიჭირეთ ტელეფონი და დაიჭირეთ ის თავისუფლად, რომ ხელმა არ გაამოძრაოს.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">უკანა მხარეზე შეხებისას თითები ეკრანს არ შეახოთ: დაიჭირეთ ტელეფონი გვერდებით.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">შეეხეთ უფრო სწრაფად, ერთი შეხება მეორის მიყოლებით.</string>
+    <string name="gesture_trainer_advice_swipe_hold">გადაფურცვლის შემდეგ თითი ზედმეტად ადრე აიწევა. უფრო მოკლე „<xliff:g id="setting">%1$s</xliff:g>“ უფრო მოკლე დაჭერას უშვებს.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">უკანა მხარეზე შეხებები სუსტია. უფრო მაღალი „<xliff:g id="setting">%1$s</xliff:g>“ უფრო სუსტ შეხებებს ამოიცნობს და შეიძლება დარტყმებიც შეხებად ამოიცნოს.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">თითები <xliff:g id="degrees">%1$.0f</xliff:g> გრადუსით დატრიალდა, ხოლო <xliff:g id="limit">%2$.0f</xliff:g> გრადუსიდან მოძრაობა დატრიალებად ითვლება.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">ამოძრავეთ თითები სწორ ხაზზე ერთმანეთისკენ ან ერთმანეთისგან, არა რკალად ერთმანეთის გარშემო.</string>
+    <string name="gesture_trainer_finding_other_gesture">მოძრაობა ამის ნაცვლად იმ ჟესტს დაემთხვა.</string>
+    <string name="gesture_trainer_side_left">მარცხენა</string>
+    <string name="gesture_trainer_side_right">მარჯვენა</string>
+    <string name="gesture_trainer_side_top">ზედა</string>
+    <string name="gesture_trainer_side_bottom">ქვედა</string>
+    <string name="gesture_trainer_finding_wrong_edge">თითმა <xliff:g id="side">%1$s</xliff:g> კიდეზე დაიწყო, ეს სავარჯიშო კი <xliff:g id="expected">%2$s</xliff:g> კიდეზეა.</string>
+    <string name="gesture_trainer_tip_wrong_edge">დაიწყეთ ზუსტად იმ კიდეზე, რომელსაც სავარჯიშო ასახელებს.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">ამ ჟესტის ნაცვლად კიდის მენიუ გაიხსნა.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">მენიუს მქონე კიდის გასწვრივ გასრიალება მენიუს ხსნის. დაიწყეთ იმ კიდეზე, რომელსაც სავარჯიშო ასახელებს.</string>
+    <string name="gesture_trainer_group_three_part">სამნაწილიანი გადაფურცვლები</string>
+    <string name="gesture_trainer_group_two_stroke">ორეტაპიანი გადაფურცვლები</string>
+    <string name="gesture_trainer_group_shake">შერყევა</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">სამნაწილიანი გადაფურცვლები გამოტოვებულია: <xliff:g id="setting">%1$s</xliff:g> ჩართულია.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">ორეტაპიანი გადაფურცვლები გამოტოვებულია: <xliff:g id="setting">%1$s</xliff:g> — <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">სავარჯიშოს დროს შერყევა ბრძანებას არ უშვებს. „<xliff:g id="setting">%1$s</xliff:g>“ განსაზღვრავს, რამდენად ძლიერი უნდა იყოს შერყევა.</string>
+    <string name="gesture_trainer_go_shake">შეარყიეთ ტელეფონი <xliff:g id="tries">%1$d</xliff:g>-ჯერ, ყოველი შერყევის შემდეგ მოკლე პაუზით.</string>
+    <string name="gesture_trainer_how_shake">მტკიცედ დაიჭირეთ ტელეფონი და სწრაფად შეარყიეთ წინ და უკან, თითქოს წყლის წვეთს იბერტყავთ: თითოეული მიმართულებით სულ მცირე ორჯერ, ყველაფერი წამის დაახლოებით ორ მესამედში. შემდეგ უძრავად დაიჭირეთ.</string>
+    <string name="gesture_trainer_how_two_stroke">გადაფურცლეთ <xliff:g id="first">%1$s</xliff:g> ერთი თითით, დაახლოებით 2 სმ, და აწიეთ. შემდეგ მაშინვე, <xliff:g id="time">%3$d</xliff:g> მწ-ში, გადაფურცლეთ <xliff:g id="second">%2$s</xliff:g> ერთი თითით, დაახლოებით 2 სმ, და აწიეთ.</string>
+    <string name="gesture_trainer_how_three_part">შეეხეთ ეკრანს ერთი თითით და აწევის გარეშე გადაფურცლეთ <xliff:g id="first">%1$s</xliff:g>, შემდეგ მკვეთრად მოუხვიეთ და გადაფურცლეთ <xliff:g id="second">%2$s</xliff:g>, შემდეგ კვლავ მკვეთრად მოუხვიეთ და გადაფურცლეთ <xliff:g id="third">%3$s</xliff:g>, თითოეული ნაწილი დაახლოებით 2 სმ, და აწიეთ. შეასრულეთ ეს ერთი სწრაფი, მდორე მოძრაობით, მკვეთრი კუთხეებით და არა რკალებით.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">დადეთ ერთი თითი ეკრანის ზედა მესამედში, მეორე კი ქვედა მესამედში, მაგალითად ცერი ქვემოთ და საჩვენებელი თითი ზემოთ.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">თითები არ იყო ერთი ეკრანის ზედა მესამედში და მეორე ქვედა მესამედში.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">მეორე გადაფურცვლა არ იყო.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">მეორე გადაფურცვლა პირველიდან <xliff:g id="ms">%1$d</xliff:g> მწ-ის შემდეგ დაიწყო, დასაშვებია მაქსიმუმ <xliff:g id="limit">%2$d</xliff:g> მწ.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">პირველი გადაფურცვლა წავიდა <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">მეორე გადაფურცვლა წავიდა <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">შერყევა ზედმეტად სუსტი იყო: საჭირო სიძლიერის <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">რხევები წინ და უკან: <xliff:g id="swings">%1$d</xliff:g> საჭირო <xliff:g id="wanted">%2$d</xliff:g>-დან.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">თითები ერთმანეთს ძლიერ დააშორეთ, ერთი ზედა კიდესთან ახლოს, მეორე ქვედა კიდესთან ახლოს.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">პირველი გადაფურცვლის შემდეგ აწიეთ თითი და მაშინვე კვლავ გადაფურცლეთ.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">მეორე გადაფურცვლა თითის აწევისთანავე დაიწყეთ.</string>
+    <string name="gesture_trainer_tip_shake_too_light">შეარყიეთ უფრო ძლიერად და სწრაფად.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">შეარყიეთ უფრო სწრაფად, წინ და უკან თითოეული მიმართულებით სულ მცირე ორჯერ, შუალედში გაჩერების გარეშე.</string>
+    <string name="gesture_trainer_measure_shake_strength">ყველაზე ძლიერი მოძრაობა <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">შერყევები სუსტია. უფრო მაღალი „<xliff:g id="setting">%1$s</xliff:g>“ უფრო სუსტ შერყევებს ამოიცნობს და შეიძლება ტელეფონის ტარებაც შერყევად ამოიცნოს.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">მეორე გადაფურცვლა გვიან იწყება. უფრო გრძელი „<xliff:g id="setting">%1$s</xliff:g>“ უფრო გვიან მეორე გადაფურცვლას უშვებს, ხოლო ცალკეული გადაფურცვლა გაშვებამდე უფრო დიდხანს ელოდება.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> ჩართულია.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> გამორთულია: ორი თითით გადაფურცვლები აპს გადაახვევს და წინ-უკან გასმაც ძირითადად გადაახვევს. პარამეტრის ჩართვისას ორი თითით გადაფურცვლები გადახვევის ნაცვლად SandFly-ის ბრძანებებს უშვებს.</string>
+    <string name="gesture_trainer_measure_first_stroke">პირველი გადაფურცვლა <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+    <string name="gesture_trainer_measure_second_stroke">მეორე გადაფურცვლა <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+    <string name="gesture_trainer_measure_whole_gesture">მთელი ჟესტი <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+    <string name="gesture_trainer_measure_stroke_gap">მათ შორის აწეული <xliff:g id="ms">%1$d</xliff:g> მწ</string>
+</resources>

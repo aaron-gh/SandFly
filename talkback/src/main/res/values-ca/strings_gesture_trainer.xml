@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Entrenador de gestos</string>
+    <string name="gesture_trainer_intro">Tria un grup de gestos. Cada exercici descriu un gest. Fes el gest <xliff:g id="tries">%1$d</xliff:g> vegades; es diu el resultat de cada intent. Després de l\'últim intent, la pantalla mostra les mesures de cada intent, què cal canviar i la configuració relacionada.</string>
+    <string name="gesture_trainer_group_one_finger">Un dit</string>
+    <string name="gesture_trainer_group_two_fingers">Dos dits</string>
+    <string name="gesture_trainer_group_three_fingers">Tres dits</string>
+    <string name="gesture_trainer_group_four_fingers">Quatre dits</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Pinçar, girar i fregar</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> exercicis</string>
+    <string name="gesture_trainer_close">Tanca</string>
+    <string name="gesture_trainer_no_detection">L\'entrenador de gestos requereix Android 13 o posterior.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">S\'ometen els gestos d\'anada i tornada i en angle: <xliff:g id="setting">%1$s</xliff:g> està activat.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">S\'ometen els lliscaments amb 2 dits: <xliff:g id="setting">%1$s</xliff:g> està desactivat, de manera que desplacen les aplicacions.</string>
+    <string name="gesture_trainer_exercise_heading">Exercici <xliff:g id="number">%1$d</xliff:g> de <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Comença</string>
+    <string name="gesture_trainer_skip">Omet aquest exercici</string>
+    <string name="gesture_trainer_back_to_groups">Torna als grups</string>
+    <string name="gesture_trainer_go">Fes el gest <xliff:g id="tries">%1$d</xliff:g> vegades, a qualsevol lloc de la pantalla. Cada toc és un intent.</string>
+    <string name="gesture_trainer_fingers_1">un dit</string>
+    <string name="gesture_trainer_fingers_2">dos dits un al costat de l\'altre, separats aproximadament 1 cm</string>
+    <string name="gesture_trainer_fingers_3">tres dits un al costat de l\'altre, una mica separats</string>
+    <string name="gesture_trainer_fingers_4">quatre dits un al costat de l\'altre, una mica separats</string>
+    <string name="gesture_trainer_direction_up">cap amunt</string>
+    <string name="gesture_trainer_direction_down">cap avall</string>
+    <string name="gesture_trainer_direction_left">cap a l\'esquerra</string>
+    <string name="gesture_trainer_direction_right">cap a la dreta</string>
+    <string name="gesture_trainer_how_swipe">Toca la pantalla amb <xliff:g id="fingers">%1$s</xliff:g> i, sense esperar, llisca <xliff:g id="direction">%2$s</xliff:g> en línia recta uns 2 o 3 cm i després aixeca. Comença a moure\'t de seguida: un dit que primer es queda quiet inicia l\'exploració tàctil.</string>
+    <string name="gesture_trainer_how_swipe_multi">Posa els dits alhora, en el mateix moment, i mou-los tots en la mateixa direcció. Tots els dits han d\'anar <xliff:g id="direction">%1$s</xliff:g> tota l\'estona, així que mantén la línia recta.</string>
+    <string name="gesture_trainer_how_back_and_forth">Toca la pantalla amb un dit i llisca <xliff:g id="first">%1$s</xliff:g> uns 2 cm; després, sense aixecar-lo, torna directament <xliff:g id="second">%2$s</xliff:g> uns 2 cm i aixeca\'l. Fes-ho en un sol moviment ràpid i suau.</string>
+    <string name="gesture_trainer_how_angle">Toca la pantalla amb <xliff:g id="fingers">%1$s</xliff:g> i llisca <xliff:g id="first">%2$s</xliff:g> uns 2 cm; després, sense aixecar, gira bruscament i llisca <xliff:g id="second">%3$s</xliff:g> uns 2 cm, i aixeca. Fes el gir en angle recte, com la lletra L, no en corba.</string>
+    <string name="gesture_trainer_taps_1">una vegada</string>
+    <string name="gesture_trainer_taps_2">dues vegades</string>
+    <string name="gesture_trainer_taps_3">tres vegades</string>
+    <string name="gesture_trainer_taps_4">quatre vegades</string>
+    <string name="gesture_trainer_how_taps">Toca <xliff:g id="taps">%1$s</xliff:g> amb <xliff:g id="fingers">%2$s</xliff:g>. Posa els dits alhora i aixeca\'ls alhora, ràpidament, sense lliscar.</string>
+    <string name="gesture_trainer_how_taps_quick">Fes els tocs ràpids i al mateix lloc: el toc següent ha d\'arribar en menys de <xliff:g id="gap">%1$d</xliff:g> ms després de l\'anterior.</string>
+    <string name="gesture_trainer_how_hold">Posa <xliff:g id="fingers">%1$s</xliff:g> a la pantalla alhora i mantén-los quiets, sense lliscar, durant almenys <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Si no té cap altra ordre assignada, aquest gest desactiva SandFly. A l\'entrenador, no executa res.</string>
+    <string name="gesture_trainer_how_taps_hold">Toca <xliff:g id="taps">%1$s</xliff:g> amb <xliff:g id="fingers">%2$s</xliff:g> i, a l\'últim toc, deixa els dits a la pantalla, quiets, durant almenys <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Utilitza el polze, l\'índex i el dit del mig.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Posa l\'índex i el dit del mig l\'un al costat de l\'altre, i el polze i l\'anular a uns quants centímetres, un a cada costat. Després ajunta les quatre puntes dels dits en un sol punt.</string>
+    <string name="gesture_trainer_how_pinch">Posa <xliff:g id="fingers">%1$d</xliff:g> dits a la pantalla, ben separats. Després apropa\'ls en línia recta almenys 1 cm, com si agafessis alguna cosa, i aixeca\'ls de la pantalla. Mou només els dits, no tota la mà, i no en arc.</string>
+    <string name="gesture_trainer_how_spread">Posa <xliff:g id="fingers">%1$d</xliff:g> dits a la pantalla, junts. Després separa\'ls en línia recta almenys 1 cm i aixeca\'ls de la pantalla. Mou només els dits, no tota la mà, i no en arc.</string>
+    <string name="gesture_trainer_clockwise">en el sentit de les agulles del rellotge</string>
+    <string name="gesture_trainer_counterclockwise">en sentit contrari a les agulles del rellotge</string>
+    <string name="gesture_trainer_how_rotate">Posa dos dits a la pantalla, separats uns 2 o 3 cm, i gira\'ls <xliff:g id="way">%1$s</xliff:g> al voltant del seu centre, com si giressis una roda, aproximadament un quart de volta. Després aixeca\'ls.</string>
+    <string name="gesture_trainer_how_scrub">Posa dos dits a la pantalla i mou-los ràpidament cap a un costat uns 2 cm i tornada, com si esborressis alguna cosa, tot en un segon aproximadament. Després aixeca\'ls.</string>
+    <string name="gesture_trainer_edge_bottom">a la vora inferior</string>
+    <string name="gesture_trainer_edge_top_left">a la vora superior, a la meitat esquerra</string>
+    <string name="gesture_trainer_edge_top_right">a la vora superior, a la meitat dreta</string>
+    <string name="gesture_trainer_edge_left_top">a la vora esquerra, a la meitat superior</string>
+    <string name="gesture_trainer_edge_left_bottom">a la vora esquerra, a la meitat inferior</string>
+    <string name="gesture_trainer_edge_right_top">a la vora dreta, a la meitat superior</string>
+    <string name="gesture_trainer_edge_right_bottom">a la vora dreta, a la meitat inferior</string>
+    <string name="gesture_trainer_edge_left">a la vora esquerra</string>
+    <string name="gesture_trainer_edge_right">a la vora dreta</string>
+    <string name="gesture_trainer_edge_top">a la vora superior</string>
+    <string name="gesture_trainer_how_edge">Posa un dit <xliff:g id="edge">%1$s</xliff:g>, a <xliff:g id="edge_width">%2$d</xliff:g> mm de la vora com a màxim, i llisca <xliff:g id="direction">%3$s</xliff:g> cap a dins de la pantalla fins al primer clic, uns <xliff:g id="distance">%4$d</xliff:g> mm. Després aixeca\'l de seguida: passat el segon clic, el lliscament és un lliscament llarg.</string>
+    <string name="gesture_trainer_how_edge_long">Posa un dit <xliff:g id="edge">%1$s</xliff:g>, a <xliff:g id="edge_width">%2$d</xliff:g> mm de la vora com a màxim, i llisca <xliff:g id="direction">%3$s</xliff:g> cap a dins de la pantalla, passat el primer clic fins al segon, uns <xliff:g id="distance">%4$d</xliff:g> mm. Després aixeca\'l.</string>
+    <string name="gesture_trainer_how_along">Llisca un dit <xliff:g id="direction">%2$s</xliff:g> al llarg de <xliff:g id="edge">%1$s</xliff:g>, almenys <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">superior esquerra</string>
+    <string name="gesture_trainer_corner_top_right">superior dreta</string>
+    <string name="gesture_trainer_corner_bottom_left">inferior esquerra</string>
+    <string name="gesture_trainer_corner_bottom_right">inferior dreta</string>
+    <string name="gesture_trainer_how_corner">Toca <xliff:g id="taps">%1$s</xliff:g> a la cantonada <xliff:g id="corner">%2$s</xliff:g> de la pantalla. Posa el dit just a la cantonada, a no més de <xliff:g id="size">%3$d</xliff:g> mm de totes dues vores, i aixeca\'l ràpidament, en menys de <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Amb cantonades més grans, un toc en un control a prop d\'una cantonada, com ara Enrere a la part superior esquerra, pot executar el gest de cantonada.</string>
+    <string name="gesture_trainer_rating_precise">reconegut, precís</string>
+    <string name="gesture_trainer_rating_good">reconegut, bé</string>
+    <string name="gesture_trainer_rating_borderline">reconegut, però a prop d\'un límit</string>
+    <string name="gesture_trainer_try_recognized">Intent <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Intent <xliff:g id="number">%1$d</xliff:g>: no reconegut.</string>
+    <string name="gesture_trainer_try_other">Intent <xliff:g id="number">%1$d</xliff:g>: reconegut com a <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> de <xliff:g id="tries">%3$d</xliff:g> reconeguts</string>
+    <string name="gesture_trainer_results_tries">Els teus intents</string>
+    <string name="gesture_trainer_results_change">Què cal canviar</string>
+    <string name="gesture_trainer_results_close">A prop d\'un límit</string>
+    <string name="gesture_trainer_results_all_good">Tots els intents s\'han reconegut dins dels límits.</string>
+    <string name="gesture_trainer_results_settings">Configuració que pot ajudar</string>
+    <string name="gesture_trainer_next">Exercici següent</string>
+    <string name="gesture_trainer_repeat">Repeteix</string>
+    <string name="gesture_trainer_finish">Finalitza</string>
+    <string name="gesture_trainer_group_done">Has acabat tots els exercicis de <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Canvia <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">ha durat <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm de llarg</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm per segon</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> graus fora de la línia recta</string>
+    <string name="gesture_trainer_measure_start">primer centímetre en <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">els dits han tocat amb <xliff:g id="ms">%1$d</xliff:g> ms de diferència</string>
+    <string name="gesture_trainer_measure_tap">toc de <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms entre tocs</string>
+    <string name="gesture_trainer_measure_spread">els dits s\'han mogut <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">ha girat <xliff:g id="degrees">%1$.0f</xliff:g> graus</string>
+    <string name="gesture_trainer_measure_corner">a <xliff:g id="mm">%1$.0f</xliff:g> mm de les vores de la cantonada</string>
+    <string name="gesture_trainer_measure_edge">ha començat a <xliff:g id="mm">%1$.0f</xliff:g> mm de la vora</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Dits a la pantalla: <xliff:g id="fingers">%1$d</xliff:g> en lloc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Els dits han tocat amb <xliff:g id="ms">%1$d</xliff:g> ms de diferència, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Un dit s\'ha aixecat abans que tots els dits fossin a la pantalla.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Els dits s\'han aixecat amb <xliff:g id="ms">%1$d</xliff:g> ms de diferència, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">El dit s\'ha quedat quiet massa estona o s\'ha mogut massa lentament al principi, de manera que el toc s\'ha convertit en exploració tàctil.</string>
+    <string name="gesture_trainer_finding_slow_start">El primer centímetre ha trigat <xliff:g id="ms">%1$d</xliff:g> ms, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">El dit s\'ha alentit durant <xliff:g id="ms">%1$d</xliff:g> ms, i cada centímetre pot trigar com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">El moviment només ha estat de <xliff:g id="mm">%1$.0f</xliff:g> mm, i ha de ser d\'almenys <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">El dit ha començat a anar <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Els dits han començat a anar <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">El recorregut s\'ha desviat <xliff:g id="degrees">%1$.0f</xliff:g> graus de la línia recta, i se\'n permeten com a màxim <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">El recorregut s\'ha dividit en <xliff:g id="parts">%1$d</xliff:g> parts en lloc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">No s\'ha trobat el gir.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Després del gir, el dit ha anat <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">El dit ha lliscat <xliff:g id="mm">%1$.1f</xliff:g> mm durant un toc, i se\'n permeten com a màxim <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Un toc ha durat <xliff:g id="ms">%1$d</xliff:g> ms, més de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">L\'últim toc s\'ha mantingut <xliff:g id="ms">%1$d</xliff:g> ms, i ha de ser d\'almenys <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> tocs en lloc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> tocs en lloc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Han passat <xliff:g id="ms">%1$d</xliff:g> ms entre tocs, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Els tocs han caigut a <xliff:g id="mm">%1$.0f</xliff:g> mm de distància, i se\'n permeten com a màxim <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Els dits només s\'han mogut <xliff:g id="mm">%1$.0f</xliff:g> mm, i s\'han de moure almenys <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Els dits s\'han mogut en la direcció contrària.</string>
+    <string name="gesture_trainer_finding_moved_together">Tota la mà ha lliscat <xliff:g id="mm">%1$.0f</xliff:g> mm per la pantalla, més del que els dits s\'han apropat o separat.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Els dits només han girat <xliff:g id="degrees">%1$.0f</xliff:g> graus, i han de girar almenys <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Els dits han girat en el sentit contrari.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">El primer traç ha fet <xliff:g id="mm">%1$.0f</xliff:g> mm, i ha de fer almenys <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">El traç de tornada ha fet <xliff:g id="mm">%1$.0f</xliff:g> mm, i ha de fer almenys <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">El fregament ha durat <xliff:g id="ms">%1$d</xliff:g> ms, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">El dit ha tocat a <xliff:g id="mm">%1$.0f</xliff:g> mm de la vora, i la vora fa <xliff:g id="limit">%2$.0f</xliff:g> mm d\'amplada.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">El dit ha començat a l\'altra meitat de la vora.</string>
+    <string name="gesture_trainer_finding_edge_too_short">El dit ha lliscat <xliff:g id="mm">%1$.0f</xliff:g> mm, i ha de lliscar almenys <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Lliscament massa llarg: el dit ha passat el segon clic, <xliff:g id="mm">%1$.0f</xliff:g> mm, i el segon clic és a <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Arribar al clic ha trigat <xliff:g id="ms">%1$d</xliff:g> ms, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">El lliscament s\'ha desviat <xliff:g id="degrees">%1$.0f</xliff:g> graus cap al costat, i se\'n permeten com a màxim <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">El toc ha caigut a <xliff:g id="mm">%1$.0f</xliff:g> mm de les vores de la cantonada, i la cantonada fa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Un toc a la cantonada ha durat <xliff:g id="ms">%1$d</xliff:g> ms, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">No s\'ha detectat cap moviment que coincideixi amb el gest.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Comprova quants dits toquen el vidre. Un palmell o un altre dit recolzat a la pantalla també compta.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Posa tots els dits en el mateix moment, com una sola mà, no l\'un després de l\'altre.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Posa primer tots els dits i després mou-los o aixeca\'ls.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Aixeca tots els dits en el mateix moment.</string>
+    <string name="gesture_trainer_tip_slow_start">Comença a moure\'t en el moment de tocar la pantalla, i mou-te més de pressa al principi.</string>
+    <string name="gesture_trainer_tip_paused">Mantén el dit en moviment a una velocitat constant fins que l\'aixequis. No frenis a prop del final.</string>
+    <string name="gesture_trainer_tip_too_short">Fes el moviment més llarg, uns 2 o 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Comprova la direcció just al començament del moviment. Ajuda agafar el telèfon recte davant teu.</string>
+    <string name="gesture_trainer_tip_off_line">Mou-te només en la direcció, no en diagonal. L\'índex fa una línia més recta que el polze.</string>
+    <string name="gesture_trainer_tip_curved">Mantén la línia recta i aixeca just al final, sense torçar el dit cap al costat en aixecar-lo.</string>
+    <string name="gesture_trainer_tip_turn_missing">Canvia de direcció bruscament, en angle recte o directament enrere, sense aixecar. Cada part ha de fer uns 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Després del gir, comprova cap on vas: la segona part ha d\'anar en l\'altra direcció que indica el gest.</string>
+    <string name="gesture_trainer_tip_tap_moved">Toca recte avall i amunt, amb la punta del dit, sense lliscar.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Fes cada toc curt: toca i aixeca de seguida.</string>
+    <string name="gesture_trainer_tip_hold_too_short">A l\'últim toc, mantén els dits quiets a la pantalla durant tot el temps de mantenir premut.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Compta els tocs i fes-los tots ràpidament d\'una tirada.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Compta els tocs. Un dit que rebota al vidre fa un toc de més.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Toca més de pressa: comença el toc següent just després d\'aixecar.</string>
+    <string name="gesture_trainer_tip_taps_apart">Toca cada vegada al mateix lloc.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Mou més els dits, almenys 1 cm més a prop o més separats.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Pinçar és apropar els dits; separar és allunyar-los.</string>
+    <string name="gesture_trainer_tip_moved_together">Mou només els dits apropant-los o allunyant-los. No llisquis tota la mà per la pantalla.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Gira més, com si giressis una roda un quart de volta.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">En el sentit de les agulles del rellotge vol dir girar com les agulles d\'un rellotge: el dit de dalt es mou cap a la dreta.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Fes que el primer traç faci almenys 1 cm.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Després del primer traç, torna en sentit contrari abans d\'aixecar.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Fes el fregament ràpid, anada i tornada en un segon aproximadament.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Comença just a la vora, amb la punta del dit parcialment fora de la pantalla.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Comprova a quina meitat de la vora comences.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Llisca més, fins que sentis el clic, i després aixeca.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Aixeca just després del primer clic, abans del segon.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Llisca cap a dins més de pressa, sense aturar-te abans del clic.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Llisca recte cap a dins des de la vora, o recte al llarg de la vora, no en diagonal.</string>
+    <string name="gesture_trainer_tip_corner_missed">Posa el dit just a la cantonada, tocant totes dues vores.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Aixeca més de pressa després de tocar la cantonada.</string>
+    <string name="gesture_trainer_close_to_limit">A prop del límit: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Els lliscaments comencen lentament. Un valor més llarg de <xliff:g id="setting">%1$s</xliff:g> permet un inici més lent.</string>
+    <string name="gesture_trainer_advice_tap_time">Els tocs són lents. Un valor més llarg de <xliff:g id="setting">%1$s</xliff:g> permet tocs més lents.</string>
+    <string name="gesture_trainer_advice_edge_width">Els lliscaments comencen massa lluny de la vora. Un valor més gran de <xliff:g id="setting">%1$s</xliff:g> també converteix en lliscaments de vora els lliscaments que comencen a prop d\'una vora.</string>
+    <string name="gesture_trainer_advice_corner_size">Els tocs cauen fora de la cantonada. Un valor més gran de <xliff:g id="setting">%1$s</xliff:g> fa les cantonades més grans.</string>
+    <string name="gesture_trainer_advice_corner_time">Els tocs a les cantonades són lents. Un valor més llarg de <xliff:g id="setting">%1$s</xliff:g> permet tocs més lents.</string>
+    <string name="gesture_trainer_menu_option">Opció <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: tria l\'element <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Llisca un dit cap amunt o cap avall <xliff:g id="edge">%1$s</xliff:g> almenys <xliff:g id="distance">%2$d</xliff:g> mm per obrir el menú. Té <xliff:g id="count">%3$d</xliff:g> elements, de dalt a baix, cadascun d\'uns <xliff:g id="size">%6$s</xliff:g> cm d\'alçada. L\'element <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, és entre <xliff:g id="from">%7$s</xliff:g> i <xliff:g id="to">%8$s</xliff:g> cm per sota de la part superior de la pantalla. Aixeca el dit quan es digui l\'element.</string>
+    <string name="gesture_trainer_menu_sample">Aquesta vora no té cap menú. L\'exercici utilitza <xliff:g id="count">%1$d</xliff:g> elements de mostra.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Intent <xliff:g id="number">%1$d</xliff:g>: el menú s\'ha tancat sense cap elecció.</string>
+    <string name="gesture_trainer_try_menu_other">Intent <xliff:g id="number">%1$d</xliff:g>: s\'ha triat <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">aixecat a l\'element <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">El dit ha començat a l\'extrem superior o inferior de la vora, on hi ha les cantonades i les vores superior i inferior.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">El dit s\'ha aixecat a <xliff:g id="mm">%1$.0f</xliff:g> mm de la vora, i el menú es tanca a més de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">El dit s\'ha aixecat a l\'element <xliff:g id="item">%1$d</xliff:g> en lloc de l\'element <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Comença una mica lluny dels extrems superior i inferior de la vora.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Mantén el dit a prop de la vora mentre llisques, i aixeca\'l allà.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Cada element té un lloc fix al llarg de la vora, i es tria l\'element on s\'aixeca el dit. Aixeca quan es digui l\'element.</string>
+    <string name="gesture_trainer_contents">Contingut</string>
+    <string name="gesture_trainer_contents_heading">Contingut: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">fet, <xliff:g id="hits">%1$d</xliff:g> de <xliff:g id="tries">%2$d</xliff:g> reconeguts</string>
+    <string name="gesture_trainer_group_tap_swipe">Toc i lliscament</string>
+    <string name="gesture_trainer_group_edge_swipes">Lliscaments des de les vores</string>
+    <string name="gesture_trainer_group_along_edges">Lliscaments al llarg de les vores</string>
+    <string name="gesture_trainer_group_edge_menus">Menús de vora</string>
+    <string name="gesture_trainer_group_corners">Cantonades</string>
+    <string name="gesture_trainer_group_back_tap">Toc a la part posterior</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">S\'ometen els tocs amb 2 dits seguits d\'un lliscament amb 2 dits: <xliff:g id="setting">%1$s</xliff:g> està desactivat.</string>
+    <string name="gesture_trainer_how_swipe_hold">Després, sense aixecar, mantén el dit quiet durant almenys <xliff:g id="hold">%1$d</xliff:g> ms, i aixeca\'l.</string>
+    <string name="gesture_trainer_half_top">superior</string>
+    <string name="gesture_trainer_half_bottom">inferior</string>
+    <string name="gesture_trainer_how_taps_half">Toca a la meitat <xliff:g id="half">%1$s</xliff:g> de la pantalla. El punt entre els dits determina la meitat.</string>
+    <string name="gesture_trainer_same_fingers">els mateixos dits</string>
+    <string name="gesture_trainer_how_tap_swipe">Toca <xliff:g id="taps">%1$s</xliff:g> amb <xliff:g id="fingers">%2$s</xliff:g>. Just després de l\'últim toc, en menys de <xliff:g id="gap">%3$d</xliff:g> ms, torna a tocar la pantalla amb <xliff:g id="swipe_fingers">%4$s</xliff:g> i llisca <xliff:g id="direction">%5$s</xliff:g> en línia recta uns 2 o 3 cm, i després aixeca.</string>
+    <string name="gesture_trainer_how_corner_hold">A l\'últim toc, deixa el dit a la cantonada, quiet, durant almenys <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Agafa el telèfon amb la mà, pels costats, i toca el centre de la part posterior <xliff:g id="taps">%1$s</xliff:g> amb la punta d\'un dit, amb força i ràpidament, com si truquessis a una porta. Fes els tocs seguits: com a màxim <xliff:g id="gap">%2$d</xliff:g> ms entre ells. No toquis la pantalla mentre toques.</string>
+    <string name="gesture_trainer_back_tap_info">Els tocs a la part posterior no executen ordres durant l\'exercici. <xliff:g id="setting">%1$s</xliff:g> defineix amb quanta força cal tocar.</string>
+    <string name="gesture_trainer_go_placed">Fes el gest <xliff:g id="tries">%1$d</xliff:g> vegades.</string>
+    <string name="gesture_trainer_along_left">la vora esquerra</string>
+    <string name="gesture_trainer_along_right">la vora dreta</string>
+    <string name="gesture_trainer_along_top">la vora superior</string>
+    <string name="gesture_trainer_along_bottom">la vora inferior</string>
+    <string name="gesture_trainer_left_out_along_menu">S\'ometen els lliscaments al llarg de <xliff:g id="edge">%1$s</xliff:g>: té un menú de vora, de manera que un lliscament al llarg seu obre el menú en lloc d\'executar un gest.</string>
+    <string name="gesture_trainer_left_out_along_scroll">S\'ometen els lliscaments al llarg de <xliff:g id="edge">%1$s</xliff:g>: s\'hi desplaça, de manera que un lliscament al llarg seu desplaça l\'aplicació en lloc d\'executar un gest.</string>
+    <string name="gesture_trainer_finding_along_off_edge">El dit s\'ha allunyat massa de la vora.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Mantén el dit just a la vora del vidre, recte al llarg de la vora.</string>
+    <string name="gesture_trainer_go_back_tap">Fes el gest de toc a la part posterior <xliff:g id="tries">%1$d</xliff:g> vegades. Un toc a la pantalla fa fallar l\'intent.</string>
+    <string name="gesture_trainer_no_accelerometer">Aquest exercici requereix un acceleròmetre. No n\'hi ha cap de disponible.</string>
+    <string name="gesture_trainer_measure_hold">quiet <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">toc de força <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">El dit s\'ha quedat quiet <xliff:g id="ms">%1$d</xliff:g> ms al final, i ha de quedar-se quiet almenys <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Els dits han tocat a l\'altra meitat de la pantalla.</string>
+    <string name="gesture_trainer_finding_swipe_missing">No hi ha hagut cap lliscament després dels tocs.</string>
+    <string name="gesture_trainer_finding_swipe_late">El lliscament ha començat <xliff:g id="ms">%1$d</xliff:g> ms després de l\'últim toc, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Toc a la part posterior massa suau: <xliff:g id="percent">%1$d</xliff:g>%% de la força necessària.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Un toc ha sacsejat el telèfon més cap al costat que a través de la part posterior.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">El telèfon es movia just abans d\'un toc.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">S\'ha tocat la pantalla, i els tocs mentre es toca la pantalla no compten.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Han passat <xliff:g id="ms">%1$d</xliff:g> ms entre tocs a la part posterior, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Després del lliscament, mantén el dit quiet a la pantalla durant tot el temps de mantenir premut. Després aixeca\'l.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Comprova a quina meitat toques: el centre de la pantalla separa la meitat superior de la inferior.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Després de l\'últim toc, torna a tocar la pantalla de seguida i llisca.</string>
+    <string name="gesture_trainer_tip_swipe_late">Comença el lliscament just després de l\'últim toc, sense pausa.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Toca amb més força, amb la punta del dit o amb una ungla, a prop del centre de la part posterior.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Toca recte a la part posterior del telèfon, no a la vora ni en angle.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Mantén el telèfon quiet un moment abans de tocar, i agafa\'l sense estrènyer perquè la mà no el mogui.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">No toquis la pantalla mentre toques la part posterior: agafa el telèfon pels costats.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Toca més de pressa, un toc just després de l\'altre.</string>
+    <string name="gesture_trainer_advice_swipe_hold">El dit s\'aixeca massa aviat després del lliscament. Un valor més curt de <xliff:g id="setting">%1$s</xliff:g> permet mantenir premut menys estona.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Els tocs a la part posterior són suaus. Un valor més alt de <xliff:g id="setting">%1$s</xliff:g> detecta tocs més suaus, i pot detectar cops com a tocs.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Els dits han girat <xliff:g id="degrees">%1$.0f</xliff:g> graus, i a partir de <xliff:g id="limit">%2$.0f</xliff:g> graus el moviment és una rotació.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Mou els dits en línia recta apropant-los o allunyant-los, no en arc l\'un al voltant de l\'altre.</string>
+    <string name="gesture_trainer_finding_other_gesture">El moviment ha coincidit amb aquell gest.</string>
+    <string name="gesture_trainer_side_left">esquerra</string>
+    <string name="gesture_trainer_side_right">dreta</string>
+    <string name="gesture_trainer_side_top">superior</string>
+    <string name="gesture_trainer_side_bottom">inferior</string>
+    <string name="gesture_trainer_finding_wrong_edge">El dit ha començat a la vora <xliff:g id="side">%1$s</xliff:g>, i aquest exercici és a la vora <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Comença just a la vora que indica l\'exercici.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">S\'ha obert un menú de vora en lloc d\'aquest gest.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Un lliscament al llarg d\'una vora amb menú obre el menú. Comença a la vora que indica l\'exercici.</string>
+    <string name="gesture_trainer_group_three_part">Lliscaments de tres parts</string>
+    <string name="gesture_trainer_group_two_stroke">Lliscaments de dos traços</string>
+    <string name="gesture_trainer_group_shake">Sacseig</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">S\'ometen els lliscaments de tres parts: <xliff:g id="setting">%1$s</xliff:g> està activat.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">S\'ometen els lliscaments de dos traços: <xliff:g id="setting">%1$s</xliff:g> és <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">El sacseig no executa cap ordre durant l\'exercici. <xliff:g id="setting">%1$s</xliff:g> defineix amb quanta força cal sacsejar.</string>
+    <string name="gesture_trainer_go_shake">Sacseja el telèfon <xliff:g id="tries">%1$d</xliff:g> vegades, amb una pausa curta després de cada sacsejada.</string>
+    <string name="gesture_trainer_how_shake">Agafa el telèfon amb fermesa i sacseja\'l ràpidament endavant i enrere, com si en fessis caure una gota d\'aigua: almenys dues vegades en cada sentit, tot en uns dos terços de segon. Després mantén-lo quiet.</string>
+    <string name="gesture_trainer_how_two_stroke">Llisca <xliff:g id="first">%1$s</xliff:g> amb un dit, uns 2 cm, i aixeca. Després, de seguida, en menys de <xliff:g id="time">%3$d</xliff:g> ms, llisca <xliff:g id="second">%2$s</xliff:g> amb un dit, uns 2 cm, i aixeca.</string>
+    <string name="gesture_trainer_how_three_part">Toca la pantalla amb un dit i, sense aixecar, llisca <xliff:g id="first">%1$s</xliff:g>, després gira bruscament i llisca <xliff:g id="second">%2$s</xliff:g>, després torna a girar bruscament i llisca <xliff:g id="third">%3$s</xliff:g>, cada part d\'uns 2 cm, i aixeca. Fes-ho en un sol moviment ràpid i suau amb angles rectes, no corbes.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Posa un dit al terç superior de la pantalla i l\'altre al terç inferior, per exemple el polze a baix i l\'índex a dalt.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Els dits no eren un al terç superior de la pantalla i un al terç inferior.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">No hi ha hagut segon lliscament.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">El segon lliscament ha començat <xliff:g id="ms">%1$d</xliff:g> ms després del primer, i se\'n permeten com a màxim <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">El primer lliscament ha anat <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">El segon lliscament ha anat <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">El sacseig ha estat massa suau: <xliff:g id="percent">%1$d</xliff:g>%% de la força necessària.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Moviments d\'anada i tornada: <xliff:g id="swings">%1$d</xliff:g> dels <xliff:g id="wanted">%2$d</xliff:g> necessaris.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Separa molt els dits, un a prop de la vora superior i l\'altre a prop de la vora inferior.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Després del primer lliscament, aixeca el dit i torna a lliscar de seguida.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Comença el segon lliscament just després d\'aixecar el dit.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Sacseja amb més força i més de pressa.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Sacseja més de pressa, endavant i enrere almenys dues vegades en cada sentit, sense aturar-te entremig.</string>
+    <string name="gesture_trainer_measure_shake_strength">moviment més fort <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Els sacsejos són suaus. Un valor més alt de <xliff:g id="setting">%1$s</xliff:g> detecta sacsejos més suaus, i pot detectar com a sacseig el fet de portar el telèfon.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">El segon lliscament comença tard. Un valor més llarg de <xliff:g id="setting">%1$s</xliff:g> permet un segon lliscament més tardà, i aleshores un lliscament únic espera més abans d\'executar-se.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> està activat.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> està desactivat: els lliscaments amb 2 dits desplacen l\'aplicació, i un fregament també sol desplaçar-la. Amb aquesta opció activada, els lliscaments amb 2 dits executen ordres de SandFly en lloc de desplaçar.</string>
+    <string name="gesture_trainer_measure_first_stroke">primer lliscament <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">segon lliscament <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">gest complet <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">dit aixecat <xliff:g id="ms">%1$d</xliff:g> ms entre ells</string>
+</resources>

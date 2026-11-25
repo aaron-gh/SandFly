@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">የእጅ ምልክት አሰልጣኝ</string>
+    <string name="gesture_trainer_intro">የእጅ ምልክቶች ቡድን ይምረጡ። እያንዳንዱ ልምምድ አንድ የእጅ ምልክትን ይገልጻል። የእጅ ምልክቱን <xliff:g id="tries">%1$d</xliff:g> ጊዜ ያድርጉ፤ የእያንዳንዱ ሙከራ ውጤት ይነገራል። ከመጨረሻው ሙከራ በኋላ ማያ ገጹ የእያንዳንዱን ሙከራ ልኬቶች፣ ምን መቀየር እንዳለበት እና ተዛማጅ ቅንብሮችን ይዘረዝራል።</string>
+    <string name="gesture_trainer_group_one_finger">አንድ ጣት</string>
+    <string name="gesture_trainer_group_two_fingers">ሁለት ጣቶች</string>
+    <string name="gesture_trainer_group_three_fingers">ሦስት ጣቶች</string>
+    <string name="gesture_trainer_group_four_fingers">አራት ጣቶች</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">መቆንጠጥ፣ ማሽከርከር እና ማሻሸት</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>፣ <xliff:g id="count">%2$d</xliff:g> ልምምዶች</string>
+    <string name="gesture_trainer_close">ዝጋ</string>
+    <string name="gesture_trainer_no_detection">የእጅ ምልክት አሰልጣኙ Android 13 ወይም ከዚያ በኋላ ያስፈልገዋል።</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">የወዲያና ወዲህ እና የማዕዘን የእጅ ምልክቶች ተትተዋል፦ <xliff:g id="setting">%1$s</xliff:g> በርቷል።</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">የሁለት ጣት ማንሸራተቶች ተትተዋል፦ <xliff:g id="setting">%1$s</xliff:g> ጠፍቷል፣ ስለዚህ መተግበሪያዎችን ያሸብልላሉ።</string>
+    <string name="gesture_trainer_exercise_heading">ልምምድ <xliff:g id="number">%1$d</xliff:g> ከ<xliff:g id="count">%2$d</xliff:g>፦ <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">ጀምር</string>
+    <string name="gesture_trainer_skip">ይህን ልምምድ ዝለል</string>
+    <string name="gesture_trainer_back_to_groups">ወደ ቡድኖች ተመለስ</string>
+    <string name="gesture_trainer_go">የእጅ ምልክቱን በማያ ገጹ ላይ በየትኛውም ቦታ <xliff:g id="tries">%1$d</xliff:g> ጊዜ ያድርጉ። እያንዳንዱ ንክኪ አንድ ሙከራ ነው።</string>
+    <string name="gesture_trainer_fingers_1">በአንድ ጣት</string>
+    <string name="gesture_trainer_fingers_2">ጎን ለጎን ባሉ፣ በ1 ሴ.ሜ ገደማ በተራራቁ ሁለት ጣቶች</string>
+    <string name="gesture_trainer_fingers_3">ጎን ለጎን ባሉ፣ በትንሹ በተራራቁ ሦስት ጣቶች</string>
+    <string name="gesture_trainer_fingers_4">ጎን ለጎን ባሉ፣ በትንሹ በተራራቁ አራት ጣቶች</string>
+    <string name="gesture_trainer_direction_up">ወደ ላይ</string>
+    <string name="gesture_trainer_direction_down">ወደ ታች</string>
+    <string name="gesture_trainer_direction_left">ወደ ግራ</string>
+    <string name="gesture_trainer_direction_right">ወደ ቀኝ</string>
+    <string name="gesture_trainer_how_swipe">ማያ ገጹን <xliff:g id="fingers">%1$s</xliff:g> ይንኩ እና ሳይጠብቁ <xliff:g id="direction">%2$s</xliff:g> በቀጥታ መስመር ከ2 እስከ 3 ሴ.ሜ ገደማ ያንሸራትቱ፣ ከዚያ ያንሱ። ወዲያውኑ መንቀሳቀስ ይጀምሩ፦ መጀመሪያ የሚያርፍ ጣት በመንካት ማሰስን ይጀምራል።</string>
+    <string name="gesture_trainer_how_swipe_multi">ጣቶቹን በአንድ ላይ፣ በተመሳሳይ ቅጽበት ያስቀምጡ እና ሁሉንም በአንድ አቅጣጫ ያንቀሳቅሱ። እያንዳንዱ ጣት ሁልጊዜ <xliff:g id="direction">%1$s</xliff:g> መሄድ አለበት፣ ስለዚህ መስመሩን ቀጥ ያድርጉ።</string>
+    <string name="gesture_trainer_how_back_and_forth">ማያ ገጹን በአንድ ጣት ይንኩ እና <xliff:g id="first">%1$s</xliff:g> 2 ሴ.ሜ ገደማ ያንሸራትቱ፣ ከዚያ ሳያነሱ በቀጥታ <xliff:g id="second">%2$s</xliff:g> 2 ሴ.ሜ ገደማ ይመለሱ እና ያንሱ። አንድ ፈጣን እና ለስላሳ እንቅስቃሴ ያድርጉት።</string>
+    <string name="gesture_trainer_how_angle">ማያ ገጹን <xliff:g id="fingers">%1$s</xliff:g> ይንኩ እና <xliff:g id="first">%2$s</xliff:g> 2 ሴ.ሜ ገደማ ያንሸራትቱ፣ ከዚያ ሳያነሱ በሹል ይታጠፉ እና <xliff:g id="second">%3$s</xliff:g> 2 ሴ.ሜ ገደማ ያንሸራትቱ፣ ከዚያ ያንሱ። መታጠፊያውን እንደ L ፊደል ሹል ማዕዘን ያድርጉት፣ ኩርባ አይደለም።</string>
+    <string name="gesture_trainer_taps_1">አንድ ጊዜ</string>
+    <string name="gesture_trainer_taps_2">ሁለት ጊዜ</string>
+    <string name="gesture_trainer_taps_3">ሦስት ጊዜ</string>
+    <string name="gesture_trainer_taps_4">አራት ጊዜ</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> መታ ያድርጉ። ጣቶቹን በአንድ ላይ ያስቀምጡ እና በአንድ ላይ በፍጥነት ያንሱ፣ ሳያንሸራትቱ።</string>
+    <string name="gesture_trainer_how_taps_quick">መታ ማድረጎቹን ፈጣን እና በአንድ ቦታ ያድርጉ፦ ቀጣዩ መታ ማድረግ ካለፈው በ<xliff:g id="gap">%1$d</xliff:g> ms ውስጥ መምጣት አለበት።</string>
+    <string name="gesture_trainer_how_hold">ማያ ገጹን <xliff:g id="fingers">%1$s</xliff:g> በአንድ ላይ ይንኩ እና ሳያንሸራትቱ ቢያንስ ለ<xliff:g id="hold">%2$d</xliff:g> ms ሳይንቀሳቀሱ ይያዙ።</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">ሌላ ትዕዛዝ ካልተመደበ ይህ የእጅ ምልክት SandFlyን ያጠፋል። በአሰልጣኙ ውስጥ ምንም አያሄድም።</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> መታ ያድርጉ፣ እና በመጨረሻው መታ ማድረግ ላይ ጣቶቹን ቢያንስ ለ<xliff:g id="hold">%3$d</xliff:g> ms ሳይንቀሳቀሱ በማያ ገጹ ላይ ይተዉ።</string>
+    <string name="gesture_trainer_how_three_finger_hand">አውራ ጣትን፣ ሌባ ጣትን እና መካከለኛ ጣትን ይጠቀሙ።</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">ሌባ ጣትን እና መካከለኛ ጣትን ጎን ለጎን ያስቀምጡ፣ አውራ ጣትን እና የቀለበት ጣትን ደግሞ በሁለቱም በኩል ጥቂት ሴንቲሜትሮች ርቀው ያስቀምጡ። ከዚያ አራቱንም የጣት ጫፎች ወደ አንድ ነጥብ ያሰባስቡ።</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g> ጣቶችን በስፋት ተራርቀው በማያ ገጹ ላይ ያስቀምጡ። ከዚያ አንድ ነገር እንደሚያነሱ ቢያንስ 1 ሴ.ሜ በቀጥታ እርስ በርስ ያቀራርቧቸው እና ከማያ ገጹ ያንሷቸው። ጣቶቹን ብቻ ያንቀሳቅሱ፣ መላውን እጅ አይደለም፣ በቅስትም አይደለም።</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g> ጣቶችን ተቀራርበው በማያ ገጹ ላይ ያስቀምጡ። ከዚያ ቢያንስ 1 ሴ.ሜ በቀጥታ ያራርቋቸው እና ከማያ ገጹ ያንሷቸው። ጣቶቹን ብቻ ያንቀሳቅሱ፣ መላውን እጅ አይደለም፣ በቅስትም አይደለም።</string>
+    <string name="gesture_trainer_clockwise">በሰዓት አቅጣጫ</string>
+    <string name="gesture_trainer_counterclockwise">ከሰዓት አቅጣጫ በተቃራኒ</string>
+    <string name="gesture_trainer_how_rotate">ሁለት ጣቶችን ከ2 እስከ 3 ሴ.ሜ ገደማ ተራርቀው በማያ ገጹ ላይ ያስቀምጡ፣ እና መደወያ እንደሚያዞሩ በመካከላቸው ዙሪያ <xliff:g id="way">%1$s</xliff:g> ሩብ ዙር ገደማ ያሽከርክሯቸው። ከዚያ ያንሱ።</string>
+    <string name="gesture_trainer_how_scrub">ሁለት ጣቶችን በማያ ገጹ ላይ ያስቀምጡ እና አንድ ነገር እንደሚያጠፉ በፍጥነት ወደ አንድ ጎን 2 ሴ.ሜ ገደማ ያንቀሳቅሱ እና ይመልሱ፣ ሁሉንም በአንድ ሰከንድ ገደማ ውስጥ። ከዚያ ያንሱ።</string>
+    <string name="gesture_trainer_edge_bottom">በታችኛው ጠርዝ ላይ</string>
+    <string name="gesture_trainer_edge_top_left">በላይኛው ጠርዝ ላይ፣ በግራ ግማሹ</string>
+    <string name="gesture_trainer_edge_top_right">በላይኛው ጠርዝ ላይ፣ በቀኝ ግማሹ</string>
+    <string name="gesture_trainer_edge_left_top">በግራ ጠርዝ ላይ፣ በላይኛው ግማሹ</string>
+    <string name="gesture_trainer_edge_left_bottom">በግራ ጠርዝ ላይ፣ በታችኛው ግማሹ</string>
+    <string name="gesture_trainer_edge_right_top">በቀኝ ጠርዝ ላይ፣ በላይኛው ግማሹ</string>
+    <string name="gesture_trainer_edge_right_bottom">በቀኝ ጠርዝ ላይ፣ በታችኛው ግማሹ</string>
+    <string name="gesture_trainer_edge_left">በግራ ጠርዝ ላይ</string>
+    <string name="gesture_trainer_edge_right">በቀኝ ጠርዝ ላይ</string>
+    <string name="gesture_trainer_edge_top">በላይኛው ጠርዝ ላይ</string>
+    <string name="gesture_trainer_how_edge">አንድ ጣት <xliff:g id="edge">%1$s</xliff:g>፣ ከጠርዙ ቢበዛ <xliff:g id="edge_width">%2$d</xliff:g> ሚ.ሜ ርቀት ላይ ያስቀምጡ፣ እና <xliff:g id="direction">%3$s</xliff:g> ወደ ማያ ገጹ ውስጥ እስከ መጀመሪያው ጠቅታ ድረስ፣ <xliff:g id="distance">%4$d</xliff:g> ሚ.ሜ ገደማ ያንሸራትቱ። ከዚያ ወዲያውኑ ያንሱ፦ ከሁለተኛው ጠቅታ በኋላ ማንሸራተቱ ረጅም ማንሸራተት ነው።</string>
+    <string name="gesture_trainer_how_edge_long">አንድ ጣት <xliff:g id="edge">%1$s</xliff:g>፣ ከጠርዙ ቢበዛ <xliff:g id="edge_width">%2$d</xliff:g> ሚ.ሜ ርቀት ላይ ያስቀምጡ፣ እና <xliff:g id="direction">%3$s</xliff:g> ወደ ማያ ገጹ ውስጥ ከመጀመሪያው ጠቅታ አልፈው እስከ ሁለተኛው፣ <xliff:g id="distance">%4$d</xliff:g> ሚ.ሜ ገደማ ያንሸራትቱ። ከዚያ ያንሱ።</string>
+    <string name="gesture_trainer_how_along">አንድ ጣት <xliff:g id="edge">%1$s</xliff:g> በኩል <xliff:g id="direction">%2$s</xliff:g> ቢያንስ <xliff:g id="distance">%3$d</xliff:g> ሚ.ሜ ያንሸራትቱ።</string>
+    <string name="gesture_trainer_corner_top_left">ላይኛው ግራ</string>
+    <string name="gesture_trainer_corner_top_right">ላይኛው ቀኝ</string>
+    <string name="gesture_trainer_corner_bottom_left">ታችኛው ግራ</string>
+    <string name="gesture_trainer_corner_bottom_right">ታችኛው ቀኝ</string>
+    <string name="gesture_trainer_how_corner">በማያ ገጹ <xliff:g id="corner">%2$s</xliff:g> ጥግ ላይ <xliff:g id="taps">%1$s</xliff:g> መታ ያድርጉ። ጣቱን በትክክል ጥጉ ላይ፣ ከሁለቱም ጠርዞች ከ<xliff:g id="size">%3$d</xliff:g> ሚ.ሜ ባልበለጠ ርቀት ያስቀምጡ፣ እና በ<xliff:g id="time">%4$d</xliff:g> ms ውስጥ በፍጥነት ያንሱ።</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>፦ <xliff:g id="edge">%2$d</xliff:g> ሚ.ሜ። <xliff:g id="corner_setting">%3$s</xliff:g>፦ <xliff:g id="corner">%4$d</xliff:g> ሚ.ሜ።</string>
+    <string name="gesture_trainer_corner_warning">ጥጎች ትልቅ ሲሆኑ፣ ከጥግ አቅራቢያ ያለ መቆጣጠሪያን መታ ማድረግ፣ ለምሳሌ ከላይ በግራ ያለውን ተመለስ፣ በምትኩ የጥጉን የእጅ ምልክት ሊያሄድ ይችላል።</string>
+    <string name="gesture_trainer_rating_precise">ታውቋል፣ ትክክለኛ</string>
+    <string name="gesture_trainer_rating_good">ታውቋል፣ ጥሩ</string>
+    <string name="gesture_trainer_rating_borderline">ታውቋል፣ ግን ለገደብ ቅርብ ነው</string>
+    <string name="gesture_trainer_try_recognized">ሙከራ <xliff:g id="number">%1$d</xliff:g>፦ <xliff:g id="rating">%2$s</xliff:g>።</string>
+    <string name="gesture_trainer_try_nothing">ሙከራ <xliff:g id="number">%1$d</xliff:g>፦ አልታወቀም።</string>
+    <string name="gesture_trainer_try_other">ሙከራ <xliff:g id="number">%1$d</xliff:g>፦ እንደ <xliff:g id="gesture">%2$s</xliff:g> ታውቋል።</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>፦ ከ<xliff:g id="tries">%3$d</xliff:g> <xliff:g id="recognized">%2$d</xliff:g> ታውቀዋል</string>
+    <string name="gesture_trainer_results_tries">የእርስዎ ሙከራዎች</string>
+    <string name="gesture_trainer_results_change">ምን መቀየር እንዳለበት</string>
+    <string name="gesture_trainer_results_close">ለገደብ ቅርብ</string>
+    <string name="gesture_trainer_results_all_good">ሁሉም ሙከራዎች በገደቦቹ ውስጥ ታውቀዋል።</string>
+    <string name="gesture_trainer_results_settings">ሊያግዙ የሚችሉ ቅንብሮች</string>
+    <string name="gesture_trainer_next">ቀጣይ ልምምድ</string>
+    <string name="gesture_trainer_repeat">ድገም</string>
+    <string name="gesture_trainer_finish">ጨርስ</string>
+    <string name="gesture_trainer_group_done">በ<xliff:g id="group">%1$s</xliff:g> ውስጥ ያሉትን ሁሉንም ልምምዶች ጨርሰዋል።</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g>ን ቀይር</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms ወስዷል</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> ሴ.ሜ ርዝመት</string>
+    <string name="gesture_trainer_measure_speed">በሰከንድ <xliff:g id="speed">%1$.0f</xliff:g> ሴ.ሜ</string>
+    <string name="gesture_trainer_measure_angle">ከቀጥታ መስመር <xliff:g id="degrees">%1$.0f</xliff:g> ዲግሪ ወጣ ያለ</string>
+    <string name="gesture_trainer_measure_start">የመጀመሪያው ሴንቲሜትር በ<xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">ጣቶቹ በ<xliff:g id="ms">%1$d</xliff:g> ms ልዩነት አርፈዋል</string>
+    <string name="gesture_trainer_measure_tap">የ<xliff:g id="ms">%1$d</xliff:g> ms መታ ማድረግ</string>
+    <string name="gesture_trainer_measure_gap">በመታ ማድረጎች መካከል <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">ጣቶቹ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ተንቀሳቅሰዋል</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> ዲግሪ ዞሯል</string>
+    <string name="gesture_trainer_measure_corner">ከጥጉ ጠርዞች <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ</string>
+    <string name="gesture_trainer_measure_edge">ከጠርዙ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ርቆ ጀምሯል</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">በማያ ገጹ ላይ ያሉ ጣቶች፦ ከ<xliff:g id="wanted">%2$d</xliff:g> ይልቅ <xliff:g id="fingers">%1$d</xliff:g>።</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">ጣቶቹ በ<xliff:g id="ms">%1$d</xliff:g> ms ልዩነት አርፈዋል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">ሁሉም ጣቶች ከማረፋቸው በፊት አንድ ጣት ተነስቷል።</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">ጣቶቹ በ<xliff:g id="ms">%1$d</xliff:g> ms ልዩነት ተነስተዋል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_became_exploration">ጣቱ በጣም ረጅም ጊዜ ሳይንቀሳቀስ ቆይቷል ወይም መጀመሪያ ላይ በጣም በዝግታ ተንቀሳቅሷል፣ ስለዚህ ንክኪው በመንካት ማሰስ ሆኗል።</string>
+    <string name="gesture_trainer_finding_slow_start">የመጀመሪያው ሴንቲሜትር <xliff:g id="ms">%1$d</xliff:g> ms ወስዷል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_paused">ጣቱ ለ<xliff:g id="ms">%1$d</xliff:g> ms ቀርፋፋ ሆኗል፣ እና እያንዳንዱ ሴንቲሜትር ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ሊወስድ ይችላል።</string>
+    <string name="gesture_trainer_finding_too_short">እንቅስቃሴው <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ብቻ ነበር፣ ቢያንስ <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ መሆን አለበት።</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">ጣቱ <xliff:g id="direction">%1$s</xliff:g> መሄድ ጀምሯል።</string>
+    <string name="gesture_trainer_finding_wrong_direction">ጣቶቹ <xliff:g id="direction">%1$s</xliff:g> መሄድ ጀምረዋል።</string>
+    <string name="gesture_trainer_finding_off_line">መንገዱ ከቀጥታ መስመር <xliff:g id="degrees">%1$.0f</xliff:g> ዲግሪ ወጥቷል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$.0f</xliff:g> ነው።</string>
+    <string name="gesture_trainer_finding_curved">መንገዱ ከ<xliff:g id="wanted">%2$d</xliff:g> ይልቅ ወደ <xliff:g id="parts">%1$d</xliff:g> ክፍሎች ታጥፏል።</string>
+    <string name="gesture_trainer_finding_turn_missing">መታጠፊያው አልተገኘም።</string>
+    <string name="gesture_trainer_finding_second_part_wrong">ከመታጠፊያው በኋላ ጣቱ <xliff:g id="direction">%1$s</xliff:g> ሄዷል።</string>
+    <string name="gesture_trainer_finding_tap_moved">ጣቱ በመታ ማድረግ ጊዜ <xliff:g id="mm">%1$.1f</xliff:g> ሚ.ሜ ተንሸራቷል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$.1f</xliff:g> ሚ.ሜ ነው።</string>
+    <string name="gesture_trainer_finding_tap_held_long">አንድ መታ ማድረግ <xliff:g id="ms">%1$d</xliff:g> ms ቆይቷል፣ ከ<xliff:g id="limit">%2$d</xliff:g> ms ይረዝማል።</string>
+    <string name="gesture_trainer_finding_hold_too_short">የመጨረሻው መታ ማድረግ ለ<xliff:g id="ms">%1$d</xliff:g> ms ተይዟል፣ ቢያንስ <xliff:g id="limit">%2$d</xliff:g> ms መሆን አለበት።</string>
+    <string name="gesture_trainer_finding_too_few_taps">ከ<xliff:g id="wanted">%2$d</xliff:g> ይልቅ <xliff:g id="taps">%1$d</xliff:g> መታ ማድረጎች።</string>
+    <string name="gesture_trainer_finding_too_many_taps">ከ<xliff:g id="wanted">%2$d</xliff:g> ይልቅ <xliff:g id="taps">%1$d</xliff:g> መታ ማድረጎች።</string>
+    <string name="gesture_trainer_finding_taps_too_slow">በመታ ማድረጎች መካከል <xliff:g id="ms">%1$d</xliff:g> ms አልፏል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_taps_apart">መታ ማድረጎቹ በ<xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ተራርቀው አርፈዋል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ ነው።</string>
+    <string name="gesture_trainer_finding_pinch_too_small">ጣቶቹ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ብቻ ተንቀሳቅሰዋል፣ ቢያንስ <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ መንቀሳቀስ አለባቸው።</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">ጣቶቹ በተቃራኒው አቅጣጫ ተንቀሳቅሰዋል።</string>
+    <string name="gesture_trainer_finding_moved_together">መላው እጅ በማያ ገጹ ላይ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ተንሸራቷል፣ ጣቶቹ እርስ በርስ ከተቀራረቡት ወይም ከተራራቁት በላይ።</string>
+    <string name="gesture_trainer_finding_rotate_too_small">ጣቶቹ <xliff:g id="degrees">%1$.0f</xliff:g> ዲግሪ ብቻ ዞረዋል፣ ቢያንስ <xliff:g id="limit">%2$.0f</xliff:g> መዞር አለባቸው።</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">ጣቶቹ በተቃራኒው አቅጣጫ ዞረዋል።</string>
+    <string name="gesture_trainer_finding_scrub_too_short">የመጀመሪያው ምት <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ነበር፣ ቢያንስ <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ መሆን አለበት።</string>
+    <string name="gesture_trainer_finding_scrub_no_return">የመመለሻው ምት <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ነበር፣ ቢያንስ <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ መሆን አለበት።</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">ማሻሸቱ <xliff:g id="ms">%1$d</xliff:g> ms ወስዷል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">ጣቱ ከጠርዙ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ርቆ አርፏል፣ ጠርዙ ግን <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ ስፋት አለው።</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">ጣቱ በሌላው የጠርዙ ግማሽ ላይ ጀምሯል።</string>
+    <string name="gesture_trainer_finding_edge_too_short">ጣቱ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ተንሸራቷል፣ ቢያንስ <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ መንሸራተት አለበት።</string>
+    <string name="gesture_trainer_finding_edge_too_long">ማንሸራተቱ በጣም ረጅም ነው፦ ጣቱ ሁለተኛውን ጠቅታ አልፎ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ሄዷል፣ ሁለተኛው ጠቅታ ግን በ<xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ ላይ ነው።</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ጠቅታው ላይ መድረስ <xliff:g id="ms">%1$d</xliff:g> ms ወስዷል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_edge_sideways">ማንሸራተቱ ወደ ጎን <xliff:g id="degrees">%1$.0f</xliff:g> ዲግሪ ሄዷል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$.0f</xliff:g> ነው።</string>
+    <string name="gesture_trainer_finding_corner_missed">መታ ማድረጉ ከጥጉ ጠርዞች <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ርቆ አርፏል፣ ጥጉ ግን <xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ ነው።</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">የጥግ መታ ማድረግ <xliff:g id="ms">%1$d</xliff:g> ms ቆይቷል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_none">ከእጅ ምልክቱ ጋር የሚዛመድ እንቅስቃሴ አልተገኘም።</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">ምን ያህል ጣቶች መስታወቱን እንደሚነኩ ያረጋግጡ። በማያ ገጹ ላይ የሚያርፍ መዳፍ ወይም ሌላ ጣትም ይቆጠራል።</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">ሁሉንም ጣቶች እንደ አንድ እጅ በተመሳሳይ ቅጽበት ያስቀምጡ፣ አንዱ ከሌላው በኋላ አይደለም።</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">መጀመሪያ ሁሉንም ጣቶች ያስቀምጡ፣ ከዚያ ያንቀሳቅሷቸው ወይም ያንሷቸው።</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">ሁሉንም ጣቶች በተመሳሳይ ቅጽበት ያንሱ።</string>
+    <string name="gesture_trainer_tip_slow_start">ማያ ገጹን በነኩበት ቅጽበት መንቀሳቀስ ይጀምሩ፣ እና መጀመሪያ ላይ በፍጥነት ይንቀሳቀሱ።</string>
+    <string name="gesture_trainer_tip_paused">እስኪያነሱ ድረስ ጣቱን በእኩል ፍጥነት ያንቀሳቅሱ። መጨረሻ አካባቢ አይቀንሱ።</string>
+    <string name="gesture_trainer_tip_too_short">እንቅስቃሴውን ያርዝሙ፣ ከ2 እስከ 3 ሴ.ሜ ገደማ።</string>
+    <string name="gesture_trainer_tip_wrong_direction">በእንቅስቃሴው መጀመሪያ ላይ አቅጣጫውን ያረጋግጡ። ስልኩን በቀጥታ ከፊትዎ መያዝ ይረዳል።</string>
+    <string name="gesture_trainer_tip_off_line">በአቅጣጫው ብቻ ይንቀሳቀሱ፣ በሰያፍ አይደለም። ሌባ ጣት ከአውራ ጣት የበለጠ ቀጥ ያለ መስመር ይይዛል።</string>
+    <string name="gesture_trainer_tip_curved">መስመሩን ቀጥ ያድርጉ እና በትክክል መጨረሻ ላይ ያንሱ፣ ሲያነሱ ጣቱን ወደ ጎን ሳያጣምሙ።</string>
+    <string name="gesture_trainer_tip_turn_missing">ሳያነሱ አቅጣጫን በሹል ይቀይሩ፣ በቀኝ ማዕዘን ወይም በቀጥታ ወደ ኋላ። እያንዳንዱ ክፍል 2 ሴ.ሜ ገደማ መሆን አለበት።</string>
+    <string name="gesture_trainer_tip_second_part_wrong">ከመታጠፊያው በኋላ በየትኛው አቅጣጫ እንደሚሄዱ ያረጋግጡ፦ ሁለተኛው ክፍል የእጅ ምልክቱ ስም የሚጠቅሰውን ሌላኛውን አቅጣጫ መሄድ አለበት።</string>
+    <string name="gesture_trainer_tip_tap_moved">በጣት ጫፍ በቀጥታ ወደ ታች እና ወደ ላይ መታ ያድርጉ፣ ሳያንሸራትቱ።</string>
+    <string name="gesture_trainer_tip_tap_held_long">እያንዳንዱን መታ ማድረግ አጭር ያድርጉ፦ ይንኩ እና ወዲያውኑ ያንሱ።</string>
+    <string name="gesture_trainer_tip_hold_too_short">በመጨረሻው መታ ማድረግ ላይ ጣቶቹን ሙሉውን የመያዣ ጊዜ በማያ ገጹ ላይ ሳይንቀሳቀሱ ያቆዩ።</string>
+    <string name="gesture_trainer_tip_too_few_taps">መታ ማድረጎቹን ይቁጠሩ፣ እና ሁሉንም በአንድ ጊዜ በፍጥነት ያድርጉ።</string>
+    <string name="gesture_trainer_tip_too_many_taps">መታ ማድረጎቹን ይቁጠሩ። ከመስታወቱ የሚነጥር ጣት ተጨማሪ መታ ማድረግ ይፈጥራል።</string>
+    <string name="gesture_trainer_tip_taps_too_slow">በፍጥነት መታ ያድርጉ፦ ካነሱ በኋላ ወዲያውኑ ቀጣዩን መታ ማድረግ ይጀምሩ።</string>
+    <string name="gesture_trainer_tip_taps_apart">በእያንዳንዱ ጊዜ በተመሳሳይ ቦታ መታ ያድርጉ።</string>
+    <string name="gesture_trainer_tip_pinch_too_small">ጣቶቹን የበለጠ ያንቀሳቅሱ፣ ቢያንስ 1 ሴ.ሜ ያቀራርቡ ወይም ያራርቁ።</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">መቆንጠጥ ጣቶች እርስ በርስ ሲቀራረቡ ነው፣ መዘርጋት ጣቶች ሲራራቁ ነው።</string>
+    <string name="gesture_trainer_tip_moved_together">ጣቶቹን ብቻ ያቀራርቡ ወይም ያራርቁ። መላውን እጅ በማያ ገጹ ላይ አያንሸራትቱ።</string>
+    <string name="gesture_trainer_tip_rotate_too_small">መደወያን ሩብ ዙር እንደሚያዞሩ የበለጠ ያሽከርክሩ።</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">በሰዓት አቅጣጫ ማለት የሰዓት እጆች በሚሄዱበት አቅጣጫ ማዞር ነው፦ የላይኛው ጣት ወደ ቀኝ ይንቀሳቀሳል።</string>
+    <string name="gesture_trainer_tip_scrub_too_short">የመጀመሪያውን ምት ቢያንስ 1 ሴ.ሜ ያርዝሙ።</string>
+    <string name="gesture_trainer_tip_scrub_no_return">ከመጀመሪያው ምት በኋላ ከማንሳትዎ በፊት በሌላው አቅጣጫ ይመለሱ።</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">ማሻሸቱን ፈጣን ያድርጉ፣ መሄድና መመለስ በአንድ ሰከንድ ገደማ።</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">በትክክል ጠርዙ ላይ ይጀምሩ፣ የጣት ጫፉ በከፊል ከማያ ገጹ ውጭ ሆኖ።</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">በየትኛው የጠርዙ ግማሽ እንደሚጀምሩ ያረጋግጡ።</string>
+    <string name="gesture_trainer_tip_edge_too_short">ጠቅታውን እስኪሰሙ ድረስ የበለጠ ያንሸራትቱ፣ ከዚያ ያንሱ።</string>
+    <string name="gesture_trainer_tip_edge_too_long">ከመጀመሪያው ጠቅታ በኋላ ወዲያውኑ ያንሱ፣ ከሁለተኛው በፊት።</string>
+    <string name="gesture_trainer_tip_edge_too_slow">ከጠቅታው በፊት ሳያቆሙ በፍጥነት ወደ ውስጥ ያንሸራትቱ።</string>
+    <string name="gesture_trainer_tip_edge_sideways">ከጠርዙ በቀጥታ ወደ ውስጥ ወይም በቀጥታ በጠርዙ በኩል ያንሸራትቱ፣ በሰያፍ አይደለም።</string>
+    <string name="gesture_trainer_tip_corner_missed">ጣቱን ሁለቱንም ጠርዞች እየነካ በትክክል ጥጉ ውስጥ ያስቀምጡ።</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">ጥጉን ከነኩ በኋላ በፍጥነት ያንሱ።</string>
+    <string name="gesture_trainer_close_to_limit">ለገደቡ ቅርብ፦ <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">ማንሸራተቶች በዝግታ ይጀምራሉ። ረዘም ያለ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ቀርፋፋ ጅምርን ይፈቅዳል።</string>
+    <string name="gesture_trainer_advice_tap_time">መታ ማድረጎች ቀርፋፋ ናቸው። ረዘም ያለ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ቀርፋፋ መታ ማድረጎችን ይፈቅዳል።</string>
+    <string name="gesture_trainer_advice_edge_width">ማንሸራተቶች ከጠርዙ በጣም ርቀው ይጀምራሉ። ትልቅ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ከጠርዝ አቅራቢያ የሚጀምሩ ማንሸራተቶችንም ወደ የጠርዝ ማንሸራተቶች ይቀይራል።</string>
+    <string name="gesture_trainer_advice_corner_size">መታ ማድረጎች ከጥጉ ውጭ ያርፋሉ። ትልቅ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ጥጎቹን ያሰፋል።</string>
+    <string name="gesture_trainer_advice_corner_time">የጥግ መታ ማድረጎች ቀርፋፋ ናቸው። ረዘም ያለ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ቀርፋፋ መታ ማድረጎችን ይፈቅዳል።</string>
+    <string name="gesture_trainer_menu_option">አማራጭ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>፦ ንጥል <xliff:g id="number">%3$d</xliff:g>ን ይምረጡ፣ <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">ምናሌውን ለመክፈት አንድ ጣት <xliff:g id="edge">%1$s</xliff:g> ቢያንስ <xliff:g id="distance">%2$d</xliff:g> ሚ.ሜ ወደ ላይ ወይም ወደ ታች ያንሸራትቱ። ከላይ ወደ ታች <xliff:g id="count">%3$d</xliff:g> ንጥሎች አሉት፣ እያንዳንዳቸው <xliff:g id="size">%6$s</xliff:g> ሴ.ሜ ገደማ ቁመት አላቸው። ንጥል <xliff:g id="number">%4$d</xliff:g>፣ <xliff:g id="item">%5$s</xliff:g>፣ ከማያ ገጹ አናት በታች ከ<xliff:g id="from">%7$s</xliff:g> እስከ <xliff:g id="to">%8$s</xliff:g> ሴ.ሜ ላይ ነው። ንጥሉ ሲነገር ጣቱን ያንሱ።</string>
+    <string name="gesture_trainer_menu_sample">ይህ ጠርዝ ምናሌ የለውም። ልምምዱ <xliff:g id="count">%1$d</xliff:g> የናሙና ንጥሎችን ይጠቀማል።</string>
+    <string name="gesture_trainer_try_menu_cancelled">ሙከራ <xliff:g id="number">%1$d</xliff:g>፦ ምናሌው ምርጫ ሳይደረግ ተዘግቷል።</string>
+    <string name="gesture_trainer_try_menu_other">ሙከራ <xliff:g id="number">%1$d</xliff:g>፦ <xliff:g id="item">%2$s</xliff:g> ተመርጧል።</string>
+    <string name="gesture_trainer_measure_menu_item">በንጥል <xliff:g id="number">%1$d</xliff:g> ላይ ተነስቷል</string>
+    <string name="gesture_trainer_finding_menu_in_corner">ጣቱ የጀመረው በጠርዙ በጣም አናት ወይም ግርጌ ላይ ነው፣ ጥጎቹ እና የላይኛው እና የታችኛው ጠርዞች ባሉበት።</string>
+    <string name="gesture_trainer_finding_menu_left_edge">ጣቱ ከጠርዙ <xliff:g id="mm">%1$.0f</xliff:g> ሚ.ሜ ርቆ ተነስቷል፣ ምናሌው ደግሞ ከ<xliff:g id="limit">%2$.0f</xliff:g> ሚ.ሜ በላይ ሲሆን ይዘጋል።</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">ጣቱ ከንጥል <xliff:g id="target">%2$d</xliff:g> ይልቅ በንጥል <xliff:g id="item">%1$d</xliff:g> ላይ ተነስቷል።</string>
+    <string name="gesture_trainer_tip_menu_in_corner">ከጠርዙ የላይኛው እና የታችኛው ጫፎች ትንሽ ርቀው ይጀምሩ።</string>
+    <string name="gesture_trainer_tip_menu_left_edge">በሚያንሸራትቱበት ጊዜ ጣቱን ከጠርዙ አቅራቢያ ያቆዩ፣ እና እዚያው ያንሱት።</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">እያንዳንዱ ንጥል በጠርዙ በኩል ቋሚ ቦታ አለው፣ እና ጣቱ የሚነሳበት ንጥል ይመረጣል። ንጥሉ ሲነገር ያንሱ።</string>
+    <string name="gesture_trainer_contents">ማውጫ</string>
+    <string name="gesture_trainer_contents_heading">ማውጫ፦ <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">ተጠናቋል፣ ከ<xliff:g id="tries">%2$d</xliff:g> <xliff:g id="hits">%1$d</xliff:g> ታውቀዋል</string>
+    <string name="gesture_trainer_group_tap_swipe">መታ ማድረግ እና ማንሸራተት</string>
+    <string name="gesture_trainer_group_edge_swipes">ከጠርዞቹ የሚደረጉ ማንሸራተቶች</string>
+    <string name="gesture_trainer_group_along_edges">በጠርዞቹ በኩል የሚደረጉ ማንሸራተቶች</string>
+    <string name="gesture_trainer_group_edge_menus">የጠርዝ ምናሌዎች</string>
+    <string name="gesture_trainer_group_corners">ማዕዘኖች</string>
+    <string name="gesture_trainer_group_back_tap">የጀርባ መታ ማድረግ</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">በሁለት ጣት ማንሸራተት የሚከተሉ የሁለት ጣት መታ ማድረጎች ተትተዋል፦ <xliff:g id="setting">%1$s</xliff:g> ጠፍቷል።</string>
+    <string name="gesture_trainer_how_swipe_hold">ከዚያ ሳያነሱ ጣቱን ቢያንስ ለ<xliff:g id="hold">%1$d</xliff:g> ms ሳይንቀሳቀስ ያቆዩ፣ እና ያንሱ።</string>
+    <string name="gesture_trainer_half_top">የላይኛው</string>
+    <string name="gesture_trainer_half_bottom">የታችኛው</string>
+    <string name="gesture_trainer_how_taps_half">በማያ ገጹ <xliff:g id="half">%1$s</xliff:g> ግማሽ ላይ መታ ያድርጉ። ግማሹን የሚወስነው በጣቶቹ መካከል ያለው ነጥብ ነው።</string>
+    <string name="gesture_trainer_same_fingers">በተመሳሳዮቹ ጣቶች</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> መታ ያድርጉ። ከመጨረሻው መታ ማድረግ በኋላ ወዲያውኑ፣ በ<xliff:g id="gap">%3$d</xliff:g> ms ውስጥ፣ ማያ ገጹን እንደገና <xliff:g id="swipe_fingers">%4$s</xliff:g> ይንኩ እና <xliff:g id="direction">%5$s</xliff:g> በቀጥታ መስመር ከ2 እስከ 3 ሴ.ሜ ገደማ ያንሸራትቱ፣ ከዚያ ያንሱ።</string>
+    <string name="gesture_trainer_how_corner_hold">በመጨረሻው መታ ማድረግ ላይ ጣቱን ቢያንስ ለ<xliff:g id="hold">%1$d</xliff:g> ms ሳይንቀሳቀስ በጥጉ ውስጥ ይተዉት።</string>
+    <string name="gesture_trainer_how_back_tap">ስልኩን ከጎኖቹ በእጅዎ ይያዙ፣ እና በር እንደሚያንኳኩ የጀርባውን መሃል በጣት ጫፍ <xliff:g id="taps">%1$s</xliff:g> በጠንካራ እና በፍጥነት መታ ያድርጉ። መታ ማድረጎቹን ተቀራራቢ ያድርጉ፦ በመካከላቸው ቢበዛ <xliff:g id="gap">%2$d</xliff:g> ms። መታ በሚያደርጉበት ጊዜ ማያ ገጹን አይንኩ።</string>
+    <string name="gesture_trainer_back_tap_info">የጀርባ መታ ማድረጎች በልምምዱ ጊዜ ምንም ትዕዛዝ አያሄዱም። <xliff:g id="setting">%1$s</xliff:g> መታ ማድረግ ምን ያህል ጠንካራ መሆን እንዳለበት ያዘጋጃል።</string>
+    <string name="gesture_trainer_go_placed">የእጅ ምልክቱን <xliff:g id="tries">%1$d</xliff:g> ጊዜ ያድርጉ።</string>
+    <string name="gesture_trainer_along_left">በግራ ጠርዝ</string>
+    <string name="gesture_trainer_along_right">በቀኝ ጠርዝ</string>
+    <string name="gesture_trainer_along_top">በላይኛው ጠርዝ</string>
+    <string name="gesture_trainer_along_bottom">በታችኛው ጠርዝ</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> በኩል የሚደረጉ ማንሸራተቶች ተትተዋል፦ የጠርዝ ምናሌ አለው፣ ስለዚህ በእሱ በኩል ማንሸራተት የእጅ ምልክትን ከማሄድ ይልቅ ምናሌውን ይከፍታል።</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> በኩል የሚደረጉ ማንሸራተቶች ተትተዋል፦ ያሸብልላል፣ ስለዚህ በእሱ በኩል ማንሸራተት የእጅ ምልክትን ከማሄድ ይልቅ መተግበሪያውን ያሸብልላል።</string>
+    <string name="gesture_trainer_finding_along_off_edge">ጣቱ ከጠርዙ በጣም ርቆ ተንቀሳቅሷል።</string>
+    <string name="gesture_trainer_tip_along_off_edge">ጣቱን በመስታወቱ ጫፍ ላይ፣ በቀጥታ በጠርዙ በኩል ያቆዩ።</string>
+    <string name="gesture_trainer_go_back_tap">የጀርባ መታ ማድረግ የእጅ ምልክቱን <xliff:g id="tries">%1$d</xliff:g> ጊዜ ያድርጉ። ማያ ገጹን መንካት ሙከራውን ያከሽፋል።</string>
+    <string name="gesture_trainer_no_accelerometer">ይህ ልምምድ የፍጥነት መለኪያ ያስፈልገዋል። ምንም አይገኝም።</string>
+    <string name="gesture_trainer_measure_hold">ለ<xliff:g id="ms">%1$d</xliff:g> ms ሳይንቀሳቀስ ተይዟል</string>
+    <string name="gesture_trainer_measure_back_tap_strength">የ<xliff:g id="strength">%1$.1f</xliff:g> ጥንካሬ መታ ማድረግ</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">ጣቱ በመጨረሻ ለ<xliff:g id="ms">%1$d</xliff:g> ms ሳይንቀሳቀስ ቆይቷል፣ ቢያንስ ለ<xliff:g id="limit">%2$d</xliff:g> ms ሳይንቀሳቀስ መቆየት አለበት።</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">ጣቶቹ በሌላው የማያ ገጹ ግማሽ ላይ መታ አድርገዋል።</string>
+    <string name="gesture_trainer_finding_swipe_missing">ከመታ ማድረጎቹ በኋላ ማንሸራተት አልመጣም።</string>
+    <string name="gesture_trainer_finding_swipe_late">ማንሸራተቱ ከመጨረሻው መታ ማድረግ <xliff:g id="ms">%1$d</xliff:g> ms በኋላ ጀምሯል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">የጀርባ መታ ማድረጉ በጣም ቀላል ነው፦ ከሚያስፈልገው ጥንካሬ <xliff:g id="percent">%1$d</xliff:g>%%።</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">አንድ መታ ማድረግ ስልኩን በጀርባው በኩል ከሚያንቀሳቅሰው በላይ ወደ ጎን አንቀሳቅሶታል።</string>
+    <string name="gesture_trainer_finding_back_tap_moving">ስልኩ ከመታ ማድረግ ትንሽ ቀደም ብሎ ይንቀሳቀስ ነበር።</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">ማያ ገጹ ተነክቷል፣ እና ማያ ገጹ በሚነካበት ጊዜ የሚደረጉ መታ ማድረጎች አይቆጠሩም።</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">በጀርባው ላይ በሚደረጉ መታ ማድረጎች መካከል <xliff:g id="ms">%1$d</xliff:g> ms አልፏል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">ከማንሸራተቱ በኋላ ጣቱን ሙሉውን የመያዣ ጊዜ በማያ ገጹ ላይ ሳይንቀሳቀስ ያቆዩ። ከዚያ ያንሱ።</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">በየትኛው ግማሽ መታ እንደሚያደርጉ ያረጋግጡ፦ የማያ ገጹ መሃል የላይኛውን ግማሽ ከታችኛው ግማሽ ይለያል።</string>
+    <string name="gesture_trainer_tip_swipe_missing">ከመጨረሻው መታ ማድረግ በኋላ ማያ ገጹን ወዲያውኑ እንደገና ይንኩ እና ያንሸራትቱ።</string>
+    <string name="gesture_trainer_tip_swipe_late">ማንሸራተቱን ከመጨረሻው መታ ማድረግ በኋላ ወዲያውኑ፣ ያለ ቆም ይጀምሩ።</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">በጣት ጫፍ ወይም በጥፍር፣ ከጀርባው መሃል አቅራቢያ፣ በጠንካራ መታ ያድርጉ።</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">በቀጥታ የስልኩ ጀርባ ላይ መታ ያድርጉ፣ ጠርዙ ላይ ወይም በማዕዘን አይደለም።</string>
+    <string name="gesture_trainer_tip_back_tap_moving">መታ ከማድረግዎ በፊት ስልኩን ለአፍታ ሳይንቀሳቀስ ይያዙ፣ እና እጅዎ እንዳያንቀሳቅሰው ላላ አድርገው ይያዙት።</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">ጀርባውን መታ በሚያደርጉበት ጊዜ ጣቶችዎን ከማያ ገጹ ያርቁ፦ ስልኩን ከጎኖቹ ይያዙ።</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">በፍጥነት መታ ያድርጉ፣ አንዱን መታ ማድረግ ከሌላው በኋላ ወዲያውኑ።</string>
+    <string name="gesture_trainer_advice_swipe_hold">ጣቱ ከማንሸራተቱ በኋላ በጣም ቀድሞ ይነሳል። አጠር ያለ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ አጠር ያለ መያዝን ይፈቅዳል።</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">የጀርባ መታ ማድረጎች ቀላል ናቸው። ከፍ ያለ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ቀለል ያሉ መታ ማድረጎችን ያገኛል፣ እና ግጭቶችን እንደ መታ ማድረግ ሊያገኝ ይችላል።</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">ጣቶቹ <xliff:g id="degrees">%1$.0f</xliff:g> ዲግሪ ዞረዋል፣ እና ከ<xliff:g id="limit">%2$.0f</xliff:g> ዲግሪ ጀምሮ እንቅስቃሴው ማሽከርከር ነው።</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">ጣቶቹን በቀጥታ መስመር ያቀራርቡ ወይም ያራርቁ፣ እርስ በርስ ዙሪያ በቅስት አይደለም።</string>
+    <string name="gesture_trainer_finding_other_gesture">እንቅስቃሴው በምትኩ ከዚያ የእጅ ምልክት ጋር ተዛምዷል።</string>
+    <string name="gesture_trainer_side_left">በግራ</string>
+    <string name="gesture_trainer_side_right">በቀኝ</string>
+    <string name="gesture_trainer_side_top">በላይኛው</string>
+    <string name="gesture_trainer_side_bottom">በታችኛው</string>
+    <string name="gesture_trainer_finding_wrong_edge">ጣቱ የጀመረው <xliff:g id="side">%1$s</xliff:g> ጠርዝ ላይ ነው፣ ይህ ልምምድ ግን <xliff:g id="expected">%2$s</xliff:g> ጠርዝ ላይ ነው።</string>
+    <string name="gesture_trainer_tip_wrong_edge">ልምምዱ በሚጠቅሰው ጠርዝ ላይ በትክክል ይጀምሩ።</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">ከዚህ የእጅ ምልክት ይልቅ የጠርዝ ምናሌ ተከፍቷል።</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">ምናሌ ባለው ጠርዝ በኩል ማንሸራተት ምናሌውን ይከፍታል። ልምምዱ በሚጠቅሰው ጠርዝ ላይ ይጀምሩ።</string>
+    <string name="gesture_trainer_group_three_part">ባለ ሦስት ክፍል ማንሸራተቶች</string>
+    <string name="gesture_trainer_group_two_stroke">ባለ ሁለት ምት ማንሸራተቶች</string>
+    <string name="gesture_trainer_group_shake">መነቅነቅ</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">ባለ ሦስት ክፍል ማንሸራተቶች ተትተዋል፦ <xliff:g id="setting">%1$s</xliff:g> በርቷል።</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">ባለ ሁለት ምት ማንሸራተቶች ተትተዋል፦ <xliff:g id="setting">%1$s</xliff:g> <xliff:g id="value">%2$s</xliff:g> ነው።</string>
+    <string name="gesture_trainer_shake_info">መነቅነቁ በልምምዱ ጊዜ ምንም ትዕዛዝ አያሄድም። <xliff:g id="setting">%1$s</xliff:g> መነቅነቅ ምን ያህል ጠንካራ መሆን እንዳለበት ያዘጋጃል።</string>
+    <string name="gesture_trainer_go_shake">ስልኩን <xliff:g id="tries">%1$d</xliff:g> ጊዜ ይነቅንቁ፣ ከእያንዳንዱ መነቅነቅ በኋላ አጭር ቆም በማድረግ።</string>
+    <string name="gesture_trainer_how_shake">ስልኩን አጥብቀው ይያዙ እና የውሃ ጠብታ እንደሚያራግፉ በፍጥነት ወዲያና ወዲህ ይነቅንቁት፦ በእያንዳንዱ አቅጣጫ ቢያንስ ሁለት ጊዜ፣ ሁሉንም በሁለት ሦስተኛ ሰከንድ ገደማ ውስጥ። ከዚያ ሳይንቀሳቀስ ይያዙት።</string>
+    <string name="gesture_trainer_how_two_stroke">በአንድ ጣት <xliff:g id="first">%1$s</xliff:g> 2 ሴ.ሜ ገደማ ያንሸራትቱ እና ያንሱ። ከዚያ ወዲያውኑ፣ በ<xliff:g id="time">%3$d</xliff:g> ms ውስጥ፣ በአንድ ጣት <xliff:g id="second">%2$s</xliff:g> 2 ሴ.ሜ ገደማ ያንሸራትቱ እና ያንሱ።</string>
+    <string name="gesture_trainer_how_three_part">ማያ ገጹን በአንድ ጣት ይንኩ እና ሳያነሱ <xliff:g id="first">%1$s</xliff:g> ያንሸራትቱ፣ ከዚያ በሹል ይታጠፉ እና <xliff:g id="second">%2$s</xliff:g> ያንሸራትቱ፣ ከዚያ እንደገና በሹል ይታጠፉ እና <xliff:g id="third">%3$s</xliff:g> ያንሸራትቱ፣ እያንዳንዱ ክፍል 2 ሴ.ሜ ገደማ፣ እና ያንሱ። ሹል ማዕዘኖች ያሉት አንድ ፈጣን እና ለስላሳ እንቅስቃሴ ያድርጉት፣ ኩርባዎች አይደሉም።</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">አንድ ጣት በማያ ገጹ የላይኛው ሦስተኛ ላይ፣ ሌላውን ደግሞ በታችኛው ሦስተኛ ላይ ያስቀምጡ፣ ለምሳሌ አውራ ጣትን ዝቅ ብሎ እና ሌባ ጣትን ከፍ ብሎ።</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">ጣቶቹ አንዱ በማያ ገጹ የላይኛው ሦስተኛ ሌላው በታችኛው ሦስተኛ ላይ አልነበሩም።</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">ሁለተኛ ማንሸራተት አልነበረም።</string>
+    <string name="gesture_trainer_finding_second_stroke_late">ሁለተኛው ማንሸራተት ከመጀመሪያው <xliff:g id="ms">%1$d</xliff:g> ms በኋላ ጀምሯል፣ የሚፈቀደው ግን ቢበዛ <xliff:g id="limit">%2$d</xliff:g> ms ነው።</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">የመጀመሪያው ማንሸራተት <xliff:g id="direction">%1$s</xliff:g> ሄዷል።</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">ሁለተኛው ማንሸራተት <xliff:g id="direction">%1$s</xliff:g> ሄዷል።</string>
+    <string name="gesture_trainer_finding_shake_too_light">መነቅነቁ በጣም ቀላል ነበር፦ ከሚያስፈልገው ጥንካሬ <xliff:g id="percent">%1$d</xliff:g>%%።</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">ወዲያና ወዲህ ውዝዋዜዎች፦ ከሚያስፈልጉት <xliff:g id="wanted">%2$d</xliff:g> <xliff:g id="swings">%1$d</xliff:g>።</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">ጣቶቹን በጣም ያራርቁ፣ አንዱን ከላይኛው ጠርዝ አቅራቢያ እና አንዱን ከታችኛው ጠርዝ አቅራቢያ።</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">ከመጀመሪያው ማንሸራተት በኋላ ጣቱን ያንሱ እና ወዲያውኑ እንደገና ያንሸራትቱ።</string>
+    <string name="gesture_trainer_tip_second_stroke_late">ጣቱን ካነሱ በኋላ ወዲያውኑ ሁለተኛውን ማንሸራተት ይጀምሩ።</string>
+    <string name="gesture_trainer_tip_shake_too_light">በጠንካራ እና በፍጥነት ይነቅንቁ።</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">በፍጥነት ይነቅንቁ፣ በእያንዳንዱ አቅጣጫ ቢያንስ ሁለት ጊዜ ወዲያና ወዲህ፣ በመካከል ሳያቆሙ።</string>
+    <string name="gesture_trainer_measure_shake_strength">በጣም ጠንካራው እንቅስቃሴ <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">መነቅነቆቹ ቀላል ናቸው። ከፍ ያለ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ቀለል ያሉ መነቅነቆችን ያገኛል፣ እና ስልኩን መያዝን እንደ መነቅነቅ ሊያገኝ ይችላል።</string>
+    <string name="gesture_trainer_advice_two_stroke_time">ሁለተኛው ማንሸራተት ዘግይቶ ይጀምራል። ረዘም ያለ የ<xliff:g id="setting">%1$s</xliff:g> ዋጋ ዘግይቶ የሚመጣ ሁለተኛ ማንሸራተትን ይፈቅዳል፣ እና ነጠላ ማንሸራተት ከመሄዱ በፊት ረዘም ላለ ጊዜ ይጠብቃል።</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> በርቷል።</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> ጠፍቷል፦ የሁለት ጣት ማንሸራተቶች መተግበሪያውን ያሸብልላሉ፣ እና ማሻሸትም በአብዛኛው ያሸብልላል። ቅንብሩ ሲበራ የሁለት ጣት ማንሸራተቶች ከማሸብለል ይልቅ የSandFly ትዕዛዞችን ያሄዳሉ።</string>
+    <string name="gesture_trainer_measure_first_stroke">የመጀመሪያው ማንሸራተት <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ሁለተኛው ማንሸራተት <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">ሙሉው የእጅ ምልክት <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">በመካከላቸው ለ<xliff:g id="ms">%1$d</xliff:g> ms ተነስቷል</string>
+</resources>

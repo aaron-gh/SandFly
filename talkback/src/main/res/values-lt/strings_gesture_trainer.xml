@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Gestų treniruoklis</string>
+    <string name="gesture_trainer_intro">Pasirinkite gestų grupę. Kiekviename pratime aprašomas gestas. Atlikite gestą <xliff:g id="tries">%1$d</xliff:g> kartus; kiekvieno bandymo rezultatas pasakomas. Po paskutinio bandymo ekrane pateikiami kiekvieno bandymo matavimai, ką pakeisti ir susiję nustatymai.</string>
+    <string name="gesture_trainer_group_one_finger">Vienas pirštas</string>
+    <string name="gesture_trainer_group_two_fingers">Du pirštai</string>
+    <string name="gesture_trainer_group_three_fingers">Trys pirštai</string>
+    <string name="gesture_trainer_group_four_fingers">Keturi pirštai</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Suspaudimas, pasukimas ir braukimas pirmyn ir atgal</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, pratimų: <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Uždaryti</string>
+    <string name="gesture_trainer_no_detection">Gestų treniruokliui reikia Android 13 ar naujesnės versijos.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Gestai pirmyn ir atgal bei kampu praleidžiami: „<xliff:g id="setting">%1$s</xliff:g>“ įjungta.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Perbraukimai dviem pirštais praleidžiami: „<xliff:g id="setting">%1$s</xliff:g>“ išjungta, todėl jie slenka programas.</string>
+    <string name="gesture_trainer_exercise_heading"><xliff:g id="number">%1$d</xliff:g> pratimas iš <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Pradėti</string>
+    <string name="gesture_trainer_skip">Praleisti šį pratimą</string>
+    <string name="gesture_trainer_back_to_groups">Atgal į grupes</string>
+    <string name="gesture_trainer_go">Atlikite gestą <xliff:g id="tries">%1$d</xliff:g> kartus bet kurioje ekrano vietoje. Kiekvienas palietimas yra bandymas.</string>
+    <string name="gesture_trainer_fingers_1">vienu pirštu</string>
+    <string name="gesture_trainer_fingers_2">dviem pirštais greta, maždaug 1 cm atstumu</string>
+    <string name="gesture_trainer_fingers_3">trimis pirštais greta, šiek tiek atskirtais</string>
+    <string name="gesture_trainer_fingers_4">keturiais pirštais greta, šiek tiek atskirtais</string>
+    <string name="gesture_trainer_direction_up">aukštyn</string>
+    <string name="gesture_trainer_direction_down">žemyn</string>
+    <string name="gesture_trainer_direction_left">kairėn</string>
+    <string name="gesture_trainer_direction_right">dešinėn</string>
+    <string name="gesture_trainer_how_swipe">Palieskite ekraną <xliff:g id="fingers">%1$s</xliff:g> ir nelaukdami braukite <xliff:g id="direction">%2$s</xliff:g> tiesia linija maždaug 2–3 cm, tada pakelkite. Pradėkite judėti iš karto: jei pirštas pirma nejuda, pradedamas naršymas liečiant.</string>
+    <string name="gesture_trainer_how_swipe_multi">Padėkite pirštus kartu, tuo pačiu metu, ir judinkite juos visus ta pačia kryptimi. Kiekvienas pirštas visą laiką turi judėti <xliff:g id="direction">%1$s</xliff:g>, todėl laikykitės tiesios linijos.</string>
+    <string name="gesture_trainer_how_back_and_forth">Palieskite ekraną vienu pirštu ir braukite <xliff:g id="first">%1$s</xliff:g> maždaug 2 cm, tada nepakeldami grįžkite tiesiai <xliff:g id="second">%2$s</xliff:g> maždaug 2 cm ir pakelkite. Atlikite tai vienu greitu, tolygiu judesiu.</string>
+    <string name="gesture_trainer_how_angle">Palieskite ekraną <xliff:g id="fingers">%1$s</xliff:g> ir braukite <xliff:g id="first">%2$s</xliff:g> maždaug 2 cm, tada nepakeldami staigiai pasukite ir braukite <xliff:g id="second">%3$s</xliff:g> maždaug 2 cm, tada pakelkite. Posūkis turi būti aštrus kampas, kaip raidė L, o ne lankas.</string>
+    <string name="gesture_trainer_taps_1">vieną kartą</string>
+    <string name="gesture_trainer_taps_2">du kartus</string>
+    <string name="gesture_trainer_taps_3">tris kartus</string>
+    <string name="gesture_trainer_taps_4">keturis kartus</string>
+    <string name="gesture_trainer_how_taps">Palieskite <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Padėkite pirštus kartu ir kartu greitai pakelkite, neslinkdami.</string>
+    <string name="gesture_trainer_how_taps_quick">Palietimai turi būti greiti ir toje pačioje vietoje: kitas palietimas turi būti per <xliff:g id="gap">%1$d</xliff:g> ms nuo ankstesnio.</string>
+    <string name="gesture_trainer_how_hold">Palieskite ekraną <xliff:g id="fingers">%1$s</xliff:g> vienu metu ir laikykite nejudindami, neslinkdami, bent <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Jei nepriskirta jokia kita komanda, šis gestas išjungia SandFly. Treniruoklyje jis nieko nevykdo.</string>
+    <string name="gesture_trainer_how_taps_hold">Palieskite <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, o paskutinio palietimo metu palikite pirštus ant ekrano nejudindami bent <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Naudokite nykštį, smilių ir didįjį pirštą.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Padėkite smilių ir didįjį pirštą vieną šalia kito, o nykštį ir bevardį pirštą keleto centimetrų atstumu iš abiejų pusių. Tada suveskite visų keturių pirštų galiukus į vieną tašką.</string>
+    <string name="gesture_trainer_how_pinch">Padėkite <xliff:g id="fingers">%1$d</xliff:g> pirštus ant ekrano plačiai išskėstus. Tada suveskite juos tiesiai vienas link kito bent 1 cm, lyg kažką paimdami, ir pakelkite nuo ekrano. Judinkite tik pirštus, ne visą ranką, ir ne lanku.</string>
+    <string name="gesture_trainer_how_spread">Padėkite <xliff:g id="fingers">%1$d</xliff:g> pirštus ant ekrano arti vienas kito. Tada išskleiskite juos tiesiai bent 1 cm ir pakelkite nuo ekrano. Judinkite tik pirštus, ne visą ranką, ir ne lanku.</string>
+    <string name="gesture_trainer_clockwise">pagal laikrodžio rodyklę</string>
+    <string name="gesture_trainer_counterclockwise">prieš laikrodžio rodyklę</string>
+    <string name="gesture_trainer_how_rotate">Padėkite du pirštus ant ekrano maždaug 2–3 cm atstumu ir sukite juos <xliff:g id="way">%1$s</xliff:g> aplink jų vidurį, lyg suktumėte rankenėlę, maždaug ketvirtį apsisukimo. Tada pakelkite.</string>
+    <string name="gesture_trainer_how_scrub">Padėkite du pirštus ant ekrano ir greitai pastumkite juos į vieną pusę maždaug 2 cm ir atgal, lyg kažką trintumėte, viską maždaug per sekundę. Tada pakelkite.</string>
+    <string name="gesture_trainer_edge_bottom">prie apatinio krašto</string>
+    <string name="gesture_trainer_edge_top_left">prie viršutinio krašto, jo kairėje pusėje</string>
+    <string name="gesture_trainer_edge_top_right">prie viršutinio krašto, jo dešinėje pusėje</string>
+    <string name="gesture_trainer_edge_left_top">prie kairiojo krašto, jo viršutinėje pusėje</string>
+    <string name="gesture_trainer_edge_left_bottom">prie kairiojo krašto, jo apatinėje pusėje</string>
+    <string name="gesture_trainer_edge_right_top">prie dešiniojo krašto, jo viršutinėje pusėje</string>
+    <string name="gesture_trainer_edge_right_bottom">prie dešiniojo krašto, jo apatinėje pusėje</string>
+    <string name="gesture_trainer_edge_left">prie kairiojo krašto</string>
+    <string name="gesture_trainer_edge_right">prie dešiniojo krašto</string>
+    <string name="gesture_trainer_edge_top">prie viršutinio krašto</string>
+    <string name="gesture_trainer_how_edge">Padėkite vieną pirštą <xliff:g id="edge">%1$s</xliff:g>, ne toliau kaip <xliff:g id="edge_width">%2$d</xliff:g> mm nuo krašto, ir braukite <xliff:g id="direction">%3$s</xliff:g> į ekrano vidų iki pirmojo spragtelėjimo, maždaug <xliff:g id="distance">%4$d</xliff:g> mm. Tada iš karto pakelkite: už antrojo spragtelėjimo braukimas tampa ilgu braukimu.</string>
+    <string name="gesture_trainer_how_edge_long">Padėkite vieną pirštą <xliff:g id="edge">%1$s</xliff:g>, ne toliau kaip <xliff:g id="edge_width">%2$d</xliff:g> mm nuo krašto, ir braukite <xliff:g id="direction">%3$s</xliff:g> į ekrano vidų pro pirmąjį spragtelėjimą iki antrojo, maždaug <xliff:g id="distance">%4$d</xliff:g> mm. Tada pakelkite.</string>
+    <string name="gesture_trainer_how_along">Braukite vienu pirštu <xliff:g id="direction">%2$s</xliff:g> palei <xliff:g id="edge">%1$s</xliff:g>, bent <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">viršutinį kairįjį</string>
+    <string name="gesture_trainer_corner_top_right">viršutinį dešinįjį</string>
+    <string name="gesture_trainer_corner_bottom_left">apatinį kairįjį</string>
+    <string name="gesture_trainer_corner_bottom_right">apatinį dešinįjį</string>
+    <string name="gesture_trainer_how_corner">Palieskite <xliff:g id="corner">%2$s</xliff:g> ekrano kampą <xliff:g id="taps">%1$s</xliff:g>. Padėkite pirštą pačiame kampe, ne toliau kaip <xliff:g id="size">%3$d</xliff:g> mm nuo abiejų kraštų, ir greitai pakelkite, per <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Kai kampai didesni, palietus valdiklį šalia kampo, pvz., „Atgal“ viršuje kairėje, vietoj jo gali būti įvykdytas kampo gestas.</string>
+    <string name="gesture_trainer_rating_precise">atpažintas, tiksliai</string>
+    <string name="gesture_trainer_rating_good">atpažintas, gerai</string>
+    <string name="gesture_trainer_rating_borderline">atpažintas, bet arti ribos</string>
+    <string name="gesture_trainer_try_recognized"><xliff:g id="number">%1$d</xliff:g> bandymas: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing"><xliff:g id="number">%1$d</xliff:g> bandymas: neatpažintas.</string>
+    <string name="gesture_trainer_try_other"><xliff:g id="number">%1$d</xliff:g> bandymas: atpažintas kaip „<xliff:g id="gesture">%2$s</xliff:g>“.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: atpažinta <xliff:g id="recognized">%2$d</xliff:g> iš <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Jūsų bandymai</string>
+    <string name="gesture_trainer_results_change">Ką pakeisti</string>
+    <string name="gesture_trainer_results_close">Arti ribos</string>
+    <string name="gesture_trainer_results_all_good">Visi bandymai atpažinti neviršijant ribų.</string>
+    <string name="gesture_trainer_results_settings">Nustatymai, kurie gali padėti</string>
+    <string name="gesture_trainer_next">Kitas pratimas</string>
+    <string name="gesture_trainer_repeat">Kartoti</string>
+    <string name="gesture_trainer_finish">Baigti</string>
+    <string name="gesture_trainer_group_done">Baigėte visus grupės „<xliff:g id="group">%1$s</xliff:g>“ pratimus.</string>
+    <string name="gesture_trainer_open_setting">Keisti „<xliff:g id="setting">%1$s</xliff:g>“</string>
+    <string name="gesture_trainer_measure_duration">truko <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm ilgio</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm per sekundę</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> laipsn. nuo tiesios linijos</string>
+    <string name="gesture_trainer_measure_start">pirmas centimetras per <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">pirštai palietė <xliff:g id="ms">%1$d</xliff:g> ms skirtumu</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms palietimas</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms tarp palietimų</string>
+    <string name="gesture_trainer_measure_spread">pirštai pasislinko <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">pasukta <xliff:g id="degrees">%1$.0f</xliff:g> laipsn.</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm nuo kampo kraštų</string>
+    <string name="gesture_trainer_measure_edge">pradėta <xliff:g id="mm">%1$.0f</xliff:g> mm nuo krašto</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Pirštų ekrane: <xliff:g id="fingers">%1$d</xliff:g>, o reikia <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Pirštai palietė <xliff:g id="ms">%1$d</xliff:g> ms skirtumu, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Pirštas pakeltas anksčiau, nei visi pirštai palietė ekraną.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Pirštai pakelti <xliff:g id="ms">%1$d</xliff:g> ms skirtumu, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Pirštas per ilgai nejudėjo arba pradžioje judėjo per lėtai, todėl palietimas tapo naršymu liečiant.</string>
+    <string name="gesture_trainer_finding_slow_start">Pirmas centimetras užtruko <xliff:g id="ms">%1$d</xliff:g> ms, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Pirštas sulėtėjo <xliff:g id="ms">%1$d</xliff:g> ms, o kiekvienas centimetras gali užtrukti ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Judesys buvo tik <xliff:g id="mm">%1$.0f</xliff:g> mm, o turi būti bent <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Pirštas pradėjo judėti <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Pirštai pradėjo judėti <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Kelias nukrypo <xliff:g id="degrees">%1$.0f</xliff:g> laipsn. nuo tiesios linijos, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Kelias išlinko į <xliff:g id="parts">%1$d</xliff:g> dalis, o reikia <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Posūkis nerastas.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Po posūkio pirštas judėjo <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Palietimo metu pirštas pasislinko <xliff:g id="mm">%1$.1f</xliff:g> mm, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Palietimas truko <xliff:g id="ms">%1$d</xliff:g> ms, ilgiau nei <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Paskutinis palietimas laikytas <xliff:g id="ms">%1$d</xliff:g> ms, o turi būti bent <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Palietimų: <xliff:g id="taps">%1$d</xliff:g>, o reikia <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Palietimų: <xliff:g id="taps">%1$d</xliff:g>, o reikia <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Tarp palietimų praėjo <xliff:g id="ms">%1$d</xliff:g> ms, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Palietimai buvo <xliff:g id="mm">%1$.0f</xliff:g> mm atstumu, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Pirštai pasislinko tik <xliff:g id="mm">%1$.0f</xliff:g> mm, o turi pasislinkti bent <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Pirštai judėjo priešinga kryptimi.</string>
+    <string name="gesture_trainer_finding_moved_together">Visa ranka pasislinko ekranu <xliff:g id="mm">%1$.0f</xliff:g> mm, daugiau, nei pirštai priartėjo ar nutolo vienas nuo kito.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Pirštai pasisuko tik <xliff:g id="degrees">%1$.0f</xliff:g> laipsn., o turi pasisukti bent <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Pirštai pasisuko priešinga kryptimi.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Pirmasis brūkšnys buvo <xliff:g id="mm">%1$.0f</xliff:g> mm, o turi būti bent <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Grįžtamasis brūkšnys buvo <xliff:g id="mm">%1$.0f</xliff:g> mm, o turi būti bent <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Braukimas pirmyn ir atgal užtruko <xliff:g id="ms">%1$d</xliff:g> ms, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Pirštas palietė <xliff:g id="mm">%1$.0f</xliff:g> mm nuo krašto, o kraštas yra <xliff:g id="limit">%2$.0f</xliff:g> mm pločio.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Pirštas pradėjo kitoje krašto pusėje.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Pirštas nubraukė <xliff:g id="mm">%1$.0f</xliff:g> mm, o turi nubraukti bent <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Per ilgas braukimas: pirštas nuėjo už antrojo spragtelėjimo, <xliff:g id="mm">%1$.0f</xliff:g> mm, o antrasis spragtelėjimas yra ties <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Pasiekti spragtelėjimą užtruko <xliff:g id="ms">%1$d</xliff:g> ms, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Braukimas nukrypo į šoną <xliff:g id="degrees">%1$.0f</xliff:g> laipsn., o leidžiama ne daugiau kaip <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Palietimas buvo <xliff:g id="mm">%1$.0f</xliff:g> mm nuo kampo kraštų, o kampas yra <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Kampo palietimas truko <xliff:g id="ms">%1$d</xliff:g> ms, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Neaptikta judesio, atitinkančio gestą.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Patikrinkite, kiek pirštų liečia stiklą. Ant ekrano padėtas delnas ar kitas pirštas taip pat skaičiuojamas.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Padėkite visus pirštus tuo pačiu metu, kaip viena ranka, o ne vieną po kito.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Pirma padėkite visus pirštus, tada judinkite arba pakelkite juos.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Pakelkite visus pirštus tuo pačiu metu.</string>
+    <string name="gesture_trainer_tip_slow_start">Pradėkite judėti tą pačią akimirką, kai paliečiate ekraną, ir pradžioje judėkite greičiau.</string>
+    <string name="gesture_trainer_tip_paused">Judinkite pirštą tolygiu greičiu, kol pakelsite. Nelėtinkite pabaigoje.</string>
+    <string name="gesture_trainer_tip_too_short">Padarykite judesį ilgesnį, maždaug 2–3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Patikrinkite kryptį pačioje judesio pradžioje. Padeda telefoną laikyti tiesiai priešais save.</string>
+    <string name="gesture_trainer_tip_off_line">Judėkite tik nurodyta kryptimi, ne įstrižai. Smilius išlaiko tiesesnę liniją nei nykštys.</string>
+    <string name="gesture_trainer_tip_curved">Laikykitės tiesios linijos ir pakelkite pačioje pabaigoje, keldami nelenkite piršto į šoną.</string>
+    <string name="gesture_trainer_tip_turn_missing">Keiskite kryptį staigiai, stačiu kampu arba tiesiai atgal, nepakeldami. Kiekviena dalis turi būti maždaug 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Po posūkio patikrinkite, kuria kryptimi judate: antroji dalis turi eiti kita gesto pavadinime nurodyta kryptimi.</string>
+    <string name="gesture_trainer_tip_tap_moved">Palieskite tiesiai žemyn ir aukštyn piršto galiuku, neslinkdami.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Kiekvienas palietimas turi būti trumpas: palieskite ir iš karto pakelkite.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Paskutinio palietimo metu laikykite pirštus nejudančius ant ekrano visą laikymo laiką.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Skaičiuokite palietimus ir atlikite juos visus greitai vienu ypu.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Skaičiuokite palietimus. Nuo stiklo atšokęs pirštas padaro papildomą palietimą.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Lieskite greičiau: kitą palietimą pradėkite iškart pakėlę pirštą.</string>
+    <string name="gesture_trainer_tip_taps_apart">Kiekvieną kartą lieskite toje pačioje vietoje.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Judinkite pirštus daugiau, bent 1 cm arčiau vienas kito arba toliau.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Suspaudimas – tai pirštai, judantys vienas link kito, išskleidimas – pirštai, judantys vienas nuo kito.</string>
+    <string name="gesture_trainer_tip_moved_together">Judinkite tik pirštus vienas link kito arba nuo kito. Nestumkite visos rankos ekranu.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Pasukite daugiau, lyg suktumėte rankenėlę ketvirtį apsisukimo.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Pagal laikrodžio rodyklę reiškia sukti taip, kaip juda laikrodžio rodyklės: viršutinis pirštas juda dešinėn.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Pirmasis brūkšnys turi būti bent 1 cm ilgio.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Po pirmojo brūkšnio grįžkite priešinga kryptimi prieš pakeldami.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Braukite greitai, pirmyn ir atgal maždaug per sekundę.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Pradėkite pačiame krašte, piršto galiukas iš dalies už ekrano ribų.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Patikrinkite, kurioje krašto pusėje pradedate.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Braukite toliau, kol išgirsite spragtelėjimą, tada pakelkite.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Pakelkite iškart po pirmojo spragtelėjimo, prieš antrąjį.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Braukite į vidų greičiau, nesustodami prieš spragtelėjimą.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Braukite tiesiai į vidų nuo krašto arba tiesiai palei jį, ne įstrižai.</string>
+    <string name="gesture_trainer_tip_corner_missed">Padėkite pirštą pačiame kampe, liesdami abu kraštus.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Palietę kampą, pakelkite pirštą greičiau.</string>
+    <string name="gesture_trainer_close_to_limit">Arti ribos: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Perbraukimai prasideda lėtai. Ilgesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė leidžia lėtesnę pradžią.</string>
+    <string name="gesture_trainer_advice_tap_time">Palietimai lėti. Ilgesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė leidžia lėtesnius palietimus.</string>
+    <string name="gesture_trainer_advice_edge_width">Perbraukimai prasideda per toli nuo krašto. Didesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė taip pat paverčia perbraukimus, prasidedančius šalia krašto, krašto perbraukimais.</string>
+    <string name="gesture_trainer_advice_corner_size">Palietimai patenka už kampo ribų. Didesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė padidina kampus.</string>
+    <string name="gesture_trainer_advice_corner_time">Kampų palietimai lėti. Ilgesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė leidžia lėtesnius palietimus.</string>
+    <string name="gesture_trainer_menu_option"><xliff:g id="number">%1$d</xliff:g> parinktis</string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: pasirinkite <xliff:g id="number">%3$d</xliff:g> elementą, „<xliff:g id="item">%2$s</xliff:g>“</string>
+    <string name="gesture_trainer_how_menu">Braukite vienu pirštu aukštyn arba žemyn <xliff:g id="edge">%1$s</xliff:g> bent <xliff:g id="distance">%2$d</xliff:g> mm, kad atidarytumėte meniu. Jame yra <xliff:g id="count">%3$d</xliff:g> elem. iš viršaus į apačią, kiekvienas maždaug <xliff:g id="size">%6$s</xliff:g> cm aukščio. <xliff:g id="number">%4$d</xliff:g> elementas, „<xliff:g id="item">%5$s</xliff:g>“, yra nuo <xliff:g id="from">%7$s</xliff:g> iki <xliff:g id="to">%8$s</xliff:g> cm žemiau ekrano viršaus. Pakelkite pirštą, kai elementas pasakomas.</string>
+    <string name="gesture_trainer_menu_sample">Šis kraštas neturi meniu. Pratime naudojami <xliff:g id="count">%1$d</xliff:g> pavyzdiniai elementai.</string>
+    <string name="gesture_trainer_try_menu_cancelled"><xliff:g id="number">%1$d</xliff:g> bandymas: meniu užsidarė nieko nepasirinkus.</string>
+    <string name="gesture_trainer_try_menu_other"><xliff:g id="number">%1$d</xliff:g> bandymas: pasirinkta „<xliff:g id="item">%2$s</xliff:g>“.</string>
+    <string name="gesture_trainer_measure_menu_item">pakelta ties <xliff:g id="number">%1$d</xliff:g> elementu</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Pirštas pradėjo pačiame krašto viršuje arba apačioje, kur yra kampai ir viršutinis bei apatinis kraštai.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Pirštas pakeltas <xliff:g id="mm">%1$.0f</xliff:g> mm nuo krašto, o meniu užsidaro toliau nei <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Pirštas pakeltas ties <xliff:g id="item">%1$d</xliff:g> elementu, o ne ties <xliff:g id="target">%2$d</xliff:g> elementu.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Pradėkite šiek tiek toliau nuo viršutinio ir apatinio krašto galų.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Braukdami laikykite pirštą arti krašto ir ten jį pakelkite.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Kiekvienas elementas turi fiksuotą vietą palei kraštą, ir pasirenkamas tas elementas, ties kuriuo pirštas pakeliamas. Pakelkite, kai elementas pasakomas.</string>
+    <string name="gesture_trainer_contents">Turinys</string>
+    <string name="gesture_trainer_contents_heading">Turinys: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">atlikta, atpažinta <xliff:g id="hits">%1$d</xliff:g> iš <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Palietimas ir perbraukimas</string>
+    <string name="gesture_trainer_group_edge_swipes">Perbraukimai nuo kraštų</string>
+    <string name="gesture_trainer_group_along_edges">Braukimai palei kraštus</string>
+    <string name="gesture_trainer_group_edge_menus">Kraštų meniu</string>
+    <string name="gesture_trainer_group_corners">Kampai</string>
+    <string name="gesture_trainer_group_back_tap">Bakstelėjimas į galinę pusę</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Palietimai dviem pirštais, po kurių seka perbraukimas dviem pirštais, praleidžiami: „<xliff:g id="setting">%1$s</xliff:g>“ išjungta.</string>
+    <string name="gesture_trainer_how_swipe_hold">Tada nepakeldami laikykite pirštą nejudantį bent <xliff:g id="hold">%1$d</xliff:g> ms ir pakelkite.</string>
+    <string name="gesture_trainer_half_top">viršutinėje</string>
+    <string name="gesture_trainer_half_bottom">apatinėje</string>
+    <string name="gesture_trainer_how_taps_half">Palieskite <xliff:g id="half">%1$s</xliff:g> ekrano pusėje. Pusę nustato taškas tarp pirštų.</string>
+    <string name="gesture_trainer_same_fingers">tais pačiais pirštais</string>
+    <string name="gesture_trainer_how_tap_swipe">Palieskite <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Iškart po paskutinio palietimo, per <xliff:g id="gap">%3$d</xliff:g> ms, vėl palieskite ekraną <xliff:g id="swipe_fingers">%4$s</xliff:g> ir braukite <xliff:g id="direction">%5$s</xliff:g> tiesia linija maždaug 2–3 cm, tada pakelkite.</string>
+    <string name="gesture_trainer_how_corner_hold">Paskutinio palietimo metu palikite pirštą kampe nejudantį bent <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Laikykite telefoną rankoje už šonų ir bakstelėkite jo galinės pusės vidurį <xliff:g id="taps">%1$s</xliff:g> piršto galiuku, tvirtai ir greitai, lyg belstumėte į duris. Bakstelėjimai turi būti greitai vienas po kito: ne daugiau kaip <xliff:g id="gap">%2$d</xliff:g> ms tarp jų. Bakstelėdami nelieskite ekrano.</string>
+    <string name="gesture_trainer_back_tap_info">Pratimo metu bakstelėjimai į galinę pusę nevykdo komandų. „<xliff:g id="setting">%1$s</xliff:g>“ nustato, koks stiprus turi būti bakstelėjimas.</string>
+    <string name="gesture_trainer_go_placed">Atlikite gestą <xliff:g id="tries">%1$d</xliff:g> kartus.</string>
+    <string name="gesture_trainer_along_left">kairįjį kraštą</string>
+    <string name="gesture_trainer_along_right">dešinįjį kraštą</string>
+    <string name="gesture_trainer_along_top">viršutinį kraštą</string>
+    <string name="gesture_trainer_along_bottom">apatinį kraštą</string>
+    <string name="gesture_trainer_left_out_along_menu">Braukimai palei <xliff:g id="edge">%1$s</xliff:g> praleidžiami: jame yra krašto meniu, todėl braukimas palei jį atidaro meniu, o ne vykdo gestą.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Braukimai palei <xliff:g id="edge">%1$s</xliff:g> praleidžiami: jis slenka, todėl braukimas palei jį slenka programą, o ne vykdo gestą.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Pirštas nutolo per toli nuo krašto.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Laikykite pirštą pačiame stiklo pakraštyje, tiesiai palei kraštą.</string>
+    <string name="gesture_trainer_go_back_tap">Atlikite bakstelėjimo į galinę pusę gestą <xliff:g id="tries">%1$d</xliff:g> kartus. Palietus ekraną, bandymas nepavyksta.</string>
+    <string name="gesture_trainer_no_accelerometer">Šiam pratimui reikia akselerometro. Jo nėra.</string>
+    <string name="gesture_trainer_measure_hold">laikyta nejudant <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">bakstelėjimo stiprumas <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Pabaigoje pirštas nejudėjo <xliff:g id="ms">%1$d</xliff:g> ms, o turi nejudėti bent <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Pirštai palietė kitoje ekrano pusėje.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Po palietimų nebuvo perbraukimo.</string>
+    <string name="gesture_trainer_finding_swipe_late">Perbraukimas prasidėjo <xliff:g id="ms">%1$d</xliff:g> ms po paskutinio palietimo, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Per silpnas bakstelėjimas į galinę pusę: <xliff:g id="percent">%1$d</xliff:g>%% reikiamo stiprumo.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Bakstelėjimas sukrėtė telefoną labiau į šoną nei per galinę pusę.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefonas judėjo prieš pat bakstelėjimą.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Buvo paliestas ekranas, o bakstelėjimai, kol jis liečiamas, neskaičiuojami.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Tarp bakstelėjimų į galinę pusę praėjo <xliff:g id="ms">%1$d</xliff:g> ms, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Po perbraukimo laikykite pirštą nejudantį ant ekrano visą laikymo laiką. Tada pakelkite.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Patikrinkite, kurioje pusėje liečiate: ekrano vidurys skiria viršutinę pusę nuo apatinės.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Po paskutinio palietimo iškart vėl palieskite ekraną ir perbraukite.</string>
+    <string name="gesture_trainer_tip_swipe_late">Pradėkite perbraukimą iškart po paskutinio palietimo, be pauzės.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Bakstelėkite stipriau, piršto galiuku arba nagu, arčiau galinės pusės vidurio.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Bakstelėkite tiesiai į telefono galinę pusę, ne į jo kraštą ir ne kampu.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Prieš bakstelėdami akimirkai palaikykite telefoną nejudantį ir laikykite jį laisvai, kad ranka jo nepajudintų.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Bakstelėdami į galinę pusę nelieskite ekrano: laikykite telefoną už šonų.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Bakstelėkite greičiau, vieną bakstelėjimą iškart po kito.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Po perbraukimo pirštas pakeliamas per anksti. Trumpesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė leidžia trumpiau laikyti.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Bakstelėjimai į galinę pusę silpni. Didesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė aptinka silpnesnius bakstelėjimus ir gali palaikyti smūgius bakstelėjimais.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Pirštai pasisuko <xliff:g id="degrees">%1$.0f</xliff:g> laipsn., o nuo <xliff:g id="limit">%2$.0f</xliff:g> laipsn. judesys laikomas pasukimu.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Judinkite pirštus tiesia linija vienas link kito arba nuo kito, ne lanku vienas aplink kitą.</string>
+    <string name="gesture_trainer_finding_other_gesture">Judesys atitiko tą gestą.</string>
+    <string name="gesture_trainer_side_left">kairiojo</string>
+    <string name="gesture_trainer_side_right">dešiniojo</string>
+    <string name="gesture_trainer_side_top">viršutinio</string>
+    <string name="gesture_trainer_side_bottom">apatinio</string>
+    <string name="gesture_trainer_finding_wrong_edge">Pirštas pradėjo prie <xliff:g id="side">%1$s</xliff:g> krašto, o šis pratimas atliekamas prie <xliff:g id="expected">%2$s</xliff:g> krašto.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Pradėkite pačiame pratime nurodytame krašte.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Vietoj šio gesto atsidarė krašto meniu.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Braukimas palei kraštą su meniu atidaro meniu. Pradėkite prie pratime nurodyto krašto.</string>
+    <string name="gesture_trainer_group_three_part">Trijų dalių perbraukimai</string>
+    <string name="gesture_trainer_group_two_stroke">Dvigubi perbraukimai</string>
+    <string name="gesture_trainer_group_shake">Purtymas</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Trijų dalių perbraukimai praleidžiami: „<xliff:g id="setting">%1$s</xliff:g>“ įjungta.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Dvigubi perbraukimai praleidžiami: „<xliff:g id="setting">%1$s</xliff:g>“ – <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Pratimo metu purtymas nevykdo komandos. „<xliff:g id="setting">%1$s</xliff:g>“ nustato, kaip stipriai reikia purtyti.</string>
+    <string name="gesture_trainer_go_shake">Pakratykite telefoną <xliff:g id="tries">%1$d</xliff:g> kartus, po kiekvieno purtymo trumpai stabtelėdami.</string>
+    <string name="gesture_trainer_how_shake">Tvirtai laikykite telefoną ir greitai pakratykite jį pirmyn ir atgal, lyg nukratytumėte vandens lašą: bent du kartus į kiekvieną pusę, viską maždaug per du trečdalius sekundės. Tada laikykite jį nejudantį.</string>
+    <string name="gesture_trainer_how_two_stroke">Perbraukite <xliff:g id="first">%1$s</xliff:g> vienu pirštu, maždaug 2 cm, ir pakelkite. Tada iškart, per <xliff:g id="time">%3$d</xliff:g> ms, perbraukite <xliff:g id="second">%2$s</xliff:g> vienu pirštu, maždaug 2 cm, ir pakelkite.</string>
+    <string name="gesture_trainer_how_three_part">Palieskite ekraną vienu pirštu ir nepakeldami perbraukite <xliff:g id="first">%1$s</xliff:g>, tada staigiai pasukite ir perbraukite <xliff:g id="second">%2$s</xliff:g>, tada vėl staigiai pasukite ir perbraukite <xliff:g id="third">%3$s</xliff:g>, kiekviena dalis maždaug 2 cm, ir pakelkite. Atlikite tai vienu greitu, tolygiu judesiu su aštriais kampais, ne lankais.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Padėkite vieną pirštą viršutiniame ekrano trečdalyje, o kitą – apatiniame trečdalyje, pvz., nykštį apačioje, o smilių viršuje.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Pirštai nebuvo vienas viršutiniame ekrano trečdalyje, o kitas apatiniame trečdalyje.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Antrojo perbraukimo nebuvo.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Antrasis perbraukimas prasidėjo <xliff:g id="ms">%1$d</xliff:g> ms po pirmojo, o leidžiama ne daugiau kaip <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Pirmasis perbraukimas nuėjo <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Antrasis perbraukimas nuėjo <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Purtymas buvo per silpnas: <xliff:g id="percent">%1$d</xliff:g>%% reikiamo stiprumo.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Mostų pirmyn ir atgal: <xliff:g id="swings">%1$d</xliff:g> iš reikiamų <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Išskėskite pirštus toli vienas nuo kito, vieną šalia viršutinio krašto, kitą šalia apatinio.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Po pirmojo perbraukimo pakelkite pirštą ir iškart perbraukite dar kartą.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Antrąjį perbraukimą pradėkite iškart pakėlę pirštą.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Purtykite stipriau ir greičiau.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Purtykite greičiau, pirmyn ir atgal bent du kartus į kiekvieną pusę, nesustodami tarp mostų.</string>
+    <string name="gesture_trainer_measure_shake_strength">stipriausias judesys <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Purtymai silpni. Didesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė aptinka silpnesnius purtymus ir gali palaikyti telefono nešimą purtymu.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Antrasis perbraukimas prasideda vėlai. Ilgesnė „<xliff:g id="setting">%1$s</xliff:g>“ vertė leidžia vėlesnį antrąjį perbraukimą, tačiau tada pavienis perbraukimas ilgiau laukia, kol bus įvykdytas.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">„<xliff:g id="setting">%1$s</xliff:g>“ įjungta.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">„<xliff:g id="setting">%1$s</xliff:g>“ išjungta: perbraukimai dviem pirštais slenka programą, o braukimas pirmyn ir atgal dažniausiai irgi slenka. Kai nustatymas įjungtas, perbraukimai dviem pirštais vykdo SandFly komandas, o ne slenka.</string>
+    <string name="gesture_trainer_measure_first_stroke">pirmasis perbraukimas <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">antrasis perbraukimas <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">visas gestas <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">pakelta <xliff:g id="ms">%1$d</xliff:g> ms tarp jų</string>
+</resources>

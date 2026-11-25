@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Тренер за движења</string>
+    <string name="gesture_trainer_intro">Изберете група движења. Секоја вежба опишува едно движење. Направете го движењето <xliff:g id="tries">%1$d</xliff:g> пати; резултатот од секој обид се изговара. По последниот обид, екранот ги наведува мерењата од секој обид, што треба да се смени и поврзаните поставки.</string>
+    <string name="gesture_trainer_group_one_finger">Еден прст</string>
+    <string name="gesture_trainer_group_two_fingers">Два прста</string>
+    <string name="gesture_trainer_group_three_fingers">Три прста</string>
+    <string name="gesture_trainer_group_four_fingers">Четири прста</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Стискање, ротирање и брзо движење напред-назад</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> вежби</string>
+    <string name="gesture_trainer_close">Затвори</string>
+    <string name="gesture_trainer_no_detection">Тренерот за движења бара Android 13 или понова верзија.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Движењата напред-назад и аголните движења се изоставени: <xliff:g id="setting">%1$s</xliff:g> е вклучено.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Повлекувањата со два прста се изоставени: <xliff:g id="setting">%1$s</xliff:g> е исклучено, па тие лизгаат во апликациите.</string>
+    <string name="gesture_trainer_exercise_heading">Вежба <xliff:g id="number">%1$d</xliff:g> од <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Започни</string>
+    <string name="gesture_trainer_skip">Прескокни ја вежбава</string>
+    <string name="gesture_trainer_back_to_groups">Назад кон групите</string>
+    <string name="gesture_trainer_go">Направете го движењето <xliff:g id="tries">%1$d</xliff:g> пати, каде било на екранот. Секој допир е еден обид.</string>
+    <string name="gesture_trainer_fingers_1">еден прст</string>
+    <string name="gesture_trainer_fingers_2">два прста еден до друг, на околу 1 см растојание</string>
+    <string name="gesture_trainer_fingers_3">три прста еден до друг, малку раздвоени</string>
+    <string name="gesture_trainer_fingers_4">четири прста еден до друг, малку раздвоени</string>
+    <string name="gesture_trainer_direction_up">нагоре</string>
+    <string name="gesture_trainer_direction_down">надолу</string>
+    <string name="gesture_trainer_direction_left">налево</string>
+    <string name="gesture_trainer_direction_right">надесно</string>
+    <string name="gesture_trainer_how_swipe">Допрете го екранот со <xliff:g id="fingers">%1$s</xliff:g> и без чекање лизнете <xliff:g id="direction">%2$s</xliff:g> во права линија околу 2 до 3 см, а потоа подигнете. Почнете да се движите веднаш: прст што прво мирува го вклучува истражувањето со допир.</string>
+    <string name="gesture_trainer_how_swipe_multi">Спуштете ги прстите заедно, во ист момент, и движете ги сите во иста насока. Секој прст мора цело време да оди <xliff:g id="direction">%1$s</xliff:g>, затоа држете ја линијата права.</string>
+    <string name="gesture_trainer_how_back_and_forth">Допрете го екранот со еден прст и лизнете <xliff:g id="first">%1$s</xliff:g> околу 2 см, потоа без подигање вратете се право <xliff:g id="second">%2$s</xliff:g> околу 2 см и подигнете. Направете го тоа како едно брзо, мазно движење.</string>
+    <string name="gesture_trainer_how_angle">Допрете го екранот со <xliff:g id="fingers">%1$s</xliff:g> и лизнете <xliff:g id="first">%2$s</xliff:g> околу 2 см, потоа без подигање свртете остро и лизнете <xliff:g id="second">%3$s</xliff:g> околу 2 см, и подигнете. Свртувањето нека биде остар агол, како буквата L, а не крива.</string>
+    <string name="gesture_trainer_taps_1">еднаш</string>
+    <string name="gesture_trainer_taps_2">двапати</string>
+    <string name="gesture_trainer_taps_3">трипати</string>
+    <string name="gesture_trainer_taps_4">четирипати</string>
+    <string name="gesture_trainer_how_taps">Допрете <xliff:g id="taps">%1$s</xliff:g> со <xliff:g id="fingers">%2$s</xliff:g>. Спуштете ги прстите заедно и подигнете ги заедно, брзо, без лизгање.</string>
+    <string name="gesture_trainer_how_taps_quick">Допирите нека бидат брзи и на исто место: следниот допир мора да дојде во рок од <xliff:g id="gap">%1$d</xliff:g> мс од претходниот.</string>
+    <string name="gesture_trainer_how_hold">Ставете <xliff:g id="fingers">%1$s</xliff:g> на екранот заедно и држете ги мирно, без лизгање, најмалку <xliff:g id="hold">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Без друга доделена команда, ова движење го исклучува SandFly. Во тренерот не извршува ништо.</string>
+    <string name="gesture_trainer_how_taps_hold">Допрете <xliff:g id="taps">%1$s</xliff:g> со <xliff:g id="fingers">%2$s</xliff:g>, а при последниот допир оставете ги прстите на екранот, мирно, најмалку <xliff:g id="hold">%3$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Користете го палецот, показалецот и средниот прст.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Ставете ги показалецот и средниот прст еден до друг, а палецот и домалиот прст неколку сантиметри подалеку од двете страни. Потоа соберете ги сите четири врвови на прстите во една точка.</string>
+    <string name="gesture_trainer_how_pinch">Ставете <xliff:g id="fingers">%1$d</xliff:g> прста на екранот, широко раширени. Потоа приближете ги право еден кон друг за најмалку 1 см, како да кревате нешто, и подигнете ги од екранот. Движете ги само прстите, не целата рака, и не во лак.</string>
+    <string name="gesture_trainer_how_spread">Ставете <xliff:g id="fingers">%1$d</xliff:g> прста на екранот, блиску еден до друг. Потоа раздвојте ги право за најмалку 1 см и подигнете ги од екранот. Движете ги само прстите, не целата рака, и не во лак.</string>
+    <string name="gesture_trainer_clockwise">во насока на стрелките на часовникот</string>
+    <string name="gesture_trainer_counterclockwise">спротивно од стрелките на часовникот</string>
+    <string name="gesture_trainer_how_rotate">Ставете два прста на екранот, на околу 2 до 3 см растојание, и свртете ги <xliff:g id="way">%1$s</xliff:g> околу нивната средина, како да вртите копче, за околу четвртина круг. Потоа подигнете.</string>
+    <string name="gesture_trainer_how_scrub">Ставете два прста на екранот и брзо поместете ги околу 2 см на едната страна и назад, како да бришете нешто, сето тоа за околу една секунда. Потоа подигнете.</string>
+    <string name="gesture_trainer_edge_bottom">на долниот раб</string>
+    <string name="gesture_trainer_edge_top_left">на горниот раб, во неговата лева половина</string>
+    <string name="gesture_trainer_edge_top_right">на горниот раб, во неговата десна половина</string>
+    <string name="gesture_trainer_edge_left_top">на левиот раб, во неговата горна половина</string>
+    <string name="gesture_trainer_edge_left_bottom">на левиот раб, во неговата долна половина</string>
+    <string name="gesture_trainer_edge_right_top">на десниот раб, во неговата горна половина</string>
+    <string name="gesture_trainer_edge_right_bottom">на десниот раб, во неговата долна половина</string>
+    <string name="gesture_trainer_edge_left">на левиот раб</string>
+    <string name="gesture_trainer_edge_right">на десниот раб</string>
+    <string name="gesture_trainer_edge_top">на горниот раб</string>
+    <string name="gesture_trainer_how_edge">Ставете еден прст <xliff:g id="edge">%1$s</xliff:g>, најмногу <xliff:g id="edge_width">%2$d</xliff:g> мм од работ, и лизнете <xliff:g id="direction">%3$s</xliff:g> кон внатрешноста на екранот до првиот клик, околу <xliff:g id="distance">%4$d</xliff:g> мм. Потоа веднаш подигнете: по вториот клик, лизгањето е долго лизгање.</string>
+    <string name="gesture_trainer_how_edge_long">Ставете еден прст <xliff:g id="edge">%1$s</xliff:g>, најмногу <xliff:g id="edge_width">%2$d</xliff:g> мм од работ, и лизнете <xliff:g id="direction">%3$s</xliff:g> кон внатрешноста на екранот преку првиот клик до вториот, околу <xliff:g id="distance">%4$d</xliff:g> мм. Потоа подигнете.</string>
+    <string name="gesture_trainer_how_along">Лизнете еден прст <xliff:g id="direction">%2$s</xliff:g> по <xliff:g id="edge">%1$s</xliff:g>, најмалку <xliff:g id="distance">%3$d</xliff:g> мм.</string>
+    <string name="gesture_trainer_corner_top_left">горниот лев</string>
+    <string name="gesture_trainer_corner_top_right">горниот десен</string>
+    <string name="gesture_trainer_corner_bottom_left">долниот лев</string>
+    <string name="gesture_trainer_corner_bottom_right">долниот десен</string>
+    <string name="gesture_trainer_how_corner">Допрете <xliff:g id="taps">%1$s</xliff:g> во <xliff:g id="corner">%2$s</xliff:g> агол на екранот. Ставете го прстот точно во аголот, не повеќе од <xliff:g id="size">%3$d</xliff:g> мм од двата раба, и подигнете брзо, во рок од <xliff:g id="time">%4$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> мм. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> мм.</string>
+    <string name="gesture_trainer_corner_warning">Со поголеми агли, допир на контрола близу агол, како Назад горе лево, може наместо тоа да го изврши движењето за аголот.</string>
+    <string name="gesture_trainer_rating_precise">препознаено, прецизно</string>
+    <string name="gesture_trainer_rating_good">препознаено, добро</string>
+    <string name="gesture_trainer_rating_borderline">препознаено, но близу до граница</string>
+    <string name="gesture_trainer_try_recognized">Обид <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Обид <xliff:g id="number">%1$d</xliff:g>: не е препознаено.</string>
+    <string name="gesture_trainer_try_other">Обид <xliff:g id="number">%1$d</xliff:g>: препознаено како <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> од <xliff:g id="tries">%3$d</xliff:g> препознаени</string>
+    <string name="gesture_trainer_results_tries">Ваши обиди</string>
+    <string name="gesture_trainer_results_change">Што да се смени</string>
+    <string name="gesture_trainer_results_close">Близу до граница</string>
+    <string name="gesture_trainer_results_all_good">Сите обиди се препознаени во границите.</string>
+    <string name="gesture_trainer_results_settings">Поставки што можат да помогнат</string>
+    <string name="gesture_trainer_next">Следна вежба</string>
+    <string name="gesture_trainer_repeat">Повтори</string>
+    <string name="gesture_trainer_finish">Заврши</string>
+    <string name="gesture_trainer_group_done">Ги завршивте сите вежби во <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Промени <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">траеше <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_length">долго <xliff:g id="cm">%1$.1f</xliff:g> см</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> см во секунда</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> степени отстапување од права линија</string>
+    <string name="gesture_trainer_measure_start">прв сантиметар за <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_landing">прстите се спуштија со разлика од <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_tap">допир од <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> мс меѓу допирите</string>
+    <string name="gesture_trainer_measure_spread">прстите се поместија <xliff:g id="mm">%1$.0f</xliff:g> мм</string>
+    <string name="gesture_trainer_measure_rotation">свртено за <xliff:g id="degrees">%1$.0f</xliff:g> степени</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> мм од рабовите на аголот</string>
+    <string name="gesture_trainer_measure_edge">почна <xliff:g id="mm">%1$.0f</xliff:g> мм од работ</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Прсти на екранот: <xliff:g id="fingers">%1$d</xliff:g> наместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Прстите се спуштија со разлика од <xliff:g id="ms">%1$d</xliff:g> мс, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Еден прст се подигна пред сите прсти да се спуштат.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Прстите се подигнаа со разлика од <xliff:g id="ms">%1$d</xliff:g> мс, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_became_exploration">Прстот мируваше предолго или на почетокот се движеше пребавно, па допирот стана истражување со допир.</string>
+    <string name="gesture_trainer_finding_slow_start">Првиот сантиметар траеше <xliff:g id="ms">%1$d</xliff:g> мс, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_paused">Прстот забави <xliff:g id="ms">%1$d</xliff:g> мс, а секој сантиметар може да трае најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_too_short">Поместувањето беше само <xliff:g id="mm">%1$.0f</xliff:g> мм, а мора да биде најмалку <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Прстот почна да оди <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Прстите почнаа да одат <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Патеката отстапи <xliff:g id="degrees">%1$.0f</xliff:g> степени од права линија, а дозволено е најмногу <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Патеката се свитка во <xliff:g id="parts">%1$d</xliff:g> делови наместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Свртувањето не е пронајдено.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">По свртувањето, прстот отиде <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Прстот се лизна <xliff:g id="mm">%1$.1f</xliff:g> мм за време на допир, а дозволено е најмногу <xliff:g id="limit">%2$.1f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Еден допир траеше <xliff:g id="ms">%1$d</xliff:g> мс, подолго од <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Последниот допир беше задржан <xliff:g id="ms">%1$d</xliff:g> мс, а мора да биде најмалку <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> допири наместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> допири наместо <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Поминаа <xliff:g id="ms">%1$d</xliff:g> мс меѓу допирите, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_taps_apart">Допирите паднаа на <xliff:g id="mm">%1$.0f</xliff:g> мм еден од друг, а дозволено е најмногу <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Прстите се поместија само <xliff:g id="mm">%1$.0f</xliff:g> мм, а мора да се поместат најмалку <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Прстите се поместија во спротивна насока.</string>
+    <string name="gesture_trainer_finding_moved_together">Целата рака се лизна <xliff:g id="mm">%1$.0f</xliff:g> мм по екранот, повеќе отколку што прстите се приближија или раздвоија.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Прстите се свртеа само <xliff:g id="degrees">%1$.0f</xliff:g> степени, а мора да се свртат најмалку <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Прстите се свртеа во спротивна насока.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Првиот потег беше <xliff:g id="mm">%1$.0f</xliff:g> мм, а мора да биде најмалку <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Потегот назад беше <xliff:g id="mm">%1$.0f</xliff:g> мм, а мора да биде најмалку <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Движењето напред-назад траеше <xliff:g id="ms">%1$d</xliff:g> мс, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Прстот се спушти <xliff:g id="mm">%1$.0f</xliff:g> мм од работ, а работ е широк <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Прстот почна во другата половина од работ.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Прстот се лизна <xliff:g id="mm">%1$.0f</xliff:g> мм, а мора да се лизне најмалку <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Предолго лизгање: прстот помина преку вториот клик, <xliff:g id="mm">%1$.0f</xliff:g> мм, а вториот клик е на <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Стигнувањето до кликот траеше <xliff:g id="ms">%1$d</xliff:g> мс, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Лизгањето отиде <xliff:g id="degrees">%1$.0f</xliff:g> степени настрана, а дозволено е најмногу <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Допирот падна <xliff:g id="mm">%1$.0f</xliff:g> мм од рабовите на аголот, а аголот е <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Допир на агол траеше <xliff:g id="ms">%1$d</xliff:g> мс, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_none">Не е откриено поместување што одговара на движењето.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Проверете колку прсти го допираат стаклото. Се брои и дланка или друг прст што се потпира на екранот.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Спуштете ги сите прсти во ист момент, како една рака, а не еден по друг.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Прво спуштете ги сите прсти, а потоа движете ги или подигнете ги.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Подигнете ги сите прсти во ист момент.</string>
+    <string name="gesture_trainer_tip_slow_start">Почнете да се движите во моментот кога ќе го допрете екранот и движете се побрзо на почетокот.</string>
+    <string name="gesture_trainer_tip_paused">Движете го прстот со рамномерна брзина додека не го подигнете. Не забавувајте кон крајот.</string>
+    <string name="gesture_trainer_tip_too_short">Направете го поместувањето подолго, околу 2 до 3 см.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Проверете ја насоката на самиот почеток на движењето. Помага ако го држите телефонот право пред себе.</string>
+    <string name="gesture_trainer_tip_off_line">Движете се само во насоката, не дијагонално. Показалецот држи поправа линија од палецот.</string>
+    <string name="gesture_trainer_tip_curved">Држете ја линијата права и подигнете точно на крајот, без да го свиткате прстот настрана при подигањето.</string>
+    <string name="gesture_trainer_tip_turn_missing">Сменете ја насоката остро, под прав агол или право назад, без подигање. Секој дел треба да биде околу 2 см.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">По свртувањето, проверете каде одите: вториот дел мора да оди во другата насока што ја именува движењето.</string>
+    <string name="gesture_trainer_tip_tap_moved">Допрете право надолу и нагоре, со врвот на прстот, без лизгање.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Секој допир нека биде краток: допрете и веднаш подигнете.</string>
+    <string name="gesture_trainer_tip_hold_too_short">При последниот допир, држете ги прстите мирно на екранот за целото време на задржување.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Бројте ги допирите и направете ги сите брзо, во едно.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Бројте ги допирите. Прст што отскокнува од стаклото прави дополнителен допир.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Допирајте побрзо: почнете го следниот допир веднаш по подигањето.</string>
+    <string name="gesture_trainer_tip_taps_apart">Допирајте на исто место секој пат.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Поместете ги прстите подалеку, најмалку 1 см поблиску еден до друг или подалеку еден од друг.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Стискање е кога прстите се движат еден кон друг, раширување е кога прстите се раздвојуваат.</string>
+    <string name="gesture_trainer_tip_moved_together">Движете ги само прстите еден кон друг или еден од друг. Не лизгајте ја целата рака по екранот.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Свртете повеќе, како да вртите копче за четвртина круг.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Во насока на стрелките на часовникот значи вртење во насоката во која одат стрелките на часовникот: горниот прст се движи надесно.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Направете го првиот потег долг најмалку 1 см.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">По првиот потег, вратете се во другата насока пред да подигнете.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Движењето напред-назад нека биде брзо, тамо и назад за околу една секунда.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Почнете точно на работ, со врвот на прстот делумно надвор од екранот.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Проверете во која половина од работ почнувате.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Лизнете подалеку, додека не го слушнете кликот, потоа подигнете.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Подигнете веднаш по првиот клик, пред вториот.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Лизнете навнатре побрзо, без запирање пред кликот.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Лизнете право навнатре од работ или право по него, не дијагонално.</string>
+    <string name="gesture_trainer_tip_corner_missed">Ставете го прстот точно во аголот, допирајќи ги двата раба.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Подигнете побрзо откако ќе го допрете аголот.</string>
+    <string name="gesture_trainer_close_to_limit">Близу до границата: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Повлекувањата почнуваат бавно. Подолго <xliff:g id="setting">%1$s</xliff:g> дозволува побавен почеток.</string>
+    <string name="gesture_trainer_advice_tap_time">Допирите се бавни. Подолго <xliff:g id="setting">%1$s</xliff:g> дозволува побавни допири.</string>
+    <string name="gesture_trainer_advice_edge_width">Повлекувањата почнуваат предалеку од работ. Поголемо <xliff:g id="setting">%1$s</xliff:g> ги претвора и повлекувањата што почнуваат близу раб во повлекувања од работ.</string>
+    <string name="gesture_trainer_advice_corner_size">Допирите паѓаат надвор од аголот. Поголемо <xliff:g id="setting">%1$s</xliff:g> ги прави аглите поголеми.</string>
+    <string name="gesture_trainer_advice_corner_time">Допирите на аглите се бавни. Подолго <xliff:g id="setting">%1$s</xliff:g> дозволува побавни допири.</string>
+    <string name="gesture_trainer_menu_option">Опција <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: изберете ставка <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Лизнете еден прст нагоре или надолу <xliff:g id="edge">%1$s</xliff:g> најмалку <xliff:g id="distance">%2$d</xliff:g> мм за да го отворите менито. Има <xliff:g id="count">%3$d</xliff:g> ставки, од горе надолу, секоја висока околу <xliff:g id="size">%6$s</xliff:g> см. Ставката <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, е од <xliff:g id="from">%7$s</xliff:g> до <xliff:g id="to">%8$s</xliff:g> см под врвот на екранот. Подигнете го прстот кога ставката ќе се изговори.</string>
+    <string name="gesture_trainer_menu_sample">Овој раб нема мени. Вежбата користи <xliff:g id="count">%1$d</xliff:g> примерни ставки.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Обид <xliff:g id="number">%1$d</xliff:g>: менито се затвори без избор.</string>
+    <string name="gesture_trainer_try_menu_other">Обид <xliff:g id="number">%1$d</xliff:g>: избрано <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">подигнато на ставка <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Прстот почна на самиот врв или дно на работ, каде што се аглите и горниот и долниот раб.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Прстот се подигна <xliff:g id="mm">%1$.0f</xliff:g> мм од работ, а менито се затвора над <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Прстот се подигна на ставка <xliff:g id="item">%1$d</xliff:g> наместо на ставка <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Почнете малку подалеку од горниот и долниот крај на работ.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Држете го прстот близу до работ додека лизгате и подигнете го таму.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Секоја ставка има фиксно место по работ, а се избира ставката каде што прстот се подига. Подигнете кога ставката ќе се изговори.</string>
+    <string name="gesture_trainer_contents">Содржина</string>
+    <string name="gesture_trainer_contents_heading">Содржина: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">завршено, <xliff:g id="hits">%1$d</xliff:g> од <xliff:g id="tries">%2$d</xliff:g> препознаени</string>
+    <string name="gesture_trainer_group_tap_swipe">Допир и повлекување</string>
+    <string name="gesture_trainer_group_edge_swipes">Повлекувања од рабовите</string>
+    <string name="gesture_trainer_group_along_edges">Лизгања по рабовите</string>
+    <string name="gesture_trainer_group_edge_menus">Менија на рабовите</string>
+    <string name="gesture_trainer_group_corners">Агли</string>
+    <string name="gesture_trainer_group_back_tap">Допир на задната страна</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Допирите со два прста по кои следи повлекување со два прста се изоставени: <xliff:g id="setting">%1$s</xliff:g> е исклучено.</string>
+    <string name="gesture_trainer_how_swipe_hold">Потоа, без подигање, држете го прстот мирно најмалку <xliff:g id="hold">%1$d</xliff:g> мс и подигнете.</string>
+    <string name="gesture_trainer_half_top">горната</string>
+    <string name="gesture_trainer_half_bottom">долната</string>
+    <string name="gesture_trainer_how_taps_half">Допрете во <xliff:g id="half">%1$s</xliff:g> половина на екранот. Точката меѓу прстите ја одредува половината.</string>
+    <string name="gesture_trainer_same_fingers">истите прсти</string>
+    <string name="gesture_trainer_how_tap_swipe">Допрете <xliff:g id="taps">%1$s</xliff:g> со <xliff:g id="fingers">%2$s</xliff:g>. Веднаш по последниот допир, во рок од <xliff:g id="gap">%3$d</xliff:g> мс, допрете го екранот повторно со <xliff:g id="swipe_fingers">%4$s</xliff:g> и лизнете <xliff:g id="direction">%5$s</xliff:g> во права линија околу 2 до 3 см, потоа подигнете.</string>
+    <string name="gesture_trainer_how_corner_hold">При последниот допир, оставете го прстот во аголот, мирно, најмалку <xliff:g id="hold">%1$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_how_back_tap">Држете го телефонот в рака, за страните, и допрете ја средината на задната страна <xliff:g id="taps">%1$s</xliff:g> со врвот на прстот, цврсто и брзо, како да чукате на врата. Допирите нека бидат блиску еден до друг: најмногу <xliff:g id="gap">%2$d</xliff:g> мс меѓу нив. Не допирајте го екранот додека допирате.</string>
+    <string name="gesture_trainer_back_tap_info">Допирите на задната страна не извршуваат команди за време на вежбата. <xliff:g id="setting">%1$s</xliff:g> одредува колку силен мора да биде допирот.</string>
+    <string name="gesture_trainer_go_placed">Направете го движењето <xliff:g id="tries">%1$d</xliff:g> пати.</string>
+    <string name="gesture_trainer_along_left">левиот раб</string>
+    <string name="gesture_trainer_along_right">десниот раб</string>
+    <string name="gesture_trainer_along_top">горниот раб</string>
+    <string name="gesture_trainer_along_bottom">долниот раб</string>
+    <string name="gesture_trainer_left_out_along_menu">Лизгањата по <xliff:g id="edge">%1$s</xliff:g> се изоставени: има мени на работ, па лизгање по него го отвора менито наместо да изврши движење.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Лизгањата по <xliff:g id="edge">%1$s</xliff:g> се изоставени: тој лизга, па лизгање по него ја лизга апликацијата наместо да изврши движење.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Прстот се оддалечи премногу од работ.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Држете го прстот на самиот раб на стаклото, право по работ.</string>
+    <string name="gesture_trainer_go_back_tap">Направете го движењето допир на задната страна <xliff:g id="tries">%1$d</xliff:g> пати. Допир на екранот го прави обидот неуспешен.</string>
+    <string name="gesture_trainer_no_accelerometer">Оваа вежба бара акцелерометар. Нема достапен.</string>
+    <string name="gesture_trainer_measure_hold">држено мирно <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_back_tap_strength">допир со јачина <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Прстот мируваше <xliff:g id="ms">%1$d</xliff:g> мс на крајот, а мора да мирува најмалку <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Прстите допреа во другата половина на екранот.</string>
+    <string name="gesture_trainer_finding_swipe_missing">По допирите не следеше повлекување.</string>
+    <string name="gesture_trainer_finding_swipe_late">Повлекувањето почна <xliff:g id="ms">%1$d</xliff:g> мс по последниот допир, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Допирот на задната страна е преслаб: <xliff:g id="percent">%1$d</xliff:g>%% од потребната јачина.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Еден допир го протресе телефонот повеќе настрана отколку низ задната страна.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Телефонот се движеше непосредно пред допирот.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Екранот беше допрен, а допирите додека е допрен не се бројат.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Поминаа <xliff:g id="ms">%1$d</xliff:g> мс меѓу допирите на задната страна, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">По повлекувањето, држете го прстот мирно на екранот за целото време на задржување. Потоа подигнете.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Проверете во која половина допирате: средината на екранот ја дели горната половина од долната.</string>
+    <string name="gesture_trainer_tip_swipe_missing">По последниот допир, веднаш допрете го екранот повторно и повлечете.</string>
+    <string name="gesture_trainer_tip_swipe_late">Почнете го повлекувањето веднаш по последниот допир, без пауза.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Допрете поцврсто, со врвот на прстот или со нокот, близу средината на задната страна.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Допрете право во задната страна на телефонот, не на работ или под агол.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Држете го телефонот мирно за момент пред да допрете и држете го лабаво за раката да не го помести.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Држете ги прстите подалеку од екранот додека ја допирате задната страна: држете го телефонот за страните.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Допирајте побрзо, допир веднаш по допир.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Прстот се подига прерано по повлекувањето. Пократко <xliff:g id="setting">%1$s</xliff:g> дозволува пократко задржување.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Допирите на задната страна се слаби. Повисоко <xliff:g id="setting">%1$s</xliff:g> открива послаби допири и може да открие удари како допири.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Прстите се свртеа <xliff:g id="degrees">%1$.0f</xliff:g> степени, а од <xliff:g id="limit">%2$.0f</xliff:g> степени движењето е ротирање.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Движете ги прстите во права линија еден кон друг или еден од друг, а не во лак еден околу друг.</string>
+    <string name="gesture_trainer_finding_other_gesture">Поместувањето наместо тоа одговараше на тоа движење.</string>
+    <string name="gesture_trainer_side_left">левиот</string>
+    <string name="gesture_trainer_side_right">десниот</string>
+    <string name="gesture_trainer_side_top">горниот</string>
+    <string name="gesture_trainer_side_bottom">долниот</string>
+    <string name="gesture_trainer_finding_wrong_edge">Прстот почна на <xliff:g id="side">%1$s</xliff:g> раб, а оваа вежба е на <xliff:g id="expected">%2$s</xliff:g> раб.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Почнете точно на работ што го именува вежбата.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Се отвори мени на работ наместо ова движење.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Лизгање по раб со мени го отвора менито. Почнете на работ што го именува вежбата.</string>
+    <string name="gesture_trainer_group_three_part">Повлекувања во три дела</string>
+    <string name="gesture_trainer_group_two_stroke">Повлекувања во два потега</string>
+    <string name="gesture_trainer_group_shake">Тресење</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Повлекувањата во три дела се изоставени: <xliff:g id="setting">%1$s</xliff:g> е вклучено.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Повлекувањата во два потега се изоставени: <xliff:g id="setting">%1$s</xliff:g> е <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Тресењето не извршува команда за време на вежбата. <xliff:g id="setting">%1$s</xliff:g> одредува колку силно мора да биде тресењето.</string>
+    <string name="gesture_trainer_go_shake">Протресете го телефонот <xliff:g id="tries">%1$d</xliff:g> пати, со кратка пауза по секое тресење.</string>
+    <string name="gesture_trainer_how_shake">Држете го телефонот цврсто и брзо протресете го напред-назад, како да тресете капка вода: најмалку двапати во секоја насока, сето тоа за околу две третини од секундата. Потоа држете го мирно.</string>
+    <string name="gesture_trainer_how_two_stroke">Повлечете <xliff:g id="first">%1$s</xliff:g> со еден прст, околу 2 см, и подигнете. Потоа веднаш, во рок од <xliff:g id="time">%3$d</xliff:g> мс, повлечете <xliff:g id="second">%2$s</xliff:g> со еден прст, околу 2 см, и подигнете.</string>
+    <string name="gesture_trainer_how_three_part">Допрете го екранот со еден прст и без подигање повлечете <xliff:g id="first">%1$s</xliff:g>, потоа свртете остро и повлечете <xliff:g id="second">%2$s</xliff:g>, потоа повторно свртете остро и повлечете <xliff:g id="third">%3$s</xliff:g>, секој дел околу 2 см, и подигнете. Направете го тоа како едно брзо, мазно движење со остри агли, а не криви.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Ставете едниот прст во горната третина на екранот, а другиот во долната третина, на пример палецот долу и показалецот горе.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Прстите не беа еден во горната третина на екранот и еден во долната третина.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Немаше второ повлекување.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Второто повлекување почна <xliff:g id="ms">%1$d</xliff:g> мс по првото, а дозволено е најмногу <xliff:g id="limit">%2$d</xliff:g> мс.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Првото повлекување отиде <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Второто повлекување отиде <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Тресењето беше преслабо: <xliff:g id="percent">%1$d</xliff:g>%% од потребната јачина.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Замавнувања напред-назад: <xliff:g id="swings">%1$d</xliff:g> од потребните <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Раширете ги прстите далеку, едниот близу горниот раб, а другиот близу долниот раб.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">По првото повлекување, подигнете го прстот и веднаш повлечете повторно.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Почнете го второто повлекување веднаш по подигањето на прстот.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Тресете посилно и побрзо.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Тресете побрзо, напред-назад најмалку двапати во секоја насока, без запирање меѓу нив.</string>
+    <string name="gesture_trainer_measure_shake_strength">најсилно движење <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Тресењата се слаби. Повисоко <xliff:g id="setting">%1$s</xliff:g> открива послаби тресења и може да го открие носењето на телефонот како тресење.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Второто повлекување почнува доцна. Подолго <xliff:g id="setting">%1$s</xliff:g> дозволува подоцнежно второ повлекување, а едно повлекување тогаш чека подолго пред да се изврши.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> е вклучено.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> е исклучено: повлекувањата со два прста ја лизгаат апликацијата, а и брзото движење напред-назад главно лизга. Кога поставката е вклучена, повлекувањата со два прста извршуваат команди на SandFly наместо да лизгаат.</string>
+    <string name="gesture_trainer_measure_first_stroke">прво повлекување <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_second_stroke">второ повлекување <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_whole_gesture">цело движење <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_stroke_gap">подигнато <xliff:g id="ms">%1$d</xliff:g> мс меѓу нив</string>
+</resources>

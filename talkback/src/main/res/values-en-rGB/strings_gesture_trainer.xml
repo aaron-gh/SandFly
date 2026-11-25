@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Gesture trainer</string>
+    <string name="gesture_trainer_intro">Choose a group of gestures. Each exercise describes a gesture. Make the gesture <xliff:g id="tries">%1$d</xliff:g> times; the result of each try is spoken. After the last try, the screen lists the measurements of each try, what to change and related settings.</string>
+    <string name="gesture_trainer_group_one_finger">One finger</string>
+    <string name="gesture_trainer_group_two_fingers">Two fingers</string>
+    <string name="gesture_trainer_group_three_fingers">Three fingers</string>
+    <string name="gesture_trainer_group_four_fingers">Four fingers</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Pinch, rotate and scrub</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> exercises</string>
+    <string name="gesture_trainer_close">Close</string>
+    <string name="gesture_trainer_no_detection">The gesture trainer needs Android 13 or later.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Back-and-forth and angle gestures are left out: <xliff:g id="setting">%1$s</xliff:g> is on.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Two-finger swipes are left out: <xliff:g id="setting">%1$s</xliff:g> is off, so they scroll apps.</string>
+    <string name="gesture_trainer_exercise_heading">Exercise <xliff:g id="number">%1$d</xliff:g> of <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Start</string>
+    <string name="gesture_trainer_skip">Skip this exercise</string>
+    <string name="gesture_trainer_back_to_groups">Back to groups</string>
+    <string name="gesture_trainer_go">Make the gesture <xliff:g id="tries">%1$d</xliff:g> times, anywhere on the screen. Each touch is a try.</string>
+    <string name="gesture_trainer_fingers_1">one finger</string>
+    <string name="gesture_trainer_fingers_2">two fingers side by side, about 1 cm apart</string>
+    <string name="gesture_trainer_fingers_3">three fingers side by side, slightly apart</string>
+    <string name="gesture_trainer_fingers_4">four fingers side by side, slightly apart</string>
+    <string name="gesture_trainer_direction_up">up</string>
+    <string name="gesture_trainer_direction_down">down</string>
+    <string name="gesture_trainer_direction_left">left</string>
+    <string name="gesture_trainer_direction_right">right</string>
+    <string name="gesture_trainer_how_swipe">Touch the screen with <xliff:g id="fingers">%1$s</xliff:g> and, without waiting, slide <xliff:g id="direction">%2$s</xliff:g> in a straight line for about 2 to 3 cm, then lift. Start moving at once: a finger that rests first starts touch exploration.</string>
+    <string name="gesture_trainer_how_swipe_multi">Put the fingers down together, at the same moment, and move them all the same way. Every finger must go <xliff:g id="direction">%1$s</xliff:g> the whole time, so keep the line straight.</string>
+    <string name="gesture_trainer_how_back_and_forth">Touch the screen with one finger and slide <xliff:g id="first">%1$s</xliff:g> for about 2 cm, then without lifting go straight back <xliff:g id="second">%2$s</xliff:g> for about 2 cm, and lift. Make it one quick, smooth movement.</string>
+    <string name="gesture_trainer_how_angle">Touch the screen with <xliff:g id="fingers">%1$s</xliff:g> and slide <xliff:g id="first">%2$s</xliff:g> for about 2 cm, then without lifting turn sharply and slide <xliff:g id="second">%3$s</xliff:g> for about 2 cm, and lift. Make the turn a sharp corner, like the letter L, not a curve.</string>
+    <string name="gesture_trainer_taps_1">once</string>
+    <string name="gesture_trainer_taps_2">twice</string>
+    <string name="gesture_trainer_taps_3">three times</string>
+    <string name="gesture_trainer_taps_4">four times</string>
+    <string name="gesture_trainer_how_taps">Tap <xliff:g id="taps">%1$s</xliff:g> with <xliff:g id="fingers">%2$s</xliff:g>. Put the fingers down together and lift them together, quickly, without sliding.</string>
+    <string name="gesture_trainer_how_taps_quick">Keep the taps quick and in the same spot: the next tap must come within <xliff:g id="gap">%1$d</xliff:g> ms of the last.</string>
+    <string name="gesture_trainer_how_hold">Put <xliff:g id="fingers">%1$s</xliff:g> on the screen together and keep them still, without sliding, for at least <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">With no other command assigned, this gesture turns off SandFly. In the trainer, it runs nothing.</string>
+    <string name="gesture_trainer_how_taps_hold">Tap <xliff:g id="taps">%1$s</xliff:g> with <xliff:g id="fingers">%2$s</xliff:g>, and on the last tap leave the fingers on the screen, still, for at least <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Use the thumb, index finger and middle finger.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Put the index and middle finger next to each other, and the thumb and ring finger a few centimetres away on either side. Then bring all four fingertips together to one point.</string>
+    <string name="gesture_trainer_how_pinch">Put <xliff:g id="fingers">%1$d</xliff:g> fingers on the screen, spread wide apart. Then bring them straight towards each other by at least 1 cm, as if picking something up, and lift them off the screen. Move only the fingers, not the whole hand, and not in an arc.</string>
+    <string name="gesture_trainer_how_spread">Put <xliff:g id="fingers">%1$d</xliff:g> fingers on the screen, close together. Then move them straight apart by at least 1 cm and lift them off the screen. Move only the fingers, not the whole hand, and not in an arc.</string>
+    <string name="gesture_trainer_clockwise">clockwise</string>
+    <string name="gesture_trainer_counterclockwise">anticlockwise</string>
+    <string name="gesture_trainer_how_rotate">Put two fingers on the screen, about 2 to 3 cm apart, and turn them <xliff:g id="way">%1$s</xliff:g> around their middle, like turning a dial, by about a quarter turn. Then lift.</string>
+    <string name="gesture_trainer_how_scrub">Put two fingers on the screen and quickly move them to one side about 2 cm and back, like rubbing something out, all within about a second. Then lift.</string>
+    <string name="gesture_trainer_edge_bottom">at the bottom edge</string>
+    <string name="gesture_trainer_edge_top_left">at the top edge, in its left half</string>
+    <string name="gesture_trainer_edge_top_right">at the top edge, in its right half</string>
+    <string name="gesture_trainer_edge_left_top">at the left edge, in its top half</string>
+    <string name="gesture_trainer_edge_left_bottom">at the left edge, in its bottom half</string>
+    <string name="gesture_trainer_edge_right_top">at the right edge, in its top half</string>
+    <string name="gesture_trainer_edge_right_bottom">at the right edge, in its bottom half</string>
+    <string name="gesture_trainer_edge_left">at the left edge</string>
+    <string name="gesture_trainer_edge_right">at the right edge</string>
+    <string name="gesture_trainer_edge_top">at the top edge</string>
+    <string name="gesture_trainer_how_edge">Put one finger <xliff:g id="edge">%1$s</xliff:g>, at most <xliff:g id="edge_width">%2$d</xliff:g> mm from the edge, and slide <xliff:g id="direction">%3$s</xliff:g> into the screen to the first click, about <xliff:g id="distance">%4$d</xliff:g> mm. Then lift at once: past the second click, the slide is a long slide.</string>
+    <string name="gesture_trainer_how_edge_long">Put one finger <xliff:g id="edge">%1$s</xliff:g>, at most <xliff:g id="edge_width">%2$d</xliff:g> mm from the edge, and slide <xliff:g id="direction">%3$s</xliff:g> into the screen past the first click to the second, about <xliff:g id="distance">%4$d</xliff:g> mm. Then lift.</string>
+    <string name="gesture_trainer_how_along">Slide one finger <xliff:g id="direction">%2$s</xliff:g> along <xliff:g id="edge">%1$s</xliff:g>, at least <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">top left</string>
+    <string name="gesture_trainer_corner_top_right">top right</string>
+    <string name="gesture_trainer_corner_bottom_left">bottom left</string>
+    <string name="gesture_trainer_corner_bottom_right">bottom right</string>
+    <string name="gesture_trainer_how_corner">Tap <xliff:g id="taps">%1$s</xliff:g> in the <xliff:g id="corner">%2$s</xliff:g> corner of the screen. Put the finger right in the corner, no more than <xliff:g id="size">%3$d</xliff:g> mm from both edges, and lift quickly, within <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">With bigger corners, a tap on a control near a corner, such as Back at the top left, can run the corner gesture instead.</string>
+    <string name="gesture_trainer_rating_precise">recognised, precise</string>
+    <string name="gesture_trainer_rating_good">recognised, good</string>
+    <string name="gesture_trainer_rating_borderline">recognised, but close to a limit</string>
+    <string name="gesture_trainer_try_recognized">Try <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Try <xliff:g id="number">%1$d</xliff:g>: not recognised.</string>
+    <string name="gesture_trainer_try_other">Try <xliff:g id="number">%1$d</xliff:g>: recognised as <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> of <xliff:g id="tries">%3$d</xliff:g> recognised</string>
+    <string name="gesture_trainer_results_tries">Your tries</string>
+    <string name="gesture_trainer_results_change">What to change</string>
+    <string name="gesture_trainer_results_close">Close to a limit</string>
+    <string name="gesture_trainer_results_all_good">All tries were recognised within the limits.</string>
+    <string name="gesture_trainer_results_settings">Settings that can help</string>
+    <string name="gesture_trainer_next">Next exercise</string>
+    <string name="gesture_trainer_repeat">Repeat</string>
+    <string name="gesture_trainer_finish">Finish</string>
+    <string name="gesture_trainer_group_done">You finished all exercises in <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Change <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">took <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm long</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm per second</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> degrees off a straight line</string>
+    <string name="gesture_trainer_measure_start">first centimetre in <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">the fingers landed <xliff:g id="ms">%1$d</xliff:g> ms apart</string>
+    <string name="gesture_trainer_measure_tap">tap of <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms between taps</string>
+    <string name="gesture_trainer_measure_spread">fingers moved <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">turned <xliff:g id="degrees">%1$.0f</xliff:g> degrees</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm from the corner\'s edges</string>
+    <string name="gesture_trainer_measure_edge">started <xliff:g id="mm">%1$.0f</xliff:g> mm from the edge</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Fingers on the screen: <xliff:g id="fingers">%1$d</xliff:g> instead of <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">The fingers landed <xliff:g id="ms">%1$d</xliff:g> ms apart, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">A finger lifted before all fingers were down.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">The fingers lifted <xliff:g id="ms">%1$d</xliff:g> ms apart, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_became_exploration">The finger stayed still too long or moved too slowly at first, so the touch became touch exploration.</string>
+    <string name="gesture_trainer_finding_slow_start">The first centimetre took <xliff:g id="ms">%1$d</xliff:g> ms, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_paused">The finger slowed down for <xliff:g id="ms">%1$d</xliff:g> ms, and each centimetre may take at most <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">The movement was only <xliff:g id="mm">%1$.0f</xliff:g> mm, and it must be at least <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">The finger started going <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">The fingers started going <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">The path turned <xliff:g id="degrees">%1$.0f</xliff:g> degrees off a straight line, and at most <xliff:g id="limit">%2$.0f</xliff:g> is allowed.</string>
+    <string name="gesture_trainer_finding_curved">The path bent into <xliff:g id="parts">%1$d</xliff:g> parts instead of <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">The turn wasn\'t found.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">After the turn, the finger went <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">The finger slid <xliff:g id="mm">%1$.1f</xliff:g> mm during a tap, and at most <xliff:g id="limit">%2$.1f</xliff:g> mm is allowed.</string>
+    <string name="gesture_trainer_finding_tap_held_long">A tap lasted <xliff:g id="ms">%1$d</xliff:g> ms, longer than <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">The last tap was held for <xliff:g id="ms">%1$d</xliff:g> ms, and it must be at least <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> taps instead of <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> taps instead of <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms passed between taps, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_taps_apart">The taps landed <xliff:g id="mm">%1$.0f</xliff:g> mm apart, and at most <xliff:g id="limit">%2$.0f</xliff:g> mm is allowed.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">The fingers moved only <xliff:g id="mm">%1$.0f</xliff:g> mm, and they must move at least <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">The fingers moved the other way.</string>
+    <string name="gesture_trainer_finding_moved_together">The whole hand slid <xliff:g id="mm">%1$.0f</xliff:g> mm across the screen, more than the fingers moved towards or away from each other.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">The fingers turned only <xliff:g id="degrees">%1$.0f</xliff:g> degrees, and they must turn at least <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">The fingers turned the other way.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">The first stroke was <xliff:g id="mm">%1$.0f</xliff:g> mm, and it must be at least <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">The stroke back was <xliff:g id="mm">%1$.0f</xliff:g> mm, and it must be at least <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">The scrub took <xliff:g id="ms">%1$d</xliff:g> ms, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">The finger landed <xliff:g id="mm">%1$.0f</xliff:g> mm from the edge, and the edge is <xliff:g id="limit">%2$.0f</xliff:g> mm wide.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">The finger started in the other half of the edge.</string>
+    <string name="gesture_trainer_finding_edge_too_short">The finger slid <xliff:g id="mm">%1$.0f</xliff:g> mm, and it must slide at least <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Slide too long: the finger went past the second click, <xliff:g id="mm">%1$.0f</xliff:g> mm, and the second click is at <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Reaching the click took <xliff:g id="ms">%1$d</xliff:g> ms, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_edge_sideways">The slide went <xliff:g id="degrees">%1$.0f</xliff:g> degrees sideways, and at most <xliff:g id="limit">%2$.0f</xliff:g> is allowed.</string>
+    <string name="gesture_trainer_finding_corner_missed">The tap landed <xliff:g id="mm">%1$.0f</xliff:g> mm from the corner\'s edges, and the corner is <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">A corner tap lasted <xliff:g id="ms">%1$d</xliff:g> ms, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_none">No movement matching the gesture was detected.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Check how many fingers touch the glass. A palm or another finger resting on the screen counts too.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Put all fingers down at the same moment, as one hand, not one after another.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Put all fingers down first, then move or lift them.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Lift all fingers at the same moment.</string>
+    <string name="gesture_trainer_tip_slow_start">Start moving the moment you touch the screen, and move faster at the start.</string>
+    <string name="gesture_trainer_tip_paused">Keep the finger moving at an even speed until you lift. Don\'t slow down near the end.</string>
+    <string name="gesture_trainer_tip_too_short">Make the movement longer, about 2 to 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Check the direction at the very start of the movement. Holding the phone straight in front of you helps.</string>
+    <string name="gesture_trainer_tip_off_line">Move only along the direction, not diagonally. The index finger keeps a straighter line than the thumb.</string>
+    <string name="gesture_trainer_tip_curved">Keep the line straight and lift right at the end, without hooking the finger sideways as you lift.</string>
+    <string name="gesture_trainer_tip_turn_missing">Change direction sharply, at a right angle or straight back, without lifting. Each part should be about 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">After the turn, check which way you go: the second part must go the other direction the gesture names.</string>
+    <string name="gesture_trainer_tip_tap_moved">Tap straight down and up, with the fingertip, without sliding.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Make each tap short: touch and lift right away.</string>
+    <string name="gesture_trainer_tip_hold_too_short">On the last tap, keep the fingers still on the screen for the full hold time.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Count the taps, and make them all quickly in one go.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Count the taps. A finger that bounces off the glass makes an extra tap.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Tap faster: start the next tap right after lifting.</string>
+    <string name="gesture_trainer_tip_taps_apart">Tap in the same spot each time.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Move the fingers further, at least 1 cm closer together or apart.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Pinch is fingers moving towards each other, spread is fingers moving apart.</string>
+    <string name="gesture_trainer_tip_moved_together">Move only the fingers towards or away from each other. Don\'t slide the whole hand across the screen.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Turn further, like turning a dial a quarter turn.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Clockwise means turning the way the hands of a clock go: the top finger moves right.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Make the first stroke at least 1 cm long.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">After the first stroke, come back the other way before lifting.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Make the scrub quick, there and back in about a second.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Start right at the edge, with the fingertip partly off the screen.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Check which half of the edge you start in.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Slide further, until you hear the click, then lift.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Lift right after the first click, before the second.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Slide in faster, without stopping before the click.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Slide straight in from the edge, or straight along it, not diagonally.</string>
+    <string name="gesture_trainer_tip_corner_missed">Put the finger right into the corner, touching both edges.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Lift faster after touching the corner.</string>
+    <string name="gesture_trainer_close_to_limit">Close to the limit: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Swipes start slowly. A longer <xliff:g id="setting">%1$s</xliff:g> allows a slower start.</string>
+    <string name="gesture_trainer_advice_tap_time">Taps are slow. A longer <xliff:g id="setting">%1$s</xliff:g> allows slower taps.</string>
+    <string name="gesture_trainer_advice_edge_width">Swipes start too far from the edge. A larger <xliff:g id="setting">%1$s</xliff:g> also turns swipes that start near an edge into edge swipes.</string>
+    <string name="gesture_trainer_advice_corner_size">Taps land outside the corner. A larger <xliff:g id="setting">%1$s</xliff:g> makes the corners bigger.</string>
+    <string name="gesture_trainer_advice_corner_time">Corner taps are slow. A longer <xliff:g id="setting">%1$s</xliff:g> allows slower taps.</string>
+    <string name="gesture_trainer_menu_option">Option <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: choose item <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Slide one finger up or down <xliff:g id="edge">%1$s</xliff:g> for at least <xliff:g id="distance">%2$d</xliff:g> mm to open the menu. It has <xliff:g id="count">%3$d</xliff:g> items, top to bottom, each about <xliff:g id="size">%6$s</xliff:g> cm high. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, is <xliff:g id="from">%7$s</xliff:g> to <xliff:g id="to">%8$s</xliff:g> cm below the top of the screen. Lift the finger when the item is spoken.</string>
+    <string name="gesture_trainer_menu_sample">This edge has no menu. The exercise uses <xliff:g id="count">%1$d</xliff:g> sample items.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Try <xliff:g id="number">%1$d</xliff:g>: the menu closed without a choice.</string>
+    <string name="gesture_trainer_try_menu_other">Try <xliff:g id="number">%1$d</xliff:g>: chose <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">lifted at item <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">The finger started at the very top or bottom of the edge, where corners and the top and bottom edges are.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">The finger lifted <xliff:g id="mm">%1$.0f</xliff:g> mm from the edge, and the menu closes beyond <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">The finger lifted at item <xliff:g id="item">%1$d</xliff:g> instead of item <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Start a little away from the top and bottom ends of the edge.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Keep the finger close to the edge while you slide, and lift it there.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Each item has a fixed place along the edge, and the item where the finger lifts is chosen. Lift when the item is spoken.</string>
+    <string name="gesture_trainer_contents">Contents</string>
+    <string name="gesture_trainer_contents_heading">Contents: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">done, <xliff:g id="hits">%1$d</xliff:g> of <xliff:g id="tries">%2$d</xliff:g> recognised</string>
+    <string name="gesture_trainer_group_tap_swipe">Tap and swipe</string>
+    <string name="gesture_trainer_group_edge_swipes">Swipes from the edges</string>
+    <string name="gesture_trainer_group_along_edges">Slides along the edges</string>
+    <string name="gesture_trainer_group_edge_menus">Edge menus</string>
+    <string name="gesture_trainer_group_corners">Corners</string>
+    <string name="gesture_trainer_group_back_tap">Back tap</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Two-finger taps followed by a two-finger swipe are left out: <xliff:g id="setting">%1$s</xliff:g> is off.</string>
+    <string name="gesture_trainer_how_swipe_hold">Then, without lifting, keep the finger still for at least <xliff:g id="hold">%1$d</xliff:g> ms, and lift.</string>
+    <string name="gesture_trainer_half_top">top</string>
+    <string name="gesture_trainer_half_bottom">bottom</string>
+    <string name="gesture_trainer_how_taps_half">Tap in the <xliff:g id="half">%1$s</xliff:g> half of the screen. The point between the fingers decides the half.</string>
+    <string name="gesture_trainer_same_fingers">the same fingers</string>
+    <string name="gesture_trainer_how_tap_swipe">Tap <xliff:g id="taps">%1$s</xliff:g> with <xliff:g id="fingers">%2$s</xliff:g>. Right after the last tap, within <xliff:g id="gap">%3$d</xliff:g> ms, touch the screen again with <xliff:g id="swipe_fingers">%4$s</xliff:g> and slide <xliff:g id="direction">%5$s</xliff:g> in a straight line for about 2 to 3 cm, then lift.</string>
+    <string name="gesture_trainer_how_corner_hold">On the last tap, leave the finger in the corner, still, for at least <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Hold the phone in your hand, by its sides, and tap the middle of its back <xliff:g id="taps">%1$s</xliff:g> with a fingertip, firmly and quickly, like knocking on a door. Keep the taps close together: at most <xliff:g id="gap">%2$d</xliff:g> ms between them. Don\'t touch the screen while you tap.</string>
+    <string name="gesture_trainer_back_tap_info">Back taps run no commands during the exercise. <xliff:g id="setting">%1$s</xliff:g> sets how hard a tap must be.</string>
+    <string name="gesture_trainer_go_placed">Make the gesture <xliff:g id="tries">%1$d</xliff:g> times.</string>
+    <string name="gesture_trainer_along_left">the left edge</string>
+    <string name="gesture_trainer_along_right">the right edge</string>
+    <string name="gesture_trainer_along_top">the top edge</string>
+    <string name="gesture_trainer_along_bottom">the bottom edge</string>
+    <string name="gesture_trainer_left_out_along_menu">Slides along <xliff:g id="edge">%1$s</xliff:g> are left out: it has an edge menu, so a slide along it opens the menu instead of running a gesture.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Slides along <xliff:g id="edge">%1$s</xliff:g> are left out: it scrolls, so a slide along it scrolls the app instead of running a gesture.</string>
+    <string name="gesture_trainer_finding_along_off_edge">The finger moved too far away from the edge.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Keep the finger on the very rim of the glass, straight along the edge.</string>
+    <string name="gesture_trainer_go_back_tap">Make the back tap gesture <xliff:g id="tries">%1$d</xliff:g> times. A touch on the screen fails the try.</string>
+    <string name="gesture_trainer_no_accelerometer">This exercise needs an accelerometer. None is available.</string>
+    <string name="gesture_trainer_measure_hold">held still <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">tap of strength <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">The finger stayed still for <xliff:g id="ms">%1$d</xliff:g> ms at the end, and it must stay still at least <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">The fingers tapped in the other half of the screen.</string>
+    <string name="gesture_trainer_finding_swipe_missing">No swipe came after the taps.</string>
+    <string name="gesture_trainer_finding_swipe_late">The swipe started <xliff:g id="ms">%1$d</xliff:g> ms after the last tap, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Back tap too light: <xliff:g id="percent">%1$d</xliff:g>%% of the strength needed.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">A tap shook the phone more sideways than through its back.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">The phone was moving just before a tap.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">The screen was touched, and taps while it is touched don\'t count.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms passed between taps on the back, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">After the swipe, keep the finger still on the screen for the full hold time. Then lift.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Check which half you tap in: the middle of the screen divides the top half from the bottom half.</string>
+    <string name="gesture_trainer_tip_swipe_missing">After the last tap, touch the screen again at once and swipe.</string>
+    <string name="gesture_trainer_tip_swipe_late">Start the swipe right after the last tap, without a pause.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Tap firmer, with the fingertip or a fingernail, near the middle of the back.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Tap straight into the back of the phone, not at its edge or at an angle.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Hold the phone still for a moment before tapping, and hold it loosely so that your hand doesn\'t move it.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Keep your fingers off the screen while you tap the back: hold the phone by its sides.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Tap faster, one tap right after another.</string>
+    <string name="gesture_trainer_advice_swipe_hold">The finger lifts too soon after the swipe. A shorter <xliff:g id="setting">%1$s</xliff:g> allows a shorter hold.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Back taps are light. A higher <xliff:g id="setting">%1$s</xliff:g> detects lighter taps, and may detect bumps as taps.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">The fingers turned <xliff:g id="degrees">%1$.0f</xliff:g> degrees, and from <xliff:g id="limit">%2$.0f</xliff:g> degrees the movement is a rotation.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Move the fingers in a straight line towards or away from each other, not in an arc around each other.</string>
+    <string name="gesture_trainer_finding_other_gesture">The movement matched that gesture instead.</string>
+    <string name="gesture_trainer_side_left">left</string>
+    <string name="gesture_trainer_side_right">right</string>
+    <string name="gesture_trainer_side_top">top</string>
+    <string name="gesture_trainer_side_bottom">bottom</string>
+    <string name="gesture_trainer_finding_wrong_edge">The finger started at the <xliff:g id="side">%1$s</xliff:g> edge, and this exercise is at the <xliff:g id="expected">%2$s</xliff:g> edge.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Start right on the edge the exercise names.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">An edge menu opened instead of this gesture.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">A slide along an edge with a menu opens the menu. Start at the edge the exercise names.</string>
+    <string name="gesture_trainer_group_three_part">Three-part swipes</string>
+    <string name="gesture_trainer_group_two_stroke">Two-stroke swipes</string>
+    <string name="gesture_trainer_group_shake">Shake</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Three-part swipes are left out: <xliff:g id="setting">%1$s</xliff:g> is on.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Two-stroke swipes are left out: <xliff:g id="setting">%1$s</xliff:g> is <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">The shake runs no command during the exercise. <xliff:g id="setting">%1$s</xliff:g> sets how hard a shake must be.</string>
+    <string name="gesture_trainer_go_shake">Shake the phone <xliff:g id="tries">%1$d</xliff:g> times, with a short pause after each shake.</string>
+    <string name="gesture_trainer_how_shake">Hold the phone firmly and shake it quickly back and forth, as if shaking off a drop of water: at least twice each way, all within about two thirds of a second. Then hold it still.</string>
+    <string name="gesture_trainer_how_two_stroke">Swipe <xliff:g id="first">%1$s</xliff:g> with one finger, about 2 cm, and lift. Then at once, within <xliff:g id="time">%3$d</xliff:g> ms, swipe <xliff:g id="second">%2$s</xliff:g> with one finger, about 2 cm, and lift.</string>
+    <string name="gesture_trainer_how_three_part">Touch the screen with one finger and, without lifting, swipe <xliff:g id="first">%1$s</xliff:g>, then turn sharply and swipe <xliff:g id="second">%2$s</xliff:g>, then turn sharply again and swipe <xliff:g id="third">%3$s</xliff:g>, each part about 2 cm, and lift. Make it one quick, smooth movement with sharp corners, not curves.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Put one finger in the top third of the screen and the other in the bottom third, for example the thumb low and the index finger high.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">The fingers were not one in the top third of the screen and one in the bottom third.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">There was no second swipe.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">The second swipe started <xliff:g id="ms">%1$d</xliff:g> ms after the first, and at most <xliff:g id="limit">%2$d</xliff:g> ms is allowed.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">The first swipe went <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">The second swipe went <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">The shake was too light: <xliff:g id="percent">%1$d</xliff:g>%% of the strength needed.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Swings back and forth: <xliff:g id="swings">%1$d</xliff:g> of the <xliff:g id="wanted">%2$d</xliff:g> needed.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Spread the fingers far apart, one near the top edge and one near the bottom edge.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">After the first swipe, lift the finger and swipe again at once.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Start the second swipe right after lifting the finger.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Shake harder and faster.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Shake faster, back and forth at least twice each way, without stopping in between.</string>
+    <string name="gesture_trainer_measure_shake_strength">strongest movement <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Shakes are light. A higher <xliff:g id="setting">%1$s</xliff:g> detects lighter shakes, and may detect carrying the phone as a shake.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">The second swipe starts late. A longer <xliff:g id="setting">%1$s</xliff:g> allows a later second swipe, and a single swipe then waits longer before it runs.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> is on.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> is off: two-finger swipes scroll the app, and a scrub mostly scrolls too. With the setting on, two-finger swipes run SandFly commands instead of scrolling.</string>
+    <string name="gesture_trainer_measure_first_stroke">first swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">second swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">whole gesture <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">lifted for <xliff:g id="ms">%1$d</xliff:g> ms between them</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Mkufunzi wa ishara</string>
+    <string name="gesture_trainer_intro">Chagua kikundi cha ishara. Kila zoezi linaeleza ishara. Fanya ishara mara <xliff:g id="tries">%1$d</xliff:g>; matokeo ya kila jaribio hutamkwa. Baada ya jaribio la mwisho, skrini huorodhesha vipimo vya kila jaribio, unachopaswa kubadilisha na mipangilio inayohusiana.</string>
+    <string name="gesture_trainer_group_one_finger">Kidole kimoja</string>
+    <string name="gesture_trainer_group_two_fingers">Vidole viwili</string>
+    <string name="gesture_trainer_group_three_fingers">Vidole vitatu</string>
+    <string name="gesture_trainer_group_four_fingers">Vidole vinne</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Bana, zungusha na sugua</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, mazoezi <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Funga</string>
+    <string name="gesture_trainer_no_detection">Mkufunzi wa ishara unahitaji Android 13 au toleo jipya zaidi.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Ishara za kwenda na kurudi na za pembe zimeachwa: <xliff:g id="setting">%1$s</xliff:g> imewashwa.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Kutelezesha kwa vidole viwili kumeachwa: <xliff:g id="setting">%1$s</xliff:g> imezimwa, kwa hivyo husogeza programu.</string>
+    <string name="gesture_trainer_exercise_heading">Zoezi <xliff:g id="number">%1$d</xliff:g> kati ya <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Anza</string>
+    <string name="gesture_trainer_skip">Ruka zoezi hili</string>
+    <string name="gesture_trainer_back_to_groups">Rudi kwenye vikundi</string>
+    <string name="gesture_trainer_go">Fanya ishara mara <xliff:g id="tries">%1$d</xliff:g>, mahali popote kwenye skrini. Kila mguso ni jaribio moja.</string>
+    <string name="gesture_trainer_fingers_1">kidole kimoja</string>
+    <string name="gesture_trainer_fingers_2">vidole viwili kando kwa kando, vikiwa umbali wa takriban sentimita 1</string>
+    <string name="gesture_trainer_fingers_3">vidole vitatu kando kwa kando, vikiwa vimeachana kidogo</string>
+    <string name="gesture_trainer_fingers_4">vidole vinne kando kwa kando, vikiwa vimeachana kidogo</string>
+    <string name="gesture_trainer_direction_up">juu</string>
+    <string name="gesture_trainer_direction_down">chini</string>
+    <string name="gesture_trainer_direction_left">kushoto</string>
+    <string name="gesture_trainer_direction_right">kulia</string>
+    <string name="gesture_trainer_how_swipe">Gusa skrini kwa <xliff:g id="fingers">%1$s</xliff:g> na, bila kusubiri, telezesha <xliff:g id="direction">%2$s</xliff:g> kwa mstari ulionyooka takriban sentimita 2 hadi 3, kisha inua. Anza kusogeza mara moja: kidole kinachotulia kwanza huanzisha uchunguzi wa kugusa.</string>
+    <string name="gesture_trainer_how_swipe_multi">Weka vidole chini pamoja, kwa wakati mmoja, na uvisogeze vyote kwa njia moja. Kila kidole lazima kiende <xliff:g id="direction">%1$s</xliff:g> muda wote, kwa hivyo weka mstari ukiwa umenyooka.</string>
+    <string name="gesture_trainer_how_back_and_forth">Gusa skrini kwa kidole kimoja na utelezeshe <xliff:g id="first">%1$s</xliff:g> takriban sentimita 2, kisha bila kuinua rudi moja kwa moja <xliff:g id="second">%2$s</xliff:g> takriban sentimita 2, na uinue. Ifanye iwe msogeo mmoja wa haraka na laini.</string>
+    <string name="gesture_trainer_how_angle">Gusa skrini kwa <xliff:g id="fingers">%1$s</xliff:g> na utelezeshe <xliff:g id="first">%2$s</xliff:g> takriban sentimita 2, kisha bila kuinua geuka ghafla na utelezeshe <xliff:g id="second">%3$s</xliff:g> takriban sentimita 2, na uinue. Fanya mgeuko uwe pembe kali, kama herufi L, si mkunjo.</string>
+    <string name="gesture_trainer_taps_1">mara moja</string>
+    <string name="gesture_trainer_taps_2">mara mbili</string>
+    <string name="gesture_trainer_taps_3">mara tatu</string>
+    <string name="gesture_trainer_taps_4">mara nne</string>
+    <string name="gesture_trainer_how_taps">Gusa <xliff:g id="taps">%1$s</xliff:g> kwa <xliff:g id="fingers">%2$s</xliff:g>. Weka vidole chini pamoja na uviinue pamoja, haraka, bila kutelezesha.</string>
+    <string name="gesture_trainer_how_taps_quick">Fanya miguso iwe ya haraka na mahali pamoja: mguso unaofuata lazima uje ndani ya ms <xliff:g id="gap">%1$d</xliff:g> baada ya ule uliotangulia.</string>
+    <string name="gesture_trainer_how_hold">Weka <xliff:g id="fingers">%1$s</xliff:g> kwenye skrini pamoja na uvitulize, bila kutelezesha, kwa angalau ms <xliff:g id="hold">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Bila amri nyingine iliyowekwa, ishara hii huzima SandFly. Katika mkufunzi, haitekelezi chochote.</string>
+    <string name="gesture_trainer_how_taps_hold">Gusa <xliff:g id="taps">%1$s</xliff:g> kwa <xliff:g id="fingers">%2$s</xliff:g>, na kwenye mguso wa mwisho acha vidole kwenye skrini, vikiwa vimetulia, kwa angalau ms <xliff:g id="hold">%3$d</xliff:g>.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Tumia kidole gumba, kidole cha shahada na kidole cha kati.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Weka kidole cha shahada na kidole cha kati kando kwa kando, na kidole gumba na kidole cha pete sentimita chache mbali kila upande. Kisha leta ncha za vidole vyote vinne pamoja kwenye sehemu moja.</string>
+    <string name="gesture_trainer_how_pinch">Weka vidole <xliff:g id="fingers">%1$d</xliff:g> kwenye skrini, vikiwa vimeachana sana. Kisha visogeze moja kwa moja kuelekea kila kimoja kwa angalau sentimita 1, kana kwamba unaokota kitu, na uviinue kutoka kwenye skrini. Sogeza vidole tu, si mkono mzima, na si kwa mzunguko.</string>
+    <string name="gesture_trainer_how_spread">Weka vidole <xliff:g id="fingers">%1$d</xliff:g> kwenye skrini, vikiwa karibu pamoja. Kisha visogeze moja kwa moja mbali kwa angalau sentimita 1 na uviinue kutoka kwenye skrini. Sogeza vidole tu, si mkono mzima, na si kwa mzunguko.</string>
+    <string name="gesture_trainer_clockwise">kisaa</string>
+    <string name="gesture_trainer_counterclockwise">kinyume cha saa</string>
+    <string name="gesture_trainer_how_rotate">Weka vidole viwili kwenye skrini, vikiwa umbali wa takriban sentimita 2 hadi 3, na uvizungushe <xliff:g id="way">%1$s</xliff:g> kuzunguka katikati yake, kama kuzungusha kitufe cha kuzunguka, takriban robo ya mzunguko. Kisha inua.</string>
+    <string name="gesture_trainer_how_scrub">Weka vidole viwili kwenye skrini na uvisogeze haraka upande mmoja takriban sentimita 2 na kurudi, kama kufuta kitu, yote ndani ya takriban sekunde moja. Kisha inua.</string>
+    <string name="gesture_trainer_edge_bottom">kwenye ukingo wa chini</string>
+    <string name="gesture_trainer_edge_top_left">kwenye ukingo wa juu, katika nusu yake ya kushoto</string>
+    <string name="gesture_trainer_edge_top_right">kwenye ukingo wa juu, katika nusu yake ya kulia</string>
+    <string name="gesture_trainer_edge_left_top">kwenye ukingo wa kushoto, katika nusu yake ya juu</string>
+    <string name="gesture_trainer_edge_left_bottom">kwenye ukingo wa kushoto, katika nusu yake ya chini</string>
+    <string name="gesture_trainer_edge_right_top">kwenye ukingo wa kulia, katika nusu yake ya juu</string>
+    <string name="gesture_trainer_edge_right_bottom">kwenye ukingo wa kulia, katika nusu yake ya chini</string>
+    <string name="gesture_trainer_edge_left">kwenye ukingo wa kushoto</string>
+    <string name="gesture_trainer_edge_right">kwenye ukingo wa kulia</string>
+    <string name="gesture_trainer_edge_top">kwenye ukingo wa juu</string>
+    <string name="gesture_trainer_how_edge">Weka kidole kimoja <xliff:g id="edge">%1$s</xliff:g>, si zaidi ya mm <xliff:g id="edge_width">%2$d</xliff:g> kutoka ukingoni, na utelezeshe <xliff:g id="direction">%3$s</xliff:g> kuingia kwenye skrini hadi mbofyo wa kwanza, takriban mm <xliff:g id="distance">%4$d</xliff:g>. Kisha inua mara moja: baada ya mbofyo wa pili, kutelezesha huwa kutelezesha kwa mbali.</string>
+    <string name="gesture_trainer_how_edge_long">Weka kidole kimoja <xliff:g id="edge">%1$s</xliff:g>, si zaidi ya mm <xliff:g id="edge_width">%2$d</xliff:g> kutoka ukingoni, na utelezeshe <xliff:g id="direction">%3$s</xliff:g> kuingia kwenye skrini kupita mbofyo wa kwanza hadi wa pili, takriban mm <xliff:g id="distance">%4$d</xliff:g>. Kisha inua.</string>
+    <string name="gesture_trainer_how_along">Telezesha kidole kimoja <xliff:g id="direction">%2$s</xliff:g> kando ya <xliff:g id="edge">%1$s</xliff:g>, angalau mm <xliff:g id="distance">%3$d</xliff:g>.</string>
+    <string name="gesture_trainer_corner_top_left">juu kushoto</string>
+    <string name="gesture_trainer_corner_top_right">juu kulia</string>
+    <string name="gesture_trainer_corner_bottom_left">chini kushoto</string>
+    <string name="gesture_trainer_corner_bottom_right">chini kulia</string>
+    <string name="gesture_trainer_how_corner">Gusa <xliff:g id="taps">%1$s</xliff:g> kwenye pembe ya <xliff:g id="corner">%2$s</xliff:g> ya skrini. Weka kidole ndani kabisa ya pembe, si zaidi ya mm <xliff:g id="size">%3$d</xliff:g> kutoka kingo zote mbili, na uinue haraka, ndani ya ms <xliff:g id="time">%4$d</xliff:g>.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: mm <xliff:g id="edge">%2$d</xliff:g>. <xliff:g id="corner_setting">%3$s</xliff:g>: mm <xliff:g id="corner">%4$d</xliff:g>.</string>
+    <string name="gesture_trainer_corner_warning">Pembe zikiwa kubwa zaidi, kugusa kidhibiti kilicho karibu na pembe, kama vile Rudi juu kushoto, kunaweza kutekeleza ishara ya pembe badala yake.</string>
+    <string name="gesture_trainer_rating_precise">imetambuliwa, sahihi</string>
+    <string name="gesture_trainer_rating_good">imetambuliwa, nzuri</string>
+    <string name="gesture_trainer_rating_borderline">imetambuliwa, lakini karibu na kikomo</string>
+    <string name="gesture_trainer_try_recognized">Jaribio <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Jaribio <xliff:g id="number">%1$d</xliff:g>: haikutambuliwa.</string>
+    <string name="gesture_trainer_try_other">Jaribio <xliff:g id="number">%1$d</xliff:g>: imetambuliwa kama <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> kati ya <xliff:g id="tries">%3$d</xliff:g> yametambuliwa</string>
+    <string name="gesture_trainer_results_tries">Majaribio yako</string>
+    <string name="gesture_trainer_results_change">Unachopaswa kubadilisha</string>
+    <string name="gesture_trainer_results_close">Karibu na kikomo</string>
+    <string name="gesture_trainer_results_all_good">Majaribio yote yalitambuliwa ndani ya vikomo.</string>
+    <string name="gesture_trainer_results_settings">Mipangilio inayoweza kusaidia</string>
+    <string name="gesture_trainer_next">Zoezi linalofuata</string>
+    <string name="gesture_trainer_repeat">Rudia</string>
+    <string name="gesture_trainer_finish">Maliza</string>
+    <string name="gesture_trainer_group_done">Umemaliza mazoezi yote katika <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Badilisha <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">ilichukua ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_length">urefu wa sentimita <xliff:g id="cm">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_measure_speed">sentimita <xliff:g id="speed">%1$.0f</xliff:g> kwa sekunde</string>
+    <string name="gesture_trainer_measure_angle">nyuzi <xliff:g id="degrees">%1$.0f</xliff:g> nje ya mstari ulionyooka</string>
+    <string name="gesture_trainer_measure_start">sentimita ya kwanza kwa ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_landing">vidole viligusa kwa tofauti ya ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_tap">mguso wa ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_gap">ms <xliff:g id="ms">%1$d</xliff:g> kati ya miguso</string>
+    <string name="gesture_trainer_measure_spread">vidole vilisogea mm <xliff:g id="mm">%1$.0f</xliff:g></string>
+    <string name="gesture_trainer_measure_rotation">vilizunguka nyuzi <xliff:g id="degrees">%1$.0f</xliff:g></string>
+    <string name="gesture_trainer_measure_corner">mm <xliff:g id="mm">%1$.0f</xliff:g> kutoka kingo za pembe</string>
+    <string name="gesture_trainer_measure_edge">kilianza mm <xliff:g id="mm">%1$.0f</xliff:g> kutoka ukingoni</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Vidole kwenye skrini: <xliff:g id="fingers">%1$d</xliff:g> badala ya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Vidole viligusa kwa tofauti ya ms <xliff:g id="ms">%1$d</xliff:g>, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Kidole kiliinuliwa kabla vidole vyote havijawekwa chini.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Vidole viliinuliwa kwa tofauti ya ms <xliff:g id="ms">%1$d</xliff:g>, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_became_exploration">Kidole kilitulia muda mrefu mno au kilisogea polepole mno mwanzoni, kwa hivyo mguso ukawa uchunguzi wa kugusa.</string>
+    <string name="gesture_trainer_finding_slow_start">Sentimita ya kwanza ilichukua ms <xliff:g id="ms">%1$d</xliff:g>, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_paused">Kidole kilipunguza kasi kwa ms <xliff:g id="ms">%1$d</xliff:g>, na kila sentimita inaweza kuchukua hadi ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_short">Msogeo ulikuwa mm <xliff:g id="mm">%1$.0f</xliff:g> tu, na lazima uwe angalau mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Kidole kilianza kwenda <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Vidole vilianza kwenda <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Njia ilipinda nyuzi <xliff:g id="degrees">%1$.0f</xliff:g> nje ya mstari ulionyooka, na kikomo ni <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Njia ilipinda katika sehemu <xliff:g id="parts">%1$d</xliff:g> badala ya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Mgeuko haukupatikana.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Baada ya mgeuko, kidole kilienda <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Kidole kiliteleza mm <xliff:g id="mm">%1$.1f</xliff:g> wakati wa mguso, na kikomo ni mm <xliff:g id="limit">%2$.1f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Mguso ulidumu ms <xliff:g id="ms">%1$d</xliff:g>, zaidi ya ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Mguso wa mwisho ulishikiliwa kwa ms <xliff:g id="ms">%1$d</xliff:g>, na lazima uwe angalau ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Miguso <xliff:g id="taps">%1$d</xliff:g> badala ya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Miguso <xliff:g id="taps">%1$d</xliff:g> badala ya <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Zilipita ms <xliff:g id="ms">%1$d</xliff:g> kati ya miguso, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_apart">Miguso iligusa umbali wa mm <xliff:g id="mm">%1$.0f</xliff:g> kutoka kila mmoja, na kikomo ni mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Vidole vilisogea mm <xliff:g id="mm">%1$.0f</xliff:g> tu, na lazima visogee angalau mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Vidole vilisogea upande mwingine.</string>
+    <string name="gesture_trainer_finding_moved_together">Mkono mzima uliteleza mm <xliff:g id="mm">%1$.0f</xliff:g> kwenye skrini, zaidi ya vidole vilivyosogea kuelekeana au kuachana.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Vidole vilizunguka nyuzi <xliff:g id="degrees">%1$.0f</xliff:g> tu, na lazima vizunguke angalau <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Vidole vilizunguka upande mwingine.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Mpigo wa kwanza ulikuwa mm <xliff:g id="mm">%1$.0f</xliff:g>, na lazima uwe angalau mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Mpigo wa kurudi ulikuwa mm <xliff:g id="mm">%1$.0f</xliff:g>, na lazima uwe angalau mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Kusugua kulichukua ms <xliff:g id="ms">%1$d</xliff:g>, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Kidole kiligusa mm <xliff:g id="mm">%1$.0f</xliff:g> kutoka ukingoni, na upana wa ukingo ni mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Kidole kilianza katika nusu nyingine ya ukingo.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Kidole kiliteleza mm <xliff:g id="mm">%1$.0f</xliff:g>, na lazima kiteleze angalau mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Kutelezesha kumezidi: kidole kilipita mbofyo wa pili, mm <xliff:g id="mm">%1$.0f</xliff:g>, na mbofyo wa pili uko kwenye mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Kufikia mbofyo kulichukua ms <xliff:g id="ms">%1$d</xliff:g>, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Kutelezesha kulienda nyuzi <xliff:g id="degrees">%1$.0f</xliff:g> pembeni, na kikomo ni <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Mguso ulitua mm <xliff:g id="mm">%1$.0f</xliff:g> kutoka kingo za pembe, na pembe ni mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Mguso wa pembe ulidumu ms <xliff:g id="ms">%1$d</xliff:g>, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_none">Hakuna msogeo unaolingana na ishara uliotambuliwa.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Angalia ni vidole vingapi vinagusa kioo. Kiganja au kidole kingine kilichotulia kwenye skrini huhesabiwa pia.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Weka vidole vyote chini kwa wakati mmoja, kama mkono mmoja, si kimoja baada ya kingine.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Weka vidole vyote chini kwanza, kisha visogeze au uviinue.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Inua vidole vyote kwa wakati mmoja.</string>
+    <string name="gesture_trainer_tip_slow_start">Anza kusogeza mara unapogusa skrini, na usogeze haraka zaidi mwanzoni.</string>
+    <string name="gesture_trainer_tip_paused">Endelea kusogeza kidole kwa kasi sawa hadi uinue. Usipunguze kasi karibu na mwisho.</string>
+    <string name="gesture_trainer_tip_too_short">Fanya msogeo uwe mrefu zaidi, takriban sentimita 2 hadi 3.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Angalia mwelekeo mwanzoni kabisa mwa msogeo. Kushika simu moja kwa moja mbele yako husaidia.</string>
+    <string name="gesture_trainer_tip_off_line">Sogeza kufuata mwelekeo tu, si kwa mshazari. Kidole cha shahada huweka mstari ulionyooka zaidi kuliko kidole gumba.</string>
+    <string name="gesture_trainer_tip_curved">Weka mstari ukiwa umenyooka na uinue mwishoni kabisa, bila kupinda kidole pembeni unapoinua.</string>
+    <string name="gesture_trainer_tip_turn_missing">Badilisha mwelekeo ghafla, kwa pembe mraba au kurudi moja kwa moja, bila kuinua. Kila sehemu inapaswa kuwa takriban sentimita 2.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Baada ya mgeuko, angalia unaelekea upande gani: sehemu ya pili lazima iende upande mwingine unaotajwa na ishara.</string>
+    <string name="gesture_trainer_tip_tap_moved">Gusa moja kwa moja chini na juu, kwa ncha ya kidole, bila kutelezesha.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Fanya kila mguso uwe mfupi: gusa na uinue mara moja.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Kwenye mguso wa mwisho, tuliza vidole kwenye skrini kwa muda wote wa kushikilia.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Hesabu miguso, na uifanye yote haraka kwa mfululizo mmoja.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Hesabu miguso. Kidole kinachodunda kutoka kwenye kioo hufanya mguso wa ziada.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Gusa haraka zaidi: anza mguso unaofuata mara baada ya kuinua.</string>
+    <string name="gesture_trainer_tip_taps_apart">Gusa mahali pamoja kila wakati.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Sogeza vidole mbali zaidi, angalau sentimita 1 kukaribiana au kuachana.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Kubana ni vidole kusogea kuelekeana, kutanua ni vidole kusogea kuachana.</string>
+    <string name="gesture_trainer_tip_moved_together">Sogeza vidole tu kuelekeana au kuachana. Usitelezeshe mkono mzima kwenye skrini.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Zungusha zaidi, kama kuzungusha kitufe cha kuzunguka robo ya mzunguko.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Kisaa maana yake ni kuzungusha jinsi mishale ya saa inavyoenda: kidole cha juu kinasogea kulia.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Fanya mpigo wa kwanza uwe angalau sentimita 1.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Baada ya mpigo wa kwanza, rudi upande mwingine kabla ya kuinua.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Fanya kusugua kuwe haraka, kwenda na kurudi ndani ya takriban sekunde moja.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Anza ukingoni kabisa, ncha ya kidole ikiwa nje ya skrini kwa sehemu.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Angalia unaanzia katika nusu ipi ya ukingo.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Telezesha zaidi, hadi usikie mbofyo, kisha inua.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Inua mara baada ya mbofyo wa kwanza, kabla ya wa pili.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Telezesha kuingia haraka zaidi, bila kusimama kabla ya mbofyo.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Telezesha moja kwa moja kuingia kutoka ukingoni, au moja kwa moja kando yake, si kwa mshazari.</string>
+    <string name="gesture_trainer_tip_corner_missed">Weka kidole ndani kabisa ya pembe, kikigusa kingo zote mbili.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Inua haraka zaidi baada ya kugusa pembe.</string>
+    <string name="gesture_trainer_close_to_limit">Karibu na kikomo: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Kutelezesha kunaanza polepole. Thamani ndefu zaidi ya <xliff:g id="setting">%1$s</xliff:g> inaruhusu mwanzo wa polepole zaidi.</string>
+    <string name="gesture_trainer_advice_tap_time">Miguso ni ya polepole. Thamani ndefu zaidi ya <xliff:g id="setting">%1$s</xliff:g> inaruhusu miguso ya polepole zaidi.</string>
+    <string name="gesture_trainer_advice_edge_width">Kutelezesha kunaanza mbali mno na ukingo. Thamani kubwa zaidi ya <xliff:g id="setting">%1$s</xliff:g> pia hufanya kutelezesha kunakoanza karibu na ukingo kuwe kutelezesha kwa ukingo.</string>
+    <string name="gesture_trainer_advice_corner_size">Miguso inatua nje ya pembe. Thamani kubwa zaidi ya <xliff:g id="setting">%1$s</xliff:g> hufanya pembe ziwe kubwa zaidi.</string>
+    <string name="gesture_trainer_advice_corner_time">Miguso ya pembe ni ya polepole. Thamani ndefu zaidi ya <xliff:g id="setting">%1$s</xliff:g> inaruhusu miguso ya polepole zaidi.</string>
+    <string name="gesture_trainer_menu_option">Chaguo <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: chagua kipengee <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Telezesha kidole kimoja juu au chini <xliff:g id="edge">%1$s</xliff:g> kwa angalau mm <xliff:g id="distance">%2$d</xliff:g> ili kufungua menyu. Ina vipengee <xliff:g id="count">%3$d</xliff:g>, kutoka juu hadi chini, kila kimoja kikiwa na urefu wa takriban sentimita <xliff:g id="size">%6$s</xliff:g>. Kipengee <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, kiko sentimita <xliff:g id="from">%7$s</xliff:g> hadi <xliff:g id="to">%8$s</xliff:g> chini ya sehemu ya juu ya skrini. Inua kidole kipengee kinapotamkwa.</string>
+    <string name="gesture_trainer_menu_sample">Ukingo huu hauna menyu. Zoezi linatumia vipengee <xliff:g id="count">%1$d</xliff:g> vya mfano.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Jaribio <xliff:g id="number">%1$d</xliff:g>: menyu ilifungwa bila chaguo.</string>
+    <string name="gesture_trainer_try_menu_other">Jaribio <xliff:g id="number">%1$d</xliff:g>: ilichagua <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">kiliinuliwa kwenye kipengee <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Kidole kilianza juu kabisa au chini kabisa ya ukingo, ambapo pembe na kingo za juu na chini zipo.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Kidole kiliinuliwa mm <xliff:g id="mm">%1$.0f</xliff:g> kutoka ukingoni, na menyu hufungwa zaidi ya mm <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Kidole kiliinuliwa kwenye kipengee <xliff:g id="item">%1$d</xliff:g> badala ya kipengee <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Anza mbali kidogo na ncha za juu na chini za ukingo.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Weka kidole karibu na ukingo unapotelezesha, na ukiinue hapo.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Kila kipengee kina nafasi maalum kando ya ukingo, na kipengee ambapo kidole kinainuliwa ndicho huchaguliwa. Inua kipengee kinapotamkwa.</string>
+    <string name="gesture_trainer_contents">Yaliyomo</string>
+    <string name="gesture_trainer_contents_heading">Yaliyomo: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">imekamilika, <xliff:g id="hits">%1$d</xliff:g> kati ya <xliff:g id="tries">%2$d</xliff:g> yametambuliwa</string>
+    <string name="gesture_trainer_group_tap_swipe">Gusa na telezesha</string>
+    <string name="gesture_trainer_group_edge_swipes">Kutelezesha kutoka kingo</string>
+    <string name="gesture_trainer_group_along_edges">Kutelezesha kando ya kingo</string>
+    <string name="gesture_trainer_group_edge_menus">Menyu za kingo</string>
+    <string name="gesture_trainer_group_corners">Pembe</string>
+    <string name="gesture_trainer_group_back_tap">Kugusa nyuma</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Kugusa kwa vidole viwili kukifuatwa na kutelezesha kwa vidole viwili kumeachwa: <xliff:g id="setting">%1$s</xliff:g> imezimwa.</string>
+    <string name="gesture_trainer_how_swipe_hold">Kisha, bila kuinua, tuliza kidole kwa angalau ms <xliff:g id="hold">%1$d</xliff:g>, na uinue.</string>
+    <string name="gesture_trainer_half_top">juu</string>
+    <string name="gesture_trainer_half_bottom">chini</string>
+    <string name="gesture_trainer_how_taps_half">Gusa katika nusu ya <xliff:g id="half">%1$s</xliff:g> ya skrini. Sehemu iliyo kati ya vidole huamua nusu.</string>
+    <string name="gesture_trainer_same_fingers">vidole vilevile</string>
+    <string name="gesture_trainer_how_tap_swipe">Gusa <xliff:g id="taps">%1$s</xliff:g> kwa <xliff:g id="fingers">%2$s</xliff:g>. Mara baada ya mguso wa mwisho, ndani ya ms <xliff:g id="gap">%3$d</xliff:g>, gusa skrini tena kwa <xliff:g id="swipe_fingers">%4$s</xliff:g> na utelezeshe <xliff:g id="direction">%5$s</xliff:g> kwa mstari ulionyooka takriban sentimita 2 hadi 3, kisha inua.</string>
+    <string name="gesture_trainer_how_corner_hold">Kwenye mguso wa mwisho, acha kidole kwenye pembe, kikiwa kimetulia, kwa angalau ms <xliff:g id="hold">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_how_back_tap">Shika simu mkononi, kwa pande zake, na ugonge katikati ya upande wake wa nyuma <xliff:g id="taps">%1$s</xliff:g> kwa ncha ya kidole, kwa nguvu na haraka, kama kubisha mlango. Fanya miguso iwe karibu: si zaidi ya ms <xliff:g id="gap">%2$d</xliff:g> kati yake. Usiguse skrini unapogonga.</string>
+    <string name="gesture_trainer_back_tap_info">Kugusa nyuma hakutekelezi amri wakati wa zoezi. <xliff:g id="setting">%1$s</xliff:g> huweka jinsi mguso unavyopaswa kuwa na nguvu.</string>
+    <string name="gesture_trainer_go_placed">Fanya ishara mara <xliff:g id="tries">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_along_left">ukingo wa kushoto</string>
+    <string name="gesture_trainer_along_right">ukingo wa kulia</string>
+    <string name="gesture_trainer_along_top">ukingo wa juu</string>
+    <string name="gesture_trainer_along_bottom">ukingo wa chini</string>
+    <string name="gesture_trainer_left_out_along_menu">Kutelezesha kando ya <xliff:g id="edge">%1$s</xliff:g> kumeachwa: una menyu ya ukingo, kwa hivyo kutelezesha kando yake hufungua menyu badala ya kutekeleza ishara.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Kutelezesha kando ya <xliff:g id="edge">%1$s</xliff:g> kumeachwa: unasogeza, kwa hivyo kutelezesha kando yake husogeza programu badala ya kutekeleza ishara.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Kidole kilisogea mbali mno na ukingo.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Weka kidole kwenye ukingo kabisa wa kioo, moja kwa moja kando ya ukingo.</string>
+    <string name="gesture_trainer_go_back_tap">Fanya ishara ya kugusa nyuma mara <xliff:g id="tries">%1$d</xliff:g>. Kugusa skrini hufanya jaribio lishindwe.</string>
+    <string name="gesture_trainer_no_accelerometer">Zoezi hili linahitaji kipima mchapuko. Hakuna kinachopatikana.</string>
+    <string name="gesture_trainer_measure_hold">kilitulia ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_back_tap_strength">mguso wa nguvu <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Kidole kilitulia kwa ms <xliff:g id="ms">%1$d</xliff:g> mwishoni, na lazima kitulie angalau ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Vidole viligusa katika nusu nyingine ya skrini.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Hakuna kutelezesha kulikofuata baada ya miguso.</string>
+    <string name="gesture_trainer_finding_swipe_late">Kutelezesha kulianza ms <xliff:g id="ms">%1$d</xliff:g> baada ya mguso wa mwisho, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Mguso wa nyuma ni mwepesi mno: <xliff:g id="percent">%1$d</xliff:g>%% ya nguvu inayohitajika.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Mguso ulitikisa simu pembeni zaidi kuliko kupitia upande wake wa nyuma.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Simu ilikuwa ikisogea kabla tu ya mguso.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Skrini iliguswa, na miguso wakati skrini inaguswa haihesabiwi.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Zilipita ms <xliff:g id="ms">%1$d</xliff:g> kati ya miguso ya nyuma, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Baada ya kutelezesha, tuliza kidole kwenye skrini kwa muda wote wa kushikilia. Kisha inua.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Angalia unagusa katika nusu ipi: katikati ya skrini hutenganisha nusu ya juu na nusu ya chini.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Baada ya mguso wa mwisho, gusa skrini tena mara moja na utelezeshe.</string>
+    <string name="gesture_trainer_tip_swipe_late">Anza kutelezesha mara baada ya mguso wa mwisho, bila kusita.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Gonga kwa nguvu zaidi, kwa ncha ya kidole au ukucha, karibu na katikati ya upande wa nyuma.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Gonga moja kwa moja kwenye upande wa nyuma wa simu, si kwenye ukingo wake au kwa pembe.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Tuliza simu kwa muda mfupi kabla ya kugonga, na uishike kwa ulegevu ili mkono wako usiisogeze.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Usiweke vidole kwenye skrini unapogonga upande wa nyuma: shika simu kwa pande zake.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Gonga haraka zaidi, mguso mmoja mara baada ya mwingine.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Kidole kinainuliwa mapema mno baada ya kutelezesha. Thamani fupi zaidi ya <xliff:g id="setting">%1$s</xliff:g> inaruhusu kushikilia kwa muda mfupi zaidi.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Miguso ya nyuma ni myepesi. Thamani ya juu zaidi ya <xliff:g id="setting">%1$s</xliff:g> hutambua miguso myepesi zaidi, na inaweza kutambua migongano kama miguso.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Vidole vilizunguka nyuzi <xliff:g id="degrees">%1$.0f</xliff:g>, na kuanzia nyuzi <xliff:g id="limit">%2$.0f</xliff:g> msogeo ni mzunguko.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Sogeza vidole kwa mstari ulionyooka kuelekeana au kuachana, si kwa mzunguko kuzungukana.</string>
+    <string name="gesture_trainer_finding_other_gesture">Msogeo ulilingana na ishara hiyo badala yake.</string>
+    <string name="gesture_trainer_side_left">kushoto</string>
+    <string name="gesture_trainer_side_right">kulia</string>
+    <string name="gesture_trainer_side_top">juu</string>
+    <string name="gesture_trainer_side_bottom">chini</string>
+    <string name="gesture_trainer_finding_wrong_edge">Kidole kilianza kwenye ukingo wa <xliff:g id="side">%1$s</xliff:g>, na zoezi hili ni kwenye ukingo wa <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Anza moja kwa moja kwenye ukingo unaotajwa na zoezi.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Menyu ya ukingo ilifunguka badala ya ishara hii.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Kutelezesha kando ya ukingo wenye menyu hufungua menyu. Anza kwenye ukingo unaotajwa na zoezi.</string>
+    <string name="gesture_trainer_group_three_part">Kutelezesha kwa sehemu tatu</string>
+    <string name="gesture_trainer_group_two_stroke">Kutelezesha kwa mipigo miwili</string>
+    <string name="gesture_trainer_group_shake">Kutikisa</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Kutelezesha kwa sehemu tatu kumeachwa: <xliff:g id="setting">%1$s</xliff:g> imewashwa.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Kutelezesha kwa mipigo miwili kumeachwa: <xliff:g id="setting">%1$s</xliff:g> ni <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Kutikisa hakutekelezi amri wakati wa zoezi. <xliff:g id="setting">%1$s</xliff:g> huweka jinsi kutikisa kunavyopaswa kuwa na nguvu.</string>
+    <string name="gesture_trainer_go_shake">Tikisa simu mara <xliff:g id="tries">%1$d</xliff:g>, ukisimama kidogo baada ya kila mtikiso.</string>
+    <string name="gesture_trainer_how_shake">Shika simu kwa uthabiti na uitikise haraka mbele na nyuma, kana kwamba unakung\'uta tone la maji: angalau mara mbili kila upande, yote ndani ya takriban theluthi mbili za sekunde. Kisha itulize.</string>
+    <string name="gesture_trainer_how_two_stroke">Telezesha <xliff:g id="first">%1$s</xliff:g> kwa kidole kimoja, takriban sentimita 2, na uinue. Kisha mara moja, ndani ya ms <xliff:g id="time">%3$d</xliff:g>, telezesha <xliff:g id="second">%2$s</xliff:g> kwa kidole kimoja, takriban sentimita 2, na uinue.</string>
+    <string name="gesture_trainer_how_three_part">Gusa skrini kwa kidole kimoja na, bila kuinua, telezesha <xliff:g id="first">%1$s</xliff:g>, kisha geuka ghafla na utelezeshe <xliff:g id="second">%2$s</xliff:g>, kisha geuka ghafla tena na utelezeshe <xliff:g id="third">%3$s</xliff:g>, kila sehemu takriban sentimita 2, na uinue. Ifanye iwe msogeo mmoja wa haraka na laini wenye pembe kali, si mikunjo.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Weka kidole kimoja katika theluthi ya juu ya skrini na kingine katika theluthi ya chini, kwa mfano kidole gumba chini na kidole cha shahada juu.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Vidole havikuwa kimoja katika theluthi ya juu ya skrini na kimoja katika theluthi ya chini.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Hakukuwa na kutelezesha kwa pili.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Kutelezesha kwa pili kulianza ms <xliff:g id="ms">%1$d</xliff:g> baada ya kwa kwanza, na kikomo ni ms <xliff:g id="limit">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Kutelezesha kwa kwanza kulienda <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Kutelezesha kwa pili kulienda <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Kutikisa kulikuwa kwepesi mno: <xliff:g id="percent">%1$d</xliff:g>%% ya nguvu inayohitajika.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Mizunguko ya mbele na nyuma: <xliff:g id="swings">%1$d</xliff:g> kati ya <xliff:g id="wanted">%2$d</xliff:g> inayohitajika.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Tanua vidole mbali sana, kimoja karibu na ukingo wa juu na kingine karibu na ukingo wa chini.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Baada ya kutelezesha kwa kwanza, inua kidole na utelezeshe tena mara moja.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Anza kutelezesha kwa pili mara baada ya kuinua kidole.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Tikisa kwa nguvu zaidi na haraka zaidi.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Tikisa haraka zaidi, mbele na nyuma angalau mara mbili kila upande, bila kusimama katikati.</string>
+    <string name="gesture_trainer_measure_shake_strength">msogeo wenye nguvu zaidi <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Mitikiso ni myepesi. Thamani ya juu zaidi ya <xliff:g id="setting">%1$s</xliff:g> hutambua mitikiso myepesi zaidi, na inaweza kutambua kubeba simu kama mtikiso.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Kutelezesha kwa pili kunaanza kwa kuchelewa. Thamani ndefu zaidi ya <xliff:g id="setting">%1$s</xliff:g> inaruhusu kutelezesha kwa pili kwa kuchelewa zaidi, na kutelezesha kumoja husubiri muda mrefu zaidi kabla ya kutekelezwa.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> imewashwa.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> imezimwa: kutelezesha kwa vidole viwili husogeza programu, na kusugua pia mara nyingi husogeza. Mpangilio ukiwashwa, kutelezesha kwa vidole viwili hutekeleza amri za SandFly badala ya kusogeza.</string>
+    <string name="gesture_trainer_measure_first_stroke">kutelezesha kwa kwanza ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_second_stroke">kutelezesha kwa pili ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_whole_gesture">ishara nzima ms <xliff:g id="ms">%1$d</xliff:g></string>
+    <string name="gesture_trainer_measure_stroke_gap">kiliinuliwa kwa ms <xliff:g id="ms">%1$d</xliff:g> kati yake</string>
+</resources>

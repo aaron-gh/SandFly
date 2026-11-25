@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Зангааны дасгалжуулагч</string>
+    <string name="gesture_trainer_intro">Зангааны бүлэг сонгоно уу. Дасгал бүр нэг зангааг тайлбарлана. Зангааг <xliff:g id="tries">%1$d</xliff:g> удаа хийнэ үү; оролдлого бүрийн үр дүнг уншина. Сүүлийн оролдлогын дараа дэлгэц оролдлого бүрийн хэмжилт, юуг өөрчлөх, холбогдох тохиргоог харуулна.</string>
+    <string name="gesture_trainer_group_one_finger">Нэг хуруу</string>
+    <string name="gesture_trainer_group_two_fingers">Хоёр хуруу</string>
+    <string name="gesture_trainer_group_three_fingers">Гурван хуруу</string>
+    <string name="gesture_trainer_group_four_fingers">Дөрвөн хуруу</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Чимхэх, эргүүлэх, нааш цааш шудрах</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> дасгал</string>
+    <string name="gesture_trainer_close">Хаах</string>
+    <string name="gesture_trainer_no_detection">Зангааны дасгалжуулагчид Android 13 буюу түүнээс хойшх хувилбар шаардлагатай.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Урагш хойш болон өнцгийн зангааг оруулаагүй: <xliff:g id="setting">%1$s</xliff:g> асаалттай байна.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">2 хуруугаар шудрахыг оруулаагүй: <xliff:g id="setting">%1$s</xliff:g> унтраалттай тул тэдгээр нь аппыг гүйлгэнэ.</string>
+    <string name="gesture_trainer_exercise_heading">Дасгал <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Эхлэх</string>
+    <string name="gesture_trainer_skip">Энэ дасгалыг алгасах</string>
+    <string name="gesture_trainer_back_to_groups">Бүлгүүд рүү буцах</string>
+    <string name="gesture_trainer_go">Зангааг дэлгэцийн хаана ч <xliff:g id="tries">%1$d</xliff:g> удаа хийнэ үү. Хүрэлт бүр нэг оролдлого болно.</string>
+    <string name="gesture_trainer_fingers_1">нэг хуруугаар</string>
+    <string name="gesture_trainer_fingers_2">хоорондоо 1 см орчим зайтай зэрэгцсэн хоёр хуруугаар</string>
+    <string name="gesture_trainer_fingers_3">бага зэрэг зайтай зэрэгцсэн гурван хуруугаар</string>
+    <string name="gesture_trainer_fingers_4">бага зэрэг зайтай зэрэгцсэн дөрвөн хуруугаар</string>
+    <string name="gesture_trainer_direction_up">дээш</string>
+    <string name="gesture_trainer_direction_down">доош</string>
+    <string name="gesture_trainer_direction_left">зүүн тийш</string>
+    <string name="gesture_trainer_direction_right">баруун тийш</string>
+    <string name="gesture_trainer_how_swipe">Дэлгэцэд <xliff:g id="fingers">%1$s</xliff:g> хүрч, хүлээлгүйгээр <xliff:g id="direction">%2$s</xliff:g> шулуун шугамаар 2–3 см орчим шудраад, өргөнө үү. Шууд хөдөлж эхэлнэ үү: эхлээд хөдөлгөөнгүй байгаа хуруу мэдрэгчтэй хайгуулыг эхлүүлнэ.</string>
+    <string name="gesture_trainer_how_swipe_multi">Хуруунуудаа нэгэн зэрэг, яг нэг агшинд тавьж, бүгдийг нь нэг зүг рүү хөдөлгөнө үү. Хуруу бүр бүх хугацаанд <xliff:g id="direction">%1$s</xliff:g> явах ёстой тул шугамаа шулуун байлгана уу.</string>
+    <string name="gesture_trainer_how_back_and_forth">Дэлгэцэд нэг хуруугаар хүрч, <xliff:g id="first">%1$s</xliff:g> 2 см орчим шудраад, өргөлгүйгээр <xliff:g id="second">%2$s</xliff:g> шулуун 2 см орчим буцааж, өргөнө үү. Үүнийг нэг хурдан, жигд хөдөлгөөнөөр хийнэ үү.</string>
+    <string name="gesture_trainer_how_angle">Дэлгэцэд <xliff:g id="fingers">%1$s</xliff:g> хүрч, <xliff:g id="first">%2$s</xliff:g> 2 см орчим шудраад, өргөлгүйгээр огцом эргэж <xliff:g id="second">%3$s</xliff:g> 2 см орчим шудраад, өргөнө үү. Эргэлтийг муруй биш, L үсэг шиг хурц өнцөг болгоно уу.</string>
+    <string name="gesture_trainer_taps_1">нэг удаа</string>
+    <string name="gesture_trainer_taps_2">хоёр удаа</string>
+    <string name="gesture_trainer_taps_3">гурван удаа</string>
+    <string name="gesture_trainer_taps_4">дөрвөн удаа</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> товшино уу. Хуруунуудаа хамт тавьж, хамт, хурдан, шудралгүйгээр өргөнө үү.</string>
+    <string name="gesture_trainer_how_taps_quick">Товшилтуудыг хурдан, нэг цэгт хийнэ үү: дараагийн товшилт өмнөхөөсөө хойш <xliff:g id="gap">%1$d</xliff:g> ms дотор байх ёстой.</string>
+    <string name="gesture_trainer_how_hold">Дэлгэцэд <xliff:g id="fingers">%1$s</xliff:g> нэгэн зэрэг хүрч, шудралгүйгээр хамгийн багадаа <xliff:g id="hold">%2$d</xliff:g> ms хөдөлгөөнгүй барина уу.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Өөр тушаал оноогоогүй бол энэ зангаа SandFly-г унтраана. Дасгалжуулагчид юу ч ажиллуулахгүй.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> товшоод, сүүлийн товшилтод хуруунуудаа дэлгэцэн дээр хамгийн багадаа <xliff:g id="hold">%3$d</xliff:g> ms хөдөлгөөнгүй үлдээнэ үү.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Эрхий, долоовор, дунд хуруугаа ашиглана уу.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Долоовор, дунд хуруугаа зэрэгцүүлж, эрхий болон ядам хуруугаа хоёр талд нь хэдэн сантиметрийн зайтай тавина уу. Дараа нь дөрвөн хурууны үзүүрийг нэг цэгт нийлүүлнэ үү.</string>
+    <string name="gesture_trainer_how_pinch">Дэлгэцэд <xliff:g id="fingers">%1$d</xliff:g> хуруугаа өргөн дэлгэж тавина уу. Дараа нь юм авах гэж буй мэт тэдгээрийг бие бие рүү нь шулуун хамгийн багадаа 1 см ойртуулж, дэлгэцээс өргөнө үү. Бүх гараа биш, зөвхөн хуруунуудаа нум хэлбэрээр биш хөдөлгөнө үү.</string>
+    <string name="gesture_trainer_how_spread">Дэлгэцэд <xliff:g id="fingers">%1$d</xliff:g> хуруугаа ойрхон тавина уу. Дараа нь тэдгээрийг шулуун хамгийн багадаа 1 см холдуулж, дэлгэцээс өргөнө үү. Бүх гараа биш, зөвхөн хуруунуудаа нум хэлбэрээр биш хөдөлгөнө үү.</string>
+    <string name="gesture_trainer_clockwise">цагийн зүүний дагуу</string>
+    <string name="gesture_trainer_counterclockwise">цагийн зүүний эсрэг</string>
+    <string name="gesture_trainer_how_rotate">Дэлгэцэд хоёр хуруугаа 2–3 см орчим зайтай тавьж, бариул эргүүлэх мэт голоор нь <xliff:g id="way">%1$s</xliff:g> дөрөвний нэг эргэлт орчим эргүүлнэ үү. Дараа нь өргөнө үү.</string>
+    <string name="gesture_trainer_how_scrub">Дэлгэцэд хоёр хуруугаа тавьж, ямар нэг зүйл арчих мэт нэг тал руу 2 см орчим хурдан хөдөлгөөд буцаана уу, бүгдийг нэг секунд орчимд. Дараа нь өргөнө үү.</string>
+    <string name="gesture_trainer_edge_bottom">доод ирмэг дээр</string>
+    <string name="gesture_trainer_edge_top_left">дээд ирмэгийн зүүн хагаст</string>
+    <string name="gesture_trainer_edge_top_right">дээд ирмэгийн баруун хагаст</string>
+    <string name="gesture_trainer_edge_left_top">зүүн ирмэгийн дээд хагаст</string>
+    <string name="gesture_trainer_edge_left_bottom">зүүн ирмэгийн доод хагаст</string>
+    <string name="gesture_trainer_edge_right_top">баруун ирмэгийн дээд хагаст</string>
+    <string name="gesture_trainer_edge_right_bottom">баруун ирмэгийн доод хагаст</string>
+    <string name="gesture_trainer_edge_left">зүүн ирмэг дээр</string>
+    <string name="gesture_trainer_edge_right">баруун ирмэг дээр</string>
+    <string name="gesture_trainer_edge_top">дээд ирмэг дээр</string>
+    <string name="gesture_trainer_how_edge">Нэг хуруугаа <xliff:g id="edge">%1$s</xliff:g>, ирмэгээс хамгийн ихдээ <xliff:g id="edge_width">%2$d</xliff:g> мм зайд тавьж, дэлгэц рүү <xliff:g id="direction">%3$s</xliff:g> эхний товшилтын дуу хүртэл, <xliff:g id="distance">%4$d</xliff:g> мм орчим шудрана уу. Дараа нь шууд өргөнө үү: хоёр дахь товшилтын дууг өнгөрвөл урт шудралт болно.</string>
+    <string name="gesture_trainer_how_edge_long">Нэг хуруугаа <xliff:g id="edge">%1$s</xliff:g>, ирмэгээс хамгийн ихдээ <xliff:g id="edge_width">%2$d</xliff:g> мм зайд тавьж, дэлгэц рүү <xliff:g id="direction">%3$s</xliff:g> эхний товшилтын дууг өнгөрч хоёр дахь хүртэл, <xliff:g id="distance">%4$d</xliff:g> мм орчим шудрана уу. Дараа нь өргөнө үү.</string>
+    <string name="gesture_trainer_how_along">Нэг хуруугаа <xliff:g id="edge">%1$s</xliff:g> дагуу <xliff:g id="direction">%2$s</xliff:g> хамгийн багадаа <xliff:g id="distance">%3$d</xliff:g> мм шудрана уу.</string>
+    <string name="gesture_trainer_corner_top_left">зүүн дээд</string>
+    <string name="gesture_trainer_corner_top_right">баруун дээд</string>
+    <string name="gesture_trainer_corner_bottom_left">зүүн доод</string>
+    <string name="gesture_trainer_corner_bottom_right">баруун доод</string>
+    <string name="gesture_trainer_how_corner">Дэлгэцийн <xliff:g id="corner">%2$s</xliff:g> буланд <xliff:g id="taps">%1$s</xliff:g> товшино уу. Хуруугаа яг буланд, хоёр ирмэгээс <xliff:g id="size">%3$d</xliff:g> мм-ээс ихгүй зайд тавьж, <xliff:g id="time">%4$d</xliff:g> ms дотор хурдан өргөнө үү.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> мм. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> мм.</string>
+    <string name="gesture_trainer_corner_warning">Булан томрох тусам булангийн ойролцоох удирдлага, жишээ нь зүүн дээд талын Буцах товчийг товшиход булангийн зангаа ажиллаж болно.</string>
+    <string name="gesture_trainer_rating_precise">танигдсан, нарийвчлалтай</string>
+    <string name="gesture_trainer_rating_good">танигдсан, сайн</string>
+    <string name="gesture_trainer_rating_borderline">танигдсан, гэхдээ хязгаарт ойр</string>
+    <string name="gesture_trainer_try_recognized">Оролдлого <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Оролдлого <xliff:g id="number">%1$d</xliff:g>: танигдсангүй.</string>
+    <string name="gesture_trainer_try_other">Оролдлого <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> гэж танигдсан.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g>-с <xliff:g id="recognized">%2$d</xliff:g> танигдсан</string>
+    <string name="gesture_trainer_results_tries">Таны оролдлогууд</string>
+    <string name="gesture_trainer_results_change">Юуг өөрчлөх</string>
+    <string name="gesture_trainer_results_close">Хязгаарт ойр</string>
+    <string name="gesture_trainer_results_all_good">Бүх оролдлого хязгаарын дотор танигдсан.</string>
+    <string name="gesture_trainer_results_settings">Тус болох тохиргоо</string>
+    <string name="gesture_trainer_next">Дараагийн дасгал</string>
+    <string name="gesture_trainer_repeat">Давтах</string>
+    <string name="gesture_trainer_finish">Дуусгах</string>
+    <string name="gesture_trainer_group_done">Та <xliff:g id="group">%1$s</xliff:g> бүлгийн бүх дасгалыг дуусгалаа.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g>-г өөрчлөх</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms үргэлжилсэн</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> см урт</string>
+    <string name="gesture_trainer_measure_speed">секундэд <xliff:g id="speed">%1$.0f</xliff:g> см</string>
+    <string name="gesture_trainer_measure_angle">шулуун шугамаас <xliff:g id="degrees">%1$.0f</xliff:g> градус хазайсан</string>
+    <string name="gesture_trainer_measure_start">эхний сантиметр <xliff:g id="ms">%1$d</xliff:g> ms-д</string>
+    <string name="gesture_trainer_measure_landing">хуруунууд <xliff:g id="ms">%1$d</xliff:g> ms зөрүүтэй хүрсэн</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms товшилт</string>
+    <string name="gesture_trainer_measure_gap">товшилтуудын хооронд <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">хуруунууд <xliff:g id="mm">%1$.0f</xliff:g> мм хөдөлсөн</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> градус эргэсэн</string>
+    <string name="gesture_trainer_measure_corner">булангийн ирмэгүүдээс <xliff:g id="mm">%1$.0f</xliff:g> мм</string>
+    <string name="gesture_trainer_measure_edge">ирмэгээс <xliff:g id="mm">%1$.0f</xliff:g> мм зайнаас эхэлсэн</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Дэлгэцэн дээрх хуруу: <xliff:g id="wanted">%2$d</xliff:g>-ын оронд <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Хуруунууд <xliff:g id="ms">%1$d</xliff:g> ms зөрүүтэй хүрсэн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Бүх хуруу хүрэхээс өмнө нэг хуруу өргөгдсөн.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Хуруунууд <xliff:g id="ms">%1$d</xliff:g> ms зөрүүтэй өргөгдсөн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_became_exploration">Хуруу хэт удаан хөдөлгөөнгүй байсан эсвэл эхэндээ хэт удаан хөдөлсөн тул хүрэлт мэдрэгчтэй хайгуул болсон.</string>
+    <string name="gesture_trainer_finding_slow_start">Эхний сантиметр <xliff:g id="ms">%1$d</xliff:g> ms үргэлжилсэн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_paused">Хуруу <xliff:g id="ms">%1$d</xliff:g> ms удааширсан, харин сантиметр бүр хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms үргэлжилж болно.</string>
+    <string name="gesture_trainer_finding_too_short">Хөдөлгөөн ердөө <xliff:g id="mm">%1$.0f</xliff:g> мм байсан, харин хамгийн багадаа <xliff:g id="limit">%2$.0f</xliff:g> мм байх ёстой.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Хуруу <xliff:g id="direction">%1$s</xliff:g> хөдөлж эхэлсэн.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Хуруунууд <xliff:g id="direction">%1$s</xliff:g> хөдөлж эхэлсэн.</string>
+    <string name="gesture_trainer_finding_off_line">Зам шулуун шугамаас <xliff:g id="degrees">%1$.0f</xliff:g> градус хазайсан, харин хамгийн ихдээ <xliff:g id="limit">%2$.0f</xliff:g> зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_curved">Зам <xliff:g id="wanted">%2$d</xliff:g>-ын оронд <xliff:g id="parts">%1$d</xliff:g> хэсэгт хуваагдсан.</string>
+    <string name="gesture_trainer_finding_turn_missing">Эргэлт олдсонгүй.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Эргэлтийн дараа хуруу <xliff:g id="direction">%1$s</xliff:g> явсан.</string>
+    <string name="gesture_trainer_finding_tap_moved">Товшилтын үеэр хуруу <xliff:g id="mm">%1$.1f</xliff:g> мм гулссан, харин хамгийн ихдээ <xliff:g id="limit">%2$.1f</xliff:g> мм зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Нэг товшилт <xliff:g id="ms">%1$d</xliff:g> ms үргэлжилсэн нь <xliff:g id="limit">%2$d</xliff:g> ms-ээс урт.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Сүүлийн товшилтыг <xliff:g id="ms">%1$d</xliff:g> ms барьсан, харин хамгийн багадаа <xliff:g id="limit">%2$d</xliff:g> ms байх ёстой.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g>-ын оронд <xliff:g id="taps">%1$d</xliff:g> товшилт.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g>-ын оронд <xliff:g id="taps">%1$d</xliff:g> товшилт.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Товшилтуудын хооронд <xliff:g id="ms">%1$d</xliff:g> ms өнгөрсөн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_taps_apart">Товшилтууд хоорондоо <xliff:g id="mm">%1$.0f</xliff:g> мм зайтай буусан, харин хамгийн ихдээ <xliff:g id="limit">%2$.0f</xliff:g> мм зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Хуруунууд ердөө <xliff:g id="mm">%1$.0f</xliff:g> мм хөдөлсөн, харин хамгийн багадаа <xliff:g id="limit">%2$.0f</xliff:g> мм хөдлөх ёстой.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Хуруунууд эсрэг чиглэлд хөдөлсөн.</string>
+    <string name="gesture_trainer_finding_moved_together">Бүх гар дэлгэцэн дээгүүр <xliff:g id="mm">%1$.0f</xliff:g> мм гулссан нь хуруунуудын бие бие рүүгээ ойртсон эсвэл холдсоноос их байна.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Хуруунууд ердөө <xliff:g id="degrees">%1$.0f</xliff:g> градус эргэсэн, харин хамгийн багадаа <xliff:g id="limit">%2$.0f</xliff:g> эргэх ёстой.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Хуруунууд эсрэг чиглэлд эргэсэн.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Эхний хөдөлгөөн <xliff:g id="mm">%1$.0f</xliff:g> мм байсан, харин хамгийн багадаа <xliff:g id="limit">%2$.0f</xliff:g> мм байх ёстой.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Буцах хөдөлгөөн <xliff:g id="mm">%1$.0f</xliff:g> мм байсан, харин хамгийн багадаа <xliff:g id="limit">%2$.0f</xliff:g> мм байх ёстой.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Нааш цааш шудралт <xliff:g id="ms">%1$d</xliff:g> ms үргэлжилсэн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Хуруу ирмэгээс <xliff:g id="mm">%1$.0f</xliff:g> мм зайд хүрсэн, харин ирмэгийн өргөн <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Хуруу ирмэгийн нөгөө хагаст эхэлсэн.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Хуруу <xliff:g id="mm">%1$.0f</xliff:g> мм шударсан, харин хамгийн багадаа <xliff:g id="limit">%2$.0f</xliff:g> мм шудрах ёстой.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Шудралт хэт урт: хуруу хоёр дахь товшилтын дууг өнгөрч <xliff:g id="mm">%1$.0f</xliff:g> мм явсан, харин хоёр дахь товшилт <xliff:g id="limit">%2$.0f</xliff:g> мм-т байна.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Товшилтын дуунд хүрэхэд <xliff:g id="ms">%1$d</xliff:g> ms зарцуулсан, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Шудралт хажуу тийш <xliff:g id="degrees">%1$.0f</xliff:g> градус хазайсан, харин хамгийн ихдээ <xliff:g id="limit">%2$.0f</xliff:g> зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_corner_missed">Товшилт булангийн ирмэгүүдээс <xliff:g id="mm">%1$.0f</xliff:g> мм зайд буусан, харин булан <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Булангийн товшилт <xliff:g id="ms">%1$d</xliff:g> ms үргэлжилсэн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_none">Зангаатай таарах хөдөлгөөн илэрсэнгүй.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Шилэнд хэдэн хуруу хүрч байгааг шалгана уу. Дэлгэцэн дээр тулсан алга эсвэл өөр хуруу ч тоологдоно.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Бүх хуруугаа нэг нэгээр нь биш, нэг гар шиг яг нэг агшинд тавина уу.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Эхлээд бүх хуруугаа тавиад, дараа нь хөдөлгөх эсвэл өргөнө үү.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Бүх хуруугаа яг нэг агшинд өргөнө үү.</string>
+    <string name="gesture_trainer_tip_slow_start">Дэлгэцэд хүрэх агшинд хөдөлж эхэлж, эхэндээ илүү хурдан хөдөлнө үү.</string>
+    <string name="gesture_trainer_tip_paused">Хуруугаа өргөх хүртлээ жигд хурдтай хөдөлгөнө үү. Төгсгөлд нь бүү удаашраарай.</string>
+    <string name="gesture_trainer_tip_too_short">Хөдөлгөөнийг 2–3 см орчим болгож уртасгана уу.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Хөдөлгөөний яг эхэнд чиглэлээ шалгана уу. Утсаа өмнөө шулуун барих нь тус болно.</string>
+    <string name="gesture_trainer_tip_off_line">Ташуу биш, зөвхөн чиглэлийн дагуу хөдөлнө үү. Долоовор хуруу эрхий хуруунаас илүү шулуун шугам барина.</string>
+    <string name="gesture_trainer_tip_curved">Шугамаа шулуун байлгаж, яг төгсгөлд нь өргөнө үү; өргөхдөө хуруугаа хажуу тийш бүү эргүүлээрэй.</string>
+    <string name="gesture_trainer_tip_turn_missing">Өргөлгүйгээр чиглэлээ огцом, тэгш өнцгөөр эсвэл шулуун буцаж өөрчилнө үү. Хэсэг бүр 2 см орчим байх ёстой.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Эргэлтийн дараа аль тийш явж байгаагаа шалгана уу: хоёр дахь хэсэг зангааны нэрлэсэн хоёр дахь чиглэлд явах ёстой.</string>
+    <string name="gesture_trainer_tip_tap_moved">Хурууны үзүүрээр шулуун доош, дээш, шудралгүйгээр товшино уу.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Товшилт бүрийг богино болгоно уу: хүрээд шууд өргөнө үү.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Сүүлийн товшилтод хуруунуудаа барих хугацааны турш дэлгэцэн дээр хөдөлгөөнгүй байлгана уу.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Товшилтуудаа тоолж, бүгдийг нэг дор хурдан хийнэ үү.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Товшилтуудаа тоолно уу. Шилнээс ойсон хуруу нэмэлт товшилт болно.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Илүү хурдан товшино уу: өргөсний дараа шууд дараагийн товшилтоо эхлүүлнэ үү.</string>
+    <string name="gesture_trainer_tip_taps_apart">Бүх удаа нэг цэгт товшино уу.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Хуруунуудаа илүү, хамгийн багадаа 1 см ойртуулах эсвэл холдуулна уу.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Чимхэх нь хуруунууд бие бие рүүгээ ойртох, дэлгэх нь хуруунууд холдох хөдөлгөөн юм.</string>
+    <string name="gesture_trainer_tip_moved_together">Зөвхөн хуруунуудаа бие бие рүү нь ойртуулах эсвэл холдуулна уу. Бүх гараа дэлгэцэн дээгүүр бүү гулсуулаарай.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Бариулыг дөрөвний нэг эргүүлэх мэт илүү эргүүлнэ үү.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Цагийн зүүний дагуу гэдэг нь цагийн зүү явдаг зүгт эргүүлэх юм: дээд хуруу баруун тийш хөдөлнө.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Эхний хөдөлгөөнийг хамгийн багадаа 1 см урт болгоно уу.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Эхний хөдөлгөөний дараа өргөхөөсөө өмнө эсрэг чиглэлд буцна уу.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Нааш цааш шудралтыг хурдан, нэг секунд орчимд очиж буцаж хийнэ үү.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Хурууны үзүүрийн нэг хэсэг дэлгэцээс гарсан байхаар яг ирмэгээс эхлэнэ үү.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Ирмэгийн аль хагаст эхэлж байгаагаа шалгана уу.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Товшилтын дуу сонсогдох хүртэл цааш шудраад, дараа нь өргөнө үү.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Эхний товшилтын дууны дараа, хоёр дахиас өмнө шууд өргөнө үү.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Товшилтын дуунаас өмнө зогсолгүйгээр дотогш илүү хурдан шудрана уу.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Ташуу биш, ирмэгээс шулуун дотогш эсвэл ирмэгийн дагуу шулуун шудрана уу.</string>
+    <string name="gesture_trainer_tip_corner_missed">Хуруугаа хоёр ирмэгт хүрэхээр яг буланд тавина уу.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Буланд хүрсний дараа илүү хурдан өргөнө үү.</string>
+    <string name="gesture_trainer_close_to_limit">Хязгаарт ойр: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Шудралт удаан эхэлж байна. <xliff:g id="setting">%1$s</xliff:g>-г уртасгавал илүү удаан эхлэхийг зөвшөөрнө.</string>
+    <string name="gesture_trainer_advice_tap_time">Товшилт удаан байна. <xliff:g id="setting">%1$s</xliff:g>-г уртасгавал илүү удаан товшилтыг зөвшөөрнө.</string>
+    <string name="gesture_trainer_advice_edge_width">Шудралт ирмэгээс хэт хол эхэлж байна. <xliff:g id="setting">%1$s</xliff:g>-г томруулбал ирмэгийн ойролцоо эхэлсэн шудралтыг мөн ирмэгийн шудралт болгоно.</string>
+    <string name="gesture_trainer_advice_corner_size">Товшилт булангаас гадна бууж байна. <xliff:g id="setting">%1$s</xliff:g>-г томруулбал булангууд томорно.</string>
+    <string name="gesture_trainer_advice_corner_time">Булангийн товшилт удаан байна. <xliff:g id="setting">%1$s</xliff:g>-г уртасгавал илүү удаан товшилтыг зөвшөөрнө.</string>
+    <string name="gesture_trainer_menu_option">Сонголт <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: <xliff:g id="number">%3$d</xliff:g>-р зүйл, <xliff:g id="item">%2$s</xliff:g>-г сонгох</string>
+    <string name="gesture_trainer_how_menu">Цэсийг нээхийн тулд нэг хуруугаа <xliff:g id="edge">%1$s</xliff:g> дээш эсвэл доош хамгийн багадаа <xliff:g id="distance">%2$d</xliff:g> мм шудрана уу. Цэс дээрээс доош <xliff:g id="count">%3$d</xliff:g> зүйлтэй, тус бүр <xliff:g id="size">%6$s</xliff:g> см орчим өндөртэй. <xliff:g id="number">%4$d</xliff:g>-р зүйл, <xliff:g id="item">%5$s</xliff:g>, дэлгэцийн дээд хэсгээс <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> см доор байна. Зүйлийг уншихад хуруугаа өргөнө үү.</string>
+    <string name="gesture_trainer_menu_sample">Энэ ирмэгт цэс байхгүй. Дасгал <xliff:g id="count">%1$d</xliff:g> жишээ зүйл ашиглана.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Оролдлого <xliff:g id="number">%1$d</xliff:g>: цэс сонголтгүй хаагдсан.</string>
+    <string name="gesture_trainer_try_menu_other">Оролдлого <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g>-г сонгосон.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g>-р зүйл дээр өргөсөн</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Хуруу ирмэгийн хамгийн дээд эсвэл доод хэсэгт, булангууд болон дээд, доод ирмэгүүд байрлах газарт эхэлсэн.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Хуруу ирмэгээс <xliff:g id="mm">%1$.0f</xliff:g> мм зайд өргөгдсөн, харин <xliff:g id="limit">%2$.0f</xliff:g> мм-ээс цааш цэс хаагдана.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Хуруу <xliff:g id="target">%2$d</xliff:g>-р зүйлийн оронд <xliff:g id="item">%1$d</xliff:g>-р зүйл дээр өргөгдсөн.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Ирмэгийн дээд, доод үзүүрээс бага зэрэг зайтай эхэлнэ үү.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Шудрах үедээ хуруугаа ирмэгт ойр байлгаж, тэнд өргөнө үү.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Зүйл бүр ирмэгийн дагуу тогтмол байрлалтай бөгөөд хуруу өргөгдсөн газрын зүйл сонгогдоно. Зүйлийг уншихад өргөнө үү.</string>
+    <string name="gesture_trainer_contents">Агуулга</string>
+    <string name="gesture_trainer_contents_heading">Агуулга: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">дууссан, <xliff:g id="tries">%2$d</xliff:g>-с <xliff:g id="hits">%1$d</xliff:g> танигдсан</string>
+    <string name="gesture_trainer_group_tap_swipe">Товшоод шудрах</string>
+    <string name="gesture_trainer_group_edge_swipes">Ирмэгээс шудрах</string>
+    <string name="gesture_trainer_group_along_edges">Ирмэгийн дагуу шудрах</string>
+    <string name="gesture_trainer_group_edge_menus">Ирмэгийн цэс</string>
+    <string name="gesture_trainer_group_corners">Булангууд</string>
+    <string name="gesture_trainer_group_back_tap">Ар талын товшилт</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">2 хуруугаар товшоод 2 хуруугаар шудрахыг оруулаагүй: <xliff:g id="setting">%1$s</xliff:g> унтраалттай байна.</string>
+    <string name="gesture_trainer_how_swipe_hold">Дараа нь өргөлгүйгээр хуруугаа хамгийн багадаа <xliff:g id="hold">%1$d</xliff:g> ms хөдөлгөөнгүй барьж, өргөнө үү.</string>
+    <string name="gesture_trainer_half_top">дээд</string>
+    <string name="gesture_trainer_half_bottom">доод</string>
+    <string name="gesture_trainer_how_taps_half">Дэлгэцийн <xliff:g id="half">%1$s</xliff:g> хагаст товшино уу. Хуруунуудын хоорондох цэг хагасыг тодорхойлно.</string>
+    <string name="gesture_trainer_same_fingers">ижил хуруунуудаар</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> товшино уу. Сүүлийн товшилтын дараа шууд, <xliff:g id="gap">%3$d</xliff:g> ms дотор, дэлгэцэд дахин <xliff:g id="swipe_fingers">%4$s</xliff:g> хүрч, <xliff:g id="direction">%5$s</xliff:g> шулуун шугамаар 2–3 см орчим шудраад, өргөнө үү.</string>
+    <string name="gesture_trainer_how_corner_hold">Сүүлийн товшилтод хуруугаа буланд хамгийн багадаа <xliff:g id="hold">%1$d</xliff:g> ms хөдөлгөөнгүй үлдээнэ үү.</string>
+    <string name="gesture_trainer_how_back_tap">Утсаа хажуу талаас нь гартаа барьж, ар талын голыг хурууны үзүүрээр хаалга тогших мэт хүчтэй, хурдан <xliff:g id="taps">%1$s</xliff:g> товшино уу. Товшилтуудыг ойрхон хийнэ үү: хооронд нь хамгийн ихдээ <xliff:g id="gap">%2$d</xliff:g> ms. Товших үедээ дэлгэцэд бүү хүрээрэй.</string>
+    <string name="gesture_trainer_back_tap_info">Дасгалын үеэр ар талын товшилт тушаал ажиллуулахгүй. <xliff:g id="setting">%1$s</xliff:g> нь товшилт хэр хүчтэй байх ёстойг тогтооно.</string>
+    <string name="gesture_trainer_go_placed">Зангааг <xliff:g id="tries">%1$d</xliff:g> удаа хийнэ үү.</string>
+    <string name="gesture_trainer_along_left">зүүн ирмэгийн</string>
+    <string name="gesture_trainer_along_right">баруун ирмэгийн</string>
+    <string name="gesture_trainer_along_top">дээд ирмэгийн</string>
+    <string name="gesture_trainer_along_bottom">доод ирмэгийн</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> дагуух шудралтыг оруулаагүй: энэ ирмэг цэстэй тул дагуу нь шудрахад зангаа ажиллахын оронд цэс нээгдэнэ.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> дагуух шудралтыг оруулаагүй: энэ ирмэг гүйлгэдэг тул дагуу нь шудрахад зангаа ажиллахын оронд апп гүйлгэгдэнэ.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Хуруу ирмэгээс хэт хол холдсон.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Хуруугаа шилний яг захад, ирмэгийн дагуу шулуун байлгана уу.</string>
+    <string name="gesture_trainer_go_back_tap">Ар талын товшилтын зангааг <xliff:g id="tries">%1$d</xliff:g> удаа хийнэ үү. Дэлгэцэд хүрвэл оролдлого бүтэлгүйтнэ.</string>
+    <string name="gesture_trainer_no_accelerometer">Энэ дасгалд хурдатгал мэдрэгч шаардлагатай. Боломжтой мэдрэгч алга.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms хөдөлгөөнгүй барьсан</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> хүчтэй товшилт</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Хуруу төгсгөлд <xliff:g id="ms">%1$d</xliff:g> ms хөдөлгөөнгүй байсан, харин хамгийн багадаа <xliff:g id="limit">%2$d</xliff:g> ms хөдөлгөөнгүй байх ёстой.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Хуруунууд дэлгэцийн нөгөө хагаст товшсон.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Товшилтын дараа шудралт хийгдээгүй.</string>
+    <string name="gesture_trainer_finding_swipe_late">Шудралт сүүлийн товшилтоос <xliff:g id="ms">%1$d</xliff:g> ms-ийн дараа эхэлсэн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Ар талын товшилт хэт сул: шаардлагатай хүчний <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Товшилт утсыг ар талаар нь биш, хажуу тийш нь илүү сэгсэрсэн.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Товшилтын өмнөхөн утас хөдөлж байсан.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Дэлгэцэд хүрсэн бөгөөд дэлгэцэд хүрч байх үеийн товшилт тоологдохгүй.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Ар талын товшилтуудын хооронд <xliff:g id="ms">%1$d</xliff:g> ms өнгөрсөн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Шударсны дараа хуруугаа барих хугацааны турш дэлгэцэн дээр хөдөлгөөнгүй байлгана уу. Дараа нь өргөнө үү.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Аль хагаст товшиж байгаагаа шалгана уу: дэлгэцийн гол дээд хагасыг доод хагасаас тусгаарлана.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Сүүлийн товшилтын дараа дэлгэцэд шууд дахин хүрч, шудрана уу.</string>
+    <string name="gesture_trainer_tip_swipe_late">Сүүлийн товшилтын дараа завсарлагагүйгээр шууд шударч эхэлнэ үү.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Ар талын голын ойролцоо хурууны үзүүр эсвэл хумсаараа илүү хүчтэй товшино уу.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Утасны ар тал руу шулуун товшино уу; ирмэг рүү нь эсвэл ташуу бүү товшоорой.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Товшихоосоо өмнө утсаа хэсэг хөдөлгөөнгүй барьж, гар тань хөдөлгөхгүйн тулд сул барина уу.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Ар талыг товших үедээ хуруугаа дэлгэцээс холдуулна уу: утсаа хажуу талаас нь барина уу.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Илүү хурдан, нэг товшилтын араас нөгөөг шууд товшино уу.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Шударсны дараа хуруу хэт эрт өргөгдөж байна. <xliff:g id="setting">%1$s</xliff:g>-г богиносговол илүү богино барилтыг зөвшөөрнө.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Ар талын товшилт сул байна. <xliff:g id="setting">%1$s</xliff:g>-г өндөрсгөвөл илүү сул товшилтыг илрүүлэх бөгөөд цохилтыг товшилт гэж илрүүлж болзошгүй.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Хуруунууд <xliff:g id="degrees">%1$.0f</xliff:g> градус эргэсэн, харин <xliff:g id="limit">%2$.0f</xliff:g> градусаас эхлэн хөдөлгөөн эргүүлэлт болно.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Хуруунуудаа бие биенийхээ эргэн тойронд нум хэлбэрээр биш, шулуун шугамаар ойртуулах эсвэл холдуулна уу.</string>
+    <string name="gesture_trainer_finding_other_gesture">Хөдөлгөөн оронд нь тэр зангаатай таарсан.</string>
+    <string name="gesture_trainer_side_left">зүүн</string>
+    <string name="gesture_trainer_side_right">баруун</string>
+    <string name="gesture_trainer_side_top">дээд</string>
+    <string name="gesture_trainer_side_bottom">доод</string>
+    <string name="gesture_trainer_finding_wrong_edge">Хуруу <xliff:g id="side">%1$s</xliff:g> ирмэгээс эхэлсэн, харин энэ дасгал <xliff:g id="expected">%2$s</xliff:g> ирмэг дээр байна.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Дасгалын нэрлэсэн ирмэг дээр яг эхэлнэ үү.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Энэ зангааны оронд ирмэгийн цэс нээгдсэн.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Цэстэй ирмэгийн дагуу шудрахад цэс нээгдэнэ. Дасгалын нэрлэсэн ирмэгээс эхэлнэ үү.</string>
+    <string name="gesture_trainer_group_three_part">Гурван хэсэгтэй шудралт</string>
+    <string name="gesture_trainer_group_two_stroke">Хоёр үетэй шудралт</string>
+    <string name="gesture_trainer_group_shake">Сэгсрэх</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Гурван хэсэгтэй шудралтыг оруулаагүй: <xliff:g id="setting">%1$s</xliff:g> асаалттай байна.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Хоёр үетэй шудралтыг оруулаагүй: <xliff:g id="setting">%1$s</xliff:g> нь <xliff:g id="value">%2$s</xliff:g> байна.</string>
+    <string name="gesture_trainer_shake_info">Дасгалын үеэр сэгсрэлт тушаал ажиллуулахгүй. <xliff:g id="setting">%1$s</xliff:g> нь сэгсрэлт хэр хүчтэй байх ёстойг тогтооно.</string>
+    <string name="gesture_trainer_go_shake">Утсаа <xliff:g id="tries">%1$d</xliff:g> удаа сэгсэрч, сэгсрэлт бүрийн дараа богино завсарлага авна уу.</string>
+    <string name="gesture_trainer_how_shake">Утсаа чанга барьж, усны дусал сэгсрэх мэт нааш цааш хурдан сэгсэрнэ үү: чиглэл бүрт хамгийн багадаа хоёр удаа, бүгдийг секундын гуравны хоёр орчимд. Дараа нь хөдөлгөөнгүй барина уу.</string>
+    <string name="gesture_trainer_how_two_stroke">Нэг хуруугаар <xliff:g id="first">%1$s</xliff:g> 2 см орчим шудраад, өргөнө үү. Дараа нь шууд, <xliff:g id="time">%3$d</xliff:g> ms дотор, нэг хуруугаар <xliff:g id="second">%2$s</xliff:g> 2 см орчим шудраад, өргөнө үү.</string>
+    <string name="gesture_trainer_how_three_part">Дэлгэцэд нэг хуруугаар хүрч, өргөлгүйгээр <xliff:g id="first">%1$s</xliff:g> шудраад, огцом эргэж <xliff:g id="second">%2$s</xliff:g> шудраад, дахин огцом эргэж <xliff:g id="third">%3$s</xliff:g> шударч, хэсэг бүрийг 2 см орчим хийгээд, өргөнө үү. Үүнийг муруй биш, хурц булантай нэг хурдан, жигд хөдөлгөөн болгоно уу.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Нэг хуруугаа дэлгэцийн дээд гуравны нэгт, нөгөөг нь доод гуравны нэгт тавина уу, жишээ нь эрхий хуруугаа доор, долоовор хуруугаа дээр.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Хуруунууд нэг нь дэлгэцийн дээд гуравны нэгт, нөгөө нь доод гуравны нэгт байгаагүй.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Хоёр дахь шудралт хийгдээгүй.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Хоёр дахь шудралт эхнийхээс <xliff:g id="ms">%1$d</xliff:g> ms-ийн дараа эхэлсэн, харин хамгийн ихдээ <xliff:g id="limit">%2$d</xliff:g> ms зөвшөөрөгдөнө.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Эхний шудралт <xliff:g id="direction">%1$s</xliff:g> явсан.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Хоёр дахь шудралт <xliff:g id="direction">%1$s</xliff:g> явсан.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Сэгсрэлт хэт сул байсан: шаардлагатай хүчний <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Нааш цааш хөдөлгөөн: шаардлагатай <xliff:g id="wanted">%2$d</xliff:g>-с <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Хуруунуудаа хол дэлгэж, нэгийг нь дээд ирмэгийн ойролцоо, нөгөөг нь доод ирмэгийн ойролцоо тавина уу.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Эхний шудралтын дараа хуруугаа өргөөд шууд дахин шудрана уу.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Хуруугаа өргөсний дараа шууд хоёр дахь шудралтаа эхлүүлнэ үү.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Илүү хүчтэй, хурдан сэгсэрнэ үү.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Илүү хурдан, чиглэл бүрт хамгийн багадаа хоёр удаа нааш цааш, дунд нь зогсолгүйгээр сэгсэрнэ үү.</string>
+    <string name="gesture_trainer_measure_shake_strength">хамгийн хүчтэй хөдөлгөөн <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Сэгсрэлт сул байна. <xliff:g id="setting">%1$s</xliff:g>-г өндөрсгөвөл илүү сул сэгсрэлтийг илрүүлэх бөгөөд утсаа авч явахыг сэгсрэлт гэж илрүүлж болзошгүй.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Хоёр дахь шудралт хожуу эхэлж байна. <xliff:g id="setting">%1$s</xliff:g>-г уртасгавал хоёр дахь шудралтыг илүү хожуу хийхийг зөвшөөрөх бөгөөд ганц шудралт ажиллахаасаа өмнө илүү удаан хүлээнэ.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> асаалттай байна.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> унтраалттай: 2 хуруугаар шудрахад апп гүйлгэгдэх бөгөөд нааш цааш шудралт ч ихэвчлэн гүйлгэнэ. Тохиргоо асаалттай үед 2 хуруугаар шудрахад гүйлгэхийн оронд SandFly-н тушаал ажиллана.</string>
+    <string name="gesture_trainer_measure_first_stroke">эхний шудралт <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">хоёр дахь шудралт <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">бүх зангаа <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">хооронд нь <xliff:g id="ms">%1$d</xliff:g> ms өргөсөн</string>
+</resources>

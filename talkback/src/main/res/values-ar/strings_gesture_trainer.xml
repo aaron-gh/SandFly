@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">مدرّب الإيماءات</string>
+    <string name="gesture_trainer_intro">اختر مجموعة إيماءات. يصف كل تمرين إيماءة. نفِّذ الإيماءة <xliff:g id="tries">%1$d</xliff:g> مرات، ويتم نطق نتيجة كل محاولة. بعد المحاولة الأخيرة، تعرض الشاشة قياسات كل محاولة وما يجب تغييره والإعدادات ذات الصلة.</string>
+    <string name="gesture_trainer_group_one_finger">إصبع واحد</string>
+    <string name="gesture_trainer_group_two_fingers">إصبعان</string>
+    <string name="gesture_trainer_group_three_fingers">ثلاثة أصابع</string>
+    <string name="gesture_trainer_group_four_fingers">أربعة أصابع</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">الضمّ والتدوير والفرك</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>، <xliff:g id="count">%2$d</xliff:g> تمارين</string>
+    <string name="gesture_trainer_close">إغلاق</string>
+    <string name="gesture_trainer_no_detection">يتطلّب مدرّب الإيماءات الإصدار Android 13 أو إصدارًا أحدث.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">تم استبعاد إيماءات الذهاب والإياب والإيماءات بزاوية: <xliff:g id="setting">%1$s</xliff:g> مفعّل.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">تم استبعاد التمريرات السريعة بإصبعين: <xliff:g id="setting">%1$s</xliff:g> غير مفعّل، لذا فهي تمرّر محتوى التطبيقات.</string>
+    <string name="gesture_trainer_exercise_heading">التمرين <xliff:g id="number">%1$d</xliff:g> من <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">بدء</string>
+    <string name="gesture_trainer_skip">تخطي هذا التمرين</string>
+    <string name="gesture_trainer_back_to_groups">الرجوع إلى المجموعات</string>
+    <string name="gesture_trainer_go">نفِّذ الإيماءة <xliff:g id="tries">%1$d</xliff:g> مرات، في أي مكان على الشاشة. كل لمسة هي محاولة.</string>
+    <string name="gesture_trainer_fingers_1">إصبع واحد</string>
+    <string name="gesture_trainer_fingers_2">إصبعين متجاورين، بينهما 1 سم تقريبًا</string>
+    <string name="gesture_trainer_fingers_3">ثلاثة أصابع متجاورة، متباعدة قليلًا</string>
+    <string name="gesture_trainer_fingers_4">أربعة أصابع متجاورة، متباعدة قليلًا</string>
+    <string name="gesture_trainer_direction_up">للأعلى</string>
+    <string name="gesture_trainer_direction_down">للأسفل</string>
+    <string name="gesture_trainer_direction_left">لليسار</string>
+    <string name="gesture_trainer_direction_right">لليمين</string>
+    <string name="gesture_trainer_how_swipe">المس الشاشة باستخدام <xliff:g id="fingers">%1$s</xliff:g>، ومن دون انتظار، مرِّر <xliff:g id="direction">%2$s</xliff:g> في خط مستقيم لمسافة 2 إلى 3 سم تقريبًا، ثم ارفع. ابدأ الحركة فورًا: الإصبع الذي يستقر أولًا يبدأ الاستكشاف باللمس.</string>
+    <string name="gesture_trainer_how_swipe_multi">ضع الأصابع معًا في اللحظة نفسها، وحرّكها كلها في الاتجاه نفسه. يجب أن يتحرك كل إصبع <xliff:g id="direction">%1$s</xliff:g> طوال الوقت، لذا حافظ على استقامة الخط.</string>
+    <string name="gesture_trainer_how_back_and_forth">المس الشاشة بإصبع واحد ومرِّر <xliff:g id="first">%1$s</xliff:g> لمسافة 2 سم تقريبًا، ثم من دون رفع الإصبع ارجع مباشرةً <xliff:g id="second">%2$s</xliff:g> لمسافة 2 سم تقريبًا، ثم ارفع. اجعلها حركة واحدة سريعة وسلسة.</string>
+    <string name="gesture_trainer_how_angle">المس الشاشة باستخدام <xliff:g id="fingers">%1$s</xliff:g> ومرِّر <xliff:g id="first">%2$s</xliff:g> لمسافة 2 سم تقريبًا، ثم من دون رفع الأصابع انعطف بحدّة ومرِّر <xliff:g id="second">%3$s</xliff:g> لمسافة 2 سم تقريبًا، ثم ارفع. اجعل الانعطاف زاوية حادة مثل الحرف L، وليس منحنى.</string>
+    <string name="gesture_trainer_taps_1">مرة واحدة</string>
+    <string name="gesture_trainer_taps_2">مرتين</string>
+    <string name="gesture_trainer_taps_3">ثلاث مرات</string>
+    <string name="gesture_trainer_taps_4">أربع مرات</string>
+    <string name="gesture_trainer_how_taps">انقر <xliff:g id="taps">%1$s</xliff:g> باستخدام <xliff:g id="fingers">%2$s</xliff:g>. ضع الأصابع معًا وارفعها معًا، بسرعة، من دون تمرير.</string>
+    <string name="gesture_trainer_how_taps_quick">اجعل النقرات سريعة وفي المكان نفسه: يجب أن تأتي النقرة التالية خلال <xliff:g id="gap">%1$d</xliff:g> ملي ثانية من النقرة السابقة.</string>
+    <string name="gesture_trainer_how_hold">ضع <xliff:g id="fingers">%1$s</xliff:g> على الشاشة معًا وأبقِها ثابتة، من دون تمرير، لمدة <xliff:g id="hold">%2$d</xliff:g> ملي ثانية على الأقل.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">إذا لم يتم تعيين أمر آخر، فإن هذه الإيماءة توقف SandFly. في المدرّب، لا تنفّذ أي شيء.</string>
+    <string name="gesture_trainer_how_taps_hold">انقر <xliff:g id="taps">%1$s</xliff:g> باستخدام <xliff:g id="fingers">%2$s</xliff:g>، وفي النقرة الأخيرة أبقِ الأصابع على الشاشة ثابتة لمدة <xliff:g id="hold">%3$d</xliff:g> ملي ثانية على الأقل.</string>
+    <string name="gesture_trainer_how_three_finger_hand">استخدم الإبهام والسبابة والإصبع الوسطى.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">ضع السبابة والإصبع الوسطى بجانب بعضهما، والإبهام والبنصر على بعد بضعة سنتيمترات على كل جانب. ثم اجمع أطراف الأصابع الأربعة في نقطة واحدة.</string>
+    <string name="gesture_trainer_how_pinch">ضع <xliff:g id="fingers">%1$d</xliff:g> أصابع على الشاشة متباعدة كثيرًا. ثم قرّبها من بعضها في خط مستقيم بمقدار 1 سم على الأقل، كأنك تلتقط شيئًا، وارفعها عن الشاشة. حرّك الأصابع فقط، وليس اليد كلها، وليس في قوس.</string>
+    <string name="gesture_trainer_how_spread">ضع <xliff:g id="fingers">%1$d</xliff:g> أصابع على الشاشة متقاربة. ثم باعِد بينها في خط مستقيم بمقدار 1 سم على الأقل وارفعها عن الشاشة. حرّك الأصابع فقط، وليس اليد كلها، وليس في قوس.</string>
+    <string name="gesture_trainer_clockwise">في اتجاه عقارب الساعة</string>
+    <string name="gesture_trainer_counterclockwise">عكس اتجاه عقارب الساعة</string>
+    <string name="gesture_trainer_how_rotate">ضع إصبعين على الشاشة، بينهما 2 إلى 3 سم تقريبًا، وأدِرهما <xliff:g id="way">%1$s</xliff:g> حول منتصفهما، كأنك تدير قرصًا، بمقدار ربع دورة تقريبًا. ثم ارفع.</string>
+    <string name="gesture_trainer_how_scrub">ضع إصبعين على الشاشة وحرّكهما بسرعة إلى أحد الجانبين لمسافة 2 سم تقريبًا ثم أعِدهما، كأنك تمسح شيئًا، كل ذلك خلال ثانية تقريبًا. ثم ارفع.</string>
+    <string name="gesture_trainer_edge_bottom">عند الحافة السفلية</string>
+    <string name="gesture_trainer_edge_top_left">عند الحافة العلوية، في نصفها الأيسر</string>
+    <string name="gesture_trainer_edge_top_right">عند الحافة العلوية، في نصفها الأيمن</string>
+    <string name="gesture_trainer_edge_left_top">عند الحافة اليسرى، في نصفها العلوي</string>
+    <string name="gesture_trainer_edge_left_bottom">عند الحافة اليسرى، في نصفها السفلي</string>
+    <string name="gesture_trainer_edge_right_top">عند الحافة اليمنى، في نصفها العلوي</string>
+    <string name="gesture_trainer_edge_right_bottom">عند الحافة اليمنى، في نصفها السفلي</string>
+    <string name="gesture_trainer_edge_left">عند الحافة اليسرى</string>
+    <string name="gesture_trainer_edge_right">عند الحافة اليمنى</string>
+    <string name="gesture_trainer_edge_top">عند الحافة العلوية</string>
+    <string name="gesture_trainer_how_edge">ضع إصبعًا واحدًا <xliff:g id="edge">%1$s</xliff:g>، على بعد <xliff:g id="edge_width">%2$d</xliff:g> مم من الحافة على الأكثر، ومرِّر <xliff:g id="direction">%3$s</xliff:g> نحو داخل الشاشة حتى النقرة الأولى، لمسافة <xliff:g id="distance">%4$d</xliff:g> مم تقريبًا. ثم ارفع فورًا: بعد النقرة الثانية، يصبح التمرير تمريرًا طويلًا.</string>
+    <string name="gesture_trainer_how_edge_long">ضع إصبعًا واحدًا <xliff:g id="edge">%1$s</xliff:g>، على بعد <xliff:g id="edge_width">%2$d</xliff:g> مم من الحافة على الأكثر، ومرِّر <xliff:g id="direction">%3$s</xliff:g> نحو داخل الشاشة متجاوزًا النقرة الأولى حتى الثانية، لمسافة <xliff:g id="distance">%4$d</xliff:g> مم تقريبًا. ثم ارفع.</string>
+    <string name="gesture_trainer_how_along">مرِّر إصبعًا واحدًا <xliff:g id="direction">%2$s</xliff:g> على طول <xliff:g id="edge">%1$s</xliff:g>، لمسافة <xliff:g id="distance">%3$d</xliff:g> مم على الأقل.</string>
+    <string name="gesture_trainer_corner_top_left">العلوية اليسرى</string>
+    <string name="gesture_trainer_corner_top_right">العلوية اليمنى</string>
+    <string name="gesture_trainer_corner_bottom_left">السفلية اليسرى</string>
+    <string name="gesture_trainer_corner_bottom_right">السفلية اليمنى</string>
+    <string name="gesture_trainer_how_corner">انقر <xliff:g id="taps">%1$s</xliff:g> في الزاوية <xliff:g id="corner">%2$s</xliff:g> من الشاشة. ضع الإصبع في الزاوية تمامًا، على بعد <xliff:g id="size">%3$d</xliff:g> مم على الأكثر من الحافتين، وارفعه بسرعة، خلال <xliff:g id="time">%4$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> مم. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> مم.</string>
+    <string name="gesture_trainer_corner_warning">مع الزوايا الأكبر، قد يؤدي النقر على عنصر تحكّم قريب من زاوية، مثل زر الرجوع في أعلى اليسار، إلى تنفيذ إيماءة الزاوية بدلًا منه.</string>
+    <string name="gesture_trainer_rating_precise">تم التعرّف عليها، بدقة</string>
+    <string name="gesture_trainer_rating_good">تم التعرّف عليها، جيدة</string>
+    <string name="gesture_trainer_rating_borderline">تم التعرّف عليها، لكنها قريبة من أحد الحدود</string>
+    <string name="gesture_trainer_try_recognized">المحاولة <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">المحاولة <xliff:g id="number">%1$d</xliff:g>: لم يتم التعرّف عليها.</string>
+    <string name="gesture_trainer_try_other">المحاولة <xliff:g id="number">%1$d</xliff:g>: تم التعرّف عليها على أنها <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: تم التعرّف على <xliff:g id="recognized">%2$d</xliff:g> من <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">محاولاتك</string>
+    <string name="gesture_trainer_results_change">ما يجب تغييره</string>
+    <string name="gesture_trainer_results_close">قريبة من أحد الحدود</string>
+    <string name="gesture_trainer_results_all_good">تم التعرّف على كل المحاولات ضمن الحدود.</string>
+    <string name="gesture_trainer_results_settings">إعدادات قد تساعد</string>
+    <string name="gesture_trainer_next">التمرين التالي</string>
+    <string name="gesture_trainer_repeat">إعادة</string>
+    <string name="gesture_trainer_finish">إنهاء</string>
+    <string name="gesture_trainer_group_done">أنهيت كل التمارين في <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">تغيير <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">استغرقت <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_length">بطول <xliff:g id="cm">%1$.1f</xliff:g> سم</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> سم في الثانية</string>
+    <string name="gesture_trainer_measure_angle">انحراف <xliff:g id="degrees">%1$.0f</xliff:g> درجة عن الخط المستقيم</string>
+    <string name="gesture_trainer_measure_start">أول سنتيمتر في <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_landing">لامست الأصابع الشاشة بفارق <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_tap">نقرة مدتها <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ملي ثانية بين النقرات</string>
+    <string name="gesture_trainer_measure_spread">تحرّكت الأصابع <xliff:g id="mm">%1$.0f</xliff:g> مم</string>
+    <string name="gesture_trainer_measure_rotation">دوران <xliff:g id="degrees">%1$.0f</xliff:g> درجة</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> مم من حافتي الزاوية</string>
+    <string name="gesture_trainer_measure_edge">بدأت على بعد <xliff:g id="mm">%1$.0f</xliff:g> مم من الحافة</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">عدد الأصابع على الشاشة: <xliff:g id="fingers">%1$d</xliff:g> بدلًا من <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">لامست الأصابع الشاشة بفارق <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">تم رفع إصبع قبل أن تلامس كل الأصابع الشاشة.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">تم رفع الأصابع بفارق <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_became_exploration">بقي الإصبع ثابتًا لفترة طويلة جدًا أو تحرّك ببطء شديد في البداية، لذا أصبحت اللمسة استكشافًا باللمس.</string>
+    <string name="gesture_trainer_finding_slow_start">استغرق أول سنتيمتر <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_paused">تباطأ الإصبع لمدة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، ويمكن أن يستغرق كل سنتيمتر <xliff:g id="limit">%2$d</xliff:g> ملي ثانية على الأكثر.</string>
+    <string name="gesture_trainer_finding_too_short">كانت الحركة <xliff:g id="mm">%1$.0f</xliff:g> مم فقط، ويجب أن تكون <xliff:g id="limit">%2$.0f</xliff:g> مم على الأقل.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">بدأ الإصبع بالتحرك <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">بدأت الأصابع بالتحرك <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">انحرف المسار <xliff:g id="degrees">%1$.0f</xliff:g> درجة عن الخط المستقيم، والحد الأقصى المسموح به <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">انحنى المسار إلى <xliff:g id="parts">%1$d</xliff:g> أجزاء بدلًا من <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">لم يتم العثور على الانعطاف.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">بعد الانعطاف، اتجه الإصبع <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">انزلق الإصبع <xliff:g id="mm">%1$.1f</xliff:g> مم أثناء نقرة، والحد الأقصى المسموح به <xliff:g id="limit">%2$.1f</xliff:g> مم.</string>
+    <string name="gesture_trainer_finding_tap_held_long">استمرت نقرة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، أي أطول من <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_hold_too_short">استمر الضغط في النقرة الأخيرة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، ويجب أن يكون <xliff:g id="limit">%2$d</xliff:g> ملي ثانية على الأقل.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> نقرات بدلًا من <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> نقرات بدلًا من <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">مرّت <xliff:g id="ms">%1$d</xliff:g> ملي ثانية بين النقرات، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_taps_apart">كانت المسافة بين النقرات <xliff:g id="mm">%1$.0f</xliff:g> مم، والحد الأقصى المسموح به <xliff:g id="limit">%2$.0f</xliff:g> مم.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">تحرّكت الأصابع <xliff:g id="mm">%1$.0f</xliff:g> مم فقط، ويجب أن تتحرك <xliff:g id="limit">%2$.0f</xliff:g> مم على الأقل.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">تحرّكت الأصابع في الاتجاه المعاكس.</string>
+    <string name="gesture_trainer_finding_moved_together">انزلقت اليد كلها <xliff:g id="mm">%1$.0f</xliff:g> مم على الشاشة، أكثر مما تحرّكت الأصابع نحو بعضها أو بعيدًا عن بعضها.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">دارت الأصابع <xliff:g id="degrees">%1$.0f</xliff:g> درجة فقط، ويجب أن تدور <xliff:g id="limit">%2$.0f</xliff:g> درجة على الأقل.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">دارت الأصابع في الاتجاه المعاكس.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">كانت الحركة الأولى <xliff:g id="mm">%1$.0f</xliff:g> مم، ويجب أن تكون <xliff:g id="limit">%2$.0f</xliff:g> مم على الأقل.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">كانت حركة الرجوع <xliff:g id="mm">%1$.0f</xliff:g> مم، ويجب أن تكون <xliff:g id="limit">%2$.0f</xliff:g> مم على الأقل.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">استغرق الفرك <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">لامس الإصبع الشاشة على بعد <xliff:g id="mm">%1$.0f</xliff:g> مم من الحافة، وعرض الحافة <xliff:g id="limit">%2$.0f</xliff:g> مم.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">بدأ الإصبع في النصف الآخر من الحافة.</string>
+    <string name="gesture_trainer_finding_edge_too_short">انزلق الإصبع <xliff:g id="mm">%1$.0f</xliff:g> مم، ويجب أن ينزلق <xliff:g id="limit">%2$.0f</xliff:g> مم على الأقل.</string>
+    <string name="gesture_trainer_finding_edge_too_long">التمرير طويل جدًا: تجاوز الإصبع النقرة الثانية، <xliff:g id="mm">%1$.0f</xliff:g> مم، والنقرة الثانية عند <xliff:g id="limit">%2$.0f</xliff:g> مم.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">استغرق الوصول إلى النقرة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_edge_sideways">انحرف التمرير <xliff:g id="degrees">%1$.0f</xliff:g> درجة إلى الجانب، والحد الأقصى المسموح به <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">لامست النقرة الشاشة على بعد <xliff:g id="mm">%1$.0f</xliff:g> مم من حافتي الزاوية، وحجم الزاوية <xliff:g id="limit">%2$.0f</xliff:g> مم.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">استمرت نقرة الزاوية <xliff:g id="ms">%1$d</xliff:g> ملي ثانية، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_none">لم يتم رصد حركة تطابق الإيماءة.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">تحقّق من عدد الأصابع التي تلمس الشاشة. تُحتسب أيضًا راحة اليد أو أي إصبع آخر يستقر على الشاشة.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">ضع كل الأصابع في اللحظة نفسها، كيدٍ واحدة، وليس واحدًا تلو الآخر.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">ضع كل الأصابع أولًا، ثم حرّكها أو ارفعها.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">ارفع كل الأصابع في اللحظة نفسها.</string>
+    <string name="gesture_trainer_tip_slow_start">ابدأ الحركة لحظة لمس الشاشة، وتحرّك أسرع في البداية.</string>
+    <string name="gesture_trainer_tip_paused">حرّك الإصبع بسرعة ثابتة حتى ترفعه. لا تبطئ قرب النهاية.</string>
+    <string name="gesture_trainer_tip_too_short">اجعل الحركة أطول، 2 إلى 3 سم تقريبًا.</string>
+    <string name="gesture_trainer_tip_wrong_direction">تحقّق من الاتجاه في بداية الحركة تمامًا. يساعد إمساك الهاتف بشكل مستقيم أمامك.</string>
+    <string name="gesture_trainer_tip_off_line">تحرّك في الاتجاه فقط، وليس بشكل مائل. تحافظ السبابة على خط أكثر استقامة من الإبهام.</string>
+    <string name="gesture_trainer_tip_curved">حافظ على استقامة الخط وارفع الإصبع في النهاية مباشرةً، من دون أن تثنيه إلى الجانب أثناء الرفع.</string>
+    <string name="gesture_trainer_tip_turn_missing">غيّر الاتجاه بحدّة، بزاوية قائمة أو بالرجوع مباشرةً، من دون رفع الإصبع. يجب أن يكون كل جزء 2 سم تقريبًا.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">بعد الانعطاف، تحقّق من اتجاه حركتك: يجب أن يتجه الجزء الثاني في الاتجاه الآخر الذي تذكره الإيماءة.</string>
+    <string name="gesture_trainer_tip_tap_moved">انقر للأسفل وللأعلى مباشرةً، بطرف الإصبع، من دون تمرير.</string>
+    <string name="gesture_trainer_tip_tap_held_long">اجعل كل نقرة قصيرة: المس وارفع فورًا.</string>
+    <string name="gesture_trainer_tip_hold_too_short">في النقرة الأخيرة، أبقِ الأصابع ثابتة على الشاشة طوال مدة الضغط.</string>
+    <string name="gesture_trainer_tip_too_few_taps">عُدّ النقرات، ونفّذها كلها بسرعة دفعة واحدة.</string>
+    <string name="gesture_trainer_tip_too_many_taps">عُدّ النقرات. الإصبع الذي يرتدّ عن الشاشة يُحدث نقرة إضافية.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">انقر أسرع: ابدأ النقرة التالية فور الرفع.</string>
+    <string name="gesture_trainer_tip_taps_apart">انقر في المكان نفسه في كل مرة.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">حرّك الأصابع مسافة أكبر، 1 سم على الأقل تقريبًا أو تبعيدًا.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">الضمّ هو تحريك الأصابع نحو بعضها، والمباعدة هي تحريك الأصابع بعيدًا عن بعضها.</string>
+    <string name="gesture_trainer_tip_moved_together">حرّك الأصابع فقط نحو بعضها أو بعيدًا عن بعضها. لا تمرّر اليد كلها على الشاشة.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">أدِر أكثر، كأنك تدير قرصًا ربع دورة.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">اتجاه عقارب الساعة يعني الدوران في اتجاه حركة عقارب الساعة: يتحرك الإصبع العلوي إلى اليمين.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">اجعل الحركة الأولى بطول 1 سم على الأقل.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">بعد الحركة الأولى، ارجع في الاتجاه الآخر قبل الرفع.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">اجعل الفرك سريعًا، ذهابًا وإيابًا في ثانية تقريبًا.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">ابدأ عند الحافة تمامًا، مع خروج جزء من طرف الإصبع عن الشاشة.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">تحقّق من النصف الذي تبدأ فيه من الحافة.</string>
+    <string name="gesture_trainer_tip_edge_too_short">مرِّر أكثر حتى تسمع النقرة، ثم ارفع.</string>
+    <string name="gesture_trainer_tip_edge_too_long">ارفع فور النقرة الأولى، قبل الثانية.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">مرِّر نحو الداخل أسرع، من دون توقف قبل النقرة.</string>
+    <string name="gesture_trainer_tip_edge_sideways">مرِّر مباشرةً من الحافة نحو الداخل، أو مباشرةً على طولها، وليس بشكل مائل.</string>
+    <string name="gesture_trainer_tip_corner_missed">ضع الإصبع داخل الزاوية تمامًا، بحيث يلمس الحافتين.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">ارفع الإصبع أسرع بعد لمس الزاوية.</string>
+    <string name="gesture_trainer_close_to_limit">قريب من الحد: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">تبدأ التمريرات ببطء. تسمح قيمة أطول لـ«<xliff:g id="setting">%1$s</xliff:g>» ببداية أبطأ.</string>
+    <string name="gesture_trainer_advice_tap_time">النقرات بطيئة. تسمح قيمة أطول لـ«<xliff:g id="setting">%1$s</xliff:g>» بنقرات أبطأ.</string>
+    <string name="gesture_trainer_advice_edge_width">تبدأ التمريرات بعيدًا جدًا عن الحافة. تؤدي قيمة أكبر لـ«<xliff:g id="setting">%1$s</xliff:g>» أيضًا إلى تحويل التمريرات التي تبدأ قرب الحافة إلى تمريرات من الحافة.</string>
+    <string name="gesture_trainer_advice_corner_size">تقع النقرات خارج الزاوية. تؤدي قيمة أكبر لـ«<xliff:g id="setting">%1$s</xliff:g>» إلى تكبير الزوايا.</string>
+    <string name="gesture_trainer_advice_corner_time">نقرات الزاوية بطيئة. تسمح قيمة أطول لـ«<xliff:g id="setting">%1$s</xliff:g>» بنقرات أبطأ.</string>
+    <string name="gesture_trainer_menu_option">الخيار <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: اختيار العنصر <xliff:g id="number">%3$d</xliff:g>، <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">مرِّر إصبعًا واحدًا للأعلى أو للأسفل <xliff:g id="edge">%1$s</xliff:g> لمسافة <xliff:g id="distance">%2$d</xliff:g> مم على الأقل لفتح القائمة. تحتوي القائمة على <xliff:g id="count">%3$d</xliff:g> عناصر من الأعلى إلى الأسفل، ارتفاع كل منها <xliff:g id="size">%6$s</xliff:g> سم تقريبًا. يقع العنصر <xliff:g id="number">%4$d</xliff:g>، <xliff:g id="item">%5$s</xliff:g>، على بعد <xliff:g id="from">%7$s</xliff:g> إلى <xliff:g id="to">%8$s</xliff:g> سم أسفل أعلى الشاشة. ارفع الإصبع عند نطق العنصر.</string>
+    <string name="gesture_trainer_menu_sample">لا تحتوي هذه الحافة على قائمة. يستخدم التمرين <xliff:g id="count">%1$d</xliff:g> عناصر نموذجية.</string>
+    <string name="gesture_trainer_try_menu_cancelled">المحاولة <xliff:g id="number">%1$d</xliff:g>: أُغلقت القائمة من دون اختيار.</string>
+    <string name="gesture_trainer_try_menu_other">المحاولة <xliff:g id="number">%1$d</xliff:g>: تم اختيار <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">تم الرفع عند العنصر <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">بدأ الإصبع عند أعلى الحافة أو أسفلها تمامًا، حيث توجد الزوايا والحافتان العلوية والسفلية.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">رُفع الإصبع على بعد <xliff:g id="mm">%1$.0f</xliff:g> مم من الحافة، وتُغلق القائمة بعد <xliff:g id="limit">%2$.0f</xliff:g> مم.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">رُفع الإصبع عند العنصر <xliff:g id="item">%1$d</xliff:g> بدلًا من العنصر <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">ابدأ بعيدًا قليلًا عن الطرفين العلوي والسفلي للحافة.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">أبقِ الإصبع قريبًا من الحافة أثناء التمرير، وارفعه هناك.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">لكل عنصر مكان ثابت على طول الحافة، ويتم اختيار العنصر الذي يُرفع الإصبع عنده. ارفع الإصبع عند نطق العنصر.</string>
+    <string name="gesture_trainer_contents">المحتويات</string>
+    <string name="gesture_trainer_contents_heading">المحتويات: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">مكتمل، تم التعرّف على <xliff:g id="hits">%1$d</xliff:g> من <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">النقر والتمرير</string>
+    <string name="gesture_trainer_group_edge_swipes">التمريرات من الحواف</string>
+    <string name="gesture_trainer_group_along_edges">التمرير على طول الحواف</string>
+    <string name="gesture_trainer_group_edge_menus">قوائم الحواف</string>
+    <string name="gesture_trainer_group_corners">الزوايا</string>
+    <string name="gesture_trainer_group_back_tap">النقر على ظهر الجهاز</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">تم استبعاد النقرات بإصبعين التي يتبعها تمرير سريع بإصبعين: <xliff:g id="setting">%1$s</xliff:g> غير مفعّل.</string>
+    <string name="gesture_trainer_how_swipe_hold">ثم، من دون رفع الإصبع، أبقِه ثابتًا لمدة <xliff:g id="hold">%1$d</xliff:g> ملي ثانية على الأقل، ثم ارفع.</string>
+    <string name="gesture_trainer_half_top">العلوي</string>
+    <string name="gesture_trainer_half_bottom">السفلي</string>
+    <string name="gesture_trainer_how_taps_half">انقر في النصف <xliff:g id="half">%1$s</xliff:g> من الشاشة. تحدّد النقطة الواقعة بين الأصابع النصف.</string>
+    <string name="gesture_trainer_same_fingers">الأصابع نفسها</string>
+    <string name="gesture_trainer_how_tap_swipe">انقر <xliff:g id="taps">%1$s</xliff:g> باستخدام <xliff:g id="fingers">%2$s</xliff:g>. مباشرةً بعد النقرة الأخيرة، خلال <xliff:g id="gap">%3$d</xliff:g> ملي ثانية، المس الشاشة مجددًا باستخدام <xliff:g id="swipe_fingers">%4$s</xliff:g> ومرِّر <xliff:g id="direction">%5$s</xliff:g> في خط مستقيم لمسافة 2 إلى 3 سم تقريبًا، ثم ارفع.</string>
+    <string name="gesture_trainer_how_corner_hold">في النقرة الأخيرة، أبقِ الإصبع في الزاوية ثابتًا لمدة <xliff:g id="hold">%1$d</xliff:g> ملي ثانية على الأقل.</string>
+    <string name="gesture_trainer_how_back_tap">أمسك الهاتف بيدك من جانبيه، وانقر على منتصف ظهره <xliff:g id="taps">%1$s</xliff:g> بطرف إصبعك، بقوة وبسرعة، كأنك تطرق بابًا. اجعل النقرات متقاربة: <xliff:g id="gap">%2$d</xliff:g> ملي ثانية على الأكثر بينها. لا تلمس الشاشة أثناء النقر.</string>
+    <string name="gesture_trainer_back_tap_info">لا تنفّذ النقرات على ظهر الجهاز أي أوامر أثناء التمرين. يحدّد «<xliff:g id="setting">%1$s</xliff:g>» مدى قوة النقرة المطلوبة.</string>
+    <string name="gesture_trainer_go_placed">نفِّذ الإيماءة <xliff:g id="tries">%1$d</xliff:g> مرات.</string>
+    <string name="gesture_trainer_along_left">الحافة اليسرى</string>
+    <string name="gesture_trainer_along_right">الحافة اليمنى</string>
+    <string name="gesture_trainer_along_top">الحافة العلوية</string>
+    <string name="gesture_trainer_along_bottom">الحافة السفلية</string>
+    <string name="gesture_trainer_left_out_along_menu">تم استبعاد التمرير على طول <xliff:g id="edge">%1$s</xliff:g>: لها قائمة حافة، لذا يفتح التمرير على طولها القائمة بدلًا من تنفيذ إيماءة.</string>
+    <string name="gesture_trainer_left_out_along_scroll">تم استبعاد التمرير على طول <xliff:g id="edge">%1$s</xliff:g>: فهي تمرّر المحتوى، لذا يمرّر التمرير على طولها محتوى التطبيق بدلًا من تنفيذ إيماءة.</string>
+    <string name="gesture_trainer_finding_along_off_edge">ابتعد الإصبع كثيرًا عن الحافة.</string>
+    <string name="gesture_trainer_tip_along_off_edge">أبقِ الإصبع على حافة الشاشة تمامًا، مباشرةً على طول الحافة.</string>
+    <string name="gesture_trainer_go_back_tap">نفِّذ إيماءة النقر على ظهر الجهاز <xliff:g id="tries">%1$d</xliff:g> مرات. تفشل المحاولة عند لمس الشاشة.</string>
+    <string name="gesture_trainer_no_accelerometer">يتطلّب هذا التمرين مقياس تسارع. لا يتوفّر أي مقياس تسارع.</string>
+    <string name="gesture_trainer_measure_hold">ثبات لمدة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_back_tap_strength">نقرة بقوة <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">بقي الإصبع ثابتًا لمدة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية في النهاية، ويجب أن يبقى ثابتًا <xliff:g id="limit">%2$d</xliff:g> ملي ثانية على الأقل.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">نقرت الأصابع في النصف الآخر من الشاشة.</string>
+    <string name="gesture_trainer_finding_swipe_missing">لم يأتِ أي تمرير بعد النقرات.</string>
+    <string name="gesture_trainer_finding_swipe_late">بدأ التمرير بعد <xliff:g id="ms">%1$d</xliff:g> ملي ثانية من النقرة الأخيرة، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">النقر على ظهر الجهاز خفيف جدًا: <xliff:g id="percent">%1$d</xliff:g>%% من القوة المطلوبة.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">هزّت النقرة الهاتف جانبيًا أكثر مما هزّته عبر ظهره.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">كان الهاتف يتحرك قبل النقرة مباشرةً.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">تم لمس الشاشة، ولا تُحتسب النقرات أثناء لمسها.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">مرّت <xliff:g id="ms">%1$d</xliff:g> ملي ثانية بين النقرات على ظهر الجهاز، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">بعد التمرير، أبقِ الإصبع ثابتًا على الشاشة طوال مدة الضغط. ثم ارفع.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">تحقّق من النصف الذي تنقر فيه: منتصف الشاشة يفصل النصف العلوي عن النصف السفلي.</string>
+    <string name="gesture_trainer_tip_swipe_missing">بعد النقرة الأخيرة، المس الشاشة مجددًا فورًا ومرِّر.</string>
+    <string name="gesture_trainer_tip_swipe_late">ابدأ التمرير فور النقرة الأخيرة، من دون توقف.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">انقر بقوة أكبر، بطرف الإصبع أو بالظفر، قرب منتصف ظهر الجهاز.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">انقر مباشرةً على ظهر الهاتف، وليس على حافته أو بزاوية.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">أبقِ الهاتف ثابتًا لحظة قبل النقر، وأمسكه برفق حتى لا تحرّكه يدك.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">أبعِد أصابعك عن الشاشة أثناء النقر على ظهر الجهاز: أمسك الهاتف من جانبيه.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">انقر أسرع، نقرة تلو الأخرى مباشرةً.</string>
+    <string name="gesture_trainer_advice_swipe_hold">يُرفع الإصبع بسرعة كبيرة بعد التمرير. تسمح قيمة أقصر لـ«<xliff:g id="setting">%1$s</xliff:g>» بضغط أقصر.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">النقرات على ظهر الجهاز خفيفة. ترصد قيمة أعلى لـ«<xliff:g id="setting">%1$s</xliff:g>» النقرات الأخف، وقد ترصد الصدمات كنقرات.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">دارت الأصابع <xliff:g id="degrees">%1$.0f</xliff:g> درجة، وبدءًا من <xliff:g id="limit">%2$.0f</xliff:g> درجة تُعدّ الحركة تدويرًا.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">حرّك الأصابع في خط مستقيم نحو بعضها أو بعيدًا عن بعضها، وليس في قوس حول بعضها.</string>
+    <string name="gesture_trainer_finding_other_gesture">طابقت الحركة تلك الإيماءة بدلًا من ذلك.</string>
+    <string name="gesture_trainer_side_left">اليسرى</string>
+    <string name="gesture_trainer_side_right">اليمنى</string>
+    <string name="gesture_trainer_side_top">العلوية</string>
+    <string name="gesture_trainer_side_bottom">السفلية</string>
+    <string name="gesture_trainer_finding_wrong_edge">بدأ الإصبع عند الحافة <xliff:g id="side">%1$s</xliff:g>، وهذا التمرين عند الحافة <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">ابدأ عند الحافة التي يذكرها التمرين تمامًا.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">فُتحت قائمة حافة بدلًا من هذه الإيماءة.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">يؤدي التمرير على طول حافة لها قائمة إلى فتح القائمة. ابدأ عند الحافة التي يذكرها التمرين.</string>
+    <string name="gesture_trainer_group_three_part">تمريرات من ثلاثة أجزاء</string>
+    <string name="gesture_trainer_group_two_stroke">تمريرات من حركتين</string>
+    <string name="gesture_trainer_group_shake">الهز</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">تم استبعاد التمريرات من ثلاثة أجزاء: <xliff:g id="setting">%1$s</xliff:g> مفعّل.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">تم استبعاد التمريرات من حركتين: <xliff:g id="setting">%1$s</xliff:g> هو <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">لا ينفّذ الهز أي أمر أثناء التمرين. يحدّد «<xliff:g id="setting">%1$s</xliff:g>» مدى قوة الهز المطلوبة.</string>
+    <string name="gesture_trainer_go_shake">هزّ الهاتف <xliff:g id="tries">%1$d</xliff:g> مرات، مع توقف قصير بعد كل هزة.</string>
+    <string name="gesture_trainer_how_shake">أمسك الهاتف بإحكام وهزّه بسرعة ذهابًا وإيابًا، كأنك تنفض قطرة ماء: مرتين على الأقل في كل اتجاه، كل ذلك خلال ثلثي ثانية تقريبًا. ثم أبقِه ثابتًا.</string>
+    <string name="gesture_trainer_how_two_stroke">مرِّر <xliff:g id="first">%1$s</xliff:g> بإصبع واحد، لمسافة 2 سم تقريبًا، وارفع. ثم فورًا، خلال <xliff:g id="time">%3$d</xliff:g> ملي ثانية، مرِّر <xliff:g id="second">%2$s</xliff:g> بإصبع واحد، لمسافة 2 سم تقريبًا، وارفع.</string>
+    <string name="gesture_trainer_how_three_part">المس الشاشة بإصبع واحد، ومن دون رفعه، مرِّر <xliff:g id="first">%1$s</xliff:g>، ثم انعطف بحدّة ومرِّر <xliff:g id="second">%2$s</xliff:g>، ثم انعطف بحدّة مجددًا ومرِّر <xliff:g id="third">%3$s</xliff:g>، كل جزء 2 سم تقريبًا، ثم ارفع. اجعلها حركة واحدة سريعة وسلسة بزوايا حادة، وليس منحنيات.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">ضع إصبعًا في الثلث العلوي من الشاشة والآخر في الثلث السفلي، مثلًا الإبهام في الأسفل والسبابة في الأعلى.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">لم يكن أحد الإصبعين في الثلث العلوي من الشاشة والآخر في الثلث السفلي.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">لم يكن هناك تمرير ثانٍ.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">بدأ التمرير الثاني بعد <xliff:g id="ms">%1$d</xliff:g> ملي ثانية من الأول، والحد الأقصى المسموح به <xliff:g id="limit">%2$d</xliff:g> ملي ثانية.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">اتجه التمرير الأول <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">اتجه التمرير الثاني <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">كان الهز خفيفًا جدًا: <xliff:g id="percent">%1$d</xliff:g>%% من القوة المطلوبة.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">الحركات ذهابًا وإيابًا: <xliff:g id="swings">%1$d</xliff:g> من <xliff:g id="wanted">%2$d</xliff:g> مطلوبة.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">باعِد بين الإصبعين كثيرًا، أحدهما قرب الحافة العلوية والآخر قرب الحافة السفلية.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">بعد التمرير الأول، ارفع الإصبع ومرِّر مجددًا فورًا.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">ابدأ التمرير الثاني فور رفع الإصبع.</string>
+    <string name="gesture_trainer_tip_shake_too_light">هزّ بقوة أكبر وبسرعة أكبر.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">هزّ أسرع، ذهابًا وإيابًا مرتين على الأقل في كل اتجاه، من دون توقف بينها.</string>
+    <string name="gesture_trainer_measure_shake_strength">أقوى حركة <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">الهزات خفيفة. ترصد قيمة أعلى لـ«<xliff:g id="setting">%1$s</xliff:g>» الهزات الأخف، وقد ترصد حمل الهاتف كهزة.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">يبدأ التمرير الثاني متأخرًا. تسمح قيمة أطول لـ«<xliff:g id="setting">%1$s</xliff:g>» بتمرير ثانٍ متأخر، ويصبح التمرير المفرد بعد ذلك ينتظر مدة أطول قبل تنفيذه.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> مفعّل.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> غير مفعّل: التمريرات السريعة بإصبعين تمرّر محتوى التطبيق، والفرك يمرّر المحتوى غالبًا أيضًا. عند تفعيل الإعداد، تنفّذ التمريرات السريعة بإصبعين أوامر SandFly بدلًا من تمرير المحتوى.</string>
+    <string name="gesture_trainer_measure_first_stroke">التمرير الأول <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_second_stroke">التمرير الثاني <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_whole_gesture">الإيماءة كاملة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية</string>
+    <string name="gesture_trainer_measure_stroke_gap">رفع الإصبع لمدة <xliff:g id="ms">%1$d</xliff:g> ملي ثانية بينهما</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">సంజ్ఞల ట్రైనర్</string>
+    <string name="gesture_trainer_intro">సంజ్ఞల గ్రూప్‌ను ఎంచుకోండి. ప్రతి వ్యాయామం ఒక సంజ్ఞను వివరిస్తుంది. సంజ్ఞను <xliff:g id="tries">%1$d</xliff:g> సార్లు చేయండి; ప్రతి ప్రయత్నం ఫలితం చదివి వినిపించబడుతుంది. చివరి ప్రయత్నం తర్వాత, స్క్రీన్ ప్రతి ప్రయత్నం కొలతలు, ఏమి మార్చాలి, సంబంధిత సెట్టింగ్‌లను చూపుతుంది.</string>
+    <string name="gesture_trainer_group_one_finger">ఒక వేలు</string>
+    <string name="gesture_trainer_group_two_fingers">రెండు వేళ్లు</string>
+    <string name="gesture_trainer_group_three_fingers">మూడు వేళ్లు</string>
+    <string name="gesture_trainer_group_four_fingers">నాలుగు వేళ్లు</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">పించ్, తిప్పడం, స్క్రబ్</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> వ్యాయామాలు</string>
+    <string name="gesture_trainer_close">మూసివేయండి</string>
+    <string name="gesture_trainer_no_detection">సంజ్ఞల ట్రైనర్‌కు Android 13 లేదా తర్వాతి వెర్షన్ అవసరం.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">ముందుకు వెనుకకు, కోణ సంజ్ఞలు వదిలివేయబడ్డాయి: <xliff:g id="setting">%1$s</xliff:g> ఆన్‌లో ఉంది.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">రెండు వేళ్ల స్వైప్‌లు వదిలివేయబడ్డాయి: <xliff:g id="setting">%1$s</xliff:g> ఆఫ్‌లో ఉంది, కాబట్టి అవి యాప్‌లను స్క్రోల్ చేస్తాయి.</string>
+    <string name="gesture_trainer_exercise_heading">వ్యాయామం <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">ప్రారంభించండి</string>
+    <string name="gesture_trainer_skip">ఈ వ్యాయామాన్ని స్కిప్ చేయండి</string>
+    <string name="gesture_trainer_back_to_groups">గ్రూప్‌లకు తిరిగి వెళ్లండి</string>
+    <string name="gesture_trainer_go">స్క్రీన్‌పై ఎక్కడైనా సంజ్ఞను <xliff:g id="tries">%1$d</xliff:g> సార్లు చేయండి. ప్రతి తాకడం ఒక ప్రయత్నం.</string>
+    <string name="gesture_trainer_fingers_1">ఒక వేలితో</string>
+    <string name="gesture_trainer_fingers_2">రెండు వేళ్లతో పక్కపక్కనే, సుమారు 1 సెం.మీ దూరంలో</string>
+    <string name="gesture_trainer_fingers_3">మూడు వేళ్లతో పక్కపక్కనే, కొంచెం దూరంగా</string>
+    <string name="gesture_trainer_fingers_4">నాలుగు వేళ్లతో పక్కపక్కనే, కొంచెం దూరంగా</string>
+    <string name="gesture_trainer_direction_up">పైకి</string>
+    <string name="gesture_trainer_direction_down">కిందికి</string>
+    <string name="gesture_trainer_direction_left">ఎడమకు</string>
+    <string name="gesture_trainer_direction_right">కుడికి</string>
+    <string name="gesture_trainer_how_swipe">స్క్రీన్‌ను <xliff:g id="fingers">%1$s</xliff:g> తాకి, ఆగకుండా సరళ రేఖలో సుమారు 2 నుండి 3 సెం.మీ <xliff:g id="direction">%2$s</xliff:g> జరపండి, ఆపై ఎత్తండి. వెంటనే కదలడం ప్రారంభించండి: ముందుగా కదలకుండా ఉన్న వేలు టచ్ ద్వారా అన్వేషణను ప్రారంభిస్తుంది.</string>
+    <string name="gesture_trainer_how_swipe_multi">వేళ్లను ఒకే క్షణంలో కలిసి ఉంచి, అన్నింటినీ ఒకే వైపుకు కదిలించండి. ప్రతి వేలు మొత్తం సమయం <xliff:g id="direction">%1$s</xliff:g> వెళ్లాలి, కాబట్టి రేఖను సరళంగా ఉంచండి.</string>
+    <string name="gesture_trainer_how_back_and_forth">స్క్రీన్‌ను ఒక వేలితో తాకి సుమారు 2 సెం.మీ <xliff:g id="first">%1$s</xliff:g> జరపండి, ఆపై ఎత్తకుండా సుమారు 2 సెం.మీ నేరుగా తిరిగి <xliff:g id="second">%2$s</xliff:g> వెళ్లి, ఎత్తండి. దీన్ని ఒకే వేగవంతమైన, సాఫీ కదలికగా చేయండి.</string>
+    <string name="gesture_trainer_how_angle">స్క్రీన్‌ను <xliff:g id="fingers">%1$s</xliff:g> తాకి సుమారు 2 సెం.మీ <xliff:g id="first">%2$s</xliff:g> జరపండి, ఆపై ఎత్తకుండా పదునుగా తిరిగి సుమారు 2 సెం.మీ <xliff:g id="second">%3$s</xliff:g> జరపండి, ఆపై ఎత్తండి. మలుపును వంపులా కాకుండా, L అక్షరంలాగా పదునైన మూలగా చేయండి.</string>
+    <string name="gesture_trainer_taps_1">ఒకసారి</string>
+    <string name="gesture_trainer_taps_2">రెండుసార్లు</string>
+    <string name="gesture_trainer_taps_3">మూడుసార్లు</string>
+    <string name="gesture_trainer_taps_4">నాలుగుసార్లు</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> ట్యాప్ చేయండి. వేళ్లను కలిసి ఉంచి, జరపకుండా వేగంగా కలిసి ఎత్తండి.</string>
+    <string name="gesture_trainer_how_taps_quick">ట్యాప్‌లను వేగంగా, ఒకే చోట చేయండి: తదుపరి ట్యాప్ మునుపటి దాని తర్వాత <xliff:g id="gap">%1$d</xliff:g> ms లోపు రావాలి.</string>
+    <string name="gesture_trainer_how_hold">స్క్రీన్‌ను <xliff:g id="fingers">%1$s</xliff:g> ఒకేసారి తాకి, జరపకుండా కనీసం <xliff:g id="hold">%2$d</xliff:g> ms కదలకుండా ఉంచండి.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">వేరే కమాండ్ కేటాయించకపోతే, ఈ సంజ్ఞ SandFlyని ఆఫ్ చేస్తుంది. ట్రైనర్‌లో, ఇది ఏమీ రన్ చేయదు.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> ట్యాప్ చేయండి, చివరి ట్యాప్‌లో వేళ్లను స్క్రీన్‌పై కనీసం <xliff:g id="hold">%3$d</xliff:g> ms కదలకుండా ఉంచండి.</string>
+    <string name="gesture_trainer_how_three_finger_hand">బొటనవేలు, చూపుడు వేలు, మధ్య వేలును ఉపయోగించండి.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">చూపుడు వేలు, మధ్య వేలును పక్కపక్కనే ఉంచి, బొటనవేలు, ఉంగరపు వేలును రెండు వైపులా కొన్ని సెంటీమీటర్ల దూరంలో ఉంచండి. ఆపై నాలుగు వేలికొనలను ఒకే బిందువు వద్దకు తీసుకురండి.</string>
+    <string name="gesture_trainer_how_pinch">స్క్రీన్‌పై <xliff:g id="fingers">%1$d</xliff:g> వేళ్లను దూరదూరంగా ఉంచండి. ఆపై ఏదైనా తీసుకుంటున్నట్లుగా, వాటిని కనీసం 1 సెం.మీ నేరుగా ఒకదానికొకటి దగ్గరగా తీసుకువచ్చి, స్క్రీన్ నుండి ఎత్తండి. మొత్తం చేతిని కాకుండా వేళ్లను మాత్రమే కదిలించండి, వంపులో కాదు.</string>
+    <string name="gesture_trainer_how_spread">స్క్రీన్‌పై <xliff:g id="fingers">%1$d</xliff:g> వేళ్లను దగ్గరగా ఉంచండి. ఆపై వాటిని కనీసం 1 సెం.మీ నేరుగా దూరంగా జరిపి, స్క్రీన్ నుండి ఎత్తండి. మొత్తం చేతిని కాకుండా వేళ్లను మాత్రమే కదిలించండి, వంపులో కాదు.</string>
+    <string name="gesture_trainer_clockwise">సవ్యదిశలో</string>
+    <string name="gesture_trainer_counterclockwise">అపసవ్య దిశలో</string>
+    <string name="gesture_trainer_how_rotate">స్క్రీన్‌పై రెండు వేళ్లను సుమారు 2 నుండి 3 సెం.మీ దూరంలో ఉంచి, డయల్‌ను తిప్పినట్లుగా వాటిని వాటి మధ్య బిందువు చుట్టూ <xliff:g id="way">%1$s</xliff:g> సుమారు పావు వంతు తిప్పండి. ఆపై ఎత్తండి.</string>
+    <string name="gesture_trainer_how_scrub">స్క్రీన్‌పై రెండు వేళ్లను ఉంచి, ఏదైనా చెరిపివేస్తున్నట్లుగా వాటిని వేగంగా ఒక వైపుకు సుమారు 2 సెం.మీ జరిపి తిరిగి తీసుకురండి, అంతా సుమారు ఒక సెకనులో. ఆపై ఎత్తండి.</string>
+    <string name="gesture_trainer_edge_bottom">దిగువ అంచు వద్ద</string>
+    <string name="gesture_trainer_edge_top_left">ఎగువ అంచు వద్ద, దాని ఎడమ సగంలో</string>
+    <string name="gesture_trainer_edge_top_right">ఎగువ అంచు వద్ద, దాని కుడి సగంలో</string>
+    <string name="gesture_trainer_edge_left_top">ఎడమ అంచు వద్ద, దాని ఎగువ సగంలో</string>
+    <string name="gesture_trainer_edge_left_bottom">ఎడమ అంచు వద్ద, దాని దిగువ సగంలో</string>
+    <string name="gesture_trainer_edge_right_top">కుడి అంచు వద్ద, దాని ఎగువ సగంలో</string>
+    <string name="gesture_trainer_edge_right_bottom">కుడి అంచు వద్ద, దాని దిగువ సగంలో</string>
+    <string name="gesture_trainer_edge_left">ఎడమ అంచు వద్ద</string>
+    <string name="gesture_trainer_edge_right">కుడి అంచు వద్ద</string>
+    <string name="gesture_trainer_edge_top">ఎగువ అంచు వద్ద</string>
+    <string name="gesture_trainer_how_edge">ఒక వేలిని <xliff:g id="edge">%1$s</xliff:g>, అంచు నుండి గరిష్ఠంగా <xliff:g id="edge_width">%2$d</xliff:g> మి.మీ దూరంలో ఉంచి, మొదటి క్లిక్ వరకు, సుమారు <xliff:g id="distance">%4$d</xliff:g> మి.మీ, స్క్రీన్ లోపలికి <xliff:g id="direction">%3$s</xliff:g> జరపండి. ఆపై వెంటనే ఎత్తండి: రెండవ క్లిక్ దాటితే, అది లాంగ్ స్వైప్ అవుతుంది.</string>
+    <string name="gesture_trainer_how_edge_long">ఒక వేలిని <xliff:g id="edge">%1$s</xliff:g>, అంచు నుండి గరిష్ఠంగా <xliff:g id="edge_width">%2$d</xliff:g> మి.మీ దూరంలో ఉంచి, మొదటి క్లిక్ దాటి రెండవ క్లిక్ వరకు, సుమారు <xliff:g id="distance">%4$d</xliff:g> మి.మీ, స్క్రీన్ లోపలికి <xliff:g id="direction">%3$s</xliff:g> జరపండి. ఆపై ఎత్తండి.</string>
+    <string name="gesture_trainer_how_along">ఒక వేలిని <xliff:g id="edge">%1$s</xliff:g> వెంబడి కనీసం <xliff:g id="distance">%3$d</xliff:g> మి.మీ <xliff:g id="direction">%2$s</xliff:g> జరపండి.</string>
+    <string name="gesture_trainer_corner_top_left">ఎగువ ఎడమ</string>
+    <string name="gesture_trainer_corner_top_right">ఎగువ కుడి</string>
+    <string name="gesture_trainer_corner_bottom_left">దిగువ ఎడమ</string>
+    <string name="gesture_trainer_corner_bottom_right">దిగువ కుడి</string>
+    <string name="gesture_trainer_how_corner">స్క్రీన్ <xliff:g id="corner">%2$s</xliff:g> మూలలో <xliff:g id="taps">%1$s</xliff:g> ట్యాప్ చేయండి. వేలిని సరిగ్గా మూలలో, రెండు అంచుల నుండి <xliff:g id="size">%3$d</xliff:g> మి.మీ కంటే ఎక్కువ కాకుండా ఉంచి, <xliff:g id="time">%4$d</xliff:g> ms లోపు వేగంగా ఎత్తండి.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> మి.మీ. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> మి.మీ.</string>
+    <string name="gesture_trainer_corner_warning">మూలలు పెద్దవిగా ఉంటే, మూల దగ్గర ఉన్న కంట్రోల్‌పై ట్యాప్, ఉదాహరణకు ఎగువ ఎడమన ఉన్న వెనుకకు, బదులుగా మూల సంజ్ఞను రన్ చేయవచ్చు.</string>
+    <string name="gesture_trainer_rating_precise">గుర్తించబడింది, ఖచ్చితం</string>
+    <string name="gesture_trainer_rating_good">గుర్తించబడింది, బాగుంది</string>
+    <string name="gesture_trainer_rating_borderline">గుర్తించబడింది, కానీ పరిమితికి దగ్గరగా</string>
+    <string name="gesture_trainer_try_recognized">ప్రయత్నం <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">ప్రయత్నం <xliff:g id="number">%1$d</xliff:g>: గుర్తించబడలేదు.</string>
+    <string name="gesture_trainer_try_other">ప్రయత్నం <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g>గా గుర్తించబడింది.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g>లో <xliff:g id="recognized">%2$d</xliff:g> గుర్తించబడ్డాయి</string>
+    <string name="gesture_trainer_results_tries">మీ ప్రయత్నాలు</string>
+    <string name="gesture_trainer_results_change">ఏమి మార్చాలి</string>
+    <string name="gesture_trainer_results_close">పరిమితికి దగ్గరగా</string>
+    <string name="gesture_trainer_results_all_good">అన్ని ప్రయత్నాలు పరిమితుల లోపల గుర్తించబడ్డాయి.</string>
+    <string name="gesture_trainer_results_settings">సహాయపడగల సెట్టింగ్‌లు</string>
+    <string name="gesture_trainer_next">తదుపరి వ్యాయామం</string>
+    <string name="gesture_trainer_repeat">మళ్లీ చేయండి</string>
+    <string name="gesture_trainer_finish">ముగించండి</string>
+    <string name="gesture_trainer_group_done">మీరు <xliff:g id="group">%1$s</xliff:g>లోని అన్ని వ్యాయామాలను పూర్తి చేశారు.</string>
+    <string name="gesture_trainer_open_setting">మార్చండి: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms పట్టింది</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> సెం.మీ పొడవు</string>
+    <string name="gesture_trainer_measure_speed">సెకనుకు <xliff:g id="speed">%1$.0f</xliff:g> సెం.మీ</string>
+    <string name="gesture_trainer_measure_angle">సరళ రేఖ నుండి <xliff:g id="degrees">%1$.0f</xliff:g> డిగ్రీలు పక్కకు</string>
+    <string name="gesture_trainer_measure_start">మొదటి సెంటీమీటర్ <xliff:g id="ms">%1$d</xliff:g> msలో</string>
+    <string name="gesture_trainer_measure_landing">వేళ్లు <xliff:g id="ms">%1$d</xliff:g> ms తేడాతో తాకాయి</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms ట్యాప్</string>
+    <string name="gesture_trainer_measure_gap">ట్యాప్‌ల మధ్య <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">వేళ్లు <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ కదిలాయి</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> డిగ్రీలు తిరిగాయి</string>
+    <string name="gesture_trainer_measure_corner">మూల అంచుల నుండి <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ</string>
+    <string name="gesture_trainer_measure_edge">అంచు నుండి <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ దూరంలో ప్రారంభమైంది</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">స్క్రీన్‌పై వేళ్లు: <xliff:g id="wanted">%2$d</xliff:g>కి బదులుగా <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">వేళ్లు <xliff:g id="ms">%1$d</xliff:g> ms తేడాతో తాకాయి, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">అన్ని వేళ్లు తాకక ముందే ఒక వేలు ఎత్తబడింది.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">వేళ్లు <xliff:g id="ms">%1$d</xliff:g> ms తేడాతో ఎత్తబడ్డాయి, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_became_exploration">వేలు చాలా సేపు కదలకుండా ఉంది లేదా మొదట్లో చాలా నెమ్మదిగా కదిలింది, కాబట్టి తాకడం టచ్ ద్వారా అన్వేషణగా మారింది.</string>
+    <string name="gesture_trainer_finding_slow_start">మొదటి సెంటీమీటర్‌కు <xliff:g id="ms">%1$d</xliff:g> ms పట్టింది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_paused">వేలు <xliff:g id="ms">%1$d</xliff:g> ms పాటు నెమ్మదించింది, ప్రతి సెంటీమీటర్‌కు గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms పట్టవచ్చు.</string>
+    <string name="gesture_trainer_finding_too_short">కదలిక <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ మాత్రమే, అది కనీసం <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ ఉండాలి.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">వేలు మొదట <xliff:g id="direction">%1$s</xliff:g> వెళ్లింది.</string>
+    <string name="gesture_trainer_finding_wrong_direction">వేళ్లు మొదట <xliff:g id="direction">%1$s</xliff:g> వెళ్లాయి.</string>
+    <string name="gesture_trainer_finding_off_line">మార్గం సరళ రేఖ నుండి <xliff:g id="degrees">%1$.0f</xliff:g> డిగ్రీలు పక్కకు తిరిగింది, గరిష్ఠంగా <xliff:g id="limit">%2$.0f</xliff:g> అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_curved">మార్గం <xliff:g id="wanted">%2$d</xliff:g>కి బదులుగా <xliff:g id="parts">%1$d</xliff:g> భాగాలుగా వంగింది.</string>
+    <string name="gesture_trainer_finding_turn_missing">మలుపు కనుగొనబడలేదు.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">మలుపు తర్వాత, వేలు <xliff:g id="direction">%1$s</xliff:g> వెళ్లింది.</string>
+    <string name="gesture_trainer_finding_tap_moved">ట్యాప్ సమయంలో వేలు <xliff:g id="mm">%1$.1f</xliff:g> మి.మీ జారింది, గరిష్ఠంగా <xliff:g id="limit">%2$.1f</xliff:g> మి.మీ అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_tap_held_long">ఒక ట్యాప్ <xliff:g id="ms">%1$d</xliff:g> ms పాటు ఉంది, <xliff:g id="limit">%2$d</xliff:g> ms కంటే ఎక్కువ.</string>
+    <string name="gesture_trainer_finding_hold_too_short">చివరి ట్యాప్ <xliff:g id="ms">%1$d</xliff:g> ms పాటు పట్టుకోబడింది, అది కనీసం <xliff:g id="limit">%2$d</xliff:g> ms ఉండాలి.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g>కి బదులుగా <xliff:g id="taps">%1$d</xliff:g> ట్యాప్‌లు.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g>కి బదులుగా <xliff:g id="taps">%1$d</xliff:g> ట్యాప్‌లు.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">ట్యాప్‌ల మధ్య <xliff:g id="ms">%1$d</xliff:g> ms గడిచింది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_taps_apart">ట్యాప్‌లు <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ దూరంలో పడ్డాయి, గరిష్ఠంగా <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">వేళ్లు <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ మాత్రమే కదిలాయి, అవి కనీసం <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ కదలాలి.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">వేళ్లు వ్యతిరేక దిశలో కదిలాయి.</string>
+    <string name="gesture_trainer_finding_moved_together">వేళ్లు ఒకదానికొకటి దగ్గరగా లేదా దూరంగా కదిలిన దాని కంటే ఎక్కువగా, మొత్తం చేయి స్క్రీన్‌పై <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ జారింది.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">వేళ్లు <xliff:g id="degrees">%1$.0f</xliff:g> డిగ్రీలు మాత్రమే తిరిగాయి, అవి కనీసం <xliff:g id="limit">%2$.0f</xliff:g> తిరగాలి.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">వేళ్లు వ్యతిరేక దిశలో తిరిగాయి.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">మొదటి స్ట్రోక్ <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ, అది కనీసం <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ ఉండాలి.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">తిరుగు స్ట్రోక్ <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ, అది కనీసం <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ ఉండాలి.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">స్క్రబ్‌కు <xliff:g id="ms">%1$d</xliff:g> ms పట్టింది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">వేలు అంచు నుండి <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ దూరంలో తాకింది, అంచు వెడల్పు <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">వేలు అంచు యొక్క మరో సగంలో ప్రారంభమైంది.</string>
+    <string name="gesture_trainer_finding_edge_too_short">వేలు <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ జరిగింది, అది కనీసం <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ జరగాలి.</string>
+    <string name="gesture_trainer_finding_edge_too_long">స్వైప్ చాలా పొడవుగా ఉంది: వేలు రెండవ క్లిక్‌ను దాటి <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ వెళ్లింది, రెండవ క్లిక్ <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ వద్ద ఉంది.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">క్లిక్‌ను చేరడానికి <xliff:g id="ms">%1$d</xliff:g> ms పట్టింది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_edge_sideways">స్వైప్ <xliff:g id="degrees">%1$.0f</xliff:g> డిగ్రీలు పక్కకు వెళ్లింది, గరిష్ఠంగా <xliff:g id="limit">%2$.0f</xliff:g> అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_corner_missed">ట్యాప్ మూల అంచుల నుండి <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ దూరంలో పడింది, మూల <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">మూల ట్యాప్ <xliff:g id="ms">%1$d</xliff:g> ms పాటు ఉంది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_none">సంజ్ఞకు సరిపోయే కదలిక ఏదీ గుర్తించబడలేదు.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">గాజును ఎన్ని వేళ్లు తాకుతున్నాయో చెక్ చేయండి. స్క్రీన్‌పై ఆనుకున్న అరచేయి లేదా మరో వేలు కూడా లెక్కించబడుతుంది.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">అన్ని వేళ్లను ఒకదాని తర్వాత ఒకటి కాకుండా, ఒకే చేయిలా ఒకే క్షణంలో ఉంచండి.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">ముందుగా అన్ని వేళ్లను ఉంచి, ఆపై వాటిని కదిలించండి లేదా ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">అన్ని వేళ్లను ఒకే క్షణంలో ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_slow_start">స్క్రీన్‌ను తాకిన క్షణమే కదలడం ప్రారంభించండి, ప్రారంభంలో వేగంగా కదలండి.</string>
+    <string name="gesture_trainer_tip_paused">ఎత్తే వరకు వేలిని సమాన వేగంతో కదిలిస్తూ ఉండండి. చివర్లో నెమ్మదించకండి.</string>
+    <string name="gesture_trainer_tip_too_short">కదలికను పొడవుగా, సుమారు 2 నుండి 3 సెం.మీ చేయండి.</string>
+    <string name="gesture_trainer_tip_wrong_direction">కదలిక ప్రారంభంలోనే దిశను చెక్ చేయండి. ఫోన్‌ను మీ ముందు నేరుగా పట్టుకోవడం సహాయపడుతుంది.</string>
+    <string name="gesture_trainer_tip_off_line">వికర్ణంగా కాకుండా, దిశ వెంబడి మాత్రమే కదలండి. బొటనవేలు కంటే చూపుడు వేలు సరళమైన రేఖను ఉంచుతుంది.</string>
+    <string name="gesture_trainer_tip_curved">రేఖను సరళంగా ఉంచి, ఎత్తేటప్పుడు వేలిని పక్కకు వంచకుండా సరిగ్గా చివర ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_turn_missing">ఎత్తకుండా, లంబ కోణంలో లేదా నేరుగా వెనుకకు, దిశను పదునుగా మార్చండి. ప్రతి భాగం సుమారు 2 సెం.మీ ఉండాలి.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">మలుపు తర్వాత, మీరు ఏ వైపు వెళ్తున్నారో చెక్ చేయండి: రెండవ భాగం సంజ్ఞ పేరులోని మరో దిశలో వెళ్లాలి.</string>
+    <string name="gesture_trainer_tip_tap_moved">జరపకుండా, వేలికొనతో నేరుగా కిందికి, పైకి ట్యాప్ చేయండి.</string>
+    <string name="gesture_trainer_tip_tap_held_long">ప్రతి ట్యాప్‌ను చిన్నదిగా చేయండి: తాకి వెంటనే ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_hold_too_short">చివరి ట్యాప్‌లో, పూర్తి హోల్డ్ సమయం వరకు వేళ్లను స్క్రీన్‌పై కదలకుండా ఉంచండి.</string>
+    <string name="gesture_trainer_tip_too_few_taps">ట్యాప్‌లను లెక్కించి, అన్నింటినీ ఒకేసారి వేగంగా చేయండి.</string>
+    <string name="gesture_trainer_tip_too_many_taps">ట్యాప్‌లను లెక్కించండి. గాజుపై నుండి ఎగిరే వేలు అదనపు ట్యాప్ చేస్తుంది.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">వేగంగా ట్యాప్ చేయండి: ఎత్తిన వెంటనే తదుపరి ట్యాప్‌ను ప్రారంభించండి.</string>
+    <string name="gesture_trainer_tip_taps_apart">ప్రతిసారి ఒకే చోట ట్యాప్ చేయండి.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">వేళ్లను మరింత, కనీసం 1 సెం.మీ దగ్గరగా లేదా దూరంగా కదిలించండి.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">పించ్ అంటే వేళ్లు ఒకదానికొకటి దగ్గరగా కదలడం, విస్తరించడం అంటే వేళ్లు దూరంగా కదలడం.</string>
+    <string name="gesture_trainer_tip_moved_together">వేళ్లను మాత్రమే ఒకదానికొకటి దగ్గరగా లేదా దూరంగా కదిలించండి. మొత్తం చేతిని స్క్రీన్‌పై జరపకండి.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">డయల్‌ను పావు వంతు తిప్పినట్లుగా, ఇంకా ఎక్కువ తిప్పండి.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">సవ్యదిశ అంటే గడియారం ముళ్లు తిరిగే దిశలో తిప్పడం: పై వేలు కుడికి కదులుతుంది.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">మొదటి స్ట్రోక్‌ను కనీసం 1 సెం.మీ పొడవుగా చేయండి.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">మొదటి స్ట్రోక్ తర్వాత, ఎత్తడానికి ముందు వ్యతిరేక దిశలో తిరిగి రండి.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">స్క్రబ్‌ను వేగంగా, సుమారు ఒక సెకనులో అటూ ఇటూ చేయండి.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">వేలికొన పాక్షికంగా స్క్రీన్ బయట ఉండేలా, సరిగ్గా అంచు వద్ద ప్రారంభించండి.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">మీరు అంచు యొక్క ఏ సగంలో ప్రారంభిస్తున్నారో చెక్ చేయండి.</string>
+    <string name="gesture_trainer_tip_edge_too_short">క్లిక్ వినిపించే వరకు ఇంకా జరపండి, ఆపై ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_edge_too_long">మొదటి క్లిక్ తర్వాత వెంటనే, రెండవ దానికి ముందే ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">క్లిక్‌కు ముందు ఆగకుండా, వేగంగా లోపలికి జరపండి.</string>
+    <string name="gesture_trainer_tip_edge_sideways">వికర్ణంగా కాకుండా, అంచు నుండి నేరుగా లోపలికి లేదా అంచు వెంబడి నేరుగా జరపండి.</string>
+    <string name="gesture_trainer_tip_corner_missed">వేలు రెండు అంచులను తాకేలా సరిగ్గా మూలలో ఉంచండి.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">మూలను తాకిన తర్వాత వేగంగా ఎత్తండి.</string>
+    <string name="gesture_trainer_close_to_limit">పరిమితికి దగ్గరగా: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">స్వైప్‌లు నెమ్మదిగా ప్రారంభమవుతున్నాయి. ఎక్కువ <xliff:g id="setting">%1$s</xliff:g> నెమ్మదైన ప్రారంభాన్ని అనుమతిస్తుంది.</string>
+    <string name="gesture_trainer_advice_tap_time">ట్యాప్‌లు నెమ్మదిగా ఉన్నాయి. ఎక్కువ <xliff:g id="setting">%1$s</xliff:g> నెమ్మదైన ట్యాప్‌లను అనుమతిస్తుంది.</string>
+    <string name="gesture_trainer_advice_edge_width">స్వైప్‌లు అంచు నుండి చాలా దూరంలో ప్రారంభమవుతున్నాయి. పెద్ద <xliff:g id="setting">%1$s</xliff:g> అంచు దగ్గర ప్రారంభమయ్యే స్వైప్‌లను కూడా అంచు స్వైప్‌లుగా మారుస్తుంది.</string>
+    <string name="gesture_trainer_advice_corner_size">ట్యాప్‌లు మూల బయట పడుతున్నాయి. పెద్ద <xliff:g id="setting">%1$s</xliff:g> మూలలను పెద్దవిగా చేస్తుంది.</string>
+    <string name="gesture_trainer_advice_corner_time">మూల ట్యాప్‌లు నెమ్మదిగా ఉన్నాయి. ఎక్కువ <xliff:g id="setting">%1$s</xliff:g> నెమ్మదైన ట్యాప్‌లను అనుమతిస్తుంది.</string>
+    <string name="gesture_trainer_menu_option">ఎంపిక <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: ఐటెమ్ <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g>ని ఎంచుకోండి</string>
+    <string name="gesture_trainer_how_menu">మెనూను తెరవడానికి ఒక వేలిని <xliff:g id="edge">%1$s</xliff:g> కనీసం <xliff:g id="distance">%2$d</xliff:g> మి.మీ పైకి లేదా కిందికి జరపండి. దీనిలో పై నుండి కిందికి <xliff:g id="count">%3$d</xliff:g> ఐటెమ్‌లు ఉన్నాయి, ఒక్కొక్కటి సుమారు <xliff:g id="size">%6$s</xliff:g> సెం.మీ ఎత్తు. ఐటెమ్ <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, స్క్రీన్ పైభాగం నుండి <xliff:g id="from">%7$s</xliff:g> నుండి <xliff:g id="to">%8$s</xliff:g> సెం.మీ కింద ఉంది. ఐటెమ్ చదివి వినిపించినప్పుడు వేలిని ఎత్తండి.</string>
+    <string name="gesture_trainer_menu_sample">ఈ అంచుకు మెనూ లేదు. వ్యాయామం <xliff:g id="count">%1$d</xliff:g> నమూనా ఐటెమ్‌లను ఉపయోగిస్తుంది.</string>
+    <string name="gesture_trainer_try_menu_cancelled">ప్రయత్నం <xliff:g id="number">%1$d</xliff:g>: ఎంపిక లేకుండా మెనూ మూసివేయబడింది.</string>
+    <string name="gesture_trainer_try_menu_other">ప్రయత్నం <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> ఎంచుకోబడింది.</string>
+    <string name="gesture_trainer_measure_menu_item">ఐటెమ్ <xliff:g id="number">%1$d</xliff:g> వద్ద ఎత్తబడింది</string>
+    <string name="gesture_trainer_finding_menu_in_corner">వేలు అంచు యొక్క పై చివర లేదా కింది చివర, మూలలు మరియు ఎగువ, దిగువ అంచులు ఉన్న చోట ప్రారంభమైంది.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">వేలు అంచు నుండి <xliff:g id="mm">%1$.0f</xliff:g> మి.మీ దూరంలో ఎత్తబడింది, <xliff:g id="limit">%2$.0f</xliff:g> మి.మీ దాటితే మెనూ మూసివేయబడుతుంది.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">వేలు ఐటెమ్ <xliff:g id="target">%2$d</xliff:g>కి బదులుగా ఐటెమ్ <xliff:g id="item">%1$d</xliff:g> వద్ద ఎత్తబడింది.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">అంచు యొక్క పై, కింది చివర్ల నుండి కొంచెం దూరంగా ప్రారంభించండి.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">జరుపుతున్నప్పుడు వేలిని అంచుకు దగ్గరగా ఉంచి, అక్కడే ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">ప్రతి ఐటెమ్‌కు అంచు వెంబడి స్థిరమైన స్థానం ఉంది, వేలు ఎత్తిన చోట ఉన్న ఐటెమ్ ఎంచుకోబడుతుంది. ఐటెమ్ చదివి వినిపించినప్పుడు ఎత్తండి.</string>
+    <string name="gesture_trainer_contents">విషయ సూచిక</string>
+    <string name="gesture_trainer_contents_heading">విషయ సూచిక: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">పూర్తయింది, <xliff:g id="tries">%2$d</xliff:g>లో <xliff:g id="hits">%1$d</xliff:g> గుర్తించబడ్డాయి</string>
+    <string name="gesture_trainer_group_tap_swipe">ట్యాప్, స్వైప్</string>
+    <string name="gesture_trainer_group_edge_swipes">అంచుల నుండి స్వైప్‌లు</string>
+    <string name="gesture_trainer_group_along_edges">అంచుల వెంబడి స్వైప్‌లు</string>
+    <string name="gesture_trainer_group_edge_menus">అంచు మెనూలు</string>
+    <string name="gesture_trainer_group_corners">మూలలు</string>
+    <string name="gesture_trainer_group_back_tap">బ్యాక్ ట్యాప్</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">తర్వాత రెండు వేళ్ల స్వైప్ వచ్చే రెండు వేళ్ల ట్యాప్‌లు వదిలివేయబడ్డాయి: <xliff:g id="setting">%1$s</xliff:g> ఆఫ్‌లో ఉంది.</string>
+    <string name="gesture_trainer_how_swipe_hold">ఆపై, ఎత్తకుండా, వేలిని కనీసం <xliff:g id="hold">%1$d</xliff:g> ms కదలకుండా ఉంచి, ఎత్తండి.</string>
+    <string name="gesture_trainer_half_top">ఎగువ</string>
+    <string name="gesture_trainer_half_bottom">దిగువ</string>
+    <string name="gesture_trainer_how_taps_half">స్క్రీన్ <xliff:g id="half">%1$s</xliff:g> సగంలో ట్యాప్ చేయండి. వేళ్ల మధ్య బిందువు సగాన్ని నిర్ణయిస్తుంది.</string>
+    <string name="gesture_trainer_same_fingers">అవే వేళ్లతో</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> ట్యాప్ చేయండి. చివరి ట్యాప్ తర్వాత వెంటనే, <xliff:g id="gap">%3$d</xliff:g> ms లోపు, స్క్రీన్‌ను మళ్లీ <xliff:g id="swipe_fingers">%4$s</xliff:g> తాకి, సరళ రేఖలో సుమారు 2 నుండి 3 సెం.మీ <xliff:g id="direction">%5$s</xliff:g> జరపండి, ఆపై ఎత్తండి.</string>
+    <string name="gesture_trainer_how_corner_hold">చివరి ట్యాప్‌లో, వేలిని మూలలో కనీసం <xliff:g id="hold">%1$d</xliff:g> ms కదలకుండా ఉంచండి.</string>
+    <string name="gesture_trainer_how_back_tap">ఫోన్‌ను దాని పక్కల వద్ద చేతిలో పట్టుకుని, తలుపు తట్టినట్లుగా గట్టిగా, వేగంగా, దాని వెనుక భాగం మధ్యలో వేలికొనతో <xliff:g id="taps">%1$s</xliff:g> ట్యాప్ చేయండి. ట్యాప్‌లను దగ్గరగా చేయండి: వాటి మధ్య గరిష్ఠంగా <xliff:g id="gap">%2$d</xliff:g> ms. ట్యాప్ చేస్తున్నప్పుడు స్క్రీన్‌ను తాకకండి.</string>
+    <string name="gesture_trainer_back_tap_info">వ్యాయామం సమయంలో బ్యాక్ ట్యాప్‌లు ఏ కమాండ్‌లను రన్ చేయవు. ట్యాప్ ఎంత గట్టిగా ఉండాలో <xliff:g id="setting">%1$s</xliff:g> సెట్ చేస్తుంది.</string>
+    <string name="gesture_trainer_go_placed">సంజ్ఞను <xliff:g id="tries">%1$d</xliff:g> సార్లు చేయండి.</string>
+    <string name="gesture_trainer_along_left">ఎడమ అంచు</string>
+    <string name="gesture_trainer_along_right">కుడి అంచు</string>
+    <string name="gesture_trainer_along_top">ఎగువ అంచు</string>
+    <string name="gesture_trainer_along_bottom">దిగువ అంచు</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> వెంబడి స్వైప్‌లు వదిలివేయబడ్డాయి: దానికి అంచు మెనూ ఉంది, కాబట్టి దాని వెంబడి స్వైప్ సంజ్ఞను రన్ చేయడానికి బదులుగా మెనూను తెరుస్తుంది.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> వెంబడి స్వైప్‌లు వదిలివేయబడ్డాయి: అది స్క్రోల్ చేస్తుంది, కాబట్టి దాని వెంబడి స్వైప్ సంజ్ఞను రన్ చేయడానికి బదులుగా యాప్‌ను స్క్రోల్ చేస్తుంది.</string>
+    <string name="gesture_trainer_finding_along_off_edge">వేలు అంచు నుండి చాలా దూరం కదిలింది.</string>
+    <string name="gesture_trainer_tip_along_off_edge">వేలిని గాజు అంచుపైనే, అంచు వెంబడి నేరుగా ఉంచండి.</string>
+    <string name="gesture_trainer_go_back_tap">బ్యాక్ ట్యాప్ సంజ్ఞను <xliff:g id="tries">%1$d</xliff:g> సార్లు చేయండి. స్క్రీన్‌ను తాకితే ప్రయత్నం విఫలమవుతుంది.</string>
+    <string name="gesture_trainer_no_accelerometer">ఈ వ్యాయామానికి యాక్సిలెరోమీటర్ అవసరం. ఏదీ అందుబాటులో లేదు.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms కదలకుండా ఉంచబడింది</string>
+    <string name="gesture_trainer_measure_back_tap_strength">ట్యాప్ బలం <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">చివరలో వేలు <xliff:g id="ms">%1$d</xliff:g> ms కదలకుండా ఉంది, అది కనీసం <xliff:g id="limit">%2$d</xliff:g> ms కదలకుండా ఉండాలి.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">వేళ్లు స్క్రీన్ యొక్క మరో సగంలో ట్యాప్ చేశాయి.</string>
+    <string name="gesture_trainer_finding_swipe_missing">ట్యాప్‌ల తర్వాత స్వైప్ రాలేదు.</string>
+    <string name="gesture_trainer_finding_swipe_late">చివరి ట్యాప్ తర్వాత <xliff:g id="ms">%1$d</xliff:g> msకి స్వైప్ ప్రారంభమైంది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">బ్యాక్ ట్యాప్ చాలా తేలికగా ఉంది: అవసరమైన బలంలో <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">ఒక ట్యాప్ ఫోన్‌ను వెనుక భాగం గుండా కంటే ఎక్కువగా పక్కకు కదిలించింది.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">ట్యాప్‌కు ముందే ఫోన్ కదులుతోంది.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">స్క్రీన్ తాకబడింది, అది తాకబడి ఉన్నప్పుడు చేసిన ట్యాప్‌లు లెక్కించబడవు.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">వెనుక భాగంపై ట్యాప్‌ల మధ్య <xliff:g id="ms">%1$d</xliff:g> ms గడిచింది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">స్వైప్ తర్వాత, పూర్తి హోల్డ్ సమయం వరకు వేలిని స్క్రీన్‌పై కదలకుండా ఉంచండి. ఆపై ఎత్తండి.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">మీరు ఏ సగంలో ట్యాప్ చేస్తున్నారో చెక్ చేయండి: స్క్రీన్ మధ్య భాగం ఎగువ సగాన్ని దిగువ సగం నుండి వేరు చేస్తుంది.</string>
+    <string name="gesture_trainer_tip_swipe_missing">చివరి ట్యాప్ తర్వాత, వెంటనే స్క్రీన్‌ను మళ్లీ తాకి స్వైప్ చేయండి.</string>
+    <string name="gesture_trainer_tip_swipe_late">చివరి ట్యాప్ తర్వాత విరామం లేకుండా వెంటనే స్వైప్ ప్రారంభించండి.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">వెనుక భాగం మధ్యలో, వేలికొనతో లేదా గోరుతో గట్టిగా ట్యాప్ చేయండి.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">ఫోన్ అంచుపై లేదా వాలుగా కాకుండా, నేరుగా వెనుక భాగంపై ట్యాప్ చేయండి.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">ట్యాప్ చేయడానికి ముందు ఫోన్‌ను ఒక క్షణం కదలకుండా పట్టుకోండి, మీ చేయి దాన్ని కదిలించకుండా వదులుగా పట్టుకోండి.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">వెనుక భాగంపై ట్యాప్ చేస్తున్నప్పుడు మీ వేళ్లను స్క్రీన్‌కు దూరంగా ఉంచండి: ఫోన్‌ను దాని పక్కల వద్ద పట్టుకోండి.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">వేగంగా, ఒక ట్యాప్ తర్వాత వెంటనే మరొకటి ట్యాప్ చేయండి.</string>
+    <string name="gesture_trainer_advice_swipe_hold">స్వైప్ తర్వాత వేలు చాలా త్వరగా ఎత్తబడుతోంది. తక్కువ <xliff:g id="setting">%1$s</xliff:g> తక్కువ హోల్డ్‌ను అనుమతిస్తుంది.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">బ్యాక్ ట్యాప్‌లు తేలికగా ఉన్నాయి. ఎక్కువ <xliff:g id="setting">%1$s</xliff:g> తేలికైన ట్యాప్‌లను గుర్తిస్తుంది, తగిలే దెబ్బలను కూడా ట్యాప్‌లుగా గుర్తించవచ్చు.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">వేళ్లు <xliff:g id="degrees">%1$.0f</xliff:g> డిగ్రీలు తిరిగాయి, <xliff:g id="limit">%2$.0f</xliff:g> డిగ్రీల నుండి కదలిక తిప్పడంగా పరిగణించబడుతుంది.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">వేళ్లను ఒకదాని చుట్టూ ఒకటి వంపులో కాకుండా, సరళ రేఖలో ఒకదానికొకటి దగ్గరగా లేదా దూరంగా కదిలించండి.</string>
+    <string name="gesture_trainer_finding_other_gesture">కదలిక బదులుగా ఆ సంజ్ఞకు సరిపోయింది.</string>
+    <string name="gesture_trainer_side_left">ఎడమ</string>
+    <string name="gesture_trainer_side_right">కుడి</string>
+    <string name="gesture_trainer_side_top">ఎగువ</string>
+    <string name="gesture_trainer_side_bottom">దిగువ</string>
+    <string name="gesture_trainer_finding_wrong_edge">వేలు <xliff:g id="side">%1$s</xliff:g> అంచు వద్ద ప్రారంభమైంది, ఈ వ్యాయామం <xliff:g id="expected">%2$s</xliff:g> అంచు వద్ద ఉంది.</string>
+    <string name="gesture_trainer_tip_wrong_edge">వ్యాయామం పేర్కొన్న అంచు వద్దే ప్రారంభించండి.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">ఈ సంజ్ఞకు బదులుగా అంచు మెనూ తెరవబడింది.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">మెనూ ఉన్న అంచు వెంబడి స్వైప్ మెనూను తెరుస్తుంది. వ్యాయామం పేర్కొన్న అంచు వద్ద ప్రారంభించండి.</string>
+    <string name="gesture_trainer_group_three_part">మూడు భాగాల స్వైప్‌లు</string>
+    <string name="gesture_trainer_group_two_stroke">రెండు స్ట్రోక్‌ల స్వైప్‌లు</string>
+    <string name="gesture_trainer_group_shake">షేక్</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">మూడు భాగాల స్వైప్‌లు వదిలివేయబడ్డాయి: <xliff:g id="setting">%1$s</xliff:g> ఆన్‌లో ఉంది.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">రెండు స్ట్రోక్‌ల స్వైప్‌లు వదిలివేయబడ్డాయి: <xliff:g id="setting">%1$s</xliff:g>: <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">వ్యాయామం సమయంలో షేక్ ఏ కమాండ్‌ను రన్ చేయదు. షేక్ ఎంత గట్టిగా ఉండాలో <xliff:g id="setting">%1$s</xliff:g> సెట్ చేస్తుంది.</string>
+    <string name="gesture_trainer_go_shake">ఫోన్‌ను <xliff:g id="tries">%1$d</xliff:g> సార్లు షేక్ చేయండి, ప్రతి షేక్ తర్వాత చిన్న విరామం ఇవ్వండి.</string>
+    <string name="gesture_trainer_how_shake">ఫోన్‌ను గట్టిగా పట్టుకుని, నీటి చుక్కను విదిలించినట్లుగా వేగంగా ముందుకు వెనుకకు షేక్ చేయండి: ప్రతి దిశలో కనీసం రెండుసార్లు, అంతా సుమారు సెకనులో మూడింట రెండు వంతుల్లో. ఆపై దాన్ని కదలకుండా పట్టుకోండి.</string>
+    <string name="gesture_trainer_how_two_stroke">ఒక వేలితో సుమారు 2 సెం.మీ <xliff:g id="first">%1$s</xliff:g> స్వైప్ చేసి, ఎత్తండి. ఆపై వెంటనే, <xliff:g id="time">%3$d</xliff:g> ms లోపు, ఒక వేలితో సుమారు 2 సెం.మీ <xliff:g id="second">%2$s</xliff:g> స్వైప్ చేసి, ఎత్తండి.</string>
+    <string name="gesture_trainer_how_three_part">స్క్రీన్‌ను ఒక వేలితో తాకి, ఎత్తకుండా <xliff:g id="first">%1$s</xliff:g> స్వైప్ చేయండి, ఆపై పదునుగా తిరిగి <xliff:g id="second">%2$s</xliff:g> స్వైప్ చేయండి, ఆపై మళ్లీ పదునుగా తిరిగి <xliff:g id="third">%3$s</xliff:g> స్వైప్ చేయండి, ప్రతి భాగం సుమారు 2 సెం.మీ, ఆపై ఎత్తండి. దీన్ని వంపులు లేకుండా, పదునైన మూలలతో ఒకే వేగవంతమైన, సాఫీ కదలికగా చేయండి.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">ఒక వేలిని స్క్రీన్ ఎగువ మూడో భాగంలో, మరొకదాన్ని దిగువ మూడో భాగంలో ఉంచండి, ఉదాహరణకు బొటనవేలు కింద, చూపుడు వేలు పైన.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">వేళ్లలో ఒకటి స్క్రీన్ ఎగువ మూడో భాగంలో, మరొకటి దిగువ మూడో భాగంలో లేవు.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">రెండవ స్వైప్ లేదు.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">మొదటి దాని తర్వాత <xliff:g id="ms">%1$d</xliff:g> msకి రెండవ స్వైప్ ప్రారంభమైంది, గరిష్ఠంగా <xliff:g id="limit">%2$d</xliff:g> ms అనుమతించబడుతుంది.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">మొదటి స్వైప్ <xliff:g id="direction">%1$s</xliff:g> వెళ్లింది.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">రెండవ స్వైప్ <xliff:g id="direction">%1$s</xliff:g> వెళ్లింది.</string>
+    <string name="gesture_trainer_finding_shake_too_light">షేక్ చాలా తేలికగా ఉంది: అవసరమైన బలంలో <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">ముందుకు వెనుకకు ఊపులు: అవసరమైన <xliff:g id="wanted">%2$d</xliff:g>లో <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">వేళ్లను దూరదూరంగా ఉంచండి, ఒకటి ఎగువ అంచు దగ్గర, మరొకటి దిగువ అంచు దగ్గర.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">మొదటి స్వైప్ తర్వాత, వేలిని ఎత్తి వెంటనే మళ్లీ స్వైప్ చేయండి.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">వేలిని ఎత్తిన వెంటనే రెండవ స్వైప్‌ను ప్రారంభించండి.</string>
+    <string name="gesture_trainer_tip_shake_too_light">మరింత గట్టిగా, వేగంగా షేక్ చేయండి.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">మధ్యలో ఆగకుండా, ప్రతి దిశలో కనీసం రెండుసార్లు ముందుకు వెనుకకు వేగంగా షేక్ చేయండి.</string>
+    <string name="gesture_trainer_measure_shake_strength">బలమైన కదలిక <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">షేక్‌లు తేలికగా ఉన్నాయి. ఎక్కువ <xliff:g id="setting">%1$s</xliff:g> తేలికైన షేక్‌లను గుర్తిస్తుంది, ఫోన్‌ను తీసుకువెళ్లడాన్ని కూడా షేక్‌గా గుర్తించవచ్చు.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">రెండవ స్వైప్ ఆలస్యంగా ప్రారంభమవుతోంది. ఎక్కువ <xliff:g id="setting">%1$s</xliff:g> ఆలస్యమైన రెండవ స్వైప్‌ను అనుమతిస్తుంది, అప్పుడు ఒకే స్వైప్ రన్ అవ్వడానికి ముందు ఎక్కువ సేపు వేచి ఉంటుంది.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> ఆన్‌లో ఉంది.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> ఆఫ్‌లో ఉంది: రెండు వేళ్ల స్వైప్‌లు యాప్‌ను స్క్రోల్ చేస్తాయి, స్క్రబ్ కూడా ఎక్కువగా స్క్రోల్ చేస్తుంది. సెట్టింగ్ ఆన్‌లో ఉంటే, రెండు వేళ్ల స్వైప్‌లు స్క్రోల్ చేయడానికి బదులుగా SandFly కమాండ్‌లను రన్ చేస్తాయి.</string>
+    <string name="gesture_trainer_measure_first_stroke">మొదటి స్వైప్ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">రెండవ స్వైప్ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">మొత్తం సంజ్ఞ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">వాటి మధ్య <xliff:g id="ms">%1$d</xliff:g> ms ఎత్తి ఉంచబడింది</string>
+</resources>

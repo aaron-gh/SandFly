@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Kézmozdulat-gyakorló</string>
+    <string name="gesture_trainer_intro">Válasszon egy kézmozdulatcsoportot. Minden gyakorlat egy kézmozdulatot ír le. Végezze el a kézmozdulatot <xliff:g id="tries">%1$d</xliff:g> alkalommal; a rendszer minden próbálkozás eredményét felolvassa. Az utolsó próbálkozás után a képernyő felsorolja az egyes próbálkozások mérési adatait, a teendő változtatásokat és a kapcsolódó beállításokat.</string>
+    <string name="gesture_trainer_group_one_finger">Egy ujj</string>
+    <string name="gesture_trainer_group_two_fingers">Két ujj</string>
+    <string name="gesture_trainer_group_three_fingers">Három ujj</string>
+    <string name="gesture_trainer_group_four_fingers">Négy ujj</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Összecsippentés, forgatás és dörzsölés</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> gyakorlat</string>
+    <string name="gesture_trainer_close">Bezárás</string>
+    <string name="gesture_trainer_no_detection">A kézmozdulat-gyakorlóhoz Android 13 vagy újabb szükséges.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Az oda-vissza és a szöget bezáró kézmozdulatok kimaradnak: a(z) <xliff:g id="setting">%1$s</xliff:g> be van kapcsolva.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">A kétujjas csúsztatások kimaradnak: a(z) <xliff:g id="setting">%1$s</xliff:g> ki van kapcsolva, ezért ezek görgetik az alkalmazásokat.</string>
+    <string name="gesture_trainer_exercise_heading"><xliff:g id="number">%1$d</xliff:g>. gyakorlat / <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Indítás</string>
+    <string name="gesture_trainer_skip">Gyakorlat kihagyása</string>
+    <string name="gesture_trainer_back_to_groups">Vissza a csoportokhoz</string>
+    <string name="gesture_trainer_go">Végezze el a kézmozdulatot <xliff:g id="tries">%1$d</xliff:g> alkalommal, bárhol a képernyőn. Minden érintés egy próbálkozás.</string>
+    <string name="gesture_trainer_fingers_1">egy ujjal</string>
+    <string name="gesture_trainer_fingers_2">két ujjal egymás mellett, kb. 1 cm távolságra</string>
+    <string name="gesture_trainer_fingers_3">három ujjal egymás mellett, kissé távol egymástól</string>
+    <string name="gesture_trainer_fingers_4">négy ujjal egymás mellett, kissé távol egymástól</string>
+    <string name="gesture_trainer_direction_up">felfelé</string>
+    <string name="gesture_trainer_direction_down">lefelé</string>
+    <string name="gesture_trainer_direction_left">balra</string>
+    <string name="gesture_trainer_direction_right">jobbra</string>
+    <string name="gesture_trainer_how_swipe">Érintse meg a képernyőt <xliff:g id="fingers">%1$s</xliff:g>, és várakozás nélkül csúsztassa <xliff:g id="direction">%2$s</xliff:g> egyenes vonalban kb. 2–3 cm-t, majd emelje fel. Azonnal kezdje a mozgást: ha az ujj előbb nyugalomban van, a Felfedezés érintéssel indul el.</string>
+    <string name="gesture_trainer_how_swipe_multi">Az ujjakat együtt, ugyanabban a pillanatban tegye le, és mindet ugyanarra mozgassa. Minden ujjnak végig <xliff:g id="direction">%1$s</xliff:g> kell haladnia, ezért tartsa egyenesen a vonalat.</string>
+    <string name="gesture_trainer_how_back_and_forth">Érintse meg a képernyőt egy ujjal, és csúsztassa <xliff:g id="first">%1$s</xliff:g> kb. 2 cm-t, majd felemelés nélkül menjen egyenesen vissza <xliff:g id="second">%2$s</xliff:g> kb. 2 cm-t, és emelje fel. Egyetlen gyors, folyamatos mozdulat legyen.</string>
+    <string name="gesture_trainer_how_angle">Érintse meg a képernyőt <xliff:g id="fingers">%1$s</xliff:g>, és csúsztassa <xliff:g id="first">%2$s</xliff:g> kb. 2 cm-t, majd felemelés nélkül forduljon élesen, és csúsztassa <xliff:g id="second">%3$s</xliff:g> kb. 2 cm-t, és emelje fel. A fordulat éles sarok legyen, mint az L betű, ne ív.</string>
+    <string name="gesture_trainer_taps_1">egyszer</string>
+    <string name="gesture_trainer_taps_2">kétszer</string>
+    <string name="gesture_trainer_taps_3">háromszor</string>
+    <string name="gesture_trainer_taps_4">négyszer</string>
+    <string name="gesture_trainer_how_taps">Koppintson <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Az ujjakat együtt tegye le és együtt emelje fel, gyorsan, csúsztatás nélkül.</string>
+    <string name="gesture_trainer_how_taps_quick">A koppintások legyenek gyorsak és ugyanazon a helyen: a következő koppintásnak az előzőt követő <xliff:g id="gap">%1$d</xliff:g> ms-on belül kell jönnie.</string>
+    <string name="gesture_trainer_how_hold">Érintse meg a képernyőt egyszerre <xliff:g id="fingers">%1$s</xliff:g>, és tartsa az ujjakat mozdulatlanul, csúsztatás nélkül legalább <xliff:g id="hold">%2$d</xliff:g> ms-ig.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Ha nincs más parancs hozzárendelve, ez a kézmozdulat kikapcsolja a SandFlyt. A gyakorlóban nem futtat semmit.</string>
+    <string name="gesture_trainer_how_taps_hold">Koppintson <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, és az utolsó koppintásnál hagyja az ujjakat mozdulatlanul a képernyőn legalább <xliff:g id="hold">%3$d</xliff:g> ms-ig.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Használja a hüvelykujját, a mutatóujját és a középső ujját.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Tegye a mutató- és a középső ujját egymás mellé, a hüvelykujját és a gyűrűsujját pedig néhány centiméterrel távolabb, két oldalra. Ezután húzza össze mind a négy ujjbegyet egy pontba.</string>
+    <string name="gesture_trainer_how_pinch">Tegyen <xliff:g id="fingers">%1$d</xliff:g> ujjat a képernyőre, egymástól messze széttárva. Ezután húzza őket egyenesen egymás felé legalább 1 cm-rel, mintha felvenne valamit, majd emelje fel őket a képernyőről. Csak az ujjait mozgassa, ne az egész kezét, és ne ívben.</string>
+    <string name="gesture_trainer_how_spread">Tegyen <xliff:g id="fingers">%1$d</xliff:g> ujjat a képernyőre egymáshoz közel. Ezután mozgassa őket egyenesen szét legalább 1 cm-rel, majd emelje fel őket a képernyőről. Csak az ujjait mozgassa, ne az egész kezét, és ne ívben.</string>
+    <string name="gesture_trainer_clockwise">az óramutató járásával megegyező irányba</string>
+    <string name="gesture_trainer_counterclockwise">az óramutató járásával ellentétes irányba</string>
+    <string name="gesture_trainer_how_rotate">Tegyen két ujjat a képernyőre, egymástól kb. 2–3 cm-re, és forgassa el őket <xliff:g id="way">%1$s</xliff:g> a középpontjuk körül, mint egy tárcsát, kb. negyed fordulattal. Ezután emelje fel.</string>
+    <string name="gesture_trainer_how_scrub">Tegyen két ujjat a képernyőre, és gyorsan mozgassa őket kb. 2 cm-t az egyik oldalra és vissza, mintha kiradírozna valamit, mindezt kb. egy másodpercen belül. Ezután emelje fel.</string>
+    <string name="gesture_trainer_edge_bottom">az alsó szélnél</string>
+    <string name="gesture_trainer_edge_top_left">a felső szélnél, annak bal felén</string>
+    <string name="gesture_trainer_edge_top_right">a felső szélnél, annak jobb felén</string>
+    <string name="gesture_trainer_edge_left_top">a bal szélnél, annak felső felén</string>
+    <string name="gesture_trainer_edge_left_bottom">a bal szélnél, annak alsó felén</string>
+    <string name="gesture_trainer_edge_right_top">a jobb szélnél, annak felső felén</string>
+    <string name="gesture_trainer_edge_right_bottom">a jobb szélnél, annak alsó felén</string>
+    <string name="gesture_trainer_edge_left">a bal szélnél</string>
+    <string name="gesture_trainer_edge_right">a jobb szélnél</string>
+    <string name="gesture_trainer_edge_top">a felső szélnél</string>
+    <string name="gesture_trainer_how_edge">Tegye le az egyik ujját <xliff:g id="edge">%1$s</xliff:g>, legfeljebb <xliff:g id="edge_width">%2$d</xliff:g> mm-re a széltől, és csúsztassa <xliff:g id="direction">%3$s</xliff:g> a képernyő belseje felé az első kattanásig, kb. <xliff:g id="distance">%4$d</xliff:g> mm-t. Ezután azonnal emelje fel: a második kattanás után a csúsztatás hosszú csúsztatásnak számít.</string>
+    <string name="gesture_trainer_how_edge_long">Tegye le az egyik ujját <xliff:g id="edge">%1$s</xliff:g>, legfeljebb <xliff:g id="edge_width">%2$d</xliff:g> mm-re a széltől, és csúsztassa <xliff:g id="direction">%3$s</xliff:g> a képernyő belseje felé az első kattanáson túl a másodikig, kb. <xliff:g id="distance">%4$d</xliff:g> mm-t. Ezután emelje fel.</string>
+    <string name="gesture_trainer_how_along">Csúsztassa egy ujját <xliff:g id="direction">%2$s</xliff:g> <xliff:g id="edge">%1$s</xliff:g> mentén, legalább <xliff:g id="distance">%3$d</xliff:g> mm-t.</string>
+    <string name="gesture_trainer_corner_top_left">bal felső</string>
+    <string name="gesture_trainer_corner_top_right">jobb felső</string>
+    <string name="gesture_trainer_corner_bottom_left">bal alsó</string>
+    <string name="gesture_trainer_corner_bottom_right">jobb alsó</string>
+    <string name="gesture_trainer_how_corner">Koppintson <xliff:g id="taps">%1$s</xliff:g> a képernyő <xliff:g id="corner">%2$s</xliff:g> sarkában. Tegye az ujját pontosan a sarokba, legfeljebb <xliff:g id="size">%3$d</xliff:g> mm-re mindkét széltől, és gyorsan, <xliff:g id="time">%4$d</xliff:g> ms-on belül emelje fel.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Nagyobb sarkok esetén egy sarokhoz közeli vezérlőre, például a bal felső Vissza gombra koppintva a sarok kézmozdulata futhat le helyette.</string>
+    <string name="gesture_trainer_rating_precise">felismerve, pontos</string>
+    <string name="gesture_trainer_rating_good">felismerve, jó</string>
+    <string name="gesture_trainer_rating_borderline">felismerve, de közel egy határértékhez</string>
+    <string name="gesture_trainer_try_recognized"><xliff:g id="number">%1$d</xliff:g>. próbálkozás: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing"><xliff:g id="number">%1$d</xliff:g>. próbálkozás: nincs felismerve.</string>
+    <string name="gesture_trainer_try_other"><xliff:g id="number">%1$d</xliff:g>. próbálkozás: felismerve mint <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> próbálkozásból <xliff:g id="recognized">%2$d</xliff:g> felismerve</string>
+    <string name="gesture_trainer_results_tries">Az Ön próbálkozásai</string>
+    <string name="gesture_trainer_results_change">Mit kell módosítani</string>
+    <string name="gesture_trainer_results_close">Közel egy határértékhez</string>
+    <string name="gesture_trainer_results_all_good">Minden próbálkozás felismerve a határértékeken belül.</string>
+    <string name="gesture_trainer_results_settings">Beállítások, amelyek segíthetnek</string>
+    <string name="gesture_trainer_next">Következő gyakorlat</string>
+    <string name="gesture_trainer_repeat">Ismétlés</string>
+    <string name="gesture_trainer_finish">Befejezés</string>
+    <string name="gesture_trainer_group_done">Befejezte a(z) <xliff:g id="group">%1$s</xliff:g> összes gyakorlatát.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> módosítása</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms ideig tartott</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm hosszú</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm/másodperc</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> fokos eltérés az egyenestől</string>
+    <string name="gesture_trainer_measure_start">első centiméter <xliff:g id="ms">%1$d</xliff:g> ms alatt</string>
+    <string name="gesture_trainer_measure_landing">az ujjak <xliff:g id="ms">%1$d</xliff:g> ms különbséggel értek le</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms-os koppintás</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms a koppintások között</string>
+    <string name="gesture_trainer_measure_spread">az ujjak <xliff:g id="mm">%1$.0f</xliff:g> mm-t mozdultak</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> fokos elfordulás</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm a sarok széleitől</string>
+    <string name="gesture_trainer_measure_edge"><xliff:g id="mm">%1$.0f</xliff:g> mm-re a széltől indult</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Ujjak a képernyőn: <xliff:g id="fingers">%1$d</xliff:g> a(z) <xliff:g id="wanted">%2$d</xliff:g> helyett.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Az ujjak <xliff:g id="ms">%1$d</xliff:g> ms különbséggel értek le, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Egy ujj felemelkedett, mielőtt az összes ujj leért volna.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Az ujjak <xliff:g id="ms">%1$d</xliff:g> ms különbséggel emelkedtek fel, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_became_exploration">Az ujj túl sokáig maradt mozdulatlanul, vagy az elején túl lassan mozdult, ezért az érintés Felfedezés érintéssel lett.</string>
+    <string name="gesture_trainer_finding_slow_start">Az első centiméter <xliff:g id="ms">%1$d</xliff:g> ms-ig tartott, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_paused">Az ujj <xliff:g id="ms">%1$d</xliff:g> ms-ig lelassult, és centiméterenként legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_too_short">A mozdulat csak <xliff:g id="mm">%1$.0f</xliff:g> mm volt, és legalább <xliff:g id="limit">%2$.0f</xliff:g> mm-nek kell lennie.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Az ujj <xliff:g id="direction">%1$s</xliff:g> indult el.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Az ujjak <xliff:g id="direction">%1$s</xliff:g> indultak el.</string>
+    <string name="gesture_trainer_finding_off_line">Az útvonal <xliff:g id="degrees">%1$.0f</xliff:g> fokkal tért el az egyenestől, és legfeljebb <xliff:g id="limit">%2$.0f</xliff:g> megengedett.</string>
+    <string name="gesture_trainer_finding_curved">Az útvonal <xliff:g id="parts">%1$d</xliff:g> részre tört a(z) <xliff:g id="wanted">%2$d</xliff:g> helyett.</string>
+    <string name="gesture_trainer_finding_turn_missing">A fordulat nem található.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">A fordulat után az ujj <xliff:g id="direction">%1$s</xliff:g> haladt.</string>
+    <string name="gesture_trainer_finding_tap_moved">Az ujj <xliff:g id="mm">%1$.1f</xliff:g> mm-t csúszott egy koppintás közben, és legfeljebb <xliff:g id="limit">%2$.1f</xliff:g> mm megengedett.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Egy koppintás <xliff:g id="ms">%1$d</xliff:g> ms-ig tartott, ami hosszabb, mint <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Az utolsó koppintást <xliff:g id="ms">%1$d</xliff:g> ms-ig tartotta, és legalább <xliff:g id="limit">%2$d</xliff:g> ms szükséges.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> koppintás a(z) <xliff:g id="wanted">%2$d</xliff:g> helyett.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> koppintás a(z) <xliff:g id="wanted">%2$d</xliff:g> helyett.</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms telt el a koppintások között, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_taps_apart">A koppintások <xliff:g id="mm">%1$.0f</xliff:g> mm-re értek le egymástól, és legfeljebb <xliff:g id="limit">%2$.0f</xliff:g> mm megengedett.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Az ujjak csak <xliff:g id="mm">%1$.0f</xliff:g> mm-t mozdultak, és legalább <xliff:g id="limit">%2$.0f</xliff:g> mm-t kell mozdulniuk.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Az ujjak a másik irányba mozdultak.</string>
+    <string name="gesture_trainer_finding_moved_together">Az egész kéz <xliff:g id="mm">%1$.0f</xliff:g> mm-t csúszott a képernyőn, többet, mint amennyit az ujjak egymás felé vagy egymástól távolodva mozdultak.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Az ujjak csak <xliff:g id="degrees">%1$.0f</xliff:g> fokot fordultak, és legalább <xliff:g id="limit">%2$.0f</xliff:g> fokot kell fordulniuk.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Az ujjak a másik irányba fordultak.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Az első húzás <xliff:g id="mm">%1$.0f</xliff:g> mm volt, és legalább <xliff:g id="limit">%2$.0f</xliff:g> mm-nek kell lennie.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">A visszahúzás <xliff:g id="mm">%1$.0f</xliff:g> mm volt, és legalább <xliff:g id="limit">%2$.0f</xliff:g> mm-nek kell lennie.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">A dörzsölés <xliff:g id="ms">%1$d</xliff:g> ms-ig tartott, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Az ujj <xliff:g id="mm">%1$.0f</xliff:g> mm-re ért le a széltől, és a szél <xliff:g id="limit">%2$.0f</xliff:g> mm széles.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Az ujj a szél másik felén indult.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Az ujj <xliff:g id="mm">%1$.0f</xliff:g> mm-t csúszott, és legalább <xliff:g id="limit">%2$.0f</xliff:g> mm-t kell csúsznia.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Túl hosszú csúsztatás: az ujj túlhaladt a második kattanáson, <xliff:g id="mm">%1$.0f</xliff:g> mm, és a második kattanás <xliff:g id="limit">%2$.0f</xliff:g> mm-nél van.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">A kattanás elérése <xliff:g id="ms">%1$d</xliff:g> ms-ig tartott, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_edge_sideways">A csúsztatás <xliff:g id="degrees">%1$.0f</xliff:g> fokkal tért ki oldalra, és legfeljebb <xliff:g id="limit">%2$.0f</xliff:g> megengedett.</string>
+    <string name="gesture_trainer_finding_corner_missed">A koppintás <xliff:g id="mm">%1$.0f</xliff:g> mm-re ért le a sarok széleitől, és a sarok <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Egy sarokkoppintás <xliff:g id="ms">%1$d</xliff:g> ms-ig tartott, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_none">Nem érzékelhető a kézmozdulatnak megfelelő mozgás.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Ellenőrizze, hány ujj érinti az üveget. A képernyőn nyugvó tenyér vagy másik ujj is számít.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Az összes ujját ugyanabban a pillanatban tegye le, egy kézként, ne egymás után.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Előbb tegye le az összes ujját, majd mozgassa vagy emelje fel őket.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Az összes ujját ugyanabban a pillanatban emelje fel.</string>
+    <string name="gesture_trainer_tip_slow_start">Abban a pillanatban kezdje a mozgást, amikor megérinti a képernyőt, és az elején mozogjon gyorsabban.</string>
+    <string name="gesture_trainer_tip_paused">Egyenletes sebességgel mozgassa az ujját, amíg fel nem emeli. A végén ne lassítson.</string>
+    <string name="gesture_trainer_tip_too_short">Legyen hosszabb a mozdulat, kb. 2–3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Ellenőrizze az irányt a mozdulat legelején. Segít, ha a telefont egyenesen maga előtt tartja.</string>
+    <string name="gesture_trainer_tip_off_line">Csak az irány mentén mozogjon, ne átlósan. A mutatóujj egyenesebb vonalat tart, mint a hüvelykujj.</string>
+    <string name="gesture_trainer_tip_curved">Tartsa egyenesen a vonalat, és pontosan a végén emelje fel az ujját, anélkül hogy felemeléskor oldalra húzná.</string>
+    <string name="gesture_trainer_tip_turn_missing">Váltson irányt élesen, derékszögben vagy egyenesen visszafelé, felemelés nélkül. Mindkét rész kb. 2 cm legyen.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">A fordulat után ellenőrizze, merre halad: a második résznek a kézmozdulat által megnevezett másik irányba kell haladnia.</string>
+    <string name="gesture_trainer_tip_tap_moved">Ujjbeggyel koppintson egyenesen le és fel, csúsztatás nélkül.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Minden koppintás legyen rövid: érintse meg, és azonnal emelje fel.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Az utolsó koppintásnál tartsa az ujjakat mozdulatlanul a képernyőn a teljes nyomva tartási ideig.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Számolja a koppintásokat, és mindet gyorsan, egy menetben végezze el.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Számolja a koppintásokat. Ha egy ujj visszapattan az üvegről, az egy további koppintás.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Koppintson gyorsabban: a következő koppintást közvetlenül a felemelés után kezdje.</string>
+    <string name="gesture_trainer_tip_taps_apart">Minden alkalommal ugyanarra a helyre koppintson.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Mozgassa tovább az ujjait, legalább 1 cm-rel közelebb egymáshoz vagy távolabb egymástól.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Az összecsippentésnél az ujjak egymás felé mozognak, a széthúzásnál egymástól távolodnak.</string>
+    <string name="gesture_trainer_tip_moved_together">Csak az ujjait mozgassa egymás felé vagy egymástól távolodva. Ne csúsztassa az egész kezét a képernyőn.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Forgasson tovább, mintha egy tárcsát negyed fordulattal elforgatna.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Az óramutató járásával megegyező irány az óramutatók mozgásának iránya: a felső ujj jobbra mozdul.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Az első húzás legyen legalább 1 cm hosszú.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Az első húzás után jöjjön vissza a másik irányba, mielőtt felemeli az ujjait.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">A dörzsölés legyen gyors, oda és vissza kb. egy másodperc alatt.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Pontosan a szélnél kezdjen, az ujjbegy egy része legyen a képernyőn kívül.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Ellenőrizze, hogy a szél melyik felén kezd.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Csúsztassa tovább, amíg a kattanást nem hallja, majd emelje fel.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Közvetlenül az első kattanás után emelje fel, a második előtt.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Gyorsabban csúsztassa befelé, a kattanás előtt megállás nélkül.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Egyenesen a széltől befelé vagy egyenesen a szél mentén csúsztasson, ne átlósan.</string>
+    <string name="gesture_trainer_tip_corner_missed">Tegye az ujját pontosan a sarokba, mindkét szélt érintve.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">A sarok megérintése után gyorsabban emelje fel az ujját.</string>
+    <string name="gesture_trainer_close_to_limit">Közel a határértékhez: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">A csúsztatások lassan indulnak. A(z) <xliff:g id="setting">%1$s</xliff:g> hosszabb értéke lassabb indulást tesz lehetővé.</string>
+    <string name="gesture_trainer_advice_tap_time">A koppintások lassúak. A(z) <xliff:g id="setting">%1$s</xliff:g> hosszabb értéke lassabb koppintásokat tesz lehetővé.</string>
+    <string name="gesture_trainer_advice_edge_width">A csúsztatások túl messze indulnak a széltől. A(z) <xliff:g id="setting">%1$s</xliff:g> nagyobb értéke a szél közelében induló csúsztatásokat is szélcsúsztatássá teszi.</string>
+    <string name="gesture_trainer_advice_corner_size">A koppintások a sarkon kívül érnek le. A(z) <xliff:g id="setting">%1$s</xliff:g> nagyobb értéke megnöveli a sarkokat.</string>
+    <string name="gesture_trainer_advice_corner_time">A sarokkoppintások lassúak. A(z) <xliff:g id="setting">%1$s</xliff:g> hosszabb értéke lassabb koppintásokat tesz lehetővé.</string>
+    <string name="gesture_trainer_menu_option"><xliff:g id="number">%1$d</xliff:g>. lehetőség</string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: válassza a(z) <xliff:g id="number">%3$d</xliff:g>. elemet, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">A menü megnyitásához csúsztassa egy ujját felfelé vagy lefelé <xliff:g id="edge">%1$s</xliff:g> legalább <xliff:g id="distance">%2$d</xliff:g> mm-t. A menünek <xliff:g id="count">%3$d</xliff:g> eleme van fentről lefelé, mindegyik kb. <xliff:g id="size">%6$s</xliff:g> cm magas. A(z) <xliff:g id="number">%4$d</xliff:g>. elem, <xliff:g id="item">%5$s</xliff:g>, a képernyő tetejétől <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> cm-re van. Emelje fel az ujját, amikor a rendszer felolvassa az elemet.</string>
+    <string name="gesture_trainer_menu_sample">Ennek a szélnek nincs menüje. A gyakorlat <xliff:g id="count">%1$d</xliff:g> mintaelemet használ.</string>
+    <string name="gesture_trainer_try_menu_cancelled"><xliff:g id="number">%1$d</xliff:g>. próbálkozás: a menü választás nélkül bezárult.</string>
+    <string name="gesture_trainer_try_menu_other"><xliff:g id="number">%1$d</xliff:g>. próbálkozás: kiválasztva: <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">felemelve a(z) <xliff:g id="number">%1$d</xliff:g>. elemnél</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Az ujj a szél legtetején vagy legalján indult, ahol a sarkok, valamint a felső és alsó szél vannak.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Az ujj <xliff:g id="mm">%1$.0f</xliff:g> mm-re a széltől emelkedett fel, és a menü <xliff:g id="limit">%2$.0f</xliff:g> mm-en túl bezárul.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Az ujj a(z) <xliff:g id="item">%1$d</xliff:g>. elemnél emelkedett fel a(z) <xliff:g id="target">%2$d</xliff:g>. elem helyett.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Kezdjen kicsit távolabb a szél felső és alsó végétől.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Csúsztatás közben tartsa az ujját a szél közelében, és ott emelje fel.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Minden elemnek rögzített helye van a szél mentén, és az az elem lesz kiválasztva, ahol az ujj felemelkedik. Emelje fel, amikor a rendszer felolvassa az elemet.</string>
+    <string name="gesture_trainer_contents">Tartalom</string>
+    <string name="gesture_trainer_contents_heading">Tartalom: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">kész, <xliff:g id="tries">%2$d</xliff:g> próbálkozásból <xliff:g id="hits">%1$d</xliff:g> felismerve</string>
+    <string name="gesture_trainer_group_tap_swipe">Koppintás és csúsztatás</string>
+    <string name="gesture_trainer_group_edge_swipes">Csúsztatások a szélekről</string>
+    <string name="gesture_trainer_group_along_edges">Csúsztatások a szélek mentén</string>
+    <string name="gesture_trainer_group_edge_menus">Szélmenük</string>
+    <string name="gesture_trainer_group_corners">Sarkok</string>
+    <string name="gesture_trainer_group_back_tap">Koppintás a hátlapra</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">A kétujjas koppintások utáni kétujjas csúsztatások kimaradnak: a(z) <xliff:g id="setting">%1$s</xliff:g> ki van kapcsolva.</string>
+    <string name="gesture_trainer_how_swipe_hold">Ezután felemelés nélkül tartsa az ujját mozdulatlanul legalább <xliff:g id="hold">%1$d</xliff:g> ms-ig, majd emelje fel.</string>
+    <string name="gesture_trainer_half_top">felső</string>
+    <string name="gesture_trainer_half_bottom">alsó</string>
+    <string name="gesture_trainer_how_taps_half">Koppintson a képernyő <xliff:g id="half">%1$s</xliff:g> felére. Az ujjak közötti pont határozza meg a felet.</string>
+    <string name="gesture_trainer_same_fingers">ugyanazokkal az ujjakkal</string>
+    <string name="gesture_trainer_how_tap_swipe">Koppintson <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Közvetlenül az utolsó koppintás után, <xliff:g id="gap">%3$d</xliff:g> ms-on belül érintse meg ismét a képernyőt <xliff:g id="swipe_fingers">%4$s</xliff:g>, és csúsztassa <xliff:g id="direction">%5$s</xliff:g> egyenes vonalban kb. 2–3 cm-t, majd emelje fel.</string>
+    <string name="gesture_trainer_how_corner_hold">Az utolsó koppintásnál hagyja az ujját mozdulatlanul a sarokban legalább <xliff:g id="hold">%1$d</xliff:g> ms-ig.</string>
+    <string name="gesture_trainer_how_back_tap">Tartsa a telefont a kezében az oldalainál fogva, és koppintson a hátlapja közepére <xliff:g id="taps">%1$s</xliff:g> az ujjbegyével, határozottan és gyorsan, mintha kopogna egy ajtón. A koppintások kövessék egymást szorosan: legfeljebb <xliff:g id="gap">%2$d</xliff:g> ms legyen közöttük. Koppintás közben ne érintse meg a képernyőt.</string>
+    <string name="gesture_trainer_back_tap_info">A hátlapra koppintások nem futtatnak parancsot a gyakorlat alatt. A(z) <xliff:g id="setting">%1$s</xliff:g> határozza meg, milyen erős legyen egy koppintás.</string>
+    <string name="gesture_trainer_go_placed">Végezze el a kézmozdulatot <xliff:g id="tries">%1$d</xliff:g> alkalommal.</string>
+    <string name="gesture_trainer_along_left">a bal szél</string>
+    <string name="gesture_trainer_along_right">a jobb szél</string>
+    <string name="gesture_trainer_along_top">a felső szél</string>
+    <string name="gesture_trainer_along_bottom">az alsó szél</string>
+    <string name="gesture_trainer_left_out_along_menu">A csúsztatások <xliff:g id="edge">%1$s</xliff:g> mentén kimaradnak: szélmenüje van, ezért a mentén végzett csúsztatás kézmozdulat futtatása helyett a menüt nyitja meg.</string>
+    <string name="gesture_trainer_left_out_along_scroll">A csúsztatások <xliff:g id="edge">%1$s</xliff:g> mentén kimaradnak: görget, ezért a mentén végzett csúsztatás kézmozdulat futtatása helyett az alkalmazást görgeti.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Az ujj túl messzire távolodott a széltől.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Tartsa az ujját az üveg legszélén, egyenesen a szél mentén.</string>
+    <string name="gesture_trainer_go_back_tap">Végezze el a hátlapra koppintás kézmozdulatát <xliff:g id="tries">%1$d</xliff:g> alkalommal. A képernyő megérintése sikertelenné teszi a próbálkozást.</string>
+    <string name="gesture_trainer_no_accelerometer">Ehhez a gyakorlathoz gyorsulásmérő szükséges. Nem érhető el gyorsulásmérő.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms-ig mozdulatlan</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> erősségű koppintás</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Az ujj a végén <xliff:g id="ms">%1$d</xliff:g> ms-ig maradt mozdulatlan, és legalább <xliff:g id="limit">%2$d</xliff:g> ms-ig mozdulatlannak kell maradnia.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Az ujjak a képernyő másik felére koppintottak.</string>
+    <string name="gesture_trainer_finding_swipe_missing">A koppintások után nem jött csúsztatás.</string>
+    <string name="gesture_trainer_finding_swipe_late">A csúsztatás <xliff:g id="ms">%1$d</xliff:g> ms-mal az utolsó koppintás után indult, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Túl gyenge hátlapra koppintás: a szükséges erő <xliff:g id="percent">%1$d</xliff:g>%%-a.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Egy koppintás inkább oldalirányban rázta meg a telefont, mint a hátlapon keresztül.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">A telefon mozgásban volt közvetlenül egy koppintás előtt.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">A képernyőt megérintették, és az érintés közbeni koppintások nem számítanak.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms telt el a hátlapra koppintások között, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">A csúsztatás után tartsa az ujját mozdulatlanul a képernyőn a teljes nyomva tartási ideig. Ezután emelje fel.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Ellenőrizze, melyik félre koppint: a képernyő közepe választja el a felső felet az alsótól.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Az utolsó koppintás után azonnal érintse meg ismét a képernyőt, és csúsztasson.</string>
+    <string name="gesture_trainer_tip_swipe_late">A csúsztatást közvetlenül az utolsó koppintás után kezdje, szünet nélkül.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Koppintson erősebben, az ujjbegyével vagy a körmével, a hátlap közepe közelében.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Egyenesen a telefon hátlapjára koppintson, ne a szélére és ne ferdén.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Koppintás előtt tartsa a telefont egy pillanatig mozdulatlanul, és lazán fogja, hogy a keze ne mozdítsa meg.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Amíg a hátlapra koppint, tartsa az ujjait távol a képernyőtől: a telefont az oldalainál fogja.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Koppintson gyorsabban, egyik koppintást a másik után.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Az ujj túl korán emelkedik fel a csúsztatás után. A(z) <xliff:g id="setting">%1$s</xliff:g> rövidebb értéke rövidebb nyomva tartást tesz lehetővé.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">A hátlapra koppintások gyengék. A(z) <xliff:g id="setting">%1$s</xliff:g> magasabb értéke gyengébb koppintásokat is érzékel, és az ütődéseket is koppintásnak érzékelheti.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Az ujjak <xliff:g id="degrees">%1$.0f</xliff:g> fokot fordultak, és <xliff:g id="limit">%2$.0f</xliff:g> foktól a mozdulat forgatásnak számít.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Az ujjakat egyenes vonalban mozgassa egymás felé vagy egymástól távolodva, ne ívben egymás körül.</string>
+    <string name="gesture_trainer_finding_other_gesture">A mozdulat helyette ennek a kézmozdulatnak felelt meg.</string>
+    <string name="gesture_trainer_side_left">bal</string>
+    <string name="gesture_trainer_side_right">jobb</string>
+    <string name="gesture_trainer_side_top">felső</string>
+    <string name="gesture_trainer_side_bottom">alsó</string>
+    <string name="gesture_trainer_finding_wrong_edge">Az ujj a(z) <xliff:g id="side">%1$s</xliff:g> szélnél indult, és ez a gyakorlat a(z) <xliff:g id="expected">%2$s</xliff:g> szélnél van.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Pontosan a gyakorlatban megnevezett szélnél kezdjen.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Egy szélmenü nyílt meg ennek a kézmozdulatnak a helyett.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Egy menüvel rendelkező szél mentén végzett csúsztatás megnyitja a menüt. A gyakorlatban megnevezett szélnél kezdjen.</string>
+    <string name="gesture_trainer_group_three_part">Háromrészes csúsztatások</string>
+    <string name="gesture_trainer_group_two_stroke">Kétlépéses csúsztatások</string>
+    <string name="gesture_trainer_group_shake">Rázás</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">A háromrészes csúsztatások kimaradnak: a(z) <xliff:g id="setting">%1$s</xliff:g> be van kapcsolva.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">A kétlépéses csúsztatások kimaradnak: a(z) <xliff:g id="setting">%1$s</xliff:g> értéke <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">A rázás nem futtat parancsot a gyakorlat alatt. A(z) <xliff:g id="setting">%1$s</xliff:g> határozza meg, milyen erős legyen egy rázás.</string>
+    <string name="gesture_trainer_go_shake">Rázza meg a telefont <xliff:g id="tries">%1$d</xliff:g> alkalommal, minden rázás után rövid szünettel.</string>
+    <string name="gesture_trainer_how_shake">Tartsa erősen a telefont, és gyorsan rázza meg oda-vissza, mintha egy vízcseppet rázna le róla: mindkét irányba legalább kétszer, mindezt kb. kétharmad másodpercen belül. Ezután tartsa mozdulatlanul.</string>
+    <string name="gesture_trainer_how_two_stroke">Csúsztasson <xliff:g id="first">%1$s</xliff:g> egy ujjal kb. 2 cm-t, és emelje fel. Ezután azonnal, <xliff:g id="time">%3$d</xliff:g> ms-on belül csúsztasson <xliff:g id="second">%2$s</xliff:g> egy ujjal kb. 2 cm-t, és emelje fel.</string>
+    <string name="gesture_trainer_how_three_part">Érintse meg a képernyőt egy ujjal, és felemelés nélkül csúsztasson <xliff:g id="first">%1$s</xliff:g>, majd forduljon élesen és csúsztasson <xliff:g id="second">%2$s</xliff:g>, majd ismét forduljon élesen és csúsztasson <xliff:g id="third">%3$s</xliff:g>, mindegyik rész kb. 2 cm legyen, és emelje fel. Egyetlen gyors, folyamatos mozdulat legyen éles sarkokkal, ne ívekkel.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Tegye az egyik ujját a képernyő felső harmadába, a másikat az alsó harmadába, például a hüvelykujját lent, a mutatóujját fent.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Az ujjak nem úgy helyezkedtek el, hogy egy a képernyő felső harmadában és egy az alsó harmadában legyen.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Nem volt második csúsztatás.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">A második csúsztatás <xliff:g id="ms">%1$d</xliff:g> ms-mal az első után indult, és legfeljebb <xliff:g id="limit">%2$d</xliff:g> ms megengedett.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Az első csúsztatás iránya: <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">A második csúsztatás iránya: <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">A rázás túl gyenge volt: a szükséges erő <xliff:g id="percent">%1$d</xliff:g>%%-a.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Oda-vissza lendítések: <xliff:g id="swings">%1$d</xliff:g> a szükséges <xliff:g id="wanted">%2$d</xliff:g>-ből.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Tárja szét az ujjait messzire, az egyiket a felső szél közelében, a másikat az alsó szél közelében.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Az első csúsztatás után emelje fel az ujját, és azonnal csúsztasson újra.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">A második csúsztatást közvetlenül az ujj felemelése után kezdje.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Rázza erősebben és gyorsabban.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Rázza gyorsabban, oda-vissza mindkét irányba legalább kétszer, közben megállás nélkül.</string>
+    <string name="gesture_trainer_measure_shake_strength">legerősebb mozgás <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">A rázások gyengék. A(z) <xliff:g id="setting">%1$s</xliff:g> magasabb értéke gyengébb rázásokat is érzékel, és a telefon hordozását is rázásnak érzékelheti.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">A második csúsztatás későn indul. A(z) <xliff:g id="setting">%1$s</xliff:g> hosszabb értéke későbbi második csúsztatást tesz lehetővé, és ekkor az egyszeri csúsztatás is tovább vár, mielőtt lefut.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">A(z) <xliff:g id="setting">%1$s</xliff:g> be van kapcsolva.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">A(z) <xliff:g id="setting">%1$s</xliff:g> ki van kapcsolva: a kétujjas csúsztatások görgetik az alkalmazást, és a dörzsölés is többnyire görget. Ha a beállítás be van kapcsolva, a kétujjas csúsztatások görgetés helyett SandFly-parancsokat futtatnak.</string>
+    <string name="gesture_trainer_measure_first_stroke">első csúsztatás <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">második csúsztatás <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">teljes kézmozdulat <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> ms-ig felemelve közöttük</string>
+</resources>

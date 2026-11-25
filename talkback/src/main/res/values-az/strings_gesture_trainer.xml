@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Jest trenajoru</string>
+    <string name="gesture_trainer_intro">Jest qrupu seçin. Hər məşq bir jesti təsvir edir. Jesti <xliff:g id="tries">%1$d</xliff:g> dəfə edin; hər cəhdin nəticəsi səsləndirilir. Son cəhddən sonra ekranda hər cəhdin ölçüləri, nəyi dəyişmək lazım olduğu və əlaqəli ayarlar göstərilir.</string>
+    <string name="gesture_trainer_group_one_finger">Bir barmaq</string>
+    <string name="gesture_trainer_group_two_fingers">İki barmaq</string>
+    <string name="gesture_trainer_group_three_fingers">Üç barmaq</string>
+    <string name="gesture_trainer_group_four_fingers">Dörd barmaq</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Sıxma, fırlatma və silmə</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> məşq</string>
+    <string name="gesture_trainer_close">Bağlayın</string>
+    <string name="gesture_trainer_no_detection">Jest trenajoru Android 13 və ya daha yeni versiya tələb edir.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">İrəli-geri və bucaqlı jestlər çıxarılıb: <xliff:g id="setting">%1$s</xliff:g> aktivdir.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">İki barmaqla sürüşdürmələr çıxarılıb: <xliff:g id="setting">%1$s</xliff:g> deaktivdir, buna görə də onlar tətbiqləri sürüşdürür.</string>
+    <string name="gesture_trainer_exercise_heading">Məşq <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Başlat</string>
+    <string name="gesture_trainer_skip">Bu məşqi ötür</string>
+    <string name="gesture_trainer_back_to_groups">Qruplara qayıt</string>
+    <string name="gesture_trainer_go">Jesti ekranın istənilən yerində <xliff:g id="tries">%1$d</xliff:g> dəfə edin. Hər toxunuş bir cəhddir.</string>
+    <string name="gesture_trainer_fingers_1">bir barmaqla</string>
+    <string name="gesture_trainer_fingers_2">iki barmaqla yan-yana, təxminən 1 sm aralı</string>
+    <string name="gesture_trainer_fingers_3">üç barmaqla yan-yana, bir az aralı</string>
+    <string name="gesture_trainer_fingers_4">dörd barmaqla yan-yana, bir az aralı</string>
+    <string name="gesture_trainer_direction_up">yuxarı</string>
+    <string name="gesture_trainer_direction_down">aşağı</string>
+    <string name="gesture_trainer_direction_left">sola</string>
+    <string name="gesture_trainer_direction_right">sağa</string>
+    <string name="gesture_trainer_how_swipe">Ekrana <xliff:g id="fingers">%1$s</xliff:g> toxunun və gözləmədən düz xətt üzrə təxminən 2-3 sm <xliff:g id="direction">%2$s</xliff:g> sürüşdürün, sonra qaldırın. Dərhal hərəkətə başlayın: əvvəlcə hərəkətsiz qalan barmaq toxunuşla kəşfi başladır.</string>
+    <string name="gesture_trainer_how_swipe_multi">Barmaqları eyni anda birlikdə qoyun və hamısını eyni istiqamətdə hərəkət etdirin. Hər barmaq bütün vaxt <xliff:g id="direction">%1$s</xliff:g> getməlidir, buna görə də xətti düz saxlayın.</string>
+    <string name="gesture_trainer_how_back_and_forth">Ekrana bir barmaqla toxunun və təxminən 2 sm <xliff:g id="first">%1$s</xliff:g> sürüşdürün, sonra qaldırmadan təxminən 2 sm düz geri <xliff:g id="second">%2$s</xliff:g> gedin və qaldırın. Bunu bir sürətli, hamar hərəkətlə edin.</string>
+    <string name="gesture_trainer_how_angle">Ekrana <xliff:g id="fingers">%1$s</xliff:g> toxunun və təxminən 2 sm <xliff:g id="first">%2$s</xliff:g> sürüşdürün, sonra qaldırmadan kəskin dönün və təxminən 2 sm <xliff:g id="second">%3$s</xliff:g> sürüşdürün, sonra qaldırın. Dönüşü əyri yox, L hərfi kimi iti künc edin.</string>
+    <string name="gesture_trainer_taps_1">bir dəfə</string>
+    <string name="gesture_trainer_taps_2">iki dəfə</string>
+    <string name="gesture_trainer_taps_3">üç dəfə</string>
+    <string name="gesture_trainer_taps_4">dörd dəfə</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> toxunun. Barmaqları birlikdə qoyun və birlikdə, tez, sürüşdürmədən qaldırın.</string>
+    <string name="gesture_trainer_how_taps_quick">Toxunuşları sürətli və eyni yerdə edin: növbəti toxunuş əvvəlkindən sonra <xliff:g id="gap">%1$d</xliff:g> ms ərzində olmalıdır.</string>
+    <string name="gesture_trainer_how_hold">Ekrana <xliff:g id="fingers">%1$s</xliff:g> birlikdə toxunun və onları sürüşdürmədən ən azı <xliff:g id="hold">%2$d</xliff:g> ms hərəkətsiz saxlayın.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Başqa əmr təyin edilməyibsə, bu jest SandFly-ı deaktiv edir. Trenajorda heç nə icra etmir.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> toxunun və son toxunuşda barmaqları ekranda ən azı <xliff:g id="hold">%3$d</xliff:g> ms hərəkətsiz saxlayın.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Baş barmaq, şəhadət barmağı və orta barmaqdan istifadə edin.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Şəhadət və orta barmağı yan-yana, baş barmaq və adsız barmağı isə hər iki tərəfdə bir neçə santimetr aralı qoyun. Sonra dörd barmaq ucunu bir nöqtəyə yığın.</string>
+    <string name="gesture_trainer_how_pinch">Ekrana <xliff:g id="fingers">%1$d</xliff:g> barmağı bir-birindən geniş aralı qoyun. Sonra bir şey götürürmüş kimi onları ən azı 1 sm düz bir-birinə yaxınlaşdırın və ekrandan qaldırın. Bütün əli yox, yalnız barmaqları hərəkət etdirin, qövs üzrə yox.</string>
+    <string name="gesture_trainer_how_spread">Ekrana <xliff:g id="fingers">%1$d</xliff:g> barmağı bir-birinə yaxın qoyun. Sonra onları ən azı 1 sm düz bir-birindən aralayın və ekrandan qaldırın. Bütün əli yox, yalnız barmaqları hərəkət etdirin, qövs üzrə yox.</string>
+    <string name="gesture_trainer_clockwise">saat əqrəbi istiqamətində</string>
+    <string name="gesture_trainer_counterclockwise">saat əqrəbinin əksinə</string>
+    <string name="gesture_trainer_how_rotate">Ekrana iki barmağı təxminən 2-3 sm aralı qoyun və onları tənzimləyici dəstəyi fırladırmış kimi ortaları ətrafında <xliff:g id="way">%1$s</xliff:g> təxminən dörddə bir dövrə fırladın. Sonra qaldırın.</string>
+    <string name="gesture_trainer_how_scrub">Ekrana iki barmaq qoyun və bir şeyi silirmiş kimi onları sürətlə təxminən 2 sm bir tərəfə və geri, hamısını təxminən bir saniyə ərzində hərəkət etdirin. Sonra qaldırın.</string>
+    <string name="gesture_trainer_edge_bottom">aşağı kənarda</string>
+    <string name="gesture_trainer_edge_top_left">yuxarı kənarda, onun sol yarısında</string>
+    <string name="gesture_trainer_edge_top_right">yuxarı kənarda, onun sağ yarısında</string>
+    <string name="gesture_trainer_edge_left_top">sol kənarda, onun yuxarı yarısında</string>
+    <string name="gesture_trainer_edge_left_bottom">sol kənarda, onun aşağı yarısında</string>
+    <string name="gesture_trainer_edge_right_top">sağ kənarda, onun yuxarı yarısında</string>
+    <string name="gesture_trainer_edge_right_bottom">sağ kənarda, onun aşağı yarısında</string>
+    <string name="gesture_trainer_edge_left">sol kənarda</string>
+    <string name="gesture_trainer_edge_right">sağ kənarda</string>
+    <string name="gesture_trainer_edge_top">yuxarı kənarda</string>
+    <string name="gesture_trainer_how_edge">Bir barmaqla <xliff:g id="edge">%1$s</xliff:g>, kənardan ən çox <xliff:g id="edge_width">%2$d</xliff:g> mm aralıda başlayın və ekranın içinə doğru birinci klikə qədər, təxminən <xliff:g id="distance">%4$d</xliff:g> mm <xliff:g id="direction">%3$s</xliff:g> sürüşdürün. Sonra dərhal qaldırın: ikinci klikdən sonra sürüşdürmə uzun sürüşdürmə olur.</string>
+    <string name="gesture_trainer_how_edge_long">Bir barmaqla <xliff:g id="edge">%1$s</xliff:g>, kənardan ən çox <xliff:g id="edge_width">%2$d</xliff:g> mm aralıda başlayın və ekranın içinə doğru birinci klikdən keçib ikinciyə qədər, təxminən <xliff:g id="distance">%4$d</xliff:g> mm <xliff:g id="direction">%3$s</xliff:g> sürüşdürün. Sonra qaldırın.</string>
+    <string name="gesture_trainer_how_along">Bir barmağı <xliff:g id="edge">%1$s</xliff:g> boyunca ən azı <xliff:g id="distance">%3$d</xliff:g> mm <xliff:g id="direction">%2$s</xliff:g> sürüşdürün.</string>
+    <string name="gesture_trainer_corner_top_left">yuxarı sol</string>
+    <string name="gesture_trainer_corner_top_right">yuxarı sağ</string>
+    <string name="gesture_trainer_corner_bottom_left">aşağı sol</string>
+    <string name="gesture_trainer_corner_bottom_right">aşağı sağ</string>
+    <string name="gesture_trainer_how_corner">Ekranın <xliff:g id="corner">%2$s</xliff:g> küncünə <xliff:g id="taps">%1$s</xliff:g> toxunun. Barmağı düz küncə, hər iki kənardan ən çox <xliff:g id="size">%3$d</xliff:g> mm aralı qoyun və <xliff:g id="time">%4$d</xliff:g> ms ərzində tez qaldırın.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Künclər böyük olduqda küncə yaxın idarəetmə elementinə, məsələn, yuxarı soldakı Geri düyməsinə toxunuş əvəzinə künc jestini icra edə bilər.</string>
+    <string name="gesture_trainer_rating_precise">tanındı, dəqiq</string>
+    <string name="gesture_trainer_rating_good">tanındı, yaxşı</string>
+    <string name="gesture_trainer_rating_borderline">tanındı, amma həddə yaxın</string>
+    <string name="gesture_trainer_try_recognized">Cəhd <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Cəhd <xliff:g id="number">%1$d</xliff:g>: tanınmadı.</string>
+    <string name="gesture_trainer_try_other">Cəhd <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> kimi tanındı.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> cəhddən <xliff:g id="recognized">%2$d</xliff:g> tanındı</string>
+    <string name="gesture_trainer_results_tries">Cəhdləriniz</string>
+    <string name="gesture_trainer_results_change">Nəyi dəyişmək lazımdır</string>
+    <string name="gesture_trainer_results_close">Həddə yaxın</string>
+    <string name="gesture_trainer_results_all_good">Bütün cəhdlər həddlər daxilində tanındı.</string>
+    <string name="gesture_trainer_results_settings">Kömək edə biləcək ayarlar</string>
+    <string name="gesture_trainer_next">Növbəti məşq</string>
+    <string name="gesture_trainer_repeat">Təkrarla</string>
+    <string name="gesture_trainer_finish">Bitir</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> qrupundakı bütün məşqləri bitirdiniz.</string>
+    <string name="gesture_trainer_open_setting">Dəyişin: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms çəkdi</string>
+    <string name="gesture_trainer_measure_length">uzunluq <xliff:g id="cm">%1$.1f</xliff:g> sm</string>
+    <string name="gesture_trainer_measure_speed">saniyədə <xliff:g id="speed">%1$.0f</xliff:g> sm</string>
+    <string name="gesture_trainer_measure_angle">düz xətdən <xliff:g id="degrees">%1$.0f</xliff:g> dərəcə kənar</string>
+    <string name="gesture_trainer_measure_start">birinci santimetr <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">barmaqlar <xliff:g id="ms">%1$d</xliff:g> ms fərqlə toxundu</string>
+    <string name="gesture_trainer_measure_tap">toxunuş <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap">toxunuşlar arasında <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">barmaqlar <xliff:g id="mm">%1$.0f</xliff:g> mm hərəkət etdi</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> dərəcə fırlandı</string>
+    <string name="gesture_trainer_measure_corner">küncün kənarlarından <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_edge">kənardan <xliff:g id="mm">%1$.0f</xliff:g> mm aralıda başladı</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Ekrandakı barmaqlar: <xliff:g id="wanted">%2$d</xliff:g> əvəzinə <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Barmaqlar <xliff:g id="ms">%1$d</xliff:g> ms fərqlə toxundu, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Bütün barmaqlar toxunmadan bir barmaq qalxdı.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Barmaqlar <xliff:g id="ms">%1$d</xliff:g> ms fərqlə qalxdı, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_became_exploration">Barmaq çox uzun hərəkətsiz qaldı və ya əvvəlcə çox yavaş hərəkət etdi, buna görə toxunuş toxunuşla kəşfə çevrildi.</string>
+    <string name="gesture_trainer_finding_slow_start">Birinci santimetr <xliff:g id="ms">%1$d</xliff:g> ms çəkdi, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_paused">Barmaq <xliff:g id="ms">%1$d</xliff:g> ms yavaşladı, hər santimetr isə ən çox <xliff:g id="limit">%2$d</xliff:g> ms çəkə bilər.</string>
+    <string name="gesture_trainer_finding_too_short">Hərəkət cəmi <xliff:g id="mm">%1$.0f</xliff:g> mm oldu, ən azı <xliff:g id="limit">%2$.0f</xliff:g> mm olmalıdır.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Barmaq əvvəlcə <xliff:g id="direction">%1$s</xliff:g> getdi.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Barmaqlar əvvəlcə <xliff:g id="direction">%1$s</xliff:g> getdi.</string>
+    <string name="gesture_trainer_finding_off_line">Yol düz xətdən <xliff:g id="degrees">%1$.0f</xliff:g> dərəcə kənara çıxdı, ən çox <xliff:g id="limit">%2$.0f</xliff:g> icazə verilir.</string>
+    <string name="gesture_trainer_finding_curved">Yol <xliff:g id="wanted">%2$d</xliff:g> əvəzinə <xliff:g id="parts">%1$d</xliff:g> hissəyə əyildi.</string>
+    <string name="gesture_trainer_finding_turn_missing">Dönüş tapılmadı.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Dönüşdən sonra barmaq <xliff:g id="direction">%1$s</xliff:g> getdi.</string>
+    <string name="gesture_trainer_finding_tap_moved">Toxunuş zamanı barmaq <xliff:g id="mm">%1$.1f</xliff:g> mm sürüşdü, ən çox <xliff:g id="limit">%2$.1f</xliff:g> mm icazə verilir.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Toxunuş <xliff:g id="ms">%1$d</xliff:g> ms davam etdi, <xliff:g id="limit">%2$d</xliff:g> ms-dən uzun.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Son toxunuş <xliff:g id="ms">%1$d</xliff:g> ms saxlanıldı, ən azı <xliff:g id="limit">%2$d</xliff:g> ms olmalıdır.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> əvəzinə <xliff:g id="taps">%1$d</xliff:g> toxunuş.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> əvəzinə <xliff:g id="taps">%1$d</xliff:g> toxunuş.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Toxunuşlar arasında <xliff:g id="ms">%1$d</xliff:g> ms keçdi, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_taps_apart">Toxunuşlar bir-birindən <xliff:g id="mm">%1$.0f</xliff:g> mm aralı düşdü, ən çox <xliff:g id="limit">%2$.0f</xliff:g> mm icazə verilir.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Barmaqlar cəmi <xliff:g id="mm">%1$.0f</xliff:g> mm hərəkət etdi, ən azı <xliff:g id="limit">%2$.0f</xliff:g> mm hərəkət etməlidir.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Barmaqlar əks istiqamətdə hərəkət etdi.</string>
+    <string name="gesture_trainer_finding_moved_together">Bütün əl ekranda <xliff:g id="mm">%1$.0f</xliff:g> mm sürüşdü, barmaqların bir-birinə yaxınlaşmasından və ya uzaqlaşmasından çox.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Barmaqlar cəmi <xliff:g id="degrees">%1$.0f</xliff:g> dərəcə fırlandı, ən azı <xliff:g id="limit">%2$.0f</xliff:g> fırlanmalıdır.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Barmaqlar əks istiqamətdə fırlandı.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Birinci hərəkət <xliff:g id="mm">%1$.0f</xliff:g> mm oldu, ən azı <xliff:g id="limit">%2$.0f</xliff:g> mm olmalıdır.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Geri hərəkət <xliff:g id="mm">%1$.0f</xliff:g> mm oldu, ən azı <xliff:g id="limit">%2$.0f</xliff:g> mm olmalıdır.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Silmə <xliff:g id="ms">%1$d</xliff:g> ms çəkdi, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Barmaq kənardan <xliff:g id="mm">%1$.0f</xliff:g> mm aralıda toxundu, kənarın eni isə <xliff:g id="limit">%2$.0f</xliff:g> mm-dir.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Barmaq kənarın digər yarısında başladı.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Barmaq <xliff:g id="mm">%1$.0f</xliff:g> mm sürüşdü, ən azı <xliff:g id="limit">%2$.0f</xliff:g> mm sürüşməlidir.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Sürüşdürmə çox uzundur: barmaq ikinci klikdən keçdi, <xliff:g id="mm">%1$.0f</xliff:g> mm, ikinci klik isə <xliff:g id="limit">%2$.0f</xliff:g> mm-dədir.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Klikə çatmaq <xliff:g id="ms">%1$d</xliff:g> ms çəkdi, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Sürüşdürmə <xliff:g id="degrees">%1$.0f</xliff:g> dərəcə yana getdi, ən çox <xliff:g id="limit">%2$.0f</xliff:g> icazə verilir.</string>
+    <string name="gesture_trainer_finding_corner_missed">Toxunuş küncün kənarlarından <xliff:g id="mm">%1$.0f</xliff:g> mm aralı düşdü, künc isə <xliff:g id="limit">%2$.0f</xliff:g> mm-dir.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Küncə toxunuş <xliff:g id="ms">%1$d</xliff:g> ms davam etdi, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_none">Jestə uyğun hərəkət aşkarlanmadı.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Şüşəyə neçə barmağın toxunduğunu yoxlayın. Ekranda duran ovuc və ya başqa barmaq da sayılır.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Bütün barmaqları bir-birinin ardınca yox, bir əl kimi eyni anda qoyun.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Əvvəlcə bütün barmaqları qoyun, sonra hərəkət etdirin və ya qaldırın.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Bütün barmaqları eyni anda qaldırın.</string>
+    <string name="gesture_trainer_tip_slow_start">Ekrana toxunduğunuz anda hərəkətə başlayın və əvvəldə daha sürətli hərəkət edin.</string>
+    <string name="gesture_trainer_tip_paused">Qaldırana qədər barmağı bərabər sürətlə hərəkət etdirin. Sonda yavaşlamayın.</string>
+    <string name="gesture_trainer_tip_too_short">Hərəkəti daha uzun, təxminən 2-3 sm edin.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Hərəkətin lap əvvəlində istiqaməti yoxlayın. Telefonu düz qarşınızda tutmaq kömək edir.</string>
+    <string name="gesture_trainer_tip_off_line">Diaqonal yox, yalnız istiqamət üzrə hərəkət edin. Şəhadət barmağı baş barmaqdan daha düz xətt saxlayır.</string>
+    <string name="gesture_trainer_tip_curved">Xətti düz saxlayın və qaldırarkən barmağı yana əymədən düz sonda qaldırın.</string>
+    <string name="gesture_trainer_tip_turn_missing">Qaldırmadan istiqaməti kəskin, düz bucaq altında və ya düz geri dəyişin. Hər hissə təxminən 2 sm olmalıdır.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Dönüşdən sonra hansı tərəfə getdiyinizi yoxlayın: ikinci hissə jestin adında göstərilən digər istiqamətə getməlidir.</string>
+    <string name="gesture_trainer_tip_tap_moved">Barmaq ucu ilə, sürüşdürmədən düz aşağı və yuxarı toxunun.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Hər toxunuşu qısa edin: toxunun və dərhal qaldırın.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Son toxunuşda barmaqları bütün saxlama müddəti ərzində ekranda hərəkətsiz saxlayın.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Toxunuşları sayın və hamısını bir dəfəyə tez edin.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Toxunuşları sayın. Şüşədən sıçrayan barmaq əlavə toxunuş yaradır.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Daha tez toxunun: qaldırdıqdan dərhal sonra növbəti toxunuşa başlayın.</string>
+    <string name="gesture_trainer_tip_taps_apart">Hər dəfə eyni yerə toxunun.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Barmaqları daha çox, ən azı 1 sm bir-birinə yaxın və ya aralı hərəkət etdirin.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Sıxmada barmaqlar bir-birinə yaxınlaşır, açmada isə aralanır.</string>
+    <string name="gesture_trainer_tip_moved_together">Yalnız barmaqları bir-birinə yaxınlaşdırın və ya uzaqlaşdırın. Bütün əli ekranda sürüşdürməyin.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Tənzimləyici dəstəyi dörddə bir dövrə fırladırmış kimi daha çox fırladın.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Saat əqrəbi istiqamətində saatın əqrəblərinin getdiyi tərəfə fırlatmaq deməkdir: yuxarıdakı barmaq sağa hərəkət edir.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Birinci hərəkəti ən azı 1 sm uzunluğunda edin.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Birinci hərəkətdən sonra qaldırmazdan əvvəl əks istiqamətdə geri qayıdın.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Silməni tez edin, təxminən bir saniyədə gedib-qayıdın.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Barmaq ucu qismən ekrandan kənarda olmaqla düz kənardan başlayın.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Kənarın hansı yarısında başladığınızı yoxlayın.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Kliki eşidənə qədər daha çox sürüşdürün, sonra qaldırın.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Birinci klikdən dərhal sonra, ikincidən əvvəl qaldırın.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Klikdən əvvəl dayanmadan daha sürətlə içəri sürüşdürün.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Diaqonal yox, kənardan düz içəri və ya düz kənar boyunca sürüşdürün.</string>
+    <string name="gesture_trainer_tip_corner_missed">Barmağı hər iki kənara toxunacaq şəkildə düz küncə qoyun.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Küncə toxunduqdan sonra daha tez qaldırın.</string>
+    <string name="gesture_trainer_close_to_limit">Həddə yaxın: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Sürüşdürmələr yavaş başlayır. Daha uzun <xliff:g id="setting">%1$s</xliff:g> daha yavaş başlanğıca imkan verir.</string>
+    <string name="gesture_trainer_advice_tap_time">Toxunuşlar yavaşdır. Daha uzun <xliff:g id="setting">%1$s</xliff:g> daha yavaş toxunuşlara imkan verir.</string>
+    <string name="gesture_trainer_advice_edge_width">Sürüşdürmələr kənardan çox uzaqda başlayır. Daha böyük <xliff:g id="setting">%1$s</xliff:g> kənara yaxın başlayan sürüşdürmələri də kənar sürüşdürmələrinə çevirir.</string>
+    <string name="gesture_trainer_advice_corner_size">Toxunuşlar küncdən kənara düşür. Daha böyük <xliff:g id="setting">%1$s</xliff:g> küncləri böyüdür.</string>
+    <string name="gesture_trainer_advice_corner_time">Künc toxunuşları yavaşdır. Daha uzun <xliff:g id="setting">%1$s</xliff:g> daha yavaş toxunuşlara imkan verir.</string>
+    <string name="gesture_trainer_menu_option">Seçim <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: <xliff:g id="number">%3$d</xliff:g> nömrəli elementi seçin, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Menyunu açmaq üçün bir barmağı <xliff:g id="edge">%1$s</xliff:g> ən azı <xliff:g id="distance">%2$d</xliff:g> mm yuxarı və ya aşağı sürüşdürün. Menyuda yuxarıdan aşağı <xliff:g id="count">%3$d</xliff:g> element var, hər biri təxminən <xliff:g id="size">%6$s</xliff:g> sm hündürlüyündədir. <xliff:g id="number">%4$d</xliff:g> nömrəli element, <xliff:g id="item">%5$s</xliff:g>, ekranın yuxarısından <xliff:g id="from">%7$s</xliff:g>-<xliff:g id="to">%8$s</xliff:g> sm aşağıdadır. Element səsləndirildikdə barmağı qaldırın.</string>
+    <string name="gesture_trainer_menu_sample">Bu kənarın menyusu yoxdur. Məşq <xliff:g id="count">%1$d</xliff:g> nümunə elementdən istifadə edir.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Cəhd <xliff:g id="number">%1$d</xliff:g>: menyu seçim olmadan bağlandı.</string>
+    <string name="gesture_trainer_try_menu_other">Cəhd <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> seçildi.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g> nömrəli elementdə qaldırıldı</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Barmaq kənarın lap yuxarısında və ya aşağısında, künclərin və yuxarı və aşağı kənarların olduğu yerdə başladı.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Barmaq kənardan <xliff:g id="mm">%1$.0f</xliff:g> mm aralıda qalxdı, menyu isə <xliff:g id="limit">%2$.0f</xliff:g> mm-dən sonra bağlanır.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Barmaq <xliff:g id="target">%2$d</xliff:g> nömrəli element əvəzinə <xliff:g id="item">%1$d</xliff:g> nömrəli elementdə qalxdı.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Kənarın yuxarı və aşağı uclarından bir az aralı başlayın.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Sürüşdürərkən barmağı kənara yaxın saxlayın və orada qaldırın.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Hər elementin kənar boyunca sabit yeri var və barmağın qalxdığı element seçilir. Element səsləndirildikdə qaldırın.</string>
+    <string name="gesture_trainer_contents">Mündəricat</string>
+    <string name="gesture_trainer_contents_heading">Mündəricat: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">bitdi, <xliff:g id="tries">%2$d</xliff:g> cəhddən <xliff:g id="hits">%1$d</xliff:g> tanındı</string>
+    <string name="gesture_trainer_group_tap_swipe">Toxunma və sürüşdürmə</string>
+    <string name="gesture_trainer_group_edge_swipes">Kənarlardan sürüşdürmələr</string>
+    <string name="gesture_trainer_group_along_edges">Kənarlar boyunca sürüşdürmələr</string>
+    <string name="gesture_trainer_group_edge_menus">Kənar menyuları</string>
+    <string name="gesture_trainer_group_corners">Künclər</string>
+    <string name="gesture_trainer_group_back_tap">Arxaya toxunma</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Ardınca iki barmaqla sürüşdürmə gələn iki barmaqla toxunuşlar çıxarılıb: <xliff:g id="setting">%1$s</xliff:g> deaktivdir.</string>
+    <string name="gesture_trainer_how_swipe_hold">Sonra qaldırmadan barmağı ən azı <xliff:g id="hold">%1$d</xliff:g> ms hərəkətsiz saxlayın və qaldırın.</string>
+    <string name="gesture_trainer_half_top">yuxarı</string>
+    <string name="gesture_trainer_half_bottom">aşağı</string>
+    <string name="gesture_trainer_how_taps_half">Ekranın <xliff:g id="half">%1$s</xliff:g> yarısına toxunun. Yarını barmaqlar arasındakı nöqtə müəyyən edir.</string>
+    <string name="gesture_trainer_same_fingers">eyni barmaqlarla</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> toxunun. Son toxunuşdan dərhal sonra, <xliff:g id="gap">%3$d</xliff:g> ms ərzində ekrana yenidən <xliff:g id="swipe_fingers">%4$s</xliff:g> toxunun və düz xətt üzrə təxminən 2-3 sm <xliff:g id="direction">%5$s</xliff:g> sürüşdürün, sonra qaldırın.</string>
+    <string name="gesture_trainer_how_corner_hold">Son toxunuşda barmağı küncdə ən azı <xliff:g id="hold">%1$d</xliff:g> ms hərəkətsiz saxlayın.</string>
+    <string name="gesture_trainer_how_back_tap">Telefonu yanlarından əlinizdə tutun və barmaq ucu ilə qapını döyürmüş kimi möhkəm və tez onun arxasının ortasına <xliff:g id="taps">%1$s</xliff:g> toxunun. Toxunuşları bir-birinə yaxın edin: aralarında ən çox <xliff:g id="gap">%2$d</xliff:g> ms. Toxunarkən ekrana toxunmayın.</string>
+    <string name="gesture_trainer_back_tap_info">Məşq zamanı arxaya toxunuşlar heç bir əmr icra etmir. <xliff:g id="setting">%1$s</xliff:g> toxunuşun nə qədər güclü olmalı olduğunu təyin edir.</string>
+    <string name="gesture_trainer_go_placed">Jesti <xliff:g id="tries">%1$d</xliff:g> dəfə edin.</string>
+    <string name="gesture_trainer_along_left">sol kənar</string>
+    <string name="gesture_trainer_along_right">sağ kənar</string>
+    <string name="gesture_trainer_along_top">yuxarı kənar</string>
+    <string name="gesture_trainer_along_bottom">aşağı kənar</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> boyunca sürüşdürmələr çıxarılıb: onun kənar menyusu var, buna görə də onun boyunca sürüşdürmə jest icra etmək əvəzinə menyunu açır.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> boyunca sürüşdürmələr çıxarılıb: o, sürüşdürmə edir, buna görə də onun boyunca sürüşdürmə jest icra etmək əvəzinə tətbiqi sürüşdürür.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Barmaq kənardan çox uzaqlaşdı.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Barmağı şüşənin lap kənarında, düz kənar boyunca saxlayın.</string>
+    <string name="gesture_trainer_go_back_tap">Arxaya toxunma jestini <xliff:g id="tries">%1$d</xliff:g> dəfə edin. Ekrana toxunuş cəhdi uğursuz edir.</string>
+    <string name="gesture_trainer_no_accelerometer">Bu məşq akselerometr tələb edir. Heç biri mövcud deyil.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms hərəkətsiz saxlanıldı</string>
+    <string name="gesture_trainer_measure_back_tap_strength">toxunuş gücü <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Barmaq sonda <xliff:g id="ms">%1$d</xliff:g> ms hərəkətsiz qaldı, ən azı <xliff:g id="limit">%2$d</xliff:g> ms hərəkətsiz qalmalıdır.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Barmaqlar ekranın digər yarısına toxundu.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Toxunuşlardan sonra sürüşdürmə olmadı.</string>
+    <string name="gesture_trainer_finding_swipe_late">Sürüşdürmə son toxunuşdan <xliff:g id="ms">%1$d</xliff:g> ms sonra başladı, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Arxaya toxunuş çox yüngüldür: lazım olan gücün <xliff:g id="percent">%1$d</xliff:g>%%-i.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Toxunuş telefonu arxadan çox yana silkələdi.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefon toxunuşdan dərhal əvvəl hərəkətdə idi.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Ekrana toxunuldu və ona toxunularkən edilən toxunuşlar sayılmır.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Arxaya toxunuşlar arasında <xliff:g id="ms">%1$d</xliff:g> ms keçdi, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Sürüşdürmədən sonra barmağı bütün saxlama müddəti ərzində ekranda hərəkətsiz saxlayın. Sonra qaldırın.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Hansı yarıya toxunduğunuzu yoxlayın: ekranın ortası yuxarı yarını aşağı yarıdan ayırır.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Son toxunuşdan sonra dərhal ekrana yenidən toxunun və sürüşdürün.</string>
+    <string name="gesture_trainer_tip_swipe_late">Sürüşdürməyə son toxunuşdan dərhal sonra, fasiləsiz başlayın.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Arxanın ortasına yaxın barmaq ucu və ya dırnaqla daha möhkəm toxunun.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Telefonun kənarına və ya bucaq altında yox, düz arxasına toxunun.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Toxunmazdan əvvəl telefonu bir anlıq hərəkətsiz saxlayın və əliniz onu tərpətməsin deyə onu boş tutun.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Arxaya toxunarkən barmaqlarınızı ekrandan uzaq saxlayın: telefonu yanlarından tutun.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Daha tez, bir toxunuşu digərinin dərhal ardınca toxunun.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Barmaq sürüşdürmədən sonra çox tez qalxır. Daha qısa <xliff:g id="setting">%1$s</xliff:g> daha qısa saxlamaya imkan verir.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Arxaya toxunuşlar yüngüldür. Daha yüksək <xliff:g id="setting">%1$s</xliff:g> daha yüngül toxunuşları aşkarlayır və zərbələri də toxunuş kimi aşkarlaya bilər.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Barmaqlar <xliff:g id="degrees">%1$.0f</xliff:g> dərəcə fırlandı, <xliff:g id="limit">%2$.0f</xliff:g> dərəcədən başlayaraq hərəkət fırlatma sayılır.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Barmaqları bir-birinin ətrafında qövs üzrə yox, düz xətt üzrə bir-birinə yaxınlaşdırın və ya uzaqlaşdırın.</string>
+    <string name="gesture_trainer_finding_other_gesture">Hərəkət əvəzinə həmin jestə uyğun gəldi.</string>
+    <string name="gesture_trainer_side_left">sol</string>
+    <string name="gesture_trainer_side_right">sağ</string>
+    <string name="gesture_trainer_side_top">yuxarı</string>
+    <string name="gesture_trainer_side_bottom">aşağı</string>
+    <string name="gesture_trainer_finding_wrong_edge">Barmaq <xliff:g id="side">%1$s</xliff:g> kənarda başladı, bu məşq isə <xliff:g id="expected">%2$s</xliff:g> kənardadır.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Düz məşqin adında göstərilən kənarda başlayın.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Bu jestin əvəzinə kənar menyusu açıldı.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Menyusu olan kənar boyunca sürüşdürmə menyunu açır. Məşqin adında göstərilən kənarda başlayın.</string>
+    <string name="gesture_trainer_group_three_part">Üç hissəli sürüşdürmələr</string>
+    <string name="gesture_trainer_group_two_stroke">İki vuruşlu sürüşdürmələr</string>
+    <string name="gesture_trainer_group_shake">Silkələmə</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Üç hissəli sürüşdürmələr çıxarılıb: <xliff:g id="setting">%1$s</xliff:g> aktivdir.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">İki vuruşlu sürüşdürmələr çıxarılıb: <xliff:g id="setting">%1$s</xliff:g>: <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Məşq zamanı silkələmə heç bir əmr icra etmir. <xliff:g id="setting">%1$s</xliff:g> silkələmənin nə qədər güclü olmalı olduğunu təyin edir.</string>
+    <string name="gesture_trainer_go_shake">Telefonu <xliff:g id="tries">%1$d</xliff:g> dəfə silkələyin, hər silkələmədən sonra qısa fasilə verin.</string>
+    <string name="gesture_trainer_how_shake">Telefonu möhkəm tutun və su damcısını silkələyirmiş kimi tez irəli-geri silkələyin: hər istiqamətdə ən azı iki dəfə, hamısı təxminən saniyənin üçdə ikisi ərzində. Sonra hərəkətsiz saxlayın.</string>
+    <string name="gesture_trainer_how_two_stroke">Bir barmaqla təxminən 2 sm <xliff:g id="first">%1$s</xliff:g> sürüşdürün və qaldırın. Sonra dərhal, <xliff:g id="time">%3$d</xliff:g> ms ərzində, bir barmaqla təxminən 2 sm <xliff:g id="second">%2$s</xliff:g> sürüşdürün və qaldırın.</string>
+    <string name="gesture_trainer_how_three_part">Ekrana bir barmaqla toxunun və qaldırmadan <xliff:g id="first">%1$s</xliff:g> sürüşdürün, sonra kəskin dönün və <xliff:g id="second">%2$s</xliff:g> sürüşdürün, sonra yenidən kəskin dönün və <xliff:g id="third">%3$s</xliff:g> sürüşdürün, hər hissə təxminən 2 sm, sonra qaldırın. Bunu əyrilər yox, iti künclərlə bir sürətli, hamar hərəkətlə edin.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Bir barmağı ekranın yuxarı üçdə birinə, digərini aşağı üçdə birinə qoyun, məsələn, baş barmağı aşağı, şəhadət barmağını yuxarı.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Barmaqlardan biri ekranın yuxarı üçdə birində, digəri aşağı üçdə birində deyildi.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">İkinci sürüşdürmə olmadı.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">İkinci sürüşdürmə birincidən <xliff:g id="ms">%1$d</xliff:g> ms sonra başladı, ən çox <xliff:g id="limit">%2$d</xliff:g> ms icazə verilir.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Birinci sürüşdürmə <xliff:g id="direction">%1$s</xliff:g> getdi.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">İkinci sürüşdürmə <xliff:g id="direction">%1$s</xliff:g> getdi.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Silkələmə çox yüngül idi: lazım olan gücün <xliff:g id="percent">%1$d</xliff:g>%%-i.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">İrəli-geri yellənmələr: lazım olan <xliff:g id="wanted">%2$d</xliff:g> yellənmədən <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Barmaqları bir-birindən çox aralayın, biri yuxarı kənara, digəri aşağı kənara yaxın.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Birinci sürüşdürmədən sonra barmağı qaldırın və dərhal yenidən sürüşdürün.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">İkinci sürüşdürməyə barmağı qaldırdıqdan dərhal sonra başlayın.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Daha güclü və daha tez silkələyin.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Arada dayanmadan, hər istiqamətdə ən azı iki dəfə irəli-geri daha tez silkələyin.</string>
+    <string name="gesture_trainer_measure_shake_strength">ən güclü hərəkət <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Silkələmələr yüngüldür. Daha yüksək <xliff:g id="setting">%1$s</xliff:g> daha yüngül silkələmələri aşkarlayır və telefonu daşımağı da silkələmə kimi aşkarlaya bilər.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">İkinci sürüşdürmə gec başlayır. Daha uzun <xliff:g id="setting">%1$s</xliff:g> ikinci sürüşdürmənin daha gec başlamasına imkan verir, bu zaman tək sürüşdürmə icra olunmazdan əvvəl daha uzun gözləyir.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> aktivdir.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> deaktivdir: iki barmaqla sürüşdürmələr tətbiqi sürüşdürür və silmə də əsasən sürüşdürür. Ayar aktiv olduqda iki barmaqla sürüşdürmələr sürüşdürmək əvəzinə SandFly əmrlərini icra edir.</string>
+    <string name="gesture_trainer_measure_first_stroke">birinci sürüşdürmə <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ikinci sürüşdürmə <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">bütün jest <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">aralarında <xliff:g id="ms">%1$d</xliff:g> ms qaldırılmış</string>
+</resources>

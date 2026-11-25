@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Keinuen entrenatzailea</string>
+    <string name="gesture_trainer_intro">Aukeratu keinu-talde bat. Ariketa bakoitzak keinu bat deskribatzen du. Egin keinua <xliff:g id="tries">%1$d</xliff:g> aldiz; saiakera bakoitzaren emaitza ahoz esaten da. Azken saiakeraren ondoren, pantailak saiakera bakoitzaren neurketak, aldatu beharrekoa eta erlazionatutako ezarpenak zerrendatzen ditu.</string>
+    <string name="gesture_trainer_group_one_finger">Hatz bat</string>
+    <string name="gesture_trainer_group_two_fingers">Bi hatz</string>
+    <string name="gesture_trainer_group_three_fingers">Hiru hatz</string>
+    <string name="gesture_trainer_group_four_fingers">Lau hatz</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Atximurkatu, biratu eta igurtzi</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> ariketa</string>
+    <string name="gesture_trainer_close">Itxi</string>
+    <string name="gesture_trainer_no_detection">Keinuen entrenatzaileak Android 13 edo berriagoa behar du.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Joan-etorriko keinuak eta angeluzko keinuak kanpoan utzi dira: <xliff:g id="setting">%1$s</xliff:g> aktibatuta dago.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Bi hatzez pasatzeak kanpoan utzi dira: <xliff:g id="setting">%1$s</xliff:g> desaktibatuta dago; beraz, aplikazioetan gora eta behera egiten dute.</string>
+    <string name="gesture_trainer_exercise_heading"><xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g> ariketa: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Hasi</string>
+    <string name="gesture_trainer_skip">Saltatu ariketa hau</string>
+    <string name="gesture_trainer_back_to_groups">Itzuli taldeetara</string>
+    <string name="gesture_trainer_go">Egin keinua <xliff:g id="tries">%1$d</xliff:g> aldiz, pantailako edozein lekutan. Ukitze bakoitza saiakera bat da.</string>
+    <string name="gesture_trainer_fingers_1">hatz batekin</string>
+    <string name="gesture_trainer_fingers_2">bi hatzekin, elkarren ondoan, 1 cm inguruko tartearekin</string>
+    <string name="gesture_trainer_fingers_3">hiru hatzekin, elkarren ondoan, apur bat bereizita</string>
+    <string name="gesture_trainer_fingers_4">lau hatzekin, elkarren ondoan, apur bat bereizita</string>
+    <string name="gesture_trainer_direction_up">gora</string>
+    <string name="gesture_trainer_direction_down">behera</string>
+    <string name="gesture_trainer_direction_left">ezkerrera</string>
+    <string name="gesture_trainer_direction_right">eskuinera</string>
+    <string name="gesture_trainer_how_swipe">Ukitu pantaila <xliff:g id="fingers">%1$s</xliff:g> eta, itxaron gabe, irristatu <xliff:g id="direction">%2$s</xliff:g> lerro zuzenean 2-3 cm inguru; gero, altxatu. Hasi berehala mugitzen: lehenik geldirik dagoen hatzak ukipen bidezko arakatzea abiarazten du.</string>
+    <string name="gesture_trainer_how_swipe_multi">Jarri hatzak batera, une berean, eta mugitu guztiak norabide berean. Hatz bakoitzak <xliff:g id="direction">%1$s</xliff:g> joan behar du denbora guztian; beraz, mantendu lerroa zuzen.</string>
+    <string name="gesture_trainer_how_back_and_forth">Ukitu pantaila hatz batekin eta irristatu <xliff:g id="first">%1$s</xliff:g> 2 cm inguru; gero, altxatu gabe, itzuli zuzen <xliff:g id="second">%2$s</xliff:g> 2 cm inguru eta altxatu. Egin mugimendu bakar, azkar eta leun gisa.</string>
+    <string name="gesture_trainer_how_angle">Ukitu pantaila <xliff:g id="fingers">%1$s</xliff:g> eta irristatu <xliff:g id="first">%2$s</xliff:g> 2 cm inguru; gero, altxatu gabe, biratu bizkor eta irristatu <xliff:g id="second">%3$s</xliff:g> 2 cm inguru, eta altxatu. Egin biraketa izkina zorrotz gisa, L letra bezala, ez kurba gisa.</string>
+    <string name="gesture_trainer_taps_1">behin</string>
+    <string name="gesture_trainer_taps_2">birritan</string>
+    <string name="gesture_trainer_taps_3">hirutan</string>
+    <string name="gesture_trainer_taps_4">lau aldiz</string>
+    <string name="gesture_trainer_how_taps">Sakatu <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Jarri hatzak batera eta altxatu batera, azkar, irristatu gabe.</string>
+    <string name="gesture_trainer_how_taps_quick">Egin sakatzeak azkar eta leku berean: hurrengo sakatzeak aurrekoaren ondorengo <xliff:g id="gap">%1$d</xliff:g> ms-en barruan izan behar du.</string>
+    <string name="gesture_trainer_how_hold">Ukitu pantaila <xliff:g id="fingers">%1$s</xliff:g>, aldi berean, eta eutsi hatzak geldirik, irristatu gabe, gutxienez <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Beste komandorik esleituta ez badago, keinu honek SandFly desaktibatzen du. Entrenatzailean ez du ezer exekutatzen.</string>
+    <string name="gesture_trainer_how_taps_hold">Sakatu <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g> eta, azken sakatzean, utzi hatzak pantailan geldirik gutxienez <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Erabili erpuru, hatz erakusle eta erdiko hatza.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Jarri hatz erakuslea eta erdiko hatza elkarren ondoan, eta erpurua eta eraztun-hatza zentimetro batzuetara, alde banatan. Gero, elkartu lau hatz-muturrak puntu bakar batean.</string>
+    <string name="gesture_trainer_how_pinch">Jarri <xliff:g id="fingers">%1$d</xliff:g> hatz pantailan, oso bereizita. Gero, hurbildu elkarrengana zuzen gutxienez 1 cm, zerbait hartzen ariko bazina bezala, eta altxatu pantailatik. Mugitu hatzak soilik, ez esku osoa, eta ez arku batean.</string>
+    <string name="gesture_trainer_how_spread">Jarri <xliff:g id="fingers">%1$d</xliff:g> hatz pantailan, elkarrengandik hurbil. Gero, bereizi zuzen gutxienez 1 cm eta altxatu pantailatik. Mugitu hatzak soilik, ez esku osoa, eta ez arku batean.</string>
+    <string name="gesture_trainer_clockwise">erlojuaren orratzen noranzkoan</string>
+    <string name="gesture_trainer_counterclockwise">erlojuaren orratzen aurkako noranzkoan</string>
+    <string name="gesture_trainer_how_rotate">Jarri bi hatz pantailan, 2-3 cm inguruko tartearekin, eta biratu <xliff:g id="way">%1$s</xliff:g> beren erdigunearen inguruan, ruleta bat biratzen ariko bazina bezala, birara laurden bat inguru. Gero, altxatu.</string>
+    <string name="gesture_trainer_how_scrub">Jarri bi hatz pantailan eta mugitu azkar alde batera 2 cm inguru eta itzuli, zerbait ezabatzen ariko bazina bezala, dena segundo bat inguruan. Gero, altxatu.</string>
+    <string name="gesture_trainer_edge_bottom">beheko ertzean</string>
+    <string name="gesture_trainer_edge_top_left">goiko ertzean, ezkerreko erdian</string>
+    <string name="gesture_trainer_edge_top_right">goiko ertzean, eskuineko erdian</string>
+    <string name="gesture_trainer_edge_left_top">ezkerreko ertzean, goiko erdian</string>
+    <string name="gesture_trainer_edge_left_bottom">ezkerreko ertzean, beheko erdian</string>
+    <string name="gesture_trainer_edge_right_top">eskuineko ertzean, goiko erdian</string>
+    <string name="gesture_trainer_edge_right_bottom">eskuineko ertzean, beheko erdian</string>
+    <string name="gesture_trainer_edge_left">ezkerreko ertzean</string>
+    <string name="gesture_trainer_edge_right">eskuineko ertzean</string>
+    <string name="gesture_trainer_edge_top">goiko ertzean</string>
+    <string name="gesture_trainer_how_edge">Jarri hatz bat <xliff:g id="edge">%1$s</xliff:g>, ertzetik gehienez <xliff:g id="edge_width">%2$d</xliff:g> mm-ra, eta irristatu <xliff:g id="direction">%3$s</xliff:g> pantailaren barrualdera lehenengo klikeraino, <xliff:g id="distance">%4$d</xliff:g> mm inguru. Gero, altxatu berehala: bigarren klikaren ondoren, irristatzea irristatze luzea da.</string>
+    <string name="gesture_trainer_how_edge_long">Jarri hatz bat <xliff:g id="edge">%1$s</xliff:g>, ertzetik gehienez <xliff:g id="edge_width">%2$d</xliff:g> mm-ra, eta irristatu <xliff:g id="direction">%3$s</xliff:g> pantailaren barrualdera lehenengo klika gaindituz bigarreneraino, <xliff:g id="distance">%4$d</xliff:g> mm inguru. Gero, altxatu.</string>
+    <string name="gesture_trainer_how_along">Irristatu hatz bat <xliff:g id="direction">%2$s</xliff:g> <xliff:g id="edge">%1$s</xliff:g> zehar, gutxienez <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">goiko ezkerreko</string>
+    <string name="gesture_trainer_corner_top_right">goiko eskuineko</string>
+    <string name="gesture_trainer_corner_bottom_left">beheko ezkerreko</string>
+    <string name="gesture_trainer_corner_bottom_right">beheko eskuineko</string>
+    <string name="gesture_trainer_how_corner">Sakatu <xliff:g id="taps">%1$s</xliff:g> pantailaren <xliff:g id="corner">%2$s</xliff:g> izkinan. Jarri hatza izkinan bertan, bi ertzetatik gehienez <xliff:g id="size">%3$d</xliff:g> mm-ra, eta altxatu azkar, <xliff:g id="time">%4$d</xliff:g> ms-en barruan.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Izkina handiagoekin, izkina batetik gertu dagoen kontrol bat sakatzean (adibidez, goian ezkerrean dagoen Atzera), baliteke izkinako keinua exekutatzea horren ordez.</string>
+    <string name="gesture_trainer_rating_precise">hauteman da, zehatza</string>
+    <string name="gesture_trainer_rating_good">hauteman da, ona</string>
+    <string name="gesture_trainer_rating_borderline">hauteman da, baina muga batetik gertu</string>
+    <string name="gesture_trainer_try_recognized"><xliff:g id="number">%1$d</xliff:g>. saiakera: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing"><xliff:g id="number">%1$d</xliff:g>. saiakera: ez da hauteman.</string>
+    <string name="gesture_trainer_try_other"><xliff:g id="number">%1$d</xliff:g>. saiakera: <xliff:g id="gesture">%2$s</xliff:g> gisa hauteman da.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> saiakeratik <xliff:g id="recognized">%2$d</xliff:g> hauteman dira</string>
+    <string name="gesture_trainer_results_tries">Zure saiakerak</string>
+    <string name="gesture_trainer_results_change">Aldatu beharrekoa</string>
+    <string name="gesture_trainer_results_close">Muga batetik gertu</string>
+    <string name="gesture_trainer_results_all_good">Saiakera guztiak mugen barruan hauteman dira.</string>
+    <string name="gesture_trainer_results_settings">Lagun dezaketen ezarpenak</string>
+    <string name="gesture_trainer_next">Hurrengo ariketa</string>
+    <string name="gesture_trainer_repeat">Errepikatu</string>
+    <string name="gesture_trainer_finish">Amaitu</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> taldeko ariketa guztiak amaitu dituzu.</string>
+    <string name="gesture_trainer_open_setting">Aldatu <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms behar izan ditu</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm luze</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm segundoko</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> gradu lerro zuzenetik desbideratuta</string>
+    <string name="gesture_trainer_measure_start">lehenengo zentimetroa <xliff:g id="ms">%1$d</xliff:g> ms-tan</string>
+    <string name="gesture_trainer_measure_landing">hatzak <xliff:g id="ms">%1$d</xliff:g> ms-ko tartearekin iritsi dira</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms-ko sakatzea</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms sakatzeen artean</string>
+    <string name="gesture_trainer_measure_spread">hatzak <xliff:g id="mm">%1$.0f</xliff:g> mm mugitu dira</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> gradu biratu da</string>
+    <string name="gesture_trainer_measure_corner">izkinaren ertzetatik <xliff:g id="mm">%1$.0f</xliff:g> mm-ra</string>
+    <string name="gesture_trainer_measure_edge">ertzetik <xliff:g id="mm">%1$.0f</xliff:g> mm-ra hasi da</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Pantailako hatzak: <xliff:g id="fingers">%1$d</xliff:g>, <xliff:g id="wanted">%2$d</xliff:g> beharrean.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Hatzak <xliff:g id="ms">%1$d</xliff:g> ms-ko tartearekin iritsi dira, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Hatz bat altxatu da hatz guztiak pantailan egon aurretik.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Hatzak <xliff:g id="ms">%1$d</xliff:g> ms-ko tartearekin altxatu dira, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_became_exploration">Hatza denbora luzeegian egon da geldirik edo motelegi mugitu da hasieran; beraz, ukitzea ukipen bidezko arakatze bihurtu da.</string>
+    <string name="gesture_trainer_finding_slow_start">Lehenengo zentimetroak <xliff:g id="ms">%1$d</xliff:g> ms behar izan ditu, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_paused">Hatza <xliff:g id="ms">%1$d</xliff:g> ms moteldu da, eta zentimetro bakoitzak gehienez <xliff:g id="limit">%2$d</xliff:g> ms iraun dezake.</string>
+    <string name="gesture_trainer_finding_too_short">Mugimendua <xliff:g id="mm">%1$.0f</xliff:g> mm-koa izan da soilik, eta gutxienez <xliff:g id="limit">%2$.0f</xliff:g> mm-koa izan behar du.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Hatza <xliff:g id="direction">%1$s</xliff:g> hasi da mugitzen.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Hatzak <xliff:g id="direction">%1$s</xliff:g> hasi dira mugitzen.</string>
+    <string name="gesture_trainer_finding_off_line">Ibilbidea <xliff:g id="degrees">%1$.0f</xliff:g> gradu desbideratu da lerro zuzenetik, eta gehienez <xliff:g id="limit">%2$.0f</xliff:g> onartzen dira.</string>
+    <string name="gesture_trainer_finding_curved">Ibilbidea <xliff:g id="parts">%1$d</xliff:g> zatitan okertu da, <xliff:g id="wanted">%2$d</xliff:g> zatitan beharrean.</string>
+    <string name="gesture_trainer_finding_turn_missing">Ez da biraketa aurkitu.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Biraketaren ondoren, hatza <xliff:g id="direction">%1$s</xliff:g> joan da.</string>
+    <string name="gesture_trainer_finding_tap_moved">Hatza <xliff:g id="mm">%1$.1f</xliff:g> mm irristatu da sakatze batean, eta gehienez <xliff:g id="limit">%2$.1f</xliff:g> mm onartzen dira.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Sakatze batek <xliff:g id="ms">%1$d</xliff:g> ms iraun du, <xliff:g id="limit">%2$d</xliff:g> ms baino gehiago.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Azken sakatzeari <xliff:g id="ms">%1$d</xliff:g> ms eutsi zaio, eta gutxienez <xliff:g id="limit">%2$d</xliff:g> ms izan behar dira.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> sakatze, <xliff:g id="wanted">%2$d</xliff:g> beharrean.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> sakatze, <xliff:g id="wanted">%2$d</xliff:g> beharrean.</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms igaro dira sakatzeen artean, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_taps_apart">Sakatzeak <xliff:g id="mm">%1$.0f</xliff:g> mm-ko tartearekin egin dira, eta gehienez <xliff:g id="limit">%2$.0f</xliff:g> mm onartzen dira.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Hatzak <xliff:g id="mm">%1$.0f</xliff:g> mm mugitu dira soilik, eta gutxienez <xliff:g id="limit">%2$.0f</xliff:g> mm mugitu behar dira.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Hatzak beste noranzkoan mugitu dira.</string>
+    <string name="gesture_trainer_finding_moved_together">Esku osoa <xliff:g id="mm">%1$.0f</xliff:g> mm irristatu da pantailan zehar, hatzak elkarrengana hurbildu edo elkarrengandik urrundu direna baino gehiago.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Hatzak <xliff:g id="degrees">%1$.0f</xliff:g> gradu biratu dira soilik, eta gutxienez <xliff:g id="limit">%2$.0f</xliff:g> biratu behar dira.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Hatzak beste noranzkoan biratu dira.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Lehenengo trazuak <xliff:g id="mm">%1$.0f</xliff:g> mm izan ditu, eta gutxienez <xliff:g id="limit">%2$.0f</xliff:g> mm izan behar ditu.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Itzulerako trazuak <xliff:g id="mm">%1$.0f</xliff:g> mm izan ditu, eta gutxienez <xliff:g id="limit">%2$.0f</xliff:g> mm izan behar ditu.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Igurtzeak <xliff:g id="ms">%1$d</xliff:g> ms iraun du, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Hatza ertzetik <xliff:g id="mm">%1$.0f</xliff:g> mm-ra iritsi da, eta ertzak <xliff:g id="limit">%2$.0f</xliff:g> mm-ko zabalera du.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Hatza ertzaren beste erdian hasi da.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Hatza <xliff:g id="mm">%1$.0f</xliff:g> mm irristatu da, eta gutxienez <xliff:g id="limit">%2$.0f</xliff:g> mm irristatu behar du.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Irristatze luzeegia: hatzak bigarren klika gainditu du, <xliff:g id="mm">%1$.0f</xliff:g> mm, eta bigarren klika <xliff:g id="limit">%2$.0f</xliff:g> mm-ra dago.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Klikera iristeko <xliff:g id="ms">%1$d</xliff:g> ms behar izan dira, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Irristatzea <xliff:g id="degrees">%1$.0f</xliff:g> gradu desbideratu da alboetara, eta gehienez <xliff:g id="limit">%2$.0f</xliff:g> onartzen dira.</string>
+    <string name="gesture_trainer_finding_corner_missed">Sakatzea izkinaren ertzetatik <xliff:g id="mm">%1$.0f</xliff:g> mm-ra egin da, eta izkinak <xliff:g id="limit">%2$.0f</xliff:g> mm ditu.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Izkinako sakatze batek <xliff:g id="ms">%1$d</xliff:g> ms iraun du, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_none">Ez da hauteman keinuarekin bat datorren mugimendurik.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Egiaztatu zenbat hatzek ukitzen duten beira. Pantailan bermatutako esku-ahurra edo beste hatz bat ere zenbatzen da.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Jarri hatz guztiak une berean, esku bakar gisa, ez bata bestearen atzetik.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Jarri lehenik hatz guztiak, eta gero mugitu edo altxatu.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Altxatu hatz guztiak une berean.</string>
+    <string name="gesture_trainer_tip_slow_start">Hasi mugitzen pantaila ukitu bezain laster, eta mugitu azkarrago hasieran.</string>
+    <string name="gesture_trainer_tip_paused">Mugitu hatza abiadura berdinean altxatu arte. Ez moteldu amaieran.</string>
+    <string name="gesture_trainer_tip_too_short">Egin mugimendua luzeagoa, 2-3 cm inguru.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Egiaztatu norabidea mugimenduaren hasiera-hasieran. Telefonoa zure aurrean zuzen edukitzeak laguntzen du.</string>
+    <string name="gesture_trainer_tip_off_line">Mugitu norabidean soilik, ez diagonalean. Hatz erakusleak erpuruak baino lerro zuzenagoa egiten du.</string>
+    <string name="gesture_trainer_tip_curved">Mantendu lerroa zuzen eta altxatu amaieran bertan, hatza alboetara okertu gabe altxatzean.</string>
+    <string name="gesture_trainer_tip_turn_missing">Aldatu norabidea bizkor, angelu zuzenean edo zuzen atzera, altxatu gabe. Zati bakoitzak 2 cm inguru izan behar ditu.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Biraketaren ondoren, egiaztatu nora zoazen: bigarren zatiak keinuak aipatzen duen beste norabidean joan behar du.</string>
+    <string name="gesture_trainer_tip_tap_moved">Sakatu zuzen behera eta gora, hatz-muturrarekin, irristatu gabe.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Egin sakatze bakoitza laburra: ukitu eta altxatu berehala.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Azken sakatzean, eutsi hatzak geldirik pantailan eusteko denbora osoan.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Zenbatu sakatzeak, eta egin guztiak azkar, behin batean.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Zenbatu sakatzeak. Beiratik errebotatzen duen hatzak sakatze gehigarri bat egiten du.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Sakatu azkarrago: hasi hurrengo sakatzea altxatu eta berehala.</string>
+    <string name="gesture_trainer_tip_taps_apart">Sakatu leku berean aldi bakoitzean.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Mugitu hatzak gehiago, gutxienez 1 cm elkarrengana edo elkarrengandik.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Atximurkatzea hatzak elkarrengana mugitzea da; bereiztea, hatzak elkarrengandik urruntzea.</string>
+    <string name="gesture_trainer_tip_moved_together">Mugitu hatzak soilik elkarrengana edo elkarrengandik. Ez irristatu esku osoa pantailan zehar.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Biratu gehiago, ruleta bat birara laurden bat biratzen ariko bazina bezala.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Erlojuaren orratzen noranzkoan biratzeak erlojuaren orratzak mugitzen diren bezala biratzea esan nahi du: goiko hatza eskuinera mugitzen da.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Egin lehenengo trazua gutxienez 1 cm-koa.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Lehenengo trazuaren ondoren, itzuli beste noranzkoan altxatu aurretik.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Egin igurtzea azkar, joan-etorria segundo bat inguruan.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Hasi ertzean bertan, hatz-muturra partez pantailatik kanpo dagoela.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Egiaztatu ertzaren zer erdian hasten zaren.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Irristatu gehiago, klika entzun arte; gero, altxatu.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Altxatu lehenengo klikaren ondoren berehala, bigarrenaren aurretik.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Irristatu barrualdera azkarrago, klikaren aurretik gelditu gabe.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Irristatu ertzetik zuzen barrualdera, edo ertzean zehar zuzen, ez diagonalean.</string>
+    <string name="gesture_trainer_tip_corner_missed">Jarri hatza izkinan bertan, bi ertzak ukituz.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Altxatu azkarrago izkina ukitu ondoren.</string>
+    <string name="gesture_trainer_close_to_limit">Mugatik gertu: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Pasatzeak motel hasten dira. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio luzeago batek hasiera motelagoa onartzen du.</string>
+    <string name="gesture_trainer_advice_tap_time">Sakatzeak motelak dira. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio luzeago batek sakatze motelagoak onartzen ditu.</string>
+    <string name="gesture_trainer_advice_edge_width">Pasatzeak ertzetik urrunegi hasten dira. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio handiago batek ertz batetik gertu hasten diren pasatzeak ere ertzeko pasatze bihurtzen ditu.</string>
+    <string name="gesture_trainer_advice_corner_size">Sakatzeak izkinatik kanpo egiten dira. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio handiago batek izkinak handitzen ditu.</string>
+    <string name="gesture_trainer_advice_corner_time">Izkinako sakatzeak motelak dira. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio luzeago batek sakatze motelagoak onartzen ditu.</string>
+    <string name="gesture_trainer_menu_option"><xliff:g id="number">%1$d</xliff:g>. aukera</string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: aukeratu <xliff:g id="number">%3$d</xliff:g>. elementua, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Irristatu hatz bat gora edo behera <xliff:g id="edge">%1$s</xliff:g>, gutxienez <xliff:g id="distance">%2$d</xliff:g> mm, menua irekitzeko. <xliff:g id="count">%3$d</xliff:g> elementu ditu, goitik behera, bakoitza <xliff:g id="size">%6$s</xliff:g> cm inguruko altuerakoa. <xliff:g id="number">%4$d</xliff:g>. elementua (<xliff:g id="item">%5$s</xliff:g>) pantailaren goialdetik <xliff:g id="from">%7$s</xliff:g>-<xliff:g id="to">%8$s</xliff:g> cm beherago dago. Altxatu hatza elementua ahoz esaten denean.</string>
+    <string name="gesture_trainer_menu_sample">Ertz honek ez du menurik. Ariketak <xliff:g id="count">%1$d</xliff:g> lagin-elementu erabiltzen ditu.</string>
+    <string name="gesture_trainer_try_menu_cancelled"><xliff:g id="number">%1$d</xliff:g>. saiakera: menua ezer aukeratu gabe itxi da.</string>
+    <string name="gesture_trainer_try_menu_other"><xliff:g id="number">%1$d</xliff:g>. saiakera: <xliff:g id="item">%2$s</xliff:g> aukeratu da.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g>. elementuan altxatu da</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Hatza ertzaren goiko edo beheko muturrean hasi da, izkinak eta goiko eta beheko ertzak dauden lekuan.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Hatza ertzetik <xliff:g id="mm">%1$.0f</xliff:g> mm-ra altxatu da, eta menua <xliff:g id="limit">%2$.0f</xliff:g> mm-tik aurrera ixten da.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Hatza <xliff:g id="item">%1$d</xliff:g>. elementuan altxatu da, <xliff:g id="target">%2$d</xliff:g>. elementuan beharrean.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Hasi ertzaren goiko eta beheko muturretatik apur bat urrun.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Eutsi hatza ertzetik gertu irristatzen duzun bitartean, eta altxatu bertan.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Elementu bakoitzak leku finko bat du ertzean zehar, eta hatza altxatzen den lekuko elementua aukeratzen da. Altxatu elementua ahoz esaten denean.</string>
+    <string name="gesture_trainer_contents">Edukia</string>
+    <string name="gesture_trainer_contents_heading">Edukia: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">eginda, <xliff:g id="tries">%2$d</xliff:g> saiakeratik <xliff:g id="hits">%1$d</xliff:g> hauteman dira</string>
+    <string name="gesture_trainer_group_tap_swipe">Sakatu eta pasatu</string>
+    <string name="gesture_trainer_group_edge_swipes">Ertzetatik pasatzeak</string>
+    <string name="gesture_trainer_group_along_edges">Ertzetan zehar irristatzeak</string>
+    <string name="gesture_trainer_group_edge_menus">Ertzetako menuak</string>
+    <string name="gesture_trainer_group_corners">Izkinak</string>
+    <string name="gesture_trainer_group_back_tap">Atzeko aldea sakatzea</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Bi hatzekin sakatu eta bi hatzez pasatzeko keinuak kanpoan utzi dira: <xliff:g id="setting">%1$s</xliff:g> desaktibatuta dago.</string>
+    <string name="gesture_trainer_how_swipe_hold">Gero, altxatu gabe, eutsi hatza geldirik gutxienez <xliff:g id="hold">%1$d</xliff:g> ms, eta altxatu.</string>
+    <string name="gesture_trainer_half_top">goiko</string>
+    <string name="gesture_trainer_half_bottom">beheko</string>
+    <string name="gesture_trainer_how_taps_half">Sakatu pantailaren <xliff:g id="half">%1$s</xliff:g> erdian. Hatzen arteko puntuak erabakitzen du zer erdi den.</string>
+    <string name="gesture_trainer_same_fingers">hatz berberekin</string>
+    <string name="gesture_trainer_how_tap_swipe">Sakatu <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Azken sakatzearen ondoren berehala, <xliff:g id="gap">%3$d</xliff:g> ms-en barruan, ukitu berriro pantaila <xliff:g id="swipe_fingers">%4$s</xliff:g> eta irristatu <xliff:g id="direction">%5$s</xliff:g> lerro zuzenean 2-3 cm inguru; gero, altxatu.</string>
+    <string name="gesture_trainer_how_corner_hold">Azken sakatzean, utzi hatza izkinan geldirik gutxienez <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Eutsi telefonoari eskuan, alboetatik, eta sakatu atzeko aldearen erdia <xliff:g id="taps">%1$s</xliff:g> hatz-mutur batekin, sendo eta azkar, ate bat jotzen ariko bazina bezala. Egin sakatzeak elkarrengandik gertu: gehienez <xliff:g id="gap">%2$d</xliff:g> ms haien artean. Ez ukitu pantaila sakatzen duzun bitartean.</string>
+    <string name="gesture_trainer_back_tap_info">Atzeko aldea sakatzeak ez du komandorik exekutatzen ariketan. <xliff:g id="setting">%1$s</xliff:g> ezarpenak zehazten du zenbateko indarra behar duen sakatzeak.</string>
+    <string name="gesture_trainer_go_placed">Egin keinua <xliff:g id="tries">%1$d</xliff:g> aldiz.</string>
+    <string name="gesture_trainer_along_left">ezkerreko ertzean</string>
+    <string name="gesture_trainer_along_right">eskuineko ertzean</string>
+    <string name="gesture_trainer_along_top">goiko ertzean</string>
+    <string name="gesture_trainer_along_bottom">beheko ertzean</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> zeharreko irristatzeak kanpoan utzi dira: ertz horrek menu bat du; beraz, bertan zehar irristatzeak menua irekitzen du keinu bat exekutatu beharrean.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> zeharreko irristatzeak kanpoan utzi dira: ertz horrek gora eta behera egiten du; beraz, bertan zehar irristatzeak aplikazioan gora eta behera egiten du keinu bat exekutatu beharrean.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Hatza ertzetik urrunegi mugitu da.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Eutsi hatza beiraren ertz-ertzean, ertzean zehar zuzen.</string>
+    <string name="gesture_trainer_go_back_tap">Egin atzeko aldea sakatzeko keinua <xliff:g id="tries">%1$d</xliff:g> aldiz. Pantaila ukitzen bada, saiakerak huts egiten du.</string>
+    <string name="gesture_trainer_no_accelerometer">Ariketa honek azelerometro bat behar du. Ez dago bat ere erabilgarri.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms geldirik</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> indarreko sakatzea</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Hatza <xliff:g id="ms">%1$d</xliff:g> ms egon da geldirik amaieran, eta gutxienez <xliff:g id="limit">%2$d</xliff:g> ms egon behar du geldirik.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Hatzek pantailaren beste erdian sakatu dute.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Ez da pasatzerik egin sakatzeen ondoren.</string>
+    <string name="gesture_trainer_finding_swipe_late">Pasatzea azken sakatzetik <xliff:g id="ms">%1$d</xliff:g> ms-ra hasi da, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Atzeko aldea arinegi sakatu da: behar den indarraren <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Sakatze batek telefonoa alboetara astindu du atzeko aldetik baino gehiago.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefonoa mugitzen ari zen sakatze bat baino lehentxeago.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Pantaila ukitu da, eta pantaila ukitzen den bitartean egindako sakatzeak ez dira zenbatzen.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms igaro dira atzeko aldeko sakatzeen artean, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Pasatzearen ondoren, eutsi hatza geldirik pantailan eusteko denbora osoan. Gero, altxatu.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Egiaztatu zer erditan sakatzen duzun: pantailaren erdiak bereizten ditu goiko erdia eta beheko erdia.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Azken sakatzearen ondoren, ukitu berriro pantaila berehala eta pasatu hatza.</string>
+    <string name="gesture_trainer_tip_swipe_late">Hasi pasatzea azken sakatzearen ondoren berehala, etenik gabe.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Sakatu sendoago, hatz-muturrarekin edo azkazal batekin, atzeko aldearen erditik gertu.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Sakatu zuzen telefonoaren atzeko aldean, ez ertzean edo angelu batean.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Eutsi telefonoari geldirik une batez sakatu aurretik, eta eutsi lasai, eskuak mugi ez dezan.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Ez ukitu pantaila atzeko aldea sakatzen duzun bitartean: eutsi telefonoari alboetatik.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Sakatu azkarrago, sakatze bat bestearen atzetik berehala.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Hatza goizegi altxatzen da pasatzearen ondoren. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio laburrago batek eusteko denbora laburragoa onartzen du.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Atzeko aldeko sakatzeak arinak dira. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio handiago batek sakatze arinagoak hautematen ditu, eta baliteke kolpeak sakatze gisa hautematea.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Hatzak <xliff:g id="degrees">%1$.0f</xliff:g> gradu biratu dira, eta <xliff:g id="limit">%2$.0f</xliff:g> gradutik aurrera mugimendua biraketa da.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Mugitu hatzak lerro zuzenean elkarrengana edo elkarrengandik, ez elkarren inguruko arku batean.</string>
+    <string name="gesture_trainer_finding_other_gesture">Mugimendua beste keinu horrekin etorri da bat.</string>
+    <string name="gesture_trainer_side_left">ezkerreko</string>
+    <string name="gesture_trainer_side_right">eskuineko</string>
+    <string name="gesture_trainer_side_top">goiko</string>
+    <string name="gesture_trainer_side_bottom">beheko</string>
+    <string name="gesture_trainer_finding_wrong_edge">Hatza <xliff:g id="side">%1$s</xliff:g> ertzean hasi da, eta ariketa hau <xliff:g id="expected">%2$s</xliff:g> ertzean egiten da.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Hasi ariketak aipatzen duen ertzean bertan.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Ertzeko menu bat ireki da keinu honen ordez.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Menua duen ertz batean zehar irristatzean, menua irekitzen da. Hasi ariketak aipatzen duen ertzean.</string>
+    <string name="gesture_trainer_group_three_part">Hiru zatiko pasatzeak</string>
+    <string name="gesture_trainer_group_two_stroke">Bi trazuko pasatzeak</string>
+    <string name="gesture_trainer_group_shake">Astintzea</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Hiru zatiko pasatzeak kanpoan utzi dira: <xliff:g id="setting">%1$s</xliff:g> aktibatuta dago.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Bi trazuko pasatzeak kanpoan utzi dira: <xliff:g id="setting">%1$s</xliff:g> ezarpenaren balioa <xliff:g id="value">%2$s</xliff:g> da.</string>
+    <string name="gesture_trainer_shake_info">Astintzeak ez du komandorik exekutatzen ariketan. <xliff:g id="setting">%1$s</xliff:g> ezarpenak zehazten du zenbateko indarra behar duen astintzeak.</string>
+    <string name="gesture_trainer_go_shake">Astindu telefonoa <xliff:g id="tries">%1$d</xliff:g> aldiz, astindu bakoitzaren ondoren eten labur bat eginez.</string>
+    <string name="gesture_trainer_how_shake">Eutsi telefonoari sendo eta astindu azkar aurrera eta atzera, ur-tanta bat kenduko bazenu bezala: gutxienez bi aldiz norabide bakoitzean, dena segundoaren bi heren inguruan. Gero, eutsi geldirik.</string>
+    <string name="gesture_trainer_how_two_stroke">Pasatu hatz bat <xliff:g id="first">%1$s</xliff:g>, 2 cm inguru, eta altxatu. Gero, berehala, <xliff:g id="time">%3$d</xliff:g> ms-en barruan, pasatu hatz bat <xliff:g id="second">%2$s</xliff:g>, 2 cm inguru, eta altxatu.</string>
+    <string name="gesture_trainer_how_three_part">Ukitu pantaila hatz batekin eta, altxatu gabe, pasatu <xliff:g id="first">%1$s</xliff:g>, biratu bizkor eta pasatu <xliff:g id="second">%2$s</xliff:g>, eta biratu bizkor berriro eta pasatu <xliff:g id="third">%3$s</xliff:g>, zati bakoitza 2 cm inguru, eta altxatu. Egin mugimendu bakar, azkar eta leun gisa, izkina zorrotzekin, ez kurbekin.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Jarri hatz bat pantailaren goiko herenean eta bestea beheko herenean; adibidez, erpurua behean eta hatz erakuslea goian.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Hatzak ez ziren egon bat pantailaren goiko herenean eta bestea beheko herenean.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Ez da bigarren pasatzerik egon.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Bigarren pasatzea lehenengoaren ondorengo <xliff:g id="ms">%1$d</xliff:g> ms-ra hasi da, eta gehienez <xliff:g id="limit">%2$d</xliff:g> ms onartzen dira.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Lehenengo pasatzea <xliff:g id="direction">%1$s</xliff:g> joan da.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Bigarren pasatzea <xliff:g id="direction">%1$s</xliff:g> joan da.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Astintzea arinegia izan da: behar den indarraren <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Joan-etorriak: behar diren <xliff:g id="wanted">%2$d</xliff:g> joan-etorrietatik <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Bereizi hatzak asko, bat goiko ertzetik gertu eta bestea beheko ertzetik gertu.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Lehenengo pasatzearen ondoren, altxatu hatza eta pasatu berriro berehala.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Hasi bigarren pasatzea hatza altxatu eta berehala.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Astindu indartsuago eta azkarrago.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Astindu azkarrago, aurrera eta atzera gutxienez bi aldiz norabide bakoitzean, tartean gelditu gabe.</string>
+    <string name="gesture_trainer_measure_shake_strength">mugimendurik indartsuena: <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Astintzeak arinak dira. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio handiago batek astintze arinagoak hautematen ditu, eta baliteke telefonoa eramatea astintze gisa hautematea.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Bigarren pasatzea berandu hasten da. «<xliff:g id="setting">%1$s</xliff:g>» ezarpenaren balio luzeago batek beranduago egindako bigarren pasatzea onartzen du, eta pasatze bakarrak denbora gehiago itxaroten du exekutatu aurretik.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> aktibatuta dago.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> desaktibatuta dago: bi hatzez pasatzeek aplikazioan gora eta behera egiten dute, eta igurtzeak ere gehienetan gora eta behera egiten du. Ezarpena aktibatuta, bi hatzez pasatzeek SandFly-en komandoak exekutatzen dituzte gora eta behera egin beharrean.</string>
+    <string name="gesture_trainer_measure_first_stroke">lehenengo pasatzea: <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">bigarren pasatzea: <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">keinu osoa: <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> ms altxatuta haien artean</string>
+</resources>

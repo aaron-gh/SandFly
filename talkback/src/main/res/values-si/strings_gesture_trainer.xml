@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">ඉංගිත පුහුණුකරු</string>
+    <string name="gesture_trainer_intro">ඉංගිත සමූහයක් තෝරන්න. සෑම අභ්‍යාසයක්ම ඉංගිතයක් විස්තර කරයි. ඉංගිතය <xliff:g id="tries">%1$d</xliff:g> වරක් කරන්න; එක් එක් උත්සාහයේ ප්‍රතිඵලය කථනය කෙරේ. අවසන් උත්සාහයෙන් පසු, තිරය එක් එක් උත්සාහයේ මිනුම්, වෙනස් කළ යුතු දේ සහ අදාළ සැකසීම් ලැයිස්තුගත කරයි.</string>
+    <string name="gesture_trainer_group_one_finger">එක් ඇඟිල්ලක්</string>
+    <string name="gesture_trainer_group_two_fingers">ඇඟිලි දෙකක්</string>
+    <string name="gesture_trainer_group_three_fingers">ඇඟිලි තුනක්</string>
+    <string name="gesture_trainer_group_four_fingers">ඇඟිලි හතරක්</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">පින්ච්, කරකැවීම සහ ස්ක්‍රබ්</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, අභ්‍යාස <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">වසන්න</string>
+    <string name="gesture_trainer_no_detection">ඉංගිත පුහුණුකරුට Android 13 හෝ පසු අනුවාදයක් අවශ්‍යයි.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">ඉදිරියට-පසුපසට සහ කෝණ ඉංගිත ඉවත් කර ඇත: <xliff:g id="setting">%1$s</xliff:g> ක්‍රියාත්මකයි.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">ඇඟිලි දෙකේ ස්වයිප් ඉවත් කර ඇත: <xliff:g id="setting">%1$s</xliff:g> ක්‍රියාවිරහිතයි, එබැවින් ඒවා යෙදුම් අනුචලනය කරයි.</string>
+    <string name="gesture_trainer_exercise_heading">අභ්‍යාසය <xliff:g id="count">%2$d</xliff:g> න් <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">ආරම්භ කරන්න</string>
+    <string name="gesture_trainer_skip">මෙම අභ්‍යාසය මඟ හරින්න</string>
+    <string name="gesture_trainer_back_to_groups">සමූහ වෙත ආපසු</string>
+    <string name="gesture_trainer_go">තිරයේ ඕනෑම තැනක ඉංගිතය <xliff:g id="tries">%1$d</xliff:g> වරක් කරන්න. සෑම ස්පර්ශයක්ම එක් උත්සාහයකි.</string>
+    <string name="gesture_trainer_fingers_1">එක් ඇඟිල්ලකින්</string>
+    <string name="gesture_trainer_fingers_2">ඇඟිලි දෙකකින්, එකිනෙකට යාබදව, 1 සෙ.මී පමණ පරතරයකින්</string>
+    <string name="gesture_trainer_fingers_3">ඇඟිලි තුනකින්, එකිනෙකට යාබදව, මඳක් ඈතින්</string>
+    <string name="gesture_trainer_fingers_4">ඇඟිලි හතරකින්, එකිනෙකට යාබදව, මඳක් ඈතින්</string>
+    <string name="gesture_trainer_direction_up">ඉහළට</string>
+    <string name="gesture_trainer_direction_down">පහළට</string>
+    <string name="gesture_trainer_direction_left">වමට</string>
+    <string name="gesture_trainer_direction_right">දකුණට</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g> තිරය ස්පර්ශ කර, රැඳී නොසිට, සරල රේඛාවක <xliff:g id="direction">%2$s</xliff:g> 2 සිට 3 සෙ.මී පමණ ලිස්සා යවා, ඉන්පසු ඔසවන්න. වහාම චලනය ආරම්භ කරන්න: මුලින් නිශ්චලව සිටින ඇඟිල්ලක් ස්පර්ශ ගවේෂණය ආරම්භ කරයි.</string>
+    <string name="gesture_trainer_how_swipe_multi">ඇඟිලි එකට, එකම මොහොතේ තබා, සියල්ල එකම දිශාවට චලනය කරන්න. සෑම ඇඟිල්ලක්ම මුළු කාලය පුරාම <xliff:g id="direction">%1$s</xliff:g> යා යුතුය, එබැවින් රේඛාව සරලව තබා ගන්න.</string>
+    <string name="gesture_trainer_how_back_and_forth">එක් ඇඟිල්ලකින් තිරය ස්පර්ශ කර <xliff:g id="first">%1$s</xliff:g> 2 සෙ.මී පමණ ලිස්සා යවන්න, ඉන්පසු ඔසවන්නේ නැතිව <xliff:g id="second">%2$s</xliff:g> 2 සෙ.මී පමණ කෙළින්ම ආපසු ගොස් ඔසවන්න. එය එක් ඉක්මන්, සුමට චලනයක් කරන්න.</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g> තිරය ස්පර්ශ කර <xliff:g id="first">%2$s</xliff:g> 2 සෙ.මී පමණ ලිස්සා යවන්න, ඉන්පසු ඔසවන්නේ නැතිව තියුණු ලෙස හැරී <xliff:g id="second">%3$s</xliff:g> 2 සෙ.මී පමණ ලිස්සා යවා ඔසවන්න. හැරීම වක්‍රයක් නොව, L අකුර මෙන් තියුණු කොනක් කරන්න.</string>
+    <string name="gesture_trainer_taps_1">එක් වරක්</string>
+    <string name="gesture_trainer_taps_2">දෙවරක්</string>
+    <string name="gesture_trainer_taps_3">තෙවරක්</string>
+    <string name="gesture_trainer_taps_4">සිව් වරක්</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> තට්ටු කරන්න. ඇඟිලි එකට තබා එකට ඔසවන්න, ඉක්මනින්, ලිස්සා යාමකින් තොරව.</string>
+    <string name="gesture_trainer_how_taps_quick">තට්ටු ඉක්මන් සහ එකම ස්ථානයේ තබා ගන්න: ඊළඟ තට්ටුව පෙර එකෙන් <xliff:g id="gap">%1$d</xliff:g> මිලිතත්පර ඇතුළත පැමිණිය යුතුය.</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> තිරය එකවර ස්පර්ශ කර, ලිස්සා නොයවා, අවම වශයෙන් <xliff:g id="hold">%2$d</xliff:g> මිලිතත්පර නිශ්චලව තබා ගන්න.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">වෙනත් විධානයක් පවරා නොමැති විට, මෙම ඉංගිතය SandFly ක්‍රියාවිරහිත කරයි. පුහුණුකරුවේදී එය කිසිවක් ක්‍රියාත්මක නොකරයි.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> තට්ටු කර, අවසන් තට්ටුවේදී ඇඟිලි තිරය මත අවම වශයෙන් <xliff:g id="hold">%3$d</xliff:g> මිලිතත්පර නිශ්චලව තබන්න.</string>
+    <string name="gesture_trainer_how_three_finger_hand">මාපටැඟිල්ල, දබරැඟිල්ල සහ මැදැඟිල්ල භාවිතා කරන්න.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">දබරැඟිල්ල සහ මැදැඟිල්ල එකිනෙකට යාබදව ද, මාපටැඟිල්ල සහ මුදු ඇඟිල්ල දෙපසින් සෙන්ටිමීටර කිහිපයක් ඈතින් ද තබන්න. ඉන්පසු ඇඟිලි තුඩු හතරම එක් ලක්ෂ්‍යයකට එකතු කරන්න.</string>
+    <string name="gesture_trainer_how_pinch">ඇඟිලි <xliff:g id="fingers">%1$d</xliff:g> ක් තිරය මත, එකිනෙකින් ඈතට විහිදා තබන්න. ඉන්පසු යමක් අහුලන්නාක් මෙන්, ඒවා අවම වශයෙන් 1 සෙ.මී කින් කෙළින්ම එකිනෙක දෙසට ගෙන, තිරයෙන් ඔසවන්න. මුළු අතම නොව, චාපයකින් නොව, ඇඟිලි පමණක් චලනය කරන්න.</string>
+    <string name="gesture_trainer_how_spread">ඇඟිලි <xliff:g id="fingers">%1$d</xliff:g> ක් තිරය මත, එකිනෙකට ළඟින් තබන්න. ඉන්පසු ඒවා අවම වශයෙන් 1 සෙ.මී කින් කෙළින්ම එකිනෙකින් ඈත් කර, තිරයෙන් ඔසවන්න. මුළු අතම නොව, චාපයකින් නොව, ඇඟිලි පමණක් චලනය කරන්න.</string>
+    <string name="gesture_trainer_clockwise">දක්ෂිණාවර්තව</string>
+    <string name="gesture_trainer_counterclockwise">වාමාවර්තව</string>
+    <string name="gesture_trainer_how_rotate">ඇඟිලි දෙකක් 2 සිට 3 සෙ.මී පමණ පරතරයකින් තිරය මත තබා, ඩයල් එකක් කරකවන්නාක් මෙන්, ඒවායේ මැද වටා <xliff:g id="way">%1$s</xliff:g> හතරෙන් එකක් පමණ කරකවන්න. ඉන්පසු ඔසවන්න.</string>
+    <string name="gesture_trainer_how_scrub">ඇඟිලි දෙකක් තිරය මත තබා, යමක් මකන්නාක් මෙන්, ඒවා ඉක්මනින් එක් පැත්තකට 2 සෙ.මී පමණ ගෙන ගොස් ආපසු ගෙන එන්න, සියල්ල තත්පරයක් පමණ ඇතුළත. ඉන්පසු ඔසවන්න.</string>
+    <string name="gesture_trainer_edge_bottom">පහළ දාරයේ</string>
+    <string name="gesture_trainer_edge_top_left">ඉහළ දාරයේ, එහි වම් භාගයේ</string>
+    <string name="gesture_trainer_edge_top_right">ඉහළ දාරයේ, එහි දකුණු භාගයේ</string>
+    <string name="gesture_trainer_edge_left_top">වම් දාරයේ, එහි ඉහළ භාගයේ</string>
+    <string name="gesture_trainer_edge_left_bottom">වම් දාරයේ, එහි පහළ භාගයේ</string>
+    <string name="gesture_trainer_edge_right_top">දකුණු දාරයේ, එහි ඉහළ භාගයේ</string>
+    <string name="gesture_trainer_edge_right_bottom">දකුණු දාරයේ, එහි පහළ භාගයේ</string>
+    <string name="gesture_trainer_edge_left">වම් දාරයේ</string>
+    <string name="gesture_trainer_edge_right">දකුණු දාරයේ</string>
+    <string name="gesture_trainer_edge_top">ඉහළ දාරයේ</string>
+    <string name="gesture_trainer_how_edge">එක් ඇඟිල්ලක් <xliff:g id="edge">%1$s</xliff:g>, දාරයේ සිට උපරිම <xliff:g id="edge_width">%2$d</xliff:g> මි.මී ඇතුළත තබා, පළමු ක්ලික් හඬ දක්වා, <xliff:g id="distance">%4$d</xliff:g> මි.මී පමණ, තිරය තුළට <xliff:g id="direction">%3$s</xliff:g> ලිස්සා යවන්න. ඉන්පසු වහාම ඔසවන්න: දෙවන ක්ලික් හඬෙන් පසු, ලිස්සා යාම දිගු ලිස්සා යාමකි.</string>
+    <string name="gesture_trainer_how_edge_long">එක් ඇඟිල්ලක් <xliff:g id="edge">%1$s</xliff:g>, දාරයේ සිට උපරිම <xliff:g id="edge_width">%2$d</xliff:g> මි.මී ඇතුළත තබා, පළමු ක්ලික් හඬ පසු කර දෙවැන්න දක්වා, <xliff:g id="distance">%4$d</xliff:g> මි.මී පමණ, තිරය තුළට <xliff:g id="direction">%3$s</xliff:g> ලිස්සා යවන්න. ඉන්පසු ඔසවන්න.</string>
+    <string name="gesture_trainer_how_along">එක් ඇඟිල්ලක් <xliff:g id="edge">%1$s</xliff:g> දිගේ <xliff:g id="direction">%2$s</xliff:g> අවම වශයෙන් <xliff:g id="distance">%3$d</xliff:g> මි.මී ලිස්සා යවන්න.</string>
+    <string name="gesture_trainer_corner_top_left">ඉහළ වම්</string>
+    <string name="gesture_trainer_corner_top_right">ඉහළ දකුණු</string>
+    <string name="gesture_trainer_corner_bottom_left">පහළ වම්</string>
+    <string name="gesture_trainer_corner_bottom_right">පහළ දකුණු</string>
+    <string name="gesture_trainer_how_corner">තිරයේ <xliff:g id="corner">%2$s</xliff:g> කොනේ <xliff:g id="taps">%1$s</xliff:g> තට්ටු කරන්න. ඇඟිල්ල හරියටම කොනේ, දාර දෙකේම සිට <xliff:g id="size">%3$d</xliff:g> මි.මී ට වඩා නොවැඩි දුරින් තබා, <xliff:g id="time">%4$d</xliff:g> මිලිතත්පර ඇතුළත ඉක්මනින් ඔසවන්න.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> මි.මී. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> මි.මී.</string>
+    <string name="gesture_trainer_corner_warning">විශාල කොන් සමඟ, ඉහළ වමේ ඇති ආපසු වැනි, කොනක් අසල පාලනයක් තට්ටු කිරීමෙන් ඒ වෙනුවට කොන් ඉංගිතය ක්‍රියාත්මක විය හැක.</string>
+    <string name="gesture_trainer_rating_precise">හඳුනා ගත්තා, නිරවද්‍යයි</string>
+    <string name="gesture_trainer_rating_good">හඳුනා ගත්තා, හොඳයි</string>
+    <string name="gesture_trainer_rating_borderline">හඳුනා ගත්තා, නමුත් සීමාවකට ආසන්නයි</string>
+    <string name="gesture_trainer_try_recognized">උත්සාහය <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">උත්සාහය <xliff:g id="number">%1$d</xliff:g>: හඳුනා නොගත්තා.</string>
+    <string name="gesture_trainer_try_other">උත්සාහය <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> ලෙස හඳුනා ගත්තා.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> න් <xliff:g id="recognized">%2$d</xliff:g> ක් හඳුනා ගත්තා</string>
+    <string name="gesture_trainer_results_tries">ඔබගේ උත්සාහයන්</string>
+    <string name="gesture_trainer_results_change">වෙනස් කළ යුතු දේ</string>
+    <string name="gesture_trainer_results_close">සීමාවකට ආසන්නයි</string>
+    <string name="gesture_trainer_results_all_good">සියලු උත්සාහයන් සීමා තුළ හඳුනා ගත්තා.</string>
+    <string name="gesture_trainer_results_settings">උදව් විය හැකි සැකසීම්</string>
+    <string name="gesture_trainer_next">ඊළඟ අභ්‍යාසය</string>
+    <string name="gesture_trainer_repeat">නැවත කරන්න</string>
+    <string name="gesture_trainer_finish">අවසන් කරන්න</string>
+    <string name="gesture_trainer_group_done">ඔබ <xliff:g id="group">%1$s</xliff:g> හි සියලු අභ්‍යාස අවසන් කළා.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> වෙනස් කරන්න</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ගත විය</string>
+    <string name="gesture_trainer_measure_length">දිග <xliff:g id="cm">%1$.1f</xliff:g> සෙ.මී</string>
+    <string name="gesture_trainer_measure_speed">තත්පරයට <xliff:g id="speed">%1$.0f</xliff:g> සෙ.මී</string>
+    <string name="gesture_trainer_measure_angle">සරල රේඛාවෙන් අංශක <xliff:g id="degrees">%1$.0f</xliff:g> ක අපගමනය</string>
+    <string name="gesture_trainer_measure_start">පළමු සෙන්ටිමීටරය <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර කින්</string>
+    <string name="gesture_trainer_measure_landing">ඇඟිලි <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර පරතරයකින් තිරයට පතිත විය</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර තට්ටුව</string>
+    <string name="gesture_trainer_measure_gap">තට්ටු අතර <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර</string>
+    <string name="gesture_trainer_measure_spread">ඇඟිලි <xliff:g id="mm">%1$.0f</xliff:g> මි.මී චලනය විය</string>
+    <string name="gesture_trainer_measure_rotation">අංශක <xliff:g id="degrees">%1$.0f</xliff:g> ක් කරකැවිණි</string>
+    <string name="gesture_trainer_measure_corner">කොනේ දාරවල සිට <xliff:g id="mm">%1$.0f</xliff:g> මි.මී</string>
+    <string name="gesture_trainer_measure_edge">දාරයේ සිට <xliff:g id="mm">%1$.0f</xliff:g> මි.මී දී ආරම්භ විය</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">තිරය මත ඇඟිලි: <xliff:g id="wanted">%2$d</xliff:g> වෙනුවට <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">ඇඟිලි <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර පරතරයකින් තිරයට පතිත විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">සියලු ඇඟිලි තිරය මත තැබීමට පෙර එක් ඇඟිල්ලක් ඔසවන ලදී.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">ඇඟිලි <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර පරතරයකින් ඔසවන ලදී, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_became_exploration">ඇඟිල්ල ඕනෑවට වඩා වේලාවක් නිශ්චලව සිටියේය, නැතහොත් මුලදී ඉතා සෙමින් චලනය විය, එබැවින් ස්පර්ශය ස්පර්ශ ගවේෂණය බවට පත් විය.</string>
+    <string name="gesture_trainer_finding_slow_start">පළමු සෙන්ටිමීටරයට <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ගත විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_paused">ඇඟිල්ල <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර මන්දගාමී විය, එක් එක් සෙන්ටිමීටරයට උපරිම <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර ගත විය හැක.</string>
+    <string name="gesture_trainer_finding_too_short">චලනය <xliff:g id="mm">%1$.0f</xliff:g> මි.මී පමණක් විය, එය අවම වශයෙන් <xliff:g id="limit">%2$.0f</xliff:g> මි.මී විය යුතුය.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">ඇඟිල්ල <xliff:g id="direction">%1$s</xliff:g> යාමට පටන් ගත්තේය.</string>
+    <string name="gesture_trainer_finding_wrong_direction">ඇඟිලි <xliff:g id="direction">%1$s</xliff:g> යාමට පටන් ගත්තේය.</string>
+    <string name="gesture_trainer_finding_off_line">මාර්ගය සරල රේඛාවෙන් අංශක <xliff:g id="degrees">%1$.0f</xliff:g> කින් හැරුණි, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">මාර්ගය කොටස් <xliff:g id="wanted">%2$d</xliff:g> වෙනුවට කොටස් <xliff:g id="parts">%1$d</xliff:g> කට නැමුණි.</string>
+    <string name="gesture_trainer_finding_turn_missing">හැරීම හමු නොවීය.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">හැරීමෙන් පසු, ඇඟිල්ල <xliff:g id="direction">%1$s</xliff:g> ගියේය.</string>
+    <string name="gesture_trainer_finding_tap_moved">තට්ටුවක් අතරතුර ඇඟිල්ල <xliff:g id="mm">%1$.1f</xliff:g> මි.මී ලිස්සා ගියේය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$.1f</xliff:g> මි.මී.</string>
+    <string name="gesture_trainer_finding_tap_held_long">තට්ටුවක් <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර පැවතුණි, එය <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර ට වඩා දිගුයි.</string>
+    <string name="gesture_trainer_finding_hold_too_short">අවසන් තට්ටුව <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර අල්ලා සිටියා, එය අවම වශයෙන් <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර විය යුතුය.</string>
+    <string name="gesture_trainer_finding_too_few_taps">තට්ටු <xliff:g id="wanted">%2$d</xliff:g> වෙනුවට තට්ටු <xliff:g id="taps">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">තට්ටු <xliff:g id="wanted">%2$d</xliff:g> වෙනුවට තට්ටු <xliff:g id="taps">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">තට්ටු අතර <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ගත විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_taps_apart">තට්ටු එකිනෙකින් <xliff:g id="mm">%1$.0f</xliff:g> මි.මී ඈතින් පතිත විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$.0f</xliff:g> මි.මී.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">ඇඟිලි <xliff:g id="mm">%1$.0f</xliff:g> මි.මී පමණක් චලනය විය, ඒවා අවම වශයෙන් <xliff:g id="limit">%2$.0f</xliff:g> මි.මී චලනය විය යුතුය.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">ඇඟිලි අනෙක් පැත්තට චලනය විය.</string>
+    <string name="gesture_trainer_finding_moved_together">ඇඟිලි එකිනෙක දෙසට හෝ එකිනෙකින් ඈතට චලනය වූවාට වඩා, මුළු අතම තිරය හරහා <xliff:g id="mm">%1$.0f</xliff:g> මි.මී ලිස්සා ගියේය.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">ඇඟිලි අංශක <xliff:g id="degrees">%1$.0f</xliff:g> ක් පමණක් කරකැවිණි, ඒවා අවම වශයෙන් අංශක <xliff:g id="limit">%2$.0f</xliff:g> ක් කරකැවිය යුතුය.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">ඇඟිලි අනෙක් පැත්තට කරකැවිණි.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">පළමු පහර <xliff:g id="mm">%1$.0f</xliff:g> මි.මී විය, එය අවම වශයෙන් <xliff:g id="limit">%2$.0f</xliff:g> මි.මී විය යුතුය.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">ආපසු පහර <xliff:g id="mm">%1$.0f</xliff:g> මි.මී විය, එය අවම වශයෙන් <xliff:g id="limit">%2$.0f</xliff:g> මි.මී විය යුතුය.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">ස්ක්‍රබ් එකට <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ගත විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">ඇඟිල්ල දාරයේ සිට <xliff:g id="mm">%1$.0f</xliff:g> මි.මී දුරින් පතිත විය, දාරයේ පළල <xliff:g id="limit">%2$.0f</xliff:g> මි.මී.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">ඇඟිල්ල දාරයේ අනෙක් භාගයේ ආරම්භ විය.</string>
+    <string name="gesture_trainer_finding_edge_too_short">ඇඟිල්ල <xliff:g id="mm">%1$.0f</xliff:g> මි.මී ලිස්සා ගියේය, එය අවම වශයෙන් <xliff:g id="limit">%2$.0f</xliff:g> මි.මී ලිස්සා යා යුතුය.</string>
+    <string name="gesture_trainer_finding_edge_too_long">ලිස්සා යාම දිග වැඩියි: ඇඟිල්ල <xliff:g id="mm">%1$.0f</xliff:g> මි.මී දී දෙවන ක්ලික් හඬ පසු කළේය, දෙවන ක්ලික් හඬ ඇත්තේ <xliff:g id="limit">%2$.0f</xliff:g> මි.මී දී.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ක්ලික් හඬ වෙත ළඟා වීමට <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ගත විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_edge_sideways">ලිස්සා යාම අංශක <xliff:g id="degrees">%1$.0f</xliff:g> කින් පැත්තට ගියේය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">තට්ටුව කොනේ දාරවල සිට <xliff:g id="mm">%1$.0f</xliff:g> මි.මී දුරින් පතිත විය, කොන <xliff:g id="limit">%2$.0f</xliff:g> මි.මී.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">කොන් තට්ටුවක් <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර පැවතුණි, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_none">ඉංගිතයට ගැළපෙන චලනයක් අනාවරණය නොවීය.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">වීදුරුව ස්පර්ශ කරන ඇඟිලි ගණන පරීක්ෂා කරන්න. තිරය මත රැඳී ඇති අත්ල හෝ වෙනත් ඇඟිල්ලක් ද ගණන් වේ.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">සියලු ඇඟිලි එකින් එක නොව, එක් අතක් ලෙස, එකම මොහොතේ තබන්න.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">මුලින් සියලු ඇඟිලි තබා, ඉන්පසු ඒවා චලනය කරන්න හෝ ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">සියලු ඇඟිලි එකම මොහොතේ ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_slow_start">ඔබ තිරය ස්පර්ශ කරන මොහොතේම චලනය ආරම්භ කර, මුලදී වේගයෙන් චලනය කරන්න.</string>
+    <string name="gesture_trainer_tip_paused">ඔසවන තෙක් ඇඟිල්ල ඒකාකාර වේගයකින් චලනය කරන්න. අවසානය අසල වේගය අඩු නොකරන්න.</string>
+    <string name="gesture_trainer_tip_too_short">චලනය 2 සිට 3 සෙ.මී පමණ දිගු කරන්න.</string>
+    <string name="gesture_trainer_tip_wrong_direction">චලනයේ මුලදීම දිශාව පරීක්ෂා කරන්න. දුරකථනය ඔබ ඉදිරියේ කෙළින් අල්ලා ගැනීම උදව් වේ.</string>
+    <string name="gesture_trainer_tip_off_line">විකර්ණව නොව, දිශාව දිගේ පමණක් චලනය කරන්න. දබරැඟිල්ල මාපටැඟිල්ලට වඩා සරල රේඛාවක් පවත්වයි.</string>
+    <string name="gesture_trainer_tip_curved">රේඛාව සරලව තබා, ඔසවන විට ඇඟිල්ල පැත්තට නොනමා, හරියටම අවසානයේ ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_turn_missing">ඔසවන්නේ නැතිව, සෘජු කෝණයකින් හෝ කෙළින්ම ආපසු, තියුණු ලෙස දිශාව වෙනස් කරන්න. එක් එක් කොටස 2 සෙ.මී පමණ විය යුතුය.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">හැරීමෙන් පසු ඔබ යන දිශාව පරීක්ෂා කරන්න: දෙවන කොටස ඉංගිතය නම් කරන අනෙක් දිශාවට යා යුතුය.</string>
+    <string name="gesture_trainer_tip_tap_moved">ලිස්සා නොයවා, ඇඟිලි තුඩින් කෙළින්ම පහළට සහ ඉහළට තට්ටු කරන්න.</string>
+    <string name="gesture_trainer_tip_tap_held_long">සෑම තට්ටුවක්ම කෙටි කරන්න: ස්පර්ශ කර වහාම ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_hold_too_short">අවසන් තට්ටුවේදී, සම්පූර්ණ අල්ලා සිටීමේ කාලය පුරා ඇඟිලි තිරය මත නිශ්චලව තබන්න.</string>
+    <string name="gesture_trainer_tip_too_few_taps">තට්ටු ගණන් කර, ඒවා සියල්ල එක වර ඉක්මනින් කරන්න.</string>
+    <string name="gesture_trainer_tip_too_many_taps">තට්ටු ගණන් කරන්න. වීදුරුවෙන් පොළා පනින ඇඟිල්ලක් අමතර තට්ටුවක් කරයි.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">වේගයෙන් තට්ටු කරන්න: ඔසවූ වහාම ඊළඟ තට්ටුව ආරම්භ කරන්න.</string>
+    <string name="gesture_trainer_tip_taps_apart">සෑම වරම එකම ස්ථානයේ තට්ටු කරන්න.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">ඇඟිලි තවත් චලනය කරන්න, අවම වශයෙන් 1 සෙ.මී කින් එකිනෙකට ළං කරන්න හෝ ඈත් කරන්න.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">පින්ච් යනු ඇඟිලි එකිනෙක දෙසට චලනය වීමයි, විහිදීම යනු ඇඟිලි එකිනෙකින් ඈත් වීමයි.</string>
+    <string name="gesture_trainer_tip_moved_together">ඇඟිලි පමණක් එකිනෙක දෙසට හෝ එකිනෙකින් ඈතට චලනය කරන්න. මුළු අතම තිරය හරහා ලිස්සා නොයවන්න.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">ඩයල් එකක් හතරෙන් එකක් කරකවන්නාක් මෙන්, තවත් කරකවන්න.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">දක්ෂිණාවර්ත යනු ඔරලෝසුවක කටු යන දිශාවට කරකැවීමයි: ඉහළ ඇඟිල්ල දකුණට චලනය වේ.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">පළමු පහර අවම වශයෙන් 1 සෙ.මී දිගු කරන්න.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">පළමු පහරෙන් පසු, ඔසවීමට පෙර අනෙක් පැත්තට ආපසු එන්න.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">ස්ක්‍රබ් එක ඉක්මන් කරන්න, යාම සහ ඒම තත්පරයක් පමණ ඇතුළත.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">ඇඟිලි තුඩ අර්ධ වශයෙන් තිරයෙන් පිටත තබා, හරියටම දාරයෙන් ආරම්භ කරන්න.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">ඔබ ආරම්භ කරන්නේ දාරයේ කුමන භාගයේදැයි පරීක්ෂා කරන්න.</string>
+    <string name="gesture_trainer_tip_edge_too_short">ක්ලික් හඬ ඇසෙන තෙක් තවත් ලිස්සා යවා, ඉන්පසු ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_edge_too_long">පළමු ක්ලික් හඬෙන් පසු, දෙවැන්නට පෙර, වහාම ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">ක්ලික් හඬට පෙර නතර නොවී, වේගයෙන් ඇතුළට ලිස්සා යවන්න.</string>
+    <string name="gesture_trainer_tip_edge_sideways">විකර්ණව නොව, දාරයේ සිට කෙළින්ම ඇතුළට හෝ එය දිගේ කෙළින්ම ලිස්සා යවන්න.</string>
+    <string name="gesture_trainer_tip_corner_missed">දාර දෙකම ස්පර්ශ වන සේ ඇඟිල්ල හරියටම කොනට තබන්න.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">කොන ස්පර්ශ කළ පසු වේගයෙන් ඔසවන්න.</string>
+    <string name="gesture_trainer_close_to_limit">සීමාවට ආසන්නයි: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">ස්වයිප් සෙමින් ආරම්භ වේ. දිගු <xliff:g id="setting">%1$s</xliff:g> සෙමින් ආරම්භ කිරීමට ඉඩ දෙයි.</string>
+    <string name="gesture_trainer_advice_tap_time">තට්ටු සෙමින් සිදු වේ. දිගු <xliff:g id="setting">%1$s</xliff:g> සෙමින් තට්ටු කිරීමට ඉඩ දෙයි.</string>
+    <string name="gesture_trainer_advice_edge_width">ස්වයිප් දාරයේ සිට ඕනෑවට වඩා ඈතින් ආරම්භ වේ. විශාල <xliff:g id="setting">%1$s</xliff:g> දාරයක් අසලින් ආරම්භ වන ස්වයිප් ද දාර ස්වයිප් බවට පත් කරයි.</string>
+    <string name="gesture_trainer_advice_corner_size">තට්ටු කොනෙන් පිටත පතිත වේ. විශාල <xliff:g id="setting">%1$s</xliff:g> කොන් විශාල කරයි.</string>
+    <string name="gesture_trainer_advice_corner_time">කොන් තට්ටු සෙමින් සිදු වේ. දිගු <xliff:g id="setting">%1$s</xliff:g> සෙමින් තට්ටු කිරීමට ඉඩ දෙයි.</string>
+    <string name="gesture_trainer_menu_option">විකල්පය <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: අයිතමය <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g> තෝරන්න</string>
+    <string name="gesture_trainer_how_menu">මෙනුව විවෘත කිරීමට එක් ඇඟිල්ලක් <xliff:g id="edge">%1$s</xliff:g> අවම වශයෙන් <xliff:g id="distance">%2$d</xliff:g> මි.මී ඉහළට හෝ පහළට ලිස්සා යවන්න. එහි ඉහළ සිට පහළට අයිතම <xliff:g id="count">%3$d</xliff:g> ක් ඇත, එක් එක් අයිතමය <xliff:g id="size">%6$s</xliff:g> සෙ.මී පමණ උසයි. අයිතමය <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, තිරයේ ඉහළ සිට <xliff:g id="from">%7$s</xliff:g> සිට <xliff:g id="to">%8$s</xliff:g> සෙ.මී දක්වා පහළින් ඇත. අයිතමය කථනය කරන විට ඇඟිල්ල ඔසවන්න.</string>
+    <string name="gesture_trainer_menu_sample">මෙම දාරයට මෙනුවක් නැත. අභ්‍යාසය නියැදි අයිතම <xliff:g id="count">%1$d</xliff:g> ක් භාවිතා කරයි.</string>
+    <string name="gesture_trainer_try_menu_cancelled">උත්සාහය <xliff:g id="number">%1$d</xliff:g>: මෙනුව තේරීමකින් තොරව වැසුණි.</string>
+    <string name="gesture_trainer_try_menu_other">උත්සාහය <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> තෝරා ගත්තා.</string>
+    <string name="gesture_trainer_measure_menu_item">අයිතමය <xliff:g id="number">%1$d</xliff:g> දී ඔසවන ලදී</string>
+    <string name="gesture_trainer_finding_menu_in_corner">ඇඟිල්ල ආරම්භ වූයේ දාරයේ හරියටම ඉහළින් හෝ පහළින්, කොන් සහ ඉහළ සහ පහළ දාර ඇති තැනය.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">ඇඟිල්ල දාරයේ සිට <xliff:g id="mm">%1$.0f</xliff:g> මි.මී දී ඔසවන ලදී, මෙනුව <xliff:g id="limit">%2$.0f</xliff:g> මි.මී ට ඔබ්බෙන් වැසේ.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">ඇඟිල්ල අයිතමය <xliff:g id="target">%2$d</xliff:g> වෙනුවට අයිතමය <xliff:g id="item">%1$d</xliff:g> දී ඔසවන ලදී.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">දාරයේ ඉහළ සහ පහළ කෙළවරවල සිට මඳක් ඈතින් ආරම්භ කරන්න.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">ලිස්සා යවන අතරතුර ඇඟිල්ල දාරයට ළඟින් තබා, එහිදීම ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">සෑම අයිතමයකටම දාරය දිගේ ස්ථාවර ස්ථානයක් ඇත, ඇඟිල්ල ඔසවන ස්ථානයේ ඇති අයිතමය තෝරා ගැනේ. අයිතමය කථනය කරන විට ඔසවන්න.</string>
+    <string name="gesture_trainer_contents">පටුන</string>
+    <string name="gesture_trainer_contents_heading">පටුන: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">අවසන්, <xliff:g id="tries">%2$d</xliff:g> න් <xliff:g id="hits">%1$d</xliff:g> ක් හඳුනා ගත්තා</string>
+    <string name="gesture_trainer_group_tap_swipe">තට්ටු කර ස්වයිප් කිරීම</string>
+    <string name="gesture_trainer_group_edge_swipes">දාරවල සිට ස්වයිප්</string>
+    <string name="gesture_trainer_group_along_edges">දාර දිගේ ලිස්සා යාම්</string>
+    <string name="gesture_trainer_group_edge_menus">දාර මෙනු</string>
+    <string name="gesture_trainer_group_corners">කොන්</string>
+    <string name="gesture_trainer_group_back_tap">පිටුපස තට්ටු කිරීම</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">ඇඟිලි දෙකේ ස්වයිප් එකක් අනුගමනය කරන ඇඟිලි දෙකේ තට්ටු ඉවත් කර ඇත: <xliff:g id="setting">%1$s</xliff:g> ක්‍රියාවිරහිතයි.</string>
+    <string name="gesture_trainer_how_swipe_hold">ඉන්පසු, ඔසවන්නේ නැතිව, අවම වශයෙන් <xliff:g id="hold">%1$d</xliff:g> මිලිතත්පර ඇඟිල්ල නිශ්චලව තබා, ඔසවන්න.</string>
+    <string name="gesture_trainer_half_top">ඉහළ</string>
+    <string name="gesture_trainer_half_bottom">පහළ</string>
+    <string name="gesture_trainer_how_taps_half">තිරයේ <xliff:g id="half">%1$s</xliff:g> භාගයේ තට්ටු කරන්න. ඇඟිලි අතර ලක්ෂ්‍යය භාගය තීරණය කරයි.</string>
+    <string name="gesture_trainer_same_fingers">එම ඇඟිලිවලින්ම</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> තට්ටු කරන්න. අවසන් තට්ටුවෙන් වහාම පසු, <xliff:g id="gap">%3$d</xliff:g> මිලිතත්පර ඇතුළත, <xliff:g id="swipe_fingers">%4$s</xliff:g> තිරය නැවත ස්පර්ශ කර සරල රේඛාවක <xliff:g id="direction">%5$s</xliff:g> 2 සිට 3 සෙ.මී පමණ ලිස්සා යවා, ඉන්පසු ඔසවන්න.</string>
+    <string name="gesture_trainer_how_corner_hold">අවසන් තට්ටුවේදී, ඇඟිල්ල කොනේ අවම වශයෙන් <xliff:g id="hold">%1$d</xliff:g> මිලිතත්පර නිශ්චලව තබන්න.</string>
+    <string name="gesture_trainer_how_back_tap">දුරකථනය එහි පැති වලින් අතේ අල්ලාගෙන, දොරකට තට්ටු කරන්නාක් මෙන්, ඇඟිලි තුඩකින් එහි පිටුපස මැද <xliff:g id="taps">%1$s</xliff:g> තදින් සහ ඉක්මනින් තට්ටු කරන්න. තට්ටු එකිනෙකට ළඟින් තබන්න: ඒවා අතර උපරිම <xliff:g id="gap">%2$d</xliff:g> මිලිතත්පර. තට්ටු කරන අතරතුර තිරය ස්පර්ශ නොකරන්න.</string>
+    <string name="gesture_trainer_back_tap_info">අභ්‍යාසය අතරතුර පිටුපස තට්ටු කිසිදු විධානයක් ක්‍රියාත්මක නොකරයි. තට්ටුවක් කෙතරම් තද විය යුතුද යන්න <xliff:g id="setting">%1$s</xliff:g> සකසයි.</string>
+    <string name="gesture_trainer_go_placed">ඉංගිතය <xliff:g id="tries">%1$d</xliff:g> වරක් කරන්න.</string>
+    <string name="gesture_trainer_along_left">වම් දාරය</string>
+    <string name="gesture_trainer_along_right">දකුණු දාරය</string>
+    <string name="gesture_trainer_along_top">ඉහළ දාරය</string>
+    <string name="gesture_trainer_along_bottom">පහළ දාරය</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> දිගේ ලිස්සා යාම් ඉවත් කර ඇත: එයට දාර මෙනුවක් ඇත, එබැවින් එය දිගේ ලිස්සා යාමක් ඉංගිතයක් ක්‍රියාත්මක කිරීම වෙනුවට මෙනුව විවෘත කරයි.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> දිගේ ලිස්සා යාම් ඉවත් කර ඇත: එය අනුචලනය කරයි, එබැවින් එය දිගේ ලිස්සා යාමක් ඉංගිතයක් ක්‍රියාත්මක කිරීම වෙනුවට යෙදුම අනුචලනය කරයි.</string>
+    <string name="gesture_trainer_finding_along_off_edge">ඇඟිල්ල දාරයෙන් ඕනෑවට වඩා ඈතට චලනය විය.</string>
+    <string name="gesture_trainer_tip_along_off_edge">ඇඟිල්ල වීදුරුවේ හරියටම කෙළවරේ, දාරය දිගේ කෙළින්ම තබා ගන්න.</string>
+    <string name="gesture_trainer_go_back_tap">පිටුපස තට්ටු කිරීමේ ඉංගිතය <xliff:g id="tries">%1$d</xliff:g> වරක් කරන්න. තිරය ස්පර්ශ කිරීමෙන් උත්සාහය අසාර්ථක වේ.</string>
+    <string name="gesture_trainer_no_accelerometer">මෙම අභ්‍යාසයට ත්වරණමානයක් අවශ්‍යයි. කිසිවක් නොමැත.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර නිශ්චලව තබා ගත්තා</string>
+    <string name="gesture_trainer_measure_back_tap_strength">ශක්තිය <xliff:g id="strength">%1$.1f</xliff:g> ක තට්ටුව</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">ඇඟිල්ල අවසානයේ <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර නිශ්චලව සිටියේය, එය අවම වශයෙන් <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර නිශ්චලව සිටිය යුතුය.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">ඇඟිලි තිරයේ අනෙක් භාගයේ තට්ටු කළේය.</string>
+    <string name="gesture_trainer_finding_swipe_missing">තට්ටුවලින් පසු ස්වයිප් එකක් නොපැමිණියේය.</string>
+    <string name="gesture_trainer_finding_swipe_late">ස්වයිප් එක අවසන් තට්ටුවෙන් <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර කට පසු ආරම්භ විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">පිටුපස තට්ටුව ඉතා සැහැල්ලුයි: අවශ්‍ය ශක්තියෙන් <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">තට්ටුවක් දුරකථනය එහි පිටුපස හරහාට වඩා පැත්තට සෙලවීය.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">තට්ටුවකට මොහොතකට පෙර දුරකථනය චලනය වෙමින් තිබුණි.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">තිරය ස්පර්ශ කර ඇත, එය ස්පර්ශ කර ඇති අතරතුර තට්ටු ගණන් නොවේ.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">පිටුපස තට්ටු අතර <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ගත විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">ස්වයිප් එකෙන් පසු, සම්පූර්ණ අල්ලා සිටීමේ කාලය පුරා ඇඟිල්ල තිරය මත නිශ්චලව තබන්න. ඉන්පසු ඔසවන්න.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">ඔබ තට්ටු කරන්නේ කුමන භාගයේදැයි පරීක්ෂා කරන්න: තිරයේ මැද ඉහළ භාගය පහළ භාගයෙන් වෙන් කරයි.</string>
+    <string name="gesture_trainer_tip_swipe_missing">අවසන් තට්ටුවෙන් පසු, වහාම තිරය නැවත ස්පර්ශ කර ස්වයිප් කරන්න.</string>
+    <string name="gesture_trainer_tip_swipe_late">අවසන් තට්ටුවෙන් වහාම පසු, විරාමයකින් තොරව ස්වයිප් එක ආරම්භ කරන්න.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">පිටුපස මැද අසල, ඇඟිලි තුඩින් හෝ නියපොත්තකින්, වඩා තදින් තට්ටු කරන්න.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">දාරයට හෝ ඇලවී නොව, දුරකථනයේ පිටුපසට කෙළින්ම තට්ටු කරන්න.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">තට්ටු කිරීමට පෙර මොහොතක් දුරකථනය නිශ්චලව තබා, ඔබේ අතින් එය චලනය නොවන සේ ලිහිල්ව අල්ලා ගන්න.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">පිටුපස තට්ටු කරන අතරතුර ඇඟිලි තිරයෙන් ඈත් කර තබන්න: දුරකථනය එහි පැති වලින් අල්ලා ගන්න.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">එක් තට්ටුවකට පසු තවත් තට්ටුවක් වහාම, වේගයෙන් තට්ටු කරන්න.</string>
+    <string name="gesture_trainer_advice_swipe_hold">ස්වයිප් එකෙන් පසු ඇඟිල්ල ඉතා ඉක්මනින් ඔසවයි. කෙටි <xliff:g id="setting">%1$s</xliff:g> කෙටි අල්ලා සිටීමකට ඉඩ දෙයි.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">පිටුපස තට්ටු සැහැල්ලුයි. ඉහළ <xliff:g id="setting">%1$s</xliff:g> සැහැල්ලු තට්ටු අනාවරණය කරයි, ගැටීම් ද තට්ටු ලෙස අනාවරණය කළ හැක.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">ඇඟිලි අංශක <xliff:g id="degrees">%1$.0f</xliff:g> ක් කරකැවිණි, අංශක <xliff:g id="limit">%2$.0f</xliff:g> සිට චලනය කරකැවීමකි.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">ඇඟිලි එකිනෙක වටා චාපයකින් නොව, සරල රේඛාවක එකිනෙක දෙසට හෝ එකිනෙකින් ඈතට චලනය කරන්න.</string>
+    <string name="gesture_trainer_finding_other_gesture">චලනය ඒ වෙනුවට එම ඉංගිතයට ගැළපුණි.</string>
+    <string name="gesture_trainer_side_left">වම්</string>
+    <string name="gesture_trainer_side_right">දකුණු</string>
+    <string name="gesture_trainer_side_top">ඉහළ</string>
+    <string name="gesture_trainer_side_bottom">පහළ</string>
+    <string name="gesture_trainer_finding_wrong_edge">ඇඟිල්ල <xliff:g id="side">%1$s</xliff:g> දාරයෙන් ආරම්භ විය, මෙම අභ්‍යාසය <xliff:g id="expected">%2$s</xliff:g> දාරයේ ය.</string>
+    <string name="gesture_trainer_tip_wrong_edge">අභ්‍යාසය නම් කරන දාරයෙන්ම ආරම්භ කරන්න.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">මෙම ඉංගිතය වෙනුවට දාර මෙනුවක් විවෘත විය.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">මෙනුවක් ඇති දාරයක් දිගේ ලිස්සා යාමක් මෙනුව විවෘත කරයි. අභ්‍යාසය නම් කරන දාරයෙන් ආරම්භ කරන්න.</string>
+    <string name="gesture_trainer_group_three_part">කොටස් තුනේ ස්වයිප්</string>
+    <string name="gesture_trainer_group_two_stroke">පහර දෙකේ ස්වයිප්</string>
+    <string name="gesture_trainer_group_shake">සෙලවීම</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">කොටස් තුනේ ස්වයිප් ඉවත් කර ඇත: <xliff:g id="setting">%1$s</xliff:g> ක්‍රියාත්මකයි.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">පහර දෙකේ ස්වයිප් ඉවත් කර ඇත: <xliff:g id="setting">%1$s</xliff:g> <xliff:g id="value">%2$s</xliff:g> වේ.</string>
+    <string name="gesture_trainer_shake_info">අභ්‍යාසය අතරතුර සෙලවීම කිසිදු විධානයක් ක්‍රියාත්මක නොකරයි. සෙලවීමක් කෙතරම් තද විය යුතුද යන්න <xliff:g id="setting">%1$s</xliff:g> සකසයි.</string>
+    <string name="gesture_trainer_go_shake">එක් එක් සෙලවීමෙන් පසු කෙටි විරාමයක් සමඟ, දුරකථනය <xliff:g id="tries">%1$d</xliff:g> වරක් සොලවන්න.</string>
+    <string name="gesture_trainer_how_shake">දුරකථනය තදින් අල්ලාගෙන, ජල බිඳුවක් ගසා දමන්නාක් මෙන්, එය ඉක්මනින් ඉදිරියට-පසුපසට සොලවන්න: සෑම දිශාවකටම අවම වශයෙන් දෙවරක්, සියල්ල තත්පරයෙන් තුනෙන් දෙකක් පමණ ඇතුළත. ඉන්පසු එය නිශ්චලව තබා ගන්න.</string>
+    <string name="gesture_trainer_how_two_stroke">එක් ඇඟිල්ලකින් <xliff:g id="first">%1$s</xliff:g> 2 සෙ.මී පමණ ස්වයිප් කර ඔසවන්න. ඉන්පසු වහාම, <xliff:g id="time">%3$d</xliff:g> මිලිතත්පර ඇතුළත, එක් ඇඟිල්ලකින් <xliff:g id="second">%2$s</xliff:g> 2 සෙ.මී පමණ ස්වයිප් කර ඔසවන්න.</string>
+    <string name="gesture_trainer_how_three_part">එක් ඇඟිල්ලකින් තිරය ස්පර්ශ කර, ඔසවන්නේ නැතිව, <xliff:g id="first">%1$s</xliff:g> ස්වයිප් කර, ඉන්පසු තියුණු ලෙස හැරී <xliff:g id="second">%2$s</xliff:g> ස්වයිප් කර, ඉන්පසු නැවත තියුණු ලෙස හැරී <xliff:g id="third">%3$s</xliff:g> ස්වයිප් කරන්න, එක් එක් කොටස 2 සෙ.මී පමණ, ඉන්පසු ඔසවන්න. එය වක්‍ර නොව, තියුණු කොන් සහිත එක් ඉක්මන්, සුමට චලනයක් කරන්න.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">එක් ඇඟිල්ලක් තිරයේ ඉහළ තුනෙන් එකේ ද අනෙක පහළ තුනෙන් එකේ ද තබන්න, උදාහරණයක් ලෙස මාපටැඟිල්ල පහළින් සහ දබරැඟිල්ල ඉහළින්.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">ඇඟිලි එකක් තිරයේ ඉහළ තුනෙන් එකේ සහ එකක් පහළ තුනෙන් එකේ නොතිබුණි.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">දෙවන ස්වයිප් එකක් නොතිබුණි.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">දෙවන ස්වයිප් එක පළමුවැන්නෙන් <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර කට පසු ආරම්භ විය, උපරිම ඉඩ දී ඇත්තේ <xliff:g id="limit">%2$d</xliff:g> මිලිතත්පර.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">පළමු ස්වයිප් එක <xliff:g id="direction">%1$s</xliff:g> ගියේය.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">දෙවන ස්වයිප් එක <xliff:g id="direction">%1$s</xliff:g> ගියේය.</string>
+    <string name="gesture_trainer_finding_shake_too_light">සෙලවීම ඉතා සැහැල්ලු විය: අවශ්‍ය ශක්තියෙන් <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">ඉදිරියට-පසුපසට පැද්දීම්: අවශ්‍ය <xliff:g id="wanted">%2$d</xliff:g> න් <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">ඇඟිලි ඈතට විහිදන්න, එකක් ඉහළ දාරය අසල සහ එකක් පහළ දාරය අසල.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">පළමු ස්වයිප් එකෙන් පසු, ඇඟිල්ල ඔසවා වහාම නැවත ස්වයිප් කරන්න.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">ඇඟිල්ල ඔසවූ වහාම දෙවන ස්වයිප් එක ආරම්භ කරන්න.</string>
+    <string name="gesture_trainer_tip_shake_too_light">වඩා තදින් සහ වේගයෙන් සොලවන්න.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">අතරමග නතර නොවී, සෑම දිශාවකටම අවම වශයෙන් දෙවරක් ඉදිරියට-පසුපසට, වේගයෙන් සොලවන්න.</string>
+    <string name="gesture_trainer_measure_shake_strength">ප්‍රබලතම චලනය <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">සෙලවීම් සැහැල්ලුයි. ඉහළ <xliff:g id="setting">%1$s</xliff:g> සැහැල්ලු සෙලවීම් අනාවරණය කරයි, දුරකථනය රැගෙන යාම ද සෙලවීමක් ලෙස අනාවරණය කළ හැක.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">දෙවන ස්වයිප් එක ප්‍රමාදව ආරම්භ වේ. දිගු <xliff:g id="setting">%1$s</xliff:g> පසුව දෙවන ස්වයිප් එකකට ඉඩ දෙයි, එවිට තනි ස්වයිප් එකක් ක්‍රියාත්මක වීමට පෙර වැඩි වේලාවක් රැඳී සිටී.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> ක්‍රියාත්මකයි.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> ක්‍රියාවිරහිතයි: ඇඟිලි දෙකේ ස්වයිප් යෙදුම අනුචලනය කරයි, ස්ක්‍රබ් එකක් ද බොහෝ විට අනුචලනය කරයි. සැකසීම ක්‍රියාත්මක විට, ඇඟිලි දෙකේ ස්වයිප් අනුචලනය වෙනුවට SandFly විධාන ක්‍රියාත්මක කරයි.</string>
+    <string name="gesture_trainer_measure_first_stroke">පළමු ස්වයිප් එක <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර</string>
+    <string name="gesture_trainer_measure_second_stroke">දෙවන ස්වයිප් එක <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර</string>
+    <string name="gesture_trainer_measure_whole_gesture">සම්පූර්ණ ඉංගිතය <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර</string>
+    <string name="gesture_trainer_measure_stroke_gap">ඒවා අතර <xliff:g id="ms">%1$d</xliff:g> මිලිතත්පර ඔසවා තිබුණි</string>
+</resources>

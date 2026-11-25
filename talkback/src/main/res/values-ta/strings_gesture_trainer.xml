@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">சைகைப் பயிற்றுவிப்பான்</string>
+    <string name="gesture_trainer_intro">சைகைகளின் ஒரு குழுவைத் தேர்ந்தெடுங்கள். ஒவ்வொரு பயிற்சியும் ஒரு சைகையை விவரிக்கிறது. சைகையை <xliff:g id="tries">%1$d</xliff:g> முறை செய்யுங்கள்; ஒவ்வொரு முயற்சியின் முடிவும் சொல்லப்படும். கடைசி முயற்சிக்குப் பிறகு, ஒவ்வொரு முயற்சியின் அளவீடுகள், மாற்ற வேண்டியவை மற்றும் தொடர்புடைய அமைப்புகளைத் திரை பட்டியலிடும்.</string>
+    <string name="gesture_trainer_group_one_finger">ஒரு விரல்</string>
+    <string name="gesture_trainer_group_two_fingers">இரண்டு விரல்கள்</string>
+    <string name="gesture_trainer_group_three_fingers">மூன்று விரல்கள்</string>
+    <string name="gesture_trainer_group_four_fingers">நான்கு விரல்கள்</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">கிள்ளுதல், சுழற்றுதல், தேய்த்தல்</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> பயிற்சிகள்</string>
+    <string name="gesture_trainer_close">மூடு</string>
+    <string name="gesture_trainer_no_detection">சைகைப் பயிற்றுவிப்பானுக்கு Android 13 அல்லது அதற்குப் பிந்தைய பதிப்பு தேவை.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">முன்னும் பின்னும் மற்றும் கோணச் சைகைகள் சேர்க்கப்படவில்லை: <xliff:g id="setting">%1$s</xliff:g> இயக்கத்தில் உள்ளது.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">இரண்டு விரல் ஸ்வைப்கள் சேர்க்கப்படவில்லை: <xliff:g id="setting">%1$s</xliff:g> முடக்கத்தில் உள்ளது, எனவே அவை ஆப்ஸை ஸ்க்ரோல் செய்யும்.</string>
+    <string name="gesture_trainer_exercise_heading">பயிற்சி <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">தொடங்கு</string>
+    <string name="gesture_trainer_skip">இந்தப் பயிற்சியைத் தவிர்</string>
+    <string name="gesture_trainer_back_to_groups">குழுக்களுக்குத் திரும்பு</string>
+    <string name="gesture_trainer_go">திரையில் எங்கு வேண்டுமானாலும் சைகையை <xliff:g id="tries">%1$d</xliff:g> முறை செய்யுங்கள். ஒவ்வொரு தொடுதலும் ஒரு முயற்சி.</string>
+    <string name="gesture_trainer_fingers_1">ஒரு விரலால்</string>
+    <string name="gesture_trainer_fingers_2">சுமார் 1 செ.மீ இடைவெளியில் பக்கவாட்டில் உள்ள இரண்டு விரல்களால்</string>
+    <string name="gesture_trainer_fingers_3">சிறிது இடைவெளியில் பக்கவாட்டில் உள்ள மூன்று விரல்களால்</string>
+    <string name="gesture_trainer_fingers_4">சிறிது இடைவெளியில் பக்கவாட்டில் உள்ள நான்கு விரல்களால்</string>
+    <string name="gesture_trainer_direction_up">மேலே</string>
+    <string name="gesture_trainer_direction_down">கீழே</string>
+    <string name="gesture_trainer_direction_left">இடதுபுறமாக</string>
+    <string name="gesture_trainer_direction_right">வலதுபுறமாக</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g> திரையைத் தொட்டு, காத்திருக்காமல், நேர்கோட்டில் சுமார் 2 முதல் 3 செ.மீ <xliff:g id="direction">%2$s</xliff:g> நகர்த்தி, பின்னர் விரலை எடுங்கள். உடனே நகரத் தொடங்குங்கள்: முதலில் அசையாமல் இருக்கும் விரல் தொடு ஆய்வைத் தொடங்கும்.</string>
+    <string name="gesture_trainer_how_swipe_multi">விரல்களை ஒன்றாக, ஒரே நேரத்தில் வைத்து, அனைத்தையும் ஒரே திசையில் நகர்த்துங்கள். ஒவ்வொரு விரலும் முழு நேரமும் <xliff:g id="direction">%1$s</xliff:g> செல்ல வேண்டும், எனவே கோட்டை நேராக வைத்திருங்கள்.</string>
+    <string name="gesture_trainer_how_back_and_forth">ஒரு விரலால் திரையைத் தொட்டு சுமார் 2 செ.மீ <xliff:g id="first">%1$s</xliff:g> நகர்த்துங்கள், பின்னர் விரலை எடுக்காமல் சுமார் 2 செ.மீ நேராக <xliff:g id="second">%2$s</xliff:g> திரும்பி, விரலை எடுங்கள். இதை ஒரே விரைவான, சீரான அசைவாகச் செய்யுங்கள்.</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g> திரையைத் தொட்டு சுமார் 2 செ.மீ <xliff:g id="first">%2$s</xliff:g> நகர்த்துங்கள், பின்னர் விரலை எடுக்காமல் கூர்மையாகத் திரும்பி சுமார் 2 செ.மீ <xliff:g id="second">%3$s</xliff:g> நகர்த்தி, விரலை எடுங்கள். திருப்பத்தை வளைவாக அல்லாமல், L எழுத்தைப் போல கூர்மையான மூலையாக்குங்கள்.</string>
+    <string name="gesture_trainer_taps_1">ஒருமுறை</string>
+    <string name="gesture_trainer_taps_2">இருமுறை</string>
+    <string name="gesture_trainer_taps_3">மூன்றுமுறை</string>
+    <string name="gesture_trainer_taps_4">நான்குமுறை</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> தட்டுங்கள். விரல்களை ஒன்றாக வைத்து, ஒன்றாக, விரைவாக, நகர்த்தாமல் எடுங்கள்.</string>
+    <string name="gesture_trainer_how_taps_quick">தட்டல்களை விரைவாகவும் ஒரே இடத்திலும் செய்யுங்கள்: அடுத்த தட்டல் முந்தையதிலிருந்து <xliff:g id="gap">%1$d</xliff:g> மி.வி-க்குள் வர வேண்டும்.</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> ஒரே நேரத்தில் திரையைத் தொட்டு, நகர்த்தாமல் குறைந்தது <xliff:g id="hold">%2$d</xliff:g> மி.வி அசையாமல் வைத்திருங்கள்.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">வேறு கட்டளை ஒதுக்கப்படவில்லை எனில், இந்தச் சைகை SandFly-ஐ முடக்கும். பயிற்றுவிப்பானில் இது எதையும் இயக்காது.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> தட்டுங்கள், கடைசி தட்டலில் விரல்களைக் குறைந்தது <xliff:g id="hold">%3$d</xliff:g> மி.வி திரையில் அசையாமல் வைத்திருங்கள்.</string>
+    <string name="gesture_trainer_how_three_finger_hand">கட்டைவிரல், ஆள்காட்டி விரல், நடுவிரல் ஆகியவற்றைப் பயன்படுத்துங்கள்.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">ஆள்காட்டி விரலையும் நடுவிரலையும் அருகருகே வைத்து, கட்டைவிரலையும் மோதிர விரலையும் இருபுறமும் சில சென்டிமீட்டர் தொலைவில் வையுங்கள். பின்னர் நான்கு விரல் நுனிகளையும் ஒரே புள்ளிக்குக் கொண்டு வாருங்கள்.</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g> விரல்களை அகலமாக விரித்துத் திரையில் வையுங்கள். பின்னர் எதையோ எடுப்பது போல, அவற்றைக் குறைந்தது 1 செ.மீ நேராக ஒன்றையொன்று நோக்கிக் கொண்டு வந்து, திரையிலிருந்து எடுங்கள். முழுக் கையையும் அல்லாமல் விரல்களை மட்டும் நகர்த்துங்கள், வளைவாகவும் அல்ல.</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g> விரல்களை நெருக்கமாகத் திரையில் வையுங்கள். பின்னர் அவற்றைக் குறைந்தது 1 செ.மீ நேராக விலக்கி, திரையிலிருந்து எடுங்கள். முழுக் கையையும் அல்லாமல் விரல்களை மட்டும் நகர்த்துங்கள், வளைவாகவும் அல்ல.</string>
+    <string name="gesture_trainer_clockwise">கடிகார திசையில்</string>
+    <string name="gesture_trainer_counterclockwise">கடிகார எதிர்திசையில்</string>
+    <string name="gesture_trainer_how_rotate">இரண்டு விரல்களைச் சுமார் 2 முதல் 3 செ.மீ இடைவெளியில் திரையில் வைத்து, டயலைத் திருப்புவது போல, அவற்றின் நடுப்பகுதியைச் சுற்றி சுமார் கால் சுற்று <xliff:g id="way">%1$s</xliff:g> சுழற்றுங்கள். பின்னர் விரல்களை எடுங்கள்.</string>
+    <string name="gesture_trainer_how_scrub">இரண்டு விரல்களைத் திரையில் வைத்து, எதையோ அழிப்பது போல, அவற்றை ஒரு பக்கமாக சுமார் 2 செ.மீ விரைவாக நகர்த்தித் திரும்பக் கொண்டு வாருங்கள், அனைத்தும் சுமார் ஒரு வினாடிக்குள். பின்னர் விரல்களை எடுங்கள்.</string>
+    <string name="gesture_trainer_edge_bottom">கீழ் விளிம்பில்</string>
+    <string name="gesture_trainer_edge_top_left">மேல் விளிம்பில், அதன் இடது பாதியில்</string>
+    <string name="gesture_trainer_edge_top_right">மேல் விளிம்பில், அதன் வலது பாதியில்</string>
+    <string name="gesture_trainer_edge_left_top">இடது விளிம்பில், அதன் மேல் பாதியில்</string>
+    <string name="gesture_trainer_edge_left_bottom">இடது விளிம்பில், அதன் கீழ் பாதியில்</string>
+    <string name="gesture_trainer_edge_right_top">வலது விளிம்பில், அதன் மேல் பாதியில்</string>
+    <string name="gesture_trainer_edge_right_bottom">வலது விளிம்பில், அதன் கீழ் பாதியில்</string>
+    <string name="gesture_trainer_edge_left">இடது விளிம்பில்</string>
+    <string name="gesture_trainer_edge_right">வலது விளிம்பில்</string>
+    <string name="gesture_trainer_edge_top">மேல் விளிம்பில்</string>
+    <string name="gesture_trainer_how_edge">ஒரு விரலை <xliff:g id="edge">%1$s</xliff:g>, விளிம்பிலிருந்து அதிகபட்சம் <xliff:g id="edge_width">%2$d</xliff:g> மி.மீ-க்குள் வைத்து, முதல் கிளிக் வரை, சுமார் <xliff:g id="distance">%4$d</xliff:g> மி.மீ, திரைக்குள் <xliff:g id="direction">%3$s</xliff:g> நகர்த்துங்கள். பின்னர் உடனே விரலை எடுங்கள்: இரண்டாவது கிளிக்கைத் தாண்டினால், அது நீண்ட நகர்த்தலாகும்.</string>
+    <string name="gesture_trainer_how_edge_long">ஒரு விரலை <xliff:g id="edge">%1$s</xliff:g>, விளிம்பிலிருந்து அதிகபட்சம் <xliff:g id="edge_width">%2$d</xliff:g> மி.மீ-க்குள் வைத்து, முதல் கிளிக்கைத் தாண்டி இரண்டாவது வரை, சுமார் <xliff:g id="distance">%4$d</xliff:g> மி.மீ, திரைக்குள் <xliff:g id="direction">%3$s</xliff:g> நகர்த்துங்கள். பின்னர் விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_how_along">ஒரு விரலை <xliff:g id="edge">%1$s</xliff:g> வழியே <xliff:g id="direction">%2$s</xliff:g> குறைந்தது <xliff:g id="distance">%3$d</xliff:g> மி.மீ நகர்த்துங்கள்.</string>
+    <string name="gesture_trainer_corner_top_left">மேல் இடது</string>
+    <string name="gesture_trainer_corner_top_right">மேல் வலது</string>
+    <string name="gesture_trainer_corner_bottom_left">கீழ் இடது</string>
+    <string name="gesture_trainer_corner_bottom_right">கீழ் வலது</string>
+    <string name="gesture_trainer_how_corner">திரையின் <xliff:g id="corner">%2$s</xliff:g> மூலையில் <xliff:g id="taps">%1$s</xliff:g> தட்டுங்கள். விரலைச் சரியாக மூலையில், இரு விளிம்புகளிலிருந்தும் <xliff:g id="size">%3$d</xliff:g> மி.மீ-க்கு மேல் இல்லாமல் வைத்து, <xliff:g id="time">%4$d</xliff:g> மி.வி-க்குள் விரைவாக எடுங்கள்.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> மி.மீ. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> மி.மீ.</string>
+    <string name="gesture_trainer_corner_warning">பெரிய மூலைகளுடன், மூலைக்கு அருகிலுள்ள கட்டுப்பாட்டில் செய்யும் தட்டல், எடுத்துக்காட்டாக மேல் இடதுபுறத்தில் உள்ள பின்செல், அதற்குப் பதிலாக மூலைச் சைகையை இயக்கக்கூடும்.</string>
+    <string name="gesture_trainer_rating_precise">அறியப்பட்டது, துல்லியம்</string>
+    <string name="gesture_trainer_rating_good">அறியப்பட்டது, நன்று</string>
+    <string name="gesture_trainer_rating_borderline">அறியப்பட்டது, ஆனால் வரம்புக்கு அருகில்</string>
+    <string name="gesture_trainer_try_recognized">முயற்சி <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">முயற்சி <xliff:g id="number">%1$d</xliff:g>: அறியப்படவில்லை.</string>
+    <string name="gesture_trainer_try_other">முயற்சி <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> என அறியப்பட்டது.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g>-இல் <xliff:g id="recognized">%2$d</xliff:g> அறியப்பட்டன</string>
+    <string name="gesture_trainer_results_tries">உங்கள் முயற்சிகள்</string>
+    <string name="gesture_trainer_results_change">மாற்ற வேண்டியவை</string>
+    <string name="gesture_trainer_results_close">வரம்புக்கு அருகில்</string>
+    <string name="gesture_trainer_results_all_good">எல்லா முயற்சிகளும் வரம்புகளுக்குள் அறியப்பட்டன.</string>
+    <string name="gesture_trainer_results_settings">உதவக்கூடிய அமைப்புகள்</string>
+    <string name="gesture_trainer_next">அடுத்த பயிற்சி</string>
+    <string name="gesture_trainer_repeat">மீண்டும் செய்</string>
+    <string name="gesture_trainer_finish">நிறைவுசெய்</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> குழுவின் எல்லாப் பயிற்சிகளையும் முடித்துவிட்டீர்கள்.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> அமைப்பை மாற்று</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> மி.வி ஆனது</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> செ.மீ நீளம்</string>
+    <string name="gesture_trainer_measure_speed">வினாடிக்கு <xliff:g id="speed">%1$.0f</xliff:g> செ.மீ</string>
+    <string name="gesture_trainer_measure_angle">நேர்கோட்டிலிருந்து <xliff:g id="degrees">%1$.0f</xliff:g> டிகிரி விலகல்</string>
+    <string name="gesture_trainer_measure_start">முதல் சென்டிமீட்டர் <xliff:g id="ms">%1$d</xliff:g> மி.வி-இல்</string>
+    <string name="gesture_trainer_measure_landing">விரல்கள் <xliff:g id="ms">%1$d</xliff:g> மி.வி இடைவெளியில் பதிந்தன</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> மி.வி தட்டல்</string>
+    <string name="gesture_trainer_measure_gap">தட்டல்களுக்கு இடையே <xliff:g id="ms">%1$d</xliff:g> மி.வி</string>
+    <string name="gesture_trainer_measure_spread">விரல்கள் <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ நகர்ந்தன</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> டிகிரி சுழன்றது</string>
+    <string name="gesture_trainer_measure_corner">மூலையின் விளிம்புகளிலிருந்து <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ</string>
+    <string name="gesture_trainer_measure_edge">விளிம்பிலிருந்து <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ தொலைவில் தொடங்கியது</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">திரையில் உள்ள விரல்கள்: <xliff:g id="wanted">%2$d</xliff:g>-க்குப் பதிலாக <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">விரல்கள் <xliff:g id="ms">%1$d</xliff:g> மி.வி இடைவெளியில் பதிந்தன, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">எல்லா விரல்களும் பதிவதற்கு முன் ஒரு விரல் எடுக்கப்பட்டது.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">விரல்கள் <xliff:g id="ms">%1$d</xliff:g> மி.வி இடைவெளியில் எடுக்கப்பட்டன, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_became_exploration">விரல் மிக நேரம் அசையாமல் இருந்தது அல்லது தொடக்கத்தில் மிக மெதுவாக நகர்ந்தது, எனவே தொடுதல் தொடு ஆய்வாக மாறியது.</string>
+    <string name="gesture_trainer_finding_slow_start">முதல் சென்டிமீட்டருக்கு <xliff:g id="ms">%1$d</xliff:g> மி.வி ஆனது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_paused">விரல் <xliff:g id="ms">%1$d</xliff:g> மி.வி மெதுவானது, ஒவ்வொரு சென்டிமீட்டருக்கும் அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி ஆகலாம்.</string>
+    <string name="gesture_trainer_finding_too_short">அசைவு <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ மட்டுமே, அது குறைந்தது <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ இருக்க வேண்டும்.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">விரல் தொடக்கத்தில் <xliff:g id="direction">%1$s</xliff:g> சென்றது.</string>
+    <string name="gesture_trainer_finding_wrong_direction">விரல்கள் தொடக்கத்தில் <xliff:g id="direction">%1$s</xliff:g> சென்றன.</string>
+    <string name="gesture_trainer_finding_off_line">பாதை நேர்கோட்டிலிருந்து <xliff:g id="degrees">%1$.0f</xliff:g> டிகிரி விலகியது, அதிகபட்சம் <xliff:g id="limit">%2$.0f</xliff:g> அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_curved">பாதை <xliff:g id="wanted">%2$d</xliff:g>-க்குப் பதிலாக <xliff:g id="parts">%1$d</xliff:g> பகுதிகளாக வளைந்தது.</string>
+    <string name="gesture_trainer_finding_turn_missing">திருப்பம் கண்டறியப்படவில்லை.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">திருப்பத்திற்குப் பிறகு விரல் <xliff:g id="direction">%1$s</xliff:g> சென்றது.</string>
+    <string name="gesture_trainer_finding_tap_moved">தட்டலின்போது விரல் <xliff:g id="mm">%1$.1f</xliff:g> மி.மீ நகர்ந்தது, அதிகபட்சம் <xliff:g id="limit">%2$.1f</xliff:g> மி.மீ அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_tap_held_long">ஒரு தட்டல் <xliff:g id="ms">%1$d</xliff:g> மி.வி நீடித்தது, <xliff:g id="limit">%2$d</xliff:g> மி.வி-ஐ விட அதிகம்.</string>
+    <string name="gesture_trainer_finding_hold_too_short">கடைசி தட்டல் <xliff:g id="ms">%1$d</xliff:g> மி.வி பிடிக்கப்பட்டது, அது குறைந்தது <xliff:g id="limit">%2$d</xliff:g> மி.வி இருக்க வேண்டும்.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g>-க்குப் பதிலாக <xliff:g id="taps">%1$d</xliff:g> தட்டல்கள்.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g>-க்குப் பதிலாக <xliff:g id="taps">%1$d</xliff:g> தட்டல்கள்.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">தட்டல்களுக்கு இடையே <xliff:g id="ms">%1$d</xliff:g> மி.வி கடந்தது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_taps_apart">தட்டல்கள் <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ இடைவெளியில் பதிந்தன, அதிகபட்சம் <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">விரல்கள் <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ மட்டுமே நகர்ந்தன, அவை குறைந்தது <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ நகர வேண்டும்.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">விரல்கள் எதிர்த் திசையில் நகர்ந்தன.</string>
+    <string name="gesture_trainer_finding_moved_together">விரல்கள் ஒன்றையொன்று நோக்கி அல்லது விலகி நகர்ந்ததை விட அதிகமாக, முழுக் கையும் திரையில் <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ நகர்ந்தது.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">விரல்கள் <xliff:g id="degrees">%1$.0f</xliff:g> டிகிரி மட்டுமே சுழன்றன, அவை குறைந்தது <xliff:g id="limit">%2$.0f</xliff:g> டிகிரி சுழல வேண்டும்.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">விரல்கள் எதிர்த் திசையில் சுழன்றன.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">முதல் இழுப்பு <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ, அது குறைந்தது <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ இருக்க வேண்டும்.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">திரும்பும் இழுப்பு <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ, அது குறைந்தது <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ இருக்க வேண்டும்.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">தேய்த்தலுக்கு <xliff:g id="ms">%1$d</xliff:g> மி.வி ஆனது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">விரல் விளிம்பிலிருந்து <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ தொலைவில் பதிந்தது, விளிம்பின் அகலம் <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">விரல் விளிம்பின் மற்றொரு பாதியில் தொடங்கியது.</string>
+    <string name="gesture_trainer_finding_edge_too_short">விரல் <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ நகர்ந்தது, அது குறைந்தது <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ நகர வேண்டும்.</string>
+    <string name="gesture_trainer_finding_edge_too_long">மிக நீண்ட நகர்த்தல்: விரல் இரண்டாவது கிளிக்கைத் தாண்டியது, <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ, இரண்டாவது கிளிக் <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ-இல் உள்ளது.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">கிளிக்கை அடைய <xliff:g id="ms">%1$d</xliff:g> மி.வி ஆனது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_edge_sideways">நகர்த்தல் <xliff:g id="degrees">%1$.0f</xliff:g> டிகிரி பக்கவாட்டில் சென்றது, அதிகபட்சம் <xliff:g id="limit">%2$.0f</xliff:g> அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_corner_missed">தட்டல் மூலையின் விளிம்புகளிலிருந்து <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ தொலைவில் பதிந்தது, மூலையின் அளவு <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">ஒரு மூலைத் தட்டல் <xliff:g id="ms">%1$d</xliff:g> மி.வி நீடித்தது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_none">சைகைக்குப் பொருந்தும் அசைவு எதுவும் கண்டறியப்படவில்லை.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">எத்தனை விரல்கள் கண்ணாடியைத் தொடுகின்றன எனச் சரிபாருங்கள். திரையில் படும் உள்ளங்கை அல்லது வேறு விரலும் கணக்கில் சேரும்.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">எல்லா விரல்களையும் ஒன்றன்பின் ஒன்றாக அல்லாமல், ஒரே கையாக, ஒரே நேரத்தில் வையுங்கள்.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">முதலில் எல்லா விரல்களையும் வைத்து, பின்னர் அவற்றை நகர்த்துங்கள் அல்லது எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">எல்லா விரல்களையும் ஒரே நேரத்தில் எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_slow_start">திரையைத் தொட்ட உடனே நகரத் தொடங்குங்கள், தொடக்கத்தில் வேகமாக நகருங்கள்.</string>
+    <string name="gesture_trainer_tip_paused">விரலை எடுக்கும் வரை சீரான வேகத்தில் நகர்த்திக்கொண்டே இருங்கள். இறுதியில் மெதுவாக்காதீர்கள்.</string>
+    <string name="gesture_trainer_tip_too_short">அசைவை நீளமாக்குங்கள், சுமார் 2 முதல் 3 செ.மீ.</string>
+    <string name="gesture_trainer_tip_wrong_direction">அசைவின் தொடக்கத்திலேயே திசையைச் சரிபாருங்கள். ஃபோனை உங்களுக்கு நேர் முன்னால் பிடிப்பது உதவும்.</string>
+    <string name="gesture_trainer_tip_off_line">குறுக்காக அல்லாமல், திசையின் வழியே மட்டும் நகர்த்துங்கள். கட்டைவிரலை விட ஆள்காட்டி விரல் நேரான கோட்டை வைத்திருக்கும்.</string>
+    <string name="gesture_trainer_tip_curved">கோட்டை நேராக வைத்து, சரியாக இறுதியில் விரலை எடுங்கள், எடுக்கும்போது விரலைப் பக்கவாட்டில் வளைக்காமல்.</string>
+    <string name="gesture_trainer_tip_turn_missing">விரலை எடுக்காமல், செங்கோணத்தில் அல்லது நேராகப் பின்னோக்கி, கூர்மையாகத் திசையை மாற்றுங்கள். ஒவ்வொரு பகுதியும் சுமார் 2 செ.மீ இருக்க வேண்டும்.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">திருப்பத்திற்குப் பிறகு எந்தத் திசையில் செல்கிறீர்கள் எனச் சரிபாருங்கள்: இரண்டாவது பகுதி சைகையின் பெயரில் உள்ள மற்றொரு திசையில் செல்ல வேண்டும்.</string>
+    <string name="gesture_trainer_tip_tap_moved">விரல் நுனியால், நகர்த்தாமல், நேராகக் கீழும் மேலுமாகத் தட்டுங்கள்.</string>
+    <string name="gesture_trainer_tip_tap_held_long">ஒவ்வொரு தட்டலையும் குறுகியதாக்குங்கள்: தொட்டு உடனே எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_hold_too_short">கடைசி தட்டலில், பிடித்திருக்கும் முழு நேரமும் விரல்களைத் திரையில் அசையாமல் வைத்திருங்கள்.</string>
+    <string name="gesture_trainer_tip_too_few_taps">தட்டல்களை எண்ணி, அனைத்தையும் ஒரே தொடர்ச்சியாக விரைவாகச் செய்யுங்கள்.</string>
+    <string name="gesture_trainer_tip_too_many_taps">தட்டல்களை எண்ணுங்கள். கண்ணாடியிலிருந்து துள்ளும் விரல் கூடுதல் தட்டலை உருவாக்கும்.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">வேகமாகத் தட்டுங்கள்: விரலை எடுத்த உடனே அடுத்த தட்டலைத் தொடங்குங்கள்.</string>
+    <string name="gesture_trainer_tip_taps_apart">ஒவ்வொரு முறையும் ஒரே இடத்தில் தட்டுங்கள்.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">விரல்களை மேலும் நகர்த்துங்கள், குறைந்தது 1 செ.மீ நெருக்கமாக அல்லது விலகி.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">கிள்ளுதல் என்பது விரல்கள் ஒன்றையொன்று நோக்கி நகர்வது, பரப்புதல் என்பது விரல்கள் விலகி நகர்வது.</string>
+    <string name="gesture_trainer_tip_moved_together">விரல்களை மட்டும் ஒன்றையொன்று நோக்கி அல்லது விலகி நகர்த்துங்கள். முழுக் கையையும் திரையில் நகர்த்தாதீர்கள்.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">டயலைக் கால் சுற்று திருப்புவது போல, மேலும் சுழற்றுங்கள்.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">கடிகார திசை என்பது கடிகார முட்கள் செல்லும் திசையில் சுழற்றுவது: மேல் விரல் வலதுபுறமாக நகரும்.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">முதல் இழுப்பைக் குறைந்தது 1 செ.மீ நீளமாக்குங்கள்.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">முதல் இழுப்புக்குப் பிறகு, விரலை எடுப்பதற்கு முன் எதிர்த் திசையில் திரும்புங்கள்.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">தேய்த்தலை விரைவாகச் செய்யுங்கள், சென்று திரும்புவது சுமார் ஒரு வினாடியில்.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">விரல் நுனி சிறிது திரைக்கு வெளியே இருக்குமாறு, சரியாக விளிம்பிலிருந்து தொடங்குங்கள்.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">விளிம்பின் எந்தப் பாதியில் தொடங்குகிறீர்கள் எனச் சரிபாருங்கள்.</string>
+    <string name="gesture_trainer_tip_edge_too_short">கிளிக் கேட்கும் வரை மேலும் நகர்த்தி, பின்னர் விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_edge_too_long">முதல் கிளிக்கிற்குப் பின் உடனே, இரண்டாவதற்கு முன் விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">கிளிக்கிற்கு முன் நிற்காமல், வேகமாக உள்ளே நகர்த்துங்கள்.</string>
+    <string name="gesture_trainer_tip_edge_sideways">குறுக்காக அல்லாமல், விளிம்பிலிருந்து நேராக உள்ளே அல்லது அதன் வழியே நேராக நகர்த்துங்கள்.</string>
+    <string name="gesture_trainer_tip_corner_missed">இரு விளிம்புகளையும் தொடுமாறு விரலைச் சரியாக மூலையில் வையுங்கள்.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">மூலையைத் தொட்ட பிறகு வேகமாக விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_close_to_limit">வரம்புக்கு அருகில்: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">ஸ்வைப்கள் மெதுவாகத் தொடங்குகின்றன. நீண்ட <xliff:g id="setting">%1$s</xliff:g> மெதுவான தொடக்கத்தை அனுமதிக்கும்.</string>
+    <string name="gesture_trainer_advice_tap_time">தட்டல்கள் மெதுவாக உள்ளன. நீண்ட <xliff:g id="setting">%1$s</xliff:g> மெதுவான தட்டல்களை அனுமதிக்கும்.</string>
+    <string name="gesture_trainer_advice_edge_width">ஸ்வைப்கள் விளிம்பிலிருந்து மிகத் தொலைவில் தொடங்குகின்றன. பெரிய <xliff:g id="setting">%1$s</xliff:g> விளிம்புக்கு அருகில் தொடங்கும் ஸ்வைப்களையும் விளிம்பு ஸ்வைப்களாக மாற்றும்.</string>
+    <string name="gesture_trainer_advice_corner_size">தட்டல்கள் மூலைக்கு வெளியே பதிகின்றன. பெரிய <xliff:g id="setting">%1$s</xliff:g> மூலைகளைப் பெரிதாக்கும்.</string>
+    <string name="gesture_trainer_advice_corner_time">மூலைத் தட்டல்கள் மெதுவாக உள்ளன. நீண்ட <xliff:g id="setting">%1$s</xliff:g> மெதுவான தட்டல்களை அனுமதிக்கும்.</string>
+    <string name="gesture_trainer_menu_option">விருப்பம் <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: உருப்படி <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g> என்பதைத் தேர்ந்தெடுங்கள்</string>
+    <string name="gesture_trainer_how_menu">மெனுவைத் திறக்க, ஒரு விரலை <xliff:g id="edge">%1$s</xliff:g> குறைந்தது <xliff:g id="distance">%2$d</xliff:g> மி.மீ மேலே அல்லது கீழே நகர்த்துங்கள். அதில் மேலிருந்து கீழாக <xliff:g id="count">%3$d</xliff:g> உருப்படிகள் உள்ளன, ஒவ்வொன்றும் சுமார் <xliff:g id="size">%6$s</xliff:g> செ.மீ உயரம். உருப்படி <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, திரையின் மேலிருந்து <xliff:g id="from">%7$s</xliff:g> முதல் <xliff:g id="to">%8$s</xliff:g> செ.மீ கீழே உள்ளது. உருப்படி சொல்லப்படும்போது விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_menu_sample">இந்த விளிம்பில் மெனு இல்லை. பயிற்சி <xliff:g id="count">%1$d</xliff:g> மாதிரி உருப்படிகளைப் பயன்படுத்துகிறது.</string>
+    <string name="gesture_trainer_try_menu_cancelled">முயற்சி <xliff:g id="number">%1$d</xliff:g>: தேர்வு இல்லாமல் மெனு மூடப்பட்டது.</string>
+    <string name="gesture_trainer_try_menu_other">முயற்சி <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> தேர்ந்தெடுக்கப்பட்டது.</string>
+    <string name="gesture_trainer_measure_menu_item">உருப்படி <xliff:g id="number">%1$d</xliff:g>-இல் எடுக்கப்பட்டது</string>
+    <string name="gesture_trainer_finding_menu_in_corner">மூலைகளும் மேல், கீழ் விளிம்புகளும் உள்ள, விளிம்பின் மிக மேல் அல்லது மிகக் கீழ் பகுதியில் விரல் தொடங்கியது.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">விரல் விளிம்பிலிருந்து <xliff:g id="mm">%1$.0f</xliff:g> மி.மீ தொலைவில் எடுக்கப்பட்டது, <xliff:g id="limit">%2$.0f</xliff:g> மி.மீ-க்கு அப்பால் மெனு மூடும்.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">விரல் உருப்படி <xliff:g id="target">%2$d</xliff:g>-க்குப் பதிலாக உருப்படி <xliff:g id="item">%1$d</xliff:g>-இல் எடுக்கப்பட்டது.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">விளிம்பின் மேல் மற்றும் கீழ் முனைகளிலிருந்து சற்றுத் தள்ளித் தொடங்குங்கள்.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">நகர்த்தும்போது விரலை விளிம்புக்கு அருகில் வைத்து, அங்கேயே எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">ஒவ்வொரு உருப்படிக்கும் விளிம்பின் வழியே ஒரு நிலையான இடம் உள்ளது, விரல் எடுக்கப்படும் இடத்தில் உள்ள உருப்படி தேர்ந்தெடுக்கப்படும். உருப்படி சொல்லப்படும்போது விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_contents">உள்ளடக்கம்</string>
+    <string name="gesture_trainer_contents_heading">உள்ளடக்கம்: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">முடிந்தது, <xliff:g id="tries">%2$d</xliff:g>-இல் <xliff:g id="hits">%1$d</xliff:g> அறியப்பட்டன</string>
+    <string name="gesture_trainer_group_tap_swipe">தட்டி ஸ்வைப் செய்தல்</string>
+    <string name="gesture_trainer_group_edge_swipes">விளிம்புகளிலிருந்து ஸ்வைப்கள்</string>
+    <string name="gesture_trainer_group_along_edges">விளிம்புகளின் வழியே நகர்த்தல்கள்</string>
+    <string name="gesture_trainer_group_edge_menus">விளிம்பு மெனுக்கள்</string>
+    <string name="gesture_trainer_group_corners">மூலைகள்</string>
+    <string name="gesture_trainer_group_back_tap">பின்புறத் தட்டல்</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">இரண்டு விரல் ஸ்வைப் தொடரும் இரண்டு விரல் தட்டல்கள் சேர்க்கப்படவில்லை: <xliff:g id="setting">%1$s</xliff:g> முடக்கத்தில் உள்ளது.</string>
+    <string name="gesture_trainer_how_swipe_hold">பின்னர், விரலை எடுக்காமல், குறைந்தது <xliff:g id="hold">%1$d</xliff:g> மி.வி அசையாமல் வைத்து, விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_half_top">மேல்</string>
+    <string name="gesture_trainer_half_bottom">கீழ்</string>
+    <string name="gesture_trainer_how_taps_half">திரையின் <xliff:g id="half">%1$s</xliff:g> பாதியில் தட்டுங்கள். விரல்களுக்கு இடையிலான புள்ளி பாதியைத் தீர்மானிக்கும்.</string>
+    <string name="gesture_trainer_same_fingers">அதே விரல்களால்</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> தட்டுங்கள். கடைசி தட்டலுக்குப் பின் உடனே, <xliff:g id="gap">%3$d</xliff:g> மி.வி-க்குள், <xliff:g id="swipe_fingers">%4$s</xliff:g> மீண்டும் திரையைத் தொட்டு, நேர்கோட்டில் சுமார் 2 முதல் 3 செ.மீ <xliff:g id="direction">%5$s</xliff:g> நகர்த்தி, பின்னர் விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_how_corner_hold">கடைசி தட்டலில், விரலைக் குறைந்தது <xliff:g id="hold">%1$d</xliff:g> மி.வி மூலையில் அசையாமல் வைத்திருங்கள்.</string>
+    <string name="gesture_trainer_how_back_tap">ஃபோனை அதன் பக்கங்களில் கையில் பிடித்து, கதவைத் தட்டுவது போல, அதன் பின்புற நடுப்பகுதியில் விரல் நுனியால் உறுதியாகவும் விரைவாகவும் <xliff:g id="taps">%1$s</xliff:g> தட்டுங்கள். தட்டல்களை நெருக்கமாக வைத்திருங்கள்: அவற்றுக்கு இடையே அதிகபட்சம் <xliff:g id="gap">%2$d</xliff:g> மி.வி. தட்டும்போது திரையைத் தொடாதீர்கள்.</string>
+    <string name="gesture_trainer_back_tap_info">பயிற்சியின்போது பின்புறத் தட்டல்கள் கட்டளைகள் எதையும் இயக்காது. தட்டல் எவ்வளவு வலுவாக இருக்க வேண்டும் என்பதை <xliff:g id="setting">%1$s</xliff:g> அமைக்கிறது.</string>
+    <string name="gesture_trainer_go_placed">சைகையை <xliff:g id="tries">%1$d</xliff:g> முறை செய்யுங்கள்.</string>
+    <string name="gesture_trainer_along_left">இடது விளிம்பின்</string>
+    <string name="gesture_trainer_along_right">வலது விளிம்பின்</string>
+    <string name="gesture_trainer_along_top">மேல் விளிம்பின்</string>
+    <string name="gesture_trainer_along_bottom">கீழ் விளிம்பின்</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> வழியே நகர்த்தல்கள் சேர்க்கப்படவில்லை: அதில் விளிம்பு மெனு உள்ளது, எனவே அதன் வழியே நகர்த்துவது சைகையை இயக்குவதற்குப் பதிலாக மெனுவைத் திறக்கும்.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> வழியே நகர்த்தல்கள் சேர்க்கப்படவில்லை: அது ஸ்க்ரோல் செய்யும், எனவே அதன் வழியே நகர்த்துவது சைகையை இயக்குவதற்குப் பதிலாக ஆப்ஸை ஸ்க்ரோல் செய்யும்.</string>
+    <string name="gesture_trainer_finding_along_off_edge">விரல் விளிம்பிலிருந்து மிகத் தொலைவு நகர்ந்தது.</string>
+    <string name="gesture_trainer_tip_along_off_edge">விரலைக் கண்ணாடியின் ஓரத்திலேயே, விளிம்பின் வழியே நேராக வைத்திருங்கள்.</string>
+    <string name="gesture_trainer_go_back_tap">பின்புறத் தட்டல் சைகையை <xliff:g id="tries">%1$d</xliff:g> முறை செய்யுங்கள். திரையைத் தொட்டால் முயற்சி தோல்வியடையும்.</string>
+    <string name="gesture_trainer_no_accelerometer">இந்தப் பயிற்சிக்கு முடுக்கமானி தேவை. எதுவும் கிடைக்கவில்லை.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> மி.வி அசையாமல் வைக்கப்பட்டது</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> வலிமையுள்ள தட்டல்</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">இறுதியில் விரல் <xliff:g id="ms">%1$d</xliff:g> மி.வி அசையாமல் இருந்தது, அது குறைந்தது <xliff:g id="limit">%2$d</xliff:g> மி.வி அசையாமல் இருக்க வேண்டும்.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">விரல்கள் திரையின் மற்றொரு பாதியில் தட்டின.</string>
+    <string name="gesture_trainer_finding_swipe_missing">தட்டல்களுக்குப் பிறகு ஸ்வைப் எதுவும் வரவில்லை.</string>
+    <string name="gesture_trainer_finding_swipe_late">கடைசி தட்டலுக்கு <xliff:g id="ms">%1$d</xliff:g> மி.வி பிறகு ஸ்வைப் தொடங்கியது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">பின்புறத் தட்டல் மிக இலேசானது: தேவையான வலிமையில் <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">ஒரு தட்டல் ஃபோனைப் பின்புறம் வழியாக விட பக்கவாட்டில் அதிகமாக அசைத்தது.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">ஒரு தட்டலுக்குச் சற்று முன் ஃபோன் நகர்ந்துகொண்டிருந்தது.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">திரை தொடப்பட்டது, திரை தொடப்பட்டிருக்கும்போது செய்யும் தட்டல்கள் கணக்கில் சேராது.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">பின்புறத் தட்டல்களுக்கு இடையே <xliff:g id="ms">%1$d</xliff:g> மி.வி கடந்தது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">ஸ்வைப்புக்குப் பிறகு, பிடித்திருக்கும் முழு நேரமும் விரலைத் திரையில் அசையாமல் வைத்திருங்கள். பின்னர் விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">எந்தப் பாதியில் தட்டுகிறீர்கள் எனச் சரிபாருங்கள்: திரையின் நடுப்பகுதி மேல் பாதியைக் கீழ் பாதியிலிருந்து பிரிக்கிறது.</string>
+    <string name="gesture_trainer_tip_swipe_missing">கடைசி தட்டலுக்குப் பிறகு, உடனே மீண்டும் திரையைத் தொட்டு ஸ்வைப் செய்யுங்கள்.</string>
+    <string name="gesture_trainer_tip_swipe_late">கடைசி தட்டலுக்குப் பின் இடைநிறுத்தம் இல்லாமல் உடனே ஸ்வைப்பைத் தொடங்குங்கள்.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">பின்புறத்தின் நடுவுக்கு அருகில், விரல் நுனி அல்லது நகத்தால் இன்னும் உறுதியாகத் தட்டுங்கள்.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">ஃபோனின் விளிம்பில் அல்லது சாய்வாக அல்லாமல், அதன் பின்புறத்தில் நேராகத் தட்டுங்கள்.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">தட்டுவதற்கு முன் ஃபோனைச் சிறிது நேரம் அசையாமல் பிடியுங்கள், உங்கள் கை அதை நகர்த்தாதவாறு தளர்வாகப் பிடியுங்கள்.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">பின்புறத்தில் தட்டும்போது விரல்களைத் திரையிலிருந்து விலக்கி வைத்திருங்கள்: ஃபோனை அதன் பக்கங்களில் பிடியுங்கள்.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">வேகமாகத் தட்டுங்கள், ஒரு தட்டலுக்குப் பின் உடனே அடுத்தது.</string>
+    <string name="gesture_trainer_advice_swipe_hold">ஸ்வைப்புக்குப் பிறகு விரல் மிக விரைவில் எடுக்கப்படுகிறது. குறுகிய <xliff:g id="setting">%1$s</xliff:g> குறுகிய பிடிப்பை அனுமதிக்கும்.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">பின்புறத் தட்டல்கள் இலேசாக உள்ளன. அதிக <xliff:g id="setting">%1$s</xliff:g> இலேசான தட்டல்களைக் கண்டறியும், மேலும் மோதல்களையும் தட்டல்களாகக் கண்டறியக்கூடும்.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">விரல்கள் <xliff:g id="degrees">%1$.0f</xliff:g> டிகிரி சுழன்றன, <xliff:g id="limit">%2$.0f</xliff:g> டிகிரியிலிருந்து அசைவு சுழற்சியாகும்.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">விரல்களை ஒன்றையொன்று சுற்றி வளைவாக அல்லாமல், நேர்கோட்டில் ஒன்றையொன்று நோக்கி அல்லது விலகி நகர்த்துங்கள்.</string>
+    <string name="gesture_trainer_finding_other_gesture">அசைவு அதற்குப் பதிலாக அந்தச் சைகையுடன் பொருந்தியது.</string>
+    <string name="gesture_trainer_side_left">இடது</string>
+    <string name="gesture_trainer_side_right">வலது</string>
+    <string name="gesture_trainer_side_top">மேல்</string>
+    <string name="gesture_trainer_side_bottom">கீழ்</string>
+    <string name="gesture_trainer_finding_wrong_edge">விரல் <xliff:g id="side">%1$s</xliff:g> விளிம்பில் தொடங்கியது, இந்தப் பயிற்சி <xliff:g id="expected">%2$s</xliff:g> விளிம்பில் உள்ளது.</string>
+    <string name="gesture_trainer_tip_wrong_edge">பயிற்சி குறிப்பிடும் விளிம்பிலேயே தொடங்குங்கள்.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">இந்தச் சைகைக்குப் பதிலாக ஒரு விளிம்பு மெனு திறந்தது.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">மெனு உள்ள விளிம்பின் வழியே நகர்த்துவது மெனுவைத் திறக்கும். பயிற்சி குறிப்பிடும் விளிம்பில் தொடங்குங்கள்.</string>
+    <string name="gesture_trainer_group_three_part">மூன்று பகுதி ஸ்வைப்கள்</string>
+    <string name="gesture_trainer_group_two_stroke">இரண்டு கட்ட ஸ்வைப்கள்</string>
+    <string name="gesture_trainer_group_shake">குலுக்குதல்</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">மூன்று பகுதி ஸ்வைப்கள் சேர்க்கப்படவில்லை: <xliff:g id="setting">%1$s</xliff:g> இயக்கத்தில் உள்ளது.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">இரண்டு கட்ட ஸ்வைப்கள் சேர்க்கப்படவில்லை: <xliff:g id="setting">%1$s</xliff:g>: <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">பயிற்சியின்போது குலுக்குதல் எந்தக் கட்டளையையும் இயக்காது. குலுக்குதல் எவ்வளவு வலுவாக இருக்க வேண்டும் என்பதை <xliff:g id="setting">%1$s</xliff:g> அமைக்கிறது.</string>
+    <string name="gesture_trainer_go_shake">ஒவ்வொரு குலுக்கலுக்குப் பிறகும் சிறிய இடைநிறுத்தத்துடன், ஃபோனை <xliff:g id="tries">%1$d</xliff:g> முறை குலுக்குங்கள்.</string>
+    <string name="gesture_trainer_how_shake">ஃபோனை உறுதியாகப் பிடித்து, நீர்த்துளியை உதறுவது போல, விரைவாக முன்னும் பின்னும் குலுக்குங்கள்: ஒவ்வொரு திசையிலும் குறைந்தது இருமுறை, அனைத்தும் சுமார் மூன்றில் இரண்டு வினாடிக்குள். பின்னர் அதை அசையாமல் பிடியுங்கள்.</string>
+    <string name="gesture_trainer_how_two_stroke">ஒரு விரலால் சுமார் 2 செ.மீ <xliff:g id="first">%1$s</xliff:g> ஸ்வைப் செய்து, விரலை எடுங்கள். பின்னர் உடனே, <xliff:g id="time">%3$d</xliff:g> மி.வி-க்குள், ஒரு விரலால் சுமார் 2 செ.மீ <xliff:g id="second">%2$s</xliff:g> ஸ்வைப் செய்து, விரலை எடுங்கள்.</string>
+    <string name="gesture_trainer_how_three_part">ஒரு விரலால் திரையைத் தொட்டு, விரலை எடுக்காமல் <xliff:g id="first">%1$s</xliff:g> ஸ்வைப் செய்து, பின்னர் கூர்மையாகத் திரும்பி <xliff:g id="second">%2$s</xliff:g> ஸ்வைப் செய்து, பின்னர் மீண்டும் கூர்மையாகத் திரும்பி <xliff:g id="third">%3$s</xliff:g> ஸ்வைப் செய்யுங்கள், ஒவ்வொரு பகுதியும் சுமார் 2 செ.மீ, பின்னர் விரலை எடுங்கள். இதை வளைவுகளாக அல்லாமல் கூர்மையான மூலைகளுடன் ஒரே விரைவான, சீரான அசைவாகச் செய்யுங்கள்.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">ஒரு விரலைத் திரையின் மேல் மூன்றில் ஒரு பகுதியிலும் மற்றொன்றைக் கீழ் மூன்றில் ஒரு பகுதியிலும் வையுங்கள், எடுத்துக்காட்டாக கட்டைவிரல் கீழே, ஆள்காட்டி விரல் மேலே.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">விரல்களில் ஒன்று திரையின் மேல் மூன்றில் ஒரு பகுதியிலும் மற்றொன்று கீழ் மூன்றில் ஒரு பகுதியிலும் இல்லை.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">இரண்டாவது ஸ்வைப் இல்லை.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">முதல் ஸ்வைப்புக்கு <xliff:g id="ms">%1$d</xliff:g> மி.வி பிறகு இரண்டாவது ஸ்வைப் தொடங்கியது, அதிகபட்சம் <xliff:g id="limit">%2$d</xliff:g> மி.வி அனுமதிக்கப்படும்.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">முதல் ஸ்வைப் <xliff:g id="direction">%1$s</xliff:g> சென்றது.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">இரண்டாவது ஸ்வைப் <xliff:g id="direction">%1$s</xliff:g> சென்றது.</string>
+    <string name="gesture_trainer_finding_shake_too_light">குலுக்கல் மிக இலேசாக இருந்தது: தேவையான வலிமையில் <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">முன்னும் பின்னுமான அசைவுகள்: தேவையான <xliff:g id="wanted">%2$d</xliff:g>-இல் <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">விரல்களை அகலமாக விரியுங்கள், ஒன்று மேல் விளிம்புக்கு அருகிலும் ஒன்று கீழ் விளிம்புக்கு அருகிலும்.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">முதல் ஸ்வைப்புக்குப் பிறகு, விரலை எடுத்து உடனே மீண்டும் ஸ்வைப் செய்யுங்கள்.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">விரலை எடுத்த உடனே இரண்டாவது ஸ்வைப்பைத் தொடங்குங்கள்.</string>
+    <string name="gesture_trainer_tip_shake_too_light">இன்னும் வலுவாகவும் வேகமாகவும் குலுக்குங்கள்.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">இடையில் நிற்காமல், ஒவ்வொரு திசையிலும் குறைந்தது இருமுறை முன்னும் பின்னும், வேகமாகக் குலுக்குங்கள்.</string>
+    <string name="gesture_trainer_measure_shake_strength">வலுவான அசைவு <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">குலுக்கல்கள் இலேசாக உள்ளன. அதிக <xliff:g id="setting">%1$s</xliff:g> இலேசான குலுக்கல்களைக் கண்டறியும், மேலும் ஃபோனை எடுத்துச் செல்வதையும் குலுக்கலாகக் கண்டறியக்கூடும்.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">இரண்டாவது ஸ்வைப் தாமதமாகத் தொடங்குகிறது. நீண்ட <xliff:g id="setting">%1$s</xliff:g> தாமதமான இரண்டாவது ஸ்வைப்பை அனுமதிக்கும், அப்போது ஒற்றை ஸ்வைப் இயங்குவதற்கு முன் நீண்ட நேரம் காத்திருக்கும்.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> இயக்கத்தில் உள்ளது.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> முடக்கத்தில் உள்ளது: இரண்டு விரல் ஸ்வைப்கள் ஆப்ஸை ஸ்க்ரோல் செய்யும், தேய்த்தலும் பெரும்பாலும் ஸ்க்ரோல் செய்யும். இந்த அமைப்பு இயக்கத்தில் இருக்கும்போது, இரண்டு விரல் ஸ்வைப்கள் ஸ்க்ரோல் செய்வதற்குப் பதிலாக SandFly கட்டளைகளை இயக்கும்.</string>
+    <string name="gesture_trainer_measure_first_stroke">முதல் ஸ்வைப் <xliff:g id="ms">%1$d</xliff:g> மி.வி</string>
+    <string name="gesture_trainer_measure_second_stroke">இரண்டாவது ஸ்வைப் <xliff:g id="ms">%1$d</xliff:g> மி.வி</string>
+    <string name="gesture_trainer_measure_whole_gesture">முழுச் சைகை <xliff:g id="ms">%1$d</xliff:g> மி.வி</string>
+    <string name="gesture_trainer_measure_stroke_gap">இடையே <xliff:g id="ms">%1$d</xliff:g> மி.வி விரல் எடுக்கப்பட்டது</string>
+</resources>

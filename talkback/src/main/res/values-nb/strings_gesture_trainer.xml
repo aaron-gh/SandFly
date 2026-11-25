@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Bevegelsestrener</string>
+    <string name="gesture_trainer_intro">Velg en gruppe bevegelser. Hver øvelse beskriver en bevegelse. Utfør bevegelsen <xliff:g id="tries">%1$d</xliff:g> ganger; resultatet av hvert forsøk leses opp. Etter det siste forsøket viser skjermen målingene for hvert forsøk, hva du bør endre og relaterte innstillinger.</string>
+    <string name="gesture_trainer_group_one_finger">Én finger</string>
+    <string name="gesture_trainer_group_two_fingers">To fingre</string>
+    <string name="gesture_trainer_group_three_fingers">Tre fingre</string>
+    <string name="gesture_trainer_group_four_fingers">Fire fingre</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Klyp, roter og rask sveip frem og tilbake</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> øvelser</string>
+    <string name="gesture_trainer_close">Lukk</string>
+    <string name="gesture_trainer_no_detection">Bevegelsestreneren krever Android 13 eller nyere.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Frem-og-tilbake-bevegelser og vinkelbevegelser er utelatt: <xliff:g id="setting">%1$s</xliff:g> er på.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Sveip med to fingre er utelatt: <xliff:g id="setting">%1$s</xliff:g> er av, så de ruller i apper.</string>
+    <string name="gesture_trainer_exercise_heading">Øvelse <xliff:g id="number">%1$d</xliff:g> av <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Start</string>
+    <string name="gesture_trainer_skip">Hopp over denne øvelsen</string>
+    <string name="gesture_trainer_back_to_groups">Tilbake til gruppene</string>
+    <string name="gesture_trainer_go">Utfør bevegelsen <xliff:g id="tries">%1$d</xliff:g> ganger, hvor som helst på skjermen. Hver berøring er ett forsøk.</string>
+    <string name="gesture_trainer_fingers_1">én finger</string>
+    <string name="gesture_trainer_fingers_2">to fingre side om side, omtrent 1 cm fra hverandre</string>
+    <string name="gesture_trainer_fingers_3">tre fingre side om side, litt fra hverandre</string>
+    <string name="gesture_trainer_fingers_4">fire fingre side om side, litt fra hverandre</string>
+    <string name="gesture_trainer_direction_up">opp</string>
+    <string name="gesture_trainer_direction_down">ned</string>
+    <string name="gesture_trainer_direction_left">til venstre</string>
+    <string name="gesture_trainer_direction_right">til høyre</string>
+    <string name="gesture_trainer_how_swipe">Berør skjermen med <xliff:g id="fingers">%1$s</xliff:g>, og dra uten å vente <xliff:g id="direction">%2$s</xliff:g> i en rett linje i omtrent 2 til 3 cm, og løft deretter. Begynn å bevege med en gang: en finger som hviler først, starter berøringsutforskning.</string>
+    <string name="gesture_trainer_how_swipe_multi">Sett fingrene ned samtidig, i samme øyeblikk, og beveg alle i samme retning. Hver finger må gå <xliff:g id="direction">%1$s</xliff:g> hele tiden, så hold linjen rett.</string>
+    <string name="gesture_trainer_how_back_and_forth">Berør skjermen med én finger og dra <xliff:g id="first">%1$s</xliff:g> i omtrent 2 cm, gå deretter uten å løfte rett tilbake <xliff:g id="second">%2$s</xliff:g> i omtrent 2 cm, og løft. Gjør det til én rask, jevn bevegelse.</string>
+    <string name="gesture_trainer_how_angle">Berør skjermen med <xliff:g id="fingers">%1$s</xliff:g> og dra <xliff:g id="first">%2$s</xliff:g> i omtrent 2 cm, sving deretter skarpt uten å løfte og dra <xliff:g id="second">%3$s</xliff:g> i omtrent 2 cm, og løft. Gjør svingen til et skarpt hjørne, som bokstaven L, ikke en kurve.</string>
+    <string name="gesture_trainer_taps_1">én gang</string>
+    <string name="gesture_trainer_taps_2">to ganger</string>
+    <string name="gesture_trainer_taps_3">tre ganger</string>
+    <string name="gesture_trainer_taps_4">fire ganger</string>
+    <string name="gesture_trainer_how_taps">Trykk <xliff:g id="taps">%1$s</xliff:g> med <xliff:g id="fingers">%2$s</xliff:g>. Sett fingrene ned samtidig og løft dem samtidig, raskt, uten å dra.</string>
+    <string name="gesture_trainer_how_taps_quick">Hold trykkene raske og på samme sted: neste trykk må komme innen <xliff:g id="gap">%1$d</xliff:g> ms etter det forrige.</string>
+    <string name="gesture_trainer_how_hold">Sett <xliff:g id="fingers">%1$s</xliff:g> på skjermen samtidig og hold dem i ro, uten å dra, i minst <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Uten noen annen kommando tilordnet slår denne bevegelsen av SandFly. I treneren kjører den ingenting.</string>
+    <string name="gesture_trainer_how_taps_hold">Trykk <xliff:g id="taps">%1$s</xliff:g> med <xliff:g id="fingers">%2$s</xliff:g>, og la fingrene ligge i ro på skjermen ved siste trykk i minst <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Bruk tommelen, pekefingeren og langfingeren.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Sett pekefingeren og langfingeren ved siden av hverandre, og tommelen og ringfingeren noen centimeter unna på hver side. Før deretter alle fire fingertuppene sammen til ett punkt.</string>
+    <string name="gesture_trainer_how_pinch">Sett <xliff:g id="fingers">%1$d</xliff:g> fingre på skjermen, godt spredt. Før dem deretter rett mot hverandre med minst 1 cm, som om du plukker opp noe, og løft dem fra skjermen. Beveg bare fingrene, ikke hele hånden, og ikke i en bue.</string>
+    <string name="gesture_trainer_how_spread">Sett <xliff:g id="fingers">%1$d</xliff:g> fingre på skjermen, tett sammen. Før dem deretter rett fra hverandre med minst 1 cm og løft dem fra skjermen. Beveg bare fingrene, ikke hele hånden, og ikke i en bue.</string>
+    <string name="gesture_trainer_clockwise">med klokken</string>
+    <string name="gesture_trainer_counterclockwise">mot klokken</string>
+    <string name="gesture_trainer_how_rotate">Sett to fingre på skjermen, omtrent 2 til 3 cm fra hverandre, og drei dem <xliff:g id="way">%1$s</xliff:g> rundt midten, som når du dreier en bryter, omtrent en kvart omdreining. Løft deretter.</string>
+    <string name="gesture_trainer_how_scrub">Sett to fingre på skjermen og beveg dem raskt omtrent 2 cm til én side og tilbake, som når du visker ut noe, alt i løpet av omtrent ett sekund. Løft deretter.</string>
+    <string name="gesture_trainer_edge_bottom">ved den nederste kanten</string>
+    <string name="gesture_trainer_edge_top_left">ved den øverste kanten, i venstre halvdel</string>
+    <string name="gesture_trainer_edge_top_right">ved den øverste kanten, i høyre halvdel</string>
+    <string name="gesture_trainer_edge_left_top">ved venstre kant, i øvre halvdel</string>
+    <string name="gesture_trainer_edge_left_bottom">ved venstre kant, i nedre halvdel</string>
+    <string name="gesture_trainer_edge_right_top">ved høyre kant, i øvre halvdel</string>
+    <string name="gesture_trainer_edge_right_bottom">ved høyre kant, i nedre halvdel</string>
+    <string name="gesture_trainer_edge_left">ved venstre kant</string>
+    <string name="gesture_trainer_edge_right">ved høyre kant</string>
+    <string name="gesture_trainer_edge_top">ved den øverste kanten</string>
+    <string name="gesture_trainer_how_edge">Sett én finger <xliff:g id="edge">%1$s</xliff:g>, høyst <xliff:g id="edge_width">%2$d</xliff:g> mm fra kanten, og dra <xliff:g id="direction">%3$s</xliff:g> inn på skjermen til første klikk, omtrent <xliff:g id="distance">%4$d</xliff:g> mm. Løft deretter med en gang: forbi andre klikk blir sveipet et langt sveip.</string>
+    <string name="gesture_trainer_how_edge_long">Sett én finger <xliff:g id="edge">%1$s</xliff:g>, høyst <xliff:g id="edge_width">%2$d</xliff:g> mm fra kanten, og dra <xliff:g id="direction">%3$s</xliff:g> inn på skjermen forbi første klikk til det andre, omtrent <xliff:g id="distance">%4$d</xliff:g> mm. Løft deretter.</string>
+    <string name="gesture_trainer_how_along">Dra én finger <xliff:g id="direction">%2$s</xliff:g> langs <xliff:g id="edge">%1$s</xliff:g>, minst <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">øverst til venstre</string>
+    <string name="gesture_trainer_corner_top_right">øverst til høyre</string>
+    <string name="gesture_trainer_corner_bottom_left">nederst til venstre</string>
+    <string name="gesture_trainer_corner_bottom_right">nederst til høyre</string>
+    <string name="gesture_trainer_how_corner">Trykk <xliff:g id="taps">%1$s</xliff:g> i hjørnet <xliff:g id="corner">%2$s</xliff:g> på skjermen. Sett fingeren helt inn i hjørnet, høyst <xliff:g id="size">%3$d</xliff:g> mm fra begge kantene, og løft raskt, innen <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Med større hjørner kan et trykk på en kontroll nær et hjørne, for eksempel Tilbake øverst til venstre, kjøre hjørnebevegelsen i stedet.</string>
+    <string name="gesture_trainer_rating_precise">gjenkjent, presis</string>
+    <string name="gesture_trainer_rating_good">gjenkjent, bra</string>
+    <string name="gesture_trainer_rating_borderline">gjenkjent, men nær en grense</string>
+    <string name="gesture_trainer_try_recognized">Forsøk <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Forsøk <xliff:g id="number">%1$d</xliff:g>: ikke gjenkjent.</string>
+    <string name="gesture_trainer_try_other">Forsøk <xliff:g id="number">%1$d</xliff:g>: gjenkjent som <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> av <xliff:g id="tries">%3$d</xliff:g> gjenkjent</string>
+    <string name="gesture_trainer_results_tries">Forsøkene dine</string>
+    <string name="gesture_trainer_results_change">Hva du bør endre</string>
+    <string name="gesture_trainer_results_close">Nær en grense</string>
+    <string name="gesture_trainer_results_all_good">Alle forsøk ble gjenkjent innenfor grensene.</string>
+    <string name="gesture_trainer_results_settings">Innstillinger som kan hjelpe</string>
+    <string name="gesture_trainer_next">Neste øvelse</string>
+    <string name="gesture_trainer_repeat">Gjenta</string>
+    <string name="gesture_trainer_finish">Fullfør</string>
+    <string name="gesture_trainer_group_done">Du har fullført alle øvelsene i <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Endre <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">tok <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm lang</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm per sekund</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> grader fra en rett linje</string>
+    <string name="gesture_trainer_measure_start">første centimeter på <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">fingrene landet med <xliff:g id="ms">%1$d</xliff:g> ms mellomrom</string>
+    <string name="gesture_trainer_measure_tap">trykk på <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms mellom trykk</string>
+    <string name="gesture_trainer_measure_spread">fingrene beveget seg <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">dreide <xliff:g id="degrees">%1$.0f</xliff:g> grader</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm fra hjørnets kanter</string>
+    <string name="gesture_trainer_measure_edge">startet <xliff:g id="mm">%1$.0f</xliff:g> mm fra kanten</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Fingre på skjermen: <xliff:g id="fingers">%1$d</xliff:g> i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Fingrene landet med <xliff:g id="ms">%1$d</xliff:g> ms mellomrom, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">En finger ble løftet før alle fingrene var nede.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Fingrene ble løftet med <xliff:g id="ms">%1$d</xliff:g> ms mellomrom, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_became_exploration">Fingeren lå for lenge i ro eller beveget seg for sakte i starten, så berøringen ble berøringsutforskning.</string>
+    <string name="gesture_trainer_finding_slow_start">Den første centimeteren tok <xliff:g id="ms">%1$d</xliff:g> ms, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_paused">Fingeren saknet farten i <xliff:g id="ms">%1$d</xliff:g> ms, og hver centimeter kan ta høyst <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Bevegelsen var bare <xliff:g id="mm">%1$.0f</xliff:g> mm, og den må være minst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Fingeren begynte å gå <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Fingrene begynte å gå <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Banen avvek <xliff:g id="degrees">%1$.0f</xliff:g> grader fra en rett linje, og høyst <xliff:g id="limit">%2$.0f</xliff:g> er tillatt.</string>
+    <string name="gesture_trainer_finding_curved">Banen bøyde seg i <xliff:g id="parts">%1$d</xliff:g> deler i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Svingen ble ikke funnet.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Etter svingen gikk fingeren <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Fingeren gled <xliff:g id="mm">%1$.1f</xliff:g> mm under et trykk, og høyst <xliff:g id="limit">%2$.1f</xliff:g> mm er tillatt.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Et trykk varte i <xliff:g id="ms">%1$d</xliff:g> ms, lenger enn <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Det siste trykket ble holdt i <xliff:g id="ms">%1$d</xliff:g> ms, og det må være minst <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> trykk i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> trykk i stedet for <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Det gikk <xliff:g id="ms">%1$d</xliff:g> ms mellom trykkene, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_taps_apart">Trykkene landet <xliff:g id="mm">%1$.0f</xliff:g> mm fra hverandre, og høyst <xliff:g id="limit">%2$.0f</xliff:g> mm er tillatt.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Fingrene beveget seg bare <xliff:g id="mm">%1$.0f</xliff:g> mm, og de må bevege seg minst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Fingrene beveget seg i motsatt retning.</string>
+    <string name="gesture_trainer_finding_moved_together">Hele hånden gled <xliff:g id="mm">%1$.0f</xliff:g> mm over skjermen, mer enn fingrene beveget seg mot eller fra hverandre.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Fingrene dreide bare <xliff:g id="degrees">%1$.0f</xliff:g> grader, og de må dreie minst <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Fingrene dreide i motsatt retning.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Det første strøket var <xliff:g id="mm">%1$.0f</xliff:g> mm, og det må være minst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Strøket tilbake var <xliff:g id="mm">%1$.0f</xliff:g> mm, og det må være minst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Det raske sveipet frem og tilbake tok <xliff:g id="ms">%1$d</xliff:g> ms, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Fingeren landet <xliff:g id="mm">%1$.0f</xliff:g> mm fra kanten, og kanten er <xliff:g id="limit">%2$.0f</xliff:g> mm bred.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Fingeren startet i den andre halvdelen av kanten.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Fingeren gled <xliff:g id="mm">%1$.0f</xliff:g> mm, og den må gli minst <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">For langt sveip: fingeren gikk forbi andre klikk, <xliff:g id="mm">%1$.0f</xliff:g> mm, og andre klikk er ved <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Det tok <xliff:g id="ms">%1$d</xliff:g> ms å nå klikket, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Sveipet gikk <xliff:g id="degrees">%1$.0f</xliff:g> grader til siden, og høyst <xliff:g id="limit">%2$.0f</xliff:g> er tillatt.</string>
+    <string name="gesture_trainer_finding_corner_missed">Trykket landet <xliff:g id="mm">%1$.0f</xliff:g> mm fra hjørnets kanter, og hjørnet er <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Et hjørnetrykk varte i <xliff:g id="ms">%1$d</xliff:g> ms, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_none">Ingen fingerbevegelse som samsvarer med bevegelsen, ble registrert.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Sjekk hvor mange fingre som berører glasset. En håndflate eller en annen finger som hviler på skjermen, telles også.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Sett alle fingrene ned i samme øyeblikk, som én hånd, ikke den ene etter den andre.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Sett alle fingrene ned først, og beveg eller løft dem deretter.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Løft alle fingrene i samme øyeblikk.</string>
+    <string name="gesture_trainer_tip_slow_start">Begynn å bevege i det øyeblikket du berører skjermen, og beveg raskere i starten.</string>
+    <string name="gesture_trainer_tip_paused">Hold fingeren i bevegelse med jevn fart til du løfter. Ikke sakne farten mot slutten.</string>
+    <string name="gesture_trainer_tip_too_short">Gjør bevegelsen lengre, omtrent 2 til 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Sjekk retningen helt i starten av bevegelsen. Det hjelper å holde telefonen rett foran deg.</string>
+    <string name="gesture_trainer_tip_off_line">Beveg bare i retningen, ikke diagonalt. Pekefingeren holder en rettere linje enn tommelen.</string>
+    <string name="gesture_trainer_tip_curved">Hold linjen rett og løft helt på slutten, uten å kroke fingeren til siden når du løfter.</string>
+    <string name="gesture_trainer_tip_turn_missing">Endre retning skarpt, i rett vinkel eller rett tilbake, uten å løfte. Hver del bør være omtrent 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Sjekk hvilken vei du går etter svingen: den andre delen må gå i den andre retningen bevegelsen nevner.</string>
+    <string name="gesture_trainer_tip_tap_moved">Trykk rett ned og opp, med fingertuppen, uten å dra.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Gjør hvert trykk kort: berør og løft med en gang.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Ved siste trykk holder du fingrene i ro på skjermen hele holdetiden.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Tell trykkene, og gjør alle raskt i én omgang.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Tell trykkene. En finger som spretter fra glasset, gir et ekstra trykk.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Trykk raskere: start neste trykk rett etter at du løfter.</string>
+    <string name="gesture_trainer_tip_taps_apart">Trykk på samme sted hver gang.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Beveg fingrene lenger, minst 1 cm nærmere hverandre eller fra hverandre.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Klyp er fingre som beveger seg mot hverandre, dra fra hverandre er fingre som beveger seg fra hverandre.</string>
+    <string name="gesture_trainer_tip_moved_together">Beveg bare fingrene mot eller fra hverandre. Ikke dra hele hånden over skjermen.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Drei lenger, som når du dreier en bryter en kvart omdreining.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Med klokken betyr å dreie samme vei som viserne på en klokke: den øverste fingeren beveger seg til høyre.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Gjør det første strøket minst 1 cm langt.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Etter det første strøket går du tilbake i motsatt retning før du løfter.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Gjør det raske sveipet frem og tilbake raskt, frem og tilbake på omtrent ett sekund.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Start helt ved kanten, med fingertuppen delvis utenfor skjermen.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Sjekk hvilken halvdel av kanten du starter i.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Dra lenger, til du hører klikket, og løft deretter.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Løft rett etter første klikk, før det andre.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Dra raskere innover, uten å stoppe før klikket.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Dra rett inn fra kanten, eller rett langs den, ikke diagonalt.</string>
+    <string name="gesture_trainer_tip_corner_missed">Sett fingeren helt inn i hjørnet, slik at den berører begge kantene.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Løft raskere etter at du berører hjørnet.</string>
+    <string name="gesture_trainer_close_to_limit">Nær grensen: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Sveip starter sakte. En lengre <xliff:g id="setting">%1$s</xliff:g> tillater en saktere start.</string>
+    <string name="gesture_trainer_advice_tap_time">Trykk er sakte. En lengre <xliff:g id="setting">%1$s</xliff:g> tillater saktere trykk.</string>
+    <string name="gesture_trainer_advice_edge_width">Sveip starter for langt fra kanten. En større <xliff:g id="setting">%1$s</xliff:g> gjør også sveip som starter nær en kant, til kantsveip.</string>
+    <string name="gesture_trainer_advice_corner_size">Trykk lander utenfor hjørnet. En større <xliff:g id="setting">%1$s</xliff:g> gjør hjørnene større.</string>
+    <string name="gesture_trainer_advice_corner_time">Hjørnetrykk er sakte. En lengre <xliff:g id="setting">%1$s</xliff:g> tillater saktere trykk.</string>
+    <string name="gesture_trainer_menu_option">Alternativ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: velg element <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Dra én finger opp eller ned <xliff:g id="edge">%1$s</xliff:g> i minst <xliff:g id="distance">%2$d</xliff:g> mm for å åpne menyen. Den har <xliff:g id="count">%3$d</xliff:g> elementer, ovenfra og ned, hvert omtrent <xliff:g id="size">%6$s</xliff:g> cm høyt. Element <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, er <xliff:g id="from">%7$s</xliff:g> til <xliff:g id="to">%8$s</xliff:g> cm under toppen av skjermen. Løft fingeren når elementet leses opp.</string>
+    <string name="gesture_trainer_menu_sample">Denne kanten har ingen meny. Øvelsen bruker <xliff:g id="count">%1$d</xliff:g> eksempelelementer.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Forsøk <xliff:g id="number">%1$d</xliff:g>: menyen ble lukket uten valg.</string>
+    <string name="gesture_trainer_try_menu_other">Forsøk <xliff:g id="number">%1$d</xliff:g>: valgte <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">løftet ved element <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Fingeren startet helt øverst eller nederst på kanten, der hjørnene og den øverste og nederste kanten er.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Fingeren ble løftet <xliff:g id="mm">%1$.0f</xliff:g> mm fra kanten, og menyen lukkes utenfor <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Fingeren ble løftet ved element <xliff:g id="item">%1$d</xliff:g> i stedet for element <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Start litt unna den øverste og nederste enden av kanten.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Hold fingeren nær kanten mens du drar, og løft den der.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Hvert element har en fast plass langs kanten, og elementet der fingeren løftes, blir valgt. Løft når elementet leses opp.</string>
+    <string name="gesture_trainer_contents">Innhold</string>
+    <string name="gesture_trainer_contents_heading">Innhold: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">fullført, <xliff:g id="hits">%1$d</xliff:g> av <xliff:g id="tries">%2$d</xliff:g> gjenkjent</string>
+    <string name="gesture_trainer_group_tap_swipe">Trykk og sveip</string>
+    <string name="gesture_trainer_group_edge_swipes">Sveip fra kantene</string>
+    <string name="gesture_trainer_group_along_edges">Dra langs kantene</string>
+    <string name="gesture_trainer_group_edge_menus">Kantmenyer</string>
+    <string name="gesture_trainer_group_corners">Hjørner</string>
+    <string name="gesture_trainer_group_back_tap">Trykk på baksiden</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Trykk med to fingre etterfulgt av sveip med to fingre er utelatt: <xliff:g id="setting">%1$s</xliff:g> er av.</string>
+    <string name="gesture_trainer_how_swipe_hold">Hold deretter fingeren i ro uten å løfte i minst <xliff:g id="hold">%1$d</xliff:g> ms, og løft.</string>
+    <string name="gesture_trainer_half_top">øvre</string>
+    <string name="gesture_trainer_half_bottom">nedre</string>
+    <string name="gesture_trainer_how_taps_half">Trykk i <xliff:g id="half">%1$s</xliff:g> halvdel av skjermen. Punktet mellom fingrene avgjør halvdelen.</string>
+    <string name="gesture_trainer_same_fingers">de samme fingrene</string>
+    <string name="gesture_trainer_how_tap_swipe">Trykk <xliff:g id="taps">%1$s</xliff:g> med <xliff:g id="fingers">%2$s</xliff:g>. Rett etter siste trykk, innen <xliff:g id="gap">%3$d</xliff:g> ms, berører du skjermen igjen med <xliff:g id="swipe_fingers">%4$s</xliff:g> og drar <xliff:g id="direction">%5$s</xliff:g> i en rett linje i omtrent 2 til 3 cm, og løfter deretter.</string>
+    <string name="gesture_trainer_how_corner_hold">Ved siste trykk lar du fingeren ligge i ro i hjørnet i minst <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Hold telefonen i hånden etter sidene, og trykk midt på baksiden <xliff:g id="taps">%1$s</xliff:g> med en fingertupp, fast og raskt, som når du banker på en dør. Hold trykkene tett: høyst <xliff:g id="gap">%2$d</xliff:g> ms mellom dem. Ikke berør skjermen mens du trykker.</string>
+    <string name="gesture_trainer_back_tap_info">Trykk på baksiden kjører ingen kommandoer under øvelsen. <xliff:g id="setting">%1$s</xliff:g> angir hvor hardt et trykk må være.</string>
+    <string name="gesture_trainer_go_placed">Utfør bevegelsen <xliff:g id="tries">%1$d</xliff:g> ganger.</string>
+    <string name="gesture_trainer_along_left">venstre kant</string>
+    <string name="gesture_trainer_along_right">høyre kant</string>
+    <string name="gesture_trainer_along_top">den øverste kanten</string>
+    <string name="gesture_trainer_along_bottom">den nederste kanten</string>
+    <string name="gesture_trainer_left_out_along_menu">Dra langs <xliff:g id="edge">%1$s</xliff:g> er utelatt: den har en kantmeny, så å dra langs den åpner menyen i stedet for å kjøre en bevegelse.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Dra langs <xliff:g id="edge">%1$s</xliff:g> er utelatt: den ruller, så å dra langs den ruller i appen i stedet for å kjøre en bevegelse.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Fingeren beveget seg for langt bort fra kanten.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Hold fingeren helt ytterst på glasset, rett langs kanten.</string>
+    <string name="gesture_trainer_go_back_tap">Utfør bevegelsen Trykk på baksiden <xliff:g id="tries">%1$d</xliff:g> ganger. En berøring av skjermen gjør at forsøket mislykkes.</string>
+    <string name="gesture_trainer_no_accelerometer">Denne øvelsen krever et akselerometer. Ingen er tilgjengelig.</string>
+    <string name="gesture_trainer_measure_hold">holdt i ro <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">trykk med styrke <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Fingeren lå i ro i <xliff:g id="ms">%1$d</xliff:g> ms på slutten, og den må ligge i ro i minst <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Fingrene trykket i den andre halvdelen av skjermen.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Det kom ikke noe sveip etter trykkene.</string>
+    <string name="gesture_trainer_finding_swipe_late">Sveipet startet <xliff:g id="ms">%1$d</xliff:g> ms etter siste trykk, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">For lett trykk på baksiden: <xliff:g id="percent">%1$d</xliff:g>%% av styrken som trengs.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Et trykk ristet telefonen mer sidelengs enn gjennom baksiden.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefonen var i bevegelse rett før et trykk.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Skjermen ble berørt, og trykk mens den berøres, teller ikke.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Det gikk <xliff:g id="ms">%1$d</xliff:g> ms mellom trykkene på baksiden, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Etter sveipet holder du fingeren i ro på skjermen hele holdetiden. Løft deretter.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Sjekk hvilken halvdel du trykker i: midten av skjermen skiller øvre halvdel fra nedre halvdel.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Etter siste trykk berører du skjermen igjen med en gang og sveiper.</string>
+    <string name="gesture_trainer_tip_swipe_late">Start sveipet rett etter siste trykk, uten pause.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Trykk hardere, med fingertuppen eller en negl, nær midten av baksiden.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Trykk rett inn i baksiden av telefonen, ikke på kanten eller på skrå.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Hold telefonen i ro et øyeblikk før du trykker, og hold den løst så hånden ikke beveger den.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Hold fingrene unna skjermen mens du trykker på baksiden: hold telefonen etter sidene.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Trykk raskere, det ene trykket rett etter det andre.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Fingeren løftes for tidlig etter sveipet. En kortere <xliff:g id="setting">%1$s</xliff:g> tillater et kortere hold.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Trykkene på baksiden er lette. En høyere <xliff:g id="setting">%1$s</xliff:g> registrerer lettere trykk, og kan registrere støt som trykk.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Fingrene dreide <xliff:g id="degrees">%1$.0f</xliff:g> grader, og fra <xliff:g id="limit">%2$.0f</xliff:g> grader er bevegelsen en rotasjon.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Beveg fingrene i en rett linje mot eller fra hverandre, ikke i en bue rundt hverandre.</string>
+    <string name="gesture_trainer_finding_other_gesture">Fingerbevegelsen samsvarte med den bevegelsen i stedet.</string>
+    <string name="gesture_trainer_side_left">venstre</string>
+    <string name="gesture_trainer_side_right">høyre</string>
+    <string name="gesture_trainer_side_top">øverste</string>
+    <string name="gesture_trainer_side_bottom">nederste</string>
+    <string name="gesture_trainer_finding_wrong_edge">Fingeren startet ved <xliff:g id="side">%1$s</xliff:g> kant, og denne øvelsen er ved <xliff:g id="expected">%2$s</xliff:g> kant.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Start helt på kanten øvelsen nevner.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">En kantmeny ble åpnet i stedet for denne bevegelsen.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Å dra langs en kant med meny åpner menyen. Start ved kanten øvelsen nevner.</string>
+    <string name="gesture_trainer_group_three_part">Sveip i tre retninger</string>
+    <string name="gesture_trainer_group_two_stroke">Sveip i to trinn</string>
+    <string name="gesture_trainer_group_shake">Risting</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Sveip i tre retninger er utelatt: <xliff:g id="setting">%1$s</xliff:g> er på.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Sveip i to trinn er utelatt: <xliff:g id="setting">%1$s</xliff:g> er <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Ristingen kjører ingen kommando under øvelsen. <xliff:g id="setting">%1$s</xliff:g> angir hvor hard en risting må være.</string>
+    <string name="gesture_trainer_go_shake">Rist telefonen <xliff:g id="tries">%1$d</xliff:g> ganger, med en kort pause etter hver risting.</string>
+    <string name="gesture_trainer_how_shake">Hold telefonen godt og rist den raskt frem og tilbake, som om du rister av en vanndråpe: minst to ganger hver vei, alt i løpet av omtrent to tredjedels sekund. Hold den deretter i ro.</string>
+    <string name="gesture_trainer_how_two_stroke">Sveip <xliff:g id="first">%1$s</xliff:g> med én finger, omtrent 2 cm, og løft. Sveip deretter med en gang, innen <xliff:g id="time">%3$d</xliff:g> ms, <xliff:g id="second">%2$s</xliff:g> med én finger, omtrent 2 cm, og løft.</string>
+    <string name="gesture_trainer_how_three_part">Berør skjermen med én finger, og uten å løfte sveiper du <xliff:g id="first">%1$s</xliff:g>, svinger deretter skarpt og sveiper <xliff:g id="second">%2$s</xliff:g>, svinger deretter skarpt igjen og sveiper <xliff:g id="third">%3$s</xliff:g>, hver del omtrent 2 cm, og løfter. Gjør det til én rask, jevn bevegelse med skarpe hjørner, ikke kurver.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Sett én finger i den øverste tredjedelen av skjermen og den andre i den nederste tredjedelen, for eksempel tommelen lavt og pekefingeren høyt.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Fingrene var ikke én i den øverste tredjedelen av skjermen og én i den nederste tredjedelen.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Det kom ikke noe andre sveip.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Det andre sveipet startet <xliff:g id="ms">%1$d</xliff:g> ms etter det første, og høyst <xliff:g id="limit">%2$d</xliff:g> ms er tillatt.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Det første sveipet gikk <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Det andre sveipet gikk <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Ristingen var for lett: <xliff:g id="percent">%1$d</xliff:g>%% av styrken som trengs.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Svinger frem og tilbake: <xliff:g id="swings">%1$d</xliff:g> av de <xliff:g id="wanted">%2$d</xliff:g> som trengs.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Spre fingrene langt fra hverandre, én nær den øverste kanten og én nær den nederste kanten.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Etter det første sveipet løfter du fingeren og sveiper igjen med en gang.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Start det andre sveipet rett etter at du løfter fingeren.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Rist hardere og raskere.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Rist raskere, frem og tilbake minst to ganger hver vei, uten å stoppe innimellom.</string>
+    <string name="gesture_trainer_measure_shake_strength">sterkeste bevegelse <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Ristingene er lette. En høyere <xliff:g id="setting">%1$s</xliff:g> registrerer lettere risting, og kan registrere at telefonen bæres, som risting.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Det andre sveipet starter sent. En lengre <xliff:g id="setting">%1$s</xliff:g> tillater et senere andre sveip, og et enkelt sveip venter da lenger før det kjøres.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> er på.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> er av: sveip med to fingre ruller i appen, og et raskt sveip frem og tilbake ruller også som oftest. Med innstillingen på kjører sveip med to fingre SandFly-kommandoer i stedet for å rulle.</string>
+    <string name="gesture_trainer_measure_first_stroke">første sveip <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">andre sveip <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">hele bevegelsen <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">løftet i <xliff:g id="ms">%1$d</xliff:g> ms mellom dem</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Εκπαίδευση κινήσεων</string>
+    <string name="gesture_trainer_intro">Επιλέξτε μια ομάδα κινήσεων. Κάθε άσκηση περιγράφει μια κίνηση. Κάντε την κίνηση <xliff:g id="tries">%1$d</xliff:g> φορές· το αποτέλεσμα κάθε προσπάθειας εκφωνείται. Μετά την τελευταία προσπάθεια, η οθόνη εμφανίζει τις μετρήσεις κάθε προσπάθειας, τι να αλλάξετε και σχετικές ρυθμίσεις.</string>
+    <string name="gesture_trainer_group_one_finger">Ένα δάχτυλο</string>
+    <string name="gesture_trainer_group_two_fingers">Δύο δάχτυλα</string>
+    <string name="gesture_trainer_group_three_fingers">Τρία δάχτυλα</string>
+    <string name="gesture_trainer_group_four_fingers">Τέσσερα δάχτυλα</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Τσίμπημα, περιστροφή και τρίψιμο</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> ασκήσεις</string>
+    <string name="gesture_trainer_close">Κλείσιμο</string>
+    <string name="gesture_trainer_no_detection">Η εκπαίδευση κινήσεων απαιτεί Android 13 ή νεότερη έκδοση.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Οι κινήσεις μπρος-πίσω και υπό γωνία παραλείπονται: η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> είναι ενεργή.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Τα συρσίματα με 2 δάχτυλα παραλείπονται: η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> είναι ανενεργή, οπότε κάνουν κύλιση στις εφαρμογές.</string>
+    <string name="gesture_trainer_exercise_heading">Άσκηση <xliff:g id="number">%1$d</xliff:g> από <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Έναρξη</string>
+    <string name="gesture_trainer_skip">Παράλειψη αυτής της άσκησης</string>
+    <string name="gesture_trainer_back_to_groups">Πίσω στις ομάδες</string>
+    <string name="gesture_trainer_go">Κάντε την κίνηση <xliff:g id="tries">%1$d</xliff:g> φορές, οπουδήποτε στην οθόνη. Κάθε άγγιγμα είναι μια προσπάθεια.</string>
+    <string name="gesture_trainer_fingers_1">ένα δάχτυλο</string>
+    <string name="gesture_trainer_fingers_2">δύο δάχτυλα δίπλα-δίπλα, περίπου 1 cm μεταξύ τους</string>
+    <string name="gesture_trainer_fingers_3">τρία δάχτυλα δίπλα-δίπλα, ελαφρώς ανοιχτά</string>
+    <string name="gesture_trainer_fingers_4">τέσσερα δάχτυλα δίπλα-δίπλα, ελαφρώς ανοιχτά</string>
+    <string name="gesture_trainer_direction_up">προς τα επάνω</string>
+    <string name="gesture_trainer_direction_down">προς τα κάτω</string>
+    <string name="gesture_trainer_direction_left">προς τα αριστερά</string>
+    <string name="gesture_trainer_direction_right">προς τα δεξιά</string>
+    <string name="gesture_trainer_how_swipe">Αγγίξτε την οθόνη με <xliff:g id="fingers">%1$s</xliff:g> και, χωρίς αναμονή, σύρετε <xliff:g id="direction">%2$s</xliff:g> σε ευθεία γραμμή για περίπου 2 έως 3 cm και σηκώστε. Ξεκινήστε την κίνηση αμέσως: ένα δάχτυλο που μένει πρώτα ακίνητο ξεκινά την εξερεύνηση μέσω αφής.</string>
+    <string name="gesture_trainer_how_swipe_multi">Ακουμπήστε τα δάχτυλα μαζί, την ίδια στιγμή, και κινήστε τα όλα προς την ίδια κατεύθυνση. Κάθε δάχτυλο πρέπει να κινείται <xliff:g id="direction">%1$s</xliff:g> σε όλη τη διάρκεια, οπότε κρατήστε τη γραμμή ευθεία.</string>
+    <string name="gesture_trainer_how_back_and_forth">Αγγίξτε την οθόνη με ένα δάχτυλο και σύρετε <xliff:g id="first">%1$s</xliff:g> για περίπου 2 cm, μετά χωρίς να σηκώσετε επιστρέψτε ευθεία <xliff:g id="second">%2$s</xliff:g> για περίπου 2 cm και σηκώστε. Κάντε τη μία γρήγορη, ομαλή κίνηση.</string>
+    <string name="gesture_trainer_how_angle">Αγγίξτε την οθόνη με <xliff:g id="fingers">%1$s</xliff:g> και σύρετε <xliff:g id="first">%2$s</xliff:g> για περίπου 2 cm, μετά χωρίς να σηκώσετε στρίψτε απότομα και σύρετε <xliff:g id="second">%3$s</xliff:g> για περίπου 2 cm και σηκώστε. Κάντε τη στροφή απότομη γωνία, όπως το γράμμα L, όχι καμπύλη.</string>
+    <string name="gesture_trainer_taps_1">μία φορά</string>
+    <string name="gesture_trainer_taps_2">δύο φορές</string>
+    <string name="gesture_trainer_taps_3">τρεις φορές</string>
+    <string name="gesture_trainer_taps_4">τέσσερις φορές</string>
+    <string name="gesture_trainer_how_taps">Πατήστε <xliff:g id="taps">%1$s</xliff:g> με <xliff:g id="fingers">%2$s</xliff:g>. Ακουμπήστε τα δάχτυλα μαζί και σηκώστε τα μαζί, γρήγορα, χωρίς να τα σύρετε.</string>
+    <string name="gesture_trainer_how_taps_quick">Κάντε τα πατήματα γρήγορα και στο ίδιο σημείο: το επόμενο πάτημα πρέπει να γίνει εντός <xliff:g id="gap">%1$d</xliff:g> ms από το προηγούμενο.</string>
+    <string name="gesture_trainer_how_hold">Ακουμπήστε <xliff:g id="fingers">%1$s</xliff:g> στην οθόνη μαζί και κρατήστε τα ακίνητα, χωρίς να τα σύρετε, για τουλάχιστον <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Αν δεν έχει εκχωρηθεί άλλη εντολή, αυτή η κίνηση απενεργοποιεί το SandFly. Στην εκπαίδευση δεν εκτελεί τίποτα.</string>
+    <string name="gesture_trainer_how_taps_hold">Πατήστε <xliff:g id="taps">%1$s</xliff:g> με <xliff:g id="fingers">%2$s</xliff:g> και στο τελευταίο πάτημα αφήστε τα δάχτυλα στην οθόνη, ακίνητα, για τουλάχιστον <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Χρησιμοποιήστε τον αντίχειρα, τον δείκτη και τον μέσο.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Τοποθετήστε τον δείκτη και τον μέσο τον έναν δίπλα στον άλλον, και τον αντίχειρα και τον παράμεσο λίγα εκατοστά μακριά, έναν σε κάθε πλευρά. Μετά φέρτε και τις τέσσερις άκρες των δαχτύλων μαζί σε ένα σημείο.</string>
+    <string name="gesture_trainer_how_pinch">Τοποθετήστε <xliff:g id="fingers">%1$d</xliff:g> δάχτυλα στην οθόνη, πολύ ανοιχτά. Μετά φέρτε τα ευθεία το ένα προς το άλλο κατά τουλάχιστον 1 cm, σαν να πιάνετε κάτι, και σηκώστε τα από την οθόνη. Κινήστε μόνο τα δάχτυλα, όχι όλο το χέρι, και όχι σε τόξο.</string>
+    <string name="gesture_trainer_how_spread">Τοποθετήστε <xliff:g id="fingers">%1$d</xliff:g> δάχτυλα στην οθόνη, κοντά μεταξύ τους. Μετά απομακρύνετέ τα ευθεία κατά τουλάχιστον 1 cm και σηκώστε τα από την οθόνη. Κινήστε μόνο τα δάχτυλα, όχι όλο το χέρι, και όχι σε τόξο.</string>
+    <string name="gesture_trainer_clockwise">δεξιόστροφα</string>
+    <string name="gesture_trainer_counterclockwise">αριστερόστροφα</string>
+    <string name="gesture_trainer_how_rotate">Τοποθετήστε δύο δάχτυλα στην οθόνη, σε απόσταση περίπου 2 έως 3 cm, και περιστρέψτε τα <xliff:g id="way">%1$s</xliff:g> γύρω από το μέσο τους, σαν να γυρίζετε έναν επιλογέα, κατά περίπου ένα τέταρτο της στροφής. Μετά σηκώστε.</string>
+    <string name="gesture_trainer_how_scrub">Τοποθετήστε δύο δάχτυλα στην οθόνη και κινήστε τα γρήγορα προς τη μία πλευρά περίπου 2 cm και πίσω, σαν να σβήνετε κάτι, όλα μέσα σε περίπου ένα δευτερόλεπτο. Μετά σηκώστε.</string>
+    <string name="gesture_trainer_edge_bottom">στην κάτω άκρη</string>
+    <string name="gesture_trainer_edge_top_left">στην επάνω άκρη, στο αριστερό μισό της</string>
+    <string name="gesture_trainer_edge_top_right">στην επάνω άκρη, στο δεξί μισό της</string>
+    <string name="gesture_trainer_edge_left_top">στην αριστερή άκρη, στο επάνω μισό της</string>
+    <string name="gesture_trainer_edge_left_bottom">στην αριστερή άκρη, στο κάτω μισό της</string>
+    <string name="gesture_trainer_edge_right_top">στη δεξιά άκρη, στο επάνω μισό της</string>
+    <string name="gesture_trainer_edge_right_bottom">στη δεξιά άκρη, στο κάτω μισό της</string>
+    <string name="gesture_trainer_edge_left">στην αριστερή άκρη</string>
+    <string name="gesture_trainer_edge_right">στη δεξιά άκρη</string>
+    <string name="gesture_trainer_edge_top">στην επάνω άκρη</string>
+    <string name="gesture_trainer_how_edge">Τοποθετήστε ένα δάχτυλο <xliff:g id="edge">%1$s</xliff:g>, το πολύ <xliff:g id="edge_width">%2$d</xliff:g> mm από την άκρη, και σύρετε <xliff:g id="direction">%3$s</xliff:g> προς το εσωτερικό της οθόνης έως το πρώτο κλικ, περίπου <xliff:g id="distance">%4$d</xliff:g> mm. Μετά σηκώστε αμέσως: μετά το δεύτερο κλικ, το σύρσιμο είναι μακρύ σύρσιμο.</string>
+    <string name="gesture_trainer_how_edge_long">Τοποθετήστε ένα δάχτυλο <xliff:g id="edge">%1$s</xliff:g>, το πολύ <xliff:g id="edge_width">%2$d</xliff:g> mm από την άκρη, και σύρετε <xliff:g id="direction">%3$s</xliff:g> προς το εσωτερικό της οθόνης πέρα από το πρώτο κλικ έως το δεύτερο, περίπου <xliff:g id="distance">%4$d</xliff:g> mm. Μετά σηκώστε.</string>
+    <string name="gesture_trainer_how_along">Σύρετε ένα δάχτυλο <xliff:g id="direction">%2$s</xliff:g> κατά μήκος <xliff:g id="edge">%1$s</xliff:g>, τουλάχιστον <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">επάνω αριστερή</string>
+    <string name="gesture_trainer_corner_top_right">επάνω δεξιά</string>
+    <string name="gesture_trainer_corner_bottom_left">κάτω αριστερή</string>
+    <string name="gesture_trainer_corner_bottom_right">κάτω δεξιά</string>
+    <string name="gesture_trainer_how_corner">Πατήστε <xliff:g id="taps">%1$s</xliff:g> στην <xliff:g id="corner">%2$s</xliff:g> γωνία της οθόνης. Τοποθετήστε το δάχτυλο ακριβώς στη γωνία, όχι περισσότερο από <xliff:g id="size">%3$d</xliff:g> mm από τις δύο άκρες, και σηκώστε γρήγορα, εντός <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Με μεγαλύτερες γωνίες, ένα πάτημα σε στοιχείο ελέγχου κοντά σε γωνία, όπως το Πίσω επάνω αριστερά, μπορεί να εκτελέσει την κίνηση γωνίας.</string>
+    <string name="gesture_trainer_rating_precise">αναγνωρίστηκε, ακριβής</string>
+    <string name="gesture_trainer_rating_good">αναγνωρίστηκε, καλή</string>
+    <string name="gesture_trainer_rating_borderline">αναγνωρίστηκε, αλλά κοντά σε όριο</string>
+    <string name="gesture_trainer_try_recognized">Προσπάθεια <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Προσπάθεια <xliff:g id="number">%1$d</xliff:g>: δεν αναγνωρίστηκε.</string>
+    <string name="gesture_trainer_try_other">Προσπάθεια <xliff:g id="number">%1$d</xliff:g>: αναγνωρίστηκε ως <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> από <xliff:g id="tries">%3$d</xliff:g> αναγνωρίστηκαν</string>
+    <string name="gesture_trainer_results_tries">Οι προσπάθειές σας</string>
+    <string name="gesture_trainer_results_change">Τι να αλλάξετε</string>
+    <string name="gesture_trainer_results_close">Κοντά σε όριο</string>
+    <string name="gesture_trainer_results_all_good">Όλες οι προσπάθειες αναγνωρίστηκαν εντός των ορίων.</string>
+    <string name="gesture_trainer_results_settings">Ρυθμίσεις που μπορούν να βοηθήσουν</string>
+    <string name="gesture_trainer_next">Επόμενη άσκηση</string>
+    <string name="gesture_trainer_repeat">Επανάληψη</string>
+    <string name="gesture_trainer_finish">Τέλος</string>
+    <string name="gesture_trainer_group_done">Ολοκληρώσατε όλες τις ασκήσεις της ομάδας <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Αλλαγή: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">διήρκεσε <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">μήκος <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm ανά δευτερόλεπτο</string>
+    <string name="gesture_trainer_measure_angle">απόκλιση <xliff:g id="degrees">%1$.0f</xliff:g> μοιρών από ευθεία γραμμή</string>
+    <string name="gesture_trainer_measure_start">πρώτο εκατοστό σε <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">τα δάχτυλα ακούμπησαν με διαφορά <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">πάτημα <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms μεταξύ πατημάτων</string>
+    <string name="gesture_trainer_measure_spread">τα δάχτυλα κινήθηκαν <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">περιστροφή <xliff:g id="degrees">%1$.0f</xliff:g> μοιρών</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm από τις άκρες της γωνίας</string>
+    <string name="gesture_trainer_measure_edge">ξεκίνησε <xliff:g id="mm">%1$.0f</xliff:g> mm από την άκρη</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Δάχτυλα στην οθόνη: <xliff:g id="fingers">%1$d</xliff:g> αντί για <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Τα δάχτυλα ακούμπησαν με διαφορά <xliff:g id="ms">%1$d</xliff:g> ms και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Ένα δάχτυλο σηκώθηκε πριν ακουμπήσουν όλα τα δάχτυλα.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Τα δάχτυλα σηκώθηκαν με διαφορά <xliff:g id="ms">%1$d</xliff:g> ms και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Το δάχτυλο έμεινε ακίνητο πολύ ώρα ή κινήθηκε πολύ αργά στην αρχή, οπότε το άγγιγμα έγινε εξερεύνηση μέσω αφής.</string>
+    <string name="gesture_trainer_finding_slow_start">Το πρώτο εκατοστό διήρκεσε <xliff:g id="ms">%1$d</xliff:g> ms και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Το δάχτυλο επιβράδυνε για <xliff:g id="ms">%1$d</xliff:g> ms και κάθε εκατοστό μπορεί να διαρκεί το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Η κίνηση ήταν μόνο <xliff:g id="mm">%1$.0f</xliff:g> mm και πρέπει να είναι τουλάχιστον <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Το δάχτυλο ξεκίνησε να κινείται <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Τα δάχτυλα ξεκίνησαν να κινούνται <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Η διαδρομή απέκλινε <xliff:g id="degrees">%1$.0f</xliff:g> μοίρες από ευθεία γραμμή και επιτρέπονται το πολύ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Η διαδρομή χωρίστηκε σε <xliff:g id="parts">%1$d</xliff:g> τμήματα αντί για <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Η στροφή δεν εντοπίστηκε.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Μετά τη στροφή, το δάχτυλο κινήθηκε <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Το δάχτυλο γλίστρησε <xliff:g id="mm">%1$.1f</xliff:g> mm κατά τη διάρκεια ενός πατήματος και επιτρέπονται το πολύ <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Ένα πάτημα διήρκεσε <xliff:g id="ms">%1$d</xliff:g> ms, περισσότερο από <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Το τελευταίο πάτημα κρατήθηκε για <xliff:g id="ms">%1$d</xliff:g> ms και πρέπει να είναι τουλάχιστον <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> πατήματα αντί για <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> πατήματα αντί για <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Πέρασαν <xliff:g id="ms">%1$d</xliff:g> ms μεταξύ πατημάτων και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Τα πατήματα έγιναν σε απόσταση <xliff:g id="mm">%1$.0f</xliff:g> mm και επιτρέπονται το πολύ <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Τα δάχτυλα κινήθηκαν μόνο <xliff:g id="mm">%1$.0f</xliff:g> mm και πρέπει να κινηθούν τουλάχιστον <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Τα δάχτυλα κινήθηκαν προς την αντίθετη κατεύθυνση.</string>
+    <string name="gesture_trainer_finding_moved_together">Όλο το χέρι γλίστρησε <xliff:g id="mm">%1$.0f</xliff:g> mm στην οθόνη, περισσότερο από όσο κινήθηκαν τα δάχτυλα το ένα προς το άλλο ή μακριά το ένα από το άλλο.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Τα δάχτυλα περιστράφηκαν μόνο <xliff:g id="degrees">%1$.0f</xliff:g> μοίρες και πρέπει να περιστραφούν τουλάχιστον <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Τα δάχτυλα περιστράφηκαν προς την αντίθετη κατεύθυνση.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Η πρώτη κίνηση ήταν <xliff:g id="mm">%1$.0f</xliff:g> mm και πρέπει να είναι τουλάχιστον <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Η κίνηση επιστροφής ήταν <xliff:g id="mm">%1$.0f</xliff:g> mm και πρέπει να είναι τουλάχιστον <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Το τρίψιμο διήρκεσε <xliff:g id="ms">%1$d</xliff:g> ms και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Το δάχτυλο ακούμπησε <xliff:g id="mm">%1$.0f</xliff:g> mm από την άκρη και η άκρη έχει πλάτος <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Το δάχτυλο ξεκίνησε στο άλλο μισό της άκρης.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Το δάχτυλο σύρθηκε <xliff:g id="mm">%1$.0f</xliff:g> mm και πρέπει να συρθεί τουλάχιστον <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Πολύ μακρύ σύρσιμο: το δάχτυλο πέρασε το δεύτερο κλικ, <xliff:g id="mm">%1$.0f</xliff:g> mm, και το δεύτερο κλικ είναι στα <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Η μετάβαση στο κλικ διήρκεσε <xliff:g id="ms">%1$d</xliff:g> ms και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Το σύρσιμο απέκλινε <xliff:g id="degrees">%1$.0f</xliff:g> μοίρες προς τα πλάγια και επιτρέπονται το πολύ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Το πάτημα έγινε <xliff:g id="mm">%1$.0f</xliff:g> mm από τις άκρες της γωνίας και η γωνία είναι <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Ένα πάτημα γωνίας διήρκεσε <xliff:g id="ms">%1$d</xliff:g> ms και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Δεν εντοπίστηκε κίνηση που να αντιστοιχεί στην κίνηση.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Ελέγξτε πόσα δάχτυλα αγγίζουν το γυαλί. Μια παλάμη ή ένα άλλο δάχτυλο που ακουμπά στην οθόνη μετράει επίσης.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Ακουμπήστε όλα τα δάχτυλα την ίδια στιγμή, ως ένα χέρι, όχι το ένα μετά το άλλο.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Ακουμπήστε πρώτα όλα τα δάχτυλα και μετά κινήστε ή σηκώστε τα.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Σηκώστε όλα τα δάχτυλα την ίδια στιγμή.</string>
+    <string name="gesture_trainer_tip_slow_start">Ξεκινήστε την κίνηση τη στιγμή που αγγίζετε την οθόνη και κινηθείτε γρηγορότερα στην αρχή.</string>
+    <string name="gesture_trainer_tip_paused">Κινείτε το δάχτυλο με σταθερή ταχύτητα μέχρι να το σηκώσετε. Μην επιβραδύνετε κοντά στο τέλος.</string>
+    <string name="gesture_trainer_tip_too_short">Κάντε την κίνηση μεγαλύτερη, περίπου 2 έως 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Ελέγξτε την κατεύθυνση στην αρχή της κίνησης. Βοηθά να κρατάτε το τηλέφωνο ίσια μπροστά σας.</string>
+    <string name="gesture_trainer_tip_off_line">Κινηθείτε μόνο κατά την κατεύθυνση, όχι διαγώνια. Ο δείκτης κρατά πιο ευθεία γραμμή από τον αντίχειρα.</string>
+    <string name="gesture_trainer_tip_curved">Κρατήστε τη γραμμή ευθεία και σηκώστε ακριβώς στο τέλος, χωρίς να γυρίζετε το δάχτυλο στο πλάι καθώς το σηκώνετε.</string>
+    <string name="gesture_trainer_tip_turn_missing">Αλλάξτε κατεύθυνση απότομα, σε ορθή γωνία ή ευθεία πίσω, χωρίς να σηκώσετε. Κάθε τμήμα πρέπει να είναι περίπου 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Μετά τη στροφή, ελέγξτε προς τα πού κινείστε: το δεύτερο τμήμα πρέπει να ακολουθεί τη δεύτερη κατεύθυνση που ορίζει η κίνηση.</string>
+    <string name="gesture_trainer_tip_tap_moved">Πατήστε ευθεία κάτω και επάνω, με την άκρη του δαχτύλου, χωρίς να σύρετε.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Κάντε κάθε πάτημα σύντομο: αγγίξτε και σηκώστε αμέσως.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Στο τελευταίο πάτημα, κρατήστε τα δάχτυλα ακίνητα στην οθόνη για όλο τον χρόνο κρατήματος.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Μετρήστε τα πατήματα και κάντε τα όλα γρήγορα με τη μία.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Μετρήστε τα πατήματα. Ένα δάχτυλο που αναπηδά από το γυαλί κάνει ένα επιπλέον πάτημα.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Πατήστε γρηγορότερα: ξεκινήστε το επόμενο πάτημα αμέσως μόλις σηκώσετε.</string>
+    <string name="gesture_trainer_tip_taps_apart">Πατάτε κάθε φορά στο ίδιο σημείο.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Κινήστε τα δάχτυλα περισσότερο, τουλάχιστον 1 cm πιο κοντά ή πιο μακριά.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Τσίμπημα είναι τα δάχτυλα που κινούνται το ένα προς το άλλο, άνοιγμα είναι τα δάχτυλα που απομακρύνονται.</string>
+    <string name="gesture_trainer_tip_moved_together">Κινήστε μόνο τα δάχτυλα το ένα προς το άλλο ή μακριά το ένα από το άλλο. Μη σύρετε όλο το χέρι στην οθόνη.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Περιστρέψτε περισσότερο, σαν να γυρίζετε έναν επιλογέα κατά ένα τέταρτο της στροφής.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Δεξιόστροφα σημαίνει περιστροφή προς την κατεύθυνση των δεικτών του ρολογιού: το επάνω δάχτυλο κινείται προς τα δεξιά.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Κάντε την πρώτη κίνηση τουλάχιστον 1 cm.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Μετά την πρώτη κίνηση, επιστρέψτε προς την αντίθετη κατεύθυνση πριν σηκώσετε.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Κάντε το τρίψιμο γρήγορο, πήγαινε-έλα σε περίπου ένα δευτερόλεπτο.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Ξεκινήστε ακριβώς στην άκρη, με την άκρη του δαχτύλου εν μέρει έξω από την οθόνη.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Ελέγξτε σε ποιο μισό της άκρης ξεκινάτε.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Σύρετε περισσότερο, μέχρι να ακούσετε το κλικ, και μετά σηκώστε.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Σηκώστε αμέσως μετά το πρώτο κλικ, πριν από το δεύτερο.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Σύρετε προς τα μέσα γρηγορότερα, χωρίς να σταματήσετε πριν από το κλικ.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Σύρετε ευθεία προς τα μέσα από την άκρη ή ευθεία κατά μήκος της, όχι διαγώνια.</string>
+    <string name="gesture_trainer_tip_corner_missed">Τοποθετήστε το δάχτυλο ακριβώς μέσα στη γωνία, ώστε να αγγίζει και τις δύο άκρες.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Σηκώστε γρηγορότερα αφού αγγίξετε τη γωνία.</string>
+    <string name="gesture_trainer_close_to_limit">Κοντά στο όριο: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Τα συρσίματα ξεκινούν αργά. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> επιτρέπει πιο αργή έναρξη.</string>
+    <string name="gesture_trainer_advice_tap_time">Τα πατήματα είναι αργά. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> επιτρέπει πιο αργά πατήματα.</string>
+    <string name="gesture_trainer_advice_edge_width">Τα συρσίματα ξεκινούν πολύ μακριά από την άκρη. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> μετατρέπει επίσης συρσίματα που ξεκινούν κοντά σε άκρη σε συρσίματα άκρης.</string>
+    <string name="gesture_trainer_advice_corner_size">Τα πατήματα γίνονται έξω από τη γωνία. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> κάνει τις γωνίες μεγαλύτερες.</string>
+    <string name="gesture_trainer_advice_corner_time">Τα πατήματα γωνίας είναι αργά. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> επιτρέπει πιο αργά πατήματα.</string>
+    <string name="gesture_trainer_menu_option">Επιλογή <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: επιλέξτε το στοιχείο <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Σύρετε ένα δάχτυλο προς τα επάνω ή προς τα κάτω <xliff:g id="edge">%1$s</xliff:g> για τουλάχιστον <xliff:g id="distance">%2$d</xliff:g> mm για να ανοίξει το μενού. Έχει <xliff:g id="count">%3$d</xliff:g> στοιχεία, από πάνω προς τα κάτω, το καθένα περίπου <xliff:g id="size">%6$s</xliff:g> cm σε ύψος. Το στοιχείο <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, βρίσκεται <xliff:g id="from">%7$s</xliff:g> έως <xliff:g id="to">%8$s</xliff:g> cm κάτω από το επάνω μέρος της οθόνης. Σηκώστε το δάχτυλο όταν εκφωνηθεί το στοιχείο.</string>
+    <string name="gesture_trainer_menu_sample">Αυτή η άκρη δεν έχει μενού. Η άσκηση χρησιμοποιεί <xliff:g id="count">%1$d</xliff:g> δείγματα στοιχείων.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Προσπάθεια <xliff:g id="number">%1$d</xliff:g>: το μενού έκλεισε χωρίς επιλογή.</string>
+    <string name="gesture_trainer_try_menu_other">Προσπάθεια <xliff:g id="number">%1$d</xliff:g>: επιλέχθηκε <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">σηκώθηκε στο στοιχείο <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Το δάχτυλο ξεκίνησε στο ακραίο επάνω ή κάτω σημείο της άκρης, όπου βρίσκονται οι γωνίες και η επάνω και η κάτω άκρη.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Το δάχτυλο σηκώθηκε <xliff:g id="mm">%1$.0f</xliff:g> mm από την άκρη και το μενού κλείνει πέρα από τα <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Το δάχτυλο σηκώθηκε στο στοιχείο <xliff:g id="item">%1$d</xliff:g> αντί για το στοιχείο <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Ξεκινήστε λίγο μακριά από το επάνω και το κάτω άκρο της άκρης.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Κρατήστε το δάχτυλο κοντά στην άκρη ενώ σύρετε και σηκώστε το εκεί.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Κάθε στοιχείο έχει σταθερή θέση κατά μήκος της άκρης και επιλέγεται το στοιχείο όπου σηκώνεται το δάχτυλο. Σηκώστε όταν εκφωνηθεί το στοιχείο.</string>
+    <string name="gesture_trainer_contents">Περιεχόμενα</string>
+    <string name="gesture_trainer_contents_heading">Περιεχόμενα: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">ολοκληρώθηκε, <xliff:g id="hits">%1$d</xliff:g> από <xliff:g id="tries">%2$d</xliff:g> αναγνωρίστηκαν</string>
+    <string name="gesture_trainer_group_tap_swipe">Πάτημα και σάρωση</string>
+    <string name="gesture_trainer_group_edge_swipes">Συρσίματα από τις άκρες</string>
+    <string name="gesture_trainer_group_along_edges">Συρσίματα κατά μήκος των άκρων</string>
+    <string name="gesture_trainer_group_edge_menus">Μενού άκρης</string>
+    <string name="gesture_trainer_group_corners">Γωνίες</string>
+    <string name="gesture_trainer_group_back_tap">Πάτημα στο πίσω μέρος</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Τα πατήματα με 2 δάχτυλα που ακολουθούνται από σάρωση με 2 δάχτυλα παραλείπονται: η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> είναι ανενεργή.</string>
+    <string name="gesture_trainer_how_swipe_hold">Μετά, χωρίς να σηκώσετε, κρατήστε το δάχτυλο ακίνητο για τουλάχιστον <xliff:g id="hold">%1$d</xliff:g> ms και σηκώστε.</string>
+    <string name="gesture_trainer_half_top">επάνω</string>
+    <string name="gesture_trainer_half_bottom">κάτω</string>
+    <string name="gesture_trainer_how_taps_half">Πατήστε στο <xliff:g id="half">%1$s</xliff:g> μισό της οθόνης. Το σημείο ανάμεσα στα δάχτυλα καθορίζει το μισό.</string>
+    <string name="gesture_trainer_same_fingers">τα ίδια δάχτυλα</string>
+    <string name="gesture_trainer_how_tap_swipe">Πατήστε <xliff:g id="taps">%1$s</xliff:g> με <xliff:g id="fingers">%2$s</xliff:g>. Αμέσως μετά το τελευταίο πάτημα, εντός <xliff:g id="gap">%3$d</xliff:g> ms, αγγίξτε ξανά την οθόνη με <xliff:g id="swipe_fingers">%4$s</xliff:g> και σύρετε <xliff:g id="direction">%5$s</xliff:g> σε ευθεία γραμμή για περίπου 2 έως 3 cm και σηκώστε.</string>
+    <string name="gesture_trainer_how_corner_hold">Στο τελευταίο πάτημα, αφήστε το δάχτυλο στη γωνία, ακίνητο, για τουλάχιστον <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Κρατήστε το τηλέφωνο στο χέρι σας, από τα πλάγια, και πατήστε στη μέση του πίσω μέρους του <xliff:g id="taps">%1$s</xliff:g> με την άκρη ενός δαχτύλου, σταθερά και γρήγορα, σαν να χτυπάτε μια πόρτα. Κάντε τα πατήματα κοντά χρονικά: το πολύ <xliff:g id="gap">%2$d</xliff:g> ms μεταξύ τους. Μην αγγίζετε την οθόνη ενώ πατάτε.</string>
+    <string name="gesture_trainer_back_tap_info">Τα πατήματα στο πίσω μέρος δεν εκτελούν εντολές κατά την άσκηση. Η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> ορίζει πόσο δυνατό πρέπει να είναι ένα πάτημα.</string>
+    <string name="gesture_trainer_go_placed">Κάντε την κίνηση <xliff:g id="tries">%1$d</xliff:g> φορές.</string>
+    <string name="gesture_trainer_along_left">της αριστερής άκρης</string>
+    <string name="gesture_trainer_along_right">της δεξιάς άκρης</string>
+    <string name="gesture_trainer_along_top">της επάνω άκρης</string>
+    <string name="gesture_trainer_along_bottom">της κάτω άκρης</string>
+    <string name="gesture_trainer_left_out_along_menu">Τα συρσίματα κατά μήκος <xliff:g id="edge">%1$s</xliff:g> παραλείπονται: έχει μενού άκρης, οπότε ένα σύρσιμο κατά μήκος της ανοίγει το μενού αντί να εκτελέσει κίνηση.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Τα συρσίματα κατά μήκος <xliff:g id="edge">%1$s</xliff:g> παραλείπονται: κάνει κύλιση, οπότε ένα σύρσιμο κατά μήκος της κάνει κύλιση στην εφαρμογή αντί να εκτελέσει κίνηση.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Το δάχτυλο απομακρύνθηκε πολύ από την άκρη.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Κρατήστε το δάχτυλο ακριβώς στο χείλος του γυαλιού, ευθεία κατά μήκος της άκρης.</string>
+    <string name="gesture_trainer_go_back_tap">Κάντε την κίνηση πατήματος στο πίσω μέρος <xliff:g id="tries">%1$d</xliff:g> φορές. Ένα άγγιγμα στην οθόνη αποτυγχάνει την προσπάθεια.</string>
+    <string name="gesture_trainer_no_accelerometer">Αυτή η άσκηση απαιτεί επιταχυνσιόμετρο. Δεν υπάρχει διαθέσιμο.</string>
+    <string name="gesture_trainer_measure_hold">κράτημα ακίνητο <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">πάτημα έντασης <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Το δάχτυλο έμεινε ακίνητο για <xliff:g id="ms">%1$d</xliff:g> ms στο τέλος και πρέπει να μείνει ακίνητο τουλάχιστον <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Τα δάχτυλα πάτησαν στο άλλο μισό της οθόνης.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Δεν ακολούθησε σάρωση μετά τα πατήματα.</string>
+    <string name="gesture_trainer_finding_swipe_late">Η σάρωση ξεκίνησε <xliff:g id="ms">%1$d</xliff:g> ms μετά το τελευταίο πάτημα και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Πολύ ελαφρύ πάτημα στο πίσω μέρος: <xliff:g id="percent">%1$d</xliff:g>%% της απαιτούμενης έντασης.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Ένα πάτημα κούνησε το τηλέφωνο περισσότερο στο πλάι παρά μέσα από το πίσω μέρος του.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Το τηλέφωνο κινούνταν λίγο πριν από ένα πάτημα.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Έγινε άγγιγμα στην οθόνη και τα πατήματα ενώ αγγίζεται η οθόνη δεν μετρούν.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Πέρασαν <xliff:g id="ms">%1$d</xliff:g> ms μεταξύ πατημάτων στο πίσω μέρος και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Μετά τη σάρωση, κρατήστε το δάχτυλο ακίνητο στην οθόνη για όλο τον χρόνο κρατήματος. Μετά σηκώστε.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Ελέγξτε σε ποιο μισό πατάτε: η μέση της οθόνης χωρίζει το επάνω μισό από το κάτω μισό.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Μετά το τελευταίο πάτημα, αγγίξτε ξανά την οθόνη αμέσως και σύρετε.</string>
+    <string name="gesture_trainer_tip_swipe_late">Ξεκινήστε τη σάρωση αμέσως μετά το τελευταίο πάτημα, χωρίς παύση.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Πατήστε πιο δυνατά, με την άκρη του δαχτύλου ή με το νύχι, κοντά στη μέση του πίσω μέρους.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Πατήστε ευθεία στο πίσω μέρος του τηλεφώνου, όχι στην άκρη του ή υπό γωνία.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Κρατήστε το τηλέφωνο ακίνητο για μια στιγμή πριν πατήσετε και κρατήστε το χαλαρά ώστε να μην το κινεί το χέρι σας.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Κρατήστε τα δάχτυλά σας μακριά από την οθόνη ενώ πατάτε στο πίσω μέρος: κρατήστε το τηλέφωνο από τα πλάγια.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Πατήστε γρηγορότερα, το ένα πάτημα αμέσως μετά το άλλο.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Το δάχτυλο σηκώνεται πολύ νωρίς μετά τη σάρωση. Μικρότερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> επιτρέπει μικρότερο κράτημα.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Τα πατήματα στο πίσω μέρος είναι ελαφριά. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> εντοπίζει ελαφρύτερα πατήματα και ίσως εντοπίσει χτυπήματα ως πατήματα.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Τα δάχτυλα περιστράφηκαν <xliff:g id="degrees">%1$.0f</xliff:g> μοίρες και από τις <xliff:g id="limit">%2$.0f</xliff:g> μοίρες η κίνηση είναι περιστροφή.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Κινήστε τα δάχτυλα σε ευθεία γραμμή το ένα προς το άλλο ή μακριά το ένα από το άλλο, όχι σε τόξο γύρω το ένα από το άλλο.</string>
+    <string name="gesture_trainer_finding_other_gesture">Η κίνηση αντιστοιχούσε σε εκείνη την κίνηση.</string>
+    <string name="gesture_trainer_side_left">αριστερή</string>
+    <string name="gesture_trainer_side_right">δεξιά</string>
+    <string name="gesture_trainer_side_top">επάνω</string>
+    <string name="gesture_trainer_side_bottom">κάτω</string>
+    <string name="gesture_trainer_finding_wrong_edge">Το δάχτυλο ξεκίνησε από την <xliff:g id="side">%1$s</xliff:g> άκρη και αυτή η άσκηση είναι στην <xliff:g id="expected">%2$s</xliff:g> άκρη.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Ξεκινήστε ακριβώς στην άκρη που ορίζει η άσκηση.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Άνοιξε ένα μενού άκρης αντί για αυτή την κίνηση.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Ένα σύρσιμο κατά μήκος άκρης με μενού ανοίγει το μενού. Ξεκινήστε στην άκρη που ορίζει η άσκηση.</string>
+    <string name="gesture_trainer_group_three_part">Συρσίματα τριών τμημάτων</string>
+    <string name="gesture_trainer_group_two_stroke">Συρσίματα δύο σταδίων</string>
+    <string name="gesture_trainer_group_shake">Ανακίνηση</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Τα συρσίματα τριών τμημάτων παραλείπονται: η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> είναι ενεργή.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Τα συρσίματα δύο σταδίων παραλείπονται: <xliff:g id="setting">%1$s</xliff:g>: <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Η ανακίνηση δεν εκτελεί εντολή κατά την άσκηση. Η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> ορίζει πόσο δυνατή πρέπει να είναι μια ανακίνηση.</string>
+    <string name="gesture_trainer_go_shake">Ανακινήστε το τηλέφωνο <xliff:g id="tries">%1$d</xliff:g> φορές, με μια σύντομη παύση μετά από κάθε ανακίνηση.</string>
+    <string name="gesture_trainer_how_shake">Κρατήστε σταθερά το τηλέφωνο και κουνήστε το γρήγορα μπρος-πίσω, σαν να τινάζετε μια σταγόνα νερό: τουλάχιστον δύο φορές προς κάθε κατεύθυνση, όλα μέσα σε περίπου δύο τρίτα του δευτερολέπτου. Μετά κρατήστε το ακίνητο.</string>
+    <string name="gesture_trainer_how_two_stroke">Σύρετε <xliff:g id="first">%1$s</xliff:g> με ένα δάχτυλο, περίπου 2 cm, και σηκώστε. Μετά αμέσως, εντός <xliff:g id="time">%3$d</xliff:g> ms, σύρετε <xliff:g id="second">%2$s</xliff:g> με ένα δάχτυλο, περίπου 2 cm, και σηκώστε.</string>
+    <string name="gesture_trainer_how_three_part">Αγγίξτε την οθόνη με ένα δάχτυλο και, χωρίς να σηκώσετε, σύρετε <xliff:g id="first">%1$s</xliff:g>, μετά στρίψτε απότομα και σύρετε <xliff:g id="second">%2$s</xliff:g>, μετά στρίψτε ξανά απότομα και σύρετε <xliff:g id="third">%3$s</xliff:g>, κάθε τμήμα περίπου 2 cm, και σηκώστε. Κάντε τη μία γρήγορη, ομαλή κίνηση με απότομες γωνίες, όχι καμπύλες.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Τοποθετήστε ένα δάχτυλο στο επάνω τρίτο της οθόνης και το άλλο στο κάτω τρίτο, για παράδειγμα τον αντίχειρα χαμηλά και τον δείκτη ψηλά.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Τα δάχτυλα δεν ήταν ένα στο επάνω τρίτο της οθόνης και ένα στο κάτω τρίτο.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Δεν έγινε δεύτερο σύρσιμο.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Το δεύτερο σύρσιμο ξεκίνησε <xliff:g id="ms">%1$d</xliff:g> ms μετά το πρώτο και επιτρέπονται το πολύ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Το πρώτο σύρσιμο κινήθηκε <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Το δεύτερο σύρσιμο κινήθηκε <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Η ανακίνηση ήταν πολύ ελαφριά: <xliff:g id="percent">%1$d</xliff:g>%% της απαιτούμενης έντασης.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Κινήσεις μπρος-πίσω: <xliff:g id="swings">%1$d</xliff:g> από τις <xliff:g id="wanted">%2$d</xliff:g> που απαιτούνται.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Ανοίξτε πολύ τα δάχτυλα, ένα κοντά στην επάνω άκρη και ένα κοντά στην κάτω άκρη.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Μετά το πρώτο σύρσιμο, σηκώστε το δάχτυλο και σύρετε ξανά αμέσως.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Ξεκινήστε το δεύτερο σύρσιμο αμέσως μόλις σηκώσετε το δάχτυλο.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Ανακινήστε πιο δυνατά και πιο γρήγορα.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Ανακινήστε πιο γρήγορα, μπρος-πίσω τουλάχιστον δύο φορές προς κάθε κατεύθυνση, χωρίς να σταματάτε ενδιάμεσα.</string>
+    <string name="gesture_trainer_measure_shake_strength">ισχυρότερη κίνηση <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Οι ανακινήσεις είναι ελαφριές. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> εντοπίζει ελαφρύτερες ανακινήσεις και ίσως εντοπίσει τη μεταφορά του τηλεφώνου ως ανακίνηση.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Το δεύτερο σύρσιμο ξεκινά αργά. Μεγαλύτερη τιμή στη ρύθμιση <xliff:g id="setting">%1$s</xliff:g> επιτρέπει πιο αργό δεύτερο σύρσιμο και τότε ένα μονό σύρσιμο περιμένει περισσότερο πριν εκτελεστεί.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> είναι ενεργή.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Η ρύθμιση <xliff:g id="setting">%1$s</xliff:g> είναι ανενεργή: τα συρσίματα με 2 δάχτυλα κάνουν κύλιση στην εφαρμογή και ένα τρίψιμο κάνει κυρίως κι αυτό κύλιση. Με τη ρύθμιση ενεργή, τα συρσίματα με 2 δάχτυλα εκτελούν εντολές του SandFly αντί για κύλιση.</string>
+    <string name="gesture_trainer_measure_first_stroke">πρώτο σύρσιμο <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">δεύτερο σύρσιμο <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">ολόκληρη η κίνηση <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">σηκωμένο για <xliff:g id="ms">%1$d</xliff:g> ms ανάμεσά τους</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Hareket eğitmeni</string>
+    <string name="gesture_trainer_intro">Bir hareket grubu seçin. Her alıştırma bir hareketi açıklar. Hareketi <xliff:g id="tries">%1$d</xliff:g> kez yapın; her denemenin sonucu sesli okunur. Son denemeden sonra ekranda her denemenin ölçümleri, neyin değiştirilmesi gerektiği ve ilgili ayarlar listelenir.</string>
+    <string name="gesture_trainer_group_one_finger">Tek parmak</string>
+    <string name="gesture_trainer_group_two_fingers">İki parmak</string>
+    <string name="gesture_trainer_group_three_fingers">Üç parmak</string>
+    <string name="gesture_trainer_group_four_fingers">Dört parmak</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Kıstırma, döndürme ve ileri geri kaydırma</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> alıştırma</string>
+    <string name="gesture_trainer_close">Kapat</string>
+    <string name="gesture_trainer_no_detection">Hareket eğitmeni için Android 13 veya üzeri gerekir.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">İleri-geri ve açılı hareketler hariç tutuldu: <xliff:g id="setting">%1$s</xliff:g> açık.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">İki parmakla kaydırmalar hariç tutuldu: <xliff:g id="setting">%1$s</xliff:g> kapalı, bu nedenle bu kaydırmalar uygulamaları kaydırır.</string>
+    <string name="gesture_trainer_exercise_heading">Alıştırma <xliff:g id="number">%1$d</xliff:g> / <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Başlat</string>
+    <string name="gesture_trainer_skip">Bu alıştırmayı atla</string>
+    <string name="gesture_trainer_back_to_groups">Gruplara dön</string>
+    <string name="gesture_trainer_go">Hareketi ekranın herhangi bir yerinde <xliff:g id="tries">%1$d</xliff:g> kez yapın. Her dokunuş bir denemedir.</string>
+    <string name="gesture_trainer_fingers_1">bir parmakla</string>
+    <string name="gesture_trainer_fingers_2">yan yana, yaklaşık 1 cm aralıklı iki parmakla</string>
+    <string name="gesture_trainer_fingers_3">yan yana, biraz aralıklı üç parmakla</string>
+    <string name="gesture_trainer_fingers_4">yan yana, biraz aralıklı dört parmakla</string>
+    <string name="gesture_trainer_direction_up">yukarı</string>
+    <string name="gesture_trainer_direction_down">aşağı</string>
+    <string name="gesture_trainer_direction_left">sola</string>
+    <string name="gesture_trainer_direction_right">sağa</string>
+    <string name="gesture_trainer_how_swipe">Ekrana <xliff:g id="fingers">%1$s</xliff:g> dokunun ve beklemeden yaklaşık 2-3 cm boyunca düz bir çizgide <xliff:g id="direction">%2$s</xliff:g> kaydırın, ardından kaldırın. Hemen hareket etmeye başlayın: önce duran bir parmak dokunarak keşfetmeyi başlatır.</string>
+    <string name="gesture_trainer_how_swipe_multi">Parmakları aynı anda birlikte koyun ve hepsini aynı yöne hareket ettirin. Her parmak tüm hareket boyunca <xliff:g id="direction">%1$s</xliff:g> gitmelidir, bu nedenle çizgiyi düz tutun.</string>
+    <string name="gesture_trainer_how_back_and_forth">Ekrana bir parmakla dokunun ve yaklaşık 2 cm <xliff:g id="first">%1$s</xliff:g> kaydırın, ardından kaldırmadan yaklaşık 2 cm düz bir şekilde <xliff:g id="second">%2$s</xliff:g> geri dönün ve kaldırın. Bunu tek, hızlı ve akıcı bir hareket olarak yapın.</string>
+    <string name="gesture_trainer_how_angle">Ekrana <xliff:g id="fingers">%1$s</xliff:g> dokunun ve yaklaşık 2 cm <xliff:g id="first">%2$s</xliff:g> kaydırın, ardından kaldırmadan keskin bir şekilde dönün ve yaklaşık 2 cm <xliff:g id="second">%3$s</xliff:g> kaydırın, sonra kaldırın. Dönüşü eğri değil, L harfi gibi keskin bir köşe yapın.</string>
+    <string name="gesture_trainer_taps_1">bir kez</string>
+    <string name="gesture_trainer_taps_2">iki kez</string>
+    <string name="gesture_trainer_taps_3">üç kez</string>
+    <string name="gesture_trainer_taps_4">dört kez</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> dokunun. Parmakları birlikte koyun ve kaydırmadan, hızlıca birlikte kaldırın.</string>
+    <string name="gesture_trainer_how_taps_quick">Dokunuşları hızlı ve aynı noktada yapın: sonraki dokunuş bir öncekinden sonra en fazla <xliff:g id="gap">%1$d</xliff:g> ms içinde gelmelidir.</string>
+    <string name="gesture_trainer_how_hold">Ekrana <xliff:g id="fingers">%1$s</xliff:g> birlikte dokunun ve parmakları kaydırmadan en az <xliff:g id="hold">%2$d</xliff:g> ms hareketsiz tutun.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Başka bir komut atanmamışsa bu hareket SandFly\'ı kapatır. Eğitmende hiçbir şey çalıştırmaz.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> dokunun ve son dokunuşta parmakları en az <xliff:g id="hold">%3$d</xliff:g> ms boyunca ekranda hareketsiz bırakın.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Başparmağı, işaret parmağını ve orta parmağı kullanın.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">İşaret ve orta parmağı yan yana koyun, başparmağı ve yüzük parmağını her iki yanda birkaç santimetre uzağa koyun. Ardından dört parmak ucunu tek bir noktada birleştirin.</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g> parmağı birbirinden geniş aralıklı olarak ekrana koyun. Ardından bir şeyi alıyormuş gibi parmakları en az 1 cm düz bir şekilde birbirine yaklaştırın ve ekrandan kaldırın. Tüm eli değil, yalnızca parmakları hareket ettirin ve yay çizmeyin.</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g> parmağı birbirine yakın olarak ekrana koyun. Ardından parmakları en az 1 cm düz bir şekilde birbirinden uzaklaştırın ve ekrandan kaldırın. Tüm eli değil, yalnızca parmakları hareket ettirin ve yay çizmeyin.</string>
+    <string name="gesture_trainer_clockwise">saat yönünde</string>
+    <string name="gesture_trainer_counterclockwise">saat yönünün tersine</string>
+    <string name="gesture_trainer_how_rotate">İki parmağı yaklaşık 2-3 cm aralıklı olarak ekrana koyun ve bir kadranı çevirir gibi, ortaları etrafında yaklaşık çeyrek tur <xliff:g id="way">%1$s</xliff:g> çevirin. Ardından kaldırın.</string>
+    <string name="gesture_trainer_how_scrub">İki parmağı ekrana koyun ve bir şeyi siliyormuş gibi, yaklaşık bir saniye içinde hızlıca yaklaşık 2 cm bir yana ve geri hareket ettirin. Ardından kaldırın.</string>
+    <string name="gesture_trainer_edge_bottom">alt kenarda</string>
+    <string name="gesture_trainer_edge_top_left">üst kenarda, sol yarısında</string>
+    <string name="gesture_trainer_edge_top_right">üst kenarda, sağ yarısında</string>
+    <string name="gesture_trainer_edge_left_top">sol kenarda, üst yarısında</string>
+    <string name="gesture_trainer_edge_left_bottom">sol kenarda, alt yarısında</string>
+    <string name="gesture_trainer_edge_right_top">sağ kenarda, üst yarısında</string>
+    <string name="gesture_trainer_edge_right_bottom">sağ kenarda, alt yarısında</string>
+    <string name="gesture_trainer_edge_left">sol kenarda</string>
+    <string name="gesture_trainer_edge_right">sağ kenarda</string>
+    <string name="gesture_trainer_edge_top">üst kenarda</string>
+    <string name="gesture_trainer_how_edge">Bir parmakla <xliff:g id="edge">%1$s</xliff:g>, kenardan en fazla <xliff:g id="edge_width">%2$d</xliff:g> mm içeride ekrana dokunun ve ilk tıklamaya kadar, yaklaşık <xliff:g id="distance">%4$d</xliff:g> mm, ekranın içine doğru <xliff:g id="direction">%3$s</xliff:g> kaydırın. Ardından hemen kaldırın: ikinci tıklamadan sonra kaydırma uzun kaydırma olur.</string>
+    <string name="gesture_trainer_how_edge_long">Bir parmakla <xliff:g id="edge">%1$s</xliff:g>, kenardan en fazla <xliff:g id="edge_width">%2$d</xliff:g> mm içeride ekrana dokunun ve ilk tıklamayı geçip ikinciye kadar, yaklaşık <xliff:g id="distance">%4$d</xliff:g> mm, ekranın içine doğru <xliff:g id="direction">%3$s</xliff:g> kaydırın. Ardından kaldırın.</string>
+    <string name="gesture_trainer_how_along">Bir parmağı <xliff:g id="edge">%1$s</xliff:g> boyunca en az <xliff:g id="distance">%3$d</xliff:g> mm <xliff:g id="direction">%2$s</xliff:g> kaydırın.</string>
+    <string name="gesture_trainer_corner_top_left">sol üst</string>
+    <string name="gesture_trainer_corner_top_right">sağ üst</string>
+    <string name="gesture_trainer_corner_bottom_left">sol alt</string>
+    <string name="gesture_trainer_corner_bottom_right">sağ alt</string>
+    <string name="gesture_trainer_how_corner">Ekranın <xliff:g id="corner">%2$s</xliff:g> köşesine <xliff:g id="taps">%1$s</xliff:g> dokunun. Parmağı tam köşeye, her iki kenardan en fazla <xliff:g id="size">%3$d</xliff:g> mm uzağa koyun ve <xliff:g id="time">%4$d</xliff:g> ms içinde hızlıca kaldırın.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Köşeler büyüdükçe, sol üstteki Geri gibi bir köşeye yakın bir denetime dokunmak bunun yerine köşe hareketini çalıştırabilir.</string>
+    <string name="gesture_trainer_rating_precise">tanındı, hassas</string>
+    <string name="gesture_trainer_rating_good">tanındı, iyi</string>
+    <string name="gesture_trainer_rating_borderline">tanındı, ancak bir sınıra yakın</string>
+    <string name="gesture_trainer_try_recognized">Deneme <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Deneme <xliff:g id="number">%1$d</xliff:g>: tanınmadı.</string>
+    <string name="gesture_trainer_try_other">Deneme <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> olarak tanındı.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> denemeden <xliff:g id="recognized">%2$d</xliff:g> tanındı</string>
+    <string name="gesture_trainer_results_tries">Denemeleriniz</string>
+    <string name="gesture_trainer_results_change">Değiştirilmesi gerekenler</string>
+    <string name="gesture_trainer_results_close">Bir sınıra yakın</string>
+    <string name="gesture_trainer_results_all_good">Tüm denemeler sınırlar içinde tanındı.</string>
+    <string name="gesture_trainer_results_settings">Yardımcı olabilecek ayarlar</string>
+    <string name="gesture_trainer_next">Sonraki alıştırma</string>
+    <string name="gesture_trainer_repeat">Tekrarla</string>
+    <string name="gesture_trainer_finish">Bitir</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> grubundaki tüm alıştırmaları bitirdiniz.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> ayarını değiştir</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms sürdü</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm uzunluğunda</string>
+    <string name="gesture_trainer_measure_speed">saniyede <xliff:g id="speed">%1$.0f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_angle">düz çizgiden <xliff:g id="degrees">%1$.0f</xliff:g> derece sapma</string>
+    <string name="gesture_trainer_measure_start">ilk santimetre <xliff:g id="ms">%1$d</xliff:g> ms\'de</string>
+    <string name="gesture_trainer_measure_landing">parmaklar <xliff:g id="ms">%1$d</xliff:g> ms arayla değdi</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms\'lik dokunuş</string>
+    <string name="gesture_trainer_measure_gap">dokunuşlar arasında <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">parmaklar <xliff:g id="mm">%1$.0f</xliff:g> mm hareket etti</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> derece döndü</string>
+    <string name="gesture_trainer_measure_corner">köşenin kenarlarından <xliff:g id="mm">%1$.0f</xliff:g> mm uzakta</string>
+    <string name="gesture_trainer_measure_edge">kenardan <xliff:g id="mm">%1$.0f</xliff:g> mm uzakta başladı</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Ekrandaki parmak sayısı: <xliff:g id="wanted">%2$d</xliff:g> yerine <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Parmaklar <xliff:g id="ms">%1$d</xliff:g> ms arayla değdi; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Tüm parmaklar ekrana değmeden bir parmak kalktı.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Parmaklar <xliff:g id="ms">%1$d</xliff:g> ms arayla kalktı; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_became_exploration">Parmak çok uzun süre hareketsiz kaldı veya başta çok yavaş hareket etti, bu nedenle dokunuş dokunarak keşfetmeye dönüştü.</string>
+    <string name="gesture_trainer_finding_slow_start">İlk santimetre <xliff:g id="ms">%1$d</xliff:g> ms sürdü; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_paused">Parmak <xliff:g id="ms">%1$d</xliff:g> ms boyunca yavaşladı; her santimetre en fazla <xliff:g id="limit">%2$d</xliff:g> ms sürebilir.</string>
+    <string name="gesture_trainer_finding_too_short">Hareket yalnızca <xliff:g id="mm">%1$.0f</xliff:g> mm idi; en az <xliff:g id="limit">%2$.0f</xliff:g> mm olmalıdır.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Parmak <xliff:g id="direction">%1$s</xliff:g> gitmeye başladı.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Parmaklar <xliff:g id="direction">%1$s</xliff:g> gitmeye başladı.</string>
+    <string name="gesture_trainer_finding_off_line">Yol düz çizgiden <xliff:g id="degrees">%1$.0f</xliff:g> derece saptı; en fazla <xliff:g id="limit">%2$.0f</xliff:g> dereceye izin verilir.</string>
+    <string name="gesture_trainer_finding_curved">Yol <xliff:g id="wanted">%2$d</xliff:g> yerine <xliff:g id="parts">%1$d</xliff:g> parçaya bölündü.</string>
+    <string name="gesture_trainer_finding_turn_missing">Dönüş bulunamadı.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Dönüşten sonra parmak <xliff:g id="direction">%1$s</xliff:g> gitti.</string>
+    <string name="gesture_trainer_finding_tap_moved">Parmak bir dokunuş sırasında <xliff:g id="mm">%1$.1f</xliff:g> mm kaydı; en fazla <xliff:g id="limit">%2$.1f</xliff:g> mm\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Bir dokunuş <xliff:g id="ms">%1$d</xliff:g> ms sürdü; bu, <xliff:g id="limit">%2$d</xliff:g> ms\'den uzun.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Son dokunuş <xliff:g id="ms">%1$d</xliff:g> ms basılı tutuldu; en az <xliff:g id="limit">%2$d</xliff:g> ms olmalıdır.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> yerine <xliff:g id="taps">%1$d</xliff:g> dokunuş.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> yerine <xliff:g id="taps">%1$d</xliff:g> dokunuş.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Dokunuşlar arasında <xliff:g id="ms">%1$d</xliff:g> ms geçti; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_taps_apart">Dokunuşlar <xliff:g id="mm">%1$.0f</xliff:g> mm arayla değdi; en fazla <xliff:g id="limit">%2$.0f</xliff:g> mm\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Parmaklar yalnızca <xliff:g id="mm">%1$.0f</xliff:g> mm hareket etti; en az <xliff:g id="limit">%2$.0f</xliff:g> mm hareket etmeleri gerekir.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Parmaklar ters yönde hareket etti.</string>
+    <string name="gesture_trainer_finding_moved_together">Tüm el ekran üzerinde <xliff:g id="mm">%1$.0f</xliff:g> mm kaydı; bu, parmakların birbirine yaklaşmasından veya uzaklaşmasından fazla.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Parmaklar yalnızca <xliff:g id="degrees">%1$.0f</xliff:g> derece döndü; en az <xliff:g id="limit">%2$.0f</xliff:g> derece dönmeleri gerekir.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Parmaklar ters yönde döndü.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">İlk hamle <xliff:g id="mm">%1$.0f</xliff:g> mm idi; en az <xliff:g id="limit">%2$.0f</xliff:g> mm olmalıdır.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Geri dönüş hamlesi <xliff:g id="mm">%1$.0f</xliff:g> mm idi; en az <xliff:g id="limit">%2$.0f</xliff:g> mm olmalıdır.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">İleri geri kaydırma <xliff:g id="ms">%1$d</xliff:g> ms sürdü; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Parmak kenardan <xliff:g id="mm">%1$.0f</xliff:g> mm uzağa değdi; kenar <xliff:g id="limit">%2$.0f</xliff:g> mm genişliğindedir.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Parmak kenarın diğer yarısında başladı.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Parmak <xliff:g id="mm">%1$.0f</xliff:g> mm kaydı; en az <xliff:g id="limit">%2$.0f</xliff:g> mm kayması gerekir.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Kaydırma çok uzun: parmak ikinci tıklamayı geçti, <xliff:g id="mm">%1$.0f</xliff:g> mm; ikinci tıklama <xliff:g id="limit">%2$.0f</xliff:g> mm\'dedir.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Tıklamaya ulaşmak <xliff:g id="ms">%1$d</xliff:g> ms sürdü; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Kaydırma <xliff:g id="degrees">%1$.0f</xliff:g> derece yana saptı; en fazla <xliff:g id="limit">%2$.0f</xliff:g> dereceye izin verilir.</string>
+    <string name="gesture_trainer_finding_corner_missed">Dokunuş köşenin kenarlarından <xliff:g id="mm">%1$.0f</xliff:g> mm uzağa değdi; köşe <xliff:g id="limit">%2$.0f</xliff:g> mm\'dir.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Bir köşe dokunuşu <xliff:g id="ms">%1$d</xliff:g> ms sürdü; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_none">Bu hareketle eşleşen bir şey algılanmadı.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Cama kaç parmağın değdiğini kontrol edin. Ekrana dayanan avuç içi veya başka bir parmak da sayılır.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Tüm parmakları tek tek değil, tek bir el gibi aynı anda koyun.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Önce tüm parmakları koyun, ardından hareket ettirin veya kaldırın.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Tüm parmakları aynı anda kaldırın.</string>
+    <string name="gesture_trainer_tip_slow_start">Ekrana dokunduğunuz anda hareket etmeye başlayın ve başlangıçta daha hızlı hareket edin.</string>
+    <string name="gesture_trainer_tip_paused">Parmağı kaldırana kadar eşit hızda hareket ettirin. Sona doğru yavaşlamayın.</string>
+    <string name="gesture_trainer_tip_too_short">Hareketi yaklaşık 2-3 cm olacak şekilde uzatın.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Hareketin en başındaki yönü kontrol edin. Telefonu tam önünüzde düz tutmak yardımcı olur.</string>
+    <string name="gesture_trainer_tip_off_line">Çapraz değil, yalnızca yön boyunca hareket edin. İşaret parmağı, başparmaktan daha düz bir çizgi çizer.</string>
+    <string name="gesture_trainer_tip_curved">Çizgiyi düz tutun ve kaldırırken parmağı yana kıvırmadan tam sonunda kaldırın.</string>
+    <string name="gesture_trainer_tip_turn_missing">Kaldırmadan, dik açıyla veya düz geri dönerek yönü keskin bir şekilde değiştirin. Her parça yaklaşık 2 cm olmalıdır.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Dönüşten sonra hangi yöne gittiğinizi kontrol edin: ikinci parça, hareketin adındaki diğer yöne gitmelidir.</string>
+    <string name="gesture_trainer_tip_tap_moved">Kaydırmadan, parmak ucuyla düz aşağı ve yukarı dokunun.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Her dokunuşu kısa yapın: dokunun ve hemen kaldırın.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Son dokunuşta parmakları basılı tutma süresinin tamamı boyunca ekranda hareketsiz tutun.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Dokunuşları sayın ve hepsini tek seferde hızlıca yapın.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Dokunuşları sayın. Camdan seken bir parmak fazladan bir dokunuş oluşturur.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Daha hızlı dokunun: kaldırdıktan hemen sonra sonraki dokunuşa başlayın.</string>
+    <string name="gesture_trainer_tip_taps_apart">Her seferinde aynı noktaya dokunun.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Parmakları daha fazla hareket ettirin; en az 1 cm birbirine yaklaştırın veya uzaklaştırın.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Kıstırmada parmaklar birbirine yaklaşır, açmada parmaklar birbirinden uzaklaşır.</string>
+    <string name="gesture_trainer_tip_moved_together">Yalnızca parmakları birbirine yaklaştırın veya uzaklaştırın. Tüm eli ekran üzerinde kaydırmayın.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Bir kadranı çeyrek tur çevirir gibi daha fazla döndürün.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Saat yönünde, saatin akrep ve yelkovanının döndüğü yönde döndürmek demektir: üstteki parmak sağa gider.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">İlk hamleyi en az 1 cm uzunluğunda yapın.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">İlk hamleden sonra kaldırmadan önce diğer yöne geri gelin.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">İleri geri kaydırmayı hızlı yapın; gidiş ve dönüş yaklaşık bir saniyede.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Parmak ucu kısmen ekranın dışında kalacak şekilde tam kenardan başlayın.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Kenarın hangi yarısında başladığınızı kontrol edin.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Tıklamayı duyana kadar daha uzağa kaydırın, ardından kaldırın.</string>
+    <string name="gesture_trainer_tip_edge_too_long">İlk tıklamadan hemen sonra, ikinciden önce kaldırın.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Tıklamadan önce durmadan, daha hızlı kaydırın.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Kenardan çapraz değil, düz bir şekilde içeri ya da kenar boyunca düz kaydırın.</string>
+    <string name="gesture_trainer_tip_corner_missed">Parmağı her iki kenara da değecek şekilde tam köşeye koyun.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Köşeye dokunduktan sonra daha hızlı kaldırın.</string>
+    <string name="gesture_trainer_close_to_limit">Sınıra yakın: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Kaydırmalar yavaş başlıyor. Daha uzun bir <xliff:g id="setting">%1$s</xliff:g> değeri daha yavaş bir başlangıca izin verir.</string>
+    <string name="gesture_trainer_advice_tap_time">Dokunuşlar yavaş. Daha uzun bir <xliff:g id="setting">%1$s</xliff:g> değeri daha yavaş dokunuşlara izin verir.</string>
+    <string name="gesture_trainer_advice_edge_width">Kaydırmalar kenardan çok uzakta başlıyor. Daha büyük bir <xliff:g id="setting">%1$s</xliff:g> değeri, kenara yakın başlayan kaydırmaları da kenar kaydırmalarına dönüştürür.</string>
+    <string name="gesture_trainer_advice_corner_size">Dokunuşlar köşenin dışına düşüyor. Daha büyük bir <xliff:g id="setting">%1$s</xliff:g> değeri köşeleri büyütür.</string>
+    <string name="gesture_trainer_advice_corner_time">Köşe dokunuşları yavaş. Daha uzun bir <xliff:g id="setting">%1$s</xliff:g> değeri daha yavaş dokunuşlara izin verir.</string>
+    <string name="gesture_trainer_menu_option">Seçenek <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: <xliff:g id="number">%3$d</xliff:g>. öğeyi seçin, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Menüyü açmak için bir parmağı <xliff:g id="edge">%1$s</xliff:g> en az <xliff:g id="distance">%2$d</xliff:g> mm yukarı veya aşağı kaydırın. Menüde yukarıdan aşağıya <xliff:g id="count">%3$d</xliff:g> öğe vardır, her biri yaklaşık <xliff:g id="size">%6$s</xliff:g> cm yüksekliğindedir. <xliff:g id="number">%4$d</xliff:g>. öğe, <xliff:g id="item">%5$s</xliff:g>, ekranın üst kısmının <xliff:g id="from">%7$s</xliff:g> ile <xliff:g id="to">%8$s</xliff:g> cm altındadır. Öğe söylendiğinde parmağı kaldırın.</string>
+    <string name="gesture_trainer_menu_sample">Bu kenarda menü yok. Alıştırmada <xliff:g id="count">%1$d</xliff:g> örnek öğe kullanılır.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Deneme <xliff:g id="number">%1$d</xliff:g>: menü seçim yapılmadan kapandı.</string>
+    <string name="gesture_trainer_try_menu_other">Deneme <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> seçildi.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g>. öğede kaldırıldı</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Parmak, kenarın köşelerin ve üst ile alt kenarların bulunduğu en üst veya en alt ucunda başladı.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Parmak kenardan <xliff:g id="mm">%1$.0f</xliff:g> mm uzakta kalktı; menü <xliff:g id="limit">%2$.0f</xliff:g> mm\'nin ötesinde kapanır.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Parmak <xliff:g id="target">%2$d</xliff:g>. öğe yerine <xliff:g id="item">%1$d</xliff:g>. öğede kalktı.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Kenarın üst ve alt uçlarından biraz uzakta başlayın.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Kaydırırken parmağı kenara yakın tutun ve orada kaldırın.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Her öğenin kenar boyunca sabit bir yeri vardır ve parmağın kalktığı öğe seçilir. Öğe söylendiğinde kaldırın.</string>
+    <string name="gesture_trainer_contents">İçindekiler</string>
+    <string name="gesture_trainer_contents_heading">İçindekiler: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">tamamlandı, <xliff:g id="tries">%2$d</xliff:g> denemeden <xliff:g id="hits">%1$d</xliff:g> tanındı</string>
+    <string name="gesture_trainer_group_tap_swipe">Dokunma ve kaydırma</string>
+    <string name="gesture_trainer_group_edge_swipes">Kenarlardan kaydırmalar</string>
+    <string name="gesture_trainer_group_along_edges">Kenarlar boyunca kaydırmalar</string>
+    <string name="gesture_trainer_group_edge_menus">Kenar menüleri</string>
+    <string name="gesture_trainer_group_corners">Köşeler</string>
+    <string name="gesture_trainer_group_back_tap">Arkaya dokunma</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">İki parmakla dokunup ardından iki parmakla kaydırma hareketleri hariç tutuldu: <xliff:g id="setting">%1$s</xliff:g> kapalı.</string>
+    <string name="gesture_trainer_how_swipe_hold">Ardından kaldırmadan parmağı en az <xliff:g id="hold">%1$d</xliff:g> ms hareketsiz tutun ve kaldırın.</string>
+    <string name="gesture_trainer_half_top">üst</string>
+    <string name="gesture_trainer_half_bottom">alt</string>
+    <string name="gesture_trainer_how_taps_half">Ekranın <xliff:g id="half">%1$s</xliff:g> yarısına dokunun. Parmakların arasındaki nokta yarıyı belirler.</string>
+    <string name="gesture_trainer_same_fingers">aynı parmaklarla</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> dokunun. Son dokunuştan hemen sonra, <xliff:g id="gap">%3$d</xliff:g> ms içinde, ekrana yeniden <xliff:g id="swipe_fingers">%4$s</xliff:g> dokunun ve yaklaşık 2-3 cm boyunca düz bir çizgide <xliff:g id="direction">%5$s</xliff:g> kaydırın, ardından kaldırın.</string>
+    <string name="gesture_trainer_how_corner_hold">Son dokunuşta parmağı en az <xliff:g id="hold">%1$d</xliff:g> ms boyunca köşede hareketsiz bırakın.</string>
+    <string name="gesture_trainer_how_back_tap">Telefonu yanlarından elinizde tutun ve kapıyı çalar gibi, parmak ucuyla sıkıca ve hızlıca arkasının ortasına <xliff:g id="taps">%1$s</xliff:g> dokunun. Dokunuşları birbirine yakın tutun: aralarında en fazla <xliff:g id="gap">%2$d</xliff:g> ms olsun. Dokunurken ekrana dokunmayın.</string>
+    <string name="gesture_trainer_back_tap_info">Alıştırma sırasında arkaya dokunmalar komut çalıştırmaz. <xliff:g id="setting">%1$s</xliff:g>, bir dokunuşun ne kadar güçlü olması gerektiğini belirler.</string>
+    <string name="gesture_trainer_go_placed">Hareketi <xliff:g id="tries">%1$d</xliff:g> kez yapın.</string>
+    <string name="gesture_trainer_along_left">sol kenar</string>
+    <string name="gesture_trainer_along_right">sağ kenar</string>
+    <string name="gesture_trainer_along_top">üst kenar</string>
+    <string name="gesture_trainer_along_bottom">alt kenar</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> boyunca kaydırmalar hariç tutuldu: bu kenarda bir kenar menüsü var, bu nedenle kenar boyunca kaydırma bir hareket çalıştırmak yerine menüyü açar.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> boyunca kaydırmalar hariç tutuldu: bu kenar kaydırma yapar, bu nedenle kenar boyunca kaydırma bir hareket çalıştırmak yerine uygulamayı kaydırır.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Parmak kenardan çok uzaklaştı.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Parmağı camın tam kıyısında, kenar boyunca düz tutun.</string>
+    <string name="gesture_trainer_go_back_tap">Arkaya dokunma hareketini <xliff:g id="tries">%1$d</xliff:g> kez yapın. Ekrana dokunmak denemeyi başarısız kılar.</string>
+    <string name="gesture_trainer_no_accelerometer">Bu alıştırma için ivmeölçer gerekir. İvmeölçer yok.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms hareketsiz tutuldu</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> güçte dokunuş</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Parmak sonda <xliff:g id="ms">%1$d</xliff:g> ms hareketsiz kaldı; en az <xliff:g id="limit">%2$d</xliff:g> ms hareketsiz kalması gerekir.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Parmaklar ekranın diğer yarısına dokundu.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Dokunuşlardan sonra kaydırma gelmedi.</string>
+    <string name="gesture_trainer_finding_swipe_late">Kaydırma son dokunuştan <xliff:g id="ms">%1$d</xliff:g> ms sonra başladı; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Arkaya dokunma çok hafif: gereken gücün %%<xliff:g id="percent">%1$d</xliff:g> kadarı.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Bir dokunuş telefonu arkasından çok yana doğru salladı.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefon bir dokunuştan hemen önce hareket ediyordu.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Ekrana dokunuldu; ekrana dokunulurken yapılan dokunuşlar sayılmaz.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Arkaya dokunuşlar arasında <xliff:g id="ms">%1$d</xliff:g> ms geçti; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Kaydırmadan sonra parmağı basılı tutma süresinin tamamı boyunca ekranda hareketsiz tutun. Ardından kaldırın.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Hangi yarıya dokunduğunuzu kontrol edin: ekranın ortası üst yarıyı alt yarıdan ayırır.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Son dokunuştan sonra hemen ekrana yeniden dokunun ve kaydırın.</string>
+    <string name="gesture_trainer_tip_swipe_late">Kaydırmaya son dokunuştan hemen sonra, ara vermeden başlayın.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Arkanın ortasına yakın bir yere, parmak ucuyla veya tırnakla daha sert dokunun.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Kenarına veya açılı olarak değil, telefonun arkasına düz dokunun.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Dokunmadan önce telefonu bir an hareketsiz tutun ve eliniz onu hareket ettirmesin diye gevşek tutun.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Arkaya dokunurken parmaklarınızı ekrandan uzak tutun: telefonu yanlarından tutun.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Daha hızlı dokunun, dokunuşları art arda yapın.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Parmak kaydırmadan sonra çok erken kalkıyor. Daha kısa bir <xliff:g id="setting">%1$s</xliff:g> değeri daha kısa basılı tutmaya izin verir.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Arkaya dokunmalar hafif. Daha yüksek bir <xliff:g id="setting">%1$s</xliff:g> değeri daha hafif dokunuşları algılar ve çarpmaları da dokunuş olarak algılayabilir.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Parmaklar <xliff:g id="degrees">%1$.0f</xliff:g> derece döndü; <xliff:g id="limit">%2$.0f</xliff:g> dereceden itibaren hareket bir döndürmedir.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Parmakları birbirinin etrafında yay çizerek değil, düz bir çizgide birbirine yaklaştırın veya uzaklaştırın.</string>
+    <string name="gesture_trainer_finding_other_gesture">Hareket bunun yerine o hareketle eşleşti.</string>
+    <string name="gesture_trainer_side_left">sol</string>
+    <string name="gesture_trainer_side_right">sağ</string>
+    <string name="gesture_trainer_side_top">üst</string>
+    <string name="gesture_trainer_side_bottom">alt</string>
+    <string name="gesture_trainer_finding_wrong_edge">Parmak <xliff:g id="side">%1$s</xliff:g> kenarda başladı; bu alıştırma <xliff:g id="expected">%2$s</xliff:g> kenarda yapılır.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Tam olarak alıştırmanın belirttiği kenardan başlayın.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Bu hareket yerine bir kenar menüsü açıldı.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Menüsü olan bir kenar boyunca kaydırma menüyü açar. Alıştırmanın belirttiği kenardan başlayın.</string>
+    <string name="gesture_trainer_group_three_part">Üç parçalı kaydırmalar</string>
+    <string name="gesture_trainer_group_two_stroke">İki hamleli kaydırmalar</string>
+    <string name="gesture_trainer_group_shake">Sallama</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Üç parçalı kaydırmalar hariç tutuldu: <xliff:g id="setting">%1$s</xliff:g> açık.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">İki hamleli kaydırmalar hariç tutuldu: <xliff:g id="setting">%1$s</xliff:g> ayarı <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Alıştırma sırasında sallama komut çalıştırmaz. <xliff:g id="setting">%1$s</xliff:g>, bir sallamanın ne kadar güçlü olması gerektiğini belirler.</string>
+    <string name="gesture_trainer_go_shake">Telefonu <xliff:g id="tries">%1$d</xliff:g> kez sallayın ve her sallamadan sonra kısa bir ara verin.</string>
+    <string name="gesture_trainer_how_shake">Telefonu sıkıca tutun ve bir su damlasını silkeler gibi hızlıca ileri geri sallayın: her yöne en az iki kez, hepsi yaklaşık üçte iki saniye içinde. Ardından telefonu hareketsiz tutun.</string>
+    <string name="gesture_trainer_how_two_stroke">Bir parmakla yaklaşık 2 cm <xliff:g id="first">%1$s</xliff:g> kaydırın ve kaldırın. Ardından hemen, <xliff:g id="time">%3$d</xliff:g> ms içinde, bir parmakla yaklaşık 2 cm <xliff:g id="second">%2$s</xliff:g> kaydırın ve kaldırın.</string>
+    <string name="gesture_trainer_how_three_part">Ekrana bir parmakla dokunun ve kaldırmadan <xliff:g id="first">%1$s</xliff:g> kaydırın, ardından keskin bir şekilde dönüp <xliff:g id="second">%2$s</xliff:g> kaydırın, sonra yine keskin bir şekilde dönüp <xliff:g id="third">%3$s</xliff:g> kaydırın; her parça yaklaşık 2 cm olsun, ardından kaldırın. Bunu eğriler değil, keskin köşeler içeren tek, hızlı ve akıcı bir hareket olarak yapın.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Bir parmağı ekranın üst üçte birine, diğerini alt üçte birine koyun; örneğin başparmak aşağıda, işaret parmağı yukarıda.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Parmaklardan biri ekranın üst üçte birinde, diğeri alt üçte birinde değildi.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">İkinci kaydırma yapılmadı.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">İkinci kaydırma birinciden <xliff:g id="ms">%1$d</xliff:g> ms sonra başladı; en fazla <xliff:g id="limit">%2$d</xliff:g> ms\'ye izin verilir.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">İlk kaydırma <xliff:g id="direction">%1$s</xliff:g> gitti.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">İkinci kaydırma <xliff:g id="direction">%1$s</xliff:g> gitti.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Sallama çok hafifti: gereken gücün %%<xliff:g id="percent">%1$d</xliff:g> kadarı.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">İleri geri salınımlar: gereken <xliff:g id="wanted">%2$d</xliff:g> salınımdan <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Parmakları birbirinden uzağa açın; biri üst kenara, diğeri alt kenara yakın olsun.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">İlk kaydırmadan sonra parmağı kaldırın ve hemen yeniden kaydırın.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Parmağı kaldırdıktan hemen sonra ikinci kaydırmaya başlayın.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Daha sert ve daha hızlı sallayın.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Arada durmadan, her yöne en az iki kez ileri geri, daha hızlı sallayın.</string>
+    <string name="gesture_trainer_measure_shake_strength">en güçlü hareket <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Sallamalar hafif. Daha yüksek bir <xliff:g id="setting">%1$s</xliff:g> değeri daha hafif sallamaları algılar ve telefonu taşımayı da sallama olarak algılayabilir.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">İkinci kaydırma geç başlıyor. Daha uzun bir <xliff:g id="setting">%1$s</xliff:g> değeri ikinci kaydırmanın daha geç başlamasına izin verir; bu durumda tek bir kaydırma da çalışmadan önce daha uzun bekler.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> açık.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> kapalı: iki parmakla kaydırmalar uygulamayı kaydırır ve ileri geri kaydırma da çoğunlukla kaydırma yapar. Bu ayar açıkken iki parmakla kaydırmalar, kaydırma yerine SandFly komutlarını çalıştırır.</string>
+    <string name="gesture_trainer_measure_first_stroke">ilk kaydırma <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ikinci kaydırma <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">tüm hareket <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">aralarında <xliff:g id="ms">%1$d</xliff:g> ms kaldırıldı</string>
+</resources>

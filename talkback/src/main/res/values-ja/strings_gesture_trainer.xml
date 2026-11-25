@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">ジェスチャー トレーナー</string>
+    <string name="gesture_trainer_intro">ジェスチャーのグループを選択してください。各練習ではジェスチャーを説明します。ジェスチャーを <xliff:g id="tries">%1$d</xliff:g> 回行ってください。各試行の結果が読み上げられます。最後の試行の後、各試行の測定値、変更すべき点、関連する設定が画面に表示されます。</string>
+    <string name="gesture_trainer_group_one_finger">1 本の指</string>
+    <string name="gesture_trainer_group_two_fingers">2 本の指</string>
+    <string name="gesture_trainer_group_three_fingers">3 本の指</string>
+    <string name="gesture_trainer_group_four_fingers">4 本の指</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">ピンチ、回転、こする</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>、<xliff:g id="count">%2$d</xliff:g> 件の練習</string>
+    <string name="gesture_trainer_close">閉じる</string>
+    <string name="gesture_trainer_no_detection">ジェスチャー トレーナーには Android 13 以降が必要です。</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">往復ジェスチャーと直角ジェスチャーは除外されています: <xliff:g id="setting">%1$s</xliff:g>がオンです。</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">2 本の指のスワイプは除外されています: <xliff:g id="setting">%1$s</xliff:g>がオフのため、アプリがスクロールします。</string>
+    <string name="gesture_trainer_exercise_heading">練習 <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">開始</string>
+    <string name="gesture_trainer_skip">この練習をスキップ</string>
+    <string name="gesture_trainer_back_to_groups">グループに戻る</string>
+    <string name="gesture_trainer_go">画面上の任意の場所でジェスチャーを <xliff:g id="tries">%1$d</xliff:g> 回行ってください。1 回のタッチが 1 回の試行です。</string>
+    <string name="gesture_trainer_fingers_1">1 本の指</string>
+    <string name="gesture_trainer_fingers_2">横に並べて約 1 cm 離した 2 本の指</string>
+    <string name="gesture_trainer_fingers_3">横に並べて少し離した 3 本の指</string>
+    <string name="gesture_trainer_fingers_4">横に並べて少し離した 4 本の指</string>
+    <string name="gesture_trainer_direction_up">上</string>
+    <string name="gesture_trainer_direction_down">下</string>
+    <string name="gesture_trainer_direction_left">左</string>
+    <string name="gesture_trainer_direction_right">右</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g>で画面に触れ、待たずに<xliff:g id="direction">%2$s</xliff:g>へ約 2～3 cm まっすぐスライドしてから離します。すぐに動かし始めてください。最初に止まった指はタッチガイドを開始します。</string>
+    <string name="gesture_trainer_how_swipe_multi">指を同時に置き、すべて同じ方向に動かします。すべての指が常に<xliff:g id="direction">%1$s</xliff:g>へ動く必要があるため、まっすぐ動かしてください。</string>
+    <string name="gesture_trainer_how_back_and_forth">1 本の指で画面に触れて<xliff:g id="first">%1$s</xliff:g>へ約 2 cm スライドし、指を離さずにそのまま<xliff:g id="second">%2$s</xliff:g>へ約 2 cm 戻してから離します。1 回のすばやく滑らかな動きで行ってください。</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g>で画面に触れて<xliff:g id="first">%2$s</xliff:g>へ約 2 cm スライドし、指を離さずに鋭く向きを変えて<xliff:g id="second">%3$s</xliff:g>へ約 2 cm スライドしてから離します。曲線ではなく、L の字のような鋭い角にしてください。</string>
+    <string name="gesture_trainer_taps_1">1 回</string>
+    <string name="gesture_trainer_taps_2">2 回</string>
+    <string name="gesture_trainer_taps_3">3 回</string>
+    <string name="gesture_trainer_taps_4">4 回</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g>で<xliff:g id="taps">%1$s</xliff:g>タップします。指を同時に置いて同時に離し、すばやく、スライドせずに行います。</string>
+    <string name="gesture_trainer_how_taps_quick">タップはすばやく同じ場所で行ってください。次のタップは前のタップから <xliff:g id="gap">%1$d</xliff:g> ミリ秒以内に行う必要があります。</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g>を同時に画面に置き、スライドせずに <xliff:g id="hold">%2$d</xliff:g> ミリ秒以上動かさないでください。</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">他のコマンドが割り当てられていない場合、このジェスチャーは SandFly をオフにします。トレーナーでは何も実行されません。</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g>で<xliff:g id="taps">%1$s</xliff:g>タップし、最後のタップで指を画面に置いたまま <xliff:g id="hold">%3$d</xliff:g> ミリ秒以上動かさないでください。</string>
+    <string name="gesture_trainer_how_three_finger_hand">親指、人差し指、中指を使います。</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">人差し指と中指を並べて置き、親指と薬指をそれぞれ数センチ離して両側に置きます。次に、4 本の指先を 1 点に集めます。</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g> 本の指を大きく広げて画面に置きます。次に、何かをつまむように指を 1 cm 以上まっすぐ近づけて、画面から離します。手全体ではなく指だけを動かし、弧を描かないようにしてください。</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g> 本の指を近づけて画面に置きます。次に、指を 1 cm 以上まっすぐ広げて、画面から離します。手全体ではなく指だけを動かし、弧を描かないようにしてください。</string>
+    <string name="gesture_trainer_clockwise">時計回り</string>
+    <string name="gesture_trainer_counterclockwise">反時計回り</string>
+    <string name="gesture_trainer_how_rotate">2 本の指を約 2～3 cm 離して画面に置き、ダイヤルを回すように中心を軸にして<xliff:g id="way">%1$s</xliff:g>に約 4 分の 1 回転させます。その後、離します。</string>
+    <string name="gesture_trainer_how_scrub">2 本の指を画面に置き、何かを消すようにすばやく片側に約 2 cm 動かして戻します。すべて約 1 秒以内に行います。その後、離します。</string>
+    <string name="gesture_trainer_edge_bottom">下端に</string>
+    <string name="gesture_trainer_edge_top_left">上端の左半分に</string>
+    <string name="gesture_trainer_edge_top_right">上端の右半分に</string>
+    <string name="gesture_trainer_edge_left_top">左端の上半分に</string>
+    <string name="gesture_trainer_edge_left_bottom">左端の下半分に</string>
+    <string name="gesture_trainer_edge_right_top">右端の上半分に</string>
+    <string name="gesture_trainer_edge_right_bottom">右端の下半分に</string>
+    <string name="gesture_trainer_edge_left">左端に</string>
+    <string name="gesture_trainer_edge_right">右端に</string>
+    <string name="gesture_trainer_edge_top">上端に</string>
+    <string name="gesture_trainer_how_edge">1 本の指を<xliff:g id="edge">%1$s</xliff:g>、端から <xliff:g id="edge_width">%2$d</xliff:g> mm 以内に置き、画面の内側へ<xliff:g id="direction">%3$s</xliff:g>に最初のクリックまで約 <xliff:g id="distance">%4$d</xliff:g> mm スライドします。その後すぐに離します。2 回目のクリックを過ぎると長いスライドになります。</string>
+    <string name="gesture_trainer_how_edge_long">1 本の指を<xliff:g id="edge">%1$s</xliff:g>、端から <xliff:g id="edge_width">%2$d</xliff:g> mm 以内に置き、画面の内側へ<xliff:g id="direction">%3$s</xliff:g>に最初のクリックを過ぎて 2 回目のクリックまで約 <xliff:g id="distance">%4$d</xliff:g> mm スライドします。その後、離します。</string>
+    <string name="gesture_trainer_how_along">1 本の指を<xliff:g id="edge">%1$s</xliff:g>に沿って<xliff:g id="direction">%2$s</xliff:g>へ <xliff:g id="distance">%3$d</xliff:g> mm 以上スライドします。</string>
+    <string name="gesture_trainer_corner_top_left">左上</string>
+    <string name="gesture_trainer_corner_top_right">右上</string>
+    <string name="gesture_trainer_corner_bottom_left">左下</string>
+    <string name="gesture_trainer_corner_bottom_right">右下</string>
+    <string name="gesture_trainer_how_corner">画面の<xliff:g id="corner">%2$s</xliff:g>隅を<xliff:g id="taps">%1$s</xliff:g>タップします。指を隅にぴったり置き、両方の端から <xliff:g id="size">%3$d</xliff:g> mm 以内に収め、<xliff:g id="time">%4$d</xliff:g> ミリ秒以内にすばやく離します。</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm。<xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm。</string>
+    <string name="gesture_trainer_corner_warning">隅を大きくすると、左上の「戻る」など隅の近くにあるコントロールをタップしたときに、代わりに隅のジェスチャーが実行されることがあります。</string>
+    <string name="gesture_trainer_rating_precise">認識、正確</string>
+    <string name="gesture_trainer_rating_good">認識、良好</string>
+    <string name="gesture_trainer_rating_borderline">認識、ただし制限に近い</string>
+    <string name="gesture_trainer_try_recognized">試行 <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>。</string>
+    <string name="gesture_trainer_try_nothing">試行 <xliff:g id="number">%1$d</xliff:g>: 認識されませんでした。</string>
+    <string name="gesture_trainer_try_other">試行 <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g>として認識されました。</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> 回中 <xliff:g id="recognized">%2$d</xliff:g> 回認識</string>
+    <string name="gesture_trainer_results_tries">試行結果</string>
+    <string name="gesture_trainer_results_change">変更すべき点</string>
+    <string name="gesture_trainer_results_close">制限に近い</string>
+    <string name="gesture_trainer_results_all_good">すべての試行が制限内で認識されました。</string>
+    <string name="gesture_trainer_results_settings">役立つ設定</string>
+    <string name="gesture_trainer_next">次の練習</string>
+    <string name="gesture_trainer_repeat">もう一度</string>
+    <string name="gesture_trainer_finish">終了</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g>のすべての練習が終了しました。</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g>を変更</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
+    <string name="gesture_trainer_measure_length">長さ <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed">毎秒 <xliff:g id="speed">%1$.0f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_angle">直線から <xliff:g id="degrees">%1$.0f</xliff:g> 度のずれ</string>
+    <string name="gesture_trainer_measure_start">最初の 1 cm に <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
+    <string name="gesture_trainer_measure_landing">指が触れた時間差 <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ミリ秒のタップ</string>
+    <string name="gesture_trainer_measure_gap">タップの間隔 <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
+    <string name="gesture_trainer_measure_spread">指の移動 <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> 度回転</string>
+    <string name="gesture_trainer_measure_corner">隅の端から <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_edge">端から <xliff:g id="mm">%1$.0f</xliff:g> mm で開始</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">画面上の指: <xliff:g id="wanted">%2$d</xliff:g> 本ではなく <xliff:g id="fingers">%1$d</xliff:g> 本。</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">指が触れた時間差は <xliff:g id="ms">%1$d</xliff:g> ミリ秒で、許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">すべての指が置かれる前に指が離れました。</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">指を離した時間差は <xliff:g id="ms">%1$d</xliff:g> ミリ秒で、許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_became_exploration">最初に指が止まっている時間が長すぎるか動きが遅すぎたため、タッチがタッチガイドになりました。</string>
+    <string name="gesture_trainer_finding_slow_start">最初の 1 cm に <xliff:g id="ms">%1$d</xliff:g> ミリ秒かかりました。許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_paused">指が <xliff:g id="ms">%1$d</xliff:g> ミリ秒遅くなりました。1 cm あたり <xliff:g id="limit">%2$d</xliff:g> ミリ秒まで許容されます。</string>
+    <string name="gesture_trainer_finding_too_short">動きは <xliff:g id="mm">%1$.0f</xliff:g> mm しかありませんでした。<xliff:g id="limit">%2$.0f</xliff:g> mm 以上必要です。</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">指が<xliff:g id="direction">%1$s</xliff:g>へ動き始めました。</string>
+    <string name="gesture_trainer_finding_wrong_direction">指が<xliff:g id="direction">%1$s</xliff:g>へ動き始めました。</string>
+    <string name="gesture_trainer_finding_off_line">軌道が直線から <xliff:g id="degrees">%1$.0f</xliff:g> 度ずれました。許容されるのは <xliff:g id="limit">%2$.0f</xliff:g> 度までです。</string>
+    <string name="gesture_trainer_finding_curved">軌道が <xliff:g id="wanted">%2$d</xliff:g> 個ではなく <xliff:g id="parts">%1$d</xliff:g> 個の部分に曲がりました。</string>
+    <string name="gesture_trainer_finding_turn_missing">方向転換が見つかりませんでした。</string>
+    <string name="gesture_trainer_finding_second_part_wrong">方向転換の後、指が<xliff:g id="direction">%1$s</xliff:g>へ動きました。</string>
+    <string name="gesture_trainer_finding_tap_moved">タップ中に指が <xliff:g id="mm">%1$.1f</xliff:g> mm 動きました。許容されるのは <xliff:g id="limit">%2$.1f</xliff:g> mm までです。</string>
+    <string name="gesture_trainer_finding_tap_held_long">タップが <xliff:g id="ms">%1$d</xliff:g> ミリ秒続き、<xliff:g id="limit">%2$d</xliff:g> ミリ秒を超えました。</string>
+    <string name="gesture_trainer_finding_hold_too_short">最後のタップは <xliff:g id="ms">%1$d</xliff:g> ミリ秒押されました。<xliff:g id="limit">%2$d</xliff:g> ミリ秒以上必要です。</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> 回ではなく <xliff:g id="taps">%1$d</xliff:g> 回のタップ。</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> 回ではなく <xliff:g id="taps">%1$d</xliff:g> 回のタップ。</string>
+    <string name="gesture_trainer_finding_taps_too_slow">タップの間隔は <xliff:g id="ms">%1$d</xliff:g> ミリ秒で、許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_taps_apart">タップ位置が <xliff:g id="mm">%1$.0f</xliff:g> mm 離れていました。許容されるのは <xliff:g id="limit">%2$.0f</xliff:g> mm までです。</string>
+    <string name="gesture_trainer_finding_pinch_too_small">指は <xliff:g id="mm">%1$.0f</xliff:g> mm しか動きませんでした。<xliff:g id="limit">%2$.0f</xliff:g> mm 以上動かす必要があります。</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">指が逆方向に動きました。</string>
+    <string name="gesture_trainer_finding_moved_together">手全体が画面上を <xliff:g id="mm">%1$.0f</xliff:g> mm 動き、指同士が近づいたり離れたりした距離より大きくなりました。</string>
+    <string name="gesture_trainer_finding_rotate_too_small">指は <xliff:g id="degrees">%1$.0f</xliff:g> 度しか回転しませんでした。<xliff:g id="limit">%2$.0f</xliff:g> 度以上回転させる必要があります。</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">指が逆方向に回転しました。</string>
+    <string name="gesture_trainer_finding_scrub_too_short">最初の動きは <xliff:g id="mm">%1$.0f</xliff:g> mm でした。<xliff:g id="limit">%2$.0f</xliff:g> mm 以上必要です。</string>
+    <string name="gesture_trainer_finding_scrub_no_return">戻る動きは <xliff:g id="mm">%1$.0f</xliff:g> mm でした。<xliff:g id="limit">%2$.0f</xliff:g> mm 以上必要です。</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">こする動作に <xliff:g id="ms">%1$d</xliff:g> ミリ秒かかりました。許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">指は端から <xliff:g id="mm">%1$.0f</xliff:g> mm の位置に置かれました。端の幅は <xliff:g id="limit">%2$.0f</xliff:g> mm です。</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">指が端のもう一方の半分から始まりました。</string>
+    <string name="gesture_trainer_finding_edge_too_short">指は <xliff:g id="mm">%1$.0f</xliff:g> mm スライドしました。<xliff:g id="limit">%2$.0f</xliff:g> mm 以上スライドする必要があります。</string>
+    <string name="gesture_trainer_finding_edge_too_long">スライドが長すぎます: 指が 2 回目のクリックを過ぎて <xliff:g id="mm">%1$.0f</xliff:g> mm 動きました。2 回目のクリックは <xliff:g id="limit">%2$.0f</xliff:g> mm の位置です。</string>
+    <string name="gesture_trainer_finding_edge_too_slow">クリックに達するまで <xliff:g id="ms">%1$d</xliff:g> ミリ秒かかりました。許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_edge_sideways">スライドが横に <xliff:g id="degrees">%1$.0f</xliff:g> 度ずれました。許容されるのは <xliff:g id="limit">%2$.0f</xliff:g> 度までです。</string>
+    <string name="gesture_trainer_finding_corner_missed">タップは隅の端から <xliff:g id="mm">%1$.0f</xliff:g> mm の位置でした。隅のサイズは <xliff:g id="limit">%2$.0f</xliff:g> mm です。</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">隅のタップが <xliff:g id="ms">%1$d</xliff:g> ミリ秒続きました。許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_none">ジェスチャーに一致する動きは検出されませんでした。</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">画面に触れている指の数を確認してください。画面に置いた手のひらや他の指も数えられます。</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">1 本ずつではなく、1 つの手としてすべての指を同時に置いてください。</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">最初にすべての指を置いてから、動かすか離してください。</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">すべての指を同時に離してください。</string>
+    <string name="gesture_trainer_tip_slow_start">画面に触れた瞬間に動かし始め、最初をもっと速く動かしてください。</string>
+    <string name="gesture_trainer_tip_paused">離すまで一定の速さで指を動かしてください。最後に遅くならないようにしてください。</string>
+    <string name="gesture_trainer_tip_too_short">動きを長くしてください。約 2～3 cm です。</string>
+    <string name="gesture_trainer_tip_wrong_direction">動きの最初の方向を確認してください。スマートフォンを正面にまっすぐ持つと役立ちます。</string>
+    <string name="gesture_trainer_tip_off_line">斜めではなく、その方向だけに動かしてください。人差し指のほうが親指よりまっすぐ動かせます。</string>
+    <string name="gesture_trainer_tip_curved">まっすぐ動かし、最後でそのまま離してください。離すときに指を横に曲げないでください。</string>
+    <string name="gesture_trainer_tip_turn_missing">指を離さずに、直角に、またはまっすぐ逆方向に鋭く向きを変えてください。各部分は約 2 cm です。</string>
+    <string name="gesture_trainer_tip_second_part_wrong">方向転換の後に動く方向を確認してください。2 番目の部分は、ジェスチャー名にあるもう一方の方向に動く必要があります。</string>
+    <string name="gesture_trainer_tip_tap_moved">スライドせずに、指先でまっすぐ下ろして上げてください。</string>
+    <string name="gesture_trainer_tip_tap_held_long">各タップは短くしてください。触れたらすぐに離します。</string>
+    <string name="gesture_trainer_tip_hold_too_short">最後のタップでは、長押しの時間が終わるまで指を画面上で動かさないでください。</string>
+    <string name="gesture_trainer_tip_too_few_taps">タップの回数を数え、すべてを一気にすばやく行ってください。</string>
+    <string name="gesture_trainer_tip_too_many_taps">タップの回数を数えてください。画面で指が跳ねると余分なタップになります。</string>
+    <string name="gesture_trainer_tip_taps_too_slow">もっと速くタップしてください。離したらすぐに次のタップを始めます。</string>
+    <string name="gesture_trainer_tip_taps_apart">毎回同じ場所をタップしてください。</string>
+    <string name="gesture_trainer_tip_pinch_too_small">指をもっと大きく、1 cm 以上近づけるか離してください。</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">ピンチは指を近づける動き、広げるは指を離す動きです。</string>
+    <string name="gesture_trainer_tip_moved_together">指同士を近づけるか離すだけにしてください。手全体を画面上でスライドさせないでください。</string>
+    <string name="gesture_trainer_tip_rotate_too_small">ダイヤルを 4 分の 1 回転させるように、もっと大きく回してください。</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">時計回りとは時計の針が進む方向に回すことです。上の指が右に動きます。</string>
+    <string name="gesture_trainer_tip_scrub_too_short">最初の動きを 1 cm 以上にしてください。</string>
+    <string name="gesture_trainer_tip_scrub_no_return">最初の動きの後、離す前に逆方向に戻してください。</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">こする動作はすばやく、約 1 秒で往復してください。</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">指先が少し画面からはみ出るように、端ぎりぎりから始めてください。</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">端のどちらの半分から始めるかを確認してください。</string>
+    <string name="gesture_trainer_tip_edge_too_short">クリック音が聞こえるまでスライドしてから離してください。</string>
+    <string name="gesture_trainer_tip_edge_too_long">最初のクリックの直後、2 回目のクリックの前に離してください。</string>
+    <string name="gesture_trainer_tip_edge_too_slow">クリックの前で止まらずに、もっと速く内側へスライドしてください。</string>
+    <string name="gesture_trainer_tip_edge_sideways">斜めではなく、端からまっすぐ内側へ、または端に沿ってまっすぐスライドしてください。</string>
+    <string name="gesture_trainer_tip_corner_missed">両方の端に触れるように、指を隅にぴったり置いてください。</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">隅に触れたらもっと速く離してください。</string>
+    <string name="gesture_trainer_close_to_limit">制限に近い: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">スワイプの開始が遅くなっています。<xliff:g id="setting">%1$s</xliff:g>を長くすると、開始が遅くても認識されます。</string>
+    <string name="gesture_trainer_advice_tap_time">タップが遅くなっています。<xliff:g id="setting">%1$s</xliff:g>を長くすると、遅いタップも認識されます。</string>
+    <string name="gesture_trainer_advice_edge_width">スワイプの開始位置が端から離れすぎています。<xliff:g id="setting">%1$s</xliff:g>を大きくすると、端の近くから始まるスワイプもエッジのスワイプになります。</string>
+    <string name="gesture_trainer_advice_corner_size">タップが隅の外に当たっています。<xliff:g id="setting">%1$s</xliff:g>を大きくすると、隅が大きくなります。</string>
+    <string name="gesture_trainer_advice_corner_time">隅のタップが遅くなっています。<xliff:g id="setting">%1$s</xliff:g>を長くすると、遅いタップも認識されます。</string>
+    <string name="gesture_trainer_menu_option">オプション <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: 項目 <xliff:g id="number">%3$d</xliff:g>、<xliff:g id="item">%2$s</xliff:g>を選択</string>
+    <string name="gesture_trainer_how_menu">1 本の指を<xliff:g id="edge">%1$s</xliff:g>上下に <xliff:g id="distance">%2$d</xliff:g> mm 以上スライドしてメニューを開きます。メニューには上から下に <xliff:g id="count">%3$d</xliff:g> 個の項目があり、それぞれの高さは約 <xliff:g id="size">%6$s</xliff:g> cm です。項目 <xliff:g id="number">%4$d</xliff:g>、<xliff:g id="item">%5$s</xliff:g>は画面の上端から <xliff:g id="from">%7$s</xliff:g>～<xliff:g id="to">%8$s</xliff:g> cm 下にあります。項目が読み上げられたら指を離してください。</string>
+    <string name="gesture_trainer_menu_sample">この端にはメニューがありません。この練習では <xliff:g id="count">%1$d</xliff:g> 個のサンプル項目を使います。</string>
+    <string name="gesture_trainer_try_menu_cancelled">試行 <xliff:g id="number">%1$d</xliff:g>: 選択されずにメニューが閉じました。</string>
+    <string name="gesture_trainer_try_menu_other">試行 <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g>を選択しました。</string>
+    <string name="gesture_trainer_measure_menu_item">項目 <xliff:g id="number">%1$d</xliff:g> で離しました</string>
+    <string name="gesture_trainer_finding_menu_in_corner">指が端の一番上または一番下から始まりました。そこには隅と上端・下端があります。</string>
+    <string name="gesture_trainer_finding_menu_left_edge">指は端から <xliff:g id="mm">%1$.0f</xliff:g> mm の位置で離れました。<xliff:g id="limit">%2$.0f</xliff:g> mm を超えるとメニューが閉じます。</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">指が項目 <xliff:g id="target">%2$d</xliff:g> ではなく項目 <xliff:g id="item">%1$d</xliff:g> で離れました。</string>
+    <string name="gesture_trainer_tip_menu_in_corner">端の上端と下端から少し離れた位置から始めてください。</string>
+    <string name="gesture_trainer_tip_menu_left_edge">スライドする間は指を端の近くに置いたままにし、そこで離してください。</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">各項目は端に沿って決まった位置にあり、指を離した位置の項目が選択されます。項目が読み上げられたら離してください。</string>
+    <string name="gesture_trainer_contents">目次</string>
+    <string name="gesture_trainer_contents_heading">目次: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">完了、<xliff:g id="tries">%2$d</xliff:g> 回中 <xliff:g id="hits">%1$d</xliff:g> 回認識</string>
+    <string name="gesture_trainer_group_tap_swipe">タップとスワイプ</string>
+    <string name="gesture_trainer_group_edge_swipes">端からのスワイプ</string>
+    <string name="gesture_trainer_group_along_edges">端に沿ったスライド</string>
+    <string name="gesture_trainer_group_edge_menus">エッジメニュー</string>
+    <string name="gesture_trainer_group_corners">四隅</string>
+    <string name="gesture_trainer_group_back_tap">背面タップ</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">2 本の指でタップしてから 2 本の指でスワイプするジェスチャーは除外されています: <xliff:g id="setting">%1$s</xliff:g>がオフです。</string>
+    <string name="gesture_trainer_how_swipe_hold">その後、指を離さずに <xliff:g id="hold">%1$d</xliff:g> ミリ秒以上動かさず、離します。</string>
+    <string name="gesture_trainer_half_top">上</string>
+    <string name="gesture_trainer_half_bottom">下</string>
+    <string name="gesture_trainer_how_taps_half">画面の<xliff:g id="half">%1$s</xliff:g>半分をタップします。指と指の間の位置で半分が決まります。</string>
+    <string name="gesture_trainer_same_fingers">同じ指</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g>で<xliff:g id="taps">%1$s</xliff:g>タップします。最後のタップの直後、<xliff:g id="gap">%3$d</xliff:g> ミリ秒以内に<xliff:g id="swipe_fingers">%4$s</xliff:g>で再び画面に触れ、<xliff:g id="direction">%5$s</xliff:g>へ約 2～3 cm まっすぐスライドしてから離します。</string>
+    <string name="gesture_trainer_how_corner_hold">最後のタップで、指を隅に置いたまま <xliff:g id="hold">%1$d</xliff:g> ミリ秒以上動かさないでください。</string>
+    <string name="gesture_trainer_how_back_tap">スマートフォンの側面を持ち、ドアをノックするように、背面の中央を指先で<xliff:g id="taps">%1$s</xliff:g>強くすばやくタップします。タップの間隔は <xliff:g id="gap">%2$d</xliff:g> ミリ秒以内にしてください。タップ中は画面に触れないでください。</string>
+    <string name="gesture_trainer_back_tap_info">練習中は背面タップでコマンドは実行されません。<xliff:g id="setting">%1$s</xliff:g>でタップに必要な強さを設定します。</string>
+    <string name="gesture_trainer_go_placed">ジェスチャーを <xliff:g id="tries">%1$d</xliff:g> 回行ってください。</string>
+    <string name="gesture_trainer_along_left">左端</string>
+    <string name="gesture_trainer_along_right">右端</string>
+    <string name="gesture_trainer_along_top">上端</string>
+    <string name="gesture_trainer_along_bottom">下端</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g>に沿ったスライドは除外されています: エッジメニューがあるため、沿ってスライドするとジェスチャーではなくメニューが開きます。</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g>に沿ったスライドは除外されています: スクロールに使われるため、沿ってスライドするとジェスチャーではなくアプリがスクロールします。</string>
+    <string name="gesture_trainer_finding_along_off_edge">指が端から離れすぎました。</string>
+    <string name="gesture_trainer_tip_along_off_edge">指を画面の縁ぎりぎりに置き、端に沿ってまっすぐ動かしてください。</string>
+    <string name="gesture_trainer_go_back_tap">背面タップのジェスチャーを <xliff:g id="tries">%1$d</xliff:g> 回行ってください。画面に触れるとその試行は失敗です。</string>
+    <string name="gesture_trainer_no_accelerometer">この練習には加速度センサーが必要です。使用できる加速度センサーがありません。</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ミリ秒静止</string>
+    <string name="gesture_trainer_measure_back_tap_strength">タップの強さ <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">最後に指が静止したのは <xliff:g id="ms">%1$d</xliff:g> ミリ秒でした。<xliff:g id="limit">%2$d</xliff:g> ミリ秒以上静止する必要があります。</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">画面のもう一方の半分をタップしました。</string>
+    <string name="gesture_trainer_finding_swipe_missing">タップの後にスワイプがありませんでした。</string>
+    <string name="gesture_trainer_finding_swipe_late">スワイプは最後のタップから <xliff:g id="ms">%1$d</xliff:g> ミリ秒後に始まりました。許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">背面タップが弱すぎます: 必要な強さの <xliff:g id="percent">%1$d</xliff:g>%%。</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">タップでスマートフォンが背面方向より横方向に大きく揺れました。</string>
+    <string name="gesture_trainer_finding_back_tap_moving">タップの直前にスマートフォンが動いていました。</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">画面に触れていました。画面に触れている間のタップは数えられません。</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">背面タップの間隔は <xliff:g id="ms">%1$d</xliff:g> ミリ秒で、許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">スワイプの後、長押しの時間が終わるまで指を画面上で動かさないでください。その後、離します。</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">タップする半分を確認してください。画面の中央が上半分と下半分の境目です。</string>
+    <string name="gesture_trainer_tip_swipe_missing">最後のタップの後、すぐに再び画面に触れてスワイプしてください。</string>
+    <string name="gesture_trainer_tip_swipe_late">最後のタップの直後に、間を空けずにスワイプを始めてください。</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">背面の中央付近を指先か爪でもっと強くタップしてください。</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">端や斜めではなく、スマートフォンの背面にまっすぐタップしてください。</string>
+    <string name="gesture_trainer_tip_back_tap_moving">タップする前にスマートフォンを少しの間動かさずに持ち、手で動かさないように軽く持ってください。</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">背面をタップする間は画面に指を触れないでください。スマートフォンは側面を持ちます。</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">続けてすばやくタップしてください。</string>
+    <string name="gesture_trainer_advice_swipe_hold">スワイプの後、指を離すのが早すぎます。<xliff:g id="setting">%1$s</xliff:g>を短くすると、短い静止でも認識されます。</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">背面タップが弱くなっています。<xliff:g id="setting">%1$s</xliff:g>を高くすると弱いタップも検出されますが、衝撃をタップとして検出することがあります。</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">指が <xliff:g id="degrees">%1$.0f</xliff:g> 度回転しました。<xliff:g id="limit">%2$.0f</xliff:g> 度以上の動きは回転になります。</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">互いの周りを弧を描くのではなく、指同士をまっすぐ近づけるか離してください。</string>
+    <string name="gesture_trainer_finding_other_gesture">動きは代わりにそのジェスチャーに一致しました。</string>
+    <string name="gesture_trainer_side_left">左</string>
+    <string name="gesture_trainer_side_right">右</string>
+    <string name="gesture_trainer_side_top">上</string>
+    <string name="gesture_trainer_side_bottom">下</string>
+    <string name="gesture_trainer_finding_wrong_edge">指は<xliff:g id="side">%1$s</xliff:g>端から始まりましたが、この練習は<xliff:g id="expected">%2$s</xliff:g>端で行います。</string>
+    <string name="gesture_trainer_tip_wrong_edge">練習で指定された端ぎりぎりから始めてください。</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">このジェスチャーではなくエッジメニューが開きました。</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">メニューのある端に沿ってスライドするとメニューが開きます。練習で指定された端から始めてください。</string>
+    <string name="gesture_trainer_group_three_part">3 方向の連続スワイプ</string>
+    <string name="gesture_trainer_group_two_stroke">2 ストロークのスワイプ</string>
+    <string name="gesture_trainer_group_shake">振る</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">3 方向の連続スワイプは除外されています: <xliff:g id="setting">%1$s</xliff:g>がオンです。</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">2 ストロークのスワイプは除外されています: <xliff:g id="setting">%1$s</xliff:g>は<xliff:g id="value">%2$s</xliff:g>です。</string>
+    <string name="gesture_trainer_shake_info">練習中は振ってもコマンドは実行されません。<xliff:g id="setting">%1$s</xliff:g>で振るのに必要な強さを設定します。</string>
+    <string name="gesture_trainer_go_shake">スマートフォンを <xliff:g id="tries">%1$d</xliff:g> 回振ってください。振るたびに少し間を空けます。</string>
+    <string name="gesture_trainer_how_shake">水滴を振り払うように、スマートフォンをしっかり持ってすばやく前後に振ります。各方向に 2 回以上、すべて約 3 分の 2 秒以内に行います。その後、動かさずに持ちます。</string>
+    <string name="gesture_trainer_how_two_stroke">1 本の指で<xliff:g id="first">%1$s</xliff:g>へ約 2 cm スワイプして離します。すぐに、<xliff:g id="time">%3$d</xliff:g> ミリ秒以内に、1 本の指で<xliff:g id="second">%2$s</xliff:g>へ約 2 cm スワイプして離します。</string>
+    <string name="gesture_trainer_how_three_part">1 本の指で画面に触れ、離さずに<xliff:g id="first">%1$s</xliff:g>へスワイプし、鋭く向きを変えて<xliff:g id="second">%2$s</xliff:g>へスワイプし、もう一度鋭く向きを変えて<xliff:g id="third">%3$s</xliff:g>へスワイプします。各部分は約 2 cm で、最後に離します。曲線ではなく鋭い角のある、1 回のすばやく滑らかな動きで行ってください。</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">1 本の指を画面の上 3 分の 1 に、もう 1 本を下 3 分の 1 に置きます。例えば、親指を下に、人差し指を上に置きます。</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">指が 1 本は画面の上 3 分の 1、もう 1 本は下 3 分の 1 にありませんでした。</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">2 回目のスワイプがありませんでした。</string>
+    <string name="gesture_trainer_finding_second_stroke_late">2 回目のスワイプは 1 回目から <xliff:g id="ms">%1$d</xliff:g> ミリ秒後に始まりました。許容されるのは <xliff:g id="limit">%2$d</xliff:g> ミリ秒までです。</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">1 回目のスワイプが<xliff:g id="direction">%1$s</xliff:g>へ動きました。</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">2 回目のスワイプが<xliff:g id="direction">%1$s</xliff:g>へ動きました。</string>
+    <string name="gesture_trainer_finding_shake_too_light">振りが弱すぎます: 必要な強さの <xliff:g id="percent">%1$d</xliff:g>%%。</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">往復の回数: 必要な <xliff:g id="wanted">%2$d</xliff:g> 回中 <xliff:g id="swings">%1$d</xliff:g> 回。</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">指を大きく離し、1 本を上端の近くに、もう 1 本を下端の近くに置いてください。</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">1 回目のスワイプの後、指を離してすぐにもう一度スワイプしてください。</string>
+    <string name="gesture_trainer_tip_second_stroke_late">指を離したらすぐに 2 回目のスワイプを始めてください。</string>
+    <string name="gesture_trainer_tip_shake_too_light">もっと強く速く振ってください。</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">途中で止めずに、各方向に 2 回以上、もっと速く前後に振ってください。</string>
+    <string name="gesture_trainer_measure_shake_strength">最も強い動き <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">振りが弱くなっています。<xliff:g id="setting">%1$s</xliff:g>を高くすると弱い振りも検出されますが、スマートフォンを持ち運ぶ動きを振りとして検出することがあります。</string>
+    <string name="gesture_trainer_advice_two_stroke_time">2 回目のスワイプの開始が遅くなっています。<xliff:g id="setting">%1$s</xliff:g>を長くすると遅い 2 回目のスワイプも認識されますが、1 回だけのスワイプは実行までの待ち時間が長くなります。</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g>はオンです。</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g>はオフです: 2 本の指のスワイプはアプリをスクロールし、こする動作もほとんどの場合スクロールになります。この設定をオンにすると、2 本の指のスワイプはスクロールではなく SandFly のコマンドを実行します。</string>
+    <string name="gesture_trainer_measure_first_stroke">1 回目のスワイプ <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
+    <string name="gesture_trainer_measure_second_stroke">2 回目のスワイプ <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
+    <string name="gesture_trainer_measure_whole_gesture">ジェスチャー全体 <xliff:g id="ms">%1$d</xliff:g> ミリ秒</string>
+    <string name="gesture_trainer_measure_stroke_gap">間で <xliff:g id="ms">%1$d</xliff:g> ミリ秒指を離していました</string>
+</resources>

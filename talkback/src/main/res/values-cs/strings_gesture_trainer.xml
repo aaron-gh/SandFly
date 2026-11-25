@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Trenér gest</string>
+    <string name="gesture_trainer_intro">Vyberte skupinu gest. Každé cvičení popisuje jedno gesto. Proveďte gesto <xliff:g id="tries">%1$d</xliff:g>krát; výsledek každého pokusu se vysloví. Po posledním pokusu obrazovka uvede měření každého pokusu, co změnit a související nastavení.</string>
+    <string name="gesture_trainer_group_one_finger">Jeden prst</string>
+    <string name="gesture_trainer_group_two_fingers">Dva prsty</string>
+    <string name="gesture_trainer_group_three_fingers">Tři prsty</string>
+    <string name="gesture_trainer_group_four_fingers">Čtyři prsty</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Stažení, otočení a přejetí tam a zpět</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, cvičení: <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Zavřít</string>
+    <string name="gesture_trainer_no_detection">Trenér gest vyžaduje Android 13 nebo novější.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Gesta tam a zpět a gesta pod úhlem jsou vynechána: nastavení <xliff:g id="setting">%1$s</xliff:g> je zapnuto.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Přejetí dvěma prsty jsou vynechána: nastavení <xliff:g id="setting">%1$s</xliff:g> je vypnuto, takže posouvají obsah aplikací.</string>
+    <string name="gesture_trainer_exercise_heading">Cvičení <xliff:g id="number">%1$d</xliff:g> z <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Začít</string>
+    <string name="gesture_trainer_skip">Přeskočit cvičení</string>
+    <string name="gesture_trainer_back_to_groups">Zpět na skupiny</string>
+    <string name="gesture_trainer_go">Proveďte gesto <xliff:g id="tries">%1$d</xliff:g>krát, kdekoli na obrazovce. Každý dotyk je jeden pokus.</string>
+    <string name="gesture_trainer_fingers_1">jedním prstem</string>
+    <string name="gesture_trainer_fingers_2">dvěma prsty vedle sebe, asi 1 cm od sebe</string>
+    <string name="gesture_trainer_fingers_3">třemi prsty vedle sebe, mírně od sebe</string>
+    <string name="gesture_trainer_fingers_4">čtyřmi prsty vedle sebe, mírně od sebe</string>
+    <string name="gesture_trainer_direction_up">nahoru</string>
+    <string name="gesture_trainer_direction_down">dolů</string>
+    <string name="gesture_trainer_direction_left">doleva</string>
+    <string name="gesture_trainer_direction_right">doprava</string>
+    <string name="gesture_trainer_how_swipe">Dotkněte se obrazovky <xliff:g id="fingers">%1$s</xliff:g> a bez čekání přejeďte <xliff:g id="direction">%2$s</xliff:g> v přímé linii asi 2 až 3 cm, pak prsty zvedněte. Začněte se pohybovat ihned: prst, který nejprve spočine na místě, spustí prozkoumání dotykem.</string>
+    <string name="gesture_trainer_how_swipe_multi">Položte prsty současně, ve stejný okamžik, a pohybujte všemi stejným směrem. Každý prst musí po celou dobu mířit <xliff:g id="direction">%1$s</xliff:g>, takže držte linii rovně.</string>
+    <string name="gesture_trainer_how_back_and_forth">Dotkněte se obrazovky jedním prstem a přejeďte <xliff:g id="first">%1$s</xliff:g> asi 2 cm, pak bez zvednutí přejeďte přímo zpět <xliff:g id="second">%2$s</xliff:g> asi 2 cm a zvedněte prst. Proveďte to jedním rychlým plynulým pohybem.</string>
+    <string name="gesture_trainer_how_angle">Dotkněte se obrazovky <xliff:g id="fingers">%1$s</xliff:g> a přejeďte <xliff:g id="first">%2$s</xliff:g> asi 2 cm, pak bez zvednutí ostře zahněte a přejeďte <xliff:g id="second">%3$s</xliff:g> asi 2 cm a prsty zvedněte. Zatáčka musí být ostrý roh jako písmeno L, ne oblouk.</string>
+    <string name="gesture_trainer_taps_1">jednou</string>
+    <string name="gesture_trainer_taps_2">dvakrát</string>
+    <string name="gesture_trainer_taps_3">třikrát</string>
+    <string name="gesture_trainer_taps_4">čtyřikrát</string>
+    <string name="gesture_trainer_how_taps">Klepněte <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Prsty položte současně a současně je zvedněte, rychle a bez posunutí.</string>
+    <string name="gesture_trainer_how_taps_quick">Klepejte rychle a na stejné místo: další klepnutí musí přijít do <xliff:g id="gap">%1$d</xliff:g> ms od předchozího.</string>
+    <string name="gesture_trainer_how_hold">Dotkněte se obrazovky současně <xliff:g id="fingers">%1$s</xliff:g> a nechte prsty bez pohybu a bez posunutí alespoň <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Pokud není přiřazen jiný příkaz, toto gesto vypne SandFly. V trenéru nespustí nic.</string>
+    <string name="gesture_trainer_how_taps_hold">Klepněte <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g> a při posledním klepnutí nechte prsty na obrazovce bez pohybu alespoň <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Použijte palec, ukazováček a prostředníček.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Položte ukazováček a prostředníček vedle sebe a palec a prsteníček několik centimetrů od nich po obou stranách. Pak stáhněte všechny čtyři konečky prstů do jednoho bodu.</string>
+    <string name="gesture_trainer_how_pinch">Položte na obrazovku <xliff:g id="fingers">%1$d</xliff:g> prsty široce od sebe. Pak je posuňte přímo k sobě alespoň o 1 cm, jako byste něco zvedali, a zvedněte je z obrazovky. Pohybujte jen prsty, ne celou rukou, a ne v oblouku.</string>
+    <string name="gesture_trainer_how_spread">Položte na obrazovku <xliff:g id="fingers">%1$d</xliff:g> prsty těsně u sebe. Pak je posuňte přímo od sebe alespoň o 1 cm a zvedněte je z obrazovky. Pohybujte jen prsty, ne celou rukou, a ne v oblouku.</string>
+    <string name="gesture_trainer_clockwise">po směru hodinových ručiček</string>
+    <string name="gesture_trainer_counterclockwise">proti směru hodinových ručiček</string>
+    <string name="gesture_trainer_how_rotate">Položte na obrazovku dva prsty asi 2 až 3 cm od sebe a otočte je <xliff:g id="way">%1$s</xliff:g> kolem jejich středu, jako když otáčíte knoflíkem, asi o čtvrt otáčky. Pak je zvedněte.</string>
+    <string name="gesture_trainer_how_scrub">Položte na obrazovku dva prsty a rychle je posuňte do strany asi o 2 cm a zpět, jako když něco gumujete, vše zhruba během sekundy. Pak je zvedněte.</string>
+    <string name="gesture_trainer_edge_bottom">u dolního okraje</string>
+    <string name="gesture_trainer_edge_top_left">u horního okraje, v jeho levé polovině</string>
+    <string name="gesture_trainer_edge_top_right">u horního okraje, v jeho pravé polovině</string>
+    <string name="gesture_trainer_edge_left_top">u levého okraje, v jeho horní polovině</string>
+    <string name="gesture_trainer_edge_left_bottom">u levého okraje, v jeho dolní polovině</string>
+    <string name="gesture_trainer_edge_right_top">u pravého okraje, v jeho horní polovině</string>
+    <string name="gesture_trainer_edge_right_bottom">u pravého okraje, v jeho dolní polovině</string>
+    <string name="gesture_trainer_edge_left">u levého okraje</string>
+    <string name="gesture_trainer_edge_right">u pravého okraje</string>
+    <string name="gesture_trainer_edge_top">u horního okraje</string>
+    <string name="gesture_trainer_how_edge">Položte jeden prst <xliff:g id="edge">%1$s</xliff:g>, nejvýše <xliff:g id="edge_width">%2$d</xliff:g> mm od okraje, a přejeďte <xliff:g id="direction">%3$s</xliff:g> do obrazovky k prvnímu cvaknutí, asi <xliff:g id="distance">%4$d</xliff:g> mm. Pak prst ihned zvedněte: za druhým cvaknutím je přejetí dlouhé.</string>
+    <string name="gesture_trainer_how_edge_long">Položte jeden prst <xliff:g id="edge">%1$s</xliff:g>, nejvýše <xliff:g id="edge_width">%2$d</xliff:g> mm od okraje, a přejeďte <xliff:g id="direction">%3$s</xliff:g> do obrazovky za první cvaknutí až k druhému, asi <xliff:g id="distance">%4$d</xliff:g> mm. Pak prst zvedněte.</string>
+    <string name="gesture_trainer_how_along">Přejeďte jedním prstem <xliff:g id="direction">%2$s</xliff:g> podél <xliff:g id="edge">%1$s</xliff:g>, alespoň <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">levého horního</string>
+    <string name="gesture_trainer_corner_top_right">pravého horního</string>
+    <string name="gesture_trainer_corner_bottom_left">levého dolního</string>
+    <string name="gesture_trainer_corner_bottom_right">pravého dolního</string>
+    <string name="gesture_trainer_how_corner">Klepněte <xliff:g id="taps">%1$s</xliff:g> do <xliff:g id="corner">%2$s</xliff:g> rohu obrazovky. Položte prst přímo do rohu, nejvýše <xliff:g id="size">%3$d</xliff:g> mm od obou okrajů, a rychle ho zvedněte, do <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Při větších rozích může klepnutí na ovládací prvek blízko rohu, například Zpět vlevo nahoře, místo toho spustit gesto rohu.</string>
+    <string name="gesture_trainer_rating_precise">rozpoznáno, přesně</string>
+    <string name="gesture_trainer_rating_good">rozpoznáno, dobře</string>
+    <string name="gesture_trainer_rating_borderline">rozpoznáno, ale blízko limitu</string>
+    <string name="gesture_trainer_try_recognized">Pokus <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Pokus <xliff:g id="number">%1$d</xliff:g>: nerozpoznáno.</string>
+    <string name="gesture_trainer_try_other">Pokus <xliff:g id="number">%1$d</xliff:g>: rozpoznáno jako <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: rozpoznáno <xliff:g id="recognized">%2$d</xliff:g> z <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Vaše pokusy</string>
+    <string name="gesture_trainer_results_change">Co změnit</string>
+    <string name="gesture_trainer_results_close">Blízko limitu</string>
+    <string name="gesture_trainer_results_all_good">Všechny pokusy byly rozpoznány v rámci limitů.</string>
+    <string name="gesture_trainer_results_settings">Nastavení, která mohou pomoci</string>
+    <string name="gesture_trainer_next">Další cvičení</string>
+    <string name="gesture_trainer_repeat">Opakovat</string>
+    <string name="gesture_trainer_finish">Dokončit</string>
+    <string name="gesture_trainer_group_done">Dokončili jste všechna cvičení ve skupině <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Změnit <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">trvalo <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">délka <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm za sekundu</string>
+    <string name="gesture_trainer_measure_angle">odchylka od přímky <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_start">první centimetr za <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">prsty dopadly s odstupem <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">klepnutí <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms mezi klepnutími</string>
+    <string name="gesture_trainer_measure_spread">prsty se posunuly o <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">otočení o <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm od okrajů rohu</string>
+    <string name="gesture_trainer_measure_edge">začátek <xliff:g id="mm">%1$.0f</xliff:g> mm od okraje</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Prstů na obrazovce: <xliff:g id="fingers">%1$d</xliff:g> místo <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Prsty dopadly s odstupem <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Jeden prst se zvedl dříve, než byly položeny všechny prsty.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Prsty se zvedly s odstupem <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Prst zůstal příliš dlouho na místě nebo se zpočátku pohyboval příliš pomalu, takže se dotyk změnil na prozkoumání dotykem.</string>
+    <string name="gesture_trainer_finding_slow_start">První centimetr trval <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Prst zpomalil na <xliff:g id="ms">%1$d</xliff:g> ms a každý centimetr smí trvat nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Pohyb měřil jen <xliff:g id="mm">%1$.0f</xliff:g> mm a musí měřit alespoň <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Prst se začal pohybovat <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Prsty se začaly pohybovat <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Dráha se odchýlila od přímky o <xliff:g id="degrees">%1$.0f</xliff:g>° a povoleno je nejvýše <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_curved">Dráha se zalomila do <xliff:g id="parts">%1$d</xliff:g> částí místo <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Zatáčka nebyla nalezena.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Po zatáčce se prst pohyboval <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Prst se během klepnutí posunul o <xliff:g id="mm">%1$.1f</xliff:g> mm a povoleno je nejvýše <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Klepnutí trvalo <xliff:g id="ms">%1$d</xliff:g> ms, déle než <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Poslední klepnutí bylo podrženo <xliff:g id="ms">%1$d</xliff:g> ms a musí být alespoň <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Klepnutí: <xliff:g id="taps">%1$d</xliff:g> místo <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Klepnutí: <xliff:g id="taps">%1$d</xliff:g> místo <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Mezi klepnutími uběhlo <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Klepnutí dopadla <xliff:g id="mm">%1$.0f</xliff:g> mm od sebe a povoleno je nejvýše <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Prsty se posunuly jen o <xliff:g id="mm">%1$.0f</xliff:g> mm a musí se posunout alespoň o <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Prsty se pohybovaly opačným směrem.</string>
+    <string name="gesture_trainer_finding_moved_together">Celá ruka se posunula po obrazovce o <xliff:g id="mm">%1$.0f</xliff:g> mm, více, než se prsty přiblížily nebo vzdálily.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Prsty se otočily jen o <xliff:g id="degrees">%1$.0f</xliff:g>° a musí se otočit alespoň o <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Prsty se otočily opačným směrem.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">První tah měřil <xliff:g id="mm">%1$.0f</xliff:g> mm a musí měřit alespoň <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Tah zpět měřil <xliff:g id="mm">%1$.0f</xliff:g> mm a musí měřit alespoň <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Přejetí tam a zpět trvalo <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Prst dopadl <xliff:g id="mm">%1$.0f</xliff:g> mm od okraje a okraj je široký <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Prst začal v druhé polovině okraje.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Prst se posunul o <xliff:g id="mm">%1$.0f</xliff:g> mm a musí se posunout alespoň o <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Přejetí je příliš dlouhé: prst přešel za druhé cvaknutí, <xliff:g id="mm">%1$.0f</xliff:g> mm, a druhé cvaknutí je na <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Dosažení cvaknutí trvalo <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Přejetí se odchýlilo do strany o <xliff:g id="degrees">%1$.0f</xliff:g>° a povoleno je nejvýše <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_corner_missed">Klepnutí dopadlo <xliff:g id="mm">%1$.0f</xliff:g> mm od okrajů rohu a roh má <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Klepnutí na roh trvalo <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Nebyl zjištěn žádný pohyb odpovídající gestu.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Zkontrolujte, kolik prstů se dotýká skla. Počítá se i dlaň nebo jiný prst opřený o obrazovku.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Položte všechny prsty ve stejný okamžik, jako jednu ruku, ne jeden po druhém.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Nejprve položte všechny prsty, pak jimi pohněte nebo je zvedněte.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Zvedněte všechny prsty ve stejný okamžik.</string>
+    <string name="gesture_trainer_tip_slow_start">Začněte se pohybovat ve chvíli, kdy se dotknete obrazovky, a na začátku se pohybujte rychleji.</string>
+    <string name="gesture_trainer_tip_paused">Pohybujte prstem stejnou rychlostí až do zvednutí. Ke konci nezpomalujte.</string>
+    <string name="gesture_trainer_tip_too_short">Prodlužte pohyb, asi na 2 až 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Zkontrolujte směr hned na začátku pohybu. Pomáhá držet telefon rovně před sebou.</string>
+    <string name="gesture_trainer_tip_off_line">Pohybujte se jen v daném směru, ne šikmo. Ukazováček udrží rovnější linii než palec.</string>
+    <string name="gesture_trainer_tip_curved">Držte linii rovně a zvedněte prst přesně na konci, aniž byste ho při zvedání stočili do strany.</string>
+    <string name="gesture_trainer_tip_turn_missing">Změňte směr ostře, v pravém úhlu nebo přímo zpět, bez zvednutí. Každá část by měla mít asi 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Po zatáčce zkontrolujte, kam se pohybujete: druhá část musí jít druhým směrem, který gesto uvádí.</string>
+    <string name="gesture_trainer_tip_tap_moved">Klepejte kolmo dolů a nahoru, konečkem prstu, bez posunutí.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Každé klepnutí udělejte krátké: dotkněte se a hned zvedněte.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Při posledním klepnutí nechte prsty na obrazovce bez pohybu po celou dobu podržení.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Počítejte klepnutí a proveďte je všechna rychle najednou.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Počítejte klepnutí. Prst, který se od skla odrazí, vytvoří klepnutí navíc.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Klepejte rychleji: další klepnutí začněte hned po zvednutí.</string>
+    <string name="gesture_trainer_tip_taps_apart">Klepejte pokaždé na stejné místo.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Posuňte prsty dále, alespoň o 1 cm blíž k sobě nebo od sebe.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Stažení znamená pohyb prstů k sobě, roztažení pohyb prstů od sebe.</string>
+    <string name="gesture_trainer_tip_moved_together">Pohybujte jen prsty k sobě nebo od sebe. Neposouvejte celou ruku po obrazovce.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Otočte více, jako když otočíte knoflíkem o čtvrt otáčky.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Po směru hodinových ručiček znamená otáčet tak, jak se pohybují ručičky hodin: horní prst se posune doprava.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">První tah udělejte alespoň 1 cm dlouhý.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Po prvním tahu se před zvednutím vraťte opačným směrem.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Přejetí tam a zpět proveďte rychle, tam i zpět asi za sekundu.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Začněte přímo na okraji, s konečkem prstu částečně mimo obrazovku.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Zkontrolujte, ve které polovině okraje začínáte.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Přejeďte dále, dokud neuslyšíte cvaknutí, pak prst zvedněte.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Zvedněte prst hned po prvním cvaknutí, před druhým.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Přejeďte dovnitř rychleji, bez zastavení před cvaknutím.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Přejeďte od okraje přímo dovnitř nebo přímo podél něj, ne šikmo.</string>
+    <string name="gesture_trainer_tip_corner_missed">Položte prst přímo do rohu, aby se dotýkal obou okrajů.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Po dotyku rohu zvedněte prst rychleji.</string>
+    <string name="gesture_trainer_close_to_limit">Blízko limitu: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Přejetí začínají pomalu. Delší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> umožní pomalejší začátek.</string>
+    <string name="gesture_trainer_advice_tap_time">Klepnutí jsou pomalá. Delší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> umožní pomalejší klepnutí.</string>
+    <string name="gesture_trainer_advice_edge_width">Přejetí začínají příliš daleko od okraje. Větší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> také změní přejetí začínající blízko okraje na přejetí od okraje.</string>
+    <string name="gesture_trainer_advice_corner_size">Klepnutí dopadají mimo roh. Větší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> zvětší rohy.</string>
+    <string name="gesture_trainer_advice_corner_time">Klepnutí na rohy jsou pomalá. Delší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> umožní pomalejší klepnutí.</string>
+    <string name="gesture_trainer_menu_option">Možnost <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: vyberte položku <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Přejeďte jedním prstem nahoru nebo dolů <xliff:g id="edge">%1$s</xliff:g> alespoň <xliff:g id="distance">%2$d</xliff:g> mm, tím otevřete nabídku. Počet položek: <xliff:g id="count">%3$d</xliff:g>, shora dolů, každá je vysoká asi <xliff:g id="size">%6$s</xliff:g> cm. Položka <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, je <xliff:g id="from">%7$s</xliff:g> až <xliff:g id="to">%8$s</xliff:g> cm pod horním okrajem obrazovky. Zvedněte prst, když se položka vysloví.</string>
+    <string name="gesture_trainer_menu_sample">Tento okraj nemá nabídku. Cvičení používá ukázkové položky, počet: <xliff:g id="count">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Pokus <xliff:g id="number">%1$d</xliff:g>: nabídka se zavřela bez výběru.</string>
+    <string name="gesture_trainer_try_menu_other">Pokus <xliff:g id="number">%1$d</xliff:g>: vybráno <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">zvednuto na položce <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Prst začal úplně nahoře nebo dole na okraji, kde jsou rohy a horní a dolní okraj.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Prst se zvedl <xliff:g id="mm">%1$.0f</xliff:g> mm od okraje a nabídka se zavírá za hranicí <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Prst se zvedl na položce <xliff:g id="item">%1$d</xliff:g> místo položky <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Začněte kousek od horního a dolního konce okraje.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Při přejíždění držte prst blízko okraje a tam ho i zvedněte.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Každá položka má pevné místo podél okraje a vybere se položka, u které prst zvednete. Zvedněte prst, když se položka vysloví.</string>
+    <string name="gesture_trainer_contents">Obsah</string>
+    <string name="gesture_trainer_contents_heading">Obsah: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">hotovo, rozpoznáno <xliff:g id="hits">%1$d</xliff:g> z <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Klepnutí a přejetí</string>
+    <string name="gesture_trainer_group_edge_swipes">Přejetí od okrajů</string>
+    <string name="gesture_trainer_group_along_edges">Přejetí podél okrajů</string>
+    <string name="gesture_trainer_group_edge_menus">Nabídky okrajů</string>
+    <string name="gesture_trainer_group_corners">Rohy</string>
+    <string name="gesture_trainer_group_back_tap">Klepnutí na zadní stranu</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Klepnutí dvěma prsty následovaná přejetím dvěma prsty jsou vynechána: nastavení <xliff:g id="setting">%1$s</xliff:g> je vypnuto.</string>
+    <string name="gesture_trainer_how_swipe_hold">Pak bez zvednutí nechte prst bez pohybu alespoň <xliff:g id="hold">%1$d</xliff:g> ms a zvedněte ho.</string>
+    <string name="gesture_trainer_half_top">horní</string>
+    <string name="gesture_trainer_half_bottom">dolní</string>
+    <string name="gesture_trainer_how_taps_half">Klepněte v <xliff:g id="half">%1$s</xliff:g> polovině obrazovky. O polovině rozhoduje bod mezi prsty.</string>
+    <string name="gesture_trainer_same_fingers">stejnými prsty</string>
+    <string name="gesture_trainer_how_tap_swipe">Klepněte <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Hned po posledním klepnutí, do <xliff:g id="gap">%3$d</xliff:g> ms, se znovu dotkněte obrazovky <xliff:g id="swipe_fingers">%4$s</xliff:g> a přejeďte <xliff:g id="direction">%5$s</xliff:g> v přímé linii asi 2 až 3 cm, pak prsty zvedněte.</string>
+    <string name="gesture_trainer_how_corner_hold">Při posledním klepnutí nechte prst v rohu bez pohybu alespoň <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Držte telefon v ruce za boky a klepněte <xliff:g id="taps">%1$s</xliff:g> konečkem prstu doprostřed jeho zadní strany, pevně a rychle, jako když klepete na dveře. Klepejte rychle za sebou: mezi klepnutími nejvýše <xliff:g id="gap">%2$d</xliff:g> ms. Během klepání se nedotýkejte obrazovky.</string>
+    <string name="gesture_trainer_back_tap_info">Během cvičení klepnutí na zadní stranu nespouštějí žádné příkazy. Nastavení <xliff:g id="setting">%1$s</xliff:g> určuje, jak silné musí klepnutí být.</string>
+    <string name="gesture_trainer_go_placed">Proveďte gesto <xliff:g id="tries">%1$d</xliff:g>krát.</string>
+    <string name="gesture_trainer_along_left">levého okraje</string>
+    <string name="gesture_trainer_along_right">pravého okraje</string>
+    <string name="gesture_trainer_along_top">horního okraje</string>
+    <string name="gesture_trainer_along_bottom">dolního okraje</string>
+    <string name="gesture_trainer_left_out_along_menu">Přejetí podél <xliff:g id="edge">%1$s</xliff:g> jsou vynechána: tento okraj má nabídku, takže přejetí podél něj otevře nabídku místo spuštění gesta.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Přejetí podél <xliff:g id="edge">%1$s</xliff:g> jsou vynechána: tento okraj posouvá, takže přejetí podél něj posune obsah aplikace místo spuštění gesta.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Prst se od okraje vzdálil příliš daleko.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Držte prst na samém kraji skla, přímo podél okraje.</string>
+    <string name="gesture_trainer_go_back_tap">Proveďte gesto klepnutí na zadní stranu <xliff:g id="tries">%1$d</xliff:g>krát. Dotyk obrazovky pokus zruší.</string>
+    <string name="gesture_trainer_no_accelerometer">Toto cvičení vyžaduje akcelerometr. Žádný není k dispozici.</string>
+    <string name="gesture_trainer_measure_hold">bez pohybu <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">síla klepnutí <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Prst zůstal na konci bez pohybu <xliff:g id="ms">%1$d</xliff:g> ms a musí zůstat bez pohybu alespoň <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Prsty klepnuly v druhé polovině obrazovky.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Po klepnutích nenásledovalo žádné přejetí.</string>
+    <string name="gesture_trainer_finding_swipe_late">Přejetí začalo <xliff:g id="ms">%1$d</xliff:g> ms po posledním klepnutí a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Klepnutí na zadní stranu je příliš slabé: <xliff:g id="percent">%1$d</xliff:g> %% potřebné síly.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Klepnutí rozkmitalo telefon více do strany než skrz zadní stranu.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefon se těsně před klepnutím pohyboval.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Došlo k dotyku obrazovky a klepnutí během dotyku se nepočítají.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Mezi klepnutími na zadní stranu uběhlo <xliff:g id="ms">%1$d</xliff:g> ms a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Po přejetí nechte prst na obrazovce bez pohybu po celou dobu podržení. Pak ho zvedněte.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Zkontrolujte, ve které polovině klepete: střed obrazovky odděluje horní polovinu od dolní.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Po posledním klepnutí se ihned znovu dotkněte obrazovky a přejeďte.</string>
+    <string name="gesture_trainer_tip_swipe_late">Začněte přejetí hned po posledním klepnutí, bez prodlevy.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Klepejte silněji, konečkem prstu nebo nehtem, blízko středu zadní strany.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Klepejte kolmo do zadní strany telefonu, ne na jeho hranu ani šikmo.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Před klepnutím chvíli držte telefon v klidu a držte ho volně, aby jím ruka nepohnula.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Při klepání na zadní stranu se prsty nedotýkejte obrazovky: držte telefon za boky.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Klepejte rychleji, jedno klepnutí hned za druhým.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Prst se po přejetí zvedá příliš brzy. Kratší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> umožní kratší podržení.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Klepnutí na zadní stranu jsou slabá. Vyšší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> rozpozná slabší klepnutí a může rozpoznat nárazy jako klepnutí.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Prsty se otočily o <xliff:g id="degrees">%1$.0f</xliff:g>° a od <xliff:g id="limit">%2$.0f</xliff:g>° je pohyb otočením.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Pohybujte prsty v přímé linii k sobě nebo od sebe, ne v oblouku kolem sebe.</string>
+    <string name="gesture_trainer_finding_other_gesture">Pohyb místo toho odpovídal tomuto gestu.</string>
+    <string name="gesture_trainer_side_left">levého</string>
+    <string name="gesture_trainer_side_right">pravého</string>
+    <string name="gesture_trainer_side_top">horního</string>
+    <string name="gesture_trainer_side_bottom">dolního</string>
+    <string name="gesture_trainer_finding_wrong_edge">Prst začal u <xliff:g id="side">%1$s</xliff:g> okraje a toto cvičení je u <xliff:g id="expected">%2$s</xliff:g> okraje.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Začněte přímo na okraji, který cvičení uvádí.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Místo tohoto gesta se otevřela nabídka okraje.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Přejetí podél okraje s nabídkou otevře nabídku. Začněte u okraje, který cvičení uvádí.</string>
+    <string name="gesture_trainer_group_three_part">Přejetí ze tří částí</string>
+    <string name="gesture_trainer_group_two_stroke">Přejetí ve dvou tazích</string>
+    <string name="gesture_trainer_group_shake">Zatřesení</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Přejetí ze tří částí jsou vynechána: nastavení <xliff:g id="setting">%1$s</xliff:g> je zapnuto.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Přejetí ve dvou tazích jsou vynechána: nastavení <xliff:g id="setting">%1$s</xliff:g> má hodnotu <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Během cvičení zatřesení nespouští žádný příkaz. Nastavení <xliff:g id="setting">%1$s</xliff:g> určuje, jak silné musí zatřesení být.</string>
+    <string name="gesture_trainer_go_shake">Zatřeste telefonem <xliff:g id="tries">%1$d</xliff:g>krát, po každém zatřesení s krátkou pauzou.</string>
+    <string name="gesture_trainer_how_shake">Držte telefon pevně a rychle jím zatřeste tam a zpět, jako byste setřásali kapku vody: alespoň dvakrát každým směrem, vše zhruba během dvou třetin sekundy. Pak ho držte v klidu.</string>
+    <string name="gesture_trainer_how_two_stroke">Přejeďte jedním prstem <xliff:g id="first">%1$s</xliff:g>, asi 2 cm, a zvedněte ho. Pak ihned, do <xliff:g id="time">%3$d</xliff:g> ms, přejeďte jedním prstem <xliff:g id="second">%2$s</xliff:g>, asi 2 cm, a zvedněte ho.</string>
+    <string name="gesture_trainer_how_three_part">Dotkněte se obrazovky jedním prstem a bez zvednutí přejeďte <xliff:g id="first">%1$s</xliff:g>, pak ostře zahněte a přejeďte <xliff:g id="second">%2$s</xliff:g>, pak znovu ostře zahněte a přejeďte <xliff:g id="third">%3$s</xliff:g>, každá část asi 2 cm, a prst zvedněte. Proveďte to jedním rychlým plynulým pohybem s ostrými rohy, ne oblouky.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Položte jeden prst do horní třetiny obrazovky a druhý do dolní třetiny, například palec dole a ukazováček nahoře.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Prsty nebyly jeden v horní třetině obrazovky a druhý v dolní třetině.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Druhé přejetí nenásledovalo.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Druhé přejetí začalo <xliff:g id="ms">%1$d</xliff:g> ms po prvním a povoleno je nejvýše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">První přejetí šlo <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Druhé přejetí šlo <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Zatřesení bylo příliš slabé: <xliff:g id="percent">%1$d</xliff:g> %% potřebné síly.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Kmity tam a zpět: <xliff:g id="swings">%1$d</xliff:g> z potřebných <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Roztáhněte prsty daleko od sebe, jeden blízko horního okraje a druhý blízko dolního okraje.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Po prvním přejetí zvedněte prst a ihned přejeďte znovu.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Začněte druhé přejetí hned po zvednutí prstu.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Třeste silněji a rychleji.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Třeste rychleji, tam a zpět alespoň dvakrát každým směrem, bez zastavení mezi tím.</string>
+    <string name="gesture_trainer_measure_shake_strength">nejsilnější pohyb <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Zatřesení jsou slabá. Vyšší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> rozpozná slabší zatřesení a může rozpoznat i nošení telefonu jako zatřesení.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Druhé přejetí začíná pozdě. Delší hodnota nastavení <xliff:g id="setting">%1$s</xliff:g> umožní pozdější druhé přejetí a jednoduché přejetí pak déle čeká, než se spustí.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Nastavení <xliff:g id="setting">%1$s</xliff:g> je zapnuto.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Nastavení <xliff:g id="setting">%1$s</xliff:g> je vypnuto: přejetí dvěma prsty posouvají obsah aplikace a přejetí tam a zpět většinou také posouvá. Se zapnutým nastavením spouštějí přejetí dvěma prsty místo posouvání příkazy SandFly.</string>
+    <string name="gesture_trainer_measure_first_stroke">první přejetí <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">druhé přejetí <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">celé gesto <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">zvednuto na <xliff:g id="ms">%1$d</xliff:g> ms mezi nimi</string>
+</resources>

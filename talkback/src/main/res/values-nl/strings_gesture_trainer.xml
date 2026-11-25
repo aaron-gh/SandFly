@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Gebarentrainer</string>
+    <string name="gesture_trainer_intro">Kies een groep gebaren. Elke oefening beschrijft een gebaar. Maak het gebaar <xliff:g id="tries">%1$d</xliff:g> keer; het resultaat van elke poging wordt uitgesproken. Na de laatste poging toont het scherm de metingen van elke poging, wat je kunt veranderen en bijbehorende instellingen.</string>
+    <string name="gesture_trainer_group_one_finger">Eén vinger</string>
+    <string name="gesture_trainer_group_two_fingers">Twee vingers</string>
+    <string name="gesture_trainer_group_three_fingers">Drie vingers</string>
+    <string name="gesture_trainer_group_four_fingers">Vier vingers</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Knijpen, draaien en heen en weer vegen</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> oefeningen</string>
+    <string name="gesture_trainer_close">Sluiten</string>
+    <string name="gesture_trainer_no_detection">De gebarentrainer vereist Android 13 of hoger.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Heen-en-weer-gebaren en hoekgebaren zijn weggelaten: <xliff:g id="setting">%1$s</xliff:g> staat aan.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Swipes met twee vingers zijn weggelaten: <xliff:g id="setting">%1$s</xliff:g> staat uit, dus ze scrollen in apps.</string>
+    <string name="gesture_trainer_exercise_heading">Oefening <xliff:g id="number">%1$d</xliff:g> van <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Starten</string>
+    <string name="gesture_trainer_skip">Deze oefening overslaan</string>
+    <string name="gesture_trainer_back_to_groups">Terug naar groepen</string>
+    <string name="gesture_trainer_go">Maak het gebaar <xliff:g id="tries">%1$d</xliff:g> keer, waar dan ook op het scherm. Elke aanraking is een poging.</string>
+    <string name="gesture_trainer_fingers_1">één vinger</string>
+    <string name="gesture_trainer_fingers_2">twee vingers naast elkaar, ongeveer 1 cm uit elkaar</string>
+    <string name="gesture_trainer_fingers_3">drie vingers naast elkaar, een klein stukje uit elkaar</string>
+    <string name="gesture_trainer_fingers_4">vier vingers naast elkaar, een klein stukje uit elkaar</string>
+    <string name="gesture_trainer_direction_up">omhoog</string>
+    <string name="gesture_trainer_direction_down">omlaag</string>
+    <string name="gesture_trainer_direction_left">naar links</string>
+    <string name="gesture_trainer_direction_right">naar rechts</string>
+    <string name="gesture_trainer_how_swipe">Raak het scherm aan met <xliff:g id="fingers">%1$s</xliff:g> en schuif zonder te wachten <xliff:g id="direction">%2$s</xliff:g> in een rechte lijn over ongeveer 2 tot 3 cm, en til dan op. Begin meteen te bewegen: een vinger die eerst stil ligt, start aanraakverkenning.</string>
+    <string name="gesture_trainer_how_swipe_multi">Zet de vingers tegelijk neer, op hetzelfde moment, en beweeg ze allemaal dezelfde kant op. Elke vinger moet de hele tijd <xliff:g id="direction">%1$s</xliff:g> gaan, dus houd de lijn recht.</string>
+    <string name="gesture_trainer_how_back_and_forth">Raak het scherm aan met één vinger en schuif <xliff:g id="first">%1$s</xliff:g> over ongeveer 2 cm, ga dan zonder op te tillen recht terug <xliff:g id="second">%2$s</xliff:g> over ongeveer 2 cm, en til op. Maak er één snelle, vloeiende beweging van.</string>
+    <string name="gesture_trainer_how_angle">Raak het scherm aan met <xliff:g id="fingers">%1$s</xliff:g> en schuif <xliff:g id="first">%2$s</xliff:g> over ongeveer 2 cm, maak dan zonder op te tillen een scherpe bocht en schuif <xliff:g id="second">%3$s</xliff:g> over ongeveer 2 cm, en til op. Maak de bocht een scherpe hoek, zoals de letter L, geen boog.</string>
+    <string name="gesture_trainer_taps_1">één keer</string>
+    <string name="gesture_trainer_taps_2">twee keer</string>
+    <string name="gesture_trainer_taps_3">drie keer</string>
+    <string name="gesture_trainer_taps_4">vier keer</string>
+    <string name="gesture_trainer_how_taps">Tik <xliff:g id="taps">%1$s</xliff:g> met <xliff:g id="fingers">%2$s</xliff:g>. Zet de vingers tegelijk neer en til ze tegelijk op, snel en zonder te schuiven.</string>
+    <string name="gesture_trainer_how_taps_quick">Houd de tikken snel en op dezelfde plek: de volgende tik moet binnen <xliff:g id="gap">%1$d</xliff:g> ms na de vorige komen.</string>
+    <string name="gesture_trainer_how_hold">Zet <xliff:g id="fingers">%1$s</xliff:g> tegelijk op het scherm en houd ze stil, zonder te schuiven, gedurende minstens <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Zonder ander toegewezen commando zet dit gebaar SandFly uit. In de trainer voert het niets uit.</string>
+    <string name="gesture_trainer_how_taps_hold">Tik <xliff:g id="taps">%1$s</xliff:g> met <xliff:g id="fingers">%2$s</xliff:g> en laat bij de laatste tik de vingers stil op het scherm liggen, gedurende minstens <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Gebruik de duim, wijsvinger en middelvinger.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Zet de wijs- en middelvinger naast elkaar, en de duim en ringvinger een paar centimeter verderop aan weerszijden. Breng dan alle vier vingertoppen samen naar één punt.</string>
+    <string name="gesture_trainer_how_pinch">Zet <xliff:g id="fingers">%1$d</xliff:g> vingers wijd uit elkaar op het scherm. Breng ze dan recht naar elkaar toe over minstens 1 cm, alsof je iets oppakt, en til ze van het scherm. Beweeg alleen de vingers, niet de hele hand, en niet in een boog.</string>
+    <string name="gesture_trainer_how_spread">Zet <xliff:g id="fingers">%1$d</xliff:g> vingers dicht bij elkaar op het scherm. Beweeg ze dan recht uit elkaar over minstens 1 cm en til ze van het scherm. Beweeg alleen de vingers, niet de hele hand, en niet in een boog.</string>
+    <string name="gesture_trainer_clockwise">met de klok mee</string>
+    <string name="gesture_trainer_counterclockwise">tegen de klok in</string>
+    <string name="gesture_trainer_how_rotate">Zet twee vingers op het scherm, ongeveer 2 tot 3 cm uit elkaar, en draai ze <xliff:g id="way">%1$s</xliff:g> rond hun midden, zoals aan een draaiknop, ongeveer een kwartslag. Til dan op.</string>
+    <string name="gesture_trainer_how_scrub">Zet twee vingers op het scherm en beweeg ze snel ongeveer 2 cm opzij en terug, alsof je iets uitgumt, alles binnen ongeveer een seconde. Til dan op.</string>
+    <string name="gesture_trainer_edge_bottom">aan de onderrand</string>
+    <string name="gesture_trainer_edge_top_left">aan de bovenrand, in de linkerhelft</string>
+    <string name="gesture_trainer_edge_top_right">aan de bovenrand, in de rechterhelft</string>
+    <string name="gesture_trainer_edge_left_top">aan de linkerrand, in de bovenste helft</string>
+    <string name="gesture_trainer_edge_left_bottom">aan de linkerrand, in de onderste helft</string>
+    <string name="gesture_trainer_edge_right_top">aan de rechterrand, in de bovenste helft</string>
+    <string name="gesture_trainer_edge_right_bottom">aan de rechterrand, in de onderste helft</string>
+    <string name="gesture_trainer_edge_left">aan de linkerrand</string>
+    <string name="gesture_trainer_edge_right">aan de rechterrand</string>
+    <string name="gesture_trainer_edge_top">aan de bovenrand</string>
+    <string name="gesture_trainer_how_edge">Zet één vinger <xliff:g id="edge">%1$s</xliff:g>, maximaal <xliff:g id="edge_width">%2$d</xliff:g> mm van de rand, en schuif <xliff:g id="direction">%3$s</xliff:g> het scherm in tot de eerste klik, ongeveer <xliff:g id="distance">%4$d</xliff:g> mm. Til dan meteen op: voorbij de tweede klik is het een lange swipe.</string>
+    <string name="gesture_trainer_how_edge_long">Zet één vinger <xliff:g id="edge">%1$s</xliff:g>, maximaal <xliff:g id="edge_width">%2$d</xliff:g> mm van de rand, en schuif <xliff:g id="direction">%3$s</xliff:g> het scherm in, voorbij de eerste klik tot de tweede, ongeveer <xliff:g id="distance">%4$d</xliff:g> mm. Til dan op.</string>
+    <string name="gesture_trainer_how_along">Schuif één vinger <xliff:g id="direction">%2$s</xliff:g> langs <xliff:g id="edge">%1$s</xliff:g>, minstens <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">linksboven</string>
+    <string name="gesture_trainer_corner_top_right">rechtsboven</string>
+    <string name="gesture_trainer_corner_bottom_left">linksonder</string>
+    <string name="gesture_trainer_corner_bottom_right">rechtsonder</string>
+    <string name="gesture_trainer_how_corner">Tik <xliff:g id="taps">%1$s</xliff:g> in de hoek <xliff:g id="corner">%2$s</xliff:g> van het scherm. Zet de vinger precies in de hoek, niet meer dan <xliff:g id="size">%3$d</xliff:g> mm van beide randen, en til snel op, binnen <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Met grotere hoeken kan een tik op een bedieningselement bij een hoek, zoals Terug linksboven, in plaats daarvan het hoekgebaar uitvoeren.</string>
+    <string name="gesture_trainer_rating_precise">herkend, nauwkeurig</string>
+    <string name="gesture_trainer_rating_good">herkend, goed</string>
+    <string name="gesture_trainer_rating_borderline">herkend, maar dicht bij een grens</string>
+    <string name="gesture_trainer_try_recognized">Poging <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Poging <xliff:g id="number">%1$d</xliff:g>: niet herkend.</string>
+    <string name="gesture_trainer_try_other">Poging <xliff:g id="number">%1$d</xliff:g>: herkend als <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> van <xliff:g id="tries">%3$d</xliff:g> herkend</string>
+    <string name="gesture_trainer_results_tries">Je pogingen</string>
+    <string name="gesture_trainer_results_change">Wat je kunt veranderen</string>
+    <string name="gesture_trainer_results_close">Dicht bij een grens</string>
+    <string name="gesture_trainer_results_all_good">Alle pogingen zijn binnen de grenzen herkend.</string>
+    <string name="gesture_trainer_results_settings">Instellingen die kunnen helpen</string>
+    <string name="gesture_trainer_next">Volgende oefening</string>
+    <string name="gesture_trainer_repeat">Herhalen</string>
+    <string name="gesture_trainer_finish">Voltooien</string>
+    <string name="gesture_trainer_group_done">Je hebt alle oefeningen in <xliff:g id="group">%1$s</xliff:g> voltooid.</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> wijzigen</string>
+    <string name="gesture_trainer_measure_duration">duurde <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm lang</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm per seconde</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> graden afwijking van een rechte lijn</string>
+    <string name="gesture_trainer_measure_start">eerste centimeter in <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">de vingers kwamen <xliff:g id="ms">%1$d</xliff:g> ms na elkaar neer</string>
+    <string name="gesture_trainer_measure_tap">tik van <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms tussen tikken</string>
+    <string name="gesture_trainer_measure_spread">vingers <xliff:g id="mm">%1$.0f</xliff:g> mm verplaatst</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> graden gedraaid</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm van de randen van de hoek</string>
+    <string name="gesture_trainer_measure_edge">begonnen op <xliff:g id="mm">%1$.0f</xliff:g> mm van de rand</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Vingers op het scherm: <xliff:g id="fingers">%1$d</xliff:g> in plaats van <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">De vingers kwamen <xliff:g id="ms">%1$d</xliff:g> ms na elkaar neer, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Een vinger werd opgetild voordat alle vingers neer waren.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">De vingers werden <xliff:g id="ms">%1$d</xliff:g> ms na elkaar opgetild, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_became_exploration">De vinger bleef te lang stil of bewoog eerst te langzaam, dus de aanraking werd aanraakverkenning.</string>
+    <string name="gesture_trainer_finding_slow_start">De eerste centimeter duurde <xliff:g id="ms">%1$d</xliff:g> ms, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_paused">De vinger vertraagde gedurende <xliff:g id="ms">%1$d</xliff:g> ms, en elke centimeter mag maximaal <xliff:g id="limit">%2$d</xliff:g> ms duren.</string>
+    <string name="gesture_trainer_finding_too_short">De beweging was maar <xliff:g id="mm">%1$.0f</xliff:g> mm, en moet minstens <xliff:g id="limit">%2$.0f</xliff:g> mm zijn.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">De vinger ging eerst <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">De vingers gingen eerst <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Het pad week <xliff:g id="degrees">%1$.0f</xliff:g> graden af van een rechte lijn, en maximaal <xliff:g id="limit">%2$.0f</xliff:g> is toegestaan.</string>
+    <string name="gesture_trainer_finding_curved">Het pad boog af in <xliff:g id="parts">%1$d</xliff:g> delen in plaats van <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">De bocht is niet gevonden.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Na de bocht ging de vinger <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">De vinger schoof <xliff:g id="mm">%1$.1f</xliff:g> mm tijdens een tik, en maximaal <xliff:g id="limit">%2$.1f</xliff:g> mm is toegestaan.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Een tik duurde <xliff:g id="ms">%1$d</xliff:g> ms, langer dan <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">De laatste tik werd <xliff:g id="ms">%1$d</xliff:g> ms vastgehouden, en dat moet minstens <xliff:g id="limit">%2$d</xliff:g> ms zijn.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> tikken in plaats van <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> tikken in plaats van <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Er zat <xliff:g id="ms">%1$d</xliff:g> ms tussen tikken, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_taps_apart">De tikken kwamen <xliff:g id="mm">%1$.0f</xliff:g> mm uit elkaar neer, en maximaal <xliff:g id="limit">%2$.0f</xliff:g> mm is toegestaan.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">De vingers bewogen maar <xliff:g id="mm">%1$.0f</xliff:g> mm, en moeten minstens <xliff:g id="limit">%2$.0f</xliff:g> mm bewegen.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">De vingers bewogen de andere kant op.</string>
+    <string name="gesture_trainer_finding_moved_together">De hele hand schoof <xliff:g id="mm">%1$.0f</xliff:g> mm over het scherm, meer dan de vingers naar elkaar toe of van elkaar af bewogen.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">De vingers draaiden maar <xliff:g id="degrees">%1$.0f</xliff:g> graden, en moeten minstens <xliff:g id="limit">%2$.0f</xliff:g> draaien.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">De vingers draaiden de andere kant op.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">De eerste haal was <xliff:g id="mm">%1$.0f</xliff:g> mm, en moet minstens <xliff:g id="limit">%2$.0f</xliff:g> mm zijn.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">De haal terug was <xliff:g id="mm">%1$.0f</xliff:g> mm, en moet minstens <xliff:g id="limit">%2$.0f</xliff:g> mm zijn.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Het heen en weer vegen duurde <xliff:g id="ms">%1$d</xliff:g> ms, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">De vinger kwam <xliff:g id="mm">%1$.0f</xliff:g> mm van de rand neer, en de rand is <xliff:g id="limit">%2$.0f</xliff:g> mm breed.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">De vinger begon in de andere helft van de rand.</string>
+    <string name="gesture_trainer_finding_edge_too_short">De vinger schoof <xliff:g id="mm">%1$.0f</xliff:g> mm, en moet minstens <xliff:g id="limit">%2$.0f</xliff:g> mm schuiven.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Te lange swipe: de vinger ging voorbij de tweede klik, <xliff:g id="mm">%1$.0f</xliff:g> mm, en de tweede klik ligt op <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Het bereiken van de klik duurde <xliff:g id="ms">%1$d</xliff:g> ms, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_edge_sideways">De swipe ging <xliff:g id="degrees">%1$.0f</xliff:g> graden opzij, en maximaal <xliff:g id="limit">%2$.0f</xliff:g> is toegestaan.</string>
+    <string name="gesture_trainer_finding_corner_missed">De tik kwam <xliff:g id="mm">%1$.0f</xliff:g> mm van de randen van de hoek neer, en de hoek is <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Een tik in de hoek duurde <xliff:g id="ms">%1$d</xliff:g> ms, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_none">Er is geen beweging gedetecteerd die bij het gebaar past.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Controleer hoeveel vingers het glas raken. Een handpalm of andere vinger die op het scherm rust, telt ook mee.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Zet alle vingers op hetzelfde moment neer, als één hand, niet na elkaar.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Zet eerst alle vingers neer en beweeg of til ze dan op.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Til alle vingers op hetzelfde moment op.</string>
+    <string name="gesture_trainer_tip_slow_start">Begin te bewegen zodra je het scherm aanraakt, en beweeg sneller aan het begin.</string>
+    <string name="gesture_trainer_tip_paused">Houd de vinger met een gelijkmatige snelheid in beweging tot je optilt. Vertraag niet aan het eind.</string>
+    <string name="gesture_trainer_tip_too_short">Maak de beweging langer, ongeveer 2 tot 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Controleer de richting aan het allereerste begin van de beweging. Het helpt om de telefoon recht voor je te houden.</string>
+    <string name="gesture_trainer_tip_off_line">Beweeg alleen in de richting, niet diagonaal. De wijsvinger houdt een rechtere lijn dan de duim.</string>
+    <string name="gesture_trainer_tip_curved">Houd de lijn recht en til precies aan het eind op, zonder de vinger bij het optillen opzij te haken.</string>
+    <string name="gesture_trainer_tip_turn_missing">Verander scherp van richting, in een rechte hoek of recht terug, zonder op te tillen. Elk deel moet ongeveer 2 cm zijn.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Controleer na de bocht welke kant je op gaat: het tweede deel moet de andere richting gaan die het gebaar noemt.</string>
+    <string name="gesture_trainer_tip_tap_moved">Tik recht omlaag en omhoog, met de vingertop, zonder te schuiven.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Maak elke tik kort: raak aan en til meteen op.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Houd bij de laatste tik de vingers de volledige vasthoudtijd stil op het scherm.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Tel de tikken en maak ze allemaal snel in één keer.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Tel de tikken. Een vinger die van het glas terugveert, maakt een extra tik.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Tik sneller: begin de volgende tik direct na het optillen.</string>
+    <string name="gesture_trainer_tip_taps_apart">Tik elke keer op dezelfde plek.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Beweeg de vingers verder, minstens 1 cm dichter naar elkaar toe of verder uit elkaar.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Bij knijpen bewegen de vingers naar elkaar toe, bij spreiden bewegen ze uit elkaar.</string>
+    <string name="gesture_trainer_tip_moved_together">Beweeg alleen de vingers naar elkaar toe of van elkaar af. Schuif niet de hele hand over het scherm.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Draai verder, zoals een kwartslag aan een draaiknop.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Met de klok mee betekent draaien zoals de wijzers van een klok: de bovenste vinger beweegt naar rechts.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Maak de eerste haal minstens 1 cm lang.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Ga na de eerste haal de andere kant op terug voordat je optilt.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Veeg snel heen en weer, heen en terug in ongeveer een seconde.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Begin precies aan de rand, met de vingertop deels buiten het scherm.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Controleer in welke helft van de rand je begint.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Schuif verder tot je de klik hoort, en til dan op.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Til direct na de eerste klik op, vóór de tweede.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Schuif sneller naar binnen, zonder te stoppen vóór de klik.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Schuif recht naar binnen vanaf de rand, of recht langs de rand, niet diagonaal.</string>
+    <string name="gesture_trainer_tip_corner_missed">Zet de vinger precies in de hoek, zodat hij beide randen raakt.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Til sneller op nadat je de hoek hebt aangeraakt.</string>
+    <string name="gesture_trainer_close_to_limit">Dicht bij de grens: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Swipes beginnen langzaam. Een langere <xliff:g id="setting">%1$s</xliff:g> staat een langzamere start toe.</string>
+    <string name="gesture_trainer_advice_tap_time">Tikken zijn langzaam. Een langere <xliff:g id="setting">%1$s</xliff:g> staat langzamere tikken toe.</string>
+    <string name="gesture_trainer_advice_edge_width">Swipes beginnen te ver van de rand. Een grotere <xliff:g id="setting">%1$s</xliff:g> maakt ook van swipes die bij een rand beginnen randswipes.</string>
+    <string name="gesture_trainer_advice_corner_size">Tikken komen buiten de hoek neer. Een grotere <xliff:g id="setting">%1$s</xliff:g> maakt de hoeken groter.</string>
+    <string name="gesture_trainer_advice_corner_time">Tikken in de hoek zijn langzaam. Een langere <xliff:g id="setting">%1$s</xliff:g> staat langzamere tikken toe.</string>
+    <string name="gesture_trainer_menu_option">Optie <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: kies item <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Schuif één vinger omhoog of omlaag <xliff:g id="edge">%1$s</xliff:g> over minstens <xliff:g id="distance">%2$d</xliff:g> mm om het menu te openen. Het heeft <xliff:g id="count">%3$d</xliff:g> items, van boven naar beneden, elk ongeveer <xliff:g id="size">%6$s</xliff:g> cm hoog. Item <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ligt <xliff:g id="from">%7$s</xliff:g> tot <xliff:g id="to">%8$s</xliff:g> cm onder de bovenkant van het scherm. Til de vinger op wanneer het item wordt uitgesproken.</string>
+    <string name="gesture_trainer_menu_sample">Deze rand heeft geen menu. De oefening gebruikt <xliff:g id="count">%1$d</xliff:g> voorbeelditems.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Poging <xliff:g id="number">%1$d</xliff:g>: het menu is gesloten zonder keuze.</string>
+    <string name="gesture_trainer_try_menu_other">Poging <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> gekozen.</string>
+    <string name="gesture_trainer_measure_menu_item">opgetild bij item <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">De vinger begon helemaal boven of onder aan de rand, waar de hoeken en de boven- en onderrand zijn.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">De vinger werd <xliff:g id="mm">%1$.0f</xliff:g> mm van de rand opgetild, en het menu sluit voorbij <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">De vinger werd opgetild bij item <xliff:g id="item">%1$d</xliff:g> in plaats van item <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Begin een stukje van het boven- en onderuiteinde van de rand af.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Houd de vinger dicht bij de rand terwijl je schuift, en til hem daar op.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Elk item heeft een vaste plek langs de rand, en het item waar de vinger wordt opgetild, wordt gekozen. Til op wanneer het item wordt uitgesproken.</string>
+    <string name="gesture_trainer_contents">Inhoud</string>
+    <string name="gesture_trainer_contents_heading">Inhoud: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">voltooid, <xliff:g id="hits">%1$d</xliff:g> van <xliff:g id="tries">%2$d</xliff:g> herkend</string>
+    <string name="gesture_trainer_group_tap_swipe">Tikken en swipen</string>
+    <string name="gesture_trainer_group_edge_swipes">Swipes vanaf de randen</string>
+    <string name="gesture_trainer_group_along_edges">Swipes langs de randen</string>
+    <string name="gesture_trainer_group_edge_menus">Randmenu\'s</string>
+    <string name="gesture_trainer_group_corners">Hoeken</string>
+    <string name="gesture_trainer_group_back_tap">Tikken op achterkant</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Tikken met twee vingers gevolgd door een swipe met twee vingers zijn weggelaten: <xliff:g id="setting">%1$s</xliff:g> staat uit.</string>
+    <string name="gesture_trainer_how_swipe_hold">Houd dan, zonder op te tillen, de vinger minstens <xliff:g id="hold">%1$d</xliff:g> ms stil en til op.</string>
+    <string name="gesture_trainer_half_top">bovenste</string>
+    <string name="gesture_trainer_half_bottom">onderste</string>
+    <string name="gesture_trainer_how_taps_half">Tik in de <xliff:g id="half">%1$s</xliff:g> helft van het scherm. Het punt tussen de vingers bepaalt de helft.</string>
+    <string name="gesture_trainer_same_fingers">dezelfde vingers</string>
+    <string name="gesture_trainer_how_tap_swipe">Tik <xliff:g id="taps">%1$s</xliff:g> met <xliff:g id="fingers">%2$s</xliff:g>. Raak direct na de laatste tik, binnen <xliff:g id="gap">%3$d</xliff:g> ms, het scherm opnieuw aan met <xliff:g id="swipe_fingers">%4$s</xliff:g> en schuif <xliff:g id="direction">%5$s</xliff:g> in een rechte lijn over ongeveer 2 tot 3 cm, en til dan op.</string>
+    <string name="gesture_trainer_how_corner_hold">Laat bij de laatste tik de vinger stil in de hoek liggen, gedurende minstens <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Houd de telefoon in je hand vast aan de zijkanten en tik <xliff:g id="taps">%1$s</xliff:g> met een vingertop op het midden van de achterkant, stevig en snel, zoals kloppen op een deur. Houd de tikken dicht op elkaar: maximaal <xliff:g id="gap">%2$d</xliff:g> ms ertussen. Raak het scherm niet aan terwijl je tikt.</string>
+    <string name="gesture_trainer_back_tap_info">Tikken op achterkant voeren tijdens de oefening geen commando\'s uit. <xliff:g id="setting">%1$s</xliff:g> bepaalt hoe hard een tik moet zijn.</string>
+    <string name="gesture_trainer_go_placed">Maak het gebaar <xliff:g id="tries">%1$d</xliff:g> keer.</string>
+    <string name="gesture_trainer_along_left">de linkerrand</string>
+    <string name="gesture_trainer_along_right">de rechterrand</string>
+    <string name="gesture_trainer_along_top">de bovenrand</string>
+    <string name="gesture_trainer_along_bottom">de onderrand</string>
+    <string name="gesture_trainer_left_out_along_menu">Swipes langs <xliff:g id="edge">%1$s</xliff:g> zijn weggelaten: deze rand heeft een randmenu, dus een swipe erlangs opent het menu in plaats van een gebaar uit te voeren.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Swipes langs <xliff:g id="edge">%1$s</xliff:g> zijn weggelaten: deze rand scrollt, dus een swipe erlangs scrollt de app in plaats van een gebaar uit te voeren.</string>
+    <string name="gesture_trainer_finding_along_off_edge">De vinger bewoog te ver van de rand af.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Houd de vinger op de uiterste rand van het glas, recht langs de rand.</string>
+    <string name="gesture_trainer_go_back_tap">Maak het gebaar Tikken op achterkant <xliff:g id="tries">%1$d</xliff:g> keer. Een aanraking van het scherm laat de poging mislukken.</string>
+    <string name="gesture_trainer_no_accelerometer">Deze oefening vereist een versnellingsmeter. Er is er geen beschikbaar.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms stilgehouden</string>
+    <string name="gesture_trainer_measure_back_tap_strength">tik met kracht <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">De vinger bleef aan het eind <xliff:g id="ms">%1$d</xliff:g> ms stil, en moet minstens <xliff:g id="limit">%2$d</xliff:g> ms stil blijven.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">De vingers tikten in de andere helft van het scherm.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Er kwam geen swipe na de tikken.</string>
+    <string name="gesture_trainer_finding_swipe_late">De swipe begon <xliff:g id="ms">%1$d</xliff:g> ms na de laatste tik, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Tik op achterkant te licht: <xliff:g id="percent">%1$d</xliff:g>%% van de benodigde kracht.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Een tik schudde de telefoon meer zijwaarts dan door de achterkant.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">De telefoon bewoog vlak voor een tik.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Het scherm werd aangeraakt, en tikken terwijl het wordt aangeraakt tellen niet mee.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Er zat <xliff:g id="ms">%1$d</xliff:g> ms tussen tikken op de achterkant, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Houd na de swipe de vinger de volledige vasthoudtijd stil op het scherm. Til dan op.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Controleer in welke helft je tikt: het midden van het scherm scheidt de bovenste helft van de onderste helft.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Raak na de laatste tik het scherm meteen opnieuw aan en swipe.</string>
+    <string name="gesture_trainer_tip_swipe_late">Begin de swipe direct na de laatste tik, zonder pauze.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Tik steviger, met de vingertop of een vingernagel, bij het midden van de achterkant.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Tik recht op de achterkant van de telefoon, niet op de rand of schuin.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Houd de telefoon even stil voordat je tikt, en houd hem losjes vast zodat je hand hem niet beweegt.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Houd je vingers van het scherm terwijl je op de achterkant tikt: houd de telefoon aan de zijkanten vast.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Tik sneller, de ene tik direct na de andere.</string>
+    <string name="gesture_trainer_advice_swipe_hold">De vinger wordt te snel na de swipe opgetild. Een kortere <xliff:g id="setting">%1$s</xliff:g> staat korter vasthouden toe.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Tikken op de achterkant zijn licht. Een hogere <xliff:g id="setting">%1$s</xliff:g> detecteert lichtere tikken, en kan stoten als tikken detecteren.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">De vingers draaiden <xliff:g id="degrees">%1$.0f</xliff:g> graden, en vanaf <xliff:g id="limit">%2$.0f</xliff:g> graden is de beweging een draaiing.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Beweeg de vingers in een rechte lijn naar elkaar toe of van elkaar af, niet in een boog om elkaar heen.</string>
+    <string name="gesture_trainer_finding_other_gesture">De beweging paste in plaats daarvan bij dat gebaar.</string>
+    <string name="gesture_trainer_side_left">linker</string>
+    <string name="gesture_trainer_side_right">rechter</string>
+    <string name="gesture_trainer_side_top">boven</string>
+    <string name="gesture_trainer_side_bottom">onder</string>
+    <string name="gesture_trainer_finding_wrong_edge">De vinger begon aan de <xliff:g id="side">%1$s</xliff:g>rand, en deze oefening is aan de <xliff:g id="expected">%2$s</xliff:g>rand.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Begin precies op de rand die de oefening noemt.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Er opende een randmenu in plaats van dit gebaar.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Een swipe langs een rand met een menu opent het menu. Begin aan de rand die de oefening noemt.</string>
+    <string name="gesture_trainer_group_three_part">Swipes in drie delen</string>
+    <string name="gesture_trainer_group_two_stroke">Swipes in twee halen</string>
+    <string name="gesture_trainer_group_shake">Schudden</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Swipes in drie delen zijn weggelaten: <xliff:g id="setting">%1$s</xliff:g> staat aan.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Swipes in twee halen zijn weggelaten: <xliff:g id="setting">%1$s</xliff:g> is <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Schudden voert tijdens de oefening geen commando uit. <xliff:g id="setting">%1$s</xliff:g> bepaalt hoe hard je moet schudden.</string>
+    <string name="gesture_trainer_go_shake">Schud de telefoon <xliff:g id="tries">%1$d</xliff:g> keer, met een korte pauze na elke keer schudden.</string>
+    <string name="gesture_trainer_how_shake">Houd de telefoon stevig vast en schud hem snel heen en weer, alsof je een druppel water afschudt: minstens twee keer in elke richting, alles binnen ongeveer twee derde seconde. Houd hem dan stil.</string>
+    <string name="gesture_trainer_how_two_stroke">Swipe <xliff:g id="first">%1$s</xliff:g> met één vinger, ongeveer 2 cm, en til op. Swipe dan meteen, binnen <xliff:g id="time">%3$d</xliff:g> ms, <xliff:g id="second">%2$s</xliff:g> met één vinger, ongeveer 2 cm, en til op.</string>
+    <string name="gesture_trainer_how_three_part">Raak het scherm aan met één vinger en swipe zonder op te tillen <xliff:g id="first">%1$s</xliff:g>, maak dan een scherpe bocht en swipe <xliff:g id="second">%2$s</xliff:g>, maak dan opnieuw een scherpe bocht en swipe <xliff:g id="third">%3$s</xliff:g>, elk deel ongeveer 2 cm, en til op. Maak er één snelle, vloeiende beweging van met scherpe hoeken, geen bogen.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Zet één vinger in het bovenste derde deel van het scherm en de andere in het onderste derde deel, bijvoorbeeld de duim laag en de wijsvinger hoog.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">De vingers stonden niet één in het bovenste derde deel van het scherm en één in het onderste derde deel.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Er was geen tweede swipe.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">De tweede swipe begon <xliff:g id="ms">%1$d</xliff:g> ms na de eerste, en maximaal <xliff:g id="limit">%2$d</xliff:g> ms is toegestaan.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">De eerste swipe ging <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">De tweede swipe ging <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Er werd te licht geschud: <xliff:g id="percent">%1$d</xliff:g>%% van de benodigde kracht.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Bewegingen heen en weer: <xliff:g id="swings">%1$d</xliff:g> van de <xliff:g id="wanted">%2$d</xliff:g> benodigde.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Spreid de vingers ver uit elkaar, één bij de bovenrand en één bij de onderrand.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Til na de eerste swipe de vinger op en swipe meteen opnieuw.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Begin de tweede swipe direct na het optillen van de vinger.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Schud harder en sneller.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Schud sneller, minstens twee keer heen en weer in elke richting, zonder tussendoor te stoppen.</string>
+    <string name="gesture_trainer_measure_shake_strength">sterkste beweging <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Er wordt licht geschud. Een hogere <xliff:g id="setting">%1$s</xliff:g> detecteert lichter schudden, en kan het dragen van de telefoon als schudden detecteren.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">De tweede swipe begint laat. Een langere <xliff:g id="setting">%1$s</xliff:g> staat een latere tweede swipe toe, en een enkele swipe wacht dan langer voordat die wordt uitgevoerd.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> staat aan.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> staat uit: swipes met twee vingers scrollen de app, en heen en weer vegen scrollt meestal ook. Met de instelling aan voeren swipes met twee vingers SandFly-commando\'s uit in plaats van te scrollen.</string>
+    <string name="gesture_trainer_measure_first_stroke">eerste swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">tweede swipe <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">heel gebaar <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap"><xliff:g id="ms">%1$d</xliff:g> ms opgetild ertussen</string>
+</resources>

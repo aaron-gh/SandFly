@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Eleharjoittelija</string>
+    <string name="gesture_trainer_intro">Valitse eleryhmä. Jokainen harjoitus kuvaa yhden eleen. Tee ele <xliff:g id="tries">%1$d</xliff:g> kertaa; jokaisen yrityksen tulos puhutaan. Viimeisen yrityksen jälkeen näytöllä näkyvät kunkin yrityksen mittaukset, mitä muuttaa ja asiaan liittyvät asetukset.</string>
+    <string name="gesture_trainer_group_one_finger">Yksi sormi</string>
+    <string name="gesture_trainer_group_two_fingers">Kaksi sormea</string>
+    <string name="gesture_trainer_group_three_fingers">Kolme sormea</string>
+    <string name="gesture_trainer_group_four_fingers">Neljä sormea</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Nipistys, kierto ja nopea edestakainen pyyhkäisy</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> harjoitusta</string>
+    <string name="gesture_trainer_close">Sulje</string>
+    <string name="gesture_trainer_no_detection">Eleharjoittelija vaatii Android 13:n tai uudemman.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Edestakaiset eleet ja kulmaeleet on jätetty pois: <xliff:g id="setting">%1$s</xliff:g> on päällä.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Kahden sormen pyyhkäisyt on jätetty pois: <xliff:g id="setting">%1$s</xliff:g> on pois päältä, joten ne vierittävät sovelluksia.</string>
+    <string name="gesture_trainer_exercise_heading">Harjoitus <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Aloita</string>
+    <string name="gesture_trainer_skip">Ohita tämä harjoitus</string>
+    <string name="gesture_trainer_back_to_groups">Takaisin ryhmiin</string>
+    <string name="gesture_trainer_go">Tee ele <xliff:g id="tries">%1$d</xliff:g> kertaa missä tahansa näytöllä. Jokainen kosketus on yksi yritys.</string>
+    <string name="gesture_trainer_fingers_1">yhdellä sormella</string>
+    <string name="gesture_trainer_fingers_2">kahdella sormella vierekkäin, noin 1 cm:n päässä toisistaan</string>
+    <string name="gesture_trainer_fingers_3">kolmella sormella vierekkäin, hieman erillään</string>
+    <string name="gesture_trainer_fingers_4">neljällä sormella vierekkäin, hieman erillään</string>
+    <string name="gesture_trainer_direction_up">ylös</string>
+    <string name="gesture_trainer_direction_down">alas</string>
+    <string name="gesture_trainer_direction_left">vasemmalle</string>
+    <string name="gesture_trainer_direction_right">oikealle</string>
+    <string name="gesture_trainer_how_swipe">Kosketa näyttöä <xliff:g id="fingers">%1$s</xliff:g> ja liu\'uta odottamatta <xliff:g id="direction">%2$s</xliff:g> suorassa linjassa noin 2–3 cm, ja nosta sitten. Aloita liike heti: sormi, joka ensin lepää paikallaan, käynnistää kosketuksella tutkimisen.</string>
+    <string name="gesture_trainer_how_swipe_multi">Laske sormet näytölle yhdessä, samalla hetkellä, ja liikuta niitä kaikkia samaan suuntaan. Jokaisen sormen on liikuttava koko ajan <xliff:g id="direction">%1$s</xliff:g>, joten pidä linja suorana.</string>
+    <string name="gesture_trainer_how_back_and_forth">Kosketa näyttöä yhdellä sormella ja liu\'uta <xliff:g id="first">%1$s</xliff:g> noin 2 cm, palaa sitten nostamatta suoraan takaisin <xliff:g id="second">%2$s</xliff:g> noin 2 cm, ja nosta. Tee siitä yksi nopea, sujuva liike.</string>
+    <string name="gesture_trainer_how_angle">Kosketa näyttöä <xliff:g id="fingers">%1$s</xliff:g> ja liu\'uta <xliff:g id="first">%2$s</xliff:g> noin 2 cm, käänny sitten nostamatta jyrkästi ja liu\'uta <xliff:g id="second">%3$s</xliff:g> noin 2 cm, ja nosta. Tee käännöksestä terävä kulma kuin L-kirjaimessa, ei kaarta.</string>
+    <string name="gesture_trainer_taps_1">kerran</string>
+    <string name="gesture_trainer_taps_2">kahdesti</string>
+    <string name="gesture_trainer_taps_3">kolme kertaa</string>
+    <string name="gesture_trainer_taps_4">neljä kertaa</string>
+    <string name="gesture_trainer_how_taps">Napauta <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Laske sormet alas yhdessä ja nosta ne yhdessä, nopeasti ja liu\'uttamatta.</string>
+    <string name="gesture_trainer_how_taps_quick">Pidä napautukset nopeina ja samassa kohdassa: seuraavan napautuksen on tultava <xliff:g id="gap">%1$d</xliff:g> ms:n kuluessa edellisestä.</string>
+    <string name="gesture_trainer_how_hold">Kosketa näyttöä <xliff:g id="fingers">%1$s</xliff:g> yhtä aikaa ja pidä sormet paikallaan liu\'uttamatta vähintään <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Jos muuta komentoa ei ole määritetty, tämä ele poistaa SandFlyn käytöstä. Harjoittelijassa se ei suorita mitään.</string>
+    <string name="gesture_trainer_how_taps_hold">Napauta <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, ja jätä viimeisellä napautuksella sormet näytölle paikalleen vähintään <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Käytä peukaloa, etusormea ja keskisormea.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Aseta etu- ja keskisormi vierekkäin sekä peukalo ja nimetön muutaman senttimetrin päähän kummallekin puolelle. Tuo sitten kaikki neljä sormenpäätä yhteen pisteeseen.</string>
+    <string name="gesture_trainer_how_pinch">Aseta <xliff:g id="fingers">%1$d</xliff:g> sormea näytölle kauas toisistaan. Tuo ne sitten suoraan toisiaan kohti vähintään 1 cm, kuin poimisit jotain, ja nosta ne näytöltä. Liikuta vain sormia, ei koko kättä, äläkä kaaressa.</string>
+    <string name="gesture_trainer_how_spread">Aseta <xliff:g id="fingers">%1$d</xliff:g> sormea näytölle lähelle toisiaan. Siirrä ne sitten suoraan erilleen vähintään 1 cm ja nosta ne näytöltä. Liikuta vain sormia, ei koko kättä, äläkä kaaressa.</string>
+    <string name="gesture_trainer_clockwise">myötäpäivään</string>
+    <string name="gesture_trainer_counterclockwise">vastapäivään</string>
+    <string name="gesture_trainer_how_rotate">Aseta kaksi sormea näytölle noin 2–3 cm:n päähän toisistaan ja kierrä niitä <xliff:g id="way">%1$s</xliff:g> niiden keskikohdan ympäri, kuin kääntäisit säädintä, noin neljänneskierros. Nosta sitten.</string>
+    <string name="gesture_trainer_how_scrub">Aseta kaksi sormea näytölle ja liikuta niitä nopeasti noin 2 cm sivulle ja takaisin, kuin pyyhkisit jotain pois, kaikki noin sekunnissa. Nosta sitten.</string>
+    <string name="gesture_trainer_edge_bottom">alareunassa</string>
+    <string name="gesture_trainer_edge_top_left">yläreunassa, sen vasemmassa puoliskossa</string>
+    <string name="gesture_trainer_edge_top_right">yläreunassa, sen oikeassa puoliskossa</string>
+    <string name="gesture_trainer_edge_left_top">vasemmassa reunassa, sen yläpuoliskossa</string>
+    <string name="gesture_trainer_edge_left_bottom">vasemmassa reunassa, sen alapuoliskossa</string>
+    <string name="gesture_trainer_edge_right_top">oikeassa reunassa, sen yläpuoliskossa</string>
+    <string name="gesture_trainer_edge_right_bottom">oikeassa reunassa, sen alapuoliskossa</string>
+    <string name="gesture_trainer_edge_left">vasemmassa reunassa</string>
+    <string name="gesture_trainer_edge_right">oikeassa reunassa</string>
+    <string name="gesture_trainer_edge_top">yläreunassa</string>
+    <string name="gesture_trainer_how_edge">Aloita yhdellä sormella <xliff:g id="edge">%1$s</xliff:g>, enintään <xliff:g id="edge_width">%2$d</xliff:g> mm reunasta, ja liu\'uta <xliff:g id="direction">%3$s</xliff:g> näytölle ensimmäiseen napsahdukseen asti, noin <xliff:g id="distance">%4$d</xliff:g> mm. Nosta sitten heti: toisen napsahduksen jälkeen liu\'utus on pitkä liu\'utus.</string>
+    <string name="gesture_trainer_how_edge_long">Aloita yhdellä sormella <xliff:g id="edge">%1$s</xliff:g>, enintään <xliff:g id="edge_width">%2$d</xliff:g> mm reunasta, ja liu\'uta <xliff:g id="direction">%3$s</xliff:g> näytölle ensimmäisen napsahduksen ohi toiseen asti, noin <xliff:g id="distance">%4$d</xliff:g> mm. Nosta sitten.</string>
+    <string name="gesture_trainer_how_along">Liu\'uta yhtä sormea <xliff:g id="direction">%2$s</xliff:g> <xliff:g id="edge">%1$s</xliff:g> pitkin, vähintään <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">vasemmassa yläkulmassa</string>
+    <string name="gesture_trainer_corner_top_right">oikeassa yläkulmassa</string>
+    <string name="gesture_trainer_corner_bottom_left">vasemmassa alakulmassa</string>
+    <string name="gesture_trainer_corner_bottom_right">oikeassa alakulmassa</string>
+    <string name="gesture_trainer_how_corner">Napauta <xliff:g id="taps">%1$s</xliff:g> näytön <xliff:g id="corner">%2$s</xliff:g>. Aseta sormi aivan kulmaan, enintään <xliff:g id="size">%3$d</xliff:g> mm kummastakin reunasta, ja nosta nopeasti, <xliff:g id="time">%4$d</xliff:g> ms:n kuluessa.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Suuremmilla kulmilla kulman lähellä olevan säätimen napautus, kuten Takaisin vasemmassa yläkulmassa, voi suorittaa sen sijaan kulmaeleen.</string>
+    <string name="gesture_trainer_rating_precise">tunnistettu, tarkka</string>
+    <string name="gesture_trainer_rating_good">tunnistettu, hyvä</string>
+    <string name="gesture_trainer_rating_borderline">tunnistettu, mutta lähellä rajaa</string>
+    <string name="gesture_trainer_try_recognized">Yritys <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Yritys <xliff:g id="number">%1$d</xliff:g>: ei tunnistettu.</string>
+    <string name="gesture_trainer_try_other">Yritys <xliff:g id="number">%1$d</xliff:g>: tunnistettiin eleeksi <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g>/<xliff:g id="tries">%3$d</xliff:g> tunnistettu</string>
+    <string name="gesture_trainer_results_tries">Yrityksesi</string>
+    <string name="gesture_trainer_results_change">Mitä muuttaa</string>
+    <string name="gesture_trainer_results_close">Lähellä rajaa</string>
+    <string name="gesture_trainer_results_all_good">Kaikki yritykset tunnistettiin rajojen sisällä.</string>
+    <string name="gesture_trainer_results_settings">Asetukset, jotka voivat auttaa</string>
+    <string name="gesture_trainer_next">Seuraava harjoitus</string>
+    <string name="gesture_trainer_repeat">Toista</string>
+    <string name="gesture_trainer_finish">Valmis</string>
+    <string name="gesture_trainer_group_done">Teit kaikki harjoitukset ryhmässä <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Muuta: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">kesti <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">pituus <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm sekunnissa</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> astetta sivuun suorasta linjasta</string>
+    <string name="gesture_trainer_measure_start">ensimmäinen senttimetri <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">sormet osuivat näyttöön <xliff:g id="ms">%1$d</xliff:g> ms:n välein</string>
+    <string name="gesture_trainer_measure_tap">napautus <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms napautusten välillä</string>
+    <string name="gesture_trainer_measure_spread">sormet liikkuivat <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">kierto <xliff:g id="degrees">%1$.0f</xliff:g> astetta</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm kulman reunoista</string>
+    <string name="gesture_trainer_measure_edge">aloitus <xliff:g id="mm">%1$.0f</xliff:g> mm reunasta</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Sormia näytöllä: <xliff:g id="fingers">%1$d</xliff:g>, ei <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Sormet osuivat näyttöön <xliff:g id="ms">%1$d</xliff:g> ms:n välein, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Yksi sormi nousi ennen kuin kaikki sormet olivat näytöllä.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Sormet nousivat <xliff:g id="ms">%1$d</xliff:g> ms:n välein, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_became_exploration">Sormi pysyi paikallaan liian kauan tai liikkui aluksi liian hitaasti, joten kosketuksesta tuli kosketuksella tutkimista.</string>
+    <string name="gesture_trainer_finding_slow_start">Ensimmäinen senttimetri kesti <xliff:g id="ms">%1$d</xliff:g> ms, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_paused">Sormi hidasti <xliff:g id="ms">%1$d</xliff:g> ms:n ajan, ja kukin senttimetri saa kestää enintään <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Liike oli vain <xliff:g id="mm">%1$.0f</xliff:g> mm, ja sen on oltava vähintään <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Sormi lähti liikkumaan <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Sormet lähtivät liikkumaan <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Reitti poikkesi <xliff:g id="degrees">%1$.0f</xliff:g> astetta suorasta linjasta, ja enintään <xliff:g id="limit">%2$.0f</xliff:g> on sallittu.</string>
+    <string name="gesture_trainer_finding_curved">Reitti taittui <xliff:g id="parts">%1$d</xliff:g> osaan, ei <xliff:g id="wanted">%2$d</xliff:g> osaan.</string>
+    <string name="gesture_trainer_finding_turn_missing">Käännöstä ei löytynyt.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Käännöksen jälkeen sormi liikkui <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Sormi liukui <xliff:g id="mm">%1$.1f</xliff:g> mm napautuksen aikana, ja enintään <xliff:g id="limit">%2$.1f</xliff:g> mm on sallittu.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Napautus kesti <xliff:g id="ms">%1$d</xliff:g> ms, yli <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Viimeistä napautusta pidettiin <xliff:g id="ms">%1$d</xliff:g> ms, ja sen on oltava vähintään <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Napautuksia <xliff:g id="taps">%1$d</xliff:g>, ei <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Napautuksia <xliff:g id="taps">%1$d</xliff:g>, ei <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Napautusten välillä kului <xliff:g id="ms">%1$d</xliff:g> ms, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_taps_apart">Napautukset osuivat <xliff:g id="mm">%1$.0f</xliff:g> mm:n päähän toisistaan, ja enintään <xliff:g id="limit">%2$.0f</xliff:g> mm on sallittu.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Sormet liikkuivat vain <xliff:g id="mm">%1$.0f</xliff:g> mm, ja niiden on liikuttava vähintään <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Sormet liikkuivat väärään suuntaan.</string>
+    <string name="gesture_trainer_finding_moved_together">Koko käsi liukui <xliff:g id="mm">%1$.0f</xliff:g> mm näytön poikki, enemmän kuin sormet liikkuivat toisiaan kohti tai toisistaan poispäin.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Sormet kiertyivät vain <xliff:g id="degrees">%1$.0f</xliff:g> astetta, ja niiden on kierryttävä vähintään <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Sormet kiertyivät väärään suuntaan.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Ensimmäinen veto oli <xliff:g id="mm">%1$.0f</xliff:g> mm, ja sen on oltava vähintään <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Paluuveto oli <xliff:g id="mm">%1$.0f</xliff:g> mm, ja sen on oltava vähintään <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Edestakainen pyyhkäisy kesti <xliff:g id="ms">%1$d</xliff:g> ms, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Sormi osui <xliff:g id="mm">%1$.0f</xliff:g> mm:n päähän reunasta, ja reuna on <xliff:g id="limit">%2$.0f</xliff:g> mm leveä.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Sormi aloitti reunan toisesta puoliskosta.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Sormi liukui <xliff:g id="mm">%1$.0f</xliff:g> mm, ja sen on liu\'uttava vähintään <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Liian pitkä liu\'utus: sormi meni toisen napsahduksen ohi, <xliff:g id="mm">%1$.0f</xliff:g> mm, ja toinen napsahdus on kohdassa <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Napsahdukseen pääseminen kesti <xliff:g id="ms">%1$d</xliff:g> ms, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Liu\'utus kulki <xliff:g id="degrees">%1$.0f</xliff:g> astetta sivuun, ja enintään <xliff:g id="limit">%2$.0f</xliff:g> on sallittu.</string>
+    <string name="gesture_trainer_finding_corner_missed">Napautus osui <xliff:g id="mm">%1$.0f</xliff:g> mm:n päähän kulman reunoista, ja kulma on <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Kulman napautus kesti <xliff:g id="ms">%1$d</xliff:g> ms, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_none">Eleeseen sopivaa liikettä ei havaittu.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Tarkista, montako sormea koskettaa lasia. Myös näytöllä lepäävä kämmen tai muu sormi lasketaan.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Laske kaikki sormet näytölle samalla hetkellä, yhtenä kätenä, ei peräkkäin.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Laske ensin kaikki sormet näytölle ja liikuta tai nosta ne sitten.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Nosta kaikki sormet samalla hetkellä.</string>
+    <string name="gesture_trainer_tip_slow_start">Aloita liike heti, kun kosketat näyttöä, ja liiku alussa nopeammin.</string>
+    <string name="gesture_trainer_tip_paused">Pidä sormi liikkeessä tasaisella nopeudella, kunnes nostat. Älä hidasta lopussa.</string>
+    <string name="gesture_trainer_tip_too_short">Tee liikkeestä pidempi, noin 2–3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Tarkista suunta aivan liikkeen alussa. Puhelimen pitäminen suoraan edessäsi auttaa.</string>
+    <string name="gesture_trainer_tip_off_line">Liiku vain suunnan mukaisesti, ei vinottain. Etusormi pitää linjan suorempana kuin peukalo.</string>
+    <string name="gesture_trainer_tip_curved">Pidä linja suorana ja nosta heti lopussa koukkaamatta sormea sivulle nostaessasi.</string>
+    <string name="gesture_trainer_tip_turn_missing">Vaihda suuntaa jyrkästi, suorassa kulmassa tai suoraan takaisin, nostamatta. Kunkin osan on oltava noin 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Tarkista käännöksen jälkeen, mihin suuntaan liikut: toisen osan on kuljettava eleen nimeämään toiseen suuntaan.</string>
+    <string name="gesture_trainer_tip_tap_moved">Napauta suoraan alas ja ylös sormenpäällä liu\'uttamatta.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Tee jokaisesta napautuksesta lyhyt: kosketa ja nosta heti.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Pidä viimeisellä napautuksella sormia paikallaan näytöllä koko pitoajan.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Laske napautukset ja tee ne kaikki nopeasti yhdellä kertaa.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Laske napautukset. Lasista ponnahtava sormi tekee ylimääräisen napautuksen.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Napauta nopeammin: aloita seuraava napautus heti nostamisen jälkeen.</string>
+    <string name="gesture_trainer_tip_taps_apart">Napauta joka kerta samaan kohtaan.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Liikuta sormia pidemmälle, vähintään 1 cm lähemmäs toisiaan tai kauemmas toisistaan.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Nipistyksessä sormet liikkuvat toisiaan kohti, levityksessä erilleen.</string>
+    <string name="gesture_trainer_tip_moved_together">Liikuta vain sormia toisiaan kohti tai toisistaan poispäin. Älä liu\'uta koko kättä näytön poikki.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Kierrä pidemmälle, kuin kääntäisit säädintä neljänneskierroksen.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Myötäpäivään tarkoittaa kiertämistä kellon viisarien suuntaan: ylempi sormi liikkuu oikealle.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Tee ensimmäisestä vedosta vähintään 1 cm pitkä.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Palaa ensimmäisen vedon jälkeen toiseen suuntaan ennen nostamista.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Tee edestakainen pyyhkäisy nopeasti, edestakaisin noin sekunnissa.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Aloita aivan reunasta niin, että sormenpää on osittain näytön ulkopuolella.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Tarkista, kummasta reunan puoliskosta aloitat.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Liu\'uta pidemmälle, kunnes kuulet napsahduksen, ja nosta sitten.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Nosta heti ensimmäisen napsahduksen jälkeen, ennen toista.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Liu\'uta sisään nopeammin pysähtymättä ennen napsahdusta.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Liu\'uta suoraan sisään reunasta tai suoraan reunaa pitkin, ei vinottain.</string>
+    <string name="gesture_trainer_tip_corner_missed">Aseta sormi aivan kulmaan niin, että se koskettaa kumpaakin reunaa.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Nosta nopeammin kulman koskettamisen jälkeen.</string>
+    <string name="gesture_trainer_close_to_limit">Lähellä rajaa: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Pyyhkäisyt alkavat hitaasti. Pidempi <xliff:g id="setting">%1$s</xliff:g> sallii hitaamman alun.</string>
+    <string name="gesture_trainer_advice_tap_time">Napautukset ovat hitaita. Pidempi <xliff:g id="setting">%1$s</xliff:g> sallii hitaammat napautukset.</string>
+    <string name="gesture_trainer_advice_edge_width">Pyyhkäisyt alkavat liian kaukaa reunasta. Suurempi <xliff:g id="setting">%1$s</xliff:g> tekee myös reunan läheltä alkavista pyyhkäisyistä reunapyyhkäisyjä.</string>
+    <string name="gesture_trainer_advice_corner_size">Napautukset osuvat kulman ulkopuolelle. Suurempi <xliff:g id="setting">%1$s</xliff:g> suurentaa kulmia.</string>
+    <string name="gesture_trainer_advice_corner_time">Kulmien napautukset ovat hitaita. Pidempi <xliff:g id="setting">%1$s</xliff:g> sallii hitaammat napautukset.</string>
+    <string name="gesture_trainer_menu_option">Vaihtoehto <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: valitse kohde <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Avaa valikko liu\'uttamalla yhtä sormea ylös tai alas <xliff:g id="edge">%1$s</xliff:g> vähintään <xliff:g id="distance">%2$d</xliff:g> mm. Siinä on <xliff:g id="count">%3$d</xliff:g> kohdetta ylhäältä alas, kukin noin <xliff:g id="size">%6$s</xliff:g> cm korkea. Kohde <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, on <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> cm näytön yläreunasta alaspäin. Nosta sormi, kun kohde puhutaan.</string>
+    <string name="gesture_trainer_menu_sample">Tällä reunalla ei ole valikkoa. Harjoitus käyttää <xliff:g id="count">%1$d</xliff:g> esimerkkikohdetta.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Yritys <xliff:g id="number">%1$d</xliff:g>: valikko sulkeutui ilman valintaa.</string>
+    <string name="gesture_trainer_try_menu_other">Yritys <xliff:g id="number">%1$d</xliff:g>: valittiin <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">nostettu kohdassa <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Sormi aloitti reunan ylimmästä tai alimmasta kohdasta, jossa ovat kulmat sekä ylä- ja alareuna.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Sormi nousi <xliff:g id="mm">%1$.0f</xliff:g> mm:n päässä reunasta, ja valikko sulkeutuu yli <xliff:g id="limit">%2$.0f</xliff:g> mm:n päässä.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Sormi nousi kohdassa <xliff:g id="item">%1$d</xliff:g>, ei kohdassa <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Aloita hieman reunan ylä- ja alapäästä sisempänä.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Pidä sormi lähellä reunaa liu\'uttaessasi ja nosta se siinä.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Jokaisella kohteella on kiinteä paikka reunalla, ja kohde, jossa sormi nousee, valitaan. Nosta, kun kohde puhutaan.</string>
+    <string name="gesture_trainer_contents">Sisältö</string>
+    <string name="gesture_trainer_contents_heading">Sisältö: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">tehty, <xliff:g id="hits">%1$d</xliff:g>/<xliff:g id="tries">%2$d</xliff:g> tunnistettu</string>
+    <string name="gesture_trainer_group_tap_swipe">Napauta ja pyyhkäise</string>
+    <string name="gesture_trainer_group_edge_swipes">Pyyhkäisyt reunoista</string>
+    <string name="gesture_trainer_group_along_edges">Liu\'utukset reunoja pitkin</string>
+    <string name="gesture_trainer_group_edge_menus">Reunavalikot</string>
+    <string name="gesture_trainer_group_corners">Kulmat</string>
+    <string name="gesture_trainer_group_back_tap">Takaosan napautus</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Kahden sormen napautukset, joita seuraa kahden sormen pyyhkäisy, on jätetty pois: <xliff:g id="setting">%1$s</xliff:g> on pois päältä.</string>
+    <string name="gesture_trainer_how_swipe_hold">Pidä sitten sormi nostamatta paikallaan vähintään <xliff:g id="hold">%1$d</xliff:g> ms ja nosta.</string>
+    <string name="gesture_trainer_half_top">ylemmässä</string>
+    <string name="gesture_trainer_half_bottom">alemmassa</string>
+    <string name="gesture_trainer_how_taps_half">Napauta näytön <xliff:g id="half">%1$s</xliff:g> puoliskossa. Sormien välinen kohta ratkaisee puoliskon.</string>
+    <string name="gesture_trainer_same_fingers">samoilla sormilla</string>
+    <string name="gesture_trainer_how_tap_swipe">Napauta <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Heti viimeisen napautuksen jälkeen, <xliff:g id="gap">%3$d</xliff:g> ms:n kuluessa, kosketa näyttöä uudelleen <xliff:g id="swipe_fingers">%4$s</xliff:g> ja liu\'uta <xliff:g id="direction">%5$s</xliff:g> suorassa linjassa noin 2–3 cm, ja nosta sitten.</string>
+    <string name="gesture_trainer_how_corner_hold">Jätä viimeisellä napautuksella sormi kulmaan paikalleen vähintään <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Pidä puhelinta kädessäsi sen sivuista ja napauta sen takaosan keskikohtaa <xliff:g id="taps">%1$s</xliff:g> sormenpäällä, napakasti ja nopeasti, kuin koputtaisit oveen. Pidä napautukset lähekkäin: enintään <xliff:g id="gap">%2$d</xliff:g> ms niiden välillä. Älä koske näyttöön napauttaessasi.</string>
+    <string name="gesture_trainer_back_tap_info">Takaosan napautukset eivät suorita komentoja harjoituksen aikana. <xliff:g id="setting">%1$s</xliff:g> määrittää, kuinka voimakas napautuksen on oltava.</string>
+    <string name="gesture_trainer_go_placed">Tee ele <xliff:g id="tries">%1$d</xliff:g> kertaa.</string>
+    <string name="gesture_trainer_along_left">vasenta reunaa</string>
+    <string name="gesture_trainer_along_right">oikeaa reunaa</string>
+    <string name="gesture_trainer_along_top">yläreunaa</string>
+    <string name="gesture_trainer_along_bottom">alareunaa</string>
+    <string name="gesture_trainer_left_out_along_menu">Liu\'utukset <xliff:g id="edge">%1$s</xliff:g> pitkin on jätetty pois: reunalla on reunavalikko, joten liu\'utus sitä pitkin avaa valikon eikä suorita elettä.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Liu\'utukset <xliff:g id="edge">%1$s</xliff:g> pitkin on jätetty pois: reuna vierittää, joten liu\'utus sitä pitkin vierittää sovellusta eikä suorita elettä.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Sormi siirtyi liian kauas reunasta.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Pidä sormi aivan lasin reunalla, suoraan reunaa pitkin.</string>
+    <string name="gesture_trainer_go_back_tap">Tee takaosan napautus <xliff:g id="tries">%1$d</xliff:g> kertaa. Näytön kosketus hylkää yrityksen.</string>
+    <string name="gesture_trainer_no_accelerometer">Tämä harjoitus vaatii kiihtyvyysanturin. Sellaista ei ole käytettävissä.</string>
+    <string name="gesture_trainer_measure_hold">pidetty paikallaan <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">napautuksen voimakkuus <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Sormi pysyi lopussa paikallaan <xliff:g id="ms">%1$d</xliff:g> ms, ja sen on pysyttävä paikallaan vähintään <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Sormet napauttivat näytön toista puoliskoa.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Napautusten jälkeen ei tullut pyyhkäisyä.</string>
+    <string name="gesture_trainer_finding_swipe_late">Pyyhkäisy alkoi <xliff:g id="ms">%1$d</xliff:g> ms viimeisen napautuksen jälkeen, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Takaosan napautus liian kevyt: <xliff:g id="percent">%1$d</xliff:g> %% tarvittavasta voimakkuudesta.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Napautus heilautti puhelinta enemmän sivuttain kuin takaosan läpi.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Puhelin liikkui juuri ennen napautusta.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Näyttöä kosketettiin, eikä napautuksia lasketa näytön koskettamisen aikana.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Takaosan napautusten välillä kului <xliff:g id="ms">%1$d</xliff:g> ms, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Pidä pyyhkäisyn jälkeen sormi paikallaan näytöllä koko pitoajan. Nosta sitten.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Tarkista, kummalla puoliskolla napautat: näytön keskikohta erottaa yläpuoliskon alapuoliskosta.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Kosketa viimeisen napautuksen jälkeen näyttöä heti uudelleen ja pyyhkäise.</string>
+    <string name="gesture_trainer_tip_swipe_late">Aloita pyyhkäisy heti viimeisen napautuksen jälkeen ilman taukoa.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Napauta napakammin sormenpäällä tai kynnellä lähellä takaosan keskikohtaa.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Napauta suoraan puhelimen takaosaan, ei sen reunaan tai vinosti.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Pidä puhelinta hetki paikallaan ennen napauttamista ja pidä siitä kevyesti kiinni, jotta kätesi ei liikuta sitä.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Pidä sormet irti näytöstä napauttaessasi takaosaa: pidä puhelinta sen sivuista.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Napauta nopeammin, napautus heti toisen perään.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Sormi nousee liian pian pyyhkäisyn jälkeen. Lyhyempi <xliff:g id="setting">%1$s</xliff:g> sallii lyhyemmän pidon.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Takaosan napautukset ovat kevyitä. Suurempi <xliff:g id="setting">%1$s</xliff:g> havaitsee kevyemmät napautukset ja voi havaita kolahdukset napautuksina.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Sormet kiertyivät <xliff:g id="degrees">%1$.0f</xliff:g> astetta, ja <xliff:g id="limit">%2$.0f</xliff:g> asteesta alkaen liike on kierto.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Liikuta sormia suorassa linjassa toisiaan kohti tai toisistaan poispäin, ei kaaressa toistensa ympäri.</string>
+    <string name="gesture_trainer_finding_other_gesture">Liike vastasi sen sijaan tuota elettä.</string>
+    <string name="gesture_trainer_side_left">vasen reuna</string>
+    <string name="gesture_trainer_side_right">oikea reuna</string>
+    <string name="gesture_trainer_side_top">yläreuna</string>
+    <string name="gesture_trainer_side_bottom">alareuna</string>
+    <string name="gesture_trainer_finding_wrong_edge">Sormi aloitti väärältä reunalta: <xliff:g id="side">%1$s</xliff:g>. Tämän harjoituksen reuna: <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Aloita aivan siitä reunasta, jonka harjoitus nimeää.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Reunavalikko avautui tämän eleen sijaan.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Liu\'utus valikollista reunaa pitkin avaa valikon. Aloita reunasta, jonka harjoitus nimeää.</string>
+    <string name="gesture_trainer_group_three_part">Kolmiosaiset pyyhkäisyt</string>
+    <string name="gesture_trainer_group_two_stroke">Kaksivetoiset pyyhkäisyt</string>
+    <string name="gesture_trainer_group_shake">Ravista</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Kolmiosaiset pyyhkäisyt on jätetty pois: <xliff:g id="setting">%1$s</xliff:g> on päällä.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Kaksivetoiset pyyhkäisyt on jätetty pois: <xliff:g id="setting">%1$s</xliff:g> on <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Ravistus ei suorita komentoa harjoituksen aikana. <xliff:g id="setting">%1$s</xliff:g> määrittää, kuinka voimakas ravistuksen on oltava.</string>
+    <string name="gesture_trainer_go_shake">Ravista puhelinta <xliff:g id="tries">%1$d</xliff:g> kertaa ja pidä lyhyt tauko jokaisen ravistuksen jälkeen.</string>
+    <string name="gesture_trainer_how_shake">Pidä puhelimesta tukevasti kiinni ja ravista sitä nopeasti edestakaisin kuin ravistaisit vesipisaran pois: vähintään kahdesti kumpaankin suuntaan, kaikki noin kahdessa kolmasosasekunnissa. Pidä se sitten paikallaan.</string>
+    <string name="gesture_trainer_how_two_stroke">Pyyhkäise <xliff:g id="first">%1$s</xliff:g> yhdellä sormella noin 2 cm ja nosta. Pyyhkäise sitten heti, <xliff:g id="time">%3$d</xliff:g> ms:n kuluessa, <xliff:g id="second">%2$s</xliff:g> yhdellä sormella noin 2 cm ja nosta.</string>
+    <string name="gesture_trainer_how_three_part">Kosketa näyttöä yhdellä sormella ja pyyhkäise nostamatta <xliff:g id="first">%1$s</xliff:g>, käänny sitten jyrkästi ja pyyhkäise <xliff:g id="second">%2$s</xliff:g>, käänny sitten taas jyrkästi ja pyyhkäise <xliff:g id="third">%3$s</xliff:g>, kukin osa noin 2 cm, ja nosta. Tee siitä yksi nopea, sujuva liike terävin kulmin, ei kaarin.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Aseta yksi sormi näytön ylimpään kolmannekseen ja toinen alimpaan kolmannekseen, esimerkiksi peukalo alas ja etusormi ylös.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Sormista ei ollut yksi näytön ylimmässä kolmanneksessa ja yksi alimmassa kolmanneksessa.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Toista pyyhkäisyä ei tullut.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Toinen pyyhkäisy alkoi <xliff:g id="ms">%1$d</xliff:g> ms ensimmäisen jälkeen, ja enintään <xliff:g id="limit">%2$d</xliff:g> ms on sallittu.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Ensimmäinen pyyhkäisy kulki <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Toinen pyyhkäisy kulki <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Ravistus oli liian kevyt: <xliff:g id="percent">%1$d</xliff:g> %% tarvittavasta voimakkuudesta.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Heilahduksia edestakaisin: <xliff:g id="swings">%1$d</xliff:g>/<xliff:g id="wanted">%2$d</xliff:g> tarvittavasta.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Levitä sormet kauas toisistaan, toinen lähelle yläreunaa ja toinen lähelle alareunaa.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Nosta ensimmäisen pyyhkäisyn jälkeen sormi ja pyyhkäise heti uudelleen.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Aloita toinen pyyhkäisy heti sormen nostamisen jälkeen.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Ravista voimakkaammin ja nopeammin.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Ravista nopeammin, edestakaisin vähintään kahdesti kumpaankin suuntaan, pysähtymättä välillä.</string>
+    <string name="gesture_trainer_measure_shake_strength">voimakkain liike <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Ravistukset ovat kevyitä. Suurempi <xliff:g id="setting">%1$s</xliff:g> havaitsee kevyemmät ravistukset ja voi havaita puhelimen kantamisen ravistuksena.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Toinen pyyhkäisy alkaa myöhään. Pidempi <xliff:g id="setting">%1$s</xliff:g> sallii myöhemmän toisen pyyhkäisyn, ja yksittäinen pyyhkäisy odottaa silloin pidempään ennen suorittamista.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> on päällä.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> on pois päältä: kahden sormen pyyhkäisyt vierittävät sovellusta, ja myös edestakainen pyyhkäisy useimmiten vierittää. Kun asetus on päällä, kahden sormen pyyhkäisyt suorittavat SandFlyn komentoja vierittämisen sijaan.</string>
+    <string name="gesture_trainer_measure_first_stroke">ensimmäinen pyyhkäisy <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">toinen pyyhkäisy <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">koko ele <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">nostettuna <xliff:g id="ms">%1$d</xliff:g> ms niiden välillä</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">ജെസ്‌ച്ചർ പരിശീലനം</string>
+    <string name="gesture_trainer_intro">ജെസ്‌ച്ചറുകളുടെ ഒരു ഗ്രൂപ്പ് തിരഞ്ഞെടുക്കുക. ഓരോ വ്യായാമവും ഒരു ജെസ്‌ച്ചർ വിവരിക്കുന്നു. ജെസ്‌ച്ചർ <xliff:g id="tries">%1$d</xliff:g> തവണ ചെയ്യുക; ഓരോ ശ്രമത്തിന്റെയും ഫലം പറയും. അവസാന ശ്രമത്തിന് ശേഷം, ഓരോ ശ്രമത്തിന്റെയും അളവുകൾ, എന്ത് മാറ്റണം, ബന്ധപ്പെട്ട ക്രമീകരണം എന്നിവ സ്ക്രീനിൽ കാണിക്കും.</string>
+    <string name="gesture_trainer_group_one_finger">ഒരു വിരൽ</string>
+    <string name="gesture_trainer_group_two_fingers">രണ്ട് വിരലുകൾ</string>
+    <string name="gesture_trainer_group_three_fingers">മൂന്ന് വിരലുകൾ</string>
+    <string name="gesture_trainer_group_four_fingers">നാല് വിരലുകൾ</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">പിഞ്ച്, തിരിക്കൽ, സ്‌ക്രബ്</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> വ്യായാമങ്ങൾ</string>
+    <string name="gesture_trainer_close">അടയ്ക്കുക</string>
+    <string name="gesture_trainer_no_detection">ജെസ്‌ച്ചർ പരിശീലനത്തിന് Android 13 അല്ലെങ്കിൽ അതിനുശേഷമുള്ള പതിപ്പ് ആവശ്യമാണ്.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">പിന്നോട്ടും മുന്നോട്ടുമുള്ള ജെസ്‌ച്ചറുകളും ആംഗിൾ ജെസ്‌ച്ചറുകളും ഒഴിവാക്കി: “<xliff:g id="setting">%1$s</xliff:g>” ഓണാണ്.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">2 വിരൽ സ്വൈപ്പുകൾ ഒഴിവാക്കി: “<xliff:g id="setting">%1$s</xliff:g>” ഓഫാണ്, അതിനാൽ അവ ആപ്പുകൾ സ്ക്രോൾ ചെയ്യുന്നു.</string>
+    <string name="gesture_trainer_exercise_heading">വ്യായാമം <xliff:g id="number">%1$d</xliff:g> / <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">ആരംഭിക്കുക</string>
+    <string name="gesture_trainer_skip">ഈ വ്യായാമം ഒഴിവാക്കുക</string>
+    <string name="gesture_trainer_back_to_groups">ഗ്രൂപ്പുകളിലേക്ക് മടങ്ങുക</string>
+    <string name="gesture_trainer_go">സ്ക്രീനിൽ എവിടെയെങ്കിലും ജെസ്‌ച്ചർ <xliff:g id="tries">%1$d</xliff:g> തവണ ചെയ്യുക. ഓരോ സ്‌പർശവും ഒരു ശ്രമമാണ്.</string>
+    <string name="gesture_trainer_fingers_1">ഒരു വിരൽ</string>
+    <string name="gesture_trainer_fingers_2">ഏകദേശം 1 cm അകലത്തിൽ അടുത്തടുത്തുള്ള രണ്ട് വിരലുകൾ</string>
+    <string name="gesture_trainer_fingers_3">അൽപ്പം അകലത്തിൽ അടുത്തടുത്തുള്ള മൂന്ന് വിരലുകൾ</string>
+    <string name="gesture_trainer_fingers_4">അൽപ്പം അകലത്തിൽ അടുത്തടുത്തുള്ള നാല് വിരലുകൾ</string>
+    <string name="gesture_trainer_direction_up">മുകളിലേക്ക്</string>
+    <string name="gesture_trainer_direction_down">താഴേക്ക്</string>
+    <string name="gesture_trainer_direction_left">ഇടത്തോട്ട്</string>
+    <string name="gesture_trainer_direction_right">വലത്തോട്ട്</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g> ഉപയോഗിച്ച് സ്ക്രീനിൽ സ്‌പർശിച്ച്, കാത്തുനിൽക്കാതെ, നേർരേഖയിൽ ഏകദേശം 2 മുതൽ 3 cm വരെ <xliff:g id="direction">%2$s</xliff:g> നീക്കുക, തുടർന്ന് ഉയർത്തുക. ഉടൻ നീങ്ങാൻ തുടങ്ങുക: ആദ്യം അനങ്ങാതെ നിൽക്കുന്ന വിരൽ “ടച്ച് വഴി അടുത്തറിയൽ” ആരംഭിക്കുന്നു.</string>
+    <string name="gesture_trainer_how_swipe_multi">വിരലുകൾ ഒരേ സമയം ഒരുമിച്ച് വയ്ക്കുക, എല്ലാം ഒരേ ദിശയിൽ നീക്കുക. ഓരോ വിരലും മുഴുവൻ സമയവും <xliff:g id="direction">%1$s</xliff:g> പോകണം, അതിനാൽ രേഖ നേരെയാക്കി വയ്ക്കുക.</string>
+    <string name="gesture_trainer_how_back_and_forth">ഒരു വിരൽ കൊണ്ട് സ്ക്രീനിൽ സ്‌പർശിച്ച് ഏകദേശം 2 cm <xliff:g id="first">%1$s</xliff:g> നീക്കുക, തുടർന്ന് ഉയർത്താതെ ഏകദേശം 2 cm നേരെ <xliff:g id="second">%2$s</xliff:g> തിരികെ നീക്കി ഉയർത്തുക. ഇത് വേഗത്തിലുള്ള, സുഗമമായ ഒറ്റ ചലനമാക്കുക.</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g> ഉപയോഗിച്ച് സ്ക്രീനിൽ സ്‌പർശിച്ച് ഏകദേശം 2 cm <xliff:g id="first">%2$s</xliff:g> നീക്കുക, തുടർന്ന് ഉയർത്താതെ കുത്തനെ തിരിഞ്ഞ് ഏകദേശം 2 cm <xliff:g id="second">%3$s</xliff:g> നീക്കി ഉയർത്തുക. തിരിവ് L എന്ന അക്ഷരം പോലെ കൂർത്ത മൂലയാക്കുക, വളവാക്കരുത്.</string>
+    <string name="gesture_trainer_taps_1">ഒരു തവണ</string>
+    <string name="gesture_trainer_taps_2">രണ്ട് തവണ</string>
+    <string name="gesture_trainer_taps_3">മൂന്ന് തവണ</string>
+    <string name="gesture_trainer_taps_4">നാല് തവണ</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> ഉപയോഗിച്ച് <xliff:g id="taps">%1$s</xliff:g> ടാപ്പ് ചെയ്യുക. വിരലുകൾ ഒരുമിച്ച് വയ്ക്കുകയും ഒരുമിച്ച് ഉയർത്തുകയും ചെയ്യുക, വേഗത്തിൽ, നീക്കാതെ.</string>
+    <string name="gesture_trainer_how_taps_quick">ടാപ്പുകൾ വേഗത്തിലും ഒരേ സ്ഥലത്തും ചെയ്യുക: അടുത്ത ടാപ്പ് മുമ്പത്തേതിന് ശേഷം <xliff:g id="gap">%1$d</xliff:g> ms-നുള്ളിൽ വരണം.</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> ഉപയോഗിച്ച് ഒരേ സമയം സ്ക്രീനിൽ സ്‌പർശിച്ച്, നീക്കാതെ, കുറഞ്ഞത് <xliff:g id="hold">%2$d</xliff:g> ms അനങ്ങാതെ വയ്ക്കുക.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">മറ്റൊരു കമാൻഡും നൽകിയിട്ടില്ലെങ്കിൽ, ഈ ജെസ്‌ച്ചർ SandFly ഓഫാക്കുന്നു. പരിശീലനത്തിൽ ഇത് ഒന്നും പ്രവർത്തിപ്പിക്കില്ല.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> ഉപയോഗിച്ച് <xliff:g id="taps">%1$s</xliff:g> ടാപ്പ് ചെയ്യുക, അവസാന ടാപ്പിൽ വിരലുകൾ കുറഞ്ഞത് <xliff:g id="hold">%3$d</xliff:g> ms സ്ക്രീനിൽ അനങ്ങാതെ വയ്ക്കുക.</string>
+    <string name="gesture_trainer_how_three_finger_hand">തള്ളവിരൽ, ചൂണ്ടുവിരൽ, നടുവിരൽ എന്നിവ ഉപയോഗിക്കുക.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">ചൂണ്ടുവിരലും നടുവിരലും അടുത്തടുത്ത് വയ്ക്കുക, തള്ളവിരലും മോതിരവിരലും ഇരുവശത്തും കുറച്ച് സെന്റിമീറ്റർ അകലെ വയ്ക്കുക. തുടർന്ന് നാല് വിരൽത്തുമ്പുകളും ഒരു ബിന്ദുവിലേക്ക് ഒരുമിച്ച് കൊണ്ടുവരിക.</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g> വിരലുകൾ നന്നായി അകത്തി സ്ക്രീനിൽ വയ്ക്കുക. തുടർന്ന് എന്തെങ്കിലും എടുക്കുന്നതുപോലെ അവയെ കുറഞ്ഞത് 1 cm നേരെ പരസ്പരം അടുപ്പിച്ച് സ്ക്രീനിൽ നിന്ന് ഉയർത്തുക. വിരലുകൾ മാത്രം നീക്കുക, കൈ മുഴുവനായും അല്ല, വളഞ്ഞ വഴിയിലുമല്ല.</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g> വിരലുകൾ അടുപ്പിച്ച് സ്ക്രീനിൽ വയ്ക്കുക. തുടർന്ന് അവയെ കുറഞ്ഞത് 1 cm നേരെ അകറ്റി സ്ക്രീനിൽ നിന്ന് ഉയർത്തുക. വിരലുകൾ മാത്രം നീക്കുക, കൈ മുഴുവനായും അല്ല, വളഞ്ഞ വഴിയിലുമല്ല.</string>
+    <string name="gesture_trainer_clockwise">ഘടികാരദിശയിൽ</string>
+    <string name="gesture_trainer_counterclockwise">എതിർ ഘടികാരദിശയിൽ</string>
+    <string name="gesture_trainer_how_rotate">ഏകദേശം 2 മുതൽ 3 cm വരെ അകലത്തിൽ രണ്ട് വിരലുകൾ സ്ക്രീനിൽ വയ്ക്കുക, ഒരു ഡയൽ തിരിക്കുന്നതുപോലെ അവയുടെ മധ്യത്തിന് ചുറ്റും <xliff:g id="way">%1$s</xliff:g> ഏകദേശം കാൽ ഭാഗം തിരിക്കുക. തുടർന്ന് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_how_scrub">രണ്ട് വിരലുകൾ സ്ക്രീനിൽ വച്ച്, എന്തെങ്കിലും മായ്ക്കുന്നതുപോലെ, ഏകദേശം 2 cm ഒരു വശത്തേക്കും തിരികെയും വേഗത്തിൽ നീക്കുക, എല്ലാം ഏകദേശം ഒരു സെക്കൻഡിനുള്ളിൽ. തുടർന്ന് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_edge_bottom">താഴത്തെ അരികിൽ</string>
+    <string name="gesture_trainer_edge_top_left">മുകളിലെ അരികിൽ, അതിന്റെ ഇടത് പകുതിയിൽ</string>
+    <string name="gesture_trainer_edge_top_right">മുകളിലെ അരികിൽ, അതിന്റെ വലത് പകുതിയിൽ</string>
+    <string name="gesture_trainer_edge_left_top">ഇടത് അരികിൽ, അതിന്റെ മുകളിലെ പകുതിയിൽ</string>
+    <string name="gesture_trainer_edge_left_bottom">ഇടത് അരികിൽ, അതിന്റെ താഴത്തെ പകുതിയിൽ</string>
+    <string name="gesture_trainer_edge_right_top">വലത് അരികിൽ, അതിന്റെ മുകളിലെ പകുതിയിൽ</string>
+    <string name="gesture_trainer_edge_right_bottom">വലത് അരികിൽ, അതിന്റെ താഴത്തെ പകുതിയിൽ</string>
+    <string name="gesture_trainer_edge_left">ഇടത് അരികിൽ</string>
+    <string name="gesture_trainer_edge_right">വലത് അരികിൽ</string>
+    <string name="gesture_trainer_edge_top">മുകളിലെ അരികിൽ</string>
+    <string name="gesture_trainer_how_edge">ഒരു വിരൽ <xliff:g id="edge">%1$s</xliff:g>, അരികിൽ നിന്ന് പരമാവധി <xliff:g id="edge_width">%2$d</xliff:g> mm ഉള്ളിൽ വയ്ക്കുക, ആദ്യ ക്ലിക്ക് വരെ, ഏകദേശം <xliff:g id="distance">%4$d</xliff:g> mm, സ്ക്രീനിനുള്ളിലേക്ക് <xliff:g id="direction">%3$s</xliff:g> സ്ലൈഡ് ചെയ്യുക. തുടർന്ന് ഉടൻ ഉയർത്തുക: രണ്ടാമത്തെ ക്ലിക്ക് കഴിഞ്ഞാൽ അത് നീണ്ട സ്ലൈഡ് ആകും.</string>
+    <string name="gesture_trainer_how_edge_long">ഒരു വിരൽ <xliff:g id="edge">%1$s</xliff:g>, അരികിൽ നിന്ന് പരമാവധി <xliff:g id="edge_width">%2$d</xliff:g> mm ഉള്ളിൽ വയ്ക്കുക, ആദ്യ ക്ലിക്ക് കടന്ന് രണ്ടാമത്തേത് വരെ, ഏകദേശം <xliff:g id="distance">%4$d</xliff:g> mm, സ്ക്രീനിനുള്ളിലേക്ക് <xliff:g id="direction">%3$s</xliff:g> സ്ലൈഡ് ചെയ്യുക. തുടർന്ന് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_how_along">ഒരു വിരൽ <xliff:g id="edge">%1$s</xliff:g> <xliff:g id="direction">%2$s</xliff:g> കുറഞ്ഞത് <xliff:g id="distance">%3$d</xliff:g> mm സ്ലൈഡ് ചെയ്യുക.</string>
+    <string name="gesture_trainer_corner_top_left">മുകളിൽ ഇടത്</string>
+    <string name="gesture_trainer_corner_top_right">മുകളിൽ വലത്</string>
+    <string name="gesture_trainer_corner_bottom_left">താഴെ ഇടത്</string>
+    <string name="gesture_trainer_corner_bottom_right">താഴെ വലത്</string>
+    <string name="gesture_trainer_how_corner">സ്ക്രീനിന്റെ <xliff:g id="corner">%2$s</xliff:g> മൂലയിൽ <xliff:g id="taps">%1$s</xliff:g> ടാപ്പ് ചെയ്യുക. രണ്ട് അരികുകളിൽ നിന്നും പരമാവധി <xliff:g id="size">%3$d</xliff:g> mm ഉള്ളിൽ, വിരൽ കൃത്യമായി മൂലയിൽ വച്ച്, <xliff:g id="time">%4$d</xliff:g> ms-നുള്ളിൽ വേഗത്തിൽ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">മൂലകൾ വലുതാകുമ്പോൾ, മൂലയ്ക്ക് സമീപമുള്ള ഒരു നിയന്ത്രണത്തിൽ (ഉദാഹരണത്തിന് മുകളിൽ ഇടത്തുള്ള “മടങ്ങുക”) ടാപ്പ് ചെയ്യുന്നത് പകരം മൂലയിലെ ജെസ്‌ച്ചർ പ്രവർത്തിപ്പിച്ചേക്കാം.</string>
+    <string name="gesture_trainer_rating_precise">തിരിച്ചറിഞ്ഞു, കൃത്യം</string>
+    <string name="gesture_trainer_rating_good">തിരിച്ചറിഞ്ഞു, നല്ലത്</string>
+    <string name="gesture_trainer_rating_borderline">തിരിച്ചറിഞ്ഞു, പക്ഷേ ഒരു പരിധിക്ക് അടുത്ത്</string>
+    <string name="gesture_trainer_try_recognized">ശ്രമം <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">ശ്രമം <xliff:g id="number">%1$d</xliff:g>: തിരിച്ചറിഞ്ഞില്ല.</string>
+    <string name="gesture_trainer_try_other">ശ്രമം <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> ആയി തിരിച്ചറിഞ്ഞു.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g>-ൽ <xliff:g id="recognized">%2$d</xliff:g> തിരിച്ചറിഞ്ഞു</string>
+    <string name="gesture_trainer_results_tries">നിങ്ങളുടെ ശ്രമങ്ങൾ</string>
+    <string name="gesture_trainer_results_change">എന്ത് മാറ്റണം</string>
+    <string name="gesture_trainer_results_close">പരിധിക്ക് അടുത്ത്</string>
+    <string name="gesture_trainer_results_all_good">എല്ലാ ശ്രമങ്ങളും പരിധിക്കുള്ളിൽ തിരിച്ചറിഞ്ഞു.</string>
+    <string name="gesture_trainer_results_settings">സഹായിക്കാവുന്ന ക്രമീകരണം</string>
+    <string name="gesture_trainer_next">അടുത്ത വ്യായാമം</string>
+    <string name="gesture_trainer_repeat">ആവർത്തിക്കുക</string>
+    <string name="gesture_trainer_finish">പൂർത്തിയാക്കുക</string>
+    <string name="gesture_trainer_group_done">“<xliff:g id="group">%1$s</xliff:g>” എന്നതിലെ എല്ലാ വ്യായാമങ്ങളും നിങ്ങൾ പൂർത്തിയാക്കി.</string>
+    <string name="gesture_trainer_open_setting">“<xliff:g id="setting">%1$s</xliff:g>” മാറ്റുക</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms എടുത്തു</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm നീളം</string>
+    <string name="gesture_trainer_measure_speed">സെക്കൻഡിൽ <xliff:g id="speed">%1$.0f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_angle">നേർരേഖയിൽ നിന്ന് <xliff:g id="degrees">%1$.0f</xliff:g> ഡിഗ്രി വ്യതിയാനം</string>
+    <string name="gesture_trainer_measure_start">ആദ്യ സെന്റിമീറ്റർ <xliff:g id="ms">%1$d</xliff:g> ms-ൽ</string>
+    <string name="gesture_trainer_measure_landing">വിരലുകൾ <xliff:g id="ms">%1$d</xliff:g> ms വ്യത്യാസത്തിൽ സ്ക്രീനിൽ പതിച്ചു</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms ടാപ്പ്</string>
+    <string name="gesture_trainer_measure_gap">ടാപ്പുകൾക്കിടയിൽ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">വിരലുകൾ <xliff:g id="mm">%1$.0f</xliff:g> mm നീങ്ങി</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> ഡിഗ്രി തിരിഞ്ഞു</string>
+    <string name="gesture_trainer_measure_corner">മൂലയുടെ അരികുകളിൽ നിന്ന് <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_edge">അരികിൽ നിന്ന് <xliff:g id="mm">%1$.0f</xliff:g> mm അകലെ തുടങ്ങി</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">സ്ക്രീനിലെ വിരലുകൾ: <xliff:g id="wanted">%2$d</xliff:g> എന്നതിന് പകരം <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">വിരലുകൾ <xliff:g id="ms">%1$d</xliff:g> ms വ്യത്യാസത്തിൽ പതിച്ചു, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">എല്ലാ വിരലുകളും വയ്ക്കുന്നതിന് മുമ്പ് ഒരു വിരൽ ഉയർത്തി.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">വിരലുകൾ <xliff:g id="ms">%1$d</xliff:g> ms വ്യത്യാസത്തിൽ ഉയർത്തി, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_became_exploration">വിരൽ വളരെ നേരം അനങ്ങാതെ നിന്നു അല്ലെങ്കിൽ തുടക്കത്തിൽ വളരെ പതുക്കെ നീങ്ങി, അതിനാൽ സ്‌പർശം “ടച്ച് വഴി അടുത്തറിയൽ” ആയി മാറി.</string>
+    <string name="gesture_trainer_finding_slow_start">ആദ്യ സെന്റിമീറ്ററിന് <xliff:g id="ms">%1$d</xliff:g> ms എടുത്തു, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_paused">വിരൽ <xliff:g id="ms">%1$d</xliff:g> ms വേഗത കുറച്ചു, ഓരോ സെന്റിമീറ്ററിനും പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms എടുക്കാം.</string>
+    <string name="gesture_trainer_finding_too_short">ചലനം <xliff:g id="mm">%1$.0f</xliff:g> mm മാത്രമായിരുന്നു, കുറഞ്ഞത് <xliff:g id="limit">%2$.0f</xliff:g> mm ആയിരിക്കണം.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">വിരൽ ആദ്യം <xliff:g id="direction">%1$s</xliff:g> പോയി.</string>
+    <string name="gesture_trainer_finding_wrong_direction">വിരലുകൾ ആദ്യം <xliff:g id="direction">%1$s</xliff:g> പോയി.</string>
+    <string name="gesture_trainer_finding_off_line">പാത നേർരേഖയിൽ നിന്ന് <xliff:g id="degrees">%1$.0f</xliff:g> ഡിഗ്രി വ്യതിചലിച്ചു, പരമാവധി <xliff:g id="limit">%2$.0f</xliff:g> ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_curved">പാത <xliff:g id="wanted">%2$d</xliff:g> ഭാഗങ്ങൾക്ക് പകരം <xliff:g id="parts">%1$d</xliff:g> ഭാഗങ്ങളായി വളഞ്ഞു.</string>
+    <string name="gesture_trainer_finding_turn_missing">തിരിവ് കണ്ടെത്തിയില്ല.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">തിരിവിന് ശേഷം വിരൽ <xliff:g id="direction">%1$s</xliff:g> പോയി.</string>
+    <string name="gesture_trainer_finding_tap_moved">ഒരു ടാപ്പിനിടെ വിരൽ <xliff:g id="mm">%1$.1f</xliff:g> mm നീങ്ങി, പരമാവധി <xliff:g id="limit">%2$.1f</xliff:g> mm ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_tap_held_long">ഒരു ടാപ്പ് <xliff:g id="ms">%1$d</xliff:g> ms നീണ്ടുനിന്നു, <xliff:g id="limit">%2$d</xliff:g> ms-നേക്കാൾ കൂടുതൽ.</string>
+    <string name="gesture_trainer_finding_hold_too_short">അവസാന ടാപ്പ് <xliff:g id="ms">%1$d</xliff:g> ms പിടിച്ചു, കുറഞ്ഞത് <xliff:g id="limit">%2$d</xliff:g> ms പിടിക്കണം.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> ടാപ്പുകൾക്ക് പകരം <xliff:g id="taps">%1$d</xliff:g> ടാപ്പുകൾ.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> ടാപ്പുകൾക്ക് പകരം <xliff:g id="taps">%1$d</xliff:g> ടാപ്പുകൾ.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">ടാപ്പുകൾക്കിടയിൽ <xliff:g id="ms">%1$d</xliff:g> ms കടന്നുപോയി, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_taps_apart">ടാപ്പുകൾ <xliff:g id="mm">%1$.0f</xliff:g> mm അകലത്തിൽ പതിച്ചു, പരമാവധി <xliff:g id="limit">%2$.0f</xliff:g> mm ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">വിരലുകൾ <xliff:g id="mm">%1$.0f</xliff:g> mm മാത്രം നീങ്ങി, കുറഞ്ഞത് <xliff:g id="limit">%2$.0f</xliff:g> mm നീങ്ങണം.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">വിരലുകൾ എതിർ ദിശയിൽ നീങ്ങി.</string>
+    <string name="gesture_trainer_finding_moved_together">കൈ മുഴുവനായും സ്ക്രീനിലൂടെ <xliff:g id="mm">%1$.0f</xliff:g> mm നീങ്ങി, വിരലുകൾ പരസ്പരം അടുത്തതിനേക്കാളോ അകന്നതിനേക്കാളോ കൂടുതൽ.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">വിരലുകൾ <xliff:g id="degrees">%1$.0f</xliff:g> ഡിഗ്രി മാത്രം തിരിഞ്ഞു, കുറഞ്ഞത് <xliff:g id="limit">%2$.0f</xliff:g> തിരിയണം.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">വിരലുകൾ എതിർ ദിശയിൽ തിരിഞ്ഞു.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">ആദ്യ നീക്കം <xliff:g id="mm">%1$.0f</xliff:g> mm ആയിരുന്നു, കുറഞ്ഞത് <xliff:g id="limit">%2$.0f</xliff:g> mm ആയിരിക്കണം.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">തിരികെയുള്ള നീക്കം <xliff:g id="mm">%1$.0f</xliff:g> mm ആയിരുന്നു, കുറഞ്ഞത് <xliff:g id="limit">%2$.0f</xliff:g> mm ആയിരിക്കണം.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">സ്‌ക്രബിന് <xliff:g id="ms">%1$d</xliff:g> ms എടുത്തു, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">വിരൽ അരികിൽ നിന്ന് <xliff:g id="mm">%1$.0f</xliff:g> mm അകലെ പതിച്ചു, അരികിന്റെ വീതി <xliff:g id="limit">%2$.0f</xliff:g> mm ആണ്.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">വിരൽ അരികിന്റെ മറ്റേ പകുതിയിൽ നിന്നാണ് തുടങ്ങിയത്.</string>
+    <string name="gesture_trainer_finding_edge_too_short">വിരൽ <xliff:g id="mm">%1$.0f</xliff:g> mm സ്ലൈഡ് ചെയ്തു, കുറഞ്ഞത് <xliff:g id="limit">%2$.0f</xliff:g> mm സ്ലൈഡ് ചെയ്യണം.</string>
+    <string name="gesture_trainer_finding_edge_too_long">സ്ലൈഡ് വളരെ നീണ്ടു: വിരൽ രണ്ടാമത്തെ ക്ലിക്ക് കടന്ന് <xliff:g id="mm">%1$.0f</xliff:g> mm പോയി, രണ്ടാമത്തെ ക്ലിക്ക് <xliff:g id="limit">%2$.0f</xliff:g> mm-ലാണ്.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ക്ലിക്കിൽ എത്താൻ <xliff:g id="ms">%1$d</xliff:g> ms എടുത്തു, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_edge_sideways">സ്ലൈഡ് <xliff:g id="degrees">%1$.0f</xliff:g> ഡിഗ്രി വശത്തേക്ക് പോയി, പരമാവധി <xliff:g id="limit">%2$.0f</xliff:g> ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_corner_missed">ടാപ്പ് മൂലയുടെ അരികുകളിൽ നിന്ന് <xliff:g id="mm">%1$.0f</xliff:g> mm അകലെ പതിച്ചു, മൂലയുടെ വലുപ്പം <xliff:g id="limit">%2$.0f</xliff:g> mm ആണ്.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">ഒരു മൂല ടാപ്പ് <xliff:g id="ms">%1$d</xliff:g> ms നീണ്ടുനിന്നു, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_none">ജെസ്‌ച്ചറുമായി പൊരുത്തപ്പെടുന്ന ചലനമൊന്നും കണ്ടെത്തിയില്ല.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">എത്ര വിരലുകൾ ഗ്ലാസിൽ സ്‌പർശിക്കുന്നുവെന്ന് പരിശോധിക്കുക. സ്ക്രീനിൽ വച്ചിരിക്കുന്ന കൈപ്പത്തിയോ മറ്റൊരു വിരലോ കൂടി കണക്കാക്കും.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">എല്ലാ വിരലുകളും ഒരേ നിമിഷം, ഒരു കൈ പോലെ വയ്ക്കുക, ഒന്നിനുപുറകെ ഒന്നായി അല്ല.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">ആദ്യം എല്ലാ വിരലുകളും വയ്ക്കുക, തുടർന്ന് അവ നീക്കുകയോ ഉയർത്തുകയോ ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">എല്ലാ വിരലുകളും ഒരേ നിമിഷം ഉയർത്തുക.</string>
+    <string name="gesture_trainer_tip_slow_start">സ്ക്രീനിൽ സ്‌പർശിക്കുന്ന നിമിഷം തന്നെ നീങ്ങാൻ തുടങ്ങുക, തുടക്കത്തിൽ കൂടുതൽ വേഗത്തിൽ നീക്കുക.</string>
+    <string name="gesture_trainer_tip_paused">ഉയർത്തുന്നതുവരെ ഒരേ വേഗതയിൽ വിരൽ നീക്കിക്കൊണ്ടിരിക്കുക. അവസാനത്തോട് അടുക്കുമ്പോൾ വേഗത കുറയ്ക്കരുത്.</string>
+    <string name="gesture_trainer_tip_too_short">ചലനം കൂടുതൽ നീളമുള്ളതാക്കുക, ഏകദേശം 2 മുതൽ 3 cm വരെ.</string>
+    <string name="gesture_trainer_tip_wrong_direction">ചലനത്തിന്റെ തുടക്കത്തിൽ തന്നെ ദിശ പരിശോധിക്കുക. ഫോൺ നിങ്ങളുടെ നേരെ മുന്നിൽ പിടിക്കുന്നത് സഹായിക്കും.</string>
+    <string name="gesture_trainer_tip_off_line">ദിശയിൽ മാത്രം നീക്കുക, ചരിഞ്ഞല്ല. ചൂണ്ടുവിരൽ തള്ളവിരലിനേക്കാൾ നേരെയുള്ള രേഖ പാലിക്കുന്നു.</string>
+    <string name="gesture_trainer_tip_curved">രേഖ നേരെയാക്കി അവസാനത്തിൽ തന്നെ ഉയർത്തുക, ഉയർത്തുമ്പോൾ വിരൽ വശത്തേക്ക് വളയ്ക്കാതെ.</string>
+    <string name="gesture_trainer_tip_turn_missing">ഉയർത്താതെ, ലംബകോണിലോ നേരെ പിന്നോട്ടോ കുത്തനെ ദിശ മാറ്റുക. ഓരോ ഭാഗവും ഏകദേശം 2 cm ആയിരിക്കണം.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">തിരിവിന് ശേഷം നിങ്ങൾ ഏത് വഴിക്കാണ് പോകുന്നതെന്ന് പരിശോധിക്കുക: രണ്ടാം ഭാഗം ജെസ്‌ച്ചറിന്റെ പേരിലുള്ള മറ്റേ ദിശയിൽ പോകണം.</string>
+    <string name="gesture_trainer_tip_tap_moved">വിരൽത്തുമ്പ് കൊണ്ട് നേരെ താഴേക്കും മുകളിലേക്കും ടാപ്പ് ചെയ്യുക, നീക്കാതെ.</string>
+    <string name="gesture_trainer_tip_tap_held_long">ഓരോ ടാപ്പും ചെറുതാക്കുക: സ്‌പർശിച്ച് ഉടൻ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_tip_hold_too_short">അവസാന ടാപ്പിൽ, പിടിക്കേണ്ട മുഴുവൻ സമയവും വിരലുകൾ സ്ക്രീനിൽ അനങ്ങാതെ വയ്ക്കുക.</string>
+    <string name="gesture_trainer_tip_too_few_taps">ടാപ്പുകൾ എണ്ണുക, എല്ലാം വേഗത്തിൽ ഒറ്റയടിക്ക് ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_too_many_taps">ടാപ്പുകൾ എണ്ണുക. ഗ്ലാസിൽ നിന്ന് തെറിച്ചുപൊങ്ങുന്ന വിരൽ ഒരു അധിക ടാപ്പ് ഉണ്ടാക്കുന്നു.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">കൂടുതൽ വേഗത്തിൽ ടാപ്പ് ചെയ്യുക: ഉയർത്തിയ ഉടൻ അടുത്ത ടാപ്പ് തുടങ്ങുക.</string>
+    <string name="gesture_trainer_tip_taps_apart">ഓരോ തവണയും ഒരേ സ്ഥലത്ത് ടാപ്പ് ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">വിരലുകൾ കൂടുതൽ നീക്കുക, കുറഞ്ഞത് 1 cm കൂടുതൽ അടുപ്പിക്കുകയോ അകറ്റുകയോ ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">പിഞ്ചിൽ വിരലുകൾ പരസ്പരം അടുക്കുന്നു, പരത്തലിൽ വിരലുകൾ പരസ്പരം അകലുന്നു.</string>
+    <string name="gesture_trainer_tip_moved_together">വിരലുകൾ മാത്രം പരസ്പരം അടുപ്പിക്കുകയോ അകറ്റുകയോ ചെയ്യുക. കൈ മുഴുവനായും സ്ക്രീനിലൂടെ നീക്കരുത്.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">ഒരു ഡയൽ കാൽ ഭാഗം തിരിക്കുന്നതുപോലെ കൂടുതൽ തിരിക്കുക.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">ഘടികാരദിശ എന്നാൽ ക്ലോക്കിന്റെ സൂചികൾ പോകുന്ന വഴിക്ക് തിരിക്കുക എന്നാണ്: മുകളിലെ വിരൽ വലത്തോട്ട് നീങ്ങുന്നു.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">ആദ്യ നീക്കത്തിന് കുറഞ്ഞത് 1 cm നീളം നൽകുക.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">ആദ്യ നീക്കത്തിന് ശേഷം, ഉയർത്തുന്നതിന് മുമ്പ് എതിർ ദിശയിൽ തിരികെ വരിക.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">സ്‌ക്രബ് വേഗത്തിലാക്കുക, പോയി തിരികെ വരാൻ ഏകദേശം ഒരു സെക്കൻഡ്.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">വിരൽത്തുമ്പ് ഭാഗികമായി സ്ക്രീനിന് പുറത്തായി, കൃത്യം അരികിൽ നിന്ന് തുടങ്ങുക.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">അരികിന്റെ ഏത് പകുതിയിലാണ് തുടങ്ങുന്നതെന്ന് പരിശോധിക്കുക.</string>
+    <string name="gesture_trainer_tip_edge_too_short">ക്ലിക്ക് കേൾക്കുന്നതുവരെ കൂടുതൽ സ്ലൈഡ് ചെയ്യുക, തുടർന്ന് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_tip_edge_too_long">ആദ്യ ക്ലിക്കിന് തൊട്ടുപിന്നാലെ, രണ്ടാമത്തേതിന് മുമ്പ് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">ക്ലിക്കിന് മുമ്പ് നിർത്താതെ, കൂടുതൽ വേഗത്തിൽ അകത്തേക്ക് സ്ലൈഡ് ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_edge_sideways">അരികിൽ നിന്ന് നേരെ അകത്തേക്കോ അരികിലൂടെ നേരെയോ സ്ലൈഡ് ചെയ്യുക, ചരിഞ്ഞല്ല.</string>
+    <string name="gesture_trainer_tip_corner_missed">രണ്ട് അരികുകളിലും സ്‌പർശിക്കുന്ന വിധം വിരൽ കൃത്യമായി മൂലയിൽ വയ്ക്കുക.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">മൂലയിൽ സ്‌പർശിച്ച ശേഷം കൂടുതൽ വേഗത്തിൽ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_close_to_limit">പരിധിക്ക് അടുത്ത്: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">സ്വൈപ്പുകൾ പതുക്കെയാണ് തുടങ്ങുന്നത്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ കൂടുതൽ പതുക്കെയുള്ള തുടക്കം അനുവദിക്കും.</string>
+    <string name="gesture_trainer_advice_tap_time">ടാപ്പുകൾ പതുക്കെയാണ്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ കൂടുതൽ പതുക്കെയുള്ള ടാപ്പുകൾ അനുവദിക്കും.</string>
+    <string name="gesture_trainer_advice_edge_width">സ്വൈപ്പുകൾ അരികിൽ നിന്ന് വളരെ അകലെയാണ് തുടങ്ങുന്നത്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ, അരികിന് സമീപം തുടങ്ങുന്ന സ്വൈപ്പുകളും അരിക് സ്വൈപ്പുകളായി മാറും.</string>
+    <string name="gesture_trainer_advice_corner_size">ടാപ്പുകൾ മൂലയ്ക്ക് പുറത്താണ് പതിക്കുന്നത്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ മൂലകൾ വലുതാകും.</string>
+    <string name="gesture_trainer_advice_corner_time">മൂല ടാപ്പുകൾ പതുക്കെയാണ്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ കൂടുതൽ പതുക്കെയുള്ള ടാപ്പുകൾ അനുവദിക്കും.</string>
+    <string name="gesture_trainer_menu_option">ഓപ്ഷൻ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: ഇനം <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g> തിരഞ്ഞെടുക്കുക</string>
+    <string name="gesture_trainer_how_menu">മെനു തുറക്കാൻ ഒരു വിരൽ <xliff:g id="edge">%1$s</xliff:g> കുറഞ്ഞത് <xliff:g id="distance">%2$d</xliff:g> mm മുകളിലേക്കോ താഴേക്കോ സ്ലൈഡ് ചെയ്യുക. അതിൽ മുകളിൽ നിന്ന് താഴേക്ക് <xliff:g id="count">%3$d</xliff:g> ഇനങ്ങളുണ്ട്, ഓരോന്നിനും ഏകദേശം <xliff:g id="size">%6$s</xliff:g> cm ഉയരം. ഇനം <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, സ്ക്രീനിന്റെ മുകളിൽ നിന്ന് <xliff:g id="from">%7$s</xliff:g> മുതൽ <xliff:g id="to">%8$s</xliff:g> cm വരെ താഴെയാണ്. ഇനം പറയുമ്പോൾ വിരൽ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_menu_sample">ഈ അരികിന് മെനു ഇല്ല. വ്യായാമം <xliff:g id="count">%1$d</xliff:g> സാമ്പിൾ ഇനങ്ങൾ ഉപയോഗിക്കുന്നു.</string>
+    <string name="gesture_trainer_try_menu_cancelled">ശ്രമം <xliff:g id="number">%1$d</xliff:g>: ഒന്നും തിരഞ്ഞെടുക്കാതെ മെനു അടച്ചു.</string>
+    <string name="gesture_trainer_try_menu_other">ശ്രമം <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> തിരഞ്ഞെടുത്തു.</string>
+    <string name="gesture_trainer_measure_menu_item">ഇനം <xliff:g id="number">%1$d</xliff:g>-ൽ ഉയർത്തി</string>
+    <string name="gesture_trainer_finding_menu_in_corner">മൂലകളും മുകളിലെയും താഴത്തെയും അരികുകളും ഉള്ള, അരികിന്റെ ഏറ്റവും മുകളിൽ നിന്നോ താഴെ നിന്നോ ആണ് വിരൽ തുടങ്ങിയത്.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">വിരൽ അരികിൽ നിന്ന് <xliff:g id="mm">%1$.0f</xliff:g> mm അകലെ ഉയർത്തി, <xliff:g id="limit">%2$.0f</xliff:g> mm കഴിഞ്ഞാൽ മെനു അടയും.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">ഇനം <xliff:g id="target">%2$d</xliff:g>-ന് പകരം ഇനം <xliff:g id="item">%1$d</xliff:g>-ൽ വിരൽ ഉയർത്തി.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">അരികിന്റെ മുകളിലെയും താഴത്തെയും അറ്റങ്ങളിൽ നിന്ന് അൽപ്പം മാറി തുടങ്ങുക.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">സ്ലൈഡ് ചെയ്യുമ്പോൾ വിരൽ അരികിനോട് ചേർത്ത് വയ്ക്കുക, അവിടെ തന്നെ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">ഓരോ ഇനത്തിനും അരികിൽ ഒരു നിശ്ചിത സ്ഥാനമുണ്ട്, വിരൽ ഉയർത്തുന്നിടത്തെ ഇനം തിരഞ്ഞെടുക്കപ്പെടും. ഇനം പറയുമ്പോൾ ഉയർത്തുക.</string>
+    <string name="gesture_trainer_contents">ഉള്ളടക്കം</string>
+    <string name="gesture_trainer_contents_heading">ഉള്ളടക്കം: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">പൂർത്തിയായി, <xliff:g id="tries">%2$d</xliff:g>-ൽ <xliff:g id="hits">%1$d</xliff:g> തിരിച്ചറിഞ്ഞു</string>
+    <string name="gesture_trainer_group_tap_swipe">ടാപ്പും സ്വൈപ്പും</string>
+    <string name="gesture_trainer_group_edge_swipes">അരികുകളിൽ നിന്നുള്ള സ്വൈപ്പുകൾ</string>
+    <string name="gesture_trainer_group_along_edges">അരികുകളിലൂടെയുള്ള സ്ലൈഡുകൾ</string>
+    <string name="gesture_trainer_group_edge_menus">അരിക് മെനുകൾ</string>
+    <string name="gesture_trainer_group_corners">മൂലകൾ</string>
+    <string name="gesture_trainer_group_back_tap">പിൻഭാഗത്തെ ടാപ്പ്</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">2 വിരൽ ടാപ്പുകൾക്ക് ശേഷമുള്ള 2 വിരൽ സ്വൈപ്പുകൾ ഒഴിവാക്കി: “<xliff:g id="setting">%1$s</xliff:g>” ഓഫാണ്.</string>
+    <string name="gesture_trainer_how_swipe_hold">തുടർന്ന്, ഉയർത്താതെ, കുറഞ്ഞത് <xliff:g id="hold">%1$d</xliff:g> ms വിരൽ അനങ്ങാതെ വച്ച് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_half_top">മുകളിലെ</string>
+    <string name="gesture_trainer_half_bottom">താഴത്തെ</string>
+    <string name="gesture_trainer_how_taps_half">സ്ക്രീനിന്റെ <xliff:g id="half">%1$s</xliff:g> പകുതിയിൽ ടാപ്പ് ചെയ്യുക. വിരലുകൾക്കിടയിലുള്ള ബിന്ദുവാണ് പകുതി തീരുമാനിക്കുന്നത്.</string>
+    <string name="gesture_trainer_same_fingers">അതേ വിരലുകൾ</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> ഉപയോഗിച്ച് <xliff:g id="taps">%1$s</xliff:g> ടാപ്പ് ചെയ്യുക. അവസാന ടാപ്പിന് തൊട്ടുപിന്നാലെ, <xliff:g id="gap">%3$d</xliff:g> ms-നുള്ളിൽ, <xliff:g id="swipe_fingers">%4$s</xliff:g> ഉപയോഗിച്ച് വീണ്ടും സ്ക്രീനിൽ സ്‌പർശിച്ച് നേർരേഖയിൽ ഏകദേശം 2 മുതൽ 3 cm വരെ <xliff:g id="direction">%5$s</xliff:g> നീക്കുക, തുടർന്ന് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_how_corner_hold">അവസാന ടാപ്പിൽ, കുറഞ്ഞത് <xliff:g id="hold">%1$d</xliff:g> ms വിരൽ മൂലയിൽ അനങ്ങാതെ വയ്ക്കുക.</string>
+    <string name="gesture_trainer_how_back_tap">ഫോൺ വശങ്ങളിൽ പിടിച്ച് കയ്യിൽ വയ്ക്കുക, ഒരു വാതിലിൽ മുട്ടുന്നതുപോലെ, ഒരു വിരൽത്തുമ്പ് കൊണ്ട് അതിന്റെ പിൻഭാഗത്തിന്റെ മധ്യത്തിൽ ദൃഢമായും വേഗത്തിലും <xliff:g id="taps">%1$s</xliff:g> ടാപ്പ് ചെയ്യുക. ടാപ്പുകൾ അടുത്തടുത്ത് ചെയ്യുക: അവയ്ക്കിടയിൽ പരമാവധി <xliff:g id="gap">%2$d</xliff:g> ms. ടാപ്പ് ചെയ്യുമ്പോൾ സ്ക്രീനിൽ സ്‌പർശിക്കരുത്.</string>
+    <string name="gesture_trainer_back_tap_info">വ്യായാമത്തിനിടെ പിൻഭാഗത്തെ ടാപ്പുകൾ കമാൻഡുകളൊന്നും പ്രവർത്തിപ്പിക്കില്ല. ഒരു ടാപ്പ് എത്ര ശക്തമായിരിക്കണമെന്ന് “<xliff:g id="setting">%1$s</xliff:g>” നിർണ്ണയിക്കുന്നു.</string>
+    <string name="gesture_trainer_go_placed">ജെസ്‌ച്ചർ <xliff:g id="tries">%1$d</xliff:g> തവണ ചെയ്യുക.</string>
+    <string name="gesture_trainer_along_left">ഇടത് അരികിലൂടെ</string>
+    <string name="gesture_trainer_along_right">വലത് അരികിലൂടെ</string>
+    <string name="gesture_trainer_along_top">മുകളിലെ അരികിലൂടെ</string>
+    <string name="gesture_trainer_along_bottom">താഴത്തെ അരികിലൂടെ</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> സ്ലൈഡ് ചെയ്യുന്ന ജെസ്‌ച്ചറുകൾ ഒഴിവാക്കി: ആ അരികിന് ഒരു അരിക് മെനു ഉണ്ട്, അതിനാൽ അതിലൂടെയുള്ള സ്ലൈഡ് ജെസ്‌ച്ചർ പ്രവർത്തിപ്പിക്കുന്നതിന് പകരം മെനു തുറക്കുന്നു.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> സ്ലൈഡ് ചെയ്യുന്ന ജെസ്‌ച്ചറുകൾ ഒഴിവാക്കി: ആ അരിക് സ്ക്രോൾ ചെയ്യുന്നു, അതിനാൽ അതിലൂടെയുള്ള സ്ലൈഡ് ജെസ്‌ച്ചർ പ്രവർത്തിപ്പിക്കുന്നതിന് പകരം ആപ്പ് സ്ക്രോൾ ചെയ്യുന്നു.</string>
+    <string name="gesture_trainer_finding_along_off_edge">വിരൽ അരികിൽ നിന്ന് വളരെ അകന്നുപോയി.</string>
+    <string name="gesture_trainer_tip_along_off_edge">ഗ്ലാസിന്റെ ഏറ്റവും അറ്റത്ത്, അരികിലൂടെ നേരെ വിരൽ വയ്ക്കുക.</string>
+    <string name="gesture_trainer_go_back_tap">പിൻഭാഗത്തെ ടാപ്പ് ജെസ്‌ച്ചർ <xliff:g id="tries">%1$d</xliff:g> തവണ ചെയ്യുക. സ്ക്രീനിൽ സ്‌പർശിച്ചാൽ ശ്രമം പരാജയപ്പെടും.</string>
+    <string name="gesture_trainer_no_accelerometer">ഈ വ്യായാമത്തിന് ഒരു ആക്സിലറോമീറ്റർ ആവശ്യമാണ്. ഒന്നും ലഭ്യമല്ല.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms അനങ്ങാതെ പിടിച്ചു</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> ശക്തിയുള്ള ടാപ്പ്</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">അവസാനം വിരൽ <xliff:g id="ms">%1$d</xliff:g> ms അനങ്ങാതെ നിന്നു, കുറഞ്ഞത് <xliff:g id="limit">%2$d</xliff:g> ms അനങ്ങാതെ നിൽക്കണം.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">വിരലുകൾ സ്ക്രീനിന്റെ മറ്റേ പകുതിയിലാണ് ടാപ്പ് ചെയ്തത്.</string>
+    <string name="gesture_trainer_finding_swipe_missing">ടാപ്പുകൾക്ക് ശേഷം സ്വൈപ്പ് ഒന്നും വന്നില്ല.</string>
+    <string name="gesture_trainer_finding_swipe_late">അവസാന ടാപ്പിന് <xliff:g id="ms">%1$d</xliff:g> ms ശേഷമാണ് സ്വൈപ്പ് തുടങ്ങിയത്, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">പിൻഭാഗത്തെ ടാപ്പ് വളരെ നേരിയതാണ്: ആവശ്യമായ ശക്തിയുടെ <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">ഒരു ടാപ്പ് ഫോണിനെ പിൻഭാഗത്തിലൂടെ എന്നതിനേക്കാൾ കൂടുതൽ വശത്തേക്ക് കുലുക്കി.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">ഒരു ടാപ്പിന് തൊട്ടുമുമ്പ് ഫോൺ നീങ്ങുകയായിരുന്നു.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">സ്ക്രീനിൽ സ്‌പർശിച്ചു, സ്ക്രീനിൽ സ്‌പർശിക്കുമ്പോഴുള്ള ടാപ്പുകൾ കണക്കാക്കില്ല.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">പിൻഭാഗത്തെ ടാപ്പുകൾക്കിടയിൽ <xliff:g id="ms">%1$d</xliff:g> ms കടന്നുപോയി, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">സ്വൈപ്പിന് ശേഷം, പിടിക്കേണ്ട മുഴുവൻ സമയവും വിരൽ സ്ക്രീനിൽ അനങ്ങാതെ വയ്ക്കുക. തുടർന്ന് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">ഏത് പകുതിയിലാണ് ടാപ്പ് ചെയ്യുന്നതെന്ന് പരിശോധിക്കുക: സ്ക്രീനിന്റെ മധ്യഭാഗം മുകളിലെ പകുതിയെ താഴത്തെ പകുതിയിൽ നിന്ന് വേർതിരിക്കുന്നു.</string>
+    <string name="gesture_trainer_tip_swipe_missing">അവസാന ടാപ്പിന് ശേഷം, ഉടൻ വീണ്ടും സ്ക്രീനിൽ സ്‌പർശിച്ച് സ്വൈപ്പ് ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_swipe_late">അവസാന ടാപ്പിന് തൊട്ടുപിന്നാലെ, ഇടവേളയില്ലാതെ സ്വൈപ്പ് തുടങ്ങുക.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">പിൻഭാഗത്തിന്റെ മധ്യത്തിന് സമീപം, വിരൽത്തുമ്പോ നഖമോ കൊണ്ട് കൂടുതൽ ശക്തിയായി ടാപ്പ് ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">ഫോണിന്റെ പിൻഭാഗത്ത് നേരെ ടാപ്പ് ചെയ്യുക, അതിന്റെ അരികിലോ ചരിഞ്ഞോ അല്ല.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">ടാപ്പ് ചെയ്യുന്നതിന് മുമ്പ് ഒരു നിമിഷം ഫോൺ അനങ്ങാതെ പിടിക്കുക, നിങ്ങളുടെ കൈ അതിനെ ചലിപ്പിക്കാതിരിക്കാൻ അയച്ച് പിടിക്കുക.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">പിൻഭാഗത്ത് ടാപ്പ് ചെയ്യുമ്പോൾ വിരലുകൾ സ്ക്രീനിൽ നിന്ന് മാറ്റി വയ്ക്കുക: ഫോൺ വശങ്ങളിൽ പിടിക്കുക.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">കൂടുതൽ വേഗത്തിൽ, ഒന്നിനുപുറകെ ഒന്നായി ടാപ്പ് ചെയ്യുക.</string>
+    <string name="gesture_trainer_advice_swipe_hold">സ്വൈപ്പിന് ശേഷം വിരൽ വളരെ നേരത്തെ ഉയരുന്നു. “<xliff:g id="setting">%1$s</xliff:g>” കുറച്ചാൽ കുറഞ്ഞ സമയത്തെ പിടുത്തം അനുവദിക്കും.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">പിൻഭാഗത്തെ ടാപ്പുകൾ നേരിയതാണ്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ കൂടുതൽ നേരിയ ടാപ്പുകൾ കണ്ടെത്തും, തട്ടലുകളെ ടാപ്പുകളായി കണ്ടെത്തിയേക്കാം.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">വിരലുകൾ <xliff:g id="degrees">%1$.0f</xliff:g> ഡിഗ്രി തിരിഞ്ഞു, <xliff:g id="limit">%2$.0f</xliff:g> ഡിഗ്രി മുതൽ ചലനം ഒരു തിരിക്കലാണ്.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">വിരലുകൾ നേർരേഖയിൽ പരസ്പരം അടുപ്പിക്കുകയോ അകറ്റുകയോ ചെയ്യുക, പരസ്പരം ചുറ്റി വളഞ്ഞല്ല.</string>
+    <string name="gesture_trainer_finding_other_gesture">ചലനം പകരം ആ ജെസ്‌ച്ചറുമായി പൊരുത്തപ്പെട്ടു.</string>
+    <string name="gesture_trainer_side_left">ഇടത്</string>
+    <string name="gesture_trainer_side_right">വലത്</string>
+    <string name="gesture_trainer_side_top">മുകളിലെ</string>
+    <string name="gesture_trainer_side_bottom">താഴത്തെ</string>
+    <string name="gesture_trainer_finding_wrong_edge">വിരൽ <xliff:g id="side">%1$s</xliff:g> അരികിൽ നിന്നാണ് തുടങ്ങിയത്, ഈ വ്യായാമം <xliff:g id="expected">%2$s</xliff:g> അരികിലാണ്.</string>
+    <string name="gesture_trainer_tip_wrong_edge">വ്യായാമം പറയുന്ന അരികിൽ കൃത്യമായി തുടങ്ങുക.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">ഈ ജെസ്‌ച്ചറിന് പകരം ഒരു അരിക് മെനു തുറന്നു.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">മെനു ഉള്ള ഒരു അരികിലൂടെയുള്ള സ്ലൈഡ് മെനു തുറക്കുന്നു. വ്യായാമം പറയുന്ന അരികിൽ തുടങ്ങുക.</string>
+    <string name="gesture_trainer_group_three_part">മൂന്ന് ഭാഗങ്ങളുള്ള സ്വൈപ്പുകൾ</string>
+    <string name="gesture_trainer_group_two_stroke">രണ്ട് സ്ട്രോക്ക് സ്വൈപ്പുകൾ</string>
+    <string name="gesture_trainer_group_shake">കുലുക്കൽ</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">മൂന്ന് ഭാഗങ്ങളുള്ള സ്വൈപ്പുകൾ ഒഴിവാക്കി: “<xliff:g id="setting">%1$s</xliff:g>” ഓണാണ്.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">രണ്ട് സ്ട്രോക്ക് സ്വൈപ്പുകൾ ഒഴിവാക്കി: “<xliff:g id="setting">%1$s</xliff:g>” <xliff:g id="value">%2$s</xliff:g> ആണ്.</string>
+    <string name="gesture_trainer_shake_info">വ്യായാമത്തിനിടെ കുലുക്കൽ ഒരു കമാൻഡും പ്രവർത്തിപ്പിക്കില്ല. ഒരു കുലുക്കൽ എത്ര ശക്തമായിരിക്കണമെന്ന് “<xliff:g id="setting">%1$s</xliff:g>” നിർണ്ണയിക്കുന്നു.</string>
+    <string name="gesture_trainer_go_shake">ഓരോ കുലുക്കലിനും ശേഷം ചെറിയ ഇടവേളയോടെ ഫോൺ <xliff:g id="tries">%1$d</xliff:g> തവണ കുലുക്കുക.</string>
+    <string name="gesture_trainer_how_shake">ഫോൺ ദൃഢമായി പിടിച്ച്, ഒരു തുള്ളി വെള്ളം കുടഞ്ഞുകളയുന്നതുപോലെ വേഗത്തിൽ അങ്ങോട്ടും ഇങ്ങോട്ടും കുലുക്കുക: ഓരോ ദിശയിലും കുറഞ്ഞത് രണ്ട് തവണ, എല്ലാം ഏകദേശം മൂന്നിൽ രണ്ട് സെക്കൻഡിനുള്ളിൽ. തുടർന്ന് അനങ്ങാതെ പിടിക്കുക.</string>
+    <string name="gesture_trainer_how_two_stroke">ഒരു വിരൽ കൊണ്ട് ഏകദേശം 2 cm <xliff:g id="first">%1$s</xliff:g> സ്വൈപ്പ് ചെയ്ത് ഉയർത്തുക. തുടർന്ന് ഉടൻ, <xliff:g id="time">%3$d</xliff:g> ms-നുള്ളിൽ, ഒരു വിരൽ കൊണ്ട് ഏകദേശം 2 cm <xliff:g id="second">%2$s</xliff:g> സ്വൈപ്പ് ചെയ്ത് ഉയർത്തുക.</string>
+    <string name="gesture_trainer_how_three_part">ഒരു വിരൽ കൊണ്ട് സ്ക്രീനിൽ സ്‌പർശിച്ച്, ഉയർത്താതെ, <xliff:g id="first">%1$s</xliff:g> സ്വൈപ്പ് ചെയ്യുക, തുടർന്ന് കുത്തനെ തിരിഞ്ഞ് <xliff:g id="second">%2$s</xliff:g> സ്വൈപ്പ് ചെയ്യുക, വീണ്ടും കുത്തനെ തിരിഞ്ഞ് <xliff:g id="third">%3$s</xliff:g> സ്വൈപ്പ് ചെയ്യുക, ഓരോ ഭാഗവും ഏകദേശം 2 cm, തുടർന്ന് ഉയർത്തുക. കൂർത്ത മൂലകളോടെ, വളവുകളില്ലാതെ, ഇത് വേഗത്തിലുള്ള, സുഗമമായ ഒറ്റ ചലനമാക്കുക.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">ഒരു വിരൽ സ്ക്രീനിന്റെ മുകളിലെ മൂന്നിലൊന്ന് ഭാഗത്തും മറ്റൊന്ന് താഴത്തെ മൂന്നിലൊന്ന് ഭാഗത്തും വയ്ക്കുക, ഉദാഹരണത്തിന് തള്ളവിരൽ താഴെയും ചൂണ്ടുവിരൽ മുകളിലും.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">വിരലുകൾ ഒന്ന് സ്ക്രീനിന്റെ മുകളിലെ മൂന്നിലൊന്നിലും ഒന്ന് താഴത്തെ മൂന്നിലൊന്നിലും ആയിരുന്നില്ല.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">രണ്ടാമത്തെ സ്വൈപ്പ് ഉണ്ടായില്ല.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">രണ്ടാമത്തെ സ്വൈപ്പ് ആദ്യത്തേതിന് <xliff:g id="ms">%1$d</xliff:g> ms ശേഷമാണ് തുടങ്ങിയത്, പരമാവധി <xliff:g id="limit">%2$d</xliff:g> ms ആണ് അനുവദനീയം.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">ആദ്യ സ്വൈപ്പ് <xliff:g id="direction">%1$s</xliff:g> പോയി.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">രണ്ടാമത്തെ സ്വൈപ്പ് <xliff:g id="direction">%1$s</xliff:g> പോയി.</string>
+    <string name="gesture_trainer_finding_shake_too_light">കുലുക്കൽ വളരെ നേരിയതായിരുന്നു: ആവശ്യമായ ശക്തിയുടെ <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">അങ്ങോട്ടും ഇങ്ങോട്ടുമുള്ള ആട്ടങ്ങൾ: ആവശ്യമായ <xliff:g id="wanted">%2$d</xliff:g>-ൽ <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">വിരലുകൾ നന്നായി അകത്തുക, ഒന്ന് മുകളിലെ അരികിന് സമീപവും ഒന്ന് താഴത്തെ അരികിന് സമീപവും.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">ആദ്യ സ്വൈപ്പിന് ശേഷം, വിരൽ ഉയർത്തി ഉടൻ വീണ്ടും സ്വൈപ്പ് ചെയ്യുക.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">വിരൽ ഉയർത്തിയ ഉടൻ രണ്ടാമത്തെ സ്വൈപ്പ് തുടങ്ങുക.</string>
+    <string name="gesture_trainer_tip_shake_too_light">കൂടുതൽ ശക്തിയായും വേഗത്തിലും കുലുക്കുക.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">ഇടയ്ക്ക് നിർത്താതെ, ഓരോ ദിശയിലും കുറഞ്ഞത് രണ്ട് തവണ അങ്ങോട്ടും ഇങ്ങോട്ടും, കൂടുതൽ വേഗത്തിൽ കുലുക്കുക.</string>
+    <string name="gesture_trainer_measure_shake_strength">ഏറ്റവും ശക്തമായ ചലനം <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">കുലുക്കലുകൾ നേരിയതാണ്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ കൂടുതൽ നേരിയ കുലുക്കലുകൾ കണ്ടെത്തും, ഫോൺ കൊണ്ടുനടക്കുന്നതിനെ കുലുക്കലായി കണ്ടെത്തിയേക്കാം.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">രണ്ടാമത്തെ സ്വൈപ്പ് വൈകിയാണ് തുടങ്ങുന്നത്. “<xliff:g id="setting">%1$s</xliff:g>” കൂട്ടിയാൽ വൈകിയുള്ള രണ്ടാമത്തെ സ്വൈപ്പ് അനുവദിക്കും, അപ്പോൾ ഒറ്റ സ്വൈപ്പ് പ്രവർത്തിക്കുന്നതിന് മുമ്പ് കൂടുതൽ നേരം കാത്തിരിക്കും.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">“<xliff:g id="setting">%1$s</xliff:g>” ഓണാണ്.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">“<xliff:g id="setting">%1$s</xliff:g>” ഓഫാണ്: 2 വിരൽ സ്വൈപ്പുകൾ ആപ്പ് സ്ക്രോൾ ചെയ്യുന്നു, സ്‌ക്രബും മിക്കവാറും സ്ക്രോൾ ചെയ്യുന്നു. ക്രമീകരണം ഓണാക്കിയാൽ, 2 വിരൽ സ്വൈപ്പുകൾ സ്ക്രോൾ ചെയ്യുന്നതിന് പകരം SandFly കമാൻഡുകൾ പ്രവർത്തിപ്പിക്കും.</string>
+    <string name="gesture_trainer_measure_first_stroke">ആദ്യ സ്വൈപ്പ് <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">രണ്ടാമത്തെ സ്വൈപ്പ് <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">മുഴുവൻ ജെസ്‌ച്ചർ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">അവയ്ക്കിടയിൽ <xliff:g id="ms">%1$d</xliff:g> ms ഉയർത്തി</string>
+</resources>

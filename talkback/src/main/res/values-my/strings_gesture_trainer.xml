@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">လက်ဟန် လေ့ကျင့်ရေး</string>
+    <string name="gesture_trainer_intro">လက်ဟန်အုပ်စုတစ်ခု ရွေးပါ။ လေ့ကျင့်ခန်းတစ်ခုစီသည် လက်ဟန်တစ်ခုကို ဖော်ပြသည်။ လက်ဟန်ကို <xliff:g id="tries">%1$d</xliff:g> ကြိမ် လုပ်ပါ၊ ကြိုးစားမှုတစ်ခုစီ၏ ရလဒ်ကို အသံဖြင့် ပြောသည်။ နောက်ဆုံးကြိုးစားမှုပြီးနောက် မျက်နှာပြင်တွင် ကြိုးစားမှုတစ်ခုစီ၏ တိုင်းတာချက်များ၊ ပြောင်းရမည့်အရာနှင့် သက်ဆိုင်သော ဆက်တင်များကို ပြသည်။</string>
+    <string name="gesture_trainer_group_one_finger">လက်ချောင်း တစ်ချောင်း</string>
+    <string name="gesture_trainer_group_two_fingers">လက်ချောင်း နှစ်ချောင်း</string>
+    <string name="gesture_trainer_group_three_fingers">လက်ချောင်း သုံးချောင်း</string>
+    <string name="gesture_trainer_group_four_fingers">လက်ချောင်း လေးချောင်း</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">ချုံ့ခြင်း၊ လှည့်ခြင်းနှင့် ပွတ်တိုက်ခြင်း</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>၊ လေ့ကျင့်ခန်း <xliff:g id="count">%2$d</xliff:g> ခု</string>
+    <string name="gesture_trainer_close">ပိတ်ရန်</string>
+    <string name="gesture_trainer_no_detection">လက်ဟန် လေ့ကျင့်ရေးအတွက် Android 13 သို့မဟုတ် နောက်ပိုင်းဗားရှင်း လိုအပ်သည်။</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">ရှေ့နောက်နှင့် ထောင့်ချိုး လက်ဟန်များကို ချန်ထားသည်- <xliff:g id="setting">%1$s</xliff:g> ဖွင့်ထားသည်။</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">လက်ချောင်းနှစ်ချောင်း ပွတ်ဆွဲမှုများကို ချန်ထားသည်- <xliff:g id="setting">%1$s</xliff:g> ပိတ်ထားသောကြောင့် ၎င်းတို့သည် အက်ပ်များကို လှိမ့်သည်။</string>
+    <string name="gesture_trainer_exercise_heading">လေ့ကျင့်ခန်း <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>- <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">စတင်ရန်</string>
+    <string name="gesture_trainer_skip">ဤလေ့ကျင့်ခန်းကို ကျော်ရန်</string>
+    <string name="gesture_trainer_back_to_groups">အုပ်စုများသို့ ပြန်သွားရန်</string>
+    <string name="gesture_trainer_go">မျက်နှာပြင်ပေါ် မည်သည့်နေရာတွင်မဆို လက်ဟန်ကို <xliff:g id="tries">%1$d</xliff:g> ကြိမ် လုပ်ပါ။ ထိတိုင်း ကြိုးစားမှုတစ်ခု ဖြစ်သည်။</string>
+    <string name="gesture_trainer_fingers_1">လက်ချောင်းတစ်ချောင်းဖြင့်</string>
+    <string name="gesture_trainer_fingers_2">ဘေးချင်းယှဉ်၍ 1 စင်တီမီတာခန့် ခွာထားသော လက်ချောင်းနှစ်ချောင်းဖြင့်</string>
+    <string name="gesture_trainer_fingers_3">ဘေးချင်းယှဉ်၍ အနည်းငယ် ခွာထားသော လက်ချောင်းသုံးချောင်းဖြင့်</string>
+    <string name="gesture_trainer_fingers_4">ဘေးချင်းယှဉ်၍ အနည်းငယ် ခွာထားသော လက်ချောင်းလေးချောင်းဖြင့်</string>
+    <string name="gesture_trainer_direction_up">အပေါ်သို့</string>
+    <string name="gesture_trainer_direction_down">အောက်သို့</string>
+    <string name="gesture_trainer_direction_left">ဘယ်ဘက်သို့</string>
+    <string name="gesture_trainer_direction_right">ညာဘက်သို့</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g> မျက်နှာပြင်ကို ထိပြီး မစောင့်ဘဲ <xliff:g id="direction">%2$s</xliff:g> မျဉ်းဖြောင့်အတိုင်း 2 မှ 3 စင်တီမီတာခန့် ဆွဲပါ၊ ထို့နောက် ကြွပါ။ ချက်ချင်း စရွှေ့ပါ- ဦးစွာ ငြိမ်နေသော လက်ချောင်းသည် တို့ထိလျက် စူးစမ်းခြင်းကို စတင်သည်။</string>
+    <string name="gesture_trainer_how_swipe_multi">လက်ချောင်းများကို တစ်ပြိုင်နက်တည်း ချပြီး အားလုံးကို တစ်ဘက်တည်းသို့ ရွှေ့ပါ။ လက်ချောင်းတိုင်းသည် တစ်ချိန်လုံး <xliff:g id="direction">%1$s</xliff:g> သွားရမည်ဖြစ်၍ မျဉ်းကို ဖြောင့်ဖြောင့်ထားပါ။</string>
+    <string name="gesture_trainer_how_back_and_forth">လက်ချောင်းတစ်ချောင်းဖြင့် မျက်နှာပြင်ကို ထိပြီး <xliff:g id="first">%1$s</xliff:g> 2 စင်တီမီတာခန့် ဆွဲပါ၊ ထို့နောက် မကြွဘဲ <xliff:g id="second">%2$s</xliff:g> 2 စင်တီမီတာခန့် တည့်တည့် ပြန်ဆွဲပြီး ကြွပါ။ မြန်ဆန်ချောမွေ့သော လှုပ်ရှားမှုတစ်ခုတည်း ဖြစ်ပါစေ။</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g> မျက်နှာပြင်ကို ထိပြီး <xliff:g id="first">%2$s</xliff:g> 2 စင်တီမီတာခန့် ဆွဲပါ၊ ထို့နောက် မကြွဘဲ ရုတ်တရက် ချိုးကွေ့ပြီး <xliff:g id="second">%3$s</xliff:g> 2 စင်တီမီတာခန့် ဆွဲကာ ကြွပါ။ ချိုးကွေ့မှုကို အကွေးမဟုတ်ဘဲ L စာလုံးကဲ့သို့ ထောင့်ချွန် ဖြစ်ပါစေ။</string>
+    <string name="gesture_trainer_taps_1">တစ်ချက်</string>
+    <string name="gesture_trainer_taps_2">နှစ်ချက်</string>
+    <string name="gesture_trainer_taps_3">သုံးချက်</string>
+    <string name="gesture_trainer_taps_4">လေးချက်</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> တို့ပါ။ လက်ချောင်းများကို တစ်ပြိုင်နက် ချပြီး တစ်ပြိုင်နက် မြန်မြန် ကြွပါ၊ မဆွဲပါနှင့်။</string>
+    <string name="gesture_trainer_how_taps_quick">တို့ချက်များကို မြန်မြန်နှင့် နေရာတစ်ခုတည်းတွင် လုပ်ပါ- နောက်တို့ချက်သည် ယခင်တို့ချက်မှ <xliff:g id="gap">%1$d</xliff:g> ms အတွင်း လာရမည်။</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> မျက်နှာပြင်ကို တစ်ပြိုင်နက် ထိပြီး မဆွဲဘဲ အနည်းဆုံး <xliff:g id="hold">%2$d</xliff:g> ms ငြိမ်ငြိမ် ထားပါ။</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">အခြား ညွှန်ကြားချက် သတ်မှတ်မထားပါက ဤလက်ဟန်သည် SandFly ကို ပိတ်သည်။ လေ့ကျင့်ရေးတွင် ဘာမျှ မလုပ်ဆောင်ပါ။</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> တို့ပါ၊ နောက်ဆုံးတို့ချက်တွင် လက်ချောင်းများကို မျက်နှာပြင်ပေါ်တွင် အနည်းဆုံး <xliff:g id="hold">%3$d</xliff:g> ms ငြိမ်ငြိမ် ထားပါ။</string>
+    <string name="gesture_trainer_how_three_finger_hand">လက်မ၊ လက်ညှိုးနှင့် လက်ခလယ်ကို သုံးပါ။</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">လက်ညှိုးနှင့် လက်ခလယ်ကို ဘေးချင်းကပ်ထားပြီး လက်မနှင့် လက်သူကြွယ်ကို ဘေးတစ်ဖက်စီတွင် စင်တီမီတာ အနည်းငယ် ခွာထားပါ။ ထို့နောက် လက်ချောင်းထိပ် လေးခုလုံးကို အမှတ်တစ်ခုတည်းသို့ စုလိုက်ပါ။</string>
+    <string name="gesture_trainer_how_pinch">လက်ချောင်း <xliff:g id="fingers">%1$d</xliff:g> ချောင်းကို မျက်နှာပြင်ပေါ်တွင် ကျယ်ကျယ် ခွာ၍ ထားပါ။ ထို့နောက် တစ်ခုခုကို ကောက်ယူသကဲ့သို့ အချင်းချင်း အနည်းဆုံး 1 စင်တီမီတာ တည့်တည့် ကပ်လာအောင် ရွှေ့ပြီး မျက်နှာပြင်မှ ကြွပါ။ လက်တစ်ဖက်လုံးကို မဟုတ်ဘဲ လက်ချောင်းများကိုသာ ရွှေ့ပါ၊ အကွေးပုံစံဖြင့်လည်း မရွှေ့ပါနှင့်။</string>
+    <string name="gesture_trainer_how_spread">လက်ချောင်း <xliff:g id="fingers">%1$d</xliff:g> ချောင်းကို မျက်နှာပြင်ပေါ်တွင် နီးနီးကပ်ကပ် ထားပါ။ ထို့နောက် အနည်းဆုံး 1 စင်တီမီတာ တည့်တည့် ခွာထွက်အောင် ရွှေ့ပြီး မျက်နှာပြင်မှ ကြွပါ။ လက်တစ်ဖက်လုံးကို မဟုတ်ဘဲ လက်ချောင်းများကိုသာ ရွှေ့ပါ၊ အကွေးပုံစံဖြင့်လည်း မရွှေ့ပါနှင့်။</string>
+    <string name="gesture_trainer_clockwise">နာရီလက်တံအတိုင်း</string>
+    <string name="gesture_trainer_counterclockwise">နာရီလက်တံပြောင်းပြန်</string>
+    <string name="gesture_trainer_how_rotate">လက်ချောင်းနှစ်ချောင်းကို 2 မှ 3 စင်တီမီတာခန့် ခွာ၍ မျက်နှာပြင်ပေါ် ထားပြီး ခလုတ်လှည့်သကဲ့သို့ ၎င်းတို့၏ အလယ်ကို ဗဟိုပြု၍ <xliff:g id="way">%1$s</xliff:g> လေးပုံတစ်ပုံ အပတ်ခန့် လှည့်ပါ။ ထို့နောက် ကြွပါ။</string>
+    <string name="gesture_trainer_how_scrub">လက်ချောင်းနှစ်ချောင်းကို မျက်နှာပြင်ပေါ် ထားပြီး တစ်ခုခုကို ဖျက်သကဲ့သို့ တစ်ဘက်သို့ 2 စင်တီမီတာခန့် မြန်မြန် ရွှေ့ပြီး ပြန်ရွှေ့ပါ၊ အားလုံး တစ်စက္ကန့်ခန့်အတွင်း။ ထို့နောက် ကြွပါ။</string>
+    <string name="gesture_trainer_edge_bottom">အောက်ခြေအစွန်းတွင်</string>
+    <string name="gesture_trainer_edge_top_left">အပေါ်အစွန်း၏ ဘယ်ဘက်တစ်ဝက်တွင်</string>
+    <string name="gesture_trainer_edge_top_right">အပေါ်အစွန်း၏ ညာဘက်တစ်ဝက်တွင်</string>
+    <string name="gesture_trainer_edge_left_top">ဘယ်ဘက်အစွန်း၏ အပေါ်တစ်ဝက်တွင်</string>
+    <string name="gesture_trainer_edge_left_bottom">ဘယ်ဘက်အစွန်း၏ အောက်တစ်ဝက်တွင်</string>
+    <string name="gesture_trainer_edge_right_top">ညာဘက်အစွန်း၏ အပေါ်တစ်ဝက်တွင်</string>
+    <string name="gesture_trainer_edge_right_bottom">ညာဘက်အစွန်း၏ အောက်တစ်ဝက်တွင်</string>
+    <string name="gesture_trainer_edge_left">ဘယ်ဘက်အစွန်းတွင်</string>
+    <string name="gesture_trainer_edge_right">ညာဘက်အစွန်းတွင်</string>
+    <string name="gesture_trainer_edge_top">အပေါ်အစွန်းတွင်</string>
+    <string name="gesture_trainer_how_edge">လက်ချောင်းတစ်ချောင်းကို <xliff:g id="edge">%1$s</xliff:g> အစွန်းမှ အများဆုံး <xliff:g id="edge_width">%2$d</xliff:g> မီလီမီတာ အကွာတွင် ထားပြီး ပထမ ကလစ်အထိ <xliff:g id="distance">%4$d</xliff:g> မီလီမီတာခန့် မျက်နှာပြင်ထဲသို့ <xliff:g id="direction">%3$s</xliff:g> ဆွဲပါ။ ထို့နောက် ချက်ချင်း ကြွပါ- ဒုတိယ ကလစ်ကို ကျော်လျှင် ဆွဲမှုသည် ရှည်လျားသော ဆွဲမှု ဖြစ်သည်။</string>
+    <string name="gesture_trainer_how_edge_long">လက်ချောင်းတစ်ချောင်းကို <xliff:g id="edge">%1$s</xliff:g> အစွန်းမှ အများဆုံး <xliff:g id="edge_width">%2$d</xliff:g> မီလီမီတာ အကွာတွင် ထားပြီး ပထမ ကလစ်ကိုကျော်၍ ဒုတိယ ကလစ်အထိ <xliff:g id="distance">%4$d</xliff:g> မီလီမီတာခန့် မျက်နှာပြင်ထဲသို့ <xliff:g id="direction">%3$s</xliff:g> ဆွဲပါ။ ထို့နောက် ကြွပါ။</string>
+    <string name="gesture_trainer_how_along">လက်ချောင်းတစ်ချောင်းကို <xliff:g id="edge">%1$s</xliff:g>တစ်လျှောက် <xliff:g id="direction">%2$s</xliff:g> အနည်းဆုံး <xliff:g id="distance">%3$d</xliff:g> မီလီမီတာ ဆွဲပါ။</string>
+    <string name="gesture_trainer_corner_top_left">ဘယ်ဘက်အပေါ်</string>
+    <string name="gesture_trainer_corner_top_right">ညာဘက်အပေါ်</string>
+    <string name="gesture_trainer_corner_bottom_left">ဘယ်ဘက်အောက်</string>
+    <string name="gesture_trainer_corner_bottom_right">ညာဘက်အောက်</string>
+    <string name="gesture_trainer_how_corner">မျက်နှာပြင်၏ <xliff:g id="corner">%2$s</xliff:g>ထောင့်တွင် <xliff:g id="taps">%1$s</xliff:g> တို့ပါ။ လက်ချောင်းကို ထောင့်ထဲ တိတိကျကျ၊ အစွန်းနှစ်ဖက်လုံးမှ <xliff:g id="size">%3$d</xliff:g> မီလီမီတာထက် မပိုသော အကွာတွင် ထားပြီး <xliff:g id="time">%4$d</xliff:g> ms အတွင်း မြန်မြန် ကြွပါ။</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>- <xliff:g id="edge">%2$d</xliff:g> မီလီမီတာ။ <xliff:g id="corner_setting">%3$s</xliff:g>- <xliff:g id="corner">%4$d</xliff:g> မီလီမီတာ။</string>
+    <string name="gesture_trainer_corner_warning">ထောင့်များ ပိုကြီးလျှင် ဘယ်ဘက်အပေါ်ရှိ နောက်သို့ ကဲ့သို့ ထောင့်အနီးရှိ ထိန်းချုပ်မှုကို တို့ခြင်းသည် ၎င်းအစား ထောင့်လက်ဟန်ကို လုပ်ဆောင်နိုင်သည်။</string>
+    <string name="gesture_trainer_rating_precise">သိရှိသည်၊ တိကျသည်</string>
+    <string name="gesture_trainer_rating_good">သိရှိသည်၊ ကောင်းသည်</string>
+    <string name="gesture_trainer_rating_borderline">သိရှိသည်၊ သို့သော် ကန့်သတ်ချက်နှင့် နီးသည်</string>
+    <string name="gesture_trainer_try_recognized">ကြိုးစားမှု <xliff:g id="number">%1$d</xliff:g>- <xliff:g id="rating">%2$s</xliff:g>။</string>
+    <string name="gesture_trainer_try_nothing">ကြိုးစားမှု <xliff:g id="number">%1$d</xliff:g>- မသိရှိပါ။</string>
+    <string name="gesture_trainer_try_other">ကြိုးစားမှု <xliff:g id="number">%1$d</xliff:g>- <xliff:g id="gesture">%2$s</xliff:g> အဖြစ် သိရှိသည်။</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>- <xliff:g id="tries">%3$d</xliff:g> ခုတွင် <xliff:g id="recognized">%2$d</xliff:g> ခု သိရှိသည်</string>
+    <string name="gesture_trainer_results_tries">သင်၏ ကြိုးစားမှုများ</string>
+    <string name="gesture_trainer_results_change">ပြောင်းရမည့်အရာ</string>
+    <string name="gesture_trainer_results_close">ကန့်သတ်ချက်နှင့် နီးသည်</string>
+    <string name="gesture_trainer_results_all_good">ကြိုးစားမှုအားလုံးကို ကန့်သတ်ချက်များအတွင်း သိရှိသည်။</string>
+    <string name="gesture_trainer_results_settings">အထောက်အကူဖြစ်နိုင်သော ဆက်တင်များ</string>
+    <string name="gesture_trainer_next">နောက်လေ့ကျင့်ခန်း</string>
+    <string name="gesture_trainer_repeat">ထပ်လုပ်ရန်</string>
+    <string name="gesture_trainer_finish">ပြီးဆုံးရန်</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> ရှိ လေ့ကျင့်ခန်းအားလုံးကို ပြီးဆုံးပါပြီ။</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> ကို ပြောင်းရန်</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms ကြာသည်</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> စင်တီမီတာ ရှည်သည်</string>
+    <string name="gesture_trainer_measure_speed">တစ်စက္ကန့်လျှင် <xliff:g id="speed">%1$.0f</xliff:g> စင်တီမီတာ</string>
+    <string name="gesture_trainer_measure_angle">မျဉ်းဖြောင့်မှ <xliff:g id="degrees">%1$.0f</xliff:g> ဒီဂရီ သွေဖည်သည်</string>
+    <string name="gesture_trainer_measure_start">ပထမ စင်တီမီတာကို <xliff:g id="ms">%1$d</xliff:g> ms တွင်</string>
+    <string name="gesture_trainer_measure_landing">လက်ချောင်းများ <xliff:g id="ms">%1$d</xliff:g> ms ခြား၍ ထိသည်</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms တို့ချက်</string>
+    <string name="gesture_trainer_measure_gap">တို့ချက်များကြား <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">လက်ချောင်းများ <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ ရွေ့သည်</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> ဒီဂရီ လှည့်သည်</string>
+    <string name="gesture_trainer_measure_corner">ထောင့်၏ အစွန်းများမှ <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ</string>
+    <string name="gesture_trainer_measure_edge">အစွန်းမှ <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာတွင် စသည်</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">မျက်နှာပြင်ပေါ်ရှိ လက်ချောင်းများ- <xliff:g id="wanted">%2$d</xliff:g> ချောင်းအစား <xliff:g id="fingers">%1$d</xliff:g> ချောင်း။</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">လက်ချောင်းများ <xliff:g id="ms">%1$d</xliff:g> ms ခြား၍ ထိခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">လက်ချောင်းအားလုံး မချမီ လက်ချောင်းတစ်ချောင်း ကြွသွားသည်။</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">လက်ချောင်းများ <xliff:g id="ms">%1$d</xliff:g> ms ခြား၍ ကြွခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_became_exploration">လက်ချောင်းသည် အလွန်ကြာကြာ ငြိမ်နေခဲ့သည် သို့မဟုတ် အစတွင် အလွန်နှေးစွာ ရွေ့ခဲ့သဖြင့် ထိမှုသည် တို့ထိလျက် စူးစမ်းခြင်း ဖြစ်သွားသည်။</string>
+    <string name="gesture_trainer_finding_slow_start">ပထမ စင်တီမီတာသည် <xliff:g id="ms">%1$d</xliff:g> ms ကြာခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_paused">လက်ချောင်းသည် <xliff:g id="ms">%1$d</xliff:g> ms နှေးသွားခဲ့ပြီး စင်တီမီတာတစ်ခုစီသည် အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ကြာနိုင်သည်။</string>
+    <string name="gesture_trainer_finding_too_short">လှုပ်ရှားမှုသည် <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာသာ ရှိခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ရှိရမည်။</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">လက်ချောင်းသည် <xliff:g id="direction">%1$s</xliff:g> စသွားခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_wrong_direction">လက်ချောင်းများသည် <xliff:g id="direction">%1$s</xliff:g> စသွားခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_off_line">လမ်းကြောင်းသည် မျဉ်းဖြောင့်မှ <xliff:g id="degrees">%1$.0f</xliff:g> ဒီဂရီ သွေဖည်ခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$.0f</xliff:g> သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_curved">လမ်းကြောင်းသည် <xliff:g id="wanted">%2$d</xliff:g> ပိုင်းအစား <xliff:g id="parts">%1$d</xliff:g> ပိုင်း ကွေးသွားခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_turn_missing">ချိုးကွေ့မှုကို မတွေ့ပါ။</string>
+    <string name="gesture_trainer_finding_second_part_wrong">ချိုးကွေ့ပြီးနောက် လက်ချောင်းသည် <xliff:g id="direction">%1$s</xliff:g> သွားခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_tap_moved">တို့စဉ် လက်ချောင်းသည် <xliff:g id="mm">%1$.1f</xliff:g> မီလီမီတာ ချော်ခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$.1f</xliff:g> မီလီမီတာ သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_tap_held_long">တို့ချက်တစ်ခုသည် <xliff:g id="ms">%1$d</xliff:g> ms ကြာခဲ့ပြီး <xliff:g id="limit">%2$d</xliff:g> ms ထက် ပိုရှည်သည်။</string>
+    <string name="gesture_trainer_finding_hold_too_short">နောက်ဆုံးတို့ချက်ကို <xliff:g id="ms">%1$d</xliff:g> ms ဖိထားခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$d</xliff:g> ms ရှိရမည်။</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> ချက်အစား <xliff:g id="taps">%1$d</xliff:g> ချက် တို့သည်။</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> ချက်အစား <xliff:g id="taps">%1$d</xliff:g> ချက် တို့သည်။</string>
+    <string name="gesture_trainer_finding_taps_too_slow">တို့ချက်များကြား <xliff:g id="ms">%1$d</xliff:g> ms ကြာခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_taps_apart">တို့ချက်များသည် <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ ခြား၍ ကျခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_pinch_too_small">လက်ချောင်းများသည် <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာသာ ရွေ့ခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ရွေ့ရမည်။</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">လက်ချောင်းများသည် ဆန့်ကျင်ဘက်သို့ ရွေ့ခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_moved_together">လက်ချောင်းများ အချင်းချင်း ကပ်လာခြင်း သို့မဟုတ် ခွာသွားခြင်းထက် လက်တစ်ဖက်လုံးသည် မျက်နှာပြင်ပေါ်တွင် <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ ပိုချော်သွားခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_rotate_too_small">လက်ချောင်းများသည် <xliff:g id="degrees">%1$.0f</xliff:g> ဒီဂရီသာ လှည့်ခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$.0f</xliff:g> လှည့်ရမည်။</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">လက်ချောင်းများသည် ဆန့်ကျင်ဘက်သို့ လှည့်ခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_scrub_too_short">ပထမ ဆွဲချက်သည် <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ ရှိခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ရှိရမည်။</string>
+    <string name="gesture_trainer_finding_scrub_no_return">ပြန်ဆွဲချက်သည် <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ ရှိခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ရှိရမည်။</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">ပွတ်တိုက်မှုသည် <xliff:g id="ms">%1$d</xliff:g> ms ကြာခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">လက်ချောင်းသည် အစွန်းမှ <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာတွင် ထိခဲ့ပြီး အစွန်းသည် <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ကျယ်သည်။</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">လက်ချောင်းသည် အစွန်း၏ အခြားတစ်ဝက်တွင် စခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_edge_too_short">လက်ချောင်းသည် <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ ဆွဲခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ဆွဲရမည်။</string>
+    <string name="gesture_trainer_finding_edge_too_long">ဆွဲမှု အလွန်ရှည်သည်- လက်ချောင်းသည် ဒုတိယ ကလစ်ကို ကျော်၍ <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာ သွားခဲ့ပြီး ဒုတိယ ကလစ်သည် <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာတွင် ရှိသည်။</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ကလစ်အထိ ရောက်ရန် <xliff:g id="ms">%1$d</xliff:g> ms ကြာခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_edge_sideways">ဆွဲမှုသည် ဘေးသို့ <xliff:g id="degrees">%1$.0f</xliff:g> ဒီဂရီ သွားခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$.0f</xliff:g> သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_corner_missed">တို့ချက်သည် ထောင့်၏ အစွန်းများမှ <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာတွင် ကျခဲ့ပြီး ထောင့်သည် <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ရှိသည်။</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">ထောင့်တို့ချက်တစ်ခုသည် <xliff:g id="ms">%1$d</xliff:g> ms ကြာခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_none">လက်ဟန်နှင့် ကိုက်ညီသော လှုပ်ရှားမှု မတွေ့ပါ။</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">မှန်ပြင်ကို လက်ချောင်းမည်မျှ ထိနေသည်ကို စစ်ဆေးပါ။ မျက်နှာပြင်ပေါ် တင်ထားသော လက်ဖဝါး သို့မဟုတ် အခြားလက်ချောင်းကိုလည်း ရေတွက်သည်။</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">လက်ချောင်းအားလုံးကို တစ်ချောင်းပြီးတစ်ချောင်း မဟုတ်ဘဲ လက်တစ်ဖက်တည်းကဲ့သို့ တစ်ပြိုင်နက် ချပါ။</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">လက်ချောင်းအားလုံးကို အရင်ချပြီးမှ ရွှေ့ပါ သို့မဟုတ် ကြွပါ။</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">လက်ချောင်းအားလုံးကို တစ်ပြိုင်နက် ကြွပါ။</string>
+    <string name="gesture_trainer_tip_slow_start">မျက်နှာပြင်ကို ထိသည့်အချိန်တွင် စရွှေ့ပြီး အစတွင် ပိုမြန်မြန် ရွှေ့ပါ။</string>
+    <string name="gesture_trainer_tip_paused">ကြွသည်အထိ လက်ချောင်းကို အမြန်နှုန်း တစ်သမတ်တည်းဖြင့် ရွှေ့နေပါ။ အဆုံးနားတွင် မနှေးပါနှင့်။</string>
+    <string name="gesture_trainer_tip_too_short">လှုပ်ရှားမှုကို 2 မှ 3 စင်တီမီတာခန့်အထိ ပိုရှည်အောင် လုပ်ပါ။</string>
+    <string name="gesture_trainer_tip_wrong_direction">လှုပ်ရှားမှု၏ အစတွင် ဦးတည်ရာကို စစ်ဆေးပါ။ ဖုန်းကို သင့်ရှေ့တွင် တည့်တည့် ကိုင်ထားခြင်းက အထောက်အကူ ဖြစ်သည်။</string>
+    <string name="gesture_trainer_tip_off_line">ဦးတည်ရာအတိုင်းသာ ရွှေ့ပါ၊ ထောင့်ဖြတ် မရွှေ့ပါနှင့်။ လက်ညှိုးသည် လက်မထက် ပိုဖြောင့်သော မျဉ်းကို ထိန်းထားနိုင်သည်။</string>
+    <string name="gesture_trainer_tip_curved">မျဉ်းကို ဖြောင့်ဖြောင့်ထားပြီး ကြွစဉ် လက်ချောင်းကို ဘေးသို့ မကွေးဘဲ အဆုံးတွင် တိတိကျကျ ကြွပါ။</string>
+    <string name="gesture_trainer_tip_turn_missing">မကြွဘဲ ထောင့်မှန် သို့မဟုတ် တည့်တည့်နောက်သို့ ဦးတည်ရာကို ရုတ်တရက် ပြောင်းပါ။ အပိုင်းတစ်ခုစီ 2 စင်တီမီတာခန့် ရှိသင့်သည်။</string>
+    <string name="gesture_trainer_tip_second_part_wrong">ချိုးကွေ့ပြီးနောက် မည်သည့်ဘက်သို့ သွားသည်ကို စစ်ဆေးပါ- ဒုတိယအပိုင်းသည် လက်ဟန်အမည်တွင် ပါသော အခြားဦးတည်ရာသို့ သွားရမည်။</string>
+    <string name="gesture_trainer_tip_tap_moved">လက်ချောင်းထိပ်ဖြင့် တည့်တည့် အောက်သို့နှင့် အပေါ်သို့ တို့ပါ၊ မဆွဲပါနှင့်။</string>
+    <string name="gesture_trainer_tip_tap_held_long">တို့ချက်တိုင်းကို တိုတိုလုပ်ပါ- ထိပြီး ချက်ချင်း ကြွပါ။</string>
+    <string name="gesture_trainer_tip_hold_too_short">နောက်ဆုံးတို့ချက်တွင် လက်ချောင်းများကို ဖိထားချိန် တစ်လျှောက်လုံး မျက်နှာပြင်ပေါ်တွင် ငြိမ်ငြိမ် ထားပါ။</string>
+    <string name="gesture_trainer_tip_too_few_taps">တို့ချက်များကို ရေတွက်ပြီး အားလုံးကို တစ်ဆက်တည်း မြန်မြန် လုပ်ပါ။</string>
+    <string name="gesture_trainer_tip_too_many_taps">တို့ချက်များကို ရေတွက်ပါ။ မှန်ပြင်မှ ပြန်ခုန်သော လက်ချောင်းသည် အပိုတို့ချက် ဖြစ်စေသည်။</string>
+    <string name="gesture_trainer_tip_taps_too_slow">ပိုမြန်မြန် တို့ပါ- ကြွပြီးနောက် ချက်ချင်း နောက်တို့ချက်ကို စပါ။</string>
+    <string name="gesture_trainer_tip_taps_apart">အကြိမ်တိုင်း နေရာတစ်ခုတည်းတွင် တို့ပါ။</string>
+    <string name="gesture_trainer_tip_pinch_too_small">လက်ချောင်းများကို ပိုရွှေ့ပါ၊ အနည်းဆုံး 1 စင်တီမီတာ ပိုကပ်အောင် သို့မဟုတ် ပိုခွာအောင်။</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">ချုံ့ခြင်းသည် လက်ချောင်းများ အချင်းချင်း ကပ်လာခြင်းဖြစ်ပြီး ဖြန့်ခြင်းသည် လက်ချောင်းများ ခွာသွားခြင်း ဖြစ်သည်။</string>
+    <string name="gesture_trainer_tip_moved_together">လက်ချောင်းများကိုသာ အချင်းချင်း ကပ်အောင် သို့မဟုတ် ခွာအောင် ရွှေ့ပါ။ လက်တစ်ဖက်လုံးကို မျက်နှာပြင်ပေါ်တွင် မဆွဲပါနှင့်။</string>
+    <string name="gesture_trainer_tip_rotate_too_small">ခလုတ်ကို လေးပုံတစ်ပုံ အပတ် လှည့်သကဲ့သို့ ပိုလှည့်ပါ။</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">နာရီလက်တံအတိုင်း ဆိုသည်မှာ နာရီလက်တံများ သွားသည့်ဘက်သို့ လှည့်ခြင်းဖြစ်သည်- အပေါ်ရှိ လက်ချောင်းသည် ညာဘက်သို့ ရွေ့သည်။</string>
+    <string name="gesture_trainer_tip_scrub_too_short">ပထမ ဆွဲချက်ကို အနည်းဆုံး 1 စင်တီမီတာ ရှည်အောင် လုပ်ပါ။</string>
+    <string name="gesture_trainer_tip_scrub_no_return">ပထမ ဆွဲချက်ပြီးနောက် မကြွမီ အခြားဘက်သို့ ပြန်ဆွဲပါ။</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">ပွတ်တိုက်မှုကို မြန်မြန် လုပ်ပါ၊ သွားပြီးပြန်လာခြင်းကို တစ်စက္ကန့်ခန့်အတွင်း။</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">လက်ချောင်းထိပ်၏ တစ်စိတ်တစ်ပိုင်း မျက်နှာပြင်အပြင်ဘက်တွင် ရှိနေစေ၍ အစွန်းမှ တိတိကျကျ စပါ။</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">အစွန်း၏ မည်သည့်တစ်ဝက်တွင် စသည်ကို စစ်ဆေးပါ။</string>
+    <string name="gesture_trainer_tip_edge_too_short">ကလစ်ကို ကြားရသည်အထိ ပိုဆွဲပြီး ကြွပါ။</string>
+    <string name="gesture_trainer_tip_edge_too_long">ပထမ ကလစ်ပြီးနောက် ဒုတိယ ကလစ်မတိုင်မီ ချက်ချင်း ကြွပါ။</string>
+    <string name="gesture_trainer_tip_edge_too_slow">ကလစ်မတိုင်မီ မရပ်ဘဲ ပိုမြန်မြန် အထဲသို့ ဆွဲပါ။</string>
+    <string name="gesture_trainer_tip_edge_sideways">အစွန်းမှ တည့်တည့် အထဲသို့ သို့မဟုတ် အစွန်းတစ်လျှောက် တည့်တည့် ဆွဲပါ၊ ထောင့်ဖြတ် မဆွဲပါနှင့်။</string>
+    <string name="gesture_trainer_tip_corner_missed">လက်ချောင်းကို အစွန်းနှစ်ဖက်လုံး ထိအောင် ထောင့်ထဲ တိတိကျကျ ထားပါ။</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">ထောင့်ကို ထိပြီးနောက် ပိုမြန်မြန် ကြွပါ။</string>
+    <string name="gesture_trainer_close_to_limit">ကန့်သတ်ချက်နှင့် နီးသည်- <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">ပွတ်ဆွဲမှုများ နှေးနှေး စသည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုရှည်စွာ သတ်မှတ်လျှင် ပိုနှေးသော အစကို ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_advice_tap_time">တို့ချက်များ နှေးသည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုရှည်စွာ သတ်မှတ်လျှင် ပိုနှေးသော တို့ချက်များကို ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_advice_edge_width">ပွတ်ဆွဲမှုများ အစွန်းမှ အလွန်ဝေးသည့်နေရာတွင် စသည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုကြီးစွာ သတ်မှတ်လျှင် အစွန်းအနီးမှ စသော ပွတ်ဆွဲမှုများကိုလည်း အစွန်းပွတ်ဆွဲမှုများ ဖြစ်စေသည်။</string>
+    <string name="gesture_trainer_advice_corner_size">တို့ချက်များ ထောင့်အပြင်ဘက်တွင် ကျသည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုကြီးစွာ သတ်မှတ်လျှင် ထောင့်များ ပိုကြီးလာသည်။</string>
+    <string name="gesture_trainer_advice_corner_time">ထောင့်တို့ချက်များ နှေးသည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုရှည်စွာ သတ်မှတ်လျှင် ပိုနှေးသော တို့ချက်များကို ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_menu_option">ရွေးစရာ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>- အကြောင်းအရာ <xliff:g id="number">%3$d</xliff:g>၊ <xliff:g id="item">%2$s</xliff:g> ကို ရွေးပါ</string>
+    <string name="gesture_trainer_how_menu">မီနူးကို ဖွင့်ရန် လက်ချောင်းတစ်ချောင်းကို <xliff:g id="edge">%1$s</xliff:g> အပေါ်သို့ သို့မဟုတ် အောက်သို့ အနည်းဆုံး <xliff:g id="distance">%2$d</xliff:g> မီလီမီတာ ဆွဲပါ။ ၎င်းတွင် အပေါ်မှ အောက်သို့ အကြောင်းအရာ <xliff:g id="count">%3$d</xliff:g> ခု ရှိပြီး တစ်ခုစီ <xliff:g id="size">%6$s</xliff:g> စင်တီမီတာခန့် မြင့်သည်။ အကြောင်းအရာ <xliff:g id="number">%4$d</xliff:g>၊ <xliff:g id="item">%5$s</xliff:g> သည် မျက်နှာပြင်ထိပ်မှ <xliff:g id="from">%7$s</xliff:g> မှ <xliff:g id="to">%8$s</xliff:g> စင်တီမီတာ အောက်တွင် ရှိသည်။ အကြောင်းအရာကို ပြောသည့်အခါ လက်ချောင်းကို ကြွပါ။</string>
+    <string name="gesture_trainer_menu_sample">ဤအစွန်းတွင် မီနူး မရှိပါ။ လေ့ကျင့်ခန်းသည် နမူနာ အကြောင်းအရာ <xliff:g id="count">%1$d</xliff:g> ခုကို သုံးသည်။</string>
+    <string name="gesture_trainer_try_menu_cancelled">ကြိုးစားမှု <xliff:g id="number">%1$d</xliff:g>- ရွေးချယ်မှု မရှိဘဲ မီနူး ပိတ်သွားသည်။</string>
+    <string name="gesture_trainer_try_menu_other">ကြိုးစားမှု <xliff:g id="number">%1$d</xliff:g>- <xliff:g id="item">%2$s</xliff:g> ကို ရွေးခဲ့သည်။</string>
+    <string name="gesture_trainer_measure_menu_item">အကြောင်းအရာ <xliff:g id="number">%1$d</xliff:g> တွင် ကြွသည်</string>
+    <string name="gesture_trainer_finding_menu_in_corner">လက်ချောင်းသည် ထောင့်များနှင့် အပေါ်နှင့် အောက်ခြေ အစွန်းများ ရှိရာ အစွန်း၏ ထိပ်ဆုံး သို့မဟုတ် အောက်ဆုံးတွင် စခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_menu_left_edge">လက်ချောင်းသည် အစွန်းမှ <xliff:g id="mm">%1$.0f</xliff:g> မီလီမီတာတွင် ကြွခဲ့ပြီး <xliff:g id="limit">%2$.0f</xliff:g> မီလီမီတာ ကျော်လျှင် မီနူး ပိတ်သည်။</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">လက်ချောင်းသည် အကြောင်းအရာ <xliff:g id="target">%2$d</xliff:g> အစား အကြောင်းအရာ <xliff:g id="item">%1$d</xliff:g> တွင် ကြွခဲ့သည်။</string>
+    <string name="gesture_trainer_tip_menu_in_corner">အစွန်း၏ အပေါ်နှင့် အောက်ခြေ အဆုံးများမှ အနည်းငယ် ခွာ၍ စပါ။</string>
+    <string name="gesture_trainer_tip_menu_left_edge">ဆွဲနေစဉ် လက်ချောင်းကို အစွန်းအနီးတွင် ထားပြီး ထိုနေရာတွင်ပင် ကြွပါ။</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">အကြောင်းအရာတစ်ခုစီတွင် အစွန်းတစ်လျှောက် ပုံသေနေရာ ရှိပြီး လက်ချောင်း ကြွသည့် အကြောင်းအရာကို ရွေးသည်။ အကြောင်းအရာကို ပြောသည့်အခါ ကြွပါ။</string>
+    <string name="gesture_trainer_contents">မာတိကာ</string>
+    <string name="gesture_trainer_contents_heading">မာတိကာ- <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">ပြီးပြီ၊ <xliff:g id="tries">%2$d</xliff:g> ခုတွင် <xliff:g id="hits">%1$d</xliff:g> ခု သိရှိသည်</string>
+    <string name="gesture_trainer_group_tap_swipe">တို့ခြင်းနှင့် ပွတ်ဆွဲခြင်း</string>
+    <string name="gesture_trainer_group_edge_swipes">အစွန်းများမှ ပွတ်ဆွဲခြင်း</string>
+    <string name="gesture_trainer_group_along_edges">အစွန်းများတစ်လျှောက် ဆွဲခြင်း</string>
+    <string name="gesture_trainer_group_edge_menus">အစွန်း မီနူးများ</string>
+    <string name="gesture_trainer_group_corners">ထောင့်များ</string>
+    <string name="gesture_trainer_group_back_tap">နောက်ကျောတို့ခြင်း</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">လက်ချောင်းနှစ်ချောင်း ပွတ်ဆွဲမှု နောက်က လိုက်သော လက်ချောင်းနှစ်ချောင်း တို့ချက်များကို ချန်ထားသည်- <xliff:g id="setting">%1$s</xliff:g> ပိတ်ထားသည်။</string>
+    <string name="gesture_trainer_how_swipe_hold">ထို့နောက် မကြွဘဲ လက်ချောင်းကို အနည်းဆုံး <xliff:g id="hold">%1$d</xliff:g> ms ငြိမ်ငြိမ် ထားပြီး ကြွပါ။</string>
+    <string name="gesture_trainer_half_top">အပေါ်</string>
+    <string name="gesture_trainer_half_bottom">အောက်</string>
+    <string name="gesture_trainer_how_taps_half">မျက်နှာပြင်၏ <xliff:g id="half">%1$s</xliff:g>တစ်ဝက်တွင် တို့ပါ။ လက်ချောင်းများကြားရှိ အမှတ်က တစ်ဝက်ကို ဆုံးဖြတ်သည်။</string>
+    <string name="gesture_trainer_same_fingers">တူညီသော လက်ချောင်းများဖြင့်</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> တို့ပါ။ နောက်ဆုံးတို့ချက်ပြီးနောက် ချက်ချင်း <xliff:g id="gap">%3$d</xliff:g> ms အတွင်း <xliff:g id="swipe_fingers">%4$s</xliff:g> မျက်နှာပြင်ကို ထပ်ထိပြီး <xliff:g id="direction">%5$s</xliff:g> မျဉ်းဖြောင့်အတိုင်း 2 မှ 3 စင်တီမီတာခန့် ဆွဲပါ၊ ထို့နောက် ကြွပါ။</string>
+    <string name="gesture_trainer_how_corner_hold">နောက်ဆုံးတို့ချက်တွင် လက်ချောင်းကို ထောင့်ထဲတွင် အနည်းဆုံး <xliff:g id="hold">%1$d</xliff:g> ms ငြိမ်ငြိမ် ထားပါ။</string>
+    <string name="gesture_trainer_how_back_tap">ဖုန်းကို ဘေးနှစ်ဖက်မှ လက်ဖြင့် ကိုင်ပြီး တံခါးခေါက်သကဲ့သို့ ၎င်း၏ နောက်ကျောအလယ်ကို လက်ချောင်းထိပ်ဖြင့် ခိုင်ခိုင်မာမာနှင့် မြန်မြန် <xliff:g id="taps">%1$s</xliff:g> တို့ပါ။ တို့ချက်များကို နီးနီးကပ်ကပ် ထားပါ- ၎င်းတို့ကြား အများဆုံး <xliff:g id="gap">%2$d</xliff:g> ms။ တို့နေစဉ် မျက်နှာပြင်ကို မထိပါနှင့်။</string>
+    <string name="gesture_trainer_back_tap_info">လေ့ကျင့်ခန်းအတွင်း နောက်ကျောတို့ချက်များသည် ညွှန်ကြားချက်များကို မလုပ်ဆောင်ပါ။ <xliff:g id="setting">%1$s</xliff:g> သည် တို့ချက်တစ်ခု မည်မျှ ပြင်းရမည်ကို သတ်မှတ်သည်။</string>
+    <string name="gesture_trainer_go_placed">လက်ဟန်ကို <xliff:g id="tries">%1$d</xliff:g> ကြိမ် လုပ်ပါ။</string>
+    <string name="gesture_trainer_along_left">ဘယ်ဘက်အစွန်း</string>
+    <string name="gesture_trainer_along_right">ညာဘက်အစွန်း</string>
+    <string name="gesture_trainer_along_top">အပေါ်အစွန်း</string>
+    <string name="gesture_trainer_along_bottom">အောက်ခြေအစွန်း</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g>တစ်လျှောက် ဆွဲခြင်းများကို ချန်ထားသည်- ၎င်းတွင် အစွန်းမီနူး ရှိသဖြင့် ၎င်းတစ်လျှောက် ဆွဲခြင်းသည် လက်ဟန်ကို လုပ်ဆောင်မည့်အစား မီနူးကို ဖွင့်သည်။</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g>တစ်လျှောက် ဆွဲခြင်းများကို ချန်ထားသည်- ၎င်းသည် လှိမ့်သဖြင့် ၎င်းတစ်လျှောက် ဆွဲခြင်းသည် လက်ဟန်ကို လုပ်ဆောင်မည့်အစား အက်ပ်ကို လှိမ့်သည်။</string>
+    <string name="gesture_trainer_finding_along_off_edge">လက်ချောင်းသည် အစွန်းမှ အလွန်ဝေးသွားခဲ့သည်။</string>
+    <string name="gesture_trainer_tip_along_off_edge">လက်ချောင်းကို မှန်ပြင်၏ အနားစွန်းဆုံးပေါ်တွင် အစွန်းတစ်လျှောက် တည့်တည့် ထားပါ။</string>
+    <string name="gesture_trainer_go_back_tap">နောက်ကျောတို့ လက်ဟန်ကို <xliff:g id="tries">%1$d</xliff:g> ကြိမ် လုပ်ပါ။ မျက်နှာပြင်ကို ထိလျှင် ကြိုးစားမှု မအောင်မြင်ပါ။</string>
+    <string name="gesture_trainer_no_accelerometer">ဤလေ့ကျင့်ခန်းအတွက် အရှိန်တိုင်းကိရိယာ လိုအပ်သည်။ မရရှိနိုင်ပါ။</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms ငြိမ်ငြိမ် ဖိထားသည်</string>
+    <string name="gesture_trainer_measure_back_tap_strength">ပြင်းအား <xliff:g id="strength">%1$.1f</xliff:g> ရှိ တို့ချက်</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">လက်ချောင်းသည် အဆုံးတွင် <xliff:g id="ms">%1$d</xliff:g> ms ငြိမ်နေခဲ့ပြီး အနည်းဆုံး <xliff:g id="limit">%2$d</xliff:g> ms ငြိမ်နေရမည်။</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">လက်ချောင်းများသည် မျက်နှာပြင်၏ အခြားတစ်ဝက်တွင် တို့ခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_swipe_missing">တို့ချက်များပြီးနောက် ပွတ်ဆွဲမှု မလာပါ။</string>
+    <string name="gesture_trainer_finding_swipe_late">ပွတ်ဆွဲမှုသည် နောက်ဆုံးတို့ချက်ပြီးနောက် <xliff:g id="ms">%1$d</xliff:g> ms တွင် စခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">နောက်ကျောတို့ချက် အလွန်ပေါ့သည်- လိုအပ်သော ပြင်းအား၏ <xliff:g id="percent">%1$d</xliff:g>%%။</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">တို့ချက်တစ်ခုသည် ဖုန်းကို နောက်ကျောမှတစ်ဆင့်ထက် ဘေးသို့ ပိုလှုပ်စေခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_back_tap_moving">တို့ချက်တစ်ခု မတိုင်မီ ဖုန်း ရွေ့နေခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">မျက်နှာပြင်ကို ထိခဲ့ပြီး ထိထားစဉ် တို့ချက်များကို မရေတွက်ပါ။</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">နောက်ကျောပေါ် တို့ချက်များကြား <xliff:g id="ms">%1$d</xliff:g> ms ကြာခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">ပွတ်ဆွဲပြီးနောက် လက်ချောင်းကို ဖိထားချိန် တစ်လျှောက်လုံး မျက်နှာပြင်ပေါ်တွင် ငြိမ်ငြိမ် ထားပါ။ ထို့နောက် ကြွပါ။</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">မည်သည့်တစ်ဝက်တွင် တို့သည်ကို စစ်ဆေးပါ- မျက်နှာပြင်၏ အလယ်သည် အပေါ်တစ်ဝက်နှင့် အောက်တစ်ဝက်ကို ခွဲခြားသည်။</string>
+    <string name="gesture_trainer_tip_swipe_missing">နောက်ဆုံးတို့ချက်ပြီးနောက် မျက်နှာပြင်ကို ချက်ချင်း ထပ်ထိပြီး ပွတ်ဆွဲပါ။</string>
+    <string name="gesture_trainer_tip_swipe_late">နောက်ဆုံးတို့ချက်ပြီးနောက် မရပ်ဘဲ ချက်ချင်း ပွတ်ဆွဲမှုကို စပါ။</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">နောက်ကျော၏ အလယ်အနီးတွင် လက်ချောင်းထိပ် သို့မဟုတ် လက်သည်းဖြင့် ပိုပြင်းပြင်း တို့ပါ။</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">ဖုန်း၏ နောက်ကျောထဲသို့ တည့်တည့် တို့ပါ၊ ၎င်း၏ အစွန်းတွင် သို့မဟုတ် စောင်း၍ မတို့ပါနှင့်။</string>
+    <string name="gesture_trainer_tip_back_tap_moving">မတို့မီ ဖုန်းကို ခဏ ငြိမ်ငြိမ် ကိုင်ထားပြီး သင့်လက်က မရွှေ့မိစေရန် ချောင်ချောင် ကိုင်ပါ။</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">နောက်ကျောကို တို့နေစဉ် လက်ချောင်းများကို မျက်နှာပြင်မှ ခွာထားပါ- ဖုန်းကို ဘေးနှစ်ဖက်မှ ကိုင်ပါ။</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">ပိုမြန်မြန် တို့ပါ၊ တို့ချက်တစ်ခုပြီး ချက်ချင်း နောက်တစ်ခု။</string>
+    <string name="gesture_trainer_advice_swipe_hold">ပွတ်ဆွဲပြီးနောက် လက်ချောင်း စောစွာ ကြွသည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုတိုစွာ သတ်မှတ်လျှင် ပိုတိုသော ဖိထားမှုကို ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">နောက်ကျောတို့ချက်များ ပေါ့သည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုမြင့်စွာ သတ်မှတ်လျှင် ပိုပေါ့သော တို့ချက်များကို သိရှိပြီး ဝင်တိုက်မှုများကိုလည်း တို့ချက်အဖြစ် သိရှိနိုင်သည်။</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">လက်ချောင်းများသည် <xliff:g id="degrees">%1$.0f</xliff:g> ဒီဂရီ လှည့်ခဲ့ပြီး <xliff:g id="limit">%2$.0f</xliff:g> ဒီဂရီမှစ၍ လှုပ်ရှားမှုသည် လှည့်ခြင်း ဖြစ်သည်။</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">လက်ချောင်းများကို အချင်းချင်း ပတ်လည် အကွေးပုံစံ မဟုတ်ဘဲ မျဉ်းဖြောင့်အတိုင်း ကပ်အောင် သို့မဟုတ် ခွာအောင် ရွှေ့ပါ။</string>
+    <string name="gesture_trainer_finding_other_gesture">လှုပ်ရှားမှုသည် ၎င်းအစား ထိုလက်ဟန်နှင့် ကိုက်ညီခဲ့သည်။</string>
+    <string name="gesture_trainer_side_left">ဘယ်ဘက်</string>
+    <string name="gesture_trainer_side_right">ညာဘက်</string>
+    <string name="gesture_trainer_side_top">အပေါ်</string>
+    <string name="gesture_trainer_side_bottom">အောက်ခြေ</string>
+    <string name="gesture_trainer_finding_wrong_edge">လက်ချောင်းသည် <xliff:g id="side">%1$s</xliff:g>အစွန်းတွင် စခဲ့ပြီး ဤလေ့ကျင့်ခန်းသည် <xliff:g id="expected">%2$s</xliff:g>အစွန်းတွင် ဖြစ်သည်။</string>
+    <string name="gesture_trainer_tip_wrong_edge">လေ့ကျင့်ခန်းတွင် ဖော်ပြသော အစွန်းပေါ်တွင် တိတိကျကျ စပါ။</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">ဤလက်ဟန်အစား အစွန်းမီနူး ပွင့်လာခဲ့သည်။</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">မီနူးရှိသော အစွန်းတစ်လျှောက် ဆွဲခြင်းသည် မီနူးကို ဖွင့်သည်။ လေ့ကျင့်ခန်းတွင် ဖော်ပြသော အစွန်းတွင် စပါ။</string>
+    <string name="gesture_trainer_group_three_part">သုံးပိုင်း ပွတ်ဆွဲမှုများ</string>
+    <string name="gesture_trainer_group_two_stroke">နှစ်ကြိမ်ခွဲ ပွတ်ဆွဲမှုများ</string>
+    <string name="gesture_trainer_group_shake">လှုပ်ခါခြင်း</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">သုံးပိုင်း ပွတ်ဆွဲမှုများကို ချန်ထားသည်- <xliff:g id="setting">%1$s</xliff:g> ဖွင့်ထားသည်။</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">နှစ်ကြိမ်ခွဲ ပွတ်ဆွဲမှုများကို ချန်ထားသည်- <xliff:g id="setting">%1$s</xliff:g> သည် <xliff:g id="value">%2$s</xliff:g> ဖြစ်သည်။</string>
+    <string name="gesture_trainer_shake_info">လေ့ကျင့်ခန်းအတွင်း လှုပ်ခါခြင်းသည် ညွှန်ကြားချက်ကို မလုပ်ဆောင်ပါ။ <xliff:g id="setting">%1$s</xliff:g> သည် လှုပ်ခါမှု မည်မျှ ပြင်းရမည်ကို သတ်မှတ်သည်။</string>
+    <string name="gesture_trainer_go_shake">ဖုန်းကို <xliff:g id="tries">%1$d</xliff:g> ကြိမ် လှုပ်ခါပါ၊ လှုပ်ခါမှုတိုင်းပြီးနောက် ခဏ ရပ်ပါ။</string>
+    <string name="gesture_trainer_how_shake">ဖုန်းကို မြဲမြဲ ကိုင်ပြီး ရေစက်တစ်စက်ကို ခါချသကဲ့သို့ ရှေ့နောက် မြန်မြန် လှုပ်ခါပါ- ဘက်တစ်ဖက်စီသို့ အနည်းဆုံး နှစ်ကြိမ်၊ အားလုံး စက္ကန့်၏ သုံးပုံနှစ်ပုံခန့်အတွင်း။ ထို့နောက် ငြိမ်ငြိမ် ကိုင်ထားပါ။</string>
+    <string name="gesture_trainer_how_two_stroke">လက်ချောင်းတစ်ချောင်းဖြင့် <xliff:g id="first">%1$s</xliff:g> 2 စင်တီမီတာခန့် ပွတ်ဆွဲပြီး ကြွပါ။ ထို့နောက် ချက်ချင်း <xliff:g id="time">%3$d</xliff:g> ms အတွင်း လက်ချောင်းတစ်ချောင်းဖြင့် <xliff:g id="second">%2$s</xliff:g> 2 စင်တီမီတာခန့် ပွတ်ဆွဲပြီး ကြွပါ။</string>
+    <string name="gesture_trainer_how_three_part">လက်ချောင်းတစ်ချောင်းဖြင့် မျက်နှာပြင်ကို ထိပြီး မကြွဘဲ <xliff:g id="first">%1$s</xliff:g> ပွတ်ဆွဲပါ၊ ထို့နောက် ရုတ်တရက် ချိုးကွေ့ပြီး <xliff:g id="second">%2$s</xliff:g> ပွတ်ဆွဲပါ၊ ထို့နောက် ထပ်မံ ရုတ်တရက် ချိုးကွေ့ပြီး <xliff:g id="third">%3$s</xliff:g> ပွတ်ဆွဲပါ၊ အပိုင်းတစ်ခုစီ 2 စင်တီမီတာခန့်၊ ထို့နောက် ကြွပါ။ အကွေးများ မဟုတ်ဘဲ ထောင့်ချွန်များပါသော မြန်ဆန်ချောမွေ့သည့် လှုပ်ရှားမှုတစ်ခုတည်း ဖြစ်ပါစေ။</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">လက်ချောင်းတစ်ချောင်းကို မျက်နှာပြင်၏ အပေါ် သုံးပုံတစ်ပုံတွင်နှင့် ကျန်တစ်ချောင်းကို အောက် သုံးပုံတစ်ပုံတွင် ထားပါ၊ ဥပမာ လက်မကို အောက်တွင်နှင့် လက်ညှိုးကို အပေါ်တွင်။</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">လက်ချောင်းများသည် တစ်ချောင်း မျက်နှာပြင်၏ အပေါ် သုံးပုံတစ်ပုံတွင်နှင့် တစ်ချောင်း အောက် သုံးပုံတစ်ပုံတွင် မရှိခဲ့ပါ။</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">ဒုတိယ ပွတ်ဆွဲမှု မရှိခဲ့ပါ။</string>
+    <string name="gesture_trainer_finding_second_stroke_late">ဒုတိယ ပွတ်ဆွဲမှုသည် ပထမပြီးနောက် <xliff:g id="ms">%1$d</xliff:g> ms တွင် စခဲ့ပြီး အများဆုံး <xliff:g id="limit">%2$d</xliff:g> ms သာ ခွင့်ပြုသည်။</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">ပထမ ပွတ်ဆွဲမှုသည် <xliff:g id="direction">%1$s</xliff:g> သွားခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">ဒုတိယ ပွတ်ဆွဲမှုသည် <xliff:g id="direction">%1$s</xliff:g> သွားခဲ့သည်။</string>
+    <string name="gesture_trainer_finding_shake_too_light">လှုပ်ခါမှု အလွန်ပေါ့ခဲ့သည်- လိုအပ်သော ပြင်းအား၏ <xliff:g id="percent">%1$d</xliff:g>%%။</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">ရှေ့နောက် လွှဲမှုများ- လိုအပ်သော <xliff:g id="wanted">%2$d</xliff:g> ကြိမ်တွင် <xliff:g id="swings">%1$d</xliff:g> ကြိမ်။</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">လက်ချောင်းများကို ဝေးဝေး ဖြန့်ပါ၊ တစ်ချောင်း အပေါ်အစွန်းအနီးတွင်နှင့် တစ်ချောင်း အောက်ခြေအစွန်းအနီးတွင်။</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">ပထမ ပွတ်ဆွဲမှုပြီးနောက် လက်ချောင်းကို ကြွပြီး ချက်ချင်း ထပ်ပွတ်ဆွဲပါ။</string>
+    <string name="gesture_trainer_tip_second_stroke_late">လက်ချောင်းကို ကြွပြီးနောက် ချက်ချင်း ဒုတိယ ပွတ်ဆွဲမှုကို စပါ။</string>
+    <string name="gesture_trainer_tip_shake_too_light">ပိုပြင်းပြင်းနှင့် ပိုမြန်မြန် လှုပ်ခါပါ။</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">ပိုမြန်မြန် လှုပ်ခါပါ၊ ဘက်တစ်ဖက်စီသို့ အနည်းဆုံး နှစ်ကြိမ် ရှေ့နောက်၊ ကြားတွင် မရပ်ဘဲ။</string>
+    <string name="gesture_trainer_measure_shake_strength">အပြင်းဆုံး လှုပ်ရှားမှု <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">လှုပ်ခါမှုများ ပေါ့သည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုမြင့်စွာ သတ်မှတ်လျှင် ပိုပေါ့သော လှုပ်ခါမှုများကို သိရှိပြီး ဖုန်းသယ်ဆောင်ခြင်းကိုလည်း လှုပ်ခါမှုအဖြစ် သိရှိနိုင်သည်။</string>
+    <string name="gesture_trainer_advice_two_stroke_time">ဒုတိယ ပွတ်ဆွဲမှု နောက်ကျ၍ စသည်။ <xliff:g id="setting">%1$s</xliff:g> ကို ပိုရှည်စွာ သတ်မှတ်လျှင် ပိုနောက်ကျသော ဒုတိယ ပွတ်ဆွဲမှုကို ခွင့်ပြုပြီး တစ်ကြိမ်တည်း ပွတ်ဆွဲမှုသည် မလုပ်ဆောင်မီ ပိုကြာကြာ စောင့်သည်။</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> ဖွင့်ထားသည်။</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> ပိတ်ထားသည်- လက်ချောင်းနှစ်ချောင်း ပွတ်ဆွဲမှုများသည် အက်ပ်ကို လှိမ့်ပြီး ပွတ်တိုက်မှုသည်လည်း အများအားဖြင့် လှိမ့်သည်။ ဆက်တင် ဖွင့်ထားလျှင် လက်ချောင်းနှစ်ချောင်း ပွတ်ဆွဲမှုများသည် လှိမ့်မည့်အစား SandFly ညွှန်ကြားချက်များကို လုပ်ဆောင်သည်။</string>
+    <string name="gesture_trainer_measure_first_stroke">ပထမ ပွတ်ဆွဲမှု <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ဒုတိယ ပွတ်ဆွဲမှု <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">လက်ဟန်တစ်ခုလုံး <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">၎င်းတို့ကြား <xliff:g id="ms">%1$d</xliff:g> ms ကြွထားသည်</string>
+</resources>

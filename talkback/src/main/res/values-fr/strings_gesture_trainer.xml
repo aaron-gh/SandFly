@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Exercices de gestes</string>
+    <string name="gesture_trainer_intro">Choisissez un groupe de gestes. Chaque exercice décrit un geste. Effectuez le geste <xliff:g id="tries">%1$d</xliff:g> fois ; le résultat de chaque essai est énoncé. Après le dernier essai, l\'écran liste les mesures de chaque essai, ce qu\'il faut changer et les paramètres associés.</string>
+    <string name="gesture_trainer_group_one_finger">Un doigt</string>
+    <string name="gesture_trainer_group_two_fingers">Deux doigts</string>
+    <string name="gesture_trainer_group_three_fingers">Trois doigts</string>
+    <string name="gesture_trainer_group_four_fingers">Quatre doigts</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Pincer, tourner et frotter</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> exercices</string>
+    <string name="gesture_trainer_close">Fermer</string>
+    <string name="gesture_trainer_no_detection">Les exercices de gestes nécessitent Android 13 ou version ultérieure.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Les gestes de va-et-vient et d\'angle sont exclus : <xliff:g id="setting">%1$s</xliff:g> est activé.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Les balayages à deux doigts sont exclus : <xliff:g id="setting">%1$s</xliff:g> est désactivé, ils font donc défiler les applications.</string>
+    <string name="gesture_trainer_exercise_heading">Exercice <xliff:g id="number">%1$d</xliff:g> sur <xliff:g id="count">%2$d</xliff:g> : <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Commencer</string>
+    <string name="gesture_trainer_skip">Ignorer cet exercice</string>
+    <string name="gesture_trainer_back_to_groups">Retour aux groupes</string>
+    <string name="gesture_trainer_go">Effectuez le geste <xliff:g id="tries">%1$d</xliff:g> fois, n\'importe où sur l\'écran. Chaque contact est un essai.</string>
+    <string name="gesture_trainer_fingers_1">un doigt</string>
+    <string name="gesture_trainer_fingers_2">deux doigts côte à côte, espacés d\'environ 1 cm</string>
+    <string name="gesture_trainer_fingers_3">trois doigts côte à côte, légèrement espacés</string>
+    <string name="gesture_trainer_fingers_4">quatre doigts côte à côte, légèrement espacés</string>
+    <string name="gesture_trainer_direction_up">vers le haut</string>
+    <string name="gesture_trainer_direction_down">vers le bas</string>
+    <string name="gesture_trainer_direction_left">vers la gauche</string>
+    <string name="gesture_trainer_direction_right">vers la droite</string>
+    <string name="gesture_trainer_how_swipe">Touchez l\'écran avec <xliff:g id="fingers">%1$s</xliff:g> et, sans attendre, faites glisser <xliff:g id="direction">%2$s</xliff:g> en ligne droite sur environ 2 à 3 cm, puis levez. Commencez à bouger immédiatement : un doigt qui reste d\'abord immobile lance l\'exploration tactile.</string>
+    <string name="gesture_trainer_how_swipe_multi">Posez les doigts ensemble, au même moment, et déplacez-les tous de la même façon. Chaque doigt doit aller <xliff:g id="direction">%1$s</xliff:g> tout du long, alors gardez la ligne droite.</string>
+    <string name="gesture_trainer_how_back_and_forth">Touchez l\'écran avec un doigt et faites glisser <xliff:g id="first">%1$s</xliff:g> sur environ 2 cm, puis sans lever revenez directement <xliff:g id="second">%2$s</xliff:g> sur environ 2 cm, et levez. Faites-en un seul mouvement rapide et fluide.</string>
+    <string name="gesture_trainer_how_angle">Touchez l\'écran avec <xliff:g id="fingers">%1$s</xliff:g> et faites glisser <xliff:g id="first">%2$s</xliff:g> sur environ 2 cm, puis sans lever tournez nettement et faites glisser <xliff:g id="second">%3$s</xliff:g> sur environ 2 cm, et levez. Faites du virage un angle net, comme la lettre L, pas une courbe.</string>
+    <string name="gesture_trainer_taps_1">une fois</string>
+    <string name="gesture_trainer_taps_2">deux fois</string>
+    <string name="gesture_trainer_taps_3">trois fois</string>
+    <string name="gesture_trainer_taps_4">quatre fois</string>
+    <string name="gesture_trainer_how_taps">Appuyez <xliff:g id="taps">%1$s</xliff:g> avec <xliff:g id="fingers">%2$s</xliff:g>. Posez les doigts ensemble et levez-les ensemble, rapidement, sans glisser.</string>
+    <string name="gesture_trainer_how_taps_quick">Faites des appuis rapides et au même endroit : l\'appui suivant doit venir dans les <xliff:g id="gap">%1$d</xliff:g> ms après le précédent.</string>
+    <string name="gesture_trainer_how_hold">Posez <xliff:g id="fingers">%1$s</xliff:g> ensemble sur l\'écran et gardez-les immobiles, sans glisser, pendant au moins <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Si aucune autre commande n\'est attribuée, ce geste désactive SandFly. Pendant les exercices, il n\'exécute rien.</string>
+    <string name="gesture_trainer_how_taps_hold">Appuyez <xliff:g id="taps">%1$s</xliff:g> avec <xliff:g id="fingers">%2$s</xliff:g>, et au dernier appui laissez les doigts sur l\'écran, immobiles, pendant au moins <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Utilisez le pouce, l\'index et le majeur.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Placez l\'index et le majeur l\'un à côté de l\'autre, et le pouce et l\'annulaire à quelques centimètres de chaque côté. Puis rapprochez les quatre bouts des doigts en un seul point.</string>
+    <string name="gesture_trainer_how_pinch">Posez <xliff:g id="fingers">%1$d</xliff:g> doigts sur l\'écran, bien écartés. Puis rapprochez-les en ligne droite d\'au moins 1 cm, comme pour saisir un objet, et levez-les de l\'écran. Bougez seulement les doigts, pas toute la main, et pas en arc de cercle.</string>
+    <string name="gesture_trainer_how_spread">Posez <xliff:g id="fingers">%1$d</xliff:g> doigts sur l\'écran, rapprochés. Puis écartez-les en ligne droite d\'au moins 1 cm et levez-les de l\'écran. Bougez seulement les doigts, pas toute la main, et pas en arc de cercle.</string>
+    <string name="gesture_trainer_clockwise">dans le sens des aiguilles d\'une montre</string>
+    <string name="gesture_trainer_counterclockwise">dans le sens inverse des aiguilles d\'une montre</string>
+    <string name="gesture_trainer_how_rotate">Posez deux doigts sur l\'écran, espacés d\'environ 2 à 3 cm, et tournez-les <xliff:g id="way">%1$s</xliff:g> autour de leur centre, comme pour tourner un bouton, d\'environ un quart de tour. Puis levez.</string>
+    <string name="gesture_trainer_how_scrub">Posez deux doigts sur l\'écran et déplacez-les rapidement d\'environ 2 cm sur le côté puis revenez, comme pour effacer quelque chose, le tout en une seconde environ. Puis levez.</string>
+    <string name="gesture_trainer_edge_bottom">sur le bord inférieur</string>
+    <string name="gesture_trainer_edge_top_left">sur le bord supérieur, dans sa moitié gauche</string>
+    <string name="gesture_trainer_edge_top_right">sur le bord supérieur, dans sa moitié droite</string>
+    <string name="gesture_trainer_edge_left_top">sur le bord gauche, dans sa moitié supérieure</string>
+    <string name="gesture_trainer_edge_left_bottom">sur le bord gauche, dans sa moitié inférieure</string>
+    <string name="gesture_trainer_edge_right_top">sur le bord droit, dans sa moitié supérieure</string>
+    <string name="gesture_trainer_edge_right_bottom">sur le bord droit, dans sa moitié inférieure</string>
+    <string name="gesture_trainer_edge_left">sur le bord gauche</string>
+    <string name="gesture_trainer_edge_right">sur le bord droit</string>
+    <string name="gesture_trainer_edge_top">sur le bord supérieur</string>
+    <string name="gesture_trainer_how_edge">Posez un doigt <xliff:g id="edge">%1$s</xliff:g>, à <xliff:g id="edge_width">%2$d</xliff:g> mm au plus du bord, et faites glisser <xliff:g id="direction">%3$s</xliff:g> vers l\'intérieur de l\'écran jusqu\'au premier clic, environ <xliff:g id="distance">%4$d</xliff:g> mm. Puis levez immédiatement : au-delà du deuxième clic, le geste devient un balayage long.</string>
+    <string name="gesture_trainer_how_edge_long">Posez un doigt <xliff:g id="edge">%1$s</xliff:g>, à <xliff:g id="edge_width">%2$d</xliff:g> mm au plus du bord, et faites glisser <xliff:g id="direction">%3$s</xliff:g> vers l\'intérieur de l\'écran au-delà du premier clic jusqu\'au deuxième, environ <xliff:g id="distance">%4$d</xliff:g> mm. Puis levez.</string>
+    <string name="gesture_trainer_how_along">Faites glisser un doigt <xliff:g id="direction">%2$s</xliff:g> le long du <xliff:g id="edge">%1$s</xliff:g>, sur au moins <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">supérieur gauche</string>
+    <string name="gesture_trainer_corner_top_right">supérieur droit</string>
+    <string name="gesture_trainer_corner_bottom_left">inférieur gauche</string>
+    <string name="gesture_trainer_corner_bottom_right">inférieur droit</string>
+    <string name="gesture_trainer_how_corner">Appuyez <xliff:g id="taps">%1$s</xliff:g> dans le coin <xliff:g id="corner">%2$s</xliff:g> de l\'écran. Posez le doigt tout au fond du coin, à <xliff:g id="size">%3$d</xliff:g> mm au plus des deux bords, et levez rapidement, en moins de <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g> : <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g> : <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Avec des coins plus grands, un appui sur une commande proche d\'un coin, comme Retour en haut à gauche, peut exécuter le geste de coin à la place.</string>
+    <string name="gesture_trainer_rating_precise">reconnu, précis</string>
+    <string name="gesture_trainer_rating_good">reconnu, bon</string>
+    <string name="gesture_trainer_rating_borderline">reconnu, mais proche d\'une limite</string>
+    <string name="gesture_trainer_try_recognized">Essai <xliff:g id="number">%1$d</xliff:g> : <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Essai <xliff:g id="number">%1$d</xliff:g> : non reconnu.</string>
+    <string name="gesture_trainer_try_other">Essai <xliff:g id="number">%1$d</xliff:g> : reconnu comme <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g> : <xliff:g id="recognized">%2$d</xliff:g> sur <xliff:g id="tries">%3$d</xliff:g> reconnus</string>
+    <string name="gesture_trainer_results_tries">Vos essais</string>
+    <string name="gesture_trainer_results_change">Ce qu\'il faut changer</string>
+    <string name="gesture_trainer_results_close">Proche d\'une limite</string>
+    <string name="gesture_trainer_results_all_good">Tous les essais ont été reconnus dans les limites.</string>
+    <string name="gesture_trainer_results_settings">Paramètres utiles</string>
+    <string name="gesture_trainer_next">Exercice suivant</string>
+    <string name="gesture_trainer_repeat">Recommencer</string>
+    <string name="gesture_trainer_finish">Terminer</string>
+    <string name="gesture_trainer_group_done">Vous avez terminé tous les exercices de <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Modifier <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">a duré <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">longueur de <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm par seconde</string>
+    <string name="gesture_trainer_measure_angle">écart de <xliff:g id="degrees">%1$.0f</xliff:g> degrés par rapport à une ligne droite</string>
+    <string name="gesture_trainer_measure_start">premier centimètre en <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">les doigts se sont posés à <xliff:g id="ms">%1$d</xliff:g> ms d\'intervalle</string>
+    <string name="gesture_trainer_measure_tap">appui de <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms entre les appuis</string>
+    <string name="gesture_trainer_measure_spread">les doigts se sont déplacés de <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">rotation de <xliff:g id="degrees">%1$.0f</xliff:g> degrés</string>
+    <string name="gesture_trainer_measure_corner">à <xliff:g id="mm">%1$.0f</xliff:g> mm des bords du coin</string>
+    <string name="gesture_trainer_measure_edge">départ à <xliff:g id="mm">%1$.0f</xliff:g> mm du bord</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Doigts sur l\'écran : <xliff:g id="fingers">%1$d</xliff:g> au lieu de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Les doigts se sont posés à <xliff:g id="ms">%1$d</xliff:g> ms d\'intervalle, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Un doigt s\'est levé avant que tous les doigts soient posés.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Les doigts se sont levés à <xliff:g id="ms">%1$d</xliff:g> ms d\'intervalle, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_became_exploration">Le doigt est resté immobile trop longtemps ou a bougé trop lentement au début, le contact est donc devenu de l\'exploration tactile.</string>
+    <string name="gesture_trainer_finding_slow_start">Le premier centimètre a pris <xliff:g id="ms">%1$d</xliff:g> ms, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_paused">Le doigt a ralenti pendant <xliff:g id="ms">%1$d</xliff:g> ms, et chaque centimètre peut prendre <xliff:g id="limit">%2$d</xliff:g> ms au plus.</string>
+    <string name="gesture_trainer_finding_too_short">Le mouvement n\'a fait que <xliff:g id="mm">%1$.0f</xliff:g> mm, et il doit faire au moins <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Le doigt est d\'abord parti <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Les doigts sont d\'abord partis <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Le tracé a dévié de <xliff:g id="degrees">%1$.0f</xliff:g> degrés par rapport à une ligne droite, et <xliff:g id="limit">%2$.0f</xliff:g> au plus sont autorisés.</string>
+    <string name="gesture_trainer_finding_curved">Le tracé s\'est divisé en <xliff:g id="parts">%1$d</xliff:g> parties au lieu de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Le virage n\'a pas été détecté.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Après le virage, le doigt est allé <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Le doigt a glissé de <xliff:g id="mm">%1$.1f</xliff:g> mm pendant un appui, et <xliff:g id="limit">%2$.1f</xliff:g> mm au plus sont autorisés.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Un appui a duré <xliff:g id="ms">%1$d</xliff:g> ms, plus de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Le dernier appui a été maintenu <xliff:g id="ms">%1$d</xliff:g> ms, et il doit durer au moins <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> appuis au lieu de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> appuis au lieu de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms se sont écoulées entre les appuis, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_taps_apart">Les appuis étaient espacés de <xliff:g id="mm">%1$.0f</xliff:g> mm, et <xliff:g id="limit">%2$.0f</xliff:g> mm au plus sont autorisés.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Les doigts ne se sont déplacés que de <xliff:g id="mm">%1$.0f</xliff:g> mm, et ils doivent se déplacer d\'au moins <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Les doigts se sont déplacés dans l\'autre sens.</string>
+    <string name="gesture_trainer_finding_moved_together">Toute la main a glissé de <xliff:g id="mm">%1$.0f</xliff:g> mm sur l\'écran, plus que les doigts ne se sont rapprochés ou écartés.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Les doigts n\'ont tourné que de <xliff:g id="degrees">%1$.0f</xliff:g> degrés, et ils doivent tourner d\'au moins <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Les doigts ont tourné dans l\'autre sens.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Le premier trait a fait <xliff:g id="mm">%1$.0f</xliff:g> mm, et il doit faire au moins <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Le trait de retour a fait <xliff:g id="mm">%1$.0f</xliff:g> mm, et il doit faire au moins <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Le frottement a pris <xliff:g id="ms">%1$d</xliff:g> ms, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Le doigt s\'est posé à <xliff:g id="mm">%1$.0f</xliff:g> mm du bord, et le bord fait <xliff:g id="limit">%2$.0f</xliff:g> mm de large.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Le doigt a commencé dans l\'autre moitié du bord.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Le doigt a glissé de <xliff:g id="mm">%1$.0f</xliff:g> mm, et il doit glisser d\'au moins <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Glissement trop long : le doigt a dépassé le deuxième clic, <xliff:g id="mm">%1$.0f</xliff:g> mm, et le deuxième clic est à <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Atteindre le clic a pris <xliff:g id="ms">%1$d</xliff:g> ms, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Le glissement a dévié de <xliff:g id="degrees">%1$.0f</xliff:g> degrés sur le côté, et <xliff:g id="limit">%2$.0f</xliff:g> au plus sont autorisés.</string>
+    <string name="gesture_trainer_finding_corner_missed">L\'appui s\'est fait à <xliff:g id="mm">%1$.0f</xliff:g> mm des bords du coin, et le coin fait <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Un appui dans un coin a duré <xliff:g id="ms">%1$d</xliff:g> ms, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_none">Aucun mouvement correspondant au geste n\'a été détecté.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Vérifiez combien de doigts touchent la vitre. Une paume ou un autre doigt posé sur l\'écran compte aussi.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Posez tous les doigts au même moment, d\'un seul bloc, pas l\'un après l\'autre.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Posez d\'abord tous les doigts, puis déplacez-les ou levez-les.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Levez tous les doigts au même moment.</string>
+    <string name="gesture_trainer_tip_slow_start">Commencez à bouger dès que vous touchez l\'écran, et allez plus vite au début.</string>
+    <string name="gesture_trainer_tip_paused">Gardez le doigt en mouvement à vitesse régulière jusqu\'à ce que vous leviez. Ne ralentissez pas vers la fin.</string>
+    <string name="gesture_trainer_tip_too_short">Faites un mouvement plus long, d\'environ 2 à 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Vérifiez la direction tout au début du mouvement. Tenir le téléphone droit devant vous aide.</string>
+    <string name="gesture_trainer_tip_off_line">Bougez seulement dans la direction, pas en diagonale. L\'index trace une ligne plus droite que le pouce.</string>
+    <string name="gesture_trainer_tip_curved">Gardez la ligne droite et levez juste à la fin, sans crocheter le doigt sur le côté en levant.</string>
+    <string name="gesture_trainer_tip_turn_missing">Changez de direction nettement, à angle droit ou en revenant directement, sans lever. Chaque partie doit faire environ 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Après le virage, vérifiez la direction : la deuxième partie doit aller dans l\'autre direction indiquée par le geste.</string>
+    <string name="gesture_trainer_tip_tap_moved">Appuyez droit vers le bas puis levez, avec le bout du doigt, sans glisser.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Faites des appuis courts : touchez et levez immédiatement.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Au dernier appui, gardez les doigts immobiles sur l\'écran pendant toute la durée de maintien.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Comptez les appuis, et faites-les tous rapidement d\'un seul coup.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Comptez les appuis. Un doigt qui rebondit sur la vitre fait un appui de plus.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Appuyez plus vite : commencez l\'appui suivant juste après avoir levé le doigt.</string>
+    <string name="gesture_trainer_tip_taps_apart">Appuyez au même endroit à chaque fois.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Déplacez les doigts davantage, d\'au moins 1 cm en les rapprochant ou en les écartant.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Pincer, c\'est rapprocher les doigts ; écarter, c\'est les éloigner l\'un de l\'autre.</string>
+    <string name="gesture_trainer_tip_moved_together">Bougez seulement les doigts pour les rapprocher ou les écarter. Ne faites pas glisser toute la main sur l\'écran.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Tournez davantage, comme pour tourner un bouton d\'un quart de tour.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Le sens des aiguilles d\'une montre est le sens dans lequel tournent les aiguilles d\'une horloge : le doigt du haut va vers la droite.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Faites un premier trait d\'au moins 1 cm.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Après le premier trait, revenez dans l\'autre sens avant de lever.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Frottez rapidement, aller et retour en une seconde environ.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Commencez tout au bord, avec le bout du doigt en partie hors de l\'écran.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Vérifiez dans quelle moitié du bord vous commencez.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Faites glisser plus loin, jusqu\'à entendre le clic, puis levez.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Levez juste après le premier clic, avant le deuxième.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Faites glisser plus vite vers l\'intérieur, sans vous arrêter avant le clic.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Faites glisser tout droit depuis le bord, ou tout droit le long du bord, pas en diagonale.</string>
+    <string name="gesture_trainer_tip_corner_missed">Placez le doigt tout au fond du coin, en touchant les deux bords.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Levez plus vite après avoir touché le coin.</string>
+    <string name="gesture_trainer_close_to_limit">Proche de la limite : <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Les balayages démarrent lentement. Une valeur plus longue pour <xliff:g id="setting">%1$s</xliff:g> permet un démarrage plus lent.</string>
+    <string name="gesture_trainer_advice_tap_time">Les appuis sont lents. Une valeur plus longue pour <xliff:g id="setting">%1$s</xliff:g> permet des appuis plus lents.</string>
+    <string name="gesture_trainer_advice_edge_width">Les balayages commencent trop loin du bord. Une valeur plus grande pour <xliff:g id="setting">%1$s</xliff:g> transforme aussi en balayages depuis le bord les balayages qui commencent près d\'un bord.</string>
+    <string name="gesture_trainer_advice_corner_size">Les appuis tombent en dehors du coin. Une valeur plus grande pour <xliff:g id="setting">%1$s</xliff:g> agrandit les coins.</string>
+    <string name="gesture_trainer_advice_corner_time">Les appuis dans les coins sont lents. Une valeur plus longue pour <xliff:g id="setting">%1$s</xliff:g> permet des appuis plus lents.</string>
+    <string name="gesture_trainer_menu_option">Option <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g> : choisissez l\'élément <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Faites glisser un doigt vers le haut ou le bas <xliff:g id="edge">%1$s</xliff:g> sur au moins <xliff:g id="distance">%2$d</xliff:g> mm pour ouvrir le menu. Il contient <xliff:g id="count">%3$d</xliff:g> éléments, de haut en bas, chacun d\'environ <xliff:g id="size">%6$s</xliff:g> cm de haut. L\'élément <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, se trouve entre <xliff:g id="from">%7$s</xliff:g> et <xliff:g id="to">%8$s</xliff:g> cm sous le haut de l\'écran. Levez le doigt quand l\'élément est énoncé.</string>
+    <string name="gesture_trainer_menu_sample">Ce bord n\'a pas de menu. L\'exercice utilise <xliff:g id="count">%1$d</xliff:g> éléments d\'exemple.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Essai <xliff:g id="number">%1$d</xliff:g> : le menu s\'est fermé sans choix.</string>
+    <string name="gesture_trainer_try_menu_other">Essai <xliff:g id="number">%1$d</xliff:g> : <xliff:g id="item">%2$s</xliff:g> choisi.</string>
+    <string name="gesture_trainer_measure_menu_item">levé sur l\'élément <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Le doigt a commencé tout en haut ou tout en bas du bord, là où se trouvent les coins et les bords supérieur et inférieur.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Le doigt s\'est levé à <xliff:g id="mm">%1$.0f</xliff:g> mm du bord, et le menu se ferme au-delà de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Le doigt s\'est levé sur l\'élément <xliff:g id="item">%1$d</xliff:g> au lieu de l\'élément <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Commencez un peu à l\'écart des extrémités supérieure et inférieure du bord.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Gardez le doigt près du bord pendant le glissement, et levez-le à cet endroit.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Chaque élément a une place fixe le long du bord, et l\'élément où le doigt se lève est choisi. Levez quand l\'élément est énoncé.</string>
+    <string name="gesture_trainer_contents">Sommaire</string>
+    <string name="gesture_trainer_contents_heading">Sommaire : <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">terminé, <xliff:g id="hits">%1$d</xliff:g> sur <xliff:g id="tries">%2$d</xliff:g> reconnus</string>
+    <string name="gesture_trainer_group_tap_swipe">Appuyer et balayer</string>
+    <string name="gesture_trainer_group_edge_swipes">Balayages depuis les bords</string>
+    <string name="gesture_trainer_group_along_edges">Balayages le long des bords</string>
+    <string name="gesture_trainer_group_edge_menus">Menus des bords</string>
+    <string name="gesture_trainer_group_corners">Coins</string>
+    <string name="gesture_trainer_group_back_tap">Appui au dos</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Les appuis à deux doigts suivis d\'un balayage à deux doigts sont exclus : <xliff:g id="setting">%1$s</xliff:g> est désactivé.</string>
+    <string name="gesture_trainer_how_swipe_hold">Puis, sans lever, gardez le doigt immobile pendant au moins <xliff:g id="hold">%1$d</xliff:g> ms, et levez.</string>
+    <string name="gesture_trainer_half_top">supérieure</string>
+    <string name="gesture_trainer_half_bottom">inférieure</string>
+    <string name="gesture_trainer_how_taps_half">Appuyez dans la moitié <xliff:g id="half">%1$s</xliff:g> de l\'écran. Le point situé entre les doigts détermine la moitié.</string>
+    <string name="gesture_trainer_same_fingers">les mêmes doigts</string>
+    <string name="gesture_trainer_how_tap_swipe">Appuyez <xliff:g id="taps">%1$s</xliff:g> avec <xliff:g id="fingers">%2$s</xliff:g>. Juste après le dernier appui, dans les <xliff:g id="gap">%3$d</xliff:g> ms, touchez à nouveau l\'écran avec <xliff:g id="swipe_fingers">%4$s</xliff:g> et faites glisser <xliff:g id="direction">%5$s</xliff:g> en ligne droite sur environ 2 à 3 cm, puis levez.</string>
+    <string name="gesture_trainer_how_corner_hold">Au dernier appui, laissez le doigt dans le coin, immobile, pendant au moins <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Tenez le téléphone en main, par les côtés, et appuyez <xliff:g id="taps">%1$s</xliff:g> au milieu de son dos avec le bout d\'un doigt, fermement et rapidement, comme pour frapper à une porte. Gardez les appuis rapprochés : <xliff:g id="gap">%2$d</xliff:g> ms au plus entre eux. Ne touchez pas l\'écran pendant les appuis.</string>
+    <string name="gesture_trainer_back_tap_info">Les appuis au dos n\'exécutent aucune commande pendant l\'exercice. <xliff:g id="setting">%1$s</xliff:g> définit la force nécessaire pour un appui.</string>
+    <string name="gesture_trainer_go_placed">Effectuez le geste <xliff:g id="tries">%1$d</xliff:g> fois.</string>
+    <string name="gesture_trainer_along_left">bord gauche</string>
+    <string name="gesture_trainer_along_right">bord droit</string>
+    <string name="gesture_trainer_along_top">bord supérieur</string>
+    <string name="gesture_trainer_along_bottom">bord inférieur</string>
+    <string name="gesture_trainer_left_out_along_menu">Les balayages le long du <xliff:g id="edge">%1$s</xliff:g> sont exclus : ce bord a un menu de bord, donc un glissement le long de celui-ci ouvre le menu au lieu d\'exécuter un geste.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Les balayages le long du <xliff:g id="edge">%1$s</xliff:g> sont exclus : ce bord fait défiler, donc un glissement le long de celui-ci fait défiler l\'application au lieu d\'exécuter un geste.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Le doigt s\'est trop éloigné du bord.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Gardez le doigt tout au bord de la vitre, droit le long du bord.</string>
+    <string name="gesture_trainer_go_back_tap">Effectuez le geste d\'appui au dos <xliff:g id="tries">%1$d</xliff:g> fois. Un contact avec l\'écran fait échouer l\'essai.</string>
+    <string name="gesture_trainer_no_accelerometer">Cet exercice nécessite un accéléromètre. Aucun n\'est disponible.</string>
+    <string name="gesture_trainer_measure_hold">maintenu immobile <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">appui de force <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Le doigt est resté immobile <xliff:g id="ms">%1$d</xliff:g> ms à la fin, et il doit rester immobile au moins <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Les doigts ont appuyé dans l\'autre moitié de l\'écran.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Aucun balayage n\'a suivi les appuis.</string>
+    <string name="gesture_trainer_finding_swipe_late">Le balayage a commencé <xliff:g id="ms">%1$d</xliff:g> ms après le dernier appui, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Appui au dos trop léger : <xliff:g id="percent">%1$d</xliff:g>%% de la force nécessaire.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Un appui a secoué le téléphone davantage sur le côté qu\'à travers son dos.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Le téléphone bougeait juste avant un appui.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">L\'écran a été touché, et les appuis pendant que l\'écran est touché ne comptent pas.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms se sont écoulées entre les appuis au dos, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Après le balayage, gardez le doigt immobile sur l\'écran pendant toute la durée de maintien. Puis levez.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Vérifiez dans quelle moitié vous appuyez : le milieu de l\'écran sépare la moitié supérieure de la moitié inférieure.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Après le dernier appui, touchez à nouveau l\'écran immédiatement et balayez.</string>
+    <string name="gesture_trainer_tip_swipe_late">Commencez le balayage juste après le dernier appui, sans pause.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Appuyez plus fermement, avec le bout du doigt ou un ongle, près du milieu du dos.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Appuyez bien perpendiculairement au dos du téléphone, pas sur sa tranche ni en biais.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Tenez le téléphone immobile un instant avant d\'appuyer, et tenez-le sans serrer pour que votre main ne le fasse pas bouger.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Gardez les doigts hors de l\'écran pendant que vous appuyez au dos : tenez le téléphone par les côtés.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Appuyez plus vite, un appui juste après l\'autre.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Le doigt se lève trop tôt après le balayage. Une valeur plus courte pour <xliff:g id="setting">%1$s</xliff:g> permet un maintien plus court.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Les appuis au dos sont légers. Une valeur plus élevée pour <xliff:g id="setting">%1$s</xliff:g> détecte des appuis plus légers, et peut détecter des chocs comme des appuis.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Les doigts ont tourné de <xliff:g id="degrees">%1$.0f</xliff:g> degrés, et à partir de <xliff:g id="limit">%2$.0f</xliff:g> degrés le mouvement est une rotation.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Déplacez les doigts en ligne droite pour les rapprocher ou les écarter, pas en arc de cercle l\'un autour de l\'autre.</string>
+    <string name="gesture_trainer_finding_other_gesture">Le mouvement correspondait plutôt à ce geste.</string>
+    <string name="gesture_trainer_side_left">gauche</string>
+    <string name="gesture_trainer_side_right">droit</string>
+    <string name="gesture_trainer_side_top">supérieur</string>
+    <string name="gesture_trainer_side_bottom">inférieur</string>
+    <string name="gesture_trainer_finding_wrong_edge">Le doigt a commencé sur le bord <xliff:g id="side">%1$s</xliff:g>, et cet exercice se fait sur le bord <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Commencez juste sur le bord indiqué par l\'exercice.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Un menu de bord s\'est ouvert au lieu de ce geste.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Un glissement le long d\'un bord avec un menu ouvre le menu. Commencez sur le bord indiqué par l\'exercice.</string>
+    <string name="gesture_trainer_group_three_part">Balayages en trois parties</string>
+    <string name="gesture_trainer_group_two_stroke">Balayages en deux traits</string>
+    <string name="gesture_trainer_group_shake">Secouer</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Les balayages en trois parties sont exclus : <xliff:g id="setting">%1$s</xliff:g> est activé.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Les balayages en deux traits sont exclus : <xliff:g id="setting">%1$s</xliff:g> est défini sur <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">La secousse n\'exécute aucune commande pendant l\'exercice. <xliff:g id="setting">%1$s</xliff:g> définit la force nécessaire pour une secousse.</string>
+    <string name="gesture_trainer_go_shake">Secouez le téléphone <xliff:g id="tries">%1$d</xliff:g> fois, avec une courte pause après chaque secousse.</string>
+    <string name="gesture_trainer_how_shake">Tenez fermement le téléphone et secouez-le rapidement d\'avant en arrière, comme pour faire tomber une goutte d\'eau : au moins deux fois dans chaque sens, le tout en deux tiers de seconde environ. Puis tenez-le immobile.</string>
+    <string name="gesture_trainer_how_two_stroke">Balayez <xliff:g id="first">%1$s</xliff:g> avec un doigt, sur environ 2 cm, et levez. Puis immédiatement, dans les <xliff:g id="time">%3$d</xliff:g> ms, balayez <xliff:g id="second">%2$s</xliff:g> avec un doigt, sur environ 2 cm, et levez.</string>
+    <string name="gesture_trainer_how_three_part">Touchez l\'écran avec un doigt et, sans lever, balayez <xliff:g id="first">%1$s</xliff:g>, puis tournez nettement et balayez <xliff:g id="second">%2$s</xliff:g>, puis tournez nettement à nouveau et balayez <xliff:g id="third">%3$s</xliff:g>, chaque partie sur environ 2 cm, et levez. Faites-en un seul mouvement rapide et fluide avec des angles nets, pas des courbes.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Posez un doigt dans le tiers supérieur de l\'écran et l\'autre dans le tiers inférieur, par exemple le pouce en bas et l\'index en haut.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Les doigts n\'étaient pas l\'un dans le tiers supérieur de l\'écran et l\'autre dans le tiers inférieur.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Il n\'y a pas eu de deuxième balayage.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Le deuxième balayage a commencé <xliff:g id="ms">%1$d</xliff:g> ms après le premier, et <xliff:g id="limit">%2$d</xliff:g> ms au plus sont autorisées.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Le premier balayage est allé <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Le deuxième balayage est allé <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">La secousse était trop légère : <xliff:g id="percent">%1$d</xliff:g>%% de la force nécessaire.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Allers-retours : <xliff:g id="swings">%1$d</xliff:g> sur les <xliff:g id="wanted">%2$d</xliff:g> nécessaires.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Écartez bien les doigts, l\'un près du bord supérieur et l\'autre près du bord inférieur.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Après le premier balayage, levez le doigt et balayez à nouveau immédiatement.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Commencez le deuxième balayage juste après avoir levé le doigt.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Secouez plus fort et plus vite.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Secouez plus vite, d\'avant en arrière au moins deux fois dans chaque sens, sans vous arrêter entre les deux.</string>
+    <string name="gesture_trainer_measure_shake_strength">mouvement le plus fort <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Les secousses sont légères. Une valeur plus élevée pour <xliff:g id="setting">%1$s</xliff:g> détecte des secousses plus légères, et peut détecter le transport du téléphone comme une secousse.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Le deuxième balayage commence tard. Une valeur plus longue pour <xliff:g id="setting">%1$s</xliff:g> permet un deuxième balayage plus tardif, et un balayage simple attend alors plus longtemps avant de s\'exécuter.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> est activé.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> est désactivé : les balayages à deux doigts font défiler l\'application, et un frottement fait le plus souvent défiler aussi. Avec ce paramètre activé, les balayages à deux doigts exécutent des commandes SandFly au lieu de faire défiler.</string>
+    <string name="gesture_trainer_measure_first_stroke">premier balayage <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">deuxième balayage <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">geste entier <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">doigt levé <xliff:g id="ms">%1$d</xliff:g> ms entre les deux</string>
+</resources>

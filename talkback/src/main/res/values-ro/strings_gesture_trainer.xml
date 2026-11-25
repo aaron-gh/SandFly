@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Antrenor de gesturi</string>
+    <string name="gesture_trainer_intro">Alege un grup de gesturi. Fiecare exercițiu descrie un gest. Fă gestul de <xliff:g id="tries">%1$d</xliff:g> ori; rezultatul fiecărei încercări este rostit. După ultima încercare, ecranul afișează măsurătorile fiecărei încercări, ce trebuie schimbat și setările asociate.</string>
+    <string name="gesture_trainer_group_one_finger">Un deget</string>
+    <string name="gesture_trainer_group_two_fingers">Două degete</string>
+    <string name="gesture_trainer_group_three_fingers">Trei degete</string>
+    <string name="gesture_trainer_group_four_fingers">Patru degete</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Apropiere, rotire și frecare</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> exerciții</string>
+    <string name="gesture_trainer_close">Închide</string>
+    <string name="gesture_trainer_no_detection">Antrenorul de gesturi necesită Android 13 sau o versiune ulterioară.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Gesturile înainte și înapoi și cele în unghi sunt omise: opțiunea „<xliff:g id="setting">%1$s</xliff:g>” este activată.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Glisările cu două degete sunt omise: opțiunea „<xliff:g id="setting">%1$s</xliff:g>” este dezactivată, deci ele derulează aplicațiile.</string>
+    <string name="gesture_trainer_exercise_heading">Exercițiul <xliff:g id="number">%1$d</xliff:g> din <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Începe</string>
+    <string name="gesture_trainer_skip">Omite acest exercițiu</string>
+    <string name="gesture_trainer_back_to_groups">Înapoi la grupuri</string>
+    <string name="gesture_trainer_go">Fă gestul de <xliff:g id="tries">%1$d</xliff:g> ori, oriunde pe ecran. Fiecare atingere este o încercare.</string>
+    <string name="gesture_trainer_fingers_1">un deget</string>
+    <string name="gesture_trainer_fingers_2">două degete alăturate, la aproximativ 1 cm unul de altul</string>
+    <string name="gesture_trainer_fingers_3">trei degete alăturate, puțin depărtate</string>
+    <string name="gesture_trainer_fingers_4">patru degete alăturate, puțin depărtate</string>
+    <string name="gesture_trainer_direction_up">în sus</string>
+    <string name="gesture_trainer_direction_down">în jos</string>
+    <string name="gesture_trainer_direction_left">spre stânga</string>
+    <string name="gesture_trainer_direction_right">spre dreapta</string>
+    <string name="gesture_trainer_how_swipe">Atinge ecranul cu <xliff:g id="fingers">%1$s</xliff:g> și, fără să aștepți, glisează <xliff:g id="direction">%2$s</xliff:g> în linie dreaptă aproximativ 2–3 cm, apoi ridică. Începe mișcarea imediat: un deget care stă întâi nemișcat pornește explorarea prin atingere.</string>
+    <string name="gesture_trainer_how_swipe_multi">Pune degetele jos împreună, în același moment, și mișcă-le pe toate în aceeași direcție. Fiecare deget trebuie să meargă <xliff:g id="direction">%1$s</xliff:g> tot timpul, așa că păstrează linia dreaptă.</string>
+    <string name="gesture_trainer_how_back_and_forth">Atinge ecranul cu un deget și glisează <xliff:g id="first">%1$s</xliff:g> aproximativ 2 cm, apoi, fără să ridici, întoarce-te direct <xliff:g id="second">%2$s</xliff:g> aproximativ 2 cm și ridică. Fă totul într-o singură mișcare rapidă și lină.</string>
+    <string name="gesture_trainer_how_angle">Atinge ecranul cu <xliff:g id="fingers">%1$s</xliff:g> și glisează <xliff:g id="first">%2$s</xliff:g> aproximativ 2 cm, apoi, fără să ridici, schimbă brusc direcția și glisează <xliff:g id="second">%3$s</xliff:g> aproximativ 2 cm, apoi ridică. Fă întoarcerea ca un colț ascuțit, ca litera L, nu ca o curbă.</string>
+    <string name="gesture_trainer_taps_1">o dată</string>
+    <string name="gesture_trainer_taps_2">de două ori</string>
+    <string name="gesture_trainer_taps_3">de trei ori</string>
+    <string name="gesture_trainer_taps_4">de patru ori</string>
+    <string name="gesture_trainer_how_taps">Atinge <xliff:g id="taps">%1$s</xliff:g> cu <xliff:g id="fingers">%2$s</xliff:g>. Pune degetele jos împreună și ridică-le împreună, rapid, fără să glisezi.</string>
+    <string name="gesture_trainer_how_taps_quick">Atingerile trebuie să fie rapide și în același loc: următoarea atingere trebuie să vină în cel mult <xliff:g id="gap">%1$d</xliff:g> ms după cea anterioară.</string>
+    <string name="gesture_trainer_how_hold">Pune <xliff:g id="fingers">%1$s</xliff:g> pe ecran împreună și ține-le nemișcate, fără să glisezi, cel puțin <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Dacă nu are altă comandă atribuită, acest gest dezactivează SandFly. În antrenor, nu rulează nimic.</string>
+    <string name="gesture_trainer_how_taps_hold">Atinge <xliff:g id="taps">%1$s</xliff:g> cu <xliff:g id="fingers">%2$s</xliff:g>, iar la ultima atingere lasă degetele pe ecran, nemișcate, cel puțin <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Folosește degetul mare, arătătorul și degetul mijlociu.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Pune arătătorul și degetul mijlociu unul lângă altul, iar degetul mare și inelarul la câțiva centimetri, de o parte și de alta. Apoi adu toate cele patru vârfuri ale degetelor într-un singur punct.</string>
+    <string name="gesture_trainer_how_pinch">Pune <xliff:g id="fingers">%1$d</xliff:g> degete pe ecran, larg depărtate. Apoi apropie-le în linie dreaptă cu cel puțin 1 cm, ca și cum ai ridica ceva, și ridică-le de pe ecran. Mișcă doar degetele, nu toată mâna, și nu în arc.</string>
+    <string name="gesture_trainer_how_spread">Pune <xliff:g id="fingers">%1$d</xliff:g> degete pe ecran, apropiate. Apoi depărtează-le în linie dreaptă cu cel puțin 1 cm și ridică-le de pe ecran. Mișcă doar degetele, nu toată mâna, și nu în arc.</string>
+    <string name="gesture_trainer_clockwise">în sensul acelor de ceasornic</string>
+    <string name="gesture_trainer_counterclockwise">în sens invers acelor de ceasornic</string>
+    <string name="gesture_trainer_how_rotate">Pune două degete pe ecran, la aproximativ 2–3 cm unul de altul, și rotește-le <xliff:g id="way">%1$s</xliff:g> în jurul mijlocului lor, ca și cum ai roti un buton, aproximativ un sfert de tură. Apoi ridică.</string>
+    <string name="gesture_trainer_how_scrub">Pune două degete pe ecran și mișcă-le rapid într-o parte aproximativ 2 cm și înapoi, ca și cum ai șterge ceva, totul în aproximativ o secundă. Apoi ridică.</string>
+    <string name="gesture_trainer_edge_bottom">la marginea de jos</string>
+    <string name="gesture_trainer_edge_top_left">la marginea de sus, în jumătatea ei stângă</string>
+    <string name="gesture_trainer_edge_top_right">la marginea de sus, în jumătatea ei dreaptă</string>
+    <string name="gesture_trainer_edge_left_top">la marginea din stânga, în jumătatea ei de sus</string>
+    <string name="gesture_trainer_edge_left_bottom">la marginea din stânga, în jumătatea ei de jos</string>
+    <string name="gesture_trainer_edge_right_top">la marginea din dreapta, în jumătatea ei de sus</string>
+    <string name="gesture_trainer_edge_right_bottom">la marginea din dreapta, în jumătatea ei de jos</string>
+    <string name="gesture_trainer_edge_left">la marginea din stânga</string>
+    <string name="gesture_trainer_edge_right">la marginea din dreapta</string>
+    <string name="gesture_trainer_edge_top">la marginea de sus</string>
+    <string name="gesture_trainer_how_edge">Pune un deget <xliff:g id="edge">%1$s</xliff:g>, la cel mult <xliff:g id="edge_width">%2$d</xliff:g> mm de margine, și glisează <xliff:g id="direction">%3$s</xliff:g> spre interiorul ecranului până la primul clic, aproximativ <xliff:g id="distance">%4$d</xliff:g> mm. Apoi ridică imediat: după al doilea clic, glisarea devine o glisare lungă.</string>
+    <string name="gesture_trainer_how_edge_long">Pune un deget <xliff:g id="edge">%1$s</xliff:g>, la cel mult <xliff:g id="edge_width">%2$d</xliff:g> mm de margine, și glisează <xliff:g id="direction">%3$s</xliff:g> spre interiorul ecranului, dincolo de primul clic, până la al doilea, aproximativ <xliff:g id="distance">%4$d</xliff:g> mm. Apoi ridică.</string>
+    <string name="gesture_trainer_how_along">Glisează un deget <xliff:g id="direction">%2$s</xliff:g> de-a lungul <xliff:g id="edge">%1$s</xliff:g>, cel puțin <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">din stânga sus</string>
+    <string name="gesture_trainer_corner_top_right">din dreapta sus</string>
+    <string name="gesture_trainer_corner_bottom_left">din stânga jos</string>
+    <string name="gesture_trainer_corner_bottom_right">din dreapta jos</string>
+    <string name="gesture_trainer_how_corner">Atinge <xliff:g id="taps">%1$s</xliff:g> în colțul <xliff:g id="corner">%2$s</xliff:g> al ecranului. Pune degetul chiar în colț, la cel mult <xliff:g id="size">%3$d</xliff:g> mm de ambele margini, și ridică-l rapid, în cel mult <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Cu colțuri mai mari, o atingere pe un control de lângă un colț, cum ar fi Înapoi din stânga sus, poate rula în schimb gestul de colț.</string>
+    <string name="gesture_trainer_rating_precise">recunoscut, precis</string>
+    <string name="gesture_trainer_rating_good">recunoscut, bine</string>
+    <string name="gesture_trainer_rating_borderline">recunoscut, dar aproape de o limită</string>
+    <string name="gesture_trainer_try_recognized">Încercarea <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Încercarea <xliff:g id="number">%1$d</xliff:g>: nerecunoscut.</string>
+    <string name="gesture_trainer_try_other">Încercarea <xliff:g id="number">%1$d</xliff:g>: recunoscut ca <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> din <xliff:g id="tries">%3$d</xliff:g> recunoscute</string>
+    <string name="gesture_trainer_results_tries">Încercările tale</string>
+    <string name="gesture_trainer_results_change">Ce trebuie schimbat</string>
+    <string name="gesture_trainer_results_close">Aproape de o limită</string>
+    <string name="gesture_trainer_results_all_good">Toate încercările au fost recunoscute în limite.</string>
+    <string name="gesture_trainer_results_settings">Setări care pot ajuta</string>
+    <string name="gesture_trainer_next">Exercițiul următor</string>
+    <string name="gesture_trainer_repeat">Repetă</string>
+    <string name="gesture_trainer_finish">Finalizează</string>
+    <string name="gesture_trainer_group_done">Ai terminat toate exercițiile din <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Schimbă <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">a durat <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm lungime</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm pe secundă</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> grade abatere de la linia dreaptă</string>
+    <string name="gesture_trainer_measure_start">primul centimetru în <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">degetele au atins ecranul la <xliff:g id="ms">%1$d</xliff:g> ms unul după altul</string>
+    <string name="gesture_trainer_measure_tap">atingere de <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms între atingeri</string>
+    <string name="gesture_trainer_measure_spread">degetele s-au mișcat <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">rotit cu <xliff:g id="degrees">%1$.0f</xliff:g> grade</string>
+    <string name="gesture_trainer_measure_corner">la <xliff:g id="mm">%1$.0f</xliff:g> mm de marginile colțului</string>
+    <string name="gesture_trainer_measure_edge">a început la <xliff:g id="mm">%1$.0f</xliff:g> mm de margine</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Degete pe ecran: <xliff:g id="fingers">%1$d</xliff:g> în loc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Degetele au atins ecranul la <xliff:g id="ms">%1$d</xliff:g> ms unul după altul, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Un deget s-a ridicat înainte ca toate degetele să fie pe ecran.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Degetele s-au ridicat la <xliff:g id="ms">%1$d</xliff:g> ms unul după altul, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Degetul a stat nemișcat prea mult sau s-a mișcat prea încet la început, așa că atingerea a devenit explorare prin atingere.</string>
+    <string name="gesture_trainer_finding_slow_start">Primul centimetru a durat <xliff:g id="ms">%1$d</xliff:g> ms, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Degetul a încetinit timp de <xliff:g id="ms">%1$d</xliff:g> ms, iar fiecare centimetru poate dura cel mult <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Mișcarea a avut doar <xliff:g id="mm">%1$.0f</xliff:g> mm și trebuie să aibă cel puțin <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Degetul a pornit <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Degetele au pornit <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Traseul a deviat cu <xliff:g id="degrees">%1$.0f</xliff:g> grade de la linia dreaptă, iar limita este de <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Traseul s-a frânt în <xliff:g id="parts">%1$d</xliff:g> părți în loc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Schimbarea de direcție nu a fost găsită.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">După schimbarea de direcție, degetul a mers <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Degetul a alunecat <xliff:g id="mm">%1$.1f</xliff:g> mm în timpul unei atingeri, iar limita este de <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">O atingere a durat <xliff:g id="ms">%1$d</xliff:g> ms, mai mult de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Ultima atingere a fost menținută <xliff:g id="ms">%1$d</xliff:g> ms și trebuie menținută cel puțin <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> atingeri în loc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> atingeri în loc de <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Între atingeri au trecut <xliff:g id="ms">%1$d</xliff:g> ms, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Atingerile au fost la <xliff:g id="mm">%1$.0f</xliff:g> mm distanță, iar limita este de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Degetele s-au mișcat doar <xliff:g id="mm">%1$.0f</xliff:g> mm și trebuie să se miște cel puțin <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Degetele s-au mișcat în sens opus.</string>
+    <string name="gesture_trainer_finding_moved_together">Toată mâna a alunecat <xliff:g id="mm">%1$.0f</xliff:g> mm pe ecran, mai mult decât s-au apropiat sau depărtat degetele unul de altul.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Degetele s-au rotit doar <xliff:g id="degrees">%1$.0f</xliff:g> grade și trebuie să se rotească cel puțin <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Degetele s-au rotit în sens opus.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Prima mișcare a avut <xliff:g id="mm">%1$.0f</xliff:g> mm și trebuie să aibă cel puțin <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Mișcarea de întoarcere a avut <xliff:g id="mm">%1$.0f</xliff:g> mm și trebuie să aibă cel puțin <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Frecarea a durat <xliff:g id="ms">%1$d</xliff:g> ms, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Degetul a atins ecranul la <xliff:g id="mm">%1$.0f</xliff:g> mm de margine, iar marginea are <xliff:g id="limit">%2$.0f</xliff:g> mm lățime.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Degetul a pornit din cealaltă jumătate a marginii.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Degetul a glisat <xliff:g id="mm">%1$.0f</xliff:g> mm și trebuie să gliseze cel puțin <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Glisare prea lungă: degetul a trecut de al doilea clic, <xliff:g id="mm">%1$.0f</xliff:g> mm, iar al doilea clic este la <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Ajungerea la clic a durat <xliff:g id="ms">%1$d</xliff:g> ms, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Glisarea a deviat lateral cu <xliff:g id="degrees">%1$.0f</xliff:g> grade, iar limita este de <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Atingerea a fost la <xliff:g id="mm">%1$.0f</xliff:g> mm de marginile colțului, iar colțul are <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">O atingere în colț a durat <xliff:g id="ms">%1$d</xliff:g> ms, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Nu a fost detectată nicio mișcare care să corespundă gestului.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Verifică câte degete ating sticla. O palmă sau un alt deget sprijinit pe ecran contează și el.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Pune toate degetele jos în același moment, ca o singură mână, nu unul după altul.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Pune întâi toate degetele jos, apoi mișcă-le sau ridică-le.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Ridică toate degetele în același moment.</string>
+    <string name="gesture_trainer_tip_slow_start">Începe mișcarea în momentul în care atingi ecranul și mișcă-te mai repede la început.</string>
+    <string name="gesture_trainer_tip_paused">Ține degetul în mișcare cu viteză constantă până ridici. Nu încetini spre final.</string>
+    <string name="gesture_trainer_tip_too_short">Fă mișcarea mai lungă, aproximativ 2–3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Verifică direcția chiar la începutul mișcării. Ajută să ții telefonul drept în fața ta.</string>
+    <string name="gesture_trainer_tip_off_line">Mișcă-te doar pe direcția respectivă, nu în diagonală. Arătătorul păstrează o linie mai dreaptă decât degetul mare.</string>
+    <string name="gesture_trainer_tip_curved">Păstrează linia dreaptă și ridică exact la final, fără să agăți degetul lateral când ridici.</string>
+    <string name="gesture_trainer_tip_turn_missing">Schimbă direcția brusc, în unghi drept sau direct înapoi, fără să ridici. Fiecare parte trebuie să aibă aproximativ 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">După schimbarea de direcție, verifică încotro mergi: a doua parte trebuie să meargă în cealaltă direcție numită de gest.</string>
+    <string name="gesture_trainer_tip_tap_moved">Atinge drept în jos și în sus, cu vârful degetului, fără să glisezi.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Fă fiecare atingere scurtă: atinge și ridică imediat.</string>
+    <string name="gesture_trainer_tip_hold_too_short">La ultima atingere, ține degetele nemișcate pe ecran tot timpul de menținere.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Numără atingerile și fă-le pe toate rapid, dintr-o dată.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Numără atingerile. Un deget care sare de pe sticlă face o atingere în plus.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Atinge mai repede: începe următoarea atingere imediat după ce ridici.</string>
+    <string name="gesture_trainer_tip_taps_apart">Atinge de fiecare dată în același loc.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Mișcă degetele mai mult, cu cel puțin 1 cm mai aproape sau mai departe unul de altul.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Apropierea înseamnă degete care se mișcă unul spre altul, depărtarea înseamnă degete care se îndepărtează.</string>
+    <string name="gesture_trainer_tip_moved_together">Mișcă doar degetele unul spre altul sau unul de altul. Nu glisa toată mâna pe ecran.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Rotește mai mult, ca și cum ai roti un buton un sfert de tură.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">În sensul acelor de ceasornic înseamnă rotirea în direcția în care se mișcă acele unui ceas: degetul de sus se mișcă spre dreapta.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Fă prima mișcare de cel puțin 1 cm.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">După prima mișcare, revino în sens opus înainte să ridici.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Fă frecarea rapid, dus-întors în aproximativ o secundă.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Începe chiar de la margine, cu vârful degetului parțial în afara ecranului.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Verifică în ce jumătate a marginii începi.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Glisează mai departe, până auzi clicul, apoi ridică.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Ridică imediat după primul clic, înainte de al doilea.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Glisează spre interior mai repede, fără să te oprești înainte de clic.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Glisează drept spre interior de la margine sau drept de-a lungul ei, nu în diagonală.</string>
+    <string name="gesture_trainer_tip_corner_missed">Pune degetul chiar în colț, atingând ambele margini.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Ridică mai repede după ce atingi colțul.</string>
+    <string name="gesture_trainer_close_to_limit">Aproape de limită: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Glisările încep încet. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” permite un început mai lent.</string>
+    <string name="gesture_trainer_advice_tap_time">Atingerile sunt lente. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” permite atingeri mai lente.</string>
+    <string name="gesture_trainer_advice_edge_width">Glisările încep prea departe de margine. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” transformă și glisările care încep lângă o margine în glisări de la margine.</string>
+    <string name="gesture_trainer_advice_corner_size">Atingerile cad în afara colțului. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” mărește colțurile.</string>
+    <string name="gesture_trainer_advice_corner_time">Atingerile în colțuri sunt lente. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” permite atingeri mai lente.</string>
+    <string name="gesture_trainer_menu_option">Opțiunea <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: alege elementul <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Glisează un deget în sus sau în jos <xliff:g id="edge">%1$s</xliff:g> cel puțin <xliff:g id="distance">%2$d</xliff:g> mm pentru a deschide meniul. Are <xliff:g id="count">%3$d</xliff:g> elemente, de sus în jos, fiecare de aproximativ <xliff:g id="size">%6$s</xliff:g> cm înălțime. Elementul <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, se află între <xliff:g id="from">%7$s</xliff:g> și <xliff:g id="to">%8$s</xliff:g> cm sub partea de sus a ecranului. Ridică degetul când elementul este rostit.</string>
+    <string name="gesture_trainer_menu_sample">Această margine nu are meniu. Exercițiul folosește <xliff:g id="count">%1$d</xliff:g> elemente de probă.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Încercarea <xliff:g id="number">%1$d</xliff:g>: meniul s-a închis fără nicio alegere.</string>
+    <string name="gesture_trainer_try_menu_other">Încercarea <xliff:g id="number">%1$d</xliff:g>: ai ales <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">ridicat la elementul <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Degetul a pornit chiar din capătul de sus sau de jos al marginii, unde sunt colțurile și marginile de sus și de jos.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Degetul s-a ridicat la <xliff:g id="mm">%1$.0f</xliff:g> mm de margine, iar meniul se închide dincolo de <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Degetul s-a ridicat la elementul <xliff:g id="item">%1$d</xliff:g> în loc de elementul <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Începe puțin mai departe de capetele de sus și de jos ale marginii.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Ține degetul aproape de margine în timp ce glisezi și ridică-l acolo.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Fiecare element are un loc fix de-a lungul marginii, iar elementul unde se ridică degetul este ales. Ridică atunci când elementul este rostit.</string>
+    <string name="gesture_trainer_contents">Cuprins</string>
+    <string name="gesture_trainer_contents_heading">Cuprins: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">gata, <xliff:g id="hits">%1$d</xliff:g> din <xliff:g id="tries">%2$d</xliff:g> recunoscute</string>
+    <string name="gesture_trainer_group_tap_swipe">Atingere și glisare</string>
+    <string name="gesture_trainer_group_edge_swipes">Glisări de la margini</string>
+    <string name="gesture_trainer_group_along_edges">Glisări de-a lungul marginilor</string>
+    <string name="gesture_trainer_group_edge_menus">Meniuri de margine</string>
+    <string name="gesture_trainer_group_corners">Colțuri</string>
+    <string name="gesture_trainer_group_back_tap">Atingere pe spate</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Atingerile cu două degete urmate de o glisare cu două degete sunt omise: opțiunea „<xliff:g id="setting">%1$s</xliff:g>” este dezactivată.</string>
+    <string name="gesture_trainer_how_swipe_hold">Apoi, fără să ridici, ține degetul nemișcat cel puțin <xliff:g id="hold">%1$d</xliff:g> ms și ridică.</string>
+    <string name="gesture_trainer_half_top">de sus</string>
+    <string name="gesture_trainer_half_bottom">de jos</string>
+    <string name="gesture_trainer_how_taps_half">Atinge în jumătatea <xliff:g id="half">%1$s</xliff:g> a ecranului. Punctul dintre degete stabilește jumătatea.</string>
+    <string name="gesture_trainer_same_fingers">aceleași degete</string>
+    <string name="gesture_trainer_how_tap_swipe">Atinge <xliff:g id="taps">%1$s</xliff:g> cu <xliff:g id="fingers">%2$s</xliff:g>. Imediat după ultima atingere, în cel mult <xliff:g id="gap">%3$d</xliff:g> ms, atinge din nou ecranul cu <xliff:g id="swipe_fingers">%4$s</xliff:g> și glisează <xliff:g id="direction">%5$s</xliff:g> în linie dreaptă aproximativ 2–3 cm, apoi ridică.</string>
+    <string name="gesture_trainer_how_corner_hold">La ultima atingere, lasă degetul în colț, nemișcat, cel puțin <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Ține telefonul în mână, de margini, și atinge mijlocul spatelui <xliff:g id="taps">%1$s</xliff:g> cu vârful unui deget, ferm și rapid, ca și cum ai bate la ușă. Fă atingerile apropiate: cel mult <xliff:g id="gap">%2$d</xliff:g> ms între ele. Nu atinge ecranul în timp ce atingi spatele.</string>
+    <string name="gesture_trainer_back_tap_info">Atingerile pe spate nu rulează comenzi în timpul exercițiului. „<xliff:g id="setting">%1$s</xliff:g>” stabilește cât de puternică trebuie să fie o atingere.</string>
+    <string name="gesture_trainer_go_placed">Fă gestul de <xliff:g id="tries">%1$d</xliff:g> ori.</string>
+    <string name="gesture_trainer_along_left">marginii din stânga</string>
+    <string name="gesture_trainer_along_right">marginii din dreapta</string>
+    <string name="gesture_trainer_along_top">marginii de sus</string>
+    <string name="gesture_trainer_along_bottom">marginii de jos</string>
+    <string name="gesture_trainer_left_out_along_menu">Glisările de-a lungul <xliff:g id="edge">%1$s</xliff:g> sunt omise: are un meniu de margine, așa că o glisare de-a lungul ei deschide meniul în loc să ruleze un gest.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Glisările de-a lungul <xliff:g id="edge">%1$s</xliff:g> sunt omise: derulează, așa că o glisare de-a lungul ei derulează aplicația în loc să ruleze un gest.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Degetul s-a îndepărtat prea mult de margine.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Ține degetul chiar pe marginea sticlei, drept de-a lungul marginii.</string>
+    <string name="gesture_trainer_go_back_tap">Fă gestul de atingere pe spate de <xliff:g id="tries">%1$d</xliff:g> ori. O atingere pe ecran face încercarea să eșueze.</string>
+    <string name="gesture_trainer_no_accelerometer">Acest exercițiu necesită un accelerometru. Nu este disponibil niciunul.</string>
+    <string name="gesture_trainer_measure_hold">ținut nemișcat <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">atingere cu forța <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Degetul a stat nemișcat <xliff:g id="ms">%1$d</xliff:g> ms la final și trebuie să stea nemișcat cel puțin <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Degetele au atins cealaltă jumătate a ecranului.</string>
+    <string name="gesture_trainer_finding_swipe_missing">După atingeri nu a urmat nicio glisare.</string>
+    <string name="gesture_trainer_finding_swipe_late">Glisarea a început la <xliff:g id="ms">%1$d</xliff:g> ms după ultima atingere, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Atingere pe spate prea ușoară: <xliff:g id="percent">%1$d</xliff:g>%% din forța necesară.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">O atingere a mișcat telefonul mai mult lateral decât prin spate.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefonul era în mișcare chiar înainte de o atingere.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Ecranul a fost atins, iar atingerile făcute cât timp este atins nu contează.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Între atingerile pe spate au trecut <xliff:g id="ms">%1$d</xliff:g> ms, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">După glisare, ține degetul nemișcat pe ecran tot timpul de menținere. Apoi ridică.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Verifică în ce jumătate atingi: mijlocul ecranului desparte jumătatea de sus de cea de jos.</string>
+    <string name="gesture_trainer_tip_swipe_missing">După ultima atingere, atinge din nou ecranul imediat și glisează.</string>
+    <string name="gesture_trainer_tip_swipe_late">Începe glisarea imediat după ultima atingere, fără pauză.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Atinge mai ferm, cu vârful degetului sau cu unghia, aproape de mijlocul spatelui.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Atinge drept în spatele telefonului, nu pe margine sau în unghi.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Ține telefonul nemișcat o clipă înainte să atingi și ține-l lejer, ca mâna să nu-l miște.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Nu atinge ecranul cu degetele când atingi spatele: ține telefonul de margini.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Atinge mai repede, o atingere imediat după alta.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Degetul se ridică prea devreme după glisare. O valoare mai mică pentru „<xliff:g id="setting">%1$s</xliff:g>” permite o menținere mai scurtă.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Atingerile pe spate sunt ușoare. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” detectează atingeri mai ușoare și poate detecta lovituri ca atingeri.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Degetele s-au rotit <xliff:g id="degrees">%1$.0f</xliff:g> grade, iar de la <xliff:g id="limit">%2$.0f</xliff:g> grade mișcarea este o rotire.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Mișcă degetele în linie dreaptă unul spre altul sau unul de altul, nu în arc unul în jurul celuilalt.</string>
+    <string name="gesture_trainer_finding_other_gesture">Mișcarea a corespuns în schimb acelui gest.</string>
+    <string name="gesture_trainer_side_left">din stânga</string>
+    <string name="gesture_trainer_side_right">din dreapta</string>
+    <string name="gesture_trainer_side_top">de sus</string>
+    <string name="gesture_trainer_side_bottom">de jos</string>
+    <string name="gesture_trainer_finding_wrong_edge">Degetul a pornit de la marginea <xliff:g id="side">%1$s</xliff:g>, iar acest exercițiu este la marginea <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Începe chiar pe marginea numită de exercițiu.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">S-a deschis un meniu de margine în locul acestui gest.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">O glisare de-a lungul unei margini cu meniu deschide meniul. Începe de la marginea numită de exercițiu.</string>
+    <string name="gesture_trainer_group_three_part">Glisări din trei părți</string>
+    <string name="gesture_trainer_group_two_stroke">Glisări în doi pași</string>
+    <string name="gesture_trainer_group_shake">Scuturare</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Glisările din trei părți sunt omise: opțiunea „<xliff:g id="setting">%1$s</xliff:g>” este activată.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Glisările în doi pași sunt omise: „<xliff:g id="setting">%1$s</xliff:g>” are valoarea <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Scuturarea nu rulează nicio comandă în timpul exercițiului. „<xliff:g id="setting">%1$s</xliff:g>” stabilește cât de puternică trebuie să fie o scuturare.</string>
+    <string name="gesture_trainer_go_shake">Scutură telefonul de <xliff:g id="tries">%1$d</xliff:g> ori, cu o scurtă pauză după fiecare scuturare.</string>
+    <string name="gesture_trainer_how_shake">Ține telefonul ferm și scutură-l rapid înainte și înapoi, ca și cum ai scutura o picătură de apă: de cel puțin două ori în fiecare sens, totul în aproximativ două treimi de secundă. Apoi ține-l nemișcat.</string>
+    <string name="gesture_trainer_how_two_stroke">Glisează <xliff:g id="first">%1$s</xliff:g> cu un deget, aproximativ 2 cm, și ridică. Apoi imediat, în cel mult <xliff:g id="time">%3$d</xliff:g> ms, glisează <xliff:g id="second">%2$s</xliff:g> cu un deget, aproximativ 2 cm, și ridică.</string>
+    <string name="gesture_trainer_how_three_part">Atinge ecranul cu un deget și, fără să ridici, glisează <xliff:g id="first">%1$s</xliff:g>, apoi schimbă brusc direcția și glisează <xliff:g id="second">%2$s</xliff:g>, apoi schimbă din nou brusc direcția și glisează <xliff:g id="third">%3$s</xliff:g>, fiecare parte de aproximativ 2 cm, apoi ridică. Fă totul într-o singură mișcare rapidă și lină, cu colțuri ascuțite, nu curbe.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Pune un deget în treimea de sus a ecranului și celălalt în treimea de jos, de exemplu degetul mare jos și arătătorul sus.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Degetele nu au fost unul în treimea de sus a ecranului și unul în treimea de jos.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Nu a existat o a doua glisare.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">A doua glisare a început la <xliff:g id="ms">%1$d</xliff:g> ms după prima, iar limita este de <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Prima glisare a mers <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">A doua glisare a mers <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Scuturarea a fost prea ușoară: <xliff:g id="percent">%1$d</xliff:g>%% din forța necesară.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Mișcări înainte și înapoi: <xliff:g id="swings">%1$d</xliff:g> din cele <xliff:g id="wanted">%2$d</xliff:g> necesare.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Depărtează mult degetele, unul lângă marginea de sus și unul lângă marginea de jos.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">După prima glisare, ridică degetul și glisează din nou imediat.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Începe a doua glisare imediat după ce ridici degetul.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Scutură mai puternic și mai repede.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Scutură mai repede, înainte și înapoi de cel puțin două ori în fiecare sens, fără să te oprești între ele.</string>
+    <string name="gesture_trainer_measure_shake_strength">cea mai puternică mișcare <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Scuturările sunt ușoare. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” detectează scuturări mai ușoare și poate detecta purtarea telefonului ca scuturare.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">A doua glisare începe târziu. O valoare mai mare pentru „<xliff:g id="setting">%1$s</xliff:g>” permite o a doua glisare mai târzie, iar o glisare simplă așteaptă apoi mai mult înainte să ruleze.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Opțiunea „<xliff:g id="setting">%1$s</xliff:g>” este activată.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Opțiunea „<xliff:g id="setting">%1$s</xliff:g>” este dezactivată: glisările cu două degete derulează aplicația, iar o frecare de obicei derulează și ea. Cu opțiunea activată, glisările cu două degete rulează comenzi SandFly în loc să deruleze.</string>
+    <string name="gesture_trainer_measure_first_stroke">prima glisare <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">a doua glisare <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">întregul gest <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">ridicat <xliff:g id="ms">%1$d</xliff:g> ms între ele</string>
+</resources>

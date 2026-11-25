@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Ժեստերի մարզիչ</string>
+    <string name="gesture_trainer_intro">Ընտրեք ժեստերի խումբ։ Յուրաքանչյուր վարժություն նկարագրում է մեկ ժեստ։ Կատարեք ժեստը <xliff:g id="tries">%1$d</xliff:g> անգամ․ յուրաքանչյուր փորձի արդյունքը հնչեցվում է։ Վերջին փորձից հետո էկրանին ցուցադրվում են յուրաքանչյուր փորձի չափումները, ինչ փոխել և առնչվող կարգավորումները։</string>
+    <string name="gesture_trainer_group_one_finger">Մեկ մատ</string>
+    <string name="gesture_trainer_group_two_fingers">Երկու մատ</string>
+    <string name="gesture_trainer_group_three_fingers">Երեք մատ</string>
+    <string name="gesture_trainer_group_four_fingers">Չորս մատ</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Ճմլում, պտտում և արագ սահեցում այս ու այն կողմ</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, վարժություններ՝ <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Փակել</string>
+    <string name="gesture_trainer_no_detection">Ժեստերի մարզիչը պահանջում է Android 13 կամ ավելի նոր տարբերակ։</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Հետ ու առաջ և անկյունային ժեստերը բաց են թողնված․ «<xliff:g id="setting">%1$s</xliff:g>» կարգավորումը միացված է։</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Երկու մատով սահեցումները բաց են թողնված․ «<xliff:g id="setting">%1$s</xliff:g>» կարգավորումն անջատված է, ուստի դրանք ոլորում են հավելվածները։</string>
+    <string name="gesture_trainer_exercise_heading">Վարժություն <xliff:g id="number">%1$d</xliff:g>՝ <xliff:g id="count">%2$d</xliff:g>-ից․ <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Սկսել</string>
+    <string name="gesture_trainer_skip">Բաց թողնել այս վարժությունը</string>
+    <string name="gesture_trainer_back_to_groups">Վերադառնալ խմբերին</string>
+    <string name="gesture_trainer_go">Կատարեք ժեստը <xliff:g id="tries">%1$d</xliff:g> անգամ՝ էկրանի ցանկացած մասում։ Յուրաքանչյուր հպում մեկ փորձ է։</string>
+    <string name="gesture_trainer_fingers_1">մեկ մատով</string>
+    <string name="gesture_trainer_fingers_2">երկու մատով՝ կողք կողքի, մոտ 1 սմ հեռավորությամբ</string>
+    <string name="gesture_trainer_fingers_3">երեք մատով՝ կողք կողքի, մի փոքր իրարից հեռու</string>
+    <string name="gesture_trainer_fingers_4">չորս մատով՝ կողք կողքի, մի փոքր իրարից հեռու</string>
+    <string name="gesture_trainer_direction_up">վերև</string>
+    <string name="gesture_trainer_direction_down">ներքև</string>
+    <string name="gesture_trainer_direction_left">ձախ</string>
+    <string name="gesture_trainer_direction_right">աջ</string>
+    <string name="gesture_trainer_how_swipe">Հպեք էկրանին <xliff:g id="fingers">%1$s</xliff:g> և առանց սպասելու սահեցրեք <xliff:g id="direction">%2$s</xliff:g> ուղիղ գծով մոտ 2–3 սմ, ապա բարձրացրեք։ Շարժվել սկսեք անմիջապես․ նախ անշարժ մնացած մատը սկսում է «Հպումով ուսումնասիրում»-ը։</string>
+    <string name="gesture_trainer_how_swipe_multi">Մատները դրեք միասին, նույն պահին, և բոլորը շարժեք նույն ուղղությամբ։ Յուրաքանչյուր մատ պետք է ամբողջ ժամանակ շարժվի <xliff:g id="direction">%1$s</xliff:g>, ուստի գիծը պահեք ուղիղ։</string>
+    <string name="gesture_trainer_how_back_and_forth">Հպեք էկրանին մեկ մատով և սահեցրեք <xliff:g id="first">%1$s</xliff:g> մոտ 2 սմ, ապա առանց բարձրացնելու ուղիղ վերադարձեք <xliff:g id="second">%2$s</xliff:g> մոտ 2 սմ և բարձրացրեք։ Կատարեք այն մեկ արագ, սահուն շարժումով։</string>
+    <string name="gesture_trainer_how_angle">Հպեք էկրանին <xliff:g id="fingers">%1$s</xliff:g> և սահեցրեք <xliff:g id="first">%2$s</xliff:g> մոտ 2 սմ, ապա առանց բարձրացնելու կտրուկ թեքվեք և սահեցրեք <xliff:g id="second">%3$s</xliff:g> մոտ 2 սմ, ապա բարձրացրեք։ Թեքումը արեք սուր անկյուն, ինչպես L տառը, ոչ թե կոր։</string>
+    <string name="gesture_trainer_taps_1">մեկ անգամ</string>
+    <string name="gesture_trainer_taps_2">երկու անգամ</string>
+    <string name="gesture_trainer_taps_3">երեք անգամ</string>
+    <string name="gesture_trainer_taps_4">չորս անգամ</string>
+    <string name="gesture_trainer_how_taps">Հպեք <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>։ Մատները դրեք միասին և բարձրացրեք միասին, արագ, առանց սահեցնելու։</string>
+    <string name="gesture_trainer_how_taps_quick">Հպումները կատարեք արագ և նույն տեղում․ հաջորդ հպումը պետք է լինի նախորդից <xliff:g id="gap">%1$d</xliff:g> մվ-ի ընթացքում։</string>
+    <string name="gesture_trainer_how_hold">Միաժամանակ հպեք էկրանին <xliff:g id="fingers">%1$s</xliff:g> և պահեք անշարժ, առանց սահեցնելու, առնվազն <xliff:g id="hold">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Եթե այլ հրաման նշանակված չէ, այս ժեստն անջատում է SandFly-ը։ Մարզիչում այն ոչինչ չի կատարում։</string>
+    <string name="gesture_trainer_how_taps_hold">Հպեք <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, և վերջին հպման ժամանակ մատները թողեք էկրանին անշարժ առնվազն <xliff:g id="hold">%3$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_how_three_finger_hand">Օգտագործեք բութ մատը, ցուցամատը և միջնամատը։</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Ցուցամատը և միջնամատը դրեք կողք կողքի, իսկ բութ մատը և մատնեմատը՝ մի քանի սանտիմետր հեռու՝ երկու կողմերում։ Ապա չորս մատների ծայրերը միացրեք մեկ կետում։</string>
+    <string name="gesture_trainer_how_pinch">Դրեք <xliff:g id="fingers">%1$d</xliff:g> մատ էկրանին՝ լայն բացված։ Ապա ուղիղ մոտեցրեք դրանք իրար առնվազն 1 սմ, կարծես ինչ-որ բան եք վերցնում, և բարձրացրեք էկրանից։ Շարժեք միայն մատները, ոչ թե ամբողջ ձեռքը, և ոչ աղեղով։</string>
+    <string name="gesture_trainer_how_spread">Դրեք <xliff:g id="fingers">%1$d</xliff:g> մատ էկրանին՝ իրար մոտ։ Ապա ուղիղ հեռացրեք դրանք իրարից առնվազն 1 սմ և բարձրացրեք էկրանից։ Շարժեք միայն մատները, ոչ թե ամբողջ ձեռքը, և ոչ աղեղով։</string>
+    <string name="gesture_trainer_clockwise">ժամացույցի սլաքի ուղղությամբ</string>
+    <string name="gesture_trainer_counterclockwise">ժամացույցի սլաքին հակառակ ուղղությամբ</string>
+    <string name="gesture_trainer_how_rotate">Դրեք երկու մատ էկրանին՝ մոտ 2–3 սմ իրարից հեռու, և պտտեք դրանք <xliff:g id="way">%1$s</xliff:g> իրենց մեջտեղի շուրջ, ինչպես պտտում եք կարգավորիչ բռնակը, մոտ քառորդ պտույտ։ Ապա բարձրացրեք։</string>
+    <string name="gesture_trainer_how_scrub">Դրեք երկու մատ էկրանին և արագ շարժեք դրանք մի կողմ մոտ 2 սմ և հետ, ինչպես ինչ-որ բան ջնջելիս, ամբողջը մոտ մեկ վայրկյանում։ Ապա բարձրացրեք։</string>
+    <string name="gesture_trainer_edge_bottom">ներքևի եզրին</string>
+    <string name="gesture_trainer_edge_top_left">վերևի եզրին՝ նրա ձախ կեսում</string>
+    <string name="gesture_trainer_edge_top_right">վերևի եզրին՝ նրա աջ կեսում</string>
+    <string name="gesture_trainer_edge_left_top">ձախ եզրին՝ նրա վերևի կեսում</string>
+    <string name="gesture_trainer_edge_left_bottom">ձախ եզրին՝ նրա ներքևի կեսում</string>
+    <string name="gesture_trainer_edge_right_top">աջ եզրին՝ նրա վերևի կեսում</string>
+    <string name="gesture_trainer_edge_right_bottom">աջ եզրին՝ նրա ներքևի կեսում</string>
+    <string name="gesture_trainer_edge_left">ձախ եզրին</string>
+    <string name="gesture_trainer_edge_right">աջ եզրին</string>
+    <string name="gesture_trainer_edge_top">վերևի եզրին</string>
+    <string name="gesture_trainer_how_edge">Դրեք մեկ մատը <xliff:g id="edge">%1$s</xliff:g>, եզրից առավելագույնը <xliff:g id="edge_width">%2$d</xliff:g> մմ հեռավորության վրա, և սահեցրեք <xliff:g id="direction">%3$s</xliff:g> դեպի էկրանի ներս մինչև առաջին սեղմումը՝ մոտ <xliff:g id="distance">%4$d</xliff:g> մմ։ Ապա անմիջապես բարձրացրեք․ երկրորդ սեղմումից հետո սահեցումը երկար սահեցում է։</string>
+    <string name="gesture_trainer_how_edge_long">Դրեք մեկ մատը <xliff:g id="edge">%1$s</xliff:g>, եզրից առավելագույնը <xliff:g id="edge_width">%2$d</xliff:g> մմ հեռավորության վրա, և սահեցրեք <xliff:g id="direction">%3$s</xliff:g> դեպի էկրանի ներս՝ առաջին սեղմումից այն կողմ մինչև երկրորդը՝ մոտ <xliff:g id="distance">%4$d</xliff:g> մմ։ Ապա բարձրացրեք։</string>
+    <string name="gesture_trainer_how_along">Սահեցրեք մեկ մատը <xliff:g id="direction">%2$s</xliff:g> <xliff:g id="edge">%1$s</xliff:g> երկայնքով, առնվազն <xliff:g id="distance">%3$d</xliff:g> մմ։</string>
+    <string name="gesture_trainer_corner_top_left">վերևի ձախ</string>
+    <string name="gesture_trainer_corner_top_right">վերևի աջ</string>
+    <string name="gesture_trainer_corner_bottom_left">ներքևի ձախ</string>
+    <string name="gesture_trainer_corner_bottom_right">ներքևի աջ</string>
+    <string name="gesture_trainer_how_corner">Հպեք <xliff:g id="taps">%1$s</xliff:g> էկրանի <xliff:g id="corner">%2$s</xliff:g> անկյունին։ Մատը դրեք հենց անկյունում՝ երկու եզրերից առավելագույնը <xliff:g id="size">%3$d</xliff:g> մմ հեռավորության վրա, և արագ բարձրացրեք՝ <xliff:g id="time">%4$d</xliff:g> մվ-ի ընթացքում։</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>՝ <xliff:g id="edge">%2$d</xliff:g> մմ։ <xliff:g id="corner_setting">%3$s</xliff:g>՝ <xliff:g id="corner">%4$d</xliff:g> մմ։</string>
+    <string name="gesture_trainer_corner_warning">Ավելի մեծ անկյունների դեպքում անկյան մոտ գտնվող կառավարման տարրին հպումը, օրինակ՝ «Հետ»-ին վերևի ձախ մասում, կարող է դրա փոխարեն գործարկել անկյան ժեստը։</string>
+    <string name="gesture_trainer_rating_precise">ճանաչված է, ճշգրիտ</string>
+    <string name="gesture_trainer_rating_good">ճանաչված է, լավ</string>
+    <string name="gesture_trainer_rating_borderline">ճանաչված է, բայց սահմանին մոտ</string>
+    <string name="gesture_trainer_try_recognized">Փորձ <xliff:g id="number">%1$d</xliff:g>՝ <xliff:g id="rating">%2$s</xliff:g>։</string>
+    <string name="gesture_trainer_try_nothing">Փորձ <xliff:g id="number">%1$d</xliff:g>՝ չի ճանաչվել։</string>
+    <string name="gesture_trainer_try_other">Փորձ <xliff:g id="number">%1$d</xliff:g>՝ ճանաչվել է որպես <xliff:g id="gesture">%2$s</xliff:g>։</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>՝ ճանաչվել է <xliff:g id="recognized">%2$d</xliff:g>-ը <xliff:g id="tries">%3$d</xliff:g>-ից</string>
+    <string name="gesture_trainer_results_tries">Ձեր փորձերը</string>
+    <string name="gesture_trainer_results_change">Ինչ փոխել</string>
+    <string name="gesture_trainer_results_close">Սահմանին մոտ</string>
+    <string name="gesture_trainer_results_all_good">Բոլոր փորձերը ճանաչվել են սահմանների ներսում։</string>
+    <string name="gesture_trainer_results_settings">Կարգավորումներ, որոնք կարող են օգնել</string>
+    <string name="gesture_trainer_next">Հաջորդ վարժությունը</string>
+    <string name="gesture_trainer_repeat">Կրկնել</string>
+    <string name="gesture_trainer_finish">Ավարտել</string>
+    <string name="gesture_trainer_group_done">Դուք ավարտեցիք «<xliff:g id="group">%1$s</xliff:g>» խմբի բոլոր վարժությունները։</string>
+    <string name="gesture_trainer_open_setting">Փոխել «<xliff:g id="setting">%1$s</xliff:g>»</string>
+    <string name="gesture_trainer_measure_duration">տևեց <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> սմ երկարությամբ</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> սմ վայրկյանում</string>
+    <string name="gesture_trainer_measure_angle">ուղիղ գծից շեղում՝ <xliff:g id="degrees">%1$.0f</xliff:g> աստիճան</string>
+    <string name="gesture_trainer_measure_start">առաջին սանտիմետրը՝ <xliff:g id="ms">%1$d</xliff:g> մվ-ում</string>
+    <string name="gesture_trainer_measure_landing">մատներն իջան <xliff:g id="ms">%1$d</xliff:g> մվ տարբերությամբ</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> մվ տևողությամբ հպում</string>
+    <string name="gesture_trainer_measure_gap">հպումների միջև՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+    <string name="gesture_trainer_measure_spread">մատները շարժվեցին <xliff:g id="mm">%1$.0f</xliff:g> մմ</string>
+    <string name="gesture_trainer_measure_rotation">պտտվեց <xliff:g id="degrees">%1$.0f</xliff:g> աստիճան</string>
+    <string name="gesture_trainer_measure_corner">անկյան եզրերից <xliff:g id="mm">%1$.0f</xliff:g> մմ</string>
+    <string name="gesture_trainer_measure_edge">սկսվեց եզրից <xliff:g id="mm">%1$.0f</xliff:g> մմ հեռավորության վրա</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Մատներ էկրանին՝ <xliff:g id="fingers">%1$d</xliff:g>՝ <xliff:g id="wanted">%2$d</xliff:g>-ի փոխարեն։</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Մատներն իջան <xliff:g id="ms">%1$d</xliff:g> մվ տարբերությամբ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Մի մատ բարձրացավ, նախքան բոլոր մատները կիջնեին։</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Մատները բարձրացան <xliff:g id="ms">%1$d</xliff:g> մվ տարբերությամբ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_became_exploration">Մատը չափազանց երկար մնաց անշարժ կամ սկզբում շատ դանդաղ շարժվեց, ուստի հպումը դարձավ «Հպումով ուսումնասիրում»։</string>
+    <string name="gesture_trainer_finding_slow_start">Առաջին սանտիմետրը տևեց <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_paused">Մատը դանդաղեց <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ յուրաքանչյուր սանտիմետրը կարող է տևել առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_too_short">Շարժումը միայն <xliff:g id="mm">%1$.0f</xliff:g> մմ էր, իսկ պետք է լինի առնվազն <xliff:g id="limit">%2$.0f</xliff:g> մմ։</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Մատը սկզբում շարժվեց <xliff:g id="direction">%1$s</xliff:g>։</string>
+    <string name="gesture_trainer_finding_wrong_direction">Մատները սկզբում շարժվեցին <xliff:g id="direction">%1$s</xliff:g>։</string>
+    <string name="gesture_trainer_finding_off_line">Հետագիծը ուղիղ գծից շեղվեց <xliff:g id="degrees">%1$.0f</xliff:g> աստիճան, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$.0f</xliff:g>։</string>
+    <string name="gesture_trainer_finding_curved">Հետագիծը թեքվեց <xliff:g id="parts">%1$d</xliff:g> մասի՝ <xliff:g id="wanted">%2$d</xliff:g>-ի փոխարեն։</string>
+    <string name="gesture_trainer_finding_turn_missing">Թեքումը չի հայտնաբերվել։</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Թեքումից հետո մատը շարժվեց <xliff:g id="direction">%1$s</xliff:g>։</string>
+    <string name="gesture_trainer_finding_tap_moved">Հպման ժամանակ մատը սահեց <xliff:g id="mm">%1$.1f</xliff:g> մմ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$.1f</xliff:g> մմ։</string>
+    <string name="gesture_trainer_finding_tap_held_long">Հպումը տևեց <xliff:g id="ms">%1$d</xliff:g> մվ՝ ավելի, քան <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_hold_too_short">Վերջին հպումը պահվեց <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ պետք է առնվազն <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_too_few_taps">Հպումներ՝ <xliff:g id="taps">%1$d</xliff:g>՝ <xliff:g id="wanted">%2$d</xliff:g>-ի փոխարեն։</string>
+    <string name="gesture_trainer_finding_too_many_taps">Հպումներ՝ <xliff:g id="taps">%1$d</xliff:g>՝ <xliff:g id="wanted">%2$d</xliff:g>-ի փոխարեն։</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Հպումների միջև անցավ <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_taps_apart">Հպումներն իրարից <xliff:g id="mm">%1$.0f</xliff:g> մմ հեռու էին, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$.0f</xliff:g> մմ։</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Մատները շարժվեցին միայն <xliff:g id="mm">%1$.0f</xliff:g> մմ, իսկ պետք է շարժվեն առնվազն <xliff:g id="limit">%2$.0f</xliff:g> մմ։</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Մատները շարժվեցին հակառակ ուղղությամբ։</string>
+    <string name="gesture_trainer_finding_moved_together">Ամբողջ ձեռքը սահեց էկրանով <xliff:g id="mm">%1$.0f</xliff:g> մմ՝ ավելի, քան մատները մոտեցան կամ հեռացան իրարից։</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Մատները պտտվեցին միայն <xliff:g id="degrees">%1$.0f</xliff:g> աստիճան, իսկ պետք է պտտվեն առնվազն <xliff:g id="limit">%2$.0f</xliff:g>։</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Մատները պտտվեցին հակառակ ուղղությամբ։</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Առաջին շարժումը <xliff:g id="mm">%1$.0f</xliff:g> մմ էր, իսկ պետք է լինի առնվազն <xliff:g id="limit">%2$.0f</xliff:g> մմ։</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Հետադարձ շարժումը <xliff:g id="mm">%1$.0f</xliff:g> մմ էր, իսկ պետք է լինի առնվազն <xliff:g id="limit">%2$.0f</xliff:g> մմ։</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Այս ու այն կողմ սահեցումը տևեց <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Մատն իջավ եզրից <xliff:g id="mm">%1$.0f</xliff:g> մմ հեռավորության վրա, իսկ եզրի լայնությունը <xliff:g id="limit">%2$.0f</xliff:g> մմ է։</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Մատը սկսեց եզրի մյուս կեսից։</string>
+    <string name="gesture_trainer_finding_edge_too_short">Մատը սահեց <xliff:g id="mm">%1$.0f</xliff:g> մմ, իսկ պետք է սահի առնվազն <xliff:g id="limit">%2$.0f</xliff:g> մմ։</string>
+    <string name="gesture_trainer_finding_edge_too_long">Սահեցումը չափազանց երկար է․ մատն անցավ երկրորդ սեղմումից այն կողմ՝ <xliff:g id="mm">%1$.0f</xliff:g> մմ, իսկ երկրորդ սեղմումը <xliff:g id="limit">%2$.0f</xliff:g> մմ-ի վրա է։</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Սեղմմանը հասնելը տևեց <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_edge_sideways">Սահեցումը կողք շեղվեց <xliff:g id="degrees">%1$.0f</xliff:g> աստիճան, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$.0f</xliff:g>։</string>
+    <string name="gesture_trainer_finding_corner_missed">Հպումը անկյան եզրերից <xliff:g id="mm">%1$.0f</xliff:g> մմ հեռու էր, իսկ անկյան չափը <xliff:g id="limit">%2$.0f</xliff:g> մմ է։</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Անկյան հպումը տևեց <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_none">Ժեստին համապատասխանող շարժում չի հայտնաբերվել։</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Ստուգեք, թե քանի մատ է դիպչում ապակուն։ Էկրանին դրված ափը կամ մեկ այլ մատը նույնպես հաշվվում է։</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Բոլոր մատները դրեք նույն պահին՝ որպես մեկ ձեռք, ոչ թե մեկը մյուսի հետևից։</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Նախ դրեք բոլոր մատները, ապա շարժեք կամ բարձրացրեք դրանք։</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Բոլոր մատները բարձրացրեք նույն պահին։</string>
+    <string name="gesture_trainer_tip_slow_start">Շարժվել սկսեք էկրանին հպվելու պահին և սկզբում շարժվեք ավելի արագ։</string>
+    <string name="gesture_trainer_tip_paused">Մատը շարժեք հավասար արագությամբ մինչև բարձրացնելը։ Վերջում մի դանդաղեցրեք։</string>
+    <string name="gesture_trainer_tip_too_short">Շարժումը դարձրեք ավելի երկար՝ մոտ 2–3 սմ։</string>
+    <string name="gesture_trainer_tip_wrong_direction">Ստուգեք ուղղությունը հենց շարժման սկզբում։ Օգնում է հեռախոսն ուղիղ ձեր առջև պահելը։</string>
+    <string name="gesture_trainer_tip_off_line">Շարժվեք միայն տվյալ ուղղությամբ, ոչ թե անկյունագծով։ Ցուցամատն ավելի ուղիղ գիծ է պահում, քան բութ մատը։</string>
+    <string name="gesture_trainer_tip_curved">Գիծը պահեք ուղիղ և բարձրացրեք հենց վերջում՝ առանց մատը բարձրացնելիս կողք թեքելու։</string>
+    <string name="gesture_trainer_tip_turn_missing">Ուղղությունը փոխեք կտրուկ՝ ուղիղ անկյան տակ կամ ուղիղ հետ, առանց բարձրացնելու։ Յուրաքանչյուր մասը պետք է լինի մոտ 2 սմ։</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Թեքումից հետո ստուգեք, թե ուր եք գնում․ երկրորդ մասը պետք է գնա ժեստի անվան մեջ նշված մյուս ուղղությամբ։</string>
+    <string name="gesture_trainer_tip_tap_moved">Հպեք ուղիղ ներքև և վերև՝ մատի ծայրով, առանց սահեցնելու։</string>
+    <string name="gesture_trainer_tip_tap_held_long">Յուրաքանչյուր հպում արեք կարճ․ դիպչեք և անմիջապես բարձրացրեք։</string>
+    <string name="gesture_trainer_tip_hold_too_short">Վերջին հպման ժամանակ մատները պահեք էկրանին անշարժ պահելու ողջ ժամանակի ընթացքում։</string>
+    <string name="gesture_trainer_tip_too_few_taps">Հաշվեք հպումները և կատարեք դրանք արագ՝ մեկ անգամից։</string>
+    <string name="gesture_trainer_tip_too_many_taps">Հաշվեք հպումները։ Ապակուց ցատկող մատը լրացուցիչ հպում է ստեղծում։</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Հպեք ավելի արագ․ հաջորդ հպումը սկսեք բարձրացնելուց անմիջապես հետո։</string>
+    <string name="gesture_trainer_tip_taps_apart">Ամեն անգամ հպեք նույն տեղում։</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Մատներն ավելի շատ շարժեք՝ առնվազն 1 սմ իրար մոտ կամ իրարից հեռու։</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Ճմլելիս մատները մոտենում են իրար, բացելիս՝ հեռանում են իրարից։</string>
+    <string name="gesture_trainer_tip_moved_together">Շարժեք միայն մատները՝ իրար մոտ կամ իրարից հեռու։ Ամբողջ ձեռքը մի սահեցրեք էկրանով։</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Պտտեք ավելի շատ, ինչպես կարգավորիչ բռնակը քառորդ պտույտով պտտելիս։</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Ժամացույցի սլաքի ուղղությամբ նշանակում է պտտել այնպես, ինչպես շարժվում են ժամացույցի սլաքները․ վերևի մատը շարժվում է աջ։</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Առաջին շարժումը արեք առնվազն 1 սմ երկարությամբ։</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Առաջին շարժումից հետո վերադարձեք հակառակ ուղղությամբ՝ նախքան բարձրացնելը։</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Այս ու այն կողմ սահեցումը արեք արագ՝ գնալ և գալ մոտ մեկ վայրկյանում։</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Սկսեք հենց եզրից՝ մատի ծայրը մասամբ էկրանից դուրս։</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Ստուգեք, թե եզրի որ կեսից եք սկսում։</string>
+    <string name="gesture_trainer_tip_edge_too_short">Սահեցրեք ավելի հեռու, մինչև լսեք սեղմման ձայնը, ապա բարձրացրեք։</string>
+    <string name="gesture_trainer_tip_edge_too_long">Բարձրացրեք առաջին սեղմումից անմիջապես հետո՝ երկրորդից առաջ։</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Սահեցրեք ներս ավելի արագ՝ առանց սեղմումից առաջ կանգ առնելու։</string>
+    <string name="gesture_trainer_tip_edge_sideways">Սահեցրեք ուղիղ եզրից դեպի ներս կամ ուղիղ դրա երկայնքով, ոչ թե անկյունագծով։</string>
+    <string name="gesture_trainer_tip_corner_missed">Մատը դրեք հենց անկյունում՝ դիպչելով երկու եզրերին։</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Անկյանը դիպչելուց հետո մատն ավելի արագ բարձրացրեք։</string>
+    <string name="gesture_trainer_close_to_limit">Սահմանին մոտ՝ <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Սահեցումները սկսվում են դանդաղ։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի երկար արժեքը թույլ է տալիս ավելի դանդաղ սկիզբ։</string>
+    <string name="gesture_trainer_advice_tap_time">Հպումները դանդաղ են։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի երկար արժեքը թույլ է տալիս ավելի դանդաղ հպումներ։</string>
+    <string name="gesture_trainer_advice_edge_width">Սահեցումները սկսվում են եզրից չափազանց հեռու։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի մեծ արժեքը նաև եզրի մոտից սկսվող սահեցումները դարձնում է եզրային սահեցումներ։</string>
+    <string name="gesture_trainer_advice_corner_size">Հպումներն ընկնում են անկյունից դուրս։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի մեծ արժեքը մեծացնում է անկյունները։</string>
+    <string name="gesture_trainer_advice_corner_time">Անկյունների հպումները դանդաղ են։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի երկար արժեքը թույլ է տալիս ավելի դանդաղ հպումներ։</string>
+    <string name="gesture_trainer_menu_option">Տարբերակ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>՝ ընտրեք <xliff:g id="number">%3$d</xliff:g>-րդ տարրը՝ <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Ընտրացանկը բացելու համար սահեցրեք մեկ մատը վերև կամ ներքև <xliff:g id="edge">%1$s</xliff:g> առնվազն <xliff:g id="distance">%2$d</xliff:g> մմ։ Այն ունի <xliff:g id="count">%3$d</xliff:g> տարր՝ վերևից ներքև, յուրաքանչյուրը մոտ <xliff:g id="size">%6$s</xliff:g> սմ բարձրությամբ։ <xliff:g id="number">%4$d</xliff:g>-րդ տարրը՝ <xliff:g id="item">%5$s</xliff:g>, գտնվում է էկրանի վերևից <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> սմ ներքև։ Բարձրացրեք մատը, երբ տարրը հնչեցվի։</string>
+    <string name="gesture_trainer_menu_sample">Այս եզրն ընտրացանկ չունի։ Վարժությունն օգտագործում է <xliff:g id="count">%1$d</xliff:g> օրինակային տարր։</string>
+    <string name="gesture_trainer_try_menu_cancelled">Փորձ <xliff:g id="number">%1$d</xliff:g>՝ ընտրացանկը փակվեց առանց ընտրության։</string>
+    <string name="gesture_trainer_try_menu_other">Փորձ <xliff:g id="number">%1$d</xliff:g>՝ ընտրվեց <xliff:g id="item">%2$s</xliff:g>։</string>
+    <string name="gesture_trainer_measure_menu_item">բարձրացվեց <xliff:g id="number">%1$d</xliff:g>-րդ տարրի վրա</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Մատը սկսեց եզրի ամենավերևից կամ ամենաներքևից, որտեղ գտնվում են անկյունները և վերևի ու ներքևի եզրերը։</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Մատը բարձրացավ եզրից <xliff:g id="mm">%1$.0f</xliff:g> մմ հեռավորության վրա, իսկ ընտրացանկը փակվում է <xliff:g id="limit">%2$.0f</xliff:g> մմ-ից այն կողմ։</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Մատը բարձրացավ <xliff:g id="item">%1$d</xliff:g>-րդ տարրի վրա՝ <xliff:g id="target">%2$d</xliff:g>-րդի փոխարեն։</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Սկսեք եզրի վերևի և ներքևի ծայրերից մի փոքր հեռու։</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Սահեցնելիս մատը պահեք եզրին մոտ և այնտեղ էլ բարձրացրեք։</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Յուրաքանչյուր տարր եզրի երկայնքով ունի ֆիքսված տեղ, և ընտրվում է այն տարրը, որտեղ մատը բարձրանում է։ Բարձրացրեք, երբ տարրը հնչեցվի։</string>
+    <string name="gesture_trainer_contents">Բովանդակություն</string>
+    <string name="gesture_trainer_contents_heading">Բովանդակություն՝ <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">ավարտված է, ճանաչվել է <xliff:g id="hits">%1$d</xliff:g>-ը <xliff:g id="tries">%2$d</xliff:g>-ից</string>
+    <string name="gesture_trainer_group_tap_swipe">Հպում և սահեցում</string>
+    <string name="gesture_trainer_group_edge_swipes">Սահեցումներ եզրերից</string>
+    <string name="gesture_trainer_group_along_edges">Սահեցումներ եզրերի երկայնքով</string>
+    <string name="gesture_trainer_group_edge_menus">Եզրերի ընտրացանկեր</string>
+    <string name="gesture_trainer_group_corners">Անկյուններ</string>
+    <string name="gesture_trainer_group_back_tap">Հպում հետևի մասին</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Երկու մատով հպումները, որոնց հաջորդում է երկու մատով սահեցում, բաց են թողնված․ «<xliff:g id="setting">%1$s</xliff:g>» կարգավորումն անջատված է։</string>
+    <string name="gesture_trainer_how_swipe_hold">Ապա առանց բարձրացնելու մատը պահեք անշարժ առնվազն <xliff:g id="hold">%1$d</xliff:g> մվ և բարձրացրեք։</string>
+    <string name="gesture_trainer_half_top">վերևի</string>
+    <string name="gesture_trainer_half_bottom">ներքևի</string>
+    <string name="gesture_trainer_how_taps_half">Հպեք էկրանի <xliff:g id="half">%1$s</xliff:g> կեսին։ Կեսը որոշում է մատների միջև գտնվող կետը։</string>
+    <string name="gesture_trainer_same_fingers">նույն մատներով</string>
+    <string name="gesture_trainer_how_tap_swipe">Հպեք <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>։ Վերջին հպումից անմիջապես հետո՝ <xliff:g id="gap">%3$d</xliff:g> մվ-ի ընթացքում, կրկին հպեք էկրանին <xliff:g id="swipe_fingers">%4$s</xliff:g> և սահեցրեք <xliff:g id="direction">%5$s</xliff:g> ուղիղ գծով մոտ 2–3 սմ, ապա բարձրացրեք։</string>
+    <string name="gesture_trainer_how_corner_hold">Վերջին հպման ժամանակ մատը թողեք անկյունում անշարժ առնվազն <xliff:g id="hold">%1$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_how_back_tap">Պահեք հեռախոսը ձեռքում՝ կողքերից բռնած, և մատի ծայրով հպեք դրա հետևի մասի մեջտեղին <xliff:g id="taps">%1$s</xliff:g>՝ ամուր և արագ, ինչպես դուռը թակելիս։ Հպումներն արեք իրար մոտ․ դրանց միջև առավելագույնը <xliff:g id="gap">%2$d</xliff:g> մվ։ Հպելիս մի դիպչեք էկրանին։</string>
+    <string name="gesture_trainer_back_tap_info">Վարժության ընթացքում հետևի մասին հպումները հրամաններ չեն կատարում։ «<xliff:g id="setting">%1$s</xliff:g>» կարգավորումը որոշում է, թե որքան ուժեղ պետք է լինի հպումը։</string>
+    <string name="gesture_trainer_go_placed">Կատարեք ժեստը <xliff:g id="tries">%1$d</xliff:g> անգամ։</string>
+    <string name="gesture_trainer_along_left">ձախ եզրի</string>
+    <string name="gesture_trainer_along_right">աջ եզրի</string>
+    <string name="gesture_trainer_along_top">վերևի եզրի</string>
+    <string name="gesture_trainer_along_bottom">ներքևի եզրի</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> երկայնքով սահեցումները բաց են թողնված․ այն ունի եզրի ընտրացանկ, ուստի դրա երկայնքով սահեցումը ժեստ կատարելու փոխարեն բացում է ընտրացանկը։</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> երկայնքով սահեցումները բաց են թողնված․ այն ոլորում է, ուստի դրա երկայնքով սահեցումը ժեստ կատարելու փոխարեն ոլորում է հավելվածը։</string>
+    <string name="gesture_trainer_finding_along_off_edge">Մատը չափազանց հեռացավ եզրից։</string>
+    <string name="gesture_trainer_tip_along_off_edge">Մատը պահեք ապակու հենց ծայրին՝ ուղիղ եզրի երկայնքով։</string>
+    <string name="gesture_trainer_go_back_tap">Կատարեք հետևի մասին հպման ժեստը <xliff:g id="tries">%1$d</xliff:g> անգամ։ Էկրանին դիպչելը փորձը ձախողում է։</string>
+    <string name="gesture_trainer_no_accelerometer">Այս վարժության համար անհրաժեշտ է արագացուցիչ։ Այն հասանելի չէ։</string>
+    <string name="gesture_trainer_measure_hold">անշարժ պահվեց <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+    <string name="gesture_trainer_measure_back_tap_strength">հպման ուժը՝ <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Վերջում մատը մնաց անշարժ <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ պետք է մնա անշարժ առնվազն <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Մատները հպեցին էկրանի մյուս կեսին։</string>
+    <string name="gesture_trainer_finding_swipe_missing">Հպումներից հետո սահեցում չեղավ։</string>
+    <string name="gesture_trainer_finding_swipe_late">Սահեցումը սկսվեց վերջին հպումից <xliff:g id="ms">%1$d</xliff:g> մվ հետո, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Հետևի մասին հպումը չափազանց թույլ է՝ անհրաժեշտ ուժի <xliff:g id="percent">%1$d</xliff:g>%%-ը։</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Հպումը հեռախոսն ավելի շատ ցնցեց կողքից, քան հետևի մասի միջով։</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Հեռախոսը շարժվում էր հպումից անմիջապես առաջ։</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Էկրանին դիպել են, իսկ էկրանին դիպչելու ընթացքում հպումները չեն հաշվվում։</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Հետևի մասին հպումների միջև անցավ <xliff:g id="ms">%1$d</xliff:g> մվ, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Սահեցումից հետո մատը պահեք էկրանին անշարժ պահելու ողջ ժամանակի ընթացքում։ Ապա բարձրացրեք։</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Ստուգեք, թե որ կեսին եք հպում․ էկրանի մեջտեղը բաժանում է վերևի կեսը ներքևի կեսից։</string>
+    <string name="gesture_trainer_tip_swipe_missing">Վերջին հպումից հետո անմիջապես կրկին հպեք էկրանին և սահեցրեք։</string>
+    <string name="gesture_trainer_tip_swipe_late">Սահեցումը սկսեք վերջին հպումից անմիջապես հետո՝ առանց դադարի։</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Հպեք ավելի ուժեղ՝ մատի ծայրով կամ եղունգով, հետևի մասի մեջտեղի մոտ։</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Հպեք ուղիղ հեռախոսի հետևի մասին, ոչ թե դրա կողին կամ անկյան տակ։</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Հպելուց առաջ մի պահ անշարժ պահեք հեռախոսը և պահեք այն թույլ, որպեսզի ձեր ձեռքը չշարժի այն։</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Հետևի մասին հպելիս մատները հեռու պահեք էկրանից․ հեռախոսը բռնեք կողքերից։</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Հպեք ավելի արագ՝ մեկ հպումը մյուսից անմիջապես հետո։</string>
+    <string name="gesture_trainer_advice_swipe_hold">Սահեցումից հետո մատը չափազանց շուտ է բարձրանում։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի կարճ արժեքը թույլ է տալիս ավելի կարճ պահում։</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Հետևի մասին հպումները թույլ են։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի բարձր արժեքը ճանաչում է ավելի թույլ հպումներ և կարող է հարվածները ճանաչել որպես հպումներ։</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Մատները պտտվեցին <xliff:g id="degrees">%1$.0f</xliff:g> աստիճան, իսկ <xliff:g id="limit">%2$.0f</xliff:g> աստիճանից սկսած շարժումը պտույտ է։</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Մատները շարժեք ուղիղ գծով՝ իրար մոտ կամ իրարից հեռու, ոչ թե աղեղով՝ միմյանց շուրջ։</string>
+    <string name="gesture_trainer_finding_other_gesture">Շարժումը դրա փոխարեն համապատասխանեց այդ ժեստին։</string>
+    <string name="gesture_trainer_side_left">ձախ</string>
+    <string name="gesture_trainer_side_right">աջ</string>
+    <string name="gesture_trainer_side_top">վերևի</string>
+    <string name="gesture_trainer_side_bottom">ներքևի</string>
+    <string name="gesture_trainer_finding_wrong_edge">Մատը սկսեց <xliff:g id="side">%1$s</xliff:g> եզրից, իսկ այս վարժությունը <xliff:g id="expected">%2$s</xliff:g> եզրի համար է։</string>
+    <string name="gesture_trainer_tip_wrong_edge">Սկսեք հենց այն եզրից, որը նշված է վարժությունում։</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Այս ժեստի փոխարեն բացվեց եզրի ընտրացանկ։</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Ընտրացանկ ունեցող եզրի երկայնքով սահեցումը բացում է ընտրացանկը։ Սկսեք այն եզրից, որը նշված է վարժությունում։</string>
+    <string name="gesture_trainer_group_three_part">Եռամաս սահեցումներ</string>
+    <string name="gesture_trainer_group_two_stroke">Երկքայլ սահեցումներ</string>
+    <string name="gesture_trainer_group_shake">Թափահարում</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Եռամաս սահեցումները բաց են թողնված․ «<xliff:g id="setting">%1$s</xliff:g>» կարգավորումը միացված է։</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Երկքայլ սահեցումները բաց են թողնված․ «<xliff:g id="setting">%1$s</xliff:g>» կարգավորումը՝ <xliff:g id="value">%2$s</xliff:g>։</string>
+    <string name="gesture_trainer_shake_info">Վարժության ընթացքում թափահարումը հրաման չի կատարում։ «<xliff:g id="setting">%1$s</xliff:g>» կարգավորումը որոշում է, թե որքան ուժեղ պետք է լինի թափահարումը։</string>
+    <string name="gesture_trainer_go_shake">Թափահարեք հեռախոսը <xliff:g id="tries">%1$d</xliff:g> անգամ՝ յուրաքանչյուր թափահարումից հետո կարճ դադարով։</string>
+    <string name="gesture_trainer_how_shake">Ամուր պահեք հեռախոսը և արագ թափահարեք այն այս ու այն կողմ, կարծես ջրի կաթիլ եք թափ տալիս․ յուրաքանչյուր ուղղությամբ առնվազն երկու անգամ, ամբողջը մոտ երկու երրորդ վայրկյանում։ Ապա պահեք այն անշարժ։</string>
+    <string name="gesture_trainer_how_two_stroke">Սահեցրեք <xliff:g id="first">%1$s</xliff:g> մեկ մատով մոտ 2 սմ և բարձրացրեք։ Ապա անմիջապես՝ <xliff:g id="time">%3$d</xliff:g> մվ-ի ընթացքում, սահեցրեք <xliff:g id="second">%2$s</xliff:g> մեկ մատով մոտ 2 սմ և բարձրացրեք։</string>
+    <string name="gesture_trainer_how_three_part">Հպեք էկրանին մեկ մատով և առանց բարձրացնելու սահեցրեք <xliff:g id="first">%1$s</xliff:g>, ապա կտրուկ թեքվեք և սահեցրեք <xliff:g id="second">%2$s</xliff:g>, ապա կրկին կտրուկ թեքվեք և սահեցրեք <xliff:g id="third">%3$s</xliff:g>՝ յուրաքանչյուր մասը մոտ 2 սմ, և բարձրացրեք։ Կատարեք այն մեկ արագ, սահուն շարժումով՝ սուր անկյուններով, ոչ թե կորերով։</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Մեկ մատը դրեք էկրանի վերևի երրորդում, իսկ մյուսը՝ ներքևի երրորդում, օրինակ՝ բութ մատը ներքևում, իսկ ցուցամատը՝ վերևում։</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Մատներից մեկը էկրանի վերևի երրորդում չէր, իսկ մյուսը՝ ներքևի երրորդում։</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Երկրորդ սահեցում չեղավ։</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Երկրորդ սահեցումը սկսվեց առաջինից <xliff:g id="ms">%1$d</xliff:g> մվ հետո, իսկ թույլատրվում է առավելագույնը <xliff:g id="limit">%2$d</xliff:g> մվ։</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Առաջին սահեցումը գնաց <xliff:g id="direction">%1$s</xliff:g>։</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Երկրորդ սահեցումը գնաց <xliff:g id="direction">%1$s</xliff:g>։</string>
+    <string name="gesture_trainer_finding_shake_too_light">Թափահարումը չափազանց թույլ էր՝ անհրաժեշտ ուժի <xliff:g id="percent">%1$d</xliff:g>%%-ը։</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Այս ու այն կողմ շարժումներ՝ <xliff:g id="swings">%1$d</xliff:g> անհրաժեշտ <xliff:g id="wanted">%2$d</xliff:g>-ից։</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Մատները լայն բացեք՝ մեկը վերևի եզրի մոտ, մյուսը՝ ներքևի եզրի մոտ։</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Առաջին սահեցումից հետո բարձրացրեք մատը և անմիջապես կրկին սահեցրեք։</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Երկրորդ սահեցումը սկսեք մատը բարձրացնելուց անմիջապես հետո։</string>
+    <string name="gesture_trainer_tip_shake_too_light">Թափահարեք ավելի ուժեղ և արագ։</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Թափահարեք ավելի արագ՝ այս ու այն կողմ յուրաքանչյուր ուղղությամբ առնվազն երկու անգամ, առանց ընթացքում կանգ առնելու։</string>
+    <string name="gesture_trainer_measure_shake_strength">ամենաուժեղ շարժումը՝ <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Թափահարումները թույլ են։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի բարձր արժեքը ճանաչում է ավելի թույլ թափահարումներ և կարող է հեռախոսը տեղափոխելը ճանաչել որպես թափահարում։</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Երկրորդ սահեցումը ուշ է սկսվում։ «<xliff:g id="setting">%1$s</xliff:g>»-ի ավելի երկար արժեքը թույլ է տալիս ավելի ուշ երկրորդ սահեցում, և այդ դեպքում մեկ սահեցումն ավելի երկար է սպասում մինչև կատարվելը։</string>
+    <string name="gesture_trainer_scrub_two_finger_on">«<xliff:g id="setting">%1$s</xliff:g>» կարգավորումը միացված է։</string>
+    <string name="gesture_trainer_scrub_two_finger_off">«<xliff:g id="setting">%1$s</xliff:g>» կարգավորումն անջատված է․ երկու մատով սահեցումները ոլորում են հավելվածը, և այս ու այն կողմ արագ սահեցումը նույնպես հիմնականում ոլորում է։ Կարգավորումը միացնելու դեպքում երկու մատով սահեցումները ոլորելու փոխարեն կատարում են SandFly-ի հրամաններ։</string>
+    <string name="gesture_trainer_measure_first_stroke">առաջին սահեցում՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+    <string name="gesture_trainer_measure_second_stroke">երկրորդ սահեցում՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+    <string name="gesture_trainer_measure_whole_gesture">ամբողջ ժեստը՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+    <string name="gesture_trainer_measure_stroke_gap">դրանց միջև բարձրացված՝ <xliff:g id="ms">%1$d</xliff:g> մվ</string>
+</resources>

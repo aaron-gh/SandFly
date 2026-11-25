@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">ຕົວຝຶກທ່າທາງ</string>
+    <string name="gesture_trainer_intro">ເລືອກກຸ່ມທ່າທາງ. ແຕ່ລະແບບຝຶກຫັດອະທິບາຍທ່າທາງໜຶ່ງ. ເຮັດທ່າທາງ <xliff:g id="tries">%1$d</xliff:g> ເທື່ອ; ຜົນຂອງແຕ່ລະຄັ້ງຈະຖືກອ່ານອອກສຽງ. ຫຼັງຈາກຄັ້ງສຸດທ້າຍ, ໜ້າຈໍຈະສະແດງການວັດແທກຂອງແຕ່ລະຄັ້ງ, ສິ່ງທີ່ຄວນປ່ຽນ ແລະ ການຕັ້ງຄ່າທີ່ກ່ຽວຂ້ອງ.</string>
+    <string name="gesture_trainer_group_one_finger">ນິ້ວດຽວ</string>
+    <string name="gesture_trainer_group_two_fingers">ສອງນິ້ວ</string>
+    <string name="gesture_trainer_group_three_fingers">ສາມນິ້ວ</string>
+    <string name="gesture_trainer_group_four_fingers">ສີ່ນິ້ວ</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">ບີບ, ໝຸນ ແລະ ຂັດ</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> ແບບຝຶກຫັດ</string>
+    <string name="gesture_trainer_close">ປິດ</string>
+    <string name="gesture_trainer_no_detection">ຕົວຝຶກທ່າທາງຕ້ອງໃຊ້ Android 13 ຫຼື ໃໝ່ກວ່າ.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">ທ່າທາງໄປ-ກັບ ແລະ ທ່າທາງມຸມຖືກຕັດອອກ: <xliff:g id="setting">%1$s</xliff:g> ເປີດຢູ່.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">ການປັດສອງນິ້ວຖືກຕັດອອກ: <xliff:g id="setting">%1$s</xliff:g> ປິດຢູ່, ສະນັ້ນມັນຈະເລື່ອນແອັບ.</string>
+    <string name="gesture_trainer_exercise_heading">ແບບຝຶກຫັດ <xliff:g id="number">%1$d</xliff:g> ຈາກ <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">ເລີ່ມ</string>
+    <string name="gesture_trainer_skip">ຂ້າມແບບຝຶກຫັດນີ້</string>
+    <string name="gesture_trainer_back_to_groups">ກັບໄປຫາກຸ່ມ</string>
+    <string name="gesture_trainer_go">ເຮັດທ່າທາງ <xliff:g id="tries">%1$d</xliff:g> ເທື່ອ, ບ່ອນໃດກໍໄດ້ໃນໜ້າຈໍ. ການສຳຜັດແຕ່ລະເທື່ອແມ່ນໜຶ່ງຄັ້ງ.</string>
+    <string name="gesture_trainer_fingers_1">ນິ້ວດຽວ</string>
+    <string name="gesture_trainer_fingers_2">ສອງນິ້ວວາງຄຽງກັນ, ຫ່າງກັນປະມານ 1 ຊມ</string>
+    <string name="gesture_trainer_fingers_3">ສາມນິ້ວວາງຄຽງກັນ, ຫ່າງກັນເລັກນ້ອຍ</string>
+    <string name="gesture_trainer_fingers_4">ສີ່ນິ້ວວາງຄຽງກັນ, ຫ່າງກັນເລັກນ້ອຍ</string>
+    <string name="gesture_trainer_direction_up">ຂຶ້ນ</string>
+    <string name="gesture_trainer_direction_down">ລົງ</string>
+    <string name="gesture_trainer_direction_left">ໄປທາງຊ້າຍ</string>
+    <string name="gesture_trainer_direction_right">ໄປທາງຂວາ</string>
+    <string name="gesture_trainer_how_swipe">ແຕະໜ້າຈໍດ້ວຍ<xliff:g id="fingers">%1$s</xliff:g> ແລະ ໂດຍບໍ່ຕ້ອງລໍຖ້າ, ເລື່ອນ<xliff:g id="direction">%2$s</xliff:g>ເປັນເສັ້ນຊື່ປະມານ 2 ຫາ 3 ຊມ, ແລ້ວຍົກຂຶ້ນ. ເລີ່ມເຄື່ອນທັນທີ: ນິ້ວທີ່ຢຸດຢູ່ກ່ອນຈະເລີ່ມການສຳຫຼວດດ້ວຍການສຳຜັດ.</string>
+    <string name="gesture_trainer_how_swipe_multi">ວາງນິ້ວລົງພ້ອມກັນ, ໃນເວລາດຽວກັນ, ແລະ ເຄື່ອນທຸກນິ້ວໄປທາງດຽວກັນ. ທຸກນິ້ວຕ້ອງໄປ<xliff:g id="direction">%1$s</xliff:g>ຕະຫຼອດເວລາ, ສະນັ້ນໃຫ້ຮັກສາເສັ້ນໃຫ້ຊື່.</string>
+    <string name="gesture_trainer_how_back_and_forth">ແຕະໜ້າຈໍດ້ວຍນິ້ວດຽວ ແລະ ເລື່ອນ<xliff:g id="first">%1$s</xliff:g>ປະມານ 2 ຊມ, ແລ້ວໂດຍບໍ່ຍົກ, ກັບຄືນຊື່ໆ<xliff:g id="second">%2$s</xliff:g>ປະມານ 2 ຊມ, ແລະ ຍົກຂຶ້ນ. ເຮັດໃຫ້ເປັນການເຄື່ອນໄຫວດຽວທີ່ໄວ ແລະ ລຽບ.</string>
+    <string name="gesture_trainer_how_angle">ແຕະໜ້າຈໍດ້ວຍ<xliff:g id="fingers">%1$s</xliff:g> ແລະ ເລື່ອນ<xliff:g id="first">%2$s</xliff:g>ປະມານ 2 ຊມ, ແລ້ວໂດຍບໍ່ຍົກ, ລ້ຽວແຫຼມ ແລະ ເລື່ອນ<xliff:g id="second">%3$s</xliff:g>ປະມານ 2 ຊມ, ແລະ ຍົກຂຶ້ນ. ເຮັດການລ້ຽວໃຫ້ເປັນມຸມແຫຼມ, ຄືຕົວອັກສອນ L, ບໍ່ແມ່ນເສັ້ນໂຄ້ງ.</string>
+    <string name="gesture_trainer_taps_1">ໜຶ່ງເທື່ອ</string>
+    <string name="gesture_trainer_taps_2">ສອງເທື່ອ</string>
+    <string name="gesture_trainer_taps_3">ສາມເທື່ອ</string>
+    <string name="gesture_trainer_taps_4">ສີ່ເທື່ອ</string>
+    <string name="gesture_trainer_how_taps">ແຕະ<xliff:g id="taps">%1$s</xliff:g>ດ້ວຍ<xliff:g id="fingers">%2$s</xliff:g>. ວາງນິ້ວລົງພ້ອມກັນ ແລະ ຍົກຂຶ້ນພ້ອມກັນ, ຢ່າງໄວ, ໂດຍບໍ່ເລື່ອນ.</string>
+    <string name="gesture_trainer_how_taps_quick">ແຕະໃຫ້ໄວ ແລະ ຢູ່ບ່ອນດຽວກັນ: ການແຕະຄັ້ງຕໍ່ໄປຕ້ອງມາພາຍໃນ <xliff:g id="gap">%1$d</xliff:g> ms ຫຼັງຈາກຄັ້ງກ່ອນ.</string>
+    <string name="gesture_trainer_how_hold">ວາງ<xliff:g id="fingers">%1$s</xliff:g>ລົງເທິງໜ້າຈໍພ້ອມກັນ ແລະ ຄ້າງໄວ້ໂດຍບໍ່ເລື່ອນ, ຢ່າງໜ້ອຍ <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">ຖ້າບໍ່ມີຄຳສັ່ງອື່ນກຳນົດໄວ້, ທ່າທາງນີ້ຈະປິດ SandFly. ໃນຕົວຝຶກ, ມັນບໍ່ແລ່ນຫຍັງ.</string>
+    <string name="gesture_trainer_how_taps_hold">ແຕະ<xliff:g id="taps">%1$s</xliff:g>ດ້ວຍ<xliff:g id="fingers">%2$s</xliff:g>, ແລະ ໃນການແຕະຄັ້ງສຸດທ້າຍ ໃຫ້ຄ້າງນິ້ວໄວ້ເທິງໜ້າຈໍ ໂດຍບໍ່ເຄື່ອນ, ຢ່າງໜ້ອຍ <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">ໃຊ້ໂປ້ມື, ນິ້ວຊີ້ ແລະ ນິ້ວກາງ.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">ວາງນິ້ວຊີ້ ແລະ ນິ້ວກາງຄຽງກັນ, ແລະ ວາງໂປ້ມື ແລະ ນິ້ວນາງຫ່າງອອກໄປສອງສາມຊັງຕີແມັດ ຢູ່ແຕ່ລະຂ້າງ. ຈາກນັ້ນ ຮວບປາຍນິ້ວທັງສີ່ເຂົ້າຫາຈຸດດຽວ.</string>
+    <string name="gesture_trainer_how_pinch">ວາງ <xliff:g id="fingers">%1$d</xliff:g> ນິ້ວເທິງໜ້າຈໍ, ກາງອອກຫ່າງກັນ. ຈາກນັ້ນ ເລື່ອນເຂົ້າຫາກັນຊື່ໆຢ່າງໜ້ອຍ 1 ຊມ, ຄືກັບກຳລັງຈັບສິ່ງໃດສິ່ງໜຶ່ງ, ແລະ ຍົກອອກຈາກໜ້າຈໍ. ເຄື່ອນສະເພາະນິ້ວ, ບໍ່ແມ່ນທັງມື, ແລະ ບໍ່ເປັນເສັ້ນໂຄ້ງ.</string>
+    <string name="gesture_trainer_how_spread">ວາງ <xliff:g id="fingers">%1$d</xliff:g> ນິ້ວເທິງໜ້າຈໍ, ໃກ້ກັນ. ຈາກນັ້ນ ເລື່ອນອອກຈາກກັນຊື່ໆຢ່າງໜ້ອຍ 1 ຊມ ແລະ ຍົກອອກຈາກໜ້າຈໍ. ເຄື່ອນສະເພາະນິ້ວ, ບໍ່ແມ່ນທັງມື, ແລະ ບໍ່ເປັນເສັ້ນໂຄ້ງ.</string>
+    <string name="gesture_trainer_clockwise">ຕາມເຂັມໂມງ</string>
+    <string name="gesture_trainer_counterclockwise">ທວນເຂັມໂມງ</string>
+    <string name="gesture_trainer_how_rotate">ວາງສອງນິ້ວເທິງໜ້າຈໍ, ຫ່າງກັນປະມານ 2 ຫາ 3 ຊມ, ແລະ ໝຸນ<xliff:g id="way">%1$s</xliff:g>ອ້ອມຈຸດກາງຂອງພວກມັນ, ຄືກັບການໝຸນປຸ່ມໝຸນ, ປະມານໜຶ່ງສ່ວນສີ່ຮອບ. ຈາກນັ້ນຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_how_scrub">ວາງສອງນິ້ວເທິງໜ້າຈໍ ແລະ ເລື່ອນໄປຂ້າງໜຶ່ງຢ່າງໄວປະມານ 2 ຊມ ແລ້ວກັບຄືນ, ຄືກັບການລຶບສິ່ງໃດສິ່ງໜຶ່ງ, ທັງໝົດພາຍໃນປະມານໜຶ່ງວິນາທີ. ຈາກນັ້ນຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_edge_bottom">ທີ່ຂອບລຸ່ມ</string>
+    <string name="gesture_trainer_edge_top_left">ທີ່ຂອບເທິງ, ໃນເຄິ່ງຊ້າຍຂອງມັນ</string>
+    <string name="gesture_trainer_edge_top_right">ທີ່ຂອບເທິງ, ໃນເຄິ່ງຂວາຂອງມັນ</string>
+    <string name="gesture_trainer_edge_left_top">ທີ່ຂອບຊ້າຍ, ໃນເຄິ່ງເທິງຂອງມັນ</string>
+    <string name="gesture_trainer_edge_left_bottom">ທີ່ຂອບຊ້າຍ, ໃນເຄິ່ງລຸ່ມຂອງມັນ</string>
+    <string name="gesture_trainer_edge_right_top">ທີ່ຂອບຂວາ, ໃນເຄິ່ງເທິງຂອງມັນ</string>
+    <string name="gesture_trainer_edge_right_bottom">ທີ່ຂອບຂວາ, ໃນເຄິ່ງລຸ່ມຂອງມັນ</string>
+    <string name="gesture_trainer_edge_left">ທີ່ຂອບຊ້າຍ</string>
+    <string name="gesture_trainer_edge_right">ທີ່ຂອບຂວາ</string>
+    <string name="gesture_trainer_edge_top">ທີ່ຂອບເທິງ</string>
+    <string name="gesture_trainer_how_edge">ວາງນິ້ວດຽວ<xliff:g id="edge">%1$s</xliff:g>, ຫ່າງຈາກຂອບບໍ່ເກີນ <xliff:g id="edge_width">%2$d</xliff:g> ມມ, ແລະ ເລື່ອນ<xliff:g id="direction">%3$s</xliff:g>ເຂົ້າໄປໃນໜ້າຈໍຈົນຮອດສຽງຄລິກທຳອິດ, ປະມານ <xliff:g id="distance">%4$d</xliff:g> ມມ. ຈາກນັ້ນຍົກຂຶ້ນທັນທີ: ຫຼັງຈາກສຽງຄລິກທີສອງ, ການເລື່ອນຈະເປັນການເລື່ອນຍາວ.</string>
+    <string name="gesture_trainer_how_edge_long">ວາງນິ້ວດຽວ<xliff:g id="edge">%1$s</xliff:g>, ຫ່າງຈາກຂອບບໍ່ເກີນ <xliff:g id="edge_width">%2$d</xliff:g> ມມ, ແລະ ເລື່ອນ<xliff:g id="direction">%3$s</xliff:g>ເຂົ້າໄປໃນໜ້າຈໍຜ່ານສຽງຄລິກທຳອິດຈົນຮອດສຽງຄລິກທີສອງ, ປະມານ <xliff:g id="distance">%4$d</xliff:g> ມມ. ຈາກນັ້ນຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_how_along">ເລື່ອນນິ້ວດຽວ<xliff:g id="direction">%2$s</xliff:g>ຕາມ<xliff:g id="edge">%1$s</xliff:g>, ຢ່າງໜ້ອຍ <xliff:g id="distance">%3$d</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_corner_top_left">ເທິງຊ້າຍ</string>
+    <string name="gesture_trainer_corner_top_right">ເທິງຂວາ</string>
+    <string name="gesture_trainer_corner_bottom_left">ລຸ່ມຊ້າຍ</string>
+    <string name="gesture_trainer_corner_bottom_right">ລຸ່ມຂວາ</string>
+    <string name="gesture_trainer_how_corner">ແຕະ<xliff:g id="taps">%1$s</xliff:g>ທີ່ມຸມ<xliff:g id="corner">%2$s</xliff:g>ຂອງໜ້າຈໍ. ວາງນິ້ວໃຫ້ຢູ່ໃນມຸມພໍດີ, ຫ່າງຈາກທັງສອງຂອບບໍ່ເກີນ <xliff:g id="size">%3$d</xliff:g> ມມ, ແລະ ຍົກຂຶ້ນຢ່າງໄວ, ພາຍໃນ <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> ມມ. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_corner_warning">ເມື່ອມຸມໃຫຍ່ຂຶ້ນ, ການແຕະຕົວຄວບຄຸມທີ່ຢູ່ໃກ້ມຸມ ເຊັ່ນ ກັບຄືນ ຢູ່ເທິງຊ້າຍ, ອາດຈະແລ່ນທ່າທາງມຸມແທນ.</string>
+    <string name="gesture_trainer_rating_precise">ຮັບຮູ້ໄດ້, ແມ່ນຍຳ</string>
+    <string name="gesture_trainer_rating_good">ຮັບຮູ້ໄດ້, ດີ</string>
+    <string name="gesture_trainer_rating_borderline">ຮັບຮູ້ໄດ້, ແຕ່ໃກ້ຂີດຈຳກັດ</string>
+    <string name="gesture_trainer_try_recognized">ຄັ້ງທີ <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">ຄັ້ງທີ <xliff:g id="number">%1$d</xliff:g>: ຮັບຮູ້ບໍ່ໄດ້.</string>
+    <string name="gesture_trainer_try_other">ຄັ້ງທີ <xliff:g id="number">%1$d</xliff:g>: ຮັບຮູ້ເປັນ <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: ຮັບຮູ້ໄດ້ <xliff:g id="recognized">%2$d</xliff:g> ຈາກ <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">ຄັ້ງທີ່ທ່ານເຮັດ</string>
+    <string name="gesture_trainer_results_change">ສິ່ງທີ່ຄວນປ່ຽນ</string>
+    <string name="gesture_trainer_results_close">ໃກ້ຂີດຈຳກັດ</string>
+    <string name="gesture_trainer_results_all_good">ທຸກຄັ້ງຮັບຮູ້ໄດ້ພາຍໃນຂີດຈຳກັດ.</string>
+    <string name="gesture_trainer_results_settings">ການຕັ້ງຄ່າທີ່ອາດຊ່ວຍໄດ້</string>
+    <string name="gesture_trainer_next">ແບບຝຶກຫັດຕໍ່ໄປ</string>
+    <string name="gesture_trainer_repeat">ເຮັດຊ້ຳ</string>
+    <string name="gesture_trainer_finish">ສຳເລັດ</string>
+    <string name="gesture_trainer_group_done">ທ່ານເຮັດແບບຝຶກຫັດທັງໝົດໃນ <xliff:g id="group">%1$s</xliff:g> ສຳເລັດແລ້ວ.</string>
+    <string name="gesture_trainer_open_setting">ປ່ຽນ <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">ໃຊ້ເວລາ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">ຍາວ <xliff:g id="cm">%1$.1f</xliff:g> ຊມ</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> ຊມ ຕໍ່ວິນາທີ</string>
+    <string name="gesture_trainer_measure_angle">ອອກຈາກເສັ້ນຊື່ <xliff:g id="degrees">%1$.0f</xliff:g> ອົງສາ</string>
+    <string name="gesture_trainer_measure_start">ຊັງຕີແມັດທຳອິດໃນ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">ນິ້ວແຕະລົງຫ່າງກັນ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">ການແຕະ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms ລະຫວ່າງການແຕະ</string>
+    <string name="gesture_trainer_measure_spread">ນິ້ວເຄື່ອນ <xliff:g id="mm">%1$.0f</xliff:g> ມມ</string>
+    <string name="gesture_trainer_measure_rotation">ໝຸນ <xliff:g id="degrees">%1$.0f</xliff:g> ອົງສາ</string>
+    <string name="gesture_trainer_measure_corner">ຫ່າງຈາກຂອບຂອງມຸມ <xliff:g id="mm">%1$.0f</xliff:g> ມມ</string>
+    <string name="gesture_trainer_measure_edge">ເລີ່ມຫ່າງຈາກຂອບ <xliff:g id="mm">%1$.0f</xliff:g> ມມ</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">ນິ້ວເທິງໜ້າຈໍ: <xliff:g id="fingers">%1$d</xliff:g> ແທນທີ່ຈະເປັນ <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">ນິ້ວແຕະລົງຫ່າງກັນ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">ມີນິ້ວໜຶ່ງຍົກຂຶ້ນກ່ອນທີ່ທຸກນິ້ວຈະວາງລົງ.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">ນິ້ວຍົກຂຶ້ນຫ່າງກັນ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">ນິ້ວຢຸດນິ່ງດົນເກີນໄປ ຫຼື ເຄື່ອນຊ້າເກີນໄປໃນຕອນຕົ້ນ, ສະນັ້ນການສຳຜັດຈຶ່ງກາຍເປັນການສຳຫຼວດດ້ວຍການສຳຜັດ.</string>
+    <string name="gesture_trainer_finding_slow_start">ຊັງຕີແມັດທຳອິດໃຊ້ເວລາ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">ນິ້ວຊ້າລົງເປັນເວລາ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ແຕ່ລະຊັງຕີແມັດໃຊ້ເວລາໄດ້ສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">ການເຄື່ອນໄຫວມີພຽງ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ຕ້ອງມີຢ່າງໜ້ອຍ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">ນິ້ວເລີ່ມໄປ<xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">ນິ້ວທັງໝົດເລີ່ມໄປ<xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">ເສັ້ນທາງອອກຈາກເສັ້ນຊື່ <xliff:g id="degrees">%1$.0f</xliff:g> ອົງສາ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">ເສັ້ນທາງງໍເປັນ <xliff:g id="parts">%1$d</xliff:g> ສ່ວນ ແທນທີ່ຈະເປັນ <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">ບໍ່ພົບການລ້ຽວ.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">ຫຼັງຈາກລ້ຽວ, ນິ້ວໄປ<xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">ນິ້ວເລື່ອນ <xliff:g id="mm">%1$.1f</xliff:g> ມມ ໃນລະຫວ່າງການແຕະ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$.1f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_tap_held_long">ການແຕະໃຊ້ເວລາ <xliff:g id="ms">%1$d</xliff:g> ms, ດົນກວ່າ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">ການແຕະຄັ້ງສຸດທ້າຍຄ້າງໄວ້ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ຕ້ອງຢ່າງໜ້ອຍ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps">ແຕະ <xliff:g id="taps">%1$d</xliff:g> ເທື່ອ ແທນທີ່ຈະເປັນ <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">ແຕະ <xliff:g id="taps">%1$d</xliff:g> ເທື່ອ ແທນທີ່ຈະເປັນ <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">ຜ່ານໄປ <xliff:g id="ms">%1$d</xliff:g> ms ລະຫວ່າງການແຕະ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">ການແຕະຫ່າງກັນ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">ນິ້ວເຄື່ອນພຽງ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ຕ້ອງເຄື່ອນຢ່າງໜ້ອຍ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">ນິ້ວເຄື່ອນໄປທາງກົງກັນຂ້າມ.</string>
+    <string name="gesture_trainer_finding_moved_together">ທັງມືເລື່ອນໄປ <xliff:g id="mm">%1$.0f</xliff:g> ມມ ທົ່ວໜ້າຈໍ, ຫຼາຍກວ່າທີ່ນິ້ວເຄື່ອນເຂົ້າຫາ ຫຼື ອອກຈາກກັນ.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">ນິ້ວໝຸນພຽງ <xliff:g id="degrees">%1$.0f</xliff:g> ອົງສາ, ແລະ ຕ້ອງໝຸນຢ່າງໜ້ອຍ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">ນິ້ວໝຸນໄປທາງກົງກັນຂ້າມ.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">ຈັງຫວະທຳອິດມີ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ຕ້ອງມີຢ່າງໜ້ອຍ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">ຈັງຫວະກັບຄືນມີ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ຕ້ອງມີຢ່າງໜ້ອຍ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">ການຂັດໃຊ້ເວລາ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">ນິ້ວແຕະລົງຫ່າງຈາກຂອບ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ຂອບກວ້າງ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">ນິ້ວເລີ່ມຢູ່ໃນອີກເຄິ່ງໜຶ່ງຂອງຂອບ.</string>
+    <string name="gesture_trainer_finding_edge_too_short">ນິ້ວເລື່ອນ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ຕ້ອງເລື່ອນຢ່າງໜ້ອຍ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_edge_too_long">ເລື່ອນຍາວເກີນໄປ: ນິ້ວຜ່ານສຽງຄລິກທີສອງ, <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ສຽງຄລິກທີສອງຢູ່ທີ່ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ການໄປຮອດສຽງຄລິກໃຊ້ເວລາ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">ການເລື່ອນອຽງໄປຂ້າງ <xliff:g id="degrees">%1$.0f</xliff:g> ອົງສາ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">ການແຕະຫ່າງຈາກຂອບຂອງມຸມ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ມຸມມີຂະໜາດ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">ການແຕະມຸມໃຊ້ເວລາ <xliff:g id="ms">%1$d</xliff:g> ms, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">ບໍ່ພົບການເຄື່ອນໄຫວທີ່ກົງກັບທ່າທາງ.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">ກວດເບິ່ງວ່າມີຈັກນິ້ວແຕະແກ້ວ. ຝາມື ຫຼື ນິ້ວອື່ນທີ່ວາງຢູ່ເທິງໜ້າຈໍກໍນັບນຳ.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">ວາງທຸກນິ້ວລົງໃນເວລາດຽວກັນ, ຄືມືດຽວ, ບໍ່ແມ່ນເທື່ອລະນິ້ວ.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">ວາງທຸກນິ້ວລົງກ່ອນ, ຈາກນັ້ນຈຶ່ງເຄື່ອນ ຫຼື ຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">ຍົກທຸກນິ້ວຂຶ້ນໃນເວລາດຽວກັນ.</string>
+    <string name="gesture_trainer_tip_slow_start">ເລີ່ມເຄື່ອນທັນທີທີ່ແຕະໜ້າຈໍ, ແລະ ເຄື່ອນໃຫ້ໄວຂຶ້ນໃນຕອນຕົ້ນ.</string>
+    <string name="gesture_trainer_tip_paused">ເຄື່ອນນິ້ວດ້ວຍຄວາມໄວສະໝ່ຳສະເໝີຈົນກວ່າຈະຍົກ. ຢ່າຊ້າລົງໃກ້ຕອນທ້າຍ.</string>
+    <string name="gesture_trainer_tip_too_short">ເຮັດການເຄື່ອນໄຫວໃຫ້ຍາວຂຶ້ນ, ປະມານ 2 ຫາ 3 ຊມ.</string>
+    <string name="gesture_trainer_tip_wrong_direction">ກວດເບິ່ງທິດທາງໃນຕອນເລີ່ມຕົ້ນຂອງການເຄື່ອນໄຫວ. ການຖືໂທລະສັບໃຫ້ຊື່ຢູ່ຕໍ່ໜ້າຈະຊ່ວຍໄດ້.</string>
+    <string name="gesture_trainer_tip_off_line">ເຄື່ອນສະເພາະຕາມທິດທາງ, ບໍ່ແມ່ນທາງແນວທະແຍງ. ນິ້ວຊີ້ຮັກສາເສັ້ນໄດ້ຊື່ກວ່າໂປ້ມື.</string>
+    <string name="gesture_trainer_tip_curved">ຮັກສາເສັ້ນໃຫ້ຊື່ ແລະ ຍົກຂຶ້ນໃນຕອນທ້າຍພໍດີ, ໂດຍບໍ່ງໍນິ້ວໄປຂ້າງໃນຂະນະທີ່ຍົກ.</string>
+    <string name="gesture_trainer_tip_turn_missing">ປ່ຽນທິດທາງຢ່າງແຫຼມ, ເປັນມຸມສາກ ຫຼື ກັບຄືນຊື່ໆ, ໂດຍບໍ່ຍົກ. ແຕ່ລະສ່ວນຄວນຍາວປະມານ 2 ຊມ.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">ຫຼັງຈາກລ້ຽວ, ກວດເບິ່ງວ່າທ່ານໄປທາງໃດ: ສ່ວນທີສອງຕ້ອງໄປຕາມທິດທາງທີສອງທີ່ຊື່ທ່າທາງບອກ.</string>
+    <string name="gesture_trainer_tip_tap_moved">ແຕະລົງ ແລະ ຂຶ້ນຊື່ໆ, ດ້ວຍປາຍນິ້ວ, ໂດຍບໍ່ເລື່ອນ.</string>
+    <string name="gesture_trainer_tip_tap_held_long">ແຕະແຕ່ລະເທື່ອໃຫ້ສັ້ນ: ແຕະ ແລະ ຍົກຂຶ້ນທັນທີ.</string>
+    <string name="gesture_trainer_tip_hold_too_short">ໃນການແຕະຄັ້ງສຸດທ້າຍ, ຄ້າງນິ້ວໄວ້ເທິງໜ້າຈໍໂດຍບໍ່ເຄື່ອນຕະຫຼອດເວລາຄ້າງ.</string>
+    <string name="gesture_trainer_tip_too_few_taps">ນັບການແຕະ, ແລະ ແຕະທັງໝົດຢ່າງໄວໃນຄັ້ງດຽວ.</string>
+    <string name="gesture_trainer_tip_too_many_taps">ນັບການແຕະ. ນິ້ວທີ່ເດັ້ງອອກຈາກແກ້ວຈະເຮັດໃຫ້ມີການແຕະເພີ່ມ.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">ແຕະໃຫ້ໄວຂຶ້ນ: ເລີ່ມການແຕະຕໍ່ໄປທັນທີຫຼັງຈາກຍົກ.</string>
+    <string name="gesture_trainer_tip_taps_apart">ແຕະບ່ອນດຽວກັນທຸກເທື່ອ.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">ເຄື່ອນນິ້ວໃຫ້ຫຼາຍຂຶ້ນ, ໃກ້ກັນ ຫຼື ຫ່າງກັນຂຶ້ນຢ່າງໜ້ອຍ 1 ຊມ.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">ບີບ ແມ່ນນິ້ວເຄື່ອນເຂົ້າຫາກັນ, ຢຽດ ແມ່ນນິ້ວເຄື່ອນອອກຈາກກັນ.</string>
+    <string name="gesture_trainer_tip_moved_together">ເຄື່ອນສະເພາະນິ້ວເຂົ້າຫາ ຫຼື ອອກຈາກກັນ. ຢ່າເລື່ອນທັງມືໄປທົ່ວໜ້າຈໍ.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">ໝຸນໃຫ້ຫຼາຍຂຶ້ນ, ຄືກັບການໝຸນປຸ່ມໝຸນໜຶ່ງສ່ວນສີ່ຮອບ.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">ຕາມເຂັມໂມງ ໝາຍເຖິງການໝຸນໄປທາງດຽວກັບເຂັມໂມງ: ນິ້ວທີ່ຢູ່ເທິງເຄື່ອນໄປທາງຂວາ.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">ເຮັດຈັງຫວະທຳອິດໃຫ້ຍາວຢ່າງໜ້ອຍ 1 ຊມ.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">ຫຼັງຈາກຈັງຫວະທຳອິດ, ກັບຄືນໄປທາງກົງກັນຂ້າມກ່ອນຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">ຂັດໃຫ້ໄວ, ໄປ ແລະ ກັບພາຍໃນປະມານໜຶ່ງວິນາທີ.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">ເລີ່ມຢູ່ທີ່ຂອບພໍດີ, ໂດຍໃຫ້ປາຍນິ້ວຢູ່ນອກໜ້າຈໍບາງສ່ວນ.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">ກວດເບິ່ງວ່າທ່ານເລີ່ມຢູ່ເຄິ່ງໃດຂອງຂອບ.</string>
+    <string name="gesture_trainer_tip_edge_too_short">ເລື່ອນໃຫ້ໄກຂຶ້ນ, ຈົນກວ່າຈະໄດ້ຍິນສຽງຄລິກ, ແລ້ວຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_tip_edge_too_long">ຍົກຂຶ້ນທັນທີຫຼັງສຽງຄລິກທຳອິດ, ກ່ອນສຽງຄລິກທີສອງ.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">ເລື່ອນເຂົ້າໃຫ້ໄວຂຶ້ນ, ໂດຍບໍ່ຢຸດກ່ອນສຽງຄລິກ.</string>
+    <string name="gesture_trainer_tip_edge_sideways">ເລື່ອນເຂົ້າຊື່ໆຈາກຂອບ, ຫຼື ຊື່ໆຕາມຂອບ, ບໍ່ແມ່ນທາງແນວທະແຍງ.</string>
+    <string name="gesture_trainer_tip_corner_missed">ວາງນິ້ວເຂົ້າໄປໃນມຸມພໍດີ, ໃຫ້ແຕະທັງສອງຂອບ.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">ຍົກຂຶ້ນໃຫ້ໄວຂຶ້ນຫຼັງຈາກແຕະມຸມ.</string>
+    <string name="gesture_trainer_close_to_limit">ໃກ້ຂີດຈຳກັດ: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">ການປັດເລີ່ມຊ້າ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ຍາວຂຶ້ນຈະອະນຸຍາດໃຫ້ເລີ່ມຊ້າລົງໄດ້.</string>
+    <string name="gesture_trainer_advice_tap_time">ການແຕະຊ້າ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ຍາວຂຶ້ນຈະອະນຸຍາດໃຫ້ແຕະຊ້າລົງໄດ້.</string>
+    <string name="gesture_trainer_advice_edge_width">ການປັດເລີ່ມໄກຈາກຂອບເກີນໄປ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ໃຫຍ່ຂຶ້ນຍັງເຮັດໃຫ້ການປັດທີ່ເລີ່ມໃກ້ຂອບກາຍເປັນການປັດຈາກຂອບ.</string>
+    <string name="gesture_trainer_advice_corner_size">ການແຕະຕົກນອກມຸມ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ໃຫຍ່ຂຶ້ນຈະເຮັດໃຫ້ມຸມໃຫຍ່ຂຶ້ນ.</string>
+    <string name="gesture_trainer_advice_corner_time">ການແຕະມຸມຊ້າ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ຍາວຂຶ້ນຈະອະນຸຍາດໃຫ້ແຕະຊ້າລົງໄດ້.</string>
+    <string name="gesture_trainer_menu_option">ຕົວເລືອກ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: ເລືອກລາຍການ <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">ເລື່ອນນິ້ວດຽວຂຶ້ນ ຫຼື ລົງ<xliff:g id="edge">%1$s</xliff:g> ຢ່າງໜ້ອຍ <xliff:g id="distance">%2$d</xliff:g> ມມ ເພື່ອເປີດເມນູ. ມັນມີ <xliff:g id="count">%3$d</xliff:g> ລາຍການ, ຈາກເທິງລົງລຸ່ມ, ແຕ່ລະລາຍການສູງປະມານ <xliff:g id="size">%6$s</xliff:g> ຊມ. ລາຍການ <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, ຢູ່ລຸ່ມເທິງສຸດຂອງໜ້າຈໍ <xliff:g id="from">%7$s</xliff:g> ຫາ <xliff:g id="to">%8$s</xliff:g> ຊມ. ຍົກນິ້ວຂຶ້ນເມື່ອລາຍການຖືກອ່ານອອກສຽງ.</string>
+    <string name="gesture_trainer_menu_sample">ຂອບນີ້ບໍ່ມີເມນູ. ແບບຝຶກຫັດໃຊ້ລາຍການຕົວຢ່າງ <xliff:g id="count">%1$d</xliff:g> ລາຍການ.</string>
+    <string name="gesture_trainer_try_menu_cancelled">ຄັ້ງທີ <xliff:g id="number">%1$d</xliff:g>: ເມນູປິດໂດຍບໍ່ມີການເລືອກ.</string>
+    <string name="gesture_trainer_try_menu_other">ຄັ້ງທີ <xliff:g id="number">%1$d</xliff:g>: ເລືອກ <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">ຍົກຂຶ້ນທີ່ລາຍການ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">ນິ້ວເລີ່ມຢູ່ເທິງສຸດ ຫຼື ລຸ່ມສຸດຂອງຂອບ, ບ່ອນທີ່ມີມຸມ ແລະ ຂອບເທິງ ແລະ ຂອບລຸ່ມ.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">ນິ້ວຍົກຂຶ້ນຫ່າງຈາກຂອບ <xliff:g id="mm">%1$.0f</xliff:g> ມມ, ແລະ ເມນູຈະປິດເມື່ອເກີນ <xliff:g id="limit">%2$.0f</xliff:g> ມມ.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">ນິ້ວຍົກຂຶ້ນທີ່ລາຍການ <xliff:g id="item">%1$d</xliff:g> ແທນທີ່ຈະເປັນລາຍການ <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">ເລີ່ມຫ່າງຈາກປາຍເທິງ ແລະ ປາຍລຸ່ມຂອງຂອບເລັກນ້ອຍ.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">ຮັກສານິ້ວໃຫ້ໃກ້ຂອບໃນຂະນະທີ່ເລື່ອນ, ແລະ ຍົກຂຶ້ນຢູ່ບ່ອນນັ້ນ.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">ແຕ່ລະລາຍການມີບ່ອນຄົງທີ່ຕາມຂອບ, ແລະ ລາຍການທີ່ນິ້ວຍົກຂຶ້ນຈະຖືກເລືອກ. ຍົກຂຶ້ນເມື່ອລາຍການຖືກອ່ານອອກສຽງ.</string>
+    <string name="gesture_trainer_contents">ສາລະບານ</string>
+    <string name="gesture_trainer_contents_heading">ສາລະບານ: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">ສຳເລັດ, ຮັບຮູ້ໄດ້ <xliff:g id="hits">%1$d</xliff:g> ຈາກ <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">ແຕະ ແລະ ປັດ</string>
+    <string name="gesture_trainer_group_edge_swipes">ການປັດຈາກຂອບ</string>
+    <string name="gesture_trainer_group_along_edges">ການເລື່ອນຕາມຂອບ</string>
+    <string name="gesture_trainer_group_edge_menus">ເມນູຂອບ</string>
+    <string name="gesture_trainer_group_corners">ມຸມ</string>
+    <string name="gesture_trainer_group_back_tap">ແຕະດ້ານຫຼັງ</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">ການແຕະສອງນິ້ວທີ່ຕາມດ້ວຍການປັດສອງນິ້ວຖືກຕັດອອກ: <xliff:g id="setting">%1$s</xliff:g> ປິດຢູ່.</string>
+    <string name="gesture_trainer_how_swipe_hold">ຈາກນັ້ນ, ໂດຍບໍ່ຍົກ, ຄ້າງນິ້ວໄວ້ໂດຍບໍ່ເຄື່ອນຢ່າງໜ້ອຍ <xliff:g id="hold">%1$d</xliff:g> ms, ແລ້ວຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_half_top">ເທິງ</string>
+    <string name="gesture_trainer_half_bottom">ລຸ່ມ</string>
+    <string name="gesture_trainer_how_taps_half">ແຕະໃນເຄິ່ງ<xliff:g id="half">%1$s</xliff:g>ຂອງໜ້າຈໍ. ຈຸດລະຫວ່າງນິ້ວເປັນຕົວກຳນົດເຄິ່ງ.</string>
+    <string name="gesture_trainer_same_fingers">ນິ້ວເດີມ</string>
+    <string name="gesture_trainer_how_tap_swipe">ແຕະ<xliff:g id="taps">%1$s</xliff:g>ດ້ວຍ<xliff:g id="fingers">%2$s</xliff:g>. ທັນທີຫຼັງຈາກການແຕະຄັ້ງສຸດທ້າຍ, ພາຍໃນ <xliff:g id="gap">%3$d</xliff:g> ms, ແຕະໜ້າຈໍອີກຄັ້ງດ້ວຍ<xliff:g id="swipe_fingers">%4$s</xliff:g> ແລະ ເລື່ອນ<xliff:g id="direction">%5$s</xliff:g>ເປັນເສັ້ນຊື່ປະມານ 2 ຫາ 3 ຊມ, ແລ້ວຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_how_corner_hold">ໃນການແຕະຄັ້ງສຸດທ້າຍ, ຄ້າງນິ້ວໄວ້ໃນມຸມໂດຍບໍ່ເຄື່ອນ ຢ່າງໜ້ອຍ <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">ຖືໂທລະສັບໄວ້ໃນມື, ຈັບຢູ່ດ້ານຂ້າງ, ແລະ ແຕະກາງດ້ານຫຼັງຂອງມັນ<xliff:g id="taps">%1$s</xliff:g>ດ້ວຍປາຍນິ້ວ, ໜັກແໜ້ນ ແລະ ໄວ, ຄືກັບການເຄາະປະຕູ. ແຕະໃຫ້ຖີ່: ຫ່າງກັນບໍ່ເກີນ <xliff:g id="gap">%2$d</xliff:g> ms. ຢ່າແຕະໜ້າຈໍໃນຂະນະທີ່ແຕະ.</string>
+    <string name="gesture_trainer_back_tap_info">ການແຕະດ້ານຫຼັງບໍ່ແລ່ນຄຳສັ່ງໃດໆໃນລະຫວ່າງແບບຝຶກຫັດ. <xliff:g id="setting">%1$s</xliff:g> ກຳນົດວ່າການແຕະຕ້ອງແຮງເທົ່າໃດ.</string>
+    <string name="gesture_trainer_go_placed">ເຮັດທ່າທາງ <xliff:g id="tries">%1$d</xliff:g> ເທື່ອ.</string>
+    <string name="gesture_trainer_along_left">ຂອບຊ້າຍ</string>
+    <string name="gesture_trainer_along_right">ຂອບຂວາ</string>
+    <string name="gesture_trainer_along_top">ຂອບເທິງ</string>
+    <string name="gesture_trainer_along_bottom">ຂອບລຸ່ມ</string>
+    <string name="gesture_trainer_left_out_along_menu">ການເລື່ອນຕາມ<xliff:g id="edge">%1$s</xliff:g>ຖືກຕັດອອກ: ຂອບນີ້ມີເມນູຂອບ, ສະນັ້ນການເລື່ອນຕາມມັນຈະເປີດເມນູແທນການແລ່ນທ່າທາງ.</string>
+    <string name="gesture_trainer_left_out_along_scroll">ການເລື່ອນຕາມ<xliff:g id="edge">%1$s</xliff:g>ຖືກຕັດອອກ: ຂອບນີ້ໃຊ້ເລື່ອນ, ສະນັ້ນການເລື່ອນຕາມມັນຈະເລື່ອນແອັບແທນການແລ່ນທ່າທາງ.</string>
+    <string name="gesture_trainer_finding_along_off_edge">ນິ້ວເຄື່ອນອອກຫ່າງຈາກຂອບເກີນໄປ.</string>
+    <string name="gesture_trainer_tip_along_off_edge">ຮັກສານິ້ວໄວ້ທີ່ຂອບແກ້ວສຸດ, ຊື່ໆຕາມຂອບ.</string>
+    <string name="gesture_trainer_go_back_tap">ເຮັດທ່າທາງແຕະດ້ານຫຼັງ <xliff:g id="tries">%1$d</xliff:g> ເທື່ອ. ການແຕະໜ້າຈໍຈະເຮັດໃຫ້ຄັ້ງນັ້ນລົ້ມເຫຼວ.</string>
+    <string name="gesture_trainer_no_accelerometer">ແບບຝຶກຫັດນີ້ຕ້ອງໃຊ້ເຊັນເຊີວັດຄວາມເລັ່ງ. ບໍ່ມີໃຫ້ໃຊ້.</string>
+    <string name="gesture_trainer_measure_hold">ຄ້າງນິ່ງ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">ການແຕະແຮງ <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">ນິ້ວຢູ່ນິ່ງ <xliff:g id="ms">%1$d</xliff:g> ms ໃນຕອນທ້າຍ, ແລະ ຕ້ອງຢູ່ນິ່ງຢ່າງໜ້ອຍ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">ນິ້ວແຕະໃນອີກເຄິ່ງໜຶ່ງຂອງໜ້າຈໍ.</string>
+    <string name="gesture_trainer_finding_swipe_missing">ບໍ່ມີການປັດຕາມຫຼັງການແຕະ.</string>
+    <string name="gesture_trainer_finding_swipe_late">ການປັດເລີ່ມ <xliff:g id="ms">%1$d</xliff:g> ms ຫຼັງຈາກການແຕະຄັ້ງສຸດທ້າຍ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">ແຕະດ້ານຫຼັງເບົາເກີນໄປ: <xliff:g id="percent">%1$d</xliff:g>%% ຂອງຄວາມແຮງທີ່ຕ້ອງການ.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">ການແຕະເຮັດໃຫ້ໂທລະສັບສັ່ນໄປທາງຂ້າງຫຼາຍກວ່າຜ່ານດ້ານຫຼັງ.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">ໂທລະສັບກຳລັງເຄື່ອນຢູ່ກ່ອນການແຕະ.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">ໜ້າຈໍຖືກແຕະ, ແລະ ການແຕະໃນຂະນະທີ່ໜ້າຈໍຖືກແຕະຢູ່ຈະບໍ່ນັບ.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">ຜ່ານໄປ <xliff:g id="ms">%1$d</xliff:g> ms ລະຫວ່າງການແຕະດ້ານຫຼັງ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">ຫຼັງຈາກປັດ, ຄ້າງນິ້ວໄວ້ເທິງໜ້າຈໍໂດຍບໍ່ເຄື່ອນຕະຫຼອດເວລາຄ້າງ. ຈາກນັ້ນຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">ກວດເບິ່ງວ່າທ່ານແຕະໃນເຄິ່ງໃດ: ກາງໜ້າຈໍແບ່ງເຄິ່ງເທິງອອກຈາກເຄິ່ງລຸ່ມ.</string>
+    <string name="gesture_trainer_tip_swipe_missing">ຫຼັງຈາກການແຕະຄັ້ງສຸດທ້າຍ, ແຕະໜ້າຈໍອີກຄັ້ງທັນທີ ແລະ ປັດ.</string>
+    <string name="gesture_trainer_tip_swipe_late">ເລີ່ມການປັດທັນທີຫຼັງຈາກການແຕະຄັ້ງສຸດທ້າຍ, ໂດຍບໍ່ຢຸດ.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">ແຕະໃຫ້ແຮງຂຶ້ນ, ດ້ວຍປາຍນິ້ວ ຫຼື ເລັບ, ໃກ້ກາງດ້ານຫຼັງ.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">ແຕະຊື່ໆເຂົ້າໄປທີ່ດ້ານຫຼັງຂອງໂທລະສັບ, ບໍ່ແມ່ນທີ່ຂອບ ຫຼື ເປັນມຸມອຽງ.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">ຖືໂທລະສັບໃຫ້ນິ່ງຈັກໜ້ອຍກ່ອນແຕະ, ແລະ ຖືຫຼວມໆເພື່ອບໍ່ໃຫ້ມືຂອງທ່ານເຮັດໃຫ້ມັນເຄື່ອນ.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">ຢ່າໃຫ້ນິ້ວແຕະໜ້າຈໍໃນຂະນະທີ່ແຕະດ້ານຫຼັງ: ຖືໂທລະສັບຢູ່ດ້ານຂ້າງ.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">ແຕະໃຫ້ໄວຂຶ້ນ, ແຕະຕໍ່ກັນທັນທີ.</string>
+    <string name="gesture_trainer_advice_swipe_hold">ນິ້ວຍົກຂຶ້ນໄວເກີນໄປຫຼັງຈາກປັດ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ສັ້ນລົງຈະອະນຸຍາດໃຫ້ຄ້າງໄວ້ສັ້ນລົງໄດ້.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">ການແຕະດ້ານຫຼັງເບົາ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ສູງຂຶ້ນຈະກວດຈັບການແຕະທີ່ເບົາກວ່າ, ແລະ ອາດກວດຈັບການກະທົບເປັນການແຕະ.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">ນິ້ວໝຸນ <xliff:g id="degrees">%1$.0f</xliff:g> ອົງສາ, ແລະ ຕັ້ງແຕ່ <xliff:g id="limit">%2$.0f</xliff:g> ອົງສາຂຶ້ນໄປ ການເຄື່ອນໄຫວຈະເປັນການໝຸນ.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">ເຄື່ອນນິ້ວເປັນເສັ້ນຊື່ເຂົ້າຫາ ຫຼື ອອກຈາກກັນ, ບໍ່ແມ່ນເປັນເສັ້ນໂຄ້ງອ້ອມກັນ.</string>
+    <string name="gesture_trainer_finding_other_gesture">ການເຄື່ອນໄຫວກົງກັບທ່າທາງນັ້ນແທນ.</string>
+    <string name="gesture_trainer_side_left">ຊ້າຍ</string>
+    <string name="gesture_trainer_side_right">ຂວາ</string>
+    <string name="gesture_trainer_side_top">ເທິງ</string>
+    <string name="gesture_trainer_side_bottom">ລຸ່ມ</string>
+    <string name="gesture_trainer_finding_wrong_edge">ນິ້ວເລີ່ມຢູ່ທີ່ຂອບ<xliff:g id="side">%1$s</xliff:g>, ແລະ ແບບຝຶກຫັດນີ້ຢູ່ທີ່ຂອບ<xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">ເລີ່ມຢູ່ເທິງຂອບທີ່ແບບຝຶກຫັດບອກພໍດີ.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">ເມນູຂອບເປີດຂຶ້ນແທນທ່າທາງນີ້.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">ການເລື່ອນຕາມຂອບທີ່ມີເມນູຈະເປີດເມນູ. ເລີ່ມຢູ່ທີ່ຂອບທີ່ແບບຝຶກຫັດບອກ.</string>
+    <string name="gesture_trainer_group_three_part">ການປັດສາມຊ່ວງ</string>
+    <string name="gesture_trainer_group_two_stroke">ການປັດສອງຈັງຫວະ</string>
+    <string name="gesture_trainer_group_shake">ສັ່ນ</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">ການປັດສາມຊ່ວງຖືກຕັດອອກ: <xliff:g id="setting">%1$s</xliff:g> ເປີດຢູ່.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">ການປັດສອງຈັງຫວະຖືກຕັດອອກ: <xliff:g id="setting">%1$s</xliff:g> ເປັນ <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">ການສັ່ນບໍ່ແລ່ນຄຳສັ່ງໃດໆໃນລະຫວ່າງແບບຝຶກຫັດ. <xliff:g id="setting">%1$s</xliff:g> ກຳນົດວ່າການສັ່ນຕ້ອງແຮງເທົ່າໃດ.</string>
+    <string name="gesture_trainer_go_shake">ສັ່ນໂທລະສັບ <xliff:g id="tries">%1$d</xliff:g> ເທື່ອ, ໂດຍຢຸດສັ້ນໆຫຼັງຈາກສັ່ນແຕ່ລະເທື່ອ.</string>
+    <string name="gesture_trainer_how_shake">ຖືໂທລະສັບໃຫ້ແໜ້ນ ແລະ ສັ່ນໄປມາຢ່າງໄວ, ຄືກັບການສະບັດຢົດນ້ຳອອກ: ຢ່າງໜ້ອຍສອງເທື່ອໃນແຕ່ລະທາງ, ທັງໝົດພາຍໃນປະມານສອງສ່ວນສາມວິນາທີ. ຈາກນັ້ນຖືໃຫ້ນິ່ງ.</string>
+    <string name="gesture_trainer_how_two_stroke">ປັດ<xliff:g id="first">%1$s</xliff:g>ດ້ວຍນິ້ວດຽວ, ປະມານ 2 ຊມ, ແລະ ຍົກຂຶ້ນ. ຈາກນັ້ນທັນທີ, ພາຍໃນ <xliff:g id="time">%3$d</xliff:g> ms, ປັດ<xliff:g id="second">%2$s</xliff:g>ດ້ວຍນິ້ວດຽວ, ປະມານ 2 ຊມ, ແລະ ຍົກຂຶ້ນ.</string>
+    <string name="gesture_trainer_how_three_part">ແຕະໜ້າຈໍດ້ວຍນິ້ວດຽວ ແລະ ໂດຍບໍ່ຍົກ, ປັດ<xliff:g id="first">%1$s</xliff:g>, ຈາກນັ້ນລ້ຽວແຫຼມ ແລະ ປັດ<xliff:g id="second">%2$s</xliff:g>, ຈາກນັ້ນລ້ຽວແຫຼມອີກ ແລະ ປັດ<xliff:g id="third">%3$s</xliff:g>, ແຕ່ລະສ່ວນປະມານ 2 ຊມ, ແລະ ຍົກຂຶ້ນ. ເຮັດໃຫ້ເປັນການເຄື່ອນໄຫວດຽວທີ່ໄວ ແລະ ລຽບ ທີ່ມີມຸມແຫຼມ, ບໍ່ແມ່ນເສັ້ນໂຄ້ງ.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">ວາງນິ້ວໜຶ່ງໃນສ່ວນສາມເທິງຂອງໜ້າຈໍ ແລະ ອີກນິ້ວໜຶ່ງໃນສ່ວນສາມລຸ່ມ, ຕົວຢ່າງ ໂປ້ມືຢູ່ລຸ່ມ ແລະ ນິ້ວຊີ້ຢູ່ເທິງ.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">ນິ້ວບໍ່ໄດ້ຢູ່ນິ້ວໜຶ່ງໃນສ່ວນສາມເທິງຂອງໜ້າຈໍ ແລະ ອີກນິ້ວໜຶ່ງໃນສ່ວນສາມລຸ່ມ.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">ບໍ່ມີການປັດຄັ້ງທີສອງ.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">ການປັດຄັ້ງທີສອງເລີ່ມ <xliff:g id="ms">%1$d</xliff:g> ms ຫຼັງຈາກຄັ້ງທຳອິດ, ແລະ ອະນຸຍາດສູງສຸດ <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">ການປັດຄັ້ງທຳອິດໄປ<xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">ການປັດຄັ້ງທີສອງໄປ<xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">ການສັ່ນເບົາເກີນໄປ: <xliff:g id="percent">%1$d</xliff:g>%% ຂອງຄວາມແຮງທີ່ຕ້ອງການ.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">ການແກວ່ງໄປມາ: <xliff:g id="swings">%1$d</xliff:g> ຈາກ <xliff:g id="wanted">%2$d</xliff:g> ທີ່ຕ້ອງການ.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">ກາງນິ້ວອອກຫ່າງກັນ, ນິ້ວໜຶ່ງໃກ້ຂອບເທິງ ແລະ ອີກນິ້ວໜຶ່ງໃກ້ຂອບລຸ່ມ.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">ຫຼັງຈາກການປັດຄັ້ງທຳອິດ, ຍົກນິ້ວຂຶ້ນ ແລະ ປັດອີກຄັ້ງທັນທີ.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">ເລີ່ມການປັດຄັ້ງທີສອງທັນທີຫຼັງຈາກຍົກນິ້ວ.</string>
+    <string name="gesture_trainer_tip_shake_too_light">ສັ່ນໃຫ້ແຮງ ແລະ ໄວຂຶ້ນ.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">ສັ່ນໃຫ້ໄວຂຶ້ນ, ໄປມາຢ່າງໜ້ອຍສອງເທື່ອໃນແຕ່ລະທາງ, ໂດຍບໍ່ຢຸດລະຫວ່າງກາງ.</string>
+    <string name="gesture_trainer_measure_shake_strength">ການເຄື່ອນໄຫວແຮງທີ່ສຸດ <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">ການສັ່ນເບົາ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ສູງຂຶ້ນຈະກວດຈັບການສັ່ນທີ່ເບົາກວ່າ, ແລະ ອາດກວດຈັບການຖືໂທລະສັບເດີນເປັນການສັ່ນ.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">ການປັດຄັ້ງທີສອງເລີ່ມຊ້າ. <xliff:g id="setting">%1$s</xliff:g> ທີ່ຍາວຂຶ້ນຈະອະນຸຍາດໃຫ້ປັດຄັ້ງທີສອງຊ້າລົງໄດ້, ແລະ ການປັດຄັ້ງດຽວຈະລໍຖ້າດົນຂຶ້ນກ່ອນແລ່ນ.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> ເປີດຢູ່.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> ປິດຢູ່: ການປັດສອງນິ້ວຈະເລື່ອນແອັບ, ແລະ ການຂັດສ່ວນຫຼາຍກໍຈະເລື່ອນເຊັ່ນກັນ. ເມື່ອເປີດການຕັ້ງຄ່າ, ການປັດສອງນິ້ວຈະແລ່ນຄຳສັ່ງ SandFly ແທນການເລື່ອນ.</string>
+    <string name="gesture_trainer_measure_first_stroke">ການປັດຄັ້ງທຳອິດ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ການປັດຄັ້ງທີສອງ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">ທ່າທາງທັງໝົດ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">ຍົກຂຶ້ນ <xliff:g id="ms">%1$d</xliff:g> ms ລະຫວ່າງນັ້ນ</string>
+</resources>

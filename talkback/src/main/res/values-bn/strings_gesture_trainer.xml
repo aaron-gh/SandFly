@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">জেসচার ট্রেনার</string>
+    <string name="gesture_trainer_intro">জেসচারের একটি গ্রুপ বেছে নিন। প্রতিটি অনুশীলনে একটি জেসচারের বর্ণনা থাকে। জেসচারটি <xliff:g id="tries">%1$d</xliff:g> বার করুন; প্রতিটি চেষ্টার ফলাফল বলা হয়। শেষ চেষ্টার পরে স্ক্রিনে প্রতিটি চেষ্টার পরিমাপ, কী বদলাতে হবে এবং সংশ্লিষ্ট সেটিংস দেখানো হয়।</string>
+    <string name="gesture_trainer_group_one_finger">এক আঙুল</string>
+    <string name="gesture_trainer_group_two_fingers">দুই আঙুল</string>
+    <string name="gesture_trainer_group_three_fingers">তিন আঙুল</string>
+    <string name="gesture_trainer_group_four_fingers">চার আঙুল</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">পিঞ্চ, ঘোরানো ও স্ক্রাব</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g>টি অনুশীলন</string>
+    <string name="gesture_trainer_close">বন্ধ করুন</string>
+    <string name="gesture_trainer_no_detection">জেসচার ট্রেনারের জন্য Android 13 বা তার পরের ভার্সন দরকার।</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">সামনে-পিছনে ও কোণ জেসচার বাদ দেওয়া হয়েছে: <xliff:g id="setting">%1$s</xliff:g> চালু আছে।</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">২টি আঙুলের সোয়াইপ বাদ দেওয়া হয়েছে: <xliff:g id="setting">%1$s</xliff:g> বন্ধ আছে, তাই সেগুলি অ্যাপ স্ক্রল করে।</string>
+    <string name="gesture_trainer_exercise_heading">অনুশীলন <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">শুরু করুন</string>
+    <string name="gesture_trainer_skip">এই অনুশীলন বাদ দিন</string>
+    <string name="gesture_trainer_back_to_groups">গ্রুপে ফিরে যান</string>
+    <string name="gesture_trainer_go">স্ক্রিনের যেকোনও জায়গায় জেসচারটি <xliff:g id="tries">%1$d</xliff:g> বার করুন। প্রতিটি স্পর্শ একটি চেষ্টা।</string>
+    <string name="gesture_trainer_fingers_1">একটি আঙুল</string>
+    <string name="gesture_trainer_fingers_2">পাশাপাশি প্রায় ১ সেমি দূরত্বে দুটি আঙুল</string>
+    <string name="gesture_trainer_fingers_3">পাশাপাশি সামান্য ফাঁক রেখে তিনটি আঙুল</string>
+    <string name="gesture_trainer_fingers_4">পাশাপাশি সামান্য ফাঁক রেখে চারটি আঙুল</string>
+    <string name="gesture_trainer_direction_up">উপরের দিকে</string>
+    <string name="gesture_trainer_direction_down">নিচের দিকে</string>
+    <string name="gesture_trainer_direction_left">বাঁদিকে</string>
+    <string name="gesture_trainer_direction_right">ডানদিকে</string>
+    <string name="gesture_trainer_how_swipe"><xliff:g id="fingers">%1$s</xliff:g> দিয়ে স্ক্রিন স্পর্শ করুন এবং অপেক্ষা না করে সোজা লাইনে প্রায় ২ থেকে ৩ সেমি <xliff:g id="direction">%2$s</xliff:g> সরান, তারপর তুলে নিন। সঙ্গে সঙ্গে সরাতে শুরু করুন: যে আঙুল প্রথমে স্থির থাকে তা স্পর্শ করে অন্বেষণ শুরু করে।</string>
+    <string name="gesture_trainer_how_swipe_multi">আঙুলগুলি একসঙ্গে, একই মুহূর্তে রাখুন এবং সবগুলি একইভাবে সরান। প্রতিটি আঙুলকে পুরো সময় <xliff:g id="direction">%1$s</xliff:g> যেতে হবে, তাই লাইন সোজা রাখুন।</string>
+    <string name="gesture_trainer_how_back_and_forth">একটি আঙুল দিয়ে স্ক্রিন স্পর্শ করুন এবং প্রায় ২ সেমি <xliff:g id="first">%1$s</xliff:g> সরান, তারপর না তুলে সোজা প্রায় ২ সেমি <xliff:g id="second">%2$s</xliff:g> ফিরে আসুন এবং তুলে নিন। এটি একটি দ্রুত, মসৃণ নড়াচড়ায় করুন।</string>
+    <string name="gesture_trainer_how_angle"><xliff:g id="fingers">%1$s</xliff:g> দিয়ে স্ক্রিন স্পর্শ করুন এবং প্রায় ২ সেমি <xliff:g id="first">%2$s</xliff:g> সরান, তারপর না তুলে তীক্ষ্ণভাবে ঘুরে প্রায় ২ সেমি <xliff:g id="second">%3$s</xliff:g> সরান এবং তুলে নিন। বাঁকটি বাঁকা নয়, L অক্ষরের মতো তীক্ষ্ণ কোণ করুন।</string>
+    <string name="gesture_trainer_taps_1">একবার</string>
+    <string name="gesture_trainer_taps_2">দুবার</string>
+    <string name="gesture_trainer_taps_3">তিনবার</string>
+    <string name="gesture_trainer_taps_4">চারবার</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> দিয়ে <xliff:g id="taps">%1$s</xliff:g> ট্যাপ করুন। আঙুলগুলি একসঙ্গে রাখুন এবং একসঙ্গে দ্রুত তুলুন, স্লাইড না করে।</string>
+    <string name="gesture_trainer_how_taps_quick">ট্যাপগুলি দ্রুত ও একই জায়গায় করুন: পরের ট্যাপ আগের ট্যাপের <xliff:g id="gap">%1$d</xliff:g> ms-এর মধ্যে হতে হবে।</string>
+    <string name="gesture_trainer_how_hold"><xliff:g id="fingers">%1$s</xliff:g> একসঙ্গে স্ক্রিনে রাখুন এবং স্লাইড না করে অন্তত <xliff:g id="hold">%2$d</xliff:g> ms স্থির রাখুন।</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">অন্য কোনও কমান্ড অ্যাসাইন না থাকলে এই জেসচার SandFly বন্ধ করে। ট্রেনারে এটি কিছুই চালায় না।</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> দিয়ে <xliff:g id="taps">%1$s</xliff:g> ট্যাপ করুন এবং শেষ ট্যাপে আঙুলগুলি অন্তত <xliff:g id="hold">%3$d</xliff:g> ms স্ক্রিনে স্থির রেখে দিন।</string>
+    <string name="gesture_trainer_how_three_finger_hand">বুড়ো আঙুল, তর্জনী ও মধ্যমা ব্যবহার করুন।</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">তর্জনী ও মধ্যমা পাশাপাশি রাখুন, আর বুড়ো আঙুল ও অনামিকা দুই পাশে কয়েক সেন্টিমিটার দূরে রাখুন। তারপর চারটি আঙুলের ডগা এক বিন্দুতে নিয়ে আসুন।</string>
+    <string name="gesture_trainer_how_pinch"><xliff:g id="fingers">%1$d</xliff:g>টি আঙুল অনেকটা ফাঁক রেখে স্ক্রিনে রাখুন। তারপর কিছু তোলার মতো করে সেগুলি সোজা একে অপরের দিকে অন্তত ১ সেমি নিয়ে আসুন এবং স্ক্রিন থেকে তুলে নিন। শুধু আঙুল সরান, পুরো হাত নয়, এবং বৃত্তচাপে নয়।</string>
+    <string name="gesture_trainer_how_spread"><xliff:g id="fingers">%1$d</xliff:g>টি আঙুল কাছাকাছি স্ক্রিনে রাখুন। তারপর সেগুলি সোজা অন্তত ১ সেমি দূরে সরান এবং স্ক্রিন থেকে তুলে নিন। শুধু আঙুল সরান, পুরো হাত নয়, এবং বৃত্তচাপে নয়।</string>
+    <string name="gesture_trainer_clockwise">ঘড়ির কাঁটার দিকে</string>
+    <string name="gesture_trainer_counterclockwise">ঘড়ির কাঁটার উল্টো দিকে</string>
+    <string name="gesture_trainer_how_rotate">প্রায় ২ থেকে ৩ সেমি দূরত্বে দুটি আঙুল স্ক্রিনে রাখুন এবং ডায়াল ঘোরানোর মতো করে মাঝখানের চারপাশে প্রায় এক-চতুর্থাংশ পাক <xliff:g id="way">%1$s</xliff:g> ঘোরান। তারপর তুলে নিন।</string>
+    <string name="gesture_trainer_how_scrub">দুটি আঙুল স্ক্রিনে রাখুন এবং কিছু মুছে ফেলার মতো করে দ্রুত এক পাশে প্রায় ২ সেমি সরিয়ে আবার ফিরিয়ে আনুন, সবটা প্রায় এক সেকেন্ডের মধ্যে। তারপর তুলে নিন।</string>
+    <string name="gesture_trainer_edge_bottom">নিচের প্রান্তে</string>
+    <string name="gesture_trainer_edge_top_left">উপরের প্রান্তের বাঁ অর্ধেকে</string>
+    <string name="gesture_trainer_edge_top_right">উপরের প্রান্তের ডান অর্ধেকে</string>
+    <string name="gesture_trainer_edge_left_top">বাম প্রান্তের উপরের অর্ধেকে</string>
+    <string name="gesture_trainer_edge_left_bottom">বাম প্রান্তের নিচের অর্ধেকে</string>
+    <string name="gesture_trainer_edge_right_top">ডান প্রান্তের উপরের অর্ধেকে</string>
+    <string name="gesture_trainer_edge_right_bottom">ডান প্রান্তের নিচের অর্ধেকে</string>
+    <string name="gesture_trainer_edge_left">বাম প্রান্তে</string>
+    <string name="gesture_trainer_edge_right">ডান প্রান্তে</string>
+    <string name="gesture_trainer_edge_top">উপরের প্রান্তে</string>
+    <string name="gesture_trainer_how_edge">একটি আঙুল <xliff:g id="edge">%1$s</xliff:g>, প্রান্ত থেকে সর্বোচ্চ <xliff:g id="edge_width">%2$d</xliff:g> মিমি দূরে রাখুন এবং প্রথম ক্লিক পর্যন্ত, প্রায় <xliff:g id="distance">%4$d</xliff:g> মিমি, স্ক্রিনের ভিতরে <xliff:g id="direction">%3$s</xliff:g> স্লাইড করুন। তারপর সঙ্গে সঙ্গে তুলে নিন: দ্বিতীয় ক্লিক পেরোলে স্লাইডটি লম্বা স্লাইড হয়ে যায়।</string>
+    <string name="gesture_trainer_how_edge_long">একটি আঙুল <xliff:g id="edge">%1$s</xliff:g>, প্রান্ত থেকে সর্বোচ্চ <xliff:g id="edge_width">%2$d</xliff:g> মিমি দূরে রাখুন এবং প্রথম ক্লিক পেরিয়ে দ্বিতীয় ক্লিক পর্যন্ত, প্রায় <xliff:g id="distance">%4$d</xliff:g> মিমি, স্ক্রিনের ভিতরে <xliff:g id="direction">%3$s</xliff:g> স্লাইড করুন। তারপর তুলে নিন।</string>
+    <string name="gesture_trainer_how_along">একটি আঙুল <xliff:g id="edge">%1$s</xliff:g> বরাবর অন্তত <xliff:g id="distance">%3$d</xliff:g> মিমি <xliff:g id="direction">%2$s</xliff:g> স্লাইড করুন।</string>
+    <string name="gesture_trainer_corner_top_left">উপরের বাঁ</string>
+    <string name="gesture_trainer_corner_top_right">উপরের ডান</string>
+    <string name="gesture_trainer_corner_bottom_left">নিচের বাঁ</string>
+    <string name="gesture_trainer_corner_bottom_right">নিচের ডান</string>
+    <string name="gesture_trainer_how_corner">স্ক্রিনের <xliff:g id="corner">%2$s</xliff:g> কোণে <xliff:g id="taps">%1$s</xliff:g> ট্যাপ করুন। আঙুলটি ঠিক কোণে, দুই প্রান্ত থেকে <xliff:g id="size">%3$d</xliff:g> মিমির বেশি দূরে নয় এমনভাবে রাখুন এবং <xliff:g id="time">%4$d</xliff:g> ms-এর মধ্যে দ্রুত তুলে নিন।</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> মিমি। <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> মিমি।</string>
+    <string name="gesture_trainer_corner_warning">কোণ বড় হলে কোণের কাছের কোনও কন্ট্রোলে, যেমন উপরের বাঁদিকের ফিরে যান বোতামে, ট্যাপ করলে তার বদলে কোণের জেসচার চলতে পারে।</string>
+    <string name="gesture_trainer_rating_precise">শনাক্ত হয়েছে, নির্ভুল</string>
+    <string name="gesture_trainer_rating_good">শনাক্ত হয়েছে, ভালো</string>
+    <string name="gesture_trainer_rating_borderline">শনাক্ত হয়েছে, তবে সীমার কাছাকাছি</string>
+    <string name="gesture_trainer_try_recognized">চেষ্টা <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>।</string>
+    <string name="gesture_trainer_try_nothing">চেষ্টা <xliff:g id="number">%1$d</xliff:g>: শনাক্ত হয়নি।</string>
+    <string name="gesture_trainer_try_other">চেষ্টা <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="gesture">%2$s</xliff:g> হিসেবে শনাক্ত হয়েছে।</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g>টির মধ্যে <xliff:g id="recognized">%2$d</xliff:g>টি শনাক্ত হয়েছে</string>
+    <string name="gesture_trainer_results_tries">আপনার চেষ্টা</string>
+    <string name="gesture_trainer_results_change">কী বদলাতে হবে</string>
+    <string name="gesture_trainer_results_close">সীমার কাছাকাছি</string>
+    <string name="gesture_trainer_results_all_good">সব চেষ্টা সীমার মধ্যে শনাক্ত হয়েছে।</string>
+    <string name="gesture_trainer_results_settings">যে সেটিংস সাহায্য করতে পারে</string>
+    <string name="gesture_trainer_next">পরের অনুশীলন</string>
+    <string name="gesture_trainer_repeat">আবার করুন</string>
+    <string name="gesture_trainer_finish">শেষ করুন</string>
+    <string name="gesture_trainer_group_done">আপনি <xliff:g id="group">%1$s</xliff:g>-এর সব অনুশীলন শেষ করেছেন।</string>
+    <string name="gesture_trainer_open_setting"><xliff:g id="setting">%1$s</xliff:g> পরিবর্তন করুন</string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> ms লেগেছে</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> সেমি লম্বা</string>
+    <string name="gesture_trainer_measure_speed">প্রতি সেকেন্ডে <xliff:g id="speed">%1$.0f</xliff:g> সেমি</string>
+    <string name="gesture_trainer_measure_angle">সোজা লাইন থেকে <xliff:g id="degrees">%1$.0f</xliff:g> ডিগ্রি সরে গেছে</string>
+    <string name="gesture_trainer_measure_start">প্রথম সেন্টিমিটার <xliff:g id="ms">%1$d</xliff:g> ms-এ</string>
+    <string name="gesture_trainer_measure_landing">আঙুলগুলি <xliff:g id="ms">%1$d</xliff:g> ms ব্যবধানে স্ক্রিনে পড়েছে</string>
+    <string name="gesture_trainer_measure_tap"><xliff:g id="ms">%1$d</xliff:g> ms-এর ট্যাপ</string>
+    <string name="gesture_trainer_measure_gap">ট্যাপের মধ্যে <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_spread">আঙুলগুলি <xliff:g id="mm">%1$.0f</xliff:g> মিমি সরেছে</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> ডিগ্রি ঘুরেছে</string>
+    <string name="gesture_trainer_measure_corner">কোণের প্রান্তগুলি থেকে <xliff:g id="mm">%1$.0f</xliff:g> মিমি</string>
+    <string name="gesture_trainer_measure_edge">প্রান্ত থেকে <xliff:g id="mm">%1$.0f</xliff:g> মিমি দূরে শুরু হয়েছে</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">স্ক্রিনে আঙুল: <xliff:g id="wanted">%2$d</xliff:g>টির বদলে <xliff:g id="fingers">%1$d</xliff:g>টি।</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">আঙুলগুলি <xliff:g id="ms">%1$d</xliff:g> ms ব্যবধানে স্ক্রিনে পড়েছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">সব আঙুল স্ক্রিনে পড়ার আগেই একটি আঙুল উঠে গেছে।</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">আঙুলগুলি <xliff:g id="ms">%1$d</xliff:g> ms ব্যবধানে উঠেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_became_exploration">আঙুলটি খুব বেশিক্ষণ স্থির ছিল বা শুরুতে খুব ধীরে সরেছে, তাই স্পর্শটি স্পর্শ করে অন্বেষণ হয়ে গেছে।</string>
+    <string name="gesture_trainer_finding_slow_start">প্রথম সেন্টিমিটারে <xliff:g id="ms">%1$d</xliff:g> ms লেগেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_paused">আঙুলটি <xliff:g id="ms">%1$d</xliff:g> ms ধীর হয়ে গিয়েছিল, আর প্রতিটি সেন্টিমিটারে সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms লাগতে পারে।</string>
+    <string name="gesture_trainer_finding_too_short">নড়াচড়া মাত্র <xliff:g id="mm">%1$.0f</xliff:g> মিমি ছিল, আর অন্তত <xliff:g id="limit">%2$.0f</xliff:g> মিমি হতে হবে।</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">আঙুলটি <xliff:g id="direction">%1$s</xliff:g> যেতে শুরু করেছিল।</string>
+    <string name="gesture_trainer_finding_wrong_direction">আঙুলগুলি <xliff:g id="direction">%1$s</xliff:g> যেতে শুরু করেছিল।</string>
+    <string name="gesture_trainer_finding_off_line">পথটি সোজা লাইন থেকে <xliff:g id="degrees">%1$.0f</xliff:g> ডিগ্রি সরে গেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$.0f</xliff:g> অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_curved">পথটি <xliff:g id="wanted">%2$d</xliff:g>টির বদলে <xliff:g id="parts">%1$d</xliff:g>টি অংশে বেঁকে গেছে।</string>
+    <string name="gesture_trainer_finding_turn_missing">বাঁকটি পাওয়া যায়নি।</string>
+    <string name="gesture_trainer_finding_second_part_wrong">বাঁকের পরে আঙুলটি <xliff:g id="direction">%1$s</xliff:g> গেছে।</string>
+    <string name="gesture_trainer_finding_tap_moved">একটি ট্যাপের সময় আঙুলটি <xliff:g id="mm">%1$.1f</xliff:g> মিমি সরে গেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$.1f</xliff:g> মিমি অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_tap_held_long">একটি ট্যাপ <xliff:g id="ms">%1$d</xliff:g> ms স্থায়ী হয়েছে, যা <xliff:g id="limit">%2$d</xliff:g> ms-এর বেশি।</string>
+    <string name="gesture_trainer_finding_hold_too_short">শেষ ট্যাপটি <xliff:g id="ms">%1$d</xliff:g> ms ধরে রাখা হয়েছে, আর অন্তত <xliff:g id="limit">%2$d</xliff:g> ms হতে হবে।</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g>টির বদলে <xliff:g id="taps">%1$d</xliff:g>টি ট্যাপ।</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g>টির বদলে <xliff:g id="taps">%1$d</xliff:g>টি ট্যাপ।</string>
+    <string name="gesture_trainer_finding_taps_too_slow">ট্যাপের মধ্যে <xliff:g id="ms">%1$d</xliff:g> ms পেরিয়ে গেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_taps_apart">ট্যাপগুলি <xliff:g id="mm">%1$.0f</xliff:g> মিমি দূরে দূরে পড়েছে, আর সর্বোচ্চ <xliff:g id="limit">%2$.0f</xliff:g> মিমি অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_pinch_too_small">আঙুলগুলি মাত্র <xliff:g id="mm">%1$.0f</xliff:g> মিমি সরেছে, আর অন্তত <xliff:g id="limit">%2$.0f</xliff:g> মিমি সরতে হবে।</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">আঙুলগুলি উল্টো দিকে সরেছে।</string>
+    <string name="gesture_trainer_finding_moved_together">পুরো হাতটি স্ক্রিনের উপর দিয়ে <xliff:g id="mm">%1$.0f</xliff:g> মিমি সরে গেছে, যা আঙুলগুলি একে অপরের কাছে আসা বা দূরে যাওয়ার চেয়ে বেশি।</string>
+    <string name="gesture_trainer_finding_rotate_too_small">আঙুলগুলি মাত্র <xliff:g id="degrees">%1$.0f</xliff:g> ডিগ্রি ঘুরেছে, আর অন্তত <xliff:g id="limit">%2$.0f</xliff:g> ঘুরতে হবে।</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">আঙুলগুলি উল্টো দিকে ঘুরেছে।</string>
+    <string name="gesture_trainer_finding_scrub_too_short">প্রথম টান <xliff:g id="mm">%1$.0f</xliff:g> মিমি ছিল, আর অন্তত <xliff:g id="limit">%2$.0f</xliff:g> মিমি হতে হবে।</string>
+    <string name="gesture_trainer_finding_scrub_no_return">ফিরতি টান <xliff:g id="mm">%1$.0f</xliff:g> মিমি ছিল, আর অন্তত <xliff:g id="limit">%2$.0f</xliff:g> মিমি হতে হবে।</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">স্ক্রাবে <xliff:g id="ms">%1$d</xliff:g> ms লেগেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">আঙুলটি প্রান্ত থেকে <xliff:g id="mm">%1$.0f</xliff:g> মিমি দূরে পড়েছে, আর প্রান্তটি <xliff:g id="limit">%2$.0f</xliff:g> মিমি চওড়া।</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">আঙুলটি প্রান্তের অন্য অর্ধেকে শুরু হয়েছে।</string>
+    <string name="gesture_trainer_finding_edge_too_short">আঙুলটি <xliff:g id="mm">%1$.0f</xliff:g> মিমি স্লাইড করেছে, আর অন্তত <xliff:g id="limit">%2$.0f</xliff:g> মিমি স্লাইড করতে হবে।</string>
+    <string name="gesture_trainer_finding_edge_too_long">স্লাইড খুব লম্বা: আঙুলটি দ্বিতীয় ক্লিক পেরিয়ে <xliff:g id="mm">%1$.0f</xliff:g> মিমি গেছে, আর দ্বিতীয় ক্লিক <xliff:g id="limit">%2$.0f</xliff:g> মিমিতে।</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ক্লিকে পৌঁছাতে <xliff:g id="ms">%1$d</xliff:g> ms লেগেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_edge_sideways">স্লাইডটি <xliff:g id="degrees">%1$.0f</xliff:g> ডিগ্রি পাশে সরে গেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$.0f</xliff:g> অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_corner_missed">ট্যাপটি কোণের প্রান্তগুলি থেকে <xliff:g id="mm">%1$.0f</xliff:g> মিমি দূরে পড়েছে, আর কোণটি <xliff:g id="limit">%2$.0f</xliff:g> মিমি।</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">একটি কোণের ট্যাপ <xliff:g id="ms">%1$d</xliff:g> ms স্থায়ী হয়েছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_none">জেসচারের সঙ্গে মেলে এমন কোনও নড়াচড়া শনাক্ত হয়নি।</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">কতগুলি আঙুল কাচ স্পর্শ করছে তা দেখুন। স্ক্রিনে রাখা হাতের তালু বা অন্য আঙুলও গোনা হয়।</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">সব আঙুল একই মুহূর্তে, এক হাতের মতো রাখুন, একটির পর একটি নয়।</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">প্রথমে সব আঙুল রাখুন, তারপর সেগুলি সরান বা তুলুন।</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">সব আঙুল একই মুহূর্তে তুলুন।</string>
+    <string name="gesture_trainer_tip_slow_start">স্ক্রিন স্পর্শ করার মুহূর্তেই সরাতে শুরু করুন, এবং শুরুতে দ্রুত সরান।</string>
+    <string name="gesture_trainer_tip_paused">তোলা পর্যন্ত আঙুলটি একই গতিতে সরাতে থাকুন। শেষের কাছে ধীর করবেন না।</string>
+    <string name="gesture_trainer_tip_too_short">নড়াচড়া লম্বা করুন, প্রায় ২ থেকে ৩ সেমি।</string>
+    <string name="gesture_trainer_tip_wrong_direction">নড়াচড়ার একদম শুরুতে দিক দেখুন। ফোনটি সামনে সোজা করে ধরলে সুবিধা হয়।</string>
+    <string name="gesture_trainer_tip_off_line">শুধু নির্দিষ্ট দিকে সরান, তির্যকভাবে নয়। বুড়ো আঙুলের চেয়ে তর্জনী বেশি সোজা লাইন রাখে।</string>
+    <string name="gesture_trainer_tip_curved">লাইন সোজা রাখুন এবং একদম শেষে তুলুন, তোলার সময় আঙুল পাশে বাঁকাবেন না।</string>
+    <string name="gesture_trainer_tip_turn_missing">না তুলে তীক্ষ্ণভাবে দিক বদলান, সমকোণে বা সোজা পিছনে। প্রতিটি অংশ প্রায় ২ সেমি হওয়া উচিত।</string>
+    <string name="gesture_trainer_tip_second_part_wrong">বাঁকের পরে কোন দিকে যাচ্ছেন তা দেখুন: দ্বিতীয় অংশকে জেসচারের নামে থাকা অন্য দিকে যেতে হবে।</string>
+    <string name="gesture_trainer_tip_tap_moved">আঙুলের ডগা দিয়ে সোজা নিচে ও উপরে ট্যাপ করুন, স্লাইড না করে।</string>
+    <string name="gesture_trainer_tip_tap_held_long">প্রতিটি ট্যাপ ছোট করুন: স্পর্শ করে সঙ্গে সঙ্গে তুলুন।</string>
+    <string name="gesture_trainer_tip_hold_too_short">শেষ ট্যাপে পুরো ধরে রাখার সময় আঙুলগুলি স্ক্রিনে স্থির রাখুন।</string>
+    <string name="gesture_trainer_tip_too_few_taps">ট্যাপগুলি গুনুন এবং সবগুলি এক টানা দ্রুত করুন।</string>
+    <string name="gesture_trainer_tip_too_many_taps">ট্যাপগুলি গুনুন। কাচে লাফিয়ে ওঠা আঙুল একটি বাড়তি ট্যাপ করে।</string>
+    <string name="gesture_trainer_tip_taps_too_slow">দ্রুত ট্যাপ করুন: তোলার ঠিক পরেই পরের ট্যাপ শুরু করুন।</string>
+    <string name="gesture_trainer_tip_taps_apart">প্রতিবার একই জায়গায় ট্যাপ করুন।</string>
+    <string name="gesture_trainer_tip_pinch_too_small">আঙুলগুলি আরও বেশি সরান, অন্তত ১ সেমি কাছে বা দূরে।</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">পিঞ্চ মানে আঙুলগুলি একে অপরের দিকে সরানো, ছড়ানো মানে আঙুলগুলি দূরে সরানো।</string>
+    <string name="gesture_trainer_tip_moved_together">শুধু আঙুলগুলি একে অপরের দিকে বা দূরে সরান। পুরো হাত স্ক্রিনের উপর দিয়ে স্লাইড করবেন না।</string>
+    <string name="gesture_trainer_tip_rotate_too_small">আরও ঘোরান, ডায়াল এক-চতুর্থাংশ পাক ঘোরানোর মতো।</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">ঘড়ির কাঁটার দিকে মানে ঘড়ির কাঁটা যেদিকে যায় সেদিকে ঘোরানো: উপরের আঙুলটি ডানদিকে যায়।</string>
+    <string name="gesture_trainer_tip_scrub_too_short">প্রথম টান অন্তত ১ সেমি লম্বা করুন।</string>
+    <string name="gesture_trainer_tip_scrub_no_return">প্রথম টানের পরে তোলার আগে উল্টো দিকে ফিরে আসুন।</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">স্ক্রাব দ্রুত করুন, প্রায় এক সেকেন্ডে যাওয়া-আসা।</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">ঠিক প্রান্ত থেকে শুরু করুন, আঙুলের ডগা আংশিক স্ক্রিনের বাইরে রেখে।</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">প্রান্তের কোন অর্ধেকে শুরু করছেন তা দেখুন।</string>
+    <string name="gesture_trainer_tip_edge_too_short">ক্লিক শোনা পর্যন্ত আরও স্লাইড করুন, তারপর তুলুন।</string>
+    <string name="gesture_trainer_tip_edge_too_long">প্রথম ক্লিকের ঠিক পরে, দ্বিতীয়টির আগে তুলুন।</string>
+    <string name="gesture_trainer_tip_edge_too_slow">ক্লিকের আগে না থেমে দ্রুত ভিতরে স্লাইড করুন।</string>
+    <string name="gesture_trainer_tip_edge_sideways">প্রান্ত থেকে সোজা ভিতরে, বা প্রান্ত বরাবর সোজা স্লাইড করুন, তির্যকভাবে নয়।</string>
+    <string name="gesture_trainer_tip_corner_missed">আঙুলটি ঠিক কোণে রাখুন, দুই প্রান্ত স্পর্শ করে।</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">কোণ স্পর্শ করার পরে দ্রুত তুলুন।</string>
+    <string name="gesture_trainer_close_to_limit">সীমার কাছাকাছি: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">সোয়াইপ ধীরে শুরু হয়। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে ধীর শুরু অনুমোদিত হয়।</string>
+    <string name="gesture_trainer_advice_tap_time">ট্যাপ ধীর। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে ধীর ট্যাপ অনুমোদিত হয়।</string>
+    <string name="gesture_trainer_advice_edge_width">সোয়াইপ প্রান্ত থেকে খুব দূরে শুরু হয়। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে প্রান্তের কাছে শুরু হওয়া সোয়াইপও প্রান্তের সোয়াইপ হয়ে যায়।</string>
+    <string name="gesture_trainer_advice_corner_size">ট্যাপ কোণের বাইরে পড়ে। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে কোণ বড় হয়।</string>
+    <string name="gesture_trainer_advice_corner_time">কোণের ট্যাপ ধীর। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে ধীর ট্যাপ অনুমোদিত হয়।</string>
+    <string name="gesture_trainer_menu_option">বিকল্প <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: আইটেম <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g> বেছে নিন</string>
+    <string name="gesture_trainer_how_menu">মেনু খুলতে একটি আঙুল <xliff:g id="edge">%1$s</xliff:g> অন্তত <xliff:g id="distance">%2$d</xliff:g> মিমি উপরে বা নিচে স্লাইড করুন। এতে উপর থেকে নিচে <xliff:g id="count">%3$d</xliff:g>টি আইটেম আছে, প্রতিটি প্রায় <xliff:g id="size">%6$s</xliff:g> সেমি উঁচু। আইটেম <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, স্ক্রিনের উপর থেকে <xliff:g id="from">%7$s</xliff:g> থেকে <xliff:g id="to">%8$s</xliff:g> সেমি নিচে। আইটেমটি বলা হলে আঙুল তুলুন।</string>
+    <string name="gesture_trainer_menu_sample">এই প্রান্তে কোনও মেনু নেই। অনুশীলনে <xliff:g id="count">%1$d</xliff:g>টি নমুনা আইটেম ব্যবহার করা হয়।</string>
+    <string name="gesture_trainer_try_menu_cancelled">চেষ্টা <xliff:g id="number">%1$d</xliff:g>: কিছু না বেছেই মেনু বন্ধ হয়েছে।</string>
+    <string name="gesture_trainer_try_menu_other">চেষ্টা <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> বেছে নেওয়া হয়েছে।</string>
+    <string name="gesture_trainer_measure_menu_item">আইটেম <xliff:g id="number">%1$d</xliff:g>-এ তোলা হয়েছে</string>
+    <string name="gesture_trainer_finding_menu_in_corner">আঙুলটি প্রান্তের একদম উপরে বা নিচে শুরু হয়েছে, যেখানে কোণ এবং উপরের ও নিচের প্রান্ত আছে।</string>
+    <string name="gesture_trainer_finding_menu_left_edge">আঙুলটি প্রান্ত থেকে <xliff:g id="mm">%1$.0f</xliff:g> মিমি দূরে তোলা হয়েছে, আর <xliff:g id="limit">%2$.0f</xliff:g> মিমির বেশি দূরে মেনু বন্ধ হয়ে যায়।</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">আঙুলটি আইটেম <xliff:g id="target">%2$d</xliff:g>-এর বদলে আইটেম <xliff:g id="item">%1$d</xliff:g>-এ তোলা হয়েছে।</string>
+    <string name="gesture_trainer_tip_menu_in_corner">প্রান্তের উপরের ও নিচের প্রান্তসীমা থেকে একটু দূরে শুরু করুন।</string>
+    <string name="gesture_trainer_tip_menu_left_edge">স্লাইড করার সময় আঙুলটি প্রান্তের কাছে রাখুন এবং সেখানেই তুলুন।</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">প্রতিটি আইটেমের প্রান্ত বরাবর একটি নির্দিষ্ট জায়গা আছে, এবং যে আইটেমে আঙুল তোলা হয় সেটি বেছে নেওয়া হয়। আইটেমটি বলা হলে তুলুন।</string>
+    <string name="gesture_trainer_contents">সূচিপত্র</string>
+    <string name="gesture_trainer_contents_heading">সূচিপত্র: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">সম্পন্ন, <xliff:g id="tries">%2$d</xliff:g>টির মধ্যে <xliff:g id="hits">%1$d</xliff:g>টি শনাক্ত হয়েছে</string>
+    <string name="gesture_trainer_group_tap_swipe">ট্যাপ ও সোয়াইপ</string>
+    <string name="gesture_trainer_group_edge_swipes">প্রান্ত থেকে সোয়াইপ</string>
+    <string name="gesture_trainer_group_along_edges">প্রান্ত বরাবর স্লাইড</string>
+    <string name="gesture_trainer_group_edge_menus">প্রান্তের মেনু</string>
+    <string name="gesture_trainer_group_corners">কোণ</string>
+    <string name="gesture_trainer_group_back_tap">ডিভাইসের পিছনে ট্যাপ</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">২টি আঙুলের ট্যাপের পরে ২টি আঙুলের সোয়াইপ বাদ দেওয়া হয়েছে: <xliff:g id="setting">%1$s</xliff:g> বন্ধ আছে।</string>
+    <string name="gesture_trainer_how_swipe_hold">তারপর না তুলে আঙুলটি অন্তত <xliff:g id="hold">%1$d</xliff:g> ms স্থির রাখুন এবং তুলে নিন।</string>
+    <string name="gesture_trainer_half_top">উপরের</string>
+    <string name="gesture_trainer_half_bottom">নিচের</string>
+    <string name="gesture_trainer_how_taps_half">স্ক্রিনের <xliff:g id="half">%1$s</xliff:g> অর্ধেকে ট্যাপ করুন। আঙুলগুলির মাঝখানের বিন্দু অর্ধেকটি ঠিক করে।</string>
+    <string name="gesture_trainer_same_fingers">একই আঙুলগুলি</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> দিয়ে <xliff:g id="taps">%1$s</xliff:g> ট্যাপ করুন। শেষ ট্যাপের ঠিক পরে, <xliff:g id="gap">%3$d</xliff:g> ms-এর মধ্যে, <xliff:g id="swipe_fingers">%4$s</xliff:g> দিয়ে আবার স্ক্রিন স্পর্শ করুন এবং সোজা লাইনে প্রায় ২ থেকে ৩ সেমি <xliff:g id="direction">%5$s</xliff:g> স্লাইড করুন, তারপর তুলে নিন।</string>
+    <string name="gesture_trainer_how_corner_hold">শেষ ট্যাপে আঙুলটি কোণে অন্তত <xliff:g id="hold">%1$d</xliff:g> ms স্থির রেখে দিন।</string>
+    <string name="gesture_trainer_how_back_tap">ফোনটি দুই পাশ ধরে হাতে রাখুন এবং দরজায় টোকা দেওয়ার মতো করে আঙুলের ডগা দিয়ে পিছনের মাঝখানে জোরে ও দ্রুত <xliff:g id="taps">%1$s</xliff:g> ট্যাপ করুন। ট্যাপগুলি কাছাকাছি রাখুন: মাঝে সর্বোচ্চ <xliff:g id="gap">%2$d</xliff:g> ms। ট্যাপ করার সময় স্ক্রিন স্পর্শ করবেন না।</string>
+    <string name="gesture_trainer_back_tap_info">অনুশীলনের সময় পিছনে ট্যাপ কোনও কমান্ড চালায় না। ট্যাপ কতটা জোরে হতে হবে তা <xliff:g id="setting">%1$s</xliff:g> ঠিক করে।</string>
+    <string name="gesture_trainer_go_placed">জেসচারটি <xliff:g id="tries">%1$d</xliff:g> বার করুন।</string>
+    <string name="gesture_trainer_along_left">বাম প্রান্ত</string>
+    <string name="gesture_trainer_along_right">ডান প্রান্ত</string>
+    <string name="gesture_trainer_along_top">উপরের প্রান্ত</string>
+    <string name="gesture_trainer_along_bottom">নিচের প্রান্ত</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> বরাবর স্লাইড বাদ দেওয়া হয়েছে: এতে একটি প্রান্তের মেনু আছে, তাই এর বরাবর স্লাইড করলে জেসচার না চলে মেনু খোলে।</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> বরাবর স্লাইড বাদ দেওয়া হয়েছে: এটি স্ক্রল করে, তাই এর বরাবর স্লাইড করলে জেসচার না চলে অ্যাপ স্ক্রল হয়।</string>
+    <string name="gesture_trainer_finding_along_off_edge">আঙুলটি প্রান্ত থেকে খুব বেশি দূরে সরে গেছে।</string>
+    <string name="gesture_trainer_tip_along_off_edge">আঙুলটি কাচের একদম কিনারায়, প্রান্ত বরাবর সোজা রাখুন।</string>
+    <string name="gesture_trainer_go_back_tap">পিছনে ট্যাপের জেসচারটি <xliff:g id="tries">%1$d</xliff:g> বার করুন। স্ক্রিনে স্পর্শ করলে চেষ্টাটি ব্যর্থ হয়।</string>
+    <string name="gesture_trainer_no_accelerometer">এই অনুশীলনের জন্য অ্যাক্সিলেরোমিটার দরকার। কোনওটি উপলভ্য নেই।</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> ms স্থির রাখা হয়েছে</string>
+    <string name="gesture_trainer_measure_back_tap_strength"><xliff:g id="strength">%1$.1f</xliff:g> শক্তির ট্যাপ</string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">শেষে আঙুলটি <xliff:g id="ms">%1$d</xliff:g> ms স্থির ছিল, আর অন্তত <xliff:g id="limit">%2$d</xliff:g> ms স্থির থাকতে হবে।</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">আঙুলগুলি স্ক্রিনের অন্য অর্ধেকে ট্যাপ করেছে।</string>
+    <string name="gesture_trainer_finding_swipe_missing">ট্যাপের পরে কোনও সোয়াইপ হয়নি।</string>
+    <string name="gesture_trainer_finding_swipe_late">শেষ ট্যাপের <xliff:g id="ms">%1$d</xliff:g> ms পরে সোয়াইপ শুরু হয়েছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">পিছনে ট্যাপ খুব হালকা: প্রয়োজনীয় শক্তির <xliff:g id="percent">%1$d</xliff:g>%%।</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">একটি ট্যাপ ফোনটিকে পিছন দিয়ে না ঝাঁকিয়ে পাশের দিকে বেশি ঝাঁকিয়েছে।</string>
+    <string name="gesture_trainer_finding_back_tap_moving">একটি ট্যাপের ঠিক আগে ফোনটি নড়ছিল।</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">স্ক্রিন স্পর্শ করা হয়েছিল, আর স্ক্রিন স্পর্শ করা অবস্থায় ট্যাপ গোনা হয় না।</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">পিছনের ট্যাপগুলির মধ্যে <xliff:g id="ms">%1$d</xliff:g> ms পেরিয়ে গেছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">সোয়াইপের পরে পুরো ধরে রাখার সময় আঙুলটি স্ক্রিনে স্থির রাখুন। তারপর তুলুন।</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">কোন অর্ধেকে ট্যাপ করছেন তা দেখুন: স্ক্রিনের মাঝখান উপরের অর্ধেককে নিচের অর্ধেক থেকে আলাদা করে।</string>
+    <string name="gesture_trainer_tip_swipe_missing">শেষ ট্যাপের পরে সঙ্গে সঙ্গে আবার স্ক্রিন স্পর্শ করে সোয়াইপ করুন।</string>
+    <string name="gesture_trainer_tip_swipe_late">শেষ ট্যাপের ঠিক পরে, না থেমে সোয়াইপ শুরু করুন।</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">পিছনের মাঝখানের কাছে আঙুলের ডগা বা নখ দিয়ে আরও জোরে ট্যাপ করুন।</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">ফোনের পিছনে সোজাসুজি ট্যাপ করুন, কিনারায় বা কোণাকুণি নয়।</string>
+    <string name="gesture_trainer_tip_back_tap_moving">ট্যাপ করার আগে এক মুহূর্ত ফোনটি স্থির রাখুন, এবং আলগা করে ধরুন যাতে আপনার হাত এটি না নাড়ায়।</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">পিছনে ট্যাপ করার সময় আঙুল স্ক্রিন থেকে দূরে রাখুন: ফোনটি দুই পাশ ধরে রাখুন।</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">দ্রুত ট্যাপ করুন, একটির ঠিক পরে আরেকটি।</string>
+    <string name="gesture_trainer_advice_swipe_hold">সোয়াইপের পরে আঙুল খুব তাড়াতাড়ি ওঠে। <xliff:g id="setting">%1$s</xliff:g> কমালে কম সময় ধরে রাখা অনুমোদিত হয়।</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">পিছনে ট্যাপ হালকা। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে হালকা ট্যাপও শনাক্ত হয়, এবং ধাক্কাকেও ট্যাপ হিসেবে শনাক্ত করতে পারে।</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">আঙুলগুলি <xliff:g id="degrees">%1$.0f</xliff:g> ডিগ্রি ঘুরেছে, আর <xliff:g id="limit">%2$.0f</xliff:g> ডিগ্রি থেকে নড়াচড়াটি ঘোরানো হিসেবে গণ্য হয়।</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">আঙুলগুলি সোজা লাইনে একে অপরের দিকে বা দূরে সরান, একে অপরের চারপাশে বৃত্তচাপে নয়।</string>
+    <string name="gesture_trainer_finding_other_gesture">নড়াচড়াটি তার বদলে ওই জেসচারের সঙ্গে মিলেছে।</string>
+    <string name="gesture_trainer_side_left">বাম</string>
+    <string name="gesture_trainer_side_right">ডান</string>
+    <string name="gesture_trainer_side_top">উপরের</string>
+    <string name="gesture_trainer_side_bottom">নিচের</string>
+    <string name="gesture_trainer_finding_wrong_edge">আঙুলটি <xliff:g id="side">%1$s</xliff:g> প্রান্তে শুরু হয়েছে, আর এই অনুশীলনটি <xliff:g id="expected">%2$s</xliff:g> প্রান্তে।</string>
+    <string name="gesture_trainer_tip_wrong_edge">অনুশীলনে যে প্রান্তের নাম আছে ঠিক সেখানে শুরু করুন।</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">এই জেসচারের বদলে একটি প্রান্তের মেনু খুলেছে।</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">মেনু আছে এমন প্রান্ত বরাবর স্লাইড করলে মেনু খোলে। অনুশীলনে যে প্রান্তের নাম আছে সেখানে শুরু করুন।</string>
+    <string name="gesture_trainer_group_three_part">তিন অংশের সোয়াইপ</string>
+    <string name="gesture_trainer_group_two_stroke">দুই স্ট্রোকের সোয়াইপ</string>
+    <string name="gesture_trainer_group_shake">ঝাঁকানো</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">তিন অংশের সোয়াইপ বাদ দেওয়া হয়েছে: <xliff:g id="setting">%1$s</xliff:g> চালু আছে।</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">দুই স্ট্রোকের সোয়াইপ বাদ দেওয়া হয়েছে: <xliff:g id="setting">%1$s</xliff:g> <xliff:g id="value">%2$s</xliff:g>।</string>
+    <string name="gesture_trainer_shake_info">অনুশীলনের সময় ঝাঁকানো কোনও কমান্ড চালায় না। ঝাঁকানো কতটা জোরে হতে হবে তা <xliff:g id="setting">%1$s</xliff:g> ঠিক করে।</string>
+    <string name="gesture_trainer_go_shake">ফোনটি <xliff:g id="tries">%1$d</xliff:g> বার ঝাঁকান, প্রতিবার ঝাঁকানোর পরে একটু থামুন।</string>
+    <string name="gesture_trainer_how_shake">ফোনটি শক্ত করে ধরুন এবং জলের ফোঁটা ঝেড়ে ফেলার মতো করে দ্রুত সামনে-পিছনে ঝাঁকান: প্রতি দিকে অন্তত দুবার, সবটা প্রায় সেকেন্ডের দুই-তৃতীয়াংশের মধ্যে। তারপর স্থির রাখুন।</string>
+    <string name="gesture_trainer_how_two_stroke">একটি আঙুল দিয়ে প্রায় ২ সেমি <xliff:g id="first">%1$s</xliff:g> সোয়াইপ করুন এবং তুলে নিন। তারপর সঙ্গে সঙ্গে, <xliff:g id="time">%3$d</xliff:g> ms-এর মধ্যে, একটি আঙুল দিয়ে প্রায় ২ সেমি <xliff:g id="second">%2$s</xliff:g> সোয়াইপ করুন এবং তুলে নিন।</string>
+    <string name="gesture_trainer_how_three_part">একটি আঙুল দিয়ে স্ক্রিন স্পর্শ করুন এবং না তুলে <xliff:g id="first">%1$s</xliff:g> সোয়াইপ করুন, তারপর তীক্ষ্ণভাবে ঘুরে <xliff:g id="second">%2$s</xliff:g> সোয়াইপ করুন, তারপর আবার তীক্ষ্ণভাবে ঘুরে <xliff:g id="third">%3$s</xliff:g> সোয়াইপ করুন, প্রতিটি অংশ প্রায় ২ সেমি, এবং তুলে নিন। এটি তীক্ষ্ণ কোণসহ একটি দ্রুত, মসৃণ নড়াচড়ায় করুন, বাঁকা নয়।</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">একটি আঙুল স্ক্রিনের উপরের এক-তৃতীয়াংশে আর অন্যটি নিচের এক-তৃতীয়াংশে রাখুন, যেমন বুড়ো আঙুল নিচে আর তর্জনী উপরে।</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">আঙুলগুলির একটি স্ক্রিনের উপরের এক-তৃতীয়াংশে আর একটি নিচের এক-তৃতীয়াংশে ছিল না।</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">দ্বিতীয় কোনও সোয়াইপ হয়নি।</string>
+    <string name="gesture_trainer_finding_second_stroke_late">প্রথমটির <xliff:g id="ms">%1$d</xliff:g> ms পরে দ্বিতীয় সোয়াইপ শুরু হয়েছে, আর সর্বোচ্চ <xliff:g id="limit">%2$d</xliff:g> ms অনুমোদিত।</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">প্রথম সোয়াইপ <xliff:g id="direction">%1$s</xliff:g> গেছে।</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">দ্বিতীয় সোয়াইপ <xliff:g id="direction">%1$s</xliff:g> গেছে।</string>
+    <string name="gesture_trainer_finding_shake_too_light">ঝাঁকানো খুব হালকা ছিল: প্রয়োজনীয় শক্তির <xliff:g id="percent">%1$d</xliff:g>%%।</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">সামনে-পিছনে দোলা: প্রয়োজনীয় <xliff:g id="wanted">%2$d</xliff:g>টির মধ্যে <xliff:g id="swings">%1$d</xliff:g>টি।</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">আঙুলগুলি অনেক দূরে ছড়িয়ে রাখুন, একটি উপরের প্রান্তের কাছে আর একটি নিচের প্রান্তের কাছে।</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">প্রথম সোয়াইপের পরে আঙুল তুলে সঙ্গে সঙ্গে আবার সোয়াইপ করুন।</string>
+    <string name="gesture_trainer_tip_second_stroke_late">আঙুল তোলার ঠিক পরেই দ্বিতীয় সোয়াইপ শুরু করুন।</string>
+    <string name="gesture_trainer_tip_shake_too_light">আরও জোরে ও দ্রুত ঝাঁকান।</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">আরও দ্রুত ঝাঁকান, প্রতি দিকে অন্তত দুবার সামনে-পিছনে, মাঝে না থেমে।</string>
+    <string name="gesture_trainer_measure_shake_strength">সবচেয়ে জোরালো নড়াচড়া <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">ঝাঁকানো হালকা। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে হালকা ঝাঁকানোও শনাক্ত হয়, এবং ফোন বহন করাকেও ঝাঁকানো হিসেবে শনাক্ত করতে পারে।</string>
+    <string name="gesture_trainer_advice_two_stroke_time">দ্বিতীয় সোয়াইপ দেরিতে শুরু হয়। <xliff:g id="setting">%1$s</xliff:g> বাড়ালে দ্বিতীয় সোয়াইপ দেরিতে করা যায়, আর তখন একক সোয়াইপ চলার আগে বেশিক্ষণ অপেক্ষা করে।</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> চালু আছে।</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> বন্ধ আছে: ২টি আঙুলের সোয়াইপ অ্যাপ স্ক্রল করে, আর স্ক্রাবও বেশিরভাগ ক্ষেত্রে স্ক্রল করে। সেটিংটি চালু থাকলে ২টি আঙুলের সোয়াইপ স্ক্রল না করে SandFly কমান্ড চালায়।</string>
+    <string name="gesture_trainer_measure_first_stroke">প্রথম সোয়াইপ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">দ্বিতীয় সোয়াইপ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">পুরো জেসচার <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">মাঝে <xliff:g id="ms">%1$d</xliff:g> ms তোলা ছিল</string>
+</resources>

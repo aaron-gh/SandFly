@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">កម្មវិធីហ្វឹកហាត់ចលនា</string>
+    <string name="gesture_trainer_intro">ជ្រើសរើសក្រុមចលនា។ លំហាត់នីមួយៗពិពណ៌នាអំពីចលនាមួយ។ ធ្វើចលនានោះ <xliff:g id="tries">%1$d</xliff:g> ដង លទ្ធផលនៃការសាកល្បងនីមួយៗត្រូវបាននិយាយ។ បន្ទាប់ពីការសាកល្បងចុងក្រោយ អេក្រង់បង្ហាញការវាស់វែងនៃការសាកល្បងនីមួយៗ អ្វីដែលត្រូវផ្លាស់ប្ដូរ និងការកំណត់ដែលពាក់ព័ន្ធ។</string>
+    <string name="gesture_trainer_group_one_finger">ម្រាមដៃ 1</string>
+    <string name="gesture_trainer_group_two_fingers">ម្រាមដៃ 2</string>
+    <string name="gesture_trainer_group_three_fingers">ម្រាមដៃ 3</string>
+    <string name="gesture_trainer_group_four_fingers">ម្រាមដៃ 4</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">ច្របាច់ បង្វិល និងជូត</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, លំហាត់ <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">បិទ</string>
+    <string name="gesture_trainer_no_detection">កម្មវិធីហ្វឹកហាត់ចលនាត្រូវការ Android 13 ឬថ្មីជាងនេះ។</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">ចលនាទៅមក និងចលនាមុំត្រូវបានរំលង៖ <xliff:g id="setting">%1$s</xliff:g> កំពុងបើក។</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">ការអូសដោយម្រាមដៃ 2 ត្រូវបានរំលង៖ <xliff:g id="setting">%1$s</xliff:g> កំពុងបិទ ដូច្នេះការអូសទាំងនោះរំកិលកម្មវិធី។</string>
+    <string name="gesture_trainer_exercise_heading">លំហាត់ទី <xliff:g id="number">%1$d</xliff:g> នៃ <xliff:g id="count">%2$d</xliff:g>៖ <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">ចាប់ផ្ដើម</string>
+    <string name="gesture_trainer_skip">រំលងលំហាត់នេះ</string>
+    <string name="gesture_trainer_back_to_groups">ត្រឡប់ទៅក្រុមវិញ</string>
+    <string name="gesture_trainer_go">ធ្វើចលនានេះ <xliff:g id="tries">%1$d</xliff:g> ដង នៅកន្លែងណាក៏បាននៅលើអេក្រង់។ ការប៉ះនីមួយៗគឺជាការសាកល្បងមួយ។</string>
+    <string name="gesture_trainer_fingers_1">ម្រាមដៃមួយ</string>
+    <string name="gesture_trainer_fingers_2">ម្រាមដៃពីរនៅជាប់គ្នា ឃ្លាតគ្នាប្រហែល 1 សង់ទីម៉ែត្រ</string>
+    <string name="gesture_trainer_fingers_3">ម្រាមដៃបីនៅជាប់គ្នា ឃ្លាតគ្នាបន្តិច</string>
+    <string name="gesture_trainer_fingers_4">ម្រាមដៃបួននៅជាប់គ្នា ឃ្លាតគ្នាបន្តិច</string>
+    <string name="gesture_trainer_direction_up">ឡើងលើ</string>
+    <string name="gesture_trainer_direction_down">ចុះក្រោម</string>
+    <string name="gesture_trainer_direction_left">ទៅឆ្វេង</string>
+    <string name="gesture_trainer_direction_right">ទៅស្ដាំ</string>
+    <string name="gesture_trainer_how_swipe">ប៉ះអេក្រង់ដោយ<xliff:g id="fingers">%1$s</xliff:g> ហើយដោយមិនរង់ចាំ រុញ<xliff:g id="direction">%2$s</xliff:g>ជាបន្ទាត់ត្រង់ប្រហែល 2 ទៅ 3 សង់ទីម៉ែត្រ រួចលើកម្រាមដៃ។ ចាប់ផ្ដើមផ្លាស់ទីភ្លាម៖ ម្រាមដៃដែលនៅស្ងៀមមុនគេនឹងចាប់ផ្ដើមការរុករកដោយប៉ះ។</string>
+    <string name="gesture_trainer_how_swipe_multi">ដាក់ម្រាមដៃចុះជាមួយគ្នា ក្នុងពេលតែមួយ ហើយផ្លាស់ទីម្រាមដៃទាំងអស់ក្នុងទិសដៅដូចគ្នា។ ម្រាមដៃនីមួយៗត្រូវទៅ<xliff:g id="direction">%1$s</xliff:g>ជានិច្ច ដូច្នេះរក្សាបន្ទាត់ឱ្យត្រង់។</string>
+    <string name="gesture_trainer_how_back_and_forth">ប៉ះអេក្រង់ដោយម្រាមដៃមួយ ហើយរុញ<xliff:g id="first">%1$s</xliff:g>ប្រហែល 2 សង់ទីម៉ែត្រ បន្ទាប់មកដោយមិនលើកម្រាមដៃ ត្រឡប់ត្រង់<xliff:g id="second">%2$s</xliff:g>ប្រហែល 2 សង់ទីម៉ែត្រ រួចលើកម្រាមដៃ។ ធ្វើវាជាចលនាតែមួយដែលលឿន និងរលូន។</string>
+    <string name="gesture_trainer_how_angle">ប៉ះអេក្រង់ដោយ<xliff:g id="fingers">%1$s</xliff:g> ហើយរុញ<xliff:g id="first">%2$s</xliff:g>ប្រហែល 2 សង់ទីម៉ែត្រ បន្ទាប់មកដោយមិនលើកម្រាមដៃ បត់ភ្លាមៗ ហើយរុញ<xliff:g id="second">%3$s</xliff:g>ប្រហែល 2 សង់ទីម៉ែត្រ រួចលើកម្រាមដៃ។ ធ្វើការបត់ជាជ្រុងមុត ដូចអក្សរ L មិនមែនជាខ្សែកោងទេ។</string>
+    <string name="gesture_trainer_taps_1">ម្ដង</string>
+    <string name="gesture_trainer_taps_2">ពីរដង</string>
+    <string name="gesture_trainer_taps_3">បីដង</string>
+    <string name="gesture_trainer_taps_4">បួនដង</string>
+    <string name="gesture_trainer_how_taps">ចុច<xliff:g id="taps">%1$s</xliff:g>ដោយ<xliff:g id="fingers">%2$s</xliff:g>។ ដាក់ម្រាមដៃចុះជាមួយគ្នា ហើយលើកវាជាមួយគ្នាយ៉ាងលឿន ដោយមិនរុញ។</string>
+    <string name="gesture_trainer_how_taps_quick">ចុចឱ្យលឿន និងនៅកន្លែងដដែល៖ ការចុចបន្ទាប់ត្រូវតែកើតឡើងក្នុងរយៈពេល <xliff:g id="gap">%1$d</xliff:g> ms បន្ទាប់ពីការចុចមុន។</string>
+    <string name="gesture_trainer_how_hold">ដាក់<xliff:g id="fingers">%1$s</xliff:g>លើអេក្រង់ជាមួយគ្នា ហើយទុកវាឱ្យនៅស្ងៀម ដោយមិនរុញ យ៉ាងហោចណាស់ <xliff:g id="hold">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">ប្រសិនបើមិនមានពាក្យបញ្ជាផ្សេងត្រូវបានកំណត់ទេ ចលនានេះបិទ SandFly។ នៅក្នុងកម្មវិធីហ្វឹកហាត់ វាមិនដំណើរការអ្វីទេ។</string>
+    <string name="gesture_trainer_how_taps_hold">ចុច<xliff:g id="taps">%1$s</xliff:g>ដោយ<xliff:g id="fingers">%2$s</xliff:g> ហើយនៅការចុចចុងក្រោយ ទុកម្រាមដៃលើអេក្រង់ឱ្យនៅស្ងៀម យ៉ាងហោចណាស់ <xliff:g id="hold">%3$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_how_three_finger_hand">ប្រើមេដៃ ម្រាមចង្អុល និងម្រាមកណ្ដាល។</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">ដាក់ម្រាមចង្អុល និងម្រាមកណ្ដាលនៅជាប់គ្នា ហើយដាក់មេដៃ និងម្រាមនាងឱ្យឃ្លាតពីរបីសង់ទីម៉ែត្រនៅសងខាង។ បន្ទាប់មកនាំចុងម្រាមដៃទាំងបួនមកជួបគ្នានៅចំណុចតែមួយ។</string>
+    <string name="gesture_trainer_how_pinch">ដាក់ម្រាមដៃ <xliff:g id="fingers">%1$d</xliff:g> លើអេក្រង់ ឱ្យឃ្លាតពីគ្នាឆ្ងាយ។ បន្ទាប់មកនាំវាមករកគ្នាជាបន្ទាត់ត្រង់យ៉ាងហោចណាស់ 1 សង់ទីម៉ែត្រ ដូចជាកំពុងរើសអ្វីមួយ រួចលើកវាចេញពីអេក្រង់។ ផ្លាស់ទីតែម្រាមដៃប៉ុណ្ណោះ មិនមែនដៃទាំងមូលទេ ហើយមិនមែនជាខ្សែកោងទេ។</string>
+    <string name="gesture_trainer_how_spread">ដាក់ម្រាមដៃ <xliff:g id="fingers">%1$d</xliff:g> លើអេក្រង់ ឱ្យជិតគ្នា។ បន្ទាប់មកផ្លាស់ទីវាឱ្យឃ្លាតពីគ្នាជាបន្ទាត់ត្រង់យ៉ាងហោចណាស់ 1 សង់ទីម៉ែត្រ រួចលើកវាចេញពីអេក្រង់។ ផ្លាស់ទីតែម្រាមដៃប៉ុណ្ណោះ មិនមែនដៃទាំងមូលទេ ហើយមិនមែនជាខ្សែកោងទេ។</string>
+    <string name="gesture_trainer_clockwise">តាមទ្រនិចនាឡិកា</string>
+    <string name="gesture_trainer_counterclockwise">ច្រាសទ្រនិចនាឡិកា</string>
+    <string name="gesture_trainer_how_rotate">ដាក់ម្រាមដៃពីរលើអេក្រង់ ឃ្លាតគ្នាប្រហែល 2 ទៅ 3 សង់ទីម៉ែត្រ ហើយបង្វិលវា<xliff:g id="way">%1$s</xliff:g>ជុំវិញចំណុចកណ្ដាលរបស់វា ដូចជាការបង្វិលប៊ូតុងមូល ប្រហែលមួយភាគបួនជុំ។ បន្ទាប់មកលើកម្រាមដៃ។</string>
+    <string name="gesture_trainer_how_scrub">ដាក់ម្រាមដៃពីរលើអេក្រង់ ហើយផ្លាស់ទីវាយ៉ាងលឿនទៅម្ខាងប្រហែល 2 សង់ទីម៉ែត្រ ហើយត្រឡប់មកវិញ ដូចជាកំពុងលុបអ្វីមួយ ទាំងអស់ក្នុងរយៈពេលប្រហែលមួយវិនាទី។ បន្ទាប់មកលើកម្រាមដៃ។</string>
+    <string name="gesture_trainer_edge_bottom">នៅគែមខាងក្រោម</string>
+    <string name="gesture_trainer_edge_top_left">នៅគែមខាងលើ ក្នុងពាក់កណ្ដាលខាងឆ្វេងរបស់វា</string>
+    <string name="gesture_trainer_edge_top_right">នៅគែមខាងលើ ក្នុងពាក់កណ្ដាលខាងស្ដាំរបស់វា</string>
+    <string name="gesture_trainer_edge_left_top">នៅគែមខាងឆ្វេង ក្នុងពាក់កណ្ដាលខាងលើរបស់វា</string>
+    <string name="gesture_trainer_edge_left_bottom">នៅគែមខាងឆ្វេង ក្នុងពាក់កណ្ដាលខាងក្រោមរបស់វា</string>
+    <string name="gesture_trainer_edge_right_top">នៅគែមខាងស្ដាំ ក្នុងពាក់កណ្ដាលខាងលើរបស់វា</string>
+    <string name="gesture_trainer_edge_right_bottom">នៅគែមខាងស្ដាំ ក្នុងពាក់កណ្ដាលខាងក្រោមរបស់វា</string>
+    <string name="gesture_trainer_edge_left">នៅគែមខាងឆ្វេង</string>
+    <string name="gesture_trainer_edge_right">នៅគែមខាងស្ដាំ</string>
+    <string name="gesture_trainer_edge_top">នៅគែមខាងលើ</string>
+    <string name="gesture_trainer_how_edge">ដាក់ម្រាមដៃមួយ<xliff:g id="edge">%1$s</xliff:g> មិនឱ្យលើសពី <xliff:g id="edge_width">%2$d</xliff:g> មីលីម៉ែត្រពីគែម ហើយរុញ<xliff:g id="direction">%3$s</xliff:g>ចូលក្នុងអេក្រង់រហូតដល់សំឡេងចុចទីមួយ ប្រហែល <xliff:g id="distance">%4$d</xliff:g> មីលីម៉ែត្រ។ បន្ទាប់មកលើកម្រាមដៃភ្លាម៖ ហួសពីសំឡេងចុចទីពីរ ការរុញនោះគឺជាការរុញវែង។</string>
+    <string name="gesture_trainer_how_edge_long">ដាក់ម្រាមដៃមួយ<xliff:g id="edge">%1$s</xliff:g> មិនឱ្យលើសពី <xliff:g id="edge_width">%2$d</xliff:g> មីលីម៉ែត្រពីគែម ហើយរុញ<xliff:g id="direction">%3$s</xliff:g>ចូលក្នុងអេក្រង់ ហួសពីសំឡេងចុចទីមួយ រហូតដល់សំឡេងចុចទីពីរ ប្រហែល <xliff:g id="distance">%4$d</xliff:g> មីលីម៉ែត្រ។ បន្ទាប់មកលើកម្រាមដៃ។</string>
+    <string name="gesture_trainer_how_along">រុញម្រាមដៃមួយ<xliff:g id="direction">%2$s</xliff:g>តាមបណ្ដោយ<xliff:g id="edge">%1$s</xliff:g> យ៉ាងហោចណាស់ <xliff:g id="distance">%3$d</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_corner_top_left">ខាងលើឆ្វេង</string>
+    <string name="gesture_trainer_corner_top_right">ខាងលើស្ដាំ</string>
+    <string name="gesture_trainer_corner_bottom_left">ខាងក្រោមឆ្វេង</string>
+    <string name="gesture_trainer_corner_bottom_right">ខាងក្រោមស្ដាំ</string>
+    <string name="gesture_trainer_how_corner">ចុច<xliff:g id="taps">%1$s</xliff:g>នៅជ្រុង<xliff:g id="corner">%2$s</xliff:g>នៃអេក្រង់។ ដាក់ម្រាមដៃចំជ្រុង មិនឱ្យលើសពី <xliff:g id="size">%3$d</xliff:g> មីលីម៉ែត្រពីគែមទាំងពីរ ហើយលើកឱ្យលឿន ក្នុងរយៈពេល <xliff:g id="time">%4$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>៖ <xliff:g id="edge">%2$d</xliff:g> មីលីម៉ែត្រ។ <xliff:g id="corner_setting">%3$s</xliff:g>៖ <xliff:g id="corner">%4$d</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_corner_warning">ពេលជ្រុងធំជាងមុន ការចុចលើផ្ទាំងបញ្ជានៅជិតជ្រុង ដូចជា ថយក្រោយ នៅខាងលើឆ្វេង អាចដំណើរការចលនាជ្រុងជំនួសវិញ។</string>
+    <string name="gesture_trainer_rating_precise">បានស្គាល់ ច្បាស់លាស់</string>
+    <string name="gesture_trainer_rating_good">បានស្គាល់ ល្អ</string>
+    <string name="gesture_trainer_rating_borderline">បានស្គាល់ ប៉ុន្តែជិតដល់ដែនកំណត់</string>
+    <string name="gesture_trainer_try_recognized">លើកទី <xliff:g id="number">%1$d</xliff:g>៖ <xliff:g id="rating">%2$s</xliff:g>។</string>
+    <string name="gesture_trainer_try_nothing">លើកទី <xliff:g id="number">%1$d</xliff:g>៖ មិនបានស្គាល់។</string>
+    <string name="gesture_trainer_try_other">លើកទី <xliff:g id="number">%1$d</xliff:g>៖ បានស្គាល់ថាជា <xliff:g id="gesture">%2$s</xliff:g>។</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>៖ បានស្គាល់ <xliff:g id="recognized">%2$d</xliff:g> ក្នុងចំណោម <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">ការសាកល្បងរបស់អ្នក</string>
+    <string name="gesture_trainer_results_change">អ្វីដែលត្រូវផ្លាស់ប្ដូរ</string>
+    <string name="gesture_trainer_results_close">ជិតដល់ដែនកំណត់</string>
+    <string name="gesture_trainer_results_all_good">ការសាកល្បងទាំងអស់ត្រូវបានស្គាល់ក្នុងដែនកំណត់។</string>
+    <string name="gesture_trainer_results_settings">ការកំណត់ដែលអាចជួយបាន</string>
+    <string name="gesture_trainer_next">លំហាត់បន្ទាប់</string>
+    <string name="gesture_trainer_repeat">ធ្វើម្ដងទៀត</string>
+    <string name="gesture_trainer_finish">បញ្ចប់</string>
+    <string name="gesture_trainer_group_done">អ្នកបានបញ្ចប់លំហាត់ទាំងអស់ក្នុង <xliff:g id="group">%1$s</xliff:g>។</string>
+    <string name="gesture_trainer_open_setting">ផ្លាស់ប្ដូរ <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">ចំណាយពេល <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">វែង <xliff:g id="cm">%1$.1f</xliff:g> សង់ទីម៉ែត្រ</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> សង់ទីម៉ែត្រក្នុងមួយវិនាទី</string>
+    <string name="gesture_trainer_measure_angle">ងាកចេញពីបន្ទាត់ត្រង់ <xliff:g id="degrees">%1$.0f</xliff:g> ដឺក្រេ</string>
+    <string name="gesture_trainer_measure_start">សង់ទីម៉ែត្រទីមួយក្នុង <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">ម្រាមដៃបានប៉ះចុះខុសពេលគ្នា <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">ការចុច <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms រវាងការចុច</string>
+    <string name="gesture_trainer_measure_spread">ម្រាមដៃបានផ្លាស់ទី <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ</string>
+    <string name="gesture_trainer_measure_rotation">បានបង្វិល <xliff:g id="degrees">%1$.0f</xliff:g> ដឺក្រេ</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រពីគែមនៃជ្រុង</string>
+    <string name="gesture_trainer_measure_edge">បានចាប់ផ្ដើម <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រពីគែម</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">ម្រាមដៃលើអេក្រង់៖ <xliff:g id="fingers">%1$d</xliff:g> ជំនួសឱ្យ <xliff:g id="wanted">%2$d</xliff:g>។</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">ម្រាមដៃបានប៉ះចុះខុសពេលគ្នា <xliff:g id="ms">%1$d</xliff:g> ms ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">ម្រាមដៃមួយបានលើកឡើង មុនពេលម្រាមដៃទាំងអស់ប៉ះចុះ។</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">ម្រាមដៃបានលើកឡើងខុសពេលគ្នា <xliff:g id="ms">%1$d</xliff:g> ms ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_became_exploration">ម្រាមដៃនៅស្ងៀមយូរពេក ឬផ្លាស់ទីយឺតពេកនៅដើម ដូច្នេះការប៉ះបានក្លាយជាការរុករកដោយប៉ះ។</string>
+    <string name="gesture_trainer_finding_slow_start">សង់ទីម៉ែត្រទីមួយចំណាយពេល <xliff:g id="ms">%1$d</xliff:g> ms ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_paused">ម្រាមដៃបានបន្ថយល្បឿនរយៈពេល <xliff:g id="ms">%1$d</xliff:g> ms ហើយសង់ទីម៉ែត្រនីមួយៗអាចចំណាយពេលយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_too_short">ចលនាមានត្រឹមតែ <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ហើយវាត្រូវតែយ៉ាងហោចណាស់ <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">ម្រាមដៃបានចាប់ផ្ដើមទៅ<xliff:g id="direction">%1$s</xliff:g>។</string>
+    <string name="gesture_trainer_finding_wrong_direction">ម្រាមដៃបានចាប់ផ្ដើមទៅ<xliff:g id="direction">%1$s</xliff:g>។</string>
+    <string name="gesture_trainer_finding_off_line">ផ្លូវបានងាកចេញពីបន្ទាត់ត្រង់ <xliff:g id="degrees">%1$.0f</xliff:g> ដឺក្រេ ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$.0f</xliff:g>។</string>
+    <string name="gesture_trainer_finding_curved">ផ្លូវបានបត់ជា <xliff:g id="parts">%1$d</xliff:g> ផ្នែក ជំនួសឱ្យ <xliff:g id="wanted">%2$d</xliff:g>។</string>
+    <string name="gesture_trainer_finding_turn_missing">រកមិនឃើញការបត់ទេ។</string>
+    <string name="gesture_trainer_finding_second_part_wrong">បន្ទាប់ពីការបត់ ម្រាមដៃបានទៅ<xliff:g id="direction">%1$s</xliff:g>។</string>
+    <string name="gesture_trainer_finding_tap_moved">ម្រាមដៃបានរុញ <xliff:g id="mm">%1$.1f</xliff:g> មីលីម៉ែត្រ ពេលចុច ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$.1f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_tap_held_long">ការចុចមួយមានរយៈពេល <xliff:g id="ms">%1$d</xliff:g> ms វែងជាង <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_hold_too_short">ការចុចចុងក្រោយត្រូវបានសង្កត់ <xliff:g id="ms">%1$d</xliff:g> ms ហើយវាត្រូវតែយ៉ាងហោចណាស់ <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_too_few_taps">ចុច <xliff:g id="taps">%1$d</xliff:g> ដង ជំនួសឱ្យ <xliff:g id="wanted">%2$d</xliff:g>។</string>
+    <string name="gesture_trainer_finding_too_many_taps">ចុច <xliff:g id="taps">%1$d</xliff:g> ដង ជំនួសឱ្យ <xliff:g id="wanted">%2$d</xliff:g>។</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms បានកន្លងផុតរវាងការចុច ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_taps_apart">ការចុចបានប៉ះចុះឃ្លាតគ្នា <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_pinch_too_small">ម្រាមដៃបានផ្លាស់ទីត្រឹមតែ <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ហើយវាត្រូវតែផ្លាស់ទីយ៉ាងហោចណាស់ <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">ម្រាមដៃបានផ្លាស់ទីក្នុងទិសដៅផ្ទុយ។</string>
+    <string name="gesture_trainer_finding_moved_together">ដៃទាំងមូលបានរុញឆ្លងកាត់អេក្រង់ <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ច្រើនជាងម្រាមដៃបានផ្លាស់ទីចូលជិត ឬឃ្លាតពីគ្នា។</string>
+    <string name="gesture_trainer_finding_rotate_too_small">ម្រាមដៃបានបង្វិលត្រឹមតែ <xliff:g id="degrees">%1$.0f</xliff:g> ដឺក្រេ ហើយវាត្រូវតែបង្វិលយ៉ាងហោចណាស់ <xliff:g id="limit">%2$.0f</xliff:g>។</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">ម្រាមដៃបានបង្វិលក្នុងទិសដៅផ្ទុយ។</string>
+    <string name="gesture_trainer_finding_scrub_too_short">ការអូសទីមួយមាន <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ហើយវាត្រូវតែយ៉ាងហោចណាស់ <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_scrub_no_return">ការអូសត្រឡប់មាន <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ហើយវាត្រូវតែយ៉ាងហោចណាស់ <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">ការជូតចំណាយពេល <xliff:g id="ms">%1$d</xliff:g> ms ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">ម្រាមដៃបានប៉ះចុះ <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រពីគែម ហើយគែមមានទទឹង <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">ម្រាមដៃបានចាប់ផ្ដើមនៅពាក់កណ្ដាលម្ខាងទៀតនៃគែម។</string>
+    <string name="gesture_trainer_finding_edge_too_short">ម្រាមដៃបានរុញ <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ហើយវាត្រូវតែរុញយ៉ាងហោចណាស់ <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_edge_too_long">រុញវែងពេក៖ ម្រាមដៃបានហួសពីសំឡេងចុចទីពីរ <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រ ហើយសំឡេងចុចទីពីរនៅ <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ការទៅដល់សំឡេងចុចចំណាយពេល <xliff:g id="ms">%1$d</xliff:g> ms ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_edge_sideways">ការរុញបានងាកទៅចំហៀង <xliff:g id="degrees">%1$.0f</xliff:g> ដឺក្រេ ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$.0f</xliff:g>។</string>
+    <string name="gesture_trainer_finding_corner_missed">ការចុចបានប៉ះចុះ <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រពីគែមនៃជ្រុង ហើយជ្រុងមានទំហំ <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">ការចុចជ្រុងមួយមានរយៈពេល <xliff:g id="ms">%1$d</xliff:g> ms ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_none">មិនបានរកឃើញចលនាដែលត្រូវនឹងចលនានេះទេ។</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">ពិនិត្យមើលថាតើម្រាមដៃប៉ុន្មានកំពុងប៉ះកញ្ចក់។ បាតដៃ ឬម្រាមដៃផ្សេងទៀតដែលដាក់លើអេក្រង់ក៏ត្រូវរាប់ដែរ។</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">ដាក់ម្រាមដៃទាំងអស់ចុះក្នុងពេលតែមួយ ដូចជាដៃតែមួយ មិនមែនម្ដងមួយៗទេ។</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">ដាក់ម្រាមដៃទាំងអស់ចុះជាមុនសិន បន្ទាប់មកផ្លាស់ទី ឬលើកវា។</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">លើកម្រាមដៃទាំងអស់ក្នុងពេលតែមួយ។</string>
+    <string name="gesture_trainer_tip_slow_start">ចាប់ផ្ដើមផ្លាស់ទីភ្លាមៗពេលអ្នកប៉ះអេក្រង់ ហើយផ្លាស់ទីឱ្យលឿនជាងមុននៅពេលចាប់ផ្ដើម។</string>
+    <string name="gesture_trainer_tip_paused">រក្សាម្រាមដៃឱ្យផ្លាស់ទីក្នុងល្បឿនស្មើគ្នា រហូតដល់អ្នកលើក។ កុំបន្ថយល្បឿននៅជិតចុងបញ្ចប់។</string>
+    <string name="gesture_trainer_tip_too_short">ធ្វើចលនាឱ្យវែងជាងមុន ប្រហែល 2 ទៅ 3 សង់ទីម៉ែត្រ។</string>
+    <string name="gesture_trainer_tip_wrong_direction">ពិនិត្យទិសដៅនៅពេលចាប់ផ្ដើមចលនាដំបូងបំផុត។ ការកាន់ទូរសព្ទឱ្យត្រង់នៅពីមុខអ្នកជួយបាន។</string>
+    <string name="gesture_trainer_tip_off_line">ផ្លាស់ទីតែតាមទិសដៅប៉ុណ្ណោះ មិនមែនជាអង្កត់ទ្រូងទេ។ ម្រាមចង្អុលរក្សាបន្ទាត់បានត្រង់ជាងមេដៃ។</string>
+    <string name="gesture_trainer_tip_curved">រក្សាបន្ទាត់ឱ្យត្រង់ ហើយលើកនៅចុងបញ្ចប់តែម្ដង ដោយមិនកោងម្រាមដៃទៅចំហៀងពេលលើក។</string>
+    <string name="gesture_trainer_tip_turn_missing">ប្ដូរទិសដៅភ្លាមៗ ជាមុំកែង ឬត្រឡប់ត្រង់ក្រោយ ដោយមិនលើកម្រាមដៃ។ ផ្នែកនីមួយៗគួរមានប្រហែល 2 សង់ទីម៉ែត្រ។</string>
+    <string name="gesture_trainer_tip_second_part_wrong">បន្ទាប់ពីការបត់ ពិនិត្យមើលថាអ្នកទៅទិសណា៖ ផ្នែកទីពីរត្រូវទៅតាមទិសដៅទីពីរដែលឈ្មោះចលនាបញ្ជាក់។</string>
+    <string name="gesture_trainer_tip_tap_moved">ចុចចុះ និងលើកឡើងត្រង់ៗ ដោយប្រើចុងម្រាមដៃ ដោយមិនរុញ។</string>
+    <string name="gesture_trainer_tip_tap_held_long">ធ្វើការចុចនីមួយៗឱ្យខ្លី៖ ប៉ះ ហើយលើកភ្លាម។</string>
+    <string name="gesture_trainer_tip_hold_too_short">នៅការចុចចុងក្រោយ ទុកម្រាមដៃឱ្យនៅស្ងៀមលើអេក្រង់ពេញរយៈពេលសង្កត់។</string>
+    <string name="gesture_trainer_tip_too_few_taps">រាប់ការចុច ហើយចុចទាំងអស់យ៉ាងលឿនជាប់ៗគ្នា។</string>
+    <string name="gesture_trainer_tip_too_many_taps">រាប់ការចុច។ ម្រាមដៃដែលលោតចេញពីកញ្ចក់បង្កើតការចុចបន្ថែម។</string>
+    <string name="gesture_trainer_tip_taps_too_slow">ចុចឱ្យលឿនជាងមុន៖ ចាប់ផ្ដើមការចុចបន្ទាប់ភ្លាមបន្ទាប់ពីលើក។</string>
+    <string name="gesture_trainer_tip_taps_apart">ចុចនៅកន្លែងដដែលរាល់ពេល។</string>
+    <string name="gesture_trainer_tip_pinch_too_small">ផ្លាស់ទីម្រាមដៃឱ្យឆ្ងាយជាងមុន យ៉ាងហោចណាស់ 1 សង់ទីម៉ែត្រ ចូលជិតគ្នា ឬឃ្លាតពីគ្នា។</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">ច្របាច់គឺម្រាមដៃផ្លាស់ទីចូលជិតគ្នា លាតគឺម្រាមដៃផ្លាស់ទីឃ្លាតពីគ្នា។</string>
+    <string name="gesture_trainer_tip_moved_together">ផ្លាស់ទីតែម្រាមដៃចូលជិត ឬឃ្លាតពីគ្នាប៉ុណ្ណោះ។ កុំរុញដៃទាំងមូលឆ្លងកាត់អេក្រង់។</string>
+    <string name="gesture_trainer_tip_rotate_too_small">បង្វិលឱ្យបានច្រើនជាងមុន ដូចជាការបង្វិលប៊ូតុងមូលមួយភាគបួនជុំ។</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">តាមទ្រនិចនាឡិកា មានន័យថាបង្វិលក្នុងទិសដៅដែលទ្រនិចនាឡិកាទៅ៖ ម្រាមដៃខាងលើផ្លាស់ទីទៅស្ដាំ។</string>
+    <string name="gesture_trainer_tip_scrub_too_short">ធ្វើការអូសទីមួយឱ្យវែងយ៉ាងហោចណាស់ 1 សង់ទីម៉ែត្រ។</string>
+    <string name="gesture_trainer_tip_scrub_no_return">បន្ទាប់ពីការអូសទីមួយ ត្រឡប់មកវិញក្នុងទិសដៅផ្ទុយ មុនពេលលើក។</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">ជូតឱ្យលឿន ទៅ និងមកវិញក្នុងរយៈពេលប្រហែលមួយវិនាទី។</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">ចាប់ផ្ដើមចំគែម ដោយឱ្យចុងម្រាមដៃនៅក្រៅអេក្រង់បន្តិច។</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">ពិនិត្យមើលថាអ្នកចាប់ផ្ដើមនៅពាក់កណ្ដាលណាមួយនៃគែម។</string>
+    <string name="gesture_trainer_tip_edge_too_short">រុញឱ្យឆ្ងាយជាងមុន រហូតដល់អ្នកឮសំឡេងចុច បន្ទាប់មកលើក។</string>
+    <string name="gesture_trainer_tip_edge_too_long">លើកភ្លាមបន្ទាប់ពីសំឡេងចុចទីមួយ មុនសំឡេងចុចទីពីរ។</string>
+    <string name="gesture_trainer_tip_edge_too_slow">រុញចូលឱ្យលឿនជាងមុន ដោយមិនឈប់មុនសំឡេងចុច។</string>
+    <string name="gesture_trainer_tip_edge_sideways">រុញចូលត្រង់ពីគែម ឬត្រង់តាមបណ្ដោយគែម មិនមែនជាអង្កត់ទ្រូងទេ។</string>
+    <string name="gesture_trainer_tip_corner_missed">ដាក់ម្រាមដៃចំជ្រុង ដោយប៉ះគែមទាំងពីរ។</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">លើកឱ្យលឿនជាងមុន បន្ទាប់ពីប៉ះជ្រុង។</string>
+    <string name="gesture_trainer_close_to_limit">ជិតដល់ដែនកំណត់៖ <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">ការអូសចាប់ផ្ដើមយឺត។ <xliff:g id="setting">%1$s</xliff:g> ដែលវែងជាងអនុញ្ញាតឱ្យចាប់ផ្ដើមយឺតជាង។</string>
+    <string name="gesture_trainer_advice_tap_time">ការចុចយឺត។ <xliff:g id="setting">%1$s</xliff:g> ដែលវែងជាងអនុញ្ញាតឱ្យចុចយឺតជាង។</string>
+    <string name="gesture_trainer_advice_edge_width">ការអូសចាប់ផ្ដើមឆ្ងាយពេកពីគែម។ <xliff:g id="setting">%1$s</xliff:g> ដែលធំជាងក៏ធ្វើឱ្យការអូសដែលចាប់ផ្ដើមនៅជិតគែម ក្លាយជាការអូសពីគែមដែរ។</string>
+    <string name="gesture_trainer_advice_corner_size">ការចុចប៉ះចុះនៅក្រៅជ្រុង។ <xliff:g id="setting">%1$s</xliff:g> ដែលធំជាងធ្វើឱ្យជ្រុងធំជាងមុន។</string>
+    <string name="gesture_trainer_advice_corner_time">ការចុចជ្រុងយឺត។ <xliff:g id="setting">%1$s</xliff:g> ដែលវែងជាងអនុញ្ញាតឱ្យចុចយឺតជាង។</string>
+    <string name="gesture_trainer_menu_option">ជម្រើស <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>៖ ជ្រើសរើសធាតុ <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">រុញម្រាមដៃមួយឡើងលើ ឬចុះក្រោម<xliff:g id="edge">%1$s</xliff:g> យ៉ាងហោចណាស់ <xliff:g id="distance">%2$d</xliff:g> មីលីម៉ែត្រ ដើម្បីបើកម៉ឺនុយ។ វាមានធាតុ <xliff:g id="count">%3$d</xliff:g> ពីលើចុះក្រោម ធាតុនីមួយៗខ្ពស់ប្រហែល <xliff:g id="size">%6$s</xliff:g> សង់ទីម៉ែត្រ។ ធាតុ <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, នៅចម្ងាយ <xliff:g id="from">%7$s</xliff:g> ដល់ <xliff:g id="to">%8$s</xliff:g> សង់ទីម៉ែត្រពីផ្នែកខាងលើនៃអេក្រង់។ លើកម្រាមដៃពេលធាតុត្រូវបាននិយាយ។</string>
+    <string name="gesture_trainer_menu_sample">គែមនេះគ្មានម៉ឺនុយទេ។ លំហាត់នេះប្រើធាតុគំរូ <xliff:g id="count">%1$d</xliff:g>។</string>
+    <string name="gesture_trainer_try_menu_cancelled">លើកទី <xliff:g id="number">%1$d</xliff:g>៖ ម៉ឺនុយបានបិទដោយគ្មានការជ្រើសរើស។</string>
+    <string name="gesture_trainer_try_menu_other">លើកទី <xliff:g id="number">%1$d</xliff:g>៖ បានជ្រើសរើស <xliff:g id="item">%2$s</xliff:g>។</string>
+    <string name="gesture_trainer_measure_menu_item">បានលើកនៅធាតុ <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">ម្រាមដៃបានចាប់ផ្ដើមនៅខាងលើបំផុត ឬខាងក្រោមបំផុតនៃគែម ជាកន្លែងដែលមានជ្រុង និងគែមខាងលើ និងខាងក្រោម។</string>
+    <string name="gesture_trainer_finding_menu_left_edge">ម្រាមដៃបានលើក <xliff:g id="mm">%1$.0f</xliff:g> មីលីម៉ែត្រពីគែម ហើយម៉ឺនុយបិទនៅពេលហួស <xliff:g id="limit">%2$.0f</xliff:g> មីលីម៉ែត្រ។</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">ម្រាមដៃបានលើកនៅធាតុ <xliff:g id="item">%1$d</xliff:g> ជំនួសឱ្យធាតុ <xliff:g id="target">%2$d</xliff:g>។</string>
+    <string name="gesture_trainer_tip_menu_in_corner">ចាប់ផ្ដើមឱ្យឆ្ងាយបន្តិចពីចុងខាងលើ និងខាងក្រោមនៃគែម។</string>
+    <string name="gesture_trainer_tip_menu_left_edge">រក្សាម្រាមដៃឱ្យនៅជិតគែមពេលអ្នករុញ ហើយលើកវានៅទីនោះ។</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">ធាតុនីមួយៗមានទីតាំងថេរតាមបណ្ដោយគែម ហើយធាតុដែលម្រាមដៃលើកត្រូវបានជ្រើសរើស។ លើកពេលធាតុត្រូវបាននិយាយ។</string>
+    <string name="gesture_trainer_contents">មាតិកា</string>
+    <string name="gesture_trainer_contents_heading">មាតិកា៖ <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">រួចរាល់ បានស្គាល់ <xliff:g id="hits">%1$d</xliff:g> ក្នុងចំណោម <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">ចុច និងអូស</string>
+    <string name="gesture_trainer_group_edge_swipes">ការអូសពីគែម</string>
+    <string name="gesture_trainer_group_along_edges">ការរុញតាមបណ្ដោយគែម</string>
+    <string name="gesture_trainer_group_edge_menus">ម៉ឺនុយគែម</string>
+    <string name="gesture_trainer_group_corners">ជ្រុង</string>
+    <string name="gesture_trainer_group_back_tap">ការចុចលើខ្នងឧបករណ៍</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">ការចុចដោយម្រាមដៃ 2 ដែលបន្តដោយការអូសដោយម្រាមដៃ 2 ត្រូវបានរំលង៖ <xliff:g id="setting">%1$s</xliff:g> កំពុងបិទ។</string>
+    <string name="gesture_trainer_how_swipe_hold">បន្ទាប់មក ដោយមិនលើក ទុកម្រាមដៃឱ្យនៅស្ងៀមយ៉ាងហោចណាស់ <xliff:g id="hold">%1$d</xliff:g> ms រួចលើក។</string>
+    <string name="gesture_trainer_half_top">ខាងលើ</string>
+    <string name="gesture_trainer_half_bottom">ខាងក្រោម</string>
+    <string name="gesture_trainer_how_taps_half">ចុចនៅពាក់កណ្ដាល<xliff:g id="half">%1$s</xliff:g>នៃអេក្រង់។ ចំណុចរវាងម្រាមដៃកំណត់ពាក់កណ្ដាល។</string>
+    <string name="gesture_trainer_same_fingers">ម្រាមដៃដដែល</string>
+    <string name="gesture_trainer_how_tap_swipe">ចុច<xliff:g id="taps">%1$s</xliff:g>ដោយ<xliff:g id="fingers">%2$s</xliff:g>។ ភ្លាមបន្ទាប់ពីការចុចចុងក្រោយ ក្នុងរយៈពេល <xliff:g id="gap">%3$d</xliff:g> ms ប៉ះអេក្រង់ម្ដងទៀតដោយ<xliff:g id="swipe_fingers">%4$s</xliff:g> ហើយរុញ<xliff:g id="direction">%5$s</xliff:g>ជាបន្ទាត់ត្រង់ប្រហែល 2 ទៅ 3 សង់ទីម៉ែត្រ រួចលើក។</string>
+    <string name="gesture_trainer_how_corner_hold">នៅការចុចចុងក្រោយ ទុកម្រាមដៃនៅជ្រុងឱ្យនៅស្ងៀម យ៉ាងហោចណាស់ <xliff:g id="hold">%1$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_how_back_tap">កាន់ទូរសព្ទក្នុងដៃ ត្រង់ចំហៀងរបស់វា ហើយចុចកណ្ដាលខ្នងរបស់វា<xliff:g id="taps">%1$s</xliff:g>ដោយចុងម្រាមដៃ ឱ្យណែន និងលឿន ដូចជាគោះទ្វារ។ ចុចឱ្យជាប់ៗគ្នា៖ យ៉ាងច្រើន <xliff:g id="gap">%2$d</xliff:g> ms រវាងការចុច។ កុំប៉ះអេក្រង់ពេលអ្នកចុច។</string>
+    <string name="gesture_trainer_back_tap_info">ការចុចលើខ្នងឧបករណ៍មិនដំណើរការពាក្យបញ្ជាណាមួយក្នុងអំឡុងលំហាត់ទេ។ <xliff:g id="setting">%1$s</xliff:g> កំណត់ថាការចុចត្រូវខ្លាំងប៉ុណ្ណា។</string>
+    <string name="gesture_trainer_go_placed">ធ្វើចលនានេះ <xliff:g id="tries">%1$d</xliff:g> ដង។</string>
+    <string name="gesture_trainer_along_left">គែមខាងឆ្វេង</string>
+    <string name="gesture_trainer_along_right">គែមខាងស្ដាំ</string>
+    <string name="gesture_trainer_along_top">គែមខាងលើ</string>
+    <string name="gesture_trainer_along_bottom">គែមខាងក្រោម</string>
+    <string name="gesture_trainer_left_out_along_menu">ការរុញតាមបណ្ដោយ<xliff:g id="edge">%1$s</xliff:g> ត្រូវបានរំលង៖ វាមានម៉ឺនុយគែម ដូច្នេះការរុញតាមបណ្ដោយវាបើកម៉ឺនុយ ជំនួសឱ្យការដំណើរការចលនា។</string>
+    <string name="gesture_trainer_left_out_along_scroll">ការរុញតាមបណ្ដោយ<xliff:g id="edge">%1$s</xliff:g> ត្រូវបានរំលង៖ វារំកិល ដូច្នេះការរុញតាមបណ្ដោយវារំកិលកម្មវិធី ជំនួសឱ្យការដំណើរការចលនា។</string>
+    <string name="gesture_trainer_finding_along_off_edge">ម្រាមដៃបានផ្លាស់ទីឆ្ងាយពេកពីគែម។</string>
+    <string name="gesture_trainer_tip_along_off_edge">រក្សាម្រាមដៃនៅលើគែមបំផុតនៃកញ្ចក់ ត្រង់តាមបណ្ដោយគែម។</string>
+    <string name="gesture_trainer_go_back_tap">ធ្វើចលនាចុចលើខ្នងឧបករណ៍ <xliff:g id="tries">%1$d</xliff:g> ដង។ ការប៉ះអេក្រង់ធ្វើឱ្យការសាកល្បងបរាជ័យ។</string>
+    <string name="gesture_trainer_no_accelerometer">លំហាត់នេះត្រូវការឧបករណ៍វាស់សំទុះ។ មិនមានទេ។</string>
+    <string name="gesture_trainer_measure_hold">នៅស្ងៀម <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">ការចុចដែលមានកម្លាំង <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">ម្រាមដៃនៅស្ងៀម <xliff:g id="ms">%1$d</xliff:g> ms នៅចុងបញ្ចប់ ហើយវាត្រូវតែនៅស្ងៀមយ៉ាងហោចណាស់ <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">ម្រាមដៃបានចុចនៅពាក់កណ្ដាលម្ខាងទៀតនៃអេក្រង់។</string>
+    <string name="gesture_trainer_finding_swipe_missing">គ្មានការអូសបន្ទាប់ពីការចុចទេ។</string>
+    <string name="gesture_trainer_finding_swipe_late">ការអូសបានចាប់ផ្ដើម <xliff:g id="ms">%1$d</xliff:g> ms បន្ទាប់ពីការចុចចុងក្រោយ ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">ការចុចលើខ្នងឧបករណ៍ស្រាលពេក៖ <xliff:g id="percent">%1$d</xliff:g>%% នៃកម្លាំងដែលត្រូវការ។</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">ការចុចមួយបានធ្វើឱ្យទូរសព្ទញ័រទៅចំហៀង ច្រើនជាងឆ្លងកាត់ខ្នងរបស់វា។</string>
+    <string name="gesture_trainer_finding_back_tap_moving">ទូរសព្ទកំពុងផ្លាស់ទីមុនពេលចុច។</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">អេក្រង់ត្រូវបានប៉ះ ហើយការចុចពេលកំពុងប៉ះអេក្រង់មិនត្រូវបានរាប់ទេ។</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms បានកន្លងផុតរវាងការចុចលើខ្នង ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">បន្ទាប់ពីអូស ទុកម្រាមដៃឱ្យនៅស្ងៀមលើអេក្រង់ពេញរយៈពេលសង្កត់។ បន្ទាប់មកលើក។</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">ពិនិត្យមើលថាអ្នកចុចនៅពាក់កណ្ដាលណា៖ កណ្ដាលអេក្រង់បែងចែកពាក់កណ្ដាលខាងលើពីពាក់កណ្ដាលខាងក្រោម។</string>
+    <string name="gesture_trainer_tip_swipe_missing">បន្ទាប់ពីការចុចចុងក្រោយ ប៉ះអេក្រង់ម្ដងទៀតភ្លាម ហើយអូស។</string>
+    <string name="gesture_trainer_tip_swipe_late">ចាប់ផ្ដើមអូសភ្លាមបន្ទាប់ពីការចុចចុងក្រោយ ដោយមិនផ្អាក។</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">ចុចឱ្យខ្លាំងជាងមុន ដោយចុងម្រាមដៃ ឬក្រចក នៅជិតកណ្ដាលខ្នង។</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">ចុចត្រង់ទៅលើខ្នងទូរសព្ទ មិនមែននៅគែមរបស់វា ឬទ្រេតទេ។</string>
+    <string name="gesture_trainer_tip_back_tap_moving">កាន់ទូរសព្ទឱ្យនៅស្ងៀមមួយភ្លែតមុនពេលចុច ហើយកាន់វាឱ្យធូរ ដើម្បីកុំឱ្យដៃរបស់អ្នកធ្វើឱ្យវាផ្លាស់ទី។</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">កុំឱ្យម្រាមដៃប៉ះអេក្រង់ពេលអ្នកចុចខ្នង៖ កាន់ទូរសព្ទត្រង់ចំហៀងរបស់វា។</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">ចុចឱ្យលឿនជាងមុន ការចុចមួយភ្លាមបន្ទាប់ពីមួយទៀត។</string>
+    <string name="gesture_trainer_advice_swipe_hold">ម្រាមដៃលើកលឿនពេកបន្ទាប់ពីអូស។ <xliff:g id="setting">%1$s</xliff:g> ដែលខ្លីជាងអនុញ្ញាតឱ្យសង្កត់ខ្លីជាង។</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">ការចុចលើខ្នងស្រាល។ <xliff:g id="setting">%1$s</xliff:g> ដែលខ្ពស់ជាងរកឃើញការចុចស្រាលជាង ហើយអាចរកឃើញការបុកថាជាការចុច។</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">ម្រាមដៃបានបង្វិល <xliff:g id="degrees">%1$.0f</xliff:g> ដឺក្រេ ហើយចាប់ពី <xliff:g id="limit">%2$.0f</xliff:g> ដឺក្រេ ចលនានោះគឺជាការបង្វិល។</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">ផ្លាស់ទីម្រាមដៃជាបន្ទាត់ត្រង់ចូលជិត ឬឃ្លាតពីគ្នា មិនមែនជាខ្សែកោងជុំវិញគ្នាទេ។</string>
+    <string name="gesture_trainer_finding_other_gesture">ចលនានេះត្រូវនឹងចលនានោះជំនួសវិញ។</string>
+    <string name="gesture_trainer_side_left">ខាងឆ្វេង</string>
+    <string name="gesture_trainer_side_right">ខាងស្ដាំ</string>
+    <string name="gesture_trainer_side_top">ខាងលើ</string>
+    <string name="gesture_trainer_side_bottom">ខាងក្រោម</string>
+    <string name="gesture_trainer_finding_wrong_edge">ម្រាមដៃបានចាប់ផ្ដើមនៅគែម<xliff:g id="side">%1$s</xliff:g> ហើយលំហាត់នេះនៅគែម<xliff:g id="expected">%2$s</xliff:g>។</string>
+    <string name="gesture_trainer_tip_wrong_edge">ចាប់ផ្ដើមចំគែមដែលលំហាត់បញ្ជាក់។</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">ម៉ឺនុយគែមបានបើក ជំនួសឱ្យចលនានេះ។</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">ការរុញតាមបណ្ដោយគែមដែលមានម៉ឺនុយ បើកម៉ឺនុយនោះ។ ចាប់ផ្ដើមនៅគែមដែលលំហាត់បញ្ជាក់។</string>
+    <string name="gesture_trainer_group_three_part">ការអូសបីផ្នែក</string>
+    <string name="gesture_trainer_group_two_stroke">ការអូសពីរជំហាន</string>
+    <string name="gesture_trainer_group_shake">អ្រងួន</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">ការអូសបីផ្នែកត្រូវបានរំលង៖ <xliff:g id="setting">%1$s</xliff:g> កំពុងបើក។</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">ការអូសពីរជំហានត្រូវបានរំលង៖ <xliff:g id="setting">%1$s</xliff:g> គឺ <xliff:g id="value">%2$s</xliff:g>។</string>
+    <string name="gesture_trainer_shake_info">ការអ្រងួនមិនដំណើរការពាក្យបញ្ជាណាមួយក្នុងអំឡុងលំហាត់ទេ។ <xliff:g id="setting">%1$s</xliff:g> កំណត់ថាការអ្រងួនត្រូវខ្លាំងប៉ុណ្ណា។</string>
+    <string name="gesture_trainer_go_shake">អ្រងួនទូរសព្ទ <xliff:g id="tries">%1$d</xliff:g> ដង ដោយផ្អាកបន្តិចបន្ទាប់ពីការអ្រងួននីមួយៗ។</string>
+    <string name="gesture_trainer_how_shake">កាន់ទូរសព្ទឱ្យណែន ហើយអ្រងួនវាយ៉ាងលឿនទៅមក ដូចជាកំពុងរលាស់ដំណក់ទឹក៖ យ៉ាងហោចណាស់ពីរដងក្នុងទិសដៅនីមួយៗ ទាំងអស់ក្នុងរយៈពេលប្រហែលពីរភាគបីវិនាទី។ បន្ទាប់មកកាន់វាឱ្យនៅស្ងៀម។</string>
+    <string name="gesture_trainer_how_two_stroke">អូស<xliff:g id="first">%1$s</xliff:g>ដោយម្រាមដៃមួយ ប្រហែល 2 សង់ទីម៉ែត្រ ហើយលើក។ បន្ទាប់មកភ្លាម ក្នុងរយៈពេល <xliff:g id="time">%3$d</xliff:g> ms អូស<xliff:g id="second">%2$s</xliff:g>ដោយម្រាមដៃមួយ ប្រហែល 2 សង់ទីម៉ែត្រ ហើយលើក។</string>
+    <string name="gesture_trainer_how_three_part">ប៉ះអេក្រង់ដោយម្រាមដៃមួយ ហើយដោយមិនលើក អូស<xliff:g id="first">%1$s</xliff:g> បន្ទាប់មកបត់ភ្លាមៗ ហើយអូស<xliff:g id="second">%2$s</xliff:g> បន្ទាប់មកបត់ភ្លាមៗម្ដងទៀត ហើយអូស<xliff:g id="third">%3$s</xliff:g> ផ្នែកនីមួយៗប្រហែល 2 សង់ទីម៉ែត្រ រួចលើក។ ធ្វើវាជាចលនាតែមួយដែលលឿន និងរលូន មានជ្រុងមុត មិនមែនខ្សែកោងទេ។</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">ដាក់ម្រាមដៃមួយនៅមួយភាគបីខាងលើនៃអេក្រង់ និងម្រាមដៃមួយទៀតនៅមួយភាគបីខាងក្រោម ឧទាហរណ៍ មេដៃនៅខាងក្រោម និងម្រាមចង្អុលនៅខាងលើ។</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">ម្រាមដៃមិនមែនមួយនៅមួយភាគបីខាងលើនៃអេក្រង់ និងមួយទៀតនៅមួយភាគបីខាងក្រោមទេ។</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">គ្មានការអូសលើកទីពីរទេ។</string>
+    <string name="gesture_trainer_finding_second_stroke_late">ការអូសលើកទីពីរបានចាប់ផ្ដើម <xliff:g id="ms">%1$d</xliff:g> ms បន្ទាប់ពីលើកទីមួយ ហើយអនុញ្ញាតយ៉ាងច្រើន <xliff:g id="limit">%2$d</xliff:g> ms។</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">ការអូសលើកទីមួយបានទៅ<xliff:g id="direction">%1$s</xliff:g>។</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">ការអូសលើកទីពីរបានទៅ<xliff:g id="direction">%1$s</xliff:g>។</string>
+    <string name="gesture_trainer_finding_shake_too_light">ការអ្រងួនស្រាលពេក៖ <xliff:g id="percent">%1$d</xliff:g>%% នៃកម្លាំងដែលត្រូវការ។</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">ការយោលទៅមក៖ <xliff:g id="swings">%1$d</xliff:g> ក្នុងចំណោម <xliff:g id="wanted">%2$d</xliff:g> ដែលត្រូវការ។</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">លាតម្រាមដៃឱ្យឃ្លាតពីគ្នាឆ្ងាយ មួយនៅជិតគែមខាងលើ និងមួយនៅជិតគែមខាងក្រោម។</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">បន្ទាប់ពីការអូសលើកទីមួយ លើកម្រាមដៃ ហើយអូសម្ដងទៀតភ្លាម។</string>
+    <string name="gesture_trainer_tip_second_stroke_late">ចាប់ផ្ដើមការអូសលើកទីពីរភ្លាមបន្ទាប់ពីលើកម្រាមដៃ។</string>
+    <string name="gesture_trainer_tip_shake_too_light">អ្រងួនឱ្យខ្លាំង និងលឿនជាងមុន។</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">អ្រងួនឱ្យលឿនជាងមុន ទៅមកយ៉ាងហោចណាស់ពីរដងក្នុងទិសដៅនីមួយៗ ដោយមិនឈប់នៅចន្លោះ។</string>
+    <string name="gesture_trainer_measure_shake_strength">ចលនាខ្លាំងបំផុត <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">ការអ្រងួនស្រាល។ <xliff:g id="setting">%1$s</xliff:g> ដែលខ្ពស់ជាងរកឃើញការអ្រងួនស្រាលជាង ហើយអាចរកឃើញការកាន់ទូរសព្ទដើរថាជាការអ្រងួន។</string>
+    <string name="gesture_trainer_advice_two_stroke_time">ការអូសលើកទីពីរចាប់ផ្ដើមយឺត។ <xliff:g id="setting">%1$s</xliff:g> ដែលវែងជាងអនុញ្ញាតឱ្យការអូសលើកទីពីរចាប់ផ្ដើមយឺតជាង ហើយការអូសតែមួយនឹងរង់ចាំយូរជាងមុនមុនពេលដំណើរការ។</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> កំពុងបើក។</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> កំពុងបិទ៖ ការអូសដោយម្រាមដៃ 2 រំកិលកម្មវិធី ហើយការជូតភាគច្រើនក៏រំកិលដែរ។ ពេលការកំណត់នេះបើក ការអូសដោយម្រាមដៃ 2 ដំណើរការពាក្យបញ្ជា SandFly ជំនួសឱ្យការរំកិល។</string>
+    <string name="gesture_trainer_measure_first_stroke">ការអូសលើកទីមួយ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">ការអូសលើកទីពីរ <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">ចលនាទាំងមូល <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">បានលើក <xliff:g id="ms">%1$d</xliff:g> ms រវាងការអូសទាំងពីរ</string>
+</resources>

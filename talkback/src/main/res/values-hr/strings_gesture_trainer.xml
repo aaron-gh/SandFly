@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Trener pokreta</string>
+    <string name="gesture_trainer_intro">Odaberite skupinu pokreta. Svaka vježba opisuje jedan pokret. Napravite pokret <xliff:g id="tries">%1$d</xliff:g> puta; rezultat svakog pokušaja izgovara se. Nakon zadnjeg pokušaja zaslon navodi mjerenja svakog pokušaja, što promijeniti i povezane postavke.</string>
+    <string name="gesture_trainer_group_one_finger">Jedan prst</string>
+    <string name="gesture_trainer_group_two_fingers">Dva prsta</string>
+    <string name="gesture_trainer_group_three_fingers">Tri prsta</string>
+    <string name="gesture_trainer_group_four_fingers">Četiri prsta</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Stiskanje, zakretanje i trljanje</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, broj vježbi: <xliff:g id="count">%2$d</xliff:g></string>
+    <string name="gesture_trainer_close">Zatvori</string>
+    <string name="gesture_trainer_no_detection">Trener pokreta zahtijeva Android 13 ili noviji.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Pokreti naprijed-natrag i kutni pokreti izostavljeni su: postavka <xliff:g id="setting">%1$s</xliff:g> je uključena.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Prelasci s dva prsta izostavljeni su: postavka <xliff:g id="setting">%1$s</xliff:g> je isključena, pa oni pomiču sadržaj aplikacija.</string>
+    <string name="gesture_trainer_exercise_heading">Vježba <xliff:g id="number">%1$d</xliff:g> od <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Započni</string>
+    <string name="gesture_trainer_skip">Preskoči ovu vježbu</string>
+    <string name="gesture_trainer_back_to_groups">Natrag na skupine</string>
+    <string name="gesture_trainer_go">Napravite pokret <xliff:g id="tries">%1$d</xliff:g> puta, bilo gdje na zaslonu. Svaki dodir je jedan pokušaj.</string>
+    <string name="gesture_trainer_fingers_1">jednim prstom</string>
+    <string name="gesture_trainer_fingers_2">s dva prsta jedan do drugog, oko 1 cm razmaka</string>
+    <string name="gesture_trainer_fingers_3">s tri prsta jedan do drugog, malo razmaknuta</string>
+    <string name="gesture_trainer_fingers_4">s četiri prsta jedan do drugog, malo razmaknuta</string>
+    <string name="gesture_trainer_direction_up">prema gore</string>
+    <string name="gesture_trainer_direction_down">prema dolje</string>
+    <string name="gesture_trainer_direction_left">ulijevo</string>
+    <string name="gesture_trainer_direction_right">udesno</string>
+    <string name="gesture_trainer_how_swipe">Dodirnite zaslon <xliff:g id="fingers">%1$s</xliff:g> i bez čekanja prijeđite <xliff:g id="direction">%2$s</xliff:g> u ravnoj crti oko 2 do 3 cm, zatim podignite. Krenite odmah: prst koji najprije miruje pokreće istraživanje dodirom.</string>
+    <string name="gesture_trainer_how_swipe_multi">Spustite prste zajedno, u istom trenutku, i pomičite ih sve u istom smjeru. Svaki prst mora cijelo vrijeme ići <xliff:g id="direction">%1$s</xliff:g>, zato držite crtu ravnom.</string>
+    <string name="gesture_trainer_how_back_and_forth">Dodirnite zaslon jednim prstom i prijeđite <xliff:g id="first">%1$s</xliff:g> oko 2 cm, zatim bez podizanja idite ravno natrag <xliff:g id="second">%2$s</xliff:g> oko 2 cm i podignite prst. Napravite to jednim brzim, glatkim pokretom.</string>
+    <string name="gesture_trainer_how_angle">Dodirnite zaslon <xliff:g id="fingers">%1$s</xliff:g> i prijeđite <xliff:g id="first">%2$s</xliff:g> oko 2 cm, zatim bez podizanja oštro skrenite i prijeđite <xliff:g id="second">%3$s</xliff:g> oko 2 cm te podignite. Skretanje neka bude oštar kut, kao slovo L, a ne luk.</string>
+    <string name="gesture_trainer_taps_1">jednom</string>
+    <string name="gesture_trainer_taps_2">dvaput</string>
+    <string name="gesture_trainer_taps_3">triput</string>
+    <string name="gesture_trainer_taps_4">četiri puta</string>
+    <string name="gesture_trainer_how_taps">Dodirnite <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Spustite prste zajedno i podignite ih zajedno, brzo, bez klizanja.</string>
+    <string name="gesture_trainer_how_taps_quick">Dodiri neka budu brzi i na istom mjestu: sljedeći dodir mora doći unutar <xliff:g id="gap">%1$d</xliff:g> ms od prethodnog.</string>
+    <string name="gesture_trainer_how_hold">Dodirnite zaslon <xliff:g id="fingers">%1$s</xliff:g> istodobno i držite prste mirno, bez klizanja, najmanje <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Ako nije dodijeljena druga naredba, ovaj pokret isključuje SandFly. U treneru ne pokreće ništa.</string>
+    <string name="gesture_trainer_how_taps_hold">Dodirnite <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>, a pri zadnjem dodiru ostavite prste mirno na zaslonu najmanje <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Upotrijebite palac, kažiprst i srednji prst.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Postavite kažiprst i srednji prst jedan do drugog, a palac i prstenjak nekoliko centimetara dalje sa svake strane. Zatim spojite sva četiri vrha prstiju u jednu točku.</string>
+    <string name="gesture_trainer_how_pinch">Stavite <xliff:g id="fingers">%1$d</xliff:g> prsta na zaslon, široko razmaknuta. Zatim ih pomaknite ravno jedan prema drugom za najmanje 1 cm, kao da nešto podižete, i podignite ih sa zaslona. Pomičite samo prste, ne cijelu ruku, i ne u luku.</string>
+    <string name="gesture_trainer_how_spread">Stavite <xliff:g id="fingers">%1$d</xliff:g> prsta na zaslon, blizu jedan drugog. Zatim ih razmaknite ravno za najmanje 1 cm i podignite ih sa zaslona. Pomičite samo prste, ne cijelu ruku, i ne u luku.</string>
+    <string name="gesture_trainer_clockwise">u smjeru kazaljke na satu</string>
+    <string name="gesture_trainer_counterclockwise">u smjeru suprotnom od kazaljke na satu</string>
+    <string name="gesture_trainer_how_rotate">Stavite dva prsta na zaslon, oko 2 do 3 cm razmaknuta, i zakrenite ih <xliff:g id="way">%1$s</xliff:g> oko njihove sredine, kao da okrećete gumb, otprilike za četvrtinu okreta. Zatim podignite.</string>
+    <string name="gesture_trainer_how_scrub">Stavite dva prsta na zaslon i brzo ih pomaknite u stranu oko 2 cm i natrag, kao da nešto brišete gumicom, sve unutar otprilike jedne sekunde. Zatim podignite.</string>
+    <string name="gesture_trainer_edge_bottom">uz donji rub</string>
+    <string name="gesture_trainer_edge_top_left">uz gornji rub, u njegovoj lijevoj polovici</string>
+    <string name="gesture_trainer_edge_top_right">uz gornji rub, u njegovoj desnoj polovici</string>
+    <string name="gesture_trainer_edge_left_top">uz lijevi rub, u njegovoj gornjoj polovici</string>
+    <string name="gesture_trainer_edge_left_bottom">uz lijevi rub, u njegovoj donjoj polovici</string>
+    <string name="gesture_trainer_edge_right_top">uz desni rub, u njegovoj gornjoj polovici</string>
+    <string name="gesture_trainer_edge_right_bottom">uz desni rub, u njegovoj donjoj polovici</string>
+    <string name="gesture_trainer_edge_left">uz lijevi rub</string>
+    <string name="gesture_trainer_edge_right">uz desni rub</string>
+    <string name="gesture_trainer_edge_top">uz gornji rub</string>
+    <string name="gesture_trainer_how_edge">Stavite jedan prst <xliff:g id="edge">%1$s</xliff:g>, najviše <xliff:g id="edge_width">%2$d</xliff:g> mm od ruba, i prijeđite <xliff:g id="direction">%3$s</xliff:g> prema zaslonu do prvog klika, oko <xliff:g id="distance">%4$d</xliff:g> mm. Zatim odmah podignite: nakon drugog klika prelazak je dugi prelazak.</string>
+    <string name="gesture_trainer_how_edge_long">Stavite jedan prst <xliff:g id="edge">%1$s</xliff:g>, najviše <xliff:g id="edge_width">%2$d</xliff:g> mm od ruba, i prijeđite <xliff:g id="direction">%3$s</xliff:g> prema zaslonu preko prvog klika do drugog, oko <xliff:g id="distance">%4$d</xliff:g> mm. Zatim podignite.</string>
+    <string name="gesture_trainer_how_along">Prijeđite jednim prstom <xliff:g id="direction">%2$s</xliff:g> duž <xliff:g id="edge">%1$s</xliff:g>, najmanje <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">gornjem lijevom</string>
+    <string name="gesture_trainer_corner_top_right">gornjem desnom</string>
+    <string name="gesture_trainer_corner_bottom_left">donjem lijevom</string>
+    <string name="gesture_trainer_corner_bottom_right">donjem desnom</string>
+    <string name="gesture_trainer_how_corner">Dodirnite <xliff:g id="taps">%1$s</xliff:g> u <xliff:g id="corner">%2$s</xliff:g> kutu zaslona. Stavite prst točno u kut, najviše <xliff:g id="size">%3$d</xliff:g> mm od oba ruba, i brzo ga podignite, unutar <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Uz veće kutove dodir kontrole blizu kuta, na primjer Natrag gore lijevo, može umjesto toga pokrenuti pokret kuta.</string>
+    <string name="gesture_trainer_rating_precise">prepoznato, precizno</string>
+    <string name="gesture_trainer_rating_good">prepoznato, dobro</string>
+    <string name="gesture_trainer_rating_borderline">prepoznato, ali blizu granice</string>
+    <string name="gesture_trainer_try_recognized">Pokušaj <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Pokušaj <xliff:g id="number">%1$d</xliff:g>: nije prepoznato.</string>
+    <string name="gesture_trainer_try_other">Pokušaj <xliff:g id="number">%1$d</xliff:g>: prepoznato kao <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: prepoznato <xliff:g id="recognized">%2$d</xliff:g> od <xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Vaši pokušaji</string>
+    <string name="gesture_trainer_results_change">Što promijeniti</string>
+    <string name="gesture_trainer_results_close">Blizu granice</string>
+    <string name="gesture_trainer_results_all_good">Svi pokušaji prepoznati su unutar granica.</string>
+    <string name="gesture_trainer_results_settings">Postavke koje mogu pomoći</string>
+    <string name="gesture_trainer_next">Sljedeća vježba</string>
+    <string name="gesture_trainer_repeat">Ponovi</string>
+    <string name="gesture_trainer_finish">Završi</string>
+    <string name="gesture_trainer_group_done">Završili ste sve vježbe u skupini <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Promijeni: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">trajalo <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">duljina <xliff:g id="cm">%1$.1f</xliff:g> cm</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm u sekundi</string>
+    <string name="gesture_trainer_measure_angle">odstupanje od ravne crte <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_start">prvi centimetar za <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">prsti su dodirnuli zaslon s razmakom od <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">dodir od <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms između dodira</string>
+    <string name="gesture_trainer_measure_spread">prsti su se pomaknuli <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">zakretanje <xliff:g id="degrees">%1$.0f</xliff:g>°</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm od rubova kuta</string>
+    <string name="gesture_trainer_measure_edge">početak <xliff:g id="mm">%1$.0f</xliff:g> mm od ruba</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Prsti na zaslonu: <xliff:g id="fingers">%1$d</xliff:g> umjesto <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Prsti su dodirnuli zaslon s razmakom od <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Jedan prst podignut je prije nego što su svi prsti bili spušteni.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Prsti su podignuti s razmakom od <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Prst je predugo mirovao ili se na početku kretao presporo, pa je dodir postao istraživanje dodirom.</string>
+    <string name="gesture_trainer_finding_slow_start">Prvi centimetar trajao je <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Prst je usporio na <xliff:g id="ms">%1$d</xliff:g> ms, a svaki centimetar smije trajati najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Kretanje je bilo samo <xliff:g id="mm">%1$.0f</xliff:g> mm, a mora biti najmanje <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Prst je krenuo <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Prsti su krenuli <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Putanja je odstupila od ravne crte za <xliff:g id="degrees">%1$.0f</xliff:g>°, a dopušteno je najviše <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_curved">Broj dijelova putanje: <xliff:g id="parts">%1$d</xliff:g> umjesto <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Skretanje nije pronađeno.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Nakon skretanja prst je otišao <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Prst je tijekom dodira kliznuo <xliff:g id="mm">%1$.1f</xliff:g> mm, a dopušteno je najviše <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Dodir je trajao <xliff:g id="ms">%1$d</xliff:g> ms, dulje od <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Zadnji dodir zadržan je <xliff:g id="ms">%1$d</xliff:g> ms, a mora biti najmanje <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps">Dodiri: <xliff:g id="taps">%1$d</xliff:g> umjesto <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps">Dodiri: <xliff:g id="taps">%1$d</xliff:g> umjesto <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Između dodira prošlo je <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Dodiri su bili <xliff:g id="mm">%1$.0f</xliff:g> mm razmaknuti, a dopušteno je najviše <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Prsti su se pomaknuli samo <xliff:g id="mm">%1$.0f</xliff:g> mm, a moraju se pomaknuti najmanje <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Prsti su se pomaknuli u suprotnom smjeru.</string>
+    <string name="gesture_trainer_finding_moved_together">Cijela ruka kliznula je <xliff:g id="mm">%1$.0f</xliff:g> mm po zaslonu, više nego što su se prsti primaknuli ili odmaknuli.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Prsti su se zakrenuli samo <xliff:g id="degrees">%1$.0f</xliff:g>°, a moraju se zakrenuti najmanje <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Prsti su se zakrenuli u suprotnom smjeru.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Prvi potez bio je <xliff:g id="mm">%1$.0f</xliff:g> mm, a mora biti najmanje <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Potez natrag bio je <xliff:g id="mm">%1$.0f</xliff:g> mm, a mora biti najmanje <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Trljanje je trajalo <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Prst je dodirnuo zaslon <xliff:g id="mm">%1$.0f</xliff:g> mm od ruba, a rub je širok <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Prst je počeo u drugoj polovici ruba.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Prst je kliznuo <xliff:g id="mm">%1$.0f</xliff:g> mm, a mora kliznuti najmanje <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Predugi prelazak: prst je prešao drugi klik, <xliff:g id="mm">%1$.0f</xliff:g> mm, a drugi klik je na <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Dolazak do klika trajao je <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Prelazak je skrenuo u stranu za <xliff:g id="degrees">%1$.0f</xliff:g>°, a dopušteno je najviše <xliff:g id="limit">%2$.0f</xliff:g>°.</string>
+    <string name="gesture_trainer_finding_corner_missed">Dodir je bio <xliff:g id="mm">%1$.0f</xliff:g> mm od rubova kuta, a kut je <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Dodir kuta trajao je <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Nije otkriveno kretanje koje odgovara pokretu.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Provjerite koliko prstiju dodiruje staklo. Računa se i dlan ili drugi prst koji počiva na zaslonu.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Spustite sve prste u istom trenutku, kao jednu ruku, a ne jedan za drugim.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Najprije spustite sve prste, zatim ih pomaknite ili podignite.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Podignite sve prste u istom trenutku.</string>
+    <string name="gesture_trainer_tip_slow_start">Krenite čim dodirnete zaslon i na početku se krećite brže.</string>
+    <string name="gesture_trainer_tip_paused">Pomičite prst ujednačenom brzinom dok ga ne podignete. Ne usporavajte pred kraj.</string>
+    <string name="gesture_trainer_tip_too_short">Produljite pokret, na oko 2 do 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Provjerite smjer na samom početku pokreta. Pomaže držati telefon ravno ispred sebe.</string>
+    <string name="gesture_trainer_tip_off_line">Krećite se samo u zadanom smjeru, ne dijagonalno. Kažiprst drži ravniju crtu od palca.</string>
+    <string name="gesture_trainer_tip_curved">Držite crtu ravnom i podignite prst točno na kraju, bez zakretanja prsta u stranu pri podizanju.</string>
+    <string name="gesture_trainer_tip_turn_missing">Promijenite smjer oštro, pod pravim kutom ili ravno natrag, bez podizanja. Svaki dio neka bude oko 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Nakon skretanja provjerite kamo idete: drugi dio mora ići u drugi smjer koji pokret navodi.</string>
+    <string name="gesture_trainer_tip_tap_moved">Dodirujte ravno dolje i gore, vrhom prsta, bez klizanja.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Svaki dodir neka bude kratak: dodirnite i odmah podignite.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Pri zadnjem dodiru držite prste mirno na zaslonu cijelo vrijeme zadržavanja.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Brojite dodire i napravite ih sve brzo, u jednom nizu.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Brojite dodire. Prst koji odskoči od stakla stvara dodatni dodir.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Dodirujte brže: sljedeći dodir započnite odmah nakon podizanja.</string>
+    <string name="gesture_trainer_tip_taps_apart">Svaki put dodirnite isto mjesto.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Pomaknite prste dalje, najmanje 1 cm bliže ili dalje jedan od drugog.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Stiskanje znači da se prsti primiču, raširivanje da se razmiču.</string>
+    <string name="gesture_trainer_tip_moved_together">Pomičite samo prste jedan prema drugom ili jedan od drugog. Ne klizite cijelom rukom po zaslonu.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Zakrenite više, kao da gumb okrećete za četvrtinu okreta.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">U smjeru kazaljke na satu znači okretati onako kako se kreću kazaljke sata: gornji prst ide udesno.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Prvi potez neka bude dug najmanje 1 cm.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Nakon prvog poteza vratite se u suprotnom smjeru prije podizanja.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Trljajte brzo, tamo i natrag za otprilike jednu sekundu.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Počnite točno na rubu, s vrhom prsta djelomično izvan zaslona.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Provjerite u kojoj polovici ruba počinjete.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Prijeđite dalje, dok ne čujete klik, zatim podignite.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Podignite prst odmah nakon prvog klika, prije drugog.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Prijeđite prema unutra brže, bez zaustavljanja prije klika.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Prijeđite ravno prema unutra od ruba ili ravno duž njega, ne dijagonalno.</string>
+    <string name="gesture_trainer_tip_corner_missed">Stavite prst točno u kut, tako da dodiruje oba ruba.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Nakon dodira kuta brže podignite prst.</string>
+    <string name="gesture_trainer_close_to_limit">Blizu granice: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Prelasci počinju sporo. Dulja vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> dopušta sporiji početak.</string>
+    <string name="gesture_trainer_advice_tap_time">Dodiri su spori. Dulja vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> dopušta sporije dodire.</string>
+    <string name="gesture_trainer_advice_edge_width">Prelasci počinju predaleko od ruba. Veća vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> također pretvara prelaske koji počinju blizu ruba u prelaske od ruba.</string>
+    <string name="gesture_trainer_advice_corner_size">Dodiri padaju izvan kuta. Veća vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> povećava kutove.</string>
+    <string name="gesture_trainer_advice_corner_time">Dodiri kutova su spori. Dulja vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> dopušta sporije dodire.</string>
+    <string name="gesture_trainer_menu_option">Opcija <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: odaberite stavku <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Prijeđite jednim prstom prema gore ili prema dolje <xliff:g id="edge">%1$s</xliff:g> najmanje <xliff:g id="distance">%2$d</xliff:g> mm da biste otvorili izbornik. Broj stavki: <xliff:g id="count">%3$d</xliff:g>, odozgo prema dolje, svaka visoka oko <xliff:g id="size">%6$s</xliff:g> cm. Stavka <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, nalazi se <xliff:g id="from">%7$s</xliff:g> do <xliff:g id="to">%8$s</xliff:g> cm ispod vrha zaslona. Podignite prst kada se stavka izgovori.</string>
+    <string name="gesture_trainer_menu_sample">Ovaj rub nema izbornik. Vježba koristi oglednih stavki: <xliff:g id="count">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Pokušaj <xliff:g id="number">%1$d</xliff:g>: izbornik se zatvorio bez odabira.</string>
+    <string name="gesture_trainer_try_menu_other">Pokušaj <xliff:g id="number">%1$d</xliff:g>: odabrano <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">podignuto na stavci <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Prst je počeo na samom vrhu ili dnu ruba, gdje su kutovi te gornji i donji rub.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Prst je podignut <xliff:g id="mm">%1$.0f</xliff:g> mm od ruba, a izbornik se zatvara nakon <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Prst je podignut na stavci <xliff:g id="item">%1$d</xliff:g> umjesto na stavci <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Počnite malo dalje od gornjeg i donjeg kraja ruba.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Dok prelazite, držite prst blizu ruba i tamo ga podignite.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Svaka stavka ima stalno mjesto duž ruba, a odabire se stavka na kojoj podignete prst. Podignite prst kada se stavka izgovori.</string>
+    <string name="gesture_trainer_contents">Sadržaj</string>
+    <string name="gesture_trainer_contents_heading">Sadržaj: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">gotovo, prepoznato <xliff:g id="hits">%1$d</xliff:g> od <xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Dodir i prelazak prstom</string>
+    <string name="gesture_trainer_group_edge_swipes">Prelasci od rubova</string>
+    <string name="gesture_trainer_group_along_edges">Prelasci duž rubova</string>
+    <string name="gesture_trainer_group_edge_menus">Izbornici rubova</string>
+    <string name="gesture_trainer_group_corners">Kutovi</string>
+    <string name="gesture_trainer_group_back_tap">Dodir stražnje strane</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Dodiri s dva prsta nakon kojih slijedi prelazak s dva prsta izostavljeni su: postavka <xliff:g id="setting">%1$s</xliff:g> je isključena.</string>
+    <string name="gesture_trainer_how_swipe_hold">Zatim, bez podizanja, držite prst mirno najmanje <xliff:g id="hold">%1$d</xliff:g> ms i podignite ga.</string>
+    <string name="gesture_trainer_half_top">gornjoj</string>
+    <string name="gesture_trainer_half_bottom">donjoj</string>
+    <string name="gesture_trainer_how_taps_half">Dodirnite u <xliff:g id="half">%1$s</xliff:g> polovici zaslona. O polovici odlučuje točka između prstiju.</string>
+    <string name="gesture_trainer_same_fingers">istim prstima</string>
+    <string name="gesture_trainer_how_tap_swipe">Dodirnite <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Odmah nakon zadnjeg dodira, unutar <xliff:g id="gap">%3$d</xliff:g> ms, ponovno dodirnite zaslon <xliff:g id="swipe_fingers">%4$s</xliff:g> i prijeđite <xliff:g id="direction">%5$s</xliff:g> u ravnoj crti oko 2 do 3 cm, zatim podignite.</string>
+    <string name="gesture_trainer_how_corner_hold">Pri zadnjem dodiru ostavite prst mirno u kutu najmanje <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Držite telefon u ruci za bočne strane i dodirnite sredinu njegove stražnje strane <xliff:g id="taps">%1$s</xliff:g> vrhom prsta, čvrsto i brzo, kao da kucate na vrata. Dodiri neka budu blizu jedan drugome: najviše <xliff:g id="gap">%2$d</xliff:g> ms između njih. Ne dodirujte zaslon dok kucate.</string>
+    <string name="gesture_trainer_back_tap_info">Dodiri stražnje strane tijekom vježbe ne pokreću naredbe. <xliff:g id="setting">%1$s</xliff:g> određuje koliko jak dodir mora biti.</string>
+    <string name="gesture_trainer_go_placed">Napravite pokret <xliff:g id="tries">%1$d</xliff:g> puta.</string>
+    <string name="gesture_trainer_along_left">lijevog ruba</string>
+    <string name="gesture_trainer_along_right">desnog ruba</string>
+    <string name="gesture_trainer_along_top">gornjeg ruba</string>
+    <string name="gesture_trainer_along_bottom">donjeg ruba</string>
+    <string name="gesture_trainer_left_out_along_menu">Prelasci duž <xliff:g id="edge">%1$s</xliff:g> izostavljeni su: taj rub ima izbornik ruba, pa prelazak duž njega otvara izbornik umjesto pokretanja pokreta.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Prelasci duž <xliff:g id="edge">%1$s</xliff:g> izostavljeni su: taj rub pomiče sadržaj, pa prelazak duž njega pomiče aplikaciju umjesto pokretanja pokreta.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Prst se previše udaljio od ruba.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Držite prst na samom rubu stakla, ravno duž ruba.</string>
+    <string name="gesture_trainer_go_back_tap">Napravite pokret dodira stražnje strane <xliff:g id="tries">%1$d</xliff:g> puta. Dodir zaslona poništava pokušaj.</string>
+    <string name="gesture_trainer_no_accelerometer">Ova vježba zahtijeva akcelerometar. Nijedan nije dostupan.</string>
+    <string name="gesture_trainer_measure_hold">mirovanje <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">jačina dodira <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Prst je na kraju mirovao <xliff:g id="ms">%1$d</xliff:g> ms, a mora mirovati najmanje <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Prsti su dodirnuli drugu polovicu zaslona.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Nakon dodira nije uslijedio prelazak prstom.</string>
+    <string name="gesture_trainer_finding_swipe_late">Prelazak je počeo <xliff:g id="ms">%1$d</xliff:g> ms nakon zadnjeg dodira, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Dodir stražnje strane preslab: <xliff:g id="percent">%1$d</xliff:g>%% potrebne jačine.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Dodir je zatresao telefon više u stranu nego kroz stražnju stranu.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefon se micao neposredno prije dodira.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Zaslon je bio dodirnut, a dodiri dok je zaslon dodirnut ne računaju se.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Između dodira stražnje strane prošlo je <xliff:g id="ms">%1$d</xliff:g> ms, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Nakon prelaska držite prst mirno na zaslonu cijelo vrijeme zadržavanja. Zatim podignite.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Provjerite u kojoj polovici dodirujete: sredina zaslona dijeli gornju polovicu od donje.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Nakon zadnjeg dodira odmah ponovno dodirnite zaslon i prijeđite prstom.</string>
+    <string name="gesture_trainer_tip_swipe_late">Započnite prelazak odmah nakon zadnjeg dodira, bez stanke.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Dodirujte jače, vrhom prsta ili noktom, blizu sredine stražnje strane.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Dodirujte ravno u stražnju stranu telefona, ne u njegov rub ili pod kutom.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Prije dodira kratko držite telefon mirno, i držite ga labavo tako da ga ruka ne pomiče.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Dok dodirujete stražnju stranu, ne dodirujte zaslon: držite telefon za bočne strane.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Dodirujte brže, jedan dodir odmah za drugim.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Prst se nakon prelaska podiže prerano. Kraća vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> dopušta kraće zadržavanje.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Dodiri stražnje strane su slabi. Viša vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> otkriva slabije dodire, a udarce može otkriti kao dodire.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Prsti su se zakrenuli <xliff:g id="degrees">%1$.0f</xliff:g>°, a od <xliff:g id="limit">%2$.0f</xliff:g>° pokret je zakretanje.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Pomičite prste u ravnoj crti jedan prema drugom ili jedan od drugog, ne u luku jedan oko drugog.</string>
+    <string name="gesture_trainer_finding_other_gesture">Kretanje je umjesto toga odgovaralo tom pokretu.</string>
+    <string name="gesture_trainer_side_left">lijevom</string>
+    <string name="gesture_trainer_side_right">desnom</string>
+    <string name="gesture_trainer_side_top">gornjem</string>
+    <string name="gesture_trainer_side_bottom">donjem</string>
+    <string name="gesture_trainer_finding_wrong_edge">Prst je počeo na <xliff:g id="side">%1$s</xliff:g> rubu, a ova vježba je na <xliff:g id="expected">%2$s</xliff:g> rubu.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Počnite točno na rubu koji vježba navodi.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Umjesto ovog pokreta otvorio se izbornik ruba.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Prelazak duž ruba s izbornikom otvara izbornik. Počnite na rubu koji vježba navodi.</string>
+    <string name="gesture_trainer_group_three_part">Prelasci prstom u tri dijela</string>
+    <string name="gesture_trainer_group_two_stroke">Prelasci prstom u dva poteza</string>
+    <string name="gesture_trainer_group_shake">Protresanje</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Prelasci prstom u tri dijela izostavljeni su: postavka <xliff:g id="setting">%1$s</xliff:g> je uključena.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Prelasci prstom u dva poteza izostavljeni su: postavka <xliff:g id="setting">%1$s</xliff:g> ima vrijednost <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Protresanje tijekom vježbe ne pokreće naredbu. <xliff:g id="setting">%1$s</xliff:g> određuje koliko jako protresanje mora biti.</string>
+    <string name="gesture_trainer_go_shake">Protresite telefon <xliff:g id="tries">%1$d</xliff:g> puta, s kratkom stankom nakon svakog protresanja.</string>
+    <string name="gesture_trainer_how_shake">Čvrsto držite telefon i brzo ga protresite naprijed-natrag, kao da otresate kap vode: najmanje dvaput u svaki smjer, sve unutar otprilike dvije trećine sekunde. Zatim ga držite mirno.</string>
+    <string name="gesture_trainer_how_two_stroke">Prijeđite jednim prstom <xliff:g id="first">%1$s</xliff:g>, oko 2 cm, i podignite. Zatim odmah, unutar <xliff:g id="time">%3$d</xliff:g> ms, prijeđite jednim prstom <xliff:g id="second">%2$s</xliff:g>, oko 2 cm, i podignite.</string>
+    <string name="gesture_trainer_how_three_part">Dodirnite zaslon jednim prstom i bez podizanja prijeđite <xliff:g id="first">%1$s</xliff:g>, zatim oštro skrenite i prijeđite <xliff:g id="second">%2$s</xliff:g>, zatim ponovno oštro skrenite i prijeđite <xliff:g id="third">%3$s</xliff:g>, svaki dio oko 2 cm, i podignite. Napravite to jednim brzim, glatkim pokretom s oštrim kutovima, ne lukovima.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Stavite jedan prst u gornju trećinu zaslona, a drugi u donju trećinu, na primjer palac dolje, a kažiprst gore.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Prsti nisu bili jedan u gornjoj trećini zaslona, a drugi u donjoj trećini.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Nije bilo drugog prelaska.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Drugi prelazak počeo je <xliff:g id="ms">%1$d</xliff:g> ms nakon prvog, a dopušteno je najviše <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Prvi prelazak išao je <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Drugi prelazak išao je <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Protresanje je bilo preslabo: <xliff:g id="percent">%1$d</xliff:g>%% potrebne jačine.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Zamasi naprijed-natrag: <xliff:g id="swings">%1$d</xliff:g> od potrebnih <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Raširite prste daleko jedan od drugog, jedan blizu gornjeg ruba, a drugi blizu donjeg ruba.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Nakon prvog prelaska podignite prst i odmah ponovno prijeđite.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Započnite drugi prelazak odmah nakon podizanja prsta.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Tresite jače i brže.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Tresite brže, naprijed-natrag najmanje dvaput u svaki smjer, bez zaustavljanja između.</string>
+    <string name="gesture_trainer_measure_shake_strength">najjači pokret <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Protresanja su slaba. Viša vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> otkriva slabija protresanja, a nošenje telefona može otkriti kao protresanje.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Drugi prelazak počinje kasno. Dulja vrijednost postavke <xliff:g id="setting">%1$s</xliff:g> dopušta kasniji drugi prelazak, a pojedinačni prelazak tada dulje čeka prije pokretanja.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Postavka <xliff:g id="setting">%1$s</xliff:g> je uključena.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Postavka <xliff:g id="setting">%1$s</xliff:g> je isključena: prelasci s dva prsta pomiču sadržaj aplikacije, a trljanje uglavnom također pomiče. Kada je postavka uključena, prelasci s dva prsta umjesto pomicanja pokreću naredbe SandFlya.</string>
+    <string name="gesture_trainer_measure_first_stroke">prvi prelazak <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">drugi prelazak <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">cijeli pokret <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">podignuto <xliff:g id="ms">%1$d</xliff:g> ms između njih</string>
+</resources>

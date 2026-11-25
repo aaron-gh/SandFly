@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Liigutuste treener</string>
+    <string name="gesture_trainer_intro">Valige liigutuste rühm. Iga harjutus kirjeldab ühte liigutust. Tehke liigutust <xliff:g id="tries">%1$d</xliff:g> korda; iga katse tulemus öeldakse ette. Pärast viimast katset näitab ekraan iga katse mõõtmistulemusi, mida muuta ja seotud seadeid.</string>
+    <string name="gesture_trainer_group_one_finger">Üks sõrm</string>
+    <string name="gesture_trainer_group_two_fingers">Kaks sõrme</string>
+    <string name="gesture_trainer_group_three_fingers">Kolm sõrme</string>
+    <string name="gesture_trainer_group_four_fingers">Neli sõrme</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Kokku-lahku liigutamine, pööramine ja hõõrumine</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> harjutust</string>
+    <string name="gesture_trainer_close">Sule</string>
+    <string name="gesture_trainer_no_detection">Liigutuste treener vajab Android 13 või uuemat versiooni.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Edasi-tagasi ja nurgaga liigutused jäetakse välja: <xliff:g id="setting">%1$s</xliff:g> on sees.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Kahe sõrmega pühkimised jäetakse välja: <xliff:g id="setting">%1$s</xliff:g> on väljas, seega kerivad need rakendusi.</string>
+    <string name="gesture_trainer_exercise_heading">Harjutus <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Alusta</string>
+    <string name="gesture_trainer_skip">Jäta harjutus vahele</string>
+    <string name="gesture_trainer_back_to_groups">Tagasi rühmade juurde</string>
+    <string name="gesture_trainer_go">Tehke liigutust <xliff:g id="tries">%1$d</xliff:g> korda, ükskõik kus ekraanil. Iga puudutus on üks katse.</string>
+    <string name="gesture_trainer_fingers_1">ühe sõrmega</string>
+    <string name="gesture_trainer_fingers_2">kahe kõrvuti sõrmega, umbes 1 cm vahega</string>
+    <string name="gesture_trainer_fingers_3">kolme kõrvuti sõrmega, väikese vahega</string>
+    <string name="gesture_trainer_fingers_4">nelja kõrvuti sõrmega, väikese vahega</string>
+    <string name="gesture_trainer_direction_up">üles</string>
+    <string name="gesture_trainer_direction_down">alla</string>
+    <string name="gesture_trainer_direction_left">vasakule</string>
+    <string name="gesture_trainer_direction_right">paremale</string>
+    <string name="gesture_trainer_how_swipe">Puudutage ekraani <xliff:g id="fingers">%1$s</xliff:g> ja libistage ootamata <xliff:g id="direction">%2$s</xliff:g> sirgjooneliselt umbes 2–3 cm, seejärel tõstke sõrm üles. Alustage liikumist kohe: sõrm, mis esmalt paigal püsib, käivitab puudutusega uurimise.</string>
+    <string name="gesture_trainer_how_swipe_multi">Asetage sõrmed ekraanile koos, samal hetkel, ja liigutage kõiki samas suunas. Iga sõrm peab kogu aeg liikuma <xliff:g id="direction">%1$s</xliff:g>, seega hoidke joon sirge.</string>
+    <string name="gesture_trainer_how_back_and_forth">Puudutage ekraani ühe sõrmega ja libistage <xliff:g id="first">%1$s</xliff:g> umbes 2 cm, seejärel minge sõrme tõstmata otse tagasi <xliff:g id="second">%2$s</xliff:g> umbes 2 cm ja tõstke sõrm üles. Tehke see üheks kiireks sujuvaks liigutuseks.</string>
+    <string name="gesture_trainer_how_angle">Puudutage ekraani <xliff:g id="fingers">%1$s</xliff:g> ja libistage <xliff:g id="first">%2$s</xliff:g> umbes 2 cm, seejärel pöörake sõrme tõstmata järsult ja libistage <xliff:g id="second">%3$s</xliff:g> umbes 2 cm ning tõstke sõrm üles. Tehke pööre teravaks nurgaks nagu L-tähel, mitte kaarena.</string>
+    <string name="gesture_trainer_taps_1">üks kord</string>
+    <string name="gesture_trainer_taps_2">kaks korda</string>
+    <string name="gesture_trainer_taps_3">kolm korda</string>
+    <string name="gesture_trainer_taps_4">neli korda</string>
+    <string name="gesture_trainer_how_taps">Puudutage <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Asetage sõrmed alla koos ja tõstke need koos üles, kiiresti, libistamata.</string>
+    <string name="gesture_trainer_how_taps_quick">Puudutage kiiresti ja samas kohas: järgmine puudutus peab tulema <xliff:g id="gap">%1$d</xliff:g> ms jooksul pärast eelmist.</string>
+    <string name="gesture_trainer_how_hold">Puudutage ekraani korraga <xliff:g id="fingers">%1$s</xliff:g> ja hoidke sõrmi paigal, libistamata, vähemalt <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Kui muud käsku pole määratud, lülitab see liigutus SandFly välja. Treeneris ei käivita see midagi.</string>
+    <string name="gesture_trainer_how_taps_hold">Puudutage <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g> ja jätke viimasel puudutusel sõrmed ekraanile paigale vähemalt <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Kasutage pöialt, nimetissõrme ja keskmist sõrme.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Asetage nimetissõrm ja keskmine sõrm kõrvuti ning pöial ja sõrmusesõrm mõne sentimeetri kaugusele kummalegi poole. Seejärel tooge kõik neli sõrmeotsa kokku ühte punkti.</string>
+    <string name="gesture_trainer_how_pinch">Asetage ekraanile <xliff:g id="fingers">%1$d</xliff:g> sõrme, laialt üksteisest eemale. Seejärel liigutage neid otse üksteise poole vähemalt 1 cm, nagu midagi üles võttes, ja tõstke need ekraanilt. Liigutage ainult sõrmi, mitte kogu kätt, ja mitte kaarena.</string>
+    <string name="gesture_trainer_how_spread">Asetage ekraanile <xliff:g id="fingers">%1$d</xliff:g> sõrme, üksteise lähedale. Seejärel liigutage neid otse lahku vähemalt 1 cm ja tõstke need ekraanilt. Liigutage ainult sõrmi, mitte kogu kätt, ja mitte kaarena.</string>
+    <string name="gesture_trainer_clockwise">päripäeva</string>
+    <string name="gesture_trainer_counterclockwise">vastupäeva</string>
+    <string name="gesture_trainer_how_rotate">Asetage ekraanile kaks sõrme, umbes 2–3 cm vahega, ja pöörake neid <xliff:g id="way">%1$s</xliff:g> ümber nende keskpunkti, nagu keerates nuppu, umbes veerand pööret. Seejärel tõstke sõrmed üles.</string>
+    <string name="gesture_trainer_how_scrub">Asetage ekraanile kaks sõrme ja liigutage neid kiiresti umbes 2 cm ühele poole ja tagasi, nagu midagi kustutades, kõik umbes sekundi jooksul. Seejärel tõstke sõrmed üles.</string>
+    <string name="gesture_trainer_edge_bottom">alumises servas</string>
+    <string name="gesture_trainer_edge_top_left">ülemises servas, selle vasakus pooles</string>
+    <string name="gesture_trainer_edge_top_right">ülemises servas, selle paremas pooles</string>
+    <string name="gesture_trainer_edge_left_top">vasakus servas, selle ülemises pooles</string>
+    <string name="gesture_trainer_edge_left_bottom">vasakus servas, selle alumises pooles</string>
+    <string name="gesture_trainer_edge_right_top">paremas servas, selle ülemises pooles</string>
+    <string name="gesture_trainer_edge_right_bottom">paremas servas, selle alumises pooles</string>
+    <string name="gesture_trainer_edge_left">vasakus servas</string>
+    <string name="gesture_trainer_edge_right">paremas servas</string>
+    <string name="gesture_trainer_edge_top">ülemises servas</string>
+    <string name="gesture_trainer_how_edge">Asetage üks sõrm <xliff:g id="edge">%1$s</xliff:g>, servast kuni <xliff:g id="edge_width">%2$d</xliff:g> mm kaugusele, ja libistage <xliff:g id="direction">%3$s</xliff:g> ekraanile kuni esimese klõpsuni, umbes <xliff:g id="distance">%4$d</xliff:g> mm. Seejärel tõstke sõrm kohe üles: pärast teist klõpsu on libistus pikk libistus.</string>
+    <string name="gesture_trainer_how_edge_long">Asetage üks sõrm <xliff:g id="edge">%1$s</xliff:g>, servast kuni <xliff:g id="edge_width">%2$d</xliff:g> mm kaugusele, ja libistage <xliff:g id="direction">%3$s</xliff:g> ekraanile esimesest klõpsust mööda kuni teiseni, umbes <xliff:g id="distance">%4$d</xliff:g> mm. Seejärel tõstke sõrm üles.</string>
+    <string name="gesture_trainer_how_along">Libistage üht sõrme <xliff:g id="direction">%2$s</xliff:g> mööda <xliff:g id="edge">%1$s</xliff:g>, vähemalt <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">ülemist vasakut</string>
+    <string name="gesture_trainer_corner_top_right">ülemist paremat</string>
+    <string name="gesture_trainer_corner_bottom_left">alumist vasakut</string>
+    <string name="gesture_trainer_corner_bottom_right">alumist paremat</string>
+    <string name="gesture_trainer_how_corner">Puudutage <xliff:g id="taps">%1$s</xliff:g> ekraani <xliff:g id="corner">%2$s</xliff:g> nurka. Asetage sõrm täpselt nurka, mõlemast servast kuni <xliff:g id="size">%3$d</xliff:g> mm kaugusele, ja tõstke kiiresti, <xliff:g id="time">%4$d</xliff:g> ms jooksul.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Suuremate nurkade korral võib nurga lähedal oleva juhtelemendi puudutus, näiteks Tagasi üleval vasakul, käivitada hoopis nurgaliigutuse.</string>
+    <string name="gesture_trainer_rating_precise">tuvastatud, täpne</string>
+    <string name="gesture_trainer_rating_good">tuvastatud, hea</string>
+    <string name="gesture_trainer_rating_borderline">tuvastatud, kuid piiri lähedal</string>
+    <string name="gesture_trainer_try_recognized">Katse <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Katse <xliff:g id="number">%1$d</xliff:g>: ei tuvastatud.</string>
+    <string name="gesture_trainer_try_other">Katse <xliff:g id="number">%1$d</xliff:g>: tuvastati kui <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: tuvastati <xliff:g id="recognized">%2$d</xliff:g>/<xliff:g id="tries">%3$d</xliff:g></string>
+    <string name="gesture_trainer_results_tries">Teie katsed</string>
+    <string name="gesture_trainer_results_change">Mida muuta</string>
+    <string name="gesture_trainer_results_close">Piiri lähedal</string>
+    <string name="gesture_trainer_results_all_good">Kõik katsed tuvastati piirides.</string>
+    <string name="gesture_trainer_results_settings">Seaded, mis võivad aidata</string>
+    <string name="gesture_trainer_next">Järgmine harjutus</string>
+    <string name="gesture_trainer_repeat">Korda</string>
+    <string name="gesture_trainer_finish">Lõpeta</string>
+    <string name="gesture_trainer_group_done">Lõpetasite kõik rühma <xliff:g id="group">%1$s</xliff:g> harjutused.</string>
+    <string name="gesture_trainer_open_setting">Muuda: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">kestis <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm pikk</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm sekundis</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> kraadi sirgjoonest kõrval</string>
+    <string name="gesture_trainer_measure_start">esimene sentimeeter <xliff:g id="ms">%1$d</xliff:g> ms-ga</string>
+    <string name="gesture_trainer_measure_landing">sõrmed puudutasid <xliff:g id="ms">%1$d</xliff:g> ms vahega</string>
+    <string name="gesture_trainer_measure_tap">puudutus <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms puudutuste vahel</string>
+    <string name="gesture_trainer_measure_spread">sõrmed liikusid <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">pööras <xliff:g id="degrees">%1$.0f</xliff:g> kraadi</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm nurga servadest</string>
+    <string name="gesture_trainer_measure_edge">algas servast <xliff:g id="mm">%1$.0f</xliff:g> mm kaugusel</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Sõrmi ekraanil: <xliff:g id="fingers">%1$d</xliff:g>, oodati <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Sõrmed puudutasid ekraani <xliff:g id="ms">%1$d</xliff:g> ms vahega, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Üks sõrm tõsteti üles enne, kui kõik sõrmed olid ekraanil.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Sõrmed tõsteti üles <xliff:g id="ms">%1$d</xliff:g> ms vahega, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Sõrm püsis liiga kaua paigal või liikus alguses liiga aeglaselt, seega muutus puudutus puudutusega uurimiseks.</string>
+    <string name="gesture_trainer_finding_slow_start">Esimene sentimeeter võttis <xliff:g id="ms">%1$d</xliff:g> ms, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Sõrm aeglustus <xliff:g id="ms">%1$d</xliff:g> ms ja iga sentimeeter võib võtta kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Liikumine oli ainult <xliff:g id="mm">%1$.0f</xliff:g> mm, see peab olema vähemalt <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Sõrm hakkas liikuma <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Sõrmed hakkasid liikuma <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Liikumistee kaldus sirgjoonest <xliff:g id="degrees">%1$.0f</xliff:g> kraadi, lubatud on kuni <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Liikumistee jagunes <xliff:g id="parts">%1$d</xliff:g> osaks, oodati <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Pööret ei leitud.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Pärast pööret liikus sõrm <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Sõrm libises puudutuse ajal <xliff:g id="mm">%1$.1f</xliff:g> mm, lubatud on kuni <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Puudutus kestis <xliff:g id="ms">%1$d</xliff:g> ms, kauem kui <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Viimast puudutust hoiti <xliff:g id="ms">%1$d</xliff:g> ms, see peab olema vähemalt <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> puudutust, oodati <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> puudutust, oodati <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Puudutuste vahel möödus <xliff:g id="ms">%1$d</xliff:g> ms, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Puudutused olid <xliff:g id="mm">%1$.0f</xliff:g> mm vahega, lubatud on kuni <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Sõrmed liikusid ainult <xliff:g id="mm">%1$.0f</xliff:g> mm, need peavad liikuma vähemalt <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Sõrmed liikusid vastupidises suunas.</string>
+    <string name="gesture_trainer_finding_moved_together">Kogu käsi libises üle ekraani <xliff:g id="mm">%1$.0f</xliff:g> mm, rohkem kui sõrmed liikusid üksteise poole või üksteisest eemale.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Sõrmed pöörasid ainult <xliff:g id="degrees">%1$.0f</xliff:g> kraadi, need peavad pöörama vähemalt <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Sõrmed pöörasid vastupidises suunas.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Esimene tõmme oli <xliff:g id="mm">%1$.0f</xliff:g> mm, see peab olema vähemalt <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Tagasitõmme oli <xliff:g id="mm">%1$.0f</xliff:g> mm, see peab olema vähemalt <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Hõõrumine kestis <xliff:g id="ms">%1$d</xliff:g> ms, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Sõrm puudutas ekraani servast <xliff:g id="mm">%1$.0f</xliff:g> mm kaugusel, serv on <xliff:g id="limit">%2$.0f</xliff:g> mm lai.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Sõrm alustas serva teisest poolest.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Sõrm libises <xliff:g id="mm">%1$.0f</xliff:g> mm, see peab libisema vähemalt <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Libistus liiga pikk: sõrm läks teisest klõpsust mööda, <xliff:g id="mm">%1$.0f</xliff:g> mm, ja teine klõps on <xliff:g id="limit">%2$.0f</xliff:g> mm juures.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Klõpsuni jõudmine võttis <xliff:g id="ms">%1$d</xliff:g> ms, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Libistus kaldus <xliff:g id="degrees">%1$.0f</xliff:g> kraadi külje poole, lubatud on kuni <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Puudutus oli nurga servadest <xliff:g id="mm">%1$.0f</xliff:g> mm kaugusel, nurk on <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Nurga puudutus kestis <xliff:g id="ms">%1$d</xliff:g> ms, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Liigutusele vastavat liikumist ei tuvastatud.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Kontrollige, mitu sõrme klaasi puudutab. Ka ekraanil puhkav peopesa või muu sõrm loeb.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Asetage kõik sõrmed alla samal hetkel, ühe käena, mitte üksteise järel.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Asetage kõigepealt kõik sõrmed alla, seejärel liigutage või tõstke neid.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Tõstke kõik sõrmed üles samal hetkel.</string>
+    <string name="gesture_trainer_tip_slow_start">Alustage liikumist ekraani puudutamise hetkel ja liikuge alguses kiiremini.</string>
+    <string name="gesture_trainer_tip_paused">Liigutage sõrme ühtlase kiirusega, kuni selle üles tõstate. Ärge aeglustage lõpu poole.</string>
+    <string name="gesture_trainer_tip_too_short">Tehke liikumine pikemaks, umbes 2–3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Kontrollige suunda kohe liikumise alguses. Aitab, kui hoiate telefoni otse enda ees.</string>
+    <string name="gesture_trainer_tip_off_line">Liikuge ainult suuna järgi, mitte diagonaalselt. Nimetissõrm hoiab sirgemat joont kui pöial.</string>
+    <string name="gesture_trainer_tip_curved">Hoidke joon sirge ja tõstke sõrm täpselt lõpus, ilma et konksutaksite seda tõstes küljele.</string>
+    <string name="gesture_trainer_tip_turn_missing">Muutke suunda järsult, täisnurga all või otse tagasi, sõrme tõstmata. Iga osa peaks olema umbes 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Kontrollige pärast pööret, mis suunas liigute: teine osa peab minema liigutuse nimes nimetatud teises suunas.</string>
+    <string name="gesture_trainer_tip_tap_moved">Puudutage otse alla ja üles, sõrmeotsaga, libistamata.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Tehke iga puudutus lühike: puudutage ja tõstke kohe üles.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Hoidke viimasel puudutusel sõrmi ekraanil paigal kogu hoidmisaja.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Lugege puudutusi ja tehke need kõik kiiresti järjest.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Lugege puudutusi. Klaasilt tagasi põrkav sõrm teeb lisapuudutuse.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Puudutage kiiremini: alustage järgmist puudutust kohe pärast tõstmist.</string>
+    <string name="gesture_trainer_tip_taps_apart">Puudutage iga kord samas kohas.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Liigutage sõrmi kaugemale, vähemalt 1 cm üksteisele lähemale või lahku.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Kokku liigutamisel liiguvad sõrmed üksteise poole, lahku liigutamisel üksteisest eemale.</string>
+    <string name="gesture_trainer_tip_moved_together">Liigutage ainult sõrmi üksteise poole või üksteisest eemale. Ärge libistage kogu kätt üle ekraani.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Pöörake rohkem, nagu keeraksite nuppu veerand pööret.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Päripäeva tähendab pööramist kellaosutite liikumise suunas: ülemine sõrm liigub paremale.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Tehke esimene tõmme vähemalt 1 cm pikk.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Pärast esimest tõmmet tulge enne tõstmist teises suunas tagasi.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Tehke hõõrumine kiiresti, edasi ja tagasi umbes sekundiga.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Alustage täpselt servast, nii et sõrmeots on osaliselt ekraanist väljas.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Kontrollige, millisest serva poolest alustate.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Libistage kaugemale, kuni kuulete klõpsu, seejärel tõstke sõrm üles.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Tõstke sõrm kohe pärast esimest klõpsu, enne teist.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Libistage sisse kiiremini, peatumata enne klõpsu.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Libistage servast otse sisse või otse mööda serva, mitte diagonaalselt.</string>
+    <string name="gesture_trainer_tip_corner_missed">Asetage sõrm täpselt nurka, nii et see puudutab mõlemat serva.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Tõstke sõrm pärast nurga puudutamist kiiremini.</string>
+    <string name="gesture_trainer_close_to_limit">Piiri lähedal: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Pühkimised algavad aeglaselt. Seade <xliff:g id="setting">%1$s</xliff:g> pikem väärtus lubab aeglasemat algust.</string>
+    <string name="gesture_trainer_advice_tap_time">Puudutused on aeglased. Seade <xliff:g id="setting">%1$s</xliff:g> pikem väärtus lubab aeglasemaid puudutusi.</string>
+    <string name="gesture_trainer_advice_edge_width">Pühkimised algavad servast liiga kaugel. Seade <xliff:g id="setting">%1$s</xliff:g> suurem väärtus muudab ka serva lähedalt algavad pühkimised servapühkimisteks.</string>
+    <string name="gesture_trainer_advice_corner_size">Puudutused jäävad nurgast välja. Seade <xliff:g id="setting">%1$s</xliff:g> suurem väärtus muudab nurgad suuremaks.</string>
+    <string name="gesture_trainer_advice_corner_time">Nurga puudutused on aeglased. Seade <xliff:g id="setting">%1$s</xliff:g> pikem väärtus lubab aeglasemaid puudutusi.</string>
+    <string name="gesture_trainer_menu_option">Valik <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: valige üksus <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Menüü avamiseks libistage üht sõrme <xliff:g id="edge">%1$s</xliff:g> üles või alla vähemalt <xliff:g id="distance">%2$d</xliff:g> mm. Selles on <xliff:g id="count">%3$d</xliff:g> üksust, ülevalt alla, igaüks umbes <xliff:g id="size">%6$s</xliff:g> cm kõrge. Üksus <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, on ekraani ülaservast <xliff:g id="from">%7$s</xliff:g> kuni <xliff:g id="to">%8$s</xliff:g> cm allpool. Tõstke sõrm üles, kui üksus öeldakse ette.</string>
+    <string name="gesture_trainer_menu_sample">Selles servas pole menüüd. Harjutus kasutab <xliff:g id="count">%1$d</xliff:g> näidisüksust.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Katse <xliff:g id="number">%1$d</xliff:g>: menüü suleti ilma valikuta.</string>
+    <string name="gesture_trainer_try_menu_other">Katse <xliff:g id="number">%1$d</xliff:g>: valiti <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">tõsteti üksuse <xliff:g id="number">%1$d</xliff:g> juures</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Sõrm alustas serva päris ülemisest või alumisest otsast, kus on nurgad ning ülemine ja alumine serv.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Sõrm tõsteti servast <xliff:g id="mm">%1$.0f</xliff:g> mm kaugusel ja menüü sulgub kaugemal kui <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Sõrm tõsteti üksuse <xliff:g id="item">%1$d</xliff:g> juures, oodati üksust <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Alustage serva ülemisest ja alumisest otsast veidi eemal.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Hoidke sõrm libistamise ajal serva lähedal ja tõstke see seal üles.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Igal üksusel on serval kindel koht ja valitakse üksus, mille juures sõrm tõstetakse. Tõstke sõrm, kui üksus öeldakse ette.</string>
+    <string name="gesture_trainer_contents">Sisukord</string>
+    <string name="gesture_trainer_contents_heading">Sisukord: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">tehtud, tuvastati <xliff:g id="hits">%1$d</xliff:g>/<xliff:g id="tries">%2$d</xliff:g></string>
+    <string name="gesture_trainer_group_tap_swipe">Puudutus ja pühkimine</string>
+    <string name="gesture_trainer_group_edge_swipes">Servadest pühkimised</string>
+    <string name="gesture_trainer_group_along_edges">Libistused mööda servi</string>
+    <string name="gesture_trainer_group_edge_menus">Servamenüüd</string>
+    <string name="gesture_trainer_group_corners">Nurgad</string>
+    <string name="gesture_trainer_group_back_tap">Tagakülje puudutus</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Kahe sõrmega puudutused, millele järgneb kahe sõrmega pühkimine, jäetakse välja: <xliff:g id="setting">%1$s</xliff:g> on väljas.</string>
+    <string name="gesture_trainer_how_swipe_hold">Seejärel hoidke sõrme tõstmata paigal vähemalt <xliff:g id="hold">%1$d</xliff:g> ms ja tõstke see üles.</string>
+    <string name="gesture_trainer_half_top">ülemisel</string>
+    <string name="gesture_trainer_half_bottom">alumisel</string>
+    <string name="gesture_trainer_how_taps_half">Puudutage ekraani <xliff:g id="half">%1$s</xliff:g> poolel. Poole määrab sõrmede vaheline punkt.</string>
+    <string name="gesture_trainer_same_fingers">samade sõrmedega</string>
+    <string name="gesture_trainer_how_tap_swipe">Puudutage <xliff:g id="taps">%1$s</xliff:g> <xliff:g id="fingers">%2$s</xliff:g>. Kohe pärast viimast puudutust, <xliff:g id="gap">%3$d</xliff:g> ms jooksul, puudutage ekraani uuesti <xliff:g id="swipe_fingers">%4$s</xliff:g> ja libistage <xliff:g id="direction">%5$s</xliff:g> sirgjooneliselt umbes 2–3 cm, seejärel tõstke üles.</string>
+    <string name="gesture_trainer_how_corner_hold">Jätke viimasel puudutusel sõrm nurka paigale vähemalt <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Hoidke telefoni käes külgedest ja koputage selle tagakülje keskele <xliff:g id="taps">%1$s</xliff:g> sõrmeotsaga, kindlalt ja kiiresti, nagu koputaksite uksele. Hoidke puudutused tihedalt: nende vahel kuni <xliff:g id="gap">%2$d</xliff:g> ms. Ärge puudutage koputamise ajal ekraani.</string>
+    <string name="gesture_trainer_back_tap_info">Tagakülje puudutused ei käivita harjutuse ajal käske. <xliff:g id="setting">%1$s</xliff:g> määrab, kui tugev peab puudutus olema.</string>
+    <string name="gesture_trainer_go_placed">Tehke liigutust <xliff:g id="tries">%1$d</xliff:g> korda.</string>
+    <string name="gesture_trainer_along_left">vasakut serva</string>
+    <string name="gesture_trainer_along_right">paremat serva</string>
+    <string name="gesture_trainer_along_top">ülemist serva</string>
+    <string name="gesture_trainer_along_bottom">alumist serva</string>
+    <string name="gesture_trainer_left_out_along_menu">Libistused mööda <xliff:g id="edge">%1$s</xliff:g> jäetakse välja: sellel on servamenüü, seega avab libistus mööda seda menüü, mitte ei käivita liigutust.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Libistused mööda <xliff:g id="edge">%1$s</xliff:g> jäetakse välja: see kerib, seega kerib libistus mööda seda rakendust, mitte ei käivita liigutust.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Sõrm liikus servast liiga kaugele.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Hoidke sõrme klaasi päris äärel, otse mööda serva.</string>
+    <string name="gesture_trainer_go_back_tap">Tehke tagakülje puudutuse liigutust <xliff:g id="tries">%1$d</xliff:g> korda. Ekraani puudutus nurjab katse.</string>
+    <string name="gesture_trainer_no_accelerometer">See harjutus vajab kiirendusandurit. Ühtegi pole saadaval.</string>
+    <string name="gesture_trainer_measure_hold">hoiti paigal <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">puudutuse tugevus <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Sõrm püsis lõpus paigal <xliff:g id="ms">%1$d</xliff:g> ms, see peab püsima paigal vähemalt <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Sõrmed puudutasid ekraani teist poolt.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Pärast puudutusi ei tulnud pühkimist.</string>
+    <string name="gesture_trainer_finding_swipe_late">Pühkimine algas <xliff:g id="ms">%1$d</xliff:g> ms pärast viimast puudutust, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Tagakülje puudutus liiga kerge: <xliff:g id="percent">%1$d</xliff:g>%% vajalikust tugevusest.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Puudutus raputas telefoni rohkem küljele kui läbi tagakülje.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefon liikus vahetult enne puudutust.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Ekraani puudutati ja puudutused ekraani puudutamise ajal ei loe.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Tagakülje puudutuste vahel möödus <xliff:g id="ms">%1$d</xliff:g> ms, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Hoidke pärast pühkimist sõrme ekraanil paigal kogu hoidmisaja. Seejärel tõstke see üles.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Kontrollige, millisel poolel puudutate: ekraani keskkoht eraldab ülemise poole alumisest.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Pärast viimast puudutust puudutage ekraani kohe uuesti ja pühkige.</string>
+    <string name="gesture_trainer_tip_swipe_late">Alustage pühkimist kohe pärast viimast puudutust, pausita.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Koputage tugevamini, sõrmeotsa või küünega, tagakülje keskkoha lähedal.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Koputage otse telefoni tagaküljele, mitte selle servale ega nurga all.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Hoidke telefoni enne koputamist hetk paigal ja hoidke seda lõdvalt, et käsi seda ei liigutaks.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Hoidke sõrmed tagakülje koputamise ajal ekraanist eemal: hoidke telefoni külgedest.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Koputage kiiremini, üks puudutus kohe teise järel.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Sõrm tõstetakse pärast pühkimist liiga vara. Seade <xliff:g id="setting">%1$s</xliff:g> lühem väärtus lubab lühemat hoidmist.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Tagakülje puudutused on kerged. Seade <xliff:g id="setting">%1$s</xliff:g> suurem väärtus tuvastab kergemaid puudutusi ja võib tuvastada põrutusi puudutustena.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Sõrmed pöörasid <xliff:g id="degrees">%1$.0f</xliff:g> kraadi ja alates <xliff:g id="limit">%2$.0f</xliff:g> kraadist on liigutus pööramine.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Liigutage sõrmi sirgjooneliselt üksteise poole või üksteisest eemale, mitte kaarena üksteise ümber.</string>
+    <string name="gesture_trainer_finding_other_gesture">Liikumine vastas hoopis sellele liigutusele.</string>
+    <string name="gesture_trainer_side_left">vasaku</string>
+    <string name="gesture_trainer_side_right">parema</string>
+    <string name="gesture_trainer_side_top">ülemise</string>
+    <string name="gesture_trainer_side_bottom">alumise</string>
+    <string name="gesture_trainer_finding_wrong_edge">Sõrm alustas <xliff:g id="side">%1$s</xliff:g> serva juurest, aga see harjutus on <xliff:g id="expected">%2$s</xliff:g> serva juures.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Alustage täpselt harjutuses nimetatud servast.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Selle liigutuse asemel avanes servamenüü.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Libistus mööda menüüga serva avab menüü. Alustage harjutuses nimetatud servast.</string>
+    <string name="gesture_trainer_group_three_part">Kolmeosalised pühkimised</string>
+    <string name="gesture_trainer_group_two_stroke">Kahe tõmbega pühkimised</string>
+    <string name="gesture_trainer_group_shake">Raputamine</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Kolmeosalised pühkimised jäetakse välja: <xliff:g id="setting">%1$s</xliff:g> on sees.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Kahe tõmbega pühkimised jäetakse välja: <xliff:g id="setting">%1$s</xliff:g> on <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Raputamine ei käivita harjutuse ajal käsku. <xliff:g id="setting">%1$s</xliff:g> määrab, kui tugev peab raputus olema.</string>
+    <string name="gesture_trainer_go_shake">Raputage telefoni <xliff:g id="tries">%1$d</xliff:g> korda, iga raputuse järel lühike paus.</string>
+    <string name="gesture_trainer_how_shake">Hoidke telefoni kindlalt ja raputage seda kiiresti edasi-tagasi, nagu raputaksite maha veepiiska: vähemalt kaks korda kummaski suunas, kõik umbes kahe kolmandiku sekundi jooksul. Seejärel hoidke seda paigal.</string>
+    <string name="gesture_trainer_how_two_stroke">Pühkige ühe sõrmega <xliff:g id="first">%1$s</xliff:g>, umbes 2 cm, ja tõstke sõrm üles. Seejärel pühkige kohe, <xliff:g id="time">%3$d</xliff:g> ms jooksul, ühe sõrmega <xliff:g id="second">%2$s</xliff:g>, umbes 2 cm, ja tõstke sõrm üles.</string>
+    <string name="gesture_trainer_how_three_part">Puudutage ekraani ühe sõrmega ja pühkige sõrme tõstmata <xliff:g id="first">%1$s</xliff:g>, seejärel pöörake järsult ja pühkige <xliff:g id="second">%2$s</xliff:g>, seejärel pöörake uuesti järsult ja pühkige <xliff:g id="third">%3$s</xliff:g>, iga osa umbes 2 cm, ning tõstke sõrm üles. Tehke see üheks kiireks sujuvaks liigutuseks teravate nurkadega, mitte kaartega.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Asetage üks sõrm ekraani ülemisse kolmandikku ja teine alumisse kolmandikku, näiteks pöial all ja nimetissõrm üleval.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Sõrmed ei olnud üks ekraani ülemises kolmandikus ja teine alumises kolmandikus.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Teist pühkimist ei olnud.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Teine pühkimine algas <xliff:g id="ms">%1$d</xliff:g> ms pärast esimest, lubatud on kuni <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Esimene pühkimine läks <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Teine pühkimine läks <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Raputus oli liiga kerge: <xliff:g id="percent">%1$d</xliff:g>%% vajalikust tugevusest.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Edasi-tagasi võnkeid: <xliff:g id="swings">%1$d</xliff:g>/<xliff:g id="wanted">%2$d</xliff:g> vajalikust.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Asetage sõrmed üksteisest kaugele, üks ülemise serva lähedale ja teine alumise serva lähedale.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Pärast esimest pühkimist tõstke sõrm üles ja pühkige kohe uuesti.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Alustage teist pühkimist kohe pärast sõrme tõstmist.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Raputage tugevamini ja kiiremini.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Raputage kiiremini, edasi-tagasi vähemalt kaks korda kummaski suunas, vahepeal peatumata.</string>
+    <string name="gesture_trainer_measure_shake_strength">tugevaim liikumine <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Raputused on kerged. Seade <xliff:g id="setting">%1$s</xliff:g> suurem väärtus tuvastab kergemaid raputusi ja võib tuvastada telefoni kandmise raputusena.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Teine pühkimine algab hilja. Seade <xliff:g id="setting">%1$s</xliff:g> pikem väärtus lubab hilisemat teist pühkimist ja üksik pühkimine ootab siis enne käivitumist kauem.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> on sees.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> on väljas: kahe sõrmega pühkimised kerivad rakendust ja ka hõõrumine enamasti kerib. Kui seade on sees, käivitavad kahe sõrmega pühkimised kerimise asemel SandFly käske.</string>
+    <string name="gesture_trainer_measure_first_stroke">esimene pühkimine <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">teine pühkimine <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">kogu liigutus <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">tõstetud <xliff:g id="ms">%1$d</xliff:g> ms nende vahel</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Trajneri i gjesteve</string>
+    <string name="gesture_trainer_intro">Zgjidh një grup gjestesh. Çdo ushtrim përshkruan një gjest. Bëje gjestin <xliff:g id="tries">%1$d</xliff:g> herë; rezultati i çdo prove thuhet me zë. Pas provës së fundit, ekrani rendit matjet e çdo prove, çfarë duhet ndryshuar dhe cilësimet përkatëse.</string>
+    <string name="gesture_trainer_group_one_finger">Një gisht</string>
+    <string name="gesture_trainer_group_two_fingers">Dy gishta</string>
+    <string name="gesture_trainer_group_three_fingers">Tre gishta</string>
+    <string name="gesture_trainer_group_four_fingers">Katër gishta</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Afrim, rrotullim dhe lëvizje para-mbrapa</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> ushtrime</string>
+    <string name="gesture_trainer_close">Mbyll</string>
+    <string name="gesture_trainer_no_detection">Trajneri i gjesteve kërkon Android 13 ose më të ri.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Gjestet para-mbrapa dhe gjestet me kënd janë lënë jashtë: <xliff:g id="setting">%1$s</xliff:g> është aktiv.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Rrëshqitjet me dy gishta janë lënë jashtë: <xliff:g id="setting">%1$s</xliff:g> është joaktiv, prandaj ato lëvizin aplikacionet.</string>
+    <string name="gesture_trainer_exercise_heading">Ushtrimi <xliff:g id="number">%1$d</xliff:g> nga <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Fillo</string>
+    <string name="gesture_trainer_skip">Kapërce këtë ushtrim</string>
+    <string name="gesture_trainer_back_to_groups">Kthehu te grupet</string>
+    <string name="gesture_trainer_go">Bëje gjestin <xliff:g id="tries">%1$d</xliff:g> herë, kudo në ekran. Çdo prekje është një provë.</string>
+    <string name="gesture_trainer_fingers_1">një gisht</string>
+    <string name="gesture_trainer_fingers_2">dy gishta pranë njëri-tjetrit, rreth 1 cm larg</string>
+    <string name="gesture_trainer_fingers_3">tre gishta pranë njëri-tjetrit, pak të ndarë</string>
+    <string name="gesture_trainer_fingers_4">katër gishta pranë njëri-tjetrit, pak të ndarë</string>
+    <string name="gesture_trainer_direction_up">lart</string>
+    <string name="gesture_trainer_direction_down">poshtë</string>
+    <string name="gesture_trainer_direction_left">majtas</string>
+    <string name="gesture_trainer_direction_right">djathtas</string>
+    <string name="gesture_trainer_how_swipe">Prek ekranin me <xliff:g id="fingers">%1$s</xliff:g> dhe, pa pritur, rrëshqit <xliff:g id="direction">%2$s</xliff:g> në vijë të drejtë rreth 2 deri në 3 cm, pastaj ngri. Fillo të lëvizësh menjëherë: një gisht që qëndron fillimisht nis eksplorimin me prekje.</string>
+    <string name="gesture_trainer_how_swipe_multi">Vendos gishtat njëkohësisht, në të njëjtin moment, dhe lëvizi të gjithë në të njëjtin drejtim. Çdo gisht duhet të shkojë <xliff:g id="direction">%1$s</xliff:g> gjatë gjithë kohës, prandaj mbaje vijën të drejtë.</string>
+    <string name="gesture_trainer_how_back_and_forth">Prek ekranin me një gisht dhe rrëshqit <xliff:g id="first">%1$s</xliff:g> rreth 2 cm, pastaj pa e ngritur kthehu drejt <xliff:g id="second">%2$s</xliff:g> rreth 2 cm dhe ngri. Bëje një lëvizje të vetme, të shpejtë dhe të rrjedhshme.</string>
+    <string name="gesture_trainer_how_angle">Prek ekranin me <xliff:g id="fingers">%1$s</xliff:g> dhe rrëshqit <xliff:g id="first">%2$s</xliff:g> rreth 2 cm, pastaj pa ngritur kthehu fort dhe rrëshqit <xliff:g id="second">%3$s</xliff:g> rreth 2 cm, dhe ngri. Bëje kthesën një kënd të mprehtë, si shkronja L, jo një hark.</string>
+    <string name="gesture_trainer_taps_1">një herë</string>
+    <string name="gesture_trainer_taps_2">dy herë</string>
+    <string name="gesture_trainer_taps_3">tri herë</string>
+    <string name="gesture_trainer_taps_4">katër herë</string>
+    <string name="gesture_trainer_how_taps">Trokit <xliff:g id="taps">%1$s</xliff:g> me <xliff:g id="fingers">%2$s</xliff:g>. Vendosi gishtat njëkohësisht dhe ngriji njëkohësisht, shpejt, pa rrëshqitur.</string>
+    <string name="gesture_trainer_how_taps_quick">Mbaji trokitjet të shpejta dhe në të njëjtin vend: trokitja tjetër duhet të vijë brenda <xliff:g id="gap">%1$d</xliff:g> ms pas së mëparshmes.</string>
+    <string name="gesture_trainer_how_hold">Vendos <xliff:g id="fingers">%1$s</xliff:g> njëkohësisht në ekran dhe mbaji të palëvizur, pa rrëshqitur, për të paktën <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Kur nuk ka komandë tjetër të caktuar, ky gjest çaktivizon SandFly. Në trajner nuk ekzekuton asgjë.</string>
+    <string name="gesture_trainer_how_taps_hold">Trokit <xliff:g id="taps">%1$s</xliff:g> me <xliff:g id="fingers">%2$s</xliff:g> dhe në trokitjen e fundit lëri gishtat në ekran, të palëvizur, për të paktën <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Përdor gishtin e madh, gishtin tregues dhe gishtin e mesëm.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Vendos gishtin tregues dhe të mesmin pranë njëri-tjetrit, dhe gishtin e madh e unazorin disa centimetra larg, në të dyja anët. Pastaj bashko të katër majat e gishtave në një pikë.</string>
+    <string name="gesture_trainer_how_pinch">Vendos <xliff:g id="fingers">%1$d</xliff:g> gishta në ekran, të hapur larg njëri-tjetrit. Pastaj afroji drejt njëri-tjetrit të paktën 1 cm, si për të kapur diçka, dhe ngriji nga ekrani. Lëviz vetëm gishtat, jo gjithë dorën, dhe jo në hark.</string>
+    <string name="gesture_trainer_how_spread">Vendos <xliff:g id="fingers">%1$d</xliff:g> gishta në ekran, afër njëri-tjetrit. Pastaj largoji drejt njëri-tjetrit të paktën 1 cm dhe ngriji nga ekrani. Lëviz vetëm gishtat, jo gjithë dorën, dhe jo në hark.</string>
+    <string name="gesture_trainer_clockwise">në drejtim të akrepave të orës</string>
+    <string name="gesture_trainer_counterclockwise">në drejtim të kundërt të akrepave të orës</string>
+    <string name="gesture_trainer_how_rotate">Vendos dy gishta në ekran, rreth 2 deri në 3 cm larg njëri-tjetrit, dhe rrotulloji <xliff:g id="way">%1$s</xliff:g> rreth mesit të tyre, si të rrotullosh një çelës, rreth një të katërtën e rrotullimit. Pastaj ngri.</string>
+    <string name="gesture_trainer_how_scrub">Vendos dy gishta në ekran dhe lëvizi shpejt anash rreth 2 cm dhe mbrapsht, si të fshish diçka, gjithçka brenda rreth një sekonde. Pastaj ngri.</string>
+    <string name="gesture_trainer_edge_bottom">në buzën e poshtme</string>
+    <string name="gesture_trainer_edge_top_left">në buzën e sipërme, në gjysmën e saj të majtë</string>
+    <string name="gesture_trainer_edge_top_right">në buzën e sipërme, në gjysmën e saj të djathtë</string>
+    <string name="gesture_trainer_edge_left_top">në buzën e majtë, në gjysmën e saj të sipërme</string>
+    <string name="gesture_trainer_edge_left_bottom">në buzën e majtë, në gjysmën e saj të poshtme</string>
+    <string name="gesture_trainer_edge_right_top">në buzën e djathtë, në gjysmën e saj të sipërme</string>
+    <string name="gesture_trainer_edge_right_bottom">në buzën e djathtë, në gjysmën e saj të poshtme</string>
+    <string name="gesture_trainer_edge_left">në buzën e majtë</string>
+    <string name="gesture_trainer_edge_right">në buzën e djathtë</string>
+    <string name="gesture_trainer_edge_top">në buzën e sipërme</string>
+    <string name="gesture_trainer_how_edge">Vendos një gisht <xliff:g id="edge">%1$s</xliff:g>, jo më shumë se <xliff:g id="edge_width">%2$d</xliff:g> mm nga buza, dhe rrëshqit <xliff:g id="direction">%3$s</xliff:g> brenda ekranit deri te klikimi i parë, rreth <xliff:g id="distance">%4$d</xliff:g> mm. Pastaj ngri menjëherë: pas klikimit të dytë, rrëshqitja bëhet rrëshqitje e gjatë.</string>
+    <string name="gesture_trainer_how_edge_long">Vendos një gisht <xliff:g id="edge">%1$s</xliff:g>, jo më shumë se <xliff:g id="edge_width">%2$d</xliff:g> mm nga buza, dhe rrëshqit <xliff:g id="direction">%3$s</xliff:g> brenda ekranit përtej klikimit të parë deri te i dyti, rreth <xliff:g id="distance">%4$d</xliff:g> mm. Pastaj ngri.</string>
+    <string name="gesture_trainer_how_along">Rrëshqit një gisht <xliff:g id="direction">%2$s</xliff:g> përgjatë <xliff:g id="edge">%1$s</xliff:g>, të paktën <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">e sipërm majtas</string>
+    <string name="gesture_trainer_corner_top_right">e sipërm djathtas</string>
+    <string name="gesture_trainer_corner_bottom_left">e poshtëm majtas</string>
+    <string name="gesture_trainer_corner_bottom_right">e poshtëm djathtas</string>
+    <string name="gesture_trainer_how_corner">Trokit <xliff:g id="taps">%1$s</xliff:g> në cepin <xliff:g id="corner">%2$s</xliff:g> të ekranit. Vendose gishtin pikërisht në cep, jo më shumë se <xliff:g id="size">%3$d</xliff:g> mm nga të dyja buzët, dhe ngrije shpejt, brenda <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Me cepa më të mëdhenj, një trokitje mbi një kontroll pranë një cepi, si Prapa lart majtas, mund të ekzekutojë gjestin e cepit.</string>
+    <string name="gesture_trainer_rating_precise">u njoh, i saktë</string>
+    <string name="gesture_trainer_rating_good">u njoh, mirë</string>
+    <string name="gesture_trainer_rating_borderline">u njoh, por afër një kufiri</string>
+    <string name="gesture_trainer_try_recognized">Prova <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Prova <xliff:g id="number">%1$d</xliff:g>: nuk u njoh.</string>
+    <string name="gesture_trainer_try_other">Prova <xliff:g id="number">%1$d</xliff:g>: u njoh si <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> nga <xliff:g id="tries">%3$d</xliff:g> u njohën</string>
+    <string name="gesture_trainer_results_tries">Provat e tua</string>
+    <string name="gesture_trainer_results_change">Çfarë duhet ndryshuar</string>
+    <string name="gesture_trainer_results_close">Afër një kufiri</string>
+    <string name="gesture_trainer_results_all_good">Të gjitha provat u njohën brenda kufijve.</string>
+    <string name="gesture_trainer_results_settings">Cilësime që mund të ndihmojnë</string>
+    <string name="gesture_trainer_next">Ushtrimi tjetër</string>
+    <string name="gesture_trainer_repeat">Përsërit</string>
+    <string name="gesture_trainer_finish">Përfundo</string>
+    <string name="gesture_trainer_group_done">Përfundove të gjitha ushtrimet në <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Ndrysho <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">zgjati <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm e gjatë</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm në sekondë</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> gradë jashtë vijës së drejtë</string>
+    <string name="gesture_trainer_measure_start">centimetri i parë në <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">gishtat ranë me <xliff:g id="ms">%1$d</xliff:g> ms diferencë</string>
+    <string name="gesture_trainer_measure_tap">trokitje prej <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms midis trokitjeve</string>
+    <string name="gesture_trainer_measure_spread">gishtat lëvizën <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">u rrotullua <xliff:g id="degrees">%1$.0f</xliff:g> gradë</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm nga buzët e cepit</string>
+    <string name="gesture_trainer_measure_edge">filloi <xliff:g id="mm">%1$.0f</xliff:g> mm nga buza</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Gishta në ekran: <xliff:g id="fingers">%1$d</xliff:g> në vend të <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Gishtat ranë me <xliff:g id="ms">%1$d</xliff:g> ms diferencë, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Një gisht u ngrit para se të gjithë gishtat të ishin vendosur.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Gishtat u ngritën me <xliff:g id="ms">%1$d</xliff:g> ms diferencë, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Gishti qëndroi i palëvizur shumë gjatë ose lëvizi shumë ngadalë në fillim, prandaj prekja u bë eksplorim me prekje.</string>
+    <string name="gesture_trainer_finding_slow_start">Centimetri i parë zgjati <xliff:g id="ms">%1$d</xliff:g> ms, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Gishti u ngadalësua për <xliff:g id="ms">%1$d</xliff:g> ms, dhe çdo centimetër mund të zgjasë më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Lëvizja ishte vetëm <xliff:g id="mm">%1$.0f</xliff:g> mm, dhe duhet të jetë të paktën <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Gishti filloi të shkonte <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Gishtat filluan të shkonin <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Rruga u largua <xliff:g id="degrees">%1$.0f</xliff:g> gradë nga vija e drejtë, dhe lejohen më së shumti <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Rruga u përkul në <xliff:g id="parts">%1$d</xliff:g> pjesë në vend të <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Kthesa nuk u gjet.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Pas kthesës, gishti shkoi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Gishti rrëshqiti <xliff:g id="mm">%1$.1f</xliff:g> mm gjatë një trokitjeje, dhe lejohen më së shumti <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Një trokitje zgjati <xliff:g id="ms">%1$d</xliff:g> ms, më shumë se <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Trokitja e fundit u mbajt për <xliff:g id="ms">%1$d</xliff:g> ms, dhe duhet të jetë të paktën <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> trokitje në vend të <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> trokitje në vend të <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Midis trokitjeve kaluan <xliff:g id="ms">%1$d</xliff:g> ms, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Trokitjet ranë <xliff:g id="mm">%1$.0f</xliff:g> mm larg njëra-tjetrës, dhe lejohen më së shumti <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Gishtat lëvizën vetëm <xliff:g id="mm">%1$.0f</xliff:g> mm, dhe duhet të lëvizin të paktën <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Gishtat lëvizën në drejtimin e kundërt.</string>
+    <string name="gesture_trainer_finding_moved_together">E gjithë dora rrëshqiti <xliff:g id="mm">%1$.0f</xliff:g> mm nëpër ekran, më shumë se sa gishtat u afruan ose u larguan nga njëri-tjetri.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Gishtat u rrotulluan vetëm <xliff:g id="degrees">%1$.0f</xliff:g> gradë, dhe duhet të rrotullohen të paktën <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Gishtat u rrotulluan në drejtimin e kundërt.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Lëvizja e parë ishte <xliff:g id="mm">%1$.0f</xliff:g> mm, dhe duhet të jetë të paktën <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Lëvizja e kthimit ishte <xliff:g id="mm">%1$.0f</xliff:g> mm, dhe duhet të jetë të paktën <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Lëvizja para-mbrapa zgjati <xliff:g id="ms">%1$d</xliff:g> ms, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Gishti ra <xliff:g id="mm">%1$.0f</xliff:g> mm nga buza, dhe buza është <xliff:g id="limit">%2$.0f</xliff:g> mm e gjerë.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Gishti filloi në gjysmën tjetër të buzës.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Gishti rrëshqiti <xliff:g id="mm">%1$.0f</xliff:g> mm, dhe duhet të rrëshqasë të paktën <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Rrëshqitje shumë e gjatë: gishti kaloi klikimin e dytë, <xliff:g id="mm">%1$.0f</xliff:g> mm, dhe klikimi i dytë është në <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Arritja te klikimi zgjati <xliff:g id="ms">%1$d</xliff:g> ms, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Rrëshqitja shkoi <xliff:g id="degrees">%1$.0f</xliff:g> gradë anash, dhe lejohen më së shumti <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Trokitja ra <xliff:g id="mm">%1$.0f</xliff:g> mm nga buzët e cepit, dhe cepi është <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Një trokitje në cep zgjati <xliff:g id="ms">%1$d</xliff:g> ms, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Nuk u zbulua asnjë lëvizje që përputhet me gjestin.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Kontrollo sa gishta prekin xhamin. Pëllëmba ose një gisht tjetër i mbështetur në ekran numërohet gjithashtu.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Vendosi të gjithë gishtat në të njëjtin moment, si një dorë, jo njëri pas tjetrit.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Vendosi fillimisht të gjithë gishtat, pastaj lëvizi ose ngriji.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Ngriji të gjithë gishtat në të njëjtin moment.</string>
+    <string name="gesture_trainer_tip_slow_start">Fillo të lëvizësh sapo prek ekranin, dhe lëviz më shpejt në fillim.</string>
+    <string name="gesture_trainer_tip_paused">Mbaje gishtin në lëvizje me shpejtësi të njëtrajtshme derisa ta ngresh. Mos u ngadalëso afër fundit.</string>
+    <string name="gesture_trainer_tip_too_short">Bëje lëvizjen më të gjatë, rreth 2 deri në 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Kontrollo drejtimin që në fillim të lëvizjes. Ndihmon ta mbash telefonin drejt përpara vetes.</string>
+    <string name="gesture_trainer_tip_off_line">Lëviz vetëm sipas drejtimit, jo diagonalisht. Gishti tregues mban një vijë më të drejtë se gishti i madh.</string>
+    <string name="gesture_trainer_tip_curved">Mbaje vijën të drejtë dhe ngri pikërisht në fund, pa e përkulur gishtin anash kur e ngre.</string>
+    <string name="gesture_trainer_tip_turn_missing">Ndrysho drejtimin fort, në kënd të drejtë ose drejt mbrapsht, pa ngritur. Çdo pjesë duhet të jetë rreth 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Pas kthesës, kontrollo nga po shkon: pjesa e dytë duhet të shkojë në drejtimin tjetër që emërton gjesti.</string>
+    <string name="gesture_trainer_tip_tap_moved">Trokit drejt poshtë e lart, me majën e gishtit, pa rrëshqitur.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Bëje çdo trokitje të shkurtër: prek dhe ngri menjëherë.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Në trokitjen e fundit, mbaji gishtat të palëvizur në ekran për gjithë kohën e mbajtjes.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Numëro trokitjet dhe bëji të gjitha shpejt, njëra pas tjetrës.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Numëro trokitjet. Një gisht që kërcen nga xhami bën një trokitje shtesë.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Trokit më shpejt: fillo trokitjen tjetër menjëherë pasi ngre gishtin.</string>
+    <string name="gesture_trainer_tip_taps_apart">Trokit çdo herë në të njëjtin vend.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Lëviz gishtat më shumë, të paktën 1 cm më afër ose më larg.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Afrimi është gishtat që lëvizin drejt njëri-tjetrit, largimi është gishtat që lëvizin larg njëri-tjetrit.</string>
+    <string name="gesture_trainer_tip_moved_together">Lëviz vetëm gishtat drejt ose larg njëri-tjetrit. Mos e rrëshqit gjithë dorën nëpër ekran.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Rrotulloji më shumë, si të rrotullosh një çelës një të katërtën e rrotullimit.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Në drejtim të akrepave të orës do të thotë rrotullim në drejtimin që lëvizin akrepat e orës: gishti i sipërm lëviz djathtas.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Bëje lëvizjen e parë të paktën 1 cm të gjatë.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Pas lëvizjes së parë, kthehu në drejtimin tjetër para se të ngresh.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Bëje lëvizjen para-mbrapa të shpejtë, vajtje e ardhje brenda rreth një sekonde.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Fillo pikërisht në buzë, me majën e gishtit pjesërisht jashtë ekranit.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Kontrollo në cilën gjysmë të buzës fillon.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Rrëshqit më tej, derisa të dëgjosh klikimin, pastaj ngri.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Ngri menjëherë pas klikimit të parë, para të dytit.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Rrëshqit brenda më shpejt, pa ndaluar para klikimit.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Rrëshqit drejt brenda nga buza, ose drejt përgjatë saj, jo diagonalisht.</string>
+    <string name="gesture_trainer_tip_corner_missed">Vendose gishtin pikërisht në cep, duke prekur të dyja buzët.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Ngri më shpejt pasi prek cepin.</string>
+    <string name="gesture_trainer_close_to_limit">Afër kufirit: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Rrëshqitjet fillojnë ngadalë. Një vlerë më e gjatë për <xliff:g id="setting">%1$s</xliff:g> lejon një fillim më të ngadaltë.</string>
+    <string name="gesture_trainer_advice_tap_time">Trokitjet janë të ngadalta. Një vlerë më e gjatë për <xliff:g id="setting">%1$s</xliff:g> lejon trokitje më të ngadalta.</string>
+    <string name="gesture_trainer_advice_edge_width">Rrëshqitjet fillojnë shumë larg nga buza. Një vlerë më e madhe për <xliff:g id="setting">%1$s</xliff:g> i bën gjithashtu rrëshqitjet që fillojnë pranë një buze rrëshqitje nga buza.</string>
+    <string name="gesture_trainer_advice_corner_size">Trokitjet bien jashtë cepit. Një vlerë më e madhe për <xliff:g id="setting">%1$s</xliff:g> i bën cepat më të mëdhenj.</string>
+    <string name="gesture_trainer_advice_corner_time">Trokitjet në cep janë të ngadalta. Një vlerë më e gjatë për <xliff:g id="setting">%1$s</xliff:g> lejon trokitje më të ngadalta.</string>
+    <string name="gesture_trainer_menu_option">Opsioni <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: zgjidh artikullin <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Rrëshqit një gisht lart ose poshtë <xliff:g id="edge">%1$s</xliff:g> të paktën <xliff:g id="distance">%2$d</xliff:g> mm për të hapur menynë. Ajo ka <xliff:g id="count">%3$d</xliff:g> artikuj, nga lart poshtë, secili rreth <xliff:g id="size">%6$s</xliff:g> cm i lartë. Artikulli <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, është <xliff:g id="from">%7$s</xliff:g> deri në <xliff:g id="to">%8$s</xliff:g> cm poshtë majës së ekranit. Ngri gishtin kur artikulli thuhet me zë.</string>
+    <string name="gesture_trainer_menu_sample">Kjo buzë nuk ka meny. Ushtrimi përdor <xliff:g id="count">%1$d</xliff:g> artikuj shembull.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Prova <xliff:g id="number">%1$d</xliff:g>: menyja u mbyll pa zgjedhje.</string>
+    <string name="gesture_trainer_try_menu_other">Prova <xliff:g id="number">%1$d</xliff:g>: u zgjodh <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">u ngrit te artikulli <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Gishti filloi në skajin më të sipërm ose më të poshtëm të buzës, ku janë cepat dhe buzët e sipërme e të poshtme.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Gishti u ngrit <xliff:g id="mm">%1$.0f</xliff:g> mm nga buza, dhe menyja mbyllet përtej <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Gishti u ngrit te artikulli <xliff:g id="item">%1$d</xliff:g> në vend të artikullit <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Fillo pak larg nga skajet e sipërm dhe të poshtëm të buzës.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Mbaje gishtin pranë buzës ndërsa rrëshqet, dhe ngrije atje.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Çdo artikull ka një vend të caktuar përgjatë buzës, dhe zgjidhet artikulli ku ngrihet gishti. Ngri kur artikulli thuhet me zë.</string>
+    <string name="gesture_trainer_contents">Përmbajtja</string>
+    <string name="gesture_trainer_contents_heading">Përmbajtja: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">përfunduar, <xliff:g id="hits">%1$d</xliff:g> nga <xliff:g id="tries">%2$d</xliff:g> u njohën</string>
+    <string name="gesture_trainer_group_tap_swipe">Trokitje dhe rrëshqitje</string>
+    <string name="gesture_trainer_group_edge_swipes">Rrëshqitje nga buzët</string>
+    <string name="gesture_trainer_group_along_edges">Rrëshqitje përgjatë buzëve</string>
+    <string name="gesture_trainer_group_edge_menus">Menytë e buzëve</string>
+    <string name="gesture_trainer_group_corners">Cepat</string>
+    <string name="gesture_trainer_group_back_tap">Trokitje në pjesën e pasme</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Trokitjet me dy gishta të ndjekura nga një rrëshqitje me dy gishta janë lënë jashtë: <xliff:g id="setting">%1$s</xliff:g> është joaktiv.</string>
+    <string name="gesture_trainer_how_swipe_hold">Pastaj, pa ngritur, mbaje gishtin të palëvizur për të paktën <xliff:g id="hold">%1$d</xliff:g> ms, dhe ngri.</string>
+    <string name="gesture_trainer_half_top">e sipërme</string>
+    <string name="gesture_trainer_half_bottom">e poshtme</string>
+    <string name="gesture_trainer_how_taps_half">Trokit në gjysmën <xliff:g id="half">%1$s</xliff:g> të ekranit. Pika midis gishtave përcakton gjysmën.</string>
+    <string name="gesture_trainer_same_fingers">të njëjtët gishta</string>
+    <string name="gesture_trainer_how_tap_swipe">Trokit <xliff:g id="taps">%1$s</xliff:g> me <xliff:g id="fingers">%2$s</xliff:g>. Menjëherë pas trokitjes së fundit, brenda <xliff:g id="gap">%3$d</xliff:g> ms, prek përsëri ekranin me <xliff:g id="swipe_fingers">%4$s</xliff:g> dhe rrëshqit <xliff:g id="direction">%5$s</xliff:g> në vijë të drejtë rreth 2 deri në 3 cm, pastaj ngri.</string>
+    <string name="gesture_trainer_how_corner_hold">Në trokitjen e fundit, lëre gishtin në cep, të palëvizur, për të paktën <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Mbaje telefonin në dorë, nga anët, dhe trokit në mes të pjesës së pasme <xliff:g id="taps">%1$s</xliff:g> me majën e gishtit, fort dhe shpejt, si të trokasësh në derë. Mbaji trokitjet afër njëra-tjetrës: më së shumti <xliff:g id="gap">%2$d</xliff:g> ms midis tyre. Mos e prek ekranin ndërsa troket.</string>
+    <string name="gesture_trainer_back_tap_info">Trokitjet në pjesën e pasme nuk ekzekutojnë komanda gjatë ushtrimit. <xliff:g id="setting">%1$s</xliff:g> përcakton sa e fortë duhet të jetë një trokitje.</string>
+    <string name="gesture_trainer_go_placed">Bëje gjestin <xliff:g id="tries">%1$d</xliff:g> herë.</string>
+    <string name="gesture_trainer_along_left">buzës së majtë</string>
+    <string name="gesture_trainer_along_right">buzës së djathtë</string>
+    <string name="gesture_trainer_along_top">buzës së sipërme</string>
+    <string name="gesture_trainer_along_bottom">buzës së poshtme</string>
+    <string name="gesture_trainer_left_out_along_menu">Rrëshqitjet përgjatë <xliff:g id="edge">%1$s</xliff:g> janë lënë jashtë: ajo ka një meny buze, prandaj një rrëshqitje përgjatë saj hap menynë në vend që të ekzekutojë një gjest.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Rrëshqitjet përgjatë <xliff:g id="edge">%1$s</xliff:g> janë lënë jashtë: ajo lëviz përmbajtjen, prandaj një rrëshqitje përgjatë saj lëviz aplikacionin në vend që të ekzekutojë një gjest.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Gishti u largua shumë nga buza.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Mbaje gishtin në skajin e xhamit, drejt përgjatë buzës.</string>
+    <string name="gesture_trainer_go_back_tap">Bëje gjestin e trokitjes në pjesën e pasme <xliff:g id="tries">%1$d</xliff:g> herë. Një prekje në ekran e bën provën të dështojë.</string>
+    <string name="gesture_trainer_no_accelerometer">Ky ushtrim kërkon një akselerometër. Nuk ka asnjë të disponueshëm.</string>
+    <string name="gesture_trainer_measure_hold">u mbajt i palëvizur <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">trokitje me forcë <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Gishti qëndroi i palëvizur <xliff:g id="ms">%1$d</xliff:g> ms në fund, dhe duhet të qëndrojë i palëvizur të paktën <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Gishtat trokitën në gjysmën tjetër të ekranit.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Pas trokitjeve nuk erdhi asnjë rrëshqitje.</string>
+    <string name="gesture_trainer_finding_swipe_late">Rrëshqitja filloi <xliff:g id="ms">%1$d</xliff:g> ms pas trokitjes së fundit, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Trokitja në pjesën e pasme shumë e lehtë: <xliff:g id="percent">%1$d</xliff:g>%% e forcës së nevojshme.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Një trokitje e tundi telefonin më shumë anash se sa përmes pjesës së pasme.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Telefoni po lëvizte pak para një trokitjeje.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Ekrani u prek, dhe trokitjet ndërsa ai prekej nuk numërohen.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Midis trokitjeve në pjesën e pasme kaluan <xliff:g id="ms">%1$d</xliff:g> ms, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Pas rrëshqitjes, mbaje gishtin të palëvizur në ekran për gjithë kohën e mbajtjes. Pastaj ngri.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Kontrollo në cilën gjysmë troket: mesi i ekranit ndan gjysmën e sipërme nga gjysma e poshtme.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Pas trokitjes së fundit, prek përsëri ekranin menjëherë dhe rrëshqit.</string>
+    <string name="gesture_trainer_tip_swipe_late">Fillo rrëshqitjen menjëherë pas trokitjes së fundit, pa pauzë.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Trokit më fort, me majën e gishtit ose me thua, pranë mesit të pjesës së pasme.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Trokit drejt në pjesën e pasme të telefonit, jo në buzën e tij ose me kënd.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Mbaje telefonin të palëvizur për një moment para se të trokasësh, dhe mbaje lirshëm që dora të mos e lëvizë.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Mbaji gishtat larg ekranit ndërsa troket në pjesën e pasme: mbaje telefonin nga anët.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Trokit më shpejt, një trokitje menjëherë pas tjetrës.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Gishti ngrihet shumë shpejt pas rrëshqitjes. Një vlerë më e shkurtër për <xliff:g id="setting">%1$s</xliff:g> lejon një mbajtje më të shkurtër.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Trokitjet në pjesën e pasme janë të lehta. Një vlerë më e lartë për <xliff:g id="setting">%1$s</xliff:g> zbulon trokitje më të lehta, dhe mund të zbulojë goditje të rastësishme si trokitje.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Gishtat u rrotulluan <xliff:g id="degrees">%1$.0f</xliff:g> gradë, dhe nga <xliff:g id="limit">%2$.0f</xliff:g> gradë lëvizja është rrotullim.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Lëvizi gishtat në vijë të drejtë drejt ose larg njëri-tjetrit, jo në hark rreth njëri-tjetrit.</string>
+    <string name="gesture_trainer_finding_other_gesture">Lëvizja përputhej me atë gjest në vend të këtij.</string>
+    <string name="gesture_trainer_side_left">e majtë</string>
+    <string name="gesture_trainer_side_right">e djathtë</string>
+    <string name="gesture_trainer_side_top">e sipërme</string>
+    <string name="gesture_trainer_side_bottom">e poshtme</string>
+    <string name="gesture_trainer_finding_wrong_edge">Gishti filloi në buzën <xliff:g id="side">%1$s</xliff:g>, ndërsa ky ushtrim është në buzën <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Fillo pikërisht në buzën që emërton ushtrimi.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">U hap një meny buze në vend të këtij gjesti.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Një rrëshqitje përgjatë një buze me meny hap menynë. Fillo në buzën që emërton ushtrimi.</string>
+    <string name="gesture_trainer_group_three_part">Rrëshqitje me tri pjesë</string>
+    <string name="gesture_trainer_group_two_stroke">Rrëshqitje me dy lëvizje</string>
+    <string name="gesture_trainer_group_shake">Shkundja</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Rrëshqitjet me tri pjesë janë lënë jashtë: <xliff:g id="setting">%1$s</xliff:g> është aktiv.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Rrëshqitjet me dy lëvizje janë lënë jashtë: <xliff:g id="setting">%1$s</xliff:g> është <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Shkundja nuk ekzekuton komandë gjatë ushtrimit. <xliff:g id="setting">%1$s</xliff:g> përcakton sa e fortë duhet të jetë një shkundje.</string>
+    <string name="gesture_trainer_go_shake">Shkunde telefonin <xliff:g id="tries">%1$d</xliff:g> herë, me një pauzë të shkurtër pas çdo shkundjeje.</string>
+    <string name="gesture_trainer_how_shake">Mbaje telefonin fort dhe shkunde shpejt para-mbrapa, si të shkundësh një pikë uji: të paktën dy herë në secilin drejtim, gjithçka brenda rreth dy të tretave të sekondës. Pastaj mbaje të palëvizur.</string>
+    <string name="gesture_trainer_how_two_stroke">Rrëshqit <xliff:g id="first">%1$s</xliff:g> me një gisht, rreth 2 cm, dhe ngri. Pastaj menjëherë, brenda <xliff:g id="time">%3$d</xliff:g> ms, rrëshqit <xliff:g id="second">%2$s</xliff:g> me një gisht, rreth 2 cm, dhe ngri.</string>
+    <string name="gesture_trainer_how_three_part">Prek ekranin me një gisht dhe, pa ngritur, rrëshqit <xliff:g id="first">%1$s</xliff:g>, pastaj kthehu fort dhe rrëshqit <xliff:g id="second">%2$s</xliff:g>, pastaj kthehu përsëri fort dhe rrëshqit <xliff:g id="third">%3$s</xliff:g>, secila pjesë rreth 2 cm, dhe ngri. Bëje një lëvizje të vetme, të shpejtë dhe të rrjedhshme me kënde të mprehta, jo me harqe.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Vendos një gisht në të tretën e sipërme të ekranit dhe tjetrin në të tretën e poshtme, për shembull gishtin e madh poshtë dhe gishtin tregues lart.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Gishtat nuk ishin njëri në të tretën e sipërme të ekranit dhe tjetri në të tretën e poshtme.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Nuk pati rrëshqitje të dytë.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Rrëshqitja e dytë filloi <xliff:g id="ms">%1$d</xliff:g> ms pas së parës, dhe lejohen më së shumti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Rrëshqitja e parë shkoi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Rrëshqitja e dytë shkoi <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Shkundja ishte shumë e lehtë: <xliff:g id="percent">%1$d</xliff:g>%% e forcës së nevojshme.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Lëkundje para-mbrapa: <xliff:g id="swings">%1$d</xliff:g> nga <xliff:g id="wanted">%2$d</xliff:g> të nevojshme.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Hapi gishtat larg njëri-tjetrit, njërin pranë buzës së sipërme dhe tjetrin pranë buzës së poshtme.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Pas rrëshqitjes së parë, ngri gishtin dhe rrëshqit përsëri menjëherë.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Fillo rrëshqitjen e dytë menjëherë pasi ngre gishtin.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Shkunde më fort dhe më shpejt.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Shkunde më shpejt, para-mbrapa të paktën dy herë në secilin drejtim, pa ndaluar në mes.</string>
+    <string name="gesture_trainer_measure_shake_strength">lëvizja më e fortë <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Shkundjet janë të lehta. Një vlerë më e lartë për <xliff:g id="setting">%1$s</xliff:g> zbulon shkundje më të lehta, dhe mund ta zbulojë mbajtjen e telefonit gjatë ecjes si shkundje.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Rrëshqitja e dytë fillon vonë. Një vlerë më e gjatë për <xliff:g id="setting">%1$s</xliff:g> lejon një rrëshqitje të dytë më të vonë, dhe atëherë një rrëshqitje e vetme pret më gjatë para se të ekzekutohet.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> është aktiv.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> është joaktiv: rrëshqitjet me dy gishta lëvizin aplikacionin, dhe lëvizja para-mbrapa zakonisht e lëviz gjithashtu. Me cilësimin aktiv, rrëshqitjet me dy gishta ekzekutojnë komanda të SandFly në vend që të lëvizin përmbajtjen.</string>
+    <string name="gesture_trainer_measure_first_stroke">rrëshqitja e parë <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">rrëshqitja e dytë <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">i gjithë gjesti <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">i ngritur <xliff:g id="ms">%1$d</xliff:g> ms midis tyre</string>
+</resources>

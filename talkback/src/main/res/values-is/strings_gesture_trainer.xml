@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Bendingaþjálfi</string>
+    <string name="gesture_trainer_intro">Veldu hóp bendinga. Hver æfing lýsir einni bendingu. Gerðu bendinguna <xliff:g id="tries">%1$d</xliff:g> sinnum; niðurstaða hverrar tilraunar er lesin upp. Eftir síðustu tilraunina sýnir skjárinn mælingar hverrar tilraunar, hverju á að breyta og tengdar stillingar.</string>
+    <string name="gesture_trainer_group_one_finger">Einn fingur</string>
+    <string name="gesture_trainer_group_two_fingers">Tveir fingur</string>
+    <string name="gesture_trainer_group_three_fingers">Þrír fingur</string>
+    <string name="gesture_trainer_group_four_fingers">Fjórir fingur</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Klípa, snúa og hraðstrok</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> æfingar</string>
+    <string name="gesture_trainer_close">Loka</string>
+    <string name="gesture_trainer_no_detection">Bendingaþjálfinn krefst Android 13 eða nýrra.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Bendingum fram og til baka og hornbendingum er sleppt: kveikt er á <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Strokum með tveimur fingrum er sleppt: slökkt er á <xliff:g id="setting">%1$s</xliff:g>, svo þau fletta í forritum.</string>
+    <string name="gesture_trainer_exercise_heading">Æfing <xliff:g id="number">%1$d</xliff:g> af <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Byrja</string>
+    <string name="gesture_trainer_skip">Sleppa þessari æfingu</string>
+    <string name="gesture_trainer_back_to_groups">Aftur í hópa</string>
+    <string name="gesture_trainer_go">Gerðu bendinguna <xliff:g id="tries">%1$d</xliff:g> sinnum, hvar sem er á skjánum. Hver snerting er ein tilraun.</string>
+    <string name="gesture_trainer_fingers_1">einum fingri</string>
+    <string name="gesture_trainer_fingers_2">tveimur fingrum hlið við hlið, með um 1 cm á milli</string>
+    <string name="gesture_trainer_fingers_3">þremur fingrum hlið við hlið, með smá bili á milli</string>
+    <string name="gesture_trainer_fingers_4">fjórum fingrum hlið við hlið, með smá bili á milli</string>
+    <string name="gesture_trainer_direction_up">upp</string>
+    <string name="gesture_trainer_direction_down">niður</string>
+    <string name="gesture_trainer_direction_left">til vinstri</string>
+    <string name="gesture_trainer_direction_right">til hægri</string>
+    <string name="gesture_trainer_how_swipe">Snertu skjáinn með <xliff:g id="fingers">%1$s</xliff:g> og renndu strax <xliff:g id="direction">%2$s</xliff:g> í beinni línu um 2 til 3 cm, lyftu svo. Byrjaðu að hreyfa strax: fingur sem hvílir fyrst ræsir snertikönnun.</string>
+    <string name="gesture_trainer_how_swipe_multi">Settu fingurna niður saman, á sama augnabliki, og hreyfðu þá alla í sömu átt. Hver fingur verður að fara <xliff:g id="direction">%1$s</xliff:g> allan tímann, svo haltu línunni beinni.</string>
+    <string name="gesture_trainer_how_back_and_forth">Snertu skjáinn með einum fingri og renndu <xliff:g id="first">%1$s</xliff:g> um 2 cm, farðu síðan beint til baka <xliff:g id="second">%2$s</xliff:g> um 2 cm án þess að lyfta, og lyftu. Gerðu þetta í einni hraðri, samfelldri hreyfingu.</string>
+    <string name="gesture_trainer_how_angle">Snertu skjáinn með <xliff:g id="fingers">%1$s</xliff:g> og renndu <xliff:g id="first">%2$s</xliff:g> um 2 cm, beygðu síðan skarpt án þess að lyfta og renndu <xliff:g id="second">%3$s</xliff:g> um 2 cm, og lyftu. Hafðu beygjuna skarpt horn, eins og bókstafinn L, ekki boga.</string>
+    <string name="gesture_trainer_taps_1">einu sinni</string>
+    <string name="gesture_trainer_taps_2">tvisvar</string>
+    <string name="gesture_trainer_taps_3">þrisvar</string>
+    <string name="gesture_trainer_taps_4">fjórum sinnum</string>
+    <string name="gesture_trainer_how_taps">Ýttu <xliff:g id="taps">%1$s</xliff:g> með <xliff:g id="fingers">%2$s</xliff:g>. Settu fingurna niður saman og lyftu þeim saman, hratt, án þess að renna.</string>
+    <string name="gesture_trainer_how_taps_quick">Hafðu bönkin hröð og á sama stað: næsta bank verður að koma innan <xliff:g id="gap">%1$d</xliff:g> ms frá því síðasta.</string>
+    <string name="gesture_trainer_how_hold">Snertu skjáinn samtímis með <xliff:g id="fingers">%1$s</xliff:g> og haltu snertingunni kyrri, án þess að renna, í að minnsta kosti <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Ef engin önnur skipun er úthlutuð slekkur þessi bending á SandFly. Í þjálfanum keyrir hún ekkert.</string>
+    <string name="gesture_trainer_how_taps_hold">Ýttu <xliff:g id="taps">%1$s</xliff:g> með <xliff:g id="fingers">%2$s</xliff:g> og í síðasta bankinu skaltu láta fingurna liggja kyrra á skjánum í að minnsta kosti <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Notaðu þumalfingur, vísifingur og löngutöng.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Settu vísifingur og löngutöng hlið við hlið, og þumalfingur og baugfingur nokkra sentimetra frá, sitt hvorum megin. Færðu síðan alla fjóra fingurgómana saman í einn punkt.</string>
+    <string name="gesture_trainer_how_pinch">Settu <xliff:g id="fingers">%1$d</xliff:g> fingur á skjáinn, vel glennta í sundur. Færðu þá síðan beint hvern að öðrum um að minnsta kosti 1 cm, eins og þú sért að taka eitthvað upp, og lyftu þeim af skjánum. Hreyfðu aðeins fingurna, ekki alla höndina, og ekki í boga.</string>
+    <string name="gesture_trainer_how_spread">Settu <xliff:g id="fingers">%1$d</xliff:g> fingur á skjáinn, þétt saman. Færðu þá síðan beint í sundur um að minnsta kosti 1 cm og lyftu þeim af skjánum. Hreyfðu aðeins fingurna, ekki alla höndina, og ekki í boga.</string>
+    <string name="gesture_trainer_clockwise">réttsælis</string>
+    <string name="gesture_trainer_counterclockwise">rangsælis</string>
+    <string name="gesture_trainer_how_rotate">Settu tvo fingur á skjáinn, með um 2 til 3 cm á milli, og snúðu þeim <xliff:g id="way">%1$s</xliff:g> um miðjuna á milli þeirra, eins og þú snúir skífu, um það bil fjórðung úr hring. Lyftu svo.</string>
+    <string name="gesture_trainer_how_scrub">Settu tvo fingur á skjáinn og færðu þá hratt um 2 cm til hliðar og til baka, eins og þú sért að stroka eitthvað út, allt innan um einnar sekúndu. Lyftu svo.</string>
+    <string name="gesture_trainer_edge_bottom">við neðri brún</string>
+    <string name="gesture_trainer_edge_top_left">við efri brún, í vinstri helmingi hennar</string>
+    <string name="gesture_trainer_edge_top_right">við efri brún, í hægri helmingi hennar</string>
+    <string name="gesture_trainer_edge_left_top">við vinstri brún, í efri helmingi hennar</string>
+    <string name="gesture_trainer_edge_left_bottom">við vinstri brún, í neðri helmingi hennar</string>
+    <string name="gesture_trainer_edge_right_top">við hægri brún, í efri helmingi hennar</string>
+    <string name="gesture_trainer_edge_right_bottom">við hægri brún, í neðri helmingi hennar</string>
+    <string name="gesture_trainer_edge_left">við vinstri brún</string>
+    <string name="gesture_trainer_edge_right">við hægri brún</string>
+    <string name="gesture_trainer_edge_top">við efri brún</string>
+    <string name="gesture_trainer_how_edge">Settu einn fingur <xliff:g id="edge">%1$s</xliff:g>, ekki meira en <xliff:g id="edge_width">%2$d</xliff:g> mm frá brúninni, og renndu <xliff:g id="direction">%3$s</xliff:g> inn á skjáinn að fyrsta smellinum, um <xliff:g id="distance">%4$d</xliff:g> mm. Lyftu svo strax: eftir annan smellinn verður strokið langt strok.</string>
+    <string name="gesture_trainer_how_edge_long">Settu einn fingur <xliff:g id="edge">%1$s</xliff:g>, ekki meira en <xliff:g id="edge_width">%2$d</xliff:g> mm frá brúninni, og renndu <xliff:g id="direction">%3$s</xliff:g> inn á skjáinn fram hjá fyrsta smellinum að öðrum smellinum, um <xliff:g id="distance">%4$d</xliff:g> mm. Lyftu svo.</string>
+    <string name="gesture_trainer_how_along">Renndu einum fingri <xliff:g id="direction">%2$s</xliff:g> meðfram <xliff:g id="edge">%1$s</xliff:g>, að minnsta kosti <xliff:g id="distance">%3$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_top_left">efra vinstra</string>
+    <string name="gesture_trainer_corner_top_right">efra hægra</string>
+    <string name="gesture_trainer_corner_bottom_left">neðra vinstra</string>
+    <string name="gesture_trainer_corner_bottom_right">neðra hægra</string>
+    <string name="gesture_trainer_how_corner">Ýttu <xliff:g id="taps">%1$s</xliff:g> á <xliff:g id="corner">%2$s</xliff:g> horn skjásins. Settu fingurinn alveg út í hornið, ekki meira en <xliff:g id="size">%3$d</xliff:g> mm frá báðum brúnum, og lyftu hratt, innan <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> mm. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> mm.</string>
+    <string name="gesture_trainer_corner_warning">Með stærri horn getur ýting á stýringu nálægt horni, eins og Til baka efst til vinstri, keyrt hornbendinguna í staðinn.</string>
+    <string name="gesture_trainer_rating_precise">greint, nákvæmt</string>
+    <string name="gesture_trainer_rating_good">greint, gott</string>
+    <string name="gesture_trainer_rating_borderline">greint, en nálægt mörkum</string>
+    <string name="gesture_trainer_try_recognized">Tilraun <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">Tilraun <xliff:g id="number">%1$d</xliff:g>: ekki greint.</string>
+    <string name="gesture_trainer_try_other">Tilraun <xliff:g id="number">%1$d</xliff:g>: greint sem <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> af <xliff:g id="tries">%3$d</xliff:g> greindar</string>
+    <string name="gesture_trainer_results_tries">Tilraunirnar þínar</string>
+    <string name="gesture_trainer_results_change">Hverju á að breyta</string>
+    <string name="gesture_trainer_results_close">Nálægt mörkum</string>
+    <string name="gesture_trainer_results_all_good">Allar tilraunir voru greindar innan markanna.</string>
+    <string name="gesture_trainer_results_settings">Stillingar sem geta hjálpað</string>
+    <string name="gesture_trainer_next">Næsta æfing</string>
+    <string name="gesture_trainer_repeat">Endurtaka</string>
+    <string name="gesture_trainer_finish">Ljúka</string>
+    <string name="gesture_trainer_group_done">Þú hefur lokið öllum æfingum í <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">Breyta <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">tók <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length"><xliff:g id="cm">%1$.1f</xliff:g> cm langt</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> cm á sekúndu</string>
+    <string name="gesture_trainer_measure_angle"><xliff:g id="degrees">%1$.0f</xliff:g> gráður frá beinni línu</string>
+    <string name="gesture_trainer_measure_start">fyrsti sentimetrinn á <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">fingurnir lentu með <xliff:g id="ms">%1$d</xliff:g> ms millibili</string>
+    <string name="gesture_trainer_measure_tap">bank í <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms milli banka</string>
+    <string name="gesture_trainer_measure_spread">fingurnir færðust <xliff:g id="mm">%1$.0f</xliff:g> mm</string>
+    <string name="gesture_trainer_measure_rotation">snerist <xliff:g id="degrees">%1$.0f</xliff:g> gráður</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> mm frá brúnum hornsins</string>
+    <string name="gesture_trainer_measure_edge">byrjaði <xliff:g id="mm">%1$.0f</xliff:g> mm frá brúninni</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Fingur á skjánum: <xliff:g id="fingers">%1$d</xliff:g> í stað <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Fingurnir lentu með <xliff:g id="ms">%1$d</xliff:g> ms millibili, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Fingri var lyft áður en allir fingur voru komnir niður.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Fingrunum var lyft með <xliff:g id="ms">%1$d</xliff:g> ms millibili, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">Fingurinn var of lengi kyrr eða hreyfðist of hægt í byrjun, svo snertingin varð að snertikönnun.</string>
+    <string name="gesture_trainer_finding_slow_start">Fyrsti sentimetrinn tók <xliff:g id="ms">%1$d</xliff:g> ms, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">Fingurinn hægði á sér í <xliff:g id="ms">%1$d</xliff:g> ms, og hver sentimetri má taka mest <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">Hreyfingin var aðeins <xliff:g id="mm">%1$.0f</xliff:g> mm, og hún verður að vera að minnsta kosti <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Fingurinn byrjaði að fara <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Fingurnir byrjuðu að fara <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">Leiðin sveigði <xliff:g id="degrees">%1$.0f</xliff:g> gráður frá beinni línu, og hámarkið er <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">Leiðin bognaði í <xliff:g id="parts">%1$d</xliff:g> hluta í stað <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">Beygjan fannst ekki.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Eftir beygjuna fór fingurinn <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">Fingurinn rann <xliff:g id="mm">%1$.1f</xliff:g> mm í banki, og hámarkið er <xliff:g id="limit">%2$.1f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Bank varði í <xliff:g id="ms">%1$d</xliff:g> ms, lengur en <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Síðasta bankinu var haldið í <xliff:g id="ms">%1$d</xliff:g> ms, og það verður að vera að minnsta kosti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> bönk í stað <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> bönk í stað <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms liðu milli banka, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">Bönkin lentu með <xliff:g id="mm">%1$.0f</xliff:g> mm millibili, og hámarkið er <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Fingurnir færðust aðeins <xliff:g id="mm">%1$.0f</xliff:g> mm, og þeir verða að færast að minnsta kosti <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Fingurnir færðust í hina áttina.</string>
+    <string name="gesture_trainer_finding_moved_together">Öll höndin rann <xliff:g id="mm">%1$.0f</xliff:g> mm yfir skjáinn, meira en fingurnir færðust hver að öðrum eða hver frá öðrum.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Fingurnir snerust aðeins <xliff:g id="degrees">%1$.0f</xliff:g> gráður, og þeir verða að snúast að minnsta kosti <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Fingurnir snerust í hina áttina.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Fyrsta strokið var <xliff:g id="mm">%1$.0f</xliff:g> mm, og það verður að vera að minnsta kosti <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Strokið til baka var <xliff:g id="mm">%1$.0f</xliff:g> mm, og það verður að vera að minnsta kosti <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Hraðstrokið tók <xliff:g id="ms">%1$d</xliff:g> ms, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Fingurinn lenti <xliff:g id="mm">%1$.0f</xliff:g> mm frá brúninni, og brúnin er <xliff:g id="limit">%2$.0f</xliff:g> mm breið.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Fingurinn byrjaði í hinum helmingi brúnarinnar.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Fingurinn rann <xliff:g id="mm">%1$.0f</xliff:g> mm, og hann verður að renna að minnsta kosti <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Of langt strok: fingurinn fór fram hjá öðrum smellinum, <xliff:g id="mm">%1$.0f</xliff:g> mm, og annar smellurinn er við <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Það tók <xliff:g id="ms">%1$d</xliff:g> ms að ná smellinum, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Strokið fór <xliff:g id="degrees">%1$.0f</xliff:g> gráður til hliðar, og hámarkið er <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">Bankið lenti <xliff:g id="mm">%1$.0f</xliff:g> mm frá brúnum hornsins, og hornið er <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Bank á horn varði í <xliff:g id="ms">%1$d</xliff:g> ms, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">Engin hreyfing sem passar við bendinguna greindist.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Athugaðu hve margir fingur snerta glerið. Lófi eða annar fingur sem hvílir á skjánum telst líka með.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Settu alla fingurna niður á sama augnabliki, eins og eina hönd, ekki einn á eftir öðrum.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Settu fyrst alla fingurna niður, hreyfðu þá svo eða lyftu þeim.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Lyftu öllum fingrunum á sama augnabliki.</string>
+    <string name="gesture_trainer_tip_slow_start">Byrjaðu að hreyfa um leið og þú snertir skjáinn, og hreyfðu hraðar í byrjun.</string>
+    <string name="gesture_trainer_tip_paused">Haltu fingrinum á jafnri hreyfingu þar til þú lyftir. Ekki hægja á undir lokin.</string>
+    <string name="gesture_trainer_tip_too_short">Hafðu hreyfinguna lengri, um 2 til 3 cm.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Athugaðu áttina strax í upphafi hreyfingarinnar. Það hjálpar að halda símanum beint fyrir framan þig.</string>
+    <string name="gesture_trainer_tip_off_line">Hreyfðu aðeins í áttina, ekki á ská. Vísifingur heldur beinni línu en þumalfingur.</string>
+    <string name="gesture_trainer_tip_curved">Haltu línunni beinni og lyftu beint í lokin, án þess að krækja fingrinum til hliðar um leið og þú lyftir.</string>
+    <string name="gesture_trainer_tip_turn_missing">Breyttu um átt skarpt, í rétt horn eða beint til baka, án þess að lyfta. Hver hluti ætti að vera um 2 cm.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Eftir beygjuna skaltu athuga í hvaða átt þú ferð: seinni hlutinn verður að fara í hina áttina sem bendingin nefnir.</string>
+    <string name="gesture_trainer_tip_tap_moved">Ýttu beint niður og upp, með fingurgómnum, án þess að renna.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Hafðu hvert bank stutt: snertu og lyftu strax.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Í síðasta bankinu skaltu halda fingrunum kyrrum á skjánum allan haldtímann.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Teldu bönkin og gerðu þau öll hratt í einni lotu.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Teldu bönkin. Fingur sem skoppar af glerinu gerir aukabank.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Ýttu hraðar: byrjaðu næsta bank strax eftir að þú lyftir.</string>
+    <string name="gesture_trainer_tip_taps_apart">Ýttu á sama stað í hvert sinn.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Færðu fingurna lengra, að minnsta kosti 1 cm nær hvor öðrum eða lengra í sundur.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Að klípa er að færa fingurna hvern að öðrum, að glenna sundur er að færa þá hvern frá öðrum.</string>
+    <string name="gesture_trainer_tip_moved_together">Færðu aðeins fingurna hvern að öðrum eða hvern frá öðrum. Ekki renna allri höndinni yfir skjáinn.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Snúðu lengra, eins og þú snúir skífu fjórðung úr hring.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Réttsælis þýðir að snúa í sömu átt og vísar klukku fara: efri fingurinn færist til hægri.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Hafðu fyrsta strokið að minnsta kosti 1 cm langt.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Eftir fyrsta strokið skaltu fara til baka í hina áttina áður en þú lyftir.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Hafðu hraðstrokið snöggt, fram og til baka á um einni sekúndu.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Byrjaðu alveg við brúnina, með fingurgóminn að hluta utan skjásins.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Athugaðu í hvorum helmingi brúnarinnar þú byrjar.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Renndu lengra, þar til þú heyrir smellinn, lyftu svo.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Lyftu strax eftir fyrsta smellinn, á undan þeim seinni.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Renndu hraðar inn, án þess að stoppa á undan smellinum.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Renndu beint inn frá brúninni, eða beint meðfram henni, ekki á ská.</string>
+    <string name="gesture_trainer_tip_corner_missed">Settu fingurinn alveg út í hornið, þannig að hann snerti báðar brúnir.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Lyftu hraðar eftir að þú snertir hornið.</string>
+    <string name="gesture_trainer_close_to_limit">Nálægt mörkunum: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Strok byrja hægt. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> leyfir hægari byrjun.</string>
+    <string name="gesture_trainer_advice_tap_time">Bönk eru hæg. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> leyfir hægari bönk.</string>
+    <string name="gesture_trainer_advice_edge_width">Strok byrja of langt frá brúninni. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> gerir einnig strok sem byrja nálægt brún að brúnarstrokum.</string>
+    <string name="gesture_trainer_advice_corner_size">Bönk lenda utan hornsins. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> stækkar hornin.</string>
+    <string name="gesture_trainer_advice_corner_time">Bönk á horn eru hæg. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> leyfir hægari bönk.</string>
+    <string name="gesture_trainer_menu_option">Valkostur <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: veldu atriði <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Renndu einum fingri upp eða niður <xliff:g id="edge">%1$s</xliff:g> að minnsta kosti <xliff:g id="distance">%2$d</xliff:g> mm til að opna valmyndina. Hún hefur <xliff:g id="count">%3$d</xliff:g> atriði, ofan frá og niður, hvert um <xliff:g id="size">%6$s</xliff:g> cm hátt. Atriði <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, er <xliff:g id="from">%7$s</xliff:g> til <xliff:g id="to">%8$s</xliff:g> cm fyrir neðan efri brún skjásins. Lyftu fingrinum þegar atriðið er lesið upp.</string>
+    <string name="gesture_trainer_menu_sample">Þessi brún hefur enga valmynd. Æfingin notar <xliff:g id="count">%1$d</xliff:g> sýnishornsatriði.</string>
+    <string name="gesture_trainer_try_menu_cancelled">Tilraun <xliff:g id="number">%1$d</xliff:g>: valmyndin lokaðist án vals.</string>
+    <string name="gesture_trainer_try_menu_other">Tilraun <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="item">%2$s</xliff:g> var valið.</string>
+    <string name="gesture_trainer_measure_menu_item">lyft við atriði <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">Fingurinn byrjaði alveg efst eða neðst á brúninni, þar sem hornin og efri og neðri brúnirnar eru.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Fingrinum var lyft <xliff:g id="mm">%1$.0f</xliff:g> mm frá brúninni, og valmyndin lokast utan <xliff:g id="limit">%2$.0f</xliff:g> mm.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Fingrinum var lyft við atriði <xliff:g id="item">%1$d</xliff:g> í stað atriðis <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Byrjaðu aðeins frá efri og neðri enda brúnarinnar.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Haltu fingrinum nálægt brúninni meðan þú rennir, og lyftu honum þar.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Hvert atriði hefur fastan stað meðfram brúninni, og atriðið þar sem fingrinum er lyft er valið. Lyftu þegar atriðið er lesið upp.</string>
+    <string name="gesture_trainer_contents">Efnisyfirlit</string>
+    <string name="gesture_trainer_contents_heading">Efnisyfirlit: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">lokið, <xliff:g id="hits">%1$d</xliff:g> af <xliff:g id="tries">%2$d</xliff:g> greindar</string>
+    <string name="gesture_trainer_group_tap_swipe">Ýta og strjúka</string>
+    <string name="gesture_trainer_group_edge_swipes">Strok frá brúnum</string>
+    <string name="gesture_trainer_group_along_edges">Strok meðfram brúnum</string>
+    <string name="gesture_trainer_group_edge_menus">Valmyndir brúna</string>
+    <string name="gesture_trainer_group_corners">Horn</string>
+    <string name="gesture_trainer_group_back_tap">Bank á bakhlið</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Bönkum með tveimur fingrum sem fylgt er eftir með stroki með tveimur fingrum er sleppt: slökkt er á <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_how_swipe_hold">Haltu síðan fingrinum kyrrum, án þess að lyfta, í að minnsta kosti <xliff:g id="hold">%1$d</xliff:g> ms, og lyftu.</string>
+    <string name="gesture_trainer_half_top">efri</string>
+    <string name="gesture_trainer_half_bottom">neðri</string>
+    <string name="gesture_trainer_how_taps_half">Ýttu á <xliff:g id="half">%1$s</xliff:g> helming skjásins. Punkturinn milli fingranna ræður helmingnum.</string>
+    <string name="gesture_trainer_same_fingers">sömu fingrum</string>
+    <string name="gesture_trainer_how_tap_swipe">Ýttu <xliff:g id="taps">%1$s</xliff:g> með <xliff:g id="fingers">%2$s</xliff:g>. Strax eftir síðasta bankið, innan <xliff:g id="gap">%3$d</xliff:g> ms, skaltu snerta skjáinn aftur með <xliff:g id="swipe_fingers">%4$s</xliff:g> og renna <xliff:g id="direction">%5$s</xliff:g> í beinni línu um 2 til 3 cm, lyftu svo.</string>
+    <string name="gesture_trainer_how_corner_hold">Í síðasta bankinu skaltu láta fingurinn liggja kyrran í horninu í að minnsta kosti <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">Haltu á símanum í hendinni, um hliðarnar, og bankaðu <xliff:g id="taps">%1$s</xliff:g> á miðja bakhlið hans með fingurgómi, fast og hratt, eins og þú bankir á hurð. Hafðu bönkin þétt: mest <xliff:g id="gap">%2$d</xliff:g> ms á milli þeirra. Ekki snerta skjáinn meðan þú bankar.</string>
+    <string name="gesture_trainer_back_tap_info">Bank á bakhlið keyrir engar skipanir meðan á æfingunni stendur. <xliff:g id="setting">%1$s</xliff:g> ákvarðar hversu fast bank þarf að vera.</string>
+    <string name="gesture_trainer_go_placed">Gerðu bendinguna <xliff:g id="tries">%1$d</xliff:g> sinnum.</string>
+    <string name="gesture_trainer_along_left">vinstri brún</string>
+    <string name="gesture_trainer_along_right">hægri brún</string>
+    <string name="gesture_trainer_along_top">efri brún</string>
+    <string name="gesture_trainer_along_bottom">neðri brún</string>
+    <string name="gesture_trainer_left_out_along_menu">Strokum meðfram <xliff:g id="edge">%1$s</xliff:g> er sleppt: hún hefur valmynd brúnar, svo strok meðfram henni opnar valmyndina í stað þess að keyra bendingu.</string>
+    <string name="gesture_trainer_left_out_along_scroll">Strokum meðfram <xliff:g id="edge">%1$s</xliff:g> er sleppt: hún flettir, svo strok meðfram henni flettir í forritinu í stað þess að keyra bendingu.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Fingurinn fór of langt frá brúninni.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Haltu fingrinum alveg á jaðri glersins, beint meðfram brúninni.</string>
+    <string name="gesture_trainer_go_back_tap">Gerðu bendinguna Bank á bakhlið <xliff:g id="tries">%1$d</xliff:g> sinnum. Snerting á skjáinn ógildir tilraunina.</string>
+    <string name="gesture_trainer_no_accelerometer">Þessi æfing krefst hröðunarmælis. Enginn er tiltækur.</string>
+    <string name="gesture_trainer_measure_hold">haldið kyrru í <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">bank með styrk <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Fingurinn var kyrr í <xliff:g id="ms">%1$d</xliff:g> ms í lokin, og hann verður að vera kyrr í að minnsta kosti <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Fingurnir ýttu á hinn helming skjásins.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Ekkert strok kom á eftir bönkunum.</string>
+    <string name="gesture_trainer_finding_swipe_late">Strokið byrjaði <xliff:g id="ms">%1$d</xliff:g> ms eftir síðasta bankið, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Bank á bakhlið of létt: <xliff:g id="percent">%1$d</xliff:g>%% af nauðsynlegum styrk.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Bank hristi símann meira til hliðar en í gegnum bakhliðina.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Síminn var á hreyfingu rétt fyrir bank.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Skjárinn var snertur, og bönk meðan hann er snertur teljast ekki.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow"><xliff:g id="ms">%1$d</xliff:g> ms liðu milli banka á bakhliðina, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Eftir strokið skaltu halda fingrinum kyrrum á skjánum allan haldtímann. Lyftu svo.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Athugaðu á hvorn helminginn þú ýtir: miðja skjásins skilur efri helminginn frá þeim neðri.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Eftir síðasta bankið skaltu snerta skjáinn strax aftur og strjúka.</string>
+    <string name="gesture_trainer_tip_swipe_late">Byrjaðu strokið strax eftir síðasta bankið, án hlés.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Bankaðu fastar, með fingurgómnum eða nögl, nálægt miðri bakhliðinni.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Bankaðu beint á bakhlið símans, ekki á brún hans eða á ská.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Haltu símanum kyrrum andartak áður en þú bankar, og haltu laust á honum svo höndin hreyfi hann ekki.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Haltu fingrunum frá skjánum meðan þú bankar á bakhliðina: haltu á símanum um hliðarnar.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Bankaðu hraðar, eitt bank strax á eftir öðru.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Fingrinum er lyft of fljótt eftir strokið. Lægra gildi í <xliff:g id="setting">%1$s</xliff:g> leyfir styttra hald.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Bönk á bakhlið eru létt. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> greinir léttari bönk, og getur greint högg sem bönk.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Fingurnir snerust <xliff:g id="degrees">%1$.0f</xliff:g> gráður, og frá <xliff:g id="limit">%2$.0f</xliff:g> gráðum er hreyfingin snúningur.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Færðu fingurna í beinni línu hvern að öðrum eða hvern frá öðrum, ekki í boga hvern um annan.</string>
+    <string name="gesture_trainer_finding_other_gesture">Hreyfingin passaði við þá bendingu í staðinn.</string>
+    <string name="gesture_trainer_side_left">vinstri</string>
+    <string name="gesture_trainer_side_right">hægri</string>
+    <string name="gesture_trainer_side_top">efri</string>
+    <string name="gesture_trainer_side_bottom">neðri</string>
+    <string name="gesture_trainer_finding_wrong_edge">Fingurinn byrjaði við <xliff:g id="side">%1$s</xliff:g> brún, en þessi æfing er við <xliff:g id="expected">%2$s</xliff:g> brún.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Byrjaðu alveg við brúnina sem æfingin nefnir.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Valmynd brúnar opnaðist í stað þessarar bendingar.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Strok meðfram brún með valmynd opnar valmyndina. Byrjaðu við brúnina sem æfingin nefnir.</string>
+    <string name="gesture_trainer_group_three_part">Þríþætt strok</string>
+    <string name="gesture_trainer_group_two_stroke">Tvöföld strok</string>
+    <string name="gesture_trainer_group_shake">Hristingur</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Þríþættum strokum er sleppt: kveikt er á <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Tvöföldum strokum er sleppt: <xliff:g id="setting">%1$s</xliff:g> er <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Hristingur keyrir enga skipun meðan á æfingunni stendur. <xliff:g id="setting">%1$s</xliff:g> ákvarðar hversu fast þarf að hrista.</string>
+    <string name="gesture_trainer_go_shake">Hristu símann <xliff:g id="tries">%1$d</xliff:g> sinnum, með stuttu hléi eftir hvern hristing.</string>
+    <string name="gesture_trainer_how_shake">Haltu þétt um símann og hristu hann hratt fram og til baka, eins og þú sért að hrista af vatnsdropa: að minnsta kosti tvisvar í hvora átt, allt innan um tveggja þriðju úr sekúndu. Haltu honum svo kyrrum.</string>
+    <string name="gesture_trainer_how_two_stroke">Strjúktu <xliff:g id="first">%1$s</xliff:g> með einum fingri, um 2 cm, og lyftu. Strjúktu svo strax, innan <xliff:g id="time">%3$d</xliff:g> ms, <xliff:g id="second">%2$s</xliff:g> með einum fingri, um 2 cm, og lyftu.</string>
+    <string name="gesture_trainer_how_three_part">Snertu skjáinn með einum fingri og, án þess að lyfta, strjúktu <xliff:g id="first">%1$s</xliff:g>, beygðu svo skarpt og strjúktu <xliff:g id="second">%2$s</xliff:g>, beygðu svo aftur skarpt og strjúktu <xliff:g id="third">%3$s</xliff:g>, hver hluti um 2 cm, og lyftu. Gerðu þetta í einni hraðri, samfelldri hreyfingu með skörpum hornum, ekki bogum.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Settu einn fingur í efsta þriðjung skjásins og hinn í neðsta þriðjunginn, til dæmis þumalfingur neðarlega og vísifingur ofarlega.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Fingurnir voru ekki einn í efsta þriðjungi skjásins og einn í neðsta þriðjungnum.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Ekkert seinna strok kom.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Seinna strokið byrjaði <xliff:g id="ms">%1$d</xliff:g> ms eftir það fyrra, og hámarkið er <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Fyrra strokið fór <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Seinna strokið fór <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Hristingurinn var of léttur: <xliff:g id="percent">%1$d</xliff:g>%% af nauðsynlegum styrk.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Sveiflur fram og til baka: <xliff:g id="swings">%1$d</xliff:g> af <xliff:g id="wanted">%2$d</xliff:g> nauðsynlegum.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Glenntu fingurna vel í sundur, annan nálægt efri brúninni og hinn nálægt neðri brúninni.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Eftir fyrra strokið skaltu lyfta fingrinum og strjúka strax aftur.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Byrjaðu seinna strokið strax eftir að þú lyftir fingrinum.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Hristu fastar og hraðar.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Hristu hraðar, fram og til baka að minnsta kosti tvisvar í hvora átt, án þess að stoppa á milli.</string>
+    <string name="gesture_trainer_measure_shake_strength">sterkasta hreyfing <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Hristingar eru léttir. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> greinir léttari hristinga, og getur greint það að bera símann sem hristing.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Seinna strokið byrjar seint. Hærra gildi í <xliff:g id="setting">%1$s</xliff:g> leyfir seinna strok sem byrjar síðar, og stakt strok bíður þá lengur áður en það keyrir.</string>
+    <string name="gesture_trainer_scrub_two_finger_on">Kveikt er á <xliff:g id="setting">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_scrub_two_finger_off">Slökkt er á <xliff:g id="setting">%1$s</xliff:g>: strok með tveimur fingrum fletta í forritinu, og hraðstrok flettir oftast líka. Þegar kveikt er á stillingunni keyra strok með tveimur fingrum SandFly-skipanir í stað þess að fletta.</string>
+    <string name="gesture_trainer_measure_first_stroke">fyrra strok <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">seinna strok <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">öll bendingin <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">lyft í <xliff:g id="ms">%1$d</xliff:g> ms á milli</string>
+</resources>

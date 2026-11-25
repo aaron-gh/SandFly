@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">מאמן התנועות</string>
+    <string name="gesture_trainer_intro">בחר קבוצת תנועות. כל תרגיל מתאר תנועה. בצע את התנועה <xliff:g id="tries">%1$d</xliff:g> פעמים; התוצאה של כל ניסיון מוקראת. אחרי הניסיון האחרון, המסך מציג את המדידות של כל ניסיון, מה לשנות והגדרות קשורות.</string>
+    <string name="gesture_trainer_group_one_finger">אצבע אחת</string>
+    <string name="gesture_trainer_group_two_fingers">שתי אצבעות</string>
+    <string name="gesture_trainer_group_three_fingers">שלוש אצבעות</string>
+    <string name="gesture_trainer_group_four_fingers">ארבע אצבעות</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">צביטה, סיבוב ושפשוף</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> תרגילים</string>
+    <string name="gesture_trainer_close">סגירה</string>
+    <string name="gesture_trainer_no_detection">מאמן התנועות דורש Android 13 ואילך.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">תנועות הלוך ושוב ותנועות זווית לא נכללות: <xliff:g id="setting">%1$s</xliff:g> מופעלת.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">החלקות בשתי אצבעות לא נכללות: <xliff:g id="setting">%1$s</xliff:g> מושבתת, ולכן הן גוללות באפליקציות.</string>
+    <string name="gesture_trainer_exercise_heading">תרגיל <xliff:g id="number">%1$d</xliff:g> מתוך <xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">התחלה</string>
+    <string name="gesture_trainer_skip">דילוג על התרגיל</string>
+    <string name="gesture_trainer_back_to_groups">חזרה לקבוצות</string>
+    <string name="gesture_trainer_go">בצע את התנועה <xliff:g id="tries">%1$d</xliff:g> פעמים, בכל מקום במסך. כל נגיעה היא ניסיון.</string>
+    <string name="gesture_trainer_fingers_1">אצבע אחת</string>
+    <string name="gesture_trainer_fingers_2">שתי אצבעות זו לצד זו, במרחק של כ-1 ס\"מ</string>
+    <string name="gesture_trainer_fingers_3">שלוש אצבעות זו לצד זו, מעט מרוחקות</string>
+    <string name="gesture_trainer_fingers_4">ארבע אצבעות זו לצד זו, מעט מרוחקות</string>
+    <string name="gesture_trainer_direction_up">למעלה</string>
+    <string name="gesture_trainer_direction_down">למטה</string>
+    <string name="gesture_trainer_direction_left">שמאלה</string>
+    <string name="gesture_trainer_direction_right">ימינה</string>
+    <string name="gesture_trainer_how_swipe">גע במסך באמצעות <xliff:g id="fingers">%1$s</xliff:g> ובלי להמתין החלק <xliff:g id="direction">%2$s</xliff:g> בקו ישר לאורך 2 עד 3 ס\"מ בערך, ואז הרם. התחל לזוז מיד: אצבע שנחה קודם מפעילה גילוי באמצעות מגע.</string>
+    <string name="gesture_trainer_how_swipe_multi">הנח את האצבעות יחד, באותו רגע, והזז את כולן באותו כיוון. כל אצבע חייבת לנוע <xliff:g id="direction">%1$s</xliff:g> כל הזמן, לכן שמור על קו ישר.</string>
+    <string name="gesture_trainer_how_back_and_forth">גע במסך באצבע אחת והחלק <xliff:g id="first">%1$s</xliff:g> לאורך 2 ס\"מ בערך, ואז בלי להרים חזור ישר <xliff:g id="second">%2$s</xliff:g> לאורך 2 ס\"מ בערך, והרם. בצע זאת בתנועה אחת מהירה וחלקה.</string>
+    <string name="gesture_trainer_how_angle">גע במסך באמצעות <xliff:g id="fingers">%1$s</xliff:g> והחלק <xliff:g id="first">%2$s</xliff:g> לאורך 2 ס\"מ בערך, ואז בלי להרים פנה בחדות והחלק <xliff:g id="second">%3$s</xliff:g> לאורך 2 ס\"מ בערך, והרם. הפנייה צריכה להיות פינה חדה, כמו האות L, לא עקומה.</string>
+    <string name="gesture_trainer_taps_1">פעם אחת</string>
+    <string name="gesture_trainer_taps_2">פעמיים</string>
+    <string name="gesture_trainer_taps_3">שלוש פעמים</string>
+    <string name="gesture_trainer_taps_4">ארבע פעמים</string>
+    <string name="gesture_trainer_how_taps">לחץ <xliff:g id="taps">%1$s</xliff:g> באמצעות <xliff:g id="fingers">%2$s</xliff:g>. הנח את האצבעות יחד והרם אותן יחד, במהירות, בלי להחליק.</string>
+    <string name="gesture_trainer_how_taps_quick">שמור על לחיצות מהירות ובאותה נקודה: הלחיצה הבאה חייבת להגיע תוך <xliff:g id="gap">%1$d</xliff:g> ms מהקודמת.</string>
+    <string name="gesture_trainer_how_hold">הנח <xliff:g id="fingers">%1$s</xliff:g> על המסך יחד והשאר אותן ללא תנועה, בלי להחליק, לפחות <xliff:g id="hold">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">כשלא מוקצית פקודה אחרת, התנועה הזאת משביתה את SandFly. במאמן היא לא מפעילה דבר.</string>
+    <string name="gesture_trainer_how_taps_hold">לחץ <xliff:g id="taps">%1$s</xliff:g> באמצעות <xliff:g id="fingers">%2$s</xliff:g>, ובלחיצה האחרונה השאר את האצבעות על המסך, ללא תנועה, לפחות <xliff:g id="hold">%3$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_three_finger_hand">השתמש באגודל, באצבע המורה ובאצבע האמצעית.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">הנח את האצבע המורה והאמצעית זו לצד זו, ואת האגודל והקמיצה כמה סנטימטרים מהן, אחת מכל צד. אחר כך קרב את כל ארבע קצות האצבעות לנקודה אחת.</string>
+    <string name="gesture_trainer_how_pinch">הנח <xliff:g id="fingers">%1$d</xliff:g> אצבעות על המסך, רחוקות זו מזו. אחר כך קרב אותן ישר זו לזו לפחות 1 ס\"מ, כאילו אתה מרים משהו, והרם אותן מהמסך. הזז רק את האצבעות, לא את כל היד, ולא בקשת.</string>
+    <string name="gesture_trainer_how_spread">הנח <xliff:g id="fingers">%1$d</xliff:g> אצבעות על המסך, קרובות זו לזו. אחר כך הרחק אותן ישר זו מזו לפחות 1 ס\"מ והרם אותן מהמסך. הזז רק את האצבעות, לא את כל היד, ולא בקשת.</string>
+    <string name="gesture_trainer_clockwise">בכיוון השעון</string>
+    <string name="gesture_trainer_counterclockwise">נגד כיוון השעון</string>
+    <string name="gesture_trainer_how_rotate">הנח שתי אצבעות על המסך, במרחק של 2 עד 3 ס\"מ בערך, וסובב אותן <xliff:g id="way">%1$s</xliff:g> סביב האמצע שלהן, כמו סיבוב חוגה, כרבע סיבוב. אחר כך הרם.</string>
+    <string name="gesture_trainer_how_scrub">הנח שתי אצבעות על המסך והזז אותן במהירות לצד אחד כ-2 ס\"מ וחזרה, כמו מחיקה במחק, הכול תוך שנייה בערך. אחר כך הרם.</string>
+    <string name="gesture_trainer_edge_bottom">בקצה התחתון</string>
+    <string name="gesture_trainer_edge_top_left">בקצה העליון, בחצי השמאלי שלו</string>
+    <string name="gesture_trainer_edge_top_right">בקצה העליון, בחצי הימני שלו</string>
+    <string name="gesture_trainer_edge_left_top">בקצה השמאלי, בחצי העליון שלו</string>
+    <string name="gesture_trainer_edge_left_bottom">בקצה השמאלי, בחצי התחתון שלו</string>
+    <string name="gesture_trainer_edge_right_top">בקצה הימני, בחצי העליון שלו</string>
+    <string name="gesture_trainer_edge_right_bottom">בקצה הימני, בחצי התחתון שלו</string>
+    <string name="gesture_trainer_edge_left">בקצה השמאלי</string>
+    <string name="gesture_trainer_edge_right">בקצה הימני</string>
+    <string name="gesture_trainer_edge_top">בקצה העליון</string>
+    <string name="gesture_trainer_how_edge">הנח אצבע אחת <xliff:g id="edge">%1$s</xliff:g>, לכל היותר <xliff:g id="edge_width">%2$d</xliff:g> מ\"מ מהקצה, והחלק <xliff:g id="direction">%3$s</xliff:g> לתוך המסך עד הקליק הראשון, כ-<xliff:g id="distance">%4$d</xliff:g> מ\"מ. אחר כך הרם מיד: אחרי הקליק השני, ההחלקה היא החלקה ארוכה.</string>
+    <string name="gesture_trainer_how_edge_long">הנח אצבע אחת <xliff:g id="edge">%1$s</xliff:g>, לכל היותר <xliff:g id="edge_width">%2$d</xliff:g> מ\"מ מהקצה, והחלק <xliff:g id="direction">%3$s</xliff:g> לתוך המסך מעבר לקליק הראשון עד השני, כ-<xliff:g id="distance">%4$d</xliff:g> מ\"מ. אחר כך הרם.</string>
+    <string name="gesture_trainer_how_along">החלק אצבע אחת <xliff:g id="direction">%2$s</xliff:g> לאורך <xliff:g id="edge">%1$s</xliff:g>, לפחות <xliff:g id="distance">%3$d</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_corner_top_left">השמאלית העליונה</string>
+    <string name="gesture_trainer_corner_top_right">הימנית העליונה</string>
+    <string name="gesture_trainer_corner_bottom_left">השמאלית התחתונה</string>
+    <string name="gesture_trainer_corner_bottom_right">הימנית התחתונה</string>
+    <string name="gesture_trainer_how_corner">לחץ <xliff:g id="taps">%1$s</xliff:g> בפינה <xliff:g id="corner">%2$s</xliff:g> של המסך. הנח את האצבע ממש בפינה, לא יותר מ-<xliff:g id="size">%3$d</xliff:g> מ\"מ משני הקצוות, והרם במהירות, תוך <xliff:g id="time">%4$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> מ\"מ. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_corner_warning">עם פינות גדולות יותר, לחיצה על פקד ליד פינה, כמו חזרה בפינה השמאלית העליונה, עלולה להפעיל את תנועת הפינה במקום זאת.</string>
+    <string name="gesture_trainer_rating_precise">זוהתה, מדויקת</string>
+    <string name="gesture_trainer_rating_good">זוהתה, טובה</string>
+    <string name="gesture_trainer_rating_borderline">זוהתה, אבל קרוב לגבול</string>
+    <string name="gesture_trainer_try_recognized">ניסיון <xliff:g id="number">%1$d</xliff:g>: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing">ניסיון <xliff:g id="number">%1$d</xliff:g>: לא זוהתה.</string>
+    <string name="gesture_trainer_try_other">ניסיון <xliff:g id="number">%1$d</xliff:g>: זוהתה בתור <xliff:g id="gesture">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="recognized">%2$d</xliff:g> מתוך <xliff:g id="tries">%3$d</xliff:g> זוהו</string>
+    <string name="gesture_trainer_results_tries">הניסיונות שלך</string>
+    <string name="gesture_trainer_results_change">מה לשנות</string>
+    <string name="gesture_trainer_results_close">קרוב לגבול</string>
+    <string name="gesture_trainer_results_all_good">כל הניסיונות זוהו בתוך הגבולות.</string>
+    <string name="gesture_trainer_results_settings">הגדרות שיכולות לעזור</string>
+    <string name="gesture_trainer_next">התרגיל הבא</string>
+    <string name="gesture_trainer_repeat">חזרה</string>
+    <string name="gesture_trainer_finish">סיום</string>
+    <string name="gesture_trainer_group_done">סיימת את כל התרגילים בקבוצה <xliff:g id="group">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_open_setting">שינוי <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration">נמשכה <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_length">באורך <xliff:g id="cm">%1$.1f</xliff:g> ס\"מ</string>
+    <string name="gesture_trainer_measure_speed"><xliff:g id="speed">%1$.0f</xliff:g> ס\"מ לשנייה</string>
+    <string name="gesture_trainer_measure_angle">סטייה של <xliff:g id="degrees">%1$.0f</xliff:g> מעלות מקו ישר</string>
+    <string name="gesture_trainer_measure_start">הסנטימטר הראשון תוך <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_landing">האצבעות נחתו בהפרש של <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_tap">לחיצה של <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_gap"><xliff:g id="ms">%1$d</xliff:g> ms בין הלחיצות</string>
+    <string name="gesture_trainer_measure_spread">האצבעות זזו <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ</string>
+    <string name="gesture_trainer_measure_rotation">סיבוב של <xliff:g id="degrees">%1$.0f</xliff:g> מעלות</string>
+    <string name="gesture_trainer_measure_corner"><xliff:g id="mm">%1$.0f</xliff:g> מ\"מ מהקצוות של הפינה</string>
+    <string name="gesture_trainer_measure_edge">התחילה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ מהקצה</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">אצבעות על המסך: <xliff:g id="fingers">%1$d</xliff:g> במקום <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">האצבעות נחתו בהפרש של <xliff:g id="ms">%1$d</xliff:g> ms, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">אצבע הורמה לפני שכל האצבעות הונחו.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">האצבעות הורמו בהפרש של <xliff:g id="ms">%1$d</xliff:g> ms, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_became_exploration">האצבע נשארה ללא תנועה זמן רב מדי או זזה לאט מדי בהתחלה, ולכן הנגיעה הפכה לגילוי באמצעות מגע.</string>
+    <string name="gesture_trainer_finding_slow_start">הסנטימטר הראשון נמשך <xliff:g id="ms">%1$d</xliff:g> ms, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_paused">האצבע האטה למשך <xliff:g id="ms">%1$d</xliff:g> ms, וכל סנטימטר יכול להימשך לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_short">התנועה הייתה רק <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ, והיא חייבת להיות לפחות <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">האצבע התחילה לנוע <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_wrong_direction">האצבעות התחילו לנוע <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_off_line">המסלול סטה <xliff:g id="degrees">%1$.0f</xliff:g> מעלות מקו ישר, והמותר הוא לכל היותר <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_curved">המסלול התכופף ל-<xliff:g id="parts">%1$d</xliff:g> חלקים במקום <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_turn_missing">הפנייה לא נמצאה.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">אחרי הפנייה, האצבע נעה <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_tap_moved">האצבע החליקה <xliff:g id="mm">%1$.1f</xliff:g> מ\"מ במהלך לחיצה, והמותר הוא לכל היותר <xliff:g id="limit">%2$.1f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_tap_held_long">לחיצה נמשכה <xliff:g id="ms">%1$d</xliff:g> ms, יותר מ-<xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_hold_too_short">הלחיצה האחרונה הוחזקה <xliff:g id="ms">%1$d</xliff:g> ms, והיא חייבת להימשך לפחות <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="taps">%1$d</xliff:g> לחיצות במקום <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="taps">%1$d</xliff:g> לחיצות במקום <xliff:g id="wanted">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">עברו <xliff:g id="ms">%1$d</xliff:g> ms בין הלחיצות, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_taps_apart">הלחיצות נחתו במרחק <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ זו מזו, והמותר הוא לכל היותר <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">האצבעות זזו רק <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ, והן חייבות לזוז לפחות <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">האצבעות זזו בכיוון ההפוך.</string>
+    <string name="gesture_trainer_finding_moved_together">כל היד החליקה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ על פני המסך, יותר ממה שהאצבעות התקרבו או התרחקו זו מזו.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">האצבעות הסתובבו רק <xliff:g id="degrees">%1$.0f</xliff:g> מעלות, והן חייבות להסתובב לפחות <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">האצבעות הסתובבו בכיוון ההפוך.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">המשיכה הראשונה הייתה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ, והיא חייבת להיות לפחות <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">המשיכה חזרה הייתה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ, והיא חייבת להיות לפחות <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">השפשוף נמשך <xliff:g id="ms">%1$d</xliff:g> ms, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">האצבע נחתה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ מהקצה, ורוחב הקצה הוא <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">האצבע התחילה בחצי השני של הקצה.</string>
+    <string name="gesture_trainer_finding_edge_too_short">האצבע החליקה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ, והיא חייבת להחליק לפחות <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_edge_too_long">ההחלקה ארוכה מדי: האצבע עברה את הקליק השני, <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ, והקליק השני נמצא ב-<xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">ההגעה לקליק נמשכה <xliff:g id="ms">%1$d</xliff:g> ms, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_edge_sideways">ההחלקה סטתה <xliff:g id="degrees">%1$.0f</xliff:g> מעלות הצידה, והמותר הוא לכל היותר <xliff:g id="limit">%2$.0f</xliff:g>.</string>
+    <string name="gesture_trainer_finding_corner_missed">הלחיצה נחתה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ מהקצוות של הפינה, וגודל הפינה הוא <xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">לחיצה על פינה נמשכה <xliff:g id="ms">%1$d</xliff:g> ms, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_none">לא זוהתה תנועה שמתאימה לתנועה המבוקשת.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">בדוק כמה אצבעות נוגעות בזכוכית. גם כף יד או אצבע אחרת שנחה על המסך נספרת.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">הנח את כל האצבעות באותו רגע, כיד אחת, לא אחת אחרי השנייה.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">הנח קודם את כל האצבעות, ואז הזז או הרם אותן.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">הרם את כל האצבעות באותו רגע.</string>
+    <string name="gesture_trainer_tip_slow_start">התחל לזוז ברגע שאתה נוגע במסך, וזוז מהר יותר בהתחלה.</string>
+    <string name="gesture_trainer_tip_paused">המשך להזיז את האצבע במהירות קבועה עד שאתה מרים. אל תאט לקראת הסוף.</string>
+    <string name="gesture_trainer_tip_too_short">הארך את התנועה, ל-2 עד 3 ס\"מ בערך.</string>
+    <string name="gesture_trainer_tip_wrong_direction">בדוק את הכיוון בתחילת התנועה. החזקת הטלפון ישר מולך עוזרת.</string>
+    <string name="gesture_trainer_tip_off_line">זוז רק לאורך הכיוון, לא באלכסון. האצבע המורה שומרת על קו ישר יותר מהאגודל.</string>
+    <string name="gesture_trainer_tip_curved">שמור על קו ישר והרם בדיוק בסוף, בלי לכופף את האצבע הצידה בזמן ההרמה.</string>
+    <string name="gesture_trainer_tip_turn_missing">שנה כיוון בחדות, בזווית ישרה או ישר אחורה, בלי להרים. כל חלק צריך להיות כ-2 ס\"מ.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">אחרי הפנייה, בדוק לאיזה כיוון אתה זז: החלק השני חייב לנוע בכיוון השני שבשם התנועה.</string>
+    <string name="gesture_trainer_tip_tap_moved">לחץ ישר למטה ולמעלה, בקצה האצבע, בלי להחליק.</string>
+    <string name="gesture_trainer_tip_tap_held_long">כל לחיצה צריכה להיות קצרה: גע והרם מיד.</string>
+    <string name="gesture_trainer_tip_hold_too_short">בלחיצה האחרונה, השאר את האצבעות על המסך ללא תנועה למשך כל זמן ההחזקה.</string>
+    <string name="gesture_trainer_tip_too_few_taps">ספור את הלחיצות, ובצע את כולן במהירות ברצף אחד.</string>
+    <string name="gesture_trainer_tip_too_many_taps">ספור את הלחיצות. אצבע שקופצת מהזכוכית יוצרת לחיצה נוספת.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">לחץ מהר יותר: התחל את הלחיצה הבאה מיד אחרי ההרמה.</string>
+    <string name="gesture_trainer_tip_taps_apart">לחץ באותה נקודה בכל פעם.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">הזז את האצבעות רחוק יותר, לפחות 1 ס\"מ קרוב יותר זו לזו או רחוק יותר זו מזו.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">בצביטה האצבעות מתקרבות זו לזו, בהרחקה האצבעות מתרחקות זו מזו.</string>
+    <string name="gesture_trainer_tip_moved_together">הזז רק את האצבעות זו לעבר זו או זו מזו. אל תחליק את כל היד על פני המסך.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">סובב יותר, כמו סיבוב חוגה ברבע סיבוב.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">בכיוון השעון פירושו סיבוב בכיוון שבו נעים מחוגי השעון: האצבע העליונה זזה ימינה.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">המשיכה הראשונה צריכה להיות באורך 1 ס\"מ לפחות.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">אחרי המשיכה הראשונה, חזור בכיוון ההפוך לפני ההרמה.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">בצע את השפשוף במהירות, הלוך וחזור תוך שנייה בערך.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">התחל ממש בקצה, כשקצה האצבע חלקית מחוץ למסך.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">בדוק באיזה חצי של הקצה אתה מתחיל.</string>
+    <string name="gesture_trainer_tip_edge_too_short">החלק רחוק יותר, עד שתשמע את הקליק, ואז הרם.</string>
+    <string name="gesture_trainer_tip_edge_too_long">הרם מיד אחרי הקליק הראשון, לפני השני.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">החלק פנימה מהר יותר, בלי לעצור לפני הקליק.</string>
+    <string name="gesture_trainer_tip_edge_sideways">החלק ישר פנימה מהקצה, או ישר לאורכו, לא באלכסון.</string>
+    <string name="gesture_trainer_tip_corner_missed">הנח את האצבע ממש בתוך הפינה, כך שתיגע בשני הקצוות.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">הרם מהר יותר אחרי הנגיעה בפינה.</string>
+    <string name="gesture_trainer_close_to_limit">קרוב לגבול: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">ההחלקות מתחילות לאט. ערך ארוך יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מאפשר התחלה איטית יותר.</string>
+    <string name="gesture_trainer_advice_tap_time">הלחיצות איטיות. ערך ארוך יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מאפשר לחיצות איטיות יותר.</string>
+    <string name="gesture_trainer_advice_edge_width">ההחלקות מתחילות רחוק מדי מהקצה. ערך גדול יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> גם הופך החלקות שמתחילות ליד קצה להחלקות מהקצה.</string>
+    <string name="gesture_trainer_advice_corner_size">הלחיצות נוחתות מחוץ לפינה. ערך גדול יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מגדיל את הפינות.</string>
+    <string name="gesture_trainer_advice_corner_time">הלחיצות על הפינות איטיות. ערך ארוך יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מאפשר לחיצות איטיות יותר.</string>
+    <string name="gesture_trainer_menu_option">אפשרות <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: בחר בפריט <xliff:g id="number">%3$d</xliff:g>, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">החלק אצבע אחת למעלה או למטה <xliff:g id="edge">%1$s</xliff:g> לפחות <xliff:g id="distance">%2$d</xliff:g> מ\"מ כדי לפתוח את התפריט. יש בו <xliff:g id="count">%3$d</xliff:g> פריטים, מלמעלה למטה, כל אחד בגובה <xliff:g id="size">%6$s</xliff:g> ס\"מ בערך. פריט <xliff:g id="number">%4$d</xliff:g>, <xliff:g id="item">%5$s</xliff:g>, נמצא <xliff:g id="from">%7$s</xliff:g> עד <xliff:g id="to">%8$s</xliff:g> ס\"מ מתחת לראש המסך. הרם את האצבע כשהפריט מוקרא.</string>
+    <string name="gesture_trainer_menu_sample">לקצה הזה אין תפריט. התרגיל משתמש ב-<xliff:g id="count">%1$d</xliff:g> פריטים לדוגמה.</string>
+    <string name="gesture_trainer_try_menu_cancelled">ניסיון <xliff:g id="number">%1$d</xliff:g>: התפריט נסגר בלי בחירה.</string>
+    <string name="gesture_trainer_try_menu_other">ניסיון <xliff:g id="number">%1$d</xliff:g>: נבחר <xliff:g id="item">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_measure_menu_item">הורמה בפריט <xliff:g id="number">%1$d</xliff:g></string>
+    <string name="gesture_trainer_finding_menu_in_corner">האצבע התחילה ממש בראש הקצה או בתחתיתו, איפה שנמצאות הפינות והקצוות העליון והתחתון.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">האצבע הורמה <xliff:g id="mm">%1$.0f</xliff:g> מ\"מ מהקצה, והתפריט נסגר מעבר ל-<xliff:g id="limit">%2$.0f</xliff:g> מ\"מ.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">האצבע הורמה בפריט <xliff:g id="item">%1$d</xliff:g> במקום בפריט <xliff:g id="target">%2$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">התחל מעט הרחק מהקצוות העליון והתחתון של הקצה.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">שמור את האצבע קרוב לקצה בזמן ההחלקה, והרם אותה שם.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">לכל פריט יש מקום קבוע לאורך הקצה, והפריט שבו האצבע מורמת נבחר. הרם כשהפריט מוקרא.</string>
+    <string name="gesture_trainer_contents">תוכן העניינים</string>
+    <string name="gesture_trainer_contents_heading">תוכן העניינים: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">בוצע, <xliff:g id="hits">%1$d</xliff:g> מתוך <xliff:g id="tries">%2$d</xliff:g> זוהו</string>
+    <string name="gesture_trainer_group_tap_swipe">לחיצה והחלקה</string>
+    <string name="gesture_trainer_group_edge_swipes">החלקות מהקצוות</string>
+    <string name="gesture_trainer_group_along_edges">החלקות לאורך הקצוות</string>
+    <string name="gesture_trainer_group_edge_menus">תפריטי קצה</string>
+    <string name="gesture_trainer_group_corners">פינות</string>
+    <string name="gesture_trainer_group_back_tap">לחיצה על גב המכשיר</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">לחיצות בשתי אצבעות שאחריהן החלקה בשתי אצבעות לא נכללות: <xliff:g id="setting">%1$s</xliff:g> מושבתת.</string>
+    <string name="gesture_trainer_how_swipe_hold">אחר כך, בלי להרים, השאר את האצבע ללא תנועה לפחות <xliff:g id="hold">%1$d</xliff:g> ms, והרם.</string>
+    <string name="gesture_trainer_half_top">העליון</string>
+    <string name="gesture_trainer_half_bottom">התחתון</string>
+    <string name="gesture_trainer_how_taps_half">לחץ בחצי <xliff:g id="half">%1$s</xliff:g> של המסך. הנקודה שבין האצבעות קובעת את החצי.</string>
+    <string name="gesture_trainer_same_fingers">אותן אצבעות</string>
+    <string name="gesture_trainer_how_tap_swipe">לחץ <xliff:g id="taps">%1$s</xliff:g> באמצעות <xliff:g id="fingers">%2$s</xliff:g>. מיד אחרי הלחיצה האחרונה, תוך <xliff:g id="gap">%3$d</xliff:g> ms, גע שוב במסך באמצעות <xliff:g id="swipe_fingers">%4$s</xliff:g> והחלק <xliff:g id="direction">%5$s</xliff:g> בקו ישר לאורך 2 עד 3 ס\"מ בערך, ואז הרם.</string>
+    <string name="gesture_trainer_how_corner_hold">בלחיצה האחרונה, השאר את האצבע בפינה, ללא תנועה, לפחות <xliff:g id="hold">%1$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_how_back_tap">החזק את הטלפון ביד, בצדדים שלו, ולחץ על אמצע הגב שלו <xliff:g id="taps">%1$s</xliff:g> בקצה האצבע, בחוזקה ובמהירות, כמו דפיקה בדלת. שמור על לחיצות צמודות: לכל היותר <xliff:g id="gap">%2$d</xliff:g> ms ביניהן. אל תיגע במסך בזמן הלחיצות.</string>
+    <string name="gesture_trainer_back_tap_info">לחיצות על גב המכשיר לא מפעילות פקודות במהלך התרגיל. <xliff:g id="setting">%1$s</xliff:g> קובעת כמה חזקה צריכה להיות לחיצה.</string>
+    <string name="gesture_trainer_go_placed">בצע את התנועה <xliff:g id="tries">%1$d</xliff:g> פעמים.</string>
+    <string name="gesture_trainer_along_left">הקצה השמאלי</string>
+    <string name="gesture_trainer_along_right">הקצה הימני</string>
+    <string name="gesture_trainer_along_top">הקצה העליון</string>
+    <string name="gesture_trainer_along_bottom">הקצה התחתון</string>
+    <string name="gesture_trainer_left_out_along_menu">החלקות לאורך <xliff:g id="edge">%1$s</xliff:g> לא נכללות: יש לו תפריט קצה, ולכן החלקה לאורכו פותחת את התפריט במקום להפעיל תנועה.</string>
+    <string name="gesture_trainer_left_out_along_scroll">החלקות לאורך <xliff:g id="edge">%1$s</xliff:g> לא נכללות: הוא מבצע גלילה, ולכן החלקה לאורכו גוללת את האפליקציה במקום להפעיל תנועה.</string>
+    <string name="gesture_trainer_finding_along_off_edge">האצבע התרחקה יותר מדי מהקצה.</string>
+    <string name="gesture_trainer_tip_along_off_edge">שמור את האצבע על השוליים של הזכוכית, ישר לאורך הקצה.</string>
+    <string name="gesture_trainer_go_back_tap">בצע את תנועת הלחיצה על גב המכשיר <xliff:g id="tries">%1$d</xliff:g> פעמים. נגיעה במסך מכשילה את הניסיון.</string>
+    <string name="gesture_trainer_no_accelerometer">התרגיל הזה דורש מד תאוצה. אין מד תאוצה זמין.</string>
+    <string name="gesture_trainer_measure_hold">הוחזקה ללא תנועה <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_back_tap_strength">לחיצה בעוצמה <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">האצבע נשארה ללא תנועה <xliff:g id="ms">%1$d</xliff:g> ms בסוף, והיא חייבת להישאר ללא תנועה לפחות <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">האצבעות לחצו בחצי השני של המסך.</string>
+    <string name="gesture_trainer_finding_swipe_missing">לא הייתה החלקה אחרי הלחיצות.</string>
+    <string name="gesture_trainer_finding_swipe_late">ההחלקה התחילה <xliff:g id="ms">%1$d</xliff:g> ms אחרי הלחיצה האחרונה, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">הלחיצה על גב המכשיר קלה מדי: <xliff:g id="percent">%1$d</xliff:g>%% מהעוצמה הנדרשת.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">לחיצה הזיזה את הטלפון יותר הצידה מאשר דרך הגב שלו.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">הטלפון זז ממש לפני לחיצה.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">היתה נגיעה במסך, ולחיצות בזמן נגיעה במסך לא נספרות.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">עברו <xliff:g id="ms">%1$d</xliff:g> ms בין הלחיצות על הגב, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">אחרי ההחלקה, השאר את האצבע על המסך ללא תנועה למשך כל זמן ההחזקה. אחר כך הרם.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">בדוק באיזה חצי אתה לוחץ: אמצע המסך מפריד בין החצי העליון לחצי התחתון.</string>
+    <string name="gesture_trainer_tip_swipe_missing">אחרי הלחיצה האחרונה, גע שוב במסך מיד והחלק.</string>
+    <string name="gesture_trainer_tip_swipe_late">התחל את ההחלקה מיד אחרי הלחיצה האחרונה, בלי הפסקה.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">לחץ חזק יותר, בקצה האצבע או בציפורן, ליד אמצע הגב.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">לחץ ישר לתוך הגב של הטלפון, לא על הקצה שלו ולא בזווית.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">החזק את הטלפון ללא תנועה לרגע לפני הלחיצה, והחזק אותו ברפיון כדי שהיד לא תזיז אותו.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">הרחק את האצבעות מהמסך בזמן הלחיצה על הגב: החזק את הטלפון בצדדים שלו.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">לחץ מהר יותר, לחיצה אחת מיד אחרי השנייה.</string>
+    <string name="gesture_trainer_advice_swipe_hold">האצבע מורמת מוקדם מדי אחרי ההחלקה. ערך קצר יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מאפשר החזקה קצרה יותר.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">הלחיצות על גב המכשיר קלות. ערך גבוה יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מזהה לחיצות קלות יותר, ועלול לזהות חבטות כלחיצות.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">האצבעות הסתובבו <xliff:g id="degrees">%1$.0f</xliff:g> מעלות, ומ-<xliff:g id="limit">%2$.0f</xliff:g> מעלות התנועה היא סיבוב.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">הזז את האצבעות בקו ישר זו לעבר זו או זו מזו, לא בקשת זו סביב זו.</string>
+    <string name="gesture_trainer_finding_other_gesture">התנועה התאימה לתנועה ההיא במקום זאת.</string>
+    <string name="gesture_trainer_side_left">השמאלי</string>
+    <string name="gesture_trainer_side_right">הימני</string>
+    <string name="gesture_trainer_side_top">העליון</string>
+    <string name="gesture_trainer_side_bottom">התחתון</string>
+    <string name="gesture_trainer_finding_wrong_edge">האצבע התחילה בקצה <xliff:g id="side">%1$s</xliff:g>, והתרגיל הזה נמצא בקצה <xliff:g id="expected">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_tip_wrong_edge">התחל ממש על הקצה שבשם התרגיל.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">נפתח תפריט קצה במקום התנועה הזאת.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">החלקה לאורך קצה עם תפריט פותחת את התפריט. התחל בקצה שבשם התרגיל.</string>
+    <string name="gesture_trainer_group_three_part">החלקות בשלושה חלקים</string>
+    <string name="gesture_trainer_group_two_stroke">החלקות בשתי משיכות</string>
+    <string name="gesture_trainer_group_shake">ניעור</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">החלקות בשלושה חלקים לא נכללות: <xliff:g id="setting">%1$s</xliff:g> מופעלת.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">החלקות בשתי משיכות לא נכללות: <xliff:g id="setting">%1$s</xliff:g> היא <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">הניעור לא מפעיל פקודה במהלך התרגיל. <xliff:g id="setting">%1$s</xliff:g> קובעת כמה חזק צריך להיות ניעור.</string>
+    <string name="gesture_trainer_go_shake">נער את הטלפון <xliff:g id="tries">%1$d</xliff:g> פעמים, עם הפסקה קצרה אחרי כל ניעור.</string>
+    <string name="gesture_trainer_how_shake">החזק את הטלפון היטב ונער אותו במהירות הלוך ושוב, כמו ניעור טיפת מים: לפחות פעמיים לכל כיוון, הכול תוך שני שלישים של שנייה בערך. אחר כך החזק אותו ללא תנועה.</string>
+    <string name="gesture_trainer_how_two_stroke">החלק <xliff:g id="first">%1$s</xliff:g> באצבע אחת, כ-2 ס\"מ, והרם. אחר כך מיד, תוך <xliff:g id="time">%3$d</xliff:g> ms, החלק <xliff:g id="second">%2$s</xliff:g> באצבע אחת, כ-2 ס\"מ, והרם.</string>
+    <string name="gesture_trainer_how_three_part">גע במסך באצבע אחת ובלי להרים החלק <xliff:g id="first">%1$s</xliff:g>, אחר כך פנה בחדות והחלק <xliff:g id="second">%2$s</xliff:g>, אחר כך פנה שוב בחדות והחלק <xliff:g id="third">%3$s</xliff:g>, כל חלק כ-2 ס\"מ, והרם. בצע זאת בתנועה אחת מהירה וחלקה עם פינות חדות, לא עקומות.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">הנח אצבע אחת בשליש העליון של המסך ואת השנייה בשליש התחתון, למשל האגודל למטה והאצבע המורה למעלה.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">האצבעות לא היו אחת בשליש העליון של המסך ואחת בשליש התחתון.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">לא הייתה החלקה שנייה.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">ההחלקה השנייה התחילה <xliff:g id="ms">%1$d</xliff:g> ms אחרי הראשונה, והמותר הוא לכל היותר <xliff:g id="limit">%2$d</xliff:g> ms.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">ההחלקה הראשונה נעה <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">ההחלקה השנייה נעה <xliff:g id="direction">%1$s</xliff:g>.</string>
+    <string name="gesture_trainer_finding_shake_too_light">הניעור היה קל מדי: <xliff:g id="percent">%1$d</xliff:g>%% מהעוצמה הנדרשת.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">תנודות הלוך ושוב: <xliff:g id="swings">%1$d</xliff:g> מתוך <xliff:g id="wanted">%2$d</xliff:g> הנדרשות.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">פרוש את האצבעות רחוק זו מזו, אחת ליד הקצה העליון ואחת ליד הקצה התחתון.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">אחרי ההחלקה הראשונה, הרם את האצבע והחלק שוב מיד.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">התחל את ההחלקה השנייה מיד אחרי הרמת האצבע.</string>
+    <string name="gesture_trainer_tip_shake_too_light">נער חזק ומהר יותר.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">נער מהר יותר, הלוך ושוב לפחות פעמיים לכל כיוון, בלי לעצור באמצע.</string>
+    <string name="gesture_trainer_measure_shake_strength">התנועה החזקה ביותר <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">הניעורים קלים. ערך גבוה יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מזהה ניעורים קלים יותר, ועלול לזהות נשיאת הטלפון כניעור.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">ההחלקה השנייה מתחילה מאוחר. ערך ארוך יותר בהגדרה <xliff:g id="setting">%1$s</xliff:g> מאפשר החלקה שנייה מאוחרת יותר, ואז החלקה בודדת ממתינה זמן רב יותר לפני שהיא מופעלת.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> מופעלת.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> מושבתת: החלקות בשתי אצבעות גוללות באפליקציה, וגם שפשוף בדרך כלל גולל. כשההגדרה מופעלת, החלקות בשתי אצבעות מפעילות פקודות SandFly במקום לגלול.</string>
+    <string name="gesture_trainer_measure_first_stroke">החלקה ראשונה <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_second_stroke">החלקה שנייה <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_whole_gesture">כל התנועה <xliff:g id="ms">%1$d</xliff:g> ms</string>
+    <string name="gesture_trainer_measure_stroke_gap">הורמה למשך <xliff:g id="ms">%1$d</xliff:g> ms ביניהן</string>
+</resources>

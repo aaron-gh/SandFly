@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="gesture_trainer_title">Қимыл жаттықтырғышы</string>
+    <string name="gesture_trainer_intro">Қимылдар тобын таңдаңыз. Әр жаттығу бір қимылды сипаттайды. Қимылды <xliff:g id="tries">%1$d</xliff:g> рет жасаңыз; әр әрекеттің нәтижесі айтылады. Соңғы әрекеттен кейін экранда әр әрекеттің өлшемдері, нені өзгерту керегі және қатысты параметрлер көрсетіледі.</string>
+    <string name="gesture_trainer_group_one_finger">Бір саусақ</string>
+    <string name="gesture_trainer_group_two_fingers">Екі саусақ</string>
+    <string name="gesture_trainer_group_three_fingers">Үш саусақ</string>
+    <string name="gesture_trainer_group_four_fingers">Төрт саусақ</string>
+    <string name="gesture_trainer_group_pinch_rotate_scrub">Қысу, бұру және сүрту</string>
+    <string name="gesture_trainer_group_count"><xliff:g id="group">%1$s</xliff:g>, <xliff:g id="count">%2$d</xliff:g> жаттығу</string>
+    <string name="gesture_trainer_close">Жабу</string>
+    <string name="gesture_trainer_no_detection">Қимыл жаттықтырғышына Android 13 не одан жоғары нұсқасы қажет.</string>
+    <string name="gesture_trainer_left_out_swipes_before_lift">Алға-артқа және бұрышты қимылдар алынып тасталды: <xliff:g id="setting">%1$s</xliff:g> қосулы.</string>
+    <string name="gesture_trainer_left_out_two_finger_swipes">Екі саусақпен сырғытулар алынып тасталды: <xliff:g id="setting">%1$s</xliff:g> өшірулі, сондықтан олар қолданбаларды айналдырады.</string>
+    <string name="gesture_trainer_exercise_heading">Жаттығу <xliff:g id="number">%1$d</xliff:g>/<xliff:g id="count">%2$d</xliff:g>: <xliff:g id="gesture">%3$s</xliff:g></string>
+    <string name="gesture_trainer_start">Бастау</string>
+    <string name="gesture_trainer_skip">Бұл жаттығуды өткізіп жіберу</string>
+    <string name="gesture_trainer_back_to_groups">Топтарға оралу</string>
+    <string name="gesture_trainer_go">Қимылды экранның кез келген жерінде <xliff:g id="tries">%1$d</xliff:g> рет жасаңыз. Әр түрту бір әрекет болып саналады.</string>
+    <string name="gesture_trainer_fingers_1">бір саусақпен</string>
+    <string name="gesture_trainer_fingers_2">екі саусақпен қатар, шамамен 1 см аралықпен</string>
+    <string name="gesture_trainer_fingers_3">үш саусақпен қатар, сәл аралықпен</string>
+    <string name="gesture_trainer_fingers_4">төрт саусақпен қатар, сәл аралықпен</string>
+    <string name="gesture_trainer_direction_up">жоғары</string>
+    <string name="gesture_trainer_direction_down">төмен</string>
+    <string name="gesture_trainer_direction_left">солға</string>
+    <string name="gesture_trainer_direction_right">оңға</string>
+    <string name="gesture_trainer_how_swipe">Экранға <xliff:g id="fingers">%1$s</xliff:g> тиіп, күтпестен түзу сызық бойымен шамамен 2–3 см <xliff:g id="direction">%2$s</xliff:g> сырғытыңыз, содан кейін көтеріңіз. Бірден қозғала бастаңыз: алдымен қозғалыссыз тұрған саусақ түрту арқылы зерттеуді бастайды.</string>
+    <string name="gesture_trainer_how_swipe_multi">Саусақтарды бір мезетте бірге қойып, бәрін бір бағытқа жылжытыңыз. Әр саусақ үнемі <xliff:g id="direction">%1$s</xliff:g> жылжуы керек, сондықтан сызықты түзу ұстаңыз.</string>
+    <string name="gesture_trainer_how_back_and_forth">Экранға бір саусақпен тиіп, шамамен 2 см <xliff:g id="first">%1$s</xliff:g> сырғытыңыз, содан кейін көтермей шамамен 2 см тура кері <xliff:g id="second">%2$s</xliff:g> жылжытып, көтеріңіз. Мұны бір жылдам, біркелкі қозғалыспен жасаңыз.</string>
+    <string name="gesture_trainer_how_angle">Экранға <xliff:g id="fingers">%1$s</xliff:g> тиіп, шамамен 2 см <xliff:g id="first">%2$s</xliff:g> сырғытыңыз, содан кейін көтермей күрт бұрылып, шамамен 2 см <xliff:g id="second">%3$s</xliff:g> сырғытыңыз да, көтеріңіз. Бұрылысты доға емес, L әрпі сияқты өткір бұрыш етіңіз.</string>
+    <string name="gesture_trainer_taps_1">бір рет</string>
+    <string name="gesture_trainer_taps_2">екі рет</string>
+    <string name="gesture_trainer_taps_3">үш рет</string>
+    <string name="gesture_trainer_taps_4">төрт рет</string>
+    <string name="gesture_trainer_how_taps"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> түртіңіз. Саусақтарды бірге қойып, бірге, жылдам, сырғытпай көтеріңіз.</string>
+    <string name="gesture_trainer_how_taps_quick">Түртулерді жылдам және бір жерде жасаңыз: келесі түрту алдыңғысынан кейін <xliff:g id="gap">%1$d</xliff:g> мс ішінде болуы керек.</string>
+    <string name="gesture_trainer_how_hold">Экранға <xliff:g id="fingers">%1$s</xliff:g> бірге тиіп, оларды сырғытпай кемінде <xliff:g id="hold">%2$d</xliff:g> мс қозғалыссыз ұстаңыз.</string>
+    <string name="gesture_trainer_how_long_hold_turns_off">Басқа пәрмен тағайындалмаса, бұл қимыл SandFly-ды өшіреді. Жаттықтырғышта ол ештеңе орындамайды.</string>
+    <string name="gesture_trainer_how_taps_hold"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> түртіп, соңғы түртуде саусақтарды экранда кемінде <xliff:g id="hold">%3$d</xliff:g> мс қозғалыссыз қалдырыңыз.</string>
+    <string name="gesture_trainer_how_three_finger_hand">Бас бармақты, сұқ саусақты және ортан теректі пайдаланыңыз.</string>
+    <string name="gesture_trainer_how_four_finger_pinch_hand">Сұқ саусақ пен ортан теректі қатар, ал бас бармақ пен аты жоқ саусақты екі жағынан бірнеше сантиметр қашықтыққа қойыңыз. Содан кейін төрт саусақ ұшын бір нүктеге жинаңыз.</string>
+    <string name="gesture_trainer_how_pinch">Экранға <xliff:g id="fingers">%1$d</xliff:g> саусақты бір-бірінен алшақ қойыңыз. Содан кейін бір нәрсені алып жатқандай оларды кемінде 1 см бір-біріне қарай тура жақындатып, экраннан көтеріңіз. Бүкіл қолды емес, тек саусақтарды жылжытыңыз, доға бойымен емес.</string>
+    <string name="gesture_trainer_how_spread">Экранға <xliff:g id="fingers">%1$d</xliff:g> саусақты бір-біріне жақын қойыңыз. Содан кейін оларды кемінде 1 см тура алшақтатып, экраннан көтеріңіз. Бүкіл қолды емес, тек саусақтарды жылжытыңыз, доға бойымен емес.</string>
+    <string name="gesture_trainer_clockwise">сағат тілімен</string>
+    <string name="gesture_trainer_counterclockwise">сағат тіліне қарсы</string>
+    <string name="gesture_trainer_how_rotate">Экранға екі саусақты шамамен 2–3 см аралықпен қойып, оларды реттегіш тұтқаны бұрағандай ортасын айнала <xliff:g id="way">%1$s</xliff:g> шамамен ширек айналымға бұраңыз. Содан кейін көтеріңіз.</string>
+    <string name="gesture_trainer_how_scrub">Экранға екі саусақ қойып, бір нәрсені өшіріп жатқандай оларды жылдам шамамен 2 см бір жаққа және кері жылжытыңыз, барлығы шамамен бір секунд ішінде. Содан кейін көтеріңіз.</string>
+    <string name="gesture_trainer_edge_bottom">төменгі жиекте</string>
+    <string name="gesture_trainer_edge_top_left">жоғарғы жиекте, оның сол жақ жартысында</string>
+    <string name="gesture_trainer_edge_top_right">жоғарғы жиекте, оның оң жақ жартысында</string>
+    <string name="gesture_trainer_edge_left_top">сол жақ жиекте, оның жоғарғы жартысында</string>
+    <string name="gesture_trainer_edge_left_bottom">сол жақ жиекте, оның төменгі жартысында</string>
+    <string name="gesture_trainer_edge_right_top">оң жақ жиекте, оның жоғарғы жартысында</string>
+    <string name="gesture_trainer_edge_right_bottom">оң жақ жиекте, оның төменгі жартысында</string>
+    <string name="gesture_trainer_edge_left">сол жақ жиекте</string>
+    <string name="gesture_trainer_edge_right">оң жақ жиекте</string>
+    <string name="gesture_trainer_edge_top">жоғарғы жиекте</string>
+    <string name="gesture_trainer_how_edge">Бір саусақпен <xliff:g id="edge">%1$s</xliff:g>, жиектен ең көбі <xliff:g id="edge_width">%2$d</xliff:g> мм қашықтықта бастап, экранның ішіне қарай <xliff:g id="direction">%3$s</xliff:g> бірінші шерту дыбысына дейін, шамамен <xliff:g id="distance">%4$d</xliff:g> мм сырғытыңыз. Содан кейін бірден көтеріңіз: екінші шерту дыбысынан кейін сырғыту ұзын сырғытуға айналады.</string>
+    <string name="gesture_trainer_how_edge_long">Бір саусақпен <xliff:g id="edge">%1$s</xliff:g>, жиектен ең көбі <xliff:g id="edge_width">%2$d</xliff:g> мм қашықтықта бастап, экранның ішіне қарай <xliff:g id="direction">%3$s</xliff:g> бірінші шерту дыбысынан өтіп екіншісіне дейін, шамамен <xliff:g id="distance">%4$d</xliff:g> мм сырғытыңыз. Содан кейін көтеріңіз.</string>
+    <string name="gesture_trainer_how_along">Бір саусақты <xliff:g id="edge">%1$s</xliff:g> бойымен кемінде <xliff:g id="distance">%3$d</xliff:g> мм <xliff:g id="direction">%2$s</xliff:g> сырғытыңыз.</string>
+    <string name="gesture_trainer_corner_top_left">жоғарғы сол жақ</string>
+    <string name="gesture_trainer_corner_top_right">жоғарғы оң жақ</string>
+    <string name="gesture_trainer_corner_bottom_left">төменгі сол жақ</string>
+    <string name="gesture_trainer_corner_bottom_right">төменгі оң жақ</string>
+    <string name="gesture_trainer_how_corner">Экранның <xliff:g id="corner">%2$s</xliff:g> бұрышын <xliff:g id="taps">%1$s</xliff:g> түртіңіз. Саусақты дәл бұрышқа, екі жиектен де ең көбі <xliff:g id="size">%3$d</xliff:g> мм қашықтыққа қойып, <xliff:g id="time">%4$d</xliff:g> мс ішінде жылдам көтеріңіз.</string>
+    <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>: <xliff:g id="edge">%2$d</xliff:g> мм. <xliff:g id="corner_setting">%3$s</xliff:g>: <xliff:g id="corner">%4$d</xliff:g> мм.</string>
+    <string name="gesture_trainer_corner_warning">Бұрыштар үлкен болса, бұрыштың жанындағы басқару элементін, мысалы, жоғарғы сол жақтағы Артқа түймесін түрту оның орнына бұрыш қимылын орындауы мүмкін.</string>
+    <string name="gesture_trainer_rating_precise">танылды, дәл</string>
+    <string name="gesture_trainer_rating_good">танылды, жақсы</string>
+    <string name="gesture_trainer_rating_borderline">танылды, бірақ шекке жақын</string>
+    <string name="gesture_trainer_try_recognized"><xliff:g id="number">%1$d</xliff:g>-әрекет: <xliff:g id="rating">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_try_nothing"><xliff:g id="number">%1$d</xliff:g>-әрекет: танылмады.</string>
+    <string name="gesture_trainer_try_other"><xliff:g id="number">%1$d</xliff:g>-әрекет: <xliff:g id="gesture">%2$s</xliff:g> ретінде танылды.</string>
+    <string name="gesture_trainer_results_heading"><xliff:g id="gesture">%1$s</xliff:g>: <xliff:g id="tries">%3$d</xliff:g> әрекеттің <xliff:g id="recognized">%2$d</xliff:g> танылды</string>
+    <string name="gesture_trainer_results_tries">Әрекеттеріңіз</string>
+    <string name="gesture_trainer_results_change">Нені өзгерту керек</string>
+    <string name="gesture_trainer_results_close">Шекке жақын</string>
+    <string name="gesture_trainer_results_all_good">Барлық әрекет шектер ішінде танылды.</string>
+    <string name="gesture_trainer_results_settings">Көмектесуі мүмкін параметрлер</string>
+    <string name="gesture_trainer_next">Келесі жаттығу</string>
+    <string name="gesture_trainer_repeat">Қайталау</string>
+    <string name="gesture_trainer_finish">Аяқтау</string>
+    <string name="gesture_trainer_group_done"><xliff:g id="group">%1$s</xliff:g> тобындағы барлық жаттығуды аяқтадыңыз.</string>
+    <string name="gesture_trainer_open_setting">Өзгерту: <xliff:g id="setting">%1$s</xliff:g></string>
+    <string name="gesture_trainer_measure_duration"><xliff:g id="ms">%1$d</xliff:g> мс созылды</string>
+    <string name="gesture_trainer_measure_length">ұзындығы <xliff:g id="cm">%1$.1f</xliff:g> см</string>
+    <string name="gesture_trainer_measure_speed">секундына <xliff:g id="speed">%1$.0f</xliff:g> см</string>
+    <string name="gesture_trainer_measure_angle">түзу сызықтан <xliff:g id="degrees">%1$.0f</xliff:g> градус ауытқу</string>
+    <string name="gesture_trainer_measure_start">бірінші сантиметр <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_landing">саусақтар <xliff:g id="ms">%1$d</xliff:g> мс айырмамен тиді</string>
+    <string name="gesture_trainer_measure_tap">түрту <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_gap">түртулер арасында <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_spread">саусақтар <xliff:g id="mm">%1$.0f</xliff:g> мм жылжыды</string>
+    <string name="gesture_trainer_measure_rotation"><xliff:g id="degrees">%1$.0f</xliff:g> градус бұрылды</string>
+    <string name="gesture_trainer_measure_corner">бұрыш жиектерінен <xliff:g id="mm">%1$.0f</xliff:g> мм</string>
+    <string name="gesture_trainer_measure_edge">жиектен <xliff:g id="mm">%1$.0f</xliff:g> мм қашықтықта басталды</string>
+    <string name="gesture_trainer_finding_wrong_finger_count">Экрандағы саусақтар: <xliff:g id="wanted">%2$d</xliff:g> орнына <xliff:g id="fingers">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_finding_fingers_landed_apart">Саусақтар <xliff:g id="ms">%1$d</xliff:g> мс айырмамен тиді, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_finger_lifted_early">Барлық саусақ тимей тұрып бір саусақ көтерілді.</string>
+    <string name="gesture_trainer_finding_fingers_lifted_apart">Саусақтар <xliff:g id="ms">%1$d</xliff:g> мс айырмамен көтерілді, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_became_exploration">Саусақ тым ұзақ қозғалыссыз тұрды немесе басында тым баяу жылжыды, сондықтан түрту түрту арқылы зерттеуге айналды.</string>
+    <string name="gesture_trainer_finding_slow_start">Бірінші сантиметр <xliff:g id="ms">%1$d</xliff:g> мс алды, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_paused">Саусақ <xliff:g id="ms">%1$d</xliff:g> мс баяулады, ал әр сантиметр ең көбі <xliff:g id="limit">%2$d</xliff:g> мс алуы мүмкін.</string>
+    <string name="gesture_trainer_finding_too_short">Қозғалыс небәрі <xliff:g id="mm">%1$.0f</xliff:g> мм болды, ал кемінде <xliff:g id="limit">%2$.0f</xliff:g> мм болуы керек.</string>
+    <string name="gesture_trainer_finding_wrong_direction_one_finger">Саусақ алдымен <xliff:g id="direction">%1$s</xliff:g> жылжыды.</string>
+    <string name="gesture_trainer_finding_wrong_direction">Саусақтар алдымен <xliff:g id="direction">%1$s</xliff:g> жылжыды.</string>
+    <string name="gesture_trainer_finding_off_line">Жол түзу сызықтан <xliff:g id="degrees">%1$.0f</xliff:g> градус ауытқыды, ал ең көбі <xliff:g id="limit">%2$.0f</xliff:g> рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_curved">Жол <xliff:g id="wanted">%2$d</xliff:g> орнына <xliff:g id="parts">%1$d</xliff:g> бөлікке иілді.</string>
+    <string name="gesture_trainer_finding_turn_missing">Бұрылыс табылмады.</string>
+    <string name="gesture_trainer_finding_second_part_wrong">Бұрылыстан кейін саусақ <xliff:g id="direction">%1$s</xliff:g> жылжыды.</string>
+    <string name="gesture_trainer_finding_tap_moved">Түрту кезінде саусақ <xliff:g id="mm">%1$.1f</xliff:g> мм сырғыды, ал ең көбі <xliff:g id="limit">%2$.1f</xliff:g> мм рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_tap_held_long">Түрту <xliff:g id="ms">%1$d</xliff:g> мс созылды, бұл <xliff:g id="limit">%2$d</xliff:g> мс-тан ұзақ.</string>
+    <string name="gesture_trainer_finding_hold_too_short">Соңғы түрту <xliff:g id="ms">%1$d</xliff:g> мс ұсталды, ал кемінде <xliff:g id="limit">%2$d</xliff:g> мс болуы керек.</string>
+    <string name="gesture_trainer_finding_too_few_taps"><xliff:g id="wanted">%2$d</xliff:g> орнына <xliff:g id="taps">%1$d</xliff:g> түрту.</string>
+    <string name="gesture_trainer_finding_too_many_taps"><xliff:g id="wanted">%2$d</xliff:g> орнына <xliff:g id="taps">%1$d</xliff:g> түрту.</string>
+    <string name="gesture_trainer_finding_taps_too_slow">Түртулер арасында <xliff:g id="ms">%1$d</xliff:g> мс өтті, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_taps_apart">Түртулер бір-бірінен <xliff:g id="mm">%1$.0f</xliff:g> мм қашықтыққа түсті, ал ең көбі <xliff:g id="limit">%2$.0f</xliff:g> мм рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_pinch_too_small">Саусақтар небәрі <xliff:g id="mm">%1$.0f</xliff:g> мм жылжыды, ал кемінде <xliff:g id="limit">%2$.0f</xliff:g> мм жылжуы керек.</string>
+    <string name="gesture_trainer_finding_pinch_wrong_way">Саусақтар кері бағытта жылжыды.</string>
+    <string name="gesture_trainer_finding_moved_together">Бүкіл қол экран бойымен <xliff:g id="mm">%1$.0f</xliff:g> мм сырғыды, бұл саусақтардың бір-біріне жақындауынан не алшақтауынан көп.</string>
+    <string name="gesture_trainer_finding_rotate_too_small">Саусақтар небәрі <xliff:g id="degrees">%1$.0f</xliff:g> градус бұрылды, ал кемінде <xliff:g id="limit">%2$.0f</xliff:g> бұрылуы керек.</string>
+    <string name="gesture_trainer_finding_rotate_wrong_way">Саусақтар кері бағытта бұрылды.</string>
+    <string name="gesture_trainer_finding_scrub_too_short">Бірінші жүргізу <xliff:g id="mm">%1$.0f</xliff:g> мм болды, ал кемінде <xliff:g id="limit">%2$.0f</xliff:g> мм болуы керек.</string>
+    <string name="gesture_trainer_finding_scrub_no_return">Кері жүргізу <xliff:g id="mm">%1$.0f</xliff:g> мм болды, ал кемінде <xliff:g id="limit">%2$.0f</xliff:g> мм болуы керек.</string>
+    <string name="gesture_trainer_finding_scrub_too_slow">Сүрту <xliff:g id="ms">%1$d</xliff:g> мс алды, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_edge_start_too_far">Саусақ жиектен <xliff:g id="mm">%1$.0f</xliff:g> мм қашықтыққа тиді, ал жиектің ені <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_edge_wrong_half">Саусақ жиектің екінші жартысынан басталды.</string>
+    <string name="gesture_trainer_finding_edge_too_short">Саусақ <xliff:g id="mm">%1$.0f</xliff:g> мм сырғыды, ал кемінде <xliff:g id="limit">%2$.0f</xliff:g> мм сырғуы керек.</string>
+    <string name="gesture_trainer_finding_edge_too_long">Сырғыту тым ұзын: саусақ екінші шерту дыбысынан өтіп кетті, <xliff:g id="mm">%1$.0f</xliff:g> мм, ал екінші шерту дыбысы <xliff:g id="limit">%2$.0f</xliff:g> мм-де.</string>
+    <string name="gesture_trainer_finding_edge_too_slow">Шерту дыбысына жету <xliff:g id="ms">%1$d</xliff:g> мс алды, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_edge_sideways">Сырғыту <xliff:g id="degrees">%1$.0f</xliff:g> градус бүйірге кетті, ал ең көбі <xliff:g id="limit">%2$.0f</xliff:g> рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_corner_missed">Түрту бұрыш жиектерінен <xliff:g id="mm">%1$.0f</xliff:g> мм қашықтыққа түсті, ал бұрыш <xliff:g id="limit">%2$.0f</xliff:g> мм.</string>
+    <string name="gesture_trainer_finding_corner_tap_slow">Бұрышты түрту <xliff:g id="ms">%1$d</xliff:g> мс созылды, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_none">Қимылға сәйкес келетін қозғалыс анықталмады.</string>
+    <string name="gesture_trainer_tip_wrong_finger_count">Шыныға қанша саусақ тиіп тұрғанын тексеріңіз. Экранда жатқан алақан немесе басқа саусақ та саналады.</string>
+    <string name="gesture_trainer_tip_fingers_landed_apart">Барлық саусақты бірінен соң бірін емес, бір қол сияқты бір мезетте қойыңыз.</string>
+    <string name="gesture_trainer_tip_finger_lifted_early">Алдымен барлық саусақты қойып, содан кейін жылжытыңыз немесе көтеріңіз.</string>
+    <string name="gesture_trainer_tip_fingers_lifted_apart">Барлық саусақты бір мезетте көтеріңіз.</string>
+    <string name="gesture_trainer_tip_slow_start">Экранға тиген сәтте қозғала бастаңыз және басында жылдамырақ жылжыңыз.</string>
+    <string name="gesture_trainer_tip_paused">Көтергенше саусақты бірқалыпты жылдамдықпен жылжыта беріңіз. Соңында баяуламаңыз.</string>
+    <string name="gesture_trainer_tip_too_short">Қозғалысты ұзынырақ, шамамен 2–3 см етіңіз.</string>
+    <string name="gesture_trainer_tip_wrong_direction">Қозғалыстың ең басында бағытты тексеріңіз. Телефонды тура алдыңызда ұстау көмектеседі.</string>
+    <string name="gesture_trainer_tip_off_line">Диагональ бойымен емес, тек бағыт бойымен жылжыңыз. Сұқ саусақ бас бармаққа қарағанда сызықты түзуірек ұстайды.</string>
+    <string name="gesture_trainer_tip_curved">Сызықты түзу ұстап, көтерген кезде саусақты бүйірге қайырмай, дәл соңында көтеріңіз.</string>
+    <string name="gesture_trainer_tip_turn_missing">Көтермей, бағытты күрт, тік бұрышпен немесе тура кері өзгертіңіз. Әр бөлік шамамен 2 см болуы керек.</string>
+    <string name="gesture_trainer_tip_second_part_wrong">Бұрылыстан кейін қай жаққа жылжитыныңызды тексеріңіз: екінші бөлік қимыл атауындағы екінші бағытқа жылжуы керек.</string>
+    <string name="gesture_trainer_tip_tap_moved">Саусақ ұшымен, сырғытпай, тура төмен және жоғары түртіңіз.</string>
+    <string name="gesture_trainer_tip_tap_held_long">Әр түртуді қысқа етіңіз: тиіп, бірден көтеріңіз.</string>
+    <string name="gesture_trainer_tip_hold_too_short">Соңғы түртуде саусақтарды ұстау уақытының соңына дейін экранда қозғалыссыз ұстаңыз.</string>
+    <string name="gesture_trainer_tip_too_few_taps">Түртулерді санап, бәрін бір қимылмен жылдам жасаңыз.</string>
+    <string name="gesture_trainer_tip_too_many_taps">Түртулерді санаңыз. Шыныдан секіріп кеткен саусақ қосымша түрту жасайды.</string>
+    <string name="gesture_trainer_tip_taps_too_slow">Жылдамырақ түртіңіз: көтерген соң келесі түртуді бірден бастаңыз.</string>
+    <string name="gesture_trainer_tip_taps_apart">Әр жолы бір жерді түртіңіз.</string>
+    <string name="gesture_trainer_tip_pinch_too_small">Саусақтарды алысырақ, кемінде 1 см жақынырақ немесе алшағырақ жылжытыңыз.</string>
+    <string name="gesture_trainer_tip_pinch_wrong_way">Қысуда саусақтар бір-біріне жақындайды, ашуда алшақтайды.</string>
+    <string name="gesture_trainer_tip_moved_together">Тек саусақтарды бір-біріне жақындатыңыз немесе алшақтатыңыз. Бүкіл қолды экран бойымен сырғытпаңыз.</string>
+    <string name="gesture_trainer_tip_rotate_too_small">Реттегіш тұтқаны ширек айналымға бұрағандай көбірек бұраңыз.</string>
+    <string name="gesture_trainer_tip_rotate_wrong_way">Сағат тілімен дегеніміз сағат тілдері жүретін бағытта бұру: жоғарғы саусақ оңға жылжиды.</string>
+    <string name="gesture_trainer_tip_scrub_too_short">Бірінші жүргізуді кемінде 1 см ұзын етіңіз.</string>
+    <string name="gesture_trainer_tip_scrub_no_return">Бірінші жүргізуден кейін көтермей тұрып кері бағытқа қайтыңыз.</string>
+    <string name="gesture_trainer_tip_scrub_too_slow">Сүртуді жылдам жасаңыз, барып-қайту шамамен бір секунд.</string>
+    <string name="gesture_trainer_tip_edge_start_too_far">Саусақ ұшы жартылай экраннан тыс болатындай дәл жиектен бастаңыз.</string>
+    <string name="gesture_trainer_tip_edge_wrong_half">Жиектің қай жартысынан бастайтыныңызды тексеріңіз.</string>
+    <string name="gesture_trainer_tip_edge_too_short">Шерту дыбысын естігенше әрі қарай сырғытып, содан кейін көтеріңіз.</string>
+    <string name="gesture_trainer_tip_edge_too_long">Бірінші шерту дыбысынан кейін бірден, екіншісіне дейін көтеріңіз.</string>
+    <string name="gesture_trainer_tip_edge_too_slow">Шерту дыбысына дейін тоқтамай, ішке жылдамырақ сырғытыңыз.</string>
+    <string name="gesture_trainer_tip_edge_sideways">Диагональ бойымен емес, жиектен тура ішке немесе тура жиек бойымен сырғытыңыз.</string>
+    <string name="gesture_trainer_tip_corner_missed">Саусақты екі жиекке де тиетіндей дәл бұрышқа қойыңыз.</string>
+    <string name="gesture_trainer_tip_corner_tap_slow">Бұрышқа тигеннен кейін жылдамырақ көтеріңіз.</string>
+    <string name="gesture_trainer_close_to_limit">Шекке жақын: <xliff:g id="finding">%1$s</xliff:g></string>
+    <string name="gesture_trainer_advice_start_time">Сырғытулар баяу басталады. Ұзағырақ <xliff:g id="setting">%1$s</xliff:g> баяуырақ бастауға мүмкіндік береді.</string>
+    <string name="gesture_trainer_advice_tap_time">Түртулер баяу. Ұзағырақ <xliff:g id="setting">%1$s</xliff:g> баяуырақ түртулерге мүмкіндік береді.</string>
+    <string name="gesture_trainer_advice_edge_width">Сырғытулар жиектен тым алыс басталады. Үлкенірек <xliff:g id="setting">%1$s</xliff:g> жиекке жақын басталатын сырғытуларды да жиектен сырғытуға айналдырады.</string>
+    <string name="gesture_trainer_advice_corner_size">Түртулер бұрыштан тыс түседі. Үлкенірек <xliff:g id="setting">%1$s</xliff:g> бұрыштарды үлкейтеді.</string>
+    <string name="gesture_trainer_advice_corner_time">Бұрыштарды түрту баяу. Ұзағырақ <xliff:g id="setting">%1$s</xliff:g> баяуырақ түртулерге мүмкіндік береді.</string>
+    <string name="gesture_trainer_menu_option"><xliff:g id="number">%1$d</xliff:g>-опция</string>
+    <string name="gesture_trainer_menu_title"><xliff:g id="menu">%1$s</xliff:g>: <xliff:g id="number">%3$d</xliff:g>-элементті таңдаңыз, <xliff:g id="item">%2$s</xliff:g></string>
+    <string name="gesture_trainer_how_menu">Мәзірді ашу үшін бір саусақты <xliff:g id="edge">%1$s</xliff:g> кемінде <xliff:g id="distance">%2$d</xliff:g> мм жоғары не төмен сырғытыңыз. Мәзірде жоғарыдан төменге қарай <xliff:g id="count">%3$d</xliff:g> элемент бар, әрқайсысының биіктігі шамамен <xliff:g id="size">%6$s</xliff:g> см. <xliff:g id="number">%4$d</xliff:g>-элемент, <xliff:g id="item">%5$s</xliff:g>, экранның жоғарғы жағынан <xliff:g id="from">%7$s</xliff:g>–<xliff:g id="to">%8$s</xliff:g> см төменде. Элемент айтылғанда саусақты көтеріңіз.</string>
+    <string name="gesture_trainer_menu_sample">Бұл жиекте мәзір жоқ. Жаттығуда <xliff:g id="count">%1$d</xliff:g> үлгі элемент пайдаланылады.</string>
+    <string name="gesture_trainer_try_menu_cancelled"><xliff:g id="number">%1$d</xliff:g>-әрекет: мәзір таңдаусыз жабылды.</string>
+    <string name="gesture_trainer_try_menu_other"><xliff:g id="number">%1$d</xliff:g>-әрекет: <xliff:g id="item">%2$s</xliff:g> таңдалды.</string>
+    <string name="gesture_trainer_measure_menu_item"><xliff:g id="number">%1$d</xliff:g>-элементте көтерілді</string>
+    <string name="gesture_trainer_finding_menu_in_corner">Саусақ жиектің ең жоғарғы не ең төменгі жерінен, бұрыштар мен жоғарғы және төменгі жиектер орналасқан жерден басталды.</string>
+    <string name="gesture_trainer_finding_menu_left_edge">Саусақ жиектен <xliff:g id="mm">%1$.0f</xliff:g> мм қашықтықта көтерілді, ал мәзір <xliff:g id="limit">%2$.0f</xliff:g> мм-ден асқанда жабылады.</string>
+    <string name="gesture_trainer_finding_menu_wrong_item">Саусақ <xliff:g id="target">%2$d</xliff:g>-элементтің орнына <xliff:g id="item">%1$d</xliff:g>-элементте көтерілді.</string>
+    <string name="gesture_trainer_tip_menu_in_corner">Жиектің жоғарғы және төменгі ұштарынан сәл қашығырақ бастаңыз.</string>
+    <string name="gesture_trainer_tip_menu_left_edge">Сырғытқан кезде саусақты жиекке жақын ұстап, сол жерде көтеріңіз.</string>
+    <string name="gesture_trainer_tip_menu_wrong_item">Әр элементтің жиек бойында тұрақты орны бар, және саусақ көтерілген элемент таңдалады. Элемент айтылғанда көтеріңіз.</string>
+    <string name="gesture_trainer_contents">Мазмұн</string>
+    <string name="gesture_trainer_contents_heading">Мазмұн: <xliff:g id="group">%1$s</xliff:g></string>
+    <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
+    <string name="gesture_trainer_contents_done">орындалды, <xliff:g id="tries">%2$d</xliff:g> әрекеттің <xliff:g id="hits">%1$d</xliff:g> танылды</string>
+    <string name="gesture_trainer_group_tap_swipe">Түрту және сырғыту</string>
+    <string name="gesture_trainer_group_edge_swipes">Жиектерден сырғыту</string>
+    <string name="gesture_trainer_group_along_edges">Жиектер бойымен сырғыту</string>
+    <string name="gesture_trainer_group_edge_menus">Жиек мәзірлері</string>
+    <string name="gesture_trainer_group_corners">Бұрыштар</string>
+    <string name="gesture_trainer_group_back_tap">Артқы жағын түрту</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">Артынан екі саусақпен сырғыту келетін екі саусақпен түртулер алынып тасталды: <xliff:g id="setting">%1$s</xliff:g> өшірулі.</string>
+    <string name="gesture_trainer_how_swipe_hold">Содан кейін көтермей, саусақты кемінде <xliff:g id="hold">%1$d</xliff:g> мс қозғалыссыз ұстап, көтеріңіз.</string>
+    <string name="gesture_trainer_half_top">жоғарғы</string>
+    <string name="gesture_trainer_half_bottom">төменгі</string>
+    <string name="gesture_trainer_how_taps_half">Экранның <xliff:g id="half">%1$s</xliff:g> жартысын түртіңіз. Жартыны саусақтар арасындағы нүкте анықтайды.</string>
+    <string name="gesture_trainer_same_fingers">сол саусақтармен</string>
+    <string name="gesture_trainer_how_tap_swipe"><xliff:g id="fingers">%2$s</xliff:g> <xliff:g id="taps">%1$s</xliff:g> түртіңіз. Соңғы түртуден кейін бірден, <xliff:g id="gap">%3$d</xliff:g> мс ішінде экранға қайтадан <xliff:g id="swipe_fingers">%4$s</xliff:g> тиіп, түзу сызық бойымен шамамен 2–3 см <xliff:g id="direction">%5$s</xliff:g> сырғытыңыз, содан кейін көтеріңіз.</string>
+    <string name="gesture_trainer_how_corner_hold">Соңғы түртуде саусақты бұрышта кемінде <xliff:g id="hold">%1$d</xliff:g> мс қозғалыссыз қалдырыңыз.</string>
+    <string name="gesture_trainer_how_back_tap">Телефонды бүйірлерінен ұстап, оның артқы жағының ортасын саусақ ұшымен есік қаққандай қатты әрі жылдам <xliff:g id="taps">%1$s</xliff:g> түртіңіз. Түртулерді бір-біріне жақын жасаңыз: араларында ең көбі <xliff:g id="gap">%2$d</xliff:g> мс. Түрткен кезде экранға тимеңіз.</string>
+    <string name="gesture_trainer_back_tap_info">Жаттығу кезінде артқы жағын түрту ешқандай пәрмен орындамайды. <xliff:g id="setting">%1$s</xliff:g> түртудің қаншалықты күшті болуы керегін анықтайды.</string>
+    <string name="gesture_trainer_go_placed">Қимылды <xliff:g id="tries">%1$d</xliff:g> рет жасаңыз.</string>
+    <string name="gesture_trainer_along_left">сол жақ жиек</string>
+    <string name="gesture_trainer_along_right">оң жақ жиек</string>
+    <string name="gesture_trainer_along_top">жоғарғы жиек</string>
+    <string name="gesture_trainer_along_bottom">төменгі жиек</string>
+    <string name="gesture_trainer_left_out_along_menu"><xliff:g id="edge">%1$s</xliff:g> бойымен сырғыту алынып тасталды: онда жиек мәзірі бар, сондықтан оның бойымен сырғыту қимыл орындаудың орнына мәзірді ашады.</string>
+    <string name="gesture_trainer_left_out_along_scroll"><xliff:g id="edge">%1$s</xliff:g> бойымен сырғыту алынып тасталды: ол айналдырады, сондықтан оның бойымен сырғыту қимыл орындаудың орнына қолданбаны айналдырады.</string>
+    <string name="gesture_trainer_finding_along_off_edge">Саусақ жиектен тым алыстап кетті.</string>
+    <string name="gesture_trainer_tip_along_off_edge">Саусақты шынының ең шетінде, тура жиек бойымен ұстаңыз.</string>
+    <string name="gesture_trainer_go_back_tap">Артқы жағын түрту қимылын <xliff:g id="tries">%1$d</xliff:g> рет жасаңыз. Экранға тию әрекетті сәтсіз етеді.</string>
+    <string name="gesture_trainer_no_accelerometer">Бұл жаттығуға акселерометр қажет. Ол жоқ.</string>
+    <string name="gesture_trainer_measure_hold"><xliff:g id="ms">%1$d</xliff:g> мс қозғалыссыз ұсталды</string>
+    <string name="gesture_trainer_measure_back_tap_strength">түрту күші <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_finding_swipe_hold_too_short">Саусақ соңында <xliff:g id="ms">%1$d</xliff:g> мс қозғалыссыз тұрды, ал кемінде <xliff:g id="limit">%2$d</xliff:g> мс қозғалыссыз тұруы керек.</string>
+    <string name="gesture_trainer_finding_tap_wrong_half">Саусақтар экранның екінші жартысын түртті.</string>
+    <string name="gesture_trainer_finding_swipe_missing">Түртулерден кейін сырғыту болмады.</string>
+    <string name="gesture_trainer_finding_swipe_late">Сырғыту соңғы түртуден <xliff:g id="ms">%1$d</xliff:g> мс кейін басталды, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">Артқы жағын түрту тым әлсіз: қажетті күштің <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_back_tap_sideways">Түрту телефонды артқы жағынан гөрі бүйірге көбірек шайқалтты.</string>
+    <string name="gesture_trainer_finding_back_tap_moving">Телефон түртудің алдында қозғалыста болды.</string>
+    <string name="gesture_trainer_finding_back_tap_screen_touched">Экранға тиді, ал экранға тиіп тұрғанда жасалған түртулер саналмайды.</string>
+    <string name="gesture_trainer_finding_back_taps_too_slow">Артқы жағын түртулер арасында <xliff:g id="ms">%1$d</xliff:g> мс өтті, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_tip_swipe_hold_too_short">Сырғытудан кейін саусақты ұстау уақытының соңына дейін экранда қозғалыссыз ұстаңыз. Содан кейін көтеріңіз.</string>
+    <string name="gesture_trainer_tip_tap_wrong_half">Қай жартысын түртетініңізді тексеріңіз: экранның ортасы жоғарғы жартысын төменгі жартысынан бөледі.</string>
+    <string name="gesture_trainer_tip_swipe_missing">Соңғы түртуден кейін экранға бірден қайта тиіп, сырғытыңыз.</string>
+    <string name="gesture_trainer_tip_swipe_late">Сырғытуды соңғы түртуден кейін бірден, үзіліссіз бастаңыз.</string>
+    <string name="gesture_trainer_tip_back_tap_too_light">Артқы жағының ортасына жақын жерді саусақ ұшымен немесе тырнақпен қаттырақ түртіңіз.</string>
+    <string name="gesture_trainer_tip_back_tap_sideways">Телефонның шетін емес, қиғаш емес, тура артқы жағын түртіңіз.</string>
+    <string name="gesture_trainer_tip_back_tap_moving">Түртпес бұрын телефонды бір сәт қозғалыссыз ұстаңыз және қолыңыз оны қозғамайтындай еркін ұстаңыз.</string>
+    <string name="gesture_trainer_tip_back_tap_screen_touched">Артқы жағын түрткенде саусақтарыңызды экраннан алыс ұстаңыз: телефонды бүйірлерінен ұстаңыз.</string>
+    <string name="gesture_trainer_tip_back_taps_too_slow">Жылдамырақ, бір түртуден кейін бірден екіншісін жасаңыз.</string>
+    <string name="gesture_trainer_advice_swipe_hold">Саусақ сырғытудан кейін тым ерте көтеріледі. Қысқарақ <xliff:g id="setting">%1$s</xliff:g> қысқарақ ұстауға мүмкіндік береді.</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">Артқы жағын түртулер әлсіз. Жоғарырақ <xliff:g id="setting">%1$s</xliff:g> әлсізірек түртулерді анықтайды және соққыларды да түрту ретінде анықтауы мүмкін.</string>
+    <string name="gesture_trainer_finding_turned_in_pinch">Саусақтар <xliff:g id="degrees">%1$.0f</xliff:g> градус бұрылды, ал <xliff:g id="limit">%2$.0f</xliff:g> градустан бастап қозғалыс бұру болып саналады.</string>
+    <string name="gesture_trainer_tip_turned_in_pinch">Саусақтарды бір-бірін айнала доға бойымен емес, түзу сызық бойымен бір-біріне жақындатыңыз немесе алшақтатыңыз.</string>
+    <string name="gesture_trainer_finding_other_gesture">Қозғалыс оның орнына сол қимылға сәйкес келді.</string>
+    <string name="gesture_trainer_side_left">сол жақ</string>
+    <string name="gesture_trainer_side_right">оң жақ</string>
+    <string name="gesture_trainer_side_top">жоғарғы</string>
+    <string name="gesture_trainer_side_bottom">төменгі</string>
+    <string name="gesture_trainer_finding_wrong_edge">Саусақ <xliff:g id="side">%1$s</xliff:g> жиектен басталды, ал бұл жаттығу <xliff:g id="expected">%2$s</xliff:g> жиекте.</string>
+    <string name="gesture_trainer_tip_wrong_edge">Жаттығу атаған жиектен дәл бастаңыз.</string>
+    <string name="gesture_trainer_finding_menu_opened_instead">Бұл қимылдың орнына жиек мәзірі ашылды.</string>
+    <string name="gesture_trainer_tip_menu_opened_instead">Мәзірі бар жиек бойымен сырғыту мәзірді ашады. Жаттығу атаған жиектен бастаңыз.</string>
+    <string name="gesture_trainer_group_three_part">Үш бөлікті сырғытулар</string>
+    <string name="gesture_trainer_group_two_stroke">Екі кезеңді сырғытулар</string>
+    <string name="gesture_trainer_group_shake">Сілку</string>
+    <string name="gesture_trainer_left_out_three_part_before_lift">Үш бөлікті сырғытулар алынып тасталды: <xliff:g id="setting">%1$s</xliff:g> қосулы.</string>
+    <string name="gesture_trainer_left_out_two_stroke_off">Екі кезеңді сырғытулар алынып тасталды: <xliff:g id="setting">%1$s</xliff:g>: <xliff:g id="value">%2$s</xliff:g>.</string>
+    <string name="gesture_trainer_shake_info">Жаттығу кезінде сілку ешқандай пәрмен орындамайды. <xliff:g id="setting">%1$s</xliff:g> сілкудің қаншалықты күшті болуы керегін анықтайды.</string>
+    <string name="gesture_trainer_go_shake">Телефонды <xliff:g id="tries">%1$d</xliff:g> рет сілкіңіз, әр сілкуден кейін қысқа үзіліс жасаңыз.</string>
+    <string name="gesture_trainer_how_shake">Телефонды мықтап ұстап, су тамшысын сілкіп түсіргендей жылдам алға-артқа сілкіңіз: әр бағытта кемінде екі рет, барлығы шамамен секундтың үштен екісі ішінде. Содан кейін оны қозғалыссыз ұстаңыз.</string>
+    <string name="gesture_trainer_how_two_stroke">Бір саусақпен шамамен 2 см <xliff:g id="first">%1$s</xliff:g> сырғытып, көтеріңіз. Содан кейін бірден, <xliff:g id="time">%3$d</xliff:g> мс ішінде бір саусақпен шамамен 2 см <xliff:g id="second">%2$s</xliff:g> сырғытып, көтеріңіз.</string>
+    <string name="gesture_trainer_how_three_part">Экранға бір саусақпен тиіп, көтермей <xliff:g id="first">%1$s</xliff:g> сырғытыңыз, содан кейін күрт бұрылып <xliff:g id="second">%2$s</xliff:g> сырғытыңыз, содан кейін қайтадан күрт бұрылып <xliff:g id="third">%3$s</xliff:g> сырғытыңыз, әр бөлік шамамен 2 см, содан кейін көтеріңіз. Мұны доғасыз, өткір бұрыштары бар бір жылдам, біркелкі қозғалыспен жасаңыз.</string>
+    <string name="gesture_trainer_how_taps_top_and_bottom">Бір саусақты экранның жоғарғы үштен біріне, екіншісін төменгі үштен біріне қойыңыз, мысалы, бас бармақты төменге, сұқ саусақты жоғарыға.</string>
+    <string name="gesture_trainer_finding_tap_not_top_and_bottom">Саусақтардың бірі экранның жоғарғы үштен бірінде, екіншісі төменгі үштен бірінде болмады.</string>
+    <string name="gesture_trainer_finding_second_stroke_missing">Екінші сырғыту болмады.</string>
+    <string name="gesture_trainer_finding_second_stroke_late">Екінші сырғыту біріншісінен <xliff:g id="ms">%1$d</xliff:g> мс кейін басталды, ал ең көбі <xliff:g id="limit">%2$d</xliff:g> мс рұқсат етіледі.</string>
+    <string name="gesture_trainer_finding_first_stroke_wrong_direction">Бірінші сырғыту <xliff:g id="direction">%1$s</xliff:g> жылжыды.</string>
+    <string name="gesture_trainer_finding_second_stroke_wrong_direction">Екінші сырғыту <xliff:g id="direction">%1$s</xliff:g> жылжыды.</string>
+    <string name="gesture_trainer_finding_shake_too_light">Сілку тым әлсіз болды: қажетті күштің <xliff:g id="percent">%1$d</xliff:g>%%.</string>
+    <string name="gesture_trainer_finding_shake_too_few_swings">Алға-артқа тербелістер: қажетті <xliff:g id="wanted">%2$d</xliff:g> тербелістің <xliff:g id="swings">%1$d</xliff:g>.</string>
+    <string name="gesture_trainer_tip_tap_not_top_and_bottom">Саусақтарды бір-бірінен алшақ қойыңыз, бірін жоғарғы жиекке жақын, екіншісін төменгі жиекке жақын.</string>
+    <string name="gesture_trainer_tip_second_stroke_missing">Бірінші сырғытудан кейін саусақты көтеріп, бірден қайта сырғытыңыз.</string>
+    <string name="gesture_trainer_tip_second_stroke_late">Екінші сырғытуды саусақты көтергеннен кейін бірден бастаңыз.</string>
+    <string name="gesture_trainer_tip_shake_too_light">Қаттырақ және жылдамырақ сілкіңіз.</string>
+    <string name="gesture_trainer_tip_shake_too_few_swings">Арасында тоқтамай, әр бағытта кемінде екі рет алға-артқа жылдамырақ сілкіңіз.</string>
+    <string name="gesture_trainer_measure_shake_strength">ең күшті қозғалыс <xliff:g id="strength">%1$.1f</xliff:g></string>
+    <string name="gesture_trainer_advice_shake_sensitivity">Сілкулер әлсіз. Жоғарырақ <xliff:g id="setting">%1$s</xliff:g> әлсізірек сілкулерді анықтайды және телефонды алып жүруді де сілку ретінде анықтауы мүмкін.</string>
+    <string name="gesture_trainer_advice_two_stroke_time">Екінші сырғыту кеш басталады. Ұзағырақ <xliff:g id="setting">%1$s</xliff:g> екінші сырғытуды кешірек бастауға мүмкіндік береді, бірақ сонда жалғыз сырғыту орындалар алдында ұзағырақ күтеді.</string>
+    <string name="gesture_trainer_scrub_two_finger_on"><xliff:g id="setting">%1$s</xliff:g> қосулы.</string>
+    <string name="gesture_trainer_scrub_two_finger_off"><xliff:g id="setting">%1$s</xliff:g> өшірулі: екі саусақпен сырғытулар қолданбаны айналдырады, және сүрту де көбінесе айналдырады. Параметр қосулы болса, екі саусақпен сырғытулар айналдырудың орнына SandFly пәрмендерін орындайды.</string>
+    <string name="gesture_trainer_measure_first_stroke">бірінші сырғыту <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_second_stroke">екінші сырғыту <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_whole_gesture">бүкіл қимыл <xliff:g id="ms">%1$d</xliff:g> мс</string>
+    <string name="gesture_trainer_measure_stroke_gap">араларында <xliff:g id="ms">%1$d</xliff:g> мс көтеріліп тұрды</string>
+</resources>
