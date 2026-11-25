@@ -164,6 +164,7 @@ The user guide is in English, Dutch, Indonesian and Polish, and shows in English
 
 ## For developers
 
+- [Contributing](CONTRIBUTING.md): what SandFly accepts, and what a pull request must include.
 - [Writing SandFly scripts](docs/scripting.md): the Lua script API, with examples in [docs/scripting/examples](docs/scripting/examples).
 - [Speaking through SandFly from another app](docs/speech-api.md): other apps can speak with the SandFly voice, once the user allows each app.
 - [Providing a braille display from another app](docs/braille-display-api.md): an app, such as a notetaker app, can give SandFly a braille display that SandFly can't reach on its own.
