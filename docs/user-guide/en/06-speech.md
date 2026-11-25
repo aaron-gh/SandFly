@@ -70,6 +70,7 @@ To change a profile, go to **Speech** > **Voice profiles** and choose the profil
 - **Language**: **Default**, or one of the languages of the engine.
 - **Voice**: **Default**, or one of the voices of the engine in the chosen language.
 - **Speech volume**, **Speech rate** and **Speech pitch**: as on the **Speech** screen, for this profile.
+- **Play sample**: speaks a sample sentence with the engine, voice, volume, rate, pitch and voice effects set here, in the language of the profile where SandFly has the sentence in it. "Sample not played" means that the engine didn't start or returned an error.
 - **Voice effects**: the voice effects of this profile. See [](#voice-effects). Not on watches.
 - **Send long text a sentence at a time**: as on the **Speech** screen, for this profile. See [](#speech-pronunciation).
 - **Keep the engine started**: keeps the engine of this profile running while another engine is in use and the screen is on, so that switching to the profile doesn't wait for the engine to start. Each engine kept started runs as a process of its own. Off by default.

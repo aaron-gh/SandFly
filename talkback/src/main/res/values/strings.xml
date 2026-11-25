@@ -172,6 +172,12 @@
     <string name="title_pref_keep_previous_voice_engine">Keep the engine of the previous voice profile started</string>
     <!-- Switch on a voice profile's screen. When on, the profile's text-to-speech engine stays connected while another engine is in use, so that changing to the profile, and notifications read with it, don't wait for the engine to start. [CHAR LIMIT=NONE] -->
     <string name="title_pref_voice_profile_keep_engine_started">Keep the engine started</string>
+    <!-- Title of the button on a voice profile's settings screen that speaks a sample sentence with the profile's engine, voice, volume, rate, pitch and equalizer as they are set. [CHAR LIMIT=40] -->
+    <string name="title_pref_voice_profile_play_sample">Play sample</string>
+    <!-- Sentence spoken by Play sample on a voice profile's settings screen, in the language of the profile. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_sample_text">This is a sample of this voice profile.</string>
+    <!-- Spoken when Play sample can't speak the sample because the profile's speech engine didn't start or returned an error. [CHAR LIMIT=NONE] -->
+    <string name="voice_profile_sample_failed">Sample not played</string>
     <!-- Title of the settings screen with the speech equalizer and compression effects, and of the reading control that turns them on or off. [CHAR LIMIT=40] -->
     <string name="title_pref_speech_equalizer">Voice effects</string>
     <!-- Title of the list of equalizer presets. [CHAR LIMIT=40] -->
