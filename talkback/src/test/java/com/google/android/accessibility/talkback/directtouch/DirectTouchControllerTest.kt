@@ -380,6 +380,102 @@ class DirectTouchControllerTest {
     assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
   }
 
+  @Test
+  fun keyboardOverlayWithItsOwnServiceKeepsTheRegionThatServiceSets() {
+    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR_TAP, true).apply()
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
+
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
+
+    // The keyboard draws itself in an accessibility overlay instead of an input method window.
+    transcript.clear()
+    windowsChange(
+      OVERLAY,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      overlay(BRAILLE_KEYBOARD_PACKAGE),
+    )
+    assertTranscript()
+
+    windowsChange(OVERLAY, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+    assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun overlayOfAnotherServiceKeepsTheNavigationBarRegion() {
+    prefs.edit().putBoolean(DirectTouchSettings.PREF_NAV_BAR_TAP, true).apply()
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
+
+    windowsChange(
+      OVERLAY,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      overlay(MAGNIFIER_PACKAGE),
+    )
+
+    assertEquals(listOf(NAVIGATION_BAR_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardWithItsOwnServiceKeepsItsRegionOverAGameWithDirectTouch() {
+    DirectTouchSettings.setAppEnabled(prefs, GAME_PACKAGE, true)
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf(BRAILLE_KEYBOARD_PACKAGE)
+
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    assertEquals(listOf(GAME_REGION, "say \"Direct touch on\""), transcript.distinct())
+
+    transcript.clear()
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(BRAILLE_KEYBOARD_PACKAGE),
+    )
+    windowsChange(
+      OVERLAY,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      overlay(BRAILLE_KEYBOARD_PACKAGE),
+    )
+    assertTranscript()
+
+    windowsChange(OVERLAY, WINDOWS_CHANGE_REMOVED, statusBar(), navigationBar(), game())
+    assertEquals(listOf(GAME_REGION), transcript.distinct())
+  }
+
+  @Test
+  fun keyboardWithoutAServiceTakesNoRegionFromAGameWithDirectTouch() {
+    DirectTouchSettings.setAppEnabled(prefs, GAME_PACKAGE, true)
+    useKeyboard(BRAILLE_KEYBOARD_PACKAGE)
+    enableServiceOf("com.example.other")
+
+    windowsChange(GAME, WINDOWS_CHANGE_ADDED, statusBar(), navigationBar(), game())
+    transcript.clear()
+    windowsChange(
+      KEYBOARD,
+      WINDOWS_CHANGE_ADDED,
+      statusBar(),
+      navigationBar(),
+      game(),
+      keyboard(BRAILLE_KEYBOARD_PACKAGE, Rect(0, 1500, 1080, 2220)),
+    )
+
+    // The keyboard stays with SandFly.
+    assertEquals(listOf("region [0,80][1080,1500] complex=false"), transcript.distinct())
+  }
+
   // Screens
 
   private fun statusBar() =
@@ -395,8 +491,11 @@ class DirectTouchControllerTest {
 
   private fun toast() = window(TOAST, SYSTEM, "Saved", Rect(200, 1900, 880, 2050), SYSTEM_UI)
 
-  private fun keyboard(rootPackage: String) =
-    window(KEYBOARD, INPUT_METHOD, "Keyboard", Rect(0, 80, 1080, 2220), rootPackage, layer = 3)
+  private fun keyboard(rootPackage: String, bounds: Rect = Rect(0, 80, 1080, 2220)) =
+    window(KEYBOARD, INPUT_METHOD, "Keyboard", bounds, rootPackage, layer = 3)
+
+  private fun overlay(rootPackage: String) =
+    window(OVERLAY, ACCESSIBILITY_OVERLAY, "Overlay", SCREEN, rootPackage, layer = 10)
 
   private fun shade() =
     window(SHADE, SYSTEM, "Notification shade", SCREEN, SYSTEM_UI, active = true, layer = 9)
@@ -552,6 +651,7 @@ class DirectTouchControllerTest {
     const val SHADE = 3
     const val TOAST = 4
     const val KEYBOARD = 5
+    const val OVERLAY = 6
     const val GAME = 10
     const val GAME2 = 11
     const val GAME_PACKAGE = "com.example.game"
@@ -562,8 +662,11 @@ class DirectTouchControllerTest {
     const val SYSTEM = AccessibilityWindowInfo.TYPE_SYSTEM
     const val APPLICATION = AccessibilityWindowInfo.TYPE_APPLICATION
     const val INPUT_METHOD = AccessibilityWindowInfo.TYPE_INPUT_METHOD
+    const val ACCESSIBILITY_OVERLAY = AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY
     const val BRAILLE_KEYBOARD_PACKAGE = "com.example.braillekeyboard"
+    const val MAGNIFIER_PACKAGE = "com.example.magnifier"
     const val NAVIGATION_BAR_REGION = "region [0,2220][1080,2340] complex=false"
+    const val GAME_REGION = "region [0,80][1080,2220] complex=false"
     val SCREEN = Rect(0, 0, 1080, 2340)
   }
 }
