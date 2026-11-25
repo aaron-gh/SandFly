@@ -36,6 +36,11 @@ public class GoogleBrailleTranslator implements BrailleTranslator {
   }
 
   @Override
+  public String translateToPrint(BrailleWord brailleWord, String before, String after) {
+    return translator.translateToPrint(brailleWord, before, after);
+  }
+
+  @Override
   public String translateToPrintPartial(BrailleWord brailleWord) {
     return translator.translateToPrintPartial(brailleWord);
   }

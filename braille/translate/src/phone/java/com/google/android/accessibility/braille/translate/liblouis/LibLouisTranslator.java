@@ -131,10 +131,43 @@ public class LibLouisTranslator implements BrailleTranslator {
     return Objects.hash(tableName, code);
   }
 
-  private String translateToPrintInternal(BrailleWord brailleWord, boolean partial) {
+  String translateToPrintWithContext(
+      BrailleWord brailleWord, BrailleWord contextualWord, int[] range, String before, String after) {
+    if (!loader.isExtracted()) {
+      return "";
+    }
+    String bypass = getBypassTranslation(brailleWord);
+    if (bypass != null) {
+      return bypass;
+    }
+
+    String translated = translateToPrintDirect(contextualWord, /* partial= */ false, range);
+    int start = range[0];
+    int end = range[1];
+    if (start == before.length()
+        && end == translated.length() - after.length()
+        && start < end
+        && translated.startsWith(before)
+        && translated.endsWith(after)) {
+      return transformPostTranslation(
+          transformUsingCommutativityMap(brailleWord, translated.substring(start, end)));
+    }
+
+    // If a rule changed or absorbed some of the existing text, translate the inserted cells
+    // alone in partial mode to avoid expanding standalone wordsigns.
+    return translateToPrintPartial(brailleWord);
+  }
+
+  @Nullable
+  private String getBypassTranslation(BrailleWord brailleWord) {
     // Custom characters take precedence over the words this translator corrects.
-    boolean custom = CustomCharacterTables.containsCustomCells(code, brailleWord);
-    String bypassValueOrNull = custom ? null : getBypassMap().get(brailleWord);
+    return CustomCharacterTables.containsCustomCells(code, brailleWord)
+        ? null
+        : getBypassMap().get(brailleWord);
+  }
+
+  private String translateToPrintInternal(BrailleWord brailleWord, boolean partial) {
+    String bypassValueOrNull = getBypassTranslation(brailleWord);
     if (bypassValueOrNull != null) {
       return bypassValueOrNull;
     }
@@ -146,6 +179,10 @@ public class LibLouisTranslator implements BrailleTranslator {
   }
 
   private String translateToPrintDirect(BrailleWord brailleWord, boolean partial) {
+    return translateToPrintDirect(brailleWord, partial, null);
+  }
+
+  private String translateToPrintDirect(BrailleWord brailleWord, boolean partial, int[] range) {
     int flags =
         LouisTranslation.TranslationMode.NO_UNDEFINED_DOTS
             | LouisTranslation.TranslationMode.DOTS_IO;
@@ -153,7 +190,7 @@ public class LibLouisTranslator implements BrailleTranslator {
       flags |= TranslationMode.PARTIAL_TRANSLATE;
     }
     return LouisTranslation.backTranslate(
-        brailleWord.toByteArray(), CustomCharacterTables.tableList(code, tableName), flags);
+        brailleWord.toByteArray(), CustomCharacterTables.tableList(code, tableName), flags, range);
   }
 
   private String transformUsingCommutativityMap(BrailleWord brailleWord, String translationRaw) {

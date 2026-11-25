@@ -40,6 +40,11 @@ public class SplitTranslator implements BrailleTranslator {
   }
 
   @Override
+  public String translateToPrint(BrailleWord brailleWord, String before, String after) {
+    return toPrint.translateToPrint(brailleWord, before, after);
+  }
+
+  @Override
   public String translateToPrintPartial(BrailleWord brailleWord) {
     return toPrint.translateToPrintPartial(brailleWord);
   }
