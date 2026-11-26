@@ -17,7 +17,9 @@
 package com.google.android.accessibility.talkback
 
 import android.view.accessibility.AccessibilityNodeInfo
+import android.graphics.Rect
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import com.google.android.accessibility.utils.WebInterfaceUtils
 import com.google.android.accessibility.utils.input.CursorGranularity
 import com.google.android.accessibility.utils.output.CopySelection
 import org.junit.Assert.assertEquals
@@ -118,5 +120,38 @@ class WebGranularityTest {
   @Test
   fun aWebElementWithoutTextIsNotMovedThrough() {
     assertFalse(GranularityTraversal.shouldHandleGranularityTraversalInTalkback(webNode {}))
+  }
+
+  /** A paragraph Chromium clips to a viewport from 200 to 1800, unclipped from top to bottom. */
+  private fun paragraphAt(top: Int, bottom: Int, offscreen: Boolean = false) = webNode {
+    text = "Rockstar showed the map"
+    movementGranularities = chromeGranularities
+    val shown = Rect(0, top.coerceIn(200, 1800), 1000, bottom.coerceIn(200, 1800))
+    setBoundsInScreen(shown)
+    extras.putInt("AccessibilityNodeInfo.unclippedTop", top)
+    extras.putInt("AccessibilityNodeInfo.unclippedBottom", bottom)
+    if (offscreen) {
+      extras.putBoolean("AccessibilityNodeInfo.offscreen", true)
+    }
+  }
+
+  @Test
+  fun aParagraphInsideTheViewportIsNotOutsideIt() {
+    assertFalse(WebInterfaceUtils.isOutsideWebViewport(paragraphAt(400, 600)))
+  }
+
+  @Test
+  fun aParagraphCutOffAtTheBottomIsOutsideTheViewport() {
+    assertTrue(WebInterfaceUtils.isOutsideWebViewport(paragraphAt(1700, 1900)))
+  }
+
+  @Test
+  fun aParagraphBelowTheViewportIsOutsideIt() {
+    assertTrue(WebInterfaceUtils.isOutsideWebViewport(paragraphAt(2400, 2600, offscreen = true)))
+  }
+
+  @Test
+  fun aNodeWithoutChromiumBoundsIsNotOutsideTheViewport() {
+    assertFalse(WebInterfaceUtils.isOutsideWebViewport(webNode { text = "Map" }))
   }
 }
