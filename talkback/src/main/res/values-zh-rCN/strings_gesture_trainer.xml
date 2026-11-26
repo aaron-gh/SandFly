@@ -33,11 +33,11 @@
     <string name="gesture_trainer_taps_2">两次</string>
     <string name="gesture_trainer_taps_3">三次</string>
     <string name="gesture_trainer_taps_4">四次</string>
-    <string name="gesture_trainer_how_taps">用<xliff:g id="fingers">%2$s</xliff:g>点按<xliff:g id="taps">%1$s</xliff:g>。手指同时放下、同时抬起，动作要快，不要滑动。</string>
+    <string name="gesture_trainer_how_taps">用<xliff:g id="fingers">%2$s</xliff:g>点击<xliff:g id="taps">%1$s</xliff:g>。手指同时放下、同时抬起，动作要快，不要滑动。</string>
     <string name="gesture_trainer_how_taps_quick">点击要快且在同一位置：下一次点击必须在上一次之后 <xliff:g id="gap">%1$d</xliff:g> 毫秒内。</string>
     <string name="gesture_trainer_how_hold">将<xliff:g id="fingers">%1$s</xliff:g>同时放在屏幕上并保持不动，不要滑动，至少 <xliff:g id="hold">%2$d</xliff:g> 毫秒。</string>
     <string name="gesture_trainer_how_long_hold_turns_off">如果未分配其他命令，此手势会关闭 SandFly。在训练器中，它不执行任何操作。</string>
-    <string name="gesture_trainer_how_taps_hold">用<xliff:g id="fingers">%2$s</xliff:g>点按<xliff:g id="taps">%1$s</xliff:g>，最后一次点按时将手指留在屏幕上保持不动，至少 <xliff:g id="hold">%3$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_how_taps_hold">用<xliff:g id="fingers">%2$s</xliff:g>点击<xliff:g id="taps">%1$s</xliff:g>，最后一次点击时将手指留在屏幕上保持不动，至少 <xliff:g id="hold">%3$d</xliff:g> 毫秒。</string>
     <string name="gesture_trainer_how_three_finger_hand">使用拇指、食指和中指。</string>
     <string name="gesture_trainer_how_four_finger_pinch_hand">将食指和中指并排放置，拇指和无名指分别放在两侧几厘米外。然后将四个指尖合拢到一点。</string>
     <string name="gesture_trainer_how_pinch">将 <xliff:g id="fingers">%1$d</xliff:g> 根手指放在屏幕上，彼此张开。然后让它们直线相互靠拢至少 1 厘米，就像捡起东西一样，再从屏幕上抬起。只移动手指，不要移动整只手，也不要沿弧线移动。</string>
@@ -63,7 +63,7 @@
     <string name="gesture_trainer_corner_top_right">右上</string>
     <string name="gesture_trainer_corner_bottom_left">左下</string>
     <string name="gesture_trainer_corner_bottom_right">右下</string>
-    <string name="gesture_trainer_how_corner">在屏幕<xliff:g id="corner">%2$s</xliff:g>角点按<xliff:g id="taps">%1$s</xliff:g>。将手指正好放在角落，距两条边缘都不超过 <xliff:g id="size">%3$d</xliff:g> 毫米，并快速抬起，在 <xliff:g id="time">%4$d</xliff:g> 毫秒内。</string>
+    <string name="gesture_trainer_how_corner">在屏幕<xliff:g id="corner">%2$s</xliff:g>角点击<xliff:g id="taps">%1$s</xliff:g>。将手指正好放在角落，距两条边缘都不超过 <xliff:g id="size">%3$d</xliff:g> 毫米，并快速抬起，在 <xliff:g id="time">%4$d</xliff:g> 毫秒内。</string>
     <string name="gesture_trainer_sizes"><xliff:g id="edge_setting">%1$s</xliff:g>：<xliff:g id="edge">%2$d</xliff:g> 毫米。<xliff:g id="corner_setting">%3$s</xliff:g>：<xliff:g id="corner">%4$d</xliff:g> 毫米。</string>
     <string name="gesture_trainer_corner_warning">角落越大，点击角落附近的控件（例如左上角的“返回”）时，越可能改为执行角落手势。</string>
     <string name="gesture_trainer_rating_precise">已识别，精确</string>
@@ -112,8 +112,8 @@
     <string name="gesture_trainer_finding_tap_moved">点击时手指滑动了 <xliff:g id="mm">%1$.1f</xliff:g> 毫米，最多允许 <xliff:g id="limit">%2$.1f</xliff:g> 毫米。</string>
     <string name="gesture_trainer_finding_tap_held_long">一次点击持续了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，超过 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
     <string name="gesture_trainer_finding_hold_too_short">最后一次点击保持了 <xliff:g id="ms">%1$d</xliff:g> 毫秒，至少需要 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
-    <string name="gesture_trainer_finding_too_few_taps">点按 <xliff:g id="taps">%1$d</xliff:g> 次，应为 <xliff:g id="wanted">%2$d</xliff:g> 次。</string>
-    <string name="gesture_trainer_finding_too_many_taps">点按 <xliff:g id="taps">%1$d</xliff:g> 次，应为 <xliff:g id="wanted">%2$d</xliff:g> 次。</string>
+    <string name="gesture_trainer_finding_too_few_taps">点击 <xliff:g id="taps">%1$d</xliff:g> 次，应为 <xliff:g id="wanted">%2$d</xliff:g> 次。</string>
+    <string name="gesture_trainer_finding_too_many_taps">点击 <xliff:g id="taps">%1$d</xliff:g> 次，应为 <xliff:g id="wanted">%2$d</xliff:g> 次。</string>
     <string name="gesture_trainer_finding_taps_too_slow">两次点击之间间隔 <xliff:g id="ms">%1$d</xliff:g> 毫秒，最多允许 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
     <string name="gesture_trainer_finding_taps_apart">点击位置相距 <xliff:g id="mm">%1$.0f</xliff:g> 毫米，最多允许 <xliff:g id="limit">%2$.0f</xliff:g> 毫米。</string>
     <string name="gesture_trainer_finding_pinch_too_small">手指只移动了 <xliff:g id="mm">%1$.0f</xliff:g> 毫米，至少需要移动 <xliff:g id="limit">%2$.0f</xliff:g> 毫米。</string>
@@ -203,8 +203,8 @@
     <string name="gesture_trainer_half_bottom">下</string>
     <string name="gesture_trainer_how_taps_half">在屏幕的<xliff:g id="half">%1$s</xliff:g>半部分点击。由手指之间的中点决定所在的半部分。</string>
     <string name="gesture_trainer_same_fingers">相同的手指</string>
-    <string name="gesture_trainer_how_tap_swipe">用<xliff:g id="fingers">%2$s</xliff:g>点按<xliff:g id="taps">%1$s</xliff:g>。最后一次点按后立即在 <xliff:g id="gap">%3$d</xliff:g> 毫秒内再次用<xliff:g id="swipe_fingers">%4$s</xliff:g>触摸屏幕，<xliff:g id="direction">%5$s</xliff:g>沿直线滑动约 2 到 3 厘米，然后抬起。</string>
-    <string name="gesture_trainer_how_corner_hold">最后一次点按时，将手指留在角落保持不动，至少 <xliff:g id="hold">%1$d</xliff:g> 毫秒。</string>
+    <string name="gesture_trainer_how_tap_swipe">用<xliff:g id="fingers">%2$s</xliff:g>点击<xliff:g id="taps">%1$s</xliff:g>。最后一次点击后立即在 <xliff:g id="gap">%3$d</xliff:g> 毫秒内再次用<xliff:g id="swipe_fingers">%4$s</xliff:g>触摸屏幕，<xliff:g id="direction">%5$s</xliff:g>沿直线滑动约 2 到 3 厘米，然后抬起。</string>
+    <string name="gesture_trainer_how_corner_hold">最后一次点击时，将手指留在角落保持不动，至少 <xliff:g id="hold">%1$d</xliff:g> 毫秒。</string>
     <string name="gesture_trainer_how_back_tap">握住手机两侧，用指尖在手机背面中间点击<xliff:g id="taps">%1$s</xliff:g>，用力且快速，就像敲门一样。点击间隔要短：最多 <xliff:g id="gap">%2$d</xliff:g> 毫秒。点击时不要触摸屏幕。</string>
     <string name="gesture_trainer_back_tap_info">练习期间背面点击不运行任何命令。“<xliff:g id="setting">%1$s</xliff:g>”决定点击需要多大力度。</string>
     <string name="gesture_trainer_go_placed">将手势执行 <xliff:g id="tries">%1$d</xliff:g> 次。</string>
