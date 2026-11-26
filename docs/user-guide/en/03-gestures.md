@@ -208,7 +208,7 @@ Each of these gestures gives another 3 seconds. Any other gesture ends Quick Tas
 
 #### Handle two-finger swipes in SandFly {#gestures-two-finger-swipes}
 
-With **Handle two-finger swipes in SandFly** off, two-finger swipes go to the app, which scrolls with them, and the four two-finger swipes on the **Gestures** screen show "not customizable". With it on, two-finger swipes run the commands assigned to them, and the **2 finger angle** gestures are available. This setting needs Android 11 or later.
+With **Handle two-finger swipes in SandFly** off, two-finger swipes go to the app, which scrolls with them, and the four two-finger swipes on the **Gestures** screen show "not customizable". With it on, two-finger swipes run the commands assigned to them, and the **2 finger angle** gestures are available. On the lock screen and the home screen, the gesture for **Scroll up** sends a swipe up instead, which unlocks the phone or shows the PIN, pattern or password, or opens the apps list. This setting needs Android 11 or later.
 
 #### Timing settings {#gestures-timing}
 
