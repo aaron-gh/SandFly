@@ -47,13 +47,11 @@ object SendButtonFinder {
    * [sendWords] are the words a send button can be labeled with, such as "Send" in the user's
    * language. A button in the same row as the field wins over one elsewhere in the window, so a
    * message in the conversation that is labeled like a button can't be pressed instead.
-   * With [requireSameRow], buttons elsewhere in the window are excluded.
    */
   @JvmStatic
   fun find(
     field: AccessibilityNodeInfoCompat,
     sendWords: Collection<String>,
-    requireSameRow: Boolean = false,
   ): AccessibilityNodeInfoCompat? {
     val root = AccessibilityNodeInfoUtils.getRoot(field) ?: return null
     val fieldBounds = Rect().also { field.getBoundsInScreen(it) }
@@ -71,25 +69,24 @@ object SendButtonFinder {
         continue
       }
       val target = clickTarget(node) ?: continue
-      if (!target.isEnabled || target == field) {
+      if (
+        !target.isEnabled ||
+          target.isEditable ||
+          target == field ||
+          AccessibilityNodeInfoUtils.hasAncestor(field, target)
+      ) {
         continue
       }
       val bounds = Rect().also { target.getBoundsInScreen(it) }
-      // A container around the field, such as the whole compose bar, would click the wrong thing.
-      if (bounds.contains(fieldBounds)) {
-        continue
-      }
       val sameRow = bounds.top < fieldBounds.bottom && bounds.bottom > fieldBounds.top
-      if (requireSameRow && (!sameRow || bounds.isEmpty || fieldBounds.isEmpty)) {
-        continue
-      }
-      // Away from the field, such as in the toolbar under Pachli's post field, only a view the app
-      // calls a send button or a button labeled like one will do, not a message that says "Send".
+      // A toolbar control can expose its name without declaring a button role.
       if (
         !sameRow &&
           !isSendViewId(node.viewIdResourceName) &&
           !isButton(node) &&
-          !isButton(target)
+          !isButton(target) &&
+          labelStrength(node.contentDescription, sendWords) != Strength.STRONG &&
+          labelStrength(node.tooltipText, sendWords) != Strength.STRONG
       ) {
         continue
       }

@@ -106,18 +106,38 @@ public final class DisplayCommandProfile {
   }
 
   private static Map<String, String> createSandFlyDefaults() {
+    Map<String, String> defaults = sharedDefaults();
+    // Space aliases keep these commands usable in an editor, where bare dots type.
+    bind(defaults, DisplayKeyOverrides.commandTarget(CMD_NAV_ITEM_PREVIOUS), "17");
+    bind(defaults, DisplayKeyOverrides.commandTarget(CMD_NAV_ITEM_NEXT), "48");
+    bind(defaults, DisplayKeyOverrides.commandTarget(CMD_PREVIOUS_READING_CONTROL), "2378");
+    bind(defaults, DisplayKeyOverrides.commandTarget(CMD_NEXT_READING_CONTROL), "5678");
+    bind(
+        defaults,
+        DisplayKeyOverrides.commandTarget(
+            CMD_NAVIGATE_BY_READING_GRANULARITY_OR_ADJUST_READING_CONTROL_BACKWARD),
+        "37");
+    bind(
+        defaults,
+        DisplayKeyOverrides.commandTarget(
+            CMD_NAVIGATE_BY_READING_GRANULARITY_OR_ADJUST_READING_CONTROL_FORWARD),
+        "68");
+    return Collections.unmodifiableMap(defaults);
+  }
+
+  private static Map<String, String> sharedDefaults() {
     Map<String, String> defaults = new LinkedHashMap<>();
     bindDisplay(defaults, CMD_OPEN_TALKBACK_MENU, "134", "1348");
     bindDisplay(defaults, CMD_SUBMIT_TEXT, "15");
     bindDisplay(defaults, CMD_EDIT_CUSTOM_LABEL, "12346");
     bindScreenReader(defaults, "INCREASE_MEDIA_VOLUME", "345");
     bindScreenReader(defaults, "DECREASE_MEDIA_VOLUME", "126");
-    return Collections.unmodifiableMap(defaults);
+    return defaults;
   }
 
   // https://support.apple.com/en-us/118665
   private static Map<String, String> createIosDefaults() {
-    Map<String, String> defaults = new LinkedHashMap<>(SANDFLY_DEFAULTS);
+    Map<String, String> defaults = sharedDefaults();
     bindDisplay(defaults, CMD_NAV_ITEM_PREVIOUS, "1");
     bindDisplay(defaults, CMD_NAV_ITEM_NEXT, "4");
     bindDisplay(defaults, CMD_NAV_TOP, "123");

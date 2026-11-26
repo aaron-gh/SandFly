@@ -159,6 +159,42 @@ public class DisplayKeysTest {
   }
 
   @Test
+  public void spaceESubmitTakesPrecedenceOverDriverOverrideInBothProfiles() {
+    String chord = DisplayCommandProfile.spaceChordKey("15");
+    String driverKey = DisplayKeyOverrides.commandKey(BrailleInputEvent.CMD_KEY_ENTER);
+    String submit = DisplayKeyOverrides.commandTarget(BrailleInputEvent.CMD_SUBMIT_TEXT);
+    String custom = DisplayKeyOverrides.screenReaderTarget("INCREASE_VOLUME");
+    for (boolean ios : new boolean[] {false, true}) {
+      DisplayKeyOverrides bindings =
+          DisplayCommandProfile.applyDefaults(ios, DisplayKeyOverrides.parse(null));
+      bindings.assign(custom, driverKey);
+      assertEquals(submit, DisplayKeys.boundChordTarget(bindings, chord, driverKey));
+      bindings.assign(custom, chord);
+      assertEquals(custom, DisplayKeys.boundChordTarget(bindings, chord, driverKey));
+    }
+  }
+
+  @Test
+  public void sandflyEditorNavigationChordsKeepTheOriginalBrowsingCommands() {
+    DisplayKeyOverrides bindings =
+        DisplayCommandProfile.applyDefaults(false, DisplayKeyOverrides.parse(null));
+    String[] chords = {"17", "48", "2378", "5678", "37", "68"};
+    int[] commands = {
+      BrailleInputEvent.CMD_NAV_ITEM_PREVIOUS,
+      BrailleInputEvent.CMD_NAV_ITEM_NEXT,
+      BrailleInputEvent.CMD_PREVIOUS_READING_CONTROL,
+      BrailleInputEvent.CMD_NEXT_READING_CONTROL,
+      BrailleInputEvent.CMD_NAVIGATE_BY_READING_GRANULARITY_OR_ADJUST_READING_CONTROL_BACKWARD,
+      BrailleInputEvent.CMD_NAVIGATE_BY_READING_GRANULARITY_OR_ADJUST_READING_CONTROL_FORWARD
+    };
+    for (int i = 0; i < chords.length; i++) {
+      String target = DisplayKeyOverrides.commandTarget(commands[i]);
+      assertEquals(target, bindings.resolve(DisplayCommandProfile.spaceChordKey(chords[i])));
+      assertEquals(target, bindings.resolve(DisplayKeyOverrides.commandKey(commands[i])));
+    }
+  }
+
+  @Test
   public void separateKeysRunTheirCommandUntilAssigned() {
     int[][] separateKeys = {
       {BrailleInputEvent.CMD_NAV_PAN_UP_SEPARATE_KEY, BrailleInputEvent.CMD_NAV_PAN_UP},

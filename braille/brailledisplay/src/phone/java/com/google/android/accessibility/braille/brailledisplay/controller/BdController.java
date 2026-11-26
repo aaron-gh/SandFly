@@ -195,18 +195,26 @@ public class BdController implements Controller {
     if (brailleInputEvent == null) {
       return;
     }
-    String target = keyRemapper.targetFor(
-        brailleInputEvent, editing, editing && behaviorIme.isMultilineEditor());
+    boolean canMoveByLine =
+        editing
+            && switch (brailleInputEvent.getCommand()) {
+              case BrailleInputEvent.CMD_NAV_ITEM_PREVIOUS_SEPARATE_KEY ->
+                  behaviorIme.canMoveByLine(/* forward= */ false);
+              case BrailleInputEvent.CMD_NAV_ITEM_NEXT_SEPARATE_KEY ->
+                  behaviorIme.canMoveByLine(/* forward= */ true);
+              default -> false;
+            };
+    String target = keyRemapper.targetFor(brailleInputEvent, editing, canMoveByLine);
     if (DisplayKeyOverrides.NONE.equals(target)) {
       return;
     }
-    talkBackForBrailleDisplay.performAction(
-        ScreenReaderAction.ACCESSIBILITY_FOCUS,
-        talkBackForBrailleDisplay.getAccessibilityFocusNode(false));
     int assignedCommand = target == null ? -1 : DisplayKeyOverrides.commandOf(target);
     int command = assignedCommand >= 0 ? assignedCommand : brailleInputEvent.getCommand();
     if (command != CMD_NAV_PAN_UP && command != CMD_NAV_PAN_DOWN) {
-      behaviorNavigation.clearEditorPan();
+      behaviorNavigation.clearEditorNavigation();
+      talkBackForBrailleDisplay.performAction(
+          ScreenReaderAction.ACCESSIBILITY_FOCUS,
+          talkBackForBrailleDisplay.getAccessibilityFocusNode(false));
     }
     if (shouldResumeBrailleDisplay(command)) {
       BrailleDisplayAnalytics.getInstance(context).logChangeTypingMode(/* toPhysical= */ true);
@@ -258,7 +266,7 @@ public class BdController implements Controller {
   public void onStop() {
     BrailleDisplayLog.v(TAG, "onStop");
     DisplayKeyCapture.setDisplayActive(false);
-    behaviorNavigation.clearEditorPan();
+    behaviorNavigation.clearEditorNavigation();
     brailleSharedPrefs().unregisterOnSharedPreferenceChangeListener(hideScreenKeyboardListener);
     if (inputMethodObserverRegistered) {
       context.getContentResolver().unregisterContentObserver(inputMethodObserver);
@@ -453,13 +461,17 @@ public class BdController implements Controller {
   }
 
   private void putAccessibilityFocusOnInputFocus() {
-    AccessibilityNodeInfoCompat node =
-        talkBackForBrailleDisplay
-            .createFocusFinder()
-            .findFocusCompat(AccessibilityNodeInfo.FOCUS_INPUT);
+    AccessibilityNodeInfoCompat node = findInputFocus();
     if (node != null) {
       node.performAction(AccessibilityNodeInfo.ACTION_ACCESSIBILITY_FOCUS);
     }
+  }
+
+  @Nullable
+  private AccessibilityNodeInfoCompat findInputFocus() {
+    return talkBackForBrailleDisplay
+        .createFocusFinder()
+        .findFocusCompat(AccessibilityNodeInfo.FOCUS_INPUT);
   }
 
   private boolean isBrailleKeyboardActivated() {
@@ -474,16 +486,25 @@ public class BdController implements Controller {
 
   /** Returns true if a field suitable for modal editing is focused. */
   private boolean isModalFieldFocused() {
-    // Only instances of EditText with both input and accessibility focus
-    // should be edited modally.
     AccessibilityNodeInfoCompat accessibilityFocused =
         behaviorFocus.getAccessibilityFocusNode(false);
     if (accessibilityFocused == null) {
       return false;
     }
-    return (accessibilityFocused != null
-        && accessibilityFocused.isFocused()
-        && AccessibilityNodeInfoUtils.nodeMatchesClassByType(accessibilityFocused, EditText.class));
+    if (accessibilityFocused.isFocused() && isEditableField(accessibilityFocused)) {
+      return true;
+    }
+    // Some multiline editors expose the focused line as a descendant of the input field.
+    AccessibilityNodeInfoCompat inputFocused = findInputFocus();
+    return inputFocused != null
+        && isEditableField(inputFocused)
+        && (inputFocused.equals(accessibilityFocused)
+            || AccessibilityNodeInfoUtils.hasAncestor(accessibilityFocused, inputFocused));
+  }
+
+  private static boolean isEditableField(AccessibilityNodeInfoCompat node) {
+    return node.isEditable()
+        || AccessibilityNodeInfoUtils.nodeMatchesClassByType(node, EditText.class);
   }
 
   /** Returns whether to resume braille display when keys run {@code command}. */
@@ -735,8 +756,8 @@ public class BdController implements Controller {
       return ime != null && ime.toggleKeyboardVisibility();
     }
 
-    public boolean isMultilineEditor() {
-      return getBrailleImeForBrailleDisplay().isMultilineEditor();
+    public boolean canMoveByLine(boolean forward) {
+      return getBrailleImeForBrailleDisplay().canMoveByLine(forward);
     }
 
     public boolean insertNewLine() {
@@ -795,6 +816,11 @@ public class BdController implements Controller {
   /** Behavior for modes: screen reader. */
   public class BehaviorScreenReader {
     public boolean performAction(ScreenReaderAction action, Object... args) {
+      if (args.length == 0
+          && (action == ScreenReaderAction.PREVIOUS_ITEM
+              || action == ScreenReaderAction.NEXT_ITEM)) {
+        return behaviorNavigation.moveFocus(action);
+      }
       return talkBackForBrailleDisplay.performAction(action, args);
     }
 
@@ -809,11 +835,11 @@ public class BdController implements Controller {
 
   /** Behavior for modes: navigation. */
   public class BehaviorNavigation {
-    // Moving past a display edge can scroll before accessibility focus reaches the next item.
-    private static final long EDITOR_PAN_TIMEOUT_MS = 2000;
-    @Nullable private AccessibilityNodeInfoCompat editorBeforePan;
-    private long editorPanStarted;
-    private long keyboardDismissedByPanUntil;
+    // Navigation can scroll before accessibility focus reaches the next item.
+    private static final long EDITOR_NAVIGATION_TIMEOUT_MS = 2000;
+    @Nullable private AccessibilityNodeInfoCompat editorBeforeNavigation;
+    private long editorNavigationStarted;
+    private long keyboardDismissedByNavigationUntil;
 
     /** Pans up to previous line. */
     public boolean panUp() {
@@ -834,7 +860,7 @@ public class BdController implements Controller {
       if (cellsContentManager.panUp()) {
         return true;
       }
-      return movePastDisplayEdge(ScreenReaderAction.PREVIOUS_ITEM, /* manual= */ true);
+      return moveFocus(ScreenReaderAction.PREVIOUS_ITEM);
     }
 
     private boolean handlePanDown(boolean isAutoScrollEnable) {
@@ -844,53 +870,64 @@ public class BdController implements Controller {
       if (isAutoScrollEnable && isOnscreenKeyboardActive()) {
         return false;
       }
-      return movePastDisplayEdge(ScreenReaderAction.NEXT_ITEM, /* manual= */ !isAutoScrollEnable);
+      return isAutoScrollEnable
+          ? talkBackForBrailleDisplay.performAction(ScreenReaderAction.NEXT_ITEM)
+          : moveFocus(ScreenReaderAction.NEXT_ITEM);
     }
 
-    private boolean movePastDisplayEdge(ScreenReaderAction action, boolean manual) {
-      if (!manual || suspended.get() || !behaviorIme.acceptInput()) {
+    private boolean moveFocus(ScreenReaderAction action) {
+      if (suspended.get() || !behaviorIme.acceptInput()) {
         return talkBackForBrailleDisplay.performAction(action);
       }
-      editorBeforePan = behaviorFocus.getAccessibilityFocusNode(false);
-      editorPanStarted = SystemClock.uptimeMillis();
+      AccessibilityNodeInfoCompat focused = behaviorFocus.getAccessibilityFocusNode(false);
+      AccessibilityNodeInfoCompat input = findInputFocus();
+      editorBeforeNavigation =
+          input != null && (input.equals(focused)
+              || AccessibilityNodeInfoUtils.hasAncestor(focused, input))
+              ? input
+              : focused;
+      editorNavigationStarted = SystemClock.uptimeMillis();
       behaviorIme.commitHoldings();
       boolean moved = talkBackForBrailleDisplay.performAction(action);
       if (moved) {
         dismissKeyboardIfFocusMoved();
       } else {
-        clearEditorPan();
+        clearEditorNavigation();
       }
       return moved;
     }
 
     private void dismissKeyboardIfFocusMoved() {
-      if (editorBeforePan == null) {
+      if (editorBeforeNavigation == null) {
         return;
       }
       long now = SystemClock.uptimeMillis();
-      if (now - editorPanStarted > EDITOR_PAN_TIMEOUT_MS) {
-        clearEditorPan();
+      if (now - editorNavigationStarted > EDITOR_NAVIGATION_TIMEOUT_MS) {
+        clearEditorNavigation();
         return;
       }
       AccessibilityNodeInfoCompat focused = behaviorFocus.getAccessibilityFocusNode(false);
-      if (focused != null && !editorBeforePan.equals(focused)) {
-        clearEditorPan();
-        keyboardDismissedByPanUntil = now + EDITOR_PAN_TIMEOUT_MS;
+      if (focused != null
+          && !editorBeforeNavigation.equals(focused)
+          && !AccessibilityNodeInfoUtils.hasAncestor(focused, editorBeforeNavigation)) {
+        clearEditorNavigation();
+        keyboardDismissedByNavigationUntil = now + EDITOR_NAVIGATION_TIMEOUT_MS;
         if (isBrailleKeyboardActivated()) {
           getBrailleImeForBrailleDisplay().hideKeyboardForDisplayNavigation();
         }
       }
     }
 
-    /** Keeps the keyboard-hidden notification from interrupting panning after focus moves. */
-    boolean consumePanKeyboardDismissal() {
-      boolean dismissedByPan = SystemClock.uptimeMillis() < keyboardDismissedByPanUntil;
-      keyboardDismissedByPanUntil = 0;
-      return dismissedByPan;
+    /** Keeps the keyboard-hidden notification from interrupting display navigation. */
+    boolean consumeNavigationKeyboardDismissal() {
+      boolean dismissedByNavigation =
+          SystemClock.uptimeMillis() < keyboardDismissedByNavigationUntil;
+      keyboardDismissedByNavigationUntil = 0;
+      return dismissedByNavigation;
     }
 
-    private void clearEditorPan() {
-      editorBeforePan = null;
+    private void clearEditorNavigation() {
+      editorBeforeNavigation = null;
     }
   }
 

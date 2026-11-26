@@ -50,12 +50,11 @@ public interface TalkBackForBrailleIme {
   void focusInputField();
 
   /**
-   * Clicks the button next to the input focused edit field that sends what was typed, such as the
-   * send button of a chat app, and returns whether it found one. {@code sendWords} are the words
-   * such a button can be labeled with, like "Send" in the user's language. When
-   * {@code requireSameRow} is true, only buttons beside the field are eligible.
+   * Looks for a Send button in the focused editor's window and returns whether it clicked one.
+   * {@code sendWords} are the words such a button can be labeled with, like "Send" in the user's
+   * language.
    */
-  boolean clickSendButton(List<String> sendWords, boolean requireSameRow);
+  boolean clickSendButton(List<String> sendWords);
 
   /**
    * BrailleIme invokes this when it becomes active. When TalkBack gets this signal, it should enter

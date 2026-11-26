@@ -36,7 +36,7 @@ class SendButtonFinderTest {
   private val sendWords = listOf("Send", "Envoyer")
 
   @Test
-  fun displaySubmitRequiresTheSendButtonToBeBesideTheField() {
+  fun submitFindsToolbarSendAndPrefersTheButtonBesideTheField() {
     val root = AccessibilityNodeInfo.obtain()
     val field = AccessibilityNodeInfo.obtain().apply {
       isEditable = true
@@ -47,14 +47,13 @@ class SendButtonFinderTest {
     shadowOf(root).addChild(toolbar)
     val editor = AccessibilityNodeInfoCompat.wrap(field)
 
-    assertNull(SendButtonFinder.find(editor, sendWords, requireSameRow = true))
     assertEquals("app:id/send", SendButtonFinder.find(editor, sendWords)?.viewIdResourceName)
 
     val besideField = sendButton("app:id/send_message", Rect(260, 440, 300, 490))
     shadowOf(root).addChild(besideField)
     assertEquals(
       "app:id/send_message",
-      SendButtonFinder.find(editor, sendWords, requireSameRow = true)?.viewIdResourceName,
+      SendButtonFinder.find(editor, sendWords)?.viewIdResourceName,
     )
   }
 
@@ -66,6 +65,44 @@ class SendButtonFinderTest {
       isVisibleToUser = true
       setBoundsInScreen(bounds)
     }
+
+  @Test
+  fun submitAcceptsSendWithOverlappingBoundsButSkipsTheEditorContainer() {
+    val bounds = Rect(0, 200, 250, 500)
+    val root = sendButton("app:id/send_container", bounds)
+    val field = AccessibilityNodeInfo.obtain().apply {
+      isEditable = true
+      setBoundsInScreen(bounds)
+    }
+    val toolbar = sendButton("app:id/send", bounds)
+    shadowOf(root).addChild(field)
+    shadowOf(root).addChild(toolbar)
+
+    val editor = AccessibilityNodeInfoCompat.wrap(field)
+    assertEquals("app:id/send", SendButtonFinder.find(editor, sendWords)?.viewIdResourceName)
+  }
+
+  @Test
+  fun submitFindsAnOffRowControlWithAnExplicitSendLabel() {
+    val root = AccessibilityNodeInfo.obtain()
+    val field = AccessibilityNodeInfo.obtain().apply {
+      isEditable = true
+      setBoundsInScreen(Rect(0, 200, 250, 500))
+    }
+    val toolbar = sendButton("app:id/toolbar_action", Rect(260, 10, 300, 50)).apply {
+      text = "Send"
+    }
+    shadowOf(root).addChild(field)
+    shadowOf(root).addChild(toolbar)
+    val editor = AccessibilityNodeInfoCompat.wrap(field)
+
+    assertNull(SendButtonFinder.find(editor, sendWords))
+    toolbar.contentDescription = "Send"
+    assertEquals(
+      "app:id/toolbar_action",
+      SendButtonFinder.find(editor, sendWords)?.viewIdResourceName,
+    )
+  }
 
   @Test
   fun viewIdsOfChatAppSendButtons_areSendButtons() {

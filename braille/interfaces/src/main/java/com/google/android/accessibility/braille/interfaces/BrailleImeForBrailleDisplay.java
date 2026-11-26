@@ -56,8 +56,8 @@ public interface BrailleImeForBrailleDisplay {
     return false;
   }
 
-  /** Returns whether the current editor accepts multiple lines. */
-  default boolean isMultilineEditor() {
+  /** Returns whether the multiline editor can move the cursor toward the requested edge. */
+  default boolean canMoveByLine(boolean forward) {
     return false;
   }
 

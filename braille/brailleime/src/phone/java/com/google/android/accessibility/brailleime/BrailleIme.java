@@ -992,8 +992,7 @@ public class BrailleIme extends InputMethodService {
     mainHandler.postDelayed(
         () -> {
           if (talkBackForBrailleIme != null
-              && talkBackForBrailleIme.clickSendButton(
-                  getSendWords(editorInfo.actionLabel), /* requireSameRow= */ false)) {
+              && talkBackForBrailleIme.clickSendButton(getSendWords(editorInfo.actionLabel))) {
             speakSubmitting();
             return;
           }
@@ -2575,14 +2574,35 @@ public class BrailleIme extends InputMethodService {
           EditorInfo editor = getCurrentInputEditorInfo();
           commitHoldings();
           if (talkBackForBrailleIme != null
-              && talkBackForBrailleIme.clickSendButton(
-                  getSendWords(/* customActionLabel= */ null), /* requireSameRow= */ true)) {
+              && talkBackForBrailleIme.clickSendButton(getSendWords(/* customActionLabel= */ null))) {
             speakSubmitting();
             return true;
           }
           int action = SubmitAction.editorActionForSubmit(editor.imeOptions);
-          return (action != EditorInfo.IME_ACTION_NONE && connection.performEditorAction(action))
-              || (!isMultiLine(editor) && sendEnterKey(connection));
+          if (action != EditorInfo.IME_ACTION_NONE && connection.performEditorAction(action)) {
+            return true;
+          }
+          if (!isMultiLine(editor)) {
+            return sendEnterKey(connection);
+          }
+          // Some apps expose Send only after the text committed above reaches the editor.
+          mainHandler.postDelayed(
+              () -> {
+                if (connection != getCurrentInputConnection()
+                    || editor != getCurrentInputEditorInfo()) {
+                  return;
+                }
+                if (talkBackForBrailleIme != null
+                    && talkBackForBrailleIme.clickSendButton(
+                        getSendWords(/* customActionLabel= */ null))) {
+                  speakSubmitting();
+                } else {
+                  BrailleCommonTalkBackSpeaker.getInstance()
+                      .speak(getString(R.string.perform_action_no_send_button));
+                }
+              },
+              SEND_BUTTON_ATTEMPT_DELAYS_MS[0]);
+          return true;
         }
 
         @Override
@@ -2596,9 +2616,16 @@ public class BrailleIme extends InputMethodService {
         }
 
         @Override
-        public boolean isMultilineEditor() {
+        public boolean canMoveByLine(boolean forward) {
           EditorInfo editor = getCurrentInputEditorInfo();
-          return editor != null && isMultiLine(editor);
+          InputConnection connection = getCurrentInputConnection();
+          if (editor == null || connection == null || !isMultiLine(editor)) {
+            return false;
+          }
+          CharSequence adjacent =
+              forward ? connection.getTextAfterCursor(1, 0) : connection.getTextBeforeCursor(1, 0);
+          // A null response gives no information about the edge. Keep normal line navigation.
+          return adjacent == null || adjacent.length() > 0;
         }
 
         @Override

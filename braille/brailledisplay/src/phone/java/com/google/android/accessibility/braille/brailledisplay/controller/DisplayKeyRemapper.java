@@ -44,10 +44,10 @@ final class DisplayKeyRemapper {
    * {@link DisplayKeyOverrides#NONE} to ignore it, or null to run it unchanged.
    *
    * @param editing whether a text field takes the display's input
-   * @param multiline whether the focused editor accepts multiple lines
+   * @param canMoveByLine whether an editor thumb key can move the cursor by line
    */
   @Nullable
-  String targetFor(BrailleInputEvent event, boolean editing, boolean multiline) {
+  String targetFor(BrailleInputEvent event, boolean editing, boolean canMoveByLine) {
     int command = event.getCommand();
     int argument = event.getArgument();
     String key = DisplayKeys.keyOf(command, argument);
@@ -56,9 +56,6 @@ final class DisplayKeyRemapper {
     DisplayKeyOverrides bindings = current();
     String physicalKey = boundChord != null ? boundChord : key;
     String target = physicalKey == null ? null : bindings.get(physicalKey);
-    if (target == null && key != null) {
-      target = bindings.get(key);
-    }
 
     if (boundChord == null && editing && EditorConsumer.typesDots(context, command)) {
       lastIosHome = -1;
@@ -79,22 +76,19 @@ final class DisplayKeyRemapper {
           doublePress ? BrailleInputEvent.CMD_GLOBAL_RECENTS : BrailleInputEvent.CMD_GLOBAL_HOME);
     }
     lastIosHome = -1;
+    if (boundChord != null) {
+      target = DisplayKeys.boundChordTarget(bindings, boundChord, key);
+    }
     if (target != null) {
       return target;
     }
     if (editing && command == BrailleInputEvent.CMD_NAV_ITEM_PREVIOUS_SEPARATE_KEY) {
       return DisplayKeyOverrides.commandTarget(
-          multiline ? BrailleInputEvent.CMD_NAV_LINE_PREVIOUS : BrailleInputEvent.CMD_NAV_PAN_UP);
+          canMoveByLine ? BrailleInputEvent.CMD_NAV_LINE_PREVIOUS : BrailleInputEvent.CMD_NAV_PAN_UP);
     }
     if (editing && command == BrailleInputEvent.CMD_NAV_ITEM_NEXT_SEPARATE_KEY) {
       return DisplayKeyOverrides.commandTarget(
-          multiline ? BrailleInputEvent.CMD_NAV_LINE_NEXT : BrailleInputEvent.CMD_NAV_PAN_DOWN);
-    }
-    if (boundChord != null) {
-      String chordTarget = bindings.defaultFor(boundChord);
-      if (!DisplayKeyOverrides.NONE.equals(chordTarget)) {
-        return chordTarget;
-      }
+          canMoveByLine ? BrailleInputEvent.CMD_NAV_LINE_NEXT : BrailleInputEvent.CMD_NAV_PAN_DOWN);
     }
     if (key == null) {
       return DisplayKeys.isUnboundChord(command, argument) ? DisplayKeyOverrides.NONE : null;

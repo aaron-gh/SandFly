@@ -86,6 +86,17 @@ public final class DisplayKeys {
         : DisplayKeyOverrides.chordKey(dots);
   }
 
+  /** Resolves a physical Space chord before falling back to its driver command override. */
+  @Nullable
+  public static String boundChordTarget(
+      DisplayKeyOverrides bindings, String chord, @Nullable String driverKey) {
+    String target = bindings.resolve(chord);
+    if (bindings.get(chord) != null || !DisplayKeyOverrides.NONE.equals(target)) {
+      return target;
+    }
+    return driverKey == null ? null : bindings.get(driverKey);
+  }
+
   /** Returns whether an unbound Space or Backspace chord produced the input event. */
   public static boolean isUnboundChord(int command, int argument) {
     return command == BrailleInputEvent.CMD_BRAILLE_KEY
