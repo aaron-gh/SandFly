@@ -108,6 +108,98 @@ object HoverlessWindows {
     return item
   }
 
+  /**
+   * Returns the item to focus in place of [focusable], which touch exploration found under the
+   * finger, or null to focus [focusable]. That is when [focusable] has nothing to speak or scrolls,
+   * covers most of an app window, and an item with something to speak is at the finger's position
+   * as touch exploration started: the smallest such item, so that a button wins over the view
+   * behind it.
+   *
+   * TikTok's video page is a clickable frame with no label as large as the page, and its hover
+   * reaches only that frame and the feed's pager before it, wherever the finger is, though the Like
+   * and Comment buttons are drawn over them. The page's children are not listed in the order they
+   * are drawn, so the item can't be found from the last child under the finger.
+   */
+  @JvmStatic
+  fun itemOverSilentCover(focusable: AccessibilityNodeInfoCompat): AccessibilityNodeInfoCompat? {
+    if (!hasStart || SystemClock.uptimeMillis() - startTimeMs > START_POINT_MS) {
+      return null
+    }
+    // A pager or list over the page is read only as its role, such as "Page", when no item of its
+    // own is under the finger.
+    if (!focusable.isScrollable && AccessibilityNodeInfoUtils.isSpeakingNode(focusable, null)) {
+      return null
+    }
+    val window = AccessibilityNodeInfoUtils.getWindow(focusable) ?: return null
+    if (window.type != AccessibilityWindowInfo.TYPE_APPLICATION) {
+      return null
+    }
+    val windowBounds = Rect().also(window::getBoundsInScreen)
+    val focusableBounds = Rect().also(focusable::getBoundsInScreen)
+    val x = startX.toInt()
+    val y = startY.toInt()
+    if (!windowBounds.contains(x, y) || !coversMostOf(focusableBounds, windowBounds)) {
+      return null
+    }
+    val root = window.root ?: return null
+    val item = smallestSpeakingItemAt(root, x, y)
+    if (item == null || item == focusable) {
+      return null
+    }
+    LogUtils.d(TAG, "Hover entered a silent cover; the item at %d, %d is focused", x, y)
+    return item
+  }
+
+  /** Most nodes read to find the item under the finger. */
+  private const val MAX_NODES = 1500
+
+  /**
+   * Returns the smallest node under [root] at [x], [y] that would be focused, has something to
+   * speak and does not scroll, or null. A text field that scrolls counts.
+   */
+  @VisibleForTesting
+  @JvmStatic
+  fun smallestSpeakingItemAt(
+    root: AccessibilityNodeInfoCompat,
+    x: Int,
+    y: Int,
+  ): AccessibilityNodeInfoCompat? {
+    val cache = HashMap<AccessibilityNodeInfoCompat, Boolean>()
+    val bounds = Rect()
+    var best: AccessibilityNodeInfoCompat? = null
+    var bestArea = Long.MAX_VALUE
+    val queue = ArrayDeque<AccessibilityNodeInfoCompat>()
+    queue.add(root)
+    var read = 0
+    while (queue.isNotEmpty() && read < MAX_NODES) {
+      val node = queue.removeFirst()
+      read++
+      if (!node.isVisibleToUser) {
+        continue
+      }
+      node.getBoundsInScreen(bounds)
+      if (!bounds.contains(x, y)) {
+        continue
+      }
+      val area = bounds.width().toLong() * bounds.height()
+      // A pager or list is no item of its own: TikTok's feed pager is as large as the "Video" view
+      // on its page, and is read only as "Page".
+      if (
+        area < bestArea &&
+          !(node.isScrollable && !node.isEditable) &&
+          AccessibilityNodeInfoUtils.shouldFocusNode(node, cache) &&
+          AccessibilityNodeInfoUtils.isSpeakingNode(node, cache)
+      ) {
+        best = node
+        bestArea = area
+      }
+      for (i in 0 until node.childCount) {
+        node.getChild(i)?.let(queue::add)
+      }
+    }
+    return best
+  }
+
   @VisibleForTesting
   fun coversMostOf(node: Rect, window: Rect): Boolean {
     val overlap = Rect()

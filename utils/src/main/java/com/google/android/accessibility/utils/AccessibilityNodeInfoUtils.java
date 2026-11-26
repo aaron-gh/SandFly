@@ -1371,6 +1371,16 @@ public class AccessibilityNodeInfoUtils {
   }
 
   /**
+   * Returns whether {@code node} has something to speak: text, a state, a check state, or text
+   * inside it that has no focus of its own. An unlabelled control has none.
+   */
+  public static boolean isSpeakingNode(
+      @NonNull AccessibilityNodeInfoCompat node,
+      @Nullable Map<AccessibilityNodeInfoCompat, Boolean> speakingNodesCache) {
+    return isSpeakingNode(node, speakingNodesCache, new HashSet<>());
+  }
+
+  /**
    * Returns whether a node has children that are not actionable/focusable but should be spoken.
    *
    * <p>This is done by ignoring any children nodes that are actionable/focusable, and checking the
