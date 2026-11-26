@@ -427,6 +427,7 @@ class ScriptRuntime(
     on("system.startActivity", SYSTEM) { manager.device.startActivity(it) }
     on("system.sendBroadcast", SYSTEM) { manager.device.sendBroadcast(it) }
     on("system.apps", SYSTEM) { manager.device.apps() }
+    on("system.shizuku", SYSTEM) { manager.device.shizuku() }
     on("translate", NETWORK) { args -> translate(args) }
     on("files.read") { args ->
       val path = args.optString("path")

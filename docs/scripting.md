@@ -1,6 +1,6 @@
 # Writing SandFly scripts
 
-This document is the reference for the SandFly script API, version 6. A script is a Lua program that changes how SandFly works in one app or in every app, or adds commands to SandFly. To install and manage scripts, or to make one without code in the script builder, see the [Scripts and custom labels](user-guide/en/20-scripts.md) chapter of the SandFly User Guide.
+This document is the reference for the SandFly script API, version 7. A script is a Lua program that changes how SandFly works in one app or in every app, or adds commands to SandFly. To install and manage scripts, or to make one without code in the script builder, see the [Scripts and custom labels](user-guide/en/20-scripts.md) chapter of the SandFly User Guide.
 
 ## Overview
 
@@ -27,7 +27,7 @@ Scripts run on phones and tablets. Watches and TVs don't run scripts.
 
 ### API versions
 
-This document describes script API version 6. `sf.apiVersion` gives the version of the SandFly a script runs in. Items added after version 1 are marked with the version that added them, such as *Version 2*. Set `minApiVersion` in the manifest to the highest version marked on anything the script uses. Versions 2 to 6 only add to version 1; nothing a version 1 script uses has changed.
+This document describes script API version 7. `sf.apiVersion` gives the version of the SandFly a script runs in. Items added after version 1 are marked with the version that added them, such as *Version 2*. Set `minApiVersion` in the manifest to the highest version marked on anything the script uses. Versions 2 to 7 only add to version 1; nothing a version 1 script uses has changed.
 
 ## Write your first script
 
@@ -40,7 +40,7 @@ local manifest = {
   author = 'Your name',
   version = '1',
   minApiVersion = 6,
-  testedApiVersion = 6,
+  testedApiVersion = 7,
   apps = { 'com.android.settings' },
   permissions = { 'speech' },
   commands = {
@@ -904,6 +904,16 @@ These need the `system` permission.
 **`sf.system.openApp(packageName)`** opens an app and, in a task, gives whether it opened.
 
 **`sf.system.apps()`** *Version 2* gives a list of the apps with a launcher icon, `{ package, label }`, by name.
+
+**`sf.system.shizuku()`** *Version 7* gives whether SandFly can run commands through Shizuku, without asking the user anything: `'ready'`, `'not running'` or `'not allowed'`. With **Use root instead of Shizuku** on, `'ready'` means that su gave SandFly root, and `'not allowed'` that it hasn't yet. The Google Play build without the SandFly add-on gives `'not running'`. A script can use what needs Shizuku, such as `sf.keys.press`, when it gives `'ready'`, and do the work another way otherwise.
+
+```lua
+if sf.system.shizuku() == 'ready' then
+  sf.keys.press('enter')
+else
+  -- Press the app's Send button instead.
+end
+```
 
 **`sf.system.openUrl(url)`** *Version 2* opens an `http`, `https`, `mailto`, `tel`, `sms`, `smsto`, `geo` or `market` address in the app for it, and gives whether an app opened it.
 

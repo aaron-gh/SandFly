@@ -146,6 +146,14 @@ class LuaEngineTest {
   }
 
   @Test
+  fun shizukuGivesTheStateFromTheHost() {
+    host.answers["system.shizuku"] = { "\"not allowed\"" }
+    run("sf.speak(sf.system.shizuku())")
+    assertEquals(1, host.calls.count { it.first == "system.shizuku" })
+    assertEquals(listOf("not allowed"), host.spoken())
+  }
+
+  @Test
   fun aTouchLockHasATimeAndItsHandleReleasesIt() {
     host.answers["touch.lock"] = { "4" }
     run(
