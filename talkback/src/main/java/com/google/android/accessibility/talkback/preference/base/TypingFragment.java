@@ -20,9 +20,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.widget.Toast;
 import androidx.preference.Preference;
 import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.keyboard.KeypadKeys;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKeyboardHost;
 import com.google.android.accessibility.utils.PreferenceSettingsUtils;
 import com.google.android.accessibility.utils.monitor.InputDeviceMonitor;
 
@@ -31,6 +33,26 @@ public class TypingFragment extends TalkBackLatencyReductionPreferenceFragment {
 
   public TypingFragment() {
     super(R.xml.typing_preferences, R.string.title_pref_typing);
+  }
+
+  @Override
+  public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+    super.onCreatePreferences(savedInstanceState, rootKey);
+    Preference deleteLearned =
+        findPreferenceByResId(R.string.pref_sandfly_keyboard_delete_learned_words_key);
+    if (deleteLearned != null) {
+      deleteLearned.setOnPreferenceClickListener(
+          preference -> {
+            Context context = getContext();
+            if (context != null) {
+              SandFlyKeyboardHost.deleteLearnedWords(context);
+              Toast.makeText(
+                      context, R.string.sandfly_keyboard_learned_words_deleted, Toast.LENGTH_SHORT)
+                  .show();
+            }
+            return true;
+          });
+    }
   }
 
   @Override

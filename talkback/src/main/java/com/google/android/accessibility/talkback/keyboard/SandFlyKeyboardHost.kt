@@ -15,7 +15,10 @@
  */
 package com.google.android.accessibility.talkback.keyboard
 
+import android.content.Context
 import android.os.Bundle
+import android.os.SystemClock
+import android.view.accessibility.AccessibilityEvent
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.Pipeline
 import com.google.android.accessibility.utils.Performance.EVENT_ID_UNTRACKED
@@ -62,6 +65,25 @@ object SandFlyKeyboardHost {
      * Returns false if no text field is being edited.
      */
     fun spellPasswordField(): Boolean = false
+
+    /** Whether SandFly should leave [keyCode] to the keyboard, for its word suggestions. */
+    fun takesKey(keyCode: Int): Boolean = false
+
+    /** Whether a word is being typed with Word suggestions on, for the reading control. */
+    val hasWordSuggestions: Boolean
+      get() = false
+
+    /**
+     * Moves to the next or previous word suggestion, opening the list, and returns what to say, or
+     * null without a text field being edited.
+     */
+    fun stepSuggestion(next: Boolean): String? = null
+
+    /**
+     * Types the word suggestion chosen, or the first, and says it. Returns false without a text
+     * field being edited.
+     */
+    fun typeSuggestion(): Boolean = false
   }
 
   @JvmStatic @Volatile var keyboard: Keyboard? = null
@@ -102,6 +124,71 @@ object SandFlyKeyboardHost {
 
   /** Spells the password field being edited; false without the SandFly keyboard in a text field. */
   @JvmStatic fun spellPasswordField(): Boolean = keyboard?.spellPasswordField() == true
+
+  /** Whether SandFly should leave [keyCode] to the SandFly keyboard's word suggestions. */
+  @JvmStatic fun takesKey(keyCode: Int): Boolean = keyboard?.takesKey(keyCode) == true
+
+  /** Whether a word with suggestions is being typed with the SandFly keyboard. */
+  @JvmStatic fun hasWordSuggestions(): Boolean = keyboard?.hasWordSuggestions == true
+
+  /** What the next or previous word suggestion says, or null without the keyboard in a field. */
+  @JvmStatic fun stepSuggestion(next: Boolean): String? = keyboard?.stepSuggestion(next)
+
+  /** Types the word suggestion chosen; false without the SandFly keyboard in a text field. */
+  @JvmStatic fun typeSuggestion(): Boolean = keyboard?.typeSuggestion() == true
+
+  /**
+   * Deletes the learned words of the keyboard's word list in memory and in files, which the word
+   * list sets once read; null until then.
+   */
+  @JvmStatic @Volatile var learnedWordsDeleter: ((Context) -> Unit)? = null
+
+  /** Deletes the words that auto-correct and word suggestions learned, of every language. */
+  @JvmStatic
+  fun deleteLearnedWords(context: Context) {
+    val deleter = learnedWordsDeleter
+    if (deleter != null) {
+      deleter(context)
+      return
+    }
+    context.filesDir.listFiles { _, name -> name.startsWith(LEARNED_WORDS_PREFIX) }?.forEach {
+      it.delete()
+    }
+  }
+
+  /** The start of the names of the files of learned words. */
+  const val LEARNED_WORDS_PREFIX = "sandfly_keyboard_words_"
+
+  /** The text change the keyboard's last own edit makes: removed and added lengths, and until when. */
+  @Volatile private var expectedEdit: LongArray? = null
+
+  /**
+   * Tells SandFly that the keyboard replaces [removed] characters with [added], and says what it
+   * did, so that the text change isn't spoken too.
+   */
+  @JvmStatic
+  fun expectEdit(removed: Int, added: Int) {
+    expectedEdit =
+      longArrayOf(removed.toLong(), added.toLong(), SystemClock.uptimeMillis() + EDIT_EVENT_MS)
+  }
+
+  /** Whether [event] is the text change of the keyboard's last own edit, which it then forgets. */
+  @JvmStatic
+  fun isKeyboardEdit(event: AccessibilityEvent): Boolean {
+    val edit = expectedEdit ?: return false
+    if (SystemClock.uptimeMillis() > edit[2]) {
+      expectedEdit = null
+      return false
+    }
+    if (event.removedCount.toLong() != edit[0] || event.addedCount.toLong() != edit[1]) {
+      return false
+    }
+    expectedEdit = null
+    return true
+  }
+
+  /** How long after the keyboard's own edit its text change is waited for. */
+  private const val EDIT_EVENT_MS = 1_000L
 
   /**
    * Speaks characters of a password field at once, at [pitch] relative to the speech pitch, in

@@ -963,6 +963,21 @@ object Commands {
           R.string.shortcut_spell_password_field,
           available = !FormFactorUtils.isAndroidWear(),
         )
+        gesture(
+          R.string.shortcut_value_next_word_suggestion,
+          R.string.shortcut_next_word_suggestion,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
+        gesture(
+          R.string.shortcut_value_previous_word_suggestion,
+          R.string.shortcut_previous_word_suggestion,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
+        gesture(
+          R.string.shortcut_value_type_word_suggestion,
+          R.string.shortcut_type_word_suggestion,
+          available = !FormFactorUtils.isAndroidWear(),
+        )
         gesture(R.string.shortcut_value_dictate, R.string.shortcut_dictate)
         gesture(R.string.shortcut_value_voice_editing, R.string.shortcut_voice_editing)
         gesture(

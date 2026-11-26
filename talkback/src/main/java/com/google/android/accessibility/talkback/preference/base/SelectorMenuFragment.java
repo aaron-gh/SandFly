@@ -103,6 +103,11 @@ public class SelectorMenuFragment extends ItemListFragment {
       if (clipboardHistory != null) {
         clipboardHistory.setVisible(false);
       }
+      Preference wordSuggestions =
+          screen.findPreference(getString(R.string.pref_selector_word_suggestions_key));
+      if (wordSuggestions != null) {
+        wordSuggestions.setVisible(false);
+      }
     }
     List<AiActions.Action> aiActions =
         FeatureSupport.doesServiceHandleDoubleTap()

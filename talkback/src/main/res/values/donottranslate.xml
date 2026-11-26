@@ -238,6 +238,57 @@
     <bool name="pref_sandfly_keyboard_double_space_period_default">false</bool>
     <string name="pref_speak_password_characters_key" translatable="false">pref_speak_password_characters</string>
     <bool name="pref_speak_password_characters_default">false</bool>
+    <string name="pref_sandfly_keyboard_autocorrect_key" translatable="false">pref_sandfly_keyboard_autocorrect</string>
+    <bool name="pref_sandfly_keyboard_autocorrect_default">false</bool>
+    <string name="pref_sandfly_keyboard_suggestions_key" translatable="false">pref_sandfly_keyboard_suggestions</string>
+    <bool name="pref_sandfly_keyboard_suggestions_default">false</bool>
+    <string name="pref_sandfly_keyboard_word_language_key" translatable="false">pref_sandfly_keyboard_word_language</string>
+    <string name="pref_sandfly_keyboard_word_language_default" translatable="false">system</string>
+    <string name="pref_sandfly_keyboard_delete_learned_words_key" translatable="false">pref_sandfly_keyboard_delete_learned_words</string>
+    <!-- Must match WordLanguage's codes; "system" is the system language. -->
+    <string-array name="pref_sandfly_keyboard_word_language_values" translatable="false">
+        <item>system</item>
+        <item>en_us</item>
+        <item>en_gb</item>
+        <item>de</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>pt_br</item>
+        <item>pt_pt</item>
+        <item>hu</item>
+        <item>tr</item>
+        <item>ru</item>
+        <item>uk</item>
+        <item>ar</item>
+    </string-array>
+    <!-- Each language's name in that language; the first entry is in strings.xml. -->
+    <string name="word_language_en_us" translatable="false">English (US)</string>
+    <string name="word_language_en_gb" translatable="false">English (UK)</string>
+    <string name="word_language_de" translatable="false">Deutsch</string>
+    <string name="word_language_es" translatable="false">Español</string>
+    <string name="word_language_fr" translatable="false">Français</string>
+    <string name="word_language_pt_br" translatable="false">Português (Brasil)</string>
+    <string name="word_language_pt_pt" translatable="false">Português (Portugal)</string>
+    <string name="word_language_hu" translatable="false">Magyar</string>
+    <string name="word_language_tr" translatable="false">Türkçe</string>
+    <string name="word_language_ru" translatable="false">Русский</string>
+    <string name="word_language_uk" translatable="false">Українська</string>
+    <string name="word_language_ar" translatable="false">العربية</string>
+    <string-array name="pref_sandfly_keyboard_word_language_entries" translatable="false">
+        <item>@string/value_word_language_system</item>
+        <item>@string/word_language_en_us</item>
+        <item>@string/word_language_en_gb</item>
+        <item>@string/word_language_de</item>
+        <item>@string/word_language_es</item>
+        <item>@string/word_language_fr</item>
+        <item>@string/word_language_pt_br</item>
+        <item>@string/word_language_pt_pt</item>
+        <item>@string/word_language_hu</item>
+        <item>@string/word_language_tr</item>
+        <item>@string/word_language_ru</item>
+        <item>@string/word_language_uk</item>
+        <item>@string/word_language_ar</item>
+    </string-array>
     <string-array name="pref_sandfly_keyboard_held_keys_values" translatable="false">
         <item>alt</item>
         <item>capital</item>
@@ -501,6 +552,7 @@
     <string name="pref_ai_actions_included_key" translatable="false">pref_ai_actions_included_key</string>
     <string name="pref_selector_text_entities_key" translatable="false">pref_selector_text_entities_key</string>
     <string name="pref_selector_clipboard_history_key" translatable="false">pref_selector_clipboard_history_key</string>
+    <string name="pref_selector_word_suggestions_key" translatable="false">pref_selector_word_suggestions_key</string>
     <string name="pref_text_entities_key" translatable="false">pref_text_entities</string>
     <!-- Must match pref_text_entities_entries and TextEntityMenu's types. -->
     <string-array name="pref_text_entities_values" translatable="false">
@@ -2630,6 +2682,9 @@
   <string name="shortcut_value_choose_symbol" translatable="false">CHOOSE_SYMBOL</string>
   <string name="shortcut_value_toggle_editing_mode" translatable="false">TOGGLE_EDITING_MODE</string>
   <string name="shortcut_value_spell_password_field" translatable="false">SPELL_PASSWORD_FIELD</string>
+  <string name="shortcut_value_next_word_suggestion" translatable="false">NEXT_WORD_SUGGESTION</string>
+  <string name="shortcut_value_previous_word_suggestion" translatable="false">PREVIOUS_WORD_SUGGESTION</string>
+  <string name="shortcut_value_type_word_suggestion" translatable="false">TYPE_WORD_SUGGESTION</string>
   <string name="keycombo_shortcut_other_toggle_browse_mode_extra" translatable="false">keycombo_shortcut_other_toggle_browse_mode_extra</string>
   <string name="shortcut_value_granular_editing" translatable="false">GRANULAR_EDITING</string>
   <string name="shortcut_value_dictate" translatable="false">DICTATE</string>
@@ -3268,6 +3323,7 @@
     <bool name="pref_selector_ai_actions_default">true</bool>
     <bool name="pref_selector_text_entities_default">false</bool>
     <bool name="pref_selector_clipboard_history_default">false</bool>
+    <bool name="pref_selector_word_suggestions_default">false</bool>
     <bool name="pref_selector_switch_tts_engine_default">false</bool>
     <bool name="pref_selector_speech_stream_default">false</bool>
     <bool name="pref_selector_audio_output_default">false</bool>
@@ -4034,6 +4090,7 @@
     <string name="selector_ai_actions" translatable="false">SELECTOR_AI_ACTIONS</string>
     <string name="selector_text_entities" translatable="false">SELECTOR_TEXT_ENTITIES</string>
     <string name="selector_clipboard_history" translatable="false">SELECTOR_CLIPBOARD_HISTORY</string>
+    <string name="selector_word_suggestions" translatable="false">SELECTOR_WORD_SUGGESTIONS</string>
     <string name="selector_switch_tts_engine" translatable="false">SELECTOR_SWITCH_TTS_ENGINE</string>
     <string name="selector_speech_stream" translatable="false">SELECTOR_SPEECH_STREAM</string>
     <string name="selector_audio_output" translatable="false">SELECTOR_AUDIO_OUTPUT</string>

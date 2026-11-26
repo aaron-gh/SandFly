@@ -48,6 +48,7 @@ import java.util.Locale
  *   in place of the character the first press typed, and Space pressed twice types a period.
  * - Shift pressed and released alone types the next letter as a capital, as on BlackBerry
  *   keyboards; pressed again, it doesn't.
+ * - Auto-correct and word suggestions, each off until turned on ([WordInput]).
  * - The characters of password fields, which Android gives accessibility services only as bullets
  *   but gives the input method through its input connection: with Speak password characters on,
  *   it says a character typed, deleted or moved over, and Spell the password field spells the
@@ -65,6 +66,9 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   /** The modifier keys of the open chooser, whose meta key states are cleared when it closes. */
   private val chooserMetaKeys = ChooserMetaKeys()
   private val editingMode by lazy { EditingMode(this) { password } }
+
+  /** Auto-correct and word suggestions. */
+  private val words by lazy { WordInput(this, prefs) }
 
   /** Follows the password field being edited for Speak password characters. */
   private val passwordEcho by lazy { PasswordSpeech.Echo(this) }
@@ -136,6 +140,20 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     return true
   }
 
+  /** Whether the keyboard types, with no chooser or editing mode taking the keys. */
+  private val typing: Boolean
+    get() = editing && chooser == null && !editingMode.isOn
+
+  override fun takesKey(keyCode: Int): Boolean = typing && words.takesKey(keyCode)
+
+  override val hasWordSuggestions: Boolean
+    get() = typing && words.hasWord()
+
+  override fun stepSuggestion(next: Boolean): String? =
+    words.step(next, currentInputConnection, typing)
+
+  override fun typeSuggestion(): Boolean = words.typeSuggestion(currentInputConnection, typing)
+
   override fun toggleEditingMode(): Boolean {
     if (editingMode.isOn) {
       editingMode.turnOff(announce = true)
@@ -206,10 +224,12 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     heldKey = KeyEvent.KEYCODE_UNKNOWN
     passwordEcho.stop()
     followPasswordField()
+    words.onStartInput(attribute, restarting)
   }
 
   override fun onFinishInput() {
     editing = false
+    words.onFinishInput()
     passwordEcho.stop()
     if (chooser != null) closeChooser("input finished")
     editingMode.turnOff(announce = false)
@@ -274,6 +294,19 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
       return taken || super.onKeyDown(keyCode, event)
     }
     followShiftKey(keyCode, event)
+    if (words.onKeyDown(keyCode, event, currentInputConnection)) {
+      takenKeys += keyCode
+      val typed = words.typedCharacter
+      lastPress = null
+      if (
+        typed != null &&
+          !password &&
+          DoublePressCharacters.applies(typed, doublePressEntries(), doubleSpacePeriod())
+      ) {
+        lastPress = Press(keyCode, typed, event.eventTime)
+      }
+      return true
+    }
     if (onShiftedKey(keyCode, event)) {
       takenKeys += keyCode
       return true
@@ -353,9 +386,12 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   ) {
     super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd, candidatesStart, candidatesEnd)
     if (password) followPasswordField()
-    // Typing a character moves the cursor one place on; any other move ends the double press.
+    val ownEdit = words.onUpdateSelection(newSelStart, newSelEnd, candidatesStart)
+    // Typing a character moves the cursor one place on; any other move ends the double press,
+    // except the keyboard's own edit that typed it, such as a correction with its space.
     if (
       lastPress != null &&
+        !ownEdit &&
         !(oldSelStart == oldSelEnd && newSelStart == newSelEnd && newSelStart == oldSelStart + 1)
     ) {
       lastPress = null
@@ -628,6 +664,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
     if (before == null || before.length != 1 || before[0] != typed) {
       return
     }
+    words.onOwnTyping()
     connection.beginBatchEdit()
     connection.deleteSurroundingText(1, 0)
     connection.commitText(replacement.toString(), 1)

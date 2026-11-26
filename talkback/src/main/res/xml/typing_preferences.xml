@@ -73,6 +73,25 @@
         android:key="@string/pref_sandfly_keyboard_double_space_period_key"
         android:title="@string/title_pref_sandfly_keyboard_double_space_period" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_sandfly_keyboard_autocorrect_default"
+        android:key="@string/pref_sandfly_keyboard_autocorrect_key"
+        android:title="@string/title_pref_sandfly_keyboard_autocorrect" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
+        android:defaultValue="@bool/pref_sandfly_keyboard_suggestions_default"
+        android:key="@string/pref_sandfly_keyboard_suggestions_key"
+        android:title="@string/title_pref_sandfly_keyboard_suggestions" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_sandfly_keyboard_word_language_default"
+        android:entries="@array/pref_sandfly_keyboard_word_language_entries"
+        android:entryValues="@array/pref_sandfly_keyboard_word_language_values"
+        android:key="@string/pref_sandfly_keyboard_word_language_key"
+        android:summary="%s"
+        android:title="@string/title_pref_sandfly_keyboard_word_language" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
+        android:key="@string/pref_sandfly_keyboard_delete_learned_words_key"
+        android:persistent="false"
+        android:title="@string/title_pref_sandfly_keyboard_delete_learned_words" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="@bool/pref_speak_password_characters_default"
         android:key="@string/pref_speak_password_characters_key"
         android:summary="@string/summary_pref_speak_password_characters"

@@ -370,6 +370,7 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 - **Held keys type**: what a key held down types with the SandFly keyboard.
 - **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).
 - **Double space types a period**: with the SandFly keyboard, Space pressed twice after a word types a period and a space. Off by default.
+- **Auto-correct**, **Word suggestions**, **Word list language** and **Delete learned words**: corrections and suggestions for the word being typed with the SandFly keyboard. Both are off by default. See [](#keyboards-word-suggestions).
 - **Speak password characters**: with the SandFly keyboard, in password fields, SandFly says each character typed, deleted or passed over instead of "bullet". Off by default. See [](#keyboards-passwords).
 - **Android physical keyboard settings**: opens the physical keyboard settings of Android, such as the keyboard layout.
 
@@ -383,6 +384,7 @@ The SandFly keyboard is an input method for physical keyboards. It shows no keys
 - Double presses that type other characters, such as G G for ğ, and a period for Space pressed twice.
 - Emoji search and a symbol list.
 - Editing mode, in which single keys move the cursor and select, copy, cut and paste.
+- Auto-correct and word suggestions.
 - The characters of password fields, which Android gives screen readers only as bullets.
 
 The SandFly keyboard isn't available on watches and TVs.
@@ -447,6 +449,23 @@ In the keyboard phone keymaps, **Search emoji** is SandFly key + O, and **Choose
 - Enter, Escape or Back turns editing mode off.
 
 Other keys that type do nothing in editing mode. In a password field, R says "Not read in password fields", and C copies without saying the text. Editing mode needs the SandFly keyboard. In the keyboard phone keymaps, its shortcut is SandFly key + C.
+
+#### Auto-correct and word suggestions {#keyboards-word-suggestions}
+
+The SandFly keyboard can correct the word you type and suggest words for it. Both are off by default, in **Typing** > **Physical keyboard**:
+
+- **Auto-correct**: when you type Space, punctuation or Enter after a misspelled word, the correction goes in its place, and SandFly says it, such as "receive, corrected". Words that start with a capital in the middle of a sentence, words with capitals after the first letter, and words typed in capitals are left as typed. English i, im and dont become I, I'm and don't.
+- **Word suggestions**: while you type a word, Up Arrow and Down Arrow go through corrections and longer words that start with what you typed, such as "keyboard, 1 of 8" for "keyb". On the Zinwa Q25, the trackpad sends these keys. Enter, or a trackpad click, types the suggestion with a space; Space or punctuation types it followed by that character. Back or Escape closes the list and keeps the word as typed. Any other key closes the list and does what it does, so Backspace deletes a letter and a letter types. While no word is being typed, after Space, punctuation or a cursor move, Up Arrow and Down Arrow move in the text as before.
+
+To undo a correction, press Backspace straight after it. SandFly says the word as you typed it, such as "recieve, correction undone", and the word is never corrected again.
+
+Words you type and choose rank higher in suggestions. These learned words, and the words whose correction you undid, are kept on the phone only, for each language. **Delete learned words** deletes them. Nothing is learned in password fields or in fields that turn off learning, such as private browsing.
+
+**Word list language** sets the language of the words: **System language**, the default, or one of English (US), English (UK), German, Spanish, French, Portuguese (Brazil), Portuguese (Portugal), Hungarian, Turkish, Russian, Ukrainian and Arabic. Without a word list for the system language, nothing is corrected or suggested until you choose one. Corrections take the keys of your keyboard layout into account: a letter typed for the key next to it is corrected first. A letter typed without its accent, such as fur for für, is corrected too.
+
+Auto-correct and word suggestions aren't used in password, email address, web address and number fields, nor in fields that ask keyboards for no suggestions.
+
+Without arrow keys, use the commands **Next word suggestion**, **Previous word suggestion** and **Type word suggestion**, in the **Text editing** category. They have no default shortcuts: assign them in **Keyboard shortcuts**, where **Only while editing** keeps the keys for typing elsewhere, or assign them to gestures. **Type word suggestion** types the suggestion said last, or the first suggestion for the word typed. With touch, add the **Word suggestions** reading control, in **Reading controls**: while a word is typed, swipe up or down to go through the suggestions, and double-tap to type the one SandFly said. It is off by default and needs Android 11 or later.
 
 #### Password fields {#keyboards-passwords}
 
