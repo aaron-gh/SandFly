@@ -143,7 +143,7 @@
   <string name="keycombo_menu_navigate_previous_line">前往上一行</string>
   <string name="keycombo_menu_navigate_next_container">前往下一个容器</string>
   <string name="keycombo_menu_navigate_previous_container">前往上一个容器</string>
-  <string name="keycombo_menu_perform_click">执行单击操作</string>
+  <string name="keycombo_menu_perform_click">执行点击操作</string>
   <string name="keycombo_menu_perform_double_click">执行双击</string>
   <string name="keycombo_menu_perform_long_click">执行长按操作</string>
   <string name="keycombo_menu_category_global">全局操作</string>
@@ -920,7 +920,7 @@
   <string name="tutorial_entry_point_title">教程</string>
   <string name="welcome_to_talkback_title">欢迎使用 SandFly</string>
   <string name="talkback_is_on">SandFly 已开启</string>
-  <string name="talkback_turn_off_description">SandFly 会大声朗读屏幕上显示的内容，并改变导航功能在设备上的运作方式。如需关闭此功能，请单击“关闭 SandFly”两次。</string>
+  <string name="talkback_turn_off_description">SandFly 会大声朗读屏幕上显示的内容，并改变导航功能在设备上的运作方式。如需关闭此功能，请双击“关闭 SandFly”。</string>
   <string name="turn_off_talkback">关闭 SandFly</string>
   <string name="tap_again_to_turn_off">再次单击即可关闭</string>
   <string name="talkback_turn_off_description_pointer_and_touch">SandFly 会大声朗读屏幕上的内容，并改变导航功能在设备上的运作方式。如需关闭该功能，请选择“关闭 SandFly”或双击该功能。</string>
@@ -2697,7 +2697,7 @@
     <string name="summary_pref_swipes_before_lift">关闭往返手势和角度手势。</string>
     <string name="title_pref_corner_size_mm">角落大小</string>
     <string name="value_corner_size_edge_width">与边缘宽度相同</string>
-    <string name="title_pref_corner_tap_time_ms">角落单击时间限制</string>
+    <string name="title_pref_corner_tap_time_ms">角落点击时间限制</string>
     <string name="value_corner_tap_time_system">系统默认</string>
     <string name="title_pref_edge_speak_commands">每次点击时朗读命令</string>
     <string-array name="pref_volume_change_feedback_entries">
@@ -3322,10 +3322,10 @@
     <string name="macro_shortcut_invalid">快捷方式无效。请重新将宏添加到主屏幕。</string>
     <string name="update_download_progress">%1$d%%</string>
     <string name="update_download_progress_time">%1$d%%，剩余 %2$s</string>
-    <string name="title_pref_double_tap_taps">双击即单击屏幕</string>
-    <string name="shortcut_toggle_double_tap_taps_app">在此应用中双击即单击屏幕</string>
-    <string name="double_tap_taps_on">双击即单击屏幕已开启</string>
-    <string name="double_tap_taps_off">双击即单击屏幕已关闭</string>
+    <string name="title_pref_double_tap_taps">双击即点击屏幕</string>
+    <string name="shortcut_toggle_double_tap_taps_app">在此应用中双击即点击屏幕</string>
+    <string name="double_tap_taps_on">双击即点击屏幕已开启</string>
+    <string name="double_tap_taps_off">双击即点击屏幕已关闭</string>
     <string name="double_tap_taps_no_app">前台没有应用</string>
     <string name="keycombo_menu_toggle_key_practice">开启或关闭键盘练习</string>
     <string name="key_practice_on">键盘练习已开启</string>
