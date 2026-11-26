@@ -74,6 +74,11 @@ class TouchInteractionMonitorTest {
     val fingerAtScreenEdge = mutableListOf<Boolean>()
     var tapActivatesAtOnce = false
     var tapExplorations = 0
+    val stationaryTouches = mutableListOf<Pair<Float, Float>>()
+
+    override fun onStationaryContinuedTouch(displayId: Int, x: Float, y: Float) {
+      stationaryTouches.add(x to y)
+    }
     val touchExplorerResets = mutableListOf<String>()
 
     override fun resetTouchExplorer(reason: String) {
@@ -375,6 +380,49 @@ class TouchInteractionMonitorTest {
     runUntil(90)
     assertEquals(listOf<Thread>(), reporter.requests)
     runUntil(150)
+    assertEquals(listOf(mainThread), reporter.requests)
+  }
+
+  @Test
+  fun continuedTouchIsReadWhileStillAndAsksAndroidToExploreOnItsFirstMove() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 40f, 200f, 0)
+    touchAt(ACTION_MOVE, 110f, 200f, 20)
+    touchAt(ACTION_MOVE, 195f, 200f, 40)
+    touchAt(ACTION_UP, 255f, 200f, 65)
+    touchAt(ACTION_DOWN, 170f, 230f, 190)
+
+    runUntil(350)
+
+    assertEquals(listOf(GESTURE_SWIPE_RIGHT), service.gestures)
+    assertEquals(listOf(170f to 230f), service.stationaryTouches)
+    assertEquals(0, reporter.requests.size)
+
+    touchAt(ACTION_MOVE, 175f, 230f, 365)
+    runUntil(400)
+
+    assertEquals(listOf(mainThread), reporter.requests)
+    assertEquals(listOf(170f to 230f), service.stationaryTouches)
+  }
+
+  @Test
+  fun aCancelledContinuedTouchDoesNotStartExplorationOnTheNextTouch() {
+    stateChangeAt(STATE_TOUCH_INTERACTING, 0)
+    touchAt(ACTION_DOWN, 40f, 200f, 0)
+    touchAt(ACTION_MOVE, 110f, 200f, 20)
+    touchAt(ACTION_MOVE, 195f, 200f, 40)
+    touchAt(ACTION_UP, 255f, 200f, 65)
+    touchAt(ACTION_DOWN, 170f, 240f, 190)
+    touchAt(MotionEvent.ACTION_CANCEL, 170f, 240f, 300)
+    stateChangeAt(STATE_CLEAR, 301)
+    stateChangeAt(STATE_TOUCH_INTERACTING, 360)
+    touchAt(ACTION_DOWN, 210f, 260f, 360)
+    touchAt(ACTION_MOVE, 215f, 260f, 380)
+
+    runUntil(405)
+    assertEquals(0, reporter.requests.size)
+
+    runUntil(540)
     assertEquals(listOf(mainThread), reporter.requests)
   }
 

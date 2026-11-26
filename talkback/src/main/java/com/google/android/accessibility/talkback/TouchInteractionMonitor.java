@@ -378,6 +378,9 @@ public class TouchInteractionMonitor
   // Whether this monitor is waiting for a state transition.
   // Motion events will be queued and sent to listeners after the transition has taken place.
   private boolean stateChangeRequested = false;
+  private boolean nextTouchMayContinueSwipe;
+  private boolean continuedTouchNeedsMove;
+  private boolean explorationWaitingForMove;
   // This is used to monitor whether all 1-finger gesture detectors have failed(cancelled).
   // If the condition met, we can request touch control for touch explore state transition.
   // Before it happens, if
@@ -1030,7 +1033,25 @@ public class TouchInteractionMonitor
       return;
     }
     receivedPointerTracker.onMotionEvent(event);
-    if (event.getActionMasked() == ACTION_DOWN) {
+    int action = event.getActionMasked();
+    if (action == ACTION_MOVE && continuedTouchNeedsMove) {
+      continuedTouchNeedsMove = false;
+      if (explorationWaitingForMove && event.getPointerCount() == 1) {
+        explorationWaitingForMove = false;
+        requestTouchExploration("firstMoveOfContinuedTouch");
+        return;
+      }
+    } else if (action == ACTION_POINTER_DOWN) {
+      explorationWaitingForMove = false;
+    } else if (action == MotionEvent.ACTION_CANCEL && continuedTouchNeedsMove) {
+      explorationWaitingForMove = false;
+      keepMonitorTouchExplore = false;
+      requestTouchExplorationDelayed.cancel();
+    }
+    if (action == ACTION_DOWN) {
+      continuedTouchNeedsMove = state == STATE_TOUCH_INTERACTING && nextTouchMayContinueSwipe;
+      nextTouchMayContinueSwipe = false;
+      explorationWaitingForMove = false;
       downOnKeyboard =
           typingMethod == FocusProcessorForTapAndTouchExploration.TAP_TO_TYPE
               && isOnKeyboard(event.getX(), event.getY());
@@ -1348,6 +1369,11 @@ public class TouchInteractionMonitor
       }
     }
 
+    if (state != STATE_TOUCH_INTERACTING) {
+      continuedTouchNeedsMove = false;
+      explorationWaitingForMove = false;
+      nextTouchMayContinueSwipe = false;
+    }
     previousState = this.state;
     this.state = state;
     requestTouchExplorationDelayed.cancel();
@@ -1444,6 +1470,9 @@ public class TouchInteractionMonitor
     lastExploredNode = null;
     skipLookupsInLastExploredBounds = false;
     stateChangeRequested = false;
+    continuedTouchNeedsMove = false;
+    explorationWaitingForMove = false;
+    nextTouchMayContinueSwipe = false;
     if (keepWaitingTaps) {
       gestureDetector.clearExceptWaitingTaps();
     } else {
@@ -1862,6 +1891,11 @@ public class TouchInteractionMonitor
     }
     clear();
     clearGestureDetectorOnNextDown = true;
+    int gestureId = gestureEvent.getGestureId();
+    nextTouchMayContinueSwipe =
+        state == STATE_TOUCH_INTERACTING
+            && gestureId >= GESTURE_SWIPE_UP
+            && gestureId <= GESTURE_SWIPE_RIGHT;
     // A gesture recognized from events that corner taps hand back ended in the past, with the
     // finger as those events left it.
     if (fingerDown && !replayingCornerTaps) {
@@ -2784,6 +2818,18 @@ public class TouchInteractionMonitor
     }
     if (gboardRoot != null && fingerDown && state == STATE_TOUCH_INTERACTING) {
       startExploringKeyboard(caller);
+      return;
+    }
+    if (continuedTouchNeedsMove && state == STATE_TOUCH_INTERACTING) {
+      // Android clears its hover buffer on a later down in the same interaction. Requesting
+      // exploration with an empty buffer leaves the controller waiting for a state change.
+      if (!explorationWaitingForMove && receivedPointerTracker.getReceivedPointerDownCount() <= 1) {
+        explorationWaitingForMove = true;
+        if (!fingerDown) {
+          service.onTapExploration();
+        }
+        service.onStationaryContinuedTouch(displayId, lastFingerX, lastFingerY);
+      }
       return;
     }
     try {

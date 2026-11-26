@@ -201,6 +201,30 @@ object KeyboardExploration {
   fun nodeUnder(root: AccessibilityNodeInfoCompat, x: Float, y: Float): AccessibilityNodeInfoCompat? =
     focusableAt(root, x.toInt(), y.toInt(), Rect(), depth = 0)
 
+  /** A single bounded hit test for a continued touch whose first move has not arrived. */
+  @JvmStatic
+  @RequiresApi(Build.VERSION_CODES.R)
+  fun stationaryTouchTargetAt(
+    service: AccessibilityService,
+    displayId: Int,
+    x: Float,
+    y: Float,
+  ): AccessibilityNodeInfoCompat? {
+    val budget = StationaryTouchLookup()
+    val root = topmostWindowAt(service, displayId, x, y)?.root ?: return null
+    return focusableAt(AccessibilityNodeInfoCompat.wrap(root), x.toInt(), y.toInt(), Rect(), 0, budget)
+  }
+
+  // A node read may still take longer on its own. Do not start further reads then.
+  private class StationaryTouchLookup {
+    private val deadline = SystemClock.uptimeMillis() + 16
+    private var childrenLeft = 48
+
+    fun hasTime() = SystemClock.uptimeMillis() < deadline
+
+    fun takeChild() = hasTime() && childrenLeft-- > 0
+  }
+
   private const val MAX_DEPTH = 30
 
   /** How deep under the popup its characters are looked for. */
@@ -358,8 +382,9 @@ object KeyboardExploration {
     y: Int,
     bounds: Rect,
     depth: Int,
+    stationaryTouch: StationaryTouchLookup? = null,
   ): AccessibilityNodeInfoCompat? {
-    if (depth > MAX_DEPTH || !node.isVisibleToUser) {
+    if (depth > MAX_DEPTH || stationaryTouch?.hasTime() == false || !node.isVisibleToUser) {
       return null
     }
     node.getBoundsInScreen(bounds)
@@ -367,12 +392,14 @@ object KeyboardExploration {
       return null
     }
     for (i in node.childCount - 1 downTo 0) {
+      if (stationaryTouch?.takeChild() == false) return null
       val child = node.getChild(i) ?: continue
-      val found = focusableAt(child, x, y, bounds, depth + 1)
+      val found = focusableAt(child, x, y, bounds, depth + 1, stationaryTouch)
       if (found != null) {
         return found
       }
     }
+    if (stationaryTouch?.hasTime() == false) return null
     return node.takeIf { AccessibilityNodeInfoUtils.FILTER_SHOULD_FOCUS_EXCEPT_WEB_VIEW.accept(it) }
   }
 }

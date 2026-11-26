@@ -224,6 +224,7 @@ import com.google.android.accessibility.talkback.gesture.GestureLayoutActivity;
 import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
+import com.google.android.accessibility.talkback.gesture.KeyboardExploration;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TextTraversalTracker;
@@ -4603,6 +4604,19 @@ public class TalkBackService extends AccessibilityServiceCompat
   public void onKeyboardNodeTouched(AccessibilityNodeInfoCompat node) {
     if (touchExplorationInterpreter != null) {
       touchExplorationInterpreter.onNodeTouched(node, EVENT_ID_UNTRACKED);
+    }
+  }
+
+  /** Handles the item under a stationary finger before Android has a hover event for the touch. */
+  @RequiresApi(Build.VERSION_CODES.R)
+  public void onStationaryContinuedTouch(int displayId, float x, float y) {
+    if (touchExplorationInterpreter == null || PauseController.isPaused()) {
+      return;
+    }
+    @Nullable AccessibilityNodeInfoCompat target =
+        KeyboardExploration.stationaryTouchTargetAt(this, displayId, x, y);
+    if (target != null) {
+      touchExplorationInterpreter.onNodeTouched(target, EVENT_ID_UNTRACKED);
     }
   }
 
