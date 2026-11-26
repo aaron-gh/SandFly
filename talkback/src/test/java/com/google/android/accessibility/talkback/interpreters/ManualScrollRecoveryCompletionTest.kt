@@ -154,7 +154,7 @@ class ManualScrollRecoveryCompletionTest {
     interpreter.setActorState(actorState)
     val items = mutableListOf<AccessibilityNodeInfoCompat?>()
     interpreter.setPipeline(Pipeline.InterpretationReceiver { _, _, interpretation, _ ->
-      items.add((interpretation as Interpretation.ManualScroll).webItemInView()); true
+      items.add((interpretation as Interpretation.ManualScroll).itemInView()); true
     })
     val recovery = WebFocusRecovery(focus, null, AccessibilityNodeInfoCompat.wrap(source),
       true, true, null, false)

@@ -188,14 +188,13 @@ public class FocusFeedbackMapper {
 
     LogDepth.logFunc(Mappers.LOG_TAG, ++depth, "onNodeManuallyScrolled");
 
-    // Web content is already in view where the user scrolled it, and showing the item on screen
-    // could scroll the page.
-    @Nullable AccessibilityNodeInfoCompat webItem = variables.webItemInView(depth);
-    if (webItem != null) {
+    // Showing an item that is already in view could move the content the user just scrolled.
+    @Nullable AccessibilityNodeInfoCompat item = variables.itemInView(depth);
+    if (item != null) {
       return Feedback.part()
           .setFocus(
               Feedback.focus(
-                      webItem,
+                      item,
                       new FocusActionInfo.Builder()
                           .setSourceAction(FocusActionInfo.MANUAL_SCROLL)
                           .build())

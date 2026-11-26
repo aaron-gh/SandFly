@@ -2322,6 +2322,14 @@ public class TalkBackService extends AccessibilityServiceCompat
     NotificationReader.onTouchEnded();
   }
 
+  /** Finds an item in a native list whose scroll moved the old focus off screen. */
+  public @Nullable AccessibilityNodeInfoCompat itemInRecentlyScrolledList(
+      @TraversalStrategy.SearchDirectionOrUnknown int direction) {
+    return accessibilityFocusInterpreter == null
+        ? null
+        : accessibilityFocusInterpreter.itemInRecentlyScrolledList(direction);
+  }
+
   @Override
   protected boolean onGesture(int gestureId) {
     return handleOnGestureById(Display.DEFAULT_DISPLAY, gestureId);
