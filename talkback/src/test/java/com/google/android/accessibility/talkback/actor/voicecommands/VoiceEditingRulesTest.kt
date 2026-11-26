@@ -164,6 +164,35 @@ class VoiceEditingRulesTest {
   }
 
   @Test
+  fun textEditingPhrasesActOnTheTextOnly() {
+    assertEquals(
+      listOf(
+        VoiceStep.TextEdit(TextOperation.DELETE, TextTarget.Units(TextUnit.WORD, 5, forward = true), "delete next five words")
+      ),
+      steps("delete next five words"),
+    )
+    // No item is activated in voice editing: "select" and a text selects it in the field.
+    assertEquals(
+      listOf(VoiceStep.TextEdit(TextOperation.SELECT, TextTarget.Phrase("crocodile"), "select crocodile")),
+      steps("select crocodile"),
+    )
+    assertEquals(
+      listOf(VoiceStep.TextEdit(TextOperation.MOVE, TextTarget.Boundary(TextUnit.SENTENCE, end = true), "end of sentence")),
+      steps("end of sentence"),
+    )
+    assertEquals(
+      listOf(
+        VoiceStep.TextEdit(TextOperation.SELECT, TextTarget.Units(TextUnit.WORD, 2, forward = false), "select previous 2 words"),
+        VoiceStep.Command("COPY", "Copy"),
+      ),
+      steps("select previous 2 words then copy"),
+    )
+    // Command names still come first.
+    assertEquals(listOf(VoiceStep.Command("NEXT_WORD", "Next word")), steps("next word"))
+    assertEquals(listOf(VoiceStep.Command("SELECT_ALL", "Select all")), steps("select all"))
+  }
+
+  @Test
   fun aliasesOfCommandsNotListedAreLeftOut() {
     val names =
       VoiceEditingRules.commandNames(
@@ -235,6 +264,7 @@ class VoiceEditingRulesTest {
         cancel = array("voice_commands_cancel_words"),
         type = array("voice_commands_type_text"),
         run = array("voice_commands_run"),
+        text = textPhrasesForTests { array("voice_commands_$it") },
       ),
       resolver,
       Locale.ENGLISH,

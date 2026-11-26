@@ -234,6 +234,128 @@ class VoiceGrammarTest {
     assertEquals(listOf(VoiceStep.TypeText("new line")), newLine.parse("type new line").steps)
   }
 
+  @Test
+  fun countedTextOperations() {
+    val words = TextTarget.Units(TextUnit.WORD, 5, forward = true)
+    assertEquals(
+      listOf(VoiceStep.TextEdit(TextOperation.DELETE, words, "delete next five words", VoiceStep.Legacy("delete next five words"))),
+      steps("delete next five words"),
+    )
+    assertEquals(
+      listOf(
+        VoiceStep.TextEdit(
+          TextOperation.COPY,
+          TextTarget.Units(TextUnit.SENTENCE, 5, forward = false),
+          "Copy previous 5 sentences",
+          VoiceStep.Legacy("Copy previous 5 sentences"),
+        )
+      ),
+      steps("Copy previous 5 sentences."),
+    )
+    assertEquals(TextTarget.Units(TextUnit.LINE, 1, forward = true), textTarget("select the next line"))
+    assertEquals(TextTarget.Units(TextUnit.PARAGRAPH, 2, forward = false), textTarget("cut last two paragraphs"))
+    assertEquals(TextTarget.Units(TextUnit.CHARACTER, 3, forward = false), textTarget("delete previous 3 characters"))
+    assertEquals(TextOperation.SELECT, textEdit("highlight next word").operation)
+    assertEquals(TextOperation.DELETE, textEdit("remove the previous word").operation)
+  }
+
+  @Test
+  fun cursorMoves() {
+    for ((said, target) in
+      listOf(
+        "move left 5 words" to TextTarget.Units(TextUnit.WORD, 5, forward = false),
+        "move cursor right by three characters" to TextTarget.Units(TextUnit.CHARACTER, 3, forward = true),
+        "next 3 words" to TextTarget.Units(TextUnit.WORD, 3, forward = true),
+        "go back two lines" to TextTarget.Units(TextUnit.LINE, 2, forward = false),
+        "forward 10 words" to TextTarget.Units(TextUnit.WORD, 10, forward = true),
+      )) {
+      val step = textEdit(said)
+      assertEquals(said, TextOperation.MOVE, step.operation)
+      assertEquals(said, target, step.target)
+    }
+  }
+
+  @Test
+  fun startAndEndOfUnits() {
+    for ((said, target) in
+      listOf(
+        "Start of sentence." to TextTarget.Boundary(TextUnit.SENTENCE, end = false),
+        "end of line" to TextTarget.Boundary(TextUnit.LINE, end = true),
+        "start of word" to TextTarget.Boundary(TextUnit.WORD, end = false),
+        "go to the end of the paragraph" to TextTarget.Boundary(TextUnit.PARAGRAPH, end = true),
+        "move to the beginning of the line" to TextTarget.Boundary(TextUnit.LINE, end = false),
+        "to start" to TextTarget.Boundary(TextUnit.TEXT, end = false),
+        "go to the end" to TextTarget.Boundary(TextUnit.TEXT, end = true),
+        "end of text" to TextTarget.Boundary(TextUnit.TEXT, end = true),
+      )) {
+      val step = textEdit(said)
+      assertEquals(said, TextOperation.MOVE, step.operation)
+      assertEquals(said, target, step.target)
+    }
+    assertEquals(
+      VoiceStep.TextEdit(
+        TextOperation.DELETE,
+        TextTarget.Boundary(TextUnit.LINE, end = true),
+        "delete to end of line",
+        VoiceStep.Legacy("delete to end of line"),
+      ),
+      textEdit("delete to end of line"),
+    )
+  }
+
+  @Test
+  fun textPhrases() {
+    // Outside text fields, "select" and a text activates the item, as before.
+    assertEquals(
+      listOf(
+        VoiceStep.TextEdit(TextOperation.SELECT, TextTarget.Phrase("crocodile"), "select crocodile", VoiceStep.Tap("crocodile"))
+      ),
+      steps("select crocodile"),
+    )
+    assertEquals(
+      listOf(
+        VoiceStep.TextEdit(TextOperation.DELETE, TextTarget.Phrase("New York"), "Delete New York", VoiceStep.Legacy("Delete New York"))
+      ),
+      steps("Delete New York."),
+    )
+    assertEquals(TextTarget.Phrase("the cat"), textTarget("copy the cat"))
+    assertEquals(TextTarget.Phrase("crocodile"), textTarget("cut crocodile"))
+  }
+
+  @Test
+  fun textPhrasesLeaveOtherCommands() {
+    // Command names, and other patterns, come first.
+    assertEquals(listOf(VoiceStep.Command("SELECT_ALL", "select all")), steps("select all"))
+    assertEquals(listOf(VoiceStep.Command("BACK", "back")), steps("back"))
+    assertEquals(listOf(VoiceStep.Copy), steps("copy that"))
+    assertEquals(listOf(VoiceStep.OpenApp("Chrome", "OPEN_APP:chrome")), steps("start Chrome"))
+    assertEquals(listOf(VoiceStep.TypeText("next word")), steps("type next word"))
+    assertEquals(listOf(VoiceStep.Tap("Settings")), steps("tap Settings"))
+    // Not a unit, or no number.
+    assertFalse(grammar.parse("next 3 headings").complete)
+    assertFalse(grammar.parse("go home").complete)
+    assertFalse(grammar.parse("next lots of words").complete)
+  }
+
+  @Test
+  fun textEditsInChains() {
+    assertEquals(
+      listOf(
+        TextTarget.Units(TextUnit.WORD, 2, forward = false),
+        TextTarget.Boundary(TextUnit.LINE, end = true),
+      ),
+      steps("select previous two words then end of line").map { (it as VoiceStep.TextEdit).target },
+    )
+  }
+
+  private fun textEdit(said: String): VoiceStep.TextEdit {
+    val steps = steps(said)
+    assertEquals(said, 1, steps.size)
+    return steps[0] as? VoiceStep.TextEdit ?: throw AssertionError("Not a text edit: $said: $steps")
+  }
+
+  private fun textTarget(said: String): TextTarget = textEdit(said).target
+
   companion object {
     private fun englishArray(name: String): List<String> = englishArrays.getValue("voice_commands_$name")
 
@@ -275,6 +397,7 @@ class VoiceGrammarTest {
         run = array("run"),
         open = array("open"),
         tap = array("tap"),
+        text = textPhrasesForTests(::englishArray),
       )
     }
   }

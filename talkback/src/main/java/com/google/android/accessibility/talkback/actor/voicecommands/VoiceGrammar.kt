@@ -56,6 +56,34 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
     val run: List<String>,
     val open: List<String>,
     val tap: List<String>,
+    /** The phrases that move the cursor in, select, copy, cut and delete the text of a field. */
+    val text: TextPhrases = TextPhrases(),
+    /**
+     * Whether text editing phrases fall back to activating an item ("select Settings") or to the
+     * voice commands that came with TalkBack when no text field has input focus.
+     */
+    val textFallback: Boolean = true,
+  )
+
+  /**
+   * The text editing phrases. [move], [select], [copy], [cut] and [delete] have a {target}: a
+   * pattern of [next], [previous], [start] or [end], or, but for [move], a phrase in the text.
+   * [next] and [previous] have {units}, a number of [units], such as "3 words"; [start] and [end]
+   * have a {unit}, or none for the whole text. [numbers] are the words of 1, 2 and on, each item
+   * with its words separated by |.
+   */
+  class TextPhrases(
+    val move: List<String> = emptyList(),
+    val select: List<String> = emptyList(),
+    val copy: List<String> = emptyList(),
+    val cut: List<String> = emptyList(),
+    val delete: List<String> = emptyList(),
+    val next: List<String> = emptyList(),
+    val previous: List<String> = emptyList(),
+    val start: List<String> = emptyList(),
+    val end: List<String> = emptyList(),
+    val units: Map<TextUnit, List<String>> = emptyMap(),
+    val numbers: List<String> = emptyList(),
   )
 
   /** What the grammar looks up while it reads a command. Called off the main thread. */
@@ -114,6 +142,35 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
   private val run = phrases.run.map(::template)
   private val open = phrases.open.map(::template)
   private val tap = phrases.tap.map(::template)
+  private val textFallback = phrases.textFallback
+  // Move comes last, as its patterns include the target on its own.
+  private val textOperations =
+    listOf(
+      TextOperation.SELECT to phrases.text.select,
+      TextOperation.COPY to phrases.text.copy,
+      TextOperation.CUT to phrases.text.cut,
+      TextOperation.DELETE to phrases.text.delete,
+      TextOperation.MOVE to phrases.text.move,
+    ).map { (operation, patterns) -> operation to patterns.map(::template) }
+  private val textNext = phrases.text.next.map(::template)
+  private val textPrevious = phrases.text.previous.map(::template)
+  private val textStart = phrases.text.start.map(::template)
+  private val textEnd = phrases.text.end.map(::template)
+  // Longest first, so that "text field" is read before "field".
+  private val unitWords: List<Pair<TextUnit, String>> =
+    phrases.text.units
+      .flatMap { (unit, words) -> words.map { unit to normalize(it, locale) } }
+      .filter { it.second.isNotEmpty() }
+      .sortedByDescending { it.second.length }
+  private val numberWords: Map<String, Int> =
+    HashMap<String, Int>().apply {
+      phrases.text.numbers.forEachIndexed { index, item ->
+        for (word in item.split('|')) {
+          val normalized = normalize(word, locale)
+          if (normalized.isNotEmpty()) putIfAbsent(normalized, index + 1)
+        }
+      }
+    }
 
   /** Reads [said]. */
   fun parse(said: String): Result {
@@ -225,6 +282,8 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
       val name = normalize(m["command"].orEmpty(), locale)
       (resolver.custom(name) ?: resolver.command(name))?.let { return listOf(it) }
     }
+    // Before open and tap, which "start of line" and "select a word" would match too.
+    textEdit(text)?.let { return listOf(it) }
     match(open, text)?.let { m ->
       val name = m["app"].orEmpty()
       resolver.app(name)?.let { return listOf(it) }
@@ -232,6 +291,79 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
     }
     match(tap, text)?.let { m -> m["label"]?.let { return listOf(VoiceStep.Tap(it)) } }
     return null
+  }
+
+  /** Reads [text] as a text editing phrase, or returns null. */
+  private fun textEdit(text: String): VoiceStep.TextEdit? {
+    for ((operation, templates) in textOperations) {
+      for (groups in matches(templates, text)) {
+        val targetText = groups["target"] ?: continue
+        textTarget(targetText)?.let { target ->
+          val fallback = if (textFallback) VoiceStep.Legacy(text) else null
+          return VoiceStep.TextEdit(operation, target, text, fallback)
+        }
+        if (operation == TextOperation.MOVE) continue
+        // Outside text fields, "select" and a text still activates the item with that text.
+        val fallback =
+          when {
+            !textFallback -> null
+            operation == TextOperation.SELECT -> VoiceStep.Tap(targetText)
+            else -> VoiceStep.Legacy(text)
+          }
+        return VoiceStep.TextEdit(operation, TextTarget.Phrase(targetText), text, fallback)
+      }
+    }
+    return null
+  }
+
+  /** Reads [said] as units, or the start or end of a unit, from the cursor; or returns null. */
+  private fun textTarget(said: String): TextTarget? {
+    for (groups in matches(textNext, said)) {
+      val (unit, count) = units(groups["units"]) ?: continue
+      if (unit != TextUnit.TEXT) return TextTarget.Units(unit, count, forward = true)
+    }
+    for (groups in matches(textPrevious, said)) {
+      val (unit, count) = units(groups["units"]) ?: continue
+      if (unit != TextUnit.TEXT) return TextTarget.Units(unit, count, forward = false)
+    }
+    for ((templates, end) in listOf(textStart to false, textEnd to true)) {
+      for (groups in matches(templates, said)) {
+        // A pattern without a unit is the start or end of the whole text.
+        val unit = if ("unit" in groups) unit(groups["unit"]) ?: continue else TextUnit.TEXT
+        if (unit != TextUnit.CHARACTER) return TextTarget.Boundary(unit, end)
+      }
+    }
+    return null
+  }
+
+  /** Reads [said] as a number and a unit, such as "3 words" or "five words", or a unit alone. */
+  private fun units(said: String?): Pair<TextUnit, Int>? {
+    val normalized = normalize(said ?: return null, locale)
+    for ((unit, word) in unitWords) {
+      if (normalized == word) return unit to 1
+      val prefix =
+        when {
+          spaceless && normalized.endsWith(word) -> normalized.dropLast(word.length)
+          normalized.endsWith(" $word") -> normalized.dropLast(word.length + 1)
+          else -> continue
+        }.trim()
+      val count = count(prefix) ?: continue
+      return unit to count
+    }
+    return null
+  }
+
+  /** Reads [said] as a unit alone, such as "word" or "text field". */
+  private fun unit(said: String?): TextUnit? {
+    val normalized = normalize(said ?: return null, locale)
+    return unitWords.firstOrNull { it.second == normalized }?.first
+  }
+
+  /** A count said in digits or in words, from 1 up to [VoiceTextRanges.MAX_COUNT]. */
+  private fun count(said: String): Int? {
+    if (said.isEmpty()) return null
+    val number = said.toIntOrNull() ?: numberWords[said] ?: return null
+    return if (number < 1) null else minOf(number, VoiceTextRanges.MAX_COUNT)
   }
 
   private fun stripFillers(text: String): String {
@@ -284,6 +416,10 @@ class VoiceGrammar(phrases: Phrases, private val resolver: Resolver, private val
     }
     return null
   }
+
+  /** The groups of each of [templates] that matches [text], in order. */
+  private fun matches(templates: List<Template>, text: String): Sequence<Map<String, String>> =
+    templates.asSequence().mapNotNull { match(listOf(it), text) }
 
   private fun template(text: String): Template {
     val names = mutableListOf<String>()

@@ -28,6 +28,8 @@ import android.os.Looper
 import android.os.SystemClock
 import android.telephony.PhoneNumberUtils
 import android.telephony.TelephonyManager
+import android.view.accessibility.AccessibilityNodeInfo
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
 import com.google.android.accessibility.talkback.Feedback
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.TalkBackService
@@ -157,9 +159,10 @@ object VoicePlanRunner {
       }
     }
 
-    fun runStep(index: Int) {
+    /** Runs the step at [index], or [instead] in its place. */
+    fun runStep(index: Int, instead: VoiceStep? = null) {
       if (!active) return
-      val step = steps.getOrNull(index)
+      val step = instead ?: steps.getOrNull(index)
       if (step == null) {
         done()
         return
@@ -181,6 +184,7 @@ object VoicePlanRunner {
             say(step.text)
             next()
           }
+          is VoiceStep.TextEdit -> textEdit(step, index, next)
           is VoiceStep.Legacy -> {
             if (legacy(VoiceCommandActor.commandText(step.text))) {
               next()
@@ -232,6 +236,78 @@ object VoicePlanRunner {
           say(service.getString(R.string.voice_commands_not_available, step.label))
           done()
         }
+      }
+    }
+
+    /**
+     * Moves the cursor in, selects, copies, cuts or deletes the text of the edit field with input
+     * focus. Nothing of a password field's text is said.
+     */
+    private fun textEdit(step: VoiceStep.TextEdit, index: Int, next: () -> Unit) {
+      val fallback = step.fallback
+      val field =
+        try {
+          service.findFocus(AccessibilityNodeInfo.FOCUS_INPUT)?.takeIf { it.isEditable }
+        } catch (e: RuntimeException) {
+          LogUtils.w(TAG, "Cannot find the edit field: %s", e)
+          null
+        }
+      if (field == null) {
+        if (fallback != null) runStep(index, fallback) else stop(service.getString(R.string.not_editable))
+        return
+      }
+      if (field.isPassword) {
+        if (fallback is VoiceStep.Tap) runStep(index, fallback)
+        else stop(service.getString(R.string.voice_commands_text_password))
+        return
+      }
+      val node = AccessibilityNodeInfoCompat.wrap(field)
+      val text = if (node.isShowingHintText) "" else node.text?.toString().orEmpty()
+      val plan =
+        VoiceTextRanges.plan(text, node.textSelectionStart, node.textSelectionEnd, step.operation, step.target, locale)
+      val action =
+        when (plan) {
+          is VoiceTextRanges.Plan.NotFound -> {
+            val phrase = (step.target as? TextTarget.Phrase)?.text ?: step.said
+            if (fallback is VoiceStep.Tap) runStep(index, fallback)
+            else stop(service.getString(R.string.voice_commands_not_found, phrase))
+            return
+          }
+          is VoiceTextRanges.Plan.AtEdge -> {
+            say(
+              service.getString(
+                if (plan.end) R.string.notification_type_end_of_field
+                else R.string.notification_type_beginning_of_field
+              )
+            )
+            next()
+            return
+          }
+          is VoiceTextRanges.Plan.Move ->
+            Feedback.edit(node, Feedback.EditText.Action.MOVE_CURSOR_OVER_TEXT)
+              .setCursorIndex(plan.to)
+              .setText(text.substring(minOf(plan.from, plan.to), maxOf(plan.from, plan.to)))
+          is VoiceTextRanges.Plan.Edit -> {
+            val rangeAction =
+              when (step.operation) {
+                TextOperation.SELECT -> Feedback.EditText.Action.SELECT_RANGE
+                TextOperation.COPY -> Feedback.EditText.Action.COPY_RANGE
+                TextOperation.CUT -> Feedback.EditText.Action.CUT_RANGE
+                TextOperation.DELETE -> Feedback.EditText.Action.DELETE_RANGE
+                // A move is planned as a move, never as a range.
+                TextOperation.MOVE -> null
+              }
+            if (rangeAction == null) {
+              fail("range planned for a cursor move")
+              return
+            }
+            Feedback.edit(node, rangeAction).setRangeStart(plan.start).setRangeEnd(plan.end)
+          }
+        }
+      if (service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, action) == true) {
+        next()
+      } else {
+        stop(service.getString(R.string.voice_commands_not_available, step.said))
       }
     }
 

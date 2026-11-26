@@ -103,6 +103,34 @@ class VoiceTargets(private val context: Context, private val locale: Locale) : V
           context.resources.getStringArray(R.array.voice_commands_new_line).toList()
       )
 
+    /** The text editing phrases, in the language of [context]. */
+    @JvmStatic
+    fun textPhrases(context: Context): VoiceGrammar.TextPhrases {
+      val resources = context.resources
+      fun array(id: Int): List<String> = resources.getStringArray(id).toList()
+      return VoiceGrammar.TextPhrases(
+        move = array(R.array.voice_commands_text_move),
+        select = array(R.array.voice_commands_text_select),
+        copy = array(R.array.voice_commands_text_copy),
+        cut = array(R.array.voice_commands_text_cut),
+        delete = array(R.array.voice_commands_text_delete),
+        next = array(R.array.voice_commands_text_next),
+        previous = array(R.array.voice_commands_text_previous),
+        start = array(R.array.voice_commands_text_start),
+        end = array(R.array.voice_commands_text_end),
+        units =
+          mapOf(
+            TextUnit.CHARACTER to array(R.array.voice_commands_text_characters),
+            TextUnit.WORD to array(R.array.voice_commands_text_words),
+            TextUnit.SENTENCE to array(R.array.voice_commands_text_sentences),
+            TextUnit.LINE to array(R.array.voice_commands_text_lines),
+            TextUnit.PARAGRAPH to array(R.array.voice_commands_text_paragraphs),
+            TextUnit.TEXT to array(R.array.voice_commands_text_whole),
+          ),
+        numbers = array(R.array.voice_commands_text_numbers),
+      )
+    }
+
     /**
      * The app named [name]: its whole name, else the one whose name starts with it, else the one
      * with a word that is it. Null when none is, or when several are equally good and none is the

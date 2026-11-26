@@ -524,6 +524,16 @@ class Actors {
             case TYPO_CORRECTION ->
                 editor.correctTypo(edit.node(), edit.text(), edit.spellingSuggestion(), eventId);
             case MOVE_CURSOR -> editor.moveCursor(edit.node(), edit.cursorIndex(), eventId);
+            case MOVE_CURSOR_OVER_TEXT ->
+                editor.moveCursorOverText(edit.node(), edit.cursorIndex(), edit.text(), eventId);
+            case SELECT_RANGE ->
+                editor.selectRange(edit.node(), edit.rangeStart(), edit.rangeEnd(), eventId);
+            case COPY_RANGE ->
+                editor.copyRange(edit.node(), edit.rangeStart(), edit.rangeEnd(), eventId);
+            case CUT_RANGE ->
+                editor.cutRange(edit.node(), edit.rangeStart(), edit.rangeEnd(), eventId);
+            case DELETE_RANGE ->
+                editor.deleteRange(edit.node(), edit.rangeStart(), edit.rangeEnd(), eventId);
           };
     }
 

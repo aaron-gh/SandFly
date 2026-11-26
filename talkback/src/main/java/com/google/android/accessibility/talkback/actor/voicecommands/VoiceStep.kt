@@ -56,6 +56,19 @@ sealed class VoiceStep {
 
   data class Say(val text: String) : VoiceStep()
 
+  /**
+   * Moves the cursor in, selects, copies, cuts or deletes the text of the edit field with input
+   * focus, as [operation] on [target]; [said] is what was said. [fallback] runs in place of it when
+   * no edit field has input focus, and, when it is a [Tap], also when the field is a password field
+   * or hasn't the phrase. Without one, the step says why it didn't run.
+   */
+  data class TextEdit(
+    val operation: TextOperation,
+    val target: TextTarget,
+    val said: String,
+    val fallback: VoiceStep? = null,
+  ) : VoiceStep()
+
   /** Runs [text] as one of the voice commands that came with TalkBack. */
   data class Legacy(val text: String) : VoiceStep()
 }
