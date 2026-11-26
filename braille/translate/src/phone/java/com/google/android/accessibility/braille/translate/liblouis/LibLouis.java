@@ -167,6 +167,10 @@ public class LibLouis implements TranslatorFactory {
       case "ICELANDIC_COMP8" -> {
         return new LibLouisTranslator(context, codeName, "is.ctb");
       }
+      case "INDONESIAN" -> {
+        return getBrailleTranslator(
+            context, codeName, contractedMode, "id-id-g1.utb", "id-id-g2.ctb");
+      }
       case "ITALIAN_COMP6" -> {
         return new LibLouisTranslator(context, codeName, "it.tbl");
       }
