@@ -465,7 +465,7 @@ The SandFly keyboard can correct the word you type and suggest words for it. Bot
 
 It applies while **Auto-correct** or **Word suggestions** is on.
 
-**Enter types the spoken suggestion**, on by default: after a correction or suggestion is spoken, Enter types it with a space, until you type on or move the cursor. On the Zinwa Q25, a trackpad click sends Enter, so a click types it. A second Enter goes to the app, such as to send a message. Down Arrow then opens the list at the suggestion after the one spoken. With the switch off, Enter goes to the app as before.
+**Enter types the spoken suggestion**, off by default: after a correction or suggestion is spoken, Enter types it with a space, until you type on or move the cursor. On the Zinwa Q25, a trackpad click sends Enter, so a click types it. A second Enter goes to the app, such as to send a message. Down Arrow then opens the list at the suggestion after the one spoken. With the switch off, Enter goes to the app as before, and the first Down Arrow opens the list at its first suggestion, the first Up Arrow at its last.
 
 A trackpad swipe sends two or more arrow presses; in the list, presses in the same direction less than 0.1 seconds apart move once.
 

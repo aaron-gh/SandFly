@@ -290,8 +290,15 @@ class WordInputTest {
     assertTrue(said.toString(), said.isEmpty())
   }
 
+  private fun enterTypesSuggestion(on: Boolean) {
+    prefs.edit {
+      putBoolean(context.getString(R.string.pref_sandfly_keyboard_enter_types_suggestion_key), on)
+    }
+  }
+
   @Test
   fun enterTypesTheSuggestionSaid() {
+    enterTypesSuggestion(true)
     type("keyboa")
     ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
     assertEquals(listOf("keyboard"), said)
@@ -305,6 +312,7 @@ class WordInputTest {
 
   @Test
   fun enterTypesTheCorrectionSaid() {
+    enterTypesSuggestion(true)
     type("recieve")
     ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
     assertTrue(press(KeyEvent.KEYCODE_ENTER))
@@ -313,6 +321,7 @@ class WordInputTest {
 
   @Test
   fun enterIsTheAppsBeforeASuggestionIsSaidOrAfterTypingOn() {
+    enterTypesSuggestion(true)
     type("keyboa")
     assertFalse(input.takesKey(KeyEvent.KEYCODE_ENTER))
     ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
@@ -321,13 +330,7 @@ class WordInputTest {
   }
 
   @Test
-  fun enterTypesTheSuggestionSwitchOff() {
-    prefs.edit {
-      putBoolean(
-        context.getString(R.string.pref_sandfly_keyboard_enter_types_suggestion_key),
-        false,
-      )
-    }
+  fun enterTypesTheSuggestionOffByDefault() {
     type("keyboa")
     ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
     assertFalse(input.takesKey(KeyEvent.KEYCODE_ENTER))
@@ -336,6 +339,7 @@ class WordInputTest {
 
   @Test
   fun downAfterTheSuggestionSaidGoesOnToTheNext() {
+    enterTypesSuggestion(true)
     type("keyb")
     ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
     // "key, correction" was said; Down goes to the suggestion after it.
@@ -343,6 +347,21 @@ class WordInputTest {
     val step = input.step(next = true, field, editing = true)!!
     assertTrue(step, step.endsWith("2 of " + step.substringAfterLast(" of ")))
     assertFalse(step, step.startsWith(first + ","))
+  }
+
+  @Test
+  fun withEnterNotTypingItDownStartsAtTheFirstAndUpAtTheLast() {
+    type("keyb")
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    val spoken = said.single().substringBefore(",")
+    val down = input.step(next = true, field, editing = true)!!
+    assertTrue(down, down.startsWith("$spoken, 1 of "))
+    press(KeyEvent.KEYCODE_BACK)
+    type("o")
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    val up = input.step(next = false, field, editing = true)!!
+    val size = up.substringAfterLast(" of ")
+    assertTrue(up, up.endsWith(", $size of $size"))
   }
 
   @Test

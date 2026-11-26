@@ -482,7 +482,7 @@ internal class WordInput(
 
   /**
    * Opens the list for [word] at its first or, going back, its last suggestion. The suggestion
-   * already said, [offer], comes first, and going on starts after it.
+   * already said, [offer], comes first; with Enter typing it, going on starts after it.
    */
   private fun openList(
     word: Word,
@@ -500,7 +500,7 @@ internal class WordInput(
       list = null
       said = context.getString(R.string.sandfly_keyboard_no_suggestions)
     } else {
-      val first = if (saidFirst != null && words.size > 1) 1 else 0
+      val first = if (saidFirst != null && words.size > 1 && enterTypesOffer()) 1 else 0
       val open = Suggestions(word, words, if (next) first else words.size - 1)
       list = open
       said = describe(open)
