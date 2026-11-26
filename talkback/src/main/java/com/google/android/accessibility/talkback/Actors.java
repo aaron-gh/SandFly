@@ -520,7 +520,7 @@ class Actors {
             case CURSOR_TO_BEGINNING ->
                 editor.cursorToBeginning(edit.node(), edit.stopSelecting(), eventId);
             case CURSOR_TO_END -> editor.cursorToEnd(edit.node(), edit.stopSelecting(), eventId);
-            case INSERT -> editor.insert(edit.node(), edit.text(), eventId);
+            case INSERT -> editor.insert(edit.node(), edit.text(), edit.speakText(), eventId);
             case TYPO_CORRECTION ->
                 editor.correctTypo(edit.node(), edit.text(), edit.spellingSuggestion(), eventId);
             case MOVE_CURSOR -> editor.moveCursor(edit.node(), edit.cursorIndex(), eventId);

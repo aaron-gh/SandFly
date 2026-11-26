@@ -180,6 +180,7 @@ import com.google.android.accessibility.talkback.compositor.roledescription.Role
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings;
+import com.google.android.accessibility.talkback.dictation.DictationSettings;
 import com.google.android.accessibility.talkback.dictation.RecognitionModelKeeper;
 import com.google.android.accessibility.talkback.dictation.SandflyDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
@@ -3672,7 +3673,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     // So does a keyboard that speaks through SandFly and says so.
     textEventFilter.setOnScreenKeyboardEchoSuppressor(() -> KeyboardSpeech.isTypingSpoken(this));
     // Dictation that speaks the text it types.
-    textEventFilter.setTextChangeSuppressor(SandflyDictation::typedSpokenText);
+    // And edits that say what they changed, such as text typed by voice.
+    textEventFilter.setTextChangeSuppressor(
+        eventTime ->
+            SandflyDictation.typedSpokenText(eventTime)
+                || editTextActionHistory.hasSpokenEditAtTime(eventTime));
     // The SandFly keyboard, which says the characters of a password field with Speak password
     // characters on.
     textEventFilter.setPasswordCharacterSuppressor(SandFlyKeyboardHost::speaksPasswordCharacters);
@@ -4256,6 +4261,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     EmojiSpeech.migrateSuffix(prefs);
     // The battery switch for when the screen turns on became a list with Only while charging.
     ScreenAnnouncementSettings.migrateBattery(prefs);
+    // Speak dictated text became on by default.
+    DictationSettings.migrateSpeakTextDefault(prefs);
     // Verbosity's switch for notifications with the screen off became the Notifications one.
     NotificationSettings.migrateScreenOff(
         prefs,

@@ -612,7 +612,9 @@ object MacroRunner {
                 AccessibilityNodeInfoCompat.wrap(field),
                 Feedback.EditText.Action.INSERT,
               )
-              .setText(step.text),
+              .setText(step.text)
+              // The typed text is said, not the field's whole text.
+              .setSpeakText(true),
           ) == true
         }
       if (!typed) {

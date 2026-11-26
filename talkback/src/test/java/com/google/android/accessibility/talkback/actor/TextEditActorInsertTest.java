@@ -25,7 +25,12 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.EditText;
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
+import android.os.SystemClock;
+import com.google.android.accessibility.talkback.Feedback;
 import com.google.android.accessibility.utils.Performance.EventId;
+import com.google.android.accessibility.utils.output.EditTextActionHistory;
+import java.util.ArrayList;
+import java.util.List;
 import com.google.android.accessibility.talkback.dictation.AiDictation;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -52,7 +57,7 @@ public class TextEditActorInsertTest {
       String original, boolean showingHint, boolean selectable, boolean cursorSucceeds,
       int start, int end, String expected, int cursor) {
     TestService service = Robolectric.buildService(TestService.class).get();
-    TextEditActor actor = new TextEditActor(service, null, null, null, null, null) {
+    TextEditActor actor = new TextEditActor(service, new EditTextActionHistory(), null, null, null, null) {
       @Override
       public boolean moveCursor(AccessibilityNodeInfoCompat node, int position, EventId eventId) {
         assertEquals(cursor, position);
@@ -77,7 +82,9 @@ public class TextEditActorInsertTest {
           AccessibilityNodeInfo.ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE).toString();
       return true;
     });
-    assertTrue(actor.insert(AccessibilityNodeInfoCompat.wrap(node), "Did you book that lunch?", null));
+    assertTrue(
+        actor.insert(
+            AccessibilityNodeInfoCompat.wrap(node), "Did you book that lunch?", false, null));
     assertEquals(expected, written[0]);
   }
 
@@ -122,6 +129,69 @@ public class TextEditActorInsertTest {
   @Test
   public void actualTextMatchingTheLabelIsPreserved() {
     checkInsertion("Message", false, 0, 0, "Did you book that lunch?Message", 24);
+  }
+
+  /**
+   * Runs an insertion into "Hello" with the cursor at the end, and returns the speech it gives.
+   * The text set and the cursor move both count as setting the text, so the framework's cursor
+   * events from them aren't read as cursor moves over the whole text.
+   */
+  private List<CharSequence> insertAndCheckWindows(
+      EditTextActionHistory history, boolean speak, boolean password) {
+    TestService service = Robolectric.buildService(TestService.class).get();
+    long[] duringMove = {-1};
+    TextEditActor actor = new TextEditActor(service, history, null, null, null, null) {
+      @Override
+      public boolean moveCursor(AccessibilityNodeInfoCompat node, int position, EventId eventId) {
+        duringMove[0] = SystemClock.uptimeMillis();
+        return true;
+      }
+    };
+    List<CharSequence> spoken = new ArrayList<>();
+    actor.setPipeline(
+        feedback -> {
+          for (Feedback.Part part : feedback.failovers()) {
+            if (part.speech() != null && part.speech().text() != null) {
+              spoken.add(part.speech().text());
+            }
+          }
+          return true;
+        });
+    AccessibilityNodeInfo node = AccessibilityNodeInfo.obtain();
+    node.setClassName("android.widget.EditText");
+    node.setEditable(true);
+    node.setPassword(password);
+    node.setText("Hello");
+    node.setTextSelection(5, 5);
+    node.addAction(AccessibilityNodeInfo.ACTION_SET_SELECTION);
+    Shadows.shadowOf(node).setOnPerformActionListener((action, args) -> true);
+    assertTrue(actor.insert(AccessibilityNodeInfoCompat.wrap(node), " world", speak, null));
+    assertTrue(duringMove[0] >= 0);
+    assertTrue(history.hasSetTextActionAtTime(duringMove[0]));
+    return spoken;
+  }
+
+  @Test
+  public void spokenInsertionSaysOnlyTheInsertedText() {
+    EditTextActionHistory history = new EditTextActionHistory();
+    List<CharSequence> spoken = insertAndCheckWindows(history, true, false);
+    assertEquals(1, spoken.size());
+    assertEquals("world", spoken.get(0).toString().trim());
+    assertTrue(history.hasSpokenEditAtTime(SystemClock.uptimeMillis()));
+  }
+
+  @Test
+  public void unspokenInsertionSaysNothingAndKeepsTheAppTextChange() {
+    EditTextActionHistory history = new EditTextActionHistory();
+    assertTrue(insertAndCheckWindows(history, false, false).isEmpty());
+    assertFalse(history.hasSpokenEditAtTime(SystemClock.uptimeMillis()));
+  }
+
+  @Test
+  public void insertionIntoPasswordFieldIsNotSpoken() {
+    EditTextActionHistory history = new EditTextActionHistory();
+    assertTrue(insertAndCheckWindows(history, true, true).isEmpty());
+    assertFalse(history.hasSpokenEditAtTime(SystemClock.uptimeMillis()));
   }
 
   @Test

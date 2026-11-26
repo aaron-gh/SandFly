@@ -35,7 +35,7 @@
       android:summary="%s"
       android:title="@string/title_pref_dictation_auto_stop" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="false"
+      android:defaultValue="true"
       android:key="pref_dictation_speak_text"
       android:order="3"
       android:title="@string/title_pref_dictation_speak_text" />
