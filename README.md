@@ -26,19 +26,19 @@ SandFly started as a fork of [Backtalk](https://github.com/trypsynth/backtalk), 
 Each item links to the chapter of the user guide that describes it.
 
 - **Faster speech.** SandFly reads the next item sooner after a swipe, a double-tap or a screen change, prepares the next swipe in advance, and can play speech and sounds through a low-latency audio path. See [Differences from TalkBack](differences.md).
-- **Gestures.** One- to four-finger swipes and taps, back-and-forth and angle gestures, three-part and two-stroke swipes, swipe and hold, a two-finger rotor, edge gestures and a two-finger scrub, corner gestures, pinch and spread, back tap and shake. Choose the SandFly gesture layout or one that matches VoiceOver on iPhone, and set gestures for each app or in gesture profiles. See [Gestures](docs/user-guide/en/03-gestures.md).
+- **Gestures.** One- to four-finger swipes and taps, back-and-forth and angle gestures, three-part and two-stroke swipes, swipe and hold, a two-finger rotor, edge gestures and a two-finger scrub, corner gestures, pinch and spread, back tap and shake. Choose the SandFly gesture layout, one that matches VoiceOver on iPhone, or one similar to the BlackBerry 10 Screen Reader, and set gestures for each app or in gesture profiles. See [Gestures](docs/user-guide/en/03-gestures.md).
 - **Reading and navigation.** Reading controls for characters, words, lines, headings, links, controls and more; continuous reading; screen search; tables; containers and windows; addresses and numbers in text. See [Explore and read the screen](docs/user-guide/en/02-reading.md) and [Web pages and elements](docs/user-guide/en/13-web.md).
 - **Commands and menus.** Every command can have gestures and keyboard shortcuts. The SandFly menu, a circle menu, custom menus, macros that record and repeat steps, and voice commands. See [Commands and menus](docs/user-guide/en/05-commands-and-menus.md), [Macros](docs/user-guide/en/16-macros.md) and [Voice commands](docs/user-guide/en/15-voice-commands.md).
 - **Speech.** Voice profiles, voices by language, voice effects with an equalizer and compression, a speech dictionary and a symbol dictionary, emoji settings, and speech history. See [Speech](docs/user-guide/en/06-speech.md) and [Verbosity](docs/user-guide/en/07-verbosity.md).
 - **Sound and vibration.** Sound themes, control sounds in 3D audio, a vibration for every sound, and a choice of audio output device. See [Sound, vibration and audio output](docs/user-guide/en/08-sound-and-vibration.md).
 - **Typing.** Typing methods for the on-screen keyboard, granular editing, clipboard history, dictation on the phone with Whisper, and a handwriting keyboard. See [Type and edit text](docs/user-guide/en/09-typing.md).
 - **Braille.** An on-screen braille keyboard with dots that follow how you hold the device, braille commands and an app launcher, and braille displays over Bluetooth, USB and HID, or from another app. See [Braille](docs/user-guide/en/10-braille.md).
-- **Physical keyboards.** SandFly, VoiceOver, NVDA, JAWS and Orca keymaps, custom keymaps, browse mode, object navigation and a review cursor, keymaps for keyboard phones, and the SandFly keyboard input method. See [Physical keyboards](docs/user-guide/en/11-keyboards.md).
+- **Physical keyboards.** SandFly, VoiceOver, NVDA, JAWS and Orca keymaps, custom keymaps, browse mode with fast search, object navigation and a review cursor, keyboard practice, keymaps for keyboard phones, and the SandFly keyboard input method with auto-correct and word suggestions. See [Physical keyboards](docs/user-guide/en/11-keyboards.md).
 - **Notifications.** Rules for which notifications are read and how, by app, kind, time and words; repeats; schedules; and the SandFly notification list. See [Notifications](docs/user-guide/en/14-notifications.md).
 - **Image and screen descriptions.** Describe images, the screen and the camera view, and ask questions about them, with SandFly Pro, an AI service with your own key, or a model on the phone. See [Image and screen descriptions](docs/user-guide/en/17-descriptions.md).
 - **Translation.** Translate the last phrase, or translate speech and notifications automatically. See [Translation](docs/user-guide/en/19-translation.md).
 - **Scripts.** Lua scripts and a script builder change how SandFly reads and works in one app or in every app. See [Scripts and custom labels](docs/user-guide/en/20-scripts.md).
-- **Settings profiles and backups.** Sets of changed settings that apply in chosen apps, on web pages, while reading or while editing, and backups of all settings with custom labels, profiles, scripts and sound themes in one file. See [Settings profiles and backups](docs/user-guide/en/22-profiles-and-backup.md).
+- **Settings profiles and backups.** Sets of changed settings that apply in chosen apps, on web pages, while reading or while editing; BlackBerry mode, which works similarly to the BlackBerry 10 Screen Reader; and backups of all settings with custom labels, profiles, scripts and sound themes in one file. See [Settings profiles and backups](docs/user-guide/en/22-profiles-and-backup.md).
 - **Other tools.** Direct touch for games, touch lock, Pause SandFly, the SandFly overview of recent apps, the SandFly quick settings panel, hide screen, and SandFly as the wallpaper. See [Touch](docs/user-guide/en/04-touch.md), [Display, overview and quick settings](docs/user-guide/en/21-display.md) and [Pause and turn off SandFly](docs/user-guide/en/23-pause-and-turn-off.md).
 
 ## Install SandFly
@@ -52,7 +52,7 @@ To install SandFly on a phone or tablet:
 
 1. On the phone, open the [latest release](https://github.com/aaron-gh/SandFly/releases/latest) in a browser and download `sandfly.apk`.
 2. Open the downloaded file.
-3. If Android asks, allow the browser or file manager to install apps, then open the file again.
+3. If Android blocks the install, allow the browser or file manager to install apps, then open the file again.
 4. Choose **Install**.
 
 On Android 13 and later, Android can block accessibility services installed from a browser or file manager. If SandFly can't be turned on, open the app info for SandFly in the Android settings, open the **More** menu, and choose **Allow restricted settings**. The names of these items differ on some phones.
@@ -65,13 +65,15 @@ To install SandFly on a watch or TV, use adb. See [Watches and TVs](docs/user-gu
 2. Open the Android **Settings** app and go to **Accessibility**. On some phones, SandFly is in a section such as **Installed apps** or **Downloaded apps**.
 3. Choose **SandFly**, turn on the switch, and confirm.
 
-The first time, SandFly opens the **Choose gestures** dialog, where you choose the SandFly or VoiceOver gesture layout, then the SandFly tutorial. With a physical keyboard connected, it opens the keyboard tutorial instead.
+The first time, SandFly opens the **Choose gestures** dialog, where you choose the SandFly or VoiceOver gesture layout, then the SandFly tutorial. On a device with a physical keyboard and no touch screen, it opens the keyboard tutorial instead.
 
 To turn SandFly on and off quickly, set up the accessibility shortcut for SandFly in **Settings** > **Accessibility** > **SandFly**, such as holding both volume keys.
 
 ## Learn SandFly
 
 - **SandFly tutorial**: interactive lessons for the basic gestures. It opens the first time, and later from **Help & feedback** > **SandFly tutorial** in SandFly settings.
+- **Gesture trainer**: measures gestures against the limits SandFly uses and names the settings that change them. It opens from **Help & feedback** > **Gesture trainer**, on Android 13 and later.
+- **Keyboard practice**: says each key pressed and the command it runs, without running it. It opens from **Help & feedback** > **Keyboard practice**.
 - **SandFly User Guide**: describes every feature and setting, with appendices that list every default gesture and keyboard shortcut and the developer APIs. It opens from **Help & feedback** > **User guide** in SandFly settings, and **Help** in the app bar of a settings screen opens the section about that screen. Its source is in [docs/user-guide](docs/user-guide/en/01-getting-started.md).
 
 To open SandFly settings, open **SandFly** in the apps list, or choose **SandFly settings** in the SandFly menu. **Search** at the top of the settings screen finds any setting or command.
@@ -135,7 +137,7 @@ To describe images on the phone, with nothing sent over the network, go to **AI 
 
 ## Permissions through Shizuku, root or adb
 
-Some features need permissions that Android grants only through adb. With [Shizuku](https://shizuku.rikka.app) installed and running, SandFly grants them itself; the first time, Shizuku asks whether to allow SandFly. On a rooted device, turn on **Shizuku and root** > **Use root instead of Shizuku** instead.
+Some features need permissions that Android grants only through adb. With [Shizuku](https://shizuku.rikka.app) installed and running, SandFly grants them itself; the first time, Shizuku shows a dialog to allow SandFly. On a rooted device, turn on **Shizuku and root** > **Use root instead of Shizuku** instead.
 
 Features that need Shizuku, root or adb:
 
@@ -144,7 +146,8 @@ Features that need Shizuku, root or adb:
 - **Audio output** > **Reset accessibility audio after calls** works only through Shizuku or root.
 - **Volume keys** > **Volume key shortcuts with the screen off** works only through Shizuku.
 - The SandFly overview of recent apps, Alt+Tab and split screen.
-- The switches and sliders of the SandFly quick settings panel.
+- The switches and sliders of the SandFly quick settings panel, and adding app tiles to the system quick settings for the **App tiles** commands.
+- **Add system tile**, which reads the system tiles with the DUMP permission and usage access.
 - App shortcuts that apps add while they run, and those that only the home screen app may open, from Android 12, with Shizuku started through adb or wireless debugging, or with root.
 - Clipboard history of text copied in other apps, and the key vibration of Gboard versions before 18.8 while you explore the keyboard.
 - **Updates and installation** > **Appear installed from Google Play**.
@@ -257,7 +260,7 @@ SandFly began as Backtalk Aaron, a fork of Backtalk, and became a separate proje
 SandFly is under the Apache License 2.0, as TalkBack and Backtalk are. See [LICENSE](LICENSE).
 
 - **Emoji names** are from the [Unicode CLDR](https://cldr.unicode.org/) and the Unicode emoji data, copyright Unicode, Inc., under the Unicode License v3, in `utils/src/main/assets/emoji_names/LICENSE`.
-- **Word lists** of the SandFly keyboard's auto-correct and word suggestions are TapType's, in `talkback/src/phone/assets/word_lists`: English from Peter Norvig's [word counts](https://norvig.com/ngrams/) of the Google Web Trillion Word Corpus, the other languages from [FrequencyWords](https://github.com/hermitdave/FrequencyWords) by Hermit Dave, from OpenSubtitles, under the Creative Commons Attribution-ShareAlike 4.0 license. Details are in `LICENSE` there, which is in the APK.
+- **Word lists** for auto-correct and word suggestions in the SandFly keyboard come from TapType, in `talkback/src/phone/assets/word_lists`: English from Peter Norvig's [word counts](https://norvig.com/ngrams/) of the Google Web Trillion Word Corpus, the other languages from [FrequencyWords](https://github.com/hermitdave/FrequencyWords) by Hermit Dave, from OpenSubtitles, under the Creative Commons Attribution-ShareAlike 4.0 license. Details are in `LICENSE` there, which is in the APK.
 - **Scripts** run in [Lua 5.4](https://www.lua.org/), copyright Lua.org, PUC-Rio, through [LuaJava](https://github.com/gudzpoz/luajava), copyright gudzpoz, both under the MIT License. The license texts are in `talkback/src/phone/assets/scripting/LICENSE-luajava`, which is in the APK.
 - **Japanese braille** follows [libkuraji](https://github.com/nishimotz/libkuraji), copyright Takuya Nishimoto, ported to Kotlin, under the BSD 3-Clause License, in `braille/translate/src/phone/assets/japanese-braille/LICENSE-libkuraji`, in the APK. Its dictionary, the JTalk extended dictionary from [libkuraji-jtalk-dic](https://github.com/nishimotz/libkuraji-jtalk-dic) (NAIST-JDIC with the additions of NVDA Japanese, BSD 3-Clause), is downloaded when Japanese braille is first used, checked against its SHA-256, and read by a reader of the MeCab dictionary format in SandFly.
 - **Dictation** uses [whisper.cpp](https://github.com/ggml-org/whisper.cpp) 1.9.5, copyright the ggml authors, under the MIT License, in `whisper/src/main/cpp/whisper.cpp/LICENSE`, with only the CPU backend. The Whisper models of OpenAI, under the MIT License, are downloaded from [Hugging Face](https://huggingface.co/ggerganov/whisper.cpp) when you choose one.

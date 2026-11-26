@@ -55,7 +55,7 @@ By default, touching the screen stops speech. To keep speech going until touch f
 
 ### Lock touch {#touch-lock}
 
-While touch is locked, touches and gestures on the screen do nothing, and nothing reaches the app. Keys, volume key commands, fingerprint gestures, back tap and shake still work. Touch lock needs Android 13 or later and **Developer settings** > **Handle gestures in SandFly**.
+While touch is locked, touches and gestures on the screen do nothing, and nothing reaches the app. Keys, volume key commands, fingerprint gestures, back tap and shake still work. Commands that touch the screen, such as **Activate with a tap**, **Hold a touch on the focused item** and touches in macros, still reach the app. Touch lock needs Android 13 or later and **Developer settings** > **Handle gestures in SandFly**.
 
 To lock or unlock touch, use the **Lock or unlock touch** command. SandFly says "Touch locked" or "Touch unlocked". Assign the command to a volume key press, a keyboard shortcut or a back tap, so that you can unlock touch without the screen; see [](#buttons) and [](#gestures-back-tap). Pressing both volume keys together always unlocks touch.
 
@@ -105,7 +105,7 @@ For an app that draws its own keyboard, turn on direct typing: in the **Apps** l
 
 #### Keyboards that speak {#touch-direct-touch-keyboards}
 
-A keyboard that speaks by itself, such as a braille keyboard app, needs touches in every app. Turn it on in the **Apps** list. While it shows, touches on it go straight to it in any app, and the rest of the screen stays with SandFly.
+A keyboard that speaks by itself, such as a braille keyboard app, needs touches in every app. Turn it on in the **Apps** list. While it shows, touches on it go straight to it in any app, and the rest of the screen stays with SandFly. A keyboard that draws its keys in an accessibility overlay and has an accessibility service of its own turned on keeps the touch area it sets, without being in the list.
 
 #### Apps that choose where they get direct touch {#touch-direct-touch-areas}
 
@@ -128,7 +128,7 @@ With the permission, SandFly says "Fixing touch exploration", ends the touches t
 
 Without the permission, or on other phones, SandFly can only say that touch exploration may be stuck, and you need to restart the phone. Exploring an area with nothing to read, such as a game, also finds no item, so the warning can be wrong, at most once every 10 minutes.
 
-When the screen turns off during a touch, Android can keep the lifted fingers as down, and then only touch exploration works: gestures and double-taps do nothing. SandFly detects this when the screen turns off during a touch, or when two touches in a row end in touch exploration, and turns explore by touch off and on again. This doesn't depend on **Fix stuck touch exploration** or the DUMP permission.
+When the screen turns off during a touch, Android can keep the lifted fingers as down, and then only touch exploration works: gestures and double-taps do nothing. SandFly detects this when the screen turns off during a touch, or when two touches in a row end in touch exploration, and turns explore by touch off and on again. A touch that ends because the next finger goes down, as in fast typing, doesn't count. This doesn't depend on **Fix stuck touch exploration** or the DUMP permission.
 
 ### Reset all delay settings {#touch-reset-delays}
 

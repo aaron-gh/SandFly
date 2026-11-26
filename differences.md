@@ -7,13 +7,13 @@ Settings paths start at the main SandFly settings screen, such as **Touch** > **
 ## Main differences
 
 - **Speed**: SandFly speaks sooner after swipes, double taps and screen changes, prepares the next swipe in advance, scrolls lists ahead of focus, and plays speech and sounds through a low-latency audio path. See [Speed](#speed).
-- **Gestures**: SandFly adds a two-finger rotor, edge gestures and edge menus, a two-finger scrub, corner gestures, swipe and hold, three-part and two-stroke swipes, tap then swipe, pinch and spread, back tap, shake, a VoiceOver gesture layout, gestures for single apps and gesture profiles. See [Gestures](#gestures) and [Defaults that differ from TalkBack](#defaults-that-differ-from-talkback).
+- **Gestures**: SandFly adds a two-finger rotor, edge gestures and edge menus, a two-finger scrub, corner gestures, swipe and hold, three-part and two-stroke swipes, tap then swipe, pinch and spread, back tap, shake, VoiceOver and BlackBerry gesture layouts, gestures for single apps and gesture profiles. See [Gestures](#gestures) and [Defaults that differ from TalkBack](#defaults-that-differ-from-talkback).
 - **Navigation**: wrap around can be turned off, element navigation works in apps as on web pages, and SandFly adds sentences, vertical navigation, and addresses and numbers in text. See [Navigation](#navigation) and [Web pages](#web-pages).
 - **Commands and menus**: every command can be put in the SandFly menu, in custom menus, edge menus and custom reading controls. The SandFly menu can show as a circle. See [Commands and menus](#commands-and-menus).
 - **Speech**: SandFly has its own speech engine setting, voice profiles, voices by language, voice effects, a speech dictionary, a speech history, and settings for emoji, phonetic letters and apps that speak by themselves. See [Speech](#speech) and [Verbosity](#verbosity).
 - **Sound and vibration**: every sound has a vibration of its own, sound themes replace the sounds, and control sounds play in 3D audio. Speech and sounds can play on a chosen output device and at another volume. See [Sound and vibration](#sound-and-vibration) and [Audio output and calls](#audio-output-and-calls).
 - **Notifications**: SandFly has settings for which notifications are read, what is read and in which voice, its own notification list, and its own quick settings panel and overview of recent apps. See [Notifications](#notifications) and [Display, overview and quick settings](#display-overview-and-quick-settings).
-- **Typing and keyboards**: SandFly adds typing methods, a clipboard history, granular editing, dictation with several speech recognizers, a handwriting keyboard, keymaps from VoiceOver, NVDA, JAWS and Orca, support for keyboard phones and an input method for physical keyboards. See [Typing](#typing) and [Physical keyboards](#physical-keyboards).
+- **Typing and keyboards**: SandFly adds typing methods, a clipboard history, granular editing, dictation with several speech recognizers, a handwriting keyboard, keymaps from VoiceOver, NVDA, JAWS and Orca, a BlackBerry mode, support for keyboard phones and an input method for physical keyboards. See [Typing](#typing) and [Physical keyboards](#physical-keyboards).
 - **Braille**: braille keyboard dots follow how you hold the device, braille commands run commands from braille cells, and braille displays connect over HID, from other apps, with keys that you choose. See [Braille keyboard](#braille-keyboard) and [Braille displays](#braille-displays).
 - **Automation**: voice commands with chains and AI, macros, Lua scripts and a script builder, and an API for other apps to speak through SandFly. See [Voice commands](#voice-commands), [Macros](#macros) and [Scripts and other apps](#scripts-and-other-apps).
 - **Direct touch**: audio games and other apps that you choose get touches directly while SandFly speaks. See [Direct touch](#direct-touch).
@@ -114,7 +114,7 @@ In busy apps, a backlog of accessibility events could block gestures in TalkBack
 
 ### Shorter focus delay
 
-When you touch the screen, SandFly waits to distinguish a gesture from a touch before it focuses the item under your finger. **Touch** > **Focus delay** sets this wait, from 0.15 to 0.3 seconds, on Android 13 and later. TalkBack waits 0.3 seconds by default, which is most of the time between touching an item and hearing it. SandFly waits 0.15 seconds. If SandFly focuses items when you meant to swipe, choose a longer delay.
+When you touch the screen, SandFly waits to distinguish a gesture from a touch before it focuses the item under your finger. **Touch** > **Focus delay** sets this wait, from 0.15 to 2 seconds, on Android 13 and later. TalkBack waits 0.3 seconds by default, which is most of the time between touching an item and hearing it. SandFly waits 0.15 seconds. If SandFly focuses items when you meant to swipe, choose a longer delay.
 
 **Touch** > **Reset all delay settings** sets the delay settings of **Touch**, **Typing**, **Display** and **Navigation** back to their defaults. See [Touch](docs/user-guide/en/04-touch.md).
 
@@ -193,7 +193,7 @@ The setting needs gesture recognition by SandFly. See [Gestures recognized by Sa
 
 ### Gesture start time
 
-In TalkBack, a one-finger swipe has to move 1 cm within 0.15 seconds; a slower start becomes touch exploration. **Gestures** > **Gesture start time** sets this time from 0.15 to 0.3 seconds, 0.15 seconds by default. It needs gesture recognition by SandFly, and isn't on watches.
+In TalkBack, a one-finger swipe has to move 1 cm within 0.15 seconds; a slower start becomes touch exploration. **Gestures** > **Gesture start time** sets this time from 0.15 to 2 seconds, 0.15 seconds by default. It needs gesture recognition by SandFly, and isn't on watches.
 
 ## Gestures
 
@@ -240,12 +240,13 @@ The gestures that TalkBack doesn't have need gesture recognition by SandFly. You
 
 - **SandFly gestures**, the default, with the gestures in [Default gestures](#default-gestures).
 - **VoiceOver gestures**, the gestures of VoiceOver on iPhone, such as a two-finger tap to pause speech, three-finger swipes to scroll and a three-finger tap for **Speak position**. Gestures that VoiceOver doesn't have are **Unassigned**.
+- **BlackBerry gestures**, similar to the gestures of the BlackBerry 10 Screen Reader. Choosing them opens **Use BlackBerry gestures?** first. See [Settings profiles](#settings-profiles) for BlackBerry mode.
 
-The first time SandFly starts, the **Choose gestures** dialog offers both layouts. Each layout keeps its own changes. Gestures in apps and gesture profiles apply to both layouts.
+The first time SandFly starts, the **Choose gestures** dialog offers **SandFly gestures** and **VoiceOver gestures**. Each layout keeps its own changes. Gestures in apps and gesture profiles apply to every layout.
 
 ### Two-finger swipes handled by SandFly
 
-In TalkBack, two-finger swipes go to the app, which scrolls with them. With **Gestures** > **Handle two-finger swipes in SandFly** on, two-finger swipes run the commands assigned to them, by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, and the **2 finger angle** gestures are available. Where nothing on the screen scrolls sideways, **Scroll left** and **Scroll right** send a one-finger swipe to the pager around the focused item, such as the folder tabs in Solid Explorer. Choosing a gesture layout turns the setting on for **VoiceOver gestures** and off for **SandFly gestures**. It needs Android 11 or later.
+In TalkBack, two-finger swipes go to the app, which scrolls with them. With **Gestures** > **Handle two-finger swipes in SandFly** on, two-finger swipes run the commands assigned to them, by default **Scroll up**, **Scroll down**, **Scroll left** and **Scroll right**, and the **2 finger angle** gestures are available. Where nothing on the screen scrolls sideways, **Scroll left** and **Scroll right** send a one-finger swipe to the pager around the focused item, such as the folder tabs in Solid Explorer. Choosing a gesture layout turns the setting on for **VoiceOver gestures** and **BlackBerry gestures** and off for **SandFly gestures**. It needs Android 11 or later.
 
 ### Rotor
 
@@ -305,7 +306,7 @@ Under **Gestures** > **Three-part swipes**, there are 36 gestures that move one 
 
 ### Two-stroke swipes
 
-Under **Gestures** > **Two-stroke swipes**, there are 16 gestures of two one-finger swipes with the finger lifted between them, such as **Swipe right, lift, then swipe up**. They do nothing by default and work only while **Gestures** > **Time between two-stroke swipes** is set, from 0.5 to 2 seconds; it's **Off** by default, and their categories are hidden while it's **Off**. The three-part and two-stroke swipe categories are at the end of the **Gestures** screen. After a swipe, SandFly waits for the second swipe only when a two-stroke swipe that starts with that swipe has a command; other swipes run at once. When the time passes, or the next touch is something else, the first swipe runs as an ordinary swipe.
+Under **Gestures** > **Two-stroke swipes**, there are 16 gestures of two one-finger swipes with the finger lifted between them, such as **Swipe right, lift, then swipe up**. They do nothing by default and work only while **Gestures** > **Time between two-stroke swipes** is set, from 0.25 to 2 seconds; it's **Off** by default, and their categories are hidden while it's **Off**. The three-part and two-stroke swipe categories are at the end of the **Gestures** screen. After a swipe, SandFly waits for the second swipe only when a two-stroke swipe that starts with that swipe has a command; other swipes run at once. When the time passes, or the next touch is something else, the first swipe runs as an ordinary swipe.
 
 Either swipe can also be a back-and-forth or angle swipe, such as **Swipe up then left, lift, then swipe right** or **Swipe up, lift, then swipe right then down**: 240 more gestures, in **Two-stroke swipes ending with back-and-forth or angle** and a **Two-stroke swipes starting with** category for each back-and-forth and angle swipe. A two-stroke swipe that starts with a back-and-forth or angle swipe makes no one-direction swipe wait. **Recognize swipes before lifting** turns these off and hides them. Not on watches.
 
@@ -565,6 +566,8 @@ For the commands and menus, see the user guide chapter [Commands and menus](docs
 
 **Commands**, in the main settings, lists every command in categories, such as **Navigation**, **Reading**, **Text editing** and **System actions**. Each command lists the gestures, the arrow keys of arrow key navigation, the braille cells and the keyboard shortcut that run it, and you assign them from there. A gesture that already runs another command moves to the new command after you choose **Replace**. The same categories are used in the list of commands for a gesture, in the SandFly menu settings, in custom menus, edge menus, macros, voice commands and braille commands. The list holds only the commands that the device supports.
 
+**Search commands**, at the top of the screen, lists the commands of every category whose names have the words typed. The screen of each command also has **Perform gesture**, which assigns the next gesture made, **Run command**, which closes SandFly settings and runs the command in the app shown before, and **Add to SandFly menu** or **Remove from SandFly menu**.
+
 ### SandFly menu made of commands
 
 In TalkBack, the menu has a fixed list of items that you turn on or off. In SandFly, the SandFly menu is a list of commands and submenus. In **SandFly menu**, **Add command** lists every command by category, and **Add submenu** adds a submenu, which can hold commands and more submenus, nested up to 12 levels. Under **Current**, each item has **Move up**, **Move down**, **Move to** and **Remove**, and submenus have **Open**, **Rename** and **Delete**. **Move to** moves an item to the end of another menu or submenu. **Reset to default** restores the default items and order. In TalkBack, the menu settings are in **Edit menus** > **Customize TalkBack menu**.
@@ -615,8 +618,8 @@ Handwriting is recognized on the phone by Google ML Kit, in the language of the 
 
 SandFly adds these commands, which you can assign to gestures, keyboard shortcuts and menus. None has a gesture by default. Commands for typing are in [Editing commands](#editing-commands).
 
-- **Open app**: a category with one command for each installed app. The command opens the app as its home screen icon does.
-- **App shortcuts**: a category that lists the shortcuts that touching and holding an app icon on the home screen shows, such as the cart of a shopping app or a new message, named "App: Shortcut". The list has the static shortcuts of each home screen app. Shortcuts that an app adds while it runs can be read only by the default launcher, so they aren't listed. **Gestures** > **App shortcuts** > **Add app shortcut** lists the create shortcut activities of apps, which launchers use to add shortcuts such as a MacroDroid macro or a contact to the home screen; the shortcut made there is added to the list, and can be renamed or deleted on that screen. SandFly opens only shortcuts that start an exported activity of another app, not one protected by a permission that the app of the shortcut doesn't have. When a shortcut can't be opened, SandFly announces "Could not open app shortcut".
+- **Open app**: a category with one command for each installed app, named **Open** and the name of the app. The command opens the app as its home screen icon does.
+- **App shortcuts**: a category that lists the shortcuts that touching and holding an app icon on the home screen shows, such as the cart of a shopping app or a new message, named "App: Shortcut". The list has the static shortcuts of each home screen app. Shortcuts that an app adds while it runs, such as recent conversations, and shortcuts that only the home screen app may open are listed from Android 12 with Shizuku started through adb or wireless debugging, or with root. A command list reads them each time it opens. **Gestures** > **App shortcuts** > **Add app shortcut** lists the create shortcut activities of apps, which launchers use to add shortcuts such as a MacroDroid macro or a contact to the home screen; the shortcut made there is added to the list, and can be renamed or deleted on that screen. SandFly opens only shortcuts that start an exported activity of another app, not one protected by a permission that the app of the shortcut doesn't have. When a shortcut can't be opened, SandFly announces "Could not open app shortcut".
 - **Accessibility shortcuts**: a category that lists the features that Android accessibility shortcuts can run, such as Reading mode or the Guided Vision of Gemini, without the feature taking one of those shortcuts. A feature that is an accessibility service needs Shizuku or root. A service that only turns on and off is turned on or off. One that opens, such as Reading mode, is turned on if it's off and opened through one of your accessibility shortcuts that has it; when none has it, SandFly puts it in the volume keys shortcut for the moment it takes, and sets that shortcut back as it was, also after SandFly is stopped in that moment.
 - **App tiles** and **System tiles**: categories that activate quick settings tiles. **App tiles** lists the tiles of installed apps. SandFly clicks such a tile in the system quick settings, which it opens and closes; with Shizuku or root, it first adds the tile to the system quick settings when it isn't there, and clicks it through Shizuku when it isn't found there. **System tiles** lists the tiles that **Add system tile** in the quick settings panel settings found last. With Shizuku or root, **Add system tile** gives SandFly DUMP and usage access and reads the tiles from the system; without them, or when the system gives no tiles, it looks through the system quick settings. While SandFly has DUMP and usage access, it reads the tiles again when it starts. A system tile that SandFly has a control for, such as Wi-Fi, Hotspot or the sound mode, is that control, named as in SandFly's quick settings panel, and changes it through Android or Shizuku. Without Shizuku, a tile command that needs it announces "Shizuku not running". Other system tiles, such as screen recording, are activated in the system quick settings, which SandFly opens and closes.
 - **Lock screen**, **Power menu** and **Take screenshot**, in **System actions**.
@@ -629,7 +632,7 @@ SandFly adds these commands, which you can assign to gestures, keyboard shortcut
 - **Type an app's name in braille to open it**, in **System actions**: see [Braille commands](#braille-commands).
 - **Increase media volume** and **Decrease media volume**, in **Media and volume**, change the media volume a step and speak the new volume.
 - **Scroll to top** and **Scroll to bottom**, in **Scrolling**, scroll the list that focus is in to its start or end a page at a time, then focus its first or last item. In a list that doesn't scroll, such as a short settings screen, they focus its first or last item. Outside a list, they use the first list on screen, or the first or last item on screen when there is none. A touch, gesture or key stops the scroll. Not on watches.
-- **Refresh**, in **Scrolling**, scrolls the list that focus is in to its top and pulls it down, which refreshes it in most apps. **Scroll back** and **Scroll up** pull a list down too when it is already at its top, as scrolling with two fingers does. SandFly sends the pull as a swipe that goes to the app as it is, while your own touches are still explored, so it needs Android 13 or later. The same kind of swipe is sent for Home on the lock screen in the VoiceOver gesture layout, a two-finger swipe up that unlocks the phone or shows the PIN, pattern or password, as Home does on an iPhone, and, while SandFly handles two-finger swipes, for the gesture for **Scroll up**, a two-finger swipe up by default: on the lock screen it sends a two-finger swipe up, and on the home screen a one-finger swipe up, which opens the apps list. A two-finger swipe up assigned another command runs that command there.
+- **Refresh**, in **Scrolling**, scrolls the list that focus is in to its top and pulls it down, which refreshes it in most apps. **Scroll back** and **Scroll down** pull a list down too when it is already at its top, as scrolling with two fingers does. SandFly sends the pull as a swipe that goes to the app as it is, while your own touches are still explored, so it needs Android 13 or later. The same kind of swipe is sent for Home on the lock screen in the VoiceOver gesture layout, a two-finger swipe up that unlocks the phone or shows the PIN, pattern or password, as Home does on an iPhone, and, while SandFly handles two-finger swipes, for the gesture for **Scroll up**, a two-finger swipe up by default: on the lock screen it sends a two-finger swipe up, and on the home screen a one-finger swipe up, which opens the apps list. A two-finger swipe up assigned another command runs that command there.
 - **System quick settings**, **System notification shade** and **System overview**, in **System actions**, open the quick settings, notification shade and overview of the system while **Use SandFly's quick settings**, **Use SandFly's notification list** or **Use SandFly's overview** is on.
 - **Read from focused item by reading control**, in **Reading**, reads from the focused item, and then only the items of the selected reading control, such as each heading or each link.
 - **Speak position** and **Speak coordinates**, in **Reading**. **Speak position** says the position in a list or table, the cursor in text, such as "Character 120 of 800, paragraph 2 of 5, 15%", and how far the view around the focused item is scrolled, such as "Scroll position 40%".
@@ -647,7 +650,7 @@ For the speech settings, see the user guide chapter [Speech](docs/user-guide/en/
 
 ### Speech settings
 
-In TalkBack, **Text-to-speech** opens the system speech settings of Android. SandFly has its own **Speech** screen. On it, **Text-to-speech engine** chooses an engine for SandFly apart from the default engine of Android, and sliders set **Speech rate**, from 10% to 600%, **Speech pitch** and **Speech volume**. **System text-to-speech settings** opens the system settings. The screen also holds the settings in the following sections, in the groups **Voice**, **Languages**, **Pronunciation**, **Stopping speech** and **Other apps**.
+In TalkBack, **Text-to-speech** opens the system speech settings of Android. SandFly has its own **Speech** screen. On it, **Text-to-speech engine** chooses an engine for SandFly apart from the default engine of Android, and sliders set **Speech rate**, from 10% to 600%, **Speech pitch** and **Speech volume**. **Speech rate step** sets how much the rate changes at a time with the **Speech rate** sliders, the **Speech rate** reading control and the speech rate commands: **10% of the rate**, the default, or **1%**, **2%**, **5%**, **10%** or **20%**. **System text-to-speech settings** opens the system settings. The screen also holds the settings in the following sections, in the groups **Voice**, **Languages**, **Pronunciation**, **Stopping speech** and **Other apps**.
 
 Some engines play their audio themselves, such as engines that pass text on to other engines. SandFly detects them and plays their speech the usual way instead of through low-latency audio.
 
@@ -777,7 +780,7 @@ TalkBack says that an item has actions only in its usage hint. SandFly also has:
 - **Verbosity** > **Speak Actions available**: says "Actions available" after an item with actions of its app, with usage hints on or off. With usage hints on, the hint then gives only the gesture that shows the actions, such as "Use tap with 2 fingers to view actions". Off by default.
 - The **Actions available** sound, two short rising tones. **Sound and vibration** > **Actions available sound** turns it **Off** or plays it **When the item gets focus**, after the focus sound, which is the default, or **After the item is spoken**. It has a switch in **Individual sounds and vibrations**, a sound theme can replace it, and a theme can give it a vibration; it has none of its own.
 
-Both are for items with custom actions of their app, such as Reply and Forward on a chat message. Android's actions, such as activating, long pressing, scrolling and expanding, don't count, so an ordinary button has neither. Keys of on-screen keyboards don't count either.
+Both are for items with custom actions of their app, such as Reply and Forward on a chat message. Standard Android actions, such as activating, long pressing, scrolling and expanding, don't count, so an ordinary button has neither. Keys of on-screen keyboards don't count either.
 
 ### Order of item details
 
@@ -826,7 +829,7 @@ With **Verbosity** > **Always speak number of list items** off, the default, San
 Some apps and keyboards have their own text-to-speech output, such as an assistant that plays its answer as speech while it moves accessibility focus to each new piece of text, or a keyboard that speaks its keys. TalkBack speaks the same content at the same time. The settings in **Verbosity** > **Apps with their own speech** leave this speech out. Only speech is left out: focus still moves, and sounds and vibrations still play. SandFly screens are always spoken.
 
 - **Speak only focus moved by the user**: **Off**, the default, **In all apps**, or **In chosen apps**, with the apps listed in **Chosen apps**. While it applies, SandFly speaks focus that you move by touch, gestures, keys, a braille display or commands, and doesn't speak focus that the app moves, announcements, live region changes, window names or window change announcements. Focus that SandFly moves after a window changes, after a scroll, or to follow input focus counts as moved by the app, including input focus that an app moves when you press Tab or another key that the app handles. The setting is also a reading control, and a command that turns it off, or back on with **In chosen apps** when there are chosen apps and **In all apps** otherwise.
-- **Speak only focus moved by the user while an assistant or call plays audio**: does the same in all apps while another app plays audio as an assistant or a call. Focus that you move is still spoken during calls. When SandFly speech uses the call volume, its own audio can't be told apart from the call audio of an app, so an app call counts only while Android is in call mode. Off by default.
+- **Speak only focus moved by the user while an assistant or call plays audio**: does the same in all apps while another app plays audio as an assistant or a call, and while an assistant window, such as Gemini over an app or the lock screen, is shown. The screen-on and unlock readouts are left out then too, and speech stops when an assistant window opens. Focus that you move is still spoken during calls. When SandFly speech uses the call volume, its own audio can't be told apart from the call audio of an app, so an app call counts only while Android is in call mode. Off by default.
 - **Keyboards with their own speech**: while a keyboard in this list is shown, SandFly doesn't speak its keys, the text typed or deleted, or the cursor moving in the edit field. Gestures and commands still work, and moving through text with reading controls is still spoken.
 
 ### Screen on and off announcements
@@ -878,7 +881,7 @@ To turn off one sound or one vibration and keep the rest, go to **Sound and vibr
 
 A sound theme is a set of sounds and vibrations that replace the built-in ones, with control sound and 3D audio settings of its own. You can install as many themes as you like and switch between them in **Sound and vibration** > **Sound themes**. **Install a theme** has **From a file**, **From a link**, including a link to a GitHub repository that contains a theme, and **From a source**, a list of repositories on GitHub, GitLab, Codeberg, Gitea or Bitbucket that starts with the SandFly themes repository. You can also open or share a theme file, or a link to one, with SandFly from another app. On watches, themes install only from a link.
 
-To replace single sounds with your own, open **Sounds** under the settings of the theme in use. **Create new theme** makes a theme, and **Save as a theme file** saves a theme to share. For the theme file format, see [Sound themes](themes.md).
+To replace single sounds with your own, open **Sounds** under the settings of the theme in use. **Choose from folder**, in the dialog of each sound, lists the sound files and subfolders of a folder and plays the file in focus. **Create new theme** makes a theme, and **Save as a theme file** saves a theme to share. For the theme file format, see [Sound themes](themes.md).
 
 ### Control sounds and vibrations
 
@@ -894,7 +897,7 @@ Each theme has its own **Still say the kind of control** setting, on by default 
 
 Each control sound comes from where the element is on the screen: from the left for elements on the left, and from higher up for elements near the top. With headphones, the sounds play in 3D, using measurements of how a real head receives sound from each direction (the MIT Media Lab KEMAR measurements, by Bill Gardner and Keith Martin). On the phone speaker, the sounds move only between left and right.
 
-**3D audio**, under the settings of each theme, is **With headphones**, the default, **Always**, or **Never, only left and right**. With **With headphones**, on Android 13 and later, SandFly uses 3D when its audio plays on wired or USB headphones, a hearing aid, a Bluetooth media device or a Bluetooth LE headset. Bluetooth LE speakers, broadcasts and call audio don't count. On earlier versions, any connected headphones count.
+**3D audio**, under the settings of each theme, is **With headphones**, the default, **Always**, **Never, only left and right**, or **With headphones, centred otherwise**, which plays 3D audio with headphones and plays the sounds from the centre on other outputs. With **With headphones**, on Android 13 and later, SandFly uses 3D when its audio plays on wired or USB headphones, a hearing aid, a Bluetooth media device or a Bluetooth LE headset. Bluetooth LE speakers, broadcasts and call audio don't count. On earlier versions, any connected headphones count.
 
 ### Navigation sounds
 
@@ -990,7 +993,7 @@ The speech of an app, such as a screen change, doesn't cut off a notification be
 
 ### SandFly notification list
 
-With **Notifications** > **Use SandFly's notification list** on, the **Notifications** command opens a SandFly list instead of the notification shade of the system, which some phones, such as Samsung phones with many notifications, redraw so often that swiping through it is slow. The list shows each notification with its actions and reply field, groups as one item that shows its notifications when you double-tap it, and **Playing** or **Paused** for media. Text longer than about 160 characters is cut, and the **Show all** action reads the whole text. **Dismiss** and **Clear all** work as in the shade, and **Quick settings** opens the quick settings.
+With **Notifications** > **Use SandFly's notification list** on, the **Notifications** command opens a SandFly list instead of the notification shade of the system, which some phones, such as Samsung phones with many notifications, redraw so often that swiping through it is slow. The list shows each notification with its actions and reply field, groups as one item that shows its notifications when you double-tap it, and **Playing** or **Paused** for media. A notification without text is read with the text of its custom layout, or else its sub text, info text or summary text. Text longer than about 160 characters is cut, and the **Show all** action reads the whole text. **Dismiss** and **Clear all** work as in the shade, and **Quick settings** opens the quick settings.
 
 - **List notifications newest first, without groups**: each notification is an item of its own, newest first. Off by default.
 - **Leave media players out of the notification list**: also leaves them out of the notification count spoken when the screen turns on. Off by default.
@@ -1064,9 +1067,9 @@ With **Quick settings** > **Use SandFly's quick settings** on, the **Quick Setti
 
 - **Add control** lists the SandFly controls: Wi-Fi, Bluetooth, mobile data, hotspot, airplane mode, data saver, Do Not Disturb, sound mode, flashlight, flashlight brightness, location, auto-rotate, battery saver, dark theme, Night Light, Extra dim, color inversion, color correction, NFC, microphone access, camera access, brightness, adaptive brightness, screen timeout, font size, display size, media, media output, the media, call, ring, notification, alarm, accessibility and system volumes, next alarm, battery, Settings and the power menu. Controls that the phone doesn't have aren't listed.
 - **Add app tile** lists the tiles that installed apps offer.
-- **Add system tile** lists the tiles of the system. A system tile that SandFly has a control for, such as Hotspot, is added as that control.
+- **Add system tile** lists the tiles of the system. With Shizuku or root, SandFly gives itself DUMP and usage access and reads the list from the system; otherwise it looks through the quick settings of the system. A system tile that SandFly has a control for, such as Hotspot, is added as that control.
 
-Android lets only the system and the shell change some settings, and only the system run tiles. With Shizuku or root, SandFly turns Wi-Fi, Bluetooth, mobile data, the hotspot, airplane mode, location, NFC, battery saver, dark theme, data saver, and microphone and camera access on and off itself, runs app tiles, and grants itself the permissions it needs for the other controls. Without them, those switches open the settings of the system. System tiles, and app tiles without Shizuku or root, work only while they are in the quick settings of the system: SandFly opens the quick settings, activates the tile and closes them without reading them, and then speaks the new state of the tile.
+Android lets only the system and the shell change some settings, and only the system run tiles. With Shizuku or root, SandFly turns Wi-Fi, Bluetooth, mobile data, the hotspot, airplane mode, location, NFC, battery saver, dark theme, data saver, and microphone and camera access on and off itself, runs app tiles, and grants itself the permissions it needs for the other controls. Without them, those switches open the settings of the system. SandFly activates system tiles and app tiles in the quick settings of the system: it opens the quick settings, activates the tile and closes them without reading them, and then speaks the new state of the tile. Without Shizuku or root, a tile works only while it is in the quick settings of the system. With them, SandFly first adds an app tile there when it isn't there, and clicks it through Shizuku when it isn't found there.
 
 ## Typing
 
@@ -1210,6 +1213,7 @@ TalkBack has a default keymap and a classic keymap. For the keymaps and keyboard
 - **JAWS keymap**: the desktop keystrokes of JAWS, with its laptop keys for clicks and cursors.
 - **Orca keymap**: the laptop layout of Orca.
 - **Keyboard phone keymap** and **Keyboard phone single-key keymap**, for phones with a built-in keyboard. See [Keyboard phones](#keyboard-phones).
+- **BlackBerry keymap**: keys similar to those of the BlackBerry 10 Screen Reader, for keyboard phones. BlackBerry mode chooses it on keyboard phones.
 
 Each keymap keeps its own shortcuts, its own SandFly key and its own arrow key navigation settings. **Reset the keymap** gives every shortcut of the keymap in use its default keys again.
 
@@ -1254,6 +1258,12 @@ In the NVDA, JAWS and Orca keymaps, and keymaps copied from them, Down Arrow and
 
 The **Object navigation** category moves SandFly focus through the items as the app arranges them, including containers that SandFly focus otherwise skips. The **Screen review** category has a review cursor that reads the text on screen by line, word and character as it is laid out, without moving SandFly focus, and clicks or long clicks at its position. **Recognize text on screen** recognizes the text in a screenshot of the screen, including text that apps don't report, and shows it to review; it needs Android 11 or later. These commands have shortcuts in the NVDA, JAWS and Orca keymaps.
 
+In the NVDA keymap, P and Shift + P move by paragraph in browse mode, besides Ctrl + Down Arrow and Ctrl + Up Arrow, and SandFly key + F9 starts or ends selection mode.
+
+### Fast search
+
+In browse mode, **Keyboard shortcuts** > **Fast search** > **Fast search key**, Off by default, with a letter or digit moves to the next item that starts with it; with Shift too, it moves to the previous one. **Wrap around**, on by default, continues from the other end of the screen.
+
 ### Keys left to apps
 
 These commands, in the **Activation** category, leave keys to the app:
@@ -1264,7 +1274,7 @@ These commands, in the **Activation** category, leave keys to the app:
 
 ### Keyboard practice
 
-**Turn keyboard practice on or off**, in the **SandFly** category, **Keyboard shortcuts** > **Keyboard practice** and **Help & feedback** > **Keyboard practice** turn on keyboard practice, as NVDA's input help: SandFly says each key pressed, with the modifier keys held, and the command its keys run in the keymap in use, and runs nothing; no key reaches the app. The SandFly key pressed alone is also said as the SandFly key. Keys pressed twice, keys held down, two keys in a row and arrow key navigation are said with their commands. The shortcut again, Back or Escape turns it off. Its default shortcut is the keyboard help key of each computer screen reader keymap: SandFly key + K in the VoiceOver keymap, SandFly key + 1 in the NVDA and JAWS keymaps and SandFly key + H in the Orca keymap; in the keyboard phone keymaps it is SandFly key + Shift + K.
+**Turn keyboard practice on or off**, in the **SandFly** category, **Keyboard shortcuts** > **Keyboard practice** and **Help & feedback** > **Keyboard practice** turn on keyboard practice, like input help in NVDA: SandFly says each key pressed, with the modifier keys held, and the command its keys run in the keymap in use, and runs nothing; no key reaches the app. The SandFly key pressed alone is also said as the SandFly key. Keys pressed twice, keys held down, two keys in a row and arrow key navigation are said with their commands. The shortcut again, Back or Escape turns it off. Its default shortcut is the keyboard help key of each computer screen reader keymap: SandFly key + K in the VoiceOver keymap, SandFly key + 1 in the NVDA and JAWS keymaps and SandFly key + H in the Orca keymap; in the keyboard phone keymaps it is SandFly key + Shift + K.
 
 ### Hold a touch on the focused item
 
@@ -1272,23 +1282,23 @@ These commands, in the **Activation** category, leave keys to the app:
 
 ### Keyboard phones
 
-On phones with a built-in keyboard that has no Ctrl, Meta or arrow keys, such as the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25, SandFly uses the **Keyboard phone keymap**. Its most used shortcuts are presses of keys that typing doesn't use, such as the SandFly key pressed alone for the next item and Alt pressed twice to play or pause media and answer calls. The **Keyboard phone single-key keymap** runs commands with single keys outside text fields, such as Space for the next item and H for the next heading. Shortcuts can also be a modifier key pressed alone, keys pressed twice, or keys held down. In both keymaps, Enter after SandFly focus moved activates the item, and arrow key navigation is on for the arrow keys that a trackpad sends. SandFly chooses a SandFly key that typing on the phone doesn't need, such as Right Shift on the Zinwa Q25.
+On phones with a built-in keyboard that has no Ctrl, Meta or arrow keys, such as the Unihertz Titan phones, the BlackBerry KEYone, KEY2 and KEY2 LE, and Zinwa phones such as the Q25, SandFly uses the **Keyboard phone keymap**. Its most used shortcuts are presses of keys that typing doesn't use, such as the SandFly key pressed alone for the next item and Alt pressed twice to play or pause media and answer calls. The **Keyboard phone single-key keymap** runs commands with single keys outside text fields, such as Space for the next item and H for the next heading. Shortcuts can also be a modifier key pressed alone, keys pressed twice, or keys held down. In the keyboard phone single-key keymap, the SandFly key pressed twice turns browse mode on or off, and letters then move by element as in the SandFly keymap. In the keyboard phone keymaps, Enter after SandFly focus moved activates the item, and arrow key navigation is on for the arrow keys that a trackpad sends. SandFly chooses a SandFly key that typing on the phone doesn't need, such as Right Shift on the Zinwa Q25.
 
 While a physical keyboard is connected, **Typing** > **Physical keyboard** has:
 
-- **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, letter keys press the buttons of the lock screen PIN pad, the call keypad and calculators. On by default, shown only for such keyboards.
-- **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter type a new line. Off by default.
-- **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters** and **Android physical keyboard settings**.
+- **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, letter keys press the buttons of the lock screen PIN pad, the call keypad and calculators. On the lock screen, digit keys also press the PIN pad buttons, and a letter or digit pressed before the PIN pad shows opens it, or unlocks where no PIN is needed. On by default, shown only for such keyboards.
+- **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter type a new line. Off by default. The Send key of a keyboard phone, such as the green call key of the Zinwa Q25, presses the Send button in the same apps whether the setting is on or off, also outside the message field.
+- **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters**, the settings in [Auto-correct and word suggestions](#auto-correct-and-word-suggestions) and **Android physical keyboard settings**.
 
 ### SandFly keyboard
 
-The SandFly keyboard is an input method for physical keyboards that shows no keys on the screen. Keys type as they do without it. It adds exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places; held keys that type the Alt character or the capital letter of the key, set with **Typing** > **Physical keyboard** > **Held keys type**; **Search emoji** and **Choose a symbol**, which list characters by name while you type; double presses, set in **Typing** > **Physical keyboard** > **Double-press characters**, such as G pressed twice for ğ, and with **Double space types a period** on, a period for Space pressed twice after a word; and **Turn editing mode on or off**, in which single keys move the cursor and select, copy, cut and paste. To turn it on, go to **Typing** > **Physical keyboard** > **SandFly keyboard**. Not on watches and TVs.
+The SandFly keyboard is an input method for physical keyboards that shows no keys on the screen. Keys type as they do without it. It adds exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places; held keys that type the Alt character or the capital letter of the key, set with **Typing** > **Physical keyboard** > **Held keys type**; **Search emoji** and **Choose a symbol**, which list characters by name while you type; Shift pressed and released before a key, which types that key with Shift, as on BlackBerry keyboards; double presses, set in **Typing** > **Physical keyboard** > **Double-press characters**, such as G pressed twice for ğ, and with **Double space types a period** on, a period for Space pressed twice after a word; and **Turn editing mode on or off**, in which single keys move the cursor and select, copy, cut and paste. To turn it on, go to **Typing** > **Physical keyboard** > **SandFly keyboard**. Not on watches and TVs.
 
 ### Auto-correct and word suggestions
 
 The SandFly keyboard can correct and complete the word being typed, with word lists for English (US and UK), German, Spanish, French, Portuguese (Brazil and Portugal), Hungarian, Turkish, Russian, Ukrainian and Arabic. Both are off by default, in **Typing** > **Physical keyboard**:
 
-- **Auto-correct**: Space, punctuation or Enter after a misspelled word put its correction in its place, taking neighbouring keys of the keyboard's layout, doubled, missing and swapped letters, apostrophes and accents into account. Backspace straight after a correction undoes it, and the word isn't corrected again.
+- **Auto-correct**: Space, punctuation or Enter after a misspelled word put its correction in its place, taking neighbouring keys of the keyboard layout, doubled, missing and swapped letters, apostrophes and accents into account. Backspace straight after a correction undoes it, and the word isn't corrected again.
 - **Word suggestions**: while a word is typed, Up Arrow and Down Arrow, which the Zinwa Q25's trackpad sends, go through corrections and completions; Enter or a trackpad click types one with a space, and Space or punctuation types it with that character. Without a word being typed, the arrows move in the text.
 - **Speak suggestion**: the correction Space would type ("receive, correction"), or else the first suggestion, said at a lower pitch while a word is typed: **Immediately**, right after the keyboard echo of each key, or after typing pauses for 0.25 to 3 seconds (1 second by default), or **Off**. The next key stops it.
 - **Enter types the spoken suggestion**, off by default: Enter, or a Zinwa Q25 trackpad click, which sends Enter, types the correction or suggestion just spoken; Down Arrow starts the list after it. In the list, a trackpad swipe moves once.
@@ -1327,6 +1337,10 @@ Hold dots 4, 5 and 6 and swipe right to search for an emoji. Type words of its n
 ### Mongolian and Romanian braille
 
 The braille languages include Mongolian, uncontracted and contracted, from the liblouis tables, and **Romanian**, 6-dot uncontracted braille, besides **Romanian 8-dot Computer Braille**. Both are on the braille keyboard and on braille displays.
+
+### Indonesian braille
+
+**Indonesian**, uncontracted and Tusing contracted, is on the braille keyboard and on braille displays.
 
 ### Unicode braille
 
@@ -1466,7 +1480,7 @@ With **Volume keys** > **Volume keys adjust sliders** on, the volume keys change
 
 **Volume keys** > **Volume up double press**, **Volume up triple press**, **Volume up long press**, and the same three for volume down, each run a command from the list of commands for gestures. All are unassigned by default. A key with no assigned press changes the volume at once, as usual. When a key has a double or triple press assigned, a single press changes the volume 0.3 seconds after the key is released, once no further press follows. When a key has a long press assigned, holding it runs the command instead of changing the volume repeatedly. **Volume keys** > **Volume key long press duration** sets how long a key is held for its long press: **System default**, or from 0.3 to 1 second.
 
-The presses don't run commands, and the keys change the volume as usual, while the screen is off, except on an always-on display that shows the lock screen; during a phone call or while an app plays call audio; while a finger is on the screen; during continuous reading; and when the key adjusts a slider or moves the cursor. Pressing both volume keys together runs no command, so that the accessibility shortcut still works. While a phone call rings, only a volume key with **Answer call** or **End call** assigned to one of its presses runs commands. A press kept from Android changes the volume that Android chooses for the key: that of the media session playing, including the volume of a cast session, when SandFly has notification access, or else that of the media playing or the ringer.
+The presses don't run commands, and the keys change the volume as usual, while the screen is off, except on an always-on display that shows the lock screen; during a phone call or while an app plays call audio; while a finger is on the screen; and during continuous reading. When a key that adjusts sliders or moves the cursor has a command for one of its presses, its presses run their commands, and a press without a command adjusts the slider or moves the cursor. Pressing both volume keys together runs no command, so that the accessibility shortcut still works. While a phone call rings, only a volume key with **Answer call** or **End call** assigned to one of its presses runs commands. A press kept from Android changes the volume that Android chooses for the key: that of the media session playing, including the volume of a cast session, when SandFly has notification access, or else that of the media playing or the ringer.
 
 ### Every volume key press handled by SandFly
 
@@ -1494,6 +1508,10 @@ Android doesn't pass the volume keys to screen readers while the display is off.
 
 On Samsung phones, One UI changes the accessibility volume with the volume keys while speech or a sound plays and for 1 second after. SandFly changes the media or ring volume instead, as One UI does when no speech plays. With **Volume keys** > **Volume keys change speech volume while speaking** on, presses while speech plays change the accessibility volume; presses in the 1.5 seconds after it stops still change the media or ring volume. The setting is shown only on Samsung phones, and is off by default.
 
+### Mute key
+
+On phones with a mute key, such as the Zinwa Q25, **Volume keys** > **Hold mute key to dictate in text fields**, on by default, runs **Dictate** while the mute key is held in a text field. **Mute key press**, unassigned by default, runs a command for a press elsewhere.
+
 ### Proximity sensor
 
 TalkBack stops speech when something covers the proximity sensor. SandFly doesn't, by default. To turn this on, turn on **Speech** > **Stopping speech** > **Cover proximity sensor to stop speech**. Other features that use the sensors are back tap, the **Shake** gesture, touch lock while the proximity sensor is covered, shake and wave to stop a notification, and **Speaker when away from your ear**.
@@ -1514,6 +1532,7 @@ SandFly reads what you say in this order: a custom voice command, the name of an
 - Call: "call", "phone", "ring" or "dial", and a contact name or phone number.
 - Send a message: such as "message Sam saying I'm on my way" or "send a message to Sam on WhatsApp saying hello". With SMS or WhatsApp, SandFly opens the conversation with the text, reads it back, and presses **Send** after you answer "yes".
 - Describe: "describe the screen", "describe this image", "copy it", and "send it to Sam", which sends the description from the command before.
+- Text in a text field: such as "next 3 words", "end of line", "delete next five words", "copy previous sentence" or "select crocodile", which move the cursor, or select, copy, cut or delete, by a number of characters, words, sentences, lines or paragraphs, to the start or end of one, or a text in the field.
 
 Words such as "please" and "can you" are left out.
 
@@ -1523,7 +1542,7 @@ A voice command can hold several commands, joined by "then", "and then", "after 
 
 ### Voice editing
 
-**Start voice editing**, a **Text editing** command without a default gesture, records voice commands for the focused text field one after another until it runs again, a stop phrase such as "stop editing" is said, focus leaves the field, or **Voice commands** > **Voice editing time limit** passes: 5, 10, 20 or 30 minutes, 10 by default. It runs only **Text editing** and **Navigate by text** commands, "type" and a text, the text editing voice commands of TalkBack, and custom voice commands for these commands or for macros. Speech is silenced while SandFly records, and recording starts again after SandFly's speech of the result ends. TalkBack records one voice command per gesture.
+**Start voice editing**, a **Text editing** command without a default gesture, records voice commands for the focused text field one after another until it runs again, a stop phrase such as "stop editing" is said, focus leaves the field, or **Voice commands** > **Voice editing time limit** passes: 5, 10, 20 or 30 minutes, 10 by default. It runs only **Text editing** and **Navigate by text** commands, "type" and a text, the phrases for text in a text field, the text editing voice commands of TalkBack, and custom voice commands for these commands or for macros. Speech is silenced while SandFly records, and recording starts again after SandFly finishes speaking the result. TalkBack records one voice command per gesture.
 
 ### Voice commands understood with AI
 
@@ -1739,7 +1758,7 @@ As the app modules and global plugins of NVDA do, scripts change how SandFly wor
 - Use the internet and the clipboard, show dialogs, and keep its own data and settings.
 - With the permission for Java code, call any Java code through LuaJava.
 
-To install a script, go to **Scripts** > **Import script**. You can also share a script file, or an `https` link to one, with SandFly, or open a script file with it, and choose **Install SandFly script**. **Scripts** > **Script sources** lists the scripts in repositories on GitHub, GitLab, Codeberg, Gitea or Bitbucket, to install them; the SandFly scripts repository is listed by default. Before it installs or updates a script, SandFly shows where it came from, whether SandFly signed it, the permissions it needs and the commands it adds. **Add the example script** adds a small script to start from.
+To install a script, go to **Scripts** > **Import script**. You can also share a script file, or an `https` link to one, with SandFly, or open a script file with it, and choose **Install SandFly script**. **Scripts** > **Script sources** lists the scripts in repositories on GitHub, GitLab, Codeberg, Gitea or Bitbucket, to install them; the SandFly scripts repository is listed by default. Before it installs or updates a script, SandFly shows where it came from, whether SandFly signed it, the permissions it needs and the commands it adds. **Add the example script** adds a small script to start from. **Scripts** > **New script from code** installs a script entered as code. **View code** and **Edit code**, on the page of a script, show and change its `main.lua`; **Edit code** isn't shown for scripts made in the script builder.
 
 Each script has a page with its switch, a switch for each permission, its commands with their gestures and keys, its settings, its log, **Run earlier** and **Run later**, **Clear stored data** and **Remove**. While a script runs, its gestures and keys come before the gestures and keys of SandFly.
 
@@ -1771,7 +1790,9 @@ In the lessons on Back, Home, recent apps, notifications, screen search and turn
 
 **Contents** lists the lessons, shows which are done, and opens any of them. The tutorial reopens at the lesson you were on, or at the next one if that lesson was done. In a lesson, gestures don't leave it: the tutorial takes Back, Home, recent apps, notifications, quick settings, all apps, the lock screen, the power menu, the accessibility button, opening an app, and opening the tutorial or gesture practice again, and announces what the gesture would have done. It takes turning speech off and pausing SandFly the same way. Back still closes the keyboard and menus. From **Contents**, all of these work, and **Close tutorial** closes the tutorial.
 
-If a physical keyboard is connected the first time SandFly starts, the **SandFly keyboard tutorial** opens instead. It teaches the keyboard shortcuts of your keymap in 15 lessons, including **Keyboard shortcut list**, **Browse mode** and **Keyboard practice**. On a device with a touch screen and a physical keyboard, **SandFly tutorial** offers **Touch tutorial** and **Keyboard tutorial**.
+On a device with a physical keyboard and no touch screen, the **SandFly keyboard tutorial** opens the first time instead. It teaches the keyboard shortcuts of your keymap in 15 lessons, including **Keyboard shortcut list**, **Browse mode** and **Keyboard practice**. On a device with a touch screen and a physical keyboard, **SandFly tutorial** offers **Touch tutorial** and **Keyboard tutorial**.
+
+**Help & feedback** > **Gesture trainer** measures gestures against the limits SandFly uses with your settings, and lists the settings that change those limits. It needs Android 13 or later, and isn't on watches or TVs.
 
 Limitations:
 
@@ -1846,7 +1867,7 @@ Many settings have clearer names, such as **Speak item type** and **Order of ite
 
 ### User guide
 
-**Help & feedback** > **User guide** opens the SandFly User Guide, in the language of SandFly where it is translated, with a table of contents and links between sections. Its source files are in [docs/user-guide](docs/user-guide).
+**Help & feedback** > **User guide** opens the SandFly User Guide, in the language of SandFly where it is translated, with a table of contents and links between sections. Its source files are in [docs/user-guide](docs/user-guide). **Help**, in the app bar of most settings screens, opens the section of the guide about that screen.
 
 ### App icon that opens the settings
 
@@ -1864,7 +1885,7 @@ SandFly doesn't stop on the title of a slider as a separate item when you swipe 
 
 **Help & feedback** > **Send feedback**, also in the SandFly menu, sends a problem report or suggestion to the SandFly developer without a GitHub account. It has three parts:
 
-- **Send feedback**: the form, with **Type of feedback**, **Area**, **Title**, **App where it happens**, **Description**, **Steps to reproduce**, **Email for replies**, **Include device information** and **Include SandFly log**. What you type is kept as a draft until you choose **Send** or **Delete draft**.
+- **New feedback**: the form, with **Type of feedback**, **Area**, **Title**, **App where it happens**, **Description**, **Steps to reproduce**, **Email for replies**, **Include device information** and **Include SandFly log**. What you type is kept as a draft until you choose **Send** or **Delete draft**.
 - **Inbox**: the feedback you sent, each with its status (**Open**, or **Closed**: completed, not planned or duplicate) and the number of replies you haven't read. Open one to read the replies and send your own, with **Your reply** and **Send reply**.
 - **Drafts**: feedback that you started and haven't sent.
 
@@ -1895,6 +1916,8 @@ The **Choose settings profile** command opens a menu with **No settings profile*
 
 A profile can hold the main, braille keyboard and braille display settings, including gestures, keyboard shortcuts, gesture profiles and the gesture profile in use. API keys, the SandFly Pro license, the time of the last update check, installed scripts and their settings, sound theme drafts, and the state of the phone, such as which tutorials and dialogs were shown, aren't in profiles. **Export settings** saves the settings without profiles, and the profiles beside them. **Import settings** replaces the settings, adds the profiles in the file, and applies the profiles in use again. Profiles made before profiles held only their changes become profiles of the settings in which they differ from the profile that was in use.
 
+**Settings profiles** > **BlackBerry mode** makes SandFly work similarly to the BlackBerry 10 Screen Reader. Turning it on opens **Turn on BlackBerry mode?** first. It makes and uses a **BlackBerry mode** profile that sets **BlackBerry gestures**, the **BlackBerry keymap** on keyboard phones, the **BlackBerry** sound theme, and fewer announcements. **Turn BlackBerry mode on or off** and **Quick Tasks** are commands in the **SandFly** category.
+
 ## Updates and installation
 
 For these settings, see the user guide chapter [Updates, Shizuku and root](docs/user-guide/en/24-updates.md).
@@ -1917,7 +1940,7 @@ Without Shizuku or root, the setting can't change the installer; its **Copy comm
 
 ### Shizuku and root
 
-Some features need permissions that Android grants only through adb. With [Shizuku](https://shizuku.rikka.app) running and allowing SandFly, SandFly grants itself these permissions and runs commands that only adb can run. On a rooted device, **Shizuku and root** > **Use root instead of Shizuku**, off by default, runs these commands with `su` as the shell user. The features that use Shizuku or root include **Fix stuck touch exploration**, **Speaker when away from your ear**, **Reset accessibility audio after calls**, **Volume key shortcuts with the screen off** (Shizuku only), the SandFly overview and Alt+Tab, the switches of the SandFly quick settings panel, copies from other apps in the clipboard history, Gboard key vibration, accessibility shortcuts of other services, key presses from scripts and macros, and **Appear installed from Google Play**. Without them, a setting that needs an adb permission shows the adb command, and its **Copy command** action copies it.
+Some features need permissions that Android grants only through adb. With [Shizuku](https://shizuku.rikka.app) running and allowing SandFly, SandFly grants itself these permissions and runs commands that only adb can run. On a rooted device, **Shizuku and root** > **Use root instead of Shizuku**, off by default, runs these commands with `su` as the shell user. The features that use Shizuku or root include **Fix stuck touch exploration**, **Speaker when away from your ear**, **Reset accessibility audio after calls**, **Volume key shortcuts with the screen off** (Shizuku only), the SandFly overview and Alt+Tab, the switches of the SandFly quick settings panel, copies from other apps in the clipboard history, Gboard key vibration, accessibility shortcuts of other services, key presses from scripts and macros, the **App tiles** and **System tiles** commands and **Add system tile**, app shortcuts that apps add while they run, and **Appear installed from Google Play**. Without them, a setting that needs an adb permission shows the adb command, and its **Copy command** action copies it.
 
 ## Android TV
 

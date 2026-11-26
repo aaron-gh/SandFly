@@ -131,7 +131,7 @@ The **System quick settings** command opens the system quick settings even when 
 
 Android lets only the system and the shell change some settings. With Shizuku running, SandFly turns Wi-Fi, Bluetooth, mobile data, the hotspot, airplane mode, location, NFC, battery saver, dark theme, data saver, and microphone and camera access on and off itself, and gives itself the permissions it needs for the other controls. Without Shizuku, these switches open the Android settings for them. See [](#updates).
 
-Tiles of the system, and tiles of apps without Shizuku, work only if they are in the system quick settings. SandFly opens the system quick settings, activates the tile, closes them without reading them, and then says the new state of the tile. SandFly says "<name> isn't in the system's quick settings" when it can't find the tile.
+SandFly activates app tiles and system tiles in the system quick settings: it opens them, activates the tile, closes them without reading them, and then says the new state of the tile. Without Shizuku, a tile works only if it is in the system quick settings, and SandFly says "<name> isn't in the system's quick settings" when it can't find the tile. With Shizuku running, SandFly first adds an app tile to the system quick settings when it isn't there, and activates it through Shizuku when it isn't found there.
 
 #### Choose what the panel shows {#display-quick-settings-edit}
 
@@ -139,7 +139,7 @@ Go to **Quick settings** > **Quick settings panel**, or select **Edit** in the p
 
 - **Add control**: lists the controls of SandFly that aren't in the panel: Wi-Fi, Bluetooth, mobile data, hotspot, airplane mode, data saver, Do Not Disturb, sound mode, flashlight, flashlight brightness, location, auto-rotate, battery saver, dark theme, Night Light, Extra dim, color inversion, color correction, NFC, microphone access, camera access, brightness, adaptive brightness, screen timeout, font size, display size, media, media output, the media, call, ring, notification, alarm, accessibility and system volumes, next alarm, battery, Settings and power menu. Controls that the phone doesn't have aren't listed.
 - **Add app tile**: lists the quick settings tiles that installed apps offer.
-- **Add system tile**: lists the tiles of the system quick settings. A system tile that SandFly has a control for, such as Hotspot, is added as that control. With Shizuku running, SandFly reads the list from the system; otherwise it looks through the system quick settings, which takes a few seconds.
+- **Add system tile**: lists the tiles of the system quick settings. A system tile that SandFly has a control for, such as Hotspot, is added as that control. With Shizuku running, SandFly gives itself DUMP and usage access and reads the list from the system; otherwise it looks through the system quick settings, which takes a few seconds.
 - **Columns**: the number of columns in the grid, from 1 to 4. The default is 2.
 
 To move or remove an item, double-tap it, or use its actions:

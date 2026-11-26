@@ -100,6 +100,8 @@ Browse mode changes what the keys of a physical keyboard and the commands of a b
 
 To turn browse mode on or off, use the command **Turn browse mode on or off**, in the **Web** category, which you can assign to a gesture. Each keymap also has a keyboard shortcut for it. See [](#keyboards).
 
+In browse mode, the fast search key with a letter or digit moves to the next item that starts with that letter or digit. **Keyboard shortcuts** > **Fast search** > **Fast search key** chooses the key; it is off by default. See [](#keyboards-fast-search).
+
 These settings are on the **Navigation** screen:
 
 - **Smart browse mode**: turns browse mode on or off for the focused item. On by default. SandFly turns browse mode on when focus moves onto an item in web content, and off on text fields and on controls that use the arrow keys, such as sliders, list boxes, menu bars, menus, tree views, grids, combo boxes and spin buttons. When a keyboard command moves SandFly focus to one of these items, input focus moves there too. When you turn browse mode off yourself in web content, moving focus within the web content doesn't turn it back on. Browse mode is also turned off when input focus moves to a text field or slider in an app.

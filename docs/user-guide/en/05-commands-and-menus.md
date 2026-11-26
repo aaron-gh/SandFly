@@ -32,7 +32,7 @@ The list holds only the commands that the device supports. For example, commands
 - **Image and screen descriptions**: **Take picture and describe**, **Describe image**, **Describe screen**, their **Speak** and **Ask about** versions, **Share image of focused item**, **Share screenshot** and **Report AI response**. With SandFly Pro, also the screen recognition commands. See [](#descriptions).
 - **Live recognition**: a command for each Live recognition mode, and **Stop Live recognition**.
 - **Braille**: **Switch to braille keyboard**, **Braille commands**, **Find text**, braille command profiles, and braille display commands. See [](#braille).
-- **SandFly**: **Pause SandFly**, **Hide or show screen**, **Show the focus indicator**, **Screen search**, gesture and settings profiles, **Gestures for this app**, **Turn arrow key navigation on or off**, **Lock or unlock touch**, **Turn all scripts on or off**, **Script commands**, **Verbosity**, **Turn off SandFly**, **Open tutorial**, **Practice gestures** and **Turn keyboard practice on or off**. With SandFly Pro, also **Start or stop AI agent task**.
+- **SandFly**: **Pause SandFly**, **Hide or show screen**, **Show the focus indicator**, **Screen search**, gesture and settings profiles, **Gestures for this app**, **Quick Tasks**, **Turn BlackBerry mode on or off**, **Turn arrow key navigation on or off**, **Lock or unlock touch**, **Turn all scripts on or off**, **Script commands**, **Verbosity**, **Turn off SandFly**, **Open tutorial**, **Practice gestures** and **Turn keyboard practice on or off**. With SandFly Pro, also **Start or stop AI agent task**.
 - **Developer settings**: **Inspect focused item**, **Copy item details** and **Copy screen tree**. See [](#macros-inspect).
 - **Setting values**: a next value and a previous value command for each reading control that changes a setting, such as **Punctuation: next value**, and commands that turn settings such as **Wrap around** on or off.
 
@@ -43,10 +43,10 @@ These categories list what you add yourself, and are shown only when they have c
 - **Macros**: one command for each macro, **Stop macro**, and **Record a macro**. See [](#macros).
 - **Gesture profiles**, **Braille command profiles** and **Voice profiles**: one command for each profile, which puts it in use.
 - **Reading control lists**: **Next item in** and **Previous item in** a list, for each list. See [](#commands-reading-control-lists).
-- **Open app**: one command for each installed app.
-- **App shortcuts** and **Accessibility shortcuts**: the shortcuts of apps and of other accessibility features. See [](#gestures).
+- **Open app**: one command for each installed app, named **Open** and the name of the app, such as **Open Gmail**.
+- **App shortcuts** and **Accessibility shortcuts**: the shortcuts of apps and of other accessibility features. See [](#gestures-app-shortcuts).
 - **App tiles**: the quick settings tiles of installed apps. SandFly clicks the tile in the system quick settings, which it opens and closes. With Shizuku running, SandFly first adds the tile to the system quick settings when it isn't there, and clicks it through Shizuku when it isn't found there. A tile is named as the system quick settings showed it when SandFly last read them, such as the name of the device that a Bluetooth tile connects.
-- **System tiles**: the tiles of the system quick settings that **Add system tile** in the quick settings panel settings found last. With Shizuku running, **Add system tile** gives SandFly DUMP and usage access and reads the tiles from the system; otherwise it looks through the system quick settings. While SandFly has DUMP and usage access, it reads the tiles again when it starts. A system tile that SandFly has a control for, such as Wi-Fi, Hotspot or the sound mode, is that control, named as in SandFly's quick settings panel; the Internet tile is Wi-Fi. When a control needs Shizuku and Shizuku isn't running, SandFly announces "Shizuku not running". Other system tiles, such as screen recording, are named as the system names them, and are activated in the system quick settings, which SandFly opens and closes; SandFly then announces the new state. See [](#display-quick-settings-edit).
+- **System tiles**: the tiles of the system quick settings that **Add system tile** in the quick settings panel settings found last. With Shizuku running, **Add system tile** gives SandFly DUMP and usage access and reads the tiles from the system; otherwise it looks through the system quick settings. While SandFly has DUMP and usage access, it reads the tiles again when it starts. A system tile that SandFly has a control for, such as Wi-Fi, Hotspot or the sound mode, is that control, named as in the SandFly quick settings panel; the Internet tile is Wi-Fi. When a control needs Shizuku and Shizuku isn't running, SandFly announces "Shizuku not running". Other system tiles, such as screen recording, are named as the system names them, and are activated in the system quick settings, which SandFly opens and closes; SandFly then announces the new state. See [](#display-quick-settings-edit).
 
 #### Speak status {#commands-status}
 
@@ -188,7 +188,7 @@ When you change the reading control or its value with a gesture, SandFly also sh
 
 #### Reading controls you can add {#commands-reading-control-groups}
 
-- **Actions for current item**: **Actions**, **Addresses and numbers**, **Clipboard history** and **Proofread**, which moves between spelling and grammar suggestions.
+- **Actions for current item**: **Actions**, **Addresses and numbers**, **Clipboard history**, **Word suggestions**, which moves through the suggestions for the word typed with the SandFly keyboard, and **Proofread**, which moves between spelling and grammar suggestions. See [](#keyboards-word-suggestions).
 - **Basic navigation**: **Default navigation**, **Windows**, **Containers**, **Screen search**, **Vertical navigation**, **Scroll** and **Wrap around**.
 - **Navigate by text**: **Characters**, **Words**, **Lines**, **Sentences** and **Paragraphs**.
 - **Element navigation**: **Headings**, **Links**, **Controls**, **Landmarks**, **Buttons**, **Checkboxes**, **Radio buttons**, **Edit fields**, **Combo boxes**, **Focusable items**, **Images and videos**, **Lists**, **List items**, **Tables**, **Visited links** and **Unvisited links**.

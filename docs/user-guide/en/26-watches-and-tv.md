@@ -49,6 +49,7 @@ On watches:
 - **New features in SandFly** is named **What's new**.
 - Pause SandFly isn't available, and **Resume SandFly** isn't shown. See [](#pause).
 - **Practice gestures** isn't in **Help & feedback**. Use **Practice gestures** at the top of **Gestures**, which opens the gesture practice of the watch tutorial.
+- **Gesture trainer** and **Keyboard practice** aren't in **Help & feedback**.
 - **Version history** and **Privacy policy** show the address of the page when the watch has no browser.
 
 These features aren't available on watches, and their settings aren't shown: scripts, macros, custom menus, custom reading controls, voice commands, direct touch, back tap, shake, edge and corner gesture settings, the braille keyboard, the handwriting keyboard, the SandFly keyboard, on-device AI, **Use SandFly as the wallpaper**, **Speaker when away from your ear**, **Reset accessibility audio after calls**, **Volume key shortcuts with the screen off**, and **Show instructions for turning off SandFly**.
@@ -95,7 +96,7 @@ SandFly doesn't handle the arrow and select buttons while the on-screen keyboard
 
 On TVs:
 
-- Settings for features that need a touch screen or a phone aren't shown, such as **Gestures**, **Direct touch**, **Status readout**, **Use SandFly's overview**, **Use SandFly's notification list**, **Speaker when away from your ear** and **Image and screen descriptions**. The **SandFly menu** and **Reading controls** settings screens aren't shown either.
+- Settings for features that need a touch screen or a phone aren't shown, such as **Gestures**, **Gesture trainer**, **Direct touch**, **Status readout**, **Use SandFly's overview**, **Use SandFly's notification list**, **Speaker when away from your ear** and **Image and screen descriptions**. The **SandFly menu** and **Reading controls** settings screens aren't shown either.
 - Pause SandFly isn't available, and **Resume SandFly** isn't shown. See [](#pause).
 - The first item in **Help & feedback** opens the TV tutorial where the TV has one. Otherwise it is named **Help**.
 - TVs often don't show notifications, so the update notification may not appear. To update, go to **Updates and installation** > **Check for updates**. See [](#updates-check).
