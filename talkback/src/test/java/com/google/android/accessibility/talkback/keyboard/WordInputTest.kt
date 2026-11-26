@@ -291,6 +291,84 @@ class WordInputTest {
   }
 
   @Test
+  fun enterTypesTheSuggestionSaid() {
+    type("keyboa")
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    assertEquals(listOf("keyboard"), said)
+    assertTrue(input.takesKey(KeyEvent.KEYCODE_ENTER))
+    assertTrue(press(KeyEvent.KEYCODE_ENTER))
+    assertEquals("keyboard ", field.text.toString())
+    // The next Enter is the app's.
+    assertFalse(input.takesKey(KeyEvent.KEYCODE_ENTER))
+    assertFalse(press(KeyEvent.KEYCODE_ENTER))
+  }
+
+  @Test
+  fun enterTypesTheCorrectionSaid() {
+    type("recieve")
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    assertTrue(press(KeyEvent.KEYCODE_ENTER))
+    assertEquals("receive ", field.text.toString())
+  }
+
+  @Test
+  fun enterIsTheAppsBeforeASuggestionIsSaidOrAfterTypingOn() {
+    type("keyboa")
+    assertFalse(input.takesKey(KeyEvent.KEYCODE_ENTER))
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    type("r")
+    assertFalse(input.takesKey(KeyEvent.KEYCODE_ENTER))
+  }
+
+  @Test
+  fun enterTypesTheSuggestionSwitchOff() {
+    prefs.edit {
+      putBoolean(
+        context.getString(R.string.pref_sandfly_keyboard_enter_types_suggestion_key),
+        false,
+      )
+    }
+    type("keyboa")
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    assertFalse(input.takesKey(KeyEvent.KEYCODE_ENTER))
+    assertFalse(press(KeyEvent.KEYCODE_ENTER))
+  }
+
+  @Test
+  fun downAfterTheSuggestionSaidGoesOnToTheNext() {
+    type("keyb")
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    // "key, correction" was said; Down goes to the suggestion after it.
+    val first = said.single().substringBefore(",")
+    val step = input.step(next = true, field, editing = true)!!
+    assertTrue(step, step.endsWith("2 of " + step.substringAfterLast(" of ")))
+    assertFalse(step, step.startsWith(first + ","))
+  }
+
+  @Test
+  fun aTrackpadSwipeMovesOnce() {
+    type("keyb")
+    val down = { time: Long ->
+      KeyEvent(
+        time,
+        time,
+        KeyEvent.ACTION_DOWN,
+        KeyEvent.KEYCODE_DPAD_DOWN,
+        0,
+        0,
+        KeyCharacterMap.VIRTUAL_KEYBOARD,
+        0,
+      )
+    }
+    assertTrue(input.onKeyDown(KeyEvent.KEYCODE_DPAD_DOWN, down(1_000), field))
+    assertTrue(input.onKeyDown(KeyEvent.KEYCODE_DPAD_DOWN, down(1_068), field))
+    assertTrue(input.onKeyDown(KeyEvent.KEYCODE_ENTER, event(KeyEvent.KEYCODE_ENTER), field))
+    // The first suggestion, not the second.
+    val first = WordData.suggester(context, WordLanguage.EN_US)!!.suggestions("keyb").first()
+    assertEquals("$first ", field.text.toString())
+  }
+
+  @Test
   fun pauseOff() {
     prefs.edit {
       putString(context.getString(R.string.pref_sandfly_keyboard_suggestion_pause_key), "0")

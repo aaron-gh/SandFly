@@ -370,7 +370,7 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 - **Held keys type**: what a key held down types with the SandFly keyboard.
 - **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).
 - **Double space types a period**: with the SandFly keyboard, Space pressed twice after a word types a period and a space. Off by default.
-- **Auto-correct**, **Word suggestions**, **Speak suggestion**, **Word list language** and **Delete learned words**: corrections and suggestions for the word being typed with the SandFly keyboard. Both are off by default. See [](#keyboards-word-suggestions).
+- **Auto-correct**, **Word suggestions**, **Speak suggestion**, **Enter types the spoken suggestion**, **Word list language** and **Delete learned words**: corrections and suggestions for the word being typed with the SandFly keyboard. Both are off by default. See [](#keyboards-word-suggestions).
 - **Speak password characters**: with the SandFly keyboard, in password fields, SandFly says each character typed, deleted or passed over instead of "bullet". Off by default. See [](#keyboards-passwords).
 - **Android physical keyboard settings**: opens the physical keyboard settings of Android, such as the keyboard layout.
 
@@ -464,6 +464,10 @@ The SandFly keyboard can correct the word you type and suggest words for it. Bot
 - **Off**: never.
 
 It applies while **Auto-correct** or **Word suggestions** is on.
+
+**Enter types the spoken suggestion**, on by default: after a correction or suggestion is spoken, Enter types it with a space, until you type on or move the cursor. On the Zinwa Q25, a trackpad click sends Enter, so a click types it. A second Enter goes to the app, such as to send a message. Down Arrow then opens the list at the suggestion after the one spoken. With the switch off, Enter goes to the app as before.
+
+A trackpad swipe sends two or more arrow presses; in the list, presses in the same direction less than 0.1 seconds apart move once.
 
 To undo a correction, press Backspace straight after it. SandFly says the word as you typed it, such as "recieve, correction undone", and the word is never corrected again.
 
