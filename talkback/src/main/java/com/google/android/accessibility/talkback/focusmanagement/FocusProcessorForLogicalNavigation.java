@@ -1079,12 +1079,16 @@ public class FocusProcessorForLogicalNavigation {
       // blocked ad slot collapsing, does this. Starting from the window root would send the user
       // back to the top of the page, so carry on from the node nearest where the last navigation
       // started instead.
+      AccessibilityNodeInfoCompat inList =
+          (root != null && isScrollAction(navigationAction)) ? nodeInListForScroll(root) : null;
       AccessibilityNodeInfoCompat nearest =
-          (root == null)
+          (root == null || inList != null)
               ? null
               : TraversalTreeCache.pivotAfterRemoval(
                   root, goesForward(navigationAction), lastFocusedNode());
-      if (nearest != null && nearest.refresh()) {
+      if (inList != null) {
+        pivot = inList;
+      } else if (nearest != null && nearest.refresh()) {
         pivot = nearest;
       } else {
         pivot = root;
@@ -1097,7 +1101,9 @@ public class FocusProcessorForLogicalNavigation {
         LogUtils.i(
             TAG,
             "No focus to move from; starting from %s at %s, %s.",
-            pivot == root ? "the window" : "the node near the last pivot",
+            pivot == root
+                ? "the window"
+                : pivot == inList ? "the last focused node's list" : "the node near the last pivot",
             bounds,
             rowDescription(pivot));
       }
@@ -1149,6 +1155,46 @@ public class FocusProcessorForLogicalNavigation {
   }
 
   /** The node focus was last put on, from the focus history, or null. */
+  /** Whether {@code navigationAction} scrolls a list rather than moving focus. */
+  private static boolean isScrollAction(NavigationAction navigationAction) {
+    return switch (navigationAction.actionType) {
+      case NavigationAction.SCROLL_FORWARD,
+          NavigationAction.SCROLL_BACKWARD,
+          NavigationAction.SCROLL_UP,
+          NavigationAction.SCROLL_DOWN,
+          NavigationAction.SCROLL_LEFT,
+          NavigationAction.SCROLL_RIGHT ->
+          true;
+      default -> false;
+    };
+  }
+
+  /**
+   * For a scroll with no focus to start from, such as while the list still moves from the scroll
+   * before: the node that scroll started from, or the node focused last, when it is still in a
+   * scrollable container of the window {@code root} is in. A scroll needs only the container, so
+   * this saves building the reading order of the whole window, which takes hundreds of
+   * milliseconds in a large app such as Gmail.
+   */
+  private @Nullable AccessibilityNodeInfoCompat nodeInListForScroll(
+      AccessibilityNodeInfoCompat root) {
+    AutoScrollCallback callback = scrollCallback;
+    AccessibilityNodeInfoCompat[] candidates = {
+      callback == null ? null : callback.pivot, lastFocusedNode()
+    };
+    for (AccessibilityNodeInfoCompat node : candidates) {
+      if (node != null
+          && node.getWindowId() == root.getWindowId()
+          && node.refresh()
+          && AccessibilityNodeInfoUtils.getMatchingAncestor(
+                  node, AccessibilityNodeInfoUtils.FILTER_SCROLLABLE)
+              != null) {
+        return node;
+      }
+    }
+    return null;
+  }
+
   private @Nullable AccessibilityNodeInfoCompat lastFocusedNode() {
     if (actorState == null || actorState.getFocusHistory() == null) {
       return null;
