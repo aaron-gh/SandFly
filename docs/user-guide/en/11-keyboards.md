@@ -370,7 +370,7 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 - **Held keys type**: what a key held down types with the SandFly keyboard.
 - **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).
 - **Double space types a period**: with the SandFly keyboard, Space pressed twice after a word types a period and a space. Off by default.
-- **Auto-correct**, **Word suggestions**, **Word list language** and **Delete learned words**: corrections and suggestions for the word being typed with the SandFly keyboard. Both are off by default. See [](#keyboards-word-suggestions).
+- **Auto-correct**, **Word suggestions**, **Speak suggestion after a pause**, **Word list language** and **Delete learned words**: corrections and suggestions for the word being typed with the SandFly keyboard. Both are off by default. See [](#keyboards-word-suggestions).
 - **Speak password characters**: with the SandFly keyboard, in password fields, SandFly says each character typed, deleted or passed over instead of "bullet". Off by default. See [](#keyboards-passwords).
 - **Android physical keyboard settings**: opens the physical keyboard settings of Android, such as the keyboard layout.
 
@@ -456,6 +456,8 @@ The SandFly keyboard can correct the word you type and suggest words for it. Bot
 
 - **Auto-correct**: when you type Space, punctuation or Enter after a misspelled word, the correction goes in its place, and SandFly says it, such as "receive, corrected". Words that start with a capital in the middle of a sentence, words with capitals after the first letter, and words typed in capitals are left as typed. English i, im and dont become I, I'm and don't.
 - **Word suggestions**: while you type a word, Up Arrow and Down Arrow go through corrections and longer words that start with what you typed, such as "keyboard, 1 of 8" for "keyb". On the Zinwa Q25, the trackpad sends these keys. Enter, or a trackpad click, types the suggestion with a space; Space or punctuation types it followed by that character. Back or Escape closes the list and keeps the word as typed. Any other key closes the list and does what it does, so Backspace deletes a letter and a letter types. While no word is being typed, after Space, punctuation or a cursor move, Up Arrow and Down Arrow move in the text as before.
+
+**Speak suggestion after a pause**: when you stop typing within a word, the keyboard says, at a lower pitch, the correction that Space would type, such as "receive, correction", or else the first word suggestion, such as "keyboard" for "keyboa". Type on to keep the word, press Down Arrow for other suggestions, or Space to take the correction. The pause is 1 second by default; choose 0.5, 1.5 or 2 seconds, or **Off**. It applies while **Auto-correct** or **Word suggestions** is on.
 
 To undo a correction, press Backspace straight after it. SandFly says the word as you typed it, such as "recieve, correction undone", and the word is never corrected again.
 

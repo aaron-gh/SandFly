@@ -40,6 +40,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 import org.robolectric.shadows.ShadowLooper
+import java.util.concurrent.TimeUnit
 
 /**
  * The SandFly keyboard's auto-correct and word suggestions in a text field, with the app's typing
@@ -53,6 +54,7 @@ class WordInputTest {
   private lateinit var prefs: SharedPreferences
   private lateinit var field: Field
   private lateinit var input: WordInput
+  private val said = mutableListOf<String>()
 
   /** A text field: its text, and the input connection the keyboard edits it through. */
   private class Field(context: Context) : BaseInputConnection(View(context), true) {
@@ -77,7 +79,8 @@ class WordInputTest {
       )
     }
     field = Field(context)
-    input = WordInput(context, prefs)
+    input = WordInput(context, prefs) { field }
+    input.announce = { said += it }
     start(InputType.TYPE_CLASS_TEXT)
     waitForList()
   }
@@ -236,6 +239,44 @@ class WordInputTest {
     start(InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS)
     type("teh ")
     assertEquals("teh teh ", field.text.toString())
+  }
+
+  @Test
+  fun pauseSaysTheCorrectionSpaceWouldType() {
+    type("recieve")
+    assertTrue(said.isEmpty())
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    assertEquals(listOf("receive, correction"), said)
+  }
+
+  @Test
+  fun pauseSaysTheFirstSuggestion() {
+    // "keyb" alone would be corrected to "key" by Space, which the pause says instead.
+    type("keyboa")
+    ShadowLooper.idleMainLooper(1_000, TimeUnit.MILLISECONDS)
+    assertEquals(listOf("keyboard"), said)
+  }
+
+  @Test
+  fun typingOnBeforeThePauseSaysNothing() {
+    type("keyb")
+    ShadowLooper.idleMainLooper(500, TimeUnit.MILLISECONDS)
+    type("o")
+    ShadowLooper.idleMainLooper(500, TimeUnit.MILLISECONDS)
+    assertTrue(said.toString(), said.isEmpty())
+    type(" ")
+    ShadowLooper.idleMainLooper(2_000, TimeUnit.MILLISECONDS)
+    assertTrue(said.toString(), said.isEmpty())
+  }
+
+  @Test
+  fun pauseOff() {
+    prefs.edit {
+      putString(context.getString(R.string.pref_sandfly_keyboard_suggestion_pause_key), "0")
+    }
+    type("recieve")
+    ShadowLooper.idleMainLooper(2_000, TimeUnit.MILLISECONDS)
+    assertTrue(said.isEmpty())
   }
 
   @Test
