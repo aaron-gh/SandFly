@@ -652,6 +652,7 @@ class KeymapTest {
     // Other keymaps have no default.
     assertEquals(null, defaults(Keymap.SANDFLY, Keymap.SANDFLY.nativeKey)[key])
   }
+
   /** The keyboard help key of each computer screen reader keymap, with its SandFly key. */
   private val helpKeys =
     mapOf(
@@ -702,6 +703,8 @@ class KeymapTest {
     val model = NewKeyComboModel(context, Keymap.NVDA)
     assertEquals(changed, model.getKeyComboForKey(lesson))
     assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_1, true), model.getKeyComboForKey(practice))
+  }
+
   @Test
   fun nvdaKeymapStartsAndEndsSelectionModeWithInsertF9() {
     val key = context.getString(R.string.keycombo_shortcut_other_toggle_selection)
