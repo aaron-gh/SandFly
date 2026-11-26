@@ -1725,23 +1725,6 @@ public class GestureController {
     if (LiveRecognition.onGesture(gestureId)) {
       return;
     }
-    // While SandFly takes two-finger swipes, the lock screen never sees one, so it gets SandFly's
-    // own two-finger swipe up to unlock or show the PIN, pattern or password.
-    if (gestureId == AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
-        && GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(service))
-        && SyntheticTouches.isAvailable()
-        && swipeUp.isLockScreenShown()
-        && swipeUp.swipeUp(/* fingers= */ 2)) {
-      return;
-    }
-    // While SandFly takes two-finger swipes, the launcher, which opens its apps list from a
-    // two-finger swipe up, gets SandFly's own swipe up instead.
-    if (gestureId == AccessibilityService.GESTURE_2_FINGER_SWIPE_UP
-        && GestureLayout.handlesTwoFingerSwipes(SharedPreferencesUtils.getSharedPreferences(service))
-        && swipeUp.isHomeScreenShown()
-        && swipeUp.swipeUp(/* fingers= */ 1)) {
-      return;
-    }
     // Quick Tasks take a few gestures for the three seconds after the Quick Tasks command.
     String quickTask = QuickTasks.action(gestureShortcutMapping.getGestureKey(gestureId));
     if (quickTask != null) {
@@ -1770,6 +1753,9 @@ public class GestureController {
         gestureId,
         GestureShortcutMapping.getGestureString(service, gestureId),
         action);
+    if (swipeUpForScrollUp(action)) {
+      return;
+    }
     GestureSpeechTiming.onGesture(action);
     if (TutorialHooks.onGesture(gestureId, action)) {
       return;
@@ -1787,6 +1773,32 @@ public class GestureController {
       return;
     }
     performGestureAction(action, eventId, gestureId, doubleTap);
+  }
+
+  /**
+   * While SandFly takes two-finger swipes, the lock screen and the launcher never see one, so the
+   * gesture for Scroll up, Two-finger swipe up by default, sends SandFly's own swipe up there
+   * instead of scrolling: two fingers on the lock screen to unlock it or show the PIN, pattern or
+   * password, one finger on the launcher to open its apps list. A gesture with another command,
+   * Two-finger swipe up included, runs that command. Returns whether the swipe was sent.
+   */
+  private boolean swipeUpForScrollUp(@Nullable String action) {
+    if (action == null
+        || !action.equals(service.getString(R.string.shortcut_value_scroll_up))
+        || !GestureLayout.handlesTwoFingerSwipes(
+            SharedPreferencesUtils.getSharedPreferences(service))) {
+      return false;
+    }
+    boolean sent;
+    if (swipeUp.isLockScreenShown()) {
+      sent = swipeUp.swipeUp(/* fingers= */ 2);
+    } else {
+      sent = swipeUp.isHomeScreenShown() && swipeUp.swipeUp(/* fingers= */ 1);
+    }
+    if (sent) {
+      LogUtils.i(LOG_TAG, "Scroll up sent a swipe up to the lock screen or the launcher");
+    }
+    return sent;
   }
 
   /** Opens the Add label or Edit label dialog for the focused item. */
