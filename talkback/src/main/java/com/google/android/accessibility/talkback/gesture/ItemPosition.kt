@@ -18,13 +18,18 @@ package com.google.android.accessibility.talkback.gesture
 
 import android.content.Context
 import android.graphics.Rect
+import android.view.accessibility.AccessibilityNodeInfo
 import androidx.core.view.accessibility.AccessibilityNodeInfoCompat
+import androidx.core.view.accessibility.AccessibilityNodeInfoCompat.AccessibilityActionCompat
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.scripting.copyToClipboard
+import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils
+import java.util.function.ToIntFunction
 
 /**
- * The Speak position command: where the focused item is in its list or table; and the Speak
- * coordinates command: where it is on screen.
+ * The Speak position command: where the focused item is in its list or table, where the cursor is
+ * in its text, and how far its scrolling container is scrolled; and the Speak coordinates command:
+ * where it is on screen.
  */
 object ItemPosition {
 
@@ -32,9 +37,82 @@ object ItemPosition {
   private const val MAX_ITEM_DEPTH = 6
   private const val MAX_LIST_DEPTH = 3
 
-  /** Returns the position of [focused] in its list or table, to speak. */
+  /**
+   * Returns the position of [focused] to speak: where it is in its list or table, where [text], the
+   * cursor in its text, is, and how far its scrolling container is scrolled. [scrollPercent] gives
+   * the percentage of a container from its last scroll event, or -1.
+   */
   @JvmStatic
-  fun describe(context: Context, focused: AccessibilityNodeInfoCompat?): String {
+  fun describe(
+    context: Context,
+    focused: AccessibilityNodeInfoCompat?,
+    text: TextCursor?,
+    scrollPercent: ToIntFunction<AccessibilityNodeInfo>,
+  ): String {
+    val parts =
+      listOfNotNull(
+        listPosition(context, focused),
+        text?.let { TextPosition.describe(context, it) },
+        scrollPosition(focused, scrollPercent)?.let {
+          context.getString(R.string.speak_position_scroll, it)
+        },
+      )
+    return if (parts.isEmpty()) {
+      context.getString(R.string.speak_position_none)
+    } else {
+      parts.joinToString(", ")
+    }
+  }
+
+  /**
+   * Returns how far the scrolling container of [focused], or [focused] itself, is scrolled, from 0
+   * to 100 percent, or null when nothing around it scrolls or the percentage is unknown. The scroll
+   * actions it offers now say whether it is at the start or the end; in between, [scrollPercent]
+   * gives the percentage from its last scroll event.
+   */
+  private fun scrollPosition(
+    focused: AccessibilityNodeInfoCompat?,
+    scrollPercent: ToIntFunction<AccessibilityNodeInfo>,
+  ): Int? {
+    val scrollable =
+      AccessibilityNodeInfoUtils.getSelfOrMatchingAncestor(
+        focused,
+        AccessibilityNodeInfoUtils.FILTER_SCROLLABLE,
+      ) ?: return null
+    val back =
+      AccessibilityNodeInfoUtils.supportsAnyAction(
+        scrollable,
+        AccessibilityActionCompat.ACTION_SCROLL_BACKWARD,
+        AccessibilityActionCompat.ACTION_SCROLL_UP,
+        AccessibilityActionCompat.ACTION_SCROLL_LEFT,
+      )
+    val forward =
+      AccessibilityNodeInfoUtils.supportsAnyAction(
+        scrollable,
+        AccessibilityActionCompat.ACTION_SCROLL_FORWARD,
+        AccessibilityActionCompat.ACTION_SCROLL_DOWN,
+        AccessibilityActionCompat.ACTION_SCROLL_RIGHT,
+      )
+    return scrollPercentOf(back, forward, scrollPercent.applyAsInt(scrollable.unwrap()))
+  }
+
+  /**
+   * Returns the scroll percentage of a container that can scroll [back] and [forward], with
+   * [cached] the percentage from its last scroll event or -1, or null when it's unknown.
+   */
+  @JvmStatic
+  fun scrollPercentOf(back: Boolean, forward: Boolean, cached: Int): Int? =
+    when {
+      !back && forward -> 0
+      back && !forward -> 100
+      !back -> null
+      cached < 0 -> null
+      // It can scroll both ways, so it's neither at the start nor at the end.
+      else -> cached.coerceIn(1, 99)
+    }
+
+  /** Returns the position of [focused] in its list or table, or null when it's in neither. */
+  private fun listPosition(context: Context, focused: AccessibilityNodeInfoCompat?): String? {
     var node = focused
     var depth = 0
     while (node != null && depth < MAX_ITEM_DEPTH) {
@@ -57,7 +135,7 @@ object ItemPosition {
       node = node.parent
       depth++
     }
-    return context.getString(R.string.speak_position_none)
+    return null
   }
 
   /**

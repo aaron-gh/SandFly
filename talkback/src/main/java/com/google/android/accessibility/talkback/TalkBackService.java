@@ -224,6 +224,7 @@ import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
+import com.google.android.accessibility.talkback.gesture.TextTraversalTracker;
 import com.google.android.accessibility.talkback.touchlock.TouchLock;
 import com.google.android.accessibility.talkback.gesture.TwoFingerRotationTracker;
 import com.google.android.accessibility.talkback.gesture.VibrationWatchGestureSettings;
@@ -3555,6 +3556,10 @@ public class TalkBackService extends AccessibilityServiceCompat
             speechController,
             screenStateMonitor.state,
             processorPhoneticLetters);
+
+    TextTraversalTracker textTraversalTracker = new TextTraversalTracker();
+    addEventListener(textTraversalTracker);
+    gestureController.setPositionSources(scrollEventInterpreter, textTraversalTracker);
 
     keyComboManager.setCommandPerformer(gestureController::performAction);
 

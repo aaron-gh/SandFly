@@ -46,6 +46,7 @@ import com.google.android.accessibility.talkback.focusmanagement.SheetsGrid;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction;
 import com.google.android.accessibility.talkback.focusmanagement.action.NavigationAction.ActionType;
 import com.google.android.accessibility.talkback.focusmanagement.interpreter.ScreenStateMonitor;
+import com.google.android.accessibility.talkback.gesture.TextCursor;
 import com.google.android.accessibility.talkback.selector.SelectorController;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.AccessibilityServiceCompatUtils;
@@ -110,6 +111,11 @@ public class DirectionNavigationActor implements UserInputEventListener {
 
     public boolean hasNavigableTableContent() {
       return DirectionNavigationActor.this.hasNavigableTableContent();
+    }
+
+    /** See {@link CursorGranularityManager#ownTextCursor}. */
+    public @Nullable TextCursor ownTextCursor(@Nullable AccessibilityNodeInfoCompat node) {
+      return cursorGranularityManager.ownTextCursor(node);
     }
   }
 
