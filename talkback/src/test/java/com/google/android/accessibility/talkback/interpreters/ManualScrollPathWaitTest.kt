@@ -54,6 +54,8 @@ class ManualScrollPathWaitTest {
     sideways: Boolean = false,
     webSource: Boolean = true,
     webFocus: Boolean = true,
+    commandTail: Boolean = false,
+    expectPending: Boolean = true,
     expectedReads: Int,
   ) {
     val source = node(webSource, sideways)
@@ -84,12 +86,18 @@ class ManualScrollPathWaitTest {
       eventTime = 20
       shadowOf(this).setSourceNode(source)
     }
+    val userAction = if (commandTail) ScrollActionRecord.ACTION_UNKNOWN
+      else ScrollActionRecord.ACTION_MANUAL_SCROLL
     interpreter.onScrollEvent(event, ScrollEventInterpretation(
-      ScrollActionRecord.ACTION_MANUAL_SCROLL, TraversalStrategy.SEARCH_FOCUS_FORWARD,
-      true, false, true, false, -1), null)
+      userAction, TraversalStrategy.SEARCH_FOCUS_FORWARD, true, false, true, false, -1,
+      false, false, commandTail), null)
     assertEquals(expectedReads, pathReads)
     val pending = ReflectionHelpers.getField<ManualScrollInterpreter.ManualScrollInterpretation>(
       listener, "pendingManualScroll")
+    if (!expectPending) {
+      assertNull(pending)
+      return
+    }
     assertNotNull(pending)
     assertEquals(AccessibilityNodeInfoCompat.wrap(source),
       AccessibilityNodeInfoCompat.wrap(pending.event().source!!))
@@ -110,4 +118,10 @@ class ManualScrollPathWaitTest {
 
   @Test fun aNativeFocusDoesNotUseTheWebShortcut() =
     checkPathUse(webFocus = false, expectedReads = 1)
+
+  @Test fun aFinishedNativeScrollCommandCanStillRecoverItsFocus() =
+    checkPathUse(webSource = false, webFocus = false, commandTail = true, expectedReads = 1)
+
+  @Test fun aFinishedWebScrollCommandDoesNotStartManualRecovery() =
+    checkPathUse(commandTail = true, expectPending = false, expectedReads = 0)
 }
