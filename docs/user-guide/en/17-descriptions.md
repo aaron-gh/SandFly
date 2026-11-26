@@ -202,7 +202,9 @@ Each mode turns on and off by itself, with a check box on the screen:
 - **Point and Speak**: reads the text at your fingertip in the camera view. Choose **Read above the fingertip** (the default) or **Read below the fingertip**.
 - **People detection**: describes people in the camera view.
 - **Door detection**: describes doors in the camera view.
+- **Color detection**: names the colors in the centre of the camera view, such as "Dark blue", "Light gray" or "Red and white", or says "Mixed colors" when no color covers enough of it. A color is spoken when it changes and has held for about half a second. Light and dark depend on the light and on the camera's automatic exposure. Colors are recognized on the phone.
 - **Light level**: reads the light level from the light sensor: **Dark**, **Dim light**, **Normal light**, **Bright light** or **Very bright light**. It doesn't use the camera.
+- **Light level tone**: plays a continuous tone whose pitch rises with the brightness of what the rear camera sees, from 200 Hz in the dark to 1600 Hz in sunlight. The tone plays at the volume of SandFly's sounds, and stops when the mode is turned off or the screen is left.
 
 The status line says **Camera on** or **Camera off**. SandFly asks for the camera permission the first time a mode needs it.
 

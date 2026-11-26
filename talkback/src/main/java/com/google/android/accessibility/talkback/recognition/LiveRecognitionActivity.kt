@@ -21,6 +21,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.ImageFormat
 import android.graphics.Matrix
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -42,9 +43,13 @@ import android.widget.ScrollView
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.OptIn
+import androidx.camera.camera2.interop.Camera2Interop
+import androidx.camera.camera2.interop.ExperimentalCamera2Interop
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.CameraState
 import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.ImageProxy
 import androidx.camera.core.Preview
 import androidx.camera.core.resolutionselector.ResolutionSelector
 import androidx.camera.core.resolutionselector.ResolutionStrategy
@@ -105,6 +110,8 @@ class LiveRecognitionActivity : ComponentActivity() {
   @Volatile private var generation = 0
   private val sensors by lazy { getSystemService(SensorManager::class.java) }
   private var lightListener: SensorEventListener? = null
+  private val lightTone = LightTonePlayer()
+  private val exposure = CameraExposure()
   private var spokenLight: Int? = null
   private var pendingLight: Int? = null
   private val speakLight = Runnable {
@@ -206,6 +213,7 @@ class LiveRecognitionActivity : ComponentActivity() {
   }
 
   override fun onDestroy() {
+    lightTone.stop()
     describer?.close()
     if (recognizerUsed) recognizer.close()
     worker.shutdown()
@@ -299,6 +307,7 @@ class LiveRecognitionActivity : ComponentActivity() {
     val token = ++generation
     LogUtils.i(TAG, "Modes: %s", enabled)
     stopLight()
+    lightTone.stop()
     TalkBackService.getInstance()?.speechController?.stopUtteranceGroup(SpeechController.UTTERANCE_GROUP_LIVE_RECOGNITION)
     describer?.close()
     describer = null
@@ -321,6 +330,7 @@ class LiveRecognitionActivity : ComponentActivity() {
     window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
     handler.post(runningCheck)
     if (RecognitionMode.LIGHT in enabled) startLight()
+    if (RecognitionMode.LIGHT_TONE in enabled) lightTone.start()
     if (enabled.none { it.usesCamera }) {
       status.setText(R.string.live_recognition_camera_off)
       return
@@ -463,23 +473,40 @@ class LiveRecognitionActivity : ComponentActivity() {
         val provider = future.get()
         cameraProvider = provider
         val newPreview = Preview.Builder().build().also { it.setSurfaceProvider(previewView.surfaceProvider) }
+        val light = RecognitionMode.LIGHT_TONE in enabled
         val newAnalysis = ImageAnalysis.Builder()
           .setResolutionSelector(ResolutionSelector.Builder().setResolutionStrategy(
             ResolutionStrategy(Size(1280, 720), ResolutionStrategy.FALLBACK_RULE_CLOSEST_LOWER_THEN_HIGHER)).build())
-          .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST).build()
+          .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
+          .also { if (light) readExposure(it) }
+          .build()
         val text = RecognitionMode.TEXT in enabled
+        val colors = if (RecognitionMode.COLORS in enabled) ColorSampler() else null
+        val colorAnnouncer = ColorAnnouncer()
         var lastFrame = -FRAME_INTERVAL_MS
+        var lastLight = -LIGHT_TONE_INTERVAL_MS
+        var lastColors = -COLOR_INTERVAL_MS
         newAnalysis.setAnalyzer(worker) { frame ->
-          val now = SystemClock.elapsedRealtime()
-          // Gemini takes a frame every few seconds at most, so most frames are only read for text.
-          val ai = describer?.canRequest() == true
-          if (generation != token || now - lastFrame < FRAME_INTERVAL_MS || !(text || ai) ||
-              !processing.compareAndSet(false, true)) {
-            frame.close()
-            return@setAnalyzer
-          }
-          lastFrame = now
+          var took = false
           try {
+            if (generation != token) return@setAnalyzer
+            val now = SystemClock.elapsedRealtime()
+            if (light && now - lastLight >= LIGHT_TONE_INTERVAL_MS) {
+              lastLight = now
+              measureLight(frame)
+            }
+            if (colors != null && now - lastColors >= COLOR_INTERVAL_MS) {
+              lastColors = now
+              measureColors(frame, colors, colorAnnouncer, token, now)
+            }
+            // Gemini takes a frame every few seconds at most, so most frames are only read for text.
+            val ai = describer?.canRequest() == true
+            if (now - lastFrame < FRAME_INTERVAL_MS || !(text || ai) ||
+                !processing.compareAndSet(false, true)) {
+              return@setAnalyzer
+            }
+            took = true
+            lastFrame = now
             val raw = frame.toBitmap()
             val rotation = frame.imageInfo.rotationDegrees
             val bitmap = if (rotation == 0) raw else Bitmap.createBitmap(raw, 0, 0, raw.width, raw.height,
@@ -492,7 +519,7 @@ class LiveRecognitionActivity : ComponentActivity() {
           } catch (e: Throwable) {
             LogUtils.e(TAG, "Frame failed: %s", e.javaClass.simpleName)
             // Includes OutOfMemoryError, which would otherwise stop the screen reader.
-            processing.set(false)
+            if (took) processing.set(false)
             handler.post { if (generation == token) cameraFailed() }
           } finally { frame.close() }
         }
@@ -511,6 +538,39 @@ class LiveRecognitionActivity : ComponentActivity() {
         if (generation == token) cameraFailed()
       }
     }, ContextCompat.getMainExecutor(this))
+  }
+
+  /** Has [exposure] read the exposure of each frame, for the Light level tone. */
+  @OptIn(markerClass = [ExperimentalCamera2Interop::class])
+  private fun readExposure(builder: ImageAnalysis.Builder) {
+    Camera2Interop.Extender(builder).setSessionCaptureCallback(exposure)
+  }
+
+  /** Sets the pitch of the Light level tone from the luma plane of [frame]. Analysis thread. */
+  private fun measureLight(frame: ImageProxy) {
+    if (frame.format != ImageFormat.YUV_420_888) return
+    val plane = frame.planes.firstOrNull() ?: return
+    val mean = LightToneLevel.meanLinear(plane.buffer, frame.width, frame.height, plane.rowStride, plane.pixelStride)
+    if (mean < 0f) return
+    lightTone.setLevel(LightToneLevel.level(mean, exposure.exposureNs, exposure.iso, exposure.aperture))
+  }
+
+  /**
+   * Names the colors of the centre of [frame] when they change, for Color detection. Analysis
+   * thread.
+   */
+  private fun measureColors(frame: ImageProxy, sampler: ColorSampler, announcer: ColorAnnouncer, token: Int, now: Long) {
+    if (frame.format != ImageFormat.YUV_420_888) return
+    val planes = frame.planes
+    if (planes.size < 3) return
+    val result = sampler.measure(
+      planes[0].buffer, planes[0].rowStride, planes[0].pixelStride,
+      planes[1].buffer, planes[2].buffer, planes[1].rowStride, planes[1].pixelStride,
+      frame.width, frame.height,
+    )
+    val spoken = announcer.update(result, now)
+    if (spoken == ColorAnnouncer.NOTHING) return
+    handler.post { if (generation == token) announceResult(SOURCE_COLORS, ColorNames.describe(this, spoken)) }
   }
 
   private fun cameraFailed() { stopRecognition(); report(R.string.live_recognition_camera_error) }
@@ -567,8 +627,9 @@ class LiveRecognitionActivity : ComponentActivity() {
       val (source, result) = iterator.next()
       iterator.remove()
       val age = now - result.second
+      // Color detection speaks only changed colors itself, and more often than other results.
       if (age <= GeminiLiveSession.MAX_RESULT_AGE_MS &&
-          announcements.shouldSpeak(source, result.first, now)) {
+          (source == SOURCE_COLORS || announcements.shouldSpeak(source, result.first, now))) {
         LogUtils.d(TAG, "Speaking %s result, %d ms after it came", source, age)
         status.text = result.first
         speak(result.first, false)
@@ -589,6 +650,7 @@ class LiveRecognitionActivity : ComponentActivity() {
     private const val CLOUD_CONSENT_PREF = "pref_live_recognition_cloud_consent"
     private const val SOURCE_TEXT = "text"
     private const val SOURCE_AI = "ai"
+    private const val SOURCE_COLORS = "colors"
     /** The first part of the key that says the user agreed to images going to an AI service. */
     private const val SERVICE_CONSENT_PREF = "pref_live_recognition_consent_"
     /** How old an answer from the on-device model or an AI service can be when it comes. */
@@ -598,6 +660,10 @@ class LiveRecognitionActivity : ComponentActivity() {
     private const val FRAME_INTERVAL_MS = 1_000L
     private const val CHECK_INTERVAL_MS = 500L
     private const val LIGHT_SETTLE_MS = 1000L
+    /** How often the Light level tone follows the camera. */
+    private const val LIGHT_TONE_INTERVAL_MS = 50L
+    /** How often Color detection reads the camera. */
+    private const val COLOR_INTERVAL_MS = 200L
     private const val JPEG_QUALITY = 70
     private const val MAX_TEXT_LENGTH = 1_200
     private const val TAG = "LiveRecognition"
