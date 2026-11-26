@@ -3640,7 +3640,11 @@ public class TalkBackService extends AccessibilityServiceCompat
     // So does a keyboard that speaks through SandFly and says so.
     textEventFilter.setOnScreenKeyboardEchoSuppressor(() -> KeyboardSpeech.isTypingSpoken(this));
     // Dictation that speaks the text it types.
-    textEventFilter.setTextChangeSuppressor(SandflyDictation::typedSpokenText);
+    // And edits that say what they changed, such as text typed by voice.
+    textEventFilter.setTextChangeSuppressor(
+        eventTime ->
+            SandflyDictation.typedSpokenText(eventTime)
+                || editTextActionHistory.hasSpokenEditAtTime(eventTime));
     // The SandFly keyboard, which says the characters of a password field with Speak password
     // characters on.
     textEventFilter.setPasswordCharacterSuppressor(SandFlyKeyboardHost::speaksPasswordCharacters);

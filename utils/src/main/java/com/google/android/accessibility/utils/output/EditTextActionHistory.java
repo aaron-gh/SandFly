@@ -73,6 +73,7 @@ public class EditTextActionHistory {
   private long mSelectAllStartTime = -1;
   private long setTextStartTime = -1;
   private long clearTextStartTime = -1;
+  private long spokenEditStartTime = -1;
 
   /** Map of action identifiers to finish times. */
   private long mCutFinishTime = -1;
@@ -80,6 +81,10 @@ public class EditTextActionHistory {
   private long mSelectAllFinishTime = -1;
   private long setTextFinishTime = -1;
   private long clearTextFinishTime = -1;
+  private long spokenEditFinishTime = -1;
+
+  /** How long after an edit that says what it changed the field's text change events still come. */
+  public static final long SPOKEN_EDIT_CHANGE_MS = 1_000;
 
   /**
    * Stores the start time for a cut action. This should be called immediately before {@link
@@ -187,6 +192,31 @@ public class EditTextActionHistory {
   public boolean hasSetTextActionAtTime(long eventTime) {
     return !((setTextFinishTime == -1) || (setTextStartTime > eventTime))
         && !((setTextFinishTime >= setTextStartTime) && (setTextFinishTime < eventTime));
+  }
+
+  /**
+   * Stores the start time of an edit that says what it changed itself, such as inserted text. This
+   * should be called immediately before {@link AccessibilityNodeInfoCompat#performAction}.
+   */
+  public void beforeSpokenEdit() {
+    spokenEditStartTime = SystemClock.uptimeMillis();
+  }
+
+  /** Stores the finish time of an edit that says what it changed itself. */
+  public void afterSpokenEdit() {
+    spokenEditFinishTime = SystemClock.uptimeMillis();
+  }
+
+  /**
+   * Returns whether a text change at the specified event time comes from the last edit that said
+   * what it changed: during it or up to {@link #SPOKEN_EDIT_CHANGE_MS} after it, since some apps
+   * report the change later.
+   */
+  public boolean hasSpokenEditAtTime(long eventTime) {
+    return spokenEditStartTime != -1
+        && spokenEditFinishTime >= spokenEditStartTime
+        && eventTime >= spokenEditStartTime
+        && eventTime <= spokenEditFinishTime + SPOKEN_EDIT_CHANGE_MS;
   }
 
   /**

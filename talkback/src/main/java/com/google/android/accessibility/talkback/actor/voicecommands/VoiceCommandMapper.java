@@ -106,7 +106,7 @@ public class VoiceCommandMapper {
       }
       case VOICE_COMMAND_INSERT -> {
         if (node != null && !TextUtils.isEmpty(text)) {
-          return toFeedback(eventId, Feedback.edit(node, INSERT).setText(text));
+          return toFeedback(eventId, Feedback.edit(node, INSERT).setText(text).setSpeakText(true));
         }
       }
       case VOICE_COMMAND_LABEL -> {

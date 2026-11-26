@@ -1526,7 +1526,7 @@ public abstract class Feedback {
       CLEAR_TEXT,
       CURSOR_TO_BEGINNING, // Works with stopSelecting.
       CURSOR_TO_END, // Works with stopSelecting.
-      INSERT, // Requires text.
+      INSERT, // Requires text. Works with speakText.
       TYPO_CORRECTION, // Requires text and suggestion.
       MOVE_CURSOR; // Requires cursor index.
     }
@@ -1544,11 +1544,18 @@ public abstract class Feedback {
 
     public abstract int cursorIndex();
 
+    /**
+     * Whether INSERT says the inserted text, in place of the field's own text change, as typing on
+     * a keyboard does.
+     */
+    public abstract boolean speakText();
+
     public static Builder builder() {
       return new AutoValue_Feedback_EditText.Builder()
           // Set default values that are not null.
           .setStopSelecting(false)
-          .setCursorIndex(-1);
+          .setCursorIndex(-1)
+          .setSpeakText(false);
     }
 
     /** Builder for EditText feedback data */
@@ -1567,6 +1574,8 @@ public abstract class Feedback {
           @Nullable SpellingSuggestion spellingSuggestion);
 
       public abstract Builder setCursorIndex(int cursorIndex);
+
+      public abstract Builder setSpeakText(boolean speakText);
 
       public abstract EditText build();
     }
