@@ -215,7 +215,7 @@ class VoiceEditing(private val service: TalkBackService, private val processor: 
       )
     val values = commands.map { it.value }.toSet()
     return VoiceEditingRules.Resolver(
-      VoiceEditingRules.commandNames(commands, locale),
+      VoiceEditingRules.commandNames(commands, locale, VoiceTargets.aliases(service)),
       custom,
       { value -> value in values || (Macros.isCommand(value) && value != Macros.RECORD_COMMAND) },
       locale,

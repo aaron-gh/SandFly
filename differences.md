@@ -1113,6 +1113,7 @@ As in VoiceOver, with **Typing** > **Double-tap moves cursor to start or end** o
 These commands are in the **Text editing** category:
 
 - **Submit text** sends the text in the focused text field: it presses the send button of the app beside the field, as chat apps need, or else performs the action of the keyboard. In a custom keymap, it can have keys without the SandFly key, such as Ctrl + Enter.
+- **New line** does what Enter does: in a text field of several lines it types a new line and speaks "New line"; in a field of one line it performs the action of the field, such as Search, or else does what Submit text does. Voice commands and voice editing also run it with "new paragraph" and "press enter".
 - **Clear text** removes all text from the focused text field.
 - **Character count** speaks how long the text in the focused text field is, such as "120 characters, 24 words". An emoji or a letter with an accent is one character. A hint shown in an empty field counts as no text. In a password field, it speaks only the characters.
 - **Read text field** speaks the whole text of the text field with input focus, or else of the focused text field. A text field without text, or showing its hint, is "Empty", followed by the hint. With no text field, it speaks "Not editable". The text goes into the speech history, except in a password field.

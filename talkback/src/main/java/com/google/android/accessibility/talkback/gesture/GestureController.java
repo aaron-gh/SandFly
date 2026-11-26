@@ -35,6 +35,7 @@ import static com.google.android.accessibility.talkback.Feedback.EditText.Action
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CURSOR_TO_END;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CUT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.END_SELECT;
+import static com.google.android.accessibility.talkback.Feedback.EditText.Action.INSERT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.PASTE;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.CLEAR_TEXT;
 import static com.google.android.accessibility.talkback.Feedback.EditText.Action.SELECT_ALL;
@@ -525,6 +526,7 @@ public class GestureController {
     R.string.shortcut_value_copy_last_spoken_phrase,
     R.string.shortcut_value_continuous_copy,
     R.string.shortcut_value_submit_text,
+    R.string.shortcut_value_new_line,
     R.string.shortcut_value_clear_text,
     R.string.shortcut_value_character_count,
     R.string.shortcut_value_read_text_field,
@@ -1355,6 +1357,22 @@ public class GestureController {
       result = SubmitText.submit(service);
       if (!result) {
         pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+      }
+    } else if (action.equals(service.getString(R.string.shortcut_value_new_line))) {
+      AccessibilityNodeInfoCompat node = getEditTextFocus();
+      if (node == null) {
+        result = false;
+      } else if (NewLine.typesNewLine(node)) {
+        result = pipeline.returnFeedback(eventId, Feedback.edit(node, INSERT).setText("\n"));
+        if (result) {
+          // Only "New line", not the text of the field.
+          speak(service.getString(R.string.shortcut_new_line));
+        }
+      } else {
+        result = NewLine.performAction(service, node);
+        if (!result) {
+          pipeline.returnFeedback(eventId, Feedback.sound(R.raw.complete));
+        }
       }
     } else if (action.equals(service.getString(R.string.shortcut_value_copy_last_spoken_phrase))) {
       pipeline.returnFeedback(

@@ -16,6 +16,7 @@
 
 package com.google.android.accessibility.talkback.actor.voicecommands
 
+import com.google.android.accessibility.talkback.commands.Commands
 import java.io.File
 import java.util.Locale
 import javax.xml.parsers.DocumentBuilderFactory
@@ -200,8 +201,43 @@ class VoiceGrammarTest {
     assertEquals(listOf(VoiceStep.Call("小明")), grammar.parse("打电话给 小明").steps)
   }
 
+  @Test
+  fun newLinePhrasesRunNewLineInsteadOfTapping() {
+    val names =
+      VoiceTargets.commandNames(
+        listOf(Commands.Category(1, listOf(Commands.Command("NEW_LINE", "New line", keyboardAction = null)))),
+        emptyList(),
+        Locale.ENGLISH,
+        mapOf("NEW_LINE" to englishArray("new_line")),
+      )
+    val newLine =
+      VoiceGrammar(
+        englishPhrases(),
+        object : VoiceGrammar.Resolver {
+          override fun custom(normalized: String): VoiceStep.Command? = null
+
+          override fun command(normalized: String): VoiceStep.Command? =
+            names[normalized]?.let { VoiceStep.Command(it.value, it.label) }
+
+          override fun app(name: String): VoiceStep.OpenApp? = null
+        },
+        Locale.ENGLISH,
+      )
+    for (said in listOf("New line.", "new paragraph", "Press Enter", "please press enter")) {
+      val result = newLine.parse(said)
+      assertTrue(said, result.complete)
+      assertEquals(said, listOf(VoiceStep.Command("NEW_LINE", "New line")), result.steps)
+    }
+    // Other items are still pressed by their labels.
+    assertEquals(listOf(VoiceStep.Tap("OK")), newLine.parse("press OK").steps)
+    // Typing the words keeps them as text.
+    assertEquals(listOf(VoiceStep.TypeText("new line")), newLine.parse("type new line").steps)
+  }
+
   companion object {
-    private fun englishPhrases(): VoiceGrammar.Phrases {
+    private fun englishArray(name: String): List<String> = englishArrays.getValue("voice_commands_$name")
+
+    private val englishArrays: Map<String, List<String>> by lazy {
       val file =
         listOf("src/main/res/values/strings_voice_commands_sandfly.xml", "talkback/src/main/res/values/strings_voice_commands_sandfly.xml")
           .map(::File)
@@ -215,7 +251,11 @@ class VoiceGrammarTest {
         arrays[array.getAttribute("name")] =
           (0 until items.length).map { items.item(it).textContent.replace("\\'", "'") }
       }
-      fun array(name: String) = arrays.getValue("voice_commands_$name")
+      arrays
+    }
+
+    private fun englishPhrases(): VoiceGrammar.Phrases {
+      fun array(name: String) = englishArray(name)
       return VoiceGrammar.Phrases(
         chain = array("chain_words"),
         and = array("and_words"),
