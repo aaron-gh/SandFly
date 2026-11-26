@@ -57,6 +57,10 @@ With **Navigation** > **Wrap around** on, which is the default, a swipe past the
 
 When the **Actions** reading control is selected, a double-tap performs the action chosen in it. See [](#reading-controls).
 
+With **Typing** > **Double-tap moves cursor to start or end** on, a double-tap on the text field that you are typing in moves the cursor to the start or end of the text. See [](#typing-double-tap-cursor).
+
+**Activate** does what a double-tap does in all of these cases, whichever gesture, voice command, braille command or script runs it.
+
 **Activate with a tap**, a command with no gesture by default, taps the middle of the focused item on the screen, for items that respond only to a finger on the screen. It needs Android 11 or later; otherwise the item is activated as usual.
 
 To activate items by lifting your finger or with a single tap, see [](#touch).

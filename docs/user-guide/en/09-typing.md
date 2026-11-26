@@ -96,6 +96,8 @@ With **Typing** > **Double-tap moves cursor to start or end** on, a double-tap o
 - When the cursor isn't at the start, a double-tap moves it to the start of the text, and SandFly announces "Beginning of field".
 - When the cursor is at the start, a double-tap moves it to the end, and SandFly announces "End of field".
 
+The **Activate** command does the same when it runs from another gesture, a voice command, a braille command or a script.
+
 In any other control, or in a text field without input focus and a shown keyboard, a double-tap activates the item as usual. The setting is off by default, and is available on Android 13 and later.
 
 ### Select, copy, cut and paste {#typing-select-copy-paste}

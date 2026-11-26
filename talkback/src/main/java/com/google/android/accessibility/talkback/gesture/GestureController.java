@@ -16,7 +16,6 @@
 
 package com.google.android.accessibility.talkback.gesture;
 
-import static android.accessibilityservice.AccessibilityService.GESTURE_DOUBLE_TAP;
 import static android.accessibilityservice.AccessibilityService.GESTURE_DOUBLE_TAP_AND_HOLD;
 import static android.accessibilityservice.AccessibilityService.GLOBAL_ACTION_ACCESSIBILITY_ALL_APPS;
 import static com.google.android.accessibility.talkback.Feedback.AdjustVolume.Action.DECREASE_VOLUME;
@@ -273,8 +272,6 @@ public class GestureController {
   private static volatile boolean trainingTakesGestures;
   private final @NonNull Map<Integer, Integer> captureFingerprintGestureIdToAnnouncements =
       new HashMap<>();
-  // Whether the action being performed is that of the one-finger double tap.
-  private boolean performingDoubleTap;
   // The gesture whose action is being performed, or NO_GESTURE.
   private int performingGestureId = NO_GESTURE;
   private static final int NO_GESTURE = -1;
@@ -1161,13 +1158,13 @@ public class GestureController {
     } else if (action.equals(
             service.getString(R.string.shortcut_value_action_setting_activate_current_action))
         || action.equals(service.getString(R.string.shortcut_value_perform_click_action))) {
-      // For customized gesture(s) which perform the "Activate"/click action, they are regarded
-      // the same behavior as the native "Double-Tap" gesture.
+      // Activate does what the one-finger double tap does, from any gesture, voice command,
+      // braille command or script that runs it.
       if (selectorController.activateDoubleTapSetting()) {
         return;
       } else if (SelectorController.getCurrentSetting(service).equals(Setting.ACTIONS)) {
         selectorController.activateCurrentAction(eventId);
-      } else if (performingDoubleTap && doubleTapMovesCursor(eventId)) {
+      } else if (doubleTapMovesCursor(eventId)) {
         return;
       } else {
         result = pipeline.returnFeedback(eventId, Feedback.focus(CLICK_CURRENT));
@@ -1749,7 +1746,7 @@ public class GestureController {
     // Quick Tasks take a few gestures for the three seconds after the Quick Tasks command.
     String quickTask = QuickTasks.action(gestureShortcutMapping.getGestureKey(gestureId));
     if (quickTask != null) {
-      performGestureAction(quickTask, eventId, gestureId, /* doubleTap= */ false);
+      performGestureAction(quickTask, eventId, gestureId);
       return;
     }
     // A gesture profile's own gestures come before scripts.
@@ -1783,17 +1780,16 @@ public class GestureController {
     }
     String fallbackAction = action;
     int fallbackGestureId = gestureId;
-    boolean doubleTap = gestureId == GESTURE_DOUBLE_TAP;
     // A script can hand the gesture back later, so the fallback keeps which gesture it was.
     if (!fromProfile
         && !columnSwipe
         && !turnsScriptsOff(action)
         && Scripts.onGesture(
             gestureId,
-            () -> performGestureAction(fallbackAction, eventId, fallbackGestureId, doubleTap))) {
+            () -> performGestureAction(fallbackAction, eventId, fallbackGestureId))) {
       return;
     }
-    performGestureAction(action, eventId, gestureId, doubleTap);
+    performGestureAction(action, eventId, gestureId);
   }
 
   /**
@@ -1840,20 +1836,13 @@ public class GestureController {
         : LabelDialogManager.editLabel(service, labelId, /* needToRestoreFocus= */ true, pipeline);
   }
 
-  /**
-   * Performs [action] of the gesture [gestureId], noting the gesture and whether it is the
-   * one-finger double tap.
-   */
-  private void performGestureAction(
-      String action, EventId eventId, int gestureId, boolean doubleTap) {
-    boolean previousDoubleTap = performingDoubleTap;
+  /** Performs [action] of the gesture [gestureId], noting the gesture. */
+  private void performGestureAction(String action, EventId eventId, int gestureId) {
     int previousGestureId = performingGestureId;
-    performingDoubleTap = doubleTap;
     performingGestureId = gestureId;
     try {
       performAction(action, eventId);
     } finally {
-      performingDoubleTap = previousDoubleTap;
       performingGestureId = previousGestureId;
     }
   }
@@ -1871,9 +1860,9 @@ public class GestureController {
   }
 
   /**
-   * With Double-tap moves cursor to start or end on, moves the cursor of the text field that
-   * accessibility focus is on, while it has input focus and the keyboard is shown, to the start of
-   * its text, or to the end when it is at the start. Returns whether it moved the cursor.
+   * With Double-tap moves cursor to start or end on, Activate moves the cursor of the text field
+   * that accessibility focus is on, while it has input focus and the keyboard is shown, to the
+   * start of its text, or to the end when it is at the start. Returns whether it moved the cursor.
    */
   private boolean doubleTapMovesCursor(EventId eventId) {
     if (!SharedPreferencesUtils.getBooleanPref(
