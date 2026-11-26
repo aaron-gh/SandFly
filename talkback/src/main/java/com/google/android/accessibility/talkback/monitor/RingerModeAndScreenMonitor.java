@@ -47,6 +47,7 @@ import com.google.android.accessibility.talkback.audio.AudioDeviceRouter;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
+import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter;
 import com.google.android.accessibility.talkback.notificationlist.NotificationListService;
 import com.google.android.accessibility.talkback.pause.PauseController;
 import com.google.android.accessibility.talkback.status.StatusReader;
@@ -361,7 +362,10 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
 
   /** Handles when the device is unlocked. Speaks "Device unlocked" and the items chosen for it. */
   private void handleDeviceUnlocked(EventId eventId) {
-    if (isIdle()) {
+    if (AppSpeechFilter.leavesOutReadouts()) {
+      // Spoken while an assistant records, it would become part of what the user asks.
+      LogUtils.i(TAG, "Unlock readout left out while an assistant or call is in use");
+    } else if (isIdle()) {
       if (isWatch) {
         // REFERTO: Use chime instead of speech on watches, since it happens on every
         // screen wake whether or not the screen lock is enabled.
@@ -554,6 +558,11 @@ public class RingerModeAndScreenMonitor extends SameThreadBroadcastReceiver
   }
 
   private void speakForDisplayOn(EventId eventId, boolean allowRecovery) {
+    if (AppSpeechFilter.leavesOutReadouts()) {
+      // An assistant woken by its hotword turns the screen on and records what the user says.
+      LogUtils.i(TAG, "Screen-on readout left out while an assistant or call is in use");
+      return;
+    }
     final SpannableStringBuilder ttsText = new SpannableStringBuilder();
 
     if (isIdle()) {

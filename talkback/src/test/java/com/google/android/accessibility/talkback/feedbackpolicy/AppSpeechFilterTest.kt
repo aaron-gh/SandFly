@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.feedbackpolicy
 
 import android.media.AudioAttributes
 import android.media.AudioManager
+import android.view.accessibility.AccessibilityWindowInfo
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter.MODE_ALL_APPS
 import com.google.android.accessibility.talkback.feedbackpolicy.AppSpeechFilter.MODE_CHOSEN_APPS
@@ -114,6 +115,40 @@ class AppSpeechFilterTest {
     assertTrue(AppSpeechFilter.mutes(state, Source.APP_SPEECH, null))
     assertFalse(AppSpeechFilter.mutes(state, Source.USER_FOCUS, other))
     assertFalse(AppSpeechFilter.mutes(state, Source.TEXT_EDIT, other))
+  }
+
+  @Test
+  fun assistantShown_mutesAppFocusInAllApps_notUserFocusOrOwnScreens() {
+    val state =
+      State(mode = MODE_CHOSEN_APPS, apps = setOf(other), assistantShown = true, ownPackage = own)
+    assertTrue(state.active)
+    assertTrue(AppSpeechFilter.mutes(state, Source.APP_FOCUS, gemini))
+    assertTrue(AppSpeechFilter.mutes(state, Source.APP_SPEECH, "com.android.systemui"))
+    assertTrue(AppSpeechFilter.mutes(state, Source.APP_SPEECH, null))
+    assertFalse(AppSpeechFilter.mutes(state, Source.USER_FOCUS, gemini))
+    assertFalse(AppSpeechFilter.mutes(state, Source.TEXT_EDIT, gemini))
+    assertFalse(AppSpeechFilter.mutes(state, Source.APP_FOCUS, own))
+    assertTrue(State(assistantShown = true, ownPackage = own).active)
+  }
+
+  @Test
+  fun voiceInteractionWindows_haveNoAccessibilityWindowType() {
+    assertTrue(AppSpeechFilter.isVoiceInteractionType(-1))
+    assertFalse(AppSpeechFilter.isVoiceInteractionType(AccessibilityWindowInfo.TYPE_APPLICATION))
+    // App overlays, such as chat heads and screen filters, are system windows.
+    assertFalse(AppSpeechFilter.isVoiceInteractionType(AccessibilityWindowInfo.TYPE_SYSTEM))
+    assertFalse(
+      AppSpeechFilter.isVoiceInteractionType(AccessibilityWindowInfo.TYPE_ACCESSIBILITY_OVERLAY)
+    )
+    assertFalse(AppSpeechFilter.isVoiceInteractionType(AccessibilityWindowInfo.TYPE_INPUT_METHOD))
+  }
+
+  @Test
+  fun assistantWindowPackage_isNotSystemUiOrOwn() {
+    assertTrue(AppSpeechFilter.isAssistantWindowPackage("com.google.android.googlequicksearchbox", own))
+    assertTrue(AppSpeechFilter.isAssistantWindowPackage(null, own))
+    assertFalse(AppSpeechFilter.isAssistantWindowPackage("com.android.systemui", own))
+    assertFalse(AppSpeechFilter.isAssistantWindowPackage(own, own))
   }
 
   @Test
