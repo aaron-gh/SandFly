@@ -173,11 +173,11 @@ While keyboard practice is on, SandFly says each key that you press and the comm
 - While arrow key navigation is on, the arrow keys are said with their arrow key navigation commands.
 - A key held down is said once.
 
-To turn keyboard practice on, select **Keyboard shortcuts** > **Keyboard practice**, or press the shortcut of **Turn keyboard practice on or off**: SandFly key + Shift + K in the keyboard phone keymaps. Other keymaps have no default shortcut. SandFly says "Keyboard practice on".
+To turn keyboard practice on, select **Keyboard shortcuts** > **Keyboard practice**, or press the shortcut of **Turn keyboard practice on or off**: SandFly key + K in the VoiceOver keymap, SandFly key + 1 in the NVDA and JAWS keymaps, SandFly key + H in the Orca keymap, and SandFly key + Shift + K in the keyboard phone keymaps. The SandFly keymap has no default shortcut. SandFly says "Keyboard practice on".
 
 To turn it off, press the shortcut again, Back or Escape. SandFly says "Keyboard practice off". Keyboard practice is also off when SandFly restarts.
 
-**Turn keyboard practice on or off** is in the **SandFly** category, so you can also assign it to a gesture or add it to the SandFly menu. Volume keys pressed without the SandFly key change the volume as usual. The **Keyboard practice** lesson of the keyboard tutorial is different: it says only keyboard shortcuts, on the tutorial screen.
+**Turn keyboard practice on or off** is in the **SandFly** category, so you can also assign it to a gesture or add it to the SandFly menu. Volume keys pressed without the SandFly key change the volume as usual. The **Keyboard practice** lesson of the keyboard tutorial is different: it says only keyboard shortcuts, on the tutorial screen. To open it, choose **Contents** in the keyboard tutorial.
 
 ### Browse mode {#keyboards-browse-mode}
 

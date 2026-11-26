@@ -55,7 +55,8 @@ object JawsKeymap : KeymapDefaults() {
       put(R.string.keycombo_shortcut_other_read_current_url, sandFly(NONE, KeyEvent.KEYCODE_A))
 
       put(R.string.keycombo_shortcut_other_talkback_context_menu, sandFly(NONE, KeyEvent.KEYCODE_J))
-      put(R.string.keycombo_shortcut_global_show_learn_mode_page, sandFly(NONE, KeyEvent.KEYCODE_1))
+      // JAWS's keyboard help.
+      put(R.string.keycombo_shortcut_toggle_key_practice, sandFly(NONE, KeyEvent.KEYCODE_1))
       putReadingControlKeys()
       putSpeechKeys()
       put(

@@ -26,8 +26,8 @@ import com.google.android.accessibility.utils.SharedPreferencesUtils
  * saved shortcut is forgotten.
  */
 object KeymapDefaultsUpdate {
-  /** The version of the defaults of the NVDA, JAWS, Orca and keyboard phone keymaps. */
-  private const val VERSION = 7
+  /** The version of the defaults of the VoiceOver, NVDA, JAWS, Orca and keyboard phone keymaps. */
+  private const val VERSION = 8
 
   private const val NONE = KeyComboModel.NO_MODIFIER
   private const val SHIFT = KeyEvent.META_SHIFT_ON
@@ -294,6 +294,25 @@ object KeymapDefaultsUpdate {
     mapOf(Keymap.KEYBOARD_PHONE_SINGLE_KEYS to browseModeKeys)
   }
 
+  /**
+   * The version 7 defaults of the commands whose defaults changed in version 8, when the keyboard
+   * help keys of the VoiceOver, NVDA, JAWS and Orca keymaps moved from Practice keyboard shortcuts
+   * to Turn keyboard practice on or off.
+   */
+  private val VERSION_7: Map<Keymap, Map<Int, KeyCombo>> by lazy {
+    fun helpKey(keyCode: Int) =
+      mapOf(
+        R.string.keycombo_shortcut_global_show_learn_mode_page to old(NONE, keyCode, sandFly = true),
+        R.string.keycombo_shortcut_toggle_key_practice to KeyCombo(),
+      )
+    mapOf(
+      Keymap.VOICEOVER to helpKey(KeyEvent.KEYCODE_K),
+      Keymap.NVDA to helpKey(KeyEvent.KEYCODE_1),
+      Keymap.JAWS to helpKey(KeyEvent.KEYCODE_1),
+      Keymap.ORCA to helpKey(KeyEvent.KEYCODE_H),
+    )
+  }
+
   /** Each version's earlier defaults of the commands it changed. */
   private val CHANGES: List<Pair<Int, Map<Keymap, Map<Int, KeyCombo>>>> by lazy {
     listOf(
@@ -303,6 +322,7 @@ object KeymapDefaultsUpdate {
       5 to VERSION_4,
       6 to VERSION_5,
       7 to VERSION_6,
+      8 to VERSION_7,
     )
   }
 

@@ -55,7 +55,8 @@ object OrcaKeymap : KeymapDefaults() {
         sandFly(NONE, KeyEvent.KEYCODE_T),
       )
 
-      put(R.string.keycombo_shortcut_global_show_learn_mode_page, sandFly(NONE, KeyEvent.KEYCODE_H))
+      // Orca's learn mode.
+      put(R.string.keycombo_shortcut_toggle_key_practice, sandFly(NONE, KeyEvent.KEYCODE_H))
       put(R.string.keycombo_shortcut_global_toggle_voice_feedback, sandFly(NONE, KeyEvent.KEYCODE_S))
       put(R.string.keycombo_shortcut_other_open_talkback_settings, sandFly(NONE, KeyEvent.KEYCODE_SPACE))
       put(R.string.keycombo_shortcut_other_talkback_context_menu, sandFly(CTRL, KeyEvent.KEYCODE_SPACE))
