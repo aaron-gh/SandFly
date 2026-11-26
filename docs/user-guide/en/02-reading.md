@@ -86,7 +86,7 @@ These reading controls move through the text of the focused item, and then on to
 - **Characters**: one character at a time.
 - **Words**: one word at a time.
 - **Lines**: one line at a time.
-- **Sentences**: one sentence at a time. A sentence ends at sentence punctuation, including Chinese 。！？, and at the end of a line. On web pages, a sentence that continues into another item, such as a link inside it, is read in parts. Not in the list by default, and not available in selection mode.
+- **Sentences**: one sentence at a time. A sentence ends at sentence punctuation, including Chinese 。！？, and at the end of a line. On web pages, a sentence that continues into another item, such as a link inside it, is read in parts. Not in the list by default, and not available in selection mode. The commands **Next sentence** and **Previous sentence**, in the **Navigate by text** category, move by sentence without the reading control.
 - **Paragraphs**: one paragraph at a time.
 
 In a text field that is being edited, these reading controls move the cursor, and swipes stay in the field. For editing text, see [](#typing).

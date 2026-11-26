@@ -37,7 +37,7 @@ object NavigationGestureActions {
 
   /** What an action moves to. */
   sealed interface Target {
-    /** A character, word, line or paragraph, in apps and on web pages. */
+    /** A character, word, line, sentence or paragraph, in apps and on web pages. */
     data class Text(val granularity: CursorGranularity) : Target
 
     /** An element such as a heading or a button: the HTML element on the web, nodes in apps. */
@@ -80,6 +80,12 @@ object NavigationGestureActions {
             R.string.shortcut_previous_line,
             R.string.shortcut_next_line,
             Target.Text(CursorGranularity.LINE),
+          ) +
+          pair(
+            "SENTENCE",
+            R.string.shortcut_previous_sentence,
+            R.string.shortcut_next_sentence,
+            Target.Text(CursorGranularity.SENTENCE),
           ) +
           pair(
             "PARAGRAPH",
@@ -263,16 +269,21 @@ object NavigationGestureActions {
 
   /**
    * Moves to the next or previous item for the action saved as [value]. Returns false when nothing
-   * moved, so that the caller can play the failure sound.
+   * moved, so that the caller can play the failure sound. Moving by sentence doesn't extend a
+   * selection, so it fails while [selectionModeActive].
    */
   @JvmStatic
   fun perform(
     value: String,
     pipeline: Pipeline.FeedbackReturner,
     hasWebContent: Boolean,
+    selectionModeActive: Boolean,
     eventId: EventId?,
   ): Boolean {
     val action = find(value) ?: return false
+    if (selectionModeActive && action.target == Target.Text(CursorGranularity.SENTENCE)) {
+      return false
+    }
     val direction =
       Feedback.focusDirection(if (action.forward) SEARCH_FOCUS_FORWARD else SEARCH_FOCUS_BACKWARD)
         .setInputMode(INPUT_MODE_TOUCH)

@@ -16,6 +16,8 @@
 
 package com.google.android.accessibility.talkback.gesture
 
+import com.google.android.accessibility.talkback.Pipeline
+import com.google.android.accessibility.utils.input.CursorGranularity
 import java.io.File
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -65,6 +67,37 @@ class NavigationGestureActionsTest {
     assertFalse(NavigationGestureActions.isAction("NEXT"))
     assertFalse(NavigationGestureActions.isAction(null))
     assertNull(NavigationGestureActions.find("UNASSIGNED"))
+  }
+
+  @Test
+  fun sentencesMoveBySentenceBetweenLinesAndParagraphs() {
+    val textValues = NavigationGestureActions.CATEGORIES[0].actions.map { it.value }
+    assertEquals(
+      listOf("PREVIOUS_LINE", "NEXT_LINE", "PREVIOUS_SENTENCE", "NEXT_SENTENCE", "PREVIOUS_PARAGRAPH"),
+      textValues.subList(textValues.indexOf("PREVIOUS_LINE"), textValues.indexOf("PREVIOUS_PARAGRAPH") + 1),
+    )
+    for (value in listOf("PREVIOUS_SENTENCE", "NEXT_SENTENCE")) {
+      assertEquals(
+        NavigationGestureActions.Target.Text(CursorGranularity.SENTENCE),
+        NavigationGestureActions.find(value)!!.target,
+      )
+    }
+  }
+
+  @Test
+  fun sentencesFailInSelectionMode() {
+    val noFeedback = Pipeline.FeedbackReturner { error("No feedback expected") }
+    for (value in listOf("PREVIOUS_SENTENCE", "NEXT_SENTENCE")) {
+      assertFalse(
+        NavigationGestureActions.perform(
+          value,
+          noFeedback,
+          /* hasWebContent= */ false,
+          /* selectionModeActive= */ true,
+          /* eventId= */ null,
+        )
+      )
+    }
   }
 
   @Test

@@ -732,6 +732,7 @@ public class GestureController {
               action,
               pipeline,
               actorState.getDirectionNavigation().hasNavigableWebContent(),
+              actorState.getDirectionNavigation().isSelectionModeActive(),
               eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_scroll_back))) {
       // At the top of a list, scrolling back pulls it down to refresh, as two fingers do.
