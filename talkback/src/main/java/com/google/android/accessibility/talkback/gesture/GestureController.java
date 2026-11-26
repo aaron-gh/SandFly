@@ -207,6 +207,7 @@ import com.google.android.accessibility.utils.TreeDebugRenderer;
 import com.google.android.accessibility.utils.WindowUtils;
 import com.google.android.accessibility.utils.gestures.GestureConfiguration;
 import com.google.android.accessibility.utils.input.CursorGranularity;
+import com.google.android.accessibility.utils.input.ScrollEventInterpreter;
 import com.google.android.accessibility.utils.output.FeedbackItem;
 import com.google.android.accessibility.utils.output.GestureSpeechTiming;
 import com.google.android.accessibility.utils.output.SpeechController;
@@ -258,6 +259,9 @@ public class GestureController {
   private final HandwritingAppLauncher handwritingAppLauncher;
   private final BrailleScreenInput brailleScreenInput;
   private final AiDictation dictation;
+  // For Speak position. Set once the service has made them.
+  private @Nullable ScrollEventInterpreter scrollEventInterpreter;
+  private @Nullable TextTraversalTracker textTraversalTracker;
 
   private final @NonNull Map<Integer, Integer> captureGestureIdToAnnouncements = new HashMap<>();
   // Whether an open training page, such as Practice gestures, takes back-and-forth or angle
@@ -1548,9 +1552,7 @@ public class GestureController {
       result =
           pipeline.returnFeedback(
               eventId,
-              Feedback.requestedSpeech(
-                  ItemPosition.describe(
-                      service, accessibilityFocusMonitor.getAccessibilityFocus(false))));
+              Feedback.requestedSpeech(describePosition()));
     } else if (action.equals(service.getString(R.string.shortcut_value_speak_coordinates))) {
       result =
           pipeline.returnFeedback(
@@ -1879,6 +1881,31 @@ public class GestureController {
           captureFingerprintGestureIdToAnnouncements);
     }
     onTrainingOpen(/* open= */ true);
+  }
+
+  /** Sets where Speak position finds scroll positions and the cursor in text that apps move. */
+  public void setPositionSources(
+      ScrollEventInterpreter scrollEventInterpreter, TextTraversalTracker textTraversalTracker) {
+    this.scrollEventInterpreter = scrollEventInterpreter;
+    this.textTraversalTracker = textTraversalTracker;
+  }
+
+  /** Returns the position of the focused item for Speak position. */
+  private String describePosition() {
+    @Nullable AccessibilityNodeInfoCompat focused =
+        accessibilityFocusMonitor.getAccessibilityFocus(false);
+    @Nullable ScrollEventInterpreter scrolls = scrollEventInterpreter;
+    @Nullable TextTraversalTracker traversals = textTraversalTracker;
+    @Nullable TextCursor cursor =
+        TextPosition.cursorOf(
+            focused,
+            actorState.getDirectionNavigation().ownTextCursor(focused),
+            traversals == null ? null : traversals.cursor());
+    return ItemPosition.describe(
+        service,
+        focused,
+        cursor,
+        node -> scrolls == null ? -1 : scrolls.scrollPercent(node));
   }
 
   /** Notes whether the training is open, whose current page may take gestures. */

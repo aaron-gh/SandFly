@@ -52,6 +52,16 @@ These categories list what you add yourself, and are shown only when they have c
 
 **Speak status**, in the **Reading** category, reads what the status bar shows, such as the time, the battery level and the network, and whether the screen is hidden. By default, a two-finger triple-tap runs it. To choose what it reads and in what order, go to **Verbosity** > **Status readout**. See [](#verbosity).
 
+#### Speak position {#commands-position}
+
+**Speak position**, in the **Reading** category, says where the focused item is:
+
+- In a list or table: "Item 3 of 10" or "Row 2 of 4, column 3 of 5".
+- In text: the character after the cursor, the length of the text, the paragraph when there is more than one, and how far into the text the cursor is, such as "Character 120 of 800, paragraph 2 of 5, 15%". In a text field with the cursor in it, this is the cursor of the field. In other text, it is the place reached by moving through the text with **Characters**, **Words**, **Lines**, **Sentences** or **Paragraphs** since focus moved to the item. Paragraphs are separated by line breaks.
+- In a list, page or other view that scrolls: how far it is scrolled, such as "Scroll position 40%". At the start it is 0% and at the end 100%. In between, the percentage is from the last scroll of the view since the window opened; before the view has scrolled, it is left out.
+
+When none of these applies, SandFly says "No position". With VoiceOver gestures, a three-finger tap runs it.
+
 #### Activate confirm button and Activate cancel button {#commands-button-commands}
 
 **Activate confirm button** and **Activate cancel button**, in the **Activation** category and unassigned by default, activate a button on the screen by its label, without moving focus. **Activate confirm button** looks for labels such as **OK**, **Yes**, **Send**, **Done**, **Next**, **Save** and **Allow**; **Activate cancel button** for labels such as **Cancel**, **No**, **Close**, **Back**, **Not now** and **Skip**. A label matches when it is the same word, ignoring case and punctuation at the end.

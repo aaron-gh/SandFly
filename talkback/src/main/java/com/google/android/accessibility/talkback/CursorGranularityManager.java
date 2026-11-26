@@ -29,6 +29,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.accessibility.talkback.compositor.GlobalVariables;
 import com.google.android.accessibility.talkback.eventprocessor.ProcessorPhoneticLetters;
 import com.google.android.accessibility.talkback.focusmanagement.AccessibilityFocusMonitor;
+import com.google.android.accessibility.talkback.gesture.TextCursor;
 import com.google.android.accessibility.talkback.scripting.Scripts;
 import com.google.android.accessibility.utils.AccessibilityNodeInfoUtils;
 import com.google.android.accessibility.utils.Filter;
@@ -316,6 +317,32 @@ public class CursorGranularityManager {
       return "";
     }
     return copySelection.selectAll(navigableNodes, navigableTexts());
+  }
+
+  /**
+   * Returns the cursor that SandFly keeps in the text of the item within {@code node} last moved
+   * through by character, word, sentence or paragraph, or null when navigation was not locked to
+   * {@code node}, nothing was moved through, or the app keeps the cursor of that text.
+   */
+  public @Nullable TextCursor ownTextCursor(@Nullable AccessibilityNodeInfoCompat node) {
+    if (node == null
+        || lockedNode == null
+        || !lockedNode.equals(node)
+        || navigableNodes.isEmpty()) {
+      return null;
+    }
+    AccessibilityNodeInfoCompat current =
+        navigableNodes.get(Math.max(0, Math.min(currentNodeIndex, navigableNodes.size() - 1)));
+    if (currentGranularity != CursorGranularity.SENTENCE
+        && !GranularityTraversal.shouldHandleGranularityTraversalInTalkback(current)) {
+      return null;
+    }
+    int cursor = granularityTraversal.getCursorPosition(current);
+    CharSequence text = GranularityTraversal.getTraversedText(current);
+    if (cursor < 0 || TextUtils.isEmpty(text) || cursor > text.length()) {
+      return null;
+    }
+    return new TextCursor(text, cursor);
   }
 
   /**

@@ -501,6 +501,63 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     }
   }
 
+  /**
+   * Returns how far {@code node} is scrolled, from 0 to 100 percent, from the last scroll event with
+   * a position that it sent since the window changed, or -1 when there is none.
+   */
+  public int scrollPercent(AccessibilityNodeInfo node) {
+    PositionInfo position = cachedPositionInfo.get(new NodeIdentifier(node));
+    return position == null
+        ? -1
+        : scrollPercent(
+            position.scrollX,
+            position.scrollY,
+            position.maxScrollX,
+            position.maxScrollY,
+            position.fromIndex,
+            position.toIndex,
+            position.itemCount);
+  }
+
+  /**
+   * Returns how far a view is scrolled, from 0 to 100 percent, or -1 when the values don't tell.
+   * Scroll offsets are used when the view reports its largest offset, vertical before horizontal;
+   * otherwise the first shown item of {@code itemCount}, where 100 means that the last item is
+   * shown.
+   */
+  @VisibleForTesting
+  static int scrollPercent(
+      int scrollX,
+      int scrollY,
+      int maxScrollX,
+      int maxScrollY,
+      int fromIndex,
+      int toIndex,
+      int itemCount) {
+    if (maxScrollY > 0 && scrollY >= 0) {
+      return percentOf(scrollY, maxScrollY);
+    }
+    if (maxScrollX > 0 && scrollX >= 0) {
+      return percentOf(scrollX, maxScrollX);
+    }
+    if (fromIndex >= 0 && itemCount > 0 && fromIndex < itemCount) {
+      int last = Math.max(fromIndex, toIndex);
+      if (fromIndex == 0) {
+        return 0;
+      }
+      if (last >= itemCount - 1) {
+        return 100;
+      }
+      // The first shown item goes from 0 to the number of items that aren't shown.
+      return percentOf(fromIndex, itemCount - (last - fromIndex + 1));
+    }
+    return -1;
+  }
+
+  private static int percentOf(int value, int max) {
+    return (int) Math.max(0, Math.min(100, Math.round(value * 100.0 / max)));
+  }
+
   @VisibleForTesting
   void notifyListenersWithInterpretation(
       AccessibilityEvent event, ScrollEventInterpretation interpretation, EventId eventId) {
@@ -817,6 +874,9 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
     private final int itemCount;
     private final int scrollDeltaX;
     private final int scrollDeltaY;
+    // For the scroll percentage only, so not compared.
+    private final int maxScrollX;
+    private final int maxScrollY;
 
     PositionInfo(AccessibilityEvent event) {
       eventTime = event.getEventTime();
@@ -824,6 +884,8 @@ public class ScrollEventInterpreter implements AccessibilityEventListener {
       toIndex = event.getToIndex();
       scrollX = event.getScrollX();
       scrollY = event.getScrollY();
+      maxScrollX = event.getMaxScrollX();
+      maxScrollY = event.getMaxScrollY();
       itemCount = event.getItemCount();
       scrollDeltaX = AccessibilityEventUtils.getScrollDeltaX(event);
       scrollDeltaY = AccessibilityEventUtils.getScrollDeltaY(event);

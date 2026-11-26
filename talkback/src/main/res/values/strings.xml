@@ -2409,6 +2409,12 @@
     <string name="speak_coordinates_value">X <xliff:g id="x" example="540">%1$d</xliff:g>, Y <xliff:g id="y" example="1200">%2$d</xliff:g></string>
     <!-- Spoken by Speak coordinates after it copies the coordinates of the focused item. coordinates is the text copied, such as X 540, Y 1200. [CHAR_LIMIT=NONE] -->
     <string name="speak_coordinates_copied"><xliff:g id="coordinates" example="X 540, Y 1200">%1$s</xliff:g>. Copied</string>
+    <!-- Spoken by Speak position for the cursor in the text of the focused item: the character after the cursor, the length of the text, and how far into the text the cursor is in percent. [CHAR_LIMIT=NONE] -->
+    <string name="speak_position_text">Character <xliff:g id="character" example="120">%1$d</xliff:g> of <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <!-- Spoken by Speak position for the cursor in text with more than one paragraph: the character after the cursor, the length of the text, the paragraph that the cursor is in, the number of paragraphs, and how far into the text the cursor is in percent. [CHAR_LIMIT=NONE] -->
+    <string name="speak_position_text_paragraph">Character <xliff:g id="character" example="120">%1$d</xliff:g> of <xliff:g id="length" example="800">%2$d</xliff:g>, paragraph <xliff:g id="paragraph" example="2">%3$d</xliff:g> of <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <!-- Spoken by Speak position: how far the list, page or other scrolling view around the focused item is scrolled, in percent, 0 at the start and 100 at the end. [CHAR_LIMIT=NONE] -->
+    <string name="speak_position_scroll">Scroll position <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
     <!-- Label for the shortcut that tries to scroll current view forward. [CHAR_LIMIT=40] -->
     <string name="shortcut_scroll_forward">Scroll forward</string>
     <!-- Label for the shortcut that tries to scroll current view back. [CHAR_LIMIT=40] -->
