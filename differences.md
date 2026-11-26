@@ -1106,7 +1106,7 @@ Swipes from an app, the status bar or the navigation bar don't move focus into t
 
 ### Double-tap to move the cursor to the start or end
 
-As in VoiceOver, with **Typing** > **Double-tap moves cursor to start or end** on, a double tap on the text field that you are typing in moves the cursor. When the cursor isn't at the start, a double tap moves it to the start of the text, and SandFly announces "Beginning of field". When the cursor is at the start, a double tap moves it to the end, and SandFly announces "End of field". In any other control, or in a field that you aren't typing in, a double tap activates as usual. The setting is off by default and requires Android 13 or later and gesture recognition by SandFly.
+As in VoiceOver, with **Typing** > **Double-tap moves cursor to start or end** on, a double tap on the text field that you are typing in moves the cursor. When the cursor isn't at the start, a double tap moves it to the start of the text, and SandFly announces "Beginning of field". When the cursor is at the start, a double tap moves it to the end, and SandFly announces "End of field". The **Activate** command does the same when it runs from another gesture, a voice command, a braille command or a script. In any other control, or in a field that you aren't typing in, a double tap activates as usual. The setting is off by default and requires Android 13 or later and gesture recognition by SandFly.
 
 ### Editing commands
 
