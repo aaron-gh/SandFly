@@ -75,6 +75,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.errorprone.annotations.FormatMethod;
 import com.google.errorprone.annotations.FormatString;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -816,7 +818,40 @@ public class AccessibilityNodeInfoUtils {
   }
 
   public static boolean isCustomAction(AccessibilityActionCompat action) {
-    return action.getId() > SYSTEM_ACTION_MAX;
+    int id = action.getId();
+    if (id > SYSTEM_ACTION_MAX) {
+      return true;
+    }
+    // Some apps give their own actions IDs from android.R.id. Allow named actions there when
+    // they don't use an ID already assigned to a standard accessibility action.
+    if ((id >>> 16) != (android.R.id.background >>> 16) || TextUtils.isEmpty(action.getLabel())) {
+      return false;
+    }
+    ImmutableSet<Integer> standardIds = StandardActionIds.IDS;
+    return standardIds != null && !standardIds.contains(id);
+  }
+
+  /** Loads the public action constants of the running Android version on first use. */
+  private static final class StandardActionIds {
+    private static final @Nullable ImmutableSet<Integer> IDS = load();
+
+    private static @Nullable ImmutableSet<Integer> load() {
+      ImmutableSet.Builder<Integer> ids = ImmutableSet.builder();
+      try {
+        for (Field field : AccessibilityAction.class.getFields()) {
+          if (field.getType() == AccessibilityAction.class && Modifier.isStatic(field.getModifiers())) {
+            AccessibilityAction action = (AccessibilityAction) field.get(null);
+            if (action != null) {
+              ids.add(action.getId());
+            }
+          }
+        }
+      } catch (IllegalAccessException | SecurityException e) {
+        LogUtils.w(TAG, "Could not read Android's standard accessibility actions: %s", e);
+        return null;
+      }
+      return ids.build();
+    }
   }
 
   /** Returns the root node of the tree containing {@code node}. */

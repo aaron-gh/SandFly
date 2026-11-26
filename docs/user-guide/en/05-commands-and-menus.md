@@ -188,7 +188,7 @@ When you change the reading control or its value with a gesture, SandFly also sh
 
 #### Reading controls you can add {#commands-reading-control-groups}
 
-- **Actions for current item**: **Actions**, **Addresses and numbers**, **Clipboard history** and **Proofread**, which moves between spelling and grammar suggestions.
+- **Actions for current item**: **Actions**, **Addresses and numbers**, **Clipboard history** and **Proofread**, which moves between spelling and grammar suggestions. With **Actions** selected, swipe up or down to choose a command for the focused item, then double-tap to run it. Apps can offer commands such as **Reply** or **Archive**.
 - **Basic navigation**: **Default navigation**, **Windows**, **Containers**, **Screen search**, **Vertical navigation**, **Scroll** and **Wrap around**.
 - **Navigate by text**: **Characters**, **Words**, **Lines**, **Sentences** and **Paragraphs**.
 - **Element navigation**: **Headings**, **Links**, **Controls**, **Landmarks**, **Buttons**, **Checkboxes**, **Radio buttons**, **Edit fields**, **Combo boxes**, **Focusable items**, **Images and videos**, **Lists**, **List items**, **Tables**, **Visited links** and **Unvisited links**.
