@@ -50,6 +50,7 @@ These phrases act on the focused edit field.
 | Say | What happens |
 | --- | --- |
 | "Type TEXT", or "write TEXT", "enter TEXT", "input TEXT", "dictate TEXT" or "spell TEXT" | Types the text. |
+| "New line", or "new paragraph" or "press enter" | Types a new line in a text field of several lines, or performs the action of a field of one line. |
 | "Select all" | Selects all the text. |
 | "Select", or "start select", "start selection" or "start selection mode" | Starts selection mode. |
 | "Finish select", or "finish selection", "finish selection mode" or "end select" | Ends selection mode. |

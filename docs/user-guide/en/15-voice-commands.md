@@ -36,7 +36,7 @@ When SandFly doesn't understand a command, it says "Can't recognize this command
 #### Apps, items and text {#voice-commands-sandfly}
 
 - **Open an app**: "open", "launch", "start" or "switch to", and the name of the app. SandFly picks the app with that whole name, else one whose name starts with it, else one with a word of it in its name. When no app matches, or several match equally, SandFly runs the command with that name, such as "open notifications"; without one, the voice command isn't understood.
-- **Activate an item on the screen**: "tap", "double tap", "click", "press", "activate" or "select", and the text of the item. SandFly activates the first item whose whole text is that text, else the first item whose text contains it. When there is none, SandFly says "Not found" and the text.
+- **Activate an item on the screen**: "tap", "double tap", "click", "press", "activate" or "select", and the text of the item. SandFly activates the first item whose whole text is that text, else the first item whose text contains it. When there is none, SandFly says "Not found" and the text. "Press enter" runs **New line** instead.
 - **Type text**: "type", "write" or "enter", and the text. SandFly types it in the focused edit field and says the typed text.
 - **Run a command**: "run" or "do" and the name of a command, or "run the" and the name of a macro and "macro", such as "run the morning macro".
 - **Wait**: "wait", "wait a second", or "wait" and a number of seconds, up to 60. Use it between commands in a chain.
@@ -79,6 +79,7 @@ Voice editing runs only these commands:
 
 - The commands of the **Text editing** and **Navigate by text** categories, by name, such as "Select all", "Copy", "Paste", "Clear text", "Move cursor to end", "Next word" or "Previous character". **Dictate** and **Start voice editing** don't run. See [](#typing-editing-commands).
 - "Type", "write" or "enter", and a text, which SandFly types at the cursor and says.
+- "New line", "new paragraph" or "press enter", which run **New line**.
 - The text editing phrases of the original voice commands, such as "Select", "Finish selection", "Delete", "Cut" or "Spell TEXT". Here they are matched as the whole command. See [](#appendix-voice-commands-text-editing).
 - Custom voice commands that run one of these commands or a macro. See [](#voice-commands-custom).
 - Chains of these commands, such as "select all then cut". See [](#voice-commands-chains).

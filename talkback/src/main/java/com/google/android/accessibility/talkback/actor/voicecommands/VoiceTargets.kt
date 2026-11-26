@@ -43,7 +43,7 @@ class VoiceTargets(private val context: Context, private val locale: Locale) : V
   }
 
   private val commandsByName: Map<String, Commands.Command> by lazy {
-    commandNames(categories, apps, locale)
+    commandNames(categories, apps, locale, aliases(context))
   }
 
   private val custom: List<CustomVoiceCommands.Entry> by lazy {
@@ -70,16 +70,20 @@ class VoiceTargets(private val context: Context, private val locale: Locale) : V
      * their command list labels ("Open Gmail"), which the open phrase reads as an app.
      */
     @JvmStatic
+    @JvmOverloads
     fun commandNames(
       categories: List<Commands.Category>,
       apps: List<OpenAppActions.App>,
       locale: Locale,
+      aliases: Map<String, List<String>> = emptyMap(),
     ): Map<String, Commands.Command> {
       val names = HashMap<String, Commands.Command>()
       val (appCategories, own) = categories.partition { it.titleRes == R.string.shortcut_title_open_app }
-      for (command in own.flatMap { it.commands }) {
+      val ownCommands = own.flatMap { it.commands }
+      for (command in ownCommands) {
         names.putIfAbsent(VoiceGrammar.normalize(command.label, locale), command)
       }
+      VoiceEditingRules.addAliases(names, ownCommands, aliases, locale)
       val appCommands = appCategories.flatMap { it.commands }.associateBy { it.value }
       for (app in apps) {
         val command = appCommands[app.value] ?: continue
@@ -87,6 +91,17 @@ class VoiceTargets(private val context: Context, private val locale: Locale) : V
       }
       return names
     }
+
+    /**
+     * Other names of commands, by command value: "new line", "new paragraph" and "press enter" for
+     * New line. They are names, so "press enter" runs New line instead of tapping an item.
+     */
+    @JvmStatic
+    fun aliases(context: Context): Map<String, List<String>> =
+      mapOf(
+        context.getString(R.string.shortcut_value_new_line) to
+          context.resources.getStringArray(R.array.voice_commands_new_line).toList()
+      )
 
     /**
      * The app named [name]: its whole name, else the one whose name starts with it, else the one

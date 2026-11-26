@@ -221,6 +221,12 @@
         <item>write {text}</item>
         <item>enter {text}</item>
     </string-array>
+    <!-- Other names of the New line command, which types a new line in the text field, as Enter does. They come before the patterns, so "press enter" isn't read as activating an item named Enter. -->
+    <string-array name="voice_commands_new_line">
+        <item>new line</item>
+        <item>new paragraph</item>
+        <item>press enter</item>
+    </string-array>
     <!-- Run the command, macro or script command named {command}. -->
     <string-array name="voice_commands_run">
         <item>run [the] {command} macro</item>

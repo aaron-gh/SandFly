@@ -44,7 +44,7 @@ object SubmitText {
   }
 
   /** Returns whether [field] is an input method's extracted editor rather than the app's field. */
-  private fun isKeyboardEditor(field: AccessibilityNodeInfoCompat): Boolean {
+  internal fun isKeyboardEditor(field: AccessibilityNodeInfoCompat): Boolean {
     if (field.viewIdResourceName?.endsWith(EXTRACT_EDIT_TEXT_ID_SUFFIX) == true) return true
     return field.unwrap().window?.type == AccessibilityWindowInfo.TYPE_INPUT_METHOD
   }

@@ -133,6 +133,7 @@ The **Editing menu** command opens a menu of **Clipboard history**, **Copy**, **
 The **Text editing** group of **Commands** also has:
 
 - **Submit text**: presses the key that sends or submits the text in the keyboard, such as Send, Search or Done.
+- **New line**: does what Enter does. In a text field of several lines, it types a new line at the cursor and SandFly says "New line". In a text field of one line, it performs the action of the field, such as Search or Next, or else does what **Submit text** does. By voice, also "new paragraph" or "press enter".
 - **Clear text**: deletes all the text in the text field.
 - **Character count**: reads the length of the text, such as "12 characters, 3 words". In a password field, only the characters are counted.
 - **Read text field**: reads the whole text of the text field, or "Empty" and the hint when it has no text.

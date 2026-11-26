@@ -124,7 +124,10 @@ class VoiceEditingRulesTest {
   fun onlyEditingCategoriesWithoutExcludedCommands() {
     val commands =
       VoiceEditingRules.editingCommands(categories, setOf(TEXT_EDITING, NAVIGATE_BY_TEXT), setOf("DICTATE", "VOICE_EDITING"))
-    assertEquals(listOf("SELECT_ALL", "COPY", "PASTE", "CLEAR_TEXT", "NEXT_WORD", "PREVIOUS_CHARACTER"), commands.map { it.value })
+    assertEquals(
+      listOf("SELECT_ALL", "COPY", "PASTE", "CLEAR_TEXT", "NEW_LINE", "NEXT_WORD", "PREVIOUS_CHARACTER"),
+      commands.map { it.value },
+    )
   }
 
   @Test
@@ -142,11 +145,34 @@ class VoiceEditingRulesTest {
   @Test
   fun grammarLeavesOtherCommandsToTheEditingLegacyCommands() {
     // Not editing commands: open, call, tap, describe and commands of other categories.
-    for (said in listOf("open Chrome", "call Sam", "tap Settings", "describe the screen", "go home", "dictate")) {
+    for (said in listOf("open Chrome", "call Sam", "tap Settings", "press OK", "describe the screen", "go home", "dictate")) {
       val result = grammar.parse(said)
       assertFalse(said, result.complete)
       assertEquals(said, listOf(VoiceStep.Legacy(said)), result.steps)
     }
+  }
+
+  @Test
+  fun newLineByItsNameAndOtherPhrases() {
+    for (said in listOf("New line.", "new paragraph", "press enter", "Press Enter please")) {
+      assertEquals(said, listOf(VoiceStep.Command("NEW_LINE", "New line")), steps(said))
+    }
+    assertEquals(
+      listOf(VoiceStep.TypeText("Dear Sam"), VoiceStep.Command("NEW_LINE", "New line")),
+      steps("type Dear Sam then new line"),
+    )
+  }
+
+  @Test
+  fun aliasesOfCommandsNotListedAreLeftOut() {
+    val names =
+      VoiceEditingRules.commandNames(
+        listOf(command("COPY", "Copy")),
+        Locale.ENGLISH,
+        mapOf("NEW_LINE" to listOf("new line")),
+      )
+    assertNull(names["new line"])
+    assertEquals("COPY", names["copy"]?.value)
   }
 
   @Test
@@ -165,6 +191,7 @@ class VoiceEditingRulesTest {
           command("COPY", "Copy"),
           command("PASTE", "Paste"),
           command("CLEAR_TEXT", "Clear text"),
+          command("NEW_LINE", "New line"),
           command("DICTATE", "Dictate"),
           command("VOICE_EDITING", "Start voice editing"),
         ),
@@ -188,7 +215,11 @@ class VoiceEditingRulesTest {
 
   private val resolver =
     VoiceEditingRules.Resolver(
-      VoiceEditingRules.commandNames(editing, Locale.ENGLISH),
+      VoiceEditingRules.commandNames(
+        editing,
+        Locale.ENGLISH,
+        mapOf("NEW_LINE" to array("voice_commands_new_line")),
+      ),
       custom,
       { value -> value in editing.map { it.value } || value.startsWith("MACRO:") },
       Locale.ENGLISH,
