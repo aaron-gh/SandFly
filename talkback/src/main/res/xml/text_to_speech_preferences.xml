@@ -53,7 +53,7 @@
     <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
         android:defaultValue="false"
         android:key="pref_command_feedback_over_speech"
-        android:title="@string/notification_over_other_voice_title" />
+        android:title="@string/title_pref_command_feedback_over_speech" />
     <com.google.android.accessibility.material.preference.AccessibilitySuitePreference
         android:fragment="com.google.android.accessibility.talkback.preference.base.SpeechEqualizerFragment"
         android:key="pref_speech_equalizer_screen"

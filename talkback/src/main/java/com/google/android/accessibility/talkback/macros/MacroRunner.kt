@@ -898,7 +898,7 @@ object MacroRunner {
 
     private fun say(text: String) {
       if (quiet) return
-      service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.requestedSpeech(text))
+      service.feedbackReturner?.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(text, SpeakOptions.create().setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL)))
     }
 
     /**

@@ -106,11 +106,13 @@ They apply whether the speech engine reads the emoji or SandFly replaces them wi
 
 ### Command feedback and text editing voice {#speech-command-feedback}
 
-**Speech** > **Voice for command feedback and text editing** sets the voice that says what a command or a text edit did, such as the battery level, the status, the time, and the result of paste, cut and copy. **SandFly default**, the default, says it in SandFly's voice, in the same queue as the items you move to. A voice profile says it in that profile's voice instead. See [](#speech-voice-profiles).
+**Speech** > **Voice for command feedback and text editing** sets the voice that says what a command or a text edit did. It covers the answers of commands, such as the time and date, the battery level, the status and the title of the window, and the result of copy, cut and paste. It doesn't cover voice commands, the questions and answers of the AI, or the speech of macros. **SandFly's voice**, the default, says them as always. A voice profile says them in that profile's voice instead. See [](#speech-voice-profiles).
 
-**Read over SandFly's speech in a different voice** is available while a voice profile is chosen. With it off, the feedback waits until SandFly stops speaking. With it on, it is said at once, over what SandFly is saying, so that the item you moved to isn't held back. It's off by default.
+Speech that is off or muted, the speech filter and script rewrites, the pronunciation dictionary, and the speech history apply as to any speech, so **Repeat last spoken phrase** repeats these texts too. A touch, a gesture or a key that stops SandFly's speech stops this voice too, and only what it says: notifications read in the same profile go on.
 
-If the engine of the voice profile doesn't start or doesn't say the text, SandFly says it in its own voice.
+**Read command feedback over SandFly's speech** is available while a voice profile is chosen. With it off, the feedback waits in SandFly's speech queue. With it on, it is said at once, over what SandFly is saying. It's off by default.
+
+If the engine of the voice profile doesn't start within 2 seconds, SandFly's own voice says the text, and with **Read command feedback over SandFly's speech** on the text is dropped.
 
 ### Voice effects {#voice-effects}
 
