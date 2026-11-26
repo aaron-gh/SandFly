@@ -94,7 +94,27 @@ object DictationSettings {
   fun ramblerLive(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_RAMBLER_LIVE, true)
 
   /** Whether Dictate speaks the text it types: Speak dictated text. */
-  fun speaksText(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SPEAK_TEXT, false)
+  @JvmStatic
+  fun speaksText(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_SPEAK_TEXT, true)
+
+  /** Set once [migrateSpeakTextDefault] has run. */
+  const val PREF_SPEAK_TEXT_DEFAULT_ON = "pref_dictation_speak_text_default_on"
+
+  /**
+   * Speak dictated text became on by default. The settings screen saved the old default, off, when
+   * it was shown, and off could only be chosen by turning the switch on and off again, so a saved
+   * off is dropped once and the new default applies. A saved on stays. Runs once.
+   */
+  @JvmStatic
+  fun migrateSpeakTextDefault(prefs: SharedPreferences) {
+    if (prefs.getBoolean(PREF_SPEAK_TEXT_DEFAULT_ON, false)) return
+    prefs.edit {
+      if (prefs.contains(PREF_SPEAK_TEXT) && !prefs.getBoolean(PREF_SPEAK_TEXT, true)) {
+        remove(PREF_SPEAK_TEXT)
+      }
+      putBoolean(PREF_SPEAK_TEXT_DEFAULT_ON, true)
+    }
+  }
 
   /** Whether Google speech recognition adds punctuation and capital letters: Automatic punctuation. */
   fun punctuation(prefs: SharedPreferences): Boolean = prefs.getBoolean(PREF_PUNCTUATION, true)

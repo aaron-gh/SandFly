@@ -180,6 +180,7 @@ import com.google.android.accessibility.talkback.compositor.roledescription.Role
 import com.google.android.accessibility.talkback.contextmenu.ListMenuManager;
 import com.google.android.accessibility.talkback.controller.TelevisionNavigationController;
 import com.google.android.accessibility.talkback.controlsounds.ControlSoundsSettings;
+import com.google.android.accessibility.talkback.dictation.DictationSettings;
 import com.google.android.accessibility.talkback.dictation.RecognitionModelKeeper;
 import com.google.android.accessibility.talkback.dictation.SandflyDictation;
 import com.google.android.accessibility.talkback.directtouch.DirectTouchController;
@@ -4223,6 +4224,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     WindowNamesSetting.migrate(prefs, getResources());
     // The battery switch for when the screen turns on became a list with Only while charging.
     ScreenAnnouncementSettings.migrateBattery(prefs);
+    // Speak dictated text became on by default.
+    DictationSettings.migrateSpeakTextDefault(prefs);
     // Verbosity's switch for notifications with the screen off became the Notifications one.
     NotificationSettings.migrateScreenOff(
         prefs,
