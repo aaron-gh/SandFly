@@ -159,15 +159,20 @@ public class TalkBackKeyboardShortcutPreferenceFragment extends TalkbackBaseFrag
   /** Turns keyboard practice on, in SandFly, which keeps it on outside settings too. */
   private final Preference.OnPreferenceClickListener keyPracticePreferenceClickListener =
       (preference) -> {
-        TalkBackService service = TalkBackService.getInstance();
-        if (service != null && TalkBackService.isServiceActive()) {
-          KeyComboManager keyComboManager = service.getKeyComboManager();
-          if (keyComboManager != null && !keyComboManager.isKeyPracticeOn()) {
-            keyComboManager.toggleKeyPractice();
-          }
-        }
+        startKeyPractice();
         return true;
       };
+
+  /** Turns keyboard practice on while SandFly is active, if it isn't on already. */
+  static void startKeyPractice() {
+    TalkBackService service = TalkBackService.getInstance();
+    if (service != null && TalkBackService.isServiceActive()) {
+      KeyComboManager keyComboManager = service.getKeyComboManager();
+      if (keyComboManager != null && !keyComboManager.isKeyPracticeOn()) {
+        keyComboManager.toggleKeyPractice();
+      }
+    }
+  }
 
   private final OnPreferenceChangeListener preferenceChangeListener =
       (preference, newValue) -> {
