@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 секунда</string>
   <string name="value_focus_delay_1500ms">1,5 секунди</string>
   <string name="value_focus_delay_2000ms">2 секунди</string>
+    <string name="title_pref_emoji_after_name">След имената на емоджита</string>
+    <string name="value_emoji_after_name_nothing">Нищо</string>
+    <string name="value_emoji_after_name_word">Изговаряне на „емоджи“</string>
+    <string name="value_emoji_after_name_sound">Възпроизвеждане на звук</string>
+    <string name="shortcut_previous_sentence">Предишно изречение</string>
+    <string name="shortcut_next_sentence">Следващо изречение</string>
+    <string name="speak_position_text">Символ <xliff:g id="character" example="120">%1$d</xliff:g> от <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Символ <xliff:g id="character" example="120">%1$d</xliff:g> от <xliff:g id="length" example="800">%2$d</xliff:g>, абзац <xliff:g id="paragraph" example="2">%3$d</xliff:g> от <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Позиция на превъртане <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Нов ред</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Автокорекция</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Предложения за думи</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Изговаряне на предложението</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Изкл.</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Веднага</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter въвежда изговореното предложение</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, корекция</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Език на списъка с думи</string>
+    <string name="value_word_language_system">Системен език</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Изтриване на научените думи</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Научените думи са изтрити</string>
+    <string name="shortcut_next_word_suggestion">Следващо предложение за дума</string>
+    <string name="shortcut_previous_word_suggestion">Предишно предложение за дума</string>
+    <string name="shortcut_type_word_suggestion">Въвеждане на предложение за дума</string>
+    <string name="sandfly_keyboard_no_suggestions">Няма предложения</string>
+    <string name="sandfly_keyboard_suggestions_off">Предложенията за думи са изключени</string>
+    <string name="sandfly_keyboard_no_word_list">Няма списък с думи за този език</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, коригирано</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, корекцията е отменена</string>
+    <string name="word_suggestions_hint">Плъзнете нагоре или надолу за избор, после докоснете двукратно за въвеждане</string>
+    <string name="title_pref_cyrillic_text_recognition">Разпознаване на текст на кирилица</string>
+    <string name="cyrillic_text_model_missing">Няма модел за разпознаване на текст за <xliff:g id="language" example="Russian">%1$s</xliff:g>. Изтеглете го в Описания на изображения и екрана, Разпознаване на текст на кирилица.</string>
+    <string name="cyrillic_text_model_error_http">Сървърът за изтегляне не прие заявката. Опитайте отново по-късно.</string>
 </resources>

@@ -2847,4 +2847,37 @@
   <string name="value_focus_delay_1000ms">1 секунда</string>
   <string name="value_focus_delay_1500ms">1,5 секунды</string>
   <string name="value_focus_delay_2000ms">2 секунды</string>
+    <string name="title_pref_emoji_after_name">Пасля назваў эмодзі</string>
+    <string name="value_emoji_after_name_nothing">Нічога</string>
+    <string name="value_emoji_after_name_word">Казаць «эмодзі»</string>
+    <string name="value_emoji_after_name_sound">Прайграваць гук</string>
+    <string name="shortcut_previous_sentence">Папярэдні сказ</string>
+    <string name="shortcut_next_sentence">Наступны сказ</string>
+    <string name="speak_position_text">Сімвал <xliff:g id="character" example="120">%1$d</xliff:g> з <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Сімвал <xliff:g id="character" example="120">%1$d</xliff:g> з <xliff:g id="length" example="800">%2$d</xliff:g>, абзац <xliff:g id="paragraph" example="2">%3$d</xliff:g> з <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Пазіцыя пракруткі <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Новы радок</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Аўтавыпраўленне</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Падказкі слоў</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Агучваць падказку</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Выключана</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Адразу</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter уводзіць агучаную падказку</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, выпраўленне</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Мова спісу слоў</string>
+    <string name="value_word_language_system">Мова сістэмы</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Выдаліць вывучаныя словы</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Вывучаныя словы выдалены</string>
+    <string name="shortcut_next_word_suggestion">Наступная падказка слова</string>
+    <string name="shortcut_previous_word_suggestion">Папярэдняя падказка слова</string>
+    <string name="shortcut_type_word_suggestion">Увесці падказку слова</string>
+    <string name="sandfly_keyboard_no_suggestions">Няма падказак</string>
+    <string name="sandfly_keyboard_suggestions_off">Падказкі слоў выключаны</string>
+    <string name="sandfly_keyboard_no_word_list">Для гэтай мовы няма спісу слоў</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, выпраўлена</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, выпраўленне скасавана</string>
+    <string name="word_suggestions_hint">Правядзіце пальцам уверх або ўніз, каб выбраць, затым двойчы націсніце, каб увесці</string>
+    <string name="title_pref_cyrillic_text_recognition">Распазнаванне кірылічнага тэксту</string>
+    <string name="cyrillic_text_model_missing">Няма мадэлі распазнавання тэксту для мовы: <xliff:g id="language" example="Russian">%1$s</xliff:g>. Спампуйце яе ў раздзеле «Апісанні відарысаў і экрана», «Распазнаванне кірылічнага тэксту».</string>
+    <string name="cyrillic_text_model_error_http">Сервер для спампоўвання не прыняў запыт. Паспрабуйце пазней.</string>
 </resources>

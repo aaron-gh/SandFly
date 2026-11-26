@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 sekondë</string>
   <string name="value_focus_delay_1500ms">1,5 sekonda</string>
   <string name="value_focus_delay_2000ms">2 sekonda</string>
+    <string name="title_pref_emoji_after_name">Pas emrave të emoji-ve</string>
+    <string name="value_emoji_after_name_nothing">Asgjë</string>
+    <string name="value_emoji_after_name_word">Thuaj \"emoji\"</string>
+    <string name="value_emoji_after_name_sound">Luaj një tingull</string>
+    <string name="shortcut_previous_sentence">Fjalia e mëparshme</string>
+    <string name="shortcut_next_sentence">Fjalia tjetër</string>
+    <string name="speak_position_text">Karakteri <xliff:g id="character" example="120">%1$d</xliff:g> nga <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Karakteri <xliff:g id="character" example="120">%1$d</xliff:g> nga <xliff:g id="length" example="800">%2$d</xliff:g>, paragrafi <xliff:g id="paragraph" example="2">%3$d</xliff:g> nga <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Pozicioni i lëvizjes <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Rresht i ri</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Korrigjim automatik</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Sugjerime fjalësh</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Thuaj sugjerimin</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Joaktive</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Menjëherë</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter shtyp sugjerimin e thënë</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, korrigjim</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Gjuha e listës së fjalëve</string>
+    <string name="value_word_language_system">Gjuha e sistemit</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Fshi fjalët e mësuara</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Fjalët e mësuara u fshinë</string>
+    <string name="shortcut_next_word_suggestion">Sugjerimi tjetër i fjalës</string>
+    <string name="shortcut_previous_word_suggestion">Sugjerimi i mëparshëm i fjalës</string>
+    <string name="shortcut_type_word_suggestion">Shtyp sugjerimin e fjalës</string>
+    <string name="sandfly_keyboard_no_suggestions">Pa sugjerime</string>
+    <string name="sandfly_keyboard_suggestions_off">Sugjerimet e fjalëve janë joaktive</string>
+    <string name="sandfly_keyboard_no_word_list">Nuk ka listë fjalësh për këtë gjuhë</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, i korrigjuar</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, korrigjimi u zhbë</string>
+    <string name="word_suggestions_hint">Rrëshqit lart ose poshtë për të zgjedhur, pastaj trokit dy herë për të shtypur</string>
+    <string name="title_pref_cyrillic_text_recognition">Njohja e tekstit cirilik</string>
+    <string name="cyrillic_text_model_missing">Nuk ka model njohjeje teksti për <xliff:g id="language" example="Russian">%1$s</xliff:g>. Shkarkoje te Përshkrimet e imazheve dhe ekranit, Njohja e tekstit cirilik.</string>
+    <string name="cyrillic_text_model_error_http">Serveri i shkarkimit nuk e pranoi kërkesën. Provo përsëri më vonë.</string>
 </resources>

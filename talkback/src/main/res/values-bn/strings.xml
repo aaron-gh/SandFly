@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">১ সেকেন্ড</string>
   <string name="value_focus_delay_1500ms">১.৫ সেকেন্ড</string>
   <string name="value_focus_delay_2000ms">২ সেকেন্ড</string>
+    <string name="title_pref_emoji_after_name">ইমোজির নামের পরে</string>
+    <string name="value_emoji_after_name_nothing">কিছু না</string>
+    <string name="value_emoji_after_name_word">“ইমোজি” বলুন</string>
+    <string name="value_emoji_after_name_sound">সাউন্ড চালান</string>
+    <string name="shortcut_previous_sentence">আগের বাক্য</string>
+    <string name="shortcut_next_sentence">পরের বাক্য</string>
+    <string name="speak_position_text">অক্ষর <xliff:g id="character" example="120">%1$d</xliff:g>/<xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">অক্ষর <xliff:g id="character" example="120">%1$d</xliff:g>/<xliff:g id="length" example="800">%2$d</xliff:g>, অনুচ্ছেদ <xliff:g id="paragraph" example="2">%3$d</xliff:g>/<xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">স্ক্রল অবস্থান <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">নতুন লাইন</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">অটো-কারেক্ট</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">শব্দের সাজেশন</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">সাজেশন বলুন</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">বন্ধ</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">তৎক্ষণাৎ</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter বলা সাজেশন টাইপ করে</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, সংশোধন</string>
+    <string name="title_pref_sandfly_keyboard_word_language">শব্দ তালিকার ভাষা</string>
+    <string name="value_word_language_system">সিস্টেমের ভাষা</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">শেখা শব্দ মুছুন</string>
+    <string name="sandfly_keyboard_learned_words_deleted">শেখা শব্দ মুছে ফেলা হয়েছে</string>
+    <string name="shortcut_next_word_suggestion">পরের শব্দের সাজেশন</string>
+    <string name="shortcut_previous_word_suggestion">আগের শব্দের সাজেশন</string>
+    <string name="shortcut_type_word_suggestion">শব্দের সাজেশন টাইপ করুন</string>
+    <string name="sandfly_keyboard_no_suggestions">কোনো সাজেশন নেই</string>
+    <string name="sandfly_keyboard_suggestions_off">শব্দের সাজেশন বন্ধ</string>
+    <string name="sandfly_keyboard_no_word_list">এই ভাষার জন্য শব্দ তালিকা নেই</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, সংশোধন করা হয়েছে</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, সংশোধন পূর্বাবস্থায় ফেরানো হয়েছে</string>
+    <string name="word_suggestions_hint">বেছে নিতে উপরে বা নিচে সোয়াইপ করুন, তারপর টাইপ করতে দুবার ট্যাপ করুন</string>
+    <string name="title_pref_cyrillic_text_recognition">সিরিলিক টেক্সট শনাক্তকরণ</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g>-এর জন্য টেক্সট শনাক্তকরণ মডেল নেই। ছবি ও স্ক্রিনের বিবরণ, সিরিলিক টেক্সট শনাক্তকরণে এটি ডাউনলোড করুন।</string>
+    <string name="cyrillic_text_model_error_http">ডাউনলোড সার্ভার অনুরোধ গ্রহণ করেনি। পরে আবার চেষ্টা করুন।</string>
 </resources>

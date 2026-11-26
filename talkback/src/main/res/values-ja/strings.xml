@@ -2818,4 +2818,37 @@
   <string name="value_focus_delay_1000ms">1 秒</string>
   <string name="value_focus_delay_1500ms">1.5 秒</string>
   <string name="value_focus_delay_2000ms">2 秒</string>
+    <string name="title_pref_emoji_after_name">絵文字名の後</string>
+    <string name="value_emoji_after_name_nothing">なし</string>
+    <string name="value_emoji_after_name_word">「絵文字」と読み上げる</string>
+    <string name="value_emoji_after_name_sound">サウンドを再生</string>
+    <string name="shortcut_previous_sentence">前の文</string>
+    <string name="shortcut_next_sentence">次の文</string>
+    <string name="speak_position_text"><xliff:g id="character" example="120">%1$d</xliff:g> 文字目 / 全 <xliff:g id="length" example="800">%2$d</xliff:g> 文字、<xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph"><xliff:g id="character" example="120">%1$d</xliff:g> 文字目 / 全 <xliff:g id="length" example="800">%2$d</xliff:g> 文字、<xliff:g id="paragraph" example="2">%3$d</xliff:g> 番目の段落 / 全 <xliff:g id="paragraphs" example="5">%4$d</xliff:g> 段落、<xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">スクロール位置 <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">改行</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">自動修正</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">単語の候補</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">候補を読み上げる</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">オフ</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">すぐに</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter で読み上げた候補を入力</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>、修正</string>
+    <string name="title_pref_sandfly_keyboard_word_language">単語リストの言語</string>
+    <string name="value_word_language_system">システムの言語</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">学習した単語を削除</string>
+    <string name="sandfly_keyboard_learned_words_deleted">学習した単語を削除しました</string>
+    <string name="shortcut_next_word_suggestion">次の単語候補</string>
+    <string name="shortcut_previous_word_suggestion">前の単語候補</string>
+    <string name="shortcut_type_word_suggestion">単語候補を入力</string>
+    <string name="sandfly_keyboard_no_suggestions">候補なし</string>
+    <string name="sandfly_keyboard_suggestions_off">単語の候補はオフです</string>
+    <string name="sandfly_keyboard_no_word_list">この言語の単語リストがありません</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>、修正しました</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>、修正を取り消しました</string>
+    <string name="word_suggestions_hint">上下にスワイプして選択し、ダブルタップして入力します</string>
+    <string name="title_pref_cyrillic_text_recognition">キリル文字のテキスト認識</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> のテキスト認識モデルがありません。「画像と画面の説明」の「キリル文字のテキスト認識」でダウンロードしてください。</string>
+    <string name="cyrillic_text_model_error_http">ダウンロード サーバーがリクエストを受け付けませんでした。しばらくしてからもう一度お試しください。</string>
 </resources>

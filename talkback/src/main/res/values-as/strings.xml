@@ -2824,4 +2824,37 @@
   <string name="value_focus_delay_1000ms">১ ছেকেণ্ড</string>
   <string name="value_focus_delay_1500ms">১.৫ ছেকেণ্ড</string>
   <string name="value_focus_delay_2000ms">২ ছেকেণ্ড</string>
+    <string name="title_pref_emoji_after_name">ইম’জিৰ নামৰ পিছত</string>
+    <string name="value_emoji_after_name_nothing">একো নাই</string>
+    <string name="value_emoji_after_name_word">“ইম’জি” কওক</string>
+    <string name="value_emoji_after_name_sound">এটা ধ্বনি বজাওক</string>
+    <string name="shortcut_previous_sentence">পূৰ্বৱৰ্তী বাক্য</string>
+    <string name="shortcut_next_sentence">পৰৱৰ্তী বাক্য</string>
+    <string name="speak_position_text">বৰ্ণ <xliff:g id="character" example="120">%1$d</xliff:g>, মুঠ <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">বৰ্ণ <xliff:g id="character" example="120">%1$d</xliff:g>, মুঠ <xliff:g id="length" example="800">%2$d</xliff:g>, পেৰাগ্ৰাফ <xliff:g id="paragraph" example="2">%3$d</xliff:g>, মুঠ <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">স্ক্ৰ’ল অৱস্থান <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">নতুন শাৰী</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">স্বয়ংক্ৰিয় সংশোধন</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">শব্দৰ পৰামৰ্শ</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">পৰামৰ্শ কওক</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">অফ</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">তৎক্ষণাৎ</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter-এ কোৱা পৰামৰ্শ টাইপ কৰে</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, সংশোধন</string>
+    <string name="title_pref_sandfly_keyboard_word_language">শব্দ তালিকাৰ ভাষা</string>
+    <string name="value_word_language_system">ছিষ্টেমৰ ভাষা</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">শিকা শব্দ মচক</string>
+    <string name="sandfly_keyboard_learned_words_deleted">শিকা শব্দ মচা হ’ল</string>
+    <string name="shortcut_next_word_suggestion">পৰৱৰ্তী শব্দৰ পৰামৰ্শ</string>
+    <string name="shortcut_previous_word_suggestion">পূৰ্বৱৰ্তী শব্দৰ পৰামৰ্শ</string>
+    <string name="shortcut_type_word_suggestion">শব্দৰ পৰামৰ্শ টাইপ কৰক</string>
+    <string name="sandfly_keyboard_no_suggestions">কোনো পৰামৰ্শ নাই</string>
+    <string name="sandfly_keyboard_suggestions_off">শব্দৰ পৰামৰ্শ অফ</string>
+    <string name="sandfly_keyboard_no_word_list">এই ভাষাৰ বাবে কোনো শব্দ তালিকা নাই</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, সংশোধন কৰা হ’ল</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, সংশোধন আনডু কৰা হ’ল</string>
+    <string name="word_suggestions_hint">বাছনি কৰিবলৈ ওপৰলৈ বা তললৈ ছোৱাইপ কৰক, তাৰ পিছত টাইপ কৰিবলৈ দুবাৰ টেপ কৰক</string>
+    <string name="title_pref_cyrillic_text_recognition">ছিৰিলিক পাঠ চিনাক্তকৰণ</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g>ৰ বাবে কোনো পাঠ চিনাক্তকৰণৰ মডেল নাই। প্ৰতিচ্ছবি আৰু স্ক্ৰীনৰ বিৱৰণ, ছিৰিলিক পাঠ চিনাক্তকৰণত ডাউনল’ড কৰক।</string>
+    <string name="cyrillic_text_model_error_http">ডাউনল’ড ছাৰ্ভাৰে অনুৰোধ গ্ৰহণ কৰা নাই। পিছত পুনৰ চেষ্টা কৰক।</string>
 </resources>

@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">एक सेकंड</string>
   <string name="value_focus_delay_1500ms">1.5 सेकंड</string>
   <string name="value_focus_delay_2000ms">दो सेकंड</string>
+    <string name="title_pref_emoji_after_name">इमोजी के नाम के बाद</string>
+    <string name="value_emoji_after_name_nothing">कुछ नहीं</string>
+    <string name="value_emoji_after_name_word">\"इमोजी\" बोलें</string>
+    <string name="value_emoji_after_name_sound">आवाज़ चलाएं</string>
+    <string name="shortcut_previous_sentence">पिछला वाक्य</string>
+    <string name="shortcut_next_sentence">अगला वाक्य</string>
+    <string name="speak_position_text"><xliff:g id="length" example="800">%2$d</xliff:g> में से वर्ण <xliff:g id="character" example="120">%1$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph"><xliff:g id="length" example="800">%2$d</xliff:g> में से वर्ण <xliff:g id="character" example="120">%1$d</xliff:g>, <xliff:g id="paragraphs" example="5">%4$d</xliff:g> में से पैराग्राफ़ <xliff:g id="paragraph" example="2">%3$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">स्क्रोल की स्थिति <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">नई लाइन</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">अपने-आप सुधार</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">शब्द सुझाव</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">सुझाव बोलें</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">बंद</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">तुरंत</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter दबाने पर बोला गया सुझाव टाइप होता है</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, सुधार</string>
+    <string name="title_pref_sandfly_keyboard_word_language">शब्द सूची की भाषा</string>
+    <string name="value_word_language_system">सिस्टम की भाषा</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">सीखे गए शब्द मिटाएं</string>
+    <string name="sandfly_keyboard_learned_words_deleted">सीखे गए शब्द मिटा दिए गए</string>
+    <string name="shortcut_next_word_suggestion">अगला शब्द सुझाव</string>
+    <string name="shortcut_previous_word_suggestion">पिछला शब्द सुझाव</string>
+    <string name="shortcut_type_word_suggestion">शब्द सुझाव टाइप करें</string>
+    <string name="sandfly_keyboard_no_suggestions">कोई सुझाव नहीं</string>
+    <string name="sandfly_keyboard_suggestions_off">शब्द सुझाव बंद हैं</string>
+    <string name="sandfly_keyboard_no_word_list">इस भाषा के लिए शब्द सूची नहीं है</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, सुधारा गया</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, सुधार पहले जैसा किया गया</string>
+    <string name="word_suggestions_hint">चुनने के लिए ऊपर या नीचे स्वाइप करें, फिर टाइप करने के लिए दो बार टैप करें</string>
+    <string name="title_pref_cyrillic_text_recognition">सिरिलिक टेक्स्ट की पहचान</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> के लिए टेक्स्ट पहचान मॉडल नहीं है. उसे इमेज और स्क्रीन के बारे में जानकारी, सिरिलिक टेक्स्ट की पहचान में डाउनलोड करें.</string>
+    <string name="cyrillic_text_model_error_http">डाउनलोड सर्वर ने अनुरोध स्वीकार नहीं किया. बाद में फिर से कोशिश करें.</string>
 </resources>

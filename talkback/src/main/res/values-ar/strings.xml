@@ -2872,4 +2872,37 @@
   <string name="value_focus_delay_1000ms">ثانية واحدة</string>
   <string name="value_focus_delay_1500ms">1.5 ثانية</string>
   <string name="value_focus_delay_2000ms">ثانيتان</string>
+    <string name="title_pref_emoji_after_name">بعد أسماء الرموز التعبيرية</string>
+    <string name="value_emoji_after_name_nothing">لا شيء</string>
+    <string name="value_emoji_after_name_word">نطق “رمز تعبيري”</string>
+    <string name="value_emoji_after_name_sound">تشغيل صوت</string>
+    <string name="shortcut_previous_sentence">الجملة السابقة</string>
+    <string name="shortcut_next_sentence">الجملة التالية</string>
+    <string name="speak_position_text">الحرف <xliff:g id="character" example="120">%1$d</xliff:g> من <xliff:g id="length" example="800">%2$d</xliff:g>، <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">الحرف <xliff:g id="character" example="120">%1$d</xliff:g> من <xliff:g id="length" example="800">%2$d</xliff:g>، الفقرة <xliff:g id="paragraph" example="2">%3$d</xliff:g> من <xliff:g id="paragraphs" example="5">%4$d</xliff:g>، <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">موضع التمرير <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">سطر جديد</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">التصحيح التلقائي</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">اقتراحات الكلمات</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">نطق الاقتراح</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">غير مفعَّل</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">فورًا</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">يكتب Enter الاقتراح المنطوق</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>، تصحيح</string>
+    <string name="title_pref_sandfly_keyboard_word_language">لغة قائمة الكلمات</string>
+    <string name="value_word_language_system">لغة النظام</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">حذف الكلمات المكتسبة</string>
+    <string name="sandfly_keyboard_learned_words_deleted">تم حذف الكلمات المكتسبة</string>
+    <string name="shortcut_next_word_suggestion">اقتراح الكلمة التالي</string>
+    <string name="shortcut_previous_word_suggestion">اقتراح الكلمة السابق</string>
+    <string name="shortcut_type_word_suggestion">كتابة اقتراح الكلمة</string>
+    <string name="sandfly_keyboard_no_suggestions">لا توجد اقتراحات</string>
+    <string name="sandfly_keyboard_suggestions_off">اقتراحات الكلمات غير مفعَّلة</string>
+    <string name="sandfly_keyboard_no_word_list">لا توجد قائمة كلمات لهذه اللغة</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>، تم التصحيح</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>، تم التراجع عن التصحيح</string>
+    <string name="word_suggestions_hint">مرّر لأعلى أو لأسفل للاختيار، ثم انقر مرتين للكتابة</string>
+    <string name="title_pref_cyrillic_text_recognition">التعرّف على النص السيريلي</string>
+    <string name="cyrillic_text_model_missing">لا يوجد نموذج للتعرّف على النص للغة <xliff:g id="language" example="Russian">%1$s</xliff:g>. نزِّله من أوصاف الصور والشاشة، التعرّف على النص السيريلي.</string>
+    <string name="cyrillic_text_model_error_http">لم يقبل خادم التنزيل الطلب. حاول مرة أخرى لاحقًا.</string>
 </resources>

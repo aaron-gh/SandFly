@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 секунд</string>
   <string name="value_focus_delay_1500ms">1,5 секунд</string>
   <string name="value_focus_delay_2000ms">2 секунд</string>
+    <string name="title_pref_emoji_after_name">Эмодзи аталыштарынан кийин</string>
+    <string name="value_emoji_after_name_nothing">Эч нерсе</string>
+    <string name="value_emoji_after_name_word">«Эмодзи» деп айтуу</string>
+    <string name="value_emoji_after_name_sound">Добуш чыгаруу</string>
+    <string name="shortcut_previous_sentence">Мурунку сүйлөм</string>
+    <string name="shortcut_next_sentence">Кийинки сүйлөм</string>
+    <string name="speak_position_text">Символ <xliff:g id="character" example="120">%1$d</xliff:g>, жалпы <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Символ <xliff:g id="character" example="120">%1$d</xliff:g>, жалпы <xliff:g id="length" example="800">%2$d</xliff:g>, абзац <xliff:g id="paragraph" example="2">%3$d</xliff:g>, жалпы <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Жылдыруу абалы <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Жаңы сап</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Автоматтык оңдоо</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Сөз сунуштары</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Сунушту айтуу</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Өчүк</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Дароо</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter айтылган сунушту терет</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, оңдоо</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Сөздүк тили</string>
+    <string name="value_word_language_system">Системанын тили</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Үйрөнгөн сөздөрдү өчүрүү</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Үйрөнгөн сөздөр өчүрүлдү</string>
+    <string name="shortcut_next_word_suggestion">Кийинки сөз сунушу</string>
+    <string name="shortcut_previous_word_suggestion">Мурунку сөз сунушу</string>
+    <string name="shortcut_type_word_suggestion">Сөз сунушун терүү</string>
+    <string name="sandfly_keyboard_no_suggestions">Сунуштар жок</string>
+    <string name="sandfly_keyboard_suggestions_off">Сөз сунуштары өчүк</string>
+    <string name="sandfly_keyboard_no_word_list">Бул тил үчүн сөздүк жок</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, оңдолду</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, оңдоо жокко чыгарылды</string>
+    <string name="word_suggestions_hint">Тандоо үчүн өйдө же ылдый сүрүңүз, андан соң терүү үчүн эки жолу таптаңыз</string>
+    <string name="title_pref_cyrillic_text_recognition">Кириллица текстин таануу</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> тили үчүн текстти таануу модели жок. Аны Сүрөт жана экран сүрөттөмөлөрү, Кириллица текстин таануу бөлүмүнөн жүктөп алыңыз.</string>
+    <string name="cyrillic_text_model_error_http">Жүктөө сервери сурамды кабыл албады. Кийинчерээк кайра аракет кылыңыз.</string>
 </resources>

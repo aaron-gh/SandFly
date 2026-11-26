@@ -2816,4 +2816,37 @@
   <string name="value_focus_delay_1000ms">1 giây</string>
   <string name="value_focus_delay_1500ms">1,5 giây</string>
   <string name="value_focus_delay_2000ms">2 giây</string>
+    <string name="title_pref_emoji_after_name">Sau tên biểu tượng cảm xúc</string>
+    <string name="value_emoji_after_name_nothing">Không có gì</string>
+    <string name="value_emoji_after_name_word">Đọc “biểu tượng cảm xúc”</string>
+    <string name="value_emoji_after_name_sound">Phát âm thanh</string>
+    <string name="shortcut_previous_sentence">Câu trước</string>
+    <string name="shortcut_next_sentence">Câu tiếp theo</string>
+    <string name="speak_position_text">Ký tự <xliff:g id="character" example="120">%1$d</xliff:g> trên <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Ký tự <xliff:g id="character" example="120">%1$d</xliff:g> trên <xliff:g id="length" example="800">%2$d</xliff:g>, đoạn <xliff:g id="paragraph" example="2">%3$d</xliff:g> trên <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Vị trí cuộn <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Dòng mới</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Tự động sửa</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Gợi ý từ</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Đọc gợi ý</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Tắt</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Ngay lập tức</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter nhập gợi ý đã đọc</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, sửa lỗi</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Ngôn ngữ danh sách từ</string>
+    <string name="value_word_language_system">Ngôn ngữ hệ thống</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Xoá các từ đã học</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Đã xoá các từ đã học</string>
+    <string name="shortcut_next_word_suggestion">Gợi ý từ tiếp theo</string>
+    <string name="shortcut_previous_word_suggestion">Gợi ý từ trước</string>
+    <string name="shortcut_type_word_suggestion">Nhập gợi ý từ</string>
+    <string name="sandfly_keyboard_no_suggestions">Không có gợi ý</string>
+    <string name="sandfly_keyboard_suggestions_off">Gợi ý từ đang tắt</string>
+    <string name="sandfly_keyboard_no_word_list">Không có danh sách từ cho ngôn ngữ này</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, đã sửa</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, đã hoàn tác việc sửa</string>
+    <string name="word_suggestions_hint">Vuốt lên hoặc xuống để chọn, sau đó nhấn đúp để nhập</string>
+    <string name="title_pref_cyrillic_text_recognition">Nhận dạng văn bản chữ Kirin</string>
+    <string name="cyrillic_text_model_missing">Chưa có mô hình nhận dạng văn bản cho <xliff:g id="language" example="Russian">%1$s</xliff:g>. Hãy tải xuống trong Mô tả hình ảnh và màn hình, Nhận dạng văn bản chữ Kirin.</string>
+    <string name="cyrillic_text_model_error_http">Máy chủ tải xuống không chấp nhận yêu cầu. Hãy thử lại sau.</string>
 </resources>

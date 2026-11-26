@@ -2849,4 +2849,37 @@
   <string name="value_focus_delay_1000ms">1 sek.</string>
   <string name="value_focus_delay_1500ms">1,5 sekundės</string>
   <string name="value_focus_delay_2000ms">2 sek.</string>
+    <string name="title_pref_emoji_after_name">Po jaustukų pavadinimų</string>
+    <string name="value_emoji_after_name_nothing">Nieko</string>
+    <string name="value_emoji_after_name_word">Sakyti „jaustukas“</string>
+    <string name="value_emoji_after_name_sound">Paleisti garsą</string>
+    <string name="shortcut_previous_sentence">Ankstesnis sakinys</string>
+    <string name="shortcut_next_sentence">Kitas sakinys</string>
+    <string name="speak_position_text">Simbolis <xliff:g id="character" example="120">%1$d</xliff:g> iš <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Simbolis <xliff:g id="character" example="120">%1$d</xliff:g> iš <xliff:g id="length" example="800">%2$d</xliff:g>, pastraipa <xliff:g id="paragraph" example="2">%3$d</xliff:g> iš <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Slinkimo padėtis <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Nauja eilutė</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Automatinis taisymas</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Žodžių pasiūlymai</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Tarti pasiūlymą</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Išjungta</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Iš karto</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter įveda ištartą pasiūlymą</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, taisymas</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Žodyno kalba</string>
+    <string name="value_word_language_system">Sistemos kalba</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Ištrinti išmoktus žodžius</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Išmokti žodžiai ištrinti</string>
+    <string name="shortcut_next_word_suggestion">Kitas žodžio pasiūlymas</string>
+    <string name="shortcut_previous_word_suggestion">Ankstesnis žodžio pasiūlymas</string>
+    <string name="shortcut_type_word_suggestion">Įvesti žodžio pasiūlymą</string>
+    <string name="sandfly_keyboard_no_suggestions">Pasiūlymų nėra</string>
+    <string name="sandfly_keyboard_suggestions_off">Žodžių pasiūlymai išjungti</string>
+    <string name="sandfly_keyboard_no_word_list">Šiai kalbai nėra žodyno</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, pataisyta</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, taisymas atšauktas</string>
+    <string name="word_suggestions_hint">Braukite aukštyn arba žemyn, kad pasirinktumėte, tada dukart palieskite, kad įvestumėte</string>
+    <string name="title_pref_cyrillic_text_recognition">Kirilicos teksto atpažinimas</string>
+    <string name="cyrillic_text_model_missing">Nėra teksto atpažinimo modelio kalbai <xliff:g id="language" example="Russian">%1$s</xliff:g>. Atsisiųskite jį skiltyje Vaizdų ir ekrano aprašai, Kirilicos teksto atpažinimas.</string>
+    <string name="cyrillic_text_model_error_http">Atsisiuntimo serveris nepriėmė užklausos. Bandykite vėliau.</string>
 </resources>

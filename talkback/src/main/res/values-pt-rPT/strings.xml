@@ -2837,4 +2837,37 @@
   <string name="value_focus_delay_1000ms">1 segundo</string>
   <string name="value_focus_delay_1500ms">1,5 segundos</string>
   <string name="value_focus_delay_2000ms">2 segundos</string>
+    <string name="title_pref_emoji_after_name">Após nomes de emoji</string>
+    <string name="value_emoji_after_name_nothing">Nada</string>
+    <string name="value_emoji_after_name_word">Dizer \"emoji\"</string>
+    <string name="value_emoji_after_name_sound">Reproduzir um som</string>
+    <string name="shortcut_previous_sentence">Frase anterior</string>
+    <string name="shortcut_next_sentence">Frase seguinte</string>
+    <string name="speak_position_text">Carácter <xliff:g id="character" example="120">%1$d</xliff:g> de <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Carácter <xliff:g id="character" example="120">%1$d</xliff:g> de <xliff:g id="length" example="800">%2$d</xliff:g>, parágrafo <xliff:g id="paragraph" example="2">%3$d</xliff:g> de <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Posição de deslocamento <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Nova linha</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Correção automática</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Sugestões de palavras</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Dizer sugestão</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Desativado</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Imediatamente</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter escreve a sugestão dita</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, correção</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Idioma da lista de palavras</string>
+    <string name="value_word_language_system">Idioma do sistema</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Eliminar palavras aprendidas</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Palavras aprendidas eliminadas</string>
+    <string name="shortcut_next_word_suggestion">Sugestão de palavra seguinte</string>
+    <string name="shortcut_previous_word_suggestion">Sugestão de palavra anterior</string>
+    <string name="shortcut_type_word_suggestion">Escrever sugestão de palavra</string>
+    <string name="sandfly_keyboard_no_suggestions">Sem sugestões</string>
+    <string name="sandfly_keyboard_suggestions_off">Sugestões de palavras desativadas</string>
+    <string name="sandfly_keyboard_no_word_list">Sem lista de palavras para este idioma</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, corrigido</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, correção anulada</string>
+    <string name="word_suggestions_hint">Deslize para cima ou para baixo para escolher e toque duas vezes para escrever</string>
+    <string name="title_pref_cyrillic_text_recognition">Reconhecimento de texto cirílico</string>
+    <string name="cyrillic_text_model_missing">Sem modelo de reconhecimento de texto para <xliff:g id="language" example="Russian">%1$s</xliff:g>. Transfira-o em Descrições de imagens e do ecrã, Reconhecimento de texto cirílico.</string>
+    <string name="cyrillic_text_model_error_http">O servidor de transferência não aceitou o pedido. Tente novamente mais tarde.</string>
 </resources>

@@ -2828,4 +2828,37 @@
   <string name="value_focus_delay_1000ms">1 seconde</string>
   <string name="value_focus_delay_1500ms">1,5 seconden</string>
   <string name="value_focus_delay_2000ms">2 seconden</string>
+    <string name="title_pref_emoji_after_name">Na emojinamen</string>
+    <string name="value_emoji_after_name_nothing">Niets</string>
+    <string name="value_emoji_after_name_word">\"emoji\" zeggen</string>
+    <string name="value_emoji_after_name_sound">Een geluid afspelen</string>
+    <string name="shortcut_previous_sentence">Vorige zin</string>
+    <string name="shortcut_next_sentence">Volgende zin</string>
+    <string name="speak_position_text">Teken <xliff:g id="character" example="120">%1$d</xliff:g> van <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Teken <xliff:g id="character" example="120">%1$d</xliff:g> van <xliff:g id="length" example="800">%2$d</xliff:g>, alinea <xliff:g id="paragraph" example="2">%3$d</xliff:g> van <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Scrollpositie <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Nieuwe regel</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Autocorrectie</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Woordsuggesties</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Suggestie uitspreken</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Uit</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Direct</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter typt de uitgesproken suggestie</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, correctie</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Taal van de woordenlijst</string>
+    <string name="value_word_language_system">Systeemtaal</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Geleerde woorden verwijderen</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Geleerde woorden verwijderd</string>
+    <string name="shortcut_next_word_suggestion">Volgende woordsuggestie</string>
+    <string name="shortcut_previous_word_suggestion">Vorige woordsuggestie</string>
+    <string name="shortcut_type_word_suggestion">Woordsuggestie typen</string>
+    <string name="sandfly_keyboard_no_suggestions">Geen suggesties</string>
+    <string name="sandfly_keyboard_suggestions_off">Woordsuggesties uit</string>
+    <string name="sandfly_keyboard_no_word_list">Geen woordenlijst voor deze taal</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, gecorrigeerd</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, correctie ongedaan gemaakt</string>
+    <string name="word_suggestions_hint">Veeg omhoog of omlaag om te kiezen en tik dan twee keer om te typen</string>
+    <string name="title_pref_cyrillic_text_recognition">Herkenning van Cyrillische tekst</string>
+    <string name="cyrillic_text_model_missing">Geen tekstherkenningsmodel voor <xliff:g id="language" example="Russian">%1$s</xliff:g>. Download het bij Afbeeldings- en schermbeschrijvingen, Herkenning van Cyrillische tekst.</string>
+    <string name="cyrillic_text_model_error_http">De downloadserver heeft het verzoek niet geaccepteerd. Probeer het later opnieuw.</string>
 </resources>

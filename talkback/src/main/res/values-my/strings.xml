@@ -2820,4 +2820,37 @@
   <string name="value_focus_delay_1000ms">၁ စက္ကန့်</string>
   <string name="value_focus_delay_1500ms">၁.၅ စက္ကန့်</string>
   <string name="value_focus_delay_2000ms">၂ စက္ကန့်</string>
+    <string name="title_pref_emoji_after_name">အီမိုဂျီအမည်များ နောက်တွင်</string>
+    <string name="value_emoji_after_name_nothing">ဘာမျှမဟုတ်</string>
+    <string name="value_emoji_after_name_word">\"အီမိုဂျီ\" ဟု ပြောရန်</string>
+    <string name="value_emoji_after_name_sound">အသံဖွင့်ရန်</string>
+    <string name="shortcut_previous_sentence">ယခင်ဝါကျ</string>
+    <string name="shortcut_next_sentence">နောက်ဝါကျ</string>
+    <string name="speak_position_text">စာလုံး <xliff:g id="character" example="120">%1$d</xliff:g> / <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">စာလုံး <xliff:g id="character" example="120">%1$d</xliff:g> / <xliff:g id="length" example="800">%2$d</xliff:g>, စာပိုဒ် <xliff:g id="paragraph" example="2">%3$d</xliff:g> / <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">ရွှေ့ကြည့်သည့် အနေအထား <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">စာကြောင်းအသစ်</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">အလိုအလျောက် ပြင်ဆင်ခြင်း</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">စကားလုံး အကြံပြုချက်များ</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">အကြံပြုချက် ပြောခြင်း</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">ပိတ်</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">ချက်ချင်း</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">ပြောထားသော အကြံပြုချက်ကို Enter ဖြင့် ရိုက်ထည့်ခြင်း</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, ပြင်ဆင်ချက်</string>
+    <string name="title_pref_sandfly_keyboard_word_language">စကားလုံးစာရင်း ဘာသာစကား</string>
+    <string name="value_word_language_system">စနစ်ဘာသာစကား</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">သင်ယူထားသော စကားလုံးများကို ဖျက်ရန်</string>
+    <string name="sandfly_keyboard_learned_words_deleted">သင်ယူထားသော စကားလုံးများ ဖျက်ပြီး</string>
+    <string name="shortcut_next_word_suggestion">နောက်စကားလုံး အကြံပြုချက်</string>
+    <string name="shortcut_previous_word_suggestion">ယခင်စကားလုံး အကြံပြုချက်</string>
+    <string name="shortcut_type_word_suggestion">စကားလုံး အကြံပြုချက် ရိုက်ထည့်ရန်</string>
+    <string name="sandfly_keyboard_no_suggestions">အကြံပြုချက် မရှိ</string>
+    <string name="sandfly_keyboard_suggestions_off">စကားလုံး အကြံပြုချက်များ ပိတ်ထားသည်</string>
+    <string name="sandfly_keyboard_no_word_list">ဤဘာသာစကားအတွက် စကားလုံးစာရင်း မရှိ</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, ပြင်ပြီး</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, ပြင်ဆင်ချက် ပြန်ဖျက်ပြီး</string>
+    <string name="word_suggestions_hint">ရွေးရန် အပေါ် သို့မဟုတ် အောက်သို့ ပွတ်ဆွဲပြီး ရိုက်ထည့်ရန် နှစ်ကြိမ်ပုတ်ပါ</string>
+    <string name="title_pref_cyrillic_text_recognition">စီရီလစ်စာ ဖော်ထုတ်ခြင်း</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> အတွက် စာသားဖော်ထုတ်မော်ဒယ် မရှိပါ။ ပုံနှင့် စခရင် ရှင်းလင်းချက်များ၊ စီရီလစ်စာ ဖော်ထုတ်ခြင်း တွင် ဒေါင်းလုဒ်လုပ်ပါ။</string>
+    <string name="cyrillic_text_model_error_http">ဒေါင်းလုဒ်ဆာဗာက တောင်းဆိုချက်ကို လက်မခံပါ။ နောက်မှ ထပ်စမ်းပါ။</string>
 </resources>

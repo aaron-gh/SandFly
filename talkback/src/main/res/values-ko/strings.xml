@@ -2820,4 +2820,37 @@
   <string name="value_focus_delay_1000ms">1초</string>
   <string name="value_focus_delay_1500ms">1.5초</string>
   <string name="value_focus_delay_2000ms">2초</string>
+    <string name="title_pref_emoji_after_name">이모티콘 이름 뒤</string>
+    <string name="value_emoji_after_name_nothing">없음</string>
+    <string name="value_emoji_after_name_word">\"이모티콘\" 말하기</string>
+    <string name="value_emoji_after_name_sound">소리 재생</string>
+    <string name="shortcut_previous_sentence">이전 문장</string>
+    <string name="shortcut_next_sentence">다음 문장</string>
+    <string name="speak_position_text"><xliff:g id="character" example="120">%1$d</xliff:g>번째 문자 / 총 <xliff:g id="length" example="800">%2$d</xliff:g>자, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph"><xliff:g id="character" example="120">%1$d</xliff:g>번째 문자 / 총 <xliff:g id="length" example="800">%2$d</xliff:g>자, <xliff:g id="paragraph" example="2">%3$d</xliff:g>번째 단락 / 총 <xliff:g id="paragraphs" example="5">%4$d</xliff:g>단락, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">스크롤 위치 <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">줄 바꿈</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">자동 수정</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">단어 추천</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">추천 말하기</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">꺼짐</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">즉시</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter로 말한 추천 입력</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, 수정</string>
+    <string name="title_pref_sandfly_keyboard_word_language">단어 목록 언어</string>
+    <string name="value_word_language_system">시스템 언어</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">학습한 단어 삭제</string>
+    <string name="sandfly_keyboard_learned_words_deleted">학습한 단어를 삭제했습니다</string>
+    <string name="shortcut_next_word_suggestion">다음 단어 추천</string>
+    <string name="shortcut_previous_word_suggestion">이전 단어 추천</string>
+    <string name="shortcut_type_word_suggestion">단어 추천 입력</string>
+    <string name="sandfly_keyboard_no_suggestions">추천 없음</string>
+    <string name="sandfly_keyboard_suggestions_off">단어 추천 꺼짐</string>
+    <string name="sandfly_keyboard_no_word_list">이 언어의 단어 목록이 없습니다</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, 수정됨</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, 수정 취소됨</string>
+    <string name="word_suggestions_hint">위나 아래로 스와이프하여 선택한 다음 두 번 탭하여 입력합니다</string>
+    <string name="title_pref_cyrillic_text_recognition">키릴 문자 텍스트 인식</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> 텍스트 인식 모델이 없습니다. 이미지 및 화면 설명, 키릴 문자 텍스트 인식에서 다운로드하세요.</string>
+    <string name="cyrillic_text_model_error_http">다운로드 서버가 요청을 수락하지 않았습니다. 나중에 다시 시도하세요.</string>
 </resources>

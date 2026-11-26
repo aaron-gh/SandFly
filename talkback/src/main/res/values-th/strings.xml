@@ -2821,4 +2821,37 @@
   <string name="value_focus_delay_1000ms">1 วินาที</string>
   <string name="value_focus_delay_1500ms">1.5 วินาที</string>
   <string name="value_focus_delay_2000ms">2 วินาที</string>
+    <string name="title_pref_emoji_after_name">หลังชื่ออิโมจิ</string>
+    <string name="value_emoji_after_name_nothing">ไม่มี</string>
+    <string name="value_emoji_after_name_word">พูดว่า \"อิโมจิ\"</string>
+    <string name="value_emoji_after_name_sound">เล่นเสียง</string>
+    <string name="shortcut_previous_sentence">ประโยคก่อนหน้า</string>
+    <string name="shortcut_next_sentence">ประโยคถัดไป</string>
+    <string name="speak_position_text">อักขระที่ <xliff:g id="character" example="120">%1$d</xliff:g> จาก <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">อักขระที่ <xliff:g id="character" example="120">%1$d</xliff:g> จาก <xliff:g id="length" example="800">%2$d</xliff:g>, ย่อหน้าที่ <xliff:g id="paragraph" example="2">%3$d</xliff:g> จาก <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">ตำแหน่งการเลื่อน <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">บรรทัดใหม่</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">แก้ไขอัตโนมัติ</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">คำแนะนำคำ</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">พูดคำแนะนำ</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">ปิด</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">ทันที</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter พิมพ์คำแนะนำที่พูด</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, การแก้ไข</string>
+    <string name="title_pref_sandfly_keyboard_word_language">ภาษาของรายการคำ</string>
+    <string name="value_word_language_system">ภาษาของระบบ</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">ลบคำที่เรียนรู้</string>
+    <string name="sandfly_keyboard_learned_words_deleted">ลบคำที่เรียนรู้แล้ว</string>
+    <string name="shortcut_next_word_suggestion">คำแนะนำคำถัดไป</string>
+    <string name="shortcut_previous_word_suggestion">คำแนะนำคำก่อนหน้า</string>
+    <string name="shortcut_type_word_suggestion">พิมพ์คำแนะนำคำ</string>
+    <string name="sandfly_keyboard_no_suggestions">ไม่มีคำแนะนำ</string>
+    <string name="sandfly_keyboard_suggestions_off">คำแนะนำคำปิดอยู่</string>
+    <string name="sandfly_keyboard_no_word_list">ไม่มีรายการคำสำหรับภาษานี้</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, แก้ไขแล้ว</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, เลิกแก้ไขแล้ว</string>
+    <string name="word_suggestions_hint">ปัดขึ้นหรือลงเพื่อเลือก แล้วแตะสองครั้งเพื่อพิมพ์</string>
+    <string name="title_pref_cyrillic_text_recognition">การรู้จำข้อความซีริลลิก</string>
+    <string name="cyrillic_text_model_missing">ไม่มีโมเดลการรู้จำข้อความสำหรับ<xliff:g id="language" example="Russian">%1$s</xliff:g> ดาวน์โหลดได้ที่คำอธิบายรูปภาพและหน้าจอ, การรู้จำข้อความซีริลลิก</string>
+    <string name="cyrillic_text_model_error_http">เซิร์ฟเวอร์ดาวน์โหลดไม่ยอมรับคำขอ ลองอีกครั้งในภายหลัง</string>
 </resources>

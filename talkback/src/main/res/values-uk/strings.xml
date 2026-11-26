@@ -2839,4 +2839,37 @@
   <string name="value_focus_delay_1000ms">1 секунда</string>
   <string name="value_focus_delay_1500ms">1,5 секунди</string>
   <string name="value_focus_delay_2000ms">2 секунди</string>
+    <string name="title_pref_emoji_after_name">Після назв емодзі</string>
+    <string name="value_emoji_after_name_nothing">Нічого</string>
+    <string name="value_emoji_after_name_word">Вимовляти «емодзі»</string>
+    <string name="value_emoji_after_name_sound">Відтворювати звук</string>
+    <string name="shortcut_previous_sentence">Попереднє речення</string>
+    <string name="shortcut_next_sentence">Наступне речення</string>
+    <string name="speak_position_text">Символ <xliff:g id="character" example="120">%1$d</xliff:g> з <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Символ <xliff:g id="character" example="120">%1$d</xliff:g> з <xliff:g id="length" example="800">%2$d</xliff:g>, абзац <xliff:g id="paragraph" example="2">%3$d</xliff:g> з <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Позиція прокручування <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Новий рядок</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Автовиправлення</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Пропозиції слів</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Озвучувати пропозицію</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Вимкнено</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Одразу</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter вводить озвучену пропозицію</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, виправлення</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Мова списку слів</string>
+    <string name="value_word_language_system">Мова системи</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Видалити вивчені слова</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Вивчені слова видалено</string>
+    <string name="shortcut_next_word_suggestion">Наступна пропозиція слова</string>
+    <string name="shortcut_previous_word_suggestion">Попередня пропозиція слова</string>
+    <string name="shortcut_type_word_suggestion">Ввести пропозицію слова</string>
+    <string name="sandfly_keyboard_no_suggestions">Немає пропозицій</string>
+    <string name="sandfly_keyboard_suggestions_off">Пропозиції слів вимкнено</string>
+    <string name="sandfly_keyboard_no_word_list">Немає списку слів для цієї мови</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, виправлено</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, виправлення скасовано</string>
+    <string name="word_suggestions_hint">Проведіть угору або вниз, щоб вибрати, потім двічі торкніться, щоб ввести</string>
+    <string name="title_pref_cyrillic_text_recognition">Розпізнавання тексту кирилицею</string>
+    <string name="cyrillic_text_model_missing">Немає моделі розпізнавання тексту для мови: <xliff:g id="language" example="Russian">%1$s</xliff:g>. Завантажте її в розділі «Описи зображень і екрана», «Розпізнавання тексту кирилицею».</string>
+    <string name="cyrillic_text_model_error_http">Сервер завантаження не прийняв запит. Повторіть спробу пізніше.</string>
 </resources>

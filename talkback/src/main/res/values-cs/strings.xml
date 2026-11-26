@@ -2663,4 +2663,37 @@
   <string name="value_focus_delay_1000ms">1 sekunda</string>
   <string name="value_focus_delay_1500ms">1,5 sekundy</string>
   <string name="value_focus_delay_2000ms">2 sekundy</string>
+    <string name="title_pref_emoji_after_name">Po názvech emoji</string>
+    <string name="value_emoji_after_name_nothing">Nic</string>
+    <string name="value_emoji_after_name_word">Říct „emoji“</string>
+    <string name="value_emoji_after_name_sound">Přehrát zvuk</string>
+    <string name="shortcut_previous_sentence">Předchozí věta</string>
+    <string name="shortcut_next_sentence">Další věta</string>
+    <string name="speak_position_text">Znak <xliff:g id="character" example="120">%1$d</xliff:g> z <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g> %%</string>
+    <string name="speak_position_text_paragraph">Znak <xliff:g id="character" example="120">%1$d</xliff:g> z <xliff:g id="length" example="800">%2$d</xliff:g>, odstavec <xliff:g id="paragraph" example="2">%3$d</xliff:g> z <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g> %%</string>
+    <string name="speak_position_scroll">Poloha posunu <xliff:g id="percent" example="40">%1$d</xliff:g> %%</string>
+    <string name="shortcut_new_line">Nový řádek</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Automatické opravy</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Návrhy slov</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Oznamovat návrh</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Vypnuto</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Okamžitě</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter napíše oznámený návrh</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, oprava</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Jazyk seznamu slov</string>
+    <string name="value_word_language_system">Jazyk systému</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Smazat naučená slova</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Naučená slova smazána</string>
+    <string name="shortcut_next_word_suggestion">Další návrh slova</string>
+    <string name="shortcut_previous_word_suggestion">Předchozí návrh slova</string>
+    <string name="shortcut_type_word_suggestion">Napsat návrh slova</string>
+    <string name="sandfly_keyboard_no_suggestions">Žádné návrhy</string>
+    <string name="sandfly_keyboard_suggestions_off">Návrhy slov vypnuty</string>
+    <string name="sandfly_keyboard_no_word_list">Pro tento jazyk není k dispozici seznam slov</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, opraveno</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, oprava vrácena</string>
+    <string name="word_suggestions_hint">Výběr provedete přejetím nahoru nebo dolů, napsání dvojitým klepnutím</string>
+    <string name="title_pref_cyrillic_text_recognition">Rozpoznávání textu v cyrilici</string>
+    <string name="cyrillic_text_model_missing">Chybí model pro rozpoznávání textu pro jazyk <xliff:g id="language" example="Russian">%1$s</xliff:g>. Stáhnete ho v části Popisy obrázků a obrazovky, Rozpoznávání textu v cyrilici.</string>
+    <string name="cyrillic_text_model_error_http">Server pro stahování požadavek nepřijal. Zkuste to později.</string>
 </resources>

@@ -2826,4 +2826,37 @@
   <string name="value_focus_delay_1000ms">1 ସେକେଣ୍ଡ</string>
   <string name="value_focus_delay_1500ms">1.5 ସେକେଣ୍ଡ</string>
   <string name="value_focus_delay_2000ms">2 ସେକେଣ୍ଡ</string>
+    <string name="title_pref_emoji_after_name">ଇମୋଜି ନାମ ପରେ</string>
+    <string name="value_emoji_after_name_nothing">କିଛି ନୁହେଁ</string>
+    <string name="value_emoji_after_name_word">\"ଇମୋଜି\" କୁହନ୍ତୁ</string>
+    <string name="value_emoji_after_name_sound">ଏକ ଧ୍ୱନି ବଜାନ୍ତୁ</string>
+    <string name="shortcut_previous_sentence">ପୂର୍ବ ବାକ୍ୟ</string>
+    <string name="shortcut_next_sentence">ପରବର୍ତ୍ତୀ ବାକ୍ୟ</string>
+    <string name="speak_position_text"><xliff:g id="length" example="800">%2$d</xliff:g> ମଧ୍ୟରୁ <xliff:g id="character" example="120">%1$d</xliff:g> ତମ ଅକ୍ଷର, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph"><xliff:g id="length" example="800">%2$d</xliff:g> ମଧ୍ୟରୁ <xliff:g id="character" example="120">%1$d</xliff:g> ତମ ଅକ୍ଷର, <xliff:g id="paragraphs" example="5">%4$d</xliff:g> ମଧ୍ୟରୁ <xliff:g id="paragraph" example="2">%3$d</xliff:g> ତମ ଅନୁଚ୍ଛେଦ, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">ସ୍କ୍ରୋଲ ସ୍ଥିତି <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">ନୂଆ ଧାଡ଼ି</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">ସ୍ୱତଃ ସଂଶୋଧନ</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">ଶବ୍ଦ ପରାମର୍ଶ</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">ପରାମର୍ଶ କୁହନ୍ତୁ</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">ବନ୍ଦ ଅଛି</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">ତୁରନ୍ତ</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter କୁହାଯାଇଥିବା ପରାମର୍ଶ ଟାଇପ କରେ</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, ସଂଶୋଧନ</string>
+    <string name="title_pref_sandfly_keyboard_word_language">ଶବ୍ଦ ତାଲିକାର ଭାଷା</string>
+    <string name="value_word_language_system">ସିଷ୍ଟମ ଭାଷା</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">ଶିଖିଥିବା ଶବ୍ଦ ଡିଲିଟ କରନ୍ତୁ</string>
+    <string name="sandfly_keyboard_learned_words_deleted">ଶିଖିଥିବା ଶବ୍ଦ ଡିଲିଟ ହେଲା</string>
+    <string name="shortcut_next_word_suggestion">ପରବର୍ତ୍ତୀ ଶବ୍ଦ ପରାମର୍ଶ</string>
+    <string name="shortcut_previous_word_suggestion">ପୂର୍ବ ଶବ୍ଦ ପରାମର୍ଶ</string>
+    <string name="shortcut_type_word_suggestion">ଶବ୍ଦ ପରାମର୍ଶ ଟାଇପ କରନ୍ତୁ</string>
+    <string name="sandfly_keyboard_no_suggestions">କୌଣସି ପରାମର୍ଶ ନାହିଁ</string>
+    <string name="sandfly_keyboard_suggestions_off">ଶବ୍ଦ ପରାମର୍ଶ ବନ୍ଦ ଅଛି</string>
+    <string name="sandfly_keyboard_no_word_list">ଏହି ଭାଷା ପାଇଁ ଶବ୍ଦ ତାଲିକା ନାହିଁ</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, ସଂଶୋଧିତ</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, ସଂଶୋଧନ ଅନଡୁ ହେଲା</string>
+    <string name="word_suggestions_hint">ବାଛିବାକୁ ଉପରକୁ କିମ୍ବା ତଳକୁ ସ୍ୱାଇପ କରନ୍ତୁ, ତାପରେ ଟାଇପ କରିବାକୁ ଦୁଇଥର ଟ୍ୟାପ କରନ୍ତୁ</string>
+    <string name="title_pref_cyrillic_text_recognition">ସିରିଲିକ ଟେକ୍ସଟ ଚିହ୍ନଟ</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> ପାଇଁ ଟେକ୍ସଟ ଚିହ୍ନଟ ମଡେଲ ନାହିଁ। ଇମେଜ ଓ ସ୍କ୍ରିନ ବର୍ଣ୍ଣନା, ସିରିଲିକ ଟେକ୍ସଟ ଚିହ୍ନଟରେ ଏହାକୁ ଡାଉନଲୋଡ କରନ୍ତୁ।</string>
+    <string name="cyrillic_text_model_error_http">ଡାଉନଲୋଡ ସର୍ଭର ଅନୁରୋଧ ଗ୍ରହଣ କଲା ନାହିଁ। ପରେ ପୁଣି ଚେଷ୍ଟା କରନ୍ତୁ।</string>
 </resources>

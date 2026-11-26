@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 δευτερόλεπτο</string>
   <string name="value_focus_delay_1500ms">1,5 δευτερόλεπτα</string>
   <string name="value_focus_delay_2000ms">2 δευτερόλεπτα</string>
+    <string name="title_pref_emoji_after_name">Μετά τα ονόματα emoji</string>
+    <string name="value_emoji_after_name_nothing">Τίποτα</string>
+    <string name="value_emoji_after_name_word">Εκφώνηση «emoji»</string>
+    <string name="value_emoji_after_name_sound">Αναπαραγωγή ήχου</string>
+    <string name="shortcut_previous_sentence">Προηγούμενη πρόταση</string>
+    <string name="shortcut_next_sentence">Επόμενη πρόταση</string>
+    <string name="speak_position_text">Χαρακτήρας <xliff:g id="character" example="120">%1$d</xliff:g> από <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Χαρακτήρας <xliff:g id="character" example="120">%1$d</xliff:g> από <xliff:g id="length" example="800">%2$d</xliff:g>, παράγραφος <xliff:g id="paragraph" example="2">%3$d</xliff:g> από <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Θέση κύλισης <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Νέα γραμμή</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Αυτόματη διόρθωση</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Προτάσεις λέξεων</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Εκφώνηση πρότασης</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Ανενεργό</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Άμεσα</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Το Enter πληκτρολογεί την εκφωνούμενη πρόταση</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, διόρθωση</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Γλώσσα λίστας λέξεων</string>
+    <string name="value_word_language_system">Γλώσσα συστήματος</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Διαγραφή λέξεων που έχουν εκμαθηθεί</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Οι λέξεις που έχουν εκμαθηθεί διαγράφηκαν</string>
+    <string name="shortcut_next_word_suggestion">Επόμενη πρόταση λέξης</string>
+    <string name="shortcut_previous_word_suggestion">Προηγούμενη πρόταση λέξης</string>
+    <string name="shortcut_type_word_suggestion">Πληκτρολόγηση πρότασης λέξης</string>
+    <string name="sandfly_keyboard_no_suggestions">Δεν υπάρχουν προτάσεις</string>
+    <string name="sandfly_keyboard_suggestions_off">Προτάσεις λέξεων ανενεργές</string>
+    <string name="sandfly_keyboard_no_word_list">Δεν υπάρχει λίστα λέξεων για αυτήν τη γλώσσα</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, διορθώθηκε</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, η διόρθωση αναιρέθηκε</string>
+    <string name="word_suggestions_hint">Σύρετε προς τα επάνω ή προς τα κάτω για επιλογή και πατήστε δύο φορές για πληκτρολόγηση</string>
+    <string name="title_pref_cyrillic_text_recognition">Αναγνώριση κυριλλικού κειμένου</string>
+    <string name="cyrillic_text_model_missing">Δεν υπάρχει μοντέλο αναγνώρισης κειμένου για <xliff:g id="language" example="Russian">%1$s</xliff:g>. Κάντε λήψη του στις Περιγραφές εικόνας και οθόνης, Αναγνώριση κυριλλικού κειμένου.</string>
+    <string name="cyrillic_text_model_error_http">Ο διακομιστής λήψης δεν αποδέχτηκε το αίτημα. Δοκιμάστε ξανά αργότερα.</string>
 </resources>

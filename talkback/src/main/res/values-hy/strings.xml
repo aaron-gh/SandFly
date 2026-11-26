@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 վայրկյան</string>
   <string name="value_focus_delay_1500ms">1,5 վայրկյան</string>
   <string name="value_focus_delay_2000ms">2 վայրկյան</string>
+    <string name="title_pref_emoji_after_name">Էմոջիների անունից հետո</string>
+    <string name="value_emoji_after_name_nothing">Ոչինչ</string>
+    <string name="value_emoji_after_name_word">Ասել «էմոջի»</string>
+    <string name="value_emoji_after_name_sound">Նվագարկել ձայն</string>
+    <string name="shortcut_previous_sentence">Նախորդ նախադասությունը</string>
+    <string name="shortcut_next_sentence">Հաջորդ նախադասությունը</string>
+    <string name="speak_position_text">Գրանշան <xliff:g id="character" example="120">%1$d</xliff:g>՝ <xliff:g id="length" example="800">%2$d</xliff:g>-ից, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Գրանշան <xliff:g id="character" example="120">%1$d</xliff:g>՝ <xliff:g id="length" example="800">%2$d</xliff:g>-ից, պարբերություն <xliff:g id="paragraph" example="2">%3$d</xliff:g>՝ <xliff:g id="paragraphs" example="5">%4$d</xliff:g>-ից, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Ոլորման դիրքը՝ <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Նոր տող</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Ինքնուղղում</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Բառերի առաջարկներ</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Արտասանել առաջարկը</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Անջատված է</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Անմիջապես</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter-ը մուտքագրում է արտասանված առաջարկը</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, ուղղում</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Բառացանկի լեզուն</string>
+    <string name="value_word_language_system">Համակարգի լեզուն</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Ջնջել սովորած բառերը</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Սովորած բառերը ջնջվեցին</string>
+    <string name="shortcut_next_word_suggestion">Բառի հաջորդ առաջարկը</string>
+    <string name="shortcut_previous_word_suggestion">Բառի նախորդ առաջարկը</string>
+    <string name="shortcut_type_word_suggestion">Մուտքագրել բառի առաջարկը</string>
+    <string name="sandfly_keyboard_no_suggestions">Առաջարկներ չկան</string>
+    <string name="sandfly_keyboard_suggestions_off">Բառերի առաջարկներն անջատված են</string>
+    <string name="sandfly_keyboard_no_word_list">Այս լեզվի համար բառացանկ չկա</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, ուղղվեց</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, ուղղումը հետարկվեց</string>
+    <string name="word_suggestions_hint">Սահեցրեք վերև կամ ներքև՝ ընտրելու համար, ապա կրկնակի հպեք՝ մուտքագրելու համար</string>
+    <string name="title_pref_cyrillic_text_recognition">Կիրիլյան տեքստի ճանաչում</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> լեզվի համար տեքստի ճանաչման մոդել չկա։ Ներբեռնեք այն «Պատկերների և էկրանի նկարագրություններ», «Կիրիլյան տեքստի ճանաչում» բաժնում։</string>
+    <string name="cyrillic_text_model_error_http">Ներբեռնման սերվերը չընդունեց հարցումը։ Փորձեք ավելի ուշ։</string>
 </resources>

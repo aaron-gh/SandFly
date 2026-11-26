@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 segundo</string>
   <string name="value_focus_delay_1500ms">1,5 segundo</string>
   <string name="value_focus_delay_2000ms">2 segundo</string>
+    <string name="title_pref_emoji_after_name">Emojien izenen ondoren</string>
+    <string name="value_emoji_after_name_nothing">Ezer ez</string>
+    <string name="value_emoji_after_name_word">Esan \"emoji\"</string>
+    <string name="value_emoji_after_name_sound">Erreproduzitu soinu bat</string>
+    <string name="shortcut_previous_sentence">Aurreko esaldia</string>
+    <string name="shortcut_next_sentence">Hurrengo esaldia</string>
+    <string name="speak_position_text"><xliff:g id="character" example="120">%1$d</xliff:g>. karakterea, guztira <xliff:g id="length" example="800">%2$d</xliff:g>, %%<xliff:g id="percent" example="15">%3$d</xliff:g></string>
+    <string name="speak_position_text_paragraph"><xliff:g id="character" example="120">%1$d</xliff:g>. karakterea, guztira <xliff:g id="length" example="800">%2$d</xliff:g>; <xliff:g id="paragraph" example="2">%3$d</xliff:g>. paragrafoa, guztira <xliff:g id="paragraphs" example="5">%4$d</xliff:g>; %%<xliff:g id="percent" example="15">%5$d</xliff:g></string>
+    <string name="speak_position_scroll">Korritze-posizioa: %%<xliff:g id="percent" example="40">%1$d</xliff:g></string>
+    <string name="shortcut_new_line">Lerro berria</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Zuzenketa automatikoa</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Hitz-iradokizunak</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Esan iradokizuna</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Desaktibatuta</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Berehala</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Sartu teklak esandako iradokizuna idazten du</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, zuzenketa</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Hitz-zerrendaren hizkuntza</string>
+    <string name="value_word_language_system">Sistemaren hizkuntza</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Ezabatu ikasitako hitzak</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Ikasitako hitzak ezabatu dira</string>
+    <string name="shortcut_next_word_suggestion">Hurrengo hitz-iradokizuna</string>
+    <string name="shortcut_previous_word_suggestion">Aurreko hitz-iradokizuna</string>
+    <string name="shortcut_type_word_suggestion">Idatzi hitz-iradokizuna</string>
+    <string name="sandfly_keyboard_no_suggestions">Ez dago iradokizunik</string>
+    <string name="sandfly_keyboard_suggestions_off">Hitz-iradokizunak desaktibatuta daude</string>
+    <string name="sandfly_keyboard_no_word_list">Ez dago hitz-zerrendarik hizkuntza honetarako</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, zuzenduta</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, zuzenketa desegin da</string>
+    <string name="word_suggestions_hint">Pasatu hatza gora edo behera aukeratzeko, eta sakatu birritan idazteko</string>
+    <string name="title_pref_cyrillic_text_recognition">Testu zirilikoaren ezagutza</string>
+    <string name="cyrillic_text_model_missing">Ez dago <xliff:g id="language" example="Russian">%1$s</xliff:g> hizkuntzarako testua ezagutzeko modelorik. Deskargatu Irudien eta pantailaren azalpenak, Testu zirilikoaren ezagutza atalean.</string>
+    <string name="cyrillic_text_model_error_http">Deskargen zerbitzariak ez du eskaera onartu. Saiatu berriro geroago.</string>
 </resources>

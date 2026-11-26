@@ -2849,4 +2849,37 @@
   <string name="value_focus_delay_1000ms">1 sekunda</string>
   <string name="value_focus_delay_1500ms">1,5 sekunde</string>
   <string name="value_focus_delay_2000ms">2 sekundi</string>
+    <string name="title_pref_emoji_after_name">Po imenih emojijev</string>
+    <string name="value_emoji_after_name_nothing">Nič</string>
+    <string name="value_emoji_after_name_word">Izgovori \"emoji\"</string>
+    <string name="value_emoji_after_name_sound">Predvajaj zvok</string>
+    <string name="shortcut_previous_sentence">Prejšnji stavek</string>
+    <string name="shortcut_next_sentence">Naslednji stavek</string>
+    <string name="speak_position_text">Znak <xliff:g id="character" example="120">%1$d</xliff:g> od <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g> %%</string>
+    <string name="speak_position_text_paragraph">Znak <xliff:g id="character" example="120">%1$d</xliff:g> od <xliff:g id="length" example="800">%2$d</xliff:g>, odstavek <xliff:g id="paragraph" example="2">%3$d</xliff:g> od <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g> %%</string>
+    <string name="speak_position_scroll">Položaj drsenja <xliff:g id="percent" example="40">%1$d</xliff:g> %%</string>
+    <string name="shortcut_new_line">Nova vrstica</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Samopopravljanje</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Predlogi besed</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Izgovori predlog</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Izklopljeno</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Takoj</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter vnese izgovorjeni predlog</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, popravek</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Jezik seznama besed</string>
+    <string name="value_word_language_system">Sistemski jezik</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Izbriši naučene besede</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Naučene besede so izbrisane</string>
+    <string name="shortcut_next_word_suggestion">Naslednji predlog besede</string>
+    <string name="shortcut_previous_word_suggestion">Prejšnji predlog besede</string>
+    <string name="shortcut_type_word_suggestion">Vnesi predlog besede</string>
+    <string name="sandfly_keyboard_no_suggestions">Ni predlogov</string>
+    <string name="sandfly_keyboard_suggestions_off">Predlogi besed so izklopljeni</string>
+    <string name="sandfly_keyboard_no_word_list">Za ta jezik ni seznama besed</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, popravljeno</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, popravek razveljavljen</string>
+    <string name="word_suggestions_hint">Povlecite navzgor ali navzdol za izbiro, nato se dvakrat dotaknite za vnos</string>
+    <string name="title_pref_cyrillic_text_recognition">Prepoznavanje besedila v cirilici</string>
+    <string name="cyrillic_text_model_missing">Za jezik <xliff:g id="language" example="Russian">%1$s</xliff:g> ni modela za prepoznavanje besedila. Prenesite ga v razdelku Opisi slik in zaslona, Prepoznavanje besedila v cirilici.</string>
+    <string name="cyrillic_text_model_error_http">Strežnik za prenos ni sprejel zahteve. Poskusite znova pozneje.</string>
 </resources>

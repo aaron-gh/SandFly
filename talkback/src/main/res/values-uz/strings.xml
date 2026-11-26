@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 soniya</string>
   <string name="value_focus_delay_1500ms">1,5 soniya</string>
   <string name="value_focus_delay_2000ms">2 soniya</string>
+    <string name="title_pref_emoji_after_name">Emoji nomlaridan keyin</string>
+    <string name="value_emoji_after_name_nothing">Hech narsa</string>
+    <string name="value_emoji_after_name_word">“emoji” deb aytish</string>
+    <string name="value_emoji_after_name_sound">Tovush ijro etish</string>
+    <string name="shortcut_previous_sentence">Oldingi gap</string>
+    <string name="shortcut_next_sentence">Keyingi gap</string>
+    <string name="speak_position_text"><xliff:g id="length" example="800">%2$d</xliff:g> belgidan <xliff:g id="character" example="120">%1$d</xliff:g>-belgi, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph"><xliff:g id="length" example="800">%2$d</xliff:g> belgidan <xliff:g id="character" example="120">%1$d</xliff:g>-belgi, <xliff:g id="paragraphs" example="5">%4$d</xliff:g> xatboshidan <xliff:g id="paragraph" example="2">%3$d</xliff:g>-xatboshi, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Aylantirish joylashuvi <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Yangi qator</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Avtomatik tuzatish</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Soʻz takliflari</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Taklifni aytish</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Oʻchiq</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Darhol</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter aytilgan taklifni kiritadi</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, tuzatish</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Soʻzlar roʻyxati tili</string>
+    <string name="value_word_language_system">Tizim tili</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Oʻrganilgan soʻzlarni oʻchirish</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Oʻrganilgan soʻzlar oʻchirildi</string>
+    <string name="shortcut_next_word_suggestion">Keyingi soʻz taklifi</string>
+    <string name="shortcut_previous_word_suggestion">Oldingi soʻz taklifi</string>
+    <string name="shortcut_type_word_suggestion">Soʻz taklifini kiritish</string>
+    <string name="sandfly_keyboard_no_suggestions">Takliflar yoʻq</string>
+    <string name="sandfly_keyboard_suggestions_off">Soʻz takliflari oʻchiq</string>
+    <string name="sandfly_keyboard_no_word_list">Bu til uchun soʻzlar roʻyxati yoʻq</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, tuzatildi</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, tuzatish bekor qilindi</string>
+    <string name="word_suggestions_hint">Tanlash uchun tepaga yoki pastga suring, keyin kiritish uchun ikki marta teging</string>
+    <string name="title_pref_cyrillic_text_recognition">Kirill matnini aniqlash</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> tili uchun matnni aniqlash modeli yoʻq. Uni Rasm va ekran tavsiflari, Kirill matnini aniqlash boʻlimida yuklab oling.</string>
+    <string name="cyrillic_text_model_error_http">Yuklab olish serveri soʻrovni qabul qilmadi. Keyinroq qayta urining.</string>
 </resources>

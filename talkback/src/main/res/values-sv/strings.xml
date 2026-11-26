@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 sekund</string>
   <string name="value_focus_delay_1500ms">1,5 sekunder</string>
   <string name="value_focus_delay_2000ms">2 sekunder</string>
+    <string name="title_pref_emoji_after_name">Efter emojinamn</string>
+    <string name="value_emoji_after_name_nothing">Ingenting</string>
+    <string name="value_emoji_after_name_word">Säg \"emoji\"</string>
+    <string name="value_emoji_after_name_sound">Spela upp ett ljud</string>
+    <string name="shortcut_previous_sentence">Föregående mening</string>
+    <string name="shortcut_next_sentence">Nästa mening</string>
+    <string name="speak_position_text">Tecken <xliff:g id="character" example="120">%1$d</xliff:g> av <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g> %%</string>
+    <string name="speak_position_text_paragraph">Tecken <xliff:g id="character" example="120">%1$d</xliff:g> av <xliff:g id="length" example="800">%2$d</xliff:g>, stycke <xliff:g id="paragraph" example="2">%3$d</xliff:g> av <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g> %%</string>
+    <string name="speak_position_scroll">Rullningsposition <xliff:g id="percent" example="40">%1$d</xliff:g> %%</string>
+    <string name="shortcut_new_line">Ny rad</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Autokorrigering</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Ordförslag</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Säg förslaget</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Av</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Direkt</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter skriver förslaget som sägs</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, korrigering</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Språk för ordlista</string>
+    <string name="value_word_language_system">Systemspråk</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Ta bort inlärda ord</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Inlärda ord har tagits bort</string>
+    <string name="shortcut_next_word_suggestion">Nästa ordförslag</string>
+    <string name="shortcut_previous_word_suggestion">Föregående ordförslag</string>
+    <string name="shortcut_type_word_suggestion">Skriv ordförslag</string>
+    <string name="sandfly_keyboard_no_suggestions">Inga förslag</string>
+    <string name="sandfly_keyboard_suggestions_off">Ordförslag av</string>
+    <string name="sandfly_keyboard_no_word_list">Ordlista saknas för det här språket</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, korrigerat</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, korrigering ångrad</string>
+    <string name="word_suggestions_hint">Svep uppåt eller nedåt för att välja och tryck sedan två gånger för att skriva</string>
+    <string name="title_pref_cyrillic_text_recognition">Textigenkänning för kyrilliska</string>
+    <string name="cyrillic_text_model_missing">Ingen modell för textigenkänning för <xliff:g id="language" example="Russian">%1$s</xliff:g>. Hämta den i Bild- och skärmbeskrivningar, Textigenkänning för kyrilliska.</string>
+    <string name="cyrillic_text_model_error_http">Nedladdningsservern godtog inte begäran. Försök igen senare.</string>
 </resources>

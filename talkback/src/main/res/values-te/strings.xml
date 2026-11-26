@@ -2818,4 +2818,37 @@
   <string name="value_focus_delay_1000ms">1 సెకను</string>
   <string name="value_focus_delay_1500ms">1.5 సెకన్లు</string>
   <string name="value_focus_delay_2000ms">2 సెకన్లు</string>
+    <string name="title_pref_emoji_after_name">ఎమోజి పేర్ల తర్వాత</string>
+    <string name="value_emoji_after_name_nothing">ఏమీ వద్దు</string>
+    <string name="value_emoji_after_name_word">\"ఎమోజి\" అని చెప్పండి</string>
+    <string name="value_emoji_after_name_sound">సౌండ్ ప్లే చేయండి</string>
+    <string name="shortcut_previous_sentence">మునుపటి వాక్యం</string>
+    <string name="shortcut_next_sentence">తర్వాత వాక్యం</string>
+    <string name="speak_position_text">అక్షరం <xliff:g id="character" example="120">%1$d</xliff:g> / <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">అక్షరం <xliff:g id="character" example="120">%1$d</xliff:g> / <xliff:g id="length" example="800">%2$d</xliff:g>, పేరా <xliff:g id="paragraph" example="2">%3$d</xliff:g> / <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">స్క్రోల్ స్థానం <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">కొత్త పంక్తి</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">ఆటో-కరెక్ట్</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">పద సూచనలు</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">సూచనను చెప్పండి</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">ఆఫ్‌లో ఉంది</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">వెంటనే</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">చెప్పిన సూచనను Enter టైప్ చేస్తుంది</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, కరెక్షన్</string>
+    <string name="title_pref_sandfly_keyboard_word_language">పద జాబితా భాష</string>
+    <string name="value_word_language_system">సిస్టమ్ భాష</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">నేర్చుకున్న పదాలను తొలగించండి</string>
+    <string name="sandfly_keyboard_learned_words_deleted">నేర్చుకున్న పదాలు తొలగించబడ్డాయి</string>
+    <string name="shortcut_next_word_suggestion">తర్వాత పద సూచన</string>
+    <string name="shortcut_previous_word_suggestion">మునుపటి పద సూచన</string>
+    <string name="shortcut_type_word_suggestion">పద సూచనను టైప్ చేయండి</string>
+    <string name="sandfly_keyboard_no_suggestions">సూచనలు లేవు</string>
+    <string name="sandfly_keyboard_suggestions_off">పద సూచనలు ఆఫ్‌లో ఉన్నాయి</string>
+    <string name="sandfly_keyboard_no_word_list">ఈ భాషకు పద జాబితా లేదు</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, సరిచేయబడింది</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, కరెక్షన్ రద్దు చేయబడింది</string>
+    <string name="word_suggestions_hint">ఎంచుకోవడానికి పైకి లేదా కిందికి స్వైప్ చేసి, టైప్ చేయడానికి రెండుసార్లు నొక్కండి</string>
+    <string name="title_pref_cyrillic_text_recognition">సిరిలిక్ టెక్స్ట్ గుర్తింపు</string>
+    <string name="cyrillic_text_model_missing"><xliff:g id="language" example="Russian">%1$s</xliff:g> కోసం టెక్స్ట్ గుర్తింపు మోడల్ లేదు. ఇమేజ్, స్క్రీన్ వివరణలు, సిరిలిక్ టెక్స్ట్ గుర్తింపులో డౌన్‌లోడ్ చేయండి.</string>
+    <string name="cyrillic_text_model_error_http">డౌన్‌లోడ్ సర్వర్ అభ్యర్థనను అంగీకరించలేదు. తర్వాత మళ్లీ ప్రయత్నించండి.</string>
 </resources>

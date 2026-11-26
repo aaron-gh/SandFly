@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 секунда</string>
   <string name="value_focus_delay_1500ms">1,5 секунди</string>
   <string name="value_focus_delay_2000ms">2 секунди</string>
+    <string name="title_pref_emoji_after_name">По имињата на емоџија</string>
+    <string name="value_emoji_after_name_nothing">Ништо</string>
+    <string name="value_emoji_after_name_word">Кажи „емоџи“</string>
+    <string name="value_emoji_after_name_sound">Пушти звук</string>
+    <string name="shortcut_previous_sentence">Претходна реченица</string>
+    <string name="shortcut_next_sentence">Следна реченица</string>
+    <string name="speak_position_text">Знак <xliff:g id="character" example="120">%1$d</xliff:g> од <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Знак <xliff:g id="character" example="120">%1$d</xliff:g> од <xliff:g id="length" example="800">%2$d</xliff:g>, пасус <xliff:g id="paragraph" example="2">%3$d</xliff:g> од <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Положба на лизгање <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Нов ред</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Автоматска корекција</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Предлози за зборови</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Изговори предлог</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Исклучено</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Веднаш</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter го внесува изговорениот предлог</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, корекција</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Јазик на списокот со зборови</string>
+    <string name="value_word_language_system">Јазик на системот</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Избриши ги научените зборови</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Научените зборови се избришани</string>
+    <string name="shortcut_next_word_suggestion">Следен предлог за збор</string>
+    <string name="shortcut_previous_word_suggestion">Претходен предлог за збор</string>
+    <string name="shortcut_type_word_suggestion">Внеси предлог за збор</string>
+    <string name="sandfly_keyboard_no_suggestions">Нема предлози</string>
+    <string name="sandfly_keyboard_suggestions_off">Предлозите за зборови се исклучени</string>
+    <string name="sandfly_keyboard_no_word_list">Нема список со зборови за овој јазик</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, коригирано</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, корекцијата е отповикана</string>
+    <string name="word_suggestions_hint">Повлечете нагоре или надолу за избор, потоа допрете двапати за внесување</string>
+    <string name="title_pref_cyrillic_text_recognition">Препознавање текст на кирилица</string>
+    <string name="cyrillic_text_model_missing">Нема модел за препознавање текст за <xliff:g id="language" example="Russian">%1$s</xliff:g>. Преземете го во Описи на слики и екран, Препознавање текст на кирилица.</string>
+    <string name="cyrillic_text_model_error_http">Серверот за преземање не го прифати барањето. Обидете се повторно подоцна.</string>
 </resources>

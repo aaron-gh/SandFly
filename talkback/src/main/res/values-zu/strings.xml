@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">Umzuzwana o-1</string>
   <string name="value_focus_delay_1500ms">Imizuzwana engu-1.5</string>
   <string name="value_focus_delay_2000ms">Imizuzwana emi-2</string>
+    <string name="title_pref_emoji_after_name">Ngemva kwamagama e-emoji</string>
+    <string name="value_emoji_after_name_nothing">Lutho</string>
+    <string name="value_emoji_after_name_word">Ngeza “emoji”</string>
+    <string name="value_emoji_after_name_sound">Dlala umsindo</string>
+    <string name="shortcut_previous_sentence">Umusho odlule</string>
+    <string name="shortcut_next_sentence">Umusho olandelayo</string>
+    <string name="speak_position_text">Uhlamvu <xliff:g id="character" example="120">%1$d</xliff:g> kwangu-<xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Uhlamvu <xliff:g id="character" example="120">%1$d</xliff:g> kwangu-<xliff:g id="length" example="800">%2$d</xliff:g>, ipharagrafu <xliff:g id="paragraph" example="2">%3$d</xliff:g> kwangu-<xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Isikhundla sokuskrola <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Umugqa omusha</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Ukulungisa okuzenzakalelayo</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Iziphakamiso zamagama</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Shono isiphakamiso</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Kuvaliwe</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Ngokushesha</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">I-Enter ithayipha isiphakamiso esishiwo</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, ukulungisa</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Ulimi lohlu lwamagama</string>
+    <string name="value_word_language_system">Ulimi lwesistimu</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Susa amagama afundiwe</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Amagama afundiwe asusiwe</string>
+    <string name="shortcut_next_word_suggestion">Isiphakamiso segama esilandelayo</string>
+    <string name="shortcut_previous_word_suggestion">Isiphakamiso segama esidlule</string>
+    <string name="shortcut_type_word_suggestion">Thayipha isiphakamiso segama</string>
+    <string name="sandfly_keyboard_no_suggestions">Azikho iziphakamiso</string>
+    <string name="sandfly_keyboard_suggestions_off">Iziphakamiso zamagama zivaliwe</string>
+    <string name="sandfly_keyboard_no_word_list">Alukho uhlu lwamagama alolu limi</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, kulungisiwe</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, ukulungisa kuhlehlisiwe</string>
+    <string name="word_suggestions_hint">Swayiphela phezulu noma phansi ukuze ukhethe, bese uthepha kabili ukuze uthayiphe</string>
+    <string name="title_pref_cyrillic_text_recognition">Ukubona umbhalo weCyrillic</string>
+    <string name="cyrillic_text_model_missing">Alukho imodeli yokubona umbhalo ye-<xliff:g id="language" example="Russian">%1$s</xliff:g>. Ilande ku-Izincazelo zezithombe nezesikrini, Ukubona umbhalo weCyrillic.</string>
+    <string name="cyrillic_text_model_error_http">Iseva yokulanda ayamukelanga isicelo. Zama futhi ngemva kwesikhathi.</string>
 </resources>

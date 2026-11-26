@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 másodperc</string>
   <string name="value_focus_delay_1500ms">1,5 másodperc</string>
   <string name="value_focus_delay_2000ms">2 másodperc</string>
+    <string name="title_pref_emoji_after_name">Emojik nevei után</string>
+    <string name="value_emoji_after_name_nothing">Semmi</string>
+    <string name="value_emoji_after_name_word">Mondja ki: \"emoji\"</string>
+    <string name="value_emoji_after_name_sound">Hang lejátszása</string>
+    <string name="shortcut_previous_sentence">Előző mondat</string>
+    <string name="shortcut_next_sentence">Következő mondat</string>
+    <string name="speak_position_text"><xliff:g id="character" example="120">%1$d</xliff:g>. karakter, összesen <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph"><xliff:g id="character" example="120">%1$d</xliff:g>. karakter, összesen <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="paragraph" example="2">%3$d</xliff:g>. bekezdés, összesen <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Görgetési pozíció: <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Új sor</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Automatikus javítás</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Szójavaslatok</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Javaslat kimondása</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Ki</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Azonnal</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Az Enter beírja a kimondott javaslatot</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, javítás</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Szólista nyelve</string>
+    <string name="value_word_language_system">Rendszernyelv</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Megtanult szavak törlése</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Megtanult szavak törölve</string>
+    <string name="shortcut_next_word_suggestion">Következő szójavaslat</string>
+    <string name="shortcut_previous_word_suggestion">Előző szójavaslat</string>
+    <string name="shortcut_type_word_suggestion">Szójavaslat beírása</string>
+    <string name="sandfly_keyboard_no_suggestions">Nincs javaslat</string>
+    <string name="sandfly_keyboard_suggestions_off">Szójavaslatok kikapcsolva</string>
+    <string name="sandfly_keyboard_no_word_list">Ehhez a nyelvhez nincs szólista</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, javítva</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, javítás visszavonva</string>
+    <string name="word_suggestions_hint">Csúsztassa felfelé vagy lefelé az ujját a választáshoz, majd koppintson duplán a beíráshoz</string>
+    <string name="title_pref_cyrillic_text_recognition">Cirill szövegfelismerés</string>
+    <string name="cyrillic_text_model_missing">Nincs szövegfelismerési modell ehhez a nyelvhez: <xliff:g id="language" example="Russian">%1$s</xliff:g>. Töltse le a Kép- és képernyőleírások, Cirill szövegfelismerés menüpontban.</string>
+    <string name="cyrillic_text_model_error_http">A letöltési kiszolgáló nem fogadta el a kérést. Próbálja újra később.</string>
 </resources>

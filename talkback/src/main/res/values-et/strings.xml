@@ -2827,4 +2827,37 @@
   <string name="value_focus_delay_1000ms">1 sekund</string>
   <string name="value_focus_delay_1500ms">1,5 sekundit</string>
   <string name="value_focus_delay_2000ms">2 sekundit</string>
+    <string name="title_pref_emoji_after_name">Pärast emotikoni nime</string>
+    <string name="value_emoji_after_name_nothing">Mitte midagi</string>
+    <string name="value_emoji_after_name_word">Ütle „emotikon“</string>
+    <string name="value_emoji_after_name_sound">Esita heli</string>
+    <string name="shortcut_previous_sentence">Eelmine lause</string>
+    <string name="shortcut_next_sentence">Järgmine lause</string>
+    <string name="speak_position_text">Märk <xliff:g id="character" example="120">%1$d</xliff:g> / <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g> %%</string>
+    <string name="speak_position_text_paragraph">Märk <xliff:g id="character" example="120">%1$d</xliff:g> / <xliff:g id="length" example="800">%2$d</xliff:g>, lõik <xliff:g id="paragraph" example="2">%3$d</xliff:g> / <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g> %%</string>
+    <string name="speak_position_scroll">Kerimisasend <xliff:g id="percent" example="40">%1$d</xliff:g> %%</string>
+    <string name="shortcut_new_line">Uus rida</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Automaatparandus</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Sõnaettepanekud</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Ettepaneku ettelugemine</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Väljas</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Kohe</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter sisestab ettelugetud ettepaneku</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, parandus</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Sõnaloendi keel</string>
+    <string name="value_word_language_system">Süsteemi keel</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Kustuta õpitud sõnad</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Õpitud sõnad kustutatud</string>
+    <string name="shortcut_next_word_suggestion">Järgmine sõnaettepanek</string>
+    <string name="shortcut_previous_word_suggestion">Eelmine sõnaettepanek</string>
+    <string name="shortcut_type_word_suggestion">Sisesta sõnaettepanek</string>
+    <string name="sandfly_keyboard_no_suggestions">Ettepanekuid pole</string>
+    <string name="sandfly_keyboard_suggestions_off">Sõnaettepanekud väljas</string>
+    <string name="sandfly_keyboard_no_word_list">Selle keele jaoks pole sõnaloendit</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, parandatud</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, parandus võetud tagasi</string>
+    <string name="word_suggestions_hint">Valimiseks pühkige üles või alla, sisestamiseks topeltpuudutage</string>
+    <string name="title_pref_cyrillic_text_recognition">Kirillitsa tekstituvastus</string>
+    <string name="cyrillic_text_model_missing">Keele <xliff:g id="language" example="Russian">%1$s</xliff:g> tekstituvastusmudelit pole. Laadige see alla jaotises Pildi- ja ekraanikirjeldused, Kirillitsa tekstituvastus.</string>
+    <string name="cyrillic_text_model_error_http">Allalaadimisserver ei aktsepteerinud taotlust. Proovige hiljem uuesti.</string>
 </resources>

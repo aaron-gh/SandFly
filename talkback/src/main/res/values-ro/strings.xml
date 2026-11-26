@@ -2838,4 +2838,37 @@
   <string name="value_focus_delay_1000ms">O secundă</string>
   <string name="value_focus_delay_1500ms">1,5 secunde</string>
   <string name="value_focus_delay_2000ms">2 secunde</string>
+    <string name="title_pref_emoji_after_name">După numele emoji</string>
+    <string name="value_emoji_after_name_nothing">Nimic</string>
+    <string name="value_emoji_after_name_word">Rostește „emoji”</string>
+    <string name="value_emoji_after_name_sound">Redă un sunet</string>
+    <string name="shortcut_previous_sentence">Propoziția anterioară</string>
+    <string name="shortcut_next_sentence">Propoziția următoare</string>
+    <string name="speak_position_text">Caracterul <xliff:g id="character" example="120">%1$d</xliff:g> din <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Caracterul <xliff:g id="character" example="120">%1$d</xliff:g> din <xliff:g id="length" example="800">%2$d</xliff:g>, paragraful <xliff:g id="paragraph" example="2">%3$d</xliff:g> din <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Poziția de derulare <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Linie nouă</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Autocorectare</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Sugestii de cuvinte</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Rostește sugestia</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Dezactivat</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Imediat</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Enter tastează sugestia rostită</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, corecție</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Limba listei de cuvinte</string>
+    <string name="value_word_language_system">Limba sistemului</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Șterge cuvintele învățate</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Cuvinte învățate șterse</string>
+    <string name="shortcut_next_word_suggestion">Sugestia de cuvânt următoare</string>
+    <string name="shortcut_previous_word_suggestion">Sugestia de cuvânt anterioară</string>
+    <string name="shortcut_type_word_suggestion">Tastează sugestia de cuvânt</string>
+    <string name="sandfly_keyboard_no_suggestions">Nicio sugestie</string>
+    <string name="sandfly_keyboard_suggestions_off">Sugestii de cuvinte dezactivate</string>
+    <string name="sandfly_keyboard_no_word_list">Nicio listă de cuvinte pentru această limbă</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, corectat</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, corecție anulată</string>
+    <string name="word_suggestions_hint">Glisează în sus sau în jos pentru a alege, apoi atinge de două ori pentru a tasta</string>
+    <string name="title_pref_cyrillic_text_recognition">Recunoașterea textului chirilic</string>
+    <string name="cyrillic_text_model_missing">Niciun model de recunoaștere a textului pentru <xliff:g id="language" example="Russian">%1$s</xliff:g>. Descarcă-l în Descrieri de imagini și ecran, Recunoașterea textului chirilic.</string>
+    <string name="cyrillic_text_model_error_http">Serverul de descărcare nu a acceptat solicitarea. Încearcă din nou mai târziu.</string>
 </resources>

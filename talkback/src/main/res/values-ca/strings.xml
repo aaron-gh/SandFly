@@ -2836,4 +2836,37 @@
   <string name="value_focus_delay_1000ms">1 segon</string>
   <string name="value_focus_delay_1500ms">1,5 segons</string>
   <string name="value_focus_delay_2000ms">2 segons</string>
+    <string name="title_pref_emoji_after_name">Després dels noms dels emojis</string>
+    <string name="value_emoji_after_name_nothing">Res</string>
+    <string name="value_emoji_after_name_word">Digues \"emoji\"</string>
+    <string name="value_emoji_after_name_sound">Reprodueix un so</string>
+    <string name="shortcut_previous_sentence">Frase anterior</string>
+    <string name="shortcut_next_sentence">Frase següent</string>
+    <string name="speak_position_text">Caràcter <xliff:g id="character" example="120">%1$d</xliff:g> de <xliff:g id="length" example="800">%2$d</xliff:g>, <xliff:g id="percent" example="15">%3$d</xliff:g>%%</string>
+    <string name="speak_position_text_paragraph">Caràcter <xliff:g id="character" example="120">%1$d</xliff:g> de <xliff:g id="length" example="800">%2$d</xliff:g>, paràgraf <xliff:g id="paragraph" example="2">%3$d</xliff:g> de <xliff:g id="paragraphs" example="5">%4$d</xliff:g>, <xliff:g id="percent" example="15">%5$d</xliff:g>%%</string>
+    <string name="speak_position_scroll">Posició de desplaçament <xliff:g id="percent" example="40">%1$d</xliff:g>%%</string>
+    <string name="shortcut_new_line">Línia nova</string>
+    <string name="title_pref_sandfly_keyboard_autocorrect">Correcció automàtica</string>
+    <string name="title_pref_sandfly_keyboard_suggestions">Suggeriments de paraules</string>
+    <string name="title_pref_sandfly_keyboard_suggestion_pause">Enuncia el suggeriment</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_off">Desactivat</string>
+    <string name="value_sandfly_keyboard_suggestion_pause_immediately">Immediatament</string>
+    <string name="title_pref_sandfly_keyboard_enter_types_suggestion">Intro escriu el suggeriment enunciat</string>
+    <string name="sandfly_keyboard_pending_correction"><xliff:g id="word" example="receive">%1$s</xliff:g>, correcció</string>
+    <string name="title_pref_sandfly_keyboard_word_language">Idioma de la llista de paraules</string>
+    <string name="value_word_language_system">Idioma del sistema</string>
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Suprimeix les paraules apreses</string>
+    <string name="sandfly_keyboard_learned_words_deleted">Paraules apreses suprimides</string>
+    <string name="shortcut_next_word_suggestion">Suggeriment de paraula següent</string>
+    <string name="shortcut_previous_word_suggestion">Suggeriment de paraula anterior</string>
+    <string name="shortcut_type_word_suggestion">Escriu el suggeriment de paraula</string>
+    <string name="sandfly_keyboard_no_suggestions">Cap suggeriment</string>
+    <string name="sandfly_keyboard_suggestions_off">Suggeriments de paraules desactivats</string>
+    <string name="sandfly_keyboard_no_word_list">No hi ha cap llista de paraules per a aquest idioma</string>
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, corregit</string>
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, correcció desfeta</string>
+    <string name="word_suggestions_hint">Llisca cap amunt o cap avall per triar i toca dues vegades per escriure</string>
+    <string name="title_pref_cyrillic_text_recognition">Reconeixement de text en ciríl·lic</string>
+    <string name="cyrillic_text_model_missing">No hi ha cap model de reconeixement de text per a <xliff:g id="language" example="Russian">%1$s</xliff:g>. Baixa\'l a Descripcions d\'imatges i pantalla, Reconeixement de text en ciríl·lic.</string>
+    <string name="cyrillic_text_model_error_http">El servidor de baixades no ha acceptat la sol·licitud. Torna-ho a provar més tard.</string>
 </resources>
