@@ -191,13 +191,13 @@
     <string name="gesture_trainer_contents_heading">目录：<xliff:g id="group">%1$s</xliff:g></string>
     <string name="gesture_trainer_contents_item"><xliff:g id="number">%1$d</xliff:g>. <xliff:g id="exercise">%2$s</xliff:g></string>
     <string name="gesture_trainer_contents_done">已完成，<xliff:g id="tries">%2$d</xliff:g> 次中识别 <xliff:g id="hits">%1$d</xliff:g> 次</string>
-    <string name="gesture_trainer_group_tap_swipe">单击后滑动</string>
+    <string name="gesture_trainer_group_tap_swipe">点击后滑动</string>
     <string name="gesture_trainer_group_edge_swipes">边缘滑动</string>
     <string name="gesture_trainer_group_along_edges">沿边缘滑动</string>
     <string name="gesture_trainer_group_edge_menus">边缘菜单</string>
     <string name="gesture_trainer_group_corners">角落</string>
-    <string name="gesture_trainer_group_back_tap">背面单击</string>
-    <string name="gesture_trainer_left_out_two_finger_tap_swipes">已略过双指单击后接双指滑动的手势：“<xliff:g id="setting">%1$s</xliff:g>”已关闭。</string>
+    <string name="gesture_trainer_group_back_tap">背面点击</string>
+    <string name="gesture_trainer_left_out_two_finger_tap_swipes">已略过双指点击后接双指滑动的手势：“<xliff:g id="setting">%1$s</xliff:g>”已关闭。</string>
     <string name="gesture_trainer_how_swipe_hold">然后不要抬起，让手指保持不动至少 <xliff:g id="hold">%1$d</xliff:g> 毫秒，再抬起。</string>
     <string name="gesture_trainer_half_top">上</string>
     <string name="gesture_trainer_half_bottom">下</string>
@@ -206,7 +206,7 @@
     <string name="gesture_trainer_how_tap_swipe">用<xliff:g id="fingers">%2$s</xliff:g>点按<xliff:g id="taps">%1$s</xliff:g>。最后一次点按后立即在 <xliff:g id="gap">%3$d</xliff:g> 毫秒内再次用<xliff:g id="swipe_fingers">%4$s</xliff:g>触摸屏幕，<xliff:g id="direction">%5$s</xliff:g>沿直线滑动约 2 到 3 厘米，然后抬起。</string>
     <string name="gesture_trainer_how_corner_hold">最后一次点按时，将手指留在角落保持不动，至少 <xliff:g id="hold">%1$d</xliff:g> 毫秒。</string>
     <string name="gesture_trainer_how_back_tap">握住手机两侧，用指尖在手机背面中间点击<xliff:g id="taps">%1$s</xliff:g>，用力且快速，就像敲门一样。点击间隔要短：最多 <xliff:g id="gap">%2$d</xliff:g> 毫秒。点击时不要触摸屏幕。</string>
-    <string name="gesture_trainer_back_tap_info">练习期间背面单击不运行任何命令。“<xliff:g id="setting">%1$s</xliff:g>”决定点击需要多大力度。</string>
+    <string name="gesture_trainer_back_tap_info">练习期间背面点击不运行任何命令。“<xliff:g id="setting">%1$s</xliff:g>”决定点击需要多大力度。</string>
     <string name="gesture_trainer_go_placed">将手势执行 <xliff:g id="tries">%1$d</xliff:g> 次。</string>
     <string name="gesture_trainer_along_left">左边缘</string>
     <string name="gesture_trainer_along_right">右边缘</string>
@@ -216,7 +216,7 @@
     <string name="gesture_trainer_left_out_along_scroll">已略过沿<xliff:g id="edge">%1$s</xliff:g>的滑动：该边缘用于滚动，因此沿它滑动会滚动应用，而不是执行手势。</string>
     <string name="gesture_trainer_finding_along_off_edge">手指离边缘太远了。</string>
     <string name="gesture_trainer_tip_along_off_edge">让手指紧贴玻璃的最边缘，沿边缘笔直移动。</string>
-    <string name="gesture_trainer_go_back_tap">将背面单击手势执行 <xliff:g id="tries">%1$d</xliff:g> 次。触摸屏幕会使该次尝试失败。</string>
+    <string name="gesture_trainer_go_back_tap">将背面点击手势执行 <xliff:g id="tries">%1$d</xliff:g> 次。触摸屏幕会使该次尝试失败。</string>
     <string name="gesture_trainer_no_accelerometer">此练习需要加速度传感器。没有可用的加速度传感器。</string>
     <string name="gesture_trainer_measure_hold">保持不动 <xliff:g id="ms">%1$d</xliff:g> 毫秒</string>
     <string name="gesture_trainer_measure_back_tap_strength">点击力度 <xliff:g id="strength">%1$.1f</xliff:g></string>
@@ -224,7 +224,7 @@
     <string name="gesture_trainer_finding_tap_wrong_half">手指点击在屏幕的另一半。</string>
     <string name="gesture_trainer_finding_swipe_missing">点击后没有滑动。</string>
     <string name="gesture_trainer_finding_swipe_late">滑动在最后一次点击后 <xliff:g id="ms">%1$d</xliff:g> 毫秒才开始，最多允许 <xliff:g id="limit">%2$d</xliff:g> 毫秒。</string>
-    <string name="gesture_trainer_finding_back_tap_too_light">背面单击太轻：达到所需力度的 <xliff:g id="percent">%1$d</xliff:g>%%。</string>
+    <string name="gesture_trainer_finding_back_tap_too_light">背面点击太轻：达到所需力度的 <xliff:g id="percent">%1$d</xliff:g>%%。</string>
     <string name="gesture_trainer_finding_back_tap_sideways">点击使手机侧向晃动多于穿过背面的方向。</string>
     <string name="gesture_trainer_finding_back_tap_moving">点击前手机正在移动。</string>
     <string name="gesture_trainer_finding_back_tap_screen_touched">屏幕被触摸了，触摸屏幕期间的点击不计入。</string>
@@ -239,7 +239,7 @@
     <string name="gesture_trainer_tip_back_tap_screen_touched">点击背面时手指不要碰屏幕：握住手机两侧。</string>
     <string name="gesture_trainer_tip_back_taps_too_slow">点击更快些，一次紧接一次。</string>
     <string name="gesture_trainer_advice_swipe_hold">滑动后手指抬起太早。将“<xliff:g id="setting">%1$s</xliff:g>”设得更短可允许更短的保持。</string>
-    <string name="gesture_trainer_advice_back_tap_sensitivity">背面单击较轻。将“<xliff:g id="setting">%1$s</xliff:g>”设得更高可检测更轻的点击，但也可能把碰撞检测为点击。</string>
+    <string name="gesture_trainer_advice_back_tap_sensitivity">背面点击较轻。将“<xliff:g id="setting">%1$s</xliff:g>”设得更高可检测更轻的点击，但也可能把碰撞检测为点击。</string>
     <string name="gesture_trainer_finding_turned_in_pinch">手指转动了 <xliff:g id="degrees">%1$.0f</xliff:g> 度，从 <xliff:g id="limit">%2$.0f</xliff:g> 度起该动作即为旋转。</string>
     <string name="gesture_trainer_tip_turned_in_pinch">让手指沿直线相互靠拢或分开，而不是绕着彼此沿弧线移动。</string>
     <string name="gesture_trainer_finding_other_gesture">该动作匹配的是那个手势。</string>
