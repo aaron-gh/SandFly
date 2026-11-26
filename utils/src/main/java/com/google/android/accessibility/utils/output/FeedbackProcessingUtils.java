@@ -426,7 +426,7 @@ public class FeedbackProcessingUtils {
         TextFormattingUtils.getFormattingSpanClasses(formattingOptions);
     formattingClasses.add(LocaleSpan.class);
     formattingClasses.add(BASE_CLICKABLE_SPAN);
-    // Emoji are fragments of their own while they have their own voice or rate.
+    // Emoji are fragments of their own while they have their own voice or rate, or a sound after.
     formattingClasses.add(EmojiSpeech.Mark.class);
     LanguageSwitch.startUtterance();
     for (int i = 0; i < item.getFragments().size(); ++i) {
@@ -553,6 +553,32 @@ public class FeedbackProcessingUtils {
     }
     if (!formattingInfos.isEmpty()) {
       addTextFormattingFeedback(context, formattingFeedbackMode, formattingInfos, item);
+    }
+    if (EmojiSpeech.playsSound()) {
+      addEmojiSounds(item);
+    }
+  }
+
+  /**
+   * Adds the emoji sound after each fragment of emoji, in a fragment of its own with no text, so
+   * that it plays once the emoji are spoken, also at the end of the text. A fragment with no text
+   * completes at once, and the splitting of long text and sentences that follows leaves it as it is.
+   */
+  @VisibleForTesting
+  static void addEmojiSounds(FeedbackItem item) {
+    List<FeedbackFragment> fragments = item.getFragments();
+    for (int i = 0; i < fragments.size(); i++) {
+      FeedbackFragment fragment = fragments.get(i);
+      if (!fragment.getSpeechParams().getBoolean(EmojiSpeech.SPEECH_PARAM_EMOJI, false)) {
+        continue;
+      }
+      FeedbackFragment sound = new FeedbackFragment("", /* speechParams= */ null);
+      sound.addEarcon(R.raw.emoji);
+      sound.setStartIndexInFeedbackItem(
+          fragment.getStartIndexInFeedbackItem() + fragment.getText().length());
+      // Past the sound, which the next pass would otherwise look at.
+      i++;
+      item.addFragmentAtPosition(sound, i);
     }
   }
 

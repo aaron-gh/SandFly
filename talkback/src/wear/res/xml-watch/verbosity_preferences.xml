@@ -166,10 +166,13 @@
       android:key="@string/pref_emoji_repeat_count_key"
       android:summary="%s"
       android:title="@string/title_pref_emoji_repeat_count" />
-  <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
-      android:defaultValue="@bool/pref_emoji_suffix_default"
-      android:key="@string/pref_emoji_suffix_key"
-      android:title="@string/title_pref_emoji_suffix" />
+  <ListPreference
+      android:defaultValue="@string/pref_emoji_after_name_default"
+      android:entries="@array/pref_emoji_after_name_entries"
+      android:entryValues="@array/pref_emoji_after_name_values"
+      android:key="pref_emoji_after_name"
+      android:summary="%s"
+      android:title="@string/title_pref_emoji_after_name" />
   <com.google.android.accessibility.material.preference.AccessibilitySuiteSwitchPreference
       android:defaultValue="@bool/pref_count_repeated_symbols_default"
       android:key="@string/pref_count_repeated_symbols_key"

@@ -173,6 +173,7 @@ play is left out when the theme is installed, and SandFly says so.
 | `typo` | Spelling error |
 | `hyperlink` | Link |
 | `formatting` | Formatted text |
+| `emoji` | Emoji, after an emoji name, with **Verbosity** > **After emoji names** set to **Play a sound** |
 | `screen_off` | Screen off |
 | `screen_on` | Screen on |
 | `screen_hidden` | The screen is hidden |
@@ -263,6 +264,10 @@ click, long click, scroll, expand and dismiss, don't count, and neither do keys 
 keyboards. **Sound and vibration** > **Actions available sound** turns it **Off** or sets when it plays: **When the
 item gets focus**, after the focus sound, with its vibration in place of the focus vibration, or
 **After the item is spoken**.
+
+`emoji` has no vibration of SandFly's own either; a theme can give it one. It plays after each
+emoji, or after emoji next to each other, while **Verbosity** > **After emoji names** is **Play a
+sound**.
 
 These vibrations have no sound, and a theme replaces them by these names:
 

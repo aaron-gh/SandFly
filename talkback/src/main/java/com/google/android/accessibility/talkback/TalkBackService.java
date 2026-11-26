@@ -4242,6 +4242,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     KeyboardEchoSettings.migrate(this, prefs);
     // Combines the two window name switches into the Window names setting.
     WindowNamesSetting.migrate(prefs, getResources());
+    // The switch for "emoji" after emoji names became After emoji names, with a sound.
+    EmojiSpeech.migrateSuffix(prefs);
     // The battery switch for when the screen turns on became a list with Only while charging.
     ScreenAnnouncementSettings.migrateBattery(prefs);
     // Verbosity's switch for notifications with the screen off became the Notifications one.
@@ -4933,8 +4935,10 @@ public class TalkBackService extends AccessibilityServiceCompat
         getBooleanPref(
             R.string.pref_punctuation_none_keep_meaning_key,
             R.bool.pref_punctuation_none_keep_meaning_default));
-    // Before the mode, which keeps the emoji loaded while emoji have a voice or rate of their own.
+    // Before the mode, which keeps the emoji loaded while emoji have a voice or rate of their own,
+    // or a sound after them.
     EmojiSpeech.setVoice(prefs);
+    EmojiSpeech.setAfterName(prefs);
     EmojiSpeech.setMode(
         this,
         SharedPreferencesUtils.getStringPref(
@@ -4946,8 +4950,6 @@ public class TalkBackService extends AccessibilityServiceCompat
                 res,
                 R.string.pref_emoji_repeat_count_key,
                 R.string.pref_emoji_repeat_count_default)));
-    EmojiSpeech.setSuffix(
-        getBooleanPref(R.string.pref_emoji_suffix_key, R.bool.pref_emoji_suffix_default));
 
     int formattingOptions = TextFormattingUtils.OPTION_NONE;
     int formattingFeedbackMode = TextFormattingUtils.FEEDBACK_MODE_NONE;

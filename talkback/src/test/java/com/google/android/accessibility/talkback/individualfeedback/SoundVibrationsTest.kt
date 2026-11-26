@@ -63,6 +63,19 @@ class SoundVibrationsTest {
   }
 
   @Test
+  fun theEmojiSoundIsBuiltInButOnlyAThemeGivesItAVibration() {
+    val sound = IndividualFeedbackSettings.EMOJI
+    assertTrue(IndividualFeedbackSettings.SOUNDS.any { it.key == sound })
+    // In the utils module, which plays it after emoji names.
+    assertTrue(File("../utils/src/main/res/raw/$sound.wav").isFile)
+    val pattern = SoundVibrations.PATTERNS.getValue(sound)
+    assertEquals(pattern, SoundVibrations.switchOf(sound))
+    assertTrue(IndividualFeedbackSettings.VIBRATIONS.any { it.key == pattern })
+    assertTrue(pattern in SoundVibrations.THEME_ONLY_PATTERNS)
+    assertTrue(pattern !in patterns)
+  }
+
+  @Test
   fun hidingAndShowingTheScreenEachHaveTheirOwnSoundVibrationAndSwitches() {
     for (sound in listOf("screen_hidden", "screen_shown")) {
       val item = IndividualFeedbackSettings.SOUNDS.single { it.key == sound }

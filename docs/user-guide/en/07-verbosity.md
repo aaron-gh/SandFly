@@ -39,7 +39,7 @@ The **Text and symbols** group sets how text, punctuation, capital letters and e
 - **Speak punctuation and symbols**: **All** says every punctuation mark and symbol. **Most** says most symbols, such as & and @, but leaves common punctuation, such as commas and apostrophes, to the speech engine. **Some**, the default, leaves punctuation and symbols to the speech engine. **None** leaves punctuation and symbols out of speech, except a character read on its own, such as when moving by character. Apostrophes and hyphens inside words, separators inside numbers, and punctuation that ends a word are left to the speech engine. **Learn more**, in the list, opens a web page about punctuation levels.
 - **Say symbols that change meaning**, shown while **Speak punctuation and symbols** is **None**: leaves these to the speech engine: a plus or minus sign directly before a number, degree, percent, per mille and currency signs, and + − × ÷ = < > between numbers. Off by default.
 - **Capital letters**: what SandFly does for a capital letter: **Do nothing**, **Say “capital”**, the default, **Change pitch**, or **Play sound**. With any other choice than **Say “capital”**, SandFly sends a capital letter on its own to the speech engine in lower case.
-- **Emoji**, **Count repeated emoji** and **Speak "emoji" after emoji names**: see [](#verbosity-emoji).
+- **Emoji**, **Count repeated emoji** and **After emoji names**: see [](#verbosity-emoji).
 - **Count repeated symbols**: says how many times a symbol repeats when it repeats 4 or more times. On by default.
 - **Speak text formatting** and **Text formatting options**: see [](#verbosity-text-formatting).
 
@@ -56,7 +56,10 @@ Some speech engines read emoji badly, use names of their own, or don't read them
 Two more settings depend on **Emoji**:
 
 - **Count repeated emoji**: with **Read by SandFly**, says an emoji repeated in a row once with a count, such as "3 grinning face". Choose **Off**, the default, or from **2 or more** to **6 or more**.
-- **Speak "emoji" after emoji names**: says "emoji" after each emoji. Off by default. Not available with **None**.
+- **After emoji names**: what follows each emoji. Not available with **None**.
+  - **Nothing**: the default.
+  - **Say "emoji"**: says "emoji" after each emoji, such as "grinning face emoji".
+  - **Play a sound**: plays the **Emoji** sound after each emoji, or once after emoji next to each other. Emoji are then spoken as separate utterances from the text around them. A sound theme can replace the sound, and **Individual sounds and vibrations** can turn it off. See [](#sound-events).
 
 With **Read by SandFly**, moving by character names a whole emoji once, and moving by word stops on emoji. With **None**, moving by word skips emoji. Copying or spelling the last spoken phrase gives the emoji, not their names.
 

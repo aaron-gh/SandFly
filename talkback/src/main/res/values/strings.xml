@@ -792,8 +792,14 @@
       Source: Preference for saying how many times an emoji repeats, like "3 grinning face", instead of naming it each time. [CHAR LIMIT=45]
     -->
     <string name="title_pref_emoji_repeat_count">Count repeated emoji</string>
-    <!-- Title of the verbosity switch that speaks "emoji" after each emoji name, like "grinning face emoji". [CHAR LIMIT=50] -->
-    <string name="title_pref_emoji_suffix">Speak \"emoji\" after emoji names</string>
+    <!-- Title of the verbosity list that sets what follows each emoji name: nothing, the word "emoji", like "grinning face emoji", or a sound. [CHAR LIMIT=50] -->
+    <string name="title_pref_emoji_after_name">After emoji names</string>
+    <!-- After emoji names choice: nothing follows emoji names. [CHAR LIMIT=45] -->
+    <string name="value_emoji_after_name_nothing">Nothing</string>
+    <!-- After emoji names choice: the word "emoji" is spoken after each emoji name, like "grinning face emoji". Keep "emoji" as in template_emoji_name_suffix. [CHAR LIMIT=45] -->
+    <string name="value_emoji_after_name_word">Say \"emoji\"</string>
+    <!-- After emoji names choice: a sound plays after each emoji name. [CHAR LIMIT=45] -->
+    <string name="value_emoji_after_name_sound">Play a sound</string>
     <!--
       Source: Count repeated emoji choice: each emoji is named every time. [CHAR LIMIT=45]
     -->
