@@ -40,7 +40,9 @@ class AudioCapture(
   ignoreSpeechMs: Long = 0,
 ) {
   /** The level of the room's background noise, which speech must be well above. */
-  private var noiseFloor = 0.0
+  @Volatile private var noiseFloor = 0.0
+  /** The loudest tenth of a second recorded, out of 32767. */
+  @Volatile private var loudest = 0.0
   private val ignoreSpeechBytes = ignoreSpeechMs * SAMPLE_RATE * 2 / 1000
   /** Where the first tenth that sounded like speech starts, and the last ends, in bytes. */
   @Volatile private var speechStart = -1
@@ -140,6 +142,7 @@ class AudioCapture(
     }
     if (count == 0) return false
     val level = Math.sqrt(sum / count)
+    if (level > loudest) loudest = level
     noiseFloor =
       when {
         noiseFloor == 0.0 -> level
@@ -156,6 +159,9 @@ class AudioCapture(
     return if (start < 0 || end <= start) null else start until end
   }
 
+  /** The loudest tenth of a second and the background noise level so far, out of 32767. */
+  fun levels(): Pair<Int, Int> = loudest.toInt() to noiseFloor.toInt()
+
   /** Stops recording and returns the 16-bit samples recorded, little-endian. */
   fun stop(): ByteArray {
     recording = false
@@ -167,8 +173,12 @@ class AudioCapture(
   companion object {
     /** How many times louder than the background noise speech is. */
     private const val SPEECH_OVER_NOISE = 3.0
-    /** The quietest level counted as speech, out of 32767. */
-    private const val MIN_SPEECH_LEVEL = 300.0
+    /**
+     * The quietest level counted as speech, out of 32767: about 58 dB SPL at the input level the
+     * Android compatibility definition sets for the voice recognition source, 2500 for 90 dB SPL.
+     * Some phones keep to it, so speech held at a normal distance rarely reaches 300.
+     */
+    private const val MIN_SPEECH_LEVEL = 60.0
     private const val TAG = "AudioCapture"
     const val SAMPLE_RATE = 16_000
     /** Fifteen minutes. Gemini 3.5 Transcribe takes up to an hour; longer would be slow to send. */

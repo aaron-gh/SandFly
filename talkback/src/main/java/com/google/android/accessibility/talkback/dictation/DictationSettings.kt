@@ -21,16 +21,19 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.speech.RecognitionService
+import android.view.inputmethod.InputMethodManager
 import androidx.core.content.edit
 import com.google.android.accessibility.talkback.BuildConfig
 import com.google.android.accessibility.talkback.R
 import com.google.android.accessibility.talkback.actor.gemini.AiProvider
 import com.google.android.accessibility.talkback.actor.gemini.GeminiApiKey
 import com.google.android.accessibility.talkback.actor.gemini.local.LocalModelManager
+import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.util.Locale
 
 /** Dictation settings: how speech is recognized, and which AI service corrects it. */
 object DictationSettings {
+  private const val TAG = "DictationSettings"
   const val PREF_RECOGNITION = "pref_dictation_recognition"
   const val PREF_AI_SERVICE = "pref_dictation_ai_service"
   const val PREF_WHISPER_MODEL = "pref_dictation_whisper_model"
@@ -107,25 +110,59 @@ object DictationSettings {
   fun autoStopMs(prefs: SharedPreferences): Long =
     prefs.getString(PREF_AUTO_STOP_MS, null)?.toLongOrNull()?.coerceAtLeast(0) ?: 0
 
+  /**
+   * The language of the keyboard's current input method subtype, as Gboard's language switch sets
+   * it, or null when the keyboard has none or it is the phone's language.
+   */
+  fun keyboardLanguage(context: Context): Locale? {
+    val subtype =
+      try {
+        context.getSystemService(InputMethodManager::class.java)?.currentInputMethodSubtype
+      } catch (e: RuntimeException) {
+        LogUtils.w(TAG, "No keyboard subtype: %s", e)
+        null
+      } ?: return null
+    @Suppress("DEPRECATION") val locale = subtype.locale
+    return subtypeLanguage(subtype.languageTag, locale, subtype.mode, Locale.getDefault())
+  }
+
+  /**
+   * The language of a keyboard subtype with [languageTag] or, without one, [locale] such as uk_UA,
+   * in [mode]; null when it has none, isn't a keyboard, or has [phone]'s language.
+   */
+  fun subtypeLanguage(languageTag: String?, locale: String?, mode: String?, phone: Locale): Locale? {
+    if (!mode.isNullOrEmpty() && mode != "keyboard") return null
+    val language =
+      languageTag?.takeIf { it.isNotEmpty() }?.let(Locale::forLanguageTag)
+        ?: locale?.takeIf { it.isNotEmpty() }?.let { Locale.forLanguageTag(it.replace('_', '-')) }
+        ?: return null
+    // "zz" is the subtype of keyboards for no particular language, such as emoji.
+    if (language.language.isEmpty() || language.language == "zz" || language.language == "und") {
+      return null
+    }
+    return language.takeIf { it.language != phone.language }
+  }
+
   /** Whether Rambler recognizes [locale]'s language. */
   fun ramblerSupports(locale: Locale): Boolean = locale.language in RAMBLER_LANGUAGES
 
   /**
    * The way speech is recognized now: the chosen one when it can be used, otherwise the first of
-   * Google on-device, Rambler, Whisper and Android speech recognition that can, other than [skip]:
-   * one that failed, such as Google on-device without a language pack for the phone's language, or
+   * Google on-device, Rambler, Whisper and Android speech recognition that can recognize [language],
+   * other than [skip]: one that failed, such as Google on-device without a language pack for it, or
    * Rambler for a password.
    */
   fun effectiveRecognition(
     context: Context,
     prefs: SharedPreferences,
     skip: Set<Recognition> = emptySet(),
+    language: Locale = Locale.getDefault(),
   ): Recognition {
     val usable = { recognition: Recognition ->
       recognition !in skip &&
         when (recognition) {
           Recognition.GOOGLE ->
-            googleInstalled(context) && GoogleSpeechLanguages.hasPhoneLanguage() != false
+            googleInstalled(context) && GoogleSpeechLanguages.hasLanguage(language) != false
           Recognition.RAMBLER -> ramblerKey(prefs).isNotEmpty()
           Recognition.WHISPER -> WhisperModels.get(context).activeWhisper() != null
           Recognition.ANDROID -> true
@@ -136,7 +173,7 @@ object DictationSettings {
     if (usable(chosen)) return chosen
     return when {
       usable(Recognition.GOOGLE) -> Recognition.GOOGLE
-      usable(Recognition.RAMBLER) && ramblerSupports(Locale.getDefault()) -> Recognition.RAMBLER
+      usable(Recognition.RAMBLER) && ramblerSupports(language) -> Recognition.RAMBLER
       usable(Recognition.WHISPER) -> Recognition.WHISPER
       else -> Recognition.ANDROID
     }

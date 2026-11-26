@@ -127,6 +127,11 @@ class AiDictation(
     SandflyDictation.instance = this
   }
   private var recognition = Recognition.ANDROID
+  /**
+   * The keyboard's language, which a dictation into a field recognizes instead of the phone's, as
+   * the keyboard's own voice typing does; null for the phone's.
+   */
+  private var language: Locale? = null
   private var capture: AudioCapture? = null
   private var continuous: ContinuousRecognition? = null
   @Volatile private var transcriber: SpeechTranscriber? = null
@@ -173,7 +178,16 @@ class AiDictation(
       PermissionUtils.requestPermissions(service, Manifest.permission.RECORD_AUDIO)
       return false
     }
-    if (!startRecording(DictationSettings.effectiveRecognition(service, prefs, skip(node)))) {
+    language = DictationSettings.keyboardLanguage(service)
+    val used = DictationSettings.effectiveRecognition(service, prefs, skip(node), spokenLanguage())
+    LogUtils.i(
+      TAG,
+      "Dictating with %s in %s, %s",
+      used,
+      spokenLanguage().toLanguageTag(),
+      if (language != null) "the keyboard's language" else "the phone's language",
+    )
+    if (!startRecording(used)) {
       speak(service.getString(R.string.dictation_unavailable))
       return false
     }
@@ -221,6 +235,8 @@ class AiDictation(
     onText = callback
     listenCorrects = correct
     listenSession = session
+    // Voice commands and questions are in the phone's language.
+    language = null
     if (!startRecording(DictationSettings.effectiveRecognition(service, prefs))) {
       onText = null
       listenSession = false
@@ -307,6 +323,7 @@ class AiDictation(
           once = onText != null,
           punctuation = DictationSettings.punctuation(prefs),
           blockOffensiveWords = DictationSettings.blocksOffensiveWords(prefs),
+          language = language,
         )
       if (!recognizer.start()) return false
       continuous = recognizer
@@ -315,7 +332,9 @@ class AiDictation(
     // Rambler live transcription transcribes while the user speaks.
     val session =
       if (used == Recognition.RAMBLER && DictationSettings.ramblerLive(prefs)) {
-        RamblerLive(DictationSettings.ramblerKey(prefs)).also { it.start() }
+        RamblerLive(DictationSettings.ramblerKey(prefs), onSpeech = ::transcribedSpeech).also {
+          it.start()
+        }
       } else {
         null
       }
@@ -345,11 +364,35 @@ class AiDictation(
     }
   }
 
+  /**
+   * Rambler live transcription sent text while recording: speech, even when the microphone level
+   * was too low for [AudioCapture] to count it.
+   */
+  private fun transcribedSpeech() {
+    val now = SystemClock.elapsedRealtime()
+    if (now - recordingStartedAt < CHIME_MS) return
+    lastSpeechAt = now
+    speechHeard = true
+    // So that Whisper still runs when the session's text isn't used.
+    if (speechTenths < MIN_SPEECH_TENTHS) speechTenths = MIN_SPEECH_TENTHS
+  }
+
   private fun stopRecording() {
     handler.removeCallbacks(autoStop)
     // Counted before the stop chime, which the recording can pick up.
     val spoken = speechTenths >= MIN_SPEECH_TENTHS
     val speech = capture?.speechRange()
+    val levels = capture?.levels()
+    LogUtils.i(
+      TAG,
+      "Recording stopped after %d ms with %s: speech %d tenths, last %d ms ago, loudest %s, noise %s",
+      SystemClock.elapsedRealtime() - recordingStartedAt,
+      recognition,
+      speechTenths,
+      SystemClock.elapsedRealtime() - lastSpeechAt,
+      levels?.first,
+      levels?.second,
+    )
     phase = Phase.WORKING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
     stopChime()
@@ -368,6 +411,7 @@ class AiDictation(
     }
     val request = ++generation
     val used = recognition
+    val locale = spokenLanguage()
     tones.play(/* playTone= */ true, /* delayPlayTone= */ true)
     live?.let { session ->
       live = null
@@ -379,17 +423,18 @@ class AiDictation(
         } else {
           // The session failed: the whole recording goes the usual way.
           LogUtils.w(TAG, "Live transcription failed, sending the recording")
-          transcribeRecording(request, used, pcm, spoken, speech)
+          transcribeRecording(request, used, pcm, spoken, speech, locale)
         }
       }
       return
     }
-    transcribeRecording(request, used, pcm, spoken, speech)
+    transcribeRecording(request, used, pcm, spoken, speech, locale)
   }
 
   /**
    * Recognizes [pcm] on the worker thread, then types it, unless a newer dictation started.
-   * [spoken] is whether the recording had any speech in it, and [speech] the bytes it was in.
+   * [spoken] is whether the recording had any speech in it, [speech] the bytes it was in, and
+   * [locale] its language.
    */
   private fun transcribeRecording(
     request: Int,
@@ -397,11 +442,12 @@ class AiDictation(
     pcm: ByteArray,
     spoken: Boolean,
     speech: IntRange?,
+    locale: Locale,
   ) {
     worker.execute {
       val result =
         try {
-          transcribe(used, pcm, spoken, speech)
+          transcribe(used, pcm, spoken, speech, locale)
         } catch (e: Exception) {
           LogUtils.e(TAG, "Transcription failed: %s", e)
           null
@@ -428,13 +474,14 @@ class AiDictation(
    * Recognizes the speech in [pcm] with [used], or with Whisper when Rambler fails. Returns the
    * text and whether it is already cleaned up, or null when it couldn't be recognized. Whisper
    * isn't run when [spoken] is false, and is given only the audio around [speech]: it makes up text
-   * for silence.
+   * for silence. Whisper is told the speech is in [locale]'s language.
    */
   private fun transcribe(
     used: Recognition,
     pcm: ByteArray,
     spoken: Boolean,
     speech: IntRange?,
+    locale: Locale,
   ): Pair<String, Boolean>? {
     if (used == Recognition.RAMBLER) {
       try {
@@ -461,7 +508,7 @@ class AiDictation(
     transcriber = whisper
     try {
       val audio = AudioCapture.trim(pcm, speech, WHISPER_LEAD_MS, WHISPER_TAIL_MS)
-      return whisper.transcribe(AudioCapture.toFloats(audio), whisperLanguage())?.let { it to false }
+      return whisper.transcribe(AudioCapture.toFloats(audio), whisperLanguage(locale))?.let { it to false }
     } finally {
       transcriber = null
     }
@@ -488,10 +535,16 @@ class AiDictation(
             service,
             prefs,
             skip(field) + Recognition.GOOGLE,
+            spokenLanguage(),
           )
         )
     ) {
-      LogUtils.w(TAG, "Google on-device recognition has no language pack, using %s", recognition)
+      LogUtils.w(
+        TAG,
+        "Google on-device recognition has no language pack for %s, using %s",
+        spokenLanguage().toLanguageTag(),
+        recognition,
+      )
       return
     }
     // While recording, finish() unsilences speech and plays the stop chime.
@@ -668,15 +721,18 @@ class AiDictation(
     callback(text)
   }
 
-  /** The language Whisper is told the speech is in: the phone's. */
-  private fun whisperLanguage(): String =
-    when (val language = Locale.getDefault().language) {
+  /** The language the speech is in: the keyboard's for a dictation into a field, or the phone's. */
+  private fun spokenLanguage(): Locale = language ?: Locale.getDefault()
+
+  /** [locale]'s language as Whisper takes it. */
+  private fun whisperLanguage(locale: Locale): String =
+    when (val code = locale.language) {
       "iw" -> "he"
       "in" -> "id"
       "ji" -> "yi"
       "fil" -> "tl"
       "nb" -> "no"
-      else -> language
+      else -> code
     }
 
   /**

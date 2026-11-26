@@ -211,6 +211,8 @@ Go to **Typing** > **Dictation** > **Speech recognition**, and choose one of the
 
 A choice that can't be used falls back to the same order as **Automatic**. Google on-device and Android speech recognition start again after each pause until you stop dictation. If Rambler doesn't respond, the recording is transcribed with Whisper when a model is downloaded.
 
+**Dictate** recognizes the language of the keyboard, such as the language chosen in Gboard, when it differs from the language of the phone. Google on-device speech recognition then needs a language pack for the language of the keyboard; without one, the next way of recognizing speech in the **Automatic** order is used. Voice commands and other voice input use the language of the phone.
+
 With **Rambler live transcription** on, SandFly streams the recording while you speak, and receives the text of each phrase when you pause, so the text is typed sooner after you stop. If the stream fails, SandFly sends the whole recording when you stop. It's on by default, and shown only when there is a Gemini API key.
 
 Note: The recording is sent to Google with Rambler. With a free-tier Gemini API key, Google may use the audio and text to improve its products; with a paid-tier key, it doesn't.
@@ -227,7 +229,7 @@ To use a model:
 1. Choose a model. SandFly downloads it, after a confirmation on mobile data.
 2. To change to another downloaded model, choose it, then choose **Use**. To remove a model, choose it, then choose **Delete**.
 
-The first model that you download is used. Whisper uses the language of the phone when it is known, and otherwise detects the language.
+The first model that you download is used. Whisper recognizes the language described in [](#typing-speech-recognition).
 
 **Model file** adds a Whisper model of your own in the whisper.cpp format, such as one trained for a language, from the files on the phone, up to 4 GB. Once added, you can use it, replace it with **Choose another file**, or delete it. A file that isn't a whisper.cpp model is refused.
 

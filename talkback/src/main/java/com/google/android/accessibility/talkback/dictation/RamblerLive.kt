@@ -41,7 +41,12 @@ import org.json.JSONObject
  * [send] can be called from any thread. [finish] gets all the text, or null when the session
  * failed, in which case the whole recording can still be sent the usual way.
  */
-internal class RamblerLive(private val apiKey: String, private val url: String = URL) {
+internal class RamblerLive(
+  private val apiKey: String,
+  private val url: String = URL,
+  /** Runs on the session's thread whenever text of a phrase comes, interim or final. */
+  private val onSpeech: () -> Unit = {},
+) {
   private val main = Handler(Looper.getMainLooper())
   private val lock = Any()
   private var socket: WebSocket? = null
@@ -223,8 +228,10 @@ internal class RamblerLive(private val apiKey: String, private val url: String =
     val content = json.optJSONObject("serverContent") ?: return
     content.optJSONObject("interimInputTranscription")?.let {
       synchronized(lock) { pending = true }
+      if (it.optString("text").isNotBlank()) onSpeech()
     }
     content.optJSONObject("inputTranscription")?.optString("text")?.trim()?.let { text ->
+      if (text.isNotEmpty()) onSpeech()
       val finishing: Boolean
       synchronized(lock) {
         if (text.isNotEmpty()) phrases.add(text)

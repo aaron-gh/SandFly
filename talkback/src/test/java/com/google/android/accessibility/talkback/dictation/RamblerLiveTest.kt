@@ -24,6 +24,7 @@ import java.security.MessageDigest
 import java.time.Duration
 import java.util.Base64
 import java.util.concurrent.CopyOnWriteArrayList
+import java.util.concurrent.atomic.AtomicInteger
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
@@ -145,7 +146,8 @@ class RamblerLiveTest {
   @Test
   fun phrasesFromTheSessionAreJoinedAfterTheEndOfTheAudio() {
     FakeLiveApi().use { api ->
-      val live = RamblerLive("key", api.url)
+      val heard = AtomicInteger()
+      val live = RamblerLive("key", api.url, onSpeech = { heard.incrementAndGet() })
       live.start()
       val pcm = ByteArray(3200) { it.toByte() }
       live.send(pcm)
@@ -157,6 +159,8 @@ class RamblerLiveTest {
       waitFor { result != "not yet" }
 
       assertEquals("Hello there. How are you?", result)
+      // Both phrases and the interim text count as speech, for Auto stop after silence.
+      assertEquals(3, heard.get())
       assertEquals("key", api.headers["x-goog-api-key"])
       val setup = api.messages[0].getJSONObject("setup")
       assertEquals("models/gemini-3.5-transcribe-live", setup.getString("model"))

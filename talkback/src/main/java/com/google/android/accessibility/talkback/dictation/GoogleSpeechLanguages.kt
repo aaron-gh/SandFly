@@ -44,7 +44,10 @@ object GoogleSpeechLanguages {
   @Volatile private var installed: List<String>? = null
 
   /** Whether the phone's language is downloaded, or null when that isn't known. */
-  fun hasPhoneLanguage(): Boolean? = installed?.let { matches(it, Locale.getDefault()) }
+  fun hasPhoneLanguage(): Boolean? = hasLanguage(Locale.getDefault())
+
+  /** Whether [locale]'s language is downloaded, or null when that isn't known. */
+  fun hasLanguage(locale: Locale): Boolean? = installed?.let { matches(it, locale) }
 
   /** Whether [languages], language tags such as en-US, include [locale]'s language. */
   fun matches(languages: List<String>, locale: Locale): Boolean =
