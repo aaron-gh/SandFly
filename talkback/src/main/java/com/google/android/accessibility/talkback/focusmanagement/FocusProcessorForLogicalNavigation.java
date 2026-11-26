@@ -332,6 +332,9 @@ public class FocusProcessorForLogicalNavigation {
         && now - scrollWindowSet < OWN_WINDOW_MS;
   }
 
+  // A single native scroll view followed by the pending navigation, on the main thread.
+  @Nullable private static ScrollViewEnd watchedScrollViewEnd;
+
   /** Records a scroll event, which tells whether a list scrolled by navigation still moves. */
   public static void onScrollEventReceived(AccessibilityEvent event) {
     if (isOtherWindowScroll(
@@ -351,6 +354,9 @@ public class FocusProcessorForLogicalNavigation {
     }
     previousScrollStep = lastScrollStep;
     lastScrollStep = step;
+    if (watchedScrollViewEnd != null) {
+      watchedScrollViewEnd.noteEvent(event);
+    }
   }
 
   // Counts navigation actions, so that a search waiting for a list to stop gives way to a newer one.
@@ -4998,7 +5004,21 @@ public class FocusProcessorForLogicalNavigation {
             scrollableNodeInfo.getNode(), navigationAction, scrollAction);
     Rect pivotBefore = new Rect();
     pivot.getBoundsInScreen(pivotBefore);
-    noteChildrenAtScrollStart(scrollableNodeInfo.getNode());
+    AccessibilityNodeInfoCompat scrollable = scrollableNodeInfo.getNode();
+    noteChildrenAtScrollStart(scrollable);
+    boolean contentUp =
+        scrollAction == ACTION_SCROLL_FORWARD.getId() || scrollAction == ACTION_SCROLL_DOWN.getId();
+    boolean watchScrollViewEnd =
+        speakWhileScrolling
+            && navigationAction.shouldScroll
+            && navigationAction.actionType == NavigationAction.DIRECTIONAL_NAVIGATION
+            && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT
+            && (contentUp
+                || scrollAction == ACTION_SCROLL_BACKWARD.getId()
+                || scrollAction == ACTION_SCROLL_UP.getId())
+            && isPlainVerticalScrollView(scrollable);
+    @Nullable NativeScrollFinish finish =
+        watchScrollViewEnd ? nativeScrollFinish(scrollable, pivot, contentUp) : null;
     // Use SCROLL_TIMEOUT_LONG_MS since auto scroll may find some scrollable containers that request
     // a longer time to finish the scrolling action(like home screen), a short timeout will make
     // TalkBack detects the scroll action always fail, even through it's actually success.
@@ -5070,10 +5090,9 @@ public class FocusProcessorForLogicalNavigation {
         && scrollCallback != null
         && navigationAction.targetType == NavigationTarget.TARGET_DEFAULT) {
       AutoScrollCallback callback = scrollCallback;
-      AccessibilityNodeInfoCompat scrollable = scrollableNodeInfo.getNode();
-      boolean contentUp =
-          scrollAction == AccessibilityNodeInfoCompat.ACTION_SCROLL_FORWARD
-              || scrollAction == AccessibilityActionCompat.ACTION_SCROLL_DOWN.getId();
+      if (finish != null) {
+        finishShortNativeScroll(scrollable, pivot, finish, scrollAction, eventId);
+      }
       @Nullable AccessibilityNodeInfoCompat tracker = trackerFor(pivot, scrollable, contentUp);
       // Items of a sideways list come beside the pivot's, which the watch doesn't look for.
       boolean watchItems =
@@ -5084,6 +5103,14 @@ public class FocusProcessorForLogicalNavigation {
         track.actionCountAtStart = scrollActionCount;
         if (watchItems) {
           track.watchItems(pivot, contentUp);
+          if (watchScrollViewEnd) {
+            track.scrollViewEnd = new ScrollViewEnd(scrollable, lastAutoScrollUptime, contentUp);
+            if (finish != null) {
+              track.scrollViewEnd.expectedY = finish.targetY();
+              track.scrollViewEnd.expectedDeltaY = finish.targetY() - finish.startY();
+            }
+            watchedScrollViewEnd = track.scrollViewEnd;
+          }
         }
         trackedCallback = callback;
         earlyScrollCheckHandler.postDelayed(() -> trackScroll(track), FIRST_TRACK_CHECK_MS);
@@ -5115,6 +5142,159 @@ public class FocusProcessorForLogicalNavigation {
   /** Finding that part runs on the main thread and stops after this long. */
   private static final long MAX_TRACKER_SEARCH_MS = 15;
 
+  @VisibleForTesting
+  static boolean isPlainVerticalScrollView(AccessibilityNodeInfoCompat node) {
+    return TextUtils.equals(node.getClassName(), "android.widget.ScrollView")
+        && OffscreenContent.keepsAllContent(node)
+        && !TextUtils.equals(node.getPackageName(), "com.android.systemui")
+        && !AccessibilityNodeInfoUtils.supportsAction(
+            node, AccessibilityActionCompat.ACTION_SCROLL_TO_POSITION.getId());
+  }
+
+  @VisibleForTesting
+  static boolean isVerticalScrollLimit(int scrollY, int maxScrollY, boolean towardBottom) {
+    return maxScrollY > 0 && scrollY == (towardBottom ? maxScrollY : 0);
+  }
+
+  @VisibleForTesting
+  static boolean confirmsVerticalScrollLimit(
+      AccessibilityNodeInfoCompat node, boolean towardBottom) {
+    AccessibilityActionCompat backward = AccessibilityActionCompat.ACTION_SCROLL_BACKWARD;
+    AccessibilityActionCompat forward = AccessibilityActionCompat.ACTION_SCROLL_FORWARD;
+    AccessibilityActionCompat up = AccessibilityActionCompat.ACTION_SCROLL_UP;
+    AccessibilityActionCompat down = AccessibilityActionCompat.ACTION_SCROLL_DOWN;
+    return towardBottom
+        ? !AccessibilityNodeInfoUtils.supportsAnyAction(node, forward, down)
+            && AccessibilityNodeInfoUtils.supportsAnyAction(node, backward, up)
+        : !AccessibilityNodeInfoUtils.supportsAnyAction(node, backward, up)
+            && AccessibilityNodeInfoUtils.supportsAnyAction(node, forward, down);
+  }
+
+  /** The position of a short move to the edge, while the original text will stay visible. */
+  private record NativeScrollFinish(
+      int startY, int targetY, Rect viewport, Rect pivotBounds, int childCount) {}
+
+  @SuppressWarnings("deprecation") // The drawing rect of a native View includes its scroll offset.
+  private static @Nullable NativeScrollFinish nativeScrollFinish(
+      AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot, boolean towardBottom) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE
+        || !TextUtils.equals(pivot.getClassName(), "android.widget.TextView")
+        || pivot.isClickable()
+        || !scrollable.equals(pivot.getParent())) {
+      return null;
+    }
+    Rect drawing = new Rect();
+    scrollable.getBoundsInParent(drawing);
+    int maxY = ScrollEventInterpreter.measuredVerticalScrollMax(scrollable.unwrap(), drawing.top);
+    int targetY = towardBottom ? maxY : 0;
+    int delta = targetY - drawing.top;
+    if (maxY <= 0 || drawing.left != 0 || delta == 0 || Math.abs(delta) > drawing.height() / 4) {
+      return null;
+    }
+    Rect viewport = new Rect();
+    Rect shown = new Rect();
+    Rect text = new Rect();
+    scrollable.getBoundsInWindow(viewport);
+    pivot.getBoundsInWindow(shown);
+    pivot.getBoundsInParent(text);
+    Rect after = new Rect(shown);
+    after.offset(0, -delta);
+    if (viewport.height() != drawing.height()
+        || shown.width() != text.width()
+        || shown.height() != text.height()
+        || !(towardBottom ? shown.bottom == viewport.bottom : shown.top == viewport.top)
+        || !viewport.contains(shown)
+        || !viewport.contains(after)) {
+      return null;
+    }
+    return new NativeScrollFinish(drawing.top, targetY, viewport, shown, scrollable.getChildCount());
+  }
+
+  @SuppressWarnings("deprecation") // The view must still be at the original offset.
+  private void finishShortNativeScroll(
+      AccessibilityNodeInfoCompat scrollable, AccessibilityNodeInfoCompat pivot,
+      NativeScrollFinish finish, int action, EventId eventId) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE
+        || SystemClock.uptimeMillis() - lastAutoScrollUptime >= 50
+        || !pivot.refresh()
+        || !pivot.isVisibleToUser()) {
+      return;
+    }
+    Rect bounds = new Rect();
+    pivot.getBoundsInWindow(bounds);
+    if (!bounds.equals(finish.pivotBounds()) || !scrollable.refresh()
+        || scrollable.getChildCount() != finish.childCount()) {
+      return;
+    }
+    scrollable.getBoundsInWindow(bounds);
+    if (!bounds.equals(finish.viewport())) {
+      return;
+    }
+    scrollable.getBoundsInParent(bounds);
+    if (bounds.top == finish.startY() && bounds.left == 0
+        && SystemClock.uptimeMillis() - lastAutoScrollUptime < 50) {
+      // Reissue the page action only while its offset and visible layout have not moved.
+      // Android completes the pending movement in place. The existing search checks the new view.
+      pipeline.returnFeedback(eventId, Feedback.nodeAction(scrollable, action));
+    }
+  }
+
+  private static final class ScrollViewEnd {
+    final AccessibilityNodeInfoCompat node;
+    final long startedAt;
+    final boolean towardBottom;
+    int eventCount = -1;
+    int expectedY = -1;
+    int expectedDeltaY;
+
+    ScrollViewEnd(AccessibilityNodeInfoCompat node, long startedAt, boolean towardBottom) {
+      this.node = node;
+      this.startedAt = startedAt;
+      this.towardBottom = towardBottom;
+    }
+
+    void noteEvent(AccessibilityEvent event) {
+      long elapsed = event.getEventTime() - startedAt;
+      if (elapsed >= 0
+          && elapsed < WATCH_MAX_MS
+          && event.getWindowId() == node.getWindowId()
+          && isVerticalScrollLimit(event.getScrollY(), event.getMaxScrollY(), towardBottom)
+          && TextUtils.equals(event.getClassName(), node.getClassName())
+          && node.unwrap().equals(
+              Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                  ? event.getSource(0)
+                  : event.getSource())) {
+        eventCount = scrollEventCount;
+      }
+    }
+
+    @SuppressWarnings("deprecation") // The drawing rect confirms the immediate move.
+    boolean isConfirmed() {
+      if (expectedY >= 0) {
+        int y = expectedY;
+        expectedY = -1;
+        Rect drawing = new Rect();
+        if (node.refresh()) {
+          node.getBoundsInParent(drawing);
+          if (drawing.top == y && confirmsVerticalScrollLimit(node, towardBottom)) {
+            return true;
+          }
+        }
+      }
+      if (eventCount != scrollEventCount) {
+        return false;
+      }
+      eventCount = -1;
+      return node.refresh() && confirmsVerticalScrollLimit(node, towardBottom);
+    }
+
+    void stopWatching() {
+      if (watchedScrollViewEnd == this) {
+        watchedScrollViewEnd = null;
+      }
+    }
+  }
+
   /**
    * A node followed while a list scrolls, and how it has moved since the scroll, and the list's
    * items, watched for the next item to come on screen.
@@ -5142,6 +5322,9 @@ public class FocusProcessorForLogicalNavigation {
 
     /** Whether the list's items are watched for the next item. */
     boolean watchItems;
+
+    /** The exact end of a vertical ScrollView, if its scroll event reports it. */
+    @Nullable ScrollViewEnd scrollViewEnd;
 
     /** Whether the pivot filled the list when the scroll started, so no new item comes soon. */
     boolean pivotFillsList;
@@ -6002,13 +6185,20 @@ public class FocusProcessorForLogicalNavigation {
    * Reads one node per check and searches nothing meanwhile.
    */
   private void trackScroll(ScrollTrack track) {
+    ScrollViewEnd scrollViewEnd = track.scrollViewEnd;
     if (scrollCallback != track.callback) {
+      if (scrollViewEnd != null) {
+        scrollViewEnd.stopWatching();
+      }
       return;
     }
     long uptime = SystemClock.uptimeMillis();
     long elapsed = uptime - lastAutoScrollUptime;
     if (track.watchItems) {
       if (focusNextItemIfShown(track, elapsed)) {
+        if (scrollViewEnd != null) {
+          scrollViewEnd.stopWatching();
+        }
         return;
       }
       // Another scroll only once this one has ended, which its scroll events show; meanwhile the
@@ -6023,9 +6213,16 @@ public class FocusProcessorForLogicalNavigation {
       if (state == LIST_MOVING && track.pivotFillsList && events > 0 && !listStillMoving()) {
         state = LIST_STOPPED;
       }
-      if (state == LIST_MOVING) {
+      // The event reports the exact edge, and the refreshed node can only scroll back.
+      // Continue with the usual search without waiting for other scroll events to go quiet.
+      boolean reachedScrollViewEnd =
+          state == LIST_MOVING && scrollViewEnd != null && scrollViewEnd.isConfirmed();
+      if (state == LIST_MOVING && !reachedScrollViewEnd) {
         earlyScrollCheckHandler.postDelayed(() -> trackScroll(track), FRAME_MS);
         return;
+      }
+      if (scrollViewEnd != null) {
+        scrollViewEnd.stopWatching();
       }
       trackedCallback = null;
       if (state == LIST_NOT_SCROLLED) {
@@ -6035,6 +6232,9 @@ public class FocusProcessorForLogicalNavigation {
         return;
       }
       int deltaY = scrollDeltaSumY - scrollStartDeltaSumY;
+      if (deltaY == 0 && reachedScrollViewEnd) {
+        deltaY = scrollViewEnd.expectedDeltaY;
+      }
       learnPage(
           track.scrollable,
           Math.abs(deltaY),
@@ -6043,12 +6243,15 @@ public class FocusProcessorForLogicalNavigation {
       learnOneEventList(track.scrollable, events, uptime - lastScrollEventUptime, deltaY);
       LogUtils.d(
           TAG,
-          "List stopped %d ms after the scroll: %d scroll events, deltaY=%d; searching now.",
+          "List stopped %d ms after the scroll: %d events, deltaY=%d, exact ScrollView end=%s.",
           elapsed,
           events,
-          deltaY);
+          deltaY,
+          reachedScrollViewEnd);
       listSettled = true;
-      track.scrollable.refresh();
+      if (!reachedScrollViewEnd) {
+        track.scrollable.refresh();
+      }
       readListAgain(track.scrollable);
       onAutoScrolled(track.scrollable, track.eventId, /* scrollDeltaX= */ 0, deltaY != 0 ? deltaY : 1);
       return;
@@ -8666,6 +8869,7 @@ public class FocusProcessorForLogicalNavigation {
       // The scroll before this one has sent all the events it will send before this one's.
       parent.checkOneEventScroll();
       // Each callback is created as its scroll starts. See listStillMoving().
+      watchedScrollViewEnd = null;
       parent.lastAutoScrollUptime = SystemClock.uptimeMillis();
       parent.scrollStartEventCount = scrollEventCount;
       parent.scrollStartDeltaSumY = scrollDeltaSumY;
