@@ -72,6 +72,21 @@ public final class EmojiSpeech {
 
   public static final String RATE_DEFAULT = "100";
 
+  /** What follows each emoji name: one of the AFTER_NAME values. */
+  public static final String PREF_AFTER_NAME = "pref_emoji_after_name";
+
+  /** Nothing follows emoji names. */
+  public static final String AFTER_NAME_NOTHING = "nothing";
+
+  /** "emoji" is spoken after each emoji name, such as "grinning face emoji". */
+  public static final String AFTER_NAME_WORD = "word";
+
+  /** The emoji sound plays after each emoji name, or after a run of emoji. */
+  public static final String AFTER_NAME_SOUND = "sound";
+
+  /** The switch that {@link #PREF_AFTER_NAME} replaced, whose on is {@link #AFTER_NAME_WORD}. */
+  private static final String OLD_PREF_SUFFIX = "pref_emoji_suffix";
+
   /** The emoji speech rates that can be chosen, as percentages of the speech rate. */
   public static final int[] RATES = {50, 75, 100, 125, 150, 175, 200, 250, 300};
 
@@ -99,8 +114,8 @@ public final class EmojiSpeech {
   /** How many times an emoji repeats before it is counted, or 0 to name each one. */
   private static volatile int repeatCount = 0;
 
-  /** Whether "emoji" is spoken after each emoji name. */
-  private static volatile boolean suffix;
+  /** What follows each emoji name, one of the AFTER_NAME values. */
+  private static volatile String afterName = AFTER_NAME_NOTHING;
 
   /** Whether emoji are spoken with a voice profile of their own. */
   private static volatile boolean ownVoice;
@@ -199,6 +214,7 @@ public final class EmojiSpeech {
     mode = MODE_ENGINE;
     ownVoice = false;
     rate = 1f;
+    afterName = AFTER_NAME_NOTHING;
     clear();
   }
 
@@ -262,14 +278,17 @@ public final class EmojiSpeech {
     return Math.max(MIN_RATE, Math.min(MAX_RATE, speechRate * multiple));
   }
 
-  /** Returns whether emoji are marked as fragments of their own, for their own voice or rate. */
+  /**
+   * Returns whether emoji are marked as fragments of their own, for their own voice or rate, or for
+   * the emoji sound after them.
+   */
   public static boolean marksEmoji() {
-    return ownVoice || rate != 1f;
+    return ownVoice || rate != 1f || playsSound();
   }
 
   /**
    * Marks speech that is emoji, as they are or by name, so that it is spoken as a fragment of its
-   * own with the emoji voice and rate. See {@link #marksEmoji}.
+   * own with the emoji voice and rate, and followed by the emoji sound. See {@link #marksEmoji}.
    */
   public static final class Mark {
     private Mark() {}
@@ -310,14 +329,80 @@ public final class EmojiSpeech {
     repeatCount = count;
   }
 
-  /** Sets whether "emoji" is spoken after each emoji name, such as "grinning face emoji". */
-  public static void setSuffix(boolean on) {
-    suffix = on;
+  /**
+   * Reads what follows each emoji name. While it is the emoji sound, emoji are marked as fragments
+   * of their own, so call this before {@link #setMode}.
+   */
+  public static void setAfterName(SharedPreferences prefs) {
+    setAfterName(readAfterName(prefs));
+  }
+
+  /** Sets what follows each emoji name, one of the AFTER_NAME values; others mean nothing. */
+  @VisibleForTesting
+  static void setAfterName(@Nullable String value) {
+    if (AFTER_NAME_WORD.equals(value)) {
+      afterName = AFTER_NAME_WORD;
+    } else if (AFTER_NAME_SOUND.equals(value)) {
+      afterName = AFTER_NAME_SOUND;
+    } else {
+      afterName = AFTER_NAME_NOTHING;
+    }
+    if (!marksEmoji() && mode.equals(MODE_ENGINE)) {
+      clear();
+    }
+  }
+
+  /**
+   * Returns what follows each emoji name, as saved, or as the switch it replaced says while the
+   * setting has no value of its own, as after importing settings from before it.
+   */
+  @VisibleForTesting
+  static String readAfterName(SharedPreferences prefs) {
+    @Nullable String value;
+    try {
+      value = prefs.getString(PREF_AFTER_NAME, null);
+    } catch (ClassCastException e) {
+      value = null;
+    }
+    for (String known : new String[] {AFTER_NAME_NOTHING, AFTER_NAME_WORD, AFTER_NAME_SOUND}) {
+      if (known.equals(value)) {
+        return known;
+      }
+    }
+    return readOldSuffix(prefs) ? AFTER_NAME_WORD : AFTER_NAME_NOTHING;
+  }
+
+  /** Returns whether the switch that the setting replaced was on. */
+  private static boolean readOldSuffix(SharedPreferences prefs) {
+    try {
+      return prefs.getBoolean(OLD_PREF_SUFFIX, false);
+    } catch (ClassCastException e) {
+      return false;
+    }
+  }
+
+  /**
+   * Gives the setting the value of the switch "Speak "emoji" after emoji names" it replaced, on as
+   * {@link #AFTER_NAME_WORD}, unless the setting has a value already.
+   */
+  public static void migrateSuffix(SharedPreferences prefs) {
+    if (prefs.contains(OLD_PREF_SUFFIX) && !prefs.contains(PREF_AFTER_NAME)) {
+      prefs
+          .edit()
+          .putString(
+              PREF_AFTER_NAME, readOldSuffix(prefs) ? AFTER_NAME_WORD : AFTER_NAME_NOTHING)
+          .apply();
+    }
   }
 
   /** Returns whether "emoji" is to be spoken after each emoji name. */
   public static boolean speaksSuffix() {
-    return suffix;
+    return afterName.equals(AFTER_NAME_WORD);
+  }
+
+  /** Returns whether the emoji sound is to be played after each emoji name or run of emoji. */
+  public static boolean playsSound() {
+    return afterName.equals(AFTER_NAME_SOUND);
   }
 
   /** Returns whether the speech engine reads emoji, so text should keep them. */
@@ -700,7 +785,7 @@ public final class EmojiSpeech {
   /** Returns the name of an emoji found in text, or null if the names couldn't be read. */
   private static @Nullable String nameOf(Context context, Found found) {
     @Nullable String name = namesFor(context, found.language()).name(found.emoji());
-    return name == null || !suffix
+    return name == null || !speaksSuffix()
         ? name
         : context.getString(R.string.template_emoji_name_suffix, name);
   }

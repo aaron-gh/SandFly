@@ -54,8 +54,10 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
 
   @Override
   public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-    super.onCreatePreferences(savedInstanceState, rootKey);
     preferences = SharedPreferencesUtils.getSharedPreferences(getContext());
+    // Before the list shows its value, as when SandFly hasn't run since the switch it replaced.
+    EmojiSpeech.migrateSuffix(preferences);
+    super.onCreatePreferences(savedInstanceState, rootKey);
     setupTellTimePreference();
     setupEmojiRepeatCountPreference();
     setupSpeakUserFocusPreference();
@@ -121,27 +123,27 @@ public class VerbosityPrefFragment extends TalkbackBaseFragment {
   }
 
   /**
-   * Counting repeated emoji only applies while SandFly names emoji; the "emoji" suffix also applies
+   * Counting repeated emoji only applies while SandFly names emoji; After emoji names also applies
    * while the speech engine reads them.
    */
   private void setupEmojiRepeatCountPreference() {
     Preference emoji = findPreference(R.string.pref_emoji_speech_key);
     Preference repeatCount = findPreference(R.string.pref_emoji_repeat_count_key);
-    Preference suffix = findPreference(R.string.pref_emoji_suffix_key);
+    Preference afterName = findPreference(EmojiSpeech.PREF_AFTER_NAME);
     if (!(emoji instanceof ListPreference emojiList) || repeatCount == null) {
       return;
     }
     boolean names = EmojiSpeech.MODE_NAMES.equals(emojiList.getValue());
     repeatCount.setEnabled(names);
-    if (suffix != null) {
-      suffix.setEnabled(!EmojiSpeech.MODE_NONE.equals(emojiList.getValue()));
+    if (afterName != null) {
+      afterName.setEnabled(!EmojiSpeech.MODE_NONE.equals(emojiList.getValue()));
     }
     emoji.setOnPreferenceChangeListener(
         (preference, newValue) -> {
           boolean namesNow = EmojiSpeech.MODE_NAMES.equals(newValue);
           repeatCount.setEnabled(namesNow);
-          if (suffix != null) {
-            suffix.setEnabled(!EmojiSpeech.MODE_NONE.equals(newValue));
+          if (afterName != null) {
+            afterName.setEnabled(!EmojiSpeech.MODE_NONE.equals(newValue));
           }
           return true;
         });

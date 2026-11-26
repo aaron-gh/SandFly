@@ -39,6 +39,9 @@ object IndividualFeedbackSettings {
   /** The Actions available sound, for items with actions of their app. */
   const val ACTIONS_AVAILABLE = "actions_available"
 
+  /** The sound after emoji names, with Verbosity > After emoji names set to Play a sound. */
+  const val EMOJI = "emoji"
+
   /** SandFly AI's agent sounds, which builds without SandFly AI leave out. */
   val AGENT_SOUNDS =
     listOf(
@@ -86,6 +89,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("typo", R.string.individual_sound_typo),
       FeedbackItem("hyperlink", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting", R.string.individual_sound_formatting),
+      FeedbackItem(EMOJI, R.string.individual_sound_emoji),
       FeedbackItem("screen_off", R.string.individual_sound_screen_off),
       FeedbackItem("screen_on", R.string.individual_sound_screen_on),
       FeedbackItem("screen_hidden", R.string.individual_sound_screen_hidden),
@@ -201,6 +205,7 @@ object IndividualFeedbackSettings {
       FeedbackItem("typo_pattern", R.string.individual_vibration_typo),
       FeedbackItem("hyperlink_pattern", R.string.individual_sound_hyperlink),
       FeedbackItem("formatting_pattern", R.string.individual_sound_formatting),
+      FeedbackItem("${EMOJI}_pattern", R.string.individual_sound_emoji),
       FeedbackItem("screen_off_pattern", R.string.individual_sound_screen_off),
       FeedbackItem("screen_on_pattern", R.string.individual_sound_screen_on),
       FeedbackItem("screen_hidden_pattern", R.string.individual_sound_screen_hidden),

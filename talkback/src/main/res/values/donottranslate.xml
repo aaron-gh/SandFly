@@ -343,7 +343,6 @@
     <string name="pref_count_repeated_symbols_key" >pref_collapse_repeated_symbols</string>
     <string name="pref_emoji_speech_key" translatable="false">pref_emoji_speech</string>
     <string name="pref_emoji_repeat_count_key" translatable="false">pref_emoji_repeat_count</string>
-    <string name="pref_emoji_suffix_key" translatable="false">pref_emoji_suffix</string>
     <string name="pref_capital_letters_key">pref_capital_letters</string>
     <string name="pref_a11y_hints_key">pref_a11y_hints</string>
     <string name="pref_speak_container_element_positions_key">pref_speak_container_element_positions_key</string>
@@ -3041,6 +3040,21 @@
 
     <string name="pref_emoji_repeat_count_default" translatable="false">0</string>
 
+    <string-array name="pref_emoji_after_name_entries">
+      <item>@string/value_emoji_after_name_nothing</item>
+      <item>@string/value_emoji_after_name_word</item>
+      <item>@string/value_emoji_after_name_sound</item>
+    </string-array>
+
+    <!-- The values of EmojiSpeech's AFTER_NAME constants, saved under EmojiSpeech.PREF_AFTER_NAME. -->
+    <string-array name="pref_emoji_after_name_values" translatable="false">
+      <item>nothing</item>
+      <item>word</item>
+      <item>sound</item>
+    </string-array>
+
+    <string name="pref_emoji_after_name_default" translatable="false">nothing</string>
+
     <!-- The list of the gestures which the platform supports. [CHAR_LIMIT=NONE] -->
     <string-array name="service_detected_gesture_list">
       <!-- Start with double tap. -->
@@ -3248,7 +3262,6 @@
     <string name="pref_punctuation_verbosity_default">2</string>
     <bool name="pref_punctuation_none_keep_meaning_default">false</bool>
     <bool name="pref_count_repeated_symbols_default">true</bool>
-    <bool name="pref_emoji_suffix_default">false</bool>
     <string name="pref_node_desc_order_default">pref_node_desc_order_value_state_name_role_pos</string>
     <string name="pref_time_feedback_format_default">pref_time_feedback_format_values_undefined</string>
     <bool name="pref_speak_element_ids_default">false</bool>

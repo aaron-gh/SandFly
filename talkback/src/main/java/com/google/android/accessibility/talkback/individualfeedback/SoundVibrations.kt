@@ -77,7 +77,10 @@ object SoundVibrations {
    */
   @JvmField
   val THEME_ONLY_PATTERNS: Set<String> =
-    setOf("${IndividualFeedbackSettings.ACTIONS_AVAILABLE}_pattern")
+    setOf(
+      "${IndividualFeedbackSettings.ACTIONS_AVAILABLE}_pattern",
+      "${IndividualFeedbackSettings.EMOJI}_pattern",
+    )
 
   /** The names of every vibration a sound theme can replace, as theme.json names them. */
   @JvmStatic
@@ -140,6 +143,8 @@ object SoundVibrations {
       "typo" to "typo_pattern",
       "hyperlink" to "hyperlink_pattern",
       "formatting" to "formatting_pattern",
+      // In THEME_ONLY_PATTERNS: it can follow every emoji, so only a sound theme gives it a vibration.
+      IndividualFeedbackSettings.EMOJI to "${IndividualFeedbackSettings.EMOJI}_pattern",
       "screen_off" to "screen_off_pattern",
       // The loading tone repeats while waiting, such as for an image description, so its
       // vibration is a heartbeat that shows the work goes on even with sounds off.

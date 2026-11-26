@@ -58,6 +58,7 @@ The sounds, by the names shown in **Individual sounds and vibrations** and in th
 | **Spelling error** | A misspelled word. |
 | **Link** | A link in text. |
 | **Formatted text** | Formatted text, such as bold. |
+| **Emoji** | After an emoji, with **Verbosity** > **After emoji names** set to **Play a sound**. No vibration of SandFly's own; a sound theme can give it one. See [](#verbosity-emoji). |
 | **Screen off** and **Screen on** | The screen turns off or on. |
 | **Screen hidden** and **Screen shown** | The screen is hidden, or shown again. See [](#display). |
 | **Loading** | A description or other result is loading. |

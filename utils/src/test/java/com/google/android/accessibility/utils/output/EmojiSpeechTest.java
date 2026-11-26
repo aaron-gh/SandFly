@@ -19,8 +19,10 @@ package com.google.android.accessibility.utils.output;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.LocaleSpan;
@@ -54,7 +56,7 @@ public class EmojiSpeechTest {
     EmojiSpeech.setOwnSpeech(/* voice= */ false, /* multiple= */ 1f);
     EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
     EmojiSpeech.setRepeatCount(0);
-    EmojiSpeech.setSuffix(false);
+    EmojiSpeech.setAfterName(EmojiSpeech.AFTER_NAME_NOTHING);
   }
 
   private String spoken(String mode, CharSequence text) {
@@ -210,13 +212,54 @@ public class EmojiSpeechTest {
 
   @Test
   public void suffixFollowsEachName() {
-    EmojiSpeech.setSuffix(true);
+    EmojiSpeech.setAfterName(EmojiSpeech.AFTER_NAME_WORD);
     EmojiSpeech.setRepeatCount(2);
     assertEquals(
         "yes 2 grinning face emoji great thumbs up emoji ok",
         spoken(EmojiSpeech.MODE_NAMES, "yes 😀😀 great 👍 ok"));
     // The engine reads emoji itself, so nothing is added.
     assertEquals("yes 😀 ok", spoken(EmojiSpeech.MODE_ENGINE, "yes 😀 ok"));
+  }
+
+  @Test
+  public void soundAfterNamesMarksEmojiWithoutTheWord() {
+    EmojiSpeech.setAfterName(EmojiSpeech.AFTER_NAME_SOUND);
+    assertTrue(EmojiSpeech.playsSound());
+    assertFalse(EmojiSpeech.speaksSuffix());
+    assertTrue(EmojiSpeech.marksEmoji());
+    EmojiSpeech.setMode(context, EmojiSpeech.MODE_NAMES);
+    CharSequence named = EmojiSpeech.process(context, "yes 😀 great 👍");
+    assertEquals("yes grinning face great thumbs up", named.toString());
+    assertEquals(Arrays.asList("grinning face", "thumbs up"), marks(named));
+    // The engine reads the emoji, each marked for the sound after it.
+    EmojiSpeech.setMode(context, EmojiSpeech.MODE_ENGINE);
+    CharSequence engine = EmojiSpeech.process(context, "yes 😀 great 👍");
+    assertEquals("yes 😀 great 👍", engine.toString());
+    assertEquals(Arrays.asList("😀", "👍"), marks(engine));
+  }
+
+  @Test
+  public void afterNamesKeepsTheSwitchItReplaced() {
+    SharedPreferences prefs = context.getSharedPreferences("after_name", Context.MODE_PRIVATE);
+    prefs.edit().clear().commit();
+    assertEquals(EmojiSpeech.AFTER_NAME_NOTHING, EmojiSpeech.readAfterName(prefs));
+    prefs.edit().putBoolean("pref_emoji_suffix", true).commit();
+    // Read from the switch before it is moved, as after importing older settings.
+    assertEquals(EmojiSpeech.AFTER_NAME_WORD, EmojiSpeech.readAfterName(prefs));
+    EmojiSpeech.migrateSuffix(prefs);
+    assertEquals(
+        EmojiSpeech.AFTER_NAME_WORD, prefs.getString(EmojiSpeech.PREF_AFTER_NAME, null));
+    // A value of the setting's own stays.
+    prefs.edit().putString(EmojiSpeech.PREF_AFTER_NAME, EmojiSpeech.AFTER_NAME_SOUND).commit();
+    EmojiSpeech.migrateSuffix(prefs);
+    assertEquals(EmojiSpeech.AFTER_NAME_SOUND, EmojiSpeech.readAfterName(prefs));
+    // A damaged value falls back to the switch.
+    prefs.edit().putString(EmojiSpeech.PREF_AFTER_NAME, "loud").commit();
+    assertEquals(EmojiSpeech.AFTER_NAME_WORD, EmojiSpeech.readAfterName(prefs));
+    prefs.edit().clear().putBoolean("pref_emoji_suffix", false).commit();
+    EmojiSpeech.migrateSuffix(prefs);
+    assertEquals(
+        EmojiSpeech.AFTER_NAME_NOTHING, prefs.getString(EmojiSpeech.PREF_AFTER_NAME, null));
   }
 
   @Test
