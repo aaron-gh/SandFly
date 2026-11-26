@@ -79,7 +79,8 @@ object NvdaKeymap : KeymapDefaults() {
 
       // NVDA itself.
       put(R.string.keycombo_shortcut_other_talkback_context_menu, sandFly(NONE, KeyEvent.KEYCODE_N))
-      put(R.string.keycombo_shortcut_global_show_learn_mode_page, sandFly(NONE, KeyEvent.KEYCODE_1))
+      // NVDA's input help.
+      put(R.string.keycombo_shortcut_toggle_key_practice, sandFly(NONE, KeyEvent.KEYCODE_1))
       put(R.string.keycombo_shortcut_global_toggle_voice_feedback, sandFly(NONE, KeyEvent.KEYCODE_S))
       put(
         R.string.keycombo_shortcut_global_cycle_punctuation_verbosity,

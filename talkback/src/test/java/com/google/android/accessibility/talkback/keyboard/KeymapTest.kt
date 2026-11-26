@@ -652,4 +652,55 @@ class KeymapTest {
     // Other keymaps have no default.
     assertEquals(null, defaults(Keymap.SANDFLY, Keymap.SANDFLY.nativeKey)[key])
   }
+  /** The keyboard help key of each computer screen reader keymap, with its SandFly key. */
+  private val helpKeys =
+    mapOf(
+      Keymap.VOICEOVER to KeyEvent.KEYCODE_K,
+      Keymap.NVDA to KeyEvent.KEYCODE_1,
+      Keymap.JAWS to KeyEvent.KEYCODE_1,
+      Keymap.ORCA to KeyEvent.KEYCODE_H,
+    )
+
+  @Test
+  fun keyboardHelpKeysTurnKeyboardPracticeOnOrOff() {
+    val practice = context.getString(R.string.keycombo_shortcut_toggle_key_practice)
+    val lesson = context.getString(R.string.keycombo_shortcut_global_show_learn_mode_page)
+    for ((keymap, keyCode) in helpKeys) {
+      SharedPreferencesUtils.getSharedPreferences(context).edit().clear().commit()
+      val model = NewKeyComboModel(context, keymap)
+      assertEquals(keymap.name, KeyCombo(0, 0, keyCode, true), model.getKeyComboForKey(practice))
+      assertEquals(keymap.name, KeyCombo(), model.getKeyComboForKey(lesson))
+    }
+  }
+
+  @Test
+  fun version7SavedHelpKeysMoveToKeyboardPractice() {
+    val practice = context.getString(R.string.keycombo_shortcut_toggle_key_practice)
+    val lesson = context.getString(R.string.keycombo_shortcut_global_show_learn_mode_page)
+    for ((keymap, keyCode) in helpKeys) {
+      val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+      prefs.edit().clear().putInt(keymap.persisterPrefix + "_defaults_version", 7).commit()
+      val persister = KeyComboPersister(context, keymap.persisterPrefix)
+      persister.saveKeyCombo(lesson, KeyCombo(0, 0, keyCode, true))
+      persister.saveKeyCombo(practice, KeyCombo())
+      val model = NewKeyComboModel(context, keymap)
+      assertEquals(keymap.name, KeyCombo(0, 0, keyCode, true), model.getKeyComboForKey(practice))
+      assertEquals(keymap.name, KeyCombo(), model.getKeyComboForKey(lesson))
+    }
+  }
+
+  @Test
+  fun changedHelpKeyStaysWithPracticeKeyboardShortcuts() {
+    val practice = context.getString(R.string.keycombo_shortcut_toggle_key_practice)
+    val lesson = context.getString(R.string.keycombo_shortcut_global_show_learn_mode_page)
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 7).commit()
+    val persister = KeyComboPersister(context, Keymap.NVDA.persisterPrefix)
+    val changed = KeyCombo(KeyEvent.META_SHIFT_ON, 0, KeyEvent.KEYCODE_1, true)
+    persister.saveKeyCombo(lesson, changed)
+    persister.saveKeyCombo(practice, KeyCombo())
+    val model = NewKeyComboModel(context, Keymap.NVDA)
+    assertEquals(changed, model.getKeyComboForKey(lesson))
+    assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_1, true), model.getKeyComboForKey(practice))
+  }
 }

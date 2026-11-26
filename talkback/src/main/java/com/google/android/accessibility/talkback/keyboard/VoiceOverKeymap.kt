@@ -122,7 +122,8 @@ object VoiceOverKeymap : KeymapDefaults() {
         R.string.keycombo_shortcut_other_show_keyboard_shortcuts_dialog,
         vo(SHIFT, KeyEvent.KEYCODE_SLASH),
       )
-      put(R.string.keycombo_shortcut_global_show_learn_mode_page, vo(NONE, KeyEvent.KEYCODE_K))
+      // VO + K is VoiceOver's keyboard help, which says every key pressed.
+      put(R.string.keycombo_shortcut_toggle_key_practice, vo(NONE, KeyEvent.KEYCODE_K))
       put(R.string.keycombo_shortcut_other_show_tutorial, vo(SHIFT, KeyEvent.KEYCODE_K))
 
       // Every key to Android, or to SandFly again. VO + Shift + K is the tutorial.
