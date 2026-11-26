@@ -315,7 +315,9 @@ class AiDictation(
     // Rambler live transcription transcribes while the user speaks.
     val session =
       if (used == Recognition.RAMBLER && DictationSettings.ramblerLive(prefs)) {
-        RamblerLive(DictationSettings.ramblerKey(prefs)).also { it.start() }
+        RamblerLive(DictationSettings.ramblerKey(prefs), onSpeech = ::transcribedSpeech).also {
+          it.start()
+        }
       } else {
         null
       }
@@ -345,11 +347,35 @@ class AiDictation(
     }
   }
 
+  /**
+   * Rambler live transcription sent text while recording: speech, even when the microphone level
+   * was too low for [AudioCapture] to count it.
+   */
+  private fun transcribedSpeech() {
+    val now = SystemClock.elapsedRealtime()
+    if (now - recordingStartedAt < CHIME_MS) return
+    lastSpeechAt = now
+    speechHeard = true
+    // So that Whisper still runs when the session's text isn't used.
+    if (speechTenths < MIN_SPEECH_TENTHS) speechTenths = MIN_SPEECH_TENTHS
+  }
+
   private fun stopRecording() {
     handler.removeCallbacks(autoStop)
     // Counted before the stop chime, which the recording can pick up.
     val spoken = speechTenths >= MIN_SPEECH_TENTHS
     val speech = capture?.speechRange()
+    val levels = capture?.levels()
+    LogUtils.i(
+      TAG,
+      "Recording stopped after %d ms with %s: speech %d tenths, last %d ms ago, loudest %s, noise %s",
+      SystemClock.elapsedRealtime() - recordingStartedAt,
+      recognition,
+      speechTenths,
+      SystemClock.elapsedRealtime() - lastSpeechAt,
+      levels?.first,
+      levels?.second,
+    )
     phase = Phase.WORKING
     pipeline.returnFeedback(EVENT_ID_UNTRACKED, Feedback.speech(UNSILENCE))
     stopChime()
