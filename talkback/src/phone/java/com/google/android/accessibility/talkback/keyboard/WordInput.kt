@@ -17,6 +17,8 @@ package com.google.android.accessibility.talkback.keyboard
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.os.Handler
+import android.os.Looper
 import android.os.SystemClock
 import android.text.InputType
 import android.view.KeyCharacterMap
@@ -44,12 +46,26 @@ import java.util.Locale
  *   being typed, the keys go to the app.
  * - Auto-correct: Space, punctuation or Enter after a misspelled word put its correction in its
  *   place. Delete right after a correction undoes it, and the word is never corrected again.
+ * - Speak suggestion after a pause: when typing pauses within a word, the keyboard says, at a lower
+ *   pitch, the correction that Space would put in its place ("receive, correction"), or else the
+ *   first word suggestion.
  *
  * Neither is used in password, email, web address and number fields, nor in fields that ask for no
  * suggestions. Words are learned, for ranking and undone corrections, only where the field allows
  * personalized learning.
  */
-internal class WordInput(private val context: Context, private val prefs: SharedPreferences) {
+internal class WordInput(
+  private val context: Context,
+  private val prefs: SharedPreferences,
+  /** The input connection of the text field being edited, for the pause announcement. */
+  private val connection: () -> InputConnection?,
+) {
+  /** Says the correction or suggestion after a pause; replaced in tests. */
+  var announce: (String) -> Unit = { SandFlyKeyboardHost.speakSuggestion(it) }
+
+  private val handler = Handler(Looper.getMainLooper())
+  private val pauseAnnouncement = Runnable { announcePause() }
+
   /** Whether the field being edited takes suggestions, and whether its words may be learned. */
   private var fieldTakesWords = false
   private var learning = false
@@ -123,6 +139,7 @@ internal class WordInput(private val context: Context, private val prefs: Shared
   }
 
   fun onStartInput(info: EditorInfo, restarting: Boolean) {
+    handler.removeCallbacks(pauseAnnouncement)
     fieldTakesWords = takesWords(info.inputType)
     learning = info.imeOptions and EditorInfo.IME_FLAG_NO_PERSONALIZED_LEARNING == 0
     selStart = info.initialSelStart
@@ -139,6 +156,7 @@ internal class WordInput(private val context: Context, private val prefs: Shared
   }
 
   fun onFinishInput() {
+    handler.removeCallbacks(pauseAnnouncement)
     list = null
     correction = null
     wordActive = false
@@ -173,6 +191,7 @@ internal class WordInput(private val context: Context, private val prefs: Shared
     if (pendingTyping > 0 && now - lastTypingTime <= TYPING_UPDATE_MS) {
       pendingTyping--
       wordActive = newStart == newEnd
+      if (wordActive && pendingTyping == 0) schedulePause()
     } else {
       pendingTyping = 0
       wordActive = false
@@ -199,6 +218,8 @@ internal class WordInput(private val context: Context, private val prefs: Shared
    */
   fun onKeyDown(keyCode: Int, event: KeyEvent, connection: InputConnection?): Boolean {
     typedCharacter = null
+    // A key before the pause ends, Shift too, means typing goes on.
+    handler.removeCallbacks(pauseAnnouncement)
     if (connection == null || KeyEvent.isModifierKey(keyCode)) return false
     val suggester = suggester()
     if (suggester != null) {
@@ -339,6 +360,43 @@ internal class WordInput(private val context: Context, private val prefs: Shared
     if (language() == null) R.string.sandfly_keyboard_no_word_list
     else R.string.sandfly_keyboard_no_suggestions
 
+  /** The pause after typing in a word after which the suggestion is said, or 0 for never. */
+  private fun pauseMs(): Long =
+    prefs
+      .getString(
+        context.getString(R.string.pref_sandfly_keyboard_suggestion_pause_key),
+        context.getString(R.string.pref_sandfly_keyboard_suggestion_pause_default),
+      )
+      ?.toLongOrNull() ?: 0L
+
+  private fun schedulePause() {
+    handler.removeCallbacks(pauseAnnouncement)
+    if (!fieldTakesWords || !(autoCorrectOn() || suggestionsOn())) return
+    val delay = pauseMs()
+    if (delay > 0) handler.postDelayed(pauseAnnouncement, delay)
+  }
+
+  /**
+   * Says the correction Space would type for the word before the cursor, or else its first
+   * suggestion, if typing is still paused in it.
+   */
+  private fun announcePause() {
+    if (!wordActive || list != null || selStart != selEnd) return
+    val connection = connection() ?: return
+    val suggester = suggester() ?: return
+    val word = currentWord(connection) ?: return
+    if (autoCorrectOn()) {
+      val corrected = suggester.correction(word.text, word.sentenceStart)
+      if (corrected != null && corrected != word.text) {
+        announce(context.getString(R.string.sandfly_keyboard_pending_correction, corrected))
+        return
+      }
+    }
+    if (suggestionsOn()) {
+      suggester.suggestions(word.text, max = 1).firstOrNull()?.let(announce)
+    }
+  }
+
   /** Opens the list for [word] at its first or, going back, its last suggestion. */
   private fun openList(
     word: Word,
@@ -346,6 +404,7 @@ internal class WordInput(private val context: Context, private val prefs: Shared
     next: Boolean,
     speak: Boolean = true,
   ): String {
+    handler.removeCallbacks(pauseAnnouncement)
     val words = suggester.suggestions(word.text)
     val said: String
     if (words.isEmpty()) {

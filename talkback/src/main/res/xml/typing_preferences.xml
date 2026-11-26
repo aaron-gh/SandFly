@@ -81,6 +81,13 @@
         android:key="@string/pref_sandfly_keyboard_suggestions_key"
         android:title="@string/title_pref_sandfly_keyboard_suggestions" />
     <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
+        android:defaultValue="@string/pref_sandfly_keyboard_suggestion_pause_default"
+        android:entries="@array/pref_sandfly_keyboard_suggestion_pause_entries"
+        android:entryValues="@array/pref_sandfly_keyboard_suggestion_pause_values"
+        android:key="@string/pref_sandfly_keyboard_suggestion_pause_key"
+        android:summary="%s"
+        android:title="@string/title_pref_sandfly_keyboard_suggestion_pause" />
+    <com.google.android.accessibility.material.preference.AccessibilitySuiteListPreference
         android:defaultValue="@string/pref_sandfly_keyboard_word_language_default"
         android:entries="@array/pref_sandfly_keyboard_word_language_entries"
         android:entryValues="@array/pref_sandfly_keyboard_word_language_values"

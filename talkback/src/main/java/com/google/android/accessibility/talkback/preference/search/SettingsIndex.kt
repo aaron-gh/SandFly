@@ -455,6 +455,7 @@ object SettingsIndex {
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_speak_password_characters_key)
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_autocorrect_key)
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_suggestions_key)
+    hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_suggestion_pause_key)
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_word_language_key)
     hideIf(
       !physicalKeyboard || wear || tv,

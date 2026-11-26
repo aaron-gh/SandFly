@@ -314,6 +314,9 @@ public class TalkBackPreferenceFilter {
     SANDFLY_KEYBOARD_SUGGESTIONS(
         R.string.pref_sandfly_keyboard_suggestions_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SANDFLY_KEYBOARD_SUGGESTION_PAUSE(
+        R.string.pref_sandfly_keyboard_suggestion_pause_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     SANDFLY_KEYBOARD_WORD_LANGUAGE(
         R.string.pref_sandfly_keyboard_word_language_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),

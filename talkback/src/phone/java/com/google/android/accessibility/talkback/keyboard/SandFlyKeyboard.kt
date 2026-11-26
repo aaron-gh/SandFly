@@ -68,7 +68,7 @@ class SandFlyKeyboard : InputMethodService(), SandFlyKeyboardHost.Keyboard {
   private val editingMode by lazy { EditingMode(this) { password } }
 
   /** Auto-correct and word suggestions. */
-  private val words by lazy { WordInput(this, prefs) }
+  private val words by lazy { WordInput(this, prefs) { currentInputConnection } }
 
   /** Follows the password field being edited for Speak password characters. */
   private val passwordEcho by lazy { PasswordSpeech.Echo(this) }

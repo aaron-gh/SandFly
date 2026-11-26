@@ -214,6 +214,27 @@ object SandFlyKeyboardHost {
     )
   }
 
+  /**
+   * Speaks a correction or word suggestion said when typing pauses, at a lower pitch than typing,
+   * interrupted by the next speech.
+   */
+  @JvmStatic
+  fun speakSuggestion(text: CharSequence) {
+    feedback?.returnFeedback(
+      EVENT_ID_UNTRACKED,
+      Feedback.speech(
+        text,
+        SpeakOptions.create()
+          .setQueueMode(SpeechController.QUEUE_MODE_INTERRUPT)
+          .setSpeechParams(Bundle().apply { putFloat(SpeechParam.PITCH, SUGGESTION_PITCH) })
+          .setFlags(FeedbackItem.FLAG_FORCE_FEEDBACK_ALL),
+      ),
+    )
+  }
+
+  /** The pitch of corrections and suggestions said when typing pauses, relative to speech's. */
+  private const val SUGGESTION_PITCH = 0.8f
+
   /** Speaks [text] at once, as SandFly's own feedback. */
   @JvmStatic
   fun speak(text: CharSequence) {
