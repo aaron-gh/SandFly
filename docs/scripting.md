@@ -762,7 +762,7 @@ The script builder keeps the steps of each command and trigger in a file in `mac
 
 **`sf.commands.run(id)`** runs a command from the list, as its gesture would, and gives whether it ran. It raises an error for an id not in the list, and on SandFly screens. Needs `input`. These commands also need:
 
-*   `system`: commands that pause or silence SandFly, turn spoken notifications on or off, act on the system (Back, Home, recent apps, previous app, notifications, quick settings, screenshots, lock screen, power menu, all apps, accessibility button), answer or end a call, change the volume, switch the keyboard, use the microphone (dictation, voice commands), turn magnification, the braille display, pass-through or direct touch on or off, and the SandFly Pro commands.
+*   `system`: commands that pause or silence SandFly, turn spoken notifications on or off, act on the system (Back, Home, recent apps, previous app, notifications, quick settings, screenshots, lock screen, power menu, restart and power off, all apps, accessibility button), answer or end a call, change the volume, switch the keyboard, use the microphone (dictation, voice commands), turn magnification, the braille display, pass-through or direct touch on or off, and the SandFly Pro commands.
 *   `clipboard`: commands that copy, cut, paste or add to the clipboard, copy text from the screen, the last utterance, the screen tree or item details, select the last spoken phrase, and open the clipboard or speech history.
 
 ```lua

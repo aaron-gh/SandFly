@@ -225,6 +225,7 @@ import com.google.android.accessibility.talkback.gesture.GestureHistory;
 import com.google.android.accessibility.talkback.gesture.GestureProfiles;
 import com.google.android.accessibility.talkback.gesture.GestureShortcutMapping;
 import com.google.android.accessibility.talkback.gesture.KeyboardHover;
+import com.google.android.accessibility.talkback.gesture.PowerCommands;
 import com.google.android.accessibility.talkback.gesture.SyntheticTouches;
 import com.google.android.accessibility.talkback.gesture.TextTraversalTracker;
 import com.google.android.accessibility.talkback.touchlock.TouchLock;
@@ -6012,6 +6013,7 @@ public class TalkBackService extends AccessibilityServiceCompat
   }
 
   public void onShutDown() {
+    PowerCommands.onShutDown();
     if (shouldLogAliveTime()) {
       analytics.sendAliveTimeLog();
     }

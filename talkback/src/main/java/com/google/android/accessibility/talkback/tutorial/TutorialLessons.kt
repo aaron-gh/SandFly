@@ -1057,6 +1057,8 @@ internal object TutorialLessons {
       R.string.shortcut_value_all_apps,
       R.string.shortcut_value_lock_screen,
       R.string.shortcut_value_power_menu,
+      R.string.shortcut_value_restart_phone,
+      R.string.shortcut_value_power_off_phone,
       R.string.shortcut_value_a11y_button,
       R.string.shortcut_value_a11y_button_long_press,
       R.string.shortcut_value_tutorial,

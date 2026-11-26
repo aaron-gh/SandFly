@@ -76,6 +76,14 @@ class ShizukuCommandTest {
   }
 
   @Test
+  fun rebootAndPowerOffTakeNoArgument() {
+    assertEquals(listOf("svc", "power", "reboot"), ShizukuCommand.REBOOT.shellCommand(""))
+    assertEquals(listOf("svc", "power", "shutdown"), ShizukuCommand.POWER_OFF.shellCommand(""))
+    assertNull(ShizukuCommand.REBOOT.shellCommand("recovery"))
+    assertNull(ShizukuCommand.POWER_OFF.shellCommand(ShizukuCommand.ON))
+  }
+
+  @Test
   fun inputKeyeventTakesOnlyKeyCodes() {
     assertEquals(
       listOf("input", "keyevent", "KEYCODE_ENTER", "KEYCODE_DEL"),
@@ -125,6 +133,8 @@ class ShizukuCommandTest {
         "ACCESSIBILITY_SHORTCUT",
         "RESET_ACCESSIBILITY_AUDIO",
         "DISPLAY_DENSITY",
+        "REBOOT",
+        "POWER_OFF",
       ),
       ShizukuCommand.entries.map { it.name },
     )
