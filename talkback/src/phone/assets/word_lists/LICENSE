@@ -1,0 +1,19 @@
+Word lists of the SandFly keyboard's auto-correct and word suggestions
+
+Each file has one word, a tab and its count per line, most frequent first.
+They are the word lists of TapType, by the same author as SandFly.
+
+en_us.txt, en_gb.txt
+  Counts from count_1w.txt by Peter Norvig (https://norvig.com/ngrams/),
+  from the Google Web Trillion Word Corpus, with contractions and informal
+  words added.
+
+de.txt, es.txt, fr.txt, pt_br.txt, pt_pt.txt, hu.txt, tr.txt, ru.txt, uk.txt, ar.txt
+  FrequencyWords by Hermit Dave (https://github.com/hermitdave/FrequencyWords),
+  word counts of OpenSubtitles 2018, under the Creative Commons
+  Attribution-ShareAlike 4.0 International License
+  (https://creativecommons.org/licenses/by-sa/4.0/). Changed: the 50,000 most
+  frequent words kept, tokens with characters outside the language's alphabet
+  dropped, apostrophes normalized, Arabic vowel marks stripped, Russian text
+  removed from the Ukrainian list, and place names and common first names
+  capitalized. These files are under the same license.

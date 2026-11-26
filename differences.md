@@ -1283,6 +1283,15 @@ While a physical keyboard is connected, **Typing** > **Physical keyboard** has:
 
 The SandFly keyboard is an input method for physical keyboards that shows no keys on the screen. Keys type as they do without it. It adds exact information about whether a text field takes what you type, so that single-key shortcuts and Enter in the keyboard phone keymaps work in the right places; held keys that type the Alt character or the capital letter of the key, set with **Typing** > **Physical keyboard** > **Held keys type**; **Search emoji** and **Choose a symbol**, which list characters by name while you type; double presses, set in **Typing** > **Physical keyboard** > **Double-press characters**, such as G pressed twice for ğ, and with **Double space types a period** on, a period for Space pressed twice after a word; and **Turn editing mode on or off**, in which single keys move the cursor and select, copy, cut and paste. To turn it on, go to **Typing** > **Physical keyboard** > **SandFly keyboard**. Not on watches and TVs.
 
+### Auto-correct and word suggestions
+
+The SandFly keyboard can correct and complete the word being typed, with word lists for English (US and UK), German, Spanish, French, Portuguese (Brazil and Portugal), Hungarian, Turkish, Russian, Ukrainian and Arabic. Both are off by default, in **Typing** > **Physical keyboard**:
+
+- **Auto-correct**: Space, punctuation or Enter after a misspelled word put its correction in its place, taking neighbouring keys of the keyboard's layout, doubled, missing and swapped letters, apostrophes and accents into account. Backspace straight after a correction undoes it, and the word isn't corrected again.
+- **Word suggestions**: while a word is typed, Up Arrow and Down Arrow, which the Zinwa Q25's trackpad sends, go through corrections and completions; Enter or a trackpad click types one with a space, and Space or punctuation types it with that character. Without a word being typed, the arrows move in the text.
+- **Word list language**: the system language by default. **Delete learned words** deletes the words learned from typing, which rank higher in suggestions.
+- **Next word suggestion**, **Previous word suggestion** and **Type word suggestion**, in the **Text editing** category, and the **Word suggestions** reading control, off by default, for keyboards without arrow keys and for touch.
+
 ### Password characters
 
 TalkBack's **Speak passwords** setting was removed, and Android gives screen readers only bullets for password text. The SandFly keyboard reads the text of the field it types into, so SandFly can say the characters of password fields:

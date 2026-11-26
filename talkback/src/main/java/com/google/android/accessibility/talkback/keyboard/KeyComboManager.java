@@ -635,12 +635,15 @@ public class KeyComboManager
     }
 
     // While the SandFly keyboard's emoji search or symbol chooser is open, every key pressed is its
-    // own, up to its release; in its editing mode, every key pressed without the SandFly key. Keys
-    // pressed before, such as the shortcut that opened it, are released here.
+    // own, up to its release; in its editing mode, every key pressed without the SandFly key; while
+    // a word is typed with word suggestions on, Up and Down, and while its list is open, the keys
+    // that move through it, type a suggestion and close it. Keys pressed before, such as the
+    // shortcut that opened it, are released here.
     if (event.getAction() == KeyEvent.ACTION_DOWN) {
       if (keysPassedToChooser.contains(event.getKeyCode())
           || SandFlyKeyboardHost.isChoosing()
-          || (SandFlyKeyboardHost.isEditingModeOn() && !isSandFlyKeyEvent(event))) {
+          || (SandFlyKeyboardHost.isEditingModeOn() && !isSandFlyKeyEvent(event))
+          || (!isSandFlyKeyEvent(event) && SandFlyKeyboardHost.takesKey(event.getKeyCode()))) {
         keysPassedToChooser.add(event.getKeyCode());
         return false;
       }

@@ -831,6 +831,19 @@ public class GestureController {
       if (!result) {
         SandFlyKeyboardHost.speak(service.getString(R.string.sandfly_keyboard_needed));
       }
+    } else if (action.equals(service.getString(R.string.shortcut_value_next_word_suggestion))
+        || action.equals(service.getString(R.string.shortcut_value_previous_word_suggestion))) {
+      String said =
+          SandFlyKeyboardHost.stepSuggestion(
+              action.equals(service.getString(R.string.shortcut_value_next_word_suggestion)));
+      result = said != null;
+      SandFlyKeyboardHost.speak(
+          said != null ? said : service.getString(R.string.sandfly_keyboard_needed));
+    } else if (action.equals(service.getString(R.string.shortcut_value_type_word_suggestion))) {
+      result = SandFlyKeyboardHost.typeSuggestion();
+      if (!result) {
+        SandFlyKeyboardHost.speak(service.getString(R.string.sandfly_keyboard_needed));
+      }
     } else if (action.equals(service.getString(R.string.shortcut_value_refresh))) {
       result = pullToRefresh.refresh(eventId);
     } else if (action.equals(service.getString(R.string.shortcut_value_media_control))) {

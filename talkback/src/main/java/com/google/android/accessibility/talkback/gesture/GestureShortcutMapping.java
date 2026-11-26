@@ -2671,6 +2671,13 @@ public class GestureShortcutMapping implements GestureShortcutProvider {
         R.string.shortcut_value_toggle_editing_mode, R.string.shortcut_toggle_editing_mode),
     SPELL_PASSWORD_FIELD(
         R.string.shortcut_value_spell_password_field, R.string.shortcut_spell_password_field),
+    NEXT_WORD_SUGGESTION(
+        R.string.shortcut_value_next_word_suggestion, R.string.shortcut_next_word_suggestion),
+    PREVIOUS_WORD_SUGGESTION(
+        R.string.shortcut_value_previous_word_suggestion,
+        R.string.shortcut_previous_word_suggestion),
+    TYPE_WORD_SUGGESTION(
+        R.string.shortcut_value_type_word_suggestion, R.string.shortcut_type_word_suggestion),
     PREV_CONTAINER(R.string.shortcut_value_prev_container, R.string.shortcut_prev_container),
     NEXT_CONTAINER(R.string.shortcut_value_next_container, R.string.shortcut_next_container),
     PREVIOUS_WINDOW(R.string.shortcut_value_previous_window, R.string.shortcut_previous_window),

@@ -3564,6 +3564,8 @@ public class TalkBackService extends AccessibilityServiceCompat
     // The SandFly keyboard, which says the characters of a password field with Speak password
     // characters on.
     textEventFilter.setPasswordCharacterSuppressor(SandFlyKeyboardHost::speaksPasswordCharacters);
+    // The SandFly keyboard's corrections and word suggestions, which it says.
+    textEventFilter.setKeyboardEditSuppressor(SandFlyKeyboardHost::isKeyboardEdit);
     textEventFilter.setBrailleInputReader(
         () -> {
           BrailleImeForTalkBack brailleIme = getBrailleImeForTalkBack();

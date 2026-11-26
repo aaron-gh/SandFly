@@ -138,7 +138,7 @@ The **Text editing** group of **Commands** also has:
 - **Dictate**: see [](#typing-dictate).
 - **Start voice editing**: records voice commands for the text field one after another. See [](#voice-commands-editing).
 - **Switch keyboard**: changes to the next keyboard. Available on Android 11 and later.
-- **Search emoji**, **Choose a symbol**, **Turn editing mode on or off** and **Spell the password field**: commands of the SandFly keyboard. See [](#keyboards).
+- **Search emoji**, **Choose a symbol**, **Turn editing mode on or off**, **Spell the password field**, **Next word suggestion**, **Previous word suggestion** and **Type word suggestion**: commands of the SandFly keyboard. See [](#keyboards).
 
 None of these commands has a gesture by default. To give one a gesture, see [](#commands).
 

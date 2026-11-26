@@ -453,6 +453,13 @@ object SettingsIndex {
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_double_press_key)
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_double_space_period_key)
     hideIf(!physicalKeyboard || wear || tv, R.string.pref_speak_password_characters_key)
+    hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_autocorrect_key)
+    hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_suggestions_key)
+    hideIf(!physicalKeyboard || wear || tv, R.string.pref_sandfly_keyboard_word_language_key)
+    hideIf(
+      !physicalKeyboard || wear || tv,
+      R.string.pref_sandfly_keyboard_delete_learned_words_key,
+    )
     hideIf(!physicalKeyboard || !KeypadKeys.isAvailable(), R.string.pref_keypad_letter_keys_key)
 
     // VolumeKeysFragment.
@@ -492,6 +499,10 @@ object SettingsIndex {
     hideIf(noAiActions, R.string.pref_ai_actions_included_key)
     hideIf(!FeatureSupport.doesServiceHandleDoubleTap(), R.string.pref_selector_text_entities_key)
     hideIf(!FeatureSupport.doesServiceHandleDoubleTap(), R.string.pref_selector_clipboard_history_key)
+    hideIf(
+      !FeatureSupport.doesServiceHandleDoubleTap() || wear || tv,
+      R.string.pref_selector_word_suggestions_key,
+    )
 
     // ContextMenuFragment.
     hideIf(

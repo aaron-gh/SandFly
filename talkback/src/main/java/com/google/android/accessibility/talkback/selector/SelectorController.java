@@ -87,6 +87,7 @@ import com.google.android.accessibility.talkback.R;
 import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.clipboard.ClipboardHistoryOverlay;
 import com.google.android.accessibility.talkback.gesture.GestureLayout;
+import com.google.android.accessibility.talkback.keyboard.SandFlyKeyboardHost;
 import com.google.android.accessibility.talkback.preference.ItemOrder;
 import com.google.android.accessibility.talkback.UserInterface.UserInputEventListener;
 import com.google.android.accessibility.talkback.analytics.TalkBackAnalytics;
@@ -331,6 +332,10 @@ public class SelectorController implements UserInputEventListener {
         R.string.pref_selector_clipboard_history_key,
         R.string.selector_clipboard_history,
         R.bool.pref_selector_clipboard_history_default),
+    WORD_SUGGESTIONS(
+        R.string.pref_selector_word_suggestions_key,
+        R.string.selector_word_suggestions,
+        R.bool.pref_selector_word_suggestions_default),
     ACTIONS(
         R.string.pref_selector_actions_key,
         R.string.selector_actions,
@@ -769,6 +774,7 @@ public class SelectorController implements UserInputEventListener {
           Setting.ACTIONS,
           Setting.TEXT_ENTITIES,
           Setting.CLIPBOARD_HISTORY,
+          Setting.WORD_SUGGESTIONS,
           // Puts table navigation granularities on top of the selector.
           Setting.GRANULARITY_ROW_COLUMN,
           Setting.GRANULARITY_ROW,
@@ -977,6 +983,7 @@ public class SelectorController implements UserInputEventListener {
       hiddenSettingsBuilder.add(Setting.AI_ACTIONS);
       hiddenSettingsBuilder.add(Setting.TEXT_ENTITIES);
       hiddenSettingsBuilder.add(Setting.CLIPBOARD_HISTORY);
+      hiddenSettingsBuilder.add(Setting.WORD_SUGGESTIONS);
     }
     // Hide SEARCH in selector.
     if (!FeatureFlagReader.enableScreenSearchNavigation(context)
@@ -1325,6 +1332,10 @@ public class SelectorController implements UserInputEventListener {
         clipboardHistorySetting.reset();
         actionDescription = context.getString(R.string.title_clipboard_history);
         hint = context.getString(R.string.clipboard_history_hint);
+      }
+      case WORD_SUGGESTIONS -> {
+        actionDescription = context.getString(R.string.title_pref_sandfly_keyboard_suggestions);
+        hint = context.getString(R.string.word_suggestions_hint);
       }
       case ACTIONS -> {
         // Reset currentActionId to the default action.
@@ -2335,6 +2346,11 @@ public class SelectorController implements UserInputEventListener {
         return FeatureSupport.doesServiceHandleDoubleTap()
             && !TextEntityMenu.included(context).isEmpty();
       }
+      case WORD_SUGGESTIONS -> {
+        // While a word is typed with the SandFly keyboard, with Word suggestions on.
+        return FeatureSupport.doesServiceHandleDoubleTap()
+            && SandFlyKeyboardHost.hasWordSuggestions();
+      }
       case CLIPBOARD_HISTORY -> {
         // The history can hold private text.
         return FeatureSupport.doesServiceHandleDoubleTap()
@@ -2839,6 +2855,10 @@ public class SelectorController implements UserInputEventListener {
         changeClipboardEntry(eventId, isNext);
         return;
       }
+      case WORD_SUGGESTIONS -> {
+        changeWordSuggestion(eventId, isNext);
+        return;
+      }
       case SPEECH_RATE -> {
         changeSpeechRate(eventId, increases(isNext));
         return;
@@ -3105,6 +3125,9 @@ public class SelectorController implements UserInputEventListener {
     if (setting == Setting.CLIPBOARD_HISTORY) {
       return pasteClipboardEntry();
     }
+    if (setting == Setting.WORD_SUGGESTIONS) {
+      return SandFlyKeyboardHost.typeSuggestion();
+    }
     return false;
   }
 
@@ -3128,6 +3151,20 @@ public class SelectorController implements UserInputEventListener {
         eventId,
         ClipboardHistoryOverlay.shortened(text),
         context.getString(R.string.clipboard_history_hint));
+  }
+
+  /**
+   * Says the next or previous suggestion for the word typed with the SandFly keyboard, which
+   * double-tap then types.
+   */
+  private void changeWordSuggestion(EventId eventId, boolean isNext) {
+    @Nullable String said = SandFlyKeyboardHost.stepSuggestion(isNext);
+    doubleTapArmed = said != null && SandFlyKeyboardHost.hasWordSuggestions();
+    requestServiceHandlesDoubleTap(eventId, doubleTapArmed);
+    announceSetting(
+        eventId,
+        said != null ? said : context.getString(R.string.sandfly_keyboard_needed),
+        doubleTapArmed ? context.getString(R.string.word_suggestions_hint) : null);
   }
 
   /** Pastes the clipboard history's text said last into the edit box with focus. */

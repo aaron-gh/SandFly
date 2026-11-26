@@ -4510,6 +4510,18 @@
     <string name="title_pref_sandfly_keyboard_double_space_period">Double space types a period</string>
     <!-- Typing > Physical keyboard: with the SandFly keyboard, in a password field, SandFly speaks each character typed, deleted or passed over by the cursor, instead of "bullet". -->
     <string name="title_pref_speak_password_characters">Speak password characters</string>
+    <!-- Typing > Physical keyboard: with the SandFly keyboard, a misspelled word is replaced with its correction when Space, punctuation or Enter is typed after it. -->
+    <string name="title_pref_sandfly_keyboard_autocorrect">Auto-correct</string>
+    <!-- Typing > Physical keyboard: with the SandFly keyboard, Up and Down go through corrections and longer words for the word being typed. Also the name of the reading control. -->
+    <string name="title_pref_sandfly_keyboard_suggestions">Word suggestions</string>
+    <!-- Typing > Physical keyboard: the language of the word list that auto-correct and word suggestions use. -->
+    <string name="title_pref_sandfly_keyboard_word_language">Word list language</string>
+    <!-- Word list language: the language of the system. -->
+    <string name="value_word_language_system">System language</string>
+    <!-- Typing > Physical keyboard: deletes the words that auto-correct and word suggestions learned from typing. -->
+    <string name="title_pref_sandfly_keyboard_delete_learned_words">Delete learned words</string>
+    <!-- Shown after Delete learned words. -->
+    <string name="sandfly_keyboard_learned_words_deleted">Learned words deleted</string>
     <!-- Summary of Speak password characters. -->
     <string name="summary_pref_speak_password_characters">With the SandFly keyboard, speaks the characters typed, deleted and passed over in password fields</string>
     <!-- Double-press characters: button that adds a key with the characters its double press types. -->
@@ -4544,6 +4556,24 @@
     <string name="shortcut_toggle_editing_mode">Turn editing mode on or off</string>
     <!-- Command: with the SandFly keyboard, spells the whole text of the password field being edited, one character at a time with its position. -->
     <string name="shortcut_spell_password_field">Spell the password field</string>
+    <!-- Command: with the SandFly keyboard, while a word is typed, says the next suggestion for it, a correction or a longer word. -->
+    <string name="shortcut_next_word_suggestion">Next word suggestion</string>
+    <!-- Command: with the SandFly keyboard, while a word is typed, says the previous suggestion for it. -->
+    <string name="shortcut_previous_word_suggestion">Previous word suggestion</string>
+    <!-- Command: with the SandFly keyboard, types the word suggestion said last, or the first one, in place of the word typed, with a space. -->
+    <string name="shortcut_type_word_suggestion">Type word suggestion</string>
+    <!-- Spoken when the word typed has no suggestions, or no word is being typed. -->
+    <string name="sandfly_keyboard_no_suggestions">No suggestions</string>
+    <!-- Spoken when a word suggestion command runs with Word suggestions turned off. -->
+    <string name="sandfly_keyboard_suggestions_off">Word suggestions off</string>
+    <!-- Spoken when a word suggestion command runs and there is no word list for the language. -->
+    <string name="sandfly_keyboard_no_word_list">No word list for this language</string>
+    <!-- Spoken after auto-correct replaced the word just typed: the word put in its place, such as "receive, corrected". -->
+    <string name="sandfly_keyboard_corrected"><xliff:g id="word" example="receive">%1$s</xliff:g>, corrected</string>
+    <!-- Spoken after Delete undid a correction: the word as it was typed, such as "recieve, correction undone". -->
+    <string name="sandfly_keyboard_correction_undone"><xliff:g id="word" example="recieve">%1$s</xliff:g>, correction undone</string>
+    <!-- Hint for the Word suggestions reading control, available while a word is typed with the SandFly keyboard. [CHAR LIMIT=NONE] -->
+    <string name="word_suggestions_hint">Swipe up or down to choose, then double-tap to type</string>
     <!-- One character of a spelled password field: its position, from 1, and its name, such as "2 capital B". The items are joined with commas. -->
     <string name="sandfly_keyboard_password_character"><xliff:g id="position" example="2">%1$d</xliff:g> <xliff:g id="character" example="capital B">%2$s</xliff:g></string>
     <!-- Spoken when Spell the password field runs in a text field that isn't a password field. -->

@@ -308,6 +308,18 @@ public class TalkBackPreferenceFilter {
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     SPEAK_PASSWORD_CHARACTERS(
         R.string.pref_speak_password_characters_key, HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SANDFLY_KEYBOARD_AUTOCORRECT(
+        R.string.pref_sandfly_keyboard_autocorrect_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SANDFLY_KEYBOARD_SUGGESTIONS(
+        R.string.pref_sandfly_keyboard_suggestions_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SANDFLY_KEYBOARD_WORD_LANGUAGE(
+        R.string.pref_sandfly_keyboard_word_language_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
+    SANDFLY_KEYBOARD_DELETE_LEARNED_WORDS(
+        R.string.pref_sandfly_keyboard_delete_learned_words_key,
+        HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDDEN_ON_XR),
     BRAILLE_DISPLAY(
         R.string.pref_brailledisplay_key,
         HIDDEN_ON_TV | HIDDEN_ON_WATCH | HIDE_NO_BRAILLE_DISPLAY | HIDDEN_ON_XR),
