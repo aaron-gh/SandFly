@@ -85,6 +85,7 @@ Buka **Skrip** lalu pilih skripnya. Halamannya berisi:
 - **Lihat kode**: menampilkan file `main.lua` skrip, beserta manifesnya. Lihat [](#scripts-code).
 - **Edit kode**: mengubah kode skrip. Tidak ditampilkan untuk skrip yang dibuat di pembuat skrip. Lihat [](#scripts-code).
 - **Edit di pembuat skrip**, untuk skrip yang dibuat di pembuat skrip, atau **Salin ke pembuat skrip** untuk skrip lain. Lihat [](#scripts-builder-manage).
+- **Ubah dengan SandFly Pro**: ditampilkan untuk skrip yang dibuat di pembuat skrip, dengan SandFly Pro. Lihat [](#scripts-builder-pro).
 - **Kompatibilitas**: ditampilkan jika skrip dibuat untuk versi SandFly yang berbeda.
 - **Buka halaman beranda**: membuka halaman web skrip setelah Anda mengonfirmasi alamatnya.
 - **Setelan**: setelan milik skrip, jika ada.
@@ -103,7 +104,7 @@ Buka **Skrip** lalu pilih skripnya. Halamannya berisi:
 
 **Skrip baru dari kode**, di layar **Skrip**, membuka kolom teks kosong. Masukkan seluruh file `main.lua`, dengan `local manifest = { ... }` sebelum kodenya, lalu pilih **Simpan**. SandFly memeriksa kode seperti saat memeriksa file skrip dan menampilkan dialog instalasi. Manifes dengan `id` skrip yang sudah terinstal akan memperbarui skrip tersebut.
 
-Jika kode tidak dapat diinstal, **Skrip tidak disimpan** menampilkan alasannya, dan kode tetap terbuka untuk diubah. Jika Anda kembali saat ada perubahan yang belum disimpan, SandFly menanyakan apakah perubahan itu akan dibuang.
+Jika kode tidak dapat diinstal, **Skrip tidak disimpan** menampilkan alasannya, dan kode tetap terbuka untuk diubah. Jika Anda kembali saat ada perubahan yang belum disimpan, **Buang perubahan?** terbuka: pilih **Buang** atau **Lanjut mengedit**.
 
 Saat **Perbarui skrip secara otomatis** aktif, versi lebih baru dari sumber skrip akan menggantikan kode yang diubah dengan **Edit kode**. Lihat [](#scripts-updates).
 

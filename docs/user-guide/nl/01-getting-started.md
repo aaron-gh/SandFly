@@ -91,7 +91,7 @@ Opmerking: De tutorial neemt alleen gebaren aan die SandFly herkent. Als **Gebar
 
 #### Toetsenbordtutorial {#getting-started-keyboard-tutorial}
 
-Als er een fysiek toetsenbord is aangesloten wanneer SandFly voor het eerst start, opent SandFly in plaats daarvan de **SandFly-toetsenbordtutorial**. Deze leert de sneltoetsen van je toetsenbordindeling in 15 lessen, waaronder **Lijst met sneltoetsen**, **Browsemodus** voor webpagina's, en **Toetsenbord oefenen**. Als een apparaat zowel een aanraakscherm als een fysiek toetsenbord heeft, opent **SandFly-tutorial** een dialoogvenster met **Tutorial over aanraakbediening** en **Tutorial over toetsenbordbediening**. Zie [](#keyboards).
+Op een apparaat met een fysiek toetsenbord en zonder aanraakscherm opent SandFly de eerste keer in plaats daarvan de **SandFly-toetsenbordtutorial**. Deze leert de sneltoetsen van je toetsenbordindeling in 15 lessen, waaronder **Lijst met sneltoetsen**, **Browsemodus** voor webpagina's, en **Toetsenbord oefenen**. Als een apparaat zowel een aanraakscherm als een fysiek toetsenbord heeft, opent **SandFly-tutorial** een dialoogvenster met **Tutorial over aanraakbediening** en **Tutorial over toetsenbordbediening**. Zie [](#keyboards).
 
 Horloges en tv's hebben hun eigen tutorials. Zie [](#devices).
 
@@ -143,6 +143,8 @@ De schermen **Gebaren** en **Sneltoetsen** hebben hun eigen **Zoeken**, die een 
 ### De gebruikershandleiding {#getting-started-user-guide}
 
 Deze handleiding opent vanuit **Hulp en feedback** > **Gebruikershandleiding** in de instellingen voor SandFly. Deze begint met een inhoudsopgave, en links in de tekst gaan naar de secties die ze noemen. De handleiding wordt getoond in de taal van SandFly. Hoofdstukken die niet naar die taal zijn vertaald, worden in het Engels getoond.
+
+De meeste instellingenschermen van SandFly hebben **Hulp** in de app-balk, na de titel van het scherm. **Hulp** opent de sectie van deze handleiding over dat scherm. Links in de sectie naar andere secties openen die secties, en **Terug naar inhoud** opent de hele handleiding.
 
 ### Overstappen van Backtalk Aaron {#getting-started-backtalk}
 

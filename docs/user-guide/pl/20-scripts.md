@@ -21,6 +21,7 @@ Na ekranie **Skrypty** znajdziesz także te opcje.
 
 - **Wyłącz wszystkie skrypty** zatrzymuje wszystkie skrypty. Zachowuje zainstalowane skrypty i ustawienia ich przełączników.
 - **Nowy skrypt** otwiera kreator skryptów. Zobacz [](#scripts-builder).
+- **Nowy skrypt z kodu** instaluje skrypt wpisany jako kod. Zobacz [](#scripts-code).
 - **Utwórz skrypt za pomocą SandFly Pro** tworzy skrypt na podstawie Twojego opisu. Zobacz [](#scripts-builder-pro).
 - **Importuj skrypt** pozwala zainstalować skrypt z pliku. Zobacz [](#scripts-install).
 - **Źródła skryptów** pokazują miejsca, w których możesz znaleźć skrypty. Zobacz [](#scripts-sources).
@@ -77,7 +78,10 @@ Otwórz **Skrypty** i wybierz skrypt. Na jego ekranie znajdziesz poniższe opcje
 - **Włącz** przełącza działanie skryptu.
 - **Działaj przy wyłączonym ekranie** utrzymuje działanie skryptu przy wygaszonym ekranie, np. gdy skrypt odczytuje godzinę. Opcja jest widoczna tylko w skryptach, które ją udostępniają, i jest wyłączona po instalacji.
 - Nazwa, opis, wersja, autor i informacja o tym, gdzie skrypt działa.
+- **Wyświetl kod** pokazuje plik `main.lua` skryptu razem z manifestem. Zobacz [](#scripts-code).
+- **Edytuj kod** zmienia kod skryptu. Opcja nie jest widoczna w skryptach utworzonych w kreatorze. Zobacz [](#scripts-code).
 - **Edytuj w kreatorze skryptów** dla skryptów utworzonych w kreatorze albo **Kopiuj do kreatora skryptów** dla pozostałych. Zobacz [](#scripts-builder-manage).
+- **Zmień za pomocą SandFly Pro** jest widoczne dla skryptu utworzonego w kreatorze, gdy masz SandFly Pro. Zobacz [](#scripts-builder-pro).
 - **Zgodność** jest widoczna, gdy skrypt napisano dla innej wersji SandFly.
 - **Otwórz stronę domową** otwiera stronę skryptu po potwierdzeniu adresu.
 - **Ustawienia** otwierają ustawienia skryptu, jeśli je udostępnia.
@@ -87,6 +91,20 @@ Otwórz **Skrypty** i wybierz skrypt. Na jego ekranie znajdziesz poniższe opcje
 - **Dziennik** pokazuje dane wyjściowe i błędy skryptu od uruchomienia SandFly. Zobacz [](#scripts-log).
 - **Wyczyść zapisane dane** usuwa dane zapisane przez skrypt.
 - **Usuń** usuwa skrypt wraz z jego kodem, danymi i ustawieniami po potwierdzeniu.
+
+#### Wyświetl i edytuj kod skryptu {#scripts-code}
+
+**Wyświetl kod** na ekranie skryptu pokazuje jego plik `main.lua` z manifestem na początku jako tekst, który możesz czytać po wierszach, słowach i znakach oraz zaznaczać.
+
+**Edytuj kod** na ekranie skryptu, który nie powstał w kreatorze, otwiera ten sam plik w polu tekstowym. **Zapisz** sprawdza kod tak jak **Importuj skrypt** sprawdza plik skryptu i zastępuje kod zainstalowanego skryptu. Skrypt zachowuje przełącznik, uprawnienia, gesty, klawisze, ustawienia i zapisane dane, a potem działa z nowym kodem. Wartość `id` w manifeście musi pozostać taka sama. Jeśli kod wymaga uprawnień, których skrypt wcześniej nie miał, najpierw wyświetli je okno instalacji. Zobacz [](#scripts-install-dialog). Pozostałe pliki skryptu z pliku `.zip` pozostają bez zmian.
+
+**Nowy skrypt z kodu** na ekranie **Skrypty** otwiera puste pole tekstowe. Wpisz cały plik `main.lua` z `local manifest = { ... }` przed kodem i wybierz **Zapisz**. SandFly sprawdza kod tak jak plik skryptu i wyświetla okno instalacji. Manifest z `id` zainstalowanego skryptu aktualizuje ten skrypt.
+
+Jeśli kodu nie można zainstalować, **Nie zapisano skryptu** podaje przyczynę, a kod pozostaje otwarty do zmiany. Jeśli wrócisz z niezapisanymi zmianami, otworzy się okno **Odrzucić zmiany?**. Wybierz **Odrzuć** lub **Edytuj dalej**.
+
+Gdy opcja **Aktualizuj skrypty automatycznie** jest włączona, nowsza wersja ze źródła skryptu zastępuje kod zmieniony przez **Edytuj kod**. Zobacz [](#scripts-updates).
+
+Pisanie skryptów opisuje [](#api-scripting).
 
 #### Uprawnienia skryptu {#scripts-permissions}
 

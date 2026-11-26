@@ -26,7 +26,19 @@ Saat pertama kali Anda menjalankan **Deskripsikan layar**, SandFly menampilkan d
 
 - **Deskripsi gambar mendetail** (nonaktif secara default): **Deskripsikan gambar** mengirim gambar yang difokuskan ke layanan AI yang sedang digunakan, atau ke model di perangkat, untuk mendapatkan deskripsi lengkap.
 - **Deskripsi otomatis untuk teks dalam gambar**: SandFly membacakan teks dalam gambar saat fokus berpindah ke gambar tersebut. Pilih **Semua gambar**, **Hanya gambar tidak berlabel** (default), atau **Jangan deskripsikan gambar**. Teks dikenali di ponsel.
+- **Pengenalan teks Sirilik**: mengunduh dan menghapus model pengenalan teks untuk bahasa yang ditulis dalam aksara Sirilik, seperti Rusia, Ukraina, dan Serbia. Lihat [](#descriptions-cyrillic-text). Tidak tersedia di jam tangan.
 - **Pengenalan langsung**: membuka layar Pengenalan langsung. Lihat [](#descriptions-live-recognition). Hanya tersedia di perangkat dengan kamera.
+
+### Pengenalan teks Sirilik {#descriptions-cyrillic-text}
+
+Pengenalan teks membaca teks Sirilik dengan model untuk bahasa tersebut, yang perlu Anda unduh terlebih dahulu. SandFly menggunakan model bahasa ucapan, atau model bahasa ponsel pertama, yang ditulis dalam aksara Sirilik. Tanpa model, hanya huruf Latin yang dibaca, dan SandFly mengucapkan satu kali bahwa model belum diunduh.
+
+1. Buka **Deskripsi gambar dan layar** > **Pengenalan teks Sirilik**.
+2. Pilih bahasanya. Model bahasa tersebut, berukuran beberapa megabyte, diunduh bersama model huruf Latin pada kali pertama, sehingga teks dalam kedua aksara dapat dibaca. Jika menggunakan data seluler, dialog konfirmasi terbuka terlebih dahulu.
+
+Untuk menghentikan unduhan, pilih bahasa itu lagi. Untuk menghapus model, pilih bahasa yang sudah diunduh, lalu **Hapus**. Model huruf Latin dihapus bersama bahasa terakhir.
+
+Model berasal dari proyek Tesseract OCR dan dibaca oleh Tesseract di ponsel. Pengenalan lebih lambat daripada untuk aksara lain.
 
 ### Mendeskripsikan gambar {#descriptions-describe-image}
 
@@ -202,7 +214,9 @@ Setiap mode diaktifkan dan dinonaktifkan secara terpisah dengan kotak centang di
 - **Tunjuk dan Baca**: membacakan teks di ujung jari Anda dalam tampilan kamera. Pilih **Baca di atas ujung jari** (default) atau **Baca di bawah ujung jari**.
 - **Deteksi orang**: mendeskripsikan orang dalam tampilan kamera.
 - **Deteksi pintu**: mendeskripsikan pintu dalam tampilan kamera.
+- **Deteksi warna**: menyebutkan warna di bagian tengah tampilan kamera, seperti "Biru tua", "Abu-abu muda", atau "Merah dan putih", atau mengucapkan "Warna campuran" jika tidak ada warna yang cukup menutupi bagian tersebut. Warna diucapkan saat berubah dan sudah bertahan sekitar setengah detik. Terang dan gelapnya bergantung pada cahaya dan eksposur otomatis kamera. Warna dikenali di ponsel.
 - **Tingkat cahaya**: membacakan tingkat cahaya dari sensor cahaya: **Gelap**, **Cahaya redup**, **Cahaya normal**, **Cahaya terang**, atau **Cahaya sangat terang**. Mode ini tidak menggunakan kamera.
+- **Nada tingkat cahaya**: memutar nada terus-menerus yang tinggi nadanya naik sesuai kecerahan tampilan kamera belakang, dari 200 Hz dalam gelap hingga 1600 Hz di bawah sinar matahari. Nada diputar pada volume suara SandFly, dan berhenti saat mode dinonaktifkan atau layar ditinggalkan.
 
 Baris status menampilkan **Kamera aktif** atau **Kamera nonaktif**. SandFly meminta izin kamera saat pertama kali suatu mode membutuhkannya.
 

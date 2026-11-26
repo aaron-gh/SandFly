@@ -11,6 +11,7 @@ De groep **Geluiden** van **Geluid en trillen** heeft deze instellingen:
 - **Geluidsfeedback**: speelt de SandFly-geluiden af. Standaard aan. Met dit uit, spelen trillingen nog steeds.
 - **Volume geluidsfeedback**: het volume van de geluiden, van 5 tot 100 procent in stappen van 5. De standaardwaarde is 50 procent.
 - **Geluidsthema's**: opent de geïnstalleerde geluidsthema's, bedieningsgeluiden en 3D-audio. Zie [](#sound-themes).
+- **Geluid voor Acties beschikbaar**: wanneer het geluid **Acties beschikbaar** speelt: **Uit**, **Als het item focus krijgt**, de standaardwaarde, of **Nadat het item is uitgesproken**. Zie [](#sound-actions-available).
 
 De sneltoets **Geluidsfeedback (earcons) aan- of uitzetten** zet **Geluidsfeedback** aan of uit. Zie [](#appendix-keyboard-shortcuts).
 
@@ -41,6 +42,7 @@ De geluiden, bij de namen die worden getoond in **Afzonderlijke geluiden en tril
 | --- | --- |
 | **Focus op een item** | Focus verplaatst naar een item. |
 | **Focus op een activeerbaar item** | Focus verplaatst naar een item dat je kunt activeren. |
+| **Acties beschikbaar** | Focus verplaatst naar een item met acties van de app, zoals Beantwoorden bij een chatbericht. Zie [](#sound-actions-available). |
 | **Een leeg gebied aanraken** | Je vinger raakt een deel van het scherm zonder item aan. |
 | **Klik** | Een item wordt geactiveerd. |
 | **Lang indrukken** | Een item wordt aangeraakt en vastgehouden. |
@@ -56,6 +58,7 @@ De geluiden, bij de namen die worden getoond in **Afzonderlijke geluiden en tril
 | **Spelfout** | Een verkeerd gespeld woord. |
 | **Link** | Een link in tekst. |
 | **Opgemaakte tekst** | Opgemaakte tekst, zoals vet. |
+| **Emoji** | Na een emoji, met **Uitgebreidheidsniveau** > **Na emojinamen** ingesteld op **Een geluid afspelen**. Geen ingebouwde trilling; een geluidsthema kan het er een geven. Zie [](#verbosity-emoji). |
 | **Scherm uit** en **Scherm aan** | Het scherm gaat uit of aan. |
 | **Scherm verborgen** en **Scherm weergegeven** | Het scherm is verborgen, of weer getoond. Zie [](#display). |
 | **Laden** | Een beschrijving of ander resultaat wordt geladen. |
@@ -75,6 +78,20 @@ SandFly speelt geen geluid wanneer een gebaar begint of eindigt. Deze geluiden g
 - **Volgende leesinstelling** en **Vorige leesinstelling** spelen wanneer je met een gebaar, het cirkelmenu, een sneltoets of het brailletoetsenbord een andere leesinstelling kiest.
 - De randgebaargeluiden spelen wanneer een vinger een rand aanraakt waar een randgebaar begint (**Randgebaar onderaan**, een lage tik), wanneer het gebaar zijn eerste fase bereikt (**Randgebaar midden**), en wanneer het de tweede fase bereikt (**Randgebaar bovenaan**). Teruggleiden speelt het geluid van de fase waar de vinger naar teruggaat. Het optillen van de vinger speelt niets. Voor randgebaren, zie [](#gestures).
 - **Naar volgende rij** speelt wanneer een swipe vooruit focus verplaatst naar een item op een rij onder het item met focus, en **Naar vorige rij** wanneer een swipe terug focus verplaatst naar een item op een rij erboven. Elk lijstitem is een eigen rij. Items naast elkaar, zoals pictogrammen op een startscherm of cellen van een tabel, delen een rij. Het geluid speelt met het focusgeluid, en zijn trilling vervangt de focustrilling. Het speelt niet wanneer focus naar een ander venster verplaatst.
+
+#### Geluid voor Acties beschikbaar {#sound-actions-available}
+
+Het geluid **Acties beschikbaar** speelt voor een item met acties van de app naast de standaardacties, zoals Beantwoorden en Doorsturen bij een chatbericht in een berichten-app. Activeren, lang indrukken, scrollen, uitvouwen en andere standaardacties tellen niet mee, dus een gewone knop speelt geen geluid **Acties beschikbaar**. Toetsen van schermtoetsenborden tellen ook niet mee. De acties staan in de leesinstelling **Acties** en in het SandFly-menu.
+
+Het geluid heeft geen ingebouwde trilling; een geluidsthema kan het er een geven.
+
+**Geluid en trillen** > **Geluid voor Acties beschikbaar** stelt in wanneer het geluid speelt:
+
+- **Uit**: het geluid speelt niet.
+- **Als het item focus krijgt**: na het focusgeluid. De standaardwaarde. Een trilling die het thema het geluid geeft, speelt in plaats van de focustrilling.
+- **Nadat het item is uitgesproken**: zodra de beschrijving van het item tot het einde is uitgesproken. Als je eerder verder gaat, speelt het niet.
+
+Om SandFly "Acties beschikbaar" te laten zeggen na zulke items, zie [](#verbosity-items).
 
 #### Tikjes tijdens scrollen {#sound-scroll-ticks}
 
@@ -137,6 +154,8 @@ Je kunt elk geluid van het thema dat in gebruik is vervangen door een geluidsbes
 3. Kies een geluid. De titel van het dialoogvenster toont het geluid en zijn bestandsnaam, zoals "Klik (tick)".
 4. Kies een van de volgende:
    - **Een geluidsbestand kiezen**: opent de bestandskiezer. Een geluid kan tot 5 MB groot zijn, in WAV-, OGG-, MP3- of FLAC-formaat.
+   - **Kiezen uit map**: toont de geluidsbestanden en submappen van een map. De eerste keer opent de mapkiezer om de map te kiezen. Zie [](#sound-themes-folder).
+   - **Andere map**: opent de mapkiezer om een andere map te kiezen voor **Kiezen uit map**. Getoond nadat een map is gekozen.
    - **Beluisteren**: speelt het geluid af.
    - **Geen geluid**: speelt geen geluid af voor de gebeurtenis.
    - **Geluid van SandFly gebruiken**: gaat terug naar het ingebouwde geluid.
@@ -144,6 +163,18 @@ Je kunt elk geluid van het thema dat in gebruik is vervangen door een geluidsbes
 De samenvatting van elk geluid toont **Geluid van SandFly**, **Themageluid** of **Geen geluid**. Dezelfde acties staan in het actiemenu van elk geluid, als **Beluisteren**, **Instellen op geen geluid**, **Geluid van SandFly gebruiken** en **Een geluidsbestand kiezen**. **De geluiden van SandFly voor alles gebruiken** verwijdert elk geluid van het thema en gebruikt de ingebouwde geluiden.
 
 De geluidslijst heeft ook geluiden die **Afzonderlijke geluiden en trillingen** niet heeft: **Volumewijziging**, dat speelt voor elke volumestap wanneer **Feedback bij volumewijziging** is ingesteld op een toon (zie [](#buttons)), en de typegeluiden van het brailletoetsenbord, die spelen met **Typegeluiden** aan in de instellingen van het brailletoetsenbord (zie [](#braille)).
+
+#### Kies geluiden uit een map {#sound-themes-folder}
+
+**Kiezen uit map** toont één map op de telefoon. Kies een geluid, en dan **Kiezen uit map**. Kies de eerste keer de map in de mapkiezer.
+
+De lijst toont eerst submappen, dan geluidsbestanden, elk gesorteerd op naam. Per map worden maximaal 2.000 items getoond.
+
+- Het bestand met toegankelijkheidsfocus speelt af. Als je de focus van het bestand af verplaatst, stopt het.
+- Kies een bestand om het voor het geluid te gebruiken.
+- Kies een submap om de inhoud te tonen. **Bovenliggende map** of Terug gaat terug naar de map erboven.
+
+Als de map is verwijderd of SandFly de map niet meer kan lezen, opent de mapkiezer opnieuw.
 
 #### Maak een geluidsthema {#sound-themes-create}
 
@@ -195,6 +226,7 @@ Bedieningsgeluiden spelen vanaf de positie van het bedieningselement op het sche
 - **Met koptelefoon**: de standaardwaarde. 3D-audio speelt wanneer SandFly-audio naar een bedrade of USB-koptelefoon, een Bluetooth-headset of -koptelefoon, of hoorapparaten gaat. Op Android 13 en later controleert SandFly waar zijn audio speelt, dus een verbonden Bluetooth-luidspreker of auto die geen SandFly-audio afspeelt, telt niet mee. Op eerdere versies telt elke verbonden koptelefoon mee.
 - **Altijd**: 3D-audio ook op de telefoonluidspreker.
 - **Nooit, alleen links en rechts**: de geluiden bewegen alleen tussen links en rechts.
+- **Met koptelefoon, anders in het midden**: 3D-audio met koptelefoon, zoals **Met koptelefoon**. Op de telefoonluidspreker en andere uitvoer spelen de geluiden vanuit het midden, zonder tussen links en rechts te bewegen.
 
 ### Instellingen voor audio-uitvoer {#sound-audio-output}
 
@@ -273,7 +305,7 @@ De instelling heeft een rechtenmachtiging nodig die Android niet aan schermlezer
 
 SandFly gebruikt de afstandssensor om te detecteren dat de telefoon bij je oor is.
 
-**Toegankelijkheidsaudio resetten na gesprekken** verplaatst SandFly-audio terug van de oorspeaker wanneer Android toegankelijkheidsaudio op de oorspeaker laat staan na een gesprek, zoals een gesprek in een berichtenapp. Standaard uit, vereist Android 13 of later, en werkt via Shizuku of root. Dit aanzetten vraagt Shizuku om SandFly toe te staan. Zonder Shizuku toont de samenvatting een adb-opdracht die de audio eenmaal reset; open het actiemenu op de instelling en kies **Opdracht kopiëren** om deze te kopiëren.
+**Toegankelijkheidsaudio resetten na gesprekken** verplaatst SandFly-audio terug van de oorspeaker wanneer Android toegankelijkheidsaudio op de oorspeaker laat staan na een gesprek, zoals een gesprek in een berichtenapp. Standaard uit, vereist Android 13 of later, en werkt via Shizuku of root. Bij het aanzetten toont Shizuku een dialoogvenster om SandFly toe te staan. Zonder Shizuku toont de samenvatting een adb-opdracht die de audio eenmaal reset; open het actiemenu op de instelling en kies **Opdracht kopiëren** om deze te kopiëren.
 
 ### Leesinstellingen voor geluid en volume {#sound-reading-controls}
 

@@ -55,7 +55,7 @@ Standaard stopt het aanraken van het scherm de spraak. Om de spraak te laten doo
 
 ### Aanraking vergrendelen {#touch-lock}
 
-Terwijl aanraking is vergrendeld, doen aanrakingen en gebaren op het scherm niets, en bereikt niets de app. Toetsen, opdrachten voor volumetoetsen, vingerafdrukgebaren, tikken op de achterkant en schudden werken nog wel. Aanraking vergrendelen heeft Android 13 of hoger nodig en **Ontwikkelaarsinstellingen** > **Gebaren verwerken in SandFly**.
+Terwijl aanraking is vergrendeld, doen aanrakingen en gebaren op het scherm niets, en bereikt niets de app. Toetsen, opdrachten voor volumetoetsen, vingerafdrukgebaren, tikken op de achterkant en schudden werken nog wel. Opdrachten die het scherm aanraken, zoals **Activeren met een tik**, **Aanraking op het gefocuste item vasthouden** en aanrakingen in macro's, bereiken de app nog wel. Aanraking vergrendelen heeft Android 13 of hoger nodig en **Ontwikkelaarsinstellingen** > **Gebaren verwerken in SandFly**.
 
 Om aanraking te vergrendelen of te ontgrendelen, gebruik de opdracht **Aanraking vergrendelen of ontgrendelen**. SandFly zegt "Aanraking vergrendeld" of "Aanraking ontgrendeld". Wijs de opdracht toe aan een volumetoetsdruk, een sneltoets of een tik op de achterkant, zodat je aanraking kunt ontgrendelen zonder het scherm; zie [](#buttons) en [](#gestures-back-tap). Beide volumetoetsen samen indrukken ontgrendelt aanraking altijd.
 
@@ -105,7 +105,7 @@ Voor een app die zijn eigen toetsenbord tekent, zet direct typen aan: open in de
 
 #### Toetsenborden die spreken {#touch-direct-touch-keyboards}
 
-Een toetsenbord dat zelf spreekt, zoals een app met een brailletoetsenbord, heeft aanrakingen in elke app nodig. Zet dit aan in de lijst **Apps**. Terwijl dit wordt getoond, gaan aanrakingen erop rechtstreeks naar het toetsenbord in elke app, en blijft de rest van het scherm bij SandFly.
+Een toetsenbord dat zelf spreekt, zoals een app met een brailletoetsenbord, heeft aanrakingen in elke app nodig. Zet dit aan in de lijst **Apps**. Terwijl dit wordt getoond, gaan aanrakingen erop rechtstreeks naar het toetsenbord in elke app, en blijft de rest van het scherm bij SandFly. Een toetsenbord dat de toetsen in een toegankelijkheidsoverlay tekent en een eigen toegankelijkheidsservice heeft die aan staat, behoudt het aanraakgebied dat het instelt, zonder in de lijst te staan.
 
 #### Apps die kiezen waar ze directe aanraking krijgen {#touch-direct-touch-areas}
 
@@ -128,7 +128,7 @@ Met de machtiging zegt SandFly "Aanraakverkenning repareren", beëindigt de aanr
 
 Zonder de machtiging, of op andere telefoons, kan SandFly alleen zeggen dat de aanraakverkenning mogelijk is vastgelopen, en moet je de telefoon opnieuw starten. Het verkennen van een gebied zonder iets om voor te lezen, zoals een spel, vindt ook geen item, zodat de waarschuwing onterecht kan zijn, hoogstens eens per 10 minuten.
 
-Als het scherm uitgaat tijdens een aanraking, kan Android de opgetilde vingers als ingedrukt blijven beschouwen, en dan werkt alleen aanraakverkenning: gebaren en dubbeltikken doen niets. SandFly detecteert dit als het scherm uitgaat tijdens een aanraking, of als twee aanrakingen achter elkaar in aanraakverkenning eindigen, en zet Verkennen via aanraking uit en weer aan. Dit hangt niet af van **Vastgelopen aanraakverkenning repareren** of de DUMP-machtiging.
+Als het scherm uitgaat tijdens een aanraking, kan Android de opgetilde vingers als ingedrukt blijven beschouwen, en dan werkt alleen aanraakverkenning: gebaren en dubbeltikken doen niets. SandFly detecteert dit als het scherm uitgaat tijdens een aanraking, of als twee aanrakingen achter elkaar in aanraakverkenning eindigen, en zet Verkennen via aanraking uit en weer aan. Een aanraking die eindigt doordat de volgende vinger neerkomt, zoals bij snel typen, telt niet mee. Dit hangt niet af van **Vastgelopen aanraakverkenning repareren** of de DUMP-machtiging.
 
 ### Alle instellingen voor vertraging resetten {#touch-reset-delays}
 

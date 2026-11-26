@@ -69,6 +69,7 @@ Opcja sterowania czytaniem określa, co zrobi przesunięcie jednym palcem w dó�
 - Aby wrócić do poprzedniej opcji, przesuń palec w górę i z powrotem w dół. Możesz też przesunąć trzy palce w lewo lub w górę albo obrócić dwa palce w przeciwną stronę.
 - Jeśli chcesz przechodzić prosto do pierwszej opcji na używanej liście, przypisz gest lub skrót do **Pierwszy element sterowania czytaniem**. Domyślnie polecenie nie ma przypisania.
 - Żeby użyć wybranej opcji, przesuń palec w dół, jeśli chcesz iść dalej, lub w górę, jeśli chcesz się cofnąć. Polecenia noszą nazwy **Przenieś element sterowania czytaniem w dół lub do przodu** i **Przenieś element sterowania czytaniem w górę lub do tyłu**.
+- W opcjach, które zmieniają wartość, takich jak **Dostosuj suwak**, **Dostosuj wartość** i **Szybkość mowy**, kierunek przesunięcia określa zmianę, niezależnie od tego, które z dwóch poleceń uruchamia gest: przesunięcie w górę lub w prawo zwiększa wartość, a w dół lub w lewo ją zmniejsza. Dotyczy to prostych przesunięć od jednego do czterech palców. W języku zapisywanym od prawej do lewej przesunięcie w lewo zwiększa wartość, a w prawo ją zmniejsza. Przy innych gestach, skrótach klawiszowych i poleceniach monitora brajlowskiego **Przenieś element sterowania czytaniem w górę lub do tyłu** zwiększa wartość, a **Przenieś element sterowania czytaniem w dół lub do przodu** ją zmniejsza.
 
 Po zmianie SandFly odczytuje nazwę wybranej opcji. Gesty w lewo i w prawo nadal przechodzą po zwykłych elementach. W tabeli możesz im nadać inne znaczenie przez **Wiersze i kolumny**.
 
@@ -137,7 +138,7 @@ Ekran pozostaje włączony przez cały odczyt.
 Przy przechodzeniu w lewo lub w prawo SandFly przewija listę, jeśli następnego elementu nie widać. Możesz również przewijać samodzielnie.
 
 - Przesuń palcem w prawo, a potem w lewo, żeby wykonać **Przewiń do przodu**.
-- Przesuń palcem w lewo, a potem w prawo, żeby wykonać **Przewiń wstecz**. Na początku listy SandFly pociągnie ją w dół. W większości aplikacji odświeży to zawartość.
+- Przesuń palcem w lewo, a potem w prawo, żeby wykonać **Przewiń wstecz**. Na początku listy SandFly pociągnie ją w dół. W większości aplikacji odświeży to zawartość. Pociąganie wymaga Androida 13 lub nowszego.
 - Przeciągnij dwoma palcami, tak jak jednym palcem przy wyłączonym SandFly, żeby aplikacja przewinęła zawartość bezpośrednio.
 
 W domyślnym układzie gestów przesunięcie dwoma palcami trafia do aplikacji i przewija jej zawartość. Jeśli włączysz **Gesty** > **Obsługuj przesunięcia dwoma palcami w SandFly**, tak jak w układzie **Gesty VoiceOver**, przesunięcia będą uruchamiać polecenia. Domyślnie są to **Przewiń w górę**, **Przewiń w dół**, **Przewiń w lewo** i **Przewiń w prawo**. Przewijają w kierunku gestu.
@@ -147,7 +148,7 @@ Jeśli nic na ekranie nie daje się przewinąć w bok, **Przewiń w lewo** i **
 W kategorii **Przewijanie** znajdziesz też polecenia bez domyślnych gestów.
 
 - **Przewiń do góry** i **Przewiń w dół** przewijają listę, na której jest fokus, po jednej stronie aż do jej początku lub końca. Potem ustawiają fokus na pierwszym lub ostatnim elemencie. Dotknij ekranu, wykonaj gest lub naciśnij klawisz, żeby zatrzymać przewijanie. Polecenia są niedostępne na zegarkach.
-- **Odśwież** przewija listę do góry i pociąga ją w dół. Polecenie wymaga Androida 11 lub nowszego.
+- **Odśwież** przewija listę do góry i pociąga ją w dół. Polecenie wymaga Androida 13 lub nowszego.
 
 Przy przewijaniu dwoma palcami usłyszysz dźwięk i poczujesz lekką wibrację przy każdej mijanej pozycji. Dźwięk jest coraz wyższy w miarę zbliżania się do końca listy. Samoczynne przewijanie do następnego elementu jest ciche. Zobacz [](#sound).
 
@@ -233,6 +234,8 @@ Sprawdzenie tekstu po geście lub otwarciu menu może zająć do sekundy. Na And
 ### Skopiuj tekst z ekranu {#reading-copy-text}
 
 Polecenie **Kopiuj tekst z ekranu** znajdziesz w kategorii **Edytowanie tekstu**. Domyślnie nie ma gestu. SandFly wyświetla tekst w oknie z polami wyboru.
+
+Okno zawiera tekst z ekranu. Gdy na ekranie jest przewijana lista lub strona, przyciski **Przewiń w górę** nad listą i **Przewiń w dół** pod nią przewijają tę listę o stronę poza dotychczas pokazany tekst i dodają tekst tej strony. SandFly odczytuje „Dodano” i liczbę dodanych fragmentów. Zaznaczone fragmenty pozostają zaznaczone. Gdy lista jest na początku lub końcu, SandFly odczytuje „Nie ma więcej tekstu”. Po zamknięciu okna lista wraca do poprzedniego położenia.
 
 1. Uruchom **Kopiuj tekst z ekranu**.
 2. W sekcji **Szczegółowość** wybierz **Adresy i numery**, **Znaki**, **Słowa** lub **Akapity**. Początkowo wybrane są **Słowa**.

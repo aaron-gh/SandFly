@@ -49,6 +49,15 @@ Obie opcje zostawiają obsługę przycisków Androidowi, gdy ekran jest wygaszon
 
 Po włączeniu **Skróty przy wygaszonym ekranie** przypisane naciśnięcia wykonują polecenia również wtedy, gdy ekran jest wyłączony. Naciśnięcia bez polecenia zmieniają głośność. Opcja wymaga Shizuku i jest ukryta, gdy SandFly używa zamiast niego dostępu root, a także na zegarkach. Zobacz [](#updates-shizuku). Gdy włączysz ją po raz pierwszy, pojawi się prośba o przyznanie SandFly dostępu do Shizuku. Domyślnie opcja jest wyłączona.
 
+### Klawisz wyciszenia {#buttons-mute-key}
+
+Na telefonach z klawiszem wyciszenia, takich jak Zinwa Q25, ekran **Klawisze głośności** ma dwie dodatkowe opcje.
+
+- **Przytrzymaj klawisz wyciszenia, aby dyktować w polach tekstowych**: gdy pole tekstowe ma fokus wprowadzania, klawiatura jest widoczna lub podłączona i nie trwa rozmowa, przytrzymanie klawisza wyciszenia uruchamia **Dyktuj**. Nagrywanie zaczyna się po naciśnięciu klawisza i kończy po jego zwolnieniu, a SandFly wpisuje tekst. Naciśnięcie klawisza podczas dyktowania do pola tekstowego zatrzymuje dyktowanie. Domyślnie opcja jest włączona. Zobacz [](#typing-dictate).
+- **Naciśnięcie klawisza wyciszenia**: polecenie, które naciśnięcie klawisza wyciszenia uruchamia w pozostałych sytuacjach. Lista jest taka sama jak przy gestach. Domyślnie bez przypisania.
+
+Gdy żadna z tych opcji nie obsłuży naciśnięcia, trafia ono do mapy klawiszy. W mapach telefonu z klawiaturą i we własnych mapach klawisz wyciszenia może mieć własny skrót klawiszowy (zobacz [](#keyboards-keymaps)). W przeciwnym razie naciśnięcie trafia do Androida.
+
 ### Głośność mowy na telefonach Samsung {#buttons-samsung}
 
 Na telefonach Samsung system One UI zmienia głośność mowy, gdy naciśniesz przycisk głośności w trakcie wypowiedzi SandFly albo przez sekundę po jej zakończeniu. SandFly przejmuje te naciśnięcia i zmienia głośność tego samego rodzaju dźwięku, co przy milczącej mowie, np. głośność multimediów.

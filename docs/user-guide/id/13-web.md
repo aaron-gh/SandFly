@@ -100,6 +100,8 @@ Mode penjelajahan mengubah fungsi tombol keyboard fisik dan perintah penampil br
 
 Untuk mengaktifkan atau menonaktifkan mode penjelajahan, gunakan perintah **Aktifkan atau nonaktifkan mode penjelajahan** di kategori **Web**, yang dapat Anda tetapkan ke gerakan. Setiap peta tombol juga memiliki pintasan keyboard untuk perintah ini. Lihat [](#keyboards).
 
+Dalam mode penjelajahan, tombol penelusuran cepat bersama huruf atau angka berpindah ke item berikutnya yang diawali huruf atau angka tersebut. **Pintasan keyboard** > **Penelusuran cepat** > **Tombol penelusuran cepat** memilih tombolnya; nonaktif secara default. Lihat [](#keyboards-fast-search).
+
 Setelan berikut berada di layar **Navigasi**:
 
 - **Mode penjelajahan cerdas**: mengaktifkan atau menonaktifkan mode penjelajahan untuk item yang difokuskan. Aktif secara default. SandFly mengaktifkan mode penjelajahan saat fokus berpindah ke item di konten web. SandFly menonaktifkannya di kolom teks dan di kontrol yang menggunakan tombol panah, seperti penggeser, kotak daftar, bilah menu, menu, tampilan pohon, kisi, kotak kombinasi, dan tombol putar. Jika perintah keyboard memindahkan fokus SandFly ke salah satu item tersebut, fokus input juga berpindah ke sana. Jika Anda menonaktifkan mode penjelajahan sendiri di konten web, memindahkan fokus di dalam konten web tidak akan mengaktifkannya kembali. Mode penjelajahan juga dinonaktifkan saat fokus input berpindah ke kolom teks atau penggeser di aplikasi.

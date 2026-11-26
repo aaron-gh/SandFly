@@ -21,6 +21,7 @@ Het scherm **Scripts** heeft ook:
 
 - **Alle scripts uitschakelen**: stopt alle scripts. Scripts blijven geïnstalleerd en houden hun eigen schakelaars.
 - **Nieuw script**: maakt een script in de scriptbouwer. Zie [](#scripts-builder).
+- **Nieuw script uit code**: installeert een script dat je als code invoert. Zie [](#scripts-code).
 - **Script bouwen met SandFly Pro**: SandFly Pro schrijft een script op basis van je beschrijving. Zie [](#scripts-builder-pro).
 - **Script importeren**: installeert een scriptbestand. Zie [](#scripts-install).
 - **Scriptbronnen**: toont de plekken om scripts te vinden. Zie [](#scripts-sources).
@@ -81,7 +82,10 @@ Ga naar **Scripts** en selecteer het script. Zijn pagina heeft:
 - **Aanzetten**: zet het script aan of uit.
 - **Blijven uitvoeren met scherm uit**: houdt het script actief terwijl het scherm uit staat, zoals voor een sprekende klok. Dit wordt alleen getoond voor scripts die het aanbieden, en staat uit als je het script installeert.
 - De naam, beschrijving, versie en auteur van het script, en waar het werkt.
+- **Code bekijken**: toont het bestand `main.lua` van het script, met het manifest. Zie [](#scripts-code).
+- **Code bewerken**: wijzigt de code van het script. Dit wordt niet getoond voor scripts die in de scriptbouwer zijn gemaakt. Zie [](#scripts-code).
 - **Bewerken in scriptbouwer**, voor een script gemaakt in de scriptbouwer, of **Kopiëren naar scriptbouwer** voor andere scripts. Zie [](#scripts-builder-manage).
+- **Wijzigen met SandFly Pro**: getoond voor een script gemaakt in de scriptbouwer, met SandFly Pro. Zie [](#scripts-builder-pro).
 - **Compatibiliteit**: getoond als het script is gemaakt voor een andere versie van SandFly.
 - **Startpagina openen**: opent de webpagina van het script, nadat je het adres bevestigt.
 - **Instellingen**: de instellingen van het script, als het die heeft.
@@ -91,6 +95,20 @@ Ga naar **Scripts** en selecteer het script. Zijn pagina heeft:
 - **Logboek**: de uitvoer en fouten van het script sinds SandFly is gestart. Zie [](#scripts-log).
 - **Opgeslagen gegevens wissen**: verwijdert de gegevens die het script heeft opgeslagen.
 - **Verwijderen**: verwijdert het script, met zijn code, gegevens en instellingen, nadat je bevestigt.
+
+#### Bekijk en bewerk de code van een script {#scripts-code}
+
+**Code bekijken**, op de pagina van een script, toont het bestand `main.lua`, met het manifest aan het begin, als tekst die je per regel, woord en teken kunt lezen en kunt selecteren.
+
+**Code bewerken**, op de pagina van een script dat niet in de scriptbouwer is gemaakt, opent hetzelfde bestand in een tekstveld. **Opslaan** controleert de code zoals **Script importeren** een scriptbestand controleert, en vervangt de code van het geïnstalleerde script. Het script behoudt de schakelaar, machtigingen, gebaren, toetsen, instellingen en opgeslagen gegevens, en wordt opnieuw uitgevoerd met de nieuwe code. De `id` in het manifest moet gelijk blijven. Als de code machtigingen aanvraagt die het script niet had, toont het installatiedialoogvenster die eerst. Zie [](#scripts-install-dialog). De andere bestanden van een script uit een `.zip`-bestand blijven zoals ze zijn.
+
+**Nieuw script uit code**, op het scherm **Scripts**, opent een leeg tekstveld. Voer een volledig bestand `main.lua` in, met `local manifest = { ... }` voor de code, en selecteer **Opslaan**. SandFly controleert de code zoals een scriptbestand en toont het installatiedialoogvenster. Een manifest met de `id` van een geïnstalleerd script werkt dat script bij.
+
+Als de code niet kan worden geïnstalleerd, toont **Script niet opgeslagen** de reden, en blijft de code open om te wijzigen. Als je teruggaat met wijzigingen die niet zijn opgeslagen, opent **Wijzigingen verwijderen?**: kies **Verwijderen** of **Verder bewerken**.
+
+Met **Scripts automatisch bijwerken** aan vervangt een nieuwere versie uit de bron van het script code die met **Code bewerken** is gewijzigd. Zie [](#scripts-updates).
+
+Om scripts te schrijven, zie [](#api-scripting).
 
 #### Scriptmachtigingen {#scripts-permissions}
 

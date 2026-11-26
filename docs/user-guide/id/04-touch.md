@@ -55,7 +55,7 @@ Secara default, menyentuh layar menghentikan ucapan. Agar ucapan tetap berlanjut
 
 ### Mengunci sentuhan {#touch-lock}
 
-Saat sentuhan dikunci, sentuhan dan gerakan di layar tidak melakukan apa pun, dan tidak ada yang diteruskan ke aplikasi. Tombol fisik, perintah tombol volume, gerakan sidik jari, ketuk belakang, dan goyangkan tetap berfungsi. Kunci sentuhan memerlukan Android 13 atau yang lebih baru serta **Setelan developer** > **Kelola gerakan di SandFly**.
+Saat sentuhan dikunci, sentuhan dan gerakan di layar tidak melakukan apa pun, dan tidak ada yang diteruskan ke aplikasi. Tombol fisik, perintah tombol volume, gerakan sidik jari, ketuk belakang, dan goyangkan tetap berfungsi. Perintah yang menyentuh layar, seperti **Aktifkan dengan ketukan**, **Tahan sentuhan pada item yang difokuskan**, dan sentuhan di makro, tetap diteruskan ke aplikasi. Kunci sentuhan memerlukan Android 13 atau yang lebih baru serta **Setelan developer** > **Kelola gerakan di SandFly**.
 
 Untuk mengunci atau membuka kunci sentuhan, gunakan perintah **Kunci atau buka kunci sentuhan**. SandFly mengucapkan "Sentuhan dikunci" atau "Kunci sentuhan dibuka". Tetapkan perintah ini ke penekanan tombol volume, pintasan keyboard, atau ketuk belakang, agar Anda dapat membuka kunci sentuhan tanpa menggunakan layar. Lihat [](#buttons) dan [](#gestures-back-tap). Menekan kedua tombol volume bersamaan selalu membuka kunci sentuhan.
 
@@ -105,7 +105,7 @@ Untuk aplikasi yang menggambar keyboard-nya sendiri, aktifkan pengetikan langsun
 
 #### Keyboard yang berbicara {#touch-direct-touch-keyboards}
 
-Keyboard yang berbicara sendiri, seperti aplikasi keyboard braille, membutuhkan sentuhan di setiap aplikasi. Aktifkan di daftar **Aplikasi**. Saat keyboard tersebut tampil, sentuhan di atasnya langsung diteruskan ke keyboard di aplikasi mana pun, sementara bagian layar lainnya tetap ditangani SandFly.
+Keyboard yang berbicara sendiri, seperti aplikasi keyboard braille, membutuhkan sentuhan di setiap aplikasi. Aktifkan di daftar **Aplikasi**. Saat keyboard tersebut tampil, sentuhan di atasnya langsung diteruskan ke keyboard di aplikasi mana pun, sementara bagian layar lainnya tetap ditangani SandFly. Keyboard yang menggambar tombolnya di overlay aksesibilitas dan memiliki layanan aksesibilitas sendiri yang aktif tetap mendapatkan area sentuh yang ditetapkannya, tanpa harus ada di daftar.
 
 #### Aplikasi yang memilih area sentuhan langsungnya sendiri {#touch-direct-touch-areas}
 
@@ -128,7 +128,7 @@ Dengan izin tersebut, SandFly mengucapkan "Memperbaiki eksplorasi sentuhan", men
 
 Tanpa izin tersebut, atau di ponsel lain, SandFly hanya dapat memberi tahu bahwa eksplorasi sentuhan mungkin macet dan Anda perlu memulai ulang ponsel. Menjelajahi area tanpa item yang bisa dibaca, seperti gim, juga tidak menemukan item, sehingga peringatan ini dapat muncul secara keliru paling sering sekali setiap 10 menit.
 
-Jika layar mati selama sentuhan, Android dapat tetap menganggap jari yang sudah diangkat masih menempel, sehingga hanya eksplorasi sentuhan yang berfungsi: gerakan dan ketuk dua kali tidak melakukan apa pun. SandFly mendeteksi hal ini saat layar mati selama sentuhan, atau saat dua sentuhan berturut-turut berakhir sebagai eksplorasi sentuhan, lalu menonaktifkan dan mengaktifkan kembali eksplorasi sentuhan. Hal ini tidak bergantung pada **Perbaiki eksplorasi sentuhan yang macet** atau izin DUMP.
+Jika layar mati selama sentuhan, Android dapat tetap menganggap jari yang sudah diangkat masih menempel, sehingga hanya eksplorasi sentuhan yang berfungsi: gerakan dan ketuk dua kali tidak melakukan apa pun. SandFly mendeteksi hal ini saat layar mati selama sentuhan, atau saat dua sentuhan berturut-turut berakhir sebagai eksplorasi sentuhan, lalu menonaktifkan dan mengaktifkan kembali eksplorasi sentuhan. Sentuhan yang berakhir karena jari berikutnya menyentuh layar, seperti saat mengetik cepat, tidak dihitung. Hal ini tidak bergantung pada **Perbaiki eksplorasi sentuhan yang macet** atau izin DUMP.
 
 ### Mereset semua setelan penundaan {#touch-reset-delays}
 

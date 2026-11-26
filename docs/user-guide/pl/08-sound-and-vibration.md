@@ -58,6 +58,7 @@ Poniższe nazwy znajdziesz w ustawieniach **Poszczególne dźwięki i wibracje**
 | **Błąd pisowni** | W tekście jest źle napisane słowo. |
 | **Link** | W tekście jest link. |
 | **Sformatowany tekst** | Tekst ma formatowanie, np. pogrubienie. |
+| **Emoji** | Po emoji, gdy w opcji **Szczegółowość** > **Po nazwach emoji** wybrano **Odtwórz dźwięk**. Brak wbudowanej wibracji. Motyw dźwiękowy może ją dodać. Zobacz [](#verbosity-emoji). |
 | **Ekran wyłączony** i **Ekran włączony** | Ekran się wyłącza lub włącza. |
 | **Ekran ukryty** i **Ekran pokazany** | Ekran zostaje ukryty lub ponownie pokazany. Zobacz [](#display). |
 | **Wczytywanie** | Trwa wczytywanie opisu lub innego wyniku. |
@@ -153,6 +154,8 @@ Każdy dźwięk używanego motywu możesz zastąpić plikiem. Jeśli chcesz zmie
 3. Wybierz dźwięk. Tytuł okna podaje nazwę dźwięku i nazwę jego pliku, np. „Kliknięcie (tick)”.
 4. Wybierz jedną z opcji.
    - **Wybierz plik dźwiękowy** otwiera systemowy wybór plików. Plik może mieć do 5 MB i być w formacie WAV, OGG, MP3 lub FLAC.
+   - **Wybierz z folderu** pokazuje pliki dźwiękowe i podfoldery wybranego folderu. Za pierwszym razem otwiera się systemowy wybór folderu. Zobacz [](#sound-themes-folder).
+   - **Zmień folder** otwiera systemowy wybór folderu, w którym wskażesz inny folder dla **Wybierz z folderu**. Opcja jest widoczna po wybraniu folderu.
    - **Odsłuchaj** odtwarza dźwięk.
    - **Brak dźwięku** wycisza to zdarzenie.
    - **Użyj dźwięku SandFly** przywraca wbudowany dźwięk.
@@ -160,6 +163,18 @@ Każdy dźwięk używanego motywu możesz zastąpić plikiem. Jeśli chcesz zmie
 W podsumowaniu każdego dźwięku jest **Dźwięk SandFly**, **Dźwięk tematu** lub **Brak dźwięku**. Te same działania są w menu czynności dźwięku pod nazwami **Odsłuchaj**, **Ustaw brak dźwięku**, **Użyj dźwięku SandFly** i **Wybierz plik dźwiękowy**. Opcja **Przywróć wszystkie dźwięki SandFly** usuwa zmiany dźwięków motywu i przywraca wbudowane.
 
 Na tej liście znajdziesz również dźwięki spoza ekranu **Poszczególne dźwięki i wibracje**. **Zmiana głośności** jest odtwarzana przy każdym kroku regulacji, gdy w opcji **Informacja zwrotna o zmianie głośności** wybrano sygnał. Zobacz [](#buttons). Dźwięki klawiatury brajlowskiej słychać po włączeniu **Dźwięki pisania** w jej ustawieniach. Zobacz [](#braille).
+
+#### Wybierz dźwięki z folderu {#sound-themes-folder}
+
+**Wybierz z folderu** pokazuje zawartość jednego folderu w telefonie. Wybierz dźwięk, a potem **Wybierz z folderu**. Za pierwszym razem wskaż folder w systemowym wyborze folderu.
+
+Lista pokazuje najpierw podfoldery, a potem pliki dźwiękowe, w obu grupach według nazwy. Z jednego folderu wyświetla się do 2000 pozycji.
+
+- Plik, na którym jest fokus ułatwień dostępu, jest odtwarzany. Przeniesienie fokusu z pliku zatrzymuje odtwarzanie.
+- Wybierz plik, aby użyć go dla dźwięku.
+- Wybierz podfolder, aby wyświetlić jego zawartość. **Folder nadrzędny** lub Wstecz wraca do folderu wyżej.
+
+Jeśli folder zostanie usunięty albo SandFly nie może go już odczytać, systemowy wybór folderu otworzy się ponownie.
 
 #### Utwórz motyw dźwiękowy {#sound-themes-create}
 

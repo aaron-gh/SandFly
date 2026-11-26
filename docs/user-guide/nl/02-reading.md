@@ -57,6 +57,10 @@ Met **Navigatie** > **Rondgaan** aan, wat de standaard is, gaat een swipe voorbi
 
 Wanneer de leesinstelling **Acties** is geselecteerd, voert een dubbeltik de daarin gekozen actie uit. Zie [](#reading-controls).
 
+Met **Typen** > **Dubbeltikken verplaatst cursor naar begin of einde** aan verplaatst een dubbeltik op het tekstveld waarin je typt de cursor naar het begin of einde van de tekst. Zie [](#typing-double-tap-cursor).
+
+**Activeren** doet in al deze gevallen wat een dubbeltik doet, welk gebaar, welke spraakopdracht, welk braillecommando of welk script de opdracht ook uitvoert.
+
 **Activeren met een tik**, een opdracht zonder gebaar standaard, tikt op het midden van het gefocuste item op het scherm, voor items die alleen reageren op een vinger op het scherm. Dit heeft Android 11 of hoger nodig; anders wordt het item als gewoonlijk geactiveerd.
 
 Om items te activeren door je vinger op te tillen of met een enkele tik, zie [](#touch).
@@ -69,6 +73,7 @@ Een leesinstelling bepaalt wat een swipe omhoog of omlaag doet. De meeste leesin
 - Om de vorige leesinstelling te selecteren, swipe omhoog en dan omlaag, swipe met drie vingers naar links of omhoog, of draai tegen de klok in.
 - Om de eerste leesinstelling van de gebruikte lijst te selecteren, wijs je een gebaar of sneltoets toe aan **Eerste leesinstelling**. Deze heeft er standaard geen.
 - Om op de geselecteerde leesinstelling te bewegen, swipe omlaag om vooruit te gaan en omhoog om terug te gaan. Dit zijn de opdrachten **Leesinstellingen lager of vooruit verplaatsen** en **Leesinstellingen hoger of achteruit verplaatsen**.
+- Bij leesinstellingen die een waarde wijzigen, zoals **Schuifregelaar aanpassen**, **Waarde aanpassen** en **Spreeksnelheid**, bepaalt de richting van de swipe de wijziging, welke van de twee opdrachten de swipe ook uitvoert: een swipe omhoog of naar rechts verhoogt de waarde, een swipe omlaag of naar links verlaagt deze. Dit geldt voor rechte swipes met één tot vier vingers. Bij een taal die van rechts naar links wordt geschreven, verhoogt een swipe naar links de waarde en verlaagt een swipe naar rechts deze. Bij andere gebaren, sneltoetsen en opdrachten van een brailleleesregel verhoogt **Leesinstellingen hoger of achteruit verplaatsen** de waarde en verlaagt **Leesinstellingen lager of vooruit verplaatsen** deze.
 
 SandFly spreekt de naam van elke leesinstelling uit terwijl je deze selecteert. Naar rechts en links swipen beweegt per item, welke leesinstelling ook is geselecteerd, behalve met **Rijen en kolommen** in een tabel.
 
@@ -85,7 +90,7 @@ Deze leesinstellingen bewegen door de tekst van het gefocuste item, en dan door 
 - **Tekens**: één teken tegelijk.
 - **Woorden**: één woord tegelijk.
 - **Regels**: één regel tegelijk.
-- **Zinnen**: één zin tegelijk. Een zin eindigt bij een zinsleesteken, waaronder Chinese 。！？, en aan het einde van een regel. Op webpagina's wordt een zin die doorloopt in een ander item, zoals een link daarbinnen, in delen voorgelezen. Niet standaard in de lijst, en niet beschikbaar in selectiemodus.
+- **Zinnen**: één zin tegelijk. Een zin eindigt bij een zinsleesteken, waaronder Chinese 。！？, en aan het einde van een regel. Op webpagina's wordt een zin die doorloopt in een ander item, zoals een link daarbinnen, in delen voorgelezen. Niet standaard in de lijst, en niet beschikbaar in selectiemodus. De opdrachten **Volgende zin** en **Vorige zin**, in de categorie **Navigeren op tekst**, bewegen per zin zonder de leesinstelling.
 - **Alinea's**: één alinea tegelijk.
 
 In een tekstveld dat wordt bewerkt, bewegen deze leesinstellingen de cursor, en blijven swipes in het veld. Voor het bewerken van tekst, zie [](#typing).
@@ -137,15 +142,17 @@ SandFly houdt het scherm aan terwijl het leest.
 Naar rechts en links swipen scrolt lijsten zelf wanneer het volgende item buiten beeld is. Je kunt ook zelf scrollen:
 
 - Om vooruit te scrollen, swipe naar rechts en dan naar links. Dit is **Vooruit scrollen**.
-- Om terug te scrollen, swipe naar links en dan naar rechts. Dit is **Terug scrollen**. Boven aan een lijst trekt **Terug scrollen** de lijst omlaag, wat deze in de meeste apps vernieuwt.
+- Om terug te scrollen, swipe naar links en dan naar rechts. Dit is **Terug scrollen**. Boven aan een lijst trekt **Terug scrollen** de lijst omlaag, wat deze in de meeste apps vernieuwt. Omlaag trekken heeft Android 13 of hoger nodig.
 - Om de app direct te scrollen, sleep twee vingers over het scherm, zoals je zonder SandFly één vinger zou slepen.
 
 In de standaardgebarenindeling gaan swipes met twee vingers naar de app en scrollen deze. Met **Gebaren** > **Swipes met twee vingers in SandFly verwerken** aan, zoals in de VoiceOver-gebarenindeling, voeren swipes met twee vingers in plaats daarvan opdrachten uit: standaard **Omhoog scrollen**, **Omlaag scrollen**, **Naar links scrollen** en **Naar rechts scrollen**, die de inhoud in de richting van de swipe bewegen. Als geen enkel item op het scherm zijwaarts scrolt, sturen **Naar links scrollen** en **Naar rechts scrollen** een swipe met één vinger naar de pager rond het gefocuste item, zoals de maptabbladen in Solid Explorer. Deze vier opdrachten hebben Android 11 of hoger nodig, en staan niet op horloges.
 
+Als niets op het scherm in die richting kan scrollen, zoals aan het einde van een lijst, spelen **Vooruit scrollen**, **Terug scrollen** en deze vier opdrachten het geluid **Actie voltooid of einde bereikt** af. Boven aan een lijst trekken **Terug scrollen** en **Omlaag scrollen** de lijst in plaats daarvan omlaag, zonder geluid. Vanaf een brailleleesregel spelen **Vooruit scrollen** en **Terug scrollen** in plaats daarvan het geluid **Braille-opdracht mislukt** af.
+
 Deze opdrachten, in de categorie **Scrollen**, hebben standaard geen gebaar:
 
 - **Naar boven scrollen** en **Naar beneden scrollen** scrollen de lijst die focus heeft naar het begin of einde, een pagina per keer, en focussen dan het eerste of laatste item. Een aanraking, gebaar of toets stopt ze. Niet op horloges.
-- **Vernieuwen** scrolt de lijst naar boven en trekt deze omlaag. Dit heeft Android 11 of hoger nodig.
+- **Vernieuwen** scrolt de lijst naar boven en trekt deze omlaag. Dit heeft Android 13 of hoger nodig.
 
 Terwijl je met twee vingers scrolt, speelt SandFly het scrollgeluid en een lichte trilling voor elk item dat voorbij scrolt. De toonhoogte van het scrollgeluid stijgt van boven naar onder in de lijst. Scrolls die SandFly maakt om het volgende item te bereiken, maken geen geluid. Voor geluids- en trillingsinstellingen, zie [](#sound).
 

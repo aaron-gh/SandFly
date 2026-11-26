@@ -5,6 +5,8 @@
 - **Gebruikershandleiding**: deze handleiding. Zie [](#getting-started-user-guide).
 - **SandFly-tutorial**: de interactieve tutorial. Zie [](#help-tutorial).
 - **Gebaren oefenen**: de gebaaroefenles van de tutorial. Zie [](#help-tutorial).
+- **Toetsenbordoefening**: zet toetsenbordoefening aan. SandFly zegt elke ingedrukte toets en de opdracht ervan, en voert niets uit. Beschikbaar terwijl SandFly aan staat; niet getoond op horloges. Zie [](#keyboards-practice).
+- **Gebarentrainer**: oefeningen die gebaren meten aan de grenzen die SandFly gebruikt. Niet getoond op horloges en tv's. Zie [](#gestures-trainer).
 - **Feedback sturen**: probleemrapporten en suggesties aan de ontwikkelaar van SandFly, en de antwoorden. Zie [](#help-feedback).
 - **Versiegeschiedenis**: de releasenotities van elke SandFly-release. Zie [](#help-version-history).
 - **Privacybeleid**: het privacybeleid van SandFly. Zie [](#help-version-history).
@@ -13,7 +15,7 @@ De instellingen voor ontwikkelaars en voor het vinden van problemen staan in **O
 
 ### Tutorial en gebaren oefenen {#help-tutorial}
 
-**Hulp en feedback** > **SandFly-tutorial** opent de SandFly-tutorial bij de les waar je was. Op een apparaat met een aanraakscherm en een fysiek toetsenbord wordt eerst gevraagd om **Tutorial over aanraakbediening** of **Tutorial over toetsenbordbediening**. Voor de lessen en hoe de tutorial werkt, zie [](#getting-started-tutorial).
+**Hulp en feedback** > **SandFly-tutorial** opent de SandFly-tutorial bij de les waar je was. Op een apparaat met een aanraakscherm en een fysiek toetsenbord biedt SandFly eerst **Tutorial over aanraakbediening** en **Tutorial over toetsenbordbediening** aan. Voor de lessen en hoe de tutorial werkt, zie [](#getting-started-tutorial).
 
 **Hulp en feedback** > **Gebaren oefenen** opent **Gebaren oefenen**, waar elk gebaar de naam en de opdracht noemt die erin is toegewezen, zonder de opdracht uit te voeren. Om deze te verlaten, ga je naar **Oefenen beëindigen** en activeer je dit.
 
@@ -60,7 +62,9 @@ Een rapport bevat altijd de velden die je hebt ingevuld en de versie en het buil
 - Het logboek van SandFly vanaf het moment dat je **Feedback sturen** hebt geopend, zodat het probleem dat je wilt rapporteren er nog in staat. In gesplitst scherm wordt het logboek gelezen wanneer je **Verzenden** kiest, zodat je het probleem eerst in de andere app kunt laten optreden.
 - De laatste gebaren die SandFly heeft herkend.
 - De laatste crash en het laatste moment dat SandFly uitging, en tijden waarop SandFly even niet reageerde.
-- De toegankelijkheidsservices die aan staan, en de laatste keren dat op de volumetoetsen is gedrukt.
+- De toegankelijkheidsservices die aan staan, en de laatste keren dat op de volumetoetsen en de Enter-toets is gedrukt.
+- De laatste aankondigingen, meldingen, toasts en vensternamen die apps hebben gestuurd, met de app die elk ervan stuurde en het begin van de tekst.
+- Waar de focus na Terug naartoe ging, de tijd die het controleren van de voorwaarden in **Alleen tonen in Acties als** van macro's kost, wat audio afspeelt en opneemt, en typen vanuit de Gboard-pop-up met alternatieve tekens.
 - De logboeken van de andere processen van SandFly, zoals AI op het apparaat.
 
 Om een probleem snel na het optreden te rapporteren, open je **Feedback sturen** voordat je iets anders doet, zodat het logboek het nog bevat.
@@ -97,16 +101,16 @@ De opdracht **AI-antwoord melden** opent een nieuw rapport met de laatste tekst 
 **Ontwikkelaarsinstellingen** heeft instellingen voor het vinden van problemen en voor ontwikkeling. Sommige hiervan schrijven de inhoud van het scherm naar het systeemlogboek, dat andere apps met toegang tot logboeken kunnen lezen. Laat ze uit, behalve als je ze nodig hebt.
 
 - **Versiecode**: de versie van SandFly en de versiecode. Op Android 11 en eerder wordt de versie in plaats daarvan onder de titel van het scherm getoond.
-- **Diagnosemodus**: standaard uit. Een tik met 4 vingers schrijft de inhoud van het scherm naar het systeemlogboek. Terwijl de modus aan staat, werken **Spraakuitvoer tonen**, **Herkende spraak herhalen**, **Foutopsporing voor knooppuntstructuren aanzetten** en **Overlay met foutopsporingslogboek aanzetten** alsof ze aan staan, en kunnen deze en **Niveau van logoutput** niet worden gewijzigd. SandFly vraagt je om dit te bevestigen.
+- **Diagnosemodus**: standaard uit. Een tik met 4 vingers schrijft de inhoud van het scherm naar het systeemlogboek. Terwijl de modus aan staat, werken **Spraakuitvoer tonen**, **Herkende spraak herhalen**, **Foutopsporing voor knooppuntstructuren aanzetten** en **Overlay met foutopsporingslogboek aanzetten** alsof ze aan staan, en kunnen deze en **Niveau van logoutput** niet worden gewijzigd. SandFly toont een bevestigingsdialoogvenster. SandFly vraagt je om dit te bevestigen.
 - **Spraakuitvoer tonen**: standaard uit. Toont de tekst die SandFly uitspreekt op het scherm.
 - **Gebaren verwerken in SandFly**: standaard aan. SandFly herkent gebaren zelf in plaats van dit aan Android over te laten. Veel gebaarfuncties van SandFly hebben dit nodig. Zet SandFly uit en weer aan nadat je dit wijzigt. Wordt niet getoond op tv's.
 - **AI-geheugenlimieten op het apparaat negeren**: standaard uit. Toont elk AI-model op het apparaat, ook modellen die meer geheugen nodig hebben dan het apparaat heeft, en laadt een model zonder op vrij geheugen te controleren. Zie [](#descriptions).
 - **Herkende spraak herhalen**: standaard uit. SandFly spreekt de tekst uit die het heeft herkend van een spraakopdracht. Zie [](#voice-commands).
-- **Prestatiestatistieken aanzetten**: standaard uit. SandFly verzamelt tijdstatistieken, die de opdracht **Prestatiestatistieken afdrukken** naar het systeemlogboek schrijft. Gebruikt meer geheugen en stroom. SandFly vraagt je om dit te bevestigen.
-- **Verkennen via aanraking**: standaard aan. Dit uitzetten laat SandFly stoppen met het voorlezen van items die je aanraakt en het behandelen van gebaren. SandFly vraagt je om dit te bevestigen. Wordt niet getoond op tv's.
-- **Foutopsporing voor knooppuntstructuren aanzetten**: standaard uit. De opdracht **Knooppuntstructuur afdrukken** schrijft de boomstructuur van items op het scherm naar het systeemlogboek. Wanneer je dit aanzet, vraagt SandFly om **Knooppuntstructuur afdrukken** toe te wijzen aan een drietik met 4 vingers. Op een tv schrijft de zoekknop van de afstandsbediening de boomstructuur.
+- **Prestatiestatistieken aanzetten**: standaard uit. SandFly verzamelt tijdstatistieken, die de opdracht **Prestatiestatistieken afdrukken** naar het systeemlogboek schrijft. Gebruikt meer geheugen en stroom. SandFly toont een bevestigingsdialoogvenster.
+- **Verkennen via aanraking**: standaard aan. Dit uitzetten laat SandFly stoppen met het voorlezen van items die je aanraakt en het behandelen van gebaren. SandFly toont een bevestigingsdialoogvenster. Wordt niet getoond op tv's.
+- **Foutopsporing voor knooppuntstructuren aanzetten**: standaard uit. De opdracht **Knooppuntstructuur afdrukken** schrijft de boomstructuur van items op het scherm naar het systeemlogboek. Wanneer je dit aanzet, biedt een dialoogvenster aan om **Knooppuntstructuur afdrukken** toe te wijzen aan een drietik met 4 vingers. Op een tv schrijft de zoekknop van de afstandsbediening de boomstructuur.
 - **Overlay met foutopsporingslogboek aanzetten**: standaard uit. Toont het logboek van SandFly op het scherm.
-- **Niveau van logoutput**: hoeveel SandFly naar het systeemlogboek schrijft, van **NONE** tot **VERBOSE**. De standaardwaarde is **ERROR**. SandFly vraagt je om verbose-logging te bevestigen, wat persoonlijke informatie in het logboek kan plaatsen.
+- **Niveau van logoutput**: hoeveel SandFly naar het systeemlogboek schrijft, van **NONE** tot **VERBOSE**. De standaardwaarde is **ERROR**. Verbose-logging, wat persoonlijke informatie in het logboek kan plaatsen, moet worden bevestigd.
 - **Gebeurtenisregistratie voor toegankelijkheid filteren**: de soorten toegankelijkheidsgebeurtenissen die SandFly naar het systeemlogboek schrijft.
 
 Om een los item te inspecteren, en om de details van een item of de boomstructuur van het scherm te kopiëren, gebruik je de opdrachten die worden beschreven in [](#scripts).

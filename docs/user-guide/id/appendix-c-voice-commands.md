@@ -2,7 +2,7 @@
 
 Daftar ini berisi frasa bahasa Indonesia yang diterima SandFly sebagai perintah suara. Kata dengan huruf kapital mewakili kata yang Anda ucapkan sebagai penggantinya, seperti nama atau teks. Kata di dalam tanda kurung bersifat opsional, dan garis miring memisahkan kata yang dapat saling menggantikan: "deskripsikan (gambar/foto) (ini)" berarti "deskripsikan gambar", "deskripsikan foto", "deskripsikan gambar ini", atau "deskripsikan foto ini". Huruf besar/kecil dan tanda baca yang ditambahkan oleh pengenal ucapan tidak berpengaruh. Untuk cara memulai perintah suara, merangkai perintah, dan membuat frasa Anda sendiri, lihat [](#voice-commands).
 
-Selain frasa-frasa ini, Anda dapat mengucapkan nama perintah apa pun sebagaimana ditampilkan di layar **Perintah**, seperti "Baca dari atas", "Item berikutnya", atau "Deskripsikan gambar", termasuk nama makro, menu kustom, dan perintah skrip. Perintah suara kustom diprioritaskan di atas semua frasa di sini. Lihat [](#voice-commands-phrases).
+Selain frasa-frasa ini, Anda dapat mengucapkan nama perintah apa pun sebagaimana ditampilkan di layar **Perintah**, seperti "Baca dari atas", "Item berikutnya", atau "Deskripsikan gambar", termasuk nama makro, menu kustom, dan perintah skrip. Nama aplikasi membuka aplikasi tersebut, kecuali jika ada perintah dengan nama itu. Perintah suara kustom diprioritaskan di atas semua frasa di sini. Lihat [](#voice-commands-phrases).
 
 Beberapa frasa dikenali di bagian mana pun dari ucapan Anda: frasa tersebut ditandai dengan "frasa yang mengandung". Misalnya, "ke paling atas" mengandung "atas" dan berpindah ke item pertama.
 
@@ -50,13 +50,36 @@ Frasa ini berlaku pada kolom teks yang difokuskan.
 | Ucapkan | Yang terjadi |
 | --- | --- |
 | "Ketik TEKS", atau "tulis TEKS", "masukkan TEKS", "input TEKS", "dikte TEKS", atau "eja TEKS" | Mengetikkan teks tersebut. |
+| "Baris baru", atau "paragraf baru" atau "tekan enter" | Mengetikkan baris baru di kolom teks dengan beberapa baris, atau menjalankan tindakan kolom satu baris. |
 | "Pilih semua" | Memilih semua teks. |
 | "Pilih", atau "mulai memilih", "mulai pemilihan", atau "mulai mode pemilihan" | Memulai mode pemilihan. |
 | "Selesai memilih", atau "selesaikan pemilihan", "selesaikan mode pemilihan", atau "berhenti memilih" | Mengakhiri mode pemilihan. |
-| Frasa yang mengandung "salin" | Menyalin teks yang dipilih. |
-| Frasa yang mengandung "potong" | Memotong teks yang dipilih. |
+| Frasa yang mengandung "salin" | Menyalin teks yang dipilih. Jika kolom teks difokuskan, lihat [](#appendix-voice-commands-text). |
+| Frasa yang mengandung "potong" | Memotong teks yang dipilih. Jika kolom teks difokuskan, lihat [](#appendix-voice-commands-text). |
 | Frasa yang mengandung "tempel" | Menempelkan isi papan klip. |
-| Frasa yang mengandung "hapus" | Menghapus teks yang dipilih. |
+| Frasa yang mengandung "hapus" | Menghapus teks yang dipilih. Jika kolom teks difokuskan, lihat [](#appendix-voice-commands-text). |
+
+### Teks di kolom teks {#appendix-voice-commands-text}
+
+Frasa berikut berlaku pada teks di kolom teks yang memiliki fokus input. JUMLAH adalah angka dan "karakter", "kata", "kalimat", "baris", atau "paragraf", seperti "3 kata" atau "lima kata", atau salah satunya saja, seperti "kata". Angkanya 1 hingga 20 dalam bentuk kata, atau berupa digit. "Huruf" juga dapat digunakan untuk karakter. UNIT adalah "kata", "kalimat", "baris", "paragraf", atau "teks"; "kolom", "kolom teks", dan "dokumen" juga berarti teks. Untuk cara frasa menghitung dan apa yang diucapkan SandFly, lihat [](#voice-commands-text).
+
+| Ucapkan | Yang terjadi |
+| --- | --- |
+| "(Ke) JUMLAH berikutnya", atau "(ke) JUMLAH selanjutnya", "JUMLAH ke kanan", atau "maju JUMLAH" | Memindahkan kursor maju melewati unit tersebut. |
+| "(Ke) JUMLAH sebelumnya", atau "JUMLAH terakhir", "JUMLAH ke kiri", atau "mundur JUMLAH" | Memindahkan kursor mundur melewati unit tersebut. |
+| "(Ke) awal UNIT" | Memindahkan kursor ke awal unit. |
+| "(Ke) akhir UNIT" | Memindahkan kursor ke akhir unit. |
+| "Ke awal" | Memindahkan kursor ke awal teks. |
+| "Ke akhir" | Memindahkan kursor ke akhir teks. |
+| "Pindahkan (kursor) ke", atau "pindah ke" atau "ke", diikuti salah satu frasa di atas | Memindahkan kursor, seperti "pindahkan kursor ke 3 kata sebelumnya" atau "pindah ke akhir baris". |
+| "Pilih", atau "sorot" atau "blok", diikuti salah satu frasa di atas | Memilih teks dari kursor, seperti "pilih 2 kata berikutnya". |
+| "Salin", atau "copy", diikuti salah satu frasa di atas | Menyalin teks dari kursor, seperti "salin kalimat sebelumnya". |
+| "Potong", atau "cut", diikuti salah satu frasa di atas | Memotong teks dari kursor, seperti "potong ke akhir paragraf". |
+| "Hapus", atau "buang", diikuti salah satu frasa di atas | Menghapus teks dari kursor, seperti "hapus 5 kata terakhir". |
+| "Pilih TEKS", atau "sorot TEKS" atau "blok TEKS" | Memilih teks di kolom. Jika tidak ada, mengaktifkan item di layar dengan teks tersebut. |
+| "Salin TEKS", atau "copy TEKS" | Menyalin teks di kolom. |
+| "Potong TEKS", atau "cut TEKS" | Memotong teks di kolom. |
+| "Hapus TEKS", atau "buang TEKS" | Menghapus teks di kolom. |
 
 ### Ucapan {#appendix-voice-commands-speech}
 
@@ -102,7 +125,7 @@ Frasa ini berlaku pada kolom teks yang difokuskan.
 
 ### Panggilan dan pesan {#appendix-voice-commands-calls}
 
-NAMA adalah nama kontak atau nomor telepon. APLIKASI adalah nama aplikasi perpesanan, seperti WhatsApp. Tanpa menyebutkan aplikasi, atau dengan "SMS", "teks", "pesan teks", atau "pesan", pesan dikirim melalui aplikasi SMS default. Di aplikasi SMS dan WhatsApp, SandFly menulis pesan ke kontak tersebut, lalu menanyakan apakah akan mengirimnya. Aplikasi lain hanya menerima teksnya, dan Anda memilih chat di aplikasi tersebut.
+NAMA adalah nama kontak atau nomor telepon. APLIKASI adalah nama aplikasi perpesanan, seperti WhatsApp. Tanpa menyebutkan aplikasi, atau dengan "SMS", "teks", "pesan teks", atau "pesan", pesan dikirim melalui aplikasi SMS default. Di aplikasi SMS dan WhatsApp, SandFly menulis pesan ke kontak tersebut, lalu meminta konfirmasi sebelum mengirimnya. Aplikasi lain hanya menerima teksnya, dan Anda memilih chat di aplikasi tersebut.
 
 | Ucapkan | Yang terjadi |
 | --- | --- |
@@ -111,8 +134,9 @@ NAMA adalah nama kontak atau nomor telepon. APLIKASI adalah nama aplikasi perpes
 | "Pesan NAMA TEKS", atau "SMS NAMA TEKS", "kirim pesan ke NAMA TEKS", atau "kirim SMS ke NAMA TEKS" | Menulis pesan ke kontak yang disebut di awal. |
 | "Kirim pesan ke NAMA lewat APLIKASI yang berbunyi TEKS", atau "kirim pesan ke NAMA di APLIKASI yang berbunyi TEKS", "kirim pesan APLIKASI ke NAMA yang berbunyi TEKS", "kirim pesan ke NAMA lewat APLIKASI: TEKS", "pesan NAMA lewat APLIKASI TEKS", atau "beri tahu NAMA lewat APLIKASI TEKS" | Menulis pesan di aplikasi tersebut. |
 | "Kirim pesan APLIKASI ke NAMA" | Merekam teks, lalu menulis pesan di aplikasi tersebut. |
+| "Jawab panggilan" atau "Akhiri panggilan" | Menjalankan perintah dengan nama tersebut: menjawab panggilan masuk, atau menolaknya atau mengakhiri panggilan yang sedang berlangsung. |
 
-SandFly menanyakan "Kirim ke NAMA: TEKS?", atau "Kirim ke NAMA?" untuk deskripsi. Ucapkan "ya", "iya", "yap", "kirim", "kirim saja", "oke", "ok", "baik", "tentu", atau "lakukan" untuk menekan **Kirim**. Jawaban lain akan membiarkan pesan tidak terkirim, dan SandFly mengucapkan "Pesan tidak dikirim".
+SandFly mengucapkan "Kirim ke NAMA: TEKS?", atau "Kirim ke NAMA?" untuk deskripsi. Ucapkan "ya", "iya", "yap", "kirim", "kirim saja", "oke", "ok", "baik", "tentu", atau "lakukan" untuk menekan **Kirim**. Jawaban lain akan membiarkan pesan tidak terkirim, dan SandFly mengucapkan "Pesan tidak dikirim".
 
 ### Deskripsi {#appendix-voice-commands-descriptions}
 

@@ -196,6 +196,8 @@ Nagrywanie zatrzymuje się po 15 minutach lub po ustawionym przez Ciebie czasie 
 
 Domyślnie dwukrotne stuknięcie dwoma palcami uruchamia **Dyktuj, odtwórz lub wstrzymaj multimedia**. Gdy pole tekstowe ma fokus wprowadzania, klawiatura jest widoczna lub podłączona i nie trwa rozmowa, polecenie uruchamia **Dyktuj**. Jeśli dyktowanie jest w toku, zatrzymuje je. W pozostałych sytuacjach odtwarza lub wstrzymuje multimedia. Domyślne gesty znajdziesz w [](#appendix-gestures).
 
+Na telefonach z klawiszem wyciszenia, takich jak Zinwa Q25, przytrzymaj klawisz wyciszenia w polu tekstowym, aby dyktować. Nagrywanie zaczyna się po naciśnięciu klawisza i kończy po jego zwolnieniu. Odpowiada za to opcja **Klawisze głośności** > **Przytrzymaj klawisz wyciszenia, aby dyktować w polach tekstowych**, domyślnie włączona. Zobacz [](#buttons-mute-key).
+
 #### Wybierz sposób rozpoznawania mowy {#typing-speech-recognition}
 
 Otwórz **Pisanie** > **Dyktowanie** > **Rozpoznawanie mowy** i wybierz jedną z poniższych opcji.
@@ -287,4 +289,4 @@ Gdy klawiatura pisma ręcznego jest widoczna, działają tylko polecenia bez otw
 
 ### Klawiatury fizyczne {#typing-physical-keyboard}
 
-Przy podłączonej klawiaturze fizycznej w menu **Pisanie** > **Klawiatura fizyczna** znajdziesz **Klawisze liter naciskają przyciski klawiatury numerycznej**, **Enter wysyła wiadomości**, **Klawiatura SandFly**, **Wpisywanie po przytrzymaniu klawisza**, **Znaki podwójnego naciśnięcia**, **Podwójna spacja wstawia kropkę** i **Ustawienia klawiatury fizycznej Androida**. Wszystkie opisuje [](#keyboards).
+Przy podłączonej klawiaturze fizycznej w menu **Pisanie** > **Klawiatura fizyczna** znajdziesz **Klawisze liter naciskają przyciski klawiatury numerycznej**, **Enter wysyła wiadomości**, **Klawiatura SandFly**, **Wpisywanie po przytrzymaniu klawisza**, **Znaki podwójnego naciśnięcia**, **Podwójna spacja wstawia kropkę**, **Autokorekta**, **Podpowiedzi słów**, **Wypowiadaj podpowiedź**, **Enter wpisuje wypowiedzianą podpowiedź**, **Język listy słów**, **Usuń zapamiętane słowa**, **Odczytuj znaki hasła** i **Ustawienia klawiatury fizycznej Androida**. Wszystkie opisuje [](#keyboards).

@@ -58,6 +58,7 @@ Berikut daftar suara sesuai nama yang ditampilkan di **Suara dan getaran satu pe
 | **Salah eja** | Kata yang salah eja. |
 | **Tautan** | Tautan di dalam teks. |
 | **Teks berformat** | Teks berformat, seperti tebal. |
+| **Emoji** | Setelah emoji, saat **Panjang respons** > **Setelah nama emoji** disetel ke **Putar suara**. Tidak ada getaran bawaan; tema suara dapat memberinya getaran. Lihat [](#verbosity-emoji). |
 | **Layar mati** dan **Layar menyala** | Layar mati atau menyala. |
 | **Layar disembunyikan** dan **Layar ditampilkan** | Layar disembunyikan, atau ditampilkan kembali. Lihat [](#display). |
 | **Memuat** | Deskripsi atau hasil lain sedang dimuat. |
@@ -82,7 +83,7 @@ SandFly tidak memutar suara saat gerakan dimulai atau berakhir. Sebagai gantinya
 
 Suara **Tindakan tersedia** diputar untuk item yang memiliki tindakan dari aplikasinya selain tindakan standar, seperti Balas dan Teruskan pada pesan chat di aplikasi perpesanan. Mengaktifkan, menyentuh lama, menggulir, meluaskan, dan tindakan standar lainnya tidak dihitung, sehingga tombol biasa tidak memutar suara **Tindakan tersedia**. Tombol keyboard di layar juga tidak dihitung. Tindakan tersebut ada di kontrol pembacaan **Tindakan** dan di menu SandFly.
 
-SandFly tidak memberi suara ini getaran sendiri. Tema suara dapat memberinya getaran.
+Suara ini tidak memiliki getaran bawaan. Tema suara dapat memberinya getaran.
 
 **Suara dan getaran** > **Suara Tindakan tersedia** mengatur kapan suara ini diputar:
 

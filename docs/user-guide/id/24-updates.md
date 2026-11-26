@@ -80,9 +80,9 @@ Untuk mengembalikan catatan penginstal sebagai instalasi biasa, jalankan `adb in
 
 1. Instal Shizuku dan jalankan, sesuai petunjuk di aplikasi Shizuku. Pada Android 11 dan lebih baru, Shizuku dapat dijalankan dengan debugging nirkabel tanpa komputer. Pada perangkat yang di-root, Shizuku juga dapat dijalankan dengan root.
 2. Aktifkan SandFly, atau nonaktifkan lalu aktifkan kembali jika sudah aktif.
-3. Saat SandFly dimulai ketika Shizuku sedang berjalan, Shizuku akan menanyakan apakah akan mengizinkan SandFly. Pilih izinkan.
+3. Saat SandFly dimulai ketika Shizuku sedang berjalan, Shizuku menampilkan dialog untuk mengizinkan SandFly. Pilih izinkan.
 
-SandFly hanya meminta izin ke Shizuku satu kali secara otomatis. Setelah itu, fitur yang memerlukan Shizuku akan meminta izin saat Anda mengaktifkannya. Jika Anda sempat menolak SandFly dan memilih untuk tidak ditanya lagi, izinkan SandFly melalui aplikasi Shizuku.
+SandFly hanya meminta izin ke Shizuku satu kali secara otomatis. Setelah itu, dialog Shizuku terbuka saat Anda mengaktifkan fitur yang memerlukan Shizuku. Jika Anda sempat menolak SandFly dan memilih untuk tidak ditanya lagi, izinkan SandFly melalui aplikasi Shizuku.
 
 Shizuku yang dijalankan lewat debugging nirkabel atau adb akan berhenti saat perangkat dimulai ulang. Jalankan kembali di aplikasi Shizuku.
 
@@ -99,6 +99,8 @@ Tanpa Shizuku atau root, fitur-fitur berikut tidak tersedia atau bekerja secara 
 - Riwayat papan klip hanya dapat menambahkan teks yang disalin di aplikasi lain melalui Shizuku atau root, dengan **Tambahkan salinan dari aplikasi lain** di riwayat. Lihat [](#typing).
 - Gboard memutar umpan balik tombolnya sendiri, seperti **Bergetar saat tombol ditekan**, saat Anda menjelajahi tombolnya. Fitur ini hanya bekerja melalui Shizuku atau root. Lihat [](#typing).
 - Perintah yang menjalankan pintasan aksesibilitas milik layanan aksesibilitas lain. Lihat [](#commands).
+- Perintah **Kotak aplikasi** dan **Kotak sistem**, serta **Tambahkan kotak sistem** di setelan panel setelan cepat. Tanpa Shizuku atau root, kotak hanya berfungsi jika ada di setelan cepat sistem, dan **Tambahkan kotak sistem** mencari kotak di setelan cepat sistem. Lihat [](#commands-categories) dan [](#display-quick-settings).
+- Pintasan aplikasi yang ditambahkan aplikasi saat berjalan, dan pintasan yang hanya boleh dibuka oleh aplikasi layar utama, hanya dicantumkan melalui Shizuku atau root. Lihat [](#gestures-app-shortcuts).
 - Skrip dan makro yang menekan tombol atau mengetik teks saat tidak ada kolom teks, serta langkah makro yang mengubah kontrol setelan cepat di atas. Lihat [](#scripts) dan [](#macros).
 - **Update dan penginstalan** > **Tampak terinstal dari Google Play**. Lihat [](#updates-play-installer).
 
@@ -134,6 +136,6 @@ Perintah-perintah tersebut adalah:
 
 Pada perangkat yang di-root, SandFly dapat menjalankan perintahnya dengan root alih-alih Shizuku. Aktifkan **Shizuku dan root** > **Gunakan root sebagai pengganti Shizuku**. Setelan ini nonaktif secara default.
 
-SandFly kemudian menjalankan perintah melalui `su` sebagai pengguna shell, yaitu pengguna yang dipakai adb dan Shizuku. Pengelola root di perangkat, seperti Magisk atau KernelSU, akan menanyakan apakah akan memberikan akses root ke SandFly. Fitur yang memerlukan Shizuku akan menggunakan root saat setelan ini aktif, kecuali **Pintasan tombol volume saat layar mati**, yang tidak ditampilkan dalam mode root. Jika `su` tidak memberikan akses root, ringkasan dan layar terpisah akan mengucapkan "Tidak ada akses root".
+SandFly kemudian menjalankan perintah melalui `su` sebagai pengguna shell, yaitu pengguna yang dipakai adb dan Shizuku. Pengelola root di perangkat, seperti Magisk atau KernelSU, menampilkan dialog untuk memberikan akses root ke SandFly. Fitur yang memerlukan Shizuku akan menggunakan root saat setelan ini aktif, kecuali **Pintasan tombol volume saat layar mati**, yang tidak ditampilkan dalam mode root. Jika `su` tidak memberikan akses root, ringkasan dan layar terpisah akan mengucapkan "Tidak ada akses root".
 
 Catatan: Jika `su` pada perangkat tidak dapat menjalankan perintah sebagai pengguna shell, SandFly menjalankannya sebagai root. Menambahkan salinan dari aplikasi lain ke riwayat papan klip dan sakelar hotspot tidak akan berfungsi dalam kondisi tersebut.

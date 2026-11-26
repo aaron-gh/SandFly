@@ -131,7 +131,7 @@ Perintah **Setelan cepat sistem** membuka setelan cepat sistem meskipun **Gunaka
 
 Android hanya mengizinkan sistem dan shell mengubah beberapa setelan tertentu. Saat Shizuku berjalan, SandFly dapat mengaktifkan dan menonaktifkan sendiri Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, lokasi, NFC, penghemat baterai, tema gelap, penghemat data, serta akses mikrofon dan kamera, dan memberi dirinya sendiri izin yang diperlukan untuk kontrol lainnya. Tanpa Shizuku, sakelar-sakelar ini akan membuka halaman setelan Android terkait. Lihat [](#updates).
 
-Kotak milik sistem, serta kotak aplikasi tanpa Shizuku, hanya berfungsi jika kotak tersebut ada di setelan cepat sistem. SandFly membuka setelan cepat sistem, mengaktifkan kotak tersebut, menutupnya tanpa membacakannya, lalu menyebutkan status baru kotak itu. SandFly mengucapkan "<nama> tidak ada dalam setelan cepat sistem" jika tidak dapat menemukan kotaknya.
+SandFly mengaktifkan kotak aplikasi dan kotak sistem di setelan cepat sistem: SandFly membuka setelan cepat sistem, mengaktifkan kotak tersebut, menutupnya tanpa membacakannya, lalu menyebutkan status baru kotak itu. Tanpa Shizuku, kotak hanya berfungsi jika ada di setelan cepat sistem, dan SandFly mengucapkan "<nama> tidak ada dalam setelan cepat sistem" jika tidak dapat menemukan kotaknya. Saat Shizuku berjalan, SandFly terlebih dahulu menambahkan kotak aplikasi ke setelan cepat sistem jika belum ada di sana, dan mengaktifkannya melalui Shizuku jika kotak tersebut tidak ditemukan di sana.
 
 #### Memilih item yang ditampilkan di panel {#display-quick-settings-edit}
 
@@ -139,7 +139,7 @@ Buka **Setelan cepat** > **Panel setelan cepat**, atau pilih **Edit** di dalam p
 
 - **Tambahkan kontrol**: mencantumkan kontrol SandFly yang belum ada di panel: Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, penghemat data, Jangan Ganggu, modus suara, senter, kecerahan senter, lokasi, putar otomatis, penghemat baterai, tema gelap, Cahaya Malam, Ekstra redup, inversi warna, koreksi warna, NFC, akses mikrofon, akses kamera, kecerahan, kecerahan adaptif, batas waktu layar, ukuran font, ukuran tampilan, media, output media, volume media, volume panggilan, volume dering, volume notifikasi, volume alarm, volume aksesibilitas, volume sistem, alarm berikutnya, baterai, Setelan, dan menu daya. Kontrol yang tidak dimiliki ponsel tidak dicantumkan.
 - **Tambahkan kotak aplikasi**: mencantumkan kotak setelan cepat yang disediakan aplikasi terinstal.
-- **Tambahkan kotak sistem**: mencantumkan kotak dari setelan cepat sistem. Kotak sistem yang sudah memiliki kontrol SandFly, seperti Hotspot, ditambahkan sebagai kontrol tersebut. Jika Shizuku berjalan, SandFly membaca daftarnya dari sistem. Jika tidak, SandFly mencarinya di setelan cepat sistem, yang memerlukan beberapa detik.
+- **Tambahkan kotak sistem**: mencantumkan kotak dari setelan cepat sistem. Kotak sistem yang sudah memiliki kontrol SandFly, seperti Hotspot, ditambahkan sebagai kontrol tersebut. Jika Shizuku berjalan, SandFly memberi dirinya sendiri akses DUMP dan akses penggunaan, lalu membaca daftarnya dari sistem. Jika tidak, SandFly mencarinya di setelan cepat sistem, yang memerlukan beberapa detik.
 - **Jumlah kolom**: jumlah kolom dalam kisi, dari 1 hingga 4. Default-nya adalah 2.
 
 Untuk memindahkan atau menghapus item, ketuk dua kali item tersebut, atau gunakan tindakannya:

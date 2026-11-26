@@ -263,6 +263,7 @@ Di dalam daftar:
 - Grup ditampilkan sebagai satu item. Ketuk dua kali grup untuk menampilkan notifikasi di dalamnya.
 - Setiap notifikasi memiliki tindakannya sendiri. Jika aplikasi menyediakannya, ada juga kolom balas dengan tombol **Kirim**.
 - Notifikasi media menampilkan **Diputar** atau **Dijeda**, dengan **Sebelumnya**, **Putar** atau **Jeda**, dan **Berikutnya**.
+- Notifikasi tanpa teks, seperti notifikasi cuaca dengan tata letak sendiri, dibacakan dengan teks dari tata letaknya, atau jika tidak ada, dengan teks sub, teks info, atau teks ringkasannya.
 - Teks yang lebih panjang dari sekitar 160 karakter dipotong. Tindakan **Tampilkan semua** membacakan seluruh teks, dan **Tampilkan lebih sedikit** memotongnya kembali.
 - **Tutup** menghapus satu notifikasi, dan **Hapus semua** menghapus semua notifikasi yang dapat dihapus.
 - **Setelan cepat** membuka setelan cepat.

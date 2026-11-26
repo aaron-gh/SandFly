@@ -24,7 +24,7 @@ Polecenie **Użyj polecenia głosowego** jest też w grupie **Czynności systemo
 SandFly sprawdza to, co powiesz, w następującej kolejności.
 
 1. Szuka zwrotu zapisanego we własnych poleceniach głosowych. Zobacz [](#voice-commands-custom).
-2. Szuka nazwy polecenia takiej jak na ekranie **Polecenia**, np. **Czytaj od góry**, **Opisz obraz** albo **Następny nagłówek**. Możesz też powiedzieć nazwę swojego makra, menu lub polecenia skryptu. Zobacz [](#commands-list).
+2. Szuka nazwy polecenia takiej jak na ekranie **Polecenia**, np. **Czytaj od góry**, **Opisz obraz** albo **Następny nagłówek**. Możesz też powiedzieć nazwę swojego makra, menu lub polecenia skryptu. Nazwa aplikacji, np. „Gmail”, otwiera aplikację, chyba że polecenie ma taką nazwę. Zobacz [](#commands-list).
 3. Próbuje dopasować wzorzec wypowiedzi, np. „otwórz Chrome”, „wybierz Ustawienia”, „zadzwoń do Alex” lub „wpisz cześć”. Zobacz [](#voice-commands-sandfly).
 4. Sprawdza starsze polecenia głosowe, takie jak „Znajdź zapisz”, „Nawigacja typu słowa”, „Mów szybciej” lub „Kopiuj”. Zobacz [](#appendix-voice-commands).
 5. Jeśli włączono **Rozumiej polecenia głosowe za pomocą AI**, przekazuje nierozpoznaną wypowiedź do usługi AI. Zobacz [](#voice-commands-ai).
@@ -36,10 +36,25 @@ Jeśli SandFly nie rozpozna polecenia, odczyta odpowiedni komunikat i podpowie, 
 #### Aplikacje, elementy i tekst {#voice-commands-sandfly}
 
 - Aby otworzyć aplikację, powiedz np. „otwórz”, „uruchom”, „włącz” lub „przełącz na”, a potem jej nazwę. SandFly najpierw szuka dokładnej nazwy. Jeśli nie znajdzie dokładnego dopasowania, szuka nazwy zaczynającej się od tego tekstu, a na końcu nazwy zawierającej jedno z jego słów. Jeśli brakuje dopasowania albo pasuje kilka aplikacji w równym stopniu, SandFly spróbuje uruchomić polecenie o tej nazwie, np. „otwórz powiadomienia”. Jeśli polecenia też nie ma, zwrot pozostaje nierozpoznany.
-- Aby aktywować element ekranu, powiedz np. „stuknij”, „dotknij dwukrotnie”, „kliknij”, „naciśnij”, „aktywuj” lub „wybierz” i podaj jego tekst. SandFly aktywuje pierwszy element o dokładnie takim tekście. Jeśli go nie znajdzie, użyje pierwszego elementu zawierającego podany tekst. Gdy żaden nie pasuje, usłyszysz „Nie znaleziono” i szukany tekst.
-- Aby użyć funkcji **Wpisz tekst**, powiedz „wpisz”, „napisz” lub „wprowadź”, a potem podyktuj treść. SandFly wpisze ją do pola edycji, na którym jest fokus.
+- Aby aktywować element ekranu, powiedz np. „stuknij”, „dotknij dwukrotnie”, „kliknij”, „naciśnij”, „aktywuj” lub „wybierz” i podaj jego tekst. SandFly aktywuje pierwszy element o dokładnie takim tekście. Jeśli go nie znajdzie, użyje pierwszego elementu zawierającego podany tekst. Gdy żaden nie pasuje, usłyszysz „Nie znaleziono” i szukany tekst. Zwrot „naciśnij enter” uruchamia zamiast tego **Nowy wiersz**. „Zaznacz” z tekstem, który zawiera pole tekstowe z fokusem, zaznacza ten tekst. Zobacz [](#voice-commands-text).
+- Aby użyć funkcji **Wpisz tekst**, powiedz „wpisz”, „napisz” lub „wprowadź”, a potem podyktuj treść. SandFly wpisze ją do pola edycji, na którym jest fokus, i odczyta wpisany tekst, z wyjątkiem pola hasła.
 - Aby uruchomić polecenie lub makro, powiedz np. „wykonaj” i nazwę polecenia albo „uruchom makro” i nazwę makra. Przykładowy zwrot to „uruchom makro poranek”.
 - Polecenie **Czekaj** wstawia przerwę między poleceniami. Powiedz „poczekaj”, „poczekaj sekundę” lub „poczekaj” i podaj liczbę sekund. Możesz poczekać maksymalnie 60 sekund.
+
+#### Tekst w polu tekstowym {#voice-commands-text}
+
+Te zwroty działają na tekście pola tekstowego, które ma fokus wprowadzania.
+
+- **Przesuń kursor**: „następne”, „poprzednie”, „w prawo”, „w lewo”, „do przodu” lub „wstecz”, liczba oraz „znaki”, „słowa”, „zdania”, „wiersze” lub „akapity”, np. „następne 3 słowa”, „przesuń kursor w lewo pięć słów” lub „przejdź wstecz dwa wiersze”. Na początku możesz powiedzieć „przesuń kursor” lub „przejdź”. SandFly przesuwa kursor i odczytuje tekst, przez który przeszedł.
+- **Początek i koniec**: „na początek” lub „na koniec” oraz „słowa”, „zdania”, „wiersza”, „akapitu” lub „tekstu”, np. „na koniec wiersza” lub „przejdź na początek zdania”. Samo „na początek” i „na koniec” oznacza początek i koniec tekstu. SandFly przenosi tam kursor i odczytuje tekst, przez który przeszedł. Gdy kursor jest już na początku lub końcu, przechodzi na początek poprzedniej jednostki lub koniec następnej.
+- **Zaznacz, skopiuj, wytnij lub usuń**: „zaznacz”, „skopiuj”, „wytnij” lub „usuń” i jeden z powyższych zwrotów, np. „usuń następne pięć słów”, „skopiuj poprzednie 2 zdania”, „zaznacz następny wiersz”, „usuń ostatnie słowo” lub „usuń do końca wiersza”. SandFly odczytuje zaznaczony, skopiowany, wycięty lub usunięty tekst z informacją o wykonanej czynności. Kopiowanie nie przesuwa kursora.
+- **Zaznacz, skopiuj, wytnij lub usuń tekst**: „zaznacz”, „skopiuj”, „wytnij” lub „usuń” i tekst z pola, np. „zaznacz krokodyl”. SandFly znajduje tekst najbliżej kursora, pomijając wielkość liter i znaki interpunkcyjne między słowami, i wykonuje na nim czynność. Gdy pole nie zawiera tekstu, SandFly odczytuje „Nie znaleziono” i tekst.
+
+Liczba to od 1 do 20 słownie lub cyframi. Bez liczby zwrot dotyczy jednej jednostki, np. „zaznacz poprzednie słowo”. Słowo, zdanie, wiersz lub akapit, w którym jest kursor, liczy się jako pierwszy, od kursora. Słowa są liczone bez znaków interpunkcyjnych. Wiersz kończy się na podziale wiersza. Usunięcie całych słów, zdań, wierszy lub akapitów usuwa też pozostałą po nich spację lub podział wiersza. Gdy nie ma już tekstu do przejścia, SandFly odczytuje „Początek pola” lub „Koniec pola”.
+
+Nazwy poleceń mają pierwszeństwo: „Następne słowo” i „Poprzedni znak” uruchamiają te polecenia. Zobacz [](#voice-commands-phrases).
+
+Gdy żadne pole tekstowe nie ma fokusu wprowadzania, „zaznacz” z tekstem aktywuje element o tym tekście, a pozostałe zwroty są rozpoznawane jako starsze polecenia głosowe. „Zaznacz” z tekstem aktywuje element także wtedy, gdy pole z fokusem jest polem hasła lub nie zawiera tego tekstu. W polu hasła pozostałe zwroty powodują komunikat „Niedostępne w polach haseł”.
 
 #### Połączenia i wiadomości {#voice-commands-calls}
 
@@ -66,6 +81,36 @@ Jedna wypowiedź może zawierać kilka poleceń. Połącz je słowami „potem�
 Jeśli polecenie się nie powiedzie, np. brakuje elementu, SandFly poda przyczynę i zatrzyma wykonywanie. Gdy część wypowiedzi nie pasuje do polecenia, SandFly spróbuje potraktować ją jako jedno ze starszych poleceń głosowych. Jeśli i to się nie uda, odczyta „Nie zrozumiano” oraz nierozpoznaną część.
 
 Aby zatrzymać wykonywanie, zacznij kolejne polecenie głosowe i powiedz „stop”, „anuluj”, „przerwij” lub „nieważne”. Rozpoczęcie nowej wypowiedzi również zatrzymuje poprzednią.
+
+### Edycja głosowa {#voice-commands-editing}
+
+Polecenie **Rozpocznij edycję głosową** z grupy **Edytowanie tekstu** nagrywa kolejne polecenia głosowe dla pola tekstowego z fokusem, bez gestu przed każdym poleceniem. Domyślnie nie ma gestu. Zobacz [](#commands-list).
+
+1. Przenieś fokus do pola tekstowego.
+2. Uruchom **Rozpocznij edycję głosową**. Usłyszysz „Edycja głosowa włączona”, a po rozpoczęciu nagrywania sygnał.
+3. Powiedz polecenie. SandFly je wykonuje, odczytuje wynik i po zakończeniu mowy ponownie nagrywa. Sygnał rozlega się przy każdym rozpoczęciu nagrywania po poleceniu.
+
+Edycja głosowa wykonuje tylko te polecenia:
+
+- Polecenia z grup **Edytowanie tekstu** i **Nawigacja według tekstu**, wywoływane nazwą, np. „Zaznacz wszystko”, „Kopiuj”, „Wklej”, „Wyczyść tekst”, „Przenieś kursor na koniec”, „Następne słowo” lub „Poprzedni znak”. **Dyktuj** i **Rozpocznij edycję głosową** nie są wykonywane. Zobacz [](#typing-editing-commands).
+- „Wpisz”, „napisz” lub „wprowadź” i tekst, który SandFly wpisuje w miejscu kursora i odczytuje.
+- „Nowy wiersz”, „nowy akapit” lub „naciśnij enter”, które uruchamiają **Nowy wiersz**.
+- Zwroty dla tekstu w polu tekstowym, np. „usuń następne pięć słów”, „na koniec wiersza” lub „zaznacz krokodyl”. Tutaj „zaznacz” z tekstem zawsze działa na tekście pola. Zobacz [](#voice-commands-text).
+- Zwroty edycji tekstu ze starszych poleceń głosowych, np. „Zaznacz”, „Zakończ zaznaczanie”, „Usuń”, „Wytnij” lub „Przeliteruj TEKST”. Tutaj muszą stanowić całe polecenie. Zobacz [](#appendix-voice-commands-text-editing).
+- Własne polecenia głosowe, które uruchamiają jedno z tych poleceń lub makro. Zobacz [](#voice-commands-custom).
+- Łańcuchy tych poleceń, np. „zaznacz wszystko, potem wytnij”. Zobacz [](#voice-commands-chains).
+
+Inne wypowiedzi nie są wykonywane: SandFly odczytuje „Nie zrozumiano” i to, co powiedziałeś, a potem ponownie nagrywa. Tekst, który nie jest poleceniem, nie zostaje wpisany. Powiedz przed nim „wpisz”.
+
+Edycja głosowa kończy się, a SandFly odczytuje „Edycja głosowa wyłączona”, gdy:
+
+- Ponownie uruchomisz **Rozpocznij edycję głosową**.
+- Powiesz „zakończ edycję”, „zakończ edycję głosową”, „przestań edytować”, „wyłącz edycję głosową”, „koniec edycji”, „rozpocznij edycję głosową”, „stop”, „anuluj”, „przerwij”, „zostaw”, „nieważne” lub „cicho”.
+- Fokus opuści pole tekstowe.
+- Od rozpoczęcia edycji głosowej minie czas z opcji **Polecenia głosowe** > **Limit czasu edycji głosowej**: 5, 10, 20 lub 30 minut, domyślnie 10.
+- Rozpoznawanie mowy nie powiedzie się trzy razy z rzędu lub brakuje uprawnienia do mikrofonu.
+
+Podczas nagrywania mowa SandFly jest wyciszona, aby nie trafiła do nagrania. Gdy nic nie zostanie powiedziane, nagrywanie zaczyna się ponownie bez sygnału. Edycja głosowa nagrywa za pomocą rozpoznawania mowy wybranego w **Pisanie** > **Dyktowanie**, bez korekty AI. **Dyktuj**, **Dyktuj, odtwórz lub wstrzymaj multimedia** i **Użyj polecenia głosowego** kończą edycję głosową bez komunikatu „Edycja głosowa wyłączona”.
 
 ### Rozpoznawanie poleceń za pomocą AI {#voice-commands-ai}
 

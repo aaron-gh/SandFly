@@ -87,7 +87,7 @@ Uwaga: Samouczek przechwytuje gesty rozpoznawane przez SandFly. Jeśli wyłączy
 
 #### Samouczek klawiatury {#getting-started-keyboard-tutorial}
 
-Jeśli przy pierwszym uruchomieniu jest podłączona klawiatura fizyczna, otworzy się **Samouczek klawiatury SandFly**. Ma 15 lekcji, w tym **Lista skrótów klawiszowych**, **Tryb przeglądania** stron i **Ćwiczenie klawiatury**. Ćwiczysz skróty z używanego układu klawiszy.
+Na urządzeniu z klawiaturą fizyczną i bez ekranu dotykowego przy pierwszym uruchomieniu otworzy się **Samouczek klawiatury SandFly**. Ma 15 lekcji, w tym **Lista skrótów klawiszowych**, **Tryb przeglądania** stron i **Ćwiczenie klawiatury**. Ćwiczysz skróty z używanego układu klawiszy.
 
 Na urządzeniu z ekranem dotykowym i klawiaturą fizyczną polecenie **Samouczek SandFly** otworzy okno wyboru samouczka. Dostępne są **Samouczek dotyczący obsługi dotykowej** i **Samouczek dotyczący klawiatury**. Szczegóły znajdziesz w [rozdziale o klawiaturach](#keyboards). [Zegarki i telewizory](#devices) mają własne samouczki.
 

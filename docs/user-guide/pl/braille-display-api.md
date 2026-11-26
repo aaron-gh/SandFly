@@ -111,7 +111,7 @@ Te nazwy, pochodzące z Backtalk, są przestarzałe:
 
 Z usługą zadeklarowaną z przestarzałą akcją SandFly łączy się przez przestarzałe interfejsy, więc zmień akcję i oba interfejsy jednocześnie. Usługa z obiema akcjami jest łączona przez nowe interfejsy. W przypadku `BRAILLE_DISPLAYS_CHANGED` ostrzeżenie podaje nazwę aplikacji tylko w Androidzie 14 i nowszym, gdy komunikat rozgłoszeniowy udostępnia tożsamość nadawcy.
 
-SandFly 27.0 i nowsze nadal przyjmują te nazwy od aplikacji, które z nich korzystają. Gdy aplikacja użyje jednej z nich po raz pierwszy od uruchomienia SandFly, SandFly zapisuje w logu ostrzeżenie z tagiem `SandFlyApi`. Aby wyświetlić ostrzeżenia:
+SandFly 0.8.0 i nowsze nadal przyjmują te nazwy od aplikacji, które z nich korzystają. Gdy aplikacja użyje jednej z nich po raz pierwszy od uruchomienia SandFly, SandFly zapisuje w logu ostrzeżenie z tagiem `SandFlyApi`. Aby wyświetlić ostrzeżenia:
 
 ```sh
 adb logcat -s SandFlyApi

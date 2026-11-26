@@ -99,6 +99,8 @@ Bez Shizuku lub dostępu root poniższe funkcje są niedostępne albo działają
 - Jeśli w historii schowka włączysz **Dodawaj kopie z innych aplikacji**, dołączenie tekstu skopiowanego poza SandFly wymaga Shizuku lub roota. Zobacz [](#typing).
 - Gboard odtwarza własne sygnały klawiszy, np. z opcji **Wibracja przy naciśnięciu klawisza**, podczas eksplorowania klawiszy tylko z Shizuku lub dostępem root. Zobacz [](#typing).
 - Polecenia uruchamiające skrót ułatwień dostępu innej usługi wymagają Shizuku lub roota. Zobacz [](#commands).
+- Polecenia z grup **Kafelki aplikacji** i **Kafelki systemowe** oraz **Dodaj kafelek systemowy** w ustawieniach panelu szybkich ustawień. Bez Shizuku lub roota kafelek działa tylko wtedy, gdy znajduje się w szybkich ustawieniach systemu, a **Dodaj kafelek systemowy** wyszukuje kafelki w szybkich ustawieniach systemu. Zobacz [](#commands-categories) i [](#display-quick-settings).
+- Skróty dodawane przez aplikację podczas działania oraz skróty, które może otworzyć tylko aplikacja ekranu głównego, są widoczne na liście tylko z Shizuku lub dostępem root. Zobacz [](#gestures-app-shortcuts).
 - Tych uprawnień wymagają też skrypty i makra naciskające klawisze lub wpisujące tekst poza polem edycji oraz kroki makr zmieniające wymienione wyżej opcje w szybkich ustawieniach. Zobacz [](#scripts) i [](#macros).
 - **Aktualizacje i instalacja** > **Pokazuj jako zainstalowane z Google Play** wymaga dostępu opisanego w [](#updates-play-installer).
 

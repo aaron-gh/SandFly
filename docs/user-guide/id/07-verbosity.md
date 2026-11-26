@@ -56,7 +56,10 @@ Sebagian mesin ucapan membaca emoji dengan kurang baik, memakai nama sendiri, at
 Dua setelan lain bergantung pada **Emoji**:
 
 - **Hitung emoji berulang**: dengan **Dibacakan oleh SandFly**, mengucapkan emoji yang berulang berurutan satu kali disertai jumlahnya, seperti "3 wajah menyeringai". Pilih **Nonaktif** (default), atau dari **2 atau lebih** hingga **6 atau lebih**.
-- **Ucapkan "emoji" setelah nama emoji**: mengucapkan "emoji" setelah setiap emoji. Nonaktif secara default. Tidak tersedia jika disetel ke **Tidak ada**.
+- **Setelah nama emoji**: yang mengikuti setiap emoji. Tidak tersedia jika **Emoji** disetel ke **Tidak ada**.
+  - **Tidak ada**: default.
+  - **Ucapkan "emoji"**: mengucapkan "emoji" setelah setiap emoji, seperti "wajah menyeringai emoji".
+  - **Putar suara**: memutar suara **Emoji** setelah setiap emoji, atau satu kali setelah emoji yang berdampingan. Emoji kemudian diucapkan sebagai ucapan terpisah dari teks di sekitarnya. Tema suara dapat mengganti suara ini, dan **Suara dan getaran satu per satu** dapat menonaktifkannya. Lihat [](#sound-events).
 
 Dengan **Dibacakan oleh SandFly**, berpindah per karakter menyebutkan seluruh emoji satu kali, dan berpindah per kata berhenti di emoji. Dengan **Tidak ada**, berpindah per kata melewati emoji. Menyalin atau mengeja frasa yang terakhir diucapkan tetap menghasilkan emojinya, bukan namanya.
 
@@ -87,7 +90,7 @@ Grup **Pengumuman** menentukan apa yang diucapkan SandFly saat terjadi perubahan
 - **Nama jendela**: kapan SandFly mengucapkan nama jendela. **Selalu** mengucapkannya saat jendela terbuka dan saat fokus berpindah ke jendela itu dari jendela lain, sebelum item pertama. **Selalu, dihentikan oleh item pertama** (default) melakukan hal yang sama, tetapi item pertama yang difokuskan di jendela baru akan menghentikan pengucapan nama jendela. **Hanya ketika sebuah jendela terbuka** tidak mengucapkannya saat fokus berpindah ke jendela. **Tidak pernah** tidak mengucapkan nama jendela sama sekali.
 - **Selalu ucapkan jumlah item daftar**: mengucapkan item mana saja yang sedang tampil setelah setiap pengguliran. Nonaktif secara default. Jika nonaktif, SandFly tidak mengucapkan posisi daftar saat daftar digulir.
 - **Umumkan saat baterai penuh**: mengucapkan "Baterai terisi penuh" dan memutar suara **Baterai penuh** satu kali saat baterai penuh sementara pengisi daya tersambung. Nonaktif secara default.
-- **Tingkat baterai**: mengucapkan tingkat baterai, baik saat mengisi daya maupun tidak, setiap kali mencapai kelipatan 5% atau 10%, atau setiap 15 menit, 30 menit, atau satu jam. Tidak ada yang diucapkan saat layar mati. Nonaktif secara default.
+- **Tingkat baterai**: mengucapkan tingkat baterai, baik saat mengisi daya maupun tidak, setiap kali mencapai kelipatan 5% atau 10%, atau setiap 15 menit, 30 menit, atau satu jam. Tidak ada yang diucapkan saat layar mati: tingkat yang tercapai atau interval yang berakhir selama layar mati diucapkan saat layar menyala. Nonaktif secara default.
 - **Suara tingkat baterai**: suara untuk **Tingkat baterai**: **Suara notifikasi**, **Suara SandFly** (default), atau profil suara. Lihat [](#notifications-voice).
 - **Umumkan durasi panggilan**: saat panggilan telepon berakhir, mengucapkan berapa lama panggilan berlangsung sejak dijawab atau dihubungi. Panggilan yang tidak dijawab tidak diumumkan. Nonaktif secara default.
 - **Umumkan saat keyboard muncul atau disembunyikan**: aktif secara default.
@@ -131,7 +134,7 @@ Beberapa aplikasi dan keyboard berbicara sendiri, seperti asisten yang mengucapk
 
 - **Ucapkan hanya fokus yang dipindahkan pengguna**: **Nonaktif** (default), **Di semua aplikasi**, atau **Di aplikasi yang dipilih**. Saat berlaku, SandFly hanya mengucapkan fokus yang Anda pindahkan melalui sentuhan, gerakan, tombol, penampil braille, atau perintah. SandFly tidak mengucapkan fokus yang dipindahkan aplikasi, pengumuman, perubahan wilayah langsung (live region), nama jendela, atau pengumuman pergantian jendela. Fokus yang dipindahkan SandFly setelah jendela berganti, setelah pengguliran, atau untuk mengikuti fokus input dianggap dipindahkan oleh aplikasi.
 - **Aplikasi yang dipilih**: daftar aplikasi untuk **Di aplikasi yang dipilih**. Hanya tersedia saat **Ucapkan hanya fokus yang dipindahkan pengguna** disetel ke **Di aplikasi yang dipilih**. Pilih **Tambahkan aplikasi** untuk menambahkan aplikasi, dan pilih aplikasi yang ada untuk menghapusnya.
-- **Ucapkan hanya fokus yang dipindahkan pengguna saat asisten atau panggilan memutar audio**: melakukan hal yang sama di semua aplikasi saat aplikasi lain memutar audio sebagai asisten atau panggilan. Fokus yang Anda pindahkan sendiri tetap diucapkan. Nonaktif secara default.
+- **Ucapkan hanya fokus yang dipindahkan pengguna saat asisten atau panggilan memutar audio**: melakukan hal yang sama di semua aplikasi saat aplikasi lain memutar audio sebagai asisten atau panggilan, dan saat jendela asisten, seperti Gemini di atas aplikasi atau layar kunci, ditampilkan. Pengumuman layar menyala dan buka kunci juga tidak diucapkan saat itu, dan ucapan berhenti saat jendela asisten terbuka. Fokus yang Anda pindahkan sendiri tetap diucapkan. Nonaktif secara default.
 - **Keyboard dengan ucapannya sendiri**: saat keyboard di daftar ini ditampilkan, SandFly tidak mengucapkan tombolnya, teks yang diketik atau dihapus, maupun perpindahan kursor di kolom teks. Gerakan dan perintah tetap berfungsi, dan perpindahan melalui teks dengan kontrol pembacaan tetap diucapkan. Pilih **Tambahkan keyboard** untuk menambahkan keyboard.
 
 SandFly tidak pernah mengucapkan pengumuman, perubahan wilayah langsung, perubahan jendela, toast, atau notifikasi dari com.oplus.viewtalk, layanan aksesibilitas di ponsel realme dan OPPO yang mengirimkan deskripsi gambar seperti "Gambar mungkin berisi…".

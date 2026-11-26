@@ -49,6 +49,7 @@ Op horloges:
 - Heet **Nieuwe functies in SandFly** **Wat is er nieuw**.
 - Is SandFly pauzeren niet beschikbaar, en wordt **SandFly hervatten** niet getoond. Zie [](#pause).
 - Staat **Gebaren oefenen** niet in **Hulp en feedback**. Gebruik **Gebaren oefenen** boven aan **Gebaren**, dat de gebaaroefening van de tutorial voor horloges opent.
+- Staan **Gebarentrainer** en **Toetsenbordoefening** niet in **Hulp en feedback**.
 - Tonen **Versiegeschiedenis** en **Privacybeleid** het adres van de pagina wanneer het horloge geen browser heeft.
 
 Deze functies zijn niet beschikbaar op horloges, en hun instellingen worden niet getoond: scripts, macro's, aangepaste menu's, aangepaste leesinstellingen, spraakopdrachten, directe aanraking, tikken op de achterkant, schudden, instellingen voor rand- en hoekgebaren, het brailletoetsenbord, het handschrifttoetsenbord, het SandFly-toetsenbord, AI op het apparaat, **SandFly als achtergrond gebruiken**, **Luidspreker wanneer de telefoon niet bij je oor is**, **Toegankelijkheidsaudio resetten na gesprekken**, **Sneltoetsen voor volumetoetsen met het scherm uit**, en **Instructies tonen om SandFly uit te zetten**.
@@ -95,7 +96,7 @@ SandFly behandelt de pijl- en selectieknoppen niet terwijl het schermtoetsenbord
 
 Op tv's:
 
-- Worden instellingen voor functies die een aanraakscherm of een telefoon nodig hebben niet getoond, zoals **Gebaren**, **Directe aanraking**, **Status voorlezen**, **Overzicht van SandFly gebruiken**, **Meldingenlijst van SandFly gebruiken**, **Luidspreker wanneer de telefoon niet bij je oor is** en **Afbeeldings- en schermbeschrijvingen**. De instellingenschermen **SandFly-menu** en **Leesinstellingen** worden ook niet getoond.
+- Worden instellingen voor functies die een aanraakscherm of een telefoon nodig hebben niet getoond, zoals **Gebaren**, **Gebarentrainer**, **Directe aanraking**, **Status voorlezen**, **Overzicht van SandFly gebruiken**, **Meldingenlijst van SandFly gebruiken**, **Luidspreker wanneer de telefoon niet bij je oor is** en **Afbeeldings- en schermbeschrijvingen**. De instellingenschermen **SandFly-menu** en **Leesinstellingen** worden ook niet getoond.
 - Is SandFly pauzeren niet beschikbaar, en wordt **SandFly hervatten** niet getoond. Zie [](#pause).
 - Opent het eerste item in **Hulp en feedback** de tutorial van de tv waar de tv er een heeft. Anders heet het **Hulp**.
 - Tonen tv's vaak geen meldingen, dus de updatemelding verschijnt mogelijk niet. Om te updaten, ga je naar **Updates en installatie** > **Controleren op updates**. Zie [](#updates-check).

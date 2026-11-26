@@ -25,14 +25,14 @@ Daftar ini hanya memuat perintah yang didukung oleh perangkat. Misalnya, perinta
 - **Membaca**: **Baca dari atas**, **Baca dari item yang difokuskan**, **Baca dari item yang difokuskan menurut kontrol pembacaan**, mengulangi, mengeja, dan menerjemahkan frasa yang terakhir diucapkan, **Histori ucapan**, **Ucapkan status**, **Ucapkan posisi**, **Ucapkan koordinat**, tanggal dan waktu, tingkat baterai, serta judul jendela.
 - **Ucapan**: **Jeda atau lanjutkan ucapan**, **Aktifkan atau nonaktifkan ucapan**, kecepatan bicara, tinggi nada, dan volume, bahasa lisan, profil suara, tanda baca, gema keyboard, **Gunakan efek ucapan**, **Pengecilan volume audio**, dan **Respons getar**.
 - **Kontrol pembacaan**: kontrol pembacaan berikutnya dan sebelumnya, **Kontrol pembacaan pertama**, **Turunkan atau majukan kontrol pembacaan** dan **Naikkan atau mundurkan kontrol pembacaan**, **Tulis huruf kontrol pembacaan**, daftar kontrol pembacaan berikutnya dan sebelumnya, serta perintah **Setel kontrol pembacaan ke** untuk setiap kontrol pembacaan dalam daftar. Lihat [](#commands-reading-controls).
-- **Pengeditan teks**: mode pemilihan, pemindahan kursor, pilih semua, salin, potong, tempel, **Histori papan klip**, **Menu pengeditan**, **Kirim teks**, **Hapus teks**, **Salin frasa yang terakhir diucapkan**, **Salin teks dari layar**, **Salin berkelanjutan**, **Pengeditan terperinci**, **Saran ejaan/tata bahasa**, **Telusuri emoji**, **Pilih simbol**, **Aktifkan atau nonaktifkan mode pengeditan**, **Eja kolom sandi**, **Dikte**, **Mulai pengeditan suara**, dan **Ganti keyboard**. Lihat [](#typing).
+- **Pengeditan teks**: mode pemilihan, pemindahan kursor, pilih semua, salin, potong, tempel, **Histori papan klip**, **Menu pengeditan**, **Kirim teks**, **Baris baru**, **Hapus teks**, **Salin frasa yang terakhir diucapkan**, **Salin teks dari layar**, **Salin berkelanjutan**, **Pengeditan terperinci**, **Saran ejaan/tata bahasa**, **Telusuri emoji**, **Pilih simbol**, **Aktifkan atau nonaktifkan mode pengeditan**, **Eja kolom sandi**, **Saran kata berikutnya**, **Saran kata sebelumnya**, **Ketik saran kata**, **Dikte**, **Mulai pengeditan suara**, dan **Ganti keyboard**. Lihat [](#typing).
 - **Tindakan sistem**: **Layar utama**, **Kembali**, **Ringkasan**, aplikasi sebelumnya, yang lebih lama, dan yang lebih baru, **Ambil screenshot**, **Jawab panggilan**, **Akhiri panggilan**, **Layar terpisah**, notifikasi, Setelan Cepat, **Kunci layar perangkat**, **Menu daya**, **Semua aplikasi**, pintasan aksesibilitas, pembesaran, inversi warna, **Tulis nama aplikasi untuk membukanya**, **Ketik nama aplikasi dalam braille untuk membukanya**, dan **Mulai perintah suara**.
 - **Media dan volume**: putar atau jeda, trek berikutnya dan sebelumnya, mundur cepat, maju cepat, dan volume.
 - **Notifikasi**: membaca notifikasi, membaca lagi notifikasi terakhir, berhenti membaca, serta mengaktifkan atau menonaktifkan ucapan notifikasi dan pengumuman waktu. Lihat [](#notifications).
 - **Deskripsi gambar dan layar**: **Ambil foto dan deskripsikan**, **Deskripsikan gambar**, **Deskripsikan layar**, versi **Ucapkan** dan **Tanyakan tentang** masing-masing perintah, **Bagikan gambar item yang difokuskan**, **Bagikan screenshot**, serta **Laporkan respons AI**. Dengan SandFly Pro, tersedia juga perintah pengenalan layar. Lihat [](#descriptions).
 - **Pengenalan langsung**: satu perintah untuk setiap mode Pengenalan langsung, dan **Hentikan Pengenalan langsung**.
 - **Braille**: **Ganti ke keyboard braille**, **Perintah braille**, **Temukan teks**, profil perintah braille, dan perintah penampil braille. Lihat [](#braille).
-- **SandFly**: **Jeda SandFly**, **Sembunyikan atau tampilkan layar**, **Tampilkan indikator fokus**, **Penelusuran layar**, profil gerakan dan profil setelan, **Gerakan untuk aplikasi ini**, **Aktifkan atau nonaktifkan navigasi tombol panah**, **Kunci atau buka kunci sentuhan**, **Aktifkan atau nonaktifkan semua skrip**, **Perintah skrip**, **Panjang respons**, **Nonaktifkan SandFly**, **Buka tutorial**, **Berlatih gerakan**, dan **Aktifkan atau nonaktifkan latihan keyboard**. Dengan SandFly Pro, tersedia juga **Mulai atau hentikan tugas agen AI**.
+- **SandFly**: **Jeda SandFly**, **Sembunyikan atau tampilkan layar**, **Tampilkan indikator fokus**, **Penelusuran layar**, profil gerakan dan profil setelan, **Gerakan untuk aplikasi ini**, **Tugas Cepat**, **Aktifkan atau nonaktifkan mode BlackBerry**, **Aktifkan atau nonaktifkan navigasi tombol panah**, **Kunci atau buka kunci sentuhan**, **Aktifkan atau nonaktifkan semua skrip**, **Perintah skrip**, **Panjang respons**, **Nonaktifkan SandFly**, **Buka tutorial**, **Berlatih gerakan**, dan **Aktifkan atau nonaktifkan latihan keyboard**. Dengan SandFly Pro, tersedia juga **Mulai atau hentikan tugas agen AI**.
 - **Setelan developer**: **Periksa item yang difokuskan**, **Salin detail item**, dan **Salin hierarki layar**. Lihat [](#macros-inspect).
 - **Nilai setelan**: perintah nilai berikutnya dan nilai sebelumnya untuk setiap kontrol pembacaan yang mengubah setelan, seperti **Tanda baca: nilai berikutnya**, serta perintah yang mengaktifkan atau menonaktifkan setelan seperti **Lanjutkan dari ujung lain**.
 
@@ -43,14 +43,24 @@ Kategori berikut mencantumkan hal-hal yang Anda tambahkan sendiri, dan hanya dit
 - **Makro**: satu perintah untuk setiap makro, **Hentikan makro**, dan **Rekam makro**. Lihat [](#macros).
 - **Profil gerakan**, **Profil perintah braille**, dan **Profil suara**: satu perintah untuk setiap profil, yang langsung menggunakannya.
 - **Daftar kontrol pembacaan**: **Item berikutnya di** dan **Item sebelumnya di** suatu daftar, untuk setiap daftar. Lihat [](#commands-reading-control-lists).
-- **Buka aplikasi**: satu perintah untuk setiap aplikasi terinstal.
-- **Pintasan aplikasi** dan **Pintasan aksesibilitas**: pintasan dari aplikasi dan dari fitur aksesibilitas lainnya. Lihat [](#gestures).
+- **Buka aplikasi**: satu perintah untuk setiap aplikasi terinstal, bernama **Buka** dan nama aplikasi, seperti **Buka Gmail**.
+- **Pintasan aplikasi** dan **Pintasan aksesibilitas**: pintasan dari aplikasi dan dari fitur aksesibilitas lainnya. Lihat [](#gestures-app-shortcuts).
 - **Kotak aplikasi**: kotak setelan cepat dari aplikasi yang terinstal. SandFly mengklik kotak itu di setelan cepat sistem, yang dibuka lalu ditutup oleh SandFly. Jika Shizuku berjalan, SandFly lebih dulu menambahkan kotak itu ke setelan cepat sistem kalau belum ada, dan mengkliknya melalui Shizuku kalau kotak itu tidak ditemukan di sana. Nama kotak mengikuti tampilannya di setelan cepat sistem saat terakhir kali SandFly membacanya, misalnya nama perangkat yang disambungkan oleh kotak Bluetooth.
 - **Kotak sistem**: kotak setelan cepat sistem yang terakhir ditemukan oleh **Tambahkan kotak sistem** di setelan panel setelan cepat. Jika Shizuku berjalan, **Tambahkan kotak sistem** memberi SandFly akses DUMP dan akses penggunaan, lalu membaca daftar kotak dari sistem. Jika tidak, SandFly mencarinya di setelan cepat sistem. Selama SandFly memiliki akses DUMP dan akses penggunaan, daftar kotak dibaca ulang setiap kali SandFly dimulai. Kotak sistem yang sudah memiliki kontrol SandFly, seperti Wi-Fi, Hotspot, atau mode suara, menjadi kontrol tersebut, dengan nama seperti di panel setelan cepat SandFly. Kotak Internet menjadi Wi-Fi. Jika kontrol memerlukan Shizuku tetapi Shizuku tidak berjalan, SandFly mengucapkan "Shizuku tidak berjalan". Kotak sistem lainnya, seperti perekaman layar, memakai nama dari sistem dan diaktifkan di setelan cepat sistem, yang dibuka lalu ditutup oleh SandFly. Setelah itu SandFly mengucapkan statusnya yang baru. Lihat [](#display-quick-settings-edit).
 
 #### Ucapkan status {#commands-status}
 
 **Ucapkan status**, dalam kategori **Membaca**, membacakan apa yang ditampilkan bilah status, seperti waktu, tingkat baterai, dan jaringan, serta apakah layar sedang disembunyikan. Secara default, perintah ini dijalankan dengan ketuk tiga kali dua jari. Untuk memilih apa saja yang dibacakan dan urutannya, buka **Panjang respons** > **Pembacaan status**. Lihat [](#verbosity).
+
+#### Ucapkan posisi {#commands-position}
+
+**Ucapkan posisi**, dalam kategori **Membaca**, mengucapkan posisi item yang difokuskan:
+
+- Di daftar atau tabel: "Item 3 dari 10" atau "Baris 2 dari 4, kolom 3 dari 5".
+- Di teks: karakter setelah kursor, panjang teks, paragraf jika ada lebih dari satu, dan seberapa jauh kursor berada di dalam teks, seperti "Karakter 120 dari 800, paragraf 2 dari 5, 15%". Di kolom teks yang berisi kursor, posisi ini adalah kursor kolom tersebut. Di teks lain, posisi ini adalah tempat yang dicapai dengan berpindah melalui teks menggunakan **Karakter**, **Kata**, **Baris**, **Kalimat**, atau **Paragraf** sejak fokus berpindah ke item tersebut. Paragraf dipisahkan oleh jeda baris.
+- Di daftar, halaman, atau tampilan lain yang dapat digulir: seberapa jauh tampilan digulir, seperti "Posisi gulir 40%". Di awal nilainya 0% dan di akhir 100%. Di antaranya, persentase diambil dari pengguliran terakhir tampilan sejak jendela dibuka; sebelum tampilan digulir, persentase tidak diucapkan.
+
+Jika tidak ada yang berlaku, SandFly mengucapkan "Tidak ada posisi". Dengan Gerakan VoiceOver, ketukan tiga jari menjalankan perintah ini.
 
 #### Aktifkan tombol konfirmasi dan Aktifkan tombol batal {#commands-button-commands}
 
@@ -178,7 +188,7 @@ Saat Anda mengubah kontrol pembacaan atau nilainya dengan gerakan, SandFly juga 
 
 #### Kontrol pembacaan yang dapat Anda tambahkan {#commands-reading-control-groups}
 
-- **Tindakan untuk item saat ini**: **Tindakan**, **Alamat dan nomor**, **Histori papan klip**, dan **Periksa tata bahasa**, yang berpindah di antara saran ejaan dan tata bahasa.
+- **Tindakan untuk item saat ini**: **Tindakan**, **Alamat dan nomor**, **Histori papan klip**, **Saran kata**, yang berpindah di antara saran untuk kata yang diketik dengan Keyboard SandFly, dan **Periksa tata bahasa**, yang berpindah di antara saran ejaan dan tata bahasa. Lihat [](#keyboards-word-suggestions).
 - **Navigasi dasar**: **Navigasi default**, **Jendela**, **Penampung**, **Penelusuran layar**, **Navigasi vertikal**, **Gulir**, dan **Lanjutkan dari ujung lain**.
 - **Navigasi menurut teks**: **Karakter**, **Kata**, **Baris**, **Kalimat**, dan **Paragraf**.
 - **Navigasi elemen**: **Judul**, **Tautan**, **Kontrol**, **Penunjuk**, **Tombol**, **Kotak centang**, **Tombol pilihan**, **Kolom teks**, **Kotak kombinasi**, **Item yang dapat difokuskan**, **Gambar dan video**, **Daftar**, **Item daftar**, **Tabel**, **Tautan yang telah dikunjungi**, dan **Tautan yang belum dikunjungi**.
@@ -195,7 +205,7 @@ Saat Anda mengubah kontrol pembacaan atau nilainya dengan gerakan, SandFly juga 
 
 Secara default, daftar berisi **Tindakan**, **Periksa tata bahasa**, **Penelusuran layar**, **Karakter**, **Kata**, **Baris**, **Paragraf**, **Judul**, **Tautan**, **Kontrol**, **Baris dan kolom**, **Kecepatan bicara**, **Pengenalan langsung**, **Tindakan AI**, **Kecerahan**, dan **Profil gerakan**. Skrip dapat menambahkan kontrol pembacaannya sendiri, yang muncul setelah daftar ini.
 
-**Tindakan**, **Alamat dan nomor**, **Histori papan klip**, **Pengenalan langsung**, **Tindakan AI**, dan kontrol pembacaan kustom memerlukan Android 11 atau lebih baru.
+**Tindakan**, **Alamat dan nomor**, **Histori papan klip**, **Saran kata**, **Pengenalan langsung**, **Tindakan AI**, dan kontrol pembacaan kustom memerlukan Android 11 atau lebih baru.
 
 Beberapa kontrol memiliki opsi, yang muncul setelah kontrol tersebut di **Saat ini** dan disembunyikan jika kontrol tidak ada di daftar:
 

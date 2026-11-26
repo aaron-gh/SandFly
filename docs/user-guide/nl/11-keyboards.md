@@ -33,6 +33,7 @@ Een keymap is een verzameling sneltoetsen. SandFly heeft deze keymaps:
 - **JAWS-keymap**: de desktoptoetsaanslagen van JAWS, met de laptoptoetsen van JAWS voor klikken en cursors, met de SandFly-toets als JAWS-toets. De SandFly-toets is Insert, Numpad Insert of Meta, standaard Insert.
 - **Orca-keymap**: de laptopindeling van Orca, met de SandFly-toets als Orca-aanpassingstoets. De SandFly-toets is Insert, Numpad Insert, Meta of Alt, standaard Insert.
 - **Keymap voor toetsenbordtelefoons** en **Enkeltoets-keymap voor toetsenbordtelefoons**: voor telefoons met een ingebouwd toetsenbord zonder Ctrl, Meta of pijltoetsen. Zie [](#keyboards-phones).
+- **BlackBerry-keymap**: toetsen die lijken op die van de BlackBerry 10 Screen Reader, voor toetsenbordtelefoons. De BlackBerry-modus kiest deze keymap op toetsenbordtelefoons. Zie [](#keyboards-phones) en [](#profiles-blackberry-mode).
 - Keymaps die je zelf maakt. Zie [](#keyboards-custom-keymaps).
 
 In de NVDA-, JAWS- en Orca-keymaps bewegen de pijltoetsen en Tab zonder de SandFly-toets, zoals op een computer. Zie [](#keyboards-desktop).
@@ -91,7 +92,9 @@ Deze zijn niet beschikbaar op smartwatches. Zie [](#api-item-files) voor de best
 - **Zoeken**: vindt een opdracht of een pijltoets op naam of op toetsen, en opent de sneltoets ervan.
 - **Keymap**: **Een keymap kiezen**, **SandFly-toets kiezen**, **De keymap resetten**, **Sneltoetsen van het systeem bekijken**, **Nieuwe keymap**, **Exporteren naar bestand**, **Importeren uit bestand**, en voor keymaps die je zelf hebt gemaakt, **Keymap hernoemen** en **Keymap verwijderen**. **Sneltoetsen van het systeem bekijken** opent de lijst met de sneltoetsen van Android en van de app die in gebruik is.
 - **Sneltoetsen in apps**: sneltoetsen die andere opdrachten uitvoeren in één app. Zie [](#keyboards-app-shortcuts).
+- **Toetsenbordoefening**: zet de toetsenbordoefening aan. Zie [](#keyboards-practice).
 - **Navigatie met pijltoetsen**: in keymaps die dit hebben. Zie [](#keyboards-arrow-keys).
+- **Snel zoeken**: **Toets voor snel zoeken** en **Rondgaan**. Zie [](#keyboards-fast-search).
 - De opdrachten, per categorie, elk met de bijbehorende sneltoets. Elke categorie gaat open en dicht. Een opdracht waarvan de sneltoets alleen in de browsemodus werkt, heeft "in de browsemodus" na de naam, zoals "Naar volgende kop gaan in de browsemodus".
 
 Je kunt sneltoetsen alleen wijzigen en de keymap alleen resetten terwijl SandFly aanstaat.
@@ -126,6 +129,10 @@ Om zo'n sneltoets vast te leggen, druk je op SandFly-toets + R of SandFly-toets 
 
 Selecteer **Alleen tijdens bewerken** in het sneltoetsdialoogvenster voor een sneltoets die alleen werkt terwijl een tekstveld wordt bewerkt. Zo'n sneltoets wordt zonder de SandFly-toets ingedrukt, en SandFly neemt de toetsen over van het tekstveld. Buiten tekstvelden werken de toetsen zoals ze zonder de sneltoets zouden werken. De sneltoets wordt getoond met "tijdens bewerken" na de toetsen, zoals "Alt + spatie tijdens bewerken".
 
+#### Sneltoetsen die alleen in de browsemodus werken {#keyboards-in-browse-mode}
+
+Selecteer in de toetsenbordtelefoon-keymaps **Alleen in browsemodus** in het sneltoetsdialoogvenster voor een sneltoets die alleen in de browsemodus werkt. Zo'n sneltoets wordt zonder de SandFly-toets ingedrukt. In de browsemodus gaat deze sneltoets voor een sneltoets met dezelfde toetsen zonder **Alleen in browsemodus**, die dan met de SandFly-toets en die toetsen wordt uitgevoerd. Buiten de browsemodus werken de toetsen zoals ze zonder de sneltoets zouden werken. De sneltoets wordt getoond met "in de browsemodus" na de toetsen, zoals "B in de browsemodus".
+
 #### Drukken in toetsenbordtelefoon-keymaps {#keyboards-presses}
 
 In de toetsenbordtelefoon-keymaps kan een sneltoets ook zijn:
@@ -152,9 +159,25 @@ Hetzelfde scherm heeft de gebaren van elke app. Zie [](#gestures) voor gebaren i
 
 ### Een sneltoets vinden {#keyboards-shortcut-list}
 
-**Lijst met sneltoetsen tonen** opent een doorzoekbare lijst met elke opdracht en de bijbehorende sneltoets. De standaardsneltoets is SandFly-toets + Shift + / in de SandFly-, VoiceOver- en Orca-keymap, SandFly-toets + Q in de keymap voor toetsenbordtelefoons, en Q in de enkeltoets-keymap voor toetsenbordtelefoons.
+**Lijst met sneltoetsen tonen** opent een doorzoekbare lijst met elke opdracht en de bijbehorende sneltoets. De standaardsneltoets is SandFly-toets + Shift + / in de SandFly-, VoiceOver-, NVDA-, JAWS- en Orca-keymap, SandFly-toets + Q in de keymap voor toetsenbordtelefoons en de BlackBerry-keymap, en Q in de enkeltoets-keymap voor toetsenbordtelefoons.
 
 **Sneltoetsen** > **Zoeken** vindt een opdracht op naam of op toetsen in de instellingen. Zie [](#appendix-keyboard-shortcuts) voor de standaardsneltoetsen van elke keymap.
+
+### Toetsenbordoefening {#keyboards-practice}
+
+Terwijl de toetsenbordoefening aanstaat, zegt SandFly elke toets die je indrukt en de opdracht die de toets uitvoert, en voert niets uit. Toetsen bereiken de apps niet. Gebruik dit om de toetsen van een toetsenbord en de sneltoetsen van je keymap te leren.
+
+- Toetsen worden genoemd zoals de lijst met sneltoetsen ze noemt, gevolgd door de opdracht, zoals "Right Shift + W, Venstertitel voorlezen". Toetsen zonder opdracht worden alleen genoemd.
+- Een aanpassingstoets wordt genoemd als je deze indrukt, met de opdracht van de los ingedrukte aanpassingstoetsen. De los ingedrukte SandFly-toets wordt ook genoemd als SandFly-toets, zoals "Right Shift, SandFly-toets, Volgend item".
+- Twee keer ingedrukte toetsen, vastgehouden toetsen en de tweede toets van een sneltoets van twee toetsen achter elkaar worden met de opdracht genoemd, zoals "Alt twee keer" of "Alt + Shift ingedrukt gehouden".
+- Terwijl navigatie met pijltoetsen aanstaat, worden de pijltoetsen genoemd met de opdrachten voor navigatie met pijltoetsen.
+- Een vastgehouden toets wordt één keer genoemd.
+
+Om de toetsenbordoefening aan te zetten, selecteer je **Sneltoetsen** > **Toetsenbordoefening** of **Hulp en feedback** > **Toetsenbordoefening**, of druk je op de sneltoets van **Toetsenbordoefening aan- of uitzetten**: SandFly-toets + K in de VoiceOver-keymap, SandFly-toets + 1 in de NVDA- en JAWS-keymap, SandFly-toets + H in de Orca-keymap en SandFly-toets + Shift + K in de toetsenbordtelefoon-keymaps. De SandFly-keymap heeft geen standaardsneltoets. SandFly zegt "Toetsenbordoefening aan".
+
+Om de toetsenbordoefening uit te zetten, druk je opnieuw op de sneltoets, op Terug of op Escape. SandFly zegt "Toetsenbordoefening uit". De toetsenbordoefening gaat ook uit als SandFly opnieuw start of wordt gepauzeerd.
+
+**Toetsenbordoefening aan- of uitzetten** staat in de categorie **SandFly**, zodat je deze opdracht ook aan een gebaar kunt toewijzen of aan het SandFly-menu kunt toevoegen. Volumetoetsen die zonder de SandFly-toets worden ingedrukt, wijzigen het volume zoals gewoonlijk. De les **Toetsenbord oefenen** van de toetsenbordtutorial is anders: die noemt alleen sneltoetsen, op het tutorialscherm. Om die les te openen, kies je **Inhoud** in de toetsenbordtutorial, of voer je **Sneltoetsen oefenen** uit, SandFly-toets + 0 in de SandFly-keymap.
 
 ### Browsemodus {#keyboards-browse-mode}
 
@@ -169,17 +192,28 @@ De standaardsneltoets van **Browsemodus aan- of uitzetten** is:
 | NVDA-keymap | SandFly-toets + spatie |
 | JAWS-keymap | SandFly-toets + Z |
 | Orca-keymap | SandFly-toets + A |
+| Enkeltoets-keymap voor toetsenbordtelefoons | SandFly-toets twee keer indrukken; SandFly-toets + Q met Alt als SandFly-toets |
 
 SandFly speelt een geluid af of zegt "Browsemodus aan" of "Browsemodus uit".
 
-In de toetsenbordtelefoon-keymaps werken de opdrachten die in andere keymaps de browsemodus nodig hebben, ook zonder die modus.
+In de toetsenbordtelefoon-keymaps werken de opdrachten die in andere keymaps de browsemodus nodig hebben, ook zonder die modus. In de enkeltoets-keymap voor toetsenbordtelefoons verandert de browsemodus wat letters doen: B, C, D, I, K, L, R, T, U, V, X en de cijfertoetsen 1 tot 6 bewegen zoals in de browsemodus van de SandFly-keymap, en H, F, E en G bewegen per kop, bedieningselement, bewerkingsveld en afbeelding, in en buiten de browsemodus. De SandFly-toets met een van deze letters voert de sneltoets uit die de letter buiten de browsemodus heeft, zoals SandFly-toets + B voor de onderkant van het scherm en SandFly-toets + K om op de leesinstelling te bewegen. K en Shift + K in de browsemodus zijn **Naar volgende link gaan, tweede toets** en **Naar vorige link gaan, tweede toets** in **Sneltoetsen**. Zie [](#keyboards-phones).
 
 Twee instellingen in **Navigatie** veranderen als de browsemodus aanstaat:
 
-- **Navigatie** > **Slimme browsemodus**: zet de browsemodus uit als de focus naar een tekstveld in webinhoud gaat, zodat je kunt typen, en weer aan als de focus naar een item gaat dat geen tekstveld is. Standaard aan.
+- **Navigatie** > **Slimme browsemodus**: zet de browsemodus uit als de focus naar een tekstveld in webinhoud gaat, zodat je kunt typen, en weer aan als de focus naar een item gaat dat geen tekstveld is. Standaard aan. Terwijl navigatie met pijltoetsen aanstaat, en in de toetsenbordtelefoon-keymaps, krijgt een tekstveld waar je naartoe gaat geen invoerfocus, zodat de browsemodus aan blijft tot je het veld activeert.
 - **Navigatie** > **Browsemodus per app onthouden**: behoudt de browsemodus zoals je die voor het laatst in elke app hebt aan- of uitgezet. In een app waarin je de browsemodus niet hebt aan- of uitgezet, staat die uit, tenzij **Slimme browsemodus** hem aanzet in webinhoud. Standaard uit.
 
 Zie [](#web) voor navigatie op webelementen.
+
+#### Snel zoeken {#keyboards-fast-search}
+
+In de browsemodus beweegt de toets voor snel zoeken met een letter of cijfer de SandFly-focus naar het volgende item dat met die letter of dat cijfer begint. Shift met beide toetsen gaat naar het vorige item. Hoofdletters en accenten maken niet uit: E vindt "Email" en "Écran".
+
+Om de toets te kiezen, ga je naar **Sneltoetsen** > **Snel zoeken** > **Toets voor snel zoeken**. Standaard is dit **Uit**. De lijst heeft Alt, Ctrl en Meta, elk links of rechts, Sym en Fn, behalve toetsen die deel zijn van de SandFly-toets van de keymap. Als je de SandFly-toets wijzigt in een toets die de toets voor snel zoeken bevat, staat snel zoeken uit voor die keymap.
+
+Snel zoeken werkt niet in een tekstveld waarin je typt. Terwijl de toets voor snel zoeken wordt vastgehouden, voeren de letters en cijfers geen andere sneltoetsen uit.
+
+**Sneltoetsen** > **Snel zoeken** > **Rondgaan**: als geen item na de SandFly-focus met de letter begint, gaat het zoeken verder vanaf de bovenkant van het scherm, of vanaf de onderkant bij teruggaan. Standaard aan. Als er geen item wordt gevonden, zegt SandFly "Niet gevonden".
 
 ### Navigatie met pijltoetsen {#keyboards-arrow-keys}
 
@@ -208,6 +242,8 @@ De opdracht van een pijltoets wijzigen:
 
 Een toets die deel is van twee samen ingedrukte toetsen voert zijn opdracht uit als je hem loslaat, tenzij je eerst de tweede toets indrukt. Terwijl een tekstveld wordt bewerkt, bewegen losse pijltoetsen de cursor; samen ingedrukte toetsen voeren nog steeds hun opdrachten uit, en Pijl-links + Pijl-rechts zet navigatie met pijltoetsen uit zodra beide 0,4 seconden worden vastgehouden.
 
+Terwijl navigatie met pijltoetsen aanstaat, wordt een tekstveld waar je naartoe gaat voorgelezen zonder dat het veld invoerfocus krijgt, en bewegen de pijltoetsen verder langs het veld, ook waar de app het veld al invoerfocus had gegeven. Het veld wordt bewerkt zodra je het activeert, zoals met Pijl-omhoog + Pijl-omlaag, of erin typt. In de toetsenbordtelefoon-keymaps activeert Enter het veld ook. Een nieuw scherm dat opent met de SandFly-focus op een tekstveld met invoerfocus, begint met het veld in bewerking. In de toetsenbordtelefoon-keymaps typen letters op een nieuw scherm waar een ander item de SandFly-focus heeft, in het tekstveld met invoerfocus, en gaan de pijltoetsen naar dat veld zodra je hebt getypt.
+
 Elke keymap heeft zijn eigen opdrachten voor pijltoetsen en zijn eigen schakelaar. De NVDA-, JAWS- en Orca-keymaps hebben geen navigatie met pijltoetsen, omdat hun pijltoetsen de SandFly-focus bewegen; daar zegt de opdracht "Geen navigatie met pijltoetsen in deze keymap".
 
 ### Desktopnavigatie {#keyboards-desktop}
@@ -221,6 +257,8 @@ In de NVDA-, JAWS- en Orca-keymaps, en in keymaps die daarvan gekopieerd zijn:
 - In een tekstveld dat wordt bewerkt, gaan deze toetsen naar het tekstveld.
 
 In de browsemodus bewegen losse letters per element, zoals navigatie met losse letters, snelnavigatietoetsen en structurele navigatie dat doen in NVDA, JAWS en Orca.
+
+Ctrl + Pijl-omlaag en Ctrl + Pijl-omhoog gaan naar de volgende en vorige alinea. In de NVDA-keymap doen P en Shift + P dat ook, in de browsemodus. Dit zijn **Naar volgende alinea gaan, tweede toets** en **Naar vorige alinea gaan, tweede toets** in **Sneltoetsen**, waar je ze kunt wijzigen of in andere keymaps kunt toewijzen.
 
 #### Objectnavigatie {#keyboards-object-navigation}
 
@@ -279,27 +317,41 @@ De standaardsneltoetsen zijn:
 
 Deze opdrachten staan in de categorie **Activeren**. Een script kan SandFly ook elke toets aan zijn app laten doorgeven; SandFly-toetsenbordinvoer weer aanzetten beëindigt dat. Zie [](#scripts).
 
+### Een aanraking vasthouden {#keyboards-touch-hold}
+
+**Aanraking op het gefocuste item vasthouden** zet een aanraking op het midden van het gefocuste item, zoals een vinger dat doet, en houdt die aanraking zo lang vast als je kiest. Gebruik dit voor knoppen die werken zolang er een vinger op blijft, zoals de knop voor spraakberichten in Telegram: het opnemen loopt terwijl de aanraking duurt, en het bericht wordt verstuurd als de aanraking wordt losgelaten. **Tikken en vasthouden** doet dit niet.
+
+- Houd de toetsen ingedrukt: de aanraking begint en blijft duren terwijl je de toetsen vasthoudt. Het loslaten van de laatste toets van de sneltoets, zoals V, laat de aanraking los; de SandFly-toets mag je eerst loslaten. SandFly zegt niets.
+- Druk de toetsen in en laat ze binnen een halve seconde los: de aanraking blijft duren zonder de toetsen. SandFly zegt "Aanraking vastgehouden". Om de aanraking los te laten, druk je opnieuw op de sneltoets, op Terug of op Escape. SandFly zegt "Aanraking losgelaten".
+
+De standaardsneltoets is SandFly-toets + V in de toetsenbordtelefoon-keymaps; andere keymaps hebben er geen. Terwijl een aanraking wordt vastgehouden, werken andere toetsen zoals gewoonlijk, en wordt aanraking over het hele scherm aan de app doorgegeven. De aanraking wordt losgelaten na 10 minuten, als het item niet meer op het scherm staat, en als SandFly wordt gepauzeerd. Een andere aanraking die naar het scherm wordt gestuurd, zoals **Activeren met een tik**, annuleert de vastgehouden aanraking.
+
+De opdracht staat in de categorie **Activeren**, zodat je deze ook aan een gebaar kunt toewijzen of aan het SandFly-menu kunt toevoegen; zo uitgevoerd blijft de aanraking duren tot je de opdracht opnieuw uitvoert of op Terug of Escape drukt. Dit vereist Android 11 of hoger; op oudere versies, en als het item niet op het scherm staat, zegt SandFly "Niet beschikbaar". Als geen enkel item focus heeft, zegt SandFly "Geen enkel item heeft focus".
+
 ### Toetsenbordtelefoons {#keyboards-phones}
 
 Toetsenbordtelefoons zijn telefoons met een ingebouwd toetsenbord met letters, Shift, Alt en vaak Sym, maar zonder Ctrl, Meta of pijltoetsen: de Unihertz Titan-telefoons, de BlackBerry KEYone, KEY2 en KEY2 LE, en Zinwa-telefoons zoals de Q25. SandFly herkent deze telefoons en gebruikt daarop de **Keymap voor toetsenbordtelefoons**. Je kunt op elke telefoon beide toetsenbordtelefoon-keymaps kiezen.
 
 - **Keymap voor toetsenbordtelefoons**: de meest gebruikte sneltoetsen zijn het indrukken van toetsen die niet voor typen worden gebruikt, en werken overal, ook in tekstvelden. De los ingedrukte SandFly-toets gaat naar het volgende item, en Shift + de SandFly-toets naar het vorige item. Enter activeert het item waar de SandFly-focus naartoe is gegaan. Alt twee keer indrukken speelt media af of pauzeert ze, en beantwoordt gesprekken. Alt + Shift vasthouden selecteert de volgende leesinstelling. De andere sneltoetsen zijn de SandFly-toets met een letter, zoals SandFly-toets + J, I en K voor leesinstellingen, en T en B voor de bovenkant en onderkant van het scherm.
-- **Enkeltoets-keymap voor toetsenbordtelefoons**: losse toetsen voeren opdrachten uit, zoals spatie voor het volgende item en Shift + spatie voor het vorige item, H voor de volgende kop, en J, L, I en K voor leesinstellingen. Losse toetsen werken buiten tekstvelden die worden bewerkt. De SandFly-toets met een van deze toetsen doet overal hetzelfde, ook in tekstvelden, zodat SandFly-toets + spatie uit een tekstveld gaat. Shift + Z vergrendelt of ontgrendelt aanraking.
+- **BlackBerry-keymap**: de keymap voor toetsenbordtelefoons met toetsen die lijken op die van de BlackBerry 10 Screen Reader voor een extern toetsenbord, met de SandFly-toets in plaats van Ctrl. SandFly-toets + A leest vanaf het begin, en SandFly-toets + Shift + A vanaf het gefocuste item. SandFly-toets + Enter leest het gefocuste item voor. SandFly-toets + S pauzeert de spraak, en SandFly-toets + Shift + S verbergt of toont het scherm. SandFly-toets + . zegt de titel van het scherm. SandFly-toets + Shift + T start Snelle taken; zie [](#gestures-quick-tasks). De pijltoetsen, zoals die van de trackpad van de Zinwa Q25, bewegen met Rechts en Links per navigatie-instelling, en kiezen met Omhoog en Omlaag de volgende en vorige navigatie-instelling. Sneltoetsen van de keymap voor toetsenbordtelefoons op die toetsen liggen hier op andere toetsen: lang indrukken op SandFly-toets + Shift + Enter, **Zoeken op scherm** op SandFly-toets + Shift + spatie, **Instellingen voor SandFly openen** op SandFly-toets + Shift + O, en **Afbeelding beschrijven** op SandFly-toets + Z.
+- **Enkeltoets-keymap voor toetsenbordtelefoons**: losse toetsen voeren opdrachten uit, zoals spatie voor het volgende item en Shift + spatie voor het vorige item, H voor de volgende kop, en J, L, I en K voor leesinstellingen. Losse toetsen werken buiten tekstvelden die worden bewerkt. De SandFly-toets met een van deze toetsen doet overal hetzelfde, ook in tekstvelden, zodat SandFly-toets + spatie uit een tekstveld gaat. Shift + Z vergrendelt of ontgrendelt aanraking. De twee keer ingedrukte SandFly-toets zet de browsemodus aan of uit. In de browsemodus bewegen letters per element zoals in de SandFly-keymap, zoals B naar de volgende knop en K naar de volgende link, en voert de SandFly-toets met een letter de sneltoets uit die de letter buiten de browsemodus heeft, zoals SandFly-toets + T voor de bovenkant van het scherm. Zie [](#keyboards-browse-mode).
 
-In beide keymaps:
+In alle drie keymaps:
 
-- Enter, ingedrukt na het verplaatsen van de SandFly-focus naar een item, activeert dat item. Na het typen gaat Enter naar de app, zodat deze een bericht verstuurt. Als de SandFly-focus op het tekstveld staat dat wordt bewerkt, gaat Enter naar de app.
+- Enter, ingedrukt na het verplaatsen van de SandFly-focus naar een item, activeert dat item. Na het typen gaat Enter naar de app, zodat deze een bericht verstuurt. Als de SandFly-focus op het tekstveld staat dat wordt bewerkt, gaat Enter naar de app. Op een tekstveld waar de SandFly-focus naartoe is gegaan, activeert Enter het veld, ook waar het veld invoerfocus heeft.
 - De opdrachten die in andere keymaps de browsemodus nodig hebben, werken ook hier zonder die modus.
 - Navigatie met pijltoetsen staat standaard aan. Een druk op een trackpad die Enter verstuurt, zoals op de Zinwa Q25, activeert het item.
 - Met Alt als SandFly-toets typt Alt met een letter het cijfer of symbool ervan in een tekstveld dat wordt bewerkt.
 - Sneltoetsen met Sym, Fn of Ctrl werken ook in tekstvelden.
-- SandFly-toets + L vergrendelt of ontgrendelt aanraking in de toetsenbordtelefoon-keymap. Zie [](#touch).
+- SandFly-toets + L vergrendelt of ontgrendelt aanraking in de toetsenbordtelefoon-keymap en de BlackBerry-keymap, en Shift + Z in de enkeltoets-keymap voor toetsenbordtelefoons. Zie [](#touch).
+- SandFly-toets + V houdt een aanraking vast op het gefocuste item, zoals de knop voor spraakberichten in een berichten-app. Zie [](#keyboards-touch-hold).
+- SandFly-toets + Y spelt het wachtwoordveld dat wordt bewerkt. Zie [](#keyboards-passwords).
 
 Zie [](#appendix-keyboard-shortcuts) voor de volledige lijst met sneltoetsen.
 
 #### De SandFly-toets op toetsenbordtelefoons {#keyboards-phone-sandfly-key}
 
-De toetsenbordtelefoon-keymaps bieden Sym, Ctrl, Right Shift, Fn, Right Alt, Alt en Meta aan als SandFly-toets. Standaard kiest SandFly een toets die niet nodig is om op de telefoon te typen:
+De toetsenbordtelefoon-keymaps en de BlackBerry-keymap bieden Sym, Ctrl, Right Shift, Fn, Right Alt, Alt en Meta aan als SandFly-toets. Standaard kiest SandFly een toets die niet nodig is om op de telefoon te typen:
 
 - Ctrl, op Unihertz-telefoons waarvan de toetsenbordinstellingen de Fn-toets laten werken als Ctrl, behalve de Titan 2 Elite.
 - Right Shift, op de Unihertz Titan 2 Elite, de Zinwa Q25 en BlackBerry-telefoons met een rechter Shift-toets.
@@ -312,12 +364,14 @@ Met Sym als SandFly-toets is de symboollaag van het toetsenbord niet beschikbaar
 
 **Typen** > **Fysiek toetsenbord** wordt getoond terwijl een fysiek toetsenbord is aangesloten:
 
-- **Lettertoetsen drukken op knoppen van het numerieke toetsenblok**: op toetsenborden waarvan de letters cijfers bevatten, zoals op BlackBerry-, Unihertz- en Zinwa-telefoons waar W, E en R 1, 2 en 3 zijn, drukken lettertoetsen op de knoppen van het pincodescherm van het vergrendelscherm, het beltoetsenblok, waar ze de toetsenbloktonen afspelen, en rekenmachines, waar de Alt-tekens van letters, zoals + en -, op de rekenknoppen drukken. Een letter op het vergrendelscherm voordat het pincodescherm wordt getoond, opent dit scherm. Toetsen met een aanpassingstoets, cijfertoetsen en toetsen die in een tekstveld worden getypt, worden niet overgenomen. Standaard aan, en alleen getoond voor zulke toetsenborden.
-- **Enter verstuurt berichten**: in het berichtenveld van een berichten-app, zoals Messages, WhatsApp, Telegram, Signal of Slack, met tekst erin, drukt Enter op de knop Verzenden van de app. Shift + Enter en Alt + Enter gaan naar de app, die een nieuwe regel typt. Dit werkt met elk fysiek toetsenbord, en staat standaard uit.
+- **Lettertoetsen drukken op knoppen van het numerieke toetsenblok**: op toetsenborden waarvan de letters cijfers bevatten, zoals op BlackBerry-, Unihertz- en Zinwa-telefoons waar W, E en R 1, 2 en 3 zijn, drukken lettertoetsen op de knoppen van het pincodescherm van het vergrendelscherm, het beltoetsenblok, waar ze de toetsenbloktonen afspelen, en rekenmachines, waar de Alt-tekens van letters, zoals + en -, op de rekenknoppen drukken. Op het vergrendelscherm drukken ook cijfertoetsen op de knoppen van het pincodescherm, en drukken Enter en Backspace op de knoppen Enter en Verwijderen ervan. Een letter of cijfer die wordt ingedrukt voordat het pincodescherm wordt getoond, opent dit scherm en typt het cijfer, of ontgrendelt het apparaat waar geen pincode nodig is, zoals terwijl Extend Unlock het ontgrendeld houdt. Toetsen met een aanpassingstoets, cijfertoetsen buiten het vergrendelscherm en toetsen die in een tekstveld worden getypt, zoals een wachtwoordveld op het vergrendelscherm, worden niet overgenomen. Standaard aan, en alleen getoond voor zulke toetsenborden.
+- **Enter verstuurt berichten**: in het berichtenveld van een berichten-app, zoals Messages, WhatsApp, Telegram, Signal of Slack, met tekst erin, drukt Enter op de knop Verzenden van de app. Shift + Enter en Alt + Enter gaan naar de app, die een nieuwe regel typt. Terwijl navigatie met pijltoetsen aanstaat, en in de toetsenbordtelefoon-keymaps, verstuurt Enter op een berichtenveld waar de SandFly-focus naartoe is gegaan pas iets als het veld is geactiveerd of als erin is getypt. Dit werkt met elk fysiek toetsenbord, en staat standaard uit. De verzendtoets van een toetsenbordtelefoon, zoals de groene beltoets van de Zinwa Q25, drukt in dezelfde berichtenvelden op de knop Verzenden, of deze instelling nu aan of uit staat. In die apps drukt de verzendtoets ook op een knop Verzenden die buiten het veld wordt getoond, zoals die voor een spraakbericht dat wordt opgenomen; elders gaat de toets zoals gewoonlijk naar de telefoon.
 - **SandFly-toetsenbord**: opent de lijst met toetsenborden in de Android-instellingen, waar je het SandFly-toetsenbord aanzet. Zie [](#keyboards-sandfly-keyboard).
 - **Invoer bij ingedrukte toets**: wat een vastgehouden toets typt met het SandFly-toetsenbord.
 - **Tekens bij twee keer drukken**: wat een twee keer ingedrukte toets typt met het SandFly-toetsenbord. Zie [](#keyboards-double-press).
 - **Twee keer spatie typt een punt**: met het SandFly-toetsenbord typt spatie die twee keer na een woord wordt ingedrukt een punt en een spatie. Standaard uit.
+- **Autocorrectie**, **Woordsuggesties**, **Suggestie uitspreken**, **Enter typt de uitgesproken suggestie**, **Taal van de woordenlijst** en **Geleerde woorden verwijderen**: correcties en suggesties voor het woord dat met het SandFly-toetsenbord wordt getypt. **Autocorrectie** en **Woordsuggesties** staan standaard uit. Zie [](#keyboards-word-suggestions).
+- **Wachtwoordtekens uitspreken**: met het SandFly-toetsenbord zegt SandFly in wachtwoordvelden elk getypt, verwijderd of gepasseerd teken in plaats van "opsommingsteken". Standaard uit. Zie [](#keyboards-passwords).
 - **Android-instellingen voor fysiek toetsenbord**: opent de instellingen voor het fysieke toetsenbord van Android, zoals de toetsenbordindeling.
 
 ### Het SandFly-toetsenbord {#keyboards-sandfly-keyboard}
@@ -326,9 +380,12 @@ Het SandFly-toetsenbord is een invoermethode voor fysieke toetsenborden. Het too
 
 - Precieze informatie over of een tekstveld overneemt wat je typt, zodat sneltoetsen met losse toetsen en Enter in de toetsenbordtelefoon-keymaps op de juiste plekken werken.
 - Vastgehouden toetsen die het Alt-teken van de toets typen, of de hoofdletter ervan.
+- Shift die voor een toets wordt ingedrukt en losgelaten, wat die toets met Shift typt, zoals op BlackBerry-toetsenborden. Shift opnieuw indrukken en loslaten voor de toets annuleert dit.
 - Twee keer indrukken dat andere tekens typt, zoals G G voor ğ, en een punt voor spatie die twee keer wordt ingedrukt.
 - Emoji zoeken en een symbolenlijst.
 - Bewerkingsmodus, waarin losse toetsen de cursor bewegen en selecteren, kopiëren, knippen en plakken.
+- Autocorrectie en woordsuggesties.
+- De tekens van wachtwoordvelden, die Android aan schermlezers alleen als opsommingstekens geeft.
 
 Het SandFly-toetsenbord is niet beschikbaar op smartwatches en tv's.
 
@@ -391,7 +448,55 @@ In de toetsenbordtelefoon-keymaps is **Emoji zoeken** SandFly-toets + O, en is *
 - Verwijdertoetsen verwijderen.
 - Enter, Escape of Terug zet de bewerkingsmodus uit.
 
-Andere toetsen die typen doen niets in de bewerkingsmodus. De bewerkingsmodus vereist het SandFly-toetsenbord. In de toetsenbordtelefoon-keymaps is de sneltoets SandFly-toets + C.
+Andere toetsen die typen doen niets in de bewerkingsmodus. In een wachtwoordveld zegt R "Wordt niet voorgelezen in wachtwoordvelden", en kopieert C zonder de tekst uit te spreken. De bewerkingsmodus vereist het SandFly-toetsenbord. In de toetsenbordtelefoon-keymaps is de sneltoets SandFly-toets + C.
+
+#### Autocorrectie en woordsuggesties {#keyboards-word-suggestions}
+
+Het SandFly-toetsenbord kan het woord dat je typt corrigeren en er woorden voor voorstellen. Beide staan standaard uit, in **Typen** > **Fysiek toetsenbord**:
+
+- **Autocorrectie**: als je na een verkeerd gespeld woord spatie, een leesteken of Enter typt, komt de correctie in de plaats van het woord, en zegt SandFly de correctie, zoals "receive, gecorrigeerd". Woorden die midden in een zin met een hoofdletter beginnen, woorden met hoofdletters na de eerste letter en woorden die in hoofdletters zijn getypt, blijven zoals getypt. Engelse i, im en dont worden I, I'm en don't.
+- **Woordsuggesties**: terwijl je een woord typt, gaan Pijl-omhoog en Pijl-omlaag door correcties en langere woorden die beginnen met wat je hebt getypt, zoals "keyboard, 1 van 8" voor "keyb". Op de Zinwa Q25 verstuurt de trackpad deze toetsen. Enter, of een klik op de trackpad, typt de suggestie met een spatie; spatie of een leesteken typt de suggestie gevolgd door dat teken. Terug of Escape sluit de lijst en behoudt het woord zoals getypt. Elke andere toets sluit de lijst en doet wat die toets doet, zodat Backspace een letter verwijdert en een letter wordt getypt. Terwijl er geen woord wordt getypt, na spatie, een leesteken of een cursorbeweging, bewegen Pijl-omhoog en Pijl-omlaag zoals eerder in de tekst.
+
+**Suggestie uitspreken**: terwijl je een woord typt, zegt SandFly met een lagere toonhoogte de correctie die spatie zou typen, zoals "receive, correctie", of anders de eerste woordsuggestie, zoals "keyboard" voor "keyboa". Typ verder om het woord te behouden, druk op Pijl-omlaag voor andere suggesties, of op spatie om de correctie te typen. De volgende toets stopt de spraak. Kies wanneer de suggestie wordt uitgesproken:
+
+- **Direct**: na elke toets, direct na de toetsenbordecho van de toets, of meteen als toetsenbordecho uit staat.
+- 0,25 tot 3 seconden: als je binnen het woord zo lang stopt met typen. De standaardwaarde is 1 seconde.
+- **Uit**: nooit.
+
+Dit geldt terwijl **Autocorrectie** of **Woordsuggesties** aanstaat.
+
+**Enter typt de uitgesproken suggestie**, standaard uit: nadat een correctie of suggestie is uitgesproken, typt Enter deze met een spatie, tot je verder typt of de cursor beweegt. Op de Zinwa Q25 verstuurt een klik op de trackpad Enter, zodat een klik de suggestie typt. Een tweede Enter gaat naar de app, zoals om een bericht te versturen. Pijl-omlaag opent de lijst dan bij de suggestie na de uitgesproken suggestie. Met de schakelaar uit gaat Enter zoals eerder naar de app, en opent de eerste Pijl-omlaag de lijst bij de eerste suggestie, de eerste Pijl-omhoog bij de laatste.
+
+Een swipe op de trackpad verstuurt twee of meer pijltoetsaanslagen; in de lijst bewegen aanslagen in dezelfde richting die minder dan 0,1 seconde na elkaar komen één keer.
+
+Om een correctie ongedaan te maken, druk je direct daarna op Backspace. SandFly zegt het woord zoals je het typte, zoals "recieve, correctie ongedaan gemaakt", en het woord wordt nooit meer gecorrigeerd.
+
+Woorden die je typt en kiest, komen hoger in de suggesties. Deze geleerde woorden, en de woorden waarvan je de correctie ongedaan hebt gemaakt, worden alleen op de telefoon bewaard, per taal. **Geleerde woorden verwijderen** verwijdert ze. Er wordt niets geleerd in wachtwoordvelden of in velden die leren uitzetten, zoals bij privé browsen.
+
+**Taal van de woordenlijst** stelt de taal van de woorden in: **Systeemtaal**, de standaardwaarde, of een van Engels (VS), Engels (VK), Duits, Spaans, Frans, Portugees (Brazilië), Portugees (Portugal), Hongaars, Turks, Russisch, Oekraïens en Arabisch, elk vermeld met de naam in die taal, zoals Deutsch. Zonder woordenlijst voor de systeemtaal wordt er niets gecorrigeerd of voorgesteld tot je een taal kiest. Correcties houden rekening met de toetsen van je toetsenbordindeling: een letter die is getypt voor de toets ernaast, wordt als eerste gecorrigeerd. Een letter die zonder accent is getypt, zoals fur voor für, wordt ook gecorrigeerd.
+
+Autocorrectie en woordsuggesties worden niet gebruikt in velden voor wachtwoorden, e-mailadressen, webadressen en getallen, en ook niet in velden die zijn gemarkeerd voor geen suggesties.
+
+Zonder pijltoetsen gebruik je de opdrachten **Volgende woordsuggestie**, **Vorige woordsuggestie** en **Woordsuggestie typen**, in de categorie **Tekstverwerking**. Ze hebben geen standaardsneltoetsen: wijs ze toe in **Sneltoetsen**, waar **Alleen tijdens bewerken** de toetsen elders voor typen vrijhoudt, of wijs ze toe aan gebaren. **Woordsuggestie typen** typt de laatst uitgesproken suggestie, of de eerste suggestie voor het getypte woord. Met aanraking voeg je de leesinstelling **Woordsuggesties** toe, in de groep **Acties voor huidig item** van **Leesinstellingen**: terwijl een woord wordt getypt, swipe je omhoog of omlaag om door de suggesties te gaan, en dubbeltik je om de suggestie te typen die SandFly heeft uitgesproken. Deze leesinstelling staat standaard uit en vereist Android 11 of hoger.
+
+#### Wachtwoordvelden {#keyboards-passwords}
+
+Android geeft schermlezers voor de tekst van een wachtwoordveld alleen opsommingstekens, dus SandFly zegt "opsommingsteken" voor elk teken. Het SandFly-toetsenbord leest de tekst van het veld waarin het typt, en SandFly kan de tekens op twee manieren uitspreken.
+
+**Typen** > **Fysiek toetsenbord** > **Wachtwoordtekens uitspreken**, standaard uit: in een wachtwoordveld dat met het SandFly-toetsenbord wordt bewerkt, zegt SandFly:
+
+- Elk getypt teken, zoals "hoofdletter P", "apenstaartje" of "1". Tekens worden benoemd zoals in andere tekstvelden, en hoofdletters volgen **Uitgebreidheidsniveau** > **Hoofdletters**.
+- Elk teken dat met Backspace of Delete wordt verwijderd, zoals "a verwijderd".
+- Het teken waar de cursor overheen gaat met Pijl-links of Pijl-rechts, de trackpad of de bewerkingsmodus.
+- Voor een toets die wordt vastgehouden voor het Alt-teken: het teken en het teken dat werd vervangen, zoals "apenstaartje heeft a vervangen".
+
+Geplakte of ingevulde tekst, een gewist veld, een selectie en bewegingen over meer dan één teken worden zoals eerder uitgesproken, met opsommingstekens.
+
+**Wachtwoordveld spellen**, in de categorie **Tekstverwerking** van de opdrachten, spelt de hele tekst van het wachtwoordveld dat wordt bewerkt, elk teken met de positie, zoals "1 hoofdletter P, 2 a, 3 apenstaartje, 4 1". Hoofdletters worden altijd uitgesproken als "hoofdletter". Dit werkt of **Wachtwoordtekens uitspreken** nu aan of uit staat. In een tekstveld dat geen wachtwoordveld is, zegt SandFly "Geen wachtwoordveld"; zonder het SandFly-toetsenbord in een tekstveld "Vereist het SandFly-toetsenbord in een tekstveld". In de toetsenbordtelefoon-keymaps is de sneltoets SandFly-toets + Y. In andere keymaps wijs je de opdracht toe in **Sneltoetsen**. Je kunt de opdracht ook aan een gebaar toewijzen of aan het SandFly-menu toevoegen.
+
+Wachtwoordtekens worden alleen op deze twee manieren uitgesproken. Ze worden niet bewaard voor **Laatst uitgesproken woordgroep herhalen**, **Laatst uitgesproken woordgroep spellen**, **Laatst uitgesproken woordgroep kopiëren** of **Spraakgeschiedenis**, en SandFly logt alleen hoeveel tekens een veld heeft.
+
+Standaard Android-tekstvelden geven het SandFly-toetsenbord de tekst, en de meeste apps ook. Waar een app geen tekst geeft, zegt SandFly zoals eerder "opsommingsteken", en zegt **Wachtwoordveld spellen** "Tekst van wachtwoordveld niet beschikbaar".
 
 ### Overige toetsenbordinstellingen {#keyboards-other-settings}
 

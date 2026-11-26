@@ -5,7 +5,8 @@
 - **Panduan pengguna**: panduan ini. Lihat [](#getting-started-user-guide).
 - **Tutorial SandFly**: tutorial interaktif. Lihat [](#help-tutorial).
 - **Berlatih gerakan**: pelajaran latihan gerakan dari tutorial. Lihat [](#help-tutorial).
-- **Uji ketepatan gerakan**: latihan yang mengukur gerakan Anda berdasarkan batas yang dipakai SandFly. Lihat [](#gestures-trainer).
+- **Latihan keyboard**: mengaktifkan latihan keyboard. SandFly mengucapkan setiap tombol yang ditekan beserta perintahnya, tanpa menjalankan apa pun. Tersedia saat SandFly aktif; tidak ditampilkan di jam tangan. Lihat [](#keyboards-practice).
+- **Uji ketepatan gerakan**: latihan yang mengukur gerakan Anda berdasarkan batas yang dipakai SandFly. Tidak ditampilkan di jam tangan dan TV. Lihat [](#gestures-trainer).
 - **Kirim masukan**: laporan masalah dan saran kepada pengembang SandFly, beserta balasannya. Lihat [](#help-feedback).
 - **Riwayat versi**: catatan rilis dari setiap rilis SandFly. Lihat [](#help-version-history).
 - **Kebijakan privasi**: kebijakan privasi SandFly. Lihat [](#help-version-history).
@@ -14,7 +15,7 @@ Setelan untuk developer dan untuk mencari masalah ada di **Setelan developer**. 
 
 ### Tutorial dan latihan gerakan {#help-tutorial}
 
-**Bantuan & masukan** > **Tutorial SandFly** membuka tutorial SandFly pada pelajaran terakhir yang Anda buka. Pada perangkat dengan layar sentuh dan keyboard fisik, pilihan **Tutorial gerakan sentuh** atau **Tutorial keyboard** akan muncul terlebih dahulu. Untuk daftar pelajaran dan cara kerja tutorial, lihat [](#getting-started-tutorial).
+**Bantuan & masukan** > **Tutorial SandFly** membuka tutorial SandFly pada pelajaran terakhir yang Anda buka. Pada perangkat dengan layar sentuh dan keyboard fisik, pilihan **Tutorial gerakan sentuh** dan **Tutorial keyboard** ditampilkan terlebih dahulu. Untuk daftar pelajaran dan cara kerja tutorial, lihat [](#getting-started-tutorial).
 
 **Bantuan & masukan** > **Berlatih gerakan** membuka **Latihan gerakan**. Di sana, SandFly menyebutkan nama setiap gerakan yang Anda lakukan dan perintah yang ditetapkan padanya, tanpa menjalankan perintah tersebut. Untuk keluar, pindah ke **Akhiri latihan** lalu aktifkan.
 
@@ -61,7 +62,9 @@ Laporan selalu menyertakan kolom yang Anda isi serta versi dan nomor build SandF
 - Log SandFly sejak saat Anda membuka **Kirim masukan**, agar masalah yang ingin Anda laporkan masih tercatat di dalamnya. Dalam layar terpisah, log dibaca saat Anda memilih **Kirim**, sehingga Anda dapat memicu masalah di aplikasi satunya terlebih dahulu.
 - Gerakan terakhir yang dikenali SandFly.
 - Crash terakhir dan waktu terakhir SandFly nonaktif, serta saat-saat SandFly sempat berhenti merespons.
-- Layanan aksesibilitas yang aktif dan penekanan tombol volume terakhir.
+- Layanan aksesibilitas yang aktif serta penekanan tombol volume dan tombol Enter terakhir.
+- Pengumuman, notifikasi, toast, dan nama jendela terakhir yang dikirim aplikasi, masing-masing dengan aplikasi pengirimnya dan awal teksnya.
+- Ke mana fokus berpindah setelah Kembali, waktu yang diperlukan untuk memeriksa kondisi **Tampilkan di Tindakan hanya jika** pada makro, apa yang memutar dan merekam audio, serta pengetikan dari pop-up karakter alternatif Gboard.
 - Log dari proses SandFly lain, seperti AI di perangkat.
 
 Untuk melaporkan masalah segera setelah terjadi, buka **Kirim masukan** sebelum melakukan hal lain agar log masih menyimpannya.
@@ -98,16 +101,16 @@ Perintah **Laporkan respons AI** membuka laporan baru yang sudah terisi teks ter
 **Setelan developer** berisi setelan untuk menemukan masalah dan untuk pengembangan. Sebagian setelan menuliskan konten layar ke log sistem yang dapat dibaca aplikasi lain yang memiliki akses log. Biarkan nonaktif kecuali Anda membutuhkannya.
 
 - **Kode versi**: versi SandFly beserta kode versinya. Pada Android 11 dan lebih lama, versi ditampilkan di bawah judul layar sebagai gantinya.
-- **Mode diagnosis**: nonaktif secara default. Ketukan empat jari menuliskan konten layar ke log sistem. Selama mode ini aktif, **Tampilkan output ucapan**, **Ulangi ucapan yang dikenali**, **Aktifkan debug pohon node**, dan **Aktifkan overlay log debug** bekerja seolah aktif, serta keempatnya dan **Tingkat output log** tidak dapat diubah. SandFly meminta konfirmasi Anda.
+- **Mode diagnosis**: nonaktif secara default. Ketukan empat jari menuliskan konten layar ke log sistem. Selama mode ini aktif, **Tampilkan output ucapan**, **Ulangi ucapan yang dikenali**, **Aktifkan debug pohon node**, dan **Aktifkan overlay log debug** bekerja seolah aktif, serta keempatnya dan **Tingkat output log** tidak dapat diubah. SandFly menampilkan dialog konfirmasi.
 - **Tampilkan output ucapan**: nonaktif secara default. Menampilkan teks yang diucapkan SandFly di layar.
 - **Kelola gerakan di SandFly**: aktif secara default. SandFly mengenali gerakan sendiri alih-alih menyerahkannya ke Android. Banyak fitur gerakan SandFly memerlukan opsi ini. Nonaktifkan lalu aktifkan kembali SandFly setelah mengubahnya. Tidak ditampilkan di TV.
 - **Abaikan batas memori AI di perangkat**: nonaktif secara default. Menampilkan semua model AI di perangkat, termasuk model yang memerlukan memori lebih besar dari kapasitas perangkat, dan memuat model tanpa memeriksa sisa memori. Lihat [](#descriptions).
 - **Ulangi ucapan yang dikenali**: nonaktif secara default. SandFly mengucapkan teks yang dikenali dari perintah suara. Lihat [](#voice-commands).
-- **Aktifkan statistik performa**: nonaktif secara default. SandFly mengumpulkan statistik waktu, yang ditulis ke log sistem oleh perintah **Cetak statistik performa**. Menggunakan lebih banyak memori dan daya. SandFly meminta konfirmasi Anda.
-- **Jelajahi dengan sentuhan**: aktif secara default. Menonaktifkannya membuat SandFly berhenti membaca item yang Anda sentuh dan berhenti menangani gerakan. SandFly meminta konfirmasi Anda. Tidak ditampilkan di TV.
-- **Aktifkan debug pohon node**: nonaktif secara default. Perintah **Cetak pohon node** menuliskan pohon item di layar ke log sistem. Saat Anda mengaktifkannya, SandFly menawarkan untuk menetapkan **Cetak pohon node** ke ketuk tiga kali dengan empat jari. Di TV, tombol pencarian di remote mencetak pohon tersebut.
+- **Aktifkan statistik performa**: nonaktif secara default. SandFly mengumpulkan statistik waktu, yang ditulis ke log sistem oleh perintah **Cetak statistik performa**. Menggunakan lebih banyak memori dan daya. SandFly menampilkan dialog konfirmasi.
+- **Jelajahi dengan sentuhan**: aktif secara default. Menonaktifkannya membuat SandFly berhenti membaca item yang Anda sentuh dan berhenti menangani gerakan. SandFly menampilkan dialog konfirmasi. Tidak ditampilkan di TV.
+- **Aktifkan debug pohon node**: nonaktif secara default. Perintah **Cetak pohon node** menuliskan pohon item di layar ke log sistem. Saat Anda mengaktifkannya, dialog menawarkan untuk menetapkan **Cetak pohon node** ke ketuk tiga kali dengan empat jari. Di TV, tombol pencarian di remote mencetak pohon tersebut.
 - **Aktifkan overlay log debug**: nonaktif secara default. Menampilkan log SandFly di layar.
-- **Tingkat output log**: seberapa banyak informasi yang ditulis SandFly ke log sistem, dari **Tidak ada** hingga **VERBOSE**. Nilai defaultnya adalah **Error**. SandFly meminta konfirmasi Anda untuk pencatatan verbose, yang dapat memasukkan informasi pribadi ke dalam log.
+- **Tingkat output log**: seberapa banyak informasi yang ditulis SandFly ke log sistem, dari **Tidak ada** hingga **VERBOSE**. Nilai defaultnya adalah **Error**. Pencatatan verbose, yang dapat memasukkan informasi pribadi ke dalam log, memerlukan konfirmasi.
 - **Filter pencatatan log peristiwa aksesibilitas**: jenis aktivitas aksesibilitas yang ditulis SandFly ke log sistem.
 
 Untuk memeriksa satu item, serta menyalin detail item atau pohon layar, gunakan perintah yang dijelaskan di [](#scripts).
