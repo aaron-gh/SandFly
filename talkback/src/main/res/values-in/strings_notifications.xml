@@ -8,14 +8,14 @@
     <string name="notification_media_read">Baca</string>
     <string name="notification_headphones_only_without">Hanya tanpa headphone</string>
     <string name="notification_headphones_only_with">Hanya dengan headphone</string>
-    <string name="notification_headphones_always">Membaca dengan lantang dengan atau tanpa headphone</string>
+    <string name="notification_headphones_always">Baca dengan atau tanpa headphone</string>
     <string name="notification_queue_skip">Jangan bacakan yang baru</string>
-    <string name="notification_queue_interrupt">Interupsi</string>
+    <string name="notification_queue_interrupt">Sela notifikasi itu</string>
     <string name="notification_queue_queue">Baca setelahnya</string>
     <string name="notification_url_omit">Lewati</string>
-    <string name="notification_url_replace">Ucapkan teks di bawah</string>
+    <string name="notification_url_replace">Ucapkan teks pengganti tautan</string>
     <string name="notification_url_domain">Bacakan situsnya saja</string>
-    <string name="notification_url_full">Bacakan seluruh link</string>
+    <string name="notification_url_full">Bacakan seluruh tautan</string>
     <string name="notification_category_title">Notifikasi</string>
     <string name="notification_reading_title">Pembacaan notifikasi</string>
     <string name="notification_apps_title">Aplikasi</string>
@@ -26,7 +26,7 @@
     <string name="notification_repeats_title">Pengulangan</string>
     <string name="notification_stop_title">Berhenti membaca</string>
     <string name="notification_schedules_title">Ringkasan dan waktu</string>
-    <string name="notification_history_title">Riwayat pemberitahuan</string>
+    <string name="notification_history_title">Riwayat notifikasi</string>
     <string name="notification_test_title">Kirim notifikasi uji</string>
     <string name="notification_automation_title">Otomatisasi</string>
     <string name="notification_automation_allowed_title">Izinkan aplikasi otomatisasi</string>
@@ -43,20 +43,20 @@
     <string name="notification_sound_before_title">Suara sebelum notifikasi</string>
     <string name="notification_category_text">Teks</string>
     <string name="notification_remove_emoji_title">Lewati emoji</string>
-    <string name="notification_lowercase_title">Baca huruf kapital sebagai kata-kata</string>
-    <string name="notification_lowercase_summary">Beberapa mesin ucapan mengeja kata yang ditulis dengan huruf kapital huruf demi huruf</string>
+    <string name="notification_lowercase_title">Baca kata berhuruf kapital sebagai kata biasa</string>
+    <string name="notification_lowercase_summary">Beberapa mesin ucapan mengeja kata berhuruf kapital satu per satu huruf</string>
     <string name="notification_separate_digits_title">Bacakan angka panjang per digit</string>
     <string name="notification_separate_digits_summary">Seperti kode dan nomor telepon</string>
     <string name="notification_min_digits_title">Jumlah digit minimum dalam angka panjang</string>
-    <string name="notification_urls_title">Link</string>
-    <string name="notification_url_text_title">Teks pengganti link</string>
+    <string name="notification_urls_title">Tautan</string>
+    <string name="notification_url_text_title">Teks pengganti tautan</string>
     <string name="notification_skip_empty_title">Lewati notifikasi tanpa teks</string>
     <string name="notification_category_length">Panjang</string>
     <string name="notification_max_words_title">Jumlah kata maksimum</string>
     <string name="notification_max_sentences_title">Jumlah kalimat maksimum</string>
-    <string name="notification_max_characters_title">Jumlah maksimum karakter teks</string>
+    <string name="notification_max_characters_title">Jumlah karakter maksimum</string>
     <string name="notification_max_seconds_title">Berhenti membaca setelah</string>
-    <string name="notification_category_timing">Waktu</string>
+    <string name="notification_category_timing">Waktu pembacaan</string>
     <string name="notification_delay_title">Tunggu sebelum membaca</string>
     <string name="notification_queue_title">Saat notifikasi lain dibaca</string>
     <string name="notification_repeat_minutes_title">Baca lagi sampai layar menyala</string>
@@ -64,7 +64,7 @@
     <string name="notification_skip_ongoing_title">Lewati notifikasi yang sedang berlangsung</string>
     <string name="notification_skip_ongoing_summary">Seperti navigasi dan pengatur waktu</string>
     <string name="notification_skip_foreground_title">Lewati notifikasi aplikasi yang berjalan</string>
-    <string name="notification_skip_foreground_summary">Seperti VPN atau perekam audio</string>
+    <string name="notification_skip_foreground_summary">Seperti VPN atau perekam</string>
     <string name="notification_skip_progress_title">Lewati notifikasi progres</string>
     <string name="notification_skip_group_summaries_title">Lewati ringkasan grup</string>
     <string name="notification_skip_group_summaries_summary">Seperti “3 pesan baru”</string>
@@ -72,7 +72,7 @@
     <string name="notification_skip_system_title">Lewati notifikasi sistem</string>
     <string name="notification_screen_on_title">Saat layar menyala</string>
     <string name="notification_screen_off_title">Saat layar mati</string>
-    <string name="notification_locked_title">Saat telepon terkunci</string>
+    <string name="notification_locked_title">Saat ponsel terkunci</string>
     <string name="notification_headphones_title">Headphone</string>
     <string name="notification_media_title">Saat media diputar</string>
     <string name="notification_dnd_title">Jangan Ganggu</string>
@@ -95,7 +95,7 @@
     <string name="notification_repeat_seconds_title">Lewati notifikasi yang sama selama</string>
     <string name="notification_numbers_alike_title">Angka dianggap sama</string>
     <string name="notification_numbers_alike_summary">Seperti persentase unduhan</string>
-    <string name="notification_cooldown_title">Waktu antara notifikasi aplikasi</string>
+    <string name="notification_cooldown_title">Jeda antara notifikasi dari aplikasi yang sama</string>
     <string name="notification_skip_prefix_title">Hilangkan awal yang berulang</string>
     <string name="notification_skip_prefix_summary">Seperti nama grup dalam chat</string>
     <string name="notification_prefix_memory_title">Ingat awal selama</string>
@@ -103,12 +103,12 @@
     <string name="notification_shake_title">Kocok untuk berhenti</string>
     <string name="notification_shake_strength_title">Kekuatan guncangan</string>
     <string name="notification_wave_title">Lambaikan tangan untuk berhenti</string>
-    <string name="notification_wave_summary">Menggerakan tangan di atas sensor jarak</string>
-    <string name="notification_pocket_title">Modus saku</string>
+    <string name="notification_wave_summary">Menggerakkan tangan di atas sensor jarak</string>
+    <string name="notification_pocket_title">Mode saku</string>
     <string name="notification_pocket_summary">Jika sensor sudah tertutup saat pembacaan dimulai, misalnya di saku, pembacaan tidak berhenti</string>
     <string name="notification_volume_keys_title">Tekan kedua tombol volume</string>
     <string name="notification_dismiss_title">Berhenti saat ditutup</string>
-    <string name="notification_watch_dismiss_title">Juga ketika notifikasi ditutup di jam tangan pintar</string>
+    <string name="notification_watch_dismiss_title">Juga ketika notifikasi ditutup di jam tangan</string>
     <string name="notification_app_cancel_title">Berhenti saat aplikasi menghapusnya</string>
     <string name="notification_category_summary">Ringkasan</string>
     <string name="notification_summary_now_title">Baca notifikasi sekarang</string>
@@ -139,13 +139,13 @@
     <string name="notification_app_mode_priority">Baca dulu</string>
     <string name="notification_app_mode_ignore">Jangan baca</string>
     <string name="notification_app_name_title">Nama yang diucapkan</string>
-    <string name="notification_app_said_as">dikatakan sebagai <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
+    <string name="notification_app_said_as">diucapkan sebagai <xliff:g id="name" example="Twitter">%1$s</xliff:g></string>
     <string name="notification_app_reset">Setel ulang</string>
     <string name="notification_required_title">Hanya bacakan notifikasi yang berisi</string>
     <string name="notification_blocked_title">Jangan bacakan notifikasi yang berisi</string>
     <string name="notification_private_title">Bacakan hanya nama aplikasi untuk notifikasi yang berisi</string>
-    <string name="notification_replacements_title">Ucapan berbeda</string>
-    <string name="notification_add_word">Tambahkan sebuah kata</string>
+    <string name="notification_replacements_title">Ucapkan secara berbeda</string>
+    <string name="notification_add_word">Tambahkan kata</string>
     <string name="notification_add_replacement">Tambahkan pengganti</string>
     <string name="notification_replacement_item"><xliff:g id="find" example="lol">%1$s</xliff:g> sebagai <xliff:g id="replace" example="laughing">%2$s</xliff:g></string>
     <string name="notification_replace_find">Teks</string>
@@ -154,27 +154,27 @@
     <string name="notification_regex">Ekspresi reguler</string>
     <string name="notification_enter_text">Masukkan teks</string>
     <string name="notification_invalid_regex">Bukan ekspresi reguler yang valid</string>
-    <string name="notification_edit">Sunting</string>
+    <string name="notification_edit">Edit</string>
     <string name="notification_remove">Hapus</string>
-    <string name="notification_history_keep">Simpan riwayat pemberitahuan</string>
+    <string name="notification_history_keep">Simpan riwayat notifikasi</string>
     <string name="notification_history_clear">Hapus riwayat</string>
     <string name="notification_history_category">Notifikasi</string>
     <string name="notification_history_empty">Tidak ada notifikasi</string>
     <string name="notification_history_ignore_app">Jangan baca <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
-    <string name="notification_history_private_app">Baca hanya nama <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
+    <string name="notification_history_private_app">Bacakan hanya nama aplikasi untuk <xliff:g id="app" example="Chat">%1$s</xliff:g></string>
     <string name="notification_history_priority_app">Baca <xliff:g id="app" example="Chat">%1$s</xliff:g> terlebih dahulu</string>
-    <string name="notification_history_block_similar">Jangan membaca notifikasi seperti ini</string>
+    <string name="notification_history_block_similar">Jangan bacakan notifikasi seperti ini</string>
     <string name="notification_history_copy">Salin</string>
     <string name="notification_saved">Disimpan</string>
     <string name="notification_copied">Disalin</string>
     <string name="notification_outcome_read">Dibaca</string>
-    <string name="notification_outcome_stopped">Berhenti saat membaca</string>
+    <string name="notification_outcome_stopped">Dihentikan saat dibacakan</string>
     <string name="notification_outcome_speech_off">Tidak dibacakan: pembacaan notifikasi nonaktif</string>
     <string name="notification_outcome_dnd">Tidak dibacakan: Jangan Ganggu</string>
     <string name="notification_outcome_touching">Tidak dibacakan: layar disentuh</string>
     <string name="notification_outcome_app">Tidak dibacakan: aplikasi</string>
     <string name="notification_outcome_ongoing">Tidak dibacakan: notifikasi berkelanjutan</string>
-    <string name="notification_outcome_foreground">Tidak dibacakan: aplikasi sedang dibuka</string>
+    <string name="notification_outcome_foreground">Tidak dibacakan: aplikasi yang berjalan</string>
     <string name="notification_outcome_low_priority">Tidak dibacakan: prioritas rendah</string>
     <string name="notification_outcome_system">Tidak dibacakan: sistem</string>
     <string name="notification_outcome_media">Tidak dibacakan: pemutar media</string>
@@ -212,7 +212,7 @@
     <string name="notification_rule_enabled">Diaktifkan</string>
     <string name="notification_rule_match">Kondisi</string>
     <string name="notification_rule_match_all">Semua kondisi harus dipenuhi</string>
-    <string name="notification_rule_match_any">Setidaknya satu syarat harus dipenuhi</string>
+    <string name="notification_rule_match_any">Setidaknya satu kondisi harus dipenuhi</string>
     <string name="notification_rule_conditions">Ketika</string>
     <string name="notification_rule_actions">Lalu</string>
     <string name="notification_rule_add_condition">Tambahkan kondisi</string>
@@ -235,7 +235,7 @@
     <string name="notification_type_wifi">Jaringan Wi-Fi</string>
     <string name="notification_type_time">Waktu dalam sehari</string>
     <string name="notification_type_screen">Layar menyala</string>
-    <string name="notification_type_locked">Telepon terkunci</string>
+    <string name="notification_type_locked">Ponsel terkunci</string>
     <string name="notification_type_from_app">Notifikasi dari aplikasi</string>
     <string name="notification_type_foreground">Aplikasi di latar depan</string>
     <string name="notification_type_contains">Notifikasi berisi</string>
@@ -256,20 +256,20 @@
     <string name="notification_cond_bluetooth_not"><xliff:g id="device" example="Pixel Buds">%1$s</xliff:g> tidak terhubung</string>
     <string name="notification_cond_bluetooth_any">Perangkat audio Bluetooth terhubung</string>
     <string name="notification_cond_bluetooth_any_not">Tidak ada perangkat audio Bluetooth yang terhubung</string>
-    <string name="notification_cond_wired">Headphone berkabel tersambung</string>
-    <string name="notification_cond_wired_not">Headphone berkabel tidak tersambung</string>
+    <string name="notification_cond_wired">Headphone berkabel terhubung</string>
+    <string name="notification_cond_wired_not">Headphone berkabel tidak terhubung</string>
     <string name="notification_cond_battery_below">Baterai di bawah <xliff:g id="percent" example="20">%1$d</xliff:g> persen</string>
     <string name="notification_cond_battery_below_not">Baterai berada pada <xliff:g id="percent" example="20">%1$d</xliff:g> persen atau lebih</string>
     <string name="notification_cond_charging">Ponsel sedang diisi dayanya</string>
     <string name="notification_cond_charging_not">Ponsel tidak mengisi daya</string>
-    <string name="notification_cond_locked">Telepon terkunci</string>
+    <string name="notification_cond_locked">Ponsel terkunci</string>
     <string name="notification_cond_locked_not">Ponsel tidak terkunci</string>
     <string name="notification_cond_screen_on">Layar menyala</string>
     <string name="notification_cond_screen_on_not">Layar mati</string>
-    <string name="notification_cond_landscape">Layarnya dalam lanskap</string>
-    <string name="notification_cond_landscape_not">Layarnya dalam mode potret</string>
-    <string name="notification_cond_time">Waktunya <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
-    <string name="notification_cond_time_not">Waktu bukan <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_landscape">Layar dalam mode lanskap</string>
+    <string name="notification_cond_landscape_not">Layar dalam mode potret</string>
+    <string name="notification_cond_time">Pukul <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
+    <string name="notification_cond_time_not">Di luar pukul <xliff:g id="range" example="22:00 to 07:00">%1$s</xliff:g></string>
     <string name="notification_cond_wifi">Terhubung ke <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_not">Tidak terhubung ke <xliff:g id="network" example="Home">%1$s</xliff:g></string>
     <string name="notification_cond_wifi_any">Terhubung ke Wi-Fi</string>
@@ -315,7 +315,7 @@
     <string name="notification_test_posting">Notifikasi uji akan muncul dalam 5 detik</string>
     <string name="notification_test_not_allowed">Izinkan SandFly menampilkan notifikasi terlebih dahulu</string>
     <string name="notification_test_content_title">Tes SandFly</string>
-    <string name="notification_test_content_text">Ini notifikasi percobaan yang dibacakan sesuai setelan notifikasi Anda. 123456</string>
+    <string name="notification_test_content_text">Ini notifikasi uji yang dibacakan sesuai setelan notifikasi Anda. 123456</string>
     <string name="notification_automation_on">Aktifkan pembacaan notifikasi</string>
     <string name="notification_automation_off">Nonaktifkan pembacaan notifikasi</string>
     <string name="notification_automation_toggle">Aktifkan atau nonaktifkan pembacaan notifikasi</string>
@@ -342,8 +342,8 @@
         <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> kalimat</item>
     </plurals>
     <plurals name="notification_characters">
-        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> karakter teks</item>
-        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> karakter teks</item>
+        <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> karakter</item>
+        <item quantity="other"><xliff:g id="count" example="5">%d</xliff:g> karakter</item>
     </plurals>
     <plurals name="notification_digits">
         <item quantity="one"><xliff:g id="count" example="1">%d</xliff:g> angka</item>
@@ -397,5 +397,5 @@
     <plurals name="notification_clock_battery">
         <item quantity="other"><xliff:g id="percent" example="76">%d</xliff:g> persen</item>
     </plurals>
-    <string name="notification_over_other_voice_title">Baca menimpa ucapan SandFly dengan suara berbeda</string>
+    <string name="notification_over_other_voice_title">Bacakan bersamaan dengan ucapan SandFly, dengan suara berbeda</string>
 </resources>

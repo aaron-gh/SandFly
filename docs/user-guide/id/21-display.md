@@ -30,7 +30,7 @@ SandFly mengucapkan "Layar disembunyikan" dan memutar suara. Untuk menampilkan l
 
 Anda juga dapat menyembunyikan dan menampilkan layar dengan:
 
-- Perintah **Sembunyikan atau tampilkan layar**, di kelompok perintah **SandFly**, yang dapat Anda tetapkan ke gestur atau pintasan keyboard. Lihat [](#commands).
+- Perintah **Sembunyikan atau tampilkan layar**, di kelompok perintah **SandFly**, yang dapat Anda tetapkan ke gerakan atau pintasan keyboard. Lihat [](#commands).
 - Kontrol pembacaan **Sembunyikan layar**, nonaktif secara default. Aktifkan di **Kontrol pembacaan**, lalu geser ke atas atau ke bawah untuk menyembunyikan atau menampilkan layar.
 
 Agar dialog tidak muncul setiap kali, matikan **Selalu tampilkan peringatan ini** di dialog tersebut. SandFly kemudian hanya mengucapkan "Layar disembunyikan", tanpa petunjuk cara menampilkan layar kembali.
@@ -57,7 +57,7 @@ Beberapa ponsel, seperti ponsel Vivo, menghentikan SandFly di latar belakang mes
 1. Buka **Tampilan** > **Gunakan SandFly sebagai wallpaper**.
 2. Pada layar wallpaper Android yang terbuka, tetapkan sebagai wallpaper.
 
-Selama SandFly menjadi wallpaper, setelan tersebut bertuliskan "SandFly adalah wallpaper". Wallpaper tersebut berwarna hitam. Untuk menampilkan gambar sebagai gantinya, buka **Tampilan** > **Gambar wallpaper** lalu pilih gambar. SandFly mengucapkan "Gambar wallpaper disetel", atau "Tidak dapat menggunakan gambar ini".
+Selama SandFly menjadi wallpaper, setelan tersebut menampilkan "SandFly adalah wallpaper". Wallpaper tersebut berwarna hitam. Untuk menampilkan gambar sebagai gantinya, buka **Tampilan** > **Gambar wallpaper** lalu pilih gambar. SandFly mengucapkan "Gambar wallpaper disetel", atau "Tidak dapat menggunakan gambar ini".
 
 Setelan ini hanya tersedia di ponsel dan tablet.
 
@@ -76,7 +76,7 @@ Setelan ini tidak tersedia di TV.
 
 #### Menggunakan ringkasan {#display-overview-use}
 
-Saat **Gunakan ringkasan SandFly** aktif, perintah **Ringkasan**, di **Tindakan sistem**, membuka ringkasan SandFly alih-alih ringkasan sistem. Ringkasan SandFly juga terbuka di atas ringkasan sistem saat Anda membuka ringkasan sistem melalui gestur navigasi atau tombol Aplikasi Terbaru.
+Saat **Gunakan ringkasan SandFly** aktif, perintah **Ringkasan**, di **Tindakan sistem**, membuka ringkasan SandFly alih-alih ringkasan sistem. Ringkasan SandFly juga terbuka di atas ringkasan sistem saat Anda membuka ringkasan sistem melalui gerakan navigasi atau tombol Aplikasi Terbaru.
 
 Di dalam ringkasan:
 
@@ -108,7 +108,7 @@ Alt+Tab tidak tersedia jika Alt ditetapkan sebagai tombol SandFly. Lihat [](#key
 
 Untuk membuka dua aplikasi dalam layar terpisah, gunakan **Layar terpisah** di menu Tindakan milik aplikasi pada ringkasan SandFly. Lihat [](#display-overview-use).
 
-Saat layar terpisah ditampilkan, Menu SandFly memiliki item **Layar terpisah**, berisi **Buka pemisah** serta tindakan pemisah seperti ukurannya dan menukar posisi aplikasi. Perintah **Layar terpisah**, di **Tindakan sistem**, membuka menu yang sama, dan mengucapkan "Tidak dalam layar terpisah" saat layar terpisah tidak aktif. Dalam layar terpisah, tombol Kembali dan tombol yang diketikkan dikirim ke aplikasi tempat terakhir kali Anda memindahkan fokus.
+Saat layar terpisah ditampilkan, Menu SandFly memiliki item **Layar terpisah**, berisi **Pindah ke pemisah** serta tindakan pemisah seperti ukurannya dan menukar posisi aplikasi. Perintah **Layar terpisah**, di **Tindakan sistem**, membuka menu yang sama, dan mengucapkan "Tidak dalam layar terpisah" saat layar terpisah tidak aktif. Dalam layar terpisah, tombol Kembali dan tombol yang diketikkan dikirim ke aplikasi tempat terakhir kali Anda memindahkan fokus.
 
 ### Panel setelan cepat SandFly {#display-quick-settings}
 
@@ -121,25 +121,25 @@ Perintah **Setelan Cepat**, di **Tindakan sistem**, membuka panel ini. Tombol **
 Di dalam panel:
 
 - SandFly menyebutkan baris dan kolom setiap item, namanya, dan statusnya, seperti jaringan Wi-Fi yang terhubung.
-- Ketuk dua kali sakelar untuk mengaktifkan atau menonaktifkannya. Ketuk dua kali item dengan beberapa pilihan nilai, seperti **Modus suara** atau **Batas waktu layar**, untuk berpindah ke nilai berikutnya.
+- Ketuk dua kali sakelar untuk mengaktifkan atau menonaktifkannya. Ketuk dua kali item dengan beberapa pilihan nilai, seperti **Mode suara** atau **Batas waktu layar**, untuk berpindah ke nilai berikutnya.
 - Geser ke atas atau ke bawah pada penggeser, seperti **Kecerahan** atau **Volume media**, untuk menggerakkannya satu langkah.
-- Ketuk dua kali dan tahan sebuah item, atau gunakan tindakan **Buka pengaturan**, untuk membuka setelan Android yang terkait.
-- **Sunting** membuka layar untuk memilih item. Lihat [](#display-quick-settings-edit).
+- Ketuk dua kali lalu tahan sebuah item, atau gunakan tindakan **Buka setelan**, untuk membuka setelan Android yang terkait.
+- **Edit** membuka layar untuk memilih item. Lihat [](#display-quick-settings-edit).
 - **Setelan cepat sistem** membuka setelan cepat sistem.
 
 Perintah **Setelan cepat sistem** membuka setelan cepat sistem meskipun **Gunakan setelan cepat SandFly** aktif.
 
-Android hanya mengizinkan sistem dan shell mengubah beberapa setelan tertentu. Saat Shizuku berjalan, SandFly dapat mengaktifkan dan menonaktifkan sendiri Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, lokasi, NFC, penghemat baterai, tema gelap, penghemat data, serta akses mikrofon dan kamera, dan memberikan izin yang diperlukannya untuk kontrol lainnya. Tanpa Shizuku, sakelar-sakelar ini akan membuka halaman setelan Android terkait. Lihat [](#updates).
+Android hanya mengizinkan sistem dan shell mengubah beberapa setelan tertentu. Saat Shizuku berjalan, SandFly dapat mengaktifkan dan menonaktifkan sendiri Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, lokasi, NFC, penghemat baterai, tema gelap, penghemat data, serta akses mikrofon dan kamera, dan memberi dirinya sendiri izin yang diperlukan untuk kontrol lainnya. Tanpa Shizuku, sakelar-sakelar ini akan membuka halaman setelan Android terkait. Lihat [](#updates).
 
 Kotak milik sistem, serta kotak aplikasi tanpa Shizuku, hanya berfungsi jika kotak tersebut ada di setelan cepat sistem. SandFly membuka setelan cepat sistem, mengaktifkan kotak tersebut, menutupnya tanpa membacakannya, lalu menyebutkan status baru kotak itu. SandFly mengucapkan "<nama> tidak ada dalam setelan cepat sistem" jika tidak dapat menemukan kotaknya.
 
 #### Memilih item yang ditampilkan di panel {#display-quick-settings-edit}
 
-Buka **Setelan cepat** > **Panel setelan cepat**, atau pilih **Sunting** di dalam panel. Layar ini mencantumkan item-item di panel, masing-masing beserta baris dan kolomnya.
+Buka **Setelan cepat** > **Panel setelan cepat**, atau pilih **Edit** di dalam panel. Layar ini mencantumkan item-item di panel, masing-masing beserta baris dan kolomnya.
 
-- **Tambahkan kontrol**: mencantumkan kontrol SandFly yang belum ada di panel: Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, penghemat data, Jangan Ganggu, modus suara, senter, kecerahan senter, lokasi, putar otomatis, penghemat baterai, tema gelap, Cahaya Malam, Ekstra redup, inversi warna, koreksi warna, NFC, akses mikrofon, akses kamera, kecerahan, kecerahan adaptif, batas waktu layar, ukuran font, ukuran tampilan, media, output media, volume media, panggilan, dering, notifikasi, alarm, aksesibilitas, dan sistem, alarm berikutnya, baterai, Setelan, dan menu daya. Kontrol yang tidak dimiliki ponsel tidak dicantumkan.
+- **Tambahkan kontrol**: mencantumkan kontrol SandFly yang belum ada di panel: Wi-Fi, Bluetooth, data seluler, hotspot, mode pesawat, penghemat data, Jangan Ganggu, modus suara, senter, kecerahan senter, lokasi, putar otomatis, penghemat baterai, tema gelap, Cahaya Malam, Ekstra redup, inversi warna, koreksi warna, NFC, akses mikrofon, akses kamera, kecerahan, kecerahan adaptif, batas waktu layar, ukuran font, ukuran tampilan, media, output media, volume media, volume panggilan, volume dering, volume notifikasi, volume alarm, volume aksesibilitas, volume sistem, alarm berikutnya, baterai, Setelan, dan menu daya. Kontrol yang tidak dimiliki ponsel tidak dicantumkan.
 - **Tambahkan kotak aplikasi**: mencantumkan kotak setelan cepat yang disediakan aplikasi terinstal.
-- **Tambahkan kotak sistem**: mencantumkan kotak dari setelan cepat sistem. Kotak sistem yang sudah memiliki kontrol SandFly, seperti Hotspot, ditambahkan sebagai kontrol tersebut.
+- **Tambahkan kotak sistem**: mencantumkan kotak dari setelan cepat sistem. Kotak sistem yang sudah memiliki kontrol SandFly, seperti Hotspot, ditambahkan sebagai kontrol tersebut. Jika Shizuku berjalan, SandFly membaca daftarnya dari sistem. Jika tidak, SandFly mencarinya di setelan cepat sistem, yang memerlukan beberapa detik.
 - **Jumlah kolom**: jumlah kolom dalam kisi, dari 1 hingga 4. Default-nya adalah 2.
 
 Untuk memindahkan atau menghapus item, ketuk dua kali item tersebut, atau gunakan tindakannya:

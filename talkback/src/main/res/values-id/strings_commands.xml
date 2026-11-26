@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="command_add_arrow_keys">Tambahkan tombol panah</string>
-    <string name="command_add_gesture">Tambahkan gestur</string>
+    <string name="command_add_gesture">Tambahkan gerakan</string>
     <string name="command_choose_arrow_keys">Pilih tombol panah</string>
-    <string name="command_choose_gesture">Pilih gestur</string>
-    <string name="title_pref_app_gestures">Gestur di aplikasi</string>
+    <string name="command_choose_gesture">Pilih gerakan</string>
+    <string name="title_pref_app_gestures">Gerakan di aplikasi</string>
     <string name="app_gestures_add_app">Tambahkan aplikasi</string>
     <string name="app_gestures_remove_app">Hapus aplikasi</string>
     <string name="app_gestures_choose_command">Pilih perintah</string>
     <string name="title_pref_app_keyboard_shortcuts">Pintasan keyboard di aplikasi</string>
     <string name="app_keys_add">Tambahkan pintasan keyboard</string>
     <string name="command_gesture_assigned"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g>: <xliff:g id="command" example="Describe image">%2$s</xliff:g></string>
-    <string name="command_gestures">Gestur</string>
+    <string name="command_gestures">Gerakan</string>
     <string name="command_keyboard_shortcut">Pintasan keyboard</string>
     <string name="command_no_arrow_keys">Tidak ada tombol panah</string>
-    <string name="command_no_gestures">Tidak ada gestur</string>
+    <string name="command_no_gestures">Tidak ada gerakan</string>
     <string name="command_remove_arrow_keys">Hapus tombol panah</string>
-    <string name="command_remove_gesture">Hapus gestur</string>
+    <string name="command_remove_gesture">Hapus gerakan</string>
     <string name="command_replace">Ganti</string>
-    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> menjalankan <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Gunakan untuk <xliff:g id="new_command" example="Describe image">%3$s</xliff:g>?</string>
+    <string name="command_replace_gesture"><xliff:g id="gesture" example="Swipe up then right">%1$s</xliff:g> menjalankan <xliff:g id="old_command" example="Read from top">%2$s</xliff:g>. Gunakan untuk <xliff:g id="new_command" example="Describe image">%3$s</xliff:g> sebagai gantinya?</string>
     <string name="commands_category_activation">Aktivasi</string>
     <string name="commands_category_media">Media dan volume</string>
     <string name="commands_category_sandfly">SandFly</string>
-    <string name="commands_category_scrolling">Scroll</string>
+    <string name="commands_category_scrolling">Gulir</string>
     <string name="commands_category_speech">Ucapan</string>
     <string name="commands_category_tables">Tabel</string>
     <string name="commands_category_web">Web</string>
@@ -78,12 +78,12 @@
     <string name="menu_moved">Dipindahkan ke <xliff:g id="place" example="AI">%1$s</xliff:g></string>
     <string name="menu_reset">Reset ke default</string>
     <string name="menu_reset_confirm">Reset menu SandFly ke item dan urutan default?</string>
-    <string name="menu_assign">Gestur dan pintasan keyboard</string>
-    <string name="shortcut_app_gestures_for_app">Gestur untuk aplikasi ini</string>
+    <string name="menu_assign">Gerakan dan pintasan keyboard</string>
+    <string name="shortcut_app_gestures_for_app">Gerakan untuk aplikasi ini</string>
     <string name="title_pref_shizuku_root_screen">Shizuku dan root</string>
     <string name="title_pref_use_root">Gunakan root sebagai pengganti Shizuku</string>
-    <string name="command_perform_gesture">Lakukan gestur</string>
-    <string name="command_perform_gesture_message">Lakukan gesturnya.</string>
+    <string name="command_perform_gesture">Lakukan gerakan</string>
+    <string name="command_perform_gesture_message">Lakukan gerakannya.</string>
     <string name="command_gesture_not_assignable">Tidak dapat menetapkan <xliff:g id="gesture" example="Pinch">%1$s</xliff:g></string>
     <string name="command_run">Jalankan perintah</string>
     <string name="command_add_to_sandfly_menu">Tambahkan ke menu SandFly</string>

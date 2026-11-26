@@ -1,6 +1,6 @@
 ## Suara, getaran, dan output audio {#sound}
 
-SandFly memutar suara dan getaran untuk berbagai tindakan dan peristiwa, seperti memindahkan fokus, mengaktifkan item, scroll, dan membuka jendela. **Suara dan getaran** di setelan SandFly mengaktifkan dan menonaktifkan suara serta getaran, mengatur volume dan kekuatannya, serta memuat tema suara dan suara kontrol. **Output audio** mengatur tempat ucapan dan suara diputar, pada volume mana, serta apa yang terjadi pada audio lain dan panggilan saat SandFly aktif.
+SandFly memutar suara dan getaran untuk berbagai tindakan dan peristiwa, seperti memindahkan fokus, mengaktifkan item, menggulir, dan membuka jendela. **Suara dan getaran** di setelan SandFly mengaktifkan dan menonaktifkan suara serta getaran, mengatur volume dan kekuatannya, serta memuat tema suara dan suara kontrol. **Output audio** mengatur tempat ucapan dan suara diputar, pada volume mana, serta apa yang terjadi pada audio lain dan panggilan saat SandFly aktif.
 
 Untuk mesin ucapan, suara, kecepatan bicara, volume ucapan, dan efek ucapan, lihat [](#speech). Untuk tombol volume dan **Umpan balik perubahan volume**, lihat [](#buttons).
 
@@ -9,10 +9,11 @@ Untuk mesin ucapan, suara, kecepatan bicara, volume ucapan, dan efek ucapan, lih
 Grup **Suara** di **Suara dan getaran** memiliki setelan berikut:
 
 - **Respons suara**: memutar suara SandFly. Aktif secara default. Jika nonaktif, getaran tetap berfungsi.
-- **Volume efek suara**: volume suara SandFly, dari 5 hingga 100 persen dengan kelipatan 5. Defaultnya adalah 50 persen.
+- **Volume respons suara**: volume suara SandFly, dari 5 hingga 100 persen dengan kelipatan 5. Defaultnya adalah 50 persen.
 - **Tema suara**: membuka tema suara terinstal, suara kontrol, dan audio 3D. Lihat [](#sound-themes).
+- **Suara Tindakan tersedia**: kapan suara **Tindakan tersedia** diputar: **Nonaktif**, **Saat item difokuskan** (default), atau **Setelah item diucapkan**. Lihat [](#sound-actions-available).
 
-Pintasan keyboard **Mengaktifkan atau menonaktifkan respons suara (earcon)** mengaktifkan atau menonaktifkan **Respons suara**. Lihat [](#appendix-keyboard-shortcuts).
+Pintasan keyboard **Aktifkan atau nonaktifkan respons suara (earcon)** mengaktifkan atau menonaktifkan **Respons suara**. Lihat [](#appendix-keyboard-shortcuts).
 
 Untuk menonaktifkan satu suara saja dan membiarkan sisanya aktif, lihat [](#sound-individual).
 
@@ -25,7 +26,7 @@ Grup **Getaran** di **Suara dan getaran** memiliki setelan berikut. Pada perangk
 - **Jenis getaran**: cara getaran diputar. Daftar hanya menampilkan jenis yang didukung motor getar perangkat, dan setelan disembunyikan jika hanya ada satu jenis yang tersedia. Hingga Anda memilih jenisnya, SandFly menggunakan jenis pertama dalam daftar.
   - **Efek haptik**: efek terkomposisi seperti klik dan ketukan halus, pada Android 11 dan lebih baru dengan motor getar yang mendukungnya.
   - **Denyut**: getaran dengan kekuatan bervariasi, pada motor getar yang dapat mengatur kekuatan.
-  - **Aktif dan nonaktif**: motor getar menyala dan mati pada kekuatan penuh. Setiap motor getar mendukung jenis ini.
+  - **Hidup dan mati**: motor getar menyala dan mati pada kekuatan penuh. Setiap motor getar mendukung jenis ini.
 
 Jika getaran terasa lemah dengan **Efek haptik**, pilih **Denyut** lalu naikkan **Kekuatan getaran**.
 
@@ -40,45 +41,60 @@ Berikut daftar suara sesuai nama yang ditampilkan di **Suara dan getaran satu pe
 | Suara | Diputar saat |
 | --- | --- |
 | **Fokus pada item** | Fokus berpindah ke suatu item. |
-| **Fokus pada item yang dapat ditindaklanjuti** | Fokus berpindah ke item yang dapat diaktifkan. |
+| **Fokus pada item yang dapat diaktifkan** | Fokus berpindah ke item yang dapat diaktifkan. |
+| **Tindakan tersedia** | Fokus berpindah ke item yang memiliki tindakan dari aplikasinya, seperti Balas pada pesan chat. Lihat [](#sound-actions-available). |
 | **Menyentuh area kosong** | Jari Anda menyentuh bagian layar yang tidak memiliki item. |
 | **Klik** | Suatu item diaktifkan. |
-| **Tekan lama** | Suatu item disentuh lama. |
-| **Scroll** | Daftar di-scroll. |
+| **Sentuh lama** | Suatu item disentuh lama. |
+| **Gulir** | Daftar digulir. |
 | **Masuk ke daftar** dan **Keluar dari daftar** | Fokus masuk ke atau keluar dari daftar. |
 | **Tindakan selesai atau sudah di akhir** | Tindakan selesai, atau fokus mencapai akhir daftar. |
 | **Perubahan jendela** | Jendela atau layar baru terbuka. |
 | **Kontrol pembacaan berikutnya** dan **Kontrol pembacaan sebelumnya** | Kontrol pembacaan lain dipilih. |
-| **Gerakan tepi bawah**, **Gerakan tepi tengah**, dan **Gerakan tepi atas** | Tahap-tahap gestur tepi. Tidak tersedia di jam tangan. |
-| **Titik penyisipan dipindahkan** | Berpindah per karakter, kata, baris, atau paragraf memindahkan kursor di bidang teks yang sedang Anda edit. |
+| **Gerakan tepi bawah**, **Gerakan tepi tengah**, dan **Gerakan tepi atas** | Tahap-tahap gerakan tepi. Tidak tersedia di jam tangan. |
+| **Kursor dipindahkan** | Berpindah per karakter, kata, baris, atau paragraf memindahkan kursor di kolom teks yang sedang Anda edit. |
 | **Pindah ke baris berikutnya** dan **Pindah ke baris sebelumnya** | Geseran memindahkan fokus ke item di baris bawah atau atasnya. |
 | **Tugas agen dimulai**, **Tugas agen selesai**, **Pertanyaan agen**, **Agen berhenti pada tindakan sensitif**, dan **Tugas agen gagal** | Agen SandFly Pro. Hanya di versi dengan SandFly Pro. Lihat [](#pro). |
 | **Salah eja** | Kata yang salah eja. |
-| **Link** | Link di dalam teks. |
+| **Tautan** | Tautan di dalam teks. |
 | **Teks berformat** | Teks berformat, seperti tebal. |
-| **Layar mati** dan **Layar aktif** | Layar mati atau menyala. |
+| **Layar mati** dan **Layar menyala** | Layar mati atau menyala. |
 | **Layar disembunyikan** dan **Layar ditampilkan** | Layar disembunyikan, atau ditampilkan kembali. Lihat [](#display). |
 | **Memuat** | Deskripsi atau hasil lain sedang dimuat. |
 | **Model AI di perangkat sedang dimuat** | Model AI di perangkat sedang dimuat. |
-| **Mode jelajah aktif** dan **Mode jelajah nonaktif** | Mode jelajah aktif atau nonaktif. Lihat [](#web). |
+| **Mode penjelajahan aktif** dan **Mode penjelajahan nonaktif** | Mode penjelajahan aktif atau nonaktif. Lihat [](#web). |
 | **Keyboard dibuka** dan **Keyboard ditutup** | Keyboard di layar terbuka atau tertutup. |
 | **Notifikasi SandFly** | SandFly mengirim notifikasi pada saluran notifikasi tanpa suara. |
 | **Baterai penuh** | Baterai terisi penuh, saat **Umumkan saat baterai penuh** aktif. Lihat [](#verbosity-announcements). |
 | **Menu lingkaran** | Item-item menu lingkaran, berupa delapan nada. |
-| **Penampil braille terhubung**, **Penampil braille terputus**, **Perintah braille gagal**, **Scroll otomatis braille aktif**, **Scroll otomatis braille nonaktif**, dan **Keyboard braille dikalibrasi** | Layar braille dan keyboard braille. Lihat [](#braille). |
+| **Penampil braille terhubung**, **Penampil braille terputus**, **Perintah braille gagal**, **Gulir otomatis braille aktif**, **Gulir otomatis braille nonaktif**, dan **Keyboard braille dikalibrasi** | Penampil braille dan keyboard braille. Lihat [](#braille). |
 | **Suara kontrol: tombol** hingga **Suara kontrol: item hierarki** | Suara kontrol, satu untuk setiap jenis kontrol. Lihat [](#sound-control-sounds). |
 
 #### Suara navigasi {#sound-navigation-sounds}
 
-SandFly tidak memutar suara saat gestur dimulai atau berakhir. Sebagai gantinya, suara-suara berikut memberi umpan balik selama navigasi:
+SandFly tidak memutar suara saat gerakan dimulai atau berakhir. Sebagai gantinya, suara-suara berikut memberi umpan balik selama navigasi:
 
-- **Kontrol pembacaan berikutnya** dan **Kontrol pembacaan sebelumnya** diputar saat Anda memilih kontrol pembacaan lain dengan gestur, menu lingkaran, pintasan keyboard, atau keyboard braille.
-- Suara gestur tepi diputar saat jari menyentuh tepi tempat gestur tepi dimulai (**Gerakan tepi bawah**, berupa ketukan rendah), saat gestur mencapai tahap pertama (**Gerakan tepi tengah**), dan saat mencapai tahap kedua (**Gerakan tepi atas**). Menggeser kembali ke belakang memutar suara tahap yang dituju jari. Mengangkat jari tidak memutar suara apa pun. Untuk gestur tepi, lihat [](#gestures).
+- **Kontrol pembacaan berikutnya** dan **Kontrol pembacaan sebelumnya** diputar saat Anda memilih kontrol pembacaan lain dengan gerakan, menu lingkaran, pintasan keyboard, atau keyboard braille.
+- Suara gerakan tepi diputar saat jari menyentuh tepi tempat gerakan tepi dimulai (**Gerakan tepi bawah**, berupa ketukan rendah), saat gerakan mencapai tahap pertama (**Gerakan tepi tengah**), dan saat mencapai tahap kedua (**Gerakan tepi atas**). Menggeser kembali ke belakang memutar suara tahap yang dituju jari. Mengangkat jari tidak memutar suara apa pun. Untuk gerakan tepi, lihat [](#gestures).
 - **Pindah ke baris berikutnya** diputar saat geseran maju memindahkan fokus ke item pada baris di bawah item yang difokuskan, dan **Pindah ke baris sebelumnya** saat geseran mundur memindahkan fokus ke item pada baris di atasnya. Setiap item daftar merupakan satu baris tersendiri. Item yang berdampingan, seperti ikon di layar utama atau sel dalam tabel, berada pada baris yang sama. Suara ini diputar bersamaan dengan suara fokus, dan getarannya menggantikan getaran fokus. Suara ini tidak diputar saat fokus berpindah ke jendela lain.
 
-#### Ketukan saat scroll {#sound-scroll-ticks}
+#### Suara Tindakan tersedia {#sound-actions-available}
 
-Saat Anda men-scroll daftar dengan dua jari, SandFly memutar ketukan ringan untuk setiap item yang terlewati, sehingga seretan lambat berdetak pelan dan seretan cepat berdetak cepat. Di daftar yang tidak melaporkan itemnya, ketukan diputar setiap 48 dp pergeseran. Ketukan pertama diputar segera setelah seretan mencapai aplikasi. Suara scroll diputar bersamaan dengan ketukan, paling sering setiap 250 ms, dan tinggi nadanya meningkat dari atas daftar ke bawah. Scroll yang dilakukan sendiri oleh SandFly hanya memutar suara scroll.
+Suara **Tindakan tersedia** diputar untuk item yang memiliki tindakan dari aplikasinya selain tindakan standar, seperti Balas dan Teruskan pada pesan chat di aplikasi perpesanan. Mengaktifkan, menyentuh lama, menggulir, meluaskan, dan tindakan standar lainnya tidak dihitung, sehingga tombol biasa tidak memutar suara **Tindakan tersedia**. Tombol keyboard di layar juga tidak dihitung. Tindakan tersebut ada di kontrol pembacaan **Tindakan** dan di menu SandFly.
+
+SandFly tidak memberi suara ini getaran sendiri. Tema suara dapat memberinya getaran.
+
+**Suara dan getaran** > **Suara Tindakan tersedia** mengatur kapan suara ini diputar:
+
+- **Nonaktif**: suara tidak diputar.
+- **Saat item difokuskan**: setelah suara fokus. Setelan default. Getaran yang diberikan tema untuk suara ini diputar menggantikan getaran fokus.
+- **Setelah item diucapkan**: setelah deskripsi item selesai diucapkan sampai akhir. Jika Anda berpindah sebelum itu, suara tidak diputar.
+
+Agar SandFly mengucapkan "Tindakan tersedia" setelah item seperti itu, lihat [](#verbosity-items).
+
+#### Ketukan saat menggulir {#sound-scroll-ticks}
+
+Saat Anda menggulir daftar dengan dua jari, SandFly memutar ketukan ringan untuk setiap item yang terlewati, sehingga seretan lambat berdetak pelan dan seretan cepat berdetak cepat. Di daftar yang tidak melaporkan itemnya, ketukan diputar setiap 48 dp pergeseran. Ketukan pertama diputar segera setelah seretan mencapai aplikasi. Suara gulir diputar bersamaan dengan ketukan, paling sering setiap 250 ms, dan nadanya makin tinggi dari atas daftar ke bawah. Saat SandFly sendiri yang menggulir, hanya suara gulir yang diputar.
 
 ### Menonaktifkan suara dan getaran satu per satu {#sound-individual}
 
@@ -92,7 +108,7 @@ Untuk mendengarkan suara atau merasakan getaran sebelum mengubah tombol alihnya:
 
 Mengubah tombol alih tidak memutar suara atau getaran.
 
-Daftar **Getaran** juga memiliki tombol alih untuk getaran tanpa suara: **Pengumuman**, **Gerakan tepi meluncur ke belakang**, serta getaran keyboard braille, seperti **Keyboard braille: mengetik karakter** dan **Keyboard braille: tidak ada yang bisa dihapus**. Tombol alih getaran juga menonaktifkan getaran pengganti yang disediakan oleh tema suara.
+Daftar **Getaran** juga memiliki tombol alih untuk getaran tanpa suara: **Pengumuman**, **Gerakan tepi bergeser kembali**, serta getaran keyboard braille, seperti **Keyboard braille: mengetik karakter** dan **Keyboard braille: tidak ada yang bisa dihapus**. Tombol alih getaran juga menonaktifkan getaran pengganti yang disediakan oleh tema suara.
 
 ### Tema suara {#sound-themes}
 
@@ -103,20 +119,20 @@ Tema suara adalah sekumpulan suara dan getaran yang menggantikan bawaan SandFly.
 - **Buat tema baru**: membuat tema baru. Lihat [](#sound-themes-create).
 - **Tema terinstal**: setiap tema yang terinstal. Tema yang sedang dipakai menampilkan "Digunakan" pada ringkasannya.
 - **Setelan** diikuti nama tema yang sedang digunakan: setelan suara kontrol dan daftar suara tema tersebut. Lihat [](#sound-control-sounds) dan [](#sound-themes-replace).
-- **Instal tema**: **Dari file**, **Dari link**, dan **Dari sebuah sumber**. Lihat [](#sound-themes-install).
+- **Instal tema**: **Dari file**, **Dari tautan**, dan **Dari sebuah sumber**. Lihat [](#sound-themes-install).
 
 #### Menginstal tema suara {#sound-themes-install}
 
 File tema berbentuk file ZIP. Untuk menginstalnya, gunakan salah satu cara berikut:
 
 - **Dari file**: pilih file tema melalui pemilih file sistem.
-- **Dari link**: masukkan atau tempel tautan ke file tema, atau ke repositori GitHub yang berisi tema, lalu pilih **Instal**. Tautan harus diawali `https`.
-- **Dari sebuah sumber**: daftar repositori di GitHub, GitLab, Codeberg, Gitea, atau Bitbucket. Pilih **Tambahkan sumber** dan masukkan alamat repositori, seperti `github.com/owner/repository`. Pilih sumber untuk melihat daftar file temanya, lalu pilih file tema untuk menginstalnya. Daftar ini diawali dengan repositori tema SandFly. **Hapus sumber** menghapus sumber dari daftar; tema yang sudah diinstal darinya tetap terinstal.
+- **Dari tautan**: masukkan atau tempel tautan ke file tema, atau ke repositori GitHub yang berisi tema, lalu pilih **Instal**. Tautan harus diawali `https`.
+- **Dari sebuah sumber**: daftar repositori di GitHub, GitLab, Codeberg, Gitea, atau Bitbucket. Pilih **Tambahkan sumber** dan masukkan alamat repositori, seperti `github.com/owner/repository`. Pilih sumber untuk melihat daftar file temanya, lalu pilih file tema untuk menginstalnya. Daftar ini diawali dengan repositori tema SandFly. **Hapus sumber** menghapus sumber dari daftar. Tema yang sudah diinstal dari sumber itu tetap terinstal.
 - Buka file tema dengan SandFly dari pengelola file atau unduhan browser, atau bagikan file tema atau tautan ke SandFly dari aplikasi lain, lalu pilih **Instal tema suara**.
 
 Sebelum menginstal, SandFly menampilkan penulis, deskripsi, jumlah suara dan getaran, lisensi, serta file apa pun yang dilewati. Pilih **Instal dan gunakan** untuk menginstal sekaligus memakai tema tersebut, atau **Instal** untuk menginstalnya sambil tetap memakai tema saat ini. Tema dengan nama yang sama dengan tema terinstal akan menggantikannya.
 
-Catatan: Jam tangan tidak memiliki pemilih file. Di jam tangan, instal tema melalui link. **Dari sebuah sumber** hanya tersedia di ponsel.
+Catatan: Jam tangan tidak memiliki pemilih file. Di jam tangan, instal tema melalui tautan. **Dari sebuah sumber** hanya tersedia di ponsel.
 
 #### Memilih dan mengelola tema {#sound-themes-manage}
 
@@ -137,6 +153,8 @@ Anda dapat mengganti suara mana pun dari tema yang sedang digunakan dengan file 
 3. Pilih sebuah suara. Judul dialog menampilkan nama suara dan nama filenya, seperti "Klik (tick)".
 4. Pilih salah satu opsi berikut:
    - **Pilih file suara**: membuka pemilih file. Ukuran file suara maksimal 5 MB, dalam format WAV, OGG, MP3, atau FLAC.
+   - **Pilih dari folder**: menampilkan daftar file suara dan subfolder dari sebuah folder. Pertama kali, pemilih folder terbuka untuk memilih folder tersebut. Lihat [](#sound-themes-folder).
+   - **Ganti folder**: membuka pemilih folder untuk memilih folder lain bagi **Pilih dari folder**. Ditampilkan setelah folder dipilih.
    - **Dengarkan**: memutar suara tersebut.
    - **Tanpa suara**: tidak memutar suara untuk peristiwa tersebut.
    - **Gunakan suara SandFly**: kembali ke suara bawaan.
@@ -144,6 +162,18 @@ Anda dapat mengganti suara mana pun dari tema yang sedang digunakan dengan file 
 Ringkasan setiap suara menampilkan **Suara SandFly**, **Suara tema**, atau **Tanpa suara**. Tindakan yang sama tersedia di menu tindakan setiap suara, yaitu **Dengarkan**, **Setel ke tanpa suara**, **Gunakan suara SandFly**, dan **Pilih file suara**. **Gunakan suara SandFly untuk semua** menghapus semua suara tema dan memakai suara bawaan.
 
 Daftar suara ini juga memuat suara yang tidak ada di **Suara dan getaran satu per satu**: **Perubahan volume**, yang diputar pada setiap langkah perubahan volume saat **Umpan balik perubahan volume** disetel ke nada (lihat [](#buttons)), dan suara pengetikan keyboard braille, yang diputar saat **Suara pengetikan** aktif di setelan keyboard braille (lihat [](#braille)).
+
+#### Memilih suara dari folder {#sound-themes-folder}
+
+**Pilih dari folder** menampilkan isi satu folder di ponsel. Pilih sebuah suara, lalu **Pilih dari folder**. Pertama kali, pilih folder di pemilih folder.
+
+Daftar menampilkan subfolder terlebih dahulu, lalu file suara, masing-masing diurutkan menurut nama. Hingga 2.000 entri ditampilkan per folder.
+
+- File yang mendapat fokus aksesibilitas akan diputar. Memindahkan fokus dari file tersebut akan menghentikannya.
+- Pilih sebuah file untuk menggunakannya sebagai suara tersebut.
+- Pilih sebuah subfolder untuk menampilkan isinya. **Folder induk** atau Kembali membawa Anda ke folder di atasnya.
+
+Jika folder dihapus atau SandFly tidak dapat lagi membacanya, pemilih folder akan terbuka kembali.
 
 #### Membuat tema suara {#sound-themes-create}
 
@@ -169,7 +199,7 @@ Untuk format file lengkap beserta seluruh nama suara dan getaran, lihat [Tema su
 
 ### Suara dan getaran kontrol {#sound-control-sounds}
 
-Saat suara kontrol aktif, memfokuskan sebuah kontrol akan memutar suara dan getaran sesuai jenis kontrolnya sebagai pengganti suara dan getaran fokus, dan SandFly tidak menyebutkan jenis kontrol tersebut, seperti "tombol". Tersedia suara untuk tombol, kotak centang (termasuk tombol alih dan tombol pengalih), tombol pilihan, bidang edit, daftar tarik-turun, penggeser, gambar, jam, tab, item menu, dan item daftar, serta di halaman web, link dan item hierarki.
+Saat suara kontrol aktif, memfokuskan sebuah kontrol akan memutar suara dan getaran sesuai jenis kontrolnya sebagai pengganti suara dan getaran fokus, dan SandFly tidak menyebutkan jenis kontrol tersebut, seperti "tombol". Tersedia suara untuk tombol, kotak centang (termasuk tombol alih dan tombol pengalih), tombol pilihan, kolom teks, daftar tarik-turun, penggeser, gambar, jam, tab, item menu, dan item daftar, serta, di halaman web, tautan dan item hierarki.
 
 Untuk mengaktifkan suara kontrol:
 
@@ -195,6 +225,7 @@ Suara kontrol diputar dari posisi kontrol di layar: dari sebelah kiri untuk kont
 - **Dengan headphone**: default. Audio 3D diputar saat audio SandFly dikirim ke headphone berkabel atau USB, headset atau headphone Bluetooth, atau alat bantu dengar. Di Android 13 dan lebih baru, SandFly memeriksa tujuan pemutaran audionya, sehingga speaker Bluetooth atau sistem mobil yang terhubung tetapi tidak memutar audio SandFly tidak dihitung. Di versi lebih lama, semua headphone yang terhubung dihitung.
 - **Selalu**: audio 3D juga diputar di speaker ponsel.
 - **Tidak pernah, hanya kiri dan kanan**: suara hanya berpindah antara kiri dan kanan.
+- **Dengan headphone, tanpa headphone di tengah**: audio 3D saat memakai headphone, seperti **Dengan headphone**. Di speaker ponsel dan output lainnya, suara diputar dari tengah, tanpa berpindah antara kiri dan kanan.
 
 ### Setelan output audio {#sound-audio-output}
 
@@ -236,7 +267,7 @@ Perangkat dicantumkan berdasarkan namanya, sehingga dua perangkat dengan nama ya
 - **Volume aksesibilitas**: default.
 - **Volume media**.
 - **Volume dering**: ucapan diputar sebagai nada dering. Ucapan tetap di ponsel saat media ditransmisikan ke perangkat lain, dapat diputar di speaker ponsel saat headphone terhubung, dan menjadi senyap saat pendering disetel senyap.
-- **Volume panggilan, lubang suara**: ucapan diputar seperti panggilan, melalui lubang suara saat tidak ada headset yang terhubung.
+- **Volume panggilan, speaker telinga**: ucapan diputar seperti panggilan, melalui lubang suara saat tidak ada headset yang terhubung.
 
 Saat **Perangkat output audio** mengirim audio ke speaker ponsel atau ke perangkat berkabel, USB, atau alat bantu dengar, ucapan menggunakan volume aksesibilitas.
 
@@ -273,7 +304,7 @@ Setelan ini memerlukan izin yang tidak diberikan Android kepada pembaca layar. H
 
 SandFly menggunakan sensor kedekatan untuk mendeteksi ponsel di dekat telinga Anda.
 
-**Setel ulang audio aksesibilitas setelah panggilan** mengembalikan audio SandFly dari lubang suara saat Android membiarkan audio aksesibilitas tertinggal di lubang suara setelah panggilan berakhir, seperti panggilan di aplikasi perpesanan. Setelan ini nonaktif secara default, memerlukan Android 13 atau lebih baru, dan dijalankan melalui Shizuku atau root. Mengaktifkannya akan meminta Shizuku mengizinkan SandFly. Tanpa Shizuku, ringkasannya menampilkan perintah adb untuk menyetel ulang audio satu kali; buka menu tindakan pada setelan ini lalu pilih **Salin perintah** untuk menyalinnya.
+**Setel ulang audio aksesibilitas setelah panggilan** mengembalikan audio SandFly dari lubang suara saat Android membiarkan audio aksesibilitas tertinggal di lubang suara setelah panggilan berakhir, seperti panggilan di aplikasi perpesanan. Setelan ini nonaktif secara default, memerlukan Android 13 atau lebih baru, dan dijalankan melalui Shizuku atau root. Mengaktifkannya akan meminta Shizuku mengizinkan SandFly. Tanpa Shizuku, ringkasannya menampilkan perintah adb untuk menyetel ulang audio satu kali. Untuk menyalinnya, buka menu tindakan pada setelan ini, lalu pilih **Salin perintah**.
 
 ### Kontrol pembacaan untuk suara dan volume {#sound-reading-controls}
 
@@ -283,5 +314,5 @@ Kontrol pembacaan berikut mengubah setelan suara dan volume dengan geser ke atas
 - **Volume ucapan**: beralih di antara pilihan volume pada **Kontrol volume untuk ucapan**.
 - **Pengecilan volume audio**: mengaktifkan atau menonaktifkan **Pengecilan volume audio**.
 - **Volume aksesibilitas**: menaikkan atau menurunkan volume aksesibilitas.
-- **Volume media**, **Volume panggilan**, **Volume dering**, **Volume pemberitahuan**, dan **Volume alarm**: menaikkan atau menurunkan masing-masing volume satu langkah dan mengucapkan nilai volume barunya. Mengubah volume dering atau pemberitahuan ke atau dari mode senyap memerlukan **Akses Jangan Ganggu**.
-- **Modus suara**: menyetel pendering ke suara, getar, atau bisu. Mengaktifkan atau menonaktifkan mode bisu memerlukan **Akses Jangan Ganggu**.
+- **Volume media**, **Volume panggilan**, **Volume dering**, **Volume notifikasi**, dan **Volume alarm**: menaikkan atau menurunkan masing-masing volume satu langkah dan mengucapkan nilai volume barunya. Mengubah volume dering atau notifikasi ke atau dari mode senyap memerlukan **Akses Jangan Ganggu**.
+- **Mode suara**: menyetel pendering ke suara, getar, atau bisu. Mengaktifkan atau menonaktifkan mode bisu memerlukan **Akses Jangan Ganggu**.

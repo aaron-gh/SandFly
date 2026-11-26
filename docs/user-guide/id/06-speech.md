@@ -25,13 +25,15 @@ Penggeser di grup **Suara** mengatur ucapan **Default SandFly**. Penggeser ini h
 - **Tinggi nada ucapan**: dari 20% hingga 200%. Defaultnya adalah 100%.
 - **Volume ucapan**: dari 25 hingga 100. Defaultnya adalah 100.
 
-Saat profil suara sedang digunakan, item **Profil suara** menampilkan "Digunakan:" diikuti nama profilnya, dan penggeser ini tidak mengubah suaranya. Mengubah kecepatan atau tinggi nada melalui perintah atau kontrol pembacaan akan mengubah profil yang sedang digunakan. Lihat [](#speech-voice-profiles).
+**Besar perubahan kecepatan bicara**, di bawah **Kecepatan bicara**, mengatur seberapa besar kecepatan berubah setiap kali Anda mengubahnya dengan penggeser **Kecepatan bicara** di layar ini dan di profil suara, kontrol pembacaan **Kecepatan bicara**, serta perintah kecepatan bicara. **10% dari kecepatan**, yang merupakan default, mengubah kecepatan yang sedang digunakan sebesar sepersepuluhnya. **1%**, **2%**, **5%**, **10%**, dan **20%** berpindah ke kelipatan berikutnya dari langkah tersebut, misalnya dari 133% ke 135% dengan **5%**.
+
+Saat profil suara sedang digunakan, item **Profil suara** menampilkan "Digunakan:" diikuti nama profilnya, dan penggeser ini tidak mengubah suara profil tersebut. Dalam keadaan ini, mengubah kecepatan atau tinggi nada melalui perintah atau kontrol pembacaan akan mengubah profil yang sedang digunakan. Lihat [](#speech-voice-profiles).
 
 Anda juga dapat mengubah ucapan tanpa membuka setelan:
 
 - Kontrol pembacaan **Kecepatan bicara**, yang ada di kontrol pembacaan secara default: geser ke atas atau ke bawah untuk mengubah kecepatan.
-- Perintah **Tambah kecepatan bicara**, **Kurangi kecepatan bicara**, **Naikkan tinggi nada ucapan**, dan **Turunkan tinggi nada ucapan**, untuk gestur, pintasan keyboard, dan menu.
-- Pintasan keyboard **Naikkan volume ucapan**, **Turunkan volume ucapan**, dan **Reset kecepatan bicara dan tinggi nada**. Lihat [](#appendix-keyboard-shortcuts).
+- Perintah **Tambah kecepatan bicara**, **Kurangi kecepatan bicara**, **Naikkan tinggi nada ucapan**, dan **Turunkan tinggi nada ucapan**, untuk gerakan, pintasan keyboard, dan menu.
+- Pintasan keyboard **Naikkan volume ucapan**, **Turunkan volume ucapan**, dan **Kecepatan bicara dan tinggi nada disetel ulang**. Lihat [](#appendix-keyboard-shortcuts).
 
 Untuk memilih apakah ucapan diputar dengan volume aksesibilitas, media, dering, atau panggilan, lihat [](#sound-speech-volume). Untuk mengubah volume ucapan dengan tombol volume, lihat [](#buttons-speech-volume).
 
@@ -41,7 +43,7 @@ Perintah **Ulangi frasa yang terakhir diucapkan lebih lambat**, di grup perintah
 
 **Ucapan** > **Ulangi lebih lambat sebesar** menentukan seberapa banyak lebih lambat: 5%, 10%, 15%, 20%, 25%, 30%, 40%, atau 50%. Defaultnya adalah 15%.
 
-Untuk menggunakan perintah ini, tetapkan ke gestur atau pintasan keyboard, atau tambahkan ke menu. Lihat [](#commands).
+Untuk menggunakan perintah ini, tetapkan ke gerakan atau pintasan keyboard, atau tambahkan ke menu. Lihat [](#commands).
 
 ### Profil suara {#speech-voice-profiles}
 
@@ -68,6 +70,7 @@ Untuk mengubah profil, buka **Ucapan** > **Profil suara** dan pilih profilnya.
 - **Bahasa**: **Default**, atau salah satu bahasa dari mesin tersebut.
 - **Suara**: **Default**, atau salah satu suara dari mesin dalam bahasa yang dipilih.
 - **Volume ucapan**, **Kecepatan bicara**, dan **Tinggi nada ucapan**: sama seperti di layar **Ucapan**, khusus untuk profil ini.
+- **Putar sampel**: mengucapkan kalimat contoh dengan mesin, suara, volume, kecepatan, tinggi nada, dan efek ucapan yang diatur di sini, dalam bahasa profil jika SandFly memiliki kalimat tersebut dalam bahasa itu. "Sampel tidak diputar" berarti mesin tidak dapat dimulai atau mengembalikan error.
 - **Efek ucapan**: efek ucapan untuk profil ini. Lihat [](#voice-effects). Tidak tersedia di jam tangan.
 - **Kirim teks panjang per kalimat**: sama seperti di layar **Ucapan**, khusus untuk profil ini. Lihat [](#speech-pronunciation).
 - **Biarkan mesin ucapan tetap berjalan**: menjaga mesin profil ini tetap berjalan saat mesin lain digunakan dan layar menyala, sehingga saat beralih ke profil ini tidak perlu menunggu mesin dimulai. Setiap mesin yang dibiarkan berjalan menggunakan prosesnya sendiri. Nonaktif secara default.
@@ -79,7 +82,7 @@ Untuk mengubah profil, buka **Ucapan** > **Profil suara** dan pilih profilnya.
 - **Ucapan** > **Profil suara** > **Profil suara yang digunakan**: pilih **Default SandFly** atau sebuah profil.
 - Kontrol pembacaan **Profil suara**: geser ke atas atau ke bawah untuk berpindah antara **Default SandFly** dan profil lainnya, sesuai urutan di layar **Profil suara**. Kontrol ini tidak ada di kontrol pembacaan secara default. Untuk menambahkannya, buka **Kontrol pembacaan**.
 - Perintah **Pilih profil suara**, **Profil suara berikutnya**, dan **Profil suara sebelumnya**, di grup perintah **Ucapan**.
-- Setelah Anda memiliki profil, grup perintah **Profil suara** memiliki perintah **Gunakan profil suara** untuk **Default SandFly** dan untuk setiap profil, yang dapat digunakan pada gestur, pintasan keyboard, dan menu.
+- Setelah Anda memiliki profil, grup perintah **Profil suara** memiliki perintah **Gunakan profil suara** untuk **Default SandFly** dan untuk setiap profil, yang dapat digunakan pada gerakan, pintasan keyboard, dan menu.
 
 Anda juga dapat menambahkan item **Profil suara** ke menu SandFly. Lihat [](#commands).
 
@@ -148,7 +151,7 @@ Untuk menambahkan bahasa:
 
 Untuk menghapus bahasa, pilih bahasa tersebut lalu pilih **Hapus bahasa**.
 
-Jika dua atau lebih bahasa yang tercantum, atau satu bahasa yang tercantum dan bahasa suara utama, menggunakan aksara yang sama—seperti bahasa Inggris dan bahasa Prancis dalam aksara Latin—layar ini menampilkan daftar untuk aksara tersebut, seperti **Aksara Latin**. Daftar ini menentukan bahasa untuk teks dalam aksara tersebut jika tidak ada hal lain yang mengenalinya.
+Jika dua atau lebih bahasa yang tercantum, atau satu bahasa yang tercantum dan bahasa suara utama, menggunakan aksara yang sama, seperti bahasa Inggris dan bahasa Prancis dalam aksara Latin, layar ini menampilkan daftar untuk aksara tersebut, seperti **Aksara Latin**. Daftar ini menentukan bahasa untuk teks dalam aksara tersebut jika tidak ada hal lain yang mengenalinya.
 
 #### Mengubah bahasa lisan {#speech-spoken-language}
 
@@ -162,13 +165,13 @@ Grup **Pengucapan** berisi:
 - **Ucapkan huruf secara fonetik saat meninjau**: untuk huruf yang Anda telusuri per karakter dan teks yang dieja.
 - **Ucapkan huruf secara fonetik saat mengetik**: untuk tombol keyboard dan huruf yang Anda ketik atau hapus.
 - **Kirim teks panjang per kalimat**: untuk mesin ucapan yang lambat berhenti, seperti Gryphon, agar geseran langsung menghentikan pembacaan teks panjang. Banyak mesin memberi jeda lebih lama di antara kalimat yang dikirim terpisah, jadi biarkan nonaktif jika mesin Anda berhenti dengan cepat. Nonaktif secara default.
-- **Baca jeda baris sebagai spasi**: membaca teks tanpa jeda pada pergantian barisnya. Nonaktif secara default.
+- **Baca pemisah baris sebagai spasi**: membaca teks tanpa jeda pada pergantian barisnya. Nonaktif secara default.
 - **Kamus ucapan** dan **Kamus simbol**: lihat [](#speech-dictionary).
 
 Kedua setelan huruf fonetik masing-masing memiliki empat pilihan:
 
 - **Nonaktif**: hanya mengucapkan hurufnya.
-- **Setelah huruf, dengan jeda, seperti "h, hotel"**: default. Saat Anda berpindah per karakter, katanya mengikuti setelah jeda singkat, dan berpindah lebih dulu akan melewatinya.
+- **Setelah huruf, dengan jeda, seperti "h, hotel"**: default. Saat Anda berpindah per karakter, katanya diucapkan setelah jeda singkat. Jika Anda berpindah lagi sebelum jeda selesai, kata itu dilewati.
 - **Setelah huruf, tanpa jeda, seperti "h hotel"**.
 - **Sebagai pengganti huruf, seperti "hotel"**.
 
@@ -184,17 +187,17 @@ Untuk menambahkan entri:
 4. Pilih **Hanya kata utuh** (aktif secara default) agar hanya cocok dengan kata utuh, dan **Ekspresi reguler** untuk mencocokkan ekspresi reguler.
 5. Pilih **Oke**.
 
-Pilih sebuah entri untuk **Sunting**, **Pilih aplikasi**, dan **Hapus**. **Pilih aplikasi** membatasi entri hanya untuk satu aplikasi, atau **Semua aplikasi**. Entri untuk satu aplikasi berlaku saat jendela aplikasi tersebut adalah jendela terakhir yang ditampilkan.
+Pilih sebuah entri untuk **Edit**, **Pilih aplikasi**, dan **Hapus**. **Pilih aplikasi** membatasi entri hanya untuk satu aplikasi, atau **Semua aplikasi**. Entri untuk satu aplikasi berlaku saat jendela aplikasi tersebut adalah jendela terakhir yang ditampilkan.
 
 **Impor dari file** dan **Ekspor ke file** memuat dan menyimpan entri sebagai file. Lihat [](#api-item-files).
 
-Kamus braille, untuk layar braille, ada di setelan braille. Lihat [](#braille).
+Kamus braille, untuk penampil braille, ada di setelan braille. Lihat [](#braille).
 
 #### Kamus simbol {#speech-symbol-dictionary}
 
-**Ucapan** > **Kamus simbol** mengganti simbol dan rangkaian simbol dalam ucapan serta di layar braille. Entri mencocokkan teks persisnya di mana saja, termasuk tanda titik langsung setelah kata, dan tidak memiliki opsi kata utuh atau ekspresi reguler. Entri diterapkan secara berurutan, setelah kamus ucapan atau kamus braille. Anda dapat menambahkan hingga 500 entri.
+**Ucapan** > **Kamus simbol** mengganti simbol dan rangkaian simbol dalam ucapan serta di penampil braille. Entri mencocokkan teks persisnya di mana saja, termasuk tanda titik langsung setelah kata, dan tidak memiliki opsi kata utuh atau ekspresi reguler. Entri diterapkan secara berurutan, setelah kamus ucapan atau kamus braille. Anda dapat menambahkan hingga 500 entri.
 
-Pilih **Tambahkan pengganti**, masukkan **Simbol** dan teks pada **Ganti dengan**, lalu pilih **Oke**. Entri memiliki opsi **Sunting**, **Pilih aplikasi**, **Hapus**, **Impor dari file**, dan **Ekspor ke file** yang sama dengan kamus ucapan.
+Pilih **Tambahkan pengganti**, masukkan **Simbol** dan teks pada **Ganti dengan**, lalu pilih **Oke**. Entri memiliki opsi **Edit**, **Pilih aplikasi**, **Hapus**, **Impor dari file**, dan **Ekspor ke file** yang sama dengan kamus ucapan.
 
 Dalam ucapan, entri untuk tanda baca yang tidak dibacakan oleh mesin ucapan, seperti titik atau koma, tidak berlaku jika **Panjang respons** > **Ucapkan tanda baca dan simbol** mengecualikan tanda baca tersebut. Jika disetel ke **Tidak ada**, tidak ada entri untuk satu simbol tunggal yang berlaku dalam teks, kecuali jika **Ucapkan simbol yang mengubah makna** mempertahankan simbol tersebut. Lihat [](#verbosity-text).
 
@@ -205,7 +208,7 @@ Perintah **Jeda atau lanjutkan ucapan** menjeda ucapan dan melanjutkannya kembal
 Saat ucapan dilanjutkan:
 
 - Dengan **Output audio** > **Audio latensi rendah** aktif, ucapan berhenti di tengah kata dan berlanjut dari titik yang sama. SandFly menyimpan hingga 10 detik ucapan yang dijeda.
-- Jika tidak, pada mesin yang melaporkan posisi kata, ucapan berlanjut dari kata tempat ucapan berhenti.
+- Jika **Audio latensi rendah** nonaktif, pada mesin yang melaporkan posisi kata, ucapan berlanjut dari kata tempat ucapan berhenti.
 - Pada mesin yang tidak melaporkan posisi kata, seperti RHVoice dan Gryphon, SandFly memperkirakan sejauh mana mesin telah membaca berdasarkan kecepatan bicara item sebelumnya, lalu melanjutkan dari awal kalimat atau frasa tersebut. Ucapan bisa mengulang beberapa kata, tetapi tidak ada yang terlewat.
 
 SandFly tidak memutar ulang suara dan getaran item saat ucapan dilanjutkan.
@@ -219,25 +222,25 @@ Pada keyboard fisik, menekan Ctrl saja akan menjeda ucapan. Lihat [](#keyboards)
 Grup **Menghentikan ucapan** mengatur hal yang menghentikan ucapan:
 
 - **Hentikan ucapan saat menyentuh layar**: aktif secara default.
-- **Interupsi ucapan saat mengetik**: kapan karakter yang diketik pada keyboard fisik menghentikan ucapan. **Selalu** (default), **Di bidang edit**, atau **Pada gema keyboard**, yaitu hanya saat gema keyboard mengucapkan karakter tersebut atau kata yang diakhirinya. Tidak tersedia di jam tangan.
+- **Hentikan ucapan saat mengetik**: kapan karakter yang diketik pada keyboard fisik menghentikan ucapan. **Selalu** (default), **Di kolom teks**, atau **Pada gema keyboard**, yaitu hanya saat gema keyboard mengucapkan karakter tersebut atau kata yang diakhirinya. Tidak tersedia di jam tangan.
 - **Hentikan ucapan saat menekan Enter**: menekan Enter pada keyboard fisik menghentikan ucapan. Aktif secara default. Tidak tersedia di jam tangan.
 - **Tutupi sensor kedekatan untuk menghentikan ucapan**: menutupi sensor kedekatan akan menghentikan ucapan. Nonaktif secara default. Tidak ditampilkan di TV atau perangkat tanpa sensor kedekatan.
-- **Senyap saat merekam**: saat sebuah aplikasi merekam tanpa headphone terhubung, SandFly hanya berbicara dalam 2 detik setelah sentuhan, gestur, penekanan tombol, atau input braille, dan diam untuk ucapan lain seperti notifikasi agar tidak ikut terekam. Nonaktif secara default.
+- **Senyap saat merekam**: saat sebuah aplikasi merekam tanpa headphone terhubung, SandFly hanya berbicara dalam 2 detik setelah sentuhan, gerakan, penekanan tombol, atau input braille, dan diam untuk ucapan lain seperti notifikasi agar tidak ikut terekam. Nonaktif secara default.
 
-Pada keyboard fisik, setiap tombol kecuali tombol pengubah, tombol pengunci (lock), dan tombol volume akan menghentikan ucapan, demikian juga semua pintasan dengan Ctrl, Alt, atau Meta. Karakter yang diketik dan tombol Enter mengikuti setelan di atas. Spasi di luar bidang edit selalu menghentikan ucapan.
+Pada keyboard fisik, setiap tombol kecuali tombol pengubah, tombol pengunci (lock), dan tombol volume akan menghentikan ucapan, demikian juga semua pintasan dengan Ctrl, Alt, atau Meta. Karakter yang diketik dan tombol Enter mengikuti setelan di atas. Spasi di luar kolom teks selalu menghentikan ucapan.
 
-Saat aplikasi lain merekam dari mikrofon dan selama panggilan berlangsung, SandFly tetap mengucapkan apa yang Anda minta dengan gestur atau tombol, seperti waktu, tingkat baterai, atau judul jendela.
+Saat aplikasi lain merekam dari mikrofon dan selama panggilan berlangsung, SandFly tetap mengucapkan apa yang Anda minta dengan gerakan atau tombol, seperti waktu, tingkat baterai, atau judul jendela.
 
 ### Histori ucapan {#speech-history}
 
 Perintah **Histori ucapan**, di grup perintah **Membaca**, membuka daftar 100 teks terakhir yang diucapkan SandFly, dimulai dari yang terbaru.
 
-- Pilih sebuah teks untuk **Salin**, dan untuk **Tunjukkan semuanya** jika teks dipendekkan dalam daftar.
+- Pilih sebuah teks untuk **Salin**, dan untuk **Tampilkan semua** jika teks dipendekkan dalam daftar.
 - **Hapus histori**, di bagian akhir daftar, menghapus semua teks.
 
-Histori hanya disimpan di memori, tidak pernah disimpan ke penyimpanan atau dicatat dalam log, dan dihapus saat SandFly dinonaktifkan. Histori tidak menyertakan ucapan saat bidang sandi sedang difokuskan atau ucapan saat daftar histori sedang terbuka. Setiap teks disimpan hingga 2.000 karakter.
+Histori hanya disimpan di memori, tidak pernah disimpan ke penyimpanan atau dicatat dalam log, dan dihapus saat SandFly dinonaktifkan. Histori tidak menyertakan ucapan saat kolom sandi sedang difokuskan atau ucapan saat daftar histori sedang terbuka. Setiap teks disimpan hingga 2.000 karakter.
 
-Untuk menggunakan perintah ini, tetapkan ke gestur atau pintasan keyboard, atau tambahkan ke menu. Lihat [](#commands).
+Untuk menggunakan perintah ini, tetapkan ke gerakan atau pintasan keyboard, atau tambahkan ke menu. Lihat [](#commands).
 
 ### Mengizinkan aplikasi lain berbicara {#speech-other-apps}
 
@@ -255,10 +258,10 @@ Untuk developer, lihat [](#api-speech).
 
 ### Perintah ucapan dan kontrol pembacaan {#speech-commands}
 
-Grup perintah **Ucapan**, antara lain, berisi: **Jeda atau lanjutkan ucapan**, **Aktifkan atau nonaktifkan ucapan**, **Tambah kecepatan bicara**, **Kurangi kecepatan bicara**, **Naikkan tinggi nada ucapan**, **Turunkan tinggi nada ucapan**, **Ubah bahasa lisan**, **Ganti bahasa secara otomatis**, **Kenali bahasa dari kata**, **Pilih profil suara**, **Profil suara berikutnya**, **Profil suara sebelumnya**, dan **Gunakan efek ucapan**. Pintasan keyboard menambahkan **Naikkan volume ucapan**, **Turunkan volume ucapan**, **Reset kecepatan bicara dan tinggi nada**, dan **Buka setelan text-to-speech**.
+Grup perintah **Ucapan**, antara lain, berisi: **Jeda atau lanjutkan ucapan**, **Aktifkan atau nonaktifkan ucapan**, **Tambah kecepatan bicara**, **Kurangi kecepatan bicara**, **Naikkan tinggi nada ucapan**, **Turunkan tinggi nada ucapan**, **Ubah bahasa lisan**, **Ganti bahasa secara otomatis**, **Kenali bahasa dari kata**, **Pilih profil suara**, **Profil suara berikutnya**, **Profil suara sebelumnya**, dan **Gunakan efek ucapan**. Pintasan keyboard menambahkan **Naikkan volume ucapan**, **Turunkan volume ucapan**, **Kecepatan bicara dan tinggi nada disetel ulang**, dan **Buka setelan text-to-speech**.
 
 Grup **Membaca** berisi **Ulangi frasa yang terakhir diucapkan**, **Ulangi frasa yang terakhir diucapkan lebih lambat**, **Eja frasa yang terakhir diucapkan**, dan **Histori ucapan**.
 
 Kontrol pembacaan ucapan mencakup **Kecepatan bicara**, **Bahasa lisan**, **Mesin ucapan**, **Profil suara**, **Efek ucapan**, dan pita-pita equalizer. Hanya **Kecepatan bicara** yang ada di kontrol pembacaan secara default. Kontrol pembacaan **Volume ucapan** dan **Perangkat output audio** dijelaskan di [](#sound-reading-controls). Grup **Ucapan** di **Kontrol pembacaan** juga berisi **Ucapkan tanda baca dan simbol**, **Emoji**, dan **Ucapkan pemformatan teks** (lihat [](#verbosity-text)), **Terjemahan otomatis** (lihat [](#translation)), serta **Ucapkan hanya fokus yang dipindahkan pengguna** (lihat [](#verbosity-own-speech)).
 
-Untuk menetapkan perintah ke gestur dan pintasan keyboard, serta menambahkan kontrol pembacaan, lihat [](#commands).
+Untuk menetapkan perintah ke gerakan dan pintasan keyboard, serta menambahkan kontrol pembacaan, lihat [](#commands).

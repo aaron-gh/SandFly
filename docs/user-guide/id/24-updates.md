@@ -23,7 +23,7 @@ Secara default, SandFly hanya menawarkan rilis stabil. Untuk mendapatkan build p
 SandFly menampilkan "Memeriksa pembaruan", lalu salah satu dari berikut ini:
 
 - "SandFly sudah versi terbaru".
-- Dialog **SandFly build** *nomor* **tersedia**, berisi perubahan di build baru. Untuk rilis stabil, perubahannya berupa catatan rilis. Untuk build pengembangan, berupa perubahan sejak build yang terinstal. Pilih **Instal** untuk memasangnya, atau **Batal**.
+- Dialog **SandFly build** *nomor* **tersedia**, berisi perubahan di build baru. Untuk rilis stabil, perubahannya berupa catatan rilis. Untuk build pengembangan, berupa perubahan sejak build yang terinstal. Pilih **Instal** untuk menginstalnya, atau **Batal**.
 - "Tidak dapat memeriksa pembaruan", saat GitHub tidak dapat dijangkau. Coba lagi nanti.
 
 Saat build pengembangan baru sedang dipublikasikan, pemeriksaan menunggunya dan mencoba lagi, hingga satu menit.
@@ -36,41 +36,41 @@ Notifikasi ini memerlukan izin agar SandFly dapat menampilkan notifikasi. Jika n
 
 Nonaktifkan **Periksa pembaruan secara otomatis** untuk hanya memeriksa dengan **Periksa pembaruan**.
 
-### Memasang pembaruan {#updates-install}
+### Menginstal pembaruan {#updates-install}
 
 1. Ketuk notifikasi **Pembaruan SandFly tersedia**, atau pilih **Instal** pada dialog **Periksa pembaruan**.
-2. Untuk pertama kalinya, Android akan membuka setelan yang mengizinkan SandFly menginstal aplikasi, dan SandFly menampilkan "Izinkan SandFly menginstal aplikasi, lalu coba perbarui lagi". Aktifkan setelan tersebut, kembali, dan ulangi langkah 1.
+2. Pada kali pertama, Android membuka setelan yang mengizinkan SandFly menginstal aplikasi, dan SandFly menampilkan "Izinkan SandFly menginstal aplikasi, lalu coba perbarui lagi". Aktifkan setelan tersebut, kembali, dan ulangi langkah 1.
 3. SandFly menampilkan "Mengunduh pembaruan" dan progres unduhan di notifikasi: persentase, serta sisa waktu setelah beberapa detik, seperti "40%, 1 menit 20 detik tersisa".
-4. Setelah unduhan selesai, dialog pemasangan Android terbuka. Pilih **Perbarui** atau **Instal**.
+4. Setelah unduhan selesai, dialog penginstalan Android terbuka. Pilih **Perbarui** atau **Instal**.
 
-SandFly akan dimulai ulang dengan build baru dan setelan yang sama. Jika dialog pemasangan tidak terbuka, misalnya karena layar mati saat mengunduh, ketuk notifikasi **Pembaruan SandFly telah diunduh**. Notifikasi ini hilang setelah 10 menit.
+SandFly akan dimulai ulang dengan build baru dan setelan yang sama. Jika dialog penginstalan tidak terbuka, misalnya karena layar mati saat mengunduh, ketuk notifikasi **Pembaruan SandFly telah diunduh**. Notifikasi ini hilang setelah 10 menit.
 
-SandFly hanya memasang build SandFly yang ditandatangani dengan kunci SandFly. Jika file yang diunduh bukan build resmi, SandFly menampilkan "Unduhan bukan build dari aplikasi ini, sehingga tidak diinstal". Jika koneksi terputus, SandFly mencoba ulang hingga lima kali dan melanjutkan unduhan dari titik berhenti. Jika unduhan tetap gagal, SandFly menampilkan "Tidak dapat mengunduh pembaruan". Memasang ulang build yang sama sebelum SandFly dimulai ulang akan melanjutkan unduhan tersebut.
+SandFly hanya menginstal build SandFly yang ditandatangani dengan kunci SandFly. Jika file yang diunduh bukan build resmi, SandFly menampilkan "Unduhan bukan build dari aplikasi ini, sehingga tidak diinstal". Jika koneksi terputus, SandFly mencoba ulang hingga lima kali dan melanjutkan unduhan dari titik berhenti. Jika unduhan tetap gagal, SandFly menampilkan "Tidak dapat mengunduh pembaruan". Menginstal ulang build yang sama sebelum SandFly dimulai ulang akan melanjutkan unduhan tersebut.
 
-Build SandFly yang Anda kompilasi sendiri ditandatangani dengan kunci yang berbeda. Android tidak dapat memasang rilis SandFly menimpa build tersebut, begitu pula sebaliknya. Hapus instalan salah satunya sebelum memasang yang lain.
+Build SandFly yang Anda kompilasi sendiri ditandatangani dengan kunci yang berbeda. Android tidak dapat menginstal rilis SandFly di atas build tersebut, begitu pula sebaliknya. Hapus instalan salah satunya sebelum menginstal yang lain.
 
 Di jam tangan, lihat [](#devices-watch-updates).
 
 ### Tampak terinstal dari Google Play {#updates-play-installer}
 
-Beberapa aplikasi, seperti sebagian aplikasi perbankan, menonaktifkan layanan aksesibilitas yang dicatat Android sebagai terinstal dari sumber selain Google Play. **Update dan penginstalan** > **Tampak terinstal dari Google Play** membuat Android mencatat Google Play sebagai pemasang SandFly, agar aplikasi-aplikasi tersebut tetap membiarkan SandFly aktif. Setelan ini nonaktif secara default dan memerlukan Shizuku atau root.
+Beberapa aplikasi, seperti sebagian aplikasi perbankan, menonaktifkan layanan aksesibilitas yang dicatat Android sebagai terinstal dari sumber selain Google Play. **Update dan penginstalan** > **Tampak terinstal dari Google Play** membuat Android mencatat Google Play sebagai penginstal SandFly, agar aplikasi-aplikasi tersebut tetap membiarkan SandFly aktif. Setelan ini nonaktif secara default dan memerlukan Shizuku atau root.
 
-Saat Anda mengaktifkan setelan ini, SandFly menginstal ulang APK-nya sendiri melalui Shizuku dengan menetapkan Google Play sebagai pemasangnya. SandFly akan dimulai ulang selama proses instalasi, sehingga ucapan berhenti sejenak. Aplikasi dan setelannya tetap sama. Hanya informasi pemasang yang dilaporkan ke aplikasi lain yang berubah. Namun, aplikasi tetap bisa mengetahui dengan cara lain bahwa SandFly tidak diinstal dari Google Play.
+Saat Anda mengaktifkan setelan ini, SandFly menginstal ulang APK-nya sendiri melalui Shizuku dengan menetapkan Google Play sebagai penginstalnya. SandFly akan dimulai ulang selama proses instalasi, sehingga ucapan berhenti sejenak. Aplikasi dan setelannya tetap sama. Hanya informasi penginstal yang dilaporkan ke aplikasi lain yang berubah. Namun, aplikasi tetap bisa mengetahui dengan cara lain bahwa SandFly tidak diinstal dari Google Play.
 
 Selama setelan ini aktif:
 
-- SandFly memasang pembaruan melalui Shizuku agar Google Play tetap tercatat sebagai pemasang. Jika gagal, SandFly memasang pembaruan menggunakan dialog pemasangan Android.
-- Jika ada sesuatu yang mencatat pemasang lain, misalnya pembaruan yang dipasang saat Shizuku tidak berjalan, SandFly mencatat ulang Google Play saat Shizuku kembali mengizinkan SandFly. Sampai saat itu, setelan menampilkan "Aktif, tetapi Google Play belum tercatat sebagai pemasang. SandFly akan mengaturnya saat Shizuku tersedia."
+- SandFly menginstal pembaruan melalui Shizuku agar Google Play tetap tercatat sebagai penginstal. Jika gagal, SandFly menginstal pembaruan menggunakan dialog penginstalan Android.
+- Jika ada sesuatu yang mencatat penginstal lain, misalnya pembaruan yang diinstal saat Shizuku tidak berjalan, SandFly mencatat ulang Google Play saat Shizuku kembali mengizinkan SandFly. Sampai saat itu, setelan menampilkan "Aktif, tetapi Google Play belum tercatat sebagai penginstal. SandFly akan mengaturnya saat Shizuku tersedia."
 
-Menonaktifkan setelan ini mengembalikan catatan pemasang ke nilai sebelumnya.
+Menonaktifkan setelan ini mengembalikan catatan penginstal ke nilai sebelumnya.
 
-Tanpa Shizuku, setelan tidak dapat mengubah pemasang. Tindakan **Salin perintah** akan menyalin perintah adb yang melakukan hal yang sama dari komputer, dijalankan di folder yang berisi `sandfly.apk`:
+Tanpa Shizuku, setelan tidak dapat mengubah penginstal. Tindakan **Salin perintah** pada setelan ini menyalin perintah adb yang melakukan hal yang sama dari komputer. Jalankan perintah itu di folder yang berisi `sandfly.apk`:
 
 ```
 adb install -r -i com.android.vending sandfly.apk
 ```
 
-Untuk mengembalikan catatan pemasang sebagai instalasi biasa, jalankan `adb install -r sandfly.apk`.
+Untuk mengembalikan catatan penginstal sebagai instalasi biasa, jalankan `adb install -r sandfly.apk`.
 
 ### Shizuku {#updates-shizuku}
 
@@ -96,8 +96,8 @@ Tanpa Shizuku atau root, fitur-fitur berikut tidak tersedia atau bekerja secara 
 - **Tombol volume** > **Pintasan tombol volume saat layar mati** hanya bekerja melalui Shizuku, bukan root. Lihat [](#buttons).
 - **Ringkasan** > **Gunakan ringkasan SandFly** membaca dan membuka aplikasi terbaru melalui Shizuku atau root. Tanpa keduanya, ringkasan sistem yang akan terbuka. Alt+Tab, membuka aplikasi di layar terpisah, serta perintah **Aplikasi lebih lama** dan **Aplikasi lebih baru** juga memerlukan Shizuku atau root. Lihat [](#display).
 - Sakelar pada panel setelan cepat SandFly, seperti Wi-Fi, Bluetooth, data seluler, dan mode pesawat, serta kontrol kecerahan, putar otomatis, cahaya malam, redup ekstra, warna, dan ukuran tampilan. Tanpa Shizuku atau root, beberapa sakelar akan membuka setelan sistem. Lihat [](#display).
-- Riwayat papan klip menambahkan teks yang disalin dari aplikasi lain hanya melalui Shizuku atau root, dengan **Tambahkan salinan dari aplikasi lain** di riwayat. Lihat [](#typing).
-- Gboard memutar umpan balik tombolnya sendiri, seperti **Bergetar saat tombol ditekan**, saat Anda menjelajahi tombolnya hanya melalui Shizuku atau root. Lihat [](#typing).
+- Riwayat papan klip hanya dapat menambahkan teks yang disalin di aplikasi lain melalui Shizuku atau root, dengan **Tambahkan salinan dari aplikasi lain** di riwayat. Lihat [](#typing).
+- Gboard memutar umpan balik tombolnya sendiri, seperti **Bergetar saat tombol ditekan**, saat Anda menjelajahi tombolnya. Fitur ini hanya bekerja melalui Shizuku atau root. Lihat [](#typing).
 - Perintah yang menjalankan pintasan aksesibilitas milik layanan aksesibilitas lain. Lihat [](#commands).
 - Skrip dan makro yang menekan tombol atau mengetik teks saat tidak ada kolom teks, serta langkah makro yang mengubah kontrol setelan cepat di atas. Lihat [](#scripts) dan [](#macros).
 - **Update dan penginstalan** > **Tampak terinstal dari Google Play**. Lihat [](#updates-play-installer).
@@ -128,7 +128,7 @@ Perintah-perintah tersebut adalah:
   adb shell pm grant io.github.aaron_gh.sandfly android.permission.WRITE_SECURE_SETTINGS
   ```
 
-**Setel ulang audio aksesibilitas setelah panggilan** tidak memiliki izin yang dapat diberikan lewat adb. Tanpa Shizuku, setelan ini menampilkan perintah adb yang menyetel ulang output audio aksesibilitas sekali saja, saat ucapan terdengar dari lubang suara telepon setelah panggilan. Perintah tersebut mencantumkan APK yang terinstal, sehingga salin kembali setelah SandFly diperbarui.
+**Setel ulang audio aksesibilitas setelah panggilan** tidak memiliki izin yang dapat diberikan lewat adb. Tanpa Shizuku, setelan ini menampilkan perintah adb yang menyetel ulang output audio aksesibilitas sekali saja, untuk saat ucapan terdengar dari lubang suara ponsel setelah panggilan. Perintah tersebut menyebut APK yang terinstal, jadi salin perintah itu lagi setelah SandFly diperbarui.
 
 ### Menggunakan root sebagai pengganti Shizuku {#updates-root}
 
