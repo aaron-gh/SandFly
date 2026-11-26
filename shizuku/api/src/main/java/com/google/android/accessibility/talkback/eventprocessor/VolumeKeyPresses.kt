@@ -159,6 +159,9 @@ class VolumeKeyPresses(private val timer: Timer, private val callbacks: Callback
   val isUsed: Boolean
     get() = !upCommands.isEmpty || !downCommands.isEmpty
 
+  /** Whether any press of [keyCode] has a command. */
+  fun hasAnyCommand(keyCode: Int): Boolean = !commandsFor(keyCode).isEmpty
+
   /** Whether a single, double, triple or long press of [keyCode] has [command]. */
   fun hasCommand(keyCode: Int, command: String): Boolean {
     val commands = commandsFor(keyCode)

@@ -13,6 +13,8 @@ Pressing both volume keys together runs no SandFly command, so the accessibility
 - **Volume keys adjust sliders**: when a slider has focus, volume up and volume down change its value instead of the volume, and SandFly speaks the new value. Hold a key to keep changing the value. Off by default.
 - **Volume keys move the cursor**: when a text field has focus, volume up moves the cursor back a character and volume down moves it on, and SandFly speaks the character. Off by default.
 
+When a key also has a command for one of its presses (see [](#buttons-commands)), its presses run their commands, and a press that runs no command adjusts the slider or moves the cursor once it ends, in place of changing the volume.
+
 When focus is on anything else, or the screen is off, the volume keys change the volume as usual. With a finger on the screen or during continuous reading, they still change the speech volume.
 
 ### Run commands with the volume keys {#buttons-commands}
@@ -34,7 +36,6 @@ The presses don't run commands, and the keys change the volume as usual, in thes
 - While the screen is off, unless the lock screen shows on an always-on display, or **Volume key shortcuts with the screen off** is on. See [](#buttons-screen-off).
 - During a phone call, or while an app plays call audio.
 - While a finger is on the screen, or during continuous reading.
-- When the key adjusts a slider or moves the cursor.
 - While the Shortcut Menu app is shown.
 
 While a phone call rings, only a volume key with the **Answer call** or **End call** command assigned to one of its presses runs commands.

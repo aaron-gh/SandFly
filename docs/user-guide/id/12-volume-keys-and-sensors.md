@@ -13,6 +13,8 @@ Menekan kedua tombol volume secara bersamaan tidak menjalankan perintah SandFly 
 - **Tombol volume menyesuaikan penggeser**: saat penggeser memiliki fokus, tombol naikkan volume dan turunkan volume mengubah nilainya, bukan mengubah volume, dan SandFly mengucapkan nilai barunya. Tahan tombol untuk terus mengubah nilai. Nonaktif secara default.
 - **Tombol volume menggerakkan kursor**: saat kolom teks memiliki fokus, tombol naikkan volume menggerakkan kursor mundur satu karakter, sedangkan tombol turunkan volume menggerakkannya maju satu karakter. SandFly mengucapkan karakter tersebut. Nonaktif secara default.
 
+Jika tombol juga memiliki perintah untuk salah satu penekanannya (lihat [](#buttons-commands)), penekanannya menjalankan perintah tersebut, dan penekanan tanpa perintah menyesuaikan penggeser atau menggerakkan kursor setelah selesai, bukan mengubah volume.
+
 Saat fokus berada pada item lain, atau saat layar mati, tombol volume mengubah volume seperti biasa. Dengan satu jari di layar atau selama pembacaan berkelanjutan, tombol volume tetap mengubah volume ucapan.
 
 ### Menjalankan perintah dengan tombol volume {#buttons-commands}
@@ -34,7 +36,6 @@ Dalam kondisi berikut, penekanan tidak menjalankan perintah, dan tombol mengubah
 - Saat layar mati, kecuali jika layar kunci tampil di layar selalu aktif (always-on display), atau jika **Pintasan tombol volume saat layar mati** aktif. Lihat [](#buttons-screen-off).
 - Selama panggilan telepon, atau saat aplikasi memutar audio panggilan.
 - Saat ada jari di layar, atau selama pembacaan berkelanjutan.
-- Saat tombol menyesuaikan penggeser atau menggerakkan kursor.
 - Saat aplikasi Shortcut Menu ditampilkan.
 
 Saat panggilan telepon berdering, hanya tombol volume yang memiliki perintah **Jawab panggilan** atau **Akhiri panggilan** pada salah satu penekanannya yang menjalankan perintah.

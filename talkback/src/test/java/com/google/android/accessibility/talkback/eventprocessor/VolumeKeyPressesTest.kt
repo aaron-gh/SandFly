@@ -582,6 +582,35 @@ class VolumeKeyPressesTest {
   }
 
   @Test
+  fun hasAnyCommand_onlyForTheKeyWithACommand() {
+    assertFalse(presses.hasAnyCommand(KEYCODE_VOLUME_UP))
+    assign(down = KeyCommands(double = null, triple = null, long = "A"))
+    assertTrue(presses.hasAnyCommand(KEYCODE_VOLUME_DOWN))
+    assertFalse(presses.hasAnyCommand(KEYCODE_VOLUME_UP))
+  }
+
+  @Test
+  fun shortPressWithLongPressCommand_takesTheVolumeChangeOnRelease() {
+    // Volume keys move the cursor: the volume change is replaced by a cursor move.
+    assign(down = KeyCommands(double = null, triple = null, long = "A"))
+    others = OtherPresses.VOLUME
+    assertTrue(down(KEYCODE_VOLUME_DOWN))
+    advance(100)
+    assertTrue(log.isEmpty())
+    assertTrue(up(KEYCODE_VOLUME_DOWN))
+    assertEquals(listOf("down"), log)
+  }
+
+  @Test
+  fun heldKeyWithDoublePressCommand_repeatsTheVolumeChange() {
+    assign(up = KeyCommands(double = "A", triple = null, long = null))
+    others = OtherPresses.VOLUME
+    assertTrue(down(KEYCODE_VOLUME_UP))
+    advance(400 + 50 * 2)
+    assertEquals(listOf("up", "up repeated", "up repeated"), log)
+  }
+
+  @Test
   fun hasCommand_falseWithoutCommands() {
     assertFalse(presses.hasCommand(KEYCODE_VOLUME_UP, "ANSWER_CALL"))
   }

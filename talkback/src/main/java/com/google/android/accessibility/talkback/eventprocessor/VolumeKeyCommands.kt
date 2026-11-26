@@ -45,7 +45,21 @@ class VolumeKeyCommands(
   private val onVolumeAdjusted: () -> Unit,
   /** The stream to suggest to Android for a kept press. */
   private val suggestedStream: () -> Int,
+  /** What the kept presses that run no command do instead of changing the volume, if anything. */
+  private val volumeChangeReplacement: VolumeChangeReplacement? = null,
 ) {
+  /**
+   * Something that the presses of a volume key with a command do in place of changing the volume
+   * when they run no command, such as moving the cursor in a text field.
+   */
+  interface VolumeChangeReplacement {
+    /** Whether the presses of [keyCode] being counted do something else instead. */
+    fun replaces(keyCode: Int): Boolean
+
+    /** Does it once for a press of [keyCode], or a repeat while the key is held. */
+    fun replace(keyCode: Int)
+  }
+
   private val audioManager = context.getSystemService(AudioManager::class.java)
   private val volume = VolumeKeyVolume(context)
   private val powerManager = context.getSystemService(PowerManager::class.java)
@@ -81,6 +95,11 @@ class VolumeKeyCommands(
         }
 
         override fun adjustVolume(keyCode: Int, repeated: Boolean) {
+          val replacement = volumeChangeReplacement
+          if (replacement != null && replacement.replaces(keyCode)) {
+            replacement.replace(keyCode)
+            return
+          }
           volume.adjust(keyCode, repeated, suggestedStream(), showUi = !hidesVolumePanel)
           onVolumeAdjusted()
         }
@@ -176,7 +195,12 @@ class VolumeKeyCommands(
         presses.onKeyDown(
           keyCode,
           event.repeatCount > 0,
-          otherPresses(takesAllPresses, hidesVolumePanel, powerManager?.isInteractive == true),
+          otherPresses(
+            takesAllPresses,
+            hidesVolumePanel,
+            powerManager?.isInteractive == true,
+            volumeChangeReplacement?.replaces(keyCode) == true,
+          ),
         ) {
           val reason = offReason() ?: if (isInCall()) "app call audio playing" else null
           if (reason != null) {
@@ -205,6 +229,9 @@ class VolumeKeyCommands(
    */
   fun describeState(): String =
     (if (presses.isUsed) "" else "no press commands; ") + presses.describe()
+
+  /** Whether any press of [keyCode] has a command. */
+  fun hasAnyCommand(keyCode: Int): Boolean = presses.hasAnyCommand(keyCode)
 
   /** Whether a single, double, triple or long press of [keyCode] has [command]. */
   fun hasCommand(keyCode: Int, command: String): Boolean = presses.hasCommand(keyCode, command)
@@ -266,16 +293,20 @@ class VolumeKeyCommands(
     /**
      * What the presses with no command do: with the screen on, Volume keys > SandFly handles every
      * volume key press, [takesAll], keeps them and changes no volume, and Hide volume panel,
-     * [hidesPanel], keeps them and changes the volume without Android's volume panel.
+     * [hidesPanel], keeps them and changes the volume without Android's volume panel. When they are
+     * [replaced], such as by cursor movement in a text field, they do that instead, whatever the
+     * switches.
      */
     @JvmStatic
     internal fun otherPresses(
       takesAll: Boolean,
       hidesPanel: Boolean,
       interactive: Boolean,
+      replaced: Boolean = false,
     ): VolumeKeyPresses.OtherPresses =
       when {
         !interactive -> VolumeKeyPresses.OtherPresses.ANDROID
+        replaced -> VolumeKeyPresses.OtherPresses.VOLUME
         takesAll -> VolumeKeyPresses.OtherPresses.NOTHING
         hidesPanel -> VolumeKeyPresses.OtherPresses.VOLUME
         else -> VolumeKeyPresses.OtherPresses.ANDROID

@@ -13,6 +13,8 @@ Beide volumetoetsen samen indrukken voert geen SandFly-opdracht uit, zodat de to
 - **Volumetoetsen passen schuifregelaars aan**: als een schuifregelaar focus heeft, wijzigen volume omhoog en volume omlaag de waarde ervan in plaats van het volume, en SandFly spreekt de nieuwe waarde uit. Houd een toets ingedrukt om de waarde te blijven wijzigen. Standaard uit.
 - **Volumetoetsen verplaatsen de cursor**: als een tekstveld focus heeft, beweegt volume omhoog de cursor een teken terug en volume omlaag een teken verder, en SandFly spreekt het teken uit. Standaard uit.
 
+Als een toets ook een opdracht heeft voor een van zijn drukken (zie [](#buttons-commands)), voeren de drukken hun opdrachten uit, en een druk zonder opdracht past de schuifregelaar aan of beweegt de cursor zodra hij eindigt, in plaats van het volume te wijzigen.
+
 Als de focus op iets anders staat, of het scherm uit is, wijzigen de volumetoetsen het volume zoals gewoonlijk. Met een vinger op het scherm of tijdens doorlopend lezen wijzigen ze nog steeds het spraakvolume.
 
 ### Opdrachten uitvoeren met de volumetoetsen {#buttons-commands}
@@ -34,7 +36,6 @@ De drukken voeren geen opdrachten uit, en de toetsen wijzigen het volume zoals g
 - Terwijl het scherm uit is, tenzij het vergrendelscherm wordt getoond op een always-on-display, of **Sneltoetsen voor volumetoetsen met het scherm uit** aanstaat. Zie [](#buttons-screen-off).
 - Tijdens een telefoongesprek, of terwijl een app gespreksaudio afspeelt.
 - Terwijl een vinger op het scherm staat, of tijdens doorlopend lezen.
-- Als de toets een schuifregelaar aanpast of de cursor beweegt.
 - Terwijl de app Shortcut Menu wordt getoond.
 
 Terwijl een gesprek overgaat, voert alleen een volumetoets met de opdracht **Gesprek beantwoorden** toegewezen aan een van zijn drukken, opdrachten uit.
