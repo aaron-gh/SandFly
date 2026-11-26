@@ -21,11 +21,13 @@ import static androidx.core.view.accessibility.AccessibilityWindowInfoCompat.TYP
 import static com.google.android.accessibility.talkback.Feedback.HINT;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+import android.os.SystemClock;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.style.LocaleSpan;
+import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.accessibility.AccessibilityWindowInfo;
@@ -116,6 +118,12 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
 
   private final GlobalVariables globalVariables;
 
+  /**
+   * When the phonetic letter posted for an event is due, in {@link SystemClock#uptimeMillis}, or 0
+   * when none is posted, so that a problem report shows what cancelled one.
+   */
+  private long pendingUntil = 0;
+
   public ProcessorPhoneticLetters(TalkBackService service, GlobalVariables globalVariables) {
     this.service = service;
     this.globalVariables = globalVariables;
@@ -136,6 +144,15 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
       // The pending phonetic letter should be interrupted when receiving event
       // TYPE_GESTURE_DETECTION_START. Since the system wouldn't sent this event when using TalkBack
       // gesture detection, TalkBackService needs to notify it manually.
+      if (pendingUntil != 0 && SystemClock.uptimeMillis() < pendingUntil) {
+        Log.i(
+            TAG,
+            "Phonetic letter cancelled by "
+                + AccessibilityEventUtils.typeToString(event.getEventType())
+                + " from "
+                + event.getPackageName());
+      }
+      pendingUntil = 0;
       cancelPhoneticLetter(eventId);
     }
 
@@ -214,6 +231,7 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
           AccessibilityEventUtils.sourceCompat(event);
       text = AccessibilityNodeInfoUtils.getNodeText(sourceNode);
       if (TextUtils.isEmpty(text)) {
+        Log.i(TAG, "Phonetic letter: traversal event with no text from " + event.getPackageName());
         return;
       }
     }
@@ -226,6 +244,14 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
         && event.getFromIndex() < text.length()) {
       letter = String.valueOf(text.charAt(event.getFromIndex()));
     } else {
+      Log.i(
+          TAG,
+          "Phonetic letter: traversal event index "
+              + event.getFromIndex()
+              + " outside text of length "
+              + text.length()
+              + " from "
+              + event.getPackageName());
       return;
     }
     speakPhoneticLetterForTraversedText(
@@ -241,9 +267,18 @@ public class ProcessorPhoneticLetters implements AccessibilityEventListener {
         || globalVariables.getPhoneticLetterTakesPlaceOfLetter(/* typing= */ false)) {
       return;
     }
-    CharSequence phoneticLetter = getPhoneticLetter(traversalLocale(isTalkbackPackage), letter);
+    String locale = traversalLocale(isTalkbackPackage);
+    CharSequence phoneticLetter = getPhoneticLetter(locale, letter);
     if (phoneticLetter != null) {
       postPhoneticLetterRunnable(phoneticLetter, eventId);
+      pendingUntil = SystemClock.uptimeMillis() + DELAY_READING_PHONETIC_LETTER;
+    } else if (!letter.isEmpty() && !Character.isWhitespace(letter.codePointAt(0))) {
+      Log.i(
+          TAG,
+          "No phonetic letter for U+"
+              + Integer.toHexString(letter.codePointAt(0)).toUpperCase(Locale.ROOT)
+              + " in "
+              + locale);
     }
   }
 
