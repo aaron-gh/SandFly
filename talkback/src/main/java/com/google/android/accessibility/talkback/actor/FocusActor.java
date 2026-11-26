@@ -467,6 +467,16 @@ public class FocusActor implements UserInputEventListener {
     focusManagerInternal.onBack();
   }
 
+  /** Notes a Back that an app runs itself, unless SandFly noted it already. */
+  public void onBackInApp() {
+    focusManagerInternal.onBackInApp();
+  }
+
+  /** Ends the pending Back, given up before it ran. */
+  public void onBackCancelled() {
+    focusManagerInternal.onBackCancelled();
+  }
+
   /** Focuses the list item activated before the last Back, when its list is shown again. */
   public boolean restoreActivatedItemAfterBack(EventId eventId) {
     return focusManagerInternal.restoreActivatedItemAfterBack(eventId);

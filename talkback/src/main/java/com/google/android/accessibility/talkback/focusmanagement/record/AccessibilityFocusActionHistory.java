@@ -589,6 +589,18 @@ public final class AccessibilityFocusActionHistory {
     clearBack();
   }
 
+  /**
+   * Ends the pending Back without dropping an activated item, as when a Back gesture is given up
+   * and the list it was to leave stays.
+   */
+  public void cancelBack() {
+    if (backTime < 0) {
+      return;
+    }
+    ReportNotes.focusAfterBack.add("Back cancelled");
+    clearBack();
+  }
+
   private void clearBack() {
     backTime = -1;
     focusAtBack = null;

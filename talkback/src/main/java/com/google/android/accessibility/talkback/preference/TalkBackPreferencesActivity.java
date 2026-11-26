@@ -29,6 +29,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import com.google.android.accessibility.talkback.HatsSurveyRequester;
+import com.google.android.accessibility.talkback.TalkBackService;
 import com.google.android.accessibility.talkback.preference.base.TalkBackPreferenceFragment;
 import com.google.android.accessibility.talkback.preference.base.TalkbackBaseFragment;
 import com.google.android.accessibility.talkback.preference.search.TalkBackSearchIndexablesProvider;
@@ -49,11 +50,18 @@ import org.checkerframework.checker.nullness.qual.Nullable;
  */
 public class TalkBackPreferencesActivity extends PreferencesActivity
     implements PreferenceFragmentCompat.OnPreferenceStartFragmentCallback,
-        FragmentOnAttachListener {
+        FragmentOnAttachListener,
+        FragmentManager.OnBackStackChangedListener {
 
   private static final String TAG = "PreferencesActivity";
 
   private HatsSurveyRequester hatsSurveyRequester;
+
+  // Whether the screen before is being shown again for an intent, not for a Back.
+  private boolean poppingForIntent;
+
+  // Whether the Back that shows the screen before was noted for focus, until the change ends.
+  private boolean backNoted;
 
   private void assignSearchFragment(Intent intent) {
     if (TalkBackSearchIndexablesProvider.isFromSearchIndexablesContract(intent)) {
@@ -67,6 +75,7 @@ public class TalkBackPreferencesActivity extends PreferencesActivity
     assignSearchFragment(getIntent());
     fillDefaultFragmentNameIfNecessary();
     getSupportFragmentManager().addFragmentOnAttachListener(this);
+    getSupportFragmentManager().addOnBackStackChangedListener(this);
     super.onCreate(savedInstanceState);
 
     // Check RTL.
@@ -94,6 +103,34 @@ public class TalkBackPreferencesActivity extends PreferencesActivity
   protected void onDestroy() {
     super.onDestroy();
     getSupportFragmentManager().removeFragmentOnAttachListener(this);
+    getSupportFragmentManager().removeOnBackStackChangedListener(this);
+  }
+
+  /**
+   * Back, the system Back gesture, the navigation bar's Back button and Navigate up show the screen
+   * before in the same window. SandFly sees only the Backs it runs, so focus would go to the first
+   * item of the screen instead of the one opened.
+   */
+  @Override
+  public void onBackStackChangeStarted(Fragment fragment, boolean pop) {
+    if (!pop || poppingForIntent || backNoted) {
+      return;
+    }
+    backNoted = true;
+    TalkBackService.onBackInOwnScreen();
+  }
+
+  @Override
+  public void onBackStackChangeCancelled() {
+    if (backNoted) {
+      backNoted = false;
+      TalkBackService.onBackCancelledInOwnScreen();
+    }
+  }
+
+  @Override
+  public void onBackStackChanged() {
+    backNoted = false;
   }
 
   @Override
@@ -149,8 +186,13 @@ public class TalkBackPreferencesActivity extends PreferencesActivity
       // main screen leaves settings, so nothing stays behind it, and a main screen already shown
       // stays as it is.
       if (manager.getBackStackEntryCount() > 0) {
-        manager.popBackStackImmediate(
-            manager.getBackStackEntryAt(0).getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        poppingForIntent = true;
+        try {
+          manager.popBackStackImmediate(
+              manager.getBackStackEntryAt(0).getId(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        } finally {
+          poppingForIntent = false;
+        }
       }
       if (!(manager.findFragmentById(getContainerId()) instanceof TalkBackPreferenceFragment)) {
         manager.beginTransaction().replace(getContainerId(), fragment, getFragmentTag()).commit();
