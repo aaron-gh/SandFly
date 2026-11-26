@@ -39,6 +39,7 @@ import com.google.android.accessibility.talkback.quicksettings.SystemTiles
 import com.google.android.accessibility.talkback.scripting.ScriptHostFactory
 import com.google.android.accessibility.talkback.soundthemes.SoundThemes
 import com.google.android.accessibility.talkback.soundthemes.StagedTheme
+import com.google.android.accessibility.talkback.utils.FileReplace
 import com.google.android.accessibility.talkback.wallpaper.SandFlyWallpaperService
 import com.google.android.accessibility.utils.FormFactorUtils
 import com.google.android.accessibility.utils.SharedPreferencesUtils
@@ -405,7 +406,7 @@ object SettingsBackup {
     val target = SandFlyWallpaperService.imageFile(context)
     val temporary = File(target.parentFile, target.name + ".new")
     image.copyTo(temporary, overwrite = true)
-    if (!temporary.renameTo(target)) {
+    if (!FileReplace.replace(temporary, target)) {
       temporary.delete()
       throw IOException("Cannot replace the wallpaper image")
     }

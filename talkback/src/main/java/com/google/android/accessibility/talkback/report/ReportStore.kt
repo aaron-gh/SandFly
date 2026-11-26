@@ -18,6 +18,7 @@ package com.google.android.accessibility.talkback.report
 
 import android.content.Context
 import androidx.annotation.VisibleForTesting
+import com.google.android.accessibility.talkback.utils.FileReplace
 import com.google.android.libraries.accessibility.utils.log.LogUtils
 import java.io.File
 import java.io.IOException
@@ -175,7 +176,7 @@ class ReportStore private constructor(private val file: File) {
     val temporary = File(file.parentFile, "${file.name}.tmp")
     try {
       temporary.writeText(root.toString())
-      if (!temporary.renameTo(file)) throw IOException("Cannot replace ${file.name}")
+      if (!FileReplace.replace(temporary, file)) throw IOException("Cannot replace ${file.name}")
     } catch (e: IOException) {
       LogUtils.e(TAG, "Cannot save the reports: %s", e)
     }
