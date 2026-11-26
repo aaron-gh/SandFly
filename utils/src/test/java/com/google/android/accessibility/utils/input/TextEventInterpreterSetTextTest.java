@@ -109,11 +109,14 @@ public class TextEventInterpreterSetTextTest {
     long now = SystemClock.uptimeMillis();
     sendCursor("Hello", 5, now - 2000);
     int before = sent.size();
+    // The action's events arrive after performAction returns, with times within the action.
     actionHistory.beforeSetText();
+    actionHistory.afterSetText();
     sendCursor("Hello world", 0, now);
     sendCursor("Hello world", 11, now);
-    actionHistory.afterSetText();
-    assertEquals(before, sent.size());
+    for (int i = before; i < sent.size(); i++) {
+      assertEquals(TextEventInterpretation.SET_TEXT_BY_ACTION, sent.get(i).getEvent());
+    }
     // The next move is read from where setting the text left the cursor.
     sendCursor("Hello world", 10, now + 2000);
     assertEquals("d", String.valueOf(lastTraversed()));
