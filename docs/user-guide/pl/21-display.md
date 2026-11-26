@@ -125,7 +125,7 @@ Polecenie **Szybkie ustawienia systemu** otwiera panel Androida także przy wł�
 
 Android pozwala zmieniać niektóre ustawienia tylko systemowi lub procesowi z uprawnieniami powłoki. Przy działającym Shizuku SandFly może bezpośrednio włączać lub wyłączać Wi-Fi, Bluetooth, dane mobilne, hotspot, tryb samolotowy, lokalizację, NFC, oszczędzanie baterii i danych, ciemny motyw oraz dostęp do mikrofonu i kamery. Nadaje sobie też uprawnienia potrzebne do pozostałych elementów panelu. Bez Shizuku te przełączniki otwierają odpowiednie ustawienia Androida. Zobacz [](#updates).
 
-Kafelki systemowe muszą znajdować się także w panelu Androida. Przy wyłączonym Shizuku dotyczy to również kafelków aplikacji. SandFly otwiera panel systemowy, aktywuje kafelek, zamyka panel bez odczytu i podaje nowy stan kafelka. Jeśli nie znajdzie kafelka, usłyszysz jego nazwę i komunikat „nie znajduje się w szybkich ustawieniach systemu”.
+SandFly aktywuje kafelki aplikacji i kafelki systemowe w panelu Androida. Otwiera panel systemowy, aktywuje kafelek, zamyka panel bez odczytu i podaje nowy stan kafelka. Bez Shizuku kafelek działa tylko wtedy, gdy znajduje się w panelu Androida. Jeśli SandFly nie znajdzie kafelka, usłyszysz jego nazwę i komunikat „nie znajduje się w szybkich ustawieniach systemu”. Gdy Shizuku działa, SandFly najpierw dodaje kafelek aplikacji do panelu Androida, jeśli go tam nie ma, a gdy go tam nie znajdzie, aktywuje go przez Shizuku.
 
 #### Wybierz zawartość panelu {#display-quick-settings-edit}
 
@@ -137,7 +137,7 @@ Otwórz **Szybkie ustawienia** > **Panel szybkich ustawień** lub wybierz **Edyt
   - Obraz i oświetlenie obejmują **Latarka**, **Jasność latarki**, **Automatyczne obracanie**, **Ciemny motyw**, **Nocne światło**, **Bardzo przyciemnione**, **Inwersja kolorów**, **Korekta koloru**, **Jasność**, **Jasność adaptacyjna**, **Limit czasu ekranu**, **Rozmiar czcionki** i **Rozmiar wyświetlacza**.
   - Pozostałe elementy to **Dostęp do mikrofonu**, **Dostęp do kamery**, **Media**, **Wyjście multimedialne**, **Ustawienia** i **Menu zasilania**.
 - **Dodaj kafelek aplikacji** wyświetla kafelki szybkich ustawień oferowane przez zainstalowane aplikacje.
-- **Dodaj kafelek systemowy** wyświetla kafelki z szybkich ustawień Androida. Jeśli kafelek ma odpowiednik w SandFly, zostanie dodany jako element SandFly. Tak działa na przykład **Hotspot**.
+- **Dodaj kafelek systemowy** wyświetla kafelki z szybkich ustawień Androida. Jeśli kafelek ma odpowiednik w SandFly, zostanie dodany jako element SandFly. Tak działa na przykład **Hotspot**. Gdy Shizuku działa, SandFly przyznaje sobie uprawnienie DUMP i dostęp do danych o użyciu, a potem odczytuje listę z systemu. W przeciwnym razie przegląda szybkie ustawienia systemu, co trwa kilka sekund.
 - **Liczba kolumn** pozwala ustawić od 1 do 4 kolumn siatki. Domyślnie są dwie.
 
 Żeby zmienić pozycję elementu lub go usunąć, stuknij na nim dwa razy albo otwórz jego czynności.

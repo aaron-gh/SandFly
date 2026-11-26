@@ -41,7 +41,7 @@ On Android 11 and later, also make SandFly visible to your app, so that you can 
 
 SandFly binds your service once the user allows your app, and keeps it bound while it's running, so your app keeps running while SandFly does; it binds it again if it stops. SandFly looks for displays when it starts, when an app is installed or updated, and when the user allows or stops allowing one.
 
-To ask the user straight away, rather than waiting for SandFly's notification, open the warning:
+To ask the user straight away, rather than waiting for the notification from SandFly, open the warning:
 
 ```kotlin
 context.startActivity(
@@ -113,7 +113,7 @@ These names, from Backtalk, are deprecated:
 
 SandFly binds a service with the deprecated action through the deprecated interfaces, so change the action and both interfaces together. A service with both actions is bound through the new interfaces. For `BRAILLE_DISPLAYS_CHANGED`, the warning names your app only on Android 14 and later, when the broadcast shares its identity.
 
-SandFly 27.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
+SandFly 0.8.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
 
 ```sh
 adb logcat -s SandFlyApi
@@ -121,4 +121,4 @@ adb logcat -s SandFlyApi
 
 If your app is a debuggable build, SandFly also posts a notification that lists the deprecated names it used.
 
-The deprecated names will be removed in a later release. SandFly 0.7.0 and earlier take only the deprecated names. To work with those too, declare both actions, and in `onBind` return the interface that matches the intent's action.
+The deprecated names will be removed in a later release. SandFly 0.7.0 and earlier take only the deprecated names. To work with those too, declare both actions, and in `onBind` return the interface that matches the action of the intent.

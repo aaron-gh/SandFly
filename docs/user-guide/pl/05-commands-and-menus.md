@@ -30,7 +30,7 @@ Na liście są tylko polecenia obsługiwane na danym urządzeniu. Jeśli urządz
 - **Opisy obrazów i ekranu** zawierają **Zrób zdjęcie i opisz**, **Opisz obraz**, **Opisz ekran**, ich warianty odczytu i zadawania pytań oraz **Udostępnij obraz zaznaczonego elementu**, **Udostępnij zrzut ekranu** i **Zgłoś odpowiedź AI**. SandFly Pro udostępnia tu również polecenia rozpoznawania ekranu. Zobacz [](#descriptions).
 - **Rozpoznawanie na żywo** zawiera osobne polecenie dla każdego trybu oraz **Zatrzymaj rozpoznawanie na żywo**.
 - **Brajl** zawiera **Włącz klawiaturę brajlowską**, **Polecenia brajlowskie**, **Znajdź tekst**, profile poleceń brajlowskich i polecenia monitora brajlowskiego. Zobacz [](#braille).
-- **SandFly** zawiera **Wstrzymaj SandFly**, **Ukryj lub pokaż ekran**, **Pokazuj wskaźnik zaznaczenia**, **Wyszukiwanie zawartości ekranu**, profile gestów i ustawień, **Gesty dla tej aplikacji**, **Włącz lub wyłącz nawigację strzałkami**, **Zablokuj lub odblokuj dotyk**, **Włącz lub wyłącz wszystkie skrypty**, **Polecenia skryptów**, **Szczegółowość**, **Wyłącz SandFly**, **Otwórz samouczek** i **Ćwiczenie gestów**. SandFly Pro udostępnia także polecenie uruchamiania i zatrzymywania zadania agenta AI.
+- **SandFly** zawiera **Wstrzymaj SandFly**, **Ukryj lub pokaż ekran**, **Pokazuj wskaźnik zaznaczenia**, **Wyszukiwanie zawartości ekranu**, profile gestów i ustawień, **Gesty dla tej aplikacji**, **Szybkie zadania**, **Włącz lub wyłącz tryb BlackBerry**, **Włącz lub wyłącz nawigację strzałkami**, **Zablokuj lub odblokuj dotyk**, **Włącz lub wyłącz wszystkie skrypty**, **Polecenia skryptów**, **Szczegółowość**, **Wyłącz SandFly**, **Otwórz samouczek** i **Ćwiczenie gestów**. SandFly Pro udostępnia także polecenie uruchamiania i zatrzymywania zadania agenta AI.
 - **Ustawienia programisty** zawierają **Sprawdź element z fokusem**, **Kopiuj szczegóły elementu** i **Kopiuj drzewo ekranu**. Zobacz [](#macros-inspect).
 - **Wartości ustawień** obejmują przechodzenie do następnej i poprzedniej wartości każdego elementu sterowania czytaniem zmieniającego ustawienie, np. znaków przestankowych. Obejmują też polecenia przełączające ustawienia, np. **Zawijanie**.
 
@@ -41,12 +41,24 @@ Poniższe grupy pojawiają się, gdy zawierają polecenia.
 - **Makra** zawierają osobne polecenie dla każdego makra oraz **Zatrzymaj makro** i **Nagraj makro**. Zobacz [](#macros).
 - **Profile gestów**, **Profile poleceń brajlowskich** i **Profile głosowe** zawierają po jednym poleceniu włączającym każdy profil.
 - **Listy sterowania czytaniem** zawierają polecenia przechodzenia do następnego i poprzedniego elementu w każdej liście. Zobacz [](#commands-reading-control-lists).
-- **Otwórz aplikację** zawiera po jednym poleceniu dla każdej zainstalowanej aplikacji.
-- **Skróty aplikacji** i **Skróty ułatwień dostępu** zawierają skróty aplikacji i innych funkcji ułatwień dostępu. Zobacz [](#gestures).
+- **Otwórz aplikację** zawiera po jednym poleceniu dla każdej zainstalowanej aplikacji. Nazwa polecenia to **Otwórz** i nazwa aplikacji, na przykład **Otwórz Gmail**.
+- **Skróty aplikacji** i **Skróty ułatwień dostępu** zawierają skróty aplikacji i innych funkcji ułatwień dostępu. Zobacz [](#gestures-app-shortcuts).
+- **Kafelki aplikacji** zawierają kafelki szybkich ustawień zainstalowanych aplikacji. SandFly klika kafelek w szybkich ustawieniach systemu, które sam otwiera i zamyka. Gdy Shizuku działa, SandFly najpierw dodaje kafelek do szybkich ustawień systemu, jeśli go tam nie ma, a gdy go tam nie znajdzie, klika go przez Shizuku. Kafelek ma nazwę, jaką pokazywały szybkie ustawienia systemu przy ostatnim odczycie przez SandFly, na przykład nazwę urządzenia, z którym łączy kafelek Bluetooth.
+- **Kafelki systemowe** zawierają kafelki szybkich ustawień systemu znalezione ostatnio przez **Dodaj kafelek systemowy** w ustawieniach panelu szybkich ustawień. Gdy Shizuku działa, **Dodaj kafelek systemowy** przyznaje SandFly uprawnienie DUMP i dostęp do danych o użyciu, a potem odczytuje kafelki z systemu. W przeciwnym razie przegląda szybkie ustawienia systemu. Dopóki SandFly ma uprawnienie DUMP i dostęp do danych o użyciu, odczytuje kafelki ponownie przy każdym uruchomieniu. Kafelek systemowy, dla którego SandFly ma własny element, na przykład Wi-Fi, Hotspot lub tryb dźwięku, działa jak ten element i ma nazwę z panelu szybkich ustawień SandFly. Kafelek Internet działa jak Wi-Fi. Gdy element wymaga Shizuku, a Shizuku nie działa, SandFly odczytuje „Shizuku nie działa”. Pozostałe kafelki systemowe, na przykład nagrywanie ekranu, mają nazwy nadane przez system. SandFly aktywuje je w szybkich ustawieniach systemu, które sam otwiera i zamyka, a potem odczytuje nowy stan. Zobacz [](#display-quick-settings-edit).
 
 #### Odczytaj stan urządzenia {#commands-status}
 
 Polecenie **Odczytaj stan urządzenia** z grupy **Czytanie** odczytuje informacje z paska stanu, np. godzinę, poziom baterii i sieć. Informuje też, czy ekran jest ukryty. Domyślnie uruchomisz je trzykrotnym stuknięciem dwoma palcami. Zawartość i kolejność odczytu ustawisz w menu **Szczegółowość** > **Odczytywanie stanu urządzenia**. Zobacz [](#verbosity).
+
+#### Odczytaj pozycję {#commands-position}
+
+Polecenie **Odczytaj pozycję** z grupy **Czytanie** podaje położenie elementu, na którym jest fokus.
+
+- Na liście lub w tabeli: „Element 3 z 10” albo „Wiersz 2 z 4, kolumna 3 z 5”.
+- W tekście: znak za kursorem, długość tekstu, akapit, jeśli jest ich więcej niż jeden, oraz procent tekstu przed kursorem, na przykład „Znak 120 z 800, akapit 2 z 5, 15%”. W polu tekstowym z kursorem jest to kursor pola. W innym tekście jest to miejsce, do którego doszedłeś opcjami **Znaki**, **Słowa**, **Wiersze**, **Zdania** lub **Akapity** od przeniesienia fokusu na element. Akapity są rozdzielone podziałami wiersza.
+- Na liście, stronie lub w innym przewijanym widoku: stopień przewinięcia, na przykład „Pozycja przewinięcia 40%”. Na początku jest to 0%, a na końcu 100%. W środku procent pochodzi z ostatniego przewinięcia widoku od otwarcia okna. Zanim widok zostanie przewinięty, ta informacja jest pomijana.
+
+Gdy żaden z tych przypadków nie zachodzi, SandFly odczytuje „Brak pozycji”. W układzie **Gesty VoiceOver** polecenie uruchamia stuknięcie trzema palcami.
 
 #### Aktywuj przycisk potwierdzenia lub anulowania {#commands-button-commands}
 
@@ -55,6 +67,15 @@ Polecenia **Aktywuj przycisk potwierdzenia** i **Aktywuj przycisk anulowania** z
 SandFly najpierw sprawdza aktywne okno, np. okno dialogowe, a następnie pozostałe okna od góry. Jeśli pasuje kilka przycisków, wybiera ten najbliżej elementu, na którym jest fokus. Przy braku fokusu wybiera przycisk położony najniżej. Jeśli żadna etykieta nie pasuje, SandFly odczytuje komunikat o braku przycisku potwierdzenia lub anulowania.
 
 Aby zmienić etykiety, wybierz polecenie na ekranie **Polecenia**, a potem **Etykiety przycisków**. Wpisz po jednej etykiecie w wierszu. Twoja lista zastępuje wbudowaną. Aby przywrócić wbudowaną listę, usuń wszystkie wpisane etykiety.
+
+#### Odbierz połączenie i Zakończ połączenie {#commands-calls}
+
+Polecenia **Odbierz połączenie** i **Zakończ połączenie** z grupy **Czynności systemowe** obsługują połączenia telefoniczne i połączenia w aplikacjach takich jak WhatsApp. Domyślnie nie mają przypisań.
+
+- **Odbierz połączenie** odbiera dzwoniące połączenie. Jeśli nikt nie dzwoni, SandFly odczytuje „Brak połączenia przychodzącego”.
+- **Zakończ połączenie** odrzuca dzwoniące połączenie, a w przeciwnym razie kończy trwające połączenie. Jeśli nie ma połączenia, SandFly odczytuje „Brak połączenia”.
+
+Połączenia telefoniczne są odbierane i kończone przez Androida. Przy pierwszym użyciu SandFly wyświetla prośbę o uprawnienie do odbierania połączeń. Połączenia w aplikacjach są odbierane, odrzucane i kończone przyciskami z powiadomienia o połączeniu. Zakończenie trwającego połączenia wymaga dostępu SandFly do powiadomień. Zobacz [](#notifications-access).
 
 ### Przypisz gest lub skrót do polecenia {#commands-assign}
 
@@ -157,7 +178,7 @@ Gdy zmieniasz gestem pozycję sterowania czytaniem albo jej wartość, SandFly n
 
 #### Dostępne pozycje sterowania czytaniem {#commands-reading-control-groups}
 
-- **Czynności dla bieżącego elementu** obejmują **Czynności**, **Adresy i numery**, **Historia schowka** i **Korekta**. Ostatnia pozycja przechodzi między podpowiedziami ortograficznymi i gramatycznymi.
+- **Czynności dla bieżącego elementu** obejmują **Czynności**, **Adresy i numery**, **Historia schowka**, **Podpowiedzi słów** i **Korekta**. **Podpowiedzi słów** przechodzą przez podpowiedzi dla słowa wpisywanego klawiaturą SandFly. **Korekta** przechodzi między podpowiedziami ortograficznymi i gramatycznymi. Zobacz [](#keyboards-word-suggestions).
 - **Nawigacja podstawowa** obejmuje **Domyślna nawigacja**, **Okna**, **Kontenery**, **Wyszukiwanie zawartości ekranu**, **Nawigacja pionowa**, **Przewijanie** i **Zawijanie**.
 - **Nawigacja według tekstu** obejmuje **Znaki**, **Słowa**, **Wiersze**, **Zdania** i **Akapity**.
 - **Nawigacja po elementach** zawiera **Nagłówki**, **Linki**, **Kontrolki**, **Punkty orientacyjne**, **Przyciski**, **Pola wyboru**, **Opcje**, **Pola edycji**, **Pola wyboru** odpowiadające polom kombi, **Elementy możliwe do zaznaczenia**, **Obrazy i filmy**, **Listy**, **Pozycje na liście**, **Tabele**, **Kliknięte linki** i **Nieotwarte linki**.

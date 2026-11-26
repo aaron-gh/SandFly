@@ -57,6 +57,10 @@ Dengan **Navigasi** > **Lanjutkan dari ujung lain** aktif (setelan default), ges
 
 Saat kontrol pembacaan **Tindakan** dipilih, ketukan dua kali menjalankan tindakan yang dipilih di dalamnya. Lihat [](#reading-controls).
 
+Saat **Mengetik** > **Ketuk dua kali memindahkan kursor ke awal atau akhir** aktif, ketuk dua kali pada kolom teks yang sedang Anda ketik memindahkan kursor ke awal atau akhir teks. Lihat [](#typing-double-tap-cursor).
+
+**Aktifkan** melakukan hal yang sama seperti ketuk dua kali dalam semua kasus ini, apa pun gerakan, perintah suara, perintah braille, atau skrip yang menjalankannya.
+
 **Aktifkan dengan ketukan**, perintah tanpa gerakan secara default, mengetuk bagian tengah item yang difokuskan di layar, berguna untuk item yang hanya merespons jari di layar. Perintah ini memerlukan Android 11 atau yang lebih baru. Di versi yang lebih lama, item diaktifkan seperti biasa.
 
 Untuk mengaktifkan item dengan mengangkat jari atau dengan satu ketukan, lihat [](#touch).
@@ -69,7 +73,7 @@ Kontrol pembacaan menentukan apa yang terjadi saat Anda menggeser ke atas atau k
 - Untuk memilih kontrol pembacaan sebelumnya, geser ke atas lalu ke bawah, geser ke kiri atau ke atas dengan tiga jari, atau putar berlawanan arah jarum jam dengan dua jari.
 - Untuk memilih kontrol pembacaan pertama dari daftar yang digunakan, tetapkan gerakan atau pintasan keyboard ke **Kontrol pembacaan pertama**. Secara default, perintah ini tidak memiliki gerakan atau pintasan.
 - Untuk berpindah menurut kontrol pembacaan yang dipilih, geser ke bawah untuk maju dan geser ke atas untuk mundur. Keduanya adalah perintah **Turunkan atau majukan kontrol pembacaan** dan **Naikkan atau mundurkan kontrol pembacaan**.
-- Pada kontrol pembacaan yang mengubah nilai, seperti **Sesuaikan penggeser**, **Sesuaikan nilai**, dan **Kecepatan bicara**, arah geseran menentukan perubahannya, apa pun perintah yang dijalankan geseran tersebut: geseran ke atas atau ke kanan menaikkan nilai, sedangkan geseran ke bawah atau ke kiri menurunkannya. Dengan bahasa yang ditulis dari kanan ke kiri, geseran ke kiri menaikkan nilai dan geseran ke kanan menurunkannya.
+- Pada kontrol pembacaan yang mengubah nilai, seperti **Sesuaikan penggeser**, **Sesuaikan nilai**, dan **Kecepatan bicara**, arah geseran menentukan perubahannya, apa pun perintah yang dijalankan geseran tersebut: geseran ke atas atau ke kanan menaikkan nilai, sedangkan geseran ke bawah atau ke kiri menurunkannya. Ini berlaku untuk geseran lurus dengan satu hingga empat jari. Dengan bahasa yang ditulis dari kanan ke kiri, geseran ke kiri menaikkan nilai dan geseran ke kanan menurunkannya. Dengan gerakan lain, pintasan keyboard, dan perintah penampil braille, **Naikkan atau mundurkan kontrol pembacaan** menaikkan nilai dan **Turunkan atau majukan kontrol pembacaan** menurunkannya.
 
 SandFly membacakan nama setiap kontrol pembacaan saat Anda memilihnya. Menggeser ke kanan dan ke kiri tetap berpindah antar-item apa pun kontrol pembacaan yang dipilih, kecuali saat menggunakan **Baris dan kolom** di dalam tabel.
 
@@ -86,7 +90,7 @@ Kontrol pembacaan berikut berpindah menyusuri teks pada item yang difokuskan, la
 - **Karakter**: per karakter.
 - **Kata**: per kata.
 - **Baris**: per baris.
-- **Kalimat**: per kalimat. Kalimat berakhir pada tanda baca akhir kalimat, termasuk tanda baca bahasa Tionghoa 。！？, dan pada akhir baris. Di halaman web, kalimat yang berlanjut ke item lain, seperti tautan di dalamnya, dibacakan per bagian. Tidak ada dalam daftar secara default, dan tidak tersedia dalam mode pemilihan.
+- **Kalimat**: per kalimat. Kalimat berakhir pada tanda baca akhir kalimat, termasuk tanda baca bahasa Tionghoa 。！？, dan pada akhir baris. Di halaman web, kalimat yang berlanjut ke item lain, seperti tautan di dalamnya, dibacakan per bagian. Tidak ada dalam daftar secara default, dan tidak tersedia dalam mode pemilihan. Perintah **Kalimat berikutnya** dan **Kalimat sebelumnya**, di kategori **Navigasi menurut teks**, berpindah per kalimat tanpa kontrol pembacaan.
 - **Paragraf**: per paragraf.
 
 Di kolom teks yang sedang diedit, kontrol pembacaan ini menggerakkan kursor, dan geseran tetap berada di dalam kolom. Untuk mengedit teks, lihat [](#typing).
@@ -138,15 +142,17 @@ SandFly menjaga layar tetap menyala saat membaca.
 Saat item berikutnya berada di luar layar, geseran ke kanan dan ke kiri menggulir daftar secara otomatis. Anda juga dapat menggulir sendiri:
 
 - Untuk menggulir maju, geser ke kanan lalu ke kiri. Ini adalah **Gulir maju**.
-- Untuk menggulir mundur, geser ke kiri lalu ke kanan. Ini adalah **Gulir mundur**. Di bagian atas daftar, **Gulir mundur** menarik daftar ke bawah. Di sebagian besar aplikasi, tarikan ini menyegarkan daftar.
+- Untuk menggulir mundur, geser ke kiri lalu ke kanan. Ini adalah **Gulir mundur**. Di bagian atas daftar, **Gulir mundur** menarik daftar ke bawah. Di sebagian besar aplikasi, tarikan ini menyegarkan daftar. Tarikan memerlukan Android 13 atau yang lebih baru.
 - Untuk menggulir aplikasi secara langsung, seret dua jari di layar, seperti saat Anda menyeret satu jari tanpa SandFly.
 
 Di tata letak gerakan default, geseran dua jari diteruskan ke aplikasi, lalu aplikasi menggulir isinya. Jika **Gerakan** > **SandFly menangani geser dua jari** aktif, seperti pada tata letak gerakan VoiceOver, geseran dua jari menjalankan perintah sebagai gantinya: secara default **Gulir ke atas**, **Gulir ke bawah**, **Gulir ke kiri**, dan **Gulir ke kanan**, yang menggerakkan konten searah geseran. Jika tidak ada item di layar yang dapat digulir ke samping, **Gulir ke kiri** dan **Gulir ke kanan** mengirim geseran satu jari ke pager di sekitar item yang difokuskan, seperti tab folder di Solid Explorer. Keempat perintah ini memerlukan Android 11 atau yang lebih baru, dan tidak tersedia di jam tangan.
 
+Jika tidak ada yang dapat digulir ke arah tersebut di layar, seperti di akhir daftar, **Gulir maju**, **Gulir mundur**, dan keempat perintah ini memutar suara **Tindakan selesai atau sudah di akhir**. Di bagian atas daftar, **Gulir mundur** dan **Gulir ke bawah** menarik daftar ke bawah sebagai gantinya, tanpa suara. Dari penampil braille, **Gulir maju** dan **Gulir mundur** memutar suara **Perintah braille gagal** sebagai gantinya.
+
 Perintah berikut, di kategori **Gulir**, tidak memiliki gerakan secara default:
 
 - **Gulir ke paling atas** dan **Gulir ke paling bawah** menggulir daftar yang difokuskan ke awal atau akhirnya, halaman demi halaman, lalu memfokuskan item pertama atau terakhirnya. Sentuhan, gerakan, atau penekanan tombol akan menghentikannya. Tidak tersedia di jam tangan.
-- **Segarkan** menggulir daftar ke bagian atas lalu menariknya ke bawah. Memerlukan Android 11 atau yang lebih baru.
+- **Segarkan** menggulir daftar ke bagian atas lalu menariknya ke bawah. Memerlukan Android 13 atau yang lebih baru.
 
 Saat Anda menggulir dengan dua jari, SandFly memutar suara gulir dan getaran ringan untuk setiap item yang terlewati. Nada suara gulir semakin tinggi dari bagian atas daftar ke bagian bawah. Saat SandFly sendiri menggulir untuk mencapai item berikutnya, tidak ada suara. Untuk setelan suara dan getaran, lihat [](#sound).
 

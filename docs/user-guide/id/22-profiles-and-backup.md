@@ -21,10 +21,10 @@ Profil dapat menyimpan setelan utama SandFly, setelan keyboard braille, dan sete
 
 - **Gerakan** > **Tata letak gerakan** ke **Gerakan BlackBerry**, dengan **SandFly menangani geser dua jari** aktif. Lihat [](#gestures-layout).
 - Pada ponsel berkeyboard, **Peta tombol BlackBerry**. Lihat [](#keyboards-phones).
-- Tema suara **BlackBerry**, yang diinstal oleh SandFly. Suaranya adalah milik SandFly sendiri, bukan milik BlackBerry: tanpa suara saat fokus berpindah, dan dengan suara untuk perubahan layar, klik, pengguliran, akhir daftar, error, serta keyboard yang ditampilkan atau disembunyikan. **Suara dan getaran kontrol** nonaktif. Lihat [](#sound).
+- Tema suara **BlackBerry**, yang diinstal oleh SandFly. Tema ini berisi suara SandFly, bukan suara BlackBerry 10: tanpa suara saat fokus berpindah, dan dengan suara untuk perubahan layar, klik, pengguliran, akhir daftar, error, serta keyboard yang ditampilkan atau disembunyikan. **Suara dan getaran kontrol** nonaktif. Lihat [](#sound).
 - SandFly tidak mengucapkan petunjuk penggunaan, posisi dalam daftar dan kisi, tindakan yang tersedia, atau pengumuman saat keyboard ditampilkan dan disembunyikan. Jenis kontrol tetap diucapkan, dan perubahan nada tetap aktif.
 
-Setelan lainnya tetap seperti semula. Untuk mengubah apa yang diatur Mode BlackBerry, ubah setelan profil **Mode BlackBerry**. Lihat [](#profiles-change-settings). Menonaktifkan Mode BlackBerry akan menghentikan penggunaan profil tersebut, dan mengaktifkannya lagi akan menggunakan profil beserta perubahan Anda. Untuk memulai lagi dari setelan default, hapus profil tersebut. **Aktifkan atau nonaktifkan mode BlackBerry**, di bawah **SandFly** pada layar **Perintah**, melakukan hal yang sama dari gerakan atau tombol, dan juga meminta konfirmasi sebelum mengaktifkannya.
+Setelan lainnya tetap seperti semula. Untuk mengubah apa yang diatur Mode BlackBerry, ubah setelan profil **Mode BlackBerry**. Lihat [](#profiles-change-settings). Menonaktifkan Mode BlackBerry akan menghentikan penggunaan profil tersebut, dan mengaktifkannya lagi akan menggunakan profil beserta perubahan Anda. Untuk memulai lagi dari setelan default, hapus profil tersebut. **Aktifkan atau nonaktifkan mode BlackBerry**, di bawah **SandFly** pada layar **Perintah**, melakukan hal yang sama dari gerakan atau tombol, dan juga membuka dialog tersebut sebelum mengaktifkannya.
 
 Mode BlackBerry digunakan di semua tempat, seperti **Gunakan sekarang** menggunakan profil, sehingga menggantikan profil lain yang digunakan dengan cara itu.
 

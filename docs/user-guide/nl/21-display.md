@@ -131,7 +131,7 @@ De opdracht **Snelle instellingen van systeem** opent de systeeminstellingen voo
 
 Android laat alleen het systeem en de shell sommige instellingen wijzigen. Met Shizuku actief zet SandFly Wi-Fi, Bluetooth, mobiele data, de hotspot, vliegtuigmodus, locatie, NFC, batterijbesparing, donker thema, databesparing, en toegang tot microfoon en camera zelf aan en uit, en geeft zichzelf de machtigingen die het nodig heeft voor de overige bedieningselementen. Zonder Shizuku openen deze schakelaars de Android-instellingen hiervoor. Zie [](#updates).
 
-Tegels van het systeem, en tegels van apps zonder Shizuku, werken alleen als ze in de systeeminstellingen voor snelle instellingen staan. SandFly opent de systeeminstellingen voor snelle instellingen, activeert de tegel, sluit deze zonder ze voor te lezen, en zegt daarna de nieuwe status van de tegel. SandFly zegt "<naam> staat niet in de snelle instellingen van het systeem" wanneer het de tegel niet kan vinden.
+SandFly activeert app-tegels en systeemtegels in de systeeminstellingen voor snelle instellingen: SandFly opent deze, activeert de tegel, sluit ze zonder ze voor te lezen, en zegt daarna de nieuwe status van de tegel. Zonder Shizuku werkt een tegel alleen als deze in de systeeminstellingen voor snelle instellingen staat, en SandFly zegt "<naam> staat niet in de snelle instellingen van het systeem" wanneer het de tegel niet kan vinden. Terwijl Shizuku actief is, voegt SandFly eerst een app-tegel toe aan de systeeminstellingen voor snelle instellingen als die er niet staat, en activeert de tegel via Shizuku als die daar niet wordt gevonden.
 
 #### Kies wat het paneel toont {#display-quick-settings-edit}
 
@@ -139,7 +139,7 @@ Ga naar **Snelle instellingen** > **Paneel voor snelle instellingen**, of select
 
 - **Bedieningselement toevoegen**: toont de bedieningselementen van SandFly die niet in het paneel staan: Wi-Fi, Bluetooth, mobiele data, hotspot, vliegtuigmodus, databesparing, Niet storen, geluidsmodus, zaklamp, helderheid van de zaklamp, locatie, automatisch draaien, batterijbesparing, donker thema, Nachtverlichting, Extra dimmen, kleurinversie, kleurcorrectie, NFC, toegang tot microfoon, toegang tot camera, helderheid, adaptieve helderheid, time-out van scherm, tekstgrootte, weergavegrootte, media, media-uitvoer, de volumes voor media, bellen, beltoon, meldingen, alarm, toegankelijkheid en systeem, volgend alarm, batterij, Instellingen en het aan/uit-menu. Bedieningselementen die de telefoon niet heeft, worden niet getoond.
 - **App-tegel toevoegen**: toont de tegels voor snelle instellingen die geïnstalleerde apps aanbieden.
-- **Systeemtegel toevoegen**: toont de tegels van de systeeminstellingen voor snelle instellingen. Een systeemtegel waarvoor SandFly een bedieningselement heeft, zoals Hotspot, wordt toegevoegd als dat bedieningselement.
+- **Systeemtegel toevoegen**: toont de tegels van de systeeminstellingen voor snelle instellingen. Een systeemtegel waarvoor SandFly een bedieningselement heeft, zoals Hotspot, wordt toegevoegd als dat bedieningselement. Terwijl Shizuku actief is, geeft SandFly zichzelf DUMP-toegang en gebruikstoegang en leest de lijst uit het systeem; anders zoekt SandFly door de systeeminstellingen voor snelle instellingen, wat een paar seconden duurt.
 - **Kolommen**: het aantal kolommen in het raster, van 1 tot 4. De standaardwaarde is 2.
 
 Om een item te verplaatsen of te verwijderen, dubbeltik je erop, of gebruik je de acties:

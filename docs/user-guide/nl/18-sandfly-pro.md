@@ -137,7 +137,9 @@ Om een scherm te herkennen:
 1. Open de app.
 2. Kies **Scherm herkennen** in het SandFly-menu, of voer de opdracht **Scherm herkennen** uit.
 
-SandFly zegt "Scherm wordt herkend", dan het aantal gevonden items, zoals "7 herkende items", of "Geen items herkend". Latere schermen van dezelfde app worden herkend terwijl ze veranderen, totdat een andere app op de voorgrond komt.
+SandFly zegt "Scherm wordt herkend", dan het aantal gevonden items, zoals "7 herkende items", of "Geen items herkend". Latere schermen van dezelfde app worden herkend terwijl ze veranderen, totdat een andere app of het startscherm op de voorgrond komt.
+
+Om de herkenning in de app te stoppen en de herkende items te verwijderen, kies je **Schermherkenning uitzetten in** en de naam van de app in het SandFly-menu, of voer je **Schermherkenning aan- of uitzetten in de huidige app** uit.
 
 Om elk scherm van een app te laten herkennen:
 

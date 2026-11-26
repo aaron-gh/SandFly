@@ -100,6 +100,8 @@ Tryb przeglądania zmienia działanie klawiszy fizycznej klawiatury i poleceń m
 
 Polecenie **Włącz lub wyłącz tryb przeglądania** znajdziesz w grupie **Strony internetowe**. Możesz je przypisać do gestu. Każda mapa klawiszy ma też skrót do zmiany trybu. Zobacz [](#keyboards).
 
+W trybie przeglądania klawisz szybkiego wyszukiwania z literą lub cyfrą przenosi do następnego elementu, który zaczyna się od tej litery lub cyfry. Klawisz wybierasz w **Skróty klawiszowe** > **Szybkie wyszukiwanie** > **Klawisz szybkiego wyszukiwania**. Domyślnie jest wyłączony. Zobacz [](#keyboards-fast-search).
+
 Na ekranie **Nawigacja** znajdziesz dwie powiązane opcje.
 
 - **Inteligentny tryb przeglądania** dopasowuje tryb do elementu, na którym jest fokus. Domyślnie opcja jest włączona. SandFly włącza tryb przy wejściu na treść internetową. Wyłącza go w polach tekstowych i na elementach obsługiwanych strzałkami, takich jak suwaki, pola listy, paski menu, menu, widoki drzewa, siatki, pola kombi czy pola z przyciskami zmiany wartości. Jeśli przejdziesz do takiego elementu poleceniem klawiaturowym, przejdzie na niego też fokus wprowadzania. Jeśli ręcznie wyłączysz tryb podczas przeglądania strony, poruszanie się w obrębie treści internetowej go nie włączy. Tryb wyłącza się też, gdy fokus wprowadzania trafi do pola tekstowego lub na suwak w aplikacji.

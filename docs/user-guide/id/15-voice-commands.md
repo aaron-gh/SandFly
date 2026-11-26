@@ -24,7 +24,7 @@ Perintah **Mulai perintah suara** juga ada di kategori **Tindakan sistem**, sehi
 SandFly mencocokkan ucapan Anda dengan urutan berikut:
 
 1. Perintah suara kustom, berdasarkan frasanya. Lihat [](#voice-commands-custom).
-2. Nama perintah apa pun, sebagaimana ditampilkan SandFly di layar **Perintah**, seperti "Baca dari atas", "Deskripsikan gambar", atau "Judul berikutnya". Nama makro, menu kustom, dan perintah skrip Anda juga termasuk. Lihat [](#commands-list).
+2. Nama perintah apa pun, sebagaimana ditampilkan SandFly di layar **Perintah**, seperti "Baca dari atas", "Deskripsikan gambar", atau "Judul berikutnya". Nama makro, menu kustom, dan perintah skrip Anda juga termasuk. Nama aplikasi, seperti "Gmail", membuka aplikasi tersebut, kecuali jika ada perintah dengan nama itu. Lihat [](#commands-list).
 3. Pola frasa, seperti "buka Chrome", "ketuk Setelan", "telepon Sam", atau "ketik halo". Lihat [](#voice-commands-sandfly).
 4. Salah satu perintah suara bawaan, seperti "Cari simpan", "Navigasi kata", "Bicara lebih cepat", atau "Salin". Lihat [](#appendix-voice-commands).
 5. Layanan AI, jika **Gunakan AI untuk memahami perintah suara** aktif. Lihat [](#voice-commands-ai).
@@ -36,10 +36,25 @@ Jika SandFly tidak memahami perintah, SandFly mengucapkan "Tidak dapat mengenali
 #### Aplikasi, item, dan teks {#voice-commands-sandfly}
 
 - **Membuka aplikasi**: "buka", "jalankan", "mulai", atau "beralih ke", diikuti nama aplikasi. SandFly memilih aplikasi yang namanya sama persis. Jika tidak ada, SandFly memilih aplikasi yang namanya diawali teks itu, lalu aplikasi yang namanya memuat salah satu kata dari teks itu. Jika tidak ada aplikasi yang cocok, atau beberapa aplikasi sama cocoknya, SandFly menjalankan perintah dengan nama tersebut, seperti "buka notifikasi". Jika perintah seperti itu juga tidak ada, perintah suara tidak dipahami.
-- **Mengaktifkan item di layar**: "ketuk", "ketuk dua kali", "klik", "tekan", "aktifkan", atau "pilih", diikuti teks item. SandFly mengaktifkan item pertama yang seluruh teksnya sama. Jika tidak ada, SandFly mengaktifkan item pertama yang teksnya memuat teks tersebut. Jika item seperti itu juga tidak ada, SandFly mengucapkan "Tidak ditemukan" diikuti teks tersebut.
-- **Ketik teks**: "ketik", "tulis", atau "masukkan", diikuti teksnya. SandFly mengetikkannya di kolom teks yang difokuskan.
+- **Mengaktifkan item di layar**: "ketuk", "ketuk dua kali", "klik", "tekan", "aktifkan", atau "pilih", diikuti teks item. SandFly mengaktifkan item pertama yang seluruh teksnya sama. Jika tidak ada, SandFly mengaktifkan item pertama yang teksnya memuat teks tersebut. Jika item seperti itu juga tidak ada, SandFly mengucapkan "Tidak ditemukan" diikuti teks tersebut. "Tekan enter" menjalankan **Baris baru** sebagai gantinya. "Pilih" diikuti teks yang ada di kolom teks yang difokuskan memilih teks tersebut sebagai gantinya. Lihat [](#voice-commands-text).
+- **Ketik teks**: "ketik", "tulis", atau "masukkan", diikuti teksnya. SandFly mengetikkannya di kolom teks yang difokuskan dan mengucapkan teks yang diketik, kecuali di kolom sandi.
 - **Menjalankan perintah**: "jalankan" atau "lakukan" diikuti nama perintah, atau "jalankan makro" diikuti nama makro, seperti "jalankan makro pagi".
 - **Tunggu**: "tunggu", "tunggu sebentar", atau "tunggu" diikuti jumlah detik dan "detik", hingga 60 detik. Gunakan di antara perintah dalam satu rangkaian.
+
+#### Teks di kolom teks {#voice-commands-text}
+
+Frasa berikut berlaku pada teks di kolom teks yang memiliki fokus input.
+
+- **Memindahkan kursor**: angka dan "karakter", "huruf", "kata", "kalimat", "baris", atau "paragraf", diikuti "berikutnya", "selanjutnya", "sebelumnya", "terakhir", "ke kanan", atau "ke kiri", atau didahului "maju" atau "mundur", seperti "3 kata berikutnya", "lima kata ke kiri", atau "mundur dua baris". "Pindahkan kursor ke", "pindah ke", atau "ke" dapat ditambahkan di depannya. SandFly memindahkan kursor dan mengucapkan teks yang dilewati.
+- **Awal dan akhir**: "awal" atau "akhir", diikuti "kata", "kalimat", "baris", "paragraf", atau "teks", seperti "akhir baris" atau "ke awal kalimat". "Ke awal" dan "ke akhir" adalah awal dan akhir teks. SandFly memindahkan kursor ke sana dan mengucapkan teks yang dilewati. Jika kursor sudah berada di awal atau akhir, kursor berpindah ke awal unit sebelumnya atau ke akhir unit berikutnya.
+- **Memilih, menyalin, memotong, atau menghapus**: "pilih", "sorot", "blok", "salin", "copy", "potong", "cut", "hapus", atau "buang", diikuti salah satu frasa di atas, seperti "hapus lima kata berikutnya", "salin 2 kalimat sebelumnya", "pilih baris berikutnya", "hapus kata terakhir", atau "hapus ke akhir baris". SandFly mengucapkan "Teks yang dipilih:" diikuti teks yang dipilih, teks yang disalin diikuti "disalin", teks yang dipotong diikuti "dipotong", atau teks yang dihapus diikuti "dihapus". Menyalin tidak memindahkan kursor.
+- **Memilih, menyalin, memotong, atau menghapus teks tertentu**: "pilih", "salin", "potong", atau "hapus", diikuti teks di kolom, seperti "pilih buaya". SandFly mencari teks yang paling dekat dengan kursor, dengan mengabaikan huruf besar-kecil dan tanda baca di antara katanya, lalu menjalankan tindakan pada teks tersebut. Jika kolom tidak berisi teks itu, SandFly mengucapkan "Tidak ditemukan" diikuti teks tersebut.
+
+Angkanya 1 hingga 20 dalam bentuk kata, atau berupa digit. Tanpa angka, frasa berlaku untuk satu unit, seperti "pilih kata sebelumnya". Kata, kalimat, baris, atau paragraf tempat kursor berada dihitung sebagai yang pertama, mulai dari kursor. Kata dihitung tanpa tanda baca. Baris berakhir pada jeda baris. Menghapus seluruh kata, kalimat, baris, atau paragraf juga menghapus spasi atau jeda baris yang tersisa. Jika tidak ada lagi yang dapat dilewati, SandFly mengucapkan "Awal kolom" atau "Akhir kolom".
+
+Nama perintah didahulukan: "Kata berikutnya" dan "Karakter sebelumnya" menjalankan perintah tersebut. Lihat [](#voice-commands-phrases).
+
+Jika tidak ada kolom teks yang memiliki fokus input, "pilih" diikuti teks mengaktifkan item dengan teks tersebut, dan frasa lainnya dibaca sebagai perintah suara bawaan. "Pilih" diikuti teks juga mengaktifkan item jika kolom teks yang difokuskan adalah kolom sandi atau tidak berisi teks tersebut. Untuk frasa lainnya, di kolom sandi, SandFly mengucapkan "Tidak tersedia di kolom sandi".
 
 #### Panggilan dan pesan {#voice-commands-calls}
 
@@ -78,7 +93,9 @@ Untuk menghentikan perintah suara yang sedang berjalan, mulai perintah suara lai
 Pengeditan suara hanya menjalankan perintah berikut:
 
 - Perintah dari kategori **Pengeditan teks** dan **Navigasi menurut teks**, berdasarkan namanya, seperti "Pilih semua", "Salin", "Tempel", "Hapus teks", "Gerakkan kursor ke akhir", "Kata berikutnya", atau "Karakter sebelumnya". **Dikte** dan **Mulai pengeditan suara** tidak dijalankan. Lihat [](#typing-editing-commands).
-- "Ketik", "tulis", atau "masukkan", diikuti teks, yang diketikkan SandFly di posisi kursor.
+- "Ketik", "tulis", atau "masukkan", diikuti teks, yang diketikkan SandFly di posisi kursor lalu diucapkan.
+- "Baris baru", "paragraf baru", atau "tekan enter", yang menjalankan **Baris baru**.
+- Frasa untuk teks di kolom teks, seperti "hapus lima kata berikutnya", "akhir baris", atau "pilih buaya". Di sini, "pilih" diikuti teks selalu berlaku pada teks di kolom. Lihat [](#voice-commands-text).
 - Frasa pengeditan teks dari perintah suara bawaan, seperti "Pilih", "Selesai memilih", "Hapus", "Potong", atau "Eja TEKS". Di sini frasa tersebut dicocokkan sebagai keseluruhan perintah. Lihat [](#appendix-voice-commands-text-editing).
 - Perintah suara kustom yang menjalankan salah satu perintah ini atau makro. Lihat [](#voice-commands-custom).
 - Rangkaian dari perintah-perintah ini, seperti "pilih semua lalu potong". Lihat [](#voice-commands-chains).

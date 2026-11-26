@@ -124,7 +124,7 @@ These names, from Backtalk, are deprecated:
 
 The deprecated action binds the deprecated interface, so change both together.
 
-SandFly 27.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
+SandFly 0.8.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
 
 ```sh
 adb logcat -s SandFlyApi

@@ -26,7 +26,19 @@ De eerste keer dat je **Scherm beschrijven** uitvoert, toont SandFly het dialoog
 
 - **Gedetailleerde afbeeldingsbeschrijvingen** (standaard uit): **Afbeelding beschrijven** stuurt de gefocuste afbeelding naar de AI-service in gebruik, of naar het model op het apparaat, voor een volledige beschrijving.
 - **Automatische beschrijvingen voor tekst in afbeeldingen**: SandFly leest de tekst in een afbeelding voor als de focus ernaartoe gaat. Kies **Alle afbeeldingen**, **Alleen niet-gelabelde afbeeldingen** (de standaardwaarde) of **Afbeeldingen niet beschrijven**. Tekst wordt op de telefoon herkend.
+- **Herkenning van Cyrillische tekst**: downloadt en verwijdert de tekstherkenningsmodellen voor talen die in het Cyrillisch worden geschreven, zoals Russisch, Oekraïens en Servisch. Zie [](#descriptions-cyrillic-text). Niet op horloges.
 - **Live herkenning**: opent het scherm Live herkenning. Zie [](#descriptions-live-recognition). Alleen op apparaten met een camera.
+
+### Herkenning van Cyrillische tekst {#descriptions-cyrillic-text}
+
+Tekstherkenning leest Cyrillische tekst met een model voor de taal, dat je eerst downloadt. SandFly gebruikt het model van de spraaktaal, of van de eerste taal van de telefoon, die in het Cyrillisch wordt geschreven. Zonder het model worden alleen Latijnse letters gelezen, en zegt SandFly één keer dat het model niet is gedownload.
+
+1. Ga naar **Afbeeldings- en schermbeschrijvingen** > **Herkenning van Cyrillische tekst**.
+2. Kies de taal. Het model van de taal, een paar megabyte, wordt gedownload, de eerste keer samen met het model voor Latijnse letters, zodat tekst in beide wordt gelezen. Bij mobiele data opent eerst een bevestigingsvenster.
+
+Om een download te stoppen, kies je de taal opnieuw. Om een model te verwijderen, kies je een gedownloade taal en dan **Verwijderen**. Het model voor Latijnse letters wordt met de laatste taal verwijderd.
+
+De modellen komen van het Tesseract OCR-project en worden op de telefoon door Tesseract gelezen. De herkenning is langzamer dan voor andere schriften.
 
 ### Beschrijf een afbeelding {#descriptions-describe-image}
 
@@ -131,6 +143,8 @@ API-sleutels blijven op de telefoon: geëxporteerde instellingen bevatten ze nie
 
 Als geen service is ingesteld, zegt SandFly "Er is geen AI-service ingesteld. Stel er een in via de onderstaande instellingen."
 
+De leesinstelling **AI-service**, standaard uit, wijzigt dezelfde instelling. Swipe omhoog of omlaag om te wisselen tussen de services die zijn ingesteld; SandFly zegt de naam van de service. **Geen** en SandFly Pro zonder licentie staan er niet in. Met minder dan twee ingestelde services zegt SandFly "Maar één AI-service ingesteld" of "Geen AI-service ingesteld" en blijft de instelling ongewijzigd. Voeg de leesinstelling toe bij **Leesinstellingen**; zie [](#commands). De opdrachten **AI-service: volgende waarde** en **AI-service: vorige waarde**, in **Instellingswaarden**, doen hetzelfde zonder de leesinstelling te selecteren.
+
 #### Gemini-instellingen {#descriptions-gemini}
 
 **Gemini-instellingen** heeft twee items:
@@ -200,7 +214,9 @@ Elke modus gaat zelf aan en uit, met een selectievakje op het scherm:
 - **Aanwijzen en voorlezen**: leest de tekst bij je vingertop in het camerabeeld voor. Kies **Boven de vingertop lezen** (de standaardwaarde) of **Onder de vingertop lezen**.
 - **Personen herkennen**: beschrijft personen in het camerabeeld.
 - **Deuren herkennen**: beschrijft deuren in het camerabeeld.
+- **Kleurherkenning**: noemt de kleuren in het midden van het camerabeeld, zoals "Donkerblauw", "Lichtgrijs" of "Rood en wit", of zegt "Gemengde kleuren" wanneer geen kleur er genoeg van bedekt. Een kleur wordt uitgesproken wanneer deze verandert en ongeveer een halve seconde gelijk blijft. Licht en donker hangen af van het licht en van de automatische belichting van de camera. Kleuren worden op de telefoon herkend.
 - **Lichtniveau**: leest het lichtniveau van de lichtsensor voor: **Donker**, **Zwak licht**, **Normaal licht**, **Fel licht** of **Zeer fel licht**. Dit gebruikt de camera niet.
+- **Lichtniveautoon**: speelt een doorlopende toon waarvan de toonhoogte stijgt met de helderheid van het beeld van de camera aan de achterkant, van 200 Hz in het donker tot 1600 Hz in zonlicht. De toon speelt op het volume van SandFly-geluiden, en stopt wanneer de modus wordt uitgezet of het scherm wordt verlaten.
 
 De statusregel toont **Camera aan** of **Camera uit**. SandFly vraagt de eerste keer dat een modus dit nodig heeft om de cameratoestemming.
 

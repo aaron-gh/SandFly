@@ -263,11 +263,12 @@ In the list:
 - A group is one item. Double-tap it to show its notifications.
 - Each notification has its actions and, where the app offers it, a reply field with **Send**.
 - Media notifications show **Playing** or **Paused**, with **Previous**, **Play** or **Pause**, and **Next**.
+- A notification without text, such as a weather notification with a layout of its own, is read with the text of its layout, or else with its sub text, info text or summary text.
 - Text longer than about 160 characters is cut. The **Show all** action reads the whole text, and **Show less** cuts it again.
 - **Dismiss** removes a notification, and **Clear all** removes all that can be removed.
 - **Quick settings** opens the quick settings.
 
-While the phone is locked, the **Notifications** command opens the system shade, which hides what you chose to hide on the lock screen. The **System notification shade** command always opens the system shade. SandFly's list opens as a screen of its own, so the app in front pauses. Some apps end what they are doing when they pause: wireless debugging pairing in Settings fails when the pairing code is entered from SandFly's list. Use **System notification shade** for those.
+While the phone is locked, the **Notifications** command opens the system shade, which hides what you chose to hide on the lock screen. The **System notification shade** command always opens the system shade. The SandFly list opens as a screen of its own, so the app in front pauses. Some apps end what they are doing when they pause: wireless debugging pairing in Settings fails when the pairing code is entered from the SandFly list. Use **System notification shade** for those.
 
 Settings for the list:
 

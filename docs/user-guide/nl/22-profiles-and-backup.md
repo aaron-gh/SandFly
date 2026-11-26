@@ -15,6 +15,19 @@ Een profiel kan op twee manieren worden gebruikt:
 
 Een profiel kan de belangrijkste SandFly-instellingen bevatten, de instellingen van het brailletoetsenbord en de instellingen van de brailleleesregel, inclusief gebaren, sneltoetsen, gebarenprofielen en het gebarenprofiel dat in gebruik is. Een profiel bevat geen API-sleutels, de licentie voor SandFly Pro, het tijdstip van de laatste updatecontrole, geïnstalleerde scripts en hun instellingen, concepten van geluidsthema's, of de status van deze telefoon, zoals welke tutorials en dialoogvensters al zijn getoond.
 
+### BlackBerry-modus {#profiles-blackberry-mode}
+
+**BlackBerry-modus**, onder aan **Instellingenprofielen**, laat SandFly werken zoals de BlackBerry 10 Screen Reader. De gebaren, toetsen en geluiden zijn waarschijnlijk onbekend als je BlackBerry 10 niet hebt gebruikt. Bij het aanzetten opent het dialoogvenster **BlackBerry-modus aanzetten?**; selecteer **Aanzetten** om te bevestigen. De eerste keer maakt SandFly een instellingenprofiel, **BlackBerry-modus**, en gebruikt het meteen. Het profiel stelt in:
+
+- **Gebaren** > **Gebarenindeling** op **BlackBerry-gebaren**, met **Swipes met twee vingers in SandFly verwerken** aan. Zie [](#gestures-layout).
+- Op toetsenbordtelefoons de **BlackBerry-keymap**. Zie [](#keyboards-phones).
+- Het geluidsthema **BlackBerry**, dat SandFly installeert. Het thema heeft SandFly-geluiden, geen BlackBerry 10-geluiden: geen geluid wanneer de focus beweegt, en geluiden voor schermwijzigingen, klikken, scrollen, het einde van een lijst, fouten en het tonen of verbergen van het toetsenbord. **Geluiden en trillingen van bedieningselementen** staan uit. Zie [](#sound).
+- Geen gebruikstips, posities in lijsten en rasters, beschikbare acties of aankondigingen bij het tonen en verbergen van het toetsenbord. Soorten bedieningselementen worden nog uitgesproken, en toonhoogtewijzigingen staan aan.
+
+Elke andere instelling blijft zoals ze is. Om te wijzigen wat BlackBerry-modus instelt, wijzig je de instellingen van het profiel **BlackBerry-modus**; zie [](#profiles-change-settings). BlackBerry-modus uitzetten stopt het gebruik van het profiel, en opnieuw aanzetten gebruikt het profiel met je wijzigingen. Om opnieuw met de standaardwaarden te beginnen, verwijder je het profiel. **BlackBerry-modus aan- of uitzetten**, onder **SandFly** op het scherm **Commando's**, doet hetzelfde vanaf een gebaar of toets, en opent ook het dialoogvenster voordat de modus aangaat.
+
+BlackBerry-modus wordt overal gebruikt, zoals **Nu gebruiken** een profiel gebruikt, en vervangt dus een ander profiel dat zo wordt gebruikt.
+
 ### Voeg een instellingenprofiel toe {#profiles-add}
 
 1. Ga naar **Instellingenprofielen** > **Nieuw instellingenprofiel**.

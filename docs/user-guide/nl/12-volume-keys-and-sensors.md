@@ -38,7 +38,7 @@ De drukken voeren geen opdrachten uit, en de toetsen wijzigen het volume zoals g
 - Terwijl een vinger op het scherm staat, of tijdens doorlopend lezen.
 - Terwijl de app Shortcut Menu wordt getoond.
 
-Terwijl een gesprek overgaat, voert alleen een volumetoets met de opdracht **Gesprek beantwoorden** toegewezen aan een van zijn drukken, opdrachten uit.
+Terwijl een gesprek overgaat, voert alleen een volumetoets met de opdracht **Gesprek beantwoorden** of **Gesprek beëindigen** toegewezen aan een van zijn drukken, opdrachten uit.
 
 ### Volumetoetsdrukken van Android weghouden {#buttons-take-all}
 
@@ -50,6 +50,15 @@ Beide instellingen laten de toetsen aan Android terwijl het scherm uit is, tijde
 ### Sneltoetsen voor volumetoetsen met het scherm uit {#buttons-screen-off}
 
 Met **Sneltoetsen voor volumetoetsen met het scherm uit** aan voeren de drukken op volumetoetsen met opdrachten die uit terwijl het scherm uit is. Drukken zonder opdracht wijzigen het volume. De instelling vereist Shizuku, en wordt niet getoond als SandFly root gebruikt in plaats van Shizuku, of op smartwatches; zie [](#updates-shizuku). De eerste keer dat je deze instelling aanzet, toont Shizuku een verzoek om SandFly toe te staan. Standaard uit.
+
+### Dempknop {#buttons-mute-key}
+
+Op telefoons met een dempknop, zoals de Zinwa Q25, heeft **Volumetoetsen** nog twee instellingen:
+
+- **Dempknop ingedrukt houden om te dicteren in tekstvelden**: als een tekstveld invoerfocus heeft, een toetsenbord wordt getoond of is aangesloten, en er geen gesprek actief is, voert het vasthouden van de dempknop **Dicteren** uit: de opname begint als je op de knop drukt en stopt als je de knop loslaat, en SandFly typt de tekst. Een druk op de knop tijdens een dictee in een tekstveld stopt dat dictee. Standaard aan. Zie [](#typing-dictate).
+- **Dempknop indrukken**: de opdracht die een druk op de dempknop overal elders uitvoert. De lijst is dezelfde als voor gebaren. Standaard niet toegewezen.
+
+Als geen van beide instellingen een druk gebruikt, gaat de druk naar de keymap, waar de dempknop een eigen sneltoets kan zijn in de toetsenbordtelefoon-keymaps en in eigen keymaps (zie [](#keyboards-keymaps)), en daarna naar Android.
 
 ### Spraakvolume op Samsung-telefoons {#buttons-samsung}
 

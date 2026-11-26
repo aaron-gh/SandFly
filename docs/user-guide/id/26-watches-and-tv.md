@@ -49,6 +49,7 @@ Di jam tangan:
 - **Fitur-fitur baru di SandFly** bernama **Yang baru**.
 - Fitur menjeda SandFly tidak tersedia, dan **Lanjutkan SandFly** tidak ditampilkan. Lihat [](#pause).
 - **Berlatih gerakan** tidak ada di **Bantuan & masukan**. Gunakan **Berlatih gerakan** di bagian atas **Gerakan**, yang membuka latihan gerakan dari tutorial jam tangan.
+- **Uji ketepatan gerakan** dan **Latihan keyboard** tidak ada di **Bantuan & masukan**.
 - **Riwayat versi** dan **Kebijakan privasi** menampilkan alamat halaman jika jam tangan tidak memiliki browser.
 
 Fitur-fitur berikut tidak tersedia di jam tangan, dan setelannya tidak ditampilkan: skrip, makro, menu kustom, kontrol pembacaan kustom, perintah suara, sentuhan langsung, ketuk belakang, goyang, setelan gerakan tepi dan sudut, keyboard braille, keyboard tulisan tangan, keyboard SandFly, AI di perangkat, **Gunakan SandFly sebagai wallpaper**, **Speaker saat jauh dari telinga**, **Setel ulang audio aksesibilitas setelah panggilan**, **Pintasan tombol volume saat layar mati**, dan **Tampilkan petunjuk untuk menonaktifkan SandFly**.
@@ -95,7 +96,7 @@ SandFly tidak menangani tombol panah dan tombol Pilih saat keyboard di layar sed
 
 Di TV:
 
-- Setelan untuk fitur yang memerlukan layar sentuh atau ponsel tidak ditampilkan. Contohnya **Gerakan**, **Sentuhan langsung**, **Pembacaan status**, **Gunakan ringkasan SandFly**, **Gunakan daftar notifikasi SandFly**, **Speaker saat jauh dari telinga**, dan **Deskripsi gambar dan layar**. Layar setelan **Menu SandFly** dan **Kontrol pembacaan** juga tidak ditampilkan.
+- Setelan untuk fitur yang memerlukan layar sentuh atau ponsel tidak ditampilkan. Contohnya **Gerakan**, **Uji ketepatan gerakan**, **Sentuhan langsung**, **Pembacaan status**, **Gunakan ringkasan SandFly**, **Gunakan daftar notifikasi SandFly**, **Speaker saat jauh dari telinga**, dan **Deskripsi gambar dan layar**. Layar setelan **Menu SandFly** dan **Kontrol pembacaan** juga tidak ditampilkan.
 - Fitur menjeda SandFly tidak tersedia, dan **Lanjutkan SandFly** tidak ditampilkan. Lihat [](#pause).
 - Item pertama di **Bantuan & masukan** membuka tutorial TV jika TV memilikinya. Jika tidak, item tersebut bernama **Bantuan**.
 - TV sering kali tidak menampilkan notifikasi, sehingga notifikasi pembaruan mungkin tidak muncul. Untuk memperbarui, buka **Update dan penginstalan** > **Periksa pembaruan**. Lihat [](#updates-check).

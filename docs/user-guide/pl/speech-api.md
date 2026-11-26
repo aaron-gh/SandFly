@@ -124,7 +124,7 @@ Te nazwy, pochodzące z Backtalk, są przestarzałe:
 
 Przestarzała akcja łączy się z przestarzałym interfejsem, więc zmień obie nazwy jednocześnie.
 
-SandFly 27.0 i nowsze nadal przyjmują te nazwy od aplikacji, które z nich korzystają. Gdy aplikacja użyje jednej z nich po raz pierwszy od uruchomienia SandFly, SandFly zapisuje w logu ostrzeżenie z tagiem `SandFlyApi`. Aby wyświetlić ostrzeżenia:
+SandFly 0.8.0 i nowsze nadal przyjmują te nazwy od aplikacji, które z nich korzystają. Gdy aplikacja użyje jednej z nich po raz pierwszy od uruchomienia SandFly, SandFly zapisuje w logu ostrzeżenie z tagiem `SandFlyApi`. Aby wyświetlić ostrzeżenia:
 
 ```sh
 adb logcat -s SandFlyApi

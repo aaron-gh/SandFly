@@ -14,6 +14,7 @@ Sommige functies vereisen toegang tot meldingen voor SandFly, die de Android-ins
 - Het stoppen van een melding als die wordt gesloten of verwijderd.
 - Samenvattingen van de meldingen in het meldingenpaneel.
 - De meldingenlijst van SandFly.
+- Het beëindigen van het lopende gesprek van een app, zoals WhatsApp, met **Gesprek beëindigen**. Zie [](#commands-calls).
 
 Om toegang tot meldingen te geven, selecteer je **Toegang tot meldingen aanzetten** op het scherm **Wanneer voorlezen**, **Stop met lezen** of **Samenvatting en tijd**, en zet je SandFly aan in de lijst. Het item wordt alleen getoond zolang SandFly geen toegang tot meldingen heeft. SandFly maakt alleen verbinding met meldingen terwijl SandFly aanstaat.
 
@@ -262,6 +263,7 @@ In de lijst:
 - Een groep is één item. Dubbeltik erop om de meldingen ervan te tonen.
 - Elke melding heeft zijn acties en, waar de app dit aanbiedt, een antwoordveld met **Verzenden**.
 - Mediameldingen tonen **Wordt afgespeeld** of **Gepauzeerd**, met **Vorige**, **Afspelen** of **Onderbreken**, en **Volgende**.
+- Een melding zonder tekst, zoals een weermelding met een eigen opmaak, wordt voorgelezen met de tekst van de opmaak, of anders met de subtekst, infotekst of samenvattingstekst.
 - Tekst langer dan ongeveer 160 tekens wordt ingekort. De actie **Toon alles** leest de hele tekst voor, en **Minder tonen** kort die weer in.
 - **Sluiten** verwijdert een melding, en **Alles wissen** verwijdert alle meldingen die verwijderd kunnen worden.
 - **Snelle instellingen** opent de snelle instellingen.

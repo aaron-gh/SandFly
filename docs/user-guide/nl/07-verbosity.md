@@ -13,6 +13,7 @@ De groep **Items** bepaalt wat SandFly over elk item zegt:
 - **Gebruikstips uitspreken**: zegt, na het beschrijven van een item, hoe je het gebruikt, zoals "Dubbeltik om te activeren". Standaard aan.
 - **Elementtype uitspreken**: zegt het type van een item, zoals "Knop" of "Keuzevakje". Standaard aan.
 - **Itemtype uitspreken zonder pauze**: voegt de naam en het type van een item samen met een spatie in plaats van een pauze. Standaard uit.
+- **Acties beschikbaar uitspreken**: zegt "Acties beschikbaar" na een item met acties van de app, zoals Beantwoorden bij een chatbericht. Werkt met **Gebruikstips uitspreken** aan of uit; met gebruikstips aan geeft de tip dan alleen het gebaar dat de acties toont, zoals "Gebruik tik met 2 vingers om acties te bekijken". Standaard uit. Voor de items waarvoor dit geldt en het geluid **Acties beschikbaar**, zie [](#sound-actions-available).
 - **Lijstinformatie uitspreken**: zegt lijstposities en lijstdetails. Standaard aan.
 - **Raster- en tabelinformatie uitspreken**: zegt rijen en kolommen in rasters, tabellen en pagineringen die in rijen en kolommen zijn ingedeeld, zoals een map op een startscherm. Standaard aan. De instellingen van **Tabellen** gelden alleen terwijl dit aan staat. Zie [](#verbosity-tables).
 - **Volgorde van itemgegevens**: de volgorde van de naam, het type en de status van een item. Zie [](#verbosity-item-order).
@@ -55,7 +56,10 @@ Sommige spraakengines lezen emoji slecht voor, gebruiken eigen namen, of lezen z
 Nog twee instellingen zijn afhankelijk van **Emoji**:
 
 - **Tel herhaalde emoji**: met **Voorgelezen door SandFly** zegt een achter elkaar herhaalde emoji eenmaal met een aantal, zoals "3 grijnzend gezicht". Kies **Uit**, de standaardwaarde, of van **2 of meer** tot **6 of meer**.
-- **‘Emoji’ uitspreken na emojinamen**: zegt "emoji" na elke emoji. Standaard uit. Niet beschikbaar bij **Geen**.
+- **Na emojinamen**: wat na elke emoji volgt. Niet beschikbaar bij **Geen**.
+  - **Niets**: de standaardwaarde.
+  - **"emoji" zeggen**: zegt "emoji" na elke emoji, zoals "grijnzend gezicht emoji".
+  - **Een geluid afspelen**: speelt het geluid **Emoji** af na elke emoji, of eenmaal na emoji die naast elkaar staan. Emoji worden dan als afzonderlijke uitingen uitgesproken, los van de tekst eromheen. Een geluidsthema kan het geluid vervangen, en **Afzonderlijke geluiden en trillingen** kan het uitzetten. Zie [](#sound-events).
 
 Met **Voorgelezen door SandFly** noemt verplaatsen per teken een hele emoji in één keer, en stopt verplaatsen per woord bij emoji. Met **Geen** slaat verplaatsen per woord emoji over. Kopiëren of spellen van de laatst uitgesproken zin geeft de emoji, niet hun namen.
 
@@ -113,6 +117,8 @@ De groep **Aankondigingen** bepaalt wat SandFly zegt wanneer er iets verandert:
 - **Belsignaal en Niet storen**: alleen wanneer de beltoon niet op bellen staat, of niet storen aan staat. Standaard uit.
 - **Vliegtuigmodus**: alleen wanneer vliegtuigmodus aan staat. Standaard uit.
 
+**Uitspreken tijdens het afspelen van media**, boven de groepen, spreekt de aankondigingen bij scherm uit en ontgrendelen uit terwijl media worden afgespeeld. Standaard uit. De aankondiging bij scherm aan wordt altijd uitgesproken tijdens het afspelen van media.
+
 #### Status voorlezen {#verbosity-status-readout}
 
 **Uitgebreidheidsniveau** > **Status voorlezen** toont de items die de opdracht **Status uitspreken** zegt, in volgorde: **Tijd**, **Batterij**, **Wi-Fi**, **Mobiel netwerk**, **Belsignaal en Niet storen**, **Vliegtuigmodus** en **Verborgen scherm**. Allemaal standaard aan. Items in hun gewone staat, zoals de beltoon wanneer deze overgaat, worden weggelaten.
@@ -128,7 +134,9 @@ Sommige apps en toetsenborden spreken zelf, zoals een assistent die zijn antwoor
 
 - **Alleen door de gebruiker verplaatste focus uitspreken**: **Uit**, de standaardwaarde, **In alle apps**, of **In gekozen apps**. Terwijl dit geldt, spreekt SandFly focus uit die je verplaatst met aanraking, gebaren, toetsen, een brailleleesregel of opdrachten. Het spreekt geen focus uit die de app verplaatst, aankondigingen, veranderingen in live-gebieden, vensternamen of aankondigingen van venstertwisselingen. Focus die SandFly verplaatst na een venstertwisseling, na een scroll, of om invoerfocus te volgen, telt als door de app verplaatst.
 - **Gekozen apps**: de apps voor **In gekozen apps**. Alleen beschikbaar terwijl **Alleen door de gebruiker verplaatste focus uitspreken** op **In gekozen apps** staat. Kies **App toevoegen** om er een toe te voegen, en kies een app om deze te verwijderen.
-- **Alleen door de gebruiker verplaatste focus uitspreken terwijl een assistent of gesprek audio afspeelt**: doet hetzelfde in alle apps terwijl een andere app audio afspeelt als assistent of gesprek. Focus die je verplaatst wordt nog steeds uitgesproken. Standaard uit.
+- **Alleen door de gebruiker verplaatste focus uitspreken terwijl een assistent of gesprek audio afspeelt**: doet hetzelfde in alle apps terwijl een andere app audio afspeelt als assistent of gesprek, en terwijl een assistentvenster wordt getoond, zoals Gemini boven een app of het vergrendelscherm. De meldingen bij scherm aan en ontgrendelen worden dan ook weggelaten, en spraak stopt wanneer een assistentvenster opent. Focus die je verplaatst wordt nog steeds uitgesproken. Standaard uit.
 - **Toetsenborden met eigen spraak**: terwijl een toetsenbord in deze lijst wordt getoond, spreekt SandFly zijn toetsen, de getypte of verwijderde tekst, of de cursor die in het bewerkbare veld verplaatst, niet uit. Gebaren en opdrachten werken nog steeds, en het verplaatsen door tekst met leesinstellingen wordt nog steeds uitgesproken. Kies **Toetsenbord toevoegen** om er een toe te voegen.
+
+SandFly spreekt nooit de aankondigingen, veranderingen in live-gebieden, venstertwisselingen, toasts of meldingen uit van com.oplus.viewtalk, een toegankelijkheidsservice op realme- en OPPO-telefoons die afbeeldingsbeschrijvingen stuurt zoals "Afbeelding kan … bevatten".
 
 De leesinstelling **Alleen door de gebruiker verplaatste focus uitspreken** verandert de eerste instelling. De opdracht hiervan zet de instelling uit, of weer aan met **In gekozen apps** wanneer er gekozen apps zijn en anders **In alle apps**. De leesinstelling staat niet standaard in de leesinstellingen. Zie [](#commands).

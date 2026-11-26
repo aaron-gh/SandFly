@@ -24,7 +24,7 @@ The **Start voice command** command is also in the **System actions** category, 
 SandFly reads what you say in this order:
 
 1. A custom voice command, by its phrase. See [](#voice-commands-custom).
-2. The name of any command, as SandFly shows it on the **Commands** screen, such as "Read from top", "Describe image" or "Next heading". The names of your macros, custom menus and script commands count too. See [](#commands-list).
+2. The name of any command, as SandFly shows it on the **Commands** screen, such as "Read from top", "Describe image" or "Next heading". The names of your macros, custom menus and script commands count too. The name of an app, such as "Gmail", opens the app, unless a command has that name. See [](#commands-list).
 3. A phrase pattern, such as "open Chrome", "tap Settings", "call Sam" or "type hello". See [](#voice-commands-sandfly).
 4. One of the original voice commands, such as "Find save", "Words navigation", "Speak faster" or "Copy". See [](#appendix-voice-commands).
 5. With **Understand voice commands with AI** on, the AI service. See [](#voice-commands-ai).
@@ -37,7 +37,7 @@ When SandFly doesn't understand a command, it says "Can't recognize this command
 
 - **Open an app**: "open", "launch", "start" or "switch to", and the name of the app. SandFly picks the app with that whole name, else one whose name starts with it, else one with a word of it in its name. When no app matches, or several match equally, SandFly runs the command with that name, such as "open notifications"; without one, the voice command isn't understood.
 - **Activate an item on the screen**: "tap", "double tap", "click", "press", "activate" or "select", and the text of the item. SandFly activates the first item whose whole text is that text, else the first item whose text contains it. When there is none, SandFly says "Not found" and the text. "Press enter" runs **New line** instead. "Select" and a text that the focused text field has selects that text instead. See [](#voice-commands-text).
-- **Type text**: "type", "write" or "enter", and the text. SandFly types it in the focused edit field and says the typed text.
+- **Type text**: "type", "write" or "enter", and the text. SandFly types it in the focused edit field and says the typed text, except in a password field.
 - **Run a command**: "run" or "do" and the name of a command, or "run the" and the name of a macro and "macro", such as "run the morning macro".
 - **Wait**: "wait", "wait a second", or "wait" and a number of seconds, up to 60. Use it between commands in a chain.
 

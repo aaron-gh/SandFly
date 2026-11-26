@@ -33,7 +33,7 @@ Peta tombol adalah kumpulan pintasan keyboard. SandFly memiliki peta tombol beri
 - **Peta tombol JAWS**: kombinasi tombol desktop JAWS, ditambah tombol laptop JAWS untuk klik dan kursor. Tombol SandFly berperan sebagai tombol JAWS. Tombol SandFly-nya adalah Insert, Insert Numpad, atau Meta, dengan Insert sebagai default.
 - **Peta tombol Orca**: tata letak laptop dari Orca, dengan tombol SandFly sebagai pengubah Orca. Tombol SandFly-nya adalah Insert, Insert Numpad, Meta, atau Alt, dengan Insert sebagai default.
 - **Peta tombol ponsel berkeyboard** dan **Peta tombol tunggal ponsel berkeyboard**: untuk ponsel dengan keyboard bawaan yang tidak memiliki tombol Ctrl, Meta, atau panah. Lihat [](#keyboards-phones).
-- **Peta tombol BlackBerry**: tombol yang mirip dengan tombol BlackBerry 10 Screen Reader, untuk ponsel berkeyboard. Lihat [](#keyboards-phones).
+- **Peta tombol BlackBerry**: tombol yang mirip dengan tombol BlackBerry 10 Screen Reader, untuk ponsel berkeyboard. Mode BlackBerry memilih peta tombol ini di ponsel berkeyboard. Lihat [](#keyboards-phones) dan [](#profiles-blackberry-mode).
 - Peta tombol yang Anda buat sendiri. Lihat [](#keyboards-custom-keymaps).
 
 Pada peta tombol NVDA, JAWS, dan Orca, tombol panah dan Tab bergerak tanpa tombol SandFly, seperti di komputer. Lihat [](#keyboards-desktop).
@@ -159,7 +159,7 @@ Layar yang sama memuat gerakan untuk setiap aplikasi. Untuk gerakan di aplikasi,
 
 ### Menemukan pintasan keyboard {#keyboards-shortcut-list}
 
-**Tampilkan daftar pintasan keyboard** membuka daftar semua perintah beserta pintasannya. Anda dapat menelusuri daftar ini. Pintasan defaultnya adalah Tombol SandFly + Shift + / di Peta tombol SandFly, VoiceOver, dan Orca. Di Peta tombol ponsel berkeyboard, pintasannya Tombol SandFly + Q, dan di Peta tombol satu tombol ponsel berkeyboard, pintasannya Q.
+**Tampilkan daftar pintasan keyboard** membuka daftar semua perintah beserta pintasannya. Anda dapat menelusuri daftar ini. Pintasan defaultnya adalah Tombol SandFly + Shift + / di Peta tombol SandFly, VoiceOver, NVDA, JAWS, dan Orca. Di Peta tombol ponsel berkeyboard dan Peta tombol BlackBerry, pintasannya Tombol SandFly + Q, dan di Peta tombol satu tombol ponsel berkeyboard, pintasannya Q.
 
 **Pintasan keyboard** > **Telusuri** mencari perintah berdasarkan nama atau tombolnya di setelan. Untuk pintasan default setiap peta tombol, lihat [](#appendix-keyboard-shortcuts).
 
@@ -173,11 +173,11 @@ Saat latihan keyboard aktif, SandFly mengucapkan setiap tombol yang Anda tekan b
 - Saat navigasi tombol panah aktif, tombol panah diucapkan beserta perintah navigasi tombol panahnya.
 - Tombol yang ditahan diucapkan sekali.
 
-Untuk mengaktifkan latihan keyboard, pilih **Pintasan keyboard** > **Latihan keyboard**, atau tekan pintasan **Aktifkan atau nonaktifkan latihan keyboard**: Tombol SandFly + Shift + K pada peta tombol ponsel berkeyboard. Peta tombol lain tidak memiliki pintasan default. SandFly mengucapkan "Latihan keyboard aktif".
+Untuk mengaktifkan latihan keyboard, pilih **Pintasan keyboard** > **Latihan keyboard** atau **Bantuan & masukan** > **Latihan keyboard**, atau tekan pintasan **Aktifkan atau nonaktifkan latihan keyboard**: Tombol SandFly + K di Peta tombol VoiceOver, Tombol SandFly + 1 di Peta tombol NVDA dan JAWS, Tombol SandFly + H di Peta tombol Orca, dan Tombol SandFly + Shift + K di peta tombol ponsel berkeyboard. Peta tombol SandFly tidak memiliki pintasan default. SandFly mengucapkan "Latihan keyboard aktif".
 
-Untuk menonaktifkannya, tekan pintasan itu lagi, Kembali, atau Escape. SandFly mengucapkan "Latihan keyboard nonaktif". Latihan keyboard juga nonaktif saat SandFly dimulai ulang.
+Untuk menonaktifkannya, tekan pintasan itu lagi, Kembali, atau Escape. SandFly mengucapkan "Latihan keyboard nonaktif". Latihan keyboard juga nonaktif saat SandFly dimulai ulang atau ditangguhkan.
 
-**Aktifkan atau nonaktifkan latihan keyboard** berada di kategori **SandFly**, sehingga Anda juga dapat menetapkannya ke gerakan atau menambahkannya ke menu SandFly. Tombol volume yang ditekan tanpa tombol SandFly mengubah volume seperti biasa. Pelajaran **Latihan keyboard** di tutorial keyboard adalah hal yang berbeda. Pelajaran itu hanya mengucapkan pintasan keyboard di layar tutorial.
+**Aktifkan atau nonaktifkan latihan keyboard** berada di kategori **SandFly**, sehingga Anda juga dapat menetapkannya ke gerakan atau menambahkannya ke menu SandFly. Tombol volume yang ditekan tanpa tombol SandFly mengubah volume seperti biasa. Pelajaran **Latihan keyboard** di tutorial keyboard adalah hal yang berbeda. Pelajaran itu hanya mengucapkan pintasan keyboard di layar tutorial. Untuk membukanya, pilih **Daftar isi** di tutorial keyboard, atau jalankan **Berlatih pintasan keyboard**, Tombol SandFly + 0 di Peta tombol SandFly.
 
 ### Mode penjelajahan {#keyboards-browse-mode}
 
@@ -196,7 +196,7 @@ Pintasan default untuk **Aktifkan atau nonaktifkan mode penjelajahan** adalah:
 
 SandFly memutar suara atau mengucapkan "Mode penjelajahan aktif" atau "Mode penjelajahan nonaktif".
 
-Pada peta tombol ponsel berkeyboard, perintah yang memerlukan mode penjelajahan di peta tombol lain tetap berfungsi tanpa mode penjelajahan. Pada Peta tombol satu tombol ponsel berkeyboard, mode penjelajahan mengubah fungsi huruf. B, C, D, I, K, L, R, T, U, V, X, dan tombol angka 1 sampai 6 berpindah seperti dalam mode penjelajahan Peta tombol SandFly. H, F, E, dan G berpindah per judul, kontrol, kolom teks, dan gambar, baik di dalam maupun di luar mode penjelajahan. Tombol SandFly bersama salah satu huruf ini menjalankan pintasannya di luar mode penjelajahan, seperti Tombol SandFly + B untuk bagian bawah layar dan Tombol SandFly + K untuk berpindah menurut kontrol pembacaan. Lihat [](#keyboards-phones).
+Pada peta tombol ponsel berkeyboard, perintah yang memerlukan mode penjelajahan di peta tombol lain tetap berfungsi tanpa mode penjelajahan. Pada Peta tombol satu tombol ponsel berkeyboard, mode penjelajahan mengubah fungsi huruf. B, C, D, I, K, L, R, T, U, V, X, dan tombol angka 1 sampai 6 berpindah seperti dalam mode penjelajahan Peta tombol SandFly. H, F, E, dan G berpindah per judul, kontrol, kolom teks, dan gambar, baik di dalam maupun di luar mode penjelajahan. Tombol SandFly bersama salah satu huruf ini menjalankan pintasannya di luar mode penjelajahan, seperti Tombol SandFly + B untuk bagian bawah layar dan Tombol SandFly + K untuk berpindah menurut kontrol pembacaan. K dan Shift + K dalam mode penjelajahan adalah **Berpindah ke tautan berikutnya, tombol kedua** dan **Berpindah ke tautan sebelumnya, tombol kedua** di **Pintasan keyboard**. Lihat [](#keyboards-phones).
 
 Dua setelan di **Navigasi** mengatur kapan mode penjelajahan aktif:
 
@@ -343,7 +343,7 @@ Pada ketiga peta tombol:
 - Navigasi tombol panah aktif secara default. Penekanan trackpad yang mengirim Enter, seperti pada Zinwa Q25, mengaktifkan item.
 - Jika Alt menjadi tombol SandFly, Alt dengan huruf tetap mengetikkan angka atau simbolnya di dalam kolom teks yang sedang diedit.
 - Pintasan dengan Sym, Fn, atau Ctrl juga berfungsi di dalam kolom teks.
-- Tombol SandFly + L mengunci atau membuka kunci sentuhan pada Peta tombol ponsel berkeyboard. Lihat [](#touch).
+- Tombol SandFly + L mengunci atau membuka kunci sentuhan pada Peta tombol ponsel berkeyboard dan Peta tombol BlackBerry, dan Shift + Z pada Peta tombol satu tombol ponsel berkeyboard. Lihat [](#touch).
 - Tombol SandFly + V menahan sentuhan pada item yang difokuskan, seperti tombol pesan suara di aplikasi perpesanan. Lihat [](#keyboards-touch-hold).
 - Tombol SandFly + Y mengeja kolom sandi yang sedang diedit. Lihat [](#keyboards-passwords).
 
@@ -364,12 +364,13 @@ Jika Sym menjadi tombol SandFly, lapisan simbol keyboard tidak tersedia dari Sym
 
 **Mengetik** > **Keyboard fisik** ditampilkan saat keyboard fisik terhubung:
 
-- **Tombol huruf menekan tombol keypad**: berlaku untuk keyboard yang tombol hurufnya juga memuat angka. Contohnya ponsel BlackBerry, Unihertz, dan Zinwa, yang tombol W, E, dan R-nya juga berarti 1, 2, dan 3. Tombol huruf menekan tombol di pad PIN layar kunci, keypad panggilan, dan kalkulator. Di keypad panggilan, nada keypad ikut diputar. Di kalkulator, karakter Alt dari huruf, seperti + dan -, menekan tombol operator. Menekan huruf di layar kunci sebelum pad PIN tampil akan membuka pad PIN. Tombol dengan pengubah, tombol angka, dan tombol yang diketik ke kolom teks tidak diambil. Setelan ini aktif secara default, dan hanya ditampilkan untuk keyboard semacam itu.
+- **Tombol huruf menekan tombol keypad**: berlaku untuk keyboard yang tombol hurufnya juga memuat angka. Contohnya ponsel BlackBerry, Unihertz, dan Zinwa, yang tombol W, E, dan R-nya juga berarti 1, 2, dan 3. Tombol huruf menekan tombol di pad PIN layar kunci, keypad panggilan, dan kalkulator. Di keypad panggilan, nada keypad ikut diputar. Di kalkulator, karakter Alt dari huruf, seperti + dan -, menekan tombol operator. Di layar kunci, tombol angka juga menekan tombol pad PIN, sedangkan Enter dan Backspace menekan tombol Enter dan Hapus di pad tersebut. Huruf atau angka yang ditekan sebelum pad PIN tampil akan membuka pad PIN dan mengetikkan angkanya, atau membuka kunci perangkat jika PIN tidak diperlukan, seperti saat Extend Unlock membuat perangkat tetap tidak terkunci. Tombol dengan pengubah, tombol angka di luar layar kunci, dan tombol yang diketik ke kolom teks, seperti kolom sandi layar kunci, tidak diambil. Setelan ini aktif secara default, dan hanya ditampilkan untuk keyboard semacam itu.
 - **Enter mengirim pesan**: di kolom pesan pada aplikasi perpesanan, seperti Messages, WhatsApp, Telegram, Signal, atau Slack, saat ada teks di dalamnya, Enter menekan tombol Kirim milik aplikasi. Shift + Enter dan Alt + Enter diteruskan ke aplikasi, yang mengetikkan baris baru. Saat navigasi tombol panah aktif, dan pada peta tombol ponsel berkeyboard, Enter pada kolom pesan yang baru dituju fokus SandFly tidak mengirim pesan sampai kolom tersebut diaktifkan atau diketik. Setelan ini bekerja dengan keyboard fisik apa saja, dan nonaktif secara default. Tombol Kirim pada ponsel berkeyboard, seperti tombol panggil hijau pada Zinwa Q25, menekan tombol Kirim di kolom pesan yang sama, baik setelan ini aktif maupun nonaktif. Di aplikasi tersebut, tombol ini juga menekan tombol Kirim yang ditampilkan di luar kolom, seperti tombol untuk pesan suara yang sedang direkam. Di tempat lain, tombol ini diteruskan ke ponsel seperti biasa.
 - **Keyboard SandFly**: membuka daftar keyboard di setelan Android, tempat Anda mengaktifkan Keyboard SandFly. Lihat [](#keyboards-sandfly-keyboard).
 - **Ketikan tombol yang ditahan**: karakter yang diketik saat tombol ditahan dengan Keyboard SandFly.
 - **Karakter saat tombol ditekan dua kali**: karakter yang diketik saat tombol ditekan dua kali dengan Keyboard SandFly. Lihat [](#keyboards-double-press).
 - **Spasi dua kali mengetikkan titik**: dengan Keyboard SandFly, Spasi yang ditekan dua kali setelah sebuah kata mengetikkan titik dan spasi. Nonaktif secara default.
+- **Koreksi otomatis**, **Saran kata**, **Ucapkan saran**, **Enter mengetik saran yang diucapkan**, **Bahasa daftar kata**, dan **Hapus kata yang dipelajari**: koreksi dan saran untuk kata yang sedang diketik dengan Keyboard SandFly. **Koreksi otomatis** dan **Saran kata** nonaktif secara default. Lihat [](#keyboards-word-suggestions).
 - **Ucapkan karakter sandi**: dengan Keyboard SandFly, di kolom sandi, SandFly mengucapkan setiap karakter yang diketik, dihapus, atau dilewati, alih-alih "butir". Nonaktif secara default. Lihat [](#keyboards-passwords).
 - **Setelan keyboard fisik Android**: membuka setelan keyboard fisik Android, seperti tata letak keyboard.
 
@@ -383,6 +384,7 @@ Keyboard SandFly adalah metode input untuk keyboard fisik. Keyboard ini tidak me
 - Penekanan dua kali untuk mengetikkan karakter lain, seperti G G untuk ğ, dan titik untuk Spasi yang ditekan dua kali.
 - Pencarian emoji dan daftar simbol.
 - Mode pengeditan, tempat tombol tunggal memindahkan kursor serta memilih, menyalin, memotong, dan menempel.
+- Koreksi otomatis dan saran kata.
 - Karakter di kolom sandi, yang oleh Android hanya diberikan kepada pembaca layar sebagai butir.
 
 Keyboard SandFly tidak tersedia di jam tangan dan TV.
@@ -447,6 +449,35 @@ Pada peta tombol ponsel berkeyboard, **Telusuri emoji** adalah Tombol SandFly + 
 - Enter, Escape, atau Kembali menonaktifkan mode pengeditan.
 
 Tombol ketik lainnya tidak melakukan apa pun dalam mode pengeditan. Di kolom sandi, R mengucapkan "Tidak dibacakan di kolom sandi", dan C menyalin tanpa mengucapkan teksnya. Mode pengeditan memerlukan Keyboard SandFly. Pada peta tombol ponsel berkeyboard, pintasannya adalah Tombol SandFly + C.
+
+#### Koreksi otomatis dan saran kata {#keyboards-word-suggestions}
+
+Keyboard SandFly dapat mengoreksi kata yang Anda ketik dan menyarankan kata untuknya. Keduanya nonaktif secara default, di **Mengetik** > **Keyboard fisik**:
+
+- **Koreksi otomatis**: saat Anda mengetik Spasi, tanda baca, atau Enter setelah kata yang salah eja, koreksinya menggantikan kata tersebut, dan SandFly mengucapkannya, seperti "receive, dikoreksi". Kata yang diawali huruf kapital di tengah kalimat, kata dengan huruf kapital setelah huruf pertama, dan kata yang diketik seluruhnya dengan huruf kapital dibiarkan seperti yang diketik. Dalam bahasa Inggris, i, im, dan dont menjadi I, I'm, dan don't.
+- **Saran kata**: saat Anda mengetik kata, Panah Atas dan Panah Bawah berpindah di antara koreksi dan kata yang lebih panjang yang diawali teks yang Anda ketik, seperti "keyboard, 1 dari 8" untuk "keyb". Di Zinwa Q25, trackpad mengirim tombol-tombol ini. Enter, atau klik trackpad, mengetikkan saran disertai spasi; Spasi atau tanda baca mengetikkannya diikuti karakter tersebut. Kembali atau Escape menutup daftar dan mempertahankan kata seperti yang diketik. Tombol lain menutup daftar dan menjalankan fungsinya, sehingga Backspace menghapus huruf dan huruf diketik. Saat tidak ada kata yang sedang diketik, setelah Spasi, tanda baca, atau perpindahan kursor, Panah Atas dan Panah Bawah berpindah di dalam teks seperti sebelumnya.
+
+**Ucapkan saran**: saat Anda mengetik kata, keyboard mengucapkan dengan nada lebih rendah koreksi yang akan diketik Spasi, seperti "receive, koreksi", atau jika tidak ada, saran kata pertama, seperti "keyboard" untuk "keyboa". Lanjutkan mengetik untuk mempertahankan kata, tekan Panah Bawah untuk saran lain, atau Spasi untuk mengambil koreksi. Tombol berikutnya menghentikan ucapan ini. Pilih kapan saran diucapkan:
+
+- **Segera**: setelah setiap tombol, tepat setelah gema keyboard untuk tombol tersebut, atau langsung jika gema keyboard nonaktif.
+- 0,25 hingga 3 detik: saat Anda berhenti mengetik di dalam kata selama waktu tersebut. Default-nya adalah 1 detik.
+- **Nonaktif**: tidak pernah.
+
+Setelan ini berlaku saat **Koreksi otomatis** atau **Saran kata** aktif.
+
+**Enter mengetik saran yang diucapkan**, nonaktif secara default: setelah koreksi atau saran diucapkan, Enter mengetikkannya disertai spasi, hingga Anda melanjutkan mengetik atau memindahkan kursor. Di Zinwa Q25, klik trackpad mengirim Enter, sehingga klik mengetikkan saran tersebut. Enter kedua diteruskan ke aplikasi, misalnya untuk mengirim pesan. Panah Bawah kemudian membuka daftar pada saran setelah saran yang diucapkan. Jika sakelar nonaktif, Enter diteruskan ke aplikasi seperti sebelumnya, Panah Bawah pertama membuka daftar pada saran pertama, dan Panah Atas pertama pada saran terakhir.
+
+Geseran trackpad mengirim dua tekanan tombol panah atau lebih; di dalam daftar, tekanan ke arah yang sama dengan selang kurang dari 0,1 detik hanya berpindah satu kali.
+
+Untuk membatalkan koreksi, tekan Backspace tepat setelahnya. SandFly mengucapkan kata seperti yang Anda ketik, seperti "recieve, koreksi dibatalkan", dan kata itu tidak pernah dikoreksi lagi.
+
+Kata yang Anda ketik dan pilih mendapat peringkat lebih tinggi dalam saran. Kata yang dipelajari ini, serta kata yang koreksinya Anda batalkan, hanya disimpan di ponsel, untuk setiap bahasa. **Hapus kata yang dipelajari** menghapusnya. Tidak ada yang dipelajari di kolom sandi atau di kolom yang menonaktifkan pembelajaran, seperti penjelajahan pribadi.
+
+**Bahasa daftar kata** mengatur bahasa kata: **Bahasa sistem** (default), atau salah satu dari bahasa Inggris (AS), Inggris (Inggris Raya), Jerman, Spanyol, Prancis, Portugis (Brasil), Portugis (Portugal), Hungaria, Turki, Rusia, Ukraina, dan Arab, masing-masing dicantumkan dengan namanya sendiri, seperti Deutsch. Tanpa daftar kata untuk bahasa sistem, tidak ada yang dikoreksi atau disarankan hingga Anda memilih salah satunya. Koreksi memperhitungkan tombol tata letak keyboard Anda: huruf yang diketik untuk tombol di sebelahnya dikoreksi lebih dulu. Huruf yang diketik tanpa aksennya, seperti fur untuk für, juga dikoreksi.
+
+Koreksi otomatis dan saran kata tidak digunakan di kolom sandi, alamat email, alamat web, dan angka, maupun di kolom yang ditandai tanpa saran.
+
+Tanpa tombol panah, gunakan perintah **Saran kata berikutnya**, **Saran kata sebelumnya**, dan **Ketik saran kata**, di kategori **Pengeditan teks**. Perintah ini tidak memiliki pintasan default: tetapkan di **Pintasan keyboard**, tempat **Hanya saat mengedit** mempertahankan tombol untuk mengetik di tempat lain, atau tetapkan ke gerakan. **Ketik saran kata** mengetikkan saran yang terakhir diucapkan, atau saran pertama untuk kata yang diketik. Dengan sentuhan, tambahkan kontrol pembacaan **Saran kata**, di grup **Tindakan untuk item saat ini** pada **Kontrol pembacaan**: saat kata sedang diketik, geser ke atas atau ke bawah untuk berpindah di antara saran, lalu ketuk dua kali untuk mengetikkan saran yang diucapkan SandFly. Kontrol pembacaan ini nonaktif secara default dan memerlukan Android 11 atau yang lebih baru.
 
 #### Kolom sandi {#keyboards-passwords}
 

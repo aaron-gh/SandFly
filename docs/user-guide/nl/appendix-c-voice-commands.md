@@ -2,7 +2,7 @@
 
 Dit zijn de Nederlandse zinnen die SandFly accepteert als spraakopdracht. Woorden in hoofdletters staan voor wat je in plaats daarvan zegt, zoals een naam of een tekst. Woorden tussen haakjes zijn optioneel, en een schuine streep scheidt woorden die elkaars plaats kunnen innemen: "beschrijf (de/deze) afbeelding" is "beschrijf afbeelding", "beschrijf de afbeelding" of "beschrijf deze afbeelding". Hoofdletters en de leestekens die de spraakherkenning toevoegt, maken niet uit. Zie [](#voice-commands) voor hoe je een spraakopdracht start, opdrachten aan elkaar koppelt en je eigen zinnen maakt.
 
-Behalve deze zinnen kun je ook de naam zeggen van elke opdracht zoals die wordt weergegeven op het scherm **Commando's**, zoals "Lezen vanaf het begin", "Volgend item" of "Afbeelding beschrijven", inclusief de namen van macro's, aangepaste menu's en scriptopdrachten. Aangepaste spraakopdrachten gaan voor elke zin hier. Zie [](#voice-commands-phrases).
+Behalve deze zinnen kun je ook de naam zeggen van elke opdracht zoals die wordt weergegeven op het scherm **Commando's**, zoals "Lezen vanaf het begin", "Volgend item" of "Afbeelding beschrijven", inclusief de namen van macro's, aangepaste menu's en scriptopdrachten. De naam van een app opent de app, tenzij een opdracht die naam heeft. Aangepaste spraakopdrachten gaan voor elke zin hier. Zie [](#voice-commands-phrases).
 
 Sommige zinnen worden overal in wat je zegt herkend: ze zijn gemarkeerd met "een zin met". Bijvoorbeeld, "ga naar boven" bevat "boven" en verplaatst de focus naar het eerste item.
 
@@ -50,13 +50,36 @@ Deze zinnen werken op het gefocuste tekstvak.
 | Zeg | Wat er gebeurt |
 | --- | --- |
 | "Typ TEKST", of "schrijf TEKST", "voer TEKST in", "tik TEKST in", "dicteer TEKST" of "spel TEKST" | Typt de tekst. |
+| "Nieuwe regel", of "nieuwe alinea" of "druk op enter" | Typt een nieuwe regel in een tekstveld met meerdere regels, of voert de actie uit van een veld met één regel. |
 | "Alles selecteren" | Selecteert alle tekst. |
 | "Selecteren", of "selecteren starten", "selectie starten" of "selectiemodus starten" | Start de selectiemodus. |
 | "Selecteren voltooien", of "selectie afronden", "selectiemodus afronden" of "selecteren beëindigen" | Beëindigt de selectiemodus. |
-| Een zin met "kopiëren" | Kopieert de geselecteerde tekst. |
-| Een zin met "knippen" | Knipt de geselecteerde tekst. |
+| Een zin met "kopiëren" | Kopieert de geselecteerde tekst. Met een tekstveld met focus, zie [](#appendix-voice-commands-text). |
+| Een zin met "knippen" | Knipt de geselecteerde tekst. Met een tekstveld met focus, zie [](#appendix-voice-commands-text). |
 | Een zin met "plakken" | Plakt het klembord. |
-| Een zin met "verwijderen" | Verwijdert de geselecteerde tekst. |
+| Een zin met "verwijderen" | Verwijdert de geselecteerde tekst. Met een tekstveld met focus, zie [](#appendix-voice-commands-text). |
+
+### Tekst in een tekstveld {#appendix-voice-commands-text}
+
+Deze zinnen werken op de tekst van het tekstveld met invoerfocus. EENHEDEN is een aantal en "tekens", "woorden", "zinnen", "regels" of "alinea's", zoals "3 woorden" of "vijf woorden", of een ervan alleen, zoals "woord". Het aantal is 1 tot 20 in woorden, of cijfers. "Teken", "letter", "letters", "karakter", "karakters", "lijn", "lijnen", "paragraaf" en "paragrafen" werken ook. EENHEID is "woord", "zin", "regel", "alinea" of "tekst"; "veld", "tekstveld" en "document" zijn ook de tekst. Zie [](#voice-commands-text) voor hoe de zinnen tellen en wat SandFly zegt.
+
+| Zeg | Wat er gebeurt |
+| --- | --- |
+| "Volgende EENHEDEN", of "volgend EENHEDEN", "naar de volgende EENHEDEN", "naar rechts EENHEDEN", "rechts EENHEDEN" of "vooruit EENHEDEN" | Verplaatst de cursor vooruit over de eenheden. |
+| "Vorige EENHEDEN", of "naar de vorige EENHEDEN", "voorgaande EENHEDEN", "laatste EENHEDEN", "links EENHEDEN", "terug EENHEDEN" of "achteruit EENHEDEN" | Verplaatst de cursor terug over de eenheden. |
+| "Begin van EENHEID", of "naar het begin van (de) EENHEID" | Verplaatst de cursor naar het begin van de eenheid. |
+| "Einde van EENHEID", of "naar het einde van (de) EENHEID" | Verplaatst de cursor naar het einde van de eenheid. |
+| "Naar het begin" | Verplaatst de cursor naar het begin van de tekst. |
+| "Naar het einde", of "naar het eind" | Verplaatst de cursor naar het einde van de tekst. |
+| "Verplaats de cursor" of "ga", en een van de zinnen hierboven | Verplaatst de cursor, zoals "verplaats de cursor links 3 woorden" of "ga naar het einde van de regel". |
+| "Selecteer", of "markeer", en een van de zinnen hierboven | Selecteert de tekst vanaf de cursor, zoals "selecteer volgende 2 woorden". |
+| "Kopieer" en een van de zinnen hierboven | Kopieert de tekst vanaf de cursor, zoals "kopieer vorige zin". |
+| "Knip" en een van de zinnen hierboven | Knipt de tekst vanaf de cursor, zoals "knip naar het einde van de alinea". |
+| "Verwijder", of "wis", en een van de zinnen hierboven, of "haal", een van de zinnen hierboven en "weg" | Verwijdert de tekst vanaf de cursor, zoals "verwijder laatste 5 woorden". |
+| "Selecteer TEKST", of "markeer TEKST" | Selecteert de tekst in het veld. Zonder die tekst activeert dit het item op het scherm met die tekst. |
+| "Kopieer TEKST" | Kopieert de tekst in het veld. |
+| "Knip TEKST" | Knipt de tekst in het veld. |
+| "Verwijder TEKST", of "wis TEKST" of "haal TEKST weg" | Verwijdert de tekst in het veld. |
 
 ### Spraak {#appendix-voice-commands-speech}
 
@@ -94,7 +117,7 @@ Deze zinnen werken op het gefocuste tekstvak.
 | Zeg | Wat er gebeurt |
 | --- | --- |
 | "Open APP", of "start APP", "ga naar APP", "schakel over naar APP" of "APP openen" | Opent de app. |
-| "Tik ITEM", of "tik op ITEM", "dubbeltik (op) ITEM", "tik dubbel (op) ITEM", "klik (op) ITEM", "druk op ITEM", "activeer ITEM" of "selecteer ITEM" | Activeert het item op het scherm met die tekst. |
+| "Tik ITEM", of "tik op ITEM", "dubbeltik (op) ITEM", "tik dubbel (op) ITEM", "klik (op) ITEM", "druk op ITEM", "activeer ITEM" of "selecteer ITEM" | Activeert het item op het scherm met die tekst. "Selecteer ITEM" selecteert de tekst in het gefocuste tekstveld als het veld de tekst bevat. |
 | "Voer OPDRACHT uit", of "start OPDRACHT" of "doe OPDRACHT" | Voert de opdracht, macro of scriptopdracht met die naam uit. |
 | "Voer (de) macro NAAM uit", of "voer (de) NAAM macro uit" | Voert de macro uit. |
 | "Wacht", of "wacht (een) seconde" | Wacht 1 seconde. |
@@ -102,7 +125,7 @@ Deze zinnen werken op het gefocuste tekstvak.
 
 ### Bellen en berichten {#appendix-voice-commands-calls}
 
-NAAM is een contactnaam of een telefoonnummer. APP is de naam van een berichtenapp, zoals WhatsApp. Zonder app, of met "sms", "sms-bericht", "tekstbericht" of "berichten", gaat het bericht naar de standaard-sms-app. In de sms-app en WhatsApp schrijft SandFly het bericht aan het contact en vraagt daarna of het verstuurd moet worden. Andere apps krijgen alleen de tekst, en je kiest het gesprek in de app.
+NAAM is een contactnaam of een telefoonnummer. APP is de naam van een berichtenapp, zoals WhatsApp. Zonder app, of met "sms", "sms-bericht", "tekstbericht" of "berichten", gaat het bericht naar de standaard-sms-app. In de sms-app en WhatsApp schrijft SandFly het bericht aan het contact en vraagt daarna om bevestiging voordat het wordt verstuurd. Andere apps krijgen alleen de tekst, en je kiest het gesprek in de app.
 
 | Zeg | Wat er gebeurt |
 | --- | --- |
@@ -111,8 +134,9 @@ NAAM is een contactnaam of een telefoonnummer. APP is de naam van een berichtena
 | "Bericht NAAM TEKST", of "sms NAAM TEKST" of "stuur (een) bericht naar NAAM TEKST" | Schrijft het bericht naar het contact dat aan het begin wordt genoemd. |
 | "Bericht NAAM via APP TEKST", of "stuur (een) bericht naar NAAM via APP met de tekst TEKST", "stuur (een) bericht naar NAAM via APP waarin staat TEKST", "stuur (een) APP bericht naar NAAM met de tekst TEKST" of "zeg tegen NAAM via APP TEKST" | Schrijft het bericht in de app. |
 | "Stuur (een) APP bericht naar NAAM" | Neemt de tekst op en schrijft het bericht daarna in de app. |
+| "Gesprek beantwoorden" of "Gesprek beëindigen" | Voert de opdracht met die naam uit: beantwoordt het inkomende gesprek, of weigert het of beëindigt het lopende gesprek. |
 
-SandFly vraagt "Versturen naar NAAM: TEKST?", of "Versturen naar NAAM?" voor een beschrijving. Zeg "ja", "jazeker", "jep", "verstuur", "verstuur het", "stuur", "stuur het", "ok", "oké", "okay", "prima" of "doe maar" om op **Verzenden** te drukken. Elk ander antwoord laat het bericht onverstuurd, en SandFly zegt "Bericht niet verstuurd".
+SandFly zegt "Versturen naar NAAM: TEKST?", of "Versturen naar NAAM?" voor een beschrijving. Zeg "ja", "jazeker", "jep", "verstuur", "verstuur het", "stuur", "stuur het", "ok", "oké", "okay", "prima" of "doe maar" om op **Verzenden** te drukken. Elk ander antwoord laat het bericht onverstuurd, en SandFly zegt "Bericht niet verstuurd".
 
 ### Beschrijvingen {#appendix-voice-commands-descriptions}
 

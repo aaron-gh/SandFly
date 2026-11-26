@@ -15,6 +15,19 @@ Profilu możesz używać na dwa sposoby.
 
 Profil może zawierać ustawienia główne SandFly oraz ustawienia klawiatury brajlowskiej i monitora brajlowskiego. Możesz w nim zapisać także gesty, skróty klawiszowe, profile gestów i wybór aktywnego profilu gestów. Poza profilem pozostają klucze API, licencja SandFly Pro, czas ostatniego sprawdzenia dostępności aktualizacji, zainstalowane skrypty i ich ustawienia oraz szkice motywów dźwiękowych. Profil nie przechowuje też informacji związanych z konkretnym telefonem, na przykład o wyświetlonych samouczkach i oknach dialogowych.
 
+### Tryb BlackBerry {#profiles-blackberry-mode}
+
+**Tryb BlackBerry** na dole ekranu **Profile ustawień** sprawia, że SandFly działa podobnie do BlackBerry 10 Screen Reader. Jego gesty, klawisze i dźwięki mogą być nieznane, jeśli nie używałeś BlackBerry 10. Włączenie otwiera okno **Włączyć tryb BlackBerry?**. Wybierz **Włącz**, aby potwierdzić. Za pierwszym razem SandFly tworzy profil ustawień **Tryb BlackBerry** i od razu go używa. Profil ustawia:
+
+- **Gesty** > **Układ gestów** na **Gesty BlackBerry** z włączoną opcją **Obsługuj przesunięcia dwoma palcami w SandFly**. Zobacz [](#gestures-layout).
+- Na telefonach z klawiaturą **Mapa klawiszy BlackBerry**. Zobacz [](#keyboards-phones).
+- Motyw dźwiękowy **BlackBerry**, który instaluje SandFly. Motyw zawiera dźwięki SandFly, a nie dźwięki BlackBerry 10: brak dźwięku przy przeniesieniu fokusu oraz dźwięki zmiany ekranu, kliknięcia, przewijania, końca listy, błędów oraz pokazania i ukrycia klawiatury. **Dźwięki i wibracje kontrolek** są wyłączone. Zobacz [](#sound).
+- Brak wskazówek, pozycji na listach i w siatkach, informacji o dostępnych czynnościach oraz komunikatów o pokazaniu i ukryciu klawiatury. Typy kontrolek są nadal odczytywane, a zmiany wysokości głosu są włączone.
+
+Wszystkie pozostałe ustawienia zostają bez zmian. Aby zmienić to, co ustawia tryb BlackBerry, zmień ustawienia profilu **Tryb BlackBerry**. Zobacz [](#profiles-change-settings). Wyłączenie trybu BlackBerry kończy używanie profilu, a ponowne włączenie używa profilu z Twoimi zmianami. Aby zacząć od ustawień domyślnych, usuń profil. Polecenie **Włącz lub wyłącz tryb BlackBerry** z grupy **SandFly** na ekranie **Polecenia** robi to samo z gestu lub klawisza i przed włączeniem także otwiera okno potwierdzenia.
+
+Tryb BlackBerry działa wszędzie, tak jak profil uruchomiony przez **Użyj teraz**, więc zastępuje inny profil używany w ten sposób.
+
 ### Dodaj profil ustawień {#profiles-add}
 
 1. Otwórz **Profile ustawień** > **Nowy profil ustawień**.

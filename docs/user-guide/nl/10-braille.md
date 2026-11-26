@@ -72,6 +72,8 @@ Elk gebaar met vastgehouden punten werkt ook met de overeenkomstige punten van d
 
 De drievingerswipe omhoog opent **Opties brailletoetsenbord**: **Overschakelen naar volgende taal**, **Overschakelen naar** kortschrift of volledige **braille**, **Positie van punten updaten**, **Gebaren checken**, **Tutorial openen** en **Instellingen**.
 
+In velden zonder eigen actie of met een verzendactie, zoals de berichtvelden van Telegram, WhatsApp en Berichten, drukt Tekst sturen op de verzendknop naast het veld, en met **Toetsenbord open laten na verzenden** aan blijft het brailletoetsenbord open voor het volgende bericht. In andere velden, of als er geen verzendknop is, voert Tekst sturen de actie van het veld uit, zoals zoeken of volgende, of drukt op Enter, en verbergt het brailletoetsenbord, zodat de focus verder kan gaan.
+
 Wanneer je naar een ander bedieningselement swipet voordat het brailletoetsenbord opent, verplaatst SandFly de focus terug naar het tekstveld voor elke opdracht, zodat cursorbeweging en bewerking op het tekstveld van toepassing zijn.
 
 #### Verander de gebaren van het brailletoetsenbord {#braille-keyboard-gestures}
@@ -122,7 +124,7 @@ Beperkingen:
 
 #### Brailletalen {#braille-keyboard-languages}
 
-- **Talen**: de brailletabellen die het toetsenbord en brailleleesregels kunnen gebruiken. Kies **Taal toevoegen** om er een toe te voegen. Japanse braille heeft een woordenboek van ongeveer 15 MB nodig, dat SandFly downloadt wanneer je de taal toevoegt. **Roemeens** is zespuntsvolledige braille: punten 46 hoofdletter, punten 56 hoofdletterwoord, punten 3456 cijferteken, punten 2356 haakjes, en UEB-tekens voor operatoren; **8-punts computerbraille Roemeens** gebruikt één achtpuntscel per teken.
+- **Talen**: de brailletabellen die het toetsenbord en brailleleesregels kunnen gebruiken. Kies **Taal toevoegen** om er een toe te voegen. Japanse braille heeft een woordenboek van ongeveer 15 MB nodig, dat SandFly downloadt wanneer je de taal toevoegt. **Roemeens** is zespuntsvolledige braille: punten 46 hoofdletter, punten 56 hoofdletterwoord, punten 3456 cijferteken, punten 2356 haakjes, en UEB-tekens voor operatoren; **8-punts computerbraille Roemeens** gebruikt één achtpuntscel per teken. **Indonesisch** volgt de Indonesische standaard, met Tusing als kortschrift: punt 6 hoofdletter, punten 3456 cijferteken, punt 2 scheidingsteken voor duizendtallen en punten 46 decimale komma. **Taal toevoegen** > **Unicode-braille**, aan het einde van de lijst, heeft **Unicode-braille** en **8-punts braille Unicode**, die elke cel typen als het Unicode-brailleteken ervan, zoals ⠞ voor punt 2, 3, 4 en 5; een spatie is de lege braillecel U+2800, die SandFly uitspreekt als "lege braillecel". Ze zijn alleen voor typen en zijn geen keuzes voor **Voorkeurstaal voor lezen** op brailleleesregels.
 - **Voorkeurstaal voor typen**: de tabel waarmee het toetsenbord begint.
 - **Gewenst brailleniveau**: **Kortschrift** of **Volledige braille**. De standaardwaarde is volledige braille.
 
@@ -156,6 +158,8 @@ In **Braille** > **Brailletoetsenbord**:
 - **Wissel de bovenste en onderste punten om**: punt 1 wisselt van plaats met punt 3, en punt 4 met punt 6. Standaard uit. Je kunt beide wissels aanzetten.
 - **Typegeluiden**: speelt een geluid voor elk teken, en elk een geluid voor spatie, verwijderen en nieuwe regel, op het SandFly-geluidsvolume. Een geluidsthema kan deze vervangen. Standaard uit. Zie [](#sound).
 - **"Tekst indienen" zeggen**: kondigt "Tekst indienen" aan wanneer je tekst indient met een tweevingerswipe omhoog. Standaard aan.
+- **Toetsenbord open laten na verzenden**: het brailletoetsenbord blijft open nadat Tekst sturen op de verzendknop naast het veld drukt. Met deze instelling uit verdwijnt het na elke keer Tekst sturen. Standaard uit.
+- **Terug naar het vorige toetsenbord**: wanneer je het brailletoetsenbord verbergt met **Toetsenbord verbergen**, of het tekstveld ervan verlaat, schakelt SandFly terug naar het toetsenbord dat je ervoor gebruikte. Tekst sturen, het scherm uitzetten en het scherm draaien veranderen het toetsenbord niet. Open het brailletoetsenbord opnieuw met **Overschakelen naar brailletoetsenbord**. Dit geldt niet terwijl een brailleleesregel is verbonden. Standaard uit.
 - **Zinnen met hoofdletter beginnen**: typt de eerste letter van een zin als hoofdletter, aan het begin van een veld, na een nieuwe regel, en na een punt, vraagteken of uitroepteken gevolgd door een spatie. Dit verandert niets in wachtwoord-, e-mailadres-, webadres- of getalvelden. Standaard uit.
 
 Het brailletoetsenbord gebruikt dezelfde trillingseffecten als de rest van SandFly. Tekst indienen trilt zoals het sluiten of wisselen van het toetsenbord doet. Verwijderen in een leeg veld speelt een zachte trilling die wegsterft.

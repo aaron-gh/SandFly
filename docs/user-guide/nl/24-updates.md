@@ -80,9 +80,9 @@ Om de installer weer als een gewone installatie te registreren, voer je `adb ins
 
 1. Installeer Shizuku en start het, zoals de Shizuku-app beschrijft. Op Android 11 en hoger kan Shizuku starten met draadloos debuggen, zonder computer. Op een apparaat met root kan Shizuku ook starten met root.
 2. Zet SandFly aan, of zet het uit en weer aan als het al aan staat.
-3. Wanneer SandFly start terwijl Shizuku actief is, vraagt Shizuku of SandFly moet worden toegestaan. Kies om dit toe te staan.
+3. Wanneer SandFly start terwijl Shizuku actief is, toont Shizuku een dialoogvenster om SandFly toe te staan. Kies om dit toe te staan.
 
-SandFly vraagt Shizuku maar één keer zelf. Daarna vraagt een functie die Shizuku nodig heeft, dit wanneer je die aanzet. Als je hebt gekozen om SandFly te weigeren en niet meer te vragen, sta je SandFly toe in de Shizuku-app.
+SandFly vraagt maar één keer zelf om Shizuku-toegang. Daarna opent het Shizuku-dialoogvenster wanneer je een functie aanzet die Shizuku nodig heeft. Als je hebt gekozen om SandFly te weigeren en niet meer te vragen, sta je SandFly toe in de Shizuku-app.
 
 Shizuku dat is gestart met draadloos debuggen of adb stopt wanneer het apparaat opnieuw start. Start het opnieuw in de Shizuku-app.
 
@@ -99,6 +99,8 @@ Zonder Shizuku of root zijn deze functies niet beschikbaar of werken ze beperkt,
 - De geschiedenis van het klembord voegt tekst die in andere apps is gekopieerd alleen toe via Shizuku of root, met **Kopieën uit andere apps toevoegen** in de geschiedenis. Zie [](#typing).
 - Gboard speelt zijn eigen toetsfeedback, zoals **Trillen bij toetsaanslag**, terwijl je de toetsen verkent, alleen af via Shizuku of root. Zie [](#typing).
 - Opdrachten die de snelkoppeling voor toegankelijkheid van een andere toegankelijkheidsservice uitvoeren. Zie [](#commands).
+- De opdrachten **App-tegels** en **Systeemtegels**, en **Systeemtegel toevoegen** in de instellingen van het paneel voor snelle instellingen. Zonder Shizuku of root werkt een tegel alleen als deze in de systeeminstellingen voor snelle instellingen staat, en zoekt **Systeemtegel toevoegen** door de systeeminstellingen voor snelle instellingen om de tegels te vinden. Zie [](#commands-categories) en [](#display-quick-settings).
+- App-snelkoppelingen die een app toevoegt terwijl deze actief is, en snelkoppelingen die alleen de startscherm-app mag openen, worden alleen via Shizuku of root getoond. Zie [](#gestures-app-shortcuts).
 - Scripts en macro's die toetsen indrukken, of tekst typen waar geen tekstveld is, en macrostappen die de hierboven genoemde bedieningselementen van snelle instellingen wijzigen. Zie [](#scripts) en [](#macros).
 - **Updates en installatie** > **Weergeven als geïnstalleerd via Google Play**. Zie [](#updates-play-installer).
 
@@ -134,6 +136,6 @@ De opdrachten zijn:
 
 Op een apparaat met root kan SandFly zijn opdrachten uitvoeren met root in plaats van Shizuku. Zet **Shizuku en root** > **Root gebruiken in plaats van Shizuku** aan. Deze instelling staat standaard uit.
 
-SandFly voert de opdrachten dan uit via `su`, als de shell-gebruiker, de gebruiker die adb en Shizuku gebruiken. De rootmanager van het apparaat, zoals Magisk of KernelSU, vraagt of root aan SandFly moet worden verleend. Functies die Shizuku nodig hebben, gebruiken root terwijl deze instelling aan staat, behalve **Sneltoetsen voor volumetoetsen met het scherm uit**, die niet wordt getoond in rootmodus. Wanneer `su` geen root verleent, zeggen het overzicht en gesplitst scherm "Geen roottoegang".
+SandFly voert de opdrachten dan uit via `su`, als de shell-gebruiker, de gebruiker die adb en Shizuku gebruiken. De rootmanager van het apparaat, zoals Magisk of KernelSU, toont een dialoogvenster om root aan SandFly te verlenen. Functies die Shizuku nodig hebben, gebruiken root terwijl deze instelling aan staat, behalve **Sneltoetsen voor volumetoetsen met het scherm uit**, die niet wordt getoond in rootmodus. Wanneer `su` geen root verleent, zeggen het overzicht en gesplitst scherm "Geen roottoegang".
 
 Opmerking: Als `su` op het apparaat geen opdrachten kan uitvoeren als de shell-gebruiker, voert SandFly ze uit als root. Kopieën uit andere apps toevoegen aan de klembordgeschiedenis en de schakelaar voor de hotspot werken dan niet.

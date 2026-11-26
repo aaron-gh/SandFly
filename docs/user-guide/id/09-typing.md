@@ -96,6 +96,8 @@ Saat **Mengetik** > **Ketuk dua kali memindahkan kursor ke awal atau akhir** akt
 - Jika kursor tidak berada di awal, ketuk dua kali memindahkannya ke awal teks, dan SandFly mengumumkan "Awal kolom".
 - Jika kursor berada di awal, ketuk dua kali memindahkannya ke akhir, dan SandFly mengumumkan "Akhir kolom".
 
+Perintah **Aktifkan** melakukan hal yang sama saat dijalankan dari gerakan lain, perintah suara, perintah braille, atau skrip.
+
 Pada kontrol lainnya, atau pada kolom teks tanpa fokus input dan keyboard yang tampil, ketuk dua kali mengaktifkan item seperti biasa. Setelan ini nonaktif secara default, dan tersedia di Android 13 dan yang lebih baru.
 
 ### Memilih, menyalin, memotong, dan menempel {#typing-select-copy-paste}
@@ -106,6 +108,8 @@ Pada kontrol lainnya, atau pada kolom teks tanpa fokus input dan keyboard yang t
 2. Jalankan **Mulai atau akhiri mode pemilihan**. SandFly mengumumkan "Mode pemilihan aktif".
 3. Pindahkan kursor dengan kontrol pembacaan, seperti **Karakter** atau **Kata**. Teks yang dilewati kursor akan dipilih.
 4. Jalankan **Mulai atau akhiri mode pemilihan** lagi untuk mengakhiri mode pemilihan.
+
+Pada Peta tombol NVDA, **Mulai atau akhiri mode pemilihan** adalah Tombol SandFly + F9. Pada Peta tombol SandFly, pintasannya Tombol SandFly + Shift + S.
 
 **Pilih semua** memilih seluruh teks dalam kolom, dan **Hapus pilihan** menghapus pilihan tersebut.
 
@@ -131,6 +135,7 @@ Perintah **Menu pengeditan** membuka menu berisi **Histori papan klip**, **Salin
 Grup **Pengeditan teks** pada **Perintah** juga memiliki:
 
 - **Kirim teks**: menekan tombol yang mengirim atau menyerahkan teks di keyboard, seperti Kirim, Cari, atau Selesai.
+- **Baris baru**: melakukan hal yang sama seperti Enter. Di kolom teks dengan beberapa baris, perintah ini mengetikkan baris baru di posisi kursor, dan SandFly mengucapkan "Baris baru". Di kolom teks satu baris, perintah ini menjalankan tindakan kolom, seperti Cari atau Berikutnya, atau jika tidak ada, melakukan hal yang sama seperti **Kirim teks**. Melalui suara, juga "paragraf baru" atau "tekan enter".
 - **Hapus teks**: menghapus semua teks di kolom teks.
 - **Jumlah karakter**: membacakan panjang teks, seperti "12 karakter, 3 kata". Di kolom sandi, hanya karakter yang dihitung.
 - **Baca kolom teks**: membacakan seluruh teks dalam kolom teks, atau "Kosong" beserta petunjuknya jika tidak ada teks.
@@ -138,7 +143,7 @@ Grup **Pengeditan teks** pada **Perintah** juga memiliki:
 - **Dikte**: lihat [](#typing-dictate).
 - **Mulai pengeditan suara**: merekam perintah suara untuk kolom teks satu per satu. Lihat [](#voice-commands-editing).
 - **Ganti keyboard**: beralih ke keyboard berikutnya. Tersedia di Android 11 dan yang lebih baru.
-- **Telusuri emoji**, **Pilih simbol**, **Aktifkan atau nonaktifkan mode pengeditan**, dan **Eja kolom sandi**: perintah dari Keyboard SandFly. Lihat [](#keyboards).
+- **Telusuri emoji**, **Pilih simbol**, **Aktifkan atau nonaktifkan mode pengeditan**, **Eja kolom sandi**, **Saran kata berikutnya**, **Saran kata sebelumnya**, dan **Ketik saran kata**: perintah dari Keyboard SandFly. Lihat [](#keyboards).
 
 Tidak satu pun perintah ini memiliki gerakan secara default. Untuk menetapkan gerakan, lihat [](#commands).
 
@@ -197,7 +202,7 @@ Perekaman berhenti dengan sendirinya setelah 15 menit, atau setelah durasi henin
 
 Secara default, ketuk dua kali dengan dua jari menjalankan **Dikte, putar, atau jeda media**. Perintah ini memulai **Dikte** saat kolom teks memiliki fokus input, keyboard tampil atau terhubung, dan tidak ada panggilan aktif. Jika dikte sedang merekam, perintah ini menghentikannya. Dalam kondisi lain, perintah ini memutar atau menjeda media. Untuk gerakan default, lihat [](#appendix-gestures).
 
-Di ponsel yang memiliki tombol bisukan, seperti Zinwa Q25, tahan tombol bisukan di kolom teks untuk mendikte: perekaman dimulai saat Anda menekan tombol dan berhenti saat Anda melepaskannya. Lihat [](#buttons-mute-key).
+Di ponsel yang memiliki tombol bisukan, seperti Zinwa Q25, tahan tombol bisukan di kolom teks untuk mendikte: perekaman dimulai saat Anda menekan tombol dan berhenti saat Anda melepaskannya. Setelannya adalah **Tombol volume** > **Tahan tombol bisukan untuk mendikte di kolom teks**, yang aktif secara default. Lihat [](#buttons-mute-key).
 
 #### Memilih cara ucapan dikenali {#typing-speech-recognition}
 
@@ -210,6 +215,8 @@ Buka **Mengetik** > **Dikte** > **Pengenalan ucapan**, lalu pilih salah satu ops
 - **Pengenalan ucapan Android**: layanan pengenalan ucapan yang dipilih di setelan Android.
 
 Jika pilihan Anda tidak dapat digunakan, SandFly beralih ke pilihan berikutnya dengan urutan yang sama seperti **Otomatis**. Pengenalan ucapan Google di perangkat dan Android mulai lagi setelah setiap jeda hingga Anda menghentikan dikte. Jika Rambler tidak merespons, rekaman akan ditranskripsikan dengan Whisper jika ada model yang diunduh.
+
+**Dikte** mengenali bahasa keyboard, seperti bahasa yang dipilih di Gboard, jika berbeda dari bahasa ponsel. Pengenalan ucapan Google di perangkat kemudian memerlukan paket bahasa untuk bahasa keyboard; tanpa paket itu, cara pengenalan ucapan berikutnya dalam urutan **Otomatis** yang digunakan. Perintah suara dan input suara lainnya menggunakan bahasa ponsel.
 
 Saat **Transkripsi langsung Rambler** aktif, SandFly mengalirkan rekaman saat Anda berbicara dan menerima teks setiap frasa saat Anda jeda, sehingga teks diketik lebih cepat setelah Anda berhenti. Jika aliran gagal, SandFly mengirimkan seluruh rekaman saat Anda berhenti. Setelan ini aktif secara default, dan hanya ditampilkan jika ada kunci API Gemini.
 
@@ -227,7 +234,7 @@ Untuk menggunakan model:
 1. Pilih sebuah model. SandFly akan mengunduhnya, setelah konfirmasi jika menggunakan data seluler.
 2. Untuk beralih ke model lain yang sudah diunduh, pilih modelnya, lalu pilih **Gunakan**. Untuk menghapus model, pilih modelnya, lalu pilih **Hapus**.
 
-Model pertama yang Anda unduh akan langsung digunakan. Whisper menggunakan bahasa ponsel jika dikenali, dan jika tidak, mendeteksi bahasanya.
+Model pertama yang Anda unduh akan langsung digunakan. Whisper mengenali bahasa seperti yang dijelaskan di [](#typing-speech-recognition).
 
 **File model** menambahkan model Whisper milik Anda sendiri dalam format whisper.cpp, seperti model yang dilatih untuk bahasa tertentu, dari file di ponsel, hingga 4 GB. Setelah ditambahkan, Anda dapat menggunakannya, menggantinya dengan **Pilih file lain**, atau menghapusnya. File yang bukan model whisper.cpp akan ditolak.
 
@@ -290,4 +297,4 @@ Saat keyboard tulisan tangan ditampilkan, hanya perintah yang tidak membuka jend
 
 ### Keyboard fisik {#typing-physical-keyboard}
 
-Saat keyboard fisik terhubung, grup **Keyboard fisik** di **Mengetik** berisi **Tombol huruf menekan tombol keypad**, **Enter mengirim pesan**, **Keyboard SandFly**, **Ketikan tombol yang ditahan**, **Karakter saat tombol ditekan dua kali**, **Spasi dua kali mengetikkan titik**, **Ucapkan karakter sandi**, dan **Setelan keyboard fisik Android**. Setelan-setelan ini dijelaskan di [](#keyboards).
+Saat keyboard fisik terhubung, grup **Keyboard fisik** di **Mengetik** berisi **Tombol huruf menekan tombol keypad**, **Enter mengirim pesan**, **Keyboard SandFly**, **Ketikan tombol yang ditahan**, **Karakter saat tombol ditekan dua kali**, **Spasi dua kali mengetikkan titik**, **Koreksi otomatis**, **Saran kata**, **Ucapkan saran**, **Enter mengetik saran yang diucapkan**, **Bahasa daftar kata**, **Hapus kata yang dipelajari**, **Ucapkan karakter sandi**, dan **Setelan keyboard fisik Android**. Setelan-setelan ini dijelaskan di [](#keyboards).

@@ -260,6 +260,7 @@ Na liście możesz wykonywać poniższe czynności.
 - Grupa stanowi jedną pozycję. Stuknij ją dwukrotnie, aby zobaczyć należące do niej powiadomienia.
 - Każde powiadomienie zawiera swoje czynności. Jeśli aplikacja pozwala odpowiedzieć, jest też pole odpowiedzi z przyciskiem **Wyślij**.
 - Powiadomienia o multimediach pokazują **Odtwarzanie** lub **Wstrzymano**. Udostępniają **Poprzedni utwór**, **Odtwórz** lub **Wstrzymaj** oraz **Następny utwór**.
+- Powiadomienie bez tekstu, na przykład powiadomienie pogodowe z własnym układem, jest odczytywane z tekstem układu, a w przeciwnym razie z tekstem podrzędnym, tekstem informacyjnym lub tekstem podsumowania.
 - Tekst dłuższy niż około 160 znaków jest skracany. **Pokaż wszystko** odczytuje całość. **Pokaż mniej** ponownie skraca tekst.
 - **Zamknij** usuwa dane powiadomienie. **Wyczyść wszystko** usuwa wszystkie powiadomienia, które da się usunąć.
 - **Szybkie ustawienia** otwierają panel szybkich ustawień.

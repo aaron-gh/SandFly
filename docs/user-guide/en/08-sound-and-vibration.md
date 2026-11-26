@@ -58,7 +58,7 @@ The sounds, by the names shown in **Individual sounds and vibrations** and in th
 | **Spelling error** | A misspelled word. |
 | **Link** | A link in text. |
 | **Formatted text** | Formatted text, such as bold. |
-| **Emoji** | After an emoji, with **Verbosity** > **After emoji names** set to **Play a sound**. No vibration of SandFly's own; a sound theme can give it one. See [](#verbosity-emoji). |
+| **Emoji** | After an emoji, with **Verbosity** > **After emoji names** set to **Play a sound**. No built-in vibration; a sound theme can give it one. See [](#verbosity-emoji). |
 | **Screen off** and **Screen on** | The screen turns off or on. |
 | **Screen hidden** and **Screen shown** | The screen is hidden, or shown again. See [](#display). |
 | **Loading** | A description or other result is loading. |
@@ -83,7 +83,7 @@ SandFly plays no sound when a gesture starts or ends. These sounds give feedback
 
 The **Actions available** sound plays for an item with actions of its app beyond the standard ones, such as Reply and Forward on a chat message in a messaging app. Activating, long pressing, scrolling, expanding and other standard actions don't count, so an ordinary button plays no **Actions available** sound. Keys of on-screen keyboards don't count either. The actions are in the **Actions** reading control and in the SandFly menu.
 
-The sound has no vibration of SandFly's own; a sound theme can give it one.
+The sound has no built-in vibration; a sound theme can give it one.
 
 **Sound and vibration** > **Actions available sound** sets when it plays:
 

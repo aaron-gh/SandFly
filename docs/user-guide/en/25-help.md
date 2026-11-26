@@ -5,8 +5,8 @@
 - **User guide**: this guide. See [](#getting-started-user-guide).
 - **SandFly tutorial**: the interactive tutorial. See [](#help-tutorial).
 - **Practice gestures**: the gesture practice lesson of the tutorial. See [](#help-tutorial).
-- **Keyboard practice**: turns keyboard practice on, which says each key pressed and its command. See [](#keyboards-practice).
-- **Gesture trainer**: exercises that measure gestures against the limits SandFly uses. See [](#gestures-trainer).
+- **Keyboard practice**: turns on keyboard practice. SandFly says each key pressed and its command, and runs nothing. Available while SandFly is on; not shown on watches. See [](#keyboards-practice).
+- **Gesture trainer**: exercises that measure gestures against the limits SandFly uses. Not shown on watches and TVs. See [](#gestures-trainer).
 - **Send feedback**: problem reports and suggestions to the SandFly developer, and the replies. See [](#help-feedback).
 - **Version history**: the release notes of every SandFly release. See [](#help-version-history).
 - **Privacy policy**: the SandFly privacy policy. See [](#help-version-history).
@@ -15,7 +15,7 @@ The settings for developers and for finding problems are in **Developer settings
 
 ### Tutorial and gesture practice {#help-tutorial}
 
-**Help & feedback** > **SandFly tutorial** opens the SandFly tutorial at the lesson you were on. On a device with a touch screen and a physical keyboard, it first asks for **Touch tutorial** or **Keyboard tutorial**. For the lessons and how the tutorial works, see [](#getting-started-tutorial).
+**Help & feedback** > **SandFly tutorial** opens the SandFly tutorial at the lesson you were on. On a device with a touch screen and a physical keyboard, it first offers **Touch tutorial** and **Keyboard tutorial**. For the lessons and how the tutorial works, see [](#getting-started-tutorial).
 
 **Help & feedback** > **Practice gestures** opens **Gesture practice**, where each gesture says its name and the command assigned to it without running the command. To leave it, move to **End practice** and activate it.
 
@@ -62,8 +62,9 @@ A report always includes the fields you filled in and the version and build numb
 - The log of SandFly from the time you opened **Send feedback**, so that the problem you want to report is still in it. In split screen, the log is read when you choose **Send**, so that you can make the problem happen in the other app first.
 - The last gestures that SandFly recognized.
 - The last crash and the last time SandFly turned off, and times that SandFly stopped responding for a moment.
-- The accessibility services that are on, and the last volume key presses.
+- The accessibility services that are on, and the last volume key and Enter key presses.
 - The last announcements, notifications, toasts and window names that apps sent, with the app that sent each and the start of its text.
+- Where focus moved after Back, the time taken to check the **Show in Actions only when** conditions of macros, what plays and records audio, and typing from the Gboard popup of alternative characters.
 - The logs of the other SandFly processes, such as on-device AI.
 
 To report a problem soon after it happens, open **Send feedback** before you do anything else, so that the log still has it.
@@ -100,16 +101,16 @@ The **Report AI response** command opens a new report with the last text that an
 **Developer settings** has settings for finding problems and for development. Some of them write the content of the screen to the system log, which other apps with log access can read. Leave them off unless you need them.
 
 - **Version code**: the version of SandFly and its version code. On Android 11 and earlier, the version is shown under the title of the screen instead.
-- **Diagnosis mode**: off by default. A four-finger tap writes the screen contents to the system log. While the mode is on, **Display speech output**, **Echo recognized speech**, **Enable node tree debugging** and **Enable debug log overlay** work as if they are on, and they and **Log output level** can't be changed. SandFly asks you to confirm.
+- **Diagnosis mode**: off by default. A four-finger tap writes the screen contents to the system log. While the mode is on, **Display speech output**, **Echo recognized speech**, **Enable node tree debugging** and **Enable debug log overlay** work as if they are on, and they and **Log output level** can't be changed. SandFly shows a confirmation dialog.
 - **Display speech output**: off by default. Shows the text that SandFly speaks on the screen.
 - **Handle gestures in SandFly**: on by default. SandFly recognizes gestures itself instead of leaving it to Android. Many SandFly gesture features need it. Turn SandFly off and on again after you change it. Not shown on TVs.
 - **Ignore on-device AI memory limits**: off by default. Lists every on-device AI model, also models that need more memory than the device has, and loads a model without checking for free memory. See [](#descriptions).
 - **Echo recognized speech**: off by default. SandFly speaks the text that it recognized from a voice command. See [](#voice-commands).
-- **Enable performance statistics**: off by default. SandFly collects timing statistics, which the **Print performance statistics** command writes to the system log. Uses more memory and power. SandFly asks you to confirm.
-- **Explore by touch**: on by default. Turning it off makes SandFly stop reading items you touch and stop handling gestures. SandFly asks you to confirm. Not shown on TVs.
-- **Enable node tree debugging**: off by default. The **Print node tree** command writes the tree of items on the screen to the system log. When you turn it on, SandFly asks to assign **Print node tree** to a four-finger triple-tap. On a TV, the search button of the remote prints the tree.
+- **Enable performance statistics**: off by default. SandFly collects timing statistics, which the **Print performance statistics** command writes to the system log. Uses more memory and power. SandFly shows a confirmation dialog.
+- **Explore by touch**: on by default. Turning it off makes SandFly stop reading items you touch and stop handling gestures. SandFly shows a confirmation dialog. Not shown on TVs.
+- **Enable node tree debugging**: off by default. The **Print node tree** command writes the tree of items on the screen to the system log. When you turn it on, a dialog offers to assign **Print node tree** to a four-finger triple-tap. On a TV, the search button of the remote prints the tree.
 - **Enable debug log overlay**: off by default. Shows the log of SandFly on the screen.
-- **Log output level**: how much SandFly writes to the system log, from **NONE** to **VERBOSE**. The default is **ERROR**. SandFly asks you to confirm verbose logging, which can put personal information in the log.
+- **Log output level**: how much SandFly writes to the system log, from **NONE** to **VERBOSE**. The default is **ERROR**. Verbose logging, which can put personal information in the log, needs confirmation.
 - **Filter accessibility event logging**: the types of accessibility events that SandFly writes to the system log.
 
 To inspect a single item, and to copy the details of an item or the tree of the screen, use the commands described in [](#scripts).

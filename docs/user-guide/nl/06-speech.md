@@ -25,6 +25,8 @@ De schuifregelaars in de groep **Stem** bepalen de spraak van **SandFly-standaar
 - **Toonhoogte van spraak**: van 20% tot 200%. De standaardwaarde is 100%.
 - **Spraakvolume**: van 25 tot 100. De standaardwaarde is 100.
 
+**Stapgrootte spreeksnelheid**, onder **Spreeksnelheid**, stelt in hoeveel de snelheid per keer verandert met de schuifregelaars **Spreeksnelheid** van dit scherm en van stemprofielen, de leesinstelling **Spreeksnelheid** en de opdrachten voor de spreeksnelheid. **10% van de snelheid**, de standaardwaarde, verandert de gebruikte snelheid met een tiende ervan. **1%**, **2%**, **5%**, **10%** en **20%** gaan naar het volgende veelvoud van die stap, zoals van 133% naar 135% met **5%**.
+
 Terwijl een stemprofiel in gebruik is, toont het item **Stemprofielen** "In gebruik:" en de naam van het profiel, en veranderen deze schuifregelaars niet hoe het klinkt. Het wijzigen van de snelheid of toonhoogte met opdrachten of leesinstellingen wijzigt dan het profiel dat in gebruik is. Zie [](#speech-voice-profiles).
 
 Je kunt spraak ook wijzigen zonder de instellingen te openen:
@@ -68,6 +70,7 @@ Om een profiel te wijzigen, ga je naar **Spraak** > **Stemprofielen** en kies je
 - **Taal**: **Standaard**, of een van de talen van de engine.
 - **Stem**: **Standaard**, of een van de stemmen van de engine in de gekozen taal.
 - **Spraakvolume**, **Spreeksnelheid** en **Toonhoogte van spraak**: zoals op het scherm **Spraak**, voor dit profiel.
+- **Voorbeeld afspelen**: spreekt een voorbeeldzin uit met de engine, stem, het volume, de snelheid, toonhoogte en stemeffecten die hier zijn ingesteld, in de taal van het profiel als SandFly de zin in die taal heeft. "Voorbeeld niet afgespeeld" betekent dat de engine niet is gestart of een fout heeft teruggegeven.
 - **Stemeffecten**: de stemeffecten van dit profiel. Zie [](#voice-effects). Niet op horloges.
 - **Stuur lange tekst zin voor zin**: zoals op het scherm **Spraak**, voor dit profiel. Zie [](#speech-pronunciation).
 - **Engine gestart houden**: houdt de engine van dit profiel actief terwijl een andere engine in gebruik is en het scherm aan staat, zodat wisselen naar het profiel niet wacht tot de engine start. Elke engine die gestart blijft, draait als een eigen proces. Standaard uit.

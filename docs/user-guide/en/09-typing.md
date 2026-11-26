@@ -202,7 +202,7 @@ Recording stops by itself after 15 minutes, or after a time of silence that you 
 
 By default, a two-finger double-tap runs **Dictate, play or pause media**. It starts **Dictate** when a text field has input focus, a keyboard is shown or connected, and no call is active; it stops a dictation that is recording; otherwise it plays or pauses media. For the default gestures, see [](#appendix-gestures).
 
-On phones with a mute key, such as the Zinwa Q25, hold the mute key in a text field to dictate: recording starts when you press the key and stops when you release it. See [](#buttons-mute-key).
+On phones with a mute key, such as the Zinwa Q25, hold the mute key in a text field to dictate: recording starts when you press the key and stops when you release it. The setting is **Volume keys** > **Hold mute key to dictate in text fields**, on by default. See [](#buttons-mute-key).
 
 #### Choose how speech is recognized {#typing-speech-recognition}
 
@@ -297,4 +297,4 @@ While the handwriting keyboard is shown, only commands that open no window run, 
 
 ### Physical keyboards {#typing-physical-keyboard}
 
-While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Speak password characters** and **Android physical keyboard settings**. These settings are described in [](#keyboards).
+While a physical keyboard is connected, the **Physical keyboard** group of **Typing** has **Letter keys press keypad buttons**, **Enter sends messages**, **SandFly keyboard**, **Held keys type**, **Double-press characters**, **Double space types a period**, **Auto-correct**, **Word suggestions**, **Speak suggestion**, **Enter types the spoken suggestion**, **Word list language**, **Delete learned words**, **Speak password characters** and **Android physical keyboard settings**. These settings are described in [](#keyboards).

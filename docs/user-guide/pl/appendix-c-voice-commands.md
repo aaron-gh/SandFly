@@ -2,7 +2,7 @@
 
 Poniżej znajdziesz zwroty rozpoznawane przez polską wersję SandFly. Słowa pisane wielkimi literami zastąp nazwą, liczbą lub własną treścią. Na przykład „otwórz APLIKACJĘ” możesz powiedzieć jako „otwórz Chrome”. Słowa w nawiasach możesz pominąć. Ukośnik rozdziela możliwe warianty. Na przykład „opisz (ten) obraz” oznacza „opisz obraz” albo „opisz ten obraz”. W zapisie „pokaż/rozjaśnij ekran” wybierz „pokaż ekran” albo „rozjaśnij ekran”. Wielkość liter i interpunkcja dodana przez rozpoznawanie mowy nie mają znaczenia. Uruchamianie i łączenie poleceń oraz dodawanie własnych zwrotów opisano w [](#voice-commands).
 
-Możesz też powiedzieć nazwę widoczną na ekranie **Polecenia**, na przykład **Czytaj od góry**, **Następny element** lub **Opisz obraz**. Dotyczy to również nazw makr, własnych menu i poleceń skryptów. Własne zwroty mają pierwszeństwo przed przykładami z tego dodatku. Zobacz [](#voice-commands-phrases).
+Możesz też powiedzieć nazwę widoczną na ekranie **Polecenia**, na przykład **Czytaj od góry**, **Następny element** lub **Opisz obraz**. Dotyczy to również nazw makr, własnych menu i poleceń skryptów. Nazwa aplikacji otwiera aplikację, chyba że polecenie ma taką nazwę. Własne zwroty mają pierwszeństwo przed przykładami z tego dodatku. Zobacz [](#voice-commands-phrases).
 
 Przy niektórych poleceniach wystarczy, że wypowiedź zawiera określone słowo lub zwrot. W tabeli rozpoznasz je po opisie „Zwrot z”. Jeśli na przykład powiesz „przejdź do góry”, „do góry” przeniesie fokus na pierwszy element.
 
@@ -52,13 +52,36 @@ Te zwroty działają w polu edycji, na którym jest fokus.
 | Powiedz | Co zrobi SandFly |
 | --- | --- |
 | „Wpisz TEKST”, „napisz TEKST”, „wprowadź TEKST”, „pisz TEKST”, „wprowadź tekst TEKST”, „dyktuj TEKST” lub „przeliteruj TEKST” | Wpisze podany tekst. |
+| „Nowy wiersz”, „nowy akapit” lub „naciśnij enter” | Wstawi nowy wiersz w polu tekstowym z wieloma wierszami albo wykona czynność pola z jednym wierszem. |
 | „Zaznacz wszystko” | Zaznaczy cały tekst. |
 | „Zaznacz”, „zacznij zaznaczać”, „zacznij zaznaczanie” lub „uruchom tryb zaznaczania” | Włączy tryb zaznaczania. |
 | „Zakończ zaznaczanie”, „zakończ wybieranie”, „zamknij tryb zaznaczania” lub „skończ zaznaczać” | Zakończy tryb zaznaczania. |
-| Zwrot z „kopiuj” | Skopiuje zaznaczony tekst. |
-| Zwrot z „wytnij” | Wytnie zaznaczony tekst. |
+| Zwrot z „kopiuj” | Skopiuje zaznaczony tekst. Gdy pole tekstowe ma fokus, zobacz [](#appendix-voice-commands-text). |
+| Zwrot z „wytnij” | Wytnie zaznaczony tekst. Gdy pole tekstowe ma fokus, zobacz [](#appendix-voice-commands-text). |
 | Zwrot z „wklej” | Wklei tekst ze schowka. |
-| Zwrot z „usuń” | Usunie zaznaczony tekst. |
+| Zwrot z „usuń” | Usunie zaznaczony tekst. Gdy pole tekstowe ma fokus, zobacz [](#appendix-voice-commands-text). |
+
+### Tekst w polu tekstowym {#appendix-voice-commands-text}
+
+Te zwroty działają na tekście pola tekstowego, które ma fokus wprowadzania. JEDNOSTKI to liczba oraz „znaki”, „słowa”, „zdania”, „wiersze” lub „akapity”, np. „3 słowa” lub „pięć słów”, albo jedna z tych nazw bez liczby, np. „słowo”. Liczba to od 1 do 20 słownie lub cyframi. Działają też „litera” i „litery” oraz „linia” i „linie”. JEDNOSTKA to „słowa”, „zdania”, „wiersza”, „akapitu” lub „tekstu”. „Pola”, „pola tekstowego” i „dokumentu” też oznaczają cały tekst. Sposób liczenia i komunikaty SandFly opisuje [](#voice-commands-text).
+
+| Powiedz | Co zrobi SandFly |
+| --- | --- |
+| „Następne JEDNOSTKI”, „następny JEDNOSTKI”, „następną JEDNOSTKI”, „kolejne JEDNOSTKI”, „kolejny JEDNOSTKI”, „kolejną JEDNOSTKI”, „w prawo JEDNOSTKI” lub „do przodu JEDNOSTKI” | Przesunie kursor do przodu o podane jednostki. |
+| „Poprzednie JEDNOSTKI”, „poprzedni JEDNOSTKI”, „poprzednią JEDNOSTKI”, „ostatnie JEDNOSTKI”, „ostatni JEDNOSTKI”, „ostatnią JEDNOSTKI”, „w lewo JEDNOSTKI”, „wstecz JEDNOSTKI” lub „do tyłu JEDNOSTKI” | Przesunie kursor wstecz o podane jednostki. |
+| „Na początek JEDNOSTKA” lub „do początku JEDNOSTKA” | Przeniesie kursor na początek jednostki. |
+| „Na koniec JEDNOSTKA” lub „do końca JEDNOSTKA” | Przeniesie kursor na koniec jednostki. |
+| „Na początek” lub „do początku” | Przeniesie kursor na początek tekstu. |
+| „Na koniec” lub „do końca” | Przeniesie kursor na koniec tekstu. |
+| „Przesuń kursor” lub „przejdź” i jeden z powyższych zwrotów | Przesunie kursor, np. „przesuń kursor w lewo 3 słowa” lub „przejdź na koniec wiersza”. |
+| „Zaznacz” lub „wybierz” i jeden z powyższych zwrotów | Zaznaczy tekst od kursora, np. „zaznacz następne 2 słowa”. |
+| „Skopiuj” lub „kopiuj” i jeden z powyższych zwrotów | Skopiuje tekst od kursora, np. „skopiuj poprzednie zdanie”. |
+| „Wytnij” i jeden z powyższych zwrotów | Wytnie tekst od kursora, np. „wytnij do końca akapitu”. |
+| „Usuń”, „skasuj” lub „wymaż” i jeden z powyższych zwrotów | Usunie tekst od kursora, np. „usuń ostatnie 5 słów”. |
+| „Zaznacz TEKST” lub „wybierz TEKST” | Zaznaczy tekst w polu. Jeśli pole go nie zawiera, aktywuje element ekranu z tym tekstem. |
+| „Skopiuj TEKST” lub „kopiuj TEKST” | Skopiuje tekst w polu. |
+| „Wytnij TEKST” | Wytnie tekst w polu. |
+| „Usuń TEKST”, „skasuj TEKST” lub „wymaż TEKST” | Usunie tekst w polu. |
 
 ### Mowa {#appendix-voice-commands-speech}
 
@@ -113,6 +136,7 @@ KONTAKT oznacza nazwę zapisaną w kontaktach lub numer telefonu. APLIKACJA to n
 | „Napisz do KONTAKTU TEKST”, „napisz wiadomość do KONTAKTU TEKST”, „napisz SMS do KONTAKTU TEKST” lub „wyślij wiadomość do KONTAKTU TEKST” | Przygotuje wiadomość do kontaktu podanego przed treścią. |
 | „Wyślij wiadomość do KONTAKTU w APLIKACJI o treści TEKST”, „wyślij wiadomość do KONTAKTU przez APLIKACJĘ o treści TEKST”, „wyślij wiadomość APLIKACJA do KONTAKTU o treści TEKST” lub „napisz do KONTAKTU w APLIKACJI TEKST” | Przygotuje wiadomość w podanej aplikacji. |
 | „Wyślij wiadomość APLIKACJA do KONTAKTU” | Nagra treść, a potem przygotuje wiadomość w podanej aplikacji. |
+| „Odbierz połączenie” lub „Zakończ połączenie” | Uruchomi polecenie o tej nazwie: odbierze dzwoniące połączenie albo je odrzuci lub zakończy trwające połączenie. |
 
 Przed wysłaniem usłyszysz „Wysłać do KONTAKTU?” z treścią wiadomości lub bez niej, jeśli wysyłasz opis. Powiedz „tak”, „no”, „jasne”, „wyślij”, „wyślij to”, „OK”, „okej”, „dobrze” lub „zrób to”, żeby nacisnąć **Wyślij**. Przy innej odpowiedzi wiadomość pozostanie niewysłana. Usłyszysz „Wiadomość nie została wysłana”.
 

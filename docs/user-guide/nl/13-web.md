@@ -100,6 +100,8 @@ De browsemodus verandert wat de toetsen van een fysiek toetsenbord en de opdrach
 
 Gebruik de opdracht **Browsemodus aan- of uitzetten**, in de categorie **Web**, om de browsemodus aan of uit te zetten; je kunt deze aan een gebaar toewijzen. Elke keymap heeft hiervoor ook een sneltoets. Zie [](#keyboards).
 
+In de browsemodus gaat de toets voor snel zoeken met een letter of cijfer naar het volgende item dat met die letter of dat cijfer begint. **Sneltoetsen** > **Snel zoeken** > **Toets voor snel zoeken** kiest de toets; deze staat standaard uit. Zie [](#keyboards-fast-search).
+
 Deze instellingen staan op het scherm **Navigatie**:
 
 - **Slimme browsemodus**: zet de browsemodus aan of uit voor het gefocuste item. Standaard aan. SandFly zet de browsemodus aan als de focus naar een item in webinhoud gaat, en uit bij tekstvelden en bij bedieningselementen die de pijltoetsen gebruiken, zoals schuifregelaars, keuzelijsten, menubalken, menu's, boomstructuren, roosters, keuzelijsten met invoervak en spinbuttons. Als een toetsenbordopdracht de SandFly-focus naar een van deze items verplaatst, gaat de invoerfocus daar ook naartoe. Als je de browsemodus zelf uitzet in webinhoud, zet het verplaatsen van de focus binnen die webinhoud hem niet weer aan. De browsemodus gaat ook uit als de invoerfocus naar een tekstveld of schuifregelaar in een app gaat.

@@ -5,6 +5,8 @@ W ustawieniach SandFly otwórz **Pomoc i opinie**, aby uzyskać dostęp do tych 
 - **Podręcznik użytkownika** otwiera ten poradnik. Zobacz [](#getting-started-user-guide).
 - **Samouczek SandFly** uruchamia interaktywny samouczek. Zobacz [](#help-tutorial).
 - **Ćwiczenie gestów** otwiera lekcję poświęconą gestom. Zobacz [](#help-tutorial).
+- **Ćwiczenie klawiatury** włącza ćwiczenie klawiatury. SandFly odczytuje każdy naciśnięty klawisz i jego polecenie, ale niczego nie wykonuje. Opcja jest dostępna, gdy SandFly jest włączony, i nie jest widoczna na zegarkach. Zobacz [](#keyboards-practice).
+- **Trener gestów** zawiera ćwiczenia, które mierzą gesty i porównują je z limitami używanymi przez SandFly. Opcja nie jest widoczna na zegarkach i telewizorach. Zobacz [](#gestures-trainer).
 - **Prześlij opinię** pozwala zgłaszać problemy i sugestie autorowi SandFly oraz czytać odpowiedzi. Zobacz [](#help-feedback).
 - **Historia wersji** otwiera informacje o wszystkich wydaniach SandFly. Zobacz [](#help-version-history).
 - **Polityka prywatności** otwiera zasady dotyczące prywatności w SandFly. Zobacz [](#help-version-history).
@@ -60,7 +62,9 @@ Opcja **Dołącz dziennik SandFly** dodaje ostatnie wpisy, które mogą pomóc a
 - Dziennik zapisany w chwili otwarcia ekranu **Prześlij opinię**, gdy jest w nim jeszcze zgłaszany problem. W trybie podzielonego ekranu dziennik jest pobierany po wybraniu **Wyślij**, dzięki czemu najpierw możesz wywołać problem w drugiej aplikacji.
 - Ostatnie gesty rozpoznane przez SandFly.
 - Ostatnia awaria, ostatnie wyłączenie SandFly oraz przypadki, w których aplikacja przez chwilę nie odpowiadała.
-- Lista włączonych usług ułatwień dostępu i ostatnie naciśnięcia przycisków głośności.
+- Lista włączonych usług ułatwień dostępu i ostatnie naciśnięcia przycisków głośności i klawisza Enter.
+- Ostatnie komunikaty, powiadomienia, wyskakujące komunikaty i nazwy okien wysłane przez aplikacje, z nazwą aplikacji i początkiem tekstu.
+- Miejsce, do którego przeszedł fokus po **Wstecz**, czas sprawdzania warunków **Pokazuj w menu Czynności tylko, gdy** w makrach, informacje o tym, co odtwarza i nagrywa dźwięk, oraz wpisywanie z wyskakującego okna znaków alternatywnych Gboard.
 - Dzienniki innych procesów SandFly, np. funkcji AI działających na urządzeniu.
 
 Żeby w dzienniku pozostał zapis problemu, otwórz **Prześlij opinię** zaraz po jego wystąpieniu, przed wykonaniem innych czynności.

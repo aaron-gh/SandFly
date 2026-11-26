@@ -24,7 +24,17 @@ Przy pierwszym użyciu **Opisz ekran** pojawi się okno **Opis ekranu** z inform
 
 - **Szczegółowe opisy obrazów** pozwalają opisać obraz za pomocą wybranej usługi lub modelu. Domyślnie są wyłączone.
 - **Automatyczne opisy tekstu na obrazach** odczytują tekst po przejściu na obraz. Wybierz **Wszystkie obrazy**, **Tylko obrazy bez etykiet** (domyślnie) lub **Nie opisuj obrazów**. Rozpoznawanie tekstu odbywa się na urządzeniu.
+- **Rozpoznawanie tekstu cyrylicą** pobiera i usuwa modele rozpoznawania tekstu dla języków zapisywanych cyrylicą, takich jak rosyjski, ukraiński i serbski. Zobacz [](#descriptions-cyrillic-text). Opcja jest niedostępna na zegarkach.
 - **Rozpoznawanie na żywo** otwiera [ekran rozpoznawania](#descriptions-live-recognition). Opcja jest dostępna na urządzeniach z aparatem.
+
+### Rozpoznawanie tekstu cyrylicą {#descriptions-cyrillic-text}
+
+Rozpoznawanie tekstu odczytuje tekst zapisany cyrylicą za pomocą modelu dla danego języka, który najpierw trzeba pobrać. SandFly używa modelu języka mowy lub pierwszego języka telefonu zapisywanego cyrylicą. Bez modelu odczytywane są tylko litery łacińskie, a SandFly jednorazowo informuje, że model nie jest pobrany.
+
+1. Otwórz **Opisy obrazów i ekranu** > **Rozpoznawanie tekstu cyrylicą**.
+2. Wybierz język. Model o rozmiarze kilku megabajtów zostanie pobrany, za pierwszym razem razem z modelem liter łacińskich, aby odczytywać tekst w obu alfabetach. Przy komórkowej transmisji danych najpierw otwiera się okno potwierdzenia.
+
+Aby zatrzymać pobieranie, ponownie wybierz język. Aby usunąć model, wybierz pobrany język, a potem **Usuń**. Model liter łacińskich jest usuwany razem z ostatnim językiem.
 
 ### Opisz obraz {#descriptions-describe-image}
 
@@ -194,7 +204,9 @@ Każdy tryb możesz włączyć lub wyłączyć osobnym polem wyboru.
 - **Wskaż i czytaj** odczytuje tekst wskazany palcem w kadrze. Wybierz domyślne **Czytaj nad opuszkiem palca** lub **Czytaj pod opuszkiem palca**.
 - **Wykrywanie osób** opisuje osoby widoczne w kadrze.
 - **Wykrywanie drzwi** opisuje drzwi widoczne w kadrze.
+- **Wykrywanie kolorów** podaje kolory w środku kadru, np. „Ciemnoniebieski”, „Jasnoszary” lub „Czerwony i biały”, albo odczytuje „Mieszane kolory”, gdy żaden kolor nie zajmuje wystarczającej części kadru. Kolor jest odczytywany, gdy się zmieni i utrzyma przez około pół sekundy. Jasność i ciemność zależą od oświetlenia i automatycznej ekspozycji aparatu. SandFly rozpoznaje kolory na telefonie.
 - **Poziom światła** odczytuje poziom z czujnika, od **Ciemno** przez **Słabe światło**, **Normalne światło** i **Jasne światło** po **Bardzo jasne światło**. Ten tryb nie używa aparatu.
+- **Ton poziomu światła** odtwarza ciągły dźwięk, którego wysokość rośnie z jasnością obrazu z tylnego aparatu, od 200 Hz w ciemności do 1600 Hz w pełnym słońcu. Dźwięk ma głośność dźwięków SandFly i cichnie po wyłączeniu trybu lub opuszczeniu ekranu.
 
 W wierszu stanu zobaczysz **Aparat włączony** lub **Aparat wyłączony**. Gdy po raz pierwszy uruchomisz tryb korzystający z aparatu, pojawi się systemowa prośba o uprawnienie.
 

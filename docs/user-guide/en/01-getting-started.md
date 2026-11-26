@@ -91,7 +91,7 @@ Note: The tutorial only takes gestures that SandFly recognizes. If **Handle gest
 
 #### Keyboard tutorial {#getting-started-keyboard-tutorial}
 
-If a physical keyboard is connected when SandFly starts for the first time, SandFly opens the **SandFly keyboard tutorial** instead. It teaches the keyboard shortcuts of your keymap in 15 lessons, including **Keyboard shortcut list**, **Browse mode** for web pages, and **Keyboard practice**. When a device has both a touch screen and a physical keyboard, **SandFly tutorial** opens a dialog with **Touch tutorial** and **Keyboard tutorial**. See [](#keyboards).
+On a device with a physical keyboard and no touch screen, SandFly opens the **SandFly keyboard tutorial** the first time instead. It teaches the keyboard shortcuts of your keymap in 15 lessons, including **Keyboard shortcut list**, **Browse mode** for web pages, and **Keyboard practice**. When a device has both a touch screen and a physical keyboard, **SandFly tutorial** opens a dialog with **Touch tutorial** and **Keyboard tutorial**. See [](#keyboards).
 
 Watches and TVs have tutorials of their own. See [](#devices).
 

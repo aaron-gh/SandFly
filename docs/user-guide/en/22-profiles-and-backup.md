@@ -21,10 +21,10 @@ A profile can hold the main SandFly settings, the braille keyboard settings and 
 
 - **Gestures** > **Gesture layout** to **BlackBerry gestures**, with **Handle two-finger swipes in SandFly** on. See [](#gestures-layout).
 - On keyboard phones, the **BlackBerry keymap**. See [](#keyboards-phones).
-- The **BlackBerry** sound theme, which SandFly installs. Its sounds are SandFly's own, not BlackBerry's: no sound when focus moves, and sounds for screen changes, clicks, scrolling, the end of a list, errors and the keyboard showing or hiding. **Control sounds and vibrations** are off. See [](#sound).
+- The **BlackBerry** sound theme, which SandFly installs. The theme has SandFly sounds, not BlackBerry 10 sounds: no sound when focus moves, and sounds for screen changes, clicks, scrolling, the end of a list, errors and the keyboard showing or hiding. **Control sounds and vibrations** are off. See [](#sound).
 - No usage hints, list and grid positions, actions available or keyboard shown and hidden announcements. Kinds of control are still said, and pitch changes are on.
 
-Every other setting stays as it is. To change what BlackBerry mode sets, change the settings of the **BlackBerry mode** profile; see [](#profiles-change-settings). Turning BlackBerry mode off stops using the profile, and turning it on again uses the profile with your changes. To start again from the defaults, delete the profile. **Turn BlackBerry mode on or off**, under **SandFly** on the **Commands** screen, does the same from a gesture or a key, and also asks before turning it on.
+Every other setting stays as it is. To change what BlackBerry mode sets, change the settings of the **BlackBerry mode** profile; see [](#profiles-change-settings). Turning BlackBerry mode off stops using the profile, and turning it on again uses the profile with your changes. To start again from the defaults, delete the profile. **Turn BlackBerry mode on or off**, under **SandFly** on the **Commands** screen, does the same from a gesture or a key, and also opens the dialog before turning it on.
 
 BlackBerry mode is used everywhere, as **Use now** uses a profile, so it replaces another profile used that way.
 

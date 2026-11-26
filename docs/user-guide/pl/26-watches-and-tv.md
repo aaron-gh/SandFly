@@ -49,6 +49,7 @@ Na zegarku zwróć uwagę na te różnice.
 - Pozycja **Nowe funkcje w SandFly** w angielskim interfejsie zegarka nosi nazwę **What's new**.
 - Wstrzymywanie SandFly i opcja **Wznawianie SandFly** są niedostępne. Zobacz [](#pause).
 - Ćwiczenie gestów otworzysz po wybraniu **Ćwiczenie gestów** na początku ekranu **Gesty**. Otwiera się lekcja ćwiczeń z samouczka dla zegarka. Na zegarku tej pozycji nie ma w menu **Pomoc i opinie**.
+- Pozycji **Trener gestów** i **Ćwiczenie klawiatury** nie ma w menu **Pomoc i opinie**.
 - Jeśli na zegarku brakuje przeglądarki, opcje **Historia wersji** i **Polityka prywatności** wyświetlają adres odpowiedniej strony.
 
 Na zegarkach nie ma poniższych funkcji ani odpowiadających im ustawień.
@@ -101,7 +102,7 @@ Gdy na ekranie jest klawiatura, strzałki i przycisk wyboru obsługuje klawiatur
 
 Na telewizorach obowiązują poniższe różnice.
 
-- Ustawienia funkcji zależnych od ekranu dotykowego albo telefonu są ukryte. Dotyczy to m.in. opcji **Gesty**, **Dotyk bezpośredni**, **Odczytywanie stanu urządzenia**, **Używaj przeglądu SandFly**, **Używaj listy powiadomień SandFly**, **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha** oraz **Opisy obrazów i ekranu**. Ukryte są też ekrany ustawień **Menu SandFly** i **Sterowanie czytaniem**.
+- Ustawienia funkcji zależnych od ekranu dotykowego albo telefonu są ukryte. Dotyczy to m.in. opcji **Gesty**, **Trener gestów**, **Dotyk bezpośredni**, **Odczytywanie stanu urządzenia**, **Używaj przeglądu SandFly**, **Używaj listy powiadomień SandFly**, **Włączaj tryb głośnomówiący po odsunięciu telefonu od ucha** oraz **Opisy obrazów i ekranu**. Ukryte są też ekrany ustawień **Menu SandFly** i **Sterowanie czytaniem**.
 - Wstrzymywanie SandFly i opcja **Wznawianie SandFly** są niedostępne. Zobacz [](#pause).
 - Pierwsza pozycja w menu **Pomoc i opinie** otwiera samouczek dla telewizora, jeśli jest dostępny. Na telewizorze bez samouczka ta pozycja nazywa się **Pomoc**.
 - Na telewizorach często nie są wyświetlane powiadomienia, więc powiadomienie o aktualizacji może się nie pojawić. Aby zaktualizować SandFly, wybierz **Aktualizacje i instalacja** > **Sprawdź aktualizacje**. Zobacz [](#updates-check).

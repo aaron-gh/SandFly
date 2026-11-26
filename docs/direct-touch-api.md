@@ -155,7 +155,7 @@ If SandFly restarts, the connection reports `onServiceDisconnected`, then `onSer
 
 ## Keyboards in an accessibility overlay
 
-A keyboard that has an accessibility service of its own and draws its keys in an accessibility overlay sets the touch exploration pass-through region for that overlay itself. Android keeps one region for all accessibility services, so any region SandFly set would replace the keyboard's. While such a keyboard is the default keyboard, its accessibility service is on and its overlay is on screen, SandFly adds the overlay's bounds to every pass-through region it sets, such as for direct touch or the navigation bar. A SandFly feature that takes the whole pass-through region for a moment, such as the circle menu, still gets it alone, and locking touch still clears it.
+A keyboard that has an accessibility service of its own and draws its keys in an accessibility overlay sets the touch exploration pass-through region for that overlay itself. Android keeps one region for all accessibility services, so any region SandFly set would replace the region of the keyboard. While such a keyboard is the default keyboard, its accessibility service is on and its overlay is on screen, SandFly adds the bounds of the overlay to every pass-through region it sets, such as for direct touch or the navigation bar. A SandFly feature that takes the whole pass-through region for a moment, such as the circle menu, still gets it alone, and locking touch still clears it.
 
 To check whether the installed SandFly does this, read the `io.github.aaron_gh.sandfly.keeps_keyboard_region` meta-data of its direct touch service. It needs no permission, only the `<queries>` element above:
 
@@ -172,7 +172,7 @@ val keepsKeyboardRegion =
     ?.getBoolean("io.github.aaron_gh.sandfly.keeps_keyboard_region") == true
 ```
 
-SandFly 0.7.0 and earlier have no such meta-data, and can replace the keyboard's region.
+SandFly 0.7.0 and earlier have no such meta-data, and can replace the region of the keyboard.
 
 ## Deprecated names
 
@@ -186,7 +186,7 @@ These names are deprecated:
 
 The deprecated action binds the deprecated interface, so change both together. A manifest with both meta-data keys is read with the new one.
 
-SandFly 27.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
+SandFly 0.8.0 and later still take these names from apps built against them, and log a warning with the tag `SandFlyApi` the first time each app uses one while SandFly runs. To see the warnings:
 
 ```sh
 adb logcat -s SandFlyApi

@@ -22,7 +22,7 @@ Gesty wykonywane co najmniej dwoma palcami wymagają Androida 11 lub nowszego.
 
 Stuknij dwa razy jednym palcem, aby aktywować element, na którym jest fokus. Jeśli chcesz wykonać długie naciśnięcie tego elementu, po drugim stuknięciu przytrzymaj palec na ekranie.
 
-Na ekranie **Gesty** nie przypiszesz własnego polecenia do tych dwóch gestów ani do zwykłego pojedynczego stuknięcia jednym palcem. W kategorii **1 palec** znajdziesz też **Kliknij trzykrotnie** i **Kliknij czterokrotnie**. Oba gesty działają w dowolnym miejscu na ekranie i domyślnie nie mają przypisań. [Stuknięcia w rogach ekranu](#gestures-corners) mają osobne przypisania.
+Na ekranie **Gesty** nie przypiszesz własnego polecenia do tych dwóch gestów ani do zwykłego pojedynczego stuknięcia jednym palcem. W kategorii **1 palec** znajdziesz też **Kliknij trzykrotnie** i **Kliknij czterokrotnie**. Oba gesty działają w dowolnym miejscu na ekranie i domyślnie nie mają przypisań. Na zegarku te gesty są niedostępne. [Stuknięcia w rogach ekranu](#gestures-corners) mają osobne przypisania.
 
 Dwoma, trzema i czterema palcami możesz stuknąć raz, dwa lub trzy razy. Po drugim stuknięciu możesz też przytrzymać palce na ekranie. Dwoma lub trzema palcami możesz zakończyć w ten sposób również trzy stuknięcia. Trzema palcami da się ponadto stuknąć raz i przytrzymać albo stuknąć cztery razy.
 
@@ -247,14 +247,29 @@ Na zegarku znajdziesz też opcję **Zarezerwuj gesty dla Vibration Watch**. Szcz
 
 #### Układ gestów {#gestures-layout}
 
-W ustawieniach **Gesty** wybierz **Układ gestów**. Dostępne są dwa zestawy przypisań.
+W ustawieniach **Gesty** wybierz **Układ gestów**. Dostępne są trzy zestawy przypisań.
 
 - **Gesty SandFly** to układ domyślny.
 - **Gesty VoiceOver** działają podobnie do gestów czytnika na iPhonie. Stuknięcie dwoma palcami wstrzymuje mowę. Stuknięcie dwa razy dwoma palcami uruchamia **Dyktuj, odtwórz lub wstrzymaj multimedia**. Przesuń trzema palcami, żeby przewinąć ekran. Gdy stukniesz trzema palcami, SandFly wykona polecenie **Odczytaj pozycję**. Gesty, których nie ma w VoiceOver, mają wartość **Nieprzypisany** i możesz ustawić je samodzielnie.
+- **Gesty BlackBerry** działają podobnie do gestów BlackBerry 10 Screen Reader (BlackBerry 10 OS 10.3). Nie wszystkie gesty są takie same. Przesunięcia w prawo i w lewo przechodzą według ustawienia nawigacji, a przesunięcia w górę i w dół wybierają następne lub poprzednie ustawienie nawigacji, na przykład znaki, słowa lub wiersze. Przesunięcie w dół, a potem w lewo wstrzymuje mowę. Przesunięcie w dół, a potem w prawo uruchamia szybkie zadania. Przesunięcie w dół, a potem w górę odczytuje godzinę i datę, a przesunięcie w górę, a potem w dół odczytuje stan urządzenia. Stuknięcie dwoma palcami odczytuje tytuł ekranu. Stuknięcie dwa razy dwoma palcami uruchamia **Dyktuj, odtwórz lub wstrzymaj multimedia**, które odbiera i kończy połączenia, a stuknięcie dwa razy dwoma palcami z przytrzymaniem kończy połączenie. Przesunięcia dwoma palcami w górę i w dół przewijają wstecz i do przodu, a przesunięcie dwoma palcami w dół, a potem w lewo włącza lub wyłącza mowę. Przesunięcie trzema palcami w dół czyta od góry, a przesunięcia trzema palcami w prawo i w lewo przewijają w lewo i w prawo. **Przesuń palcem w dół od lewego górnego rogu** i **Przesuń palcem w dół od prawego górnego rogu** otwierają szybkie ustawienia, a długie przesunięcia otwierają powiadomienia. Gesty, których nie ma w BlackBerry 10 Screen Reader, mają wartość **Nieprzypisany** i możesz ustawić je samodzielnie. Zobacz [](#gestures-quick-tasks). Te gesty mogą być nieznane, jeśli nie używałeś BlackBerry 10, dlatego ich wybór otwiera okno **Używać gestów BlackBerry?**. Wybierz **Używaj**, aby potwierdzić. Tego układu nie ma w oknie **Wybierz gesty**.
 
-Przy pierwszym uruchomieniu SandFly wybierasz układ w oknie **Wybierz gesty**. SandFly zapisuje zmiany osobno dla każdego układu. Jeśli później wrócisz do poprzedniego, odzyskasz jego przypisania. Gesty ustawione dla aplikacji i profile gestów działają w obu układach.
+Przy pierwszym uruchomieniu SandFly wybierasz układ w oknie **Wybierz gesty**. SandFly zapisuje zmiany osobno dla każdego układu. Jeśli później wrócisz do poprzedniego, odzyskasz jego przypisania. Gesty ustawione dla aplikacji i profile gestów działają we wszystkich układach.
 
-Przełączenie układu zmienia też ustawienie **Obsługuj przesunięcia dwoma palcami w SandFly**. Układ **Gesty VoiceOver** włącza tę opcję, a **Gesty SandFly** ją wyłącza.
+Przełączenie układu zmienia też ustawienie **Obsługuj przesunięcia dwoma palcami w SandFly**. Układ **Gesty VoiceOver** włącza tę opcję, a **Gesty SandFly** ją wyłącza. W układach **Gesty VoiceOver** i **Gesty BlackBerry** polecenie **Ekran główny** na ekranie blokady wysyła przesunięcie dwoma palcami w górę. Odblokowuje to telefon albo wyświetla pole kodu PIN, wzoru lub hasła.
+
+#### Szybkie zadania {#gestures-quick-tasks}
+
+Polecenie **Szybkie zadania** działa podobnie do trybu Quick Tasks w BlackBerry 10 Screen Reader. SandFly odczytuje „Szybkie zadania”, a przez 3 sekundy poniższe gesty uruchamiają podane polecenia.
+
+| Gest | Polecenie |
+| --- | --- |
+| Przesunięcie w górę, przesunięcie w dół | Zwiększ głośność, Zmniejsz głośność |
+| Przesunięcie w prawo, przesunięcie w lewo | Zwiększ szybkość mowy, Zmniejsz szybkość mowy |
+| Przesunięcie dwoma palcami w górę | Powtórz ostatnią wypowiedź |
+| Przesunięcie dwoma palcami w dół | Przeliteruj ostatnią wypowiedź |
+| Stuknięcie dwoma palcami | Ukryj lub pokaż ekran |
+
+Każdy z tych gestów wydłuża czas o kolejne 3 sekundy. Inny gest kończy szybkie zadania i uruchamia własne polecenie. Po upływie czasu telefon wibruje. W układzie **Gesty BlackBerry** szybkie zadania uruchamia przesunięcie w dół, a potem w prawo. W innych układach przypisz polecenie na ekranie **Gesty**. Na ekranie **Polecenia** znajdziesz je w grupie **SandFly**.
 
 #### Obsługa przesunięć dwoma palcami w SandFly {#gestures-two-finger-swipes}
 
@@ -264,7 +279,7 @@ Po włączeniu opcji przesunięcia uruchamiają przypisane polecenia SandFly. Na
 
 #### Ustawienia czasu rozpoznawania gestów {#gestures-timing}
 
-- **Maksymalny odstęp między kliknięciami jednym palcem** daje od 0,1 do 2 sekund na kolejne stuknięcie. Domyślna wartość to 0,25 sekundy. Skróć odstęp, jeśli chcesz, żeby SandFly szybciej reagował na dwukrotne stuknięcie. Jeśli stukniesz za wolno, SandFly rozpozna dwa osobne dotknięcia. Wydłuż odstęp, jeśli potrzebujesz więcej czasu na drugie stuknięcie. SandFly poczeka wtedy dłużej także po stuknięciu w róg lub pojedynczym stuknięciu kilkoma palcami. W gestach wykonywanych kilkoma palcami masz zawsze co najmniej 0,25 sekundy na kolejne stuknięcie.
+- **Maksymalny odstęp między kliknięciami jednym palcem** daje od 0,1 do 2 sekund na kolejne stuknięcie. Domyślna wartość to 0,25 sekundy. Skróć odstęp, jeśli chcesz, żeby SandFly szybciej reagował na dwukrotne stuknięcie. Jeśli stukniesz za wolno, SandFly rozpozna dwa osobne dotknięcia. Wydłuż odstęp, jeśli potrzebujesz więcej czasu na drugie stuknięcie. SandFly poczeka wtedy dłużej także po stuknięciu w róg lub pojedynczym stuknięciu kilkoma palcami. Przy odstępie dłuższym niż 0,3 sekundy pojedyncze stuknięcie przenosi fokus na element pod palcem 0,25 sekundy po uniesieniu palca, a drugie stuknięcie w tym czasie nadal aktywuje ten element. W gestach wykonywanych kilkoma palcami masz zawsze co najmniej 0,25 sekundy na kolejne stuknięcie.
 - W opcji **Czas przytrzymania po przesunięciu** ustawiasz, jak długo trzeba trzymać palec w miejscu, by wykonać [gest z przytrzymaniem](#gestures-swipe-and-hold). Do wyboru masz od 0,1 do 0,5 sekundy. Domyślnie jest to 0,25 sekundy.
 - **Czas rozpoczęcia gestu** wyznacza, ile czasu masz na przebycie pierwszego centymetra jednym palcem. Możesz ustawić od 0,15 do 2 sekund. Domyślna wartość to 0,15 sekundy. Jeśli palec w tym czasie nie przebył centymetra, SandFly zacznie odczytywać elementy pod nim. Wydłuż czas, jeśli zdarza się to przy celowo wolniejszych przesunięciach.
 - **Odstęp między przesunięciami dwuetapowymi** daje 0,25, 0,5, 1, 1,5 lub 2 sekundy na rozpoczęcie drugiego ruchu. Czas biegnie od uniesienia palca po pierwszym ruchu. Przy domyślnej wartości **Wyłączone** SandFly nie rozpoznaje [gestów dwuetapowych](#gestures-two-stroke) i ukrywa ich kategorie.
@@ -358,3 +373,15 @@ Nowy skrót pojawi się na liście. Możesz tam zmienić jego nazwę lub go usun
 ### Przećwicz gesty {#gestures-practice}
 
 Wybierz **Ćwiczenie gestów** na ekranie **Gesty** lub użyj polecenia o tej samej nazwie. Próbuj dowolnych gestów. Po każdym SandFly odczyta tylko nazwę przypisanego polecenia.
+
+### Trener gestów {#gestures-trainer}
+
+**Pomoc i opinie** > **Trener gestów** mierzy gesty i porównuje je z limitami, których SandFly używa przy Twoich ustawieniach. Funkcja wymaga Androida 13 lub nowszego i jest niedostępna na zegarkach i telewizorach.
+
+1. Wybierz grupę, na przykład **Jeden palec**, **Menu krawędzi** lub **Stuknięcie w tył urządzenia**.
+2. Przeczytaj opis gestu i wybierz **Start**.
+3. Wykonaj gest 3 razy. Po każdej próbie SandFly odczytuje wynik.
+
+Podczas prób każde dotknięcie jest próbą, a gesty nie uruchamiają poleceń. Po ostatniej próbie ekran pokazuje pomiary każdej próby, wskazówki, co zmienić, oraz ustawienia wpływające na limity, każde z przyciskiem. **Powtórz** rozpoczyna próby od nowa, **Następne ćwiczenie** przechodzi do następnego gestu, a **Spis treści** pokazuje ćwiczenia z grupy.
+
+Grupa pomija gesty wyłączone w Twoich ustawieniach i podaje, które ustawienie je wyłącza. Krawędź bez menu krawędzi ćwiczysz na przykładowych elementach, które nie uruchamiają poleceń.

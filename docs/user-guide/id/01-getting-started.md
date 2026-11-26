@@ -91,7 +91,7 @@ Catatan: Tutorial hanya menerima gerakan yang dikenali oleh SandFly. Jika **Kelo
 
 #### Tutorial keyboard {#getting-started-keyboard-tutorial}
 
-Jika keyboard fisik tersambung saat SandFly dimulai untuk pertama kali, SandFly membuka **Tutorial keyboard SandFly** sebagai gantinya. Tutorial ini mengajarkan pintasan keyboard dari peta tombol Anda dalam 15 pelajaran, termasuk **Daftar pintasan keyboard**, **Mode penjelajahan** untuk halaman web, dan **Latihan keyboard**. Saat perangkat memiliki layar sentuh sekaligus keyboard fisik, **Tutorial SandFly** membuka dialog berisi **Tutorial gerakan sentuh** dan **Tutorial keyboard**. Lihat [](#keyboards).
+Pada perangkat dengan keyboard fisik dan tanpa layar sentuh, SandFly membuka **Tutorial keyboard SandFly** saat pertama kali dimulai sebagai gantinya. Tutorial ini mengajarkan pintasan keyboard dari peta tombol Anda dalam 15 pelajaran, termasuk **Daftar pintasan keyboard**, **Mode penjelajahan** untuk halaman web, dan **Latihan keyboard**. Saat perangkat memiliki layar sentuh sekaligus keyboard fisik, **Tutorial SandFly** membuka dialog berisi **Tutorial gerakan sentuh** dan **Tutorial keyboard**. Lihat [](#keyboards).
 
 Jam tangan dan TV memiliki tutorialnya sendiri. Lihat [](#devices).
 
@@ -143,6 +143,8 @@ Layar **Gerakan** dan **Pintasan keyboard** memiliki **Telusuri** sendiri, yang 
 ### Panduan pengguna {#getting-started-user-guide}
 
 Panduan ini dibuka dari **Bantuan & masukan** > **Panduan pengguna** di setelan SandFly. Panduan diawali daftar isi, dan tautan di dalam teks mengarah ke bagian yang disebutkannya. Panduan ditampilkan dalam bahasa SandFly. Bab yang belum diterjemahkan ke bahasa tersebut ditampilkan dalam bahasa Inggris.
+
+Sebagian besar layar setelan SandFly memiliki **Bantuan** di bilah aplikasi, setelah judul layar. **Bantuan** membuka bagian panduan ini tentang layar tersebut. Tautan di bagian itu ke bagian lain membuka bagian tersebut, dan **Kembali ke daftar isi** membuka seluruh panduan.
 
 ### Pindah dari Backtalk Aaron {#getting-started-backtalk}
 

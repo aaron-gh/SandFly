@@ -33,7 +33,7 @@ A keymap is a set of keyboard shortcuts. SandFly has these keymaps:
 - **JAWS keymap**: the desktop keystrokes of JAWS, with its laptop keys for clicks and cursors, with the SandFly key as the JAWS key. Its SandFly key is Insert, Numpad Insert or Meta, Insert by default.
 - **Orca keymap**: the laptop layout of Orca, with the SandFly key as the Orca modifier. Its SandFly key is Insert, Numpad Insert, Meta or Alt, Insert by default.
 - **Keyboard phone keymap** and **Keyboard phone single-key keymap**: for phones with a built-in keyboard that has no Ctrl, Meta or arrow keys. See [](#keyboards-phones).
-- **BlackBerry keymap**: keys similar to those of the BlackBerry 10 Screen Reader, for keyboard phones. See [](#keyboards-phones).
+- **BlackBerry keymap**: keys similar to those of the BlackBerry 10 Screen Reader, for keyboard phones. BlackBerry mode chooses it on keyboard phones. See [](#keyboards-phones) and [](#profiles-blackberry-mode).
 - Keymaps that you make. See [](#keyboards-custom-keymaps).
 
 In the NVDA, JAWS and Orca keymaps, the arrow keys and Tab move without the SandFly key, as on a computer. See [](#keyboards-desktop).
@@ -159,7 +159,7 @@ The same screen has the gestures of each app. For gestures in apps, see [](#gest
 
 ### Find a keyboard shortcut {#keyboards-shortcut-list}
 
-**Show keyboard shortcuts list** opens a list of every command and its shortcut, which you can search. Its default shortcut is SandFly key + Shift + / in the SandFly, VoiceOver and Orca keymaps, SandFly key + Q in the keyboard phone keymap, and Q in the keyboard phone single-key keymap.
+**Show keyboard shortcuts list** opens a list of every command and its shortcut, which you can search. Its default shortcut is SandFly key + Shift + / in the SandFly, VoiceOver, NVDA, JAWS and Orca keymaps, SandFly key + Q in the keyboard phone and BlackBerry keymaps, and Q in the keyboard phone single-key keymap.
 
 **Keyboard shortcuts** > **Search** finds a command by its name or keys in settings. For the default shortcuts of every keymap, see [](#appendix-keyboard-shortcuts).
 
@@ -175,9 +175,9 @@ While keyboard practice is on, SandFly says each key that you press and the comm
 
 To turn keyboard practice on, select **Keyboard shortcuts** > **Keyboard practice** or **Help & feedback** > **Keyboard practice**, or press the shortcut of **Turn keyboard practice on or off**: SandFly key + K in the VoiceOver keymap, SandFly key + 1 in the NVDA and JAWS keymaps, SandFly key + H in the Orca keymap, and SandFly key + Shift + K in the keyboard phone keymaps. The SandFly keymap has no default shortcut. SandFly says "Keyboard practice on".
 
-To turn it off, press the shortcut again, Back or Escape. SandFly says "Keyboard practice off". Keyboard practice is also off when SandFly restarts.
+To turn it off, press the shortcut again, Back or Escape. SandFly says "Keyboard practice off". Keyboard practice also turns off when SandFly restarts or is suspended.
 
-**Turn keyboard practice on or off** is in the **SandFly** category, so you can also assign it to a gesture or add it to the SandFly menu. Volume keys pressed without the SandFly key change the volume as usual. The **Keyboard practice** lesson of the keyboard tutorial is different: it says only keyboard shortcuts, on the tutorial screen. To open it, choose **Contents** in the keyboard tutorial.
+**Turn keyboard practice on or off** is in the **SandFly** category, so you can also assign it to a gesture or add it to the SandFly menu. Volume keys pressed without the SandFly key change the volume as usual. The **Keyboard practice** lesson of the keyboard tutorial is different: it says only keyboard shortcuts, on the tutorial screen. To open it, choose **Contents** in the keyboard tutorial, or run **Practice keyboard shortcuts**, SandFly key + 0 in the SandFly keymap.
 
 ### Browse mode {#keyboards-browse-mode}
 
@@ -196,7 +196,7 @@ The default shortcut of **Turn browse mode on or off** is:
 
 SandFly plays a sound or says "Browse mode on" or "Browse mode off".
 
-In the keyboard phone keymaps, the commands that need browse mode in other keymaps work without it. In the keyboard phone single-key keymap, browse mode changes what letters do: B, C, D, I, K, L, R, T, U, V, X and the number keys 1 to 6 move as in the SandFly keymap's browse mode, and H, F, E and G move by heading, control, edit field and graphic in and outside browse mode. The SandFly key with one of these letters runs its shortcut outside browse mode, such as SandFly key + B for the bottom of the screen and SandFly key + K to move by the reading control. See [](#keyboards-phones).
+In the keyboard phone keymaps, the commands that need browse mode in other keymaps work without it. In the keyboard phone single-key keymap, browse mode changes what letters do: B, C, D, I, K, L, R, T, U, V, X and the number keys 1 to 6 move as in browse mode of the SandFly keymap, and H, F, E and G move by heading, control, edit field and graphic in and outside browse mode. The SandFly key with one of these letters runs its shortcut outside browse mode, such as SandFly key + B for the bottom of the screen and SandFly key + K to move by the reading control. K and Shift + K in browse mode are **Navigate to next link, second key** and **Navigate to previous link, second key** in **Keyboard shortcuts**. See [](#keyboards-phones).
 
 Two settings in **Navigation** change when browse mode is on:
 
@@ -209,7 +209,7 @@ For navigation by web elements, see [](#web).
 
 In browse mode, the fast search key with a letter or digit moves SandFly focus to the next item that starts with that letter or digit. Shift with both keys moves to the previous one. Case and accents don't matter: E finds "Email" and "Écran".
 
-To choose the key, go to **Keyboard shortcuts** > **Fast search** > **Fast search key**. It's Off by default. The list has Alt, Ctrl, Meta, each of them left or right, Sym and Fn, except keys that are part of the keymap's SandFly key. If you change the SandFly key to one that includes the fast search key, fast search is off for that keymap.
+To choose the key, go to **Keyboard shortcuts** > **Fast search** > **Fast search key**. It's Off by default. The list has Alt, Ctrl, Meta, each of them left or right, Sym and Fn, except keys that are part of the SandFly key of the keymap. If you change the SandFly key to one that includes the fast search key, fast search is off for that keymap.
 
 Fast search doesn't work in a text field you are typing in. While the fast search key is held, its letters and digits don't run other shortcuts.
 
@@ -343,7 +343,7 @@ In all three keymaps:
 - Arrow key navigation is on by default. A press of a trackpad that sends Enter, such as on the Zinwa Q25, activates the item.
 - With Alt as the SandFly key, Alt with a letter types its digit or symbol in a text field being edited.
 - Shortcuts with Sym, Fn or Ctrl work in text fields too.
-- SandFly key + L locks or unlocks touch in the keyboard phone keymap. See [](#touch).
+- SandFly key + L locks or unlocks touch in the keyboard phone and BlackBerry keymaps, and Shift + Z in the keyboard phone single-key keymap. See [](#touch).
 - SandFly key + V holds a touch on the focused item, such as the voice message button of a messaging app. See [](#keyboards-touch-hold).
 - SandFly key + Y spells the password field being edited. See [](#keyboards-passwords).
 
@@ -364,13 +364,13 @@ With Sym as the SandFly key, the symbol layer of the keyboard isn't available fr
 
 **Typing** > **Physical keyboard** is shown while a physical keyboard is connected:
 
-- **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, as on BlackBerry, Unihertz and Zinwa phones where W, E and R are 1, 2 and 3, letter keys press the buttons of the lock screen PIN pad, the call keypad, where they play the keypad tones, and calculators, where the Alt characters of letters, such as + and -, press the operator buttons. A letter on the lock screen before the PIN pad shows opens it, or unlocks the device where no PIN is needed, as while Extend Unlock keeps it unlocked. Keys with a modifier, digit keys and keys typed into a text field aren't taken. It's on by default, and shown only for such keyboards.
+- **Letter keys press keypad buttons**: on keyboards whose letters carry numbers, as on BlackBerry, Unihertz and Zinwa phones where W, E and R are 1, 2 and 3, letter keys press the buttons of the lock screen PIN pad, the call keypad, where they play the keypad tones, and calculators, where the Alt characters of letters, such as + and -, press the operator buttons. On the lock screen, digit keys also press the PIN pad buttons, and Enter and Backspace press its Enter and Delete buttons. A letter or digit pressed before the PIN pad shows opens it and types the digit, or unlocks the device where no PIN is needed, as while Extend Unlock keeps it unlocked. Keys with a modifier, digit keys outside the lock screen, and keys typed into a text field, such as a lock screen password field, aren't taken. It's on by default, and shown only for such keyboards.
 - **Enter sends messages**: in the message field of a messaging app, such as Messages, WhatsApp, Telegram, Signal or Slack, with text in it, Enter presses the Send button of the app. Shift + Enter and Alt + Enter go to the app, which types a new line. While arrow key navigation is on, and in the keyboard phone keymaps, Enter on a message field that SandFly focus moved to doesn't send until the field is activated or typed into. It works with any physical keyboard, and is off by default. The Send key of a keyboard phone, such as the green call key of the Zinwa Q25, presses the Send button in the same message fields whether this setting is on or off. In those apps it also presses a Send button shown outside the field, such as the one for a voice message being recorded; elsewhere it goes to the phone as usual.
 - **SandFly keyboard**: opens the list of keyboards in Android settings, where you turn on the SandFly keyboard. See [](#keyboards-sandfly-keyboard).
 - **Held keys type**: what a key held down types with the SandFly keyboard.
 - **Double-press characters**: what a key pressed twice types with the SandFly keyboard. See [](#keyboards-double-press).
 - **Double space types a period**: with the SandFly keyboard, Space pressed twice after a word types a period and a space. Off by default.
-- **Auto-correct**, **Word suggestions**, **Speak suggestion**, **Enter types the spoken suggestion**, **Word list language** and **Delete learned words**: corrections and suggestions for the word being typed with the SandFly keyboard. Both are off by default. See [](#keyboards-word-suggestions).
+- **Auto-correct**, **Word suggestions**, **Speak suggestion**, **Enter types the spoken suggestion**, **Word list language** and **Delete learned words**: corrections and suggestions for the word being typed with the SandFly keyboard. **Auto-correct** and **Word suggestions** are off by default. See [](#keyboards-word-suggestions).
 - **Speak password characters**: with the SandFly keyboard, in password fields, SandFly says each character typed, deleted or passed over instead of "bullet". Off by default. See [](#keyboards-passwords).
 - **Android physical keyboard settings**: opens the physical keyboard settings of Android, such as the keyboard layout.
 
@@ -473,11 +473,11 @@ To undo a correction, press Backspace straight after it. SandFly says the word a
 
 Words you type and choose rank higher in suggestions. These learned words, and the words whose correction you undid, are kept on the phone only, for each language. **Delete learned words** deletes them. Nothing is learned in password fields or in fields that turn off learning, such as private browsing.
 
-**Word list language** sets the language of the words: **System language**, the default, or one of English (US), English (UK), German, Spanish, French, Portuguese (Brazil), Portuguese (Portugal), Hungarian, Turkish, Russian, Ukrainian and Arabic. Without a word list for the system language, nothing is corrected or suggested until you choose one. Corrections take the keys of your keyboard layout into account: a letter typed for the key next to it is corrected first. A letter typed without its accent, such as fur for für, is corrected too.
+**Word list language** sets the language of the words: **System language**, the default, or one of English (US), English (UK), German, Spanish, French, Portuguese (Brazil), Portuguese (Portugal), Hungarian, Turkish, Russian, Ukrainian and Arabic, each listed by its own name, such as Deutsch. Without a word list for the system language, nothing is corrected or suggested until you choose one. Corrections take the keys of your keyboard layout into account: a letter typed for the key next to it is corrected first. A letter typed without its accent, such as fur for für, is corrected too.
 
-Auto-correct and word suggestions aren't used in password, email address, web address and number fields, nor in fields that ask keyboards for no suggestions.
+Auto-correct and word suggestions aren't used in password, email address, web address and number fields, nor in fields marked for no suggestions.
 
-Without arrow keys, use the commands **Next word suggestion**, **Previous word suggestion** and **Type word suggestion**, in the **Text editing** category. They have no default shortcuts: assign them in **Keyboard shortcuts**, where **Only while editing** keeps the keys for typing elsewhere, or assign them to gestures. **Type word suggestion** types the suggestion said last, or the first suggestion for the word typed. With touch, add the **Word suggestions** reading control, in **Reading controls**: while a word is typed, swipe up or down to go through the suggestions, and double-tap to type the one SandFly said. It is off by default and needs Android 11 or later.
+Without arrow keys, use the commands **Next word suggestion**, **Previous word suggestion** and **Type word suggestion**, in the **Text editing** category. They have no default shortcuts: assign them in **Keyboard shortcuts**, where **Only while editing** keeps the keys for typing elsewhere, or assign them to gestures. **Type word suggestion** types the suggestion said last, or the first suggestion for the word typed. With touch, add the **Word suggestions** reading control, in the **Actions for current item** group of **Reading controls**: while a word is typed, swipe up or down to go through the suggestions, and double-tap to type the one SandFly said. It is off by default and needs Android 11 or later.
 
 #### Password fields {#keyboards-passwords}
 
@@ -496,7 +496,7 @@ Text pasted or filled in, a cleared field, a selection and moves over more than 
 
 Password characters are spoken only in these two ways. They aren't kept for **Repeat last spoken phrase**, **Spell last spoken phrase**, **Copy last spoken phrase** or **Speech history**, and SandFly logs only how many characters a field has.
 
-Android's own text fields give the SandFly keyboard their text, and so do most apps. Where an app gives none, SandFly says "bullet" as before, and **Spell the password field** says "Password field text not available".
+Standard Android text fields give the SandFly keyboard their text, and so do most apps. Where an app gives none, SandFly says "bullet" as before, and **Spell the password field** says "Password field text not available".
 
 ### Other keyboard settings {#keyboards-other-settings}
 

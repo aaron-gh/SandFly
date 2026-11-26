@@ -80,9 +80,9 @@ To record the installer as a normal install again, run `adb install -r sandfly.a
 
 1. Install Shizuku and start it, as the Shizuku app describes. On Android 11 and later, Shizuku can start with wireless debugging, without a computer. On a rooted device, Shizuku can also start with root.
 2. Turn on SandFly, or turn it off and on again if it is on.
-3. When SandFly starts with Shizuku running, Shizuku asks whether to allow SandFly. Choose to allow it.
+3. When SandFly starts with Shizuku running, Shizuku shows a dialog to allow SandFly. Choose to allow it.
 
-SandFly asks Shizuku only once by itself. After that, a feature that needs Shizuku asks when you turn it on. If you chose to deny SandFly and not ask again, allow SandFly in the Shizuku app.
+SandFly requests Shizuku access only once by itself. After that, the Shizuku dialog opens when you turn on a feature that needs Shizuku. If you chose to deny SandFly and not ask again, allow SandFly in the Shizuku app.
 
 Shizuku started with wireless debugging or adb stops when the device restarts. Start it again in the Shizuku app.
 
@@ -99,6 +99,8 @@ Without Shizuku or root, these features are unavailable or work in a limited way
 - The clipboard history adds text copied in other apps only through Shizuku or root, with **Add copies from other apps** in the history. See [](#typing).
 - Gboard plays its own key feedback, such as **Vibrate on keypress**, while you explore its keys only through Shizuku or root. See [](#typing).
 - Commands that run the accessibility shortcut of another accessibility service. See [](#commands).
+- The **App tiles** and **System tiles** commands, and **Add system tile** in the quick settings panel settings. Without Shizuku or root, a tile works only if it is in the system quick settings, and **Add system tile** looks through the system quick settings to find the tiles. See [](#commands-categories) and [](#display-quick-settings).
+- App shortcuts that an app adds while it runs, and shortcuts that only the home screen app may open, are listed only through Shizuku or root. See [](#gestures-app-shortcuts).
 - Scripts and macros that press keys, or type text where there is no text field, and macro steps that change the quick settings controls listed above. See [](#scripts) and [](#macros).
 - **Updates and installation** > **Appear installed from Google Play**. See [](#updates-play-installer).
 
@@ -134,6 +136,6 @@ The commands are:
 
 On a rooted device, SandFly can run its commands with root instead of Shizuku. Turn on **Shizuku and root** > **Use root instead of Shizuku**. The setting is off by default.
 
-SandFly then runs the commands through `su`, as the shell user, the user that adb and Shizuku use. The root manager of the device, such as Magisk or KernelSU, asks whether to grant root to SandFly. Features that need Shizuku use root while the setting is on, except **Volume key shortcuts with the screen off**, which isn't shown in root mode. When `su` doesn't grant root, the overview and split screen say "No root access".
+SandFly then runs the commands through `su`, as the shell user, the user that adb and Shizuku use. The root manager of the device, such as Magisk or KernelSU, shows a dialog to grant root to SandFly. Features that need Shizuku use root while the setting is on, except **Volume key shortcuts with the screen off**, which isn't shown in root mode. When `su` doesn't grant root, the overview and split screen say "No root access".
 
 Note: If `su` on the device can't run commands as the shell user, SandFly runs them as root. Adding copies from other apps to the clipboard history and the hotspot switch don't work then.

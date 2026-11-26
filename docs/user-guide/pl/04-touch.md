@@ -55,7 +55,7 @@ Domyślnie dotknięcie ekranu zatrzymuje mowę. Jeśli chcesz, żeby SandFly czy
 
 ### Zablokuj dotyk {#touch-lock}
 
-Po zablokowaniu dotyku SandFly nie wykonuje gestów ani nie przekazuje dotknięć do aplikacji. Nadal możesz używać klawiszy, poleceń klawiszy głośności, gestów na czytniku linii papilarnych, stuknięć w tył urządzenia i potrząśnięcia. Blokada wymaga Androida 13 lub nowszego oraz włączonej opcji **Ustawienia programisty** > **Używaj gestów w SandFly**.
+Po zablokowaniu dotyku SandFly nie wykonuje gestów ani nie przekazuje dotknięć do aplikacji. Nadal możesz używać klawiszy, poleceń klawiszy głośności, gestów na czytniku linii papilarnych, stuknięć w tył urządzenia i potrząśnięcia. Polecenia, które dotykają ekranu, na przykład **Aktywuj dotknięciem**, **Przytrzymaj dotyk na elemencie z fokusem** i dotknięcia w makrach, nadal trafiają do aplikacji. Blokada wymaga Androida 13 lub nowszego oraz włączonej opcji **Ustawienia programisty** > **Używaj gestów w SandFly**.
 
 Użyj polecenia **Zablokuj lub odblokuj dotyk**. Usłyszysz „Dotyk zablokowany” lub „Dotyk odblokowany”. Przypisz polecenie do [klawisza głośności](#buttons), skrótu klawiszowego lub [stuknięcia w tył urządzenia](#gestures-back-tap), żeby odblokować ekran bez dotykania. Jednoczesne naciśnięcie obu klawiszy głośności zawsze odblokowuje dotyk.
 
@@ -101,7 +101,7 @@ Jeśli aplikacja wyświetla własną klawiaturę, otwórz jej czynności na liś
 
 #### Klawiatury z własną mową {#touch-direct-touch-keyboards}
 
-Klawiatura, która mówi sama, na przykład osobna klawiatura brajlowska, może potrzebować bezpośredniego dotyku w każdej aplikacji. Zaznacz ją na liście **Aplikacje**. Gdy klawiatura jest widoczna, dostaje dotknięcia w swoim obszarze. Pozostałą część ekranu obsługuje SandFly.
+Klawiatura, która mówi sama, na przykład osobna klawiatura brajlowska, może potrzebować bezpośredniego dotyku w każdej aplikacji. Zaznacz ją na liście **Aplikacje**. Gdy klawiatura jest widoczna, dostaje dotknięcia w swoim obszarze. Pozostałą część ekranu obsługuje SandFly. Klawiatura, która rysuje klawisze w nakładce ułatwień dostępu i ma włączoną własną usługę ułatwień dostępu, zachowuje ustawiony przez siebie obszar dotyku, także bez zaznaczenia na liście.
 
 #### Aplikacje wybierające obszar dotyku bezpośredniego {#touch-direct-touch-areas}
 
@@ -126,7 +126,7 @@ Jeśli SandFly ma uprawnienie, mówi „Naprawianie eksploracji dotykowej”, ko
 
 Gdy brakuje uprawnienia lub telefon nie udostępnia danych, SandFly może tylko ostrzec o możliwej blokadzie. W takiej sytuacji uruchom telefon ponownie. Ostrzeżenie może się też pojawić, gdy przyłożysz palec do miejsca bez elementów do odczytania, na przykład w grze. SandFly podaje je najwyżej raz na 10 minut.
 
-Jeżeli ekran zgaśnie podczas dotykania, Android może potraktować uniesione palce tak, jakby dalej dotykały ekranu. Wtedy działa wyłącznie eksploracja, a gesty i dwukrotne stuknięcia przestają reagować. SandFly wykrywa zgaśnięcie ekranu w trakcie dotyku lub dwa kolejne dotknięcia zakończone eksploracją. Wyłącza wtedy eksplorację i zaraz włącza ją ponownie. Ta naprawa działa niezależnie od opcji **Napraw zablokowaną eksplorację dotykową** i uprawnienia `DUMP`.
+Jeżeli ekran zgaśnie podczas dotykania, Android może potraktować uniesione palce tak, jakby dalej dotykały ekranu. Wtedy działa wyłącznie eksploracja, a gesty i dwukrotne stuknięcia przestają reagować. SandFly wykrywa zgaśnięcie ekranu w trakcie dotyku lub dwa kolejne dotknięcia zakończone eksploracją. Nie liczy się dotknięcie, które kończy się, bo następny palec dotyka ekranu, jak przy szybkim pisaniu. Wyłącza wtedy eksplorację i zaraz włącza ją ponownie. Ta naprawa działa niezależnie od opcji **Napraw zablokowaną eksplorację dotykową** i uprawnienia `DUMP`.
 
 ### Przywróć domyślne czasy reakcji {#touch-reset-delays}
 

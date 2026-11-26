@@ -2,7 +2,7 @@
 
 These are the English phrases that SandFly accepts as voice commands. Words in capitals stand for what you say in their place, such as a name or a text. Words in parentheses are optional, and a slash separates words that can take each other's place: "describe (the/this) image" is "describe image", "describe the image" or "describe this image". Case and the punctuation that the speech recognizer adds don't matter. For how to start a voice command, chain commands and make your own phrases, see [](#voice-commands).
 
-Besides these phrases, you can say the name of any command as the **Commands** screen shows it, such as "Read from top", "Next item" or "Describe image", including the names of macros, custom menus and script commands. Custom voice commands come before every phrase here. See [](#voice-commands-phrases).
+Besides these phrases, you can say the name of any command as the **Commands** screen shows it, such as "Read from top", "Next item" or "Describe image", including the names of macros, custom menus and script commands. The name of an app opens the app, unless a command has that name. Custom voice commands come before every phrase here. See [](#voice-commands-phrases).
 
 Some phrases are found anywhere in what you say: they are marked "a phrase with". For example, "go to the top" contains "top" and moves to the first item.
 
@@ -125,7 +125,7 @@ These phrases act on the text of the text field with input focus. UNITS is a num
 
 ### Calls and messages {#appendix-voice-commands-calls}
 
-NAME is a contact name or a phone number. APP is the name of a messaging app, such as WhatsApp. Without an app, or with "SMS", "text", "text message" or "messages", the message goes to the default SMS app. In the SMS app and WhatsApp, SandFly writes the message to the contact and then asks whether to send it. Other apps get only the text, and you choose the chat in the app.
+NAME is a contact name or a phone number. APP is the name of a messaging app, such as WhatsApp. Without an app, or with "SMS", "text", "text message" or "messages", the message goes to the default SMS app. In the SMS app and WhatsApp, SandFly writes the message to the contact and then requests confirmation before sending it. Other apps get only the text, and you choose the chat in the app.
 
 | Say | What happens |
 | --- | --- |
@@ -134,8 +134,9 @@ NAME is a contact name or a phone number. APP is the name of a messaging app, su
 | "Message NAME TEXT", or "text NAME TEXT" or "send (a) message to NAME TEXT" | Writes the message to the contact named at the start. |
 | "Message NAME on APP saying TEXT", or "send (a) message to NAME on APP saying TEXT", "send (a) message to NAME on APP that says TEXT", "send (a/an) APP message to NAME saying TEXT", "send (a/an) APP message to NAME that says TEXT" or "tell NAME on APP TEXT" | Writes the message in the app. |
 | "Send (a/an) APP message to NAME" | Records the text, then writes the message in the app. |
+| "Answer call" or "End call" | Runs the command of that name: answers the ringing call, or declines it or ends the call in progress. |
 
-SandFly asks "Send to NAME: TEXT?", or "Send to NAME?" for a description. Say "yes", "yeah", "yep", "send", "send it", "OK", "okay", "sure" or "do it" to press **Send**. Any other answer leaves the message unsent, and SandFly says "Message not sent".
+SandFly says "Send to NAME: TEXT?", or "Send to NAME?" for a description. Say "yes", "yeah", "yep", "send", "send it", "OK", "okay", "sure" or "do it" to press **Send**. Any other answer leaves the message unsent, and SandFly says "Message not sent".
 
 ### Descriptions {#appendix-voice-commands-descriptions}
 

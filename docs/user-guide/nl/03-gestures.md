@@ -8,18 +8,20 @@ De opdrachten die elk gebaar standaard uitvoert, staan vermeld in [](#appendix-g
 
 Een aanraking die op het scherm rust of langzaam beweegt, is verkennen via aanraking: SandFly leest het item onder de vinger voor. Een aanraking die snel beweegt, of een tik, is een gebaar. Zie [](#reading) voor verkennen via aanraking.
 
-Op Android 13 en hoger herkent SandFly gebaren zelf. Veel gebaren in dit hoofdstuk hebben dit nodig: de rotor, randgebaren, hoekgebaren, de schrobbeweging, knijpen en spreiden, swipe en vasthouden, swipes in drie delen, swipes in twee halen, tikken dan swipen, hoekgebaren met twee vingers, de viervoudige tik met drie vingers, de dubbele tik met twee vingers aan de boven- en onderkant van het scherm en de tikken met vier vingers op de bovenste of onderste helft van het scherm. De tijdsinstellingen op het scherm **Gebaren** hebben dit ook nodig. Gebaren met twee of meer vingers hebben Android 11 of hoger nodig.
+Op Android 13 en hoger herkent SandFly gebaren zelf. Veel gebaren in dit hoofdstuk hebben dit nodig: de rotor, randgebaren, hoekgebaren, de schrobbeweging, knijpen en spreiden, swipe en vasthouden, swipes in drie delen, swipes in twee halen, tikken dan swipen, hoekgebaren met twee vingers, 3 keer en viervoudig tikken met één vinger, de viervoudige tik met drie vingers, de dubbele tik met twee vingers aan de boven- en onderkant van het scherm en de tikken met vier vingers op de bovenste of onderste helft van het scherm. De tijdsinstellingen op het scherm **Gebaren** hebben dit ook nodig. Gebaren met twee of meer vingers hebben Android 11 of hoger nodig.
 
 Herkenning door SandFly wordt bepaald door **Ontwikkelaarsinstellingen** > **Gebaren verwerken in SandFly**, wat standaard aan staat. Wanneer je dit uitzet, herkent Android gebaren, en zijn de gebaren en instellingen hierboven niet beschikbaar. Zet SandFly uit en weer aan na het veranderen van deze instelling.
 
 ### Tikken {#gestures-taps}
 
-- **Eén vinger**: dubbeltikken activeert het gefocuste item, en dubbeltikken en vasthouden tikt het item en houdt het vast. Deze gebaren kunnen niet worden veranderd.
+- **Eén vinger**: dubbeltikken activeert het gefocuste item, en dubbeltikken en vasthouden tikt het item en houdt het vast. Deze gebaren kunnen niet worden veranderd. **3 keer tikken** en **Viervoudig tikken**, in de categorie **1 vinger**, doen standaard niets en werken overal op het scherm. Ze staan niet op horloges.
 - **Twee, drie en vier vingers**: een tik, dubbeltik en 3 keer tikken met elk aantal vingers, en dubbeltikken en vasthouden. Twee en drie vingers hebben ook 3 keer tikken en vasthouden, en drie vingers hebben tikken en vasthouden en een viervoudige tik.
 - **Twee vingers boven en onder**: **Dubbeltikken met 2 vingers, boven en onder** is een afzonderlijk gebaar. Terwijl het een opdracht heeft, voert een dubbele tik met twee vingers, met één vinger in het bovenste derde deel van het scherm en de andere in het onderste derde deel, deze opdracht uit in plaats van **Dubbeltikken met 2 vingers**. Boven en onder volgen het scherm zoals getoond, ook in liggende stand.
 - **Vier vingers op helft van het scherm**: **Tikken met 4 vingers op bovenste helft** en **Tikken met 4 vingers op onderste helft** zijn afzonderlijke gebaren. Terwijl een van deze een opdracht heeft, voert een tik met vier vingers op die helft die opdracht uit in plaats van **Tikken met 4 vingers**.
 
 Een tik met twee, drie of vier vingers voert zijn opdracht uit zodra de vingers worden opgetild, tenzij een langer gebaar dat met dezelfde tikken begint een opdracht heeft, zoals een verdere tik, een tik en vasthouden, of tikken dan swipen. Dan wacht SandFly op de volgende tik. Als een vinger beweegt tijdens een tik met meerdere vingers, is de aanraking geen tik meer. Een viervoudige tik met drie vingers wordt altijd meteen uitgevoerd.
+
+Een dubbeltik met één vinger wordt uitgevoerd zodra de vinger wordt opgetild, tenzij **3 keer tikken** of **Viervoudig tikken** een opdracht heeft. Dan wacht SandFly op een verdere tik, en activeert een dubbeltik na die wachttijd. Een 3 keer tikken wacht alleen terwijl **Viervoudig tikken** een opdracht heeft. In een hoek met een hoekgebaar zijn tikken hoektikken; zie [](#gestures-corners).
 
 **Tijd tussen tikken met één vinger** stelt in hoe lang SandFly wacht op een verdere tik met 1 vinger. Zie [](#gestures-timing).
 
@@ -124,7 +126,7 @@ Onder **Randen** op het scherm **Gebaren**:
 - **Randbreedte**: hoe ver van de rand een aanraking kan beginnen, van 0,5 tot 2 cm. De standaardwaarde is 0,5 cm.
 - **Afstand tot eerste klik**: hoe ver je vanaf de rand, of er langs, naar binnen beweegt tot de eerste klik, van 0,5 tot 2 cm. De standaardwaarde is 1 cm.
 - **Afstand van de eerste tot de tweede klik**: hoe ver je verder beweegt tot de tweede klik, van 1 tot 5 cm. De standaardwaarde is 4 cm.
-- **Opdracht uitspreken bij elke klik**: bij elke klik van een beweging vanaf een rand naar binnen spreekt SandFly de opdracht uit die optillen daar uitvoert, zoals "Terug". Standaard uit.
+- **Opdracht uitspreken bij elke klik**: bij elke klik van een beweging vanaf een rand naar binnen spreekt SandFly de opdracht uit die optillen daar uitvoert, zoals "Home". Standaard uit.
 
 ### Hoekgebaren {#gestures-corners}
 
@@ -186,16 +188,31 @@ Op een horloge heeft het scherm ook **Gebaren reserveren voor Vibration Watch**;
 
 - **SandFly-gebaren**: de standaardgebaren van SandFly.
 - **VoiceOver-gebaren**: de gebaren van VoiceOver op iPhone, zoals een tik met twee vingers om spraak te pauzeren, een dubbeltik met twee vingers voor **Dicteren, media afspelen of pauzeren**, swipes met drie vingers om te scrollen en een tik met drie vingers voor **Positie uitspreken**. Gebaren die VoiceOver niet heeft, staan op **Niet toegewezen**, en je kunt ze toewijzen.
+- **BlackBerry-gebaren**: gebaren die lijken op die van de BlackBerry 10 Screen Reader (BlackBerry 10 OS 10.3). Niet elk gebaar is hetzelfde. Naar rechts en links swipen beweegt volgens de navigatie-instelling, en omhoog en omlaag swipen kiest de volgende en vorige navigatie-instelling, zoals tekens, woorden of regels. Omlaag en dan naar links swipen pauzeert spraak, omlaag en dan naar rechts swipen start Snelle taken, omlaag en dan omhoog swipen zegt de tijd en datum, en omhoog en dan omlaag swipen zegt de status. Een tik met twee vingers zegt de titel van het scherm, een dubbeltik met twee vingers is **Dicteren, media afspelen of pauzeren**, wat gesprekken beantwoordt en beëindigt, en dubbeltikken en vasthouden met twee vingers beëindigt een gesprek. Met twee vingers omhoog en omlaag swipen scrolt terug en vooruit, en met twee vingers omlaag en dan naar links swipen zet spraak aan of uit. Met drie vingers omlaag swipen leest vanaf het begin, en met drie vingers naar rechts en links swipen scrolt naar links en rechts. **Veeg naar beneden vanaf linksboven** en **Veeg naar beneden vanaf rechtsboven** openen snelle instellingen, en de lange swipes openen meldingen. Gebaren die de BlackBerry 10 Screen Reader niet heeft, staan op **Niet toegewezen**, en je kunt ze toewijzen. Zie [](#gestures-quick-tasks). Deze gebaren zijn waarschijnlijk onbekend als je BlackBerry 10 niet hebt gebruikt, dus het kiezen ervan opent het dialoogvenster **BlackBerry-gebaren gebruiken?**; selecteer **Gebruiken** om te bevestigen. Ze staan niet in het dialoogvenster **Gebaren kiezen**.
 
-De eerste keer dat SandFly start, opent het dialoogvenster **Gebaren kiezen**, waar je een indeling kiest. Elke indeling behoudt zijn eigen veranderingen, zodat terugschakelen de gebaren herstelt zoals jij ze hebt ingesteld. Het kiezen van een indeling zet **Swipes met twee vingers in SandFly verwerken** aan voor **VoiceOver-gebaren** en uit voor **SandFly-gebaren**. Gebaren in apps en gebarenprofielen zijn van toepassing op beide indelingen.
+De eerste keer dat SandFly start, opent het dialoogvenster **Gebaren kiezen**, waar je **SandFly-gebaren** of **VoiceOver-gebaren** kiest. Elke indeling behoudt zijn eigen veranderingen, zodat terugschakelen de gebaren herstelt zoals jij ze hebt ingesteld. Het kiezen van een indeling zet **Swipes met twee vingers in SandFly verwerken** aan voor **VoiceOver-gebaren** en **BlackBerry-gebaren**, en uit voor **SandFly-gebaren**. Met **VoiceOver-gebaren** en **BlackBerry-gebaren** stuurt **Home** op het vergrendelscherm een swipe met twee vingers omhoog, wat de telefoon ontgrendelt of de pincode, het patroon of het wachtwoord toont. Gebaren in apps en gebarenprofielen zijn van toepassing op elke indeling.
+
+#### Snelle taken {#gestures-quick-tasks}
+
+**Snelle taken** lijkt op de modus Quick Tasks van de BlackBerry 10 Screen Reader. SandFly zegt "Snelle taken", en 3 seconden lang voeren deze gebaren deze opdrachten uit:
+
+| Gebaar | Opdracht |
+| --- | --- |
+| Omhoog swipen, omlaag swipen | Volume verhogen, Volume verlagen |
+| Naar rechts swipen, naar links swipen | Spreeksnelheid verhogen, Spreeksnelheid verlagen |
+| Met twee vingers omhoog swipen | Laatst uitgesproken woordgroep herhalen |
+| Met twee vingers omlaag swipen | Laatst uitgesproken woordgroep spellen |
+| Tik met twee vingers | Scherm verbergen of tonen |
+
+Elk van deze gebaren geeft 3 seconden extra. Elk ander gebaar beëindigt Snelle taken en voert de eigen opdracht uit. Als de tijd om is, trilt de telefoon. In de BlackBerry-indeling is Snelle taken omlaag en dan naar rechts swipen. Wijs het in andere indelingen toe op het scherm **Gebaren**; het staat onder **SandFly** op het scherm **Commando's**.
 
 #### Swipes met twee vingers in SandFly verwerken {#gestures-two-finger-swipes}
 
-Met **Swipes met twee vingers in SandFly verwerken** uit, gaan swipes met twee vingers naar de app, die er mee scrolt, en tonen de vier swipes met twee vingers op het scherm **Gebaren** "niet aan te passen". Met dit aan voeren swipes met twee vingers de opdrachten uit die erop zijn toegewezen, en zijn de gebaren **Hoekgebaar met 2 vingers** beschikbaar. Deze instelling heeft Android 11 of hoger nodig.
+Met **Swipes met twee vingers in SandFly verwerken** uit, gaan swipes met twee vingers naar de app, die er mee scrolt, en tonen de vier swipes met twee vingers op het scherm **Gebaren** "niet aan te passen". Met dit aan voeren swipes met twee vingers de opdrachten uit die erop zijn toegewezen, en zijn de gebaren **Hoekgebaar met 2 vingers** beschikbaar. Op het vergrendelscherm en het startscherm stuurt het gebaar voor **Omhoog scrollen** in plaats daarvan een swipe omhoog, wat de telefoon ontgrendelt of de pincode, het patroon of het wachtwoord toont, of de lijst met apps opent. Deze instelling heeft Android 11 of hoger nodig.
 
 #### Tijdsinstellingen {#gestures-timing}
 
-- **Tijd tussen tikken met één vinger**: hoe lang SandFly wacht op een verdere tik voordat het besluit dat een gebaar met tikken met 1 vinger klaar is, van 0,1 tot 2 seconden. De standaardwaarde is 0,25 seconden. Een kortere tijd maakt dubbeltikken met 1 vinger sneller, maar een trage dubbeltik kan dan als twee tikken tellen. Met een langere tijd activeren twee tikken op een item binnen die tijd het item, en wachten hoektikken en tikken met meerdere vingers langer. Tikken met twee of meer vingers laten altijd minstens 0,25 seconden tussen tikken toe.
+- **Tijd tussen tikken met één vinger**: hoe lang SandFly wacht op een verdere tik voordat het besluit dat een gebaar met tikken met 1 vinger klaar is, van 0,1 tot 2 seconden. De standaardwaarde is 0,25 seconden. Een kortere tijd maakt dubbeltikken met 1 vinger sneller, maar een trage dubbeltik kan dan als twee tikken tellen. Met een langere tijd activeren twee tikken op een item binnen die tijd het item, en wachten hoektikken en tikken met meerdere vingers langer. Met een tijd langer dan 0,3 seconden focust een enkele tik het item onder de vinger 0,25 seconden nadat de vinger is opgetild, en een tweede tik binnen de tijd activeert dat item nog steeds. Tikken met twee of meer vingers laten altijd minstens 0,25 seconden tussen tikken toe.
 - **Vasthoudtijd na een swipe**: hoe lang de vinger rust na een swipe voor een swipe en vasthouden-gebaar, van 0,1 tot 0,5 seconden. De standaardwaarde is 0,25 seconden. Zie [](#gestures-swipe-and-hold).
 - **Starttijd van gebaar**: hoe lang een swipe met 1 vinger kan duren om de eerste centimeter te bewegen voordat de aanraking verkennen via aanraking wordt, van 0,15 tot 2 seconden. De standaardwaarde is 0,15 seconden. Kies een langere tijd als trage swipes verkennen via aanraking starten.
 - **Tijd tussen swipes in twee halen**: hoe lang na een swipe de tweede swipe van een swipe in twee halen kan beginnen: **Uit**, 0,25, 0,5, 1, 1,5 of 2 seconden. De standaardwaarde is **Uit**, wat swipes in twee halen uitzet en de categorieën ervan verbergt. Zie [](#gestures-two-stroke).
@@ -279,3 +296,15 @@ De snelkoppeling wordt toegevoegd aan de lijst, waar je deze kunt hernoemen of v
 ### Gebaren oefenen {#gestures-practice}
 
 **Gebaren** > **Gebaren oefenen** opent een pagina waar je elk gebaar kunt proberen. SandFly zegt wat het gebaar doet in plaats van het uit te voeren. De opdracht **Gebaren oefenen** opent dezelfde pagina.
+
+### Gebarentrainer {#gestures-trainer}
+
+**Hulp en feedback** > **Gebarentrainer** meet gebaren af aan de limieten die SandFly met je instellingen gebruikt. Dit heeft Android 13 of hoger nodig, en staat niet op horloges of tv's.
+
+1. Kies een groep, zoals **Eén vinger**, **Randmenu's** of **Tikken op achterkant**.
+2. Lees de beschrijving van het gebaar, en kies **Starten**.
+3. Maak het gebaar 3 keer. Het resultaat van elke poging wordt uitgesproken.
+
+Terwijl de pogingen worden gemeten, is elke aanraking een poging, en voeren gebaren geen opdrachten uit. Na de laatste poging toont het scherm de metingen van elke poging, wat je kunt veranderen, en de instellingen die de limieten veranderen, met een knop voor elke instelling. **Herhalen** meet de pogingen opnieuw, **Volgende oefening** gaat naar het volgende gebaar, en **Inhoud** toont de oefeningen van de groep.
+
+Een groep laat gebaren weg die je instellingen uitzetten, en zegt welke instelling. Een rand zonder randmenu wordt geoefend met voorbeelditems, die geen opdrachten uitvoeren.

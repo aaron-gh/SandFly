@@ -34,7 +34,7 @@ The first time you run **Describe screen**, SandFly shows the **Screen descripti
 Text recognition reads Cyrillic text with a model for the language, which you download first. SandFly uses the model of the speech language, or of the first phone language, that is written in Cyrillic. Without the model, only Latin letters are read, and SandFly says once that the model isn't downloaded.
 
 1. Go to **Image and screen descriptions** > **Cyrillic text recognition**.
-2. Choose the language. Its model, a few megabytes, is downloaded, with the model of Latin letters the first time, so that text in both is read.
+2. Choose the language. Its model, a few megabytes, is downloaded, with the model of Latin letters the first time, so that text in both is read. On mobile data, a confirmation dialog opens first.
 
 To stop a download, choose the language again. To delete a model, choose a downloaded language, then **Delete**. The model of Latin letters is deleted with the last language.
 
@@ -214,9 +214,9 @@ Each mode turns on and off by itself, with a check box on the screen:
 - **Point and Speak**: reads the text at your fingertip in the camera view. Choose **Read above the fingertip** (the default) or **Read below the fingertip**.
 - **People detection**: describes people in the camera view.
 - **Door detection**: describes doors in the camera view.
-- **Color detection**: names the colors in the centre of the camera view, such as "Dark blue", "Light gray" or "Red and white", or says "Mixed colors" when no color covers enough of it. A color is spoken when it changes and has held for about half a second. Light and dark depend on the light and on the camera's automatic exposure. Colors are recognized on the phone.
+- **Color detection**: names the colors in the centre of the camera view, such as "Dark blue", "Light gray" or "Red and white", or says "Mixed colors" when no color covers enough of it. A color is spoken when it changes and has held for about half a second. Light and dark depend on the light and on the automatic exposure of the camera. Colors are recognized on the phone.
 - **Light level**: reads the light level from the light sensor: **Dark**, **Dim light**, **Normal light**, **Bright light** or **Very bright light**. It doesn't use the camera.
-- **Light level tone**: plays a continuous tone whose pitch rises with the brightness of what the rear camera sees, from 200 Hz in the dark to 1600 Hz in sunlight. The tone plays at the volume of SandFly's sounds, and stops when the mode is turned off or the screen is left.
+- **Light level tone**: plays a continuous tone whose pitch rises with the brightness of the rear camera view, from 200 Hz in the dark to 1600 Hz in sunlight. The tone plays at the volume of SandFly sounds, and stops when the mode is turned off or the screen is left.
 
 The status line says **Camera on** or **Camera off**. SandFly asks for the camera permission the first time a mode needs it.
 
