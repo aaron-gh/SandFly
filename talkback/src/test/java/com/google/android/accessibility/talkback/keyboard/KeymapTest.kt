@@ -702,5 +702,22 @@ class KeymapTest {
     val model = NewKeyComboModel(context, Keymap.NVDA)
     assertEquals(changed, model.getKeyComboForKey(lesson))
     assertEquals(KeyCombo(0, 0, KeyEvent.KEYCODE_1, true), model.getKeyComboForKey(practice))
+  @Test
+  fun nvdaKeymapStartsAndEndsSelectionModeWithInsertF9() {
+    val key = context.getString(R.string.keycombo_shortcut_other_toggle_selection)
+    val f9 = KeyCombo(0, 0, KeyEvent.KEYCODE_F9, true)
+    assertEquals(f9, NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(key))
+  }
+
+  @Test
+  fun version7SavedNvdaKeymapGetsInsertF9ForSelectionMode() {
+    val key = context.getString(R.string.keycombo_shortcut_other_toggle_selection)
+    val prefs = SharedPreferencesUtils.getSharedPreferences(context)
+    prefs.edit().putInt(Keymap.NVDA.persisterPrefix + "_defaults_version", 7).commit()
+    KeyComboPersister(context, Keymap.NVDA.persisterPrefix).saveKeyCombo(key, KeyCombo())
+    assertEquals(
+      KeyCombo(0, 0, KeyEvent.KEYCODE_F9, true),
+      NewKeyComboModel(context, Keymap.NVDA).getKeyComboForKey(key),
+    )
   }
 }

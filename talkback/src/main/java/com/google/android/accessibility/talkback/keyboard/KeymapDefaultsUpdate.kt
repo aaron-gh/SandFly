@@ -297,7 +297,7 @@ object KeymapDefaultsUpdate {
   /**
    * The version 7 defaults of the commands whose defaults changed in version 8, when the keyboard
    * help keys of the VoiceOver, NVDA, JAWS and Orca keymaps moved from Practice keyboard shortcuts
-   * to Turn keyboard practice on or off.
+   * to Turn keyboard practice on or off, and the NVDA keymap got Insert + F9 for selection mode.
    */
   private val VERSION_7: Map<Keymap, Map<Int, KeyCombo>> by lazy {
     fun helpKey(keyCode: Int) =
@@ -307,7 +307,9 @@ object KeymapDefaultsUpdate {
       )
     mapOf(
       Keymap.VOICEOVER to helpKey(KeyEvent.KEYCODE_K),
-      Keymap.NVDA to helpKey(KeyEvent.KEYCODE_1),
+      Keymap.NVDA to
+        helpKey(KeyEvent.KEYCODE_1) +
+          (R.string.keycombo_shortcut_other_toggle_selection to KeyCombo()),
       Keymap.JAWS to helpKey(KeyEvent.KEYCODE_1),
       Keymap.ORCA to helpKey(KeyEvent.KEYCODE_H),
     )

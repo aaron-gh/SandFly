@@ -107,6 +107,8 @@ In any other control, or in a text field without input focus and a shown keyboar
 3. Move the cursor with a reading control, such as **Characters** or **Words**. The text that the cursor passes is selected.
 4. Run **Start or end selection mode** again to end selection mode.
 
+In the NVDA keymap, **Start or end selection mode** is SandFly key + F9. In the SandFly keymap, it is SandFly key + Shift + S.
+
 **Select all** selects all the text in the field, and **Clear selection** removes the selection.
 
 Selection mode also works in text that isn't in a text field, such as a message or a web page, and across items. SandFly keeps this selection itself: only the text that the cursor passes is selected, and moving to another item starts another range there. **Copy** then copies all the ranges, one range to a line.
