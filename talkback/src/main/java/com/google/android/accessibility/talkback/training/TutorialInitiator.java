@@ -40,7 +40,11 @@ public class TutorialInitiator {
     return createFirstRunTutorialIntent(context, new InputDeviceMonitor(context));
   }
 
-  /** Returns an intent to start tutorial for the first run users. */
+  /**
+   * Returns an intent to start tutorial for the first run users. On a touch screen it is the
+   * gestures tutorial, which teaches the gestures chosen just before, even when the device reports
+   * a keyboard: some phones report their built-in buttons as one.
+   */
   @VisibleForTesting
   public static Intent createFirstRunTutorialIntent(
       Context context, InputDeviceMonitor inputDeviceMonitor) {
@@ -50,7 +54,8 @@ public class TutorialInitiator {
     } else if (FormFactorUtils.isAndroidTv()) {
       return TrainingActivity.createTrainingIntent(context, TRAINING_ID_TUTORIAL_FOR_TV);
     } else if (FeatureFlagReader.enableShowTalkbackKeyboardTutorial(context)
-        && inputDeviceMonitor.hasPhysicalKeyboard()) {
+        && inputDeviceMonitor.hasPhysicalKeyboard()
+        && !inputDeviceMonitor.hasTouchScreen()) {
       return TutorialActivity.keyboardIntent(context);
     } else {
       return TutorialActivity.intent(context);
